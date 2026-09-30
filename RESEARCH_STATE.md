@@ -17,6 +17,7 @@ The companion heterogeneous line `HC-2-v1` has a separate 17-page draft and exac
 
 - `common_phi_algorithm.py` checks conditional customer costs and all actual unilateral facility deviations using rational arithmetic. Its verifier does not rely on the global theorem; a valid certificate establishes the factor **for that instance**. The universal runtime/existence conclusion still depends on the full mathematical proof.
 - `test_common_phi_algorithm.py` records 753 complete certificates with seed `2026093001`; `common_phi_counter_audit.py` checks 10,206 small local menus and 1,771 small full games. The three-mixer pair example is local, not a global hard-case witness.
+- On this baseline, both `asym_research/test_r_menu.py` and `asym_research/test_four_seed.py` passed (500 + 1,500 general-catalog random certificate checks in the first; 2,406 four/full-seed certificate checks in the second). `asym_research/r_menu_verification_default_20260930.json` records the new default-menu run; `asym_research/r_menu_verification.json` preserves the older all-singleton run. They are not interchangeable observations.
 - `astra_alg/hardness_proof.md` establishes a separate weak NP-hardness candidate for computing true local minimum NE payoff; it does not imply that our global constructive problem is NP-hard.
 - `asym_research/tight_two_lower.md` gives an exact positive-integer family with optimum `2-18/(M+14)` for differing catalogs. It has no bearing on the shared-catalog `phi` lower bound.
 
@@ -26,6 +27,8 @@ The companion heterogeneous line `HC-2-v1` has a separate 17-page draft and exac
 2. Improve the user-facing algorithm artifact: document JSON schema, provide a standalone independent verification path, add difficult global examples and realistic bit-length benchmarks. A valid certificate is already useful even before the universal theorem is accepted.
 3. Consolidate the shared and heterogeneous manuscripts into one paper only after checking both main proofs and the contribution/priority relationship; retain the separate claim identities and scopes.
 4. If the first two stages hold, investigate a reusable abstract menu/response-cycle theorem. Otherwise salvage exact barriers, counterexamples or restricted cases rather than proclaiming a general breakthrough.
+
+For public reuse, choose and record a code and manuscript license with the project's owner, add packaging/versioned input-output semantics, and publish external proof review. No license choice is inferred from this initialization.
 
 ## Companion file map
 
@@ -40,4 +43,7 @@ The companion heterogeneous line `HC-2-v1` has a separate 17-page draft and exac
 | `asym_research/r_menu_solver.py`, `asym_research/test_r_menu.py`, `asym_research/test_four_seed.py`, `asym_research/four_seed_verification.json` | Four-seed pure algorithm and regression suite for `HC-2-v1`. The shared-catalog program imports its guarded-repair routine. |
 | `asym_research/bounded_overlap.py`, `asym_research/nonlinear_kappa_two_independent.md` | Exact optimal-factor support enumeration for linear costs; separate unimplemented rational-polyhedral extension. |
 | `asym_research/final_audit_and_value.md`, `asym_research/three_by_three_search_status.md` | Literature/scope/novelty audit and bounded exploratory search with explicitly inconclusive timeouts. |
-
+| `asym_research/upper.md`, `asym_research/general_four_cycle.md`, `asym_research/general_six_cycle.md` | Historical small-core and longer-cycle arguments leading to the later general `universal_two.md`; consult to trace a disputed transport or chord step, not as a replacement for the final proof. |
+| `asym_research/cross_one.py`, `asym_research/classification_audit.md` | Exact single-common calculations and independent classification checks supporting `HC-RHO-v1`. |
+| `asym_research/paper/build.sh`, `asym_research/r_menu_verification.json`, `asym_research/r_menu_verification_default_20260930.json` | Build entry point and two explicitly distinguished solver regression records. |
+| `asym_research/tight_two_M1000.certificate.json`, `asym_research/tight_two_undirected_M1000.json`, `asym_research/six_cycle_instance.json` | Exact reproducible lower-family certificate, undirected encoding and longer-cycle regression instance. |
