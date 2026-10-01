@@ -1,6 +1,6 @@
 # Research state — 2026-10-01
 
-The current shared-catalog result is an **internally audited candidate theorem with a concrete algorithm**, not a refereed theorem or an instance-optimal solver. For explicit incidence, positive binary rational customer weights and two facilities allowed the **same** finite catalog, the manuscript claims a bit-polynomial construction of a pure-location, exact-customer-Nash subgame-perfect outcome within the golden ratio. Its returned certificate can be checked for a given instance independently of believing the universal existence proof. See [the model](MODEL.md), [the proof reconstruction](math/SHARED_PHI.md), and [the full source](phi_n_manuscript/main.tex).
+The current shared-catalog result is an **internally audited candidate theorem with a concrete algorithm**, not a refereed theorem or an instance-optimal solver. For explicit incidence, positive binary rational customer weights and two facilities allowed the **same** finite catalog, the manuscript claims a bit-polynomial construction of a pure-location, exact-customer-Nash subgame-perfect outcome within the golden ratio. Its returned certificate can be checked for a given instance independently of believing the universal existence proof. See [the model](MODEL.md), [the proof reconstruction](math/SHARED_PHI.md), and [the full source](manuscripts/shared_phi/main.tex).
 
 The companion heterogeneous-catalog candidate gives an arbitrary-catalog factor-2 pure-continuation construction and a matching positive-integer family approaching 2. The narrower factor $2\cos(\pi/7)$ requires **both** a catalog of size at most two and pair overlap at most one. Neither theorem changes the scope of the other. See [heterogeneous proof map](math/HETEROGENEOUS.md).
 
@@ -17,7 +17,7 @@ The [claim registry](CLAIMS.md) gives each statement its quantifiers and status;
 
 ## Priority review tasks
 
-1. Independently rederive the shared proof's full-catalog menu quantifier, arbitrary response-cycle star/anchor split, and the **two true uniqueness** deductions; read the manuscript §§2–14 and the [menu audit](asym_research/common_phi_menu_quantifier_audit.md).
+1. Independently rederive the shared proof's full-catalog menu quantifier, arbitrary response-cycle star/anchor split, and the **two true uniqueness** deductions; read the manuscript §§2–14 and the [menu audit](evidence/audits/shared_menu_quantifiers.md).
 2. Independently verify Appendix B's pair-local box-slice exchanges, pivot/flip bound, exact rational bit bound, and the three-mixer boundary. The earlier global quadratic-maximizer argument is historical and is not used by the algorithm.
 3. Construct a global adversarial instance whose selected on-path witness invokes C. Existing 753 full-game tests selected 662 P, 88 E, 3 T and **0 C**; local C tests do not close this implementation coverage gap.
 4. Implement a separate certificate checker with a defined continuation-default schema and test large rational bit lengths. The present CLI wrapper is useful for concrete certificates but shares checking logic with the producer.

@@ -1,5 +1,7 @@
 # Hypergraph schema and maintenance
 
+[assets.json](assets.json) supplies the companion claim-to-proof/code/test/record mapping with exact input conditions; [path_migration.json](path_migration.json) records each moved source. Run [check_assets.py](check_assets.py) after adding or relocating research material. The graph and asset manifest answer different questions: mathematical inference versus where its implementation and evidence live.
+
 The [viewer](index.html) is generated from [graph.json](graph.json). Each **node** is a mathematical definition, lemma, claim, counterexample, obligation, evidence item or implementation artifact. Each **hyperedge** records a typed relationship from a set of premise node IDs to one conclusion node ID. For a derives edge, all listed premises are required together; a single-premise attack or finite test is intentionally a different kind of relation.
 
 | Field | Meaning |
@@ -17,5 +19,6 @@ Regenerate and validate locally:
 
     python3 research/build_map.py
     python3 research/build_map.py --check
+    python3 research/check_assets.py
 
 The generator checks IDs, all premise and conclusion references, every source path, node connectivity and that each claim has an incoming edge. The resulting HTML embeds all data and assets: it opens directly as a local file with no server or external JavaScript. GitHub's repository preview displays HTML source; download the file to use its filters and node inspector in a browser. [README.md](../README.md) summarizes the principal joint mathematical dependencies without JavaScript.

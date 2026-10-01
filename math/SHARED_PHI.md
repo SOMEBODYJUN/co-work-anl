@@ -1,6 +1,6 @@
 # Shared catalog: the finite-menu golden-ratio construction
 
-**Claim identity:** `SC-PHI-E` (existence), `SC-PHI-A` (bit-polynomial construction), and `SC-PHI-SHARP` (matching lower-bound interpretation). Their exact statements/statuses are in [`CLAIMS.md`](../CLAIMS.md). This note is a navigable **proof reconstruction**, not a replacement for the complete [`25-page manuscript`](../phi_n_manuscript/main.tex). No external line-by-line referee report exists.
+**Claim identity:** `SC-PHI-E` (existence), `SC-PHI-A` (bit-polynomial construction), and `SC-PHI-SHARP` (matching lower-bound interpretation). Their exact statements/statuses are in [`CLAIMS.md`](../CLAIMS.md). This note is a navigable **proof reconstruction**, not a replacement for the complete [`25-page manuscript`](../manuscripts/shared_phi/main.tex). No external line-by-line referee report exists.
 
 Let $U_1=U_2=S\ne\varnothing$, $q=\phi^{-1}$, $a=q^2=1-q$, $c=\phi/2$, and $R_s=w(C_s)$. The label order matters even at a co-location. All customer continuations are exact independent mixed NE under M1–M3 of [`MODEL.md`](../MODEL.md).
 
@@ -42,7 +42,7 @@ $$
  \forall e\in F(t,s):\ P=L_t(e)\ge d_F(s),\quad Q=L_s(e)<qd_F(t)\le q.\tag{S3}
 $$
 
-The **universal quantifier is over the fixed menu on an edge**, not over all actual customer NE. Every later contradiction witness must be in P/E/T/C. Two arguments infer uniqueness among *all* customer NE by independent strict dominance; only then may a menu minimum be identified with the unique true payoff. The detailed membership matrix is the historical [`menu quantifier audit`](../asym_research/common_phi_menu_quantifier_audit.md), and §14 of the integrated manuscript incorporates it.
+The **universal quantifier is over the fixed menu on an edge**, not over all actual customer NE. Every later contradiction witness must be in P/E/T/C. Two arguments infer uniqueness among *all* customer NE by independent strict dominance; only then may a menu minimum be identified with the unique true payoff. The detailed membership matrix is the historical [`menu quantifier audit`](../evidence/audits/shared_menu_quantifiers.md), and §14 of the integrated manuscript incorporates it.
 
 The global contradiction has three connected layers (all assertions below are conditional on S3):
 
@@ -56,7 +56,7 @@ The global contradiction has three connected layers (all assertions below are co
 
 Build all pair menus, their oriented minima $u$, the full-catalog threats $d_F$, and one response cycle. The proof already guarantees an S2 witness on $T^2$; the code scans all $S^2$ menus to choose a smaller factor **within this menu** if available. P and T cost $O((k+1)^3)$ operations per pair, C costs $O((k+1)^4)$, giving $O(|S|^2(n+1)^4)$ exact rational operations. The manuscript separately bounds intermediate bit length by input sums and bounded divisions. Exact comparisons with $q$ reduce to the sign of $z^2+z-1$ for rational $z\ge0$. This is a bit-polynomial claim for rational input, not an empirical running-time measurement.
 
-The output records one on-path witness, at most $2|S|-2$ unilateral-deviation witnesses, and a specified pure-NE default for all remaining labeled profiles. [`common_phi_algorithm.py`](../common_phi_algorithm.py) checks the constructed witness against customer NE and actual facility deviations. [`verify_phi_certificate.py`](../verify_phi_certificate.py) is a separate CLI entry point but imports the same checker; it is **independent of the menu search**, not an independently implemented verifier. Its metadata for the default rule is not itself validated. The existential extension is justified by the proved deterministic pure-NE default, not by trusting arbitrary metadata. Individual certificates have checkable instance-specific meaning even if the universal proof is later revised.
+The output records one on-path witness, at most $2|S|-2$ unilateral-deviation witnesses, and a specified pure-NE default for all remaining labeled profiles. [`facility_spe/shared_phi.py`](../facility_spe/shared_phi.py) checks the constructed witness against customer NE and actual facility deviations. [`facility_spe/cli/verify_phi.py`](../facility_spe/cli/verify_phi.py) is a separate CLI entry point but imports the same checker; it is **independent of the menu search**, not an independently implemented verifier. Its metadata for the default rule is not itself validated. The existential extension is justified by the proved deterministic pure-NE default, not by trusting arbitrary metadata. Individual certificates have checkable instance-specific meaning even if the universal proof is later revised.
 
 ## S4. Sharpness and boundaries
 

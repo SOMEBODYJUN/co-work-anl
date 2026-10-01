@@ -267,7 +267,7 @@ if __name__=='__main__':
     start=time.perf_counter()
     if args.self_test:out=selftest()
     else:
-        with open(args.input) as f:dat=json.load(f)
+        with open(args.input) as f:dat=json.load(f,parse_float=str)
         out=game_solve(dat) if 'locations' in dat else optimize_pair(dat.get('A',0),dat.get('B',0),dat['weights'])
     out['elapsed_seconds']=time.perf_counter()-start
     print(json.dumps(serial(out),indent=2))

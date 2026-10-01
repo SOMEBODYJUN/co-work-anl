@@ -2,8 +2,8 @@
 """Polynomial exact-client-NE phi-SPE construction for a shared site catalog.
 
 The algorithm minimizes over an explicit polynomial witness menu, never over
-the entire Nash correspondence. See common_phi_algorithm.md for the proof
-transfer and asym_research/common_phi_menu_quantifier_audit.md for its audit.
+the entire Nash correspondence. See math/proofs/shared/menu_algorithm.md for
+the proof transfer and evidence/audits/shared_menu_quantifiers.md for its audit.
 """
 from fractions import Fraction as Q
 from itertools import combinations
@@ -99,25 +99,38 @@ def menu(a, b, weights):
 
 
 def parsed(instance):
-    if any(isinstance(value, float) for value in instance["weights"]):
-        raise TypeError("Use exact decimal/rational strings or integers for weights")
-    weights = [Q(str(value)) for value in instance["weights"]]
+    if not isinstance(instance, dict):
+        raise ValueError("The input must be a JSON object")
+    raw_weights = instance.get("weights")
+    raw_sites = instance.get("locations")
+    if not isinstance(raw_weights, list) or not isinstance(raw_sites, list):
+        raise ValueError("weights and locations must be arrays")
+    if any(type(value) not in (int, str, Q) for value in raw_weights):
+        raise TypeError("Use exact rational values/strings or integers for weights")
+    weights = [Q(str(value)) for value in raw_weights]
     if any(w <= 0 for w in weights):
         raise ValueError("All customer weights must be positive")
-    sites = [set(site) for site in instance["locations"]]
+    if any(not isinstance(site, list) or any(
+            type(i) is not int or not 0 <= i < len(weights) for i in site)
+           for site in raw_sites):
+        raise ValueError("Invalid customer index or site incidence list")
+    sites = [set(site) for site in raw_sites]
     if not sites:
         raise ValueError("The shared catalog must be nonempty")
-    if any(any(i < 0 or i >= len(weights) for i in site) for site in sites):
-        raise ValueError("Invalid customer index")
     if "U1" in instance or "U2" in instance:
-        u1 = instance.get("U1", list(range(len(sites))))
-        u2 = instance.get("U2", list(range(len(sites))))
+        if "U1" not in instance or "U2" not in instance:
+            raise ValueError("Supply both U1 and U2 for a restricted catalog")
+        u1, u2 = instance["U1"], instance["U2"]
+        if any(not isinstance(u, list) or any(
+                type(s) is not int or not 0 <= s < len(sites) for s in u)
+               for u in (u1, u2)):
+            raise ValueError("Invalid shared action set")
         if set(u1) != set(u2):
             raise ValueError("This theorem requires one shared action set")
         catalog = list(dict.fromkeys(u1))
     else:
         catalog = list(range(len(sites)))
-    if not catalog or any(s < 0 or s >= len(sites) for s in catalog):
+    if not catalog:
         raise ValueError("Invalid shared action set")
     return weights, sites, catalog
 

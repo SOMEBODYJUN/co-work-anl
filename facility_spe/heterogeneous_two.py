@@ -3,7 +3,7 @@
 
 The default uses four guarded seeds: all-on-one and the largest shared customer
 alone, in both orientations. --all-singletons retains the larger audit menu.
-Input format is the same as cross_one.py; no local m oracle is called.
+Input format is documented in USAGE.md; no local m oracle is called.
 """
 from fractions import Fraction as Q
 import argparse
@@ -11,6 +11,49 @@ import json
 
 
 from facility_spe.local.pure import load_pair, is_ne, guarded_repair
+
+
+def exact_rational(value):
+    """Read an exact rational without silently accepting binary floats/bools."""
+    if isinstance(value, bool) or not isinstance(value, (int, str, Q)):
+        raise TypeError("use exact rational strings, integers or Fractions")
+    try:
+        return Q(value)
+    except (ValueError, ZeroDivisionError) as exc:
+        raise ValueError("invalid rational value") from exc
+
+
+def parsed(instance):
+    """Validate exact weights and every ID before deduplicating incidence data."""
+    if not isinstance(instance, dict):
+        raise TypeError("instance must be a mapping")
+    for key in ("weights", "locations", "U1", "U2"):
+        if key not in instance:
+            raise ValueError("missing input field: "+key)
+        if not isinstance(instance[key], (list, tuple)):
+            raise TypeError(key+" must be an array")
+    weights=[]
+    for value in instance["weights"]:
+        weight=exact_rational(value)
+        if weight<=0:
+            raise ValueError("weights must be positive")
+        weights.append(weight)
+    sites=[]
+    for site in instance["locations"]:
+        if not isinstance(site, (list, tuple, set, frozenset)):
+            raise TypeError("each location must contain customer IDs")
+        if any(type(i) is not int or not 0<=i<len(weights) for i in site):
+            raise ValueError("invalid customer ID")
+        sites.append(set(site))
+    catalogs=[]
+    for key in ("U1", "U2"):
+        ids=instance[key]
+        if not ids:
+            raise ValueError("both catalogs must be nonempty")
+        if any(type(s) is not int or not 0<=s<len(sites) for s in ids):
+            raise ValueError("invalid location ID in "+key)
+        catalogs.append(list(dict.fromkeys(ids)))
+    return weights, sites, catalogs[0], catalogs[1]
 
 
 def make_menu(weights,sites,s,t,maximum_only=True):
@@ -32,7 +75,8 @@ def make_menu(weights,sites,s,t,maximum_only=True):
         p=guarded_repair(a,b,ws,seed)
         if p is not None:
             menu.setdefault(p,load_pair(a,b,ws,p))
-    assert menu
+    if not menu:
+        raise RuntimeError("guarded seed menu contains no equilibrium")
     return {"common":common,"A":a,"B":b,"weights":ws,
             "entries":[{"prob_first":list(p),"loads":list(loads)}
                        for p,loads in menu.items()]}
@@ -44,15 +88,7 @@ def make_witness(s,t,data,entry):
 
 
 def solve(instance,maximum_only=True):
-    if any(isinstance(v,float) for v in instance["weights"]):
-        raise TypeError("use exact rational strings or integers for weights")
-    weights=[Q(str(v)) for v in instance["weights"]]
-    if any(v<=0 for v in weights):
-        raise ValueError("weights must be positive")
-    sites=[set(v) for v in instance["locations"]]
-    u1=list(dict.fromkeys(instance["U1"]));u2=list(dict.fromkeys(instance["U2"]))
-    if not u1 or not u2:
-        raise ValueError("both catalogs must be nonempty")
+    weights,sites,u1,u2=parsed(instance)
     menus={(s,t):make_menu(weights,sites,s,t,maximum_only=maximum_only) for s in u1 for t in u2}
     p1={pair:min(rec["entries"],key=lambda x:x["loads"][0]) for pair,rec in menus.items()}
     p2={pair:min(rec["entries"],key=lambda x:x["loads"][1]) for pair,rec in menus.items()}
@@ -68,7 +104,8 @@ def solve(instance,maximum_only=True):
     cycle=path[seen[node]:]
     core1=[s for c,s in cycle if c==1]
     core2=[t for c,t in cycle if c==2]
-    assert len(core1)==len(core2)
+    if not core1 or len(core1)!=len(core2):
+        raise RuntimeError("response cycle does not alternate between both facilities")
     best=None
     for s in core1:
         for t in core2:
@@ -79,7 +116,8 @@ def solve(instance,maximum_only=True):
                 alpha=max(Q(1),d1[t]/x if x else Q(0),d2[s]/y if y else Q(0))
                 if best is None or alpha<best[0]:
                     best=(alpha,s,t,entry)
-    assert best is not None and best[0]<=2,"R-menu closed-cycle construction failed"
+    if best is None or best[0]>2:
+        raise RuntimeError("R-menu closed-cycle construction failed")
     alpha,s,t,entry=best
     deviations=[]
     for r in u1:
@@ -100,18 +138,8 @@ def solve(instance,maximum_only=True):
 
 def verify(instance,result):
     """Direct exact certificate checks; never reads a menu or D value."""
-    if any(isinstance(v,float) for v in instance["weights"]):
-        raise TypeError("use exact rational strings or integers for weights")
-    weights=[Q(str(v)) for v in instance["weights"]]
-    sites=[set(v) for v in instance["locations"]]
-    u1=set(instance["U1"]);u2=set(instance["U2"])
-    if (not u1 or not u2 or any(w<=0 for w in weights)
-            or any(type(i) is not int or not 0<=i<len(weights)
-                   for site in sites for i in site)
-            or any(type(s) is not int or not 0<=s<len(sites)
-                   for s in u1|u2)):
-        raise ValueError("invalid input instance")
-    alpha=Q(str(result["alpha"]))
+    weights,sites,u1,u2=parsed(instance)
+    alpha=exact_rational(result["alpha"])
     if not 1<=alpha<=2:
         raise ValueError("claimed factor outside [1,2]")
     def check(rec):
@@ -119,7 +147,8 @@ def verify(instance,result):
         if type(s) is not int or type(t) is not int or s not in u1 or t not in u2:
             raise ValueError("witness layout is outside the legal catalogs")
         common=sorted(sites[s]&sites[t]);p=rec["prob_first"]
-        if common!=rec["common"] or len(common)!=len(p):
+        if (any(type(i) is not int for i in rec["common"])
+                or common!=rec["common"] or len(common)!=len(p)):
             raise ValueError("incorrect common-customer list or assignment length")
         if any(type(v) is not int or v not in (0,1) for v in p):
             raise ValueError("customer assignment is not pure")
@@ -127,7 +156,7 @@ def verify(instance,result):
         y=sum((weights[i] for i in sites[t]-sites[s]),Q(0))
         for i,z in zip(common,p):
             x+=weights[i]*z;y+=weights[i]*(1-z)
-        if [x,y]!=[Q(str(z)) for z in rec["loads"]]:
+        if [x,y]!=[exact_rational(z) for z in rec["loads"]]:
             raise ValueError("incorrect facility loads")
         for i,z in zip(common,p):
             conditional_difference=x-y+weights[i]*(1-2*z)

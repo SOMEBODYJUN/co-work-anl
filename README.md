@@ -6,14 +6,16 @@
 
 [打开可交互的数学超图](research/index.html) · [读取超图数据](research/graph.json) · [查看超图生成器及校验](research/build_map.py)
 
+[研究资产和适用条件总表](ASSETS.md)把每一项命题逐一连到**唯一规范实现、完整证明、测试、冻结证据与实例**。[代码包](facility_spe)、[手稿](manuscripts)、[详细推导](math/proofs)、[测试](tests)、[证据](evidence)、[实例](examples)和[历史路线](history)已经按角色分开；[58 个旧文件的迁移表](research/path_migration.json)保留原路径。旧 Python 命令仍由薄入口转发，算法主体只在规范代码包中维护。
+
 超图的推导超边列出**全部共同前提**、一个结论、关系类型和逐条来源。绿色推导边不把有限测试充当证明；红色边指向**被反例推翻的命题**；黄色边表示测试或未完成的审查。HTML 是自包含文件，下载后可直接在浏览器打开；GitHub 的普通文件预览会显示源码。[下方的主线](#两条主线的真正依赖)可直接在 GitHub 阅读。
 
 | 读者要做什么 | 入口 | 完整来源 |
 | --- | --- | --- |
-| 判断自己的问题是否符合假设 | [模型与量词](MODEL.md)、[使用说明](USAGE.md) | [共享目录手稿](phi_n_manuscript/main.tex)的模型段；[异构手稿](asym_research/paper/main.tex)的模型段 |
-| 审查黄金比例算法的数学前提 | [共享证明重构](math/SHARED_PHI.md)、[局部博弈](math/LOCAL_GAME.md) | [25 页整合手稿](phi_n_manuscript/main.tex)、[菜单量词审查](asym_research/common_phi_menu_quantifier_audit.md) |
-| 审查异构目录的上界和反例 | [异构证明重构](math/HETEROGENEOUS.md) | [异构手稿](asym_research/paper/main.tex)、[严格下界族](asym_research/tight_two_lower.md) |
-| 算出某实例的**最优**近似因子 | [精确方法与复杂性](math/COMPUTATION_AND_EXTENSIONS.md) | [有界交叠算法](asym_research/bounded_overlap.py)、[指数级 MITM](astra_ring/mitm_solver.py) |
+| 判断自己的问题是否符合假设 | [模型与量词](MODEL.md)、[使用说明](USAGE.md) | [共享目录手稿](manuscripts/shared_phi/main.tex)的模型段；[异构手稿](manuscripts/heterogeneous/main.tex)的模型段 |
+| 审查黄金比例算法的数学前提 | [共享证明重构](math/SHARED_PHI.md)、[局部博弈](math/LOCAL_GAME.md) | [25 页整合手稿](manuscripts/shared_phi/main.tex)、[菜单量词审查](evidence/audits/shared_menu_quantifiers.md) |
+| 审查异构目录的上界和反例 | [异构证明重构](math/HETEROGENEOUS.md) | [异构手稿](manuscripts/heterogeneous/main.tex)、[严格下界族](math/proofs/heterogeneous/tight_two_lower.md) |
+| 算出某实例的**最优**近似因子 | [精确方法与复杂性](math/COMPUTATION_AND_EXTENSIONS.md) | [有界交叠算法](facility_spe/exact/bounded_overlap.py)、[指数级 MITM](facility_spe/exact/mitm.py) |
 | 查证据、反例与历史纠正 | [证据台账](EVIDENCE.md)、[失败路线](FAILED_ROUTES.md)、[来源与版本](PROVENANCE.md) | 各条超边给出的原始手稿、程序及证书 |
 
 ## 模型和“可直接采用”的边界
@@ -22,8 +24,8 @@
 
 | 输入情形 | 当前成果可给什么 | 必须满足的限制 |
 | --- | --- | --- |
-| 两设施允许**相同**的非空有限目录；显式可达集合，正二进制有理数权重 | [共享构造器](common_phi_algorithm.py)声称以位数多项式时间给出因子 $\phi=(1+\sqrt5)/2$ 的精确客户均衡证书 | 必须是上述负载成本、两设施、覆盖客户必须参与、可存在性选择每个延续；它**不计算该实例的最优因子** |
-| 两设施允许**不同**目录 | [异构纯延续构造器](asym_research/r_menu_solver.py)声称给出因子 2；[六顶点家族](math/HETEROGENEOUS.md)趋近 2 | 该下界不能当作共同目录的下界 |
+| 两设施允许**相同**的非空有限目录；显式可达集合，正二进制有理数权重 | [共享构造器](facility_spe/shared_phi.py)声称以位数多项式时间给出因子 $\phi=(1+\sqrt5)/2$ 的精确客户均衡证书 | 必须是上述负载成本、两设施、覆盖客户必须参与、可存在性选择每个延续；它**不计算该实例的最优因子** |
+| 两设施允许**不同**目录 | [异构纯延续构造器](facility_spe/heterogeneous_two.py)声称给出因子 2；[六顶点家族](math/HETEROGENEOUS.md)趋近 2 | 该下界不能当作共同目录的下界 |
 | 两目录中至少一个至多两个地点，且每个跨目录地点对最多共享一个客户 | 候选精确普遍因子 $\rho=2\cos(\pi/7)$ | 两个限制必须**同时**成立；两个目录都任意大仍是开放问题 |
 | 需要特定实例的最优因子 | 用支持枚举、有界交叠或指数级精确算法 | 不能把快速普遍构造器的“菜单内最优”误认为实例最优 |
 

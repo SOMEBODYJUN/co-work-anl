@@ -42,14 +42,52 @@ def witness(s, t, data, first):
             "loads": [first, data["V"] - first]}
 
 
+def _rational(value, name):
+    if type(value) not in (int, str, Q):
+        raise ValueError(f"{name} must be an exact rational, not a bool or float")
+    try:
+        return Q(str(value))
+    except (ValueError, TypeError, ZeroDivisionError) as exc:
+        raise ValueError(f"{name} must be a rational number") from exc
+
+
+def _sequence(value, name):
+    if not isinstance(value, (list, tuple)):
+        raise ValueError(f"{name} must be a sequence")
+    return value
+
+
+def _indices(value, limit, name):
+    items = _sequence(value, name)
+    if any(type(i) is not int or not 0 <= i < limit for i in items):
+        raise ValueError(f"{name} contains an invalid integer index")
+    return items
+
+
+def parse(instance):
+    """Validate the full input, including pairs absent from a certificate."""
+    try:
+        weights = [_rational(v, "weight") for v in
+                   _sequence(instance["weights"], "weights")]
+        if any(v <= 0 for v in weights):
+            raise ValueError("weights must be positive")
+        sites = [set(_indices(v, len(weights), "location")) for v in
+                 _sequence(instance["locations"], "locations")]
+        u1 = list(dict.fromkeys(_indices(instance["U1"], len(sites), "U1")))
+        u2 = list(dict.fromkeys(_indices(instance["U2"], len(sites), "U2")))
+        if not u1 or not u2:
+            raise ValueError("both catalogs must be nonempty")
+        for s in u1:
+            for t in u2:
+                if len(sites[s] & sites[t]) > 1:
+                    raise ValueError(f"cross pair {(s,t)} has more than one shared customer")
+        return weights, sites, u1, u2
+    except (KeyError, TypeError) as exc:
+        raise ValueError("malformed instance") from exc
+
+
 def solve(instance):
-    weights = [Q(str(v)) for v in instance["weights"]]
-    if any(v <= 0 for v in weights):
-        raise ValueError("weights must be positive")
-    sites = [set(v) for v in instance["locations"]]
-    u1, u2 = list(dict.fromkeys(instance["U1"])), list(dict.fromkeys(instance["U2"]))
-    if not u1 or not u2:
-        raise ValueError("both catalogs must be nonempty")
+    weights, sites, u1, u2 = parse(instance)
     data = {(s,t):local(weights,sites,s,t) for s in u1 for t in u2}
     d1 = {t:max(data[s,t]["lo"] for s in u1) for t in u2}
     d2 = {s:max(data[s,t]["V"]-data[s,t]["hi"] for t in u2) for s in u1}
@@ -82,38 +120,65 @@ def solve(instance):
 
 
 def verify(instance,result):
-    """Verify attainment directly; optimality is supplied by solve's formulas."""
-    if not result["finite_factor_exists"]:
-        return
-    weights = [Q(str(v)) for v in instance["weights"]]
-    sites = [set(v) for v in instance["locations"]]
-    def check(rec):
-        s,t = rec["layout"]
-        common = sorted(sites[s]&sites[t])
-        assert common == rec["common"]
-        assert len(common) == len(rec["prob_first"])
-        x = sum((weights[i] for i in sites[s]-sites[t]),Q(0))
-        y = sum((weights[i] for i in sites[t]-sites[s]),Q(0))
-        for i,p in zip(common,rec["prob_first"]):
-            assert 0 <= p <= 1
-            x += weights[i]*p
-            y += weights[i]*(1-p)
-        assert [x,y] == rec["loads"]
-        for i,p in zip(common,rec["prob_first"]):
-            diff = x-y+weights[i]*(1-2*p)
-            assert (p == 0 or diff <= 0) and (p == 1 or diff >= 0)
-        return x,y
-    x,y = check(result["on_path"])
-    s,t = result["on_path"]["layout"]
-    expected = {(1,r,t) for r in instance["U1"] if r != s}
-    expected |= {(2,s,r) for r in instance["U2"] if r != t}
-    observed = set()
-    for rec in result["deviations"]:
-        a,b = check(rec["witness"])
-        ds,dt = rec["witness"]["layout"]
-        observed.add((rec["deviator"],ds,dt))
-        assert (a if rec["deviator"] == 1 else b) <= result["alpha"]*(x if rec["deviator"] == 1 else y)
-    assert observed == expected
+    """Verify a finite attainment certificate, without trusting solver metadata."""
+    weights, sites, u1, u2 = parse(instance)
+    try:
+        if result["finite_factor_exists"] is not True:
+            raise ValueError("a finite attainment certificate is required")
+        alpha = _rational(result["alpha"], "alpha")
+        if alpha < 1:
+            raise ValueError("alpha must be at least one")
+
+        def check(rec):
+            layout = _indices(rec["layout"], len(sites), "layout")
+            if len(layout) != 2:
+                raise ValueError("layout must contain two site indices")
+            s, t = layout
+            if s not in u1 or t not in u2:
+                raise ValueError("witness layout is outside the allowed catalogs")
+            common = sorted(sites[s] & sites[t])
+            recorded = _indices(rec["common"], len(weights), "common")
+            if common != list(recorded):
+                raise ValueError("incorrect common-customer list")
+            probs = [_rational(p, "probability") for p in
+                     _sequence(rec["prob_first"], "prob_first")]
+            if len(common) != len(probs) or any(not 0 <= p <= 1 for p in probs):
+                raise ValueError("invalid customer probabilities")
+            x = sum((weights[i] for i in sites[s]-sites[t]), Q(0))
+            y = sum((weights[i] for i in sites[t]-sites[s]), Q(0))
+            for i, p in zip(common, probs):
+                x += weights[i]*p
+                y += weights[i]*(1-p)
+            loads = [_rational(v, "load") for v in _sequence(rec["loads"], "loads")]
+            if [x,y] != loads:
+                raise ValueError("incorrect facility loads")
+            for i, p in zip(common, probs):
+                diff = x-y+weights[i]*(1-2*p)
+                if not ((p == 0 or diff <= 0) and (p == 1 or diff >= 0)):
+                    raise ValueError("customer assignment is not a Nash equilibrium")
+            return x, y
+
+        x, y = check(result["on_path"])
+        s, t = result["on_path"]["layout"]
+        expected = {(1,r,t) for r in u1 if r != s}
+        expected |= {(2,s,r) for r in u2 if r != t}
+        observed = set()
+        for rec in _sequence(result["deviations"], "deviations"):
+            who = rec["deviator"]
+            if type(who) is not int or who not in (1,2):
+                raise ValueError("invalid deviating facility")
+            a, b = check(rec["witness"])
+            ds, dt = rec["witness"]["layout"]
+            key = (who, ds, dt)
+            if key not in expected or key in observed:
+                raise ValueError("illegal or duplicated unilateral deviation")
+            observed.add(key)
+            if (a if who == 1 else b) > alpha*(x if who == 1 else y):
+                raise ValueError("facility deviation violates the claimed factor")
+        if observed != expected:
+            raise ValueError("missing unilateral deviations")
+    except (KeyError, TypeError, IndexError) as exc:
+        raise ValueError("malformed certificate") from exc
 
 
 def serial(value):
@@ -131,5 +196,5 @@ if __name__ == "__main__":
     parser.add_argument("input")
     args = parser.parse_args()
     with open(args.input) as f:
-        instance = json.load(f)
+        instance = json.load(f, parse_float=str)
     print(json.dumps(serial(solve(instance)),ensure_ascii=False,indent=2))

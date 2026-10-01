@@ -11,17 +11,44 @@ import argparse
 import json
 
 
+def _rational(value, name):
+    if isinstance(value, bool) or not isinstance(value, (int, str, Q)):
+        raise ValueError(f'{name} must be an exact rational, not a bool or float')
+    try:
+        return Q(value)
+    except (ValueError, ZeroDivisionError) as exc:
+        raise ValueError(f'{name} must be a finite exact rational') from exc
+
+
+def _sequence(value, name):
+    if not isinstance(value, (list, tuple)):
+        raise ValueError(f'{name} must be an array')
+    return value
+
+
+def _indices(value, size, name):
+    values = _sequence(value, name)
+    if any(type(i) is not int or not 0 <= i < size for i in values):
+        raise ValueError(f'{name} contains an invalid integer index')
+    return values
+
+
 def parse(instance):
-    w = [Q(str(x)) for x in instance['weights']]
-    sites = [set(x) for x in instance['locations']]
-    u1 = list(dict.fromkeys(instance['U1']))
-    u2 = list(dict.fromkeys(instance['U2']))
-    if not u1 or not u2 or any(x <= 0 for x in w):
-        raise ValueError('positive weights and nonempty catalogs are required')
-    if any(not 0 <= i < len(w) for s in sites for i in s):
-        raise ValueError('bad client index')
-    if any(not 0 <= s < len(sites) for s in u1+u2):
-        raise ValueError('bad location index')
+    if not isinstance(instance, dict):
+        raise ValueError('instance must be an object')
+    try:
+        w = [_rational(x, 'weight') for x in
+             _sequence(instance['weights'], 'weights')]
+        if any(x <= 0 for x in w):
+            raise ValueError('weights must be positive')
+        sites = [set(_indices(x, len(w), 'location customers')) for x in
+                 _sequence(instance['locations'], 'locations')]
+        u1 = list(dict.fromkeys(_indices(instance['U1'], len(sites), 'U1')))
+        u2 = list(dict.fromkeys(_indices(instance['U2'], len(sites), 'U2')))
+    except KeyError as exc:
+        raise ValueError(f'missing input field: {exc.args[0]}') from exc
+    if not u1 or not u2:
+        raise ValueError('nonempty catalogs are required')
     return w, sites, u1, u2
 
 
@@ -117,42 +144,70 @@ def solve(instance):
 
 
 def verify(instance,result):
-    """Checks attainment directly, without invoking the support enumerator."""
-    if not result['finite_factor_exists']:
-        return
+    """Check a finite attainment certificate without support enumeration.
+
+    Negative existence reports cannot be certified by this witness checker.
+    Validation uses explicit exceptions and remains active under python -O.
+    """
     w,sites,u1,u2 = parse(instance)
-    alpha = Q(result['alpha'])
-    assert alpha >= 1
+
+    def require(condition, message):
+        if not condition:
+            raise ValueError(message)
+
+    def field(obj, key):
+        require(isinstance(obj, dict), 'certificate records must be objects')
+        require(key in obj, f'missing certificate field: {key}')
+        return obj[key]
+
+    require(field(result, 'finite_factor_exists') is True,
+            'a finite attainment witness is required; negative reports are not verified')
+    alpha = _rational(field(result, 'alpha'), 'alpha')
+    require(alpha >= 1, 'alpha must be at least one')
+
     def check(rec):
-        s,t = rec['layout']
-        assert s in u1 and t in u2
+        layout = _indices(field(rec, 'layout'), len(sites), 'layout')
+        require(len(layout) == 2, 'layout must contain two locations')
+        s,t = layout
+        require(s in u1 and t in u2, 'layout is outside the permitted catalogs')
         common = sorted(sites[s]&sites[t])
-        assert common == rec['shared']
-        p = list(map(Q,rec['prob_first']))
-        assert len(common) == len(p)
-        assert all(0 <= z <= 1 for z in p)
+        shared = _indices(field(rec, 'shared'), len(w), 'shared')
+        require(common == list(shared), 'shared customer IDs do not match the layout')
+        p = [_rational(z, 'probability') for z in
+             _sequence(field(rec, 'prob_first'), 'prob_first')]
+        require(len(common) == len(p), 'wrong probability vector length')
+        require(all(0 <= z <= 1 for z in p), 'probabilities must lie in [0,1]')
         x = sum((w[i] for i in sites[s]-sites[t]),Q(0))
         y = sum((w[i] for i in sites[t]-sites[s]),Q(0))
         x += sum((w[i]*z for i,z in zip(common,p)),Q(0))
         y += sum((w[i]*(1-z) for i,z in zip(common,p)),Q(0))
-        assert [x,y] == list(map(Q,rec['loads']))
+        loads = [_rational(z, 'load') for z in
+                 _sequence(field(rec, 'loads'), 'loads')]
+        require([x,y] == loads, 'reported loads do not match probabilities')
         for i,z in zip(common,p):
             diff = x-y+w[i]*(1-2*z)
-            assert (z == 0 or diff <= 0) and (z == 1 or diff >= 0)
+            require((z == 0 or diff <= 0) and (z == 1 or diff >= 0),
+                    'customer continuation is not an exact Nash equilibrium')
         return x,y
-    x,y = check(result['on_path'])
-    s,t = result['on_path']['layout']
+
+    on_path = field(result, 'on_path')
+    x,y = check(on_path)
+    s,t = on_path['layout']
     expected = {(1,r,t) for r in u1 if r != s}|{(2,s,r) for r in u2 if r != t}
     seen = set()
-    for rec in result['deviations']:
-        a,b = check(rec['witness'])
-        ds,dt = rec['witness']['layout']
-        assert rec['deviator'] in (1,2)
-        key = rec['deviator'],ds,dt
-        assert key not in seen
+    for rec in _sequence(field(result, 'deviations'), 'deviations'):
+        deviator = field(rec, 'deviator')
+        require(type(deviator) is int and deviator in (1,2), 'invalid deviator')
+        witness_rec = field(rec, 'witness')
+        a,b = check(witness_rec)
+        ds,dt = witness_rec['layout']
+        key = deviator,ds,dt
+        require(key in expected, 'witness is not an actual unilateral deviation')
+        require(key not in seen, 'duplicate deviation witness')
         seen.add(key)
-        assert (a if rec['deviator'] == 1 else b) <= alpha*(x if rec['deviator'] == 1 else y)
-    assert seen == expected
+        require((a if deviator == 1 else b) <= alpha*(x if deviator == 1 else y),
+                'facility deviation exceeds the reported factor')
+    require(seen == expected, 'missing deviation witnesses')
 
 
 def serial(value):
@@ -167,7 +222,7 @@ if __name__ == '__main__':
     parser.add_argument('input')
     parser.add_argument('--output')
     args = parser.parse_args()
-    with open(args.input) as f: instance = json.load(f)
+    with open(args.input) as f: instance = json.load(f, parse_float=str)
     text = json.dumps(serial(solve(instance)),ensure_ascii=False,indent=2)
     if args.output:
         with open(args.output,'w') as f:f.write(text+'\n')

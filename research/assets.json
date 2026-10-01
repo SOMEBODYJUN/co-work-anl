@@ -1,0 +1,281 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "shared_phi",
+      "claims": [
+        "SC-PHI-E",
+        "SC-PHI-A"
+      ],
+      "status": "internally audited candidate",
+      "applies_when": [
+        "two labeled facilities share the same nonempty finite catalog",
+        "explicit incidence, positive binary rational weights for bit-time claim",
+        "covered customers must choose; linear realized-load cost; independently mixed exact customer NE",
+        "one continuation NE can be selected independently per labeled layout"
+      ],
+      "produces": "phi-bounded pure-location certificate; not the instance-optimal factor",
+      "implementation": [
+        "facility_spe/shared_phi.py",
+        "facility_spe/local/pure.py",
+        "facility_spe/local/strong_chord.py",
+        "facility_spe/cli/verify_phi.py"
+      ],
+      "proof": [
+        "manuscripts/shared_phi/main.tex",
+        "math/SHARED_PHI.md",
+        "math/proofs/shared/menu_algorithm.md"
+      ],
+      "tests": [
+        "tests/test_shared_phi.py",
+        "tests/audits/shared_menu.py",
+        "tests/audits/strong_chord_iff.py"
+      ],
+      "records": [
+        "evidence/runs/2026-09-30/shared_phi.json",
+        "evidence/audits/shared_menu_quantifiers.md"
+      ],
+      "examples": [
+        "examples/shared/tiny.json",
+        "evidence/certificates/shared/tiny_phi.json"
+      ],
+      "limit": "753 full games selected no on-path C; universal cycle/exchange proof awaits external reconstruction; CLI verifier shares code"
+    },
+    {
+      "id": "heterogeneous_two",
+      "claims": [
+        "HC-2-UP",
+        "HC-2-LOW",
+        "HC-2-SHARP"
+      ],
+      "status": "internally audited candidate",
+      "applies_when": [
+        "two nonempty finite catalogs may differ or be disjoint",
+        "explicit incidence and positive rational weights",
+        "mandatory patronage with linear realized-load cost",
+        "pure exact customer NE used for every selected continuation"
+      ],
+      "produces": "factor-2 pure certificate; separate lower family tends to 2",
+      "implementation": [
+        "facility_spe/heterogeneous_two.py",
+        "facility_spe/local/pure.py",
+        "facility_spe/examples/tight_two.py"
+      ],
+      "proof": [
+        "manuscripts/heterogeneous/main.tex",
+        "math/HETEROGENEOUS.md",
+        "math/proofs/heterogeneous/tight_two_lower.md"
+      ],
+      "tests": [
+        "tests/test_heterogeneous.py",
+        "tests/test_four_seed.py"
+      ],
+      "records": [
+        "evidence/runs/2026-09-30/heterogeneous_four_seed.json",
+        "evidence/runs/2026-09-30/heterogeneous_all_singletons.json"
+      ],
+      "examples": [
+        "examples/heterogeneous/tight_two_M1000.json",
+        "evidence/certificates/heterogeneous/tight_two_M1000.json"
+      ],
+      "limit": "not a phi claim for unequal catalogs; four-seed proof and priority require external review"
+    },
+    {
+      "id": "restricted_rho",
+      "claims": [
+        "HC-RHO"
+      ],
+      "status": "internally audited candidate",
+      "applies_when": [
+        "both max cross-pair overlap <=1 and min catalog cardinality <=2",
+        "two nonempty finite facility catalogs, positive rational weights",
+        "mandatory patronage and linear realized-load cost"
+      ],
+      "produces": "restricted sharp universal rho claim; exact single-overlap solver computes an instance optimum",
+      "implementation": [
+        "facility_spe/exact/single_overlap.py"
+      ],
+      "proof": [
+        "manuscripts/heterogeneous/main.tex",
+        "math/HETEROGENEOUS.md",
+        "history/proofs/heterogeneous/sparse_lower_prior.md"
+      ],
+      "tests": [
+        "tests/test_heterogeneous.py"
+      ],
+      "records": [
+        "evidence/audits/heterogeneous_classification.md"
+      ],
+      "examples": [
+        "examples/heterogeneous/rho_lower.json"
+      ],
+      "limit": "rho for two arbitrary-size catalogs is open; historical lower note section 11 is superseded"
+    },
+    {
+      "id": "strong_chord",
+      "claims": [
+        "LOCAL-CHORD-IFF",
+        "LOCAL-CHORD-POLY"
+      ],
+      "status": "internally audited candidate",
+      "applies_when": [
+        "one two-location local game with reaches U>=V>phi*U/2 and common mass C<V/phi",
+        "quota test is L_U>=V/phi and L_V>=U/phi",
+        "rational input for bit-complexity statement"
+      ],
+      "produces": "local quota NE under exact largest-atom iff; supports arbitrarily many mixers",
+      "implementation": [
+        "facility_spe/local/strong_chord.py"
+      ],
+      "proof": [
+        "manuscripts/shared_phi/main.tex",
+        "math/LOCAL_GAME.md",
+        "math/proofs/local/chord_exchange.md"
+      ],
+      "tests": [
+        "tests/audits/strong_chord_iff.py"
+      ],
+      "records": [
+        "evidence/runs/2026-09-30/strong_chord.json"
+      ],
+      "examples": [],
+      "limit": "pair-local exchange is not a global quadratic maximizer"
+    },
+    {
+      "id": "exact_overlap",
+      "claims": [
+        "EXACT-KAPPA"
+      ],
+      "status": "internally audited algorithm/proof candidate",
+      "applies_when": [
+        "two facilities, arbitrary catalogs, positive rational weights",
+        "linear realized-load cost, independent mixed customer NE",
+        "kappa is maximum number of common customers at a legal pair"
+      ],
+      "produces": "instance-optimal alpha and attaining continuation certificate in time exponential in kappa",
+      "implementation": [
+        "facility_spe/exact/bounded_overlap.py"
+      ],
+      "proof": [
+        "math/proofs/exact/bounded_overlap.md",
+        "math/COMPUTATION_AND_EXTENSIONS.md"
+      ],
+      "tests": [
+        "tests/test_heterogeneous.py"
+      ],
+      "records": [],
+      "examples": [
+        "examples/heterogeneous/tight_two_M1000.json"
+      ],
+      "limit": "its attainment verifier does not by itself certify global optimality; exhaustive support proof is required"
+    },
+    {
+      "id": "integer_spectrum",
+      "claims": [
+        "DP-W",
+        "FPT-D",
+        "LOCAL-HARD"
+      ],
+      "status": "proof candidate; DP implementation; FPT reduction unimplemented",
+      "applies_when": [
+        "one fixed local pair",
+        "integer common weights totaling W for pseudo-polynomial DP",
+        "d explicitly listed distinct rational weights for fixed-dimensional ILP",
+        "binary integer weights for weak hardness statement"
+      ],
+      "produces": "local NE spectrum/extrema/quotas; no global universal algorithm",
+      "implementation": [
+        "facility_spe/exact/threshold_dp.py"
+      ],
+      "proof": [
+        "math/proofs/local/exact_methods.md",
+        "math/proofs/local/hardness.md"
+      ],
+      "tests": [
+        "tests/audits/hardness_enum.py"
+      ],
+      "records": [],
+      "examples": [],
+      "limit": "DP is pseudo-polynomial in W; local hardness does not imply global phi hardness"
+    },
+    {
+      "id": "mitm_exact",
+      "claims": [
+        "MITM-EXACT"
+      ],
+      "status": "exact exponential research implementation",
+      "applies_when": [
+        "one local pair or two-facility full game",
+        "positive rational weights and linear realized-load costs",
+        "overlap unconstrained, exponential support search accepted"
+      ],
+      "produces": "exact local extrema and instance-optimal full-game factor with exponential worst case",
+      "implementation": [
+        "facility_spe/exact/mitm.py",
+        "facility_spe/cli/lazy_ring.py"
+      ],
+      "proof": [
+        "history/proofs/local/mitm_research_log.md",
+        "math/COMPUTATION_AND_EXTENSIONS.md"
+      ],
+      "tests": [
+        "tests/test_lazy_ring.py"
+      ],
+      "records": [
+        "evidence/runs/2026-09-30/mitm.json",
+        "evidence/runs/2026-09-30/lazy_ring.json"
+      ],
+      "examples": [
+        "examples/shared/tiny.json",
+        "evidence/certificates/shared/tiny_optimal.json"
+      ],
+      "limit": "lazy pruning is sound but has no polynomial worst-case guarantee"
+    },
+    {
+      "id": "quadratic_extension",
+      "claims": [
+        "QUAD-EQ",
+        "QUAD-PHI"
+      ],
+      "status": "direct local algebra; conditional global transfer",
+      "applies_when": [
+        "exactly two facilities and mandatory patronage",
+        "each customer uses the same strictly increasing quadratic at both facilities",
+        "a_i,b_i>=0 and a_i+b_i>0"
+      ],
+      "produces": "identical local pure/independent mixed/CE/CCE equilibrium constraints; phi transfer conditional on SC-PHI-E",
+      "implementation": [],
+      "proof": [
+        "math/proofs/extensions/quadratic.md",
+        "math/COMPUTATION_AND_EXTENSIONS.md"
+      ],
+      "tests": [],
+      "records": [
+        "evidence/audits/cost_extensions.md"
+      ],
+      "examples": [],
+      "limit": "no analogous full mixed correspondence for arbitrary convex costs"
+    },
+    {
+      "id": "polyhedral_continuation",
+      "claims": [
+        "POLY-CONT"
+      ],
+      "status": "internally derived, unimplemented",
+      "applies_when": [
+        "nonnegative two-leader payoffs and independently selectable continuations",
+        "explicit polynomial-size union of rational payoff polytopes per labeled pair",
+        "effective continuation realization needed for witness output"
+      ],
+      "produces": "optimal first-stage factor via rational polyhedral optimization",
+      "implementation": [],
+      "proof": [
+        "math/proofs/extensions/polyhedral_continuations.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "limit": "not a polynomial solver for arbitrary nonlinear customer games"
+    }
+  ]
+}
