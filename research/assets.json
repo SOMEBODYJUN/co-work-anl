@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "entries": [
     {
       "id": "shared_phi",
@@ -22,9 +22,10 @@
         "facility_spe/cli/verify_phi.py"
       ],
       "proof": [
-        "manuscripts/shared_phi/main.tex",
-        "math/SHARED_PHI.md",
-        "math/proofs/shared/menu_algorithm.md"
+        "research/current/model.md",
+        "research/current/shared/theorems.md",
+        "research/current/shared/proof.md",
+        "research/current/shared/algorithm.md"
       ],
       "tests": [
         "tests/test_shared_phi.py",
@@ -32,14 +33,19 @@
         "tests/audits/strong_chord_iff.py"
       ],
       "records": [
-        "evidence/runs/2026-09-30/shared_phi.json",
-        "evidence/audits/shared_menu_quantifiers.md"
+        "evidence/runs/2026-09-30/shared_phi.json"
       ],
       "examples": [
         "examples/shared/tiny.json",
         "evidence/certificates/shared/tiny_phi.json"
       ],
-      "limit": "753 full games selected no on-path C; universal cycle/exchange proof awaits external reconstruction; CLI verifier shares code"
+      "limit": "Current new proof records open independent reconstruction obligations G1-G3 and L1-L2; concrete certificates do not settle universal theorem or instance optimality.",
+      "sources": [
+        "history/source/manuscripts/shared_phi/main.tex",
+        "history/curation-2026-10-01/SHARED_PHI.md",
+        "history/source/notes/shared/menu_algorithm.md",
+        "history/source/audits/shared_menu_quantifiers.md"
+      ]
     },
     {
       "id": "heterogeneous_two",
@@ -62,9 +68,10 @@
         "facility_spe/examples/tight_two.py"
       ],
       "proof": [
-        "manuscripts/heterogeneous/main.tex",
-        "math/HETEROGENEOUS.md",
-        "math/proofs/heterogeneous/tight_two_lower.md"
+        "research/current/model.md",
+        "research/current/heterogeneous/four_seed_algorithm.md",
+        "research/current/heterogeneous/full_catalog_cycle.md",
+        "research/current/heterogeneous/sharp_two_lower.md"
       ],
       "tests": [
         "tests/test_heterogeneous.py",
@@ -78,7 +85,12 @@
         "examples/heterogeneous/tight_two_M1000.json",
         "evidence/certificates/heterogeneous/tight_two_M1000.json"
       ],
-      "limit": "not a phi claim for unequal catalogs; four-seed proof and priority require external review"
+      "limit": "New cycle argument requires external independent reconstruction; factor 2 is not a shared-catalog lower bound.",
+      "sources": [
+        "history/source/manuscripts/heterogeneous/main.tex",
+        "history/curation-2026-10-01/HETEROGENEOUS.md",
+        "history/source/notes/heterogeneous/tight_two_lower.md"
+      ]
     },
     {
       "id": "restricted_rho",
@@ -96,20 +108,22 @@
         "facility_spe/exact/single_overlap.py"
       ],
       "proof": [
-        "manuscripts/heterogeneous/main.tex",
-        "math/HETEROGENEOUS.md",
-        "history/proofs/heterogeneous/sparse_lower_prior.md"
+        "research/current/heterogeneous/restricted_rho.md"
       ],
       "tests": [
         "tests/test_heterogeneous.py"
       ],
-      "records": [
-        "evidence/audits/heterogeneous_classification.md"
-      ],
+      "records": [],
       "examples": [
         "examples/heterogeneous/rho_lower.json"
       ],
-      "limit": "rho for two arbitrary-size catalogs is open; historical lower note section 11 is superseded"
+      "limit": "Both restrictions are required for universal rho; exact single-overlap solver alone is not the theorem.",
+      "sources": [
+        "history/source/manuscripts/heterogeneous/main.tex",
+        "history/curation-2026-10-01/HETEROGENEOUS.md",
+        "history/proofs/heterogeneous/sparse_lower_prior.md",
+        "history/source/audits/heterogeneous_classification.md"
+      ]
     },
     {
       "id": "strong_chord",
@@ -128,9 +142,7 @@
         "facility_spe/local/strong_chord.py"
       ],
       "proof": [
-        "manuscripts/shared_phi/main.tex",
-        "math/LOCAL_GAME.md",
-        "math/proofs/local/chord_exchange.md"
+        "research/current/local_and_exact/local_geometry_and_chord.md"
       ],
       "tests": [
         "tests/audits/strong_chord_iff.py"
@@ -139,7 +151,12 @@
         "evidence/runs/2026-09-30/strong_chord.json"
       ],
       "examples": [],
-      "limit": "pair-local exchange is not a global quadratic maximizer"
+      "limit": "pair-local exchange is not a global quadratic maximizer",
+      "sources": [
+        "history/source/manuscripts/shared_phi/main.tex",
+        "history/curation-2026-10-01/LOCAL_GAME.md",
+        "history/source/notes/local/chord_exchange.md"
+      ]
     },
     {
       "id": "exact_overlap",
@@ -157,8 +174,7 @@
         "facility_spe/exact/bounded_overlap.py"
       ],
       "proof": [
-        "math/proofs/exact/bounded_overlap.md",
-        "math/COMPUTATION_AND_EXTENSIONS.md"
+        "research/current/local_and_exact/exact_algorithms_and_extensions.md"
       ],
       "tests": [
         "tests/test_heterogeneous.py"
@@ -167,7 +183,11 @@
       "examples": [
         "examples/heterogeneous/tight_two_M1000.json"
       ],
-      "limit": "its attainment verifier does not by itself certify global optimality; exhaustive support proof is required"
+      "limit": "its attainment verifier does not by itself certify global optimality; exhaustive support proof is required",
+      "sources": [
+        "history/source/notes/exact/bounded_overlap.md",
+        "history/curation-2026-10-01/COMPUTATION_AND_EXTENSIONS.md"
+      ]
     },
     {
       "id": "integer_spectrum",
@@ -188,15 +208,18 @@
         "facility_spe/exact/threshold_dp.py"
       ],
       "proof": [
-        "math/proofs/local/exact_methods.md",
-        "math/proofs/local/hardness.md"
+        "research/current/local_and_exact/exact_algorithms_and_extensions.md"
       ],
       "tests": [
         "tests/audits/hardness_enum.py"
       ],
       "records": [],
       "examples": [],
-      "limit": "DP is pseudo-polynomial in W; local hardness does not imply global phi hardness"
+      "limit": "DP is pseudo-polynomial in W; local hardness does not imply global phi hardness",
+      "sources": [
+        "history/source/notes/local/exact_methods.md",
+        "history/source/notes/local/hardness.md"
+      ]
     },
     {
       "id": "mitm_exact",
@@ -215,8 +238,7 @@
         "facility_spe/cli/lazy_ring.py"
       ],
       "proof": [
-        "history/proofs/local/mitm_research_log.md",
-        "math/COMPUTATION_AND_EXTENSIONS.md"
+        "research/current/local_and_exact/exact_algorithms_and_extensions.md"
       ],
       "tests": [
         "tests/test_lazy_ring.py"
@@ -229,7 +251,11 @@
         "examples/shared/tiny.json",
         "evidence/certificates/shared/tiny_optimal.json"
       ],
-      "limit": "lazy pruning is sound but has no polynomial worst-case guarantee"
+      "limit": "lazy pruning is sound but has no polynomial worst-case guarantee",
+      "sources": [
+        "history/proofs/local/mitm_research_log.md",
+        "history/curation-2026-10-01/COMPUTATION_AND_EXTENSIONS.md"
+      ]
     },
     {
       "id": "quadratic_extension",
@@ -246,15 +272,17 @@
       "produces": "identical local pure/independent mixed/CE/CCE equilibrium constraints; phi transfer conditional on SC-PHI-E",
       "implementation": [],
       "proof": [
-        "math/proofs/extensions/quadratic.md",
-        "math/COMPUTATION_AND_EXTENSIONS.md"
+        "research/current/local_and_exact/exact_algorithms_and_extensions.md"
       ],
       "tests": [],
-      "records": [
-        "evidence/audits/cost_extensions.md"
-      ],
+      "records": [],
       "examples": [],
-      "limit": "no analogous full mixed correspondence for arbitrary convex costs"
+      "limit": "no analogous full mixed correspondence for arbitrary convex costs",
+      "sources": [
+        "history/source/notes/extensions/quadratic.md",
+        "history/curation-2026-10-01/COMPUTATION_AND_EXTENSIONS.md",
+        "history/source/audits/cost_extensions.md"
+      ]
     },
     {
       "id": "polyhedral_continuation",
@@ -270,12 +298,89 @@
       "produces": "optimal first-stage factor via rational polyhedral optimization",
       "implementation": [],
       "proof": [
-        "math/proofs/extensions/polyhedral_continuations.md"
+        "research/current/local_and_exact/exact_algorithms_and_extensions.md"
       ],
       "tests": [],
       "records": [],
       "examples": [],
-      "limit": "not a polynomial solver for arbitrary nonlinear customer games"
+      "limit": "not a polynomial solver for arbitrary nonlinear customer games",
+      "sources": [
+        "history/source/notes/extensions/polyhedral_continuations.md"
+      ]
+    },
+    {
+      "id": "shared_sharp_scope",
+      "claims": [
+        "SC-PHI-SHARP"
+      ],
+      "status": "conditional candidate pending published lower-bound model transfer",
+      "applies_when": [
+        "SC-PHI-E upper theorem accepted for the same shared-catalog class",
+        "published lower instance actually embeds in that shared positive-rational incidence class with strict perturbation"
+      ],
+      "produces": "sharp universal threshold phi for the shared positive-rational class, conditional on both premises",
+      "implementation": [],
+      "proof": [
+        "research/current/shared/theorems.md"
+      ],
+      "sources": [
+        "history/source/manuscripts/shared_phi/main.tex",
+        "history/curation-2026-10-01/LITERATURE.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "limit": "published statement alone does not establish the exact shared-catalog rational transfer"
+    },
+    {
+      "id": "closed_response_core",
+      "claims": [
+        "CORE-LIFT"
+      ],
+      "status": "direct structural derivation, internal manuscript source",
+      "applies_when": [
+        "two finite nonempty leader catalogs with nonnegative payoffs",
+        "nonempty independently selectable exact continuation sets at each labeled pair",
+        "each coordinate minimum is attained"
+      ],
+      "produces": "balanced simple response-cycle core with both full-catalog threats preserved and stable selection lifting",
+      "implementation": [],
+      "proof": [
+        "research/current/heterogeneous/core_lift_and_monotone.md"
+      ],
+      "sources": [
+        "history/source/manuscripts/heterogeneous/main.tex",
+        "history/source/notes/heterogeneous/response_core.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "limit": "finding true coordinate minima need not be efficient; menu-based version must use the same menu throughout"
+    },
+    {
+      "id": "monotone_pure_cost",
+      "claims": [
+        "HC-MONOTONE"
+      ],
+      "status": "conditional transfer of pure construction and strict lower family",
+      "applies_when": [
+        "exactly two facilities, mandatory patronage",
+        "each customer uses its own same-at-both-facilities strictly increasing function of realized load",
+        "only pure customer continuations or pointwise strict dominance are transferred"
+      ],
+      "produces": "factor-2 and restricted-rho pure claims transfer conditional on their original proofs; sharp lower family persists",
+      "implementation": [],
+      "proof": [
+        "research/current/heterogeneous/core_lift_and_monotone.md",
+        "research/current/heterogeneous/sharp_two_lower.md"
+      ],
+      "sources": [
+        "history/source/manuscripts/heterogeneous/main.tex"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "limit": "no preservation of arbitrary independently mixed NE sets or general nonlinear implementation"
     }
   ]
 }

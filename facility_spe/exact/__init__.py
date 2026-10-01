@@ -1,1 +1,1 @@
-"""Two-facility research algorithms; theorem scopes are in CLAIMS.md."""
+"""Two-facility research algorithms; theorem scopes are in research/current/claims.md."""

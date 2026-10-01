@@ -23,21 +23,40 @@ def check() -> None:
     graph = load("graph.json")
     migration = load("path_migration.json")
     node_ids = {node["id"] for node in graph["nodes"]}
+    for item in graph["nodes"] + graph["hyperedges"]:
+        require(any(ref.startswith("research/current/") for ref in item["refs"]),
+                ("mathematical relation lacks a current account", item["id"]))
     entry_ids = set()
     implementations = set()
     referenced = set()
+    covered_claims = set()
     for entry in assets:
         require(entry["id"] not in entry_ids, entry["id"])
         entry_ids.add(entry["id"])
         require(entry["claims"] and set(entry["claims"]) <= node_ids, entry["id"])
+        covered_claims.update(entry["claims"])
         require(entry["applies_when"] and entry["status"] and entry["produces"], entry["id"])
-        require(entry["proof"] and entry["limit"], entry["id"])
-        for field in ("implementation", "proof", "tests", "records", "examples"):
+        require(entry["proof"] and entry["sources"] and entry["limit"], entry["id"])
+        for field in ("implementation", "proof", "sources", "tests", "records", "examples"):
             for path in entry[field]:
                 require((ROOT / path).is_file(), (entry["id"], path))
+                expected = {"implementation": "facility_spe/",
+                            "proof": "research/current/",
+                            "sources": "history/",
+                            "tests": "tests/",
+                            "records": "evidence/"}
+                if field in expected:
+                    require(path.startswith(expected[field]),
+                            ("incorrect asset role", entry["id"], field, path))
+                if field == "examples":
+                    require(path.startswith(("examples/", "evidence/certificates/")),
+                            ("incorrect example/certificate role", entry["id"], path))
                 referenced.add(path)
                 if field == "implementation":
                     implementations.add(path)
+    all_claims = {node["id"] for node in graph["nodes"] if node["kind"] == "claim"}
+    require(all_claims <= covered_claims,
+            ("unclassified mathematical claim", sorted(all_claims - covered_claims)))
     canonical = {
         path.relative_to(ROOT).as_posix()
         for path in (ROOT / "facility_spe").rglob("*.py")
@@ -46,31 +65,36 @@ def check() -> None:
     require(canonical <= implementations, ("unclassified implementation", canonical - implementations))
     for old, new in migration["moved"].items():
         require((ROOT / new).is_file(), (old, new))
-        if (ROOT / old).exists():
-            require((ROOT / old).read_text().startswith(
-                "#!/usr/bin/env python3\n\"\"\"Compatibility entry point"
-            ), ("unexpected old copy", old))
-    for old, new in migration["canonical_code_with_compatibility_entrypoints"].items():
-        require((ROOT / old).is_file() and (ROOT / new).is_file(), (old, new))
-        require("Compatibility entry point" in (ROOT / old).read_text(), old)
+        require(not (ROOT / old).exists(), ("retired path still exists", old))
+    for old, new in migration["retired_code_paths"].items():
+        require(not (ROOT / old).exists() and (ROOT / new).is_file(), (old, new))
+    crosswalk = load("source_crosswalk.json")["entries"]
+    originals = {row["original"]: row for row in crosswalk}
+    expected_origins = {**migration["moved"], **migration["retired_code_paths"]}
+    require(len(originals) == len(crosswalk) and set(originals) == set(expected_origins),
+            "every original source/code path needs one current interpretation")
+    for old, row in originals.items():
+        require(row["preserved_at"] == expected_origins[old]
+                and (ROOT / row["rewritten_in"]).is_file()
+                and row["interpretation"], ("invalid source interpretation", old))
+    for old, new in migration["first_curation_retired"].items():
+        require(not (ROOT / old).exists() and (ROOT / new).is_file(), (old, new))
     tracked = subprocess.check_output(
         ["git", "ls-files", "--cached", "--others", "--exclude-standard"],
         cwd=ROOT, text=True
     ).splitlines()
-    roots = {"math", "manuscripts", "facility_spe", "tests", "examples",
-             "evidence", "history", "research"}
-    legacy = set(migration["canonical_code_with_compatibility_entrypoints"])
-    legacy |= {old for old in migration["moved"] if (ROOT / old).exists()}
-    root_docs = {".gitignore", "README.md", "MODEL.md", "CLAIMS.md", "ASSETS.md",
-                 "RESEARCH_STATE.md", "FAILED_ROUTES.md", "EVIDENCE.md",
-                 "PROVENANCE.md", "LITERATURE.md", "USAGE.md"}
+    roots = {"facility_spe", "tests", "examples", "evidence", "history", "research"}
+    root_docs = {".gitignore", "AGENTS.md", "README.md", "ASSETS.md", "USAGE.md"}
     unknown = {p for p in tracked if p.split("/", 1)[0] not in roots
-               and p not in legacy and p not in root_docs}
+               and p not in root_docs}
     require(not unknown, ("unclassified repository files", sorted(unknown)))
-    for group in ("manuscripts", "math/proofs", "evidence", "examples", "history"):
+    for group in ("history/source/manuscripts", "history/source/notes",
+                  "evidence", "examples", "research/current"):
         require(any(p.startswith(group + "/") for p in tracked), group)
     print(f"Validated {len(assets)} scoped asset routes, {len(implementations)} implementations, "
-          f"{len(migration['moved'])} moved files, {len(tracked)} indexed paths")
+          f"{len(migration['moved'])} sourced files, "
+          f"{len(crosswalk)} individually interpreted origins, "
+          f"{len(tracked)} indexed paths")
 
 
 if __name__ == "__main__":

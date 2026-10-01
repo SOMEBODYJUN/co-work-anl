@@ -1,0 +1,93 @@
+# 逐文件来源解释表
+
+每一行把一个原始文件或旧代码入口连接到本轮重新撰写的现行数学内容。
+历史手稿保留原状供核对；证据、测试和唯一代码在其专门目录。
+这个表不把原稿自动当作已经证明的现行命题。
+
+## 原手稿、笔记、审计与旧路线
+
+| 原始路径 | 当前保存位置 | 新写的解释 | 判断 |
+| --- | --- | --- | --- |
+| `phi_n_manuscript/README.md` | [history/source/manuscripts/shared_phi/README.md](../history/source/manuscripts/shared_phi/README.md) | [research/current/shared/README.md](../research/current/shared/README.md) | 原手稿目录说明；以新共享分支入口说明当前状态 |
+| `phi_n_manuscript/build_manuscript.py` | [history/source/manuscripts/shared_phi/build_manuscript.py](../history/source/manuscripts/shared_phi/build_manuscript.py) | [research/current/shared/algorithm.md](../research/current/shared/algorithm.md) | 原稿构建脚本留存历史；现行算法与复杂度重新叙述 |
+| `phi_n_manuscript/main.tex` | [history/source/manuscripts/shared_phi/main.tex](../history/source/manuscripts/shared_phi/main.tex) | [research/current/shared/proof.md](../research/current/shared/proof.md) | 完整共享证明候选来源；新稿重建推导并逐项标出 G/L 义务 |
+| `phi_n_manuscript/main.pdf` | [history/source/manuscripts/shared_phi/main.pdf](../history/source/manuscripts/shared_phi/main.pdf) | [research/current/shared/theorems.md](../research/current/shared/theorems.md) | 当时手稿渲染快照；当前量词和审查状态另写 |
+| `asym_research/paper/README.md` | [history/source/manuscripts/heterogeneous/README.md](../history/source/manuscripts/heterogeneous/README.md) | [research/current/heterogeneous/README.md](../research/current/heterogeneous/README.md) | 原异构手稿目录说明；由新分支入口取代 |
+| `asym_research/paper/build.sh` | [history/source/manuscripts/heterogeneous/build.sh](../history/source/manuscripts/heterogeneous/build.sh) | [research/current/heterogeneous/README.md](../research/current/heterogeneous/README.md) | 原 TeX 构建脚本仅用于历史复现 |
+| `asym_research/paper/main.tex` | [history/source/manuscripts/heterogeneous/main.tex](../history/source/manuscripts/heterogeneous/main.tex) | [research/current/heterogeneous/full_catalog_cycle.md](../research/current/heterogeneous/full_catalog_cycle.md) | 异构任意环和四种子主稿来源；新稿按数学链重写 |
+| `asym_research/paper/main.pdf` | [history/source/manuscripts/heterogeneous/main.pdf](../history/source/manuscripts/heterogeneous/main.pdf) | [research/current/heterogeneous/sharp_two_lower.md](../research/current/heterogeneous/sharp_two_lower.md) | 当时 PDF 快照；当前上下界状态分别登记 |
+| `common_phi_algorithm.md` | [history/source/notes/shared/menu_algorithm.md](../history/source/notes/shared/menu_algorithm.md) | [research/current/shared/algorithm.md](../research/current/shared/algorithm.md) | 有限菜单算法的原始笔记；重新核对固定菜单与威胁量词 |
+| `strong_cross_chord_arbitrary_n_proof.md` | [history/source/notes/shared/strong_chord_existence.md](../history/source/notes/shared/strong_chord_existence.md) | [research/current/local_and_exact/local_geometry_and_chord.md](../research/current/local_and_exact/local_geometry_and_chord.md) | 早期全局平方最大化是存在性路线，不作现行多项式构造 |
+| `astra_local/local_chord_algorithm.md` | [history/source/notes/local/chord_exchange.md](../history/source/notes/local/chord_exchange.md) | [research/current/local_and_exact/local_geometry_and_chord.md](../research/current/local_and_exact/local_geometry_and_chord.md) | 局部端点交换来源；新稿注明全部退化分支义务 |
+| `astra_alg/hardness_proof.md` | [history/source/notes/local/hardness.md](../history/source/notes/local/hardness.md) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 弱 NP 困难性归约来源，独立于普遍构造难度 |
+| `astra_alg/exact_algorithms.md` | [history/source/notes/local/exact_methods.md](../history/source/notes/local/exact_methods.md) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 整数谱 DP 与不同权值数参数归约来源 |
+| `astra_ring/README.md` | [history/proofs/local/mitm_research_log.md](../history/proofs/local/mitm_research_log.md) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | MITM 与延迟环研究日志；延迟版不声称实例最优 |
+| `astra_ext/results.md` | [history/source/notes/extensions/quadratic.md](../history/source/notes/extensions/quadratic.md) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 二次费用等价的代数来源，全球转移仍有条件 |
+| `astra_ext/extension_report.md` | [history/source/audits/cost_extensions.md](../history/source/audits/cost_extensions.md) | [research/current/local_and_exact/README.md](../research/current/local_and_exact/README.md) | 费用扩展内部审读记录；不把审查措辞当证明 |
+| `asym_research/meta.md` | [history/source/notes/heterogeneous/response_core.md](../history/source/notes/heterogeneous/response_core.md) | [research/current/heterogeneous/core_lift_and_monotone.md](../research/current/heterogeneous/core_lift_and_monotone.md) | 全目录威胁核心的抽象来源；旧共享菜单条件与纯四种子界限在新稿分别列出 |
+| `asym_research/tight_two_lower.md` | [history/source/notes/heterogeneous/tight_two_lower.md](../history/source/notes/heterogeneous/tight_two_lower.md) | [research/current/heterogeneous/sharp_two_lower.md](../research/current/heterogeneous/sharp_two_lower.md) | 六顶点严格下界族的原始逐格推导 |
+| `asym_research/bounded_overlap_theorem.md` | [history/source/notes/exact/bounded_overlap.md](../history/source/notes/exact/bounded_overlap.md) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 完整支持区间与有界交叠实例最优来源 |
+| `asym_research/nonlinear_kappa_two_independent.md` | [history/source/notes/extensions/polyhedral_continuations.md](../history/source/notes/extensions/polyhedral_continuations.md) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 多面体后续抽象与受限非线性来源，尚无程序 |
+| `asym_research/universal_two.md` | [history/proofs/heterogeneous/universal_two_prior.md](../history/proofs/heterogeneous/universal_two_prior.md) | [research/current/heterogeneous/four_seed_algorithm.md](../research/current/heterogeneous/four_seed_algorithm.md) | 旧全 singleton 菜单是较大历史路线；当前算法只用四种子 |
+| `asym_research/lower.md` | [history/proofs/heterogeneous/sparse_lower_prior.md](../history/proofs/heterogeneous/sparse_lower_prior.md) | [research/current/heterogeneous/restricted_rho.md](../research/current/heterogeneous/restricted_rho.md) | 旧稀疏下界前十节可追溯，末节未闭合区间已被新 2 下界取代 |
+| `asym_research/upper.md` | [history/proofs/heterogeneous/upper_prior.md](../history/proofs/heterogeneous/upper_prior.md) | [research/current/heterogeneous/full_catalog_cycle.md](../research/current/heterogeneous/full_catalog_cycle.md) | 早期上界草稿被任意环主稿取代 |
+| `asym_research/general_four_cycle.md` | [history/proofs/heterogeneous/four_cycle_prior.md](../history/proofs/heterogeneous/four_cycle_prior.md) | [research/current/heterogeneous/full_catalog_cycle.md](../research/current/heterogeneous/full_catalog_cycle.md) | 四环推导不能自动证明任意长度环 |
+| `asym_research/general_six_cycle.md` | [history/proofs/heterogeneous/six_cycle_prior.md](../history/proofs/heterogeneous/six_cycle_prior.md) | [research/current/heterogeneous/full_catalog_cycle.md](../research/current/heterogeneous/full_catalog_cycle.md) | 六环探索由一般偶环论证覆盖 |
+| `phi_global_proof_candidate.md` | [history/proofs/shared/existence_candidate.md](../history/proofs/shared/existence_candidate.md) | [research/current/shared/proof.md](../research/current/shared/proof.md) | 真实局部极小值的早期存在性路线不作为快速菜单算法 |
+| `README_MAIN_PHI.md` | [history/handoffs/shared_phi.md](../history/handoffs/shared_phi.md) | [research/current/shared/README.md](../research/current/shared/README.md) | 旧共享交接文档只作来源，当前条件与状态由新稿控制 |
+| `asym_research/README_HANDOFF.md` | [history/handoffs/heterogeneous.md](../history/handoffs/heterogeneous.md) | [research/current/heterogeneous/README.md](../research/current/heterogeneous/README.md) | 旧异构交接文档只作来源，当前上下界重新分开 |
+| `asym_research/three_by_three_search_status.md` | [history/searches/three_by_three.md](../history/searches/three_by_three.md) | [research/questions/README.md](../research/questions/README.md) | 三乘三搜索记录为开放问题背景，未升级为定理 |
+| `asym_research/adversarial_universal_two_20260930.md` | [history/source/audits/heterogeneous_adversarial.md](../history/source/audits/heterogeneous_adversarial.md) | [research/current/heterogeneous/full_catalog_cycle.md](../research/current/heterogeneous/full_catalog_cycle.md) | 异构对抗性审读，引用处明确其有限覆盖范围 |
+| `asym_research/classification_audit.md` | [history/source/audits/heterogeneous_classification.md](../history/source/audits/heterogeneous_classification.md) | [research/current/heterogeneous/restricted_rho.md](../research/current/heterogeneous/restricted_rho.md) | 适用类分类审读：两项稀疏限制必须同时成立 |
+| `asym_research/common_phi_counter_audit.md` | [history/source/audits/shared_counter.md](../history/source/audits/shared_counter.md) | [research/current/shared/proof.md](../research/current/shared/proof.md) | 三混合者及坏环攻击审读；反例用于排除两混合捷径 |
+| `asym_research/common_phi_menu_quantifier_audit.md` | [history/source/audits/shared_menu_quantifiers.md](../history/source/audits/shared_menu_quantifiers.md) | [research/current/shared/proof.md](../research/current/shared/proof.md) | 菜单量词审计：不得把有限菜单极小值替换成真实局部极小值 |
+| `asym_research/final_audit_and_value.md` | [history/source/audits/heterogeneous_final.md](../history/source/audits/heterogeneous_final.md) | [research/current/heterogeneous/README.md](../research/current/heterogeneous/README.md) | 优先权与状态审读；外部独立复证仍待进行 |
+| `asym_research/universal_two_independent_audit.md` | [history/source/audits/heterogeneous_independent.md](../history/source/audits/heterogeneous_independent.md) | [research/current/heterogeneous/full_catalog_cycle.md](../research/current/heterogeneous/full_catalog_cycle.md) | 另一内部论证审读，不能冒充外部认证 |
+
+## 输入、证书与冻结记录
+
+| 原始路径 | 当前保存位置 | 新写的解释 | 判断 |
+| --- | --- | --- | --- |
+| `astra_ring/example.json` | [examples/shared/tiny.json](../examples/shared/tiny.json) | [research/current/shared/algorithm.md](../research/current/shared/algorithm.md) | 共同目录小输入，仅作为可运行实例 |
+| `asym_research/six_client_lower_instance.json` | [examples/heterogeneous/rho_lower.json](../examples/heterogeneous/rho_lower.json) | [research/current/heterogeneous/restricted_rho.md](../research/current/heterogeneous/restricted_rho.md) | 稀疏受限下界输入，不能当作一般异构下界 |
+| `asym_research/six_cycle_instance.json` | [examples/heterogeneous/six_cycle.json](../examples/heterogeneous/six_cycle.json) | [research/current/heterogeneous/full_catalog_cycle.md](../research/current/heterogeneous/full_catalog_cycle.md) | 交替环定向实例用于测试长环分支 |
+| `asym_research/tight_two_M1000.json` | [examples/heterogeneous/tight_two_M1000.json](../examples/heterogeneous/tight_two_M1000.json) | [research/current/heterogeneous/sharp_two_lower.md](../research/current/heterogeneous/sharp_two_lower.md) | M=1000 整数下界样本，与无限族证明分开 |
+| `asym_research/tight_two_undirected_M1000.json` | [examples/heterogeneous/tight_two_undirected_M1000.json](../examples/heterogeneous/tight_two_undirected_M1000.json) | [research/current/heterogeneous/sharp_two_lower.md](../research/current/heterogeneous/sharp_two_lower.md) | 无向图编码下界样本，需保持覆盖语义 |
+| `common_phi_example_certificate.json` | [evidence/certificates/shared/tiny_phi.json](../evidence/certificates/shared/tiny_phi.json) | [research/current/shared/algorithm.md](../research/current/shared/algorithm.md) | 共同目录达到因子的实例证书，不证明普遍性 |
+| `astra_ring/example_optimal_certificate.json` | [evidence/certificates/shared/tiny_optimal.json](../evidence/certificates/shared/tiny_optimal.json) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 共享小例的精确最优输出用于比较快速菜单 |
+| `astra_ring/example_ring_certificate.json` | [evidence/certificates/shared/tiny_lazy_ring.json](../evidence/certificates/shared/tiny_lazy_ring.json) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 延迟环的具体证书，不代表最坏复杂度 |
+| `asym_research/tight_two_M1000.certificate.json` | [evidence/certificates/heterogeneous/tight_two_M1000.json](../evidence/certificates/heterogeneous/tight_two_M1000.json) | [research/current/heterogeneous/sharp_two_lower.md](../research/current/heterogeneous/sharp_two_lower.md) | M=1000 证书仅认证该特定输入 |
+| `common_phi_algorithm_verification.json` | [evidence/runs/2026-09-30/shared_phi.json](../evidence/runs/2026-09-30/shared_phi.json) | [research/current/shared/algorithm.md](../research/current/shared/algorithm.md) | 冻结 753 例测试摘要，不是普遍存在性证明 |
+| `astra_local/verification.json` | [evidence/runs/2026-09-30/strong_chord.json](../evidence/runs/2026-09-30/strong_chord.json) | [research/current/local_and_exact/local_geometry_and_chord.md](../research/current/local_and_exact/local_geometry_and_chord.md) | 强弦有限分支检查摘要，不补足交换证明 |
+| `astra_ring/validation.json` | [evidence/runs/2026-09-30/mitm.json](../evidence/runs/2026-09-30/mitm.json) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | MITM 当时有限自测记录 |
+| `astra_ring/lazy_check_results.json` | [evidence/runs/2026-09-30/lazy_ring.json](../evidence/runs/2026-09-30/lazy_ring.json) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 延迟环剪枝有限检查记录 |
+| `asym_research/four_seed_verification.json` | [evidence/runs/2026-09-30/four_seed.json](../evidence/runs/2026-09-30/four_seed.json) | [research/current/heterogeneous/four_seed_algorithm.md](../research/current/heterogeneous/four_seed_algorithm.md) | 四种子与大菜单比较的冻结结果 |
+| `asym_research/r_menu_verification.json` | [evidence/runs/2026-09-30/heterogeneous_all_singletons.json](../evidence/runs/2026-09-30/heterogeneous_all_singletons.json) | [research/current/heterogeneous/four_seed_algorithm.md](../research/current/heterogeneous/four_seed_algorithm.md) | 全 singleton 大菜单历史运行，与四种子模式不同 |
+| `asym_research/r_menu_verification_default_20260930.json` | [evidence/runs/2026-09-30/heterogeneous_four_seed.json](../evidence/runs/2026-09-30/heterogeneous_four_seed.json) | [research/current/heterogeneous/four_seed_algorithm.md](../research/current/heterogeneous/four_seed_algorithm.md) | 四种子默认模式历史运行记录 |
+
+## 测试和审查代码
+
+| 原始路径 | 当前保存位置 | 新写的解释 | 判断 |
+| --- | --- | --- | --- |
+| `test_common_phi_algorithm.py` | [tests/test_shared_phi.py](../tests/test_shared_phi.py) | [research/current/shared/algorithm.md](../research/current/shared/algorithm.md) | 共同目录现行回归入口；旧脚本路径已退出 |
+| `asym_research/test_r_menu.py` | [tests/test_heterogeneous.py](../tests/test_heterogeneous.py) | [research/current/heterogeneous/four_seed_algorithm.md](../research/current/heterogeneous/four_seed_algorithm.md) | 异构回归保持独立 MITM 穷举对照 |
+| `asym_research/test_four_seed.py` | [tests/test_four_seed.py](../tests/test_four_seed.py) | [research/current/heterogeneous/four_seed_algorithm.md](../research/current/heterogeneous/four_seed_algorithm.md) | 四种子与全菜单的边界回归 |
+| `astra_ring/check_lazy.py` | [tests/test_lazy_ring.py](../tests/test_lazy_ring.py) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 延迟环回归，未承诺多项式复杂度 |
+| `common_phi_counter_audit.py` | [tests/audits/shared_menu.py](../tests/audits/shared_menu.py) | [research/current/shared/proof.md](../research/current/shared/proof.md) | 局部菜单审查作为有限交叉核对 |
+| `common_phi_iff_audit.py` | [tests/audits/strong_chord_iff.py](../tests/audits/strong_chord_iff.py) | [research/current/local_and_exact/local_geometry_and_chord.md](../research/current/local_and_exact/local_geometry_and_chord.md) | 强弦 iff 随机/定向审计 |
+| `astra_alg/hardness_enum.py` | [tests/audits/hardness_enum.py](../tests/audits/hardness_enum.py) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 困难性归约的小实例枚举审计 |
+
+## 规范实现
+
+| 原始路径 | 当前保存位置 | 新写的解释 | 判断 |
+| --- | --- | --- | --- |
+| `common_phi_algorithm.py` | [facility_spe/shared_phi.py](../facility_spe/shared_phi.py) | [research/current/shared/algorithm.md](../research/current/shared/algorithm.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
+| `verify_phi_certificate.py` | [facility_spe/cli/verify_phi.py](../facility_spe/cli/verify_phi.py) | [research/current/shared/algorithm.md](../research/current/shared/algorithm.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
+| `asym_research/r_menu_solver.py` | [facility_spe/heterogeneous_two.py](../facility_spe/heterogeneous_two.py) | [research/current/heterogeneous/four_seed_algorithm.md](../research/current/heterogeneous/four_seed_algorithm.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
+| `asym_research/bounded_overlap.py` | [facility_spe/exact/bounded_overlap.py](../facility_spe/exact/bounded_overlap.py) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
+| `asym_research/cross_one.py` | [facility_spe/exact/single_overlap.py](../facility_spe/exact/single_overlap.py) | [research/current/heterogeneous/restricted_rho.md](../research/current/heterogeneous/restricted_rho.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
+| `asym_research/tight_two_family.py` | [facility_spe/examples/tight_two.py](../facility_spe/examples/tight_two.py) | [research/current/heterogeneous/sharp_two_lower.md](../research/current/heterogeneous/sharp_two_lower.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
+| `astra_local/construct.py` | [facility_spe/local/strong_chord.py](../facility_spe/local/strong_chord.py) | [research/current/local_and_exact/local_geometry_and_chord.md](../research/current/local_and_exact/local_geometry_and_chord.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
+| `astra_alg/threshold_dp.py` | [facility_spe/exact/threshold_dp.py](../facility_spe/exact/threshold_dp.py) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
+| `astra_ring/mitm_solver.py` | [facility_spe/exact/mitm.py](../facility_spe/exact/mitm.py) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
+| `astra_ring/run_lazy_ring.py` | [facility_spe/cli/lazy_ring.py](../facility_spe/cli/lazy_ring.py) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |

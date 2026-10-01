@@ -2,8 +2,8 @@
 """Polynomial exact-client-NE phi-SPE construction for a shared site catalog.
 
 The algorithm minimizes over an explicit polynomial witness menu, never over
-the entire Nash correspondence. See math/proofs/shared/menu_algorithm.md for
-the proof transfer and evidence/audits/shared_menu_quantifiers.md for its audit.
+the entire Nash correspondence. See research/current/shared/algorithm.md for
+the current contract and history/source/audits/shared_menu_quantifiers.md for its audit.
 """
 from fractions import Fraction as Q
 from itertools import combinations

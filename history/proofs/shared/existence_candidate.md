@@ -1,4 +1,4 @@
-> **Historical research note (superseded navigation).** Preserve the derivation below as provenance; use [the current mathematical map](../../../README.md), [claim registry](../../../CLAIMS.md) and [source-status guide](../../../PROVENANCE.md) for current scope.
+> **Historical research note (superseded navigation).** Preserve the derivation below as provenance; use [the current mathematical map](../../../README.md), [claim registry](../../curation-2026-10-01/CLAIMS.md) and [source-status guide](../../curation-2026-10-01/PROVENANCE.md) for current scope.
 
 # Candidate proof of the arbitrary-finite-instance golden-ratio theorem
 

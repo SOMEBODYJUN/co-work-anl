@@ -1,16 +1,16 @@
-# Canonical Python implementation
+# 唯一规范代码包
 
-Run modules from the repository root with Python 3 and no third-party packages, or use the compatibility commands in [USAGE.md](../USAGE.md). This directory is the **only implementation copy**; old script paths contain import/CLI forwarding only.
+从仓库根目录使用 Python 模块入口，输入和输出示例在 [USAGE](../USAGE.md)。本包按数学任务组织：共同目录普遍构造、异构纯构造、局部引理、实例精确算法。旧 astra_*/asym_research 名称不再提供第二套入口；原始路径见[迁移表](../research/path_migration.json)。
 
-| Module | Claim and exact domain |
-| --- | --- |
-| [shared_phi.py](shared_phi.py) | SC-PHI-A: same nonempty site catalog, positive rational weights, linear realized-load costs, exact independently mixed customer NE. Constructs a factor at most phi **within its fixed menu**. |
-| [heterogeneous_two.py](heterogeneous_two.py) | HC-2-UP: arbitrary two nonempty catalogs, pure exact customer NE at all selected continuations, factor at most 2. |
-| [local/pure.py](local/pure.py) | Shared guarded repair with the protected-lower-side quota invariant. Both finite menus import this same routine. |
-| [local/strong_chord.py](local/strong_chord.py) | LOCAL-CHORD-POLY: local quota witness under the reach/common-mass/largest-atom conditions in [LOCAL_GAME.md](../math/LOCAL_GAME.md). |
-| [exact/bounded_overlap.py](exact/bounded_overlap.py) | EXACT-KAPPA: all independent mixed NE support cells; computes a given instance's optimal factor with exponential dependence on pair overlap. |
-| [exact/single_overlap.py](exact/single_overlap.py) | Exact optimization when each cross pair has at most one common customer; the *universal* rho theorem additionally needs one catalog of size at most two. |
-| [exact/threshold_dp.py](exact/threshold_dp.py) | DP-W: local integer-weight spectrum in pseudo-polynomial total-weight time. |
-| [exact/mitm.py](exact/mitm.py) | MITM-EXACT: unrestricted local/full-game optimum with exponential worst-case time. |
+| 路径 | 作用 | 新写的数学合同 |
+| --- | --- | --- |
+| [shared_phi.py](shared_phi.py) | 固定 P/E/T/C 菜单、全目录威胁、实例证书及检查 | [共同目录算法](../research/current/shared/algorithm.md) |
+| [heterogeneous_two.py](heterogeneous_two.py) | 四种子纯 NE 菜单及因子 2 证书 | [异构算法](../research/current/heterogeneous/four_seed_algorithm.md) |
+| [local/pure.py](local/pure.py) | 两算法共享的受保护纯修复 | [局部引理](../research/current/local_and_exact/local_geometry_and_chord.md) |
+| [local/strong_chord.py](local/strong_chord.py) | 有条件的强弦局部见证 | [强弦 iff](../research/current/local_and_exact/local_geometry_and_chord.md) |
+| [exact/bounded_overlap.py](exact/bounded_overlap.py) | 枚举全部独立混合 NE 支持单元，算实例最优 | [EXACT-KAPPA](../research/current/local_and_exact/exact_algorithms_and_extensions.md) |
+| [exact/single_overlap.py](exact/single_overlap.py) | 每跨对至多一人时的实例精确算法 | [受限 ρ 的区别](../research/current/heterogeneous/restricted_rho.md) |
+| [exact/threshold_dp.py](exact/threshold_dp.py) | 正整数公共权重的局部伪多项式谱 | [DP-W](../research/current/local_and_exact/exact_algorithms_and_extensions.md) |
+| [exact/mitm.py](exact/mitm.py) | 共同目录/局部的指数级精确比较 | [MITM](../research/current/local_and_exact/exact_algorithms_and_extensions.md) |
 
-Certificate fields differ across algorithms because they encode different theorems. A short checked certificate proves the factor attained **for that input**. Universal existence and complexity statements require the relevant manuscript proof; exact instance optimality additionally requires full support enumeration. [ASSETS.md](../ASSETS.md) ties each module to its hypotheses, proof and evidence.
+短证书检查实际输入的达到因子；普遍上界、复杂度、实例最优分别需要各自的数学论证。三个主要证书格式保持不同字段，不能按名称相似强行合并。新实现按[增长规则](../research/GROWTH.md)增加唯一模块、测试、证明和资产关系。

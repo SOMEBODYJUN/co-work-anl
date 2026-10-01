@@ -1,24 +1,23 @@
-# Hypergraph schema and maintenance
+# 数学关系图、资产索引与增长接口
 
-[assets.json](assets.json) supplies the companion claim-to-proof/code/test/record mapping with exact input conditions; [path_migration.json](path_migration.json) records each moved source. Run [check_assets.py](check_assets.py) after adding or relocating research material. The graph and asset manifest answer different questions: mathematical inference versus where its implementation and evidence live.
+[现行研究](current/README.md)是新写的内容；[开放问题](questions/README.md)记录待解量词；[增长规则](GROWTH.md)及[命题模板](templates/claim.md)说明下一项成果怎么放入仓库。
 
-The [viewer](index.html) is generated from [graph.json](graph.json). Each **node** is a mathematical definition, lemma, claim, counterexample, obligation, evidence item or implementation artifact. Each **hyperedge** records a typed relationship from a set of premise node IDs to one conclusion node ID. For a derives edge, all listed premises are required together; a single-premise attack or finite test is intentionally a different kind of relation.
+本目录有两份彼此不同的机器可读关系：
 
-| Field | Meaning |
-| --- | --- |
-| node.id / edge.id | Stable reference in notes and reviews. Canonical theorem IDs match [CLAIMS.md](../CLAIMS.md). |
-| node.kind / track / status | Mathematical role, research branch, and level of established evidence. “Internal candidate” is not external review. |
-| node.detail / refs | Exact mathematical meaning and current sources, with paths relative to repository root. |
-| edge.kind | derives: logical argument in source; attacks: exact rejected overextension; checks: bounded executable observations; implements: program correspondence; limits: unresolved work. |
-| edge.premises / conclusion | Joint input set and target; checks and limits never imply a universal theorem. |
-| edge.statement / status / refs | The inference's own scope, provisional status and cited proof/evidence location. |
+| 文件 | 表示什么 | 不表示什么 |
+| --- | --- | --- |
+| [graph.json](graph.json) 与[交互 HTML](index.html) | 定义、引理、反例、命题之间的**数学合取超边**。derives 需要全部前提；attacks 为反例；checks 为有限观测；implements 为程序关系；limits 为未解决处。 | 不是旧稿文件夹或普通链接图；测试边不证明普遍定理。 |
+| [assets.json](assets.json) | 每条命题的精确适用条件、现行新稿、规范实现、测试、冻结结果、历史来源。 | 历史来源不自动具有现行证明地位。 |
+| [path_migration.json](path_migration.json) | 原始文件搬迁和旧命令退出位置。 | 不要求继续在根目录保留旧模型命名。 |
+| [source_crosswalk.md](source_crosswalk.md) | 68 个原始文件/旧代码入口各自如何被新稿解释、保留或取代。 | 原稿文件本身不等于现行命题。 |
 
-The graph is deliberately **not** a picture of old file links. Sources are attached to mathematical statements, and an individual old note may substantiate multiple nodes without becoming a theorem node itself. When a claim changes catalog quantifiers, cost symmetry, participation, equilibrium selection, or input encoding, create a new claim version and adjust every affected hyperedge. Retain counterexamples and historical proof attempts in [PROVENANCE.md](../PROVENANCE.md).
+超图每个节点有稳定 ID、数学细节、状态和来源，每条超边有联合前提、结论、类型、语句和证据位置。改动成本、目录、客户均衡、编码或量词时须新建或修订命题，并同步改动依赖边。当前结论编号见[命题登记](current/claims.md)。HTML 内嵌数据，不需要服务器；GitHub 直接预览会显示源码，下载后可在浏览器查看节点和边。
 
-Regenerate and validate locally:
+从仓库根目录运行：
 
     python3 research/build_map.py
     python3 research/build_map.py --check
+    python3 research/build_crosswalk.py --check
     python3 research/check_assets.py
 
-The generator checks IDs, all premise and conclusion references, every source path, node connectivity and that each claim has an incoming edge. The resulting HTML embeds all data and assets: it opens directly as a local file with no server or external JavaScript. GitHub's repository preview displays HTML source; download the file to use its filters and node inspector in a browser. [README.md](../README.md) summarizes the principal joint mathematical dependencies without JavaScript.
+第一个命令重建 HTML，后两个检查图结构、所有路径、现行稿/实现/历史来源的角色和旧入口确已退出。证明状态仍需人对数学推导负责；路径校验不会变成证明。

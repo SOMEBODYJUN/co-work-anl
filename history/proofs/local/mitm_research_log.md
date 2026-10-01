@@ -1,4 +1,4 @@
-> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../../../README.md), [claim registry](../../../CLAIMS.md) and [source-status guide](../../../PROVENANCE.md) for current scope.
+> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../../../README.md), [claim registry](../../curation-2026-10-01/CLAIMS.md) and [source-status guide](../../curation-2026-10-01/PROVENANCE.md) for current scope.
 
 # Exact MITM solver and lazy maximin-ring certificates
 

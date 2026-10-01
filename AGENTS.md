@@ -1,0 +1,12 @@
+# Working rules for future research contributors
+
+This repository is a growing mathematical research program. The current mathematical account is in research/current/, while history/ preserves source drafts and superseded arguments. Read README.md, research/current/model.md, research/current/claims.md, research/GROWTH.md, and the relevant branch README before changing a claim.
+
+- Write a new, self-contained Markdown account from the underlying mathematical material. Do not promote a moved or lightly reworded historical file into the current layer. Show hypotheses, quantifiers, actual inequalities or reduction, boundary cases, and the proof's remaining obligations.
+- Give each claim a stable ID and exact input class. Keep shared catalogs, heterogeneous catalogs, restricted one-overlap games, local questions, universal bounds, and instance-optimal solvers separate. A changed cost rule, equilibrium concept, or continuation quantifier requires explicit versioning.
+- Keep universal proof, a finite test, an attaining certificate, and an optimality certificate distinct. Record unpublished or internally audited results as candidates; a successful run does not close a mathematical proof.
+- Place code only in the canonical facility_spe/ package for this model. A genuinely different future model may use a sibling package. Put tests in tests/, inputs in examples/, frozen outputs in evidence/, and raw/superseded sources in history/. Do not restore the old astra_* or asym_research top-level directories.
+- For a new or changed result, update research/current/claims.md, research/assets.json, research/graph.json, and the relevant branch README. If new source files enter, interpret each in research/source_crosswalk.json and regenerate its Markdown. Mathematical derives hyperedges must list all joint premises; use checks or limits for tests and open obligations.
+- Run the relevant exact-arithmetic regressions plus research/build_map.py --check, research/build_crosswalk.py --check, and research/check_assets.py. Do not overwrite frozen evidence runs by default. Explain what was verified and what remains unverified.
+
+The user’s current instructions take precedence over this file. Historical manuscript wording or an earlier AI summary cannot silently override the new claim's explicit scope.

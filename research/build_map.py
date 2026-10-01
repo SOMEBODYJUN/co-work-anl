@@ -15,33 +15,38 @@ TRACKS = {"model", "local", "shared", "heterogeneous", "computation",
           "extensions", "evidence"}
 
 
+def require(condition: bool, message: object) -> None:
+    if not condition:
+        raise ValueError(message)
+
+
 def validate(data: dict) -> None:
-    assert data["version"] == 1
+    require(data["version"] == 1, "unsupported graph schema")
     nodes = {node["id"]: node for node in data["nodes"]}
-    assert len(nodes) == len(data["nodes"]), "duplicate node ID"
+    require(len(nodes) == len(data["nodes"]), "duplicate node ID")
     edges = {edge["id"]: edge for edge in data["hyperedges"]}
-    assert len(edges) == len(data["hyperedges"]), "duplicate edge ID"
-    assert set(data["legend"]) == RELATIONS
+    require(len(edges) == len(data["hyperedges"]), "duplicate edge ID")
+    require(set(data["legend"]) == RELATIONS, "invalid relation legend")
     for node in data["nodes"]:
-        assert node["kind"] in KINDS and node["track"] in TRACKS, node["id"]
-        assert node["title"] and node["detail"] and node["refs"] and node["status"], node["id"]
+        require(node["kind"] in KINDS and node["track"] in TRACKS, node["id"])
+        require(node["title"] and node["detail"] and node["refs"] and node["status"], node["id"])
         for ref in node["refs"]:
-            assert (ROOT / ref).is_file(), (node["id"], ref)
+            require((ROOT / ref).is_file(), (node["id"], ref))
     for edge in data["hyperedges"]:
-        assert edge["kind"] in RELATIONS and edge["track"] in TRACKS, edge["id"]
-        assert edge["premises"] and len(edge["premises"]) == len(set(edge["premises"])), edge["id"]
-        assert all(p in nodes for p in edge["premises"]), edge["id"]
-        assert edge["conclusion"] in nodes, edge["id"]
-        assert edge["conclusion"] not in edge["premises"], edge["id"]
-        assert edge["statement"] and edge["refs"] and edge["status"], edge["id"]
+        require(edge["kind"] in RELATIONS and edge["track"] in TRACKS, edge["id"])
+        require(edge["premises"] and len(edge["premises"]) == len(set(edge["premises"])), edge["id"])
+        require(all(p in nodes for p in edge["premises"]), edge["id"])
+        require(edge["conclusion"] in nodes, edge["id"])
+        require(edge["conclusion"] not in edge["premises"], edge["id"])
+        require(edge["statement"] and edge["refs"] and edge["status"], edge["id"])
         for ref in edge["refs"]:
-            assert (ROOT / ref).is_file(), (edge["id"], ref)
-    assert {n["id"] for n in data["nodes"] if n["kind"] == "claim"} <= {
+            require((ROOT / ref).is_file(), (edge["id"], ref))
+    require({n["id"] for n in data["nodes"] if n["kind"] == "claim"} <= {
         e["conclusion"] for e in data["hyperedges"]
-    }, "claim lacks an incoming hyperedge"
+    }, "claim lacks an incoming hyperedge")
     used = {x for edge in data["hyperedges"] for x in
             [*edge["premises"], edge["conclusion"]]}
-    assert used == set(nodes), "unconnected node"
+    require(used == set(nodes), "unconnected node")
 
 
 HTML = r'''<!doctype html>
@@ -95,7 +100,7 @@ aside ul { padding-left:20px }
 <header>
 <h1>数学研究超图</h1>
 <p>每张关系卡是一条超边：左侧的前提须同时成立，才按中间的关系类型通向右侧结论。红色反驳的是被提出的错误命题；黄色表示有限测试或待完成的审查。点击节点查看精确作用和原始来源。主定理仍是内部审查的候选成果。</p>
-<p><a href="../README.md">研究总览</a> · <a href="../CLAIMS.md">命题台账</a> · <a href="graph.json">结构化数据</a></p>
+<p><a href="../README.md">研究总览</a> · <a href="current/claims.md">现行命题</a> · <a href="graph.json">结构化数据</a></p>
 </header>
 <div class="shell">
 <div class="tools">
@@ -134,7 +139,7 @@ function selectNode(id) {
   selected=id; clear.hidden=false; const n=byId.get(id); inspector.replaceChildren();
   add(inspector,'h2',n.title); add(inspector,'span',n.id+' · '+n.kind+' · '+n.status+' · '+trackNames[n.track],'badge');
   add(inspector,'p',n.detail);
-  add(inspector,'h3','Sources'); const list=add(inspector,'ul');
+  add(inspector,'h3','现行说明与原始来源'); const list=add(inspector,'ul');
   for(const ref of n.refs) link(add(list,'li'),ref);
   const incoming=graph.hyperedges.filter(e=>e.conclusion===id);
   const outgoing=graph.hyperedges.filter(e=>e.premises.includes(id));
@@ -163,7 +168,7 @@ function render() {
     add(row,'span',e.kind==='attacks'?'⊣':'⇒','junction');
     nodeButton(row,e.conclusion,true);
     add(card,'p',e.statement);
-    const sources=add(card,'div',null,'refs'); add(sources,'span','Sources: ');
+    const sources=add(card,'div',null,'refs'); add(sources,'span','现行说明与来源: ');
     e.refs.forEach((ref,i)=>{ if(i)add(sources,'span',' · '); link(sources,ref); });
   }
   if(!count)add(routeBox,'div','No routes match. Clear a filter or select another branch.','empty');
@@ -188,7 +193,8 @@ def main() -> None:
     rendered = HTML.replace("__GRAPH_DATA__", payload)
     output = HERE / "index.html"
     if args.check:
-        assert output.is_file() and output.read_text(encoding="utf-8") == rendered, "run research/build_map.py"
+        require(output.is_file() and output.read_text(encoding="utf-8") == rendered,
+                "run research/build_map.py")
     else:
         output.write_text(rendered, encoding="utf-8")
     print(f"Validated {len(data['nodes'])} nodes, {len(data['hyperedges'])} hyperedges and all source paths")
