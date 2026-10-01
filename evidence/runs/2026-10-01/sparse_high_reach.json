@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-01",
+  "name": "sparse_high_reach",
+  "python_version": "3.12.14",
+  "base_commit": "9e5253f0c187ffdc30d5b742d4937ba52095cea9",
+  "source_sha256": {
+    "tests/audits/sparse_high_reach.py": "ff85265da4e2522c82437677125ffa1a82f39cb0fa77de701a8159dd9ccd2052",
+    "examples/heterogeneous/rho_lower.json": "3ba10f33ca04724a18d39a04d6eca00c866a9ec14621ebce1daecf1065021a5c"
+  },
+  "replay_commands": [
+    "python3 tests/audits/sparse_high_reach.py > evidence/runs/2026-10-01/sparse_high_reach.json"
+  ],
+  "limitations": "Finite rational audits do not prove a universal bound; lower example is inherited and its four local NE are unique.",
+  "observed": {
+    "claim": "SPARSE-HIGH-ACYCLIC",
+    "arithmetic": "fractions.Fraction",
+    "seed": 6384201,
+    "trials": 400,
+    "sizes": "n=2,3,4,5 repeated",
+    "r_values": [
+      "1",
+      "3/2",
+      "9/5",
+      "2"
+    ],
+    "random_counts": {
+      "pure_bad": 2,
+      "mixed_bad": 0,
+      "balanced": 25,
+      "ties": 272,
+      "zero_reach": 31
+    },
+    "sharp_lower": {
+      "reach": [
+        "144504187",
+        "80193772",
+        "144504186",
+        "180193774"
+      ],
+      "pure_stable": false,
+      "optimum": "80193772/44504187",
+      "rings": [
+        [
+          0,
+          2,
+          1,
+          3
+        ]
+      ],
+      "balanced": false
+    },
+    "long_cycle_n3": {
+      "reach": [
+        "42",
+        "40",
+        "38",
+        "41",
+        "39",
+        "37"
+      ],
+      "pure_stable": true,
+      "optimum": "40/39",
+      "rings": [
+        [
+          0,
+          3,
+          1,
+          4,
+          2,
+          5
+        ]
+      ],
+      "balanced": true
+    }
+  }
+}

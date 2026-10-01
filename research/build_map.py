@@ -14,11 +14,11 @@ RELATIONS = {"derives", "attacks", "checks", "implements", "limits"}
 TRACKS = {"model", "local", "shared", "heterogeneous", "computation",
           "extensions", "evidence"}
 REVIEW_STATES = {
-    "source_proof": {"complete", "source_note", "published_lower_plus_sketch", "synthesis"},
+    "source_proof": {"complete", "source_note", "published_lower_plus_sketch", "synthesis", "new_current_work"},
     "current_proof": {"complete", "candidate", "conditional", "depends_on_claims", "direct"},
-    "internal_review": {"multiple_audits", "current_exact_audit", "candidate"},
+    "internal_review": {"multiple_audits", "current_exact_audit", "candidate", "self_attack_and_exact_audit"},
     "external_review": {"not_recorded", "completed"},
-    "implementation": {"implemented", "partial", "none", "not_applicable", "finite_example"},
+    "implementation": {"implemented", "partial", "none", "not_applicable", "finite_example", "audit_only"},
 }
 
 

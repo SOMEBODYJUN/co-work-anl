@@ -24,6 +24,8 @@ L_2(\sigma(s,r))\le\rho L_2(\sigma(s,t))\quad(r\in U_2\setminus\{t\}).
 
 ## 2. 已有边界与可直接使用的精确接口
 
+**2026-10-01 新条件性进展。** [SPARSE-HIGH-ACYCLIC 与 SPARSE-BALANCED-R](../current/heterogeneous/sparse_high_reach_barrier.md) 处理双方**任意长**目录：若两侧每一地点的 reach 均至少为本方最大 reach 的 `1/r`，固定纯 NE 规则下存在完整目录 `r`-稳定布局。反过来，若根本没有 `r`-稳定布局，该规则的每一个全目录最佳回应环都必须进入某一侧 reach 严格低于本侧最大值 `1/r` 的区，并在所有高行动出边按带标签 reach 全序严格下降。这是坏长环的条件性低区必经定理，不是一般单交叠目录的 `ρ` 上界；不平衡 reach 的回返仍开放。精确[审查脚本](../../tests/audits/sparse_high_reach.py)与[冻结有理记录](../../evidence/runs/2026-10-01/sparse_high_reach.json)攻击了平局、零 reach、完整 off-path 及两个必要假设。
+
 按[受限 \(\rho\) 页](../current/heterogeneous/restricted_rho.md)，HC-RHO 的上界同时需要单公共客户与 \(\min(|U_1|,|U_2|)\le2\)。其六客户下界族已经属于本题，给 \(\alpha_{\mathrm{sp}}\ge\rho\)。[任意异构上界](../current/heterogeneous/full_catalog_cycle.md)的纯续局适用于本题，给 \(\alpha_{\mathrm{sp}}\le2\)。这两个不等式沿用各自的内部研究证明状态；它们不证明任意大小稀疏目录已有 \(\rho\) 上界。
 
 固定布局、地点覆盖重 \(R_s,R_t\)，若无公共客户，负载强制为 \((R_s,R_t)\)。若唯一公共客户重 \(w\)，其两条件成本为 \(R_s,R_t\)：

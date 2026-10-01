@@ -23,6 +23,7 @@
 - `model/NE` → 局部支持几何 → 共同目录固定菜单与全目录环 → 局部强弦 → `SC-PHI-E`；编码有理输入加位复杂度给 `SC-PHI-A`，联合六地点同类下界才得 `SC-PHI-SHARP`。[共享证明顺序](research/current/shared/README.md)。
 - `model/NE` → 异构纯菜单、全目录环 → `HC-2-UP`；与双交叠下界 `HC-2-LOW` 合取才得异构 sharp 2。另加**单交叠且一侧最多两地点**才能使用 `HC-RHO`；移除后一条件是 [Q-SPARSE](research/questions/sparse_catalogs.md)，仍开放。[异构证明顺序](research/current/heterogeneous/README.md)。
 - `CORE-LIFT` 只保留全目录真实威胁而不保证核心短。[SPARSE-LONG-CYCLE](research/current/heterogeneous/sparse_long_cycles.md)在单交叠下构造任意长唯一环，反驳无条件短核心推断；它与普遍倍率 $\rho$ 问题之间没有反例蕴含。
+- `model/NE` → 固定纯平局优先级 → 全目录最佳回应逐边比较 → `SPARSE-HIGH-ACYCLIC` → `SPARSE-BALANCED-R`：[高 reach 条件传播](research/current/heterogeneous/sparse_high_reach_barrier.md)证明无 `r` 稳定布局时任意长坏回应环必须经过一方严格低于本方最大 reach 的 `1/r` 的地点；若两方所有地点都不低，则有完整纯续局 `r` 上界。`r=ρ` 覆盖双方任意长的 reach 平衡子类，低区内任意回返与全类 Q-SPARSE 仍开放。
 - 两设施共同目录的 $\phi$ 不覆盖第三家或客户费用 $\mathbb E[L^3]$；分别见 [Q-K-FAC](research/questions/three_facilities.md) 与 [Q-CUBIC](research/questions/cubic_costs.md)。证书的达到性、实例最优性、普遍定理和论文新颖性各自独立。
 
 关键 dependency、attacks 和 scope 边可交互查看[数学超图](research/index.html)，精确文字与证据状态以[现行命题登记](research/current/claims.md)和证明页为准。
@@ -48,6 +49,8 @@
 | `research/current/model.md`、`research/current/claims.md` | 核对客户 NE、完整续局量词、各定理的精确作用域及审查状态；提出新命题或改模型前读。 |
 | `research/ROADMAP.md`、`research/questions/three_facilities.md`、`research/questions/sparse_catalogs.md` | 两个当前主攻的价值门槛、首个判别关口、已知上下界与停损理由；选题时读。 |
 | `research/current/heterogeneous/sparse_long_cycles.md`、`FAILED_ROUTES.md` | 任意长精确威胁环的正整数构造、完整证明及其**仅限于无条件短核心**的排除范围；攻击稀疏证明路线时读。 |
+| `research/current/heterogeneous/sparse_high_reach_barrier.md` | 新增 `SPARSE-HIGH-ACYCLIC` 与 `SPARSE-BALANCED-R` 的全部量词、平局与零 reach 证明、两处独立边界攻击；研究坏环如何穿越低 reach 区时读。 |
+| `tests/audits/sparse_high_reach.py`、`evidence/runs/2026-10-01/sparse_high_reach.json` | 不调用规范求解器的精确分数审查、固定 seed 和冻结结果：包含原六客户下界、修正后长环小例、随机矩形 incidence；复核新定理边界时运行脚本重生记录。有限审查不代替全称证明。 |
 | `research/questions/cubic_costs.md`、`research/questions/instance_complexity.md` | 非线性费用机制和实例最优判定的条件性预研；遇到跨成本原则、参数算法或困难性归约时读。 |
 | `research/graph.json`、`research/review_status.json`、`research/assets.json` | 数学合取/反例边、逐命题审查层、证明与实现和证据的对照；状态升级或新增 Claim 时一起更新。 |
 | `research/GROWTH.md`、`AGENTS.md` | 新问题、证明、代码和冻结证据的落点与检查命令；开始修改前读。 |

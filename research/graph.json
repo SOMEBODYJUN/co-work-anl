@@ -907,6 +907,32 @@
         "FAILED_ROUTES.md"
       ],
       "status": "refuted"
+    },
+    {
+      "id": "SPARSE-HIGH-ACYCLIC",
+      "kind": "lemma",
+      "track": "heterogeneous",
+      "title": "High-reach response subgraph is acyclic under no r-stability",
+      "detail": "For arbitrary catalog lengths, single-overlap pure priority continuations and absent r-stability force every high-action full-catalog best-response edge to descend by labeled reach rank; all cycles visit a catalog-specific reach below maximum/r.",
+      "refs": [
+        "research/current/heterogeneous/sparse_high_reach_barrier.md",
+        "research/current/claims.md",
+        "research/review_status.json"
+      ],
+      "status": "new direct proof and exact boundary attacks; unrefereed"
+    },
+    {
+      "id": "SPARSE-BALANCED-R",
+      "kind": "claim",
+      "track": "heterogeneous",
+      "title": "Reach-balanced arbitrary sparse catalogs admit factor r",
+      "detail": "If every row and column respectively has reach at least its catalog maximum/r, a complete pure exact-NE continuation and pure r-stable location pair exist for any r>=1; r=rho is a proper unbounded-catalog subclass of Q-SPARSE.",
+      "refs": [
+        "research/current/heterogeneous/sparse_high_reach_barrier.md",
+        "research/current/claims.md",
+        "research/review_status.json"
+      ],
+      "status": "new direct proof and exact boundary attacks; unrefereed"
     }
   ],
   "hyperedges": [
@@ -1686,6 +1712,67 @@
         "FAILED_ROUTES.md"
       ],
       "status": "exact counterexample family"
+    },
+    {
+      "id": "e-sparse-high",
+      "kind": "derives",
+      "track": "heterogeneous",
+      "premises": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "conclusion": "SPARSE-HIGH-ACYCLIC",
+      "statement": "With at most one common client per cross pair, fixed priority pure NE and full-catalog best responses, no r-stable layout forces high outgoing edges to strictly decrease in tagged reach order.",
+      "refs": [
+        "research/current/heterogeneous/sparse_high_reach_barrier.md"
+      ],
+      "status": "direct proof with exact boundary attack"
+    },
+    {
+      "id": "e-sparse-balanced",
+      "kind": "derives",
+      "track": "heterogeneous",
+      "premises": [
+        "SPARSE-HIGH-ACYCLIC",
+        "M3"
+      ],
+      "conclusion": "SPARSE-BALANCED-R",
+      "statement": "A finite functional response graph must have a cycle; when both catalogs are high throughout, conditional acyclicity forces a full pure-continuation r-stable layout.",
+      "refs": [
+        "research/current/heterogeneous/sparse_high_reach_barrier.md"
+      ],
+      "status": "direct proof with exact boundary attack"
+    },
+    {
+      "id": "e-sparse-high-limits",
+      "kind": "limits",
+      "track": "heterogeneous",
+      "premises": [
+        "SPARSE-LONG-CYCLE"
+      ],
+      "conclusion": "SPARSE-HIGH-ACYCLIC",
+      "statement": "The exact long cycle has all actions high at r=9/5 but also an r-stable layout, so the no-r-stability hypothesis in the descending-edge result cannot be dropped.",
+      "refs": [
+        "research/current/heterogeneous/sparse_long_cycles.md",
+        "research/current/heterogeneous/sparse_high_reach_barrier.md"
+      ],
+      "status": "exact boundary instance"
+    },
+    {
+      "id": "e-sparse-balanced-attack",
+      "kind": "limits",
+      "track": "heterogeneous",
+      "premises": [
+        "H4"
+      ],
+      "conclusion": "SPARSE-BALANCED-R",
+      "statement": "The strict six-customer rational input has all columns high at r=9/5 but no r-SPE; requiring balance in only one catalog is insufficient.",
+      "refs": [
+        "research/current/heterogeneous/sparse_high_reach_barrier.md",
+        "examples/heterogeneous/rho_lower.json"
+      ],
+      "status": "exact counterexample to one-sided weakening"
     }
   ]
 }
