@@ -10,6 +10,7 @@
 | SPARSE-LONG-CYCLE | 对每个 $n\ge2$ 存在两目录各 $n$ 地点、单交叠、正整数权重且各格唯一 NE 的实例，全目录真实极小收益最佳回应构成遍历全部 $2n$ 地点的唯一环 | 本轮新写的显式构造和代数证明，内部算术复核；文献新颖性与外部评审未核。[证明](research/current/heterogeneous/sparse_long_cycles.md) |
 | SPARSE-HIGH-ACYCLIC / SPARSE-BALANCED-R | 双方任意长单交叠、任意 `r≥1`；前者在没有 `r` 稳定布局下迫使全目录最佳回应环进入低于本方最大 reach 的 `1/r` 区，后者在两方都无这种低地点时构造完整纯 NE `r` 稳定布局 | 新条件性传播证明与精确边界攻击，内部审读；**不**推出全体 Q-SPARSE 的 `ρ` 上界。[证明](research/current/heterogeneous/sparse_high_reach_barrier.md) |
 | SPARSE-RHO-ALL | 双方目录任意有限非空、每跨对至多一共有客户、正实权原子与完整逐布局精确独立混合 NE 存在量词 | 任意固定 reach 优先级纯 NE 规则已有全目录 `ρ` 稳定格；结合 HC-RHO 的 2×2 下界，全类最优普遍因子恰为 `ρ`。新直接证明已作多路线独立内部攻击；外部评审/新颖性未核。[证明](research/current/heterogeneous/sparse_unbounded_rho.md) |
+| SPARSE-BAD-LONG | 对每个 `3/2<r<ρ` 与任意 `n≥1`，正有理单交叠 `(n+1)×(n+1)`、每格唯一客户 NE | 全布局无 `r` 稳定格，但唯一全目录精确回应环遍历全部行动；否定阈值以下“坏倍率自动短精确核心”，**不是** `>ρ` 反例。[证明](research/current/heterogeneous/sparse_bad_long_cycles.md) |
 | Q-K-FAC | 任意 $k\ge2$ 共同目录、加权原子客户是否有独立于 $k$ 的普遍近似因子，或有随 $k$ 增长的下界 | 开放；三设施因子 2 是判别关口，**不是**全 $k$ 结论。[任务页](research/questions/three_facilities.md) |
 | Q-SPARSE | 两方目录均任意大、每跨对至多一名公共客户，普遍阈值是否仍为 $\rho$ | 本轮由 SPARSE-RHO-ALL 上界与 HC-RHO 下界闭合为 $\rho$；内部证明，外部评审未记录。[任务页](research/questions/sparse_catalogs.md) |
 | Q-CUBIC | 双设施共同目录、客户费用 $\mathbb E[L^3]$，最优普遍阈值 | 开放；内部边界 $[\phi,2]$；跨费用类机制才使其成为高优先级。[任务页](research/questions/cubic_costs.md) |

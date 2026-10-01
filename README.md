@@ -24,6 +24,7 @@
 - `model/NE` → 局部支持几何 → 共同目录固定菜单与全目录环 → 局部强弦 → `SC-PHI-E`；编码有理输入加位复杂度给 `SC-PHI-A`，联合六地点同类下界才得 `SC-PHI-SHARP`。[共享证明顺序](research/current/shared/README.md)。
 - `model/NE` → 异构纯菜单、全目录环 → `HC-2-UP`；与双交叠下界 `HC-2-LOW` 合取才得异构 sharp 2。`HC-RHO` 给单交叠且一侧最多两地点的已知锐性；移除长度条件由新 `SPARSE-RHO-ALL` 全称上界证明，结合该下界解决 [Q-SPARSE](research/questions/sparse_catalogs.md)。[异构证明顺序](research/current/heterogeneous/README.md)。
 - `CORE-LIFT` 只保留全目录真实威胁而不保证核心短。[SPARSE-LONG-CYCLE](research/current/heterogeneous/sparse_long_cycles.md)在单交叠下构造任意长唯一环，反驳无条件短核心推断；它与普遍倍率 $\rho$ 问题之间没有反例蕴含。
+- [SPARSE-BAD-LONG](research/current/heterogeneous/sparse_bad_long_cycles.md)进一步在**确实没有 `r` 稳定格**、`3/2<r<ρ` 时构造任意长唯一精确回应环，所有高行还能共用一种重客户身份；它排除阈值以下的统一短精确核心，但严格不等式在 `ρ` 处坍缩，不冲突于 `SPARSE-RHO-ALL`。
 - `model/NE` → 固定纯平局优先级 → 全目录最佳回应逐边比较 → `SPARSE-HIGH-ACYCLIC` → `SPARSE-BALANCED-R`：[高 reach 条件传播](research/current/heterogeneous/sparse_high_reach_barrier.md)对任意 `r≥1` 给出坏环低区必经和 reach 平衡子类上界；它是新全类 `ρ` 证明的依赖，而非全称证明本身。
 - `SPARSE-HIGH-ACYCLIC` → 首个高到低边界、单客户同一身份容量、`q(ρ)=0` → `SPARSE-RHO-ALL`：新证明直接排除任意长坏环的首个低区入口，**不**压缩回应核心。旧条件结果仍是一般 `r` 的独立量化边界；原“低区回返阻碍”在 `r=ρ` 已消除。
 - 两设施共同目录的 $\phi$ 不覆盖第三家或客户费用 $\mathbb E[L^3]$；分别见 [Q-K-FAC](research/questions/three_facilities.md) 与 [Q-CUBIC](research/questions/cubic_costs.md)。证书的达到性、实例最优性、普遍定理和论文新颖性各自独立。
@@ -53,6 +54,8 @@
 | `research/current/heterogeneous/sparse_long_cycles.md`、`FAILED_ROUTES.md` | 任意长精确威胁环的正整数构造、完整证明及其**仅限于无条件短核心**的排除范围；攻击稀疏证明路线时读。 |
 | `research/current/heterogeneous/sparse_high_reach_barrier.md` | 新增 `SPARSE-HIGH-ACYCLIC` 与 `SPARSE-BALANCED-R` 的全部量词、平局与零 reach 证明、两处独立边界攻击；研究坏环如何穿越低 reach 区时读。 |
 | `research/current/heterogeneous/sparse_unbounded_rho.md` | `SPARSE-RHO-ALL` 全类尖锐阈值的精确范围、固定完整纯续局、首个高到低边界引理、客户身份强制相同、三次式矛盾与独立攻击；接手 Q-SPARSE 或审查新上界时先读。 |
+| `research/current/heterogeneous/sparse_bad_long_cycles.md` | 对每个 `3/2<r<ρ` 的真实坏倍率任意长回应环、明示 `7/4` 有理权族、一般开参数与精确核心失败机制；检验任何条件性短核心或身份代表引理时读。 |
+| `tests/audits/sparse_bad_long_cycles.py`、`examples/heterogeneous/sparse/bad_long_n3.json`、`evidence/runs/2026-10-01/sparse_bad_long_cycles.json` | 从真实客户覆盖生成输入，按 Fraction 重算唯一 NE、全部布局因子及全目录严格回应；冻结 `n=1,2,3,10,30,100`，只是算术攻击，不能代替全 `n,r` 证明。 |
 | `tests/audits/sparse_high_reach.py`、`evidence/runs/2026-10-01/sparse_high_reach.json` | 不调用规范求解器的精确分数审查、固定 seed 和冻结结果：包含原六客户下界、修正后长环小例、随机矩形 incidence；复核新定理边界时运行脚本重生记录。有限审查不代替全称证明。 |
 | `research/questions/cubic_costs.md`、`research/questions/instance_complexity.md` | 非线性费用机制和实例最优判定的条件性预研；遇到跨成本原则、参数算法或困难性归约时读。 |
 | `research/graph.json`、`research/review_status.json`、`research/assets.json` | 数学合取/反例边、逐命题审查层、证明与实现和证据的对照；状态升级或新增 Claim 时一起更新。 |
