@@ -12,6 +12,7 @@
 | [heavy_pairs.md](heavy_pairs.md) | G1：大顾客对容量界、同对 T 矛盾、三角闭集严格下降 |
 | [star_anchors.md](star_anchors.md) | G2/G3：首边、星心、中心引理、锚点选择与两支终局 |
 | [local_chord_full.md](local_chord_full.md) | L1/L2：局部强弦的分支、端点交换与多项式迭代 |
+| [sharp_phi_lower.md](sharp_phi_lower.md) | SC-PHI-SHARP：共同目录的六地点下界、全布局偏离与统一有理扰动 |
 | [algorithm.md](algorithm.md) | 固定 P/E/T/C 菜单、搜索伪代码、验证语义、复杂度和实现边界 |
 
 统一研究入口使用 [公共模型](../model.md) 和 [主张登记](../claims.md)。本分支固定目录相同、允许同址、强制顾客参与、顾客独立混合等假设；异质目录下界或任意凸成本扩展必须另外立项。

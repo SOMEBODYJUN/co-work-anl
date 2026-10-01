@@ -2,7 +2,7 @@
 
 这里的**现行研究资产是重新写出的数学说明**，集中在 [research/current](research/current)；可执行算法集中在 [facility_spe](facility_spe)。原始手稿、旧证明笔记和上一轮整理稿进入 [history](history)。旧的 astra_alg、astra_local、astra_ring、asym_research 根目录已退出当前树；[迁移记录](research/path_migration.json)保留来源，而不让旧实验命名决定未来结构。
 
-**研究状态：**共同目录的黄金比例构造已有完整主稿、现行 Markdown 全分支重写及多轮内部审读；异构目录的因子 2 构造也有成文主稿。两者的程序均可给具体输入生成可检查证书。它们尚未经过外部同行评审；内部证明、实例证书与学术发表分别标注。参见[命题与状态登记](research/current/claims.md)。
+**研究状态：**共同目录的黄金比上界已有完整主稿、现行 Markdown 全分支重写及多轮内部审读；[六地点共同目录下界](research/current/shared/sharp_phi_lower.md)现已补出全布局与有理化证明，二者联合给出尖锐阈值。异构目录的因子 2 构造有成文主稿，受限稀疏 ρ 命题也已逐分支重写。程序能为具体输入生成证书；共享证书另有[独立定义级检查器](facility_spe/cli/verify_phi.py)。以上都尚未经过外部同行评审；内部证明、实例证书与学术发表分别标注。参见[命题与状态登记](research/current/claims.md)及[五轴状态表](research/review_status.json)。
 
 ## 先判断输入属于哪条命题
 
@@ -10,7 +10,7 @@
 | --- | --- | --- | --- |
 | 共同目录的普遍构造 | 两设施同一非空地点目录；正权重、显式覆盖；强制服务；客户最小化实际负载；允许每个布局各选精确独立混合 NE | 因子不超过 \(\phi=(1+\sqrt5)/2\) 的一个纯选址证书；**不是**实例最优因子 | [共享定理、证明与算法](research/current/shared/README.md) |
 | 任意异构目录的普遍构造 | 两个非空目录可不同；同一负载模型；选用纯客户 NE 延续 | 因子不超过 2 的证书；整数反例族表明异构类不能统一降到 2 以下 | [异构分支](research/current/heterogeneous/README.md) |
-| 稀疏异构的较小常数 | **每个跨目录地点对至多一名共有客户，且一侧目录至多两地点** | 候选尖锐普遍因子 \(\rho=2\cos(\pi/7)\) | [受限 \(\rho\) 命题](research/current/heterogeneous/restricted_rho.md) |
+| 稀疏异构的较小常数 | **每个跨目录地点对至多一名共有客户，且一侧目录至多两地点** | 现行内部证明给出尖锐普遍因子 \(\rho=2\cos(\pi/7)\)；外部评审未进行 | [受限 \(\rho\) 全分支证明](research/current/heterogeneous/restricted_rho.md) |
 | 某一个输入的最优因子 | 两设施同一线性负载模型；接受对共有客户数指数增长的时间 | 支持区间枚举给该实例最优因子；短证书单独仅证明“达到” | [局部几何与精确方法](research/current/local_and_exact/README.md) |
 
 完整的客户最优反应式、延续量词和编码界限在[规范模型](research/current/model.md)。[使用说明](USAGE.md)列出可直接运行的命令与证书语义。

@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | [graph.json](graph.json) 与[交互 HTML](index.html) | 定义、引理、反例、命题之间的**数学合取超边**。derives 需要全部前提；attacks 为反例；checks 为有限观测；implements 为程序关系；limits 为未解决处。 | 不是旧稿文件夹或普通链接图；测试边不证明普遍定理。 |
 | [assets.json](assets.json) | 每条命题的精确适用条件、现行新稿、规范实现、测试、冻结结果、历史来源。 | 历史来源不自动具有现行证明地位。 |
+| [review_status.json](review_status.json) | 所有现行命题的来源证明、当前重写、内部审读、外部审查、实现五个独立状态；构图时强制与命题节点一致。 | 内部审读不代替外部同行评审。 |
 | [path_migration.json](path_migration.json) | 原始文件搬迁和旧命令退出位置。 | 不要求继续在根目录保留旧模型命名。 |
 | [source_crosswalk.md](source_crosswalk.md) | 68 个原始文件/旧代码入口各自如何被新稿解释、保留或取代。 | 原稿文件本身不等于现行命题。 |
 

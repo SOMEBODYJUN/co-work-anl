@@ -27,13 +27,20 @@
     python3 -m facility_spe.shared_phi examples/shared/tiny.json --output certificate.json
     python3 -m facility_spe.cli.verify_phi examples/shared/tiny.json certificate.json
 
-验证器从输入重算客户负载、每名客户的精确最优反应以及每个**实际**设施单方偏离的不等式，允许将未列出的布局交给规范的受保护纯修复规则。它调用构造器内的同一个验证函数；自由文本 default_continuation 和响应环等解释字段不受验证，因此尚不是另一份独立实现的证明检查器。对 EXACT-KAPPA 的 verify 函数同样只验证达到的倍率；“最优”来自算法的完整谱枚举证明。
+`facility_spe.cli.verify_phi` 是只依赖 Python 标准库的独立检查器，不导入构造器、菜单或共用 NE 核心。它从原始覆盖集合直接计算每名共同客户选择两设施时的条件期望成本，检查概率端点与真混合的精确最优反应，重算两家负载，并要求每个**实际**单方偏离恰有一条证书。所有比较用有理数；`factor >= 1` 与 `factor² - factor - 1 <= 0` 精确检查黄金比界，包括在轨收益为零的情形。Python 调用不接受布尔值或二进制浮点数充当权重、概率、负载、倍率或索引；CLI 保留 JSON 十进制数的精确值，并拒绝重复 JSON 字段与非有限数。输入覆盖列表与目录中的重复索引按集合规范化，与构造器一致；证书共同客户列表仍必须排序且唯一。
+
+默认续局字段必须精确等于 `guarded_repair of all common customers at facility 1`。检查器对每个尚未列出的**带标签布局**自行复算该规则：共同客户先全部到设施 1；当其负载较大时，将仍在那里且权重严格小于负载差的最大权重客户移到设施 2（并列取最小客户编号），首次负载反转或无人严格改善即停止。它还逐个检查生成的纯策略满足上述客户最优反应。因此通过检查覆盖整个续局，不能任填默认规则文本。响应环、菜单威胁、菜单计数、`family` 与 `guarantee` 文本是解释信息，不受此检查器认证；通过只证明该输入达到所给倍率，不证明菜单极小性、实例最优性、普遍定理或运行时间。对 EXACT-KAPPA 的 verify 函数同样只验证达到的倍率；“最优”来自算法的完整谱枚举证明。
+
+另一个冻结实例的在轨均衡使用三个真混合客户，可直接检查：
+
+    python3 -m facility_spe.cli.verify_phi examples/shared/on_path_chord.json evidence/certificates/shared/on_path_chord.json
 
 共享黄金比和异构因子 2 的普遍上界均已有完整成文主稿与内部审读，尚无外部同行评审。[共享证明 Markdown](research/current/shared/README.md)已将 G1–G3、L1–L2 分支重写到对应页并进行内部逐式核对。把可核查实例证书用于满足模型的研究数据是当前直接可做的事；证书只核验所给实例。
 
 ## 回归入口
 
     python3 -m tests.test_shared_phi
+    python3 -m tests.test_verify_phi
     python3 -m tests.test_four_seed
     python3 -m tests.test_heterogeneous
     python3 -m tests.test_lazy_ring

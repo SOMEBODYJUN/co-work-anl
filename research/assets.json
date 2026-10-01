@@ -33,16 +33,20 @@
       "tests": [
         "tests/test_shared_phi.py",
         "tests/audits/shared_menu.py",
-        "tests/audits/strong_chord_iff.py"
+        "tests/audits/strong_chord_iff.py",
+        "tests/test_verify_phi.py"
       ],
       "records": [
-        "evidence/runs/2026-09-30/shared_phi.json"
+        "evidence/runs/2026-09-30/shared_phi.json",
+        "evidence/runs/2026-10-01/on_path_chord.json"
       ],
       "examples": [
         "examples/shared/tiny.json",
-        "evidence/certificates/shared/tiny_phi.json"
+        "evidence/certificates/shared/tiny_phi.json",
+        "examples/shared/on_path_chord.json",
+        "evidence/certificates/shared/on_path_chord.json"
       ],
-      "limit": "Current Markdown reconstructs G1-G3 and L1-L2 with internal cross-audit; external peer review and an independently implemented certificate checker are not yet recorded. A concrete certificate does not establish instance optimality.",
+      "limit": "Current Markdown reconstructs G1-G3 and L1-L2 with internal cross-audit; external peer review is unrecorded. A separately implemented verifier checks one complete continuation, including default layouts, and a full-game three-mixer C witness is frozen. Neither establishes universal existence or instance optimality.",
       "sources": [
         "history/source/manuscripts/shared_phi/main.tex",
         "history/curation-2026-10-01/SHARED_PHI.md",
@@ -100,7 +104,7 @@
       "claims": [
         "HC-RHO"
       ],
-      "status": "internally audited candidate",
+      "status": "complete current proof reconstruction internally checked; unrefereed",
       "applies_when": [
         "both max cross-pair overlap <=1 and min catalog cardinality <=2",
         "two nonempty finite facility catalogs, positive rational weights",
@@ -120,7 +124,7 @@
       "examples": [
         "examples/heterogeneous/rho_lower.json"
       ],
-      "limit": "Both restrictions are required for universal rho; exact single-overlap solver alone is not the theorem.",
+      "limit": "Both restrictions are jointly required for universal rho; two unbounded catalogs remain open. The exact single-overlap solver alone proves only a particular instance optimum; no external peer review is recorded.",
       "sources": [
         "history/source/manuscripts/heterogeneous/main.tex",
         "history/curation-2026-10-01/HETEROGENEOUS.md",
@@ -317,24 +321,32 @@
       "claims": [
         "SC-PHI-SHARP"
       ],
-      "status": "conditional candidate pending published lower-bound model transfer",
+      "status": "corrected shared rational lower transfer proved in current Markdown, internally checked; unrefereed",
       "applies_when": [
-        "SC-PHI-E upper theorem accepted for the same shared-catalog class",
-        "published lower instance actually embeds in that shared positive-rational incidence class with strict perturbation"
+        "two labeled facilities share the same nonempty six-site catalog and all positive rational weights",
+        "mandatory patronage, linear realized-load cost, all independent-mixed exact customer NE continuations"
       ],
-      "produces": "sharp universal threshold phi for the shared positive-rational class, conditional on both premises",
+      "produces": "six-site positive-rational lower family approaching phi; combine with SC-PHI-E for sharp universal shared threshold",
       "implementation": [],
       "proof": [
+        "research/current/shared/sharp_phi_lower.md",
         "research/current/shared/theorems.md"
       ],
       "sources": [
         "history/source/manuscripts/shared_phi/main.tex",
         "history/curation-2026-10-01/LITERATURE.md"
       ],
-      "tests": [],
-      "records": [],
-      "examples": [],
-      "limit": "published statement alone does not establish the exact shared-catalog rational transfer"
+      "tests": [
+        "tests/test_shared_phi.py"
+      ],
+      "records": [
+        "evidence/runs/2026-10-01/sharp_lower_rational.json"
+      ],
+      "examples": [
+        "examples/shared/sharp_lower_rational.json",
+        "evidence/certificates/shared/sharp_lower_rational.json"
+      ],
+      "limit": "The published figure needs an explicit +epsilon correction to one weight, rederived in current Markdown. A finite integer instance and its optimal factor do not prove the limiting family; no external peer review is recorded."
     },
     {
       "id": "closed_response_core",

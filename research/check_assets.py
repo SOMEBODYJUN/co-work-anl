@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import subprocess
 from pathlib import Path
 
@@ -21,6 +22,7 @@ def require(condition: bool, message: object) -> None:
 def check() -> None:
     assets = load("assets.json")["entries"]
     graph = load("graph.json")
+    review = load("review_status.json")
     migration = load("path_migration.json")
     node_ids = {node["id"] for node in graph["nodes"]}
     for item in graph["nodes"] + graph["hyperedges"]:
@@ -55,6 +57,8 @@ def check() -> None:
                 if field == "implementation":
                     implementations.add(path)
     all_claims = {node["id"] for node in graph["nodes"] if node["kind"] == "claim"}
+    require(all_claims <= {row["id"] for row in review["entries"]},
+            "claim-review ledger omits a graph claim")
     require(all_claims <= covered_claims,
             ("unclassified mathematical claim", sorted(all_claims - covered_claims)))
     canonical = {
@@ -91,6 +95,18 @@ def check() -> None:
     for group in ("history/source/manuscripts", "history/source/notes",
                   "evidence", "examples", "research/current"):
         require(any(p.startswith(group + "/") for p in tracked), group)
+    for manifest in (ROOT / "evidence/runs/2026-10-01").glob("*.json"):
+        report = json.loads(manifest.read_text(encoding="utf-8"))
+        require(report["schema_version"] == 1 and report["python_version"]
+                and report["base_commit"] and report["replay_commands"]
+                and report["source_sha256"] and report["limitations"],
+                ("incomplete evidence manifest", manifest.name))
+        for key in ("input", "certificate"):
+            if key in report:
+                source = ROOT / report[key]
+                require(source.is_file() and hashlib.sha256(source.read_bytes()).hexdigest()
+                        == report[key + "_sha256"],
+                        ("evidence input/certificate changed", manifest.name, key))
     print(f"Validated {len(assets)} scoped asset routes, {len(implementations)} implementations, "
           f"{len(migration['moved'])} sourced files, "
           f"{len(crosswalk)} individually interpreted origins, "

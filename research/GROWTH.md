@@ -16,7 +16,7 @@
 1. 在 research/questions/ 记录问题：实例类、客户均衡概念、量词、已知上/下界与可能反例。未知问题保持“开放”；不要在当前命题里暗示它已被解决。
 2. 按[模板](templates/claim.md)在 research/current/相应分支写新稿。首先定义输入类型与所有同时成立的假设，再分别写定理、关键引理、证明链和未消除的义务。直接引用历史文段不构成新稿。
 3. 若有程序，在 facility_spe/ 放唯一实现，在 tests/ 放能验证独立性质的检查。证书的验证范围应与普遍证明、最优性证明分别说明。
-4. 更新 research/current/claims.md 中的编号、状态和逻辑依赖；在 research/assets.json 添加现行稿、可追溯源、实现、测试、冻结结果；在 research/graph.json 添加数学节点及带**全部共同前提**的超边。若导入原始文件，逐个登记到 research/source_crosswalk.json 并运行 research/build_crosswalk.py。有限测试用 checks 边，反例用 attacks 边，不能画成 derives。
+4. 更新 research/current/claims.md 中的编号、状态和逻辑依赖；在 research/review_status.json **逐命题**登记来源证明、当前重写、内部审读、外部审查与软件实现，并与图节点状态对齐；在 research/assets.json 添加现行稿、可追溯源、实现、测试、冻结结果；在 research/graph.json 添加数学节点及带**全部共同前提**的超边。若导入原始文件，逐个登记到 research/source_crosswalk.json 并运行 research/build_crosswalk.py。有限测试用 checks 边，反例用 attacks 边，不能画成 derives。
 5. 运行 python3 research/build_map.py、python3 research/build_map.py --check、python3 research/build_crosswalk.py --check、python3 research/check_assets.py 和有关回归，再更新入口 README 与 USAGE。状态升级需要重读证明和记录消除的反驳；通过测试本身不升级定理状态。
 
 ## 命题与版本约定

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-01",
+  "name": "on_path_chord",
+  "python_version": "3.12.14",
+  "base_commit": "d047610dd503ade2f04b4c7324a4e36a5770475c",
+  "source_sha256": {
+    "facility_spe/shared_phi.py": "cbb4d5dffc0b73ab7a383406debb18ca4b860d41205ac9baac7de4bddbaddc26",
+    "facility_spe/local/strong_chord.py": "bc29aecdadcd0e8e5e2a6d93c294fa1acf142671b568838aba8538fbcb3a5c7e",
+    "facility_spe/cli/verify_phi.py": "ab14d3c3ae0cc40115ec1c1a0151839a48d6886b10c69b21094b3ee803d647a9",
+    "tests/test_shared_phi.py": "9a9138bd4edc3dd8a52d98b4f197f7bce4ee1c5f37f3ef7180df573537917e9b"
+  },
+  "input": "examples/shared/on_path_chord.json",
+  "input_sha256": "06a4416637ad29ae1825881bb63ca734b3b50773fd6c7b5e343b0fdafaa2ef02",
+  "certificate": "evidence/certificates/shared/on_path_chord.json",
+  "certificate_sha256": "55a14539d7c35b8f95f526e03c523fa21f7acc891ee89ed55d565a299f7b97c1",
+  "replay_commands": [
+    "python3 -B -m facility_spe.shared_phi examples/shared/on_path_chord.json --output certificate.json",
+    "python3 -B -m facility_spe.cli.verify_phi examples/shared/on_path_chord.json evidence/certificates/shared/on_path_chord.json",
+    "python3 -B -m tests.test_shared_phi"
+  ],
+  "observed": {
+    "on_path_layout": [
+      0,
+      1
+    ],
+    "on_path_family": "strong_chord_positive_large_three",
+    "prob_first": [
+      "39/80",
+      "39/80",
+      "39/80"
+    ],
+    "loads": [
+      "277/4",
+      "279/4"
+    ],
+    "factor": "1",
+    "checked_complete_tagged_layouts": 9
+  },
+  "limitations": "Finite selected C branch instance and independently checked attaining continuation; no universal existence or instance-optimality conclusion."
+}

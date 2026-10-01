@@ -13,6 +13,13 @@ KINDS = {"definition", "lemma", "construction", "counterexample",
 RELATIONS = {"derives", "attacks", "checks", "implements", "limits"}
 TRACKS = {"model", "local", "shared", "heterogeneous", "computation",
           "extensions", "evidence"}
+REVIEW_STATES = {
+    "source_proof": {"complete", "source_note", "published_lower_plus_sketch", "synthesis"},
+    "current_proof": {"complete", "candidate", "conditional", "depends_on_claims", "direct"},
+    "internal_review": {"multiple_audits", "current_exact_audit", "candidate"},
+    "external_review": {"not_recorded", "completed"},
+    "implementation": {"implemented", "partial", "none", "not_applicable", "finite_example"},
+}
 
 
 def require(condition: bool, message: object) -> None:
@@ -24,6 +31,34 @@ def validate(data: dict) -> None:
     require(data["version"] == 1, "unsupported graph schema")
     nodes = {node["id"]: node for node in data["nodes"]}
     require(len(nodes) == len(data["nodes"]), "duplicate node ID")
+    review = json.loads((HERE / "review_status.json").read_text(encoding="utf-8"))
+    require(review["version"] == 1, "unsupported claim-review schema")
+    states = {row["id"]: row for row in review["entries"]}
+    require(len(states) == len(review["entries"]), "duplicate claim-review ID")
+    declared = set()
+    table = (HERE / "current/claims.md").read_text(encoding="utf-8").split("## 逻辑使用规则")[0]
+    for line in table.splitlines():
+        if not line.startswith("| "):
+            continue
+        cell = line.split("|", 2)[1].strip()
+        if cell == "ID" or cell.startswith("---"):
+            continue
+        pieces = [piece.strip() for piece in cell.split(" / ")]
+        for piece in pieces:
+            claim_id = piece if piece in nodes else pieces[0].rsplit("-", 1)[0] + "-" + piece
+            require(claim_id in nodes, ("unrecognized registered claim", cell))
+            declared.add(claim_id)
+    require(set(states) == declared,
+            ("claim-review ledger must cover exactly the IDs in claims.md",
+             sorted(declared - set(states)), sorted(set(states) - declared)))
+    require(all(nodes[claim_id]["kind"] in {"claim", "lemma"} for claim_id in declared),
+            "a registered claim must be a claim or claim-level lemma in the graph")
+    for claim_id, state in states.items():
+        require(state["graph_status"] == nodes[claim_id]["status"],
+                ("claim status drift", claim_id))
+        for field, allowed in REVIEW_STATES.items():
+            require(state.get(field) in allowed,
+                    ("invalid claim review state", claim_id, field))
     edges = {edge["id"]: edge for edge in data["hyperedges"]}
     require(len(edges) == len(data["hyperedges"]), "duplicate edge ID")
     require(set(data["legend"]) == RELATIONS, "invalid relation legend")

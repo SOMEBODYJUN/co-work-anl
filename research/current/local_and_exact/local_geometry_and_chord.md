@@ -56,7 +56,7 @@ $$r>\phi R/2,\qquad C<qr.$$
 
 $$L_1\ge qr,\qquad L_2\ge qR.\tag{2}$$
 
-若 $C=0$，唯一负载 $(R,r)$ 已合格。若 $C>0$ 且 $x=\max_iw_i$，共享主稿 Appendix A 的精确陈述为
+若 $C=0$，唯一负载 $(R,r)$ 已合格。若 $C>0$ 且 $x=\max_iw_i$，[现行局部强弦全文末节](../shared/local_chord_full.md)及共享主稿 Appendix A 的精确陈述为
 
 $$\exists\text{ NE 满足 (2)}\quad\Longleftrightarrow\quad
 C-x\ge R-r\quad\text{或}\quad x\le R-qr.\tag{3}$$
@@ -65,11 +65,11 @@ C-x\ge R-r\quad\text{或}\quad x\le R-qr.\tag{3}$$
 
 **必要性可直接证明。** 若两分支均失败，记 $S=C-x<R-r$。最大客户在 1 的最低条件费用为 $R-S>r$，在 2 的最高费用为 $r$，故严格选择 2。随后每个其他共同客户在 1 的费用至多 $R-x<qr\le qR$，在 2 的费用大于 $r-S>2r-R>qR$，故严格选择 1。唯一 NE 负载为 $(R-x,r-S)$，失败于第一个配额。
 
-**充分性和算法的依赖。** 以下给出可检查的构造骨架；所有坏差距分支的数值配额估计仍依赖 Appendix A 的完整分情况证明。Appendix B 则独立补足其有限多项式运行界。由此得到的是内部证明候选支持的局部算法，不能单凭局部结论推得全局 φ-SPE。
+**充分性和算法的依赖。** 以下是构造概览；[现行局部强弦全文 §§3–7](../shared/local_chord_full.md)给出坏正差、坏负差、外分支、退化端点和位长的完整推导，末节补充本 iff 的较宽范围。它们对应主稿 Appendix A–B，并已记录内部交叉审读。局部结论仍须与固定菜单、全局闭环证明联合，才能推出全局 φ-SPE；外部同行评审尚未进行。
 
 ## 5. 多项式构造为何不需要全局二次最大值
 
-归一化 $R=1$，设 $\delta=1-r$。若 $S<\delta$ 而 $x\le1-qr$，固定最大客户在 2，其他客户从 1 开始作最大改善修复。固定者不会改善，因为 $L_2-L_1\le x+S-\delta<x$。Appendix A 的外部分支证明两个目标均保留。
+归一化 $R=1$，设 $\delta=1-r$。若 $S<\delta$ 而 $x\le1-qr$，固定最大客户在 2，其他客户从 1 开始作最大改善修复。固定者不会改善，因为 $L_2-L_1\le x+S-\delta<x$。[局部强弦全文 §3 及末节](../shared/local_chord_full.md)证明两个目标均保留，对应 Appendix A 的外分支。
 
 若 $S\ge\delta$，在其余客户的盒子切片
 
@@ -102,9 +102,9 @@ $$z_i=+v\Rightarrow d\le v,\qquad z_i=-v\Rightarrow d\ge-v.$$
 1. 若某小客户 $v\in[d/3,d]$，令它与 $x,z$ 混合，差距改为 $(d-v)/2$。
 2. 若没有大客户且所有小客户小于 $d/3$，取降序前缀总重 $T<d$，其下一项使总重达到 $d$。前缀与 $x,z$ 混合，差距 $(d-T)/(m+1)$；前缀非空，且下一项证明每位混合者足够重。
 3. 若恰一大客户 $y$、小客户总重 $T$ 且 $\delta+T\le2z$，混合 $x,y,z$，小客户全在 1，差距 $-(\delta+T)/2$。
-4. 否则质量估计给 $d\le\delta$。令 $x$ 在 1，其余在 2 后修复。Appendix A.3 证明初始配额与反转前后配额不变量。
+4. 否则质量估计给 $d\le\delta$。令 $x$ 在 1，其余在 2 后修复。[局部强弦全文 §5](../shared/local_chord_full.md)证明初始配额与反转前后配额不变量，对应 Appendix A.3。
 
-若初始差距 $-e<-Z$，其他客户全在 1，总重 $e-\delta$。有重量 $v\ge e/3$ 时，与 $x,z$ 混合得差距 $-(e-v)/2$；否则把 $x$ 放在 2、其余放在 1 后修复。这里需使用 Appendix A.5 的加强：坏负差距本身强迫 $x<1-qr$，从而去掉最大重量充分条件后，该修复仍合法。
+若初始差距 $-e<-Z$，其他客户全在 1，总重 $e-\delta$。有重量 $v\ge e/3$ 时，与 $x,z$ 混合得差距 $-(e-v)/2$；否则把 $x$ 放在 2、其余放在 1 后修复。这里使用[局部强弦全文 §6 及末节](../shared/local_chord_full.md)重写的 Appendix A.5 加强：坏负差距本身强迫 $x<1-qr$，从而去掉最大重量充分条件后，该修复仍合法。
 
 所有分支只需扫描、排序、上述交换或最大改善修复。有理数位长保持输入的多项式量级；涉及 $q$ 的比较可用平方符号判定或 $\mathbb Q(\sqrt5)$，不能用浮点阈值替代严格边界。该运行界不等于整个全局博弈定理；后者还需菜单及全局闭环证明。
 
@@ -122,4 +122,4 @@ $$z_i=+v\Rightarrow d\le v,\qquad z_i=-v\Rightarrow d\ge-v.$$
 - [strong_chord_iff.py](../../../tests/audits/strong_chord_iff.py)：小实例 iff 枚举审计。
 - [保存的 strong-chord 运行](../../../evidence/runs/2026-09-30/strong_chord.json)：历史有限测试证据。
 
-证明来源为[共享主稿 Appendix A–B](../../../history/source/manuscripts/shared_phi/main.tex)，旧推导另见[交换笔记](../../../history/source/notes/local/chord_exchange.md)。本文补全符号、命题作用域和算法逻辑；不宣称替代 Appendix A 全部分支数值证明的逐行审核。
+完整现行证明为[局部强弦全分支重建](../shared/local_chord_full.md)，来源为[共享主稿 Appendix A–B](../../../history/source/manuscripts/shared_phi/main.tex)，旧推导另见[交换笔记](../../../history/source/notes/local/chord_exchange.md)。本页提供符号、作用域和算法概览；内部全文与审读已具备，外部逐式复核仍另行记录。
