@@ -96,6 +96,8 @@ class Spectrum:
 
 
 def verify(weights, a, b, probabilities):
+    if len(weights) != len(probabilities):
+        return False
     a, b = F(a), F(b)
     la = a + sum(w * p for w, p in zip(weights, probabilities))
     lb = b + sum(w * (1 - p) for w, p in zip(weights, probabilities))

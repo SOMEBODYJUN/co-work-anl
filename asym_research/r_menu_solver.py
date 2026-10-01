@@ -80,6 +80,8 @@ def make_witness(s,t,data,entry):
 
 
 def solve(instance,maximum_only=True):
+    if any(isinstance(v,float) for v in instance["weights"]):
+        raise TypeError("use exact rational strings or integers for weights")
     weights=[Q(str(v)) for v in instance["weights"]]
     if any(v<=0 for v in weights):
         raise ValueError("weights must be positive")
@@ -133,34 +135,60 @@ def solve(instance,maximum_only=True):
 
 
 def verify(instance,result):
-    """Independent payoff/Nash/deviation checks; never reads a menu or D value."""
+    """Direct exact certificate checks; never reads a menu or D value."""
+    if any(isinstance(v,float) for v in instance["weights"]):
+        raise TypeError("use exact rational strings or integers for weights")
     weights=[Q(str(v)) for v in instance["weights"]]
     sites=[set(v) for v in instance["locations"]]
+    u1=set(instance["U1"]);u2=set(instance["U2"])
+    if (not u1 or not u2 or any(w<=0 for w in weights)
+            or any(type(i) is not int or not 0<=i<len(weights)
+                   for site in sites for i in site)
+            or any(type(s) is not int or not 0<=s<len(sites)
+                   for s in u1|u2)):
+        raise ValueError("invalid input instance")
     alpha=Q(str(result["alpha"]))
-    assert 1<=alpha<=2
+    if not 1<=alpha<=2:
+        raise ValueError("claimed factor outside [1,2]")
     def check(rec):
         s,t=rec["layout"]
+        if type(s) is not int or type(t) is not int or s not in u1 or t not in u2:
+            raise ValueError("witness layout is outside the legal catalogs")
         common=sorted(sites[s]&sites[t]);p=rec["prob_first"]
-        assert common==rec["common"] and len(common)==len(p)
-        assert all(v in (0,1) for v in p)
+        if common!=rec["common"] or len(common)!=len(p):
+            raise ValueError("incorrect common-customer list or assignment length")
+        if any(type(v) is not int or v not in (0,1) for v in p):
+            raise ValueError("customer assignment is not pure")
         x=sum((weights[i] for i in sites[s]-sites[t]),Q(0))
         y=sum((weights[i] for i in sites[t]-sites[s]),Q(0))
         for i,z in zip(common,p):
             x+=weights[i]*z;y+=weights[i]*(1-z)
-        assert [x,y]==[Q(str(z)) for z in rec["loads"]]
+        if [x,y]!=[Q(str(z)) for z in rec["loads"]]:
+            raise ValueError("incorrect facility loads")
         for i,z in zip(common,p):
             conditional_difference=x-y+weights[i]*(1-2*z)
-            assert (z==0 or conditional_difference<=0) and (z==1 or conditional_difference>=0)
+            if not ((z==0 or conditional_difference<=0)
+                    and (z==1 or conditional_difference>=0)):
+                raise ValueError("customer assignment is not a Nash equilibrium")
         return x,y
     x,y=check(result["on_path"]);s,t=result["on_path"]["layout"]
-    expected={(1,r,t) for r in instance["U1"] if r!=s}
-    expected|={(2,s,r) for r in instance["U2"] if r!=t}
+    expected={(1,r,t) for r in u1 if r!=s}
+    expected|={(2,s,r) for r in u2 if r!=t}
     observed=set()
     for rec in result["deviations"]:
         a,b=check(rec["witness"]);ds,dt=rec["witness"]["layout"]
-        observed.add((rec["deviator"],ds,dt))
-        assert (a if rec["deviator"]==1 else b)<=alpha*(x if rec["deviator"]==1 else y)
-    assert expected==observed
+        who=rec["deviator"]
+        if type(who) is not int or who not in (1,2):
+            raise ValueError("invalid deviating facility")
+        key=(who,ds,dt)
+        if key in observed:
+            raise ValueError("duplicate deviation witness")
+        observed.add(key)
+        if (a if who==1 else b)>alpha*(x if who==1 else y):
+            raise ValueError("facility deviation exceeds claimed factor")
+    if expected!=observed:
+        raise ValueError("missing or unrelated deviation witness")
+    return True
 
 
 def serial(value):
@@ -185,7 +213,7 @@ if __name__=="__main__":
     parser.set_defaults(maximum_only=True)
     args=parser.parse_args()
     with open(args.input) as stream:
-        instance=json.load(stream)
+        instance=json.load(stream,parse_float=str)
     rendered=json.dumps(serial(solve(instance,maximum_only=args.maximum_only)),ensure_ascii=False,indent=2)+"\n"
     if args.output:
         with open(args.output,"w") as stream:

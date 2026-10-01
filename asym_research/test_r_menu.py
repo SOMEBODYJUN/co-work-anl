@@ -104,10 +104,19 @@ def main():
     damaged=solve(directed[-1]);damaged['on_path']['prob_first'][0]=1-damaged['on_path']['prob_first'][0]
     try:
         verify(directed[-1],damaged)
-    except AssertionError:
+    except (AssertionError,ValueError):
         records['corrupted_certificate_rejected']=True
     else:
         raise AssertionError('corrupted certificate accepted')
+    illegal={'weights':['1'],'locations':[[0],[0]],'U1':[0],'U2':[0]}
+    impossible={'alpha':'1','on_path':{'layout':[1,1],'common':[0],
+                'prob_first':[1],'loads':['1','0']},'deviations':[]}
+    try:
+        verify(illegal,impossible)
+    except ValueError:
+        records['illegal_layout_rejected']=True
+    else:
+        raise AssertionError('illegal layout accepted')
     records['largest_reported_factor']=str(maximum)
     records['elapsed_seconds']=round(time.time()-start,3)
     destination=Path(__file__).with_name('r_menu_verification.json')
