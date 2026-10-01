@@ -2,7 +2,7 @@
 
 这里的**现行研究资产是重新写出的数学说明**，集中在 [research/current](research/current)；可执行算法集中在 [facility_spe](facility_spe)。原始手稿、旧证明笔记和上一轮整理稿进入 [history](history)。旧的 astra_alg、astra_local、astra_ring、asym_research 根目录已退出当前树；[迁移记录](research/path_migration.json)保留来源，而不让旧实验命名决定未来结构。
 
-**研究状态：**共同目录的黄金比例算法与异构目录的因子 2 构造都能为满足条件的具体输入产生可检查证书；两条普遍存在性与复杂度证明仍是经过内部审读、尚待外部独立逐行复核的候选结果。证书验证一个实例，有限测试记录已检查的输入；它们不取代普遍证明。参见[命题与状态登记](research/current/claims.md)。
+**研究状态：**共同目录的黄金比例构造已有完整主稿、现行 Markdown 全分支重写及多轮内部审读；异构目录的因子 2 构造也有成文主稿。两者的程序均可给具体输入生成可检查证书。它们尚未经过外部同行评审；内部证明、实例证书与学术发表分别标注。参见[命题与状态登记](research/current/claims.md)。
 
 ## 先判断输入属于哪条命题
 
@@ -19,7 +19,7 @@
 
 [命题登记](research/current/claims.md)固定适用域与状态；[现行资产索引](ASSETS.md)把命题连到新稿、实现、检验及历史来源。[数学超图](research/index.html)的节点是定义、引理、反例和结论；一条推导超边要求**所有列出的共同前提**，不是旧文件之间的链接。其[数据](research/graph.json)和[维护规则](research/README.md)可直接核查。GitHub 预览 HTML 时显示源码，下载 HTML 后可使用交互查看器。
 
-新问题从 [research/questions](research/questions) 开始；新分支在 research/current/ 下增长，代码、证据、反例分别进入各自目录。[新增研究规则与命题模板](research/GROWTH.md)规定如何写量词、证明链、实现合同、状态和证据；[AGENTS.md](AGENTS.md)让后续研究协作者在改动前执行同一套规则。不能仅搬来一份旧稿或通过有限测试就升级定理。
+[下一阶段研究路线](research/ROADMAP.md)区分新数学问题与现有资产的交付。新问题从 [research/questions](research/questions) 开始；新分支在 research/current/ 下增长，代码、证据、反例分别进入各自目录。[新增研究规则与命题模板](research/GROWTH.md)规定如何写量词、证明链、实现合同、状态和证据；[AGENTS.md](AGENTS.md)让后续研究协作者在改动前执行同一套规则。不能仅搬来一份旧稿或通过有限测试就升级定理。
 
 | 仓库区域 | 职责 |
 | --- | --- |

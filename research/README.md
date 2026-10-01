@@ -1,6 +1,6 @@
 # 数学关系图、资产索引与增长接口
 
-[现行研究](current/README.md)是新写的内容；[开放问题](questions/README.md)记录待解量词；[增长规则](GROWTH.md)及[命题模板](templates/claim.md)说明下一项成果怎么放入仓库。
+[现行研究](current/README.md)说明已有结果；[下一阶段路线](ROADMAP.md)排序真正的新问题，[开放问题](questions/README.md)记录其待解量词；[增长规则](GROWTH.md)及[命题模板](templates/claim.md)说明下一项成果怎么放入仓库。现行共享证明的 G1–G3、L1–L2 已在独立 Markdown 页重写，不混入开放问题。
 
 本目录有两份彼此不同的机器可读关系：
 
