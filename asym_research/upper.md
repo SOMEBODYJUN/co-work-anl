@@ -1,3 +1,5 @@
+> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../README.md), [claim registry](../CLAIMS.md) and [source-status guide](../PROVENANCE.md) for current scope.
+
 # 异构选址集：双色回应环结构与通用 2 上界的研究过程
 
 > **最终状态（2026-09-30）：本文件的一方至多两个动作限制，现已由 `universal_two.md` 的完整任意长度回应环证明去掉。任意有限异构允许集都有 2 近似 SPE，并可用受限 R 纯见证库在输入位长多项式时间构造；全部客户后续均可选精确纯 NE。`tight_two_lower.md` 的六客户、2×2、每对至多两共有客户下界说明 2 是最优通用常数。两个结果均已完成本轮独立内部审计。以下保留早期引理、受限情形和长环探索历史，不代表一般问题仍然开放。**

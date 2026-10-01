@@ -1,3 +1,5 @@
+> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../README.md), [claim registry](../CLAIMS.md) and [source-status guide](../PROVENANCE.md) for current scope.
+
 # Exact algorithms for the two-facility client game
 
 Research checkpoint, 2026-09-30. These results are independent of the unreviewed global golden-ratio proof. Only the final SPE corollary uses that proof. The code `threshold_dp.py` implements the pseudo-polynomial algorithm with exact Python fractions and retained parent layers. Its full load spectra were checked against independent ternary support enumeration on 530 instances with 0–8 common customers and rational private loads; every reported interval midpoint witness was independently Nash-checked. This is implementation evidence, not a substitute for the proofs below.

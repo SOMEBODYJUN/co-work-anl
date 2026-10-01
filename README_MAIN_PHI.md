@@ -1,3 +1,5 @@
+> **Historical research note (superseded navigation).** Preserve the derivation below as provenance; use [the current mathematical map](README.md), [claim registry](CLAIMS.md) and [source-status guide](PROVENANCE.md) for current scope.
+
 # Shared-catalog golden-ratio research handoff
 
 Research checkpoint, 2026-09-30. The proof and algorithm below have undergone internal independent audits; they have not been externally refereed. This handoff concerns **two facilities with the same explicitly listed finite location set** and positive rational atomic customer weights. It does not assert the same factor for different facility-specific location sets.

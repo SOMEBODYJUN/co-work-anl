@@ -1,3 +1,5 @@
+> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../README.md), [claim registry](../CLAIMS.md) and [source-status guide](../PROVENANCE.md) for current scope.
+
 # Deterministic polynomial construction for the exact strong cross-chord criterion
 
 Research note, 2026-09-30. This note does not edit the main manuscript. It replaces the only apparently non-polynomial operation in `strong_cross_chord_arbitrary_n_proof.md` by a finite exchange algorithm with a weight-independent polynomial bound.

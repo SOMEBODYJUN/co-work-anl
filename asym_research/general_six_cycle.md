@@ -1,3 +1,5 @@
+> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../README.md), [claim registry](../CLAIMS.md) and [source-status guide](../PROVENANCE.md) for current scope.
+
 # Excluding a general alternating six-cycle at factor 2
 
 Research proof, 2026-09-30. This proof concerns arbitrary positive customer weights and arbitrary numbers of common customers. It uses only legal opposite-color layouts and a common finite menu of exact **pure** customer Nash equilibria at each layout. All response maxima below are over the full allowed action sets.

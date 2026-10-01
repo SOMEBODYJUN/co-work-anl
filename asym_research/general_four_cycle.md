@@ -1,3 +1,5 @@
+> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../README.md), [claim registry](../CLAIMS.md) and [source-status guide](../PROVENANCE.md) for current scope.
+
 # A factor-2 theorem for a closed bipartite maximin four-cycle
 
 Research note, 2026-09-30. This note concerns two facilities with potentially different finite action sets. It allows arbitrary finite positive customer weights, arbitrary accessibility, and exact independent mixed customer Nash equilibria. It does not use the common-action-set golden-ratio theorem.

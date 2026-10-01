@@ -1,93 +1,70 @@
-# Two-stage facility location with weighted atomic customers
+# 双设施两阶段选址：数学研究资产
 
-Research checkpoint: 2026-09-30. This repository is a **research record**, not a claim of external peer review. Start with this map, then `RESEARCH_STATE.md`, `CLAIMS.md`, and `FAILED_ROUTES.md`. The main shared-catalog theorem and the heterogeneous-catalog theorem are internally audited manuscript claims; the exact code certificates can be checked independently of their universal proofs.
+**研究版本：2026-10-01。** 这里给出可运行的算法、完整证明草稿、可核查的实例证书和反例。两个主定理仍是**经过内部审查的研究候选结果**；没有记录外部逐行审稿。因此，对满足模型的实例，可以运行并核验算法给出的结果；“所有输入均存在且算法具有所述复杂度”仍以手稿中的普遍证明为依据。
 
-## Research goal
+## 从数学关系进入
 
-Determine the best universal approximation factor for a pure first-stage, exact-customer-Nash subgame-perfect outcome, and construct such an outcome in time polynomial in the *binary input length*. The primary problem has **two facilities with the same finite location catalog**. A separate, genuinely different problem gives each facility its own catalog. The shared-catalog target is the golden ratio `phi=(1+sqrt(5))/2`; the heterogeneous target is 2. Neither result says that a particular instance's optimal factor is computed by its fast constructor.
+[打开可交互的数学超图](research/index.html) · [读取超图数据](research/graph.json) · [查看超图生成器及校验](research/build_map.py)
 
-## Mathematical objects and definition map
+超图的推导超边列出**全部共同前提**、一个结论、关系类型和逐条来源。绿色推导边不把有限测试充当证明；红色边指向**被反例推翻的命题**；黄色边表示测试或未完成的审查。HTML 是自包含文件，下载后可直接在浏览器打开；GitHub 的普通文件预览会显示源码。[下方的主线](#两条主线的真正依赖)可直接在 GitHub 阅读。
 
-Let `G` be a finite set of customers, `w_g>0` their weights, and `C_s subset G` the customers who can reach location `s`. The input explicitly lists locations and incidence sets. A covered customer must choose one of the facilities at a reachable location; uncovered customers abstain. Facility payoffs are expected served weight. Customers minimize the expected **realized** total weight at their chosen facility and may independently mix. The same customer must evaluate both options with the same linear cost rule. Locations may coincide and may cover no customers.
-
-For a labeled layout `(s,t)`, put `A=w(C_s\C_t)`, `B=w(C_t\C_s)`, and list common weights `w_1,...,w_k` from `C_s intersection C_t`. If customer `i` chooses facility 1 with probability `p_i`, its expected loads are `x=A+sum_i w_i p_i`, `y=B+sum_i w_i(1-p_i)`. With `Delta=x-y`, an independent mixed customer NE satisfies
-
-- `p_i=1 => Delta<=w_i`;
-- `p_i=0 => Delta>=-w_i`;
-- `0<p_i<1 => Delta=w_i(2p_i-1)`.
-
-At each labeled layout one may choose an exact customer NE independently. The facilities' on-path choices `(s,t)` form an `alpha`-approximate pure-location SPE when no unilateral change of a permitted location raises that facility's continuation payoff by more than factor `alpha`. This is an **existential continuation-selection** definition, not robustness against all customer equilibria.
-
-Definitions depend as follows:
-
-```text
-incidence + weights -> private/common loads -> exact local customer NE
-                  -> labeled continuation selection -> facility deviation inequalities
-                  -> alpha-SPE certificate
-```
-
-For the shared catalog `S`, `m(s,t)` is the *true* minimum payoff to the facility at `s` over all exact independent customer NE at `(s,t)`, and `d(t)=max_{s in S} m(s,t)`. The fast constructor instead uses a fixed finite menu `F(s,t)` and its own menu minima `u(s,t)`; **`u` and `m` are different quantities**. The proof's key obligation is that the response-cycle contradiction needs only witnesses from `F`, plus independently proved uniqueness at two special steps. `common_phi_algorithm.md` records the precise transfer. In the heterogeneous paper, a different four-seed *pure* menu supports factor 2; do not conflate the two menus.
-
-## Claim map and real dependencies
-
-| ID | Exact scope and current status | Principal dependencies |
+| 读者要做什么 | 入口 | 完整来源 |
 | --- | --- | --- |
-| `P-2024-LB` | **Paper fact:** Krogmann et al. prove that no universal factor below `phi` is possible for weighted two-facility instances; they leave tightness open. | IJCAI 2024, Theorems 5–6. |
-| `SC-PHI-v2` | **Internally audited manuscript claim:** for a finite shared catalog and positive binary rational weights, construct an exact-customer-NE `phi`-SPE in bit-polynomial time, `O(N^2(n+1)^4)` rational operations. | Local guarded repair; two-mixer and strong-chord witnesses; static-menu quantifier audit; full response-cycle proof. |
-| `LOCAL-HARD-v1` | **Proof manuscript:** computing a particular facility's *minimum* local NE payoff is weakly NP-hard, even with zero private loads. | 2-bounded subset-sum reduction and NP membership. It does not imply global construction hardness. |
-| `HC-2-v1` | **Internally audited separate manuscript claim:** arbitrary finite, possibly unequal catalogs admit a bit-polynomial pure-continuation factor-2 construction; a positive-integer family approaches 2. | Four-seed guarded repair; legal cross-color chords; independent lower-family calculation. |
-| `HC-RHO-v1` | **Internally audited separate manuscript claim:** if one catalog has at most two choices and every cross pair has at most one common customer, the sharp factor is `2 cos(pi/7)`. | Restricted response-core lift and six-customer lower family. |
-| `QUAD-v1` | **Algebraic result, conditional application:** with two facilities and mandatory participation, each customer's same strictly increasing quadratic cost at both facilities preserves the full customer equilibrium correspondence; hence `SC-PHI-v2` transfers if its theorem is accepted. | Constant-sum counterfactual loads; see `astra_ext/results.md`. |
+| 判断自己的问题是否符合假设 | [模型与量词](MODEL.md)、[使用说明](USAGE.md) | [共享目录手稿](phi_n_manuscript/main.tex)的模型段；[异构手稿](asym_research/paper/main.tex)的模型段 |
+| 审查黄金比例算法的数学前提 | [共享证明重构](math/SHARED_PHI.md)、[局部博弈](math/LOCAL_GAME.md) | [25 页整合手稿](phi_n_manuscript/main.tex)、[菜单量词审查](asym_research/common_phi_menu_quantifier_audit.md) |
+| 审查异构目录的上界和反例 | [异构证明重构](math/HETEROGENEOUS.md) | [异构手稿](asym_research/paper/main.tex)、[严格下界族](asym_research/tight_two_lower.md) |
+| 算出某实例的**最优**近似因子 | [精确方法与复杂性](math/COMPUTATION_AND_EXTENSIONS.md) | [有界交叠算法](asym_research/bounded_overlap.py)、[指数级 MITM](astra_ring/mitm_solver.py) |
+| 查证据、反例与历史纠正 | [证据台账](EVIDENCE.md)、[失败路线](FAILED_ROUTES.md)、[来源与版本](PROVENANCE.md) | 各条超边给出的原始手稿、程序及证书 |
 
-The exact statements, quantifiers, evidence, objections, and versions are in `CLAIMS.md`. The main chain is:
+## 模型和“可直接采用”的边界
 
-```text
-local customer NE + guarded repair
-    -> local strong-chord existence -> polynomial local exchange constructor
-    -> fixed menu F + two uniqueness arguments
-    -> arbitrary response-cycle contradiction -> shared-catalog phi theorem
-    -> certificate generator + direct exact verifier
-```
+两家设施同时从有限地点目录中选址；正权重的原子客户若被覆盖就必须选一家可达设施。客户最小化所选设施的**期望实际总负载（含自己）**，可独立混合；设施获得期望服务权重。每一个带标签的地点对都可以选择一个精确客户 Nash 均衡作延续；设施不应通过单方换地点获得超过因子 $\alpha$ 的收益。允许两设施同址。定义、公式和存在性延续量词见 [MODEL.md](MODEL.md)。
 
-The heterogeneous four-seed/2 chain is separate. Its lower bound does **not** refute the shared-catalog `phi` claim. `LOCAL-HARD-v1` motivates bypassing full local minima, but is not a premise in either upper-bound proof.
-
-## Research frontier and next actions
-
-1. Obtain an external, genuinely independent line-by-line proof review of the full shared-catalog cycle, static-menu substitutions, strong-chord exchange termination and bit complexity. An internally audited proof is a high-value **candidate**, not a refereed theorem.
-2. Give the implementation a usable input contract, adversarial tests that make the global output use two-mixer/strong-chord cases, performance measurements at larger rational bit lengths, and a separate verification entry point. Present tests as implementation evidence only.
-3. Check current related work and write a precise contribution comparison: the IJCAI paper already has the lower bound, a stated general `k` upper bound, pure local repair, and short continuation certificates. The new algorithmic claim is the static-menu bit-polynomial construction for the shared-catalog tight threshold.
-4. For follow-on theory, study the one-common-customer heterogeneous case with both catalogs arbitrarily large, or seek a genuinely reusable abstract finite-menu theorem. The general heterogeneous factor 2 is already tight, so reducing it without an added assumption is impossible.
-
-The current paper may be useful as a **research algorithm** for a matching incidence/weight model. It is not yet a validated general facility-location library or an implementation of instance-optimal `alpha`. See `USAGE.md` for exact input and certificate conditions.
-
-## File map: shared-catalog core
-
-Paths are repository-relative and complete. The final column says when to open the file.
-
-| Path | Mathematical asset and reason to retain it | Read when |
+| 输入情形 | 当前成果可给什么 | 必须满足的限制 |
 | --- | --- | --- |
-| `phi_n_manuscript/main.tex` | Current 25-page integrated proof of `SC-PHI-v2`: model, fixed menu, response-cycle analysis, arbitrary common-customer chord, local exchange algorithm, complexity. **Primary proof source.** | Auditing or revising the main theorem. |
-| `phi_n_manuscript/main.pdf` | Rendered reading copy of the same draft; source above controls corrections. | Sharing a review copy. |
-| `phi_n_manuscript/README.md`, `phi_n_manuscript/build_manuscript.py` | Build and prior compilation record; no mathematical authority beyond the source. | Rebuilding the PDF. |
-| `phi_global_proof_candidate.md` | Earlier existence-oriented derivation and detailed cycle cases; Section 3.2's extremal selection is **not** an algorithmic premise. | Tracing the origin of a manuscript inequality. |
-| `strong_cross_chord_arbitrary_n_proof.md` | Local two-position existence/iff with arbitrarily many common customers and three-mixer boundary. | Rechecking the difficult local lemma. |
-| `common_phi_algorithm.md` | Exact finite-menu theorem, witness families, quantified `m` to `u` substitution, arithmetic and bit bound. | Checking why the code avoids an NP-hard oracle. |
-| `common_phi_algorithm.py` | Exact-rational shared-catalog constructor and direct certificate verifier for `SC-PHI-v2`. | Running or auditing the algorithm. |
-| `test_common_phi_algorithm.py`, `common_phi_algorithm_verification.json` | Seeded 753-game regression and observed menu-family counts; no universal proof. | Reproducing implementation checks. |
-| `common_phi_counter_audit.py`, `asym_research/common_phi_counter_audit.md` | Independent conditional-cost enumeration and adversarial quantifier audit; identifies a necessary three-mixer local witness. | Attacking menu completeness or local NE checks. |
-| `asym_research/common_phi_menu_quantifier_audit.md` | Line-by-line mapping of global proof witnesses to finite-menu members, including uniqueness steps. | Auditing the algorithmic transfer. |
-| `astra_local/local_chord_algorithm.md`, `astra_local/construct.py`, `astra_local/verification.json` | Polynomial local exchange theorem, executable constructor and branch check record. | Checking the strong-chord call and bit-time claim. |
-| `astra_alg/hardness_proof.md`, `astra_alg/hardness_enum.py` | Weak NP-hardness reduction for true local extremal NE load; small independent enumerator. | Understanding the precise computational obstruction. |
-| `astra_alg/exact_algorithms.md`, `astra_alg/threshold_dp.py` | Integer-weight pseudo-polynomial spectrum algorithm and distinct-weight FPT reduction; exact oracle alternatives. | Working with restricted local weights. |
-| `astra_ring/README.md`, `astra_ring/mitm_solver.py`, `astra_ring/run_lazy_ring.py` | Exponential exact local/global optimum solver and a sound but worst-case-exponential pruning variant. | Computing instance-optimal factors or independent small-case comparisons. |
-| `astra_ring/example.json`, `astra_ring/example_optimal_certificate.json`, `astra_ring/example_ring_certificate.json` | Tiny reproducible instance and two exact certificates. | Testing output semantics. |
-| `astra_ext/results.md`, `astra_ext/extension_report.md` | Precise quadratic-cost equivalence, its limits, and a historically separate heterogeneous lower example. | Extending customer costs without silently changing the model. |
-| `common_phi_example_certificate.json`, `common_phi_iff_audit.py` | Example output and focused strong-chord audit. | Regression and debugging. |
+| 两设施允许**相同**的非空有限目录；显式可达集合，正二进制有理数权重 | [共享构造器](common_phi_algorithm.py)声称以位数多项式时间给出因子 $\phi=(1+\sqrt5)/2$ 的精确客户均衡证书 | 必须是上述负载成本、两设施、覆盖客户必须参与、可存在性选择每个延续；它**不计算该实例的最优因子** |
+| 两设施允许**不同**目录 | [异构纯延续构造器](asym_research/r_menu_solver.py)声称给出因子 2；[六顶点家族](math/HETEROGENEOUS.md)趋近 2 | 该下界不能当作共同目录的下界 |
+| 两目录中至少一个至多两个地点，且每个跨目录地点对最多共享一个客户 | 候选精确普遍因子 $\rho=2\cos(\pi/7)$ | 两个限制必须**同时**成立；两个目录都任意大仍是开放问题 |
+| 需要特定实例的最优因子 | 用支持枚举、有界交叠或指数级精确算法 | 不能把快速普遍构造器的“菜单内最优”误认为实例最优 |
 
-## File map: heterogeneous companion
+算法的 **Python 输入、输出和验证命令**在 [USAGE.md](USAGE.md)。返回的实例证书可用精确有理数检查客户偏离和全部实际设施偏离；当前共享 CLI 验证器复用构造器中的检查函数，且不检查任意自由文本的默认延续元数据。[证据台账](EVIDENCE.md)明确了这个工程限制。
 
-See the second block of `CLAIMS.md` and `asym_research/README_HANDOFF.md` before using these results. They concern different allowed sets and have their own manuscript, solver, lower-bound family, and exact overlap-parameter algorithm. Their individual paths and roles appear in that handoff and the companion table in `RESEARCH_STATE.md`. This is a companion line, not an unannounced strengthening of `SC-PHI-v2`.
+## 两条主线的真正依赖
 
-## Working conventions
+共享目录的核心**超边**是
 
-Keep exact theorem identity when changing catalog scope, participation, costs, quantifiers, or equilibrium concept: create a new claim version. Finite computations do not prove universal claims; a timeout is no mathematical evidence. Commit and push each meaningful checkpoint. Keep generated build intermediates and duplicate transfer ZIPs out of Git.
+$$
+\{\text{精确局部 NE},\ \text{受保护纯修复},\ \text{强弦局部 iff 与多项式交换}\}
+\Longrightarrow \text{事先固定的 P/E/T/C 菜单},
+$$
+
+$$
+\{\text{整个目录的菜单威胁},\ \text{每条边对菜单中所有见证的量词},\
+\text{两次对所有 NE 的严格唯一性},\
+\text{重原子星形结构},\ \text{锚点和强弦矛盾}\}
+\Longrightarrow \text{菜单配额见证}
+\Longrightarrow \phi\text{-SPE}.
+$$
+
+此处菜单的最小收益 $u(s,t)$ **不能视为等于**所有局部均衡中的真最小收益 $m(s,t)$（只知 $m\le u$）。反应环在**整个目录**上计算威胁；选环之后不能临时为证明创造依赖威胁值的新均衡。强弦 C 是预先按地点对的可达量构造的。三名混合客户的局部例子排除“两人混合足够”的捷径。证书的短小性来自实际单方偏离，**不是**普遍定理的替代证明。详见 [共享证明重构](math/SHARED_PHI.md)和 [60 个节点、42 条有来源超边](research/graph.json)。
+
+异构目录是另一组共同前提：
+
+$$
+\{\text{四个受保护纯种子},\ \text{整个合法目录的威胁},\
+\text{双色合法弦},\ \text{任意长度环的两类矛盾}\}
+\Longrightarrow \text{因子 2 的纯延续构造};
+$$
+
+$$
+\{\text{上述上界},\ \text{严格唯一均衡的六顶点下界族}\}
+\Longrightarrow \text{异构类的尖锐普遍因子 2}.
+$$
+
+较小的 $\rho$ 定理另需“最多一个公共客户”与“一侧目录至多两个”共同成立。[数学内容与证明位置](math/HETEROGENEOUS.md)分别写明这些前提；不能把两个定理或两套菜单合并为一句模糊的“设施选址算法”。
+
+## 当前研究状态和来源
+
+[版本化命题台账](CLAIMS.md)逐项写出定义域、量词、算法复杂度、证据、反例和状态。[当前研究状态](RESEARCH_STATE.md)列出独立复核、强弦全局覆盖和验证器工作。[失败路线](FAILED_ROUTES.md)记录精确局部最小值的弱 NP 困难、错误的两混合人假设、局部与全局二次极值之别，以及错误的适用范围。[来源说明](PROVENANCE.md)列出嵌套 ZIP 的逐文件核对、旧结论被何处取代和保留的历史材料。原始草稿保留作可追溯证据，但不再充当当前研究地图的节点。
+
+发表层面，[IJCAI 2024 原论文](https://www.ijcai.org/proceedings/2024/0315.pdf)已经给出黄金比例下界和一般 $k$ 近似上界的陈述；共享目录匹配上界的位数多项式构造及异构目录严格匹配下界是这里的**候选贡献**。精确优先权和下界在共同目录/有理数输入中的转写仍需独立检查。[文献边界](LITERATURE.md)记录了现有比较。

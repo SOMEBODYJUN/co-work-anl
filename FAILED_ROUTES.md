@@ -1,40 +1,16 @@
-# Failed routes and sharp obstructions — 2026-09-30
+# Obstructions, failed approaches, and scope corrections
 
-Each entry distinguishes a false statement from an unproved or expensive method. Never infer mathematical failure from a timeout.
+Each row identifies a false assertion or a missing algorithmic step. A timeout and a finite search are never mathematical counterexamples.
 
-## F1. Use the exact minimum over all local customer equilibria as a polynomial oracle
+| ID | Attempt and precise obstruction | Correct surviving use |
+| --- | --- | --- |
+| F1 | Compute the **true** minimum local NE payoff $m(s,t)$ as a bit-polynomial subroutine. Even zero private loads admit a weakly NP-complete threshold decision under binary integer weights. | The fixed P/E/T/C menu uses $u\ge m$ and proves a *new* menu-cycle argument. Exact $m$ solvers remain useful on restricted inputs. [Details](math/COMPUTATION_AND_EXTENSIONS.md). |
+| F2 | Substitute arbitrary sampled punishments for $m$ in the old cycle proof. A few feasible NE do not supply the required **every menu witness** edge quantifier. | Static menu membership, full-catalog maxima, and two independent all-NE uniqueness steps are explicit obligations in [the shared proof](math/SHARED_PHI.md). |
+| F3 | Bound every local quota witness by two genuine mixers. Private loads $40,39$ with three common weight-20 customers require the three-mixer profile $(39/80,39/80,39/80)$ to meet both strong-chord quotas. | The [local exchange algorithm](math/LOCAL_GAME.md) handles arbitrarily many mixers. |
+| F4 | Claim the old box-slice **global** quadratic maximizer is computable by only pair-local exchanges. The historical weights $(14,13,19)$, target $-10$, give pair-local objective $582$ while global objective is $654$. | Appendix B only needs a pair-local maximum and proves a bounded pivot/flip search. This distinction is essential for the bit-polynomial claim. |
+| F5 | Infer a universal shared-catalog $\phi$ bound for unequal catalogs. The exact six-vertex 2-by-2 family has $\alpha^*(M)=(2M+10)/(M+14)\to2$, with unique local continuations. | The [heterogeneous](math/HETEROGENEOUS.md) factor-2 claim is separate. Its sparse $\rho$ improvement requires two additional restrictions together. |
+| F6 | Extend mixed-NE equivalence from same-at-both-facilities quadratic cost to arbitrary convex cost. A three-customer cubic example retains a linear mixed NE profile where a customer's cubic conditional costs are $90$ and $86$. | The [quadratic constant-sum identity](math/COMPUTATION_AND_EXTENSIONS.md) preserves the full local equilibrium correspondence only under its stated hypotheses. |
+| F7 | Treat a strict-uniqueness MILP timeout as proof about 3-by-3 catalogs. The recorded runs found no incumbent before their time limits and did not cover multiple local NE. | Exact rational verification can check any generated candidate; the general heterogeneous factor-2 result has a separate proof. |
+| F8 | Interpret the older lower note §11 interval $[\rho,2]$ as the current unrestricted 2-by-2 status, or the old algorithm notes' “polynomial $\phi$ open” as current. | The 2-by-2 overlap-two lower family supersedes that §11 assertion; the integrated shared manuscript supplies the **candidate** polynomial algorithm. Neither is externally refereed. |
 
-- **Attempt:** compute `m(s,t)` exactly at every layout, form `d(t)=max_s m(s,t)`, then follow the response cycle.
-- **Mechanism and obstruction:** `astra_alg/hardness_proof.md` reduces 2-bounded subset sum to existence of a local NE below a specified load, even with zero private loads. Integer-weight `threshold_dp.py` uses `O(n^2 W)` operations; `astra_ring/mitm_solver.py` remains exponential in overlap. Thus the direct exact-`m` implementation has no established bit-polynomial bound, unless P=NP under the reduction.
-- **Salvage:** these routines compute exact instance optima on manageable inputs and provide independent checks. The fixed finite menu `F(s,t)` bypasses the need to calculate `m`; local hardness says nothing about the complexity of finding one `phi`-SPE.
-- **Revisit if:** a structural input restriction bounds total weight, common-customer count or the number of distinct weights.
-
-## F2. Replace a true minimum with arbitrary punishment upper bounds without changing the proof
-
-- **Attempt:** retain a few feasible customer equilibria and use their payoffs as upper bounds for `m` while copying the original maximin cycle argument.
-- **Failure:** the edge implication needs *all* witnesses in the chosen set to satisfy a responder-load bound. Arbitrary retained equilibria do not imply the relevant quantifier for another on-path equilibrium. Unbounded lazy refinements are not a polynomial algorithm.
-- **Salvage:** `common_phi_algorithm.md` proves a particular *fixed* menu is complete for every witness invoked by the global contradiction; the `u`-based argument is a new proof obligation, not a formal substitution `m=u`. `astra_ring/run_lazy_ring.py` retains sound pruning and useful exponential exact certificates.
-
-## F3. Restrict strong-chord witnesses to at most two genuinely mixing customers
-
-- **False statement:** all relevant local two-position quota witnesses need at most two mixers.
-- **Counterexample:** private loads `40,39`, three common customers each of weight `20`, reaches `100,99`. Exact support enumeration leaves only the three-mixer load pair `(277/4,279/4)` meeting both strong-chord quotas; its probabilities are `(39/80,39/80,39/80)` for facility 1. Pure and two-mixer load pairs fail. See `asym_research/common_phi_counter_audit.md` and `strong_cross_chord_arbitrary_n_proof.md`.
-- **Salvage:** `astra_local/construct.py` handles arbitrarily many common customers; do not trim its mixed-support branch for an unproved speedup.
-
-## F4. Apply the shared-catalog `phi` theorem to unequal catalogs
-
-- **False scope extension:** `SC-PHI-v2` implies a universal `phi` guarantee when `U1 != U2`.
-- **Counterevidence:** `asym_research/tight_two_lower.md` supplies a six-vertex positive-integer family with optimum `(2M+10)/(M+14) -> 2` for a 2-by-2 heterogeneous catalog; all local equilibria are uniquely resolved. Its scope excludes a common catalog and so does not contradict `SC-PHI-v2`.
-- **Salvage:** `HC-2-v1` has a separate factor-2 construction and matching lower family. One-common-customer and a short catalog allow the more precise `rho` theorem.
-
-## F5. Generalize quadratic-cost equivalence to all convex congestion costs
-
-- **False statement:** any strictly increasing convex realized-load function preserves the linear model's mixed customer NE.
-- **Counterexample:** `astra_ext/results.md` gives a three-customer cubic-cost example whose linear mixed equilibrium ceases to be an equilibrium. The quadratic proof uses the exact two-facility constant-sum identity; it also fails to cover exit options, customer-specific facility functions or three facilities.
-- **Salvage:** the precise customer-specific quadratic equivalence is a useful conditional extension under mandatory participation.
-
-## F6. Treat small searches or MILP timeouts as theorem evidence
-
-- **Attempt:** infer a factor bound for arbitrary 3-by-3 catalogs from the absence of a counterexample in a bounded strict-uniqueness MILP class.
-- **Failure type:** `asym_research/three_by_three_search_status.md` records time limits with no incumbent, not infeasibility certificates; the encoded family does not cover multiple customer equilibria. Numerical near-ties can be solver artifacts.
-- **Salvage:** any candidate must be rechecked with exact rational full-equilibrium enumeration. The general heterogeneous factor 2 has a separate proof; the sparse arbitrary-by-arbitrary `rho` question remains open.
+The [graph](research/index.html) distinguishes these attacks from valid proof implications. Original paths and versioned corrections are in [PROVENANCE.md](PROVENANCE.md).

@@ -1,3 +1,5 @@
+> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../README.md), [claim registry](../CLAIMS.md) and [source-status guide](../PROVENANCE.md) for current scope.
+
 # Exact MITM solver and lazy maximin-ring certificates
 
 Research checkpoint, 2026-09-30. No third-party Python package is required. All strategic calculations use `fractions.Fraction`; the output contains exact rational probabilities and loads. This code does **not** rely on a floating-point MILP optimum or on limiting the number of mixers.

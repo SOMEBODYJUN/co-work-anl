@@ -1,3 +1,5 @@
+> **Historical research note (superseded navigation).** Preserve the derivation below as provenance; use [the current mathematical map](README.md), [claim registry](CLAIMS.md) and [source-status guide](PROVENANCE.md) for current scope.
+
 # Candidate proof of the arbitrary-finite-instance golden-ratio theorem
 
 **Status: complete proof candidate, internally audited; not externally peer reviewed.**

@@ -1,3 +1,5 @@
+> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../README.md), [claim registry](../CLAIMS.md) and [source-status guide](../PROVENANCE.md) for current scope.
+
 # Universal factor-2 existence for two facilities with arbitrary action sets
 
 Proof for independent audit, 2026-09-30. This note is self-contained at the level of the finite customer game. It allows arbitrary finite positive customer weights, arbitrary accessibility, and arbitrary nonempty finite facility-specific action sets. The customer continuations constructed below are exact pure Nash equilibria, and therefore also valid independently mixed equilibria.

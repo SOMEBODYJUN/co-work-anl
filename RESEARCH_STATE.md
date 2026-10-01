@@ -1,49 +1,32 @@
-# Research state — 2026-09-30
+# Research state — 2026-10-01
 
-## Active goal and current status
+The current shared-catalog result is an **internally audited candidate theorem with a concrete algorithm**, not a refereed theorem or an instance-optimal solver. For explicit incidence, positive binary rational customer weights and two facilities allowed the **same** finite catalog, the manuscript claims a bit-polynomial construction of a pure-location, exact-customer-Nash subgame-perfect outcome within the golden ratio. Its returned certificate can be checked for a given instance independently of believing the universal existence proof. See [the model](MODEL.md), [the proof reconstruction](math/SHARED_PHI.md), and [the full source](phi_n_manuscript/main.tex).
 
-Primary goal: establish and make independently reviewable `SC-PHI-v2`, the sharp shared-catalog golden-ratio guarantee with a bit-polynomial construction and exact customer Nash continuations. An integrated 25-page LaTeX draft, exact-rational implementation, short deviation certificates, internal adversarial audit and reproducible tests exist. **Status is internally audited research manuscript, not externally accepted theorem.** The IJCAI 2024 lower bound is an external paper fact; the matching upper bound is our candidate.
+The companion heterogeneous-catalog candidate gives an arbitrary-catalog factor-2 pure-continuation construction and a matching positive-integer family approaching 2. The narrower factor $2\cos(\pi/7)$ requires **both** a catalog of size at most two and pair overlap at most one. Neither theorem changes the scope of the other. See [heterogeneous proof map](math/HETEROGENEOUS.md).
 
-The companion heterogeneous line `HC-2-v1` has a separate 17-page draft and exact pure-continuation constructor. Its tight factor 2 must not be substituted for the shared-catalog target. General 2 is already tight for heterogeneous catalogs. The sparse `HC-RHO-v1` result has the additional one-common-customer and short-catalog conditions.
+## What is established inside the record
 
-## Frontier / proof obligations
+| Result | Actual evidence | Remaining boundary |
+| --- | --- | --- |
+| Shared $\phi$ upper | Integrated 25-page proof, fixed finite menu and exact-rational constructor, internal quantifier/strong-chord audits, 753 seeded certificates. | Independent reconstruction of arbitrary-cycle and polynomial local exchange; no external referee. |
+| Heterogeneous 2 upper/lower | Separate manuscript, four-seed implementation, strict six-vertex lower family and internal audits. | Independent proof and literature-priority review. |
+| Local chord and exact computation | Detailed local iff, exchange algorithm, support-cell enumeration, weak hardness reduction, pseudo-polynomial and exponential exact solvers. | Some reductions/complexity proofs lack independent external review; finite tests are not proof. |
+| Certificate checks | Exact conditional customer deviations and actual first-stage deviations on concrete inputs. | The phi CLI wraps the same checker, and its free-text default metadata is ignored; a genuinely independent checker is pending. |
 
-1. **Static-menu global transfer:** rederive the arbitrary-length response-cycle contradiction using menu minima `u`, checking every edge's `forall e in F(s,t)` statement and the two points where a true unique NE is invoked. Read `phi_n_manuscript/main.tex` Sections 2–14 with `asym_research/common_phi_menu_quantifier_audit.md`. A single fatal counterexample blocks promotion.
-2. **Strong chord and local exchange:** independently check all branch inequalities, degenerate weights and the polynomial pivot count in Appendix B and `astra_local/local_chord_algorithm.md`. A local three-mixer example makes any unproved two-mixer restriction invalid.
-3. **Artifact readiness:** the CLI verifies its own output exactly, but the seeded full-game run has 662 pure, 88 half, 3 designated-two-mixer and **0 strong-chord on-path** outcomes. Build targeted global cases and independent verifier coverage of altered or missing certificates. Test runtime with large rational bit lengths and document actual resource usage. This is engineering evidence, not a way to prove the theorem.
-4. **Publication positioning:** the original IJCAI paper states a `k` approximate upper bound and gives the `phi` lower bound. Verify the exact scope of that statement and later papers; distinguish earlier pure-repair ideas from the finite witness and bit-polynomial result. Related work in the draft is still short.
+The [claim registry](CLAIMS.md) gives each statement its quantifiers and status; [evidence ledger](EVIDENCE.md) records finite checks separately. The interactive [mathematical hypergraph](research/index.html) and its [machine-readable graph](research/graph.json) encode *joint premises*, objections, implementation and source relations.
 
-## Reliable current evidence and limits
+## Priority review tasks
 
-- `common_phi_algorithm.py` checks conditional customer costs and all actual unilateral facility deviations using rational arithmetic. Its verifier does not rely on the global theorem; a valid certificate establishes the factor **for that instance**. The universal runtime/existence conclusion still depends on the full mathematical proof.
-- `test_common_phi_algorithm.py` records 753 complete certificates with seed `2026093001`; `common_phi_counter_audit.py` checks 10,206 small local menus and 1,771 small full games. The three-mixer pair example is local, not a global hard-case witness.
-- On this baseline, both `asym_research/test_r_menu.py` and `asym_research/test_four_seed.py` passed (500 + 1,500 general-catalog random certificate checks in the first; 2,406 four/full-seed certificate checks in the second). `asym_research/r_menu_verification_default_20260930.json` records the new default-menu run; `asym_research/r_menu_verification.json` preserves the older all-singleton run. They are not interchangeable observations.
-- `astra_alg/hardness_proof.md` establishes a separate weak NP-hardness candidate for computing true local minimum NE payoff; it does not imply that our global constructive problem is NP-hard.
-- `asym_research/tight_two_lower.md` gives an exact positive-integer family with optimum `2-18/(M+14)` for differing catalogs. It has no bearing on the shared-catalog `phi` lower bound.
+1. Independently rederive the shared proof's full-catalog menu quantifier, arbitrary response-cycle star/anchor split, and the **two true uniqueness** deductions; read the manuscript §§2–14 and the [menu audit](asym_research/common_phi_menu_quantifier_audit.md).
+2. Independently verify Appendix B's pair-local box-slice exchanges, pivot/flip bound, exact rational bit bound, and the three-mixer boundary. The earlier global quadratic-maximizer argument is historical and is not used by the algorithm.
+3. Construct a global adversarial instance whose selected on-path witness invokes C. Existing 753 full-game tests selected 662 P, 88 E, 3 T and **0 C**; local C tests do not close this implementation coverage gap.
+4. Implement a separate certificate checker with a defined continuation-default schema and test large rational bit lengths. The present CLI wrapper is useful for concrete certificates but shares checking logic with the producer.
+5. Check current related literature and the common-catalog/rational interpretation of the published $\phi$ lower example before claiming sharpness or novelty.
 
-## Next actions, in order
+## Open questions with the exact remaining scope
 
-1. Invite an external proof auditor who first reconstructs the model, menu quantifiers and strong-chord obligation independently; record exact objections or approval scope.
-2. Improve the user-facing algorithm artifact: document JSON schema, provide a standalone independent verification path, add difficult global examples and realistic bit-length benchmarks. A valid certificate is already useful even before the universal theorem is accepted.
-3. Consolidate the shared and heterogeneous manuscripts into one paper only after checking both main proofs and the contribution/priority relationship; retain the separate claim identities and scopes.
-4. If the first two stages hold, investigate a reusable abstract menu/response-cycle theorem. Otherwise salvage exact barriers, counterexamples or restricted cases rather than proclaiming a general breakthrough.
+- Does the sparse heterogeneous $\rho=2\cos(\pi/7)$ bound persist with **both** catalogs arbitrarily large and every cross pair having at most one common customer? The existing theorem only covers at least one short catalog.
+- Can the response-core principle be turned into a generally efficient algorithm when exact local minima are weakly NP-hard? The finite-menu proofs use extra geometry and do not furnish an abstract polynomial theorem.
+- Which other nonlinear cost families preserve a useful customer equilibrium correspondence? The quadratic same-at-both-facilities identity works; arbitrary convex functions fail to preserve mixed NE.
 
-For public reuse, choose and record a code and manuscript license with the project's owner, add packaging/versioned input-output semantics, and publish external proof review. No license choice is inferred from this initialization.
-
-## Companion file map
-
-| Exact path | Purpose and relevant claim |
-| --- | --- |
-| `asym_research/paper/main.tex`, `asym_research/paper/main.pdf` | Primary 17-page source and rendered draft of `HC-2-v1`, `HC-RHO-v1`, response-core lemma and bounded-overlap appendix. |
-| `asym_research/README_HANDOFF.md`, `asym_research/paper/README.md` | Detailed independent entry points and manuscript build information. |
-| `asym_research/universal_two.md`, `asym_research/universal_two_independent_audit.md`, `asym_research/adversarial_universal_two_20260930.md` | Arbitrary alternating-cycle proof and two independent internal attacks on general factor 2. |
-| `asym_research/tight_two_lower.md`, `asym_research/tight_two_family.py`, `asym_research/tight_two_M1000.json` | Six-vertex positive-integer lower family, generator and reproducible instance for sharp 2. |
-| `asym_research/lower.md`, `asym_research/six_client_lower_instance.json` | Restricted single-common sharp `rho` upper/lower analysis and explicit six-customer witness. |
-| `asym_research/meta.md`, `asym_research/bounded_overlap_theorem.md` | Reusable closed-response-core lift and exact overlap-parameter solver theorem. |
-| `asym_research/r_menu_solver.py`, `asym_research/test_r_menu.py`, `asym_research/test_four_seed.py`, `asym_research/four_seed_verification.json` | Four-seed pure algorithm and regression suite for `HC-2-v1`. The shared-catalog program imports its guarded-repair routine. |
-| `asym_research/bounded_overlap.py`, `asym_research/nonlinear_kappa_two_independent.md` | Exact optimal-factor support enumeration for linear costs; separate unimplemented rational-polyhedral extension. |
-| `asym_research/final_audit_and_value.md`, `asym_research/three_by_three_search_status.md` | Literature/scope/novelty audit and bounded exploratory search with explicitly inconclusive timeouts. |
-| `asym_research/upper.md`, `asym_research/general_four_cycle.md`, `asym_research/general_six_cycle.md` | Historical small-core and longer-cycle arguments leading to the later general `universal_two.md`; consult to trace a disputed transport or chord step, not as a replacement for the final proof. |
-| `asym_research/cross_one.py`, `asym_research/classification_audit.md` | Exact single-common calculations and independent classification checks supporting `HC-RHO-v1`. |
-| `asym_research/paper/build.sh`, `asym_research/r_menu_verification.json`, `asym_research/r_menu_verification_default_20260930.json` | Build entry point and two explicitly distinguished solver regression records. |
-| `asym_research/tight_two_M1000.certificate.json`, `asym_research/tight_two_undirected_M1000.json`, `asym_research/six_cycle_instance.json` | Exact reproducible lower-family certificate, undirected encoding and longer-cycle regression instance. |
+The [failed routes](FAILED_ROUTES.md) include exact counterexamples and scope corrections. Source provenance, snapshots and historically superseded frontier notes are identified in [PROVENANCE.md](PROVENANCE.md). A usable input contract is in [USAGE.md](USAGE.md).

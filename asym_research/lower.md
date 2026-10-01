@@ -1,3 +1,5 @@
+> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../README.md), [claim registry](../CLAIMS.md) and [source-status guide](../PROVENANCE.md) for current scope. Section 11's unrestricted interval is superseded by the strict overlap-two lower family approaching factor 2.
+
 # Heterogeneous two-facility lower bounds: a sharp structural subclass
 
 Research checkpoint: 2026-09-30. This note does **not** claim a universal upper bound for arbitrary heterogeneous allowed sets. Its main theorem resolves an entire subclass, rather than improving the existing decimal lower bound.

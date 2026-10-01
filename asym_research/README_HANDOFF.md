@@ -1,3 +1,5 @@
+> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../README.md), [claim registry](../CLAIMS.md) and [source-status guide](../PROVENANCE.md) for current scope.
+
 # Handoff: two-stage facility location with atomic clients
 
 Research checkpoint: 2026-09-30. The claims below have been independently cross-checked within this team, but the manuscript has not undergone external peer review. The model has two facilities with possibly different finite allowed location sets, positive rational client weights, and exact independent mixed customer Nash equilibria after each ordered facility layout.
