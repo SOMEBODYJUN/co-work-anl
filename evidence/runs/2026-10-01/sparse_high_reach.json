@@ -3,17 +3,20 @@
   "recorded_on": "2026-10-01",
   "name": "sparse_high_reach",
   "python_version": "3.12.14",
-  "base_commit": "9e5253f0c187ffdc30d5b742d4937ba52095cea9",
+  "base_commit": "4854bdb0e581af7faf379b63640888dd93439e6e",
   "source_sha256": {
-    "tests/audits/sparse_high_reach.py": "ff85265da4e2522c82437677125ffa1a82f39cb0fa77de701a8159dd9ccd2052",
+    "tests/audits/sparse_high_reach.py": "33f695ba44e75e6795955f3a1d6713183ba8bbc2bdcb577d44848035669c794a",
     "examples/heterogeneous/rho_lower.json": "3ba10f33ca04724a18d39a04d6eca00c866a9ec14621ebce1daecf1065021a5c"
   },
   "replay_commands": [
     "python3 tests/audits/sparse_high_reach.py > evidence/runs/2026-10-01/sparse_high_reach.json"
   ],
-  "limitations": "Finite rational audits do not prove a universal bound; lower example is inherited and its four local NE are unique.",
+  "limitations": "Finite rational attacks do not prove the universal rho bound; lower example is inherited. The tie negative control separates one fixed pure rule from the full mixed-NE optimum.",
   "observed": {
-    "claim": "SPARSE-HIGH-ACYCLIC",
+    "claims": [
+      "SPARSE-HIGH-ACYCLIC",
+      "SPARSE-RHO-ALL"
+    ],
     "arithmetic": "fractions.Fraction",
     "seed": 6384201,
     "trials": 400,
@@ -39,7 +42,28 @@
         "180193774"
       ],
       "pure_stable": false,
+      "rho_pure_stable": true,
       "optimum": "80193772/44504187",
+      "rings": [
+        [
+          0,
+          2,
+          1,
+          3
+        ]
+      ],
+      "balanced": false
+    },
+    "reach_tie_negative_control": {
+      "reach": [
+        "144504187",
+        "80193772",
+        "144504187",
+        "180193774"
+      ],
+      "pure_stable": false,
+      "rho_pure_stable": true,
+      "optimum": "1",
       "rings": [
         [
           0,
@@ -60,6 +84,7 @@
         "37"
       ],
       "pure_stable": true,
+      "rho_pure_stable": true,
       "optimum": "40/39",
       "rings": [
         [

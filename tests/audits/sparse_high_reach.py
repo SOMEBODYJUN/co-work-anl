@@ -1,4 +1,4 @@
-"""Independent exact incidence audit for SPARSE-HIGH-ACYCLIC.
+"""Independent exact incidence audit for SPARSE-HIGH-ACYCLIC and SPARSE-RHO-ALL.
 
 Run: python3 tests/audits/sparse_high_reach.py > evidence/runs/2026-10-01/sparse_high_reach.json
 No floating point arithmetic or calls to the production single-overlap solver.
@@ -21,8 +21,9 @@ def reach(weights, sites):
     return [sum((weights[k] for k in c), Q(0)) for c in sites]
 
 
-def menu(weights, sites, n):
+def menu(weights, sites, n, priority=None):
     rs = reach(weights, sites)
+    if priority is None:priority=list(range(2*n))
     out = {}
     for i in range(n):
         for j in range(n):
@@ -40,7 +41,7 @@ def menu(weights, sites, n):
             else:
                 lo, hi = rs[s]-w, rs[s]
             # Pure rule uses the smaller tagged index when reaches tie.
-            if not common or rs[s]<rs[t] or (rs[s]==rs[t] and s<t):
+            if not common or rs[s]<rs[t] or (rs[s]==rs[t] and priority[s]<priority[t]):
                 x = rs[s]
             else:
                 x = rs[s]-w
@@ -51,6 +52,12 @@ def menu(weights, sites, n):
 def ratio(v, x):
     if not v:return Q(0)
     return v/x if x else None
+
+
+def at_most_rho(v, x):
+    """Exact comparison with the largest root of z^3-z^2-2z+1."""
+    if v <= x:return True
+    return v**3-v*v*x-2*v*x*x+x**3 <= 0
 
 
 def exact_optimum(weights, sites, n):
@@ -81,8 +88,9 @@ def cycles(successors):
     return found
 
 
-def attack(weights, sites, n, r):
-    rs,tab=menu(weights, sites, n)
+def attack(weights, sites, n, r, priority=None):
+    if priority is None:priority=list(range(2*n))
+    rs,tab=menu(weights, sites, n, priority)
     a=max(rs[:n]);d=max(rs[n:])
     b1=[max(range(n),key=lambda i:(tab[i,j][3],-i)) for j in range(n)]
     b2=[max(range(n),key=lambda j:(tab[i,j][4],-j)) for i in range(n)]
@@ -91,6 +99,11 @@ def attack(weights, sites, n, r):
         max(tab[k,j][3] for k in range(n))<=r*tab[i,j][3]
         and max(tab[i,k][4] for k in range(n))<=r*tab[i,j][4]
         for i in range(n) for j in range(n))
+    rho_stable=any(
+        at_most_rho(max(tab[k,j][3] for k in range(n)),tab[i,j][3])
+        and at_most_rho(max(tab[i,k][4] for k in range(n)),tab[i,j][4])
+        for i in range(n) for j in range(n))
+    assert rho_stable
     balanced=all(r*rs[i]>=a for i in range(n)) and all(r*rs[n+j]>=d for j in range(n))
     if not pure_stable:
         assert not balanced
@@ -98,14 +111,14 @@ def attack(weights, sites, n, r):
             assert any((r*rs[v]<a if v<n else r*rs[v]<d) for v in ring)
             for v in ring:
                 if v<n and r*rs[v]>=a:
-                    assert (rs[n+b2[v]],n+b2[v])<(rs[v],v)
+                    assert (rs[n+b2[v]],priority[n+b2[v]])<(rs[v],priority[v])
                 if v>=n and r*rs[v]>=d:
                     j=v-n;i=b1[j]
-                    assert (rs[i],i)<(rs[v],v)
+                    assert (rs[i],priority[i])<(rs[v],priority[v])
     # The interval oracle is independently assembled from incidence sets.
     optimum=exact_optimum(weights,sites,n)
     if optimum is not None and optimum>r:assert not pure_stable
-    return dict(reach=list(map(str,rs)),pure_stable=pure_stable,
+    return dict(reach=list(map(str,rs)),pure_stable=pure_stable,rho_pure_stable=rho_stable,
                 optimum=str(optimum),rings=rings,balanced=balanced)
 
 
@@ -159,6 +172,9 @@ def main():
     assert sharp['optimum']==str(Q(80193772,44504187))
     assert not sharp['pure_stable'] and not sharp['balanced']
     assert all(R*Q(t)>=max(map(Q,sharp['reach'][2:])) for t in sharp['reach'][2:])
+    tie_weights=weights.copy();tie_weights[2]=Q(2)
+    tie_attack=attack(tie_weights,sites,2,R,priority=[2,3,0,1])
+    assert tie_attack['pure_stable'] is False and tie_attack['optimum']=='1'
     long=attack(*long_cycle_three(),3,R)
     assert long['balanced'] and long['pure_stable']
     assert len(long['rings'])==1 and len(long['rings'][0])==6
@@ -176,16 +192,18 @@ def main():
         counts['balanced']+=int(result['balanced'])
     print(json.dumps({'schema_version':1,'recorded_on':'2026-10-01',
                       'name':'sparse_high_reach','python_version':sys.version.split()[0],
-                      'base_commit':'9e5253f0c187ffdc30d5b742d4937ba52095cea9',
+                      'base_commit':'4854bdb0e581af7faf379b63640888dd93439e6e',
                       'source_sha256':{
                           'tests/audits/sparse_high_reach.py':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                           'examples/heterogeneous/rho_lower.json':hashlib.sha256((ROOT/'examples/heterogeneous/rho_lower.json').read_bytes()).hexdigest()},
                       'replay_commands':['python3 tests/audits/sparse_high_reach.py > evidence/runs/2026-10-01/sparse_high_reach.json'],
-                      'limitations':'Finite rational audits do not prove a universal bound; lower example is inherited and its four local NE are unique.',
-                      'observed':{'claim':'SPARSE-HIGH-ACYCLIC','arithmetic':'fractions.Fraction',
+                      'limitations':'Finite rational attacks do not prove the universal rho bound; lower example is inherited. The tie negative control separates one fixed pure rule from the full mixed-NE optimum.',
+                      'observed':{'claims':['SPARSE-HIGH-ACYCLIC','SPARSE-RHO-ALL'],
+                      'arithmetic':'fractions.Fraction',
                       'seed':SEED,'trials':TRIALS,'sizes':'n=2,3,4,5 repeated',
                       'r_values':['1','3/2','9/5','2'],
-                      'random_counts':counts,'sharp_lower':sharp,'long_cycle_n3':long}},
+                      'random_counts':counts,'sharp_lower':sharp,'reach_tie_negative_control':tie_attack,
+                      'long_cycle_n3':long}},
                      ensure_ascii=False,indent=2))
 
 

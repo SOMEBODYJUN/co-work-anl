@@ -2,9 +2,11 @@
 
 这是从数学对象重新组织的现行证明入口，不是历史记录的改名或搬运。符号、证明义务与实现分开登记。HC-RHO 已有[逐分支当前证明](restricted_rho.md)与内部逐式核对；一般异构因子 2 仍作为内部研究候选。两者均未获外部独立重构或同行评审。
 
-[SPARSE-LONG-CYCLE](sparse_long_cycles.md) 是本分支新增的严格边界：单交叠条件本身不保证固定大小的全目录精确威胁闭核心。它不是超过 $\rho$ 的近似 SPE 反例；两侧任意长时的尖锐阈值仍是 [Q-SPARSE](../../questions/sparse_catalogs.md) 的开放问题。
+[SPARSE-LONG-CYCLE](sparse_long_cycles.md) 是本分支的严格边界：单交叠条件本身不保证固定大小的全目录精确威胁闭核心。它不是超过 $\rho$ 的近似 SPE 反例；两侧任意长的 [Q-SPARSE](../../questions/sparse_catalogs.md) 阈值现由新证明闭合。
 
-[SPARSE-HIGH-ACYCLIC](sparse_high_reach_barrier.md) 给出另一条任意目录长度的条件性进展：若无 `r` 稳定布局，固定纯 NE 规则的每个全目录最佳回应环必须经过一处低于本方最大 reach 的 `1/r` 的行动；因此双方各自 reach 都在该阈值以上的任意长目录有因子 `r` 的完整纯续局证书。取 `r=ρ` 只覆盖这个 reach 平衡子类；低区内回返仍是主问题的缺口。
+[SPARSE-HIGH-ACYCLIC](sparse_high_reach_barrier.md) 给出任意目录长度的条件性进展：若无 `r` 稳定布局，固定纯 NE 规则的每个全目录最佳回应环必须经过一处低于本方最大 reach 的 `1/r` 的行动；因此双方各自 reach 都在该阈值以上的任意长目录有因子 `r` 的完整纯续局证书。它自身只覆盖 reach 平衡子类；全类证明在 `r=ρ` 进一步排除低区入口。
+
+**本轮全类结果：**[SPARSE-RHO-ALL](sparse_unbounded_rho.md) 在无 `ρ` 稳定格的反设下，沿全目录最佳回应的高区下降取首个低区入口；其唯一客户身份与三次式排除该入口。因此固定完整纯 NE 规则对双方任意长、单交叠目录总有 `ρ` 稳定格，原 HC-RHO 的 2×2 整数族给同类下界。Q-SPARSE 的数学阈值在内部证明意义下闭合；前段落是该证明的前置条件性引理，原“低区回返缺口”现已在 `r=ρ` 消除。外部评审与新颖性仍待查。
 
 ## 1. 模型与量词
 
@@ -18,6 +20,7 @@
 | HC-2-LOW | 六顶点无向图、每方两个位置、每对恰两名共有客户 | 实例最优因子 (2M+10)/(M+14)→2；直接代数与严格占优论证 |
 | HC-2-SHARP | 同时接受上界证明和下界证明 | 通用最优常数恰为 2；不能只由下界或程序运行推出 |
 | HC-RHO | **同时**满足 min(|U₁|,|U₂|)≤2 与每跨对共有客户数≤1 | 当前全文重写并内部核对的 sharp ρ=2cos(π/7)；纯上界与严格唯一后续下界，外部评审尚无 |
+| SPARSE-RHO-ALL | 每跨对共有客户数≤1；双方目录均可任意长 | 固定完整纯 NE 规则已有普遍 sharp ρ；短目录 HC-RHO 的下界族作为全类下界；新证明多路线内部审查，尚无外部评审 |
 | SPARSE-HIGH-ACYCLIC / SPARSE-BALANCED-R | 每跨对至多一共有客户，双方任意长；后者另需各自最小 reach≥最大 reach/r | 无 `r` 稳定布局的真实最佳回应环须进低区；平衡子类有完整纯续局 `r` 上界；当前直接证明及精确边界攻击，未经外部评审 |
 | 单共有客户实例精确求解 | 仅每跨对共有客户数≤1；两目录可任意大 | 算出该有限输入的最优因子；不是任意目录的统一 ρ 证明 |
 
@@ -31,6 +34,7 @@
 4. [单共有客户的受限 ρ](restricted_rho.md)：短目录条件、三次式与精确求解器的区别。
 5. [闭合回应核心与单调成本](core_lift_and_monotone.md)：可独立选择后续时如何保留全目录威胁，以及纯均衡的条件迁移。
 6. [高 reach 区的条件性传播](sparse_high_reach_barrier.md)：固定纯规则、全目录回应图的逐边严格下降、任意长坏环的低区必经及平衡 reach 子类上界。
+7. [任意长单交叠的尖锐 ρ](sparse_unbounded_rho.md)：首个高到低边界引理、同一客户身份与三次式；完整纯规则在全目录下的终结论。
 
 ## 3. 源对照与差异处置
 
@@ -44,7 +48,7 @@
 | [最终审计](../../../history/source/audits/heterogeneous_final.md) 开头、§3.7；[攻击审读](../../../history/source/audits/heterogeneous_adversarial.md) §7 | 使用迁移前 `r_menu_solver.py`、`universal_two.md` 等名称；“独立”指同一研究流程内的审读；压缩说明有不同写法 | 当前代码映射至 `facility_spe/heterogeneous_two.py`；正式采用主稿全环最大原子证明；外部独立重构仍待完成 |
 | [CLAIMS](../../../history/curation-2026-10-01/CLAIMS.md) HC-2 与 CORE-LIFT 项 | 个别证据名称仍写 `r_menu_solver.py`、`meta.md` | 对应现行 [facility_spe/heterogeneous_two.py](../../../facility_spe/heterogeneous_two.py) 与 [history/source/notes/heterogeneous/response_core.md](../../../history/source/notes/heterogeneous/response_core.md)，不凭旧名称新增来源 |
 
-历史上失败的推断也必须区别于尚未证明的开放问题。`response_core.md` §3.1 的 A=1、B=0、共有权重 (2,4) 具有均衡负载差集合 {-1,3}，却无法满足双方各得自身 reach 一半的配额；所以“配额失败必有唯一支配原子”是**错误命题**。两目录均任意大、跨对至多一共有客户是否仍有统一 ρ，才是保留的**开放边界**。
+历史上失败的推断也必须区别于现行命题。`response_core.md` §3.1 的 A=1、B=0、共有权重 (2,4) 具有均衡负载差集合 {-1,3}，却无法满足双方各得自身 reach 一半的配额；所以“配额失败必有唯一支配原子”是**错误命题**。两目录均任意大、跨对至多一共有客户的统一 ρ 已由本轮新证明闭合，不能再列为开放边界。
 
 ## 4. 后续重构任务
 

@@ -1,6 +1,6 @@
 # Q-SPARSE：单公共客户、任意大小异构目录的尖锐阈值
 
-状态：开放问题。已存在的 HC-RHO 仍要求一侧目录至多两地点；本题去掉该限制。上界 2 与下界 \(\rho=2\cos(\pi/7)\) 依赖各自现行内部证明，尚未经外部同行评审。入口：[路线](../ROADMAP.md)、[增长规则](../GROWTH.md)。
+状态：**本轮数学闭合，尚未经外部同行评审。** [SPARSE-RHO-ALL](../current/heterogeneous/sparse_unbounded_rho.md) 在双方目录任意长时给完整纯续局 `ρ` 上界，原 HC-RHO 六客户 `2×2` 下界属于本类，因此普遍尖锐阈值为 `ρ`。以下保留原问题量词与探索路线作为审查记录；旧的开放表述均须按新定理解释。入口：[路线](../ROADMAP.md)、[增长规则](../GROWTH.md)。
 
 ## 1. 实例类与完整量词
 
@@ -12,7 +12,7 @@
 
 该条件限制**客户人数**，不是公共总重；同一客户可以覆盖多个地点。若 \(s\in U_1\cap U_2\)，合法共址对也须满足它，所以 \(|C_s|\le1\)。两目录大小均无上界。
 
-目标：是否对每个该类实例，都存在 \((s,t)\) 及为全部 \(U_1\times U_2\) 带标签布局各指定精确客户 NE 的规则 \(\sigma\)，使
+现已解决的目标：是否对每个该类实例，都存在 \((s,t)\) 及为全部 \(U_1\times U_2\) 带标签布局各指定精确客户 NE 的规则 \(\sigma\)，使
 
 \[
 L_1(\sigma(r,t))\le\rho L_1(\sigma(s,t))\quad(r\in U_1\setminus\{s\}),
@@ -20,13 +20,13 @@ L_1(\sigma(r,t))\le\rho L_1(\sigma(s,t))\quad(r\in U_1\setminus\{s\}),
 L_2(\sigma(s,r))\le\rho L_2(\sigma(s,t))\quad(r\in U_2\setminus\{t\}).
 \]
 
-零收益仍按未除法的不等式检查。若否，求其最小普遍阈值 \(\alpha_{\mathrm{sp}}\)。存在性允许正实权重；精确算法及可执行反例使用显式覆盖、正二进制有理权重。
+零收益仍按未除法的不等式检查。结论为 `α_sp=ρ`。存在性允许正实权重；精确算法及可执行反例使用显式覆盖、正二进制有理权重。
 
 ## 2. 已有边界与可直接使用的精确接口
 
-**2026-10-01 新条件性进展。** [SPARSE-HIGH-ACYCLIC 与 SPARSE-BALANCED-R](../current/heterogeneous/sparse_high_reach_barrier.md) 处理双方**任意长**目录：若两侧每一地点的 reach 均至少为本方最大 reach 的 `1/r`，固定纯 NE 规则下存在完整目录 `r`-稳定布局。反过来，若根本没有 `r`-稳定布局，该规则的每一个全目录最佳回应环都必须进入某一侧 reach 严格低于本侧最大值 `1/r` 的区，并在所有高行动出边按带标签 reach 全序严格下降。这是坏长环的条件性低区必经定理，不是一般单交叠目录的 `ρ` 上界；不平衡 reach 的回返仍开放。精确[审查脚本](../../tests/audits/sparse_high_reach.py)与[冻结有理记录](../../evidence/runs/2026-10-01/sparse_high_reach.json)攻击了平局、零 reach、完整 off-path 及两个必要假设。
+**证明转折。** [SPARSE-HIGH-ACYCLIC 与 SPARSE-BALANCED-R](../current/heterogeneous/sparse_high_reach_barrier.md) 处理双方**任意长**目录：若两侧每一地点的 reach 均至少为本方最大 reach 的 `1/r`，固定纯 NE 规则下存在完整目录 `r`-稳定布局。反过来，若根本没有 `r`-稳定布局，该规则的每个全目录最佳回应环都必须进入某方低 reach 区。新[全类证明](../current/heterogeneous/sparse_unbounded_rho.md)进一步在 `r=ρ` 排除了**首个**高到低边，故不需要控制低区内回返。精确[审查脚本](../../tests/audits/sparse_high_reach.py)与[冻结有理记录](../../evidence/runs/2026-10-01/sparse_high_reach.json)攻击了平局、零 reach、完整 off-path 及两个必要假设。
 
-按[受限 \(\rho\) 页](../current/heterogeneous/restricted_rho.md)，HC-RHO 的上界同时需要单公共客户与 \(\min(|U_1|,|U_2|)\le2\)。其六客户下界族已经属于本题，给 \(\alpha_{\mathrm{sp}}\ge\rho\)。[任意异构上界](../current/heterogeneous/full_catalog_cycle.md)的纯续局适用于本题，给 \(\alpha_{\mathrm{sp}}\le2\)。这两个不等式沿用各自的内部研究证明状态；它们不证明任意大小稀疏目录已有 \(\rho\) 上界。
+按[受限 \(\rho\) 页](../current/heterogeneous/restricted_rho.md)，HC-RHO 的上界同时需要单公共客户与 \(\min(|U_1|,|U_2|)\le2\)。其六客户下界族已经属于本题，给 \(\alpha_{\mathrm{sp}}\ge\rho\)。先前[任意异构上界](../current/heterogeneous/full_catalog_cycle.md)只给 \(\alpha_{\mathrm{sp}}\le2\)；本轮独立于短目录提升的新证明把上界降为 `ρ`。这些上、下界沿用各自的内部研究证明状态。
 
 固定布局、地点覆盖重 \(R_s,R_t\)，若无公共客户，负载强制为 \((R_s,R_t)\)。若唯一公共客户重 \(w\)，其两条件成本为 \(R_s,R_t\)：
 
@@ -52,13 +52,13 @@ x^*_{st}=\operatorname{clamp}_{[a_{st},b_{st}]}
 
 两威胁均零时任取区间点；正分子/零分母视为无穷，零分子贡献零。全布局最小值即该实例允许全部独立混合续局的最优因子。这一精确接口已经实现于 [`single_overlap.py`](../../facility_spe/exact/single_overlap.py)，允许双方目录任意大，不能据其适用范围扩大 HC-RHO 的定理范围。
 
-## 3. 第一项可领取任务：完整 3×3 稀疏核心
+## 3. 历史探索关口：完整 3×3 稀疏核心
 
 先研究 \(|U_1|=|U_2|=3\)，这是未被短目录上界覆盖的最小尺寸。客户覆盖在跨目录矩阵上形成矩形 \(A_i\times B_i\)，其中 \(A_i=\{s\in U_1:i\in C_s\}\)、\(B_i=\{t\in U_2:i\in C_t\}\)。单公共条件要求不同客户的这些非空矩形**不共享格子**。按这个约束生成真实 incidence，再分配正有理权重；不能自由填写九格收益，把未必可由共同客户覆盖实现的矩阵当成实例。
 
 对每个候选重算全体九格区间、两侧全部真实威胁与精确最优值。先枚举或解析严格 reach 次序，再处理 reach 平局及其整段混合 NE。若得到 \(\alpha^*>\rho\)，用有理隔离区间或 \(q(z)=z^3-z^2-2z+1\) 在 \(z\ge\phi\) 时的严格单调性作精确比较；仅有浮点近似大于 \(1.80194\) 不足。
 
-证明 3×3 上界仍不是任意目录定理。下一步可用 [CORE-LIFT](../current/heterogeneous/core_lift_and_monotone.md)保留**全目录**极小收益威胁，把问题归约到平衡回应核心；但[SPARSE-LONG-CYCLE](../current/heterogeneous/sparse_long_cycles.md)已经证明，即使每格客户 NE 唯一，单交叠目录也能有任意长的唯一精确威胁环。必须使用“没有 $r$ 稳定布局”的**额外假设**证明条件性短障碍，或直接排除所有坏环；不能任意截成三行三列。上一轮摘要报告的“至多两种重客户身份”论证尚缺可读证明，须先重建核验，不能当作已证前提。反例搜索只输出一次失败菜单不具否定力；真正反例需上述全 NE 区间的最优性证据。
+证明 3×3 上界本身不会推出任意目录定理。[CORE-LIFT](../current/heterogeneous/core_lift_and_monotone.md)保留**全目录**极小收益威胁，但[SPARSE-LONG-CYCLE](../current/heterogeneous/sparse_long_cycles.md)反驳无条件短核心。新全称证明利用“固定纯规则没有 `r` 稳定布局”的假设直接排除首个低区入口，不需要旧的未取得证明的“至多两种重客户身份”候选。反例搜索只输出一次失败菜单不具否定力；真正反例需上述全 NE 区间的最优性证据。
 
 ## 4. 现有代码、证据与必须保留的负例边界
 
@@ -79,16 +79,16 @@ python3 -m facility_spe.exact.single_overlap examples/heterogeneous/rho_lower.js
 
 **两个范围负例需要保留：**[整数 sharp-2 族](../current/heterogeneous/sharp_two_lower.md)每合法对有两名公共客户，能逼近 2，却不属于本题。`examples/heterogeneous/six_cycle.json` 也不是本题输入：布局 \((0,6)\) 有公共客户 \(\{2,3,4\}\)，`single_overlap` 的全输入检查会拒绝；该文件中的长回应环不能被当作单公共客户六环证据。2026-10-01 已重跑确认该拒绝，未修改原例。
 
-## 5. 验收产物与完成条件
+## 5. 原验收计划与现行结果
 
-以下为**拟新增路径**，不是已完成文件：
+以下记录原先的探索计划，路径并非全部已创建；实际闭合证明在 [`sparse_unbounded_rho.md`](../current/heterogeneous/sparse_unbounded_rho.md)：
 
 | 产物 | 路径与验收要求 |
 | --- | --- |
 | 3×3 第一结果 | `research/questions/sparse_3x3_result.md`；可实现的 incidence、严格序和平局、结论覆盖范围 |
-| 新定理或严格反例 | `research/current/heterogeneous/sparse_unbounded.md`；新 claim ID，不静默扩大 HC-RHO |
+| 新定理或严格反例 | 已完成 `research/current/heterogeneous/sparse_unbounded_rho.md`；新 ID SPARSE-RHO-ALL，未静默扩大 HC-RHO |
 | 搜索及独立检查 | `tests/audits/sparse_catalogs.py`；精确数据生成、全 NE 目标表、对照、种子和搜索边界 |
 | 输入和排除证据 | `examples/heterogeneous/sparse/`、`evidence/certificates/heterogeneous/sparse/`；每布局 \(a,b,V,D_1,D_2,x^*,\alpha^*_{st}\)，以便完整重算 |
 | 冻结运行 | `evidence/runs/<新运行标识>/sparse_catalogs.json`；记录输入哈希、代码版本、规模、成功/拒绝及未探索类，不覆盖旧记录 |
 
-若反例超过 \(\rho\)，提交全局实例最优性的精确表即可回答第一问，后续尖锐常数仍须匹配全称上界与同类下界族。若只有有限搜索通过，结论写成有限证据。若普遍上界成立，必须覆盖任意大目录、平局、目录相交与零收益。新成果按增长规则同步目录、claims、assets、graph；研究投入比例只作建议。
+新普遍上界覆盖任意大目录、平局、目录相交与零收益，且结合旧同类下界给尖锐值。有限搜索仍仅是攻击证据；尚无外部审稿或文献优先权判断。新成果按增长规则同步目录、claims、assets、graph。
