@@ -28,6 +28,8 @@ L_2(\sigma(s,r))\le\rho L_2(\sigma(s,t))\quad(r\in U_2\setminus\{t\}).
 
 **阈值以下的准确边界。** [SPARSE-BAD-LONG](../current/heterogeneous/sparse_bad_long_cycles.md) 对每个 `3/2<r<ρ` 构造确实没有 `r` 稳定布局的任意长唯一精确回应环，且高行只用同一重客户身份；“无 `r` 稳定格 + 少数锚身份”不保证固定大小的**精确回应闭核心**。它在 `r=ρ` 的严格余量消失，不影响上述全类结论。[有理复现](../../tests/audits/sparse_bad_long_cycles.py)和[冻结记录](../../evidence/runs/2026-10-01/sparse_bad_long_cycles.json)单独审查全布局与全目录回应。
 
+新命题版本 [SPARSE-BAD-LONG-ALL](../current/heterogeneous/sparse_bad_long_cycles.md) 以明确的开参数余量把上述失败范围扩成全部 `1≤r<ρ`；冻结复现仍只审查 `7/4`，不替代新版本的代数证明。旧 ID 的量词保持不变。
+
 按[受限 \(\rho\) 页](../current/heterogeneous/restricted_rho.md)，HC-RHO 的上界同时需要单公共客户与 \(\min(|U_1|,|U_2|)\le2\)。其六客户下界族已经属于本题，给 \(\alpha_{\mathrm{sp}}\ge\rho\)。先前[任意异构上界](../current/heterogeneous/full_catalog_cycle.md)只给 \(\alpha_{\mathrm{sp}}\le2\)；本轮独立于短目录提升的新证明把上界降为 `ρ`。这些上、下界沿用各自的内部研究证明状态。
 
 固定布局、地点覆盖重 \(R_s,R_t\)，若无公共客户，负载强制为 \((R_s,R_t)\)。若唯一公共客户重 \(w\)，其两条件成本为 \(R_s,R_t\)：
