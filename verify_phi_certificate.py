@@ -1,23 +1,12 @@
 #!/usr/bin/env python3
-"""Check a shared-catalog phi certificate without rebuilding witness menus."""
-import argparse
-import json
-
-from common_phi_algorithm import verify
-
-
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("input", help="exact-rational incidence JSON")
-    parser.add_argument("certificate", help="output of common_phi_algorithm.py")
-    args = parser.parse_args()
-    with open(args.input, encoding="utf-8") as stream:
-        instance = json.load(stream, parse_float=str)
-    with open(args.certificate, encoding="utf-8") as stream:
-        certificate = json.load(stream, parse_float=str)
-    verify(instance, certificate)
-    print("Valid exact-customer-NE facility-deviation certificate")
-
-
+"""Compatibility entry point; canonical implementation is facility_spe.cli.verify_phi."""
+from pathlib import Path
+import sys
+_REPO_ROOT = Path(__file__).resolve().parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
 if __name__ == "__main__":
-    main()
+    import runpy
+    runpy.run_module("facility_spe.cli.verify_phi", run_name="__main__")
+else:
+    from facility_spe.cli.verify_phi import *

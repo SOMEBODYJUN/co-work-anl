@@ -1,6 +1,12 @@
-import argparse,json,time
-from mitm_solver import lazy_ring_solve,serial
-ap=argparse.ArgumentParser();ap.add_argument('input');args=ap.parse_args()
-with open(args.input) as f:data=json.load(f)
-start=time.perf_counter();result=lazy_ring_solve(data);result['elapsed_seconds']=time.perf_counter()-start
-print(json.dumps(serial(result),indent=2))
+#!/usr/bin/env python3
+"""Compatibility entry point; canonical implementation is facility_spe.cli.lazy_ring."""
+from pathlib import Path
+import sys
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+if __name__ == "__main__":
+    import runpy
+    runpy.run_module("facility_spe.cli.lazy_ring", run_name="__main__")
+else:
+    from facility_spe.cli.lazy_ring import *
