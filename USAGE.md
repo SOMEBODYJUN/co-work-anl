@@ -7,7 +7,7 @@
 | 共同目录的普遍 \(\phi\) 构造 | 两家选同一非空目录，可省略 U1/U2 使用全部地点；正有理权重；独立混合精确客户 NE | python3 -m facility_spe.shared_phi examples/shared/tiny.json --output certificate.json | factor 不超过 \(\phi\) 的一个实例证书，非实例最优 |
 | 异构目录的普遍 2 构造 | 分别给出非空 U1/U2，可不同；选纯精确客户 NE | python3 -m facility_spe.heterogeneous_two examples/heterogeneous/tight_two_M1000.json | alpha 不超过 2 的一个实例证书 |
 | 整个实例的最优因子 | U1/U2 均明确给出；接受对最大公共客户数 \(\kappa\) 指数增长的时间 | python3 -m facility_spe.exact.bounded_overlap examples/heterogeneous/tight_two_M1000.json | 支持区间完整枚举的最优 alpha；短证书独自只证“达到” |
-| 至多单交叠的实例最优因子 | 每个跨目录地点对最多一名共有客户 | python3 -m facility_spe.exact.single_overlap examples/heterogeneous/rho_lower.json | 特定输入的最优 alpha；普遍 \(\rho\) 还需一侧目录至多两地点 |
+| 至多单交叠的实例最优因子 | 每个跨目录地点对最多一名共有客户 | python3 -m facility_spe.exact.single_overlap examples/heterogeneous/rho_lower.json | 特定输入的最优 alpha；双方目录任意长的普遍 \(\rho\) 结论另由 SPARSE-RHO-ALL 证明 |
 | 共同目录的指数精确比较 | 全部地点可供两设施选；接受指数时间 | python3 -m facility_spe.exact.mitm examples/shared/tiny.json | 实例最优，用作小规模比较 |
 
 输入 JSON 的 weights 为正整数、精确分数或小数字符串；locations[j] 列出地点 j 覆盖的从零开始的客户编号。共同目录程序要求 U1/U2 同时省略，或二者给出相同非空地点集合。其他两个目录程序要求两者都出现。命令行读取 JSON 小数时保留精确十进制；Python API 不接受二进制 float 作为权重。空地点和不被任何地点覆盖的客户可以存在。
