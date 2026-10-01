@@ -2,6 +2,8 @@
 
 这里的**现行研究资产是重新写出的数学说明**，集中在 [research/current](research/current)；可执行算法集中在 [facility_spe](facility_spe)。原始手稿、旧证明笔记和上一轮整理稿进入 [history](history)。旧的 astra_alg、astra_local、astra_ring、asym_research 根目录已退出当前树；[迁移记录](research/path_migration.json)保留来源，而不让旧实验命名决定未来结构。
 
+**Research Goal / 当前前沿：**从双设施选址的精确客户均衡与全部偏离续局出发，找能跨模型规模复用的近似 SPE 结构。当前两项主攻分别为任意设施数 $k$ 的统一近似因子或随 $k$ 增长下界，以及双侧任意长、每跨对最多一共有客户时的尖锐因子。立方费用的跨成本机制和实例最优倍率的计算复杂度是有条件候选，不是封闭的题目清单。[实时研究状态](RESEARCH_STATE.md)、[命题入口](CLAIMS.md)、[失败路线](FAILED_ROUTES.md)与[路线图](research/ROADMAP.md)一起定位下一个证明义务。
+
 **研究状态：**共同目录的黄金比上界已有完整主稿、现行 Markdown 全分支重写及多轮内部审读；[六地点共同目录下界](research/current/shared/sharp_phi_lower.md)现已补出全布局与有理化证明，二者联合给出尖锐阈值。异构目录的因子 2 构造有成文主稿，受限稀疏 ρ 命题也已逐分支重写。程序能为具体输入生成证书；共享证书另有[独立定义级检查器](facility_spe/cli/verify_phi.py)。以上都尚未经过外部同行评审；内部证明、实例证书与学术发表分别标注。参见[命题与状态登记](research/current/claims.md)及[五轴状态表](research/review_status.json)。
 
 ## 先判断输入属于哪条命题
@@ -15,6 +17,16 @@
 
 完整的客户最优反应式、延续量词和编码界限在[规范模型](research/current/model.md)。[使用说明](USAGE.md)列出可直接运行的命令与证书语义。
 
+## 定义和推导地图
+
+- 输入的带标签布局、客户覆盖、正权原子与实际负载费用在 [model.md §1](research/current/model.md) 定义；两设施公共客户的独立混合 NE 在 §2 化为条件成本差。§3 对全部布局的 NE 选择定义完整续局及真实的全目录偏离威胁。
+- `model/NE` → 局部支持几何 → 共同目录固定菜单与全目录环 → 局部强弦 → `SC-PHI-E`；编码有理输入加位复杂度给 `SC-PHI-A`，联合六地点同类下界才得 `SC-PHI-SHARP`。[共享证明顺序](research/current/shared/README.md)。
+- `model/NE` → 异构纯菜单、全目录环 → `HC-2-UP`；与双交叠下界 `HC-2-LOW` 合取才得异构 sharp 2。另加**单交叠且一侧最多两地点**才能使用 `HC-RHO`；移除后一条件是 [Q-SPARSE](research/questions/sparse_catalogs.md)，仍开放。[异构证明顺序](research/current/heterogeneous/README.md)。
+- `CORE-LIFT` 只保留全目录真实威胁而不保证核心短。[SPARSE-LONG-CYCLE](research/current/heterogeneous/sparse_long_cycles.md)在单交叠下构造任意长唯一环，反驳无条件短核心推断；它与普遍倍率 $\rho$ 问题之间没有反例蕴含。
+- 两设施共同目录的 $\phi$ 不覆盖第三家或客户费用 $\mathbb E[L^3]$；分别见 [Q-K-FAC](research/questions/three_facilities.md) 与 [Q-CUBIC](research/questions/cubic_costs.md)。证书的达到性、实例最优性、普遍定理和论文新颖性各自独立。
+
+关键 dependency、attacks 和 scope 边可交互查看[数学超图](research/index.html)，精确文字与证据状态以[现行命题登记](research/current/claims.md)和证明页为准。
+
 ## 如何追踪一项研究结论
 
 [命题登记](research/current/claims.md)固定适用域与状态；[现行资产索引](ASSETS.md)把命题连到新稿、实现、检验及历史来源。[数学超图](research/index.html)的节点是定义、引理、反例和结论；一条推导超边要求**所有列出的共同前提**，不是旧文件之间的链接。其[数据](research/graph.json)和[维护规则](research/README.md)可直接核查。GitHub 预览 HTML 时显示源码，下载 HTML 后可使用交互查看器。
@@ -27,5 +39,17 @@
 | [facility_spe](facility_spe) / [tests](tests) | 唯一规范代码及有边界的回归、独立比较 |
 | [examples](examples) / [evidence](evidence) | 输入实例、实例证书、冻结实验记录 |
 | [history](history) | 原始手稿、旧笔记、失效路线和上一版整理文本；用作来源而非现行入口 |
+
+## 下次接手时先读哪些文件
+
+| 完整路径 | 为什么存在；什么时候使用 |
+| --- | --- |
+| `README.md`、`RESEARCH_STATE.md`、`CLAIMS.md`、`FAILED_ROUTES.md` | 恢复目标、前沿、命题身份和失效机制；接手任何新问题先读。它们是地图，证明仍在链接的现行数学稿。 |
+| `research/current/model.md`、`research/current/claims.md` | 核对客户 NE、完整续局量词、各定理的精确作用域及审查状态；提出新命题或改模型前读。 |
+| `research/ROADMAP.md`、`research/questions/three_facilities.md`、`research/questions/sparse_catalogs.md` | 两个当前主攻的价值门槛、首个判别关口、已知上下界与停损理由；选题时读。 |
+| `research/current/heterogeneous/sparse_long_cycles.md`、`FAILED_ROUTES.md` | 任意长精确威胁环的正整数构造、完整证明及其**仅限于无条件短核心**的排除范围；攻击稀疏证明路线时读。 |
+| `research/questions/cubic_costs.md`、`research/questions/instance_complexity.md` | 非线性费用机制和实例最优判定的条件性预研；遇到跨成本原则、参数算法或困难性归约时读。 |
+| `research/graph.json`、`research/review_status.json`、`research/assets.json` | 数学合取/反例边、逐命题审查层、证明与实现和证据的对照；状态升级或新增 Claim 时一起更新。 |
+| `research/GROWTH.md`、`AGENTS.md` | 新问题、证明、代码和冻结证据的落点与检查命令；开始修改前读。 |
 
 当前没有选定公共软件许可或外部证明认证。要用于具体研究输入，请按[条件表](ASSETS.md)选择算法，运行后核查证书，并把普遍定理状态与实例验证结论分开报告。

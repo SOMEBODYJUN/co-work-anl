@@ -83,12 +83,15 @@ def check() -> None:
                 and row["interpretation"], ("invalid source interpretation", old))
     for old, new in migration["first_curation_retired"].items():
         require(not (ROOT / old).exists() and (ROOT / new).is_file(), (old, new))
+    for old, new in migration.get("reestablished_root_docs", {}).items():
+        require((ROOT / old).is_file() and (ROOT / new).is_file(), (old, new))
     tracked = subprocess.check_output(
         ["git", "ls-files", "--cached", "--others", "--exclude-standard"],
         cwd=ROOT, text=True
     ).splitlines()
     roots = {"facility_spe", "tests", "examples", "evidence", "history", "research"}
-    root_docs = {".gitignore", "AGENTS.md", "README.md", "ASSETS.md", "USAGE.md"}
+    root_docs = {".gitignore", "AGENTS.md", "README.md", "ASSETS.md", "USAGE.md",
+                 "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md"}
     unknown = {p for p in tracked if p.split("/", 1)[0] not in roots
                and p not in root_docs}
     require(not unknown, ("unclassified repository files", sorted(unknown)))

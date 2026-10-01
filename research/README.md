@@ -12,6 +12,8 @@
 | [path_migration.json](path_migration.json) | 原始文件搬迁和旧命令退出位置。 | 不要求继续在根目录保留旧模型命名。 |
 | [source_crosswalk.md](source_crosswalk.md) | 68 个原始文件/旧代码入口各自如何被新稿解释、保留或取代。 | 原稿文件本身不等于现行命题。 |
 
+根目录的 `CLAIMS.md`、`FAILED_ROUTES.md`、`RESEARCH_STATE.md` 是本轮重新建立的现行入口；原先同名第一轮整理稿仍在 `history/curation-2026-10-01/`，对应关系记于 `path_migration.json` 的 `reestablished_root_docs`，不能把新入口当成旧文件原样搬回。
+
 超图每个节点有稳定 ID、数学细节、状态和来源，每条超边有联合前提、结论、类型、语句和证据位置。改动成本、目录、客户均衡、编码或量词时须新建或修订命题，并同步改动依赖边。当前结论编号见[命题登记](current/claims.md)。HTML 内嵌数据，不需要服务器；GitHub 直接预览会显示源码，下载后可在浏览器查看节点和边。
 
 从仓库根目录运行：

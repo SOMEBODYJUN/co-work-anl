@@ -871,6 +871,42 @@
         "research/current/shared/local_chord_full.md"
       ],
       "status": "current Markdown reconstruction internally audited"
+    },
+    {
+      "id": "SPARSE-CONSTRUCTION",
+      "kind": "construction",
+      "track": "heterogeneous",
+      "title": "Single-overlap positive integer incidence family",
+      "detail": "For every n>=2, two disjoint n-site catalogs with one customer at each occupied pair, positive private customers, all reach values of opposite parity and unique local NE.",
+      "refs": [
+        "research/current/heterogeneous/sparse_long_cycles.md"
+      ],
+      "status": "explicit construction; internally arithmetic checked; unrefereed"
+    },
+    {
+      "id": "SPARSE-LONG-CYCLE",
+      "kind": "lemma",
+      "track": "heterogeneous",
+      "title": "Arbitrarily long exact-threat response core",
+      "detail": "For every n>=2 a realizable single-overlap instance has a unique 2n-node full-catalog best-response cycle; no nonempty response-closed subset is shorter. Does not lower-bound the SPE factor.",
+      "refs": [
+        "research/current/heterogeneous/sparse_long_cycles.md",
+        "research/current/claims.md",
+        "research/review_status.json"
+      ],
+      "status": "current algebraic proof internally checked; unrefereed"
+    },
+    {
+      "id": "X-SPARSE-SHORT",
+      "kind": "rejected",
+      "track": "heterogeneous",
+      "title": "Single overlap implies a constant-size exact-threat closed core",
+      "detail": "The unconditional assertion is false for the explicit SPARSE-LONG-CYCLE family. Conditional compression under the absence of r-stable layouts remains open.",
+      "refs": [
+        "research/current/heterogeneous/sparse_long_cycles.md",
+        "FAILED_ROUTES.md"
+      ],
+      "status": "refuted"
     }
   ],
   "hyperedges": [
@@ -1619,6 +1655,37 @@
         "history/curation-2026-10-01/LITERATURE.md"
       ],
       "status": "source discrepancy resolved in current reconstruction"
+    },
+    {
+      "id": "e-sparse-family",
+      "kind": "derives",
+      "track": "heterogeneous",
+      "premises": [
+        "M1",
+        "M3",
+        "SPARSE-CONSTRUCTION"
+      ],
+      "conclusion": "SPARSE-LONG-CYCLE",
+      "statement": "Parity makes every local client NE unique; direct payoff comparisons give strict full-catalog responses A_{j+1}, A_1 and C_i, yielding one cycle through all 2n actions.",
+      "refs": [
+        "research/current/heterogeneous/sparse_long_cycles.md"
+      ],
+      "status": "current algebraic proof internally checked"
+    },
+    {
+      "id": "e-sparse-short-attack",
+      "kind": "attacks",
+      "track": "heterogeneous",
+      "premises": [
+        "SPARSE-LONG-CYCLE"
+      ],
+      "conclusion": "X-SPARSE-SHORT",
+      "statement": "Arbitrarily long strict unique response cycles exclude a uniform bound on nonempty full-threat response-closed cores, without refuting the rho approximation conjecture.",
+      "refs": [
+        "research/current/heterogeneous/sparse_long_cycles.md",
+        "FAILED_ROUTES.md"
+      ],
+      "status": "exact counterexample family"
     }
   ]
 }
