@@ -832,14 +832,17 @@
         "MF-PURE-CAP-POLY",
         "SC-K-LEXMAX-STRONG-HARD",
         "SC-K-LOCAL-PLS",
-        "SC-K-GREEDY-BUDGET"
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-UNOPENED-2",
+        "SC-K-EQUAL-MULT-GREEDY-2",
+        "SC-K-DISTINCT-GREEDY-3"
       ],
       "status": "internally reviewed conditional algorithm, exact-oracle strong NP-hardness proof, and PLS upper bound; externally unreviewed",
       "applies_when": [
         "arbitrary explicit k and common finite catalog, labeled facilities, atomic customers and linear actual-load costs",
         "positive binary rational input for Nashification and PLS; positive integers for strong NP-hardness"
       ],
-      "produces": "Polynomial off-path Nashification given a suitable on-path state; strong hardness only of exact global lexmax; polynomial neighborhood search upper bound in PLS, not a full polynomial factor-two algorithm. Polynomial greedy transfer budgets alone, with a fixed-layout NE compatibility counterexample.",
+      "produces": "Polynomial off-path Nashification given a suitable on-path state; strong hardness only of exact global lexmax; polynomial neighborhood search upper bound in PLS, not a full polynomial factor-two algorithm. Polynomial greedy transfer budgets alone, with a fixed-layout NE compatibility counterexample. New conditional bit-polynomial factor-two construction when greedy occupancy has uniform q>=2; conditional factor-three construction when greedy occupies k distinct sites; unopened-site cap invariant after site transfers.",
       "implementation": [],
       "proof": [
         "research/current/multi_facility/polytime_frontier.md",
@@ -852,7 +855,7 @@
       "sources": [
         "history/source/audits/cost_extensions.md"
       ],
-      "limit": "Historical source records only the arbitrary-k question, not these proofs. External priority/review unrecorded. STOC 2004 theorem imported only for restricted identical-link customer subgames. The reduction family has an easy exact SPE; PLS membership does not imply polynomial convergence."
+      "limit": "Historical source records only the arbitrary-k question, not these proofs. External priority/review unrecorded. STOC 2004 theorem imported only for restricted identical-link customer subgames. The reduction family has an easy exact SPE; PLS membership does not imply polynomial convergence. Neither restricted output class solves all-input unequal-multiplicity factor two; no canonical implementation yet."
     }
   ]
 }

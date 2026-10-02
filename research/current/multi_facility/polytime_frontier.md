@@ -243,10 +243,192 @@ N_C+w(J_A cap C_C)=2+6=8>6=a. The actual deviation earns 8<=2a,
 so this only refutes preservation of the *sufficient budget* at that layout.
 It does not refute factor two for the instance.
 
+## SC-K-GREEDY-UNOPENED-2: what survives on-path equilibration
+
+**Statement.** Run SC-K-GREEDY-BUDGET on a positive-reach instance and let
+\(\gamma>0\) be the score selected at its last insertion. Keep its facility
+layout fixed. Starting with its site assignments, perform any sequence of
+*strictly improving single-customer site transfers*, where each customer is
+independently uniform among facilities at its chosen site. The process ends at
+an exact customer NE after finitely many transfers. At every state reached, all
+facility loads are at least \(\gamma\). If \(r\) is a site never opened by the
+greedy run, its genuinely newly covered weight \(N_r\), determined only by the
+fixed occupancy, is at most \(\gamma\). Consequently, for any reached state,
+any source facility with load \(a\), and any such \(r\),
+
+\[
+ q_u\ge2:\quad N_r\le a;
+ \qquad
+ q_u=1:\quad N_r+w(J_u\cap C_r)\le 2a.             \tag{12}
+\]
+
+These statements include the reached exact NE. They apply to this *reachable*
+NE, not to every equilibrium at the greedy layout. No polynomial bound on the
+number of site transfers follows.
+
+**Proof.** Each insertion can only decrease an occupied site's next-insertion
+score, and opening a site can only decrease the still-uncovered weight scored
+at each unopened site. Thus the successive chosen maxima are nonincreasing.
+The final load at a site equals its score at its **last** insertion: assigned
+customers never leave during the greedy run. Hence every initial facility load
+is at least \(\gamma\). At the final insertion every unopened site's then-score
+is at most \(\gamma\); that score is exactly \(N_r\) at the completed occupancy.
+
+For a strict customer transfer from site \(t\) to site \(v\), write
+\(b=W_v/q_v\). The strict actual-cost improvement is
+\((W_t-w_i)/q_t>b\). After the transfer all \(q_t\) source coordinates still
+exceed \(b\), and all \(q_v\) target coordinates increase from \(b\) to a
+value above \(b\). Thus the increasingly sorted load vector improves
+lexicographically, as in uniform_two.md (3). Its first coordinate cannot
+decrease. The finite assignment space and this strict increase prove eventual
+termination; at termination no customer has a profitable site change, and
+uniform mixing within its chosen site is an exact individual NE. The first
+coordinate is always at least \(\gamma\), so \(a\ge\gamma\). When \(q_u=1\),
+\(w(J_u)=a\), whence \(w(J_u\cap C_r)\le a\), proving (12).
+
+**Precisely what this repairs.** In the four-customer counterexample above,
+the strong budget (8) becomes \(8>6\), but the needed *initial deviator cap*
+at the unopened site is only \(8\le2\cdot6\). If stationary sites can also
+be assigned to capped bins with isolated macro customers, the deviation proof
+can start with the deviator at load at most \(2a\), rather than at most \(a\),
+and MF-PURE-CAP-POLY then preserves the factor-two bound. This is a
+**conditional interface**, not a proof that stationary packing always works:
+customer transfers may change \(W_t\), so the original occupied-site budgets
+(5) and (7) need not persist. If the source disappears, the assignment of
+its old customers among surviving sites is an additional obligation. A
+polynomial method to reach an appropriate exact on-path NE is also unproved;
+the imported identical-link algorithm applies to pure fixed-facility jobs,
+not automatically to these site-uniform transfers with differing \(q_t\).
+
+## SC-K-EQUAL-MULT-GREEDY-2: a polynomial factor-two subclass
+
+**Exact conditional statement.** On an explicit positive rational MF-MODEL
+input, run SC-K-GREEDY-BUDGET. Suppose its resulting occupancy has the *same*
+multiplicity \(q\ge2\) at every occupied physical site. This condition is
+decidable from the greedy output in polynomial time and makes no assumption
+about the number of occupied sites, the number of clients, or their overlaps.
+There is then an input-bit-polynomial procedure outputting a pure labeled
+facility layout, an exact independent-mixed on-path customer NE, and a
+polynomial-size, polynomial-time evaluable complete exact continuation with
+factor at most 2. The conclusion is conditional on this greedy **output**;
+it does not assert the same for arbitrary multiplicities or give an algorithm
+for every instance.
+
+**Site-level Nashification and the imported invariant.** Write \(\gamma\)
+for the last greedy insertion score. As above every initial facility load is
+at least \(\gamma\). Choose a facility inserted at the last step: its site
+has final load \(\gamma\). Applying its occupied-target budget (5), valid
+since \(q\ge2\), gives every other occupied site's assigned weight at most
+\((q+1)\gamma\); its own weight is \(q\gamma\). Thus initially
+
+\[
+              q\gamma\le W_t\le(q+1)\gamma
+              \quad\hbox{for every occupied site }t.             \tag{13}
+\]
+
+Temporarily regard each occupied *site* as one identical parallel machine
+with load \(W_t\), and each covered customer as an indivisible job of weight
+\(w_i\), restricted to the occupied sites covering it. The 2004
+Gairing--Lücking--Mavronicolas--Monien Nashification algorithm computes an
+exact pure restricted-link NE in time polynomial in the numbers of jobs,
+links, allowed edges and the logarithm of total integer weight. Its
+Corollary 4.3 explicitly preserves both the global minimum load from below
+and the maximum from above in each blocking-flow call; the full algorithm
+changes assignments only through such calls, including calls on subsets of
+links, so the full global extrema obey the same bounds. This last inference
+from its described algorithm is part of the present theorem import and must
+not be confused with the paper's more prominently stated makespan bound.
+Multiply rational weights by the product of denominators to use its integer
+algorithm; the multiplier has polynomial bit length. Equation (13) therefore
+still holds in the returned site assignment.
+
+Keep the greedy facility layout. For each customer assigned to site \(t\),
+independently randomize uniformly among its \(q\) colocated facilities.
+The customer's cost at its chosen site is
+\(w_i+(W_t-w_i)/q\), while a facility at another accessible occupied site
+\(v\) costs \(w_i+W_v/q\). Since all occupied sites have the *same* \(q\),
+its exact no-deviation condition is precisely
+\(W_t-w_i\le W_v\), the restricted identical-machine pure NE condition.
+Uniformity among facilities at one site handles all within-site choices.
+The resulting independent-mixed profile is an exact on-path client NE;
+every facility has load \(a=W_t/q\ge\gamma>0\).
+
+For any actual deviation, the source site survives because \(q\ge2\).
+At its source, \(W_u=qa\). At every other occupied site \(t\), (13) gives
+\(W_t\le(q+1)\gamma\le(q+1)a\), exactly budget (5). For any unoccupied
+target \(r\), the occupancy has not changed, so its newly covered weight
+still satisfies \(N_r\le\gamma\le a\), exactly (6). Thus the explicit
+MF-PACK-2 construction of uniform_two.md Section 5.1 produces a feasible
+pure assignment after each deviation with isolated clients heavier than
+\(2a\), every ordinary facility at load at most \(2a\), and the deviator
+ordinary. MF-PURE-CAP-POLY computes a pure exact customer NE preserving
+that cap. Repeating for the \(k(|S|-1)\) actual deviations and using the
+polynomial-time fixed-layout default NE procedure for any queried remaining
+layout yields a compatible complete continuation. This proves the conditional
+factor-two and bit-polynomial statement.
+
+**Boundary.** If some occupied sites have multiplicity one, their departure
+can erase a site and the orphan-aware budgets (7)--(8) must be recovered;
+site-level NE at equal multiplicity one alone does not do this. If occupied
+sites have unequal multiplicities, the site-choice cost inequalities are not
+those of identical machines. The present argument makes no claim about either
+case. It is an algorithmic theorem for a recognizable subclass of greedy
+outputs, not a proof of the unrestricted target.
+
+## SC-K-DISTINCT-GREEDY-3: a weaker polynomial bound with no colocation
+
+**Statement.** If the same greedy procedure occupies \(k\) distinct sites
+with one facility apiece, then an exact on-path *pure* client NE and a
+polynomial-time evaluable complete exact continuation of factor at most 3
+can be computed in input-bit-polynomial time. This statement concerns only
+instances whose greedy output has that property. It does not imply factor 2.
+
+**Proof.** The greedy last-insertion score \(\gamma>0\) bounds initial loads
+below. Budget (7), applied to the last inserted singleton source and dropping
+its nonnegative orphan term, bounds every other site load by \(2\gamma\);
+its own load is \(\gamma\). With one facility at each occupied site, the
+customer game is exactly restricted scheduling on identical machines. The
+same range-preserving Nashification above returns a pure NE with every
+facility load \(a_f\in[\gamma,2\gamma]\).
+
+After any facility \(f\) of load \(a\) moves, keep all customers formerly
+assigned outside its source where they were. Assign each of its old customers
+that remains covered to any accessible facility at the new layout, and mark
+the others unserved. Assign each genuinely new customer to \(f\) when the
+target is previously unoccupied. The old source contributes total weight
+\(a\), and the newly covered weight is at most \(\gamma\). Hence every
+stationary facility has initial load at most \(2\gamma+a\), while \(f\)
+has initial load at most \(a+\gamma\); both are at most
+\(a+2\gamma\le3a\). Nashification on the *actual* deviation layout is
+bit-polynomial, returns a pure exact customer NE, and does not increase
+makespan. The deviator therefore earns at most \(3a\). The polynomial default
+rule and labeled-layout argument of uniform_two.md Section 7 complete one
+continuation. This is a restricted algorithmic result, not a statement that
+the greedy distinct-site layout is 2-stable.
+
+**Why the scalar summary alone stops at three.** For every integer \(M\ge1\),
+consider two facilities, sites \(S,B,R\), and four customers with
+weight/coverage pairs
+\((M,\{S,B\}),(2M-1,\{B,R\}),(1,\{B\}),(M,\{R\})\).
+The layout \((S,B)\) has a unique exact customer NE, of loads \((M,2M)\).
+With \(\gamma=M\), these loads belong to \([\gamma,2\gamma]\) and the
+unopened site's genuinely new reach is \(N_R=\gamma\). After the first
+facility moves \(S\to R\), the site-exclusive weights at \(B,R\) are
+\(M+1,M\), and the shared \(2M-1\) customer strictly prefers \(R\) in
+every strategy of the others. The unique NE gives the deviator \(3M-1\),
+a ratio \(3-1/M\). Thus the two scalar premises *alone* cannot imply any
+factor below 3, even allowing mixed equilibria. This is **not** a
+counterexample to the conditional greedy theorem: greedy first opens \(B\)
+because its reach is \(3M\), then inserts the second facility at \(B\)
+because \(3M/2>M\). Any improvement from 3 to 2 in the distinct-site
+greedy subclass must exploit more of the greedy coverage incidence than
+the scalar interval and new-reach bound.
+
 ## Sources and review status
 
 - Gairing, Lücking, Mavronicolas, Monien, STOC 2004, Section 4, especially
-  Theorem 4.7 and the makespan preservation stated in the abstract/introduction:
+  Corollary 4.3 (both load extrema per blocking-flow call), the construction
+  of the full algorithm, and Theorem 4.7 (exact NE and polynomial time):
   https://cgi.csc.liv.ac.uk/~gairing/publications/2004-stoc.pdf .
 - 3-PARTITION is used only as a standard strongly NP-complete source problem.
   The reduction above is self-contained after that source fact.

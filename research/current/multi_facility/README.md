@@ -33,6 +33,20 @@ finding that local maximum, nor hardness of finding some factor-two witness.
 The separate `SC-K-GREEDY-BUDGET` procedure already constructs all budgets
 in polynomial time, but a four-customer input proves that fixing its layout
 and Nashifying on path can destroy those sufficient inequalities.
+`SC-K-GREEDY-UNOPENED-2` sharpens this obstruction: along strict site-level
+customer repair at the greedy layout, all loads remain above the last greedy
+score, so an unopened deviation target always satisfies the actual factor-two
+initial deviator cap. The unresolved part is packing the surviving occupied
+sites and reaching the desired on-path exact NE in bit-polynomial time.
+For the recognizable output subclass with equal occupied-site multiplicity
+`q>=2`, the latter work *does* close: site-level restricted-identical-link
+Nashification preserves both load extrema, and equal `q` makes its site NE
+an exact original-game NE. All occupied and unopened budgets then hold and
+the complete factor-two continuation is bit-polynomial
+(`SC-K-EQUAL-MULT-GREEDY-2`). When greedy occupies k distinct sites, the
+same range-preserving import gives a bit-polynomial factor-three continuation
+(`SC-K-DISTINCT-GREEDY-3`), without solving the factor-two target for that
+subclass.
 
 The proof deliberately changes the type of continuation: on path it uses
 independent mixing inside co-location groups; off path it isolates giant atoms

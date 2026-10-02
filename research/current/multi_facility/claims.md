@@ -161,6 +161,74 @@ terms. Full proof and a three-site four-customer fixed-layout NE obstruction:
 [polytime frontier](polytime_frontier.md). **Status:** internally checked direct
 proof; no implementation, external review, or factor-two algorithm claimed.
 
+## SC-K-GREEDY-UNOPENED-2 -- an invariant after site-level customer repair
+
+**Objects/domain:** the fixed occupancy output by SC-K-GREEDY-BUDGET for any
+positive-reach common-catalog instance with positive rational weights and
+arbitrary explicit k; customers remain independently uniform among the
+facilities at their assigned site. Let gamma be the greedy last insertion
+score. Quantify over every finite prefix of strict improving single-customer
+site transfers starting from the greedy assignment, including any terminal NE.
+
+**Exact statement:** every facility's load throughout these prefixes is at
+least gamma; for each unoccupied site r, its newly coverable weight N_r is at
+most gamma. Thus any facility of current load a departing for unoccupied r
+has N_r<=a if its source survives, and N_r+w(J_u cap C_r)<=2a if it is the
+source's sole occupant. Such a terminal exact on-path NE exists by finite
+strict lexicographic ascent. This does **not** say that all NE at this layout
+have these properties, or that the improvement path is bit-polynomial.
+
+**Dependencies/evidence:** MF-MODEL and SC-K-GREEDY-BUDGET; the complete
+sorted-load proof and the distinction from the stronger failed budget (8)
+are in [polytime_frontier.md](polytime_frontier.md). Independently checked
+algebraically; neither external review nor a software implementation is
+recorded. **Remaining objection:** occupied stationary sites may lose the
+packing budgets after these transfers, and the source's customers may require
+new assignments when it disappears. No all-k polynomial factor-two
+constructor follows from this lemma alone.
+
+## SC-K-EQUAL-MULT-GREEDY-2 -- a conditional polynomial constructor
+
+**Objects/domain:** positive-reach explicit rational common-catalog input
+with arbitrary k; run the stated greedy procedure and require every occupied
+site in its output to have the same multiplicity q>=2. This condition is
+polynomially testable on the output, not an assumption that every instance
+admits a suitable greedily selected layout.
+
+**Exact statement:** on this subclass, an input-bit-polynomial algorithm
+computes the greedy labeled layout, an exact independently mixed customer NE
+uniform within each site, and an evaluable polynomial-size complete exact
+continuation satisfying every unilateral facility deviation at factor 2.
+
+**Dependencies/proof:** SC-K-GREEDY-BUDGET supplies gamma and the occupancy
+budgets; the range-preserving restricted-identical-links Nashification in
+Gairing et al. STOC 2004 (Corollary 4.3 and Theorem 4.7) produces a site-level
+pure NE, which is an exact NE in this model only because every occupied site
+has the same q. The retained interval q gamma <= W_t <= (q+1) gamma
+restores (5)--(6) for each source. MF-PACK-2, MF-PURE-CAP-POLY and
+MF-CONT-COMPLETE complete off-path certificates. Full [proof and import
+audit](polytime_frontier.md); independent internal inverse check found no
+fatal objection; no implementation, external review, or general-k all-input
+claim. Unequal q and singleton sources are outside its scope.
+
+## SC-K-DISTINCT-GREEDY-3 -- a conditional polynomial factor three
+
+**Objects/domain:** the same input and greedy rule, conditional on all k
+facilities occupying distinct sites. **Conclusion:** bit-polynomial exact
+pure on-path customer NE and polynomial-time evaluable complete exact
+continuation of factor at most 3. Nashification preserves initial site loads
+in [gamma,2 gamma]; after each deviation a feasible pure assignment has
+makespan at most a+2 gamma<=3a, and the same published theorem returns an
+exact pure off-path NE without increasing that cap.
+
+**Dependencies/evidence:** SC-K-GREEDY-BUDGET, range-preserving restricted
+identical-link Nashification, MF-CONT-COMPLETE; direct proof in
+[polytime_frontier.md](polytime_frontier.md), independent internal attack of
+all source and target cases. This is not a factor-two algorithm, and no
+implementation or external review is recorded. A load-only summary of the
+initial interval and unopened coverage may require a ratio arbitrarily near
+3 at a non-greedy fixed layout; greedy incidence must be used to improve it.
+
 ## SC-K-SYMMETRIC-MENU-OBSTRUCTION -- bad menus are not lower bounds
 
 **Statement:** for every integer q>=3, the explicit three-site/three-client

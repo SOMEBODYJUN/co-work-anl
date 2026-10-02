@@ -1482,6 +1482,42 @@
         "research/current/multi_facility/claims.md"
       ],
       "status": "complete direct internal proof and independent attack; unrefereed"
+    },
+    {
+      "id": "SC-K-GREEDY-UNOPENED-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Greedy unopened target retains factor-two initial cap",
+      "detail": "After any strict site-level customer improvement from the greedy assignment, all facility loads exceed the last insertion score gamma and unopened new reach is at most gamma; an abandoned singleton source contributes at most its own current load.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof; unrefereed"
+    },
+    {
+      "id": "SC-K-EQUAL-MULT-GREEDY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two for equal greedy multiplicities",
+      "detail": "If all greedily occupied sites have the same multiplicity q>=2, range-preserving restricted identical-link Nashification makes the on-path mixed customer NE and restores (5)-(6), then capped polynomial deviation repair yields a full factor-two continuation.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof; unrefereed"
+    },
+    {
+      "id": "SC-K-DISTINCT-GREEDY-3",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor three for distinct greedy sites",
+      "detail": "If greedy occupies k distinct sites, range-preserving pure Nashification and makespan-preserving off-path completion give a bit-polynomial full factor-three continuation.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof; unrefereed"
     }
   ],
   "hyperedges": [
@@ -2956,6 +2992,55 @@
         "research/current/multi_facility/claims.md"
       ],
       "status": "scope-limited proof"
+    },
+    {
+      "id": "e-sc-k-greedy-unopened-2",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-GREEDY-UNOPENED-2",
+      "statement": "The final greedy score lower-bounds all initial loads and upper-bounds unopened new reach; strict customer site transfers improve sorted loads lexicographically, preserving the minimum.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-sc-k-equal-mult-greedy-2",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "MF-PACK-2",
+        "MF-PURE-CAP-POLY",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-EQUAL-MULT-GREEDY-2",
+      "statement": "For equal q>=2, the published range-preserving identical-link Nashification gives exact on-path NE and retains the two source-surviving budgets, enabling bit-polynomial factor-two continuation.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-sc-k-distinct-greedy-3",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-DISTINCT-GREEDY-3",
+      "statement": "For distinct greedy occupancy, range-preserving Nashification gives loads in [gamma,2gamma]; off-path initial makespan at most a+2gamma<=3a and published Nashification preserves it.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
     }
   ]
 }
