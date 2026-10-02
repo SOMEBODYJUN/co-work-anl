@@ -23,6 +23,14 @@ Together with `MF-PACK-2` and `MF-PURE-CAP`, this yields a pure exact NE after
 each actual deviation with deviator load <= twice its on-path load.
 `MF-CONT-COMPLETE` then assembles one full continuation -> `SC-K-2-E`.
 
+For the **algorithmic** question, [polytime_frontier.md](polytime_frontier.md)
+strengthens the off-path step to `MF-PURE-CAP-POLY` using the published
+restricted identical-link Nashification theorem. It proves
+`SC-K-LEXMAX-STRONG-HARD` for the exact global selection oracle, while
+`SC-K-LOCAL-PLS` shows a polynomial neighborhood local maximum is enough for
+all on-path NE and transfer budgets. Neither is a polynomial algorithm for
+finding that local maximum, nor hardness of finding some factor-two witness.
+
 The proof deliberately changes the type of continuation: on path it uses
 independent mixing inside co-location groups; off path it isolates giant atoms
 on stationary facilities and uses asymmetric pure equilibria. Requiring symmetry
@@ -39,6 +47,7 @@ exact SPE (`SC-K-SYMMETRIC-MENU-OBSTRUCTION`).
 | `reverse_review.md` | Reverse reconstruction from the desired off-path cap; explicit objections and independent-implementation evidence, with no claim of external peer review. |
 | `lexmax_boundary.md` | For every fixed k, the selected lexmax occupancy itself can need factor tending to 2 under all NE choices, while another layout has an exact SPE; a sub-two proof must permit different layouts. |
 | `symmetric_menu_obstruction.md` | Explicit all-q family separating unbounded symmetric-menu threat from alpha^*=1 in the full model; read before proposing any menu-only lower bound. |
+| `polytime_frontier.md` | Explicit import of polynomial capped Nashification, full 3-PARTITION reduction for the exact lexmax oracle, and a polynomial local neighborhood sufficient for factor two. Read when designing the all-k algorithm or assessing its true remaining bottleneck. |
 
 Implementation: `multi_facility_spe/two_exists.py` and `__main__.py`, a sibling
 package rather than a silent modification of the two-facility API.
@@ -57,8 +66,11 @@ weights saturate its bin count. That does not rule out a more informative
 allocation invariant and a different layout-selection mechanism. In fact
 `SC-K-LEXMAX-BARRIER` proves that keeping the same selected layout and changing
 only its on-path NE or off-path selection cannot give a universal sub-two bound.
-Global lexmax enumeration and strict-improvement trajectory lengths
-are not known to be polynomial here.
+Exact global lexmax selection is strongly NP-hard, and strict-improvement
+trajectory lengths have no polynomial bound proved here. Given the selected
+on-path state, off-path capped Nashification can instead run in polynomial
+time; the local-maximum search for a sufficient on-path state is in PLS, with
+no polynomial-time solver proved.
 
 External peer review and priority against later literature, particularly the
 unavailable 2025 dissertation, remain uncompleted. The existing two-facility

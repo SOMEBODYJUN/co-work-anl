@@ -340,8 +340,13 @@ For rational input, an elementary finite procedure is:
 3. Specify the deterministic finite default rule for all other layouts.
 
 This is a finite EXACT witness procedure, not a polynomial-time algorithm.
-Global lexicographic optimization and the pure best-response iteration bound
-are both unresolved algorithmic obligations for this approach.
+The global lexicographic selection is strongly NP-hard even for equal-reach
+common-catalog inputs; in contrast, once the on-path state is supplied, the
+off-path cap-preserving equilibration can be made bit-polynomial by isolated-
+macro removal and the published restricted-link Nashification algorithm.
+Moreover, the same on-path NE and budget conditions follow from a polynomial
+neighborhood local maximum, whose search belongs to PLS. Neither statement
+solves the polynomial-time on-path search; see [the separate exact analysis](polytime_frontier.md).
 
 The displayed strategies have small bit length. On path, every entry is either
 0 or 1/q_t with q_t<=k. On every actual deviation, entries are 0 or 1. One can

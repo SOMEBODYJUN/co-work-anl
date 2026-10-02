@@ -93,6 +93,57 @@ not the definition. **Implementation:** `evaluate_continuation` interprets the
 on-path probabilities and listed pure exceptions, then uses a deterministic
 pure-improvement default at every other layout.
 
+## MF-PURE-CAP-POLY -- polynomial capped customer equilibration
+
+**Statement:** for an explicit rational fixed-layout pure assignment satisfying
+the exact isolated-macro and ordinary-cap B hypotheses of MF-PURE-CAP, an exact
+pure NE with the same isolated macros and ordinary loads <=B can be computed in
+input-bit-polynomial time. The k(|S|-1) actual deviations in SC-K-2-E therefore
+admit polynomial completion **once its on-path profile is supplied**.
+
+**Dependencies:** MF-MODEL, the already proved macro isolation, and the
+makespan-nonincreasing polynomial Nashification theorem of Gairing et al.
+(STOC 2004, Section 4) for restricted identical links; multiply denominators
+to handle rational weights. Full import check, reduction to ordinary resources,
+and reinstatement of omitted options: [polytime frontier](polytime_frontier.md).
+**Status/limit:** conditional algorithmic lemma, internally checked; imported
+theorem is published, present interface is not externally reviewed and not
+implemented here. It does not construct the on-path layout.
+
+## SC-K-LEXMAX-STRONG-HARD -- exact global selection barrier
+
+**Statement:** given explicit positive integer clients, k, and T, deciding
+whether some feasible site-uniform profile has minimum facility load >=T
+(equivalently, the existing globally lexmax profile has first coordinate >=T)
+is strongly NP-complete, even for k=|S| with equal site reaches. This is a
+property of the **selection oracle** in uniform_two.md, not hardness of
+finding a factor-two SPE.
+
+**Dependencies/proof:** 3-PARTITION with one private client of weight
+P=mB+1 at each of m sites, and the 3m source items common to all sites.
+Duplicate occupancy forces one facility below P; with all sites occupied,
+average load P+B forces exact 3-partition. Full quantifiers and encoding:
+[polytime frontier](polytime_frontier.md). **Status:** direct internal proof
+awaiting external review and novelty check; no code or numerical inference.
+
+## SC-K-LOCAL-PLS -- a polynomial neighborhood sufficient for factor two
+
+**Statement:** on explicit rational MF-MODEL input, local maxima of a
+polynomially enumerable neighborhood of site-uniform profiles have exact
+customer NE and all four transfer budgets. A polynomial-bit radix encoding of
+the sorted load vector and an easily computed all-colocated initial state put
+this sufficient-state search in PLS. Applying MF-PACK-2 and
+MF-PURE-CAP-POLY to any such locally maximal state computes all actual
+deviation certificates in polynomial time.
+
+**Dependencies/proof:** the exact same strict lexicographic improvements used
+to prove SC-K-LEX-BUDGET, now only for n(m-1)+k(m-1) specified neighbors;
+factorial scaling gives an integer radix objective. Full neighbor rules,
+vanishing-source cases, zero-reach and bit bounds are in
+[polytime frontier](polytime_frontier.md). **Status/limit:** internal direct
+derivation, external review unrecorded; PLS membership does not imply
+polynomial convergence and does not establish PLS hardness of the target.
+
 ## SC-K-SYMMETRIC-MENU-OBSTRUCTION -- bad menus are not lower bounds
 
 **Statement:** for every integer q>=3, the explicit three-site/three-client

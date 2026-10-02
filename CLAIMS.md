@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | SC-PHI-E/A/SHARP | 两设施、共同非空目录、正权原子客户、强制服务、独立混合精确客户 NE；存在完整续局下普遍黄金比，编码有理输入有多项式构造，下界族使阈值尖锐 | 现行全文内部审读；外部评审未记录。[共享分支](research/current/shared/README.md) |
 | SC-K-2-E / SC-K-LEX-BUDGET / MF-PACK-2 / MF-PURE-CAP / MF-CONT-COMPLETE | **任意 $k\ge2$**、相同有限地点目录、正权原子客户、实际负载成本及完整精确客户续局：普遍存在因子 2 近似纯设施选址均衡 | [完整全 $k$ 证明](research/current/multi_facility/uniform_two.md)、[内部独立审查与方向价值](research/K_FACILITY_AUDIT_2026-10-02.md)；不声称 2 尖锐或多项式构造，外部审稿与优先权待核 |
+| MF-PURE-CAP-POLY / SC-K-LEXMAX-STRONG-HARD / SC-K-LOCAL-PLS | 同一全 $k$ 共同目录模型；前两项分别输入给定固定布局的有理纯分配与整数精确全局 site-uniform 字典序阈值，第三项输入显式有理实例 | 隔离宏客户后离轨精确纯 NE 可条件性位长多项式求得；原证明全局字典序选址精确优化强 NP 完全；充分预算状态可归约为 PLS 邻域局部最优。三项均**未**给完整全 $k$ 多项式 2 倍算法或其困难性。[全推导](research/current/multi_facility/polytime_frontier.md)；内部独立逆审，外部未审；Nashification 是已发表定理，本接口为新推论 |
 | SC-K-SYMMETRIC-MENU-OBSTRUCTION / SC-K-LEXMAX-BARRIER | 可扩展的坏菜单与字典序选址障碍，**同一输入却有全局精确 SPE** | 限制特定证明方法，不是全类因子 2 下界。[边界证明](research/current/multi_facility/lexmax_boundary.md) |
 | SC-DIAG-NORMAL / SC-OFFDIAG-FPT | 双设施共同目录；同址收益可对半，实例最优的精确值与完整证书只需异址真实坐标极小值；正有理输入指数参数为异址最大交叠人数 $\kappa_{\ne}$ | 新严格推导、实现和独立对照；不转移到异构目录。[证明](research/current/shared/instance_complexity_barriers.md) |
 | SC-TWO-SITE-EXACT / SC-EQUAL-REACH-EXACT / SC-TWO-REACH-SPARSE | 前两项分别为共同目录至多两地点、全体地点 reach 相等；第三项再要求每对异址至多一公共客户且 reach 至多两种 | 各存在精确 SPE；第三项不可删除单交叠假设。[证明](research/current/shared/instance_complexity_barriers.md) |

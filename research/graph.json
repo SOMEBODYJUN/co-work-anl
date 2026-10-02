@@ -1423,6 +1423,53 @@
         "evidence/runs/kfac_independent.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "GLMM04",
+      "kind": "source",
+      "track": "computation",
+      "title": "Polynomial restricted-link Nashification",
+      "detail": "Published STOC 2004 theorem: from any feasible integer-weight assignment on identical restricted links, compute a pure Nash equilibrium with nonincreased makespan in time polynomial in job count, links, edges and log total weight.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "published fact"
+    },
+    {
+      "id": "MF-PURE-CAP-POLY",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Polynomial capped full-game equilibration",
+      "detail": "Given a rational pure assignment with isolated clients heavier than B and all ordinary loads at most B, deleting isolated resources, applying restricted-link Nashification, and reinserting them produces a full pure NE with ordinary loads at most B in input-bit-polynomial time.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal deduction from published theorem; unrefereed"
+    },
+    {
+      "id": "SC-K-LEXMAX-STRONG-HARD",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Exact global lexmax selection is strongly NP-complete",
+      "detail": "On explicit positive-integer common-catalog inputs with k=site count and equal reaches, deciding whether the best site-uniform sorted load vector has minimum at least a threshold is strongly NP-complete by 3-PARTITION. The reduction family nevertheless has an easy exact SPE.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof; unrefereed"
+    },
+    {
+      "id": "SC-K-LOCAL-PLS",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Polynomial lex-neighborhood suffices for factor two",
+      "detail": "A locally maximal site-uniform state for all one-customer site transfers and canonical one-facility site transfers satisfies the exact customer NE and four budget inequalities. A polynomial-bit radix potential places this sufficient-state search in PLS, not necessarily P.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof; unrefereed"
     }
   ],
   "hyperedges": [
@@ -2805,6 +2852,69 @@
         "research/current/multi_facility/symmetric_menu_obstruction.md"
       ],
       "status": "scope-limited implementation evidence"
+    },
+    {
+      "id": "e-mf-cap-poly",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "MF-PURE-CAP",
+        "GLMM04"
+      ],
+      "conclusion": "MF-PURE-CAP-POLY",
+      "statement": "Delete isolated macro links, Nashify ordinary clients without increasing makespan, reinsert macros and verify all omitted choices remain non-improving.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof and exact published theorem import"
+    },
+    {
+      "id": "e-mf-lex-strong-hard",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "MF-LEXMAX"
+      ],
+      "conclusion": "SC-K-LEXMAX-STRONG-HARD",
+      "statement": "A 3-PARTITION reduction uses m heavy private site clients and common items: all sites must be occupied and threshold equality forces m triples.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-local-pls",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-LEX-BUDGET",
+        "MF-PACK-2",
+        "MF-PURE-CAP-POLY",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-LOCAL-PLS",
+      "statement": "The NE and four budget violations each expose a strict improvement in a polynomial neighborhood; factorial scaling and a radix objective put its local search in PLS, with polynomial off-path completion once solved.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-lex-hard-limit",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-K-LEXMAX-STRONG-HARD"
+      ],
+      "conclusion": "SC-K-2-E",
+      "statement": "Hardness of exact global lexmax selection does not imply hardness of finding a factor-two witness; the reduction family itself has an easy exact SPE.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "scope-limited proof"
     }
   ]
 }
