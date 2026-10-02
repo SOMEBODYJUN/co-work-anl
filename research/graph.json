@@ -1151,6 +1151,110 @@
         "research/review_status.json"
       ],
       "status": "new complete proof and independent internal attack; unrefereed"
+    },
+    {
+      "id": "FIVE-SS-SOURCE",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Reflected bounded-subset-sum local gate",
+      "detail": "All local NE satisfy Delta<=Q; equality is achievable exactly on SUBSET SUM YES. Section 3.",
+      "refs": [
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "internally audited; unrefereed"
+    },
+    {
+      "id": "FIVE-FORCED-MACRO",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Strict forced-macro equivalence",
+      "detail": "Reach difference delta>W forces the macro to the second facility; every reduced NE extends. Section 4.",
+      "refs": [
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "internally audited; unrefereed"
+    },
+    {
+      "id": "FIVE-POSITIVE-GUARDS",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Fixed-a rational positive guard parameters",
+      "detail": "Explicit dyadic search yields all strict guards and positive private budget for every fixed 1<a<phi. Sections 5-6.",
+      "refs": [
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "internally audited; unrefereed"
+    },
+    {
+      "id": "FIVE-ALL-LAYOUTS",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Exact full-layout YES and NO reduction",
+      "detail": "All 25 labelled layouts and full continuation quantifiers are checked; YES alpha*=a and NO alpha*>a. Sections 7-9.",
+      "refs": [
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "internally audited; unrefereed"
+    },
+    {
+      "id": "FIVE-BIT-ENCODING",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Explicit positive integer encoding and strict gap",
+      "detail": "Linear customer count, polynomial binary encoding, scale-invariant positive integer realization, strict polynomial-description gap. Section 10.",
+      "refs": [
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "internally audited; unrefereed"
+    },
+    {
+      "id": "FIVE-NP-DP",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "NP certificates and integer pseudo-polynomial upper bound",
+      "detail": "Rational support polytope certificates and exact (m,z) threshold DP. Section 11.",
+      "refs": [
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "internally audited; unrefereed"
+    },
+    {
+      "id": "SC-FIVE-DECa-HARD",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Five-site fixed subphi decision complexity",
+      "detail": "For every fixed rational 1<a<phi, identical exactly-five-site catalog DEC_a is weakly NP-complete.",
+      "refs": [
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "complete current proof with independent internal audits; unrefereed"
+    },
+    {
+      "id": "FIVE-BUILDER",
+      "kind": "artifact",
+      "track": "computation",
+      "title": "Exact five-site reduction constructor",
+      "detail": "Constructs an explicit integer instance from a positive SUBSET SUM instance.",
+      "refs": [
+        "facility_spe/shared/five_site_hardness.py",
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "canonical implementation, finite regression only"
+    },
+    {
+      "id": "FIVE-AUDIT",
+      "kind": "evidence",
+      "track": "computation",
+      "title": "Definition-level exact finite regression",
+      "detail": "23 global cases, 1103 parameter tests, 96 macro-spectrum comparisons, strict-boundary attack and input validation.",
+      "refs": [
+        "tests/audits/five_site_hardness.py",
+        "tests/audits/five_site_hardness_edges.py",
+        "evidence/runs/five_site_exact_hardness.json",
+        "evidence/runs/five_site_exact_hardness_edges.json",
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "finite exact evidence; no universal proof"
     }
   ],
   "hyperedges": [
@@ -2302,6 +2406,74 @@
         "research/current/shared/instance_complexity_barriers.md"
       ],
       "status": "new complete proof and independent internal attack; unrefereed"
+    },
+    {
+      "id": "e-five-layouts",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "M1",
+        "M2",
+        "M3",
+        "FIVE-SS-SOURCE",
+        "FIVE-FORCED-MACRO",
+        "FIVE-POSITIVE-GUARDS"
+      ],
+      "conclusion": "FIVE-ALL-LAYOUTS",
+      "statement": "The actual five-site incidence realizes the local gate and excludes every other labelled on-path layout.",
+      "refs": [
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "internally audited; unrefereed"
+    },
+    {
+      "id": "e-five-hardness",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "FIVE-ALL-LAYOUTS",
+        "FIVE-BIT-ENCODING",
+        "FIVE-NP-DP"
+      ],
+      "conclusion": "SC-FIVE-DECa-HARD",
+      "statement": "The explicit strict reduction, NP membership, and integer pseudo-polynomial upper bound give weak NP-completeness.",
+      "refs": [
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "internally audited; unrefereed"
+    },
+    {
+      "id": "e-five-builder",
+      "kind": "implements",
+      "track": "computation",
+      "premises": [
+        "FIVE-BUILDER"
+      ],
+      "conclusion": "FIVE-BIT-ENCODING",
+      "statement": "Program implements the rational construction and uniform integer scaling; this is not a proof edge.",
+      "refs": [
+        "facility_spe/shared/five_site_hardness.py",
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "finite implementation check; no universal proof"
+    },
+    {
+      "id": "e-five-check",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "FIVE-AUDIT"
+      ],
+      "conclusion": "FIVE-BUILDER",
+      "statement": "Finite exact evidence checks constructed instances and certificates, not universal theorem correctness.",
+      "refs": [
+        "tests/audits/five_site_hardness.py",
+        "tests/audits/five_site_hardness_edges.py",
+        "evidence/runs/five_site_exact_hardness.json",
+        "evidence/runs/five_site_exact_hardness_edges.json",
+        "research/current/shared/five_site_exact_hardness.md"
+      ],
+      "status": "finite implementation check; no universal proof"
     }
   ]
 }

@@ -10,6 +10,7 @@
 | 共同目录的实例最优因子（异址参数） | U1/U2 同时省略，或二者为同一非空地点集；只对**不同地点**交叠人数 $\kappa_{\ne}$ 指数增长 | python3 -m facility_spe.exact.shared_offdiag examples/shared/sparse_four_rational.json | 最优有理 alpha $6327/4000$ 和全部实际偏离 NE；同址续局统一对半。单张证书只验证达到值，最优性依赖同址正规形 |
 | 至多单交叠的实例最优因子 | 每个跨目录地点对最多一名共有客户 | python3 -m facility_spe.exact.single_overlap examples/heterogeneous/rho_lower.json | 特定输入的最优 alpha；双方目录任意长的普遍 \(\rho\) 结论另由 SPARSE-RHO-ALL 证明 |
 | 共同目录的指数精确比较 | 全部地点可供两设施选；接受指数时间 | python3 -m facility_spe.exact.mitm examples/shared/tiny.json | 实例最优，用作小规模比较 |
+| 五地点固定倍率困难性实例生成 | 固定有理 $1<a<\phi$，显式 SUBSET SUM 正整数列表及合法目标 | python3 -m facility_spe.shared.five_site_hardness --factor 3/2 --numbers 2 --target 1 --output five_no.json | 精确归约的**正整数输入实例**；不求解源问题，也不是普通输入的快速最优倍率算法 |
 
 输入 JSON 的 weights 为正整数、精确分数或小数字符串；locations[j] 列出地点 j 覆盖的从零开始的客户编号。共同目录程序要求 U1/U2 同时省略，或二者给出相同非空地点集合。其他两个目录程序要求两者都出现。命令行读取 JSON 小数时保留精确十进制；Python API 不接受二进制 float 作为权重。空地点和不被任何地点覆盖的客户可以存在。
 
@@ -47,6 +48,8 @@
     python3 -m tests.test_heterogeneous
     python3 -m tests.test_lazy_ring
     python3 -m facility_spe.exact.threshold_dp
+    python3 tests/audits/five_site_hardness.py --output five_site_replay.json
+    python3 tests/audits/five_site_hardness_edges.py --output five_site_edges_replay.json
     python3 research/build_map.py --check
     python3 research/check_assets.py
 
