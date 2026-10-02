@@ -1,8 +1,8 @@
-# 双设施选址：可生长的研究基础
+# 两阶段设施选址：可生长的研究基础
 
 这里的**现行研究资产是重新写出的数学说明**，集中在 [research/current](research/current)；可执行算法集中在 [facility_spe](facility_spe)。原始手稿、旧证明笔记和上一轮整理稿进入 [history](history)。旧的 astra_alg、astra_local、astra_ring、asym_research 根目录已退出当前树；[迁移记录](research/path_migration.json)保留来源，而不让旧实验命名决定未来结构。
 
-**Research Goal / 当前前沿：**从双设施选址的精确客户均衡与全部偏离续局出发，找能跨模型规模复用的近似 SPE 结构。双侧任意长、每跨对最多一共有客户时的尖锐因子由 [SPARSE-RHO-ALL](research/current/heterogeneous/sparse_unbounded_rho.md) 的内部证明闭合为 $\rho$；任意设施数 $k$ 的统一近似因子或随 $k$ 增长下界仍开放。共同目录的实例最优倍率判定已由[五地点新归约](research/current/shared/five_site_exact_hardness.md)覆盖每个固定有理 $1<a<\phi$，加上三地点 $a=1$；恰三、四地点的高倍率细分类仍开放。立方费用的跨成本机制是另一条件性候选。[实时研究状态](RESEARCH_STATE.md)、[命题入口](CLAIMS.md)、[失败路线](FAILED_ROUTES.md)与[路线图](research/ROADMAP.md)一起定位下一个证明义务。
+**Research Goal / 当前前沿：**从精确客户均衡与全部偏离续局出发，找能跨模型规模复用的近似 SPE 结构。[任意设施数共同目录定理](research/current/multi_facility/uniform_two.md)在内部证明层给出与设施数 $k$ 无关的因子 2 存在性；最佳常数是否低于 2、能否多项式时间构造仍开放。[方向价值与审查](research/K_FACILITY_AUDIT_2026-10-02.md)分清稳定性与覆盖效率。双侧任意长、每跨对最多一共有客户时的尖锐因子由 [SPARSE-RHO-ALL](research/current/heterogeneous/sparse_unbounded_rho.md) 的内部证明闭合为 $\rho$。共同目录的实例最优倍率判定已由[五地点新归约](research/current/shared/five_site_exact_hardness.md)覆盖每个固定有理 $1<a<\phi$，加上三地点 $a=1$；恰三、四地点的高倍率细分类仍开放。[实时研究状态](RESEARCH_STATE.md)、[命题入口](CLAIMS.md)、[失败路线](FAILED_ROUTES.md)与[路线图](research/ROADMAP.md)定位后续证明义务。
 
 **A 篇后续（2026-10-02）：** [同址正规形](research/current/shared/instance_complexity_barriers.md)把共同目录**实例最优**精确算法的指数参数改为异址交叠 $\kappa_{\ne}$，并构造完整同址对半续局；[单交叠小目录阶梯](research/current/shared/small_sparse_catalogs.md)得到“至多 $N$ 个共同地点”的紧确普遍因子 $N=1,2:1$，$N=3:\sqrt2$，$N=4:\sqrt[3]4$，$N\ge5:\phi$。三、四地点结果有匹配的正有理下界；五地点把原六地点下界的可选目录缩小。[三地点全局归约](research/current/shared/three_site_exact_hardness.md)证明固定有理 $1\le a<(1+\sqrt3)/2$ 的判定弱 NP 完全；[五地点全局归约](research/current/shared/five_site_exact_hardness.md)进一步证明**每个固定有理 $1<a<\phi$** 的同类判定弱 NP 完全，保留三地点旧 Claim 的作用域。[原子粒度桥](research/current/shared/atomic_granularity.md)给小异址单体交叠时优于最坏 $\phi$ 的可构造实例保证。以上均是内部证明，尚无外部评审或完整新颖性核查；[独立内部数学及价值审查](research/FIVE_SITE_AUDIT_2026-10-02.md)区分本次受限类强化与已发表的一般模型困难性。
 
@@ -13,6 +13,7 @@
 | 目标 | 同时要求 | 可得到什么 | 从哪里开始读 |
 | --- | --- | --- | --- |
 | 共同目录的普遍构造 | 两设施同一非空地点目录；正权重、显式覆盖；强制服务；客户最小化实际负载；允许每个布局各选精确独立混合 NE | 因子不超过 \(\phi=(1+\sqrt5)/2\) 的一个纯选址证书；**不是**实例最优因子 | [共享定理、证明与算法](research/current/shared/README.md) |
+| 任意设施数共同目录 | 任意 $k\ge2$ 家带标签设施共用同一非空地点目录；正权原子客户与完整精确续局 | **存在**因子至多 2 的纯选址证书；目前构造为有限穷举，2 的尖锐性未证 | [任意 $k$ 证明与审查](research/current/multi_facility/README.md) |
 | 任意异构目录的普遍构造 | 两个非空目录可不同；同一负载模型；选用纯客户 NE 延续 | 因子不超过 2 的证书；整数反例族表明异构类不能统一降到 2 以下 | [异构分支](research/current/heterogeneous/README.md) |
 | 稀疏异构的较小常数 | **每个跨目录地点对至多一名共有客户，且一侧目录至多两地点** | 现行内部证明给出尖锐普遍因子 \(\rho=2\cos(\pi/7)\)；外部评审未进行 | [受限 \(\rho\) 全分支证明](research/current/heterogeneous/restricted_rho.md) |
 | 双方任意长的单交叠目录 | 每个跨目录地点对至多一名共有客户；双方目录大小任意 | 新内部证明给完整纯 NE 续局的普遍因子 \(\rho\)；原受限类 2×2 下界证明同一阈值尖锐 | [SPARSE-RHO-ALL](research/current/heterogeneous/sparse_unbounded_rho.md) |
@@ -34,7 +35,7 @@
 - [SPARSE-BAD-LONG](research/current/heterogeneous/sparse_bad_long_cycles.md)在**确实没有 `r` 稳定格**、`3/2<r<ρ` 时构造任意长唯一精确回应环；新命题版本 `SPARSE-BAD-LONG-ALL` 证明同一失败机制覆盖每个 `1≤r<ρ`，所有高行仍只用一种重客户身份。它排除阈值以下的统一短**精确回应闭核心**，但不排除更弱的坏见证压缩；在 `ρ` 处不冲突于 `SPARSE-RHO-ALL`。
 - `model/NE` → 固定纯平局优先级 → 全目录最佳回应逐边比较 → `SPARSE-HIGH-ACYCLIC` → `SPARSE-BALANCED-R`：[高 reach 条件传播](research/current/heterogeneous/sparse_high_reach_barrier.md)对任意 `r≥1` 给出坏环低区必经和 reach 平衡子类上界；它是新全类 `ρ` 证明的依赖，而非全称证明本身。
 - `SPARSE-HIGH-ACYCLIC` → 首个高到低边界、单客户同一身份容量、`q(ρ)=0` → `SPARSE-RHO-ALL`：新证明直接排除任意长坏环的首个低区入口，**不**压缩回应核心。旧条件结果仍是一般 `r` 的独立量化边界；原“低区回返阻碍”在 `r=ρ` 已消除。
-- 两设施共同目录的 $\phi$ 不覆盖第三家或客户费用 $\mathbb E[L^3]$；分别见 [Q-K-FAC](research/questions/three_facilities.md) 与 [Q-CUBIC](research/questions/cubic_costs.md)。证书的达到性、实例最优性、普遍定理和论文新颖性各自独立。
+- `MF-MODEL` → 全局字典序选址与消失源地点的转移预算 → 超重原子隔离装箱与严格改善的纯 NE 修复 → `SC-K-2-E`：任意 $k$ 共同目录有因子 2 完整精确续局。[全证明](research/current/multi_facility/uniform_two.md)。该结果不依赖两设施的 $\phi$ 证明，也不覆盖异构目录或三次客户费用；证书的达到性、普遍定理和论文新颖性各自独立。
 
 关键 dependency、attacks 和 scope 边可交互查看[数学超图](research/index.html)，精确文字与证据状态以[现行命题登记](research/current/claims.md)和证明页为准。
 
@@ -47,7 +48,7 @@
 | 仓库区域 | 职责 |
 | --- | --- |
 | [research/current](research/current) | 此轮重新撰写的现行模型、命题、数学推导和算法解释 |
-| [facility_spe](facility_spe) / [tests](tests) | 唯一规范代码及有边界的回归、独立比较 |
+| [facility_spe](facility_spe) / [multi_facility_spe](multi_facility_spe) / [tests](tests) | 双设施与任意设施数分别使用规范代码包；回归与独立比较有明确适用范围 |
 | [examples](examples) / [evidence](evidence) | 输入实例、实例证书、冻结实验记录 |
 | [history](history) | 原始手稿、旧笔记、失效路线和上一版整理文本；用作来源而非现行入口 |
 
@@ -65,6 +66,7 @@
 | `research/current/shared/instance_complexity_barriers.md`、`facility_spe/exact/shared_offdiag.py`、`tests/test_shared_offdiag.py` | 同址正规形的精确最优值公式、零收益与完整对半续局证明；异址交叠参数的支持枚举实现及独立比较。研究低于 $\phi$ 的实例判定或高同址交叠输入时先读；程序证书核验不代替全称证明。 |
 | `research/current/shared/three_site_exact_hardness.md` | 将局部 SUBSET SUM 客户谱嵌入三地点共同目录，逐一堵住同址、AB、AC、BC 的所有逃逸；证明固定有理 $1\le a<(1+\sqrt3)/2$ 的弱 NP 完全性，列出两套守卫及端点正权预算障碍。研究下一段复杂度前沿时先读，切勿把端点当模型相变。 |
 | `research/current/shared/five_site_exact_hardness.md`、`research/FIVE_SITE_AUDIT_2026-10-02.md` | 五地点新覆盖、强制桥宏原子和全布局守卫证明每个固定有理 $1<a<\phi$ 的弱 NP 完全性；审查页核对原目标同一性、2024 年广义困难性优先权边界及与 A/B 成果的相对价值。研究实例复杂度或组织 A 篇时读。 |
+| `research/current/multi_facility/uniform_two.md`、`research/K_FACILITY_AUDIT_2026-10-02.md` | 任意 $k$ 的共同目录因子 2 存在性证明、逐式逆审、方法边界及面向领域的价值解释；研究多设施稳定性时先读。无多项式构造或因子 2 尖锐性结论。 |
 | `research/current/shared/atomic_granularity.md`、`research/current/local_and_exact/atomic_wardrop_gap.md` | 前者将已知可拆分客户 SPE 特化为两设施对照，证明任意精确原子 NE 的误差与完整续局倍率，并给宏原子必要条件；后者对固定 $k$ 布局证明尖锐 $(k-1)\theta/2$ 误差与链族。做实例敏感构造、归约粒度限制或多设施延伸时读；局部误差不等于全 $k$ SPE。 |
 | `research/current/shared/small_sparse_catalogs.md` | 单交叠的最多 2/3/4/5 地点紧确普遍因子、纯菜单全分支、三/四地点正有理族、五地点原下界剪枝。构造有限目录论文主题、比较目录规模机制或攻击平局零收益时读；五地点下界同时回读 `shared/sharp_phi_lower.md`。 |
 | `examples/shared/sparse_four_rational.json` | 四地点五客户下界族的 $z=19/12,\varepsilon=1/1000$ 精确输入；实例最优倍率 $6327/4000$，用于验证 $\sqrt2$ 无法延伸到四地点。复现例子而非证明全称族时读。 |

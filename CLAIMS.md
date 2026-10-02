@@ -1,10 +1,12 @@
 # 命题入口与新前沿
 
-本页是根目录的命题导航；[现行逐命题登记](research/current/claims.md)保存完整范围、证明和状态，[规范模型](research/current/model.md)定义两设施客户博弈。凡改变设施数、目录条件、费用函数或客户 NE 量词，均建立新版本，不从旧结果自动推断。
+本页是根目录的命题导航；[现行逐命题登记](research/current/claims.md)保存完整范围、证明和状态。[规范双设施模型](research/current/model.md)与[任意设施数共同目录模型](research/current/multi_facility/model.md)分开定义。凡改变设施数、目录条件、费用函数或客户 NE 量词，均建立新版本，不从旧结果自动推断。
 
 | ID / 问题 | 严格范围与结论 | 状态及详情 |
 | --- | --- | --- |
 | SC-PHI-E/A/SHARP | 两设施、共同非空目录、正权原子客户、强制服务、独立混合精确客户 NE；存在完整续局下普遍黄金比，编码有理输入有多项式构造，下界族使阈值尖锐 | 现行全文内部审读；外部评审未记录。[共享分支](research/current/shared/README.md) |
+| SC-K-2-E / SC-K-LEX-BUDGET / MF-PACK-2 / MF-PURE-CAP / MF-CONT-COMPLETE | **任意 $k\ge2$**、相同有限地点目录、正权原子客户、实际负载成本及完整精确客户续局：普遍存在因子 2 近似纯设施选址均衡 | [完整全 $k$ 证明](research/current/multi_facility/uniform_two.md)、[内部独立审查与方向价值](research/K_FACILITY_AUDIT_2026-10-02.md)；不声称 2 尖锐或多项式构造，外部审稿与优先权待核 |
+| SC-K-SYMMETRIC-MENU-OBSTRUCTION / SC-K-LEXMAX-BARRIER | 可扩展的坏菜单与字典序选址障碍，**同一输入却有全局精确 SPE** | 限制特定证明方法，不是全类因子 2 下界。[边界证明](research/current/multi_facility/lexmax_boundary.md) |
 | SC-DIAG-NORMAL / SC-OFFDIAG-FPT | 双设施共同目录；同址收益可对半，实例最优的精确值与完整证书只需异址真实坐标极小值；正有理输入指数参数为异址最大交叠人数 $\kappa_{\ne}$ | 新严格推导、实现和独立对照；不转移到异构目录。[证明](research/current/shared/instance_complexity_barriers.md) |
 | SC-TWO-SITE-EXACT / SC-EQUAL-REACH-EXACT / SC-TWO-REACH-SPARSE | 前两项分别为共同目录至多两地点、全体地点 reach 相等；第三项再要求每对异址至多一公共客户且 reach 至多两种 | 各存在精确 SPE；第三项不可删除单交叠假设。[证明](research/current/shared/instance_complexity_barriers.md) |
 | SC-TWO-REACH-MULTI-NO | 共同目录三地点、两种 reach、五名正整数客户；允许某异址对两名共有客户 | 完整 NE 枚举给 $\alpha^*=14/13$，严格反驳删除上述单交叠条件。[构造](research/current/shared/instance_complexity_barriers.md) |
@@ -19,7 +21,7 @@
 | SPARSE-RHO-ALL | 双方目录任意有限非空、每跨对至多一共有客户、正实权原子与完整逐布局精确独立混合 NE 存在量词 | 任意固定 reach 优先级纯 NE 规则已有全目录 `ρ` 稳定格；结合 HC-RHO 的 2×2 下界，全类最优普遍因子恰为 `ρ`。新直接证明已作多路线独立内部攻击；外部评审/新颖性未核。[证明](research/current/heterogeneous/sparse_unbounded_rho.md) |
 | SPARSE-BAD-LONG | 对每个 `3/2<r<ρ` 与任意 `n≥1`，正有理单交叠 `(n+1)×(n+1)`、每格唯一客户 NE | 全布局无 `r` 稳定格，但唯一全目录精确回应环遍历全部行动；否定阈值以下“坏倍率自动短精确核心”，**不是** `>ρ` 反例。[证明](research/current/heterogeneous/sparse_bad_long_cycles.md) |
 | SPARSE-BAD-LONG-ALL | 新版本将前行的 `r` 量词扩为**每个 `1≤r<ρ`**，并保留任意 `n≥1`、正有理权、唯一 NE 与全目录唯一长环 | 原版本为子命题；新范围由明确开参数余量及 `r=1` 转移证明，不把较小 `r` 下的所有 `A_i` 误称为高行。[证明](research/current/heterogeneous/sparse_bad_long_cycles.md) |
-| Q-K-FAC | 任意 $k\ge2$ 共同目录、加权原子客户是否有独立于 $k$ 的普遍近似因子，或有随 $k$ 增长的下界 | 开放；三设施因子 2 是判别关口，**不是**全 $k$ 结论。[任务页](research/questions/three_facilities.md) |
+| Q-K-FAC | 任意 $k\ge2$ 共同目录、加权原子客户的统一稳定因子 | 存在性分支由 SC-K-2-E 在内部证明层闭合，得普遍因子 2；最优常数与多项式构造仍开放。[任务页](research/questions/three_facilities.md) |
 | Q-SPARSE | 两方目录均任意大、每跨对至多一名公共客户，普遍阈值是否仍为 $\rho$ | 本轮由 SPARSE-RHO-ALL 上界与 HC-RHO 下界闭合为 $\rho$；内部证明，外部评审未记录。[任务页](research/questions/sparse_catalogs.md) |
 | Q-CUBIC | 双设施共同目录、客户费用 $\mathbb E[L^3]$，最优普遍阈值 | 开放；内部边界 $[\phi,2]$；跨费用类机制才使其成为高优先级。[任务页](research/questions/cubic_costs.md) |
 

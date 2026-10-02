@@ -716,6 +716,115 @@
         "history/source/notes/local/hardness.md",
         "history/source/manuscripts/shared_phi/main.tex"
       ]
+    },
+    {
+      "id": "common_catalog_arbitrary_k_two",
+      "claims": [
+        "SC-K-2-E",
+        "SC-K-LEX-BUDGET",
+        "MF-PACK-2",
+        "MF-PURE-CAP",
+        "MF-CONT-COMPLETE"
+      ],
+      "status": "new complete proof, reverse reconstruction and independent exact checks; unrefereed",
+      "applies_when": [
+        "arbitrary integer k>=2, common finite catalog, labeled facilities and positive weighted atomic clients",
+        "linear actual-load costs, independent exact customer NE, complete existential continuation",
+        "explicit rational input for the finite exhaustive implementation"
+      ],
+      "produces": "A uniform factor-two full-continuation witness; not a polynomial-time or instance-optimal solver.",
+      "implementation": [
+        "multi_facility_spe/two_exists.py",
+        "multi_facility_spe/__main__.py"
+      ],
+      "proof": [
+        "research/current/multi_facility/model.md",
+        "research/current/multi_facility/uniform_two.md",
+        "research/current/multi_facility/reverse_review.md"
+      ],
+      "tests": [
+        "tests/multi_facility/definition_check.py",
+        "tests/multi_facility/run_exact_audit.py",
+        "tests/multi_facility/run_reverse_audit.py",
+        "tests/multi_facility/verify_delivery.py",
+        "tests/audits/kfac_independent.py"
+      ],
+      "records": [
+        "evidence/runs/kfac_two_exact.json",
+        "evidence/runs/kfac_two_reverse.json",
+        "evidence/runs/kfac_delivery_validation_v2.json",
+        "evidence/runs/kfac_independent.json"
+      ],
+      "examples": [
+        "examples/multi_facility/heavy-three-sites.json",
+        "examples/multi_facility/orphan-overlap.json",
+        "examples/multi_facility/rational.json",
+        "examples/multi_facility/growing-k-12.json",
+        "evidence/certificates/multi_facility/heavy-three-sites.json",
+        "evidence/certificates/multi_facility/orphan-overlap.json",
+        "evidence/certificates/multi_facility/rational.json",
+        "evidence/certificates/multi_facility/growing-k-12.json"
+      ],
+      "sources": [
+        "history/source/audits/cost_extensions.md"
+      ],
+      "limit": "The historical source is QUESTION PROVENANCE ONLY, not a proof dependency. New proof and reverse implementation checks are internal; priority/external review pending; no polynomial-time result."
+    },
+    {
+      "id": "common_catalog_symmetric_menu_obstruction",
+      "claims": [
+        "SC-K-SYMMETRIC-MENU-OBSTRUCTION"
+      ],
+      "status": "new complete proof, reverse reconstruction and independent exact checks; unrefereed",
+      "applies_when": [
+        "each integer q>=3, explicit three-site/three-atom family, k=q+1",
+        "symmetric-menu restriction only for the bad-threat conclusion; full-model continuation for alpha*=1"
+      ],
+      "produces": "An unbounded menu threat at the displayed lexmax witness despite a full exact SPE; not an unbounded optimum lower bound.",
+      "implementation": [],
+      "proof": [
+        "research/current/multi_facility/symmetric_menu_obstruction.md",
+        "research/current/multi_facility/reverse_review.md"
+      ],
+      "tests": [
+        "tests/multi_facility/run_reverse_audit.py"
+      ],
+      "records": [
+        "evidence/runs/kfac_two_reverse.json"
+      ],
+      "examples": [],
+      "sources": [
+        "history/source/audits/cost_extensions.md"
+      ],
+      "limit": "Historical source is question provenance only; mathematical proof is new current work. Does not exclude every layout under a symmetric menu."
+    },
+    {
+      "id": "common_catalog_lexmax_layout_boundary",
+      "claims": [
+        "SC-K-LEXMAX-BARRIER"
+      ],
+      "status": "new complete proof, reverse reconstruction and independent exact checks; unrefereed",
+      "applies_when": [
+        "every k>=2 and h>=2, explicit k-site/k-client common-catalog family",
+        "all on-path and off-path exact NE at the selected lexmax occupancy"
+      ],
+      "produces": "Selected-occupancy optimum 2h/(h+1) approaching two but full-instance optimum one; must change layout selection for a sub-two universal theorem.",
+      "implementation": [],
+      "proof": [
+        "research/current/multi_facility/lexmax_boundary.md",
+        "research/current/multi_facility/reverse_review.md"
+      ],
+      "tests": [
+        "tests/multi_facility/run_lexmax_barrier_audit.py"
+      ],
+      "records": [
+        "evidence/runs/kfac_lexmax_barrier.json"
+      ],
+      "examples": [],
+      "sources": [
+        "history/source/audits/cost_extensions.md"
+      ],
+      "limit": "Historical source is question provenance only; not a global factor-two lower bound, nor evidence of a new phase transition."
     }
   ]
 }

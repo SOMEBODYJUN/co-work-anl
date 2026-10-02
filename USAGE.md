@@ -5,6 +5,7 @@
 | 所需结果 | 额外输入条件 | 运行命令 | 输出含义 |
 | --- | --- | --- | --- |
 | 共同目录的普遍 \(\phi\) 构造 | 两家选同一非空目录，可省略 U1/U2 使用全部地点；正有理权重；独立混合精确客户 NE | python3 -m facility_spe.shared_phi examples/shared/tiny.json --output certificate.json | factor 不超过 \(\phi\) 的一个实例证书，非实例最优 |
+| 任意 $k$ 共同目录的因子 2 存在证书 | 显式 `k` 家带标签设施、共同非空目录、正有理客户；接受指数最坏时间 | python3 -m multi_facility_spe examples/multi_facility/rational.json --output kfac_certificate.json | 一个完整续局的紧凑描述；构造为穷举，不声称多项式时间或 2 尖锐 |
 | 异构目录的普遍 2 构造 | 分别给出非空 U1/U2，可不同；选纯精确客户 NE | python3 -m facility_spe.heterogeneous_two examples/heterogeneous/tight_two_M1000.json | alpha 不超过 2 的一个实例证书 |
 | 整个实例的最优因子 | U1/U2 均明确给出；接受对最大公共客户数 \(\kappa\) 指数增长的时间 | python3 -m facility_spe.exact.bounded_overlap examples/heterogeneous/tight_two_M1000.json | 支持区间完整枚举的最优 alpha；短证书独自只证“达到” |
 | 共同目录的实例最优因子（异址参数） | U1/U2 同时省略，或二者为同一非空地点集；只对**不同地点**交叠人数 $\kappa_{\ne}$ 指数增长 | python3 -m facility_spe.exact.shared_offdiag examples/shared/sparse_four_rational.json | 最优有理 alpha $6327/4000$ 和全部实际偏离 NE；同址续局统一对半。单张证书只验证达到值，最优性依赖同址正规形 |
@@ -50,6 +51,7 @@
     python3 -m facility_spe.exact.threshold_dp
     python3 tests/audits/five_site_hardness.py --output five_site_replay.json
     python3 tests/audits/five_site_hardness_edges.py --output five_site_edges_replay.json
+    python3 tests/multi_facility/verify_delivery.py --output kfac_replay.json
     python3 research/build_map.py --check
     python3 research/check_assets.py
 

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "title": "Two-facility mathematical dependency hypergraph",
+  "title": "Facility location mathematical dependency hypergraph",
   "updated": "2026-10-02",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
@@ -1255,6 +1255,174 @@
         "research/current/shared/five_site_exact_hardness.md"
       ],
       "status": "finite exact evidence; no universal proof"
+    },
+    {
+      "id": "SC-K-2-E",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Uniform factor two for all k",
+      "detail": "For every k>=2 and every positive-weight common-catalog instance, some labeled layout and complete exact independent-mixed continuation have factor <=2; on-path site-uniform and every off-path NE pure. No polynomial-time or sharpness claim.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md",
+        "research/current/multi_facility/claims.md",
+        "research/current/multi_facility/reverse_review.md"
+      ],
+      "status": "complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "SC-K-LEX-BUDGET",
+      "kind": "lemma",
+      "track": "extensions",
+      "title": "Exact on-path NE and orphan-aware transfer budgets",
+      "detail": "Every global lexmax site-uniform feasible profile is an exact client NE; every deviator has positive on-path load when maximum reach is positive, with all four transfer inequalities including singleton-source clients.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md",
+        "research/current/multi_facility/claims.md",
+        "research/current/multi_facility/reverse_review.md"
+      ],
+      "status": "complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "MF-PACK-2",
+      "kind": "lemma",
+      "track": "extensions",
+      "title": "Bounded bins or singleton heavy atoms",
+      "detail": "For all a>0 and h>=1, weights totaling <=(h+1)a fit h bins of load <=2a except isolated singleton weights >2a, by pair merging.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md",
+        "research/current/multi_facility/claims.md",
+        "research/current/multi_facility/reverse_review.md"
+      ],
+      "status": "complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "MF-PURE-CAP",
+      "kind": "lemma",
+      "track": "extensions",
+      "title": "Full-game pure equilibration preserves a load cap",
+      "detail": "At any fixed layout, isolated atoms heavier than B and ordinary loads <=B form a strict-improvement invariant; a pure exact NE exists in that invariant, for every B>0.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md",
+        "research/current/multi_facility/claims.md",
+        "research/current/multi_facility/reverse_review.md"
+      ],
+      "status": "complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "MF-CONT-COMPLETE",
+      "kind": "lemma",
+      "track": "extensions",
+      "title": "Compatible complete continuation for labeled layouts",
+      "detail": "Exact on-path NE plus one exact NE at each actual deviation extend to a single complete rule; distinct coordinate deviations are distinct labeled layouts and all default subgames have pure NE.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md",
+        "research/current/multi_facility/claims.md",
+        "research/current/multi_facility/reverse_review.md"
+      ],
+      "status": "complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "SC-K-SYMMETRIC-MENU-OBSTRUCTION",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Unbounded symmetric-menu threat with a full exact SPE",
+      "detail": "For each q>=3, the three-site weights q^2,1,q-1/4 yield a lexmax on-path witness with symmetric-menu ratio q^2/(q-1/4)>q after B->T, but alpha*=1 in the full model.",
+      "refs": [
+        "research/current/multi_facility/symmetric_menu_obstruction.md",
+        "research/current/multi_facility/claims.md",
+        "research/current/multi_facility/reverse_review.md"
+      ],
+      "status": "complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "SC-K-LEXMAX-BARRIER",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Selected lexmax layouts can optimally require almost two",
+      "detail": "For every k>=2,h>=2, the explicit k-site family has unique lexmax occupancy up to labels with optimal factor 2h/(h+1) under all on/off-path NE choices, but full-instance alpha*=1 at another layout.",
+      "refs": [
+        "research/current/multi_facility/lexmax_boundary.md",
+        "research/current/multi_facility/claims.md",
+        "research/current/multi_facility/reverse_review.md"
+      ],
+      "status": "complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "MF-MODEL",
+      "kind": "definition",
+      "track": "model",
+      "title": "Common catalog, arbitrary labeled k",
+      "detail": "Positive atomic weights, common finite catalog, independent mixed exact client NE and a complete continuation at all labeled layouts.",
+      "refs": [
+        "research/current/multi_facility/model.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "MF-LEXMAX",
+      "kind": "construction",
+      "track": "extensions",
+      "title": "Finite site-uniform lexmax family",
+      "detail": "Optimize sorted facility loads over all layouts and feasible pure-to-site client assignments, then mix independently uniformly within the chosen site.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md"
+      ],
+      "status": "finite exact construction; not polynomial time"
+    },
+    {
+      "id": "MF-SYMMETRIC-FAMILY",
+      "kind": "construction",
+      "track": "extensions",
+      "title": "Explicit three-atom q-family",
+      "detail": "k=q+1; weights q^2,1,q-1/4; covers {A,T},{A},{B}; on-path A^q B.",
+      "refs": [
+        "research/current/multi_facility/symmetric_menu_obstruction.md"
+      ],
+      "status": "explicit family"
+    },
+    {
+      "id": "MF-LEXMAX-FAMILY",
+      "kind": "construction",
+      "track": "extensions",
+      "title": "Explicit k-atom h-family",
+      "detail": "Sites A,T and k-2 private anchors; weights h,1,3(h+1)/4 at each anchor; bad occupancy A,A,anchors and good occupancy T,A,anchors.",
+      "refs": [
+        "research/current/multi_facility/lexmax_boundary.md"
+      ],
+      "status": "explicit family"
+    },
+    {
+      "id": "MF-EXACT-CODE",
+      "kind": "artifact",
+      "track": "computation",
+      "title": "Arbitrary-k exact constructor and full-rule evaluator",
+      "detail": "Separate sibling package; exhaustive lexmax, cap-preserving pure equilibrium selection, deterministic defaults, rational certificate output.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md",
+        "multi_facility_spe/two_exists.py",
+        "multi_facility_spe/__main__.py"
+      ],
+      "status": "implemented; exponential worst case"
+    },
+    {
+      "id": "MF-EXACT-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Definition-level, reverse, and barrier audits",
+      "detail": "Two main exact batches plus an explicit-family barrier audit; tests do not establish universal mathematical truth.",
+      "refs": [
+        "research/current/multi_facility/reverse_review.md",
+        "tests/multi_facility/definition_check.py",
+        "tests/multi_facility/run_exact_audit.py",
+        "tests/multi_facility/run_reverse_audit.py",
+        "tests/multi_facility/run_lexmax_barrier_audit.py",
+        "evidence/runs/kfac_two_exact.json",
+        "evidence/runs/kfac_two_reverse.json",
+        "evidence/runs/kfac_lexmax_barrier.json",
+        "tests/audits/kfac_independent.py",
+        "evidence/runs/kfac_independent.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -2474,6 +2642,169 @@
         "research/current/shared/five_site_exact_hardness.md"
       ],
       "status": "finite implementation check; no universal proof"
+    },
+    {
+      "id": "e-mf-lexmax",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "MF-MODEL"
+      ],
+      "conclusion": "MF-LEXMAX",
+      "statement": "The finite family is nonempty and has a lexicographic maximizer.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-budgets",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "MF-MODEL",
+        "MF-LEXMAX"
+      ],
+      "conclusion": "SC-K-LEX-BUDGET",
+      "statement": "Exact conditional cost and lexicographic exchange prove NE and all orphan-aware transfer inequalities.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-cap",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "MF-MODEL"
+      ],
+      "conclusion": "MF-PURE-CAP",
+      "statement": "Strict improving pure moves preserve isolated macros and ordinary cap, and strictly decrease a finite potential.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-complete",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "MF-MODEL"
+      ],
+      "conclusion": "MF-CONT-COMPLETE",
+      "statement": "Labeled actual deviation tuples are distinct and every remaining subgame has a finite-potential pure-NE default.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-uniform-two",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-LEX-BUDGET",
+        "MF-PACK-2",
+        "MF-PURE-CAP",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-2-E",
+      "statement": "Jointly these premises pack every deviation instance, retain the cap through exact equilibration, and assemble one full continuation.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-symmetric-obstruction",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "MF-MODEL",
+        "MF-SYMMETRIC-FAMILY",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-SYMMETRIC-MENU-OBSTRUCTION",
+      "statement": "The strict excluded-load inequality forces the symmetric threat, while asymmetric pure exceptions give an exact full-model SPE.",
+      "refs": [
+        "research/current/multi_facility/symmetric_menu_obstruction.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-layout-barrier",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "MF-MODEL",
+        "MF-LEXMAX-FAMILY",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-LEXMAX-BARRIER",
+      "statement": "Classify every lexmax occupancy, use total mass and a strict forced deviation for its lower bound, then exhibit both attaining and exact alternative continuations.",
+      "refs": [
+        "research/current/multi_facility/lexmax_boundary.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-implementation",
+      "kind": "implements",
+      "track": "computation",
+      "premises": [
+        "MF-EXACT-CODE"
+      ],
+      "conclusion": "SC-K-2-E",
+      "statement": "The exact exhaustive implementation constructs a certificate; it is not the proof and has no polynomial bound.",
+      "refs": [
+        "research/current/multi_facility/uniform_two.md"
+      ],
+      "status": "scope-limited implementation evidence"
+    },
+    {
+      "id": "e-mf-independent-checks",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "MF-EXACT-AUDIT"
+      ],
+      "conclusion": "MF-EXACT-CODE",
+      "statement": "Direct conditional-cost, independent full pure-NE enumeration, and explicit-family witness checks attack arithmetic and scope.",
+      "refs": [
+        "research/current/multi_facility/reverse_review.md"
+      ],
+      "status": "scope-limited implementation evidence"
+    },
+    {
+      "id": "e-mf-layout-limit",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "SC-K-LEXMAX-BARRIER"
+      ],
+      "conclusion": "SC-K-2-E",
+      "statement": "Do not sharpen the factor by changing only NE choices at the same selected lexmax layout; no global sharpness lower bound follows.",
+      "refs": [
+        "research/current/multi_facility/lexmax_boundary.md"
+      ],
+      "status": "scope-limited implementation evidence"
+    },
+    {
+      "id": "e-mf-symmetry-limit",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "SC-K-SYMMETRIC-MENU-OBSTRUCTION"
+      ],
+      "conclusion": "SC-K-2-E",
+      "statement": "Off-path co-location symmetry is not a valid strengthening of this construction.",
+      "refs": [
+        "research/current/multi_facility/symmetric_menu_obstruction.md"
+      ],
+      "status": "scope-limited implementation evidence"
     }
   ]
 }
