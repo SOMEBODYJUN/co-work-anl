@@ -161,6 +161,24 @@ terms. Full proof and a three-site four-customer fixed-layout NE obstruction:
 [polytime frontier](polytime_frontier.md). **Status:** internally checked direct
 proof; no implementation, external review, or factor-two algorithm claimed.
 
+## SC-K-GREEDY-MAX-MULT -- an initial incidence ordering
+
+**Objects/domain:** any positive-reach common-catalog instance and the
+initial site assignment output by SC-K-GREEDY-BUDGET; arbitrary k and
+positive weights, any deterministic score tie rule. **Exact statement:**
+each served customer is assigned to an occupied site with maximal *final*
+facility multiplicity among all occupied sites it can use. **Proof:** a
+later site t covering a customer first assigned at s had strictly smaller
+opening weight W_t^0<W_s^0; if q_t>q_s, at t's last insertion the still
+occupied s would have strictly larger next-insertion score, contradicting
+greedy. [Full time-order argument](polytime_frontier.md).
+
+**Scope:** the assertion concerns initial assignments, not arbitrary
+customer NE reached after transfers; it does not control overloaded
+stationary sites or imply a polynomial factor-two algorithm. Internally
+checked as a direct invariant, external review and implementation not
+recorded.
+
 ## SC-K-GREEDY-UNOPENED-2 -- an invariant after site-level customer repair
 
 **Objects/domain:** the fixed occupancy output by SC-K-GREEDY-BUDGET for any
@@ -228,6 +246,76 @@ all source and target cases. This is not a factor-two algorithm, and no
 implementation or external review is recorded. A load-only summary of the
 initial interval and unopened coverage may require a ratio arbitrarily near
 3 at a non-greedy fixed layout; greedy incidence must be used to improve it.
+
+## SC-K-COMPONENT-MULT-GREEDY-2 -- a wider conditional factor two
+
+**Objects/domain:** arbitrary explicit positive rational common-catalog
+instance with positive reach, after the fixed greedy rule. In the graph of
+occupied sites joined when a customer covers both, require every connected
+component to have constant facility multiplicity; any component with
+multiplicity one must consist of one site. This condition is polynomially
+testable on the greedy output and includes distinct components of different
+facility counts.
+
+**Exact statement:** a bit-polynomial exact on-path independent-mixed
+customer NE and polynomial-size, polynomial-time evaluable complete exact
+factor-two continuation exist and can be constructed. Components with
+q>=2 are Nashified independently by published range-preserving identical-
+link scheduling; q=1 singleton components remain unchanged. The global
+greedy last score bounds each site's total in [q_t gamma,(q_t+1) gamma].
+All q>=2 sources retain (5)--(6); singleton q=1 sources retain unchanged
+J_u and (8), and their other occupied-site overlaps are zero in (7).
+
+**Dependencies/proof:** SC-K-GREEDY-BUDGET, Corollary 4.3 and Theorem 4.7
+of Gairing et al. for each component, MF-PACK-2, MF-PURE-CAP-POLY and
+MF-CONT-COMPLETE. [Complete argument](polytime_frontier.md) independently
+inverse-checked; no implementation or external review. This is a wider
+conditional theorem than SC-K-EQUAL-MULT-GREEDY-2, not an all-input result:
+mixed multiplicities in one customer-overlap component and multi-site
+q=1 components remain outside its scope.
+
+## SC-K-GREEDY-STATIC-PACK-NO -- fixed-site packing fails after repair
+
+**Exact scope:** one positive-integer common-catalog instance with five
+sites, eight labeled facilities, nine atomic customers, and the stated
+increasing-site tie rule. At the greedy layout there is a five-move strictly
+improving customer site-transfer sequence reaching a site-uniform exact NE.
+For either of two facilities at B, source B survives its deviation, yet if
+one freezes the current site assignments outside the source, stationary
+site E cannot meet the isolated-macro-or-cap-2a hypothesis of MF-PACK-2:
+its one facility has two clients of weights 20,24 totaling 44>2a=41.
+
+**Evidence/proof:** the complete greedy score sequence, five exact cost
+comparisons, final NE comparisons and failed bin condition appear in
+[polytime_frontier.md](polytime_frontier.md); independently recomputed with
+exact fractions, with no inference from finite search to a universal claim.
+**Limit:** this refutes only a frozen-site off-path *proof interface* for
+one reachable NE. Cross-site reassignment (the 24 customer can return to B),
+another on-path NE or another layout may still give a 2-SPE. No lower bound
+on the instance optimum or algorithmic hardness is claimed.
+
+## SC-K-GREEDY-CAP-INFEASIBLE -- global cap repair can be infeasible
+
+**Exact scope:** six-site positive-integer common-catalog instance with
+eight facilities and ten customers, obtained by adding an unopened G site,
+one G-private customer and one new coverage edge to the preceding example.
+The same greedy order and five strict customer improvements give an exact
+on-path NE. At the B-to-G deviation, the deviator's on-path load is
+41/2, and **no** feasible pure customer assignment satisfies the global
+MF-PURE-CAP-POLY hypothesis for B=41, even after arbitrary cross-site
+reassignment: private 20 customers force loads at B,E,G and shared 24
+must join one of them, producing 44 with no isolated >41 client.
+
+**Counterevidence to overreading:** the very same deviation layout has a
+pure exact customer NE with deviator load 20, explicitly checked in
+[polytime_frontier.md](polytime_frontier.md). Therefore this disproves
+one proposed *global cap interface*, not the factor-two facility
+certificate, a different on-path NE, or a full-input polynomial algorithm.
+All exact greedy, strict-improvement and NE comparisons are in the proof;
+independent fraction arithmetic in
+`tests/audits/kfac_greedy_cap.py` confirms them from
+`examples/multi_facility/greedy_cap_obstruction.json`. External review
+unrecorded.
 
 ## SC-K-SYMMETRIC-MENU-OBSTRUCTION -- bad menus are not lower bounds
 

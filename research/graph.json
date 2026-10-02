@@ -1518,6 +1518,54 @@
         "research/current/multi_facility/claims.md"
       ],
       "status": "complete direct internal proof; unrefereed"
+    },
+    {
+      "id": "SC-K-COMPONENT-MULT-GREEDY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two for componentwise constant greedy multiplicities",
+      "detail": "Customer-overlap components have constant q, with q=1 components singleton; range-preserving site Nashification separately by component preserves all original transfer budgets and produces a complete bit-polynomial factor-two continuation.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof; unrefereed"
+    },
+    {
+      "id": "SC-K-GREEDY-STATIC-PACK-NO",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Frozen-site cap packing fails after greedy customer repair",
+      "detail": "Five sites, eight facilities and nine integer clients: a reachable exact site-uniform NE has B-load 41/2 and E two clients totaling 44, exceeding cap 41 after B facility moves; the source B survives, but E cannot be capped if its clients remain there.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete exact construction; internally checked; unrefereed"
+    },
+    {
+      "id": "SC-K-GREEDY-CAP-INFEASIBLE",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Global capped off-path assignment infeasible after greedy repair",
+      "detail": "Six sites, eight facilities and ten integer customers; at one B-to-G deviation the on-path load is 41/2, while forced private 20 at B/E/G and shared 24 make every pure assignment exceed ordinary cap 41 without a >41 macro. An exact NE gives the deviator only 20.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete exact construction; internally checked; unrefereed"
+    },
+    {
+      "id": "SC-K-GREEDY-MAX-MULT",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Initial greedy customers occupy maximal-final-multiplicity sites",
+      "detail": "If a client first assigned at site s can also use later opened t, then opening weights obey W_s^0>W_t^0; q_t>q_s contradicts greedy at the last insertion to t. Not asserted after client repair.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof; unrefereed"
     }
   ],
   "hyperedges": [
@@ -3037,6 +3085,98 @@
       ],
       "conclusion": "SC-K-DISTINCT-GREEDY-3",
       "statement": "For distinct greedy occupancy, range-preserving Nashification gives loads in [gamma,2gamma]; off-path initial makespan at most a+2gamma<=3a and published Nashification preserves it.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-greedy-component-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "MF-PACK-2",
+        "MF-PURE-CAP-POLY",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-COMPONENT-MULT-GREEDY-2",
+      "statement": "Componentwise constant q allows separate range-preserving Nashification; q=1 singleton components keep unchanged orphan budgets, so all four transfer inequalities hold.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-static-pack-no",
+      "kind": "attacks",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-STATIC-PACK-NO",
+        "SC-K-GREEDY-UNOPENED-2"
+      ],
+      "conclusion": "SC-K-LOCAL-PLS",
+      "statement": "An exact reachable greedy-layout NE may have a surviving stationary site that cannot meet the original per-site cap with frozen customer sites; the local sufficient-state search is not obtained by this frozen repair.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "scope-limited counterexample"
+    },
+    {
+      "id": "e-mf-static-pack-example",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-GREEDY-STATIC-PACK-NO",
+      "statement": "The explicit five-site nine-client integer instance follows the deterministic greedy insertion order, reaches an exact NE by five strict site transfers, and has a surviving stationary site whose fixed two-client load 44 exceeds cap 41 without a macro.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact construction"
+    },
+    {
+      "id": "e-mf-global-cap-example",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-GREEDY-CAP-INFEASIBLE",
+      "statement": "The explicit six-site instance has the stated greedy order and exact reachable on-path NE; private-plus-shared clients force an ordinary load 44 at one deviation in every pure assignment.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact construction"
+    },
+    {
+      "id": "e-mf-global-cap-limit",
+      "kind": "attacks",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-CAP-INFEASIBLE"
+      ],
+      "conclusion": "MF-PURE-CAP-POLY",
+      "statement": "The capped Nashification theorem remains true, but its global cap-and-isolated-macro hypothesis can be infeasible even when a favorable exact off-path NE exists.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "scope-limited counterexample"
+    },
+    {
+      "id": "e-mf-greedy-max-mult",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-GREEDY-MAX-MULT",
+      "statement": "Opening-time uncovered sets and final insertion scores force each customer to be initially assigned to a covered occupied site of maximal final multiplicity.",
       "refs": [
         "research/current/multi_facility/polytime_frontier.md"
       ],

@@ -47,6 +47,27 @@ the complete factor-two continuation is bit-polynomial
 same range-preserving import gives a bit-polynomial factor-three continuation
 (`SC-K-DISTINCT-GREEDY-3`), without solving the factor-two target for that
 subclass.
+The more general `SC-K-COMPONENT-MULT-GREEDY-2` permits different
+multiplicities in different customer-overlap components. Each component
+must have constant multiplicity, and a multiplicity-one component must
+be a single site. Independent site-level Nashification plus unchanged
+singleton components preserve all four budgets and give polynomial factor two.
+For general unequal multiplicities, `SC-K-GREEDY-STATIC-PACK-NO` gives a
+five-site integer instance where a reachable exact on-path NE leaves a
+different surviving site too heavy for the old cap packing if customer site
+assignments are frozen. The appropriate next interface must permit cross-site
+customer reassignment or select a more robust on-path state; the example
+does not preclude a factor-two continuation.
+The related `SC-K-GREEDY-CAP-INFEASIBLE` instance adds an unopened target
+with a forced private customer and proves **no** cross-site reassignment
+can meet the old *global* ordinary cap for one deviation; nevertheless an
+exact off-path NE gives the deviator less than twice its original load.
+The next all-input method needs a deviator-specific bound that permits
+safe overload elsewhere, or a different on-path mechanism.
+The exact integer input is `examples/multi_facility/greedy_cap_obstruction.json`;
+`python tests/audits/kfac_greedy_cap.py` independently rechecks greedy,
+strict moves, on/off-path customer NE, and the forced cap obstruction.
+This finite audit does not prove the conditional algorithmic theorems.
 
 The proof deliberately changes the type of continuation: on path it uses
 independent mixing inside co-location groups; off path it isolates giant atoms

@@ -243,6 +243,38 @@ N_C+w(J_A cap C_C)=2+6=8>6=a. The actual deviation earns 8<=2a,
 so this only refutes preservation of the *sufficient budget* at that layout.
 It does not refute factor two for the instance.
 
+## SC-K-GREEDY-MAX-MULT: initial customers choose a maximal-multiplicity site
+
+**Statement.** In the exact greedy *initial* site assignment, every served
+customer is assigned to an occupied site of maximum final facility
+multiplicity among all occupied sites covering that customer. This holds for
+arbitrary positive weights, arbitrary k, and the deterministic or any other
+tie breaking among equal greedy scores. It is an incidence fact about the
+initial greedy assignment, not a property asserted after customer transfers.
+
+**Proof.** Suppose customer i first becomes served when site s opens and is
+assigned there. Any other eventually occupied site t covering i must open
+*later*: an earlier opening would already have covered i. Let \(W_s^0\) and
+\(W_t^0\) be the weights first assigned on opening s and t. Just before s
+opens, all of the later set assigned to t are still uncovered, and i is
+uncovered too but is not in that later set. Hence t's then-new-coverage
+score is at least \(W_t^0+w_i>W_t^0\). Greedy chose s, so
+\(W_s^0>W_t^0\). If the final counts had \(q_t>q_s\), then at the time
+of t's **last** facility insertion, site s was already occupied and its
+next-insertion score obeyed
+
+\[
+ \frac{W_s^0}{q_s^{\rm then}+1}
+ \ge\frac{W_s^0}{q_s+1}
+ >\frac{W_t^0}{q_s+1}
+ \ge\frac{W_t^0}{q_t},                         \tag{12a}
+\]
+
+contradicting greedy's selection of t with score \(W_t^0/q_t\).
+Thus \(q_t\le q_s\). The claim is vacuous for an unserved customer and
+continues to allow later strict customer moves between different
+multiplicities. No factor-two algorithm follows from this ordering alone.
+
 ## SC-K-GREEDY-UNOPENED-2: what survives on-path equilibration
 
 **Statement.** Run SC-K-GREEDY-BUDGET on a positive-reach instance and let
@@ -375,6 +407,57 @@ those of identical machines. The present argument makes no claim about either
 case. It is an algorithmic theorem for a recognizable subclass of greedy
 outputs, not a proof of the unrestricted target.
 
+## SC-K-COMPONENT-MULT-GREEDY-2: polynomial factor two across components
+
+**Exact conditional statement.** Run the same greedy algorithm, and form the
+graph on *occupied physical sites* in which two sites are adjacent when some
+customer covers both. Suppose (i) every connected component has constant
+facility multiplicity \(q_t\), and (ii) each component of multiplicity one
+consists of a single site. These conditions are polynomially checkable from
+the greedy output. Then the same layout admits an input-bit-polynomial
+factor-two complete exact continuation. This strictly generalizes the
+equal-\(q\ge2\) sufficient condition above: disconnected occupied-site
+components may have different multiplicities, and singleton components may
+have \(q=1\). It does not cover a component with differing multiplicities or
+a multi-site component with \(q=1\).
+
+**Proof.** The greedy last score \(\gamma\) bounds each initial per-facility
+load from below. Applied to a facility inserted last, budget (5) if its site
+has multiplicity at least two, or budget (7) after dropping its nonnegative
+overlap term otherwise, gives
+
+\[
+    q_t\gamma\le W_t\le(q_t+1)\gamma
+    \quad(t\text{ occupied});\qquad N_r\le\gamma
+    \quad(r\text{ unoccupied}).                         \tag{15}
+\]
+
+Each served customer's entire set of accessible occupied sites lies in one
+graph component. Within each component with common \(q\ge2\), regard sites
+as restricted identical machines and run the published range-preserving
+Nashification as in the preceding theorem. It changes no customer to another
+component and retains the interval in (15) for each site. Leave a singleton
+\(q=1\) component untouched: every customer served there has that site as
+its *only* occupied option. Site-uniform mixing after these independent
+procedures is an exact customer NE, and every source facility has
+\(a=W_u/q_u\ge\gamma\).
+
+For a source with \(q_u\ge2\), all other occupied sites satisfy
+\(W_t\le(q_t+1)\gamma\le(q_t+1)a\), and unopened sites satisfy
+\(N_r\le\gamma\le a\). Thus (5)--(6) hold. For a singleton-component
+source with \(q_u=1\), its assigned customer set \(J_u\) and weight
+\(a=W_u\) are exactly those of the greedy profile, and no customer in
+\(J_u\) covers any other occupied site. Therefore (7) follows from
+\(W_t\le(q_t+1)\gamma\le(q_t+1)a\). The original greedy budget (8),
+\(N_r+w(J_u\cap C_r)\le a\), is unchanged because both \(J_u\) and
+the occupied-site set are unchanged. We have recovered *all four*
+orphan-aware budgets for the exact on-path NE. Apply MF-PACK-2 and
+MF-PURE-CAP-POLY to every deviation, then the polynomial default rule;
+the complete factor-two certificate is bit-polynomial. Graph construction,
+component decomposition and the finitely many scheduling calls also use
+polynomial time. This conditional theorem does not imply that all greedy
+outputs satisfy the component hypotheses.
+
 ## SC-K-DISTINCT-GREEDY-3: a weaker polynomial bound with no colocation
 
 **Statement.** If the same greedy procedure occupies \(k\) distinct sites
@@ -423,6 +506,120 @@ because its reach is \(3M\), then inserts the second facility at \(B\)
 because \(3M/2>M\). Any improvement from 3 to 2 in the distinct-site
 greedy subclass must exploit more of the greedy coverage incidence than
 the scalar interval and new-reach bound.
+
+## SC-K-GREEDY-STATIC-PACK-NO: a surviving-site obstruction
+
+The preceding unopened-target inequality does **not** make the original
+MF-PACK-2 proof apply after arbitrary strict customer site repair. Here is
+a positive-integer example where the source survives the deviation, but a
+different stationary occupied site cannot be packed under that proof's cap
+if its *current* site assignments are frozen.
+
+There are \(k=8\) facilities and five common sites in tie-breaking order
+\(A,E,B,C,D\). The customers are:
+
+| weight | covered sites |
+| ---: | :--- |
+| 20 | A |
+| 8 | A, B |
+| 24 | B, E |
+| 20 | B |
+| 10 | A, C |
+| 30 | C |
+| 13 | B, D |
+| 67 | D |
+| 20 | E |
+
+Greedy insertion with increasing site-order tie breaking is
+\((D,80),(B,52),(C,40),(D,40),(D,80/3),(B,26),(A,20),(E,20)\),
+so \(\gamma=20\). Initial multiplicities in site order are
+\((1,1,2,1,3)\), with site weights \((20,20,52,40,80)\).
+Transfer the customers of weights \(8,10,13,8,24\) in order along
+\(B\to A,C\to A,D\to B,A\to B,B\to E\). Each move is a strict
+conditional-cost improvement; its old and new costs are respectively
+
+\[
+ (30,28),\quad(40,38),\quad(106/3,35),\quad
+ (38,73/2),\quad(89/2,44).                         \tag{14}
+\]
+
+The final assigned site weights are
+\((W_A,W_E,W_B,W_C,W_D)=(30,44,41,30,67)\). This is an exact site-uniform
+customer NE: the four customers who can choose between two occupied sites
+have conditional cost comparisons
+\(8+33/2\le8+30\) at B versus A,
+\(24+20\le24+41/2\) at E versus B,
+\(10+20\le10+30\) at A versus C, and
+\(13+14\le13+67/3\) at B versus D. All other customers have only one
+accessible occupied site. Uniform independent mixing within each site is
+an exact choice among its colocated facilities.
+
+Take either B facility as the deviator, of on-path load \(a=41/2\), and
+move it, for example, to A; B still has one stationary facility. At E,
+the one stationary facility retains customers of weights 20 and 24 if
+all source-outside assignments are frozen. Their total is
+\(44>2a=41\), while neither customer individually weighs more than 41.
+Thus E cannot be represented by a \(\le2a\) bin or an isolated macro
+under that *fixed site assignment*. This refutes the proposed interface
+"repair customers on the greedy layout, then freeze their sites and apply
+MF-PACK-2 separately at every surviving occupied site." It does **not**
+refute a factor-two continuation: the 24 customer also covers B and may
+be reassigned before off-path Nashification. It does not exclude a different
+on-path NE or a different facility layout. The remaining proof obligation
+is a cross-site reassignment or another invariant that handles such
+surviving-site overloads in polynomial time.
+
+## SC-K-GREEDY-CAP-INFEASIBLE: cross-site reassignment need not restore the cap
+
+The preceding obstruction can be strengthened without claiming any failure
+of factor-two stability. Add a sixth catalog site \(G\) **after** \(D\) in
+the tie order. The weight-24 customer now covers \(\{B,E,G\}\), and add
+one private weight-20 customer covering only \(G\); keep every other
+customer and site of the preceding example. There are ten customers and
+\(k=8\). Because \(G\) contributes only its private 20 of *new* weight
+after B opens, the greedy insertion order and first nine customers'
+assignments are unchanged, and G stays unoccupied. The five strict
+transfers in (14) reach the same exact site-uniform NE, now with
+\(W=(30,44,41,30,67,0)\) on \((A,E,B,C,D,G)\). The G-private client is
+unserved until a facility moves there.
+
+Move either B facility to G. Its on-path load is \(a=41/2\), so the
+desired ordinary cap is \(2a=41\). In the actual deviation layout there
+is **one** facility each at B, E and G. Three private weight-20 customers
+are forced onto B, E and G respectively. The weight-24 customer covers
+exactly those three sites, so every feasible pure customer assignment
+puts it together with one of these forced weight-20 clients. That
+facility's load is at least \(44>41\); neither of the two clients weighs
+more than 41, so this overload cannot be isolated as a single macro
+client. The separate D-private customer of weight 67 *can* be isolated
+as a macro, but does not affect this three-site obstruction. Therefore
+**no** initial pure customer assignment satisfies the global hypothesis
+of MF-PURE-CAP-POLY with threshold 41 after this deviation, even when
+cross-site customer reassignment is allowed.
+
+Nonetheless the deviation game has a pure exact customer NE with
+\(G\), the deviating facility, at load **20**. Assign the two A clients
+of weights 20,10 to A; the E-private 20 and shared 24 to E; the B-private
+20 and shared 8 to B; 30 to C; the D-private 67 and shared 13 to separate
+D facilities, leaving the third D facility empty; and the G-private 20
+to G. Loads in site order are
+\(A:30,E:44,B:28,C:30,D:(67,13,0),G:20\). The weight-24 customer
+at E pays 44, tying its alternative at G and strictly beating the B
+alternative of 52. The weight-8 customer at B pays 28 versus 38 at A;
+weight 10 at A pays 30 versus 40 at C; weight 13 at D pays 13 versus
+41 at B and ties an empty D facility; weight 67 pays 67 and ties an
+empty D facility. Thus nobody strictly improves. These comparisons
+distinguish a pure off-path exact NE from the infeasible *global cap*
+hypothesis. The example shows that merely allowing cross-site transfers
+inside the old cap-preserving repair is insufficient; an unrestricted
+algorithm must allow some stationary facility to exceed \(2a\) safely,
+or use another on-path layout or continuation mechanism. It gives no
+lower bound on the instance's best factor and no hardness result for
+finding a factor-two certificate.
+For this deviation the smallest feasible *ordinary* cap under the same
+isolated-macro convention is exactly 44: the three-site argument gives
+the lower bound, and the displayed pure NE isolates the weight-67 client
+while every other facility has load at most 44.
 
 ## Sources and review status
 

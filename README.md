@@ -10,7 +10,7 @@
 
 **任意 k 的高效构造关口（2026-10-02）：**[计算前沿](research/current/multi_facility/polytime_frontier.md)将因子 2 存在性证明拆为两项算法义务。给定符合预算的在轨状态，偏离后的客户精确纯 NE 可用已发表的受限并行机算法在输入位长多项式时间完成；而原证明所用的全局字典序精确选址，连相同 reach 的共同目录也强 NP 难。四项预算只需要多项式邻域的局部最优，故有一个明确的 PLS 搜索上界，但目前没有多项式收敛界。真正缺口是同时找到可计算的在轨选址与客户 NE；原证明的全局最优不能直接当算法。
 进一步的 SC-K-GREEDY-BUDGET 用多项式贪心造出**全部**转移预算；一个四客户实例显示在固定选址上将客户修到精确 NE 会破坏原预算。它把缺口集中到两者的**兼容构造**，仍未给出全 $k$ 高效 2 倍算法。
-新[计算前沿](research/current/multi_facility/polytime_frontier.md)进一步证明：贪心后严格改派客户始终保持未开地点的 2 倍偏离者容量界；若贪心结果的每个占据地点恰有相同的 $q\ge2$ 家设施，则可借受限同速机器的多项式均衡算法同时恢复在轨精确 NE 与全部预算，得到该**可识别子类**上的多项式 2 倍完整续局。若贪心把 $k$ 家分到 $k$ 个不同地点，现有接口给多项式 3 倍续局。一般不等重数（含单设施源消失）的全 $k$ 多项式 2 倍目标仍开放；两条子类结论不冒充它的解决。
+新[计算前沿](research/current/multi_facility/polytime_frontier.md)进一步证明：贪心后严格改派客户始终保持未开地点的 2 倍偏离者容量界；若贪心占据地点的客户交叠图**每个分量内部重数相同**，且 $q=1$ 分量只有单地点，则可分量调用受限同速机器的多项式均衡算法，恢复在轨精确 NE 与全部预算，得到该**可识别子类**上的多项式 2 倍完整续局。全局相同 $q\ge2$ 是特例。若贪心把 $k$ 家分到 $k$ 个不同地点，现有接口给多项式 3 倍续局。五地点整数例表明客户改派后冻结存续地点逐站装箱会失败；加强的六地点例表明即使允许任意跨站重分，旧证明要求的全局 $2a$ 容量状态也可能根本不存在，尽管偏离者在某个精确 NE 中只获 $a$ 以下。一般混合重数交叠的全 $k$ 多项式 2 倍目标仍开放；这些子类与障碍均不冒充它的解决。
 
 ## 先判断输入属于哪条命题
 
@@ -43,7 +43,7 @@
 
 关键 dependency、attacks 和 scope 边可交互查看[数学超图](research/index.html)，精确文字与证据状态以[现行命题登记](research/current/claims.md)和证明页为准。
 
-新增计算依赖：受限同速并行机 Nashification + 宏客户隔离 → MF-PURE-CAP-POLY；3-PARTITION → SC-K-LEXMAX-STRONG-HARD（只攻击精确全局选址）；按末次加座时序的贪心比较 → SC-K-GREEDY-BUDGET；贪心末次分数 + 严格客户改派的排序负载单调性 → SC-K-GREEDY-UNOPENED-2；贪心相同重数 $q\ge2$ + 文献算法保留上下负载 → SC-K-EQUAL-MULT-GREEDY-2；贪心全异址 + 同一文献算法 → SC-K-DISTINCT-GREEDY-3；单客户改派与单设施迁移的有限邻域 → SC-K-LOCAL-PLS → 条件性多项式离轨完成。这些边均在[计算前沿](research/current/multi_facility/polytime_frontier.md)证明，不能用精确 lexmax 强困难性推出完整因子 2 构造困难。
+新增计算依赖：受限同速并行机 Nashification + 宏客户隔离 → MF-PURE-CAP-POLY；3-PARTITION → SC-K-LEXMAX-STRONG-HARD（只攻击精确全局选址）；按末次加座时序的贪心比较 → SC-K-GREEDY-BUDGET；首开与末次加座得分 → SC-K-GREEDY-MAX-MULT（初始客户占据最大最终重数地点）；贪心末次分数 + 严格客户改派的排序负载单调性 → SC-K-GREEDY-UNOPENED-2；贪心相同重数 $q\ge2$ + 文献算法保留上下负载 → SC-K-EQUAL-MULT-GREEDY-2；各客户交叠分量内同重数并隔离单点 $q=1$ → SC-K-COMPONENT-MULT-GREEDY-2；贪心全异址 + 同一文献算法 → SC-K-DISTINCT-GREEDY-3；五地点客户改派反例 → SC-K-GREEDY-STATIC-PACK-NO；六地点增加新目标的强制客户反例 → SC-K-GREEDY-CAP-INFEASIBLE；单客户改派与单设施迁移的有限邻域 → SC-K-LOCAL-PLS → 条件性多项式离轨完成。这些边均在[计算前沿](research/current/multi_facility/polytime_frontier.md)证明，不能用精确 lexmax 强困难性推出完整因子 2 构造困难。
 
 ## 如何追踪一项研究结论
 
@@ -73,7 +73,8 @@
 | `research/current/shared/three_site_exact_hardness.md` | 将局部 SUBSET SUM 客户谱嵌入三地点共同目录，逐一堵住同址、AB、AC、BC 的所有逃逸；证明固定有理 $1\le a<(1+\sqrt3)/2$ 的弱 NP 完全性，列出两套守卫及端点正权预算障碍。研究下一段复杂度前沿时先读，切勿把端点当模型相变。 |
 | `research/current/shared/five_site_exact_hardness.md`、`research/FIVE_SITE_AUDIT_2026-10-02.md` | 五地点新覆盖、强制桥宏原子和全布局守卫证明每个固定有理 $1<a<\phi$ 的弱 NP 完全性；审查页核对原目标同一性、2024 年广义困难性优先权边界及与 A/B 成果的相对价值。研究实例复杂度或组织 A 篇时读。 |
 | `research/current/multi_facility/uniform_two.md`、`research/K_FACILITY_AUDIT_2026-10-02.md` | 任意 $k$ 的共同目录因子 2 存在性证明、逐式逆审、方法边界及面向领域的价值解释；研究多设施稳定性时先读。无多项式构造或因子 2 尖锐性结论。 |
-| `research/current/multi_facility/polytime_frontier.md` | 强 NP 难的精确全局字典序选址、足以证明预算的多项式局部邻域、贪心预算与空地点容量回收，以及文献算法保留负载上下界所给的等重数 $q\ge2$ 时完整多项式 2 倍和全异址时 3 倍子类算法；攻全 $k$ 高效算法时先读。一般不等重数与单设施源消失仍未解决。 |
+| `research/current/multi_facility/polytime_frontier.md` | 强 NP 难的精确全局字典序选址、多项式局部邻域、贪心预算与最大重数初始客户指派、空地点容量回收，以及文献算法保留负载上下界所给的交叠分量同重数 2 倍和全异址 3 倍子类算法；五地点反例定位冻结旧客户分配的失败，六地点强化反例否定该特定在轨 NE 下**任何**全局 $2a$ cap 初态，仍有偏离者低收益精确离轨 NE。攻全 $k$ 高效算法时先读。混合重数交叠与多地点 $q=1$ 源的完整 2 倍算法仍未解决。 |
+| `examples/multi_facility/greedy_cap_obstruction.json`、`tests/audits/kfac_greedy_cap.py` | 六地点十顾客的精确整数输入与独立 Fraction 检查：重算确定性贪心得分、五次严格客户改派、在轨精确 NE、B/E/G 的强制 $44>41$ 容量障碍和偏离者仅获 $20$ 的离轨精确 NE。研究 SC-K-GREEDY-CAP-INFEASIBLE 的算术或试图修改装箱接口时运行；有限检查不替代文件中的全称定理证明。 |
 | `research/current/shared/atomic_granularity.md`、`research/current/local_and_exact/atomic_wardrop_gap.md` | 前者将已知可拆分客户 SPE 特化为两设施对照，证明任意精确原子 NE 的误差与完整续局倍率，并给宏原子必要条件；后者对固定 $k$ 布局证明尖锐 $(k-1)\theta/2$ 误差与链族。做实例敏感构造、归约粒度限制或多设施延伸时读；局部误差不等于全 $k$ SPE。 |
 | `research/current/shared/small_sparse_catalogs.md` | 单交叠的最多 2/3/4/5 地点紧确普遍因子、纯菜单全分支、三/四地点正有理族、五地点原下界剪枝。构造有限目录论文主题、比较目录规模机制或攻击平局零收益时读；五地点下界同时回读 `shared/sharp_phi_lower.md`。 |
 | `examples/shared/sparse_four_rational.json` | 四地点五客户下界族的 $z=19/12,\varepsilon=1/1000$ 精确输入；实例最优倍率 $6327/4000$，用于验证 $\sqrt2$ 无法延伸到四地点。复现例子而非证明全称族时读。 |

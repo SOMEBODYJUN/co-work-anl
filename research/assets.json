@@ -835,27 +835,35 @@
         "SC-K-GREEDY-BUDGET",
         "SC-K-GREEDY-UNOPENED-2",
         "SC-K-EQUAL-MULT-GREEDY-2",
-        "SC-K-DISTINCT-GREEDY-3"
+        "SC-K-DISTINCT-GREEDY-3",
+        "SC-K-COMPONENT-MULT-GREEDY-2",
+        "SC-K-GREEDY-STATIC-PACK-NO",
+        "SC-K-GREEDY-CAP-INFEASIBLE",
+        "SC-K-GREEDY-MAX-MULT"
       ],
       "status": "internally reviewed conditional algorithm, exact-oracle strong NP-hardness proof, and PLS upper bound; externally unreviewed",
       "applies_when": [
         "arbitrary explicit k and common finite catalog, labeled facilities, atomic customers and linear actual-load costs",
         "positive binary rational input for Nashification and PLS; positive integers for strong NP-hardness"
       ],
-      "produces": "Polynomial off-path Nashification given a suitable on-path state; strong hardness only of exact global lexmax; polynomial neighborhood search upper bound in PLS, not a full polynomial factor-two algorithm. Polynomial greedy transfer budgets alone, with a fixed-layout NE compatibility counterexample. New conditional bit-polynomial factor-two construction when greedy occupancy has uniform q>=2; conditional factor-three construction when greedy occupies k distinct sites; unopened-site cap invariant after site transfers.",
+      "produces": "Polynomial off-path Nashification given a suitable on-path state; strong hardness only of exact global lexmax; polynomial neighborhood search upper bound in PLS, not a full polynomial factor-two algorithm. Polynomial greedy transfer budgets alone, with a fixed-layout NE compatibility counterexample. New conditional bit-polynomial factor-two construction when greedy occupancy has uniform q>=2; conditional factor-three construction when greedy occupies k distinct sites; unopened-site cap invariant after site transfers. Wider componentwise equal-multiplicity factor-two subclass and a five-site frozen-site packing counterexample. Six-site strengthening proves global ordinary cap infeasible for one actual deviation despite a low-deviator exact NE. Initial greedy incidence ordering: each customer starts at a maximum-final-multiplicity accessible occupied site.",
       "implementation": [],
       "proof": [
         "research/current/multi_facility/polytime_frontier.md",
         "research/current/multi_facility/uniform_two.md",
         "research/current/multi_facility/claims.md"
       ],
-      "tests": [],
+      "tests": [
+        "tests/audits/kfac_greedy_cap.py"
+      ],
       "records": [],
-      "examples": [],
+      "examples": [
+        "examples/multi_facility/greedy_cap_obstruction.json"
+      ],
       "sources": [
         "history/source/audits/cost_extensions.md"
       ],
-      "limit": "Historical source records only the arbitrary-k question, not these proofs. External priority/review unrecorded. STOC 2004 theorem imported only for restricted identical-link customer subgames. The reduction family has an easy exact SPE; PLS membership does not imply polynomial convergence. Neither restricted output class solves all-input unequal-multiplicity factor two; no canonical implementation yet."
+      "limit": "Historical source records only the arbitrary-k question, not these proofs. External priority/review unrecorded. STOC 2004 theorem imported only for restricted identical-link customer subgames. The reduction family has an easy exact SPE; PLS membership does not imply polynomial convergence. Neither restricted output class solves all-input unequal-multiplicity factor two; no canonical implementation yet. The stationary-site counterexample only invalidates a frozen-assignment packing interface, not factor-two existence. This cap obstruction does not prove the greedy layout or instance lacks a factor-two continuation."
     }
   ]
 }
