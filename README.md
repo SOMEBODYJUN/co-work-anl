@@ -4,6 +4,8 @@
 
 **Research Goal / 当前前沿：**从双设施选址的精确客户均衡与全部偏离续局出发，找能跨模型规模复用的近似 SPE 结构。双侧任意长、每跨对最多一共有客户时的尖锐因子现已由 [SPARSE-RHO-ALL](research/current/heterogeneous/sparse_unbounded_rho.md) 的内部证明闭合为 $\rho$；任意设施数 $k$ 的统一近似因子或随 $k$ 增长下界仍开放。立方费用的跨成本机制和实例最优倍率的计算复杂度是有条件候选，不是封闭的题目清单。[实时研究状态](RESEARCH_STATE.md)、[命题入口](CLAIMS.md)、[失败路线](FAILED_ROUTES.md)与[路线图](research/ROADMAP.md)一起定位下一个证明义务。
 
+**A 篇后续（2026-10-02）：** [同址正规形](research/current/shared/instance_complexity_barriers.md)把共同目录**实例最优**精确算法的指数参数改为异址交叠 $\kappa_{\ne}$，并构造完整同址对半续局；[单交叠小目录阶梯](research/current/shared/small_sparse_catalogs.md)得到“至多 $N$ 个共同地点”的紧确普遍因子 $N=1,2:1$，$N=3:\sqrt2$，$N=4:\sqrt[3]4$，$N\ge5:\phi$。三、四地点结果有匹配的正有理下界；五地点把原六地点下界的可选目录缩小，未新造 $\phi$ 反例。它们均是本库模型的内部证明，尚无外部评审或完整新颖性核查。无界异址交叠下固定 $a<\phi$ 的全局判定复杂度仍开放，已记录两种失败归约的稳定逃逸机制。
+
 **研究状态：**共同目录的黄金比上界已有完整主稿、现行 Markdown 全分支重写及多轮内部审读；[六地点共同目录下界](research/current/shared/sharp_phi_lower.md)现已补出全布局与有理化证明，二者联合给出尖锐阈值。异构目录的因子 2 构造有成文主稿。受限稀疏 ρ 命题已有逐分支重写，[双方任意长单交叠的 ρ 上界](research/current/heterogeneous/sparse_unbounded_rho.md)本轮给出新全称证明；与原 2×2 下界合并即为同类尖锐阈值。程序能为具体输入生成证书；共享证书另有[独立定义级检查器](facility_spe/cli/verify_phi.py)。以上都尚未经过外部同行评审；内部证明、实例证书与学术发表分别标注。参见[命题与状态登记](research/current/claims.md)及[五轴状态表](research/review_status.json)。
 
 ## 先判断输入属于哪条命题
@@ -22,6 +24,8 @@
 
 - 输入的带标签布局、客户覆盖、正权原子与实际负载费用在 [model.md §1](research/current/model.md) 定义；两设施公共客户的独立混合 NE 在 §2 化为条件成本差。§3 对全部布局的 NE 选择定义完整续局及真实的全目录偏离威胁。
 - `model/NE` → 局部支持几何 → 共同目录固定菜单与全目录环 → 局部强弦 → `SC-PHI-E`；编码有理输入加位复杂度给 `SC-PHI-A`，联合六地点同类下界才得 `SC-PHI-SHARP`。[共享证明顺序](research/current/shared/README.md)。
+- `model/NE` → 真实异址坐标极小值与同址对半 NE → `SC-DIAG-NORMAL` → `SC-OFFDIAG-FPT`：指数参数只用不同地点客户交叠，完整证书在所有同址布局均对半。[结构与算法](research/current/shared/instance_complexity_barriers.md)。这条边不证明无界交叠的 `DEC_a` 多项式。
+- `model/NE` + **共同目录且异址单交叠** → 按 reach 全序选纯 NE、同址重客户菜单 → 分别证明 `SC-SPARSE-3` ($\sqrt2$) 与 `SC-SPARSE-4` ($\sqrt[3]4$)；各自正有理族给匹配下界。`SC-SPARSE-5` 的上界另依赖 `SC-PHI-E`，下界是原六地点 $\phi$ 族的五地点合法限制。这是**至多地点数的阶梯**，不是把异构 `\rho` 类包含进去。[逐式证明](research/current/shared/small_sparse_catalogs.md)。
 - `model/NE` → 异构纯菜单、全目录环 → `HC-2-UP`；与双交叠下界 `HC-2-LOW` 合取才得异构 sharp 2。`HC-RHO` 给单交叠且一侧最多两地点的已知锐性；移除长度条件由新 `SPARSE-RHO-ALL` 全称上界证明，结合该下界解决 [Q-SPARSE](research/questions/sparse_catalogs.md)。[异构证明顺序](research/current/heterogeneous/README.md)。
 - `CORE-LIFT` 只保留全目录真实威胁而不保证核心短。[SPARSE-LONG-CYCLE](research/current/heterogeneous/sparse_long_cycles.md)在单交叠下构造任意长唯一环，反驳无条件短核心推断；它与普遍倍率 $\rho$ 问题之间没有反例蕴含。
 - [SPARSE-BAD-LONG](research/current/heterogeneous/sparse_bad_long_cycles.md)在**确实没有 `r` 稳定格**、`3/2<r<ρ` 时构造任意长唯一精确回应环；新命题版本 `SPARSE-BAD-LONG-ALL` 证明同一失败机制覆盖每个 `1≤r<ρ`，所有高行仍只用一种重客户身份。它排除阈值以下的统一短**精确回应闭核心**，但不排除更弱的坏见证压缩；在 `ρ` 处不冲突于 `SPARSE-RHO-ALL`。
@@ -55,6 +59,9 @@
 | `research/current/heterogeneous/sparse_high_reach_barrier.md` | 新增 `SPARSE-HIGH-ACYCLIC` 与 `SPARSE-BALANCED-R` 的全部量词、平局与零 reach 证明、两处独立边界攻击；研究坏环如何穿越低 reach 区时读。 |
 | `research/current/heterogeneous/sparse_unbounded_rho.md` | `SPARSE-RHO-ALL` 全类尖锐阈值的精确范围、固定完整纯续局、首个高到低边界引理、客户身份强制相同、三次式矛盾与独立攻击；接手 Q-SPARSE 或审查新上界时先读。 |
 | `research/current/heterogeneous/sparse_bad_long_cycles.md` | 旧版 `3/2<r<ρ` 与新版本全部 `1≤r<ρ` 的真实坏倍率任意长回应环、明示 `7/4` 有理权族、一般开参数与精确核心失败机制；检验任何条件性短核心或身份代表引理时读。 |
+| `research/current/shared/instance_complexity_barriers.md`、`facility_spe/exact/shared_offdiag.py`、`tests/test_shared_offdiag.py` | 同址正规形的精确最优值公式、零收益与完整对半续局证明；异址交叠参数的支持枚举实现及独立比较。研究低于 $\phi$ 的实例判定或高同址交叠输入时先读；程序证书核验不代替全称证明。 |
+| `research/current/shared/small_sparse_catalogs.md` | 单交叠的最多 2/3/4/5 地点紧确普遍因子、纯菜单全分支、三/四地点正有理族、五地点原下界剪枝。构造有限目录论文主题、比较目录规模机制或攻击平局零收益时读；五地点下界同时回读 `shared/sharp_phi_lower.md`。 |
+| `examples/shared/sparse_four_rational.json` | 四地点五客户下界族的 $z=19/12,\varepsilon=1/1000$ 精确输入；实例最优倍率 $6327/4000$，用于验证 $\sqrt2$ 无法延伸到四地点。复现例子而非证明全称族时读。 |
 | `research/PUBLICATION_REVIEW.md` | 本轮独立数学审读、证据回归、文献优先权缺口、两篇论文的严格贡献分配与投稿准备状态；组织投稿时读，不能用期刊判断替代命题证明。 |
 | `tests/audits/sparse_bad_long_cycles.py`、`examples/heterogeneous/sparse/bad_long_n3.json`、`evidence/runs/2026-10-01/sparse_bad_long_cycles.json` | 从真实客户覆盖生成输入，按 Fraction 重算唯一 NE、全部布局因子及全目录严格回应；冻结 `n=1,2,3,10,30,100`，只是算术攻击，不能代替全 `n,r` 证明。 |
 | `tests/audits/sparse_high_reach.py`、`evidence/runs/2026-10-01/sparse_high_reach.json` | 不调用规范求解器的精确分数审查、固定 seed 和冻结结果：包含原六客户下界、修正后长环小例、随机矩形 incidence；复核新定理边界时运行脚本重生记录。有限审查不代替全称证明。 |

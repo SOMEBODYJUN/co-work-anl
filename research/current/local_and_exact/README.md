@@ -13,6 +13,8 @@
 
 ## 本次来源核对发现
 
+本轮另有严格的新参数界：[共同目录同址正规形](../shared/instance_complexity_barriers.md)使精确实例最优值及完整续局只需枚举**异址**交叠 $\kappa_{\ne}$ 的客户支持。实现和对照见 [shared_offdiag.py](../../../facility_spe/exact/shared_offdiag.py) 与 [test_shared_offdiag.py](../../../tests/test_shared_offdiag.py)。原 EXACT-KAPPA 的异构目录范围依旧以所有合法布局的交叠计；这个新证明用到了两家拥有相同目录。
+
 1. 旧 exact-methods 笔记末段仍把“绕开精确局部极值的多项式 φ 算法”称作未来目标；当前主稿和[现行共享分支](../shared/README.md)已有有限菜单及 Appendix B 构造的全分支证明和内部审读。应保留旧探索的时间语境，并把当前内部证明与外部同行评审分开记录。
 2. 旧来源使用 `mitm_solver.py`、`run_lazy_ring.py` 等历史文件名。实际入口为 [mitm.py](../../../facility_spe/exact/mitm.py) 与 [lazy_ring.py](../../../facility_spe/cli/lazy_ring.py)。DP 实现在 [facility_spe/exact/threshold_dp.py](../../../facility_spe/exact/threshold_dp.py)。本目录链接使用实际入口。
 3. bounded-overlap 证明说短证书可直接验证，需要补充：它只证明**达到所报倍率**。全局最优性仍靠支持枚举及优化证明或重算；当前 `verify()` 用显式异常拒绝负的 `finite_factor_exists=False` 报告，且在 `python -O` 下仍执行检查。

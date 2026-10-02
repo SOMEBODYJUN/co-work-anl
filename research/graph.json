@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Two-facility mathematical dependency hypergraph",
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -972,6 +972,102 @@
         "research/review_status.json"
       ],
       "status": "explicit all-subrho proof and internal independent algebra review; unrefereed"
+    },
+    {
+      "id": "SC-DIAG-NORMAL",
+      "kind": "lemma",
+      "track": "shared",
+      "title": "Balanced diagonal normal form",
+      "detail": "Exact shared-catalog optimum and a complete attaining rule can use balanced customer equilibria on every colocated layout.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "SC-OFFDIAG-FPT",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Exact shared optimum via distinct-site overlap",
+      "detail": "For positive rational shared catalogs, exact alpha and a complete rule in O(N^2[n+kappa_off 3^kappa_off]) rational operations with polynomial bit length.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "SC-TWO-SITE-EXACT",
+      "kind": "claim",
+      "track": "shared",
+      "title": "Exact SPE with two shared sites",
+      "detail": "Every shared catalog of at most two sites admits an exact pure-location SPE for arbitrary overlap.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "SC-EQUAL-REACH-EXACT",
+      "kind": "claim",
+      "track": "shared",
+      "title": "Exact SPE at equal site reach",
+      "detail": "Every shared catalog with all site reaches equal has an exact SPE under balanced offdiagonal customer continuation.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "SC-TWO-REACH-SPARSE",
+      "kind": "claim",
+      "track": "shared",
+      "title": "Exact SPE for two reach levels with distinct-site single overlap",
+      "detail": "At most two reach values plus at most one shared client per distinct site pair guarantee exact SPE.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "SC-SPARSE-3",
+      "kind": "claim",
+      "track": "shared",
+      "title": "Sharp sqrt2 for three shared sparse sites",
+      "detail": "At most three shared sites and distinct-site overlap at most one have universal sharp supremum sqrt2.",
+      "refs": [
+        "research/current/shared/small_sparse_catalogs.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "SC-SPARSE-4",
+      "kind": "claim",
+      "track": "shared",
+      "title": "Sharp cuberoot four for four shared sparse sites",
+      "detail": "At most four shared sites and distinct-site overlap at most one have universal sharp supremum cuberoot(4).",
+      "refs": [
+        "research/current/shared/small_sparse_catalogs.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "SC-SPARSE-5",
+      "kind": "claim",
+      "track": "shared",
+      "title": "Five sparse shared sites attain phi",
+      "detail": "Five-site restriction of corrected six-site lower family and universal shared upper give sharp phi.",
+      "refs": [
+        "research/current/shared/small_sparse_catalogs.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
     }
   ],
   "hyperedges": [
@@ -1894,6 +1990,136 @@
         "research/current/heterogeneous/sparse_bad_long_cycles.md"
       ],
       "status": "new all-subrho proof internally audited"
+    },
+    {
+      "id": "e-sc-diag-normal",
+      "kind": "derives",
+      "track": "shared",
+      "premises": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "conclusion": "SC-DIAG-NORMAL",
+      "statement": "Exact shared-catalog optimum and a complete attaining rule can use balanced customer equilibria on every colocated layout.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "e-sc-offdiag-fpt",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-DIAG-NORMAL",
+        "EXACT-KAPPA"
+      ],
+      "conclusion": "SC-OFFDIAG-FPT",
+      "statement": "For positive rational shared catalogs, exact alpha and a complete rule in O(N^2[n+kappa_off 3^kappa_off]) rational operations with polynomial bit length.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "e-sc-two-site-exact",
+      "kind": "derives",
+      "track": "shared",
+      "premises": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "conclusion": "SC-TWO-SITE-EXACT",
+      "statement": "Every shared catalog of at most two sites admits an exact pure-location SPE for arbitrary overlap.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "e-sc-equal-reach-exact",
+      "kind": "derives",
+      "track": "shared",
+      "premises": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "conclusion": "SC-EQUAL-REACH-EXACT",
+      "statement": "Every shared catalog with all site reaches equal has an exact SPE under balanced offdiagonal customer continuation.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "e-sc-two-reach-sparse",
+      "kind": "derives",
+      "track": "shared",
+      "premises": [
+        "SC-DIAG-NORMAL",
+        "M1",
+        "M2"
+      ],
+      "conclusion": "SC-TWO-REACH-SPARSE",
+      "statement": "At most two reach values plus at most one shared client per distinct site pair guarantee exact SPE.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "e-sc-sparse-3",
+      "kind": "derives",
+      "track": "shared",
+      "premises": [
+        "M1",
+        "M2",
+        "M3",
+        "SC-TWO-SITE-EXACT"
+      ],
+      "conclusion": "SC-SPARSE-3",
+      "statement": "At most three shared sites and distinct-site overlap at most one have universal sharp supremum sqrt2.",
+      "refs": [
+        "research/current/shared/small_sparse_catalogs.md"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "e-sc-sparse-4",
+      "kind": "derives",
+      "track": "shared",
+      "premises": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "conclusion": "SC-SPARSE-4",
+      "statement": "At most four shared sites and distinct-site overlap at most one have universal sharp supremum cuberoot(4).",
+      "refs": [
+        "research/current/shared/small_sparse_catalogs.md"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "e-sc-sparse-5",
+      "kind": "derives",
+      "track": "shared",
+      "premises": [
+        "SC-PHI-E",
+        "SC-PHI-SHARP",
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "conclusion": "SC-SPARSE-5",
+      "statement": "Five-site restriction of corrected six-site lower family and universal shared upper give sharp phi.",
+      "refs": [
+        "research/current/shared/small_sparse_catalogs.md"
+      ],
+      "status": "new complete current proof, independently internally audited; unrefereed"
     }
   ]
 }

@@ -514,6 +514,75 @@
       "sources": [
         "history/source/notes/heterogeneous/sparse_long_cycles_prior.md"
       ]
+    },
+    {
+      "id": "shared_offdiag_normal_form",
+      "claims": [
+        "SC-DIAG-NORMAL",
+        "SC-OFFDIAG-FPT",
+        "SC-TWO-SITE-EXACT",
+        "SC-EQUAL-REACH-EXACT",
+        "SC-TWO-REACH-SPARSE"
+      ],
+      "status": "new complete current mathematical proof and exact code, internally audited; unrefereed",
+      "applies_when": [
+        "two labeled facilities share an identical finite nonempty catalog",
+        "positive atomic weights and existential exact independent-mixed NE per tagged layout",
+        "binary rational explicit incidence for algorithm; real weights for existence lemmas"
+      ],
+      "produces": "exact global optimum and full balanced-diagonal continuation; FPT in distinct-site overlap; exact small structural subclasses",
+      "implementation": [
+        "facility_spe/exact/shared_offdiag.py"
+      ],
+      "proof": [
+        "research/current/shared/instance_complexity_barriers.md"
+      ],
+      "tests": [
+        "tests/test_shared_offdiag.py"
+      ],
+      "records": [],
+      "examples": [
+        "examples/shared/tiny.json"
+      ],
+      "limit": "Verifier establishes attainment of an instance, not universal theorem or optimality by itself. General DEC_a complexity remains open. Equal-reach and two-reach conditions have separate scopes.",
+      "sources": [
+        "history/source/manuscripts/shared_phi/main.tex",
+        "history/source/notes/exact/bounded_overlap.md"
+      ]
+    },
+    {
+      "id": "shared_sparse_site_ladder",
+      "claims": [
+        "SC-SPARSE-3",
+        "SC-SPARSE-4",
+        "SC-SPARSE-5"
+      ],
+      "status": "new complete three/four site proof with independent internal attack; five-site restriction of known lower; unrefereed",
+      "applies_when": [
+        "two labeled facilities share a common catalog of at most 3, 4, or 5 sites respectively",
+        "each DISTINCT site pair shares at most one atomic customer; colocated layouts may have many",
+        "positive real weights for upper, positive rational lower families and complete exact NE continuations"
+      ],
+      "produces": "sharp universal catalog-size threshold 1, sqrt2, cuberoot(4), phi",
+      "implementation": [
+        "facility_spe/exact/shared_offdiag.py"
+      ],
+      "proof": [
+        "research/current/shared/small_sparse_catalogs.md",
+        "research/current/shared/sharp_phi_lower.md"
+      ],
+      "tests": [
+        "tests/test_shared_offdiag.py"
+      ],
+      "records": [],
+      "examples": [
+        "examples/shared/sharp_lower_rational.json",
+        "examples/shared/sparse_four_rational.json"
+      ],
+      "limit": "Finite comparisons do not prove the universal upper or rational families; priority against 2025 thesis and external peer review remain unchecked. Five-site lower is restricted prior six-site family.",
+      "sources": [
+        "history/source/manuscripts/shared_phi/main.tex"
+      ]
     }
   ]
 }

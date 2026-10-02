@@ -7,6 +7,14 @@
 | SC-PHI-E | 任意非空相同目录、正实权重、模型 (NE)，存在完整延续选择 | 存在因子 \(\phi=(1+\sqrt5)/2\) 的纯选址近似 SPE | 依赖共同目录菜单覆盖、全目录环论证、局部强弦。来源稿：[完整主稿](../../history/source/manuscripts/shared_phi/main.tex)已成文；现行重写：[G1–G3、L1–L2 全分支](shared/README.md)已写出；内部审读：已记录多轮逐式审读；外部评审：尚未进行。 |
 | SC-PHI-A | SC-PHI-E 且显式正二进制有理输入 | 构造该证书；主稿给出 \(O(|S|^2(n+1)^4)\) 次有理运算与多项式位长 | 依赖 SC-PHI-E、固定菜单与精确比较。来源稿：构造与位复杂度已成文；现行重写：[局部强弦](shared/local_chord_full.md)和[算法](shared/algorithm.md)已写出；实现：已有构造器；内部审读：已记录；外部评审：尚未进行。 |
 | SC-PHI-SHARP | 同一共同目录**正有理数**实例类 | 最优普遍阈值（上确界）恰为 \(\phi\) | 必须联合 SC-PHI-E 与同类下界。来源稿：已发表六地点构造；现行重写：[共同目录六地点下界](shared/sharp_phi_lower.md)重算全部布局、明确修正源图的一项权重，并给统一正有理扰动半径；内部审读：当前证明与有限整数例已作精确核对，仍可接受进一步反例审查；外部评审：本仓库修正版未获评审。 |
+| SC-DIAG-NORMAL | 两设施同一非空有限目录、正实权、模型 (NE)、逐布局独立选择完整精确延续；零 reach 允许 | 实例最优倍率等于同址对半候选 $\min_t\max(1,2H(t)/R_t)$ 与异址真实 NE 候选的最小值；存在最优证书在**每个**同址布局对半 | 依赖坐标极小值判别、标签反射、对半同址 NE；失效的异址对半惩罚改选同址候选。[全文](shared/instance_complexity_barriers.md)；本轮独立审读，外部评审未进行。 |
+| SC-OFFDIAG-FPT | SC-DIAG-NORMAL 且显式覆盖、正二进制有理权；$\kappa_{\ne}=\max_{s\ne t}|C_s\cap C_t|$，单地点取零 | $O(|S|^2[n+\kappa_{\ne}3^{\kappa_{\ne}}])$ 次有理运算求**实例最优**有理倍率及完整精确 NE 证书，位长多项式；异址交叠至多 1 时多项式 | 依赖同址正规形与异址支持区间枚举；[证明](shared/instance_complexity_barriers.md)、[规范实现](../../facility_spe/exact/shared_offdiag.py)、[独立对照](../../tests/test_shared_offdiag.py)。内部证明与有限代码验收分开；外部评审未进行。 |
+| SC-TWO-SITE-EXACT | 共同目录至多两个地点，任意正实权与交叠人数，完整精确客户续局 | 存在因子 1 的纯选址 SPE | 异址取任一纯 NE、标签反射、同址对半；三个可选布局分支逐项证。[结构边界](shared/instance_complexity_barriers.md)；本轮内部审读、外部未审。 |
+| SC-EQUAL-REACH-EXACT | 共同目录所有地点 reach 相等，任意正实权与交叠人数 | 存在因子 1 的纯选址 SPE | 所有异址共有客户对半混合 NE，选重叠总重最小的地点对。[结构边界](shared/instance_complexity_barriers.md)；本轮内部审读、外部未审。 |
+| SC-TWO-REACH-SPARSE | 共同目录每对不同地点最多一共有客户且 reach 至多两种；正实权与完整精确延续 | 存在因子 1 的纯选址 SPE | 高高、高潮低、低低三支异址威胁比较，必要时用 SC-DIAG-NORMAL 改选同址。[结构边界](shared/instance_complexity_barriers.md)；新内部证明，外部未审。 |
+| SC-SPARSE-3 | 共同目录至多三地点、每对**不同**地点至多一共有客户，正实权上界及正有理权同类下界 | 最优普遍倍率上确界为 $\sqrt2$ | 固定纯异址与重客户同址菜单的三地点矛盾；三客户匹配族排除所有布局/续局。[尖锐分类](shared/small_sparse_catalogs.md)；独立内部审读与精确有限样本，外部未审。 |
+| SC-SPARSE-4 | 同上但至多四地点；正实权上界、正有理权同类下界 | 最优普遍倍率上确界为 $\sqrt[3]4$ | 四地点威胁递推得到 $B>rD>r^2C/2>r^3B/4=B$，五客户正有理参数族排除全部十种无序布局。[尖锐分类](shared/small_sparse_catalogs.md)；两路独立内部审读，外部未审。 |
+| SC-SPARSE-5 | 同上但至多五地点 | 最优普遍倍率上确界为 $\phi$ | 上界来自 SC-PHI-E；下界只把既有六地点家族的选址目录限制至前五地点、保留六个客户，复用仍合法的十个异址与五个同址排除。[尖锐分类](shared/small_sparse_catalogs.md)、[原下界](shared/sharp_phi_lower.md)；内部审读与实例核对，外部未审。 |
 | LOCAL-CHORD-IFF / POLY | 一个固定局部布局，\(U\ge V>\phi U/2\)、公共重 \(C<V/\phi\) 及双配额 | 最大原子二分判别；满足时多项式构造配额 NE | 来源稿：主稿附录已成文；现行重写：[局部强弦全文](shared/local_chord_full.md)覆盖交换、修复、退化端点及位复杂度；内部审读：已记录逐式审读；外部评审：尚未进行。 |
 | HC-2-UP | 任意两非空目录（可异构）、正有理权重；纯客户延续 | 四个受保护种子/布局、全目录威胁给出因子 2 | 合法双色弦与任意环两类矛盾；已实现、内部候选。[证明](heterogeneous/README.md) |
 | HC-2-LOW | 对每个 \(\alpha<2\)，足够大的正整数族；两边各两地点、可不相交 | 某异构实例最优因子超过 \(\alpha\)，局部严格唯一纯 NE | 六顶点族逐布局收益矩阵；内部候选。[下界](heterogeneous/README.md) |

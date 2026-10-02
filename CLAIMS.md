@@ -5,6 +5,9 @@
 | ID / 问题 | 严格范围与结论 | 状态及详情 |
 | --- | --- | --- |
 | SC-PHI-E/A/SHARP | 两设施、共同非空目录、正权原子客户、强制服务、独立混合精确客户 NE；存在完整续局下普遍黄金比，编码有理输入有多项式构造，下界族使阈值尖锐 | 现行全文内部审读；外部评审未记录。[共享分支](research/current/shared/README.md) |
+| SC-DIAG-NORMAL / SC-OFFDIAG-FPT | 双设施共同目录；同址收益可对半，实例最优的精确值与完整证书只需异址真实坐标极小值；正有理输入指数参数为异址最大交叠人数 $\kappa_{\ne}$ | 新严格推导、实现和独立对照；不转移到异构目录。[证明](research/current/shared/instance_complexity_barriers.md) |
+| SC-TWO-SITE-EXACT / SC-EQUAL-REACH-EXACT / SC-TWO-REACH-SPARSE | 前两项分别为共同目录至多两地点、全体地点 reach 相等；第三项再要求每对异址至多一公共客户且 reach 至多两种 | 各存在精确 SPE；第三项不可删除单交叠假设。[证明](research/current/shared/instance_complexity_barriers.md) |
+| SC-SPARSE-3 / SC-SPARSE-4 / SC-SPARSE-5 | 同一共同目录、每对**不同**地点至多共享一名客户；地点数分别至多 3/4/5 | 尖锐普遍上确界依次 $\sqrt2,\sqrt[3]4,\phi$；三、四地点新上界与正有理下界，五地点下界沿用原六地点族剪枝。[证明](research/current/shared/small_sparse_catalogs.md) |
 | HC-2-UP/LOW | 两设施任意非空异构目录；因子 2 的纯续局上界与逼近 2 的另一下界族 | 内部候选，尚无外部评审。[异构分支](research/current/heterogeneous/README.md) |
 | HC-RHO | 每跨对至多一公共客户，**至少一方目录至多两地点**；普遍尖锐 $\rho=2\cos(\pi/7)$ | 现行逐分支内部证明，外部评审未记录。[证明](research/current/heterogeneous/restricted_rho.md) |
 | SPARSE-LONG-CYCLE | 对每个 $n\ge2$ 存在两目录各 $n$ 地点、单交叠、正整数权重且各格唯一 NE 的实例，全目录真实极小收益最佳回应构成遍历全部 $2n$ 地点的唯一环 | 本轮新写的显式构造和代数证明，内部算术复核；文献新颖性与外部评审未核。[证明](research/current/heterogeneous/sparse_long_cycles.md) |

@@ -14,7 +14,11 @@
 | [local_chord_full.md](local_chord_full.md) | L1/L2：局部强弦的分支、端点交换与多项式迭代 |
 | [sharp_phi_lower.md](sharp_phi_lower.md) | SC-PHI-SHARP：共同目录的六地点下界、全布局偏离与统一有理扰动 |
 | [algorithm.md](algorithm.md) | 固定 P/E/T/C 菜单、搜索伪代码、验证语义、复杂度和实现边界 |
+| [instance_complexity_barriers.md](instance_complexity_barriers.md) | 同址正规形与异址交叠参数精确求解；两地点、等 reach 及稀疏两 reach 精确 SPE |
+| [small_sparse_catalogs.md](small_sparse_catalogs.md) | 不同地点单交叠时，最多 1/2/3/4/5 地点的尖锐阈值 $1,1,\sqrt2,\sqrt[3]4,\phi$ |
 
 统一研究入口使用 [公共模型](../model.md) 和 [主张登记](../claims.md)。本分支固定目录相同、允许同址、强制顾客参与、顾客独立混合等假设；异质目录下界或任意凸成本扩展必须另外立项。
 
 各编号分支已在对应页面按前提、实际不等式、固定菜单成员及边界分支逐项重写；[proof.md](proof.md)保留证明接口与阅读顺序。新的数学主攻方向见[下一阶段路线](../../ROADMAP.md)。单实例证书的有效性可独立核验，但不能代替普遍证明。
+
+[共同目录实例最优求解器](../../../facility_spe/exact/shared_offdiag.py)只枚举异址客户支持，给出完整精确续局证书；[独立比较测试](../../../tests/test_shared_offdiag.py)覆盖大同址交叠、零收益和平局。新增证明与计算经过内部交叉审查，外部评审及文献优先权仍待核定。
