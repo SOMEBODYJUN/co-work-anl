@@ -9,6 +9,7 @@
 **研究状态：**共同目录的黄金比上界已有完整主稿、现行 Markdown 全分支重写及多轮内部审读；[六地点共同目录下界](research/current/shared/sharp_phi_lower.md)现已补出全布局与有理化证明，二者联合给出尖锐阈值。异构目录的因子 2 构造有成文主稿。受限稀疏 ρ 命题已有逐分支重写，[双方任意长单交叠的 ρ 上界](research/current/heterogeneous/sparse_unbounded_rho.md)本轮给出新全称证明；与原 2×2 下界合并即为同类尖锐阈值。程序能为具体输入生成证书；共享证书另有[独立定义级检查器](facility_spe/cli/verify_phi.py)。以上都尚未经过外部同行评审；内部证明、实例证书与学术发表分别标注。参见[命题与状态登记](research/current/claims.md)及[五轴状态表](research/review_status.json)。
 
 **任意 k 的高效构造关口（2026-10-02）：**[计算前沿](research/current/multi_facility/polytime_frontier.md)将因子 2 存在性证明拆为两项算法义务。给定符合预算的在轨状态，偏离后的客户精确纯 NE 可用已发表的受限并行机算法在输入位长多项式时间完成；而原证明所用的全局字典序精确选址，连相同 reach 的共同目录也强 NP 难。四项预算只需要多项式邻域的局部最优，故有一个明确的 PLS 搜索上界，但目前没有多项式收敛界。真正缺口是同时找到可计算的在轨选址与客户 NE；原证明的全局最优不能直接当算法。
+进一步的 SC-K-GREEDY-BUDGET 用多项式贪心造出**全部**转移预算；一个四客户实例显示在固定选址上将客户修到精确 NE 会破坏原预算。它把缺口集中到两者的**兼容构造**，仍未给出全 $k$ 高效 2 倍算法。
 
 ## 先判断输入属于哪条命题
 
@@ -41,7 +42,7 @@
 
 关键 dependency、attacks 和 scope 边可交互查看[数学超图](research/index.html)，精确文字与证据状态以[现行命题登记](research/current/claims.md)和证明页为准。
 
-新增计算依赖：受限同速并行机 Nashification + 宏客户隔离 → MF-PURE-CAP-POLY；3-PARTITION → SC-K-LEXMAX-STRONG-HARD（只攻击精确全局选址）；单客户改派与单设施迁移的有限邻域 → SC-K-LOCAL-PLS → 条件性多项式离轨完成。这些边均在[计算前沿](research/current/multi_facility/polytime_frontier.md)证明，不能用精确 lexmax 强困难性推出完整因子 2 构造困难。
+新增计算依赖：受限同速并行机 Nashification + 宏客户隔离 → MF-PURE-CAP-POLY；3-PARTITION → SC-K-LEXMAX-STRONG-HARD（只攻击精确全局选址）；按末次加座时序的贪心比较 → SC-K-GREEDY-BUDGET；单客户改派与单设施迁移的有限邻域 → SC-K-LOCAL-PLS → 条件性多项式离轨完成。这些边均在[计算前沿](research/current/multi_facility/polytime_frontier.md)证明，不能用精确 lexmax 强困难性推出完整因子 2 构造困难。
 
 ## 如何追踪一项研究结论
 

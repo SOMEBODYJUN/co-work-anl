@@ -144,6 +144,23 @@ vanishing-source cases, zero-reach and bit bounds are in
 derivation, external review unrecorded; PLS membership does not imply
 polynomial convergence and does not establish PLS hardness of the target.
 
+## SC-K-GREEDY-BUDGET -- polynomial construction of transfer budgets
+
+**Statement:** for any positive-reach explicit rational MF-MODEL instance,
+iteratively choose the occupied site score W_t/(q_t+1) or unoccupied site's
+current new-coverage score, assign newly covered customers on opening a site,
+and repeat until k facilities have been inserted. The resulting feasible
+site-uniform profile has positive loads and satisfies all four transfer
+inequalities (5)--(8). It need not be a client NE.
+
+**Proof/dependencies:** at the last insertion to each source site, every
+other occupied or unoccupied site's then-score is at most its final a.
+When the source multiplicity is one, its assigned customers were then
+uncovered; the two disjoint inclusion arguments yield the disappearing-site
+terms. Full proof and a three-site four-customer fixed-layout NE obstruction:
+[polytime frontier](polytime_frontier.md). **Status:** internally checked direct
+proof; no implementation, external review, or factor-two algorithm claimed.
+
 ## SC-K-SYMMETRIC-MENU-OBSTRUCTION -- bad menus are not lower bounds
 
 **Statement:** for every integer q>=3, the explicit three-site/three-client

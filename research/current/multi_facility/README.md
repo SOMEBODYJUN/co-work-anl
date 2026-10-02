@@ -30,6 +30,9 @@ restricted identical-link Nashification theorem. It proves
 `SC-K-LOCAL-PLS` shows a polynomial neighborhood local maximum is enough for
 all on-path NE and transfer budgets. Neither is a polynomial algorithm for
 finding that local maximum, nor hardness of finding some factor-two witness.
+The separate `SC-K-GREEDY-BUDGET` procedure already constructs all budgets
+in polynomial time, but a four-customer input proves that fixing its layout
+and Nashifying on path can destroy those sufficient inequalities.
 
 The proof deliberately changes the type of continuation: on path it uses
 independent mixing inside co-location groups; off path it isolates giant atoms

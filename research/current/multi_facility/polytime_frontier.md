@@ -155,9 +155,10 @@ catalog site. For a facility move, construct one canonical new assignment:
   customers outside the old site.
 
 These rules make each neighbor legal in O(nm) elementary incidence checks.
-There are at most n(m-1)+k(m-1) neighbors. Client-neighbor improvement is
-equivalent to (W_t-w_i)/q_t>W_u/q_u, the exact conditional NE violation from
-uniform_two.md (3). Each violated facility budget (5)--(8) likewise makes
+There are at most n(m-1)+k(m-1) neighbors. If a customer violates the exact
+conditional NE inequality, (W_t-w_i)/q_t>W_u/q_u, its transfer neighbor
+strictly improves the sorted vector by uniform_two.md (3). The converse is
+unneeded and can fail at a customer cost tie. Each violated facility budget (5)--(8) likewise makes
 its corresponding canonical facility-move neighbor **strictly** improve the
 sorted load vector, by the same coordinate argument as Sections 3.1--3.2;
 the least-index redistribution only increases surviving loads. For (7), the
@@ -184,6 +185,63 @@ log H=O(k log k), and log V=O(k log(M+1)). The initial state, neighborhood
 scan and objective comparison meet the usual PLS conditions. They do not
 bound the number of improving transitions; using this search naively might
 take exponentially many iterations.
+
+## SC-K-GREEDY-BUDGET: polynomial transfer budgets alone
+
+**Statement.** A deterministic polynomial-time greedy procedure constructs a
+site-uniform *feasible* profile with positive loads and all four transfer
+inequalities (5)--(8) of uniform_two.md, for every positive-reach instance.
+It does **not** generally produce an exact on-path customer NE. Neither this
+claim nor the counterexample below is a factor-two algorithm.
+
+**Procedure.** Initially there are no facilities and no assigned customers.
+At each of k iterations give an already occupied site t the score
+W_t/(q_t+1); give an unoccupied site r the score equal to the weight of its
+currently uncovered customers. Choose a site with greatest score, breaking
+ties by site index. If it was unoccupied, assign to it every previously
+uncovered customer it covers. If it was occupied, keep all assignments.
+Insert one labeled facility there. All comparisons are rational sums and
+quotients with polynomial bit length; a direct implementation takes
+O(kmn) elementary incidence/arithmetic operations. With positive maximum
+reach, every selected score is positive (after the first insertion, its
+occupied site itself always has a positive score), hence every final
+facility load is positive.
+
+**Proof of every budget.** Fix a final source facility f at site u, and
+look at the instant just *before the last facility was inserted at u*.
+The score chosen at that instant was exactly its final load a=W_u/q_u:
+the site's assigned customer set never changes after it first opens.
+
+For a different final occupied site t already occupied at that instant,
+its assigned weight was its final W_t and its score was
+W_t/(q_t^{old}+1)<=a. Since its multiplicity can only grow,
+W_t<=(q_t+1)a. If q_u=1, the customers J_u were all uncovered just before
+u first opened, whereas every customer covered by t was then already
+covered, so J_u cap C_t is empty. This also proves the stronger (7).
+
+For a final occupied t that was unoccupied at that instant, its earlier
+new-coverage score R_t^{old} was at most a. Its final assigned customers J_t
+were then all uncovered, so W_t<=R_t^{old}<=a. When q_u=1, the additionally
+relevant J_u cap C_t were also then uncovered and are disjoint from J_t;
+therefore W_t+w(J_u cap C_t)<=R_t^{old}<=a<=(q_t+1)a.
+
+Finally, any site r unoccupied at the end was unoccupied at that instant.
+Its then-uncovered customers contain the final genuinely newly coverable
+customers counted by N_r; if q_u=1, they also contain the disjoint set
+J_u cap C_r. Thus its score at that instant gives respectively
+N_r<=a or N_r+w(J_u cap C_r)<=a. These are (6) and (8).
+
+**Fixed-layout interface counterexample.** Take k=2, sites A,B,C and four
+customers of weights (6,3,5,2) with respective covered site sets
+({A,C},{A,B},{B},{C}). The site reaches are (9,8,8). Greedy first opens A;
+the next scores are 9/2 for A, 5 for B, and 2 for C, so it opens B and
+assigns customers (6,3) to A and 5 to B. Loads are (9,5) and every budget
+above holds. The customer of weight 3 has conditional cost 9 at A but 8 at B;
+it strictly moves to B. The fixed-layout customer NE is unique, with loads
+(6,8). For the facility at A, the now-required empty-target C budget is
+N_C+w(J_A cap C_C)=2+6=8>6=a. The actual deviation earns 8<=2a,
+so this only refutes preservation of the *sufficient budget* at that layout.
+It does not refute factor two for the instance.
 
 ## Sources and review status
 

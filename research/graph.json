@@ -1470,6 +1470,18 @@
         "research/current/multi_facility/claims.md"
       ],
       "status": "complete direct internal proof; unrefereed"
+    },
+    {
+      "id": "SC-K-GREEDY-BUDGET",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Polynomial greedy construction of all transfer budgets",
+      "detail": "For any positive-reach rational common-catalog instance, repeated maximum of occupied-site W/(q+1) and unoccupied-site new-coverage weight produces positive facility loads and all four orphan-aware transfer budgets in polynomial time; it can fail on-path client NE.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof and independent attack; unrefereed"
     }
   ],
   "hyperedges": [
@@ -2913,6 +2925,35 @@
       "statement": "Hardness of exact global lexmax selection does not imply hardness of finding a factor-two witness; the reduction family itself has an easy exact SPE.",
       "refs": [
         "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "scope-limited proof"
+    },
+    {
+      "id": "e-mf-greedy-budget",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL"
+      ],
+      "conclusion": "SC-K-GREEDY-BUDGET",
+      "statement": "At the last insertion to each source site, every target score is at most the source final load; new-coverage inclusion handles both vanishing-source overlap terms.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-greedy-ne-limit",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-LOCAL-PLS",
+      "statement": "Four positive integer clients at three sites yield a budget-feasible greedy state whose fixed-layout unique NE violates an orphan-aware budget; budget construction alone does not solve the local joint search.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
       ],
       "status": "scope-limited proof"
     }
