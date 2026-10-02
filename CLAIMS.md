@@ -7,6 +7,9 @@
 | SC-PHI-E/A/SHARP | 两设施、共同非空目录、正权原子客户、强制服务、独立混合精确客户 NE；存在完整续局下普遍黄金比，编码有理输入有多项式构造，下界族使阈值尖锐 | 现行全文内部审读；外部评审未记录。[共享分支](research/current/shared/README.md) |
 | SC-DIAG-NORMAL / SC-OFFDIAG-FPT | 双设施共同目录；同址收益可对半，实例最优的精确值与完整证书只需异址真实坐标极小值；正有理输入指数参数为异址最大交叠人数 $\kappa_{\ne}$ | 新严格推导、实现和独立对照；不转移到异构目录。[证明](research/current/shared/instance_complexity_barriers.md) |
 | SC-TWO-SITE-EXACT / SC-EQUAL-REACH-EXACT / SC-TWO-REACH-SPARSE | 前两项分别为共同目录至多两地点、全体地点 reach 相等；第三项再要求每对异址至多一公共客户且 reach 至多两种 | 各存在精确 SPE；第三项不可删除单交叠假设。[证明](research/current/shared/instance_complexity_barriers.md) |
+| SC-TWO-REACH-MULTI-NO | 共同目录三地点、两种 reach、五名正整数客户；允许某异址对两名共有客户 | 完整 NE 枚举给 $\alpha^*=14/13$，严格反驳删除上述单交叠条件。[构造](research/current/shared/instance_complexity_barriers.md) |
+| SC-THREE-DEC1-HARD / SC-THREE-DECa-HARD | 共同目录恰三地点、显式正整数权、完整逐布局精确混合 NE；固定有理 $a=1$ 或 $1<a<(1+\sqrt3)/2$ | 全局 $\alpha^*\le a$ 弱 NP 完全；不是从局部难性直接推出，须靠覆盖六类布局的守卫。$a\ge(1+\sqrt3)/2$ 仍开放。[归约](research/current/shared/three_site_exact_hardness.md) |
+| SC-GRANULAR-APPROX / LOCAL-ATOM-WARDROP-k | 前者为两设施共同目录、异址最大共有客户单体权重 $\theta<R_{\max}$；后者为固定 $k$ 设施局部布局、任意原子与 Wardrop 客户 NE | 前者构造倍率至多 $(R_{\max}+\theta)/(R_{\max}-\theta)$ 的完整续局；后者给尖锐的每坐标误差 $(k-1)\theta/2$，**不**推出全 $k$ SPE。[两设施](research/current/shared/atomic_granularity.md)、[局部一般化](research/current/local_and_exact/atomic_wardrop_gap.md) |
 | SC-SPARSE-3 / SC-SPARSE-4 / SC-SPARSE-5 | 同一共同目录、每对**不同**地点至多共享一名客户；地点数分别至多 3/4/5 | 尖锐普遍上确界依次 $\sqrt2,\sqrt[3]4,\phi$；三、四地点新上界与正有理下界，五地点下界沿用原六地点族剪枝。[证明](research/current/shared/small_sparse_catalogs.md) |
 | HC-2-UP/LOW | 两设施任意非空异构目录；因子 2 的纯续局上界与逼近 2 的另一下界族 | 内部候选，尚无外部评审。[异构分支](research/current/heterogeneous/README.md) |
 | HC-RHO | 每跨对至多一公共客户，**至少一方目录至多两地点**；普遍尖锐 $\rho=2\cos(\pi/7)$ | 现行逐分支内部证明，外部评审未记录。[证明](research/current/heterogeneous/restricted_rho.md) |

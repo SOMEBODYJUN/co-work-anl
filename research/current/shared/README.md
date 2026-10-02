@@ -16,6 +16,8 @@
 | [algorithm.md](algorithm.md) | 固定 P/E/T/C 菜单、搜索伪代码、验证语义、复杂度和实现边界 |
 | [instance_complexity_barriers.md](instance_complexity_barriers.md) | 同址正规形与异址交叠参数精确求解；两地点、等 reach 及稀疏两 reach 精确 SPE |
 | [small_sparse_catalogs.md](small_sparse_catalogs.md) | 不同地点单交叠时，最多 1/2/3/4/5 地点的尖锐阈值 $1,1,\sqrt2,\sqrt[3]4,\phi$ |
+| [three_site_exact_hardness.md](three_site_exact_hardness.md) | 三地点共同目录的全布局弱 NP 完全性：每个固定有理 $1\le a<(1+\sqrt3)/2$，以及再往上该守卫的严格权重预算障碍 |
+| [atomic_granularity.md](atomic_granularity.md) | 两设施可拆分对照与原子局部误差给出实例敏感的完整近似续局；宏原子是固定 $a>1$ NO 输入的必要条件 |
 
 统一研究入口使用 [公共模型](../model.md) 和 [主张登记](../claims.md)。本分支固定目录相同、允许同址、强制顾客参与、顾客独立混合等假设；异质目录下界或任意凸成本扩展必须另外立项。
 

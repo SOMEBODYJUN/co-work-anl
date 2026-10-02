@@ -1068,6 +1068,89 @@
         "research/review_status.json"
       ],
       "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "K-LOCAL-NE",
+      "kind": "definition",
+      "track": "local",
+      "title": "k-facility atomic and Wardrop local loads",
+      "detail": "Fixed layout, mandatory service, independent atomic mixed NE and splittable Wardrop flows for the same customers.",
+      "refs": [
+        "research/current/local_and_exact/atomic_wardrop_gap.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "W-SHARED-EXACT",
+      "kind": "lemma",
+      "track": "shared",
+      "title": "Known splittable shared-catalog equilibrium",
+      "detail": "For two facilities with identical finite catalog, a lexicographic Wardrop payoff potential gives exact facility equilibrium; the general splittable SPE is known in IJCAI 2021.",
+      "refs": [
+        "research/current/shared/atomic_granularity.md"
+      ],
+      "status": "known comparator, self-contained two-facility proof"
+    },
+    {
+      "id": "LOCAL-ATOM-WARDROP-k",
+      "kind": "claim",
+      "track": "local",
+      "title": "Sharp k-facility local atom-Wardrop gap",
+      "detail": "For any k-facility layout and any exact atom/nonatomic equilibria, every load differs by at most (k-1)theta/2; chain clients attain equality. No global SPE conclusion.",
+      "refs": [
+        "research/current/local_and_exact/atomic_wardrop_gap.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete proof and independent internal attack; unrefereed"
+    },
+    {
+      "id": "SC-GRANULAR-APPROX",
+      "kind": "claim",
+      "track": "shared",
+      "title": "Atomic granularity guarantee",
+      "detail": "Two shared-catalog facilities, Rmax>theta (max atom shared by distinct sites): a full exact atomic continuation exists with factor <=(Rmax+theta)/(Rmax-theta).",
+      "refs": [
+        "research/current/shared/atomic_granularity.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete proof and independent internal attack; unrefereed"
+    },
+    {
+      "id": "SC-THREE-DEC1-HARD",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Three-site exact SPE decision hardness",
+      "detail": "Identical three-site catalogs and positive integer atomic weights: DEC_1 is weakly NP-complete with existential full exact mixed NE continuation.",
+      "refs": [
+        "research/current/shared/three_site_exact_hardness.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete proof and independent internal attack; unrefereed"
+    },
+    {
+      "id": "SC-THREE-DECa-HARD",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Three-site fixed subcritical decision hardness",
+      "detail": "For every fixed rational 1<a<(1+sqrt(3))/2, three-site shared-catalog DEC_a is weakly NP-complete; endpoint and variable-a uniformity excluded.",
+      "refs": [
+        "research/current/shared/three_site_exact_hardness.md",
+        "research/review_status.json"
+      ],
+      "status": "new complete proof and independent internal attack; unrefereed"
+    },
+    {
+      "id": "SC-TWO-REACH-MULTI-NO",
+      "kind": "claim",
+      "track": "shared",
+      "title": "Two reach values without sparse overlap can fail exact SPE",
+      "detail": "Five positive integer customers on three shared sites of reaches (20,20,16) have exact instance factor 14/13.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md",
+        "examples/shared/two_reach_multi_no.json",
+        "research/review_status.json"
+      ],
+      "status": "new complete proof and independent internal attack; unrefereed"
     }
   ],
   "hyperedges": [
@@ -2120,6 +2203,105 @@
         "research/current/shared/small_sparse_catalogs.md"
       ],
       "status": "new complete current proof, independently internally audited; unrefereed"
+    },
+    {
+      "id": "e-local-atom-wardrop-k",
+      "kind": "derives",
+      "track": "local",
+      "premises": [
+        "K-LOCAL-NE"
+      ],
+      "conclusion": "LOCAL-ATOM-WARDROP-k",
+      "statement": "Transportation of atomic probabilities to Wardrop fractions bounds sorted load discrepancy and a chain is sharp.",
+      "refs": [
+        "research/current/local_and_exact/atomic_wardrop_gap.md"
+      ],
+      "status": "new complete proof and independent internal attack; unrefereed"
+    },
+    {
+      "id": "e-sc-granular",
+      "kind": "derives",
+      "track": "shared",
+      "premises": [
+        "M1",
+        "M2",
+        "M3",
+        "W-SHARED-EXACT",
+        "LOCAL-ATOM-WARDROP-k"
+      ],
+      "conclusion": "SC-GRANULAR-APPROX",
+      "statement": "Two-facility local theta/2 discrepancy around an exact splittable location equilibrium yields a full atomic guarantee.",
+      "refs": [
+        "research/current/shared/atomic_granularity.md"
+      ],
+      "status": "new complete proof and independent internal attack; unrefereed"
+    },
+    {
+      "id": "e-sc-three-dec1",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "M1",
+        "M2",
+        "M3",
+        "LOCAL-HARD",
+        "SC-DIAG-NORMAL"
+      ],
+      "conclusion": "SC-THREE-DEC1-HARD",
+      "statement": "Three-site cover embeds local extremum while every colocated and other distinct layout is guarded; NP membership and integer pseudo-polynomial DP complete weak NP classification.",
+      "refs": [
+        "research/current/shared/three_site_exact_hardness.md"
+      ],
+      "status": "new complete proof and independent internal attack; unrefereed"
+    },
+    {
+      "id": "e-sc-three-deca",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "M1",
+        "M2",
+        "M3",
+        "LOCAL-HARD",
+        "SC-DIAG-NORMAL"
+      ],
+      "conclusion": "SC-THREE-DECa-HARD",
+      "statement": "For each fixed rational a below sigma, a different-reach three-site guard gives a strict full-layout YES/NO reduction.",
+      "refs": [
+        "research/current/shared/three_site_exact_hardness.md"
+      ],
+      "status": "new complete proof and independent internal attack; unrefereed"
+    },
+    {
+      "id": "e-sc-two-reach-multi-boundary",
+      "kind": "limits",
+      "track": "shared",
+      "premises": [
+        "SC-TWO-REACH-MULTI-NO"
+      ],
+      "conclusion": "SC-TWO-REACH-SPARSE",
+      "statement": "Removing distinct-pair single overlap from the exact two-reach theorem is false, even with three sites.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md"
+      ],
+      "status": "new complete proof and independent internal attack; unrefereed"
+    },
+    {
+      "id": "e-sc-two-reach-multi-example",
+      "kind": "derives",
+      "track": "shared",
+      "premises": [
+        "M1",
+        "M2",
+        "M3",
+        "SC-DIAG-NORMAL"
+      ],
+      "conclusion": "SC-TWO-REACH-MULTI-NO",
+      "statement": "Complete local spectra of the five positive integer clients and the balanced diagonal normal form yield exact factor 14/13.",
+      "refs": [
+        "research/current/shared/instance_complexity_barriers.md"
+      ],
+      "status": "new complete proof and independent internal attack; unrefereed"
     }
   ]
 }

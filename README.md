@@ -2,9 +2,9 @@
 
 这里的**现行研究资产是重新写出的数学说明**，集中在 [research/current](research/current)；可执行算法集中在 [facility_spe](facility_spe)。原始手稿、旧证明笔记和上一轮整理稿进入 [history](history)。旧的 astra_alg、astra_local、astra_ring、asym_research 根目录已退出当前树；[迁移记录](research/path_migration.json)保留来源，而不让旧实验命名决定未来结构。
 
-**Research Goal / 当前前沿：**从双设施选址的精确客户均衡与全部偏离续局出发，找能跨模型规模复用的近似 SPE 结构。双侧任意长、每跨对最多一共有客户时的尖锐因子现已由 [SPARSE-RHO-ALL](research/current/heterogeneous/sparse_unbounded_rho.md) 的内部证明闭合为 $\rho$；任意设施数 $k$ 的统一近似因子或随 $k$ 增长下界仍开放。立方费用的跨成本机制和实例最优倍率的计算复杂度是有条件候选，不是封闭的题目清单。[实时研究状态](RESEARCH_STATE.md)、[命题入口](CLAIMS.md)、[失败路线](FAILED_ROUTES.md)与[路线图](research/ROADMAP.md)一起定位下一个证明义务。
+**Research Goal / 当前前沿：**从双设施选址的精确客户均衡与全部偏离续局出发，找能跨模型规模复用的近似 SPE 结构。双侧任意长、每跨对最多一共有客户时的尖锐因子现已由 [SPARSE-RHO-ALL](research/current/heterogeneous/sparse_unbounded_rho.md) 的内部证明闭合为 $\rho$；任意设施数 $k$ 的统一近似因子或随 $k$ 增长下界仍开放。实例最优倍率判定已有固定 $1\le a<(1+\sqrt3)/2$ 的三地点弱 NP 完全性，下一段直到 $\phi$ 仍开放；立方费用的跨成本机制是另一条件性候选。[实时研究状态](RESEARCH_STATE.md)、[命题入口](CLAIMS.md)、[失败路线](FAILED_ROUTES.md)与[路线图](research/ROADMAP.md)一起定位下一个证明义务。
 
-**A 篇后续（2026-10-02）：** [同址正规形](research/current/shared/instance_complexity_barriers.md)把共同目录**实例最优**精确算法的指数参数改为异址交叠 $\kappa_{\ne}$，并构造完整同址对半续局；[单交叠小目录阶梯](research/current/shared/small_sparse_catalogs.md)得到“至多 $N$ 个共同地点”的紧确普遍因子 $N=1,2:1$，$N=3:\sqrt2$，$N=4:\sqrt[3]4$，$N\ge5:\phi$。三、四地点结果有匹配的正有理下界；五地点把原六地点下界的可选目录缩小，未新造 $\phi$ 反例。它们均是本库模型的内部证明，尚无外部评审或完整新颖性核查。无界异址交叠下固定 $a<\phi$ 的全局判定复杂度仍开放，已记录两种失败归约的稳定逃逸机制。
+**A 篇后续（2026-10-02）：** [同址正规形](research/current/shared/instance_complexity_barriers.md)把共同目录**实例最优**精确算法的指数参数改为异址交叠 $\kappa_{\ne}$，并构造完整同址对半续局；[单交叠小目录阶梯](research/current/shared/small_sparse_catalogs.md)得到“至多 $N$ 个共同地点”的紧确普遍因子 $N=1,2:1$，$N=3:\sqrt2$，$N=4:\sqrt[3]4$，$N\ge5:\phi$。三、四地点结果有匹配的正有理下界；五地点把原六地点下界的可选目录缩小。新的[三地点全局归约](research/current/shared/three_site_exact_hardness.md)证明每个固定有理 $1\le a<(1+\sqrt3)/2$ 的实例最优倍率判定**弱 NP 完全**；[原子粒度桥](research/current/shared/atomic_granularity.md)给小异址单体交叠时优于最坏 $\phi$ 的可构造实例保证。它们均是内部证明，尚无外部评审或完整新颖性核查；固定 $(1+\sqrt3)/2\le a<\phi$ 的全局判定仍开放。
 
 **研究状态：**共同目录的黄金比上界已有完整主稿、现行 Markdown 全分支重写及多轮内部审读；[六地点共同目录下界](research/current/shared/sharp_phi_lower.md)现已补出全布局与有理化证明，二者联合给出尖锐阈值。异构目录的因子 2 构造有成文主稿。受限稀疏 ρ 命题已有逐分支重写，[双方任意长单交叠的 ρ 上界](research/current/heterogeneous/sparse_unbounded_rho.md)本轮给出新全称证明；与原 2×2 下界合并即为同类尖锐阈值。程序能为具体输入生成证书；共享证书另有[独立定义级检查器](facility_spe/cli/verify_phi.py)。以上都尚未经过外部同行评审；内部证明、实例证书与学术发表分别标注。参见[命题与状态登记](research/current/claims.md)及[五轴状态表](research/review_status.json)。
 
@@ -25,6 +25,8 @@
 - 输入的带标签布局、客户覆盖、正权原子与实际负载费用在 [model.md §1](research/current/model.md) 定义；两设施公共客户的独立混合 NE 在 §2 化为条件成本差。§3 对全部布局的 NE 选择定义完整续局及真实的全目录偏离威胁。
 - `model/NE` → 局部支持几何 → 共同目录固定菜单与全目录环 → 局部强弦 → `SC-PHI-E`；编码有理输入加位复杂度给 `SC-PHI-A`，联合六地点同类下界才得 `SC-PHI-SHARP`。[共享证明顺序](research/current/shared/README.md)。
 - `model/NE` → 真实异址坐标极小值与同址对半 NE → `SC-DIAG-NORMAL` → `SC-OFFDIAG-FPT`：指数参数只用不同地点客户交叠，完整证书在所有同址布局均对半。[结构与算法](research/current/shared/instance_complexity_barriers.md)。这条边不证明无界交叠的 `DEC_a` 多项式。
+- `LOCAL-HARD` 的精确局部差额谱 + **三地点可实现覆盖及六类布局守卫** → `SC-THREE-DEC1-HARD`、`SC-THREE-DECa-HARD`：全局 $\mathrm{DEC}_a$ 对每个固定有理 $1\le a<(1+\sqrt3)/2$ 弱 NP 完全；不把已发表的更多设施异构目录难性误移到本类。[完整归约和端点预算](research/current/shared/three_site_exact_hardness.md)。
+- 已知可拆分客户的精确选址势 + 本模型 (NE) 的单体误差 → `SC-GRANULAR-APPROX`：$\theta<R_{\max}$ 时完整原子续局因子至多 $(R_{\max}+\theta)/(R_{\max}-\theta)$。[两设施证明](research/current/shared/atomic_granularity.md)。固定布局运输引理 `LOCAL-ATOM-WARDROP-k` 的尖锐误差 $(k-1)\theta/2$ 说明不能把两设施的任意 NE 误差常数照搬到全 $k$，[一般局部证明](research/current/local_and_exact/atomic_wardrop_gap.md)。
 - `model/NE` + **共同目录且异址单交叠** → 按 reach 全序选纯 NE、同址重客户菜单 → 分别证明 `SC-SPARSE-3` ($\sqrt2$) 与 `SC-SPARSE-4` ($\sqrt[3]4$)；各自正有理族给匹配下界。`SC-SPARSE-5` 的上界另依赖 `SC-PHI-E`，下界是原六地点 $\phi$ 族的五地点合法限制。这是**至多地点数的阶梯**，不是把异构 `\rho` 类包含进去。[逐式证明](research/current/shared/small_sparse_catalogs.md)。
 - `model/NE` → 异构纯菜单、全目录环 → `HC-2-UP`；与双交叠下界 `HC-2-LOW` 合取才得异构 sharp 2。`HC-RHO` 给单交叠且一侧最多两地点的已知锐性；移除长度条件由新 `SPARSE-RHO-ALL` 全称上界证明，结合该下界解决 [Q-SPARSE](research/questions/sparse_catalogs.md)。[异构证明顺序](research/current/heterogeneous/README.md)。
 - `CORE-LIFT` 只保留全目录真实威胁而不保证核心短。[SPARSE-LONG-CYCLE](research/current/heterogeneous/sparse_long_cycles.md)在单交叠下构造任意长唯一环，反驳无条件短核心推断；它与普遍倍率 $\rho$ 问题之间没有反例蕴含。
@@ -60,6 +62,8 @@
 | `research/current/heterogeneous/sparse_unbounded_rho.md` | `SPARSE-RHO-ALL` 全类尖锐阈值的精确范围、固定完整纯续局、首个高到低边界引理、客户身份强制相同、三次式矛盾与独立攻击；接手 Q-SPARSE 或审查新上界时先读。 |
 | `research/current/heterogeneous/sparse_bad_long_cycles.md` | 旧版 `3/2<r<ρ` 与新版本全部 `1≤r<ρ` 的真实坏倍率任意长回应环、明示 `7/4` 有理权族、一般开参数与精确核心失败机制；检验任何条件性短核心或身份代表引理时读。 |
 | `research/current/shared/instance_complexity_barriers.md`、`facility_spe/exact/shared_offdiag.py`、`tests/test_shared_offdiag.py` | 同址正规形的精确最优值公式、零收益与完整对半续局证明；异址交叠参数的支持枚举实现及独立比较。研究低于 $\phi$ 的实例判定或高同址交叠输入时先读；程序证书核验不代替全称证明。 |
+| `research/current/shared/three_site_exact_hardness.md` | 将局部 SUBSET SUM 客户谱嵌入三地点共同目录，逐一堵住同址、AB、AC、BC 的所有逃逸；证明固定有理 $1\le a<(1+\sqrt3)/2$ 的弱 NP 完全性，列出两套守卫及端点正权预算障碍。研究下一段复杂度前沿时先读，切勿把端点当模型相变。 |
+| `research/current/shared/atomic_granularity.md`、`research/current/local_and_exact/atomic_wardrop_gap.md` | 前者将已知可拆分客户 SPE 特化为两设施对照，证明任意精确原子 NE 的误差与完整续局倍率，并给宏原子必要条件；后者对固定 $k$ 布局证明尖锐 $(k-1)\theta/2$ 误差与链族。做实例敏感构造、归约粒度限制或多设施延伸时读；局部误差不等于全 $k$ SPE。 |
 | `research/current/shared/small_sparse_catalogs.md` | 单交叠的最多 2/3/4/5 地点紧确普遍因子、纯菜单全分支、三/四地点正有理族、五地点原下界剪枝。构造有限目录论文主题、比较目录规模机制或攻击平局零收益时读；五地点下界同时回读 `shared/sharp_phi_lower.md`。 |
 | `examples/shared/sparse_four_rational.json` | 四地点五客户下界族的 $z=19/12,\varepsilon=1/1000$ 精确输入；实例最优倍率 $6327/4000$，用于验证 $\sqrt2$ 无法延伸到四地点。复现例子而非证明全称族时读。 |
 | `research/PUBLICATION_REVIEW.md` | 本轮独立数学审读、证据回归、文献优先权缺口、两篇论文的严格贡献分配与投稿准备状态；组织投稿时读，不能用期刊判断替代命题证明。 |
