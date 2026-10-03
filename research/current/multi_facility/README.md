@@ -2,6 +2,8 @@
 
 ## Research goal and current result
 
+The newest [two-unequal-light-client parameter family](polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights) isolates a failed extension of the uniform-light flow proof. All lower greedy boxes remain feasible, and the initial assignment is a box NE, but their weighted-potential minimum uniquely exceeds an upper box. See the [integer input](../../../examples/multi_facility/greedy_two_light_potential.json) and [Fraction audit](../../../tests/audits/kfac_two_light_potential.py). This is a selection-rule obstruction, not a factor-two lower bound. The open task remains a polynomial box-NE selector for unequal light weights, or a different occupancy mechanism.
+
 Extend the exact-customer-equilibrium, complete-continuation shared-catalog
 model from two labeled facilities to arbitrary k. `SC-K-2-E` gives a complete
 internal existence proof of a uniform factor 2 for EVERY k>=2. This answers the

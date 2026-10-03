@@ -658,6 +658,32 @@ or canonical software implementation is recorded. Two or more different
 light multi-option weights invalidate the equal-unit path argument as
 stated; the all-input polynomial target remains open.
 
+## SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO -- unequal light weights defeat the flow extension
+
+**Objects/domain:** MF-MODEL with the greedy algorithm's seven-facility
+occupancy and last score gamma=n, for every integer n>=45 divisible by 5.
+Four occupied sites have multiplicities (3,2,1,1). The only multi-option
+customers have different positive weights 4n/5 and n-1, both below gamma;
+all other customers are private and frozen. All weights are integers.
+
+**Conclusion:** minimizing the exact weighted customer improvement potential
+over assignments satisfying *all* site lower boxes W_t>=q_t gamma has a
+unique minimizer violating L's upper box by one. The same layout has a
+box-constrained exact customer NE (indeed the initial greedy assignment),
+so this only refutes that potential-selection extension of
+SC-K-UNIFORM-LIGHT-FLOW-2. It gives neither a factor-two counterexample
+nor hardness of box-NE search.
+
+**Dependencies/evidence/objections:** MF-MODEL, SC-K-GREEDY-BUDGET, potential
+identity (23), exact four-state comparison and all greedy scores in
+[polytime_frontier.md](polytime_frontier.md); integer input
+`examples/multi_facility/greedy_two_light_potential.json` and independent
+`tests/audits/kfac_two_light_potential.py`. The earlier
+SC-K-GREEDY-FIXED-POTENTIAL-NO is a stronger failure of a different
+selection goal, including an actual forced off-path gain above two; the
+present family isolates the equal-weight assumption with only two variable
+clients. Internally independently checked, no external review.
+
 ## SC-K-DESCENT-ONLY-TRAP-NO -- forced upward return in a partial-overlap chain
 
 **Exact objects/domain:** the six-client, three-site, six-facility positive

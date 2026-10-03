@@ -101,6 +101,12 @@ $$P_C=\frac{[1-2a(a-1)]W-(2a-1)Q-a(a-1)\delta}{2a(a-1)},$$
 
 失败机制是客户分配目标改善了最小在轨收益或客户自己的势，却没有同时控制设施偏离后的**相对**收益。它没有证明贪心选址失败：两个例子的同一选址均有好客户 NE；也没有排除在轨的其他独立混合客户策略。可回收的是双地点混合重数交叠分量的一次下降重数扫描：按权递减排除回返，并保持负载区间，已有[条件性多项式 2 倍证明](research/current/multi_facility/polytime_frontier.md#sc-k-two-site-component-greedy-2-mixed-multiplicities-in-a-two-site-component)。若至少三地点混合分量存在上升重数回返，需新的交换不变量或改选址原则。
 
+## 在异重轻客户下用下盒约束的全局势最小化替代同重费用流：错误
+
+尝试冻结私有与重客户，对不同轻权的多选项客户最小化精确加权客户势，只施加每站 $W_t\ge q_t\gamma$。下盒会阻止最小点发生有利的出站客户改派，但不能保证上盒。[两轻权四态参数族](research/current/multi_facility/polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights)对每个 $n\ge45$ 的 5 倍数都给严格贪心 $q=(3,2,1,1)$、$\gamma=n$。全部四态满足下盒，初态 HM 是盒内精确 NE，而势函数唯一最小的 ML 状态让 L 重 $2n+1>2n$。权重沿 H→M→L 依次为 $4n/5$ 与 $n-1$，反转路径时 M 的重量不抵消，原同重证明的严格势下降不成立。$n=45$ 的[整数输入](examples/multi_facility/greedy_two_light_potential.json)及[精确脚本](tests/audits/kfac_two_light_potential.py)可复核。
+
+更早的六地点 [SC-K-GREEDY-FIXED-POTENTIAL-NO](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-fixed-potential-no-global-customer-potential-minimum-can-also-be-bad)已证明无约束势最小化可选择超过 2 倍的坏 NE，其坏态也满足下盒。本族的增量是只用两个异重轻客户隔离“下盒仍不足以保上盒”的原因。失败类型是**指定选均衡规则不保上盒**；没有否定同一贪心布局存在盒内 NE，也没有证明普遍 2 倍构造困难。今后若用势函数，需要额外的上盒保持机制或不同的选取准则，而非仅加入下盒。
+
 ## 将双地点下降重数无回返规则照搬到三地点部分交叠：错误
 
 双地点定理的同一组客户只有一个高重数源、一个低重数目标，按权递减扫描时单一负载差 $\Delta$ 排除先前客户的返回。若把“只做向较低重数地点的严格改善、直到再无此类移动”推广到含部分交叠的三地点分量，则需证明终点已无向高重数地点的客户偏离。[六客户严格整数例](research/current/multi_facility/polytime_frontier.md#sc-k-descent-only-trap-no-three-site-partial-overlap-needs-an-upward-return)推翻这个义务：$k=6$，地点 H--M--L 的设施重数 $(3,2,1)$，客户权和选项为 $(64,H),(9,HM),(37,M),(5,ML),(2,ML),(20,L)$。贪心六步严格选出 H,M,H,H,M,L；从初始权重 $(73,44,20)$ 出发，每一阶段的下降严格改派**唯一**，依次为重 $2$ 的 M→L、重 $9$ 的 H→M、重 $5$ 的 M→L。终点 $(64,46,27)$ 没有下降改善，但重 $2$ 客户在 L 的外部成本 25，大于 M 的当前负载 23，必须**上升返回**。返回后 $(64,48,25)$ 是精确客户 NE。独立[精确脚本](tests/audits/kfac_descent_trap.py)复算贪心分数、唯一性、负载区间与返回后的所有客户条件。

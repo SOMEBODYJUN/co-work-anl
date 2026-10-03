@@ -1716,6 +1716,80 @@ independent-mixed profiles. The integer input and independent audit are in
 `examples/multi_facility/greedy_potential_escape.json` and
 `tests/audits/kfac_greedy_potential.py`.
 
+## SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO: lower-bounded potential can overflow with two weights
+
+**Exact scope.** This is a counterexample to the proposed extension of
+SC-K-UNIFORM-LIGHT-FLOW-2 that freezes heavy customers and minimizes the
+weighted customer potential subject only to the *lower* greedy boxes. It
+does not refute the existence of a box NE or a factor-two continuation.
+The earlier SC-K-GREEDY-FIXED-POTENTIAL-NO already shows that unconstrained
+global potential minimization can pick a bad NE, which there also meets the
+lower boxes. The point here is the much smaller **two variable customers
+of unequal weights** instance and an explicit infinite integer family isolating the
+failure of the equal-unit reverse path.
+
+For every integer n>=45 divisible by 5, take k=7, common site order
+R,H,M,L, four private clients of weights
+
+\[
+ R:n,\qquad H:16n/5-1,\qquad M:2n,\qquad L:n+2,
+\]
+
+and two multi-option clients X of weight 4n/5 with options H,M, and Y of
+weight n-1 with options M,L. These are positive integers; both variable
+weights are strictly below n and are distinct. Greedy opens
+
+\[
+ H,M,H,M,H,L,R
+\quad\text{at strictly maximal scores}\quad
+ 4n-1,\ 3n-1,\ (4n-1)/2,\ (3n-1)/2,\ (4n-1)/3,\ n+2,\ n.
+\]
+
+For example, after opening L the still available H and M addition
+scores are (4n-1)/4<n and (3n-1)/3<n, so R wins the last step without a
+tie. The final multiplicities are (q_H,q_M,q_L,q_R)=(3,2,1,1), and
+gamma=n. The initial assignment X=H,Y=M has totals
+(4n-1,3n-1,n+2,n), hence lies in every greedy box. It is already an
+exact client NE: X's source external cost is (16n/5-1)/3, below the
+alternative (3n-1)/2; Y's source external cost is n, below n+2.
+
+There are exactly four site-pure assignments of the variable clients.
+Every one satisfies the lower bounds q_t n: the smallest H total is
+16n/5-1>=3n, the smallest M total 2n, and the private L and R totals
+are at least n. Evaluate the exact weighted improvement potential (23)
+at the four states, writing P_ab for X=a,Y=b. The pairwise differences
+from P_ML are
+
+\[
+ P_{HM}-P_{ML}=(4n^2-170n+150)/75>0,\qquad
+ P_{HL}-P_{ML}=4n(n-5)/75>0,\qquad
+ P_{MM}-P_{ML}=(n-1)(2n/5-2)>0.
+\]
+
+Thus the lower-constrained potential has the **unique global minimum**
+X=M,Y=L. At that state the totals are
+(16n/5-1,14n/5,2n+1,n): L violates its upper box 2n by one unit.
+This state is also an exact client NE: X's source external cost is n,
+at most (16n/5-1)/3 at H; Y's source external cost is n+2, at most
+(14n/5)/2 at M. The initial HM state is in fact the only assignment
+inside *all* upper boxes: each other state sends Y to L, or sends both
+X and Y to M (whose total is 19n/5-1>3n). In particular, a good
+box-constrained NE is present on exactly the same greedy layout.
+
+At n=45 the six weights are H:143, M:90, L:47, R:45, X:36, Y:44;
+the potentials (P_HM,P_HL,P_MM,P_ML) are (3696,3784,4392,3688).
+The two-edge initial-to-final transport H->M->L replaces an incoming
+weight 36 by an outgoing weight 44 at M. Reversing the path cannot cancel
+the intermediate load as it does in (33F) for equal weights; the displayed
+potential inequalities show that the return raises, rather than lowers,
+the objective. The finite Fraction audit in
+`tests/audits/kfac_two_light_potential.py` independently checks the
+strict greedy run, four assignments, NE conditions, and selected family
+members from `examples/multi_facility/greedy_two_light_potential.json`.
+The general family conclusion follows from the displayed algebra, not
+from the finite audit. Whether some *other* polynomial selection always
+finds a box NE for unequal light weights remains open.
+
 ## Sources and review status
 
 - Gairing, Lücking, Mavronicolas, Monien, STOC 2004, Section 4, especially

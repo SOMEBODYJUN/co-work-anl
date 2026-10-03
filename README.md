@@ -1,5 +1,7 @@
 # 两阶段设施选址：可生长的研究基础
 
+**最新算法边界（2026-10-03）：**[两异重轻客户参数族](research/current/multi_facility/polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights)证明，贪心布局上即使已有盒内精确客户均衡，对不同轻权客户最小化**带全部下盒的精确势**仍可能唯一选到越上盒的均衡。这隔离了同重费用流逆路径论证的失效；全输入位长多项式 2 倍算法及盒内 NE 的普遍存在性依然开放。[失败机制](FAILED_ROUTES.md#在异重轻客户下用下盒约束的全局势最小化替代同重费用流错误)、[逐命题记录](research/current/multi_facility/claims.md#sc-k-two-light-lower-potential-no----unequal-light-weights-defeat-the-flow-extension)、[整数输入](examples/multi_facility/greedy_two_light_potential.json)与[精确审查](tests/audits/kfac_two_light_potential.py)给出恢复入口。
+
 这里的**现行研究资产是重新写出的数学说明**，集中在 [research/current](research/current)；可执行算法集中在 [facility_spe](facility_spe)。原始手稿、旧证明笔记和上一轮整理稿进入 [history](history)。旧的 astra_alg、astra_local、astra_ring、asym_research 根目录已退出当前树；[迁移记录](research/path_migration.json)保留来源，而不让旧实验命名决定未来结构。
 
 **Research Goal / 当前前沿：**从精确客户均衡与全部偏离续局出发，找能跨模型规模复用的近似 SPE 结构。[任意设施数共同目录定理](research/current/multi_facility/uniform_two.md)在内部证明层给出与设施数 $k$ 无关的因子 2 存在性；最佳常数是否低于 2、能否多项式时间构造仍开放。[方向价值与审查](research/K_FACILITY_AUDIT_2026-10-02.md)分清稳定性与覆盖效率。双侧任意长、每跨对最多一共有客户时的尖锐因子由 [SPARSE-RHO-ALL](research/current/heterogeneous/sparse_unbounded_rho.md) 的内部证明闭合为 $\rho$。共同目录的实例最优倍率判定已由[五地点新归约](research/current/shared/five_site_exact_hardness.md)覆盖每个固定有理 $1<a<\phi$，加上三地点 $a=1$；恰三、四地点的高倍率细分类仍开放。[实时研究状态](RESEARCH_STATE.md)、[命题入口](CLAIMS.md)、[失败路线](FAILED_ROUTES.md)与[路线图](research/ROADMAP.md)定位后续证明义务。

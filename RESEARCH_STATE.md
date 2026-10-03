@@ -8,6 +8,8 @@
 
 ## 当前前沿与本轮闭合
 
+**异重轻客户的精确势障碍（2026-10-03）。** [SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO](research/current/multi_facility/polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights)给一个显式无限整数族：只有两名不同轻权多选项客户，贪心七设施、四站初态是盒内精确 NE；但对全部站施加下盒后，全局客户势最小值仍唯一选到 L 站越上盒一单位的精确 NE。四态代数证明与独立 Fraction 核对明确了同重运输反路径不能直接照搬。旧势最小反例已有更强的设施收益失败；本族的新价值是将该算法接口障碍隔离到仅两个异重轻客户。**盒内 NE 依然存在，不能据此判定贪心选址或全输入 2 倍算法失败。**
+
 **离轨接口与无锚链形构造（2026-10-03）。** [SC-K-GREEDY-SINGLETON-RESET / SC-K-GREEDY-BOX-TO-2](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-singleton-reset-and-sc-k-greedy-box-to-2)把瓶颈重新固定为**寻找盒内精确在轨客户 NE**：对原 $q=1$ 的设施，偏离后直接回到初始贪心客户分配，原单站客户池每站至多 $2\gamma$、原高重数站可按 $2\gamma$ 装箱，故不需在轨客户的私有储备或原孤儿预算；任意在轨收益 $a\ge\gamma$ 都有位长多项式离轨纯 NE 使偏离者至多 $2\gamma\le2a$。若给出盒内站纯/站内均匀的精确在轨 NE，其余 $q\ge2$ 来源也由盒预算完成全部 2 倍续局。
 
 [SC-K-UNIFORM-LIGHT-FLOW-2](research/current/multi_facility/polytime_frontier.md#sc-k-uniform-light-flow-2-partial-overlaps-without-a-common-anchor)进一步处理任意交叠图和混合重数，只要求所有低于 $\gamma$、可选择多个已占站的客户具有同一权重 $\delta$。冻结其他客户、用每站下界的整数凸费用流最小化精确客户势，初始到终局的同重运输逆路径严格排除上盒溢出；高权客户也保持最优反应。与盒内续局引理合成位长多项式 2 倍完整构造。严格 $(3,2,1)$ 三站链例不属 RANGE、ALL-OR-ONE 或 NESTED-ANCHOR。内部独立逆审与 Fraction 复算通过，尚无外部评审或规范软件；**不同轻权的普遍盒内 NE 存在性与多项式选择仍开放**。

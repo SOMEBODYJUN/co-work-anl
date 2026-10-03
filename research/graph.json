@@ -1772,6 +1772,31 @@
         "examples/multi_facility/greedy_uniform_light_flow.json"
       ],
       "status": "finite arithmetic check"
+    },
+    {
+      "id": "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Two unequal light clients defeat lower-box potential selection",
+      "detail": "A strict greedy seven-facility integer family has a box NE, but its lower-constrained weighted-potential minimum uniquely overflows an upper box by one; this isolates an algorithmic selection failure.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "exact parametric obstruction; internally audited"
+    },
+    {
+      "id": "E-K-TWO-LIGHT-POTENTIAL-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Four-state unequal-light exact audit",
+      "detail": "Fraction check of strict greedy scores, all four lower-feasible allocations, potential order and two exact NEs for selected integer family members.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_two_light_potential.py",
+        "examples/multi_facility/greedy_two_light_potential.json"
+      ],
+      "status": "finite arithmetic check"
     }
   ],
   "hyperedges": [
@@ -3712,6 +3737,50 @@
         "tests/audits/kfac_uniform_light_flow.py"
       ],
       "status": "finite arithmetic check"
+    },
+    {
+      "id": "e-mf-two-light-lower-potential",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO",
+      "statement": "A four-state parametric potential comparison proves unique lower-constrained minimum above L upper box despite a box NE.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact obstruction"
+    },
+    {
+      "id": "e-mf-two-light-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-TWO-LIGHT-POTENTIAL-AUDIT"
+      ],
+      "conclusion": "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO",
+      "statement": "The finite rational audit verifies instances of the analytic family but does not establish the universal theorem.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_two_light_potential.py"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "e-mf-two-light-uniform-limit",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO"
+      ],
+      "conclusion": "SC-K-UNIFORM-LIGHT-FLOW-2",
+      "statement": "The equal-unit reverse path and its lower-only potential selection cannot be extended unchanged to distinct light weights.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact obstruction"
     }
   ]
 }
