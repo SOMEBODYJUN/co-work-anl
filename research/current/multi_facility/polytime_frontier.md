@@ -1790,6 +1790,128 @@ The general family conclusion follows from the displayed algebra, not
 from the finite audit. Whether some *other* polynomial selection always
 finds a box NE for unequal light weights remains open.
 
+## SC-K-STAR-LIGHT-GREEDY-2: unequal light weights on anchored star edges
+
+**Conditional polynomial theorem.** Run the greedy construction on a
+positive-reach explicit rational MF-MODEL instance and let gamma>0 be its
+last insertion score. Form a graph on occupied sites: two sites share an
+edge if some customer of weight **strictly less than gamma** can choose
+both; ignore customers with only one occupied option. Suppose every
+nontrivial connected component of this *light overlap graph* satisfies
+one of the following independently checkable conditions:
+
+1. all its sites have the same final facility multiplicity; or
+2. it is a star with center H, H opened before every other site in this
+   component, and every light multi-option customer in the component has
+   **exactly two** occupied options, H and one leaf.
+
+Different components can have different multiplicities. Heavy customers
+of weight at least gamma may cover arbitrary occupied sites across these
+components; they are frozen at their original greedy sites. Then a
+site-pure/within-site-uniform exact on-path customer NE within every
+greedy box, and a complete exact factor-two continuation, are computable
+in input-bit-polynomial time. The star condition permits arbitrarily many
+leaves and arbitrary unequal light weights on every edge. This is an
+output-recognizable sufficient class, not a claim for arbitrary partial
+overlaps or a proof that the general greedy occupancy has a box NE.
+
+**Construction.** Freeze every customer with a single occupied option
+and every customer of weight at least gamma at its original greedy site.
+At equal-multiplicity light components, use the restricted identical-link
+Nashification algorithm already imported for SC-K-LIGHT-COMPONENT-GREEDY-2;
+the frozen customers have singleton restricted lists. It preserves the
+initial minimum and maximum site loads and gives exact customer NE within
+that component, hence preserves its box. Light components are independent
+for movable customers.
+
+In a star component let Q=q_H. Since H opens before its leaves, every
+variable light customer was first served at H. By
+SC-K-GREEDY-MAX-MULT, Q>=q_t for each leaf t with a variable customer.
+At each leaf sort its variable customers in **nonincreasing weight**,
+breaking ties arbitrarily. Keep current totals W. Repeatedly remove from
+the head of each queue every customer i whose move H->t is not strictly
+improving, i.e. for which
+
+\[
+                  (W_H-w_i)/Q\le W_t/q_t.              \tag{34S}
+\]
+
+Such a customer stays at H permanently. If any heads remain, choose
+among their leaves one with smallest current normalized load
+beta=W_t/q_t (fixed site-index ties), move that head to its leaf,
+and repeat. Every customer is skipped or moved exactly once. A direct
+scan of the queues takes O(N|S|+N log N) rational comparisons per
+component after sorting; combined with the greedy construction and the
+imported scheduler this is polynomial in the explicit input and bit
+length. All intermediate loads are sums of input rationals.
+
+**Box invariant.** The initial greedy assignment satisfies
+q_s gamma<=W_s<=(q_s+1)gamma at each site. Every performed move has
+(W_H-w_i)/Q>W_t/q_t>=gamma, so the center after the move stays above
+Q gamma; the leaf lower bound only increases. The center upper bound
+only decreases. Moreover no weight w_i>=gamma can satisfy this strict
+inequality from a box state. For w_i<gamma, if the leaf upper bound
+were exceeded after a move, then
+
+\[
+ \frac{W_t}{q_t}>\gamma+\frac{\gamma-w_i}{q_t}
+ \ge\gamma+\frac{\gamma-w_i}{Q}
+ \ge\frac{W_H-w_i}{Q},                                  \tag{35S}
+\]
+
+contrary to (34S). Thus every step preserves every box. A skipped
+customer cannot become improving later: W_H only decreases and its
+leaf's W_t only increases.
+
+**Exact NE at termination.** Before choosing a move, all currently
+nonimproving heads are skipped, revealing further heads until each
+remaining head is improving. Let beta_1,beta_2,... be the normalized
+leaf loads *before* successive moves, across the component. This
+sequence is nondecreasing. A nonchosen leaf has unchanged beta and a
+decreasing center can only remove an eligible head; the chosen leaf's
+new beta is larger than its old beta, and its new head is revealed only
+after this increase. Skipped heads never reenter. If there was a last
+move j, its strict improvement leaves final W_H/Q>beta_last.
+
+At any leaf t that received customers, let j be its last arrival, with
+prearrival load beta_j. Earlier arriving customers i on that edge have
+w_i>=w_j by the queue order. Hence their final external cost at t is
+
+\[
+       (W_t-w_i)/q_t\le (W_t-w_j)/q_t
+          =\beta_j\le\beta_{last}<W_H/Q.                \tag{36S}
+\]
+
+So no moved customer wants to return to H. A skipped customer remains
+at H and cannot improve by the monotonicity just proved. Customers
+frozen for having one occupied option have no site deviation. For a
+frozen multi-option customer with w_i>=gamma, the final box gives its
+source external cost at most gamma, whereas every alternative site's
+current normalized load is at least gamma. Components processed by the
+same-multiplicity scheduler are independent of star transfers because
+no *light* movable customer joins them; their equilibria remain valid.
+Thus the complete site-uniform profile is an exact independent-mixed
+customer NE. SC-K-GREEDY-BOX-TO-2 gives all polynomial off-path pure
+NE choices and the complete factor-two continuation.
+
+**Strict separation from prior sufficient classes.** Let k=6, sites
+H,M,L, with private clients H:100, M:95, L:47 and shared clients
+X:(36,HM), Y:(44,HL). Greedy strictly inserts
+H,M,H,H,M,L at scores 180,95,90,60,95/2,47; q=(3,2,1), gamma=47.
+Initially totals are (180,95,47). Y stays at H, while X moves H->M
+because (180-36)/3=48>95/2; the terminal totals (144,131,47)
+satisfy every box and all exact NE inequalities. The old RANGE check
+fails for X, and the two unequal light weights prevent UNIFORM-LIGHT.
+The HM and HL option sets are incomparable in inclusion order, so
+NESTED-ANCHOR does not apply; each has only two of three sites, so
+ALL-OR-ONE does not apply either. This is a separation of *sufficient
+classes*, not evidence that those other algorithms fail on the input.
+The exact input and independent finite arithmetic check are
+`examples/multi_facility/greedy_star_edges.json` and
+`tests/audits/kfac_star_edges.py`. The universal conclusion rests on
+the proof above, not on that finite example. No canonical software
+implementation of the general constructor or external review is claimed.
+
 ## Sources and review status
 
 - Gairing, Lücking, Mavronicolas, Monien, STOC 2004, Section 4, especially

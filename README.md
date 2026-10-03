@@ -1,5 +1,7 @@
 # 两阶段设施选址：可生长的研究基础
 
+**最新条件算法（2026-10-03）：**[轻客户锚定星形分量定理](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)允许任意多叶、每条边任意不同轻权，以及冻结的跨分量重客户。按叶边权重递减、跨叶最小当前负载选择，每名轻客户仅处理一次，保住贪心负载盒并构造精确客户 NE；与[盒内离轨完成](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-singleton-reset-and-sc-k-greedy-box-to-2)组合成位长多项式完整 2 倍续局。[严格三站例](examples/multi_facility/greedy_star_edges.json)不属旧 RANGE、ALL-OR-ONE、NESTED-ANCHOR 或 UNIFORM-LIGHT 条件。一般部分交叠图仍开放。
+
 **最新算法边界（2026-10-03）：**[两异重轻客户参数族](research/current/multi_facility/polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights)证明，贪心布局上即使已有盒内精确客户均衡，对不同轻权客户最小化**带全部下盒的精确势**仍可能唯一选到越上盒的均衡。这隔离了同重费用流逆路径论证的失效；全输入位长多项式 2 倍算法及盒内 NE 的普遍存在性依然开放。[失败机制](FAILED_ROUTES.md#在异重轻客户下用下盒约束的全局势最小化替代同重费用流错误)、[逐命题记录](research/current/multi_facility/claims.md#sc-k-two-light-lower-potential-no----unequal-light-weights-defeat-the-flow-extension)、[整数输入](examples/multi_facility/greedy_two_light_potential.json)与[精确审查](tests/audits/kfac_two_light_potential.py)给出恢复入口。
 
 这里的**现行研究资产是重新写出的数学说明**，集中在 [research/current](research/current)；可执行算法集中在 [facility_spe](facility_spe)。原始手稿、旧证明笔记和上一轮整理稿进入 [history](history)。旧的 astra_alg、astra_local、astra_ring、asym_research 根目录已退出当前树；[迁移记录](research/path_migration.json)保留来源，而不让旧实验命名决定未来结构。
@@ -97,6 +99,8 @@
 | `research/current/multi_facility/uniform_two.md`、`research/K_FACILITY_AUDIT_2026-10-02.md` | 任意 $k$ 的共同目录因子 2 存在性证明、逐式逆审、方法边界及面向领域的价值解释；研究多设施稳定性时先读。无多项式构造或因子 2 尖锐性结论。 |
 | `research/current/multi_facility/polytime_frontier.md` | 精确全局字典序选址的强 NP 难性、多项式局部邻域、贪心预算、全异址 **2 倍**与重数类区间证书；双地点混合重数、任意大“全站共有或单站私有”及“嵌套锚站部分交叠”分量的多项式构造，均处理单设施源预算。给出坏修复、固定布局字典序、势最小化、无条件锚站列表失败和三站下降改派停在非 NE 的不同障碍。攻全 $k$ 高效算法时先读；非嵌套或无共同锚站的混合重数部分交叠仍开放。 |
 | `examples/multi_facility/greedy_nested_anchor.json`、`tests/audits/kfac_nested_anchor.py` | 三站五客户正整数例及独立 Fraction 复算：严格贪心、嵌套选项列表得到精确 NE、旧 RANGE 失败；交换两个选项集后无条件列表法非 NE，但另一分配仍是 NE。检验嵌套锚站证明的有限边界时读，不能代替全称证明。 |
+| `examples/multi_facility/greedy_star_edges.json`、`tests/audits/kfac_star_edges.py` | 六设施、三站锚定星形的严格整数分离例和独立 Fraction 检查；两名异重轻客户的 HM/HL 选项不可比，旧 RANGE、ALL-OR-ONE、NESTED-ANCHOR、UNIFORM-LIGHT 均不适用。审查 SC-K-STAR-LIGHT-GREEDY-2 的实际条件、单步修复及盒/NE 时读；脚本不证明普遍算法。 |
+| `examples/multi_facility/greedy_two_light_potential.json`、`tests/audits/kfac_two_light_potential.py` | 七设施、四站、仅两名异重轻客户的四态势障碍输入；精确脚本重算严格贪心、全部下盒、唯一越上盒势极小与仍存在的盒内 NE。考虑异重费用流扩展或势选择规则时读；一般无限族由 `polytime_frontier.md` 的代数证明。 |
 | `examples/multi_facility/greedy_uniform_light_flow.json`、`tests/audits/kfac_uniform_light_flow.py` | 无共同锚站的三站链正整数例及独立 Fraction 复算：严格贪心、所有轻多选项客户同重、下界势最小唯一盒内 NE、旧 RANGE 失败。阅读费用流新定理的严格超出旧子类例时使用；有限枚举不证明一般定理。 |
 | `examples/multi_facility/greedy_descent_trap.json`、`tests/audits/kfac_descent_trap.py` | 六客户、三地点 H--M--L 的整数输入与独立 Fraction 审查：六次无并列贪心、唯一三步下降改派、被迫上升回返及其后的精确 NE。检验“只允许重数下降”或照搬双站递减扫描的算法时读；该例不否定 2 倍布局。 |
 | `examples/multi_facility/greedy_cap_obstruction.json`、`tests/audits/kfac_greedy_cap.py` | 六地点十顾客的精确整数输入与独立 Fraction 检查：重算确定性贪心得分、五次严格客户改派、在轨精确 NE、B/E/G 的强制 $44>41$ 容量障碍和偏离者仅获 $20$ 的离轨精确 NE。研究 SC-K-GREEDY-CAP-INFEASIBLE 的算术或试图修改装箱接口时运行；有限检查不替代文件中的全称定理证明。 |

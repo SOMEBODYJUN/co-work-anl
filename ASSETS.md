@@ -1,5 +1,7 @@
 # 现行研究资产：命题而非旧文件的清单
 
+新增 [SC-K-STAR-LIGHT-GREEDY-2 算法与证明](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)：[逐命题量词](research/current/multi_facility/claims.md)、[严格区分旧条件类的整数输入](examples/multi_facility/greedy_star_edges.json)、[精确算术核验](tests/audits/kfac_star_edges.py)。以后研究异重轻客户的非星形交叠时应读；证明为一般条件算法，脚本只验固定实例。
+
 新增 [SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO 参数族](research/current/multi_facility/polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights)：[现行命题](research/current/multi_facility/claims.md)、[六客户整数输入](examples/multi_facility/greedy_two_light_potential.json)和[独立精确审查](tests/audits/kfac_two_light_potential.py)。它隔离了异重轻客户下带下盒势最小不能保上盒的机制，后续研究选均衡规则时应先读；没有否定盒内 NE 的存在。
 
 本表以[双设施模型](research/current/model.md)和[任意设施数共同目录模型](research/current/multi_facility/model.md)为起点。每行沿着**同一组前提 → 数学结论 → 本轮新写的推导 → 程序/验证 → 待补义务**阅读；源 ZIP 中的旧文仅在 [history/source](history/source) 作追溯。[逐文件来源解释表](research/source_crosswalk.md)把 68 个原始文件或旧代码路径逐一连接到新稿中的判断。[assets.json](research/assets.json)为机器可读的逐命题文件关系，[数学超图](research/graph.json)记录证明所需的合取前提，[旧路径表](research/path_migration.json)记录每个迁移与退出的入口。

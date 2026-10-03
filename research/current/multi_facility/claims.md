@@ -658,6 +658,39 @@ or canonical software implementation is recorded. Two or more different
 light multi-option weights invalidate the equal-unit path argument as
 stated; the all-input polynomial target remains open.
 
+## SC-K-STAR-LIGHT-GREEDY-2 -- anchored star edges with unequal light weights
+
+**Objects/domain:** positive-reach explicit rational common-catalog MF-MODEL;
+arbitrary labeled k, greedy occupancy, gamma>0. In the graph joining
+occupied sites that share a customer of weight below gamma with multiple
+occupied options, every nontrivial component either has constant facility
+multiplicity or is a star. In each star, its center H opened before its
+leaves, and every light multi-option customer has precisely the two
+occupied options H and one leaf. Frozen heavy customers may cross
+components and have arbitrary incidence. Conditions are checked from
+greedy output; no bounded number of sites or weight types is assumed.
+
+**Exact conclusion:** in input-bit-polynomial time, find a site-uniform
+independently mixed exact client NE in all boxes
+q_t gamma<=W_t<=(q_t+1)gamma, then complete a factor-two continuation
+with exact pure client NEs at every actual deviation. In star components,
+per-leaf descending-weight queues move a customer H->leaf only on strict
+improvement; choose the smallest normalized leaf load among eligible
+heads. Every customer is processed once; q_H>=q_leaf and the strict
+inequality preserve the full box. Nondecreasing selected leaf loads plus
+the last-arrival weight order exclude all leaf->H returns. Constant-q
+components use the already imported restricted identical-link scheduler;
+frozen heavy clients are stable by the box. BOX-TO-2 completes off path.
+
+**Evidence/limits:** [full proof and strict separating example](polytime_frontier.md),
+`examples/multi_facility/greedy_star_edges.json`, independent
+`tests/audits/kfac_star_edges.py`. The example has q=(3,2,1), two
+unequal light weights and incomparable HM/HL options; RANGE,
+ALL-OR-ONE, NESTED-ANCHOR and UNIFORM-LIGHT hypotheses all fail.
+Those algorithms are not claimed to fail on this input. Internal
+independent reverse reconstruction, no external review or canonical
+software implementation. General light overlap graphs remain open.
+
 ## SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO -- unequal light weights defeat the flow extension
 
 **Objects/domain:** MF-MODEL with the greedy algorithm's seven-facility

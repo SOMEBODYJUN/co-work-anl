@@ -101,6 +101,10 @@ $$P_C=\frac{[1-2a(a-1)]W-(2a-1)Q-a(a-1)\delta}{2a(a-1)},$$
 
 失败机制是客户分配目标改善了最小在轨收益或客户自己的势，却没有同时控制设施偏离后的**相对**收益。它没有证明贪心选址失败：两个例子的同一选址均有好客户 NE；也没有排除在轨的其他独立混合客户策略。可回收的是双地点混合重数交叠分量的一次下降重数扫描：按权递减排除回返，并保持负载区间，已有[条件性多项式 2 倍证明](research/current/multi_facility/polytime_frontier.md#sc-k-two-site-component-greedy-2-mixed-multiplicities-in-a-two-site-component)。若至少三地点混合分量存在上升重数回返，需新的交换不变量或改选址原则。
 
+## 异重轻客户锚定星形：已绕开无条件列表法与势最小捷径
+
+[SC-K-STAR-LIGHT-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)没有假设异重客户选项集嵌套，也不求客户势最小；它只在轻客户交叠分量是中心先开的星形、每名轻客户连中心与一叶时适用。每条叶边按权递减，跨叶选择当前最低单位负载的可改善队头，才可用最后入叶客户证明精确 NE，并逐步保盒。其三站严格例有不可比选项集与不同轻权，旧 RANGE、ALL-OR-ONE、NESTED-ANCHOR、UNIFORM-LIGHT 条件均不成立。这回收了一个真正可计算的子类，但非星形异重部分交叠仍无算法；不能把星形证明改写成一般交叠图定理。
+
 ## 在异重轻客户下用下盒约束的全局势最小化替代同重费用流：错误
 
 尝试冻结私有与重客户，对不同轻权的多选项客户最小化精确加权客户势，只施加每站 $W_t\ge q_t\gamma$。下盒会阻止最小点发生有利的出站客户改派，但不能保证上盒。[两轻权四态参数族](research/current/multi_facility/polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights)对每个 $n\ge45$ 的 5 倍数都给严格贪心 $q=(3,2,1,1)$、$\gamma=n$。全部四态满足下盒，初态 HM 是盒内精确 NE，而势函数唯一最小的 ML 状态让 L 重 $2n+1>2n$。权重沿 H→M→L 依次为 $4n/5$ 与 $n-1$，反转路径时 M 的重量不抵消，原同重证明的严格势下降不成立。$n=45$ 的[整数输入](examples/multi_facility/greedy_two_light_potential.json)及[精确脚本](tests/audits/kfac_two_light_potential.py)可复核。

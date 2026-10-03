@@ -1797,6 +1797,31 @@
         "examples/multi_facility/greedy_two_light_potential.json"
       ],
       "status": "finite arithmetic check"
+    },
+    {
+      "id": "SC-K-STAR-LIGHT-GREEDY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two for anchored light-star components",
+      "detail": "Descending-weight queues on each leaf and smallest-load eligible-leaf choice produce exact client NE inside the greedy box for arbitrary unequal light weights; heavy cross-component customers freeze.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "E-K-STAR-LIGHT-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Strict anchored-star unequal-light example",
+      "detail": "Fraction audit of six greedy insertions, one customer move, box, exact NE and failure of four previous sufficient conditions.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_star_edges.py",
+        "examples/multi_facility/greedy_star_edges.json"
+      ],
+      "status": "finite arithmetic check"
     }
   ],
   "hyperedges": [
@@ -3781,6 +3806,39 @@
         "research/current/multi_facility/polytime_frontier.md"
       ],
       "status": "exact obstruction"
+    },
+    {
+      "id": "e-mf-star-light-greedy-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "SC-K-GREEDY-BOX-TO-2",
+        "SC-K-LIGHT-COMPONENT-GREEDY-2"
+      ],
+      "conclusion": "SC-K-STAR-LIGHT-GREEDY-2",
+      "statement": "Anchored star queues preserve box and exact NE in polynomial time; equal-multiplicity light components use restricted identical-link Nashification, then box completion gives factor two.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-star-light-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-STAR-LIGHT-AUDIT"
+      ],
+      "conclusion": "SC-K-STAR-LIGHT-GREEDY-2",
+      "statement": "Strict three-site integer witness separates this condition from RANGE, ALL-OR-ONE, NESTED-ANCHOR and UNIFORM-LIGHT; a finite check is not the theorem proof.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_star_edges.py"
+      ],
+      "status": "finite arithmetic check"
     }
   ]
 }

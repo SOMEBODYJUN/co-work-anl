@@ -2,6 +2,8 @@
 
 ## Research goal and current result
 
+The [anchored light-star algorithm](polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges) processes each unequal-weight light client once, selecting the minimum-load eligible leaf among descending-weight edge queues. For light overlap components that are either constant-multiplicity or anchored stars, it constructs a box NE and then a polynomial complete factor-two continuation, even with frozen heavy customers crossing components. The [strict example](../../../examples/multi_facility/greedy_star_edges.json) and [exact arithmetic check](../../../tests/audits/kfac_star_edges.py) separate this condition from previous sufficient classes. General unequal-weight nonstar partial overlaps remain open.
+
 The newest [two-unequal-light-client parameter family](polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights) isolates a failed extension of the uniform-light flow proof. All lower greedy boxes remain feasible, and the initial assignment is a box NE, but their weighted-potential minimum uniquely exceeds an upper box. See the [integer input](../../../examples/multi_facility/greedy_two_light_potential.json) and [Fraction audit](../../../tests/audits/kfac_two_light_potential.py). This is a selection-rule obstruction, not a factor-two lower bound. The open task remains a polynomial box-NE selector for unequal light weights, or a different occupancy mechanism.
 
 Extend the exact-customer-equilibrium, complete-continuation shared-catalog
