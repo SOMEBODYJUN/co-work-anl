@@ -73,6 +73,8 @@
 
 [三站异轻权链的存在性证明](research/current/multi_facility/three_site_chain_box.md)采用完整盒内势最小和整批上游退回交换；尚无位长多项式选取该最小点的算法。
 
+[四站汇聚路径的三轻客户子类](research/current/multi_facility/converging_path_box.md)另给有限步盒内 NE 构造，超出所有边同向的 PATH 条件。
+
 ## 如何追踪一项研究结论
 
 [命题登记](research/current/claims.md)固定适用域与状态；[现行资产索引](ASSETS.md)把命题连到新稿、实现、检验及历史来源。[数学超图](research/index.html)的节点是定义、引理、反例和结论；一条推导超边要求**所有列出的共同前提**，不是旧文件之间的链接。其[数据](research/graph.json)和[维护规则](research/README.md)可直接核查。GitHub 预览 HTML 时显示源码，下载 HTML 后可使用交互查看器。

@@ -1931,6 +1931,30 @@
         "research/current/multi_facility/claims.md"
       ],
       "status": "conditional box-NE existence; internally reviewed"
+    },
+    {
+      "id": "SC-K-CONVERGING-PATH-BOX-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two on a bounded converging light path",
+      "detail": "Four occupied sites with three movable light edge clients, descending multiplicities toward a tight lower-box A; at most seven strict moves produce a boxed client NE.",
+      "refs": [
+        "research/current/multi_facility/converging_path_box.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "E-K-CONVERGING-PATH-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Converging path exact finite-state audit",
+      "detail": "Ten thousand generated boxed configurations, all reachable strict suffixes, 165 multiplicity triples, exact rational NE/box checks; finite evidence only.",
+      "refs": [
+        "research/current/multi_facility/converging_path_box.md",
+        "tests/audits/kfac_converging_path.py"
+      ],
+      "status": "finite arithmetic check"
     }
   ],
   "hyperedges": [
@@ -4091,6 +4115,37 @@
         "research/current/multi_facility/three_site_chain_box.md"
       ],
       "status": "internal proof"
+    },
+    {
+      "id": "e-mf-converging-path",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-BOX-TO-2",
+        "MF-MODEL"
+      ],
+      "conclusion": "SC-K-CONVERGING-PATH-BOX-2",
+      "statement": "Case-split on the first Z, T, X improvements; a T-first total-budget inequality or an X-first return exclusion keeps all subsequent strict moves within the full box, and three binary clients bound the path length.",
+      "refs": [
+        "research/current/multi_facility/converging_path_box.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-converging-path-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-CONVERGING-PATH-AUDIT"
+      ],
+      "conclusion": "SC-K-CONVERGING-PATH-BOX-2",
+      "statement": "Finite exact suffix enumeration tests the case argument but is not the universal proof.",
+      "refs": [
+        "research/current/multi_facility/converging_path_box.md",
+        "tests/audits/kfac_converging_path.py"
+      ],
+      "status": "finite arithmetic check"
     }
   ]
 }

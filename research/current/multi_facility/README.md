@@ -6,6 +6,8 @@
 
 [Three-site unequal-weight chain existence](three_site_chain_box.md) additionally proves a full-box NE by an upstream-pool potential exchange, without a polynomial selector.
 
+A [three-light-client converging path](converging_path_box.md) also has a bounded-step box-NE constructor under a tight lower box at its junction, covering an orientation outside the directed-path condition.
+
 ## Research goal and current result
 
 The earlier [anchored light-star algorithm](polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges) processes each unequal-weight light client once, selecting the minimum-load eligible leaf among descending-weight edge queues. For light overlap components that are either constant-multiplicity or anchored stars, it constructs a box NE and then a polynomial complete factor-two continuation, even with frozen heavy customers crossing components. The [strict example](../../../examples/multi_facility/greedy_star_edges.json) and [exact arithmetic check](../../../tests/audits/kfac_star_edges.py) separate this condition from previous sufficient classes. The directed-path and double-LPT results above now cover additional unequal-weight nonstar partial overlaps; the unrestricted class remains open.
