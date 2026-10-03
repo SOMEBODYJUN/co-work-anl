@@ -1257,6 +1257,206 @@ Placing 5 at L and 3 at M instead gives an exact site-uniform NE with
 weights (135,83,46). This example refutes an unconditional star-anchor
 **list algorithm**, not the greedy layout or the factor-two target.
 
+## SC-K-GREEDY-SINGLETON-RESET and SC-K-GREEDY-BOX-TO-2
+
+**Reusable singleton-deviation lemma.** Fix the greedy layout of a
+positive-reach explicit rational MF-MODEL instance, with last insertion
+score gamma>0. Take a facility at an occupied site u with q_u=1 and
+**any** exact on-path independent-mixed customer NE in which its expected
+load a is at least gamma. For each deviation by this facility there is
+an input-bit-polynomially constructible exact **pure** off-path customer
+NE giving it at most 2gamma<=2a. In fact the off-path construction does
+not use the on-path customer assignment at all; only the scalar a>=gamma
+is needed for the factor comparison.
+
+Let K be all sites with greedy final multiplicity one, and P the clients
+*initially assigned by greedy* to sites of K. SC-K-GREEDY-MAX-MULT says
+every P customer's occupied options lie in K. If s is the first site
+of K opened, every P customer was then uncovered. For each t in K,
+greedy's comparison at that opening (including t=s), and the final
+second-seat candidate at s, give
+
+\[
+ w(P\cap C_t)\le W_s^0\le2\gamma.                 \tag{30C}
+\]
+
+After u disappears, **reset every old customer to its initial greedy
+site**, except customers of its original greedy set J_u^0, whose old
+site has vanished. Send each of these to any surviving occupied site
+covering it, if one exists; by MAX-MULT that site lies in K. If none
+exists and the deviator has opened an unoccupied site r that covers it,
+send it to the deviator. Otherwise it is unserved. All genuinely newly
+served customers N_r at an unopened target also go to the deviator.
+Every surviving higher-multiplicity site retains its original assigned
+weight W_t^0<=(q_t+1)gamma and has q_t stationary facilities. Every
+surviving t in K holds a subset of P cap C_t, of weight at most 2gamma;
+put all of it on its one stationary facility. At an occupied target the
+deviator starts empty, whether its target originally had q_t=1 or more.
+At an unopened target, the original greedy singleton budget (8) yields
+
+\[
+  N_r+w(J_u^0\cap C_r)\le W_u^0\le2\gamma.      \tag{30D}
+\]
+
+Thus the deviator is ordinary under cap 2gamma. Apply MF-PACK-2 with
+parameter gamma to the original W_t^0 at each stationary q_t>=2 site,
+isolating any customer above 2gamma. Other stationary facilities already
+have loads <=2gamma. MF-PURE-CAP-POLY reaches an exact pure customer NE
+without increasing the deviator above 2gamma; its macro-isolation check
+includes previously stranded customers and the actual post-deviation
+coverage. This is polynomial in input bit length. The reset can send
+customers to different sites from the chosen on-path NE: continuation
+states are independently selectable at different labeled layouts.
+
+**Box-completion corollary (SC-K-GREEDY-BOX-TO-2).** Suppose an explicit
+site-pure/uniform-within-site exact on-path customer NE at the greedy
+layout has
+
+\[
+             q_t\gamma\le W_t\le(q_t+1)\gamma
+             \quad\text{at every occupied }t.          \tag{30B}
+\]
+
+Then its same labeled layout has an input-bit-polynomial complete exact
+factor-two continuation. At q_u=1, a=W_u>=gamma and the preceding reset
+lemma applies, **without any private-reserve or orphan budget for the
+selected NE**. At q_u>=2 the source survives; a=W_u/q_u>=gamma, the
+stationary budgets follow from W_t<=(q_t+1)gamma<=(q_t+1)a at every
+other occupied site. At the surviving source itself, W_u=q_u a is
+exactly the (h+1)a packing budget for h=q_u-1 stationary facilities;
+an occupied target keeps its original q_t stationary bins and starts
+the deviator empty. Every unopened site's newly covered weight
+N_r<=gamma<=a starts on the deviator. MF-PACK-2 and
+MF-PURE-CAP-POLY complete these deviations. A polynomial default pure
+NE rule supplies the other labeled layouts. This separates the task of
+**finding** a box-constrained exact on-path NE from the now-complete
+off-path algorithm. It does not assert such an NE exists at every greedy
+occupancy, nor a polynomial method to find one on arbitrary input.
+
+## SC-K-UNIFORM-LIGHT-FLOW-2: partial overlaps without a common anchor
+
+**Exact conditional theorem.** Run SC-K-GREEDY-BUDGET on any explicit positive
+binary rational MF-MODEL instance, with arbitrary labeled k>=2 and positive
+maximum reach. Let gamma>0 be its last score and A_i the customer's set
+of occupied sites. Suppose all customers with |A_i|>=2 and w_i<gamma
+have **one common weight** delta (when this set is nonempty, 0<delta<gamma).
+Customers with |A_i|=1 may have arbitrary weights, and multi-option customers
+with w_i>=gamma may have arbitrary weights. **No condition on singleton
+private reserves is imposed.** Then the **same greedy layout** has an
+input-bit-polynomial site-uniform independently mixed exact customer NE
+and a complete exact factor-two continuation. Arbitrary occupied-site
+partial overlaps and mixed multiplicities are permitted. This claim neither
+solves the general mixed-light-weight case nor asserts that every NE at
+the greedy occupancy is safe.
+
+**Fixed customers and lower-constrained potential.** Freeze each customer
+with one occupied option at that site, and each multi-option customer of
+weight at least gamma at its greedy initial site. All other served customers
+are the N weight-delta *variable* customers. Let P_t be frozen weight at t,
+n_t^0 the variable count initially at t, and n_t its count in a candidate
+assignment. The initial greedy box is
+
+\[
+ q_t\gamma\le W_t^0=P_t+\delta n_t^0\le(q_t+1)\gamma.
+\]
+
+Put \(\ell_t=\max\{0,\lceil(q_t\gamma-P_t)/\delta\rceil\}\). Minimize,
+over assignments of variable customers to their own occupied option sets
+with \(n_t\ge\ell_t\) at all sites, the separable potential divided by delta
+
+\[
+ F(n)=\sum_t\left(\frac{P_t n_t}{q_t}
+       +\frac{\delta n_t(n_t-1)}{2q_t}\right).        \tag{31F}
+\]
+
+The greedy initial assignment makes these integer lower bounds feasible.
+For completeness, a polynomial exact solver uses a unit-capacity edge from
+the source to each variable customer, edges from that customer to each site
+in A_i, and N unit site-to-sink slots at t, the jth with increasing cost
+\(c_{tj}=(P_t+(j-1)\delta)/q_t\). Require the first \(\ell_t\) slots
+at t to be filled. This is an integral minimum-cost flow with lower bounds
+and O(N|S|+N) explicit edges.
+One may avoid a lower-bound black box: set C=max_{t,j}c_{tj}, B=NC+1,
+and subtract B from the first \(\ell_t\) slot costs. Since the initial
+assignment fills all mandatory slots and every original full-flow cost is
+between 0 and NC, an optimum of the rewarded network fills all of them.
+Increasing original slot costs ensure that, given n_t customers at t,
+the cheapest slots are precisely 1,...,n_t; thus the original cost is
+(31F). Standard exact rational min-cost flow has polynomial input-bit
+complexity (the source edges give N unit augmentations), and the output
+is an integral client assignment. If N=0, retain the greedy assignment.
+
+For a variable customer i at s, an alternative occupied v would strictly
+improve its actual conditional cost exactly when
+
+\[
+          (W_s-\delta)/q_s>W_v/q_v.                  \tag{32F}
+\]
+
+If moving i leaves the lower constraints feasible, it decreases (31F)
+by the exact potential difference, contradicting minimality. If the move
+breaks the lower constraint at s, then \(W_s-\delta<q_s\gamma\), so
+its left side is below gamma while \(W_v/q_v\ge\gamma\); (32F) is
+impossible. Therefore every variable customer is at exact NE, without
+requiring a bounded path of customer improvements.
+
+**Upper box by a reverse transport path.** Draw one directed edge from
+each variable customer's *initial* site to its final site, omitting
+stationary loops. SC-K-GREEDY-MAX-MULT makes q nonincreasing along every
+edge. If some final site t exceeded its greedy upper box, then
+\(W_t>(q_t+1)\gamma\), hence \(n_t>n_t^0\). Flow decomposition of these
+unit edges yields a simple directed path from a site s with
+\(n_s<n_s^0\) to t; in particular \(q_s\ge q_t\). Along each edge of
+the path return the corresponding customer from its final to its initial
+site. Every move is allowed, intermediate site counts cancel, and only
+s gains delta and t loses delta. The lower bound at t survives because
+\(W_t-\delta>q_t\gamma+\gamma-\delta\ge q_t\gamma\);
+all others are unchanged or increase. At s,
+\(W_s\le W_s^0-\delta\le(q_s+1)\gamma-\delta\). Thus
+
+\[
+ \frac{W_s}{q_s}
+ \le\gamma+\frac{\gamma-\delta}{q_s}
+ \le\gamma+\frac{\gamma-\delta}{q_t}
+ <\frac{W_t-\delta}{q_t}.                          \tag{33F}
+\]
+
+The return path strictly reduces (31F) by
+\(W_s/q_s-(W_t-\delta)/q_t\), a contradiction. Hence all final sites
+lie in \([q_t\gamma,(q_t+1)\gamma]\). Every frozen multi-option client
+has w_i>=gamma, and its source external cost is at most
+\(((q_s+1)\gamma-w_i)/q_s\le\gamma\), whereas every other occupied
+site has load at least gamma. It therefore has no strict improvement.
+The fixed one-option clients have no alternative occupied site. Uniform
+independent choice within each assigned site is consequently a full
+exact on-path customer NE.
+
+**Off-path and bit complexity.** The full on-path box just proved meets
+SC-K-GREEDY-BOX-TO-2, including its reset construction when a singleton
+source disappears. Therefore every actual facility deviation admits an
+input-bit-polynomial pure exact NE with deviator load at most twice its
+on-path load. A polynomial default rule completes the continuation.
+Rational denominator products,
+the O(N) minimum-cost augmentations, the at most k(|S|-1) deviations,
+and all calls to the published identical-link algorithm have polynomial
+input bit length. The fixed-layout min-cost flow is **our reduction**;
+the 2004 theorem is imported only for off-path exact Nashification.
+
+**Strict new chain instance.** Take k=6, site order H,M,L, and clients
+(140,H),(80,M),(41,L),(10,HM),(10,ML), with notation weight/options.
+Greedy strictly selects H,M,H,H,M,L at scores
+(150,90,75,50,45,41). The final counts are (3,2,1), gamma=41,
+and initial totals (150,90,41). The two movable customers have common
+weight delta=10. The minimum-cost
+assignment puts HM at M and ML at L, giving totals (140,90,51).
+Their source external loads are respectively 40 and 41, versus
+alternative loads 140/3 and 45, so this is exact NE. The old range
+certificate fails on the HM customer, since 150/3-10/3=140/3>90/2=45.
+The overlap component is the H--M--L chain, so the all-or-one and
+nested-anchor hypotheses fail; its singleton source is covered by the
+general reset lemma. This finite instance separates the conditional
+theorems, while the preceding argument proves the universal scope.
+
 ## SC-K-DESCENT-ONLY-TRAP-NO: three-site partial overlap needs an upward return
 
 **Refuted selection assertion.** From the greedy initial customer assignment,

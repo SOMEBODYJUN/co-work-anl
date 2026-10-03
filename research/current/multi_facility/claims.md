@@ -578,6 +578,86 @@ found no fatal objection; no external peer review, novelty certification or
 canonical software implementation. This condition does **not** include
 general three-site partial overlaps or prove the all-input polynomial target.
 
+## SC-K-GREEDY-SINGLETON-RESET -- universal singleton off-path repair
+
+**Objects/quantifiers:** positive-reach explicit rational MF-MODEL input,
+arbitrary k>=2, the exact greedy layout with final score gamma>0, any
+singleton-source facility f at an occupied site u with q_u=1, and any
+on-path customer profile (including independent mixing) giving f expected
+load a>=gamma. For every actual move of f, there exists an exact *pure*
+off-path customer NE with its payoff at most 2gamma<=2a, constructible in
+input-bit-polynomial time. On-path customer optimality is not needed for
+the off-path construction; it is required when using the lemma in an SPE.
+
+**Proof/objections:** P is the customers initially greedy-assigned to any
+q=1 site. MAX-MULT prevents them from using an original q>1 site and the
+first singleton opening proves w(P cap C_t)<=2gamma for all original q=1
+sites. Reset all old customers to their original greedy sites except those
+in the disappearing site's **original** J_u^0; redirect those to surviving
+q=1 sites, or to a newly opened target when no stationary option remains.
+The original strong greedy budget (8) puts at most W_u^0<=2gamma on an
+unopened deviator target including genuinely new customers. Original q>1
+sites survive, hold W_t^0<=(q_t+1)gamma and pack into their q_t stationary
+facilities under cap 2gamma. Original q=1 sites each hold a subset of
+P cap C_t of weight <=2gamma; occupied-target deviator begins empty.
+MF-PURE-CAP-POLY completes exact customer NE preserving its cap. All
+disappearing-site and occupied-target cases are explicit in
+[polytime_frontier.md](polytime_frontier.md). Internal independent inverse
+review found no fatal issue; no canonical implementation or external review.
+This is an off-path lemma, not an algorithm for selecting the on-path NE.
+
+## SC-K-GREEDY-BOX-TO-2 -- a sufficient on-path certificate
+
+**Exact statement:** at the greedily chosen labeled occupancy, suppose an
+explicit site-pure/uniform-within-site exact on-path customer NE satisfies
+q_t gamma<=W_t<=(q_t+1)gamma at every occupied site. Then an exact
+complete factor-two continuation for this same on-path state is computable
+in input-bit-polynomial time. For q=1 sources use
+SC-K-GREEDY-SINGLETON-RESET; for q>=2 the box gives occupied-target
+stationary budgets, and greedy's N_r<=gamma gives unopened budgets.
+MF-PACK-2, MF-PURE-CAP-POLY and MF-CONT-COMPLETE finish all layouts.
+
+**Scope/limit:** no assumption on overlaps, site counts, weight diversity,
+repair path, or singleton private reserves. The box and on-path NE must
+both be supplied: their universal existence at the greedy occupancy and
+input-bit-polynomial selection remain open. A bad NE outside the box does
+not refute this conditional statement. Direct proof and reverse reset
+check in [polytime_frontier.md](polytime_frontier.md); no external review.
+
+## SC-K-UNIFORM-LIGHT-FLOW-2 -- equal light weights, arbitrary partial overlap
+
+**Objects/quantifiers:** positive-reach explicit positive binary rational
+MF-MODEL, arbitrary explicit k>=2, actual greedy occupancy and gamma>0.
+Every multi-option customer (at least two occupied options) of weight below
+gamma has one common weight delta with 0<delta<gamma, unless there are
+no such customers. Single-option clients and multi-option clients of
+weight >=gamma may have unrestricted positive weights. No restriction on
+occupied overlap graph, multiplicities or singleton private reserves.
+
+**Conclusion/construction:** the same greedy labeled layout has an
+input-bit-polynomially constructible site-uniform independently mixed exact
+on-path customer NE obeying every greedy box and a complete exact
+factor-two continuation. Freeze single-option customers and multi-option
+weights >=gamma at their greedy sites. Assign the delta clients by an
+integral convex-cost flow minimizing the exact weighted client potential,
+subject to W_t>=q_t gamma. A strictly improving client move cannot break
+the lower bound. If a site t exceeds (q_t+1)gamma, decompose initial-to-final
+client arcs into a path from a net-losing s to t; MAX-MULT gives q_s>=q_t.
+Returning one delta client along every path arc is feasible and strictly
+reduces the potential, a contradiction. The box also keeps all frozen
+heavy clients at NE. SC-K-GREEDY-BOX-TO-2 supplies all off-path equilibria.
+
+**Evidence/limits:** [full flow network, inequalities and strict chain
+instance](polytime_frontier.md),
+`examples/multi_facility/greedy_uniform_light_flow.json`, independent
+`tests/audits/kfac_uniform_light_flow.py`. The three-site (3,2,1)
+H--M--L instance lies outside RANGE, ALL-OR-ONE and NESTED-ANCHOR.
+The finite script checks that instance only. The universal proof passed
+independent inverse attack, but no external review, novelty certification
+or canonical software implementation is recorded. Two or more different
+light multi-option weights invalidate the equal-unit path argument as
+stated; the all-input polynomial target remains open.
+
 ## SC-K-DESCENT-ONLY-TRAP-NO -- forced upward return in a partial-overlap chain
 
 **Exact objects/domain:** the six-client, three-site, six-facility positive

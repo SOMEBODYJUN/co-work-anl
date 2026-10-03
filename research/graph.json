@@ -1723,6 +1723,55 @@
         "examples/multi_facility/greedy_nested_anchor.json"
       ],
       "status": "finite arithmetic check"
+    },
+    {
+      "id": "SC-K-GREEDY-SINGLETON-RESET",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Singleton deviations reset to greedy assignment",
+      "detail": "For any original q=1 source with on-path payoff at least gamma, original singleton pools and high-q greedy weights give a pure off-path NE with deviator at most 2 gamma, independent of the selected on-path customers.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "SC-K-GREEDY-BOX-TO-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "A box-constrained greedy NE completes factor two",
+      "detail": "Any supplied site-uniform exact on-path NE with all weights in the greedy site box has bit-polynomial full factor-two continuation; singleton reset removes orphan reservations.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "SC-K-UNIFORM-LIGHT-FLOW-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Uniform light multi-option weights give polynomial factor two",
+      "detail": "With a common weight delta for all multi-option clients lighter than gamma, lower-bounded integral convex-cost flow yields exact NE; reverse equal-unit transport path proves the upper box for arbitrary partial overlaps.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "E-K-UNIFORM-LIGHT-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Three-site uniform-light exact audit",
+      "detail": "Strict greedy trace and four-assignment Fraction enumeration confirm the fixed chain instance, range separation and exact box NE; no universal proof follows.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_uniform_light_flow.py",
+        "examples/multi_facility/greedy_uniform_light_flow.json"
+      ],
+      "status": "finite arithmetic check"
     }
   ],
   "hyperedges": [
@@ -3594,6 +3643,75 @@
         "tests/audits/kfac_nested_anchor.py"
       ],
       "status": "finite arithmetic check; not universal proof"
+    },
+    {
+      "id": "e-mf-singleton-reset",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "MF-PACK-2",
+        "MF-PURE-CAP-POLY"
+      ],
+      "conclusion": "SC-K-GREEDY-SINGLETON-RESET",
+      "statement": "Reset off-path customers to greedy initial sites; original q=1 pool and unopened target budget bound all ordinary loads by 2 gamma.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-box-to-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-SINGLETON-RESET",
+        "MF-PACK-2",
+        "MF-PURE-CAP-POLY",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-GREEDY-BOX-TO-2",
+      "statement": "A supplied box-constrained exact on-path NE uses the singleton reset for q=1 sources and box budgets for surviving q>=2 sources.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-uniform-light-flow",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "SC-K-GREEDY-BOX-TO-2"
+      ],
+      "conclusion": "SC-K-UNIFORM-LIGHT-FLOW-2",
+      "statement": "Lower-bounded integral convex-cost flow selects a box-constrained NE; a reverse equal-unit path prevents upper-box overflow even on arbitrary partial-overlap graphs.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-uniform-light-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-UNIFORM-LIGHT-AUDIT"
+      ],
+      "conclusion": "SC-K-UNIFORM-LIGHT-FLOW-2",
+      "statement": "The integer chain is a finite exact separation from RANGE, ALL-OR-ONE and NESTED-ANCHOR; this check is not a universal proof.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_uniform_light_flow.py"
+      ],
+      "status": "finite arithmetic check"
     }
   ]
 }

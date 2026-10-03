@@ -8,6 +8,10 @@
 
 ## 当前前沿与本轮闭合
 
+**离轨接口与无锚链形构造（2026-10-03）。** [SC-K-GREEDY-SINGLETON-RESET / SC-K-GREEDY-BOX-TO-2](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-singleton-reset-and-sc-k-greedy-box-to-2)把瓶颈重新固定为**寻找盒内精确在轨客户 NE**：对原 $q=1$ 的设施，偏离后直接回到初始贪心客户分配，原单站客户池每站至多 $2\gamma$、原高重数站可按 $2\gamma$ 装箱，故不需在轨客户的私有储备或原孤儿预算；任意在轨收益 $a\ge\gamma$ 都有位长多项式离轨纯 NE 使偏离者至多 $2\gamma\le2a$。若给出盒内站纯/站内均匀的精确在轨 NE，其余 $q\ge2$ 来源也由盒预算完成全部 2 倍续局。
+
+[SC-K-UNIFORM-LIGHT-FLOW-2](research/current/multi_facility/polytime_frontier.md#sc-k-uniform-light-flow-2-partial-overlaps-without-a-common-anchor)进一步处理任意交叠图和混合重数，只要求所有低于 $\gamma$、可选择多个已占站的客户具有同一权重 $\delta$。冻结其他客户、用每站下界的整数凸费用流最小化精确客户势，初始到终局的同重运输逆路径严格排除上盒溢出；高权客户也保持最优反应。与盒内续局引理合成位长多项式 2 倍完整构造。严格 $(3,2,1)$ 三站链例不属 RANGE、ALL-OR-ONE 或 NESTED-ANCHOR。内部独立逆审与 Fraction 复算通过，尚无外部评审或规范软件；**不同轻权的普遍盒内 NE 存在性与多项式选择仍开放**。
+
 **新增部分交叠条件类（2026-10-03）。** [SC-K-NESTED-ANCHOR-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-nested-anchor-greedy-2-a-partial-overlap-mixed-component)证明：贪心每个混合重数交叠分量若有首开共同锚站，且多选项客户按权重非增排列时选项集逐步扩张，则受限列表分配可位长多项式构造精确在轨 NE 和完整 2 倍续局。它包含先前 ALL-OR-ONE 类，且一个严格三站整数例有真正的部分交叠，旧 RANGE 证书失败。负载盒只靠共同锚站就能保住；精确 NE 额外依赖选项集的顺序。交换同一例两个共有客户的选项集后，无条件列表法产出非 NE，虽然另有精确 NE。该反例只限定此列表规则。一般三站及以上的部分交叠、非嵌套输入仍开放。新证明经独立内部逆审与精确整数复算，未外审，规范软件尚未实现。
 
 **第二阶段新增推进（2026-10-03）。** [SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-all-or-one-component-greedy-2-arbitrarily-many-mixed-multiplicity-sites)把条件性多项式 2 倍算法推到**任意大混合重数交叠分量**：每名客户在该分量内的已占选项要么唯一，要么包括分量所有地点。首开地点初始收下全部共有客户且最终重数最大；把这些客户按权重递减分配到当前单位设施负载最低地点，得到精确客户 NE。首开地点保留的总量、其他站的私有负载储备，分别证明贪心负载区间及单设施源消失的装箱预算。原双地点条件类按作用域包含在新定理内；三地点 $(3,2,1)$ 整数例不满足旧区间证书，却由新算法处理。证明经过独立内部逆审，尚无规范实现和外部评审。

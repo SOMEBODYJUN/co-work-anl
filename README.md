@@ -20,6 +20,8 @@
 
 **部分交叠的新闭合（2026-10-03）：**[嵌套锚站定理](research/current/multi_facility/polytime_frontier.md#sc-k-nested-anchor-greedy-2-a-partial-overlap-mixed-component)允许任意大的混合重数分量中存在真正的部分交叠：首开地点覆盖所有多选项客户，且这些客户按权非增排列时已占选项集逐步扩张。受限列表分配的“最后入站客户”给精确 NE，共同锚站保住所有贪心负载盒，私有储备处理单设施源消失，因此得到位长多项式完整 2 倍续局。三站 $(3,2,1)$ 严格例不满足旧 ALL-OR-ONE 或 RANGE；交换两个客户的选项集使同一列表法失败，却仍有另一个 NE。一般非嵌套、无共同锚站的三站交叠仍开放。
 
+**离轨瓶颈再收紧（2026-10-03）：**[原单设施站重置引理与盒内续局定理](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-singleton-reset-and-sc-k-greedy-box-to-2)表明：对贪心布局上任何原 $q=1$ 设施，只要在轨收益 $a\ge\gamma$，离轨客户可独立重置到最初贪心分配，给偏离者构造收益至多 $2\gamma\le2a$ 的精确纯 NE，**不需要**在轨客户分配保持私有储备。于是只要找到所有站总重在 $[q_t\gamma,(q_t+1)\gamma]$ 的精确站纯/站内均匀 NE，就能多项式完成完整 2 倍续局。新的[同重轻客户费用流定理](research/current/multi_facility/polytime_frontier.md#sc-k-uniform-light-flow-2-partial-overlaps-without-a-common-anchor)在所有低于 $\gamma$ 的多选项客户同重 $\delta$ 时，用带站点下界的整数凸费用流选出盒内 NE；一条反向同重运输路径排除上盒溢出。它包含无共同锚站的三站链 $(3,2,1)$ 严格例。不同轻权的一般情形尚未闭合。
+
 ## 先判断输入属于哪条命题
 
 | 目标 | 同时要求 | 可得到什么 | 从哪里开始读 |
@@ -61,6 +63,8 @@
 
 新部分交叠依赖：贪心最大重数共同锚站 + 按权非增而选项集递增的受限列表分配 + 私有客户储备 → SC-K-NESTED-ANCHOR-GREEDY-2；全站共有是特例。反序选项集的三站例仅攻击无条件列表规则，不攻击贪心布局；它的精确复算由 `tests/audits/kfac_nested_anchor.py` 给出。
 
+新离轨与流依赖：贪心初始最大重数归属 + 原 $q=1$ 客户池上界 + 原初始预算 (8) + 多项式有界装箱修复 → SC-K-GREEDY-SINGLETON-RESET；与给定精确在轨负载盒结合 → SC-K-GREEDY-BOX-TO-2。把全部轻多选项客户视为同重整数流 + 每站最低负载约束 + 逆向运输路径严格降势 → SC-K-UNIFORM-LIGHT-FLOW-2，再调用 BOX-TO-2。这给全 $k$ 问题一个精确的新核心：一般混合轻权是否能高效选到盒内 NE。
+
 ## 如何追踪一项研究结论
 
 [命题登记](research/current/claims.md)固定适用域与状态；[现行资产索引](ASSETS.md)把命题连到新稿、实现、检验及历史来源。[数学超图](research/index.html)的节点是定义、引理、反例和结论；一条推导超边要求**所有列出的共同前提**，不是旧文件之间的链接。其[数据](research/graph.json)和[维护规则](research/README.md)可直接核查。GitHub 预览 HTML 时显示源码，下载 HTML 后可使用交互查看器。
@@ -91,6 +95,7 @@
 | `research/current/multi_facility/uniform_two.md`、`research/K_FACILITY_AUDIT_2026-10-02.md` | 任意 $k$ 的共同目录因子 2 存在性证明、逐式逆审、方法边界及面向领域的价值解释；研究多设施稳定性时先读。无多项式构造或因子 2 尖锐性结论。 |
 | `research/current/multi_facility/polytime_frontier.md` | 精确全局字典序选址的强 NP 难性、多项式局部邻域、贪心预算、全异址 **2 倍**与重数类区间证书；双地点混合重数、任意大“全站共有或单站私有”及“嵌套锚站部分交叠”分量的多项式构造，均处理单设施源预算。给出坏修复、固定布局字典序、势最小化、无条件锚站列表失败和三站下降改派停在非 NE 的不同障碍。攻全 $k$ 高效算法时先读；非嵌套或无共同锚站的混合重数部分交叠仍开放。 |
 | `examples/multi_facility/greedy_nested_anchor.json`、`tests/audits/kfac_nested_anchor.py` | 三站五客户正整数例及独立 Fraction 复算：严格贪心、嵌套选项列表得到精确 NE、旧 RANGE 失败；交换两个选项集后无条件列表法非 NE，但另一分配仍是 NE。检验嵌套锚站证明的有限边界时读，不能代替全称证明。 |
+| `examples/multi_facility/greedy_uniform_light_flow.json`、`tests/audits/kfac_uniform_light_flow.py` | 无共同锚站的三站链正整数例及独立 Fraction 复算：严格贪心、所有轻多选项客户同重、下界势最小唯一盒内 NE、旧 RANGE 失败。阅读费用流新定理的严格超出旧子类例时使用；有限枚举不证明一般定理。 |
 | `examples/multi_facility/greedy_descent_trap.json`、`tests/audits/kfac_descent_trap.py` | 六客户、三地点 H--M--L 的整数输入与独立 Fraction 审查：六次无并列贪心、唯一三步下降改派、被迫上升回返及其后的精确 NE。检验“只允许重数下降”或照搬双站递减扫描的算法时读；该例不否定 2 倍布局。 |
 | `examples/multi_facility/greedy_cap_obstruction.json`、`tests/audits/kfac_greedy_cap.py` | 六地点十顾客的精确整数输入与独立 Fraction 检查：重算确定性贪心得分、五次严格客户改派、在轨精确 NE、B/E/G 的强制 $44>41$ 容量障碍和偏离者仅获 $20$ 的离轨精确 NE。研究 SC-K-GREEDY-CAP-INFEASIBLE 的算术或试图修改装箱接口时运行；有限检查不替代文件中的全称定理证明。 |
 | `examples/multi_facility/greedy_repair_order_escape.json`、`tests/audits/kfac_greedy_repair_order.py` | 第一份六地点整数输入和独立 Fraction 审核：贪心得分、五步严格客户改善、坏终点精确 NE、B→G 在所有混合 NE 强制 $32/15$ 倍；新增全部 16 个地点纯分配的精确枚举，核查该坏终点也是固定贪心布局唯一 lexmax。同布局另一终点保留四预算。设计客户修复规则时读；只证明固定实例的失效。 |

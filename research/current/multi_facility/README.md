@@ -83,6 +83,21 @@ close disappearing-singleton budgets. A strict three-site example separates
 it from ALL-OR-ONE and RANGE; reversing two option sets makes the unrestricted
 list rule fail NE but leaves another NE. The full mixed-q partial-overlap
 problem remains open.
+`SC-K-GREEDY-SINGLETON-RESET` gives a stronger off-path interface: after
+departure from an originally singleton greedy site, reset old customers
+to greedy's initial assignment and use its original q=1 pool bound. This
+constructs a pure exact deviation NE with payoff at most 2 gamma when
+the on-path facility earns at least gamma, regardless of the on-path
+customer assignment. Hence **any supplied exact site-uniform on-path NE
+in the full greedy load box** has a bit-polynomial factor-two continuation
+(`SC-K-GREEDY-BOX-TO-2`), without singleton private reserves.
+`SC-K-UNIFORM-LIGHT-FLOW-2` constructs such a box NE for arbitrary partial
+overlaps and multiplicities when all multi-option customers lighter than
+gamma have the same weight delta; other weights are arbitrary. A
+lower-bounded integral convex-cost flow gives exact NE, and reversing a
+path of equal-weight transfers proves the upper box. A strict three-site
+H--M--L chain lies outside RANGE, ALL-OR-ONE and NESTED-ANCHOR. Finding
+a box NE on general mixed-light-weight input remains open.
 Outside those conditional classes, `SC-K-GREEDY-STATIC-PACK-NO` gives a
 five-site integer instance where a reachable exact on-path NE leaves a
 different surviving site too heavy for the old cap packing if customer site
@@ -134,7 +149,7 @@ exact SPE (`SC-K-SYMMETRIC-MENU-OBSTRUCTION`).
 | `reverse_review.md` | Reverse reconstruction from the desired off-path cap; explicit objections and independent-implementation evidence, with no claim of external peer review. |
 | `lexmax_boundary.md` | For every fixed k, the selected lexmax occupancy itself can need factor tending to 2 under all NE choices, while another layout has an exact SPE; a sub-two proof must permit different layouts. |
 | `symmetric_menu_obstruction.md` | Explicit all-q family separating unbounded symmetric-menu threat from alpha^*=1 in the full model; read before proposing any menu-only lower bound. |
-| `polytime_frontier.md` | Explicit import of polynomial capped Nashification, 3-PARTITION reduction for exact global lexmax, polynomial local neighborhood, all-distinct 2 bound, multiplicity-class range certificate, mixed-q pair scan, all-or-one and nested-anchor partial-overlap list constructions. Contains strict-repair-order, fixed-layout customer lexmax and potential-minimum escapes, an unrestricted anchored-list failure, plus a forced upward return on a partial-overlap three-site chain; read before proposing a universal greedy-output customer selection rule. |
+| `polytime_frontier.md` | Exact global lexmax hardness, local PLS neighborhood, greedy budgets, distinct-site and mixed-q conditional algorithms. Universal singleton reset completes any supplied box-constrained exact on-path NE; lower-bounded integral flow constructs one for arbitrary partial overlaps with equal light multi-option weights. Includes strict repair, fixed-layout selection, anchored-list and descending-only obstructions. Read before proposing a universal greedy-output customer selection rule. |
 
 Implementation: `multi_facility_spe/two_exists.py` and `__main__.py`, a sibling
 package rather than a silent modification of the two-facility API.
