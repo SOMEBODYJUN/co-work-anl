@@ -1,6 +1,7 @@
 # Computing the arbitrary-k factor-two witness: two separated obligations
 
-Version 1, 2026-10-02. The target is the **same** common-catalog, labeled-facility,
+Version 1, 2026-10-02, with conditional construction and selection-rule
+obstructions added 2026-10-03. The target is the **same** common-catalog, labeled-facility,
 positive atomic-weight model and complete exact customer-NE continuation in
 [MF-MODEL](model.md). The input for complexity statements is explicit binary
 rational data and explicitly listed k. These results neither give a polynomial
@@ -898,6 +899,109 @@ the tie order. Greedy chooses \(A,A,B\), with \(q_A=2,q_B=1,\gamma=3/2\).
 The shared client weighs 2 and satisfies the condition. This example is not
 covered by the earlier componentwise equal-multiplicity criterion.
 
+## SC-K-TWO-SITE-COMPONENT-GREEDY-2: mixed multiplicities in a two-site component
+
+**Exact conditional theorem.** Run the polynomial greedy procedure on an
+explicit positive rational common-catalog instance with arbitrary (k\ge2)
+and positive maximum site reach. Make the graph on occupied sites in which
+two sites are adjacent if a client can use both. Suppose every component
+either has a constant facility multiplicity, or consists of exactly two
+sites (with potentially unequal multiplicities). This is a polynomially
+checkable condition on the greedy **output**. Then, in input-bit-polynomial
+time, the greedy labeled layout can be equipped with a site-uniform exact
+independent-mixed on-path customer NE and a complete exact factor-two
+continuation. The mixed two-site case does not require the cross-multiplicity
+range condition (17R). Components of larger size and varying multiplicity
+remain outside this theorem.
+
+**Two-site customer repair.** Fix a two-site component (H,L) with
+(Q=q_H>q=q_L\ge1). By SC-K-GREEDY-MAX-MULT, every customer able to use
+both occupied sites starts at (H). All other served customers in this
+component have exactly one occupied option. Scan the common customers in
+**nonincreasing weight** order, each once. Transfer the currently scanned
+customer (i) from (H) to (L) precisely when its current move is a
+strict cost improvement. Write
+
+\[
+  \Delta=W_H/Q-W_L/q.
+\]
+
+A customer still at (H) of weight (w) strictly wants to move iff
+(\Delta>w/Q). If it moves, (\Delta) decreases by
+(w(1/Q+1/q)); thus a customer skipped at (H) can never begin to want
+to move. Immediately after a moved weight (w), strict improvement gives
+(\Delta>-w/q). If any moves occur, apply this to the **last** moved
+weight (w_*). No subsequent moves change (\Delta), and every previously
+moved weight is at least (w_*), so every customer now at (L) satisfies
+(\Delta>-w_*/q\ge-w/q): none wants to return to (H). If no move
+occurs, the skipped-customer argument already proves equilibrium. This is
+an exact site-level NE in at most the number of common customers in that
+component, including equality cases (ties are not transfers). Independent
+uniform choice among facilities within the selected site turns it into an
+exact customer NE of the original fixed-layout game.
+
+**Load box invariant.** At the end of greedy, every occupied site obeys
+(q_t\gamma\le W_t\le(q_t+1)\gamma), where (\gamma>0) is the
+last insertion score. More generally, a strict transfer of weight (w)
+from multiplicity (Q\ge q) to multiplicity (q), while this box holds,
+has (w<\gamma): its old external load
+((W_H-w)/Q\le\gamma+(\gamma-w)/Q) exceeds the target's old load
+(W_L/q\ge\gamma). The new source load is (>\gamma). The strict
+improvement inequality and the old upper box also give
+
+\[
+ W_L'/q < \gamma+\gamma/Q+w(1/q-1/Q)
+          < \gamma+\gamma/q,
+\]
+
+where the last step uses (q\le Q) and (w<\gamma). All unaffected
+sites keep their box. Thus every transfer in the descending scan preserves
+the full box. For any component with constant (q), instead run the
+published restricted identical-machine Nashification on its initial
+customers and occupied sites; it preserves both load extrema, hence the
+same box. Different components have no common reachable customer, so these
+procedures combine into one exact customer NE. The denominator product has
+polynomial bit length for rational weights; sorting, scans, and scheduling
+calls are all bit-polynomial. An unserved customer has no occupied option
+and is unaffected.
+
+**Facility deviations.** Every on-path facility has load (a\ge\gamma),
+and every unoccupied target has new coverage (N_r\le\gamma). For a
+source with (q_u\ge2), the source survives, and the box yields
+(W_t\le(q_t+1)\gamma\le(q_t+1)a) at each other occupied site;
+the occupied and empty-target packing budgets (5)--(6) follow. If a
+singleton source (u) is in an unequal two-site component, its partner
+(H) has (Q>1). Every client now at (u) who can use an occupied site
+other than (u) can use only (H), and the transferred common clients
+started there. Hence
+(W_H+w(J_u\cap C_H)=W_H^0\le(Q+1)\gamma\le(Q+1)a).
+At other occupied sites the orphan overlap is zero and the box proves
+(7). If instead the singleton source is in a constant-(q=1)
+component, all customers assigned in such components were initially
+assigned to (q=1) sites; the initial singleton-site customer pool
+bound (19R) gives (7), including multi-site components. For an unopened
+target in either singleton case, it suffices to put at most
+(N_r+w(J_u\cap C_r)\le\gamma+a\le2a) on the deviator; the stronger
+original budget (8) is not needed. Pack the surviving sites using (7),
+isolate atoms above (2a), and apply MF-PURE-CAP-POLY to reach a pure
+exact off-path NE without increasing the deviator above (2a).
+The same construction covers an occupied target, starting the deviator
+empty. MF-CONT-COMPLETE supplies the polynomial-size evaluable full rule.
+This argument uses the customer pool only for untouched constant-(q=1)
+components; the mixed-pair singleton may receive clients from the
+higher-multiplicity partner and requires the displayed identity instead.
+
+**Strict extension of the existing range condition.** Take (k=3), two
+sites A,B and customers ((9,\{A\}),(1,\{A,B\}),(4,\{B\})).
+Greedy inserts A with score 10, A with score 5, and B with score 4,
+so (q_A=2,q_B=1,\gamma=4). Its shared weight-1 customer fails
+(17R): (\beta_2-1/2=5-1/2>\alpha_1=4). The descending scan moves
+this customer A\(\to\)B, producing weights ((9,5)) and exact NE:
+its old external load is (9/2) while B's old load was 4, and at B
+its external load is 4 while A's final load is (9/2). The load box
+and all deviation cases above apply. This example separates output
+classes, not the strength of their universal factor-two guarantees.
+
 ## SC-K-GREEDY-REPAIR-ORDER-NO: exact repair order can lose factor two
 
 **Refuted assertion.** "Run greedy once and make *any* sequence of strict
@@ -987,6 +1091,123 @@ and audit are `examples/multi_facility/greedy_heaviest_escape.json` and
 `tests/audits/kfac_greedy_heaviest.py`. It remains possible that a different
 polynomial rule always selects a good NE or changes the greedy occupancy.
 
+## SC-K-GREEDY-FIXED-LEXMAX-NO: the fixed-layout lexmax can select the bad NE
+
+**Exact obstruction.** In the first integer instance (18), fix the greedy
+occupancy (q=(1,1,2,1,3,0)) in site order (A,E,B,C,D,G). Consider **all**
+feasible site-pure customer assignments, each customer uniform among the
+facilities at its selected occupied site, and maximize their increasingly
+sorted vector of (k) per-facility loads lexicographically. There is a
+**unique customer site assignment** attaining this maximum. It is the bad
+exact on-path NE in (19), and its (B\to G) deviation earns (32/15>2)
+times the old load in **every** exact independent-mixed off-path NE. Thus
+even an exact fixed-layout site-uniform lexmax oracle cannot serve as the
+missing customer-selection rule for this greedy layout. This is not a
+claim about all possible on-path independent-mixed profiles, other facility
+layouts, or the globally lexmax selection in SC-K-2-E.
+
+**Proof of uniqueness over every feasible assignment, not just NEs.** Only
+weights (32) (A/B), (96) (B/E), (40) (A/C), and (52) (B/D) have two
+occupied options. The others are forced, while the weight-80 G-only customer
+is unserved. If 96 chooses B, E has load 82, so the minimum facility load is
+at most 82. If 96 chooses E, then a minimum **strictly greater than 82**
+forces 32 to B: otherwise B's total is at most (81+52=133), giving each
+of its two facilities at most (133/2). It also forces 52 to B: otherwise
+B's total is at most (81+32=113), giving at most (113/2). Finally, it
+forces 40 to A, because otherwise the sole A facility has load 80. These
+choices determine the only remaining assignment, with site totals
+((120,178,165,120,268)) and sorted minimum (165/2>82). Therefore it
+uniquely maximizes even the **first** sorted coordinate; no tie rule on the
+later coordinates can rescue lexmax. Its exact on-path NE inequalities and
+the forced (96+80=176) deviation load are proved immediately above.
+The distinct good exact NE at this very occupancy has E load 82 and the
+four transfer budgets. An independent 16-assignment Fraction enumeration
+checks the finite uniqueness claim in
+`tests/audits/kfac_greedy_repair_order.py`; the displayed inequalities are
+the proof.
+
+## SC-K-GREEDY-FIXED-POTENTIAL-NO: global customer-potential minimum can also be bad
+
+**Exact obstruction.** A second positive-integer input has eight labeled
+facilities, common site order (A,E,B,C,D,G), and ten customers
+
+\[
+ (200,A),(128,AB),(231,BEG),(240,B),(68,AC),
+ (330,C),(60,BD),(740,D),(200,E),(199,G).             \tag{22}
+\]
+
+Greedy scores in order are
+((D,800),(B,599),(D,400),(C,398),(B,599/2),(D,800/3),
+(A,200),(E,200)), including the stated tie order. Final multiplicities
+are (q=(1,1,2,1,3,0)), last score (\gamma=200), and initially
+assigned weights are ((200,200,599,398,800,0)). Name the four shared
+customers (X=128) (A/B), (Y=231) (B/E/G), (Z=68) (A/C), and
+(T=60) (B/D). At this **fixed** layout there are exactly two site-pure,
+within-site-uniform exact customer NEs:
+
+| NE | ((X,Y,Z,T)) | ((W_A,W_E,W_B,W_C,W_D)) | customer potential |
+| --- | --- | --- | ---: |
+| good | ((B,B,A,D)) | ((268,200,599,330,800)) | 86264 |
+| bad | ((B,E,A,B)) | ((268,431,428,330,740)) | 86200 |
+
+**Completeness of the two-NE classification.** If (Y=E), its external
+load there is 200, so a customer NE requires (W_B/2\ge200). If (X=A),
+then (W_B\le240+60=300); if (T=D), then (W_B\le240+128=368).
+Consequently (X=T=B). With (Z=C), its source external load is 330
+but the A option has load 200, so (Z=A). This uniquely gives the bad NE.
+If (Y=B,X=B), the same (Z=C) choice strictly prefers A, so (Z=A).
+Then (T=B) has external cost (599/2>740/3), forcing (T=D), the
+good NE. Finally, if (Y=B,X=A), choosing (Z=C) gives the strict move
+(330>328=W_A). With (Z=A), X has external cost 268 but its B option
+has load at most (531/2<268) (and only (471/2) if T is at D),
+again a strict move. Thus no other assignment is a customer NE. Direct
+source-external versus target-load comparisons for the two displayed NEs
+are, respectively, X: (471/2\le268), (150\le268); Y:
+(184\le200), (200\le214); Z: (200\le330) in both; and T:
+(740/3\le599/2), (184\le740/3). There are no hidden equality
+cases or other occupied choices.
+
+For a fixed occupancy, define the exact *weighted improvement potential*
+
+\[
+  P(J)=\sum_{t:q_t>0}
+   \frac{W_t^2-\sum_{i\in J_t}w_i^2}{2q_t}.              \tag{23}
+\]
+
+A transfer (i:s\to v) changes it by
+(w_i[W_v/q_v-(W_s-w_i)/q_s]), exactly (w_i) times the change in
+that customer's conditional cost. Hence **every global minimum** over
+feasible site-pure assignments is an exact customer NE. The two exact
+potential values in the table and the complete NE classification show
+that the bad NE is the **unique global minimum**. This conclusion is an
+analytic consequence of the transfer identity and classification; the
+independent 16-assignment Fraction audit is a check.
+
+At the bad NE, a B facility has (a=428/2=214). After it migrates to G,
+B, E and G each have one facility and respectively have compulsory
+private loads 240, 200 and 199. The Y customer strictly prefers G:
+its cost there is (231+199=430), whereas its cost at E is at least
+(231+200=431) and at B at least (231+240=471), irrespective of
+the other customers' independent mixing. No other customer can use G.
+Thus **every exact independent-mixed off-path NE** gives the deviator 430,
+or (215/107>2) times its old load.
+
+The good NE at the same occupancy satisfies the four original budgets:
+each site is within (q_t\gamma\le W_t\le(q_t+1)\gamma), every
+facility earns at least (\gamma), the only empty site G has
+(N_G=199), and the sole nonzero singleton-source orphan term is
+from A to C, where (W_C+w(Z)=330+68=398\le2W_A=536).
+The old packing and capped completion therefore give a factor-two full
+continuation there. This counterexample rejects **global minimization of
+the fixed-layout site-uniform customer potential** as a general safe
+selection rule. It also has a unique fixed-layout site-uniform lexmax bad
+state: if Y stays at B, E has load 200; if Y moves to E, a minimum above
+200 forces X,T at B and Z at A, yielding minimum 214. The claim does not
+concern lexmax across different facility layouts or arbitrary on-path
+independent-mixed profiles. The integer input and independent audit are in
+`examples/multi_facility/greedy_potential_escape.json` and
+`tests/audits/kfac_greedy_potential.py`.
+
 ## Sources and review status
 
 - Gairing, Lücking, Mavronicolas, Monien, STOC 2004, Section 4, especially
@@ -1006,3 +1227,11 @@ polynomial rule always selects a good NE or changes the greedy occupancy.
   conditional algorithms. The present conditional theorems and their
   novelty have not had external peer review, and no canonical software
   implementation of the imported scheduler or new constructors is claimed.
+- The two-site mixed-multiplicity scan was independently rederived from the
+  one-dimensional load difference, its box invariant and both singleton-source
+  cases. The fixed-layout lexmax and potential-minimum obstructions were
+  independently attacked by analytic assignment classification and exact
+  Fraction enumeration. These are internal checks; no external peer review
+  or complete literature-priority finding is recorded. In particular, the
+  second example's global potential minimum follows from the transfer
+  identity and complete NE classification, not from a finite search alone.

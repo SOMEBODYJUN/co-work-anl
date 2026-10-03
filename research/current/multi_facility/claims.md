@@ -1,6 +1,8 @@
 # Exact claim identities: common catalog, arbitrary k
 
-All versions below are version 1, dated 2026-10-02. Status fields are separate:
+Claims added on 2026-10-02 are version 1 of that date; the new two-site
+component and fixed-layout selection claims are version 1 dated 2026-10-03.
+Status fields are separate:
 source = new current work; current proof = complete; internal review = reverse
 reconstruction, separate internal proof attacks, and exact independent-implementation
 checks; external review = not recorded; novelty = not certified. A passing computation
@@ -462,6 +464,96 @@ Nashification is published, this deduction has no external review,
 novelty certification or canonical implementation. Mixed-q overlap through
 light customers remains outside this criterion; all-distinct greedy output
 is included and also has an independent reach-based factor-two proof.
+
+## SC-K-TWO-SITE-COMPONENT-GREEDY-2 -- polynomial mixed-multiplicity pair repair
+
+**Objects/domain and quantifiers:** explicit positive rational MF-MODEL,
+arbitrary labeled (k\ge2), positive maximum reach, and the occupancy of
+SC-K-GREEDY-BUDGET. In its graph joining occupied sites with a common
+reachable client, every component must either have constant multiplicity or
+at most two sites. The condition is decidable in polynomial time after
+greedy; it is not a claim that every instance has such an output.
+
+**Conclusion:** a deterministic input-bit-polynomial construction gives the
+same greedy facility layout, site-uniform independent-mixed exact on-path
+client NE, and a polynomial-size, polynomial-time evaluable complete exact
+continuation with every single-facility gain at most two. For an unequal
+two-site component (Q>q), sort shared clients by decreasing weight and
+transfer from the (Q)-site to the (q)-site iff strictly improving; a
+single pass is exact NE and preserves the greedy load box. Constant-q
+components use published identical-link Nashification. A singleton source
+in a mixed pair satisfies the orphan budget by the identity
+(W_H+w(J_L\cap C_H)=W_H^0); singleton sources in constant-q components
+use the initial client-pool bound. All empty-target deviators start at
+load at most (2a), and MF-PURE-CAP-POLY closes the off-path games.
+
+**Dependencies/evidence:** SC-K-GREEDY-BUDGET, SC-K-GREEDY-MAX-MULT,
+MF-PACK-2, MF-PURE-CAP-POLY, MF-CONT-COMPLETE and the exact descending-scan
+and load-box proof in [polytime_frontier.md](polytime_frontier.md). The
+three-customer ((9,A),(1,AB),(4,B)) input fails (17R) but satisfies
+this claim, so the output class is strictly wider in that direction.
+The proof is internally reconstructed and exact arithmetic checked;
+external review, literature priority and canonical implementation are
+unrecorded. Larger mixed-multiplicity components and the full-input
+polynomial factor-two target remain open; neither a finite instance nor a
+published scheduler alone proves this new conditional theorem.
+
+## SC-K-GREEDY-FIXED-LEXMAX-NO -- fixed-layout lexmax can be the unique bad NE
+
+**Exact objects/domain:** the eight-facility, six-site, ten-positive-integer
+client instance of SC-K-GREEDY-REPAIR-ORDER-NO and its specific greedy
+occupancy. Maximize the increasingly sorted per-facility load vector over
+**all site-pure, within-site-uniform customer assignments at this fixed
+occupancy**, whether client NEs or not.
+
+**Conclusion and proof:** the unique maximizer is the bad exact on-path NE
+with site totals ((120,178,165,120,268)) and minimum load (165/2).
+If the shared weight 96 stays at B, E gives minimum at most 82. If it
+goes to E, minimum above 82 forces weight 32 at B, weight 52 at B and
+weight 40 at A, uniquely determining this assignment. A B facility then
+gets 176 from B-to-G in every exact independent-mixed off-path NE,
+gain (32/15>2). At the same greedy occupancy another exact on-path NE
+retains a complete factor-two continuation.
+
+**Evidence/scope:** the full inequality proof in
+[polytime_frontier.md](polytime_frontier.md), the fixed integer input and
+16-assignment independent Fraction enumeration in
+`tests/audits/kfac_greedy_repair_order.py`. This rejects **only** the
+fixed-greedy-layout site-uniform lexmax selection rule; it says nothing
+about other layouts, all on-path independent-mixed profiles, or the global
+lexmax used in the existence theorem. Internally audited fixed-instance
+counterexample; external review not recorded.
+
+## SC-K-GREEDY-FIXED-POTENTIAL-NO -- global site-uniform potential can prefer the bad NE
+
+**Exact objects/domain:** eight labeled facilities, six common sites and
+the ten positive integer customers in (22) of
+[polytime_frontier.md](polytime_frontier.md). Greedy has the specified site
+tie order and occupancy ((1,1,2,1,3,0)). Only **site-pure customer
+assignments, independent uniform within the chosen site**, are candidates
+in the fixed-layout global potential minimization. This is a different
+selection claim from SC-K-GREEDY-FIXED-LEXMAX-NO, even though this new
+input also has a unique bad fixed-layout lexmax.
+
+**Exact statement and proof:** the customer potential
+(P=\sum_t(W_t^2-\sum_{i\in J_t}w_i^2)/(2q_t)) changes under (s\to v)
+by (w_i[W_v/q_v-(W_s-w_i)/q_s]). Global minima are therefore exact
+customer NEs. Algebraic case analysis leaves exactly two site-uniform NEs,
+with potential 86264 for the good one and 86200 for the bad one. Thus the
+bad NE is the unique global potential minimum. In it, a B facility earns
+214 and moving to G earns 430 in **every** exact independent-mixed
+off-path NE, gain (215/107>2), because the 231 client strictly prefers
+private-base 199 at G to 200 at E or 240 at B. At the same occupancy
+the other customer NE retains all four sufficient transfer budgets.
+
+**Dependencies/evidence/limits:** MF-MODEL, SC-K-GREEDY-BUDGET, the exact
+transfer potential identity and exhaustive analytic two-NE classification
+in [polytime_frontier.md](polytime_frontier.md). The raw integer input is
+`examples/multi_facility/greedy_potential_escape.json`, independently
+enumerated with Fraction arithmetic in `tests/audits/kfac_greedy_potential.py`.
+This is a fixed-layout selection-rule counterexample, not a failure of
+the greedy layout, global lexmax over layouts, or full-input factor-two
+existence. It is internally reviewed; external review is unrecorded.
 
 ## SC-K-GREEDY-REPAIR-ORDER-NO -- a reachable bad exact NE
 

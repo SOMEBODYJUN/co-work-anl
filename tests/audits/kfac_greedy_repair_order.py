@@ -5,6 +5,7 @@ This proves only the displayed finite counterexample, not a universal theorem.
 """
 
 import json
+from itertools import product
 from fractions import Fraction
 from pathlib import Path
 
@@ -141,6 +142,28 @@ def audit():
     assert_site_ne(good, q)
     assert_all_transfer_budgets(good, q)
     assert weights_at(good)["B"] / q["B"] == Fraction(209, 2)
+
+    # Exhaust the 16 site-pure assignments at this fixed greedy occupancy.
+    flexible = [i for i, choices in enumerate(ACCESS)
+                if len([s for s in choices if q[s]]) == 2]
+    assert flexible == [1, 2, 4, 6]
+    _, base, _ = greedy()
+    first_best = None
+    maximizers = []
+    for choices in product(*[[s for s in SITES if q[s] and s in ACCESS[i]]
+                             for i in flexible]):
+        candidate = base.copy()
+        for i, site in zip(flexible, choices):
+            candidate[i] = site
+        total = weights_at(candidate)
+        smallest = min(total[s] / q[s] for s in SITES if q[s])
+        if first_best is None or smallest > first_best:
+            first_best, maximizers = smallest, [candidate]
+        elif smallest == first_best:
+            maximizers.append(candidate)
+    assert first_best == Fraction(165, 2)
+    assert len(maximizers) == 1
+    assert [maximizers[0][i] for i in flexible] == ["B", "E", "A", "B"]
     print("PASS: greedy trace, two exact on-path NEs, and forced mixed-NE escape 32/15")
 
 

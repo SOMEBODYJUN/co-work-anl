@@ -14,6 +14,8 @@
 
 **本轮新检查（2026-10-03）：**[计算前沿](research/current/multi_facility/polytime_frontier.md)把贪心全异址输出的旧 3 倍界**提升为位多项式 2 倍**：首开的最大 reach $R$ 地点保留 $R/2$ 再加座得分，故最后分数 $\gamma\ge R/2$；同速客户均衡算法保留每家至少 $\gamma$，任意偏离收益均至多 $R$。更宽的**重数类区间证书**按每个已占地点的设施重数分组，用同速均衡算法修复组内客户，并逐客户核查跨重数激励；单设施源的客户池预算处理地点消失。它包含“权重小于 $\gamma$ 的客户不跨重数”子类，还允许一部分跨重数的轻客户和多地点 $q=1$ 分量，严格扩展旧条件子类。两个[精确整数例](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-repair-order-no-exact-repair-order-can-lose-factor-two)又证明：任意严格改派顺序、甚至每步选择**最重可改善客户**，都可能到达真正超过 2 倍的在轨 NE；同一贪心布局另有好 NE。因此下一关是对**区间证书不成立的混合重数输入**选择合适的在轨均衡或改变选址。全输入多项式 2 倍构造仍开放。
 
+**继续推进（2026-10-03）：**[双地点混合重数分量定理](research/current/multi_facility/polytime_frontier.md#sc-k-two-site-component-greedy-2-mixed-multiplicities-in-a-two-site-component)把上述条件类进一步扩到任意多个交叠分量，只要每个分量重数一致或仅有两个地点。双地点分量按共有客户权重递减、只从较高重数向较低重数做严格改善；每客户至多移动一次，保住负载区间及源地点消失时的装箱预算。它能处理区间证书失败的轻跨重数客户。另有两条[固定布局选均衡障碍](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-fixed-lexmax-no-the-fixed-layout-lexmax-can-select-the-bad-ne)：精确字典序最大客户分配可以唯一选中坏 NE；另一份整数例连**全局客户势函数最小值**也唯一选中坏 NE，分别在离轨所有混合均衡中超过 2 倍。同布局仍有好 NE。全输入位长多项式 2 倍算法继续开放，下一步聚焦含至少三个地点且重数不等的交叠分量。
+
 ## 先判断输入属于哪条命题
 
 | 目标 | 同时要求 | 可得到什么 | 从哪里开始读 |
@@ -49,6 +51,8 @@
 
 本轮新增依赖：首开最大 reach 地点的持续再加座分数 + 同速均衡的最小负载保持 → SC-K-DISTINCT-GREEDY-2；按重数分组的均衡负载区间 + 跨组客户条件成本证书 + 贪心单设施地点客户池 → SC-K-RANGE-GREEDY-2。轻客户交叠图条件与全重交叠条件是该区间证书的可检查充分特例。严格客户改派顺序的两个有限反例只攻击“任意终点均安全”和“最重客户优先均安全”，不攻击区间证书或贪心布局的存在性。
 
+双地点新依赖：贪心初始最大重数归属 + 两站负载差 $\Delta$ 的递减扫描 + 向低重数严格改派保留负载区间 + 单设施站原重站客户回收恒等式 → SC-K-TWO-SITE-COMPONENT-GREEDY-2。有限选择障碍：首份整数例的全部地点纯分配最小负载比较 → SC-K-GREEDY-FIXED-LEXMAX-NO；第二份整数例的客户势函数精确变化与仅两项客户 NE 分类 → SC-K-GREEDY-FIXED-POTENTIAL-NO。两者只排除固定贪心选址后的指定客户选择规则。
+
 ## 如何追踪一项研究结论
 
 [命题登记](research/current/claims.md)固定适用域与状态；[现行资产索引](ASSETS.md)把命题连到新稿、实现、检验及历史来源。[数学超图](research/index.html)的节点是定义、引理、反例和结论；一条推导超边要求**所有列出的共同前提**，不是旧文件之间的链接。其[数据](research/graph.json)和[维护规则](research/README.md)可直接核查。GitHub 预览 HTML 时显示源码，下载 HTML 后可使用交互查看器。
@@ -77,9 +81,10 @@
 | `research/current/shared/three_site_exact_hardness.md` | 将局部 SUBSET SUM 客户谱嵌入三地点共同目录，逐一堵住同址、AB、AC、BC 的所有逃逸；证明固定有理 $1\le a<(1+\sqrt3)/2$ 的弱 NP 完全性，列出两套守卫及端点正权预算障碍。研究下一段复杂度前沿时先读，切勿把端点当模型相变。 |
 | `research/current/shared/five_site_exact_hardness.md`、`research/FIVE_SITE_AUDIT_2026-10-02.md` | 五地点新覆盖、强制桥宏原子和全布局守卫证明每个固定有理 $1<a<\phi$ 的弱 NP 完全性；审查页核对原目标同一性、2024 年广义困难性优先权边界及与 A/B 成果的相对价值。研究实例复杂度或组织 A 篇时读。 |
 | `research/current/multi_facility/uniform_two.md`、`research/K_FACILITY_AUDIT_2026-10-02.md` | 任意 $k$ 的共同目录因子 2 存在性证明、逐式逆审、方法边界及面向领域的价值解释；研究多设施稳定性时先读。无多项式构造或因子 2 尖锐性结论。 |
-| `research/current/multi_facility/polytime_frontier.md` | 精确全局字典序选址的强 NP 难性、多项式局部邻域、贪心预算，以及本轮全异址 **2 倍**与重数类区间证书。给出 $q=1$ 全体客户池的偏离装箱证明、两个真正超过 2 倍的贪心坏修复终点和各自好终点。攻全 $k$ 高效算法时先读；区间证书失败的跨重数客户情形仍开放。 |
+| `research/current/multi_facility/polytime_frontier.md` | 精确全局字典序选址的强 NP 难性、多项式局部邻域、贪心预算、全异址 **2 倍**和重数类区间证书；新增双地点混合重数分量的递减权重构造、负载区间不变量与单设施源预算。还给出坏修复、固定布局字典序与全局客户势最小化的三个不同选择障碍。攻全 $k$ 高效算法时先读；至少三地点的混合重数交叠分量仍开放。 |
 | `examples/multi_facility/greedy_cap_obstruction.json`、`tests/audits/kfac_greedy_cap.py` | 六地点十顾客的精确整数输入与独立 Fraction 检查：重算确定性贪心得分、五次严格客户改派、在轨精确 NE、B/E/G 的强制 $44>41$ 容量障碍和偏离者仅获 $20$ 的离轨精确 NE。研究 SC-K-GREEDY-CAP-INFEASIBLE 的算术或试图修改装箱接口时运行；有限检查不替代文件中的全称定理证明。 |
-| `examples/multi_facility/greedy_repair_order_escape.json`、`tests/audits/kfac_greedy_repair_order.py` | 第一份六地点整数输入和独立 Fraction 审核：贪心得分、五步严格客户改善、坏终点精确 NE、B→G 在所有混合 NE 强制 $32/15$ 倍，以及同布局另一终点保留四预算。设计客户修复规则时读；只证明固定实例的失效。 |
+| `examples/multi_facility/greedy_repair_order_escape.json`、`tests/audits/kfac_greedy_repair_order.py` | 第一份六地点整数输入和独立 Fraction 审核：贪心得分、五步严格客户改善、坏终点精确 NE、B→G 在所有混合 NE 强制 $32/15$ 倍；新增全部 16 个地点纯分配的精确枚举，核查该坏终点也是固定贪心布局唯一 lexmax。同布局另一终点保留四预算。设计客户修复规则时读；只证明固定实例的失效。 |
+| `examples/multi_facility/greedy_potential_escape.json`、`tests/audits/kfac_greedy_potential.py` | 第二类六地点整数选择障碍：十客户显式覆盖、固定贪心布局全部 16 种地点纯分配的 Fraction 枚举，两项精确客户 NE 势值 86200 与 86264，唯一全局势最小者在所有离轨混合 NE 中遭受 $215/107>2$ 倍偏离。检查任何“势函数最小化就能选好 NE”的路线时读；有限检验配合证明页的两项 NE 分类与势差恒等式。 |
 | `examples/multi_facility/greedy_heaviest_escape.json`、`tests/audits/kfac_greedy_heaviest.py` | 第二份整数输入及每步**唯一最重可改善客户**的审核，终点离轨强制倍率 $88/43$；另一个终点仍保留四预算。评估按重量排序的修复策略时读，不能据此否定贪心选址的存在性。 |
 | `research/current/shared/atomic_granularity.md`、`research/current/local_and_exact/atomic_wardrop_gap.md` | 前者将已知可拆分客户 SPE 特化为两设施对照，证明任意精确原子 NE 的误差与完整续局倍率，并给宏原子必要条件；后者对固定 $k$ 布局证明尖锐 $(k-1)\theta/2$ 误差与链族。做实例敏感构造、归约粒度限制或多设施延伸时读；局部误差不等于全 $k$ SPE。 |
 | `research/current/shared/small_sparse_catalogs.md` | 单交叠的最多 2/3/4/5 地点紧确普遍因子、纯菜单全分支、三/四地点正有理族、五地点原下界剪枝。构造有限目录论文主题、比较目录规模机制或攻击平局零收益时读；五地点下界同时回读 `shared/sharp_phi_lower.md`。 |

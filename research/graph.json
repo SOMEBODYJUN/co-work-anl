@@ -1638,6 +1638,42 @@
         "research/current/multi_facility/claims.md"
       ],
       "status": "exact fixed-instance counterexample; internally audited"
+    },
+    {
+      "id": "SC-K-TWO-SITE-COMPONENT-GREEDY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two for two-site mixed-multiplicity components",
+      "detail": "Greedy occupied-site overlap components of constant q or at most two sites admit a bit-polynomial full exact factor-two construction via descending-weight high-to-low client transfers, load box, and orphan-aware completion.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "SC-K-GREEDY-FIXED-LEXMAX-NO",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Fixed greedy-layout customer lexmax can uniquely select bad NE",
+      "detail": "In the six-site 32/15 integer instance, the unique fixed-layout site-pure/uniform customer lexmax is the bad exact NE, while another NE at that occupancy preserves factor two.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "exact fixed-instance counterexample; internally audited"
+    },
+    {
+      "id": "SC-K-GREEDY-FIXED-POTENTIAL-NO",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Fixed greedy-layout global customer-potential minimum can uniquely select bad NE",
+      "detail": "A second six-site integer instance has exactly two site-pure/uniform client NEs; exact potential values 86200 and 86264 make the unique global minimum the bad state with forced mixed-off-path ratio 215/107, while the other NE preserves budgets.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "exact fixed-instance counterexample; internally audited"
     }
   ],
   "hyperedges": [
@@ -3359,6 +3395,70 @@
       ],
       "conclusion": "SC-K-GREEDY-UNOPENED-2",
       "statement": "The empty-target initial cap invariant does not make arbitrary or largest-weight strict on-path repair a safe factor-two selection rule.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact obstruction"
+    },
+    {
+      "id": "e-mf-two-site-component-greedy-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "MF-PACK-2",
+        "MF-PURE-CAP-POLY",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-TWO-SITE-COMPONENT-GREEDY-2",
+      "statement": "Descending-weight transfers in unequal-q pairs have one scalar load-difference invariant, preserve the greedy box, and permit orphan-aware factor-two completion; equal-q components use identical-link Nashification.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-fixed-greedy-lexmax-escape",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-REPAIR-ORDER-NO"
+      ],
+      "conclusion": "SC-K-GREEDY-FIXED-LEXMAX-NO",
+      "statement": "A sixteen-assignment integer input has a unique fixed-layout maximum minimum load at the already forced 32/15 bad NE.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact obstruction"
+    },
+    {
+      "id": "e-mf-fixed-greedy-potential-escape",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-GREEDY-FIXED-POTENTIAL-NO",
+      "statement": "The exact weighted potential transfer identity and full two-NE classification prove the unique global potential minimum has a forced 215/107 off-path gain, though a good NE shares the layout.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact obstruction"
+    },
+    {
+      "id": "e-mf-fixed-selection-limits",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-FIXED-LEXMAX-NO",
+        "SC-K-GREEDY-FIXED-POTENTIAL-NO"
+      ],
+      "conclusion": "SC-K-GREEDY-UNOPENED-2",
+      "statement": "The unopened-site deviator cap and customer exact potential do not make either fixed-greedy-layout optimization rule a safe universal customer-NE selector.",
       "refs": [
         "research/current/multi_facility/polytime_frontier.md"
       ],

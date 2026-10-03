@@ -61,7 +61,15 @@ deviator allowed initial load up to 2a at an unopened target. This removes
 the old singleton-component restriction and admits some *light* cross-q
 clients. `SC-K-LIGHT-COMPONENT-GREEDY-2` is a simpler sufficient test;
 `SC-K-GREEDY-HEAVY-OVERLAP-2` needs no on-path repair at all.
-For general unequal multiplicities, `SC-K-GREEDY-STATIC-PACK-NO` gives a
+The newer `SC-K-TWO-SITE-COMPONENT-GREEDY-2` also handles components with
+two sites of *unequal* multiplicity. Shared clients start at the higher-q
+site; one descending-weight pass transfers only strict improvements to the
+lower-q site. A scalar load difference rules out all return moves, every
+transfer preserves the greedy load box, and a pooled-orphan identity handles
+the disappearing lower-q site. Constant-q components use the published
+scheduler. This is bit-polynomial and admits some inputs that fail the range
+certificate, but says nothing about mixed-q components of three or more sites.
+Outside those conditional classes, `SC-K-GREEDY-STATIC-PACK-NO` gives a
 five-site integer instance where a reachable exact on-path NE leaves a
 different surviving site too heavy for the old cap packing if customer site
 assignments are frozen. The appropriate next interface must permit cross-site
@@ -84,7 +92,13 @@ where a B-to-G deviation is **forced** above factor two in every mixed
 off-path NE. Both layouts also have another reachable exact NE retaining
 the four transfer budgets. Their scripts check finite arithmetic, not a
 general theorem. Selection of a suitable NE on range-certificate-failing
-mixed-q inputs remains open.
+mixed-q components of three or more sites remains open. In fact, the first
+integer witness makes the fixed-greedy-layout site-uniform lexmax customer
+assignment uniquely bad (`SC-K-GREEDY-FIXED-LEXMAX-NO`). A second integer
+witness has exactly two site-uniform NEs and makes the bad one the unique
+**global minimum of the exact customer improvement potential**
+(`SC-K-GREEDY-FIXED-POTENTIAL-NO`), despite a good NE at the same layout.
+These refute two specific on-path selection rules, not greedy occupancy.
 
 The proof deliberately changes the type of continuation: on path it uses
 independent mixing inside co-location groups; off path it isolates giant atoms
@@ -102,7 +116,7 @@ exact SPE (`SC-K-SYMMETRIC-MENU-OBSTRUCTION`).
 | `reverse_review.md` | Reverse reconstruction from the desired off-path cap; explicit objections and independent-implementation evidence, with no claim of external peer review. |
 | `lexmax_boundary.md` | For every fixed k, the selected lexmax occupancy itself can need factor tending to 2 under all NE choices, while another layout has an exact SPE; a sub-two proof must permit different layouts. |
 | `symmetric_menu_obstruction.md` | Explicit all-q family separating unbounded symmetric-menu threat from alpha^*=1 in the full model; read before proposing any menu-only lower bound. |
-| `polytime_frontier.md` | Explicit import of polynomial capped Nashification, full 3-PARTITION reduction for exact lexmax, polynomial local neighborhood, new all-distinct 2 bound and multiplicity-class range certificate. Contains two strict-repair-order escapes; read before claiming greedy output or arbitrary customer repair is sufficient on all mixed-q inputs. |
+| `polytime_frontier.md` | Explicit import of polynomial capped Nashification, full 3-PARTITION reduction for exact global lexmax, polynomial local neighborhood, all-distinct 2 bound, multiplicity-class range certificate, and new two-site mixed-q component construction. Contains strict-repair-order, fixed-layout customer lexmax and potential-minimum escapes; read before proposing a universal greedy-output customer selection rule. |
 
 Implementation: `multi_facility_spe/two_exists.py` and `__main__.py`, a sibling
 package rather than a silent modification of the two-facility API.
