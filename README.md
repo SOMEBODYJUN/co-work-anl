@@ -67,7 +67,11 @@
 
 新部分交叠依赖：贪心最大重数共同锚站 + 按权非增而选项集递增的受限列表分配 + 私有客户储备 → SC-K-NESTED-ANCHOR-GREEDY-2；全站共有是特例。反序选项集的三站例仅攻击无条件列表规则，不攻击贪心布局；它的精确复算由 `tests/audits/kfac_nested_anchor.py` 给出。
 
-新离轨与流依赖：贪心初始最大重数归属 + 原 $q=1$ 客户池上界 + 原初始预算 (8) + 多项式有界装箱修复 → SC-K-GREEDY-SINGLETON-RESET；与给定精确在轨负载盒结合 → SC-K-GREEDY-BOX-TO-2。把全部轻多选项客户视为同重整数流 + 每站最低负载约束 + 逆向运输路径严格降势 → SC-K-UNIFORM-LIGHT-FLOW-2，再调用 BOX-TO-2。这给全 $k$ 问题一个精确的新核心：一般混合轻权是否能高效选到盒内 NE。
+新离轨与流依赖：贪心初始最大重数归属 + 原 $q=1$ 客户池上界 + 原初始预算 (8) + 多项式有界装箱修复 → SC-K-GREEDY-SINGLETON-RESET；与给定精确在轨负载盒结合 → SC-K-GREEDY-BOX-TO-2。把全部轻多选项客户视为同重整数流 + 每站最低负载约束 + 逆向运输路径严格降势 → SC-K-UNIFORM-LIGHT-FLOW-2，再调用 BOX-TO-2。盒内 NE 是充分入口；后述 RESET-PACK 另能认证越盒的在轨 NE。
+
+新阶段的 [重置客户池与双 LPT 证明](research/current/multi_facility/polytime_frontier.md#sc-k-reset-pack-interface-reset-based-off-path-completion-beyond-the-box) 允许构造一个站点越上盒但仍有完整 2 倍续局的纯客户 NE；同稿的有向轻路径算法覆盖边际不同轻权的 P4。固定占站数/不同权数的类型 ILP 与固定全目录/不同权数的 XP 构造见[参数化证明](research/current/multi_facility/type_compression.md)。一般全输入位长多项式 2 倍仍开放。
+
+[三站异轻权链的存在性证明](research/current/multi_facility/three_site_chain_box.md)采用完整盒内势最小和整批上游退回交换；尚无位长多项式选取该最小点的算法。
 
 ## 如何追踪一项研究结论
 

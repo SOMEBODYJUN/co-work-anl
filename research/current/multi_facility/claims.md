@@ -884,3 +884,15 @@ completed. Twenty parameter pairs, 1552 actual deviation witnesses and six
 independent labeled lexmax enumerations are checked by
 `tests/multi_facility/run_lexmax_barrier_audit.py`. General quantifiers are proved
 algebraically, not by these tests. External review and priority unverified.
+
+## 2026-10-03: reset packing, path edges and type compression
+
+`SC-K-RESET-PACK-INTERFACE` accepts any exact on-path customer NE with every individual facility earning at least the last greedy score, provided each original pool has a checked deletion packing. `SC-K-DOUBLE-LPT-GREEDY-2` supplies a deterministic polynomial recognition and construction test using two LPT passes and the imported minimum-load-preserving scheduler. Its exact triangle example selects a pure NE with a site total above the greedy upper box; neither theorem asserts acceptance on all inputs.
+
+`SC-K-PATH-EDGE-LIGHT-GREEDY-2` handles directed opening-order light paths whose edges are internally equal-weight but may differ across edges. One improving forward move per client preserves boxes; no moved client wants to return. It includes unequal-weight P4 overlaps outside the prior anchored-star class.
+
+`SC-K-BOX-NE-FPT-TYPES` decides the fixed-occupancy site-pure/uniform boxed-NE problem in FPT time parameterized by occupied sites and distinct multi-option weights. `SC-K-FROZEN-LIGHT-FPT` is a restricted component decomposition with frozen heavy clients. `SC-K-CATALOG-WEIGHT-XP-2` gives an unconditional complete factor-two constructor when the **entire** catalog size and distinct-weight count are fixed; its uniform parameter dependence is XP, not FPT. [Exact type encoding and proofs](type_compression.md). All are internally reviewed mathematical algorithms, without canonical implementation, external peer review or literature priority verification. The unrestricted arbitrary-parameter polynomial factor-two goal remains open.
+
+## SC-K-THREE-SITE-CHAIN-BOX-EXISTS -- three-site chains with arbitrary unequal edge weights
+
+For opening order H,M,L and light occupied-option graph H--M--L, arbitrary positive light weights on both edges still admit an exact full-box site-uniform customer NE. Every constrained exact-potential minimizer is NE: the only possible blocked move is an ML return L->M; return the **entire** HM pool currently at M to H simultaneously and bring the ML client to M. The exchange stays in all three boxes and strictly lowers potential, contradiction. [Full proof](three_site_chain_box.md). This is existence and an exact finite selection principle, not a polynomial algorithm to optimize the potential. Heavy customers are frozen; longer paths and branching remain open. Internal independent reverse audit, no external review or canonical implementation.

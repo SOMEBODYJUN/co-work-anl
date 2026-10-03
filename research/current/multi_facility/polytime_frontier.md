@@ -1945,3 +1945,144 @@ implementation of the general constructor or external review is claimed.
   strict-range-failure example was recomputed with exact rational arithmetic.
   The partial-overlap downward trap has an exact unique path proof and an
   independent Fraction branch audit; it limits one repair rule only.
+
+## SC-K-RESET-PACK-INTERFACE: reset-based off-path completion beyond the box
+
+Fix the positive-reach greedy layout and its last score `gamma>0`. Write
+`J_t^0` for its original customer pool at occupied site `t`, and `q_t` for
+its facility multiplicity. Suppose we are supplied **an explicitly encoded exact on-path
+independent-mixed customer NE**, whose individual facility payoffs satisfy
+`a_f>=gamma`. For each site `u` with `q_u>=2`, also supply a partition of
+`J_u^0` into `q_u-1` bins. Every bin either has total weight at most
+`2gamma`, or consists of one isolated customer of weight above `2gamma`.
+The latter is a macro bin and has no other customer. These are explicit,
+polynomially checkable conditions. Under them the greedy layout admits an
+input-bit-polynomial complete exact factor-two continuation.
+
+For an actual deviation by `f` from a source `u` with `q_u>=2`, discard the
+on-path assignment and reset every previously served customer to its original
+greedy site. The source survives and its `q_u-1` stationary facilities take
+the supplied bins. Every other occupied site `t` has all of its original
+pool and `q_t` stationary facilities. Greedy gives
+`W_t^0<= (q_t+1)gamma`; `MF-PACK-2` packs this pool into ordinary bins of
+load at most `2gamma` and isolated macros. At an occupied target the moving
+facility starts empty. At a newly opened target `r` only genuinely newly
+covered customers join the mover, with total `N_r<=gamma`. Thus **all**
+stationary ordinary loads and the mover start at most `2gamma`, and macros
+remain isolated. `MF-PURE-CAP-POLY` returns an exact pure customer NE while
+keeping the moving facility at most `2gamma<=2a_f`. Its client-restriction
+and isolation checks apply to the actual deviated layout, including newly
+served clients. For `q_u=1`, use `SC-K-GREEDY-SINGLETON-RESET`, which needs
+only `a_f>=gamma` and likewise ignores the supplied on-path assignment.
+Use the existing polynomial pure-NE default at every other labeled layout.
+The partitions, reset, at most `k(|S|-1)` actual deviations, scheduling
+calls, and rational comparisons have polynomial input-bit complexity. This
+interface makes no claim that arbitrary inputs admit the required on-path
+state or deletion partitions; a partition is checked, not found by an
+unbounded bin-packing search.
+
+## SC-K-DOUBLE-LPT-GREEDY-2: two checkable greedy-pool packings
+
+There is a deterministic subclass test and constructor satisfying the
+preceding interface. For each greedy pool `J_t^0`, sort clients by
+nonincreasing weight (breaking ties by input index) and repeatedly place
+the next client in a least-loaded one of its `q_t` co-located facilities.
+Check that **every** resulting facility load is at least `gamma`. If any
+check fails, this particular certificate returns *unknown*. Greedy already
+gives `W_t^0<= (q_t+1)gamma`; hence each bin is at most `2gamma`, since
+all its other `q_t-1` bins have at least `gamma` (also true for `q_t=1`).
+
+Independently, for every `q_t>=2`, run the same deterministic descending
+least-load rule on **the original pool again**, now with `q_t-1` bins.
+Check that each deletion bin is at most `2gamma`. If all checks pass, apply
+the published polynomial restricted-identical-link Nashification to the
+first complete pure facility assignment. Each client is eligible for all
+facilities at its covered sites; the algorithm returns an exact pure client
+NE without lowering the initial **global minimum** facility load, so every
+resulting `a_f>=gamma`. The final site totals need not satisfy a greedy
+upper box. `SC-K-RESET-PACK-INTERFACE` supplies all actual deviations.
+The LPT checks, published scheduler, and continuations are polynomial in
+the explicit client, facility and rational input encoding. The use of LPT
+is a sufficient certificate, not an assertion that LPT decides all feasible
+partitions. This construction permits arbitrary occupied-option overlap
+graphs and arbitrary unequal client weights.
+
+**Strict separation from the box and light-path interfaces.** Let `k=8`,
+sites `H,M,L`, private weights `H:110,110,110,60,54`, `M:140,100,80`,
+`L:100`, and clients `X:(50,{H,M})`, `Y:(60,{M,L})`, `Z:(5,{H,L})`.
+Greedy's strict scores are
+`499,380,499/2,190,499/3,380/3,499/4,100`, so the final multiplicities
+are `(4,3,1)` and `gamma=100`. The original pools total `(499,380,100)`.
+One deterministic tie order gives first packings
+`H:(160,115,110,114)`, `M:(140,100,140)`, `L:(100)`; deletion packings
+are `H:(170,164,165)`, `M:(200,180)`. All checks pass. First move Z from
+its H bin of 115 to L, then X from its H bin of 160 to the M bin of 100.
+The facility loads become `H:(110,110,110,114)`, `M:(140,150,140)`,
+`L:(105)`. Every client's exact facility NE inequality
+holds, but M's site total is `430> (3+1)gamma=400`. Thus the double-LPT
+certificate genuinely accepts an on-path equilibrium outside the box
+required by `SC-K-GREEDY-BOX-TO-2`; it does not claim no alternative boxed
+NE exists. The light-overlap graph is a triangle with three unequal edge
+weights, so it is neither an anchored star nor a directed path; RANGE fails
+for Y because `(380-60)/3>100`.
+
+These are internally reconstructed conditional proofs; an exact example
+audit verifies only the displayed finite instance. Neither the general
+constructor nor its priority over the literature has external review.
+
+## SC-K-PATH-EDGE-LIGHT-GREEDY-2: directed light paths
+
+At the positive-reach greedy layout freeze every customer with one occupied
+option and every customer of weight at least `gamma` at its original site.
+Form the graph of the remaining multi-option light clients. Each nontrivial
+component may have constant multiplicity (the existing restricted-identical
+scheduler case), or satisfy: every light client has exactly two occupied
+options; each edge is oriented from the endpoint greedy opened earlier to
+the one opened later; each vertex has indegree and outdegree at most one;
+and all clients on an edge have the same weight `delta_e<gamma`. Different
+edges may have **different** weights. Thus such a component is a directed
+opening-order path. These conditions are checkable in polynomial time.
+
+Start from greedy's assignment. In a directed path, repeatedly choose an
+unmoved light client at its original endpoint `u` with edge `u->v` whose
+move is strictly improving:
+
+`(W_u-delta_e)/q_u > W_v/q_v`.                         (P1)
+
+Move the client once and stop when none remains. `SC-K-GREEDY-MAX-MULT`
+gives `q_u>=q_v` on each edge, since the client was uncovered before `u`
+opened and `v` opened later. Source lower box follows from (P1) and
+`W_v/q_v>=gamma`. An upper-box overflow at v would give
+`W_v>(q_v+1)gamma-delta_e`, and therefore
+`W_v/q_v>gamma+(gamma-delta_e)/q_v >=
+ gamma+(gamma-delta_e)/q_u >=(W_u-delta_e)/q_u`, a contradiction.
+All other box directions are immediate.
+
+After a move on edge `u->v`, every customer already moved on that edge has
+source external cost `(W_v^new-delta_e)/q_v=W_v^old/q_v`, strictly less
+than its alternative cost `W_u^new/q_u` by (P1). Between moves on that edge,
+the preceding path edge can only add load to u and the succeeding edge can
+only remove load from v. Later moves on the same edge restore the same
+strict comparison simultaneously for all of its equal-weight customers.
+Thus no moved customer ever wants to return. Every unmoved customer is
+stable at termination; each client moves at most once. Frozen heavy clients
+are stable from the boxes:
+`(W_s-w_i)/q_s<=gamma<=W_t/q_t` for each alternative t.
+Constant-q components use the already imported range-preserving scheduler.
+We obtain a site-pure, uniform-within-site exact NE in the full greedy box;
+`SC-K-GREEDY-BOX-TO-2` gives the complete factor-two continuation in
+polynomial input-bit time. This is a conditional constructor, not a theorem
+for arbitrary light overlap graphs.
+
+For a strict four-site witness take `k=10`, private weights
+`H:184,M:140,N:89,L:41` and clients `X:(14,{H,M})`,
+`Y:(10,{M,N})`, `Z:(6,{N,L})`. Greedy strictly opens/adds
+`H,M,H,N,M,H,M,H,N,L`, with scores
+`198,150,99,95,75,66,50,99/2,95/2,41` and final
+`q=(4,3,2,1)`, `gamma=41`. Only Z first improves `N->L`;
+then Y improves `M->N`. Final site loads `(198,140,99,47)` are in
+their boxes and form an exact customer NE. The unequal-weight P4 light
+component lacks an anchored-star center and a common anchor; Z fails RANGE
+because `89/2>41`. The [exact rational audit](../../../tests/audits/kfac_path_edges.py)
+checks the instance, not the general theorem. Internal reverse review found
+no remaining flaw; external review and literature priority are unrecorded.

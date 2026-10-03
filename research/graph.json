@@ -1822,6 +1822,115 @@
         "examples/multi_facility/greedy_star_edges.json"
       ],
       "status": "finite arithmetic check"
+    },
+    {
+      "id": "SC-K-RESET-PACK-INTERFACE",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Greedy-pool deletion packing completes arbitrary high-minimum on-path NE",
+      "detail": "Greedy-pool deletion packing completes arbitrary high-minimum on-path NE. Exact hypotheses, polynomial-bit proof, limits and review status in current branch.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "SC-K-DOUBLE-LPT-GREEDY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Double LPT certification of complete factor two beyond the site box",
+      "detail": "Double LPT certification of complete factor two beyond the site box. Exact hypotheses, polynomial-bit proof, limits and review status in current branch.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "SC-K-PATH-EDGE-LIGHT-GREEDY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two on directed light-overlap paths",
+      "detail": "Polynomial factor two on directed light-overlap paths. Exact hypotheses, polynomial-bit proof, limits and review status in current branch.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "SC-K-BOX-NE-FPT-TYPES",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Fixed-parameter exact boxed site-uniform NE decision by type ILP",
+      "detail": "Fixed-parameter exact boxed site-uniform NE decision by type ILP. Exact hypotheses, polynomial-bit proof, limits and review status in current branch.",
+      "refs": [
+        "research/current/multi_facility/type_compression.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "parameterized conditional algorithm; internally reviewed"
+    },
+    {
+      "id": "SC-K-FROZEN-LIGHT-FPT",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Fixed-parameter frozen-heavy light-component box construction",
+      "detail": "Fixed-parameter frozen-heavy light-component box construction. Exact hypotheses, polynomial-bit proof, limits and review status in current branch.",
+      "refs": [
+        "research/current/multi_facility/type_compression.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "parameterized conditional algorithm; internally reviewed"
+    },
+    {
+      "id": "SC-K-CATALOG-WEIGHT-XP-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Unconditional factor two for fixed catalog size and weight diversity",
+      "detail": "Unconditional factor two for fixed catalog size and weight diversity. Exact hypotheses, polynomial-bit proof, limits and review status in current branch.",
+      "refs": [
+        "research/current/multi_facility/type_compression.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "bounded-parameter XP algorithm; internally reviewed"
+    },
+    {
+      "id": "E-K-DOUBLE-LPT-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Three-site unequal-light triangle and over-box pure NE",
+      "detail": "Exact strict greedy, two LPT runs, two pure improvements, final NE and M upper-box violation.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_double_lpt.py",
+        "examples/multi_facility/greedy_double_lpt_triangle.json"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "E-K-PATH-EDGE-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Four-site directed path witness",
+      "detail": "Exact greedy, two strict edge moves, box, all NE inequalities and prior-condition separation.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_path_edges.py"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "SC-K-THREE-SITE-CHAIN-BOX-EXISTS",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Box NE exists for arbitrary-weight directed three-site light chains",
+      "detail": "A whole upstream-pool return exchange rules out the only upper-box-blocked improvement at any full-box potential minimum; no polynomial minimization algorithm is established.",
+      "refs": [
+        "research/current/multi_facility/three_site_chain_box.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional box-NE existence; internally reviewed"
     }
   ],
   "hyperedges": [
@@ -3839,6 +3948,149 @@
         "tests/audits/kfac_star_edges.py"
       ],
       "status": "finite arithmetic check"
+    },
+    {
+      "id": "e-mf-reset-pack",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-SINGLETON-RESET",
+        "MF-PURE-CAP-POLY"
+      ],
+      "conclusion": "SC-K-RESET-PACK-INTERFACE",
+      "statement": "Reset original pools after every deviation; checked deletion packing controls the surviving source and original greedy budgets control other sites.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-double-lpt",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-RESET-PACK-INTERFACE",
+        "MF-PURE-CAP-POLY"
+      ],
+      "conclusion": "SC-K-DOUBLE-LPT-GREEDY-2",
+      "statement": "Two LPT checks and restricted-identical-link minimum-load-preserving Nashification produce all needed on-path payoffs and deletion partitions.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-path-edge",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "SC-K-GREEDY-BOX-TO-2",
+        "SC-K-LIGHT-COMPONENT-GREEDY-2"
+      ],
+      "conclusion": "SC-K-PATH-EDGE-LIGHT-GREEDY-2",
+      "statement": "Directed paths preserve boxes and strict no-return for equal weight on each edge; frozen heavy customers and box completion close factor two.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-type-ip",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BOX-TO-2"
+      ],
+      "conclusion": "SC-K-BOX-NE-FPT-TYPES",
+      "statement": "Integer type supports encode every site-uniform boxed NE at fixed occupancy; fixed-variable ILP decides and constructs when parameters are bounded.",
+      "refs": [
+        "research/current/multi_facility/type_compression.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-light-type-ip",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-BOX-NE-FPT-TYPES",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-BOX-TO-2"
+      ],
+      "conclusion": "SC-K-FROZEN-LIGHT-FPT",
+      "statement": "Freeze heavy clients, solve independent bounded light-overlap components and use box inequalities to certify heavy incentives.",
+      "refs": [
+        "research/current/multi_facility/type_compression.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-catalog-xp",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-2-E",
+        "MF-PURE-CAP-POLY"
+      ],
+      "conclusion": "SC-K-CATALOG-WEIGHT-XP-2",
+      "statement": "Enumerate occupancy and site-pure type-count assignments at fixed full catalog and weight diversity, select global lexmax, complete deviations.",
+      "refs": [
+        "research/current/multi_facility/type_compression.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-double-lpt-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-DOUBLE-LPT-AUDIT"
+      ],
+      "conclusion": "SC-K-DOUBLE-LPT-GREEDY-2",
+      "statement": "Finite exact witness checks arithmetic and separation, not the universal algorithmic theorem.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_double_lpt.py"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "e-mf-path-edge-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-PATH-EDGE-AUDIT"
+      ],
+      "conclusion": "SC-K-PATH-EDGE-LIGHT-GREEDY-2",
+      "statement": "Finite exact witness checks arithmetic and separation, not the universal algorithmic theorem.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_path_edges.py"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "e-mf-three-chain-box",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "SC-K-GREEDY-BOX-TO-2"
+      ],
+      "conclusion": "SC-K-THREE-SITE-CHAIN-BOX-EXISTS",
+      "statement": "Full-box potential minimizer cannot have a blocked ML return: simultaneously return all upstream HM arrivals and the ML client, preserve every box, and strictly lower exact potential.",
+      "refs": [
+        "research/current/multi_facility/three_site_chain_box.md"
+      ],
+      "status": "internal proof"
     }
   ]
 }

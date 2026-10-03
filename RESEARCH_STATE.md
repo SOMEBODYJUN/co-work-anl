@@ -2,17 +2,23 @@
 
 以 [README](README.md) 了解模型与文件地图；逐命题严格条件和五轴审查状态分别见 [现行登记](research/current/claims.md)、[审查表](research/review_status.json)。本页只维护**未来前沿与工作分配**，不替代证明。
 
+## 本轮新闭合的可算范围
+
+[RESET-PACK / DOUBLE-LPT](research/current/multi_facility/polytime_frontier.md#sc-k-reset-pack-interface-reset-based-off-path-completion-beyond-the-box) 把离轨接口从“必须找到站点盒内 NE”放宽到每家在轨至少 $\gamma$ 且原始客户池删席装箱可检查。双 LPT 是一个位长多项式充分测试；三站三角例在轨纯 NE 的 M 总负载 $430>400$，仍能按原池重置给出完整 2 倍续局。另有有向轻权路径算法允许不同边异权；固定占站数与不同权数的类型整数规划精确判别盒 NE，固定总目录与不同权数则有无条件 XP 构造。[精确范围](research/current/multi_facility/type_compression.md)。这些均经内部逆审，尚无规范通用软件、外审及优先权核验。任意参数下的位长多项式因子 2 算法仍开放；下方旧叙述中的“盒内 NE 是唯一瓶颈”已被 RESET-PACK 的充分条件放宽。
+
+[三站任意异轻权链存在性](research/current/multi_facility/three_site_chain_box.md)表明完整上下盒内的势最小点必是客户 NE；整批退回上游客户的交换排除唯一被上盒挡住的返程。这仅给存在性，没有多项式势优化算法。
+
 ## 已有地基
 
 双设施共同目录的黄金比上界、相应六地点锐性、异构双设施的因子 2 分支与短目录单交叠的 \(\rho=2\cos(\pi/7)\) 分支均有现行数学稿；各自审查状态并不相同，均尚无外部同行评审。[完整范围表](research/current/claims.md)防止将实例证书与普遍定理混淆。现有成果的投稿、实现复核和文献归属是交付工作，不占新的数学主攻方向。
 
 ## 当前前沿与本轮闭合
 
-**异重轻客户星形分量的位多项式 2 倍算法（2026-10-03）。** [SC-K-STAR-LIGHT-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)把同重费用流之外的可算范围扩到轻客户交叠图中的锚定星形：中心先开，每名轻客户只可选中心与一片叶；其他轻分量可同重数，重客户可跨分量。各叶按权递减队列，只移动严格改善的队头，并在候选叶中选当前最低单位负载。每名客户处理一次；贪心重数序保持上下盒，最后入叶客户与候选叶负载单调性保证精确 NE；BOX-TO-2 完成全部偏离。一个三站异轻权、不可比选项集实例同时在旧 RANGE、ALL-OR-ONE、NESTED-ANCHOR、UNIFORM-LIGHT 的条件之外。证明已内部独立逆审，有限有理数例只核算该实例；一般非星形的异重轻客户图仍需新机制。
+**异重轻客户星形分量的位多项式 2 倍算法（2026-10-03）。** [SC-K-STAR-LIGHT-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)把同重费用流之外的可算范围扩到轻客户交叠图中的锚定星形：中心先开，每名轻客户只可选中心与一片叶；其他轻分量可同重数，重客户可跨分量。各叶按权递减队列，只移动严格改善的队头，并在候选叶中选当前最低单位负载。每名客户处理一次；贪心重数序保持上下盒，最后入叶客户与候选叶负载单调性保证精确 NE；BOX-TO-2 完成全部偏离。一个三站异轻权、不可比选项集实例同时在旧 RANGE、ALL-OR-ONE、NESTED-ANCHOR、UNIFORM-LIGHT 的条件之外。证明已内部独立逆审，有限有理数例只核算该实例；有向路径和双 LPT 后续机制已覆盖部分非星形图；一般图仍开放。
 
 **异重轻客户的精确势障碍（2026-10-03）。** [SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO](research/current/multi_facility/polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights)给一个显式无限整数族：只有两名不同轻权多选项客户，贪心七设施、四站初态是盒内精确 NE；但对全部站施加下盒后，全局客户势最小值仍唯一选到 L 站越上盒一单位的精确 NE。四态代数证明与独立 Fraction 核对明确了同重运输反路径不能直接照搬。旧势最小反例已有更强的设施收益失败；本族的新价值是将该算法接口障碍隔离到仅两个异重轻客户。**盒内 NE 依然存在，不能据此判定贪心选址或全输入 2 倍算法失败。**
 
-**离轨接口与无锚链形构造（2026-10-03）。** [SC-K-GREEDY-SINGLETON-RESET / SC-K-GREEDY-BOX-TO-2](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-singleton-reset-and-sc-k-greedy-box-to-2)把瓶颈重新固定为**寻找盒内精确在轨客户 NE**：对原 $q=1$ 的设施，偏离后直接回到初始贪心客户分配，原单站客户池每站至多 $2\gamma$、原高重数站可按 $2\gamma$ 装箱，故不需在轨客户的私有储备或原孤儿预算；任意在轨收益 $a\ge\gamma$ 都有位长多项式离轨纯 NE 使偏离者至多 $2\gamma\le2a$。若给出盒内站纯/站内均匀的精确在轨 NE，其余 $q\ge2$ 来源也由盒预算完成全部 2 倍续局。
+**离轨接口与无锚链形构造（2026-10-03）。** [SC-K-GREEDY-SINGLETON-RESET / SC-K-GREEDY-BOX-TO-2](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-singleton-reset-and-sc-k-greedy-box-to-2)给出一个盒内精确在轨客户 NE 的充分路线：对原 $q=1$ 的设施，偏离后直接回到初始贪心客户分配，原单站客户池每站至多 $2\gamma$、原高重数站可按 $2\gamma$ 装箱，故不需在轨客户的私有储备或原孤儿预算；任意在轨收益 $a\ge\gamma$ 都有位长多项式离轨纯 NE 使偏离者至多 $2\gamma\le2a$。若给出盒内站纯/站内均匀的精确在轨 NE，其余 $q\ge2$ 来源也由盒预算完成全部 2 倍续局。
 
 [SC-K-UNIFORM-LIGHT-FLOW-2](research/current/multi_facility/polytime_frontier.md#sc-k-uniform-light-flow-2-partial-overlaps-without-a-common-anchor)进一步处理任意交叠图和混合重数，只要求所有低于 $\gamma$、可选择多个已占站的客户具有同一权重 $\delta$。冻结其他客户、用每站下界的整数凸费用流最小化精确客户势，初始到终局的同重运输逆路径严格排除上盒溢出；高权客户也保持最优反应。与盒内续局引理合成位长多项式 2 倍完整构造。严格 $(3,2,1)$ 三站链例不属 RANGE、ALL-OR-ONE 或 NESTED-ANCHOR。内部独立逆审与 Fraction 复算通过，尚无外部评审或规范软件；**不同轻权的普遍盒内 NE 存在性与多项式选择仍开放**。
 
