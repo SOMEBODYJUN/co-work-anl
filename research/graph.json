@@ -1674,6 +1674,30 @@
         "research/current/multi_facility/claims.md"
       ],
       "status": "exact fixed-instance counterexample; internally audited"
+    },
+    {
+      "id": "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two for arbitrary-size all-or-one mixed-q components",
+      "detail": "Each mixed-q occupied component whose customers have one occupied option or all its sites admits descending-weight minimum-normalized-load assignment, exact on-path NE, greedy box and private-reserve singleton budgets; a full exact factor-two continuation is bit-polynomial.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "SC-K-DESCENT-ONLY-TRAP-NO",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Unique downward-only path can require an upward return",
+      "detail": "A strict-greedy three-site six-client integer chain has a unique maximal sequence of nonincreasing-q strict moves ending at a non-NE state; a weight-2 customer must return upward, though a true NE exists.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "exact fixed-instance counterexample; internally audited"
     }
   ],
   "hyperedges": [
@@ -3463,6 +3487,54 @@
         "research/current/multi_facility/polytime_frontier.md"
       ],
       "status": "exact obstruction"
+    },
+    {
+      "id": "e-mf-all-or-one-greedy-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "MF-PACK-2",
+        "MF-PURE-CAP-POLY",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2",
+      "statement": "Descending-weight list assignment to minimum normalized load proves exact client NE, preserves greedy load box, and uses private reserve to cover singleton-source orphan budgets in arbitrary-size all-or-one components.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-descent-only-trap",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-DESCENT-ONLY-TRAP-NO",
+      "statement": "Six-client strict-greedy three-site input forces the only sequence of downward-q strict client moves to a state with no further downward move but an exact upward return 25>23.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact obstruction"
+    },
+    {
+      "id": "e-mf-descent-limits-pair-extrapolation",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-K-DESCENT-ONLY-TRAP-NO"
+      ],
+      "conclusion": "SC-K-TWO-SITE-COMPONENT-GREEDY-2",
+      "statement": "The one-dimensional no-return proof for two occupied sites cannot be transferred unchanged to three-site partial-overlap components; it remains correct on its own two-site domain.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact scope boundary"
     }
   ]
 }

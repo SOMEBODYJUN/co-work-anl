@@ -1,7 +1,8 @@
 # Exact claim identities: common catalog, arbitrary k
 
-Claims added on 2026-10-02 are version 1 of that date; the new two-site
-component and fixed-layout selection claims are version 1 dated 2026-10-03.
+Claims added on 2026-10-02 are version 1 of that date; the new two-site,
+all-or-one component and fixed-layout/repair obstruction claims are version 1
+dated 2026-10-03.
 Status fields are separate:
 source = new current work; current proof = complete; internal review = reverse
 reconstruction, separate internal proof attacks, and exact independent-implementation
@@ -497,6 +498,74 @@ external review, literature priority and canonical implementation are
 unrecorded. Larger mixed-multiplicity components and the full-input
 polynomial factor-two target remain open; neither a finite instance nor a
 published scheduler alone proves this new conditional theorem.
+
+## SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2 -- arbitrary-size mixed multiplicities
+
+**Objects/domain and quantifiers:** explicit positive rational MF-MODEL,
+arbitrary labeled (k\ge2), positive maximum site reach, and the actual
+occupancy of SC-K-GREEDY-BUDGET. Each occupied-site customer-overlap
+component must either have constant final multiplicity, or have the
+property that every customer eligible inside it can choose **one** site
+or **all** its sites. Components in the latter class can have any size
+and unequal multiplicities; the condition is checkable in polynomial
+time. With no shared client the component is a singleton. This new ID
+has a broader input domain than the preceding two-site theorem and does
+not retroactively change that theorem's assumptions.
+
+**Exact conclusion and construction:** the same greedy labeled layout has
+an input-bit-polynomially constructible site-uniform independently mixed
+exact customer NE and a complete exact factor-two continuation. Within
+a mixed all-or-one component, the first-opened site H holds all shared
+clients initially and has maximal final multiplicity Q. Keep customers
+with a unique occupied option fixed; insert all shared clients in
+nonincreasing weight at a current minimum normalized load (W_t/q_t).
+The last shared client placed at any site proves every earlier client
+there satisfies its full exact NE inequality. The greedy final load box
+(q_t\gamma\le W_t\le(q_t+1)\gamma) survives: H receives a subset of its
+initial clients, while a shared weight (w) sent elsewhere is at most
+(\gamma), by comparing the chosen normalized load to H's remaining
+load. Singleton sources outside H retain private weight (P_u\ge\gamma)
+and obey (W_v+w(F_u)\le(q_v+1)\gamma+a-P_u\le(q_v+1)a).
+Constant-q components use the published identical-link algorithm and
+the existing singleton pool. MF-PACK-2, MF-PURE-CAP-POLY and the complete
+continuation rule close every actual deviation, including empty targets.
+
+**Dependencies/evidence/limits:** MF-MODEL, SC-K-GREEDY-BUDGET,
+SC-K-GREEDY-MAX-MULT, MF-PACK-2, MF-PURE-CAP-POLY, MF-CONT-COMPLETE and
+the complete greedy-list proof in
+[polytime_frontier.md](polytime_frontier.md). A strict six-facility,
+three-site (q=(3,2,1)) integer example there fails the range condition
+and the pair-component condition yet is covered. The two-site theorem is
+subsumed as an output class (each pair's shared clients cover both sites),
+but its independent one-pass repair proof remains a separate method.
+General multi-site partial-overlap components are unhandled. Internal
+independent reverse audit found no fatal objection; external review,
+novelty certification and canonical implementation are unrecorded.
+
+## SC-K-DESCENT-ONLY-TRAP-NO -- forced upward return in a partial-overlap chain
+
+**Exact objects/domain:** the six-client, three-site, six-facility positive
+integer input (28), common site order H,M,L. Greedy has a strict site
+choice at every insertion, final multiplicities ((3,2,1)), and load
+box parameter (\gamma=20). Start from its assigned customer sites and
+allow only strict improvements to sites of weakly lower final multiplicity.
+
+**Conclusion:** every maximal sequence of such downward moves is the
+unique three-step path T2: M→L, Y9: H→M, Z5: M→L. Its final site weights
+((64,46,27)) have no downward improvement but T2 strictly prefers the
+**upward** return L→M, external cost 25 versus alternative load 23.
+After that return ((64,48,25)) is a true exact customer NE. Thus a
+downward-only repair rule cannot universally complete the customer game,
+even though the downward steps preserve the greedy box. This is **not** a
+bad factor-two continuation or failure of the all-or-one theorem: the
+component has partial H/M and M/L overlaps, no all-site common customer.
+
+**Proof/evidence:** every greedy score, forced move and return inequality
+are given in [polytime_frontier.md](polytime_frontier.md); integer input
+`examples/multi_facility/greedy_descent_trap.json` and independent exact
+`tests/audits/kfac_descent_trap.py` enumerate all currently allowed
+downward moves after each step. Fixed-instance analytic obstruction,
+internally audited; no external review.
 
 ## SC-K-GREEDY-FIXED-LEXMAX-NO -- fixed-layout lexmax can be the unique bad NE
 

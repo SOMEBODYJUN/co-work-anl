@@ -1002,6 +1002,197 @@ its external load is 4 while A's final load is (9/2). The load box
 and all deviation cases above apply. This example separates output
 classes, not the strength of their universal factor-two guarantees.
 
+## SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2: arbitrarily many mixed-multiplicity sites
+
+**Exact conditional theorem.** Run SC-K-GREEDY-BUDGET on any explicit
+positive rational common-catalog input with arbitrary labeled (k\ge2)
+and positive maximum reach. In each connected component of the graph on
+occupied sites joined by a jointly accessible customer, suppose either
+(i) all sites have the same final facility multiplicity, or (ii) each
+served customer with an occupied option in this component can choose
+**either precisely one occupied site or every site of this component**.
+The condition is checked in polynomial time from the greedy output. Then
+one can construct in input-bit-polynomial time the same labeled facility
+layout, a site-uniform exact independently mixed on-path customer NE, and
+a complete exact factor-two continuation. No upper bound on the number
+of occupied sites or assumption of equal multiplicities is imposed in
+(ii). Since every two-site component satisfies (ii), this output class
+contains SC-K-TWO-SITE-COMPONENT-GREEDY-2; its constructive mechanism is
+different. The general mixed-multiplicity component with partial
+overlaps remains outside the theorem.
+
+**Descending list assignment and on-path NE.** For a constant-multiplicity
+component use the published restricted identical-machine Nashification,
+as in SC-K-RANGE-GREEDY-2; it preserves the greedy load box. Consider a
+component satisfying (ii) with nonconstant multiplicities. Write (F)
+for customers eligible at **all** its occupied sites and (P_t) for
+customers eligible at only (t), with weights denoted by the same letters.
+There must be a shared customer; hence the component's first-opened site
+(H) initially receives **every** customer of (F). All other sites
+initially receive only their (P_t) customers. SC-K-GREEDY-MAX-MULT
+implies (Q=q_H\ge q_t) for all sites in the component; as multiplicities
+are not all equal, (Q\ge2). Initially
+
+\[
+ W_H^0=P_H+w(F),\qquad W_t^0=P_t\quad(t\ne H),\qquad
+ q_t\gamma\le W_t^0\le(q_t+1)\gamma.             \tag{24}
+\]
+
+Remove the common customers from (H), keep all private customers fixed,
+sort (F) by nonincreasing weight, and assign each in turn to a site
+of minimum *current per-facility load* (W_t/q_t) among all sites in
+the component (fix a site order for ties). This takes (O(n|S|))
+rational comparisons after sorting. For any common customer (i) finally
+at (s), let (j) be the **last** common customer assigned to (s).
+Then (w_j\le w_i) and, immediately before assigning (j), site (s)
+had minimum normalized load. As no later customer enters (s), for
+every other occupied site (v) in the component,
+
+\[
+ \frac{W_s-w_i}{q_s}
+ =\frac{W_s^{\mathrm{before}\ j}+w_j-w_i}{q_s}
+ \le\frac{W_s^{\mathrm{before}\ j}}{q_s}
+ \le\frac{W_v^{\mathrm{before}\ j}}{q_v}
+ \le\frac{W_v}{q_v}.                              \tag{25}
+\]
+
+This is the exact customer no-deviation inequality after site-uniform
+independent mixing. A private customer has no other occupied option,
+and no customer can change to another component. Customers with no
+occupied option remain unserved. Thus all fixed-layout customers are
+at an exact NE, with equality allowed.
+
+**Greedy load box survives list assignment.** After removing (F), all
+sites (t\ne H) begin at (P_t=W_t^0\ge q_t\gamma); only (H)
+may have normalized load below (\gamma). If it stayed below (\gamma)
+throughout the assignment, every common customer would be sent to (H),
+ending at (W_H^0/Q\ge\gamma), a contradiction. Hence (H) finishes
+at least (\gamma), and never exceeds its original total (W_H^0),
+so its box (Q\gamma\le W_H\le(Q+1)\gamma) holds.
+Whenever another site (t) is chosen for a common customer of weight
+(w), its current normalized load is at least (\gamma) and no larger
+than (H)'s current load. The unassigned customer (w) was originally
+in (H), so its current total there is at most (W_H^0-w). Thus
+
+\[
+ \gamma\le\frac{W_t}{q_t}
+       \le\frac{W_H}{Q}
+       \le\frac{W_H^0-w}{Q}
+       \le\gamma+\frac{\gamma-w}{Q},
+\]
+
+which implies (w\le\gamma). Immediately after inserting it,
+
+\[
+ \frac{W_t+w}{q_t}
+ \le\gamma+\frac{\gamma}{Q}
+       +w\left(\frac1{q_t}-\frac1Q\right)
+ \le\gamma+\frac{\gamma}{q_t},                    \tag{26}
+\]
+
+since (q_t\le Q). The lower box at (t) is permanent, while (H)
+can only gain original common customers; (24)--(26) yield
+(q_t\gamma\le W_t\le(q_t+1)\gamma) for all occupied sites at the end.
+Rational sums, scaling for the constant-q scheduler, and tie comparisons
+have polynomial bit length.
+
+**All singleton-source and other facility deviations.** For (q_u\ge2),
+the load box, (a=W_u/q_u\ge\gamma), and (N_r\le\gamma) give the
+usual occupied-target and empty-target budgets (5)--(6). In a mixed
+component satisfying (ii), a singleton source (u) cannot be (H)
+because (Q\ge2). Its fixed private reserve is
+(P_u=W_u^0\ge\gamma), and its final weight is
+(a=P_u+w(F_u)), where (F_u\subseteq F) are common customers now at
+(u). For every occupied target (v) **inside** the component,
+exactly those (F_u) customers can follow the source. Using the box,
+
+\[
+ W_v+w(J_u\cap C_v)=W_v+w(F_u)
+ \le(q_v+1)\gamma+a-P_u
+ \le q_v\gamma+a\le(q_v+1)a.                      \tag{27}
+\]
+
+For occupied targets outside the component, the orphan overlap is zero
+and the box suffices. For a singleton source in a constant-(q=1)
+component, use the first-opening customer-pool proof (19R), unchanged
+by its within-component Nashification. At an unopened target (r),
+any singleton source needs only
+(N_r+w(J_u\cap C_r)\le\gamma+a\le2a)
+as the deviator's initial cap; every stationary-site packing follows
+from (27) or the constant-q pool. As before, isolate atoms above (2a),
+pack stationary facilities, and call MF-PURE-CAP-POLY for a pure exact
+NE preserving the deviator's cap. A polynomial default rule completes
+the continuation. The conditional theorem relies on the actual greedy
+output and does not infer a polynomial algorithm for every instance.
+
+**Strictly beyond the preceding two output certificates.** With (k=6),
+sites H,B,C and customers
+((140,\{H\}),(10,\{H,B,C\}),(80,\{B\}),(41,\{C\})),
+greedy strictly selects
+((H,150),(B,80),(H,75),(H,50),(C,41),(B,40)).
+Final (q=(3,2,1)), (\gamma=40), and initial site totals are
+((150,80,41)). The sole shared customer fails (17R):
+(\beta_3-10/3=140/3>\alpha_2=40); the occupied overlap component
+has three sites, so the pair theorem also does not apply. Private
+normalized loads are (140/3,40,41); the list algorithm assigns the
+weight-10 customer to B, giving ((W_H,W_B,W_C)=(140,90,41)).
+Its external load at B is 40, below the alternative loads (140/3)
+and 41. The source C is singleton, so (27) also covers a genuinely
+present source-multiplicity type even though no common client ends at C.
+
+## SC-K-DESCENT-ONLY-TRAP-NO: three-site partial overlap needs an upward return
+
+**Refuted selection assertion.** From the greedy initial customer assignment,
+repeatedly make strict site-level customer improvements **only to sites of
+weakly lower final facility multiplicity**. Every maximal such sequence
+need not end at a full exact customer NE, even though every downward move
+preserves the greedy load box. The following example makes the entire
+downward path forced, so changing its order cannot repair the issue. This
+does **not** refute the factor-two goal, the greedy occupancy, or the
+all-or-one component theorem above.
+
+Let (k=6), site order H,M,L, and take the six positive-integer customers
+
+\[
+ (64,H),\ (9,HM),\ (37,M),\ (5,ML),\ (2,ML),\ (20,L).    \tag{28}
+\]
+
+Greedy's strictly chosen site/score sequence is
+((H,73),(M,44),(H,73/2),(H,73/3),(M,22),(L,20)).
+There are no score ties. Final multiplicities are
+((q_H,q_M,q_L)=(3,2,1)), last score (\gamma=20), and initial
+weights ((73,44,20)). Name the shared clients Y=9 (H/M), Z=5
+(M/L), and T=2 (M/L). At the initial state only T has a strict
+downward improvement: its source external cost is
+((44-2)/2=21>20), whereas Y has (64/3<22) and Z has
+((44-5)/2=39/2<20). The subsequent path is forced:
+
+| State weights ((W_H,W_M,W_L)) | Sole strict downward improvement |
+| --- | --- |
+| ((73,44,20)) | T: M\(\to\)L, (21>20) |
+| ((73,42,22)) | Y: H\(\to\)M, (64/3>21); Z has (37/2<22) |
+| ((64,51,22)) | Z: M\(\to\)L, (23>22) |
+| ((64,46,27)) | None |
+
+At the last state T is at L and has external cost (27-2=25),
+whereas moving **upward** to M would cost its own weight plus M's
+current per-facility load (46/2=23). It therefore strictly returns.
+After T moves L\(\to\)M, the weights are ((64,48,25)), an exact NE:
+Y at M has external cost (39/2<64/3), Z at L has external cost
+20\(\le24\), and T at M has external cost 23\(\le25\);
+the private customers have only their own site. The load box survives
+even this particular upward return, but its preservation is not proved
+for arbitrary upward moves. The graph is the three-site H--M--L chain:
+no common customer covers all three, so it is correctly outside the
+all-or-one subclass. A five-customer, four-facility star example with
+clients ((40,H),(8,HA),(4,HB),(21,A),(19,B)) also defeats a
+**fixed descending-weight one-pass** scan, but the six-customer example
+is stronger because *every maximal downward-only order* has the same
+upward-defective terminal state. Exact arithmetic and branch uniqueness
+are checked independently in `tests/audits/kfac_descent_trap.py` from
+`examples/multi_facility/greedy_descent_trap.json`; the displayed
+inequalities prove the fixed-instance obstruction.
+
 ## SC-K-GREEDY-REPAIR-ORDER-NO: exact repair order can lose factor two
 
 **Refuted assertion.** "Run greedy once and make *any* sequence of strict
@@ -1235,3 +1426,9 @@ independent-mixed profiles. The integer input and independent audit are in
   or complete literature-priority finding is recorded. In particular, the
   second example's global potential minimum follows from the transfer
   identity and complete NE classification, not from a finite search alone.
+- The arbitrary-size all-or-one component construction was independently
+  reversed through its last-assigned-job NE inequality, lower and upper
+  greedy boxes, and the private-reserve singleton budget. Its three-site
+  strict-range-failure example was recomputed with exact rational arithmetic.
+  The partial-overlap downward trap has an exact unique path proof and an
+  independent Fraction branch audit; it limits one repair rule only.

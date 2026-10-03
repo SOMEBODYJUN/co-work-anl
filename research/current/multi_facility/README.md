@@ -68,7 +68,12 @@ lower-q site. A scalar load difference rules out all return moves, every
 transfer preserves the greedy load box, and a pooled-orphan identity handles
 the disappearing lower-q site. Constant-q components use the published
 scheduler. This is bit-polynomial and admits some inputs that fail the range
-certificate, but says nothing about mixed-q components of three or more sites.
+certificate. The broader `SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2` permits
+arbitrarily many mixed-q sites when each client has one occupied option or
+the entire component. It inserts all-site shared clients in descending
+weight at minimum current normalized load; private reserves and the greedy
+load box close singleton-source deviations. It includes every two-site
+component and a three-site q=(3,2,1) input failing RANGE.
 Outside those conditional classes, `SC-K-GREEDY-STATIC-PACK-NO` gives a
 five-site integer instance where a reachable exact on-path NE leaves a
 different surviving site too heavy for the old cap packing if customer site
@@ -92,7 +97,11 @@ where a B-to-G deviation is **forced** above factor two in every mixed
 off-path NE. Both layouts also have another reachable exact NE retaining
 the four transfer budgets. Their scripts check finite arithmetic, not a
 general theorem. Selection of a suitable NE on range-certificate-failing
-mixed-q components of three or more sites remains open. In fact, the first
+mixed-q components of three or more sites with partial overlaps remains open.
+`SC-K-DESCENT-ONLY-TRAP-NO` gives a six-client three-site chain where the
+only maximal downward-q repair path stops before reaching customer NE;
+one upward return completes it. This does not refute greedy occupancy.
+In fact, the first
 integer witness makes the fixed-greedy-layout site-uniform lexmax customer
 assignment uniquely bad (`SC-K-GREEDY-FIXED-LEXMAX-NO`). A second integer
 witness has exactly two site-uniform NEs and makes the bad one the unique
@@ -116,7 +125,7 @@ exact SPE (`SC-K-SYMMETRIC-MENU-OBSTRUCTION`).
 | `reverse_review.md` | Reverse reconstruction from the desired off-path cap; explicit objections and independent-implementation evidence, with no claim of external peer review. |
 | `lexmax_boundary.md` | For every fixed k, the selected lexmax occupancy itself can need factor tending to 2 under all NE choices, while another layout has an exact SPE; a sub-two proof must permit different layouts. |
 | `symmetric_menu_obstruction.md` | Explicit all-q family separating unbounded symmetric-menu threat from alpha^*=1 in the full model; read before proposing any menu-only lower bound. |
-| `polytime_frontier.md` | Explicit import of polynomial capped Nashification, full 3-PARTITION reduction for exact global lexmax, polynomial local neighborhood, all-distinct 2 bound, multiplicity-class range certificate, and new two-site mixed-q component construction. Contains strict-repair-order, fixed-layout customer lexmax and potential-minimum escapes; read before proposing a universal greedy-output customer selection rule. |
+| `polytime_frontier.md` | Explicit import of polynomial capped Nashification, 3-PARTITION reduction for exact global lexmax, polynomial local neighborhood, all-distinct 2 bound, multiplicity-class range certificate, mixed-q pair scan, and arbitrary-size all-or-one component list construction. Contains strict-repair-order, fixed-layout customer lexmax and potential-minimum escapes, plus a forced upward return on a partial-overlap three-site chain; read before proposing a universal greedy-output customer selection rule. |
 
 Implementation: `multi_facility_spe/two_exists.py` and `__main__.py`, a sibling
 package rather than a silent modification of the two-facility API.

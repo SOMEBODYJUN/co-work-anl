@@ -16,6 +16,8 @@
 
 **继续推进（2026-10-03）：**[双地点混合重数分量定理](research/current/multi_facility/polytime_frontier.md#sc-k-two-site-component-greedy-2-mixed-multiplicities-in-a-two-site-component)把上述条件类进一步扩到任意多个交叠分量，只要每个分量重数一致或仅有两个地点。双地点分量按共有客户权重递减、只从较高重数向较低重数做严格改善；每客户至多移动一次，保住负载区间及源地点消失时的装箱预算。它能处理区间证书失败的轻跨重数客户。另有两条[固定布局选均衡障碍](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-fixed-lexmax-no-the-fixed-layout-lexmax-can-select-the-bad-ne)：精确字典序最大客户分配可以唯一选中坏 NE；另一份整数例连**全局客户势函数最小值**也唯一选中坏 NE，分别在离轨所有混合均衡中超过 2 倍。同布局仍有好 NE。全输入位长多项式 2 倍算法继续开放，下一步聚焦含至少三个地点且重数不等的交叠分量。
 
+**再推进一层（2026-10-03）：**[全站共有或单站私有分量定理](research/current/multi_facility/polytime_frontier.md#sc-k-all-or-one-component-greedy-2-arbitrarily-many-mixed-multiplicity-sites)允许一个分量有**任意多**个不同重数的地点：只要求每名客户在这个分量的已占选项要么只有一站，要么是全部站。把全站共有客户按权重递减放到当前单位设施负载最低的地点，可多项式地得到精确客户 NE，保住负载区间和所有偏离预算；此前双地点类是它的特例。三地点 $(3,2,1)$ 整数例使旧区间证书失败却满足新条件。相反，一份[三地点链形交叠例](research/current/multi_facility/polytime_frontier.md#sc-k-descent-only-trap-no-three-site-partial-overlap-needs-an-upward-return)证明所有严格向低重数改派的路径都在一个非 NE 状态停下，必须允许客户向高重数返回；该例仍有精确客户 NE，不是 2 倍反例。因此前沿已缩到**三站及以上混合重数、部分客户只覆盖其中某些站**的交叠结构及其选均衡机制。
+
 ## 先判断输入属于哪条命题
 
 | 目标 | 同时要求 | 可得到什么 | 从哪里开始读 |
@@ -53,6 +55,8 @@
 
 双地点新依赖：贪心初始最大重数归属 + 两站负载差 $\Delta$ 的递减扫描 + 向低重数严格改派保留负载区间 + 单设施站原重站客户回收恒等式 → SC-K-TWO-SITE-COMPONENT-GREEDY-2。有限选择障碍：首份整数例的全部地点纯分配最小负载比较 → SC-K-GREEDY-FIXED-LEXMAX-NO；第二份整数例的客户势函数精确变化与仅两项客户 NE 分类 → SC-K-GREEDY-FIXED-POTENTIAL-NO。两者只排除固定贪心选址后的指定客户选择规则。
 
+任意大分量新依赖：贪心最大重数首站 + 全站共有客户按权递减的最小单位负载分配 + 首站余额控制负载区间 + 单设施站私有客户储备 → SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2；它按输出范围包含双地点定理，证明机制另有独立内容。三地点 H--M--L 的唯一下降改派路径及强制上升回返 → SC-K-DESCENT-ONLY-TRAP-NO，只限制不能回返的客户修复规则。
+
 ## 如何追踪一项研究结论
 
 [命题登记](research/current/claims.md)固定适用域与状态；[现行资产索引](ASSETS.md)把命题连到新稿、实现、检验及历史来源。[数学超图](research/index.html)的节点是定义、引理、反例和结论；一条推导超边要求**所有列出的共同前提**，不是旧文件之间的链接。其[数据](research/graph.json)和[维护规则](research/README.md)可直接核查。GitHub 预览 HTML 时显示源码，下载 HTML 后可使用交互查看器。
@@ -81,7 +85,8 @@
 | `research/current/shared/three_site_exact_hardness.md` | 将局部 SUBSET SUM 客户谱嵌入三地点共同目录，逐一堵住同址、AB、AC、BC 的所有逃逸；证明固定有理 $1\le a<(1+\sqrt3)/2$ 的弱 NP 完全性，列出两套守卫及端点正权预算障碍。研究下一段复杂度前沿时先读，切勿把端点当模型相变。 |
 | `research/current/shared/five_site_exact_hardness.md`、`research/FIVE_SITE_AUDIT_2026-10-02.md` | 五地点新覆盖、强制桥宏原子和全布局守卫证明每个固定有理 $1<a<\phi$ 的弱 NP 完全性；审查页核对原目标同一性、2024 年广义困难性优先权边界及与 A/B 成果的相对价值。研究实例复杂度或组织 A 篇时读。 |
 | `research/current/multi_facility/uniform_two.md`、`research/K_FACILITY_AUDIT_2026-10-02.md` | 任意 $k$ 的共同目录因子 2 存在性证明、逐式逆审、方法边界及面向领域的价值解释；研究多设施稳定性时先读。无多项式构造或因子 2 尖锐性结论。 |
-| `research/current/multi_facility/polytime_frontier.md` | 精确全局字典序选址的强 NP 难性、多项式局部邻域、贪心预算、全异址 **2 倍**和重数类区间证书；新增双地点混合重数分量的递减权重构造、负载区间不变量与单设施源预算。还给出坏修复、固定布局字典序与全局客户势最小化的三个不同选择障碍。攻全 $k$ 高效算法时先读；至少三地点的混合重数交叠分量仍开放。 |
+| `research/current/multi_facility/polytime_frontier.md` | 精确全局字典序选址的强 NP 难性、多项式局部邻域、贪心预算、全异址 **2 倍**和重数类区间证书；新增双地点混合重数及任意大“全站共有或单站私有”分量的两种多项式构造，均补齐单设施源预算。给出坏修复、固定布局字典序、全局客户势最小化和三地点下降改派停在非 NE 的各自严格障碍。攻全 $k$ 高效算法时先读；三地点以上的混合重数**部分交叠**分量仍开放。 |
+| `examples/multi_facility/greedy_descent_trap.json`、`tests/audits/kfac_descent_trap.py` | 六客户、三地点 H--M--L 的整数输入与独立 Fraction 审查：六次无并列贪心、唯一三步下降改派、被迫上升回返及其后的精确 NE。检验“只允许重数下降”或照搬双站递减扫描的算法时读；该例不否定 2 倍布局。 |
 | `examples/multi_facility/greedy_cap_obstruction.json`、`tests/audits/kfac_greedy_cap.py` | 六地点十顾客的精确整数输入与独立 Fraction 检查：重算确定性贪心得分、五次严格客户改派、在轨精确 NE、B/E/G 的强制 $44>41$ 容量障碍和偏离者仅获 $20$ 的离轨精确 NE。研究 SC-K-GREEDY-CAP-INFEASIBLE 的算术或试图修改装箱接口时运行；有限检查不替代文件中的全称定理证明。 |
 | `examples/multi_facility/greedy_repair_order_escape.json`、`tests/audits/kfac_greedy_repair_order.py` | 第一份六地点整数输入和独立 Fraction 审核：贪心得分、五步严格客户改善、坏终点精确 NE、B→G 在所有混合 NE 强制 $32/15$ 倍；新增全部 16 个地点纯分配的精确枚举，核查该坏终点也是固定贪心布局唯一 lexmax。同布局另一终点保留四预算。设计客户修复规则时读；只证明固定实例的失效。 |
 | `examples/multi_facility/greedy_potential_escape.json`、`tests/audits/kfac_greedy_potential.py` | 第二类六地点整数选择障碍：十客户显式覆盖、固定贪心布局全部 16 种地点纯分配的 Fraction 枚举，两项精确客户 NE 势值 86200 与 86264，唯一全局势最小者在所有离轨混合 NE 中遭受 $215/107>2$ 倍偏离。检查任何“势函数最小化就能选好 NE”的路线时读；有限检验配合证明页的两项 NE 分类与势差恒等式。 |
