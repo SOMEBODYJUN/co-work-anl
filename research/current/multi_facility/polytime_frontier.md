@@ -1140,6 +1140,123 @@ Its external load at B is 40, below the alternative loads (140/3)
 and 41. The source C is singleton, so (27) also covers a genuinely
 present source-multiplicity type even though no common client ends at C.
 
+## SC-K-NESTED-ANCHOR-GREEDY-2: a partial-overlap mixed component
+
+**Exact conditional theorem.** Run SC-K-GREEDY-BUDGET on explicit positive
+rational MF-MODEL input. In every occupied-site overlap component, assume either
+all multiplicities are equal, or the following two conditions hold. Let H be
+the first site opened in that component. Every customer with at least two
+occupied options in the component can use H. Moreover, these multi-option
+customers admit an ordering i_1,...,i_m with nonincreasing weights and
+
+\[
+ A_{i_1}\subseteq A_{i_2}\subseteq\cdots\subseteq A_{i_m},
+ \qquad A_i=\{t:q_t>0,\ i\in C_t\}.                 \tag{28N}
+\]
+
+The order and inclusion condition are polynomially recognizable, including
+equal-weight ties (sort equal-weight option sets by size, then check each
+adjacent inclusion). Under these conditions the **greedy layout itself** has
+an input-bit-polynomial site-uniform exact independently mixed customer NE
+and a complete exact factor-two continuation. A component may have arbitrarily
+many sites and unequal multiplicities. This strictly extends the all-or-one
+component output class, but does not solve partial overlaps with incomparable
+or reverse-weight option sets. The claim is conditional on the actual greedy
+output, not on an arbitrary prescribed occupancy.
+
+**Construction and exact NE.** In a mixed component write F for its
+multi-option customers and P_t for customers with just occupied option t.
+As H opens before the other component sites and covers all of F, all of F
+were initially assigned to H, while each other site initially holds precisely
+its P_t. SC-K-GREEDY-MAX-MULT gives Q=q_H>=q_t; in a genuinely mixed
+component Q>=2. Keep each P_t fixed. Remove F from H and, in order (28N),
+place each i on a site of minimum current W_t/q_t **among A_i**, breaking
+ties by a fixed site order. For a resulting customer i at s, let j be the
+last member of F placed at s. Then j is no heavier than i and A_i is
+contained in A_j. At the moment j was placed, every v in A_i was therefore
+an eligible comparison site. With final weights,
+
+\[
+ \frac{W_s-w_i}{q_s}
+ \le\frac{W_s-w_j}{q_s}
+ =\frac{W_s^{\text{before }j}}{q_s}
+ \le\frac{W_v^{\text{before }j}}{q_v}
+ \le\frac{W_v}{q_v}\quad(v\in A_i\setminus\{s\}).       \tag{29N}
+\]
+
+This is exactly i's conditional-cost comparison when i independently
+mixes uniformly among the q_s colocated facilities. Single-option customers
+have no alternative occupied site; different components cannot share a
+customer. Constant-q components use the published restricted identical-link
+Nashification, as in the previous theorem. Hence the combined profile is
+an exact customer NE, with no strictness assumption on ties.
+
+**The box and all deviations.** Let gamma>0 be the final greedy insertion
+score. Initially q_t gamma<=W_t^0<=(q_t+1)gamma for every occupied t,
+and P_t=W_t^0>=q_t gamma for t!=H. Every i in F can choose H.
+Consequently, if H were still below normalized load gamma whenever an
+F-customer was placed, each such customer would choose H, contrary to
+W_H^0/Q>=gamma at the end. H therefore finishes at least gamma and at
+most W_H^0/Q<=gamma+gamma/Q. Before a weight w is assigned to some
+t!=H, H contains at most W_H^0-w, and the minimum-choice rule gives
+
+\[
+ gamma\le W_t/q_t\le W_H/Q
+ \le (W_H^0-w)/Q\le gamma+(gamma-w)/Q.
+\]
+
+Thus w<=gamma. On inserting it, the new load at t is at most
+gamma+(gamma-w)/Q+w/q_t<=gamma+gamma/q_t, since q_t<=Q.
+The lower bound at every non-H site is permanent. Therefore **every**
+final site obeys q_t gamma<=W_t<=(q_t+1)gamma. This box argument only
+needs the common anchor H, not the nesting condition; nesting is needed
+for (29N).
+
+For a deviator with source multiplicity q_u>=2, the box, a=W_u/q_u>=gamma,
+and N_r<=gamma restore the occupied and unopened packing budgets as in
+SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2. For q_u=1 in a mixed component,
+u!=H and its fixed private reserve P_u=W_u^0>=gamma. Its remaining
+weight a consists of P_u plus some customers of F. For every other
+occupied site v, only members of F now at u can both follow u and use v;
+their total weight is at most a-P_u. Hence
+
+\[
+ W_v+w(J_u\cap C_v)
+ \le(q_v+1)gamma+a-P_u
+ \le q_v gamma+a\le(q_v+1)a.                 \tag{30N}
+\]
+
+For v in another component the overlap is zero. Singleton sources in a
+constant-q=1 component use the already proved first-opening pool bound
+(19R). For an unoccupied target r, assign the deviator no more than
+N_r+w(J_u\cap C_r)<=gamma+a<=2a; the stationary-site budgets just
+proved permit isolated-macro packing. MF-PURE-CAP-POLY then gives a pure
+exact off-path NE with deviator load at most 2a. The polynomial default
+rule supplies the rest of the complete continuation. All comparisons,
+fraction clearing, scheduling calls, and at most k(|S|-1) deviations are
+polynomial in explicit input bit length; no exponential customer-improvement
+path is invoked.
+
+**Strict separation and a limit of the list rule.** Let k=6, site order
+H,M,L, private weights (135,H),(80,M),(41,L), and two other customers
+(5,HM),(3,HML). Greedy strictly selects H,M,H,H,L,M, with
+(q_H,q_M,q_L)=(3,2,1), initial weights (143,80,41), and gamma=40.
+The weight-5 option set HM is properly contained in the weight-3 option
+set HML. The construction assigns 5 to M and then 3 to L, giving final
+weights (135,85,44); (29N) verifies the NE. The old range condition
+(17R) fails for weight 5 because 143/3-5/3=46>80/2=40, and the
+all-or-one condition fails at HM. Thus this is a genuine partial-overlap
+case beyond both previously recorded certificates.
+
+Switch **only the two shared option sets**, to (5,HML),(3,HM), retaining
+the same greedy sequence and initial weights. The same unrestricted
+descending minimum-load list places both customers at M, giving
+(135,88,41); the weight-5 customer's source external load is
+(88-5)/2=83/2>41 at L. It is not an NE even though the load box survives.
+Placing 5 at L and 3 at M instead gives an exact site-uniform NE with
+weights (135,83,46). This example refutes an unconditional star-anchor
+**list algorithm**, not the greedy layout or the factor-two target.
+
 ## SC-K-DESCENT-ONLY-TRAP-NO: three-site partial overlap needs an upward return
 
 **Refuted selection assertion.** From the greedy initial customer assignment,

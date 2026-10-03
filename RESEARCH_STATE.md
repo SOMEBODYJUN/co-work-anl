@@ -8,6 +8,8 @@
 
 ## 当前前沿与本轮闭合
 
+**新增部分交叠条件类（2026-10-03）。** [SC-K-NESTED-ANCHOR-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-nested-anchor-greedy-2-a-partial-overlap-mixed-component)证明：贪心每个混合重数交叠分量若有首开共同锚站，且多选项客户按权重非增排列时选项集逐步扩张，则受限列表分配可位长多项式构造精确在轨 NE 和完整 2 倍续局。它包含先前 ALL-OR-ONE 类，且一个严格三站整数例有真正的部分交叠，旧 RANGE 证书失败。负载盒只靠共同锚站就能保住；精确 NE 额外依赖选项集的顺序。交换同一例两个共有客户的选项集后，无条件列表法产出非 NE，虽然另有精确 NE。该反例只限定此列表规则。一般三站及以上的部分交叠、非嵌套输入仍开放。新证明经独立内部逆审与精确整数复算，未外审，规范软件尚未实现。
+
 **第二阶段新增推进（2026-10-03）。** [SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-all-or-one-component-greedy-2-arbitrarily-many-mixed-multiplicity-sites)把条件性多项式 2 倍算法推到**任意大混合重数交叠分量**：每名客户在该分量内的已占选项要么唯一，要么包括分量所有地点。首开地点初始收下全部共有客户且最终重数最大；把这些客户按权重递减分配到当前单位设施负载最低地点，得到精确客户 NE。首开地点保留的总量、其他站的私有负载储备，分别证明贪心负载区间及单设施源消失的装箱预算。原双地点条件类按作用域包含在新定理内；三地点 $(3,2,1)$ 整数例不满足旧区间证书，却由新算法处理。证明经过独立内部逆审，尚无规范实现和外部评审。
 
 [SC-K-DESCENT-ONLY-TRAP-NO](research/current/multi_facility/polytime_frontier.md#sc-k-descent-only-trap-no-three-site-partial-overlap-needs-an-upward-return)将剩余障碍落在**部分交叠**：六客户、三地点 H--M--L、重数 $(3,2,1)$ 的正整数例中，全部严格向不高重数地点改派的最大路径唯一，却停在非 NE；重 2 客户必须从 L 向 M 返回。返回后有精确 NE，负载区间也未被破坏。因此这只排除“向低重数移动绝不回返”的策略，不是一般 2 倍下界。下一步应设计允许上升回返仍能在输入位长多项式时间终止、保持足够偏离预算的规则，或找出贪心布局的真正全 NE 反例；高效全输入 2 倍构造依然开放。

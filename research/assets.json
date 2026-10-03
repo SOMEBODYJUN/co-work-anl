@@ -850,14 +850,15 @@
         "SC-K-GREEDY-FIXED-LEXMAX-NO",
         "SC-K-GREEDY-FIXED-POTENTIAL-NO",
         "SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2",
-        "SC-K-DESCENT-ONLY-TRAP-NO"
+        "SC-K-DESCENT-ONLY-TRAP-NO",
+        "SC-K-NESTED-ANCHOR-GREEDY-2"
       ],
       "status": "internally reviewed conditional algorithm, exact-oracle strong NP-hardness proof, and PLS upper bound; externally unreviewed",
       "applies_when": [
         "arbitrary explicit k and common finite catalog, labeled facilities, atomic customers and linear actual-load costs",
         "positive binary rational input for Nashification and PLS; positive integers for strong NP-hardness"
       ],
-      "produces": "Polynomial off-path Nashification given a suitable on-path state; strong hardness only of exact global lexmax; polynomial neighborhood search upper bound in PLS, not a full polynomial factor-two algorithm. Polynomial greedy transfer budgets alone, with a fixed-layout NE compatibility counterexample. New conditional bit-polynomial factor-two construction when greedy occupancy has uniform q>=2; conditional factor-three construction when greedy occupies k distinct sites; unopened-site cap invariant after site transfers. Wider componentwise equal-multiplicity factor-two subclass and a five-site frozen-site packing counterexample. Six-site strengthening proves global ordinary cap infeasible for one actual deviation despite a low-deviator exact NE. Initial greedy incidence ordering: each customer starts at a maximum-final-multiplicity accessible occupied site. New output-recognizable polynomial factor-two theorems for all-distinct greedy layouts and multiplicity-class range-certified layouts; the latter subsumes light-overlap and all-heavy-overlap conditions. Two exact integer examples refute arbitrary repair and heaviest-first repair while retaining an alternative good NE at the same greedy layout. New bit-polynomial factor-two construction for greedy occupied-overlap components of constant multiplicity or size at most two, including unequal multiplicities outside the range certificate. Two exact fixed-layout selection obstructions: unique bad lexmax customer assignment and unique bad global weighted-customer-potential minimizer. Arbitrary-size all-or-one mixed-multiplicity occupied components admit descending-weight minimum-normalized-load list assignment and bit-polynomial factor-two completion. A six-client strict-greedy three-site chain forces every downward-only client repair path to require an upward return.",
+      "produces": "Polynomial off-path Nashification given a suitable on-path state; strong hardness only of exact global lexmax; polynomial neighborhood search upper bound in PLS, not a full polynomial factor-two algorithm. Polynomial greedy transfer budgets alone, with a fixed-layout NE compatibility counterexample. New conditional bit-polynomial factor-two construction when greedy occupancy has uniform q>=2; conditional factor-three construction when greedy occupies k distinct sites; unopened-site cap invariant after site transfers. Wider componentwise equal-multiplicity factor-two subclass and a five-site frozen-site packing counterexample. Six-site strengthening proves global ordinary cap infeasible for one actual deviation despite a low-deviator exact NE. Initial greedy incidence ordering: each customer starts at a maximum-final-multiplicity accessible occupied site. New output-recognizable polynomial factor-two theorems for all-distinct greedy layouts and multiplicity-class range-certified layouts; the latter subsumes light-overlap and all-heavy-overlap conditions. Two exact integer examples refute arbitrary repair and heaviest-first repair while retaining an alternative good NE at the same greedy layout. New bit-polynomial factor-two construction for greedy occupied-overlap components of constant multiplicity or size at most two, including unequal multiplicities outside the range certificate. Two exact fixed-layout selection obstructions: unique bad lexmax customer assignment and unique bad global weighted-customer-potential minimizer. Arbitrary-size all-or-one mixed-multiplicity occupied components admit descending-weight minimum-normalized-load list assignment and bit-polynomial factor-two completion. A six-client strict-greedy three-site chain forces every downward-only client repair path to require an upward return. Nested-anchor partial overlaps with weight-ordered expanding eligible sets now admit restricted list assignment and full polynomial factor two; reversing sets refutes the unrestricted list rule only.",
       "implementation": [],
       "proof": [
         "research/current/multi_facility/polytime_frontier.md",
@@ -869,7 +870,8 @@
         "tests/audits/kfac_greedy_repair_order.py",
         "tests/audits/kfac_greedy_heaviest.py",
         "tests/audits/kfac_greedy_potential.py",
-        "tests/audits/kfac_descent_trap.py"
+        "tests/audits/kfac_descent_trap.py",
+        "tests/audits/kfac_nested_anchor.py"
       ],
       "records": [],
       "examples": [
@@ -877,12 +879,13 @@
         "examples/multi_facility/greedy_repair_order_escape.json",
         "examples/multi_facility/greedy_heaviest_escape.json",
         "examples/multi_facility/greedy_potential_escape.json",
-        "examples/multi_facility/greedy_descent_trap.json"
+        "examples/multi_facility/greedy_descent_trap.json",
+        "examples/multi_facility/greedy_nested_anchor.json"
       ],
       "sources": [
         "history/source/audits/cost_extensions.md"
       ],
-      "limit": "Historical source records only the arbitrary-k question, not these proofs. External priority/review unrecorded. STOC 2004 theorem imported only for restricted identical-link customer subgames. The reduction family has an easy exact SPE; PLS membership does not imply polynomial convergence. Neither restricted output class solves all-input unequal-multiplicity factor two; no canonical implementation yet. The stationary-site counterexample only invalidates a frozen-assignment packing interface, not factor-two existence. This cap obstruction does not prove the greedy layout or instance lacks a factor-two continuation. The newer distinct-site factor-two theorem supersedes the old factor-three guarantee for the same class. Range certification can fail on mixed-multiplicity inputs; neither counterexample shows greedy occupancy itself fails factor two. Mixed-q overlap components of three or more sites remain open. Both new selection obstructions are fixed-instance, site-pure/uniform on-path results; neither rules out another suitable on-path mixed NE or layout. The all-or-one condition excludes mixed-q partial-overlap components with three or more sites. The downward-only trap is a method obstruction with an exact NE after one return, not a factor-two lower bound."
+      "limit": "Historical source records only the arbitrary-k question, not these proofs. External priority/review unrecorded. STOC 2004 theorem imported only for restricted identical-link customer subgames. The reduction family has an easy exact SPE; PLS membership does not imply polynomial convergence. Neither restricted output class solves all-input unequal-multiplicity factor two; no canonical implementation yet. The stationary-site counterexample only invalidates a frozen-assignment packing interface, not factor-two existence. This cap obstruction does not prove the greedy layout or instance lacks a factor-two continuation. The newer distinct-site factor-two theorem supersedes the old factor-three guarantee for the same class. Range certification can fail on mixed-multiplicity inputs; neither counterexample shows greedy occupancy itself fails factor two. Mixed-q overlap components of three or more sites remain open. Both new selection obstructions are fixed-instance, site-pure/uniform on-path results; neither rules out another suitable on-path mixed NE or layout. The all-or-one condition excludes mixed-q partial-overlap components with three or more sites. The downward-only trap is a method obstruction with an exact NE after one return, not a factor-two lower bound. The nested-anchor condition includes genuine partial overlaps but excludes nonnested partial overlap; the reversed example has another exact NE and is not a greedy-layout counterexample."
     }
   ]
 }

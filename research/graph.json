@@ -1698,6 +1698,31 @@
         "research/current/multi_facility/claims.md"
       ],
       "status": "exact fixed-instance counterexample; internally audited"
+    },
+    {
+      "id": "SC-K-NESTED-ANCHOR-GREEDY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two for weight-ordered nested anchored partial overlaps",
+      "detail": "In each mixed-q greedy overlap component, the first-opened site covers all multi-option customers and their eligible occupied sets expand in nonincreasing weight order; restricted list assignment yields exact NE, the greedy load box and singleton private reserves give all deviations.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "E-K-NESTED-ANCHOR-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Exact nested-anchor and reversed-options finite audit",
+      "detail": "Fraction calculations reproduce strict greedy sequence, on-path NE, range failure, and the failure of the unrestricted reversed-option list rule; finite check does not prove universal bound.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_nested_anchor.py",
+        "examples/multi_facility/greedy_nested_anchor.json"
+      ],
+      "status": "finite arithmetic check"
     }
   ],
   "hyperedges": [
@@ -3535,6 +3560,40 @@
         "research/current/multi_facility/polytime_frontier.md"
       ],
       "status": "exact scope boundary"
+    },
+    {
+      "id": "e-mf-nested-anchor-greedy-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "MF-PACK-2",
+        "MF-PURE-CAP-POLY",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-NESTED-ANCHOR-GREEDY-2",
+      "statement": "Nested expanding eligibility supplies last-assigned-client comparisons; common first-opened anchor preserves load box and private reserves handle singleton-source orphans.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-nested-anchor-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-NESTED-ANCHOR-AUDIT"
+      ],
+      "conclusion": "SC-K-NESTED-ANCHOR-GREEDY-2",
+      "statement": "Exact finite integer example separates the conditional class from all-or-one and range, and its reversed option sets refute only unrestricted anchored list assignment.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "tests/audits/kfac_nested_anchor.py"
+      ],
+      "status": "finite arithmetic check; not universal proof"
     }
   ]
 }

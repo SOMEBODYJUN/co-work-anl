@@ -542,6 +542,42 @@ General multi-site partial-overlap components are unhandled. Internal
 independent reverse audit found no fatal objection; external review,
 novelty certification and canonical implementation are unrecorded.
 
+## SC-K-NESTED-ANCHOR-GREEDY-2 -- ordered partial overlaps around one anchor
+
+**Objects/domain/quantifiers:** explicit positive binary rational MF-MODEL
+input, arbitrary explicit k>=2, positive maximum site reach, and the actual
+greedy occupancy. Each occupied overlap component has constant q, or its
+first-opened H belongs to the occupied option set of every multi-option
+customer and these customers can be ordered by nonincreasing weight with
+nested, nondecreasing occupied option sets. Equal weights may be ordered to
+satisfy inclusion. The condition is polynomially decidable. No condition is
+imposed on a customer's coverage of *unoccupied* sites.
+
+**Conclusion:** on this output subclass, the same labeled greedy layout has
+an input-bit-polynomially constructible site-uniform independently mixed exact
+client NE and a complete exact factor-two continuation. Remove multi-option
+customers from H, retain one-option private reserves, then list-assign the
+former in the stated order to an eligible site of minimum current W_t/q_t.
+For an earlier customer i and the last later customer j assigned to its final
+site, w_j<=w_i and A_i subset A_j imply the exact external-load NE condition.
+The common anchor H and q_H>=q_t preserve every greedy load box, even before
+the nesting condition is used. At a singleton source u!=H, its unchanged
+private reserve P_u>=gamma bounds all occupied-target orphan overlap by
+a-P_u; unopened-target weight is at most a+gamma<=2a. Existing packing,
+polynomial capped Nashification and default continuation close every layout.
+
+**Dependencies/evidence/objections/status:** MF-MODEL, SC-K-GREEDY-BUDGET,
+SC-K-GREEDY-MAX-MULT, MF-PACK-2, MF-PURE-CAP-POLY, MF-CONT-COMPLETE and the
+complete proof in [polytime_frontier.md](polytime_frontier.md). A strict
+three-site q=(3,2,1) integer instance there lies outside both ALL-OR-ONE
+and RANGE, while exchanging its two shared option sets makes the same
+unrestricted list rule fail NE despite an alternative exact NE. Exact
+arithmetic is independently checked by `tests/audits/kfac_nested_anchor.py`;
+the check does not establish the universal theorem. Internal reverse audit
+found no fatal objection; no external peer review, novelty certification or
+canonical software implementation. This condition does **not** include
+general three-site partial overlaps or prove the all-input polynomial target.
+
 ## SC-K-DESCENT-ONLY-TRAP-NO -- forced upward return in a partial-overlap chain
 
 **Exact objects/domain:** the six-client, three-site, six-facility positive

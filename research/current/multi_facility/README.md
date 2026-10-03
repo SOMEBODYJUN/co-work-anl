@@ -74,6 +74,15 @@ the entire component. It inserts all-site shared clients in descending
 weight at minimum current normalized load; private reserves and the greedy
 load box close singleton-source deviations. It includes every two-site
 component and a three-site q=(3,2,1) input failing RANGE.
+`SC-K-NESTED-ANCHOR-GREEDY-2` further admits genuine partial overlaps:
+the first-opened site covers all multi-option clients and, along a
+nonincreasing-weight order, their occupied option sets expand by inclusion.
+The restricted list rule then satisfies the last-job NE inequality, while
+the common anchor alone preserves the greedy load box. Private reserves
+close disappearing-singleton budgets. A strict three-site example separates
+it from ALL-OR-ONE and RANGE; reversing two option sets makes the unrestricted
+list rule fail NE but leaves another NE. The full mixed-q partial-overlap
+problem remains open.
 Outside those conditional classes, `SC-K-GREEDY-STATIC-PACK-NO` gives a
 five-site integer instance where a reachable exact on-path NE leaves a
 different surviving site too heavy for the old cap packing if customer site
@@ -125,7 +134,7 @@ exact SPE (`SC-K-SYMMETRIC-MENU-OBSTRUCTION`).
 | `reverse_review.md` | Reverse reconstruction from the desired off-path cap; explicit objections and independent-implementation evidence, with no claim of external peer review. |
 | `lexmax_boundary.md` | For every fixed k, the selected lexmax occupancy itself can need factor tending to 2 under all NE choices, while another layout has an exact SPE; a sub-two proof must permit different layouts. |
 | `symmetric_menu_obstruction.md` | Explicit all-q family separating unbounded symmetric-menu threat from alpha^*=1 in the full model; read before proposing any menu-only lower bound. |
-| `polytime_frontier.md` | Explicit import of polynomial capped Nashification, 3-PARTITION reduction for exact global lexmax, polynomial local neighborhood, all-distinct 2 bound, multiplicity-class range certificate, mixed-q pair scan, and arbitrary-size all-or-one component list construction. Contains strict-repair-order, fixed-layout customer lexmax and potential-minimum escapes, plus a forced upward return on a partial-overlap three-site chain; read before proposing a universal greedy-output customer selection rule. |
+| `polytime_frontier.md` | Explicit import of polynomial capped Nashification, 3-PARTITION reduction for exact global lexmax, polynomial local neighborhood, all-distinct 2 bound, multiplicity-class range certificate, mixed-q pair scan, all-or-one and nested-anchor partial-overlap list constructions. Contains strict-repair-order, fixed-layout customer lexmax and potential-minimum escapes, an unrestricted anchored-list failure, plus a forced upward return on a partial-overlap three-site chain; read before proposing a universal greedy-output customer selection rule. |
 
 Implementation: `multi_facility_spe/two_exists.py` and `__main__.py`, a sibling
 package rather than a silent modification of the two-facility API.
