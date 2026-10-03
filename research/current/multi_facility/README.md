@@ -8,6 +8,10 @@
 
 A [three-light-client converging path](converging_path_box.md) also has a bounded-step box-NE constructor under a tight lower box at its junction, covering an orientation outside the directed-path condition.
 
+[Shallow opening-directed light graphs](height_two_box.md) of longest directed path at most two edges admit a boxed client NE for arbitrary branching, merging and unequal light weights. The proof is existential: no polynomial constrained-potential selector is known. It subsumes the direct [three-site chain](three_site_chain_box.md) existence theorem, while the directed-path and bounded converging-path algorithms remain separate polynomial results.
+
+The later [four-move converging-path constructor](converging_four_moves.md) drops both tightness at A and equality of the A/C multiplicities from the seven-step version while retaining the one-light-client-per-edge condition.
+
 ## Research goal and current result
 
 The earlier [anchored light-star algorithm](polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges) processes each unequal-weight light client once, selecting the minimum-load eligible leaf among descending-weight edge queues. For light overlap components that are either constant-multiplicity or anchored stars, it constructs a box NE and then a polynomial complete factor-two continuation, even with frozen heavy customers crossing components. The [strict example](../../../examples/multi_facility/greedy_star_edges.json) and [exact arithmetic check](../../../tests/audits/kfac_star_edges.py) separate this condition from previous sufficient classes. The directed-path and double-LPT results above now cover additional unequal-weight nonstar partial overlaps; the unrestricted class remains open.

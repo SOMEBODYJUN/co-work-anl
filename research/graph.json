@@ -1955,6 +1955,56 @@
         "tests/audits/kfac_converging_path.py"
       ],
       "status": "finite arithmetic check"
+    },
+    {
+      "id": "SC-K-HEIGHT-TWO-BOX-EXISTS",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Box NE exists on shallow opening-directed light graphs",
+      "detail": "Every full-box constrained potential minimum is exact client NE for arbitrary unequal-weight light edges, branching and merging, provided the longest directed path has at most two edges; no polynomial optimizer.",
+      "refs": [
+        "research/current/multi_facility/height_two_box.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional box-NE existence; internally reviewed"
+    },
+    {
+      "id": "SC-K-CONVERGING-PATH-4MOVE-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Four-move boxed NE on a converging light path",
+      "detail": "Without tight A or equal q_A=q_C, one client per edge and greedy opening directions D->B->A<-C give an exact boxed NE in at most four strict moves and polynomial complete factor two.",
+      "refs": [
+        "research/current/multi_facility/converging_four_moves.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "E-K-CONVERGING-FOUR-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Four-move converging path exact audit",
+      "detail": "Twenty thousand rational finite configurations across 3,172 multiplicity quadruples, including slack A and unequal A/C multiplicity; finite check only. A strict real-greedy nine-facility example attains all four moves, with exact final NE.",
+      "refs": [
+        "research/current/multi_facility/converging_four_moves.md",
+        "tests/audits/kfac_converging_four_moves.py",
+        "examples/multi_facility/greedy_converging_four_moves.json"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "E-K-HEIGHT-TWO-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Four-site multi-parent unequal light graph",
+      "detail": "Fraction audit of strict greedy trace, all sixteen variable assignments, fifteen boxed assignments, exact potential minimum and client NE; separation from prior sufficient classes.",
+      "refs": [
+        "research/current/multi_facility/height_two_box.md",
+        "tests/audits/kfac_height_two.py",
+        "examples/multi_facility/greedy_height_two_unequal.json"
+      ],
+      "status": "finite arithmetic check"
     }
   ],
   "hyperedges": [
@@ -4144,6 +4194,100 @@
       "refs": [
         "research/current/multi_facility/converging_path_box.md",
         "tests/audits/kfac_converging_path.py"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "e-mf-height-two-box",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "SC-K-GREEDY-BOX-TO-2"
+      ],
+      "conclusion": "SC-K-HEIGHT-TWO-BOX-EXISTS",
+      "statement": "At any blocked backward move select entire incoming customer pools of source parents until overflow is offset; a first-crossing prefix maintains all boxes and strictly decreases the exact potential.",
+      "refs": [
+        "research/current/multi_facility/height_two_box.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-height-two-three-chain",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-HEIGHT-TWO-BOX-EXISTS"
+      ],
+      "conclusion": "SC-K-THREE-SITE-CHAIN-BOX-EXISTS",
+      "statement": "The directed three-site chain is a path of exactly two edges and is therefore a special case; its direct one-pool proof remains independently useful.",
+      "refs": [
+        "research/current/multi_facility/height_two_box.md",
+        "research/current/multi_facility/three_site_chain_box.md"
+      ],
+      "status": "scope inclusion"
+    },
+    {
+      "id": "e-mf-converging-four",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "SC-K-GREEDY-BOX-TO-2",
+        "MF-MODEL"
+      ],
+      "conclusion": "SC-K-CONVERGING-PATH-4MOVE-2",
+      "statement": "Test Z forward, T forward, X forward, a newly active T, then possible Z return; each other moved client remains permanently stable and each actual move preserves the box.",
+      "refs": [
+        "research/current/multi_facility/converging_four_moves.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-converging-four-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-CONVERGING-FOUR-AUDIT"
+      ],
+      "conclusion": "SC-K-CONVERGING-PATH-4MOVE-2",
+      "statement": "Finite exact branch checks are separate from the universal four-move proof.",
+      "refs": [
+        "research/current/multi_facility/converging_four_moves.md",
+        "tests/audits/kfac_converging_four_moves.py"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "e-mf-converging-four-old",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-CONVERGING-PATH-4MOVE-2"
+      ],
+      "conclusion": "SC-K-CONVERGING-PATH-BOX-2",
+      "statement": "The earlier tight-A equal-A/C seven-step theorem is a restricted instance; its independent proof remains in the current layer.",
+      "refs": [
+        "research/current/multi_facility/converging_four_moves.md",
+        "research/current/multi_facility/converging_path_box.md"
+      ],
+      "status": "scope inclusion"
+    },
+    {
+      "id": "e-mf-height-two-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-HEIGHT-TWO-AUDIT"
+      ],
+      "conclusion": "SC-K-HEIGHT-TWO-BOX-EXISTS",
+      "statement": "The multi-parent unequal-light integer witness confirms one instance and class separation but not the universal exchange theorem.",
+      "refs": [
+        "research/current/multi_facility/height_two_box.md",
+        "tests/audits/kfac_height_two.py"
       ],
       "status": "finite arithmetic check"
     }

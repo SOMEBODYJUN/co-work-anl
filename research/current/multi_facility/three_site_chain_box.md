@@ -100,6 +100,8 @@ Every weight is positive, so T<=S^2; S<=gamma gives (S^2+T)/2<=S gamma. Since Q>
 
 Every variable client at every full-box potential minimizer therefore has no strict alternative. Heavy frozen multi-option customers are stable from w_i>=gamma and the box, and single-option customers have no alternative. Uniform independent mixing among each assigned site's facilities yields exact original-game NE.
 
+The later [height-two theorem](height_two_box.md) contains this directed chain as a special case, while the single-pool exchange below remains a direct independent proof.
+
 ## What this advances and what remains
 
 The previous two-light lower-constrained potential family does not contradict this statement: it omits the upper constraints, and its preferred ML state lies outside the box. The old descending-only trap with one HM customer and two different-weight ML customers is also covered by this **existence** statement but lies outside the per-edge-uniform polynomial PATH-EDGE class. Its mandatory upward return is compatible with the exchange proof.

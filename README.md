@@ -75,6 +75,10 @@
 
 [四站汇聚路径的三轻客户子类](research/current/multi_facility/converging_path_box.md)另给有限步盒内 NE 构造，超出所有边同向的 PATH 条件。
 
+[浅层有向轻客户图存在性](research/current/multi_facility/height_two_box.md)将三站链的整池交换推广到任意分叉和汇合，但仍缺多项式盒内势最小选择器。
+
+[汇聚路径四步构造](research/current/multi_facility/converging_four_moves.md)放宽先前七步小类的初始负载及重数条件，仍保留每边一轻客户。
+
 ## 如何追踪一项研究结论
 
 [命题登记](research/current/claims.md)固定适用域与状态；[现行资产索引](ASSETS.md)把命题连到新稿、实现、检验及历史来源。[数学超图](research/index.html)的节点是定义、引理、反例和结论；一条推导超边要求**所有列出的共同前提**，不是旧文件之间的链接。其[数据](research/graph.json)和[维护规则](research/README.md)可直接核查。GitHub 预览 HTML 时显示源码，下载 HTML 后可使用交互查看器。

@@ -10,6 +10,10 @@
 
 [四站汇聚路径小类](research/current/multi_facility/converging_path_box.md)在每边恰一轻客户、指定重数顺序及汇聚站初始紧下盒时，以至多七步构造盒内精确 NE；其条件可检查，并未覆盖一般树。
 
+[浅层有向轻客户图的盒 NE 存在性](research/current/multi_facility/height_two_box.md)：贪心首开方向中最长有向路径至多两边时，任意分叉、汇合、异轻权都可用 first-crossing 整池交换证明完整盒内势最小点为 NE。三站链是特例。这是存在性与有限选择器，位长多项式求解仍开放。
+
+[汇聚四站的四步放宽版](research/current/multi_facility/converging_four_moves.md)删除旧小类的 A 紧下盒及 A/C 等重数限制，只保留每边恰一轻客户与贪心开启方向；仍给位长多项式完整 2 倍续局。
+
 ## 已有地基
 
 双设施共同目录的黄金比上界、相应六地点锐性、异构双设施的因子 2 分支与短目录单交叠的 \(\rho=2\cos(\pi/7)\) 分支均有现行数学稿；各自审查状态并不相同，均尚无外部同行评审。[完整范围表](research/current/claims.md)防止将实例证书与普遍定理混淆。现有成果的投稿、实现复核和文献归属是交付工作，不占新的数学主攻方向。

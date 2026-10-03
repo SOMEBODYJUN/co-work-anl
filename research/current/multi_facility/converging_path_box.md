@@ -2,6 +2,8 @@
 
 Complete conditional proof, independently reverse-audited internally. No external or literature-priority review.
 
+This narrower theorem is subsumed by the later [four-move version](converging_four_moves.md), which drops the tight-A and equal-A/C restrictions. Its original finite-state argument remains an independent proof.
+
 ## Conditional input class
 
 Run the canonical greedy procedure on explicit positive-rational MF-MODEL
