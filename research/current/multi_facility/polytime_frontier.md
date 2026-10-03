@@ -464,7 +464,8 @@ outputs satisfy the component hypotheses.
 with one facility apiece, then an exact on-path *pure* client NE and a
 polynomial-time evaluable complete exact continuation of factor at most 3
 can be computed in input-bit-polynomial time. This statement concerns only
-instances whose greedy output has that property. It does not imply factor 2.
+instances whose greedy output has that property. The proof below alone does
+not imply factor 2; the later SC-K-DISTINCT-GREEDY-2 now strengthens it.
 
 **Proof.** The greedy last-insertion score \(\gamma>0\) bounds initial loads
 below. Budget (7), applied to the last inserted singleton source and dropping
@@ -486,8 +487,9 @@ has initial load at most \(a+\gamma\); both are at most
 bit-polynomial, returns a pure exact customer NE, and does not increase
 makespan. The deviator therefore earns at most \(3a\). The polynomial default
 rule and labeled-layout argument of uniform_two.md Section 7 complete one
-continuation. This is a restricted algorithmic result, not a statement that
-the greedy distinct-site layout is 2-stable.
+continuation. This older proof is retained to mark what its coarse load
+summary can establish; the same greedy distinct-site layout has the stronger
+factor-two property proved in the next section.
 
 **Why the scalar summary alone stops at three.** For every integer \(M\ge1\),
 consider two facilities, sites \(S,B,R\), and four customers with
@@ -506,6 +508,46 @@ because its reach is \(3M\), then inserts the second facility at \(B\)
 because \(3M/2>M\). Any improvement from 3 to 2 in the distinct-site
 greedy subclass must exploit more of the greedy coverage incidence than
 the scalar interval and new-reach bound.
+
+## SC-K-DISTINCT-GREEDY-2: factor two for all-distinct greedy output
+
+**Exact conditional statement.** Run SC-K-GREEDY-BUDGET on an explicit
+positive rational common-catalog input. If all \(k\) greedy facilities occupy
+different sites, an input-bit-polynomial procedure outputs the same labeled
+layout, an exact **pure** on-path customer NE, and a polynomial-time evaluable
+complete exact continuation with factor at most 2. No special customer
+overlap, weight, or disconnectedness assumption is needed within this output
+class. This strengthens SC-K-DISTINCT-GREEDY-3; it does not imply that greedy
+always returns distinct sites.
+
+**Proof.** Let \(R=\max_{s\in S}w(C_s)>0\). Greedy first opens a site \(s^*\)
+with reach \(R\), assigning it *all* those customers. Under the stated
+condition, it never inserts another facility at \(s^*\), and its assigned
+weight stays \(R\). Before **every** later insertion, adding a facility at
+\(s^*\) remains a legal occupied-site candidate of score \(R/2\). Greedy
+chooses a greatest score, so in particular its last score obeys
+\(\gamma\ge R/2\). Each final occupied site has load at least \(\gamma\),
+by the monotonicity of selected scores proved above.
+
+Since every occupied site has exactly one facility, the fixed-layout
+customer game is restricted identical-machine scheduling. Apply the
+published Gairing et al. polynomial Nashification to greedy's initial
+assignment. Its global minimum-load preservation yields an exact pure
+on-path NE in which every labeled facility earns
+\(a_f\ge\gamma\ge R/2\). This does not require preserving the greedy
+orphan-aware transfer budgets. After any unilateral deviation to a site
+\(r\), that facility's payoff in **any** exact client NE is at most the
+total weight of all customers covered by \(r\), namely
+\(w(C_r)\le R\le2a_f\). Every fixed layout has a pure client NE computable
+by the same published restricted identical-machine algorithm, so one can
+select such a NE for every actual deviation and a default at all remaining
+labeled layouts. All operations, fraction clearing and output certificates
+have polynomial input-bit complexity. For \(R=0\), every payoff is zero.
+
+The non-greedy example immediately before this section is compatible with
+the theorem: there the greedy algorithm puts both facilities at B, so its
+distinct-site premise fails. In particular a bound based only on the
+interval \([\gamma,2\gamma]\) misses the first-site \(R/2\) comparison.
 
 ## SC-K-GREEDY-STATIC-PACK-NO: a surviving-site obstruction
 
@@ -621,6 +663,330 @@ isolated-macro convention is exactly 44: the three-site argument gives
 the lower bound, and the displayed pure NE isolates the weight-67 client
 while every other facility has load at most 44.
 
+## SC-K-RANGE-GREEDY-2: a multiplicity-class range certificate
+
+**Exact conditional statement.** On any positive-reach explicit rational
+MF-MODEL input, run SC-K-GREEDY-BUDGET. For each final occupied multiplicity
+\(q\), use the *initial* greedy assigned site weights \(W_t^0\) to compute
+\[
+ \alpha_q=\min_{t:q_t=q}W_t^0/q,
+ \qquad\beta_q=\max_{t:q_t=q}W_t^0/q.          \tag{16R}
+\]
+For each customer \(i\) initially assigned to site \(s\), set \(q_i=q_s\)
+and check, for **every** other occupied site \(v\) covering \(i\) whose
+multiplicity differs from \(q_i\),
+\[
+                \beta_{q_i}-w_i/q_i\le\alpha_{q_v}.   \tag{17R}
+\]
+If all these rational inequalities hold, an input-bit-polynomial procedure
+constructs the same labeled layout, a site-uniform exact independent-mixed
+on-path customer NE, and a complete exact factor-two continuation. This is
+an efficiently recognizable **output subclass**, not an algorithm for all
+inputs. Unlike the next light-client criterion, it can allow a customer
+lighter than the final greedy score to span different multiplicities.
+
+**Construction and on-path proof.** Group occupied sites by their final
+multiplicity \(q\). Partition customers by the multiplicity of their
+*initial assigned site*. For each group, treat its sites as restricted
+identical machines and its assigned customers as unsplittable jobs allowed
+at **all and only** their accessible occupied sites of that same
+multiplicity. Their initial assignment is feasible. Apply the polynomial
+Gairing et al. Nashification separately to each group. Its full algorithm
+preserves the initial minimum and maximum machine load within that group,
+so every final site \(t\) in the group obeys
+\[
+       \alpha_q\le W_t/q\le\beta_q,
+       \qquad q\gamma\le W_t\le(q+1)\gamma.     \tag{18R}
+\]
+The second interval follows from the first and the initial greedy box
+\(q\gamma\le W_t^0\le(q+1)\gamma\). Within its own group, every client
+satisfies the machine NE comparison \(W_t-w_i\le W_v\), equivalent to its
+site-uniform conditional cost comparison after division by common \(q\).
+For a cross-group alternative \(v\), even if the algorithm moved client
+\(i\) to another site within its original group, its current external
+load is at most \(\beta_{q_i}-w_i/q_i\), while the other site's load is at
+least \(\alpha_{q_v}\). Condition (17R) blocks that deviation. Uniform
+independent mixing among facilities at the chosen site gives an exact
+customer NE. Restricting a cross-group customer to its **original site**
+would be insufficient here: it might still want to move to another site
+with the same multiplicity; the algorithm retains all those same-group
+options. All calls use integer weights after clearing rational denominators
+with polynomial bit growth.
+
+**All facility deviations, including singleton-source disappearance.** For
+any source multiplicity at least two, the second interval in (18R) and
+\(N_r\le\gamma\) restore the stationary-site budgets (5)--(6) with
+\(a=W_u/q_u\ge\gamma\). For a singleton source, let \(K\) be the set of
+all \(q=1\) occupied sites and \(P\) the clients initially assigned to K.
+SC-K-GREEDY-MAX-MULT says every client's occupied options in \(P\) lie
+inside K. When the first site \(s\in K\) opened, all of \(P\) was still
+uncovered; for every \(t\in K\), greediness therefore gave
+\[
+       w(P\cap C_t)\le W_s^0\le2\gamma.           \tag{19R}
+\]
+The groupwise algorithm never moves clients between multiplicities, so
+\(J_t\subseteq P\) for all \(t\in K\). For a singleton target \(t\ne u\),
+\(W_t+w(J_u\cap C_t)\le w(P\cap C_t)\le2\gamma\le2a\): budget (7).
+Against a higher-multiplicity occupied target \(t\), the overlap is zero
+by MAX-MULT and (18R) gives budget (7). Against an unopened site \(r\),
+\(N_r+w(J_u\cap C_r)\le\gamma+a\le2a\). This last bound replaces the
+stronger old budget (8) only for the deviator: after the source disappears,
+pack the customers of each *stationary* site by MF-PACK-2 using (7), and
+start the deviator with at most \(2a\) rather than \(a\). It is still an
+ordinary capped facility, so MF-PURE-CAP-POLY computes a pure full-game NE
+without letting its load exceed \(2a\). Targets already occupied use the
+same stationary packing with deviator initially empty. Assemble the
+polynomially many deviation exceptions and a polynomial default pure NE
+into one complete continuation, as in MF-CONT-COMPLETE. This is a bit-
+polynomial **construction**, conditional on (17R).
+
+The condition genuinely admits light cross-multiplicity clients: with
+\(k=5\), sites \(A,B,C\), and customers
+\((22,A),(2,AB),(5,AC),(24,B),(14,C)\), greedy selects
+\((A,29),(B,24),(A,29/2),(C,14),(B,12)\). Thus
+\(q=(2,2,1),\gamma=12,\alpha_2=12,\beta_2=29/2,\alpha_1=14\).
+The weight-5 customer crosses \(q=2\) to \(q=1\) even though
+\(5<\gamma\), yet \(\beta_2-5/2=12\le14=\alpha_1\). The weight-2 customer
+has only same-\(q\) options and moves \(A\to B\); site weights become
+\((27,26,14)\), an exact NE. The light-overlap condition below fails here,
+while (17R) passes.
+
+## SC-K-LIGHT-COMPONENT-GREEDY-2: repair only light-client components
+
+**Exact conditional statement.** Run the greedy algorithm on a positive-reach,
+explicit rational MF-MODEL instance, and let \(\gamma>0\) be its final
+insertion score. Form a graph on its occupied sites, joining \(t,v\) if a
+client of weight **strictly less** than \(\gamma\) covers both. Suppose each
+connected component has constant facility multiplicity. Equivalently, no
+light client covers occupied sites with different multiplicities. Then an
+input-bit-polynomial algorithm
+computes an exact site-uniform on-path customer NE, the same greedy labeled
+facility layout, and a polynomial-size, evaluable complete exact factor-two
+continuation. Heavy clients of weight \(\ge\gamma\) may connect sites with
+different multiplicities, and light clients may move among multiple
+multiplicity-one sites. This strictly includes both the earlier
+full-overlap-component theorem and the immediately stable heavy-overlap
+subclass below. It is also a corollary of the preceding range certificate:
+every cross-multiplicity customer then has \(w_i\ge\gamma\), so
+\(\beta_q-w_i/q\le\gamma\le\alpha_{q_v}\). The old all-distinct output class
+automatically meets the hypothesis, though its direct proof above has a
+stronger reach-based threat bound.
+
+**Construction and proof.** The initial greedy assignment obeys, for every
+occupied \(t\),
+\[
+       q_t\gamma\le W_t\le(q_t+1)\gamma.        \tag{16a}
+\]
+Fix every client with \(w_i\ge\gamma\) at its initial site. Within each graph
+component of common multiplicity \(q\ge1\), regard its occupied sites as
+identical restricted machines, its light clients as jobs allowed at **all**
+their covered occupied sites, and its fixed heavy clients as jobs allowed
+only at their initial site. The graph definition ensures that every allowed
+site of a light client lies in this one component. Apply the published
+Gairing--Lücking--Mavronicolas--Monien polynomial Nashification algorithm to
+the initial assignment. It returns a pure machine NE and preserves both
+global load extrema from below and above within that component. Thus (16a)
+holds at termination. This applies just as well to multiple multiplicity-one
+sites in a component. Multiplying rational weights by their
+denominator product yields integer weights with polynomial bit length, so
+these calls have input-bit-polynomial complexity.
+
+Now independently randomize each client uniformly among the \(q_t\)
+facilities at its assigned site. Each light customer's alternative occupied
+sites have the same multiplicity \(q\); its conditional cost comparison is
+\((W_t-w_i)/q\le W_v/q\), exactly the restricted identical-machine NE
+condition after canceling the common \(w_i\). For a fixed heavy customer at
+\(t\), (16a) and \(w_i\ge\gamma\) give
+\[
+          (W_t-w_i)/q_t\le\gamma\le W_v/q_v
+\]
+at every other accessible occupied \(v\), irrespective of its multiplicity.
+Customers with one occupied option are automatic. Hence the full original
+game has an exact independent-mixed on-path customer NE.
+
+For any source \(u\) with \(q_u\ge2\), its load \(a=W_u/q_u\ge\gamma\);
+all other sites satisfy \(W_t\le(q_t+1)\gamma\le(q_t+1)a\), and every unopened
+site has \(N_r\le\gamma\le a\). These are budgets (5)--(6).
+
+The multiplicity-one case uses a different, weaker budget. Let \(K\) be
+**all** final occupied sites with \(q_t=1\), and \(P\) the clients initially
+assigned by greedy to sites in \(K\). By SC-K-GREEDY-MAX-MULT, each client
+of \(P\) has all its accessible occupied sites in \(K\). When the first
+site \(s\in K\) opened, every client of \(P\) was still uncovered: any
+previously opened site covering such a client would be an occupied option
+outside \(K\), contrary to the maximal-multiplicity lemma. At that instant,
+for every \(t\in K\), its unopened new-coverage score included every
+client of \(P\cap C_t\), so greediness and the initial box imply
+\[
+               w(P\cap C_t)\le W_s^0\le2\gamma.     \tag{16b}
+\]
+For \(t=s\), its chosen opening score is \(W_s^0\) and the same inequality
+holds. The componentwise Nashification neither sends a \(P\) client
+outside \(K\) nor brings a client from outside \(P\) into \(K\). Hence
+every resulting singleton-site assigned set \(J_t\) is contained in \(P\).
+
+Fix a departing facility at singleton site \(u\), with \(a=W_u\ge\gamma\).
+For another singleton target \(t\), the disjoint sets \(J_t\) and
+\(J_u\cap C_t\) both lie in \(P\cap C_t\), and therefore
+\(W_t+w(J_u\cap C_t)\le2\gamma\le2a=(q_t+1)a\): budget (7).
+For an occupied target of multiplicity at least two, every client of
+\(J_u\subseteq P\) is unable to access it by the maximal-multiplicity
+lemma, so the overlap term is zero and (16a) proves (7). For an unopened
+target \(r\), the original strong budget (8) need **not** survive: instead
+\[
+            N_r+w(J_u\cap C_r)\le\gamma+a\le2a.     \tag{16c}
+\]
+In the deviation construction of `uniform_two.md` Section 5.2, use the
+unchanged stationary-site packing from (7), but give the deviator at most
+the total in (16c), rather than the old stronger allowance \(a\). It is
+still an ordinary facility of load at most \(2a\), so MF-PURE-CAP-POLY
+preserves its cap while reaching a pure exact NE. For an already occupied
+target the deviator initially gets zero, as before. Thus all labeled
+deviations have factor-two pure exact continuations; a polynomial default
+completes the rule. This proof does not infer a polynomial bound for
+arbitrary customer-improvement paths.
+
+The condition can require *real* repair while permitting unequal connected
+full-overlap multiplicities. For \(k=5\), sites \(A,B,C\), take clients
+\((17,A),(2,AB),(10,AC),(24,B),(10,C)\). Greedy selects
+\((A,29),(B,24),(A,29/2),(B,12),(C,10)\), so \(q=(2,2,1)\) and
+\(\gamma=10\). The weight-2 customer strictly moves \(A\to B\), taking
+site weights from \((29,24,10)\) to \((27,26,10)\); this is an exact
+site-uniform NE. The full overlap graph joins A to C through the heavy
+weight-10 client, while the light graph has only the equal-multiplicity edge
+A--B. Thus neither old full-component condition nor the all-heavy condition
+below covers this example.
+
+## SC-K-GREEDY-HEAVY-OVERLAP-2: an immediately stable mixed-multiplicity subclass
+
+**Exact conditional statement.** On an explicit positive rational MF-MODEL
+instance of positive maximum reach, run SC-K-GREEDY-BUDGET with any fixed
+polynomial tie rule and let \(\gamma>0\) be its final insertion score. Suppose
+every customer covering **at least two distinct occupied sites** has weight
+\(w_i\ge\gamma\). Then the unmodified greedy site-uniform profile is an exact
+independent-mixed customer NE, and a factor-two complete exact continuation
+can be constructed in input-bit-polynomial time. The condition is checked
+*after* greedy placement; it permits different facility multiplicities at
+sites in the same customer-overlap component. It is a conditional algorithm,
+not the unrestricted all-input target.
+
+**Proof.** The last insertion and SC-K-GREEDY-BUDGET give, for every occupied
+site \(t\),
+\[
+ q_t\gamma\le W_t\le(q_t+1)\gamma.                 \tag{16}
+\]
+For a customer \(i\) initially assigned to \(t\) with an alternative occupied
+site \(v\), its conditional cost at any facility at \(t\) is
+\(w_i+(W_t-w_i)/q_t\). At \(v\) it would be \(w_i+W_v/q_v\). By the weight
+assumption and (16),
+\[
+ \frac{W_t-w_i}{q_t}\le\gamma\le\frac{W_v}{q_v}.   \tag{17}
+\]
+Customers with only one occupied site have no cross-site move; independent
+uniform mixing makes all facilities within their selected site indifferent.
+Thus this is an exact customer NE even at equality \(w_i=\gamma\). Since no
+assignment or occupancy changes, all four orphan-aware greedy transfer
+budgets remain valid. The explicit packing construction of
+`uniform_two.md` Sections 5--7, MF-PURE-CAP-POLY and the polynomial default
+pure NE algorithm complete the exact continuation. Greedy scores, comparison
+with \(\gamma\), the packing and all completion calls have polynomial input-bit
+complexity. For zero maximum reach, the trivial zero-load certificate applies.
+
+For a concrete mixed-multiplicity overlap, let \(k=3\), sites \(A,B\), and
+three clients \((2,\{A\}),(2,\{A,B\}),(3/2,\{B\})\), with \(A\) first in
+the tie order. Greedy chooses \(A,A,B\), with \(q_A=2,q_B=1,\gamma=3/2\).
+The shared client weighs 2 and satisfies the condition. This example is not
+covered by the earlier componentwise equal-multiplicity criterion.
+
+## SC-K-GREEDY-REPAIR-ORDER-NO: exact repair order can lose factor two
+
+**Refuted assertion.** "Run greedy once and make *any* sequence of strict
+site-level customer improvements to a site-uniform exact NE. Every terminal
+NE of this kind admits a factor-two continuation at the fixed greedy layout."
+The following positive-integer input refutes the universal quantifier over
+strict improvement sequences. It does **not** say that every NE of the same
+layout fails, or that the input lacks a factor-two witness elsewhere.
+
+Take eight labeled facilities; the common site order is \(A,E,B,C,D,G\).
+The ten atomic customers (weight, accessible sites) are
+\[
+ (80,A),(32,AB),(96,BEG),(81,B),(40,AC),
+ (120,C),(52,BD),(268,D),(82,E),(80,G).             \tag{18}
+\]
+Greedy insertion is \((D,320),(B,209),(C,160),(D,160),
+(D,320/3),(B,209/2),(E,82),(A,80)\), where each pair lists site and
+chosen score. It leaves \((q_A,q_E,q_B,q_C,q_D,q_G)=(1,1,2,1,3,0)\),
+site weights \((80,82,209,160,320,0)\), and \(\gamma=80\).
+
+Now move weights \(32:B\to A\), \(40:C\to A\), \(52:D\to B\),
+\(32:A\to B\), \(96:B\to E\). Each is a *strict* individual improvement;
+the old and alternative conditional costs are respectively
+\[
+ (241/2,112),\quad(160,152),\quad(424/3,281/2),
+ \quad(152,293/2),\quad(357/2,178).                 \tag{19}
+\]
+The final weights are \((120,178,165,120,268,0)\). This is an exact
+site-uniform customer NE: the only clients with two occupied alternatives
+have costs \(197/2\le152\) for the 32 client at B, \(178<357/2\) for the
+96 client at E, \(120<160\) for the 40 client at A, and
+\(217/2<424/3\) for the 52 client at B. The other clients have one
+occupied site; within-site mixing is indifferent.
+
+One B facility has on-path load \(a=165/2\). Move it to G; the other B
+facility survives, and B, E, G now each have one facility. Private clients
+of weights 81, 82, 80 are forced to B, E, G respectively. For the weight-96
+client, the conditional cost of choosing G is **exactly** \(96+80=176\),
+whereas B and E cost at least \(96+81=177\) and \(96+82=178\), regardless
+of all other clients' independent mixing. It strictly chooses G in **every**
+exact mixed NE of this deviation game. No other client has access to G.
+The deviator therefore gets exactly \(176\) in every such NE, giving
+\[
+            \frac{176}{165/2}=\frac{32}{15}>2.     \tag{20}
+\]
+No off-path equilibrium selection can rescue this particular on-path NE.
+
+The same greedy layout does have another good on-path NE: move only the
+weight-40 client from C to A, a strict improvement, and stop. The loads
+are \((120,82,209,120,320,0)\). The four shared clients (32,96,40,52)
+respectively prefer B, B, A, D at conditional costs
+\(241/2\le152\), \(305/2\le178\), \(120\le160\), and
+\(424/3\le313/2\). The original four greedy transfer budgets also hold
+for this exact NE (directly from the displayed weights and assignments),
+so the existing packing and polynomial capped-completion argument gives
+it a factor-two complete continuation. Thus the failure concerns **which
+reachable NE is selected**, not greedy occupancy itself. The exact input
+and independent arithmetic recheck are
+`examples/multi_facility/greedy_repair_order_escape.json` and
+`tests/audits/kfac_greedy_repair_order.py`. The script checks this finite
+instance; it does not supply a polynomial way to choose the good NE on all
+inputs.
+
+**Even choosing the heaviest improving client first fails.** In (18), replace
+only the weights 32 and 40 by 39 and 35. The same coverage, eight facilities
+and site tie order give greedy insertion scores
+\((D,320),(B,216),(D,160),(C,155),(B,108),(D,320/3),(E,82),(A,80)\).
+The initial site weights are \((80,82,216,155,320,0)\) with the same
+\(q=(1,1,2,1,3,0)\). At each step, select a strictly improving client of
+**greatest weight** among all current alternatives. The unique greatest
+choices, with old and new conditional costs, are
+\[
+ 39:B\to A\ (255/2>119),\quad
+ 52:D\to B\ (424/3>281/2),\quad
+ 35:C\to A\ (155>154),\quad
+ 39:A\to B\ (154>307/2),\quad
+ 96:B\to E\ (182>178).                              \tag{21}
+\]
+The resulting exact on-path NE has weights \((115,178,172,120,268,0)\).
+A B facility earns 86. Moving it to G again strictly forces the weight-96
+client onto the deviator in **every** mixed NE, so its payoff is 176 and its
+ratio is \(88/43>2\). This refutes that deterministic repair-order rule,
+including its natural tie-free form. Moving just the weight-35 client
+\(C\to A\) from the greedy initial state instead gives an exact NE with
+weights \((115,82,216,120,320,0)\) and all four budgets. The exact variant
+and audit are `examples/multi_facility/greedy_heaviest_escape.json` and
+`tests/audits/kfac_greedy_heaviest.py`. It remains possible that a different
+polynomial rule always selects a good NE or changes the greedy occupancy.
+
 ## Sources and review status
 
 - Gairing, Lücking, Mavronicolas, Monien, STOC 2004, Section 4, especially
@@ -633,3 +999,10 @@ while every other facility has load at most 44.
   [uniform-two proof](uniform_two.md). The new deduction and reduction have
   been independently rechecked internally; external review and literature
   priority for this particular reduction are unrecorded.
+- The distinct-site 2-bound, multiplicity-class range certificate,
+  singleton-source pool argument and both repair-order counterexamples were
+  independently reverse-reconstructed in this round. The two new scripts
+  check exact fixed-instance arithmetic; they do not certify the universal
+  conditional algorithms. The present conditional theorems and their
+  novelty have not had external peer review, and no canonical software
+  implementation of the imported scheduler or new constructors is claimed.

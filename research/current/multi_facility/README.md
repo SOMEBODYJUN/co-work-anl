@@ -43,15 +43,24 @@ For the recognizable output subclass with equal occupied-site multiplicity
 Nashification preserves both load extrema, and equal `q` makes its site NE
 an exact original-game NE. All occupied and unopened budgets then hold and
 the complete factor-two continuation is bit-polynomial
-(`SC-K-EQUAL-MULT-GREEDY-2`). When greedy occupies k distinct sites, the
-same range-preserving import gives a bit-polynomial factor-three continuation
-(`SC-K-DISTINCT-GREEDY-3`), without solving the factor-two target for that
-subclass.
+(`SC-K-EQUAL-MULT-GREEDY-2`). When greedy occupies k distinct sites, its
+first maximum-reach site gives a persistent R/2 candidate score; the
+range-preserving import gives a bit-polynomial **factor-two** continuation
+(`SC-K-DISTINCT-GREEDY-2`), strengthening the older factor-three proof.
 The more general `SC-K-COMPONENT-MULT-GREEDY-2` permits different
 multiplicities in different customer-overlap components. Each component
 must have constant multiplicity, and a multiplicity-one component must
 be a single site. Independent site-level Nashification plus unchanged
 singleton components preserve all four budgets and give polynomial factor two.
+The newer `SC-K-RANGE-GREEDY-2` groups occupied sites by multiplicity and
+checks an explicit bound on every client's incentive to cross to another
+multiplicity class. Within each group, restricted identical-machine
+Nashification retains its initial load range. For singleton sources, a
+greedy customer-pool inequality controls a disappearing site, with the
+deviator allowed initial load up to 2a at an unopened target. This removes
+the old singleton-component restriction and admits some *light* cross-q
+clients. `SC-K-LIGHT-COMPONENT-GREEDY-2` is a simpler sufficient test;
+`SC-K-GREEDY-HEAVY-OVERLAP-2` needs no on-path repair at all.
 For general unequal multiplicities, `SC-K-GREEDY-STATIC-PACK-NO` gives a
 five-site integer instance where a reachable exact on-path NE leaves a
 different surviving site too heavy for the old cap packing if customer site
@@ -68,6 +77,14 @@ The exact integer input is `examples/multi_facility/greedy_cap_obstruction.json`
 `python tests/audits/kfac_greedy_cap.py` independently rechecks greedy,
 strict moves, on/off-path customer NE, and the forced cap obstruction.
 This finite audit does not prove the conditional algorithmic theorems.
+Two further integer witnesses (`greedy_repair_order_escape.json` and
+`greedy_heaviest_escape.json`) show that arbitrary strict repair, and even
+choosing the heaviest improving client at each step, may end at exact NEs
+where a B-to-G deviation is **forced** above factor two in every mixed
+off-path NE. Both layouts also have another reachable exact NE retaining
+the four transfer budgets. Their scripts check finite arithmetic, not a
+general theorem. Selection of a suitable NE on range-certificate-failing
+mixed-q inputs remains open.
 
 The proof deliberately changes the type of continuation: on path it uses
 independent mixing inside co-location groups; off path it isolates giant atoms
@@ -80,12 +97,12 @@ exact SPE (`SC-K-SYMMETRIC-MENU-OBSTRUCTION`).
 | Path relative to this directory | Mathematical role and when to read |
 |---|---|
 | `model.md` | Complete arbitrary-k quantifiers, conditional actual costs and deterministic default continuation. Read before using any claim. |
-| `claims.md` | Exact identities, dependencies, limits, and evidence of all seven proof/obstruction claims. |
+| `claims.md` | Exact identities, dependencies, limits, and evidence of the current proof and obstruction claims. |
 | `uniform_two.md` | Full theorem and all multiplicity cases; Sections 3.2 and 5.2 prevent lost clients when a singleton source disappears. Section 8 distinguishes finite construction from polynomial time. |
 | `reverse_review.md` | Reverse reconstruction from the desired off-path cap; explicit objections and independent-implementation evidence, with no claim of external peer review. |
 | `lexmax_boundary.md` | For every fixed k, the selected lexmax occupancy itself can need factor tending to 2 under all NE choices, while another layout has an exact SPE; a sub-two proof must permit different layouts. |
 | `symmetric_menu_obstruction.md` | Explicit all-q family separating unbounded symmetric-menu threat from alpha^*=1 in the full model; read before proposing any menu-only lower bound. |
-| `polytime_frontier.md` | Explicit import of polynomial capped Nashification, full 3-PARTITION reduction for the exact lexmax oracle, and a polynomial local neighborhood sufficient for factor two. Read when designing the all-k algorithm or assessing its true remaining bottleneck. |
+| `polytime_frontier.md` | Explicit import of polynomial capped Nashification, full 3-PARTITION reduction for exact lexmax, polynomial local neighborhood, new all-distinct 2 bound and multiplicity-class range certificate. Contains two strict-repair-order escapes; read before claiming greedy output or arbitrary customer repair is sufficient on all mixed-q inputs. |
 
 Implementation: `multi_facility_spe/two_exists.py` and `__main__.py`, a sibling
 package rather than a silent modification of the two-facility API.
@@ -109,6 +126,13 @@ trajectory lengths have no polynomial bound proved here. Given the selected
 on-path state, off-path capped Nashification can instead run in polynomial
 time; the local-maximum search for a sufficient on-path state is in PLS, with
 no polynomial-time solver proved.
+The conditional range certificate now includes all-distinct output and
+multi-site singleton components. The remaining algorithmic cases are
+mixed-multiplicity inputs where some customer's cross-class incentive fails
+the initial range check. The exact greedy-repair-order counterexamples
+exclude two tempting choices of on-path NE, while explicitly retaining
+another good NE at those same layouts; they do not establish greedy
+occupancy failure or complexity hardness of the full search problem.
 
 External peer review and priority against later literature, particularly the
 unavailable 2025 dissertation, remain uncompleted. The existing two-facility

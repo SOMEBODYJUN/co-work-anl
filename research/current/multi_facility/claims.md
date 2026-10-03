@@ -245,7 +245,33 @@ identical-link Nashification, MF-CONT-COMPLETE; direct proof in
 all source and target cases. This is not a factor-two algorithm, and no
 implementation or external review is recorded. A load-only summary of the
 initial interval and unopened coverage may require a ratio arbitrarily near
-3 at a non-greedy fixed layout; greedy incidence must be used to improve it.
+3 at a non-greedy fixed layout. This true but weaker claim is superseded
+on its exact output class by SC-K-DISTINCT-GREEDY-2 below.
+
+## SC-K-DISTINCT-GREEDY-2 -- full factor two on distinct-site output
+
+**Objects/domain:** explicit positive rational MF-MODEL input, arbitrary
+integer k>=2, conditional on the fixed greedy run putting all k labeled
+facilities at distinct physical sites. No limitation on customer overlap.
+
+**Exact statement:** construct in input-bit-polynomial time the same greedy
+layout, an exact pure on-path customer NE, and a polynomial-time evaluable
+complete exact continuation under which every unilateral facility deviation
+has payoff at most twice its on-path payoff. In fact the deviation inequality
+holds under *any* exact off-path NE once the specified on-path NE is selected.
+
+**Proof/dependencies:** the first greedy site has maximum reach R and stays
+single under the output condition. Its additional-facility candidate score
+R/2 persists at every later insertion, so gamma>=R/2. Gairing et al.'s
+restricted identical-link Nashification preserves the minimum initial
+facility load gamma, and all distinct-site facility loads are thus >=R/2.
+Every facility deviating to r can receive at most the full reach
+w(C_r)<=R under any customer continuation. Complete [proof](polytime_frontier.md),
+independently reverse-checked against labels, zero reach and all mixed
+off-path strategies. Published customer algorithm is an imported theorem;
+this deduction is an internally reviewed conditional theorem, not the
+general all-input factor-two algorithm. External review and software
+implementation are unrecorded.
 
 ## SC-K-COMPONENT-MULT-GREEDY-2 -- a wider conditional factor two
 
@@ -316,6 +342,169 @@ independent fraction arithmetic in
 `tests/audits/kfac_greedy_cap.py` confirms them from
 `examples/multi_facility/greedy_cap_obstruction.json`. External review
 unrecorded.
+
+## SC-K-RANGE-GREEDY-2 -- multiplicity-class range certificate
+
+**Objects/domain:** explicit positive binary rational MF-MODEL input,
+arbitrary k>=2, positive maximum reach, and the fixed polynomial greedy
+layout and initial assignments. For every final occupied multiplicity q,
+define alpha_q and beta_q as the minimum and maximum *initial* per-facility
+site loads of sites with this q. Each initially assigned customer i at a
+site of multiplicity q_i must satisfy beta_q_i-w_i/q_i<=alpha_q_v for
+every covered occupied site v of different multiplicity q_v. This is a
+polynomially checkable condition, not an assertion that all inputs satisfy
+it. The unchanged model has independent mixed exact client NE and complete
+existential continuation.
+
+**Exact conclusion:** an input-bit-polynomial procedure computes the
+greedy layout, an exact site-uniform customer NE and a polynomial-size,
+polynomial-time evaluable complete exact factor-two continuation. The
+condition permits customers lighter than the final greedy score to cross
+multiplicity classes; light-graph and all-distinct conditions are sufficient
+special cases. No general-input constructor is claimed.
+
+**Proof:** partition the initially assigned clients and occupied sites by
+their source multiplicity q. In each q group, let **every** client choose
+any of its accessible sites *within that same group*, and apply the
+published range-preserving restricted identical-machine Nashification.
+The machine NE is the original customer no-improvement comparison within
+the group. Its retained range bounds every cross-group client's source
+external load by beta_q-w_i/q and target load below by alpha_q_v; the
+certificate inequality blocks all omitted choices. The original greedy
+box q gamma<=W_t<=(q+1)gamma survives. For q>=2 departures it restores
+budgets (5)--(6). For q=1 let P be all customers initially assigned to
+singleton sites K. SC-K-GREEDY-MAX-MULT confines their occupied options
+to K; when the first K site opened, the entire P pool was uncovered,
+giving w(P cap C_t)<=2gamma for each t in K. The q-group repair preserves
+P, so for singleton source u and singleton target t,
+W_t+w(J_u cap C_t)<=2gamma<=2a; against q>=2 targets the overlap is zero.
+For an unopened target the deviator starts with at most N_r+a<=2a,
+while stationary sites are packed from the former inequality. MF-PACK-2,
+MF-PURE-CAP-POLY and MF-CONT-COMPLETE finish every deviation. Full proof,
+exact encoding and a strict-subclass example in
+[polytime_frontier.md](polytime_frontier.md).
+
+**Status/objections:** direct internal proof independently reverse-audited,
+including the source-site-disappearance case and the requirement that
+cross-group customers retain *all* same-group choices. Published
+Nashification is an import; this deduction is not externally reviewed or
+implemented as canonical software. The remaining mixed-multiplicity inputs
+failing the certificate are genuinely outside its proved scope.
+
+## SC-K-GREEDY-HEAVY-OVERLAP-2 -- mixed-multiplicity polynomial subclass
+
+**Objects/domain:** explicit positive rational MF-MODEL input, arbitrary
+integer k>=2, positive maximum reach, the fixed polynomial greedy rule with
+final insertion score gamma>0. Every client that covers two or more of the
+greedy occupied sites has weight at least gamma; clients having only one
+occupied option have no additional restriction.
+
+**Exact statement:** the *unmodified* greedy site-uniform assignment is an
+exact independent-mixed customer NE. Its layout, on-path NE, and a
+polynomial-size evaluable complete exact continuation satisfying every
+labeled unilateral deviation at factor 2 are input-bit-polynomially
+constructible. This allows unequal multiplicities in one overlap component,
+unlike SC-K-COMPONENT-MULT-GREEDY-2; it is conditional on a polynomially
+testable property of the greedy output, not a universal constructor.
+
+**Dependencies/evidence:** SC-K-GREEDY-BUDGET provides q_t gamma<=W_t<=
+(q_t+1)gamma and all four budgets. For a shared client of weight at least
+gamma, its conditional external load at its assigned site is at most gamma,
+whereas any alternative site's current load is at least gamma. MF-PACK-2,
+MF-PURE-CAP-POLY and MF-CONT-COMPLETE give polynomial completion. Complete
+proof and a mixed-q example: [polytime_frontier.md](polytime_frontier.md).
+Direct algebra independently reversed; external review and software
+implementation are unrecorded. Equality at gamma is allowed.
+
+## SC-K-LIGHT-COMPONENT-GREEDY-2 -- light-overlap conditional constructor
+
+**Objects/domain:** arbitrary integer k>=2, common finite catalog and
+positive binary rational atomic weights in MF-MODEL, positive maximum
+reach, and the polynomial greedy output with final score gamma>0. Join
+occupied sites only when a customer of weight *strictly less than gamma*
+covers both. Each resulting graph component must have constant facility
+multiplicity. A multiplicity-one component may contain arbitrarily many
+sites and light clients.
+
+**Exact statement:** in input-bit-polynomial time construct an exact
+independent-mixed site-uniform on-path customer NE and one complete exact
+factor-two continuation for the greedy labeled layout. Fixed heavy clients
+may cross multiplicity classes; light customers can really move within
+equal-q components. The hypothesis is recognized from the deterministic
+greedy output; it is not a theorem for all input instances.
+
+**Proof/dependencies:** SC-K-GREEDY-BUDGET gives the initial box
+q_t gamma<=W_t<=(q_t+1)gamma. Restrict each weight>=gamma customer to
+its initial site, and use the published range-preserving identical-link
+Nashification within each equal-q light component. The returned light
+client machine NE is the exact original site-choice condition; a heavy
+client cannot improve because its source other-client load is <=gamma and
+every alternative site load is >=gamma. For q>=2, the box restores (5)--(6).
+For q=1, put all originally assigned singleton-site clients into one pool
+P. SC-K-GREEDY-MAX-MULT confines every member's occupied options to
+singleton sites. At the first singleton opening, every member of P was
+uncovered, so for each singleton site t the total weight of P covering
+t is at most the first site's opening weight, itself at most 2 gamma.
+Repair stays within multiplicity classes; hence for a singleton source u
+and singleton target t, W_t+w(J_u cap C_t)<=2 gamma<=2a, retaining
+budget (7). Against q>=2 targets the overlap is zero and the box proves
+(7). For an unopened target, replace original (8) by
+N_r+w(J_u cap C_r)<=gamma+a<=2a: stationary sites can still be packed,
+and the deviator starts as an ordinary <=2a facility. MF-PACK-2,
+MF-PURE-CAP-POLY and MF-CONT-COMPLETE construct all exact off-path
+witnesses. Full proof,
+encoding and a five-customer instance outside both previous subclasses:
+[polytime_frontier.md](polytime_frontier.md).
+
+**Status and limits:** complete direct internal proof with independent
+adversarial reconstruction; imported 2004
+Nashification is published, this deduction has no external review,
+novelty certification or canonical implementation. Mixed-q overlap through
+light customers remains outside this criterion; all-distinct greedy output
+is included and also has an independent reach-based factor-two proof.
+
+## SC-K-GREEDY-REPAIR-ORDER-NO -- a reachable bad exact NE
+
+**Exact scope:** eight labeled facilities, six common sites, ten positive
+integer customers, and the displayed greedy tie order. A specified five-step
+strict site-level customer-improvement path from the greedy initial assignment
+ends in a genuine site-uniform exact customer NE. At this particular on-path
+NE, a B facility with payoff 165/2 moving to G gets payoff 176 in **every**
+independent-mixed off-path customer NE, giving ratio 32/15>2. The G-private
+80 and B/E-private 81/82 force the shared 96 client strictly to G.
+
+**Dependency/evidence:** [full arithmetic and proof](polytime_frontier.md),
+`examples/multi_facility/greedy_repair_order_escape.json` and independent
+`tests/audits/kfac_greedy_repair_order.py`. A *different* single strict
+improvement at the same greedy layout already reaches another exact on-path
+NE with all four original transfer budgets, hence with a factor-two complete
+continuation. The counterexample refutes **every terminal NE reached by any
+strict-repair order is safe**; it neither refutes existence of a good NE at
+greedy occupancy nor a general factor-two algorithm. Finite exact arithmetic
+checks the fixed witness but does not prove a universal bound. Internal
+independent inverse check completed; external review unrecorded.
+
+## SC-K-GREEDY-HEAVIEST-NO -- largest-weight strict repair is unsafe
+
+**Exact scope:** the ten-customer instance in
+`examples/multi_facility/greedy_heaviest_escape.json`, with eight labeled
+facilities, six common sites and the displayed site tie order. Greedy outputs
+multiplicities (1,1,2,1,3,0). From its initial assignment, repeatedly choosing
+the *largest-weight* client with a strict cross-site improvement (with no
+largest-weight ties) leads through the five specified moves to an exact
+site-uniform customer NE of site weights (115,178,172,120,268,0). A B
+facility has payoff 86 but moving to G yields 176 in every off-path
+independent-mixed exact NE, ratio 88/43>2. The private B/E/G clients force
+the shared 96 client to G. Another one-step reachable exact NE at the same
+layout retains all four sufficient budgets.
+
+**Proof/evidence:** exact moves and universal mixed-NE forcing argument in
+[polytime_frontier.md](polytime_frontier.md); independent arithmetic,
+max-weight selection at *every* step and good-NE budget comparison in
+`tests/audits/kfac_greedy_heaviest.py`. Status: fixed-instance counterexample
+internally audited; no conclusion about the existence of some suitable NE
+at the greedy layout, the unrestricted polynomial algorithm, or global
+factor-two existence. External review unrecorded.
 
 ## SC-K-SYMMETRIC-MENU-OBSTRUCTION -- bad menus are not lower bounds
 

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Facility location mathematical dependency hypergraph",
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -1566,6 +1566,78 @@
         "research/current/multi_facility/claims.md"
       ],
       "status": "complete direct internal proof; unrefereed"
+    },
+    {
+      "id": "SC-K-DISTINCT-GREEDY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two for all-distinct greedy layouts",
+      "detail": "The first maximum-reach site offers persistent insertion score R/2; range-preserving fixed-layout Nashification guarantees on-path load >=R/2 and every off-path payoff is <=R.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof; unrefereed"
+    },
+    {
+      "id": "SC-K-RANGE-GREEDY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two under multiplicity-class range certificate",
+      "detail": "Groupwise Nashification keeps initial per-facility load extrema and same-q client NE; each cross-q client passes a range inequality, while a pooled q=1 source inequality and a 2a initial deviator cap handle departures.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof; unrefereed"
+    },
+    {
+      "id": "SC-K-LIGHT-COMPONENT-GREEDY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two when light overlaps preserve multiplicity",
+      "detail": "Clients lighter than final greedy score have only same-q occupied alternatives; range certification follows for cross-q heavy clients and constructs exact factor two.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof; unrefereed"
+    },
+    {
+      "id": "SC-K-GREEDY-HEAVY-OVERLAP-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two with heavy overlapping clients",
+      "detail": "If all clients spanning occupied sites weigh at least final greedy score, the unmodified greedy assignment is a customer NE and its transfer budgets yield exact factor two.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete direct internal proof; unrefereed"
+    },
+    {
+      "id": "SC-K-GREEDY-REPAIR-ORDER-NO",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Arbitrary strict greedy customer repair can lose factor two",
+      "detail": "A six-site eight-facility integer instance has a reachable exact on-path NE whose B-to-G deviation is forced to ratio 32/15 in all mixed off-path NE; another reachable NE at the same layout retains budgets.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "exact fixed-instance counterexample; internally audited"
+    },
+    {
+      "id": "SC-K-GREEDY-HEAVIEST-NO",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Heaviest-first greedy customer repair can lose factor two",
+      "detail": "A related integer instance forces uniquely greatest-weight improving moves to an exact on-path NE with mixed-off-path deviation ratio 88/43; a different one-step NE retains budgets.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "exact fixed-instance counterexample; internally audited"
     }
   ],
   "hyperedges": [
@@ -3181,6 +3253,116 @@
         "research/current/multi_facility/polytime_frontier.md"
       ],
       "status": "internal proof"
+    },
+    {
+      "id": "e-mf-distinct-greedy-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-BUDGET",
+        "MF-MODEL",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-DISTINCT-GREEDY-2",
+      "statement": "Persistent first-site R/2 insertion score and polynomial minimum-load-preserving Nashification bound every possible off-path payoff by 2a.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-range-greedy-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "MF-PURE-CAP-POLY",
+        "MF-CONT-COMPLETE",
+        "SC-K-GREEDY-MAX-MULT",
+        "MF-PACK-2"
+      ],
+      "conclusion": "SC-K-RANGE-GREEDY-2",
+      "statement": "Groupwise range-preserving identical-machine Nashification checks cross-q incentives; singleton customer pool and relaxed deviator cap complete all source/target cases.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-light-component-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-RANGE-GREEDY-2",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-LIGHT-COMPONENT-GREEDY-2",
+      "statement": "A cross-q client of weight at least gamma automatically passes the multiplicity-class range certificate.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-heavy-overlap-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-RANGE-GREEDY-2",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-GREEDY-HEAVY-OVERLAP-2",
+      "statement": "All shared clients being heavy implies the range certificate and the initial greedy profile is already an exact NE.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-greedy-repair-escape",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-GREEDY-REPAIR-ORDER-NO",
+      "statement": "The displayed finite integer input, exact on-path NE checks and universal mixed off-path dominance algebra prove this fixed-instance counterexample: Exact integer assignment and forced 96-weight customer at G give ratio 32/15 after a strict-repair terminal NE, but another on-path NE remains good.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact obstruction"
+    },
+    {
+      "id": "e-mf-greedy-heaviest-escape",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-GREEDY-HEAVIEST-NO",
+      "statement": "The displayed finite integer input, exact on-path NE checks and universal mixed off-path dominance algebra prove this fixed-instance counterexample: A tie-free greatest-improving-weight repair path ends at a 88/43 forced off-path ratio, while an alternate one-step repair retains budgets.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact obstruction"
+    },
+    {
+      "id": "e-mf-repair-order-limits",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-REPAIR-ORDER-NO",
+        "SC-K-GREEDY-HEAVIEST-NO"
+      ],
+      "conclusion": "SC-K-GREEDY-UNOPENED-2",
+      "statement": "The empty-target initial cap invariant does not make arbitrary or largest-weight strict on-path repair a safe factor-two selection rule.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "exact obstruction"
     }
   ]
 }
