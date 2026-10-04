@@ -1,5 +1,7 @@
 # 当前研究状态（2026-10-03）
 
+**2026-10-04 两个条件算法推进。** [SC-K-LOCAL-WEIGHT-BOX-DP](research/current/multi_facility/local_weight_box_dp.md)改在轻客户的地点 primal 图上分解：固定树宽和每站不同轻权种类数时，按权重与选项集类型计数，位长多项式精确判定及构造盒内站纯客户均衡；它包含此前逐名关联图固定度/树宽的选择器，并允许每站无限增长的客户数。[SC-K-INWARD-STAR-2](research/current/multi_facility/inward_star_box.md)用叶内降权队列与全局最大动态键，在叶先开、中心后开的异轻权星形中每客处理一次，保完整盒与精确客户均衡，进而完成因子 2 续局；严格贪心族使中心相邻异权种类任意增长。这两项均未解决一般混合交叠图，且尚无规范实现或外部审查。
+
 **2026-10-04 精确选择器边界。** [SC-K-BOX-POTENTIAL-STRONG-HARD](research/current/multi_facility/polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization)复用已有 3-PARTITION 族，证明即使贪心打开所有地点、所有公共轻客户分配都满足完整上下盒，精确求全局客户势最小值仍强 NP 难。这仅排除精确优化势函数的通用多项式选择器；同族已有容易求出的精确设施均衡。一般盒内均衡存在性及位长多项式选取仍未决，不能将 oracle 难性升级成目标难性。
 
 **2026-10-04 条件性算法推进。** [SC-K-INCIDENCE-BOX-DP / SC-K-HEIGHT-TWO-INCIDENCE-2](research/current/multi_facility/bounded_incidence_box.md)精确判定贪心盒内的站纯客户 NE：冻结重客户与单选项客户，对每个已占站列举至多 `2^d` 个入站轻客户子集，将逐名二部关联图宽 `tau` 的分解转成站点约束图宽至多 `d(tau+1)-1`。当 `d,tau` 固定，选择器位长多项式；浅层有向轻图保证盒可行，接 BOX-TO-2 得完整多项式因子 2。此结果只扩展可算子类，不证明一般贪心盒可行或任意输入的目标算法；已给出数学证明，外审与规范实现未完成。

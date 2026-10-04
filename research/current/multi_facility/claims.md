@@ -137,6 +137,56 @@ average load P+B forces exact 3-partition. Full quantifiers and encoding:
 [polytime frontier](polytime_frontier.md). **Status:** direct internal proof
 awaiting external review and novelty check; no code or numerical inference.
 
+## SC-K-LOCAL-WEIGHT-BOX-DP -- bounded site-primal width and local weight diversity
+
+**Objects/domain:** positive rational MF-MODEL input; fixed canonical greedy
+occupancy and last score `gamma>0`; freeze clients with one occupied
+option and clients of weight at least `gamma` at their initial sites.
+Let `G` join occupied sites that share a remaining light client, and
+let `d` bound the number of distinct *exact rational weights* incident
+to any individual site. The number of clients and the total number of
+different weights across the instance can grow.
+
+**Exact statement:** for every fixed `tau,d`, a bit-polynomial algorithm
+decides whether a site-pure/within-site-uniform exact customer NE exists
+among these fixed-heavy assignments satisfying every full greedy box;
+when yes, it constructs one. It may compute a width-`tau` decomposition
+of the site-primal graph or take one as verified input. If every light
+client has two occupied options and the opening-directed graph has
+longest path at most two edges, SC-K-HEIGHT-TWO-BOX-EXISTS makes the
+decision always yes and BOX-TO-2 completes a bit-polynomial factor-two
+certificate. Treewidth alone, local weight diversity alone, or a
+negative decision supplies no such general conclusion.
+
+**Dependencies/evidence:** type `(weight, occupied options)` compositions
+are processed at a bag containing their clique scope; a bag tracks both
+guessed final per-weight site counts and processed partial counts.
+Each supported destination checks the exact own-weight-discounted NE
+inequality. Fixed `tau,d` bound the count-state exponent; exact rational
+arithmetic has polynomial bit length. [Full DP and proof](local_weight_box_dp.md).
+**Status:** internally derived and independently reverse-reviewed;
+neither canonical code, external review nor priority verification recorded.
+
+## SC-K-INWARD-STAR-2 -- late-center star with arbitrary unequal light weights
+
+**Objects/domain:** same positive-rational greedy model and heavy/singleton
+freezing as BOX-TO-2; every remaining nontrivial overlap component is a
+star with each light client covering exactly its leaf and its center,
+and each leaf opened before the center. Arbitrarily many leaves and
+different light weights per center are allowed.
+
+**Exact statement:** descending-weight queues at leaves, selected by the
+maximum dynamic key `q_c W_l/q_l+(1-q_c/q_l)w`, process every light
+client once. A strictly improving leaf-to-center transfer preserves the
+full box. The keys are nonincreasing; they preserve the best-response
+condition of all earlier center clients while left-behind leaf clients
+remain stable. This constructs a boxed site-pure exact customer NE and,
+via BOX-TO-2, an input-bit-polynomial full factor-two continuation.
+[Proof and an unbounded-center-weight-diversity family](inward_star_box.md).
+**Status:** internally proved and independently reverse-reviewed;
+external review, priority and software implementation pending. General
+mixed-orientation stars and longer overlap chains are outside the claim.
+
 ## SC-K-BOX-POTENTIAL-STRONG-HARD -- exact full-box potential oracle
 
 **Statement:** for explicit positive-integer MF-MODEL input, let the
