@@ -19,6 +19,8 @@
 
 **A 篇后续（2026-10-02）：** [同址正规形](research/current/shared/instance_complexity_barriers.md)把共同目录**实例最优**精确算法的指数参数改为异址交叠 $\kappa_{\ne}$，并构造完整同址对半续局；[单交叠小目录阶梯](research/current/shared/small_sparse_catalogs.md)得到“至多 $N$ 个共同地点”的紧确普遍因子 $N=1,2:1$，$N=3:\sqrt2$，$N=4:\sqrt[3]4$，$N\ge5:\phi$。三、四地点结果有匹配的正有理下界；五地点把原六地点下界的可选目录缩小。[三地点全局归约](research/current/shared/three_site_exact_hardness.md)证明固定有理 $1\le a<(1+\sqrt3)/2$ 的判定弱 NP 完全；[五地点全局归约](research/current/shared/five_site_exact_hardness.md)进一步证明**每个固定有理 $1<a<\phi$** 的同类判定弱 NP 完全，保留三地点旧 Claim 的作用域。[原子粒度桥](research/current/shared/atomic_granularity.md)给小异址单体交叠时优于最坏 $\phi$ 的可构造实例保证。以上均是内部证明，尚无外部评审或完整新颖性核查；[独立内部数学及价值审查](research/FIVE_SITE_AUDIT_2026-10-02.md)区分本次受限类强化与已发表的一般模型困难性。
 
+**算法接口核对（2026-10-04）：**[混合重数—相关并行链边界](research/current/multi_facility/restricted_related_link_boundary.md)明确了剩余 `RQ-MIXED-BOX` 义务，并用正整数反例排除了把 `q_t` 直接当相关链速度的错误复用；这不是困难性或完成性结论。
+
 **研究状态：**共同目录的黄金比上界已有完整主稿、现行 Markdown 全分支重写及多轮内部审读；[六地点共同目录下界](research/current/shared/sharp_phi_lower.md)现已补出全布局与有理化证明，二者联合给出尖锐阈值。异构目录的因子 2 构造有成文主稿。受限稀疏 ρ 命题已有逐分支重写，[双方任意长单交叠的 ρ 上界](research/current/heterogeneous/sparse_unbounded_rho.md)本轮给出新全称证明；与原 2×2 下界合并即为同类尖锐阈值。程序能为具体输入生成证书；共享证书另有[独立定义级检查器](facility_spe/cli/verify_phi.py)。以上都尚未经过外部同行评审；内部证明、实例证书与学术发表分别标注。参见[命题与状态登记](research/current/claims.md)及[五轴状态表](research/review_status.json)。
 
 **任意 k 的高效构造关口（2026-10-02）：**[计算前沿](research/current/multi_facility/polytime_frontier.md)将因子 2 存在性证明拆为两项算法义务。给定符合预算的在轨状态，偏离后的客户精确纯 NE 可用已发表的受限并行机算法在输入位长多项式时间完成；而原证明所用的全局字典序精确选址，连相同 reach 的共同目录也强 NP 难。四项预算只需要多项式邻域的局部最优，故有一个明确的 PLS 搜索上界，但目前没有多项式收敛界。真正缺口是同时找到可计算的在轨选址与客户 NE；原证明的全局最优不能直接当算法。

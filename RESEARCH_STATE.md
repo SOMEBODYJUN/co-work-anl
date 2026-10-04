@@ -31,6 +31,10 @@
 
 双设施共同目录的黄金比上界、相应六地点锐性、异构双设施的因子 2 分支与短目录单交叠的 \(\rho=2\cos(\pi/7)\) 分支均有现行数学稿；各自审查状态并不相同，均尚无外部同行评审。[完整范围表](research/current/claims.md)防止将实例证书与普遍定理混淆。现有成果的投稿、实现复核和文献归属是交付工作，不占新的数学主攻方向。
 
+## 2026-10-04 混合重数接口核对
+
+本轮把剩余的在轨选择义务写成了精确的 `RQ-MIXED-BOX`：给定贪心占位、站点重数 `q_t` 和负载盒，需要位长多项式构造满足 `(W_t-w_i)/q_t <= W_v/q_v` 的站点客户 NE。等重数时它正好是已发表的受限相同并行链问题；把 `q_t` 直接当成相关链速度则得到另一条不等式，正整数反例已写入 [边界说明](research/current/multi_facility/restricted_related_link_boundary.md) 并由 [精确审计](tests/audits/restricted_related_formula.py) 重算。这个核对排除了一个错误的文献 import 路线，但没有给出复杂度下界；至少三站、混合重数、部分交叠仍是当前最窄算法缺口。
+
 ## 当前前沿与本轮闭合
 
 **异重轻客户星形分量的位多项式 2 倍算法（2026-10-03）。** [SC-K-STAR-LIGHT-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)把同重费用流之外的可算范围扩到轻客户交叠图中的锚定星形：中心先开，每名轻客户只可选中心与一片叶；其他轻分量可同重数，重客户可跨分量。各叶按权递减队列，只移动严格改善的队头，并在候选叶中选当前最低单位负载。每名客户处理一次；贪心重数序保持上下盒，最后入叶客户与候选叶负载单调性保证精确 NE；BOX-TO-2 完成全部偏离。一个三站异轻权、不可比选项集实例同时在旧 RANGE、ALL-OR-ONE、NESTED-ANCHOR、UNIFORM-LIGHT 的条件之外。证明已内部独立逆审，有限有理数例只核算该实例；有向路径和双 LPT 后续机制已覆盖部分非星形图；一般图仍开放。

@@ -104,6 +104,14 @@
 | SC-K-INWARD-STAR-2 | 正有理共同目录贪心布局；轻客户分量是每名客户连接先开叶和后开中心的星形，异权和叶数不受限，重客户冻结 | 按叶内降权队列和动态最大键每客处理一次，保持完整盒与所有客户最佳反应；BOX-TO-2 位长多项式给完整精确 2 倍续局 | [证明及无界中心权种族](multi_facility/inward_star_box.md)；内部复核，外审、优先权核查及规范实现未完成。 |
 | SC-K-BOX-POTENTIAL-STRONG-HARD | 正整数共同目录输入；贪心全站各一设施、全部可动轻客户覆盖所有占站，且其所有分配自动满足完整盒 | 精确求全盒客户势全局最小值的阈值判定强 NP 完全；同一归约族仍有易求精确设施均衡，不能推出寻找盒内 NE 或完整 2 倍证书困难 | [3-PARTITION 归约及严格范围](multi_facility/polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization)；内部代数复核，外审未完成。 |
 
+## SC-K-RQ-MIXED-BOX -- mixed-multiplicity selector obligation
+
+**Objects/domain:** a greedy common-catalog occupancy with explicit positive rational weights, occupied-site multiplicities `q_t`, and a candidate load box `q_t gamma <= W_t <= (q_t+1) gamma`.
+
+**Exact obligation:** construct, in input-bit-polynomial time, a site-pure/within-site-uniform customer assignment satisfying `(W_t-w_i)/q_t <= W_v/q_v` for every assigned customer `i:t` and every covered occupied alternative `v`, or replace the box interface by a different factor-two certificate. Equal `q_t` is exactly the restricted-identical-link subproblem.
+
+**Boundary/evidence:** the restricted-related-link inequality `W_t/s_t <= (W_v+w_i)/s_v` is not equivalent when multiplicities differ; `q_t=1,q_v=2,w_i=2,W_t=5,W_v=6` is an exact mismatch. [Boundary note](restricted_related_link_boundary.md) and [audit](../../tests/audits/restricted_related_formula.py). This is an open obligation and literature boundary, not a hardness theorem.
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

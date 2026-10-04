@@ -1,5 +1,14 @@
 # Common-catalog arbitrary-k branch
 
+## Exact interface boundary for mixed multiplicities (2026-10-04)
+
+[混合设施重数与受限相关并行链边界](restricted_related_link_boundary.md) fixes the remaining selector interface as
+\((W_t-w_i)/q_t\le W_v/q_v\). Equal multiplicities reduce exactly to the published restricted-identical-link
+Nashification interface. A direct substitution of site multiplicities as related-link speeds is false; the
+integer mismatch witness and the literature boundary are recorded in the note and its exact audit
+`tests/audits/restricted_related_formula.py`. This is a reusable obstruction to an incorrect import, not a
+hardness theorem and not a solution of the mixed-q selector.
+
 ## Adaptive reset and exact selector boundaries (2026-10-04)
 
 [Adaptive original-pool reset and forced-client floors](adaptive_reset_floor.md) extend the conditional polynomial factor-two construction: a certified **pure** equilibrium's forced-client floor can justify a larger source deletion cap than `2 gamma`. The double-LPT recognition test strictly includes its predecessor; an exact triangle instance and [finite audit](../../../tests/audits/kfac_adaptive_reset.py) separate them. The imported polynomial scheduler has no canonical local implementation, and no all-input recognition guarantee is proved.

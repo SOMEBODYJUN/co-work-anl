@@ -58,3 +58,8 @@
 | Q-CUBIC | 双设施共同目录、客户费用 $\mathbb E[L^3]$，最优普遍阈值 | 开放；内部边界 $[\phi,2]$；跨费用类机制才使其成为高优先级。[任务页](research/questions/cubic_costs.md) |
 
 单实例的达到证书、有限搜索与普遍定理的证明是不同证据。精确求解分支及局部困难性另见[现行登记](research/current/claims.md)；下一阶段的投入判断见[研究状态](RESEARCH_STATE.md)。
+
+
+## 2026-10-04 algorithmic frontier: exact mixed-q interface
+
+The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BOX`: with a greedy occupancy and site multiplicities `q_t`, construct a boxed site-pure customer NE satisfying `(W_t-w_i)/q_t <= W_v/q_v` in input-bit-polynomial time, or replace the box certificate. Equal multiplicities use the published restricted-identical-link Nashification. A direct reduction to restricted related links is invalid because their condition is `W_t/s_t <= (W_v+w_i)/s_v`; the exact positive-integer mismatch and its scope are in [the current boundary note](research/current/multi_facility/restricted_related_link_boundary.md). This records an import barrier, not a hardness result.

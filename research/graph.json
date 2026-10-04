@@ -2161,6 +2161,29 @@
         "tests/audits/kfac_box_lexmax.py"
       ],
       "status": "finite arithmetic check"
+    },
+    {
+      "id": "SRC-RESTRICTED-PARALLEL-LINKS-2004",
+      "kind": "source",
+      "track": "computation",
+      "title": "Restricted parallel links literature boundary",
+      "detail": "Gairing--Lücking--Mavronicolas--Monien give polynomial Nashification for restricted identical links and explicitly leave exact equilibrium computation for restricted related links open; this is a literature boundary, not a hardness theorem for MF-MODEL.",
+      "refs": [
+        "research/current/multi_facility/restricted_related_link_boundary.md"
+      ],
+      "status": "published boundary recorded in current note; external priority check pending"
+    },
+    {
+      "id": "SC-K-RQ-MIXED-BOX",
+      "kind": "obligation",
+      "track": "computation",
+      "title": "Mixed-q boxed site-equilibrium selector",
+      "detail": "Given a greedy common-catalog occupancy with explicit rational weights, construct a boxed site-pure/within-site-uniform customer NE satisfying (W_t-w_i)/q_t <= W_v/q_v in input-bit-polynomial time, or replace the box-based factor-two certificate. Equal-q subclasses are solved; mixed-q partial overlap remains open.",
+      "refs": [
+        "research/current/multi_facility/restricted_related_link_boundary.md",
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "open algorithmic obligation; no hardness claim"
     }
   ],
   "hyperedges": [
@@ -4649,6 +4672,23 @@
         "research/current/multi_facility/boxed_lexmax_boundary.md"
       ],
       "status": "exact obstruction"
+    },
+    {
+      "id": "e-mf-mixed-q-related-boundary",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-EQUAL-MULT-GREEDY-2",
+        "SC-K-TWO-SITE-COMPONENT-GREEDY-2",
+        "SRC-RESTRICTED-PARALLEL-LINKS-2004"
+      ],
+      "conclusion": "SC-K-RQ-MIXED-BOX",
+      "statement": "The equal-multiplicity Nashification import cannot be extended by simply treating site multiplicity as a related-link speed: the exact MF-MODEL inequality and the related-link inequality differ on a positive-integer witness. The mixed-q selector remains an explicit open obligation.",
+      "refs": [
+        "research/current/multi_facility/restricted_related_link_boundary.md"
+      ],
+      "status": "scope boundary internally checked by exact arithmetic; not a complexity lower bound"
     }
   ]
 }
