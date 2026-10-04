@@ -2029,6 +2029,42 @@
         "research/current/multi_facility/height_two_box.md"
       ],
       "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "SC-K-LOCAL-WEIGHT-BOX-DP",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Local-weight site-primal boxed-NE selector",
+      "detail": "Fixed site-primal width and fixed number of distinct incident light weights per site give a bit-polynomial exact frozen-heavy boxed-NE decision and witness, without a general existence assertion.",
+      "refs": [
+        "research/current/multi_facility/local_weight_box_dp.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "SC-K-INWARD-STAR-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Inward-star arbitrary-weight factor-two selector",
+      "detail": "For greedy late-center star components, nonincreasing leaf queues and a maximum dynamic key select a full-box exact customer NE in bit-polynomial time; BOX-TO-2 completes all deviations.",
+      "refs": [
+        "research/current/multi_facility/inward_star_box.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "SC-K-BOX-POTENTIAL-STRONG-HARD",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Exact boxed-potential optimization is strongly NP-hard",
+      "detail": "A 3-PARTITION family makes all light assignments boxed and the exact global potential threshold strongly NP-complete, although that same family has an easy exact facility SPE.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "strong NP-hardness of exact boxed-potential oracle only"
     }
   ],
   "hyperedges": [
@@ -4345,6 +4381,52 @@
         "research/current/multi_facility/bounded_incidence_box.md"
       ],
       "status": "internal proof"
+    },
+    {
+      "id": "e-mf-local-weight-dp",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-LOCAL-WEIGHT-BOX-DP",
+      "statement": "Type compositions live in site-primal bags; guessed final weight-count vectors and partial counts enforce exact customer incentives and full boxes in polynomial states for fixed width and local diversity.",
+      "refs": [
+        "research/current/multi_facility/local_weight_box_dp.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-inward-star",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "SC-K-GREEDY-BOX-TO-2"
+      ],
+      "conclusion": "SC-K-INWARD-STAR-2",
+      "statement": "Maximum dynamic-key leaf queues preserve all full boxes and past center-client best responses, then complete every deviation via BOX-TO-2.",
+      "refs": [
+        "research/current/multi_facility/inward_star_box.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-box-potential-hard",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-K-LEXMAX-STRONG-HARD"
+      ],
+      "conclusion": "SC-K-BOX-POTENTIAL-STRONG-HARD",
+      "statement": "The same 3-PARTITION family gives a strong NP-hardness threshold for exact potential optimization over full-box states; it does not imply hardness of finding a factor-two witness.",
+      "refs": [
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal reduction"
     }
   ]
 }

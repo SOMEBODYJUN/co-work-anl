@@ -89,6 +89,9 @@
 | SC-K-HEIGHT-TWO-INCIDENCE-2 | 上一行全部条件；另每名轻客户恰有两个已占选项，首开定向后的最长有向路径至多两边 | 浅层存在性、关联 DP 与盒内离轨接口合取，位长多项式构造因子 2 布局及**完整精确客户 NE 续局**；不声称全输入算法 | [组合证明](multi_facility/bounded_incidence_box.md)和[浅层存在性](multi_facility/height_two_box.md)；两路内部逆审，无外审与规范实现。 |
 
 | SC-K-CONVERGING-PATH-4MOVE-2 | 贪心轻分量 D--B--A--C 每边恰一轻客户，初始站 D/B/C，开启方向 D→B→A←C；重数按边非增，但 A 无需紧下盒、A/C 重数可不同 | 固定次序检查 Z、T、X、可能新改善的 T、可能返程的 Z，**至多四次**严格改派保持盒并完成 NE；BOX-TO-2 得位长多项式完整 2 倍续局，严格扩大旧七步小类 | [全分支证明](multi_facility/converging_four_moves.md)、[广范围精确有限审查](../../tests/audits/kfac_converging_four_moves.py)；内部逆审，外审/规范实现未完成。 |
+| SC-K-LOCAL-WEIGHT-BOX-DP | 正有理共同目录输入及固定贪心占据；冻结单选项与权重至少 `gamma` 的客户；轻客户的地点 primal 图树宽 `tau`、每站不同轻权种类数 `d` 固定 | 站点最终权重计数及部分计数的树分解 DP 位长多项式精确判定、构造站纯/站内均匀盒内客户 NE；与浅层存在性和 BOX-TO-2 合用得交集类完整 2 倍续局；否结果只限定冻结客户的站纯盒 | [完整约束及证明](multi_facility/local_weight_box_dp.md)；内部复核，外审、优先权核查及规范实现未完成。 |
+| SC-K-INWARD-STAR-2 | 正有理共同目录贪心布局；轻客户分量是每名客户连接先开叶和后开中心的星形，异权和叶数不受限，重客户冻结 | 按叶内降权队列和动态最大键每客处理一次，保持完整盒与所有客户最佳反应；BOX-TO-2 位长多项式给完整精确 2 倍续局 | [证明及无界中心权种族](multi_facility/inward_star_box.md)；内部复核，外审、优先权核查及规范实现未完成。 |
+| SC-K-BOX-POTENTIAL-STRONG-HARD | 正整数共同目录输入；贪心全站各一设施、全部可动轻客户覆盖所有占站，且其所有分配自动满足完整盒 | 精确求全盒客户势全局最小值的阈值判定强 NP 完全；同一归约族仍有易求精确设施均衡，不能推出寻找盒内 NE 或完整 2 倍证书困难 | [3-PARTITION 归约及严格范围](multi_facility/polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization)；内部代数复核，外审未完成。 |
 
 ## 逻辑使用规则
 

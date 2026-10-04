@@ -1,6 +1,8 @@
 # Common-catalog arbitrary-k branch
 
-## Latest conditional advances (2026-10-03)
+## Latest conditional advances (2026-10-04)
+
+The [site-primal local-weight DP](local_weight_box_dp.md) decides the frozen-heavy full-box customer NE problem in input-bit-polynomial time when primal treewidth and the number of distinct incident light weights per site are fixed. It allows arbitrarily many clients per edge; paired with the height-two existence theorem and BOX-TO-2, it gives a complete conditional factor-two constructor. The [inward-star queue algorithm](inward_star_box.md) handles the opposite orientation from the earlier anchored-star algorithm, with arbitrarily many distinct light weights at the late center. The [exact boxed-potential hardness proof](polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization) blocks global potential optimization as a generic selector, while leaving the full factor-two construction problem open. These three claims are separately scoped in the [branch ledger](claims.md).
 
 The [individual-incidence bounded-width and bounded-degree selector](bounded_incidence_box.md) exactly decides boxed site-uniform NE at a greedy occupancy in input-bit-polynomial time for fixed treewidth `tau` and two-sided individual-client degree `d`. It replaces an unbounded potential search by a finite-domain CSP; paired with the independent [height-two directed-graph existence theorem](height_two_box.md), it yields a complete polynomial factor-two continuation on their intersection. It supplies only a decision method on other sparse incidence graphs. For the treewidth conversion, bounded site adjacency without bounding the number of individual light clients is insufficient. This reconstructed 2026-10-04 claim has no canonical implementation or external review.
 
