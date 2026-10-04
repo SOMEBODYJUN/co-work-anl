@@ -1,5 +1,11 @@
 # Common-catalog arbitrary-k branch
 
+## Deviator-specific completion beyond global caps (2026-10-04)
+
+[Frozen stationary overloads](frozen_overload_completion.md) permit a non-deviating facility to keep several clients above the deviator's cap. Residual pure forced-client floors prevent these clients from leaving; maximum-preserving restricted-link Nashification repairs the remaining seed in bit-polynomial time. This strictly extends the isolated-macro/global-cap interface: the existing cap-41 obstruction passes by freezing E's load 44. The complete-continuation corollary accepts any supplied exact on-path NE plus successful certificates for every labeled deviation. Finding these certificates and a compatible on-path NE on all inputs remains open.
+
+**File map:** `frozen_overload_completion.md` contains the exact residual/frozen partition, cross-region best-response tests, polynomial completion proof, strict cap-obstruction separation, zero-payoff and complete-continuation cases. Read it before insisting all stationary loads must fit the deviator's cap; its canonical exact fixture audit is `tests/audits/kfac_frozen_overload.py`.
+
 ## Exact interface boundary for mixed multiplicities (2026-10-04)
 
 [混合设施重数与受限相关并行链边界](restricted_related_link_boundary.md) fixes the remaining selector interface as

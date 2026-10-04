@@ -1,5 +1,7 @@
 # 两阶段设施选址：可生长的研究基础
 
+**偏离者专属延续接口（2026-10-04）：**[冻结安全超载](research/current/multi_facility/frozen_overload_completion.md)允许非偏离设施保留多个客户、负载超过偏离者帽容量；残余纯客户收益下界阻止这些客户离开，其余设施以同速调度算法精确均衡化。该条件性位多项式引理接受旧全局 cap-41 接口不可能的离轨实例，严格绕过全局装箱要求。任意在轨精确 NE 配合每项偏离的成功证书可生成完整因子 2 续局；全输入在轨选择与证书生成仍未解决。
+
 **本轮进展（2026-10-04）：**[自适应原池重置与强制客户收益下界](research/current/multi_facility/adaptive_reset_floor.md)给出更宽的可识别条件类：两轮 LPT 加纯均衡下界构造输入位长多项式的完整精确 2 倍续局；严格三角例通过新测试而不满足旧删席装箱条件。[深度三树形势最小点](research/current/multi_facility/depth_three_box_boundary.md)和[盒内字典序最大点](research/current/multi_facility/boxed_lexmax_boundary.md)各给一个选择规则的精确反例，同一布局均仍有盒内均衡。全输入位多项式 2 倍构造仍开放；以上为内部数学审查，未有外部评审或通用软件实现。
 
 

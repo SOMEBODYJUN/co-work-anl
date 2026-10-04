@@ -2184,6 +2184,42 @@
         "research/current/multi_facility/polytime_frontier.md"
       ],
       "status": "open algorithmic obligation; no hardness claim"
+    },
+    {
+      "id": "MF-FROZEN-OVERLOAD-POLY",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Polynomial completion with frozen stationary overloads",
+      "detail": "At a fixed layout and cap B>=0, a feasible pure seed has ordinary loads <=B and frozen loads >B. Every frozen client external load is bounded by residual pure forced-client floors at all ordinary alternatives and other frozen loads. Maximum-preserving identical-link Nashification plus reinsertion yields a full pure NE with the ordinary mover <=B.",
+      "refs": [
+        "research/current/multi_facility/frozen_overload_completion.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; independently internally reviewed; unrefereed"
+    },
+    {
+      "id": "SC-K-FROZEN-OVERLOAD-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Complete factor two from deviator-specific overload certificates",
+      "detail": "Any supplied rational exact independent-mixed on-path NE, together with successful frozen-overload certificates at B=2a_f for every actual labeled deviation, has a bit-polynomial complete continuation. No all-input certificate generator is asserted.",
+      "refs": [
+        "research/current/multi_facility/frozen_overload_completion.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; independently internally reviewed; unrefereed"
+    },
+    {
+      "id": "E-K-FROZEN-OVERLOAD-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Cap-41 frozen-overload strict separation",
+      "detail": "One exact residual fixture: 12 assignments, two capped pure NEs lifting to full NE; no universal conclusion inferred from execution.",
+      "refs": [
+        "research/current/multi_facility/frozen_overload_completion.md",
+        "tests/audits/kfac_frozen_overload.py"
+      ],
+      "status": "finite arithmetic check"
     }
   ],
   "hyperedges": [
@@ -4689,6 +4725,69 @@
         "research/current/multi_facility/restricted_related_link_boundary.md"
       ],
       "status": "scope boundary internally checked by exact arithmetic; not a complexity lower bound"
+    },
+    {
+      "id": "e-mf-frozen-overload-poly",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-FORCED-FLOOR",
+        "SRC-RESTRICTED-PARALLEL-LINKS-2004"
+      ],
+      "conclusion": "MF-FROZEN-OVERLOAD-POLY",
+      "statement": "Under all seed, partition and frozen-client floor comparisons in Section 3, maximum-preserving residual pure Nashification followed by reinsertion prevents all cross-region profitable client moves.",
+      "refs": [
+        "research/current/multi_facility/frozen_overload_completion.md"
+      ],
+      "status": "independently internally reviewed conditional proof"
+    },
+    {
+      "id": "e-sc-k-frozen-overload-2",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "MF-FROZEN-OVERLOAD-POLY",
+        "MF-CONT-COMPLETE",
+        "SRC-RESTRICTED-PARALLEL-LINKS-2004"
+      ],
+      "conclusion": "SC-K-FROZEN-OVERLOAD-2",
+      "statement": "Given an exact rational on-path NE and successful cap-2a_f certificates for every actual labeled deviation, the local witnesses and polynomial identical-link default form one polynomial-time-evaluable complete continuation.",
+      "refs": [
+        "research/current/multi_facility/frozen_overload_completion.md"
+      ],
+      "status": "independently internally reviewed conditional proof"
+    },
+    {
+      "id": "e-frozen-overload-cap-separation",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "MF-FROZEN-OVERLOAD-POLY",
+        "SC-K-GREEDY-CAP-INFEASIBLE"
+      ],
+      "conclusion": "MF-PURE-CAP-POLY",
+      "statement": "The existing cap-41 deviation admits a frozen two-client E load 44, whereas no old globally capped pure seed with isolated macros exists. This strictly extends certificate scope without refuting the older theorem.",
+      "refs": [
+        "research/current/multi_facility/frozen_overload_completion.md"
+      ],
+      "status": "exact interface separation"
+    },
+    {
+      "id": "e-frozen-overload-finite-check",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "E-K-FROZEN-OVERLOAD-AUDIT"
+      ],
+      "conclusion": "MF-FROZEN-OVERLOAD-POLY",
+      "statement": "Independent Fraction enumeration checks one strict separation fixture only; the universal theorem depends on its written proof.",
+      "refs": [
+        "research/current/multi_facility/frozen_overload_completion.md",
+        "tests/audits/kfac_frozen_overload.py"
+      ],
+      "status": "finite arithmetic evidence"
     }
   ]
 }

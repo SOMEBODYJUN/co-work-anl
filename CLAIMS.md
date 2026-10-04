@@ -4,6 +4,7 @@
 
 | ID / 问题 | 严格范围与结论 | 状态及详情 |
 | --- | --- | --- |
+| MF-FROZEN-OVERLOAD-POLY / SC-K-FROZEN-OVERLOAD-2 | 供给纯离轨初态，偏离者在普通帽容量区；冻结超载设施，每名冻结客户的外部负载不超过残余纯均衡的可证收益下界和其他冻结负载。每项实际偏离均有证书时，任意供给在轨 NE 得完整因子 2 续局。 | 条件性位多项式证明；严格扩展旧全局 cap 接口，[精确条件及完整证明](research/current/multi_facility/frozen_overload_completion.md)。全输入证书生成与在轨选择仍开放。 |
 | SC-PHI-E/A/SHARP | 两设施、共同非空目录、正权原子客户、强制服务、独立混合精确客户 NE；存在完整续局下普遍黄金比，编码有理输入有多项式构造，下界族使阈值尖锐 | 现行全文内部审读；外部评审未记录。[共享分支](research/current/shared/README.md) |
 | SC-K-2-E / SC-K-LEX-BUDGET / MF-PACK-2 / MF-PURE-CAP / MF-CONT-COMPLETE | **任意 $k\ge2$**、相同有限地点目录、正权原子客户、实际负载成本及完整精确客户续局：普遍存在因子 2 近似纯设施选址均衡 | [完整全 $k$ 证明](research/current/multi_facility/uniform_two.md)、[内部独立审查与方向价值](research/K_FACILITY_AUDIT_2026-10-02.md)；不声称 2 尖锐或多项式构造，外部审稿与优先权待核 |
 | MF-PURE-CAP-POLY / SC-K-LEXMAX-STRONG-HARD / SC-K-LOCAL-PLS | 同一全 $k$ 共同目录模型；前两项分别输入给定固定布局的有理纯分配与整数精确全局 site-uniform 字典序阈值，第三项输入显式有理实例 | 隔离宏客户后离轨精确纯 NE 可条件性位长多项式求得；原证明全局字典序选址精确优化强 NP 完全；充分预算状态可归约为 PLS 邻域局部最优。三项均**未**给完整全 $k$ 多项式 2 倍算法或其困难性。[全推导](research/current/multi_facility/polytime_frontier.md)；内部独立逆审，外部未审；Nashification 是已发表定理，本接口为新推论 |

@@ -1,5 +1,14 @@
 # 现行命题登记：前提、结论、依赖与状态
 
+## 2026-10-04 deviator-specific frozen-overload continuation
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| MF-FROZEN-OVERLOAD-POLY | Fixed MF-MODEL layout and supplied feasible pure seed; ordinary loads at most `B>=0`, stationary frozen loads above `B`, every frozen external client load bounded at all alternatives by residual pure forced-client floors or other frozen loads. | Bit-polynomial full pure NE with the ordinary mover at most `B`; no successful seed-search guarantee. | [Exact proof and cap-41 separation](multi_facility/frozen_overload_completion.md); multiple internal reviews, finite audit, unimplemented imported scheduler, no external review. |
+| SC-K-FROZEN-OVERLOAD-2 | Any supplied rational exact independent-mixed on-path NE plus successful frozen-overload certificates at `B=2a_f` for every actual labeled deviation. | Bit-polynomial complete factor-two continuation; no greedy or deletion-bin premise, no all-input on-path/certificate generator. | MF-FROZEN-OVERLOAD-POLY, compatible labeled continuations and published polynomial default; [full scope](multi_facility/frozen_overload_completion.md), internal review only. |
+
+`MF-FROZEN-OVERLOAD-POLY` accepts a supplied pure deviation seed with ordinary loads at most `B` and stationary frozen loads above `B`, if every frozen client's external load is bounded by the residual pure forced-client floors at all ordinary alternatives and by other frozen loads. Published identical-link Nashification plus reinsertion yields a full pure NE with the mover at most `B` in bit-polynomial time. `SC-K-FROZEN-OVERLOAD-2` combines successful `B=2a_f` certificates for every actual labeled deviation with any supplied rational exact on-path NE and a polynomial default. [Exact identities and limitations](multi_facility/claims.md#mf-frozen-overload-poly-and-sc-k-frozen-overload-2----safe-stationary-overloads), [complete proof](multi_facility/frozen_overload_completion.md), [finite audit](../tests/audits/kfac_frozen_overload.py). Independently internally reviewed conditional theorems; no all-input certificate generator, canonical scheduler implementation or external review.
+
 ## New arbitrary-k conditional construction and fixed-occupancy selector boundaries (2026-10-04)
 
 | ID | Exact scope | Result and boundary | Current proof / audit |
