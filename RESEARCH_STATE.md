@@ -1,5 +1,7 @@
 # 当前研究状态（2026-10-03）
 
+**2026-10-04 精确选择器边界。** [SC-K-BOX-POTENTIAL-STRONG-HARD](research/current/multi_facility/polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization)复用已有 3-PARTITION 族，证明即使贪心打开所有地点、所有公共轻客户分配都满足完整上下盒，精确求全局客户势最小值仍强 NP 难。这仅排除精确优化势函数的通用多项式选择器；同族已有容易求出的精确设施均衡。一般盒内均衡存在性及位长多项式选取仍未决，不能将 oracle 难性升级成目标难性。
+
 **2026-10-04 条件性算法推进。** [SC-K-INCIDENCE-BOX-DP / SC-K-HEIGHT-TWO-INCIDENCE-2](research/current/multi_facility/bounded_incidence_box.md)精确判定贪心盒内的站纯客户 NE：冻结重客户与单选项客户，对每个已占站列举至多 `2^d` 个入站轻客户子集，将逐名二部关联图宽 `tau` 的分解转成站点约束图宽至多 `d(tau+1)-1`。当 `d,tau` 固定，选择器位长多项式；浅层有向轻图保证盒可行，接 BOX-TO-2 得完整多项式因子 2。此结果只扩展可算子类，不证明一般贪心盒可行或任意输入的目标算法；已给出数学证明，外审与规范实现未完成。
 
 以 [README](README.md) 了解模型与文件地图；逐命题严格条件和五轴审查状态分别见 [现行登记](research/current/claims.md)、[审查表](research/review_status.json)。本页只维护**未来前沿与工作分配**，不替代证明。

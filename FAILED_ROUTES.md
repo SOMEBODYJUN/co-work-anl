@@ -1,5 +1,11 @@
 # 失败路线与仍可使用的边界
 
+## 精确求贪心完整盒内全局客户势最小值作为通用选择器：强 NP 难
+
+[SC-K-BOX-POTENTIAL-STRONG-HARD](research/current/multi_facility/polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization)复用已有的 3-PARTITION 归约：每站一个重为 `mB+1` 的私有客户，公共项目总重 `mB`。贪心在每站各开一家，最后分数 `gamma=mB+1`；**每种**公共项目分配都在完整盒内。势函数精确最小值达到均分阈值，当且仅当项目有 3-划分。因此即使盒不限制分配，用“精确找到盒内全局势最小点”替代位长多项式选均衡也会要求解决强 NP 难问题。此前浅层有向图的全盒势最小点定理给的是存在性及正确性，不能据此称为高效算法。
+
+失败原因属于**指定优化 oracle 的复杂度**，并非盒内均衡不存在或全输入因子 2 搜索困难：该归约族本身可多项式求精确设施均衡。可回收的边界是继续寻找一个无需全局势最小值的局部选择、特殊图算法或其他离轨证书；有限势下降过程尚无输入位长多项式步数界。
+
 旧路线与旧稿的逐文件来源保留在 [history](history)；本页只记当前研究前沿中容易被重复误用的障碍。其他已驳斥命题参见[历史失败路线](history/curation-2026-10-01/FAILED_ROUTES.md)与[超图](research/graph.json)。
 
 ## 把局部弱 NP 困难性直接嵌入共同目录全局判定：两个具体移植失败

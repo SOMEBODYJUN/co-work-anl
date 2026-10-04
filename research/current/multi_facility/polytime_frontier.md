@@ -129,6 +129,45 @@ stability certificate. The four lexmax transfer inequalities in Sections
 global lexmax potential exactly cannot serve as a polynomial algorithm unless
 P=NP; the off-path Nashification step no longer accounts for that obstacle.
 
+## SC-K-BOX-POTENTIAL-STRONG-HARD: exact boxed potential optimization
+
+**Exact scope.** Given a positive-integer MF-MODEL input, run the specified
+SC-K-GREEDY-BUDGET algorithm, freeze its occupied layout and multiplicities,
+and consider site-pure assignments satisfying every full box
+`q_s gamma <= W_s <= (q_s+1) gamma`. Deciding whether the minimum of the
+exact site-uniform customer potential over these assignments is at most a
+given rational threshold is strongly NP-complete, even when the greedy
+layout has one facility at every site, every movable customer is lighter
+than `gamma`, and every such customer can choose every occupied site.
+This is the complexity of **exact global optimization of this selector**;
+it says nothing about finding *some* boxed NE or a factor-two certificate.
+
+**Proof.** Reuse the 3-PARTITION instance and the `m`-site construction in
+SC-K-LEXMAX-STRONG-HARD above, with `X=mB` and private weight `P=X+1`
+at each site. The first greedy placement scores `P+X=2X+1`; after that,
+each unused site scores `P=X+1>(P+X)/2=X+1/2`, while adding a seat at any
+opened site can only lower its score further. Hence all `m=k` sites open,
+each with `q_s=1`, and the last score is `gamma=P`. All item weights
+`a_i<gamma`. For any assignment of the items, writing `S_s` for the
+total assigned to site `s`, `0<=S_s<=X` and
+`W_s=P+S_s in [P,2P]`; thus *every* assignment lies in the full boxes.
+
+The exact potential `Phi=sum_s (W_s^2-sum_{i at s} w_i^2)/2` differs from
+`(sum_s S_s^2)/2` by the assignment-independent constant
+`PX-(sum_i a_i^2)/2` (the private self-weight terms cancel).
+Since `sum_s S_s=mB`, Cauchy--Schwarz gives
+`sum_s S_s^2>=mB^2`, with equality exactly when all `S_s=B`.
+Set the threshold `K=PX+(mB^2-sum_i a_i^2)/2`. Then
+`min Phi<=K` iff the 3-PARTITION input is YES: the
+`B/4<a_i<B/2` bounds force each equal-sum group to have three items.
+The construction and threshold have polynomial encoding on the strongly
+bounded source family. A site assignment is a polynomial certificate, so
+the threshold problem is strongly NP-complete. Every global potential
+minimizer is an exact customer NE because all assignments are boxed here;
+nevertheless the same family already has an easily constructed exact
+facility equilibrium, as shown above. Internal independent algebraic
+review completed; no external review or novelty claim is made.
+
 ## SC-K-LOCAL-PLS: the four budgets need only local optimality
 
 **Statement.** For explicit rational input, there is a polynomial-size state

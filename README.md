@@ -1,5 +1,7 @@
 # 两阶段设施选址：可生长的研究基础
 
+**最新精确选择器边界（2026-10-04）：**[SC-K-BOX-POTENTIAL-STRONG-HARD](research/current/multi_facility/polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization)证明，精确优化贪心完整盒内的全局客户势函数强 NP 难，甚至全部公共轻客户分配都自动在盒内。它复用已有 3-PARTITION 族，堵住将浅层存在性证明中的全局最小点直接当作多项式算法的路线；同族本身已有易求精确设施均衡，故不构成因子 2 构造困难性。[命题身份](research/current/multi_facility/claims.md#sc-k-box-potential-strong-hard----exact-full-box-potential-oracle)和[失败机制](FAILED_ROUTES.md#精确求贪心完整盒内全局客户势最小值作为通用选择器强-np-难)记录准确边界。当前真正缺口仍是异重部分交叠的一般盒内均衡存在性及高效选择，或绕开盒条件的证书。
+
 **最新稀疏关联算法（2026-10-04）：**[逐名客户关联树宽与度数定理](research/current/multi_facility/bounded_incidence_box.md)把贪心负载盒内的精确客户均衡判定写成有限域树分解 DP。固定轻客户—站点二部图的树宽与**两侧逐名最大度数**时，能按输入位长多项式精确判定并选出盒内均衡；结合已有浅层有向图存在性证明，在两类条件同时成立的输入上得到完整的多项式因子 2 续局。一般输入的多项式因子 2 构造仍开放，且“只有树宽有界”没有这个运行时间保证。
 
 **最新条件算法（2026-10-03）：**[轻客户锚定星形分量定理](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)允许任意多叶、每条边任意不同轻权，以及冻结的跨分量重客户。按叶边权重递减、跨叶最小当前负载选择，每名轻客户仅处理一次，保住贪心负载盒并构造精确客户 NE；与[盒内离轨完成](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-singleton-reset-and-sc-k-greedy-box-to-2)组合成位长多项式完整 2 倍续局。[严格三站例](examples/multi_facility/greedy_star_edges.json)不属旧 RANGE、ALL-OR-ONE、NESTED-ANCHOR 或 UNIFORM-LIGHT 条件。一般部分交叠图仍开放。

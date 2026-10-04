@@ -137,6 +137,27 @@ average load P+B forces exact 3-partition. Full quantifiers and encoding:
 [polytime frontier](polytime_frontier.md). **Status:** direct internal proof
 awaiting external review and novelty check; no code or numerical inference.
 
+## SC-K-BOX-POTENTIAL-STRONG-HARD -- exact full-box potential oracle
+
+**Statement:** for explicit positive-integer MF-MODEL input, let the
+SC-K-GREEDY-BUDGET layout, multiplicities and last score `gamma` be fixed.
+Deciding whether the minimum exact site-uniform customer potential among
+site-pure assignments obeying every full greedy box is at most a supplied
+threshold is strongly NP-complete. This holds with `k=|S|`, one greedy
+facility per site, and all movable clients of weight below `gamma`
+covering every occupied site. The quantifier is over the **global potential
+minimum**, not over existence or efficient discovery of some boxed NE.
+
+**Dependencies/evidence:** the same 3-PARTITION family as
+SC-K-LEXMAX-STRONG-HARD has private weight `P=mB+1`, greedy
+`q_s=1, gamma=P`, and vacuous full boxes. Its potential minimum reaches
+`PX+(mB²-sum_i a_i²)/2`, `X=mB`, iff the items admit an exact
+3-partition. [Full reduction and threshold](polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization).
+**Status:** internally derived and independently algebraically reviewed;
+external review and novelty check pending. The same reduction family
+admits an easy exact facility equilibrium, so no target-algorithm
+hardness follows.
+
 ## SC-K-LOCAL-PLS -- a polynomial neighborhood sufficient for factor two
 
 **Statement:** on explicit rational MF-MODEL input, local maxima of a
