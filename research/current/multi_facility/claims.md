@@ -10,6 +10,14 @@ checks; external review = not recorded; novelty = not certified. A passing compu
 is not the reason for any universal quantifier below. The repository's current
 claim ledger and [audit](../../K_FACILITY_AUDIT_2026-10-02.md) record the integrated scope.
 
+## SC-K-INCIDENCE-BOX-DP and SC-K-HEIGHT-TWO-INCIDENCE-2 -- sparse boxed selection
+
+**Objects/domain:** MF-MODEL with explicit positive binary rational input, common nonempty catalog, labeled `k>=2`, greedy positive-reach occupancy and score `gamma`; freeze clients of weight at least `gamma` and clients with one occupied option. In the remaining individually named light client–occupied site incidence graph, both sides have maximum degree `d` and treewidth `tau`, with `d,tau` fixed constants.
+
+**Exact statements:** the first claim decides and constructs a boxed site-pure/within-site-uniform exact customer NE in input-bit-polynomial time, if one exists. It does not promise feasibility. The second additionally assumes every remaining client has exactly two occupied options and the opening-directed site graph has longest directed path at most two edges; for every such input it constructs a complete exact customer continuation and a factor-two labeled facility profile in input-bit-polynomial time.
+
+**Dependencies/evidence:** local conditional-cost identity in MF-MODEL, greedy load box, finite-domain CSP and explicit treewidth conversion in [the new proof](bounded_incidence_box.md); SC-K-HEIGHT-TWO-BOX-EXISTS supplies feasibility for the second claim and SC-K-GREEDY-BOX-TO-2 supplies all off-path states. Fixed-width decomposition uses Bodlaender (1996) as an imported algorithm. One independent internal inverse review of the CSP argument; no external review or canonical software. Neither claim decides arbitrary mixed on-path strategies, nor yields a polynomial algorithm for varying `d,tau` or all inputs.
+
 ## SC-K-2-E -- uniform factor-two existence
 
 **Objects/domain:** MF-MODEL; any finite number of clients, positive real atomic

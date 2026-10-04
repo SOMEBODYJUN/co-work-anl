@@ -85,6 +85,8 @@
 | SC-K-CONVERGING-PATH-BOX-2 | 贪心轻交叠分量为四站汇聚路径 D--B--A--C，三条边各恰一名轻客户，初始站 D/B/C，重数 $q_D\ge q_B\ge q_A=q_C$，A 原负载恰下盒 | 首轮 Z 判断后分 T 先动或 X 先动，至多七次严格改派都保持完整盒，终局精确 NE；与 BOX-TO-2 组合得位长多项式完整 2 倍续局。只覆盖指定三客结构 | [全分支证明](multi_facility/converging_path_box.md)、[精确有限态审查](../../tests/audits/kfac_converging_path.py)；内部逆审，外审/规范实现未完成。 |
 
 | SC-K-HEIGHT-TWO-BOX-EXISTS | 贪心轻客户均恰有两个占站选项，按站点首开先后定向后的图中每条有向路径至多两条边；任意分叉、汇合及各边任意异轻权 | 完整贪心盒内的**每个**客户势全局最小点都是真正客户 NE；从而存在盒 NE 与完整 2 倍续局。整批退回上游来源池的 first-crossing 交换给出严格降势；**未证明位长多项式求最小点** | [全证明](multi_facility/height_two_box.md)；两路独立内部逆审，外审、优先权和规范实现未完成。 |
+| SC-K-INCIDENCE-BOX-DP | 显式正有理共同目录输入、贪心正 reach；冻结权至少 `gamma` 与单占站选项客户；剩余轻客户—已占站**逐名**二部图的树宽 `tau` 和两侧最大度 `d` 均固定 | 精确判定并构造站纯/站内均匀全盒客户 NE，位长多项式；不可行时只否定这个固定客户的盒内选择器 | [约束、分解与位复杂度](multi_facility/bounded_incidence_box.md)；Bodlaender 固定树宽算法为导入，内部逆审，无外审或规范软件。 |
+| SC-K-HEIGHT-TWO-INCIDENCE-2 | 上一行全部条件；另每名轻客户恰有两个已占选项，首开定向后的最长有向路径至多两边 | 浅层存在性、关联 DP 与盒内离轨接口合取，位长多项式构造因子 2 布局及**完整精确客户 NE 续局**；不声称全输入算法 | [组合证明](multi_facility/bounded_incidence_box.md)和[浅层存在性](multi_facility/height_two_box.md)；两路内部逆审，无外审与规范实现。 |
 
 | SC-K-CONVERGING-PATH-4MOVE-2 | 贪心轻分量 D--B--A--C 每边恰一轻客户，初始站 D/B/C，开启方向 D→B→A←C；重数按边非增，但 A 无需紧下盒、A/C 重数可不同 | 固定次序检查 Z、T、X、可能新改善的 T、可能返程的 Z，**至多四次**严格改派保持盒并完成 NE；BOX-TO-2 得位长多项式完整 2 倍续局，严格扩大旧七步小类 | [全分支证明](multi_facility/converging_four_moves.md)、[广范围精确有限审查](../../tests/audits/kfac_converging_four_moves.py)；内部逆审，外审/规范实现未完成。 |
 

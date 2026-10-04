@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Facility location mathematical dependency hypergraph",
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -2005,6 +2005,30 @@
         "examples/multi_facility/greedy_height_two_unequal.json"
       ],
       "status": "finite arithmetic check"
+    },
+    {
+      "id": "SC-K-INCIDENCE-BOX-DP",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Bounded-incidence exact box-NE selector",
+      "detail": "Fixed two-sided individual-client degree d and bipartite incidence treewidth tau yield a bit-polynomial exact feasibility decision and witness for frozen-heavy site-uniform boxed NE; no general feasibility assertion.",
+      "refs": [
+        "research/current/multi_facility/bounded_incidence_box.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
+    },
+    {
+      "id": "SC-K-HEIGHT-TWO-INCIDENCE-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two on sparse shallow light graphs",
+      "detail": "Two-option light clients with opening-directed depth at most two plus fixed individual incidence degree and treewidth admit a boxed NE selector and full exact factor-two continuation.",
+      "refs": [
+        "research/current/multi_facility/bounded_incidence_box.md",
+        "research/current/multi_facility/height_two_box.md"
+      ],
+      "status": "conditional polynomial theorem; internally reviewed"
     }
   ],
   "hyperedges": [
@@ -4290,6 +4314,37 @@
         "tests/audits/kfac_height_two.py"
       ],
       "status": "finite arithmetic check"
+    },
+    {
+      "id": "e-mf-incidence-box-dp",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-INCIDENCE-BOX-DP",
+      "statement": "Exact site subset domains and client best-response constraints form a finite-domain CSP; expanding client bags to their site neighborhoods bounds primal width by d(tau+1)-1.",
+      "refs": [
+        "research/current/multi_facility/bounded_incidence_box.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-height-two-incidence-2",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-INCIDENCE-BOX-DP",
+        "SC-K-HEIGHT-TWO-BOX-EXISTS",
+        "SC-K-GREEDY-BOX-TO-2"
+      ],
+      "conclusion": "SC-K-HEIGHT-TWO-INCIDENCE-2",
+      "statement": "The shallow graph proof supplies feasibility, the sparse-incidence DP selects an exact boxed NE in bit-polynomial time, and BOX-TO-2 completes all labeled deviations.",
+      "refs": [
+        "research/current/multi_facility/bounded_incidence_box.md"
+      ],
+      "status": "internal proof"
     }
   ]
 }

@@ -1,5 +1,7 @@
 # 两阶段设施选址：可生长的研究基础
 
+**最新稀疏关联算法（2026-10-04）：**[逐名客户关联树宽与度数定理](research/current/multi_facility/bounded_incidence_box.md)把贪心负载盒内的精确客户均衡判定写成有限域树分解 DP。固定轻客户—站点二部图的树宽与**两侧逐名最大度数**时，能按输入位长多项式精确判定并选出盒内均衡；结合已有浅层有向图存在性证明，在两类条件同时成立的输入上得到完整的多项式因子 2 续局。一般输入的多项式因子 2 构造仍开放，且“只有树宽有界”没有这个运行时间保证。
+
 **最新条件算法（2026-10-03）：**[轻客户锚定星形分量定理](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)允许任意多叶、每条边任意不同轻权，以及冻结的跨分量重客户。按叶边权重递减、跨叶最小当前负载选择，每名轻客户仅处理一次，保住贪心负载盒并构造精确客户 NE；与[盒内离轨完成](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-singleton-reset-and-sc-k-greedy-box-to-2)组合成位长多项式完整 2 倍续局。[严格三站例](examples/multi_facility/greedy_star_edges.json)不属旧 RANGE、ALL-OR-ONE、NESTED-ANCHOR 或 UNIFORM-LIGHT 条件。一般部分交叠图仍开放。
 
 **最新算法边界（2026-10-03）：**[两异重轻客户参数族](research/current/multi_facility/polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights)证明，贪心布局上即使已有盒内精确客户均衡，对不同轻权客户最小化**带全部下盒的精确势**仍可能唯一选到越上盒的均衡。这隔离了同重费用流逆路径论证的失效；全输入位长多项式 2 倍算法及盒内 NE 的普遍存在性依然开放。[失败机制](FAILED_ROUTES.md#在异重轻客户下用下盒约束的全局势最小化替代同重费用流错误)、[逐命题记录](research/current/multi_facility/claims.md#sc-k-two-light-lower-potential-no----unequal-light-weights-defeat-the-flow-extension)、[整数输入](examples/multi_facility/greedy_two_light_potential.json)与[精确审查](tests/audits/kfac_two_light_potential.py)给出恢复入口。
@@ -107,6 +109,7 @@
 | `research/current/shared/three_site_exact_hardness.md` | 将局部 SUBSET SUM 客户谱嵌入三地点共同目录，逐一堵住同址、AB、AC、BC 的所有逃逸；证明固定有理 $1\le a<(1+\sqrt3)/2$ 的弱 NP 完全性，列出两套守卫及端点正权预算障碍。研究下一段复杂度前沿时先读，切勿把端点当模型相变。 |
 | `research/current/shared/five_site_exact_hardness.md`、`research/FIVE_SITE_AUDIT_2026-10-02.md` | 五地点新覆盖、强制桥宏原子和全布局守卫证明每个固定有理 $1<a<\phi$ 的弱 NP 完全性；审查页核对原目标同一性、2024 年广义困难性优先权边界及与 A/B 成果的相对价值。研究实例复杂度或组织 A 篇时读。 |
 | `research/current/multi_facility/uniform_two.md`、`research/K_FACILITY_AUDIT_2026-10-02.md` | 任意 $k$ 的共同目录因子 2 存在性证明、逐式逆审、方法边界及面向领域的价值解释；研究多设施稳定性时先读。无多项式构造或因子 2 尖锐性结论。 |
+| `research/current/multi_facility/bounded_incidence_box.md` | 固定逐名轻客户—站点二部关联图树宽 `tau` 与两侧最大度 `d` 的精确盒内 NE 有限域 DP、树分解转换和位复杂度；结合浅层有向图存在性得完整多项式因子 2。审查稀疏交叠算法时读；只有树宽有界、类型合并或一般输入均不由本命题覆盖。 |
 | `research/current/multi_facility/polytime_frontier.md` | 精确全局字典序选址的强 NP 难性、多项式局部邻域、贪心预算、全异址 **2 倍**与重数类区间证书；双地点混合重数、任意大“全站共有或单站私有”及“嵌套锚站部分交叠”分量的多项式构造，均处理单设施源预算。给出坏修复、固定布局字典序、势最小化、无条件锚站列表失败和三站下降改派停在非 NE 的不同障碍。攻全 $k$ 高效算法时先读；非嵌套或无共同锚站的混合重数部分交叠仍开放。 |
 | `examples/multi_facility/greedy_nested_anchor.json`、`tests/audits/kfac_nested_anchor.py` | 三站五客户正整数例及独立 Fraction 复算：严格贪心、嵌套选项列表得到精确 NE、旧 RANGE 失败；交换两个选项集后无条件列表法非 NE，但另一分配仍是 NE。检验嵌套锚站证明的有限边界时读，不能代替全称证明。 |
 | `examples/multi_facility/greedy_star_edges.json`、`tests/audits/kfac_star_edges.py` | 六设施、三站锚定星形的严格整数分离例和独立 Fraction 检查；两名异重轻客户的 HM/HL 选项不可比，旧 RANGE、ALL-OR-ONE、NESTED-ANCHOR、UNIFORM-LIGHT 均不适用。审查 SC-K-STAR-LIGHT-GREEDY-2 的实际条件、单步修复及盒/NE 时读；脚本不证明普遍算法。 |
