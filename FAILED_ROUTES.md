@@ -1,5 +1,14 @@
 # 失败路线与仍可使用的边界
 
+## 把浅层盒内全局势最小化延伸到深度三：选择规则失败
+
+[严格贪心深度三树](research/current/multi_facility/depth_three_box_boundary.md)仅有六个满足完整上下盒的分配；全盒势函数唯一最小者使重 150 的 Z 客户从 D 返回 C 严格改善，因为 `1451>1450`，但 C 将越过盒上界。原贪心状态本身是唯一盒内精确客户 NE。故浅层定理的“盒内每个势最小点均为 NE”不能原样扩到深度三，**不**意味着盒内 NE 不存在或 2 倍构造失效。
+
+## 在完整贪心盒中选设施收益字典序最大者：也会选错客户均衡
+
+[另一条严格贪心路径](research/current/multi_facility/boxed_lexmax_boundary.md)恰有 24 个盒内轻客户分配；唯一字典序最大设施收益向量处，重 4 的 Z 从 L 回 N 严格改善 `159>150`，尽管会越 N 上盒。原始盒内分配仍是客户 NE。这个反例仅打击固定占站、固定重数、先限制盒再取 lexmax 的选择器；它不同于对所有选址和客户分配做全局 lexmax 的旧存在性证明。
+
+
 ## 精确求贪心完整盒内全局客户势最小值作为通用选择器：强 NP 难
 
 [SC-K-BOX-POTENTIAL-STRONG-HARD](research/current/multi_facility/polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization)复用已有的 3-PARTITION 归约：每站一个重为 `mB+1` 的私有客户，公共项目总重 `mB`。贪心在每站各开一家，最后分数 `gamma=mB+1`；**每种**公共项目分配都在完整盒内。势函数精确最小值达到均分阈值，当且仅当项目有 3-划分。因此即使盒不限制分配，用“精确找到盒内全局势最小点”替代位长多项式选均衡也会要求解决强 NP 难问题。此前浅层有向图的全盒势最小点定理给的是存在性及正确性，不能据此称为高效算法。

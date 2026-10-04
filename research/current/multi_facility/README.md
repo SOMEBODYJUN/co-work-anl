@@ -1,5 +1,12 @@
 # Common-catalog arbitrary-k branch
 
+## Adaptive reset and exact selector boundaries (2026-10-04)
+
+[Adaptive original-pool reset and forced-client floors](adaptive_reset_floor.md) extend the conditional polynomial factor-two construction: a certified **pure** equilibrium's forced-client floor can justify a larger source deletion cap than `2 gamma`. The double-LPT recognition test strictly includes its predecessor; an exact triangle instance and [finite audit](../../../tests/audits/kfac_adaptive_reset.py) separate them. The imported polynomial scheduler has no canonical local implementation, and no all-input recognition guarantee is proved.
+
+Two independent [depth-three boxed-potential](depth_three_box_boundary.md) and [boxed lexmax](boxed_lexmax_boundary.md) counterexamples show that specific fixed-occupancy selection rules can choose a customer non-equilibrium even when a boxed equilibrium exists. Each has a self-contained exact audit. They leave the arbitrary-k all-input bit-polynomial factor-two construction and general boxed-NE existence open.
+
+
 ## Latest conditional advances (2026-10-04)
 
 The [site-primal local-weight DP](local_weight_box_dp.md) decides the frozen-heavy full-box customer NE problem in input-bit-polynomial time when primal treewidth and the number of distinct incident light weights per site are fixed. It allows arbitrarily many clients per edge; paired with the height-two existence theorem and BOX-TO-2, it gives a complete conditional factor-two constructor. The [inward-star queue algorithm](inward_star_box.md) handles the opposite orientation from the earlier anchored-star algorithm, with arbitrarily many distinct light weights at the late center. The [exact boxed-potential hardness proof](polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization) blocks global potential optimization as a generic selector, while leaving the full factor-two construction problem open. These three claims are separately scoped in the [branch ledger](claims.md).

@@ -1,5 +1,16 @@
 # 现行命题登记：前提、结论、依赖与状态
 
+## New arbitrary-k conditional construction and fixed-occupancy selector boundaries (2026-10-04)
+
+| ID | Exact scope | Result and boundary | Current proof / audit |
+| --- | --- | --- | --- |
+| SC-K-ADAPTIVE-RESET | Greedy `gamma>0`, supplied explicitly rational independent-mixed on-path exact NE, every payoff at least `gamma`, and certified original-pool deletion bins at cap twice the source-site minimum payoff (or a supplied floor between `gamma` and that minimum). | Bit-polynomial complete exact factor-two continuation for the supplied occupancy; does not find arbitrary on-path NE or deletion bins. | [All-deviation proof](multi_facility/adaptive_reset_floor.md), internal reverse review; imported scheduling algorithm unimplemented, no external review. |
+| SC-K-FORCED-FLOOR | Every **pure** exact on-path NE; forced-client weights at each occupied site and the explicit `eta` formula. | Every facility at that site earns at least `eta`; no mixed-NE assertion. | [Atomic best-response proof](multi_facility/adaptive_reset_floor.md), internal review, no external review. |
+| SC-K-ADAPTIVE-DOUBLE-LPT-2 | First original-pool `q_s`-bin LPT has minimum `gamma`; second `(q_s-1)`-bin LPT has maximum `2 max(gamma,eta_s)` for each multisite source. | Input-bit-polynomial complete exact factor two conditional constructor; strict triangle passes while old `2 gamma` deletion packing is impossible. | [Full proof and example](multi_facility/adaptive_reset_floor.md), [finite audit](../tests/audits/kfac_adaptive_reset.py); imported scheduler not locally implemented or externally reviewed. |
+| SC-K-DEPTH-THREE-BOX-POTENTIAL-NO | One strict positive-integer greedy tree, directed depth three, one light atom per edge. | Unique boxed potential minimizer is not customer NE; a boxed NE exists. Specific selector obstruction only. | [Exhaustive analytic proof](multi_facility/depth_three_box_boundary.md), [Fraction audit](../tests/audits/kfac_depth_three_box.py); no external review. |
+| SC-K-BOX-LEXMAX-NO | One strict positive-integer greedy light path with heterogeneous paired edge weights. | Unique boxed lexmax load vector is not customer NE; a boxed NE exists. Specific selector obstruction only. | [Analytic classification](multi_facility/boxed_lexmax_boundary.md), [Fraction audit](../tests/audits/kfac_box_lexmax.py); no external review. |
+
+
 先读[规范模型](model.md)。逐命题的[五轴状态登记](../review_status.json)分别记录来源证明、现行 Markdown 重写、内部审读、外部评审与软件实现，并由图生成器检查其与命题节点的状态一致性。共同目录的完整主稿与现行全分支重写经过多轮内部审读；实例证书仅核查该实例。原稿和程序追溯见[资产索引](../assets.json)；逻辑合取和反例边见[超图](../graph.json)。
 
 | ID | 作用域与量词 | 结论 | 必需依赖与状态 |

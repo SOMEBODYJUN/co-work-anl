@@ -2065,6 +2065,102 @@
         "research/current/multi_facility/claims.md"
       ],
       "status": "strong NP-hardness of exact boxed-potential oracle only"
+    },
+    {
+      "id": "SC-K-ADAPTIVE-RESET",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Adaptive Reset",
+      "detail": "conditional complete exact factor-two continuation; internally checked; unrefereed",
+      "refs": [
+        "research/current/multi_facility/adaptive_reset_floor.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional complete exact factor-two continuation; internally checked; unrefereed"
+    },
+    {
+      "id": "SC-K-FORCED-FLOOR",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Forced Floor",
+      "detail": "complete pure-NE forced-client lower bound; internally checked; unrefereed",
+      "refs": [
+        "research/current/multi_facility/adaptive_reset_floor.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "complete pure-NE forced-client lower bound; internally checked; unrefereed"
+    },
+    {
+      "id": "SC-K-ADAPTIVE-DOUBLE-LPT-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Adaptive Double Lpt 2",
+      "detail": "conditional polynomial factor-two proof; imported scheduling lemma; unrefereed",
+      "refs": [
+        "research/current/multi_facility/adaptive_reset_floor.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "conditional polynomial factor-two proof; imported scheduling lemma; unrefereed"
+    },
+    {
+      "id": "SC-K-DEPTH-THREE-BOX-POTENTIAL-NO",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Depth Three Box Potential No",
+      "detail": "exact selector counterexample, finite arithmetic audited; unrefereed",
+      "refs": [
+        "research/current/multi_facility/depth_three_box_boundary.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "exact selector counterexample, finite arithmetic audited; unrefereed"
+    },
+    {
+      "id": "SC-K-BOX-LEXMAX-NO",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Box Lexmax No",
+      "detail": "exact selector counterexample, finite arithmetic audited; unrefereed",
+      "refs": [
+        "research/current/multi_facility/boxed_lexmax_boundary.md",
+        "research/current/multi_facility/claims.md"
+      ],
+      "status": "exact selector counterexample, finite arithmetic audited; unrefereed"
+    },
+    {
+      "id": "E-K-ADAPTIVE-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Adaptive reset triangle and augmented target",
+      "detail": "Independent exact finite arithmetic audit; no universal proof follows from execution.",
+      "refs": [
+        "research/current/multi_facility/adaptive_reset_floor.md",
+        "tests/audits/kfac_adaptive_reset.py"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "E-K-DEPTH-THREE-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Depth-three strict greedy selector failure",
+      "detail": "Independent exact finite arithmetic audit; no universal proof follows from execution.",
+      "refs": [
+        "research/current/multi_facility/depth_three_box_boundary.md",
+        "tests/audits/kfac_depth_three_box.py"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "E-K-BOX-LEXMAX-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Boxed lexmax selector failure",
+      "detail": "Independent exact finite arithmetic audit; no universal proof follows from execution.",
+      "refs": [
+        "research/current/multi_facility/boxed_lexmax_boundary.md",
+        "tests/audits/kfac_box_lexmax.py"
+      ],
+      "status": "finite arithmetic check"
     }
   ],
   "hyperedges": [
@@ -4427,6 +4523,132 @@
         "research/current/multi_facility/polytime_frontier.md"
       ],
       "status": "internal reduction"
+    },
+    {
+      "id": "e-e-k-adaptive-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-ADAPTIVE-AUDIT"
+      ],
+      "conclusion": "SC-K-ADAPTIVE-DOUBLE-LPT-2",
+      "statement": "This exact arithmetic script checks the displayed finite witness only.",
+      "refs": [
+        "research/current/multi_facility/adaptive_reset_floor.md",
+        "tests/audits/kfac_adaptive_reset.py"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "e-e-k-depth-three-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-DEPTH-THREE-AUDIT"
+      ],
+      "conclusion": "SC-K-DEPTH-THREE-BOX-POTENTIAL-NO",
+      "statement": "This exact arithmetic script checks the displayed finite witness only.",
+      "refs": [
+        "research/current/multi_facility/depth_three_box_boundary.md",
+        "tests/audits/kfac_depth_three_box.py"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "e-e-k-box-lexmax-audit",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-K-BOX-LEXMAX-AUDIT"
+      ],
+      "conclusion": "SC-K-BOX-LEXMAX-NO",
+      "statement": "This exact arithmetic script checks the displayed finite witness only.",
+      "refs": [
+        "research/current/multi_facility/boxed_lexmax_boundary.md",
+        "tests/audits/kfac_box_lexmax.py"
+      ],
+      "status": "finite arithmetic check"
+    },
+    {
+      "id": "e-sc-k-adaptive-reset",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "MF-PACK-2",
+        "MF-PURE-CAP-POLY",
+        "SC-K-GREEDY-SINGLETON-RESET",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-ADAPTIVE-RESET",
+      "statement": "Source-dependent original-pool deletion cap and all-source reset yield polynomial exact full factor-two continuation from supplied NE and bins.",
+      "refs": [
+        "research/current/multi_facility/adaptive_reset_floor.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-sc-k-forced-floor",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL"
+      ],
+      "conclusion": "SC-K-FORCED-FLOOR",
+      "statement": "Forced atoms above a site-minimum load occupy distinct facilities; remaining forced weight bounds that minimum.",
+      "refs": [
+        "research/current/multi_facility/adaptive_reset_floor.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-sc-k-adaptive-double-lpt-2",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-FORCED-FLOOR",
+        "SC-K-ADAPTIVE-RESET",
+        "MF-PURE-CAP-POLY",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-ADAPTIVE-DOUBLE-LPT-2",
+      "statement": "Two LPT checks plus imported pure-NE range preservation certify a higher source payoff floor and the adaptive deletion cap.",
+      "refs": [
+        "research/current/multi_facility/adaptive_reset_floor.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-sc-k-depth-three-box-potential-no",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-HEIGHT-TWO-BOX-EXISTS"
+      ],
+      "conclusion": "SC-K-DEPTH-THREE-BOX-POTENTIAL-NO",
+      "statement": "One exact depth-three strict-greedy tree has a unique boxed potential minimizer violating a best response; it only blocks this selector extension.",
+      "refs": [
+        "research/current/multi_facility/depth_three_box_boundary.md"
+      ],
+      "status": "exact obstruction"
+    },
+    {
+      "id": "e-sc-k-box-lexmax-no",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET"
+      ],
+      "conclusion": "SC-K-BOX-LEXMAX-NO",
+      "statement": "One exact strict-greedy path has a unique boxed lexmax assignment violating a best response; it blocks the boxed selector.",
+      "refs": [
+        "research/current/multi_facility/boxed_lexmax_boundary.md"
+      ],
+      "status": "exact obstruction"
     }
   ]
 }

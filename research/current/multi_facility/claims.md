@@ -1,5 +1,14 @@
 # Exact claim identities: common catalog, arbitrary k
 
+## 2026-10-04 adaptive continuation and selector boundaries
+
+- **SC-K-ADAPTIVE-RESET:** At a positive-score greedy occupancy, a supplied explicitly rational independent-mixed exact on-path NE with every facility payoff at least `gamma` admits a bit-polynomial complete factor-two continuation if, for every `q_u>=2`, its original greedy pool is supplied in `q_u-1` bins each of load at most twice the source-site minimum payoff `b_u`, or one singleton atom above that cap. Any certified `gamma<=rho_u<=b_u` may replace `b_u`. The one-seat reset and all labeled target cases are proved in [adaptive reset](adaptive_reset_floor.md). Conditional theorem; no claim of an all-input selector; no canonical scheduler implementation, external review or priority check.
+- **SC-K-FORCED-FLOOR:** In a **pure** exact NE, sort the weights `v_i` of clients with only one occupied site `s`, pad by zero, set `D=F-sum_{j<q_s}v_j`. Every facility at `s` has load at least `eta_s=min_{0<=h<q_s} max(v_{h+1},D/(q_s-h))`. Direct atomic best-response proof in the same document; **not asserted for mixed NE**.
+- **SC-K-ADAPTIVE-DOUBLE-LPT-2:** At the greedy occupancy, require the `q_s`-bin LPT initial packing to have every facility load at least `gamma` and the original-pool `(q_s-1)`-bin deletion LPT to have loads at most `2 max(gamma,eta_s)`. Imported restricted-identical-link range-preserving Nashification produces a pure NE satisfying the floor; ADAPTIVE-RESET completes an input-bit-polynomial factor-two rule. A strict eight-facility unequal-weight triangle passes while the old `2 gamma` original-pool deletion premise is impossible. [Exact 16+24-deviation finite audit](../../tests/audits/kfac_adaptive_reset.py). Imported scheduler is not implemented locally; no all-input polynomial result.
+- **SC-K-DEPTH-THREE-BOX-POTENTIAL-NO:** A positive-integer `k=15` strict greedy tree with a three-edge directed path has exactly six boxed light assignments. Its unique full-box potential minimum fails a client best reply; its initial state is the unique boxed exact NE. [Analytic table](depth_three_box_boundary.md), [exact Fraction audit](../../tests/audits/kfac_depth_three_box.py). Limits the height-two **global potential selector**, not boxed-NE existence or factor two.
+- **SC-K-BOX-LEXMAX-NO:** A positive-integer `k=11` strict greedy four-site light path with two unequal light clients per edge has 24 boxed assignments. Its unique lexicographically greatest **boxed** facility-load vector is not a client NE; the initial boxed state is an exact NE. [Analytic classification](boxed_lexmax_boundary.md), [exact Fraction audit](../../tests/audits/kfac_box_lexmax.py). Fixed greedy occupancy and specified selection rule only.
+
+
 Claims added on 2026-10-02 are version 1 of that date; the new two-site,
 all-or-one component and fixed-layout/repair obstruction claims are version 1
 dated 2026-10-03.

@@ -1,4 +1,11 @@
-# 当前研究状态（2026-10-03）
+# 当前研究状态（2026-10-04）
+
+## 2026-10-04 自适应延续接口与选择器边界
+
+[SC-K-ADAPTIVE-RESET / FORCED-FLOOR / ADAPTIVE-DOUBLE-LPT-2](research/current/multi_facility/adaptive_reset_floor.md)将旧 `2 gamma` 删席容量提升为纯客户均衡可证的 `2 max(gamma,eta_s)`，并给出严格贪心三角输入，原池旧帽容量不可能、但新判据通过，得到条件性的位长多项式完整精确因子 2。普遍在轨均衡的选择与原池删席装箱仍是缺口；已发表调度算法作为外部引理导入，仓内尚无规范实现。
+
+[深度三盒内势选择器反例](research/current/multi_facility/depth_three_box_boundary.md)与[盒内字典序选择器反例](research/current/multi_facility/boxed_lexmax_boundary.md)严格限制两条指定策略；两例各有原始盒内客户 NE，不能用来断言不存在 2 倍证书。两个 Fraction 审计只验证各自有限输入。
+
 
 **2026-10-04 两个条件算法推进。** [SC-K-LOCAL-WEIGHT-BOX-DP](research/current/multi_facility/local_weight_box_dp.md)改在轻客户的地点 primal 图上分解：固定树宽和每站不同轻权种类数时，按权重与选项集类型计数，位长多项式精确判定及构造盒内站纯客户均衡；它包含此前逐名关联图固定度/树宽的选择器，并允许每站无限增长的客户数。[SC-K-INWARD-STAR-2](research/current/multi_facility/inward_star_box.md)用叶内降权队列与全局最大动态键，在叶先开、中心后开的异轻权星形中每客处理一次，保完整盒与精确客户均衡，进而完成因子 2 续局；严格贪心族使中心相邻异权种类任意增长。这两项均未解决一般混合交叠图，且尚无规范实现或外部审查。
 
