@@ -1,5 +1,7 @@
 # Publication assessment and independent internal audit — 2026-10-01
 
+**Historical assessment snapshot.** The judgments below refer to the 2026-10-01 state. The later [five-site decision-hardness audit](FIVE_SITE_AUDIT_2026-10-02.md) and [arbitrary-facility audit](K_FACILITY_AUDIT_2026-10-02.md) change the global-complexity and multi-facility landscape. Use [the live research state](../RESEARCH_STATE.md) and [claim ledger](current/claims.md) for current scope. The historical judgments are retained rather than rewritten as if they were made after these results.
+
 This is a research and editorial assessment of `main@9a15cf8` and the local follow-up scope corrections. It is **not** a mathematical proof, a novelty certificate, an external referee report, or a prediction of acceptance. The exact claims and proofs remain in `current/claims.md` and the linked mathematical files. Five independent Astra review lines examined the sparse universal proof, long-cycle families, shared/heterogeneous/exact branches, paper architecture, and primary literature; the maintainer separately checked the dependencies and ran the commands below. No surviving fatal objection was identified in the examined proof chains. Internal review cannot rule out later counterexamples or prior work.
 
 ## What the new theorem changes

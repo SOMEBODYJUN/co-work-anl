@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import hashlib
+import re
 import subprocess
 from pathlib import Path
 
@@ -19,12 +20,44 @@ def require(condition: bool, message: object) -> None:
         raise ValueError(message)
 
 
+def check_learning(node_ids: set[str]) -> int:
+    """Teaching routes reference claims but never substitute for proof assets."""
+    manifest = json.loads((ROOT / "learning/manifest.json").read_text(encoding="utf-8"))
+    require(manifest["schema_version"] == 1 and manifest["as_of"] and manifest["scope"],
+            "incomplete learning manifest")
+    paths = set()
+    for module in manifest["modules"]:
+        path = module["path"]
+        require(path.startswith("learning/") and path.endswith(".md")
+                and path not in paths and (ROOT / path).is_file(),
+                ("invalid teaching file", path))
+        paths.add(path)
+        require(module["title"] and module["role"] and module["canonical_readings"], path)
+        require(set(module["claims"]) <= node_ids, ("unknown teaching claim", path))
+        for reading in module["canonical_readings"]:
+            require(reading.startswith("research/current/") and (ROOT / reading).is_file(),
+                    ("invalid canonical teaching source", path, reading))
+        content = (ROOT / path).read_text(encoding="utf-8")
+        for match in re.finditer(r"(?<!\\)\[[^\]\n]+\]\(([^)\s]+)\)", content):
+            target = match.group(1)
+            if re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", target) or target.startswith("#"):
+                continue
+            filename = target.split("#", 1)[0]
+            destination = ((ROOT / path).parent / filename).resolve()
+            require(destination.is_relative_to(ROOT) and destination.exists(),
+                    ("broken teaching link", path, target))
+    actual = {p.relative_to(ROOT).as_posix() for p in (ROOT / "learning").rglob("*.md")}
+    require(paths == actual, ("unclassified teaching files", sorted(actual - paths)))
+    return len(paths)
+
+
 def check() -> None:
     assets = load("assets.json")["entries"]
     graph = load("graph.json")
     review = load("review_status.json")
     migration = load("path_migration.json")
     node_ids = {node["id"] for node in graph["nodes"]}
+    learning_count = check_learning(node_ids)
     for item in graph["nodes"] + graph["hyperedges"]:
         require(any(ref.startswith("research/current/") for ref in item["refs"]),
                 ("mathematical relation lacks a current account", item["id"]))
@@ -90,7 +123,7 @@ def check() -> None:
         ["git", "ls-files", "--cached", "--others", "--exclude-standard"],
         cwd=ROOT, text=True
     ).splitlines()
-    roots = {"facility_spe", "multi_facility_spe", "tests", "examples", "evidence", "history", "research"}
+    roots = {"facility_spe", "multi_facility_spe", "tests", "examples", "evidence", "history", "research", "learning"}
     root_docs = {".gitignore", "AGENTS.md", "README.md", "ASSETS.md", "USAGE.md",
                  "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md"}
     unknown = {p for p in tracked if p.split("/", 1)[0] not in roots
@@ -114,7 +147,7 @@ def check() -> None:
     print(f"Validated {len(assets)} scoped asset routes, {len(implementations)} implementations, "
           f"{len(migration['moved'])} sourced files, "
           f"{len(crosswalk)} individually interpreted origins, "
-          f"{len(tracked)} indexed paths")
+          f"{len(tracked)} indexed paths, {learning_count} teaching routes and their local file links")
 
 
 if __name__ == "__main__":
