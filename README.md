@@ -26,6 +26,8 @@
 
 实时进展放在 [RESEARCH_STATE.md](RESEARCH_STATE.md)，准确失败量词见 [FAILED_ROUTES.md](FAILED_ROUTES.md)。[路线图](research/ROADMAP.md) 与 [问题库](research/questions) 用于选题，不替代现行证明。[2026-10-05 发表对标](research/PUBLICATION_BENCHMARK_2026-10-05.md)比较实际期刊论文、各成果包的贡献力度及投稿判断，并记录对 2025 博士论文相关章节的优先权核查；不提升数学审查状态。2026-10-01 的 [出版评估](research/PUBLICATION_REVIEW.md) 保留为历史快照。
 
+最新的 [全仓投稿层级评估](research/PUBLICATION_ASSESSMENT_2026-10-06.md) 按问题意义、可复用机制与用户期刊目录定位成果，重估两设施共同目录五地点困难性的贡献，并澄清广义 φ 猜想的目录边界；不提升数学命题或外审状态。
+
 ## 仓库结构
 
 | 区域 | 用途 |

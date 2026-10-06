@@ -10,12 +10,23 @@ factor-two location algorithm nor assert hardness of finding such a witness.
 ## MF-PURE-CAP-POLY: polynomial completion from a capped pure assignment
 
 **Statement.** Fix any labeled layout, an explicit rational threshold B>0, and a
-feasible pure customer assignment. Suppose each facility of load >B contains
-exactly one customer of weight >B, and every other facility has load at most B.
+feasible pure customer assignment. Suppose each facility of load >B consists
+of a single customer whose weight is >B (and contains no other customer), and
+every other facility has load at most B.
 There is an algorithm polynomial in the bit length of this input that returns
 an exact pure customer NE, leaving those isolated heavy customers in place and
 keeping every other facility at load at most B. In particular, an initially
 ordinary distinguished facility remains at load at most B.
+
+The isolation hypothesis is essential. Merely requiring exactly one customer
+of weight >B on each overloaded facility would allow additional lighter
+customers and is false. For B=2, let x have a forced weight-3 customer, y a
+forced weight-2 customer, and a weight-2 customer have options {x,y}. The seed
+assigning the flexible customer to x has loads (5,2), but that customer's
+conditional costs are 5 at x and 4 at y. Every exact NE assigns it to y,
+whose load becomes 4>B. The isolated-macro premise used in SC-K-2-E and in
+the claim ledger already excludes this seed; this clarification does not
+alter that theorem or its registered scope.
 
 **Proof and precise theorem import.** Remove the isolated heavy customers and
 their facilities temporarily. Every remaining customer is initially assigned
