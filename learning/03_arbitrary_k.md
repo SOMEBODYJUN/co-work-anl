@@ -1,5 +1,7 @@
 # 任意设施数：把因子 2 存在性证明真正学会
 
+**分析式预习。**先读[技术分析课 §§7–12](01a_proof_techniques.md)：通过一次真实替换理解字典序，按客户池分析四项预算，再分别推导装箱、保帽和终止。这段预习说明方法如何被想到；本讲完整推导保留。
+
 本讲学习现行命题 **SC-K-2-E，Version 1（2026-10-02）**。目标是能够独立重建它的证明，指出每个假设用在哪里，并说明为什么这还没有解决一般输入的多项式时间构造。它有完整内部证明和独立内部逆向审读；没有外部同行评审，也没有完成文献优先权核查。
 
 这里给出主证明链的教学重构。规范定义、全部边界说明和编码讨论仍以 [MF-MODEL](../research/current/multi_facility/model.md)、[命题身份](../research/current/multi_facility/claims.md#sc-k-2-e----uniform-factor-two-existence)、[完整证明](../research/current/multi_facility/uniform_two.md) 为准。本讲不改变命题的对象、量词或状态。

@@ -2,7 +2,7 @@
 
 本项目研究正权原子客户的两阶段设施选址：设施先选位置，客户随后选择设施并形成精确独立 Nash 均衡。我们寻找一个纯设施布局和覆盖全部布局的客户均衡续局，使设施单边搬迁的收益受统一倍率控制。
 
-**人类团队从 [learning/README.md](learning/README.md) 开始。** 已有预备课、手算、核心证明讲义、有限必要障碍与 [两周研讨安排](learning/07_seminar.md)。先掌握主线，不按提交时间通读所有研究分支。
+**人类团队从 [learning/README.md](learning/README.md) 开始。** 已有预备课、手算、[分析式证明技术](learning/01a_proof_techniques.md)、核心证明讲义、有限必要障碍与 [两周研讨安排](learning/07_seminar.md)。先掌握主线，不按提交时间通读所有研究分支。
 
 ## 当前目标与主要成果
 
