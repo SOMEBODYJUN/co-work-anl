@@ -126,7 +126,7 @@ $$
 B - \alpha A \geq q^{2}\beta > 0.
 $$
 
-证明：除特殊行外，$B \geq \phi A$，而各行 $A \geq q^{2}$；特殊行的差为 $2q\beta - \varepsilon > q\beta > q^{2}\beta$。
+证明：除特殊行外，$B \geq \phi A$，而各行 $A \geq q^{2}$。其中含误差的 $2q^2-\varepsilon$ 也满足这个下界，因为参数选择给 $\varepsilon<1/16<q^2$。特殊行的差为 $2q\beta - \varepsilon > q\beta > q^{2}\beta$。
 
 证毕。$\square$
 

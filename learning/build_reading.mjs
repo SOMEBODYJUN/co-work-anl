@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Offline full-course export. Dependencies: marked; KaTeX 0.16.11 JS/CSS/fonts.
-// Usage: node learning/build_reading.mjs KATEX_DIST_DIR OUTPUT_HTML
+// Usage: node learning/build_reading.mjs KATEX_DIST_DIR OUTPUT_HTML [GIT_REF]
 import fs from 'node:fs';
 import path from 'node:path';
 import {createRequire} from 'node:module';
@@ -8,7 +8,7 @@ import {fileURLToPath,pathToFileURL} from 'node:url';
 import crypto from 'node:crypto';
 const require=createRequire(import.meta.url);
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const [assets,outFile]=process.argv.slice(2);
+const [assets,outFile,gitRef='main']=process.argv.slice(2);
 if(!assets||!outFile) throw Error('Expected KaTeX distribution directory and output path.');
 const {marked}=await import(pathToFileURL(require.resolve('marked',{paths:[process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES||root,root]})));
 const katex=require(path.resolve(assets,'katex.min.js'));
@@ -81,9 +81,9 @@ for(const r of records)r.html=r.html.replace(/href="([^"]+)"/g,(whole,href)=>{
   if(frag){const h=headings.get(target).find(h=>h.fragment===frag);if(h)dest=h.id;else sectionFallbacks++;}
   return 'href="#'+esc(dest)+'"';
  }
- return 'href="'+esc('https://github.com/SOMEBODYJUN/co-work-anl/blob/main/'+target+(frag?'#'+frag:''))+'" target="_blank" rel="noopener"';
+ return 'href="'+esc('https://github.com/SOMEBODYJUN/co-work-anl/blob/'+gitRef+'/'+target+(frag?'#'+frag:''))+'" target="_blank" rel="noopener"';
 });
-const report={date:'2026-10-07',lessons:lessons.length,mathematicalAppendices:13,auditAppendices:1,equations,mathErrors:errors,renderOnlyNormalizations,sectionFallbacks,sources:records.map(({path,sha256,bytes})=>({path,sha256,bytes}))};
+const report={date:'2026-10-07',gitRef,lessons:lessons.length,mathematicalAppendices:13,auditAppendices:1,equations,mathErrors:errors,renderOnlyNormalizations,sectionFallbacks,sources:records.map(({path,sha256,bytes})=>({path,sha256,bytes}))};
 fs.mkdirSync(path.dirname(path.resolve(outFile)),{recursive:true});
 fs.writeFileSync(outFile+'.audit.json',JSON.stringify(report,null,2)+'\n');
 if(errors.length)throw Error(errors.length+' math errors. Inspect '+outFile+'.audit.json');

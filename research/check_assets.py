@@ -124,9 +124,9 @@ def check() -> None:
     for old, new in migration.get("reestablished_root_docs", {}).items():
         require((ROOT / old).is_file() and (ROOT / new).is_file(), (old, new))
     tracked = subprocess.check_output(
-        ["git", "ls-files", "--cached", "--others", "--exclude-standard"],
+        ["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"],
         cwd=ROOT, text=True
-    ).splitlines()
+    ).rstrip("\0").split("\0")
     roots = {"facility_spe", "multi_facility_spe", "tests", "examples", "evidence", "history", "research", "learning"}
     root_docs = {".gitignore", "AGENTS.md", "README.md", "ASSETS.md", "USAGE.md",
                  "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md"}
