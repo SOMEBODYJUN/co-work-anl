@@ -119,7 +119,7 @@ $$L_f'\le\alpha L_f.\tag{10.3}$$
 
 共同目录双设施程序先在每个布局构造第 02 章的有限客户 NE 菜单。每个菜单条目先经精确条件成本检查，才可登记。程序在各有序地点对取偏离者菜单收益极小值，形成菜单威胁，再扫描在轨候选并比较全部设施偏离。这是可快速计算的足够续局；它没有枚举全部客户 NE，因而较小的输出倍率也不等于已经求到实例最优。
 
-任意设施数 `search_lexmax` 则真正枚举所有物理占据和可行站点纯分配。设地点 $s$ 有 $q_s$ 家设施、分给该站的总客户重为 $W_s$；每家在轨收益为 $W_s/q_s$。程序把**每家设施**的收益写入向量，从小到大排序，再按字典序最大化。代码
+任意设施数 `search_lexmax` 则真正枚举所有物理占据和可行站点纯分配。设地点 $s$ 有 $q_s$ 家设施、分给该站的总客户重为 $W_s$；每家在轨收益为 $W_s/q_s$。程序把**每家设施** 的收益写入向量，从小到大排序，再按字典序最大化。代码
 
 ```python
 key = tuple(sorted(mass[s] / len(groups[s]) for s in layout))
@@ -152,7 +152,7 @@ minimum = min(costs.values())
 assert all(costs[f] == minimum for f in accessible if p[i][f] > 0)
 ```
 
-这与 (10.1) 逐项对应。`check_certificate` 随后核对全部实际偏离，并执行 (10.3)。`all_layouts=True` 对未列布局独立穷举纯均衡，检查**存在某个**可补续局；它不直接检查构造器默认算法实际选出的那个策略。若要验证所指定完整规则，必须逐个调用 `evaluate_continuation`，再用独立 `check_ne` 检查返回策略。
+这与 (10.1) 逐项对应。`check_certificate` 随后核对全部实际偏离，并执行 (10.3)。`all_layouts=True` 对未列布局独立穷举纯均衡，检查**存在某个** 可补续局；它不直接检查构造器默认算法实际选出的那个策略。若要验证所指定完整规则，必须逐个调用 `evaluate_continuation`，再用独立 `check_ne` 检查返回策略。
 
 两设施 `facility_spe.cli.verify_phi` 则从原始覆盖输入重算每个条目，还对默认布局执行规则 10.6。它同时精确检查 $\alpha\ge1$ 与 $\alpha^2-\alpha-1\le0$，从而认证所给有理倍率不超过黄金比。二者通过检查，都只认证该实例达到所给倍率；实例最优还需要完整谱的下界证明，普遍存在性还需要对任意输入的数学证明。
 
@@ -162,9 +162,15 @@ assert all(costs[f] == minimum for f in accessible if p[i][f] > 0)
 
 ```sh
 mkdir -p study_outputs
-python3 -m facility_spe.shared_phi examples/shared/tiny.json --output study_outputs/shared.json
-python3 -m facility_spe.cli.verify_phi examples/shared/tiny.json study_outputs/shared.json
-python3 -m multi_facility_spe examples/multi_facility/rational.json --output study_outputs/kfac.json
+python3 -m facility_spe.shared_phi \
+  examples/shared/tiny.json \
+  --output study_outputs/shared.json
+python3 -m facility_spe.cli.verify_phi \
+  examples/shared/tiny.json \
+  study_outputs/shared.json
+python3 -m multi_facility_spe \
+  examples/multi_facility/rational.json \
+  --output study_outputs/kfac.json
 ```
 
 随后用 Python 执行以下代码，既检查偏离证书，又检查完整规则实际选出的每个续局：
@@ -174,7 +180,10 @@ import json
 from itertools import product
 from pathlib import Path
 from multi_facility_spe.two_exists import evaluate_continuation
-from tests.multi_facility.definition_check import check_certificate, check_ne
+from tests.multi_facility.definition_check import (
+    check_certificate,
+    check_ne,
+)
 
 cert = json.loads(Path("study_outputs/kfac.json").read_text())
 print(check_certificate(cert, all_layouts=True))

@@ -9,6 +9,21 @@ from collections import Counter
 from lxml import html
 
 
+def source_formulas(text):
+    text = re.sub(r'```[\s\S]*?```', '', text)
+    text = re.sub(r'`[^`\n]*`', '', text)
+    pattern = r'\$\$\s*([\s\S]*?)\$\$|\\\[\s*([\s\S]*?)\\\]|\$(?!\$)([^$\n]+?)\$(?!\$)|\\\(([\s\S]*?)\\\)'
+    return [next(g for g in match.groups() if g is not None) for match in re.finditer(pattern, text)]
+
+
+def render_normalization(tex):
+    tex = re.sub(r'\\mspace\{([+-]?[\d.]+)mu\}', r'\\mkern\1mu', tex)
+    tex = tex.replace(r'\tag{SPE_\alpha}', r'\tag{$\mathrm{SPE}_\alpha$}')
+    if r'\begin{split}' in tex and any(line.count('&') > 1 for line in tex.splitlines()):
+        tex = tex.replace(r'\begin{split}', r'\begin{aligned}').replace(r'\end{split}', r'\end{aligned}')
+    return tex.strip()
+
+
 def main():
     export = Path(sys.argv[1]).resolve()
     repo = Path(__file__).resolve().parents[1]
@@ -17,10 +32,20 @@ def main():
     tree = html.fromstring(content)
     errors = []
     sources = report['sources']
-    for source in sources:
+    for index, source in enumerate(sources):
         data = (repo / source['path']).read_bytes()
         if len(data) != source['bytes'] or hashlib.sha256(data).hexdigest() != source['sha256']:
             errors.append('Source changed since export: ' + source['path'])
+        expected_math = Counter(render_normalization(tex) for tex in source_formulas(data.decode()))
+        section = tree.xpath(f'//section[@id="source-{index}"]')
+        if len(section) != 1:
+            errors.append('Missing source section: ' + source['path'])
+            continue
+        rendered_math = Counter((a.text or '').strip() for a in section[0].xpath('.//annotation[@encoding="application/x-tex"]'))
+        if expected_math != rendered_math:
+            errors.append('Source formulas differ from rendered formulas: ' + source['path'] +
+                          f' missing={list((expected_math-rendered_math).elements())[:4]!r}' +
+                          f' extra={list((rendered_math-expected_math).elements())[:4]!r}')
     expected = {m['path'] for m in json.loads((repo / 'learning/manifest.json').read_text())['modules']}
     actual = {s['path'] for s in sources}
     if actual != expected:
@@ -51,6 +76,8 @@ def main():
     visible = tree.text_content()
     if '$$' in visible or re.search(r'\\\[|\\\]', visible):
         errors.append('Unrendered display math remains in ordinary text')
+    if re.search(r'\*\*[^*\n]+\*\*', visible):
+        errors.append('Unrendered strong-emphasis markers remain in ordinary text')
     if errors:
         print('\n'.join(errors))
         raise SystemExit(1)
