@@ -1,6 +1,6 @@
 # SC-K-INCIDENCE-BOX-DP: exact boxed equilibrium on sparse incidence
 
-Version 1, 2026-10-04. This reconstructs an algorithmic claim whose earlier local checkpoint was not present in the remote repository. The mathematical proof below, rather than that missing checkpoint, is the evidence for this version. It uses a standard fixed-treewidth decomposition algorithm [Bodlaender, *SIAM J. Comput.* 25 (1996), 1305–1317, DOI 10.1137/S0097539793251219]; that imported algorithm is not a new contribution. No external review or canonical software implementation is recorded.
+Version 1, 2026-10-04, with a separately versioned corollary added 2026-10-07. This reconstructs an algorithmic claim whose earlier local checkpoint was not present in the remote repository. The mathematical proof below, rather than that missing checkpoint, is the evidence for this version. It uses a standard fixed-treewidth decomposition algorithm [Bodlaender, *SIAM J. Comput.* 25 (1996), 1305–1317, DOI 10.1137/S0097539793251219]; that imported algorithm is not a new contribution. No external review or canonical software implementation is recorded.
 
 ## Exact objects and statement
 
@@ -12,11 +12,27 @@ Use MF-MODEL with explicit positive binary rational client weights, a common fin
                  q_s\gamma\le W_s\le(q_s+1)\gamma\qquad(s\in O).       \tag{B}
 \]
 
-If so, it constructs one. It also works with a supplied width-`tau` tree decomposition. The runtime has a constant depending on `tau,d`, and may be exponential in those parameters; fixing only treewidth while allowing unbounded individual-client incidence degree is **not** covered. The algorithm is an exact feasibility test on arbitrary inputs of this sparse class; it does not assert that the answer is always yes.
+If so, it constructs one. It also works with a supplied width-`tau` tree decomposition. The runtime has a constant depending on `tau,d`, and may be exponential in those parameters; fixing only treewidth while allowing unbounded individual-client incidence degree is **not** covered. This original selector theorem is an exact feasibility test. The new corollary below separately supplies universal feasibility for legal greedy inputs.
 
 **SC-K-HEIGHT-TWO-INCIDENCE-2.** If, in addition, every client in `I*` has exactly two occupied options and the graph directed from the earlier-opened to the later-opened site has longest directed path at most two edges, then the decision above always returns yes by SC-K-HEIGHT-TWO-BOX-EXISTS. The resulting profile, followed by SC-K-GREEDY-BOX-TO-2, gives an input-bit-polynomial construction of a labeled layout and a **complete exact customer-equilibrium continuation** in which no unilateral facility deviation gains more than factor two. Both the depth and `tau,d` hypotheses are simultaneous; bounded treewidth alone gives neither this existence assertion nor this runtime.
 
 Zero-reach inputs have no served client and admit the trivial zero-payoff continuation; the theorem above focuses on positive reach. The conclusion concerns this exact site-pure/within-site-uniform on-path profile and pure off-path continuations. It says nothing about the difficulty of finding arbitrary independently mixed equilibria across occupied sites.
+
+## SC-K-BOX-STRUCTURED-POLY-2: incidence case, version 2026-10-07
+
+Keep all MF-MODEL, canonical greedy, frozen-client and fixed `tau,d` hypotheses
+of SC-K-INCIDENCE-BOX-DP. No two-option or directed-depth restriction is added.
+[SC-K-GREEDY-BOX-EXISTS](greedy_box_global_progress.md) now guarantees a full-box
+exact NE with precisely these heavy and singleton-option customers frozen.
+The DP therefore always returns a witness on this class. Its existing
+bit-polynomial bound, followed by SC-K-GREEDY-BOX-TO-2, yields a bit-polynomial
+complete factor-two continuation. The three ingredients are jointly required.
+
+The older SC-K-HEIGHT-TWO-INCIDENCE-2 remains a valid statement with its original
+depth and two-option hypotheses; this new ID records their removal. The DP and
+imported polynomial off-path scheduler are mathematical constructions without
+canonical software implementations. The executable finite greedy-box constructor
+does not establish this runtime bound.
 
 ## Local constraint formulation
 
@@ -53,11 +69,11 @@ Assign each unary box and each client constraint to one bag containing its scope
 
 Introduce/forget/join operations and witness backtracking require a polynomial number of rational additions and comparisons per state, for fixed `d,tau`. Each load is a sum of at most `d` variable weights plus the fixed-client sum; even without the degree bound, addition of explicitly represented binary rationals and multiplication by `q_s<=k` have polynomial encoding length. The total arithmetic bit complexity is polynomial in the input length for fixed `d,tau`. Bodlaender's fixed-width algorithm supplies the decomposition, or a supplied decomposition can be checked directly. We assert no uniform polynomial dependence on varying `d,tau`.
 
-The initial greedy assignment is boxed, but it need not satisfy (2). The DP returns `no` when these exact constraints have no solution; a failed search has no implication about the all-input factor-two target. Under the directed depth-two assumption, the independent existence proof in `height_two_box.md` supplies a solution, so this DP is a total constructor there. Its output then meets the explicit input contract of `SC-K-GREEDY-BOX-TO-2`, including singleton-source reset and all labeled deviation layouts.
+The initial greedy assignment is boxed, but it need not satisfy (2). The DP's feasibility semantics are unchanged. Originally the depth-two theorem supplied a solution only on its smaller class; SC-K-GREEDY-BOX-EXISTS now supplies one on every legal canonical greedy input. Thus a correct implementation cannot return `no` on the fixed-parameter class in the new corollary. Its output meets SC-K-GREEDY-BOX-TO-2, including singleton-source reset and all labeled deviation layouts.
 
 ## Boundaries and remaining obligations
 
 - Counting only adjacency between *sites* does not bound domains: many separately weighted clients can share one site pair. The degree in this claim counts the actual client vertices at each site.
 - A forest can have arbitrarily high degree, so treewidth `1` without bounded degree does not yield the bound (3).
-- Arbitrary sparse incidence does not inherit the shallow directed graph existence theorem. In that case `no` means only that this specific fixed-heavy boxed selector has no witness.
-- No general all-input bit-polynomial factor-two algorithm, new complexity lower bound, or optimal factor improvement follows. The next proof obligation is a selector or different off-path interface without the bounded-degree and shallow-depth restrictions.
+- Universal greedy box feasibility now follows from the separate global-progress proof, not from extending the old shallow directed-graph proof.
+- No general all-input bit-polynomial factor-two algorithm, new complexity lower bound, or optimal factor improvement follows. The remaining runtime restrictions are bounded individual incidence degree and treewidth; shallow depth is not needed for the new corollary.

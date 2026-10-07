@@ -1004,3 +1004,117 @@ Every variable light customer has exactly two occupied sites, and the orientatio
 ## SC-K-CONVERGING-PATH-4MOVE-2 -- strengthened converging algorithm
 
 Exactly three light clients occupy the D--B--A--C edges and start at D,B,C respectively. Greedy opening gives q_D>=q_B>=q_A and q_C>=q_A. Unlike SC-K-CONVERGING-PATH-BOX-2, no tight initial A or equality q_A=q_C is required. Check Z:C->A, T:D->B, X:B->A, a newly activated T:D->B, and Z:A->C in that order; at most four actual strict moves. Each move stays in the full box and the final state is exact customer NE, so BOX-TO-2 provides polynomial factor two. [Full proof](converging_four_moves.md), [finite exact audit](../../../tests/audits/kfac_converging_four_moves.py). The old seven-step claim is a strict special case and retains its independent case proof. Internal inverse review, no external review or canonical full implementation.
+
+## SC-K-GREEDY-BOX-EXISTS -- universal boxed equilibrium at canonical greedy occupancy
+
+**Exact abstract domain:** positive integer multiplicities \(q_t\), initial
+surpluses \(0\le c_t\le1\), finitely many customers \(0<w_i<1\), nonempty
+allowed sets \(A_i\), and homes \(h_i\in A_i\) with
+\(q_{h_i}\ge q_t\) for every \(t\in A_i\). Define
+\(X_t=c_t+\sum_{a_i=t}w_i-\sum_{h_i=t}w_i\),
+\(e_i=(X_{a_i}-w_i)/q_{a_i}\), and \(r_i=(1-w_i)/q_{h_i}\).
+
+**Conclusion:** an allowed assignment exists with all \(0\le X_t\le1\),
+all original exact inequalities \(e_i\le X_v/q_v\), and every
+\(e_i\le r_i\). Starting at home, any strictly improving customer and
+strictly improving original destination, followed by any sequence of
+violating-away-customer home returns, terminates in such an assignment.
+Every single-customer move strictly increases the clipped sorted-load
+potential interleaved with negative away counts; at most
+\(\prod_i|A_i|-1\) moves occur. Arbitrary interleaving also works provided
+each improving mover currently satisfies its own \(H\) inequality.
+Returns need not be customer improvements.
+
+**Original-model scope and joint premises:** MF-MODEL,
+SC-K-GREEDY-BUDGET and SC-K-GREEDY-MAX-MULT supply the forward normalization
+\(c_t=W_t^0/\gamma-q_t\), \(w_i=u_i/\gamma\).
+Freeze singleton-option customers and customers \(u_i\ge\gamma\).
+Every positive-reach canonical greedy occupancy then has a full-box,
+site-pure/within-site-independent-uniform exact customer NE with those
+customers fixed. Zero reach has the empty continuation. No reverse
+realization, perturbation or extra facilities are used.
+
+**Proof/review/limits:** [complete proof](greedy_box_global_progress.md),
+reconstructed from the user's full 2026-10-07 conversational proof and
+independently reviewed, with the arbitrary-home-return extension proved
+in the current note. The conversational ZIP and claimed test counts were
+not available and are not adopted as evidence. Existence and termination
+are proved; the unrestricted input-bit-polynomial runtime remains open.
+External peer review and literature priority are unestablished. The old
+boxed exact-potential and untruncated lexmax counterexamples retain their
+original scope.
+
+## SC-K-GREEDY-BOX-FINITE-2 -- exact finite factor two from the greedy box constructor
+
+**Exact domain:** explicit positive binary-rational MF-MODEL inputs,
+common finite catalog, explicitly listed \(k\ge2\) labeled facilities,
+and the canonical greedy layout; no restriction on occupied light-customer
+incidence, multiplicities or distinct weights.
+
+**Conclusion and dependencies:** combine SC-K-GREEDY-BOX-EXISTS with
+SC-K-GREEDY-BOX-TO-2, including its singleton reset, packing and capped
+completion premises. This gives an exact finite constructor of a full-box
+site-pure/uniform on-path NE and a complete exact customer continuation
+with all facility gains at most two. Actual deviations have pure NE
+witnesses; a fixed exact default handles all other labeled layouts.
+The on-path improvement/return phase uses at most
+\(\prod_{i\in I^*}|A_i|-1\) moves, polynomial-bit arithmetic and polynomial
+space when no trajectory or visited-state history is retained.
+The integer encoding of its lexicographic potential has polynomial bit
+length but does not yield a polynomial iteration bound.
+
+**Implementation and evidence:** [proof and interface split](greedy_box_global_progress.md),
+[multi_facility_spe/greedy_box.py](../../../multi_facility_spe/greedy_box.py),
+CLI option --method greedy-box,
+[tests/test_greedy_box_global.py](../../../tests/test_greedy_box_global.py),
+and the independent
+[tests/audits/kfac_greedy_box_global.py](../../../tests/audits/kfac_greedy_box_global.py).
+The executable complete constructor uses existing finite cap-preserving
+pure improvements; it does not implement the imported polynomial
+Nashification primitive. The mathematical BOX-TO-2 interface has
+polynomial off-path completion once the on-path witness is supplied.
+Stored diagnostic histories are outside the polynomial-space claim.
+The finite fixture and exact report are
+[examples/multi_facility/greedy_box_global.json](../../../examples/multi_facility/greedy_box_global.json)
+and [evidence/runs/2026-10-07/greedy_box_global.json](../../../evidence/runs/2026-10-07/greedy_box_global.json).
+These finite checks do not prove universal correctness or total-time
+complexity. Internal proof review is complete; external review is not
+recorded. General input-bit-polynomial factor two remains open.
+
+## SC-K-BOX-STRUCTURED-POLY-2 -- total structured selectors without a depth restriction
+
+**Exact domain:** explicit rational MF-MODEL input with the same canonical
+greedy occupancy and the same frozen singleton/heavy customers as in
+SC-K-GREEDY-BOX-EXISTS. For fixed \(\tau,d\), assume either:
+
+1. The individual-customer bipartite incidence graph on movable light
+   customers and occupied sites has treewidth at most \(\tau\) and maximum
+   degree at most \(d\) on both sides.
+2. The occupied site-primal graph has treewidth at most \(\tau\), and every
+   occupied site is incident to at most \(d\) exact distinct movable-light
+   weights. A supplied decomposition or fixed-width decomposition
+   recognition is used.
+
+**Conclusion and joint dependencies:** universal fixed-heavy boxed
+existence makes the exact selector SC-K-INCIDENCE-BOX-DP in case 1, or
+SC-K-LOCAL-WEIGHT-BOX-DP in case 2, always feasible. Each selector is
+input-bit-polynomial for the stated fixed parameters. Its boxed exact
+NE, combined with SC-K-GREEDY-BOX-TO-2, gives a polynomial complete
+factor-two construction on the respective structural class.
+All three ingredients are needed: existence, the appropriate DP with
+its hypotheses, and the box-to-continuation interface.
+There is no two-option or directed-depth restriction.
+The output need not satisfy \(H\), which BOX-TO-2 does not require.
+
+**Proof and boundary:** [joint-premise derivation](greedy_box_global_progress.md),
+[incidence selector](bounded_incidence_box.md), and
+[local-weight selector](local_weight_box_dp.md).
+The graph and degree/diversity parameters in the two cases are different.
+Neither parameter bound is removed; bounded treewidth alone is not the
+asserted class, and no uniform polynomial dependence on varying
+\(\tau,d\) is claimed. The prior height-two intersections remain valid
+special cases. This is a theorem-level combination of existing
+mathematical algorithms; the new finite executable is not a canonical
+implementation of either DP or the imported polynomial off-path primitive.
+Current derivation and internal review are complete; external review and
+literature priority are unestablished.

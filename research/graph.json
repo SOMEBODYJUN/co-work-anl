@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Facility location mathematical dependency hypergraph",
-  "updated": "2026-10-04",
+  "updated": "2026-10-07",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -2011,7 +2011,7 @@
       "kind": "claim",
       "track": "computation",
       "title": "Bounded-incidence exact box-NE selector",
-      "detail": "Fixed two-sided individual-client degree d and bipartite incidence treewidth tau yield a bit-polynomial exact feasibility decision and witness for frozen-heavy site-uniform boxed NE; no general feasibility assertion.",
+      "detail": "Fixed two-sided individual-client degree d and bipartite incidence treewidth tau yield a bit-polynomial exact feasibility decision and witness for frozen-heavy site-uniform boxed NE. The original selector theorem is unchanged; SC-K-BOX-STRUCTURED-POLY-2 separately combines it with universal greedy feasibility.",
       "refs": [
         "research/current/multi_facility/bounded_incidence_box.md",
         "research/current/multi_facility/claims.md"
@@ -2035,7 +2035,7 @@
       "kind": "claim",
       "track": "computation",
       "title": "Local-weight site-primal boxed-NE selector",
-      "detail": "Fixed site-primal width and fixed number of distinct incident light weights per site give a bit-polynomial exact frozen-heavy boxed-NE decision and witness, without a general existence assertion.",
+      "detail": "Fixed site-primal width and fixed distinct incident light-weight count per site give a bit-polynomial exact frozen-heavy boxed-NE decision and witness. The original selector theorem is unchanged; the new structured corollary separately supplies universal greedy feasibility.",
       "refs": [
         "research/current/multi_facility/local_weight_box_dp.md",
         "research/current/multi_facility/claims.md"
@@ -2178,10 +2178,11 @@
       "kind": "obligation",
       "track": "computation",
       "title": "Mixed-q boxed site-equilibrium selector",
-      "detail": "Given a greedy common-catalog occupancy with explicit rational weights, construct a boxed site-pure/within-site-uniform customer NE satisfying (W_t-w_i)/q_t <= W_v/q_v in input-bit-polynomial time, or replace the box-based factor-two certificate. Equal-q subclasses are solved; mixed-q partial overlap remains open.",
+      "detail": "Universal feasibility and a finite exact constructor at canonical greedy occupancy are supplied by SC-K-GREEDY-BOX-EXISTS. The remaining obligation is general input-bit-polynomial full-box site-pure/within-site-uniform NE selection, or another polynomial factor-two construction; no hardness claim.",
       "refs": [
         "research/current/multi_facility/restricted_related_link_boundary.md",
-        "research/current/multi_facility/polytime_frontier.md"
+        "research/current/multi_facility/polytime_frontier.md",
+        "research/current/multi_facility/greedy_box_global_progress.md"
       ],
       "status": "open algorithmic obligation; no hardness claim"
     },
@@ -2220,6 +2221,73 @@
         "tests/audits/kfac_frozen_overload.py"
       ],
       "status": "finite arithmetic check"
+    },
+    {
+      "id": "SC-K-GREEDY-BOX-EXISTS",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Universal full-box NE at canonical greedy occupancy",
+      "detail": "The forward normalized greedy interface, full-box/H repair invariants and interleaved threshold-clipped-load/home-return-count potential give exact site-uniform box NE plus H for every input, freezing heavy and singleton-option clients. Arbitrary strict improvement choices followed by prescribed repair terminate in at most product_i |A_i|-1 microsteps; trace-free rational execution has polynomial space, not a proved polynomial time bound.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md",
+        "history/source/notes/multi_facility/greedy_box_pro_report_2026-10-07.md"
+      ],
+      "status": "complete current proof, independently internally reviewed; unrefereed"
+    },
+    {
+      "id": "SC-K-GREEDY-BOX-FINITE-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Finite exact factor-two constructor at the greedy occupancy",
+      "detail": "Universal greedy box-NE construction plus BOX-TO-2 and labeled complete continuation yield a finite exact factor-two rule. The connected executable uses finite cap-preserving pure best responses off path/default; it does not implement the published polynomial scheduler.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md",
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "complete current proof, independently internally reviewed; unrefereed"
+    },
+    {
+      "id": "SC-K-BOX-STRUCTURED-POLY-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Polynomial factor two on either structured box-DP class",
+      "detail": "Universal frozen-heavy greedy box feasibility makes either existing bounded individual-incidence width/degree DP or bounded site-primal width/local-weight-diversity DP a total bit-polynomial selector; BOX-TO-2 completes the rule. No two-option/depth-two condition is needed. Old claim scopes are retained; DP and imported scheduler lack canonical implementations.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md",
+        "research/current/multi_facility/bounded_incidence_box.md",
+        "research/current/multi_facility/local_weight_box_dp.md"
+      ],
+      "status": "complete current proof, independently internally reviewed; unrefereed"
+    },
+    {
+      "id": "MF-GREEDY-BOX-CODE",
+      "kind": "artifact",
+      "track": "computation",
+      "title": "Exact greedy-box constructor and finite continuation integration",
+      "detail": "Fraction implementation of deterministic H-guarded improvement plus return repair with exact final checks, connected to finite off-path/default pure best responses. No general polynomial runtime guarantee.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md",
+        "multi_facility_spe/greedy_box.py",
+        "multi_facility_spe/__main__.py",
+        "multi_facility_spe/two_exists.py"
+      ],
+      "status": "implemented; finite exact construction, no general polynomial time bound"
+    },
+    {
+      "id": "E-K-GREEDY-BOX-GLOBAL-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Exact finite checks of clipped potential and greedy-box construction",
+      "detail": "Independent Fraction transitions, boundary cases, finite constructor and certificate checks; the frozen run is finite implementation evidence and does not prove universal existence, termination or polynomial complexity.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md",
+        "tests/test_greedy_box_global.py",
+        "tests/audits/kfac_greedy_box_global.py",
+        "examples/multi_facility/greedy_box_global.json",
+        "evidence/runs/2026-10-07/greedy_box_global.json",
+        "evidence/certificates/multi_facility/greedy_box_global.json"
+      ],
+      "status": "finite exact implementation evidence"
     }
   ],
   "hyperedges": [
@@ -4788,6 +4856,118 @@
         "tests/audits/kfac_frozen_overload.py"
       ],
       "status": "finite arithmetic evidence"
+    },
+    {
+      "id": "e-mf-greedy-box-exists",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT"
+      ],
+      "conclusion": "SC-K-GREEDY-BOX-EXISTS",
+      "statement": "The joint greedy load-box and home-multiplicity premises give the forward normalized interface. The new proof supplies H-preserving return repair and a strict microstep potential, hence universal box NE and finite construction.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-greedy-box-finite-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-BOX-EXISTS",
+        "SC-K-GREEDY-BOX-TO-2",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-GREEDY-BOX-FINITE-2",
+      "statement": "Universal greedy full-box NE supplies the on-path input, BOX-TO-2 supplies all actual deviations, and labeled-layout compatibility gives one complete exact factor-two continuation.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md",
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-greedy-box-structured-incidence",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-BOX-EXISTS",
+        "SC-K-INCIDENCE-BOX-DP",
+        "SC-K-GREEDY-BOX-TO-2"
+      ],
+      "conclusion": "SC-K-BOX-STRUCTURED-POLY-2",
+      "statement": "On the fixed individual-incidence treewidth and two-sided degree class, universal frozen-heavy feasibility plus the exact polynomial DP and BOX-TO-2 jointly give the new complete polynomial corollary without depth restrictions.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md",
+        "research/current/multi_facility/bounded_incidence_box.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-greedy-box-structured-local-weight",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-BOX-EXISTS",
+        "SC-K-LOCAL-WEIGHT-BOX-DP",
+        "SC-K-GREEDY-BOX-TO-2"
+      ],
+      "conclusion": "SC-K-BOX-STRUCTURED-POLY-2",
+      "statement": "On the fixed site-primal width and local distinct light-weight count class, universal frozen-heavy feasibility plus the exact polynomial DP and BOX-TO-2 jointly give the new complete polynomial corollary without depth restrictions.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md",
+        "research/current/multi_facility/local_weight_box_dp.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-greedy-box-code",
+      "kind": "implements",
+      "track": "computation",
+      "premises": [
+        "MF-GREEDY-BOX-CODE"
+      ],
+      "conclusion": "SC-K-GREEDY-BOX-FINITE-2",
+      "statement": "The canonical constructor implements a finite exact complete continuation. Its existing finite off-path pure-improvement process does not implement the imported polynomial scheduler or the structured DP theorem.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md",
+        "multi_facility_spe/greedy_box.py"
+      ],
+      "status": "finite implementation; no polynomial runtime claim"
+    },
+    {
+      "id": "e-mf-greedy-box-code-checks",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "E-K-GREEDY-BOX-GLOBAL-AUDIT"
+      ],
+      "conclusion": "MF-GREEDY-BOX-CODE",
+      "statement": "Finite exact transition and certificate checks attack implementation arithmetic and boundary behavior only; they are not premises of the universal proof.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md",
+        "tests/audits/kfac_greedy_box_global.py"
+      ],
+      "status": "scope-limited implementation evidence"
+    },
+    {
+      "id": "e-mf-greedy-box-polytime-boundary",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-K-GREEDY-BOX-EXISTS",
+        "SC-K-GREEDY-BOX-FINITE-2"
+      ],
+      "conclusion": "SC-K-RQ-MIXED-BOX",
+      "statement": "Finite-state progress and a polynomial-bit integer potential close feasibility and termination but leave general polynomial total time unproved.",
+      "refs": [
+        "research/current/multi_facility/greedy_box_global_progress.md"
+      ],
+      "status": "open runtime boundary"
     }
   ]
 }

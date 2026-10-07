@@ -91,3 +91,11 @@
 | `astra_alg/threshold_dp.py` | [facility_spe/exact/threshold_dp.py](../facility_spe/exact/threshold_dp.py) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
 | `astra_ring/mitm_solver.py` | [facility_spe/exact/mitm.py](../facility_spe/exact/mitm.py) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
 | `astra_ring/run_lazy_ring.py` | [facility_spe/cli/lazy_ring.py](../facility_spe/cli/lazy_ring.py) | [research/current/local_and_exact/exact_algorithms_and_extensions.md](../research/current/local_and_exact/exact_algorithms_and_extensions.md) | 原代码的规范实现保留在唯一包路径；旧入口退出根目录，数学合同在新稿重新写出 |
+
+## 新增来源（不属于旧路径迁移）
+
+对话摘录等新来源单独登记，不虚构原始文件路径或下载记录。
+
+| 保存位置 | 来源 | 新写的解释 | 判断 |
+| --- | --- | --- | --- |
+| [history/source/notes/multi_facility/greedy_box_pro_report_2026-10-07.md](../history/source/notes/multi_facility/greedy_box_pro_report_2026-10-07.md) | User-pasted proof text in the 2026-10-07 conversation; curated extraction, not a downloaded ZIP or a migrated original file. | [research/current/multi_facility/greedy_box_global_progress.md](../research/current/multi_facility/greedy_box_global_progress.md) | 独立重构阈值截断负载与分组离乡人数的交错势、普遍盒 NE、有限因子 2 构造及结构 DP 推论；未采用来源自报的代码或测试次数。 |

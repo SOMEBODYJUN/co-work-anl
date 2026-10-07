@@ -221,9 +221,13 @@ current multi_facility, local_and_exact, question or canonical-code layers.
 
 ## Complexity boundaries
 
-The unrestricted boxed site-uniform NE existence question is in NP by the
-labeled assignment certificate and exact rational inequality checks. It has
-no total-search classification until existence is proved. The already known
+For arbitrary fixed occupancies without the GREEDY-OUTPUT promise, boxed
+site-uniform NE feasibility is in NP by the labeled assignment certificate
+and exact rational inequality checks; universal feasibility is not asserted.
+Under the canonical greedy-output promise, universal existence and a finite
+constructor are now proved by
+[SC-K-GREEDY-BOX-EXISTS](greedy_box_global_progress.md). This update does not
+make an arbitrary fixed occupancy satisfy the greedy promise. The already known
 SC-K-LOCAL-PLS is a valid PLS upper bound for the different total factor-two
 certificate search. No PLS-hardness, NP-hardness under the GREEDY-OUTPUT
 promise, or hardness of the complete factor-two goal follows from this note.

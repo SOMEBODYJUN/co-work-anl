@@ -106,7 +106,8 @@ def check() -> None:
         require(not (ROOT / old).exists(), ("retired path still exists", old))
     for old, new in migration["retired_code_paths"].items():
         require(not (ROOT / old).exists() and (ROOT / new).is_file(), (old, new))
-    crosswalk = load("source_crosswalk.json")["entries"]
+    source_ledger = load("source_crosswalk.json")
+    crosswalk = source_ledger["entries"]
     originals = {row["original"]: row for row in crosswalk}
     expected_origins = {**migration["moved"], **migration["retired_code_paths"]}
     require(len(originals) == len(crosswalk) and set(originals) == set(expected_origins),
@@ -115,6 +116,16 @@ def check() -> None:
         require(row["preserved_at"] == expected_origins[old]
                 and (ROOT / row["rewritten_in"]).is_file()
                 and row["interpretation"], ("invalid source interpretation", old))
+    new_source_paths = set()
+    for row in source_ledger.get("new_sources", []):
+        source = row["source"]
+        require(source.startswith("history/") and source not in new_source_paths
+                and (ROOT / source).is_file() and row["provenance"]
+                and row["interpretation"]
+                and row["rewritten_in"].startswith(("research/current/", "research/questions/"))
+                and (ROOT / row["rewritten_in"]).is_file(),
+                ("invalid new source interpretation", source))
+        new_source_paths.add(source)
     for old, new in migration["first_curation_retired"].items():
         require(not (ROOT / old).exists() and (ROOT / new).is_file(), (old, new))
     for old, new in migration.get("reestablished_root_docs", {}).items():

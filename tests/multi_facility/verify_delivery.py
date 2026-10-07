@@ -24,7 +24,7 @@ def run():
     for path in sources:
         py_compile.compile(str(path), doraise=True)
     frozen = {}
-    with tempfile.TemporaryDirectory(prefix='kfac-verify-') as tempdir:
+    with tempfile.TemporaryDirectory(prefix='kfac-verify-', dir=ROOT.parent) as tempdir:
         temp = Path(tempdir)
         for name, script in [('kfac_two_exact', 'run_exact_audit.py'),
                              ('kfac_two_reverse', 'run_reverse_audit.py'),

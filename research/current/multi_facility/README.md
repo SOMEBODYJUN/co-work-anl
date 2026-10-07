@@ -1,8 +1,18 @@
 # Common-catalog arbitrary-k branch
 
+## Universal greedy full-box existence and finite construction (2026-10-07)
+
+[SC-K-GREEDY-BOX-EXISTS](greedy_box_global_progress.md) closes full-box exact site-pure/within-site-uniform customer NE existence at every canonical greedy occupancy, with heavy and singleton-option customers frozen. The interleaved threshold-clipped load and home-return-count potential strictly increases at every authorized improvement and return microstep. Arbitrary strict improvement choices followed by the specified repair therefore terminate, preserving `(H)` at batch boundaries; a deterministic finite exact implementation uses polynomial space when it does not retain its trace. The general number of steps is not proved polynomial.
+
+`SC-K-GREEDY-BOX-FINITE-2` joins this on-path constructor to BOX-TO-2. Run `python3 -m multi_facility_spe examples/multi_facility/greedy_box_global.json --method greedy-box --output greedy_box_certificate.json`. The connected executable uses the existing finite pure best responses for actual deviations and the default rule; it does not implement the published polynomial off-path scheduler.
+
+The versioned `SC-K-BOX-STRUCTURED-POLY-2` now combines universal feasibility with either existing [individual-incidence DP](bounded_incidence_box.md) or [local-weight site-primal DP](local_weight_box_dp.md), and then BOX-TO-2. Each fixed-parameter class has a complete bit-polynomial mathematical construction without the earlier two-option or depth-two hypotheses. Old claim IDs keep their stated scopes. These DP algorithms and the imported polynomial scheduler still lack canonical implementations.
+
+The source is the proof text pasted into this conversation, preserved as an attributed extraction; its linked ZIP was not obtained. Current reconstruction and independent internal review are complete, finite code checks are separate, and external review is unrecorded.
+
 ## Deviator-specific completion beyond global caps (2026-10-04)
 
-[Frozen stationary overloads](frozen_overload_completion.md) permit a non-deviating facility to keep several clients above the deviator's cap. Residual pure forced-client floors prevent these clients from leaving; maximum-preserving restricted-link Nashification repairs the remaining seed in bit-polynomial time. This strictly extends the isolated-macro/global-cap interface: the existing cap-41 obstruction passes by freezing E's load 44. The complete-continuation corollary accepts any supplied exact on-path NE plus successful certificates for every labeled deviation. Finding these certificates and a compatible on-path NE on all inputs remains open.
+[Frozen stationary overloads](frozen_overload_completion.md) permit a non-deviating facility to keep several clients above the deviator's cap. Residual pure forced-client floors prevent these clients from leaving; maximum-preserving restricted-link Nashification repairs the remaining seed in bit-polynomial time. This strictly extends the isolated-macro/global-cap interface: the existing cap-41 obstruction passes by freezing E's load 44. The complete-continuation corollary accepts any supplied exact on-path NE plus successful certificates for every labeled deviation. Finding these certificates and a compatible on-path NE in bit-polynomial time on all inputs remains open.
 
 **File map:** `frozen_overload_completion.md` contains the exact residual/frozen partition, cross-region best-response tests, polynomial completion proof, strict cap-obstruction separation, zero-payoff and complete-continuation cases. Read it before insisting all stationary loads must fit the deviator's cap; its canonical exact fixture audit is `tests/audits/kfac_frozen_overload.py`.
 
@@ -19,14 +29,14 @@ hardness theorem and not a solution of the mixed-q selector.
 
 [Adaptive original-pool reset and forced-client floors](adaptive_reset_floor.md) extend the conditional polynomial factor-two construction: a certified **pure** equilibrium's forced-client floor can justify a larger source deletion cap than `2 gamma`. The double-LPT recognition test strictly includes its predecessor; an exact triangle instance and [finite audit](../../../tests/audits/kfac_adaptive_reset.py) separate them. The imported polynomial scheduler has no canonical local implementation, and no all-input recognition guarantee is proved.
 
-Two independent [depth-three boxed-potential](depth_three_box_boundary.md) and [boxed lexmax](boxed_lexmax_boundary.md) counterexamples show that specific fixed-occupancy selection rules can choose a customer non-equilibrium even when a boxed equilibrium exists. Each has a self-contained exact audit. They leave the arbitrary-k all-input bit-polynomial factor-two construction and general boxed-NE existence open.
+Two independent [depth-three boxed-potential](depth_three_box_boundary.md) and [boxed lexmax](boxed_lexmax_boundary.md) counterexamples show that specific fixed-occupancy selection rules can choose a customer non-equilibrium even when a boxed equilibrium exists. Each has a self-contained exact audit. They continue to obstruct those particular selectors. General boxed-NE existence is now settled by SC-K-GREEDY-BOX-EXISTS; the arbitrary-k all-input bit-polynomial construction remains open.
 
 
 ## Latest conditional advances (2026-10-04)
 
 The [site-primal local-weight DP](local_weight_box_dp.md) decides the frozen-heavy full-box customer NE problem in input-bit-polynomial time when primal treewidth and the number of distinct incident light weights per site are fixed. It allows arbitrarily many clients per edge; paired with the height-two existence theorem and BOX-TO-2, it gives a complete conditional factor-two constructor. The [inward-star queue algorithm](inward_star_box.md) handles the opposite orientation from the earlier anchored-star algorithm, with arbitrarily many distinct light weights at the late center. The [exact boxed-potential hardness proof](polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization) blocks global potential optimization as a generic selector, while leaving the full factor-two construction problem open. These three claims are separately scoped in the [branch ledger](claims.md).
 
-The [individual-incidence bounded-width and bounded-degree selector](bounded_incidence_box.md) exactly decides boxed site-uniform NE at a greedy occupancy in input-bit-polynomial time for fixed treewidth `tau` and two-sided individual-client degree `d`. It replaces an unbounded potential search by a finite-domain CSP; paired with the independent [height-two directed-graph existence theorem](height_two_box.md), it yields a complete polynomial factor-two continuation on their intersection. It supplies only a decision method on other sparse incidence graphs. For the treewidth conversion, bounded site adjacency without bounding the number of individual light clients is insufficient. This reconstructed 2026-10-04 claim has no canonical implementation or external review.
+The [individual-incidence bounded-width and bounded-degree selector](bounded_incidence_box.md) exactly decides boxed site-uniform NE at a greedy occupancy in input-bit-polynomial time for fixed treewidth `tau` and two-sided individual-client degree `d`. It replaces an unbounded potential search by a finite-domain CSP; paired with the independent [height-two directed-graph existence theorem](height_two_box.md), it yields a complete polynomial factor-two continuation on their intersection. Its original theorem is a decision method on other sparse incidence graphs; the new SC-K-BOX-STRUCTURED-POLY-2 uses universal feasibility to make it a total constructor throughout its fixed-parameter class. For the treewidth conversion, bounded site adjacency without bounding the number of individual light clients is insufficient. This reconstructed 2026-10-04 claim has no canonical implementation or external review.
 
 [Reset-pool completion and double LPT](polytime_frontier.md#sc-k-reset-pack-interface-reset-based-off-path-completion-beyond-the-box) give a bit-polynomial complete factor-two witness whenever two deterministic packings of each original greedy customer pool pass explicit tests. The constructed pure customer equilibrium may exceed a site's old greedy upper box; a [triangle instance](../../../examples/multi_facility/greedy_double_lpt_triangle.json) verifies this strict distinction. A separate [directed light-path algorithm](polytime_frontier.md#sc-k-path-edge-light-greedy-2-directed-light-paths) covers edgewise equal but mutually unequal light weights on P4 and longer paths. [Type compression](type_compression.md) gives fixed-parameter exact box-NE selection and an unconditional XP factor-two constructor when total catalog size and weight diversity are bounded. Arbitrary-parameter bit-polynomial factor two remains open.
 
@@ -40,7 +50,7 @@ The later [four-move converging-path constructor](converging_four_moves.md) drop
 
 ## Research goal and current result
 
-The earlier [anchored light-star algorithm](polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges) processes each unequal-weight light client once, selecting the minimum-load eligible leaf among descending-weight edge queues. For light overlap components that are either constant-multiplicity or anchored stars, it constructs a box NE and then a polynomial complete factor-two continuation, even with frozen heavy customers crossing components. The [strict example](../../../examples/multi_facility/greedy_star_edges.json) and [exact arithmetic check](../../../tests/audits/kfac_star_edges.py) separate this condition from previous sufficient classes. The directed-path and double-LPT results above now cover additional unequal-weight nonstar partial overlaps; the unrestricted class remains open.
+The earlier [anchored light-star algorithm](polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges) processes each unequal-weight light client once, selecting the minimum-load eligible leaf among descending-weight edge queues. For light overlap components that are either constant-multiplicity or anchored stars, it constructs a box NE and then a polynomial complete factor-two continuation, even with frozen heavy customers crossing components. The [strict example](../../../examples/multi_facility/greedy_star_edges.json) and [exact arithmetic check](../../../tests/audits/kfac_star_edges.py) separate this condition from previous sufficient classes. The directed-path and double-LPT results above now cover additional unequal-weight nonstar partial overlaps; the unrestricted bit-polynomial algorithm remains open.
 
 The newest [two-unequal-light-client parameter family](polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights) isolates a failed extension of the uniform-light flow proof. All lower greedy boxes remain feasible, and the initial assignment is a box NE, but their weighted-potential minimum uniquely exceeds an upper box. See the [integer input](../../../examples/multi_facility/greedy_two_light_potential.json) and [Fraction audit](../../../tests/audits/kfac_two_light_potential.py). This is a selection-rule obstruction, not a factor-two lower bound. The remaining unrestricted task permits a box-NE selector, a reset-pack certificate beyond the box, or a different occupancy mechanism.
 
@@ -124,7 +134,7 @@ the common anchor alone preserves the greedy load box. Private reserves
 close disappearing-singleton budgets. A strict three-site example separates
 it from ALL-OR-ONE and RANGE; reversing two option sets makes the unrestricted
 list rule fail NE but leaves another NE. The full mixed-q partial-overlap
-problem remains open.
+bit-polynomial algorithm problem remains open.
 `SC-K-GREEDY-SINGLETON-RESET` gives a stronger off-path interface: after
 departure from an originally singleton greedy site, reset old customers
 to greedy's initial assignment and use its original q=1 pool bound. This
@@ -139,7 +149,7 @@ gamma have the same weight delta; other weights are arbitrary. A
 lower-bounded integral convex-cost flow gives exact NE, and reversing a
 path of equal-weight transfers proves the upper box. A strict three-site
 H--M--L chain lies outside RANGE, ALL-OR-ONE and NESTED-ANCHOR. Finding
-a box NE on general mixed-light-weight input remains open.
+a box NE on general mixed-light-weight input is now possible by a finite constructor; a general bit-polynomial selector remains open.
 Outside those conditional classes, `SC-K-GREEDY-STATIC-PACK-NO` gives a
 five-site integer instance where a reachable exact on-path NE leaves a
 different surviving site too heavy for the old cap packing if customer site
@@ -162,8 +172,9 @@ choosing the heaviest improving client at each step, may end at exact NEs
 where a B-to-G deviation is **forced** above factor two in every mixed
 off-path NE. Both layouts also have another reachable exact NE retaining
 the four transfer budgets. Their scripts check finite arithmetic, not a
-general theorem. Selection of a suitable NE on range-certificate-failing
-mixed-q components of three or more sites with partial overlaps remains open.
+general theorem. Polynomial-time selection of a suitable NE on range-certificate-failing
+mixed-q components of three or more sites with partial overlaps remains open;
+SC-K-GREEDY-BOX-EXISTS now supplies a finite exact selection.
 `SC-K-DESCENT-ONLY-TRAP-NO` gives a six-client three-site chain where the
 only maximal downward-q repair path stops before reaching customer NE;
 one upward return completes it. This does not refute greedy occupancy.

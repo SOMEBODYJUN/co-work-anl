@@ -147,7 +147,6 @@ def pure_improve(inst: Instance, layout: tuple[int, ...], assignment: list[int],
         assert all(L[f] <= cap for f in range(inst.k) if f not in giant_facilities)
         if deviator is not None:
             assert deviator not in giant_facilities
-    seen = {tuple(assignment)}
     steps = 0
     while True:
         move = None
@@ -174,8 +173,8 @@ def pure_improve(inst: Instance, layout: tuple[int, ...], assignment: list[int],
             assert all(assignment[j] == f and L[f] == inst.weights[j]
                        for j, f in initial_giants.items())
             assert all(L[f] <= cap for f in range(inst.k) if f not in giant_facilities)
-        assert tuple(assignment) not in seen
-        seen.add(tuple(assignment))
+        # Strict decrease of the exact quadratic potential already rules out
+        # repeated states. Do not store an exponentially long trajectory.
         steps += 1
     return assignment, dict(strict_improvement_steps=steps,
                            isolated_giants=len(initial_giants),

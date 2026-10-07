@@ -7,6 +7,31 @@ positive atomic-weight model and complete exact customer-NE continuation in
 rational data and explicitly listed k. These results neither give a polynomial
 factor-two location algorithm nor assert hardness of finding such a witness.
 
+## 2026-10-07 update: greedy feasibility is closed, general bit-polynomial time is open
+
+[SC-K-GREEDY-BOX-EXISTS](greedy_box_global_progress.md) proves that every canonical
+greedy occupancy admits a full-box exact site-pure/within-site-uniform client NE,
+with heavy and singleton-option customers frozen. Arbitrary strict improvements
+from repaired box-and-`(H)` states, followed by the specified home-return repair,
+strictly increase the interleaved threshold-clipped-load/count potential at every
+microstep. There are at most `prod_i |A_i|-1` moves, and trace-free execution uses
+polynomial space. This closes universal box feasibility and finite construction;
+it does not bound the general running time by a polynomial in input bit length.
+
+`SC-K-GREEDY-BOX-FINITE-2` combines that constructor with the existing
+SC-K-GREEDY-BOX-TO-2 theorem. The latter's mathematical bit-polynomial off-path
+proof remains unchanged. The connected executable instead uses the legacy finite
+cap-preserving pure best responses for actual deviations and finite pure best responses for defaults, so its off-path software
+is not the published polynomial scheduling algorithm.
+
+`SC-K-BOX-STRUCTURED-POLY-2` is a new corollary, not a change to earlier IDs:
+universal box feasibility plus either SC-K-INCIDENCE-BOX-DP or
+SC-K-LOCAL-WEIGHT-BOX-DP, followed by BOX-TO-2, gives a full bit-polynomial
+factor-two construction on the respective fixed-parameter class. The old
+two-option/depth-two existence restrictions are unnecessary in this new version.
+General bit-polynomial selection, not existence, is the remaining box obligation.
+The old potential and untruncated lexmax counterexamples below are unchanged.
+
 ## MF-PURE-CAP-POLY: polynomial completion from a capped pure assignment
 
 **Statement.** Fix any labeled layout, an explicit rational threshold B>0, and a

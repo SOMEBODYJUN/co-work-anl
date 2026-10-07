@@ -57,6 +57,28 @@ def render():
         lines.append("")
     if accounted != all_old:
         raise ValueError(("unclassified source roles", sorted(all_old - accounted)))
+    new_sources = data.get("new_sources", [])
+    seen_new = set()
+    if new_sources:
+        lines += ["## 新增来源（不属于旧路径迁移）", "",
+                  "对话摘录等新来源单独登记，不虚构原始文件路径或下载记录。", "",
+                  "| 保存位置 | 来源 | 新写的解释 | 判断 |",
+                  "| --- | --- | --- | --- |"]
+    for row in new_sources:
+        source, current = row["source"], row["rewritten_in"]
+        if (source in seen_new or not source.startswith("history/")
+                or not current.startswith(("research/current/", "research/questions/"))
+                or not row["provenance"] or not row["interpretation"]):
+            raise ValueError(("invalid new source record", source))
+        seen_new.add(source)
+        if not (ROOT / source).is_file() or not (ROOT / current).is_file():
+            raise ValueError(("missing new source or current account", source, current))
+        provenance = row["provenance"].replace("|", r"\|")
+        note = row["interpretation"].replace("|", r"\|")
+        lines.append(f"| [{source}](../{source}) | {provenance} | "
+                     f"[{current}](../{current}) | {note} |")
+    if new_sources:
+        lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
 
@@ -71,7 +93,9 @@ def main():
             raise ValueError("run research/build_crosswalk.py")
     else:
         output.write_text(result)
-    print("Validated 68 original source/code paths and their new mathematical accounts")
+    data = json.loads((HERE / "source_crosswalk.json").read_text())
+    print(f"Validated {len(data['entries'])} migrated source/code paths and "
+          f"{len(data.get('new_sources', []))} new source records")
 
 
 if __name__ == "__main__":

@@ -1,1 +1,4 @@
-"""Finite exhaustive witnesses for SC-K-2-E. Not a polynomial-time solver."""
+"""Exact finite factor-two witnesses; lexmax and greedy-box constructors.
+
+Neither implementation has a polynomial total-time guarantee.
+"""

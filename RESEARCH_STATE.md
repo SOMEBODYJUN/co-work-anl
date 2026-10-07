@@ -1,4 +1,20 @@
-# 当前研究状态（2026-10-06）
+# 当前研究状态（2026-10-07）
+
+## 2026-10-07 普遍完整盒存在性与全局有限构造闭合
+
+[SC-K-GREEDY-BOX-EXISTS](research/current/multi_facility/greedy_box_global_progress.md) 用固定阈值截断负载与分组离乡人数交错的字典序势，证明每个获准改善微步和每个违反 `(H)` 的外来客户归位微步都严格进展。结合归位修复不变量，规范贪心布局在任意规模合法输入上均有完整盒内精确站纯、站内独立均匀客户 NE，且保留 `(H)`；重客户与单占站选项客户保持原归属。固定改善优先规则给有限精确构造，不保存轨迹时用多项式空间。任意严格改善选择同样终止；这没有证明一般总步数为输入位长多项式。
+
+`SC-K-GREEDY-BOX-FINITE-2` 将该输出接入既有 BOX-TO-2，得到规范贪心布局上的完整精确因子 2 续局。CLI 的 `--method greedy-box` 已接入规范包；离轨与默认布局仍调用有限的帽容量纯改善过程，不能将它标作已发表多项式离轨调度算法的实现。
+
+新版本 `SC-K-BOX-STRUCTURED-POLY-2` 联合普遍盒可行性、既有精确 DP 和 BOX-TO-2：固定逐名关联图树宽与双侧度，或固定地点 primal 树宽与每站不同轻权种类数时，完整因子 2 数学构造为位多项式，无需两选项或有向深度二条件。原 `SC-K-HEIGHT-TWO-INCIDENCE-2` 等旧命题保留其原假设；一般结构参数及全输入总时间继续开放。
+
+来源是用户在本次会话粘贴的证明正文，已另存诚实摘录；声称的 ZIP 未取得，未移入其代码、报告或手稿。现行证明已独立内部重构，有限精确审计只核对实现与有限转移；无外部同行评审记录。以下按日期记录的旧前沿应按此更新理解。
+
+冻结的[独立审计](evidence/runs/2026-10-07/greedy_box_global.json)核验 528 份
+完整证书、2,556 项实际带标签设施偏离及 4,535 次完整续局布局求值，其中
+2,728 次使用默认规则。修复链输入触发三次严格改善及两次归位；另有准确的
+反例说明取消改善者 `(H)` 守卫后新势可以下降。有限审计、旧构造器冻结回放
+和研究地图检查各有独立作用，不构成全称证明。本轮本地提交、不推送。
 
 ## 2026-10-06 全仓投稿评估与条件前提澄清
 
@@ -29,7 +45,7 @@
 
 **2026-10-04 两个条件算法推进。** [SC-K-LOCAL-WEIGHT-BOX-DP](research/current/multi_facility/local_weight_box_dp.md)改在轻客户的地点 primal 图上分解：固定树宽和每站不同轻权种类数时，按权重与选项集类型计数，位长多项式精确判定及构造盒内站纯客户均衡；它包含此前逐名关联图固定度/树宽的选择器，并允许每站无限增长的客户数。[SC-K-INWARD-STAR-2](research/current/multi_facility/inward_star_box.md)用叶内降权队列与全局最大动态键，在叶先开、中心后开的异轻权星形中每客处理一次，保完整盒与精确客户均衡，进而完成因子 2 续局；严格贪心族使中心相邻异权种类任意增长。这两项均未解决一般混合交叠图，且尚无规范实现或外部审查。
 
-**2026-10-04 精确选择器边界。** [SC-K-BOX-POTENTIAL-STRONG-HARD](research/current/multi_facility/polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization)复用已有 3-PARTITION 族，证明即使贪心打开所有地点、所有公共轻客户分配都满足完整上下盒，精确求全局客户势最小值仍强 NP 难。这仅排除精确优化势函数的通用多项式选择器；同族已有容易求出的精确设施均衡。一般盒内均衡存在性及位长多项式选取仍未决，不能将 oracle 难性升级成目标难性。
+**2026-10-04 精确选择器边界。** [SC-K-BOX-POTENTIAL-STRONG-HARD](research/current/multi_facility/polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization)复用已有 3-PARTITION 族，证明即使贪心打开所有地点、所有公共轻客户分配都满足完整上下盒，精确求全局客户势最小值仍强 NP 难。这仅排除精确优化势函数的通用多项式选择器；同族已有容易求出的精确设施均衡。此处的 2026-10-04 存在性义务已由 SC-K-GREEDY-BOX-EXISTS 闭合；一般位长多项式选取仍未决，不能将 oracle 难性升级成目标难性。
 
 **2026-10-04 条件性算法推进。** [SC-K-INCIDENCE-BOX-DP / SC-K-HEIGHT-TWO-INCIDENCE-2](research/current/multi_facility/bounded_incidence_box.md)精确判定贪心盒内的站纯客户 NE：冻结重客户与单选项客户，对每个已占站列举至多 `2^d` 个入站轻客户子集，将逐名二部关联图宽 `tau` 的分解转成站点约束图宽至多 `d(tau+1)-1`。当 `d,tau` 固定，选择器位长多项式；浅层有向轻图保证盒可行，接 BOX-TO-2 得完整多项式因子 2。此结果只扩展可算子类，不证明一般贪心盒可行或任意输入的目标算法；已给出数学证明，外审与规范实现未完成。
 
@@ -57,15 +73,15 @@
 
 ## 当前前沿与本轮闭合
 
-**异重轻客户星形分量的位多项式 2 倍算法（2026-10-03）。** [SC-K-STAR-LIGHT-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)把同重费用流之外的可算范围扩到轻客户交叠图中的锚定星形：中心先开，每名轻客户只可选中心与一片叶；其他轻分量可同重数，重客户可跨分量。各叶按权递减队列，只移动严格改善的队头，并在候选叶中选当前最低单位负载。每名客户处理一次；贪心重数序保持上下盒，最后入叶客户与候选叶负载单调性保证精确 NE；BOX-TO-2 完成全部偏离。一个三站异轻权、不可比选项集实例同时在旧 RANGE、ALL-OR-ONE、NESTED-ANCHOR、UNIFORM-LIGHT 的条件之外。证明已内部独立逆审，有限有理数例只核算该实例；有向路径和双 LPT 后续机制已覆盖部分非星形图；一般图仍开放。
+**异重轻客户星形分量的位多项式 2 倍算法（2026-10-03）。** [SC-K-STAR-LIGHT-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)把同重费用流之外的可算范围扩到轻客户交叠图中的锚定星形：中心先开，每名轻客户只可选中心与一片叶；其他轻分量可同重数，重客户可跨分量。各叶按权递减队列，只移动严格改善的队头，并在候选叶中选当前最低单位负载。每名客户处理一次；贪心重数序保持上下盒，最后入叶客户与候选叶负载单调性保证精确 NE；BOX-TO-2 完成全部偏离。一个三站异轻权、不可比选项集实例同时在旧 RANGE、ALL-OR-ONE、NESTED-ANCHOR、UNIFORM-LIGHT 的条件之外。证明已内部独立逆审，有限有理数例只核算该实例；有向路径和双 LPT 后续机制已覆盖部分非星形图；一般图的位多项式总时间仍开放。
 
 **异重轻客户的精确势障碍（2026-10-03）。** [SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO](research/current/multi_facility/polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights)给一个显式无限整数族：只有两名不同轻权多选项客户，贪心七设施、四站初态是盒内精确 NE；但对全部站施加下盒后，全局客户势最小值仍唯一选到 L 站越上盒一单位的精确 NE。四态代数证明与独立 Fraction 核对明确了同重运输反路径不能直接照搬。旧势最小反例已有更强的设施收益失败；本族的新价值是将该算法接口障碍隔离到仅两个异重轻客户。**盒内 NE 依然存在，不能据此判定贪心选址或全输入 2 倍算法失败。**
 
 **离轨接口与无锚链形构造（2026-10-03）。** [SC-K-GREEDY-SINGLETON-RESET / SC-K-GREEDY-BOX-TO-2](research/current/multi_facility/polytime_frontier.md#sc-k-greedy-singleton-reset-and-sc-k-greedy-box-to-2)给出一个盒内精确在轨客户 NE 的充分路线：对原 $q=1$ 的设施，偏离后直接回到初始贪心客户分配，原单站客户池每站至多 $2\gamma$、原高重数站可按 $2\gamma$ 装箱，故不需在轨客户的私有储备或原孤儿预算；任意在轨收益 $a\ge\gamma$ 都有位长多项式离轨纯 NE 使偏离者至多 $2\gamma\le2a$。若给出盒内站纯/站内均匀的精确在轨 NE，其余 $q\ge2$ 来源也由盒预算完成全部 2 倍续局。
 
-[SC-K-UNIFORM-LIGHT-FLOW-2](research/current/multi_facility/polytime_frontier.md#sc-k-uniform-light-flow-2-partial-overlaps-without-a-common-anchor)进一步处理任意交叠图和混合重数，只要求所有低于 $\gamma$、可选择多个已占站的客户具有同一权重 $\delta$。冻结其他客户、用每站下界的整数凸费用流最小化精确客户势，初始到终局的同重运输逆路径严格排除上盒溢出；高权客户也保持最优反应。与盒内续局引理合成位长多项式 2 倍完整构造。严格 $(3,2,1)$ 三站链例不属 RANGE、ALL-OR-ONE 或 NESTED-ANCHOR。内部独立逆审与 Fraction 复算通过，尚无外部评审或规范软件；**不同轻权的普遍盒内 NE 存在性与多项式选择仍开放**。
+[SC-K-UNIFORM-LIGHT-FLOW-2](research/current/multi_facility/polytime_frontier.md#sc-k-uniform-light-flow-2-partial-overlaps-without-a-common-anchor)进一步处理任意交叠图和混合重数，只要求所有低于 $\gamma$、可选择多个已占站的客户具有同一权重 $\delta$。冻结其他客户、用每站下界的整数凸费用流最小化精确客户势，初始到终局的同重运输逆路径严格排除上盒溢出；高权客户也保持最优反应。与盒内续局引理合成位长多项式 2 倍完整构造。严格 $(3,2,1)$ 三站链例不属 RANGE、ALL-OR-ONE 或 NESTED-ANCHOR。内部独立逆审与 Fraction 复算通过，尚无外部评审或规范软件；**该日期尚未解决的不同轻权普遍盒内 NE 存在性已于 2026-10-07 闭合；一般多项式选择仍开放**。
 
-**新增部分交叠条件类（2026-10-03）。** [SC-K-NESTED-ANCHOR-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-nested-anchor-greedy-2-a-partial-overlap-mixed-component)证明：贪心每个混合重数交叠分量若有首开共同锚站，且多选项客户按权重非增排列时选项集逐步扩张，则受限列表分配可位长多项式构造精确在轨 NE 和完整 2 倍续局。它包含先前 ALL-OR-ONE 类，且一个严格三站整数例有真正的部分交叠，旧 RANGE 证书失败。负载盒只靠共同锚站就能保住；精确 NE 额外依赖选项集的顺序。交换同一例两个共有客户的选项集后，无条件列表法产出非 NE，虽然另有精确 NE。该反例只限定此列表规则。一般三站及以上的部分交叠、非嵌套输入仍开放。新证明经独立内部逆审与精确整数复算，未外审，规范软件尚未实现。
+**新增部分交叠条件类（2026-10-03）。** [SC-K-NESTED-ANCHOR-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-nested-anchor-greedy-2-a-partial-overlap-mixed-component)证明：贪心每个混合重数交叠分量若有首开共同锚站，且多选项客户按权重非增排列时选项集逐步扩张，则受限列表分配可位长多项式构造精确在轨 NE 和完整 2 倍续局。它包含先前 ALL-OR-ONE 类，且一个严格三站整数例有真正的部分交叠，旧 RANGE 证书失败。负载盒只靠共同锚站就能保住；精确 NE 额外依赖选项集的顺序。交换同一例两个共有客户的选项集后，无条件列表法产出非 NE，虽然另有精确 NE。该反例只限定此列表规则。一般三站及以上的部分交叠、非嵌套输入的位多项式算法仍开放。新证明经独立内部逆审与精确整数复算，未外审，规范软件尚未实现。
 
 **第二阶段新增推进（2026-10-03）。** [SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2](research/current/multi_facility/polytime_frontier.md#sc-k-all-or-one-component-greedy-2-arbitrarily-many-mixed-multiplicity-sites)把条件性多项式 2 倍算法推到**任意大混合重数交叠分量**：每名客户在该分量内的已占选项要么唯一，要么包括分量所有地点。首开地点初始收下全部共有客户且最终重数最大；把这些客户按权重递减分配到当前单位设施负载最低地点，得到精确客户 NE。首开地点保留的总量、其他站的私有负载储备，分别证明贪心负载区间及单设施源消失的装箱预算。原双地点条件类按作用域包含在新定理内；三地点 $(3,2,1)$ 整数例不满足旧区间证书，却由新算法处理。证明经过独立内部逆审，尚无规范实现和外部评审。
 

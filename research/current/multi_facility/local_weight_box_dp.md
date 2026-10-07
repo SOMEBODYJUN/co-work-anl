@@ -2,6 +2,23 @@
 
 Independent draft for internal review, 2026-10-04. No canonical implementation, external review, or priority assertion.
 
+## SC-K-BOX-STRUCTURED-POLY-2: local-weight case, version 2026-10-07
+
+The original SC-K-LOCAL-WEIGHT-BOX-DP below retains its exact decision statement
+and fixed site-primal width `tau` and local distinct light-weight count `d`.
+[SC-K-GREEDY-BOX-EXISTS](greedy_box_global_progress.md) now guarantees feasibility
+for every legal canonical greedy input while freezing the same heavy and
+singleton-option customers. The existing DP must therefore return a witness
+throughout this fixed-parameter class, without any two-option or directed-depth
+restriction. Combining its existing bit-polynomial bound with
+SC-K-GREEDY-BOX-TO-2 yields a complete bit-polynomial factor-two continuation.
+These are three joint premises of the newly versioned corollary.
+
+This supersedes the need for height-two existence in the older application
+below, without changing the older IDs' hypotheses. The DP and the imported
+polynomial off-path scheduler remain unimplemented; the connected finite
+greedy-box executable does not implement this polynomial construction.
+
 ## Exact claim
 
 MF-MODEL has explicitly listed k>=2 labeled facilities, common finite catalog S, explicitly listed positive binary rational weights and coverage sets. Run the canonical polynomial greedy layout with positive maximum reach; write O for occupied sites, q_s>=1 for their multiplicities, gamma>0 for the last insertion score. Freeze customers with a single occupied option, and customers w_i>=gamma at their original greedy sites. I* consists of all other served customers: 0<w_i<gamma, |A_i|>=2, where A_i consists of the occupied sites covering i. Unserved clients do not enter on-path constraints.
@@ -14,7 +31,7 @@ Thus d_s counts EXACT DISTINCT RATIONAL WEIGHTS, not individual clients or cover
 
     q_s gamma <= W_s <= (q_s+1)gamma.
 
-If yes, it outputs a labeled assignment and hence the exact independent mixed on-path profile. The graph may have unbounded site degree, arbitrarily many individual clients on an edge, and unbounded GLOBAL distinct weight count. No existence assertion is implicit. Given the standard fixed-treewidth decomposition theorem already imported by SC-K-INCIDENCE-BOX-DP, the supplied decomposition can be dropped for fixed tau, or handled as an explicit additional input.
+If yes, it outputs a labeled assignment and hence the exact independent mixed on-path profile. The graph may have unbounded site degree, arbitrarily many individual clients on an edge, and unbounded GLOBAL distinct weight count. The original DP theorem alone is a decision statement; the new corollary above supplies existence separately. Given the standard fixed-treewidth decomposition theorem already imported by SC-K-INCIDENCE-BOX-DP, the supplied decomposition can be dropped for fixed tau, or handled as an explicit additional input.
 
 For two-option light clients whose opening-directed graph has every directed path of length <=2, the independent HEIGHT-TWO-BOX-EXISTS theorem guarantees yes. On this simultaneous class the DP plus BOX-TO-2 gives a polynomial complete factor-two continuation. In particular, inward stars with bounded weight diversity at the center may have arbitrarily many leaves and arbitrarily many unequal-weight clients on every leaf edge; the center need not be first-opened. Arbitrary orientation of a star has directed depth <=2, and the new algorithm therefore covers every star orientation under local d. This remains conditional on fixed tau,d, not the all-input target.
 
@@ -79,7 +96,8 @@ WEIGHT DIVERSITY. It subsumes the prior fixed-incidence-treewidth-and-degree
 selector: its width conversion gives a fixed site-primal width, and the
 local distinct-weight count is at most the old individual site degree.
 It also covers unbounded-size components under the stated parameters,
-where the component-size-bounded type method does not apply. A negative decision
-rules out only a witness with prescribed fixed heavy clients in this
-site-pure box; general independently mixed NE and alternative occupancy
-remain outside that certificate's scope.
+where the component-size-bounded type method does not apply. The solver's
+constraints still concern the prescribed frozen-heavy site-pure box. The new
+existence theorem guarantees that a correct DP cannot return a negative decision
+on legal canonical greedy inputs in this class. General independently mixed NE
+at arbitrary non-greedy occupancies remain outside this selector's scope.
