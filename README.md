@@ -4,6 +4,8 @@
 
 **人类团队从 [learning/README.md](learning/README.md) 开始。** 顺读入口是 [从一个搬迁问题开始](learning/00_guide.md)，模型与技术课之后由 [两条主证明的接口](learning/01b_proof_map.md)进入长证明；[精确证书课](learning/10_certificates.md)把概率策略与定义级核验连起来。已有预备课、手算、[分析式证明技术](learning/01a_proof_techniques.md)、核心证明讲义、有限必要障碍与 [两周研讨安排](learning/07_seminar.md)。先掌握主线，不按提交时间通读所有研究分支。
 
+讲义现以逐章重写的 Markdown 为源：主证明在正文连续展开，下界、归约、异构与非线性材料在 [十三份教学附录](learning/appendices/) 完整展开。每份附录都有自身的模型、结论和证明；非线性教学重构的来源状态独立标明，不视为已存在的规范研究分支或软件。全部教学文件、数学身份和规范阅读依据登记在 [learning/manifest.json](learning/manifest.json)，本轮审读范围及修改见 [learning/AUDIT.md](learning/AUDIT.md)。
+
 ## 当前目标与主要成果
 
 当前主要算法目标是：对任意设施数、共同目录、显式可达集合和正二进制有理原子权，在联合输入位长多项式时间内构造完整因子 2 近似 SPE。**一般因子 2 存在性已有完整内部证明，高效构造仍开放。** 最佳统一常数是否小于 2 是另一项研究问题。

@@ -38,7 +38,11 @@ def check_learning(node_ids: set[str]) -> int:
             require(reading.startswith("research/current/") and (ROOT / reading).is_file(),
                     ("invalid canonical teaching source", path, reading))
         content = (ROOT / path).read_text(encoding="utf-8")
-        for match in re.finditer(r"(?<!\\)\[[^\]\n]+\]\(([^)\s]+)\)", content):
+        # A TeX interval followed by a parenthesized factor is not a file link.
+        # Check actual prose links while leaving equations and code examples alone.
+        link_content = re.sub(r"(?s)```.*?```|(?<!\\)\$\$.*?(?<!\\)\$\$|\\\[.*?\\\]", "", content)
+        link_content = re.sub(r"(?<!\\)\$(?!\$)[^$\n]+(?<!\\)\$|\\\(.*?\\\)", "", link_content)
+        for match in re.finditer(r"(?<!\\)\[[^\]\n]+\]\(([^)\s]+)\)", link_content):
             target = match.group(1)
             if re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", target) or target.startswith("#"):
                 continue
