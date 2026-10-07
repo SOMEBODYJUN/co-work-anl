@@ -21,7 +21,7 @@
 
 ## 算法前沿在哪里
 
-[完整盒内存在性与改善—归位全局终止](research/current/multi_facility/greedy_box_global_progress.md) 已闭合：规范贪心布局总有精确站纯、站内独立均匀客户 NE，有限精确构造可接完整因子 2 续局。一般输入剩余的是**总运行时间的位多项式界**。[计算前沿](research/current/multi_facility/polytime_frontier.md) 的离轨多项式定理仍成立；当前可执行完整构造使用有限的帽容量纯改善过程，未实现该文献调度算法。
+[完整盒内存在性与改善—归位全局终止](research/current/multi_facility/greedy_box_global_progress.md) 已闭合：规范贪心布局总有精确站纯、站内独立均匀客户 NE，有限精确构造可接完整因子 2 续局。一般输入剩余的是**总运行时间的位多项式界**，精确下一目标见[交接页](research/questions/greedy_box_polytime.md)。[计算前沿](research/current/multi_facility/polytime_frontier.md) 的离轨多项式定理仍成立；当前可执行完整构造使用有限的帽容量纯改善过程，未实现该文献调度算法。
 
 普遍盒可行性还与既有两个精确 DP 相接：固定逐名关联图树宽及双侧度，或固定地点 primal 树宽及每站不同轻权种类数，均有完整位多项式因子 2 数学构造，无需旧浅层有向图条件。这一新版推论不改变旧命题的假设；一般参数下仍开放。
 
@@ -38,7 +38,7 @@
 | [learning](learning) | 人类团队的分层课程、练习、核心证明路线与两周研讨会 |
 | [research/current](research/current) | 现行模型、命题、完整数学证明与算法解释；定义与结论的权威入口 |
 | [facility_spe](facility_spe) | 双设施规范算法、局部/实例精确求解和验证器 |
-| [multi_facility_spe](multi_facility_spe) | 任意设施数的有限精确构造器；指数搜索，不能作为一般多项式算法 |
+| [multi_facility_spe](multi_facility_spe) | 任意设施数的有限精确构造器；支持全局枚举与贪心盒内构造，尚无一般多项式总时间保证 |
 | [tests](tests) | 回归、独立定义级比较和有限精确攻击，分别标明验证范围 |
 | [examples](examples) / [evidence](evidence) | 输入、证书、冻结实验；不以有限成功替代全称证明 |
 | [history](history) | 来源手稿与旧推导，保留追溯；不是新人入口 |

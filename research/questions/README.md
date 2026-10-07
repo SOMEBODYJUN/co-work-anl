@@ -4,10 +4,11 @@
 
 2026-10-07 的[贪心完整盒定理](../current/multi_facility/greedy_box_global_progress.md)
 已闭合任意规模规范贪心布局的盒内 NE 存在性和全局有限构造；多设施算法主线
-现集中于总时间的输入位长多项式界。
+现集中于[一般输入的位多项式盒内客户 NE 构造](greedy_box_polytime.md)。
 
 | 方向 | 已有边界 | 研究目标 |
 | --- | --- | --- |
+| [一般输入的位多项式盒内客户 NE 构造](greedy_box_polytime.md) | 完整盒普遍可行，已有全局有限构造与因子 2 衔接 | 给某一种有效规则证明多项式总时间，或直接构造终点 |
 | [三设施与任意 $k$、共同目录、精确独立混合客户 NE](three_facilities.md) | [现行全 $k$ 因子 2 定理](../current/multi_facility/uniform_two.md)闭合原统一常数问题；三设施共址因子 3 仅为历史基线 | 最佳统一常数在 $[\varphi,2]$，多项式构造与恰三设施的尖锐值仍开放 |
 | [稀疏异构双设施，双方目录任意大，每跨对至多一名共有客户](sparse_catalogs.md) | 现行 [SPARSE-RHO-ALL](../current/heterogeneous/sparse_unbounded_rho.md) 已给全类尖锐 $\rho$ 内部证明 | 原阈值问题已闭合；保留为边界与审稿入口 |
 | [双设施共同目录，客户成本 \(\mathbb E[L^3]\)](cubic_costs.md) | 直接上界 2；当前六地点共同目录下界经严格单调转移给 \(\phi\)，现行区间 \([\phi,2]\)；线性与二次的 NE 等价不能延伸到三次 | 求普遍 sharp 因子与构造 |
