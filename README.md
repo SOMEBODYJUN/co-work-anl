@@ -6,6 +6,8 @@
 
 讲义现以逐章重写的 Markdown 为源：主证明在正文连续展开，下界、归约、异构与非线性材料在 [十三份教学附录](learning/appendices/) 完整展开。每份附录都有自身的模型、结论和证明；非线性教学重构的来源状态独立标明，不视为已存在的规范研究分支或软件。全部教学文件、数学身份和规范阅读依据登记在 [learning/manifest.json](learning/manifest.json)，本轮审读范围及修改见 [learning/AUDIT.md](learning/AUDIT.md)。
 
+完整阅读文件：[离线 HTML](learning/export/学习和演讲-逐章重写版.html)、[349 页 PDF](learning/export/学习和演讲-逐章重写版.pdf)。全文交叉通读后的分页发现、修订和每页复核依据见 [逐页记录](learning/PAGE_REVIEW.json)。
+
 ## 当前目标与主要成果
 
 当前主要算法目标是：对任意设施数、共同目录、显式可达集合和正二进制有理原子权，在联合输入位长多项式时间内构造完整因子 2 近似 SPE。**一般因子 2 存在性已有完整内部证明，高效构造仍开放。** 最佳统一常数是否小于 2 是另一项研究问题。
