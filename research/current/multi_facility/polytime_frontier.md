@@ -1410,6 +1410,17 @@ occupancy, nor a polynomial method to find one on arbitrary input.
 
 ## SC-K-UNIFORM-LIGHT-FLOW-2: partial overlaps without a common anchor
 
+**2026-10-07 selector refinement and implementation.**
+[SC-K-EQUAL-LIGHT-FLOW-BOX](equal_light_flow.md) proves that the lower
+constraints below are redundant for global optimization: after normalization,
+`F/gamma = n + Psi`, and every unconstrained Psi minimizer already lies in
+the full box and satisfies `(H)`. Thus both selectors have the same optimizer
+set on this original-model class. The new canonical on-path flow code and
+`--method equal-light-flow` are available; the connected off-path/default
+software still uses finite pure improvements. This is a simplification and
+property/implementation refinement, not a newly covered MF input class or
+a new unit-augmentation principle.
+
 **Exact conditional theorem.** Run SC-K-GREEDY-BUDGET on any explicit positive
 binary rational MF-MODEL instance, with arbitrary labeled k>=2 and positive
 maximum reach. Let gamma>0 be its last score and A_i the customer's set

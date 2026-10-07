@@ -2289,6 +2289,97 @@
         "evidence/certificates/multi_facility/greedy_box_global.json"
       ],
       "status": "finite exact implementation evidence"
+    },
+    {
+      "id": "MF-EQUAL-LIGHT-DATA",
+      "kind": "definition",
+      "track": "computation",
+      "title": "Ordered equal movable-weight home data",
+      "detail": "Positive binary site multiplicities in nonincreasing order, rational c in [0,1], individual customers of common delta in (0,1), nonempty allowed sets, home=min allowed site; normalized offsets may be negative.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md"
+      ],
+      "status": "exact input definition"
+    },
+    {
+      "id": "SC-K-EQUAL-LIGHT-FLOW-BOX",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Unconstrained equal-light minima automatically satisfy box and H",
+      "detail": "Every unconstrained global Psi minimizer has full boxes, all original exact NE inequalities and H by two equal-unit labeled home paths. Unit-capacity flow selects one in bit-polynomial time without expanding q. Old lower-box constraints are redundant.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "history/source/notes/multi_facility/equal_light_flow_pro_report_2026-10-07.md"
+      ],
+      "status": "complete current proof, independently internally reviewed; unrefereed"
+    },
+    {
+      "id": "SC-K-EQUAL-LIGHT-FLOW-2",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Equivalent equal-light polynomial mathematical factor two",
+      "detail": "Greedy normalization, the abstract equal-light selector and BOX-TO-2 give a same-class polynomial mathematical factor-two continuation. The original MF class and n unit augmentations already appeared in UNIFORM-LIGHT-FLOW-2; current off-path/default code remains finite.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "complete current proof, independently internally reviewed; unrefereed"
+    },
+    {
+      "id": "MF-EQUAL-LIGHT-FLOW-CODE",
+      "kind": "artifact",
+      "track": "computation",
+      "title": "Canonical polynomial equal-light on-path flow",
+      "detail": "Exact Bellman-Ford flow with n unit augmentations, indivisible client nodes, no binary multiplicity expansion, and explicit rejection of unequal movable weights; connected finite complete continuation.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "multi_facility_spe/equal_light_flow.py",
+        "multi_facility_spe/greedy_box.py",
+        "multi_facility_spe/__main__.py"
+      ],
+      "status": "polynomial on-path implementation; finite off-path completion"
+    },
+    {
+      "id": "E-K-EQUAL-LIGHT-FLOW-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Independent all-global-minima and residual boundary checks",
+      "detail": "Two separate exact enumeration oracles check canonical global optimizers. The second audit separately instruments SHA-256-locked attached source residuals, not canonical internals. Finite checks do not prove the theorem.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "tests/audits/kfac_equal_light_flow.py",
+        "tests/audits/kfac_equal_light_flow_adversary.py",
+        "evidence/runs/2026-10-07/equal_light_flow.json",
+        "evidence/runs/2026-10-07/equal_light_flow_adversary.json"
+      ],
+      "status": "finite independent exact checks"
+    },
+    {
+      "id": "E-K-EQUAL-LIGHT-CONTINUATION-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Complete original-model equal-flow continuation checks",
+      "detail": "Independent conditional-cost oracle validates 301 certificates, 1338 actual labeled deviations and 5613 complete-rule layout evaluations, including 4302 defaults. CLI refuses overwrite and unequal movable weights.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "tests/audits/kfac_equal_light_flow_continuation.py",
+        "evidence/runs/2026-10-07/equal_light_flow_continuation.json",
+        "evidence/certificates/multi_facility/equal_light_flow_complete.json"
+      ],
+      "status": "finite original-definition exact checks"
+    },
+    {
+      "id": "MF-EQUAL-LIGHT-LOCAL-NE-OUTSIDE-BOX",
+      "kind": "counterexample",
+      "track": "computation",
+      "title": "Equal-light exact NE need not satisfy the lower box",
+      "detail": "Strict greedy real input gives q=(3,2,1,1), c=(1/10,1/10,1/25,0), delta=1/2 and menus HM,ML. Away assignment is exact NE plus H with X_H=-2/5, but is not the global optimizer.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "examples/multi_facility/equal_light_flow_local_ne.json",
+        "tests/audits/kfac_equal_light_flow_adversary.py"
+      ],
+      "status": "strict greedy exact selector boundary"
     }
   ],
   "hyperedges": [
@@ -4969,6 +5060,147 @@
         "research/current/multi_facility/greedy_box_global_progress.md"
       ],
       "status": "open runtime boundary"
+    },
+    {
+      "id": "e-mf-equal-light-flow-box",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-EQUAL-LIGHT-DATA"
+      ],
+      "conclusion": "SC-K-EQUAL-LIGHT-FLOW-BOX",
+      "statement": "The exact single-customer difference and two labeled equal-unit path contradictions prove all unconstrained minimizers obey box/NE/H; the explicit slot reduction and shortest-unit augmentations give the full bit bound.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-equal-light-flow-two",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "SC-K-GREEDY-BUDGET",
+        "SC-K-GREEDY-MAX-MULT",
+        "SC-K-EQUAL-LIGHT-FLOW-BOX",
+        "SC-K-GREEDY-BOX-TO-2",
+        "MF-CONT-COMPLETE"
+      ],
+      "conclusion": "SC-K-EQUAL-LIGHT-FLOW-2",
+      "statement": "All greedy normalization, frozen-client and full-box premises jointly supply the same-class polynomial mathematical complete continuation; the imported polynomial off-path scheduler is required.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "research/current/multi_facility/polytime_frontier.md"
+      ],
+      "status": "internal proof"
+    },
+    {
+      "id": "e-mf-equal-light-old-new",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-K-UNIFORM-LIGHT-FLOW-2",
+        "SC-K-EQUAL-LIGHT-FLOW-BOX"
+      ],
+      "conclusion": "SC-K-EQUAL-LIGHT-FLOW-2",
+      "statement": "The older and newer physical input classes agree; F_old/gamma=n+Psi and automatic lower boxes show the global optimizer sets agree. The n-augmentation principle is not newly discovered.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md"
+      ],
+      "status": "precise contribution and implementation boundary"
+    },
+    {
+      "id": "e-mf-equal-light-code",
+      "kind": "implements",
+      "track": "computation",
+      "premises": [
+        "MF-EQUAL-LIGHT-FLOW-CODE"
+      ],
+      "conclusion": "SC-K-EQUAL-LIGHT-FLOW-BOX",
+      "statement": "The canonical exact solver implements the bit-polynomial abstract selector and verifies complete original option inequalities.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "multi_facility_spe/equal_light_flow.py"
+      ],
+      "status": "polynomial on-path implementation"
+    },
+    {
+      "id": "e-mf-equal-light-code-two",
+      "kind": "implements",
+      "track": "computation",
+      "premises": [
+        "MF-EQUAL-LIGHT-FLOW-CODE"
+      ],
+      "conclusion": "SC-K-EQUAL-LIGHT-FLOW-2",
+      "statement": "The selector is connected to the finite full certificate constructor. This is only partial software implementation of the complete polynomial mathematical contract.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "multi_facility_spe/greedy_box.py"
+      ],
+      "status": "partial: polynomial on path, finite off path"
+    },
+    {
+      "id": "e-mf-equal-light-oracle-checks",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "E-K-EQUAL-LIGHT-FLOW-AUDIT"
+      ],
+      "conclusion": "MF-EQUAL-LIGHT-FLOW-CODE",
+      "statement": "Independent exact global-optimizer enumeration and source residual attacks support the implementation only; no universal inference comes from test counts.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "tests/audits/kfac_equal_light_flow.py",
+        "tests/audits/kfac_equal_light_flow_adversary.py"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "e-mf-equal-light-continuation-checks",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "E-K-EQUAL-LIGHT-CONTINUATION-AUDIT"
+      ],
+      "conclusion": "MF-EQUAL-LIGHT-FLOW-CODE",
+      "statement": "Definition-level full certificate, actual labeled deviation and default-layout checks support the connected implementation.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "tests/audits/kfac_equal_light_flow_continuation.py"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "e-mf-equal-light-local-ne-boundary",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "MF-EQUAL-LIGHT-LOCAL-NE-OUTSIDE-BOX"
+      ],
+      "conclusion": "SC-K-EQUAL-LIGHT-FLOW-BOX",
+      "statement": "Every global optimizer is certified; arbitrary NE or one-customer local minima are insufficient even on strict realizable greedy data.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "tests/audits/kfac_equal_light_flow_adversary.py"
+      ],
+      "status": "strict exact boundary"
+    },
+    {
+      "id": "e-mf-equal-light-unequal-endpoints",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO",
+        "SC-K-EQUAL-LIGHT-FLOW-BOX"
+      ],
+      "conclusion": "SC-K-RQ-MIXED-BOX",
+      "statement": "The earlier realizable unequal-weight family has zero internal path term yet a positive total return cost 8/2025; removing internal terms alone does not restore the equal-weight endpoint/threshold argument.",
+      "refs": [
+        "research/current/multi_facility/equal_light_flow.md",
+        "tests/audits/kfac_equal_light_flow_adversary.py"
+      ],
+      "status": "exact method obstruction; no target hardness claim"
     }
   ]
 }

@@ -1,0 +1,336 @@
+{
+  "schema_version": 1,
+  "audit": "independent_equal_light_flow_adversary",
+  "status": "all_passed",
+  "seed": 2026100719,
+  "parameters": {
+    "random_cases": 4500,
+    "identity_cases": 1000,
+    "exhaustive_grid": {
+      "q": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "c_values": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "delta_values": [
+        "1/3",
+        "1/2",
+        "2/3"
+      ],
+      "n": 3,
+      "menus": "Every labeled tuple of nonempty subsets of two sites"
+    },
+    "random_generator": {
+      "m": [
+        1,
+        5
+      ],
+      "n": [
+        0,
+        6
+      ],
+      "q": [
+        1,
+        8
+      ],
+      "c": "choose 0, 1, or randint(0,5)/5",
+      "delta": [
+        "1/2",
+        "1/3",
+        "2/3",
+        "1/101",
+        "100/101"
+      ],
+      "menus": "Independent fair site inclusion; empty replaced by random singleton"
+    },
+    "archived_residual_scope": "All exhaustive grid cases, first 80 random cases, and special fixtures",
+    "optimization_domain": "All legal assignments without box or H prefiltering"
+  },
+  "counts": {
+    "negative_baseline_instances": 4925,
+    "enumerated_assignments": 89521,
+    "all_global_minima_checked": 7902,
+    "tied_minimum_instances": 537,
+    "zero_or_one_optimal_load_instances": 5674,
+    "canonical_global_oracle_instances": 6691,
+    "archived_residual_graphs_checked": 6791,
+    "archived_residual_graphs_with_zero_cost_cycles": 4015,
+    "archived_global_oracle_instances": 6691,
+    "instances": 6691,
+    "canonical_invalid_inputs_rejected": 8,
+    "archived_invalid_inputs_rejected": 8,
+    "nonuniform_path_identities_checked": 1000
+  },
+  "source_sha256": {
+    "multi_facility_spe/equal_light_flow.py": "956884e47e5d763c26f8904a7793566e713ba5a2f42b2f663751cbfe5dad0959",
+    "tests/audits/kfac_equal_light_flow_adversary.py": "a7acb14f5311b448f9c1ad21d6e3a003402e3056a3cceece556f56323bc2a35d",
+    "history/source/notes/multi_facility/equal_light_flow_pro_report_2026-10-07.md": "d1f5457a882ca3e5ec5cc5d3779f0a381fa2f772228880cb64973fa7427406ec",
+    "examples/multi_facility/equal_light_flow_local_ne.json": "e36c10f577eb5c74f311b30cbc4f33a5331b9e33283ed895fac2d6d68878e7ff",
+    "examples/multi_facility/greedy_two_light_potential.json": "70ac92a26ae67b79c5b63b91dcfd0179cfb4239116b72024fbb3ada2724cbce8"
+  },
+  "archived_code_sha256": "340ee161a21e3384091b2461c666bda73fe3e96cc838e3c88cb7b45335186a50",
+  "instrumented_archived_code_sha256": "8d6c360953099810fba903a108bda7db2b7287b8d7f2af8445602c7c49ef988d",
+  "instrumentation": "Only the hash-pinned archived embedded constructor is instrumented; canonical outputs are independently globally verified. No canonical internal residual-state claim.",
+  "local_ne_counterexample": {
+    "fixture": "examples/multi_facility/equal_light_flow_local_ne.json",
+    "strict_greedy_order": [
+      "H",
+      "M",
+      "H",
+      "M",
+      "L",
+      "H",
+      "R"
+    ],
+    "strict_greedy_scores": [
+      "155",
+      "105",
+      "155/2",
+      "105/2",
+      "52",
+      "155/3",
+      "50"
+    ],
+    "gamma": "50",
+    "site_order": [
+      "H",
+      "M",
+      "L",
+      "R"
+    ],
+    "original_ne_totals": {
+      "H": "130",
+      "M": "105",
+      "L": "77",
+      "R": "50"
+    },
+    "all_four_states": [
+      {
+        "assignment": [
+          0,
+          1
+        ],
+        "X": [
+          "1/10",
+          "1/10",
+          "1/25",
+          "0"
+        ],
+        "Psi": "-1/3",
+        "full_box": true,
+        "exact_ne": true,
+        "home_inequality": true
+      },
+      {
+        "assignment": [
+          0,
+          2
+        ],
+        "X": [
+          "1/10",
+          "-2/5",
+          "27/50",
+          "0"
+        ],
+        "Psi": "-7/75",
+        "full_box": false,
+        "exact_ne": false,
+        "home_inequality": true
+      },
+      {
+        "assignment": [
+          1,
+          1
+        ],
+        "X": [
+          "-2/5",
+          "3/5",
+          "1/25",
+          "0"
+        ],
+        "Psi": "-3/20",
+        "full_box": false,
+        "exact_ne": false,
+        "home_inequality": true
+      },
+      {
+        "assignment": [
+          1,
+          2
+        ],
+        "X": [
+          "-2/5",
+          "1/10",
+          "27/50",
+          "0"
+        ],
+        "Psi": "-4/25",
+        "full_box": false,
+        "exact_ne": true,
+        "home_inequality": true
+      }
+    ],
+    "strict_original_menu_comparisons": [
+      {
+        "client": 4,
+        "source": "M",
+        "target": "H",
+        "source_external": "-1/5",
+        "target_price": "-2/15"
+      },
+      {
+        "client": 5,
+        "source": "L",
+        "target": "M",
+        "source_external": "1/25",
+        "target_price": "1/20"
+      }
+    ],
+    "conclusion": "Exact NE and H do not imply the lower box, even with equal movable weights and a strict real greedy origin."
+  },
+  "unequal_counterexample": {
+    "fixture": "examples/multi_facility/greedy_two_light_potential.json",
+    "strict_greedy_order": [
+      "H",
+      "M",
+      "H",
+      "M",
+      "H",
+      "L",
+      "R"
+    ],
+    "strict_greedy_scores": [
+      "179",
+      "134",
+      "179/2",
+      "67",
+      "179/3",
+      "47",
+      "45"
+    ],
+    "gamma": "45",
+    "all_four_states": [
+      {
+        "assignment": [
+          0,
+          1
+        ],
+        "X": [
+          "44/45",
+          "44/45",
+          "2/45",
+          "0"
+        ],
+        "Phi": "326/6075",
+        "full_box": true,
+        "exact_ne": true,
+        "home_inequality": true
+      },
+      {
+        "assignment": [
+          0,
+          2
+        ],
+        "X": [
+          "44/45",
+          "0",
+          "46/45",
+          "0"
+        ],
+        "Phi": "118/1215",
+        "full_box": false,
+        "exact_ne": false,
+        "home_inequality": false
+      },
+      {
+        "assignment": [
+          1,
+          1
+        ],
+        "X": [
+          "8/45",
+          "16/9",
+          "2/45",
+          "0"
+        ],
+        "Phi": "2414/6075",
+        "full_box": false,
+        "exact_ne": false,
+        "home_inequality": false
+      },
+      {
+        "assignment": [
+          1,
+          2
+        ],
+        "X": [
+          "8/45",
+          "4/5",
+          "46/45",
+          "0"
+        ],
+        "Phi": "302/6075",
+        "full_box": false,
+        "exact_ne": true,
+        "home_inequality": false
+      }
+    ],
+    "reverse_path": [
+      "L",
+      "M",
+      "H"
+    ],
+    "reverse_path_weights": [
+      "44/45",
+      "4/5"
+    ],
+    "path_terms": [
+      "-88/2025",
+      "0",
+      "32/675"
+    ],
+    "return_potential_change": "8/2025",
+    "violated_H": [
+      "2/45",
+      "1/90"
+    ],
+    "conclusion": "Unequal endpoint weights and the failed common return threshold matter even when the entire internal potential term is zero. This refutes this selector extension, not existence or all polynomial algorithms."
+  },
+  "primary_source_boundaries": [
+    {
+      "url": "https://www.ijcai.org/proceedings/2024/0315.pdf",
+      "statement": "Theorem 2/Algorithm 1 gives polynomial fixed-placement favoring client equilibria for all-equal clients. Theorem 3/Algorithm 2 gives arbitrary-k exact SPE existence; its total iteration count is expressly open. The present frozen-heterogeneous-client factor-two interface is a different scope and target."
+    },
+    {
+      "url": "https://courses.csail.mit.edu/6.854/20/Notes/n09-mincostflow.html",
+      "statement": "Negative costs, no-negative-residual-cycle optimality and shortest augmentations are standard tools."
+    },
+    {
+      "url": "https://cgi.csc.liv.ac.uk/~gairing/publications/2004-stoc.pdf",
+      "statement": "The imported exact restricted Nashification theorem concerns identical links. With mixed q, site-uniform source own-weight subtraction is not related-link target insertion."
+    }
+  ],
+  "limitations": [
+    "Finite enumeration and random checks do not establish the universal theorem or bit-polynomial complexity.",
+    "The original attached ZIP was unavailable; these are newly reproduced checks, not adopted source counts.",
+    "Residual graph checks refer to the reviewed embedded attachment implementation only.",
+    "SC-K-UNIFORM-LIGHT-FLOW-2 already covered the original-model input class and N unit augmentations.",
+    "The additional mathematical property is automatic full box and H for every unconstrained global minimizer.",
+    "Unequal-weight and local-NE examples refute the specified stronger selectors, not general boxed NE existence.",
+    "No external peer review or comprehensive literature priority certification."
+  ]
+}

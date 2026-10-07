@@ -1,5 +1,13 @@
 # 现行研究资产：命题而非旧文件的清单
 
+2026-10-07 的[等权无约束流选择器](research/current/multi_facility/equal_light_flow.md)
+重构了自动完整盒与 `(H)` 的全部最优解定理，删除旧流的冗余下界约束。
+[规范在轨实现](multi_facility_spe/equal_light_flow.py)、
+[独立全局最优审计](tests/audits/kfac_equal_light_flow.py)、
+[第二份独立攻击](tests/audits/kfac_equal_light_flow_adversary.py)及
+[完整续局核验](tests/audits/kfac_equal_light_flow_continuation.py)分别登记到机器索引。
+该等权原模型输入类和单位增广原理此前已有；当前完整软件离轨仍有限改善。
+
 新增 [SC-K-STAR-LIGHT-GREEDY-2 算法与证明](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)：[逐命题量词](research/current/multi_facility/claims.md)、[严格区分旧条件类的整数输入](examples/multi_facility/greedy_star_edges.json)、[精确算术核验](tests/audits/kfac_star_edges.py)。以后研究异重轻客户的非星形交叠时应读；证明为一般条件算法，脚本只验固定实例。
 
 新增 [SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO 参数族](research/current/multi_facility/polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights)：[现行命题](research/current/multi_facility/claims.md)、[六客户整数输入](examples/multi_facility/greedy_two_light_potential.json)和[独立精确审查](tests/audits/kfac_two_light_potential.py)。它隔离了异重轻客户下带下盒势最小不能保上盒的机制，后续研究选均衡规则时应先读；没有否定盒内 NE 的存在。

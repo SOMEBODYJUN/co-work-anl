@@ -715,8 +715,9 @@ MF-PACK-2, MF-PURE-CAP-POLY and MF-CONT-COMPLETE finish all layouts.
 
 **Scope/limit:** no assumption on overlaps, site counts, weight diversity,
 repair path, or singleton private reserves. The box and on-path NE must
-both be supplied: their universal existence at the greedy occupancy and
-input-bit-polynomial selection remain open. A bad NE outside the box does
+both be supplied: universal existence at the greedy occupancy is now
+SC-K-GREEDY-BOX-EXISTS, while general input-bit-polynomial selection
+remains open. A bad NE outside the box does
 not refute this conditional statement. Direct proof and reverse reset
 check in [polytime_frontier.md](polytime_frontier.md); no external review.
 
@@ -750,8 +751,10 @@ instance](polytime_frontier.md),
 H--M--L instance lies outside RANGE, ALL-OR-ONE and NESTED-ANCHOR.
 The finite script checks that instance only. The universal proof passed
 independent inverse attack, but no external review, novelty certification
-or canonical software implementation is recorded. Two or more different
-light multi-option weights invalidate the equal-unit path argument as
+is recorded. The 2026-10-07 [unconstrained selector](equal_light_flow.md)
+now has canonical polynomial on-path code and a connected finite off-path
+constructor; the imported polynomial off-path scheduler remains unimplemented.
+Two or more different light multi-option weights invalidate the equal-unit path argument as
 stated; the all-input polynomial target remains open.
 
 ## SC-K-STAR-LIGHT-GREEDY-2 -- anchored star edges with unequal light weights
@@ -1118,3 +1121,74 @@ mathematical algorithms; the new finite executable is not a canonical
 implementation of either DP or the imported polynomial off-path primitive.
 Current derivation and internal review are complete; external review and
 literature priority are unestablished.
+
+
+## SC-K-EQUAL-LIGHT-FLOW-BOX -- unconstrained optimizers automatically satisfy box and H
+
+**Input/quantifiers:** explicit positive binary integers q in nonincreasing
+order, rational c in [0,1], n individually labeled customers with common
+0<delta<1, nonempty original allowed sets and h_i=min A_i. Site count,
+incidence structure and multiplicity magnitudes are unrestricted. The
+existence statement also applies to real c and delta; bit complexity is
+for rational encoding. No customers is a valid case.
+
+**Conclusion:** every global minimizer over all allowed assignments of
+
+    Psi(a)=sum_t [b_t N_t + delta N_t(N_t-1)/2]/q_t,
+    b_t=c_t-delta H_t,
+
+lies in 0<=X_t<=1, satisfies every original customer NE comparison and
+(X_ai-delta)/q_ai <= (1-delta)/q_hi. Negative b_t is permitted. A unit
+source/customer/site/slot network finds a minimizer by n unit augmentations,
+with O(m+E+n(n+m+2)(n+E)) integer operations and polynomial operand bit
+length. No expansion by denominators or q_t occurs.
+
+**Proof/novelty boundary:** labeled home-to-assigned edges form a DAG. A
+negative site traces to a sink; equal-unit simultaneous returns cancel
+interior contributions and strictly lower Psi. A violating away customer
+traces backward to X_z<=1-delta and q_z>=q_hi; the same cancellation
+strictly lowers Psi. The latter implies the upper box and home H. Strict
+single-customer differences give all original NE inequalities. The
+[complete proof](equal_light_flow.md) supplies the slot identity,
+negative-cost residual invariant and full bit bounds.
+
+Old SC-K-UNIFORM-LIGHT-FLOW-2 already covered the same MF input class and
+unit augmentations. F_old/gamma=n+Psi and the new lower-box proof imply
+that the old constrained and new unconstrained global optimizer sets
+coincide. The increment is redundant-constraint removal, automatic H
+for every optimizer, and canonical implementation; not a new standard
+flow theorem or a first solution of the equal-light MF class.
+
+**Implementation/evidence:** `multi_facility_spe/equal_light_flow.py`,
+`tests/audits/kfac_equal_light_flow.py`, and the separate adversarial audit
+are exact and reproducible. The uploaded source text and embedded code
+are preserved; its claimed ZIP/tests were not imported as evidence.
+Internal independent reviews are complete, no external review or literature
+priority certification. Arbitrary equal-weight customer NE need not satisfy
+lower boxes, as the strict greedy local-NE counterexample demonstrates.
+
+## SC-K-EQUAL-LIGHT-FLOW-2 -- same-class polynomial mathematical completion
+
+**Input/quantifiers:** explicit rational common-catalog MF-MODEL, k>=2,
+canonical greedy with positive final score gamma; every multi-option
+customer below gamma has one common weight. Single-option and heavy
+customers may have arbitrary weights and incidences. Zero reach is
+handled by the empty-service case.
+
+**Joint premises/conclusion:** GREEDY-BUDGET, GREEDY-MAX-MULT and the
+forward normalization give the preceding abstract data while freezing
+heavy/single-option customers. EQUAL-LIGHT-FLOW-BOX supplies a full-box
+site-pure/within-site-uniform original exact NE. BOX-TO-2 and complete
+labeled continuation supply a polynomial mathematical factor-two rule,
+using the previously imported polynomial off-path/default scheduler.
+This is the same input class as UNIFORM-LIGHT-FLOW-2, not an expansion.
+
+**Software boundary:** `--method equal-light-flow` implements polynomial
+on-path selection and connects it to the existing complete finite
+constructor. It rejects unequal movable weights rather than falling back.
+All actual labeled deviations and default layouts retain exact customer
+NE checks, but executable off-path/default pure improvements have only
+finite termination. The complete polynomial software contract is therefore
+partially implemented. General unequal-light-weight polynomial total time
+remains open; a small observed factor or finite successful audit does not
+improve the universal factor two.

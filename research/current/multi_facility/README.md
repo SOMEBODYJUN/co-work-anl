@@ -1,5 +1,23 @@
 # Common-catalog arbitrary-k branch
 
+## Equal movable weights: unrestricted flow and a canonical implementation
+
+[SC-K-EQUAL-LIGHT-FLOW-BOX](equal_light_flow.md) proves that every unconstrained
+global potential minimizer automatically obeys the full box and `(H)`.
+The equal-unit home paths remove the lower-bound constraints from the older
+`SC-K-UNIFORM-LIGHT-FLOW-2` selector; the original-model input class and the
+unit-augmentation principle were already covered there. The new note proves
+the exact identity and equality of the two optimizer sets, and supplies a
+canonical Bellman--Ford implementation with complete bit bounds.
+
+Run `python3 -m multi_facility_spe examples/multi_facility/equal_light_flow_complete.json --method equal-light-flow --output equal_flow_certificate.json`.
+The on-path selector is bit-polynomial and rejects unequal movable weights;
+the connected executable still uses finite pure improvements off path and
+at default layouts. Its mathematical factor-two corollary uses the existing
+polynomial off-path interface. General unequal-weight bit-polynomial time
+remains open. A strict greedy example shows why arbitrary customer NE cannot
+replace global minima even in the equal-weight class.
+
 ## Universal greedy full-box existence and finite construction (2026-10-07)
 
 [SC-K-GREEDY-BOX-EXISTS](greedy_box_global_progress.md) closes full-box exact site-pure/within-site-uniform customer NE existence at every canonical greedy occupancy, with heavy and singleton-option customers frozen. The interleaved threshold-clipped load and home-return-count potential strictly increases at every authorized improvement and return microstep. Arbitrary strict improvement choices followed by the specified repair therefore terminate, preserving `(H)` at batch boundaries; a deterministic finite exact implementation uses polynomial space when it does not retain its trace. The general number of steps is not proved polynomial.

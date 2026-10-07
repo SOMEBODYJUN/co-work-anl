@@ -16,6 +16,7 @@
 | 共同目录实例复杂度 | 每个事先固定的有理 1≤a<φ，判定实例最优倍率≤a 弱 NP 完全；三地点处理 a=1，五地点覆盖全部 1<a<φ | [结构与算法边界](research/current/shared/instance_complexity_barriers.md)、[五地点全归约](research/current/shared/five_site_exact_hardness.md) |
 | 任意设施数共同目录 2 | 存在纯选址、站内均匀在轨客户 NE 和完整精确纯离轨续局；不声称 2 尖锐或一般位多项式 | [主定理](research/current/multi_facility/uniform_two.md)、[逆审](research/current/multi_facility/reverse_review.md) |
 | 任意规模贪心完整盒 NE | 固定规范贪心布局；阈值截断负载与离乡人数的交错字典序势证明任意严格改善加归位修复有限终止，构造完整盒内精确客户 NE；无一般多项式总步数界 | [全局进展证明](research/current/multi_facility/greedy_box_global_progress.md)、[运行](USAGE.md) |
+| 等权可移动客户的无约束流选择器 | 任意覆盖图与二进制重数；无约束目标的每个全局最小者自动在完整盒内并满足 `(H)`。等权原模型子类此前已可多项式求解；本轮删除冗余下界、强化最优解性质并补规范实现 | [完整新证明与旧结果比较](research/current/multi_facility/equal_light_flow.md)、[实现](multi_facility_spe/equal_light_flow.py) |
 
 以上成果审查状态不同，均无外部同行评审记录。精确作用域、来源证明、现行重构、内部审查与实现分别登记在 [命题账本](research/current/claims.md) 和 [五轴状态表](research/review_status.json)。内部证明、有限实例证书及学术发表是不同层次。
 
@@ -24,6 +25,8 @@
 [完整盒内存在性与改善—归位全局终止](research/current/multi_facility/greedy_box_global_progress.md) 已闭合：规范贪心布局总有精确站纯、站内独立均匀客户 NE，有限精确构造可接完整因子 2 续局。一般输入剩余的是**总运行时间的位多项式界**，精确下一目标见[交接页](research/questions/greedy_box_polytime.md)。[计算前沿](research/current/multi_facility/polytime_frontier.md) 的离轨多项式定理仍成立；当前可执行完整构造使用有限的帽容量纯改善过程，未实现该文献调度算法。
 
 普遍盒可行性还与既有两个精确 DP 相接：固定逐名关联图树宽及双侧度，或固定地点 primal 树宽及每站不同轻权种类数，均有完整位多项式因子 2 数学构造，无需旧浅层有向图条件。这一新版推论不改变旧命题的假设；一般参数下仍开放。
+
+本轮[审查汇总](research/EQUAL_LIGHT_FLOW_AUDIT_2026-10-07.md)区分旧结果、新增性质和实际复现范围。等权可移动轻客户现在另有[规范无约束流实现](research/current/multi_facility/equal_light_flow.md)。它允许冻结客户异权，恰有逐客户单位增广；`--method equal-light-flow` 已接完整证书。该方法的在轨阶段为位多项式，当前软件的离轨及默认阶段仍是有限纯改善。它不扩大旧 `SC-K-UNIFORM-LIGHT-FLOW-2` 的原模型输入类，也未解决一般异权总时间。
 
 [盒内完成](research/current/multi_facility/polytime_frontier.md)、[自适应原池重置](research/current/multi_facility/adaptive_reset_floor.md) 和 [冻结安全超载](research/current/multi_facility/frozen_overload_completion.md) 是三类可复用接口。最后一类只给偏离者设收益帽，允许其他设施安全超载。它们不提供任意输入的成功证书生成器。特殊可算类按讲义 [工具](learning/05_tools.md) 分类阅读；必要障碍集中在 [前沿](learning/06_frontier.md)，不必逐个记住优先规则反例。
 

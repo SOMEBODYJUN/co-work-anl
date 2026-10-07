@@ -1,4 +1,4 @@
-"""Exact finite greedy-box construction; no polynomial iteration bound.
+"""Exact greedy-box construction with finite or equal-light-flow selection.
 
 The on-path dynamics uses a threshold-interleaved lexicographic potential.
 Every strict improvement and every home-return is checked with exact rational
@@ -113,13 +113,16 @@ def verify_on_path(inst: Instance, layout, assignment, *, gamma=None, home=None)
                 site_loads={str(t): str(mass[t]) for t in sorted(q)})
 
 
-def construct_on_path(inst: Instance):
-    """Return (layout, site_assignment, audit) after finite guarded dynamics.
+def construct_on_path(inst: Instance, *, method='improve-return'):
+    """Return (layout, site_assignment, audit) using the specified selector.
 
-    No artificial iteration limit is imposed. Arithmetic and working storage
-    have polynomial bit size; the number of moves is not bounded polynomially.
+    The default guarded dynamics has no polynomial iteration bound. The
+    equal-light-flow selector is bit-polynomial and rejects unequal movable
+    weights; it does not change the off-path/default continuation algorithm.
     """
     inst = _instance(inst)
+    if method not in ('improve-return', 'equal-light-flow'):
+        raise ValueError('Unknown on-path selection method')
     layout, home, gamma, opening = canonical_greedy(inst)
     a = list(home)
     groups = site_groups(layout)
@@ -166,6 +169,24 @@ def construct_on_path(inst: Instance):
 
     if not valid_batch():
         raise ArithmeticError("Initial greedy state violates full boxes or H")
+    if method == 'equal-light-flow':
+        from .equal_light_flow import equal_weight_box_ne
+        # Abstract ranks retain greedy home=min(A); physical labels continue
+        # to identify the actual sites and all labeled off-path layouts.
+        flow = equal_weight_box_ne(
+            [q[t] for t in order], [x[t] for t in order],
+            [w[i] for i in variable],
+            [[rank[t] for t in options[i]] for i in variable])
+        for i, assigned_rank in zip(variable, flow['assignment']):
+            a[i] = order[assigned_rank]
+        checked = verify_on_path(inst, layout, a, gamma=gamma, home=home)
+        return layout, tuple(a), dict(
+            selection_method='equal-light-flow', gamma=str(gamma),
+            opening_order=list(opening), occupied_rank_order=list(order),
+            initial_site_assignment=list(home), variable_clients=variable,
+            flow_solution=flow, final_verification=checked,
+            complexity='bit-polynomial equal-light on-path selection; '
+                       'complete off-path/default implementation remains finite')
     improvements = repairs = batches = max_repairs = 0
     while True:
         chosen = None
@@ -269,14 +290,14 @@ def deviation_witness(inst: Instance, layout, assignment, home, gamma, f, target
     return result, stats
 
 
-def construct(inst: Instance):
+def construct(inst: Instance, *, on_path_method='improve-return'):
     """Construct a complete factor-two rule with polynomial-size description.
 
     Actual one-facility deviations are explicit; all other labeled layouts use
     the existing finite default rule. Evaluation is finite, not polynomial-time.
     """
     inst = _instance(inst)
-    layout, assignment, audit = construct_on_path(inst)
+    layout, assignment, audit = construct_on_path(inst, method=on_path_method)
     home = tuple(audit['initial_site_assignment'])
     gamma = F(audit['gamma'])
     p = uniform_profile(inst, layout, assignment)
@@ -294,6 +315,8 @@ def construct(inst: Instance):
                              probabilities=[[str(v) for v in row] for row in p]),
                 deviations=deviations, greedy_box_audit=audit,
                 default_rule='least-index initial pure assignment, then strict pure best responses',
-                complexity=('finite polynomial-space construction and evaluation; '
+                complexity=(('bit-polynomial equal-light on-path selection; '
+                             if on_path_method == 'equal-light-flow' else '') +
+                            'finite polynomial-space construction and evaluation; '
                             'polynomial-size rule; no polynomial total-time bound; '
                             'published polynomial Nashification not implemented'))
