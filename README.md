@@ -22,6 +22,9 @@
 
 ## 算法前沿在哪里
 
+2026-10-08 的[共单例搜索接口](research/current/multi_facility/complement_search_reduction.md)
+将另一类负载均衡搜索精确实现为真实贪心实例：全状态保盒且严格保 `(H)`，没有归位修复，仍保留全部客户选择关系。两速度 `1,2` 的归约为通常位多项式；一般带区间表述不展开重数。它是结构定位成果，编译器不求均衡，不证明一般高效构造或困难性。证明、实现、独立精确核验及近期解释/自由选路目标已汇入[复合审查记录](research/COMPLEMENT_REDUCTION_AUDIT_2026-10-08.md)。
+
 [完整盒内存在性与改善—归位全局终止](research/current/multi_facility/greedy_box_global_progress.md) 已闭合：规范贪心布局总有精确站纯、站内独立均匀客户 NE，有限精确构造可接完整因子 2 续局。一般输入剩余的是**总运行时间的位多项式界**，精确下一目标见[交接页](research/questions/greedy_box_polytime.md)。[计算前沿](research/current/multi_facility/polytime_frontier.md) 的离轨多项式定理仍成立；当前可执行完整构造使用有限的帽容量纯改善过程，未实现该文献调度算法。
 
 普遍盒可行性还与既有两个精确 DP 相接：固定逐名关联图树宽及双侧度，或固定地点 primal 树宽及每站不同轻权种类数，均有完整位多项式因子 2 数学构造，无需旧浅层有向图条件。这一新版推论不改变旧命题的假设；一般参数下仍开放。

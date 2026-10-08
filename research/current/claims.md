@@ -1,5 +1,14 @@
 # 现行命题登记：前提、结论、依赖与状态
 
+## 2026-10-08 complement search interfaces
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| SC-K-COMPLEMENT-GREEDY-REDUCTION | Co-singleton affine source: integer speeds q>=1, nonnegative rational backgrounds, individual positive rational weights, nonempty allowed sets; target is actual canonical greedy MF-MODEL with explicit k=1+sum(q). | Original multiplicities, gamma=1, every legal assignment in the full box and strict H; all deviations, source pure NE versus target station-pure independent-uniform NE, weighted potentials and specified dynamics correspond. Usual source-bit polynomial search reduction for q in {1,2}; arbitrary binary q is output-sensitive. No equilibrium oracle or hardness. | [Full reconstruction and bit bounds](multi_facility/complement_search_reduction.md); composite internal algebraic/definition-level review and canonical implementation, no external review. |
+| SC-K-BOX-BOUNDED-COMPLEMENT | Ordered abstract q, c in [0,1], individual w in (0,1), nonempty A and home=min A. Compatible inverse source additionally has those weight/home constraints and initial q_t M-1<=Y_t(h)<=q_t M. | Y_t=q_t M-X_t preserves every original deviation and converts full-box output into exact load bands without expanding q. Arbitrary unbounded NE does not suffice; bands are output requirements, not hard capacities. Representation only, not a selector. | [Forward/inverse domains and strict band counterexample](multi_facility/complement_search_reduction.md); complete internal reconstruction, implemented import, no external review or general search-time theorem. |
+
+The new source-to-greedy embedding and general bounded-complement representation do not change the feasibility or time status of `SC-K-RQ-MIXED-BOX`. The previous direct speed substitution remains false; the new interface uses strategy complements and an affine reversal of loads.
+
 ## 2026-10-07 greedy full-box existence and finite construction
 
 | ID | Exact scope | Result and boundary | Proof and status |

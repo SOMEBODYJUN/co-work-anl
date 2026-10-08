@@ -25,6 +25,22 @@
 
 ## 证书检查与所不能推出的结论
 
+共单例源输入可编译为真实规范贪心实例：
+
+```sh
+python3 -m multi_facility_spe.complement_reduction examples/multi_facility/complement_source_two_speed.json --output compiled_search.json
+python3 -m tests.test_complement_reduction
+python3 tests/audits/kfac_complement_reduction.py
+```
+
+输入字段为 `q,B,u,A` 与可选 `eta`；索引从零开始，使用精确整数/分数字符串，
+输出文件存在时拒绝覆盖。输出含真实客户、布局和抽象接口，**没有求解均衡**。
+API `as_facility_instance(compiled)` 接入现有原模型，`decode_ne` 检查外部提供的
+站纯均匀 NE 并返回源排除地点；二选一时所选机器是另一个端点。
+`to_bounded_complement(q,c,w,A)` 输出一般带区间共单例合同，不展开二进制重数。
+源编译按显式 `k=1+sum(q)` 收费；两速度 `1,2` 才是通常源位长下的多项式归约。
+完整证明和边界见[规范稿](research/current/multi_facility/complement_search_reduction.md)。
+
 `--method equal-light-flow` 使用[无约束等权流](research/current/multi_facility/equal_light_flow.md)，
 不模拟客户改善链、不展开二进制 `q`、不按分母数值循环。归位排名与物理地点标签
 分别保留，完整偏离仍检查实际带标签布局。底层抽象 API 为

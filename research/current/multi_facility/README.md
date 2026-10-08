@@ -1,5 +1,21 @@
 # Common-catalog arbitrary-k branch
 
+## Complement search: a faithful interface, not an equilibrium solver
+
+[SC-K-COMPLEMENT-GREEDY-REDUCTION / SC-K-BOX-BOUNDED-COMPLEMENT](complement_search_reduction.md)
+realize co-singleton affine games at true canonical greedy layouts without
+multiplicity amplification. Every legal target state obeys the box and strict
+H, so no home return occurs; deviations and the specified dynamics correspond.
+Two speeds `1,2` give an ordinary source-bit polynomial search reduction.
+General binary q compilation counts explicit `k=1+sum(q)`; the separate
+bounded-complement import does not expand q and keeps its output bands.
+This diagnoses search structure without a general solver or hardness result.
+
+Run `python3 -m multi_facility_spe.complement_reduction examples/multi_facility/complement_source_two_speed.json --output compiled_search.json`.
+The output is an instance/interface, not an NE. Scope, corrections, independent
+exact checks and the freely chosen-method handoff are in the
+[2026-10-08 composite review](../../COMPLEMENT_REDUCTION_AUDIT_2026-10-08.md).
+
 ## Equal movable weights: unrestricted flow and a canonical implementation
 
 [SC-K-EQUAL-LIGHT-FLOW-BOX](equal_light_flow.md) proves that every unconstrained

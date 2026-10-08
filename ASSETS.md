@@ -1,5 +1,14 @@
 # 现行研究资产：命题而非旧文件的清单
 
+2026-10-08 的[共单例搜索归约与带区间表述](research/current/multi_facility/complement_search_reduction.md)
+已经过代数、编码合同、反例攻击及实际设施成本的复合审查。
+[规范编译/解码](multi_facility_spe/complement_reduction.py)、
+[独立精确核验](tests/audits/kfac_complement_reduction.py)、
+[快速边界回归](tests/test_complement_reduction.py)、
+[最终冻结结果](evidence/runs/2026-10-08/complement_reduction_final.json)
+及原附稿追溯均已登记。[过程记录](research/COMPLEMENT_REDUCTION_AUDIT_2026-10-08.md)
+保存真实增量、人类解释与自由选路交接；没有登记一般求解器或困难性。
+
 2026-10-07 的[等权无约束流选择器](research/current/multi_facility/equal_light_flow.md)
 重构了自动完整盒与 `(H)` 的全部最优解定理，删除旧流的冗余下界约束。
 [规范在轨实现](multi_facility_spe/equal_light_flow.py)、

@@ -1,5 +1,13 @@
 # Exact claim identities: common catalog, arbitrary k
 
+## 2026-10-08 共单例搜索接口补充
+
+`SC-K-COMPLEMENT-GREEDY-REDUCTION` 将正异权共单例源游戏保真实现为真实规范贪心实例，保留原重数、全部偏离和指定运行；全状态完整盒及严格 H 消除归位修复。两速度 `1,2` 给通常位长多项式搜索归约，一般速度编译按显式 `k` 收费。
+
+`SC-K-BOX-BOUNDED-COMPLEMENT` 给一般抽象盒输入不展开二进制重数的带区间表述，反向恢复限于兼容初态和权重域。任意无区间 NE 不足以替代输出区间内 NE。
+
+完整量词、代数、势定义、初态和位复杂度见 [规范稿](complement_search_reduction.md)。这是内部复合审查后的结构接口，不是一般求解算法、PLS 困难性或长路径定理；不重复计入已存在的等权盒外 NE 反例。
+
 ## MF-FROZEN-OVERLOAD-POLY and SC-K-FROZEN-OVERLOAD-2 -- safe stationary overloads
 
 **Objects/domain:** MF-MODEL with explicit positive binary-rational clients, labeled facilities and a common catalog; a fixed actual layout, rational cap `B>=0`, mover `f`, and a supplied feasible pure seed. Partition facilities into ordinary `U` containing `f` with seed loads at most `B`, and frozen `H` with seed loads strictly above `B`. Remove frozen clients and facilities; compute the pure forced-client floors `eta` in the residual game, using only residual clients and ordinary multiplicities.

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Facility location mathematical dependency hypergraph",
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -2183,7 +2183,8 @@
         "research/current/multi_facility/restricted_related_link_boundary.md",
         "research/current/multi_facility/polytime_frontier.md",
         "research/current/multi_facility/greedy_box_global_progress.md",
-        "research/questions/greedy_box_polytime.md"
+        "research/questions/greedy_box_polytime.md",
+        "research/current/multi_facility/complement_search_reduction.md"
       ],
       "status": "open algorithmic obligation; no hardness claim"
     },
@@ -2380,6 +2381,67 @@
         "tests/audits/kfac_equal_light_flow_adversary.py"
       ],
       "status": "strict greedy exact selector boundary"
+    },
+    {
+      "id": "MF-COMPLEMENT-DATA",
+      "kind": "definition",
+      "track": "computation",
+      "title": "Co-singleton affine game and ordered bounded import domain",
+      "detail": "Source chooses an excluded resource in A and uses the remaining resources, with positive individual weights, integer speeds and nonnegative backgrounds. Ordered abstract box data have c in [0,1], w in (0,1), home=min A; inverse imports additionally require initial load bands.",
+      "refs": [
+        "research/current/multi_facility/complement_search_reduction.md"
+      ],
+      "status": "exact input definition"
+    },
+    {
+      "id": "SC-K-COMPLEMENT-GREEDY-REDUCTION",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Faithful true-greedy complement search embedding",
+      "detail": "Positive private clients realize original multiplicities without amplification, gamma=1, all-state full boxes and strict H. Costs, NE, weighted potentials and specified rule correspond from actual greedy homes. Compilation is polynomial in explicit k; two speeds 1,2 make a usual source-bit search reduction. No solver or hardness.",
+      "refs": [
+        "research/current/multi_facility/complement_search_reduction.md",
+        "history/source/notes/multi_facility/complement_reduction_pro_report_2026-10-08.md"
+      ],
+      "status": "complete current proof, internally reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "SC-K-BOX-BOUNDED-COMPLEMENT",
+      "kind": "claim",
+      "track": "computation",
+      "title": "General boxed selection as bounded complement NE",
+      "detail": "Y_t=q_t M-X_t preserves all deviations and turns full boxes into q_t M-1<=Y_t<=q_t M. Computation does not expand binary q. Reverse mapping requires the exact compatible home, weight and initial-band contract; arbitrary unbounded NE is insufficient.",
+      "refs": [
+        "research/current/multi_facility/complement_search_reduction.md",
+        "history/source/notes/multi_facility/complement_reduction_pro_report_2026-10-08.md"
+      ],
+      "status": "complete current proof, internally reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "MF-COMPLEMENT-CODE",
+      "kind": "artifact",
+      "track": "computation",
+      "title": "Canonical search compiler, bounded import and NE decoder",
+      "detail": "Exact numeric I/O and literal canonical greedy; actual Instance interface and supplied-NE verification. Reuses only numeric I/O from equal-light module, never its solver. CLI preserves existing files.",
+      "refs": [
+        "research/current/multi_facility/complement_search_reduction.md",
+        "multi_facility_spe/complement_reduction.py"
+      ],
+      "status": "implemented interfaces only; no equilibrium solver"
+    },
+    {
+      "id": "E-K-COMPLEMENT-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Definition-level source and labeled-facility exact audit",
+      "detail": "448 paired-tie compilations, 5718 states, 45372 cross-site deviations, 179338 physical conditional costs, 224 canonical trajectory checks, and 700 bounded imports with 9930 states; repeated runs not aggregated. Large numeric I/O and strict unbounded-NE boundary have separate regressions.",
+      "refs": [
+        "research/current/multi_facility/complement_search_reduction.md",
+        "tests/audits/kfac_complement_reduction.py",
+        "tests/test_complement_reduction.py",
+        "evidence/runs/2026-10-08/complement_reduction_final.json"
+      ],
+      "status": "finite internal definition-level checks"
     }
   ],
   "hyperedges": [
@@ -5201,6 +5263,98 @@
         "tests/audits/kfac_equal_light_flow_adversary.py"
       ],
       "status": "exact method obstruction; no target hardness claim"
+    },
+    {
+      "id": "e-mf-complement-greedy",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-MODEL",
+        "MF-COMPLEMENT-DATA"
+      ],
+      "conclusion": "SC-K-COMPLEMENT-GREEDY-REDUCTION",
+      "statement": "Joint original conditional costs and specified co-singleton source data allow the positive private-customer construction; direct greedy and cost algebra give the scoped search reduction.",
+      "refs": [
+        "research/current/multi_facility/complement_search_reduction.md"
+      ],
+      "status": "internal complete reconstruction"
+    },
+    {
+      "id": "e-mf-complement-bounded",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "MF-COMPLEMENT-DATA"
+      ],
+      "conclusion": "SC-K-BOX-BOUNDED-COMPLEMENT",
+      "statement": "Ordered abstract baseline data and exact compatible reverse constraints give nonnegative backgrounds, all-deviation cost equality and equivalent output load bands without expanding q.",
+      "refs": [
+        "research/current/multi_facility/complement_search_reduction.md"
+      ],
+      "status": "internal complete reconstruction"
+    },
+    {
+      "id": "e-mf-complement-code-greedy",
+      "kind": "implements",
+      "track": "computation",
+      "premises": [
+        "MF-COMPLEMENT-CODE"
+      ],
+      "conclusion": "SC-K-COMPLEMENT-GREEDY-REDUCTION",
+      "statement": "The compiler outputs a real target and literal greedy certificate; the decoder verifies an externally supplied station-pure NE. No oracle is implemented.",
+      "refs": [
+        "research/current/multi_facility/complement_search_reduction.md",
+        "multi_facility_spe/complement_reduction.py"
+      ],
+      "status": "output-sensitive compiler implementation"
+    },
+    {
+      "id": "e-mf-complement-code-bounded",
+      "kind": "implements",
+      "track": "computation",
+      "premises": [
+        "MF-COMPLEMENT-CODE"
+      ],
+      "conclusion": "SC-K-BOX-BOUNDED-COMPLEMENT",
+      "statement": "The bounded-complement function implements the linear-size import including both load band endpoints, without selecting an equilibrium.",
+      "refs": [
+        "research/current/multi_facility/complement_search_reduction.md",
+        "multi_facility_spe/complement_reduction.py"
+      ],
+      "status": "bounded import implementation"
+    },
+    {
+      "id": "e-mf-complement-audit",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "E-K-COMPLEMENT-AUDIT"
+      ],
+      "conclusion": "MF-COMPLEMENT-CODE",
+      "statement": "Exact definition-level enumeration and canonical comparison check only finite implementation behavior; they are not premises of either universal claim.",
+      "refs": [
+        "research/current/multi_facility/complement_search_reduction.md",
+        "tests/audits/kfac_complement_reduction.py",
+        "tests/test_complement_reduction.py",
+        "evidence/runs/2026-10-08/complement_reduction_final.json"
+      ],
+      "status": "finite exact implementation evidence"
+    },
+    {
+      "id": "e-mf-complement-open-boundary",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-K-COMPLEMENT-GREEDY-REDUCTION",
+        "SC-K-BOX-BOUNDED-COMPLEMENT"
+      ],
+      "conclusion": "SC-K-RQ-MIXED-BOX",
+      "statement": "Both search interfaces leave general total bit time open. No-return embedded games still require equilibrium search, and arbitrary unbounded NE need not meet output bands; alternative layouts or certificates remain permitted.",
+      "refs": [
+        "research/current/multi_facility/complement_search_reduction.md",
+        "research/questions/greedy_box_polytime.md"
+      ],
+      "status": "open algorithmic scope"
     }
   ]
 }
