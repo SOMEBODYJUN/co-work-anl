@@ -1,5 +1,39 @@
 # 当前研究状态（2026-10-09）
 
+
+## 2026-10-09：三人福利定理与税归纳的明确失败边界
+
+本轮从 `main@3f07c7de1d0fa02748c287043a88842c1d55c9cc` 安全恢复、fetch 并快进确认，
+初始工作区干净。按用户授权启动六名 `gpt-6.1-sol ultra`，分别负责一般税证明、
+定向税攻击、全局收费、三人代数证明、完整策略锥攻击和一手文献核查。
+主目标仍是全部有序历史依赖纯 SPE 的 `OPT_m≤2W`，没有削弱量词。
+
+**新的正向成果：** [CA-THREE-UPPER-142-81](research/current/customer_attraction/three_player_bound.md)
+对任意共同目录、恰三名玩家证明 `OPT_3≤(142/81)W`。
+由合法固定背景两人税比较、实际末位节点最优性及根偏离的无条件均分下界，
+构成三个非负 slack 和一个精确非负余项恒等式。两名代理独立重构，
+零覆盖严格链表述已修正，未保留致命反驳；不声称锐性、新颖性或外部审查。
+
+**税路线的状态已改变：** [CA-TAX-BRIDGE-NO](research/current/customer_attraction/tax_bridge_counterexample.md)
+在空背景三人、四主题、十五客户给出完整始终选 B 的 SPE：
+`F3=15 > u1+tau(B)+F2(B)=29/2`。因此此前式 (9) 不是开放桥，而是已否定的桥。
+该例总根税恰等号，不能由此否定根总税或半覆盖。
+[CA-GENERAL-TAX-NO](research/current/customer_attraction/general_tax_counterexample.md)
+再否定任意合法背景的总税版本：三个不交主题 A7/B1/C1，完整七人 SPE 始终选 A，
+实际前缀 AAA 后四剩余人有 `F4=24/5 > 4+3/4`，差 `1/20`。
+无限族说明这不是偶然算术；零背景总税依然未被本例否定。
+
+[CA-STRATEGY-CONE](research/current/customer_attraction/strategy_cone.md)把每个完整有序历史策略
+对应到客户类型重数的有理多面体锥；归一化截面紧，固定 `(m,p)` 的最坏比值由有理极点
+缩放成单位客户整数实例实际达到。精确 Farkas 证书可认证每个固定策略锥的全部重数。
+现有有限策略样本没有穷尽全锥，不给四人或任意人数的上界。
+[文献追加核查](research/current/customer_attraction/literature_followup.md)排除 set packing 和
+短视 best-response 定理的直接导入；未检得后续解答不等于不存在证明。
+
+当前真正前沿转为四人及以上：寻找不要求逐层机会成本成立的全局收费，
+或单独证明零背景总税；不可重新使用已否定的任意背景税归纳。
+上述新结果、独立精确审计、输入和完整子局/根策略证据随阶段 checkpoint 保存。
+
 ## 2026-10-09：本轮活跃目标改为共同目录顺序 CAG 的半覆盖
 
 安全恢复并同步 `main@e111593b3212cc56474c298ff1284dbdd7cca010`；初始没有有效项目，

@@ -1228,16 +1228,20 @@
         "CA-HISTORY-TIES",
         "CA-RESIDUAL-NO",
         "CA-TWO-REMAINING-TAX",
-        "CA-PORTFOLIO-MATCHING-NO"
+        "CA-PORTFOLIO-MATCHING-NO",
+        "CA-THREE-UPPER-142-81",
+        "CA-TAX-BRIDGE-NO",
+        "CA-GENERAL-TAX-NO",
+        "CA-STRATEGY-CONE"
       ],
-      "status": "exact finite solver and independently checked bridge counterexamples; half-coverage target open",
+      "status": "three-player universal bound and exact failed tax bridges; arbitrary-player half coverage open",
       "applies_when": [
         "finite common catalog of themes; unit equal-share customers",
         "unit providers move once in order and observe the entire history",
         "all pure SPE choices, including arbitrary history-dependent ties",
         "integer type multiplicity means distinct unit clones"
       ],
-      "produces": "all attainable pure-SPE terminal counts, complete ordered-history certificates, four failed bridges, and a strict tax theorem for exactly two remaining players",
+      "produces": "all attainable pure SPE terminals, full certificates, universal three-player 142/81 bound, failed first-step and general-background tax interfaces, and rational full-strategy cone optimization",
       "implementation": [
         "customer_attraction/model.py",
         "customer_attraction/exact.py",
@@ -1251,28 +1255,45 @@
         "research/current/customer_attraction/literature.md",
         "research/current/customer_attraction/README.md",
         "research/current/customer_attraction/two_remaining_tax.md",
-        "research/current/customer_attraction/portfolio_matching_counterexample.md"
+        "research/current/customer_attraction/portfolio_matching_counterexample.md",
+        "research/current/customer_attraction/three_player_bound.md",
+        "research/current/customer_attraction/tax_bridge_counterexample.md",
+        "research/current/customer_attraction/general_tax_counterexample.md",
+        "research/current/customer_attraction/strategy_cone.md",
+        "research/current/customer_attraction/literature_followup.md"
       ],
       "tests": [
         "tests/test_customer_attraction.py",
         "tests/audits/customer_attraction_search.py",
         "tests/audits/customer_attraction_continuations.py",
         "tests/audits/customer_attraction_tax.py",
-        "tests/audits/customer_attraction_portfolio_matching.py"
+        "tests/audits/customer_attraction_portfolio_matching.py",
+        "tests/audits/customer_attraction_three_player.py",
+        "tests/audits/customer_attraction_tax_bridge.py",
+        "tests/audits/customer_attraction_general_tax.py",
+        "tests/audits/customer_attraction_strategy_lp.py"
       ],
       "records": [
         "evidence/runs/2026-10-09/customer_attraction_search.json",
         "evidence/runs/2026-10-09/customer_attraction_continuations.json",
         "evidence/runs/2026-10-09/customer_attraction_tax.json",
-        "evidence/runs/2026-10-09/customer_attraction_portfolio_matching.json"
+        "evidence/runs/2026-10-09/customer_attraction_portfolio_matching.json",
+        "evidence/runs/2026-10-09/customer_attraction_three_player.json",
+        "evidence/runs/2026-10-09/customer_attraction_tax_bridge.json",
+        "evidence/runs/2026-10-09/customer_attraction_general_tax.json",
+        "evidence/runs/2026-10-09/customer_attraction_strategy_lp_m4p5.json",
+        "evidence/runs/2026-10-09/customer_attraction_strategy_lp_m4p5_certified.json"
       ],
       "examples": [
         "examples/customer_attraction/residual_counterexample.json",
         "evidence/certificates/customer_attraction/residual_counterexample.json",
         "examples/customer_attraction/portfolio_matching_failure.json",
-        "evidence/certificates/customer_attraction/portfolio_matching_failure.json"
+        "evidence/certificates/customer_attraction/portfolio_matching_failure.json",
+        "examples/customer_attraction/tax_bridge_failure.json",
+        "examples/customer_attraction/general_tax_failure.json",
+        "evidence/certificates/customer_attraction/general_tax_failure_subgame.json"
       ],
-      "limit": "Finite enumeration has no bit-polynomial guarantee. Exact witness constructions refute only specified bridges, not half coverage. Two-remaining tax controls remaining profit, not whole coverage with incumbents. General opportunity bridge and half coverage remain open. Finite zero searches do not promote any conjecture. No external peer review or novelty certification recorded.",
+      "limit": "Universal 142/81 result applies to exactly three players, not arbitrary m. First-step bridge and arbitrary-background total tax are refuted. Root total tax and general half coverage remain open. Fixed (m,p) strategy-cone attainment allows duplicate labeled coverage; sampled cones are not all strategies. No external peer review or novelty certification.",
       "sources": [
         "history/source/notes/customer_attraction/origin_2026-10-09.md"
       ]

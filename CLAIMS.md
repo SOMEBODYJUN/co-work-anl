@@ -75,6 +75,8 @@ The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BO
 完整身份与依赖见[新分支](research/current/customer_attraction/README.md)及
 [现行命题账本](research/current/claims.md)的 `CA-EXACT-PURE-SPE-ALL`、
 `CA-SPE-NON-PNE`、`CA-HISTORY-TIES`、`CA-RESIDUAL-NO`。
-第二阶段补入严格局部结果 `CA-TWO-REMAINING-TAX` 和
-存在最优组合匹配收费的反例 `CA-PORTFOLIO-MATCHING-NO`；任意人数税界没有升级。
+新增严格三人普遍上界 `CA-THREE-UPPER-142-81`：`OPT_3≤(142/81)W`，
+[完整代数证明](research/current/customer_attraction/three_player_bound.md)保留全部历史依赖平局。
+首步税桥 `CA-TAX-BRIDGE-NO` 及一般背景总税 `CA-GENERAL-TAX-NO` 已有明确反例；
+零背景总税和四人及以上半覆盖仍开放。`CA-STRATEGY-CONE` 给固定策略的精确优化接口。
 这些工具和失败机制不改变原设施模型的任何命题。

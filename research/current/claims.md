@@ -8,8 +8,13 @@
 | CA-SPE-NON-PNE | 同一 CAG-MODEL；存在两人四客户共同目录或另一个三人三客户实例。 | 完整纯 SPE 的终局可有盈利的静态单方行动偏离。反驳 SPE→PNE 桥梁；不反驳半覆盖。 | [两人证书与导入边界](customer_attraction/literature.md)、[三人证书](customer_attraction/continuation_lemmas.md)；直接证明及独立精确审计，外审未记录。 |
 | CA-HISTORY-TIES | 同一 CAG-MODEL；三人、两个不交 unit singleton 主题。 | 存在完整纯 SPE 在同计数历史 AB/BA 选不同回复，且收益 (1/2,1,1/2)；两个收益次序单调方向都不普遍成立。 | [完整策略与逐节点证明](customer_attraction/continuation_lemmas.md)；直接证明及独立精确审计，外审未记录。 |
 | CA-RESIDUAL-NO | 同一 CAG-MODEL；两人、五共同主题、十四名单位客户。 | 完整纯 SPE 收益 (4,5)、W=9、OPT=10，最大未覆盖主题大小 5；逐人 u_i≥M(C) 和聚合 W≥mM(C) 均错误；2W≥OPT 未被否定。 | [完整收益表、失败机制和证书](customer_attraction/continuation_lemmas.md)；独立展开客户审计及规范 verifier 均通过，外审未记录。 |
-| CA-TWO-REMAINING-TAX | CAG-MODEL 的任意合法固定有序前缀，恰两位剩余单位提供者，任意完整历史依赖纯 SPE 和任意两个比较主题。 | R_b(T,S)≤R_b(A,B)+Σ_{x∈A}1/((b_x+1)(b_x+2))；只算剩余两人收益，非零背景时不等于完整覆盖。b=0重构文献3/2；任意人数税桥仍开放。 | [非负恒等式完整证明和条件性归纳](customer_attraction/two_remaining_tax.md)，独立逐客户精确审计；不声称新颖或外审。 |
+| CA-TWO-REMAINING-TAX | CAG-MODEL 的任意合法固定有序前缀，恰两位剩余单位提供者，任意完整历史依赖纯 SPE 和任意两个比较主题。 | R_b(T,S)≤R_b(A,B)+Σ_{x∈A}1/((b_x+1)(b_x+2))；只算剩余两人收益，非零背景时不等于完整覆盖。b=0重构文献3/2；首步桥和一般背景总税已否定，根总税仍开放。 | [非负恒等式完整证明和条件性归纳](customer_attraction/two_remaining_tax.md)，独立逐客户精确审计；不声称新颖或外审。 |
 | CA-PORTFOLIO-MATCHING-NO | CAG-MODEL 的两人、五共同主题、86名单位客户实例；唯一最优两主题支持。 | 完整 SPE W=44、OPT=45、最优遗漏42；真实偏离收益矩阵 ((19,19),(22,22)) 两种匹配均为41；不存在另一个最优组合修复。只否定匹配收费，不否定半覆盖。 | [完整策略、唯一最优性及矩阵](customer_attraction/portfolio_matching_counterexample.md)，独立定义级审计与规范核验；外审未记录。 |
+
+| CA-THREE-UPPER-142-81 | CAG-MODEL，恰三名单位提供者、任意共同有限目录和全部完整历史依赖纯 SPE。 | OPT_3≤(142/81)W；零覆盖亦成立；不声称锐性或四人以上上界。 | [三个合法 slack 与非负恒等式](customer_attraction/three_player_bound.md)，独立逐段重构与 Fraction 审计；完整内部证明，外审/新颖性未认证。 |
+| CA-TAX-BRIDGE-NO | CAG-MODEL，空背景、三人、四主题、十五名单位客户。 | 完整 SPE BBB，W=9、OPT=15；F3=15>u1+tau(B)+F2(B)=29/2。只否定首步机会成本桥；本例根总税恰等号。 | [弱占优完整策略及全部最优分类](customer_attraction/tax_bridge_counterexample.md)，独立全历史真实偏离核验；外审未记录。 |
+| CA-GENERAL-TAX-NO | CAG-MODEL 的合法非零背景、四剩余人；反例位于完整七人根 SPE 的实际到达前缀 AAA。 | A7/B1/C1不交；实际剩余利润4、总税3/4，F4=24/5，差1/20。一般背景总税为假；不否定空背景总税或根半覆盖。 | [九客户反例、无限族及同主题根边界](customer_attraction/general_tax_counterexample.md)，独立完整子树与根树精确审计；外审未记录。 |
+| CA-STRATEGY-CONE | 固定m≥1、p≥1共同主题标签，允许相同覆盖；任意单位客户整数类型重数与完整有序历史策略。 | 每策略SPE重数是有理锥；W=1截面紧，固定(m,p)最坏比例由有理极点缩放成整数客户达到；精确对偶可认证固定锥。 | [完整证明与Farkas符号](customer_attraction/strategy_cone.md)，小规模全策略接口回归；有限多锥攻击不证明主目标。 |
 
 主目标 [Q-CAG-HALF](../questions/customer_attraction_half_coverage.md) 仍开放。
 本分支的客户固定均分，不使用原设施模型的客户 NE 或因子 2 存在性。

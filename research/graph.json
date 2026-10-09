@@ -2739,15 +2739,15 @@
     },
     {
       "id": "CA-TAX-OPPORTUNITY-GAP",
-      "kind": "obligation",
+      "kind": "rejected",
       "track": "extensions",
-      "title": "General first-step opportunity-cost bridge",
-      "detail": "Unproved: for every legal background and k-player pure SPE, F_k(b)<=u_first+tax_b(A)+F_(k-1)(b+1_A). If established generally, induction plus tax budget would yield OPT<=(2-1/m)W. Finite checks are not a proof.",
+      "title": "Refuted general first-step tax opportunity bridge",
+      "detail": "Empty-background three-player full SPE BBB has F3=15>u_first+tax(B)+F2(B)=29/2. Root total tax remains equality in this witness.",
       "refs": [
-        "research/current/customer_attraction/two_remaining_tax.md",
-        "research/current/customer_attraction/README.md"
+        "research/current/customer_attraction/tax_bridge_counterexample.md",
+        "research/current/customer_attraction/two_remaining_tax.md"
       ],
-      "status": "open sufficient bridge; not established for arbitrary k"
+      "status": "refuted by exact complete-history counterexample"
     },
     {
       "id": "CA-PORTFOLIO-WITNESS",
@@ -2803,6 +2803,50 @@
         "research/current/customer_attraction/portfolio_matching_counterexample.md"
       ],
       "status": "finite exact checks only"
+    },
+    {
+      "id": "CA-THREE-UPPER-142-81",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Universal three-player welfare bound 142/81",
+      "detail": "Every three-player full history-dependent pure SPE on any finite common catalog satisfies OPT3<=142W/81. Non-sharpness and general-m remain unresolved.",
+      "refs": [
+        "research/current/customer_attraction/three_player_bound.md"
+      ],
+      "status": "complete direct proof with independent internal review and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-TAX-BRIDGE-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "First-step tax bridge fails at the empty root",
+      "detail": "Four themes and 15 unit clients, complete always-B pure SPE: F3=15, actual W=9, first-step RHS=29/2; total root tax is equality, not refuted.",
+      "refs": [
+        "research/current/customer_attraction/tax_bridge_counterexample.md"
+      ],
+      "status": "complete direct proof with independent internal review and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-GENERAL-TAX-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "General incumbent-background total tax is false",
+      "detail": "Disjoint A7/B1/C1, seven-player full always-A SPE, reached prefix AAA with four remaining: F4=24/5>4+3/4; infinite exact family. Root coverage and zero-background total tax unaffected.",
+      "refs": [
+        "research/current/customer_attraction/general_tax_counterexample.md"
+      ],
+      "status": "complete direct proof with independent internal review and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-STRATEGY-CONE",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Exact rational cone for each full ordered strategy",
+      "detail": "For fixed m,p labeled common themes with possible duplicate coverage, full strategies define rational SPE multiplicity cones; normalized sections compact, worst ratio attained by integer clones, exact Farkas witnesses certify each cone.",
+      "refs": [
+        "research/current/customer_attraction/strategy_cone.md"
+      ],
+      "status": "complete direct proof with independent internal review and exact audit; unrefereed"
     }
   ],
   "hyperedges": [
@@ -6108,7 +6152,7 @@
         "CA-TAX-OPPORTUNITY-GAP"
       ],
       "conclusion": "Q-CAG-HALF",
-      "statement": "A proved general bridge would suffice via conditional induction and budget; it is presently an unresolved route.",
+      "statement": "The former conditional induction is blocked by a genuine first-step counterexample; this does not refute root half coverage.",
       "refs": [
         "research/current/customer_attraction/two_remaining_tax.md",
         "research/current/customer_attraction/README.md"
@@ -6197,6 +6241,91 @@
       "statement": "The supplied complete certificate and optimal support are verified independently of the SPE outcome recurrence.",
       "refs": [
         "research/current/customer_attraction/portfolio_matching_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-THREE-UPPER-142-81",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-TWO-REMAINING-TAX"
+      ],
+      "conclusion": "CA-THREE-UPPER-142-81",
+      "statement": "Every three-player full history-dependent pure SPE on any finite common catalog satisfies OPT3<=142W/81. Non-sharpness and general-m remain unresolved.",
+      "refs": [
+        "research/current/customer_attraction/three_player_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-THREE-BOUND-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-THREE-UPPER-142-81"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "This proves the target for exactly three players; it does not prove arbitrary player count.",
+      "refs": [
+        "research/current/customer_attraction/three_player_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-TAX-BRIDGE-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-TAX-BRIDGE-NO",
+      "statement": "Four themes and 15 unit clients, complete always-B pure SPE: F3=15, actual W=9, first-step RHS=29/2; total root tax is equality, not refuted.",
+      "refs": [
+        "research/current/customer_attraction/tax_bridge_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-FIRST-TAX-ATTACK",
+      "kind": "attacks",
+      "track": "extensions",
+      "premises": [
+        "CA-TAX-BRIDGE-NO"
+      ],
+      "conclusion": "CA-TAX-OPPORTUNITY-GAP",
+      "statement": "The complete empty-prefix three-player example refutes the universally quantified first-step bridge.",
+      "refs": [
+        "research/current/customer_attraction/tax_bridge_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-GENERAL-TAX-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-GENERAL-TAX-NO",
+      "statement": "Disjoint A7/B1/C1, seven-player full always-A SPE, reached prefix AAA with four remaining: F4=24/5>4+3/4; infinite exact family. Root coverage and zero-background total tax unaffected.",
+      "refs": [
+        "research/current/customer_attraction/general_tax_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-STRATEGY-CONE",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-STRATEGY-CONE",
+      "statement": "For fixed m,p labeled common themes with possible duplicate coverage, full strategies define rational SPE multiplicity cones; normalized sections compact, worst ratio attained by integer clones, exact Farkas witnesses certify each cone.",
+      "refs": [
+        "research/current/customer_attraction/strategy_cone.md"
       ],
       "status": "recorded within stated scope"
     }
