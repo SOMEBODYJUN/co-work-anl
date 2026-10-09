@@ -75,4 +75,6 @@ The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BO
 完整身份与依赖见[新分支](research/current/customer_attraction/README.md)及
 [现行命题账本](research/current/claims.md)的 `CA-EXACT-PURE-SPE-ALL`、
 `CA-SPE-NON-PNE`、`CA-HISTORY-TIES`、`CA-RESIDUAL-NO`。
+第二阶段补入严格局部结果 `CA-TWO-REMAINING-TAX` 和
+存在最优组合匹配收费的反例 `CA-PORTFOLIO-MATCHING-NO`；任意人数税界没有升级。
 这些工具和失败机制不改变原设施模型的任何命题。

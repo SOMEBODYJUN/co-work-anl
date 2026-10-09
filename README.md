@@ -3,6 +3,9 @@
 本轮另启动独立的[顺序客户吸引博弈分支](research/current/customer_attraction/README.md)：
 研究 Deng 等共同目录、单位均分模型的[任意纯 SPE 半覆盖目标](research/questions/customer_attraction_half_coverage.md)。
 已建立保留全部历史依赖平局的有限精确工具并排除若干证明捷径，**一般上界仍未证明**。
+已证明[固定背景下恰两名剩余玩家的税界](research/current/customer_attraction/two_remaining_tax.md)，
+任意人数的机会成本归纳桥尚缺；[唯一最优组合的匹配收费反例](research/current/customer_attraction/portfolio_matching_counterexample.md)
+进一步限定简单偏离收费的作用。
 该模型的客户不主动优化，与下述既有设施研究没有直接定理迁移。
 
 本项目研究正权原子客户的两阶段设施选址：设施先选位置，客户随后选择设施并形成精确独立 Nash 均衡。我们寻找一个纯设施布局和覆盖全部布局的客户均衡续局，使设施单边搬迁的收益受统一倍率控制。

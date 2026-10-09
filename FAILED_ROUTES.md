@@ -17,6 +17,20 @@
 静态 Nash 导入、收益先后单调、相同计数历史续局一致另有精确小反例，
 见[文献桥梁](research/current/customer_attraction/literature.md)和上述续局页。
 
+## 顺序 CAG 的最优组合单步偏离匹配：存在最优组合版本也错误
+
+逐主题残差界失败后，曾改为要求存在某个最优 $m$ 主题组合及一个玩家排列，
+使真实偏离收益之和至少覆盖该最优组合的遗漏客户。
+[CA-PORTFOLIO-MATCHING-NO](research/current/customer_attraction/portfolio_matching_counterexample.md)
+有两人、五主题、八十六名单位客户及完整纯 SPE；实际覆盖 44，唯一最优组合覆盖 45，
+遗漏 42。两行真实偏离收益为 `(19,19)` 和 `(22,22)`，两种排列都只给 41。
+唯一最优性确保否定的是存在版本，而不只是挑选了不利的某个最优组合。
+
+失败发生在偏离至最优主题后另一个交叠主题改变其分摊，SPE 收益还来自原覆盖的一部分，
+直接匹配遗漏质量没有计入完整跨分支余额。此例不是半覆盖反例，且不排除多步、
+带税或保留原覆盖份额的其他收费。固定背景两人税界仍严格成立；它的任意人数桥
+是另一个尚未闭合的义务，不能由本反例推断真值。
+
 ## 把原实例精确客户 NE 的伪多项式 DP 自动改成 FPTAS：全局障碍
 
 [SC-FOUR-NO-FPTAS](research/current/shared/four_site_no_fptas.md)已给完整全局间隙，

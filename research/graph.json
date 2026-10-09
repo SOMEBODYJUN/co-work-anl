@@ -2714,6 +2714,95 @@
         "research/current/customer_attraction/README.md"
       ],
       "status": "finite exact checks only"
+    },
+    {
+      "id": "CA-TWO-REMAINING-TAX",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Fixed-prefix tax for exactly two remaining players",
+      "detail": "For every fixed legal incumbent prefix and arbitrary pure SPE of exactly two remaining unit providers, every comparison pair has remaining profit at most actual remaining profit plus sum_A 1/((b+1)(b+2)). Zero background reconstructs 3/2; general-m not asserted.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md"
+      ],
+      "status": "complete algebraic proof and independent exact identity audit; unrefereed"
+    },
+    {
+      "id": "CA-TAX-FRAME",
+      "kind": "definition",
+      "track": "extensions",
+      "title": "Remaining-profit objective and telescoping tax",
+      "detail": "F_k(b) maximizes remaining-provider total profit, with pointwise c/(b+c), over k shared themes. The tax sums 1/(b+1)-1/(b+c+1). Nonzero background remaining profit is not total covered welfare.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "CA-TAX-OPPORTUNITY-GAP",
+      "kind": "obligation",
+      "track": "extensions",
+      "title": "General first-step opportunity-cost bridge",
+      "detail": "Unproved: for every legal background and k-player pure SPE, F_k(b)<=u_first+tax_b(A)+F_(k-1)(b+1_A). If established generally, induction plus tax budget would yield OPT<=(2-1/m)W. Finite checks are not a proof.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md",
+        "research/current/customer_attraction/README.md"
+      ],
+      "status": "open sufficient bridge; not established for arbitrary k"
+    },
+    {
+      "id": "CA-PORTFOLIO-WITNESS",
+      "kind": "construction",
+      "track": "extensions",
+      "title": "Unique optimal support and deficient deviation assignment",
+      "detail": "Two-player five-theme complete strategy with 86 unit clones: W=44, unique optimal support B,D has OPT=45, uncovered mass 42 and deviation matrix [[19,19],[22,22]].",
+      "refs": [
+        "research/current/customer_attraction/portfolio_matching_counterexample.md"
+      ],
+      "status": "specified and independently exactly checked"
+    },
+    {
+      "id": "CA-PORTFOLIO-MATCHING-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Even existential optimal-portfolio matching is false",
+      "detail": "The displayed full SPE has a unique optimal theme support but every assignment of its themes to the two actual move positions yields deviation utility 41<42 omitted customers. This refutes the existential-optimum bridge, not half coverage.",
+      "refs": [
+        "research/current/customer_attraction/portfolio_matching_counterexample.md"
+      ],
+      "status": "complete direct reconstruction and independent exact certificates; unrefereed"
+    },
+    {
+      "id": "CA-PORTFOLIO-BRIDGE",
+      "kind": "rejected",
+      "track": "extensions",
+      "title": "Match an optimal portfolio to real unilateral deviation utilities",
+      "detail": "The proposed existence of an optimal portfolio and permutation charging all omitted customers using real one-step deviation payoffs fails under history-dependent responses.",
+      "refs": [
+        "research/current/customer_attraction/portfolio_matching_counterexample.md"
+      ],
+      "status": "refuted bridge"
+    },
+    {
+      "id": "CA-TAX-IDENTITY-CHECKS",
+      "kind": "evidence",
+      "track": "extensions",
+      "title": "Independent exact atomwise tax identity audit",
+      "detail": "All five binary membership indicators are enumerated for specified zero, positive and huge background loads. This checks formulas and remainder signs; universal proof is algebraic, not these runs.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md"
+      ],
+      "status": "finite exact checks only"
+    },
+    {
+      "id": "CA-PORTFOLIO-CHECKS",
+      "kind": "evidence",
+      "track": "extensions",
+      "title": "Independent complete strategy and unique-OPT audit",
+      "detail": "Direct unit-customer arithmetic verifies each full strategy branch, every two-theme optimum, unique optimal support and both deviation assignments; canonical verifier corroborates.",
+      "refs": [
+        "research/current/customer_attraction/portfolio_matching_counterexample.md"
+      ],
+      "status": "finite exact checks only"
     }
   ],
   "hyperedges": [
@@ -5964,6 +6053,150 @@
       "statement": "These obstructions constrain the respective routes but do not refute the target half-coverage inequality.",
       "refs": [
         "research/current/customer_attraction/README.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-TAX-FRAME",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-TAX-FRAME",
+      "statement": "Fixed incumbents produce the exact remaining-profit sharing formula and finite optimization objective.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-TAX-TWO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-TAX-FRAME"
+      ],
+      "conclusion": "CA-TWO-REMAINING-TAX",
+      "statement": "Three genuine SPE incentive gaps and two nonnegative intersection remainders form the exact tax identity.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-TAX-GAP",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-TWO-REMAINING-TAX",
+        "CA-TAX-FRAME"
+      ],
+      "conclusion": "CA-TAX-OPPORTUNITY-GAP",
+      "statement": "The two-player base and telescoping representation do not establish the general first-step bridge.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-TAX-TARGET",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-TAX-OPPORTUNITY-GAP"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "A proved general bridge would suffice via conditional induction and budget; it is presently an unresolved route.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md",
+        "research/current/customer_attraction/README.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-PORTFOLIO-SPEC",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-PORTFOLIO-WITNESS",
+      "statement": "The explicit integer customer types and full follower policy specify a legitimate common-catalog instance.",
+      "refs": [
+        "research/current/customer_attraction/portfolio_matching_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-PORTFOLIO-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-PORTFOLIO-WITNESS"
+      ],
+      "conclusion": "CA-PORTFOLIO-MATCHING-NO",
+      "statement": "The exact full strategy inequalities, unique optimal support and both assignments prove the existential bridge false.",
+      "refs": [
+        "research/current/customer_attraction/portfolio_matching_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-PORTFOLIO-ATTACK",
+      "kind": "attacks",
+      "track": "extensions",
+      "premises": [
+        "CA-PORTFOLIO-MATCHING-NO"
+      ],
+      "conclusion": "CA-PORTFOLIO-BRIDGE",
+      "statement": "Unique optimality removes the escape of selecting another optimum.",
+      "refs": [
+        "research/current/customer_attraction/portfolio_matching_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-PORTFOLIO-FRONTIER",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-PORTFOLIO-BRIDGE"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "Failure of this sufficient fee interface does not refute the half-coverage target.",
+      "refs": [
+        "research/current/customer_attraction/portfolio_matching_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-TAX-CHECKS",
+      "kind": "checks",
+      "track": "extensions",
+      "premises": [
+        "CA-TAX-IDENTITY-CHECKS"
+      ],
+      "conclusion": "CA-TAX-FRAME",
+      "statement": "Rational atomwise arithmetic checks the implemented representation separately from its universal algebraic proof.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-PORTFOLIO-CHECKS",
+      "kind": "checks",
+      "track": "extensions",
+      "premises": [
+        "CA-PORTFOLIO-CHECKS"
+      ],
+      "conclusion": "CA-PORTFOLIO-WITNESS",
+      "statement": "The supplied complete certificate and optimal support are verified independently of the SPE outcome recurrence.",
+      "refs": [
+        "research/current/customer_attraction/portfolio_matching_counterexample.md"
       ],
       "status": "recorded within stated scope"
     }

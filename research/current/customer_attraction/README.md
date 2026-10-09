@@ -16,7 +16,12 @@
 `CA-SPE-NON-PNE` 排除静态 Nash 的直接导入。
 `CA-HISTORY-TIES` 排除未经证明的匿名平局与收益次序简化。
 `CA-RESIDUAL-NO` 排除逐人遗漏收益保证及其平均化替代。
+`CA-PORTFOLIO-MATCHING-NO` 进一步排除最优主题与真实单步偏离的足额匹配收费。
 这些失败证书限制相应证明路线，不反驳主目标。
+
+`CAG-MODEL` → `CA-TWO-REMAINING-TAX` 严格控制任意固定历史下恰两位剩余玩家的
+收益损失；无背景时重构文献 $3/2$。税预算可以望远镜，但任意人数的首步机会成本桥
+仍未证明，故没有从这条箭头继续推导一般半覆盖。
 
 ## 文件地图
 
@@ -27,6 +32,8 @@
 | `research/current/customer_attraction/exact_solver.md` | 集合值逆向归纳的必要性、充分性及全历史证书重构；修改枚举器时必须重读。 |
 | `research/current/customer_attraction/literature.md` | 一手文献模型条件及不可直接导入的桥梁；静态/顺序、共同/异目录不能混淆。 |
 | `research/current/customer_attraction/continuation_lemmas.md` | 已确认小反例、收益保证和失败机制；攻 residual 或匿名平局路线前必读。 |
+| `research/current/customer_attraction/portfolio_matching_counterexample.md` | 唯一最优组合的两种真实偏离匹配均不足额；重新采用最优组合收费前必读。 |
+| `research/current/customer_attraction/two_remaining_tax.md` | 固定背景两人税界的非负恒等式、条件性归纳及式 (9) 的开放桥；当前证明路线入口。 |
 | `customer_attraction/` | 本模型唯一规范有限精确实现；返回全部纯 SPE 终局，不声称多项式时间或普遍福利。 |
 | `tests/test_customer_attraction.py` | 独立完整有序策略枚举 oracle、定义级证书检查和边界回归。 |
 | `tests/audits/customer_attraction_search.py` | LCM 缩放整数的独立有限攻击，固定种子及重数参数；新的搜索不能冒充证明。 |
@@ -40,6 +47,8 @@
 ```sh
 python3 -m unittest tests.test_customer_attraction -v
 python3 tests/audits/customer_attraction_continuations.py
+python3 tests/audits/customer_attraction_portfolio_matching.py
+python3 tests/audits/customer_attraction_tax.py
 python3 -m customer_attraction examples/customer_attraction/residual_counterexample.json --verify evidence/certificates/customer_attraction/residual_counterexample.json
 ```
 

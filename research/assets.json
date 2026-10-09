@@ -1226,7 +1226,9 @@
         "CA-EXACT-PURE-SPE-ALL",
         "CA-SPE-NON-PNE",
         "CA-HISTORY-TIES",
-        "CA-RESIDUAL-NO"
+        "CA-RESIDUAL-NO",
+        "CA-TWO-REMAINING-TAX",
+        "CA-PORTFOLIO-MATCHING-NO"
       ],
       "status": "exact finite solver and independently checked bridge counterexamples; half-coverage target open",
       "applies_when": [
@@ -1235,7 +1237,7 @@
         "all pure SPE choices, including arbitrary history-dependent ties",
         "integer type multiplicity means distinct unit clones"
       ],
-      "produces": "all attainable pure-SPE terminal counts, complete ordered-history certificate and explicit failures of three proof bridges",
+      "produces": "all attainable pure-SPE terminal counts, complete ordered-history certificates, four failed bridges, and a strict tax theorem for exactly two remaining players",
       "implementation": [
         "customer_attraction/model.py",
         "customer_attraction/exact.py",
@@ -1247,22 +1249,30 @@
         "research/current/customer_attraction/exact_solver.md",
         "research/current/customer_attraction/continuation_lemmas.md",
         "research/current/customer_attraction/literature.md",
-        "research/current/customer_attraction/README.md"
+        "research/current/customer_attraction/README.md",
+        "research/current/customer_attraction/two_remaining_tax.md",
+        "research/current/customer_attraction/portfolio_matching_counterexample.md"
       ],
       "tests": [
         "tests/test_customer_attraction.py",
         "tests/audits/customer_attraction_search.py",
-        "tests/audits/customer_attraction_continuations.py"
+        "tests/audits/customer_attraction_continuations.py",
+        "tests/audits/customer_attraction_tax.py",
+        "tests/audits/customer_attraction_portfolio_matching.py"
       ],
       "records": [
         "evidence/runs/2026-10-09/customer_attraction_search.json",
-        "evidence/runs/2026-10-09/customer_attraction_continuations.json"
+        "evidence/runs/2026-10-09/customer_attraction_continuations.json",
+        "evidence/runs/2026-10-09/customer_attraction_tax.json",
+        "evidence/runs/2026-10-09/customer_attraction_portfolio_matching.json"
       ],
       "examples": [
         "examples/customer_attraction/residual_counterexample.json",
-        "evidence/certificates/customer_attraction/residual_counterexample.json"
+        "evidence/certificates/customer_attraction/residual_counterexample.json",
+        "examples/customer_attraction/portfolio_matching_failure.json",
+        "evidence/certificates/customer_attraction/portfolio_matching_failure.json"
       ],
-      "limit": "Finite enumeration has no bit-polynomial guarantee. Exact witness constructions refute only the specified bridges, not half coverage. Finite zero searches do not promote the main conjecture. No external peer review recorded.",
+      "limit": "Finite enumeration has no bit-polynomial guarantee. Exact witness constructions refute only specified bridges, not half coverage. Two-remaining tax controls remaining profit, not whole coverage with incumbents. General opportunity bridge and half coverage remain open. Finite zero searches do not promote any conjecture. No external peer review or novelty certification recorded.",
       "sources": [
         "history/source/notes/customer_attraction/origin_2026-10-09.md"
       ]
