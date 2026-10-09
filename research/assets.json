@@ -1233,16 +1233,18 @@
         "CA-TAX-BRIDGE-NO",
         "CA-GENERAL-TAX-NO",
         "CA-STRATEGY-CONE",
-        "CA-COVERAGE-OPPORTUNITY-NO"
+        "CA-COVERAGE-OPPORTUNITY-NO",
+        "CA-FOUR-UPPER-1499-750",
+        "CA-LAST-NODE-OPT-TAX"
       ],
-      "status": "three-player universal bound and exact failed tax bridges; arbitrary-player half coverage open",
+      "status": "universal three- and four-player welfare bounds; arbitrary-player half coverage open",
       "applies_when": [
         "finite common catalog of themes; unit equal-share customers",
         "unit providers move once in order and observe the entire history",
         "all pure SPE choices, including arbitrary history-dependent ties",
         "integer type multiplicity means distinct unit clones"
       ],
-      "produces": "all attainable pure SPE terminals, full certificates, universal three-player 142/81 bound, failed first-step and general-background tax interfaces, and rational full-strategy cone optimization",
+      "produces": "all attainable pure SPE terminals, full certificates, universal three-player 142/81 bound, failed first-step and general-background tax interfaces, and rational full-strategy cone optimization; universal four-player 1499/750 bound and last-node root-tax diagnostic",
       "implementation": [
         "customer_attraction/model.py",
         "customer_attraction/exact.py",
@@ -1262,7 +1264,8 @@
         "research/current/customer_attraction/general_tax_counterexample.md",
         "research/current/customer_attraction/strategy_cone.md",
         "research/current/customer_attraction/literature_followup.md",
-        "research/current/customer_attraction/coverage_opportunity_counterexample.md"
+        "research/current/customer_attraction/coverage_opportunity_counterexample.md",
+        "research/current/customer_attraction/four_player_bound.md"
       ],
       "tests": [
         "tests/test_customer_attraction.py",
@@ -1274,7 +1277,9 @@
         "tests/audits/customer_attraction_tax_bridge.py",
         "tests/audits/customer_attraction_general_tax.py",
         "tests/audits/customer_attraction_strategy_lp.py",
-        "tests/audits/customer_attraction_coverage_opportunity.py"
+        "tests/audits/customer_attraction_coverage_opportunity.py",
+        "tests/audits/customer_attraction_four_player.py",
+        "tests/audits/customer_attraction_four_player_independent.py"
       ],
       "records": [
         "evidence/runs/2026-10-09/customer_attraction_search.json",
@@ -1286,7 +1291,9 @@
         "evidence/runs/2026-10-09/customer_attraction_general_tax.json",
         "evidence/runs/2026-10-09/customer_attraction_strategy_lp_m4p5.json",
         "evidence/runs/2026-10-09/customer_attraction_strategy_lp_m4p5_certified.json",
-        "evidence/runs/2026-10-09/customer_attraction_coverage_opportunity.json"
+        "evidence/runs/2026-10-09/customer_attraction_coverage_opportunity.json",
+        "evidence/runs/2026-10-09/customer_attraction_four_player.json",
+        "evidence/runs/2026-10-09/customer_attraction_four_player_independent.json"
       ],
       "examples": [
         "examples/customer_attraction/residual_counterexample.json",
@@ -1299,7 +1306,7 @@
         "examples/customer_attraction/coverage_opportunity_failure.json",
         "evidence/certificates/customer_attraction/coverage_opportunity_failure.json"
       ],
-      "limit": "Universal 142/81 result applies to exactly three players, not arbitrary m. First-step bridge and arbitrary-background total tax are refuted. Root total tax and general half coverage remain open. Fixed (m,p) strategy-cone attainment allows duplicate labeled coverage; sampled cones are not all strategies. No external peer review or novelty certification.",
+      "limit": "Universal 142/81 and 1499/750 bounds apply to exactly three and four players respectively; arbitrary m>=5 remains open. First-step bridge and arbitrary-background total tax are refuted. Root total tax and general half coverage remain open. Fixed (m,p) strategy-cone attainment allows duplicate labeled coverage; sampled cones are not all strategies. No external peer review or novelty certification.",
       "sources": [
         "history/source/notes/customer_attraction/origin_2026-10-09.md"
       ]

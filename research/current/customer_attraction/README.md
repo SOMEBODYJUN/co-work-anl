@@ -5,6 +5,9 @@
 这个任意人数目标尚未证明，也没有本轮目标反例。
 恰三人已有 [CA-THREE-UPPER-142-81](three_player_bound.md)：全部纯 SPE 的 `OPT_3≤(142/81)W`，
 经独立内部审查，不声称常数尖锐。
+恰四人已有 [CA-FOUR-UPPER-1499-750](four_player_bound.md)：`OPT_4≤(1499/750)W`；
+合法根偏离与后继节点比较闭合精确非负恒等式，经过独立内部审查。
+一般目录的目标现只剩五人及以上；零背景总税仍开放。
 
 本分支使用 [CAG-MODEL](model.md)：客户价值固定均分，没有客户侧优化。
 它与仓库原来的主动原子客户设施模型独立。不能借用原模型的因子 2 存在性，
@@ -37,6 +40,10 @@
 [在轨AAB反例](coverage_opportunity_counterexample.md)保留完整历史策略。
 全局望远镜余额仍是精确表示，需允许跨步骤支付，尚无一般证明。
 
+`CAG-MODEL` + `CA-TWO-REMAINING-TAX` → `CA-FOUR-UPPER-1499-750`，
+其独立于三人定理；证明明确保留根偏离后的三个后继主题及其各自最优性。
+`CA-LAST-NODE-OPT-TAX` 在税页§6定位根税反例的必要末位收益条件。
+
 ## 文件地图
 
 | 路径 | 数学资产与何时使用 |
@@ -62,6 +69,9 @@
 
 | `research/current/customer_attraction/coverage_opportunity_counterexample.md` | 十一客户完整SPE否定逐期最优覆盖补全收费；保留多步余额及全局望远镜身份。 |
 
+| `research/current/customer_attraction/four_player_bound.md` | 四人1499/750完整真实偏离证明、全部128非负系数与一般合法比较接口；探索五人以上时先读，不能只沿实际路径推导。 |
+| `tests/audits/customer_attraction_four_player.py`、`tests/audits/customer_attraction_four_player_independent.py` | 互不导入的精确系数与最优覆盖比较核验，冻结结果在同名evidence/runs路径；不是有限策略代替全称证明。 |
+
 ## 复现入口
 
 从仓库根运行：
@@ -72,6 +82,8 @@ python3 tests/audits/customer_attraction_continuations.py
 python3 tests/audits/customer_attraction_portfolio_matching.py
 python3 tests/audits/customer_attraction_tax.py
 python3 tests/audits/customer_attraction_three_player.py
+python3 tests/audits/customer_attraction_four_player.py
+python3 tests/audits/customer_attraction_four_player_independent.py
 python3 tests/audits/customer_attraction_tax_bridge.py
 python3 tests/audits/customer_attraction_general_tax.py
 python3 tests/audits/customer_attraction_coverage_opportunity.py

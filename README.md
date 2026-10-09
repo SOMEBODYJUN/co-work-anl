@@ -5,6 +5,9 @@
 已建立保留全部历史依赖平局的有限精确工具，**任意人数上界仍未证明**。
 [三人普遍上界](research/current/customer_attraction/three_player_bound.md)已内部独立审查：
 每个完整纯 SPE 满足 `OPT_3≤(142/81)W`；常数未证尖锐。
+[四人普遍上界](research/current/customer_attraction/four_player_bound.md)亦已内部独立审查：
+每个完整纯 SPE 满足 `OPT_4≤(1499/750)W<2W`（正覆盖），
+通过根偏离真实后继节点比较与非负逐客户恒等式闭合；五人及以上仍开放。
 [固定背景两人税界](research/current/customer_attraction/two_remaining_tax.md)仍成立，
 但[首步机会成本桥](research/current/customer_attraction/tax_bridge_counterexample.md)在空背景三人即失败，
 [一般背景总税界](research/current/customer_attraction/general_tax_counterexample.md)也有完整根 SPE 内的反例。

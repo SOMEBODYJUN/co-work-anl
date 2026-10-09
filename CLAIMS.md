@@ -78,5 +78,7 @@ The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BO
 新增严格三人普遍上界 `CA-THREE-UPPER-142-81`：`OPT_3≤(142/81)W`，
 [完整代数证明](research/current/customer_attraction/three_player_bound.md)保留全部历史依赖平局。
 首步税桥 `CA-TAX-BRIDGE-NO` 及一般背景总税 `CA-GENERAL-TAX-NO` 已有明确反例；
-零背景总税和四人及以上半覆盖仍开放。`CA-STRATEGY-CONE` 给固定策略的精确优化接口。
+新增 `CA-FOUR-UPPER-1499-750` 证明四人全部纯 SPE 的 `OPT_4≤(1499/750)W`，
+[完整真实续局证明](research/current/customer_attraction/four_player_bound.md)已独立审查。
+零背景总税和五人及以上半覆盖仍开放。`CA-STRATEGY-CONE` 给固定策略的精确优化接口。
 这些工具和失败机制不改变原设施模型的任何命题。

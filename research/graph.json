@@ -2869,6 +2869,28 @@
         "research/current/customer_attraction/coverage_opportunity_counterexample.md"
       ],
       "status": "open global balance; not established by local comparisons"
+    },
+    {
+      "id": "CA-FOUR-UPPER-1499-750",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Universal four-player welfare bound below two",
+      "detail": "Every four-player full history-dependent pure SPE on every finite common unit-sharing catalog satisfies OPT4<=1499W/750; all ties, repeated and empty themes included. Sharpness and general m>=5 unresolved.",
+      "refs": [
+        "research/current/customer_attraction/four_player_bound.md"
+      ],
+      "status": "complete direct proof with independent internal review and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-LAST-NODE-OPT-TAX",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Last-node optimum versus root prefix tax",
+      "detail": "Every m-player path with a true last-node best response satisfies OPT_m<=m*u_m+tau_0(c_<m). Root-tax failures require u_m>W/m; this does not prove general root tax or half coverage.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md"
+      ],
+      "status": "complete direct proof with independent internal review and exact audit; unrefereed"
     }
   ],
   "hyperedges": [
@@ -6391,6 +6413,63 @@
       "statement": "Only a proved global balance can close this representation of the target; no such proof is registered.",
       "refs": [
         "research/current/customer_attraction/coverage_opportunity_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-FOUR-UPPER-1499-750",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-TWO-REMAINING-TAX"
+      ],
+      "conclusion": "CA-FOUR-UPPER-1499-750",
+      "statement": "Every four-player full history-dependent pure SPE on every finite common unit-sharing catalog satisfies OPT4<=1499W/750; all ties, repeated and empty themes included. Sharpness and general m>=5 unresolved.",
+      "refs": [
+        "research/current/customer_attraction/four_player_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-FOUR-UPPER-1499-750-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-FOUR-UPPER-1499-750"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "Four-player bound settles exactly four players; general m>=5 remains open.",
+      "refs": [
+        "research/current/customer_attraction/four_player_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-LAST-NODE-OPT-TAX",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-LAST-NODE-OPT-TAX",
+      "statement": "Every m-player path with a true last-node best response satisfies OPT_m<=m*u_m+tau_0(c_<m). Root-tax failures require u_m>W/m; this does not prove general root tax or half coverage.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-LAST-NODE-OPT-TAX-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-LAST-NODE-OPT-TAX"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "A high last-player payoff is a necessary condition for root-tax failure, not a proof or refutation of the general conjecture.",
+      "refs": [
+        "research/current/customer_attraction/two_remaining_tax.md"
       ],
       "status": "recorded within stated scope"
     }
