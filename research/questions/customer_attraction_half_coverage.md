@@ -74,6 +74,14 @@ $$
 [完整策略重数锥](../current/customer_attraction/strategy_cone.md)的精确对偶寻找统一不等式。
 固定(m,p)有限样本锥中的成功不涵盖任意目录、任意策略；证据范围必须保留。
 
+
+进一步的[在轨覆盖机会反例](../current/customer_attraction/coverage_opportunity_counterexample.md)
+否定 `δ_i≤u_i` 的逐期收费，即使只要求根SPE的实际前缀。
+令 `C_t` 为实际前t主题覆盖，仍有
+`Σδ_i=OPT_m−W`，因此需要全局 `Σ(u_i−δ_i)≥0`。
+更强的所有前缀余额 `Σ_(i≤t)u_i+F_(m-t)(C_t)−OPT_m≥0`
+可作为新候选，但没有证明；收益始终取原终局份额。
+
 ## 状态判别
 
 全称证明、某个实例的完整 SPE 证书和有限反例搜索分别记录。

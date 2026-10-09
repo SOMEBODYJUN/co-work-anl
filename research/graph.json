@@ -2847,6 +2847,28 @@
         "research/current/customer_attraction/strategy_cone.md"
       ],
       "status": "complete direct proof with independent internal review and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-COVERAGE-OPPORTUNITY-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Coverage opportunity losses cannot be charged period by period",
+      "detail": "Full three-player SPE AAB with eleven unit clients: at the reached second node delta=F2(A)-F1(A)=3>u2=5/2. Global telescoping loss identity holds; total balance and half coverage remain unresolved.",
+      "refs": [
+        "research/current/customer_attraction/coverage_opportunity_counterexample.md"
+      ],
+      "status": "complete direct proof with independent internal review and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-COVERAGE-BALANCE-GAP",
+      "kind": "obligation",
+      "track": "extensions",
+      "title": "Global coverage opportunity balance with transfers between periods",
+      "detail": "Delta_i are nonnegative and telescope to OPT-W. The target is sum_i(u_i-delta_i)>=0; stronger prefix balances remain unproved. Individual increments may be negative at reached SPE histories.",
+      "refs": [
+        "research/current/customer_attraction/coverage_opportunity_counterexample.md"
+      ],
+      "status": "open global balance; not established by local comparisons"
     }
   ],
   "hyperedges": [
@@ -6326,6 +6348,49 @@
       "statement": "For fixed m,p labeled common themes with possible duplicate coverage, full strategies define rational SPE multiplicity cones; normalized sections compact, worst ratio attained by integer clones, exact Farkas witnesses certify each cone.",
       "refs": [
         "research/current/customer_attraction/strategy_cone.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-COVERAGE-OPPORTUNITY-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-COVERAGE-OPPORTUNITY-NO",
+      "statement": "Explicit full ordered strategy and exact continuation comparisons establish the local opportunity counterexample.",
+      "refs": [
+        "research/current/customer_attraction/coverage_opportunity_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-COVERAGE-GLOBAL-GAP",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-COVERAGE-OPPORTUNITY-NO",
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-COVERAGE-BALANCE-GAP",
+      "statement": "Local delta<=u fails, but the algebraic global balance remains equivalent to root half coverage.",
+      "refs": [
+        "research/current/customer_attraction/coverage_opportunity_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-COVERAGE-BALANCE-TARGET",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-COVERAGE-BALANCE-GAP"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "Only a proved global balance can close this representation of the target; no such proof is registered.",
+      "refs": [
+        "research/current/customer_attraction/coverage_opportunity_counterexample.md"
       ],
       "status": "recorded within stated scope"
     }

@@ -1,6 +1,14 @@
 # 当前研究状态（2026-10-09）
 
 
+
+阶段 checkpoint `a5098d2` 已成功推送。随后独立核验
+[十一客户覆盖机会反例](research/current/customer_attraction/coverage_opportunity_counterexample.md)：
+完整三人SPE在轨AAB、收益(5/2,5/2,3)、W8、OPT11，
+第二步最优补全机会损失3超过当期收益5/2。
+此前税桥失效之外，这也排除逐期覆盖机会支付。
+全局 `Σδ=OPT−W` 恒等仍成立，当前需跨步骤余额机制，而非恢复已失败的局部下界。
+
 ## 2026-10-09：三人福利定理与税归纳的明确失败边界
 
 本轮从 `main@3f07c7de1d0fa02748c287043a88842c1d55c9cc` 安全恢复、fetch 并快进确认，

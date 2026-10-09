@@ -16,6 +16,8 @@
 | CA-GENERAL-TAX-NO | CAG-MODEL 的合法非零背景、四剩余人；反例位于完整七人根 SPE 的实际到达前缀 AAA。 | A7/B1/C1不交；实际剩余利润4、总税3/4，F4=24/5，差1/20。一般背景总税为假；不否定空背景总税或根半覆盖。 | [九客户反例、无限族及同主题根边界](customer_attraction/general_tax_counterexample.md)，独立完整子树与根树精确审计；外审未记录。 |
 | CA-STRATEGY-CONE | 固定m≥1、p≥1共同主题标签，允许相同覆盖；任意单位客户整数类型重数与完整有序历史策略。 | 每策略SPE重数是有理锥；W=1截面紧，固定(m,p)最坏比例由有理极点缩放成整数客户达到；精确对偶可认证固定锥。 | [完整证明与Farkas符号](customer_attraction/strategy_cone.md)，小规模全策略接口回归；有限多锥攻击不证明主目标。 |
 
+| CA-COVERAGE-OPPORTUNITY-NO | CAG-MODEL，三人、五共同主题、十一单位客户的完整纯 SPE，实际路径AAB。 | 在轨第二步δ=F2(A)−F1(A)=3>u2=5/2；逐层覆盖机会支付为假。Σδ=OPT−W仍为恒等式，全局余额及半覆盖未被否定。 | [完整31历史策略、收益表与望远镜余额](customer_attraction/coverage_opportunity_counterexample.md)，独立155真实行动比较精确审计；外审未记录。 |
+
 主目标 [Q-CAG-HALF](../questions/customer_attraction_half_coverage.md) 仍开放。
 本分支的客户固定均分，不使用原设施模型的客户 NE 或因子 2 存在性。
 

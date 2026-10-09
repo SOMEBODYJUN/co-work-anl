@@ -32,6 +32,11 @@
 `CA-STRATEGY-CONE` → 固定完整策略下全部客户重数的精确线性优化及对偶证书；
 样本策略不涵盖全部策略锥，不能作一般人数上界。
 
+
+`CA-COVERAGE-OPPORTUNITY-NO` 进一步排除用当期收益各自支付当期最优补全损失。
+[在轨AAB反例](coverage_opportunity_counterexample.md)保留完整历史策略。
+全局望远镜余额仍是精确表示，需允许跨步骤支付，尚无一般证明。
+
 ## 文件地图
 
 | 路径 | 数学资产与何时使用 |
@@ -55,6 +60,8 @@
 | `research/current/customer_attraction/strategy_cone.md` | 固定完整策略重数锥、紧截面及精确Farkas证书；有限攻击和全锥认证的差别。 |
 | `research/current/customer_attraction/literature_followup.md` | 追加一手文献时间模型与目录条件核查；set packing和短视反应不能直接导入。 |
 
+| `research/current/customer_attraction/coverage_opportunity_counterexample.md` | 十一客户完整SPE否定逐期最优覆盖补全收费；保留多步余额及全局望远镜身份。 |
+
 ## 复现入口
 
 从仓库根运行：
@@ -67,6 +74,7 @@ python3 tests/audits/customer_attraction_tax.py
 python3 tests/audits/customer_attraction_three_player.py
 python3 tests/audits/customer_attraction_tax_bridge.py
 python3 tests/audits/customer_attraction_general_tax.py
+python3 tests/audits/customer_attraction_coverage_opportunity.py
 python3 tests/audits/customer_attraction_strategy_lp.py --self-test
 python3 -m customer_attraction examples/customer_attraction/residual_counterexample.json --verify evidence/certificates/customer_attraction/residual_counterexample.json
 ```
