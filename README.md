@@ -3,8 +3,10 @@
 本轮另启动独立的[顺序客户吸引博弈分支](research/current/customer_attraction/README.md)：
 研究 Deng 等共同目录、单位均分模型的[任意纯 SPE 半覆盖目标](research/questions/customer_attraction_half_coverage.md)。
 已建立保留全部历史依赖平局的有限精确工具，**任意人数上界仍未证明**。
-[三人普遍上界](research/current/customer_attraction/three_player_bound.md)已内部独立审查：
-每个完整纯 SPE 满足 `OPT_3≤(142/81)W`；常数未证尖锐。
+[三人锐界](research/current/customer_attraction/three_player_sharp.md)已完整内部独立审查：
+每个完整纯 SPE 满足 `OPT_3≤(5/3)W`，且下界达到。
+真实离轨回复和跨节点比较闭合上界，不依赖已失败的税归纳。
+[先前142/81推导](research/current/customer_attraction/three_player_bound.md)作为两人税机制的独立回收保留。
 [四人普遍上界](research/current/customer_attraction/four_player_bound.md)亦已内部独立审查：
 每个完整纯 SPE 满足 `OPT_4≤(1499/750)W<2W`（正覆盖），
 通过根偏离真实后继节点比较与非负逐客户恒等式闭合；五人及以上仍开放。

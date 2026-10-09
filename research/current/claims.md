@@ -20,6 +20,7 @@
 
 | CA-FOUR-UPPER-1499-750 | CAG-MODEL，恰四名单位提供者、任意有限共同目录、每个完整历史依赖纯 SPE。 | OPT_4≤(1499/750)W；零覆盖亦成立，保留所有平局、重复及空主题；未证锐性，五人以上仍开放。 | [真实根偏离续局与完整非负恒等式](customer_attraction/four_player_bound.md)，独立逐段审查及两份 Fraction 审计；完整内部证明，外审/新颖性未认证。 |
 | CA-LAST-NODE-OPT-TAX | CAG-MODEL，任意人数m≥1；任意终局，只要求末位在实际前缀后最佳回复。 | OPT_m≤m u_m+τ_0(c_{<m})。末位收益≤平均则根税成立；税反例必须末位超过平均；非充分条件，不解决一般目标。 | [税页§6的直接逐客户证明](customer_attraction/two_remaining_tax.md)；内部复核，外审未记录。 |
+| CA-THREE-SHARP-5-3 | CAG-MODEL，恰三名单位提供者、任意有限共同目录，每个完整历史依赖纯 SPE。 | OPT_3≤(5/3)W；三个互不交主题的完整SPE下界达到，三人最坏比例恰5/3；该锐界定理仅给三人范围。 | [真实L_i/Q/R回复、八类合法slack及完整非负恒等式](customer_attraction/three_player_sharp.md)；两路独立审查、Fraction全2048membership/160角点及完整下界审计；外审、新颖性未认证。 |
 
 主目标 [Q-CAG-HALF](../questions/customer_attraction_half_coverage.md) 仍开放。
 本分支的客户固定均分，不使用原设施模型的客户 NE 或因子 2 存在性。

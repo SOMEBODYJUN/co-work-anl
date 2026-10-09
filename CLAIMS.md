@@ -75,8 +75,9 @@ The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BO
 完整身份与依赖见[新分支](research/current/customer_attraction/README.md)及
 [现行命题账本](research/current/claims.md)的 `CA-EXACT-PURE-SPE-ALL`、
 `CA-SPE-NON-PNE`、`CA-HISTORY-TIES`、`CA-RESIDUAL-NO`。
-新增严格三人普遍上界 `CA-THREE-UPPER-142-81`：`OPT_3≤(142/81)W`，
-[完整代数证明](research/current/customer_attraction/three_player_bound.md)保留全部历史依赖平局。
+已证明三人锐界 `CA-THREE-SHARP-5-3`：`OPT_3≤(5/3)W`，下界达到。
+[完整代数证明](research/current/customer_attraction/three_player_sharp.md)保留全部历史依赖平局。
+旧 `CA-THREE-UPPER-142-81` 保留为不同两人税推导机制。
 首步税桥 `CA-TAX-BRIDGE-NO` 及一般背景总税 `CA-GENERAL-TAX-NO` 已有明确反例；
 新增 `CA-FOUR-UPPER-1499-750` 证明四人全部纯 SPE 的 `OPT_4≤(1499/750)W`，
 [完整真实续局证明](research/current/customer_attraction/four_player_bound.md)已独立审查。

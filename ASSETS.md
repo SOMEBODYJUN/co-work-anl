@@ -2,7 +2,8 @@
 
 
 顺序 CAG 新资产：
-[三人 142/81 全称证明](research/current/customer_attraction/three_player_bound.md)、
+[三人锐5/3证明](research/current/customer_attraction/three_player_sharp.md)、
+[先前三人142/81独立机制](research/current/customer_attraction/three_player_bound.md)、
 [空背景首步税桥反例](research/current/customer_attraction/tax_bridge_counterexample.md)、
 [一般背景总税反例及无限族](research/current/customer_attraction/general_tax_counterexample.md)、
 [完整策略有理重数锥和精确对偶](research/current/customer_attraction/strategy_cone.md)。
