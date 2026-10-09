@@ -1,5 +1,13 @@
 # 现行命题登记：前提、结论、依赖与状态
 
+## 2026-10-09 四共同地点无 FPTAS
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| SC-FOUR-NO-FPTAS | 两设施、恰四共同地点、正二进制整数原子权、强制服务、实际负载成本、完整精确独立混合客户 NE 续局；优化域允许实概率，算法输出为显式有理概率。 | PARTITION 源 n=2max{t,2}，YES α*=13/10，NO 任意布局/续局 α*≥13/10+1/(100n²)；P≠NP 下无加性或乘性 FPTAS。不排除 PTAS/强 NP 难/一般任意盒 NE 搜索。 | [完整证明](shared/four_site_no_fptas.md)、[独立审查](../FOUR_SITE_FPTAS_AUDIT_2026-10-09.md)；完整内部证明和两套定义级精确审计；外审未记录，新颖性未认证。 |
+
+本结论对实例最优倍率近似，不改变一般盒内任意 NE 搜索的开放状态。
+
 ## 2026-10-08 complement search interfaces
 
 | ID | Exact scope | Result and boundary | Proof and status |

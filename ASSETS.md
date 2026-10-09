@@ -1,5 +1,10 @@
 # 现行研究资产：命题而非旧文件的清单
 
+2026-10-09 的[四共同地点无 FPTAS](research/current/shared/four_site_no_fptas.md)
+已独立重构全局间隙、支持端点和位规模，规范[归约构造器](facility_spe/shared/four_site_fptas_hardness.py)
+仅构造实例，不求均衡。[审查记录](research/FOUR_SITE_FPTAS_AUDIT_2026-10-09.md)
+连接两份独立精确核验、冻结结果与来源摘录；没有登记 PTAS 不可能或一般盒搜索困难。
+
 2026-10-08 的[共单例搜索归约与带区间表述](research/current/multi_facility/complement_search_reduction.md)
 已经过代数、编码合同、反例攻击及实际设施成本的复合审查。
 [规范编译/解码](multi_facility_spe/complement_reduction.py)、

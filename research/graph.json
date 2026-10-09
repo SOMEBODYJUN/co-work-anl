@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Facility location mathematical dependency hypergraph",
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -2440,6 +2440,78 @@
         "tests/audits/kfac_complement_reduction.py",
         "tests/test_complement_reduction.py",
         "evidence/runs/2026-10-08/complement_reduction_final.json"
+      ],
+      "status": "finite internal definition-level checks"
+    },
+    {
+      "id": "FOUR-PARTITION-SOURCE",
+      "kind": "source",
+      "track": "computation",
+      "title": "Binary PARTITION NP-completeness",
+      "detail": "Nonempty positive binary integer PARTITION is NP-complete; the only imported complexity fact.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md"
+      ],
+      "status": "standard literature fact"
+    },
+    {
+      "id": "FOUR-BALANCE-ENC",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Near-unit exact balance encoding",
+      "detail": "n=2max(t,2), positive variable weights sum to n with total perturbation at most 1/(8n); signed balance iff source PARTITION YES.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md"
+      ],
+      "status": "independently internally audited; unrefereed"
+    },
+    {
+      "id": "FOUR-GLOBAL-GAP",
+      "kind": "lemma",
+      "track": "computation",
+      "title": "Four-site full continuation gap",
+      "detail": "YES alpha*=13/10; NO all sixteen labeled on-path layouts and all real-probability exact independent-mixed NE continuations require >=13/10+1/(100n^2). Positive integer polynomial-size realization.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md"
+      ],
+      "status": "independently internally audited; unrefereed"
+    },
+    {
+      "id": "SC-FOUR-NO-FPTAS",
+      "kind": "claim",
+      "track": "computation",
+      "title": "No instance-optimal FPTAS at four common sites",
+      "detail": "Two labeled facilities, exactly four common sites, positive binary integer atomic weights, exact independent-mixed full continuation. Under P!=NP no additive or multiplicative FPTAS with explicit rational output. Does not exclude PTAS or arbitrary boxed NE search.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md"
+      ],
+      "status": "complete current proof with independent internal audits; unrefereed"
+    },
+    {
+      "id": "FOUR-FPTAS-BUILDER",
+      "kind": "artifact",
+      "track": "computation",
+      "title": "Four-site integer gap constructor",
+      "detail": "Constructs the explicit positive integer instance in source-bit-polynomial time, without any partition or NE oracle.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md",
+        "facility_spe/shared/four_site_fptas_hardness.py"
+      ],
+      "status": "canonical constructor, not an equilibrium solver"
+    },
+    {
+      "id": "E-FOUR-FPTAS-AUDIT",
+      "kind": "evidence",
+      "track": "computation",
+      "title": "Two independent exact gap audits",
+      "detail": "32-source full-layout support audit and independent 19-source core/unique-layout audit plus analytic diagonal guards. Overlapping samples and repeated closed supports are not aggregated; no original archive obtained.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md",
+        "research/FOUR_SITE_FPTAS_AUDIT_2026-10-09.md",
+        "tests/audits/four_site_fptas.py",
+        "tests/audits/four_site_fptas_independent.py",
+        "evidence/runs/2026-10-09/four_site_fptas.json",
+        "evidence/runs/2026-10-09/four_site_fptas_independent.json"
       ],
       "status": "finite internal definition-level checks"
     }
@@ -5355,6 +5427,94 @@
         "research/questions/greedy_box_polytime.md"
       ],
       "status": "open algorithmic scope"
+    },
+    {
+      "id": "e-four-balance",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "FOUR-PARTITION-SOURCE"
+      ],
+      "conclusion": "FOUR-BALANCE-ENC",
+      "statement": "Positive near-unit encoding preserves exact signed balance and polynomial bit length.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md"
+      ],
+      "status": "internally audited; unrefereed"
+    },
+    {
+      "id": "e-four-global-gap",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "M1",
+        "M2",
+        "M3",
+        "FOUR-BALANCE-ENC"
+      ],
+      "conclusion": "FOUR-GLOBAL-GAP",
+      "statement": "Unique off-path guards exclude all other layouts and transform one-mixer support disappearance into a global inverse-polynomial multiplier gap.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md"
+      ],
+      "status": "internally audited; unrefereed"
+    },
+    {
+      "id": "e-four-no-fptas",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "FOUR-PARTITION-SOURCE",
+        "FOUR-GLOBAL-GAP"
+      ],
+      "conclusion": "SC-FOUR-NO-FPTAS",
+      "statement": "A FPTAS at inverse-polynomial precision decides PARTITION through polynomial-bit rational-output postprocessing.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md"
+      ],
+      "status": "internally audited; unrefereed"
+    },
+    {
+      "id": "e-four-builder",
+      "kind": "implements",
+      "track": "computation",
+      "premises": [
+        "FOUR-FPTAS-BUILDER"
+      ],
+      "conclusion": "FOUR-GLOBAL-GAP",
+      "statement": "Constructor implements only the target integer instance, not an NE solution.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md"
+      ],
+      "status": "scoped interface"
+    },
+    {
+      "id": "e-four-checks",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-FOUR-FPTAS-AUDIT"
+      ],
+      "conclusion": "FOUR-FPTAS-BUILDER",
+      "statement": "Independent finite support/conditional-cost audits check formulas and specific global gaps, not universal correctness.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md"
+      ],
+      "status": "scoped interface"
+    },
+    {
+      "id": "e-four-box-boundary",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-FOUR-NO-FPTAS"
+      ],
+      "conclusion": "SC-K-RQ-MIXED-BOX",
+      "statement": "Instance-optimal continuation approximation hardness does not settle the arbitrary boxed exact NE search time.",
+      "refs": [
+        "research/current/shared/four_site_no_fptas.md"
+      ],
+      "status": "scoped interface"
     }
   ]
 }

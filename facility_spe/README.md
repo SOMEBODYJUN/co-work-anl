@@ -5,6 +5,7 @@
 | 路径 | 作用 | 新写的数学合同 |
 | --- | --- | --- |
 | [shared_phi.py](shared_phi.py) | 固定 P/E/T/C 菜单、全目录威胁、实例证书及检查 | [共同目录算法](../research/current/shared/algorithm.md) |
+| [shared/four_site_fptas_hardness.py](shared/four_site_fptas_hardness.py) | 从 PARTITION 构造四地点正整数间隙实例，不求均衡或最优值 | [全局无 FPTAS 证明](../research/current/shared/four_site_no_fptas.md) |
 | [heterogeneous_two.py](heterogeneous_two.py) | 四种子纯 NE 菜单及因子 2 证书 | [异构算法](../research/current/heterogeneous/four_seed_algorithm.md) |
 | [local/pure.py](local/pure.py) | 两算法共享的受保护纯修复 | [局部引理](../research/current/local_and_exact/local_geometry_and_chord.md) |
 | [local/strong_chord.py](local/strong_chord.py) | 有条件的强弦局部见证 | [强弦 iff](../research/current/local_and_exact/local_geometry_and_chord.md) |

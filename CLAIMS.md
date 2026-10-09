@@ -4,6 +4,7 @@
 
 | ID / 问题 | 严格范围与结论 | 状态及详情 |
 | --- | --- | --- |
+| SC-FOUR-NO-FPTAS | 两设施、四共同地点、正整数权；全部布局和精确独立混合续局上的实例最优倍率，P≠NP 下无 FPTAS；YES 13/10、NO ≥13/10+1/(100n²)。 | [完整全局间隙证明](research/current/shared/four_site_no_fptas.md)、[本轮独立审查](research/FOUR_SITE_FPTAS_AUDIT_2026-10-09.md)。完整内部证明；外审和优先权待核。PTAS 与一般任意盒 NE 搜索仍开放。 |
 | SC-K-COMPLEMENT-GREEDY-REDUCTION / SC-K-BOX-BOUNDED-COMPLEMENT | 非负背景、正异权的共单例搜索可保真嵌入真实规范贪心，所有分配自动保盒和严格 H；一般抽象盒任务另有带输出区间的精确表述。两速度 1,2 的源归约为通常位多项式，一般 q 编译按显式 k 收费。 | [完整证明、编码与反向域](research/current/multi_facility/complement_search_reduction.md)、[复合审查与交接](research/COMPLEMENT_REDUCTION_AUDIT_2026-10-08.md)；已实现编译和解码，没有求解 oracle、一般时间界或困难性；外审未记录。 |
 | SC-K-EQUAL-LIGHT-FLOW-BOX / SC-K-EQUAL-LIGHT-FLOW-2 | 等权可移动客户、任意覆盖图及二进制正重数；无约束全局最小者自动满足完整盒、全部 NE 与 `(H)`，规范流直接构造终点 | [完整证明与旧等权结果的准确比较](research/current/multi_facility/equal_light_flow.md)；原模型同类多项式结果此前已有，本轮新增冗余约束消除、性质强化和在轨实现。软件离轨仍有限，一般异权继续开放。 |
 | MF-FROZEN-OVERLOAD-POLY / SC-K-FROZEN-OVERLOAD-2 | 供给纯离轨初态，偏离者在普通帽容量区；冻结超载设施，每名冻结客户的外部负载不超过残余纯均衡的可证收益下界和其他冻结负载。每项实际偏离均有证书时，任意供给在轨 NE 得完整因子 2 续局。 | 条件性位多项式证明；严格扩展旧全局 cap 接口，[精确条件及完整证明](research/current/multi_facility/frozen_overload_completion.md)。全输入证书生成与在轨选择仍开放。 |

@@ -10,6 +10,7 @@
 
 | 成果 | 精确范围与结论 | 现行入口 |
 | --- | --- | --- |
+| 四共同地点无 FPTAS | 两设施、正整数原子权；在全部纯布局与完整精确独立混合续局之间优化实例稳定倍率，P≠NP 下不存在加性/乘性 FPTAS；不排除 PTAS 或一般任意盒 NE 搜索 | [全局间隙证明](research/current/shared/four_site_no_fptas.md)、[审查、实际核验及文献差异](research/FOUR_SITE_FPTAS_AUDIT_2026-10-09.md) |
 | 共同目录双设施 φ | 任意覆盖和正原子权；尖锐普遍因子 φ，显式有理输入有位多项式构造 | [分支](research/current/shared/README.md)、[完整证明](research/current/shared/proof.md)、[锐性下界](research/current/shared/sharp_phi_lower.md) |
 | 一般异构双设施 2 | 不同目录；四种子/全环上界及匹配下界；当前账本仍为内部候选 | [分支](research/current/heterogeneous/README.md)、[全环](research/current/heterogeneous/full_catalog_cycle.md) |
 | 任意长单交叠异构目录 ρ | 每个合法跨目录对至多一个共有客户；固定完整纯规则给出尖锐 ρ；双侧目录长度不受限 | [全长直接证明](research/current/heterogeneous/sparse_unbounded_rho.md) |
