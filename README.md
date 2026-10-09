@@ -23,6 +23,12 @@
 
 ## 算法前沿在哪里
 
+双设施另有一个可集中完成的[实例最优倍率 EPTAS 候选](research/questions/shared_alpha_eptas.md)：
+[固定重支持的近带精确补全](research/current/shared/near_band_completion.md)已内部证明，
+外带少量重客户枚举及全局 C² 误差有明确路线；规范一般算法、完整位复杂度和实现仍待交付。
+[团队价值辩驳与实际初探](research/NEXT_DIRECTION_DEBATE_2026-10-09.md)记录选择理由。
+这一方向与一般盒内任意 NE 的多项式目标独立，不把候选升级为已完成 EPTAS。
+
 2026-10-08 的[共单例搜索接口](research/current/multi_facility/complement_search_reduction.md)
 将另一类负载均衡搜索精确实现为真实贪心实例：全状态保盒且严格保 `(H)`，没有归位修复，仍保留全部客户选择关系。两速度 `1,2` 的归约为通常位多项式；一般带区间表述不展开重数。它是结构定位成果，编译器不求均衡，不证明一般高效构造或困难性。证明、实现、独立精确核验及近期解释/自由选路目标已汇入[复合审查记录](research/COMPLEMENT_REDUCTION_AUDIT_2026-10-08.md)。
 

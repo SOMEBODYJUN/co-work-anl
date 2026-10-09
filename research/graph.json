@@ -2514,6 +2514,47 @@
         "evidence/runs/2026-10-09/four_site_fptas_independent.json"
       ],
       "status": "finite internal definition-level checks"
+    },
+    {
+      "id": "SC-TWO-NEAR-BAND-REP",
+      "kind": "claim",
+      "track": "computation",
+      "title": "Exact central-band completion for fixed heavy supports",
+      "detail": "Positive rational two-facility local game; light w<=H, heavy w>H with fixed pure/mixed supports. Deterministic bit-polynomial existence test and exact rational NE representative in abs(Delta)<=H. No prescribed-Delta optimization or general k claim.",
+      "refs": [
+        "research/current/shared/near_band_completion.md"
+      ],
+      "status": "complete local proof with independent internal audits; global EPTAS candidate not registered"
+    },
+    {
+      "id": "Q-SC-ALPHA-EPTAS",
+      "kind": "obligation",
+      "track": "computation",
+      "title": "Complete general instance-optimal EPTAS candidate",
+      "detail": "Concrete heavy-support spectra and central exact representative yield a C^2 candidate error argument. Formal general algorithm, bit complexity, canonical implementation and full-output audit remain to deliver; no EPTAS theorem registered.",
+      "refs": [
+        "research/current/shared/near_band_completion.md",
+        "research/questions/shared_alpha_eptas.md",
+        "research/NEXT_DIRECTION_DEBATE_2026-10-09.md"
+      ],
+      "status": "concrete candidate; formal algorithm theorem not registered"
+    },
+    {
+      "id": "E-NEAR-BAND-AUDITS",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Independent central-band and preliminary global exact audits",
+      "detail": "1322 fixed-support inputs; independent 2004 local inputs and 8000 heavy supports; global prototype 186 inputs and 2976 labeled layouts. Overlapping samples not aggregated. Finite checks do not prove the EPTAS.",
+      "refs": [
+        "research/current/shared/near_band_completion.md",
+        "tests/audits/near_band_completion.py",
+        "tests/audits/near_band_completion_independent.py",
+        "tests/audits/shared_eptas_candidate.py",
+        "evidence/runs/2026-10-09/near_band_completion.json",
+        "evidence/runs/2026-10-09/near_band_completion_independent.json",
+        "evidence/runs/2026-10-09/shared_eptas_candidate.json"
+      ],
+      "status": "finite internal exact attacks; no universal EPTAS certificate"
     }
   ],
   "hyperedges": [
@@ -5515,6 +5556,67 @@
         "research/current/shared/four_site_no_fptas.md"
       ],
       "status": "scoped interface"
+    },
+    {
+      "id": "e-near-band-local",
+      "kind": "derives",
+      "track": "computation",
+      "premises": [
+        "M1",
+        "M2"
+      ],
+      "conclusion": "SC-TWO-NEAR-BAND-REP",
+      "statement": "List high-side pivot and monotone light promotions provide exact central completion for every fixed heavy support under the stated weight threshold.",
+      "refs": [
+        "research/current/shared/near_band_completion.md",
+        "research/questions/shared_alpha_eptas.md"
+      ],
+      "status": "complete local internal proof"
+    },
+    {
+      "id": "e-near-band-tests",
+      "kind": "checks",
+      "track": "computation",
+      "premises": [
+        "E-NEAR-BAND-AUDITS"
+      ],
+      "conclusion": "SC-TWO-NEAR-BAND-REP",
+      "statement": "Independent full-support oracles and direct conditional costs attack finite instances only.",
+      "refs": [
+        "research/current/shared/near_band_completion.md",
+        "research/questions/shared_alpha_eptas.md"
+      ],
+      "status": "scope/candidate boundary"
+    },
+    {
+      "id": "e-eptas-boundary",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-FOUR-NO-FPTAS"
+      ],
+      "conclusion": "Q-SC-ALPHA-EPTAS",
+      "statement": "No FPTAS allows an EPTAS with nonpolynomial dependence on inverse precision; no implication of PTAS impossibility.",
+      "refs": [
+        "research/current/shared/near_band_completion.md",
+        "research/questions/shared_alpha_eptas.md"
+      ],
+      "status": "scope/candidate boundary"
+    },
+    {
+      "id": "e-near-eptas-interface",
+      "kind": "limits",
+      "track": "computation",
+      "premises": [
+        "SC-TWO-NEAR-BAND-REP"
+      ],
+      "conclusion": "Q-SC-ALPHA-EPTAS",
+      "statement": "Central completion supplies a proven tool to a concrete global approximation candidate; it is not by itself the complete EPTAS theorem.",
+      "refs": [
+        "research/current/shared/near_band_completion.md",
+        "research/questions/shared_alpha_eptas.md"
+      ],
+      "status": "scope/candidate boundary"
     }
   ]
 }

@@ -1,5 +1,17 @@
 # 现行命题登记：前提、结论、依赖与状态
 
+## 2026-10-09 EPTAS 预研与近带精确补全
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| SC-TWO-NEAR-BAND-REP | 固定两设施子局、非负有理独占背景、正逐名共同权、给定 H>0；轻权≤H，重权>H，每名重客户指定纯第一/纯第二/真正混合。 | 位多项式判定/输出符合重支持且 abs(Δ)≤H 的某个原实例精确 NE；不实现预定精确差值，不解原全 k 盒问题。 | [完整分支证明](shared/near_band_completion.md)，两路独立内部重构与精确攻击；prototype audits，不是规范通用实现；外审未记录。 |
+
+算法义务 `Q-SC-ALPHA-EPTAS`：原共同目录双设施实例最优倍率的
+`f(1/ε)poly(L)` 精确续局近似构造。已有少数重支持谱与近带補全的全局 C² 候选，
+尚未登记完整 EPTAS 定理或一般位复杂度交付。见
+[候选和下一任务](../questions/shared_alpha_eptas.md)、
+[团队辩驳](../NEXT_DIRECTION_DEBATE_2026-10-09.md)。此义务不是已证明 Claim。
+
 ## 2026-10-09 四共同地点无 FPTAS
 
 | ID | Exact scope | Result and boundary | Proof and status |

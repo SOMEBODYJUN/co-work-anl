@@ -6,6 +6,7 @@
 
 | 文件 | 应读内容 |
 |---|---|
+| [near_band_completion.md](near_band_completion.md) | 固定重支持的近带精确 NE 多项式补全；四个完整分支及位长证明，为实例最优 EPTAS 候选供局部工具；完整通用方案见[任务页](../../questions/shared_alpha_eptas.md)。 |
 | [four_site_no_fptas.md](four_site_no_fptas.md) | 两设施共同四地点的全局 PARTITION 间隙；正整数权、所有实概率精确 NE/完整续局的下界与位复杂度；无 FPTAS、PTAS 仍开放。审计不是原作者包复现。 |
 | [model.md](model.md) | 共享目录模型、精确 NE 方程、续局量词、菜单充分条件 |
 | [theorems.md](theorems.md) | 存在性、位多项式构造、局部 C、单实例证书的分离陈述 |

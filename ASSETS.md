@@ -1,5 +1,10 @@
 # 现行研究资产：命题而非旧文件的清单
 
+2026-10-09 提交后新增[近带补全引理](research/current/shared/near_band_completion.md)与
+[EPTAS 具体候选](research/questions/shared_alpha_eptas.md)，两路局部精确攻击和有限
+全局原型审计已保存。[选题辩驳](research/NEXT_DIRECTION_DEBATE_2026-10-09.md)
+区分局部定理、全局候选、实际核验和未交付位复杂度，不登记一般EPTAS已完成。
+
 2026-10-09 的[四共同地点无 FPTAS](research/current/shared/four_site_no_fptas.md)
 已独立重构全局间隙、支持端点和位规模，规范[归约构造器](facility_spe/shared/four_site_fptas_hardness.py)
 仅构造实例，不求均衡。[审查记录](research/FOUR_SITE_FPTAS_AUDIT_2026-10-09.md)
