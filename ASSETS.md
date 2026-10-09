@@ -7,7 +7,12 @@
 [空背景首步税桥反例](research/current/customer_attraction/tax_bridge_counterexample.md)、
 [一般背景总税反例及无限族](research/current/customer_attraction/general_tax_counterexample.md)、
 [完整策略有理重数锥和精确对偶](research/current/customer_attraction/strategy_cone.md)。
-前者限三人，反例限各自桥梁；任意人数半覆盖仍开放。
+[四人1499/750证明](research/current/customer_attraction/four_player_bound.md)、
+[任意人数极大花瓣结构子类锐界](research/current/customer_attraction/disjoint_maxima_bound.md)、
+[两人平均真实偏离恒等式](research/current/customer_attraction/global_new_uniform_portfolio_two.md)、
+[五人460行模板障碍](research/current/customer_attraction/five_player_lift_obstruction.md)、
+[完整可信续局与联合候选接口](research/current/customer_attraction/credible_continuations.md)。
+人数和目录条件逐项保留；模板障碍没有完整SPE证书，一般目录五人及以上仍开放。
 
 2026-10-09 提交后新增[近带补全引理](research/current/shared/near_band_completion.md)与
 [EPTAS 具体候选](research/questions/shared_alpha_eptas.md)，两路局部精确攻击和有限

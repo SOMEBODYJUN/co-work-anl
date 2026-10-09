@@ -22,6 +22,11 @@
 | CA-LAST-NODE-OPT-TAX | CAG-MODEL，任意人数m≥1；任意终局，只要求末位在实际前缀后最佳回复。 | OPT_m≤m u_m+τ_0(c_{<m})。末位收益≤平均则根税成立；税反例必须末位超过平均；非充分条件，不解决一般目标。 | [税页§6的直接逐客户证明](customer_attraction/two_remaining_tax.md)；内部复核，外审未记录。 |
 | CA-THREE-SHARP-5-3 | CAG-MODEL，恰三名单位提供者、任意有限共同目录，每个完整历史依赖纯 SPE。 | OPT_3≤(5/3)W；三个互不交主题的完整SPE下界达到，三人最坏比例恰5/3；该锐界定理仅给三人范围。 | [真实L_i/Q/R回复、八类合法slack及完整非负恒等式](customer_attraction/three_player_sharp.md)；两路独立审查、Fraction全2048membership/160角点及完整下界审计；外审、新颖性未认证。 |
 
+| CA-DISJOINT-MAXIMA-2M1 | CAG-MODEL，任意m≥1；删除共同核心K后，不同包含极大花瓣两两不交，内部子花瓣允许交叠。 | 每个完整历史纯SPE在每个历史选极大花瓣；OPT_m≤C+(2−1/m)(W−C)，锐。包含laminar目录；一般交叠极大目录不涵盖。 | [自足singleton重构、真实扩张续局及结构化简](customer_attraction/disjoint_maxima_bound.md)，独立内部审查和完整策略精确枚举；外审/新颖性未认证。 |
+| CA-UNIFORM-PORTFOLIO-TWO | CAG-MODEL任意合法固定背景，恰两剩余玩家，每个完整历史纯SPE，任意比较T,S及其真实回复Q,R。 | 2R_d(T,S)≤R_d(A,B)+V1T+V1S+V2T+V2S；允许全部平局。任意人数的平均偏离界仍是未证义务。 | [四合法末节点slack、非负多项式及符号背景恒等式](customer_attraction/global_new_uniform_portfolio_two.md)，独立重构与Fraction审计；外审未记录。 |
+| CA-FIVE-LIFT-ROWS-NO | 五人两条根偏离路径的明确460行必要条件松弛，非负有理13主题membership和辅助O，W=1。 | 23mask精确可行点有O>2W，故这些行不能单独证明O≤2W；O不是真实OPT，未给完整策略，不是主猜想反例。 | [完整变量、460行及证书边界](customer_attraction/five_player_lift_obstruction.md)，独立逐行重构与精确审计；外审未记录。 |
+| CA-CREDIBLE-CONTINUATIONS | 固定CAG整数单位客户实例、可实现目标终局和完整有序历史；固定人数/标签数的策略锥。 | 可信孩子菜单覆盖全部完整SPE；均匀模式有限全支持。联合MILP只生成候选，M=m有严格证明；两项所选锥比例8/5、7/5不涵盖全部策略。 | [递归菜单及联合候选接口](customer_attraction/credible_continuations.md)，两棵781节点完整策略、整数原始及精确最优对偶审计，12路径接口回归；外审未记录。 |
+
 主目标 [Q-CAG-HALF](../questions/customer_attraction_half_coverage.md) 仍开放。
 本分支的客户固定均分，不使用原设施模型的客户 NE 或因子 2 存在性。
 

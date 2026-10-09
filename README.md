@@ -10,6 +10,9 @@
 [四人普遍上界](research/current/customer_attraction/four_player_bound.md)亦已内部独立审查：
 每个完整纯 SPE 满足 `OPT_4≤(1499/750)W<2W`（正覆盖），
 通过根偏离真实后继节点比较与非负逐客户恒等式闭合；五人及以上仍开放。
+[任意人数结构子类定理](research/current/customer_attraction/disjoint_maxima_bound.md)证明：
+删除共同核心后，若不同极大主题互不相交，则每个完整纯 SPE 满足锐界 `2−1/m`；
+允许极大主题内部的子主题任意交叠，包含全部 laminar 目录。
 [固定背景两人税界](research/current/customer_attraction/two_remaining_tax.md)仍成立，
 但[首步机会成本桥](research/current/customer_attraction/tax_bridge_counterexample.md)在空背景三人即失败，
 [一般背景总税界](research/current/customer_attraction/general_tax_counterexample.md)也有完整根 SPE 内的反例。

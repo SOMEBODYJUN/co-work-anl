@@ -5,6 +5,7 @@
 推送前检测到远端新增 `8dd6ef5` 的三人锐界及 `af0e06a` 的税桥状态修正；
 已读取完整新证明、复跑精确审计并语义合并，保留三人 `5/3` 锐界和本轮四人结果。
 本轮四人原始提交为 `0a114dd`，不覆盖远端新成果。
+合并 checkpoint `fee1c547a093200bd389d2982add02eab207b1dc` 已成功推送并核对远端main。
 
 本轮安全恢复并再次 fetch，实际基线为 `main@dbef112f34bc16add192d6527f40f8f68a09442a`，
 工作区无有效项目改动丢失。按用户指定运行多个 `gpt-6.1-sol ultra`，
@@ -22,7 +23,17 @@
 因此根税反例必须末位超过平均；这个条件不充分，也没有证明根总税。
 固定策略样本的零反例搜索只留临时工作区，不把计算结果升级为全称结论。
 
-下一行动是保留多个根偏离分支之间的联合后继比较，或独立闭合零背景总税/全局余额。
+第二批经审查资产已整理：
+[任意人数结构类锐界](research/current/customer_attraction/disjoint_maxima_bound.md)覆盖共同核心删除后极大花瓣互不交类；
+[固定背景两人平均接口](research/current/customer_attraction/global_new_uniform_portfolio_two.md)用四个真实末节点比较闭合符号恒等式，
+其任意人数式(6)仍开放。
+[五人460行模板障碍](research/current/customer_attraction/five_player_lift_obstruction.md)的23mask精确可行点经独立逐行重构，
+辅助O>2W不是真实OPT，也没有完整策略，不能当猜想反例。
+[可信菜单与联合候选接口](research/current/customer_attraction/credible_continuations.md)保留两棵781节点完整策略，
+两项整数原始、精确最优对偶及原种子均重放通过；12个小规模固定路径接口回归通过。
+宽泛零反例输出留临时工作区，不登记一般结论。
+
+下一行动是保留最优主题偏离后的真实回复、多个分支的联合后继比较，或独立闭合零背景总税/全局余额。
 单个四人恒等式不提供对五人以上的自动归纳，不恢复已否定的背景总税或逐期收费。
 
 

@@ -49,6 +49,14 @@
 配对membership消去及双线性非负表给三人完整锐界。它不依赖税桥。
 旧 `CA-THREE-UPPER-142-81` 提供不同的固定背景两人税应用机制，保留为可复用推导。
 
+`CA-DISJOINT-MAXIMA-2M1` 用完整singleton机制及严格扩张的真实续局，
+证明共同核心删除后极大花瓣互不相交类的任意人数锐界；内部子主题可任意交叠。
+`CA-UNIFORM-PORTFOLIO-TWO` 给任意背景恰两剩余人的平均真实偏离恒等式；
+`CA-UNIFORM-ROOT-GAP` 保留更强的任意人数平均接口为开放义务。
+`CA-FIVE-LIFT-ROWS-NO` 排除指定五人460行松弛模板，辅助O不是实际OPT。
+`CA-CREDIBLE-CONTINUATIONS` 的菜单构造覆盖全部完整策略；有限采样和联合MILP候选
+仍需精确核验，不能从所选锥推断全部目录。
+
 ## 文件地图
 
 | 路径 | 数学资产与何时使用 |
@@ -78,6 +86,11 @@
 | `tests/audits/customer_attraction_four_player.py`、`tests/audits/customer_attraction_four_player_independent.py` | 互不导入的精确系数与最优覆盖比较核验，冻结结果在同名evidence/runs路径；不是有限策略代替全称证明。 |
 | `research/current/customer_attraction/three_player_sharp.md` | 三人锐5/3完整证明、真实L_i/Q/R回复、八类SPE比较和非负余项表；当前三人结论首读入口。 |
 
+| `research/current/customer_attraction/disjoint_maxima_bound.md`、`tests/audits/customer_attraction_disjoint_maxima.py` | 任意人数结构子类完整证明与独立完整有序策略审计；删除共同核心后的极大花瓣条件不可省略。 |
+| `research/current/customer_attraction/global_new_uniform_portfolio_two.md`、`tests/audits/customer_attraction_uniform_portfolio.py` | 任意背景两剩余人真实偏离平均恒等式；任意人数推广仍开放。 |
+| `research/current/customer_attraction/five_player_lift_obstruction.md`、`tests/audits/customer_attraction_five_lift.py` | 指定460行模板障碍及23mask有理证书，O为辅助变量而非实际OPT。 |
+| `research/current/customer_attraction/credible_continuations.md`、`tests/audits/cone_attack_credible_variants.py`、`tests/audits/cone_attack_joint_milp.py` | 完整可信菜单、两棵所选策略及联合候选接口；精确原始/对偶和全历史核验边界。 |
+
 ## 复现入口
 
 从仓库根运行：
@@ -95,6 +108,11 @@ python3 tests/audits/customer_attraction_tax_bridge.py
 python3 tests/audits/customer_attraction_general_tax.py
 python3 tests/audits/customer_attraction_coverage_opportunity.py
 python3 tests/audits/customer_attraction_strategy_lp.py --self-test
+python3 tests/audits/customer_attraction_disjoint_maxima.py
+python3 tests/audits/customer_attraction_uniform_portfolio.py
+python3 tests/audits/customer_attraction_five_lift.py
+python3 tests/audits/cone_attack_credible_variants.py --verify evidence/runs/2026-10-09/cone_attack_credible_selected.json
+python3 tests/audits/cone_attack_joint_milp.py --self-test
 python3 -m customer_attraction examples/customer_attraction/residual_counterexample.json --verify evidence/certificates/customer_attraction/residual_counterexample.json
 ```
 

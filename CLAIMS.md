@@ -82,4 +82,8 @@ The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BO
 新增 `CA-FOUR-UPPER-1499-750` 证明四人全部纯 SPE 的 `OPT_4≤(1499/750)W`，
 [完整真实续局证明](research/current/customer_attraction/four_player_bound.md)已独立审查。
 零背景总税和五人及以上半覆盖仍开放。`CA-STRATEGY-CONE` 给固定策略的精确优化接口。
+新增 `CA-DISJOINT-MAXIMA-2M1` 证明删除共同核心后极大花瓣互不相交类的任意人数锐界；
+`CA-UNIFORM-PORTFOLIO-TWO` 给任意背景恰两剩余人的真实偏离平均恒等式。
+`CA-FIVE-LIFT-ROWS-NO` 只否定指定460行松弛模板，未给SPE反例；
+`CA-CREDIBLE-CONTINUATIONS` 给完整可信菜单与精确候选核验接口。
 这些工具和失败机制不改变原设施模型的任何命题。

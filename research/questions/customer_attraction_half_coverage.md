@@ -69,7 +69,7 @@ $$
 任意共同目录、恰三人、每个完整历史依赖纯 SPE 都有 `OPT_3≤(5/3)W`，匹配下界达到。
 跟踪真实离轨L_i及Q,R，八类节点最优性与逐客户非负恒等式闭合；不依赖旧一般税归纳。
 [旧142/81](../current/customer_attraction/three_player_bound.md)保留为不同两人税机制。
-恰三人目标已解决，四人及以上仍未证明；没有外审或新颖性认证。
+恰三人目标已解决；这个锐界定理的范围仅限三人，没有外审或新颖性认证。
 
 [CA-FOUR-UPPER-1499-750](../current/customer_attraction/four_player_bound.md)进一步证明
 恰四人任意目录、全部完整纯 SPE 满足 `OPT_4≤(1499/750)W`。
@@ -88,6 +88,18 @@ $$
 `Σδ_i=OPT_m−W`，因此需要全局 `Σ(u_i−δ_i)≥0`。
 更强的所有前缀余额 `Σ_(i≤t)u_i+F_(m-t)(C_t)−OPT_m≥0`
 可作为新候选，但没有证明；收益始终取原终局份额。
+
+## 新的有效接口与边界
+
+[极大花瓣结构定理](../current/customer_attraction/disjoint_maxima_bound.md)
+对任意人数证明锐界2−1/m，但必须删除共同核心后不同极大花瓣互不相交。
+[平均真实偏离恒等式](../current/customer_attraction/global_new_uniform_portfolio_two.md)
+已在任意合法背景、恰两剩余玩家闭合；该页式(6)的任意人数平均接口仍未证明，
+后继主题改动会改变再后继的真实回复，不能冻结组合。
+[五人模板障碍](../current/customer_attraction/five_player_lift_obstruction.md)
+表明指定460行比较单独不足，辅助O>2W可行点不是真实SPE反例。
+[可信续局接口](../current/customer_attraction/credible_continuations.md)
+扩大完整策略采样范围；均匀菜单全支持与有限样本证明范围必须区分。
 
 ## 状态判别
 
