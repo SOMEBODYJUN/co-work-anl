@@ -3,8 +3,9 @@
 **活跃目标：** [Q-CAG-HALF](../../questions/customer_attraction_half_coverage.md)：
 任意人数、任意有限共同主题目录，全部有序历史依赖的纯 SPE 都覆盖最优的一半。
 这个任意人数目标尚未证明，也没有本轮目标反例。
-恰三人已有 [CA-THREE-UPPER-142-81](three_player_bound.md)：全部纯 SPE 的 `OPT_3≤(142/81)W`，
-经独立内部审查，不声称常数尖锐。
+恰三人已由 [CA-THREE-SHARP-5-3](three_player_sharp.md)完整证明锐界：
+全部纯 SPE 的 `OPT_3≤(5/3)W`，下界达到，包含全部历史依赖平局。
+经两路独立内部审查；外部审查、新颖性未认证。
 
 本分支使用 [CAG-MODEL](model.md)：客户价值固定均分，没有客户侧优化。
 它与仓库原来的主动原子客户设施模型独立。不能借用原模型的因子 2 存在性，
@@ -37,6 +38,11 @@
 [在轨AAB反例](coverage_opportunity_counterexample.md)保留完整历史策略。
 全局望远镜余额仍是精确表示，需允许跨步骤支付，尚无一般证明。
 
+
+`CAG-MODEL` → `CA-THREE-SHARP-5-3`：八类实际和真实离轨节点比较，
+配对membership消去及双线性非负表给三人完整锐界。它不依赖税桥。
+旧 `CA-THREE-UPPER-142-81` 提供不同的固定背景两人税应用机制，保留为可复用推导。
+
 ## 文件地图
 
 | 路径 | 数学资产与何时使用 |
@@ -62,6 +68,8 @@
 
 | `research/current/customer_attraction/coverage_opportunity_counterexample.md` | 十一客户完整SPE否定逐期最优覆盖补全收费；保留多步余额及全局望远镜身份。 |
 
+| `research/current/customer_attraction/three_player_sharp.md` | 三人锐5/3完整证明、真实L_i/Q/R回复、八类SPE比较和非负余项表；当前三人结论首读入口。 |
+
 ## 复现入口
 
 从仓库根运行：
@@ -72,6 +80,7 @@ python3 tests/audits/customer_attraction_continuations.py
 python3 tests/audits/customer_attraction_portfolio_matching.py
 python3 tests/audits/customer_attraction_tax.py
 python3 tests/audits/customer_attraction_three_player.py
+python3 tests/audits/customer_attraction_three_player_sharp.py
 python3 tests/audits/customer_attraction_tax_bridge.py
 python3 tests/audits/customer_attraction_general_tax.py
 python3 tests/audits/customer_attraction_coverage_opportunity.py

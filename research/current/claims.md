@@ -18,6 +18,8 @@
 
 | CA-COVERAGE-OPPORTUNITY-NO | CAG-MODEL，三人、五共同主题、十一单位客户的完整纯 SPE，实际路径AAB。 | 在轨第二步δ=F2(A)−F1(A)=3>u2=5/2；逐层覆盖机会支付为假。Σδ=OPT−W仍为恒等式，全局余额及半覆盖未被否定。 | [完整31历史策略、收益表与望远镜余额](customer_attraction/coverage_opportunity_counterexample.md)，独立155真实行动比较精确审计；外审未记录。 |
 
+| CA-THREE-SHARP-5-3 | CAG-MODEL，恰三名单位提供者、任意有限共同目录，每个完整历史依赖纯 SPE。 | OPT_3≤(5/3)W；三个互不交主题的完整SPE下界达到，三人最坏比例恰5/3。四人以上仍开放。 | [真实L_i/Q/R回复、八类合法slack及完整非负恒等式](customer_attraction/three_player_sharp.md)；两路独立审查、Fraction全2048membership/160角点及完整下界审计；外审、新颖性未认证。 |
+
 主目标 [Q-CAG-HALF](../questions/customer_attraction_half_coverage.md) 仍开放。
 本分支的客户固定均分，不使用原设施模型的客户 NE 或因子 2 存在性。
 

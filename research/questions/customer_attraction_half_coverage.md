@@ -65,10 +65,11 @@ $$
 
 ## 三人边界及新的前沿
 
-[CA-THREE-UPPER-142-81](../current/customer_attraction/three_player_bound.md)已完整内部证明：
-任意共同目录、恰三人、每个完整历史依赖纯 SPE 都有 `OPT_3≤(142/81)W`。
-依赖固定实际首动作后的两人税界、实际末位节点最优性和根偏离保底，
-不依赖旧一般税归纳。已知5/3下界与新上界仍有间隙；不声称尖锐或新颖。
+[CA-THREE-SHARP-5-3](../current/customer_attraction/three_player_sharp.md)已完整内部证明：
+任意共同目录、恰三人、每个完整历史依赖纯 SPE 都有 `OPT_3≤(5/3)W`，匹配下界达到。
+跟踪真实离轨L_i及Q,R，八类节点最优性与逐客户非负恒等式闭合；不依赖旧一般税归纳。
+[旧142/81](../current/customer_attraction/three_player_bound.md)保留为不同两人税机制。
+恰三人目标已解决，四人及以上仍未证明；没有外审或新颖性认证。
 
 一般人数现在需控制跨分支的全局余额。可独立研究零背景总税，或使用
 [完整策略重数锥](../current/customer_attraction/strategy_cone.md)的精确对偶寻找统一不等式。
