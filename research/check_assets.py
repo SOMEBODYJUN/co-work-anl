@@ -75,7 +75,7 @@ def check() -> None:
         for field in ("implementation", "proof", "sources", "tests", "records", "examples"):
             for path in entry[field]:
                 require((ROOT / path).is_file(), (entry["id"], path))
-                expected = {"implementation": ("facility_spe/", "multi_facility_spe/"),
+                expected = {"implementation": ("facility_spe/", "multi_facility_spe/", "customer_attraction/"),
                             "proof": "research/current/",
                             "sources": "history/",
                             "tests": "tests/",
@@ -96,7 +96,7 @@ def check() -> None:
             ("unclassified mathematical claim", sorted(all_claims - covered_claims)))
     canonical = {
         path.relative_to(ROOT).as_posix()
-        for package in ("facility_spe", "multi_facility_spe")
+        for package in ("facility_spe", "multi_facility_spe", "customer_attraction")
         for path in (ROOT / package).rglob("*.py")
         if path.name != "__init__.py"
     }
@@ -134,7 +134,7 @@ def check() -> None:
         ["git", "ls-files", "--cached", "--others", "--exclude-standard"],
         cwd=ROOT, text=True
     ).splitlines()
-    roots = {"facility_spe", "multi_facility_spe", "tests", "examples", "evidence", "history", "research", "learning"}
+    roots = {"facility_spe", "multi_facility_spe", "customer_attraction", "tests", "examples", "evidence", "history", "research", "learning"}
     root_docs = {".gitignore", "AGENTS.md", "README.md", "ASSETS.md", "USAGE.md",
                  "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md"}
     unknown = {p for p in tracked if p.split("/", 1)[0] not in roots

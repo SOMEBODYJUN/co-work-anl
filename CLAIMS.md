@@ -68,3 +68,11 @@
 ## 2026-10-04 algorithmic frontier: exact mixed-q interface
 
 The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BOX`: with a greedy occupancy and site multiplicities `q_t`, construct a boxed site-pure customer NE satisfying `(W_t-w_i)/q_t <= W_v/q_v` in input-bit-polynomial time, or replace the box certificate. Equal multiplicities use the published restricted-identical-link Nashification. A direct reduction to restricted related links is invalid because their condition is `W_t/s_t <= (W_v+w_i)/s_v`; the exact positive-integer mismatch and its scope are in [the current boundary note](research/current/multi_facility/restricted_related_link_boundary.md). This records an import barrier, not a hardness result.
+# 2026-10-09 独立顺序 CAG 分支
+
+本轮目标 `Q-CAG-HALF`：共同有限主题目录、单位玩家依次观察完整历史、单位客户固定均分，
+对每个纯 SPE 证明 `2W>=OPT_m`，包括所有历史依赖平局。**目标仍开放。**
+完整身份与依赖见[新分支](research/current/customer_attraction/README.md)及
+[现行命题账本](research/current/claims.md)的 `CA-EXACT-PURE-SPE-ALL`、
+`CA-SPE-NON-PNE`、`CA-HISTORY-TIES`、`CA-RESIDUAL-NO`。
+这些工具和失败机制不改变原设施模型的任何命题。

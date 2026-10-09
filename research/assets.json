@@ -1219,6 +1219,53 @@
       ],
       "examples": [],
       "limit": "Local universal proof is internally complete; finite whole-game prototype checks are not a general EPTAS proof, bit bound or production implementation. No external review or novelty certification."
+    },
+    {
+      "id": "sequential_customer_attraction",
+      "claims": [
+        "CA-EXACT-PURE-SPE-ALL",
+        "CA-SPE-NON-PNE",
+        "CA-HISTORY-TIES",
+        "CA-RESIDUAL-NO"
+      ],
+      "status": "exact finite solver and independently checked bridge counterexamples; half-coverage target open",
+      "applies_when": [
+        "finite common catalog of themes; unit equal-share customers",
+        "unit providers move once in order and observe the entire history",
+        "all pure SPE choices, including arbitrary history-dependent ties",
+        "integer type multiplicity means distinct unit clones"
+      ],
+      "produces": "all attainable pure-SPE terminal counts, complete ordered-history certificate and explicit failures of three proof bridges",
+      "implementation": [
+        "customer_attraction/model.py",
+        "customer_attraction/exact.py",
+        "customer_attraction/certificate.py",
+        "customer_attraction/__main__.py"
+      ],
+      "proof": [
+        "research/current/customer_attraction/model.md",
+        "research/current/customer_attraction/exact_solver.md",
+        "research/current/customer_attraction/continuation_lemmas.md",
+        "research/current/customer_attraction/literature.md",
+        "research/current/customer_attraction/README.md"
+      ],
+      "tests": [
+        "tests/test_customer_attraction.py",
+        "tests/audits/customer_attraction_search.py",
+        "tests/audits/customer_attraction_continuations.py"
+      ],
+      "records": [
+        "evidence/runs/2026-10-09/customer_attraction_search.json",
+        "evidence/runs/2026-10-09/customer_attraction_continuations.json"
+      ],
+      "examples": [
+        "examples/customer_attraction/residual_counterexample.json",
+        "evidence/certificates/customer_attraction/residual_counterexample.json"
+      ],
+      "limit": "Finite enumeration has no bit-polynomial guarantee. Exact witness constructions refute only the specified bridges, not half coverage. Finite zero searches do not promote the main conjecture. No external peer review recorded.",
+      "sources": [
+        "history/source/notes/customer_attraction/origin_2026-10-09.md"
+      ]
     }
   ]
 }

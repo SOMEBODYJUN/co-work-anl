@@ -2555,6 +2555,165 @@
         "evidence/runs/2026-10-09/shared_eptas_candidate.json"
       ],
       "status": "finite internal exact attacks; no universal EPTAS certificate"
+    },
+    {
+      "id": "CAG-PAPER",
+      "kind": "source",
+      "track": "extensions",
+      "title": "Deng sequential CAG conjecture",
+      "detail": "Paper §2 and Definition 4 specify equal-sharing customer attraction; §5 proves the two-player bound and gives a shared-catalog lower family. §6 proposes the general upper bound. Exact catalog scope is fixed independently for this branch.",
+      "refs": [
+        "research/current/customer_attraction/model.md",
+        "research/current/customer_attraction/literature.md"
+      ],
+      "status": "primary-source facts checked; no general upper theorem imported"
+    },
+    {
+      "id": "CAG-MODEL",
+      "kind": "definition",
+      "track": "extensions",
+      "title": "Sequential common themes and unit equal shares",
+      "detail": "Finite common labeled catalog, unit providers moving once in order, unit customers sharing among all coverers; pure SPE requires every ordered history, including arbitrary ties.",
+      "refs": [
+        "research/current/customer_attraction/model.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "Q-CAG-HALF",
+      "kind": "obligation",
+      "track": "extensions",
+      "title": "Every common-catalog pure SPE covers half of OPT",
+      "detail": "For every finite CAG-MODEL instance, every m>=1 and every full history-dependent pure SPE, OPT_m<=2W. Still unresolved; no target counterexample is certified.",
+      "refs": [
+        "research/current/customer_attraction/README.md",
+        "research/questions/customer_attraction_half_coverage.md"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "CA-EXACT-PURE-SPE-ALL",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Exact set-valued enumeration of every pure SPE terminal",
+      "detail": "At each prefix count k, retain child terminals with own payoff at least max_b min_child_b payoff_b. Necessary and sufficient for all ordered-history pure SPE terminal counts; reconstruct a full strategy for every retained terminal. Finite, not bit-polynomial.",
+      "refs": [
+        "research/current/customer_attraction/exact_solver.md"
+      ],
+      "status": "complete finite recursion proof and independent exact oracle; unrefereed"
+    },
+    {
+      "id": "CA-CONTINUATION-WITNESSES",
+      "kind": "construction",
+      "track": "extensions",
+      "title": "Complete finite strategies attacking three bridges",
+      "detail": "Explicit common-catalog unit-customer strategies: two-player SPE not PNE, same-count ordered histories with different replies and nonmonotone payoffs, and a five-theme residual-floor counterexample.",
+      "refs": [
+        "research/current/customer_attraction/literature.md",
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "specified and independently exactly checked"
+    },
+    {
+      "id": "CA-SPE-NON-PNE",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "A common-catalog SPE terminal need not be PNE",
+      "detail": "There exists a two-player four-unit-customer common catalog and complete pure SPE whose terminal admits a profitable static action deviation; a separate three-player three-customer witness is included.",
+      "refs": [
+        "research/current/customer_attraction/literature.md",
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "complete direct reconstruction and independent exact certificates; unrefereed"
+    },
+    {
+      "id": "CA-HISTORY-TIES",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Arbitrary history ties defeat state and payoff simplifications",
+      "detail": "There exists a three-player two-singleton common-catalog full pure SPE with different replies at equal-count histories AB and BA and payoffs (1/2,1,1/2). Neither direction of chronological payoff monotonicity is universal.",
+      "refs": [
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "complete direct reconstruction and independent exact certificates; unrefereed"
+    },
+    {
+      "id": "CA-RESIDUAL-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Per-player and mean residual floors are false",
+      "detail": "Two players, five shared themes and 14 unit customers admit a complete pure SPE with u=(4,5), W=9, OPT=10 and maximum untouched theme size 5. Thus both u_i>=max untouched and W>=m max untouched are false; half coverage is not refuted.",
+      "refs": [
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "complete direct reconstruction and independent exact certificates; unrefereed"
+    },
+    {
+      "id": "CA-STATIC-BRIDGE",
+      "kind": "rejected",
+      "track": "extensions",
+      "title": "Import static smoothness by identifying SPE with PNE",
+      "detail": "A sequential deviation can change follower choices, so full SPE does not provide fixed-other-action Nash inequalities.",
+      "refs": [
+        "research/current/customer_attraction/literature.md"
+      ],
+      "status": "refuted bridge"
+    },
+    {
+      "id": "CA-STATE-BRIDGE",
+      "kind": "rejected",
+      "track": "extensions",
+      "title": "Impose anonymous ties or monotone player payoffs",
+      "detail": "Count-set memoization does not constrain a full strategy to be Markov. Both chronological monotonicities are false.",
+      "refs": [
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "refuted bridge"
+    },
+    {
+      "id": "CA-RESIDUAL-BRIDGE",
+      "kind": "rejected",
+      "track": "extensions",
+      "title": "Charge each optimal theme its untouched mass per player",
+      "detail": "Per-agent and aggregate maximum-residual bounds fail through overlapping follower response cycles. Optimal portfolio coverage must be retained in a new proof.",
+      "refs": [
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "refuted bridge"
+    },
+    {
+      "id": "CA-EXACT-CODE",
+      "kind": "construction",
+      "track": "extensions",
+      "title": "Canonical finite attraction solver and verifier",
+      "detail": "Separate customer_attraction package with rational shares, set-valued recursion, full ordered-history strategies, independent definition-level verifier and exclusive-output CLI.",
+      "refs": [
+        "research/current/customer_attraction/exact_solver.md"
+      ],
+      "status": "implemented finite exact contract"
+    },
+    {
+      "id": "CA-EXACT-CHECKS",
+      "kind": "evidence",
+      "track": "extensions",
+      "title": "Independent ordered-strategy tiny oracle",
+      "detail": "Direct enumeration of complete strategy maps and individual-customer payoffs checks all attainable counts and paths for bounded inputs; boundary, CLI and witness regressions are additional finite checks.",
+      "refs": [
+        "research/current/customer_attraction/exact_solver.md"
+      ],
+      "status": "finite exact checks only"
+    },
+    {
+      "id": "CA-ATTACK-CHECKS",
+      "kind": "evidence",
+      "track": "extensions",
+      "title": "Frozen finite search and complete witness audits",
+      "detail": "Integer-scaled outcome search and independent unit-customer audits have frozen parameters and results. Earlier zero residual counterexamples do not survive the later five-theme exact witness.",
+      "refs": [
+        "research/current/customer_attraction/continuation_lemmas.md",
+        "research/current/customer_attraction/README.md"
+      ],
+      "status": "finite exact checks only"
     }
   ],
   "hyperedges": [
@@ -5617,6 +5776,196 @@
         "research/questions/shared_alpha_eptas.md"
       ],
       "status": "scope/candidate boundary"
+    },
+    {
+      "id": "E-CAG-SCOPE",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CAG-PAPER"
+      ],
+      "conclusion": "CAG-MODEL",
+      "statement": "The primary paper motivates the branch; the exact common-catalog input and full-history quantifier are separately fixed.",
+      "refs": [
+        "research/current/customer_attraction/model.md",
+        "research/current/customer_attraction/literature.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CAG-OPEN",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CAG-PAPER"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "The exact model and reported conjecture identify the active obligation, without importing an upper proof.",
+      "refs": [
+        "research/current/customer_attraction/README.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-RECURSION",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-EXACT-PURE-SPE-ALL",
+      "statement": "Finite child SPE outcome sets can be independently pasted at disjoint ordered-history branches; the complete necessity and sufficiency proof establishes the recursion.",
+      "refs": [
+        "research/current/customer_attraction/exact_solver.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-NON-PNE",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-CONTINUATION-WITNESSES"
+      ],
+      "conclusion": "CA-SPE-NON-PNE",
+      "statement": "The explicit full strategies satisfy all subgames while terminal static deviations improve payoff.",
+      "refs": [
+        "research/current/customer_attraction/literature.md",
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-HISTORY",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-CONTINUATION-WITNESSES"
+      ],
+      "conclusion": "CA-HISTORY-TIES",
+      "statement": "The displayed singleton complete strategy proves both ordered-history and payoff-order counterexamples.",
+      "refs": [
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-RESIDUAL",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-CONTINUATION-WITNESSES"
+      ],
+      "conclusion": "CA-RESIDUAL-NO",
+      "statement": "The five-theme complete strategy and exact table give 4<5 and 9<2*5 while OPT=10.",
+      "refs": [
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-STATIC-ATTACK",
+      "kind": "attacks",
+      "track": "extensions",
+      "premises": [
+        "CA-SPE-NON-PNE"
+      ],
+      "conclusion": "CA-STATIC-BRIDGE",
+      "statement": "An explicit counterexample prevents automatic static NE imports.",
+      "refs": [
+        "research/current/customer_attraction/literature.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-STATE-ATTACK",
+      "kind": "attacks",
+      "track": "extensions",
+      "premises": [
+        "CA-HISTORY-TIES"
+      ],
+      "conclusion": "CA-STATE-BRIDGE",
+      "statement": "Equal-count history replies can differ and payoffs can rise then fall.",
+      "refs": [
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-RESIDUAL-ATTACK",
+      "kind": "attacks",
+      "track": "extensions",
+      "premises": [
+        "CA-RESIDUAL-NO"
+      ],
+      "conclusion": "CA-RESIDUAL-BRIDGE",
+      "statement": "The residual bridge itself is false, not merely missing a proof.",
+      "refs": [
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-IMPLEMENT",
+      "kind": "implements",
+      "track": "extensions",
+      "premises": [
+        "CA-EXACT-PURE-SPE-ALL"
+      ],
+      "conclusion": "CA-EXACT-CODE",
+      "statement": "The separate finite package implements the exact pure-SPE enumeration and full-history certificate contract.",
+      "refs": [
+        "research/current/customer_attraction/exact_solver.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-ORACLE-CHECK",
+      "kind": "checks",
+      "track": "extensions",
+      "premises": [
+        "CA-EXACT-CHECKS"
+      ],
+      "conclusion": "CA-EXACT-CODE",
+      "statement": "Direct complete-strategy enumeration checks finite input outcome sets independently of the recurrence.",
+      "refs": [
+        "research/current/customer_attraction/exact_solver.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-ATTACK-CHECK",
+      "kind": "checks",
+      "track": "extensions",
+      "premises": [
+        "CA-ATTACK-CHECKS"
+      ],
+      "conclusion": "CA-CONTINUATION-WITNESSES",
+      "statement": "Supplied complete witness strategies are independently checked by expanding unit customers; search is not a universal proof.",
+      "refs": [
+        "research/current/customer_attraction/continuation_lemmas.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-FRONTIER",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-STATIC-BRIDGE",
+        "CA-STATE-BRIDGE",
+        "CA-RESIDUAL-BRIDGE"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "These obstructions constrain the respective routes but do not refute the target half-coverage inequality.",
+      "refs": [
+        "research/current/customer_attraction/README.md"
+      ],
+      "status": "recorded within stated scope"
     }
   ]
 }

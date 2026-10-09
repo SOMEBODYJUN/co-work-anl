@@ -1,5 +1,10 @@
 # 两阶段设施选址博弈：研究与人类学习入口
 
+本轮另启动独立的[顺序客户吸引博弈分支](research/current/customer_attraction/README.md)：
+研究 Deng 等共同目录、单位均分模型的[任意纯 SPE 半覆盖目标](research/questions/customer_attraction_half_coverage.md)。
+已建立保留全部历史依赖平局的有限精确工具并排除若干证明捷径，**一般上界仍未证明**。
+该模型的客户不主动优化，与下述既有设施研究没有直接定理迁移。
+
 本项目研究正权原子客户的两阶段设施选址：设施先选位置，客户随后选择设施并形成精确独立 Nash 均衡。我们寻找一个纯设施布局和覆盖全部布局的客户均衡续局，使设施单边搬迁的收益受统一倍率控制。
 
 **人类团队从 [learning/README.md](learning/README.md) 开始。** 顺读入口是 [从一个搬迁问题开始](learning/00_guide.md)，模型与技术课之后由 [两条主证明的接口](learning/01b_proof_map.md)进入长证明；[精确证书课](learning/10_certificates.md)把概率策略与定义级核验连起来。已有预备课、手算、[分析式证明技术](learning/01a_proof_techniques.md)、核心证明讲义、有限必要障碍与 [两周研讨安排](learning/07_seminar.md)。先掌握主线，不按提交时间通读所有研究分支。
@@ -52,6 +57,7 @@
 | [research/current](research/current) | 现行模型、命题、完整数学证明与算法解释；定义与结论的权威入口 |
 | [facility_spe](facility_spe) | 双设施规范算法、局部/实例精确求解和验证器 |
 | [multi_facility_spe](multi_facility_spe) | 任意设施数的有限精确构造器；支持全局枚举与贪心盒内构造，尚无一般多项式总时间保证 |
+| [customer_attraction](customer_attraction) | 独立的顺序主题选择、单位客户均分模型；全部纯 SPE 终局及完整历史证书，服务半覆盖猜想 |
 | [tests](tests) | 回归、独立定义级比较和有限精确攻击，分别标明验证范围 |
 | [examples](examples) / [evidence](evidence) | 输入、证书、冻结实验；不以有限成功替代全称证明 |
 | [history](history) | 来源手稿与旧推导，保留追溯；不是新人入口 |
