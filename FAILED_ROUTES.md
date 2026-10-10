@@ -354,3 +354,16 @@ core1、petals4/2，目录D=P、A=C+P、B=C+Q；完整两人策略根D，末位D
 失效为同瓣资源未严格下降时，不同有序分支的平局可增加占用。
 可回收：私有缺口恢复严格下降；更强superset席位证明直接处理任意子主题，无需删除，
 得到完整sunflower福利锐界。详见[新证明](research/current/customer_attraction/sunflower_maxima_bound.md)。
+
+
+## 三极大主题的静态席位预算不支持更小统一常数，四极大已不能支付半覆盖
+
+用全局私有/共享席位第n大值ν，只能保证W≥nν。三极大主题时加权关联预算证明
+U≤2nν，但该静态桥不能把常数二改成更小统一值：私有B1大小nM、B2/B3共享块大小nM、
+各另有一个私有客户，M>n−1时ν=M+1、U=2nM+2，所以U/(nν)趋近二。
+该目录的实际SPE福利可能明显大于nν，故不证明福利常数二锐，也不否定2−1/n。
+
+更进一步，四极大主题可有B1私有块2n，B2/B3/B4的三个两两共有块各n。
+此时ν=2、U=5n>4n=2nν；明确否定把同一union-to-seat预算推到四极大主题。
+这不是原猜想反例；需更强真实续局预算。可回收的是
+[一般加权关联证书和三极大半覆盖](research/current/customer_attraction/three_maxima_bound.md#4-a-sharper-instance-specific-certificate)。

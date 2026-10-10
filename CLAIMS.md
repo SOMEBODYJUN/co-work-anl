@@ -4,6 +4,8 @@
 
 | ID / 问题 | 严格范围与结论 | 状态及详情 |
 | --- | --- | --- |
+| CA-THREE-MAXIMA-HALF | 至多三个不同极大覆盖，任意内部子主题、任意人数、全部历史纯SPE；n≥2时OPT≤U≤2W−c。 | [完整席位/union证明](research/current/customer_attraction/three_maxima_bound.md)，独立内部审查；允许交叉关联，与不限极大主题数的laminar类不可比较。 |
+| CA-FIVE-UPPER-221-100 | 恰五位单位玩家、任意共同目录、全部完整历史纯SPE；OPT_5≤βW≤2.21W，β=24236714656727/10967499015623>2。 | [完整真实中途偏离证明](research/current/customer_attraction/five_player_bound.md)，两份精确审计；五人半覆盖仍开放，不推广至六人或任意背景。 |
 | CA-LAMINAR-INCIDENCE-MAXIMA-2M1 / CA-LAMINAR-INCIDENCE-THETA | 客户对极大主题的关联集合层级化；任意人数、全部内部子主题、完整历史纯SPE，锐界OPT≤c+(2−1/n)(W−c)，逐人全局θ保底。 | [完整真实续局证明](research/current/customer_attraction/laminar_incidence_bound.md)，独立内部审查；严格扩展sunflower，仍非一般目录。 |
 | CA-AGGREGATE-LAST-FLOOR-NO | 每个n≥3可有完整SPE的W<nθ；三人36客户证书W=34、θ=12、OPT=36。 | [完整反例及无限构造](research/current/customer_attraction/aggregate_theta_counterexample.md)，独立核验；只否定辅助收费。 |
 | CA-OBLIVIOUS-MIXED-SECURITY-2N1 | 不观察抽样动作的联合竞争组合下，混合安全值v_n≥OPT/(2n−1)，各n锐。 | [完整minimax/Jensen证明](research/current/customer_attraction/oblivious_security.md)；可信SPE支付桥仍开放。 |

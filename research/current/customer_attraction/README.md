@@ -10,6 +10,13 @@
 合法根偏离与后继节点比较闭合精确非负恒等式，经过独立内部审查。
 一般目录的目标现只剩五人及以上；零背景总税仍开放。
 
+新增 [至多三个极大覆盖](three_maxima_bound.md) 任意人数半覆盖：n≥2时
+`OPT_n≤U≤c+2(W−c)`，允许内部子主题和交叉关联；与不限极大主题数的laminar类不可比较。
+共享客户的加权席位预算还给实例式S/n及一般关联证书；四极大主题的静态union预算失败有整数族。
+新增 [五人一般目录上界](five_player_bound.md)：`OPT_5≤βW≤2.21W`，
+`β=24236714656727/10967499015623>2`。两个真实中途偏离和末两人税聚合闭合全称恒等式。
+**一般目录五人及以上半覆盖仍开放；未得到原猜想反例。**
+
 新 [客户极大关联层级定理](laminar_incidence_bound.md)严格扩大 sunflower 目录类：
 客户在极大主题间的关联集合为 laminar 时，任意人数、任意内部子主题、全部历史纯SPE
 都有锐界 `OPT_n≤|C|+(2−1/n)(W−|C|)`。这不是一般目录结论。
@@ -197,3 +204,17 @@ python3 tests/audits/customer_attraction_three_remaining_independent.py
 同稿 `CA-MAXIMA-SUPERSET-SEATS` 给任意目录每人≥第n大私有/共享混合席位，尚缺一般共享union预算；
 `CA-SUNFLOWER-PRIVATE-GAP` 单独给额外私有缺口下的全历史极大行动与singleton PNE。
 独立审查见 `research/SUNFLOWER_MAXIMA_REVIEW_2026-10-10.md`，精确复现 `python3 tests/audits/customer_attraction_sunflower_maxima.py`。
+
+## 2026-10-10：三极大覆盖与五人全称上界
+
+| 路径 | 数学资产和读取时机 |
+| --- | --- |
+| `research/current/customer_attraction/three_maxima_bound.md` | 全历史superset席位、共同核心保底、三极大主题共享union预算；允许交叉兴趣和任意内部子主题。还记录S/n实例式和四极大主题静态预算的失败。研究四极大以上时先读。 |
+| `tests/audits/customer_attraction_three_maxima.py`、`customer_attraction_three_maxima_independent.py` | 前者核验全部有限续局菜单、完整有序策略及遗漏核心边界；后者独立核验所有席位阈值型和加权线性系数。证据不扩大定理作用域。 |
+| `research/current/customer_attraction/five_player_bound.md` | 五人两个真实中途偏离、21个非负slack和1024客户型的精确恒等式。新的β界仍大于2；不能扩大至六人或任意背景。 |
+| `tests/audits/customer_attraction_five_player.py`、`customer_attraction_five_player_independent.py` | 互不导入的Fraction程序，分别从显式定义和有序路径重建所有客户型余项及独立OPT系数。 |
+| `evidence/certificates/customer_attraction/five_player_bound.json` | 保存全部有理multiplier和1024余项，用于重放普遍代数证书；这不是一个低效SPE实例。 |
+
+冻结输出位于`evidence/runs/2026-10-10/customer_attraction_{three_maxima,five_player}*.json`。
+复现：运行对应四个`tests/audits/`脚本；默认只打印，`--output`拒绝覆盖已有报告。
+独立数学审查见`evidence/runs/2026-10-10/customer_attraction_new_frontier_review.md`。

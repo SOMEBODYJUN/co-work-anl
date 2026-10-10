@@ -10,6 +10,14 @@
 [四人普遍上界](research/current/customer_attraction/four_player_bound.md)亦已内部独立审查：
 每个完整纯 SPE 满足 `OPT_4≤(1499/750)W<2W`（正覆盖），
 通过根偏离真实后继节点比较与非负逐客户恒等式闭合；五人及以上仍开放。
+[至多三个极大覆盖的任意人数半覆盖](research/current/customer_attraction/three_maxima_bound.md)
+现已完整内部审查：允许任意内部子主题及交叉关联，全部历史纯SPE满足
+`OPT_n≤2W−c`（n≥2，c为极大共同核心）；n=1最优。
+它与不限极大主题数的层级类不可比较，四极大主题的静态席位union预算已有明确障碍。
+[五人一般目录上界](research/current/customer_attraction/five_player_bound.md)
+亦已完整内部审查：`OPT_5≤[24236714656727/10967499015623]W<2.21W`（W>0）。
+证明用两个真实中途偏离及21个合法slack；系数仍大于2，**一般目录五人及以上半覆盖仍开放**。
+
 [任意人数结构子类定理](research/current/customer_attraction/disjoint_maxima_bound.md)证明：
 删除共同核心后，若不同极大主题互不相交，则每个完整纯 SPE 满足锐界 `2−1/m`；
 允许极大主题内部的子主题任意交叠，包含全部 laminar 目录。

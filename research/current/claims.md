@@ -51,6 +51,8 @@
 | CA-AGGREGATE-LAST-FLOOR-NO | CAG-MODEL，每个n≥3均存在有限共同目录单位客户实例与完整纯SPE。 | W=nθ_n−1的无限构造；36客户三人六主题实例W=34、θ=12、OPT=36。否定聚合W≥nθ，未反驳半覆盖。 | [紧凑完整策略、重复前缀预算与Möbius族](customer_attraction/aggregate_theta_counterexample.md)，独立直接单位客户重放及精确审计。 |
 | CA-OBLIVIOUS-MIXED-SECURITY-2N1 | CAG-MODEL任意n≥1；当前人随机主题，其余n−1竞争主题可联合固定但不观察抽样实现。 | v_n≥OPT_n/(2n−1)，每个n均锐；u_i≥v_n或W≥nv_n的可信顺序SPE桥仍开放。 | [有限minimax、Jensen与共同目录预算](customer_attraction/oblivious_security.md)，独立审查与精确原始/对偶证书。 |
 | CA-ROOT-TAX-ORDER-COUNTS-NO | CAG-MODEL，每个n≥4；同一静态PNE且完整SPE可达终局计数。 | 可信SPE顺序W+τ−OPT=1，某非SPE重排OPT−W−τ=(n−1)(n−3)/n>0；只排除仅看计数的根税证明。 | [§7无限族与完整策略](customer_attraction/two_remaining_tax.md)，独立重构、n=4全树及47个参数精确核验。 |
+| CA-THREE-MAXIMA-HALF | CAG-MODEL，至多三个不同包含极大覆盖，任意内部子主题，任意n≥1、全部有序历史纯SPE；c为极大共同核心。 | n≥2时OPT_n≤U≤c+2(W−c)；n=1或唯一极大主题时最优。允许交叉关联，与不限极大主题数的laminar类不可比较；不声称福利常数锐。 | [全历史superset席位与共享union预算](customer_attraction/three_maxima_bound.md)，两路精确审计及独立证明重构；外审/新颖性未认证。 |
+| CA-FIVE-UPPER-221-100 | CAG-MODEL，恰五位单位玩家、任意有限共同目录、零根背景、每个完整有序历史纯SPE，允许空/重复主题。 | OPT_5≤[24236714656727/10967499015623]W≤(221/100)W；精确系数仍大于2。 | [两条真实中途偏离及21-slack恒等式](customer_attraction/five_player_bound.md)，1024客户型余项与独立O系数经两份互不导入Fraction程序核对；不声称锐性、背景版或六人以上。 |
 
 ## 2026-10-09 EPTAS 预研与近带精确补全
 

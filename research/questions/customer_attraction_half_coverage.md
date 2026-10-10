@@ -123,3 +123,16 @@ $$
 
 本目标与原设施模型的存在某个近似 SPE 构造、$\varphi$ 及全 $k$ 因子 2 定理
 没有现成蕴含关系，禁止仅因相同常数或 SPE 名称而互相导入。
+
+
+## 2026-10-10 新边界
+
+[CA-THREE-MAXIMA-HALF](../current/customer_attraction/three_maxima_bound.md)对至多三个不同
+极大覆盖、任意内部子主题及任意人数证明半覆盖，允许交叉关联。
+共同极大核心c给n≥2的更强式`OPT_n≤2W−c`；n=1直接最优。
+四极大主题的静态私有/共享席位union预算已被整数族否定，但没有SPE福利反例。
+
+[CA-FIVE-UPPER-221-100](../current/customer_attraction/five_player_bound.md)给一般目录恰五人
+`OPT_5≤[24236714656727/10967499015623]W≤2.21W`。
+两个真实中途偏离补入旧模板没有的回复关系，精确证书仍在二以上。
+本页Exact Claim不变；一般五人及以上、四极大覆盖以上的非层级目录仍有未闭合义务。
