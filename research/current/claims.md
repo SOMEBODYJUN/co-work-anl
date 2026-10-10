@@ -78,13 +78,27 @@
 | CA-SECURITY-CONE-DUAL | 固定人数、标签数、全部有序历史形式策略sigma和有理混合p；固定完整SPE客户锥，允许相同覆盖标签；不同覆盖合同需策略已有合法实现。 | 全锥W≥n min_B beta_B(p)·w等价于存在不受限静态Q、非负全部节点乘子lambda和余项r，c−n sum Q beta=Gamma^T lambda+r。普遍证书存在等价于BR；有理正LP见证可缩放成真正反例。 | [minimax/Farkas完整推导及目录合同](customer_attraction/security_cone_duality.md)，独立数学审查；是既有策略锥的标准安全值扩展，未证明普遍证书存在或BR，外审未记录。 |
 
 | CA-INDIVIDUAL-SECURITY-NO | CAG-MODEL，三人六个两两不同覆盖、34单位客户、全部43有序历史的指定纯SPE。 | u1=29/3<v3=2411/246，严格差11/82；安全最优p唯一。W32、OPT34，聚合安全桥与原目标均成立；三是此辅助失败的最小人数，不声称主题/客户最小。 | [完整策略、精确原始/对偶及可逆性证明](customer_attraction/individual_security_counterexample.md)，两路互不导入全树/静态审计；外审未记录。 |
-| CA-IID-SECURITY-BENCHMARK | 任意共同有限非空目录、n≥1、非负客户类型质量；整数质量为不同单位客户。 | 期望harmonic势的最大者恰为静态对称混合Nash；其期望覆盖Z_n唯一且nv_n≤Z_n≤U。W≥Z_n是更强开放桥，不是逐人保证。 | [凹性、单纯形条件及静态对偶完整证明](customer_attraction/iid_security_and_flow_barriers.md)，独立数学重构；外审/新颖性未认证。 |
+| CA-IID-SECURITY-BENCHMARK | 任意共同有限非空目录、n≥1、非负客户类型质量；整数质量为不同单位客户。 | 期望harmonic势的最大者恰为静态对称混合Nash；其期望覆盖Z_n唯一且nv_n≤Z_n≤OPT_n≤U。W≥Z_n是更强开放桥，不是逐人保证。 | [凹性、单纯形条件及静态对偶完整证明](customer_attraction/iid_security_and_flow_barriers.md)，独立数学重构；外审/新颖性未认证。 |
 | CA-FULL-TREE-AVERAGING-NO | 指定原36客户三人形式策略、六主题uniform q、全部非空兴趣类型。 | 任意非负按深度或43节点权重，在每节点先按q平均全部偏离，再加静态Nash乘子与非负余项，都不能支付c−ψ(q)。两项精确分离向量不满足完整SPE；未否定未压缩证书或任何主猜想。 | [流恒等式及六/十五类型分离证明](customer_attraction/iid_security_and_flow_barriers.md)，两路定义级精确审查；范围仅该非负线性模板。 |
 | CA-SELECTED-SECURITY-CONES | 保存的36/61/89来源三棵完整形式策略，任意非负类型重数使其成为完整SPE；五个固定游戏各指定一个安全最优p。 | 三个整个锥都有W≥nv_n，两棵四人锥逐人亦成立；另外五游戏的全部完整SPE的给定最优p预算均严格正。分别为全锥恒等式与有限全策略枚举，不是任意策略定理。 | [共同Q支付及独立菜单拼接证明](customer_attraction/selected_security_cones.md)，4914客户系数恒等式、全部有序菜单/达到策略精确核对。 |
 | CA-TAIL-FOUR-ALL-N | CAG-MODEL，任意n≥4、共同有限非空目录、每个完整历史纯SPE。 | OPT_n≤(n/2−1/750)W；无目录结构限制、系数仍随n增长，不解决常数二。一般k公式要求任意合法背景β_k≤k/2。 | [比较索引计数、真实K/n预算及完整消元](customer_attraction/tail_profit_lift.md)，依赖任意背景末四人利润定理；独立数学审查通过，外审未记录。 |
 | CA-SEVEN-MAXIMA-N7-PLUS | CAG-MODEL，恰七不同极大覆盖、任意内部子主题、任意n≥7、每个完整历史纯SPE。 | U=OPT_n≤2W。来源证明完整且独立审查通过，现行页仅依赖和资产概述；恰七极大n5/n6仍缺16/44轨道，不宣布任意n完成。 | [来源证明checkpoint及独立审查](customer_attraction/seven_maxima_checkpoint.md)，24384 literal列、988压缩列及n≥13解析case已审；现行全文重构未作，外审未记录。 |
 
 | CA-RANDOM-PREFIX-EXCHANGE-NO | CAG-MODEL，三人三不交主题，五单位客户及完整13历史SPE；随机最优比较索引排列的前两行动被强制。 | 最新强制成员期望4/3<前两总收益一半3/2，差1/6；唯一最优支持ABC。末位相同负载最优收益仍相等；不反驳uniform接口或半覆盖。 | [完整策略及六分支直接证明](customer_attraction/random_position_exchange_boundary.md)，39比较精确审计；外审未记录。 |
+
+## 2026-10-10：全局安全债务与构造式真实分支转移
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| CA-SECURITY-CHAIN-INTERFACE | CAG-MODEL，任意n≥1、任意完整历史纯SPE；背景安全值始终是静态查询比较。 | 沿实际路径V_i=v_(n−i+1)(b_i)非降、V_n=u_n；Σ_(i<n)[u_i−V_i+(n−i)(V_(i+1)−V_i)]=W−nV_1。全局弱目标W≥(n−1/2)V_1足以半覆盖，但仍开放。 | [背景列嵌入及强/弱望远镜完整证明](customer_attraction/security_chain_and_local_boundary.md)，独立数学审查和两路精确复算；恒等式不是债务下界。 |
+| CA-LOCAL-SECURITY-INDUCTION-NO | 三人六主题113不同单位客户、指定完整43历史SPE；背景是实际首主题0。 | u=(95/3,110/3,110/3)、W105、OPT113；u1+2V2−3V1<0及u1+1.5V2−2.5V1<0，简单界分别−1/20、−17/120。后一个局部非负条件反而更强；全局两安全桥仍成立。 | [19类型、全部真实策略及小分数夹逼](customer_attraction/security_chain_and_local_boundary.md)，两个匹配静态鞍点、全部258比较和单位展开独立核验；不声称最小客户数。 |
+| CA-STATIONARY-PAIR-TRANSPORT | 任意n≥2、固定长度n−2有序前缀P、任意完整形式策略；全部兴趣类型。 | 末回复图循环C给Q均匀于P+a，有逐类型u_pen−E_Qf(t)=E_C[Γ_(P,a)+Γ_(Pa,t)]，公开非负λ且零余项。该配对模板非负余项当且仅当π平稳；收益强度不超过既知末两人保底。 | [循环望远镜与精确divergence](customer_attraction/stationary_pair_transport.md)，独立代数重构及全类型审计；一般多后继gluing未解。 |
+| CA-PRESCRIBED-STATIC-KERNELS-NO | 指定三人22客户六不同主题SPE与三人7客户四标签SPE，前者根回复成员平稳Q、后者实际终局频率iid Q。 | 前者唯一核cap6>W/3=17/3；后者查询77/27>W/(3−1/2)=14/5。两规定Q构造失败，均未否定不受限Q的安全桥、所有实际节点菜单或半覆盖。 | [完整历史与两项严格分数差](customer_attraction/stationary_pair_transport.md)，两路独立Fraction复验；7客户例允许同覆盖标签。 |
+| CA-TERMINAL-REPLY-DUAL-LIFT | 任意完整形式策略、n≥2；同主题计数末层代表规范化并保留实际根前缀；给定非负逐偏离形式证书。 | 末行拆成两条原Γ非负行；早期转移E=Σκδ。若r+E≥0可显式提升原Γ证书；非代表守恒是充分非必要条件。转移图按偏离次数为DAG；亏损/增加只分别有半/全旧收益预算。 | [全部行变换与构造式提升](customer_attraction/terminal_reply_transport.md)，独立完整数学审查、两路273列恒等式；仍未构造普遍λ,r+E预算。 |
+| CA-DYNAMIC-IID-DEBT-INTERFACE | 任意固定非负整数背景、剩r≥1人、共同非空目录，全部完整有序状态。 | 剩余harmonic iid势凹，KKT刻画对称NE并确定唯一剩余利润Z；总覆盖=前缀租金+Z。实际路径Σ(Z_h−Z_child−u_h)=Z_n−W；净债≤Z_n/(2n)足以半覆盖，仍开放。 | [背景微分、租金恒等式与全局接口](customer_attraction/dynamic_iid_debt_boundary.md)，独立数学重构；有背景Z不是覆盖。 |
+| CA-WEAK-LOCAL-IID-DRIFT-NO | 五人七不同主题60单位客户、全部2801历史完整SPE；前缀PP位于实际路径。 | u=(12,12,10,12,12)、W58、OPT60；PP剩余Z3=97/3，PP0的Z2=21。第三人10<(9/10)(34/3)=51/5，弱逐步漂移亏1/5。全局弱桥仍成立。 | [原始类型与两个全查询KKT](customer_attraction/dynamic_iid_debt_boundary.md)，两路19607比较、纯iid/类型二项式独立复验；只否定局部命题。 |
+| CA-NEW-POLICY-CONE-SECURITY | 保存的21棵新的指定完整形式策略（五人七/八主题及六人八主题），各自全部合法非负客户重数锥。 | 每锥有与w,p无关的共同静态Q及全部纯查询非负Γ证书，故整个锥W≥nv_n。不是任意策略或一个完整目录类定理；部分规则可能只有退化可行性。 | [共同Q的逐查询恒等式及压缩证书](customer_attraction/policy_security_checkpoints.md)，独立全有序Γ重建；据此停止沿这些树重复调权。 |
+| CA-FIVE-INDIVIDUAL-SECURITY-NO | 五人十个两两不同极大主题、86单位客户、指定11111历史完整SPE。 | 实际(4,5,6,7,8)，u=(81/5,86/5,86/5,86/5,86/5)，v5=2262/139，根亏51/695；W85、OPT86。不否定聚合安全桥或主半覆盖。 | [完整可信菜单来源及静态鞍点](customer_attraction/policy_security_checkpoints.md)，111110动作比较、全部静态竞争计数与极大主题条件独立Fraction检查。 |
 
 ## 2026-10-09 EPTAS 预研与近带精确补全
 

@@ -1,5 +1,15 @@
 # 顺序客户吸引博弈：共同目录的半覆盖猜想
 
+**2026-10-10 全局运输接口：** [安全值链](security_chain_and_local_boundary.md)把足够的弱桥
+写成全路径净债不低于 `−v_n/2`，而113客户完整SPE排除逐步归纳。
+[末两人的显式循环支付](stationary_pair_transport.md)给公开、与客户重数无关的Q/λ；
+[末层回复的构造式提升](terminal_reply_transport.md)将全部早期误差写成有符号份额转移，
+并证明其图为DAG，尚未支付一般净债。
+[动态iid接口](dynamic_iid_debt_boundary.md)另有五人真实路径反例，连弱逐步漂移也失败；
+[新策略checkpoint](policy_security_checkpoints.md)保存21全锥安全证书和五人86客户逐人失败。
+一般人数半覆盖与弱聚合安全桥仍开放；最新[两份GPT Pro任务](../../questions/customer_attraction_general_handoff.md)
+分别要求全局补偿及直接覆盖证书。
+
 **2026-10-10 一般机制新边界：** [34客户完整SPE](individual_security_counterexample.md)
 否定真正逐人u_i≥v_n，安全最优p还是唯一的；后继补偿仍可使W≥nv_n。
 [静态iid基准与完整树平均障碍](iid_security_and_flow_barriers.md)证明节点内偏离不能先平均而无损；

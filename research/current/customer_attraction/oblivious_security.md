@@ -144,6 +144,10 @@ v_n=1=\frac{O}{2n-1}.
 其中逐人桥现已由[34客户完整SPE](individual_security_counterexample.md)严格否定，
 即使安全最优p唯一也会失败。聚合桥 `W≥nv_n` 仍开放；不能把静态安全策略当成可隐藏的顺序承诺。
 
+一般半覆盖还可使用更弱的开放桥 `W≥(n−1/2)v_n`：与式 (3) 合用恰给 `W≥OPT_n/2`。
+[安全值链与局部归纳反例](security_chain_and_local_boundary.md)将它写成跨节点净债务至少 `−v_n/2`。
+逐步强、弱余额都已有完整 SPE 反例；全局弱桥没有因此被否定。
+
 ## 5. 有限精确边界核验与来源
 
 [独立审计](../../../tests/audits/customer_attraction_oblivious_security.py)不导入规范 SPE 求解器或浮点 LP。

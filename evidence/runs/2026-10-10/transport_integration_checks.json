@@ -1,0 +1,1265 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-10",
+  "python_version": "3.12.14",
+  "base_commit": "8e214ad375cfcb921d2ce6148b86814ca161c4cd",
+  "scope": "Exact general interfaces and local or specified-cone boundaries; arbitrary-n half coverage and global compensation remain unproved.",
+  "regression": {
+    "command": "python3 -m unittest tests.test_customer_attraction",
+    "tests": 11,
+    "exit_code": 0
+  },
+  "structure_checks": [
+    "python3 research/build_map.py --check",
+    "python3 research/build_crosswalk.py --check",
+    "python3 research/check_assets.py"
+  ],
+  "source_sha256": {
+    "evidence/certificates/customer_attraction/dynamic_iid_local.json": "00cb2f7278a30c5ec2a2a821964c76876f79f14d52a5dc6873e4d12590612629",
+    "evidence/certificates/customer_attraction/empirical_iid_kernel.json": "3fad90ab10205de92186e58079e0357217acdb5a7e1dc9e323028d2de83d2431",
+    "evidence/certificates/customer_attraction/five_individual_security.json": "372bea6caf743792be542c411e9bcb961b6af6d31dc89d76e6a903e609be990f",
+    "evidence/certificates/customer_attraction/local_security_increment.json": "6f256ea560c7085950d7dbad78adf7693a2645e3e47bb9dc56e56ede4ad1a4e3",
+    "evidence/certificates/customer_attraction/new_policy_security_cones.json.gz": "a4e84d0478ba0ededabe547870ad0a4916cd05a78e686183ed6ef1b660583045",
+    "evidence/certificates/customer_attraction/root_stationary_kernel.json": "a3e819c4799656cb1a0e4cc32612dcb6ecb817e63386b9c8e2e1201e283044ca",
+    "evidence/runs/2026-10-10/customer_attraction_stationary_pair.json": "5c4f905ad8840d6e8ee52479456baa28345468fa2bef51d644f646352ba6b9e7",
+    "evidence/runs/2026-10-10/customer_attraction_stationary_pair_independent.json": "315e20c51cbca5cb3a0178f6e73a9163d7edce6b3110e7569354bbe69911e981",
+    "evidence/runs/2026-10-10/customer_attraction_stationary_pair_review.md": "e1f671e4f4141a1e5a904f6c1af6c53de927fb5e39159b1d4428bc6267883d9b",
+    "evidence/runs/2026-10-10/dynamic_iid.json": "c2144bb33ce19c92811559c90180617df88ef8b05e61fff82f593ec17a6d464a",
+    "evidence/runs/2026-10-10/dynamic_iid_independent.json": "1a6b7ee7e7a6f0c2aad24d759a7b170038712232f21cd60bda6d7f1859468151",
+    "evidence/runs/2026-10-10/dynamic_iid_review.md": "40179e5476ed130388ed03d4720ea0d6952dd35d5fd3aa4242571891edf854d9",
+    "evidence/runs/2026-10-10/five_individual_security_independent.json": "e9f383e4b394bb60f0439dd7701fb293eea37944dd1daf982cc9bc1fa885517e",
+    "evidence/runs/2026-10-10/new_policy_security_cones_independent.json": "36bda7baa2082873ed487faa7847b232e5b6d728988ba5d2264ef76ab4673b3a",
+    "evidence/runs/2026-10-10/new_policy_security_exploration.json": "d8d9c14039ec04ca91129cbba0c34d6ab3dff2d5e71dd2fcdde455df32bd4150",
+    "evidence/runs/2026-10-10/new_policy_security_selection.json": "5e323052e3dcce4125352b8a7be074cbed144cde2189e24de688f403fc65297f",
+    "evidence/runs/2026-10-10/security_chain_independent.json": "783099075557277a43e8e1f72ecf943c56a8b9b45b6f1d9cb2cc67dce8e418db",
+    "evidence/runs/2026-10-10/security_chain_review.md": "ff225461804f2bf9f012b7ccf058a50d329c267d54d5782fee83da4d8b4f5303",
+    "evidence/runs/2026-10-10/security_chain_unit.json": "728f0a9bb59df31923fce9f2adfdc7e1bf0bf11d972f036c348003b9209200ef",
+    "evidence/runs/2026-10-10/terminal_transport_audit.json": "ff2100a38367b04a5f5747cc67f9928bf4b679958e98d11d6d7c32d31fc1defb",
+    "evidence/runs/2026-10-10/terminal_transport_independent.json": "6e9bea17eb10639bdcad42567b25776f1a143cf9a923a487dcc30608ac758df8",
+    "evidence/runs/2026-10-10/terminal_transport_mathematical_review.json": "b9d15429f082aac75a3ea35c4a16b9e5646644b194186580ef797eab56f1f9b3",
+    "examples/customer_attraction/dynamic_iid_local.json": "95bbad1aad7a6c1fa249ac3fb652a8c820a7c58056545c1f41ae9425a6c68eea",
+    "examples/customer_attraction/empirical_iid_kernel.json": "2121e8b1cc8473a8e07250b6a642a88603ec97338efd6e800dab4550318fec90",
+    "examples/customer_attraction/five_individual_security.json": "689cae34e0cbed60583710cd8e40a06b558cde59ddd566b2cb89e06ab5e8700f",
+    "examples/customer_attraction/local_security_increment.json": "1e2238dc1781a7567c9b987d276f3d04e543aa9173a3b2d44892d623c6441dfb",
+    "examples/customer_attraction/root_stationary_kernel.json": "1f849141d40f8bf7335aa0fd42304d2d4b00a0e167b169eef212688e9d4c5dbc",
+    "history/source/notes/customer_attraction/transport_round/common_q_generator.py": "666f86b541fe2a68a872d266d91dedb3d1e02653c54d1d695b8a10955c76e0d9",
+    "history/source/notes/customer_attraction/transport_round/dynamic_iid_source.md": "219aa8a1f81cb7e7ba403325302c77442e0d904f6d2406e429fd67e0cb3d3b82",
+    "history/source/notes/customer_attraction/transport_round/local_security_increment_initial_3227_audit.json": "9e874f560a3bb871b72bccddd73f632594ce423bf8cd3f2f02401f1682ab693b",
+    "history/source/notes/customer_attraction/transport_round/local_security_increment_initial_3227_certificate.json": "4f458bae36de5743ff13827543d4c01b121f5b2d027e09d1f30546fbbb76b9e8",
+    "history/source/notes/customer_attraction/transport_round/local_security_increment_initial_3227_independent_audit.json": "5a4dafb5d0ad3a8fe00bc3a9550edd5347522d1bc2e0bc5008509b8c7dd9a4d8",
+    "history/source/notes/customer_attraction/transport_round/local_security_increment_initial_3227_input.json": "205c3074d5e7f891fbbb61af194526e2ba20cd3effbf6b9771c07923b0135147",
+    "history/source/notes/customer_attraction/transport_round/n5_ten_attack_results.json": "e5cd5c4e064f7d83cf63c33d5d8a3dd3f5b2614236d0f970a5e06fa145be598e",
+    "history/source/notes/customer_attraction/transport_round/policy_patterns.py": "86d35720379e0d87dad1b8ef1654a7806fc1311d3f47043e5b009c352c8c9301",
+    "history/source/notes/customer_attraction/transport_round/policy_security_source.md": "20848b52c176fc4ea5b2315ca43be1bcec9289d6174fcf5ebb232833661e1f47",
+    "history/source/notes/customer_attraction/transport_round/security_chain_source.md": "684be6329b4216da7f03dadc9a43f23aa29bf31c6b7873d8fffc5c9ed063a023",
+    "history/source/notes/customer_attraction/transport_round/stationary_pair_source.md": "4512f44d5b81c1730d3f6e864fed9b25cc0eae59387bd9f52644a159cd72738f",
+    "history/source/notes/customer_attraction/transport_round/terminal_transport_source.md": "1f5d1219f9a87198a9c10485626bf4a97630e22a0abcb26ae9062c161141cee2",
+    "history/source/notes/customer_attraction/transport_round/two_special_seed_results.json": "5d237ce5fe98c34ed7f7047f94938b22a6760cc0ca568b9e9b68d3341221cec4",
+    "history/source/notes/customer_attraction/transport_round/two_three_tail_check.json": "e13f78158c8c78a761f8ca88793bd7fd7b54178097f5c2c158df91fd92291027",
+    "history/source/notes/customer_attraction/transport_round/two_three_tail_check.py": "ba0e9a96f2a920086ce48180ede0e01aeeba223b497cd67087d5b5f5223203c0",
+    "research/current/customer_attraction/dynamic_iid_debt_boundary.md": "ce597db8a0bf46b9ec76337d81a9fede2b40be9905be6671cf834f1a9e8d1756",
+    "research/current/customer_attraction/policy_security_checkpoints.md": "ae7edf94a975b14dc3f81d21b5b805f3407532acbc63566f8d41020a6e25d112",
+    "research/current/customer_attraction/security_chain_and_local_boundary.md": "09c1d9334eca5219167bff18bae95b0be2ab07c3b5f7b385306202d4351dca68",
+    "research/current/customer_attraction/stationary_pair_transport.md": "22eabc6a937e47defe1543b490d798a1326c1cf76bf85821c2392adf2917973c",
+    "research/current/customer_attraction/terminal_reply_transport.md": "d4d8f7b4a164ad175fb9219218cc7baacfcd1d26c961569dffba8def7eb8c16c",
+    "research/questions/customer_attraction_general_handoff.md": "81a521a8b1542803e31ff8c5f8c80b777ad3c3bece77e6a5cf66c5a87757110e",
+    "tests/audits/customer_attraction_dynamic_iid.py": "b35f8db69dcc6fc76a1eb0a0cabc7ddd8184f50aa58c986842f8b71d9fe0dcd0",
+    "tests/audits/customer_attraction_dynamic_iid_independent.py": "a0445c47a33890c930497f870e171e832154180fb32ce2ee5826c2971dfd713b",
+    "tests/audits/customer_attraction_five_individual_security.py": "8f26cd2edc24014f6119609f8ce1965256edcd9af7f1dccc6dff9057808df204",
+    "tests/audits/customer_attraction_new_security_cones.py": "52e8f2a93db13ed523014119c52d7d82333092eb1d084668481b26c0a38693c9",
+    "tests/audits/customer_attraction_security_chain.py": "f93cf077fb3051d2916dd30beb8810d879f3954acddc39860847939d35a9d6d2",
+    "tests/audits/customer_attraction_security_chain_independent.py": "c41b0789aacc948a125d4da309c24c40b945c836467e355ba6de7f85700baeb7",
+    "tests/audits/customer_attraction_stationary_pair.py": "8bdad5c2688ba35592478daef28d8bc6577360d1a9e251e3ec5c76ad0635e37f",
+    "tests/audits/customer_attraction_stationary_pair_independent.py": "4f78b9a365824348e6d462aaeae43ff2de9d89418c7438b811b916d8d370f99b",
+    "tests/audits/customer_attraction_terminal_transport.py": "8c6d3ebb63f497836076184b88094483e20e22990de5430c4ed15f8391e84a79",
+    "tests/audits/customer_attraction_terminal_transport_independent.py": "c26ad44b4e570de82a291dae179a70267defe5cc8beb657b9cd3ede2c3957546"
+  },
+  "audit_runs": [
+    {
+      "command": "python3 tests/audits/customer_attraction_dynamic_iid.py",
+      "exit_code": 0,
+      "report": {
+        "claims": [
+          "CA-DYNAMIC-IID-DEBT-INTERFACE",
+          "CA-WEAK-LOCAL-IID-DRIFT-NO"
+        ],
+        "input_sha256": "95bbad1aad7a6c1fa249ac3fb652a8c820a7c58056545c1f41ae9425a6c68eea",
+        "certificate_sha256": "00cb2f7278a30c5ec2a2a821964c76876f79f14d52a5dc6873e4d12590612629",
+        "full_ordered_history_pure_SPE": true,
+        "checked_histories": 2801,
+        "checked_action_comparisons": 19607,
+        "ties_including_selected_actions": 3746,
+        "strict_comparisons": 15861,
+        "root": [
+          6,
+          6,
+          0,
+          3,
+          4
+        ],
+        "root_payoffs": [
+          "12",
+          "12",
+          "10",
+          "12",
+          "12"
+        ],
+        "W": 58,
+        "OPT_5": 60,
+        "residual_states": [
+          {
+            "history": [
+              6,
+              6
+            ],
+            "Z": "97/3",
+            "prefix_rent": "24",
+            "complete_expected_coverage": "169/3",
+            "alpha": [
+              "97/9",
+              "97/9",
+              "97/9",
+              "97/9",
+              "97/9",
+              "97/9",
+              "8"
+            ]
+          },
+          {
+            "history": [
+              6,
+              6,
+              0
+            ],
+            "Z": "21",
+            "prefix_rent": "75/2",
+            "complete_expected_coverage": "117/2",
+            "alpha": [
+              "9",
+              "21/2",
+              "21/2",
+              "10",
+              "10",
+              "10",
+              "8"
+            ]
+          },
+          {
+            "history": [
+              6,
+              6,
+              0,
+              3
+            ],
+            "Z": "12",
+            "prefix_rent": "46",
+            "complete_expected_coverage": "58",
+            "alpha": [
+              "25/3",
+              "12",
+              "12",
+              "25/3",
+              "12",
+              "12",
+              "8"
+            ]
+          }
+        ],
+        "old_tail_debts": [
+          "4/3",
+          "-3",
+          "0"
+        ],
+        "old_tail_total_debt": "-5/3",
+        "weak_actual_node_deficit": "1/5",
+        "root_Z_exactly_computed": false,
+        "root_Z_upper_bound": "60",
+        "global_weak_bridge_slack_lower_bound": "4",
+        "scalar_polynomial_audit_cases": 56,
+        "unrestricted_global_iid_bridge_proved": false
+      }
+    },
+    {
+      "command": "python3 tests/audits/customer_attraction_dynamic_iid_independent.py",
+      "exit_code": 0,
+      "report": {
+        "claims": [
+          "CA-DYNAMIC-IID-DEBT-INTERFACE",
+          "CA-WEAK-LOCAL-IID-DRIFT-NO"
+        ],
+        "input_sha256": "95bbad1aad7a6c1fa249ac3fb652a8c820a7c58056545c1f41ae9425a6c68eea",
+        "certificate_sha256": "00cb2f7278a30c5ec2a2a821964c76876f79f14d52a5dc6873e4d12590612629",
+        "status": "PASS",
+        "players": 5,
+        "themes": 7,
+        "unit_customers": 60,
+        "pairwise_distinct_coverages": true,
+        "ordered_histories": 2801,
+        "all_comparisons": 19607,
+        "strict_comparisons": 15861,
+        "tie_comparisons": 3746,
+        "minimum_SPE_slack": "0",
+        "actual": [
+          6,
+          6,
+          0,
+          3,
+          4
+        ],
+        "actual_utilities": [
+          "12",
+          "12",
+          "10",
+          "12",
+          "12"
+        ],
+        "W": 58,
+        "OPT_5": 60,
+        "all_ordered_terminal_profiles": 16807,
+        "one_OPT_profile": [
+          0,
+          1,
+          2,
+          6,
+          6
+        ],
+        "half_coverage_slack": 56,
+        "residual_states": [
+          {
+            "prefix": [
+              6,
+              6
+            ],
+            "remaining_players": 3,
+            "q": [
+              "1/6",
+              "1/6",
+              "1/6",
+              "1/6",
+              "1/6",
+              "1/6",
+              "0"
+            ],
+            "all_query_alpha": [
+              "97/9",
+              "97/9",
+              "97/9",
+              "97/9",
+              "97/9",
+              "97/9",
+              "8"
+            ],
+            "KKT_multiplier": "97/9",
+            "support_equalities": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "Z": "97/3",
+            "prefix_rent": "24",
+            "complete_expected_coverage": "169/3",
+            "expected_residual_harmonic_potential": "833/18",
+            "outside_P_alpha": "8",
+            "outside_P_strict_slack": "25/9"
+          },
+          {
+            "prefix": [
+              6,
+              6,
+              0
+            ],
+            "remaining_players": 2,
+            "q": [
+              "0",
+              "1/2",
+              "1/2",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "all_query_alpha": [
+              "9",
+              "21/2",
+              "21/2",
+              "10",
+              "10",
+              "10",
+              "8"
+            ],
+            "KKT_multiplier": "21/2",
+            "support_equalities": [
+              1,
+              2
+            ],
+            "Z": "21",
+            "prefix_rent": "75/2",
+            "complete_expected_coverage": "117/2",
+            "expected_residual_harmonic_potential": "27",
+            "outside_P_alpha": "8",
+            "outside_P_strict_slack": "5/2"
+          },
+          {
+            "prefix": [
+              6,
+              6,
+              0,
+              3
+            ],
+            "remaining_players": 1,
+            "q": [
+              "0",
+              "1/4",
+              "1/4",
+              "0",
+              "1/4",
+              "1/4",
+              "0"
+            ],
+            "all_query_alpha": [
+              "25/3",
+              "12",
+              "12",
+              "25/3",
+              "12",
+              "12",
+              "8"
+            ],
+            "KKT_multiplier": "12",
+            "support_equalities": [
+              1,
+              2,
+              4,
+              5
+            ],
+            "Z": "12",
+            "prefix_rent": "46",
+            "complete_expected_coverage": "58",
+            "expected_residual_harmonic_potential": "12",
+            "outside_P_alpha": "8",
+            "outside_P_strict_slack": "4"
+          }
+        ],
+        "old_tail_debts": [
+          "4/3",
+          "-3",
+          "0"
+        ],
+        "old_tail_total_debt": "-5/3",
+        "local_Z_decrease": "34/3",
+        "weak_drift_factor": "9/10",
+        "required_local_payoff": "51/5",
+        "actual_local_payoff": "10",
+        "strict_local_deficit": "1/5",
+        "root_Z_exactly_computed": false,
+        "root_Z_upper_bound": "60",
+        "global_weak_bridge_slack_lower_bound": "4",
+        "scope": "Only the original-total-n local actual-prefix drift fails. The example satisfies the global weak iid bridge. No unrestricted global iid, aggregate-security, or half-coverage theorem is proved or refuted."
+      }
+    },
+    {
+      "command": "python3 tests/audits/customer_attraction_five_individual_security.py",
+      "exit_code": 0,
+      "report": {
+        "status": "PASS",
+        "unit_customers": 86,
+        "customer_types": 29,
+        "players": 5,
+        "topics": 10,
+        "distinct_maximal_coverages": 10,
+        "ordered_histories": 11111,
+        "all_action_comparisons": 111110,
+        "nontrivial_deviations": 99999,
+        "strict_deviations": 74562,
+        "tied_deviations": 25437,
+        "root": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "utilities": [
+          "81/5",
+          "86/5",
+          "86/5",
+          "86/5",
+          "86/5"
+        ],
+        "W": 85,
+        "OPT": 86,
+        "security_value": "2262/139",
+        "first_player_security_deficit": "51/695",
+        "W_minus_nv": "505/139",
+        "half_coverage_margin": 84,
+        "ordered_static_backgrounds": 10000,
+        "dual_query_values": [
+          "2262/139",
+          "2262/139",
+          "2262/139",
+          "2262/139",
+          "2262/139",
+          "2262/139",
+          "2262/139",
+          "2262/139",
+          "2262/139",
+          "2262/139"
+        ],
+        "scope": "One complete five-player SPE; individual security fails, aggregate security and half coverage hold.",
+        "sha256": {
+          "examples/customer_attraction/five_individual_security.json": "689cae34e0cbed60583710cd8e40a06b558cde59ddd566b2cb89e06ab5e8700f",
+          "evidence/certificates/customer_attraction/five_individual_security.json": "372bea6caf743792be542c411e9bcb961b6af6d31dc89d76e6a903e609be990f",
+          "tests/audits/customer_attraction_five_individual_security.py": "8f26cd2edc24014f6119609f8ce1965256edcd9af7f1dccc6dff9057808df204"
+        }
+      }
+    },
+    {
+      "command": "python3 tests/audits/customer_attraction_new_security_cones.py",
+      "exit_code": 0,
+      "report": {
+        "status": "PASS",
+        "source": "/workspace/scratch/4fa21fc3d3cc/co-work-anl/evidence/certificates/customer_attraction/new_policy_security_cones.json.gz",
+        "sha256": "a4e84d0478ba0ededabe547870ad0a4916cd05a78e686183ed6ef1b660583045",
+        "scope": "new specified full policy cones only; no universal SPE theorem",
+        "cases": 21,
+        "all_ordered_histories": 95349,
+        "all_comparisons": 709573,
+        "identities": 20971,
+        "results": [
+          {
+            "name": "d837bffdf7e0",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              2,
+              4,
+              5,
+              6
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 3527,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 250,
+            "min_residual": "0"
+          },
+          {
+            "name": "9715325c6b4e",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              3,
+              1,
+              4,
+              5
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 3056,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 279,
+            "min_residual": "0"
+          },
+          {
+            "name": "3c29e8f9160e",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              3,
+              4,
+              1,
+              2
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 3102,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 293,
+            "min_residual": "0"
+          },
+          {
+            "name": "793c98d89ec3",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              2,
+              4,
+              5,
+              6
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 3522,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 236,
+            "min_residual": "0"
+          },
+          {
+            "name": "99d0aba203ee",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              2,
+              4,
+              5,
+              6
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 4284,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 234,
+            "min_residual": "0"
+          },
+          {
+            "name": "9fc41c69705a",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              2,
+              4,
+              5,
+              6
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 3741,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 239,
+            "min_residual": "0"
+          },
+          {
+            "name": "a8decea1172b",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              2,
+              4,
+              6,
+              6
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 4606,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 278,
+            "min_residual": "0"
+          },
+          {
+            "name": "a68fe3cc2c8a",
+            "players": 5,
+            "topics": 8,
+            "root": [
+              0,
+              2,
+              4,
+              6,
+              7
+            ],
+            "ordered_histories": 4681,
+            "all_action_comparisons": 37448,
+            "unique_Gamma_rows": 8611,
+            "coordinate_identities": 2040,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 599,
+            "min_residual": "0"
+          },
+          {
+            "name": "b352b7fb49fe",
+            "players": 6,
+            "topics": 8,
+            "root": [
+              0,
+              1,
+              3,
+              5,
+              6,
+              7
+            ],
+            "ordered_histories": 37449,
+            "all_action_comparisons": 299592,
+            "unique_Gamma_rows": 18613,
+            "coordinate_identities": 2040,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 470,
+            "min_residual": "0"
+          },
+          {
+            "name": "852bd8a5ce8f",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              4,
+              6,
+              4,
+              5,
+              5
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 2964,
+            "coordinate_identities": 889,
+            "Q_support": 4,
+            "Gamma_multiplier_support": 360,
+            "min_residual": "0"
+          },
+          {
+            "name": "e41f608f31b4",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              4,
+              4,
+              5,
+              5,
+              6
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 1877,
+            "coordinate_identities": 889,
+            "Q_support": 7,
+            "Gamma_multiplier_support": 221,
+            "min_residual": "0"
+          },
+          {
+            "name": "2c10d2a1c309",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              4,
+              4,
+              5,
+              5,
+              6
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 1612,
+            "coordinate_identities": 889,
+            "Q_support": 7,
+            "Gamma_multiplier_support": 232,
+            "min_residual": "0"
+          },
+          {
+            "name": "9c51225d1714",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              1,
+              2,
+              0,
+              0,
+              3
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 2725,
+            "coordinate_identities": 889,
+            "Q_support": 3,
+            "Gamma_multiplier_support": 335,
+            "min_residual": "0"
+          },
+          {
+            "name": "488dcf3496ee",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              0,
+              1,
+              2,
+              3
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 1981,
+            "coordinate_identities": 889,
+            "Q_support": 4,
+            "Gamma_multiplier_support": 122,
+            "min_residual": "0"
+          },
+          {
+            "name": "62dfde32fb79",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              0,
+              1,
+              2,
+              3
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 2051,
+            "coordinate_identities": 889,
+            "Q_support": 3,
+            "Gamma_multiplier_support": 231,
+            "min_residual": "0"
+          },
+          {
+            "name": "f29c1cd84101",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              1,
+              6,
+              4,
+              5
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 2596,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 269,
+            "min_residual": "0"
+          },
+          {
+            "name": "46eeca17b38d",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              1,
+              4,
+              5,
+              6
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 1801,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 130,
+            "min_residual": "0"
+          },
+          {
+            "name": "e122e07a6445",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              1,
+              4,
+              5,
+              6
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 1757,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 147,
+            "min_residual": "0"
+          },
+          {
+            "name": "0d075a940a1a",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              1,
+              3,
+              0,
+              2,
+              4
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 3038,
+            "coordinate_identities": 889,
+            "Q_support": 7,
+            "Gamma_multiplier_support": 493,
+            "min_residual": "0"
+          },
+          {
+            "name": "610da75b1409",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 1881,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 124,
+            "min_residual": "0"
+          },
+          {
+            "name": "48bf153929c4",
+            "players": 5,
+            "topics": 7,
+            "root": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "ordered_histories": 2801,
+            "all_action_comparisons": 19607,
+            "unique_Gamma_rows": 1825,
+            "coordinate_identities": 889,
+            "Q_support": 1,
+            "Gamma_multiplier_support": 120,
+            "min_residual": "0"
+          }
+        ]
+      }
+    },
+    {
+      "command": "python3 tests/audits/customer_attraction_security_chain.py",
+      "exit_code": 0,
+      "report": {
+        "status": "PASS",
+        "unit_customers": 113,
+        "types": 19,
+        "ordered_histories": 43,
+        "full_comparisons": 258,
+        "nonnegative_slacks": 258,
+        "tied_comparisons": 91,
+        "actual_path": [
+          0,
+          3,
+          4
+        ],
+        "utilities": [
+          "95/3",
+          "110/3",
+          "110/3"
+        ],
+        "W": 105,
+        "OPT": 113,
+        "true_v3": "1035446642/32182199",
+        "true_v2_at_root_action": "10259/318",
+        "full_step_gap": "-571165576/1705656547",
+        "weak_step_gap": "-7739134297/20467878564",
+        "simple_global_primal_lower": "385/12",
+        "simple_local_dual_upper": "484/15",
+        "simple_local_dual_query_values": [
+          "464/15",
+          "484/15",
+          "967/30",
+          "484/15",
+          "484/15",
+          "484/15"
+        ],
+        "simple_full_step_upper": "-1/20",
+        "simple_weak_step_upper": "-17/120",
+        "root_action_payoffs": [
+          "95/3",
+          "95/3",
+          "95/3",
+          "95/3",
+          "95/3",
+          "95/3"
+        ],
+        "claim_ids": [
+          "CA-SECURITY-CHAIN-INTERFACE",
+          "CA-LOCAL-SECURITY-INDUCTION-NO"
+        ],
+        "strong_telescoping_terms": [
+          "-571165576/1705656547",
+          "467/53"
+        ],
+        "weak_telescoping_terms": [
+          "-7739134297/20467878564",
+          "1401/212"
+        ],
+        "weak_terminal_slack": "55/3",
+        "strong_bridge_margin": "272790969/32182199",
+        "weak_bridge_margin": "790514290/32182199",
+        "doubled_half_coverage_margin_2W_minus_OPT": 97,
+        "scope": "Two local induction inequalities fail; both aggregate bridges and half coverage hold in this witness."
+      }
+    },
+    {
+      "command": "python3 tests/audits/customer_attraction_security_chain_independent.py",
+      "exit_code": 0,
+      "report": {
+        "status": "PASS",
+        "decision_histories": 43,
+        "all_action_comparisons": 258,
+        "tied_comparisons": 91,
+        "path": [
+          0,
+          3,
+          4
+        ],
+        "utilities": [
+          "95/3",
+          "110/3",
+          "110/3"
+        ],
+        "welfare": 105,
+        "optimum": 113,
+        "on_path_security_values": [
+          "1035446642/32182199",
+          "10259/318",
+          "110/3"
+        ],
+        "full_telescoping_terms": [
+          "-571165576/1705656547",
+          "467/53",
+          "0"
+        ],
+        "full_bridge_margin": "272790969/32182199",
+        "weak_one_step_terms": [
+          "-7739134297/20467878564",
+          "1401/212"
+        ],
+        "weak_terminal_slack": "55/3",
+        "weak_bridge_margin": "790514290/32182199",
+        "doubled_half_coverage_margin_2W_minus_OPT": 97
+      }
+    },
+    {
+      "command": "python3 tests/audits/customer_attraction_stationary_pair.py",
+      "exit_code": 0,
+      "report": {
+        "status": "PASS",
+        "scope": "Pointwise transport implementation plus two prescribed kernels; no global bridge counterexample.",
+        "results": [
+          {
+            "name": "root_stationary_kernel",
+            "unit_customers": 22,
+            "ordered_histories": 43,
+            "all_action_comparisons": 258,
+            "tied_comparisons": 166,
+            "outcome": [
+              0,
+              3,
+              4
+            ],
+            "utilities": [
+              "6",
+              "6",
+              "5"
+            ],
+            "W": 17,
+            "OPT": 19,
+            "transport_coordinate_identities": 4536,
+            "divergence_coordinate_identities": 2268,
+            "prescribed_kernel_query_values": [
+              "23/4",
+              "19/4",
+              "6",
+              "23/4",
+              "19/4",
+              "6"
+            ],
+            "target_coefficient": "3",
+            "prescribed_cap_gap": "1/3",
+            "all_menu_background_03_cap": "5",
+            "sha256": {
+              "examples/customer_attraction/root_stationary_kernel.json": "1f849141d40f8bf7335aa0fd42304d2d4b00a0e167b169eef212688e9d4c5dbc",
+              "evidence/certificates/customer_attraction/root_stationary_kernel.json": "a3e819c4799656cb1a0e4cc32612dcb6ecb817e63386b9c8e2e1201e283044ca"
+            }
+          },
+          {
+            "name": "empirical_iid_kernel",
+            "unit_customers": 7,
+            "ordered_histories": 21,
+            "all_action_comparisons": 84,
+            "tied_comparisons": 39,
+            "outcome": [
+              1,
+              0,
+              1
+            ],
+            "utilities": [
+              "5/2",
+              "2",
+              "5/2"
+            ],
+            "W": 7,
+            "OPT": 7,
+            "transport_coordinate_identities": 240,
+            "divergence_coordinate_identities": 240,
+            "prescribed_kernel_query_values": [
+              "38/27",
+              "65/27",
+              "77/27",
+              "77/27"
+            ],
+            "target_coefficient": "5/2",
+            "prescribed_cap_gap": "7/135",
+            "true_security_value": "2",
+            "sha256": {
+              "examples/customer_attraction/empirical_iid_kernel.json": "2121e8b1cc8473a8e07250b6a642a88603ec97338efd6e800dab4550318fec90",
+              "evidence/certificates/customer_attraction/empirical_iid_kernel.json": "3fad90ab10205de92186e58079e0357217acdb5a7e1dc9e323028d2de83d2431"
+            }
+          }
+        ],
+        "script_sha256": "8bdad5c2688ba35592478daef28d8bc6577360d1a9e251e3ec5c76ad0635e37f"
+      }
+    },
+    {
+      "command": "python3 tests/audits/customer_attraction_stationary_pair_independent.py",
+      "exit_code": 0,
+      "report": {
+        "status": "PASS",
+        "scope": "Independent exact unit replay and scalar SCT/DIV checks; both failures concern prescribed Q.",
+        "algebra": {
+          "cycle_coordinate_checks": 7885,
+          "divergence_coordinate_checks": 3645,
+          "background_loads": [
+            0,
+            1,
+            3,
+            10,
+            1000
+          ],
+          "theme_counts": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "games": [
+          {
+            "name": "root_stationary_kernel",
+            "unit_customers": 22,
+            "decision_histories": 43,
+            "full_comparisons": 258,
+            "ties": 166,
+            "outcome": [
+              0,
+              3,
+              4
+            ],
+            "utilities": [
+              "6",
+              "6",
+              "5"
+            ],
+            "W": 17,
+            "OPT": 19,
+            "prescribed_Q_query_values": [
+              "23/4",
+              "19/4",
+              "6",
+              "23/4",
+              "19/4",
+              "6"
+            ],
+            "target_coefficient": "3",
+            "cap_excess": "1/3",
+            "actual_menu_alternative": [
+              0,
+              3
+            ],
+            "actual_menu_alternative_cap": "5",
+            "sha256": {
+              "examples/customer_attraction/root_stationary_kernel.json": "1f849141d40f8bf7335aa0fd42304d2d4b00a0e167b169eef212688e9d4c5dbc",
+              "evidence/certificates/customer_attraction/root_stationary_kernel.json": "a3e819c4799656cb1a0e4cc32612dcb6ecb817e63386b9c8e2e1201e283044ca"
+            }
+          },
+          {
+            "name": "empirical_iid_kernel",
+            "unit_customers": 7,
+            "decision_histories": 21,
+            "full_comparisons": 84,
+            "ties": 39,
+            "outcome": [
+              1,
+              0,
+              1
+            ],
+            "utilities": [
+              "5/2",
+              "2",
+              "5/2"
+            ],
+            "W": 7,
+            "OPT": 7,
+            "prescribed_Q_query_values": [
+              "38/27",
+              "65/27",
+              "77/27",
+              "77/27"
+            ],
+            "target_coefficient": "5/2",
+            "cap_excess": "7/135",
+            "true_security_value": "2",
+            "actual_menu_alternative": [
+              1,
+              3
+            ],
+            "actual_menu_alternative_cap": "2",
+            "sha256": {
+              "examples/customer_attraction/empirical_iid_kernel.json": "2121e8b1cc8473a8e07250b6a642a88603ec97338efd6e800dab4550318fec90",
+              "evidence/certificates/customer_attraction/empirical_iid_kernel.json": "3fad90ab10205de92186e58079e0357217acdb5a7e1dc9e323028d2de83d2431"
+            }
+          }
+        ],
+        "script_sha256": "4f78b9a365824348e6d462aaeae43ff2de9d89418c7438b811b916d8d370f99b"
+      }
+    },
+    {
+      "command": "python3 tests/audits/customer_attraction_terminal_transport.py",
+      "exit_code": 0,
+      "report": {
+        "status": "exact identities verified; universal half-cover remains open",
+        "scalar_identity_checks": 136,
+        "normalization": {
+          "nodes": 13,
+          "comparisons": 39,
+          "type_columns": 7,
+          "row_transform_column_checks": 273,
+          "reciprocal_gauge_column_checks": 189,
+          "incumbent_column_checks": 126,
+          "deviation_rank_edge_checks": 12,
+          "root_terminal_preserved": [
+            2,
+            0,
+            2
+          ],
+          "normalized_negative_rows": [
+            {
+              "history": [
+                2
+              ],
+              "action": 1,
+              "slack": "-1/3"
+            }
+          ],
+          "critical_original_slack": "1/6",
+          "critical_transfer_correction": "-1/2",
+          "critical_normalized_slack": "-1/3",
+          "general_lifting_identity_exact": true,
+          "incidence_tensor_identity_exact": true,
+          "general_lifting_correction_by_type": {
+            "1": "0",
+            "2": "-11/14",
+            "3": "-6/7",
+            "4": "-9/14",
+            "5": "-4/21",
+            "6": "0",
+            "7": "0"
+          },
+          "note": "Negative corrections are retained; this is not a half-cover certificate."
+        },
+        "sharp_tie_examples": [
+          {
+            "m": 1,
+            "poor_welfare": 2,
+            "rich_welfare": 3,
+            "last_profit": 1,
+            "security_value": 1,
+            "coverage_transfer": 1,
+            "prefix_half_cap": 1
+          },
+          {
+            "m": 7,
+            "poor_welfare": 14,
+            "rich_welfare": 21,
+            "last_profit": 7,
+            "security_value": 7,
+            "coverage_transfer": 7,
+            "prefix_half_cap": 7
+          },
+          {
+            "m": 101,
+            "poor_welfare": 202,
+            "rich_welfare": 303,
+            "last_profit": 101,
+            "security_value": 101,
+            "coverage_transfer": 101,
+            "prefix_half_cap": 101
+          }
+        ]
+      }
+    },
+    {
+      "command": "python3 tests/audits/customer_attraction_terminal_transport_independent.py",
+      "exit_code": 0,
+      "report": {
+        "status": "PASS",
+        "original_root": [
+          2,
+          0,
+          2
+        ],
+        "root_preserved": true,
+        "original_SPE_comparisons": 39,
+        "canonical_negative": [
+          {
+            "history": [
+              2
+            ],
+            "deviation": 1,
+            "slack": "-1/3"
+          }
+        ],
+        "all_type_transformed_gamma_identities": 273,
+        "all_type_reciprocal_gauges": 63,
+        "edge_rank_checks": 12,
+        "arbitrary_nonnegative_lambda_lift_transfer": [
+          "0",
+          "-1/2",
+          "-2/3",
+          "-5/6",
+          "-2/9",
+          "0",
+          "0"
+        ],
+        "zero_E_nonrepresentative_source_example": {
+          "row_history": [
+            1
+          ],
+          "deviation": 0,
+          "source": [
+            1,
+            0
+          ],
+          "target": [
+            1,
+            1
+          ],
+          "source_is_representative": false,
+          "E_identically_zero": true
+        },
+        "mathematical_errors": [],
+        "wording_corrections_acknowledged": [
+          "Graph source is ell_ha and graph target is ell_h.",
+          "Nonrepresentative conservation and representative endpoints are sufficient, not necessary for zero E."
+        ],
+        "important_correction": "Genuine incumbent-transfer edges lower deviation-count rank by exactly one: DAG; no nontrivial cycles.",
+        "scope": "Conditional explicit lift given canonical certificate and nonnegative residual; no construction of universal lambda or debt budget"
+      }
+    }
+  ],
+  "limitations": [
+    "Internal review only; no external novelty or peer-review certification.",
+    "Local negative debts and prescribed kernel failures are not global safety or half-coverage counterexamples.",
+    "Specified21 full-policy cones are not a universal catalog theorem."
+  ]
+}
