@@ -1423,16 +1423,21 @@
         "CA-FIVE-UPPER-221-100",
         "CA-DYNAMIC-MAXIMA-FLOOR",
         "CA-DYNAMIC-MAXIMA-MIXED",
-        "CA-FIVE-MAXIMA-HALF"
+        "CA-FIVE-MAXIMA-HALF",
+        "CA-FIVE-REPLY-UPPER",
+        "CA-ONE-FOLLOWER-DECORRELATION",
+        "CA-ADAPTIVE-DECORRELATION-NO",
+        "CA-ACTUAL-ROOT-TAIL-MENU-NO",
+        "CA-CREDIBLE-MENU-SECURITY-NO-ALL-N"
       ],
-      "status": "sharp universal three-player 5/3, universal four-player 1499/750, and arbitrary-player half coverage for at most five maximal coverages; unrestricted n>=5 half coverage open",
+      "status": "sharp universal three-player5/3, universal four-player1499/750, improved universal five-player2.101243, arbitrary-player half coverage for at most five maximal coverages; unrestricted n>=5 half coverage open",
       "applies_when": [
         "finite common catalog of themes; unit equal-share customers",
         "unit providers move once in order and observe the entire history",
         "all pure SPE choices, including arbitrary history-dependent ties",
         "integer type multiplicity means distinct unit clones"
       ],
-      "produces": "all attainable pure SPE terminals and full certificates; sharp three-player 5/3 and four-player 1499/750 universal bounds; exact failed tax bridges; rational full-strategy cones; last-node root-tax diagnostic; sharp arbitrary-m disjoint-maximal-petal class; averaged two-remaining-player deviation interface; exact five-player relaxation obstruction; credible continuation sampler and joint candidate interface; local last-two individual payoff floor, weak general-n bound, and independently validated universal-theta counterexample; uploaded recurrence is mathematically identical to the existing solver; unique signed Boolean-potential representation, positive full-history no-repeat embedding and a proved welfare-bias barrier; sharp arbitrary-background exactly-three remaining-profit interface; arbitrary-background exactly-four remaining-profit bound with corrected aggregation; sharp arbitrary-player sunflower-maxima coverage bound with arbitrary internal subthemes; general full-history superset seat guarantee; conditional private-gap maximal-action characterization; sharp arbitrary-player laminar-maximal-incidence coverage and all-history individual theta floors; aggregate theta counterexamples for every n>=3 with a compact 36-unit witness; universal sharp oblivious mixed security bound; exact ordered-versus-reordered root-tax boundary; dynamic all-history maximal-routing payoff budget and private/shared refinement, proving arbitrary-player half coverage for at most five distinct maximal coverages",
+      "produces": "all attainable pure SPE terminals and full certificates; sharp three-player 5/3 and four-player 1499/750 universal bounds; exact failed tax bridges; rational full-strategy cones; last-node root-tax diagnostic; sharp arbitrary-m disjoint-maximal-petal class; averaged two-remaining-player deviation interface; exact five-player relaxation obstruction; credible continuation sampler and joint candidate interface; local last-two individual payoff floor, weak general-n bound, and independently validated universal-theta counterexample; uploaded recurrence is mathematically identical to the existing solver; unique signed Boolean-potential representation, positive full-history no-repeat embedding and a proved welfare-bias barrier; sharp arbitrary-background exactly-three remaining-profit interface; arbitrary-background exactly-four remaining-profit bound with corrected aggregation; sharp arbitrary-player sunflower-maxima coverage bound with arbitrary internal subthemes; general full-history superset seat guarantee; conditional private-gap maximal-action characterization; sharp arbitrary-player laminar-maximal-incidence coverage and all-history individual theta floors; aggregate theta counterexamples for every n>=3 with a compact 36-unit witness; universal sharp oblivious mixed security bound; exact ordered-versus-reordered root-tax boundary; dynamic all-history maximal-routing payoff budget and private/shared refinement, proving arbitrary-player half coverage for at most five distinct maximal coverages; improved universal exactly-five-player beta=493266145873827/234749688354196 via three true optimal reply menus; one-follower decorrelation identity and exact failures of multi-follower decorrelation and actual-root-menu security for every n>=3",
       "implementation": [
         "customer_attraction/model.py",
         "customer_attraction/exact.py",
@@ -1470,7 +1475,9 @@
         "research/current/customer_attraction/oblivious_security.md",
         "research/current/customer_attraction/three_maxima_bound.md",
         "research/current/customer_attraction/five_player_bound.md",
-        "research/current/customer_attraction/dynamic_maxima_bound.md"
+        "research/current/customer_attraction/dynamic_maxima_bound.md",
+        "research/current/customer_attraction/five_player_reply_bound.md",
+        "research/current/customer_attraction/continuation_security_barriers.md"
       ],
       "tests": [
         "tests/test_customer_attraction.py",
@@ -1509,7 +1516,11 @@
         "tests/audits/customer_attraction_five_player.py",
         "tests/audits/customer_attraction_five_player_independent.py",
         "tests/audits/customer_attraction_dynamic_maxima.py",
-        "tests/audits/customer_attraction_dynamic_maxima_independent.py"
+        "tests/audits/customer_attraction_dynamic_maxima_independent.py",
+        "tests/audits/customer_attraction_five_reply.py",
+        "tests/audits/customer_attraction_five_reply_independent.py",
+        "tests/audits/customer_attraction_decorrelation_boundary.py",
+        "tests/audits/customer_attraction_root_tail_menu.py"
       ],
       "records": [
         "evidence/runs/2026-10-09/customer_attraction_search.json",
@@ -1552,7 +1563,14 @@
         "evidence/runs/2026-10-10/customer_attraction_new_frontier_review.md",
         "evidence/runs/2026-10-10/customer_attraction_dynamic_maxima.json",
         "evidence/runs/2026-10-10/customer_attraction_dynamic_maxima_independent.json",
-        "evidence/runs/2026-10-10/customer_attraction_dynamic_maxima_review.md"
+        "evidence/runs/2026-10-10/customer_attraction_dynamic_maxima_review.md",
+        "evidence/runs/2026-10-10/customer_attraction_five_reply.json",
+        "evidence/runs/2026-10-10/customer_attraction_five_reply_independent.json",
+        "evidence/runs/2026-10-10/customer_attraction_five_reply_review.md",
+        "evidence/runs/2026-10-10/customer_attraction_decorrelation_boundary.json",
+        "evidence/runs/2026-10-10/customer_attraction_root_tail_menu.json",
+        "evidence/runs/2026-10-10/customer_attraction_continuation_security_review.md",
+        "evidence/runs/2026-10-10/customer_attraction_five_reply_independent_final.json"
       ],
       "examples": [
         "examples/customer_attraction/residual_counterexample.json",
@@ -1567,9 +1585,10 @@
         "evidence/certificates/customer_attraction/five_lift_relaxation.json",
         "examples/customer_attraction/aggregate_theta_failure.json",
         "evidence/certificates/customer_attraction/aggregate_theta_failure.json",
-        "evidence/certificates/customer_attraction/five_player_bound.json"
+        "evidence/certificates/customer_attraction/five_player_bound.json",
+        "evidence/certificates/customer_attraction/five_player_reply_bound.json"
       ],
-      "limit": "Three-player sharp 5/3 and four-player 1499/750 are complete internally audited universal proofs within exact player counts. Arbitrary m>=5, root total tax and four-player sharpness remain open. First-step and general-background tax are refuted. Sampled cones are not all strategies. No external review or novelty certification. The old structural theorem remains valid; the new arbitrary-m welfare theorem requires sunflower maximal themes, allowing arbitrary internal subthemes that omit core. The general seat guarantee does not budget arbitrary shared unions. Averaged arbitrary-m deviation interface is open. The five-player obstruction concerns auxiliary O and a relaxed row system, not actual OPT or SPE. MILP numeric outputs require exact independent validation. The compiler requires marginal subset-potential utilities and p>=n with K=4sum|x|+1; it does not preserve welfare ratios. The three-remaining bound concerns remaining profits under fixed background, not root total coverage. The four-remaining background bound likewise concerns remaining profit, requires its stated corrected pair/last slacks, and does not solve root half coverage for m>=5. The larger structural theorem requires laminar customer incidences among maximal themes. Aggregate theta charging is false. Mixed security assumes opponents cannot observe the random action; its credible SPE bridge remains open. Root-tax reordering failures concern non-SPE orders and do not refute the actual SPE root-tax question. The additional at-most-three-maxima theorem allows crossed incidences and arbitrary internal subthemes, and is incomparable with unrestricted-size laminar incidence; its scalar union-to-seat step fails already at four maxima. The new exact five-player beta<221/100 upper bound remains above2 and is only at zero root background. General five-or-more-provider half coverage, root total tax and mixed-security credible bridges remain open.",
+      "limit": "Three-player sharp 5/3 and four-player 1499/750 are complete internally audited universal proofs within exact player counts. Arbitrary m>=5, root total tax and four-player sharpness remain open. First-step and general-background tax are refuted. Sampled cones are not all strategies. No external review or novelty certification. The old structural theorem remains valid; the new arbitrary-m welfare theorem requires sunflower maximal themes, allowing arbitrary internal subthemes that omit core. The general seat guarantee does not budget arbitrary shared unions. Averaged arbitrary-m deviation interface is open. The five-player obstruction concerns auxiliary O and a relaxed row system, not actual OPT or SPE. MILP numeric outputs require exact independent validation. The compiler requires marginal subset-potential utilities and p>=n with K=4sum|x|+1; it does not preserve welfare ratios. The three-remaining bound concerns remaining profits under fixed background, not root total coverage. The four-remaining background bound likewise concerns remaining profit, requires its stated corrected pair/last slacks, and does not solve root half coverage for m>=5. The larger structural theorem requires laminar customer incidences among maximal themes. Aggregate theta charging is false. Mixed security assumes opponents cannot observe the random action; its credible SPE bridge remains open. Root-tax reordering failures concern non-SPE orders and do not refute the actual SPE root-tax question. The additional at-most-three-maxima theorem allows crossed incidences and arbitrary internal subthemes, and is incomparable with unrestricted-size laminar incidence; its scalar union-to-seat step fails already at four maxima. The new exact five-player beta<221/100 upper bound remains above2 and is only at zero root background. General five-or-more-provider half coverage, root total tax and mixed-security credible bridges remain open. Dynamic routing now proves half coverage for at most five maximal coverages and arbitrary n; the old four-maxima obstruction concerns only the static mechanism. New general five-player beta approximately2.101243 remains above2. Restricted actual-root-menu security is false for every n>=3, but unrestricted individual or aggregate mixed security and the root half-coverage conjecture remain open.",
       "sources": [
         "history/source/notes/customer_attraction/origin_2026-10-09.md",
         "history/source/notes/customer_attraction/uploaded_2026-10-10/RESEARCH.md",

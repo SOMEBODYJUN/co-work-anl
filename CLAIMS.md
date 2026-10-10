@@ -6,6 +6,8 @@
 | --- | --- | --- |
 | CA-THREE-MAXIMA-HALF | 至多三个不同极大覆盖，任意内部子主题、任意人数、全部历史纯SPE；n≥2时OPT≤U≤2W−c。 | [完整席位/union证明](research/current/customer_attraction/three_maxima_bound.md)，独立内部审查；允许交叉关联，与不限极大主题数的laminar类不可比较。 |
 | CA-DYNAMIC-MAXIMA-FLOOR / MIXED / CA-FIVE-MAXIMA-HALF | 任意目录的全历史动态逐人保底与私有/共享包络；至多五个不同包含极大主题时任意人数OPT≤2W，n≥5还U≤2W−c。 | [完整证明](research/current/customer_attraction/dynamic_maxima_bound.md)，独立重构及两份精确审计；一般目录五人及以上仍开放。 |
+| CA-FIVE-REPLY-UPPER | 一般目录恰五人、全部历史纯SPE，OPT5≤[493266145873827/234749688354196]W≈2.101243W；仍>2。 | [完整回复菜单证明](research/current/customer_attraction/five_player_reply_bound.md)，独立逐节点审查与双精确角系数核验；旧五人界保持原身份。 |
+| CA-ONE-FOLLOWER-DECORRELATION / CA-ADAPTIVE-DECORRELATION-NO / CA-ACTUAL-ROOT-TAIL-MENU-NO / CA-CREDIBLE-MENU-SECURITY-NO-ALL-N | 一后继任意背景去相关成立；多后继去相关与真实根菜单自由混合桥分别有完整策略反例，后者对每n≥3失败。 | [完整恒等式和失败边界](research/current/customer_attraction/continuation_security_barriers.md)，独立审查；一般安全值桥和半覆盖没有被否定。 |
 | CA-FIVE-UPPER-221-100 | 恰五位单位玩家、任意共同目录、全部完整历史纯SPE；OPT_5≤βW≤2.21W，β=24236714656727/10967499015623>2。 | [完整真实中途偏离证明](research/current/customer_attraction/five_player_bound.md)，两份精确审计；五人半覆盖仍开放，不推广至六人或任意背景。 |
 | CA-LAMINAR-INCIDENCE-MAXIMA-2M1 / CA-LAMINAR-INCIDENCE-THETA | 客户对极大主题的关联集合层级化；任意人数、全部内部子主题、完整历史纯SPE，锐界OPT≤c+(2−1/n)(W−c)，逐人全局θ保底。 | [完整真实续局证明](research/current/customer_attraction/laminar_incidence_bound.md)，独立内部审查；严格扩展sunflower，仍非一般目录。 |
 | CA-AGGREGATE-LAST-FLOOR-NO | 每个n≥3可有完整SPE的W<nθ；三人36客户证书W=34、θ=12、OPT=36。 | [完整反例及无限构造](research/current/customer_attraction/aggregate_theta_counterexample.md)，独立核验；只否定辅助收费。 |

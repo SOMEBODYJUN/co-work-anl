@@ -1,5 +1,28 @@
 # 当前研究状态（2026-10-10）
 
+## 2026-10-10：五人真实菜单改进及跨续局安全值硬障碍
+
+在动态预算checkpoint `e3af992` 后，完成 `CA-FIVE-REPLY-UPPER`：
+任意目录、恰五人、全部完整历史纯SPE满足
+`OPT5≤[493266145873827/234749688354196]W≈2.101243W`，比旧约2.209867界改善。
+保留三个真实末位回复菜单；`5ΣS+ΣV`消去最优主题/回复的匹配项，24非负乘子
+和49152角余项闭合恒等式。两个独立Fraction审计和真实节点来源审查通过。
+**常数仍>2，一般五人半覆盖未完成。** 更深菜单浮点探索不是精确障碍或SPE反例。
+
+新 `CA-ONE-FOLLOWER-DECORRELATION` 在任意固定背景给恰一位后继的精确平均BR恒等式。
+`CA-ADAPTIVE-DECORRELATION-NO` 从已有四人完整策略提取差−11/4，1885节点22620比较精确通过。
+`CA-ACTUAL-ROOT-TAIL-MENU-NO` 用36单位客户证明所有真实根菜单混合都cap≥11，
+但根收益和完整静态安全值均10；stationary回复核仍cap11。
+`CA-CREDIBLE-MENU-SECURITY-NO-ALL-N` 完整证明每n≥3都可z1=u1+1/2，
+依赖已证M2全历史编译，有限n3…6回归不替代普遍构造。
+新增非真实静态组合却给正确dual cap≤u1，故原安全值桥没有被这些反例否定。
+
+明确困难仍是：在至少六个极大主题、n≥5的一般交叉目录，如何为真实早期偏离后
+改变的续局给出跨节点总支付。仅混合所有真实根回复不足；扩大菜单需要额外预算，
+现有逐步骤机会桥和根税归纳不能支付它。无完整SPE反例，无任意人数一般证明。
+详见[五人新界](research/current/customer_attraction/five_player_reply_bound.md)及
+[安全值边界](research/current/customer_attraction/continuation_security_barriers.md)。
+
 ## 2026-10-10：动态覆盖预算闭合至多五极大的任意人数半覆盖
 
 安全恢复到`main@0c7dc63`，初始无项目未提交改动。论文v2模型和§6猜想已再次核对；

@@ -56,6 +56,11 @@
 | CA-DYNAMIC-MAXIMA-FLOOR | CAG-MODEL，n≥1、s≥2不同极大覆盖、全部合法有序前缀、每个完整历史纯SPE，任意内部子主题。 | 当前收益≥c/n+(U−c)/D_t，D_t=max(t+s(n−t)/2,n+s−1)；W≥c+Γ_(n,s)(U−c)。四极大且n≥3给U≤2W−c；一般s的系数不保证半覆盖。 | [动态路由客户预算及同路由后继包含支配](customer_attraction/dynamic_maxima_bound.md)，独立重构、两份精确菜单/全历史审计；外审与锐性未认证。 |
 | CA-DYNAMIC-MAXIMA-MIXED | 同一模型/量词；P为全局私有总质量，V为非core共享质量；A_t、B_t及其suffix minima按完整稿§5定义。 | 每位收益≥c/n+P·underlineA_t+V·underlineB_t；W≥c+PΣunderlineA_t+VΣunderlineB_t；允许漏core、无私有及多父路由。 | [私有/共享分离与单调包络](customer_attraction/dynamic_maxima_bound.md)，同一加权预算同时支付两质量；不将分别最大值相加；独立审查通过。 |
 | CA-FIVE-MAXIMA-HALF | CAG-MODEL，至多五个不同包含极大覆盖，任意n≥1、任意内部子主题、全部完整历史纯SPE。 | OPT_n≤2W；n≥5时OPT_n=U≤2W−c；n=5进一步W≥c+5P/9+(67027/125400)V。n≤4用已知一般界，n≥6用Jensen；不把小人数OPT替换为U。 | [完整动态/混合预算与五极大整合](customer_attraction/dynamic_maxima_bound.md)，独立重构和精确复验；六极大以上一般目标、常数锐性及新颖性仍未解决。 |
+| CA-FIVE-REPLY-UPPER | CAG-MODEL，恰五位单位玩家、任意共同有限目录、零根背景、全部完整历史纯SPE、空/重复主题。 | OPT_5≤[493266145873827/234749688354196]W≈2.10124302755W；改善旧约2.209867，仍严格大于2。 | [三个真实最优回复菜单与24-slack恒等式](customer_attraction/five_player_reply_bound.md)，两份独立Fraction程序核49152角、157零余项及逐节点审查；不声称半覆盖、背景版或锐性。 |
+| CA-ONE-FOLLOWER-DECORRELATION | CAG-MODEL，任意合法固定背景、恰两人剩余、每个完整SPE、任意主题概率p。 | 真实适应性查询均值减独立同分布回复均值，恰等于真实末位BR slacks均值≥0；实际菜单对偶值≤当前收益。 | [一后继普遍恒等式](customer_attraction/continuation_security_barriers.md)，独立逐式审查；多后继量词不能平移。 |
+| CA-ADAPTIVE-DECORRELATION-NO | CAG-MODEL，已有四人十二主题、正单位客户、完整1885节点策略。 | 两个真实根偏离在各半分布下，适应性均值减独立回复均值=−11/4；否定普遍去相关。 | [完整策略重放及四项矩阵](customer_attraction/continuation_security_barriers.md)，22620精确比较及独立矩阵重构；未否定v_n收益桥或原目标。 |
+| CA-ACTUAL-ROOT-TAIL-MENU-NO | CAG-MODEL，三人六主题36单位客户、给定全部43节点策略。 | 自由混合所有真实根后继组合的minimax值z1=11>u1=v3=10；stationary回复核仍cap11。 | [两列矩阵、所有概率界与完整SPE](customer_attraction/continuation_security_barriers.md)，258精确比较、完整静态安全值原始/对偶；不是原猜想反例。 |
+| CA-CREDIBLE-MENU-SECURITY-NO-ALL-N | CAG-MODEL，每个n≥3；两组Boolean势经K=4Σabs(x)+1正编译；完整历史SPE。 | 每n都有z1=u1+1/2；扩大为2n个纯组尾组合却给合法静态dual cap≤u1，故失败只在真实菜单量词。 | [完整fresh策略、M2全历史嵌入、双向菜单值](customer_attraction/continuation_security_barriers.md)，独立普遍审查及n3…6算术回归；不以有限回归代替存在证明。 |
 
 ## 2026-10-09 EPTAS 预研与近带精确补全
 

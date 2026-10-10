@@ -20,8 +20,10 @@
 新增 [至多三个极大覆盖](three_maxima_bound.md) 任意人数半覆盖：n≥2时
 `OPT_n≤U≤c+2(W−c)`，允许内部子主题和交叉关联；与不限极大主题数的laminar类不可比较。
 共享客户的加权席位预算还给实例式S/n及一般关联证书；四极大主题的静态union预算失败有整数族。
-新增 [五人一般目录上界](five_player_bound.md)：`OPT_5≤βW≤2.21W`，
-`β=24236714656727/10967499015623>2`。两个真实中途偏离和末两人税聚合闭合全称恒等式。
+新增 [五人三个真实回复菜单上界](five_player_reply_bound.md)：
+`OPT_5≤[493266145873827/234749688354196]W≈2.101243W`，系数仍大于2。
+24个合法slack保留最优主题重数与三个真实末位菜单，两个独立Fraction程序核验49152角。
+[旧约2.209867上界](five_player_bound.md)保留原身份与独立两人税机制。
 **一般目录五人及以上半覆盖仍开放；未得到原猜想反例。**
 
 新 [客户极大关联层级定理](laminar_incidence_bound.md)严格扩大 sunflower 目录类：
@@ -235,3 +237,18 @@ python3 tests/audits/customer_attraction_three_remaining_independent.py
 复现：`python3 tests/audits/customer_attraction_dynamic_maxima.py`，
 `python3 tests/audits/customer_attraction_dynamic_maxima_independent.py`。
 基础/混合系数可能在部分六极大以上人数达到半界，但不因此登记未证明的整个范围。
+
+## 跨续局混合安全值：已排除的桥与剩余接口
+
+[continuation_security_barriers.md](continuation_security_barriers.md)给一后继普遍去相关恒等式；
+四人完整策略却使多后继适应性均值减独立回复均值等于−11/4。
+36客户三人实例的全部真实根菜单minimax值11，严格大于根收益及完整静态安全值10。
+每个n≥3都可用安全正Möbius编译给菜单值u1+1/2的完整SPE。
+上述两条路线被否定；`u_i≥v_n`、`W≥nv_n`及原半覆盖仍未证明或反驳。
+扩大静态菜单后需要新的跨节点支付，不能把minimax存在本身当作支付证明。
+
+复现：`python3 tests/audits/customer_attraction_decorrelation_boundary.py` 与
+`python3 tests/audits/customer_attraction_root_tail_menu.py`。
+五人新界：`python3 tests/audits/customer_attraction_five_reply.py` 与
+`python3 tests/audits/customer_attraction_five_reply_independent.py`。
+普遍证明、有限完整策略证书、纯代数证书和发现用浮点探索按各页范围区分。

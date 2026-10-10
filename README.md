@@ -14,9 +14,10 @@
 现已完整内部审查：允许任意内部子主题及交叉关联，全部历史纯SPE满足
 `OPT_n≤2W−c`（n≥2，c为极大共同核心）；n=1最优。
 它与不限极大主题数的层级类不可比较，四极大主题的静态席位union预算已有明确障碍。
-[五人一般目录上界](research/current/customer_attraction/five_player_bound.md)
-亦已完整内部审查：`OPT_5≤[24236714656727/10967499015623]W<2.21W`（W>0）。
-证明用两个真实中途偏离及21个合法slack；系数仍大于2，**一般目录五人及以上半覆盖仍开放**。
+[五人一般目录的新回复菜单上界](research/current/customer_attraction/five_player_reply_bound.md)
+已完整内部审查：`OPT_5≤[493266145873827/234749688354196]W≈2.101243W`。
+三个真实最优回复菜单及24个合法slack改善[旧约2.209867界](research/current/customer_attraction/five_player_bound.md)；
+系数仍大于2，**一般目录五人及以上半覆盖仍开放**。
 
 [任意人数结构子类定理](research/current/customer_attraction/disjoint_maxima_bound.md)证明：
 删除共同核心后，若不同极大主题互不相交，则每个完整纯 SPE 满足锐界 `2−1/m`；
@@ -32,6 +33,10 @@
 任意 `n≥3` 均可能 `W<nθ_n`；36客户三人完整证书给 `W=34<36=3θ_3`，未反驳半覆盖。
 [混合安全值锐界](research/current/customer_attraction/oblivious_security.md)给一般目录
 `v_n≥OPT_n/(2n−1)`；竞争组合须不观察随机动作，向可信顺序续局的桥仍开放。
+[可信续局安全值边界](research/current/customer_attraction/continuation_security_barriers.md)补明：
+一后继去相关恒等式成立，多后继普遍去相关已被完整四人SPE否定；
+每个n≥3真实根回复菜单的自由混合都可不足，36客户例有菜单值11而根收益与v3均10。
+静态安全值仍有效，尚缺把扩大菜单中的跨分支组合支付给真实终局的预算。
 [上传工具独立审计](research/current/customer_attraction/uploaded_tool_audit.md)确认其全平局递推
 与规范工具一致；新增四人完整证书否定“每人收益都至少为末位最坏最佳回应值θ”。
 [末两人逐人保底](research/current/customer_attraction/last_two_floor.md)则成立，
