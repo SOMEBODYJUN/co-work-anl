@@ -4,14 +4,21 @@
 
 | ID / 问题 | 严格范围与结论 | 状态及详情 |
 | --- | --- | --- |
+| CA-PREFIX-BALANCE-NO | 每个n≥4的合法单位客户共同目录与完整历史纯SPE可有B1=4−n−1/n<0；每个固定实数α<2也不能普遍修复首步收益支付。 | [全部历史解析反例族](research/current/customer_attraction/prefix_balance_family.md)、[22客户四人证书](research/current/customer_attraction/prefix_balance_counterexample.md)，两路独立代数审查与精确审计；主半覆盖、终局总余额及根税仍开放。 |
 | CA-THREE-MAXIMA-HALF | 至多三个不同极大覆盖，任意内部子主题、任意人数、全部历史纯SPE；n≥2时OPT≤U≤2W−c。 | [完整席位/union证明](research/current/customer_attraction/three_maxima_bound.md)，独立内部审查；允许交叉关联，与不限极大主题数的laminar类不可比较。 |
 | CA-DYNAMIC-MAXIMA-FLOOR / MIXED / CA-FIVE-MAXIMA-HALF | 任意目录的全历史动态逐人保底与私有/共享包络；至多五个不同包含极大主题时任意人数OPT≤2W，n≥5还U≤2W−c。 | [完整证明](research/current/customer_attraction/dynamic_maxima_bound.md)，独立重构及两份精确审计；一般目录五人及以上仍开放。 |
+| CA-SIX-MAXIMA-NO-PRIVATE-HALF | 至多六个不同极大覆盖，非core客户均至少属于两个极大主题；任意人数、任意内部子主题、全部有序历史纯SPE；OPT_n≤2W，n≥5还OPT_n=U≤2W−c。 | [完整证明](research/current/customer_attraction/six_maxima_no_private.md)，67份整数/12路径证书、3752项精确关联系数核验及独立全历史审计；含全局私有客户的六极大类仍开放。 |
+| CA-SIX-MAXIMA-NINE-PLUS-HALF | 至多六个极大覆盖，私有/共享关联任意，n≥9、任意内部子主题及全部完整历史纯SPE；OPT_n=U≤2W−c。 | [混合包络解析推论](research/current/customer_attraction/six_maxima_no_private.md#5-nine-or-more-providers-unrestricted-six-maxima)，共享系数≥665881/1330560>1/2；无限制六极大仅余n=5…8。 |
+| CA-FIVE-INDEXED-UPPER | 一般目录恰五人、全部完整历史纯SPE、零根背景，OPT_5≤[145473820534756099649387160645076613709/70560308704423797361284609157664425493]W≈2.061695W。 | [437行真实索引续局与精确dual证明](research/current/customer_attraction/five_player_indexed_bound.md)，两份独立标准库审计及逐节点重构；仍>2，旧五人界保留原身份。 |
+| CA-FIVE-INDEXED-ROWS-NO | 明确437行必要条件松弛有64原子有理点W=1、O=beta>2；matching dual证明模板最优值恰beta。 | [精确模板障碍](research/current/customer_attraction/five_player_indexed_obstruction.md)；不是SPE反例、不认证实际目录OPT或原游戏锐性。 |
 | CA-FIVE-REPLY-UPPER | 一般目录恰五人、全部历史纯SPE，OPT5≤[493266145873827/234749688354196]W≈2.101243W；仍>2。 | [完整回复菜单证明](research/current/customer_attraction/five_player_reply_bound.md)，独立逐节点审查与双精确角系数核验；旧五人界保持原身份。 |
 | CA-ONE-FOLLOWER-DECORRELATION / CA-ADAPTIVE-DECORRELATION-NO / CA-ACTUAL-ROOT-TAIL-MENU-NO / CA-CREDIBLE-MENU-SECURITY-NO-ALL-N | 一后继任意背景去相关成立；多后继去相关与真实根菜单自由混合桥分别有完整策略反例，后者对每n≥3失败。 | [完整恒等式和失败边界](research/current/customer_attraction/continuation_security_barriers.md)，独立审查；一般安全值桥和半覆盖没有被否定。 |
 | CA-FIVE-UPPER-221-100 | 恰五位单位玩家、任意共同目录、全部完整历史纯SPE；OPT_5≤βW≤2.21W，β=24236714656727/10967499015623>2。 | [完整真实中途偏离证明](research/current/customer_attraction/five_player_bound.md)，两份精确审计；五人半覆盖仍开放，不推广至六人或任意背景。 |
 | CA-LAMINAR-INCIDENCE-MAXIMA-2M1 / CA-LAMINAR-INCIDENCE-THETA | 客户对极大主题的关联集合层级化；任意人数、全部内部子主题、完整历史纯SPE，锐界OPT≤c+(2−1/n)(W−c)，逐人全局θ保底。 | [完整真实续局证明](research/current/customer_attraction/laminar_incidence_bound.md)，独立内部审查；严格扩展sunflower，仍非一般目录。 |
 | CA-AGGREGATE-LAST-FLOOR-NO | 每个n≥3可有完整SPE的W<nθ；三人36客户证书W=34、θ=12、OPT=36。 | [完整反例及无限构造](research/current/customer_attraction/aggregate_theta_counterexample.md)，独立核验；只否定辅助收费。 |
 | CA-OBLIVIOUS-MIXED-SECURITY-2N1 | 不观察抽样动作的联合竞争组合下，混合安全值v_n≥OPT/(2n−1)，各n锐。 | [完整minimax/Jensen证明](research/current/customer_attraction/oblivious_security.md)；可信SPE支付桥仍开放。 |
+| CA-MOBIUS-SECURITY-BIAS-BARRIER | 标准充分偏置K=4Σabs(x)+1、p≥n≥2的Möbius输出；每个完整根SPE有u_i−v_n≥1/4和W−nv_n≥n/4。 | [完整不同标签背景对偶](research/current/customer_attraction/compiler_security_barrier.md)，独立精确审查；小偏置及一般目录安全值桥仍开放。 |
+| CA-OPTIMAL-LAST-QUERY-SUM-NO | 四人七主题1651客户完整SPE：W1559，唯一最优BCDF覆盖1562，实际末节点最优查询和1560>W。 | [完整反例与两份定义级审计](research/current/customer_attraction/optimal_last_query_counterexample.md)；只否定该充分收费接口，未否定根税、安全值桥或半覆盖。 |
 | CA-ROOT-TAX-ORDER-COUNTS-NO | 同一PNE且SPE可达计数的非SPE重排可违反根税，实际SPE顺序留正余额。 | [税页§7](research/current/customer_attraction/two_remaining_tax.md)；不否定真实SPE根税。 |
 | SC-TWO-NEAR-BAND-REP / Q-SC-ALPHA-EPTAS | 两设施固定子局，给定 H>0 及全部重权>H 的三态支持，可位多项式判定/输出原实例带内某个精确 NE；完整原模型实例最优倍率 EPTAS 为下一任务。 | [完整局部引理](research/current/shared/near_band_completion.md)、[EPTAS 候选及剩余交付](research/questions/shared_alpha_eptas.md)。局部已内部证明，未登记完整 EPTAS；外审和优先权待核。 |
 | SC-FOUR-NO-FPTAS | 两设施、四共同地点、正整数权；全部布局和精确独立混合续局上的实例最优倍率，P≠NP 下无 FPTAS；YES 13/10、NO ≥13/10+1/(100n²)。 | [完整全局间隙证明](research/current/shared/four_site_no_fptas.md)、[本轮独立审查](research/FOUR_SITE_FPTAS_AUDIT_2026-10-09.md)。完整内部证明；外审和优先权待核。PTAS 与一般任意盒 NE 搜索仍开放。 |

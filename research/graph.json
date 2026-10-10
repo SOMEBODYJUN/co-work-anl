@@ -2864,9 +2864,11 @@
       "kind": "obligation",
       "track": "extensions",
       "title": "Global coverage opportunity balance with transfers between periods",
-      "detail": "Delta_i are nonnegative and telescope to OPT-W. The target is sum_i(u_i-delta_i)>=0; stronger prefix balances remain unproved. Individual increments may be negative at reached SPE histories.",
+      "detail": "Delta_i are nonnegative and telescope to OPT-W. The unresolved target is only the final sum_i(u_i-delta_i)>=0, equivalent to half coverage. Requiring every prefix balance nonnegative is false for every n>=4, and every fixed first-payoff multiplier alpha<2 also fails in some member of an analytic complete-SPE family. These failures preserve positive final half-coverage and root-tax margins.",
       "refs": [
-        "research/current/customer_attraction/coverage_opportunity_counterexample.md"
+        "research/current/customer_attraction/coverage_opportunity_counterexample.md",
+        "research/current/customer_attraction/prefix_balance_family.md",
+        "research/current/customer_attraction/prefix_balance_counterexample.md"
       ],
       "status": "open global balance; not established by local comparisons"
     },
@@ -3241,6 +3243,86 @@
       "detail": "For every n>=3, a legal finite common catalog with positive integer unit-customer multiplicities and a complete ordered-history pure SPE has restricted actual-root menu value z_1=u_1+1/2. A two-group Boolean-potential marginal game is positively compiled with K=4sum|x|+1; its two omitted query labels prove the menu lower bound and equal mixture proves equality. Expanding to all2n pure-group tail columns gives an explicit unrestricted dual cap<=u_1. Full-history existence uses M2; finite n=3..6 regressions do not replace the universal proof.",
       "refs": [
         "research/current/customer_attraction/continuation_security_barriers.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-SIX-MAXIMA-NO-PRIVATE-HALF",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Six maximal coverages without globally private residual customers",
+      "detail": "CAG-MODEL, at most six distinct inclusion-maximal coverages, no customer outside their common core belonging to exactly one maximum, arbitrary internal subthemes and every complete ordered-history pure SPE: OPT_n<=2W for all n>=1; for n>=5 also OPT_n=U<=2W-c. Shared-only dynamic floors F(p,r) are nondecreasing along all routed successors. The n=5,6 branches have 67 explicit integer/12 path coefficient certificates covering all 3752 residual-incidence inequalities; n>=7 has an analytic reciprocal-sum bound, n<=4 uses existing universal bounds. This does not prove unrestricted six-maxima half coverage.",
+      "refs": [
+        "research/current/customer_attraction/six_maxima_no_private.md",
+        "evidence/runs/2026-10-10/customer_attraction_six_maxima_no_private_review.json"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact rational audits; unrefereed"
+    },
+    {
+      "id": "CA-SIX-MAXIMA-NINE-PLUS-HALF",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Unrestricted six maximal coverages with at least nine providers",
+      "detail": "CAG-MODEL, at most six distinct inclusion-maximal coverages, arbitrary private and shared incidence, arbitrary internal subthemes, n>=9 and every complete ordered-history pure SPE: OPT_n=U<=2W-c. Fixed six-maxima mixed private coefficients each exceed or equal1/(2n), so their monotone envelope sums to at least1/2. Shared sum B_n=H_n−2(n−1)/[n(n+2)(n+5)] exceeds665881/1330560>1/2 for all n>=9 by an exact logarithm-series/trapezoid lower bound and decreasing correction. The unrestricted six-maxima question remains only n=5..8.",
+      "refs": [
+        "research/current/customer_attraction/six_maxima_no_private.md",
+        "evidence/runs/2026-10-10/customer_attraction_six_maxima_nine_plus_review.json"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact rational audits; unrefereed"
+    },
+    {
+      "id": "CA-MOBIUS-SECURITY-BIAS-BARRIER",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Standard positive compiler cannot refute genuine mixed-security guarantees",
+      "detail": "For p>=n>=2, arbitrary signed x and legal integer r_B=x_B+K, every n-distinct profile satisfies u_i-v_n>=K c-M, c=2^(p-n)(2^n-n-1)/(np)>=1/4 and M=sum|x_B|. A static dual uniform over all(n-1)-distinct-topic backgrounds gives this without SPE incentives. K=4M+1 and M2 imply individual margin>=1/4 and aggregate margin>=n/4 for every full-history root SPE. Smaller/nonuniform compensation remains open.",
+      "refs": [
+        "research/current/customer_attraction/compiler_security_barrier.md"
+      ],
+      "status": "complete current proof with independent internal review and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-OPTIMAL-LAST-QUERY-SUM-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Optimal comparator last-node query total can exceed root SPE welfare",
+      "detail": "A legal four-provider, seven-theme,1651-unit-customer complete pure SPE has path(E,G,A,C), payoffs(390,389,390,390), W1559, unique optimal support{B,C,D,F}, OPT1562. Against actual last-prefix(E,G,A), all four optimal query values equal390, giving1560>W; no alternate optimum repairs the bridge. All400 ordered nodes,2800 comparisons and210 terminal multisets pass two independent Fraction checks. A static dual cap4889/14<389 confirms that this instance satisfies the genuine mixed-security bridges.",
+      "refs": [
+        "research/current/customer_attraction/optimal_last_query_counterexample.md"
+      ],
+      "status": "complete current proof with independent internal review and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-PREFIX-BALANCE-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "All-prefix coverage balance and every fixed first-payoff multiplier below two fail",
+      "detail": "For every integer n>=4 a common n+2-theme catalog with 2n^2-2n-2 distinct unit customers has a complete ordered-history pure SPE with actual path A,B^(n-1), u1=n-1/n, W=n^2-2, unique optimal support all n leaves, OPT=2n^2-2n-2 and F_(n-1)(A)=OPT-2(n-2). Hence B1=4-n-1/n<0. For every fixed real alpha<2, some n in this same family violates alpha*u1+F_(n-1)(A)>=OPT. All-history Jensen and true-continuation cases prove the universal result; independent finite n4..8 audits are supplementary. Half gap 2(n-1) and root-tax gap (n-3)/2+1/(n-1)+1/n are positive.",
+      "refs": [
+        "research/current/customer_attraction/prefix_balance_family.md",
+        "research/current/customer_attraction/prefix_balance_counterexample.md"
+      ],
+      "status": "complete current proof with two independent internal algebra reviews and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-FIVE-INDEXED-UPPER",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Five providers: indexed true continuations improve universal bound to2.061695",
+      "detail": "Exactly five unit providers, finite common catalog, zero root background and every complete ordered-history pure SPE: OPT_5<=beta W with beta=145473820534756099649387160645076613709/70560308704423797361284609157664425493 approximately2.06169478572>2. Indexed original-strategy second/third deviations yield437 necessary rows;57 nonnegative rational multipliers and complete6144 conditioned histogram residual ranges prove the exact identity. Arbitrary ties, empty/repeated themes and comparison indices retained. No n>=6, background or half-coverage claim.",
+      "refs": [
+        "research/current/customer_attraction/five_player_indexed_bound.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-FIVE-INDEXED-ROWS-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Indexed437-row five-player template has exact optimum above2",
+      "detail": "The precisely specified437-row indexed true-continuation necessary-condition relaxation with nonnegative type masses and W=1 has a64-atom exact rational feasible point O=beta>2. The matching universal dual makes beta its exact optimum. O is only the comparison-union variable; no complete SPE realization, genuine catalog OPT, original-game sharpness or conjecture counterexample is asserted.",
+      "refs": [
+        "research/current/customer_attraction/five_player_indexed_obstruction.md"
       ],
       "status": "complete current proof with independent internal reconstruction and exact audits; unrefereed"
     }
@@ -7589,6 +7671,204 @@
       "statement": "Static mixed security remains valid. Universal adaptive decorrelation and free mixing of actual root replies are false; unrestricted individual and aggregate credible SPE security bridges remain open. Enlarged competitor menus require a new cross-node payment argument.",
       "refs": [
         "research/current/customer_attraction/continuation_security_barriers.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-SIX-MAXIMA-NO-PRIVATE-HALF",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-TWO-REMAINING-TAX",
+        "CA-THREE-SHARP-5-3",
+        "CA-FOUR-UPPER-1499-750"
+      ],
+      "conclusion": "CA-SIX-MAXIMA-NO-PRIVATE-HALF",
+      "statement": "CAG-MODEL, at most six distinct inclusion-maximal coverages, no customer outside their common core belonging to exactly one maximum, arbitrary internal subthemes and every complete ordered-history pure SPE: OPT_n<=2W for all n>=1; for n>=5 also OPT_n=U<=2W-c. Shared-only dynamic floors F(p,r) are nondecreasing along all routed successors. The n=5,6 branches have 67 explicit integer/12 path coefficient certificates covering all 3752 residual-incidence inequalities; n>=7 has an analytic reciprocal-sum bound, n<=4 uses existing universal bounds. This does not prove unrestricted six-maxima half coverage.",
+      "refs": [
+        "research/current/customer_attraction/six_maxima_no_private.md",
+        "evidence/runs/2026-10-10/customer_attraction_six_maxima_no_private_certificates.json"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-SIX-MAXIMA-NO-PRIVATE-HALF-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-SIX-MAXIMA-NO-PRIVATE-HALF"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "Arbitrary-provider half coverage holds for at most six maxima when every non-core customer belongs to at least two maxima. Unrestricted six maxima are also covered for n>=9, leaving n=5..8. For each of those four counts an exact dynamic-seat aggregate-path budget obstruction has sum_t xi_t<OPT_n/2, but the chosen legal path need not be an SPE path, so these do not refute equilibrium half coverage.",
+      "refs": [
+        "research/current/customer_attraction/six_maxima_no_private.md",
+        "research/current/customer_attraction/six_maxima_seat_obstructions.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-SIX-MAXIMA-NINE-PLUS-HALF",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-DYNAMIC-MAXIMA-MIXED"
+      ],
+      "conclusion": "CA-SIX-MAXIMA-NINE-PLUS-HALF",
+      "statement": "CAG-MODEL, at most six distinct inclusion-maximal coverages, arbitrary private and shared incidence, arbitrary internal subthemes, n>=9 and every complete ordered-history pure SPE: OPT_n=U<=2W-c. Fixed six-maxima mixed private coefficients each exceed or equal1/(2n), so their monotone envelope sums to at least1/2. Shared sum B_n=H_n−2(n−1)/[n(n+2)(n+5)] exceeds665881/1330560>1/2 for all n>=9 by an exact logarithm-series/trapezoid lower bound and decreasing correction. The unrestricted six-maxima question remains only n=5..8.",
+      "refs": [
+        "research/current/customer_attraction/six_maxima_no_private.md",
+        "research/current/customer_attraction/dynamic_maxima_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-SIX-MAXIMA-NINE-PLUS-HALF-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-SIX-MAXIMA-NINE-PLUS-HALF"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "Unrestricted catalogs with at most six maximal coverages are now covered for n<=4 by general results and n>=9 by this corollary. Counts n=5,6,7,8 remain open unless an additional structural theorem applies. No SPE counterexample is asserted.",
+      "refs": [
+        "research/current/customer_attraction/six_maxima_no_private.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-MOBIUS-SECURITY-BIAS-BARRIER",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-MOBIUS-FULL-HISTORY-EMBED"
+      ],
+      "conclusion": "CA-MOBIUS-SECURITY-BIAS-BARRIER",
+      "statement": "For p>=n>=2, arbitrary signed x and legal integer r_B=x_B+K, every n-distinct profile satisfies u_i-v_n>=K c-M, c=2^(p-n)(2^n-n-1)/(np)>=1/4 and M=sum|x_B|. A static dual uniform over all(n-1)-distinct-topic backgrounds gives this without SPE incentives. K=4M+1 and M2 imply individual margin>=1/4 and aggregate margin>=n/4 for every full-history root SPE. Smaller/nonuniform compensation remains open.",
+      "refs": [
+        "research/current/customer_attraction/compiler_security_barrier.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-OPTIMAL-LAST-QUERY-SUM-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-MOBIUS-BOOLEAN"
+      ],
+      "conclusion": "CA-OPTIMAL-LAST-QUERY-SUM-NO",
+      "statement": "A legal four-provider, seven-theme,1651-unit-customer complete pure SPE has path(E,G,A,C), payoffs(390,389,390,390), W1559, unique optimal support{B,C,D,F}, OPT1562. Against actual last-prefix(E,G,A), all four optimal query values equal390, giving1560>W; no alternate optimum repairs the bridge. All400 ordered nodes,2800 comparisons and210 terminal multisets pass two independent Fraction checks. A static dual cap4889/14<389 confirms that this instance satisfies the genuine mixed-security bridges.",
+      "refs": [
+        "research/current/customer_attraction/optimal_last_query_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-SECURITY-COMPILER-QUERY-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-MOBIUS-SECURITY-BIAS-BARRIER",
+        "CA-OPTIMAL-LAST-QUERY-SUM-NO"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "The prescribed sufficient-bias Mobius compiler satisfies genuine individual and aggregate security guarantees. An optimal last-query-sum sufficient bridge is false even with a unique optimum. Neither fact resolves unrestricted individual/aggregate security, root total tax, or arbitrary-player half coverage.",
+      "refs": [
+        "research/current/customer_attraction/compiler_security_barrier.md",
+        "research/current/customer_attraction/optimal_last_query_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-PREFIX-BALANCE-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-PREFIX-BALANCE-NO",
+      "statement": "For every integer n>=4 a common n+2-theme catalog with 2n^2-2n-2 distinct unit customers has a complete ordered-history pure SPE with actual path A,B^(n-1), u1=n-1/n, W=n^2-2, unique optimal support all n leaves, OPT=2n^2-2n-2 and F_(n-1)(A)=OPT-2(n-2). Hence B1=4-n-1/n<0. For every fixed real alpha<2, some n in this same family violates alpha*u1+F_(n-1)(A)>=OPT. All-history Jensen and true-continuation cases prove the universal result; independent finite n4..8 audits are supplementary. Half gap 2(n-1) and root-tax gap (n-3)/2+1/(n-1)+1/n are positive.",
+      "refs": [
+        "research/current/customer_attraction/prefix_balance_family.md",
+        "research/current/customer_attraction/prefix_balance_counterexample.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-PREFIX-BALANCE-NO-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-PREFIX-BALANCE-NO",
+        "CA-COVERAGE-OPPORTUNITY-NO"
+      ],
+      "conclusion": "CA-COVERAGE-BALANCE-GAP",
+      "statement": "Period-by-period and every-prefix nonnegative coverage-loss charging are both false at reached complete-SPE histories. The final telescoping total balance remains equivalent to unrestricted half coverage and unresolved; this family retains positive half-coverage and root-total-tax margins. Adaptive weights or extra budgets are not excluded.",
+      "refs": [
+        "research/current/customer_attraction/prefix_balance_family.md",
+        "research/current/customer_attraction/prefix_balance_counterexample.md",
+        "research/current/customer_attraction/coverage_opportunity_counterexample.md"
+      ],
+      "status": "explicit scope boundary"
+    },
+    {
+      "id": "E-CA-FIVE-INDEXED-UPPER",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-TWO-REMAINING-TAX"
+      ],
+      "conclusion": "CA-FIVE-INDEXED-UPPER",
+      "statement": "Exactly five unit providers, finite common catalog, zero root background and every complete ordered-history pure SPE: OPT_5<=beta W with beta=145473820534756099649387160645076613709/70560308704423797361284609157664425493 approximately2.06169478572>2. Indexed original-strategy second/third deviations yield437 necessary rows;57 nonnegative rational multipliers and complete6144 conditioned histogram residual ranges prove the exact identity. Arbitrary ties, empty/repeated themes and comparison indices retained. No n>=6, background or half-coverage claim.",
+      "refs": [
+        "research/current/customer_attraction/five_player_indexed_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-FIVE-INDEXED-UPPER-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-FIVE-INDEXED-UPPER"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "The exact universal coefficient remains above2 and the matching primal proves only insufficiency of this437-row necessary-condition relaxation; general five-player half coverage remains open.",
+      "refs": [
+        "research/current/customer_attraction/five_player_indexed_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-FIVE-INDEXED-ROWS-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CA-FIVE-INDEXED-UPPER"
+      ],
+      "conclusion": "CA-FIVE-INDEXED-ROWS-NO",
+      "statement": "The precisely specified437-row indexed true-continuation necessary-condition relaxation with nonnegative type masses and W=1 has a64-atom exact rational feasible point O=beta>2. The matching universal dual makes beta its exact optimum. O is only the comparison-union variable; no complete SPE realization, genuine catalog OPT, original-game sharpness or conjecture counterexample is asserted.",
+      "refs": [
+        "research/current/customer_attraction/five_player_indexed_obstruction.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-FIVE-INDEXED-ROWS-NO-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-FIVE-INDEXED-ROWS-NO"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "The exact universal coefficient remains above2 and the matching primal proves only insufficiency of this437-row necessary-condition relaxation; general five-player half coverage remains open.",
+      "refs": [
+        "research/current/customer_attraction/five_player_indexed_obstruction.md"
       ],
       "status": "recorded within stated scope"
     }

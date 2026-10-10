@@ -87,7 +87,9 @@ $$
 令 `C_t` 为实际前t主题覆盖，仍有
 `Σδ_i=OPT_m−W`，因此需要全局 `Σ(u_i−δ_i)≥0`。
 更强的所有前缀余额 `Σ_(i≤t)u_i+F_(m-t)(C_t)−OPT_m≥0`
-可作为新候选，但没有证明；收益始终取原终局份额。
+已被 [CA-PREFIX-BALANCE-NO](../current/customer_attraction/prefix_balance_family.md) 否定：
+每个m≥4可有完整SPE的B1=4−m−1/m<0，固定首位收益乘数α<2也不普遍足够。
+收益始终取原终局份额；终局总余额与根总税仍开放。
 
 ## 新的有效接口与边界
 

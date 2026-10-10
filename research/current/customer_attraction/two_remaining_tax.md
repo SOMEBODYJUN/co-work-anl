@@ -300,7 +300,9 @@ W+\tau_0(c_{<n})-\operatorname{OPT}_n=1.
 这正是冻结原末位 $H$ 会漏掉的真实续局变化。
 
 因此终局计数的税预算不能代替实际有序 SPE 前缀的可信性；正确顺序的
-零背景根总税、全局前缀余额及任意人数半覆盖目标仍开放。
+零背景根总税、终局全局余额及任意人数半覆盖目标仍开放。
+较强的每个前缀余额非负已由 [CA-PREFIX-BALANCE-NO](prefix_balance_family.md)
+对每个 $n\ge4$ 否定；其反例族的根税及半覆盖余额仍严格为正。
 [独立 Fraction 审计](../../../tests/audits/customer_attraction_ordered_tax_boundary.py)
 直接构造并核验 $n=4$ 的全部 156 个有序决策节点与 780 个行动比较，
 另核对该族的静态比较及上述公式；它不导入规范模型、求解器或证书核验器。

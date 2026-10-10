@@ -10,6 +10,12 @@
 合法根偏离与后继节点比较闭合精确非负恒等式，经过独立内部审查。
 一般目录的目标现只剩五人及以上；零背景总税仍开放。
 
+新增 [CA-PREFIX-BALANCE-NO](prefix_balance_family.md)：每个整数n≥4都有完整历史纯SPE
+的首步余额 `B1=4−n−1/n<0`；每个固定实数α<2也不能普遍修复首步支付。
+全部历史的Jensen/真实续局解析证明经两路独立审查，有限n4…8精确审计辅助核验。
+[22客户四人证书](prefix_balance_counterexample.md)的W/OPT=7/11、根税余额13/12；
+整个族的半覆盖与根税余额严格为正，终局全局余额仍开放。
+
 新 [CA-FIVE-MAXIMA-HALF](dynamic_maxima_bound.md) 将任意人数半覆盖扩大到**至多五个不同包含极大覆盖**，
 内部子主题与交叉关联不限；n≥5还得到 `OPT_n=U≤2W−c`。
 新全历史动态保底 `u_i≥c/n+(U−c)/D_t` 与私有/共享混合包络适用于任意极大主题数；
@@ -17,9 +23,25 @@
 此处全union不是小人数的OPT；一般目录五人及以上的剩余难点至少需要六个极大覆盖。
 该新类与不限极大主题数的laminar类仍不可比较，原三极大证明保留为另一静态加权机制。
 
+新 [CA-SIX-MAXIMA-NO-PRIVATE-HALF](six_maxima_no_private.md) 进一步覆盖**至多六极大且没有全局私有非core客户**的目录：
+每个完整历史纯SPE、任意n≥1均有 `OPT_n≤2W`，n≥5还 `OPT_n=U≤2W−c`。
+共享动态保底沿真实路由逐历史单调；n=5/6用67份显式整数/12路径证书，n≥7用解析和式。
+内部子主题仍任意，可遗漏共同core；独立完整内部审查和精确复验通过。
+同稿 [CA-SIX-MAXIMA-NINE-PLUS-HALF](six_maxima_no_private.md#5-nine-or-more-providers-unrestricted-six-maxima)
+不限制私有/共享关联，证明所有n≥9的六极大目录 `OPT_n=U≤2W−c`。
+因此无限制六极大目前只余n=5…8；无私有客户类覆盖这些临界人数。
+
 新增 [至多三个极大覆盖](three_maxima_bound.md) 任意人数半覆盖：n≥2时
 `OPT_n≤U≤c+2(W−c)`，允许内部子主题和交叉关联；与不限极大主题数的laminar类不可比较。
 共享客户的加权席位预算还给实例式S/n及一般关联证书；四极大主题的静态union预算失败有整数族。
+新 [CA-FIVE-INDEXED-UPPER](five_player_indexed_bound.md) 将一般恰五人、零根背景上界进一步降至
+`beta=145473820534756099649387160645076613709/70560308704423797361284609157664425493≈2.061695`。
+437行原策略真实索引续局、57个非负有理乘子和6144个条件直方图范围给完整证明，
+两份独立标准库审计及数学重构通过。它仍大于二，不给一般五人半覆盖或背景/六人界。
+[CA-FIVE-INDEXED-ROWS-NO](five_player_indexed_obstruction.md) 的64原子有理点W=1、O=beta>2
+与dual匹配，认证这个明确模板的精确最优值；该点没有完整SPE或真实OPT证书。
+外审与原游戏锐性未完成，旧五人上界保持各自身份。
+
 新增 [五人三个真实回复菜单上界](five_player_reply_bound.md)：
 `OPT_5≤[493266145873827/234749688354196]W≈2.101243W`，系数仍大于2。
 24个合法slack保留最优主题重数与三个真实末位菜单，两个独立Fraction程序核验49152角。
@@ -32,6 +54,9 @@
 [聚合θ反例](aggregate_theta_counterexample.md)证明每个n≥3都可能 `W<nθ_n`；
 36客户三人证书经独立精确核验。[混合安全值](oblivious_security.md)仍有锐下界
 `v_n≥OPT_n/(2n−1)`，但可信顺序续局下的逐人或总预算桥保持开放。
+
+新增 [CA-MOBIUS-SECURITY-BIAS-BARRIER](compiler_security_barrier.md)：标准充分正偏置编译器的每个完整根SPE都满足 `u_i−v_n≥1/4`、`W−nv_n≥n/4`；显式静态对偶扩入全部不同标签背景，无需真实回复菜单。
+小正偏置仍可给 [CA-OPTIMAL-LAST-QUERY-SUM-NO](optimal_last_query_counterexample.md)：四人1651单位客户完整SPE的 `W=1559`，唯一最优组合的实际末节点查询和1560；不能用改选另一个最优组合修复。这个反例有静态安全dual cap4889/14<389，仅否定该额外收费接口。
 
 本分支使用 [CAG-MODEL](model.md)：客户价值固定均分，没有客户侧优化。
 它与仓库原来的主动原子客户设施模型独立。不能借用原模型的因子 2 存在性，
@@ -63,6 +88,8 @@
 `CA-COVERAGE-OPPORTUNITY-NO` 进一步排除用当期收益各自支付当期最优补全损失。
 [在轨AAB反例](coverage_opportunity_counterexample.md)保留完整历史策略。
 全局望远镜余额仍是精确表示，需允许跨步骤支付，尚无一般证明。
+更强的每个实际前缀余额非负已由 `CA-PREFIX-BALANCE-NO` 对每个n≥4否定；
+此失败不判定最后一个前缀的总余额。
 
 `CAG-MODEL` + `CA-TWO-REMAINING-TAX` → `CA-FOUR-UPPER-1499-750`，
 其独立于三人定理；证明明确保留根偏离后的三个后继主题及其各自最优性。
@@ -252,3 +279,25 @@ python3 tests/audits/customer_attraction_three_remaining_independent.py
 五人新界：`python3 tests/audits/customer_attraction_five_reply.py` 与
 `python3 tests/audits/customer_attraction_five_reply_independent.py`。
 普遍证明、有限完整策略证书、纯代数证书和发现用浮点探索按各页范围区分。
+
+## 六极大无全局私有客户：路径系数资产
+
+- `research/current/customer_attraction/six_maxima_no_private.md`：全历史共享动态保底、五/六人全部路径的精确系数证明、七人以上解析界；另精确定位无限制六极大动态席位机制的46/97预算障碍。
+- `tests/audits/customer_attraction_six_maxima_no_private.py`：独立Fraction验证全部3752项系数不等式、完整续局菜单和有序策略；不导入规范求解器或既有审计。
+- `evidence/runs/2026-10-10/customer_attraction_six_maxima_no_private_certificates.json`：67份整数/12系数证书，是普遍证明的有限系数分支。
+- `evidence/runs/2026-10-10/customer_attraction_six_maxima_no_private.json`：独立有限SPE审计冻结输出，与上述普遍系数证明分别计数。
+
+复现：`python3 tests/audits/customer_attraction_six_maxima_no_private.py`。
+
+[动态席位的六极大路径障碍](six_maxima_seat_obstructions.md)分别在n=5/6/7/8给
+预算比46/97、55/112、140687/282485、3283/6624，全部严格小于1/2。
+四项均是合法路径的收费机制障碍，未声称该路径是SPE或其预算等于实际福利。
+完整整数客户证书和独立600项席位排序/156项逐客户加入审计均已冻结。
+无限制n≥9推论也经独立124744项私有点、496项共享恒等式及499项校正差复验。
+
+## 新安全值编译边界和最优末节点查询失败
+
+- [安全值编译偏置障碍](compiler_security_barrier.md)：`tests/audits/customer_attraction_compiler_security_barrier.py`；冻结报告保存28种公式族和已有十二主题证书的静态dual。
+- [最优末节点查询反例](optimal_last_query_counterexample.md)：`tests/audits/customer_attraction_optimal_last_query.py` 和 `customer_attraction_optimal_last_query_independent.py`；完整400历史策略、2800精确比较与唯一最优性均已重放。
+
+这两项仍保留一般目录的逐人/聚合混合安全值桥、根总税和主半覆盖目标为开放义务。

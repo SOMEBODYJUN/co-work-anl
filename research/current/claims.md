@@ -17,6 +17,7 @@
 | CA-STRATEGY-CONE | 固定m≥1、p≥1共同主题标签，允许相同覆盖；任意单位客户整数类型重数与完整有序历史策略。 | 每策略SPE重数是有理锥；W=1截面紧，固定(m,p)最坏比例由有理极点缩放成整数客户达到；精确对偶可认证固定锥。 | [完整证明与Farkas符号](customer_attraction/strategy_cone.md)，小规模全策略接口回归；有限多锥攻击不证明主目标。 |
 
 | CA-COVERAGE-OPPORTUNITY-NO | CAG-MODEL，三人、五共同主题、十一单位客户的完整纯 SPE，实际路径AAB。 | 在轨第二步δ=F2(A)−F1(A)=3>u2=5/2；逐层覆盖机会支付为假。Σδ=OPT−W仍为恒等式，全局余额及半覆盖未被否定。 | [完整31历史策略、收益表与望远镜余额](customer_attraction/coverage_opportunity_counterexample.md)，独立155真实行动比较精确审计；外审未记录。 |
+| CA-PREFIX-BALANCE-NO | CAG-MODEL，每个整数n≥4存在n+2共同主题、2n²−2n−2单位客户及完整有序历史纯SPE；F为含原覆盖的最优总覆盖补全。 | 实际路径AB^(n−1)，u1=n−1/n、W=n²−2、OPT=2n²−2n−2、F_(n−1)(A)=OPT−2(n−2)，B1=4−n−1/n<0；每个固定实数α<2均存在该族实例使αu1+F_(n−1)(A)<OPT。根税和半覆盖余额严格为正。 | [全历史/Jensen完整解析证明](customer_attraction/prefix_balance_family.md)、[22客户四人完整策略证书](customer_attraction/prefix_balance_counterexample.md)，两路独立代数审查及互不导入精确审计；有限n4…8不替代普遍证明，外审未记录。 |
 
 | CA-FOUR-UPPER-1499-750 | CAG-MODEL，恰四名单位提供者、任意有限共同目录、每个完整历史依赖纯 SPE。 | OPT_4≤(1499/750)W；零覆盖亦成立，保留所有平局、重复及空主题；未证锐性，五人以上仍开放。 | [真实根偏离续局与完整非负恒等式](customer_attraction/four_player_bound.md)，独立逐段审查及两份 Fraction 审计；完整内部证明，外审/新颖性未认证。 |
 | CA-LAST-NODE-OPT-TAX | CAG-MODEL，任意人数m≥1；任意终局，只要求末位在实际前缀后最佳回复。 | OPT_m≤m u_m+τ_0(c_{<m})。末位收益≤平均则根税成立；税反例必须末位超过平均；非充分条件，不解决一般目标。 | [税页§6的直接逐客户证明](customer_attraction/two_remaining_tax.md)；内部复核，外审未记录。 |
@@ -56,11 +57,18 @@
 | CA-DYNAMIC-MAXIMA-FLOOR | CAG-MODEL，n≥1、s≥2不同极大覆盖、全部合法有序前缀、每个完整历史纯SPE，任意内部子主题。 | 当前收益≥c/n+(U−c)/D_t，D_t=max(t+s(n−t)/2,n+s−1)；W≥c+Γ_(n,s)(U−c)。四极大且n≥3给U≤2W−c；一般s的系数不保证半覆盖。 | [动态路由客户预算及同路由后继包含支配](customer_attraction/dynamic_maxima_bound.md)，独立重构、两份精确菜单/全历史审计；外审与锐性未认证。 |
 | CA-DYNAMIC-MAXIMA-MIXED | 同一模型/量词；P为全局私有总质量，V为非core共享质量；A_t、B_t及其suffix minima按完整稿§5定义。 | 每位收益≥c/n+P·underlineA_t+V·underlineB_t；W≥c+PΣunderlineA_t+VΣunderlineB_t；允许漏core、无私有及多父路由。 | [私有/共享分离与单调包络](customer_attraction/dynamic_maxima_bound.md)，同一加权预算同时支付两质量；不将分别最大值相加；独立审查通过。 |
 | CA-FIVE-MAXIMA-HALF | CAG-MODEL，至多五个不同包含极大覆盖，任意n≥1、任意内部子主题、全部完整历史纯SPE。 | OPT_n≤2W；n≥5时OPT_n=U≤2W−c；n=5进一步W≥c+5P/9+(67027/125400)V。n≤4用已知一般界，n≥6用Jensen；不把小人数OPT替换为U。 | [完整动态/混合预算与五极大整合](customer_attraction/dynamic_maxima_bound.md)，独立重构和精确复验；六极大以上一般目标、常数锐性及新颖性仍未解决。 |
+| CA-SIX-MAXIMA-NO-PRIVATE-HALF | CAG-MODEL，至多六个不同包含极大覆盖；非core客户均至少属于两个极大主题；任意内部子主题、任意n≥1、全部有序历史纯SPE。 | OPT_n≤2W；n≥5还OPT_n=U≤2W−c。共享动态F(p,r)逐历史单调，n=5/6由67份显式整数/12路径系数证书闭合，n≥7用解析和式，n≤4用一般界；不推广至有全局私有客户的六极大类。 | [完整证明](customer_attraction/six_maxima_no_private.md)，3752项Fraction系数恒等式及独立全续局/有序证书审计及独立完整内部重构；外审、新颖性及常数锐性未认证。 |
+| CA-SIX-MAXIMA-NINE-PLUS-HALF | CAG-MODEL，至多六个不同包含极大覆盖，任意私有/共享关联、任意内部子主题；n≥9、全部完整有序历史纯SPE。 | OPT_n=U≤2W−c；固定六极大私有包络和≥1/2，共享系数和≥665881/1330560>1/2。无限制六极大仅余n=5…8；不将机制障碍称SPE反例。 | [动态混合接口的解析推论](customer_attraction/six_maxima_no_private.md#5-nine-or-more-providers-unrestricted-six-maxima)，精确系数/端点复验及独立完整内部审查；外审、新颖性及锐性未认证。 |
+| CA-FIVE-INDEXED-UPPER | CAG-MODEL，恰五位单位玩家、有限共同目录、零根背景、全部完整有序历史纯SPE；空/重复主题和索引、历史依赖平局均允许。 | OPT_5≤[145473820534756099649387160645076613709/70560308704423797361284609157664425493]W≈2.06169478572W；437行真实索引续局、57个非负有理乘子、6144个全范围条件余项闭合；常数仍>2。 | [完整逐节点与直方图证明](customer_attraction/five_player_indexed_bound.md)，两份互不导入的标准库精确审计及独立数学重构；不声称半覆盖、背景版、六人以上或原游戏锐性，外审未记录。 |
+| CA-FIVE-INDEXED-ROWS-NO | 上一条§1–3明确437行必要条件松弛、非负类型重数、W=1；O为五个比较主题并集变量。 | 64原子的精确有理可行点有O=beta>2，与57乘子dual匹配，beta为该松弛精确最优值；该模板不能单独推出O≤2W。 | [完整变量与精确障碍](customer_attraction/five_player_indexed_obstruction.md)，437行逐一核验和两份全范围dual审计；没有完整SPE，不声称真实OPT或猜想反例。 |
 | CA-FIVE-REPLY-UPPER | CAG-MODEL，恰五位单位玩家、任意共同有限目录、零根背景、全部完整历史纯SPE、空/重复主题。 | OPT_5≤[493266145873827/234749688354196]W≈2.10124302755W；改善旧约2.209867，仍严格大于2。 | [三个真实最优回复菜单与24-slack恒等式](customer_attraction/five_player_reply_bound.md)，两份独立Fraction程序核49152角、157零余项及逐节点审查；不声称半覆盖、背景版或锐性。 |
 | CA-ONE-FOLLOWER-DECORRELATION | CAG-MODEL，任意合法固定背景、恰两人剩余、每个完整SPE、任意主题概率p。 | 真实适应性查询均值减独立同分布回复均值，恰等于真实末位BR slacks均值≥0；实际菜单对偶值≤当前收益。 | [一后继普遍恒等式](customer_attraction/continuation_security_barriers.md)，独立逐式审查；多后继量词不能平移。 |
 | CA-ADAPTIVE-DECORRELATION-NO | CAG-MODEL，已有四人十二主题、正单位客户、完整1885节点策略。 | 两个真实根偏离在各半分布下，适应性均值减独立回复均值=−11/4；否定普遍去相关。 | [完整策略重放及四项矩阵](customer_attraction/continuation_security_barriers.md)，22620精确比较及独立矩阵重构；未否定v_n收益桥或原目标。 |
 | CA-ACTUAL-ROOT-TAIL-MENU-NO | CAG-MODEL，三人六主题36单位客户、给定全部43节点策略。 | 自由混合所有真实根后继组合的minimax值z1=11>u1=v3=10；stationary回复核仍cap11。 | [两列矩阵、所有概率界与完整SPE](customer_attraction/continuation_security_barriers.md)，258精确比较、完整静态安全值原始/对偶；不是原猜想反例。 |
 | CA-CREDIBLE-MENU-SECURITY-NO-ALL-N | CAG-MODEL，每个n≥3；两组Boolean势经K=4Σabs(x)+1正编译；完整历史SPE。 | 每n都有z1=u1+1/2；扩大为2n个纯组尾组合却给合法静态dual cap≤u1，故失败只在真实菜单量词。 | [完整fresh策略、M2全历史嵌入、双向菜单值](customer_attraction/continuation_security_barriers.md)，独立普遍审查及n3…6算术回归；不以有限回归代替存在证明。 |
+
+| CA-MOBIUS-SECURITY-BIAS-BARRIER | p≥n≥2，合法整数类型r_B=x_B+K、M=Σabs(x_B)，任意n个不同主题终局；不要求均衡。 | 每位u_i−v_n≥K·2^(p−n)(2^n−n−1)/(np)−M。标准M2偏置K=4M+1给所有完整根SPE逐人差≥1/4、聚合差≥n/4，故不能反驳真正安全值桥；小偏置未被排除。 | [均匀不同主题背景对偶及系数差证明](customer_attraction/compiler_security_barrier.md)，独立内部审查、28公式族/1757逐人精确检查；不解决一般目录桥。 |
+| CA-OPTIMAL-LAST-QUERY-SUM-NO | CAG-MODEL，四人七主题1651单位客户，全部400节点完整纯SPE，实际路径E,G,A,C。 | W=1559、唯一最优四主题BCDF覆盖1562；实际末背景E,G,A对每个最优元组的查询和1560>W。否定存在最优组合查询总额≤W的充分桥；静态安全dual cap4889/14<每人收益。 | [明确整数输入、完整策略及唯一OPT证明](customer_attraction/optimal_last_query_counterexample.md)，两份独立Fraction审计2800比较/210终局；未否定根税、安全值桥或半覆盖。 |
 
 ## 2026-10-09 EPTAS 预研与近带精确补全
 
@@ -225,6 +233,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 **Current status (2026-10-07):** SC-K-GREEDY-BOX-EXISTS supplies universal feasibility and a finite exact constructor; SC-K-BOX-STRUCTURED-POLY-2 closes the two bounded-structure DP classes. General input-bit-polynomial total time remains open.
 
 **Boundary/evidence:** the restricted-related-link inequality `W_t/s_t <= (W_v+w_i)/s_v` is not equivalent when multiplicities differ; `q_t=1,q_v=2,w_i=2,W_t=5,W_v=6` is an exact mismatch. [Boundary note](multi_facility/restricted_related_link_boundary.md) and [audit](../../tests/audits/restricted_related_formula.py). This is an open obligation and literature boundary, not a hardness theorem.
+
 
 ## 逻辑使用规则
 
