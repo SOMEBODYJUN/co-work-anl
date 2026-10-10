@@ -57,6 +57,12 @@
 `CA-CREDIBLE-CONTINUATIONS` 的菜单构造覆盖全部完整策略；有限采样和联合MILP候选
 仍需精确核验，不能从所选锥推断全部目录。
 
+`CA-LAST-TWO-FLOOR` 在任意固定历史给最后两人分别保底局部θ(P)，
+由它和每人K/n推出 `CA-ALL-N-WELFARE-4N` 的较弱通用界。
+`CA-LAST-FLOOR-ALL-PLAYERS-NO` 用独立重放的四人完整策略否定把θ保底扩至所有人。
+上传代码的递推与 `CA-EXACT-PURE-SPE-ALL` 相同；Möbius客户重数构造是本仓库新增接口，
+其通用范围另须证明，不能仅由这个有限反例推广。
+
 ## 文件地图
 
 | 路径 | 数学资产与何时使用 |
@@ -118,3 +124,14 @@ python3 -m customer_attraction examples/customer_attraction/residual_counterexam
 
 完整策略随历史树增长，有限求解器不是计算复杂度突破。直接有理数反例证明
 和算法正确性的完整归纳已经写出；主目标的全部人数论证仍缺，外部同行评审未记录。
+
+## 上传包复核入口（2026-10-10）
+
+- [uploaded_tool_audit.md](uploaded_tool_audit.md)：原保存策略、精确θ/OPT、实现机制比较；采用逐客户定义重放全部离轨历史，区分构造新增与枚举同机制。
+- [last_two_floor.md](last_two_floor.md)：任意背景的局部末两人逐人保底、通用较弱福利界及所有量词边界；尝试推广逐人保证时先读反例。
+- `history/source/notes/customer_attraction/uploaded_2026-10-10/`：本轮上传原稿、构造代码、完整策略和原校验值，保留原始字节；原稿的Git失败报告是来源历史，不代表当前仓库状态。
+
+```sh
+python3 tests/audits/customer_attraction_uploaded.py
+python3 tests/audits/customer_attraction_last_two_floor.py
+```

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Facility location mathematical dependency hypergraph",
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -2957,6 +2957,39 @@
         "research/current/customer_attraction/global_new_uniform_portfolio_two.md"
       ],
       "status": "open"
+    },
+    {
+      "id": "CA-LAST-TWO-FLOOR",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Both last players exceed the local worst last-response floor",
+      "detail": "At every fixed ordered history with exactly two remaining unit providers, each actual SPE payoff is at least theta(P)=min_A max_B U_p(B,A). Any maximizer of f_p(A) guarantees this against every true last-player best response. Includes ties, repeats and arbitrary incumbent backgrounds.",
+      "refs": [
+        "research/current/customer_attraction/last_two_floor.md"
+      ],
+      "status": "complete current proof with independent exact audit; unrefereed"
+    },
+    {
+      "id": "CA-ALL-N-WELFARE-4N",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "A general but weak all-player welfare guarantee",
+      "detail": "For all n>=2 and all complete-history pure SPE in CAG-MODEL, W>=4(n-1)OPT_n/[n(2n-1)]. It follows from the two last-player floors and K/n for others. Weaker than the current three- and four-player theorems; does not prove general half coverage.",
+      "refs": [
+        "research/current/customer_attraction/last_two_floor.md"
+      ],
+      "status": "complete current proof with independent exact audit; unrefereed"
+    },
+    {
+      "id": "CA-LAST-FLOOR-ALL-PLAYERS-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "A complete four-player SPE refutes the universal theta payoff floor",
+      "detail": "One valid four-player, twelve-topic unit-customer game has global theta=6135346 and first-player payoff 6135345 in a saved complete SPE. All 1885 ordered decision histories are independently replayed. W=24541476, OPT4=24541532, so the half-coverage conjecture is not refuted.",
+      "refs": [
+        "research/current/customer_attraction/uploaded_tool_audit.md"
+      ],
+      "status": "complete current proof with independent exact audit; unrefereed"
     }
   ],
   "hyperedges": [
@@ -6722,6 +6755,91 @@
       "statement": "Only a proof of the full averaged interface would establish its stronger sharp bound; no such proof is registered.",
       "refs": [
         "research/current/customer_attraction/global_new_uniform_portfolio_two.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-LAST-TWO-FLOOR",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-LAST-TWO-FLOOR",
+      "statement": "At every fixed ordered history with exactly two remaining unit providers, each actual SPE payoff is at least theta(P)=min_A max_B U_p(B,A). Any maximizer of f_p(A) guarantees this against every true last-player best response. Includes ties, repeats and arbitrary incumbent backgrounds.",
+      "refs": [
+        "research/current/customer_attraction/last_two_floor.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-LAST-TWO-FLOOR-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-LAST-TWO-FLOOR"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "This result does not settle the half-coverage conjecture for arbitrary player counts.",
+      "refs": [
+        "research/current/customer_attraction/last_two_floor.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-ALL-N-WELFARE-4N",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-LAST-TWO-FLOOR"
+      ],
+      "conclusion": "CA-ALL-N-WELFARE-4N",
+      "statement": "For all n>=2 and all complete-history pure SPE in CAG-MODEL, W>=4(n-1)OPT_n/[n(2n-1)]. It follows from the two last-player floors and K/n for others. Weaker than the current three- and four-player theorems; does not prove general half coverage.",
+      "refs": [
+        "research/current/customer_attraction/last_two_floor.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-ALL-N-WELFARE-4N-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-ALL-N-WELFARE-4N"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "This result does not settle the half-coverage conjecture for arbitrary player counts.",
+      "refs": [
+        "research/current/customer_attraction/last_two_floor.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-LAST-FLOOR-ALL-PLAYERS-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-LAST-FLOOR-ALL-PLAYERS-NO",
+      "statement": "One valid four-player, twelve-topic unit-customer game has global theta=6135346 and first-player payoff 6135345 in a saved complete SPE. All 1885 ordered decision histories are independently replayed. W=24541476, OPT4=24541532, so the half-coverage conjecture is not refuted.",
+      "refs": [
+        "research/current/customer_attraction/uploaded_tool_audit.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-LAST-FLOOR-ALL-PLAYERS-NO-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-LAST-FLOOR-ALL-PLAYERS-NO"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "This result does not settle the half-coverage conjecture for arbitrary player counts.",
+      "refs": [
+        "research/current/customer_attraction/uploaded_tool_audit.md"
       ],
       "status": "recorded within stated scope"
     }

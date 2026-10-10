@@ -87,3 +87,13 @@ The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BO
 `CA-FIVE-LIFT-ROWS-NO` 只否定指定460行松弛模板，未给SPE反例；
 `CA-CREDIBLE-CONTINUATIONS` 给完整可信菜单与精确候选核验接口。
 这些工具和失败机制不改变原设施模型的任何命题。
+
+## 2026-10-10：上传包中的有效接口与失败边界
+
+- `CA-LAST-TWO-FLOOR`：任意固定有序历史后恰两人剩余，两人完整SPE收益各至少为局部θ(P)，由最大化 f_p 的行动和真实末位回复证明。
+- `CA-ALL-N-WELFARE-4N`：全部n≥2，`W≥4(n−1)OPT_n/[n(2n−1)]`；较弱全人数界，不改进已有三人和四人结论。
+- `CA-LAST-FLOOR-ALL-PLAYERS-NO`：四人完整纯SPE有u1=θ−1，否定把末两人θ保证推广为每位玩家保证。不是主猜想反例。
+
+精确身份、对象、量词、依赖与审查边界见现行账本及
+[上传独立审计](research/current/customer_attraction/uploaded_tool_audit.md)、
+[末两人证明](research/current/customer_attraction/last_two_floor.md)。
