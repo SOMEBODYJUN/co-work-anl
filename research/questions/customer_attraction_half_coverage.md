@@ -103,6 +103,20 @@ $$
 
 ## 状态判别
 
+2026-10-10 的新增接口是任意合法固定背景下的
+[三剩余人利润锐界](../current/customer_attraction/three_remaining_profit_bound.md)和
+[四剩余人利润界](../current/customer_attraction/four_remaining_profit_bound.md)：
+分别给 `F3(b)≤(5/3)R_b(实际)`、`F4(b)≤(1499/750)R_b(实际)`，允许全部完整历史平局。
+四人界需要明确聚合背景校正；仅平移零背景根税并不成立。
+这两个定理只比较剩余玩家利润，不能替换为含既有玩家的全局覆盖。
+末四人粗组合接口给 `OPT_m≤(1499m/3000)V4+Σb/(b+1)`，五人时系数1499/600仍不足2。
+下一义务是保留最优主题偏离后的多个真实后继分支及其自身其他行动回复；
+更强松弛点缺少可信策略，不作为目标反例登记。
+
+[上传工具](../current/customer_attraction/uploaded_tool_audit.md)的全SPE集合递推与规范工具相同。
+其双Möbius构造已提升为[独立全历史编译定理](../current/customer_attraction/mobius_compiler.md)，
+安全大偏置本身始终半覆盖，因而不直接给一般反例。
+
 全称证明、某个实例的完整 SPE 证书和有限反例搜索分别记录。
 未找到反例不提升本猜想。工具或文献附件获取失败不产生数学结论。
 若强候选失败，保留确切反例及有效的弱化接口，再决定新的 proof obligation。

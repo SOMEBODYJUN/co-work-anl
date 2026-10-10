@@ -104,3 +104,9 @@ The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BO
 详见[编译证明](research/current/customer_attraction/mobius_compiler.md)和
 [三剩余人证明](research/current/customer_attraction/three_remaining_profit_bound.md)。
 全部为内部独立审查状态，全球新颖性与外部审查未认证；一般人数半覆盖仍开放。
+
+`CA-FOUR-REMAINING-PROFIT-1499-750` 进一步给任意合法固定有序背景、恰四剩余人的
+`F4(b)≤(1499/750)R_b(实际)`。新增聚合背景校正及所有128类非负多项式闭合证明，
+两份独立精确实现和正式文本审查均通过；不声称常数锐性。
+见 [四剩余人完整证明](research/current/customer_attraction/four_remaining_profit_bound.md)。
+非零背景只比较剩余利润，五人及以上的根半覆盖仍未证明。

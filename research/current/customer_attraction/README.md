@@ -61,7 +61,15 @@
 由它和每人K/n推出 `CA-ALL-N-WELFARE-4N` 的较弱通用界。
 `CA-LAST-FLOOR-ALL-PLAYERS-NO` 用独立重放的四人完整策略否定把θ保底扩至所有人。
 上传代码的递推与 `CA-EXACT-PURE-SPE-ALL` 相同；Möbius客户重数构造是本仓库新增接口，
-其通用范围另须证明，不能仅由这个有限反例推广。
+其通用范围由下一项独立证明，不能仅由这个有限反例推广。
+
+[Möbius编译](mobius_compiler.md)现已单独证明子集势的唯一signed客户反演、
+安全正偏置下所有完整历史的无重复行动嵌入，以及正偏置不能保坏福利比的边界。
+它不是任意匿名计数收益表编译；一般猜想没有由此升级。
+[三剩余人背景利润锐界](three_remaining_profit_bound.md)给 `F3(b)≤(5/3)R_b(实际)`；
+[四剩余人背景利润界](four_remaining_profit_bound.md)给 `F4(b)≤(1499/750)R_b(实际)`。
+四人推广的比较聚合需要新背景校正，不能裸移根税。
+两者均经独立内部审查；非零背景的剩余利润与根覆盖严格区分，五人根目标仍开放。
 
 ## 文件地图
 
@@ -98,6 +106,16 @@
 | `research/current/customer_attraction/credible_continuations.md`、`tests/audits/cone_attack_credible_variants.py`、`tests/audits/cone_attack_joint_milp.py` | 完整可信菜单、两棵所选策略及联合候选接口；精确原始/对偶和全历史核验边界。 |
 
 ## 复现入口
+
+新增接口与对应精确审计：
+
+- [上传工具审计](uploaded_tool_audit.md)：`tests/audits/customer_attraction_uploaded.py`。
+- [末两人逐人保底](last_two_floor.md)：`tests/audits/customer_attraction_last_two_floor.py`。
+- [Möbius编译](mobius_compiler.md)：`tests/audits/mobius_compiler_audit.py`。
+- [三剩余人利润界](three_remaining_profit_bound.md)：`tests/audits/customer_attraction_three_remaining_profit.py` 和 `customer_attraction_three_remaining_independent.py`。
+- [四剩余人利润界](four_remaining_profit_bound.md)：`tests/audits/customer_attraction_four_remaining_profit.py` 和 `customer_attraction_four_remaining_independent.py`。
+
+以上审计默认只打印新输出，`--output` 拒绝覆盖冻结报告；已登记报告见 `evidence/runs/2026-10-10/`。
 
 从仓库根运行：
 

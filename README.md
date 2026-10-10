@@ -21,6 +21,9 @@
 嵌入合法共同目录unit CAG，并严格证明安全大偏置自身不能反驳半覆盖。
 [任意背景三剩余人的利润锐界](research/current/customer_attraction/three_remaining_profit_bound.md)
 给 `F3(b)≤(5/3)R_b(实际)`；非零背景中的剩余利润与覆盖必须区分。
+[任意背景四剩余人的利润界](research/current/customer_attraction/four_remaining_profit_bound.md)
+给 `F4(b)≤(1499/750)R_b(实际)`，新增背景校正修复直接平移根税聚合的失败；
+同样保留全部真实历史回复，尚不能闭合五人根半覆盖。
 [固定背景两人税界](research/current/customer_attraction/two_remaining_tax.md)仍成立，
 但[首步机会成本桥](research/current/customer_attraction/tax_bridge_counterexample.md)在空背景三人即失败，
 [一般背景总税界](research/current/customer_attraction/general_tax_counterexample.md)也有完整根 SPE 内的反例。
