@@ -13,6 +13,10 @@
 [任意人数结构子类定理](research/current/customer_attraction/disjoint_maxima_bound.md)证明：
 删除共同核心后，若不同极大主题互不相交，则每个完整纯 SPE 满足锐界 `2−1/m`；
 允许极大主题内部的子主题任意交叠，包含全部 laminar 目录。
+[上传工具独立审计](research/current/customer_attraction/uploaded_tool_audit.md)确认其全平局递推
+与规范工具一致；新增四人完整证书否定“每人收益都至少为末位最坏最佳回应值θ”。
+[末两人逐人保底](research/current/customer_attraction/last_two_floor.md)则成立，
+并给出较弱全人数界 `W≥4(n−1)OPT_n/[n(2n−1)]`，不改变五人及以上的开放状态。
 [固定背景两人税界](research/current/customer_attraction/two_remaining_tax.md)仍成立，
 但[首步机会成本桥](research/current/customer_attraction/tax_bridge_counterexample.md)在空背景三人即失败，
 [一般背景总税界](research/current/customer_attraction/general_tax_counterexample.md)也有完整根 SPE 内的反例。

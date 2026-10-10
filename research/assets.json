@@ -1402,7 +1402,10 @@
         "CA-DISJOINT-MAXIMA-2M1",
         "CA-UNIFORM-PORTFOLIO-TWO",
         "CA-FIVE-LIFT-ROWS-NO",
-        "CA-CREDIBLE-CONTINUATIONS"
+        "CA-CREDIBLE-CONTINUATIONS",
+        "CA-LAST-TWO-FLOOR",
+        "CA-ALL-N-WELFARE-4N",
+        "CA-LAST-FLOOR-ALL-PLAYERS-NO"
       ],
       "status": "sharp universal three-player 5/3 and universal four-player 1499/750; general m>=5 half coverage open",
       "applies_when": [
@@ -1411,7 +1414,7 @@
         "all pure SPE choices, including arbitrary history-dependent ties",
         "integer type multiplicity means distinct unit clones"
       ],
-      "produces": "all attainable pure SPE terminals and full certificates; sharp three-player 5/3 and four-player 1499/750 universal bounds; exact failed tax bridges; rational full-strategy cones; last-node root-tax diagnostic; sharp arbitrary-m disjoint-maximal-petal class; averaged two-remaining-player deviation interface; exact five-player relaxation obstruction; credible continuation sampler and joint candidate interface",
+      "produces": "all attainable pure SPE terminals and full certificates; sharp three-player 5/3 and four-player 1499/750 universal bounds; exact failed tax bridges; rational full-strategy cones; last-node root-tax diagnostic; sharp arbitrary-m disjoint-maximal-petal class; averaged two-remaining-player deviation interface; exact five-player relaxation obstruction; credible continuation sampler and joint candidate interface; local last-two individual payoff floor, weak general-n bound, and independently validated universal-theta counterexample; uploaded recurrence is mathematically identical to the existing solver",
       "implementation": [
         "customer_attraction/model.py",
         "customer_attraction/exact.py",
@@ -1437,7 +1440,9 @@
         "research/current/customer_attraction/disjoint_maxima_bound.md",
         "research/current/customer_attraction/global_new_uniform_portfolio_two.md",
         "research/current/customer_attraction/five_player_lift_obstruction.md",
-        "research/current/customer_attraction/credible_continuations.md"
+        "research/current/customer_attraction/credible_continuations.md",
+        "research/current/customer_attraction/last_two_floor.md",
+        "research/current/customer_attraction/uploaded_tool_audit.md"
       ],
       "tests": [
         "tests/test_customer_attraction.py",
@@ -1457,7 +1462,9 @@
         "tests/audits/customer_attraction_uniform_portfolio.py",
         "tests/audits/customer_attraction_five_lift.py",
         "tests/audits/cone_attack_credible_variants.py",
-        "tests/audits/cone_attack_joint_milp.py"
+        "tests/audits/cone_attack_joint_milp.py",
+        "tests/audits/customer_attraction_last_two_floor.py",
+        "tests/audits/customer_attraction_uploaded.py"
       ],
       "records": [
         "evidence/runs/2026-10-09/customer_attraction_search.json",
@@ -1476,7 +1483,9 @@
         "evidence/runs/2026-10-09/customer_attraction_disjoint_maxima.json",
         "evidence/runs/2026-10-09/customer_attraction_uniform_portfolio.json",
         "evidence/runs/2026-10-09/customer_attraction_five_lift.json",
-        "evidence/runs/2026-10-09/cone_attack_credible_selected.json"
+        "evidence/runs/2026-10-09/cone_attack_credible_selected.json",
+        "evidence/runs/2026-10-10/customer_attraction_uploaded.json",
+        "evidence/runs/2026-10-10/customer_attraction_last_two_floor.json"
       ],
       "examples": [
         "examples/customer_attraction/residual_counterexample.json",
@@ -1492,7 +1501,12 @@
       ],
       "limit": "Three-player sharp 5/3 and four-player 1499/750 are complete internally audited universal proofs within exact player counts. Arbitrary m>=5, root total tax and four-player sharpness remain open. First-step and general-background tax are refuted. Sampled cones are not all strategies. No external review or novelty certification. The structural arbitrary-m theorem requires disjoint maximal petals after common-core deletion. Averaged arbitrary-m deviation interface is open. The five-player obstruction concerns auxiliary O and a relaxed row system, not actual OPT or SPE. MILP numeric outputs require exact independent validation.",
       "sources": [
-        "history/source/notes/customer_attraction/origin_2026-10-09.md"
+        "history/source/notes/customer_attraction/origin_2026-10-09.md",
+        "history/source/notes/customer_attraction/uploaded_2026-10-10/RESEARCH.md",
+        "history/source/notes/customer_attraction/uploaded_2026-10-10/exact_spe.py",
+        "history/source/notes/customer_attraction/uploaded_2026-10-10/auxiliary_counterexample.json",
+        "history/source/notes/customer_attraction/uploaded_2026-10-10/verification_report.json",
+        "history/source/notes/customer_attraction/uploaded_2026-10-10/SHA256.json"
       ]
     }
   ]

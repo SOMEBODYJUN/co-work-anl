@@ -27,6 +27,10 @@
 | CA-FIVE-LIFT-ROWS-NO | 五人两条根偏离路径的明确460行必要条件松弛，非负有理13主题membership和辅助O，W=1。 | 23mask精确可行点有O>2W，故这些行不能单独证明O≤2W；O不是真实OPT，未给完整策略，不是主猜想反例。 | [完整变量、460行及证书边界](customer_attraction/five_player_lift_obstruction.md)，独立逐行重构与精确审计；外审未记录。 |
 | CA-CREDIBLE-CONTINUATIONS | 固定CAG整数单位客户实例、可实现目标终局和完整有序历史；固定人数/标签数的策略锥。 | 可信孩子菜单覆盖全部完整SPE；均匀模式有限全支持。联合MILP只生成候选，M=m有严格证明；两项所选锥比例8/5、7/5不涵盖全部策略。 | [递归菜单及联合候选接口](customer_attraction/credible_continuations.md)，两棵781节点完整策略、整数原始及精确最优对偶审计，12路径接口回归；外审未记录。 |
 
+| CA-LAST-TWO-FLOOR | CAG-MODEL，任意完整有序历史，恰两人剩余；任意非负整数背景。 | 两人实际收益各≥局部θ(P)，且最大化 f_p 的主题对所有真实末位最佳回应均保证该值；合法长度n−2背景时≥全局θ_n。 | [完整配对势差证明](customer_attraction/last_two_floor.md)，独立定义级全策略及恒等式审计；外审/新颖性未认证。 |
+| CA-ALL-N-WELFARE-4N | CAG-MODEL，任意n≥2和每个完整历史纯SPE，单位均分、共同有限非空目录。 | W≥4(n−1)OPT_n/[n(2n−1)]；三人8/15、四人3/7均弱于现行结论；不解决五人以上半覆盖，不声称锐性。 | [末两人保底与K/n的完整合并](customer_attraction/last_two_floor.md)，精确内部审计；外审未记录。 |
+| CA-LAST-FLOOR-ALL-PLAYERS-NO | CAG-MODEL，四人、十二主题、正整数类型重数代表不同单位客户，给定完整纯SPE。 | θ=6135346>u1=6135345；否定所有玩家u_i≥θ的辅助断言。W=24541476、OPT4=24541532，未反驳主目标。 | [上传工具比较、保存策略与定义级独立审计](customer_attraction/uploaded_tool_audit.md)，全部1885有序历史及完整偏离验证；外审未记录。 |
+
 主目标 [Q-CAG-HALF](../questions/customer_attraction_half_coverage.md) 仍开放。
 本分支的客户固定均分，不使用原设施模型的客户 NE 或因子 2 存在性。
 
