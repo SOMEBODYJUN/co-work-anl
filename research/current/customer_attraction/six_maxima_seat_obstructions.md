@@ -142,3 +142,5 @@ python3 tests/audits/customer_attraction_six_maxima_seat_obstructions.py
 
 The frozen verification is
 [`customer_attraction_six_maxima_seat_obstructions_audit.json`](../../../evidence/runs/2026-10-10/customer_attraction_six_maxima_seat_obstructions_audit.json).
+
+The subsequent [CA-SIX-MAXIMA-HALF joint-budget theorem](six_maxima_joint_bound.md) proves unrestricted six-maxima half coverage for every player count. These exact path examples retain their stated role as obstructions only to summing the dynamic-seat floors; the joint theorem adds true action membership, final maximal best responses and valid last-two tax information.

@@ -144,7 +144,7 @@ $$
 
 [CA-FIVE-MAXIMA-HALF](../current/customer_attraction/dynamic_maxima_bound.md)已完成任意人数、
 至多五个不同包含极大主题、任意内部子主题和全部历史平局的半覆盖。
-一般目录仍只在n≤4被无条件解决；n≥5、至少六个极大主题的交叉关联需要新支付机制。
+一般目录仍只在n≤4被无条件解决；n≥5、至少七个极大主题的交叉关联仍需要新支付机制；新CA-SIX-MAXIMA-HALF已覆盖至多六极大的任意关联。
 新逐历史D_t与私有/共享包络提供合法接口；它们在全s范围给保底公式，未自动达到因子二。
 
 
@@ -152,8 +152,10 @@ $$
 
 [CA-FIVE-REPLY-UPPER](../current/customer_attraction/five_player_reply_bound.md)现将一般五人界改善至
 493266145873827/234749688354196≈2.101243，仍未达到2；旧claim保留原精确常数。
-半覆盖未解决结构从至少六个极大主题开始；n≥5仍需共同策略下的全局跨节点预算。
+半覆盖未解决结构经新joint定理后从至少七个极大主题开始；n≥5仍需共同策略下的全局跨节点预算。
 [安全值边界](../current/customer_attraction/continuation_security_barriers.md)证明
 普遍去相关及真实根菜单自由混合均不足，其中菜单失败可对每n≥3构造完整SPE。
 不限制对偶组合的`u_i≥v_n`或更弱`W≥nv_n`仍开放；若使用菜单之外的主题组合，
 需证明新增比较可由实际终局收益支付，不能借静态minimax量词暗中替换顺序回复。
+
+[CA-SIX-MAXIMA-HALF](../current/customer_attraction/six_maxima_joint_bound.md)现已覆盖至多六个不同极大覆盖、任意人数和任意内部子主题的全部完整历史纯SPE。n5的52完整路由证书与n6…8统一无路径dual均作精确客户级核验；一般目录n≥5、至少七极大的主问题仍开放。

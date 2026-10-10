@@ -20,8 +20,15 @@
 内部子主题与交叉关联不限；n≥5还得到 `OPT_n=U≤2W−c`。
 新全历史动态保底 `u_i≥c/n+(U−c)/D_t` 与私有/共享混合包络适用于任意极大主题数；
 五人五极大临界情形有 `W≥c+5P/9+(67027/125400)V`。
-此处全union不是小人数的OPT；一般目录五人及以上的剩余难点至少需要六个极大覆盖。
+此处全union不是小人数的OPT；经后续joint定理，一般目录五人及以上的剩余难点至少需要七个极大覆盖。
 该新类与不限极大主题数的laminar类仍不可比较，原三极大证明保留为另一静态加权机制。
+
+新 [CA-SIX-MAXIMA-HALF](six_maxima_joint_bound.md) 已将**至多六个不同包含极大覆盖**的任意人数半覆盖
+完全闭合：任意私有/共享关联、任意内部子主题、全部完整历史纯SPE有 `OPT_n≤2W`；n≥5还 `U≤2W`。
+末位满极大行动引理保留真实客户会员J；mixed逐人保底、末BR及末两人税用同一客户级dual支付。
+n5全部52完整路由的整数/10000证书核20080列；n6…8同一小分数path-free dual核14112列和396压缩
+恒等式，两份精确审计及独立数学重构通过。本新机制不普遍声称core强化，旧强core类各自保留。
+一般目录主目标仍开放，未覆盖范围现在需要n≥5且至少七个不同极大覆盖。
 
 新 [CA-SIX-MAXIMA-NO-PRIVATE-HALF](six_maxima_no_private.md) 进一步覆盖**至多六极大且没有全局私有非core客户**的目录：
 每个完整历史纯SPE、任意n≥1均有 `OPT_n≤2W`，n≥5还 `OPT_n=U≤2W−c`。
@@ -29,7 +36,7 @@
 内部子主题仍任意，可遗漏共同core；独立完整内部审查和精确复验通过。
 同稿 [CA-SIX-MAXIMA-NINE-PLUS-HALF](six_maxima_no_private.md#5-nine-or-more-providers-unrestricted-six-maxima)
 不限制私有/共享关联，证明所有n≥9的六极大目录 `OPT_n=U≤2W−c`。
-因此无限制六极大目前只余n=5…8；无私有客户类覆盖这些临界人数。
+本推论保留n≥9的更强core界；新joint定理已补齐n5…8的普通半覆盖，无私有客户类仍保留强core界。
 
 新增 [至多三个极大覆盖](three_maxima_bound.md) 任意人数半覆盖：n≥2时
 `OPT_n≤U≤c+2(W−c)`，允许内部子主题和交叉关联；与不限极大主题数的laminar类不可比较。
@@ -257,7 +264,7 @@ python3 tests/audits/customer_attraction_three_remaining_independent.py
 
 ## 动态预算资产与后继研究入口
 
-- `research/current/customer_attraction/dynamic_maxima_bound.md`：全历史动态路由预算、私有/共享单调包络、四极大逐席位强化和五极大全人数半覆盖；攻击六极大以上交叉关联时先读§5及范围说明。
+- `research/current/customer_attraction/dynamic_maxima_bound.md`：全历史动态路由预算、私有/共享单调包络、四极大逐席位强化和五极大全人数半覆盖；攻击七极大以上交叉关联时先读§5及范围说明。
 - `tests/audits/customer_attraction_dynamic_maxima.py` 与 `customer_attraction_dynamic_maxima_independent.py`：互不导入规范求解核心的精确客户系数、完整续局菜单和有序证书复验。
 - `evidence/runs/2026-10-10/customer_attraction_dynamic_maxima_review.md`：先自主重构再逐行读作者稿的审查，说明core总收益支配与小人数union边界。
 
@@ -301,3 +308,12 @@ python3 tests/audits/customer_attraction_three_remaining_independent.py
 - [最优末节点查询反例](optimal_last_query_counterexample.md)：`tests/audits/customer_attraction_optimal_last_query.py` 和 `customer_attraction_optimal_last_query_independent.py`；完整400历史策略、2800精确比较与唯一最优性均已重放。
 
 这两项仍保留一般目录的逐人/聚合混合安全值桥、根总税和主半覆盖目标为开放义务。
+
+## 六极大全范围：真实行动会员joint预算
+
+- `research/current/customer_attraction/six_maxima_joint_bound.md`：CA-SIX-MAXIMA-HALF自足证明、末位满极大引理、52完整五人路由及n6…8同一无路径dual。
+- `evidence/certificates/customer_attraction/six_maxima_joint_bound.json`：52套整数/10000显式乘子及统一小分数乘子；不以发现LP为证明前提。
+- `tests/audits/customer_attraction_six_maxima_joint.py` 与 `_independent.py`：互不导入的raw客户系数重构，完整20080+14112列与396压缩范围核验。
+- `evidence/runs/2026-10-10/customer_attraction_six_maxima_joint_final.json`、`_independent.json` 与 `_math_review.json`：稳定正文哈希、精确结果和独立数学审查；初始及v2记录保留原冻结身份。
+
+旧席位机制障碍仍有效；它们说明为何只加保底不能替代真实会员与末位响应信息。一般五人以及七极大以上主目标仍开放。

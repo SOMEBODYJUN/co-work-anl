@@ -2,8 +2,7 @@
 
 Direct proof, 2026-10-10; independently reconstructed internally. Registered claim IDs:
 `CA-SIX-MAXIMA-NO-PRIVATE-HALF`; Section 5 adds
-`CA-SIX-MAXIMA-NINE-PLUS-HALF`. The unrestricted six-maxima case remains
-open for `n=5,...,8`. External peer review and novelty have not been certified. The finite
+`CA-SIX-MAXIMA-NINE-PLUS-HALF`. The separate [CA-SIX-MAXIMA-HALF joint-budget theorem](six_maxima_joint_bound.md) now also covers the unrestricted critical counts `n=5,...,8`. External peer review and novelty have not been certified. The finite
 rational coefficient certificates in Section 4 are part of this proof;
 the finite SPE tests in Section 8 are a separate implementation audit.
 
@@ -363,9 +362,7 @@ Thus (NP13), the same positive series bound for `log3`, and `n>=9` give
 For comparison, the exact endpoint sum is
 `mathcal B_9=229324183/456326325>1/2`. Equations (NP22)--(NP25) imply
 `W>=c+(P+V)/2`, proving (NP20). All six maxima fit when `n>=9`, so
-`OPT_n=U`. The unrestricted six-maxima half-coverage question therefore
-remains only for `n=5,6,7,8`; the no-private theorem above covers those
-counts under (NP2).
+`OPT_n=U`. This corollary supplies the stronger core bound for `n>=9`. The separate [joint-budget theorem](six_maxima_joint_bound.md) now covers ordinary half coverage at `n=5,6,7,8` without (NP2); the no-private theorem above retains its stronger stated core bound.
 
 Independent internal review checked the private polynomial inequalities,
 the shared identity, the decreasing correction, and all six-or-fewer-maxima
