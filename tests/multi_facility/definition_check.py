@@ -53,6 +53,7 @@ def check_certificate(cert, all_layouts=False):
     assert actual == expected and len(cert['deviations']) == len(expected)
     used_layouts = {layout}
     alpha = Fraction(cert['factor'])
+    assert alpha >= 1, "The approximation factor must be at least 1"
     ratios = [Fraction(1)]
     for d in cert['deviations']:
         f, r = d['facility'], d['site']
