@@ -5,8 +5,8 @@
 四人完整证书提取精确失败边界 `CA-ADAPTIVE-DECORRELATION-NO`。
 另给 `CA-ACTUAL-ROOT-TAIL-MENU-NO` 的36客户证书，以及
 `CA-CREDIBLE-MENU-SECURITY-NO-ALL-N` 的每个 `n≥3` 完整构造。
-它没有证明或反驳任意人数半覆盖，也没有证明或反驳
-[混合安全值页](oblivious_security.md) 的 `u_i≥v_n` 或 `W≥nv_n` 桥。
+本页的菜单反例本身没有反驳真正安全值桥。后续[34客户完整SPE](individual_security_counterexample.md)
+已严格否定逐人 `u_i≥v_n`；聚合 `W≥nv_n` 和任意人数半覆盖仍开放。
 下面把已证恒等式、有限反例证书和仍开放的接口分别写出。
 
 ## 1. 为什么去相关会闭合混合安全值桥
@@ -342,7 +342,8 @@ python3 tests/audits/customer_attraction_root_tail_menu.py
 的精确核验；任意 `n≥3` 菜单构造由第6节证明和既有全历史Möbius编译定理支持。
 有限编译回归不替代普遍构造。尚未经过外部同行评审或世界新颖性认证。
 
-一般真实菜单桥 (M) 和普遍去相关 (D) 均已被否定。仍开放的是不限制对偶组合的
-逐人桥 `u_i≥v_n`、更弱总桥 `W≥nv_n`，以及原目标 `OPT_n≤2W`。
+一般真实菜单桥 (M) 和普遍去相关 (D) 均已被否定。后续真正逐人桥也由
+[34客户反例](individual_security_counterexample.md)否定；仍开放的是不限制对偶组合的
+总桥 `W≥nv_n`，以及原目标 `OPT_n≤2W`。
 在当前收益上限之外扩展真实菜单时，必须说明新增比较组合的跨分支覆盖预算。
 不能把正确静态 minimax 的存在本身当成该预算。

@@ -50,7 +50,7 @@
 | CA-LAMINAR-INCIDENCE-THETA | CAG-MODEL，任意n≥1；客户在不同极大覆盖主题间的关联索引集合组成laminar家族；任意内部子主题、全部有序历史纯SPE。 | 每个合法前缀中所有剩余玩家最终收益各≥全局θ_n；不要求主题目录自身laminar或终局PNE。 | [真实最大交叠保护及全历史归纳](customer_attraction/laminar_incidence_bound.md)，独立重构与精确审计；外审/新颖性未认证。 |
 | CA-LAMINAR-INCIDENCE-MAXIMA-2M1 | 同上结构类；c为所有极大覆盖的共同核心大小，内部主题可遗漏核心。 | OPT_n≤c+(2−1/n)(W−c)，常数锐，严格扩展sunflower极大目录；一般交叠目录不涵盖。 | [逐客户预算及锐性证明](customer_attraction/laminar_incidence_bound.md)，独立内部审查与完整历史核验。 |
 | CA-AGGREGATE-LAST-FLOOR-NO | CAG-MODEL，每个n≥3均存在有限共同目录单位客户实例与完整纯SPE。 | W=nθ_n−1的无限构造；36客户三人六主题实例W=34、θ=12、OPT=36。否定聚合W≥nθ，未反驳半覆盖。 | [紧凑完整策略、重复前缀预算与Möbius族](customer_attraction/aggregate_theta_counterexample.md)，独立直接单位客户重放及精确审计。 |
-| CA-OBLIVIOUS-MIXED-SECURITY-2N1 | CAG-MODEL任意n≥1；当前人随机主题，其余n−1竞争主题可联合固定但不观察抽样实现。 | v_n≥OPT_n/(2n−1)，每个n均锐；u_i≥v_n或W≥nv_n的可信顺序SPE桥仍开放。 | [有限minimax、Jensen与共同目录预算](customer_attraction/oblivious_security.md)，独立审查与精确原始/对偶证书。 |
+| CA-OBLIVIOUS-MIXED-SECURITY-2N1 | CAG-MODEL任意n≥1；当前人随机主题，其余n−1竞争主题可联合固定但不观察抽样实现。 | v_n≥OPT_n/(2n−1)，每个n均锐；逐人u_i≥v_n现由CA-INDIVIDUAL-SECURITY-NO否定；聚合W≥nv_n仍开放。 | [有限minimax、Jensen与共同目录预算](customer_attraction/oblivious_security.md)，独立审查与精确原始/对偶证书。 |
 | CA-ROOT-TAX-ORDER-COUNTS-NO | CAG-MODEL，每个n≥4；同一静态PNE且完整SPE可达终局计数。 | 可信SPE顺序W+τ−OPT=1，某非SPE重排OPT−W−τ=(n−1)(n−3)/n>0；只排除仅看计数的根税证明。 | [§7无限族与完整策略](customer_attraction/two_remaining_tax.md)，独立重构、n=4全树及47个参数精确核验。 |
 | CA-THREE-MAXIMA-HALF | CAG-MODEL，至多三个不同包含极大覆盖，任意内部子主题，任意n≥1、全部有序历史纯SPE；c为极大共同核心。 | n≥2时OPT_n≤U≤c+2(W−c)；n=1或唯一极大主题时最优。允许交叉关联，与不限极大主题数的laminar类不可比较；不声称福利常数锐。 | [全历史superset席位与共享union预算](customer_attraction/three_maxima_bound.md)，两路精确审计及独立证明重构；外审/新颖性未认证。 |
 | CA-FIVE-UPPER-221-100 | CAG-MODEL，恰五位单位玩家、任意有限共同目录、零根背景、每个完整有序历史纯SPE，允许空/重复主题。 | OPT_5≤[24236714656727/10967499015623]W≤(221/100)W；精确系数仍大于2。 | [两条真实中途偏离及21-slack恒等式](customer_attraction/five_player_bound.md)，1024客户型余项与独立O系数经两份互不导入Fraction程序核对；不声称锐性、背景版或六人以上。 |
@@ -76,6 +76,15 @@
 | CA-AGGREGATE-DECORRELATION-NO | CAG-MODEL，四人六主题89单位客户的完整259历史SPE，p在标签1,2各半。 | 总kappa=sum(D_i−C_i)=−1/48，后三位均0；激励松弛和43/12，补偿预算57/16>0。W85、OPT89、v4=508643/26546，不是BR或GB反例；既有36例也已否定总kappa。 | [准确预算与89客户证书](customer_attraction/global_security_budget_boundaries.md)，1554完整比较和216静态竞争元组的匹配原始/对偶经两路独立核验。 |
 | CA-ONPATH-DECOUPLED-BUDGET-NO | 既有三人六主题36单位客户完整SPE，p在未用X2,Y2各半。 | 实际(10,12,12)、所有e_i=0，kappa=(−1,1/2,0)，W−sum C_i=−1/2。因此包含激励松弛的全p预算GB为假；p静态安全值25/3<v3=10，W−3v3=4，不排除最优p版本或BR。 | [三真实查询矩阵及完整证明](customer_attraction/global_security_budget_boundaries.md)，258动作比较、原输入/策略一致性及静态安全值双路独立审计。 |
 | CA-SECURITY-CONE-DUAL | 固定人数、标签数、全部有序历史形式策略sigma和有理混合p；固定完整SPE客户锥，允许相同覆盖标签；不同覆盖合同需策略已有合法实现。 | 全锥W≥n min_B beta_B(p)·w等价于存在不受限静态Q、非负全部节点乘子lambda和余项r，c−n sum Q beta=Gamma^T lambda+r。普遍证书存在等价于BR；有理正LP见证可缩放成真正反例。 | [minimax/Farkas完整推导及目录合同](customer_attraction/security_cone_duality.md)，独立数学审查；是既有策略锥的标准安全值扩展，未证明普遍证书存在或BR，外审未记录。 |
+
+| CA-INDIVIDUAL-SECURITY-NO | CAG-MODEL，三人六个两两不同覆盖、34单位客户、全部43有序历史的指定纯SPE。 | u1=29/3<v3=2411/246，严格差11/82；安全最优p唯一。W32、OPT34，聚合安全桥与原目标均成立；三是此辅助失败的最小人数，不声称主题/客户最小。 | [完整策略、精确原始/对偶及可逆性证明](customer_attraction/individual_security_counterexample.md)，两路互不导入全树/静态审计；外审未记录。 |
+| CA-IID-SECURITY-BENCHMARK | 任意共同有限非空目录、n≥1、非负客户类型质量；整数质量为不同单位客户。 | 期望harmonic势的最大者恰为静态对称混合Nash；其期望覆盖Z_n唯一且nv_n≤Z_n≤U。W≥Z_n是更强开放桥，不是逐人保证。 | [凹性、单纯形条件及静态对偶完整证明](customer_attraction/iid_security_and_flow_barriers.md)，独立数学重构；外审/新颖性未认证。 |
+| CA-FULL-TREE-AVERAGING-NO | 指定原36客户三人形式策略、六主题uniform q、全部非空兴趣类型。 | 任意非负按深度或43节点权重，在每节点先按q平均全部偏离，再加静态Nash乘子与非负余项，都不能支付c−ψ(q)。两项精确分离向量不满足完整SPE；未否定未压缩证书或任何主猜想。 | [流恒等式及六/十五类型分离证明](customer_attraction/iid_security_and_flow_barriers.md)，两路定义级精确审查；范围仅该非负线性模板。 |
+| CA-SELECTED-SECURITY-CONES | 保存的36/61/89来源三棵完整形式策略，任意非负类型重数使其成为完整SPE；五个固定游戏各指定一个安全最优p。 | 三个整个锥都有W≥nv_n，两棵四人锥逐人亦成立；另外五游戏的全部完整SPE的给定最优p预算均严格正。分别为全锥恒等式与有限全策略枚举，不是任意策略定理。 | [共同Q支付及独立菜单拼接证明](customer_attraction/selected_security_cones.md)，4914客户系数恒等式、全部有序菜单/达到策略精确核对。 |
+| CA-TAIL-FOUR-ALL-N | CAG-MODEL，任意n≥4、共同有限非空目录、每个完整历史纯SPE。 | OPT_n≤(n/2−1/750)W；无目录结构限制、系数仍随n增长，不解决常数二。一般k公式要求任意合法背景β_k≤k/2。 | [比较索引计数、真实K/n预算及完整消元](customer_attraction/tail_profit_lift.md)，依赖任意背景末四人利润定理；独立数学审查通过，外审未记录。 |
+| CA-SEVEN-MAXIMA-N7-PLUS | CAG-MODEL，恰七不同极大覆盖、任意内部子主题、任意n≥7、每个完整历史纯SPE。 | U=OPT_n≤2W。来源证明完整且独立审查通过，现行页仅依赖和资产概述；恰七极大n5/n6仍缺16/44轨道，不宣布任意n完成。 | [来源证明checkpoint及独立审查](customer_attraction/seven_maxima_checkpoint.md)，24384 literal列、988压缩列及n≥13解析case已审；现行全文重构未作，外审未记录。 |
+
+| CA-RANDOM-PREFIX-EXCHANGE-NO | CAG-MODEL，三人三不交主题，五单位客户及完整13历史SPE；随机最优比较索引排列的前两行动被强制。 | 最新强制成员期望4/3<前两总收益一半3/2，差1/6；唯一最优支持ABC。末位相同负载最优收益仍相等；不反驳uniform接口或半覆盖。 | [完整策略及六分支直接证明](customer_attraction/random_position_exchange_boundary.md)，39比较精确审计；外审未记录。 |
 
 ## 2026-10-09 EPTAS 预研与近带精确补全
 

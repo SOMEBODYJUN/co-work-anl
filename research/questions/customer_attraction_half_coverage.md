@@ -1,5 +1,12 @@
 # Q-CAG-HALF：任意纯 SPE 是否覆盖最优的一半？
 
+**最新覆盖说明，2026-10-10：** 真正逐人安全值桥已由34客户完整SPE否定，聚合桥仍开放。
+完整树按深度甚至每节点平均偏离的非负支付模板亦有精确障碍，见
+[静态iid及流边界](../current/customer_attraction/iid_security_and_flow_barriers.md)。
+[两个一般目录攻坚提示词](customer_attraction_general_handoff.md)列出聚合桥和直接半覆盖的真实节点义务。
+七极大n≥7有完整已审来源checkpoint；小人数n5/n6仍缺16/44轨道，
+不能宣布七极大任意人数或一般目录完成。
+
 **2026-10-10 当前覆盖说明：** 原半覆盖目标仍开放，至多六极大主题类已完成。
 此前优先建议的空背景根总税已由[61客户完整SPE](../current/customer_attraction/root_tax_counterexample.md)严格否定。
 全p的补偿去相关预算亦由[既有36客户证书](../current/customer_attraction/global_security_budget_boundaries.md)否定。
@@ -162,7 +169,8 @@ $$
 半覆盖未解决结构经新joint定理后从至少七个极大主题开始；n≥5仍需共同策略下的全局跨节点预算。
 [安全值边界](../current/customer_attraction/continuation_security_barriers.md)证明
 普遍去相关及真实根菜单自由混合均不足，其中菜单失败可对每n≥3构造完整SPE。
-不限制对偶组合的`u_i≥v_n`或更弱`W≥nv_n`仍开放；若使用菜单之外的主题组合，
+不限制对偶组合的逐人`u_i≥v_n`现已被[34客户完整SPE](../current/customer_attraction/individual_security_counterexample.md)否定；
+更弱`W≥nv_n`仍开放。若使用菜单之外的主题组合，
 需证明新增比较可由实际终局收益支付，不能借静态minimax量词暗中替换顺序回复。
 
 [CA-SIX-MAXIMA-HALF](../current/customer_attraction/six_maxima_joint_bound.md)现已覆盖至多六个不同极大覆盖、任意人数和任意内部子主题的全部完整历史纯SPE。n5的52完整路由证书与n6…8统一无路径dual均作精确客户级核验；一般目录n≥5、至少七极大的主问题仍开放。

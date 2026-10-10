@@ -1,5 +1,17 @@
 # 失败路线与仍可使用的边界
 
+## 2026-10-10：真正逐人混合安全值桥与平均全树支付均失败
+
+[34客户完整SPE](research/current/customer_attraction/individual_security_counterexample.md)严格给
+u1=29/3<v3=2411/246，差11/82，安全最优分布唯一；不是受限菜单或非最优p。
+逐人桥已否定；下方旧“逐人桥仍开放”是历史状态。较弱W≥nv_n及原半覆盖仍开放。
+[全树平均模板](research/current/customer_attraction/iid_security_and_flow_barriers.md)即使允许全部43节点
+独立非负权重，若在节点内先按uniform q平均偏离，也不能支付iid目标；精确分离向量
+不满足完整Gamma，故不是主猜想反例。该失败只限制指定非负线性证书模板。
+[三指定完整策略锥](research/current/customer_attraction/selected_security_cones.md)整个重数空间已有
+聚合安全证书；继续在这些策略调重数不能产生聚合反例。五固定游戏指定最优p的
+全部SPE预算也已穷尽。应换完整策略锥或保留每个真实偏离的支付机制。
+
 ## 2026-10-10：实际根总税及全p补偿去相关预算均已失败
 
 [61客户四人完整SPE](research/current/customer_attraction/root_tax_counterexample.md)给OPT61>W38+tau45/2，

@@ -1,5 +1,14 @@
 # 顺序客户吸引博弈：共同目录的半覆盖猜想
 
+**2026-10-10 一般机制新边界：** [34客户完整SPE](individual_security_counterexample.md)
+否定真正逐人u_i≥v_n，安全最优p还是唯一的；后继补偿仍可使W≥nv_n。
+[静态iid基准与完整树平均障碍](iid_security_and_flow_barriers.md)证明节点内偏离不能先平均而无损；
+[三指定完整锥](selected_security_cones.md)已排除在旧策略中调客户重数的聚合攻击。
+[末四人向任意n的合法提升](tail_profit_lift.md)给无结构弱界，仍不解决常数二。
+[随机最优前缀的席位交换](random_position_exchange_boundary.md)另有五客户严格反例，不能借随机排列跳过真实回复。
+优先交接[两个一般目录任务](../../questions/customer_attraction_general_handoff.md)。
+[七极大n≥7来源checkpoint](seven_maxima_checkpoint.md)已独立审查，现行页为依赖概述；n5/n6缺口保持明确。
+
 最新失败边界：[CA-ROOT-TAX-NO](root_tax_counterexample.md)否定实际空背景根总税，
 不是原半覆盖反例。[总去相关及全p补偿预算](global_security_budget_boundaries.md)也均有完整SPE反例；
 尤其上传稿未排除的GB已由既有36客户证书否定。
@@ -65,7 +74,7 @@ n5全部52完整路由的整数/10000证书核20080列；n6…8同一小分数pa
 都有锐界 `OPT_n≤|C|+(2−1/n)(W−|C|)`。这不是一般目录结论。
 [聚合θ反例](aggregate_theta_counterexample.md)证明每个n≥3都可能 `W<nθ_n`；
 36客户三人证书经独立精确核验。[混合安全值](oblivious_security.md)仍有锐下界
-`v_n≥OPT_n/(2n−1)`，但可信顺序续局下的逐人或总预算桥保持开放。
+`v_n≥OPT_n/(2n−1)`；逐人桥现已被34客户完整SPE否定，聚合总预算桥仍开放。
 
 新增 [CA-MOBIUS-SECURITY-BIAS-BARRIER](compiler_security_barrier.md)：标准充分正偏置编译器的每个完整根SPE都满足 `u_i−v_n≥1/4`、`W−nv_n≥n/4`；显式静态对偶扩入全部不同标签背景，无需真实回复菜单。
 小正偏置仍可给 [CA-OPTIMAL-LAST-QUERY-SUM-NO](optimal_last_query_counterexample.md)：四人1651单位客户完整SPE的 `W=1559`，唯一最优组合的实际末节点查询和1560；不能用改选另一个最优组合修复。这个反例有静态安全dual cap4889/14<389，仅否定该额外收费接口。
@@ -283,7 +292,8 @@ python3 tests/audits/customer_attraction_three_remaining_independent.py
 四人完整策略却使多后继适应性均值减独立回复均值等于−11/4。
 36客户三人实例的全部真实根菜单minimax值11，严格大于根收益及完整静态安全值10。
 每个n≥3都可用安全正Möbius编译给菜单值u1+1/2的完整SPE。
-上述两条路线被否定；`u_i≥v_n`、`W≥nv_n`及原半覆盖仍未证明或反驳。
+上述两条路线被否定；后续34客户反例亦已否定真正 `u_i≥v_n`。
+`W≥nv_n`及原半覆盖仍未证明或反驳。
 扩大静态菜单后需要新的跨节点支付，不能把minimax存在本身当作支付证明。
 
 复现：`python3 tests/audits/customer_attraction_decorrelation_boundary.py` 与

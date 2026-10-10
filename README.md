@@ -1,5 +1,11 @@
 # 两阶段设施选址博弈：研究与人类学习入口
 
+最新一般机制边界：[34单位客户完整SPE](research/current/customer_attraction/individual_security_counterexample.md)
+严格否定真正逐人混合安全值保底；[完整树按节点平均偏离](research/current/customer_attraction/iid_security_and_flow_barriers.md)
+即使用任意非负权重也不足。聚合安全值与主半覆盖仍开放，
+[两个可直接交给GPT Pro的攻坚任务](research/questions/customer_attraction_general_handoff.md)精确列出缺口。
+[无目录限制的一般尾部提升](research/current/customer_attraction/tail_profit_lift.md)给OPT_n≤(n/2−1/750)W，尚未达到常数二。
+
 顺序CAG新增失败边界：[61客户完整根SPE](research/current/customer_attraction/root_tax_counterexample.md)
 严格否定此前开放的根总税。第二份上传结果的89客户证书成立，但全p补偿去相关预算已由
 [既有36客户策略](research/current/customer_attraction/global_security_budget_boundaries.md)否定。
