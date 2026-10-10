@@ -110,3 +110,7 @@ The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BO
 两份独立精确实现和正式文本审查均通过；不声称常数锐性。
 见 [四剩余人完整证明](research/current/customer_attraction/four_remaining_profit_bound.md)。
 非零背景只比较剩余利润，五人及以上的根半覆盖仍未证明。
+
+新增 `CA-SUNFLOWER-MAXIMA-2M1`：极大主题sunflower、内部子主题任意时，任意人数锐界2−1/n；
+`CA-MAXIMA-SUPERSET-SEATS` 给任意目录全历史席位保底；`CA-SUNFLOWER-PRIVATE-GAP` 单独保留动态删除的额外条件。
+独立审查与精确审计完成；一般交叠目录半覆盖仍开放。

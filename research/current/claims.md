@@ -41,6 +41,10 @@
 本分支的客户固定均分，不使用原设施模型的客户 NE 或因子 2 存在性。
 
 
+| CA-SUNFLOWER-MAXIMA-2M1 | CAG-MODEL，任意n≥1；不同极大覆盖为C加两两不交私有花瓣，全部内部子主题与完整历史平局任意。 | OPT_n≤|C|+(2−1/n)(W−|C|)，锐；包含任意至多两个不同极大主题目录。不声称终局PNE或每步极大。 | [superset席位归纳与精确席位计数](customer_attraction/sunflower_maxima_bound.md)，独立内部重构及精确审计；外审/新颖性未认证。 |
+| CA-MAXIMA-SUPERSET-SEATS | CAG-MODEL任意目录、n≥1；全历史SPE；每主题归属一个包含它的极大主题。 | f_j(k)=w_j/k+v_j/n第n大席位ν给每人u_i≥ν、W≥nν；任意前缀的剩余席位条件给逐人保底。任意共享union预算未闭合。 | [§8通用接口](customer_attraction/sunflower_maxima_bound.md)，独立内部证明核查；不解决一般半覆盖。 |
+| CA-SUNFLOWER-PRIVATE-GAP | 同sunflower类，每非极大主题在某个极大扩张中遗漏私有花瓣客户；唯一极大主题无需额外条件。 | 每个完整SPE在每个历史只选极大主题，根花瓣计数为singleton PNE；福利定理无需此条件。 | [§6完整真实续局扩张](customer_attraction/sunflower_maxima_bound.md)，独立审查；省略条件有非极大且非PNE完整SPE。 |
+
 ## 2026-10-09 EPTAS 预研与近带精确补全
 
 | ID | Exact scope | Result and boundary | Proof and status |

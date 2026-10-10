@@ -13,6 +13,10 @@
 [任意人数结构子类定理](research/current/customer_attraction/disjoint_maxima_bound.md)证明：
 删除共同核心后，若不同极大主题互不相交，则每个完整纯 SPE 满足锐界 `2−1/m`；
 允许极大主题内部的子主题任意交叠，包含全部 laminar 目录。
+[Sunflower极大目录锐界](research/current/customer_attraction/sunflower_maxima_bound.md)严格扩大上述结构类：
+内部子主题可以遗漏极大共同核心，任意至多两个不同极大主题的目录均涵盖；
+全部历史纯SPE满足 `OPT_n≤|C|+(2−1/n)(W−|C|)`。
+同稿给[任意目录superset席位接口](research/current/customer_attraction/sunflower_maxima_bound.md#8-任意共同目录可用的-superset-席位接口)，一般共享union预算仍开放。
 [上传工具独立审计](research/current/customer_attraction/uploaded_tool_audit.md)确认其全平局递推
 与规范工具一致；新增四人完整证书否定“每人收益都至少为末位最坏最佳回应值θ”。
 [末两人逐人保底](research/current/customer_attraction/last_two_floor.md)则成立，

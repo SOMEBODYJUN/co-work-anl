@@ -178,3 +178,11 @@ python3 tests/audits/mobius_compiler_audit.py
 python3 tests/audits/customer_attraction_three_remaining_profit.py
 python3 tests/audits/customer_attraction_three_remaining_independent.py
 ```
+
+## 2026-10-10：全sunflower与通用superset席位
+
+[Sunflower极大目录](sunflower_maxima_bound.md)覆盖任意内部子主题，甚至遗漏共同核心；任意至多两个不同极大主题均在类内。
+`CA-SUNFLOWER-MAXIMA-2M1` 通过superset支配与席位归纳给任意人数锐界，无需SPE→PNE。
+同稿 `CA-MAXIMA-SUPERSET-SEATS` 给任意目录每人≥第n大私有/共享混合席位，尚缺一般共享union预算；
+`CA-SUNFLOWER-PRIVATE-GAP` 单独给额外私有缺口下的全历史极大行动与singleton PNE。
+独立审查见 `research/SUNFLOWER_MAXIMA_REVIEW_2026-10-10.md`，精确复现 `python3 tests/audits/customer_attraction_sunflower_maxima.py`。

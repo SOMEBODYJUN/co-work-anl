@@ -3045,6 +3045,39 @@
         "research/current/customer_attraction/four_remaining_profit_bound.md"
       ],
       "status": "complete current proof with independent internal reconstruction and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-SUNFLOWER-MAXIMA-2M1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Sunflower maximal themes: sharp arbitrary-player coverage bound",
+      "detail": "Every finite common catalog whose distinct inclusion-maximal themes are C disjoint-union P_j with pairwise disjoint private petals, arbitrary internal subthemes, every n>=1 and every complete-history pure SPE: OPT_n<=|C|+(2-1/n)(W-|C|). In particular any catalog with at most two distinct maximal coverage sets. Does not require all actions maximal or the terminal to be PNE.",
+      "refs": [
+        "research/current/customer_attraction/sunflower_maxima_bound.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-MAXIMA-SUPERSET-SEATS",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Superset seat guarantee for arbitrary common catalogs",
+      "detail": "Assign every catalog theme to an inclusion-maximal superset B_j. With w_j globally private clients and v_j remaining clients, f_j(k)=w_j/k+v_j/n, the n-th largest seat nu guarantees every player of every full-history pure SPE u_i>=nu and W>=n nu. At any prefix R(p,L)>=remaining players guarantees each remaining payoff>=L. Shared-client union budget is unresolved.",
+      "refs": [
+        "research/current/customer_attraction/sunflower_maxima_bound.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-SUNFLOWER-PRIVATE-GAP",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Private-petal gap restores all-maximal play and singleton stability",
+      "detail": "In the sunflower class, if every nonmaximal theme misses a private client in at least one containing maximal theme, every complete-history pure SPE selects maximal themes at every history, and root petal counts are singleton PNE. Unique-maximal catalogs need no gap condition. Sunflower welfare requires no such extra condition.",
+      "refs": [
+        "research/current/customer_attraction/sunflower_maxima_bound.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audit; unrefereed"
     }
   ],
   "hyperedges": [
@@ -7038,6 +7071,65 @@
       "statement": "The four-remaining profit interface does not close root half coverage for five or more players: its coarse portfolio estimate has coefficient 1499m/3000 on remaining profit and an additional background term.",
       "refs": [
         "research/current/customer_attraction/four_remaining_profit_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-SUNFLOWER-MAXIMA-2M1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-MAXIMA-SUPERSET-SEATS"
+      ],
+      "conclusion": "CA-SUNFLOWER-MAXIMA-2M1",
+      "statement": "Every finite common catalog whose distinct inclusion-maximal themes are C disjoint-union P_j with pairwise disjoint private petals, arbitrary internal subthemes, every n>=1 and every complete-history pure SPE: OPT_n<=|C|+(2-1/n)(W-|C|). In particular any catalog with at most two distinct maximal coverage sets. Does not require all actions maximal or the terminal to be PNE.",
+      "refs": [
+        "research/current/customer_attraction/sunflower_maxima_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-MAXIMA-SUPERSET-SEATS",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-MAXIMA-SUPERSET-SEATS",
+      "statement": "Assign every catalog theme to an inclusion-maximal superset B_j. With w_j globally private clients and v_j remaining clients, f_j(k)=w_j/k+v_j/n, the n-th largest seat nu guarantees every player of every full-history pure SPE u_i>=nu and W>=n nu. At any prefix R(p,L)>=remaining players guarantees each remaining payoff>=L. Shared-client union budget is unresolved.",
+      "refs": [
+        "research/current/customer_attraction/sunflower_maxima_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-SUNFLOWER-PRIVATE-GAP",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-DISJOINT-MAXIMA-2M1"
+      ],
+      "conclusion": "CA-SUNFLOWER-PRIVATE-GAP",
+      "statement": "In the sunflower class, if every nonmaximal theme misses a private client in at least one containing maximal theme, every complete-history pure SPE selects maximal themes at every history, and root petal counts are singleton PNE. Unique-maximal catalogs need no gap condition. Sunflower welfare requires no such extra condition.",
+      "refs": [
+        "research/current/customer_attraction/sunflower_maxima_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-SUNFLOWER-MAXIMA-2M1-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-SUNFLOWER-MAXIMA-2M1",
+        "CA-MAXIMA-SUPERSET-SEATS"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "The sharp result requires sunflower maximal coverage sets. The general superset seat interface does not yet budget arbitrary shared-client unions, so the unrestricted conjecture remains open.",
+      "refs": [
+        "research/current/customer_attraction/sunflower_maxima_bound.md"
       ],
       "status": "recorded within stated scope"
     }

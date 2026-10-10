@@ -330,3 +330,12 @@ $$P_C=\frac{[1-2a(a-1)]W-(2a-1)Q-a(a-1)\delta}{2a(a-1)},$$
 全部15、20型聚合余项及128型主恒等式余项系数都非负，证明
 [任意背景四剩余人的利润界](research/current/customer_attraction/four_remaining_profit_bound.md)。
 修复后的对象仍是剩余利润，不是含既有提供者的总覆盖；不能将末段界直接当五人根定理。
+
+## Sunflower极大主题仍不能无条件动态删除内部子主题
+
+仅假设极大主题为共同core加不交petals，不能保证每个SPE只选极大主题。
+core1、petals4/2，目录D=P、A=C+P、B=C+Q；完整两人策略根D，末位D→B,A→A,B→A。
+根收益4，扩张A真实回复A后只得5/2；固定B则扩张得9/2，故DB还不是静态PNE。
+失效为同瓣资源未严格下降时，不同有序分支的平局可增加占用。
+可回收：私有缺口恢复严格下降；更强superset席位证明直接处理任意子主题，无需删除，
+得到完整sunflower福利锐界。详见[新证明](research/current/customer_attraction/sunflower_maxima_bound.md)。
