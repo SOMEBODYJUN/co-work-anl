@@ -31,6 +31,11 @@
 | CA-ALL-N-WELFARE-4N | CAG-MODEL，任意n≥2和每个完整历史纯SPE，单位均分、共同有限非空目录。 | W≥4(n−1)OPT_n/[n(2n−1)]；三人8/15、四人3/7均弱于现行结论；不解决五人以上半覆盖，不声称锐性。 | [末两人保底与K/n的完整合并](customer_attraction/last_two_floor.md)，精确内部审计；外审未记录。 |
 | CA-LAST-FLOOR-ALL-PLAYERS-NO | CAG-MODEL，四人、十二主题、正整数类型重数代表不同单位客户，给定完整纯SPE。 | θ=6135346>u1=6135345；否定所有玩家u_i≥θ的辅助断言。W=24541476、OPT4=24541532，未反驳主目标。 | [上传工具比较、保存策略与定义级独立审计](customer_attraction/uploaded_tool_audit.md)，全部1885有序历史及完整偏离验证；外审未记录。 |
 
+| CA-MOBIUS-BOOLEAN | p≥1、任意有理Boolean子集势F且F(∅)=0；有符号客户类型仅为辅助代数。 | 双Möbius反演唯一实现F的harmonic势；重复计数扩张因而被唯一固定。非负反演加正整数清分母恰为单位客户实现条件；不编译任意匿名收益表。 | [完整唯一性、整数边界及count约束](customer_attraction/mobius_compiler.md)，两路独立内部审查与精确审计；全球优先权未认证。 |
+| CA-MOBIUS-FULL-HISTORY-EMBED | 上行子集边际收益游戏，p≥n≥1；清分母所得整数x，K=4Σ|x|+1。 | 正整数类型x+K给合法共同目录unit CAG；每个完整SPE在所有含重复的历史都选未用标签；合法无重复历史的SPE限制、根终局和有序路径精确对应。 | [fresh/old严格优势与全历史扩展证明](customer_attraction/mobius_compiler.md)，独立量词攻击和完整策略投影审计；不保福利比。 |
+| CA-MOBIUS-BIAS-BARRIER | 上行安全大偏置编译器，M=Σ|x|、C=2^p−2^(p−n)。 | 根SPE和OPT各用n个不同标签；2W−OPT≥KC−3M>0，n≥5甚至OPT/W<125/123。因此安全编译器自身不能反驳半覆盖；小偏置另需完整策略核验。 | [统一覆盖偏置及严格代数边界](customer_attraction/mobius_compiler.md)，独立内部审查；不限制一般目录主目标。 |
+| CA-THREE-REMAINING-PROFIT-5-3 | CAG-MODEL，任意合法固定有序背景，恰三人剩余，任意完整历史依赖纯SPE。 | F3(b)≤(5/3)R_b(实际后三人)，作为全部背景的统一常数锐；R_b为剩余总利润，非背景总覆盖。另有末三人精确组合接口及OPT_m≤(5m/9)V+Σb/(b+1)。 | [真实Li/Q/R'回复、非负二次系数完整恒等式](customer_attraction/three_remaining_profit_bound.md)，独立从2048原membership重构与两份精确审计；未证五人根半覆盖。 |
+
 主目标 [Q-CAG-HALF](../questions/customer_attraction_half_coverage.md) 仍开放。
 本分支的客户固定均分，不使用原设施模型的客户 NE 或因子 2 存在性。
 

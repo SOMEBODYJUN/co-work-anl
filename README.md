@@ -17,6 +17,10 @@
 与规范工具一致；新增四人完整证书否定“每人收益都至少为末位最坏最佳回应值θ”。
 [末两人逐人保底](research/current/customer_attraction/last_two_floor.md)则成立，
 并给出较弱全人数界 `W≥4(n−1)OPT_n/[n(2n−1)]`，不改变五人及以上的开放状态。
+[Möbius编译定理](research/current/customer_attraction/mobius_compiler.md)将子集势的边际收益游戏
+嵌入合法共同目录unit CAG，并严格证明安全大偏置自身不能反驳半覆盖。
+[任意背景三剩余人的利润锐界](research/current/customer_attraction/three_remaining_profit_bound.md)
+给 `F3(b)≤(5/3)R_b(实际)`；非零背景中的剩余利润与覆盖必须区分。
 [固定背景两人税界](research/current/customer_attraction/two_remaining_tax.md)仍成立，
 但[首步机会成本桥](research/current/customer_attraction/tax_bridge_counterexample.md)在空背景三人即失败，
 [一般背景总税界](research/current/customer_attraction/general_tax_counterexample.md)也有完整根 SPE 内的反例。

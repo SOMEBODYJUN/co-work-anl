@@ -302,3 +302,17 @@ $$P_C=\frac{[1-2a(a-1)]W-(2a-1)Q-a(a-1)\delta}{2a(a-1)},$$
 或改变精确保证值，不能忽略偏离后全部后继选择的改变。
 完整数据、合法策略及实现比较见
 [上传工具独立审计](research/current/customer_attraction/uploaded_tool_audit.md)。
+
+## 用统一正偏置任意保持策略或坏福利比：保持范围有限
+
+双Möbius反演可以指定Boolean子集势，但重复计数上的扩张被唯一固定，
+不是任意匿名收益/计数势表。仅加到类型重数全正也会反转repeat与fresh收益比较：
+两主题辅助重数(−4,−3,0)加5后，repeat相对fresh由−2>−3变为3<9/2。
+因此原signed完整策略不能未经复核直接移植。
+
+可回收：p≥n且K=4Σ|x|+1时可严格证明所有历史都fresh，精确嵌入禁止重复的
+边际收益游戏。但这个安全偏置给所有n-distinct终局相同大覆盖常数，
+2W−OPT≥K(2^p−2^(p−n))−3Σ|x|>0；构造输出自身不是半覆盖反例。
+未来若取更小偏置，需要对重复历史的真实最佳回应和全部离轨SPE重新认证，
+或改用有额外非负结构的直接反演。证明与边界见
+[Möbius编译](research/current/customer_attraction/mobius_compiler.md)。

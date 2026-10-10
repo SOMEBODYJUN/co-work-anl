@@ -2990,6 +2990,50 @@
         "research/current/customer_attraction/uploaded_tool_audit.md"
       ],
       "status": "complete current proof with independent exact audit; unrefereed"
+    },
+    {
+      "id": "CA-MOBIUS-BOOLEAN",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Unique signed unit-type representation of any Boolean subset potential",
+      "detail": "For p>=1 and rational F:2^[p]->Q with F(empty)=0, the two Mobius inversions uniquely determine signed customer-type coefficients whose harmonic potential equals F on all square-free profiles. This determines its repeated-count extension; nonnegative inverse is necessary and sufficient after positive denominator scaling.",
+      "refs": [
+        "research/current/customer_attraction/mobius_compiler.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-MOBIUS-FULL-HISTORY-EMBED",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Full-history embedding of a no-repeat marginal-payoff game",
+      "detail": "For p>=n>=1, integer signed coefficients x and K=4sum|x_B|+1 give strictly positive integer unit-customer types x_B+K. Every complete CAG SPE chooses unused labels at every history, including repeated off-path histories. Restrictions to no-repeat histories are exactly all SPEs of the marginal-payoff subset-potential game. Roots, ordered root paths and fresh ties correspond; not arbitrary payoff tables.",
+      "refs": [
+        "research/current/customer_attraction/mobius_compiler.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-MOBIUS-BIAS-BARRIER",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "The safe compiler raises welfare too much to refute half coverage",
+      "detail": "Under the full-history compiler conditions, root SPE and OPT both use n distinct labels, with common coverage bias K(2^p-2^(p-n)). Hence 2W-OPT >= K(2^p-2^(p-n))-3sum|x_B|>0. Welfare ratios are not preserved. For n>=5, OPT/W<125/123.",
+      "refs": [
+        "research/current/customer_attraction/mobius_compiler.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-THREE-REMAINING-PROFIT-5-3",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Sharp remaining-profit bound under arbitrary fixed background for three players",
+      "detail": "At any fixed legal ordered prefix with exactly three remaining unit providers, every complete-history pure SPE satisfies max_{T1,T2,T3} R_b(T1,T2,T3) <=(5/3)R_b(actual). R_b sums the three remaining profits, not total coverage; every history tie and repeated/empty theme is allowed. A nonnegative coefficient identity covers all backgrounds, and zero background attains the uniform factor.",
+      "refs": [
+        "research/current/customer_attraction/three_remaining_profit_bound.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audit; unrefereed"
     }
   ],
   "hyperedges": [
@@ -6840,6 +6884,120 @@
       "statement": "This result does not settle the half-coverage conjecture for arbitrary player counts.",
       "refs": [
         "research/current/customer_attraction/uploaded_tool_audit.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-MOBIUS-BOOLEAN",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-MOBIUS-BOOLEAN",
+      "statement": "For p>=1 and rational F:2^[p]->Q with F(empty)=0, the two Mobius inversions uniquely determine signed customer-type coefficients whose harmonic potential equals F on all square-free profiles. This determines its repeated-count extension; nonnegative inverse is necessary and sufficient after positive denominator scaling.",
+      "refs": [
+        "research/current/customer_attraction/mobius_compiler.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-MOBIUS-BOOLEAN-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-MOBIUS-BOOLEAN"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "This interface or representation does not close the arbitrary-player half-coverage conjecture.",
+      "refs": [
+        "research/current/customer_attraction/mobius_compiler.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-MOBIUS-FULL-HISTORY-EMBED",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-MOBIUS-BOOLEAN"
+      ],
+      "conclusion": "CA-MOBIUS-FULL-HISTORY-EMBED",
+      "statement": "For p>=n>=1, integer signed coefficients x and K=4sum|x_B|+1 give strictly positive integer unit-customer types x_B+K. Every complete CAG SPE chooses unused labels at every history, including repeated off-path histories. Restrictions to no-repeat histories are exactly all SPEs of the marginal-payoff subset-potential game. Roots, ordered root paths and fresh ties correspond; not arbitrary payoff tables.",
+      "refs": [
+        "research/current/customer_attraction/mobius_compiler.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-MOBIUS-FULL-HISTORY-EMBED-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-MOBIUS-FULL-HISTORY-EMBED"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "This interface or representation does not close the arbitrary-player half-coverage conjecture.",
+      "refs": [
+        "research/current/customer_attraction/mobius_compiler.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-MOBIUS-BIAS-BARRIER",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-MOBIUS-FULL-HISTORY-EMBED"
+      ],
+      "conclusion": "CA-MOBIUS-BIAS-BARRIER",
+      "statement": "Under the full-history compiler conditions, root SPE and OPT both use n distinct labels, with common coverage bias K(2^p-2^(p-n)). Hence 2W-OPT >= K(2^p-2^(p-n))-3sum|x_B|>0. Welfare ratios are not preserved. For n>=5, OPT/W<125/123.",
+      "refs": [
+        "research/current/customer_attraction/mobius_compiler.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-MOBIUS-BIAS-BARRIER-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-MOBIUS-BIAS-BARRIER"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "The sufficiently large safe bias compiler itself cannot yield a main-conjecture counterexample; smaller biases need full SPE revalidation.",
+      "refs": [
+        "research/current/customer_attraction/mobius_compiler.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-THREE-REMAINING-PROFIT-5-3",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-THREE-REMAINING-PROFIT-5-3",
+      "statement": "At any fixed legal ordered prefix with exactly three remaining unit providers, every complete-history pure SPE satisfies max_{T1,T2,T3} R_b(T1,T2,T3) <=(5/3)R_b(actual). R_b sums the three remaining profits, not total coverage; every history tie and repeated/empty theme is allowed. A nonnegative coefficient identity covers all backgrounds, and zero background attains the uniform factor.",
+      "refs": [
+        "research/current/customer_attraction/three_remaining_profit_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-THREE-REMAINING-PROFIT-5-3-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-THREE-REMAINING-PROFIT-5-3"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "This interface or representation does not close the arbitrary-player half-coverage conjecture.",
+      "refs": [
+        "research/current/customer_attraction/three_remaining_profit_bound.md"
       ],
       "status": "recorded within stated scope"
     }

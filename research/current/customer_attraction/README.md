@@ -135,3 +135,28 @@ python3 -m customer_attraction examples/customer_attraction/residual_counterexam
 python3 tests/audits/customer_attraction_uploaded.py
 python3 tests/audits/customer_attraction_last_two_floor.py
 ```
+
+## 新表示与固定背景接口（2026-10-10）
+
+`CA-MOBIUS-BOOLEAN` 给任意有理子集势唯一signed客户重数；其重复计数扩张也被固定。
+`CA-MOBIUS-FULL-HISTORY-EMBED` 在p≥n、足够大均匀正偏置下，保留禁止重复的边际收益游戏
+在合法历史上的全部SPE，并正确处理所有重复离轨历史。
+`CA-MOBIUS-BIAS-BARRIER` 证明这个安全编译器的福利偏置过大，输出自身严格满足半覆盖。
+它是策略/收益障碍构造工具，不是一般反例编译器；小偏置必须另审完整策略。
+
+`CA-THREE-REMAINING-PROFIT-5-3` 在任意合法背景、每个完整历史纯SPE上证明剩余三人的
+总利润达到同背景最优的3/5。零背景回到旧三人锐界；一般末三人的组合接口保留
+最优主题重数d和背景b，但尚不能闭合根半覆盖。
+
+| 完整路径 | 资产及使用时机 |
+| --- | --- |
+| `research/current/customer_attraction/mobius_compiler.md` | 双反演唯一性、全历史fresh归纳、正化的保持范围、福利偏置与匿名count障碍；设计客户重数或声称保策略时先读。 |
+| `tests/audits/mobius_compiler_audit.py`、`evidence/runs/2026-10-10/mobius_compiler_audit.json` | 编译、势差、完整策略投影和重复历史的精确检查；不是一般福利搜索。 |
+| `research/current/customer_attraction/three_remaining_profit_bound.md` | 三剩余人真实Li/Q/R'比较、任意背景二次非负系数及末三人组合接口；使用背景利润预算时读取。 |
+| `tests/audits/customer_attraction_three_remaining_profit.py`、`tests/audits/customer_attraction_three_remaining_independent.py` | 分别从显式余项多项式和原始八类slack重构全部系数，冻结JSON同名位于`evidence/runs/2026-10-10/`；修改恒等式时必须复跑。 |
+
+```sh
+python3 tests/audits/mobius_compiler_audit.py
+python3 tests/audits/customer_attraction_three_remaining_profit.py
+python3 tests/audits/customer_attraction_three_remaining_independent.py
+```

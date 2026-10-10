@@ -97,3 +97,10 @@ The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BO
 精确身份、对象、量词、依赖与审查边界见现行账本及
 [上传独立审计](research/current/customer_attraction/uploaded_tool_audit.md)、
 [末两人证明](research/current/customer_attraction/last_two_floor.md)。
+
+新增内部完整证明：`CA-MOBIUS-BOOLEAN`、`CA-MOBIUS-FULL-HISTORY-EMBED`、
+`CA-MOBIUS-BIAS-BARRIER` 给精确signed表示、全历史正化与福利保持边界；
+`CA-THREE-REMAINING-PROFIT-5-3` 给任意背景恰三剩余人的利润锐界。
+详见[编译证明](research/current/customer_attraction/mobius_compiler.md)和
+[三剩余人证明](research/current/customer_attraction/three_remaining_profit_bound.md)。
+全部为内部独立审查状态，全球新颖性与外部审查未认证；一般人数半覆盖仍开放。
