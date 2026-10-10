@@ -10,6 +10,13 @@
 合法根偏离与后继节点比较闭合精确非负恒等式，经过独立内部审查。
 一般目录的目标现只剩五人及以上；零背景总税仍开放。
 
+新 [CA-FIVE-MAXIMA-HALF](dynamic_maxima_bound.md) 将任意人数半覆盖扩大到**至多五个不同包含极大覆盖**，
+内部子主题与交叉关联不限；n≥5还得到 `OPT_n=U≤2W−c`。
+新全历史动态保底 `u_i≥c/n+(U−c)/D_t` 与私有/共享混合包络适用于任意极大主题数；
+五人五极大临界情形有 `W≥c+5P/9+(67027/125400)V`。
+此处全union不是小人数的OPT；一般目录五人及以上的剩余难点至少需要六个极大覆盖。
+该新类与不限极大主题数的laminar类仍不可比较，原三极大证明保留为另一静态加权机制。
+
 新增 [至多三个极大覆盖](three_maxima_bound.md) 任意人数半覆盖：n≥2时
 `OPT_n≤U≤c+2(W−c)`，允许内部子主题和交叉关联；与不限极大主题数的laminar类不可比较。
 共享客户的加权席位预算还给实例式S/n及一般关联证书；四极大主题的静态union预算失败有整数族。
@@ -218,3 +225,13 @@ python3 tests/audits/customer_attraction_three_remaining_independent.py
 冻结输出位于`evidence/runs/2026-10-10/customer_attraction_{three_maxima,five_player}*.json`。
 复现：运行对应四个`tests/audits/`脚本；默认只打印，`--output`拒绝覆盖已有报告。
 独立数学审查见`evidence/runs/2026-10-10/customer_attraction_new_frontier_review.md`。
+
+## 动态预算资产与后继研究入口
+
+- `research/current/customer_attraction/dynamic_maxima_bound.md`：全历史动态路由预算、私有/共享单调包络、四极大逐席位强化和五极大全人数半覆盖；攻击六极大以上交叉关联时先读§5及范围说明。
+- `tests/audits/customer_attraction_dynamic_maxima.py` 与 `customer_attraction_dynamic_maxima_independent.py`：互不导入规范求解核心的精确客户系数、完整续局菜单和有序证书复验。
+- `evidence/runs/2026-10-10/customer_attraction_dynamic_maxima_review.md`：先自主重构再逐行读作者稿的审查，说明core总收益支配与小人数union边界。
+
+复现：`python3 tests/audits/customer_attraction_dynamic_maxima.py`，
+`python3 tests/audits/customer_attraction_dynamic_maxima_independent.py`。
+基础/混合系数可能在部分六极大以上人数达到半界，但不因此登记未证明的整个范围。

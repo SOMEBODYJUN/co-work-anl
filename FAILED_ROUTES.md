@@ -367,3 +367,12 @@ U≤2nν，但该静态桥不能把常数二改成更小统一值：私有B1大�
 此时ν=2、U=5n>4n=2nν；明确否定把同一union-to-seat预算推到四极大主题。
 这不是原猜想反例；需更强真实续局预算。可回收的是
 [一般加权关联证书和三极大半覆盖](research/current/customer_attraction/three_maxima_bound.md#4-a-sharper-instance-specific-certificate)。
+
+
+### 静态席位障碍的回收：动态路由预算绕过四、五极大边界
+
+上述四极大静态union-to-seat预算反例仍成立；其量词和数值没有改写。
+新[动态路由预算](research/current/customer_attraction/dynamic_maxima_bound.md)在每个合法前缀
+改用路由计数p_j与共享关联p_I+r，满极大偏离通过同路由后继包含支配得到单调保底。
+所以旧障碍排除的是固定ν支付机制，不再是四或五极大结构类的未解决边界。
+五人五极大需要私有/共享分开计数；一般至少六极大的半覆盖依旧开放。

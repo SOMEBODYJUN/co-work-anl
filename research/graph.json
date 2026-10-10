@@ -3155,6 +3155,39 @@
         "research/current/customer_attraction/five_player_bound.md"
       ],
       "status": "complete current proof with independent internal reconstruction and exact audit; unrefereed"
+    },
+    {
+      "id": "CA-DYNAMIC-MAXIMA-FLOOR",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Dynamic maximal-routing payoff floors at every history",
+      "detail": "Any finite common unit catalog, n>=1 providers, s>=2 distinct inclusion-maximal coverages, arbitrary internal subthemes and every complete ordered-history pure SPE. U is the maximal union, c its maximal common core. At every legal prefix length t, the current payoff is at least c/n+(U-c)/D_t, D_t=max(t+s(n-t)/2,n+s-1); root W>=c+Gamma_(n,s)(U-c), Gamma=sum_t 1/D_t. The full-union bound depends on s and does not solve unrestricted half coverage.",
+      "refs": [
+        "research/current/customer_attraction/dynamic_maxima_bound.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-DYNAMIC-MAXIMA-MIXED",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Separate private/shared monotone payoff budgets",
+      "detail": "Same all-history unit CAG domain with s>=2. P is total globally private mass and V=U-c-P. For t<n-1 let Z_t=t+s(n-t)/2, A_t=(n+t)/(2(t+1)Z_t), B_t=1/Z_t; at t=n-1 set A=1/(n+s-1), B=(n+1)/(n(n+s-1)). Their suffix minima give every current payoff at least c/n+P*underline(A)_t+V*underline(B)_t and W>=c+P*sum underline(A)+V*sum underline(B). A coefficient certificate, with no unrestricted half-coverage or optimality claim.",
+      "refs": [
+        "research/current/customer_attraction/dynamic_maxima_bound.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-FIVE-MAXIMA-HALF",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "At most five maximal coverages: arbitrary-player half coverage",
+      "detail": "Any finite common unit catalog with at most five distinct inclusion-maximal coverages, arbitrary internal subthemes, any n>=1 and every complete ordered-history pure SPE: OPT_n<=2W. For n>=5 also OPT_n=U<=2W-c. For n=5 and s>=2, W>=c+(5/9)P+(67027/125400)V. Cases n<=4 use existing unconditional bounds; n>=6 follows dynamic floors and Gamma>=4n^2/(7n^2+3n+14)>1/2. No general-six-or-more-maxima or sharpness claim.",
+      "refs": [
+        "research/current/customer_attraction/dynamic_maxima_bound.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audits; unrefereed"
     }
   ],
   "hyperedges": [
@@ -7338,6 +7371,67 @@
       "statement": "This theorem retains its stated structural or exact-player-count assumptions. The arbitrary-player half-coverage conjecture remains open for general catalogs; the new scalar shared-union obstruction is not an SPE counterexample.",
       "refs": [
         "research/current/customer_attraction/five_player_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-DYNAMIC-MAXIMA-FLOOR",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-DYNAMIC-MAXIMA-FLOOR",
+      "statement": "Any finite common unit catalog, n>=1 providers, s>=2 distinct inclusion-maximal coverages, arbitrary internal subthemes and every complete ordered-history pure SPE. U is the maximal union, c its maximal common core. At every legal prefix length t, the current payoff is at least c/n+(U-c)/D_t, D_t=max(t+s(n-t)/2,n+s-1); root W>=c+Gamma_(n,s)(U-c), Gamma=sum_t 1/D_t. The full-union bound depends on s and does not solve unrestricted half coverage.",
+      "refs": [
+        "research/current/customer_attraction/dynamic_maxima_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-DYNAMIC-MAXIMA-MIXED",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-DYNAMIC-MAXIMA-MIXED",
+      "statement": "Same all-history unit CAG domain with s>=2. P is total globally private mass and V=U-c-P. For t<n-1 let Z_t=t+s(n-t)/2, A_t=(n+t)/(2(t+1)Z_t), B_t=1/Z_t; at t=n-1 set A=1/(n+s-1), B=(n+1)/(n(n+s-1)). Their suffix minima give every current payoff at least c/n+P*underline(A)_t+V*underline(B)_t and W>=c+P*sum underline(A)+V*sum underline(B). A coefficient certificate, with no unrestricted half-coverage or optimality claim.",
+      "refs": [
+        "research/current/customer_attraction/dynamic_maxima_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-FIVE-MAXIMA-HALF",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-DYNAMIC-MAXIMA-FLOOR",
+        "CA-DYNAMIC-MAXIMA-MIXED",
+        "CA-TWO-REMAINING-TAX",
+        "CA-THREE-SHARP-5-3",
+        "CA-FOUR-UPPER-1499-750"
+      ],
+      "conclusion": "CA-FIVE-MAXIMA-HALF",
+      "statement": "Any finite common unit catalog with at most five distinct inclusion-maximal coverages, arbitrary internal subthemes, any n>=1 and every complete ordered-history pure SPE: OPT_n<=2W. For n>=5 also OPT_n=U<=2W-c. For n=5 and s>=2, W>=c+(5/9)P+(67027/125400)V. Cases n<=4 use existing unconditional bounds; n>=6 follows dynamic floors and Gamma>=4n^2/(7n^2+3n+14)>1/2. No general-six-or-more-maxima or sharpness claim.",
+      "refs": [
+        "research/current/customer_attraction/dynamic_maxima_bound.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-FIVE-MAXIMA-HALF-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-FIVE-MAXIMA-HALF"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "Half coverage is proved for arbitrary n when the distinct inclusion-maximal coverage count is at most five. Unrestricted catalogs with n>=5 remain open. No SPE counterexample is certified.",
+      "refs": [
+        "research/current/customer_attraction/dynamic_maxima_bound.md"
       ],
       "status": "recorded within stated scope"
     }

@@ -53,6 +53,9 @@
 | CA-ROOT-TAX-ORDER-COUNTS-NO | CAG-MODEL，每个n≥4；同一静态PNE且完整SPE可达终局计数。 | 可信SPE顺序W+τ−OPT=1，某非SPE重排OPT−W−τ=(n−1)(n−3)/n>0；只排除仅看计数的根税证明。 | [§7无限族与完整策略](customer_attraction/two_remaining_tax.md)，独立重构、n=4全树及47个参数精确核验。 |
 | CA-THREE-MAXIMA-HALF | CAG-MODEL，至多三个不同包含极大覆盖，任意内部子主题，任意n≥1、全部有序历史纯SPE；c为极大共同核心。 | n≥2时OPT_n≤U≤c+2(W−c)；n=1或唯一极大主题时最优。允许交叉关联，与不限极大主题数的laminar类不可比较；不声称福利常数锐。 | [全历史superset席位与共享union预算](customer_attraction/three_maxima_bound.md)，两路精确审计及独立证明重构；外审/新颖性未认证。 |
 | CA-FIVE-UPPER-221-100 | CAG-MODEL，恰五位单位玩家、任意有限共同目录、零根背景、每个完整有序历史纯SPE，允许空/重复主题。 | OPT_5≤[24236714656727/10967499015623]W≤(221/100)W；精确系数仍大于2。 | [两条真实中途偏离及21-slack恒等式](customer_attraction/five_player_bound.md)，1024客户型余项与独立O系数经两份互不导入Fraction程序核对；不声称锐性、背景版或六人以上。 |
+| CA-DYNAMIC-MAXIMA-FLOOR | CAG-MODEL，n≥1、s≥2不同极大覆盖、全部合法有序前缀、每个完整历史纯SPE，任意内部子主题。 | 当前收益≥c/n+(U−c)/D_t，D_t=max(t+s(n−t)/2,n+s−1)；W≥c+Γ_(n,s)(U−c)。四极大且n≥3给U≤2W−c；一般s的系数不保证半覆盖。 | [动态路由客户预算及同路由后继包含支配](customer_attraction/dynamic_maxima_bound.md)，独立重构、两份精确菜单/全历史审计；外审与锐性未认证。 |
+| CA-DYNAMIC-MAXIMA-MIXED | 同一模型/量词；P为全局私有总质量，V为非core共享质量；A_t、B_t及其suffix minima按完整稿§5定义。 | 每位收益≥c/n+P·underlineA_t+V·underlineB_t；W≥c+PΣunderlineA_t+VΣunderlineB_t；允许漏core、无私有及多父路由。 | [私有/共享分离与单调包络](customer_attraction/dynamic_maxima_bound.md)，同一加权预算同时支付两质量；不将分别最大值相加；独立审查通过。 |
+| CA-FIVE-MAXIMA-HALF | CAG-MODEL，至多五个不同包含极大覆盖，任意n≥1、任意内部子主题、全部完整历史纯SPE。 | OPT_n≤2W；n≥5时OPT_n=U≤2W−c；n=5进一步W≥c+5P/9+(67027/125400)V。n≤4用已知一般界，n≥6用Jensen；不把小人数OPT替换为U。 | [完整动态/混合预算与五极大整合](customer_attraction/dynamic_maxima_bound.md)，独立重构和精确复验；六极大以上一般目标、常数锐性及新颖性仍未解决。 |
 
 ## 2026-10-09 EPTAS 预研与近带精确补全
 
