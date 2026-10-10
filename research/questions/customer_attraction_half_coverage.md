@@ -1,5 +1,12 @@
 # Q-CAG-HALF：任意纯 SPE 是否覆盖最优的一半？
 
+**2026-10-10 当前覆盖说明：** 原半覆盖目标仍开放，至多六极大主题类已完成。
+此前优先建议的空背景根总税已由[61客户完整SPE](../current/customer_attraction/root_tax_counterexample.md)严格否定。
+全p的补偿去相关预算亦由[既有36客户证书](../current/customer_attraction/global_security_budget_boundaries.md)否定。
+仍可攻击真正 `W>=n v_n`，或者只对适当安全值最优分布建立支付。
+[完整树锥对偶](../current/customer_attraction/security_cone_duality.md)给精确等价接口，不是其普遍存在性证明。
+下文旧根税候选及其条件性推导保留为失败路线记录，不再作为开放引理。
+
 **状态：开放目标，2026-10-09 建立独立分支。**
 
 ## Exact Claim
@@ -60,7 +67,7 @@ $$
 旧首步机会成本不等式现已由 [CA-TAX-BRIDGE-NO](../current/customer_attraction/tax_bridge_counterexample.md)
 在空背景三人否定：15>29/2。更弱的任意合法背景总税式也由
 [CA-GENERAL-TAX-NO](../current/customer_attraction/general_tax_counterexample.md)否定。
-已证明的恰两人税界及其代数恒等式不受影响；零背景总税仍未证明或被反驳。
+已证明的恰两人税界及其代数恒等式不受影响；零背景根总税现也由[CA-ROOT-TAX-NO](../current/customer_attraction/root_tax_counterexample.md)否定。
 不能通过仅修补非零背景分母挽回已失败的首步桥。
 
 ## 三人边界及新的前沿
@@ -77,7 +84,7 @@ $$
 新增接口为：保留根偏离至实际末主题后，所有真实后继主题的自身节点最优性，
 不能仅保留实际路径的分母保底。
 
-一般目录现从五人起需控制跨分支的全局余额。可独立研究零背景总税，或使用
+一般目录现从五人起需控制跨分支的全局余额。零背景根总税已否定；可研究真正安全值支付，或使用
 [完整策略重数锥](../current/customer_attraction/strategy_cone.md)的精确对偶寻找统一不等式。
 固定(m,p)有限样本锥中的成功不涵盖任意目录、任意策略；证据范围必须保留。
 
@@ -89,7 +96,7 @@ $$
 更强的所有前缀余额 `Σ_(i≤t)u_i+F_(m-t)(C_t)−OPT_m≥0`
 已被 [CA-PREFIX-BALANCE-NO](../current/customer_attraction/prefix_balance_family.md) 否定：
 每个m≥4可有完整SPE的B1=4−m−1/m<0，固定首位收益乘数α<2也不普遍足够。
-收益始终取原终局份额；终局总余额与根总税仍开放。
+收益始终取原终局份额；终局总余额仍开放，根总税已由61客户完整SPE否定。
 
 ## 新的有效接口与边界
 

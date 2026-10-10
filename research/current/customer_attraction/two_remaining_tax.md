@@ -1,5 +1,9 @@
 # CA-TWO-REMAINING-TAX：固定前缀下恰两名剩余提供者的税界
 
+**2026-10-10 状态更新：** 空背景实际根总税现也由
+[CA-ROOT-TAX-NO](root_tax_counterexample.md)否定（四人61单位客户、严格差1/2）。
+本页原局部税定理、代数恒等式和既有实例计算保持有效；关于根税仍开放的旧路线状态由此更新。
+
 - **状态与版本：** 2026-10-09，完整直接代数推导；内部独立复核，外部同行评审未记录。
 - **输入类：** [CAG-MODEL](model.md) 的单位客户、单位权提供者、有限共同目录；固定一个完整有序前缀，之后恰有两名提供者依次行动。
 - **量词：** 对任意合法固定前缀、任意该子局的完整纯 SPE，包括任意历史依赖平局选择，以及任意两个比较主题，以下不等式成立。
@@ -155,7 +159,7 @@ $$
 
 式 (9) 的一般版本现已被[空背景三人反例](tax_bridge_counterexample.md)否定；
 本节保留条件性推导以解释原归纳为何失败，不再把它视为可直接证明的开放桥。
-[一般合法背景总税](general_tax_counterexample.md)也已被反例否定，零背景总税仍开放。
+[一般合法背景总税](general_tax_counterexample.md)也已被反例否定，零背景根总税现亦由[61客户完整SPE](root_tax_counterexample.md)否定。
 本页恰两人主定理及其证明未改变。两人情形中，$F_1(b+\mathbf1_A)=u_2$，
 且 $\tau_b(\mathbf1_A)=g_b(A,A)$，所以式 (9) 正是已证明的式 (1)。
 对更多后行动者，首主题偏离会改变其完整子局，不能把两人证明的
@@ -192,8 +196,8 @@ $$
 该数在 $b>0$、$c>1$ 时可能大于两人单步税
 $1/((b+1)(b+2))$。例如 $b=c=10$ 时两者分别为 $1/42$ 和 $1/132$。
 因此不能把背景两人证明的税分配未经证明地逐层使用。
-零背景一般人数税界与主目标 [Q-CAG-HALF](../../questions/customer_attraction_half_coverage.md)
-继续保持开放；任何有限税界检查只构成所列实例的证据。
+零背景一般人数根税界已由[CA-ROOT-TAX-NO](root_tax_counterexample.md)否定；主目标
+[Q-CAG-HALF](../../questions/customer_attraction_half_coverage.md)仍开放。既有有限税界检查只构成所列实例的证据。
 
 ## 5. 核验与来源状态
 
@@ -300,7 +304,7 @@ W+\tau_0(c_{<n})-\operatorname{OPT}_n=1.
 这正是冻结原末位 $H$ 会漏掉的真实续局变化。
 
 因此终局计数的税预算不能代替实际有序 SPE 前缀的可信性；正确顺序的
-零背景根总税、终局全局余额及任意人数半覆盖目标仍开放。
+零背景根总税已由[实际61客户完整SPE](root_tax_counterexample.md)否定；终局全局余额及任意人数半覆盖目标仍开放。
 较强的每个前缀余额非负已由 [CA-PREFIX-BALANCE-NO](prefix_balance_family.md)
 对每个 $n\ge4$ 否定；其反例族的根税及半覆盖余额仍严格为正。
 [独立 Fraction 审计](../../../tests/audits/customer_attraction_ordered_tax_boundary.py)

@@ -1,5 +1,16 @@
 # 失败路线与仍可使用的边界
 
+## 2026-10-10：实际根总税及全p补偿去相关预算均已失败
+
+[61客户四人完整SPE](research/current/customer_attraction/root_tax_counterexample.md)给OPT61>W38+tau45/2，
+差1/2。这否定实际空背景根总税，不能再把它当开放充分引理；不是旧非SPE重排或背景利润反例。
+静态v4=9，主猜想与安全值桥没有被反驳。
+[89客户证书与既有36客户新解释](research/current/customer_attraction/global_security_budget_boundaries.md)
+分别给总kappa<0且后继均0，以及所有e_i=0但W−sum C_i=−1/2。
+因此增加实际激励松弛仍不能使全p的特定去相关菜单支付普遍成立；非最优p不能据此反驳BR。
+[全树不受限静态对偶](research/current/customer_attraction/security_cone_duality.md)等价接口成立，
+但没有统一构造乘子，真正W≥n v_n仍开放。
+
 ## 2026-10-10：动态席位障碍仍有效，真实会员joint预算已绕过六极大瓶颈
 
 [CA-SIX-MAXIMA-HALF](research/current/customer_attraction/six_maxima_joint_bound.md)已证明至多六极大

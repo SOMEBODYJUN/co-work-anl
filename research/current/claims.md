@@ -8,7 +8,7 @@
 | CA-SPE-NON-PNE | 同一 CAG-MODEL；存在两人四客户共同目录或另一个三人三客户实例。 | 完整纯 SPE 的终局可有盈利的静态单方行动偏离。反驳 SPE→PNE 桥梁；不反驳半覆盖。 | [两人证书与导入边界](customer_attraction/literature.md)、[三人证书](customer_attraction/continuation_lemmas.md)；直接证明及独立精确审计，外审未记录。 |
 | CA-HISTORY-TIES | 同一 CAG-MODEL；三人、两个不交 unit singleton 主题。 | 存在完整纯 SPE 在同计数历史 AB/BA 选不同回复，且收益 (1/2,1,1/2)；两个收益次序单调方向都不普遍成立。 | [完整策略与逐节点证明](customer_attraction/continuation_lemmas.md)；直接证明及独立精确审计，外审未记录。 |
 | CA-RESIDUAL-NO | 同一 CAG-MODEL；两人、五共同主题、十四名单位客户。 | 完整纯 SPE 收益 (4,5)、W=9、OPT=10，最大未覆盖主题大小 5；逐人 u_i≥M(C) 和聚合 W≥mM(C) 均错误；2W≥OPT 未被否定。 | [完整收益表、失败机制和证书](customer_attraction/continuation_lemmas.md)；独立展开客户审计及规范 verifier 均通过，外审未记录。 |
-| CA-TWO-REMAINING-TAX | CAG-MODEL 的任意合法固定有序前缀，恰两位剩余单位提供者，任意完整历史依赖纯 SPE 和任意两个比较主题。 | R_b(T,S)≤R_b(A,B)+Σ_{x∈A}1/((b_x+1)(b_x+2))；只算剩余两人收益，非零背景时不等于完整覆盖。b=0重构文献3/2；首步桥和一般背景总税已否定，根总税仍开放。 | [非负恒等式完整证明和条件性归纳](customer_attraction/two_remaining_tax.md)，独立逐客户精确审计；不声称新颖或外审。 |
+| CA-TWO-REMAINING-TAX | CAG-MODEL 的任意合法固定有序前缀，恰两位剩余单位提供者，任意完整历史依赖纯 SPE 和任意两个比较主题。 | R_b(T,S)≤R_b(A,B)+Σ_{x∈A}1/((b_x+1)(b_x+2))；只算剩余两人收益，非零背景时不等于完整覆盖。b=0重构文献3/2；首步桥和一般背景总税已否定；一般根总税亦由CA-ROOT-TAX-NO否定。 | [非负恒等式完整证明和条件性归纳](customer_attraction/two_remaining_tax.md)，独立逐客户精确审计；不声称新颖或外审。 |
 | CA-PORTFOLIO-MATCHING-NO | CAG-MODEL 的两人、五共同主题、86名单位客户实例；唯一最优两主题支持。 | 完整 SPE W=44、OPT=45、最优遗漏42；真实偏离收益矩阵 ((19,19),(22,22)) 两种匹配均为41；不存在另一个最优组合修复。只否定匹配收费，不否定半覆盖。 | [完整策略、唯一最优性及矩阵](customer_attraction/portfolio_matching_counterexample.md)，独立定义级审计与规范核验；外审未记录。 |
 
 | CA-THREE-UPPER-142-81 | CAG-MODEL，恰三名单位提供者、任意共同有限目录和全部完整历史依赖纯 SPE。 | OPT_3≤(142/81)W；零覆盖亦成立；不声称锐性或四人以上上界。 | [三个合法 slack 与非负恒等式](customer_attraction/three_player_bound.md)，独立逐段重构与 Fraction 审计；完整内部证明，外审/新颖性未认证。 |
@@ -70,6 +70,12 @@
 
 | CA-MOBIUS-SECURITY-BIAS-BARRIER | p≥n≥2，合法整数类型r_B=x_B+K、M=Σabs(x_B)，任意n个不同主题终局；不要求均衡。 | 每位u_i−v_n≥K·2^(p−n)(2^n−n−1)/(np)−M。标准M2偏置K=4M+1给所有完整根SPE逐人差≥1/4、聚合差≥n/4，故不能反驳真正安全值桥；小偏置未被排除。 | [均匀不同主题背景对偶及系数差证明](customer_attraction/compiler_security_barrier.md)，独立内部审查、28公式族/1757逐人精确检查；不解决一般目录桥。 |
 | CA-OPTIMAL-LAST-QUERY-SUM-NO | CAG-MODEL，四人七主题1651单位客户，全部400节点完整纯SPE，实际路径E,G,A,C。 | W=1559、唯一最优四主题BCDF覆盖1562；实际末背景E,G,A对每个最优元组的查询和1560>W。否定存在最优组合查询总额≤W的充分桥；静态安全dual cap4889/14<每人收益。 | [明确整数输入、完整策略及唯一OPT证明](customer_attraction/optimal_last_query_counterexample.md)，两份独立Fraction审计2800比较/210终局；未否定根税、安全值桥或半覆盖。 |
+
+
+| CA-ROOT-TAX-NO | CAG-MODEL，四人、六共同主题、61不同单位客户；实际空背景根路径的完整有序历史纯SPE。 | 路径AAAF，收益(9,9,9,11)、W38、OPT4=61、前n−1步根税45/2，OPT−W−tau=1/2>0。否定根总税全称充分桥；v4=9且W−4v4=2，不反驳安全值桥或半覆盖。 | [完整客户表、策略和逐节点比较](customer_attraction/root_tax_counterexample.md)，259历史/1295非自身偏离、两份独立Fraction审计；外审未记录。 |
+| CA-AGGREGATE-DECORRELATION-NO | CAG-MODEL，四人六主题89单位客户的完整259历史SPE，p在标签1,2各半。 | 总kappa=sum(D_i−C_i)=−1/48，后三位均0；激励松弛和43/12，补偿预算57/16>0。W85、OPT89、v4=508643/26546，不是BR或GB反例；既有36例也已否定总kappa。 | [准确预算与89客户证书](customer_attraction/global_security_budget_boundaries.md)，1554完整比较和216静态竞争元组的匹配原始/对偶经两路独立核验。 |
+| CA-ONPATH-DECOUPLED-BUDGET-NO | 既有三人六主题36单位客户完整SPE，p在未用X2,Y2各半。 | 实际(10,12,12)、所有e_i=0，kappa=(−1,1/2,0)，W−sum C_i=−1/2。因此包含激励松弛的全p预算GB为假；p静态安全值25/3<v3=10，W−3v3=4，不排除最优p版本或BR。 | [三真实查询矩阵及完整证明](customer_attraction/global_security_budget_boundaries.md)，258动作比较、原输入/策略一致性及静态安全值双路独立审计。 |
+| CA-SECURITY-CONE-DUAL | 固定人数、标签数、全部有序历史形式策略sigma和有理混合p；固定完整SPE客户锥，允许相同覆盖标签；不同覆盖合同需策略已有合法实现。 | 全锥W≥n min_B beta_B(p)·w等价于存在不受限静态Q、非负全部节点乘子lambda和余项r，c−n sum Q beta=Gamma^T lambda+r。普遍证书存在等价于BR；有理正LP见证可缩放成真正反例。 | [minimax/Farkas完整推导及目录合同](customer_attraction/security_cone_duality.md)，独立数学审查；是既有策略锥的标准安全值扩展，未证明普遍证书存在或BR，外审未记录。 |
 
 ## 2026-10-09 EPTAS 预研与近带精确补全
 

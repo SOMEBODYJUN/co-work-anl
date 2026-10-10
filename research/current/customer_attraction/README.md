@@ -1,5 +1,10 @@
 # 顺序客户吸引博弈：共同目录的半覆盖猜想
 
+最新失败边界：[CA-ROOT-TAX-NO](root_tax_counterexample.md)否定实际空背景根总税，
+不是原半覆盖反例。[总去相关及全p补偿预算](global_security_budget_boundaries.md)也均有完整SPE反例；
+尤其上传稿未排除的GB已由既有36客户证书否定。
+[安全值完整树锥对偶](security_cone_duality.md)是可复用精确等价接口，普遍BR仍未证明。
+
 **活跃目标：** [Q-CAG-HALF](../../questions/customer_attraction_half_coverage.md)：
 任意人数、任意有限共同主题目录，全部有序历史依赖的纯 SPE 都覆盖最优的一半。
 这个任意人数目标尚未证明，也没有本轮目标反例。
@@ -8,7 +13,7 @@
 经两路独立内部审查；外部审查、新颖性未认证。
 恰四人已有 [CA-FOUR-UPPER-1499-750](four_player_bound.md)：`OPT_4≤(1499/750)W`；
 合法根偏离与后继节点比较闭合精确非负恒等式，经过独立内部审查。
-一般目录的目标现只剩五人及以上；零背景总税仍开放。
+一般目录的目标现只剩五人及以上；零背景根总税已由[61客户完整SPE](root_tax_counterexample.md)否定。
 
 新增 [CA-PREFIX-BALANCE-NO](prefix_balance_family.md)：每个整数n≥4都有完整历史纯SPE
 的首步余额 `B1=4−n−1/n<0`；每个固定实数α<2也不能普遍修复首步支付。
@@ -84,7 +89,7 @@ n5全部52完整路由的整数/10000证书核20080列；n6…8同一小分数pa
 收益损失；无背景时重构文献 $3/2$。税预算可以望远镜，但任意人数的首步机会成本桥已被
 [CA-TAX-BRIDGE-NO](tax_bridge_counterexample.md)在空背景三人否定，
 一般合法背景的总税也被 [CA-GENERAL-TAX-NO](general_tax_counterexample.md)否定。
-零背景总税仍开放；不能沿旧逐层桥推出任意人数半覆盖。
+零背景根总税亦已否定；不能沿旧逐层桥推出任意人数半覆盖。
 
 `CAG-MODEL` + `CA-TWO-REMAINING-TAX` → `CA-THREE-UPPER-142-81`，
 加入实际末位节点比较和根偏离的逐客户保底后，得到完整三人上界。
@@ -307,7 +312,7 @@ python3 tests/audits/customer_attraction_three_remaining_independent.py
 - [安全值编译偏置障碍](compiler_security_barrier.md)：`tests/audits/customer_attraction_compiler_security_barrier.py`；冻结报告保存28种公式族和已有十二主题证书的静态dual。
 - [最优末节点查询反例](optimal_last_query_counterexample.md)：`tests/audits/customer_attraction_optimal_last_query.py` 和 `customer_attraction_optimal_last_query_independent.py`；完整400历史策略、2800精确比较与唯一最优性均已重放。
 
-这两项仍保留一般目录的逐人/聚合混合安全值桥、根总税和主半覆盖目标为开放义务。
+这两项没有解决一般目录的逐人/聚合混合安全值桥和主半覆盖目标；根总税现已由[61客户完整SPE](root_tax_counterexample.md)否定。
 
 ## 六极大全范围：真实行动会员joint预算
 

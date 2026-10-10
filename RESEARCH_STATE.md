@@ -1,5 +1,25 @@
 # 当前研究状态（2026-10-10）
 
+## 2026-10-10：上传结果否定根总税，并修正全p补偿预算状态
+
+从干净main@03337d1读取两份当前附件，安全fetch后远端未变。三组6.1-sol ultra独立审查完成。
+新[CA-ROOT-TAX-NO](research/current/customer_attraction/root_tax_counterexample.md)用四人六主题61单位客户完整SPE，
+实际路径AAAF、收益(9,9,9,11)、W38、OPT61、tau45/2，严格差1/2。
+因此此前作为优先开放桥的空背景根总税现已否定；恰两人税及末位OPT≤n u_n+tau仍成立。
+附加匹配静态证书v4=9，实例仍满足逐人/聚合安全值及半覆盖。
+
+第二附件89客户完整证书通过，sum kappa=−1/48且全部后继kappa为0，补偿预算57/16>0；
+真正v4=508643/26546，W−4v4>0。其[完整树对偶接口](research/current/customer_attraction/security_cone_duality.md)
+经独立数学审查成立，是已有完整策略重数锥与minimax/Farkas的标准扩展，不是普遍BR证明。
+另从既有36客户完整策略独立推出[CA-ONPATH-DECOUPLED-BUDGET-NO](research/current/customer_attraction/global_security_budget_boundaries.md)：
+p在未用X2/Y2各半，所有实际激励松弛e_i=0，总kappa=补偿预算=−1/2，
+故上传稿仍称开放的全p GB也已否定。该p非安全最优，真正W34>3v3=30。
+
+原代码复跑及互不导入的双路完整树/静态证书审计均通过；根税259历史1295非自身偏离，
+89例259历史1554含自身比较，36例43历史258比较。新增来源、证明、输入/策略、审计与登记同步保存。
+一般目录任意人数半覆盖、真正逐人/聚合安全值桥、只在适当最优p上的支付仍开放。
+本节覆盖下方旧进度中“根总税仍开放”的历史状态；外审和全球新颖性未认证。
+
 ## 2026-10-10：至多六极大、任意关联与人数的半覆盖闭合
 
 新 `CA-SIX-MAXIMA-HALF` 对至多六个不同包含极大覆盖、任意私有/共享关联、任意内部

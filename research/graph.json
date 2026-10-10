@@ -2584,7 +2584,7 @@
       "kind": "obligation",
       "track": "extensions",
       "title": "Every common-catalog pure SPE covers half of OPT",
-      "detail": "For every finite CAG-MODEL instance, every m>=1 and every full history-dependent pure SPE, OPT_m<=2W. Still unresolved; no target counterexample is certified. At most six distinct maximal coverages are proved for every m; the remaining scope requires m>=5 and at least seven maxima.",
+      "detail": "For every finite CAG-MODEL instance, every m>=1 and every full history-dependent pure SPE, OPT_m<=2W. Still unresolved; no target counterexample is certified. At most six distinct maximal coverages are proved for every m; the remaining scope requires m>=5 and at least seven maxima. Actual root total tax is now refuted by a61-unit full SPE, and all-p compensated budgets by the existing36-unit full SPE; genuine unrestricted security remains open.",
       "refs": [
         "research/current/customer_attraction/README.md",
         "research/questions/customer_attraction_half_coverage.md"
@@ -3337,6 +3337,85 @@
         "evidence/certificates/customer_attraction/six_maxima_joint_bound.json"
       ],
       "status": "complete current proof with independent internal reconstruction and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-ROOT-TAX-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Actual zero-background root total tax fails",
+      "detail": "A four-provider six-theme61-unit-customer complete ordered-history pure SPE has actual pathAAAF, payoffs(9,9,9,11), W38, OPT61 and pre-last root tax45/2. The actual zero-background root total-tax gap is OPT-W-tax=1/2>0. This refutes root total tax, rather than a non-SPE reordering or nonzero-background version. Static safety v4=9 has matching certificates; individual and aggregate safety and half coverage hold in this instance.",
+      "refs": [
+        "research/current/customer_attraction/root_tax_counterexample.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-AGGREGATE-DECORRELATION-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Aggregate decorrelation can be negative with every follower difference zero",
+      "detail": "A complete four-provider six-theme89-unit-customer SPE has W85, OPT89 and p on labels1,2 each half with aggregate decorrelation-1/48 and all later-player decorrelations zero. Incentive slack43/12 leaves compensated budget57/16>0. Matched unrestricted safety v4=508643/26546 gives W-4v4=110919/13273>0. The older36-unit certificate already also refutes aggregate decorrelation; the special zero-follower-decorrelation feature is preserved.",
+      "refs": [
+        "research/current/customer_attraction/global_security_budget_boundaries.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-ONPATH-DECOUPLED-BUDGET-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "All-p compensated on-path decorrelation budget fails",
+      "detail": "The existing36-unit three-provider six-theme complete SPE, with p on unusedX2,Y2 each half, has D=(10,12,12), C=(11,23/2,12), kappa=(-1,1/2,0) and every actual incentive slack zero. Thus W-sum C=-1/2 refutes the all-p compensated budgetGB. This p has static guarantee25/3 below optimalv3=10; BR and the restriction to safety-optimalp are not refuted.",
+      "refs": [
+        "research/current/customer_attraction/global_security_budget_boundaries.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-SECURITY-CONE-DUAL",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Full-tree SPE cone and unrestricted static safety dual are exactly equivalent",
+      "detail": "For a fixed complete ordered policy and rationalp, the entire rational SPE customer cone satisfies W>=n min_B beta_B(p).w iff one unrestricted static competitor distributionQ and nonnegative full-tree incentive multipliers lambda give c-n sumQ beta=Gamma^T lambda+r with r>=0. Finite minimax and Farkas prove equivalence; fixed-p universal certificate existence remains unresolved. Different-coverage catalogs require an existing legal realization of the policy for the perturbation argument. Standard extension of the existing strategy cone, not a new equilibrium mechanism or a universalBR proof.",
+      "refs": [
+        "research/current/customer_attraction/security_cone_duality.md"
+      ],
+      "status": "complete current proof with independent internal reconstruction and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-ROOT-TOTAL-TAX-GAP",
+      "kind": "rejected",
+      "track": "extensions",
+      "title": "Refuted actual-SPE root total-tax sufficient bridge",
+      "detail": "The candidate OPT_n<=W+sum_x b_x/(b_x+1), with b only the actual firstn-1 choices, is false already at four providers; the61-unit complete certificate supplies a strict1/2 deficit.",
+      "refs": [
+        "research/current/customer_attraction/root_tax_counterexample.md"
+      ],
+      "status": "refuted by exact complete-history counterexample"
+    },
+    {
+      "id": "CA-ALL-P-COMPENSATED-BUDGET-GAP",
+      "kind": "rejected",
+      "track": "extensions",
+      "title": "Refuted all-query-distributions compensated budget",
+      "detail": "The condition W>=sum_i C_i(p) for everyp is false at a36-unit complete SPE. This does not disprove existence of a suitable safety-optimalp or arbitrary static safety dual.",
+      "refs": [
+        "research/current/customer_attraction/global_security_budget_boundaries.md"
+      ],
+      "status": "refuted by exact complete-history counterexample"
+    },
+    {
+      "id": "CA-ROOT-SECURITY-UPLOAD-CHECKS",
+      "kind": "evidence",
+      "track": "extensions",
+      "title": "Independent full-history and static-security certificate replays",
+      "detail": "Two independent exact implementations each check the61 and89 unit inputs on every259 ordered node, and36 unit input on all43 nodes; every claimed static safety value has matching rational primal/dual certificates. Separate independent mathematical review reconstructs the minimax/Farkas equivalence. Frozen reports distinguish finite counterexamples from universal certificate existence.",
+      "refs": [
+        "research/current/customer_attraction/global_security_budget_boundaries.md",
+        "evidence/runs/2026-10-10/customer_attraction_root_security_uploads.json",
+        "evidence/runs/2026-10-10/customer_attraction_security_cone_review.md"
+      ],
+      "status": "exact finite replay plus independent mathematical review"
     }
   ],
   "hyperedges": [
@@ -7918,6 +7997,171 @@
         "research/current/customer_attraction/six_maxima_joint_bound.md"
       ],
       "status": "recorded within stated scope"
+    },
+    {
+      "id": "E-CA-ROOT-TAX-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-ROOT-TAX-NO",
+      "statement": "A four-provider six-theme61-unit-customer complete ordered-history pure SPE has actual pathAAAF, payoffs(9,9,9,11), W38, OPT61 and pre-last root tax45/2. The actual zero-background root total-tax gap is OPT-W-tax=1/2>0. This refutes root total tax, rather than a non-SPE reordering or nonzero-background version. Static safety v4=9 has matching certificates; individual and aggregate safety and half coverage hold in this instance.",
+      "refs": [
+        "research/current/customer_attraction/root_tax_counterexample.md"
+      ],
+      "status": "complete internal proof; unrefereed"
+    },
+    {
+      "id": "E-CA-ROOT-TAX-NO-REVIEW",
+      "kind": "checks",
+      "track": "extensions",
+      "premises": [
+        "CA-ROOT-SECURITY-UPLOAD-CHECKS"
+      ],
+      "conclusion": "CA-ROOT-TAX-NO",
+      "statement": "Exact full certificate replay for the finite counterexamples; independent mathematical reconstruction for the cone-equivalence theorem. These checks do not prove universalBR.",
+      "refs": [
+        "research/current/customer_attraction/root_tax_counterexample.md",
+        "evidence/runs/2026-10-10/customer_attraction_security_cone_review.md"
+      ],
+      "status": "independent internal checks; not external peer review"
+    },
+    {
+      "id": "E-CA-AGGREGATE-DECORRELATION-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-AGGREGATE-DECORRELATION-NO",
+      "statement": "A complete four-provider six-theme89-unit-customer SPE has W85, OPT89 and p on labels1,2 each half with aggregate decorrelation-1/48 and all later-player decorrelations zero. Incentive slack43/12 leaves compensated budget57/16>0. Matched unrestricted safety v4=508643/26546 gives W-4v4=110919/13273>0. The older36-unit certificate already also refutes aggregate decorrelation; the special zero-follower-decorrelation feature is preserved.",
+      "refs": [
+        "research/current/customer_attraction/global_security_budget_boundaries.md"
+      ],
+      "status": "complete internal proof; unrefereed"
+    },
+    {
+      "id": "E-CA-AGGREGATE-DECORRELATION-NO-REVIEW",
+      "kind": "checks",
+      "track": "extensions",
+      "premises": [
+        "CA-ROOT-SECURITY-UPLOAD-CHECKS"
+      ],
+      "conclusion": "CA-AGGREGATE-DECORRELATION-NO",
+      "statement": "Exact full certificate replay for the finite counterexamples; independent mathematical reconstruction for the cone-equivalence theorem. These checks do not prove universalBR.",
+      "refs": [
+        "research/current/customer_attraction/global_security_budget_boundaries.md",
+        "evidence/runs/2026-10-10/customer_attraction_security_cone_review.md"
+      ],
+      "status": "independent internal checks; not external peer review"
+    },
+    {
+      "id": "E-CA-ONPATH-DECOUPLED-BUDGET-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-ACTUAL-ROOT-TAIL-MENU-NO"
+      ],
+      "conclusion": "CA-ONPATH-DECOUPLED-BUDGET-NO",
+      "statement": "The existing36-unit three-provider six-theme complete SPE, with p on unusedX2,Y2 each half, has D=(10,12,12), C=(11,23/2,12), kappa=(-1,1/2,0) and every actual incentive slack zero. Thus W-sum C=-1/2 refutes the all-p compensated budgetGB. This p has static guarantee25/3 below optimalv3=10; BR and the restriction to safety-optimalp are not refuted.",
+      "refs": [
+        "research/current/customer_attraction/global_security_budget_boundaries.md"
+      ],
+      "status": "complete internal proof; unrefereed"
+    },
+    {
+      "id": "E-CA-ONPATH-DECOUPLED-BUDGET-NO-REVIEW",
+      "kind": "checks",
+      "track": "extensions",
+      "premises": [
+        "CA-ROOT-SECURITY-UPLOAD-CHECKS"
+      ],
+      "conclusion": "CA-ONPATH-DECOUPLED-BUDGET-NO",
+      "statement": "Exact full certificate replay for the finite counterexamples; independent mathematical reconstruction for the cone-equivalence theorem. These checks do not prove universalBR.",
+      "refs": [
+        "research/current/customer_attraction/global_security_budget_boundaries.md",
+        "evidence/runs/2026-10-10/customer_attraction_security_cone_review.md"
+      ],
+      "status": "independent internal checks; not external peer review"
+    },
+    {
+      "id": "E-CA-SECURITY-CONE-DUAL",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-STRATEGY-CONE"
+      ],
+      "conclusion": "CA-SECURITY-CONE-DUAL",
+      "statement": "For a fixed complete ordered policy and rationalp, the entire rational SPE customer cone satisfies W>=n min_B beta_B(p).w iff one unrestricted static competitor distributionQ and nonnegative full-tree incentive multipliers lambda give c-n sumQ beta=Gamma^T lambda+r with r>=0. Finite minimax and Farkas prove equivalence; fixed-p universal certificate existence remains unresolved. Different-coverage catalogs require an existing legal realization of the policy for the perturbation argument. Standard extension of the existing strategy cone, not a new equilibrium mechanism or a universalBR proof.",
+      "refs": [
+        "research/current/customer_attraction/security_cone_duality.md"
+      ],
+      "status": "complete internal proof; unrefereed"
+    },
+    {
+      "id": "E-CA-SECURITY-CONE-DUAL-REVIEW",
+      "kind": "checks",
+      "track": "extensions",
+      "premises": [
+        "CA-ROOT-SECURITY-UPLOAD-CHECKS"
+      ],
+      "conclusion": "CA-SECURITY-CONE-DUAL",
+      "statement": "Exact full certificate replay for the finite counterexamples; independent mathematical reconstruction for the cone-equivalence theorem. These checks do not prove universalBR.",
+      "refs": [
+        "research/current/customer_attraction/security_cone_duality.md",
+        "evidence/runs/2026-10-10/customer_attraction_security_cone_review.md"
+      ],
+      "status": "independent internal checks; not external peer review"
+    },
+    {
+      "id": "E-CA-ROOT-TOTAL-TAX-GAP",
+      "kind": "attacks",
+      "track": "extensions",
+      "premises": [
+        "CA-ROOT-TAX-NO"
+      ],
+      "conclusion": "CA-ROOT-TOTAL-TAX-GAP",
+      "statement": "A strict deficit in a legal complete ordered-history SPE refutes this sufficient bridge, without refuting half coverage or unrestricted mixed security.",
+      "refs": [
+        "research/current/customer_attraction/root_tax_counterexample.md"
+      ],
+      "status": "complete exact counterexample"
+    },
+    {
+      "id": "E-CA-ALL-P-COMPENSATED-BUDGET-GAP",
+      "kind": "attacks",
+      "track": "extensions",
+      "premises": [
+        "CA-ONPATH-DECOUPLED-BUDGET-NO"
+      ],
+      "conclusion": "CA-ALL-P-COMPENSATED-BUDGET-GAP",
+      "statement": "A strict deficit in a legal complete ordered-history SPE refutes this sufficient bridge, without refuting half coverage or unrestricted mixed security.",
+      "refs": [
+        "research/current/customer_attraction/global_security_budget_boundaries.md"
+      ],
+      "status": "complete exact counterexample"
+    },
+    {
+      "id": "E-CA-UPLOADED-BRIDGES-TARGET-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-ROOT-TAX-NO",
+        "CA-AGGREGATE-DECORRELATION-NO",
+        "CA-ONPATH-DECOUPLED-BUDGET-NO",
+        "CA-SECURITY-CONE-DUAL"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "Root total tax and all-p decorrelated total budgets are false. The full-tree unrestricted safety-dual equivalence is valid but does not establish universal certificate existence. All three replayed games satisfy BR and half coverage; general n>=5 catalogs remain unresolved.",
+      "refs": [
+        "research/current/customer_attraction/root_tax_counterexample.md",
+        "research/current/customer_attraction/global_security_budget_boundaries.md",
+        "research/current/customer_attraction/security_cone_duality.md"
+      ],
+      "status": "open target; precise failed sufficient routes"
     }
   ]
 }

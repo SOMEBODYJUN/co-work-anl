@@ -294,7 +294,7 @@ F_{n-1}(A)=2(n-1)x+2(n-1)=\operatorname{OPT}_n-2(n-2),
 
 税分别来自前缀 \((A,B^{n-2})\) 中负载为一的 \(n-1\) 名普通 \(A\) 客户、
 负载为 \(n-2\) 的 \(nx\) 名 \(B\) 客户和负载为 \(n-1\) 的特殊共享客户。
-所以一般人数半覆盖与根总税仍开放；被否定的是辅助首步和所有前缀余额。
+所以本族不否定一般人数半覆盖；根总税已另由[61客户完整SPE](root_tax_counterexample.md)否定。本族否定的是辅助首步和所有前缀余额。
 
 [精确有限族审计](../../../tests/audits/customer_attraction_prefix_family.py)及
 [冻结报告](../../../evidence/runs/2026-10-10/customer_attraction_prefix_family.json)

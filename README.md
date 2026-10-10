@@ -1,5 +1,10 @@
 # 两阶段设施选址博弈：研究与人类学习入口
 
+顺序CAG新增失败边界：[61客户完整根SPE](research/current/customer_attraction/root_tax_counterexample.md)
+严格否定此前开放的根总税。第二份上传结果的89客户证书成立，但全p补偿去相关预算已由
+[既有36客户策略](research/current/customer_attraction/global_security_budget_boundaries.md)否定。
+[全树安全值锥对偶](research/current/customer_attraction/security_cone_duality.md)等价成立，真正总安全值支付与一般半覆盖仍开放。
+
 本轮另启动独立的[顺序客户吸引博弈分支](research/current/customer_attraction/README.md)：
 研究 Deng 等共同目录、单位均分模型的[任意纯 SPE 半覆盖目标](research/questions/customer_attraction_half_coverage.md)。
 已建立保留全部历史依赖平局的有限精确工具，**任意人数上界仍未证明**。
