@@ -4,6 +4,10 @@
 
 | ID / 问题 | 严格范围与结论 | 状态及详情 |
 | --- | --- | --- |
+| CA-LAMINAR-INCIDENCE-MAXIMA-2M1 / CA-LAMINAR-INCIDENCE-THETA | 客户对极大主题的关联集合层级化；任意人数、全部内部子主题、完整历史纯SPE，锐界OPT≤c+(2−1/n)(W−c)，逐人全局θ保底。 | [完整真实续局证明](research/current/customer_attraction/laminar_incidence_bound.md)，独立内部审查；严格扩展sunflower，仍非一般目录。 |
+| CA-AGGREGATE-LAST-FLOOR-NO | 每个n≥3可有完整SPE的W<nθ；三人36客户证书W=34、θ=12、OPT=36。 | [完整反例及无限构造](research/current/customer_attraction/aggregate_theta_counterexample.md)，独立核验；只否定辅助收费。 |
+| CA-OBLIVIOUS-MIXED-SECURITY-2N1 | 不观察抽样动作的联合竞争组合下，混合安全值v_n≥OPT/(2n−1)，各n锐。 | [完整minimax/Jensen证明](research/current/customer_attraction/oblivious_security.md)；可信SPE支付桥仍开放。 |
+| CA-ROOT-TAX-ORDER-COUNTS-NO | 同一PNE且SPE可达计数的非SPE重排可违反根税，实际SPE顺序留正余额。 | [税页§7](research/current/customer_attraction/two_remaining_tax.md)；不否定真实SPE根税。 |
 | SC-TWO-NEAR-BAND-REP / Q-SC-ALPHA-EPTAS | 两设施固定子局，给定 H>0 及全部重权>H 的三态支持，可位多项式判定/输出原实例带内某个精确 NE；完整原模型实例最优倍率 EPTAS 为下一任务。 | [完整局部引理](research/current/shared/near_band_completion.md)、[EPTAS 候选及剩余交付](research/questions/shared_alpha_eptas.md)。局部已内部证明，未登记完整 EPTAS；外审和优先权待核。 |
 | SC-FOUR-NO-FPTAS | 两设施、四共同地点、正整数权；全部布局和精确独立混合续局上的实例最优倍率，P≠NP 下无 FPTAS；YES 13/10、NO ≥13/10+1/(100n²)。 | [完整全局间隙证明](research/current/shared/four_site_no_fptas.md)、[本轮独立审查](research/FOUR_SITE_FPTAS_AUDIT_2026-10-09.md)。完整内部证明；外审和优先权待核。PTAS 与一般任意盒 NE 搜索仍开放。 |
 | SC-K-COMPLEMENT-GREEDY-REDUCTION / SC-K-BOX-BOUNDED-COMPLEMENT | 非负背景、正异权的共单例搜索可保真嵌入真实规范贪心，所有分配自动保盒和严格 H；一般抽象盒任务另有带输出区间的精确表述。两速度 1,2 的源归约为通常位多项式，一般 q 编译按显式 k 收费。 | [完整证明、编码与反向域](research/current/multi_facility/complement_search_reduction.md)、[复合审查与交接](research/COMPLEMENT_REDUCTION_AUDIT_2026-10-08.md)；已实现编译和解码，没有求解 oracle、一般时间界或困难性；外审未记录。 |

@@ -17,6 +17,13 @@
 内部子主题可以遗漏极大共同核心，任意至多两个不同极大主题的目录均涵盖；
 全部历史纯SPE满足 `OPT_n≤|C|+(2−1/n)(W−|C|)`。
 同稿给[任意目录superset席位接口](research/current/customer_attraction/sunflower_maxima_bound.md#8-任意共同目录可用的-superset-席位接口)，一般共享union预算仍开放。
+[客户极大关联层级定理](research/current/customer_attraction/laminar_incidence_bound.md)进一步扩展到
+各客户在极大主题间的关联集合为 laminar 的目录，内部子主题仍任意；任意人数有同一锐界
+`OPT_n≤|C|+(2−1/n)(W−|C|)`，包含全部历史平局。
+[聚合末位保底反例](research/current/customer_attraction/aggregate_theta_counterexample.md)则证明
+任意 `n≥3` 均可能 `W<nθ_n`；36客户三人完整证书给 `W=34<36=3θ_3`，未反驳半覆盖。
+[混合安全值锐界](research/current/customer_attraction/oblivious_security.md)给一般目录
+`v_n≥OPT_n/(2n−1)`；竞争组合须不观察随机动作，向可信顺序续局的桥仍开放。
 [上传工具独立审计](research/current/customer_attraction/uploaded_tool_audit.md)确认其全平局递推
 与规范工具一致；新增四人完整证书否定“每人收益都至少为末位最坏最佳回应值θ”。
 [末两人逐人保底](research/current/customer_attraction/last_two_floor.md)则成立，

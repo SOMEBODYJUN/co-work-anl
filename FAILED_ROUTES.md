@@ -1,5 +1,20 @@
 # 失败路线与仍可使用的边界
 
+## 顺序 CAG：聚合末位θ保底亦不成立
+
+[CA-AGGREGATE-LAST-FLOOR-NO](research/current/customer_attraction/aggregate_theta_counterexample.md)
+不仅否定每人θ保底，也否定较弱的 `W≥nθ_n`。三人六主题36单位客户完整SPE
+收益为 `(10,12,12)`，`θ_3=12`、W=34、OPT=36；43个有序历史逐项精确重放。
+另有每个n≥3的合法Möbius构造，`W=nθ_n−1`。主半覆盖未被否定。
+混合安全值 `v_n≤θ_n` 避开该反例，但其向观察动作后的真实续局收费仍需证明。
+
+## 顺序 CAG：根总税依赖真实行动顺序
+
+[CA-ROOT-TAX-ORDER-COUNTS-NO](research/current/customer_attraction/two_remaining_tax.md)（§7）
+给每个n≥4的终局计数：既为静态PNE又可由完整SPE实现，某个非SPE重排仍有
+`OPT>W+τ`，而真实SPE顺序满足 `W+τ−OPT=1`。因此不能删去有序策略条件，
+仅凭终局计数证明根税；本族不否定实际SPE的根总税。
+
 
 
 ## 顺序 CAG：仅增加两条根偏离的五人线性模板不足

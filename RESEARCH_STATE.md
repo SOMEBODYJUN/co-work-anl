@@ -1,5 +1,30 @@
 # 当前研究状态（2026-10-10）
 
+## 2026-10-10：客户极大关联层级锐界与聚合θ路线的严格边界
+
+本轮从干净的 `main@a319bea` 安全恢复并核对最新远端，保留已有研究资产。
+新 [CA-LAMINAR-INCIDENCE-MAXIMA-2M1](research/current/customer_attraction/laminar_incidence_bound.md)
+严格扩展 sunflower 极大目录：若每位客户所属的极大主题索引集合组成 laminar 家族，
+则任意内部子主题、任意人数、全部历史依赖纯 SPE 都有
+`OPT_n≤|C|+(2−1/n)(W−|C|)`，常数锐；每位剩余玩家在每个合法历史均有全局θ保底。
+证明用真实后继最大交叠保护及全历史归纳，独立审查已完成。
+该保护机制与既有 extension-parallel 拥塞博弈文献对应，内部子主题适配另行直接证明；未认证世界新颖性。
+
+新 [CA-AGGREGATE-LAST-FLOOR-NO](research/current/customer_attraction/aggregate_theta_counterexample.md)
+否定更弱的 `W≥nθ_n`：36单位客户、三人、六主题的完整策略给收益 `(10,12,12)`，
+`W=34`、`θ_3=12`、`OPT_3=36`，全部43个有序历史及258个行动比较经独立复验。
+Möbius构造进一步给每个 `n≥3` 的合法完整纯SPE，满足 `W=nθ_n−1`；
+重复前缀的末位值亦有严格预算核验。这些反例仅否定辅助收费，不否定主猜想。
+
+新 [CA-OBLIVIOUS-MIXED-SECURITY-2N1](research/current/customer_attraction/oblivious_security.md)
+证明竞争组合不观察随机动作时的安全值 `v_n≥OPT_n/(2n−1)`，每个n均锐。
+可信顺序回复会随所见动作变化，`u_i≥v_n` 或 `W≥nv_n` 的一般桥仍未证明。
+另在两人税页§7保存完整无限族：同一静态PNE且可SPE实现的终局计数，
+不可信重排可违反根税；真实SPE顺序仍留一单位余额，说明根税不能只看终局计数。
+
+**一般目录五人及以上半覆盖仍开放，未找到主猜想反例。**
+
+
 ## 2026-10-10：全sunflower极大目录的任意人数锐界
 
 本轮从main@debd9ba安全恢复，初始无项目未提交改动。新 `CA-SUNFLOWER-MAXIMA-2M1`

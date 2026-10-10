@@ -10,6 +10,13 @@
 合法根偏离与后继节点比较闭合精确非负恒等式，经过独立内部审查。
 一般目录的目标现只剩五人及以上；零背景总税仍开放。
 
+新 [客户极大关联层级定理](laminar_incidence_bound.md)严格扩大 sunflower 目录类：
+客户在极大主题间的关联集合为 laminar 时，任意人数、任意内部子主题、全部历史纯SPE
+都有锐界 `OPT_n≤|C|+(2−1/n)(W−|C|)`。这不是一般目录结论。
+[聚合θ反例](aggregate_theta_counterexample.md)证明每个n≥3都可能 `W<nθ_n`；
+36客户三人证书经独立精确核验。[混合安全值](oblivious_security.md)仍有锐下界
+`v_n≥OPT_n/(2n−1)`，但可信顺序续局下的逐人或总预算桥保持开放。
+
 本分支使用 [CAG-MODEL](model.md)：客户价值固定均分，没有客户侧优化。
 它与仓库原来的主动原子客户设施模型独立。不能借用原模型的因子 2 存在性，
 也不能把静态 CAG 的 Nash 结论自动用于顺序 SPE。
@@ -114,6 +121,10 @@
 - [Möbius编译](mobius_compiler.md)：`tests/audits/mobius_compiler_audit.py`。
 - [三剩余人利润界](three_remaining_profit_bound.md)：`tests/audits/customer_attraction_three_remaining_profit.py` 和 `customer_attraction_three_remaining_independent.py`。
 - [四剩余人利润界](four_remaining_profit_bound.md)：`tests/audits/customer_attraction_four_remaining_profit.py` 和 `customer_attraction_four_remaining_independent.py`。
+- [极大关联层级锐界](laminar_incidence_bound.md)：`tests/audits/customer_attraction_laminar_incidence.py`。
+- [聚合θ反例](aggregate_theta_counterexample.md)：`tests/audits/customer_attraction_aggregate_theta.py` 和 `customer_attraction_aggregate_theta_independent.py`。
+- [混合安全值锐界](oblivious_security.md)：`tests/audits/customer_attraction_oblivious_security.py`。
+- [真实顺序的根税边界](two_remaining_tax.md)：`tests/audits/customer_attraction_ordered_tax_boundary.py`。
 
 以上审计默认只打印新输出，`--output` 拒绝覆盖冻结报告；已登记报告见 `evidence/runs/2026-10-10/`。
 

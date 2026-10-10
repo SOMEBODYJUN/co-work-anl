@@ -1,0 +1,95 @@
+{
+  "claim": "CA-AGGREGATE-LAST-FLOOR-NO",
+  "all_exact_checks_passed": true,
+  "base_git_commit": "a319beaf418359367b368a8ca634641b2351db11",
+  "python_version": "3.12.14",
+  "audit_script_sha256": "9c91959c1a79d72d4c6acabb5b0550dddf4ddaedabdc402f9eccb037b4fa6fa7",
+  "instance_sha256": "be0e1a54d3a7ddfeba327c03ce1975932e8fd1018926147b9c555fe6af180aaf",
+  "certificate_sha256": "cf08edab0813de8eccee8d5466d15b40bd42c980da9b0b68c925f4ae80991010",
+  "replay_commands": [
+    "python3 tests/audits/customer_attraction_aggregate_theta.py"
+  ],
+  "optimizer_dependency": false,
+  "small_legal_witness": {
+    "unit_customers": 36,
+    "topics": 6,
+    "players": 3,
+    "ordered_decision_histories": 43,
+    "all_action_comparisons": 258,
+    "root_history": [
+      0,
+      3,
+      4
+    ],
+    "payoffs": [
+      "10",
+      "12",
+      "12"
+    ],
+    "welfare": 34,
+    "optimum": 36,
+    "theta": "12",
+    "welfare_minus_players_theta": "-2",
+    "ordered_last_prefixes": 36,
+    "terminal_payoff_table": {
+      "0,1,2": [
+        "12",
+        "12",
+        "12"
+      ],
+      "0,3,4": [
+        "10",
+        "12",
+        "12"
+      ],
+      "0,0,1": [
+        "9",
+        "9",
+        "15"
+      ],
+      "0,0,3": [
+        "25/3",
+        "25/3",
+        "37/3"
+      ],
+      "0,0,0": [
+        "7",
+        "7",
+        "7"
+      ]
+    }
+  },
+  "partition_family_regressions": [
+    {
+      "players": 3,
+      "topics": 6,
+      "restricted_ordered_histories": 37,
+      "restricted_action_comparisons": 156,
+      "signed_root_sum": 2,
+      "fresh_theta": 1,
+      "split_checks": 1,
+      "scope": "signed algebra and no-repeat policy regression, not a standalone legal input"
+    },
+    {
+      "players": 4,
+      "topics": 8,
+      "restricted_ordered_histories": 401,
+      "restricted_action_comparisons": 2080,
+      "signed_root_sum": 3,
+      "fresh_theta": 1,
+      "split_checks": 3,
+      "scope": "signed algebra and no-repeat policy regression, not a standalone legal input"
+    },
+    {
+      "players": 5,
+      "topics": 10,
+      "restricted_ordered_histories": 5861,
+      "restricted_action_comparisons": 36100,
+      "signed_root_sum": 4,
+      "fresh_theta": 1,
+      "split_checks": 6,
+      "scope": "signed algebra and no-repeat policy regression, not a standalone legal input"
+    }
+  ],
+  "half_coverage_refuted": false
+}

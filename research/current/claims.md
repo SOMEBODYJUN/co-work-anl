@@ -45,6 +45,13 @@
 | CA-MAXIMA-SUPERSET-SEATS | CAG-MODEL任意目录、n≥1；全历史SPE；每主题归属一个包含它的极大主题。 | f_j(k)=w_j/k+v_j/n第n大席位ν给每人u_i≥ν、W≥nν；任意前缀的剩余席位条件给逐人保底。任意共享union预算未闭合。 | [§8通用接口](customer_attraction/sunflower_maxima_bound.md)，独立内部证明核查；不解决一般半覆盖。 |
 | CA-SUNFLOWER-PRIVATE-GAP | 同sunflower类，每非极大主题在某个极大扩张中遗漏私有花瓣客户；唯一极大主题无需额外条件。 | 每个完整SPE在每个历史只选极大主题，根花瓣计数为singleton PNE；福利定理无需此条件。 | [§6完整真实续局扩张](customer_attraction/sunflower_maxima_bound.md)，独立审查；省略条件有非极大且非PNE完整SPE。 |
 
+
+| CA-LAMINAR-INCIDENCE-THETA | CAG-MODEL，任意n≥1；客户在不同极大覆盖主题间的关联索引集合组成laminar家族；任意内部子主题、全部有序历史纯SPE。 | 每个合法前缀中所有剩余玩家最终收益各≥全局θ_n；不要求主题目录自身laminar或终局PNE。 | [真实最大交叠保护及全历史归纳](customer_attraction/laminar_incidence_bound.md)，独立重构与精确审计；外审/新颖性未认证。 |
+| CA-LAMINAR-INCIDENCE-MAXIMA-2M1 | 同上结构类；c为所有极大覆盖的共同核心大小，内部主题可遗漏核心。 | OPT_n≤c+(2−1/n)(W−c)，常数锐，严格扩展sunflower极大目录；一般交叠目录不涵盖。 | [逐客户预算及锐性证明](customer_attraction/laminar_incidence_bound.md)，独立内部审查与完整历史核验。 |
+| CA-AGGREGATE-LAST-FLOOR-NO | CAG-MODEL，每个n≥3均存在有限共同目录单位客户实例与完整纯SPE。 | W=nθ_n−1的无限构造；36客户三人六主题实例W=34、θ=12、OPT=36。否定聚合W≥nθ，未反驳半覆盖。 | [紧凑完整策略、重复前缀预算与Möbius族](customer_attraction/aggregate_theta_counterexample.md)，独立直接单位客户重放及精确审计。 |
+| CA-OBLIVIOUS-MIXED-SECURITY-2N1 | CAG-MODEL任意n≥1；当前人随机主题，其余n−1竞争主题可联合固定但不观察抽样实现。 | v_n≥OPT_n/(2n−1)，每个n均锐；u_i≥v_n或W≥nv_n的可信顺序SPE桥仍开放。 | [有限minimax、Jensen与共同目录预算](customer_attraction/oblivious_security.md)，独立审查与精确原始/对偶证书。 |
+| CA-ROOT-TAX-ORDER-COUNTS-NO | CAG-MODEL，每个n≥4；同一静态PNE且完整SPE可达终局计数。 | 可信SPE顺序W+τ−OPT=1，某非SPE重排OPT−W−τ=(n−1)(n−3)/n>0；只排除仅看计数的根税证明。 | [§7无限族与完整策略](customer_attraction/two_remaining_tax.md)，独立重构、n=4全树及47个参数精确核验。 |
+
 ## 2026-10-09 EPTAS 预研与近带精确补全
 
 | ID | Exact scope | Result and boundary | Proof and status |
