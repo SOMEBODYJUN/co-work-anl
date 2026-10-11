@@ -477,3 +477,9 @@ n≥9已另由混合包络解析推论证明半覆盖，故这些障碍没有否
 [CA-OPTIMAL-LAST-QUERY-SUM-NO](research/current/customer_attraction/optimal_last_query_counterexample.md)的四人七主题1651客户完整SPE有W1559，唯一最优BCDF覆盖1562；实际末背景E,G,A的四个最优查询值都是390，所以总额1560>W。
 全部400有序历史和2800真实行动比较均精确通过；唯一最优性覆盖全部210 multiset，不能靠换另一个最优组合回避。
 可回收的是实际末节点原税不等式及更一般跨节点余额，不能把这个失败的充分界当作根总税反例。该例另有静态安全dual cap4889/14<每人收益，故也不是一般安全值桥或半覆盖反例。
+
+## 任意规范化半覆盖证书都可保留早期支付后修补：错误
+
+尝试将同计数末回复规范化后的非负2c−o证书，先保留所有早期乘子，再用末位平局等式或追加其它原真实激励行支付运输余项。关键失败并非平局行不足：三单位客户完整SPE的规范化乘子(4,1,2)在原策略已支付9/2，目标只有3，余项与合法SPE质量内积为−3/2。任何追加非负原行只会增加支付，不能修补。
+
+[完整策略与精确分离](research/current/customer_attraction/terminal_tie_lift_obstruction.md)排除任意既定早期乘子的自动提升，不排除重选乘子或一般半覆盖。回收是[更宽的商空间提升](research/current/customer_attraction/terminal_tie_quotient.md)：同实例改用(2,1,1)后成功。未来必须联合选择早期支付与末端符号修正；非均匀incumbent净流不能被当作只含未覆盖客户的债。

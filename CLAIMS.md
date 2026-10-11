@@ -1,5 +1,8 @@
 # 命题入口与新前沿
 
+新增三个精确身份：[末位平局商空间提升、同计数二次判别](research/current/customer_attraction/terminal_tie_quotient.md)与[自然2c−o固定支付失败](research/current/customer_attraction/terminal_tie_lift_obstruction.md)。它们不升级任意人数半覆盖或聚合安全桥。
+
+
 本页是根目录的命题导航；[现行逐命题登记](research/current/claims.md)保存完整范围、证明和状态。[规范双设施模型](research/current/model.md)与[任意设施数共同目录模型](research/current/multi_facility/model.md)分开定义。凡改变设施数、目录条件、费用函数或客户 NE 量词，均建立新版本，不从旧结果自动推断。
 
 | ID / 问题 | 严格范围与结论 | 状态及详情 |

@@ -1,5 +1,8 @@
 # 两阶段设施选址博弈：研究与人类学习入口
 
+新增一般运输接口：[末位平局行商空间](research/current/customer_attraction/terminal_tie_quotient.md)严格扩大证书提升条件，并给出真实四边与跨计数支付。但[自然半覆盖证书的固定早期支付](research/current/customer_attraction/terminal_tie_lift_obstruction.md)可留下无法追加支付的负债；全局乘子必须联合构造。一般半覆盖与弱聚合安全桥仍开放。
+
+
 最新一般机制边界：[34单位客户完整SPE](research/current/customer_attraction/individual_security_counterexample.md)
 严格否定真正逐人混合安全值保底；[完整树按节点平均偏离](research/current/customer_attraction/iid_security_and_flow_barriers.md)
 即使用任意非负权重也不足。聚合安全值与主半覆盖仍开放，

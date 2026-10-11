@@ -3688,6 +3688,56 @@
         "evidence/runs/2026-10-10/transport_integration_checks.json"
       ],
       "status": "exact internal audits; universal gaps retained"
+    },
+    {
+      "id": "CA-TERMINAL-TIE-QUOTIENT-LIFT",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Constructive lift modulo reciprocal terminal incentive rows",
+      "detail": "For any complete formal policy and root-preserving same-count terminal normalization, a given normalized nonnegative certificate lifts while preserving its early weights if r+E belongs to the nonnegative orthant plus the explicitly paired terminal-row span. Signed tie coefficients are implemented by nonnegative original rows. This strictly extends the coordinatewise remainder condition; universal input multipliers remain unconstructed.",
+      "refs": [
+        "research/current/customer_attraction/terminal_tie_quotient.md"
+      ],
+      "status": "complete stated-scope derivation, independently internally audited; general gluing open; unrefereed"
+    },
+    {
+      "id": "CA-TERMINAL-TIE-LOCAL-QUADRATIC",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Exact quadratic test inside a terminal count class",
+      "detail": "For a fixed terminal count q, membership of its incumbent correction in its own reciprocal-row span is characterized by singleton and pair Boolean coefficients plus the zero-prefix-load constraints, using O(m^2) linear equations. Per-count cancellation is sufficient but not necessary for global cancellation; real four-edge and cross-count examples distinguish the mechanisms.",
+      "refs": [
+        "research/current/customer_attraction/terminal_tie_quotient.md"
+      ],
+      "status": "complete stated-scope derivation, independently internally audited; general gluing open; unrefereed"
+    },
+    {
+      "id": "CA-TERMINAL-TIE-FIXED-LIFT-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "A natural half-cover certificate cannot always be lifted with fixed early weights",
+      "detail": "Three unit customers and a complete three-player SPE admit a nonnegative normalized certificate for the natural 2c-o target whose preserved early payment leaves remainder s with s dot w=-3/2. Reciprocal terminal ties, and even additional nonnegative original incentive rows, cannot repair it without reducing or changing the early weights. A different normalized certificate in the same instance does lift; this is not a welfare or safety counterexample.",
+      "refs": [
+        "research/current/customer_attraction/terminal_tie_lift_obstruction.md"
+      ],
+      "status": "complete stated-scope derivation, independently internally audited; general gluing open; unrefereed"
+    },
+    {
+      "id": "CA-TERMINAL-TIE-CHECKS",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "All-type terminal quotient and fixed-lift audits",
+      "detail": "Two independent definition-level Fraction programs check complete ordered histories, natural-target success and failure certificates, four real-edge cancellation, cross-count tie payment and the exact local Boolean characterization.",
+      "refs": [
+        "research/current/customer_attraction/terminal_tie_quotient.md",
+        "research/current/customer_attraction/terminal_tie_lift_obstruction.md",
+        "tests/audits/customer_attraction_terminal_tie_quotient.py",
+        "tests/audits/customer_attraction_terminal_tie_independent.py",
+        "evidence/runs/2026-10-10/terminal_tie_quotient_audit.json",
+        "evidence/runs/2026-10-10/terminal_tie_independent.json",
+        "evidence/runs/2026-10-10/terminal_tie_quotient_review.md"
+      ],
+      "status": "independent internal finite exact audits; no universal welfare inference"
     }
   ],
   "hyperedges": [
@@ -9051,6 +9101,110 @@
         "research/current/customer_attraction/policy_security_checkpoints.md"
       ],
       "status": "proved limitation or exact interface"
+    },
+    {
+      "id": "E-CA-TERMINAL-TIE-QUOTIENT-LIFT-DERIVES",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-TERMINAL-REPLY-DUAL-LIFT"
+      ],
+      "conclusion": "CA-TERMINAL-TIE-QUOTIENT-LIFT",
+      "statement": "For any complete formal policy and root-preserving same-count terminal normalization, a given normalized nonnegative certificate lifts while preserving its early weights if r+E belongs to the nonnegative orthant plus the explicitly paired terminal-row span. Signed tie coefficients are implemented by nonnegative original rows. This strictly extends the coordinatewise remainder condition; universal input multipliers remain unconstructed.",
+      "refs": [
+        "research/current/customer_attraction/terminal_tie_quotient.md"
+      ],
+      "status": "complete stated-scope proof; general target not closed"
+    },
+    {
+      "id": "E-CA-TERMINAL-TIE-QUOTIENT-LIFT-CHECKS",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "CA-TERMINAL-TIE-CHECKS"
+      ],
+      "conclusion": "CA-TERMINAL-TIE-QUOTIENT-LIFT",
+      "statement": "Independent Fraction reconstruction checks the specified identities and complete finite witness; finite checks do not construct universal half-cover multipliers.",
+      "refs": [
+        "research/current/customer_attraction/terminal_tie_quotient.md"
+      ],
+      "status": "internal exact arithmetic audit"
+    },
+    {
+      "id": "E-CA-TERMINAL-TIE-LOCAL-QUADRATIC-DERIVES",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-TERMINAL-REPLY-DUAL-LIFT"
+      ],
+      "conclusion": "CA-TERMINAL-TIE-LOCAL-QUADRATIC",
+      "statement": "For a fixed terminal count q, membership of its incumbent correction in its own reciprocal-row span is characterized by singleton and pair Boolean coefficients plus the zero-prefix-load constraints, using O(m^2) linear equations. Per-count cancellation is sufficient but not necessary for global cancellation; real four-edge and cross-count examples distinguish the mechanisms.",
+      "refs": [
+        "research/current/customer_attraction/terminal_tie_quotient.md"
+      ],
+      "status": "complete stated-scope proof; general target not closed"
+    },
+    {
+      "id": "E-CA-TERMINAL-TIE-LOCAL-QUADRATIC-CHECKS",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "CA-TERMINAL-TIE-CHECKS"
+      ],
+      "conclusion": "CA-TERMINAL-TIE-LOCAL-QUADRATIC",
+      "statement": "Independent Fraction reconstruction checks the specified identities and complete finite witness; finite checks do not construct universal half-cover multipliers.",
+      "refs": [
+        "research/current/customer_attraction/terminal_tie_quotient.md"
+      ],
+      "status": "internal exact arithmetic audit"
+    },
+    {
+      "id": "E-CA-TERMINAL-TIE-FIXED-LIFT-NO-DERIVES",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL",
+        "CA-TERMINAL-REPLY-DUAL-LIFT",
+        "CA-TERMINAL-TIE-QUOTIENT-LIFT"
+      ],
+      "conclusion": "CA-TERMINAL-TIE-FIXED-LIFT-NO",
+      "statement": "Three unit customers and a complete three-player SPE admit a nonnegative normalized certificate for the natural 2c-o target whose preserved early payment leaves remainder s with s dot w=-3/2. Reciprocal terminal ties, and even additional nonnegative original incentive rows, cannot repair it without reducing or changing the early weights. A different normalized certificate in the same instance does lift; this is not a welfare or safety counterexample.",
+      "refs": [
+        "research/current/customer_attraction/terminal_tie_lift_obstruction.md"
+      ],
+      "status": "complete stated-scope proof; general target not closed"
+    },
+    {
+      "id": "E-CA-TERMINAL-TIE-FIXED-LIFT-NO-CHECKS",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "CA-TERMINAL-TIE-CHECKS"
+      ],
+      "conclusion": "CA-TERMINAL-TIE-FIXED-LIFT-NO",
+      "statement": "Independent Fraction reconstruction checks the specified identities and complete finite witness; finite checks do not construct universal half-cover multipliers.",
+      "refs": [
+        "research/current/customer_attraction/terminal_tie_lift_obstruction.md"
+      ],
+      "status": "internal exact arithmetic audit"
+    },
+    {
+      "id": "E-CA-TERMINAL-TIE-FIXED-LIFT-LIMITS",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-TERMINAL-TIE-FIXED-LIFT-NO",
+        "CA-TERMINAL-TIE-QUOTIENT-LIFT"
+      ],
+      "conclusion": "CA-TERMINAL-TRANSPORT-GAP",
+      "statement": "A normalized certificate and its early weights must be chosen together with terminal corrections: arbitrary input certificates cannot be repaired by adding nonnegative original rows. Nonuniform incumbent transfers survive beyond unseen-customer corrections.",
+      "refs": [
+        "research/current/customer_attraction/terminal_tie_quotient.md",
+        "research/current/customer_attraction/terminal_tie_lift_obstruction.md"
+      ],
+      "status": "exact restriction on the proposed lifting mechanism; general target open"
     }
   ]
 }

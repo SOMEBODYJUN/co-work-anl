@@ -1,5 +1,8 @@
 # 顺序客户吸引博弈：共同目录的半覆盖猜想
 
+**末位平局支付的新边界：** [显式商空间提升与二次判别](terminal_tie_quotient.md)允许相反真实末行的任意符号组合，严格扩大旧逐类型余项条件；[自然2c−o固定提升障碍](terminal_tie_lift_obstruction.md)说明不能先任意选择早期乘子再修补。一般非均匀净流还留下incumbent重分配，不能只计首次覆盖客户。全局两条桥仍开放。
+
+
 **2026-10-10 全局运输接口：** [安全值链](security_chain_and_local_boundary.md)把足够的弱桥
 写成全路径净债不低于 `−v_n/2`，而113客户完整SPE排除逐步归纳。
 [末两人的显式循环支付](stationary_pair_transport.md)给公开、与客户重数无关的Q/λ；

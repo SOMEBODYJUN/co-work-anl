@@ -95,6 +95,9 @@
 | CA-STATIONARY-PAIR-TRANSPORT | 任意n≥2、固定长度n−2有序前缀P、任意完整形式策略；全部兴趣类型。 | 末回复图循环C给Q均匀于P+a，有逐类型u_pen−E_Qf(t)=E_C[Γ_(P,a)+Γ_(Pa,t)]，公开非负λ且零余项。该配对模板非负余项当且仅当π平稳；收益强度不超过既知末两人保底。 | [循环望远镜与精确divergence](customer_attraction/stationary_pair_transport.md)，独立代数重构及全类型审计；一般多后继gluing未解。 |
 | CA-PRESCRIBED-STATIC-KERNELS-NO | 指定三人22客户六不同主题SPE与三人7客户四标签SPE，前者根回复成员平稳Q、后者实际终局频率iid Q。 | 前者唯一核cap6>W/3=17/3；后者查询77/27>W/(3−1/2)=14/5。两规定Q构造失败，均未否定不受限Q的安全桥、所有实际节点菜单或半覆盖。 | [完整历史与两项严格分数差](customer_attraction/stationary_pair_transport.md)，两路独立Fraction复验；7客户例允许同覆盖标签。 |
 | CA-TERMINAL-REPLY-DUAL-LIFT | 任意完整形式策略、n≥2；同主题计数末层代表规范化并保留实际根前缀；给定非负逐偏离形式证书。 | 末行拆成两条原Γ非负行；早期转移E=Σκδ。若r+E≥0可显式提升原Γ证书；非代表守恒是充分非必要条件。转移图按偏离次数为DAG；亏损/增加只分别有半/全旧收益预算。 | [全部行变换与构造式提升](customer_attraction/terminal_reply_transport.md)，独立完整数学审查、两路273列恒等式；仍未构造普遍λ,r+E预算。 |
+| CA-TERMINAL-TIE-QUOTIENT-LIFT | CAG-MODEL，任意n≥2、完整形式策略、同计数保根末回复规范化；给定非负规范化证书。 | 若r+E属于非负类型锥加相反真实末行空间H，可用符号系数正负分拆显式提升；严格扩大r+E逐类型非负条件，尚未构造普遍输入乘子。 | [商空间完整构造](customer_attraction/terminal_tie_quotient.md)，两路定义级精确核验及自然2c−o成功证书；不假定规范化策略仍为SPE。 |
+| CA-TERMINAL-TIE-LOCAL-QUADRATIC | 固定末主题计数q、原末回复集及真实可达incumbent净流；全部兴趣类型。 | 同q误差属于自身相反末行空间，等价于含p=0外部约束的O(m²)Boolean一次/二次系数式；逐q消去仅是全局充分条件，非均匀四边和跨q支付均可有效。 | [局部精确判别](customer_attraction/terminal_tie_quotient.md)，全类型审计；不声称全局必要或一般λ存在。 |
+| CA-TERMINAL-TIE-FIXED-LIFT-NO | 三单位客户、三主题、三人完整历史SPE；自然比较元组A,B,C。 | 非负规范化2c−o证书可在保留早期乘子后留下s·w=−3/2；追加任意非负真实行均不能修复。同实例另选早期乘子即可商空间提升。 | [完整策略、逐类型两证书及精确分离](customer_attraction/terminal_tie_lift_obstruction.md)，root和两路Fraction复验；不是半覆盖或安全桥反例。 |
 | CA-DYNAMIC-IID-DEBT-INTERFACE | 任意固定非负整数背景、剩r≥1人、共同非空目录，全部完整有序状态。 | 剩余harmonic iid势凹，KKT刻画对称NE并确定唯一剩余利润Z；总覆盖=前缀租金+Z。实际路径Σ(Z_h−Z_child−u_h)=Z_n−W；净债≤Z_n/(2n)足以半覆盖，仍开放。 | [背景微分、租金恒等式与全局接口](customer_attraction/dynamic_iid_debt_boundary.md)，独立数学重构；有背景Z不是覆盖。 |
 | CA-WEAK-LOCAL-IID-DRIFT-NO | 五人七不同主题60单位客户、全部2801历史完整SPE；前缀PP位于实际路径。 | u=(12,12,10,12,12)、W58、OPT60；PP剩余Z3=97/3，PP0的Z2=21。第三人10<(9/10)(34/3)=51/5，弱逐步漂移亏1/5。全局弱桥仍成立。 | [原始类型与两个全查询KKT](customer_attraction/dynamic_iid_debt_boundary.md)，两路19607比较、纯iid/类型二项式独立复验；只否定局部命题。 |
 | CA-NEW-POLICY-CONE-SECURITY | 保存的21棵新的指定完整形式策略（五人七/八主题及六人八主题），各自全部合法非负客户重数锥。 | 每锥有与w,p无关的共同静态Q及全部纯查询非负Γ证书，故整个锥W≥nv_n。不是任意策略或一个完整目录类定理；部分规则可能只有退化可行性。 | [共同Q的逐查询恒等式及压缩证书](customer_attraction/policy_security_checkpoints.md)，独立全有序Γ重建；据此停止沿这些树重复调权。 |
@@ -263,6 +266,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 **Current status (2026-10-07):** SC-K-GREEDY-BOX-EXISTS supplies universal feasibility and a finite exact constructor; SC-K-BOX-STRUCTURED-POLY-2 closes the two bounded-structure DP classes. General input-bit-polynomial total time remains open.
 
 **Boundary/evidence:** the restricted-related-link inequality `W_t/s_t <= (W_v+w_i)/s_v` is not equivalent when multiplicities differ; `q_t=1,q_v=2,w_i=2,W_t=5,W_v=6` is an exact mismatch. [Boundary note](multi_facility/restricted_related_link_boundary.md) and [audit](../../tests/audits/restricted_related_formula.py). This is an open obligation and literature boundary, not a hardness theorem.
+
 
 
 ## 逻辑使用规则
