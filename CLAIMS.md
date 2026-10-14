@@ -2,7 +2,7 @@
 
 独立开放目标 [WC-TARGET v1](research/weighted_congestion_frontier/CLAIMS.md)：
 任意正权、多资源策略、非负系数多项式费用的加权原子拥塞博弈普遍近似纯均衡门槛。
-只有文献基线；协作工具不提升数学状态，与既有命题不存在未经证明的依赖边。
+文献基线之外，R2新增[资源权重密度存在上界](research/current/weighted_congestion/weight_density.md)，内部一般证明与独立审查完成；它只是结构子类，WC-TARGET全类仍开放。与设施/CAG命题不存在未经证明的依赖边。
 
 新增三个精确身份：[末位平局商空间提升、同计数二次判别](research/current/customer_attraction/terminal_tie_quotient.md)与[自然2c−o固定支付失败](research/current/customer_attraction/terminal_tie_lift_obstruction.md)。它们不升级任意人数半覆盖或聚合安全桥。
 

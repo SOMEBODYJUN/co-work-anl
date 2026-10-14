@@ -1,5 +1,12 @@
 # 现行命题登记：前提、结论、依赖与状态
 
+## 2026-10-14 独立加权拥塞模型：R2 资源权重密度
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| WC-R2-DENSITY-MOMENT | 任意正实有限多重集、R>1、0<p<1，每个半开[x,Rx)含至多K项，计重数。 | sum z^p ≤ A_R(p) K^(1-p)(sum z)^p，A_R(p)=(1−R^-1)^p/(1−R^-p)；有限几何链逼近该sharp supremum。 | [有限望远镜证明](weighted_congestion/weight_density.md)、独立重构审查和Fraction回归；非均衡因子锐性，外审/新颖性未认证。 |
+| WC-R2-WEIGHT-DENSITY | MODEL全部正实权、非负degree≤d多项式、多资源有限策略；d≥1、资源潜在使用者半开密度K_R。 | 每个Σw_i^p C_i单边局部min是[1+A_R(p)K_R^(1-p)d^p]-PNE；严格above-factor改善路径有限。d≥3给≤1+4K_d，几何分离谱给O(log d)。 | [全资源偏离证明](weighted_congestion/weight_density.md)、独立内部审查、全部测试偏离精确复算；结构子类，不解全类o(d)，无位多项式声明。 |
+
 ## 2026-10-09 独立顺序客户吸引模型
 
 | ID | Exact scope | Result and boundary | Proof and status |

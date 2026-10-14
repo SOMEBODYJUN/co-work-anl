@@ -1,5 +1,9 @@
 # 当前研究状态
 
+## 2026-10-14 UTC：R2资源权重密度上界
+
+[当前完整证明](research/current/weighted_congestion/weight_density.md)：每资源潜在使用者在[x,Rx)至多K_R时，Σw_i^p C_i的任意单边局部最小点是[1+A_R(p)K_R^(1-p)d^p]-PNE。独立重构审查与Fraction全偏离核验完成；几何分离谱得O(log d)，任意人数、任意多资源策略均保留。真正下一缺口是密集近等权类与跨尺度互动的全类机制；WC-TARGET仍OPEN。
+
 ## 2026-10-14 UTC：拥塞博弈分支的本地程序与异步公屏
 
 research/weighted_congestion_frontier/ 使用统一 TEAM 提示词。每个 Work 对话指定角色号，用本地 work.py 和本会话 txt 凭据恢复、同步、交流和保存；内部 subagent 按研究需要协作。

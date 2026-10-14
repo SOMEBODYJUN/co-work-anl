@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Facility location mathematical dependency hypergraph",
-  "updated": "2026-10-10",
+  "updated": "2026-10-14",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -3738,6 +3738,78 @@
         "evidence/runs/2026-10-10/terminal_tie_quotient_review.md"
       ],
       "status": "independent internal finite exact audits; no universal welfare inference"
+    },
+    {
+      "id": "WC-MODEL",
+      "kind": "definition",
+      "track": "extensions",
+      "title": "Weighted atomic polynomial congestion model",
+      "detail": "Finite players/resources, arbitrary positive real player weights, arbitrary finite multi-resource strategy families including empty strategies; nonnegative polynomial coefficients, degree at most d; C_i=sum resource latencies without multiplying w_i. Independent of facility and CAG models.",
+      "refs": [
+        "research/current/weighted_congestion/weight_density.md",
+        "research/weighted_congestion_frontier/MODEL.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "WC-R2-DENSITY-CONDITION",
+      "kind": "definition",
+      "track": "extensions",
+      "title": "Half-open resource-local weight density",
+      "detail": "R>1; every [x,Rx) window in each resource potential-user weight multiset contains at most K_R players counting multiplicities. Equality of weight ratio R lies outside a common half-open window.",
+      "refs": [
+        "research/current/weighted_congestion/weight_density.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "WC-R2-DENSITY-MOMENT",
+      "kind": "lemma",
+      "track": "extensions",
+      "title": "Sharp finite sparse power-moment inequality v1",
+      "detail": "For 0<p<1 and K_R-sparse positive finite multiset: sum z_i^p <= [(1-R^-1)^p/(1-R^-p)] K_R^(1-p) (sum z_i)^p. Constant is a supremum approached by finite repeated geometric chains; not an equilibrium sharpness claim.",
+      "refs": [
+        "research/current/weighted_congestion/weight_density.md",
+        "research/weighted_congestion_frontier/assets/R2/weight_density/review.md"
+      ],
+      "status": "complete general proof, independently internally checked; unrefereed"
+    },
+    {
+      "id": "WC-R2-POLYNOMIAL-INCREMENT",
+      "kind": "lemma",
+      "track": "extensions",
+      "title": "Actual-load polynomial externality bound",
+      "detail": "For Y=X+w>0 and nonnegative polynomial degree<=d: c(Y)-c(X)<=min(1,dw/Y)c(Y), without division by costs. Degree zero and identically zero costs included.",
+      "refs": [
+        "research/current/weighted_congestion/weight_density.md",
+        "research/weighted_congestion_frontier/assets/R2/weight_density/review.md"
+      ],
+      "status": "elementary complete derivation"
+    },
+    {
+      "id": "WC-R2-WEIGHT-DENSITY",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Resource-local weight-density PNE existence v1",
+      "detail": "Every unilateral local minimum of sum_i w_i^p C_i is [1+A_R(p)K_R^(1-p)d^p]-PNE for arbitrary real MODEL games. All strict above-factor improvements decrease this potential. R=d,p=ln2/lnd,d>=3 gives <=1+4K_d and geometrically separated spectra give O(log d). Not a full-class o(d) bound.",
+      "refs": [
+        "research/current/weighted_congestion/weight_density.md",
+        "research/weighted_congestion_frontier/assets/R2/weight_density/review.md"
+      ],
+      "status": "complete general proof, independently internally checked; unrefereed"
+    },
+    {
+      "id": "WC-R2-DENSITY-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Exact rational weight-density audit",
+      "detail": "Fraction comparisons for p=1/m; moment and actual game move checks include mixed degrees, empty and common resources, zero costs, repeated weights and half-open endpoints. Finite evidence does not prove arbitrary-real statements.",
+      "refs": [
+        "research/current/weighted_congestion/weight_density.md",
+        "tests/audits/weighted_congestion_density.py",
+        "evidence/runs/2026-10-14/weighted_congestion_density.json"
+      ],
+      "status": "executed finite exact audit"
     }
   ],
   "hyperedges": [
@@ -9205,6 +9277,67 @@
         "research/current/customer_attraction/terminal_tie_lift_obstruction.md"
       ],
       "status": "exact restriction on the proposed lifting mechanism; general target open"
+    },
+    {
+      "id": "WC-R2-DENSITY-TO-MOMENT",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-R2-DENSITY-CONDITION"
+      ],
+      "conclusion": "WC-R2-DENSITY-MOMENT",
+      "statement": "Sorted index classes form R-separated chains; decreasing H_p and tail-sum telescoping give the sharp moment constant.",
+      "refs": [
+        "research/current/weighted_congestion/weight_density.md"
+      ],
+      "status": "complete general proof, independently internally checked; unrefereed"
+    },
+    {
+      "id": "WC-R2-MODEL-TO-INCREMENT",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL"
+      ],
+      "conclusion": "WC-R2-POLYNOMIAL-INCREMENT",
+      "statement": "Bernoulli increment bound, nonnegative coefficients and monotonicity yield the actual-load resource increment inequality.",
+      "refs": [
+        "research/current/weighted_congestion/weight_density.md"
+      ],
+      "status": "complete elementary proof"
+    },
+    {
+      "id": "WC-R2-DENSITY-POTENTIAL-EXISTENCE",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL",
+        "WC-R2-DENSITY-CONDITION",
+        "WC-R2-DENSITY-MOMENT",
+        "WC-R2-POLYNOMIAL-INCREMENT"
+      ],
+      "conclusion": "WC-R2-WEIGHT-DENSITY",
+      "statement": "The sparse moment and actual-load sensitivity bound new-resource externalities; removed and retained resource accounting makes every strict above-factor improvement decrease a finite-state potential.",
+      "refs": [
+        "research/current/weighted_congestion/weight_density.md"
+      ],
+      "status": "complete general proof, independently internally checked; unrefereed"
+    },
+    {
+      "id": "WC-R2-DENSITY-FINITE-CHECK",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "WC-R2-DENSITY-AUDIT"
+      ],
+      "conclusion": "WC-R2-WEIGHT-DENSITY",
+      "statement": "Finite literal resource/state checks support the implemented boundary audit; they do not establish the universal theorem or optimal equilibrium factor.",
+      "refs": [
+        "research/current/weighted_congestion/weight_density.md",
+        "tests/audits/weighted_congestion_density.py",
+        "evidence/runs/2026-10-14/weighted_congestion_density.json"
+      ],
+      "status": "finite exact checks passed"
     }
   ]
 }

@@ -4,7 +4,7 @@
 
 ## 活跃目标与前沿
 
-**WC-TARGET v1：OPEN。** 精确对象、量词和阈值采用 MODEL.md、CLAIMS.md。当前资产是文献基线与协作程序，尚无团队新上界、下界或独立工具。
+**WC-TARGET v1：OPEN。** 精确对象、量词和阈值采用 MODEL.md、CLAIMS.md。本R2工作分支新增完整内部证明的资源权重密度上界，见[当前证明](../current/weighted_congestion/weight_density.md)。每个R窗口潜在使用者至多K_R时有[1+A_R(p)K_R^(1-p)d^p]-PNE；几何分离谱为O(log d)。该结构子类上界不解决全类目标。
 
 主要 proof obligation 是获得全类的次线性存在上界，或构造玩家数可增长、每个纯状态均有足够大倍率获利偏离的合法非存在族。近似势函数、全状态偏离比较和新的表示都是搜索起点；现有文件中的路线允许继续扩展。
 
@@ -21,3 +21,7 @@
 从一手文献与公屏选择关键义务，先以精确计算或边界族区分竞争机制，再建立一般证明。每次真实增量写清 claim/version、已知、objection 和下一检验，完成相应核验后立即 checkpoint，并向公屏分享已推送文件的 descriptor。
 
 本次修订改变协作程序与现行说明，WC-TARGET 的数学身份和 OPEN 状态保持。实际本地验证和远端部署结果记录在 evidence/validation.md。
+
+## 本轮R2真实前沿
+
+幂矩constant有有限sharp证明；actual-load externality与全部多资源偏离已独立审查。固定p<1对N个1/N微权已有外部增量N^(1−p)(1−2^-d)，故不能仅优化本势估计摆脱密度依赖。下一动作是保留等权exact structure的密集cohort机制与跨scale互动接口；另一线继续非star高support全状态下界。公屏source包络等peer成果尚非本分支自动导入。

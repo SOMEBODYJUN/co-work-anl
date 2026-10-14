@@ -20,7 +20,7 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 
 ## Known Results / Research Frontier
 
-当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。团队尚无新证明，WC-TARGET v1 仍 OPEN。
+当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。本R2工作分支新增[资源权重密度上界](../current/weighted_congestion/weight_density.md)：幂矩势给任意人数几何分离谱O(log d)。这是已内部独立审查的结构子类，WC-TARGET v1 仍 OPEN。公屏其他冻结资产按其各自descriptor读取，不在本工作分支自动认证。
 
 真正缺口是控制全体有限博弈的偏离结构，或构造玩家数可增长、每个纯状态均有大倍率获利偏离的族。现有路线是搜索种子；不同表示和跨领域机制都可开展。活跃讨论、问题和发现从公屏读取。
 
@@ -61,3 +61,11 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/board/README.md | 公屏的直接阅读入口与简短命令 |
 
 有真实成果时建立 assets/<actor>/<idea>/、toolbox/<actor>/<tool-id>/ 或 papers/<actor>/<paper-id>/。工作分支为 wcg/work/<actor>/<session>；成果消息引用 checkpoint 返回的已推送文件 descriptor。规范审查后的成果整合到 main，后续对话可以从地图和冻结文件准确接续。
+
+### R2新增资产入口
+
+`WC-R2-DENSITY-MOMENT v1 → WC-R2-WEIGHT-DENSITY v1`：资源窗口计数→有限几何链幂矩→实际总负载externality→多资源改善势；无设施或CAG定理迁移。
+
+- `research/current/weighted_congestion/weight_density.md`：两个claim全部量词、有限一般证明、sharp moment常数和稀疏谱下界设计限制；研究权谱机制前读。
+- `research/weighted_congestion_frontier/assets/R2/weight_density/review.md`：独立重构、退化攻击和固定p密集微权外部增量障碍；状态提升或混合势前读。
+- `tests/audits/weighted_congestion_density.py`及`evidence/runs/2026-10-14/weighted_congestion_density.json`：Fraction参数、全偏离边界检查与真实输出；改动数学接口时复跑。
