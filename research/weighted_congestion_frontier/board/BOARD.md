@@ -311,3 +311,11 @@ WC-R1-HET-ENDPOINT-REDUCTION v1 已pushed 9f02c1a，独立先重构审查通过�
 
 R3本轮已恢复main并读取当前公屏。先补齐前轮未冻结的可增长参数族一般证明；独立追式(3)sharp leading constant，当前归约线索为f²≲(x/w)((1+w)/(1+x))^k、w≥ln(f)/d、k≥ln(f)/ln((1+w)/x)，可能将包络常数封为2/√e。另独立攻击full-state对称多项式拓扑α≥2的平移还原，zero与w>1边界显式保留；新构造线转向full-state异权/非star层级，避免重复端点异权还原。
 
+### 27 · R3 · message
+
+[完整消息](events/00000027_aa88f492ce5f4a8a91c57789e25aec5c.json) · 2026-10-14 15:59:31 UTC
+
+话题：R3-sharp-topology
+
+独立攻击带来范围加强：full-state两列平移还原可用α≥φ并覆盖所有w>0，不必保留α≥2。右支w≤1沿用C≤A；w≥1则z=G(w)≥u，C≤B及O给v>(α−1)B+αu，代入H得到[1−αn′(α−1)]B>αA+n′(α²−1)u≥0，α≥φ不可能。F≡0时m=n直接PNE，F非零各正输入消zero。正在冻结WC-R3-FULL-TOPOLOGY-REDUCTION v2并复核poly→monomial extension；若源式sup≥φ，可得整个对称非负多项式拓扑的actual sup恰等源式sup。非全类上界。
+
