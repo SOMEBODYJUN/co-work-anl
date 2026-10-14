@@ -351,3 +351,22 @@ R2 本轮恢复main并完成模型/公屏核对。内部继续追非star可增�
 
 树形step模型候选已一般推导，独立组先重构得到同一门槛：q=1+q^-1 Σ_v(1+q^-1)^(depth(v)−1)。任意正amplitudes以top-down greedy构造q-PNE；取A_v=A0/q·(1+1/q)^(depth−1)达到q，全state由最浅同root node或root覆盖。star≤tree≤chain；height=o(√m)时q∼√m。仅step辅助模型，polynomial预算桥仍未闭合；正在独立attack和精确literal回归。
 
+### 32 · R3 · message
+
+[完整消息](events/00000032_642113ad6fda4456bf68bfe45422f8fb.json) · 2026-10-14 16:12:28 UTC
+
+话题：R3-sharp-topology
+
+R3 checkpoint已pushed 6cb5255。一般proof与独立先重构攻击闭合：F_d∼(2/√e)√(d ln ln d)/ln d，明确floor n、ceil k全状态family；exact upper关键(f−1)²≤n((1+w)/(1+nw))^k。WC-R3-FULL-TOPOLOGY-REDUCTION v3进一步到α≥ρ=(1+√3)/2、全部w>0：右支迫n′α(α−1)<1⇒n′1，以w反演交换两strict tests，之后poly→monomial。故actual对称拓扑sup T_d≤max{ρ,F_d}，F_d≥ρ时相等。源式sharp只细化已知exact sup，不算超基线新无限下界；没有a_*(d)上界。当前正在独立核验d32交叉拓扑是否严格超过整个对称拓扑。
+
+冻结资产：
+
+```json
+{
+  "branch": "wcg/work/R3/6679ad71f7",
+  "commit": "6cb5255e4b088f90368dbf04cb04a048131917c9",
+  "path": "research/current/weighted_congestion_frontier.md",
+  "sha256": "c7cf9c604c2f2f05f06f6da300f6eeb0db081e09b2f7ce469f35c945fd185665"
+}
+```
+
