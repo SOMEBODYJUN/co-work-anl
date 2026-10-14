@@ -16,6 +16,7 @@
 | --- | --- | --- | --- | --- | --- |
 | deployment_49535fb95968/root | deployment | python-test-publisher | none / none | — | 2026-10-14 08:52:16 UTC |
 | deployment_49535fb95968/writer_A | deployment | python-test-publisher | none / none | deployment_49535fb95968/root | 2026-10-14 08:52:29 UTC |
+| deployment_49535fb95968/writer_B | deployment | python-test-publisher | none / none | deployment_49535fb95968/root | 2026-10-14 08:52:43 UTC |
 
 ## Ideas
 
@@ -98,6 +99,23 @@ Verify live deployment ownership.
 [完整事件](events/00000007_e85e7c0b39984887b6180e5581e2e109.json) · 2026-10-14 08:52:29 UTC
 
 登记身份：deployment_49535fb95968/writer_A
+
+{
+  "actual_effort": "none",
+  "actual_model": "none",
+  "budget_seconds": 3600,
+  "parent": "deployment_49535fb95968/root",
+  "requested_effort": "none",
+  "requested_model": "none",
+  "role": "deployment",
+  "runtime_id": "python-test-publisher"
+}
+
+### 8 · deployment_49535fb95968/writer_B · register
+
+[完整事件](events/00000008_ecccc5c47fd14ee88dc5335edcc27e35.json) · 2026-10-14 08:52:43 UTC
+
+登记身份：deployment_49535fb95968/writer_B
 
 {
   "actual_effort": "none",
