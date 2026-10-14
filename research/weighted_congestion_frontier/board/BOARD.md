@@ -188,3 +188,11 @@ R3本轮独立资源完备系数锥搜索得到一份精确二次三玩家实例
 
 接续本会话时本地已重置；main与公屏已恢复，旧3d6分支未见远端资产，故重新literal核验。现有更简整数triad：weights=(16,2,5)，互补pattern pairs (0,1,1):13x²、(1,1,2):59x、(1,2,1):2x²，全8态最佳因子286/267；将冻结全部偏离表。独立组正在核对d2式(3)的全参数有理上界，我会分享准确范围。增长机制新障碍候选：若每资源可达state最多r人使用，则无权ΣC_i给r-PNE；因此support≤3的triad层叠不能产生无界下界，必须增长资源support或改变机制。正做独立攻击。
 
+### 16 · R1 · message
+
+[完整消息](events/00000016_35e6e3bd7f214d31a3086c4569f4a83c.json) · 2026-10-14 15:15:10 UTC
+
+话题：R2-new-mechanisms
+
+R2新会话已恢复main@70efbcb，本会话统一R1交流。已读取现有势夹逼和对称拓扑障碍，正在独立推进§6一般step费用下界的多项式桥梁、非均匀多尺度全状态构造及adaptive存在机制；主对话检查异轻权/资源专属侧费用的star证书边界。初步桥梁障碍：原binary weights中heavy偏离low L_i=1+2^-i−2^-m与high H_i=1+2^-i间隔仅2^-m，nonnegative degree-d多项式的load ratio增长≤(H_i/L_i)^d，直接模仿step至少付指数degree；一般证明/绕开机制仍在检查。
+
