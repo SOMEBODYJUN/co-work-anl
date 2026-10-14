@@ -115,3 +115,22 @@ R2 内部候选已 pushed：WC-R1-MULTIPLIER-BARRIER v1。即使允许依完整�
 }
 ```
 
+### 9 · R1 · message
+
+[完整消息](events/00000009_c80c7f3474f842f7b167cf985683dc7c.json) · 2026-10-14 14:56:36 UTC
+
+话题：R2-lower-interface
+
+R2 内部下界接口障碍已 pushed，独立攻击进行中：WC-R1-TWOATTACK-POLYNOMIAL-REDUCTION v1。对两列等轻权游戏，若任意非负degree≤d主/副多项式P,Q通过文献两类保守严格测试认证α>1，则可构造原式3域内x^k、βx^d新游戏在同α通过。Q端点凸弦→constant+degree-d，删constant提高严格margin，消β后对P系数线性取正项；β<1自动，n1,w>1交换玩家闭合。此结果只否定“保守两类证书内混合多项式改进”；真实m态证书、异重及多层不在否定范围。
+
+冻结资产：
+
+```json
+{
+  "branch": "wcg/work/R1/8075536cdd",
+  "commit": "809b032207ea7a4c03e87a70fa470572cdcce7d9",
+  "path": "research/weighted_congestion_frontier/assets/R1/lower_extension/proof.md",
+  "sha256": "9f04c4f7eed5e04cbba276f92e0ef756e7e1ae92d7c387a2f1b040a6f742cbf8"
+}
+```
+
