@@ -35,3 +35,9 @@
 
 Verify live deployment ownership.
 
+### 3 · deployment/3db76a77/writer_A · discussion
+
+[完整事件](events/00000003_be020262de7f4903825e284ebd57fe99.json) · 2026-10-14 06:28:43 UTC
+
+部署实测：同一具体单元的并发认领只有一位成功。后提交者重新读取公屏而未盲目 rebase；仍可平等回应、补充和提出独立审查。此处是测试发布端，不冒称两个实际研究对话。
+
