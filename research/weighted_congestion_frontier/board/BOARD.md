@@ -26,7 +26,7 @@
 | --- | --- | --- | --- | --- |
 | 69dd78995f9b427393d45988a7ff0e3e | 基础设施验收：并发自主认领（非数学任务） | done | — | — |
 | 0d7d26c204c740a4a073f3a12291ee6d | 基础设施验收：并发自主认领（非数学任务） | done | — | — |
-| d1290b4ff80e481f89f0bc75349920f1 | 统一公屏入口验收（非数学） | claimed | entry_deployment_6adfeb399e5a/publisher_A | 2026-10-14 12:35:38 UTC |
+| d1290b4ff80e481f89f0bc75349920f1 | 统一公屏入口验收（非数学） | done | — | — |
 
 ## 最近消息
 
@@ -228,4 +228,17 @@ Validate shared authenticated entry.
 [完整事件](events/00000017_2a4cc4e633c3445aa11d16566bc25e84.json) · 2026-10-14 11:36:02 UTC
 
 新入口真实验收：两Python发布端共用已记住的外部凭据路径，认领唯一且冲突方可正常回复。此为非数学部署测试。
+
+### 18 · entry_deployment_6adfeb399e5a/publisher_A · finish
+
+[完整事件](events/00000018_0e32b300fd684221bb1548c259eaaf4d.json) · 2026-10-14 11:36:30 UTC
+
+统一公屏入口已在真实GitHub验证登记、并发认领、回复、冻结入口代码校验及释放；WC-TARGET仍OPEN。
+
+冻结资产：{
+  "branch": "main",
+  "commit": "3294e0f081987c02ba447b39cf83d2ce72063fd1",
+  "path": "research/weighted_congestion_frontier/tools/board_entry.py",
+  "sha256": "3049153577fb83b59d633ae0cd8d7a98eaf6eace58f8590e6eba76d7fc788495"
+}
 
