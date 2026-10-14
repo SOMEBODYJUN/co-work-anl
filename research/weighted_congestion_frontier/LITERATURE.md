@@ -13,9 +13,11 @@
 
 | 一手项目 | 实际机制与适配 | 不应冒称 |
 | --- | --- | --- |
+| [Anthropic / claudes-c-compiler](https://github.com/anthropics/claudes-c-compiler)，[作者机制说明](https://www.anthropic.com/engineering/building-c-compiler) | 作者在 Running Claude in parallel 明确说明不使用 orchestration agent，每个 agent 自行选择下一任务；在 `current_tasks/` 写认领文件，Git 同步使重复认领者换题。仓库同时有 `ideas/`。直接借鉴自主选题、细粒度认领、独立 clone 和 Git 持久化 | 软件项目；作者也使用临时专门任务，不是所有实际动作完全同质。没有原生数学命题账本，也没有我们的 Codex 跨对话公屏，不能保证其代码或证明正确 |
+| [jarmstrong158/agentsync](https://github.com/jarmstrong158/agentsync)，[维护者发布说明](https://pypi.org/project/agentsync-mcp/) | agent 自己 survey、claim、build；独立 `agentsync` 分支保存状态，普通 push 作为 compare-and-swap，冲突后重新读取并验证占用；支持多个 agent，无须中心派单。直接对照本工具的冲突认领恢复机制 | 它的原版主要按文件/依赖去重，不能识别数学语义；并未在本项目安装它的 MCP，也不把 Git 冲突合并等同于数学 idea 去重 |
 | [LemmaTrail](https://github.com/JanBartos6/LemmaTrail) | 保存精确研究对象、来源、失败机制、继续点；借鉴持久研究状态 | README 要人类决定 canonical 并通过 PR；本项目没有机械移植该治理规则，也不是它的部署 |
 | [Joe975/math-lab 的 AGENTS](https://github.com/Joe975/math-lab/blob/main/AGENTS.md) | 自主挑题、按机制检查既有尝试、跨领域传播、独立攻击；借鉴自主选 idea 与真实失败资产 | blind 必须实际隔离已有路线；读过后不能自称干净上下文。其结果身份不替本项目背书 |
 | [zhang5lo2/Math](https://github.com/zhang5lo2/Math) | 数学建模流水线、可复现代码与结果 | 固定流水线岗位与本项目的平等开放探索不吻合，不能据其存在说已找到用户要的天团架构 |
 | [GitHub refs 文档](https://docs.github.com/en/rest/git/refs#update-a-reference) | 非 force 更新避免覆盖；本工具用普通 Git push 后重新检查状态 | 评论/不同消息文件本身不能提供互斥；租约不保证断网计算绝无重复 |
 
-这些来源提供部分可用机制，没有已核实的开源项目完整实现这里的“多个 Codex 对话各带子 agent、平等公屏认领”。本轮是为用户工作方式编写的适配协议和工具，不把借鉴说成开箱即用部署。
+“无中心派单、成员自主选题和认领、Git 避免重复”已有直接开源先例，上两项就是本轮实际核验的来源。前次把这一组织方式整体说成定制，范围过窄。我们的适配部分是数学精确身份、idea/proof obligation 粒度、Codex 多对话各带子 agent、租约与冻结资产公屏；没有声称任何外部项目完整部署了这些全部细节。此次补充核验只涉及协作来源，不改变数学基线的核验范围。

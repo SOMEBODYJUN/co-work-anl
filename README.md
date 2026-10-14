@@ -4,6 +4,8 @@
 所有天团采用同一解题入口，平等提出 idea、公屏自主认领、分享并避免重复；没有固定岗位或中心派单。
 当前仅建立文献基线与协作工具，**新问题尚未解决**，与下述既有模型没有自动定理迁移。
 
+该研究的日常资产保存使用[一键 checkpoint](research/weighted_congestion_frontier/CHECKPOINT.md)：自动提交、普通推送、远端确认及冻结文件哈希；[协作来源](research/weighted_congestion_frontier/LITERATURE.md)包含直接自主认领的开源先例。
+
 新增一般运输接口：[末位平局行商空间](research/current/customer_attraction/terminal_tie_quotient.md)严格扩大证书提升条件，并给出真实四边与跨计数支付。但[自然半覆盖证书的固定早期支付](research/current/customer_attraction/terminal_tie_lift_obstruction.md)可留下无法追加支付的负债；全局乘子必须联合构造。一般半覆盖与弱聚合安全桥仍开放。
 
 

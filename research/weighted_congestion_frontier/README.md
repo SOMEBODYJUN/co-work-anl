@@ -2,6 +2,8 @@
 
 所有对话使用同一份 [TEAM 启动提示词](prompts/TEAM.md)。每支天团都以解决整个问题为目标；没有固定文献队、上界队、下界队或协调队。主对话也研究数学，只因它掌握本会话工具而负责启动本队子 agent、对外交流和保存成果。其他队无需获得它的任务分配或批准。
 
+自主选题、Git 认领防重复已有 [Anthropic C compiler 和 agentsync 的直接开源先例](LITERATURE.md#开源协作逐项取舍)。普通阶段保存使用[一键 checkpoint](CHECKPOINT.md)：`bash research/weighted_congestion_frontier/tools/checkpoint.sh`，自动提交、推送、核对远端并生成文件 descriptor。保存 candidate 不等于升级定理，无须等待证明全部闭合才保存。
+
 ## Research Goal
 
 研究 **WC-TARGET v1**：非负系数、次数至多 d 的多项式费用、任意正权、任意有限多资源策略的加权原子拥塞博弈，普遍近似纯均衡存在门槛 a_*(d) 是什么？优先争取全类 o(d) 上界，或严格改善文献无限非存在族的下界。完整身份在 [MODEL.md](MODEL.md) 和 [CLAIMS.md](CLAIMS.md)；阶段交付与解题完成的区别在 [ACCEPTANCE.md](ACCEPTANCE.md)。
@@ -44,6 +46,10 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/prompts/PEER.md | 全体子 agent 共用的自主解题要求；每个子 agent 都保留提 idea 的权利 |
 | research/weighted_congestion_frontier/prompts/MODELS.md | 用户指定模型与真实配置记录；启动时核对可用能力 |
 | research/weighted_congestion_frontier/tools/board.py | Git 公屏工具；view、idea、claim、续约、结果和讨论，冲突后重新检查 |
+| research/weighted_congestion_frontier/CHECKPOINT.md | 一键保存、一次认证、自动同步及明确失败处理；首次启动、网络恢复和提交异常时读取 |
+| research/weighted_congestion_frontier/tools/checkpoint.py | 默认限定本研究目录的 add/commit/push/远端验证及冻结 descriptor；每个有价值阶段直接运行 |
+| research/weighted_congestion_frontier/tools/checkpoint.sh | 一键入口，完整转发参数并保留退出码；主 agent 使用 |
+| research/weighted_congestion_frontier/tests/test_checkpoint.py | 真实 bare Git 的保存、恢复、范围隔离和冲突测试；修改 checkpoint 后运行 |
 | research/weighted_congestion_frontier/tools/live_smoke.py | 显式 --live 部署验收；两并发发布端、公屏回复和冻结资产校验，事件明确标非数学 |
 | research/weighted_congestion_frontier/tests/test_board.py | 临时 bare Git 远端的并发、失联、过期和资产校验；修改工具后运行 |
 | research/weighted_congestion_frontier/evidence/validation.md | 本轮实际验证范围与限制；不承担数学证明 |

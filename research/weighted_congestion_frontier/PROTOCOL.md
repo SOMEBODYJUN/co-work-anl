@@ -71,6 +71,8 @@ renew 保持 token；被接替后旧 token 不能 renew、release 或 finish。�
 
 ## 结果、冻结资产与整合
 
+日常保存直接执行 `bash research/weighted_congestion_frontier/tools/checkpoint.sh`，详见 [CHECKPOINT.md](CHECKPOINT.md)。主 agent 收到真实可复用资产并完成相应核验后立即执行，不重问是否保存。输出 `status: pushed` 后，将 `assets` 对应项的 `descriptor` 路径直接传给下述 `--asset-json`。工具自动记录实际 branch、不可变 commit 和文件 hash；无需手填，也无需为了普通 checkpoint 等待数学 claim 升级。多文件各有 descriptor，删除项没有 blob descriptor。
+
 先将有价值资产推到本队分支并核对远端，再准备 descriptor JSON：
 
 ~~~json

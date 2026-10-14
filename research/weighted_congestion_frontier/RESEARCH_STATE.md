@@ -9,3 +9,5 @@
 下一步：启动任意多个同入口天团，各自从实际文献和公屏选择一个信息价值高的 proof obligation；先用低成本计算/反例区分机制，再追一般证明。每个真实阶段结果立即 commit/push，冻结 claim 版本、来源和关键未解步骤。
 
 研究目录已推到 main，wcg/board 公屏已建立，真实并发认领、公开回复、冻结资产校验和完成释放通过。本轮完成的是协作基础设施；验证证据见 evidence/validation.md 与 evidence/github_smoke.json。基础设施检查通过不能升级数学目标。
+
+2026-10-14 UTC 补充：核验 Anthropic C compiler 与 agentsync 的无中心派单、自主认领先例，纠正此前协作来源范围过窄的说明。新增 CHECKPOINT.md 和 tools/checkpoint.sh / checkpoint.py，普通阶段按固定规则保存、推送、远端确认及自动 descriptor；候选资产保存与数学状态升级分开。原 WC-TARGET 身份与 OPEN 状态保持。此次没有启动数学攻关或形成新数学结果。

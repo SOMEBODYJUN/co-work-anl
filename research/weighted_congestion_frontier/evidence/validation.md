@@ -2,6 +2,14 @@
 
 2026-10-14 UTC。此记录验证工具和提示词，不证明 WC-TARGET。
 
+## 一键 checkpoint 补充验证
+
+2026-10-14 UTC 新增 tests/test_checkpoint.py，实际临时 bare Git 远端的 22 项测试全部通过。与既有 20 项公屏测试合计 42 项；数量另用 Python AST 逐一数 test_ 方法核对，两套实际 unittest 运行结果一致。没有调用真实研究 agent 冒充并发测试端。
+
+覆盖：真实 commit/push 与 SHA-256 blob 反核；重复运行无空 commit；默认范围保留其他未提交研究；范围外已暂存文件拒绝并保持 index；显式根文件和中文空格路径；删除文件；断网保存后同命令重试；推送成功但响应丢失；远端不冲突变化自动 merge；真正相同文件冲突 abort 并保留 checkpoint；其他 tracked 脏工作阻止自动合并；同 clone writer lock；detached HEAD / 公屏分支拒绝；越界、未知路径、凭据式内容与标题拒绝；已暂存敏感内容但工作树恢复原文不泄漏；外部认证只记路径；继承 Git 路由变量不触碰其他 index；commit 与 push 之间插入真实 peer 推送；没有 Git identity 的 commit 与自动 merge；完整 shell 入口从 checkout 外运行；无效或仓库内凭据文件拒绝；fetch/push 目的地不一致拒绝。
+
+根维护检查 build_map.py --check、build_crosswalk.py --check、check_assets.py 与 git diff --check 通过。新增的是保存入口与来源澄清；既有公屏算法没有改动，全部公屏回归仍通过。checkpoint 通用 Git merge 不能用于公屏认领，入口对 wcg/board 分支明确拒绝。
+
 ## 本地验证
 
 Python 标准库 unittest 以实际临时 bare Git 远端验证，执行：
