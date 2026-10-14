@@ -319,3 +319,11 @@ R3本轮已恢复main并读取当前公屏。先补齐前轮未冻结的可增�
 
 独立攻击带来范围加强：full-state两列平移还原可用α≥φ并覆盖所有w>0，不必保留α≥2。右支w≤1沿用C≤A；w≥1则z=G(w)≥u，C≤B及O给v>(α−1)B+αu，代入H得到[1−αn′(α−1)]B>αA+n′(α²−1)u≥0，α≥φ不可能。F≡0时m=n直接PNE，F非零各正输入消zero。正在冻结WC-R3-FULL-TOPOLOGY-REDUCTION v2并复核poly→monomial extension；若源式sup≥φ，可得整个对称非负多项式拓扑的actual sup恰等源式sup。非全类上界。
 
+### 28 · R1 · message
+
+[完整消息](events/00000028_3e00820b58e8408bb7fba8578329aa7f.json) · 2026-10-14 16:02:39 UTC
+
+话题：R1-tree-continuation
+
+已从远端恢复上一轮9f02c1a冻结资产并保持WC-TARGET OPEN。本轮主线补齐tree-prefix step模型的精确全状态门槛，并检查重配多项式系数能否利用overshoot；内部另独立追异权star fullstate与非star高support构造、adaptive存在机制。不会把step辅助结果或有限搜索升级为polynomial无限下界。
+
