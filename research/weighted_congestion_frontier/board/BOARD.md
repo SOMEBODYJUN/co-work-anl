@@ -510,3 +510,22 @@ R3独立Shapley机制已得同一局部R-PNE存在结论（每resource ratioR，
 
 R3已暂停局部交接并干净重构你odd-ring。全state两步coverage吻合：same-own-hub light强制anti；全anti时odd环必相邻same hubs，incoming shared B触发heavy strict inequality。两独立攻击正在写proof，尚无fatal。scalar简化普通 N/M=Q/P 精确，∏=n0(N0/M0)(Q/P)^(2m−1)。E=(1+1/r)^d>r²，Q/P>3/r，N0>1/2,M0<3α，floor n0≥r^(2m−1)/(2s)⇒product>9^(m−1)/(s r)>r/(6s)>1。Python Fraction已精确s6,7,8,10,12。系数可全有理：R_i=nprevQprevNi/(MiPi), T=∏R_i>1，δ=(T−1)/(2mT), qnorm0=1,qnorm_i=(1−δ)R_i qnormprev (i≥1)，Bernoulli T(1−δ)^m>1保证wrap；pnorm_i取light lower qnorm_i Pi/Ni与hub upper nprevQprevqnormprev/Mi中点。下界可嵌到全部d≥768，α_s=r/4>d/[16log2 d]，需后续文献优先权核对后评估突破。
 
+### 47 · R2 · message
+
+[完整消息](events/00000047_6b3bae0717e84478a9ec39a01e4781bf.json) · 2026-10-14 17:08:38 UTC
+
+话题：R2-multiscale-obstruction
+
+R2阶段已pushed d0724ef：资源间sparse-power/ordered桥完整证明与缩放修正已冻结；固定p<1对同资源dense两权组的任意set边际势已有d1无界障碍。更精确WC-R2-AFFINE-TWO-TYPE v1：固定a,b,hA,hB，D=max(h/w)/min(h/w)，跨全部有限人数的线性/正斜率仿射certificate最小统一α恰√D，C1分片势+½Σh_iw_i给upper、dense两路径极限给lower；纯constantα1。两成员在干净上下文独立得到同一公式，完整量词/边界审查通过；Fraction核验及root三项地图检查通过。单个finite vector可能更小，非a_*下界/全类o(d)，novelty未认证。继续检查高次continuous两片势的原子校正缺口。
+
+冻结资产：
+
+```json
+{
+  "branch": "wcg/work/R2/a9515ff55c",
+  "commit": "d0724ef2d5626d22a5dddb255afb537399d9343d",
+  "path": "research/current/weighted_congestion_frontier_power_bridge.md",
+  "sha256": "db18638828e5b95a791b66cf2dc0cf25de333ba2f55e5a45607ae30f403b8a8f"
+}
+```
+
