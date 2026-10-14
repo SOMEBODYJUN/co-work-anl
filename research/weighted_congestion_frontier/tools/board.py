@@ -318,10 +318,17 @@ class Board:
         guard(intent)
         valid_id(intent["id"])
         pending = self.outbox / (intent["id"] + ".json")
-        if pending.exists() and json.loads(pending.read_text()) != intent:
-            raise BoardError("An event ID cannot be reused for changed content.")
-        # Atomic create before any networking; retries cannot see partial JSON.
-        if not pending.exists():
+        # Atomic create before networking. Another same-ID retry may remove a
+        # confirmed intent between any two operations; handle that normally.
+        while True:
+            try:
+                saved = json.loads(pending.read_text())
+            except FileNotFoundError:
+                saved = None
+            if saved is not None:
+                if saved != intent:
+                    raise BoardError("An event ID cannot be reused for changed content.")
+                break
             with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8",
                                              dir=self.outbox, delete=False) as f:
                 temporary = Path(f.name)
@@ -332,10 +339,10 @@ class Board:
                 try:
                     os.link(temporary, pending)
                 except FileExistsError:
-                    if json.loads(pending.read_text()) != intent:
-                        raise BoardError("An event ID cannot be reused for changed content.")
+                    continue  # Read again; the winner may already have removed it.
             finally:
                 temporary.unlink(missing_ok=True)
+            break
         error = None
         for _ in range(self.retries):
             try:
@@ -437,13 +444,19 @@ def main():
         if args.command == "discard":
             path.unlink(missing_ok=True)
             print("Local pending intent discarded; no remote history changed.")
-        elif path.exists():
-            print(encode(client.publish(json.loads(path.read_text()))), end="")
         else:
-            found = next((e for e in client.read()["events"] if e["id"] == args.event_id), None)
-            if found is None:
-                raise BoardError("No pending or remote event with that ID.")
-            print(encode(found), end="")
+            try:
+                saved = json.loads(path.read_text())
+            except FileNotFoundError:
+                saved = None  # Concurrent retry may have confirmed and removed it.
+            if saved is not None:
+                print(encode(client.publish(saved)), end="")
+            else:
+                found = next((e for e in client.read()["events"]
+                              if e["id"] == args.event_id), None)
+                if found is None:
+                    raise BoardError("No pending or remote event with that ID.")
+                print(encode(found), end="")
     else:
         data = vars(args)
         excluded = {"repo", "branch", "command", "actor", "event_id",

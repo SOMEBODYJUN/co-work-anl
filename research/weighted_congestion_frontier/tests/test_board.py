@@ -215,6 +215,28 @@ class BoardTests(unittest.TestCase):
             self.client.check_asset(dict(self.asset, path="folder",
                                          sha256=hashlib.sha256(tree).hexdigest()))
 
+    def test_outbox_disappearing_during_same_id_confirmation_is_normal(self):
+        intent = proposal("A")
+        self.client.publish(intent)
+        pending = self.client.outbox / (intent["id"] + ".json")
+        pending.write_text(b.encode(intent))
+        original = Path.read_text
+        disappeared = False
+
+        def disappear(path, *args, **kwargs):
+            nonlocal disappeared
+            if path == pending and not disappeared:
+                disappeared = True
+                path.unlink()
+                raise FileNotFoundError(path)
+            return original(path, *args, **kwargs)
+
+        with patch.object(Path, "read_text", disappear):
+            event = self.client.publish(intent)
+        self.assertTrue(disappeared)
+        self.assertEqual(event["id"], intent["id"])
+        self.assertEqual(len(self.client.read()["events"]), 1)
+
     def test_read_and_publish_preserve_dirty_checkout_and_fetch_head(self):
         (self.repo / "asset.md").write_text("Uncommitted work.\n")
         (self.repo / "untracked.md").write_text("Preserve me.\n")
