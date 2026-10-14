@@ -80,9 +80,9 @@ def check() -> None:
                 require((ROOT / path).is_file(), (entry["id"], path))
                 expected = {"implementation": ("facility_spe/", "multi_facility_spe/", "customer_attraction/"),
                             "proof": "research/current/",
-                            "sources": "history/",
-                            "tests": "tests/",
-                            "records": "evidence/"}
+                            "sources": ("history/", "research/weighted_congestion_frontier/assets/"),
+                            "tests": ("tests/", "research/weighted_congestion_frontier/assets/"),
+                            "records": ("evidence/", "research/weighted_congestion_frontier/assets/")}
                 if field in expected:
                     require(path.startswith(expected[field]),
                             ("incorrect asset role", entry["id"], field, path))

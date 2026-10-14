@@ -16,17 +16,21 @@
 
 MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LIT-N → 开放目标 WC-TARGET v1。
 
+MODEL → OC-INTERFACE-v1（全状态、正系数闭环）→ OC-AMPLIFIER-LIMIT-v1（线性 reset）→ OC-AMPLIFIER-ENVELOPE-v1（显式 E_d）。OC-LIGHT-FORCING-EXACT-v1 和 OC-INTERFACE-BARRIER-v1 给该 forcing 机制的失败边界；它们不是全类存在上界。
+
 文献上界来自近似势函数；文献下界来自全状态非存在族。固定玩家实例受 n-PNE 存在基线约束。设施选址、顺序客户吸引和本分支各保持其数学身份；定理迁移需要准确的桥梁证明。
 
 ## Known Results / Research Frontier
 
-当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。团队尚无新证明，WC-TARGET v1 仍 OPEN。
+当前已有内部独立审查的无限下界：a_*(d)≥E_d=d/[(d+1)d^(1/(d+1))−d]∼d/ln d（每个 d≥2）。每个 E_d 本身也由一个有限游戏排除。结合文献 a_*(d)≤d，仍有对数缺口，WC-TARGET v1 保持 OPEN。现行自足证明在 [research/current/weighted_congestion_frontier.md](../current/weighted_congestion_frontier.md)；原式(3)的全参数 O(√d) ceiling 证明新下界对所有 d≥256 严格超过原参数上确界。外部同行评审和世界优先权未认证。
 
 真正缺口是控制全体有限博弈的偏离结构，或构造玩家数可增长、每个纯状态均有大倍率获利偏离的族。现有路线是搜索种子；不同表示和跨领域机制都可开展。活跃讨论、问题和发现从公屏读取。
 
 ## Refuted / Failed / Open Problems / Next Actions
 
 [FAILED_ROUTES.md](FAILED_ROUTES.md)登记真实数学失败、否定范围与回收结果。下一阶段从一手文献与公屏提出高信息价值的精确义务，以低成本边界检验区分机制，再追一般证明。关键候选经历独立重构和反例攻击，形成真实增量即保存并公开。
+
+目前关键义务是全类 O(d/ln d) 存在性，或绕开 simultaneous light-forcing 的更强非存在族。只调现有 certificate 的参数不能改变 leading order；无 light-forcing 前提的全 topology 仍须独立研究。
 
 ## File Map
 
@@ -59,5 +63,8 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/tests/ | 实际 Git 的工具、恢复、并发、公屏和保存测试；工具改动时运行对应测试 |
 | research/weighted_congestion_frontier/evidence/validation.md | 本轮实际本地与 GitHub 验证结果 |
 | research/weighted_congestion_frontier/board/README.md | 公屏的直接阅读入口与简短命令 |
+| research/current/weighted_congestion_frontier.md | 自足一般证明：全状态、正系数/权重闭环、d/ln d 无限下界、显式 E_d、原式(3)全域严格比较及 forcing barrier；恢复研究时先读 |
+| research/weighted_congestion_frontier/assets/R1/odd_cycle/ | a3f0c7a 冻结原证明和资源程序逐字节恢复；pending 标签保留原阶段，随后审查由 current 页记录 |
+| research/weighted_congestion_frontier/assets/R1/odd_ring_audit/ | 本轮独立状态/次数/文献审查和可复现代码/输出；含失败边真实 PNE、E_d 推导、source ceiling；修改相关 claim 前读 |
 
 有真实成果时建立 assets/<actor>/<idea>/、toolbox/<actor>/<tool-id>/ 或 papers/<actor>/<paper-id>/。工作分支为 wcg/work/<actor>/<session>；成果消息引用 checkpoint 返回的已推送文件 descriptor。规范审查后的成果整合到 main，后续对话可以从地图和冻结文件准确接续。

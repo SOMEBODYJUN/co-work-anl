@@ -4,9 +4,11 @@
 
 ## 活跃目标与前沿
 
-**WC-TARGET v1：OPEN。** 精确对象、量词和阈值采用 MODEL.md、CLAIMS.md。当前资产是文献基线与协作程序，尚无团队新上界、下界或独立工具。
+**WC-TARGET v1：OPEN；无限下界阶段突破已内部审查。** 模型与量词保持 MODEL.md。当前 E_d≤a_*(d)≤d，E_d=d/[(d+1)d^(1/(d+1))−d]∼d/ln d；每个 d≥2 均有有限正权游戏在 E_d 本身无 PNE。自足证明在 ../current/weighted_congestion_frontier.md。
 
-主要 proof obligation 是获得全类的次线性存在上界，或构造玩家数可增长、每个纯状态均有足够大倍率获利偏离的合法非存在族。近似势函数、全状态偏离比较和新的表示都是搜索起点；现有文件中的路线允许继续扩展。
+本轮从 a3f0c7a 恢复 odd_cycle 冻结资产，完成两项独立重构，闭合 mixed group 全状态、finite R、floor、正系数及 degree 义务。新 corollary 给 E_d；新的必要充分 lemma 给失败 hub edge 的实际 PNE。source Eq(3)全域 O(√d) ceiling 给 d≥256 的明确严格分离。世界优先权与外审未认证。
+
+主要 obligation 已移到普遍存在上界：能否对任意 MODEL 游戏给 O(d/ln d)-PNE，或证明更大的下界？现有 simultaneous light/hub certificate 有 (α−1)(α^(1/d)−1)<1 barrier，不能靠参数优化超过 d/ln d 的 leading order。无 light-forcing 的 topology 尚未判定；barrier 不是 topology 或全类上界。
 
 ## 当前协作方式
 
@@ -20,4 +22,4 @@
 
 从一手文献与公屏选择关键义务，先以精确计算或边界族区分竞争机制，再建立一般证明。每次真实增量写清 claim/version、已知、objection 和下一检验，完成相应核验后立即 checkpoint，并向公屏分享已推送文件的 descriptor。
 
-本次修订改变协作程序与现行说明，WC-TARGET 的数学身份和 OPEN 状态保持。实际本地验证和远端部署结果记录在 evidence/validation.md。
+本轮推进数学下界；协作程序入口保持。状态、依赖与证据同步至 CLAIMS、root current/review/assets/graph 和 README。实际 replay 结果保存在 assets/R1/odd_ring_audit/ 对应 JSON；checkpoint 后分享冻结 descriptor。

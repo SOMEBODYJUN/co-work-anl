@@ -1,5 +1,9 @@
 # 失败路线与仍可使用的边界
 
+## 2026-10-14：拥塞奇数环 forcing 机制边界
+
+[精确 barrier 与失败边均衡](research/current/weighted_congestion_frontier.md)证明 simultaneous light/hub certificate 不能超过 d/ln d 的 leading order。保留全部 light-forcing 条件但 hub edge 失败时，有可构造 α-PNE；不是全类上界，无 light-forcing 的覆盖仍开放。详细尝试、失败步骤、回收和重试条件在 research/weighted_congestion_frontier/FAILED_ROUTES.md。
+
 ## 2026-10-10：真正逐人混合安全值桥与平均全树支付均失败
 
 [34客户完整SPE](research/current/customer_attraction/individual_security_counterexample.md)严格给

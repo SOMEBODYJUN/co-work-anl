@@ -1,5 +1,9 @@
 # 当前研究状态
 
+## 2026-10-14 UTC：WC-TARGET 无限下界突破
+
+奇数环正权多项式游戏给每个 d≥2 的显式 E_d=d/[(d+1)d^(1/(d+1))−d]∼d/ln d，在 E_d 本身无近似纯均衡。一般证明、独立全状态/参数攻击和可复现 Fraction 证据已闭合；新旧 source equation(3) 全域在 d≥256 严格分离。现行证明与剩余 obligation 在 research/current/weighted_congestion_frontier.md。普遍存在上界仍为 d，WC-TARGET OPEN；优先权与外审未认证。所有现行账本/图和原冻结资产来源同步登记。
+
 ## 2026-10-14 UTC：拥塞博弈分支的本地程序与异步公屏
 
 research/weighted_congestion_frontier/ 使用统一 TEAM 提示词。每个 Work 对话指定角色号，用本地 work.py 和本会话 txt 凭据恢复、同步、交流和保存；内部 subagent 按研究需要协作。

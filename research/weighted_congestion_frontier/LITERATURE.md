@@ -24,4 +24,10 @@
 
 ## 原文归档与写作参考
 
-本轮固定上游 commit 并原样保存选定原文件及许可，逐字节哈希和来源在 SOURCES.md、upstream/manifest.json。包括 MathLab 原始 prompt 与架构、Anthropic 原始任务/idea 样例，以及 mathematical-academic-writing 与 polish_skill 的数学写作、贡献重建、优先权/相关工作和 TeX 保真材料；latex-paper-skills 只选 framing 原文。原文与适配分别标注，当前运行按本项目的角色号与异步公屏协议。当前尚无团队新数学结果、工具或论文。
+本轮固定上游 commit 并原样保存选定原文件及许可，逐字节哈希和来源在 SOURCES.md、upstream/manifest.json。包括 MathLab 原始 prompt 与架构、Anthropic 原始任务/idea 样例，以及 mathematical-academic-writing 与 polish_skill 的数学写作、贡献重建、优先权/相关工作和 TeX 保真材料；latex-paper-skills 只选 framing 原文。原文与适配分别标注，当前运行按本项目的角色号与异步公屏协议。本轮已形成内部独立审查的 odd-ring 无限下界；外部论文与同行评审尚未完成。
+
+## 2026-10-14：奇数环下界的实际文献审查
+
+一手来源核查与检索限制保存在 [literature_review.md](assets/R1/odd_ring_audit/literature_review.md)。CGGPW 的模型、Theorem 1 equation (3) 和 §7 缺口与 MODEL 一致；CF 的有限次数上界已比粗 d 更细，bounded-weight 后续算法不覆盖本构造的任意权比。抽象 odd-cycle anti-matching 有既有 strategic-game 前例，不能声称该 parity idea 本身新颖。
+
+本轮 mathematical result 为 E_d∼d/ln d 的合法无限非存在族；现行页自足证明原式(3)全域 O(√d) ceiling，故新旧精确下界对大次数严格分离。focused primary search 未发现相同或更强全类非存在结论；这不是全球 absence/priority 证明。Paper Fact、团队一般证明和检索 Observation 保持各自层级。

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Facility location mathematical dependency hypergraph",
-  "updated": "2026-10-10",
+  "updated": "2026-10-14",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -3738,6 +3738,91 @@
         "evidence/runs/2026-10-10/terminal_tie_quotient_review.md"
       ],
       "status": "independent internal finite exact audits; no universal welfare inference"
+    },
+    {
+      "id": "WC-MODEL",
+      "kind": "definition",
+      "track": "extensions",
+      "title": "Weighted polynomial congestion target class",
+      "detail": "Finite players/resources, arbitrary positive resource-independent weights and finite subset strategies, degree<=d nonnegative polynomial costs, sum-of-latencies costs and closed alpha-PNE boundary.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/MODEL.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "WC-LIT-SOURCE",
+      "kind": "source",
+      "track": "extensions",
+      "title": "Primary source exact two-column envelope",
+      "detail": "CGGPW Theorem1 equation3 parameter supremum; current account independently derives a sufficient O(sqrt d) ceiling for strict new-old comparison, not a model-wide upper.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/LITERATURE.md",
+        "research/weighted_congestion_frontier/assets/R1/odd_ring_audit/literature_review.md"
+      ],
+      "status": "primary source checked; comparison reconstructed"
+    },
+    {
+      "id": "OC-INTERFACE-v1",
+      "kind": "lemma",
+      "track": "extensions",
+      "title": "Odd-ring full-state and positive coefficient certificate",
+      "detail": "Finite positive-weight odd hub/cohort ring; strict light/hub tests and exact product feasibility.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/CLAIMS.md"
+      ],
+      "status": "complete current proof, independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "OC-AMPLIFIER-LIMIT-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Linear reset gives an infinite d/log d lower bound",
+      "detail": "Every 1<alpha<H_d(t) is excluded by a finite game; in particular d>=4 excludes alpha=d/(ln d+2).",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/CLAIMS.md"
+      ],
+      "status": "complete current proof, independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "OC-AMPLIFIER-ENVELOPE-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Explicit E_d is excluded at its endpoint",
+      "detail": "Every integer d>=2 has a finite legal game with no E_d-PNE; E_d~d/ln d. This is a lower bound, not a universal upper.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/CLAIMS.md"
+      ],
+      "status": "complete current proof, independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "OC-LIGHT-FORCING-EXACT-v1",
+      "kind": "lemma",
+      "track": "extensions",
+      "title": "A failed hub edge gives a real approximate equilibrium",
+      "detail": "Conditional on every strict light-forcing inequality, nonexistence iff every hub inequality is strict; failed edge yields explicit PNE.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/CLAIMS.md"
+      ],
+      "status": "complete current proof, independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "OC-INTERFACE-BARRIER-v1",
+      "kind": "lemma",
+      "track": "extensions",
+      "title": "Sharp leading order inside the forcing certificate",
+      "detail": "Strict interface requires (alpha-1)(alpha^(1/d)-1)<1. Only the stated mechanism is bounded, not a_*(d).",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/CLAIMS.md"
+      ],
+      "status": "complete current proof, independently reconstructed and exactly audited; unrefereed"
     }
   ],
   "hyperedges": [
@@ -9205,6 +9290,93 @@
         "research/current/customer_attraction/terminal_tie_lift_obstruction.md"
       ],
       "status": "exact restriction on the proposed lifting mechanism; general target open"
+    },
+    {
+      "id": "WC-RING-CERT",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL"
+      ],
+      "conclusion": "OC-INTERFACE-v1",
+      "statement": "Direct load identities, odd parity, and exact positive product feasibility prove the full-state interface.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md"
+      ],
+      "status": "proved within explicit scope"
+    },
+    {
+      "id": "WC-RING-RESET",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL",
+        "OC-INTERFACE-v1"
+      ],
+      "conclusion": "OC-AMPLIFIER-LIMIT-v1",
+      "statement": "A degree-one reset with finitely many degree-d buffers has strict cyclic product>1 whenever alpha<H_d(t).",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md"
+      ],
+      "status": "proved within explicit scope"
+    },
+    {
+      "id": "WC-RING-ENVELOPE",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "OC-AMPLIFIER-LIMIT-v1"
+      ],
+      "conclusion": "OC-AMPLIFIER-ENVELOPE-v1",
+      "statement": "Exact convex minimization of t+(1+t)^(-d), with strictly positive correction, excludes E_d itself.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md"
+      ],
+      "status": "proved within explicit scope"
+    },
+    {
+      "id": "WC-RING-FAILED-EDGE",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL",
+        "OC-INTERFACE-v1"
+      ],
+      "conclusion": "OC-LIGHT-FORCING-EXACT-v1",
+      "statement": "Direct stability checks prove necessity under light forcing; one equal edge yields a PNE if its hub test fails.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md"
+      ],
+      "status": "proved within explicit scope"
+    },
+    {
+      "id": "WC-RING-BARRIER",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL",
+        "OC-INTERFACE-v1"
+      ],
+      "conclusion": "OC-INTERFACE-BARRIER-v1",
+      "statement": "Positivity plus weight closure bound product n_i and each coefficient transmission factor.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md"
+      ],
+      "status": "proved within explicit scope"
+    },
+    {
+      "id": "WC-SOURCE-COMPARE",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "WC-LIT-SOURCE"
+      ],
+      "conclusion": "OC-AMPLIFIER-LIMIT-v1",
+      "statement": "The independently proved source formula ceiling establishes strict comparison for d>=256; literature search does not certify world priority.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md"
+      ],
+      "status": "comparison and literature boundary"
     }
   ]
 }

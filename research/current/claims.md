@@ -269,6 +269,18 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 
 
+## 2026-10-14：独立加权多项式拥塞分支
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| OC-INTERFACE-v1 | WC-TARGET v1 内的指定 odd-ring 构造与本页显式前提。 | Finite positive-weight odd hub/cohort ring; strict light/hub tests and exact product feasibility. | [完整现行证明](weighted_congestion_frontier.md)与两项独立审查、定义级 Fraction 证据；外审/全球 priority 未认证。 |
+| OC-AMPLIFIER-LIMIT-v1 | WC-TARGET v1 内的指定 odd-ring 构造与本页显式前提。 | Every 1<alpha<H_d(t) is excluded by a finite game; in particular d>=4 excludes alpha=d/(ln d+2). | [完整现行证明](weighted_congestion_frontier.md)与两项独立审查、定义级 Fraction 证据；外审/全球 priority 未认证。 |
+| OC-AMPLIFIER-ENVELOPE-v1 | WC-TARGET v1 内的指定 odd-ring 构造与本页显式前提。 | Every integer d>=2 has a finite legal game with no E_d-PNE; E_d~d/ln d. This is a lower bound, not a universal upper. | [完整现行证明](weighted_congestion_frontier.md)与两项独立审查、定义级 Fraction 证据；外审/全球 priority 未认证。 |
+| OC-LIGHT-FORCING-EXACT-v1 | WC-TARGET v1 内的指定 odd-ring 构造与本页显式前提。 | Conditional on every strict light-forcing inequality, nonexistence iff every hub inequality is strict; failed edge yields explicit PNE. | [完整现行证明](weighted_congestion_frontier.md)与两项独立审查、定义级 Fraction 证据；外审/全球 priority 未认证。 |
+| OC-INTERFACE-BARRIER-v1 | WC-TARGET v1 内的指定 odd-ring 构造与本页显式前提。 | Strict interface requires (alpha-1)(alpha^(1/d)-1)<1. Only the stated mechanism is bounded, not a_*(d). | [完整现行证明](weighted_congestion_frontier.md)与两项独立审查、定义级 Fraction 证据；外审/全球 priority 未认证。 |
+
+精确对象、全部量词、定义、依赖、objection 和原冻结版本均登记在 [分支 CLAIMS](../weighted_congestion_frontier/CLAIMS.md)。WC-TARGET 保持 OPEN：E_d≤a_*(d)≤d，尚有对数缺口。
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
