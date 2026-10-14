@@ -61,6 +61,7 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/tools/live_smoke.py | 显式 --live 部署验收；两并发发布端、公屏回复和冻结资产校验，事件明确标非数学 |
 | research/weighted_congestion_frontier/tests/test_board.py | 临时 bare Git 远端的并发、失联、过期和资产校验；修改工具后运行 |
 | research/weighted_congestion_frontier/evidence/validation.md | 本轮实际验证范围与限制；不承担数学证明 |
+| research/weighted_congestion_frontier/evidence/identity_smoke.json | 新版真实GitHub的三个测试发布端身份、并发唯一认领、回复、冻结hash与释放；区别Python测试署名和实际研究成员 |
 | research/weighted_congestion_frontier/evidence/github_smoke.json | 实际 GitHub 收发的事件ID、唯一赢家、冻结资产 hash；验证部署时读取 |
 | research/weighted_congestion_frontier/board/README.md | 公屏分支入口和命令；实时事件仅在 wcg/board 分支 |
 

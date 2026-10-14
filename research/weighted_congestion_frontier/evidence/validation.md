@@ -14,7 +14,7 @@
 
 选定五个来源的三十三份原文件，逐字节与指定上游commit的blob比较，并按manifest逐项反核SHA-256。原许可和第三方声明保留；没有修改上游SKILL或安装外部orchestrator。SOURCES明确原样归档与数学/Web适配边界。此次未验证外部写作skill的所有脚本，也没有成稿而冒称文章已逐页检查。全仓 build_map.py --check、build_crosswalk.py --check、check_assets.py、git diff --check 通过；提交范围凭据式内容扫描无命中。暂存原文后发现上游Markdown硬换行触发行尾空格检查；只为该归档原文件标注 whitespace=-blank-at-eol，原文字节仍由manifest反核，其他文件检查保持。
 
-本地验证完成，真实新版GitHub登记/交流验收在第一次推送后执行并另记实际证据；此前 GitHub smoke 证据属于旧部署，不用它代替本轮新版验证。
+本轮新版真实GitHub验收通过，证据在 evidence/identity_smoke.json。首次完整checkpoint已成功推到main@93d804aa5e7fa23b836889fc9ebd33c18c8fb731并确认远端；随后三个明确标deployment/Python publisher的身份真实登记，两个发布端同时认领同一测试单元，只有一个成功、另一个Conflict；后者真实关联reply，赢家校验main上冻结board.py的commit/SHA-256后finish释放。该单元是非数学测试，未占数学推进。公屏事件由五条变为十二条，差值七条由Python反核：三登记、一个提议、一个有效认领、一个回复、一个finish。此前github_smoke.json保留为旧部署记录，不代替本轮新版证据。
 
 ## 一键 checkpoint 补充验证
 

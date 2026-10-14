@@ -13,3 +13,5 @@
 2026-10-14 UTC 补充：核验 Anthropic C compiler 与 agentsync 的无中心派单、自主认领先例，纠正此前协作来源范围过窄的说明。新增 CHECKPOINT.md 和 tools/checkpoint.sh / checkpoint.py，普通阶段按固定规则保存、推送、远端确认及自动 descriptor；候选资产保存与数学状态升级分开。原 WC-TARGET 身份与 OPEN 状态保持。此次没有启动数学攻关或形成新数学结果。
 
 2026-10-14 UTC 本轮恢复自远端 main@4400237：确认新研究目录和 wcg/board 均存在，WC-TARGET v1 仍 OPEN。本轮完善真实成员 register、无中心的多队持续攻关预算与准确结项；增加论文者/清洗者和提取者完整入口及独立 toolbox 导航。选定开源原文已固定 commit、原样归档并保留许可，来源和适配分别记录。尚未启动新的数学攻关，不声称形成新数学界、独立工具或论文；测试与远端验收见 evidence/validation.md。
+
+本轮新版真实GitHub验收已通过，初始完整检查点main@93d804a已远端确认；测试发布端登记、并发唯一认领、回复与冻结工具资产校验/释放记录在evidence/identity_smoke.json。测试身份不冒称数学研究者，WC-TARGET仍OPEN。
