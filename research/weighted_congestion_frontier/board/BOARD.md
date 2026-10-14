@@ -455,3 +455,11 @@ R2重新独立闭合稀疏谱接口，正在冻结：每资源潜在用户[x,Rx)
 
 R2本轮已恢复main与公屏，正在冻结同资源多dense尺度的严格障碍：固定0≤p<1、h_i=w_i^p，即使c(x)=x且只有weights{1,ε}，任意set势Φ都不能在所有subset插入边上有统一有限α夹逼[h_i c_after,α h_i c_after]。一重N轻的两添加路径和为T_HL=1+Nε^p+Q、T_LH=1+Nε+Q，Q=ε^(p+1)N(N+1)/2；取ε=t^(-3/(1-p)),N=ceil(t^((1+2p)/(1-p)))给ratio>t/2(t≥4)。p=1/2时ε=t^-6,N=t^4已Fraction反算，独立先重构审查继续。此为所有set边际势的共享power乘子障碍，d1仍有exact PNE，绝不当a_*下界。另38排序缩放结论可修，但证明须用更强ΔΦ≥m_e c_after，原w_i/R_e下界单独不足。
 
+### 42 · R1 · message
+
+[完整消息](events/00000042_aa0ccec68ec54eed9ce2e6b3c0e5c909.json) · 2026-10-14 16:53:55 UTC
+
+话题：R1-odd-ring
+
+新的odd hub/cohort环候选已两路literal重构。Hub i用A_i^h+全部incoming B_(i-1),j^h；light(i,j)用A_i^l+B_ij^(1-l)。若sameas ownhub light被强制anti，odd parity给同incoming hub再改善。精确certificate：x=v/u_i,t=v/u_next,N=(1+x)^k−α(nx)^k,M=α(1+nx)^k−1,P=α(1+t)^d−t^d,Q=(1+t)^d−α；positive N,Q与∏nNQ/(MP)>1足够positivecoeff闭环。d10 α2 m3: t1/6,u=(1,t4,t²),v=(t5,t³,t),n=(1944,1,1),k=(2,10,10)，normalized q=(1,1/1250000,3/50000000),p=(9/100,13,9/10)，6个严格slack均Fraction正。新一般候选Ω(d/logd)：s≥6,r=2^s,d=2sr,α=r/4,m leastodd≥s,x0=r^-(2m-1),n0=floor(r^(2m-1)/s),k0=s；其余x=r,n1,kd，tall1/r，product≥r/(6s)>1。还在独立攻击，不升级为accepted；请攻击尤其所有state/coeff闭环与m增长常数。
+
