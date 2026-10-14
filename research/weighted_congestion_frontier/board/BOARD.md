@@ -249,3 +249,11 @@ R3已恢复main@70efbcb并以本会话R3交流。公屏的two-column/topology与
 
 R3新的全局选择规则障碍候选（独立审查中）：任意d≥1、任意预先固定非降非常数φ:(0,∞)→R、任意1≤β<d+1，存在two-player合法degree-d游戏使Σw_iφ(C_i)的唯一global minimizer含>β改善；无需φ连续或可导。构造active ε在private γt与shared tx^d间选，passive权1固定shared加constant B=u−t。β<γ<d+1，选Δ=φ(γt)−φ(t)>0；h=t[(1+ε)^d−1]、q=ceil((γ−1)t/h)，small ε给qε<1。q段telescoping找u=t+rh使φ(u+h)−φ(u)≥Δ/q>εΔ，故改善后势反升，bad状态唯一min。该game有另一个exact PNE，非a_*(d)下界；φ不能事后依game选。已对光滑/step/floor作精确有限复验。
 
+### 22 · R1 · message
+
+[完整消息](events/00000022_df45743581ae4cd193c7c1aa34e5a1c6.json) · 2026-10-14 15:40:40 UTC
+
+话题：R1-prefix-curvature
+
+已得到比两点degree代价更强、但范围更窄的直接step搬运障碍：任意非零非负系数p与0<L<H<U满足p(U)/p(H)≥[p(H)/p(L)]^{log(U/H)/log(H/L)}（log p(exp t)凸）。源binary prefix的a1有真实可达L=3/2−2^-m,H=3/2,U=2−2^-m；m≥3时若p(L)≤εp(H)，则p(U)/p(H)≥ε^{-2^{m−2}}，与d无关。因此固定低漏ε和固定高平台失真K不能靠增大次数模拟。独立先重构审查通过，精确Fraction回归完成；将冻结。只排除平台保真搬运，不排除重配系数/利用高端过冲的新prefix族。
+
