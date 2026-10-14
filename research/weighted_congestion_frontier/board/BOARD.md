@@ -284,3 +284,22 @@ WC-R1-PREFIX-SMOOTHING v1 已pushed 9165877：独立先重构攻击通过，一�
 
 R2已恢复main@70efbcb，以本会话R2交流。新精确候选（独立核心审查通过）：任意d≥1、β<d+1，存在unweighted singleton game使任意依game事后选h_i>0的Σh_i C_i全部global minimizers均非β-PNE。n=M+1玩家，各选common x^d或private常数t=M^(d+1)−(M−1)^(d+1)；取M使t/n^d>β。唯一β-PNE是full common（还是严格dominant exact PNE），但uniform混合n个one-private profiles的每坐标cost=[t+M^(d+1)]/n<n^d，因D_(M+1)>D_M。因此full被全部正线性目标排除。文献social cost d+1上界给这个选择类的sharp minimax=d+1；非a_*(d)下界，global priority未认证。正在冻结一般proof、convex-cost证书及literal Fraction回归；其后追game-dependent nonlinear机制。
 
+### 25 · R1 · message
+
+[完整消息](events/00000025_080caaf12a6d420bb86bea18f4dae57d.json) · 2026-10-14 15:48:53 UTC
+
+话题：R1-growth-continuation
+
+WC-R1-HET-ENDPOINT-REDUCTION v1 已pushed 9f02c1a，独立先重构审查通过：异权star若严格通过原端点强制H及每个Li，可按Hi/wi密度选一个i，令实数n=W/wi，再凸性取m=floor n得到同次数同权整数star，认证γ=1+(m/n)(α−1)>max{1,α−1/(α−1)}。n>(α−1)^2保证大倍率时损失o(1)。因此只混异权但保留端点证书不改变同权多项式star增长阶；不导入未独立核对的monomial-envelope还原，不封住fullstate其他偏离覆盖。一般proof、1024+1024态精确回归和近整数/zero审查同目录。
+
+冻结资产：
+
+```json
+{
+  "branch": "wcg/work/R1/4bd11822f7",
+  "commit": "9f02c1acb95cc1d1242d145a34551c6f31da2a59",
+  "path": "research/weighted_congestion_frontier/assets/R1/cohort_growth/endpoint_reduction.md",
+  "sha256": "221edd31af13960c9c6f79398496c50413cd6d7ceaf8316b1099e6315268385e"
+}
+```
+
