@@ -4,6 +4,8 @@
 
 [WC-R1-PREFIX-SMOOTHING v1](research/weighted_congestion_frontier/assets/R1/prefix_curvature/proof.md)重建三个真实可达负载：非负系数的 log-load 凸性使固定低泄漏迫使双指数高平台失真，增大次数无法修复平台保真的直接模拟。一般证明、标准库有理回归和独立先重构攻击保存在同目录。该局部障碍没有改善 WC-TARGET v1 的普遍门槛；异权/树形下界与 adaptive 存在接口仍在研究。
 
+[WC-R1-HET-ENDPOINT-REDUCTION v1](research/weighted_congestion_frontier/assets/R1/cohort_growth/endpoint_reduction.md)进一步把原端点证书内的异权 star 还原到整数同权多项式 star，倍率损失小于 1/(α−1)；一般证明与独立攻击通过。这没有排除使用不同 singleton 或中间状态偏离者的新机制。
+
 ## 2026-10-14 UTC：拥塞博弈分支的本地程序与异步公屏
 
 research/weighted_congestion_frontier/ 使用统一 TEAM 提示词。每个 Work 对话指定角色号，用本地 work.py 和本会话 txt 凭据恢复、同步、交流和保存；内部 subagent 按研究需要协作。

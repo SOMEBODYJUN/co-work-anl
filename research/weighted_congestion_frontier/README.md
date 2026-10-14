@@ -24,6 +24,8 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 
 R1 的 [prefix 阶跃模拟曲率障碍](assets/R1/prefix_curvature/proof.md)给出一个已一般证明的局部边界：源 binary-prefix 资源若在阈值前保留固定小泄漏，阈值后平台过冲至少随玩家数双指数增长，增大多项式次数不能消除。它限制平台保真的直接搬运，未排除重配费用后的 prefix 构造，也没有改善普遍门槛。[精确核验](assets/R1/prefix_curvature/results.json)与独立攻击保存在同目录。
 
+[异权 star 的端点强制还原](assets/R1/cohort_growth/endpoint_reduction.md)证明：严格认证倍率 α 的异权构造可还原为同次数同权整数 star，损失小于 1/(α−1)。因此这一证书内的异权混合不改变增长阶；真正剩余的逃逸口是需要其他偏离者覆盖 singleton 或中间状态的全状态机制。
+
 真正缺口是控制全体有限博弈的偏离结构，或构造玩家数可增长、每个纯状态均有大倍率获利偏离的族。现有路线是搜索种子；不同表示和跨领域机制都可开展。活跃讨论、问题和发现从公屏读取。
 
 ## Refuted / Failed / Open Problems / Next Actions
@@ -43,6 +45,7 @@ R1 的 [prefix 阶跃模拟曲率障碍](assets/R1/prefix_curvature/proof.md)给
 | research/weighted_congestion_frontier/PRIOR_ASSETS.md | 前人机制和可复用接口、尚未重建步骤；按当前义务读取 |
 | research/weighted_congestion_frontier/FAILED_ROUTES.md | 精确失败步骤、否定范围、回收结果和重试条件；选路线前读 |
 | research/weighted_congestion_frontier/assets/R1/prefix_curvature/proof.md | WC-R1-PREFIX-SMOOTHING v1：三个真实可达负载的曲率/平台失真障碍；拟把原 step-prefix 费用改成非负多项式前读；同目录保留一般证明、独立审查及标准库有理核验 |
+| research/weighted_congestion_frontier/assets/R1/cohort_growth/endpoint_reduction.md | WC-R1-HET-ENDPOINT-REDUCTION v1：异权星形端点证书的密度选择、实数中间量和整数还原；尝试异权混合前核查证书范围，同目录保留全状态有理复算及独立审查 |
 | research/weighted_congestion_frontier/PROTOCOL.md | 统一角色号、异步公屏、研究分支和成果交流 |
 | research/weighted_congestion_frontier/RUNBOOK.md | 本地程序加 txt 凭据的恢复、同步、发言和保存命令 |
 | research/weighted_congestion_frontier/CHECKPOINT.md | 阶段资产的提交、推送、远端确认及 descriptor 分享 |

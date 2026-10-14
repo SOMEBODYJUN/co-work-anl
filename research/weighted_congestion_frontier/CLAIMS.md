@@ -19,6 +19,8 @@
 
 ## WC-TARGET v1 — OPEN
 
+本轮局部资产另包括下文的 WC-R1-HET-ENDPOINT-REDUCTION；所有这些条目都不改变本目标的普遍门槛。
+
 - Exact Statement / Conclusion：刻画 MODEL 中 a_*(d)，优先全类 o(d) 存在上界或严格提高核实过基线的无限非存在族下界。
 - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完全采用 MODEL.md；任意有限 E,N、多资源策略、任意正实权、非负系数次数至多 d，不限制人数。
 - Dependencies：WC-LIT-UPPER-D、WC-LIT-LOWER、WC-LIT-N 是基线和约束，不是完成证明。
@@ -37,6 +39,17 @@
 - Counterevidence / Objections：还需选择性重建证明；社会成本保证的版本差异不影响本条仅记录存在性。
 - Status：Paper Fact；未由团队独立证明；Novelty 无。
 - Related Files：LITERATURE.md、PRIOR_ASSETS.md。
+
+## WC-R1-HET-ENDPOINT-REDUCTION v1 — LOCAL REDUCTION
+
+- Exact Statement：异权两列 star 的重玩家权 1，轻玩家正权 w_i，总重 W；主多项式 p、各卫星多项式 f_i 非负系数且次数≤d。若 α>1 时严格通过 p(1)+Σf_i(1+w_i)>α[p(1+W)+Σf_i(1)] 与每个 p(1+w_i)+f_i(w_i)>α[p(W)+f_i(1+w_i)]，则存在同次数同权整数 star，无 γ-PNE，其中 γ=1+(floor(n)/n)(α−1)>max{1,α−1/(α−1)}、n=W/w_i 为某个选中权重对应的实数中间量。
+- Objects / Domain / Quantifiers / Assumptions / Definitions：任意有限人数、任意正实权、任意非负实系数；完整 paired-column star 策略与身份见 endpoint_reduction.md。实数 n 仅用于代数，不是玩家人数。
+- Scope / Conclusion：端点强制证书内，异权性不能改变同权多项式 star 认证倍率的增长阶；不是任意 full-state star 的上界，也未导入同权多项式到文献 monomial 包络的还原。
+- Dependencies：单调性、主多项式凸性、按权重密度选择与整数向下取整；一般证明自足。
+- Evidence：独立先重构攻击通过；实际有理输入/输出各全状态检查，含常数、零卫星与近整数边界，见 verification.json、review.md。
+- Counterevidence / Objections：若某个 singleton 由其他偏离者覆盖而不满足所写轻玩家测试，本条不能应用；n<1 的假想残余量也不能自动取整。
+- Status：一般证明的局部 reduction，内部独立审查；新颖性与外部评审未认证。WC-TARGET v1 仍 OPEN。
+- Related Files：assets/R1/cohort_growth/endpoint_reduction.md、verify_endpoint_reduction.py、verification.json、review.md。
 
 ## WC-LIT-LOWER v1 — PAPER FACT
 
