@@ -1,6 +1,6 @@
 # 命题账本
 
-本分支没有团队新定理。下列文献条目是 Paper Fact，团队并未独立认证全文证明。不得把公屏 idea、数值证据或多人赞同升级为 Canonical Record。
+下列文献条目是 Paper Fact，团队并未独立认证全文证明。新资产按各自精确范围和审查状态登记。不得把公屏 idea、数值证据或多人赞同升级为 Canonical Record。
 
 ## WC-TARGET v1 — OPEN
 
@@ -44,3 +44,22 @@
 - Counterevidence / Objections：不得从存在性推导高效计算；人数固定的失败不反驳全类目标。
 - Status：Paper Fact；Novelty 无。
 - Related Files：LITERATURE.md、MODEL.md。
+
+
+## OC-INTERFACE-v1 — 内部独立重构完成，有限实例精确认证
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：完全采用 assets/R1/odd_cycle/README.md 中的奇数 hub/cohort 环定义；N_i,Q_i>0 与乘积 ∏n_i N_i Q_i/(M_iP_i)>1 等价于其严格 light/hub 系数证书可行，且该证书保证整个合法多项式游戏无 α-PNE。
+- Dependencies：实际资源负载、所有 cohort 同向时的 light 攻击、余下状态的奇数环 parity、正系数闭环。
+- Evidence：主对话与两个独立成员重构；十次实例的六个 strict slack 为正，全部计数状态精确核验。
+- Counterevidence / Objections：该证书是充分非存在机制；未认证整个奇环游戏族的最优倍率；无限参数结论另立 claim，不由有限计算升级。
+- Status：内部一般接口证明及有限证书；外审/优先权未认证；WC-TARGET 仍 OPEN。
+- Related Files：assets/R1/odd_cycle/{README.md,verify_ring.py,independent_attack.md,attack.py,exact_evidence_20261014.json}。
+
+## WC-R1-DAG-STEP v1 — 内部独立证明，辅助模型
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：完全采用 assets/R1/tree_completion/proof.md；任意 finite simple DAG 的对称 step dependency game，满足明确严格载荷分离与非负幅度，幅度全域的最佳纯均衡门槛为唯一 q=1+ΣP_kq^{-k}，由正幅度取得。
+- Dependencies：真实 threshold 载荷化简、topological greedy、path recursion；完整证明自足。
+- Evidence：独立先重构、两份不互相导入的 Fraction literal verifiers。
+- Counterevidence / Objections：不属于 G_d 多项式模型；equal load separation 可使化简失效；bounded DAG path height 不自动给 sqrt(m) 界。
+- Status：完整内部审查，外审/新颖性未认证。Truth 已内部支持；Value 为 exact dependency 接口；Mechanism 是 path counts；Ambition 辅助。
+- Related Files：assets/R1/tree_completion/{proof.md,independent_review.md,verify.py,verification.json,independent_audit.py}。

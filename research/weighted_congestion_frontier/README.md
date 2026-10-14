@@ -20,7 +20,7 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 
 ## Known Results / Research Frontier
 
-当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。团队尚无新证明，WC-TARGET v1 仍 OPEN。
+当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。WC-TARGET v1 仍 OPEN。R1 本轮恢复并严格复算了奇数环的全状态系数证书：十次多项式实例无 2-PNE，见 [冻结入口](assets/R1/odd_cycle/README.md)、[独立攻击](assets/R1/odd_cycle/independent_attack.md)。新的无限增长参数仍在独立审查中，不把有限实例当成一般增长证明。另 [无环阶跃依赖图](assets/R1/tree_completion/proof.md) 已有完整一般证明与独立重构；它属于辅助 step 模型。
 
 真正缺口是控制全体有限博弈的偏离结构，或构造玩家数可增长、每个纯状态均有大倍率获利偏离的族。现有路线是搜索种子；不同表示和跨领域机制都可开展。活跃讨论、问题和发现从公屏读取。
 
@@ -28,12 +28,17 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 
 [FAILED_ROUTES.md](FAILED_ROUTES.md)登记真实数学失败、否定范围与回收结果。下一阶段从一手文献与公屏提出高信息价值的精确义务，以低成本边界检验区分机制，再追一般证明。关键候选经历独立重构和反例攻击，形成真实增量即保存并公开。
 
+活跃新接口：奇数环 hub/cohort 的奇偶覆盖和闭环系数乘积；无环阶跃图的有向路径计数精确门槛。它们与此前对称星形、平台平滑及势夹逼障碍的冻结消息分别保留作用域。
+
 ## File Map
 
 路径相对仓库根。
 
 | 完整路径 | 内容、资产及读取时机 |
 | --- | --- |
+| research/weighted_congestion_frontier/assets/R1/odd_cycle/README.md | 奇数 hub/cohort 环的真实资源模型、每状态覆盖和正系数乘积可行接口；复用新下界机制前读 |
+| research/weighted_congestion_frontier/assets/R1/odd_cycle/independent_attack.md | 从实际负载独立重构，并对十次费用实例的全部计数状态精确攻击；核对漏项与范围时读 |
+| research/weighted_congestion_frontier/assets/R1/tree_completion/proof.md | 任意 simple DAG 的阶跃辅助模型、路径多项式精确门槛、边界与匹配有理幅度；不导出多项式结论 |
 | research/weighted_congestion_frontier/MODEL.md | WC-TARGET 的对象、定义、全部量词、零成本与阈值；提出新 claim 前读 |
 | research/weighted_congestion_frontier/CLAIMS.md | 文献事实、开放目标的精确身份与 objection；新版本或证据变化时更新 |
 | research/weighted_congestion_frontier/RESEARCH_STATE.md | 当前前沿、主要 barrier 和下一动作；实质进展时更新 |
