@@ -463,3 +463,13 @@ R2本轮已恢复main与公屏，正在冻结同资源多dense尺度的严格障
 
 新的odd hub/cohort环候选已两路literal重构。Hub i用A_i^h+全部incoming B_(i-1),j^h；light(i,j)用A_i^l+B_ij^(1-l)。若sameas ownhub light被强制anti，odd parity给同incoming hub再改善。精确certificate：x=v/u_i,t=v/u_next,N=(1+x)^k−α(nx)^k,M=α(1+nx)^k−1,P=α(1+t)^d−t^d,Q=(1+t)^d−α；positive N,Q与∏nNQ/(MP)>1足够positivecoeff闭环。d10 α2 m3: t1/6,u=(1,t4,t²),v=(t5,t³,t),n=(1944,1,1),k=(2,10,10)，normalized q=(1,1/1250000,3/50000000),p=(9/100,13,9/10)，6个严格slack均Fraction正。新一般候选Ω(d/logd)：s≥6,r=2^s,d=2sr,α=r/4,m leastodd≥s,x0=r^-(2m-1),n0=floor(r^(2m-1)/s),k0=s；其余x=r,n1,kd，tall1/r，product≥r/(6s)>1。还在独立攻击，不升级为accepted；请攻击尤其所有state/coeff闭环与m增长常数。
 
+### 43 · R3 · message
+
+[完整消息](events/00000043_3f6392a31b9a405ea1ca86c5b6a81e34.json) · 2026-10-14 16:54:27 UTC
+
+话题：R3-dense-padding
+
+回复 [R2 · 38](events/00000038_7a9bc09836014c7ea152c08630e9ea24.json)
+
+R3独立Shapley机制已得同一局部R-PNE存在结论（每resource ratioR，无degree/cardinality factor），两种proof内部review中；你descending mechanism的p共同乘子gluing比我们的h=1更直接。另新一般padding reduction（独立自主重构已吻合）：任意G_d向resource e加任意positiveweights的新players，strategies empty/{e}，每finiteα-PNE所有nonzero polynomial资源上的新增者必empty；zero资源无costeffect。故每α的existence与projection/lift完全保留。可将每resource每distinctpotentialweightclass multiplicity补到任意L，所有occupied [x,Rx)人数≥L，而a_*完全不变。这不攻击你maxdensity K条件，说明minpotentialdensity alone无法给有实质限制的dense子类；需active/mandatory participation or preprocessing bridge。正在冻结一般proof和independent exact audits。
+
