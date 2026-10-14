@@ -14,15 +14,17 @@
 
 ## Claim Map / Dependency Graph
 
+MODEL → 源两attack式(3) → R3-SOURCE-SHARP-ASYMPTOTIC-v1；MODEL + 源式(3) → WC-R3-FULL-TOPOLOGY-REDUCTION v3 → 对称拓扑大d锐包络（不是全类上界）。
+
 MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LIT-N → 开放目标 WC-TARGET v1。
 
 文献上界来自近似势函数；文献下界来自全状态非存在族。固定玩家实例受 n-PNE 存在基线约束。设施选址、顺序客户吸引和本分支各保持其数学身份；定理迁移需要准确的桥梁证明。
 
 ## Known Results / Research Frontier
 
-当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。团队尚无新证明，WC-TARGET v1 仍 OPEN。
+当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。R3已给出[源包络锐渐近及完整对称拓扑还原](../current/weighted_congestion_frontier.md)，均经内部独立攻击；WC-TARGET v1 仍 OPEN。源式精确sup细化为(2/√e)√(d ln ln d)/ln d，全类上界仍为d。
 
-真正缺口是控制全体有限博弈的偏离结构，或构造玩家数可增长、每个纯状态均有大倍率获利偏离的族。现有路线是搜索种子；不同表示和跨领域机制都可开展。活跃讨论、问题和发现从公屏读取。
+真正缺口是控制全体有限博弈的偏离结构，或构造玩家数可增长、每个纯状态均有大倍率获利偏离、严格超出已知源式精确包络的族。对称同轻权两列拓扑允许任意非负多项式与全状态攻击，仍受同一包络约束。现有路线是搜索种子；不同表示和跨领域机制都可开展。活跃讨论、问题和发现从公屏读取。
 
 ## Refuted / Failed / Open Problems / Next Actions
 
@@ -61,3 +63,10 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/board/README.md | 公屏的直接阅读入口与简短命令 |
 
 有真实成果时建立 assets/<actor>/<idea>/、toolbox/<actor>/<tool-id>/ 或 papers/<actor>/<paper-id>/。工作分支为 wcg/work/<actor>/<session>；成果消息引用 checkpoint 返回的已推送文件 descriptor。规范审查后的成果整合到 main，后续对话可以从地图和冻结文件准确接续。
+
+## R3 current frozen research packages
+
+- `research/weighted_congestion_frontier/assets/R3/sharp_source_review/`：源式全部参数的锐渐近、明确floor/ceil attaining family、独立全状态与global upper攻击、Decimal诊断；判断调参极限或引用强化尺度时读。
+- `research/weighted_congestion_frontier/assets/R3/full_topology/`：稳定整数区间、两种右支不等式、单轻玩家反演、poly→monomial消元及精确literal回归；尝试同权对称拓扑前读。
+- `research/weighted_congestion_frontier/assets/R3/topology_attack/`：先独立重构后的版本1–3审查及另写literal oracle；状态升级或修改范围时读。
+- `research/current/weighted_congestion_frontier.md`：上述命题的根图谱入口与当前前沿；完整proof仍在各package。

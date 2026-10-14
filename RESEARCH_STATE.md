@@ -1,5 +1,7 @@
 # 当前研究状态
 
+2026-10-14 R3：[源式锐渐近与对称拓扑边界](research/current/weighted_congestion_frontier.md)已完成一般证明及独立攻击。F_d∼(2/√e)√(d ln ln d)/ln d；对称同轻权任意非负多项式拓扑在α≥(1+√3)/2还原源式，大d实际包络等于F_d。仅细化已知族，不是全类上界或超源sup下界。下一步追非对称高support构造。
+
 ## 2026-10-14 UTC：拥塞博弈分支的本地程序与异步公屏
 
 research/weighted_congestion_frontier/ 使用统一 TEAM 提示词。每个 Work 对话指定角色号，用本地 work.py 和本会话 txt 凭据恢复、同步、交流和保存；内部 subagent 按研究需要协作。

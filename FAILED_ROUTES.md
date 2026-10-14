@@ -1,5 +1,7 @@
 # 失败路线与仍可使用的边界
 
+2026-10-14：继续优化同轻权对称两列拓扑不能突破源式包络。失败机制为light稳定区间与反射；平移/单轻权反演加费用系数消元归回源证书。否定范围仅该拓扑，允许全状态攻击及任意非负多项式；不否定异权或交叉关联。完整条件及可回收还原见[研究资产](research/current/weighted_congestion_frontier.md)。
+
 ## 2026-10-10：真正逐人混合安全值桥与平均全树支付均失败
 
 [34客户完整SPE](research/current/customer_attraction/individual_security_counterexample.md)严格给

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Facility location mathematical dependency hypergraph",
-  "updated": "2026-10-10",
+  "updated": "2026-10-14",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -3738,6 +3738,56 @@
         "evidence/runs/2026-10-10/terminal_tie_quotient_review.md"
       ],
       "status": "independent internal finite exact audits; no universal welfare inference"
+    },
+    {
+      "id": "WC-MODEL",
+      "kind": "definition",
+      "track": "extensions",
+      "title": "Weighted polynomial congestion model",
+      "detail": "WC-TARGET v1: arbitrary positive weights, finite resource-subset strategies, nonnegative degree-at-most-d latencies; exact weak alpha-PNE convention.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/MODEL.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "WC-SOURCE-FORMULA",
+      "kind": "definition",
+      "track": "extensions",
+      "title": "Source two-test envelope F_d",
+      "detail": "Exact original formula-(3) parameter supremum; a certificate minimum rather than each game's true threshold.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/sharp_source_review/proof.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "R3-SOURCE-SHARP-ASYMPTOTIC-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Sharp source-envelope asymptotic",
+      "detail": "F_d ~ (2/sqrt(e))*sqrt(d loglog d)/log d. Explicit rounded parameters attain the scale; arbitrary source parameter sequences satisfy the matching bound. No all-game upper conclusion.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/sharp_source_review/proof.md",
+        "research/weighted_congestion_frontier/assets/R3/sharp_source_review/review.md"
+      ],
+      "status": "complete current proofs, independently internally attacked; unrefereed"
+    },
+    {
+      "id": "WC-R3-FULL-TOPOLOGY-REDUCTION-v3",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Full symmetric topology reduction",
+      "detail": "For alpha>=(1+sqrt(3))/2, no alpha-PNE in the arbitrary-polynomial symmetric two-column topology yields an original-domain monomial certificate. F_d <= T_d <= max{rho,F_d}.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/full_topology/proof.md",
+        "research/weighted_congestion_frontier/assets/R3/topology_attack/review.md"
+      ],
+      "status": "complete current proofs, independently internally attacked; unrefereed"
     }
   ],
   "hyperedges": [
@@ -9205,6 +9255,38 @@
         "research/current/customer_attraction/terminal_tie_lift_obstruction.md"
       ],
       "status": "exact restriction on the proposed lifting mechanism; general target open"
+    },
+    {
+      "id": "WC-R3-SOURCE-SHARP",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL",
+        "WC-SOURCE-FORMULA"
+      ],
+      "conclusion": "R3-SOURCE-SHARP-ASYMPTOTIC-v1",
+      "statement": "Exact two-attack parameter expression, rounded attaining family, and sequential global optimization yield the sharp envelope, not a universal existence upper bound.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/sharp_source_review/proof.md"
+      ],
+      "status": "complete current proofs, independently internally attacked; unrefereed"
+    },
+    {
+      "id": "WC-R3-TOPOLOGY-REDUCE",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL",
+        "WC-SOURCE-FORMULA"
+      ],
+      "conclusion": "WC-R3-FULL-TOPOLOGY-REDUCTION-v3",
+      "statement": "Light-stable interval plus reflection, right-branch one-light inversion, polynomial endpoint chord and coefficient elimination imply the high-factor topology reduction.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/full_topology/proof.md"
+      ],
+      "status": "complete current proofs, independently internally attacked; unrefereed"
     }
   ]
 }

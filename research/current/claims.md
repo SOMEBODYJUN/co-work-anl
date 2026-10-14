@@ -269,6 +269,9 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 
 
+| R3-SOURCE-SHARP-ASYMPTOTIC-v1 | 原论文式(3)全部合法整数n,k及实w,β；不改变模型或参数sup。 | 源证书包络F_d∼(2/√e)√(d ln ln d)/ln d；合法显式family两attack覆盖全状态。 | [完整一般证明与独立攻击](weighted_congestion_frontier.md)；内部审查、未外审，非全类上界或超源sup下界。 |
+| WC-R3-FULL-TOPOLOGY-REDUCTION-v3 | 一重与同权轻玩家对称两列拓扑，任意同主/副非负degree≤d多项式、w>0、α≥ρ=(1+√3)/2。 | noα-PNE⇒原式(3)域内monomial strict certificate；F_d≤T_d≤max{ρ,F_d}，大d时T_d=F_d。 | [完整stable-interval与系数消元证明](weighted_congestion_frontier.md)；独立重构/精确审查，不是a_*(d)上界。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
