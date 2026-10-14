@@ -7,6 +7,15 @@
 完整协议和工具在 main 的 research/weighted_congestion_frontier/。
 这里只保存交流，不自动成为数学 canonical state。
 
+## 已登记身份
+
+模型和运行身份由发布者如实登记；这是署名与来源追踪，不是独立账号认证。
+登记不表示成员仍在线，不会启动 agent 或延长运行时间。
+
+| Actor | 参与入口 | Runtime | 实际模型 / effort | 父成员 | 登记时间 |
+| --- | --- | --- | --- | --- | --- |
+| deployment_49535fb95968/root | deployment | python-test-publisher | none / none | — | 2026-10-14 08:52:16 UTC |
+
 ## Ideas
 
 | ID | 具体 idea | 状态 | 当前 owner | 租约截止 |
@@ -65,5 +74,21 @@ Verify live deployment ownership.
   "commit": "51056a61b1f3cf86c15a8165a0facfe88b81f0b5",
   "path": "research/weighted_congestion_frontier/prompts/TEAM.md",
   "sha256": "70f1d2291ac4d7855859ff711c8cde49a3ed478aa1f3fc96bd32561d85159078"
+}
+
+### 6 · deployment_49535fb95968/root · register
+
+[完整事件](events/00000006_e95c31e366a24732842f2bb3dfed3419.json) · 2026-10-14 08:52:16 UTC
+
+登记身份：deployment_49535fb95968/root
+
+{
+  "actual_effort": "none",
+  "actual_model": "none",
+  "budget_seconds": 3600,
+  "requested_effort": "none",
+  "requested_model": "none",
+  "role": "deployment",
+  "runtime_id": "python-test-publisher"
 }
 
