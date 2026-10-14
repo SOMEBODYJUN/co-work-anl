@@ -4001,6 +4001,32 @@
         "research/weighted_congestion_frontier/assets/R3/odd_ring_literature/notes.md"
       ],
       "status": "complete general proofs with independent internal reconstruction; unrefereed; global priority unverified"
+    },
+    {
+      "id": "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Mixed polynomial shapes preserve the exact ring-test envelope",
+      "detail": "For d>=2 and alpha>1, allowing each odd-ring group independent nonnegative degree-at-most-d shapes F_i,G_i, common across its action copies/cohort, does not change positive two-local-test feasibility: some finite certificate exists iff alpha<T_d. Constants in mixtures and arbitrary positive real weights are covered; zero shapes cannot satisfy the strict tests.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/odd_ring_sharp/PROOF.md",
+        "research/weighted_congestion_frontier/assets/R3/odd_ring_parameters/polynomial_envelope_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal attack; unrefereed; global priority unverified"
+    },
+    {
+      "id": "WC-R3-ODD-RING-SINGLETON-UPPER-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Singleton cohorts admit a stable defect state",
+      "detail": "Every odd m>=3 ring with n_i=1 at every group, arbitrary positive real weights, symmetric action copies and nonnegative polynomial fees of degree at most d>=2 (zero fees permitted), has a min{2,T_d}-PNE. A T_d-PNE exists among the 2m single-conflict profiles modulo global action exchange.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/odd_ring_sharp/PROOF.md",
+        "research/weighted_congestion_frontier/assets/R3/odd_ring_parameters/SINGLETON_NOTE.md"
+      ],
+      "status": "complete restricted existence proof with internal reconstruction; unrefereed; priority unverified"
     }
   ],
   "hyperedges": [
@@ -9769,6 +9795,41 @@
         "research/weighted_congestion_frontier/assets/R3/odd_ring_literature/notes.md"
       ],
       "status": "complete general proofs with independent internal reconstruction; unrefereed; global priority unverified"
+    },
+    {
+      "id": "E-WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL",
+        "WC-R3-ODD-RING-CERTIFICATE-v1",
+        "WC-R3-ODD-RING-ENVELOPE-v1"
+      ],
+      "conclusion": "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1",
+      "statement": "For d>=2 and alpha>1, allowing each odd-ring group independent nonnegative degree-at-most-d shapes F_i,G_i, common across its action copies/cohort, does not change positive two-local-test feasibility: some finite certificate exists iff alpha<T_d. Constants in mixtures and arbitrary positive real weights are covered; zero shapes cannot satisfy the strict tests.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/odd_ring_sharp/PROOF.md",
+        "research/weighted_congestion_frontier/assets/R3/odd_ring_parameters/polynomial_envelope_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal attack; unrefereed; global priority unverified"
+    },
+    {
+      "id": "E-WC-R3-ODD-RING-SINGLETON-UPPER-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL",
+        "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1"
+      ],
+      "conclusion": "WC-R3-ODD-RING-SINGLETON-UPPER-v1",
+      "statement": "Every odd m>=3 ring with n_i=1 at every group, arbitrary positive real weights, symmetric action copies and nonnegative polynomial fees of degree at most d>=2 (zero fees permitted), has a min{2,T_d}-PNE. A T_d-PNE exists among the 2m single-conflict profiles modulo global action exchange. Direct support-two total-cost proof supplies factor 2.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/odd_ring_sharp/PROOF.md",
+        "research/weighted_congestion_frontier/assets/R3/odd_ring_parameters/SINGLETON_NOTE.md"
+      ],
+      "status": "complete restricted existence proof with internal reconstruction; unrefereed; priority unverified"
     }
   ]
 }

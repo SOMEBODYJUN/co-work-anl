@@ -21,3 +21,5 @@
 ## Odd-ring positive local tests: tuning has an exact ceiling
 
 尝试只增加奇环长度、改变cohort数、权尺度、主费用monomial degree或系数以继续提高α。新精确失败机制：F_(k,n)(x)≤F_(k,1)(nx)，Q/(tP)=F_(d,1)(1/t)，权乘积相等；α≥T_d迫使所有因子≤1，使正系数严格闭环不可能。否定范围仅指定两类正localtest系统，不是整个策略拓扑或全类存在问题。回收成长族a_*(d)≥T_d∼d/ln d、有理系数构造及程度预算(α−1)lnα<d。重试须采用完整state dependent攻击、改变局部test或新反馈拓扑，而非继续同证书调参。详见assets/R3/odd_ring_sharp/PROOF.md。
+
+混合多项式扩展亦已封住：任意每组nonnegative degree≤d形状F_i,G_i的两个归一化因子都是monomial因子按正M_k/P_k的凸组合，constant项给负因子而非例外；故仍有同exact T_d。精确范围保留action/cohort共shape；action或clone异形费用需要新claim。完整actualtopology仍缺从certificate失败到真实稳定状态的桥，不能偷升该范围。

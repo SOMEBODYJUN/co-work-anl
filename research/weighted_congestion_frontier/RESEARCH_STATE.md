@@ -39,3 +39,9 @@
 已完成WC-R3-ODD-RING-CERTIFICATE/ENVELOPE/LOWER v1。每个d≥2、每个alpha<T_d都有全degree-d正有理游戏无alpha-PNE；T_d∼d/ln d。一般证明覆盖任意cohort混合状态，系数显式闭环；两独立攻击及Fraction逐资源小实例核验已闭合。原策略机制归R1公屏42，本轮R3标量还原/精确界另有清晰来源。此为相对核实基线的无限下界阶段突破，WC-TARGET仍OPEN。
 
 剩余义务：全类O(d/ln d)或更好的存在机制，或打破positive two-test certificate得到更强下界。精确T_d必要性只约束指定证书；不能当实际整个拓扑或全类上界。低成本下一检验是任意非负混合polynomial是否仍受同包络，以及完整局部orbit攻击是否能超出这两类充分测试。文献检索有漏查风险，禁止全球首次表述。
+
+已追完混合多项式的低成本义务：任意每组nonnegative shapes仍exact T_d，constants/zeros已攻。继续同uniform强forcing调参已没有增长阶信息。真实剩余缺口是全部cohort占用数的状态覆盖或全类存在预算；anti-light反向偏离阻止从failed hub test直接构造均衡。
+
+实际拓扑子类已回收：所有cohort均n_i=1时，single-conflict cycle给T_d-PNE，support2另给2-PNE，所以min{2,T_d}成立（不称sharp）。反向orientation必须逆转环序与交换角色；只shift角色不够。一般n_i>1共同A负载破坏该图，这是具体未解obligation。完整state counts/映射/zero边界已有精确回归。
+
+本阶段交接：已知全类下界T_d∼d/ln d，指定强forcing证书即使混合费用也饱和；上界仍≤d。能继续改变数学认识的下一步是构造/排除一般cohort的部分对齐稳定区间，或独立全类O(d/ln d)存在机制。不能由当前证书失败推均衡、由singleton图推多轻类，或继续同式调参冒充突破。

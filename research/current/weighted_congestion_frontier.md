@@ -188,3 +188,23 @@ The general existence upper remains linear, a logarithmic gap remains, and
 WC-TARGET is OPEN. The envelope's upper half bounds this certificate, not
 actual ring equilibria or the full class. Next: full-class O(d/ln d) existence,
 or a different all-state mechanism exceeding this local-test envelope.
+
+**WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1** extends the certificate input class:
+independent nonnegative polynomial shapes at every group, including constants
+in mixtures, have the same exact envelope T_d. Positive-denominator convex
+combinations reduce both normalized factors to their monomial counterparts.
+[Full scope and proof, section8](../weighted_congestion_frontier/assets/R3/odd_ring_sharp/PROOF.md)
+and [independent attack](../weighted_congestion_frontier/assets/R3/odd_ring_parameters/polynomial_envelope_review.md)
+exclude mixed-degree tuning inside the specified uniform local tests. Actual
+partially aligned cohorts and reverse light deviations remain outside this
+ceiling argument.
+
+**WC-R3-ODD-RING-SINGLETON-UPPER-v1** is an actual existence result in a
+different precise scope: every cohort has one light player. Some single-conflict
+profile is a T_d-PNE, by arc counting in its 2m-state defect cycle and a correctly
+reversed role/index map. A separate total-cost proof gives factor2, so the
+subclass guarantee is min{2,T_d}; no sharpness is claimed. Zero fees are allowed.
+[Full proof and scope](../weighted_congestion_frontier/assets/R3/odd_ring_sharp/PROOF.md)
+section9 and [independent state-graph account](../weighted_congestion_frontier/assets/R3/odd_ring_parameters/SINGLETON_NOTE.md)
+identify exactly why multiple lights on a common A resource break this
+representation. The general-cohort actual-topology existence problem remains open.

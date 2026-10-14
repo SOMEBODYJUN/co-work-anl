@@ -300,3 +300,131 @@ the proved positive-test-system envelope. Resources involving many players,
 extreme rational scales and a low-total-weight large cohort are the present
 amplification mechanism; minimum potential-user density alone was already
 shown nonrestrictive by the separate padding theorem.
+
+## 8. Nonnegative mixtures do not enlarge the certificate envelope
+
+**WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1** is a new claim with a broader input
+class, not an unannounced change of the monomial claims above. Let d>=2,
+alpha>1, and retain the odd-ring strategies and common cohort weights. At
+each group independently choose nonzero polynomials F_i,G_i of degree at most
+d with nonnegative real coefficients. The two A action copies have shape F_i;
+all B_ij action copies within group i have shape G_i. Costs are a_i F_i and
+b_i G_i, with positive group amplitudes. No action-specific or clone-specific
+shape extension is included.
+
+Use the actual differences, without mixing their dimensions with section 1:
+
+    N_i=F_i(u_i+v_i)-alpha F_i(n_i v_i),
+    M_i=alpha F_i(u_i+n_i v_i)-F_i(u_i),
+    P_i=alpha G_i(u_(i+1)+v_i)-G_i(v_i),
+    Q_i=G_i(u_(i+1)+v_i)-alpha G_i(u_(i+1)).
+
+The local tests are a_i N_i>b_i P_i and
+n_(i-1)b_(i-1)Q_(i-1)>a_i M_i. The same monotone all-state proof and positive
+coefficient-cycle proof apply. Some choice of shapes and parameters satisfies
+this strict system if and only if alpha<T_d. In particular, for every fixed
+choice satisfying the system, alpha<T_d is necessary. This does not assert
+that every prescribed choice is feasible below T_d.
+
+For necessity, write F_i(z)=sum c_k z^k and suppress i. M_k=alpha(1+n x)^k-1
+is positive for every 0<=k<=d, including constants. Thus
+
+    x n N/M=sum_k [c_k u^k M_k/M] F_(k,n)(x).
+
+This is an exact convex combination: its displayed weights are nonnegative
+and sum to one. Likewise write G_i(z)=sum e_k z^k, with
+P_k=alpha(1+t)^k-t^k>0. Then
+
+    Q/(tP)=sum_k [e_k u_(i+1)^k P_k/P] F_(k,1)(1/t).
+
+Every individual monomial factor is <=1 at alpha>=T_d by section 4.
+For k=0 the factors are respectively -n x and -1/t, also <=1. Individual
+N_k,Q_k can be negative; that does not invalidate a convex upper bound.
+The total N,Q must be positive in a certificate, so the normalized totals
+are positive. Multiplying over i and using product x_i=product t_i gives
+G<=1, contradicting strict feasibility. Sufficiency uses section 5's
+degree-d monomial subclass.
+
+Nonzero nonnegative shapes have M,P>0 at positive arguments. A zero F_i
+cannot pass its strict light test; a zero G_i cannot pass the following hub
+test. Pure constants have N<0 or Q<0; constants inside mixtures remain
+covered. No 0/0 is evaluated. The same necessary argument at d=1 excludes
+all alpha>1, since f_1=1. There is no division claim at alpha=1.
+
+Dependencies are the exact certificate proof and scalar envelope, with the
+new convex identities just proved. Independent attack and exact mixed-degree
+checks are in `../odd_ring_parameters/polynomial_envelope_review.md` and its
+companion Python/JSON. Truth: complete stated-scope proof; Value: closes the
+mixed-polynomial tuning route; Novelty: unverified; Mechanism: positive
+denominator-weighted combinations; Ambition: mechanism boundary, not a stronger
+full-class lower or any full-class existence upper.
+
+The remaining actual-topology obligation is sharper: when these uniform tests
+fail, must there be a real state with no alpha deviation? An all-anti state with
+one equal hub edge has only one possibly improving hub, but some anti lights
+can still prefer alignment. Partly aligned cohorts and these reverse light
+deviations must be controlled; neither this proof nor infeasibility supplies
+the needed state. This is the next informative attack on strong forcing.
+
+## 9. An actual-topology existence bound for singleton cohorts
+
+**WC-R3-ODD-RING-SINGLETON-UPPER-v1.** For every odd m>=3, d>=2, and every
+game of section 8 with n_i=1 at all groups, arbitrary positive real weights
+and nonnegative degree-at-most-d shapes (zero fees now permitted), there is
+a min{2,T_d}-PNE. In particular a T_d-PNE exists among the 2m single-conflict
+states modulo global exchange of action bits. The min{2,T_d} equilibrium
+need not be claimed to lie in that smaller set when 2<T_d. No sharpness or
+general-cohort claim is made.
+
+The internally derived [full proof](../odd_ring_parameters/SINGLETON_NOTE.md)
+was then independently reconstructed by the root reviewer. Put the resource
+positions around a cycle as A_0,B_0,A_1,B_1,... . An A position is conflicted
+when its hub/light bits agree; a B position when light/next-hub bits differ.
+Odd m makes a conflict-free assignment impossible. For any one chosen conflict
+position, the other requirements uniquely fix the profile up to a global bit
+flip. Costs are invariant under that flip because the resource copies have
+identical fees. Thus there are 2m distinct single-conflict profiles modulo it.
+
+Only the two players incident to the conflict can strictly improve. A different
+player's flip turns both its solo loads into shared loads and cannot decrease
+either latency. Each incident flip moves the conflict to an adjacent position.
+The two directions on such an edge reverse the same player's before/after costs;
+at alpha>=1 at most one direction strictly improves, even with zero costs.
+If every single-conflict state had a strict alpha move, this 2m-vertex cycle
+would have at least 2m arcs but at most one arc per edge. All its edges must
+therefore be coherently oriented. Forward orientation supplies exactly the
+two strict local tests, with n_i=1. At alpha>=T_d section 8 excludes this.
+
+The reverse orientation must also be checked. Reverse the ring's indexing,
+j corresponding to old i=-j modulo m, and exchange roles H'_j=L_i,L'_j=H_i,
+weights u'_j=v_i,v'_j=u_i. Keep action bits, set A'_j^b=A_i^b and
+B'_j^b=B_(i-1)^(1-b). The incoming resource of the new hub and the outgoing
+resource of the new light are exactly their old resources. F'_j=F_i and
+G'_j=G_(i-1) preserve nonnegative shapes and n'=1. New forward orientation
+is the old reverse orientation, again impossible at alpha>=T_d. Zero shapes
+cannot rescue a strict coherent cycle: its corresponding solo-to-shared move
+cannot improve. Some single-conflict state is therefore an alpha-PNE, including
+the weak endpoint alpha=T_d.
+
+The factor 2 comes from a separate elementary support bound. In this subclass
+every resource has at most two potential users. Take a global minimum of
+Psi=sum_i C_i over all pure states. For a move of i, removing resources cannot
+increase other users' costs; adding a resource creates at most one other cost
+increase, at most the deviator's new latency there. Shared unchanged resources
+retain the same loads. If C_common is the deviator's unchanged resource cost,
+
+    Delta Psi <= 2 C_i(new)-C_i(old)-C_common.
+
+Thus a strict factor-2 improvement would contradict minimality. This proves
+2-PNE for arbitrary nonnegative nondecreasing fees with support at most two.
+Combining the two independent existence bounds gives min{2,T_d}.
+
+This reduces actual equilibrium existence to a small defect graph only for
+n_i=1. When a common A resource carries multiple light players, a move can
+alter a partially aligned cohort and this graph is no longer a simple cycle.
+The general actual-topology gap remains. Truth: complete restricted existence
+proof; Value: identifies where the single-conflict representation ceases to
+apply; Novelty: unassessed; Mechanism: cycle arc counting and role reversal;
+Ambition: subclass only. The companion exact graph audit checks all the stated
+structural identities in small cases, including zero resources; it tests a
+safe alpha=d and does not numerically pretend to verify the irrational endpoint.

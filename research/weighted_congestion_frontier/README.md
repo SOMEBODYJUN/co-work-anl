@@ -102,3 +102,7 @@ MODEL → 奇环全状态局部证书 → 正系数闭环 → exact T_d 包络 �
 | research/weighted_congestion_frontier/assets/R3/odd_ring_literature/notes.md | 文献精确模型、基线、有限d上界与后续/机制检索限制；判断相对改善或新颖性时读 |
 
 Next Actions：优先全类O(d/ln d)存在桥；下界继续时须更换承重机制，不能指望只增环长或改monomial参数超越T_d。
+
+新增WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1：每组任意非负degree≤d多项式费用仍不超同T_d（只对指定两类uniformtests）。混合费用审查及精确代码见research/weighted_congestion_frontier/assets/R3/odd_ring_parameters/polynomial_envelope_review.md与check_polynomial_envelope.py；涉及换费用路线前读取。
+
+实际存在子类：WC-R3-ODD-RING-SINGLETON-UPPER-v1 对每组n_i=1给min{2,T_d}-PNE，single-defect图和正确反向角色映射在research/weighted_congestion_frontier/assets/R3/odd_ring_parameters/SINGLETON_NOTE.md；扩大到多轻cohort前必须先重建该缺陷图，不能仅照搬弧计数。
