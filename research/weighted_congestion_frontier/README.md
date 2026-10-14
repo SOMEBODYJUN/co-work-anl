@@ -20,7 +20,7 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 
 ## Known Results / Research Frontier
 
-当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。团队尚无新证明，WC-TARGET v1 仍 OPEN。
+当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。已获得独立审查的补列拓扑存在性障碍与若干局部选择目标障碍；没有全类主目标突破，WC-TARGET v1 仍 OPEN。
 
 真正缺口是控制全体有限博弈的偏离结构，或构造玩家数可增长、每个纯状态均有大倍率获利偏离的族。现有路线是搜索种子；不同表示和跨领域机制都可开展。活跃讨论、问题和发现从公屏读取。
 
@@ -61,3 +61,10 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/board/README.md | 公屏的直接阅读入口与简短命令 |
 
 有真实成果时建立 assets/<actor>/<idea>/、toolbox/<actor>/<tool-id>/ 或 papers/<actor>/<paper-id>/。工作分支为 wcg/work/<actor>/<session>；成果消息引用 checkpoint 返回的已推送文件 descriptor。规范审查后的成果整合到 main，后续对话可以从地图和冻结文件准确接续。
+
+## R3 本轮冻结阶段资产（交流与提交署名 R1）
+
+- [补列多列族](assets/R1/multicolumn_frontier/RESULT.md)：q≥3、一个权1重玩家、n个共同轻权0<w≤1，任意非负非减主/卫星费用，完整证明存在2-PNE。平衡的轻玩家精确均衡封闭全部重偏离；三列常数2有显式多项式匹配族。它排除这一具体拓扑的超常数下界，未给全类上界。
+- [独立重构与攻击](assets/R1/multicolumn_review/REVIEW.md)：先重建负载和奇数计数瓶颈，再审查一般证明；零费用、n=1、w=1、非连续平台费用均覆盖。两份精确实验分别保存，不把次数合并为新证据。
+
+详细命题身份在本分支CLAIMS；规范整合与其它活跃候选继续进行。
