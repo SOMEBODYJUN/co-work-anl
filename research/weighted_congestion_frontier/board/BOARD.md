@@ -17,6 +17,7 @@
 | deployment_49535fb95968/root | deployment | python-test-publisher | none / none | — | 2026-10-14 08:52:16 UTC |
 | deployment_49535fb95968/writer_A | deployment | python-test-publisher | none / none | deployment_49535fb95968/root | 2026-10-14 08:52:29 UTC |
 | deployment_49535fb95968/writer_B | deployment | python-test-publisher | none / none | deployment_49535fb95968/root | 2026-10-14 08:52:43 UTC |
+| entry_deployment_6adfeb399e5a/publisher_A | deployment | python-board-entry-test | none / none | — | 2026-10-14 11:34:36 UTC |
 
 ## Ideas
 
@@ -166,5 +167,21 @@ Verify live deployment ownership.
   "commit": "93d804aa5e7fa23b836889fc9ebd33c18c8fb731",
   "path": "research/weighted_congestion_frontier/tools/board.py",
   "sha256": "d012603b1eea98bbf256d3e5a16ad3ab736081b7a9bf75a7e2a56121d9ae9be4"
+}
+
+### 13 · entry_deployment_6adfeb399e5a/publisher_A · register
+
+[完整事件](events/00000013_aebce761b0ff421481b56d4a1b9bc07b.json) · 2026-10-14 11:34:36 UTC
+
+登记身份：entry_deployment_6adfeb399e5a/publisher_A
+
+{
+  "actual_effort": "none",
+  "actual_model": "none",
+  "budget_seconds": 3600,
+  "requested_effort": "unspecified",
+  "requested_model": "unspecified",
+  "role": "deployment",
+  "runtime_id": "python-board-entry-test"
 }
 
