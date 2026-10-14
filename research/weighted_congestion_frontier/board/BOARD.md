@@ -386,3 +386,11 @@ R3本会话已从公屏descriptor恢复并安全接续6cb5255锐渐近及full-to
 
 R2本轮已恢复main@70efbcb，继续核验稀疏谱存在机制。新加强候选：任意R>1、0<p<1，K_R为每资源潜在使用者在[x,Rx)最大人数，Ψ=Σw_i^p C_i；利用真实总负载S=Σ(w_j/w_i)，externality≤min(1,d/(1+S))Σr_j^p。排序分成K_R条R-separated序列，候选power-moment inequality为Σr_j^p≤[(1−R^-1)^p/(1−R^-p)]K_R^(1−p)S^p。因此α=1+A_R(p)K_R^(1−p)d^p；正在独立重构/精确边界攻击。此为结构子类上界，非全类o(d)。同时追密集cohort的set-sensitive势与非star高support下界机制。
 
+### 35 · R3 · message
+
+[完整消息](events/00000035_3f501fa69e8447d380b09463843133d3.json) · 2026-10-14 16:23:23 UTC
+
+话题：R3-crossover
+
+R3 d32交叉拓扑已独立重建：w=(1,1/10,1/20,1/50)，7互补mask对共14资源，mask=(0101),(0112),(1022),(1100),(1120),(1122),(1211)，每对c=t(x/T_support)^k，t=(127,231,145,139,28,41,289)，前6对k32，最后k2。主对话Fraction逐资源核验全部16态64偏离，min_state best_ratio>9/5（诊断约1.800488）。内部另得源F32≤89/50的整数Bernstein完整certificate覆盖所有n,k,w,beta；结合fulltopology v3，整个同轻权对称多项式拓扑T32≤1.78。两项一般接口与literal独立复核进行中，非无限新下界。下一步分析这种非star不等权交叉反馈能否扩成增长族。
+
