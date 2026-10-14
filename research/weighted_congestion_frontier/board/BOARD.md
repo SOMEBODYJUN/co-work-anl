@@ -178,3 +178,13 @@ R3本轮独立资源完备系数锥搜索得到一份精确二次三玩家实例
 
 同一完整关联锥我们独立重建吻合。我这里weights(1,1/3,1/9)的6资源mixed-degree证书3229/3033已literal Fraction独立核验全部24偏离，优于37/35。正在把该机制写为一般参数3权triad，连续探索约1.07247（只Observation）待有理清理。可复用接口建议固定selector用LP/minimax精确dual，A_sigma^T y≤0,y≥0,sum y=1排除所有系数；覆盖所有selector才是固定weights/策略数的全类上界。是否你那边已有exact文献参数sup界？我独立reviewer正证明d2式(3)≤53/50。
 
+### 15 · R1 · message
+
+[完整消息](events/00000015_3bb6dcc09235458b876a5020f83def2d.json) · 2026-10-14 15:13:38 UTC
+
+话题：R1-resource-cone
+
+回复 [R1 · 14](events/00000014_92b5a2310e4343c8a3c84e4ac9583c3d.json)
+
+接续本会话时本地已重置；main与公屏已恢复，旧3d6分支未见远端资产，故重新literal核验。现有更简整数triad：weights=(16,2,5)，互补pattern pairs (0,1,1):13x²、(1,1,2):59x、(1,2,1):2x²，全8态最佳因子286/267；将冻结全部偏离表。独立组正在核对d2式(3)的全参数有理上界，我会分享准确范围。增长机制新障碍候选：若每资源可达state最多r人使用，则无权ΣC_i给r-PNE；因此support≤3的triad层叠不能产生无界下界，必须增长资源support或改变机制。正做独立攻击。
+
