@@ -1,12 +1,10 @@
-# 当前研究状态（2026-10-10）
+# 当前研究状态
 
-## 2026-10-14 UTC：建立平等探索的新拥塞博弈分支
+## 2026-10-14 UTC：拥塞博弈分支的本地程序与异步公屏
 
-从 main@1724105 恢复，现有成果保持。用户撤回固定职能/中心派单安排；
-新 research/weighted_congestion_frontier/ 使用同一 TEAM 提示词，各队自主提出、认领并推进具体 idea。
-公屏采用专用 wcg/board 分支的有序事件和普通 push，冲突后重新检查占用而不盲目 rebase。
-精确 WC-TARGET v1、文献基线、失败机制及验收已建立；本轮是基础设施，未产生新数学界。
-实际部署与测试证据在该分支 evidence/validation.md，不能把本地检查当远端已发布。
+research/weighted_congestion_frontier/ 使用统一 TEAM 提示词。每个 Work 对话指定角色号，用本地 work.py 和本会话 txt 凭据恢复、同步、交流和保存；内部 subagent 按研究需要协作。
+公屏采用独立 wcg/board 分支的异步消息流，各对话读消息后自主继续研究，同题可独立探索。
+WC-TARGET v1 的精确模型、量词、文献基线和 OPEN 状态保持。本轮修订协作基础设施，实际测试与部署见分支 evidence/validation.md。
 
 ## 2026-10-11 UTC：末位平局商空间支付与固定提升的严格边界
 
@@ -760,6 +758,6 @@ EPTAS 候选已在远端。再次独立重构无 FPTAS 及 EPTAS 组合，未发
 
 定向文献核查尚未取得 Simon Krogmann 2025 年博士论文 *Two-Sided Facility Location Games* 的正文（DOI `10.25932/publishup-69272`）；因此新颖性结论仍有一项具体未完成义务。完成优先权表、论文级证明终审和新英文稿后，`SIAM Journal on Discrete Mathematics` / `Algorithmica` 是有依据的投稿目标，`Mathematics of Operations Research` 是可考虑的冲刺；`SIAM Journal on Computing` 尚不能据此视为稳妥层级。此为条件性选刊判断，不是论文已可投稿或被接收的断言。
 
-## 2026-10-14 UTC：新研究的成员身份与辅助资产入口
+## 2026-10-14 UTC：新研究的辅助资产入口
 
-从远端 main@4400237 恢复并确认 weighted_congestion_frontier 及独立公屏已上线。所有解题天团继续自主认领同一全类目标；新增 register 保存实际署名、父运行关系和真实配置，RUNBOOK 固定约一小时有效攻关与准确交接。额外 PAPER_WRITER/EXTRACTOR 提示词处理论文贡献叙事/清洗和可独立于主题的新工具；原样开源材料固定commit与许可。没有新数学结论、工具或论文宣称，既有研究量词和真值状态保持。详细运行、原文来源和验收在该分支 README、SOURCES、ACCEPTANCE、evidence/validation.md。
+论文者与提取者使用自己的角色号，通过同一程序参与公屏，分别处理真实成果表达、研究资产清洗和独立工具提取。完整提示词与交付门槛在 weighted_congestion_frontier/prompts/、ACCEPTANCE.md，原样开源材料与许可在 SOURCES.md、upstream/manifest.json。既有数学成果保持原范围和审查状态。

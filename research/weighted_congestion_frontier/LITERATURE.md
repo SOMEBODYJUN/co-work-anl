@@ -9,19 +9,19 @@
 
 当前基线保持粗粒度安全陈述；更细 finite-d 上界、后续存在/计算结果的假设由执行天团按相关 idea 核对。精细界优于 d 时，不能把只优于 d 的旧结果叫新突破。
 
-## 开源协作：逐项取舍
+## 开源协作参考
 
-| 一手项目 | 实际机制与适配 | 不应冒称 |
+| 一手项目 | 来源事实 | 当前采用的经验 |
 | --- | --- | --- |
-| [Anthropic / claudes-c-compiler](https://github.com/anthropics/claudes-c-compiler)，[作者机制说明](https://www.anthropic.com/engineering/building-c-compiler) | 作者在 Running Claude in parallel 明确说明不使用 orchestration agent，每个 agent 自行选择下一任务；在 `current_tasks/` 写认领文件，Git 同步使重复认领者换题。仓库同时有 `ideas/`。直接借鉴自主选题、细粒度认领、独立 clone 和 Git 持久化 | 软件项目；作者也使用临时专门任务，不是所有实际动作完全同质。没有原生数学命题账本，也没有我们的 Codex 跨对话公屏，不能保证其代码或证明正确 |
-| [jarmstrong158/agentsync](https://github.com/jarmstrong158/agentsync)，[维护者发布说明](https://pypi.org/project/agentsync-mcp/) | agent 自己 survey、claim、build；独立 `agentsync` 分支保存状态，普通 push 作为 compare-and-swap，冲突后重新读取并验证占用；支持多个 agent，无须中心派单。直接对照本工具的冲突认领恢复机制 | 它的原版主要按文件/依赖去重，不能识别数学语义；并未在本项目安装它的 MCP，也不把 Git 冲突合并等同于数学 idea 去重 |
-| [LemmaTrail](https://github.com/JanBartos6/LemmaTrail) | 保存精确研究对象、来源、失败机制、继续点；借鉴持久研究状态 | README 要人类决定 canonical 并通过 PR；本项目没有机械移植该治理规则，也不是它的部署 |
-| [Joe975/math-lab 的 AGENTS](https://github.com/Joe975/math-lab/blob/main/AGENTS.md) | 自主挑题、按机制检查既有尝试、跨领域传播、独立攻击；借鉴自主选 idea 与真实失败资产 | blind 必须实际隔离已有路线；读过后不能自称干净上下文。其结果身份不替本项目背书 |
-| [zhang5lo2/Math](https://github.com/zhang5lo2/Math) | 数学建模流水线、可复现代码与结果 | 固定流水线岗位与本项目的平等开放探索不吻合，不能据其存在说已找到用户要的天团架构 |
-| [GitHub refs 文档](https://docs.github.com/en/rest/git/refs#update-a-reference) | 非 force 更新避免覆盖；本工具用普通 Git push 后重新检查状态 | 评论/不同消息文件本身不能提供互斥；租约不保证断网计算绝无重复 |
+| [Anthropic / claudes-c-compiler](https://github.com/anthropics/claudes-c-compiler)，[作者说明](https://www.anthropic.com/engineering/building-c-compiler) | 作者采用无中心 orchestrator 的自主选题、独立 clone 和 Git 任务协调；原项目有 `current_tasks/` 与 `ideas/` | 自主选择具体义务、持久资产、失败回收和有效反馈 |
+| [agentsync](https://github.com/jarmstrong158/agentsync)，[维护者说明](https://pypi.org/project/agentsync-mcp/) | 以独立分支、普通 push 和冲突后重读协调 agent 状态 | 公屏独立分支与并发更新后重读，消息稳定 ID 支持恢复 |
+| [LemmaTrail](https://github.com/JanBartos6/LemmaTrail) | 保存研究对象、来源、失败机制与继续点 | 可恢复的精确研究账本 |
+| [Joe975/math-lab 的 AGENTS](https://github.com/Joe975/math-lab/blob/main/AGENTS.md) | 自主挑题、检查尝试机制、跨领域传播与独立攻击 | 干净上下文重构关键瓶颈、具体反例攻击 |
+| [zhang5lo2/Math](https://github.com/zhang5lo2/Math) | 数学建模流水线、可复现代码与结果 | 对实际计算保存代码、参数和证据 |
+| [GitHub refs 文档](https://docs.github.com/en/rest/git/refs#update-a-reference) | 普通非 force 更新保护远端已有历史 | 推送后确认与并发安全恢复 |
 
-“无中心派单、成员自主选题和认领、Git 避免重复”已有直接开源先例，上两项就是本轮实际核验的来源。前次把这一组织方式整体说成定制，范围过窄。我们的适配部分是数学精确身份、idea/proof obligation 粒度、Codex 多对话各带子 agent、租约与冻结资产公屏；没有声称任何外部项目完整部署了这些全部细节。此次补充核验只涉及协作来源，不改变数学基线的核验范围。
+本项目采用一个 Work 对话一个角色号、内部 subagent、异步公屏和阶段 checkpoint。公屏交流像群聊，各对话自主研究、同题可独立并行。当前协议见 PROTOCOL.md；上游具体架构与本项目适配分别记录在 SOURCES.md。
 
 ## 原文归档与写作参考
 
-本轮固定上游 commit 并原样保存选定原文件及许可，逐字节哈希和来源在 SOURCES.md、upstream/manifest.json。包括 MathLab 原始 prompt 与架构、Anthropic 真实认领/idea 样例，以及 mathematical-academic-writing 与 polish_skill 的数学写作、贡献重建、优先权/相关工作和 TeX 保真材料；latex-paper-skills 只选 framing 原文。原文与适配分别标注，不把外部原 Director/CLI 无限loop声称已在 Web 部署。当前尚无团队新数学结果、工具或论文。
+本轮固定上游 commit 并原样保存选定原文件及许可，逐字节哈希和来源在 SOURCES.md、upstream/manifest.json。包括 MathLab 原始 prompt 与架构、Anthropic 原始任务/idea 样例，以及 mathematical-academic-writing 与 polish_skill 的数学写作、贡献重建、优先权/相关工作和 TeX 保真材料；latex-paper-skills 只选 framing 原文。原文与适配分别标注，当前运行按本项目的角色号与异步公屏协议。当前尚无团队新数学结果、工具或论文。

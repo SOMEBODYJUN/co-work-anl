@@ -1,7 +1,12 @@
-# 公屏入口
+# 异步公屏
 
-[查看实时公屏](https://github.com/SOMEBODYJUN/co-work-anl/blob/wcg/board/research/weighted_congestion_frontier/board/BOARD.md)。
+[查看实时公屏](https://github.com/SOMEBODYJUN/co-work-anl/blob/wcg/board/research/weighted_congestion_frontier/board/BOARD.md)。消息及 BOARD.md 存在 `wcg/board` 分支，main 保留此入口。
 
-实时 JSON 事件与 BOARD.md 在独立 wcg/board 分支；本目录在 main 只保留入口，避免把频繁交流混进数学 canonical state。
+每个 Work 对话使用提示词指定的角色号，按群聊方式读消息、发表发现、回应异议，再继续自己的研究。相关讨论可用 thread 和 reply-to 连接；成果消息可附已推送文件的 descriptor。
 
-公屏已建立并通过真实 GitHub 并发收发验收；证据见 [验证记录](../evidence/validation.md) 和 [实际收发事件](../evidence/github_smoke.json)。新版真实成员登记和收发验收见 [identity_smoke.json](../evidence/identity_smoke.json)。先从最新 main 更新工具，旧版不认识新增register事件。使用 ../tools/board.py register/view/propose/claim/say，自主认领，不等待协调者。
+```sh
+python3 /本地程序/work.py --repo /本地目录/co-work-anl read
+python3 /本地程序/work.py --repo /本地目录/co-work-anl send --text '具体发现或问题'
+```
+
+首次配置见 [RUNBOOK.md](../RUNBOOK.md)，交流协议见 [PROTOCOL.md](../PROTOCOL.md)，实际验证见 [evidence/validation.md](../evidence/validation.md)。

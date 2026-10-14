@@ -1,71 +1,47 @@
-# 一键保存与推送
+# 直接保存阶段成果
 
-从仓库根执行完整入口；它默认保存当前研究目录的工作树状态，不要求先手动暂存或编写 commit 标题：
-
-```sh
-bash research/weighted_congestion_frontier/tools/checkpoint.sh
-```
-
-需要保存根研究地图等其他路径时，一次显式列入：
+首次以 `work.py start` 固定角色号与当前会话凭据路径，之后直接保存：
 
 ```sh
-bash research/weighted_congestion_frontier/tools/checkpoint.sh \
-  research/weighted_congestion_frontier README.md RESEARCH_STATE.md
+python3 /本地程序/work.py --repo /本地目录/co-work-anl checkpoint
 ```
 
-路径始终相对仓库根；有空格的路径加引号。可用 `-m '准确的阶段说明'` 指定标题。已有暂存文件在范围外时，工具明确列出并停止，避免把别人的工作一起提交。范围内采用工作树当前内容，因此会重新暂存当前版本；它不是“仅提交已有 index”的命令。已有删除也会记录。
-
-## 认证只初始化一次
-
-已配置 Git 凭据时直接运行。用户在当前会话提供外部凭据文件时，首轮可以执行：
+仓库内等价入口：
 
 ```sh
-bash research/weighted_congestion_frontier/tools/checkpoint.sh \
-  --token-file /absolute/path/outside-repository/githubtoken.txt
+bash research/weighted_congestion_frontier/tools/work.sh checkpoint
 ```
 
-支持外部文件中的 GitHub PAT。工具通过 ASKPASS 将凭据交给 Git；本 clone 的 Git 配置只记住外部文件路径，后续同一 clone 直接运行入口。环境重置或换 clone 后重新指定当前会话提供的文件；不得从别的会话寻找凭据。公屏使用 `tools/board.sh` 复用同一 clone 的 `wcg.tokenFile` 路径与 ASKPASS。先在公屏入口传 `--token-file`，或先在 checkpoint 传该参数，之后两个入口都可直接运行。只记外部路径，不存 Token 内容，不修改系统凭据设置；换 clone 后重新指定本会话文件。直接调用底层 board.py 的程序保留原有显式认证方式。
+用户已授权研究资产的日常保存。文件有真实可复用增量、身份与证据层级准确、对应核验完成时立即执行。候选、精确障碍、反例与失败回收都可以按实际层级保存。
 
-## 确定流程
+## 范围和标题
 
-1. 锁定本 clone 的 Git 写操作，核对分支、范围及已有操作。
-2. 对改动做路径、凭据式内容和 `git diff --check` 检查。
-3. `git add`、有变化才 `commit`。即时输出 `LOCAL_CHECKPOINT` 和完整 SHA。
-4. 普通 `push`，重新 fetch 指定远端分支，核对该 checkpoint 是远端 tip 的祖先。
-5. 输出 JSON：`status: pushed`、branch、commit、remote_tip、files、assets。每个仍存在的修改文件都有冻结 commit、SHA-256 和公屏 descriptor 文件路径。
-
-descriptor 和提交回执仅放在 Git common directory 的 `wcg-checkpoint/` 缓存；不作为数学资产入库。将结果 JSON 中 `assets` 项目的 `descriptor` 路径传给现有 `board.py say --asset-json` 即可，不需要手工算 SHA 或抄写 commit。多个文件各有 descriptor；不要把整个提交回执当单文件 descriptor。
-
-输出的 `commit` 是已保存的阶段快照。同步产生 merge commit 时，`remote_tip` 可以不同；工具验证快照仍可从远端抵达，文件哈希对应快照中的 blob。删除的文件列在 `files`，没有 blob descriptor。
-
-## 重试和并发
-
-没有变化时不制造空提交；本地 commit 已生成而网络失败时，重复同一命令继续推送。push 成功但响应丢失，重新读取远端能确认成功。远端新增不冲突改动、当前工作树干净时自动 merge 后重试；真实冲突时 abort 本次 merge，保留本地 checkpoint 并列出冲突文件。远端分叉且另有未保存的 tracked 改动时保留全部内容并停止，先在单独 worktree 整合。
-
-工具有有限重试和单次 Git 超时；网络、认证或策略错误不意味着数学失败。没有远端确认时退出非零，不能发“已经发布”的结果消息。多个会话用独立 clone/worktree；锁只约束使用本工具的写入者，不能强制阻止直接运行其他 Git 命令的人。`wcg/board` 分支禁止使用本入口，认领必须经 `board.py` 重新验证，不能通用 merge 重试。
-
-## 主 agent 的执行规则
-
-子 agent 交来真实可复用文件、写清 claim 身份/证据层级/未解步骤并完成对应核验后，主 agent **立即调用入口**。无需再询问用户是否保存，也无需为了普通 checkpoint 重做选题评估、文献搜索、完整证明审查或全仓回归。疑似证明可以按 candidate 保存；fatal objection 和未解义务同样可以按实际层级保存。保存不会把 claim 升级成可靠定理。
-
-重要数学状态提升仍按独立审查和账本规则；修改工具时跑对应工具测试，修改数学代码时跑相关精确核验。公屏分享沿用既有协议，不能让 checkpoint 自动替作者宣称一个成果已经证明。
-
-验证入口：`python3 research/weighted_congestion_frontier/tests/test_checkpoint.py`。
-
-## 公屏认证统一入口
-
-从仓库根首次登记真实运行成员时：
+默认保存 `research/weighted_congestion_frontier/` 的当前工作树。其他路径一起列入：
 
 ```sh
-bash research/weighted_congestion_frontier/tools/board.sh \
-  --token-file /absolute/path/outside-repository/githubtoken.txt \
-  register --role researcher --runtime-id /root
+python3 /本地程序/work.py --repo /本地目录/co-work-anl checkpoint research/weighted_congestion_frontier README.md RESEARCH_STATE.md -m 'C1：保存精确边界与仍待证明的比较'
 ```
 
-文件路径替换成本会话实际提供的文件。后续读屏、认领和发言都用同一入口，无需再传 token-file：
+路径相对仓库根，带空格时加引号。工具检查已暂存文件的范围，重新暂存范围内的当前内容，并记录删除。
+
+## 程序完成的操作
+
+程序串行执行本 clone 的 Git 写入：核对分支和文件范围，检查 diff，`git add`，有变化时 commit，普通 push，再读取远端确认 checkpoint 可达。结果 JSON 给出 `status: pushed`、branch、commit、remote_tip、files 与 assets。
+
+每个仍存在的修改文件都有冻结 commit、SHA-256 和 `descriptor` 路径；删除项列在 files。回执与 descriptor 放在 Git 的本地缓存。用所需文件的 descriptor 分享成果：
 
 ```sh
-bash research/weighted_congestion_frontier/tools/board.sh view
+python3 /本地程序/work.py --repo /本地目录/co-work-anl send --text '这个引理已保存，剩余义务是……' --asset-json /checkpoint/返回的文件descriptor.json
 ```
 
-其余子命令和参数与 board.py 相同，退出码保持。board_entry.py 只初始化本 clone 的认证并转交底层 CLI，不改变认领/租约/冻结资产协议，不执行 checkpoint 或注册虚构成员。仓库内、缺失、无效的凭据文件明确拒绝；原有 Git 认证仍可直接使用。验证：`python3 research/weighted_congestion_frontier/tests/test_board_entry.py`。
+首次凭据配置详见 RUNBOOK.md。后续保存、公屏和同步共用同一外部凭据路径与角色号。
+
+## 重试与冲突
+
+重复执行会恢复已有 checkpoint 的推送，空改动保持原提交。远端有可安全合入的修改时自动同步再推送；具体冲突时保留本地成果并列出受影响文件，处理后重跑同一命令。程序只有在远端确认成功后返回 `status: pushed`。
+
+每个独立对话使用专属工作目录和分支；共享目录的 Git 写入由一个入口串行处理。checkpoint 保存研究资产，公屏由 `send` 更新。
+
+## 对应核验
+
+数学文件运行相应精确核验，协作程序修改运行对应 tests。重要数学状态提升依据 ACCEPTANCE.md 的证明与独立攻击；普通 checkpoint 按当前证据层级完成保存。正式交付运行根地图、来源映射和资产检查。

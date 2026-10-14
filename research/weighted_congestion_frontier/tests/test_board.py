@@ -1,14 +1,11 @@
-"""Real local Git remotes, not mocked state-only success.
-
-All fixtures are infrastructure examples, not mathematical conjectures.
-"""
+"""Reproducible real-Git chat tests with independent clones and injected lost replies."""
 import concurrent.futures
 import hashlib
 import importlib.util
-import itertools
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -16,324 +13,281 @@ import threading
 import unittest
 from unittest.mock import patch
 
-SPEC = importlib.util.spec_from_file_location(
-    "wcg_board", Path(__file__).resolve().parents[1] / "tools/board.py")
+SPEC = importlib.util.spec_from_file_location('wcg_board', Path(__file__).resolve().parents[1] / 'tools/board.py')
 b = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(b)
 
 
 def call(directory, *args):
-    return subprocess.check_output(["git", *args], cwd=directory,
-                                   stderr=subprocess.DEVNULL).decode().strip()
+    return subprocess.check_output(['git', *args], cwd=directory, stderr=subprocess.DEVNULL).decode().strip()
 
 
-def proposal(actor, suffix="", claim=True):
-    return b.make_intent(actor, "propose", {
-        "title": "Fixture " + suffix, "claim_version": "TEST v1",
-        "statement": "Exact fixture statement " + suffix,
-        "obligation": "Check a particular boundary " + suffix,
-        "mechanism": "Enumerate the finite fixture in exact arithmetic",
-        "next_check": "Compare both endpoints", "claim": claim,
-        "lease_seconds": 60})
+def message(actor='R01', text='同题可以沿不同路线继续。', **extra):
+    return b.make_intent(actor, 'message', dict(text=text, **extra))
 
 
 class BoardTests(unittest.TestCase):
     def setUp(self):
         repo_root = Path(__file__).resolve().parents[3]
-        common = Path(call(repo_root, "rev-parse", "--git-common-dir"))
-        fixture_root = (repo_root / common).resolve() / "wcg-tests"
+        common = Path(call(repo_root, 'rev-parse', '--git-common-dir'))
+        fixture_root = (repo_root / common).resolve() / 'wcg-tests'
         fixture_root.mkdir(exist_ok=True)
-        self.tmp = tempfile.TemporaryDirectory(prefix="fixture-", dir=fixture_root)
+        self.tmp = tempfile.TemporaryDirectory(prefix='fixture-', dir=fixture_root)
         self.root = Path(self.tmp.name)
-        self.remote = self.root / "remote.git"
-        call(self.root, "init", "--bare", str(self.remote))
-        self.repo = self.root / "work"
-        call(self.root, "clone", str(self.remote), str(self.repo))
-        call(self.repo, "config", "user.name", "Fixture")
-        call(self.repo, "config", "user.email", "fixture@example.invalid")
-        (self.repo / "asset.md").write_text("Frozen infrastructure fixture.\n")
-        (self.repo / "folder").mkdir()
-        (self.repo / "folder/child.md").write_text("child\n")
-        call(self.repo, "add", ".")
-        call(self.repo, "commit", "-m", "fixture")
-        call(self.repo, "branch", "-M", "work")
-        call(self.repo, "push", "origin", "work")
+        self.remote = self.root / 'remote.git'
+        call(self.root, 'init', '--bare', str(self.remote))
+        self.repo = self.root / 'work'
+        call(self.root, 'clone', str(self.remote), str(self.repo))
+        call(self.repo, 'config', 'user.name', 'Fixture')
+        call(self.repo, 'config', 'user.email', 'fixture@example.invalid')
+        (self.repo / 'asset.md').write_text('Frozen infrastructure fixture.\n')
+        (self.repo / 'folder').mkdir()
+        (self.repo / 'folder/child.md').write_text('child\n')
+        (self.repo / 'link.md').symlink_to('asset.md')
+        call(self.repo, 'add', '.')
+        call(self.repo, 'commit', '-m', 'fixture')
+        call(self.repo, 'branch', '-M', 'main')
+        call(self.repo, 'push', 'origin', 'main')
         self.now = 1000
         self.client = b.Board(self.repo, clock=lambda: self.now)
         self.client.initialize()
-        self.asset = {
-            "branch": "work", "commit": call(self.repo, "rev-parse", "HEAD"),
-            "path": "asset.md",
-            "sha256": hashlib.sha256((self.repo / "asset.md").read_bytes()).hexdigest()}
+        self.asset = {'branch': 'main', 'commit': call(self.repo, 'rev-parse', 'HEAD'),
+                      'path': 'asset.md', 'sha256': hashlib.sha256((self.repo / 'asset.md').read_bytes()).hexdigest()}
+        self.script = Path(b.__file__).resolve()
 
     def tearDown(self):
         self.tmp.cleanup()
 
-    def race(self, intents):
+    def clone(self, name):
+        repo = self.root / name
+        call(self.root, 'clone', '--single-branch', '--branch', 'main', str(self.remote), str(repo))
+        return repo
+
+    def race(self, intents, independent=True):
+        repos = [self.clone('peer-' + str(i)) if independent else self.repo for i in range(len(intents))]
         barrier = threading.Barrier(len(intents))
         original = b.git
         used, lock = set(), threading.Lock()
 
         def synchronized(cwd, *args, **kwargs):
-            if args and args[0] == "push":
-                thread = threading.get_ident()
+            if args and args[0] == 'push':
+                ident = threading.get_ident()
                 with lock:
-                    first = thread not in used
-                    used.add(thread)
+                    first = ident not in used
+                    used.add(ident)
                 if first:
                     barrier.wait(timeout=15)
             return original(cwd, *args, **kwargs)
 
-        def publish(intent):
-            try:
-                client = b.Board(self.repo, clock=lambda: self.now)
-                return client.publish(intent)
-            except b.Conflict as error:
-                return error
+        def send(pair):
+            repo, intent = pair
+            return b.Board(repo, clock=lambda: self.now).publish(intent)
 
-        with patch.object(b, "git", synchronized):
+        with patch.object(b, 'git', synchronized):
             with concurrent.futures.ThreadPoolExecutor(max_workers=len(intents)) as pool:
-                return list(pool.map(publish, intents))
+                return list(pool.map(send, zip(repos, intents)))
 
-    def identity(self, actor, parent=None, role="researcher"):
-        body = {"role": role, "runtime_id": "/root", "requested_model": "requested",
-                "actual_model": "unknown", "requested_effort": "ultra",
-                "actual_effort": "unknown", "budget_seconds": 3600}
-        if parent is not None:
-            body["parent"] = parent
-        return b.make_intent(actor, "register", body)
+    def cli(self, *args, check=True):
+        result = subprocess.run([sys.executable, str(self.script), '--repo', str(self.repo), *args],
+                                capture_output=True, text=True, timeout=30)
+        if check:
+            self.assertEqual(result.returncode, 0, result.stderr)
+        return result
 
-    def test_registration_is_frozen_and_idempotent_after_retry(self):
-        intent = self.identity("team/root")
-        first = self.client.publish(intent)
-        again = self.client.publish(intent)
-        self.assertEqual(first, again)
-        self.assertEqual(len(self.client.read()["members"]), 1)
-        with self.assertRaises(b.Conflict):
-            self.client.publish(self.identity("team/root"))
-        member = self.client.read()["members"]["team/root"]
-        self.assertEqual(member["actual_model"], "unknown")
-        self.assertEqual(member["registered_event"], first["id"])
+    def install_noncurrent_board(self):
+        repo = self.root / 'noncurrent'
+        call(self.root, 'clone', '--single-branch', '--branch', 'wcg/board', str(self.remote), str(repo))
+        call(repo, 'config', 'user.name', 'Fixture')
+        call(repo, 'config', 'user.email', 'fixture@example.invalid')
+        root = repo / b.PREFIX
+        (root / 'meta.json').write_text('{"schema": 1}\n')
+        (root / 'events').mkdir(exist_ok=True)
+        # Deliberately undecodable: migration deletes rather than interprets it.
+        (root / 'events/obsolete.json').write_text('noncurrent infrastructure fixture\n')
+        (root / 'obsolete.md').write_text('delete the inspected fixture\n')
+        call(repo, 'add', '.')
+        call(repo, 'commit', '-m', 'Inspected noncurrent infrastructure fixture')
+        call(repo, 'push', 'origin', 'wcg/board')
+        return repo, call(repo, 'rev-parse', 'HEAD')
 
-    def test_registered_child_keeps_parent_and_own_public_voice(self):
-        self.client.publish(self.identity("team/root"))
-        self.client.publish(self.identity("team/child", "team/root"))
-        idea = self.client.publish(proposal("team/child"))["id"]
-        reply = self.client.publish(b.make_intent("team/root", "discussion", {
-            "idea": idea, "text": "Parent and child both have equal research voices."}))
+    def test_direct_send_and_async_reply_without_registration(self):
+        first = self.client.publish(message(thread='WC-TARGET'))
+        self.client.publish(message('R02', thread='WC-TARGET'))
+        unrelated = self.client.publish(message('R01', text='我先继续另一条路线。', thread='另一话题'))
+        self.now += 600
+        reply = self.client.publish(message('R02', text='现在补充一个边界。', reply_to=first['id'], thread='WC-TARGET'))
         state = self.client.read()
-        self.assertEqual(state["ideas"][idea]["owner"], "team/child")
-        self.assertEqual(state["members"]["team/child"]["parent"], "team/root")
-        self.assertIn(reply, state["events"])
-        rendered = b.render(state, self.now)
-        self.assertIn("已登记身份", rendered)
-        self.assertIn("team/child", rendered)
-        self.assertIn("unknown / unknown", rendered)
+        self.assertEqual(set(state), {'events', 'last_time'})
+        self.assertEqual(len(state['events']), 4)
+        self.assertEqual(reply['body']['reply_to'], first['id'])
+        filtered = self.cli('view', '--thread', 'WC-TARGET', '--limit', '1').stdout
+        self.assertIn(reply['body']['text'], filtered)
+        self.assertNotIn(unrelated['body']['text'], filtered)
+        self.assertIn('回复 [R01 · 1]', filtered)
 
-    def test_identity_collision_race_accepts_one_registration(self):
-        results = self.race([self.identity("shared/root"), self.identity("shared/root")])
-        self.assertEqual(sum(isinstance(x, b.Conflict) for x in results), 1)
-        self.assertEqual(len(self.client.read()["members"]), 1)
-
-    def test_distinct_teams_register_concurrently_without_coordinator(self):
-        results = self.race([self.identity("one/root"), self.identity("two/root")])
-        self.assertTrue(all(isinstance(x, dict) for x in results))
-        self.assertEqual(len(self.client.read()["members"]), 2)
-
-    def test_five_teams_seven_members_can_register_and_exchange_replies(self):
-        # Thirty-five signatures exercised by Python publishers, not real LLMs.
-        def team(number):
-            parent = f"team_{number}/root"
-            actors = [parent] + [f"team_{number}/member_{j}" for j in range(6)]
-            client = b.Board(self.repo, clock=lambda: self.now)
-            for index, actor in enumerate(actors):
-                client.publish(self.identity(actor, parent if index else None))
-            return actors
-        with concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:
-            groups = list(pool.map(team, range(5)))
-        actors = [actor for group in groups for actor in group]
-        state = self.client.read()
-        self.assertEqual(len(actors), 35)
-        self.assertEqual(len(set(actors)), 35)
-        self.assertEqual(set(state["members"]), set(actors))
-        idea = self.client.publish(proposal(actors[0]))
-        peer = self.client.publish(b.make_intent(actors[-1], "help", {
-            "idea": idea["id"], "reply_to": idea["id"],
-            "text": "Cross-team request on this concrete fixture."}))
-        reply = self.client.publish(b.make_intent(actors[0], "discussion", {
-            "idea": idea["id"], "reply_to": peer["id"],
-            "text": "A specific answer keeps the requesting member attribution."}))
-        final = self.client.read()
-        self.assertEqual(reply["body"]["reply_to"], peer["id"])
-        self.assertEqual(final["ideas"][idea["id"]]["owner"], actors[0])
-        self.assertEqual(len(final["events"]), 38)
-
-    def test_identity_boundaries_reject_bad_metadata_and_parent(self):
-        self.client.publish(self.identity("one/root"))
-        bad = [self.identity("no_member"), self.identity("two/child", "one/root"),
-               self.identity("one/child", "one/missing"), self.identity("one/child", role="director")]
-        for field, value in [("budget_seconds", 0), ("budget_seconds", True),
-                             ("budget_seconds", 86401), ("actual_model", ""),
-                             ("actual_model", "model\nspoof"), ("runtime_id", "x" * 161)]:
-            intent = self.identity("one/child")
-            intent["body"][field] = value
-            bad.append(intent)
-        for intent in bad:
-            with self.subTest(body=intent["body"]):
-                with patch.object(b, "retry_pause", side_effect=AssertionError("Validation must fail fast")):
-                    with self.assertRaises(b.BoardError):
-                        self.client.publish(intent)
-        for budget, role in ((1, "paper_writer"), (86400, "extractor")):
-            intent = self.identity("one/end_" + str(budget), role=role)
-            intent["body"]["budget_seconds"] = budget
-            self.client.publish(intent)
-        self.assertEqual(len(self.client.read()["members"]), 3)
-        for retries in (0, True, 51):
-            with self.assertRaises(b.BoardError):
-                b.Board(self.repo, retries=retries)
-
-    def test_registration_cli_generates_unique_root_and_preserves_dirty_work(self):
-        (self.repo / "asset.md").write_text("Uncommitted caller work.\n")
-        script = Path(b.__file__).resolve()
-        events = []
-        for _ in range(2):
-            output = subprocess.check_output([sys.executable, str(script), "--repo", str(self.repo),
-                       "register", "--runtime-id", "/root"], text=True)
-            events.append(json.loads(output))
-        self.assertNotEqual(events[0]["actor"], events[1]["actor"])
-        self.assertTrue(all(x["actor"].endswith("/root") for x in events))
-        self.assertEqual((self.repo / "asset.md").read_text(), "Uncommitted caller work.\n")
-        self.assertIn("asset.md", call(self.repo, "status", "--short"))
-
-    def test_same_scope_parallel_proposals_have_one_owner(self):
-        results = self.race([proposal("A"), proposal("B")])
-        self.assertEqual(sum(isinstance(x, b.Conflict) for x in results), 1)
-        state = self.client.read()
-        self.assertEqual(len(state["ideas"]), 1)
-        self.assertEqual(len(state["events"]), 1)
-
-    def test_distinct_obligations_parallel_both_succeed(self):
-        results = self.race([proposal("A", "one"), proposal("B", "two")])
-        self.assertTrue(all(isinstance(x, dict) for x in results))
-        self.assertEqual(len(self.client.read()["ideas"]), 2)
-
-    def test_claim_race_without_coordinator(self):
-        idea = self.client.publish(proposal("A", claim=False))["id"]
-        intents = [b.make_intent(actor, "claim", {
-            "idea": idea, "next_check": "Boundary", "lease_seconds": 60})
-                   for actor in ("A", "B")]
+    def test_same_topic_concurrent_independent_clones_both_succeed(self):
+        intents = [message('R01', thread='同题'), message('R02', thread='同题')]
         results = self.race(intents)
-        self.assertEqual(sum(isinstance(x, b.Conflict) for x in results), 1)
-        self.assertEqual(len(self.client.read()["events"]), 2)
+        state = self.client.read()
+        self.assertEqual({e['id'] for e in state['events']}, {i['id'] for i in intents})
+        self.assertEqual(sorted(e['seq'] for e in results), [1, 2])
+        for event in state['events']:
+            self.assertEqual(set(event['body']), {'text', 'thread'})
 
-    def test_expiry_takeover_fences_old_owner_but_allows_sharing(self):
-        event = self.client.publish(proposal("A"))
-        idea, old_token = event["id"], event["id"]
-        self.now = 1060  # Exactly at expiry: takeover is allowed.
-        new = self.client.publish(b.make_intent("B", "claim", {
-            "idea": idea, "next_check": "Resume exact boundary", "lease_seconds": 60}))
-        for kind in ("renew", "release", "finish"):
-            body = {"idea": idea, "lease_token": old_token, "text": "salvage",
-                    "lease_seconds": 60, "asset": self.asset}
-            with self.assertRaises(b.Conflict):
-                self.client.publish(b.make_intent("A", kind, body))
-        self.client.publish(b.make_intent("A", "discussion", {
-            "idea": idea, "text": "Independent salvage remains open."}))
-        current = self.client.read()["ideas"][idea]
-        self.assertEqual(current["owner"], "B")
-        self.assertEqual(current["lease_token"], new["id"])
-
-    def test_release_allows_continuation_finish_concludes_only_work_unit(self):
-        event = self.client.publish(proposal("A"))
-        idea = event["id"]
-        self.client.publish(b.make_intent("A", "release", {
-            "idea": idea, "lease_token": idea, "text": "A useful precise handoff."}))
-        claim = self.client.publish(b.make_intent("B", "claim", {
-            "idea": idea, "next_check": "New endpoint check", "lease_seconds": 60}))
-        self.client.publish(b.make_intent("B", "finish", {
-            "idea": idea, "lease_token": claim["id"], "text": "Fixture concluded.",
-            "asset": self.asset}))
+    def test_same_message_race_and_cross_clone_replay_are_idempotent(self):
+        intent = message()
+        results = self.race([intent, intent])
+        self.assertEqual(results[0], results[1])
+        self.assertEqual(len(self.client.read()['events']), 1)
+        other = b.Board(self.clone('later'))
+        self.assertEqual(other.publish(intent), results[0])
+        changed = dict(intent, body={'text': 'Different content'})
         with self.assertRaises(b.Conflict):
-            self.client.publish(b.make_intent("C", "claim", {
-                "idea": idea, "next_check": "duplicate", "lease_seconds": 60}))
-        self.assertEqual(self.client.read()["ideas"][idea]["status"], "done")
+            other.publish(changed)
+        self.assertEqual(len(self.client.read()['events']), 1)
 
-    def test_lost_push_response_is_idempotent(self):
-        original = b.git
-        lost = False
+    def test_lost_success_response_recovers_without_duplicate(self):
+        original, lost = b.git, False
 
         def lose_once(cwd, *args, **kwargs):
             nonlocal lost
             result = original(cwd, *args, **kwargs)
-            if args[0] == "push" and not lost:
+            if args[0] == 'push' and not lost:
                 lost = True
-                raise b.BoardError("Simulated lost response after actual push.")
+                raise b.BoardError('Simulated lost response after actual push.')
             return result
 
-        intent = proposal("A")
-        with patch.object(b, "git", lose_once):
-            self.client.publish(intent)
+        intent = message()
+        with patch.object(b, 'git', lose_once):
+            event = self.client.publish(intent)
         self.assertTrue(lost)
-        self.assertEqual(len(self.client.read()["events"]), 1)
-        self.assertFalse((self.client.outbox / (intent["id"] + ".json")).exists())
-        again = self.client.publish(intent)
-        self.assertEqual(again["id"], intent["id"])
-        self.assertEqual(len(self.client.read()["events"]), 1)
+        self.assertEqual(event['id'], intent['id'])
+        self.assertEqual(len(self.client.read()['events']), 1)
+        self.assertFalse((self.client.outbox / (intent['id'] + '.json')).exists())
 
-    def test_committed_result_recovers_after_asset_branch_is_deleted(self):
-        intent = b.make_intent("A", "result", {"text": "Frozen fixture", "asset": self.asset})
+    def test_failed_network_keeps_local_intent_and_retry_cli(self):
+        intent = message(text='Retry this exact message.')
+        self.client.retries = 1
+        with patch.object(self.client, 'load', side_effect=b.BoardError('Offline')):
+            with self.assertRaisesRegex(b.BoardError, intent['id']):
+                self.client.publish(intent)
+        self.assertEqual(json.loads((self.client.outbox / (intent['id'] + '.json')).read_text()), intent)
+        self.assertEqual(json.loads(self.cli('pending').stdout), [intent['id']])
+        self.client.publish(message('R02', text='Other messages remain independent.'))
+        recovered = json.loads(self.cli('retry', '--event-id', intent['id']).stdout)
+        self.assertEqual(recovered['body'], intent['body'])
+        self.assertEqual(json.loads(self.cli('retry', '--event-id', intent['id']).stdout), recovered)
+        self.assertEqual(len(self.client.read()['events']), 2)
+
+    def test_local_discard_changes_no_remote_message(self):
+        intent = message()
+        self.client.retries = 1
+        with patch.object(self.client, 'load', side_effect=b.BoardError('Offline')):
+            with self.assertRaises(b.BoardError):
+                self.client.publish(intent)
+        self.cli('discard', '--event-id', intent['id'])
+        self.assertFalse((self.client.outbox / (intent['id'] + '.json')).exists())
+        self.assertEqual(self.client.read()['events'], [])
+
+    def test_remote_receipt_recovers_after_asset_branch_disappears(self):
+        call(self.repo, 'branch', 'work')
+        call(self.repo, 'push', 'origin', 'work')
+        asset = dict(self.asset, branch='work')
+        intent = b.make_intent('R01', 'result', {'text': 'Frozen file', 'asset': asset})
         original = b.git
 
-        def lose_response(cwd, *args, **kwargs):
+        def lose(cwd, *args, **kwargs):
             result = original(cwd, *args, **kwargs)
-            if args[0] == "push":
-                raise b.BoardError("Lost response.")
+            if args[0] == 'push':
+                raise b.BoardError('Lost response')
             return result
 
         self.client.retries = 1
-        with patch.object(b, "git", lose_response):
+        with patch.object(b, 'git', lose):
             with self.assertRaises(b.BoardError):
                 self.client.publish(intent)
-        call(self.repo, "push", "origin", "--delete", "work")
-        recovered = self.client.publish(intent)
-        self.assertEqual(recovered["id"], intent["id"])
-        self.assertEqual(len(self.client.read()["events"]), 1)
+        call(self.repo, 'push', 'origin', '--delete', 'work')
+        self.assertEqual(self.client.publish(intent)['id'], intent['id'])
+        self.assertEqual(len(self.client.read()['events']), 1)
 
-    def test_asset_network_failure_preserves_pending_without_blocking_other_messages(self):
-        intent = b.make_intent("A", "result", {"text": "Frozen fixture", "asset": self.asset})
-        self.client.retries = 1
-        with patch.object(self.client, "check_asset", side_effect=b.BoardError("Offline")):
-            with self.assertRaises(b.BoardError):
-                self.client.publish(intent)
-        self.assertTrue((self.client.outbox / (intent["id"] + ".json")).exists())
-        self.client.publish(b.make_intent("B", "discussion", {"text": "Unrelated useful message."}))
-        self.client.publish(intent)
-        self.assertEqual(len(self.client.read()["events"]), 2)
-
-    def test_same_event_concurrent_retry_is_atomic_and_idempotent(self):
-        intent = proposal("A")
-        results = self.race([intent, intent])
-        self.assertEqual(results[0]["id"], results[1]["id"])
-        self.assertEqual(len(self.client.read()["events"]), 1)
-
-    def test_frozen_asset_hash_branch_commit_and_file_type(self):
+    def test_frozen_asset_hash_commit_path_and_regular_file(self):
         self.client.check_asset(self.asset)
-        for change in ({"sha256": "0" * 64}, {"commit": "1" * 40},
-                       {"path": "../asset.md"}):
-            with self.assertRaises(b.BoardError):
-                self.client.check_asset(dict(self.asset, **change))
-        tree = call(self.repo, "show", self.asset["commit"] + ":folder").encode() + b"\n"
-        with self.assertRaises(b.BoardError):
-            self.client.check_asset(dict(self.asset, path="folder",
-                                         sha256=hashlib.sha256(tree).hexdigest()))
+        for change in ({'sha256': '0' * 64}, {'commit': '1' * 40}, {'path': '../asset.md'},
+                       {'path': 'folder'}, {'path': 'link.md'}, {'commit': True}, {'path': '.'}):
+            with self.subTest(change=change):
+                with self.assertRaises(b.BoardError):
+                    self.client.check_asset(dict(self.asset, **change))
+        event = self.client.publish(b.make_intent('R01', 'result', {'text': 'Asset check passed.', 'asset': self.asset}))
+        self.assertEqual(event['body']['asset'], self.asset)
 
-    def test_outbox_disappearing_during_same_id_confirmation_is_normal(self):
-        intent = proposal("A")
+    def test_asset_network_failure_does_not_block_other_messages(self):
+        intent = b.make_intent('R01', 'result', {'text': 'Frozen file', 'asset': self.asset})
+        self.client.retries = 1
+        with patch.object(self.client, 'check_asset', side_effect=b.BoardError('Offline')):
+            with self.assertRaises(b.BoardError):
+                self.client.publish(intent)
+        self.client.publish(message('R02'))
         self.client.publish(intent)
-        pending = self.client.outbox / (intent["id"] + ".json")
+        self.assertEqual(len(self.client.read()['events']), 2)
+
+    def test_dirty_checkout_fetch_head_and_staged_index_are_preserved(self):
+        (self.repo / 'asset.md').write_text('Uncommitted draft.\n')
+        (self.repo / 'draft.md').write_text('Important staged work.\n')
+        call(self.repo, 'add', 'draft.md')
+        call(self.repo, 'fetch', 'origin', 'main')
+        index = self.repo / '.git/index'
+        before = (index.read_bytes(), call(self.repo, 'status', '--porcelain'), call(self.repo, 'rev-parse', 'HEAD'),
+                  (self.repo / '.git/FETCH_HEAD').read_bytes())
+        overrides = {'GIT_INDEX_FILE': str(index), 'GIT_DIR': str(self.repo / '.git'),
+                     'GIT_WORK_TREE': str(self.repo), 'GIT_OBJECT_DIRECTORY': str(self.repo / '.git/objects')}
+        with patch.dict(os.environ, overrides):
+            self.client.read()
+            self.client.publish(message())
+        after = (index.read_bytes(), call(self.repo, 'status', '--porcelain'), call(self.repo, 'rev-parse', 'HEAD'),
+                 (self.repo / '.git/FETCH_HEAD').read_bytes())
+        self.assertEqual(before, after)
+
+    def test_cli_text_file_stable_id_and_json_export(self):
+        text = self.root / 'message.txt'
+        text.write_text('两行内容\n第二行，保留数学符号 W ≠ w。\n')
+        event_id = 'a' * 32
+        event = json.loads(self.cli('say', '--actor', 'R01', '--event-id', event_id,
+                                    '--text-file', str(text), '--thread', 'WC-TARGET').stdout)
+        self.assertEqual(event['body']['text'], text.read_text())
+        self.assertEqual(json.loads(self.cli('say', '--actor', 'R01', '--event-id', event_id,
+                                            '--text-file', str(text), '--thread', 'WC-TARGET').stdout), event)
+        self.assertEqual(json.loads(self.cli('view', '--json').stdout)['events'], [event])
+        self.assertEqual(self.cli('say', '--actor', 'R01', '--text', 'x', '--text-file', str(text), check=False).returncode, 2)
+        self.assertEqual(self.cli('view', '--limit', '-1', check=False).returncode, 2)
+
+    def test_invalid_fields_and_secret_fail_before_network_or_disk(self):
+        bad = [message('', text='x'), message('team/root'), message(text=' '), message(thread=''),
+               message(thread='line\nbreak'), message(thread='x' * 161), message(reply_to='missing'),
+               message(text='ghp_' + 'x' * 24), message(asset={'commit': 'a'}),
+               b.make_intent('R01', 'result', {'text': 'missing asset'}),
+               b.make_intent('R01', 'unknown', {'text': 'x'}), message(extra='unknown')]
+        for intent in bad:
+            with self.subTest(intent=intent):
+                with patch.object(self.client, 'load', side_effect=AssertionError('Invalid intent reached network')):
+                    with self.assertRaises(b.BoardError):
+                        self.client.publish(intent)
+                self.assertFalse((self.client.outbox / (intent['id'] + '.json')).exists())
+        for retries in (0, True, 51):
+            with self.assertRaises(b.BoardError):
+                b.Board(self.repo, retries=retries)
+
+    def test_unknown_reply_is_rejected_without_retry(self):
+        with patch.object(b, 'retry_pause', side_effect=AssertionError('Validation retried')):
+            with self.assertRaises(b.ValidationError):
+                self.client.publish(message(reply_to='b' * 32))
+        self.assertEqual(self.client.read()['events'], [])
+
+    def test_outbox_disappearing_during_confirmation_is_normal(self):
+        intent = message()
+        self.client.publish(intent)
+        pending = self.client.outbox / (intent['id'] + '.json')
         pending.write_text(b.encode(intent))
-        original = Path.read_text
-        disappeared = False
+        original, disappeared = Path.read_text, False
 
         def disappear(path, *args, **kwargs):
             nonlocal disappeared
@@ -343,116 +297,128 @@ class BoardTests(unittest.TestCase):
                 raise FileNotFoundError(path)
             return original(path, *args, **kwargs)
 
-        with patch.object(Path, "read_text", disappear):
+        with patch.object(Path, 'read_text', disappear):
             event = self.client.publish(intent)
         self.assertTrue(disappeared)
-        self.assertEqual(event["id"], intent["id"])
-        self.assertEqual(len(self.client.read()["events"]), 1)
+        self.assertEqual(event['id'], intent['id'])
+        self.assertEqual(len(self.client.read()['events']), 1)
 
-    def test_read_and_publish_preserve_dirty_checkout_and_fetch_head(self):
-        (self.repo / "asset.md").write_text("Uncommitted work.\n")
-        (self.repo / "untracked.md").write_text("Preserve me.\n")
-        call(self.repo, "fetch", "origin", "work")
-        before = (call(self.repo, "status", "--porcelain"),
-                  call(self.repo, "rev-parse", "HEAD"),
-                  (self.repo / ".git/FETCH_HEAD").read_bytes())
-        self.client.read()
-        self.client.publish(proposal("A"))
-        after = (call(self.repo, "status", "--porcelain"),
-                 call(self.repo, "rev-parse", "HEAD"),
-                 (self.repo / ".git/FETCH_HEAD").read_bytes())
-        self.assertEqual(before, after)
-
-    def test_future_discussion_does_not_extend_other_actors_new_lease(self):
-        future = b.Board(self.repo, clock=lambda: self.now + 86400)
-        future.publish(b.make_intent("A", "discussion", {"text": "Clock skew fixture"}))
-        event = self.client.publish(proposal("B"))
-        self.assertEqual(self.client.read()["ideas"][event["id"]]["lease_until"], 1060)
-
-    def test_inherited_git_index_and_worktree_do_not_route_scratch_commands(self):
-        (self.repo / "draft.md").write_text("Important staged draft.\n")
-        call(self.repo, "add", "draft.md")
-        index = self.repo / ".git/index"
-        before = (index.read_bytes(), call(self.repo, "status", "--porcelain"))
-        overrides = {"GIT_INDEX_FILE": str(index),
-                     "GIT_DIR": str(self.repo / ".git"),
-                     "GIT_WORK_TREE": str(self.repo),
-                     "GIT_OBJECT_DIRECTORY": str(self.repo / ".git/objects")}
-        with patch.dict(os.environ, overrides):
+    def test_migration_deletes_inspected_noncurrent_files_by_fast_forward(self):
+        _, old_head = self.install_noncurrent_board()
+        with self.assertRaises(b.BoardError):
             self.client.read()
-            self.client.publish(proposal("A"))
-        after = (index.read_bytes(), call(self.repo, "status", "--porcelain"))
-        self.assertEqual(before, after)
+        self.assertEqual(self.client.migrate(old_head)['status'], 'migrated')
+        self.assertEqual(self.client.read()['events'], [])
+        call(self.repo, 'fetch', 'origin', 'wcg/board')
+        head = call(self.repo, 'rev-parse', 'FETCH_HEAD')
+        self.assertEqual(call(self.repo, 'rev-parse', head + '^'), old_head)
+        self.assertNotIn('obsolete', call(self.repo, 'ls-tree', '-r', '--name-only', head))
+        self.assertEqual(json.loads(call(self.repo, 'show', head + ':' + str(b.PREFIX / 'meta.json'))), {'schema': 3})
 
-    def test_scope_whitespace_does_not_bypass_dedup(self):
-        intent = proposal("A")
-        self.client.publish(intent)
-        duplicate = proposal("B")
-        for key in b.SCOPE:
-            duplicate["body"][key] = "  " + duplicate["body"][key] + " \n "
-        duplicate["body"]["next_check"] = "Different test name"
+    def test_migration_fences_new_noncurrent_changes(self):
+        repo, inspected = self.install_noncurrent_board()
+        (repo / b.PREFIX / 'new.txt').write_text('Concurrent change\n')
+        call(repo, 'add', '.')
+        call(repo, 'commit', '-m', 'Concurrent noncurrent change')
+        call(repo, 'push', 'origin', 'wcg/board')
         with self.assertRaises(b.Conflict):
-            self.client.publish(duplicate)
+            self.client.migrate(inspected)
+        current = call(repo, 'rev-parse', 'HEAD')
+        self.assertEqual(call(self.repo, 'ls-remote', 'origin', 'refs/heads/wcg/board').split()[0], current)
 
-    def test_mathematical_symbol_case_is_not_silently_identified(self):
-        first, second = proposal("A"), proposal("B")
-        first["body"]["statement"] = "Bound W under the specified definition"
-        second["body"]["statement"] = "Bound w under the specified definition"
-        self.client.publish(first)
-        self.client.publish(second)
-        self.assertEqual(len(self.client.read()["ideas"]), 2)
+    def test_migration_retains_current_messages_and_is_idempotent(self):
+        old_head = call(self.repo, 'ls-remote', 'origin', 'refs/heads/wcg/board').split()[0]
+        event = self.client.publish(message(text='真实新消息必须保留。'))
+        report = self.client.migrate(old_head)
+        self.assertEqual(report['status'], 'already-current')
+        self.assertEqual(report['events'], 1)
+        self.assertEqual(self.client.read()['events'], [event])
+        self.assertEqual(json.loads(self.cli('migrate', '--expected-head', old_head).stdout)['events'], 1)
 
-    def test_required_fields_unknown_ids_and_lease_bounds(self):
-        bad = proposal("A")
-        del bad["body"]["obligation"]
+    def test_migration_lost_response_confirms_remote(self):
+        _, old_head = self.install_noncurrent_board()
+        original = b.git
+
+        def lost(cwd, *args, **kwargs):
+            result = original(cwd, *args, **kwargs)
+            if args[0] == 'push':
+                raise b.BoardError('Lost response')
+            return result
+
+        with patch.object(b, 'git', lost):
+            self.assertEqual(self.client.migrate(old_head)['status'], 'migrated')
+        self.assertEqual(self.client.read()['events'], [])
+
+    def test_concurrent_migration_and_new_chat_message_are_preserved(self):
+        repo, old_head = self.install_noncurrent_board()
+        original, raced = b.git, False
+        event = dict(message('R02', text='迁移后立即发出的真实消息。'),
+                     schema=b.SCHEMA, seq=1, time=self.now)
+
+        def simultaneous(cwd, *args, **kwargs):
+            nonlocal raced
+            if args[0] == 'push' and not raced:
+                raced = True
+                self.assertFalse(any('force' in arg or arg.startswith('+') for arg in args))
+                shutil.rmtree(repo / b.PREFIX)
+                self.client.write_empty(repo)
+                (repo / b.PREFIX / 'events' / f"00000001_{event['id']}.json").write_text(b.encode(event))
+                call(repo, 'add', '--all', '.')
+                call(repo, 'commit', '-m', 'Another migration and immediate chat message')
+                call(repo, 'push', 'origin', 'wcg/board')
+            return original(cwd, *args, **kwargs)
+
+        with patch.object(b, 'git', simultaneous):
+            self.assertEqual(self.client.migrate(old_head)['events'], 1)
+        self.assertTrue(raced)
+        self.assertEqual(self.client.read()['events'], [event])
+
+    def test_metadata_requires_integer_current_schema(self):
+        self.assertTrue(b.current_metadata({'schema': b.SCHEMA}))
+        for value in ({'schema': float(b.SCHEMA)}, {'schema': True},
+                      {'schema': b.SCHEMA, 'extra': 'x'}, [], None):
+            self.assertFalse(b.current_metadata(value))
+
+    def test_initialize_current_board_does_not_clear_messages(self):
+        event = self.client.publish(message())
+        self.assertEqual(self.client.initialize(), 'already initialized')
+        self.assertEqual(self.client.read()['events'], [event])
+
+    def test_transition_failure_preserves_input_and_case_sensitive_symbols(self):
+        state = b.empty_state()
+        event = dict(message(text='W ≠ w'), schema=b.SCHEMA, seq=2, time=0)
         with self.assertRaises(b.BoardError):
-            self.client.publish(bad)
-        for seconds in (0, 59, 10801, True):
-            bad = proposal("A")
-            bad["body"]["lease_seconds"] = seconds
+            b.transition(state, event)
+        self.assertEqual(state, b.empty_state())
+        for field, value in [('schema', True), ('seq', True), ('time', True), ('time', -1)]:
+            invalid = dict(event, seq=1, **{field: value}) if field != 'seq' else dict(event, seq=value)
             with self.assertRaises(b.BoardError):
-                self.client.publish(bad)
-        with self.assertRaises(b.BoardError):
-            self.client.publish(b.make_intent("A", "discussion", {
-                "idea": "a" * 32, "text": "Unknown idea"}))
-        with self.assertRaises(b.BoardError):
-            self.client.publish(b.make_intent("A", "discussion", {
-                "reply_to": "b" * 32, "text": "Unknown reply"}))
-        self.assertEqual(len(self.client.read()["events"]), 0)
+                b.transition(state, invalid)
+        self.assertIn('W ≠ w', self.client.publish(message(text='W ≠ w'))['body']['text'])
 
-    def test_credential_content_is_rejected_before_persisting(self):
-        intent = b.make_intent("A", "discussion", {
-            "text": "ghp_" + "x" * 24})  # Synthetic, never a real credential.
-        with self.assertRaises(b.BoardError):
-            self.client.publish(intent)
-        self.assertFalse((self.client.outbox / (intent["id"] + ".json")).exists())
-
-    def test_live_smoke_cli_against_local_remote_and_frozen_source(self):
-        source = Path(__file__).resolve().parents[1] / "tools/board.py"
-        target = self.repo / "research/weighted_congestion_frontier/tools/board.py"
+    def test_live_smoke_uses_independent_clones_and_frozen_source(self):
+        target = self.repo / 'research/weighted_congestion_frontier/tools/board.py'
         target.parent.mkdir(parents=True)
-        target.write_bytes(source.read_bytes())
-        call(self.repo, "add", ".")
-        call(self.repo, "commit", "-m", "Freeze source for live smoke fixture")
-        call(self.repo, "branch", "main")
-        call(self.repo, "push", "origin", "main")
-        script = Path(__file__).resolve().parents[1] / "tools/live_smoke.py"
-        result = subprocess.run([sys.executable, str(script), "--repo",
-                                 str(self.repo), "--live"], capture_output=True,
-                                text=True, timeout=60)
+        target.write_bytes(self.script.read_bytes())
+        call(self.repo, 'add', '.')
+        call(self.repo, 'commit', '-m', 'Freeze source for smoke fixture')
+        call(self.repo, 'push', 'origin', 'main')
+        script = self.script.parent / 'live_smoke.py'
+        result = subprocess.run([sys.executable, str(script), '--repo', str(self.repo), '--live'],
+                                capture_output=True, text=True, timeout=60)
         self.assertEqual(result.returncode, 0, result.stderr)
         report = json.loads(result.stdout)
-        self.assertTrue(report["verified"])
-        self.assertEqual(sum("conflict" in x for x in report["claims"]), 1)
-        self.assertEqual(self.client.read()["ideas"][report["idea"]]["status"], "done")
+        self.assertTrue(report['verified'])
+        self.assertEqual(len(report['messages']), 2)
+        self.assertEqual(report['final_events'] - report['initial_events'], 4)
+        self.assertEqual(len(self.client.read()['events']), 4)
 
-    def test_live_smoke_requires_explicit_flag_before_writing(self):
-        script = Path(__file__).resolve().parents[1] / "tools/live_smoke.py"
-        result = subprocess.run([sys.executable, str(script), "--repo", str(self.repo)],
+    def test_live_smoke_requires_explicit_flag(self):
+        result = subprocess.run([sys.executable, str(self.script.parent / 'live_smoke.py'), '--repo', str(self.repo)],
                                 capture_output=True, text=True, timeout=15)
         self.assertEqual(result.returncode, 2)
-        self.assertEqual(len(self.client.read()["events"]), 0)
+        self.assertEqual(self.client.read()['events'], [])
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main(verbosity=2)

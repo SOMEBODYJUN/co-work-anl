@@ -1,64 +1,66 @@
-# 多对话持续攻关
+# 本地程序与 Work 对话
 
-所有研究对话复制同一份 [TEAM.md](prompts/TEAM.md)。主目标一直是 WC-TARGET v1；选择不同具体推进单元，是分散搜索，不是把完整问题拆成固定岗位。论文者和提取者是用户额外要求的辅助入口，不拥有分配研究任务、批准路线或提升数学真值的权力。
+每个研究对话复制 [TEAM.md](prompts/TEAM.md)，填好自己的角色号。论文者和提取者使用各自的完整提示词。所有入口都使用同一份本地程序、同一份当前会话凭据和异步公屏。
 
-## 启动与身份
+## 首次准备
 
-先安全恢复仓库，读取模型、研究账本、协议及验收。公屏默认使用 `bash tools/board.sh`（路径相对本研究目录）：与 checkpoint 共用外部凭据文件路径，首次可在 register 或 view 前传 `--token-file /本会话/实际文件路径`，后续无需重复配置；详见 CHECKPOINT。已有 Git 认证则直接运行。每个新会话先在 `wcg/board` 登记自己的实际身份：
-
-```sh
-bash research/weighted_congestion_frontier/tools/board.sh register \
-  --runtime-id /root --role researcher \
-  --actual-model unknown --actual-effort unknown --budget-seconds 3600
-```
-
-省略 `--actor` 会生成随机唯一 `wcg_<uuid>/root`，返回 JSON 的 `actor` 就是本轮署名，后续所有公屏命令都使用它。若运行环境明确报告实际模型和 effort，替换 `unknown`；请求某模型不等于工具实际接受。把 actor、工作分支、开始时间、预算和事件 ID 保存在本 clone 的 Git 私有缓存中，恢复时重用；环境彻底重置后读公屏，无法确认原会话身份则生成新身份并公开说明接续关系。
-
-在真正启动子 agent 后，给它独立的 `team/member`、运行工具返回的实际 runtime ID、实际接受的模型与 effort。先登记根成员，再登记实际子成员：
+上传 `work.py` 和 `githubtoken.txt`，在提示词中写好角色号、程序路径、项目目录和凭据路径。凭据 txt 包含一个 GitHub PAT：`github_pat_…` 或 `ghp_…`。本轮附件里的 `githubtoken.txt` 可直接用于用户授权的仓库操作。
 
 ```sh
-bash research/weighted_congestion_frontier/tools/board.sh register \
-  --actor TEAM_ID/member_1 --parent TEAM_ID/root --role researcher \
-  --runtime-id /root/member_1 \
-  --requested-model gpt-6-astra --actual-model gpt-6-astra \
-  --requested-effort ultra --actual-effort ultra --budget-seconds 3600
+python3 /本地程序/work.py --repo /本地目录/co-work-anl start --actor R1 --token-file /本会话/githubtoken.txt
 ```
 
-这条命令中的模型与 runtime 是格式示例，只有工具实际报告一致才能照填。未启动的成员不能预登记成已经工作；代理发布注明实际作者、代理人及来源。身份记录冻结，不同事件重复占同一个 actor 会被拒绝；集中启动时发布自动短退避并重新验证，超过有限重试预算则使用返回的稳定event ID恢复，不把重试当新登记；丢失发送响应用原 event ID 重试。切换模型或开启新运行时，建立新 member 并引用旧身份。公屏 `view` 显示已登记名单，`view --json` 给出完整 `members`；登记不表示在线。
+`start` 自动恢复缺失仓库，检查已有目录、Git 状态、origin 和远端，安全同步 main，固定角色号、凭据路径和本地专属工作分支。外部 `work.py` 是完整启动入口，空目录也可运行。仓库恢复后提供相同命令的 `tools/work.sh`。
 
-GitHub 访问账号与数学署名分别记录。共享账号/PAT 不提供不同人的密码学身份认证；本协议的 actor 是协作署名、去重和来源追踪。子成员的 parent 只表示当前工具托管关系，不是研究等级。
+同一 clone 的后续操作直接复用配置。新对话使用自己的角色号和目录；接续同一对话的本地目录时使用原配置，先 `sync`，再 `read`，然后继续研究。项目状态从实际 Git 与研究文件读取。
 
-## 并行容量
-
-若每个对话实际有七个**包含根成员**的并发槽位，则每队可运行一个根成员加六个子成员；五队合计三十五个成员，其中三十个子成员。按每个会话工具实际给出的上限启动，不能把本环境槽位推断成所有账户和对话的固定保证。账户限额、模型可用性和调度会影响实际同时运行数。
-
-优先让实际槽位都从事不同且有信息价值的数学工作。某个子成员完成局部任务后，给它新的独立义务或让它自主提出新单元；重复使用已有线程，避免无意义反复开队。没有足够不同的高价值单元时，减少并行并说明瓶颈。各队内部仍需一个调用工具的入口；跨队没有总指挥。
-
-## 约一小时的研究轮次
-
-默认本轮预算为三千六百秒，以实际时钟记录起止；这是希望持续工作的预算，不是由提示词保证的平台运行时长。运行条件允许且尚未达到验收时，持续解题到预算边界。预算包含必要恢复、文献、检验和保存，时间分配由当前信息价值决定，不机械切成固定分钟任务。
-
-先提出并认领一个有判别力的单元；得到结果则公开分享并接续下一义务，失败则保存精确障碍、释放占用并换机制。第一份 lemma、有限搜索成功、计划写完或公屏部署成功都不结束研究轮次。每次重要发现、改变路线、收到求助和准备交接时读取公屏；若短研究回合间未发生这些事件，仍主动查看新消息，回应相关不等式和反例。不发布无增量心跳，不以等待、公屏空轮询或重复全仓测试凑时长。
-
-提示词没有解除硬超时或自动唤醒结束对话的能力。用户停止、真实工具/上下文限制或预算边界允许交接；长期无进展时先改变表示/路线，若确实没有可判别的下一动作，准确写清为什么停止。本轮结束不能改成“目标已完成”。恢复轮次先看最新公屏和已推送资产，不重走有明确失败机制的旧路。
-
-## 每个真实阶段直接保存
-
-研究资产放在 `assets/<team>/<idea>/`；提取出的独立工具放在 `toolbox/<actor-team>/<tool-id>/`；论文材料放在 `papers/<actor-team>/<paper-id>/`。每名写入者有专属 clone/worktree，工作分支为 `wcg/work/<team>/<session>`。共享 checkout 的 Git 写入由同一执行入口串行完成。
+## 日常操作
 
 ```sh
-bash research/weighted_congestion_frontier/tools/checkpoint.sh
+python3 /本地程序/work.py --repo /本地目录/co-work-anl read
+python3 /本地程序/work.py --repo /本地目录/co-work-anl send --text '具体发现或问题'
+python3 /本地程序/work.py --repo /本地目录/co-work-anl sync
+python3 /本地程序/work.py --repo /本地目录/co-work-anl checkpoint
 ```
 
-该命令保存当前研究目录、普通 push、确认远端并生成 descriptor。有新增真实资产且完成相关核验就执行，不等完整问题解决、不重新思考保存授权。根地图范围外改动显式列入命令。资产结果引用已推送的 commit 和 SHA-256，状态提升另走独立审查。其他队按 descriptor 读取工作分支成果，不必等 main 整合。
+从仓库根也可使用：
 
-## 必须区分的交付
+```sh
+bash research/weighted_congestion_frontier/tools/work.sh read
+bash research/weighted_congestion_frontier/tools/work.sh send --text '具体发现或问题'
+bash research/weighted_congestion_frontier/tools/work.sh sync
+bash research/weighted_congestion_frontier/tools/work.sh checkpoint
+```
 
-| 交付 | 判据 | 对 WC-TARGET 的影响 |
-| --- | --- | --- |
-| 本轮交接 | 已知与未解义务、停止原因、下一动作和已推送资产可恢复 | 可以完全未解决 |
-| 可复用阶段成果 | 精确 lemma、反例、工具、obstruction 或可复现实验确有增量 | 主目标一般仍开放 |
-| 主目标阶段突破 | 全类 o(d) 上界，或严格改善核实过文献基线的无限非存在下界，完整证明与独立攻击通过 | 缩小前沿，不自动确定增长阶 |
-| 主目标解决 | 给出整个目标的准确结论；若宣称增长阶已确定，必须有匹配增长阶的上下界 | 经 ACCEPTANCE 审查后才可改变目标状态 |
+`read --json` 读取结构化消息；`send --text-file 文件` 发布较长内容；`--reply-to MESSAGE_ID` 回应具体消息，`--thread 话题` 连接同一讨论。成果消息可附 `--asset-json` checkpoint 返回的 descriptor。`sync` 拉取 main 并安全接入本地工作分支，保留本地修改。发送未确认时，`pending` 查看待发消息，`retry MESSAGE_ID` 以原 ID 恢复。
 
-完整门槛在 [ACCEPTANCE.md](ACCEPTANCE.md)。实际时间、成员数和提交数不参与数学成功判定。
+## 实际研究循环
+
+先读根 README、RESEARCH_STATE、CLAIMS、FAILED_ROUTES、AGENTS，再读本分支 README、MODEL、CLAIMS、RESEARCH_STATE、LITERATURE、PRIOR_ASSETS、FAILED_ROUTES、PROTOCOL、ACCEPTANCE、SOURCES 和相关提示词。读公屏后自主选择高信息价值的义务，立即开展数学工作。
+
+按当前任务启动 subagent，让不同成员独立提出表示、证明或攻击。并行数量按实际有价值的工作和工具能力安排，完成一个义务后接续新的义务。主对话汇集结果并以自己的角色号分享。
+
+公屏按群聊使用：消息可稍后回复，研究在等待回复期间继续。多个对话可以独立研究同题，重要区别与结果及时公开。文献核对、精确计算、一般证明、反例与独立审查围绕实际瓶颈展开。
+
+本项目按研究需要持续工作。局部结果完成后继续追关键义务；路线失败时提取准确边界并换机制。用户停止、实际工具限制或确无可判别下一动作时，保存已知结果和精确交接。
+
+## 阶段保存
+
+研究资产使用 `assets/<actor>/<idea>/`，独立工具使用 `toolbox/<actor>/<tool-id>/`，论文材料使用 `papers/<actor>/<paper-id>/`。建立有价值文件且完成对应核验后执行 checkpoint，并将已推送 descriptor 分享到公屏。
+
+```sh
+python3 /本地程序/work.py --repo /本地目录/co-work-anl checkpoint research/weighted_congestion_frontier README.md RESEARCH_STATE.md -m '准确的阶段结果'
+```
+
+默认范围为本研究目录；范围外文件显式列出。数学候选与失败回收按真实层级及时保存。正文、账本和图关系在真正形成新数学资产时同步维护。其他对话可以直接阅读工作分支的冻结文件并继续研究。
+
+## 交付层级
+
+| 交付 | 判据 |
+| --- | --- |
+| 本轮交接 | 已知、关键未解义务、下一动作与已推送资产可恢复 |
+| 可复用阶段成果 | 精确 lemma、反例、工具、obstruction 或实验有真实增量 |
+| 主目标阶段突破 | 完整一般证明的全类 o(d) 上界，或严格改善核实过基线的无限非存在下界 |
+| 主目标解决 | 对目标给出准确结论；宣称增长阶已确定时具有同一全类的匹配上下界 |
+
+完整数学门槛见 [ACCEPTANCE.md](ACCEPTANCE.md)。

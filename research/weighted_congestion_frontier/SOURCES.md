@@ -4,15 +4,15 @@
 
 ## 协作经验
 
-| 来源 | 已核验与使用 | 原文与适配边界 |
+| 来源 | 一手机制与固定原文 | 本项目实际采用 |
 | --- | --- | --- |
-| Anthropic C compiler，`6f1b99acb2f4ec2414592136c2009fe7713deec3` | 作者说明的独立 clone、自主选题、Git 认领、冲突者换单元、保存失败机制、明确反馈与持续接续工作 | 原仓库 `current_tasks/` 和 `ideas/` 各归档一个真实文件及 CC0 LICENSE。原文见 upstream/claudes-c-compiler/；作者文章见下方链接。该快照未找到完整 AGENT_PROMPT.md，不能声称复制了未公开提示词。原 Docker/CLI 无限重启 loop 没有在 Web Work 部署；也不照搬跳过权限的命令。 |
-| MathLab，`f2beac493aff1868b92b8233fd4427c467812ebe` | 持久黑板、真实成员身份、BASE 证据层级、先自主重构的 verifier、跨探索组传播机制 | 完整原始 prompts.py、ARCHITECTURE.md 与 MIT LICENSE 已归档。原 Director 派单不符合用户本轮要求，TEAM 采用自主认领；没有运行原 orchestrator 或声称原架构无中心。 |
-| agentsync，`4d190adb7f711f5e64eb358612ecabd97c1b2fd5` | README 与设计中普通 Git push 原子更新、冲突后重读占用、agent ID 与独立状态分支 | 本项目 board.py 是已有自有实现；未安装 MCP。其许可为 PolyForm Noncommercial，未归档它的实现。仅以一手文档核对机制，不能声称完整复制了该项目。 |
+| Anthropic C compiler，`6f1b99acb2f4ec2414592136c2009fe7713deec3` | 作者说明独立 clone、自主选题、Git 任务协调和失败记录；`current_tasks/`、`ideas/` 各归档一个原文件及 CC0 LICENSE，见 upstream/claudes-c-compiler/ | 自主探索、独立工作目录、可恢复阶段保存和具体反馈 |
+| MathLab，`f2beac493aff1868b92b8233fd4427c467812ebe` | prompts.py、ARCHITECTURE.md、MIT LICENSE 已归档；BASE 证据层级、先自主重构的 verifier、跨探索组传播 | 精确数学身份、独立攻击、跨对话异步分享和成果提取 |
+| agentsync，`4d190adb7f711f5e64eb358612ecabd97c1b2fd5` | README 与设计采用独立状态分支、普通 Git push、冲突后重读；许可 PolyForm Noncommercial | 公屏独立分支、普通推送后确认及并发消息恢复；工具为本项目自有实现 |
 
 一手来源：[Anthropic 作者说明](https://www.anthropic.com/engineering/building-c-compiler)、[compiler](https://github.com/anthropics/claudes-c-compiler)、[MathLab](https://github.com/adamisntdead/mathlab)、[agentsync](https://github.com/jarmstrong158/agentsync)。
 
-用户要求原样采用经验时，执行已经核验的具体做法，并保存可获得且许可允许的原文；没有拿到的源文件和不同产品能力不得描述成“已一模一样部署”。本项目的数学量词、冻结资产、租约、注册和 Web 多对话适配都明确记录。后续 agent 能区分原文事实、原样引用和本项目改造。
+上表的归档原文保持其原项目内容与许可。当前运行规则采用 PROTOCOL.md、RUNBOOK.md：一个 Work 对话一个角色号，内部 subagent，异步消息流与直接保存。上游任务协调方式是来源事实，当前公屏按群聊交流。
 
 ## 写作原文
 
@@ -26,6 +26,6 @@
 
 一手写作来源：[mathematical-academic-writing](https://github.com/JiahaoLi-creator/mathematical-academic-writing)、[polish_skill](https://github.com/yujie-jason-zhang/polish_skill)、[latex-paper-skills](https://github.com/yunshenwuchuxun/latex-paper-skills)。
 
-## Web 运行边界
+## Work 并行
 
-[OpenAI 官方 subagents 文档](https://learn.chatgpt.com/docs/agent-configuration/subagents)说明 Work 可以显式启动独立 agent、选择受支持模型和 reasoning effort，并提醒并行写入需要协调。当前工具给出的实际槽位才是本会话上限。本文未找到五个 Web 对话都保证七槽位或任意提示词强制单次运行一小时的官方承诺；不把 CLI/API 配置当 Web 的可调设置。运行计划和时间核算见 RUNBOOK。
+[OpenAI 官方 subagents 文档](https://learn.chatgpt.com/docs/agent-configuration/subagents)介绍 Work 的独立 agent、模型与 reasoning effort 配置。使用当前工具实际提供的能力，按数学义务安排并行；主对话汇集子 agent 发现，用同一角色号交流和提交。实际入口见 RUNBOOK.md、prompts/MODELS.md。

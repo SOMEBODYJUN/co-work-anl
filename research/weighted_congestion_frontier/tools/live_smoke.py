@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Explicit live blackboard deployment check; publishes labeled nonmath events."""
+"""Explicit remote chat check using two independent clones and labeled test messages."""
 import argparse
 import concurrent.futures
 import hashlib
@@ -11,95 +11,75 @@ from unittest.mock import patch
 import board as b
 
 
-def run(repo, branch="wcg/board"):
+def run(repo, branch='wcg/board'):
     client = b.Board(repo, branch)
     run_id = uuid.uuid4().hex
-    team = "deployment_" + run_id[:12]
-    root_actor = team + "/root"
-    prefix = team + "/writer_"
+    actors = ['smoke-' + run_id[:12] + '-A', 'smoke-' + run_id[:12] + '-B']
+    thread = '基础设施验收-' + run_id
     initial = client.read()
-    registered = []
-    for actor in (root_actor, prefix + "A", prefix + "B"):
-        body = {"role": "deployment", "runtime_id": "python-test-publisher",
-                "requested_model": "none", "actual_model": "none",
-                "requested_effort": "none", "actual_effort": "none",
-                "budget_seconds": 3600}
-        if actor != root_actor:
-            body["parent"] = root_actor
-        registered.append(client.publish(b.make_intent(actor, "register", body))["id"])
-    idea = client.publish(b.make_intent(root_actor, "propose", {
-        "title": "基础设施验收：并发自主认领（非数学任务）",
-        "claim_version": "WC-BOARD-SMOKE v1 / " + run_id,
-        "statement": "Two simultaneous public writers must not both own one unit.",
-        "obligation": "Verify actual remote single-owner acceptance for run " + run_id,
-        "mechanism": "Two Git writers synchronize their first ordinary push.",
-        "next_check": "Publish concurrent claims, then verify the accepted remote stream.",
-        "claim": False}))
+    commit = b.git(client.repo, 'rev-parse', 'HEAD').stdout.decode().strip()
+    path = 'research/weighted_congestion_frontier/tools/board.py'
+    frozen = b.git(client.repo, 'show', commit + ':' + path).stdout
+    asset = {'branch': 'main', 'commit': commit, 'path': path,
+             'sha256': hashlib.sha256(frozen).hexdigest()}
+    client.check_asset(asset)
     original_git = b.git
     barrier, lock, first_threads = threading.Barrier(2), threading.Lock(), set()
 
     def synchronized_git(cwd, *args, **kwargs):
-        if args and args[0] == "push":
+        if args and args[0] == 'push':
             ident = threading.get_ident()
             with lock:
                 first = ident not in first_threads
                 first_threads.add(ident)
             if first:
-                barrier.wait(timeout=60)
+                barrier.wait(timeout=30)
         return original_git(cwd, *args, **kwargs)
 
-    def claim(letter):
-        actor = prefix + letter
-        try:
-            event = b.Board(repo, branch).publish(b.make_intent(actor, "claim", {
-                "idea": idea["id"], "next_check": "Verify live deployment ownership.",
-                "lease_seconds": 3600}))
-            return {"actor": actor, "event": event}
-        except b.Conflict as exc:
-            return {"actor": actor, "conflict": str(exc)}
+    with client.scratch() as directory:
+        clones = [Path(directory) / 'A', Path(directory) / 'B']
+        for clone in clones:
+            b.git(directory, 'clone', '--quiet', '--no-checkout', '--single-branch',
+                  '--branch', 'main', client.remote, str(clone))
+        intents = [b.make_intent(actor, 'message', {
+            'thread': thread, 'text': '基础设施测试发布端：同题的独立研究路线可以同时交流。'})
+            for actor in actors]
 
-    with patch.object(b, "git", synchronized_git):
-        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
-            results = list(pool.map(claim, ("A", "B")))
-    winners = [x for x in results if "event" in x]
-    losers = [x for x in results if "conflict" in x]
-    if len(winners) != 1 or len(losers) != 1:
-        raise AssertionError("Live single-owner check failed: " + str(results))
-    winner, loser = winners[0], losers[0]
-    reply = client.publish(b.make_intent(loser["actor"], "discussion", {
-        "idea": idea["id"], "reply_to": winner["event"]["id"],
-        "text": "部署实测：同一具体单元的并发认领只有一位成功。"
-                "后提交者重新读取公屏而未盲目 rebase；仍可平等回应、补充和提出独立审查。"
-                "此处是测试发布端，不冒称两个实际研究对话。"}))
-    commit = b.git(client.repo, "rev-parse", "HEAD").stdout.decode().strip()
-    path = "research/weighted_congestion_frontier/tools/board.py"
-    frozen = b.git(client.repo, "show", commit + ":" + path).stdout
-    asset = {"branch": "main", "commit": commit, "path": path,
-             "sha256": hashlib.sha256(frozen).hexdigest()}
-    finished = client.publish(b.make_intent(winner["actor"], "finish", {
-        "idea": idea["id"], "lease_token": winner["event"]["id"], "asset": asset,
-        "text": "真实 GitHub 认领、冲突去重、因果回复、冻结文件校验与完成释放均通过。"
-                "本单元仅为基础设施验收，WC-TARGET 仍开放。所有数学研究队自行提出 idea，"
-                "无需协调者派单。Astra Ultra 和 6.1 Sol Ultra 的独立实现复审记录见 main 的 evidence/validation.md。"}))
+        def send(index):
+            return b.Board(clones[index], branch).publish(intents[index])
+
+        with patch.object(b, 'git', synchronized_git):
+            with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+                messages = list(pool.map(send, range(2)))
+        # Replay from a different clone proves receipts live on the remote board.
+        replay = b.Board(clones[1], branch).publish(intents[0])
+        if replay != messages[0]:
+            raise AssertionError('Independent clone retry changed the original message.')
+    reply = client.publish(b.make_intent(actors[0], 'message', {
+        'thread': thread, 'reply_to': messages[1]['id'],
+        'text': '基础设施测试：稍后回复另一条消息；发送后可以继续工作。'}))
+    result = client.publish(b.make_intent(actors[0], 'result', {
+        'thread': thread, 'asset': asset,
+        'text': '基础设施验收：独立 clone 并发发言、自动重取重发、稳定 ID 去重、异步回复和冻结资产核验通过。'}))
     final = client.read()
-    if not all(actor in final["members"] for actor in (root_actor, prefix + "A", prefix + "B")):
-        raise AssertionError("Registered publisher identities missing from the remote board.")
-    if final["ideas"][idea["id"]]["owner"] is not None:
-        raise AssertionError("Finished smoke unit still owns a lease.")
-    return {"run_id": run_id, "board_branch": branch, "idea": idea["id"],
-            "registration_events": registered,
-            "claims": results, "reply_event": reply["id"],
-            "finish_event": finished["id"], "source_asset": asset,
-            "initial_events": len(initial["events"]),
-            "final_events": len(final["events"]), "verified": True,
-            "scope": "Infrastructure only; no mathematical progress claimed."}
+    posted = {event['id']: event for event in final['events']}
+    expected = [*messages, reply, result]
+    if not all(posted.get(event['id']) == event for event in expected):
+        raise AssertionError('Published message missing or changed on remote board.')
+    if any(sum(e['id'] == event['id'] for e in final['events']) != 1 for event in expected):
+        raise AssertionError('Replay duplicated a message in the remote stream.')
+    return {'run_id': run_id, 'board_branch': branch,
+            'messages': [event['id'] for event in messages],
+            'reply_event': reply['id'], 'result_event': result['id'],
+            'source_asset': asset, 'initial_events': len(initial['events']),
+            'final_events': len(final['events']), 'verified': True,
+            'scope': 'Infrastructure publishers only; no mathematical progress claimed.'}
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--repo", default=".")
-    parser.add_argument("--branch", default="wcg/board")
-    parser.add_argument("--live", action="store_true", required=True,
-                        help="Explicitly authorize labeled test events on the remote board.")
+    parser.add_argument('--repo', default='.')
+    parser.add_argument('--branch', default='wcg/board')
+    parser.add_argument('--live', action='store_true', required=True)
     args = parser.parse_args()
-    print(b.encode(run(args.repo, args.branch)), end="")
+    print(b.encode(run(args.repo, args.branch)), end='')

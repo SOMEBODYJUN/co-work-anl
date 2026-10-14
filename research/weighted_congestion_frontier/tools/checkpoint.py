@@ -86,7 +86,7 @@ def locked_save(repo, common, cache, args):
         raise Stop("Detached HEAD: switch to a dedicated work branch first.")
     branch = branch_result.stdout.decode().strip()
     if branch == "wcg/board":
-        raise Stop("Board events must use board.py, which revalidates claim ownership.")
+        raise Stop("Board messages must use board.py.")
     for item in ("MERGE_HEAD", "CHERRY_PICK_HEAD", "REVERT_HEAD", "rebase-merge", "rebase-apply"):
         if Path(value(repo, "rev-parse", "--git-path", item)).is_absolute():
             p = Path(value(repo, "rev-parse", "--git-path", item))

@@ -1,4 +1,4 @@
-"""Authenticated entry-point lifecycle using real isolated local Git remotes."""
+"""Authenticated public-screen entry points against isolated local Git remotes."""
 import json
 import os
 from pathlib import Path
@@ -38,26 +38,28 @@ class EntryTests(unittest.TestCase):
     def entry(self, *args, cwd=None):
         env = {k: v for k, v in os.environ.items()
                if k not in (*c.ROUTING, "WCG_CHECKPOINT_TOKEN_FILE",
-                            "WCG_CHECKPOINT_ASKPASS", "GIT_ASKPASS")}
+                            "WCG_CHECKPOINT_ASKPASS", "WCG_WORK_ASKPASS", "GIT_ASKPASS")}
         return subprocess.run(["bash", str(ENTRY), *args], cwd=cwd or self.repo,
                               env=env, capture_output=True, text=True, timeout=45)
 
     def test_explicit_then_remembered_file_and_dirty_work(self):
         (self.repo / "asset.md").write_text("uncommitted research\n")
         before = c.value(self.repo, "rev-parse", "HEAD")
-        first = self.entry("--token-file", str(self.credential), "register",
-                           "--runtime-id", "python-fixture")
+        first = self.entry("--token-file", str(self.credential), "say",
+                           "--actor", "001", "--text", "直接进入公屏讨论。", "--thread", "gap")
         self.assertEqual(first.returncode, 0, first.stderr)
         self.assertEqual(c.value(self.repo, "config", "--get", "wcg.tokenFile"),
                          str(self.credential))
         second = self.entry("view", "--json")
         self.assertEqual(second.returncode, 0, second.stderr)
-        self.assertIn(json.loads(first.stdout)["actor"], json.loads(second.stdout)["members"])
+        state = json.loads(second.stdout)
+        self.assertEqual(state["events"][0]["actor"], "001")
+        self.assertNotIn("members", state)
+        self.assertNotIn("ideas", state)
         self.assertNotIn(self.token, first.stdout + first.stderr + second.stdout + second.stderr)
         self.assertNotIn(self.token, (self.repo / ".git/config").read_text())
         self.assertEqual(c.value(self.repo, "rev-parse", "HEAD"), before)
         self.assertEqual((self.repo / "asset.md").read_text(), "uncommitted research\n")
-        # The configured shared ASKPASS handles a real Git prompt for this exact host.
         env = dict(os.environ, GIT_ASKPASS=str(ROOT / c.SCOPE / "tools/checkpoint.py"),
                    WCG_CHECKPOINT_ASKPASS="1", WCG_CHECKPOINT_TOKEN_FILE=str(self.credential))
         output = subprocess.check_output([env["GIT_ASKPASS"], "Password for 'https://github.com':"], env=env)
@@ -66,20 +68,20 @@ class EntryTests(unittest.TestCase):
     def test_repo_argument_from_outside_and_native_auth(self):
         result = self.entry("--repo", str(self.repo), "view", "--json", cwd=self.root)
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual(json.loads(result.stdout)["members"], {})
+        self.assertEqual(json.loads(result.stdout)["events"], [])
         self.assertNotEqual(c.git(self.repo, "config", "--get", "wcg.tokenFile", check=False).returncode, 0)
 
-    def test_inside_or_invalid_credentials_fail_before_registration(self):
+    def test_inside_missing_or_invalid_credentials_fail_before_send(self):
         inside = self.repo / "credential.txt"
         inside.write_text(self.token)
         for path in (inside, self.root / "missing.txt"):
-            result = self.entry("--token-file", str(path), "register", "--runtime-id", "fixture")
+            result = self.entry("--token-file", str(path), "say", "--actor", "001", "--text", "讨论")
             self.assertEqual(result.returncode, 2)
             self.assertNotIn(self.token, result.stdout + result.stderr)
         self.credential.write_text("not a token\n")
-        result = self.entry("--token-file", str(self.credential), "register", "--runtime-id", "fixture")
+        result = self.entry("--token-file", str(self.credential), "say", "--actor", "001", "--text", "讨论")
         self.assertEqual(result.returncode, 2)
-        self.assertEqual(self.client.read()["members"], {})
+        self.assertEqual(self.client.read()["events"], [])
         self.assertNotEqual(c.git(self.repo, "config", "--get", "wcg.tokenFile", check=False).returncode, 0)
 
     def test_stale_remembered_file_is_an_explicit_failure(self):
@@ -92,10 +94,10 @@ class EntryTests(unittest.TestCase):
     def test_help_and_board_error_exit_codes_are_preserved(self):
         help_result = self.entry("--help", cwd=self.root)
         self.assertEqual(help_result.returncode, 0)
-        self.assertIn("register", help_result.stdout)
-        bad = self.entry("register", "--runtime-id", "fixture", "--budget-seconds", "0")
+        self.assertIn("say", help_result.stdout)
+        bad = self.entry("say", "--actor", "001", "--text", "")
         self.assertEqual(bad.returncode, 2)
-        self.assertEqual(self.client.read()["members"], {})
+        self.assertEqual(self.client.read()["events"], [])
 
 
 if __name__ == "__main__":
