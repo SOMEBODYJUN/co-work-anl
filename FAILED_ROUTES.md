@@ -1,5 +1,7 @@
 # 失败路线与仍可使用的边界
 
+WC 独立分支新增 [prefix 阶跃平台模拟障碍](research/weighted_congestion_frontier/FAILED_ROUTES.md)：提高次数不能同时保持固定低泄漏和有界高平台失真；只否定这一模拟接口，费用重配和新的全状态机制仍开放。
+
 ## 2026-10-10：真正逐人混合安全值桥与平均全树支付均失败
 
 [34客户完整SPE](research/current/customer_attraction/individual_security_counterexample.md)严格给

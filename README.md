@@ -1,6 +1,7 @@
 # 两阶段设施选址博弈：研究与人类学习入口
 
 独立新研究：[加权原子拥塞博弈的普遍近似纯均衡门槛](research/weighted_congestion_frontier/README.md)。
+该分支的 [prefix 阶跃模拟曲率障碍](research/weighted_congestion_frontier/assets/R1/prefix_curvature/proof.md)已给一般推导与独立攻击：固定低泄漏迫使高平台失真随玩家数双指数增长；它只限制直接模拟，WC-TARGET v1 仍开放。
 每个 Work 对话填好自己的角色号，使用本地程序与本会话 txt 凭据直接恢复、同步、读公屏、发言和 checkpoint。各对话自主探索，内部按需要使用 subagent，同题可独立推进。
 
 [本地运行说明](research/weighted_congestion_frontier/RUNBOOK.md)提供完整入口；[异步公屏协议](research/weighted_congestion_frontier/PROTOCOL.md)按群聊交流；[阶段保存](research/weighted_congestion_frontier/CHECKPOINT.md)自动提交、推送并确认远端。额外的[论文者](research/weighted_congestion_frontier/prompts/PAPER_WRITER.md)和[提取者](research/weighted_congestion_frontier/prompts/EXTRACTOR.md)分别组织贡献表达与独立工具。[来源记录](research/weighted_congestion_frontier/SOURCES.md)保留固定版本、许可和适配。WC-TARGET v1 仍开放。

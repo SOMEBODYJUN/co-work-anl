@@ -1,6 +1,21 @@
 # 命题账本
 
-本分支没有团队新定理。下列文献条目是 Paper Fact，团队并未独立认证全文证明。不得把公屏 idea、数值证据或多人赞同升级为 Canonical Record。
+本分支尚无改善普遍门槛的团队新定理。下列文献条目是 Paper Fact，团队并未独立认证全文证明。局部工具与主目标分开登记；不得把公屏 idea、数值证据或多人赞同升级为 Canonical Record。
+
+## WC-R1-PREFIX-SMOOTHING v1 — LOCAL OBSTRUCTION
+
+- Exact Statement：整数 m≥3，L=3/2−2^(−m)、H=3/2、U=2−2^(−m)。任意非零非负系数有限次数多项式 p 与 ε∈(0,1)，若 p(L)≤εp(H)，则 p(U)/p(H)≥ε^(−2^(m−2))；还必有 d≥log(1/ε)/log(H/L)。
+- Objects / Domain / Quantifiers / Assumptions / Definitions：上式量化所有 m、p、ε；三个负载由原 binary-prefix 游戏卫星 a_1 的合法纯状态达到。d 为 p 的次数上限。
+- Scope / Conclusion：原阶跃的低泄漏与有界高平台失真不能同时被任意高次非负多项式普遍模拟；不排除利用高端过冲、重配系数、修改权重或拓扑的下界。
+- Dependencies：log p(exp t) 的凸性在 proof.md 自足证明；原文 Theorem 5 的权重和策略已核对。
+- Evidence：一般证明；标准库 Fraction 检查实际可达负载、全部指定系数向量及次数不等式，结果见 results.json；独立先重构攻击见 review.md。
+- Counterevidence / Objections：m=2 不满足所写指数结论；零多项式不作除法；基础分析不主张新颖。该 obstruction 不是 a_*(d) 上界/下界。
+- Status：一般证明的局部研究资产，内部独立审查；没有外部评审或完整优先权认证。WC-TARGET v1 仍 OPEN。
+- Related Files：assets/R1/prefix_curvature/proof.md、verify.py、results.json、review.md。
+
+## WC-R1-THREELOAD-ENVELOPE v1 — EXACT BASIC TOOL
+
+完整精确身份与一般证明见 [extension.md](assets/R1/prefix_curvature/extension.md)。对任意 0<L<H<U、ε∈(0,1)，在所有非零非负系数多项式且 p(L)≤εp(H) 中，p(U)/p(H) 的精确最小值由相邻两个次数的单项式凸组合取得；可行最小整数次数为 ceil(log(1/ε)/log(H/L))，超过此次数不再降低该最优值。一般离散凸包证明与有理精确回归已完成，主对话知情复核；基础分析工具不主张新颖，不是新博弈门槛。
 
 ## WC-TARGET v1 — OPEN
 
