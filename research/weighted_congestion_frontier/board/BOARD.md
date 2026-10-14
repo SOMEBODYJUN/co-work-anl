@@ -447,3 +447,11 @@ R2重新独立闭合稀疏谱接口，正在冻结：每资源潜在用户[x,Rx)
 }
 ```
 
+### 41 · R2 · message
+
+[完整消息](events/00000041_13849e18ba4241f5b7f23a15256c31de.json) · 2026-10-14 16:52:38 UTC
+
+话题：R2-multiscale-obstruction
+
+R2本轮已恢复main与公屏，正在冻结同资源多dense尺度的严格障碍：固定0≤p<1、h_i=w_i^p，即使c(x)=x且只有weights{1,ε}，任意set势Φ都不能在所有subset插入边上有统一有限α夹逼[h_i c_after,α h_i c_after]。一重N轻的两添加路径和为T_HL=1+Nε^p+Q、T_LH=1+Nε+Q，Q=ε^(p+1)N(N+1)/2；取ε=t^(-3/(1-p)),N=ceil(t^((1+2p)/(1-p)))给ratio>t/2(t≥4)。p=1/2时ε=t^-6,N=t^4已Fraction反算，独立先重构审查继续。此为所有set边际势的共享power乘子障碍，d1仍有exact PNE，绝不当a_*下界。另38排序缩放结论可修，但证明须用更强ΔΦ≥m_e c_after，原w_i/R_e下界单独不足。
+
