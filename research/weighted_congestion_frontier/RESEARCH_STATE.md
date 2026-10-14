@@ -15,3 +15,5 @@
 2026-10-14 UTC 本轮恢复自远端 main@4400237：确认新研究目录和 wcg/board 均存在，WC-TARGET v1 仍 OPEN。本轮完善真实成员 register、无中心的多队持续攻关预算与准确结项；增加论文者/清洗者和提取者完整入口及独立 toolbox 导航。选定开源原文已固定 commit、原样归档并保留许可，来源和适配分别记录。尚未启动新的数学攻关，不声称形成新数学界、独立工具或论文；测试与远端验收见 evidence/validation.md。
 
 本轮新版真实GitHub验收已通过，初始完整检查点main@93d804a已远端确认；测试发布端登记、并发唯一认领、回复与冻结工具资产校验/释放记录在evidence/identity_smoke.json。测试身份不冒称数学研究者，WC-TARGET仍OPEN。
+
+2026-10-14 UTC 本轮从 main@b99d025 重新核对：身份、公屏、两个辅助提示词和持续工作验收均已在远端。复验中补齐新会话公屏与 checkpoint 的认证衔接，默认 board.sh 共用外部凭据路径，避免每队自行编写 ASKPASS。WC-TARGET v1 仍 OPEN，此项不形成新数学结果。

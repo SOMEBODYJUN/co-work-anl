@@ -11,3 +11,5 @@
 普通研究 checkpoint 执行 CHECKPOINT.md：有真实可复用资产、证据层级准确且相关核验完成后，主 agent 立即运行 `bash research/weighted_congestion_frontier/tools/checkpoint.sh`；无需重新向用户请求保存授权，或为了保存重复整轮数学审查。修改 checkpoint 后运行 tests/test_checkpoint.py。候选、精确障碍和有价值的失败回收可保存，不得因此升级 claim。范围外文件显式列入命令；公屏分支仍只能通过 board.py 验证认领。
 
 新成员先按 RUNBOOK.md 用 board.py register 登记真实身份；默认研究轮次约一小时，以实际工具限制与 ACCEPTANCE 为准。新辅助入口为 prompts/PAPER_WRITER.md、prompts/EXTRACTOR.md；原文参考固定在 SOURCES.md 和 upstream/manifest.json，保持原始字节与许可。修改注册/公屏仍跑 test_board.py。不要为了使用归档参考改动上游 SKILL；本项目角色提示词记录必要适配。
+
+默认公屏 CLI 用 tools/board.sh，它与 checkpoint 共用本 clone 的外部凭据路径。修改入口后运行 tests/test_board_entry.py；直接调用 board.py 的 Python 客户端仍需已有认证环境。身份登记仅在真实成员启动后执行。

@@ -60,3 +60,13 @@ Python 标准库 unittest 以实际临时 bare Git 远端验证，执行：
 ## 范围限制
 
 确切字符串 scope 哈希不理解数学语义，overlap 由同伴公开处理；过宽 idea 也需同伴识别。租约要求同步 UTC、遵守截止规则，不能强制暂停断网 worker。拥有写权限者绕过工具可制造无效历史，本轮没有服务器端校验守卫。冻结 commit/hash 不代表证明正确或新颖。运营消息保存在独立公屏分支，不升级研究账本。
+
+## 本轮独立恢复与新会话认证衔接复验
+
+2026-10-14 UTC，实际从远端 main@b99d025 恢复，Git 工作树起始干净。已确认 RUNBOOK、身份 register、约一小时轮次、两个辅助入口及原文来源快照此前已在远端，不把既有资产冒称本轮新创。WC-TARGET 保持 OPEN。
+
+本轮补充 tools/board.sh / board_entry.py，复用 checkpoint 的外部 token-file 路径和现有 ASKPASS；真实文件路径只记本 clone 的 Git 配置，凭据内容没有入库或入公屏。首轮从新 clone 使用用户本会话提供的外部文件，真实 GitHub 读屏成功，重放十二个既有事件、三个部署测试身份、没有未释放 owner。底层公屏状态转移没有改变。
+
+实际运行 test_board.py 的二十七项、test_checkpoint.py 的二十二项、新入口 test_board_entry.py 的五项，全部通过；Python AST 反核合计五十四项。新入口覆盖首轮路径记忆与下一进程复用、带空格路径、原 Git 认证、调用方脏文件/HEAD保持、仓库内/无效/缺失凭据拒绝、失效缓存明确失败、帮助和底层错误码保持；ASKPASS 内部输出以模拟凭据校验，不打印其内容。此前五队各七成员压力测试重新实际运行通过，这是Python发布端与身份测试，并非实测五个Web对话或三十五个LLM同时运行。
+
+三十三份归档原文按 manifest 逐项 SHA-256 重核通过。Python 计算并反算五队七槽位为三十五总成员、三十子成员，六十分钟为三千六百秒；平台槽位与约一小时预算仍无跨账户保证。build_map.py --check、build_crosswalk.py --check、check_assets.py 和 git diff --check 全部通过。新的真实收发验证将在推送入口后记录不可变版本与公屏事件；未完成前不声称此包装入口已经实际写入GitHub。

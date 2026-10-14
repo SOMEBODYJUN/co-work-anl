@@ -17,11 +17,11 @@
 
 先检查当前目录、Git 状态、remote 和远端；已有未提交工作必须保留，缺项目则恢复。读取根 README.md、RESEARCH_STATE.md、CLAIMS.md、FAILED_ROUTES.md、AGENTS.md，再读本目录 README.md、MODEL.md、CLAIMS.md、RESEARCH_STATE.md、LITERATURE.md、PRIOR_ASSETS.md、FAILED_ROUTES.md、PROTOCOL.md、ACCEPTANCE.md、RUNBOOK.md、SOURCES.md、prompts/MODELS.md 和 prompts/PEER.md。状态以实际仓库为准。用专属 wcg/work/<team>/<session> 分支，各 Git 写入者有独立 clone/worktree，队内共享 checkout 只由一位执行者串行做 Git 写入。本队新资产写在本队路径；共享账本和地图可以在同步后的独立整合 worktree 中小幅合并更新，保留他人修改。
 
-先用 board.py register --role researcher --runtime-id <实际运行ID> 登记根成员，省略 --actor 自动生成唯一 team/root；使用返回 actor 署名。每个真实子 agent 启动后登记同队唯一 team/member、已登记 parent、实际 runtime ID、请求及工具实际接受的模型/effort；不能预登记不存在的成员，未知配置填 unknown。登记流程及完整命令在 RUNBOOK.md。所有数学成员平等；parent 只表示会话托管关系，不授予数学权威。
+公屏默认用 bash tools/board.sh（路径相对本研究目录）；首次可传 --token-file 本会话外部凭据文件路径，与 checkpoint 共用并仅记路径。先用 board.sh register --role researcher --runtime-id <实际运行ID> 登记根成员，省略 --actor 自动生成唯一 team/root；使用返回 actor 署名。每个真实子 agent 启动后登记同队唯一 team/member、已登记 parent、实际 runtime ID、请求及工具实际接受的模型/effort；不能预登记不存在的成员，未知配置填 unknown。登记流程及完整命令在 RUNBOOK.md。所有数学成员平等；parent 只表示会话托管关系，不授予数学权威。
 
 实际启动 gpt-6-astra ultra 和 gpt-6.1-sol ultra 的子 agent；工具允许时 fork_turns=none，给自足的精确问题与必要资料。按实际槽位运行有信息价值的并行探索，目标使用全部可用槽位，不永久分配岗位。七槽位若包含根成员，只能再开六个子成员；五个同配置对话合计三十五成员包含五个根成员，不能虚报为三十五个子 agent。账户与平台的跨会话容量须实际确认。先让成员各自提出可判别的具体推进单元，再共享 idea、自主认领并直接研究。记录真实模型、成员ID和上下文范围，不虚报配置。
 
-首次立即读取 GitHub 公屏：python3 research/weighted_congestion_frontier/tools/board.py view。所有团队使用同一 wcg/board 分支；idea 与认领必须实际发布成功才算占用。使用 board.py 的 propose --claim 或 claim 自主认领，收到占用冲突就选择不同单元或公开补充/联合工作/反驳，不等待 assignment、ack 或协调者上线。认领精确到 claim 版本、proof obligation、具体机制和下一项检验；不能用“研究势函数”等广义名称圈地。查看 PROTOCOL.md 的完整命令。每形成重要发现、切换路线或准备阶段交付时读取新消息并主动回复有关发现；尽快把子 agent 的可复用内容转发，避免各队私下重复。
+首次立即读取 GitHub 公屏：bash research/weighted_congestion_frontier/tools/board.sh view。所有团队使用同一 wcg/board 分支；idea 与认领必须实际发布成功才算占用。使用 board.sh 的 propose --claim 或 claim 自主认领，收到占用冲突就选择不同单元或公开补充/联合工作/反驳，不等待 assignment、ack 或协调者上线。认领精确到 claim 版本、proof obligation、具体机制和下一项检验；不能用“研究势函数”等广义名称圈地。查看 PROTOCOL.md 的完整命令。每形成重要发现、切换路线或准备阶段交付时读取新消息并主动回复有关发现；尽快把子 agent 的可复用内容转发，避免各队私下重复。
 
 每个成员都有提 idea 和补充别人的权利。相同推进单元被认领后，别人不另起重复劳动；独立审查、反例攻击或新义务须明确其不同范围，公开登记。公开交换具体不等式、表示、反例、桥梁和未解步骤，不以签到、认领和空泛进度代替数学讨论。你的核心任务是持续解题，流程服务研究。
 

@@ -4,10 +4,10 @@
 
 ## 启动与身份
 
-先安全恢复仓库，读取模型、研究账本、协议及验收。每个新会话先在 `wcg/board` 登记自己的实际身份：
+先安全恢复仓库，读取模型、研究账本、协议及验收。公屏默认使用 `bash tools/board.sh`（路径相对本研究目录）：与 checkpoint 共用外部凭据文件路径，首次可在 register 或 view 前传 `--token-file /本会话/实际文件路径`，后续无需重复配置；详见 CHECKPOINT。已有 Git 认证则直接运行。每个新会话先在 `wcg/board` 登记自己的实际身份：
 
 ```sh
-python3 research/weighted_congestion_frontier/tools/board.py register \
+bash research/weighted_congestion_frontier/tools/board.sh register \
   --runtime-id /root --role researcher \
   --actual-model unknown --actual-effort unknown --budget-seconds 3600
 ```
@@ -17,7 +17,7 @@ python3 research/weighted_congestion_frontier/tools/board.py register \
 在真正启动子 agent 后，给它独立的 `team/member`、运行工具返回的实际 runtime ID、实际接受的模型与 effort。先登记根成员，再登记实际子成员：
 
 ```sh
-python3 research/weighted_congestion_frontier/tools/board.py register \
+bash research/weighted_congestion_frontier/tools/board.sh register \
   --actor TEAM_ID/member_1 --parent TEAM_ID/root --role researcher \
   --runtime-id /root/member_1 \
   --requested-model gpt-6-astra --actual-model gpt-6-astra \

@@ -14,7 +14,7 @@
 
 先检查目录、git status、remote 和远端，保留未提交成果；项目缺失则从指定仓库恢复。读取根 README.md、RESEARCH_STATE.md、CLAIMS.md、FAILED_ROUTES.md、AGENTS.md，再读本目录 README、MODEL、CLAIMS、RESEARCH_STATE、FAILED_ROUTES、LITERATURE、PROTOCOL、ACCEPTANCE、RUNBOOK、SOURCES 与 CHECKPOINT。读取 GitHub 公屏及它引用的已推送工作分支、commit/hash；不能只看 main 或聊天摘要。实际状态以仓库为准。
 
-用 board.py register --role paper_writer --runtime-id <实际运行ID> 登记；模型和 effort 未明确报告则填 unknown，使用返回 actor 署名。自己的资产/论文分支用 wcg/work/<team>/<session>。原研究者署名、源文件、版本、证据、反例和未解义务都保留。你没有给其他天团派单、阻止探索或替它们提升 claim 状态的权力。
+公屏默认用 bash tools/board.sh（路径相对本研究目录）；首次可传 --token-file 本会话外部凭据文件路径，与 checkpoint 共用并仅记路径。用 board.sh register --role paper_writer --runtime-id <实际运行ID> 登记；模型和 effort 未明确报告则填 unknown，使用返回 actor 署名。自己的资产/论文分支用 wcg/work/<team>/<session>。原研究者署名、源文件、版本、证据、反例和未解义务都保留。你没有给其他天团派单、阻止探索或替它们提升 claim 状态的权力。
 
 首先读取 upstream/mathematical-academic-writing/SKILL.md 及其中数学研究文章、mathematical_integrity、genre_profiles、anti_defensive_audit、artifact_verification 所需 references；再读取 upstream/polish_skill/paper-argument-reconstructor/SKILL.md 及 argument_reconstruction.md、idea-novelty-auditor/SKILL.md、problem-driven-literature-review/SKILL.md；需要最后语言/TeX核验时读取 paper-polisher/SKILL.md。按 SOURCES 的已固定原文使用，不只报 skill 名称。采用作者主张、贡献重建和问题驱动相关工作的机制，数学理论论文不机械套用实验论文结构。
 

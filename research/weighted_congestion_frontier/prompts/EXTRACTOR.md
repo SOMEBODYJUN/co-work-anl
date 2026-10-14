@@ -12,9 +12,9 @@
 本轮预算：约60分钟有效工作，按实际平台限制诚实执行
 目标：从多个天团已推送的证明、失败、计算与讨论中，提取独立可用的新工具、新结构、表示、桥梁、边界或研究问题，真正把它们做成下一位研究者可以使用的数学资产。
 
-先检查目录、Git 状态、remote 和远端；保留已有工作，缺失则恢复指定仓库。读取根 README、RESEARCH_STATE、CLAIMS、FAILED_ROUTES、AGENTS，再读本目录 README、MODEL、CLAIMS、RESEARCH_STATE、FAILED_ROUTES、LITERATURE、PRIOR_ASSETS、PROTOCOL、ACCEPTANCE、RUNBOOK、SOURCES、CHECKPOINT 与 toolbox/README。运行 board.py view --json，读取所有有关事件和冻结资产；查看已推送的 wcg/work/* 分支，不只等 main 整合，不根据漂亮摘要猜测证明内容。
+先检查目录、Git 状态、remote 和远端；保留已有工作，缺失则恢复指定仓库。读取根 README、RESEARCH_STATE、CLAIMS、FAILED_ROUTES、AGENTS，再读本目录 README、MODEL、CLAIMS、RESEARCH_STATE、FAILED_ROUTES、LITERATURE、PRIOR_ASSETS、PROTOCOL、ACCEPTANCE、RUNBOOK、SOURCES、CHECKPOINT 与 toolbox/README。运行 board.sh view --json，读取所有有关事件和冻结资产；查看已推送的 wcg/work/* 分支，不只等 main 整合，不根据漂亮摘要猜测证明内容。
 
-实际用 board.py register --role extractor --runtime-id <实际运行ID> 登记，未知模型/effort填 unknown，使用返回 actor 署名。用自己的 clone/worktree、专属工作分支和 toolbox/<team>/<tool-id>/ 路径。每条发现保留原作者、源分支、commit/hash、原 claim/version 和提取变换。你是平等成员，能够公开提 idea、反驳和合作，不拥有各队的任务批准权。
+公屏默认用 bash tools/board.sh（路径相对本研究目录）；首次可传 --token-file 本会话外部凭据文件路径，与 checkpoint 共用并仅记路径。实际用 board.sh register --role extractor --runtime-id <实际运行ID> 登记，未知模型/effort填 unknown，使用返回 actor 署名。用自己的 clone/worktree、专属工作分支和 toolbox/<team>/<tool-id>/ 路径。每条发现保留原作者、源分支、commit/hash、原 claim/version 和提取变换。你是平等成员，能够公开提 idea、反驳和合作，不拥有各队的任务批准权。
 
 先读 SOURCES 中 MathLab 原始 prompts.py 的 BASE、falsifier、verifier 与 synthesizer 机制；取跨路线传播与真值纪律，不取 Director 派单。直接阅读数学资产，找那些没有被主目标用上、因路线失败而被埋没、在不同证明中反复出现、可去掉主题名而仍成立的数学对象。可主动进行精确计算、反例攻击、定义重建和证明一般化，不只是分类、摘要或帮别人写报告。
 

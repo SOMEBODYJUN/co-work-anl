@@ -53,6 +53,8 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/prompts/TEAM.md | 所有主对话相同的完整入口；复制到任意多个新对话 |
 | research/weighted_congestion_frontier/prompts/PEER.md | 全体子 agent 共用的自主解题要求；每个子 agent 都保留提 idea 的权利 |
 | research/weighted_congestion_frontier/prompts/MODELS.md | 用户指定模型与真实配置记录；启动时核对可用能力 |
+| research/weighted_congestion_frontier/tools/board.sh / tools/board_entry.py | 默认公屏入口，与 checkpoint 共用本会话外部凭据路径；新队首轮配置一次，后续直接收发 |
+| research/weighted_congestion_frontier/tests/test_board_entry.py | 真实本地 Git 的认证路径记忆、原认证兼容、脏工作保护和无效配置测试；改入口后运行 |
 | research/weighted_congestion_frontier/tools/board.py | Git 公屏工具；register真实身份、view、idea、claim、续约、结果和讨论，冲突后重新检查 |
 | research/weighted_congestion_frontier/CHECKPOINT.md | 一键保存、一次认证、自动同步及明确失败处理；首次启动、网络恢复和提交异常时读取 |
 | research/weighted_congestion_frontier/tools/checkpoint.py | 默认限定本研究目录的 add/commit/push/远端验证及冻结 descriptor；每个有价值阶段直接运行 |

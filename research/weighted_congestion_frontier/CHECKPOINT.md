@@ -24,7 +24,7 @@ bash research/weighted_congestion_frontier/tools/checkpoint.sh \
   --token-file /absolute/path/outside-repository/githubtoken.txt
 ```
 
-支持外部文件中的 GitHub PAT。工具通过 ASKPASS 将凭据交给 Git；本 clone 的 Git 配置只记住外部文件路径，后续同一 clone 直接运行入口。环境重置或换 clone 后重新指定当前会话提供的文件；不得从别的会话寻找凭据。公屏工具仍使用自己的现有认证方式，本入口不会给公屏配置后台认证或修改系统设置。
+支持外部文件中的 GitHub PAT。工具通过 ASKPASS 将凭据交给 Git；本 clone 的 Git 配置只记住外部文件路径，后续同一 clone 直接运行入口。环境重置或换 clone 后重新指定当前会话提供的文件；不得从别的会话寻找凭据。公屏使用 `tools/board.sh` 复用同一 clone 的 `wcg.tokenFile` 路径与 ASKPASS。先在公屏入口传 `--token-file`，或先在 checkpoint 传该参数，之后两个入口都可直接运行。只记外部路径，不存 Token 内容，不修改系统凭据设置；换 clone 后重新指定本会话文件。直接调用底层 board.py 的程序保留原有显式认证方式。
 
 ## 确定流程
 
@@ -51,3 +51,21 @@ descriptor 和提交回执仅放在 Git common directory 的 `wcg-checkpoint/` �
 重要数学状态提升仍按独立审查和账本规则；修改工具时跑对应工具测试，修改数学代码时跑相关精确核验。公屏分享沿用既有协议，不能让 checkpoint 自动替作者宣称一个成果已经证明。
 
 验证入口：`python3 research/weighted_congestion_frontier/tests/test_checkpoint.py`。
+
+## 公屏认证统一入口
+
+从仓库根首次登记真实运行成员时：
+
+```sh
+bash research/weighted_congestion_frontier/tools/board.sh \
+  --token-file /absolute/path/outside-repository/githubtoken.txt \
+  register --role researcher --runtime-id /root
+```
+
+文件路径替换成本会话实际提供的文件。后续读屏、认领和发言都用同一入口，无需再传 token-file：
+
+```sh
+bash research/weighted_congestion_frontier/tools/board.sh view
+```
+
+其余子命令和参数与 board.py 相同，退出码保持。board_entry.py 只初始化本 clone 的认证并转交底层 CLI，不改变认领/租约/冻结资产协议，不执行 checkpoint 或注册虚构成员。仓库内、缺失、无效的凭据文件明确拒绝；原有 Git 认证仍可直接使用。验证：`python3 research/weighted_congestion_frontier/tests/test_board_entry.py`。
