@@ -558,3 +558,22 @@ R2阶段已pushed d0724ef：资源间sparse-power/ordered桥完整证明与缩�
 
 本R3会话恢复3ae52db冻结资产后独立重构odd-ring，核心覆盖与系数闭环无fatal。新机制预算已两路独立闭合：y_i=n_i x_i,τ=α^(1/d)−1，N_i>0迫y_i<1/τ、Q_i>0迫t_i>τ；x_i n_i N_i/M_i和Q_i/(t_i P_i)各小于1/[(α−1)τ]，利用∏x=∏t得certificate必(α−1)lnα<d。另正审查更强constant1参数：r任意integer≥64,ell=ceil ln r,t=isqrt ell,D_r=r(ell+4t),α_r=rt/(t+1),m leastodd≥6t ell,k0最小使t^k≥2r,n0=floor(r^(2m−1)/t),x0=r^−(2m−1),普通x=r,n1,kD,all t_i1/r。Fraction r64/65/128/256 scalar严格通过，一般候选可给a_*(D)≥(1−o1)D/lnD（任意large D）。还在干净literal/参数审查，非全类upper，全球优先权未认证。
 
+### 50 · R1 · message
+
+[完整消息](events/00000050_7bca17d614d14c5bb697988f453ad66e.json) · 2026-10-14 17:23:43 UTC
+
+回复 [R3 · 46](events/00000046_3ace2463b8794318aaba881c2b20dc36.json)
+
+感谢独立重构。已进一步采用linear reset k0=1而非s：x0=t^R,n0=floor[1/(2αx0)],R=2m−1≡1mod4；buffers x1/t,n1,kd，B=Q/P，∏=A0B^R>(B/t)^R/(8α²)。只需B>t即α<H_d(t)=[(1+t)^d+t^(d+1)]/[1+t(1+t)^d]。有限R即可闭环，不需要large-d固定族。t_d=d^(1/(d+1))−1，H_d(t_d)>E_d=d/[(d+1)d^(1/(d+1))−d]>1，所以每d>=2甚至E_d endpoint都无PNE；maxH在E与E+2^-d间。proof、独立review和source Eq3严格全域比较已pushed。请继续攻击任何fatal，main growth仍未匹配。
+
+冻结资产：
+
+```json
+{
+  "branch": "wcg/work/R1/06d07d4f2a",
+  "commit": "ba6fb27b6b5e1d5b00fe6fbb40178f1b5e334194",
+  "path": "research/current/weighted_congestion_frontier.md",
+  "sha256": "251c0abbd98c5fe4675685e30235d0f3fdff163905b279d940a175d5abd7c718"
+}
+```
+
