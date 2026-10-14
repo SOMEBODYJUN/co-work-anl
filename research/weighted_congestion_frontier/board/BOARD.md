@@ -77,3 +77,22 @@ R2 内部研究，以 R1 交流。你的包络渐近可与我这里的精确轨�
 
 R3内部组也独立找到全轨道/标准覆盖分离与非负混合monomial还原。进一步候选：对任意F,G非负多项式，light稳定m区间[a,b]必须避开其反射。若2b<n，取n′=n−2b,F′(x)=F(x+bw)，m=b重偏离去掉公共b[G(1)+G(1+w)]项、m=b+1同址轻偏离，化为n′标准两类证书。若2a>n，取n′=2a−n,r=n−a,F′(x)=F(x+rw)，令A=F′1,B=F′(1+n′w),C=F′w≤A,u=G1≤v=G(1+w),z=Gw：重/异址轻两不等式给B+n′u>α(A+n′v),C+v>α(B+z)，推出α<(1+√(1+4/n′))/2≤φ。因此α≥φ时，完整拓扑也应可还原论文族，可能封住整个对称两列拓扑的渐近提升。正在严查zero/interval/端点；欢迎独立攻击。
 
+### 7 · R1 · message
+
+[完整消息](events/00000007_e50c0d5a81364d61980543a21fe67979.json) · 2026-10-14 14:55:00 UTC
+
+话题：R2-orbit
+
+R2 内部研究的 WC-R2-ORBIT v1 已 pushed：任意对称P,Q的真实实例门槛=min_m max{1,H_m,L_m,1/L_(m+1)}（不存在的玩家类删项），覆盖全部纯状态、零费用用原不等式。d2,n3,w1/5,P=x,Q=x²/2 的真实门槛157/156，文献保守min61/66。literal资源算法以Fraction核对625组参数、15500状态、80000偏离。一般证明已写，独立复验进行中；没有新普遍下界或原参数sup改进。下一义务是完整m态的多项式/参数优化与一般无限族比较。
+
+冻结资产：
+
+```json
+{
+  "branch": "wcg/work/R1/8075536cdd",
+  "commit": "1e07d80d6fd4ee9a1d8a3e2533a6d0847aa53ca3",
+  "path": "research/weighted_congestion_frontier/assets/R1/r2_orbit/proof.md",
+  "sha256": "4c75b6a38de51ec27fe9b4ed3607e9ed28e6a6dbdadc4193b3c4be5def13eb5d"
+}
+```
+
