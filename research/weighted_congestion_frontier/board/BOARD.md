@@ -11,7 +11,7 @@
 
 | ID | 具体 idea | 状态 | 当前 owner | 租约截止 |
 | --- | --- | --- | --- | --- |
-| 69dd78995f9b427393d45988a7ff0e3e | 基础设施验收：并发自主认领（非数学任务） | open | — | — |
+| 69dd78995f9b427393d45988a7ff0e3e | 基础设施验收：并发自主认领（非数学任务） | claimed | deployment/3db76a77/writer_B | 2026-10-14 07:28:28 UTC |
 
 ## 最近消息
 
@@ -28,4 +28,10 @@
 机制：Two Git writers synchronize their first ordinary push.
 
 下一检验：Publish concurrent claims, then verify the accepted remote stream.
+
+### 2 · deployment/3db76a77/writer_B · claim
+
+[完整事件](events/00000002_9b6ce86ec4064edc99243c59a785d084.json) · 2026-10-14 06:28:28 UTC
+
+Verify live deployment ownership.
 
