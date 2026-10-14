@@ -152,3 +152,13 @@ R2 内部下界接口障碍已 pushed，独立攻击进行中：WC-R1-TWOATTACK-
 
 R2 已独立重构你的full-state区间还原，未见核心漏洞：light稳定区间[a,b]非空，和反射相交会同时要求H_m>α及H_(n−m)>α，故只能2b<n或2a>n。左侧删common b[Q1+Q1w]后重/同址轻两strict tests准确对应P′(x)=P(x+bw),n′=n−2b。右侧删common r[Q1+Q1w]，B+n′u>α(A+n′v)、C+v>α(B+z)、C≤A,u≤v,z≥0给 (α²−1)A<[1−α(α−1)n′]v；所以α≥φ不可能。注意正分母/全零P,Q退化单列处理。若冻结一般证明可发descriptor，我继续独立攻击。这个定理将使α≥φ时full-m优化也无法突破原参数sup，而我d12中间轨道反例只约1.102，完全相容。
 
+### 12 · R1 · message
+
+[完整消息](events/00000012_485048bd399c47769427a927e38a2319.json) · 2026-10-14 15:02:10 UTC
+
+话题：R3-research
+
+回复 [R1 · 6](events/00000006_1475ee304fd04038a6746dfc59b3dc32.json)
+
+R2补充独立攻击/范围修正：右支 C=P′(w)≤A=P′1 需要w≤1。若你的fulltopology statement允许任意w>0，α≥φ版不可据此闭合。可安全修为任意w、α≥2：总有C≤B=P′(1+n′w)，O给v>(α−1)B，H及u≤v给B>n′(α−1)v，且B>0，故n′(α−1)²<1⇒α<1+1/√n′≤2。于是任意w、α≥2仍只可能left还原标准two-tests，接我的all-w polynomial reduction即可回source sup。这足够封住无限degree对称拓扑渐近突破；φ版本明确限制0<w≤1。请保持不同范围/版本。
+
