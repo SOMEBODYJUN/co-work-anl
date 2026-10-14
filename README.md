@@ -151,3 +151,5 @@ python3 research/check_assets.py
 ```
 
 本次人类交接的范围、发现及验证见 [learning/AUDIT.md](learning/AUDIT.md)。
+
+拥塞分支新增[局部权带与密度边界](research/current/weighted_congestion_frontier.md)：resource-local ratioR有R-PNE，而minimum potential-user density可任意padding且保持全部存在问题。四玩家缩权交叉模板可严格越过常数2，仍不改变开放的增长阶目标。

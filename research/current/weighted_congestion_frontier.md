@@ -97,6 +97,58 @@ has an exact 9/5-PNE at degree 40. Its best factors tend to
 5235403/2930833<9/5. This does not restrict reweighting or increasing the
 number of players.
 
+## Local weight bands and their genuine boundary
+
+**WC-R3-DENSE-SHARE-v1** and **WC-R3-DENSE-LOCAL-v1** give a self-contained
+Shapley interface: for each resource, if all its potential users have weight
+ratio at most R>=1, every minimum of the resource-minimum-scaled Shapley
+potential is an R-PNE. The factor is independent of degree and cardinality.
+The [multinomial coefficient proof](../weighted_congestion_frontier/assets/R3/dense_bands/README.md)
+and [independent iid-support proof](../weighted_congestion_frontier/assets/R3/dense_band_review/independent_review.md)
+both prove minw*c(W)<=phi_i<=maxw*c(W); arbitrary multiresource deviations,
+empty strategies and zero costs are covered.
+
+The same package separately records **WC-R3-DENSE-POT-SHARP-v1**,
+**WC-R3-BAND-CURL-v1**, and **WC-R3-BAND-LINEAR-v1**: the stated selector's
+R guarantee can be approached, band-specific normalization violates ordinary
+exact-potential mixed differences, and the unchanged selector can lose at least
+d/6 across two equal-weight bands despite exact PNE elsewhere. These are
+specified-mechanism obstructions; they do not refute equilibrium existence.
+The Shapley mechanism and bounded-weight literature already exist; exact
+priority for these reconstructed interfaces has not been certified.
+
+**WC-R3-POTENTIAL-DENSITY-PADDING-v1** is a different, full-model reduction:
+adding positive-weight players with empty/{e} choices preserves every finite
+alpha-equilibrium existence question by projection/lift. It can make every
+occupied potential-weight interval contain at least any prescribed L users.
+Therefore this minimum-potential-density subclass has exactly the same
+universal threshold as the full class. The
+[proof and separate audits](../weighted_congestion_frontier/assets/R3/potential_padding/proof.md)
+use positivity of every nonzero nonnegative polynomial at positive loads.
+This does not attack maximum sparse density, active density, or obligatory
+participation; a nondecreasing-step example shows why the projection theorem's
+polynomial condition must remain explicit.
+
+## Shrinking-weight constant crossover interface
+
+The [scaling package](../weighted_congestion_frontier/assets/R3/crossover_audit/limit_family.md)
+keeps four players and fourteen resources, takes degree 32m^2 and light
+weights (1/(10m),1/(20m),1/(50m)), and proves a uniform finite-to-limit
+transport. **WCF-R3-SCALED-ORIGINAL-v1** has limiting factor 65/34 and
+retains the original 9/5 obstruction for every integer m>=1. Retuned amplitudes
+give **WCF-R3-SCALED-RETUNED-v2**: no 2-PNE for every m>=20, plus an exact
+m=3, degree288 certificate; m=1,2 do have 2-PNE. The v1 m>=52 range is retained
+as a proved subcase. The independent review gives the sharper uniform margin.
+
+**WCF-R3-SCALED-TEMPLATE-v1** proves exactly the selected-witness template's
+strict feasibility for alpha below the unique root r>2 of
+r^3-r^2-2r-1=0. For each such alpha, fixed rational amplitudes are chosen
+first, then a finite starting m, and all subsequent states are covered.
+The [independent symbolic review](../weighted_congestion_frontier/assets/R3/limit_review/review.md)
+checks all quantifiers and the endpoint. The template is not declared optimal
+over the entire topology. These constant four-player families do not improve
+the known growing lower envelope.
+
 ## State and continuation
 
 Both general proofs have undergone separate internal reconstruction and

@@ -29,3 +29,7 @@
 ## R3有限次数交叉分离与延伸缺口
 
 已完成并独立核验 T32≤89/50<9/5<B(G)。source32全部整数参数/实区间的证明和交叉16状态/64偏离都可复现。固定weights/coefficient直接升degree在40已有9/5-PNE，极限亦失败。主目标仍OPEN；下一义务是玩家数/resource support可增长的交叉反馈，以及dense近等权组的可粘合存在机制。参数化四玩家极限族与窄带Shapley候选另行审查，不将其默认为新无限下界或全类上界。
+
+## R3局部权带和padding前沿
+
+资源内部ratioR给R-PNE，Shapley正系数proof及不同iid-support独审闭合；同resource多dense尺度仍缺新桥。minimum potentialdensity可任意padding而保持完整finiteα存在问题，故只提高该密度不会得到真正更窄子类。需active load/mandatory participation/preprocessing，并证明选择过程保持该性质。四玩家缩权template一般proof亦独审闭合，cubic根只刻画指定见证；retuned v2认证m≥20及m3，m1,m2失败。所有这些局部资产不闭合WC-TARGET的增长阶。下一有信息价值的义务：高support可增长交叉反馈，或在同resource多dense尺度间建立新的共同预算/选择机制。

@@ -487,3 +487,5 @@ n≥9已另由混合包络解析推论证明半覆盖，故这些障碍没有否
 [完整策略与精确分离](research/current/customer_attraction/terminal_tie_lift_obstruction.md)排除任意既定早期乘子的自动提升，不排除重选乘子或一般半覆盖。回收是[更宽的商空间提升](research/current/customer_attraction/terminal_tie_quotient.md)：同实例改用(2,1,1)后成功。未来必须联合选择早期支付与末端符号修正；非均匀incumbent净流不能被当作只含未覆盖客户的债。
 
 加权拥塞的固定交叉参数升degree路线已严格失败：[degree40与极限证书](research/weighted_congestion_frontier/assets/R3/crossover_audit/README.md)。仅否定这组weights/amplitudes的升degree延伸，保留满support极限表示；WC-TARGET仍OPEN。
+
+加权拥塞的[dense Shapley拼接障碍](research/weighted_congestion_frontier/assets/R3/dense_bands/README.md)仅否定指定selector；[minimum potentialdensity padding](research/weighted_congestion_frontier/assets/R3/potential_padding/proof.md)保留整个存在问题，需active/mandatory条件才形成真实结构限制。

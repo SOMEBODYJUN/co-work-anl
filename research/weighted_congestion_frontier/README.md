@@ -76,3 +76,11 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 [degree32交叉资产](assets/R3/crossover_audit/separation.md)给 T32≤89/50<9/5<B(G)，完整对称类允许任意非负主/副多项式及所有正同轻权。源包络上界由[全实参数证书](assets/R3/source32_bound/PROOF.md)证明，交叉游戏全部状态及偏离有两份独立精确核验。固定系数升次数在d40失败；该路线的极限值也低于9/5。有限分离不解决WC-TARGET增长阶。
 
 路径 `research/weighted_congestion_frontier/assets/R3/source32_bound/` 保存消元证明、整数Bernstein检查器和完整区间证书；以后比较d32下界时读。`research/weighted_congestion_frontier/assets/R3/crossover_audit/` 保存逐资源策略、全状态成本、独立重构和固定参数失效；构造增长族前读，避免只提高次数。
+
+## 局部权带存在接口与真正前沿
+
+[Shapley权带包](assets/R3/dense_bands/README.md)给每resource potential-user ratio≤R时的R-PNE，两种独立一般证明已重构；并严格分开selector sharpness、跨band curl和该selector的d/6损失。[潜在密度padding](assets/R3/potential_padding/proof.md)更进一步：任意游戏可把每occupied权区间minimum potentialcount补到任意L，而全部finiteα存在问题原样保留。因此minimum potentialdensity本身不是比全类简单的存在子类；这不否定max稀疏K、active density或不可逃避参与。
+
+[四玩家缩权接口](assets/R3/crossover_audit/limit_family.md)与[独立符号攻击](assets/R3/limit_review/review.md)给指定见证模板cubic根边界和合法多项式传递；重调参数在degree288无2-PNE，且所有m≥20有统一证明。此为constant mechanism，未提高已知growing envelope。
+
+文件 `research/weighted_congestion_frontier/assets/R3/dense_bands/` 保存share排序、scaled potential和明确selector障碍；`dense_band_review/` 保存不同iid-support proof与独立检查器。`potential_padding/` 保存全模型projection/lift theorem、occupied-band quantifiers与一般step费用反边界。`crossover_audit/limit_family.md` 与 `limit_review/` 保存constant模板、strict root endpoint及完整uniform transport；扩玩家support前读，勿从4人constant extrapolate增长。

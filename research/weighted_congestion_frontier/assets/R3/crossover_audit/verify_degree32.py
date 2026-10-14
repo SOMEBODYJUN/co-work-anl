@@ -115,6 +115,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--generate", type=Path, metavar="NEW_DIRECTORY")
     args = parser.parse_args()
+    if args.generate is not None and args.generate.exists():
+        parser.error("--generate requires a directory that does not exist")
     assert improvement_ratio(Q(0), Q(0)) == 1
     assert improvement_ratio(Q(1), Q(0)) is None
     assert improvement_ratio(Q(0), Q(1)) == 0

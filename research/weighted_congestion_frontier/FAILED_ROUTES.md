@@ -13,3 +13,7 @@
 ## WCF-R3-FIXED-DEGREE-FAIL-v1
 
 尝试保留degree32交叉候选的4权、14资源和amplitudes，仅提高六项monomial次数。具体失败：degree40的0111/1000状态最大改善≤9/5；全部状态极限最佳factor=5235403/2930833<9/5。全support外的high-degree资源趋零，quadratic广播保留，瓶颈换到不同状态。见[完整失败证书与复算](assets/R3/crossover_audit/README.md)。排除这组固定参数的全degree延伸，不排除重配权、系数或增加玩家。可回收满support指示器极限表示；未来只有改参数/拓扑并重证全状态才值得再试。
+
+## Separate-band Shapley normalization and minimum-potential density
+
+按每player所在band单独除scale会让two-user cubic混合差分κ与κ/M冲突，ordinary exact potential不存在；恢复同一个weighted potential仍可由two singleton bands造成selector ≥d/6损失。详见[dense proof](assets/R3/dense_bands/README.md)。仅排除该归一化/selector，不排除其他势或存在证明。更强的[全模型padding reduction](assets/R3/potential_padding/proof.md)说明minimum occupied potentialdensity任意大仍与全类同threshold；新玩家通过empty退出，无法提供active density。可回收本地R接口、iid-share表示、potential/active distinction；重试必须引入并保持active/mandatory condition或新的shared-scale机制。

@@ -1,5 +1,9 @@
 # 当前研究状态
 
+## 2026-10-14 UTC：R3局部权带、潜在密度归约与constant交叉接口
+
+Shapley局部R-PNE有两种独立proof；minimum potentialdensity padding保留完整α存在/threshold，真实缺口转向active/mandatory参与或同resource多尺度共同预算。四玩家缩权template和strict cubic边界亦独审完成，constant family并非growing lower突破。规范账户 research/current/weighted_congestion_frontier.md 指向全部证明、反边界及可复现证书；WC-TARGET仍OPEN。
+
 ## 2026-10-14 UTC：R3有限degree32交叉分离
 
 T32≤89/50<9/5<B(G)已完成全实参数证书和独立逐资源重构；固定参数升degree在40失效。详见 research/weighted_congestion_frontier/assets/R3/crossover_audit/separation.md。全类o(d)和超源包络无限下界仍未取得。
