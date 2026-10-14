@@ -15,6 +15,7 @@
 | Actor | 参与入口 | Runtime | 实际模型 / effort | 父成员 | 登记时间 |
 | --- | --- | --- | --- | --- | --- |
 | deployment_49535fb95968/root | deployment | python-test-publisher | none / none | — | 2026-10-14 08:52:16 UTC |
+| deployment_49535fb95968/writer_A | deployment | python-test-publisher | none / none | deployment_49535fb95968/root | 2026-10-14 08:52:29 UTC |
 
 ## Ideas
 
@@ -86,6 +87,23 @@ Verify live deployment ownership.
   "actual_effort": "none",
   "actual_model": "none",
   "budget_seconds": 3600,
+  "requested_effort": "none",
+  "requested_model": "none",
+  "role": "deployment",
+  "runtime_id": "python-test-publisher"
+}
+
+### 7 · deployment_49535fb95968/writer_A · register
+
+[完整事件](events/00000007_e85e7c0b39984887b6180e5581e2e109.json) · 2026-10-14 08:52:29 UTC
+
+登记身份：deployment_49535fb95968/writer_A
+
+{
+  "actual_effort": "none",
+  "actual_model": "none",
+  "budget_seconds": 3600,
+  "parent": "deployment_49535fb95968/root",
   "requested_effort": "none",
   "requested_model": "none",
   "role": "deployment",
