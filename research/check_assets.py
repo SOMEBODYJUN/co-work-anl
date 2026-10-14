@@ -78,11 +78,15 @@ def check() -> None:
         for field in ("implementation", "proof", "sources", "tests", "records", "examples"):
             for path in entry[field]:
                 require((ROOT / path).is_file(), (entry["id"], path))
+                # The independent weighted-congestion branch keeps newly
+                # authored proof, audit and frozen evidence together. Its
+                # graph still requires a research/current navigation account.
+                wc_assets = "research/weighted_congestion_frontier/assets/"
                 expected = {"implementation": ("facility_spe/", "multi_facility_spe/", "customer_attraction/"),
-                            "proof": "research/current/",
-                            "sources": "history/",
-                            "tests": "tests/",
-                            "records": "evidence/"}
+                            "proof": ("research/current/", wc_assets),
+                            "sources": ("history/", wc_assets),
+                            "tests": ("tests/", wc_assets),
+                            "records": ("evidence/", wc_assets)}
                 if field in expected:
                     require(path.startswith(expected[field]),
                             ("incorrect asset role", entry["id"], field, path))
