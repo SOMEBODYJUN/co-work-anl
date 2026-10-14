@@ -1,6 +1,6 @@
 # 命题账本
 
-本分支没有团队新定理。下列文献条目是 Paper Fact，团队并未独立认证全文证明。不得把公屏 idea、数值证据或多人赞同升级为 Canonical Record。
+本分支的文献条目是 Paper Fact，团队并未独立认证全文证明；下方登记本工作分支 R2 方法资产。不得把公屏 idea、数值证据或多人赞同升级为 Canonical Record。
 
 ## WC-TARGET v1 — OPEN
 
@@ -44,3 +44,12 @@
 - Counterevidence / Objections：不得从存在性推导高效计算；人数固定的失败不反驳全类目标。
 - Status：Paper Fact；Novelty 无。
 - Related Files：LITERATURE.md、MODEL.md。
+
+## R2 方法资产 v1 — 完整内部证明，非主目标突破
+
+WC-R2-RESOURCE-POWER-BRIDGE v1、WC-R2-POWER-PATH-OBSTRUCTION v1、
+WC-R2-AFFINE-TWO-TYPE v1 的 Exact Statement、Objects、Domain、Quantifiers、Assumptions、
+Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status、Related Files
+完整固定在[规范证明](../current/weighted_congestion_frontier_power_bridge.md)第1节，
+及根[现行命题登记](../current/claims.md)。依赖分别为谱packing/排序、路径求和、C1梯度/自项；
+有限Fraction与独立重构记录均由README索引。外审与新颖性未认证，WC-TARGET仍OPEN。

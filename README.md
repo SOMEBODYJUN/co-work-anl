@@ -1,6 +1,7 @@
 # 两阶段设施选址博弈：研究与人类学习入口
 
 独立新研究：[加权原子拥塞博弈的普遍近似纯均衡门槛](research/weighted_congestion_frontier/README.md)。
+R2 新增[资源拼接与仿射两权组锐边际势](research/current/weighted_congestion_frontier_power_bridge.md)：稀疏谱/近等权资源可共享乘子拼接；固定次线性 power 乘子在两 dense 尺度已有线性费用障碍。均为方法资产，WC-TARGET 仍开放。
 每个 Work 对话填好自己的角色号，使用本地程序与本会话 txt 凭据直接恢复、同步、读公屏、发言和 checkpoint。各对话自主探索，内部按需要使用 subagent，同题可独立推进。
 
 [本地运行说明](research/weighted_congestion_frontier/RUNBOOK.md)提供完整入口；[异步公屏协议](research/weighted_congestion_frontier/PROTOCOL.md)按群聊交流；[阶段保存](research/weighted_congestion_frontier/CHECKPOINT.md)自动提交、推送并确认远端。额外的[论文者](research/weighted_congestion_frontier/prompts/PAPER_WRITER.md)和[提取者](research/weighted_congestion_frontier/prompts/EXTRACTOR.md)分别组织贡献表达与独立工具。[来源记录](research/weighted_congestion_frontier/SOURCES.md)保留固定版本、许可和适配。WC-TARGET v1 仍开放。

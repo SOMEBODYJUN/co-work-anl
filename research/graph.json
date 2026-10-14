@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Facility location mathematical dependency hypergraph",
-  "updated": "2026-10-10",
+  "updated": "2026-10-14",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -3738,6 +3738,78 @@
         "evidence/runs/2026-10-10/terminal_tie_quotient_review.md"
       ],
       "status": "independent internal finite exact audits; no universal welfare inference"
+    },
+    {
+      "id": "WC-R2-LOCAL-MARGINAL-MODEL",
+      "kind": "definition",
+      "track": "extensions",
+      "title": "Weighted resource subset marginal certificate",
+      "detail": "All potential-user subsets, fixed player multipliers, nonnegative polynomial costs and full multi-resource deviations; certificate versus equilibrium quantifiers kept separate.",
+      "refs": [
+        "research/current/weighted_congestion_frontier_power_bridge.md"
+      ],
+      "status": "precise method domain; WC-TARGET still open"
+    },
+    {
+      "id": "WC-R2-RESOURCE-POWER-BRIDGE",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Sparse power / ordered resource bridge",
+      "detail": "Shared w_i^p multipliers permit per-resource selection between density and span bounds; ordering normalization requires the stronger min-weight lower marginal. No universal density control.",
+      "refs": [
+        "research/current/weighted_congestion_frontier_power_bridge.md",
+        "research/weighted_congestion_frontier/assets/R2/multiscale_bridge/independent_review.md"
+      ],
+      "status": "complete stated-scope proof, independently internally reconstructed and exactly checked; unrefereed"
+    },
+    {
+      "id": "WC-R2-POWER-PATH-OBSTRUCTION",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Fixed sublinear power multiplier path obstruction",
+      "detail": "For every p<1 and finite alpha, a finite two-weight linear resource defeats every set-potential marginal sandwich with multipliers w_i^p. This is not equilibrium nonexistence.",
+      "refs": [
+        "research/current/weighted_congestion_frontier_power_bridge.md",
+        "research/weighted_congestion_frontier/assets/R2/multiscale_bridge/path_review.md"
+      ],
+      "status": "complete stated-scope proof, independently internally reconstructed and exactly checked; unrefereed"
+    },
+    {
+      "id": "WC-R2-AFFINE-TWO-TYPE",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Sharp affine two-type marginal certificate",
+      "detail": "For fixed weights and type multipliers, explicit C1 piecewise potential plus self terms attains sqrt of the h/w density ratio; cross-multiplicity lower bound matches.",
+      "refs": [
+        "research/current/weighted_congestion_frontier_power_bridge.md",
+        "research/weighted_congestion_frontier/assets/R2/multiscale_bridge/affine_two_type.md",
+        "research/weighted_congestion_frontier/assets/R2/multiscale_bridge/path_review.md"
+      ],
+      "status": "complete stated-scope proof, independently internally reconstructed and exactly checked; unrefereed"
+    },
+    {
+      "id": "WC-R2-LOCAL-MARGINAL-CHECKS",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "Exact power bridge and affine two-type checks",
+      "detail": "Fraction insertion, packing, finite two-path, branch-boundary and affine self-correction checks. Finite evidence does not replace the real-domain proof.",
+      "refs": [
+        "research/current/weighted_congestion_frontier_power_bridge.md",
+        "tests/audits/weighted_power_bridge.py",
+        "evidence/runs/2026-10-14/weighted_power_bridge.json"
+      ],
+      "status": "finite deterministic exact audit"
+    },
+    {
+      "id": "WC-R2-DENSE-SCALE-GAP",
+      "kind": "obligation",
+      "track": "extensions",
+      "title": "Cross-resource or state-sensitive existence bridge",
+      "detail": "Uniform power-multiplier subset comparisons cannot handle arbitrary dense scales; a main-goal route must change the certificate or use additional full-deviation structure.",
+      "refs": [
+        "research/current/weighted_congestion_frontier_power_bridge.md"
+      ],
+      "status": "open; no all-class o(d) result"
     }
   ],
   "hyperedges": [
@@ -9205,6 +9277,79 @@
         "research/current/customer_attraction/terminal_tie_lift_obstruction.md"
       ],
       "status": "exact restriction on the proposed lifting mechanism; general target open"
+    },
+    {
+      "id": "E-WC-R2-RESOURCE-POWER-BRIDGE",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-R2-LOCAL-MARGINAL-MODEL"
+      ],
+      "conclusion": "WC-R2-RESOURCE-POWER-BRIDGE",
+      "statement": "Self-contained proof of the precise stated-scope interface or obstruction; no inference to the all-class target.",
+      "refs": [
+        "research/current/weighted_congestion_frontier_power_bridge.md"
+      ],
+      "status": "complete stated-scope proof, independently internally reconstructed and exactly checked; unrefereed"
+    },
+    {
+      "id": "E-WC-R2-POWER-PATH-OBSTRUCTION",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-R2-LOCAL-MARGINAL-MODEL"
+      ],
+      "conclusion": "WC-R2-POWER-PATH-OBSTRUCTION",
+      "statement": "Self-contained proof of the precise stated-scope interface or obstruction; no inference to the all-class target.",
+      "refs": [
+        "research/current/weighted_congestion_frontier_power_bridge.md"
+      ],
+      "status": "complete stated-scope proof, independently internally reconstructed and exactly checked; unrefereed"
+    },
+    {
+      "id": "E-WC-R2-AFFINE-TWO-TYPE",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-R2-LOCAL-MARGINAL-MODEL"
+      ],
+      "conclusion": "WC-R2-AFFINE-TWO-TYPE",
+      "statement": "Self-contained proof of the precise stated-scope interface or obstruction; no inference to the all-class target.",
+      "refs": [
+        "research/current/weighted_congestion_frontier_power_bridge.md"
+      ],
+      "status": "complete stated-scope proof, independently internally reconstructed and exactly checked; unrefereed"
+    },
+    {
+      "id": "E-WC-R2-POWER-CHECKS",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "WC-R2-LOCAL-MARGINAL-CHECKS"
+      ],
+      "conclusion": "WC-R2-RESOURCE-POWER-BRIDGE",
+      "statement": "Exact finite insertion and packing audit supports its tested boundary scope; general quantifiers are established by the proof.",
+      "refs": [
+        "research/current/weighted_congestion_frontier_power_bridge.md",
+        "tests/audits/weighted_power_bridge.py"
+      ],
+      "status": "finite audit only"
+    },
+    {
+      "id": "E-WC-R2-POWER-DENSE-LIMITS",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "WC-R2-RESOURCE-POWER-BRIDGE",
+        "WC-R2-POWER-PATH-OBSTRUCTION",
+        "WC-R2-AFFINE-TWO-TYPE"
+      ],
+      "conclusion": "WC-R2-DENSE-SCALE-GAP",
+      "statement": "The resource bridge works under density/span structure; sharp affine two-type losses exclude eliminating all scales with one fixed sublinear power multiplier.",
+      "refs": [
+        "research/current/weighted_congestion_frontier_power_bridge.md"
+      ],
+      "status": "exact method limit; main target open"
     }
   ]
 }

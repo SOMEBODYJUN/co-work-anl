@@ -20,7 +20,7 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 
 ## Known Results / Research Frontier
 
-当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。团队尚无新证明，WC-TARGET v1 仍 OPEN。
+当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。本工作分支已有下述 R2 方法资产；WC-TARGET v1 仍 OPEN。
 
 真正缺口是控制全体有限博弈的偏离结构，或构造玩家数可增长、每个纯状态均有大倍率获利偏离的族。现有路线是搜索种子；不同表示和跨领域机制都可开展。活跃讨论、问题和发现从公屏读取。
 
@@ -61,3 +61,23 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/board/README.md | 公屏的直接阅读入口与简短命令 |
 
 有真实成果时建立 assets/<actor>/<idea>/、toolbox/<actor>/<tool-id>/ 或 papers/<actor>/<paper-id>/。工作分支为 wcg/work/<actor>/<session>；成果消息引用 checkpoint 返回的已推送文件 descriptor。规范审查后的成果整合到 main，后续对话可以从地图和冻结文件准确接续。
+
+## R2 冻结方法资产（2026-10-14）
+
+[规范完整证明](../current/weighted_congestion_frontier_power_bridge.md)给资源级稀疏谱／排序势桥、
+固定power乘子的线性两尺度障碍，以及仿射两类型√D锐势。对象与量词见本分支CLAIMS；
+这三项不提供全类o(d)或新的无限均衡非存在族。
+
+依赖：MODEL → packing及凸费用排序 → RESOURCE-POWER-BRIDGE；
+同终集路径预算 → POWER-PATH-OBSTRUCTION；C1梯度拼接＋离散自项 → AFFINE-TWO-TYPE。
+最后两项把Research Frontier收紧到整次偏离支付或状态敏感比较。
+
+| 完整路径（仓库根相对） | 资产、用途和读取时机 |
+| --- | --- |
+| research/current/weighted_congestion_frontier_power_bridge.md | 三个v1的完整一般证明、模型边界与来源；接续存在机制前首先读 |
+| research/weighted_congestion_frontier/assets/R2/multiscale_bridge/independent_review.md | packing、H核、排序强下界和多资源取消的先重构攻击；改变桥的参数时读 |
+| research/weighted_congestion_frontier/assets/R2/multiscale_bridge/path_review.md | 独立路径反证及分片势审查；变更两类型或量词时读 |
+| research/weighted_congestion_frontier/assets/R2/multiscale_bridge/affine_two_type.md | 显式C1势与有限子集路径预算；尝试高次连续桥时读 |
+| research/weighted_congestion_frontier/assets/R2/multiscale_bridge/path_obstruction.md | 可同时使两组人数增长的具体参数；防止重复固定power拼接死路 |
+| tests/audits/weighted_power_bridge.py | 标准库Fraction插入、packing、路径、自项与边界复算；公式改变后运行 |
+| evidence/runs/2026-10-14/weighted_power_bridge.json | 实际算术、参数、计数、代码hash、重放入口；只作所列有限范围证据 |

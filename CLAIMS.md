@@ -1,3 +1,10 @@
+## 2026-10-14：加权拥塞资源势的精确范围
+
+WC-R2-RESOURCE-POWER-BRIDGE、WC-R2-POWER-PATH-OBSTRUCTION、WC-R2-AFFINE-TWO-TYPE
+的完整对象、量词、依赖、证据和objection在[规范证明](research/current/weighted_congestion_frontier_power_bridge.md)
+及[现行账本](research/current/claims.md)。三个v1均为内部完整证明/独立重构，外审与新颖性未认证。
+它们分别是结构实例存在接口、固定power证书障碍、仿射两类型证书锐阈值；均不是WC全类新门槛。
+
 # 命题入口与新前沿
 
 独立开放目标 [WC-TARGET v1](research/weighted_congestion_frontier/CLAIMS.md)：

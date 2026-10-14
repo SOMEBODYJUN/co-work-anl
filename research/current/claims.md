@@ -269,6 +269,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 
 
+## 2026-10-14：加权拥塞的局部势接口及锐边界
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| WC-R2-RESOURCE-POWER-BRIDGE | MODEL 有限加权拥塞游戏，任意正实权、多资源策略；固定 R>1、0<p<1，潜在资源用户密度与跨度。 | 显式混合势给 max_e min{Q_e,1+A_R K_e^(1-p)H_d} 的 PNE；结构实例界，非全类 o(d)。 | [自足一般证明](weighted_congestion_frontier_power_bridge.md)，独立先重构审查及 Fraction 边际/packing 核验；外审与新颖性未认证。 |
+| WC-R2-POWER-PATH-OBSTRUCTION | 每固定 0≤p<1、每有限 α；线性费用、有限两个正权组、所有子集的 h=w^p 共同边际夹逼。 | 存在有限权组打破任何集合势证书；两组人数可任意大。不是游戏非存在下界。 | [有限路径一般证明](weighted_congestion_frontier_power_bridge.md)，独立重构及精确路径回归；外审未记录。 |
+| WC-R2-AFFINE-TWO-TYPE | 两正权 a,b、各类正乘子 h_A,h_B；非负仿射费用；全部有限类人数和子集。 | C1 分片势达 sqrt(max(h/w)/min(h/w))，正斜率时跨人数统一最优；固定人数可能更小，常数费用精确。 | [梯度、自项校正及 sharpness](weighted_congestion_frontier_power_bridge.md)，两个成员独立构造及 Fraction 边际核验；外审/新颖性未认证。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
