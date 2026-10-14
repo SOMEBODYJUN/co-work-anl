@@ -1,5 +1,7 @@
 # 命题入口与新前沿
 
+新增[WC-R3-ODD-RING-CERTIFICATE / ENVELOPE / LOWER v1](research/weighted_congestion_frontier/CLAIMS.md)：全状态奇环证明、exact证书T_d及全类下界a_*(d)≥T_d∼d/ln d。已完成独立内部攻击，外部评审/全球优先权未认证。
+
 独立开放目标 [WC-TARGET v1](research/weighted_congestion_frontier/CLAIMS.md)：
 任意正权、多资源策略、非负系数多项式费用的加权原子拥塞博弈普遍近似纯均衡门槛。
 [源参数锐渐近与完整对称拓扑还原](research/current/weighted_congestion_frontier.md)已有完整内部审查；全类目标仍开放，与设施/客户吸引模型不存在未经证明的依赖边。

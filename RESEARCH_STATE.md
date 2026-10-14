@@ -1,5 +1,9 @@
 # 当前研究状态
 
+## 2026-10-14 UTC：奇环成长下界阶段
+
+R1奇环hub/cohort架构经R3独立全状态重构及精确标量优化，得到每个d≥2的a_*(d)≥T_d∼d/ln d。完整证明、两独立攻击、Fraction实际验证和文献范围从[现行账户](research/current/weighted_congestion_frontier.md)导航。相对已核基线的无限下界阶段突破已闭合；全类上界≤d，增长阶仍OPEN，优先权未认证。
+
 ## 2026-10-14 UTC：R3局部权带、潜在密度归约与constant交叉接口
 
 Shapley局部R-PNE有两种独立proof；minimum potentialdensity padding保留完整α存在/threshold，真实缺口转向active/mandatory参与或同resource多尺度共同预算。四玩家缩权template和strict cubic边界亦独审完成，constant family并非growing lower突破。规范账户 research/current/weighted_congestion_frontier.md 指向全部证明、反边界及可复现证书；WC-TARGET仍OPEN。

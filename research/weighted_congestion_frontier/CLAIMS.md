@@ -7,8 +7,8 @@
 - Exact Statement / Conclusion：刻画 MODEL 中 a_*(d)，优先全类 o(d) 存在上界或严格提高核实过基线的无限非存在族下界。
 - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完全采用 MODEL.md；任意有限 E,N、多资源策略、任意正实权、非负系数次数至多 d，不限制人数。
 - Dependencies：WC-LIT-UPPER-D、WC-LIT-LOWER、WC-LIT-N 是基线和约束，不是完成证明。
-- Evidence：来源 §7 提出缩小缺口；没有团队主目标证明。
-- Counterevidence / Objections：所有新路线均未完成；文献后续与精细 finite-d 界须在成功评估前重新核对。
+- Evidence：来源 §7 提出缩小缺口；本轮奇环下界已得a_*(d)≥T_d∼d/ln d，尚无匹配全类存在上界。
+- Counterevidence / Objections：奇环成长下界有完整一般证明与独立内部攻击；全类存在上界仍线性，增长阶尚未确定。后续检索未认证全球优先权。
 - Status：OPEN；Truth 未判定、Value 取决于贡献、Novelty 未认证、Mechanism 未发现、Ambition 保持全类。
 - Related Files：MODEL.md、LITERATURE.md、PRIOR_ASSETS.md、ACCEPTANCE.md。
 
@@ -196,3 +196,36 @@
 - Counterevidence / Objections: selector failures do not prove nonexistence; occupied interval is not every geometric interval; retuned m1,m2 fail; cubic boundary is only for prescribed witnesses. No unresolved fatal objection within stated scope.
 - Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: full WC-TARGET remains OPEN.
 - Related Files: research/weighted_congestion_frontier/assets/R3/potential_padding/proof.md, research/weighted_congestion_frontier/assets/R3/potential_padding/review.md, research/weighted_congestion_frontier/assets/R3/potential_padding/verify.py, research/weighted_congestion_frontier/assets/R3/potential_padding/independent_check.py, research/weighted_congestion_frontier/assets/R3/potential_padding/verification.json, research/weighted_congestion_frontier/assets/R3/potential_padding/independent_verification.json
+
+## WC-R3-ODD-RING-CERTIFICATE-v1 — COMPLETE GENERAL PROOF / INTERNAL REVIEW
+
+- Exact Statement / Conclusion: For odd m>=3, n_i>=1, positive u_i,v_i, 1<=k_i<=d and alpha>1, the specified two strict local tests have positive coefficients iff all N_i,Q_i>0 and product n_i N_i Q_i/(M_i P_i)>1. They exclude alpha-PNE at every state.
+- Objects / Domain / Quantifiers / Assumptions / Definitions: full exact identity in `assets/R3/odd_ring_sharp/PROOF.md`, sections 1–6; costs and weak alpha-PNE use MODEL.md. Positive rational construction is a subclass of arbitrary positive-real-weight G_d.
+- Scope: Fixed exact positive local-test system; iff is coefficient feasibility, not all possible ring nonexistence.
+- Dependencies: WC-MODEL; explicit elementary proofs, no imported nonexistence theorem.
+- Evidence: complete general proof, independent reconstruction before reading the initial route, two envelope attacks, Fraction full-state small game and separate exact growing-certificate checks.
+- Counterevidence / Objections: no unresolved fatal objection in the stated scope; finite tests do not prove generality. Later-literature search is not exhaustive; global priority unverified.
+- Status: canonical stated-scope internal mathematical result, unrefereed. Truth: proved scope; Value: growing lower/usable mechanism boundary; Novelty: unverified; Mechanism: odd parity and weight-cycle amplification; Ambition: lower stage breakthrough, WC-TARGET OPEN.
+- Related Files: `research/current/weighted_congestion_frontier.md`, `assets/R3/odd_ring_sharp/PROOF.md`, `assets/R3/odd_ring_sharp/verify.py`, `assets/R3/odd_ring_sharp/verification.json`, `assets/R3/odd_ring_independent/REVIEW.md`, `assets/R3/odd_ring_independent/EXACT_ENVELOPE_REVIEW.md`, `assets/R3/odd_ring_parameters/exact_envelope_review.md`, `assets/R3/odd_ring_literature/notes.md`.
+
+## WC-R3-ODD-RING-ENVELOPE-v1 — COMPLETE GENERAL PROOF / INTERNAL REVIEW
+
+- Exact Statement / Conclusion: For each d>=2 and alpha>1, some finite odd ring satisfies the positive monomial local-test system iff alpha<T_d=sup_R>1 [R(1+R)^d+1]/[(1+R)^d+R^(d+1)]. H_d<T_d<=H_d+1/(2^d+1), H_d=d/[(d+1)d^(1/(d+1))-d], hence T_d~d/ln d.
+- Objects / Domain / Quantifiers / Assumptions / Definitions: full exact identity in `assets/R3/odd_ring_sharp/PROOF.md`, sections 1–6; costs and weak alpha-PNE use MODEL.md. Positive rational construction is a subclass of arbitrary positive-real-weight G_d.
+- Scope: Certificate envelope only; failure does not imply an equilibrium. Strict endpoint alpha=T_d is infeasible for these tests.
+- Dependencies: WC-MODEL, WC-R3-ODD-RING-CERTIFICATE-v1; explicit elementary proofs, no imported nonexistence theorem.
+- Evidence: complete general proof, independent reconstruction before reading the initial route, two envelope attacks, Fraction full-state small game and separate exact growing-certificate checks.
+- Counterevidence / Objections: no unresolved fatal objection in the stated scope; finite tests do not prove generality. Later-literature search is not exhaustive; global priority unverified.
+- Status: canonical stated-scope internal mathematical result, unrefereed. Truth: proved scope; Value: growing lower/usable mechanism boundary; Novelty: unverified; Mechanism: odd parity and weight-cycle amplification; Ambition: lower stage breakthrough, WC-TARGET OPEN.
+- Related Files: `research/current/weighted_congestion_frontier.md`, `assets/R3/odd_ring_sharp/PROOF.md`, `assets/R3/odd_ring_sharp/verify.py`, `assets/R3/odd_ring_sharp/verification.json`, `assets/R3/odd_ring_independent/REVIEW.md`, `assets/R3/odd_ring_independent/EXACT_ENVELOPE_REVIEW.md`, `assets/R3/odd_ring_parameters/exact_envelope_review.md`, `assets/R3/odd_ring_literature/notes.md`.
+
+## WC-R3-ODD-RING-LOWER-v1 — COMPLETE GENERAL PROOF / INTERNAL REVIEW
+
+- Exact Statement / Conclusion: For every integer d>=2 and real 1<=alpha<T_d, a finite rational-weight/coefficient congestion game, all resource latencies positive monomials of degree exactly d, has no alpha-PNE. Therefore a_*(d)>=T_d~d/ln d and liminf a_*(d)ln(d)/d>=1.
+- Objects / Domain / Quantifiers / Assumptions / Definitions: full exact identity in `assets/R3/odd_ring_sharp/PROOF.md`, sections 1–6; costs and weak alpha-PNE use MODEL.md. Positive rational construction is a subclass of arbitrary positive-real-weight G_d.
+- Scope: Game may depend on alpha; unbounded player count/support and huge input size allowed. No endpoint game, polynomial-time construction, full-class upper, matched growth, or global priority claim.
+- Dependencies: WC-MODEL, WC-R3-ODD-RING-CERTIFICATE-v1, WC-R3-ODD-RING-ENVELOPE-v1; explicit elementary proofs, no imported nonexistence theorem.
+- Evidence: complete general proof, independent reconstruction before reading the initial route, two envelope attacks, Fraction full-state small game and separate exact growing-certificate checks.
+- Counterevidence / Objections: no unresolved fatal objection in the stated scope; finite tests do not prove generality. Later-literature search is not exhaustive; global priority unverified.
+- Status: canonical stated-scope internal mathematical result, unrefereed. Truth: proved scope; Value: growing lower/usable mechanism boundary; Novelty: unverified; Mechanism: odd parity and weight-cycle amplification; Ambition: lower stage breakthrough, WC-TARGET OPEN.
+- Related Files: `research/current/weighted_congestion_frontier.md`, `assets/R3/odd_ring_sharp/PROOF.md`, `assets/R3/odd_ring_sharp/verify.py`, `assets/R3/odd_ring_sharp/verification.json`, `assets/R3/odd_ring_independent/REVIEW.md`, `assets/R3/odd_ring_independent/EXACT_ENVELOPE_REVIEW.md`, `assets/R3/odd_ring_parameters/exact_envelope_review.md`, `assets/R3/odd_ring_literature/notes.md`.

@@ -25,3 +25,7 @@
 ## 原文归档与写作参考
 
 本轮固定上游 commit 并原样保存选定原文件及许可，逐字节哈希和来源在 SOURCES.md、upstream/manifest.json。包括 MathLab 原始 prompt 与架构、Anthropic 原始任务/idea 样例，以及 mathematical-academic-writing 与 polish_skill 的数学写作、贡献重建、优先权/相关工作和 TeX 保真材料；latex-paper-skills 只选 framing 原文。原文与适配分别标注，当前运行按本项目的角色号与异步公屏协议。当前尚无团队新数学结果、工具或论文。
+
+## R3 odd-ring lower-frontier audit
+
+[2026-10-14 exact model / version / later-source search](assets/R3/odd_ring_literature/notes.md) fixes the published Omega(sqrt(d)/ln d) baseline and finite-degree linear potential upper. The new T_d~d/ln d is a project proof, not a paper fact. Later-literature search did not find a same-model stronger lower, but is not exhaustive and does not certify firstness.

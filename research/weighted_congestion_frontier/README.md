@@ -22,7 +22,7 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 
 ## Known Results / Research Frontier
 
-当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。R3已给出[源包络锐渐近及完整对称拓扑还原](../current/weighted_congestion_frontier.md)，均经内部独立攻击；WC-TARGET v1 仍 OPEN。源式精确sup细化为(2/√e)√(d ln ln d)/ln d，全类上界仍为d。
+当前已有完整一般证明与独立内部攻击的成长下界 a_*(d)≥T_d∼d/ln d，文献存在上界≤d，仍有对数缺口。此前[源式锐渐近、拓扑还原和局部边界](../current/weighted_congestion_frontier.md)各保持精确范围。外部评审及全球优先权未认证，WC-TARGET v1 仍 OPEN。
 
 真正缺口是控制全体有限博弈的偏离结构，或构造玩家数可增长、每个纯状态均有大倍率获利偏离、严格超出已知源式精确包络的族。对称同轻权两列拓扑允许任意非负多项式与全状态攻击，仍受同一包络约束。现有路线是搜索种子；不同表示和跨领域机制都可开展。活跃讨论、问题和发现从公屏读取。
 
@@ -84,3 +84,21 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 [四玩家缩权接口](assets/R3/crossover_audit/limit_family.md)与[独立符号攻击](assets/R3/limit_review/review.md)给指定见证模板cubic根边界和合法多项式传递；重调参数在degree288无2-PNE，且所有m≥20有统一证明。此为constant mechanism，未提高已知growing envelope。
 
 文件 `research/weighted_congestion_frontier/assets/R3/dense_bands/` 保存share排序、scaled potential和明确selector障碍；`dense_band_review/` 保存不同iid-support proof与独立检查器。`potential_padding/` 保存全模型projection/lift theorem、occupied-band quantifiers与一般step费用反边界。`crossover_audit/limit_family.md` 与 `limit_review/` 保存constant模板、strict root endpoint及完整uniform transport；扩玩家support前读，勿从4人constant extrapolate增长。
+
+## 新的成长前沿与文件地图
+
+MODEL → 奇环全状态局部证书 → 正系数闭环 → exact T_d 包络 → 全类成长下界 a_*(d)≥T_d∼d/ln d。
+该包络仅限制指定局部证书，不能作为全类存在上界。研究总账从
+[现行数学账户](../current/weighted_congestion_frontier.md)恢复此前源式、交叉拓扑和权带边界。
+
+| 完整路径 | 数学资产、目的及后续读取时机 |
+| --- | --- |
+| research/weighted_congestion_frontier/assets/R3/odd_ring_sharp/PROOF.md | 奇环真实策略与资源、全状态覆盖、正有理系数构造、所有d的exact T_d非存在及渐近；重建下界或尝试超越证书前读 |
+| research/weighted_congestion_frontier/assets/R3/odd_ring_sharp/verify.py | Fraction恒等式、构造参数及真实小博弈全部状态/偏离；修改公式后重跑 |
+| research/weighted_congestion_frontier/assets/R3/odd_ring_independent/REVIEW.md | 不知原路线时先重构的策略/下标/全状态审查；对奇环覆盖有疑问时读 |
+| research/weighted_congestion_frontier/assets/R3/odd_ring_independent/EXACT_ENVELOPE_REVIEW.md | exact包络、端点、有理化与H_d比较的另一独立攻击；提升claim前读 |
+| research/weighted_congestion_frontier/assets/R3/odd_ring_parameters/exact_envelope_review.md | 精确机制最优性与所有degree同次有理构造；调参或研究必要条件时读 |
+| research/weighted_congestion_frontier/assets/R3/odd_ring_parameters/integer_family_review.md | 独立显式整数r族及所有degree插值，另有取整界与精确证据；需要无需scalar优化的族时读 |
+| research/weighted_congestion_frontier/assets/R3/odd_ring_literature/notes.md | 文献精确模型、基线、有限d上界与后续/机制检索限制；判断相对改善或新颖性时读 |
+
+Next Actions：优先全类O(d/ln d)存在桥；下界继续时须更换承重机制，不能指望只增环长或改monomial参数超越T_d。

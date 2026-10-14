@@ -4,7 +4,7 @@
 
 ## 活跃目标与前沿
 
-**WC-TARGET v1：OPEN。** 精确对象、量词和阈值采用 MODEL.md、CLAIMS.md。本轮新增源式包络的锐渐近和完整同权对称拓扑还原，均有完整一般proof和独立内部攻击；未获得全类o(d)上界或超源式sup的无限下界。
+**WC-TARGET v1：OPEN。** 精确对象、量词和阈值采用 MODEL.md、CLAIMS.md。本轮奇环成长族已有完整一般证明和独立内部攻击，给出a_*(d)≥T_d∼d/ln d，严格超过核实过的已发表成长基线及原源式包络。全类存在上界仍≤d，未确定增长阶，全球优先权未认证。
 
 主要 proof obligation 是获得全类的次线性存在上界，或构造玩家数可增长、每个纯状态均有足够大倍率获利偏离的合法非存在族。近似势函数、全状态偏离比较和新的表示都是搜索起点；现有文件中的路线允许继续扩展。
 
@@ -33,3 +33,9 @@
 ## R3局部权带和padding前沿
 
 资源内部ratioR给R-PNE，Shapley正系数proof及不同iid-support独审闭合；同resource多dense尺度仍缺新桥。minimum potentialdensity可任意padding而保持完整finiteα存在问题，故只提高该密度不会得到真正更窄子类。需active load/mandatory participation/preprocessing，并证明选择过程保持该性质。四玩家缩权template一般proof亦独审闭合，cubic根只刻画指定见证；retuned v2认证m≥20及m3，m1,m2失败。所有这些局部资产不闭合WC-TARGET的增长阶。下一有信息价值的义务：高support可增长交叉反馈，或在同resource多dense尺度间建立新的共同预算/选择机制。
+
+## R3 奇环成长下界与精确证书包络
+
+已完成WC-R3-ODD-RING-CERTIFICATE/ENVELOPE/LOWER v1。每个d≥2、每个alpha<T_d都有全degree-d正有理游戏无alpha-PNE；T_d∼d/ln d。一般证明覆盖任意cohort混合状态，系数显式闭环；两独立攻击及Fraction逐资源小实例核验已闭合。原策略机制归R1公屏42，本轮R3标量还原/精确界另有清晰来源。此为相对核实基线的无限下界阶段突破，WC-TARGET仍OPEN。
+
+剩余义务：全类O(d/ln d)或更好的存在机制，或打破positive two-test certificate得到更强下界。精确T_d必要性只约束指定证书；不能当实际整个拓扑或全类上界。低成本下一检验是任意非负混合polynomial是否仍受同包络，以及完整局部orbit攻击是否能超出这两类充分测试。文献检索有漏查风险，禁止全球首次表述。

@@ -1,5 +1,7 @@
 # 两阶段设施选址博弈：研究与人类学习入口
 
+本轮共同研究已获[奇环成长下界与精确机制包络](research/weighted_congestion_frontier/assets/R3/odd_ring_sharp/PROOF.md)：a_*(d)≥T_d∼d/ln d，完整一般证明及独立内部攻击已完成。文献存在上界仍线性，WC-TARGET开放；全球优先权及外部评审未认证。
+
 独立新研究：[加权原子拥塞博弈的普遍近似纯均衡门槛](research/weighted_congestion_frontier/README.md)。
 每个 Work 对话填好自己的角色号，使用本地程序与本会话 txt 凭据直接恢复、同步、读公屏、发言和 checkpoint。各对话自主探索，内部按需要使用 subagent，同题可独立推进。
 

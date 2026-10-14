@@ -17,3 +17,7 @@
 ## Separate-band Shapley normalization and minimum-potential density
 
 按每player所在band单独除scale会让two-user cubic混合差分κ与κ/M冲突，ordinary exact potential不存在；恢复同一个weighted potential仍可由two singleton bands造成selector ≥d/6损失。详见[dense proof](assets/R3/dense_bands/README.md)。仅排除该归一化/selector，不排除其他势或存在证明。更强的[全模型padding reduction](assets/R3/potential_padding/proof.md)说明minimum occupied potentialdensity任意大仍与全类同threshold；新玩家通过empty退出，无法提供active density。可回收本地R接口、iid-share表示、potential/active distinction；重试必须引入并保持active/mandatory condition或新的shared-scale机制。
+
+## Odd-ring positive local tests: tuning has an exact ceiling
+
+尝试只增加奇环长度、改变cohort数、权尺度、主费用monomial degree或系数以继续提高α。新精确失败机制：F_(k,n)(x)≤F_(k,1)(nx)，Q/(tP)=F_(d,1)(1/t)，权乘积相等；α≥T_d迫使所有因子≤1，使正系数严格闭环不可能。否定范围仅指定两类正localtest系统，不是整个策略拓扑或全类存在问题。回收成长族a_*(d)≥T_d∼d/ln d、有理系数构造及程度预算(α−1)lnα<d。重试须采用完整state dependent攻击、改变局部test或新反馈拓扑，而非继续同证书调参。详见assets/R3/odd_ring_sharp/PROOF.md。

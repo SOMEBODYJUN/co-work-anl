@@ -160,3 +160,31 @@ strictly beyond the known exact source envelope are still missing.
 The next valuable mechanism must change the topology or attack coverage.
 Finite asymmetric high-support candidates are explored separately; no
 finite test is used to infer an infinite-family result.
+
+## Growing odd rings: the lower frontier now reaches d/ln d
+
+**WC-R3-ODD-RING-CERTIFICATE-v1**, **WC-R3-ODD-RING-ENVELOPE-v1**, and
+**WC-R3-ODD-RING-LOWER-v1** have complete general proofs and independent internal
+attacks. The original strategy architecture is R1's board-message42 odd hub/cohort
+ring; R3 reconstructed it and reduced its positive-test mechanism to
+
+    T_d=sup_R>1 [R(1+R)^d+1]/[(1+R)^d+R^(d+1)].
+
+For every d>=2 and every real alpha<T_d, a finite rational game with all latencies
+positive monomials of degree exactly d has no alpha-PNE. Thus a_*(d)>=T_d~d/ln d.
+Every state either contains an aligned light that strictly deviates, or has all
+lights anti-aligned and an odd-parity incoming hub edge that strictly deviates.
+The coefficient cycle is explicitly rational; growing player count and support
+are essential and huge sizes are allowed. The exact mechanism envelope also has
+H_d<T_d<=H_d+1/(2^d+1), H_d=d/[(d+1)d^(1/(d+1))-d].
+
+[Full exact claims and proof](../weighted_congestion_frontier/assets/R3/odd_ring_sharp/PROOF.md)
+connect to independent [all-state reconstruction](../weighted_congestion_frontier/assets/R3/odd_ring_independent/REVIEW.md),
+[envelope attack](../weighted_congestion_frontier/assets/R3/odd_ring_parameters/exact_envelope_review.md),
+and [literature scope](../weighted_congestion_frontier/assets/R3/odd_ring_literature/notes.md).
+This strictly increases the verified published Omega(sqrt(d)/ln d) growth
+and the recovered source-formula sharp scale. Global priority is unverified.
+The general existence upper remains linear, a logarithmic gap remains, and
+WC-TARGET is OPEN. The envelope's upper half bounds this certificate, not
+actual ring equilibria or the full class. Next: full-class O(d/ln d) existence,
+or a different all-state mechanism exceeding this local-test envelope.
