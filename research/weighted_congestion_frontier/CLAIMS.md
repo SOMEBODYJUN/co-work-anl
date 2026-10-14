@@ -1,6 +1,6 @@
 # 命题账本
 
-本分支没有团队新定理。下列文献条目是 Paper Fact，团队并未独立认证全文证明。不得把公屏 idea、数值证据或多人赞同升级为 Canonical Record。
+本分支现有团队推导与独立审查中的阶段资产；WC-TARGET v1 仍 OPEN。下列文献条目保持 Paper Fact 身份，新增候选与已完成局部证明分别登记。团队未独立认证所引文献的全文证明。不得把公屏 idea、数值证据或多人赞同升级为 Canonical Record。
 
 ## WC-TARGET v1 — OPEN
 
@@ -44,3 +44,25 @@
 - Counterevidence / Objections：不得从存在性推导高效计算；人数固定的失败不反驳全类目标。
 - Status：Paper Fact；Novelty 无。
 - Related Files：LITERATURE.md、MODEL.md。
+
+## WC-ENVELOPE-CEILING v1 — LOCAL PROOF, INTERNALLY REVIEWED
+
+- Exact Statement：论文式(3)两比值的最小值 R 若≥e²，则 R²≤8d ln ln R/(ln R)²；ln d≥16 时 R≤√128·√(d ln ln d)/ln d。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：每个整数d≥1,n≥1,1≤k≤d,实0<w≤1,0≤β≤1；只约束指定两类偏离认证包络。完整身份见下列证明。
+- Conclusion：给该证书机制准确有限必要条件；不是a_*(d)上界，不是同拓扑实际最佳均衡因子上界。
+- Dependencies：WC-LIT-LOWER v1的精确式(3)，初等log不等式与单变量最大值。
+- Evidence：完整一般推导；clean_attack先自主重构后逐行攻击，无fatal objection；Fraction代数与Decimal sanity checks可复现。
+- Counterevidence / Objections：不排除不同全状态攻击机制；数值没有严格区间误差保证；外审/新颖性未认证。
+- Status：内部独立审查的局部数学资产。Truth有一般证明支持；Value为证书ceiling；Novelty未认证；Mechanism为light衰减与heavy负载跳跃的耦合；Ambition保留主目标OPEN。
+- Related Files：[完整证明](assets/R1/envelope_ceiling/README.md)、[核验代码](assets/R1/envelope_ceiling/verify.py)、[结果](assets/R1/envelope_ceiling/verification.json)。
+
+## WC-R1-LF-SHARP v1 — COMPLETE CANDIDATE, REVIEW IN PROGRESS
+
+- Exact Statement：令F_d为论文式(3)对n,k,w,β的参数sup，则F_d∼(2/√e)·√(d ln ln d)/ln d；显式合法参数游戏对每个固定c<2/√e、全部充分大d无任何α<c·√(d ln ln d)/ln d的α-PNE。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完整采用assets/R1/lower_family/sharp_envelope.md的参数域、全部状态覆盖与sup量词；不假定sup取到。
+- Conclusion：细化文献既有族的渐近分析并加强其公开打印的粗渐近下界，未超过文献exact参数sup；不提供全类上界或增长阶匹配。
+- Dependencies：WC-LIT-LOWER v1的策略拓扑与式(3)；独立重建的全状态表及uniform一维引理。
+- Evidence：完整候选证明、独立内部asymptotic_attack重构；Fraction逐资源全状态与Decimal数值代码结果。clean_attack正在审查冻结稿。
+- Counterevidence / Objections：后续文献与优先权未穷尽；同拓扑其他攻击未被该包络上界排除；重要状态提升等待clean review。
+- Status：complete candidate。Truth待最后独立攻击；Value/Mechanism为锐渐近与隐藏log-log增益；Novelty未认证；Ambition未满足严格超exact文献族的阶段门槛。
+- Related Files：[完整稿](assets/R1/lower_family/sharp_envelope.md)、[代码](assets/R1/lower_family/verify.py)、[结果](assets/R1/lower_family/verification.json)、[来源](assets/R1/lower_family/source_audit.md)。

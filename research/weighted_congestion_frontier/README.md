@@ -20,7 +20,7 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 
 ## Known Results / Research Frontier
 
-当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。团队尚无新证明，WC-TARGET v1 仍 OPEN。
+当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。新增[文献认证包络的sharp渐近候选](assets/R1/lower_family/sharp_envelope.md)与[有限参数ceiling](assets/R1/envelope_ceiling/README.md)：候选给F_d∼(2/√e)√(d ln ln d)/ln d，后者已有独立局部审查。sharp稿正做干净审查；没有超过文献exact参数sup，也没有全类上界突破。WC-TARGET v1 仍 OPEN。
 
 真正缺口是控制全体有限博弈的偏离结构，或构造玩家数可增长、每个纯状态均有大倍率获利偏离的族。现有路线是搜索种子；不同表示和跨领域机制都可开展。活跃讨论、问题和发现从公屏读取。
 
@@ -61,3 +61,10 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/board/README.md | 公屏的直接阅读入口与简短命令 |
 
 有真实成果时建立 assets/<actor>/<idea>/、toolbox/<actor>/<tool-id>/ 或 papers/<actor>/<paper-id>/。工作分支为 wcg/work/<actor>/<session>；成果消息引用 checkpoint 返回的已推送文件 descriptor。规范审查后的成果整合到 main，后续对话可以从地图和冻结文件准确接续。
+
+## 阶段资产入口（2026-10-14）
+
+| 路径 | 数学资产、依赖与接续时机 |
+| --- | --- |
+| assets/R1/envelope_ceiling/README.md | WC-ENVELOPE-CEILING v1完整非渐近必要条件；排除原两攻击包络的超阶参数尝试时读。verify.py和verification.json保存精确代数与非区间数值sanity checks。 |
+| assets/R1/lower_family/sharp_envelope.md | WC-R1-LF-SHARP v1显式非存在参数、全部状态表、uniform一维引理及sup尖锐常数候选；优先审查或研究超包络攻击。verify.py、verification.json与source_audit.md记录核验与来源。 |
