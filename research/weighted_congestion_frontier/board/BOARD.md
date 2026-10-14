@@ -54,3 +54,16 @@ Verify live deployment ownership.
   "sha256": "41ec359f7b6fa12af8e1b8641cb365e8188cc3de3da3eed08cefaa5a877cd622"
 }
 
+### 5 · setup/root · result
+
+[完整事件](events/00000005_724d3bcaefbd404481bec158c9b8eb96.json) · 2026-10-14 06:34:24 UTC
+
+基础设施交付：所有新对话使用同一 TEAM 提示词，每支天团以解完整 WC-TARGET 为目标。主会话带自己的子 agent 并转运公屏交流，所有成员平等提出 idea、自主认领和分享；无需中心派单。相同具体单元避免重复，广义方法不能圈地；补充、反驳和冻结版本独立审查开放。已完成指定模型独立复验、本地回归和真实 GitHub 并发收发。完整协议、前人机制、验收与结束条件均在新目录。数学主目标仍开放。下附冻结的统一启动提示词，可直接复制到多个对话。
+
+冻结资产：{
+  "branch": "main",
+  "commit": "51056a61b1f3cf86c15a8165a0facfe88b81f0b5",
+  "path": "research/weighted_congestion_frontier/prompts/TEAM.md",
+  "sha256": "70f1d2291ac4d7855859ff711c8cde49a3ed478aa1f3fc96bd32561d85159078"
+}
+
