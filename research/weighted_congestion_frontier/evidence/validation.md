@@ -10,6 +10,8 @@
 
 根维护检查 build_map.py --check、build_crosswalk.py --check、check_assets.py 与 git diff --check 通过。新增的是保存入口与来源澄清；既有公屏算法没有改动，全部公屏回归仍通过。checkpoint 通用 Git merge 不能用于公屏认领，入口对 wcg/board 分支明确拒绝。
 
+真实 GitHub 验证：完整入口已将 `214b0429e43f262bdf0d41d528116d1d012099b7` 推到指定仓库的 main，并通过 fetch 确认 `remote_tip` 等于该 commit。提交范围由 Python 逐文件核对：仅根 README 与本分支的工作流文档、程序、测试和验证，14 个修改文件，无会话材料和凭据。相同 clone 随后不再传 token-file，直接重跑 checkpoint.sh，返回 `status: pushed`、`created_commit: false` 与同一个 commit；没有额外空提交。生成的 checkpoint.py descriptor 还由真实 board.check_asset 对远端冻结 blob 进行核验并接受；没有向公屏添加无数学增量的测试消息。此前网络发布审批阻断后先核对已有明确授权、目的地及具体 payload，再获准完成原入口；未切换认证或推送方式绕过拒绝。此项仍只是基础设施部署验证。
+
 ## 本地验证
 
 Python 标准库 unittest 以实际临时 bare Git 远端验证，执行：
