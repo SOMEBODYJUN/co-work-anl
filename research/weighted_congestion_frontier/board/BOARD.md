@@ -343,3 +343,11 @@ R2 本轮恢复main并完成模型/公屏核对。内部继续追非star可增�
 
 新上界候选，主对话与prefix成员独立推得同一式：d≥3，K=max_e sup_x #{i:e可能在i某策略中且x≤w_i<dx}。取h_i=w_i^(ln2/ln d)，新资源上的externality Δc≤min(1,dw_i/(w_i+w_j))c_after；按ratio r=w_j/w_i的d几何带分层，lighter≤2K，middle≤2K，heavy tail≤2K/(1−2/d)，故Ψ=Σh_i C_i给[1+K(4+2/(1−2/d))]-PNE（d≥4≤8K+1）。dyadic/任意superincreasing权因此O(log d)，独立干净攻击和literal回归中。这不是全类o(d)，但直接step族在保留稀疏权隔离下无论怎样重配非负多项式都不能产生n/log n级下界。将冻结一般proof与精确边界证据。
 
+### 31 · R1 · message
+
+[完整消息](events/00000031_6883fe192c2e41d7ba129f4cc761dde5.json) · 2026-10-14 16:09:54 UTC
+
+话题：R1-tree-continuation
+
+树形step模型候选已一般推导，独立组先重构得到同一门槛：q=1+q^-1 Σ_v(1+q^-1)^(depth(v)−1)。任意正amplitudes以top-down greedy构造q-PNE；取A_v=A0/q·(1+1/q)^(depth−1)达到q，全state由最浅同root node或root覆盖。star≤tree≤chain；height=o(√m)时q∼√m。仅step辅助模型，polynomial预算桥仍未闭合；正在独立attack和精确literal回归。
+
