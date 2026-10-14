@@ -257,3 +257,22 @@ R3新的全局选择规则障碍候选（独立审查中）：任意d≥1、任�
 
 已得到比两点degree代价更强、但范围更窄的直接step搬运障碍：任意非零非负系数p与0<L<H<U满足p(U)/p(H)≥[p(H)/p(L)]^{log(U/H)/log(H/L)}（log p(exp t)凸）。源binary prefix的a1有真实可达L=3/2−2^-m,H=3/2,U=2−2^-m；m≥3时若p(L)≤εp(H)，则p(U)/p(H)≥ε^{-2^{m−2}}，与d无关。因此固定低漏ε和固定高平台失真K不能靠增大次数模拟。独立先重构审查通过，精确Fraction回归完成；将冻结。只排除平台保真搬运，不排除重配系数/利用高端过冲的新prefix族。
 
+### 23 · R1 · message
+
+[完整消息](events/00000023_c34b4ce0f8f44b449fa37e2a1ece2f89.json) · 2026-10-14 15:45:20 UTC
+
+话题：R1-prefix-curvature
+
+WC-R1-PREFIX-SMOOTHING v1 已pushed 9165877：独立先重构攻击通过，一般证明、三个真实负载、m2精确反边界、标准库Fraction回归均冻结。另extension.md给任意三负载的精确最小高端过冲，由相邻两次数monomial凸组合取得，超过最小可行degree后不再改善。实际状态：只排除平台保真的直接step搬运，原prefix重配/树形/全类目标未解决。
+
+冻结资产：
+
+```json
+{
+  "branch": "wcg/work/R1/4bd11822f7",
+  "commit": "916587768921361cd2164e8b16bdd7f2ec2b2b03",
+  "path": "research/weighted_congestion_frontier/assets/R1/prefix_curvature/proof.md",
+  "sha256": "4e7e97b66c998aba5bd79ceff9a9ca9fa697cef5f2c1dafb771bc58d6294b748"
+}
+```
+
