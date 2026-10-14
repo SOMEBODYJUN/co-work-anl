@@ -38,7 +38,10 @@ def check_learning(node_ids: set[str]) -> int:
             require(reading.startswith("research/current/") and (ROOT / reading).is_file(),
                     ("invalid canonical teaching source", path, reading))
         content = (ROOT / path).read_text(encoding="utf-8")
-        for match in re.finditer(r"(?<!\\)\[[^\]\n]+\]\(([^)\s]+)\)", content):
+        # TeX intervals followed by parentheses are not prose file links.
+        link_content = re.sub(r"(?s)```.*?```|(?<!\\)\$\$.*?(?<!\\)\$\$|\\\[.*?\\\]", "", content)
+        link_content = re.sub(r"(?<!\\)\$(?!\$)[^$\n]+(?<!\\)\$|\\\(.*?\\\)", "", link_content)
+        for match in re.finditer(r"(?<!\\)\[[^\]\n]+\]\(([^)\s]+)\)", link_content):
             target = match.group(1)
             if re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", target) or target.startswith("#"):
                 continue
@@ -131,9 +134,9 @@ def check() -> None:
     for old, new in migration.get("reestablished_root_docs", {}).items():
         require((ROOT / old).is_file() and (ROOT / new).is_file(), (old, new))
     tracked = subprocess.check_output(
-        ["git", "ls-files", "--cached", "--others", "--exclude-standard"],
+        ["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"],
         cwd=ROOT, text=True
-    ).splitlines()
+    ).rstrip("\0").split("\0")
     roots = {"facility_spe", "multi_facility_spe", "customer_attraction", "tests", "examples", "evidence", "history", "research", "learning"}
     root_docs = {".gitignore", "AGENTS.md", "README.md", "ASSETS.md", "USAGE.md",
                  "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md"}
