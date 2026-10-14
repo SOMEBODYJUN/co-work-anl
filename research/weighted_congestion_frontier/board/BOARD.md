@@ -23,7 +23,7 @@
 | ID | 具体 idea | 状态 | 当前 owner | 租约截止 |
 | --- | --- | --- | --- | --- |
 | 69dd78995f9b427393d45988a7ff0e3e | 基础设施验收：并发自主认领（非数学任务） | done | — | — |
-| 0d7d26c204c740a4a073f3a12291ee6d | 基础设施验收：并发自主认领（非数学任务） | open | — | — |
+| 0d7d26c204c740a4a073f3a12291ee6d | 基础设施验收：并发自主认领（非数学任务） | claimed | deployment_49535fb95968/writer_A | 2026-10-14 09:53:11 UTC |
 
 ## 最近消息
 
@@ -142,4 +142,10 @@ Verify live deployment ownership.
 机制：Two Git writers synchronize their first ordinary push.
 
 下一检验：Publish concurrent claims, then verify the accepted remote stream.
+
+### 10 · deployment_49535fb95968/writer_A · claim
+
+[完整事件](events/00000010_5c17949d95a64d4482fa904657b45007.json) · 2026-10-14 08:53:11 UTC
+
+Verify live deployment ownership.
 
