@@ -10,6 +10,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
 import threading
 import unittest
@@ -273,15 +274,23 @@ class BoardTests(unittest.TestCase):
         after = (index.read_bytes(), call(self.repo, "status", "--porcelain"))
         self.assertEqual(before, after)
 
-    def test_scope_whitespace_and_case_do_not_bypass_dedup(self):
+    def test_scope_whitespace_does_not_bypass_dedup(self):
         intent = proposal("A")
         self.client.publish(intent)
         duplicate = proposal("B")
         for key in b.SCOPE:
-            duplicate["body"][key] = "  " + duplicate["body"][key].upper() + " \n "
+            duplicate["body"][key] = "  " + duplicate["body"][key] + " \n "
         duplicate["body"]["next_check"] = "Different test name"
         with self.assertRaises(b.Conflict):
             self.client.publish(duplicate)
+
+    def test_mathematical_symbol_case_is_not_silently_identified(self):
+        first, second = proposal("A"), proposal("B")
+        first["body"]["statement"] = "Bound W under the specified definition"
+        second["body"]["statement"] = "Bound w under the specified definition"
+        self.client.publish(first)
+        self.client.publish(second)
+        self.assertEqual(len(self.client.read()["ideas"]), 2)
 
     def test_required_fields_unknown_ids_and_lease_bounds(self):
         bad = proposal("A")
@@ -307,6 +316,32 @@ class BoardTests(unittest.TestCase):
         with self.assertRaises(b.BoardError):
             self.client.publish(intent)
         self.assertFalse((self.client.outbox / (intent["id"] + ".json")).exists())
+
+    def test_live_smoke_cli_against_local_remote_and_frozen_source(self):
+        source = Path(__file__).resolve().parents[1] / "tools/board.py"
+        target = self.repo / "research/weighted_congestion_frontier/tools/board.py"
+        target.parent.mkdir(parents=True)
+        target.write_bytes(source.read_bytes())
+        call(self.repo, "add", ".")
+        call(self.repo, "commit", "-m", "Freeze source for live smoke fixture")
+        call(self.repo, "branch", "main")
+        call(self.repo, "push", "origin", "main")
+        script = Path(__file__).resolve().parents[1] / "tools/live_smoke.py"
+        result = subprocess.run([sys.executable, str(script), "--repo",
+                                 str(self.repo), "--live"], capture_output=True,
+                                text=True, timeout=60)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        report = json.loads(result.stdout)
+        self.assertTrue(report["verified"])
+        self.assertEqual(sum("conflict" in x for x in report["claims"]), 1)
+        self.assertEqual(self.client.read()["ideas"][report["idea"]]["status"], "done")
+
+    def test_live_smoke_requires_explicit_flag_before_writing(self):
+        script = Path(__file__).resolve().parents[1] / "tools/live_smoke.py"
+        result = subprocess.run([sys.executable, str(script), "--repo", str(self.repo)],
+                                capture_output=True, text=True, timeout=15)
+        self.assertEqual(result.returncode, 2)
+        self.assertEqual(len(self.client.read()["events"]), 0)
 
 
 if __name__ == "__main__":

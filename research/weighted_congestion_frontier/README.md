@@ -44,8 +44,10 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/prompts/PEER.md | 全体子 agent 共用的自主解题要求；每个子 agent 都保留提 idea 的权利 |
 | research/weighted_congestion_frontier/prompts/MODELS.md | 用户指定模型与真实配置记录；启动时核对可用能力 |
 | research/weighted_congestion_frontier/tools/board.py | Git 公屏工具；view、idea、claim、续约、结果和讨论，冲突后重新检查 |
+| research/weighted_congestion_frontier/tools/live_smoke.py | 显式 --live 部署验收；两并发发布端、公屏回复和冻结资产校验，事件明确标非数学 |
 | research/weighted_congestion_frontier/tests/test_board.py | 临时 bare Git 远端的并发、失联、过期和资产校验；修改工具后运行 |
 | research/weighted_congestion_frontier/evidence/validation.md | 本轮实际验证范围与限制；不承担数学证明 |
+| research/weighted_congestion_frontier/evidence/github_smoke.json | 实际 GitHub 收发的事件ID、唯一赢家、冻结资产 hash；验证部署时读取 |
 | research/weighted_congestion_frontier/board/README.md | 公屏分支入口和命令；实时事件仅在 wcg/board 分支 |
 
 未来有真实成果才建立 assets/<team>/<idea>/，包括精确 claim、推导、障碍或可复现实验。各队用专属 wcg/work/<team>/<session> 分支保存；附带研究资产的结果、冻结或交接消息须引用已推送的 commit 与文件 SHA-256，普通讨论与认领无需资产。经独立审查的冻结成果可由任何成员整合到 main，整合不是路线批准权。

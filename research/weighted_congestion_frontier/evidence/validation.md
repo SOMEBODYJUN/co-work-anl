@@ -8,7 +8,7 @@ Python 标准库 unittest 以实际临时 bare Git 远端验证，执行：
 
     python3 research/weighted_congestion_frontier/tests/test_board.py
 
-当前 17 项全部通过：同一具体 scope 同时提出/认领只一位成功；不同义务都成功；无需协调者的现成 idea 认领；到期边界接替与旧 token 阻断；仍允许旧成员公开 salvage；release 后继续与 finish 仅关闭单元；丢失 push 响应同 ID 恢复；已提交结果在资产分支删除后仍恢复确认；首次资产网络失败保存 intent、不堵其他消息；同 clone 同 ID 并发重试的原子 outbox 及确认期间文件消失恢复；错误 hash、未发布 commit、越界路径、目录对象拒绝；脏 checkout/HEAD/FETCH_HEAD 保留，以及继承 GIT_INDEX_FILE/GIT_DIR/GIT_WORK_TREE/GIT_OBJECT_DIRECTORY 时原暂存区保持；未来 discussion 不延长别人的新租约；字段、未知ID、期限边界；凭据式内容发布前拒绝。
+当前 20 项全部通过：同一具体 scope 同时提出/认领只一位成功；不同义务都成功；无需协调者的现成 idea 认领；到期边界接替与旧 token 阻断；仍允许旧成员公开 salvage；release 后继续与 finish 仅关闭单元；丢失 push 响应同 ID 恢复；已提交结果在资产分支删除后仍恢复确认；首次资产网络失败保存 intent、不堵其他消息；同 clone 同 ID 并发重试的原子 outbox 及确认期间文件消失恢复；错误 hash、未发布 commit、越界路径、目录对象拒绝；脏 checkout/HEAD/FETCH_HEAD 保留，以及继承 GIT_INDEX_FILE/GIT_DIR/GIT_WORK_TREE/GIT_OBJECT_DIRECTORY 时原暂存区保持；未来 discussion 不延长别人的新租约；字段、未知ID、期限边界；凭据式内容发布前拒绝；部署脚本在本地真实远端完成全流程并要求显式 --live；数学符号大小写不被哈希混同。
 
 根仓库维护检查通过：git diff --check、research/build_map.py --check、research/build_crosswalk.py --check、research/check_assets.py。本轮没有更改已有数学算法，未重跑其全套回归。
 
@@ -23,7 +23,15 @@ Python 标准库 unittest 以实际临时 bare Git 远端验证，执行：
 - 未来时间戳通过单调钳制延长另一成员的新租约；
 - 队内认领、全局认领及共享账本/Git写入隔离的措辞冲突。
 
-均已修复并纳入回归：先原子保存、先确认既有事件、新消息才验证资产；blob 类型检查；序号排序而不钳制 UTC；统一全局成功认领与独立 Git 工作区。两位指定模型已经独立复跑各自复现脚本并重读提示词，主要修复通过。Sol 追加发现同 ID 确认清理与另一读取之间的 TOCTOU，已用循环原子保存及容忍消失的 CLI retry 修复、纳入回归。另关闭继承 Git 上下文变量导致临时 checkout 污染调用方 index 的问题；只清仓库路由变量，保留认证。两项追加修复均已由 Sol 独立复跑原复现通过。测试临时文件移入 Git common cache，避免并发复验时误归档。实际 GitHub 收发尚待完成，不能称公屏已经部署。
+均已修复并纳入回归：先原子保存、先确认既有事件、新消息才验证资产；blob 类型检查；序号排序而不钳制 UTC；统一全局成功认领与独立 Git 工作区。两位指定模型已经独立复跑各自复现脚本并重读提示词，主要修复通过。Sol 追加发现同 ID 确认清理与另一读取之间的 TOCTOU，已用循环原子保存及容忍消失的 CLI retry 修复、纳入回归。另关闭继承 Git 上下文变量导致临时 checkout 污染调用方 index 的问题；只清仓库路由变量，保留认证。两项追加修复均已由 Sol 独立复跑原复现通过。测试临时文件移入 Git common cache，避免并发复验时误归档。公屏已成功建立，真实 GitHub 收发亦通过，下节给出可核对事件。
+
+## 真实 GitHub 部署验收
+
+运行 tools/live_smoke.py --live 后，两个并发发布端在同一真实 idea 的首个 push 前同步。一个 claim 成功、一个被 Conflict 拒绝；后者实际发布了关联讨论和因果 reply。赢家 finish 校验 main 上已推送的完整 commit/file SHA-256，任务关闭且 owner 为空。全过程无中心 assignment。
+
+实际 trace 为 evidence/github_smoke.json；该次从零条到四条事件，分别是非数学测试 idea、唯一 claim、讨论回复、含冻结工具文件的 finish。事件ID、冲突详情和 source_asset 的 commit/hash 可由 board.py view --json 重核。发布端是部署脚本中的独立 Git 工作区，不冒称两个实际研究对话。冻结版本为 main@23c6378；随后数学符号大小写去重澄清由本地回归覆盖，最新工具再次读取此流成功。
+
+复现部署脚本会向指定公屏新增明确标注的非数学验收事件，只有显式 --live 时执行。公屏初始测试单元已结束，不占数学研究的认领。所有团队可以自主提出新数学 idea。
 
 ## 范围限制
 

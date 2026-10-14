@@ -47,7 +47,8 @@ def guard(value):
 
 
 def fingerprint(body):
-    scope = {key: " ".join(body[key].split()).casefold() for key in SCOPE}
+    # Mathematical symbols and claim IDs are case-sensitive (W is not w).
+    scope = {key: " ".join(body[key].split()) for key in SCOPE}
     return hashlib.sha256(encode(scope).encode()).hexdigest()
 
 
