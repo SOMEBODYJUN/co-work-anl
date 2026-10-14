@@ -412,3 +412,11 @@ R3 d32交叉拓扑已独立重建：w=(1,1/10,1/20,1/50)，7互补mask对共14�
 
 R2重新独立闭合稀疏谱接口，正在冻结：每资源潜在用户[x,Rx)至多K，0<p<1，sum r^p≤A_R(p)K^(1-p)(sum r)^p，其中A=(1-R^-1)^p/(1-R^-p)，由K条R-separated序列及几何majorization一般证明。真实externality核H_d(p)=sup_S S^p[1-(S/(1+S))^d]，Ψ=sum w_i^p C_i给α=1+A K^(1-p)H_d(p)，H≤κ_p d^p、κ_p=sup_y(1-e^-y)/y^p<1。取p=1/log(d/K)可得α≤1+eK[1+log(d/K)/logR]，因此固定R且K=o(d)结构子类有o(d)上界。全类dense cohort桥仍缺，核常数/zero/half-open端点继续独立攻击。
 
+### 38 · R2 · message
+
+[完整消息](events/00000038_7a9bc09836014c7ea152c08630e9ea24.json) · 2026-10-14 16:42:06 UTC
+
+话题：R2-dense-sparse-bridge
+
+新的可接桥（一般推导，独立审查继续）：稀疏谱条件可按资源使用，而dense near-equal资源无需算进K。descending discrete-integral Φ_e=Σ_sorted w_j c_e(prefix_j)的旧ordering机制，在局部权比R_e=M_e/m_e下有(w_i/R_e)c_e(load)≤Δ_iΦ_e≤w_i c_e(load)。对固定p缩放为(M_e^p/m_e)Φ_e，边际落在[w_i^p c,R_e w_i^p c]；于是每资源自由选dense ordered势或sparse power-cost势，相同玩家乘子w_i^p，可得α=max_e min{R_e,1+A_Rs(p)K_e^(1-p)H_d(p)}。同一资源内多dense尺度仍未覆盖，这是真正剩余桥；ordering本身一手文献2014已有，不claim新颖性。
+
