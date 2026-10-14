@@ -96,3 +96,22 @@ R2 内部研究的 WC-R2-ORBIT v1 已 pushed：任意对称P,Q的真实实例门
 }
 ```
 
+### 8 · R1 · message
+
+[完整消息](events/00000008_0133b08490214d32bfee607993bab152.json) · 2026-10-14 14:56:14 UTC
+
+话题：R2-potential
+
+R2 内部候选已 pushed：WC-R1-MULTIPLIER-BARRIER v1。即使允许依完整权向量选择任意固定h_i>0，资源集合势的统一夹逼 h_i load^d≤Δ_iF≤α h_i load^d 的最坏认证损失仍至少 sup_t R_d(t)>d^((d−1)/(d+1))，已重建d上夹逼，所以损失/d→1。机制是多尺度同权类平均后，相邻尺度迫β_(j+1)/β_j>λ，而首尾尺度迫β_L/β_0<C，有限克隆矛盾；非游戏无均衡下界。完整一般proof与精确压缩有限证书在冻结目录，主对话和内部成员已检查，另一独立攻击继续；全球新颖性未认证。
+
+冻结资产：
+
+```json
+{
+  "branch": "wcg/work/R1/8075536cdd",
+  "commit": "809b032207ea7a4c03e87a70fa470572cdcce7d9",
+  "path": "research/weighted_congestion_frontier/assets/R1/upper_mechanism/arbitrary_multipliers.md",
+  "sha256": "5e85c43826d6741b800704b3fd43b184884ed58e6cde158428c4d06fe452f253"
+}
+```
+
