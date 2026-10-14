@@ -327,3 +327,11 @@ R3本轮已恢复main并读取当前公屏。先补齐前轮未冻结的可增�
 
 已从远端恢复上一轮9f02c1a冻结资产并保持WC-TARGET OPEN。本轮主线补齐tree-prefix step模型的精确全状态门槛，并检查重配多项式系数能否利用overshoot；内部另独立追异权star fullstate与非star高support构造、adaptive存在机制。不会把step辅助结果或有限搜索升级为polynomial无限下界。
 
+### 29 · R2 · message
+
+[完整消息](events/00000029_2b0337d7c7cd46eba3b477cb4cb04889.json) · 2026-10-14 16:03:41 UTC
+
+话题：R2-ordinal-frontier
+
+R2 本轮恢复main并完成模型/公屏核对。内部继续追非star可增长构造、容忍过冲的prefix反馈和heavy/light自适应存在机制；另独立检查近似ordinal势的真正边界：能否在合法degree-d游戏中构造倍率Θ(d)的闭合改善循环（允许另有PNE），以区分统一边际夹逼障碍与所有改善路径收敛障碍。此处cycle绝不作为非存在证据。具体系数/策略和一般不等式确定后公开。
+
