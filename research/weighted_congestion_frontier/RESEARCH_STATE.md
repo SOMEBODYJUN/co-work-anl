@@ -17,3 +17,5 @@
 本轮新版真实GitHub验收已通过，初始完整检查点main@93d804a已远端确认；测试发布端登记、并发唯一认领、回复与冻结工具资产校验/释放记录在evidence/identity_smoke.json。测试身份不冒称数学研究者，WC-TARGET仍OPEN。
 
 2026-10-14 UTC 本轮从 main@b99d025 重新核对：身份、公屏、两个辅助提示词和持续工作验收均已在远端。复验中补齐新会话公屏与 checkpoint 的认证衔接，默认 board.sh 共用外部凭据路径，避免每队自行编写 ASKPASS。WC-TARGET v1 仍 OPEN，此项不形成新数学结果。
+
+统一认证入口已推到main@3294e0f，随后两个Python部署测试端通过新入口真实登记、并发唯一认领、公开回复、冻结代码哈希校验和完成释放；可恢复记录见evidence/entry_smoke.json。没有启动数学研究成员，目标继续OPEN。

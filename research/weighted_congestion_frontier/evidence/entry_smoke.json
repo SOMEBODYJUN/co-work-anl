@@ -1,0 +1,227 @@
+{
+  "run_id": "6adfeb399e5a4aa3858311adc567220b",
+  "scope": "Infrastructure test using Python publishers; no mathematical researchers or progress claimed.",
+  "calls": [
+    {
+      "args": [
+        "register",
+        "--actor",
+        "entry_deployment_6adfeb399e5a/publisher_A",
+        "--role",
+        "deployment",
+        "--runtime-id",
+        "python-board-entry-test",
+        "--actual-model",
+        "none",
+        "--actual-effort",
+        "none"
+      ],
+      "exit_code": 0,
+      "event": {
+        "actor": "entry_deployment_6adfeb399e5a/publisher_A",
+        "body": {
+          "actual_effort": "none",
+          "actual_model": "none",
+          "budget_seconds": 3600,
+          "requested_effort": "unspecified",
+          "requested_model": "unspecified",
+          "role": "deployment",
+          "runtime_id": "python-board-entry-test"
+        },
+        "id": "aebce761b0ff421481b56d4a1b9bc07b",
+        "kind": "register",
+        "schema": 1,
+        "seq": 13,
+        "time": 1791977676
+      }
+    },
+    {
+      "args": [
+        "register",
+        "--actor",
+        "entry_deployment_6adfeb399e5a/publisher_B",
+        "--role",
+        "deployment",
+        "--runtime-id",
+        "python-board-entry-test",
+        "--actual-model",
+        "none",
+        "--actual-effort",
+        "none"
+      ],
+      "exit_code": 0,
+      "event": {
+        "actor": "entry_deployment_6adfeb399e5a/publisher_B",
+        "body": {
+          "actual_effort": "none",
+          "actual_model": "none",
+          "budget_seconds": 3600,
+          "requested_effort": "unspecified",
+          "requested_model": "unspecified",
+          "role": "deployment",
+          "runtime_id": "python-board-entry-test"
+        },
+        "id": "f4352c5f2b13485388e4d424b46d99c9",
+        "kind": "register",
+        "schema": 1,
+        "seq": 14,
+        "time": 1791977695
+      }
+    },
+    {
+      "args": [
+        "propose",
+        "--actor",
+        "entry_deployment_6adfeb399e5a/publisher_A",
+        "--title",
+        "统一公屏入口验收（非数学）",
+        "--claim-version",
+        "ENTRY-SMOKE v1 6adfeb399e5a4aa3858311adc567220b",
+        "--statement",
+        "Two CLI publishers may read and respond, but only one owns a shared unit.",
+        "--obligation",
+        "Check new authenticated CLI entry on the actual GitHub remote.",
+        "--mechanism",
+        "Parallel wrapper processes with remembered external credential path.",
+        "--next-check",
+        "Claim, reply, verify frozen entry blob and release."
+      ],
+      "exit_code": 0,
+      "event": {
+        "actor": "entry_deployment_6adfeb399e5a/publisher_A",
+        "body": {
+          "claim": false,
+          "claim_version": "ENTRY-SMOKE v1 6adfeb399e5a4aa3858311adc567220b",
+          "lease_seconds": 3600,
+          "mechanism": "Parallel wrapper processes with remembered external credential path.",
+          "next_check": "Claim, reply, verify frozen entry blob and release.",
+          "obligation": "Check new authenticated CLI entry on the actual GitHub remote.",
+          "statement": "Two CLI publishers may read and respond, but only one owns a shared unit.",
+          "title": "统一公屏入口验收（非数学）"
+        },
+        "id": "d1290b4ff80e481f89f0bc75349920f1",
+        "kind": "propose",
+        "schema": 1,
+        "seq": 15,
+        "time": 1791977715
+      }
+    },
+    {
+      "args": [
+        "claim",
+        "--actor",
+        "entry_deployment_6adfeb399e5a/publisher_A",
+        "--idea",
+        "d1290b4ff80e481f89f0bc75349920f1",
+        "--next-check",
+        "Validate shared authenticated entry.",
+        "--lease-seconds",
+        "3600"
+      ],
+      "exit_code": 0,
+      "event": {
+        "actor": "entry_deployment_6adfeb399e5a/publisher_A",
+        "body": {
+          "idea": "d1290b4ff80e481f89f0bc75349920f1",
+          "lease_seconds": 3600,
+          "next_check": "Validate shared authenticated entry."
+        },
+        "id": "9d33d4a26093420b981a28c59c43e39e",
+        "kind": "claim",
+        "schema": 1,
+        "seq": 16,
+        "time": 1791977738
+      }
+    },
+    {
+      "args": [
+        "claim",
+        "--actor",
+        "entry_deployment_6adfeb399e5a/publisher_B",
+        "--idea",
+        "d1290b4ff80e481f89f0bc75349920f1",
+        "--next-check",
+        "Validate shared authenticated entry.",
+        "--lease-seconds",
+        "3600"
+      ],
+      "exit_code": 2,
+      "error": "ERROR: Already claimed by entry_deployment_6adfeb399e5a/publisher_A"
+    },
+    {
+      "args": [
+        "say",
+        "--actor",
+        "entry_deployment_6adfeb399e5a/publisher_B",
+        "--kind",
+        "discussion",
+        "--idea",
+        "d1290b4ff80e481f89f0bc75349920f1",
+        "--reply-to",
+        "9d33d4a26093420b981a28c59c43e39e",
+        "--text",
+        "新入口真实验收：两Python发布端共用已记住的外部凭据路径，认领唯一且冲突方可正常回复。此为非数学部署测试。"
+      ],
+      "exit_code": 0,
+      "event": {
+        "actor": "entry_deployment_6adfeb399e5a/publisher_B",
+        "body": {
+          "idea": "d1290b4ff80e481f89f0bc75349920f1",
+          "reply_to": "9d33d4a26093420b981a28c59c43e39e",
+          "text": "新入口真实验收：两Python发布端共用已记住的外部凭据路径，认领唯一且冲突方可正常回复。此为非数学部署测试。"
+        },
+        "id": "2a4cc4e633c3445aa11d16566bc25e84",
+        "kind": "discussion",
+        "schema": 1,
+        "seq": 17,
+        "time": 1791977762
+      }
+    },
+    {
+      "args": [
+        "finish",
+        "--actor",
+        "entry_deployment_6adfeb399e5a/publisher_A",
+        "--idea",
+        "d1290b4ff80e481f89f0bc75349920f1",
+        "--lease-token",
+        "9d33d4a26093420b981a28c59c43e39e",
+        "--text",
+        "统一公屏入口已在真实GitHub验证登记、并发认领、回复、冻结入口代码校验及释放；WC-TARGET仍OPEN。",
+        "--asset-json",
+        "/workspace/scratch/ae6c02252e89/repo/.git/entry-smoke-asset.json"
+      ],
+      "exit_code": 0,
+      "event": {
+        "actor": "entry_deployment_6adfeb399e5a/publisher_A",
+        "body": {
+          "asset": {
+            "branch": "main",
+            "commit": "3294e0f081987c02ba447b39cf83d2ce72063fd1",
+            "path": "research/weighted_congestion_frontier/tools/board_entry.py",
+            "sha256": "3049153577fb83b59d633ae0cd8d7a98eaf6eace58f8590e6eba76d7fc788495"
+          },
+          "idea": "d1290b4ff80e481f89f0bc75349920f1",
+          "lease_token": "9d33d4a26093420b981a28c59c43e39e",
+          "text": "统一公屏入口已在真实GitHub验证登记、并发认领、回复、冻结入口代码校验及释放；WC-TARGET仍OPEN。"
+        },
+        "id": "0e32b300fd684221bb1548c259eaaf4d",
+        "kind": "finish",
+        "schema": 1,
+        "seq": 18,
+        "time": 1791977790
+      }
+    }
+  ],
+  "initial_events": 12,
+  "final_events": 18,
+  "source_asset": {
+    "branch": "main",
+    "commit": "3294e0f081987c02ba447b39cf83d2ce72063fd1",
+    "path": "research/weighted_congestion_frontier/tools/board_entry.py",
+    "sha256": "3049153577fb83b59d633ae0cd8d7a98eaf6eace58f8590e6eba76d7fc788495"
+  },
+  "idea": "d1290b4ff80e481f89f0bc75349920f1",
+  "verified": true,
+  "accepted_events": 6
+}

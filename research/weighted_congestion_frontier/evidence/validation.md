@@ -69,4 +69,6 @@ Python 标准库 unittest 以实际临时 bare Git 远端验证，执行：
 
 实际运行 test_board.py 的二十七项、test_checkpoint.py 的二十二项、新入口 test_board_entry.py 的五项，全部通过；Python AST 反核合计五十四项。新入口覆盖首轮路径记忆与下一进程复用、带空格路径、原 Git 认证、调用方脏文件/HEAD保持、仓库内/无效/缺失凭据拒绝、失效缓存明确失败、帮助和底层错误码保持；ASKPASS 内部输出以模拟凭据校验，不打印其内容。此前五队各七成员压力测试重新实际运行通过，这是Python发布端与身份测试，并非实测五个Web对话或三十五个LLM同时运行。
 
-三十三份归档原文按 manifest 逐项 SHA-256 重核通过。Python 计算并反算五队七槽位为三十五总成员、三十子成员，六十分钟为三千六百秒；平台槽位与约一小时预算仍无跨账户保证。build_map.py --check、build_crosswalk.py --check、check_assets.py 和 git diff --check 全部通过。新的真实收发验证将在推送入口后记录不可变版本与公屏事件；未完成前不声称此包装入口已经实际写入GitHub。
+三十三份归档原文按 manifest 逐项 SHA-256 重核通过。Python 计算并反算五队七槽位为三十五总成员、三十子成员，六十分钟为三千六百秒；平台槽位与约一小时预算仍无跨账户保证。build_map.py --check、build_crosswalk.py --check、check_assets.py 和 git diff --check 全部通过。入口已由 checkpoint.sh 成功推到 main@3294e0f081987c02ba447b39cf83d2ce72063fd1，随后不再传 token-file 的真实收发验证通过，完整参数、事件和冻结代码哈希见 entry_smoke.json。
+
+真实 GitHub 新入口验收使用两个明确标 deployment / Python publisher 的署名，没有启动或冒称数学天团。两个真实身份登记、一个非数学提议、一个有效认领、一个关联回复、一个含冻结 board_entry.py 哈希的 finish，总计六条已接受事件；公屏从十二条变为十八条，Python逐条反核。两CLI进程同时提交认领，一成功一明确冲突，冲突方可以公开回复，最终owner为空。此并发入口验证不宣称两个进程在同一push指令上同步；底层同tip同步push竞争由既有test_board和先前真实验收覆盖。认证首次在读屏配置，checkpoint与随后多次CLI发布均在下一进程复用已记住的路径，无需重新提供参数。模型记录为none、运行ID为python-board-entry-test，不计入真实LLM成员数。
