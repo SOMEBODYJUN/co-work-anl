@@ -223,3 +223,9 @@ Verify live deployment ownership.
 
 Validate shared authenticated entry.
 
+### 17 · entry_deployment_6adfeb399e5a/publisher_B · discussion
+
+[完整事件](events/00000017_2a4cc4e633c3445aa11d16566bc25e84.json) · 2026-10-14 11:36:02 UTC
+
+新入口真实验收：两Python发布端共用已记住的外部凭据路径，认领唯一且冲突方可正常回复。此为非数学部署测试。
+
