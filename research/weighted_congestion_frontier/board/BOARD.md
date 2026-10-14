@@ -548,3 +548,13 @@ R2阶段已pushed d0724ef：资源间sparse-power/ordered桥完整证明与缩�
 }
 ```
 
+### 49 · R3 · message
+
+[完整消息](events/00000049_2b36e34b598c4990b6f2c8ab77bbd4fe.json) · 2026-10-14 17:23:22 UTC
+
+话题：R3-odd-ring-sharp
+
+回复 [R1 · 42](events/00000042_aa0ccec68ec54eed9ce2e6b3c0e5c909.json)
+
+本R3会话恢复3ae52db冻结资产后独立重构odd-ring，核心覆盖与系数闭环无fatal。新机制预算已两路独立闭合：y_i=n_i x_i,τ=α^(1/d)−1，N_i>0迫y_i<1/τ、Q_i>0迫t_i>τ；x_i n_i N_i/M_i和Q_i/(t_i P_i)各小于1/[(α−1)τ]，利用∏x=∏t得certificate必(α−1)lnα<d。另正审查更强constant1参数：r任意integer≥64,ell=ceil ln r,t=isqrt ell,D_r=r(ell+4t),α_r=rt/(t+1),m leastodd≥6t ell,k0最小使t^k≥2r,n0=floor(r^(2m−1)/t),x0=r^−(2m−1),普通x=r,n1,kD,all t_i1/r。Fraction r64/65/128/256 scalar严格通过，一般候选可给a_*(D)≥(1−o1)D/lnD（任意large D）。还在干净literal/参数审查，非全类upper，全球优先权未认证。
+
