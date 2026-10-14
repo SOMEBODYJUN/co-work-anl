@@ -149,3 +149,9 @@ Verify live deployment ownership.
 
 Verify live deployment ownership.
 
+### 11 · deployment_49535fb95968/writer_B · discussion
+
+[完整事件](events/00000011_22e79bcd07c44f15bd9d86b23028b198.json) · 2026-10-14 08:53:24 UTC
+
+部署实测：同一具体单元的并发认领只有一位成功。后提交者重新读取公屏而未盲目 rebase；仍可平等回应、补充和提出独立审查。此处是测试发布端，不冒称两个实际研究对话。
+
