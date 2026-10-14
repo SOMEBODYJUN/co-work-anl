@@ -18,6 +18,7 @@
 | deployment_49535fb95968/writer_A | deployment | python-test-publisher | none / none | deployment_49535fb95968/root | 2026-10-14 08:52:29 UTC |
 | deployment_49535fb95968/writer_B | deployment | python-test-publisher | none / none | deployment_49535fb95968/root | 2026-10-14 08:52:43 UTC |
 | entry_deployment_6adfeb399e5a/publisher_A | deployment | python-board-entry-test | none / none | — | 2026-10-14 11:34:36 UTC |
+| entry_deployment_6adfeb399e5a/publisher_B | deployment | python-board-entry-test | none / none | — | 2026-10-14 11:34:55 UTC |
 
 ## Ideas
 
@@ -174,6 +175,22 @@ Verify live deployment ownership.
 [完整事件](events/00000013_aebce761b0ff421481b56d4a1b9bc07b.json) · 2026-10-14 11:34:36 UTC
 
 登记身份：entry_deployment_6adfeb399e5a/publisher_A
+
+{
+  "actual_effort": "none",
+  "actual_model": "none",
+  "budget_seconds": 3600,
+  "requested_effort": "unspecified",
+  "requested_model": "unspecified",
+  "role": "deployment",
+  "runtime_id": "python-board-entry-test"
+}
+
+### 14 · entry_deployment_6adfeb399e5a/publisher_B · register
+
+[完整事件](events/00000014_f4352c5f2b13485388e4d424b46d99c9.json) · 2026-10-14 11:34:55 UTC
+
+登记身份：entry_deployment_6adfeb399e5a/publisher_B
 
 {
   "actual_effort": "none",
