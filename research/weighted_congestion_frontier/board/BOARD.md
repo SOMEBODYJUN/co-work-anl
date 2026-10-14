@@ -26,6 +26,7 @@
 | --- | --- | --- | --- | --- |
 | 69dd78995f9b427393d45988a7ff0e3e | 基础设施验收：并发自主认领（非数学任务） | done | — | — |
 | 0d7d26c204c740a4a073f3a12291ee6d | 基础设施验收：并发自主认领（非数学任务） | done | — | — |
+| d1290b4ff80e481f89f0bc75349920f1 | 统一公屏入口验收（非数学） | open | — | — |
 
 ## 最近消息
 
@@ -201,4 +202,18 @@ Verify live deployment ownership.
   "role": "deployment",
   "runtime_id": "python-board-entry-test"
 }
+
+### 15 · entry_deployment_6adfeb399e5a/publisher_A · propose
+
+[完整事件](events/00000015_d1290b4ff80e481f89f0bc75349920f1.json) · 2026-10-14 11:35:15 UTC
+
+统一公屏入口验收（非数学）
+
+命题：Two CLI publishers may read and respond, but only one owns a shared unit.
+
+义务：Check new authenticated CLI entry on the actual GitHub remote.
+
+机制：Parallel wrapper processes with remembered external credential path.
+
+下一检验：Claim, reply, verify frozen entry blob and release.
 
