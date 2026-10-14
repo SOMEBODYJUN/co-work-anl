@@ -66,3 +66,43 @@
 - Counterevidence / Objections：初版φ仅w≤1的解释已由w≥1时z≥u机制补齐；v3不能坚持整个还原保持原w。F≡0直接存在PNE，zero分母未除。未见fatal objection。
 - Status：完整一般证明及独立攻击；未外审、未认证novelty。Truth有proof、Value封闭整个受限搜索、Mechanism为整数稳定区间、Ambition不涉及异权/交叉拓扑。
 - Related Files：assets/R3/full_topology/、assets/R3/topology_attack/、../current/weighted_congestion_frontier.md。
+
+## WC-R3-SOURCE32-178-v1 — COMPLETE STATED SCOPE
+
+- Exact Statement / Conclusion: For every original source parameter, min(H,L)<=89/50; all n,k and real w,beta are covered by analytic reduction plus exact negative interval certificates.
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope: exact identity in `research/weighted_congestion_frontier/assets/R3/source32_bound/PROOF.md`; MODEL cost and weak equilibrium conventions apply. No claim of a full-class upper bound.
+- Dependencies: WC-SOURCE-FORMULA; all joint premises remain explicit.
+- Evidence: research/weighted_congestion_frontier/assets/R3/source32_bound/certificate.json, research/weighted_congestion_frontier/assets/R3/source32_bound/verification.json, research/weighted_congestion_frontier/assets/R3/crossover_audit/main_check_results.json; separate independently authored verifier and direct reconstruction.
+- Counterevidence / Objections: no remaining objection to the exact stated scope; fixed-degree improvement does not prove an unbounded family. External review and priority unverified.
+- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: WC-TARGET OPEN.
+- Related Files: research/weighted_congestion_frontier/assets/R3/source32_bound/PROOF.md, research/weighted_congestion_frontier/assets/R3/source32_bound/verify.py, research/weighted_congestion_frontier/assets/R3/crossover_audit/main_check.py
+
+## WCF-R3-CROSS32-AUDIT-v1 — COMPLETE STATED SCOPE
+
+- Exact Statement / Conclusion: One explicit rational four-player 14-resource game has strict >9/5 improvement at every pure state; its exact best factor is frozen. No growing lower-family implication.
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope: exact identity in `research/weighted_congestion_frontier/assets/R3/crossover_audit/README.md`; MODEL cost and weak equilibrium conventions apply. No claim of a full-class upper bound.
+- Dependencies: WC-MODEL; all joint premises remain explicit.
+- Evidence: research/weighted_congestion_frontier/assets/R3/crossover_audit/degree32_certificate.json, research/weighted_congestion_frontier/assets/R3/crossover_audit/main_check_results.json; separate independently authored verifier and direct reconstruction.
+- Counterevidence / Objections: no remaining objection to the exact stated scope; fixed-degree improvement does not prove an unbounded family. External review and priority unverified.
+- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: WC-TARGET OPEN.
+- Related Files: research/weighted_congestion_frontier/assets/R3/crossover_audit/README.md, research/weighted_congestion_frontier/assets/R3/crossover_audit/verify_degree32.py, research/weighted_congestion_frontier/assets/R3/crossover_audit/main_check.py
+
+## WCF-R3-FIXED-DEGREE-FAIL-v1 — COMPLETE STATED SCOPE
+
+- Exact Statement / Conclusion: Keeping crossover weights/amplitudes and raising six degrees gives a 9/5-PNE at degree40; best factors converge to 5235403/2930833<9/5. Reweighting is not excluded.
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope: exact identity in `research/weighted_congestion_frontier/assets/R3/crossover_audit/README.md`; MODEL cost and weak equilibrium conventions apply. No claim of a full-class upper bound.
+- Dependencies: WC-MODEL; all joint premises remain explicit.
+- Evidence: research/weighted_congestion_frontier/assets/R3/crossover_audit/degree40_failure_certificate.json, research/weighted_congestion_frontier/assets/R3/crossover_audit/fixed_weight_limit_certificate.json, research/weighted_congestion_frontier/assets/R3/crossover_audit/fixed_degree_scan.json, research/weighted_congestion_frontier/assets/R3/crossover_audit/main_check_results.json; separate independently authored verifier and direct reconstruction.
+- Counterevidence / Objections: no remaining objection to the exact stated scope; fixed-degree improvement does not prove an unbounded family. External review and priority unverified.
+- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: WC-TARGET OPEN.
+- Related Files: research/weighted_congestion_frontier/assets/R3/crossover_audit/README.md, research/weighted_congestion_frontier/assets/R3/crossover_audit/verify_degree32.py, research/weighted_congestion_frontier/assets/R3/crossover_audit/main_check.py
+
+## WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1 — COMPLETE STATED SCOPE
+
+- Exact Statement / Conclusion: T32<=89/50<9/5<B(G), allowing all positive common light weights and arbitrary nonnegative principal/side polynomial coefficients in the symmetric topology.
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope: exact identity in `research/weighted_congestion_frontier/assets/R3/crossover_audit/separation.md`; MODEL cost and weak equilibrium conventions apply. No claim of a full-class upper bound.
+- Dependencies: WC-R3-SOURCE32-178-v1, WCF-R3-CROSS32-AUDIT-v1, WC-R3-FULL-TOPOLOGY-REDUCTION-v3; all joint premises remain explicit.
+- Evidence: research/weighted_congestion_frontier/assets/R3/crossover_audit/main_check_results.json; separate independently authored verifier and direct reconstruction.
+- Counterevidence / Objections: no remaining objection to the exact stated scope; fixed-degree improvement does not prove an unbounded family. External review and priority unverified.
+- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: WC-TARGET OPEN.
+- Related Files: research/weighted_congestion_frontier/assets/R3/crossover_audit/separation.md, research/weighted_congestion_frontier/assets/R3/crossover_audit/main_check.py

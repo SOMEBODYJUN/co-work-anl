@@ -3788,6 +3788,54 @@
         "research/weighted_congestion_frontier/assets/R3/topology_attack/review.md"
       ],
       "status": "complete current proofs, independently internally attacked; unrefereed"
+    },
+    {
+      "id": "WC-R3-SOURCE32-178-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Source d=32 full-parameter upper bound",
+      "detail": "For every original source parameter, min(H,L)<=89/50; all n,k and real w,beta are covered by analytic reduction plus exact negative interval certificates.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/source32_bound/PROOF.md"
+      ],
+      "status": "complete exact statements with independent internal reconstruction; unrefereed"
+    },
+    {
+      "id": "WCF-R3-CROSS32-AUDIT-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Four-player degree-32 strict 9/5 obstruction",
+      "detail": "One explicit rational four-player 14-resource game has strict >9/5 improvement at every pure state; its exact best factor is frozen. No growing lower-family implication.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/crossover_audit/README.md"
+      ],
+      "status": "complete exact statements with independent internal reconstruction; unrefereed"
+    },
+    {
+      "id": "WCF-R3-FIXED-DEGREE-FAIL-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Fixed crossover coefficients do not preserve 9/5",
+      "detail": "Keeping crossover weights/amplitudes and raising six degrees gives a 9/5-PNE at degree40; best factors converge to 5235403/2930833<9/5. Reweighting is not excluded.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/crossover_audit/README.md"
+      ],
+      "status": "complete exact statements with independent internal reconstruction; unrefereed"
+    },
+    {
+      "id": "WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Crossover exceeds the entire symmetric degree-32 topology",
+      "detail": "T32<=89/50<9/5<B(G), allowing all positive common light weights and arbitrary nonnegative principal/side polynomial coefficients in the symmetric topology.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/crossover_audit/separation.md"
+      ],
+      "status": "complete exact statements with independent internal reconstruction; unrefereed"
     }
   ],
   "hyperedges": [
@@ -9287,6 +9335,68 @@
         "research/weighted_congestion_frontier/assets/R3/full_topology/proof.md"
       ],
       "status": "complete current proofs, independently internally attacked; unrefereed"
+    },
+    {
+      "id": "E-WC-R3-SOURCE32-178-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-SOURCE-FORMULA"
+      ],
+      "conclusion": "WC-R3-SOURCE32-178-v1",
+      "statement": "For every original source parameter, min(H,L)<=89/50; all n,k and real w,beta are covered by analytic reduction plus exact negative interval certificates.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/source32_bound/PROOF.md"
+      ],
+      "status": "complete exact statements with independent internal reconstruction; unrefereed"
+    },
+    {
+      "id": "E-WCF-R3-CROSS32-AUDIT-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL"
+      ],
+      "conclusion": "WCF-R3-CROSS32-AUDIT-v1",
+      "statement": "One explicit rational four-player 14-resource game has strict >9/5 improvement at every pure state; its exact best factor is frozen. No growing lower-family implication.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/crossover_audit/README.md"
+      ],
+      "status": "complete exact statements with independent internal reconstruction; unrefereed"
+    },
+    {
+      "id": "E-WCF-R3-FIXED-DEGREE-FAIL-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL"
+      ],
+      "conclusion": "WCF-R3-FIXED-DEGREE-FAIL-v1",
+      "statement": "Keeping crossover weights/amplitudes and raising six degrees gives a 9/5-PNE at degree40; best factors converge to 5235403/2930833<9/5. Reweighting is not excluded.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/crossover_audit/README.md"
+      ],
+      "status": "complete exact statements with independent internal reconstruction; unrefereed"
+    },
+    {
+      "id": "E-WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-R3-SOURCE32-178-v1",
+        "WCF-R3-CROSS32-AUDIT-v1",
+        "WC-R3-FULL-TOPOLOGY-REDUCTION-v3"
+      ],
+      "conclusion": "WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1",
+      "statement": "T32<=89/50<9/5<B(G), allowing all positive common light weights and arbitrary nonnegative principal/side polynomial coefficients in the symmetric topology.",
+      "refs": [
+        "research/current/weighted_congestion_frontier.md",
+        "research/weighted_congestion_frontier/assets/R3/crossover_audit/separation.md"
+      ],
+      "status": "complete exact statements with independent internal reconstruction; unrefereed"
     }
   ]
 }

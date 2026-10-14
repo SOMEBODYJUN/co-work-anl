@@ -70,3 +70,9 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 - `research/weighted_congestion_frontier/assets/R3/full_topology/`：稳定整数区间、两种右支不等式、单轻玩家反演、poly→monomial消元及精确literal回归；尝试同权对称拓扑前读。
 - `research/weighted_congestion_frontier/assets/R3/topology_attack/`：先独立重构后的版本1–3审查及另写literal oracle；状态升级或修改范围时读。
 - `research/current/weighted_congestion_frontier.md`：上述命题的根图谱入口与当前前沿；完整proof仍在各package。
+
+## 非对称交叉拓扑的有限次数分离
+
+[degree32交叉资产](assets/R3/crossover_audit/separation.md)给 T32≤89/50<9/5<B(G)，完整对称类允许任意非负主/副多项式及所有正同轻权。源包络上界由[全实参数证书](assets/R3/source32_bound/PROOF.md)证明，交叉游戏全部状态及偏离有两份独立精确核验。固定系数升次数在d40失败；该路线的极限值也低于9/5。有限分离不解决WC-TARGET增长阶。
+
+路径 `research/weighted_congestion_frontier/assets/R3/source32_bound/` 保存消元证明、整数Bernstein检查器和完整区间证书；以后比较d32下界时读。`research/weighted_congestion_frontier/assets/R3/crossover_audit/` 保存逐资源策略、全状态成本、独立重构和固定参数失效；构造增长族前读，避免只提高次数。

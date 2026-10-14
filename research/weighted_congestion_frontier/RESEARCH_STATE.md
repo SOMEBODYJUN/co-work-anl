@@ -25,3 +25,7 @@
 ## R3 frontier after exact source/topology closure
 
 源式sharp factor为(2/√e)√(d ln ln d)/ln d。改变同权两列费用为任意非负多项式、加强全状态攻击均不突破该渐近，因为α≥ρ可还原源式。下一信息动作是非对称高support关联，或异权full-state覆盖；有限degree32交叉构造及全源参数精确比较正在独立核验。全类目标保持开放。
+
+## R3有限次数交叉分离与延伸缺口
+
+已完成并独立核验 T32≤89/50<9/5<B(G)。source32全部整数参数/实区间的证明和交叉16状态/64偏离都可复现。固定weights/coefficient直接升degree在40已有9/5-PNE，极限亦失败。主目标仍OPEN；下一义务是玩家数/resource support可增长的交叉反馈，以及dense近等权组的可粘合存在机制。参数化四玩家极限族与窄带Shapley候选另行审查，不将其默认为新无限下界或全类上界。

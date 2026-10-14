@@ -68,6 +68,35 @@ same sharp asymptotic. This is a restricted-topology upper bound. It does
 not restrict a_*(d) from above; arbitrary strategy incidence and heterogeneous
 light weights remain outside this theorem.
 
+## Finite degree 32: asymmetric crossover exceeds the full symmetric topology
+
+**WC-R3-SOURCE32-178-v1** proves F_32<=89/50 over every source integer
+n,k and real w,beta. A strict violation forces n<=55; 1760 eliminated
+polynomials have complete negative Bernstein interval certificates. Two
+independent implementations check all 1768 leaves. The
+[full real-domain proof](../weighted_congestion_frontier/assets/R3/source32_bound/PROOF.md)
+is a restricted-family upper bound, with no a_*(32) upper implication.
+
+**WCF-R3-CROSS32-AUDIT-v1** constructs one G_32 with weights
+(1,1/10,1/20,1/50) and seven complementary resource pairs. Every pure
+state has a strict 9/5 improvement. Literal Fraction costs, all sixteen
+states and sixty-four deviations, exact instance factor, and a second
+strategy-set reconstruction are in the
+[crossover package](../weighted_congestion_frontier/assets/R3/crossover_audit/README.md).
+
+Together with full-topology v3, **WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1** gives
+T_32<=89/50<9/5<B(G). The
+[combined proof and review](../weighted_congestion_frontier/assets/R3/crossover_audit/separation.md)
+lists every joint dependency. The symmetric class here allows arbitrary
+nonnegative principal/side polynomials and all positive common light weights.
+This is a finite-degree topology separation; global priority is unverified.
+
+**WCF-R3-FIXED-DEGREE-FAIL-v1** precisely blocks a proposed extrapolation:
+keeping those weights and amplitudes while increasing the six high degrees
+has an exact 9/5-PNE at degree 40. Its best factors tend to
+5235403/2930833<9/5. This does not restrict reweighting or increasing the
+number of players.
+
 ## State and continuation
 
 Both general proofs have undergone separate internal reconstruction and

@@ -1,5 +1,9 @@
 # 当前研究状态
 
+## 2026-10-14 UTC：R3有限degree32交叉分离
+
+T32≤89/50<9/5<B(G)已完成全实参数证书和独立逐资源重构；固定参数升degree在40失效。详见 research/weighted_congestion_frontier/assets/R3/crossover_audit/separation.md。全类o(d)和超源包络无限下界仍未取得。
+
 2026-10-14 R3：[源式锐渐近与对称拓扑边界](research/current/weighted_congestion_frontier.md)已完成一般证明及独立攻击。F_d∼(2/√e)√(d ln ln d)/ln d；对称同轻权任意非负多项式拓扑在α≥(1+√3)/2还原源式，大d实际包络等于F_d。仅细化已知族，不是全类上界或超源sup下界。下一步追非对称高support构造。
 
 ## 2026-10-14 UTC：拥塞博弈分支的本地程序与异步公屏

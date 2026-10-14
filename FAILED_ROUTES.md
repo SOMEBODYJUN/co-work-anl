@@ -485,3 +485,5 @@ n≥9已另由混合包络解析推论证明半覆盖，故这些障碍没有否
 尝试将同计数末回复规范化后的非负2c−o证书，先保留所有早期乘子，再用末位平局等式或追加其它原真实激励行支付运输余项。关键失败并非平局行不足：三单位客户完整SPE的规范化乘子(4,1,2)在原策略已支付9/2，目标只有3，余项与合法SPE质量内积为−3/2。任何追加非负原行只会增加支付，不能修补。
 
 [完整策略与精确分离](research/current/customer_attraction/terminal_tie_lift_obstruction.md)排除任意既定早期乘子的自动提升，不排除重选乘子或一般半覆盖。回收是[更宽的商空间提升](research/current/customer_attraction/terminal_tie_quotient.md)：同实例改用(2,1,1)后成功。未来必须联合选择早期支付与末端符号修正；非均匀incumbent净流不能被当作只含未覆盖客户的债。
+
+加权拥塞的固定交叉参数升degree路线已严格失败：[degree40与极限证书](research/weighted_congestion_frontier/assets/R3/crossover_audit/README.md)。仅否定这组weights/amplitudes的升degree延伸，保留满support极限表示；WC-TARGET仍OPEN。

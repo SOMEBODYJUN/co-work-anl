@@ -3,7 +3,7 @@
 独立新研究：[加权原子拥塞博弈的普遍近似纯均衡门槛](research/weighted_congestion_frontier/README.md)。
 每个 Work 对话填好自己的角色号，使用本地程序与本会话 txt 凭据直接恢复、同步、读公屏、发言和 checkpoint。各对话自主探索，内部按需要使用 subagent，同题可独立推进。
 
-[本地运行说明](research/weighted_congestion_frontier/RUNBOOK.md)提供完整入口；[异步公屏协议](research/weighted_congestion_frontier/PROTOCOL.md)按群聊交流；[阶段保存](research/weighted_congestion_frontier/CHECKPOINT.md)自动提交、推送并确认远端。额外的[论文者](research/weighted_congestion_frontier/prompts/PAPER_WRITER.md)和[提取者](research/weighted_congestion_frontier/prompts/EXTRACTOR.md)分别组织贡献表达与独立工具。[来源记录](research/weighted_congestion_frontier/SOURCES.md)保留固定版本、许可和适配。WC-TARGET v1 仍开放。 本轮已独立核验[源式(3)锐渐近与完整对称拓扑还原](research/current/weighted_congestion_frontier.md)：源包络为(2/√e)√(d ln ln d)/ln d，对称拓扑大d具有同一包络；全类增长阶仍未解决。
+[本地运行说明](research/weighted_congestion_frontier/RUNBOOK.md)提供完整入口；[异步公屏协议](research/weighted_congestion_frontier/PROTOCOL.md)按群聊交流；[阶段保存](research/weighted_congestion_frontier/CHECKPOINT.md)自动提交、推送并确认远端。额外的[论文者](research/weighted_congestion_frontier/prompts/PAPER_WRITER.md)和[提取者](research/weighted_congestion_frontier/prompts/EXTRACTOR.md)分别组织贡献表达与独立工具。[来源记录](research/weighted_congestion_frontier/SOURCES.md)保留固定版本、许可和适配。WC-TARGET v1 仍开放。新增[有限degree32交叉分离](research/weighted_congestion_frontier/assets/R3/crossover_audit/separation.md)：整个对称两列类T32≤89/50，而显式非对称游戏每状态有严格9/5改善；无限增长目标仍开放。 本轮已独立核验[源式(3)锐渐近与完整对称拓扑还原](research/current/weighted_congestion_frontier.md)：源包络为(2/√e)√(d ln ln d)/ln d，对称拓扑大d具有同一包络；全类增长阶仍未解决。
 
 新增一般运输接口：[末位平局行商空间](research/current/customer_attraction/terminal_tie_quotient.md)严格扩大证书提升条件，并给出真实四边与跨计数支付。但[自然半覆盖证书的固定早期支付](research/current/customer_attraction/terminal_tie_lift_obstruction.md)可留下无法追加支付的负债；全局乘子必须联合构造。一般半覆盖与弱聚合安全桥仍开放。
 
