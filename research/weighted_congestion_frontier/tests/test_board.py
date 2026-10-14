@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import itertools
 import json
+import os
 from pathlib import Path
 import subprocess
 import tempfile
@@ -256,6 +257,21 @@ class BoardTests(unittest.TestCase):
         future.publish(b.make_intent("A", "discussion", {"text": "Clock skew fixture"}))
         event = self.client.publish(proposal("B"))
         self.assertEqual(self.client.read()["ideas"][event["id"]]["lease_until"], 1060)
+
+    def test_inherited_git_index_and_worktree_do_not_route_scratch_commands(self):
+        (self.repo / "draft.md").write_text("Important staged draft.\n")
+        call(self.repo, "add", "draft.md")
+        index = self.repo / ".git/index"
+        before = (index.read_bytes(), call(self.repo, "status", "--porcelain"))
+        overrides = {"GIT_INDEX_FILE": str(index),
+                     "GIT_DIR": str(self.repo / ".git"),
+                     "GIT_WORK_TREE": str(self.repo),
+                     "GIT_OBJECT_DIRECTORY": str(self.repo / ".git/objects")}
+        with patch.dict(os.environ, overrides):
+            self.client.read()
+            self.client.publish(proposal("A"))
+        after = (index.read_bytes(), call(self.repo, "status", "--porcelain"))
+        self.assertEqual(before, after)
 
     def test_scope_whitespace_and_case_do_not_bypass_dedup(self):
         intent = proposal("A")

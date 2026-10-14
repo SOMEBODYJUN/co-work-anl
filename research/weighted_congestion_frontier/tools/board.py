@@ -157,6 +157,13 @@ def transition(state, event):
 
 def git(cwd, *args, check=True, timeout=45):
     env = os.environ.copy()
+    # Scratch Git commands must never inherit the caller's index/worktree/object
+    # overrides. Keep authentication (e.g. GIT_ASKPASS), not repository routing.
+    for key in ("GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE",
+                "GIT_OBJECT_DIRECTORY", "GIT_ALTERNATE_OBJECT_DIRECTORIES",
+                "GIT_IMPLICIT_WORK_TREE", "GIT_GRAFT_FILE", "GIT_SHALLOW_FILE",
+                "GIT_PREFIX", "GIT_INTERNAL_SUPER_PREFIX"):
+        env.pop(key, None)
     env["GIT_TERMINAL_PROMPT"] = "0"
     try:
         result = subprocess.run(["git", *args], cwd=cwd, env=env,
