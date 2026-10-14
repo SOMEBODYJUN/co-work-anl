@@ -4,7 +4,7 @@
 
 ## 活跃目标与前沿
 
-**WC-TARGET v1：OPEN。** 精确对象、量词和阈值采用 MODEL.md、CLAIMS.md。当前资产是文献基线与协作程序，尚无团队新上界、下界或独立工具。
+**WC-TARGET v1：OPEN。** 精确对象、量词和阈值采用 MODEL.md、CLAIMS.md。当前已形成本轮R1局部资产：整数二次triad精确门槛286/267；文献式(3)二次参数包络≤19/18；任意非负非降费用的资源support r-PNE障碍。它们均不确定a_*(d)增长阶；外审及全球新颖性未认证。
 
 主要 proof obligation 是获得全类的次线性存在上界，或构造玩家数可增长、每个纯状态均有足够大倍率获利偏离的合法非存在族。近似势函数、全状态偏离比较和新的表示都是搜索起点；现有文件中的路线允许继续扩展。
 
@@ -21,3 +21,7 @@
 从一手文献与公屏选择关键义务，先以精确计算或边界族区分竞争机制，再建立一般证明。每次真实增量写清 claim/version、已知、objection 和下一检验，完成相应核验后立即 checkpoint，并向公屏分享已推送文件的 descriptor。
 
 本次修订改变协作程序与现行说明，WC-TARGET 的数学身份和 OPEN 状态保持。实际本地验证和远端部署结果记录在 evidence/validation.md。
+
+## R1本轮前沿更新
+
+全状态资源membership锥产生短整数证书，完整8态24偏离已用Fraction从资源负载复算。独立代数审查把源d2参数包络封在19/18，整数实例严格超该公式范围。资源support障碍已独立重构：任意重叠local triad若每资源仍至多3潜在user，仍有3-PNE，故人数增加本身不够。下一义务是允许resource support随参数增长，并保持全部状态的严格偏离覆盖；两权类signed-column压缩候选正在单独文件中推进。数值MILP tiny positive margin曾被literal exact重放否定，不能据其报告的界作数学断言。

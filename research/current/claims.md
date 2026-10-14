@@ -269,6 +269,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 
 
+
+## 加权拥塞独立分支
+
+| WC-R1-INTEGER-TRIAD | WC-TARGET v1 独立模型；Exactly the six-resource degree-two game with weights (16,2,5); all eight binary profiles and 24 deviations, including endpoint PNE. | Integer quadratic triad has exact pure factor 286/267；主目标仍OPEN，全球新颖性未认证。 | [精确现行接口](weighted_congestion_frontier/README.md)及[完整资产](../weighted_congestion_frontier/assets/R1/integer_triad/proof.md)；一般证明与有限证据分列，无外审。 |
+| WC-R1-RESOURCE-SUPPORT | WC-TARGET v1 独立模型；All finite positive-weight congestion games with nonnegative nondecreasing costs and at most r>=1 potential users per resource; unweighted social-cost minimizers are r-PNE. No full-class o(d) claim. | Bounded resource user support gives r-PNE；主目标仍OPEN，全球新颖性未认证。 | [精确现行接口](weighted_congestion_frontier/README.md)及[完整资产](../weighted_congestion_frontier/assets/R1/cyclic_layers/resource_support.md)；一般证明与有限证据分列，无外审。 |
+| WC-R1-SOURCE-D2-ENVELOPE | WC-TARGET v1 独立模型；All integer n>=1,k in {1,2}, w,beta in [0,1] in arXiv:2002.07466v3 equation (3); strict polynomial inequalities cover zero denominators. Not a G2 upper bound. | Source equation (3) at d=2 has ceiling 19/18；主目标仍OPEN，全球新颖性未认证。 | [精确现行接口](weighted_congestion_frontier/README.md)及[完整资产](../weighted_congestion_frontier/assets/R1/source_d2_envelope/proof.md)；一般证明与有限证据分列，无外审。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

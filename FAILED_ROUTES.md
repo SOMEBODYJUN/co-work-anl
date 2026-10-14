@@ -483,3 +483,7 @@ n≥9已另由混合包络解析推论证明半覆盖，故这些障碍没有否
 尝试将同计数末回复规范化后的非负2c−o证书，先保留所有早期乘子，再用末位平局等式或追加其它原真实激励行支付运输余项。关键失败并非平局行不足：三单位客户完整SPE的规范化乘子(4,1,2)在原策略已支付9/2，目标只有3，余项与合法SPE质量内积为−3/2。任何追加非负原行只会增加支付，不能修补。
 
 [完整策略与精确分离](research/current/customer_attraction/terminal_tie_lift_obstruction.md)排除任意既定早期乘子的自动提升，不排除重选乘子或一般半覆盖。回收是[更宽的商空间提升](research/current/customer_attraction/terminal_tie_quotient.md)：同实例改用(2,1,1)后成功。未来必须联合选择早期支付与末端符号修正；非均匀incumbent净流不能被当作只含未覆盖客户的债。
+
+## WC：有界resource support的局部模块扩张
+
+任意数量或重叠triad若每资源保持最多三潜在user，仍有3-PNE，故不能给无界下界。一般r版本、具体失败步骤和增长support重试接口见[WC失败账本](research/weighted_congestion_frontier/FAILED_ROUTES.md)和[完整证明](research/weighted_congestion_frontier/assets/R1/cyclic_layers/resource_support.md)。这是独立拥塞模型，不迁移为设施或客户吸引博弈的障碍。

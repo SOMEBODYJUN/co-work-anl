@@ -138,3 +138,7 @@ The remaining arbitrary-`k` selector obligation is recorded as `SC-K-RQ-MIXED-BO
 新增 `CA-SUNFLOWER-MAXIMA-2M1`：极大主题sunflower、内部子主题任意时，任意人数锐界2−1/n；
 `CA-MAXIMA-SUPERSET-SEATS` 给任意目录全历史席位保底；`CA-SUNFLOWER-PRIVATE-GAP` 单独保留动态删除的额外条件。
 独立审查与精确审计完成；一般交叠目录半覆盖仍开放。
+
+## WC独立模型本轮局部登记
+
+WC-R1-INTEGER-TRIAD v1、WC-R1-RESOURCE-SUPPORT v1、WC-R1-SOURCE-D2-ENVELOPE v1的精确对象、范围和结论见[规范接口](research/current/weighted_congestion_frontier/README.md)及[WC完整账本](research/weighted_congestion_frontier/CLAIMS.md)。分别为固定游戏精确因子、bounded-support存在障碍和指定文献公式的参数上界；不得合并为WC-TARGET v1已解决。

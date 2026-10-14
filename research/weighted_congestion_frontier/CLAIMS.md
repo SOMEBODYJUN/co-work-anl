@@ -1,6 +1,6 @@
 # 命题账本
 
-本分支没有团队新定理。下列文献条目是 Paper Fact，团队并未独立认证全文证明。不得把公屏 idea、数值证据或多人赞同升级为 Canonical Record。
+下列文献条目保留 Paper Fact 层级；本轮经整理的局部结果另列。一般证明、有限证据、独立审查与外部发表分别记录，公屏候选不自动升级。
 
 ## WC-TARGET v1 — OPEN
 
@@ -44,3 +44,18 @@
 - Counterevidence / Objections：不得从存在性推导高效计算；人数固定的失败不反驳全类目标。
 - Status：Paper Fact；Novelty 无。
 - Related Files：LITERATURE.md、MODEL.md。
+
+## WC-R1-INTEGER-TRIAD v1 — LOCAL ASSET
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：Exactly the six-resource degree-two game with weights (16,2,5); all eight binary profiles and 24 deviations, including endpoint PNE.
+- Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Integer quadratic triad has exact pure factor 286/267](assets/R1/integer_triad/proof.md)；精确复算见[assets/R1/integer_triad/verify.py](assets/R1/integer_triad/verify.py)与[assets/R1/integer_triad/verification.json](assets/R1/integer_triad/verification.json)。内部独立重构，外审及新颖性未认证。WC-TARGET v1仍OPEN。
+
+## WC-R1-RESOURCE-SUPPORT v1 — LOCAL ASSET
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：All finite positive-weight congestion games with nonnegative nondecreasing costs and at most r>=1 potential users per resource; unweighted social-cost minimizers are r-PNE. No full-class o(d) claim.
+- Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Bounded resource user support gives r-PNE](assets/R1/cyclic_layers/resource_support.md)；精确复算见[assets/R1/cyclic_layers/verify.py](assets/R1/cyclic_layers/verify.py)与[assets/R1/cyclic_layers/verification.json](assets/R1/cyclic_layers/verification.json)。内部独立重构，外审及新颖性未认证。WC-TARGET v1仍OPEN。
+
+## WC-R1-SOURCE-D2-ENVELOPE v1 — LOCAL ASSET
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：All integer n>=1,k in {1,2}, w,beta in [0,1] in arXiv:2002.07466v3 equation (3); strict polynomial inequalities cover zero denominators. Not a G2 upper bound.
+- Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Source equation (3) at d=2 has ceiling 19/18](assets/R1/source_d2_envelope/proof.md)；精确复算见[assets/R1/source_d2_envelope/verify.py](assets/R1/source_d2_envelope/verify.py)与[assets/R1/source_d2_envelope/verification.json](assets/R1/source_d2_envelope/verification.json)。内部独立重构，外审及新颖性未认证。WC-TARGET v1仍OPEN。

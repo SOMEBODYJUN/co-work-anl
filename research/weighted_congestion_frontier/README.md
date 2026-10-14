@@ -16,11 +16,13 @@
 
 MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LIT-N → 开放目标 WC-TARGET v1。
 
+MODEL + 完整资源表 → WC-R1-INTEGER-TRIAD；源式(3) + 严格参数消元 → WC-R1-SOURCE-D2-ENVELOPE；二者给有限次数公式分离。MODEL + 非降非负性 + 资源support定义 → WC-R1-RESOURCE-SUPPORT → 局部模块扩张必须增加resource support。这些关系不推出主目标完成。
+
 文献上界来自近似势函数；文献下界来自全状态非存在族。固定玩家实例受 n-PNE 存在基线约束。设施选址、顺序客户吸引和本分支各保持其数学身份；定理迁移需要准确的桥梁证明。
 
 ## Known Results / Research Frontier
 
-当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。团队尚无新证明，WC-TARGET v1 仍 OPEN。
+当前是已核对来源的文献基线：Ω(√d/log d)≤a_*(d)≤d（大 d）。精细有限 d 界与后续文献在宣称改进前重新核对。已保存独立局部结果：整数二次triad精确因子286/267，文献式(3)的d2参数包络≤19/18，及资源潜在使用人数r的r-PNE障碍；完整证明与证据入口如下。未获全类o(d)上界或新无限增长族，WC-TARGET v1仍OPEN。
 
 真正缺口是控制全体有限博弈的偏离结构，或构造玩家数可增长、每个纯状态均有大倍率获利偏离的族。现有路线是搜索种子；不同表示和跨领域机制都可开展。活跃讨论、问题和发现从公屏读取。
 
@@ -61,3 +63,12 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/board/README.md | 公屏的直接阅读入口与简短命令 |
 
 有真实成果时建立 assets/<actor>/<idea>/、toolbox/<actor>/<tool-id>/ 或 papers/<actor>/<paper-id>/。工作分支为 wcg/work/<actor>/<session>；成果消息引用 checkpoint 返回的已推送文件 descriptor。规范审查后的成果整合到 main，后续对话可以从地图和冻结文件准确接续。
+
+## Reviewed local file routes
+
+| 完整路径 | 数学资产及读取时机 |
+| --- | --- |
+| research/weighted_congestion_frontier/assets/R1/integer_triad/proof.md | WC-R1-INTEGER-TRIAD v1：Integer quadratic triad has exact pure factor 286/267。新路线触及此接口或比较范围时读；验证程序和完整结果与该文件同目录。 |
+| research/weighted_congestion_frontier/assets/R1/cyclic_layers/resource_support.md | WC-R1-RESOURCE-SUPPORT v1：Bounded resource user support gives r-PNE。新路线触及此接口或比较范围时读；验证程序和完整结果与该文件同目录。 |
+| research/weighted_congestion_frontier/assets/R1/source_d2_envelope/proof.md | WC-R1-SOURCE-D2-ENVELOPE v1：Source equation (3) at d=2 has ceiling 19/18。新路线触及此接口或比较范围时读；验证程序和完整结果与该文件同目录。 |
+| research/current/weighted_congestion_frontier/README.md | 根规范图与本独立模型的精确接口；给出本轮三个结果的自足陈述与承重论证，不能迁移其他博弈定理。 |

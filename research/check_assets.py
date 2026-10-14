@@ -20,6 +20,26 @@ def require(condition: bool, message: object) -> None:
         raise ValueError(message)
 
 
+def valid_asset_role(entry: dict, field: str, path: str) -> bool:
+    """Preserve legacy roles; admit original WC assets in their separate branch."""
+    expected = {
+        "implementation": ("facility_spe/", "multi_facility_spe/", "customer_attraction/"),
+        "proof": ("research/current/",),
+        "sources": ("history/",),
+        "tests": ("tests/",),
+        "records": ("evidence/",),
+        "examples": ("examples/", "evidence/certificates/"),
+    }
+    prefixes = expected.get(field, ())
+    is_wc = (entry.get("scope_model") == "WC-TARGET v1"
+             and bool(entry.get("claims"))
+             and all(claim.startswith("WC-") for claim in entry["claims"]))
+    if is_wc and field in {"implementation", "sources", "tests", "records", "examples"}:
+        prefixes += ("research/weighted_congestion_frontier/assets/",
+                     "research/weighted_congestion_frontier/toolbox/")
+    return path.startswith(prefixes)
+
+
 def check_learning(node_ids: set[str]) -> int:
     """Teaching routes reference claims but never substitute for proof assets."""
     manifest = json.loads((ROOT / "learning/manifest.json").read_text(encoding="utf-8"))
@@ -75,17 +95,8 @@ def check() -> None:
         for field in ("implementation", "proof", "sources", "tests", "records", "examples"):
             for path in entry[field]:
                 require((ROOT / path).is_file(), (entry["id"], path))
-                expected = {"implementation": ("facility_spe/", "multi_facility_spe/", "customer_attraction/"),
-                            "proof": "research/current/",
-                            "sources": "history/",
-                            "tests": "tests/",
-                            "records": "evidence/"}
-                if field in expected:
-                    require(path.startswith(expected[field]),
-                            ("incorrect asset role", entry["id"], field, path))
-                if field == "examples":
-                    require(path.startswith(("examples/", "evidence/certificates/")),
-                            ("incorrect example/certificate role", entry["id"], path))
+                require(valid_asset_role(entry, field, path),
+                        ("incorrect asset role", entry["id"], field, path))
                 referenced.add(path)
                 if field == "implementation":
                     implementations.add(path)

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Facility location mathematical dependency hypergraph",
-  "updated": "2026-10-10",
+  "updated": "2026-10-14",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -3738,6 +3738,54 @@
         "evidence/runs/2026-10-10/terminal_tie_quotient_review.md"
       ],
       "status": "independent internal finite exact audits; no universal welfare inference"
+    },
+    {
+      "id": "WC-MODEL",
+      "kind": "definition",
+      "track": "extensions",
+      "title": "Weighted atomic congestion model, independent track",
+      "detail": "Positive real weights, arbitrary finite resource-subset strategy families, nonnegative polynomial latencies; player cost is unweighted sum of resource costs; universal alpha-PNE threshold.",
+      "refs": [
+        "research/current/weighted_congestion_frontier/README.md",
+        "research/weighted_congestion_frontier/MODEL.md"
+      ],
+      "status": "specified; WC-TARGET v1 remains open"
+    },
+    {
+      "id": "WC-R1-INTEGER-TRIAD",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Integer quadratic triad has exact pure factor 286/267",
+      "detail": "Exactly the six-resource degree-two game with weights (16,2,5); all eight binary profiles and 24 deviations, including endpoint PNE.",
+      "refs": [
+        "research/current/weighted_congestion_frontier/README.md",
+        "research/weighted_congestion_frontier/assets/R1/integer_triad/proof.md"
+      ],
+      "status": "complete self-contained proof, internally reconstructed and exactly checked; unrefereed"
+    },
+    {
+      "id": "WC-R1-RESOURCE-SUPPORT",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Bounded resource user support gives r-PNE",
+      "detail": "All finite positive-weight congestion games with nonnegative nondecreasing costs and at most r>=1 potential users per resource; unweighted social-cost minimizers are r-PNE. No full-class o(d) claim.",
+      "refs": [
+        "research/current/weighted_congestion_frontier/README.md",
+        "research/weighted_congestion_frontier/assets/R1/cyclic_layers/resource_support.md"
+      ],
+      "status": "complete self-contained proof, internally reconstructed and exactly checked; unrefereed"
+    },
+    {
+      "id": "WC-R1-SOURCE-D2-ENVELOPE",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "Source equation (3) at d=2 has ceiling 19/18",
+      "detail": "All integer n>=1,k in {1,2}, w,beta in [0,1] in arXiv:2002.07466v3 equation (3); strict polynomial inequalities cover zero denominators. Not a G2 upper bound.",
+      "refs": [
+        "research/current/weighted_congestion_frontier/README.md",
+        "research/weighted_congestion_frontier/assets/R1/source_d2_envelope/proof.md"
+      ],
+      "status": "complete self-contained proof, internally reconstructed and exactly checked; unrefereed"
     }
   ],
   "hyperedges": [
@@ -9205,6 +9253,68 @@
         "research/current/customer_attraction/terminal_tie_lift_obstruction.md"
       ],
       "status": "exact restriction on the proposed lifting mechanism; general target open"
+    },
+    {
+      "id": "D-WC-R1-INTEGER-TRIAD",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL"
+      ],
+      "conclusion": "WC-R1-INTEGER-TRIAD",
+      "statement": "Exactly the six-resource degree-two game with weights (16,2,5); all eight binary profiles and 24 deviations, including endpoint PNE. The cited asset supplies the complete construction or derivation; the model alone is not a substitute for its proof.",
+      "refs": [
+        "research/current/weighted_congestion_frontier/README.md",
+        "research/weighted_congestion_frontier/assets/R1/integer_triad/proof.md"
+      ],
+      "status": "complete self-contained proof, internally reconstructed and exactly checked; unrefereed"
+    },
+    {
+      "id": "D-WC-R1-RESOURCE-SUPPORT",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL"
+      ],
+      "conclusion": "WC-R1-RESOURCE-SUPPORT",
+      "statement": "All finite positive-weight congestion games with nonnegative nondecreasing costs and at most r>=1 potential users per resource; unweighted social-cost minimizers are r-PNE. No full-class o(d) claim. The cited asset supplies the complete construction or derivation; the model alone is not a substitute for its proof.",
+      "refs": [
+        "research/current/weighted_congestion_frontier/README.md",
+        "research/weighted_congestion_frontier/assets/R1/cyclic_layers/resource_support.md"
+      ],
+      "status": "complete self-contained proof, internally reconstructed and exactly checked; unrefereed"
+    },
+    {
+      "id": "D-WC-R1-SOURCE-D2-ENVELOPE",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "WC-MODEL"
+      ],
+      "conclusion": "WC-R1-SOURCE-D2-ENVELOPE",
+      "statement": "All integer n>=1,k in {1,2}, w,beta in [0,1] in arXiv:2002.07466v3 equation (3); strict polynomial inequalities cover zero denominators. Not a G2 upper bound. The cited asset supplies the complete construction or derivation; the model alone is not a substitute for its proof.",
+      "refs": [
+        "research/current/weighted_congestion_frontier/README.md",
+        "research/weighted_congestion_frontier/assets/R1/source_d2_envelope/proof.md"
+      ],
+      "status": "complete self-contained proof, internally reconstructed and exactly checked; unrefereed"
+    },
+    {
+      "id": "WC-COMPARE-SOURCE",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "WC-R1-INTEGER-TRIAD",
+        "WC-R1-SOURCE-D2-ENVELOPE"
+      ],
+      "conclusion": "WC-MODEL",
+      "statement": "286/267 exceeds this source degree-two parameter formula by at least25/1602; comparison is finite-degree and does not solve universal growth or certify global priority.",
+      "refs": [
+        "research/current/weighted_congestion_frontier/README.md",
+        "research/weighted_congestion_frontier/assets/R1/integer_triad/proof.md",
+        "research/weighted_congestion_frontier/assets/R1/source_d2_envelope/proof.md"
+      ],
+      "status": "scope boundary; no infinite-family breakthrough"
     }
   ]
 }

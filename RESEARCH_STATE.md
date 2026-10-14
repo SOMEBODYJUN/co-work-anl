@@ -761,3 +761,7 @@ EPTAS 候选已在远端。再次独立重构无 FPTAS 及 EPTAS 组合，未发
 ## 2026-10-14 UTC：新研究的辅助资产入口
 
 论文者与提取者使用自己的角色号，通过同一程序参与公屏，分别处理真实成果表达、研究资产清洗和独立工具提取。完整提示词与交付门槛在 weighted_congestion_frontier/prompts/、ACCEPTANCE.md，原样开源材料与许可在 SOURCES.md、upstream/manifest.json。既有数学成果保持原范围和审查状态。
+
+## 2026-10-14：WC独立模型的精确局部成果
+
+R1本轮重建六资源整数二次游戏，实例最佳纯因子286/267，全8态24偏离与端点精确复算；独立SOS证书给源arXiv:2002.07466v3式(3)的d2全整数参数包络≤19/18。另重建resource support r-PNE：非负非降费用的无权社会成本全局最小者给r因子，否定bounded-support triad堆叠的无界倍率机制。完整[规范接口](research/current/weighted_congestion_frontier/README.md)与WC账本保持模型独立。没有全类o(d)上界或新无限增长下界；外审及全球新颖性未认证。
