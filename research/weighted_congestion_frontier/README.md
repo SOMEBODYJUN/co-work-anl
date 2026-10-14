@@ -1,8 +1,10 @@
 # 加权拥塞博弈：平等解题天团
 
-所有对话使用同一份 [TEAM 启动提示词](prompts/TEAM.md)。每支天团都以解决整个问题为目标；没有固定文献队、上界队、下界队或协调队。主对话也研究数学，只因它掌握本会话工具而负责启动本队子 agent、对外交流和保存成果。其他队无需获得它的任务分配或批准。
+所有对话使用同一份 [TEAM 启动提示词](prompts/TEAM.md)。每支天团都以解决整个问题为目标；没有固定文献队、上界队、下界队或协调队。用户额外的[论文者/清洗者](prompts/PAPER_WRITER.md)与[提取者](prompts/EXTRACTOR.md)使用独立辅助入口，服务真实贡献表达和独立工具生长，不为研究队派单。主对话也研究数学，只因它掌握本会话工具而负责启动本队子 agent、对外交流和保存成果。其他队无需获得它的任务分配或批准。
 
 自主选题、Git 认领防重复已有 [Anthropic C compiler 和 agentsync 的直接开源先例](LITERATURE.md#开源协作逐项取舍)。普通阶段保存使用[一键 checkpoint](CHECKPOINT.md)：`bash research/weighted_congestion_frontier/tools/checkpoint.sh`，自动提交、推送、核对远端并生成文件 descriptor。保存 candidate 不等于升级定理，无须等待证明全部闭合才保存。
+
+[多对话运行说明](RUNBOOK.md)固定真实 team/member 注册、约一小时持续工作预算及不同完成层级；[开源原文与适配](SOURCES.md)和[源文件清单](upstream/manifest.json)保留固定版本与逐字节哈希。当前仅有文献基线及协作基础设施，新研究问题仍开放，尚无团队新工具或论文成果。
 
 ## Research Goal
 
@@ -40,12 +42,18 @@ MODEL → 文献上界 WC-LIT-UPPER-D、下界 WC-LIT-LOWER、人数约束 WC-LI
 | research/weighted_congestion_frontier/LITERATURE.md | 一手来源、准确位置及后续检索范围；引用或宣称新颖性前读取 |
 | research/weighted_congestion_frontier/PRIOR_ASSETS.md | 前人机制与可复用接口，注明尚未重建的步骤；按当前 idea 选择性读取 |
 | research/weighted_congestion_frontier/FAILED_ROUTES.md | 失败的确切步骤、否定范围与可回收结果；防止重复死路 |
+| research/weighted_congestion_frontier/RUNBOOK.md | 多Web对话的实际身份、父会话、并行槽位核算、约一小时轮次与结项层级；每个新成员启动必读 |
+| research/weighted_congestion_frontier/SOURCES.md | 逐项说明开源原文、许可和本项目适配；核对“原样采用”与写作机制时读 |
+| research/weighted_congestion_frontier/upstream/manifest.json | 原样归档文件的仓库、固定commit、原路径及SHA-256；升级源材料时核对 |
+| research/weighted_congestion_frontier/prompts/PAPER_WRITER.md | 论文者/清洗者完整入口：主动贡献叙事、数学主语、完整证明与逐页成稿验收 |
+| research/weighted_congestion_frontier/prompts/EXTRACTOR.md | 拾取者完整入口：失败回收、一般化、实际复用与独立结构，不强制服务主目标 |
+| research/weighted_congestion_frontier/toolbox/README.md | 独立工具的身份、来源与复用索引；有真实新工具才登记 |
 | research/weighted_congestion_frontier/PROTOCOL.md | 平等交流、细粒度认领、租约与安全 Git 工作流；首次参与必读 |
 | research/weighted_congestion_frontier/ACCEPTANCE.md | 数学成功、阶段资产、预算交接和协作验收；决定结束或升级状态时读 |
 | research/weighted_congestion_frontier/prompts/TEAM.md | 所有主对话相同的完整入口；复制到任意多个新对话 |
 | research/weighted_congestion_frontier/prompts/PEER.md | 全体子 agent 共用的自主解题要求；每个子 agent 都保留提 idea 的权利 |
 | research/weighted_congestion_frontier/prompts/MODELS.md | 用户指定模型与真实配置记录；启动时核对可用能力 |
-| research/weighted_congestion_frontier/tools/board.py | Git 公屏工具；view、idea、claim、续约、结果和讨论，冲突后重新检查 |
+| research/weighted_congestion_frontier/tools/board.py | Git 公屏工具；register真实身份、view、idea、claim、续约、结果和讨论，冲突后重新检查 |
 | research/weighted_congestion_frontier/CHECKPOINT.md | 一键保存、一次认证、自动同步及明确失败处理；首次启动、网络恢复和提交异常时读取 |
 | research/weighted_congestion_frontier/tools/checkpoint.py | 默认限定本研究目录的 add/commit/push/远端验证及冻结 descriptor；每个有价值阶段直接运行 |
 | research/weighted_congestion_frontier/tools/checkpoint.sh | 一键入口，完整转发参数并保留退出码；主 agent 使用 |

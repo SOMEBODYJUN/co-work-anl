@@ -759,3 +759,7 @@ EPTAS 候选已在远端。再次独立重构无 FPTAS 及 EPTAS 组合，未发
 [五路线内部审查与出版评估](research/PUBLICATION_REVIEW.md)是本轮新归约之前的出版评估：当时把共同目录尖锐 `φ` 多项式构造、异构目录尖锐 `2` 与任意长单交叠尖锐 `ρ` 组织为两条主线。新的[五地点全局困难性审查](research/FIVE_SITE_AUDIT_2026-10-02.md)改变了“只有局部复杂度”的旧判断：固定低于 `φ` 的同类判定已有完整内部分类，需重评 A 合写或独立组稿；一般异构 `2` 在命题账本中仍保持内部候选。
 
 定向文献核查尚未取得 Simon Krogmann 2025 年博士论文 *Two-Sided Facility Location Games* 的正文（DOI `10.25932/publishup-69272`）；因此新颖性结论仍有一项具体未完成义务。完成优先权表、论文级证明终审和新英文稿后，`SIAM Journal on Discrete Mathematics` / `Algorithmica` 是有依据的投稿目标，`Mathematics of Operations Research` 是可考虑的冲刺；`SIAM Journal on Computing` 尚不能据此视为稳妥层级。此为条件性选刊判断，不是论文已可投稿或被接收的断言。
+
+## 2026-10-14 UTC：新研究的成员身份与辅助资产入口
+
+从远端 main@4400237 恢复并确认 weighted_congestion_frontier 及独立公屏已上线。所有解题天团继续自主认领同一全类目标；新增 register 保存实际署名、父运行关系和真实配置，RUNBOOK 固定约一小时有效攻关与准确交接。额外 PAPER_WRITER/EXTRACTOR 提示词处理论文贡献叙事/清洗和可独立于主题的新工具；原样开源材料固定commit与许可。没有新数学结论、工具或论文宣称，既有研究量词和真值状态保持。详细运行、原文来源和验收在该分支 README、SOURCES、ACCEPTANCE、evidence/validation.md。

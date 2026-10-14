@@ -2,6 +2,20 @@
 
 2026-10-14 UTC。此记录验证工具和提示词，不证明 WC-TARGET。
 
+## 本轮身份、持续工作与辅助入口验证
+
+2026-10-14 UTC，从 main@4400237 恢复，确认研究目录存在，WC-TARGET v1 仍 OPEN。新增 register 保存真实 self-reported team/member、父运行关系、请求与实际配置；自动根身份、碰撞阻断、未知配置、辅助入口与旧历史兼容。它不认证共享账号下不同用户的真实身份，不检测在线，不启动模型。本轮没有实际启动数学研究天团，也没有新数学界、工具或论文。
+
+最终 tools/board.py、live_smoke.py 与 tests/test_board.py 的 27 项实际本地 bare-Git 测试通过；checkpoint.py 的 22 项回归通过，合计 49 项。数量由 Python AST 数 test_ 方法反核。新增覆盖：稳定登记事件同ID重试、身份碰撞并发唯一接受、同队真实父关系及子成员直接发言、不同队无中心同时登记、非法身份/预算/元数据快速失败、paper_writer/extractor入口、默认CLI随机唯一署名与脏工作保留，以及五个并发Python发布端各登记七个身份后跨队help/reply。该压力测试是三十五个测试署名，不冒称三十五个LLM/Web对话或实测账户容量。
+
+压力检查先复现原默认六次紧循环重试可能被集中推送耗尽；最终改为二十次有限尝试和事件ID决定的短退避，并且每次重读占用条件。将参数/状态/资产无效与暂时Git失败分开，前者立即报错、后者才退避恢复；测试独立阻断 retry_pause 确认无效登记不重试。默认参数的五队压力测试与全套公屏回归通过。有限高峰仍可耗尽预算，此时稳定intent留在outbox，按原ID恢复，不保证所有请求一次成功。
+
+三个完整启动词检查为完整text块，包含保存入口与验收；项目自己编写的导航链接均存在。精确模型和目标账本未改，目标保持OPEN。五队/七包含根槽位、三十五总成员/三十子成员和三千六百秒预算由Python计算并反算；actual运行上限仍以各会话工具和账户为准。约一小时是有效工作预算，没有部署平台硬时长/自动唤醒。
+
+选定五个来源的三十三份原文件，逐字节与指定上游commit的blob比较，并按manifest逐项反核SHA-256。原许可和第三方声明保留；没有修改上游SKILL或安装外部orchestrator。SOURCES明确原样归档与数学/Web适配边界。此次未验证外部写作skill的所有脚本，也没有成稿而冒称文章已逐页检查。全仓 build_map.py --check、build_crosswalk.py --check、check_assets.py、git diff --check 通过；提交范围凭据式内容扫描无命中。暂存原文后发现上游Markdown硬换行触发行尾空格检查；只为该归档原文件标注 whitespace=-blank-at-eol，原文字节仍由manifest反核，其他文件检查保持。
+
+本地验证完成，真实新版GitHub登记/交流验收在第一次推送后执行并另记实际证据；此前 GitHub smoke 证据属于旧部署，不用它代替本轮新版验证。
+
 ## 一键 checkpoint 补充验证
 
 2026-10-14 UTC 新增 tests/test_checkpoint.py，实际临时 bare Git 远端的 22 项测试全部通过。与既有 20 项公屏测试合计 42 项；数量另用 Python AST 逐一数 test_ 方法核对，两套实际 unittest 运行结果一致。没有调用真实研究 agent 冒充并发测试端。
@@ -12,13 +26,13 @@
 
 真实 GitHub 验证：完整入口已将 `214b0429e43f262bdf0d41d528116d1d012099b7` 推到指定仓库的 main，并通过 fetch 确认 `remote_tip` 等于该 commit。提交范围由 Python 逐文件核对：仅根 README 与本分支的工作流文档、程序、测试和验证，14 个修改文件，无会话材料和凭据。相同 clone 随后不再传 token-file，直接重跑 checkpoint.sh，返回 `status: pushed`、`created_commit: false` 与同一个 commit；没有额外空提交。生成的 checkpoint.py descriptor 还由真实 board.check_asset 对远端冻结 blob 进行核验并接受；没有向公屏添加无数学增量的测试消息。此前网络发布审批阻断后先核对已有明确授权、目的地及具体 payload，再获准完成原入口；未切换认证或推送方式绕过拒绝。此项仍只是基础设施部署验证。
 
-## 本地验证
+## 初始部署的本地验证
 
 Python 标准库 unittest 以实际临时 bare Git 远端验证，执行：
 
     python3 research/weighted_congestion_frontier/tests/test_board.py
 
-当前 20 项全部通过：同一具体 scope 同时提出/认领只一位成功；不同义务都成功；无需协调者的现成 idea 认领；到期边界接替与旧 token 阻断；仍允许旧成员公开 salvage；release 后继续与 finish 仅关闭单元；丢失 push 响应同 ID 恢复；已提交结果在资产分支删除后仍恢复确认；首次资产网络失败保存 intent、不堵其他消息；同 clone 同 ID 并发重试的原子 outbox 及确认期间文件消失恢复；错误 hash、未发布 commit、越界路径、目录对象拒绝；脏 checkout/HEAD/FETCH_HEAD 保留，以及继承 GIT_INDEX_FILE/GIT_DIR/GIT_WORK_TREE/GIT_OBJECT_DIRECTORY 时原暂存区保持；未来 discussion 不延长别人的新租约；字段、未知ID、期限边界；凭据式内容发布前拒绝；部署脚本在本地真实远端完成全流程并要求显式 --live；数学符号大小写不被哈希混同。
+初始部署的 20 项全部通过：同一具体 scope 同时提出/认领只一位成功；不同义务都成功；无需协调者的现成 idea 认领；到期边界接替与旧 token 阻断；仍允许旧成员公开 salvage；release 后继续与 finish 仅关闭单元；丢失 push 响应同 ID 恢复；已提交结果在资产分支删除后仍恢复确认；首次资产网络失败保存 intent、不堵其他消息；同 clone 同 ID 并发重试的原子 outbox 及确认期间文件消失恢复；错误 hash、未发布 commit、越界路径、目录对象拒绝；脏 checkout/HEAD/FETCH_HEAD 保留，以及继承 GIT_INDEX_FILE/GIT_DIR/GIT_WORK_TREE/GIT_OBJECT_DIRECTORY 时原暂存区保持；未来 discussion 不延长别人的新租约；字段、未知ID、期限边界；凭据式内容发布前拒绝；部署脚本在本地真实远端完成全流程并要求显式 --live；数学符号大小写不被哈希混同。
 
 根仓库维护检查通过：git diff --check、research/build_map.py --check、research/build_crosswalk.py --check、research/check_assets.py。本轮没有更改已有数学算法，未重跑其全套回归。
 

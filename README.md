@@ -4,6 +4,8 @@
 所有天团采用同一解题入口，平等提出 idea、公屏自主认领、分享并避免重复；没有固定岗位或中心派单。
 当前仅建立文献基线与协作工具，**新问题尚未解决**，与下述既有模型没有自动定理迁移。
 
+[多对话攻关运行说明](research/weighted_congestion_frontier/RUNBOOK.md)补充真实成员身份、公屏与约一小时轮次；额外的[论文者](research/weighted_congestion_frontier/prompts/PAPER_WRITER.md)和[提取者](research/weighted_congestion_frontier/prompts/EXTRACTOR.md)分别强化真实成果表达与独立工具生长。开源原文的固定版本、许可和适配见[来源记录](research/weighted_congestion_frontier/SOURCES.md)。这次是协作基础设施进展，WC-TARGET仍开放。
+
 该研究的日常资产保存使用[一键 checkpoint](research/weighted_congestion_frontier/CHECKPOINT.md)：自动提交、普通推送、远端确认及冻结文件哈希；[协作来源](research/weighted_congestion_frontier/LITERATURE.md)包含直接自主认领的开源先例。
 
 新增一般运输接口：[末位平局行商空间](research/current/customer_attraction/terminal_tie_quotient.md)严格扩大证书提升条件，并给出真实四边与跨计数支付。但[自然半覆盖证书的固定早期支付](research/current/customer_attraction/terminal_tie_lift_obstruction.md)可留下无法追加支付的负债；全局乘子必须联合构造。一般半覆盖与弱聚合安全桥仍开放。

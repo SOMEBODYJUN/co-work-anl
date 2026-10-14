@@ -21,3 +21,7 @@
 | [GitHub refs 文档](https://docs.github.com/en/rest/git/refs#update-a-reference) | 非 force 更新避免覆盖；本工具用普通 Git push 后重新检查状态 | 评论/不同消息文件本身不能提供互斥；租约不保证断网计算绝无重复 |
 
 “无中心派单、成员自主选题和认领、Git 避免重复”已有直接开源先例，上两项就是本轮实际核验的来源。前次把这一组织方式整体说成定制，范围过窄。我们的适配部分是数学精确身份、idea/proof obligation 粒度、Codex 多对话各带子 agent、租约与冻结资产公屏；没有声称任何外部项目完整部署了这些全部细节。此次补充核验只涉及协作来源，不改变数学基线的核验范围。
+
+## 原文归档与写作参考
+
+本轮固定上游 commit 并原样保存选定原文件及许可，逐字节哈希和来源在 SOURCES.md、upstream/manifest.json。包括 MathLab 原始 prompt 与架构、Anthropic 真实认领/idea 样例，以及 mathematical-academic-writing 与 polish_skill 的数学写作、贡献重建、优先权/相关工作和 TeX 保真材料；latex-paper-skills 只选 framing 原文。原文与适配分别标注，不把外部原 Director/CLI 无限loop声称已在 Web 部署。当前尚无团队新数学结果、工具或论文。

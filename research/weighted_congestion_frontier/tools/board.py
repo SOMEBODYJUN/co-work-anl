@@ -37,6 +37,10 @@ class Conflict(BoardError):
     pass
 
 
+class ValidationError(BoardError):
+    pass
+
+
 def encode(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
 
@@ -53,7 +57,7 @@ def fingerprint(body):
 
 
 def empty_state():
-    return {"ideas": {}, "events": [], "last_time": 0}
+    return {"ideas": {}, "members": {}, "events": [], "last_time": 0}
 
 
 def valid_id(value):
@@ -97,7 +101,29 @@ def transition(state, event):
         raise BoardError("reply_to is not an existing event.")
     out = copy.deepcopy(state)
     idea = out["ideas"].get(body.get("idea"))
-    if kind == "propose":
+    if kind == "register":
+        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*/[A-Za-z0-9][A-Za-z0-9._-]*", event["actor"]):
+            raise BoardError("Registration needs a unique team/member ID.")
+        members = out.setdefault("members", {})
+        if event["actor"] in members:
+            raise Conflict("Identity already registered; reuse it or choose a new session ID.")
+        for key in ("runtime_id", "requested_model", "actual_model", "requested_effort", "actual_effort"):
+            if (not isinstance(body.get(key), str) or not body[key].strip() or
+                    len(body[key]) > 160 or "\n" in body[key] or "\r" in body[key]):
+                raise BoardError("Identity needs bounded single-line runtime/model/effort fields.")
+        if body.get("role") not in {"researcher", "paper_writer", "extractor", "deployment"}:
+            raise BoardError("Unknown participation role.")
+        budget = body.get("budget_seconds")
+        if type(budget) is not int or not 1 <= budget <= 86400:
+            raise BoardError("Reported work budget must be 1 to 86400 seconds.")
+        parent = body.get("parent")
+        if parent is not None:
+            if (parent not in members or
+                    parent.split("/")[0] != event["actor"].split("/")[0]):
+                raise BoardError("Parent must be an already registered member of the same team.")
+        members[event["actor"]] = dict(body, actor=event["actor"],
+                                        registered_event=event["id"], registered_at=event["time"])
+    elif kind == "propose":
         for key in ("title", "next_check", *SCOPE):
             if not isinstance(body.get(key), str) or not body[key].strip():
                 raise BoardError("A proposal needs title, exact scope and next_check.")
@@ -183,13 +209,34 @@ def utc(value):
     return time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime(value))
 
 
+def retry_pause(event_id, attempt):
+    jitter = int(hashlib.sha256(
+        f"{event_id}:{attempt}".encode()).hexdigest()[:4], 16) / 65535
+    time.sleep(min(0.5, 0.03 * 2 ** min(attempt, 4)) * (0.5 + jitter))
+
+
 def render(state, now):
     lines = ["# 平等解题公屏", "",
              "所有成员自行提出、认领、分享和回应。没有派单者。",
              "认领只防相同推进单元重复；补充、异议和独立审查始终开放。",
              "时间租约请按下列 UTC 截止检查；当前状态以 board.py view 为准。", "",
              "完整协议和工具在 main 的 research/weighted_congestion_frontier/。",
-             "这里只保存交流，不自动成为数学 canonical state。", "",
+             "这里只保存交流，不自动成为数学 canonical state。", ""]
+    if state.get("members"):
+        lines += ["## 已登记身份", "",
+                  "模型和运行身份由发布者如实登记；这是署名与来源追踪，不是独立账号认证。",
+                  "登记不表示成员仍在线，不会启动 agent 或延长运行时间。", "",
+                  "| Actor | 参与入口 | Runtime | 实际模型 / effort | 父成员 | 登记时间 |",
+                  "| --- | --- | --- | --- | --- | --- |"]
+        def cell(value):
+            return str(value).replace("|", r"\|").replace("\n", " ")
+        for member in state["members"].values():
+            fields = [member["actor"], member["role"], member["runtime_id"],
+                      member["actual_model"] + " / " + member["actual_effort"],
+                      member.get("parent", "—"), utc(member["registered_at"])]
+            lines.append("| " + " | ".join(cell(v) for v in fields) + " |")
+        lines.append("")
+    lines += [
              "## Ideas", "",
              "| ID | 具体 idea | 状态 | 当前 owner | 租约截止 |",
              "| --- | --- | --- | --- | --- |"]
@@ -207,7 +254,9 @@ def render(state, now):
         lines += [f"### {event['seq']} · {event['actor']} · {event['kind']}",
                   "", f"[完整事件]({path}) · {utc(event['time'])}", ""]
         body = event["body"]
-        if event["kind"] == "propose":
+        if event["kind"] == "register":
+            lines += ["登记身份：" + event["actor"], "", encode(body).strip(), ""]
+        elif event["kind"] == "propose":
             lines += [body["title"], "", "命题：" + body["statement"], "",
                       "义务：" + body["obligation"], "",
                       "机制：" + body["mechanism"], "",
@@ -220,7 +269,9 @@ def render(state, now):
 
 
 class Board:
-    def __init__(self, repo, branch="wcg/board", retries=6, clock=time.time):
+    def __init__(self, repo, branch="wcg/board", retries=20, clock=time.time):
+        if type(retries) is not int or not 1 <= retries <= 50:
+            raise BoardError("Retry budget must be an integer from 1 to 50.")
         self.repo = Path(git(repo, "rev-parse", "--show-toplevel").stdout.decode().strip())
         self.remote = git(self.repo, "remote", "get-url", "origin").stdout.decode().strip()
         if SECRET.search(self.remote) or re.search(r"https?://[^/]*@", self.remote):
@@ -297,15 +348,15 @@ class Board:
     def check_asset(self, asset):
         required = {"branch", "commit", "path", "sha256"}
         if not isinstance(asset, dict) or set(asset) != required:
-            raise BoardError("Asset needs exactly branch, commit, path and sha256.")
+            raise ValidationError("Asset needs exactly branch, commit, path and sha256.")
         git(self.repo, "check-ref-format", "refs/heads/" + asset["branch"])
         if not re.fullmatch(r"[0-9a-f]{40}|[0-9a-f]{64}", asset["commit"]):
-            raise BoardError("Use a full immutable commit ID.")
+            raise ValidationError("Use a full immutable commit ID.")
         path = PurePosixPath(asset["path"])
         if path.is_absolute() or ".." in path.parts or not path.parts or ":" in str(path):
-            raise BoardError("Asset path must be repository-relative.")
+            raise ValidationError("Asset path must be repository-relative.")
         if not re.fullmatch(r"[0-9a-f]{64}", asset["sha256"]):
-            raise BoardError("Use a full SHA-256 digest.")
+            raise ValidationError("Use a full SHA-256 digest.")
         # Validate in isolation: FETCH_HEAD of the user's research repo is untouched.
         with self.scratch() as directory:
             self.setup(directory)
@@ -314,13 +365,13 @@ class Board:
             ancestor = git(directory, "merge-base", "--is-ancestor",
                            asset["commit"], "FETCH_HEAD", check=False)
             if ancestor.returncode:
-                raise BoardError("Asset commit is not on the named remote branch.")
+                raise ValidationError("Asset commit is not on the named remote branch.")
             object_id = asset["commit"] + ":" + str(path)
             if git(directory, "cat-file", "-t", object_id).stdout.strip() != b"blob":
-                raise BoardError("Asset must name a file, not a directory/tree.")
+                raise ValidationError("Asset must name a file, not a directory/tree.")
             content = git(directory, "cat-file", "blob", object_id).stdout
             if hashlib.sha256(content).hexdigest() != asset["sha256"]:
-                raise BoardError("Asset hash disagrees with the pushed frozen file.")
+                raise ValidationError("Asset hash disagrees with the pushed frozen file.")
 
     def publish(self, intent):
         guard(intent)
@@ -352,7 +403,7 @@ class Board:
                 temporary.unlink(missing_ok=True)
             break
         error = None
-        for _ in range(self.retries):
+        for attempt in range(self.retries):
             try:
                 with self.scratch() as directory:
                     self.setup(directory)
@@ -370,7 +421,12 @@ class Board:
                         self.check_asset(intent["body"]["asset"])
                     event = dict(intent, schema=SCHEMA, seq=len(state["events"]) + 1,
                                  time=int(self.clock()))
-                    updated = transition(state, event)
+                    try:
+                        updated = transition(state, event)
+                    except Conflict:
+                        raise
+                    except BoardError as exc:
+                        raise ValidationError(str(exc)) from exc
                     root = Path(directory) / PREFIX
                     events = root / "events"
                     events.mkdir(exist_ok=True)
@@ -390,10 +446,15 @@ class Board:
                         pending.unlink(missing_ok=True)
                         return found
                     raise BoardError("Remote confirmation missing; event remains pending.")
-            except Conflict:
+            except (Conflict, ValidationError):
                 raise
             except BoardError as exc:
                 error = exc
+                # Small, bounded, event-specific jitter prevents busy peers
+                # repeatedly colliding in lockstep. Every retry still reloads
+                # and revalidates; this is network backoff, not work padding.
+                if attempt + 1 < self.retries:
+                    retry_pause(intent["id"], attempt)
         raise BoardError(f"{error} Pending event ID: {intent['id']}")
 
 
@@ -406,11 +467,24 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo", default=".")
     parser.add_argument("--branch", default="wcg/board")
+    parser.add_argument("--retries", type=int, default=20,
+                        help="Bounded publish retry budget (1 to 50); failed intents remain recoverable")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("init")
     view = sub.add_parser("view")
     view.add_argument("--json", action="store_true")
     sub.add_parser("pending")
+    register = sub.add_parser("register", help="Publish a self-reported, collision-checked member identity")
+    register.add_argument("--actor", help="Unique team/member; omitted generates a fresh team/root")
+    register.add_argument("--event-id")
+    register.add_argument("--parent", help="Already registered same-team parent for a real child agent")
+    register.add_argument("--role", choices=("researcher", "paper_writer", "extractor", "deployment"), default="researcher")
+    register.add_argument("--runtime-id", required=True)
+    register.add_argument("--requested-model", default="unspecified")
+    register.add_argument("--actual-model", default="unknown")
+    register.add_argument("--requested-effort", default="unspecified")
+    register.add_argument("--actual-effort", default="unknown")
+    register.add_argument("--budget-seconds", type=int, default=3600)
     for command in ("retry", "discard"):
         p = sub.add_parser(command)
         p.add_argument("--event-id", required=True)
@@ -438,7 +512,7 @@ def main():
             p.add_argument("--kind", choices=sorted(KINDS), default="discussion")
             p.add_argument("--reply-to")
     args = parser.parse_args()
-    client = Board(args.repo, args.branch)
+    client = Board(args.repo, args.branch, retries=args.retries)
     if args.command == "init":
         print(client.initialize())
     elif args.command == "view":
@@ -467,13 +541,16 @@ def main():
                 print(encode(found), end="")
     else:
         data = vars(args)
-        excluded = {"repo", "branch", "command", "actor", "event_id",
+        excluded = {"repo", "branch", "retries", "command", "actor", "event_id",
                     "kind", "asset_json"}
         body = {k: v for k, v in data.items() if k not in excluded and v is not None}
         if data.get("asset_json"):
             body["asset"] = json.loads(Path(args.asset_json).read_text())
         kind = args.kind if args.command == "say" else args.command
-        event = client.publish(make_intent(args.actor, kind, body, args.event_id))
+        actor = args.actor
+        if args.command == "register" and actor is None:
+            actor = "wcg_" + uuid.uuid4().hex + "/root"
+        event = client.publish(make_intent(actor, kind, body, args.event_id))
         print(encode(event), end="")
 
 

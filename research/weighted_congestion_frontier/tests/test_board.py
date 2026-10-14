@@ -95,6 +95,116 @@ class BoardTests(unittest.TestCase):
             with concurrent.futures.ThreadPoolExecutor(max_workers=len(intents)) as pool:
                 return list(pool.map(publish, intents))
 
+    def identity(self, actor, parent=None, role="researcher"):
+        body = {"role": role, "runtime_id": "/root", "requested_model": "requested",
+                "actual_model": "unknown", "requested_effort": "ultra",
+                "actual_effort": "unknown", "budget_seconds": 3600}
+        if parent is not None:
+            body["parent"] = parent
+        return b.make_intent(actor, "register", body)
+
+    def test_registration_is_frozen_and_idempotent_after_retry(self):
+        intent = self.identity("team/root")
+        first = self.client.publish(intent)
+        again = self.client.publish(intent)
+        self.assertEqual(first, again)
+        self.assertEqual(len(self.client.read()["members"]), 1)
+        with self.assertRaises(b.Conflict):
+            self.client.publish(self.identity("team/root"))
+        member = self.client.read()["members"]["team/root"]
+        self.assertEqual(member["actual_model"], "unknown")
+        self.assertEqual(member["registered_event"], first["id"])
+
+    def test_registered_child_keeps_parent_and_own_public_voice(self):
+        self.client.publish(self.identity("team/root"))
+        self.client.publish(self.identity("team/child", "team/root"))
+        idea = self.client.publish(proposal("team/child"))["id"]
+        reply = self.client.publish(b.make_intent("team/root", "discussion", {
+            "idea": idea, "text": "Parent and child both have equal research voices."}))
+        state = self.client.read()
+        self.assertEqual(state["ideas"][idea]["owner"], "team/child")
+        self.assertEqual(state["members"]["team/child"]["parent"], "team/root")
+        self.assertIn(reply, state["events"])
+        rendered = b.render(state, self.now)
+        self.assertIn("已登记身份", rendered)
+        self.assertIn("team/child", rendered)
+        self.assertIn("unknown / unknown", rendered)
+
+    def test_identity_collision_race_accepts_one_registration(self):
+        results = self.race([self.identity("shared/root"), self.identity("shared/root")])
+        self.assertEqual(sum(isinstance(x, b.Conflict) for x in results), 1)
+        self.assertEqual(len(self.client.read()["members"]), 1)
+
+    def test_distinct_teams_register_concurrently_without_coordinator(self):
+        results = self.race([self.identity("one/root"), self.identity("two/root")])
+        self.assertTrue(all(isinstance(x, dict) for x in results))
+        self.assertEqual(len(self.client.read()["members"]), 2)
+
+    def test_five_teams_seven_members_can_register_and_exchange_replies(self):
+        # Thirty-five signatures exercised by Python publishers, not real LLMs.
+        def team(number):
+            parent = f"team_{number}/root"
+            actors = [parent] + [f"team_{number}/member_{j}" for j in range(6)]
+            client = b.Board(self.repo, clock=lambda: self.now)
+            for index, actor in enumerate(actors):
+                client.publish(self.identity(actor, parent if index else None))
+            return actors
+        with concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:
+            groups = list(pool.map(team, range(5)))
+        actors = [actor for group in groups for actor in group]
+        state = self.client.read()
+        self.assertEqual(len(actors), 35)
+        self.assertEqual(len(set(actors)), 35)
+        self.assertEqual(set(state["members"]), set(actors))
+        idea = self.client.publish(proposal(actors[0]))
+        peer = self.client.publish(b.make_intent(actors[-1], "help", {
+            "idea": idea["id"], "reply_to": idea["id"],
+            "text": "Cross-team request on this concrete fixture."}))
+        reply = self.client.publish(b.make_intent(actors[0], "discussion", {
+            "idea": idea["id"], "reply_to": peer["id"],
+            "text": "A specific answer keeps the requesting member attribution."}))
+        final = self.client.read()
+        self.assertEqual(reply["body"]["reply_to"], peer["id"])
+        self.assertEqual(final["ideas"][idea["id"]]["owner"], actors[0])
+        self.assertEqual(len(final["events"]), 38)
+
+    def test_identity_boundaries_reject_bad_metadata_and_parent(self):
+        self.client.publish(self.identity("one/root"))
+        bad = [self.identity("no_member"), self.identity("two/child", "one/root"),
+               self.identity("one/child", "one/missing"), self.identity("one/child", role="director")]
+        for field, value in [("budget_seconds", 0), ("budget_seconds", True),
+                             ("budget_seconds", 86401), ("actual_model", ""),
+                             ("actual_model", "model\nspoof"), ("runtime_id", "x" * 161)]:
+            intent = self.identity("one/child")
+            intent["body"][field] = value
+            bad.append(intent)
+        for intent in bad:
+            with self.subTest(body=intent["body"]):
+                with patch.object(b, "retry_pause", side_effect=AssertionError("Validation must fail fast")):
+                    with self.assertRaises(b.BoardError):
+                        self.client.publish(intent)
+        for budget, role in ((1, "paper_writer"), (86400, "extractor")):
+            intent = self.identity("one/end_" + str(budget), role=role)
+            intent["body"]["budget_seconds"] = budget
+            self.client.publish(intent)
+        self.assertEqual(len(self.client.read()["members"]), 3)
+        for retries in (0, True, 51):
+            with self.assertRaises(b.BoardError):
+                b.Board(self.repo, retries=retries)
+
+    def test_registration_cli_generates_unique_root_and_preserves_dirty_work(self):
+        (self.repo / "asset.md").write_text("Uncommitted caller work.\n")
+        script = Path(b.__file__).resolve()
+        events = []
+        for _ in range(2):
+            output = subprocess.check_output([sys.executable, str(script), "--repo", str(self.repo),
+                       "register", "--runtime-id", "/root"], text=True)
+            events.append(json.loads(output))
+        self.assertNotEqual(events[0]["actor"], events[1]["actor"])
+        self.assertTrue(all(x["actor"].endswith("/root") for x in events))
+        self.assertEqual((self.repo / "asset.md").read_text(), "Uncommitted caller work.\n")
+        self.assertIn("asset.md", call(self.repo, "status", "--short"))
+
     def test_same_scope_parallel_proposals_have_one_owner(self):
         results = self.race([proposal("A"), proposal("B")])
         self.assertEqual(sum(isinstance(x, b.Conflict) for x in results), 1)

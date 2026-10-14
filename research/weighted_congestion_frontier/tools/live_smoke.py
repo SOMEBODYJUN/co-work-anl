@@ -14,9 +14,19 @@ import board as b
 def run(repo, branch="wcg/board"):
     client = b.Board(repo, branch)
     run_id = uuid.uuid4().hex
-    root_actor = "deployment/" + run_id[:8]
-    prefix = root_actor + "/writer_"
+    team = "deployment_" + run_id[:12]
+    root_actor = team + "/root"
+    prefix = team + "/writer_"
     initial = client.read()
+    registered = []
+    for actor in (root_actor, prefix + "A", prefix + "B"):
+        body = {"role": "deployment", "runtime_id": "python-test-publisher",
+                "requested_model": "none", "actual_model": "none",
+                "requested_effort": "none", "actual_effort": "none",
+                "budget_seconds": 3600}
+        if actor != root_actor:
+            body["parent"] = root_actor
+        registered.append(client.publish(b.make_intent(actor, "register", body))["id"])
     idea = client.publish(b.make_intent(root_actor, "propose", {
         "title": "基础设施验收：并发自主认领（非数学任务）",
         "claim_version": "WC-BOARD-SMOKE v1 / " + run_id,
@@ -72,9 +82,12 @@ def run(repo, branch="wcg/board"):
                 "本单元仅为基础设施验收，WC-TARGET 仍开放。所有数学研究队自行提出 idea，"
                 "无需协调者派单。Astra Ultra 和 6.1 Sol Ultra 的独立实现复审记录见 main 的 evidence/validation.md。"}))
     final = client.read()
+    if not all(actor in final["members"] for actor in (root_actor, prefix + "A", prefix + "B")):
+        raise AssertionError("Registered publisher identities missing from the remote board.")
     if final["ideas"][idea["id"]]["owner"] is not None:
         raise AssertionError("Finished smoke unit still owns a lease.")
     return {"run_id": run_id, "board_branch": branch, "idea": idea["id"],
+            "registration_events": registered,
             "claims": results, "reply_event": reply["id"],
             "finish_event": finished["id"], "source_asset": asset,
             "initial_events": len(initial["events"]),
