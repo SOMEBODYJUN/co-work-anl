@@ -940,3 +940,13 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Counterevidence / Objections：** v2严格扩大v1充分条件域，旧版本不改；不称倍率条件必要或最优。同权hub/唯一main source/二元同费副本/UFτ承重；不含τ=1或一般游戏的强迫表示与light稳定选择，WC-TARGET保持OPEN；未外审、新颖性未认证。 无尚成立范围内fatal objection。
 - **Status：** complete conditional proof; independently reconstructed and exactly audited; unrefereed。Truth为条件子类存在界；Value为保留主增量并纳入精确PNE端点；Mechanism见完整付款链；Novelty未认证；Ambition全类OPEN。
 - **Related Files：** 原稿9.8起、新独立审查、新作者/独立审计和冻结输出均由`research/assets.json`与`research/catalog.json`接入。
+
+## WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1 — 局部异权主玩家共享侧资源的排序势均衡
+
+- **ID/version / 中文数学名称：** WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1，局部异权主玩家共享侧资源的排序势均衡；首登独立身份，旧同权三个Claim不变。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 任意d≥2、正实异权hub a_v和正权lights的唯一source二元同费主/侧副本模型，side含任意H_j及跨source L_j。令非空H_j的A_j=min_H a，R=max({1}∪{a_v/A_j:v∈H_j})，K=max({1}∪{a_o(l)/A_j:l∈L_j,H_j≠∅})，U_j=Σ_H a、T_j=Σ_Lw、W_v=Σ_sourcew。若α≥R、(α−1)²≥Kd，且每light满足F_v(a_v+w_l)+Σ_jG_j(w_l)≥α[F_v(W_v)+Σ_jG_j(T_j+U_j)]，则降序前缀侧势任单hub局部最小点配全anti为α-PNE。全局hub比R0时max{R0,1+√(R0d)}充分；R=K=1恢复1+√d。 量化所有所写有限拓扑、正实权和非负实多项式系数，所有真实偏离和零成本按MODEL不等式解释；完整定义在[正文第十节](../current/weighted_congestion/shared_side_truncated_potential.md)。
+- **Dependencies：** MODEL、所写UFhet拓扑和R/K、降序前缀覆盖、非负多项式凸性尾均值、κ重置与第8.4节仅需α≥1的源标量中间预算；有限势局部最小。无外部均衡定理导入。
+- **Evidence：** 两名审查者先据statement独立重构，后读冻结稿攻击；第二审查提出凸性加强，第一审查者独立复核后两者核查最终diff。作者及独立Fraction代码、seed/参数/hash/实际结果从正文10.5接入。
+- **Counterevidence / Objections：** R,K及UFhet仍承重；允许全局任意多权类和无界跨度但不消去局部比。单副本排序边际R因子在线性资源上渐近锐，该实例有exactPNE，故只限制逐副本夹逼；无全类C,d0或非存在结论。 没有尚成立fatal；有限验证不替一般证明，未外审或认证新颖性。
+- **Status：** complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth限精确子类；Value为任意多权类的局部预算接口；Mechanism为排序边际与源重置；Ambition全类OPEN。
+- **Related Files：** [正文](../current/weighted_congestion/shared_side_truncated_potential.md)、[独立审查](../reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md)，规范code/run见正文10.5与assets.json。

@@ -60,3 +60,7 @@ E1 提取的[正占用核](research/current/positive_kernels/README.md)新增独
 跨source的同权hub侧反馈在UFmulti下已由真实Rosenthal势闭合到1+√d；不再把“共享多个source的light”本身当成逃逸机制。当前负向需UF失败、异权hub或其他架构。正向也不能仅靠固定有限失真的小资源支持全成本归约：degree1原表在允许改权后仍有定量失真障碍。类内有序三元clock通用编译器另被strict sweep中的严格精确PNE前沿阻止；所写任意次数/幅度均无效，但更高倍率专用输入类、跨类或其他arity不在排除范围。全类未解仍是无界可动权类的选态或次数效率可增长全状态族。
 
 [跨源共享侧资源的强迫与目标倍率分离](research/current/weighted_congestion/shared_side_truncated_potential.md)第九节（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`）给出独立新身份：同权hub、唯一main source及二元同费副本下，UF强迫τ>1与目标α只需(τ−1)(α−1)≥d，无大小排序。d≥16取τ=1+ln d即得α=1+d/ln d≤2d/ln d；旧平方根Claim为τ=α的特例。v2（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2`）保留主费用增量，把条件进一步降为α(τ−1)≥d，τ≥d+1给精确PNE，τ=1+ln d给d/ln d。v1身份与原证据保留；两版本独立重构/冻结攻击及新旧双路Fraction已接入原稿。仍缺异权hub、强迫失败时的稳定light/反馈控制与全类非势选态，WC-TARGET保持OPEN。
+
+[跨源共享侧资源的强迫与目标倍率分离](research/current/weighted_congestion/shared_side_truncated_potential.md)第九节（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`）给出独立新身份：同权hub、唯一main source及二元同费副本下，UF强迫τ>1与目标α只需(τ−1)(α−1)≥d，无大小排序。d≥16取τ=1+ln d即得α=1+d/ln d≤2d/ln d；旧平方根Claim为τ=α的特例。独立先重构后冻结攻击及双路Fraction证据已接入原稿。仍缺异权hub、强迫失败时的稳定light/反馈控制与全类非势选态，WC-TARGET保持OPEN。
+
+异权hub的局部比子类已由[降序侧势](research/current/weighted_congestion/shared_side_truncated_potential.md)第十节闭合：任意多权类、UFhet、α≥R与(α−1)²≥Kd给全antiPNE，旧同权Claim不变。当前真正未解是无界局部R/K或强迫失败的选态；单副本R边际损失在线性资源上可锐，不能直接把这个势的局部估计换成统一常数。

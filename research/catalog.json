@@ -4491,8 +4491,8 @@
     },
     {
       "path": "research/current/weighted_congestion/shared_side_truncated_potential.md",
-      "title": "同权主玩家共享侧资源：截断势与直接源预算",
-      "purpose": "侧资源含多hub时读取：UF推出A_d≤2d/ln d的全anti均衡；另独立ID给任d≥0、α≥1的AS+B势判据，处理source重置。；新增WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1：任意d≥2、实α≥1+√d，同权hub u、唯一main source的正权lights，side允许任意hub子集及跨source任意light子集，两副本同费非负degree≤d。令T_j为side全light权、m_j为hub数、W_v为source总light权；若每light满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥α[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则真实hub Rosenthal势任单hub局部最小点配全anti为α-PNE。 同权hub、二元对称副本、唯一main source及UFmulti承重；不覆盖异权hub或UF失败，不改变全类OPEN。旧两个Claim身份保持。 第九节分离强迫τ与目标α：(τ−1)(α−1)≥d即充分；调用对数级UF子类保证时先核所写同权和真实重置合同，不得当全类。 第9.8—9.12节v2保留主费增量，把条件降为α(τ−1)≥d，包含τ≥d+1的精确PNE充分条件。",
+      "title": "共享侧资源的强迫均衡：截断势、同权倍率权衡与异权排序势",
+      "purpose": "第1–7节为同权hub单light截断势与直接AS+B预算；第8节为同权跨source多light的1+√d界。第9节分离强迫τ与目标α：WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1在UFτ下以(τ−1)(α−1)≥d给α-PNE；第9.8—9.12节独立v2保留主费增量，将充分条件改进为α(τ−1)≥d，包含τ≥d+1的精确PNE充分条件。两版本均要求同权hub、唯一main source及所写二元同费副本合同，τ>1、α≥1无需排序。第10节WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1处理局部异权hub：UFhet下α≥R且(α−1)²≥Kd给全anti α-PNE，固定局部比仍可有无界全局跨度。按范围核对精确陈述、真实重置合同及配套审查和代码；无界局部比及非UF仍开放，各独立Claim身份保持，不提供全类统一C、d0。",
       "topic": "weighted_congestion",
       "role": "account",
       "package": "shared-side-truncated-potential",
@@ -4518,7 +4518,12 @@
         "tests/audits/weighted_congestion/verify_multisource_forcing_exact_threshold.py",
         "tests/audits/weighted_congestion/independent_multisource_force_increment.py",
         "evidence/runs/weighted_congestion/shared_side_truncation/forcing_exact_threshold_author.json",
-        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json"
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json",
+        "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_sorted_side.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json"
       ]
     },
     {
@@ -5527,6 +5532,81 @@
         "tests/audits/weighted_congestion/verify_multisource_forcing_exact_threshold.py",
         "tests/audits/weighted_congestion/independent_multisource_force_increment.py",
         "evidence/runs/weighted_congestion/shared_side_truncation/forcing_exact_threshold_author.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md",
+      "title": "局部异权主玩家共享侧资源的排序势均衡：独立重构、凸性加强与冻结攻击",
+      "purpose": "先核对两名审查者在读稿前的独立推导，再核查原较弱倍率、凸性尾均值加强及最终hash；覆盖局部R/K、UF共享预算、真实偏离和所有退化边界，不当成全类结论。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "heterogeneous-hub-sorted-side",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_sorted_side.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/verify_heterogeneous_sorted_side.py",
+      "title": "局部异权主玩家共享侧资源的排序势均衡：作者边际与真实偏离精确核验",
+      "purpose": "重跑时检查凸性边际a/A、κ重置、源标量及完整literal资源偏离；包含α=R与平方条件同时取等、无界全局跨度而R=K=1、线性R锐式和无exact三角范围检查。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "heterogeneous-hub-sorted-side",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md",
+        "tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py",
+      "title": "局部异权主玩家共享侧资源的排序势均衡：独立前缀与重置精确核验",
+      "purpose": "独立于作者实现，重建全部subset前缀、κ缩放、source预算和UF游戏势局部最小点，检测异权hub及跨source重置；只向stdout写JSON，不覆盖冻结证据。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "heterogeneous-hub-sorted-side",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_sorted_side.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_author.json",
+      "title": "局部异权主玩家共享侧资源的排序势均衡：作者冻结有理结果",
+      "purpose": "保存作者脚本实际counts、seed、Python和源码hash；复核新域α≥R的真实偏离、局部比与全局比区别和弱端点，有限证据不替一般证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "heterogeneous-hub-sorted-side",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_sorted_side.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json",
+      "title": "局部异权主玩家共享侧资源的排序势均衡：独立冻结有理结果",
+      "purpose": "保存独立审计的实际输入生成、参数、counts和代码hash；复验排序边际、重置及168个UF游戏中的全部被检局部最小点，有限检查不等于普遍定理。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "heterogeneous-hub-sorted-side",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_sorted_side.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_author.json"
       ]
     }
   ]

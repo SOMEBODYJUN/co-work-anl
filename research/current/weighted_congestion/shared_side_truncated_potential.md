@@ -1,4 +1,4 @@
-# 同权主玩家共享侧资源：统一轻玩家强迫下的截断 Rosenthal 势均衡
+# 共享侧资源的强迫均衡：同权截断势与异权排序势
 
 本稿为独立推导并完成内部冻结攻击的结构定理；仅讨论下述严格子类，既不是全类存在上界，也不判定 WC-TARGET。没有导入外部定理。统一强迫定理的 Claim ID/version 为 `WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1`；独立的直接预算定理为 `WC-SHARED-SIDE-BUDGET-POTENTIAL-v1`，二者的量词与假设分列，不能静默替换。
 
@@ -524,3 +524,121 @@ v1 的 `(τ−1)(α−1)≥d` 蕴含 v2 的 `α(τ−1)≥d`，故 v2 保留并�
 该程序由审查者自己的 v1 literal 实现派生，独立于作者，运行时不导入任何 baseline；JSON 明列 baseline 路径/hash。两路新冻结结果为 `evidence/runs/weighted_congestion/shared_side_truncation/forcing_exact_threshold_author.json` 与 `evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json`，包括全部实际输入、参数、seed、Python/代码/依赖 hash。重跑保存到 stdout 或临时路径，不覆盖冻结结果。
 
 v2 状态为 complete conditional proof; independently reconstructed and exactly audited; unrefereed。没有范围内尚成立的 fatal objection；未外审、新颖性未认证。主增量付款及精确均衡端点仍只覆盖所写强迫与同权结构；全类 WC-TARGET 保持 OPEN。
+
+## 十、新 Claim：局部异权 hub 的降序侧势与源重置预算
+
+**ID/version / 中文数学名称：** `WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1`，局部异权主玩家共享侧资源的排序势均衡。独立身份；第八节同权 Claim 的对象和结论均不改。
+
+**Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 固定任意整数 d≥2。采用8.1的全部有限拓扑和二元同费资源副本，但每名hub v有任意正实权 a_v，而非共同u。light正权w_l、唯一source o(l)、各主费用F_v及侧费用G_j仍为非负系数次数≤d。记
+
+    U_j=Σ_(v∈H_j) a_v,  T_j=Σ_(l∈L_j)w_l,  W_v=Σ_(o(l)=v)w_l.
+
+每个H_j非空时定义A_j=min_(v∈H_j)a_v。令
+
+    R=max({1}∪{a_v/A_j : H_j≠∅, v∈H_j}),
+    K=max({1}∪{a_o(l)/A_j : H_j≠∅, l∈L_j}).
+
+空索引的max按所写{1}处理。量化每个实数α满足
+
+    α≥R,   (α−1)²≥Kd.                              (H)
+
+假设每名light（v=o(l)）满足
+
+    F_v(a_v+w_l)+Σ_(j:l∈L_j)G_j(w_l)
+    ≥α[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+U_j)].             (UFhet)
+
+则下面降序侧势的任意单hub翻位局部最小点，配全部light与source反位，是α-PNE。允许零/常数费用、空light集、任意空H_j/L_j、source自身参加侧资源、自环和重复side。hub全局最大/最小权比可以无界，只要所定义R,K得到所需控制。固定全局hub权比R0时R,K≤R0，故α=max{R0,1+√(R0d)}充分。若所有hub同权，R=K=1，(H)恰恢复第八节的1+√d，排序势也退化为其原势。
+
+**Dependencies / Evidence / Counterevidence / Status：** MODEL的真实单方偏离、下述降序边际与重置引理、第8.4节源标量估计（其证明实际上只需α≥1，且左侧≤dF(a_v+W_v)），有限势局部最小。没有导入外部均衡定理。已完成独立重构、原冻结攻击及凸性加强后重审；精确核验合同见10.5。R,K和UFhet仍为承重限制，不能从局部权比可计算推出全类统一界；未外审、未认证新颖性，唯一题保持OPEN。
+
+### 10.1. 降序前缀势的真实边际
+
+对side j固定light外场x≥0及hub用户子集S⊆H_j。按权a_v非增排列S（相同权用固定玩家序），前缀权为p_r。定义
+
+    P_j(S;x)=Σ_(r=1)^|S| G_j(x+p_r),  P_j(∅;x)=0.
+
+对v∈S，令a=a_v、z为其前面hub总权，后缀hub权为b_1,…,b_m≤a，q_r=Σ_(t≤r)b_t。删去v的边际为
+
+    Δ_vP=G_j(x+z+a)
+          +Σ_(r=1)^m [G_j(x+z+q_r+a)−G_j(x+z+q_r)].  (S)
+
+所有后缀b_r≥A_j。记真实费用c=G_j(x+z+a+q_m)。若m=0，Δ_vP=c；以下m>0。
+
+下界：区间[x+z+q_r,x+z+q_r+a]因b_r≤a而无间隙，其并覆盖[x+z+a,x+z+a+q_m]。对非负导数积分，因此(S)≥G_j(x+z+a)+c−G_j(x+z+a)=c。
+
+上界：非负系数多项式G_j凸。令y=x+z，Y_r=y+q_r+a，Y_0=y+a。因0<b_r≤a，凸函数在区间右端的短尾平均斜率至少长区间平均斜率，故
+
+    G_j(Y_r)−G_j(Y_r−a)
+    ≤(a/b_r)[G_j(Y_r)−G_j(Y_r−b_r)]
+    ≤(a/A_j)[G_j(Y_r)−G_j(Y_(r−1))].
+
+末步用b_r≥A_j及G_j单调。将(S)的后缀差分求和望远镜，且a/A_j≥1，得到
+
+    Δ_vP≤G_j(Y_0)+(a/A_j)[G_j(Y_m)−G_j(Y_0)]
+         ≤(a/A_j)G_j(Y_m).
+
+因此准确可用的边际夹逼为
+
+    c≤Δ_vP≤(a/A_j)c≤Rc.                             (S1)
+
+这项凸性尾均值估计由第二审查者在原1+a/A_j冻结上界后提出，重新独立核对后纳入首登Claim。常数、线性和零多项式均成立。排序始终按同一玩家身份，删去/插入v时其他hub次序不变。
+
+### 10.2. 异权前缀的 light 重置
+
+对任意S⊆H_j、x≥0、w>0、x+w≤T_j，若H_j非空，
+
+    P_j(S;x+w)−P_j(S;x)
+    ≤κ_d(w/A_j)G_j(T_j+U_j),  κ_d(t)=min{dt,t+1}.    (S2)
+
+证明：设Y=T_j+U_j>0，n=|S|。对0≤t≤Y有G'_j(t)≤dG_j(Y)/Y。nA_j≤U_j≤Y给导数界ndwG_j(Y)/Y≤d(w/A_j)G_j(Y)。另一界把n个差分表示为长度w、起点x+p_r间距≥A_j的积分；几乎处处重叠数≤ceil(w/A_j)≤1+w/A_j，全部区间位于[0,Y]。积分总量≤(1+w/A_j)G_j(Y)。取最小即(S2)。S空时左0；H_j空时P恒0，不定义A_j也不收费。
+
+κ_d单调、凹且κ_d(0)=0；对任意c>0,t≥0，κ_d(ct)≤max{1,c}κ_d(t)。因此对source v的每名light l及所参加的非空H_j，
+
+    κ_d(w_l/A_j)≤K κ_d(w_l/a_v).                    (S3)
+
+### 10.3. 势、合法偏离与重置费用
+
+对hub位h，记S_jb(h)={v∈H_j:h_v=b}，x_jb(h)=Σ_(l∈L_j:h_o(l)=b)w_l。定义
+
+    E_het(h)=Σ_j Σ_(b=0,1) P_j(S_jb(h);x_jb(h)).
+
+真实hub翻位时light不动。由(S1)及α≥R，旧副本删去边际≥旧真实费用、新副本加入边际≤α新真实费用，故side的真实α成本差不超过固定light外场的势差。
+
+势E_het(h^v)按定义随后把所有source=v的light侧位重置。逐名重置时，移出副本的变化非正；移入副本由(S2)控制，各中间light外场均≤T_j。由(S3)，总正向误差Q_v满足
+
+    Q_v≤K Σ_(o(l)=v) κ_d(w_l/a_v)
+                    Σ_(j:l∈L_j)G_j(T_j+U_j).        (S4)
+
+空hub侧资源的实际hub成本和势均为零，删掉它们的非负收费只使此式更强。
+
+设M_v=αF_v(a_v+W_v)−F_v(a_v)≥0。将UFhet改写，且用
+αG_j(T_j+U_j)−G_j(w_l)≥(α−1)G_j(T_j+U_j)，得
+
+    Q_v≤K/(α−1) Σ_(o(l)=v) κ_d(w_l/a_v)
+                            [F_v(a_v+w_l)−αF_v(W_v)]. (S5)
+
+其中每light的所有side共用同一个主预算，没有逐side重复领取。第8.4节T≤1与T≥1两分支都先证明该加权和≤dF_v(a_v+W_v)，只用α≥1；故
+
+    Q_v≤Kd/(α−1) F_v(a_v+W_v)
+        ≤(α−1)F_v(a_v+W_v)≤M_v.                    (S6)
+
+无source light时直接Q_v=0，亦成立。此处使用Kd≤(α−1)²，不要求全局hub权比有界。
+
+选E_het的单hub翻位局部最小点。hub v主资源α成本差为−M_v，side部分至多E_het(h)−E_het(h^v)+Q_v≤Q_v，所以总差非正。light当前成本至多UFhet右括号，偏离成本至少左侧，UFhet给αC_l(current)≤C_l(dev)，特别是α-PNE。保留动作、零成本和弱端点直接按MODEL不等式处理。
+
+### 10.4. 范围与继续义务
+
+本结果允许任意多hub权类；依赖的是side内部跨度R与source到side最小hub权的比例K，而不是全球权种数或全局跨度。有限固定R,K时给O(√d)子类界；R或K随实例无界时没有全类保证。任意异权hub的side-only对称副本不宜直接声称有普通Rosenthal精确势；第10.1节为它构造的是有比较损失的排序势。这个势的单副本边际损失R本身不能被统一常数替换：取G(x)=x、无light外场、一个权a=RA的插入hub和n名权A的后缀hub，R≥1，则ΔP=(n+1)RA，真实费用c=(R+n)A，故ΔP/c=(n+1)R/(R+n)→R。它只说明所写逐副本夹逼锐，不是一般存在性障碍；同一二元单side游戏中，取两副本总hub负载差的绝对值最小的状态，即为exactPNE（若某hub可改善，翻位会严格缩小该绝对差）。配套作者审计反算该式。
+
+主目标仍缺：消去无界局部权比和强迫假设的全类选态，或构造次数效率可增长的全状态反例。第八节、旧截断势、既有奇环下界及所有方法障碍的身份不变。
+
+### 10.5. 独立攻击与有限精确审计
+
+[两名审查者的独立重构及冻结攻击](../../reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md)记录初始较弱条件、第二审查者的凸性边际加强、最终差异审查和各自未排除范围。数学正文没有把内部审查当成外部同行评审。
+
+在仓库根运行以下两份程序，只向stdout输出JSON；重跑结果应写临时位置，不覆盖冻结记录：
+
+- `python3 tests/audits/weighted_congestion/verify_heterogeneous_sorted_side.py`；冻结结果 `evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_author.json`。基函数逐身份子集边际、重置、源标量中间界、完整资源真实偏离与source重置预算；含两条件取等、零/常数、空集合、局部比有界而全局跨度任意大的构造，以及异权side-only无exact的三玩家范围检查。
+- `python3 tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py`；冻结结果 `evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json`。独立实现降序势和literal策略负载，另检查κ缩放、源正预算与各势局部最小点。
+
+代码、seed、参数生成、Python版本、Fraction精度和源码hash均由实际程序及JSON固定。有限核验只检查所列实例，不代替正实参数的区间覆盖、凸性尾均值与源预算证明。R,K无界仍缺全类控制，UFhet失败也未覆盖。

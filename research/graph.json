@@ -5898,6 +5898,79 @@
         "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "WC-HETEROGENEOUS-HUB-SORTED-SIDE-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "局部异权hub与统一强迫侧反馈的精确对象",
+      "detail": "唯一source、任意H_j/L_j二元同费副本；局部A_j/R/K、UFhet、非负degree≤d和按固定身份降权排序前缀势，α≥R且(α−1)²≥Kd。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-MULTISOURCE-SOURCE-SCALAR-BOUND",
+      "kind": "lemma",
+      "track": "weighted_congestion",
+      "title": "跨源重置的源标量中间预算",
+      "detail": "对任d≥2、α≥1、a>0、非负系数degree≤d费用F、有限正t_l及T=Σt_l，有Σκ_d(t_l)[F(a(1+t_l))−αF(aT)]≤dF(a(1+T))；第8.4节先于最终倍率条件的自足估计。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "局部异权主玩家共享侧资源的排序势均衡",
+      "detail": "任意d≥2、正实异权hub a_v和正权lights的唯一source二元同费主/侧副本模型，side含任意H_j及跨source L_j。令非空H_j的A_j=min_H a，R=max({1}∪{a_v/A_j:v∈H_j})，K=max({1}∪{a_o(l)/A_j:l∈L_j,H_j≠∅})，U_j=Σ_H a、T_j=Σ_Lw、W_v=Σ_sourcew。若α≥R、(α−1)²≥Kd，且每light满足F_v(a_v+w_l)+Σ_jG_j(w_l)≥α[F_v(W_v)+Σ_jG_j(T_j+U_j)]，则降序前缀侧势任单hub局部最小点配全anti为α-PNE。全局hub比R0时max{R0,1+√(R0d)}充分；R=K=1恢复1+√d。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-HETEROGENEOUS-HUB-SORTED-SIDE-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "异权共享侧资源排序势的双路有理核验",
+      "detail": "两份不互相调用核心的Fraction审计；α=R与平方条件取等、无界全球跨度/有限局部比、κ重置和真实单方偏离。有限检查不替一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_sorted_side.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-HUB-UNBOUNDED-LOCAL-RATIO-GAP",
+      "kind": "obligation",
+      "track": "weighted_congestion",
+      "title": "无界局部hub比和强迫之外的全类选态义务",
+      "detail": "局部R/K条件界不提供MODEL全类统一C,d0；需消去无界局部比/强迫合同，或以新机制给次数效率增长的全状态反例。单副本排序边际锐式不决定存在性。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/weighted_congestion_frontier/ACCEPTANCE.md"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "WC-SOURCE-SCALAR-PARAMETERS",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "源标量中间预算的参数域",
+      "detail": "整数d≥2、实α≥1、a>0、非负系数次数≤d费用F、有限正t_l、T=Σt_l、κ_d(t)=min(dt,t+1)；允许空t列表。没有附加最终α平方阈值。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "definition"
     }
   ],
   "hyperedges": [
@@ -13971,6 +14044,72 @@
         "research/current/weighted_congestion/shared_side_truncated_potential.md"
       ],
       "status": "complete conditional proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-MULTISOURCE-SOURCE-SCALAR-BOUND",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-SOURCE-SCALAR-PARAMETERS"
+      ],
+      "conclusion": "WC-MULTISOURCE-SOURCE-SCALAR-BOUND",
+      "statement": "第8.4节T≤1丢负项与T≥1超可加重组仅用α≥1先给加权和≤dF；这里单独列出其真实适用域，不以旧平方根结论替代前提。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-HETEROGENEOUS-HUB-SORTED-SIDE-DEFINITION",
+        "WC-MULTISOURCE-SOURCE-SCALAR-BOUND"
+      ],
+      "conclusion": "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1",
+      "statement": "降序区间覆盖下界+凸性尾均值上界给边际[G,(a/A_j)G]；κ重置经K缩放归一到source，UFhet与平方预算支付全部重置，有限局部最小点给真实PNE。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-HETEROGENEOUS-HUB-SORTED-SIDE-AUDIT"
+      ],
+      "conclusion": "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1",
+      "statement": "有限边际/重置/源预算与literal资源偏离复验；包括新α域、弱边界及退化输入，不替一般实参数证明。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_sorted_side.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "LIMIT-HETEROGENEOUS-SORTED-R",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1"
+      ],
+      "conclusion": "WC-HUB-UNBOUNDED-LOCAL-RATIO-GAP",
+      "statement": "R,K及UFhet仍承重；允许全局任意多权类和无界跨度但不消去局部比。单副本排序边际R因子在线性资源上渐近锐，该实例有exactPNE，故只限制逐副本夹逼；无全类C,d0或非存在结论。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md"
+      ],
+      "status": "scope limit"
     }
   ]
 }

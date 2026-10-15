@@ -30,3 +30,5 @@ Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须�
 强迫与目标倍率另以新身份 `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1` 分列：同权跨源side模型的UFτ和(τ−1)(α−1)≥d给α-PNE，τ=1+ln d只覆盖所写子类。精确条件、独立攻击和冻结证据见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)与原正文第九节；旧三个Claim和全类OPEN身份不变。
 
 加强版 `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2` 在原正文9.8起单列：保留主费用增量使α(τ−1)≥d充分，τ≥d+1可取α1；v1条件及审计保持，不宣称必要阈值或全类解答。
+
+新增独立ID `WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1`：[共享侧资源正文第十节](research/current/weighted_congestion/shared_side_truncated_potential.md)给局部异权R/K条件下的UFhet均衡；精确全部量词和审查状态在主题账本。没有改写旧同权身份或WC-TARGET。

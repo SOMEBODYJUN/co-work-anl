@@ -102,3 +102,7 @@
 ## 将全状态择证对偶截断为固定数量移动者
 
 尝试用少量玩家的方向矩匹配或局部transfer覆盖每个selector，再拼成全类证书。[奇环缺陷择证](../current/weighted_congestion/template_certificates/selector_local_moments.md)给出具体失败：等权奇n、任意d≥1与1≤α<2^d，两个proper邻边degree-d列迫相邻移动者质量互相为正，私人常数列再迫每个方向正质量；最小状态支撑恰2n而n任意大。原selector有显式α1 dual，故失败是人数截断而非全类dual不可行或无均衡。回收的是完整补偿链、定量质量界及min-index的2^d锐边界。重试必须允许无界数量玩家、证明可控全局transfer或使用依模板/D的支撑界；不能把本例当作主目标否定。
+
+## 把异权hub直接当同权Rosenthal边际
+
+[局部异权排序侧势](../current/weighted_congestion/shared_side_truncated_potential.md)第十节用降序前缀取代真实同权计数；凸性给边际[G,(a/A_j)G]，源重置另付K。原exact marginal不能原样使用：配套审查有三hub整数二次side-only游戏，八态均有strict改善。即使只分析新排序势，其单副本R损失在线性例的比值(n+1)R/(R+n)→R，故不能从该夹逼直接消R。这不是全类存在障碍；单side锐式例由最小绝对负载差给exactPNE，pair-only仍受既有2-PNE界覆盖。可回收排序边际/κ重置和局部R/K充分界；重试需利用副本差额或新选态，并重新证明全部真实偏离。

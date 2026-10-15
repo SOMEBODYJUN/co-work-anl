@@ -532,6 +532,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2 | 第9.1节同权hub、唯一main-source、任意跨source多light/shared-hub的二元同费副本模型，费用非负系数degree≤d，任意整数d≥2、实τ>1及α≥1，保持UFτ但只需α(τ−1)≥d；同一真实hub Rosenthal势E每个单hub局部最小点配全anti为α-PNE。τ≥d+1时给精确PNE；d≥16且τ=1+ln d时给(d/ln d)-PNE。全部实正权/实非负系数、有限拓扑、零常数费用和空集合边界均量化。 | complete conditional proof; independently reconstructed and exactly audited; unrefereed；[正文9.8—9.12](weighted_congestion/shared_side_truncated_potential.md)、[独立审查](../reviews/weighted_congestion/multisource_force_increment_review.md)。v2严格扩大v1充分条件域，旧版本不改；不称倍率条件必要或最优。同权hub/唯一main source/二元同费副本/UFτ承重；不含τ=1或一般游戏的强迫表示与light稳定选择，WC-TARGET保持OPEN；未外审、新颖性未认证。 |
 
+## 局部异权主玩家共享侧资源的排序势均衡
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1 | 任意d≥2、正实异权hub a_v和正权lights的唯一source二元同费主/侧副本模型，side含任意H_j及跨source L_j。令非空H_j的A_j=min_H a，R=max({1}∪{a_v/A_j:v∈H_j})，K=max({1}∪{a_o(l)/A_j:l∈L_j,H_j≠∅})，U_j=Σ_H a、T_j=Σ_Lw、W_v=Σ_sourcew。若α≥R、(α−1)²≥Kd，且每light满足F_v(a_v+w_l)+Σ_jG_j(w_l)≥α[F_v(W_v)+Σ_jG_j(T_j+U_j)]，则降序前缀侧势任单hub局部最小点配全anti为α-PNE。全局hub比R0时max{R0,1+√(R0d)}充分；R=K=1恢复1+√d。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文第十节](weighted_congestion/shared_side_truncated_potential.md)、[独立重构与最终攻击](../reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md)。R,K及UFhet仍承重；允许全局任意多权类和无界跨度但不消去局部比。单副本排序边际R因子在线性资源上渐近锐，该实例有exactPNE，故只限制逐副本夹逼；无全类C,d0或非存在结论。 |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

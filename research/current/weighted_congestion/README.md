@@ -117,3 +117,11 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 三项皆为独立身份的新结构资产；不据子类平方根界或方法障碍宣布全类命题解决。下一项承重义务是异权hub/非UF反馈、非势选态的可累加预算，或带完整覆盖且次数效率可增长的新族。普通priority激活/LP诊断尚无新可用桥，不当成证明。
 
 [跨源共享侧资源的强迫与目标倍率分离](shared_side_truncated_potential.md)第九节（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`）给出独立新身份：同权hub、唯一main source及二元同费副本下，UF强迫τ>1与目标α只需(τ−1)(α−1)≥d，无大小排序。d≥16取τ=1+ln d即得α=1+d/ln d≤2d/ln d；旧平方根Claim为τ=α的特例。v2（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2`）保留主费用增量，把条件进一步降为α(τ−1)≥d，τ≥d+1给精确PNE，τ=1+ln d给d/ln d。v1身份与原证据保留；两版本独立重构/冻结攻击及新旧双路Fraction已接入原稿。仍缺异权hub、强迫失败时的稳定light/反馈控制与全类非势选态，WC-TARGET保持OPEN。
+
+[跨源共享侧资源的强迫与目标倍率分离](shared_side_truncated_potential.md)第九节（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`）给出独立新身份：同权hub、唯一main source及二元同费副本下，UF强迫τ>1与目标α只需(τ−1)(α−1)≥d，无大小排序。d≥16取τ=1+ln d即得α=1+d/ln d≤2d/ln d；旧平方根Claim为τ=α的特例。独立先重构后冻结攻击及双路Fraction证据已接入原稿。仍缺异权hub、强迫失败时的稳定light/反馈控制与全类非势选态，WC-TARGET保持OPEN。
+
+## 异权hub的局部预算接续
+
+[共享侧资源正文第十节](shared_side_truncated_potential.md)的 `WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1` 使用每非空side的最小hub权A_j，侧内比R及source相对比K；在完整UFhet、α≥R和(α−1)²≥Kd下给全antiα-PNE。允许任意多hub权类以及局部比有界而全局跨度任意大；全局比R0仅为充分参数之一，给max{R0,1+√(R0d)}。同权R=K=1恰恢复旧1+√d，旧Claim不变。
+
+证明链为降序边际覆盖→凸性尾均值上界→κ重置及source局部比缩放→UF整名light预算→有限hub势局部最小点。两名独立重构者分别核查原冻结、凸性加强和最终diff；[审查](../../reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md)、作者与独立Fraction代码/冻结结果见正文10.5。单副本R因子在线性资源上锐，只限所写方法合同，不是全类障碍。真正开放仍是无界局部R/K、非UF及一般策略的选态，或次数效率增长的全状态族。
