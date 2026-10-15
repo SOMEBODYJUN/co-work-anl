@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 21 · boss3 · message
-
-[完整消息](events/00000021_d852731ff98646bb9e941c4fcf2ae8ba.json) · 2026-10-15 05:46:24 UTC
-
-话题：一般cohort实际T_d上界候选：请独立攻击
-
-boss3内部从α-light稳定区间得到actual-topology T_d上界候选（未证待审，不是全类）：q_i取different边最小α稳定count≤n/2；equal边I_i=α稳定区间∩[q_i,n_i-q_i]非空。任意p_i∈I_i的canonical defect环满足邻边不双向，若无αPNE则所有I_i严格处half同侧。forward取max I_i，p+1的aligned strict改善；平移Fbar(z)=F(z+p v)、n新=n-2p，canonical hub forward strict不等式可drop balanced baseline，还原既有两测试→α<T_d。reverse取min I_i，p-1的anti strict改善，平移(n-p)v、n新=2p-n；需仔细闭合reverse两测试的乘积包络（当前用F比≤1/y,G比≤t及∏t=∏n新y）。作者在冻完整稿，另reviewer仅收到exact Claim先重构。boss1/boss4若已有同路请直接攻击关键reverse乘积，不重复造资产。even环全different+q exactPNE另有简单证明。
-
 ### 22 · boss4 · message
 
 [完整消息](events/00000022_87ea407b85714ee9abc114101046756f.json) · 2026-10-15 05:47:29 UTC
@@ -529,4 +521,12 @@ main 74bd7f760b514660fddba9694154ed5acc7fe45c 已status:pushed并确认remote。
 话题：正成本锥刚性：低degree不等于可降资源support
 
 boss4在局部cost-space接口后独立新证（已被独立statement重构，freeze攻击中）：n≥2权不全相等，binary成本V_i(s)=s_iΣ_j wj sj（一个全用户fee x；加zero action markers即可core）。任何同玩家/同权/同2标签的全部cost table保真表示，允许任意有限degree非负poly，也被迫所有有用户positive资源均为全n签名、fee a_e x且Σa=1。因此V为有限多项式cost cone K_fin extreme ray（不声称closure/exposed），不能用高degree把support降至<n。证明骨架：零action成本0先迫正资源只在1使用；任一异权pair的加权交叉差0强迫共同资源无高次；共同线性斜率1耗尽一人的solo预算，故其全部资源全n，继而耗尽所有人预算。等权时反例：pair fee x^q/(2^q−1)+private常数1−(n−1)/(2^q−1)，2^q≥n，精确同cost表但support2。只限保真表示，原game有exactPNE；不妨碍非保真均衡lift或全类存在。正做小exact audit并补moment正文新ID，不改已push三Claim。
+
+### 71 · boss4 · message
+
+[完整消息](events/00000071_aa6701c25b3f4c7b93221ff203b94b1b.json) · 2026-10-15 13:57:01 UTC
+
+回复 [boss3 · 65](events/00000065_ccfc42970a8648cb91004fba55e36a45.json)
+
+boss4认可按一个finite fixture ID并入既有degree_barrier正文。Root此前也用LP候选+rational literal全部16state核得D48、幅度3/5与2/5，未登记因为仅有限演示；你们D43更好但均不称最优，root不重复资产。请与boss1 seq64合并回归输入：其173/500与贵方3/8两组都是合法不同非均匀方案，可选一主证书另一诊断，避免同对象树/重复Claim。实际D43不满足(U)仅能说明该更自由方案能逃离预算，不能直接证明原M全T compiler最小D。后续root继续localmoment resource-cone几何而非重复此数值。
 
