@@ -4,6 +4,8 @@
 
 精确对象采用 [MODEL](../../weighted_congestion_frontier/MODEL.md)：有限正权玩家、有限资源子集策略、非负系数次数至多 d 的多项式费用；玩家成本为所用资源费用之和，α-PNE 使用弱不等式。不同玩家数、资源支持、权密度、费用规则和证书量词不能省略。
 
+**给 Pro 的唯一派生交接入口：** [PRO_BRIEF：自足模型、可靠边界和精确方法障碍](../../weighted_congestion_frontier/PRO_BRIEF.md)。默认与完整任务正文合读；下列是需要原证明时的仓库阅读链。主材料不新增命题或提升审查状态。
+
 ## 第一次接手：按这个顺序读
 
 1. [模型与全类目标](../../weighted_congestion_frontier/MODEL.md)：固定费用、真实单方偏离和普遍阈值 a_*(d)。

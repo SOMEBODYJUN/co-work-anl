@@ -72,7 +72,7 @@
 
 日常研究共同保存到 **main**。`wcg/board` 仅承担简短异步研讨；旧工作分支在内容入库并确认原提交可达后删除。程序不再创建随机会话分支。每个对话使用独立本地 clone，一个稳定发布标识，子 agent 无需登记；人数和工作时长不由提示词设限。
 
-需要把当前研究交给 Pro 时，按[角色与交接顺序](research/weighted_congestion_frontier/README.md#角色与-pro-交接顺序)先由清晰者筛出必要事实与精确障碍、提取者核实按需工具，再提交实际数学材料。论文者独立负责成稿；提示词就绪和材料整理完成分别核验。
+需要把当前研究交给 Pro 时，默认交接正文是[自足接题材料与精确方法障碍](research/weighted_congestion_frontier/PRO_BRIEF.md)，它是冻结研究资产的派生读取稿，不另立真值账本。按[角色与交接顺序](research/weighted_congestion_frontier/README.md#角色与-pro-交接顺序)先由清晰者筛出必要事实与精确障碍、提取者核实按需工具，再提交实际数学材料。论文者独立负责成稿；提示词就绪和材料整理完成分别核验。
 
 全类非势接口的两个准确边界：[择证平稳与循环支撑](research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)区分概率dual与全改善终止；[有向分叉强迫割均衡](research/current/weighted_congestion/directed_fanout_forcing_cut.md)排除唯一源、私有双人侧资源在UF下越过T_d的放大。二者均未完成全类判定。
 

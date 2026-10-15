@@ -13,12 +13,14 @@
 | [拥塞待审候选与未闭合义务地图](<../questions/weighted_congestion/README.md>) | `research/questions/weighted_congestion/README.md` | 查固定乘子势、序势、端点与两列轨道稿的真实证据等级和缺失审查，选可接续的准确义务。 | 阅读导航；真值查精确正文及账本 |
 | [加权拥塞共同研究与协作入口](<README.md>) | `research/weighted_congestion_frontier/README.md` | 数学阅读进入 current 的证明地图；阶段保存时核对命名、账本和地图共同提交，运行程序时再进入启动和协议。 | 阅读导航；真值查精确正文及账本 |
 | [拥塞逐成果包资产链：中文名称、正文、审查与证据](<FILES.md>) | `research/weighted_congestion_frontier/FILES.md` | 按数学成果包找到具体文件作用，追踪主稿到独立攻击、实际核验与冻结结果，不先读路径字典序清单。 | 阅读导航；真值查精确正文及账本 |
+| [加权原子拥塞：Pro 接题材料与精确方法障碍](<PRO_BRIEF.md>) | `research/weighted_congestion_frontier/PRO_BRIEF.md` | 供未读仓库的研究者只凭一份派生正文接题：自足模型与正反完成量词、可靠边界、按机制合并的准确障碍及有限签名/反例核心接口；调用时核对文内冻结源、实际审查等级和OPEN义务，不替代精确账本。；配套 [加权原子拥塞精确模型与普遍门槛目标](<MODEL.md>)；配套 [拥塞匹配上界命题的唯一完成标准与交付验收](<ACCEPTANCE.md>)；配套 [Pro全类近似纯均衡门槛的自主攻题任务](<prompts/PRO_ATTACK.md>)；配套 [加权原子拥塞：奇环下界、工具与一般门槛缺口地图](<../current/weighted_congestion/README.md>)；配套 [拥塞精确命题账本：目标、局部成果与候选版本](<CLAIMS.md>) | 阅读导航；真值查精确正文及账本 |
 | [加权原子拥塞精确模型与普遍门槛目标](<MODEL.md>) | `research/weighted_congestion_frontier/MODEL.md` | 核对正权、有限策略、非负多项式费用及弱不等式近似 PNE 的全类量词，防止偷偷缩小目标模型。 | 定义与模型；不隐含跨模型定理 |
 | [拥塞精确命题账本：目标、局部成果与候选版本](<CLAIMS.md>) | `research/weighted_congestion_frontier/CLAIMS.md` | 引用团队结果前核对稳定 ID、版本、定义域、假设、结论、证据和 objection；范围变化要另建版本。 | 精确命题登记；摘要不替代原陈述 |
 | [拥塞当前前沿、已保存工具和下一证明义务](<RESEARCH_STATE.md>) | `research/weighted_congestion_frontier/RESEARCH_STATE.md` | 接续研究时核对当前已知与未解，避免使用原稿时点状态或旧公屏代替共同账本。 | 精确命题登记；摘要不替代原陈述 |
 | [拥塞失败机制、局部证书边界与可回收结果](<FAILED_ROUTES.md>) | `research/weighted_congestion_frontier/FAILED_ROUTES.md` | 选择势方法、固定小构造或源族调参前查失败的准确量词；方法失败不得升级为全类不可能。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
 | [加权拥塞近似纯均衡的文献基线与核验范围](<LITERATURE.md>) | `research/weighted_congestion_frontier/LITERATURE.md` | 查原文真实模型、上界、下界和开放问题；文献事实、团队解释与尚未认证的新颖性分别引用。 | 文献核对；与团队新结果分别引用 |
 | [拥塞前人机制与可复用技术资产](<PRIOR_ASSETS.md>) | `research/weighted_congestion_frontier/PRIOR_ASSETS.md` | 选择势函数、下界构造或桥梁时查前人已经提供的对象、方法和适用限制，避免重复宣称发现。 | 文献核对；与团队新结果分别引用 |
+| [Pro 派生接题材料：独立盲读、来源范围与修订核查](<../reviews/weighted_congestion/pro_brief_scope_review.md>) | `research/reviews/weighted_congestion/pro_brief_scope_review.md` | 核对唯一PRO_BRIEF与完整任务正文的模型/正反量词和每条障碍排除范围：先仅盲读两文件重构，再核冻结源与实际审查，记录压缩歧义、状态冲突处理、修订及真实覆盖；不新增数学Claim，不替代原证明或推送回执。；配套 [加权原子拥塞：Pro 接题材料与精确方法障碍](<PRO_BRIEF.md>)；配套 [Pro全类近似纯均衡门槛的自主攻题任务](<prompts/PRO_ATTACK.md>)；配套 [拥塞精确命题账本：目标、局部成果与候选版本](<CLAIMS.md>) | 实际审查记录；只覆盖所列版本与义务 |
 
 ### 有限动作模板、全状态择证与精确对偶
 
