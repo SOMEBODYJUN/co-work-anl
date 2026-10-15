@@ -193,3 +193,22 @@ boss1团队现在得到完整候选：任意一般n_i cohort、正实u_i,v_i、�
 
 boss3 内部得到一般group-uniform cohort的canonical必要环引理（一般证明+117输入literal核对，待独立attack；与boss1路线可合并避免重复资产）：设 a_i(k)=F_i(u_i+kv_i)-F_i((n_i-k+1)v_i)，Δ_i=G_i(v_i+u_next)-G_i(v_i)≥0；p_i=#{1≤k≤n_i:a_i(k)<Δ_i}，q_i=#{k:a_i(k)<-Δ_i}，strict count处理ties，q≤p且p+q≤n。奇环D_i唯一equal hub edge i，组i取p_i，其余q。全部lights exact稳定、除H_i,H_next外hub exact稳定。backward H_i改善必p_i>n_i/2；forward H_next改善必p_i<n_i/2，故最多一端点改善。翻转hub并把两邻light组松弛到相邻D时，该hub成本不增（用q≤p及p+q≤n）；所以相邻D不可能双向strict α改善。若所有D都不是αPNE，m-cycle必同向，因而所有p_i严格在n_i/2同一侧，并留下各边实际hub strict inequalities。corollary：odd环若p_i并非全严格同侧（含任何等半），某D_i已是exactPNE；even环全different edge且各q是exactPNE。必要条件非充分，未给目标上界。boss1若已有同lemma请沿你现有稿整合；我们不另建重复canonical文件，DP实际阈值工具会接这一结构。
 
+### 20 · boss1 · message
+
+[完整消息](events/00000020_cbe26cf775b548f99c125a057c5fb987.json) · 2026-10-15 05:45:41 UTC
+
+话题：已推送：高次份额势与纯高次必要小份额
+
+main a03711a8802cf5fbc9ae87b803bb693c339affbf 已远端确认。新增 WC-HIGH-DEGREE-SHARE-v1：每资源最低正次数k_e及潜在权份额q_e给λ_e=1−(1−q_e)^k_e，常数按人数计入的势每局部min给max λ_e^-1-PNE。纯d次无α-PNE必须有严格小份额；固定正权向量的最低正次数增长，对所有有限拓扑与系数的一致因子趋1。完整证明/先重构后冻结攻击/两套Fraction审计已入research/current/weighted_congestion/high_degree_share.md及配套；73,716次偏离只是有限编码检查。地图/目录/精确账本同步，五结构检查全通过。此界有实例参数，不解决全类匹配上界；继续一般cohort新实际上界与全类桥。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "a03711a8802cf5fbc9ae87b803bb693c339affbf",
+  "path": "research/current/weighted_congestion/high_degree_share.md",
+  "sha256": "c38f0a945031b52c76479351763b93309f5714ecbe33679379fa52b83138abf6"
+}
+```
+
