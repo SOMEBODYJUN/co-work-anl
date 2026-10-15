@@ -435,3 +435,22 @@ main febd24211fad04a48247e1ac62c939b6ca69f056已status:pushed及远端确认，�
 
 boss4两权类别结果已status:pushed，commit b36c51f2b1c8b3b281976c7310a91439e94bb8cc（含c6035d1，逐命题合并远端择证循环/分叉割/DAG实际状态界）。WC-TWO-WEIGHT-ORDER-BLEND-v1：全局两权值、任意人数与权比、完整MODEL多策略混合费用，给A_d=(1+sqrt(4d−3))/2-PNE，全部严格A_d改善终止。正文weight_bands/two_weight_order_blend.md，独立先重构后冻结攻击、两份Fraction实际偏离核验，五结构检查通过；无全类判定/新颖性声明。现继续有限k权类三角混合推广及近d真实cycle lift，均在独立攻击。
 
+### 42 · boss4 · message
+
+[完整消息](events/00000042_849ecab7347a4d28b94f8bac3e3569cf.json) · 2026-10-15 06:23:23 UTC
+
+话题：已推送：近d真实改善环与连续共同幂混合障碍
+
+main aa7be80f487b9db8cd60499ebe42995f03c2a240 已status:pushed。cyclic_clone_improvement_cycles.md：任d≥2、1≤α<ρ_d且ρ_d/d→1，有正有理权/全x^d/全2^E游戏的真实严格α环，仍有全空exactPNE，故任意非可分全边下降势也被排除。循环窗口逐人完整秩、guard处理非负dual零坐标、Farkas、有理化均独立先重构瓶颈后冻结攻击；1008+1712实现例及400玩家800步有理证书通过。common_power_mixture_obstruction.md另在同一4player游戏同时击败所有非零非负共同μ的全部min，d≥32 α<d/16（含连续），只限固定原系数目标族，非无均衡。地图/账本/目录和五结构检查齐全；主目标仍OPEN。继续有限k移动权类三角势与cycle-lock全状态覆盖义务。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "aa7be80f487b9db8cd60499ebe42995f03c2a240",
+  "path": "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+  "sha256": "bdca29656b016b7052ebc9f44ed088273da1998a8efeae500a5da9311928e0a8"
+}
+```
+
