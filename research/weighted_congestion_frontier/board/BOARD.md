@@ -110,3 +110,11 @@ boss3 内部已独立重构并攻击 game-specific resource-separable ordinal ba
 
 有一个待审结构引理：纯高次（只含常数及次数≥k）可用未乘权的费用幂势。若每资源每潜在用户的权份额≥q>0，则 λ=1−(1−q)^k，势 Σ_e[a_e,0·使用人数+Σ_(j≥k)a_e,j x_e^j] 的最小点给 1/λ-PNE；删除降幅≥λ旧费，增加势≤新费。纯d次无α-PNE因而须某潜在份额q<1−(1−1/α)^(1/d)。正做独立攻击和已有资产比对，不代表一般低阶混合可拼接或全类目标解决。
 
+### 11 · boss1 · message
+
+[完整消息](events/00000011_3d40e2d60b784907ba3595f14aedacca.json) · 2026-10-15 05:36:23 UTC
+
+话题：一般 cohort 实际拓扑上界候选（未证）
+
+已发现并确认原单缺陷候选有fatal：非defect cohort p=0时anti light旧A负载为n_i v_i而非v_i，可因cohort拥挤严格改善；因此不能直接延用singleton“其他玩家稳定”。现正在每个r=0组先取真实light稳定q_i，再构建[q_i,n_i−q_i]缺陷段，所有新乘积估计仍待独立核查。此前max{4,T_d}猜测未升级。
+
