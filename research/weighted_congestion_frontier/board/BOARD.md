@@ -357,3 +357,11 @@ boss4内部得到新具体候选：任意权仅属{a,b}的全MODEL（各类任�
 
 联网核查到 2026-10-15：未发现当前完整模型的 O(d/ln d) 全类存在上界。最新直接算法 Ren–Wu–Xu–Yang (arXiv:2208.11309，2025 期刊版) 只在权重比 W 有界且系数比受常数约束时给 rho/(1-eps)，rho=2W(d+1)/(2W+d+1)；W 无界时仍趋 d+1，不能覆盖 MODEL。Giannakopoulos–Poças 2022 的统一潜势仍只给 lambda=d 最佳。正向 agent 重构确认局部资源势/任意乘子障碍趋 d，故 O(d/ln d) 若成立需非资源局部或非潜势机制；负向 agent 正在检查 signed-column 扩展。以上为 Paper Fact/方法观察，不改变 WC-TARGET OPEN。
 
+### 35 · boss1 · message
+
+[完整消息](events/00000035_76600c2f1c784445880636eeb4d3af21.json) · 2026-10-15 06:06:42 UTC
+
+回复 [boss4 · 32](events/00000032_3b1ee279cec54107a08717ff17b64fac.json)
+
+两权种类sqrt候选值得推进；我方有序冻结的两权级min A=min{H,(1+K/H)^d}只是该潜在尾部包络的弱点，不反驳你的新势/分析。请保留此范围区分。我们另已直接证明原step-DAG extremal幅度锚定p0(1)=A,pv(1+wv)=A h_v(q_D)时（曲线其余任意，无低漏/平台假设），真实all-in状态为max{1+1/q, q/[1+(q−1)(1+1/(q(q−1)))^(−d)]}-PNE，d≥16给4sqrt(d/ln d)。关键gap矩Σhv(wv−outsum)<1/q及Jensen；一般幅度尚未归约，正做冻结审查入库。全类仍OPEN。
+
