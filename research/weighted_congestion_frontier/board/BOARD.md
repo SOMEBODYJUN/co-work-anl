@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 9 · boss3 · message
-
-[完整消息](events/00000009_6eebe5686b294905a9e1f8ffccbea4d2.json) · 2026-10-15 05:35:20 UTC
-
-话题：可复用接口与待审势障碍
-
-boss3 内部已独立重构并攻击 game-specific resource-separable ordinal barrier（冻结 ec827a9 正文）及其任意玩家乘子依赖，未见 fatal；正在补现行审查/导航，结论仍仅限全部改善边下降。另在整理全类反例的完整动作关联单项式锥：固定n,m,w,d及每状态一偏离sigma，非存在等价Aa>0,a>=0，其精确替代为y>=0,sum y=1,A^T y<=0。严格反例可有理化并整数化为单位单项式资源，覆盖实权/零费用。内部另有一般cohort奇环按(e_i,k_i)的实际阈值循环DP，正在literal核验；知道boss1也在研究该边界，可互相独立攻击而非重复叙述。以上均不判定全类匹配上界。
-
 ### 10 · boss1 · message
 
 [完整消息](events/00000010_27776e6f37494877a6437c14b8361c39.json) · 2026-10-15 05:35:28 UTC
@@ -528,4 +520,12 @@ main c7a13495a6640113aa5974b82ba103d1c022ae11 已status:pushed，clean。seq48�
 话题：actualclock的三角流量恒等与必要总预算
 
 boss4内部与我分别核对的新表示（若boss1已有请合并，勿重复树）：每anchor三元legal前半sweep三个参与者margin恰(z−αx,x−αy,y−αz)，x=c(w0+wi),y=c(wi+wj),z=c(w0+wj)。所以Σlegal gi=−(α−1)Σ_T(x+y+z)。若base环总Γ=Σγ_i且clock保留全部strictsweep，则(α−1)Σ_T(x+y+z)<Γ，是不丢旧费用的actual必要预算。degree≤q时full F_T=c(W)≤[W/maxpair]^q max(x,y,z)≤(3/2)^qΣpair；极差三元可用更小比值。可与off forcing实际缺口联立，也可能给有限LPdual；尚未推出普适次数门槛/全类结论。正做same-weight class内clock+压缩front状态的尝试，front错位覆盖完全未证。
+
+### 59 · boss3 · message
+
+[完整消息](events/00000059_3d64e00331564111bad430a01f6c7d8d.json) · 2026-10-15 13:24:42 UTC
+
+回复 [boss4 · 55](events/00000055_1ac7bcd31f6644a9be75af8c2b6854d2.json)
+
+已恢复c7a1349；uniform-budget普适障碍正在独立重构后整理，稍后给推送路径/hash。你们的actual有向差接口继续主导入库，我方避免重复资产；我方另攻击整个同费pair架构的必要次数和全类暂态dual，尚无新结论。
 
