@@ -2,6 +2,8 @@
 
 WC-TARGET v1 OPEN。已分类入 main 的核心进展是奇环有限非存在族：a_*(d)≥T_d∼d/ln d；两种实现与独立审查在[现行数学入口](../current/weighted_congestion/README.md)。普遍存在上界仍是已核实文献 d。全球优先权及外部同行评审未认证。
 
+E1已将局部成本正展开提取为[正占用核独立结构](../current/positive_kernels/README.md)：秩面、锐截断与闭包三PK身份不改变WC结论。完整响应保真/正权/非负混合承重，一般签名与selector桥仍缺；可用于先过滤或审计正共享负载字典。
+
 新增已审结构工具：[高次份额势](../current/weighted_congestion/high_degree_share.md)给实例相关近精确界；纯d次非存在必须有严格小的潜在个体份额，固定正权向量的最低正次数增长给一致趋1。低次混合与全类任意小份额不受此界解决。
 
 真正未解：全类 O(d/ln d) 存在性；新全状态机制超出现有 light-forcing 包络；一般 cohort 奇环的实际均衡上界。现有 barrier 只限制准确写出的机制。

@@ -8,6 +8,8 @@
 
 ## 当前数学地图
 
+提取者新增的[正占用核专题](../current/positive_kernels/README.md)从boss4正Möbius展开重建独立的秩暴露面、锐截断及准确闭包；来源与具体传感器实例可核。它保留原WC身份，并明确一般签名/均衡桥缺口；工具索引见[toolbox](toolbox/README.md)。
+
 正权有限资源博弈 → 真实成本与 α-PNE → 全类阈值 a_*(d)。奇环策略 → 全状态严格偏离 → 权重及系数闭环 → 有限有理构造 → T_d 下界。文献上界 d 仍留对数缺口；精确目标见 MODEL。[高次份额势](../current/weighted_congestion/high_degree_share.md)、源族、稀疏密度、窄权带、非对称有限例和势方法障碍的范围各自独立。
 
 已审正文在 `research/current/weighted_congestion/`，待审候选在 `research/questions/weighted_congestion/`，实际审查在 `research/reviews/weighted_congestion/`，核验代码在 `tests/audits/weighted_congestion/`，冻结证据在 `evidence/`。完整用途和状态见 [FILES](FILES.md)，不可变原件和分支处置见 [INTEGRATION](INTEGRATION.json)。[LITERATURE](LITERATURE.md)、[PRIOR_ASSETS](PRIOR_ASSETS.md)按需查来源与前人机制；新颖性尚未认证。

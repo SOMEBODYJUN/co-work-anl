@@ -487,6 +487,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-ANCHORED-FULL-UNIFORM-BUDGET-ESCAPE-v1 | 明示四玩家三次基体、权(1,1/2,1/4,1/8)、α=21/20；保留全部T012/T013/T023原010/101同费pair与统一M=2αB，只将次数取80，所得游戏全部16态有指定严格α出口且保留八条环边，但δ^80>η/(4α²BL)；满足(U)的最小整数为91。只证明(U)在原全三元统一幅度架构中也非必要，不称80最优或一般增长族。 | complete finite certificate; independently reconstructed and exactly audited; unrefereed；[正文第4节](weighted_congestion/anchored_clock_degree_barrier.md)、[审查](../reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md) |
 
 
+## 正占用核的独立结构接口
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| PK-INTERACTION-RANK-FACE-v1 | 每个n≥1、正实质量w、整数r≥0及C∈K_fin：C的active秩≤r iff每个有限非负表示的所有正项min{k,|S|−1}≤r；r≤n−2时恰为顶背景(r+1)阶差分和L的零暴露面，r≥n−1为全锥。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)。不覆盖负混合或零/负质量；低阶大支持线性项仍允许，不能推出全小用户支持。 |
+| PK-SHARP-FORBIDDEN-MASS-v1 | 每个n≥2、正实w、0≤r≤n−2，q=r+1；γ=min_|S|≥q+1 q!(|S|−q)e_q(w_S)/(|S|W_S^q)>0。任有限非负表示删除min{k,|S|−1}>r项得合法低秩C_low，bad全激活质量≤L_q(C)/γ，逐坐标0≤C−C_low≤L_q(C)/γ。γ是全部bad单核L/B精确最小且k=q达到；任意低秩绝对ε近似给n binom(n−1,q)2^q ε/γ界。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)。锐性只指单核L/B预算比；不称最终距离界最优、不恢复未知表示；q≥2时常数非跨正质量统一。 |
+| PK-OCCUPANCY-CONE-CLOSURE-v1 | 每个n≥1、正实w：cl K_fin=cone({K_(S,k)}∪{U_S})，U_(S,i)=1_(i∈S)prod_(j∈S)s_j且cone仍有限和。n≥2原锥非闭；每r≥0有cl K_fin∩V_r=cl(K_fin∩V_r)，r≤n−2亦等于cl K_fin∩ker L_(r+1)。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)。闭包新增对象不能冒充原有限表示；底背景差分无稳定gap，不能用其零面替代顶背景；没有均衡桥。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -5486,6 +5486,80 @@
         "examples/weighted_congestion/anchored_actual_clock_degree43.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "PK-OCCUPANCY-KERNEL-DEFINITION",
+      "kind": "definition",
+      "track": "extensions",
+      "title": "正质量Boolean占用核、active秩与顶背景差分",
+      "detail": "有限Boolean输入、固定正质量、整数非负幂与非负混合；active表唯一多重线性秩、顶背景差分泛函、全激活质量B与unanimity极限方向。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "PK-RANK-FACE-EXACT-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "正核秩面与锐预算的双路精确审计",
+      "detail": "实际Boolean表、Mobius秩、顶背景差分、sharp k=q、全部背景正差分、删项复用及零权/底背景/非闭边界；有限Fraction不代普遍证明。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "tests/audits/positive_kernels/verify_rank_faces.py",
+        "tests/audits/positive_kernels/independent_rank_face.py",
+        "evidence/runs/positive_kernels/rank_faces_author.json",
+        "evidence/runs/positive_kernels/rank_faces_independent.json",
+        "examples/positive_kernels/rank_face_inputs.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "PK-GENERAL-SIGNATURE-BRIDGE",
+      "kind": "obligation",
+      "track": "extensions",
+      "title": "正占用核到一般签名与selector可行性的未证桥",
+      "detail": "没有零成本动作时正资源可能用于0或两动作并使差分换号；须重建可用正结构或直接控制selector极锥相交。当前PK工具不保证均衡存在。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "PK-INTERACTION-RANK-FACE-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "正占用核的交互秩暴露面",
+      "detail": "每个n≥1、正实质量w、整数r≥0及C∈K_fin：C的active秩≤r iff每个有限非负表示的所有正项min{k,|S|−1}≤r；r≤n−2时恰为顶背景(r+1)阶差分和L的零暴露面，r≥n−1为全锥。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "PK-SHARP-FORBIDDEN-MASS-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "正占用核的锐坏项质量预算",
+      "detail": "每个n≥2、正实w、0≤r≤n−2，q=r+1；γ=min_|S|≥q+1 q!(|S|−q)e_q(w_S)/(|S|W_S^q)>0。任有限非负表示删除min{k,|S|−1}>r项得合法低秩C_low，bad全激活质量≤L_q(C)/γ，逐坐标0≤C−C_low≤L_q(C)/γ。γ是全部bad单核L/B精确最小且k=q达到；任意低秩绝对ε近似给n binom(n−1,q)2^q ε/γ界。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "PK-OCCUPANCY-CONE-CLOSURE-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "正占用核的非闭锥补全与秩面闭包",
+      "detail": "每个n≥1、正实w：cl K_fin=cone({K_(S,k)}∪{U_S})，U_(S,i)=1_(i∈S)prod_(j∈S)s_j且cone仍有限和。n≥2原锥非闭；每r≥0有cl K_fin∩V_r=cl(K_fin∩V_r)，r≤n−2亦等于cl K_fin∩ker L_(r+1)。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
     }
   ],
   "hyperedges": [
@@ -13071,6 +13145,150 @@
         "research/current/weighted_congestion/uniform_clock_budget_barrier.md"
       ],
       "status": "complete finite certificate; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-PK-INTERACTION-RANK-FACE-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "PK-OCCUPANCY-KERNEL-DEFINITION"
+      ],
+      "conclusion": "PK-INTERACTION-RANK-FACE-v1",
+      "statement": "非负多重线性展开使混合差分无消去，顶背景泛函恰检全部超阶项；正和为零逐项为零。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-PK-INTERACTION-RANK-FACE-v1",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "PK-RANK-FACE-EXACT-AUDIT"
+      ],
+      "conclusion": "PK-INTERACTION-RANK-FACE-v1",
+      "statement": "双路独立Fraction核验实际有限表、边界及复用算例；任意实质量/无界次数/闭包由解析证明承担。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "tests/audits/positive_kernels/verify_rank_faces.py",
+        "tests/audits/positive_kernels/independent_rank_face.py",
+        "evidence/runs/positive_kernels/rank_faces_author.json",
+        "evidence/runs/positive_kernels/rank_faces_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-PK-SHARP-FORBIDDEN-MASS-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "PK-OCCUPANCY-KERNEL-DEFINITION",
+        "PK-INTERACTION-RANK-FACE-v1"
+      ],
+      "conclusion": "PK-SHARP-FORBIDDEN-MASS-v1",
+      "statement": "顶背景归一化差分是抽样覆盖事件，随次数单调且k=q取sharp值，有限support最小后线性叠加。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-PK-SHARP-FORBIDDEN-MASS-v1",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "PK-RANK-FACE-EXACT-AUDIT"
+      ],
+      "conclusion": "PK-SHARP-FORBIDDEN-MASS-v1",
+      "statement": "双路独立Fraction核验实际有限表、边界及复用算例；任意实质量/无界次数/闭包由解析证明承担。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "tests/audits/positive_kernels/verify_rank_faces.py",
+        "tests/audits/positive_kernels/independent_rank_face.py",
+        "evidence/runs/positive_kernels/rank_faces_author.json",
+        "evidence/runs/positive_kernels/rank_faces_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-PK-OCCUPANCY-CONE-CLOSURE-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "PK-OCCUPANCY-KERNEL-DEFINITION",
+        "PK-INTERACTION-RANK-FACE-v1",
+        "PK-SHARP-FORBIDDEN-MASS-v1"
+      ],
+      "conclusion": "PK-OCCUPANCY-CONE-CLOSURE-v1",
+      "statement": "正权归一化核仅有unanimity聚点；紧归一化生成集给闭锥，sharp删项预算使低秩截面与闭包交换。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-PK-OCCUPANCY-CONE-CLOSURE-v1",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "PK-RANK-FACE-EXACT-AUDIT"
+      ],
+      "conclusion": "PK-OCCUPANCY-CONE-CLOSURE-v1",
+      "statement": "双路独立Fraction核验实际有限表、边界及复用算例；任意实质量/无界次数/闭包由解析证明承担。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "tests/audits/positive_kernels/verify_rank_faces.py",
+        "tests/audits/positive_kernels/independent_rank_face.py",
+        "evidence/runs/positive_kernels/rank_faces_author.json",
+        "evidence/runs/positive_kernels/rank_faces_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "LIMIT-PK-INTERACTION-RANK-FACE-v1-GENERAL-SIGNATURE",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "PK-INTERACTION-RANK-FACE-v1"
+      ],
+      "conclusion": "PK-GENERAL-SIGNATURE-BRIDGE",
+      "statement": "只为正向占用核的完整成本结构；没有零动作定向、符号差分控制或selector可行性证明时不能外推均衡。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md"
+      ],
+      "status": "open bridge; no equilibrium theorem"
+    },
+    {
+      "id": "LIMIT-PK-SHARP-FORBIDDEN-MASS-v1-GENERAL-SIGNATURE",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "PK-SHARP-FORBIDDEN-MASS-v1"
+      ],
+      "conclusion": "PK-GENERAL-SIGNATURE-BRIDGE",
+      "statement": "只为正向占用核的完整成本结构；没有零动作定向、符号差分控制或selector可行性证明时不能外推均衡。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md"
+      ],
+      "status": "open bridge; no equilibrium theorem"
+    },
+    {
+      "id": "LIMIT-PK-OCCUPANCY-CONE-CLOSURE-v1-GENERAL-SIGNATURE",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "PK-OCCUPANCY-CONE-CLOSURE-v1"
+      ],
+      "conclusion": "PK-GENERAL-SIGNATURE-BRIDGE",
+      "statement": "只为正向占用核的完整成本结构；没有零动作定向、符号差分控制或selector可行性证明时不能外推均衡。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md"
+      ],
+      "status": "open bridge; no equilibrium theorem"
     }
   ]
 }

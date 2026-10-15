@@ -831,3 +831,30 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：稀疏43次例不能独自证明原uniform架构逃逸，本条补上该范围。固定实例不解决唯一题；uniform预算障碍在原假设下保持。无尚成立fatal；未外审/新颖性未认证。
 - Status：complete finite certificate; independently reconstructed and exactly audited; unrefereed。Truth为有限全状态证书及预算非必要；Value为原架构边界；Mechanism为真实有向差；Ambition全类仍OPEN。
 - Related Files：[正文](../current/weighted_congestion/anchored_clock_degree_barrier.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md)；两份新代码和新冻结记录从正文审计合同进入，基体输入复用原43次JSON而不改写。
+
+## PK-INTERACTION-RANK-FACE-v1 — 正占用核的交互秩暴露面
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：每个n≥1、正实质量w、整数r≥0及C∈K_fin：C的active秩≤r iff每个有限非负表示的所有正项min{k,|S|−1}≤r；r≤n−2时恰为顶背景(r+1)阶差分和L的零暴露面，r≥n−1为全锥。 完整核、active秩、L、B、γ及闭包按[自足正文](../current/positive_kernels/occupancy_rank_faces.md)定义；fixed positive masses, finite nonnegative occupancy-kernel representations; complete Boolean response tables。
+- Dependencies：非负多项式、Boolean正Möbius展开、容斥/有限抽样和有限维紧归一化；依赖链在正文第一节逐条分列。
+- Evidence：独立先重构有限锥陈述，后参与闭包强化，再攻击两份冻结稿；双路实际Fraction审计和复用例见正文第八节。
+- Counterevidence / Objections：不覆盖负混合或零/负质量；低阶大支持线性项仍允许，不能推出全小用户支持。 零质量例曾漏算零质量观察者，实测发现后改为(1,0,0)并加入回归；范围量词已显式限定C∈K_fin，无未结范围内fatal。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅所写结构接口；Value为可复用模型字典过滤/预算/闭包；Novelty未认证，Mechanism见正文，Ambition不改变WC-TARGET OPEN。
+- Related Files：[正文](../current/positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)、`history/source/notes/positive_kernels/occupancy_source_manifest.json`；实际代码/输入/冻结输出由正文第八节进入。
+
+## PK-SHARP-FORBIDDEN-MASS-v1 — 正占用核的锐坏项质量预算
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：每个n≥2、正实w、0≤r≤n−2，q=r+1；γ=min_|S|≥q+1 q!(|S|−q)e_q(w_S)/(|S|W_S^q)>0。任有限非负表示删除min{k,|S|−1}>r项得合法低秩C_low，bad全激活质量≤L_q(C)/γ，逐坐标0≤C−C_low≤L_q(C)/γ。γ是全部bad单核L/B精确最小且k=q达到；任意低秩绝对ε近似给n binom(n−1,q)2^q ε/γ界。 完整核、active秩、L、B、γ及闭包按[自足正文](../current/positive_kernels/occupancy_rank_faces.md)定义；same cone; fixed n,w,r and full-state normalization B(C)=sum_i C_i(1_N)。
+- Dependencies：非负多项式、Boolean正Möbius展开、容斥/有限抽样和有限维紧归一化；依赖链在正文第一节逐条分列。
+- Evidence：独立先重构有限锥陈述，后参与闭包强化，再攻击两份冻结稿；双路实际Fraction审计和复用例见正文第八节。
+- Counterevidence / Objections：锐性只指单核L/B预算比；不称最终距离界最优、不恢复未知表示；q≥2时常数非跨正质量统一。 零质量例曾漏算零质量观察者，实测发现后改为(1,0,0)并加入回归；范围量词已显式限定C∈K_fin，无未结范围内fatal。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅所写结构接口；Value为可复用模型字典过滤/预算/闭包；Novelty未认证，Mechanism见正文，Ambition不改变WC-TARGET OPEN。
+- Related Files：[正文](../current/positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)、`history/source/notes/positive_kernels/occupancy_source_manifest.json`；实际代码/输入/冻结输出由正文第八节进入。
+
+## PK-OCCUPANCY-CONE-CLOSURE-v1 — 正占用核的非闭锥补全与秩面闭包
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：每个n≥1、正实w：cl K_fin=cone({K_(S,k)}∪{U_S})，U_(S,i)=1_(i∈S)prod_(j∈S)s_j且cone仍有限和。n≥2原锥非闭；每r≥0有cl K_fin∩V_r=cl(K_fin∩V_r)，r≤n−2亦等于cl K_fin∩ker L_(r+1)。 完整核、active秩、L、B、γ及闭包按[自足正文](../current/positive_kernels/occupancy_rank_faces.md)定义；fixed finite Boolean response space, positive masses, all finite nonnegative integer-power representations and Euclidean closure。
+- Dependencies：非负多项式、Boolean正Möbius展开、容斥/有限抽样和有限维紧归一化；依赖链在正文第一节逐条分列。
+- Evidence：独立先重构有限锥陈述，后参与闭包强化，再攻击两份冻结稿；双路实际Fraction审计和复用例见正文第八节。
+- Counterevidence / Objections：闭包新增对象不能冒充原有限表示；底背景差分无稳定gap，不能用其零面替代顶背景；没有均衡桥。 零质量例曾漏算零质量观察者，实测发现后改为(1,0,0)并加入回归；范围量词已显式限定C∈K_fin，无未结范围内fatal。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅所写结构接口；Value为可复用模型字典过滤/预算/闭包；Novelty未认证，Mechanism见正文，Ambition不改变WC-TARGET OPEN。
+- Related Files：[正文](../current/positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)、`history/source/notes/positive_kernels/occupancy_source_manifest.json`；实际代码/输入/冻结输出由正文第八节进入。

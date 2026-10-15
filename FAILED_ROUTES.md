@@ -10,6 +10,8 @@
 
 旧对话、程序失败、断网、模型评价或有限搜索未找到反例没有数学真值含义。整理和发布不自动提升命题状态。
 
+[正占用核的低背景检测失败](research/current/positive_kernels/occupancy_rank_faces.md)给出准确回收：底背景混合差分在有限正锥可判低秩，但归一化高次full-support核使其趋零、极限仍高秩，故无稳定质量预算且不能交换闭包截面。顶背景测试修复为正的锐gap；固定正质量与非负混合仍承重，不推一般签名或均衡结论。
+
 加权拥塞新增两项准确失败范围：[择证平稳/回返支撑的额外要求](research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)与[唯一源私有侧分叉的UF放大](research/current/weighted_congestion/directed_fanout_forcing_cut.md)；详见主题失败记录，均不否定一般存在机制。
 
 [统一低泄漏锚定时钟预算](research/current/weighted_congestion/uniform_clock_budget_barrier.md)现有普适障碍：任意输入和anchor均αlnq/q<1，不能靠改输入环完成全类否定；只限制该充分预算，实际时钟差及非均匀架构仍开放。

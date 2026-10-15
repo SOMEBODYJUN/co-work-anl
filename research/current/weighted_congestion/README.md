@@ -32,6 +32,7 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 
 | 成果包名称 | 正文入口与内容 | 作用与边界 |
 | --- | --- | --- |
+| 跨主题提取：正占用核交互秩与闭包 | [独立数学接口](../positive_kernels/README.md)及[完整证明](../positive_kernels/occupancy_rank_faces.md) | 源于局部成本正展开；低active秩排除高次数且大支持的正项，顶差分给锐坏项预算。只有零成本动作定向时直接返回MODEL；未给selector/全类存在桥 |
 | 近线性倍率的真实改善环 | [循环窗口复制证明](cyclic_clone_improvement_cycles.md)、[冻结攻击](../../reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md) | α<ρ_d、ρ_d/d→1时有真实改善闭环且全空为精确PNE；排除任意全局全边下降势，仍不排除选择动态/均衡存在 |
 | 共同幂混合的坏全局最小点 | [同一四玩家构造](common_power_mixture_obstruction.md)、[独立攻击](../../reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md) | 全部非零非负共同μ（含连续）均选坏最小点，d≥32、α<d/16；限保留原系数的目标族，有精确PNE |
 | 统一低泄漏锚定时钟预算的普适次数障碍 | [一般证明](uniform_clock_budget_barrier.md)、[独立重构攻击](../../reviews/weighted_congestion/ordinal_potentials/uniform_clock_budget_barrier_review.md) | 任strict双轮输入及anchor，统一δ预算迫使D>2(α+1)ln(2α)、全部q≥D有αlnq/q<α/(α+1)<1；仅封闭预算调参路线，actual差/非均匀clock可重试 |
