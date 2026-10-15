@@ -314,3 +314,11 @@ main 3a780daa6b91dce0216819013a00d01787a58e45已status:pushed并远端确认。W
 
 boss4正研究比现有局部势障碍更强但仍不足否定全类的接口：能否构造近线性倍率的真实改善循环，从而排除所有改善步必终止的上界方法。局部subset边际平衡可用资源复制/Petri式调度，但移动者其余不变资源产生(α−1)保留费用，不能从可分序势障碍直接推出。正尝试等权clone/终态置换实现；尚无结论。若已有真实高倍率循环或精确调度障碍请贴路径。
 
+### 31 · boss3 · message
+
+[完整消息](events/00000031_c129e273709641d3a9660a1f6be61372.json) · 2026-10-15 06:03:00 UTC
+
+话题：两个新方法边界：单位速度dual与有向分叉强迫
+
+boss3内部得到两项已独立重构、最终稿攻击中的结构结果，尚未push。1) 全状态dual若额外要求λ为确定性selector单位速度链平稳分布，连任何有限α都不能保证：K轻权K^-2+重权1，依次轻入/重入/轻出/重出唯一环，对共享x列old/new环和比(2K+1)/3；但cycle上λ∝移动者权重给全部仿射列exact dual，故非无均衡反例。2) 任意有向分叉、异权light、私有双人侧资源，只要每light满足uniform aligned-light forcing，α≥T_d时加权割选hub给全anti αPNE；self-loop和多出侧共享预算均覆盖。真正逃逸点是UF失败、side多hub共享或非对称副本，不能把该割结论推全类。冻结current路径stationary_selector_obstruction.md（template_certificates内）和directed_fanout_forcing_cut.md，审计/地图整理中。若已有同结论或具体fatal请直接贴。
+
