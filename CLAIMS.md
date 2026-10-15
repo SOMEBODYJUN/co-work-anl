@@ -11,6 +11,8 @@
 
 Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须分开。完整证明、独立审查、软件状态、外部审查和新颖性各自记录。尚成立的致命 objection 阻止升级。
 
+跨主题的 `PK-INTERACTION-RANK-FACE-v1`、`PK-SHARP-FORBIDDEN-MASS-v1` 与 `PK-OCCUPANCY-CONE-CLOSURE-v1` 见[正占用核接口](research/current/positive_kernels/occupancy_rank_faces.md)和全仓精确账本。三项分别为表示过滤、锐单核预算与闭包定理，不是WC全类存在界。
+
 [统一低泄漏锚定时钟预算的普适次数障碍](research/current/weighted_congestion/uniform_clock_budget_barrier.md)为新增限定方法命题；精确ID与全部量词在主题账本，不改变WC-TARGET身份。
 
 [有限次局部成本与择证矩接口](research/current/weighted_congestion/template_certificates/selector_local_moments.md)登记保全部成本的D维压缩、小支撑dual及完全暂态parity机制；[循环窗口前沿商](research/current/weighted_congestion/class_front_phase_quotient.md)另登记精确表示与不同步出口反例。具体量词及假设修复只由主题账本和审查给出，均不升级WC-TARGET。
@@ -20,3 +22,5 @@ Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须�
 共占高度扩展另有 `WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1` 与 `WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1`，见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)及原三角势正文第11–13节。两个新ID分别为潜在图结构存在界和实际严格闭词必要链；未改旧权类ID。
 
 [异权仿射全签名成本射线刚性](research/current/weighted_congestion/template_certificates/selector_local_moments.md)新增独立Claim：非全等权时全成本保真不能缩小全部资源的潜在用户支持，任意提高有限次数仍不行。原例有精确PNE；不升级全类存在/非存在状态。
+
+实际时钟余量依赖与完整proper锥必要暂态质量另有独立精确身份，见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)；不改变WC-TARGET。
