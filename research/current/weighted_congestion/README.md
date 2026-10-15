@@ -26,7 +26,7 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 
 [线性重置总稿](odd_ring_linear.md)给出显式 E_d=d/[(d+1)d^(1/(d+1))−d]，并在该因子本身排除均衡。线性重置与同次数实现属于同一奇环机制；R=1/t 使两份标量包络逐项相同。它们各自保留作者来源和实际审查，不能作为两个独立突破重复计算。
 
-全状态覆盖 → 正系数闭环 → 有限实现 → 下界，是存在的证明链。**正局部测试的精确包络只限制这套证书**；一般多成员群组的实际游戏阈值仍未解决。每组只有一名群组玩家时的 min{2,T_d} 存在界另有严格输入限制。
+全状态覆盖 → 正系数闭环 → 有限实现 → 下界，是存在的证明链。**正局部测试的精确包络本身只限制这套证书**。新增[第10节单缺陷双取向证明](odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)另独立闭合全部同权cohort/同费副本奇环的实际阈值：无UF假设时仍有T_d-PNE，故该拓扑最坏阈值恰T_d。任意实权、群大小、零/常数/混合费用及弱端点均覆盖；异权cohort、动作不等费或一般关联未覆盖。
 
 ## 按成果名称查找
 
@@ -51,7 +51,7 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 | 阶跃DAG极值幅度的多项式全入状态 | [实际成本证明](step_dag/polynomial_extremal_all_in.md)、[独立冻结攻击](../../reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md) | 精确幅度(N)下全入状态有max{1+1/q,B_d(q)}保证，d≥16统一4√(d/ln d)；不要求低漏，但任意幅度尚未覆盖 |
 | DAG端点低泄漏次数预算 | [检测充要条件](polynomial_curvature/dag_low_leakage_budget.md)、[冻结审查](../../reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md) | z(z−1)ΣP_k z^(k−1)≤1恰可行；固定ε的辅助源门槛锐为√d量级。未控制高平台或真实全状态偏离 |
 | 有限动作模板与全状态择证对偶 | [自足证明](template_certificates/finite_action_duality.md)、[独立重构](../../reviews/weighted_congestion/template_certificates/finite_action_duality_review.md) | 关联签名保持全部真实成本；任意资源数化为有限列，逐全状态selector有精确primal/dual替代。尚无全模板统一倍率 |
-| 奇数环下界与精确证书包络 | [总证明](odd_ring/cohort_lower_bound_and_envelope.md)、[线性重置总稿](odd_ring_linear.md)、[可变次数接口](odd_ring_linear/README.md) | 增长下界主线；精确包络是证书界。一般群组实际阈值开放 |
+| 奇数环下界与精确证书包络 | [总证明](odd_ring/cohort_lower_bound_and_envelope.md)、[线性重置总稿](odd_ring_linear.md)、[可变次数接口](odd_ring_linear/README.md) | 增长下界及正测试包络；第10节以全新实际选态证明闭合一般cohort拓扑阈值恰T_d，无UF假设。独立[重构攻击](../../reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md)和两路代码/冻结记录见正文10.9；全类仍OPEN |
 | 文献两攻击公式的锐渐近 | [成果入口](source_envelope/README.md)、[锐渐近证明](source_envelope/sharp_asymptotic_envelope.md)、[统一机制上限](source_ceiling/README.md) | 优化指定源公式，不能作为全类存在上界；另一份推导仍按候选保存 |
 | 完整对称两列拓扑还原 | [第三版完整证明](source_topology/symmetric_two_column_reduction.md) | 在所写倍率范围内将实际非存在还原至源公式；不含异权或非对称资源 |
 | 三十二次源参数符号上界 | [参数消元与整数符号证明](source_degree32/symmetric_source_interval_certificate.md) | 覆盖指定源公式的全部合法实参数，为有限拓扑分离提供前提 |
@@ -79,7 +79,7 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 - **全类 O(d/ln d) 存在性。** 可用[全状态择证对偶](template_certificates/finite_action_duality.md)寻找依完整selector的概率证书；必须对所有权重、动作数和selector给统一估计。[真实近d循环](cyclic_clone_improvement_cycles.md)已排除只在回返状态找dual/让全部改善终止的一般路线；仍可依完整selector在暂态分配质量或选择部分改善。结构势路线先读权密度、资源拼接和窄权带三包，核对稠密尺度及共享乘子的未解接口；[边际势和序势候选](../../questions/weighted_congestion/README.md)只按实际审查等级使用。
 - **跨权组与阶跃模拟。** [双排序混合势](weight_bands/two_weight_order_blend.md)已越过两权尾部参数无界，给统一平方根次数界；[三角排序](weight_bands/finite_weight_class_potentials.md)已覆盖任意有限k，并精确吸收固定玩家背景；剩余缺口是无界可动类别或无法用少量窄簇覆盖的权谱。 [冻结界](weight_bands/ordered_tail_freezing.md)的逐资源β缩放不可省略；不能再希望仅优化潜在尾部参数得到统一倍率。[DAG泄漏预算](polynomial_curvature/dag_low_leakage_budget.md)只限制指定低高端点系统，[极值幅度全入界](step_dag/polynomial_extremal_all_in.md)已直接容纳任意过冲和泄漏，但只在幅度(N)下；实际占用与任意幅度仍须另证。
 - **超越现有奇环下界。** 先读奇环精确包络，再看非对称缩权族、曲率和多列逃逸；需要改变全状态覆盖机制，不能把证书失效当实际均衡存在。
-- **一般群组奇环的实际阈值。** 从总证明的单成员子类与[单冲突图独立证明](../../reviews/weighted_congestion/odd_ring_parameters/SINGLETON_NOTE.md)起步，明确多成员使哪一步状态表示失效。
+- **超出已闭合的奇环拓扑。** [第10节](odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)已给一般cohort实际阈值T_d及至多2m个单缺陷计数候选；不再把UF失败或部分aligned本身当该族的增长逃逸。新的负向需异权群、动作不等费或更一般反馈，并重新证明全状态覆盖。正向可尝试迁移稳定区间与双取向机制，但没有全类归约。
 
 已有路线是搜索种子，不限制可尝试的方法。候选、反例和可复用工具可以按真实层级保存；重要状态提升仍须闭合实际证明义务并接受独立攻击。
 

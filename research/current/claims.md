@@ -559,6 +559,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1 | 任意非负degree≤d多项式、d≥0、异权hub/light、唯一source且每side仅一light的二元同费副本模型，无UF。固定任意hub向量后，light子游戏由逐source二次阈值势（F常数时线性势）保留全部成本边的严格/平局符号，PNE恰势局部min且全部strict light改善终止。从全aligned按非降阈值删除，给每名light至多一次strict移动的exact响应。存在/FIP为Milchtaich1996已知两策略结果的直接应用；显式势和删除过程作自足重构接口，不主张新颖。 | complete reconstruction of a known existence/FIP corollary; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/fixed_hub_light_threshold_response.md)。仅固定hub/unique-light；多light共享side可用旧三玩家例反驳exact响应。重选light后hub成本稳定不能替代冻结light的真实偏离，尚无跨hub响应兼容预算，不给全类C,d0或位多项式算法。 |
 
+## 一般群组奇环的精确实际阈值
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2 | 每个d≥2、奇m≥3、n_i≥1、正实hub权u_i与群内共同light权v_i，任意同费动作副本及群内同费side、非负系数degree≤d多项式F_i/G_i（含零）的一般cohort奇环均有T_d-PNE；不要求UF。T_d=max_(R>1)[R(1+R)^d+1]/[(1+R)^d+R^(d+1)]。结合既有每α<T_d严格反例，该拓扑的普遍存在阈值恰T_d；T_d<d/ln d，故仅本拓扑C=1,d0=2。 | complete general-cohort topology threshold proof; independently reconstructed and exactly audited; unrefereed；[正文第10节](weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)、[独立重构与攻击](../reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md)。群内同权、每light私有双人side、同费动作副本及单奇环关联承重；不是MODEL全类上界。不声称某个有限实例取得拓扑sup，不改变旧证书/下界/单成员Claim。未入规范层的v1只给max{2,T_d}，本v2单列增强。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

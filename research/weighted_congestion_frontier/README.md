@@ -27,6 +27,8 @@
 
 正权有限资源博弈 → 真实成本与 α-PNE → 全类阈值 a_*(d)。奇环策略 → 全状态严格偏离 → 权重及系数闭环 → 有限有理构造 → T_d 下界。文献上界 d 仍留对数缺口；精确目标见 MODEL。[高次份额势](../current/weighted_congestion/high_degree_share.md)、源族、稀疏密度、窄权带、非对称有限例和势方法障碍的范围各自独立。
 
+新增[一般cohort奇环实际阈值](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)：稳定区间→单缺陷双标签→同向强迫→正/反包络，证明无UF时仍有T_d-PNE；结合旧下界得该拓扑阈值恰T_d。精确v2身份和独立冻结攻击由账本/正文连接，不更改WC-TARGET OPEN。
+
 已审正文在 `research/current/weighted_congestion/`，待审候选在 `research/questions/weighted_congestion/`，实际审查在 `research/reviews/weighted_congestion/`，核验代码在 `tests/audits/weighted_congestion/`，冻结证据在 `evidence/`。完整用途和状态见 [FILES](FILES.md)，不可变原件和分支处置见 [INTEGRATION](INTEGRATION.json)。[LITERATURE](LITERATURE.md)、[PRIOR_ASSETS](PRIOR_ASSETS.md)按需查来源与前人机制；新颖性尚未认证。
 
 ## 共同工作

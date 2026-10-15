@@ -6,7 +6,7 @@ E1已将局部成本正展开提取为[正占用核独立结构](../current/posi
 
 新增已审结构工具：[高次份额势](../current/weighted_congestion/high_degree_share.md)给实例相关近精确界；纯d次非存在必须有严格小的潜在个体份额，固定正权向量的最低正次数增长给一致趋1。低次混合与全类任意小份额不受此界解决。
 
-真正未解：全类 O(d/ln d) 存在性；新全状态机制超出现有 light-forcing 包络；一般 cohort 奇环的实际均衡上界。现有 barrier 只限制准确写出的机制。
+真正未解：全类 O(d/ln d) 存在性或新全状态增长反例。一般cohort奇环的实际均衡上界已由[双取向消去](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)闭合到T_d，无UF假设，完整拓扑最坏阈值恰T_d。前沿须超出同权cohort/同费副本/奇环关联，或把其稳定区间与全局选态机制迁移到一般模型；尚无归约。现有barrier仍只限制准确写出的机制。
 
 源族锐渐近、对称拓扑还原、密度与权带接口、padding、有限分离及若干独立工具已经入库。任意玩家乘子及依游戏可分序势障碍已在[现行重构](../current/weighted_congestion/separable_ordinal_obstruction.md)闭合独立攻击；只排除对应证书。其余待审势障碍、完整轨道和缺失原稿分别放在问题区和[逐文件状态](FILES.md)。旧分支摘要和旧公屏不再是唯一来源。
 
