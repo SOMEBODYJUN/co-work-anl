@@ -109,7 +109,11 @@ def auth(repo, args):
 
 def actor(repo, requested=None):
     saved = run(repo, "config", "--local", "--get", "wcg.actor", check=False).stdout.decode().strip()
-    chosen = requested or saved or ("W" + uuid.uuid4().hex[:12])
+    # A caller may pin a role without putting it in the command line.  This is
+    # useful for an explicitly assigned research lead while preserving the
+    # historical random fallback for ordinary sessions.
+    requested_from_env = os.environ.get("WCG_ACTOR", "").strip()
+    chosen = requested or requested_from_env or saved or ("W" + uuid.uuid4().hex[:12])
     if not chosen or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}", chosen):
         raise Stop("start --actor 使用提示词里的角色号，例如 001 或 R1。")
     if saved and saved != chosen:
