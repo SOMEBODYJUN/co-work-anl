@@ -17,3 +17,5 @@
 每个 Work 对话使用独立 clone 和一个稳定发布标识；程序可自动生成，无需登记子 agent。各 boss 自主组织团队，同题和多路线都允许，无认领和固定时长。有启发的半成形 idea、卡点、反例和合作问题可随时发到[公屏](https://github.com/SOMEBODYJUN/co-work-anl/blob/wcg/board/research/weighted_congestion_frontier/board/BOARD.md)，注明不确定性；聊天不要求先成稿或审查。普通排错与逐轮日志无需强制汇报。
 
 可复用阶段成果按原 [GROWTH](../GROWTH.md) 入库后立即 checkpoint 到 main，远端确认后再分享入口。main 同时保存候选与已审成果，证据等级不会因推送改变。研究和提交统一 main，不创建研究分支；具体题目、完成标准和命令可直接复制 [TEAM](prompts/TEAM.md)，详细施工和读取规则见[全仓规则](../REPOSITORY_GUIDE.md)。
+
+每次阶段提交把正文、精确登记、中文命名及相关地图一起维护：在 `research/catalog.json` 写具体名称和读取用途，生成 CATALOG、FILES 及受影响的关系图，再运行对应检查。根地图每次审阅，目标、结果、依赖、状态、前沿或导航变化时更新；本题新资产必须从数学地图和资产目录可达。`checkpoint` 负责 Git 保存与远端确认，不代替内容核对或结构检查；默认范围外的入口更新须显式列入完整提交清单。启动提示词同时提供未上传可选 `work.py` 时的恢复办法。

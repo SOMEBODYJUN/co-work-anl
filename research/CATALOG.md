@@ -30,7 +30,7 @@
 | --- | --- | --- | --- |
 | [加权原子拥塞：奇环下界、工具与一般门槛缺口地图](<current/weighted_congestion/README.md>) | `research/current/weighted_congestion/README.md` | 先读精确模型与奇环共同机制，再按目标选择结构势、非对称机制或候选障碍；不能把局部证书包络当全类上界。 | 阅读导航；真值查精确正文及账本；关联 `WC-ENVELOPE-CEILING`、`WC-R1-DAG-STEP`、`WC-R1-HET-ENDPOINT-REDUCTION`，[命题合同（共 10 项）](assets.json) |
 | [拥塞待审候选与未闭合义务地图](<questions/weighted_congestion/README.md>) | `research/questions/weighted_congestion/README.md` | 查固定乘子势、序势、端点与两列轨道稿的真实证据等级和缺失审查，选可接续的准确义务。 | 阅读导航；真值查精确正文及账本 |
-| [加权拥塞共同研究与协作入口](<weighted_congestion_frontier/README.md>) | `research/weighted_congestion_frontier/README.md` | 数学阅读进入 current 的证明地图，需要运行协作或保存程序时再进入启动和协议。 | 阅读导航；真值查精确正文及账本 |
+| [加权拥塞共同研究与协作入口](<weighted_congestion_frontier/README.md>) | `research/weighted_congestion_frontier/README.md` | 数学阅读进入 current 的证明地图；阶段保存时核对命名、账本和地图共同提交，运行程序时再进入启动和协议。 | 阅读导航；真值查精确正文及账本 |
 | [拥塞逐成果包资产链：中文名称、正文、审查与证据](<weighted_congestion_frontier/FILES.md>) | `research/weighted_congestion_frontier/FILES.md` | 按数学成果包找到具体文件作用，追踪主稿到独立攻击、实际核验与冻结结果，不先读路径字典序清单。 | 阅读导航；真值查精确正文及账本 |
 | [加权原子拥塞精确模型与普遍门槛目标](<weighted_congestion_frontier/MODEL.md>) | `research/weighted_congestion_frontier/MODEL.md` | 核对正权、有限策略、非负多项式费用及弱不等式近似 PNE 的全类量词，防止偷偷缩小目标模型。 | 定义与模型；不隐含跨模型定理 |
 | [拥塞精确命题账本：目标、局部成果与候选版本](<weighted_congestion_frontier/CLAIMS.md>) | `research/weighted_congestion_frontier/CLAIMS.md` | 引用团队结果前核对稳定 ID、版本、定义域、假设、结论、证据和 objection；范围变化要另建版本。 | 精确命题登记；摘要不替代原陈述 |
@@ -314,7 +314,7 @@
 | [共同研究操作手册：恢复、读屏、同步与保存](<weighted_congestion_frontier/RUNBOOK.md>) | `research/weighted_congestion_frontier/RUNBOOK.md` | 实际操作协作程序时查入口和认证配置；不把程序回归或网络状态当作数学结果。 | 阅读导航；真值查精确正文及账本 |
 | [异步公屏的定位、读取入口与资产边界](<weighted_congestion_frontier/board/README.md>) | `research/weighted_congestion_frontier/board/README.md` | 需要查看实时研讨时进入独立公屏分支；重要可复用成果必须另存 main 并连接真实正文。 | 阅读导航；真值查精确正文及账本 |
 | [拥塞可复用工具的提取与使用合同](<weighted_congestion_frontier/toolbox/README.md>) | `research/weighted_congestion_frontier/toolbox/README.md` | 从失败和中间推导提取工具时查原作者、精确假设、证明与复用场景，不能把改名本身当新工具。 | 阅读导航；真值查精确正文及账本 |
-| [匹配上界唯一题目的共同研究启动词](<weighted_congestion_frontier/prompts/TEAM.md>) | `research/weighted_congestion_frontier/prompts/TEAM.md` | 新对话启动团队判定全类匹配上界命题，固定模型、唯一完成门槛、阶段材料位置与保存方法；局部结果保存后继续主问题。 | 阅读导航；真值查精确正文及账本 |
+| [匹配上界唯一题目的共同研究启动词](<weighted_congestion_frontier/prompts/TEAM.md>) | `research/weighted_congestion_frontier/prompts/TEAM.md` | 新对话判定全类匹配上界命题，固定模型与完成门槛；规定中文命名、分层地图、生成检查及完整提交，缺少可选程序附件也能恢复。 | 阅读导航；真值查精确正文及账本 |
 | [同级研究者交流提示词：自主研究与异步研讨](<weighted_congestion_frontier/prompts/PEER.md>) | `research/weighted_congestion_frontier/prompts/PEER.md` | 需要组织跨对话数学交流时使用，允许同题独立探索和多路线合作，不以任务认领限制研究。 | 阅读导航；真值查精确正文及账本 |
 | [数学工具提取者提示词：从中间结果回收结构](<weighted_congestion_frontier/prompts/EXTRACTOR.md>) | `research/weighted_congestion_frontier/prompts/EXTRACTOR.md` | 独立重建可复用引理、表示、障碍或桥梁，保留出处和承重条件，提供实际复用场景并诚实验收。 | 阅读导航；真值查精确正文及账本 |
 | [论文整理者提示词：真实贡献、完整论证与成稿核验](<weighted_congestion_frontier/prompts/PAPER_WRITER.md>) | `research/weighted_congestion_frontier/prompts/PAPER_WRITER.md` | 出现足够成果后组织论文叙事、证明与图表，执行写作和逐页检查；包装不能改变精确范围或证据等级。 | 阅读导航；真值查精确正文及账本 |
