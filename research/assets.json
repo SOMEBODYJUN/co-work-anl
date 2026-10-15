@@ -2905,7 +2905,8 @@
       "id": "separable_ordinal_obstruction",
       "claims": [
         "WC-R1-MULTIPLIER-BARRIER",
-        "WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER"
+        "WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER",
+        "WC-GAME-SPECIFIC-MINIMIZER-EQUIVALENCE-v1"
       ],
       "status": "complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed",
       "applies_when": [
@@ -2913,7 +2914,7 @@
         "finite positive weights; common monomial x^d; arbitrary fixed positive player multipliers for the marginal claim",
         "game-specific arbitrary resource-set functions; full subset strategies; strict decrease on every alpha-improvement for the ordinal claim"
       ],
-      "produces": "Linear asymptotic distortion obstruction for both marginal and game-specific separable ordinal certificates; the witness game has an exact PNE.",
+      "produces": "Linear asymptotic distortion obstruction for both marginal and game-specific separable ordinal certificates; the witness game has an exact PNE. Separately, the game-specific every-global-minimizer selection equivalence is proved in section four.",
       "implementation": [],
       "proof": [
         "research/current/weighted_congestion/separable_ordinal_obstruction.md"
@@ -2923,21 +2924,62 @@
         "research/questions/weighted_congestion/ordinal_potentials/game_specific_separable_ordinal_barrier.md"
       ],
       "reviews": [
-        "research/reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md"
+        "research/reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/minimizer_scope_review.md"
       ],
       "tests": [
         "tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py",
-        "tests/audits/weighted_congestion/marginal_potentials/verify_multipliers.py"
+        "tests/audits/weighted_congestion/marginal_potentials/verify_multipliers.py",
+        "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py"
       ],
       "records": [
         "evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json",
-        "evidence/runs/weighted_congestion/marginal_potentials/multiplier_evidence.json"
+        "evidence/runs/weighted_congestion/marginal_potentials/multiplier_evidence.json",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json"
       ],
-      "examples": [],
+      "examples": [
+        "examples/weighted_congestion/template_certificates/exact_fixtures.json"
+      ],
       "sources": [
         "history/source/notes/weighted_congestion/branch_sources.md"
       ],
       "limit": "Only the exact certificate classes are excluded. Nonseparable potentials, selected moves and game-specific minimizer selectors remain possible. No target resolution or priority certification."
+    },
+    {
+      "id": "finite_action_certificate_duality",
+      "claims": [
+        "WC-ACTION-SIGNATURE-COMPRESSION-v1",
+        "WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1"
+      ],
+      "status": "complete general proof; independently reconstructed and exactly audited; unrefereed",
+      "applies_when": [
+        "Every fixed finite n>=1, positive real weights, positive integer action counts and d>=0; all nonnegative degree<=d resource costs and arbitrary resource count.",
+        "Selector alternative uses fixed real alpha>=1; rational certificates require rational weights and alpha."
+      ],
+      "produces": "Cost-preserving finite action-signature normal representation and an exact all-state primal/dual criterion for universal existence on each fixed template.",
+      "implementation": [],
+      "proof": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md"
+      ],
+      "candidates": [],
+      "reviews": [
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md"
+      ],
+      "tests": [
+        "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py"
+      ],
+      "records": [
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json"
+      ],
+      "examples": [
+        "examples/weighted_congestion/template_certificates/exact_fixtures.json"
+      ],
+      "sources": [
+        "history/source/notes/weighted_congestion/branch_sources.md"
+      ],
+      "limit": "New direct derivation from MODEL; historical source pointer records model provenance only. No uniform degree-dependent bound, effective size bound, or main-target resolution follows."
     }
   ]
 }

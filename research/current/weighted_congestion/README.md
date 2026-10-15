@@ -32,6 +32,7 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 
 | 成果包名称 | 正文入口与内容 | 作用与边界 |
 | --- | --- | --- |
+| 有限动作模板与全状态择证对偶 | [自足证明](template_certificates/finite_action_duality.md)、[独立重构](../../reviews/weighted_congestion/template_certificates/finite_action_duality_review.md) | 关联签名保持全部真实成本；任意资源数化为有限列，逐全状态selector有精确primal/dual替代。尚无全模板统一倍率 |
 | 奇数环下界与精确证书包络 | [总证明](odd_ring/cohort_lower_bound_and_envelope.md)、[线性重置总稿](odd_ring_linear.md)、[可变次数接口](odd_ring_linear/README.md) | 增长下界主线；精确包络是证书界。一般群组实际阈值开放 |
 | 文献两攻击公式的锐渐近 | [成果入口](source_envelope/README.md)、[锐渐近证明](source_envelope/sharp_asymptotic_envelope.md)、[统一机制上限](source_ceiling/README.md) | 优化指定源公式，不能作为全类存在上界；另一份推导仍按候选保存 |
 | 完整对称两列拓扑还原 | [第三版完整证明](source_topology/symmetric_two_column_reduction.md) | 在所写倍率范围内将实际非存在还原至源公式；不含异权或非对称资源 |
@@ -52,9 +53,11 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 
 这些包中的 theorem、obstruction、counterexample、review 和 evidence 是不同类型的资产。同包材料可以互相指向，但来源相同、通过有限计算或位于 current 都不自动提升数学状态。
 
+依游戏可分最小点目标的范围另已精确澄清：`WC-GAME-SPECIFIC-MINIMIZER-EQUIVALENCE-v1` 在[序势现行稿第四节](separable_ordinal_obstruction.md)证明其与该游戏的α-PNE存在等价；[范围审查](../../reviews/weighted_congestion/ordinal_potentials/minimizer_scope_review.md)防止将全改善下降障碍外推。该等价把任意目标状态作为输入，不给新存在界。
+
 ## 从当前义务继续
 
-- **全类 O(d/ln d) 存在性。** 先读权密度、资源拼接和窄权带三包，核对稠密尺度及共享乘子的未解接口；[边际势和序势候选](../../questions/weighted_congestion/README.md)只按实际审查等级使用。
+- **全类 O(d/ln d) 存在性。** 可用[全状态择证对偶](template_certificates/finite_action_duality.md)寻找依完整selector的概率证书；必须对所有权重、动作数和selector给统一估计。结构势路线先读权密度、资源拼接和窄权带三包，核对稠密尺度及共享乘子的未解接口；[边际势和序势候选](../../questions/weighted_congestion/README.md)只按实际审查等级使用。
 - **超越现有奇环下界。** 先读奇环精确包络，再看非对称缩权族、曲率和多列逃逸；需要改变全状态覆盖机制，不能把证书失效当实际均衡存在。
 - **一般群组奇环的实际阈值。** 从总证明的单成员子类与[单冲突图独立证明](../../reviews/weighted_congestion/odd_ring_parameters/SINGLETON_NOTE.md)起步，明确多成员使哪一步状态表示失效。
 

@@ -123,6 +123,24 @@ R_d(t)>(d+1)y^d/(d+d²)=d^{(d−1)/(d+1)}。
 调度移动时，其余共享资源的共同成本会贡献 (α−1) 倍损失，
 上述证明没有控制它。全类 O(d/ln d) 命题未获肯定或否定证明。
 
+## 四、依游戏最小点选择的精确量词边界
+
+### WC-GAME-SPECIFIC-MINIMIZER-EQUIVALENCE-v1
+
+**Exact Statement / Conclusion。** 对每个 MODEL 有限游戏 G 及每个实 α≥1，G 存在 α-PNE，当且仅当存在依整个游戏任意选择的实集函数 F_e:2^N→R，使 Σ_eF_e(S_e(s)) 的每个全局最小点都是 α-PNE。更强地，任意指定合法状态 s* 都可成为非负资源可分目标的唯一全局最小点。
+
+**Objects / Domain / Quantifiers / Definitions / Assumptions。** 完全采用 MODEL；令 S_e(s) 为资源 e 的用户集，△ 为对称差。F_e 可以依已选定的 s*，不要求跨游戏或限制策略后保持同一规则。有限非空状态空间是逆向的实质前提。
+
+**证明。** 给定 s*，取 F_e(U)=|U△S_e(s*)|。双重计数给出
+
+    Σ_eF_e(S_e(s))=Σ_i|s_i△s_i*|≥0。
+
+零值恰好在每名玩家策略子集均等于目标时取得，故唯一最小点为 s*。若 s* 是 α-PNE 就得正向。反向由有限非空状态集上最小值存在立得。空策略、零费用、全零游戏、异质策略族及任意正实权全部覆盖；权重与费用实际未用于双重计数。
+
+**Dependencies / Scope / Objections。** 仅有限性与策略入射表示。若企图用这个构造证明新的倍率存在界，就把所需均衡作为输入而循环论证。要求资源函数单调、由费用局部决定、可有效求出、跨游戏固定或对全部改善严格下降，都是本等价之外的额外条件。本引理只澄清旧障碍的准确否定范围。
+
+**Evidence / Status / Related Files。** 完整直接证明，由子研究者独立提出、主研究者逐式复核；[范围审查](../../reviews/weighted_congestion/ordinal_potentials/minimizer_scope_review.md)说明 informed 旧稿核对与新引理审查的区别。[有限审计](../../../tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py)穷举其输入中每个目标和状态，冻结记录见[运行结果](../../../evidence/runs/weighted_congestion/template_certificates/exact_audit.json)。Truth：所述等价已证；Value：量词边界；Novelty：未评估；Mechanism：入射 Hamming 距离；Ambition：不提供近似上界。未外审。
+
 ## 核验与继续使用
 
 [独立审查](../../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md)

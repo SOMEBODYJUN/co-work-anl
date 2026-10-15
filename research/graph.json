@@ -4394,6 +4394,58 @@
         "evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json"
       ],
       "status": "executed finite exact audit"
+    },
+    {
+      "id": "WC-ACTION-SIGNATURE-COMPRESSION-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "有限动作的资源签名压缩",
+      "detail": "For all fixed finite positive player weights and action counts, arbitrary-resource nonnegative polynomial games of degree<=d admit a cost-and-deviation-preserving representation using all nonempty action signatures; zero resources distinguish labels.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md"
+      ],
+      "status": "complete general proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "全状态择证的精确线性替代",
+      "detail": "For every fixed action template and every all-state legal-deviation selector h, exactly one of a>=0,B_h a>0 or lambda>=0,sum lambda=1,B_h^T lambda<=0 exists; universal existence on that fixed template is equivalent to the dual for every h.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md"
+      ],
+      "status": "complete general proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-GAME-SPECIFIC-MINIMIZER-EQUIVALENCE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "依游戏最小点选择与近似纯均衡存在等价",
+      "detail": "For every finite MODEL game and real alpha>=1, an alpha-PNE exists iff a game-specific resource-separable objective has all global minimizers alpha-PNE; incidence Hamming distance uniquely selects any prescribed state and supplies no new approximation bound.",
+      "refs": [
+        "research/current/weighted_congestion/separable_ordinal_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/minimizer_scope_review.md"
+      ],
+      "status": "complete elementary proof; independently checked and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-TEMPLATE-EXACT-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "动作签名与严格矩阵替代的有限有理核验",
+      "detail": "Literal resource costs and every finite deviation agree with compressed margins; independent small-matrix alternatives and incidence-distance checks are exact finite implementation evidence only.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json",
+        "examples/weighted_congestion/template_certificates/exact_fixtures.json"
+      ],
+      "status": "finite exact audit; no universal approximation bound"
     }
   ],
   "hyperedges": [
@@ -10652,6 +10704,99 @@
         "evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json"
       ],
       "status": "finite exact checks passed"
+    },
+    {
+      "id": "DERIVE-WC-ACTION-SIGNATURE-COMPRESSION-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL"
+      ],
+      "conclusion": "WC-ACTION-SIGNATURE-COMPRESSION-v1",
+      "statement": "For all fixed finite positive player weights and action counts, arbitrary-resource nonnegative polynomial games of degree<=d admit a cost-and-deviation-preserving representation using all nonempty action signatures; zero resources distinguish labels.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md"
+      ],
+      "status": "complete general proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-ACTION-SIGNATURE-COMPRESSION-v1"
+      ],
+      "conclusion": "WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1",
+      "statement": "For every fixed action template and every all-state legal-deviation selector h, exactly one of a>=0,B_h a>0 or lambda>=0,sum lambda=1,B_h^T lambda<=0 exists; universal existence on that fixed template is equivalent to the dual for every h.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md"
+      ],
+      "status": "complete general proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-GAME-SPECIFIC-MINIMIZER-EQUIVALENCE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL"
+      ],
+      "conclusion": "WC-GAME-SPECIFIC-MINIMIZER-EQUIVALENCE-v1",
+      "statement": "For every finite MODEL game and real alpha>=1, an alpha-PNE exists iff a game-specific resource-separable objective has all global minimizers alpha-PNE; incidence Hamming distance uniquely selects any prescribed state and supplies no new approximation bound.",
+      "refs": [
+        "research/current/weighted_congestion/separable_ordinal_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/minimizer_scope_review.md"
+      ],
+      "status": "complete elementary proof; independently checked and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-TEMPLATE-0",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-TEMPLATE-EXACT-AUDIT"
+      ],
+      "conclusion": "WC-ACTION-SIGNATURE-COMPRESSION-v1",
+      "statement": "Finite exact checks exercise the implementation and boundary cases; the general claim rests on its written proof, not these counts.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-TEMPLATE-1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-TEMPLATE-EXACT-AUDIT"
+      ],
+      "conclusion": "WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1",
+      "statement": "Finite exact checks exercise the implementation and boundary cases; the general claim rests on its written proof, not these counts.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-TEMPLATE-2",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-TEMPLATE-EXACT-AUDIT"
+      ],
+      "conclusion": "WC-GAME-SPECIFIC-MINIMIZER-EQUIVALENCE-v1",
+      "statement": "Finite exact checks exercise the implementation and boundary cases; the general claim rests on its written proof, not these counts.",
+      "refs": [
+        "research/current/weighted_congestion/separable_ordinal_obstruction.md",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json"
+      ],
+      "status": "finite exact audit"
     }
   ]
 }

@@ -2537,14 +2537,17 @@
     {
       "path": "research/current/weighted_congestion/separable_ordinal_obstruction.md",
       "title": "资源可分序势的线性障碍：任意乘子与同一有限游戏",
-      "purpose": "在尝试全类上界时，读取有限多尺度乘子矛盾和同一游戏资源束桥的完整现行证明；区分全改善边势证书与真正均衡存在。",
+      "purpose": "在尝试全类上界时，读取有限多尺度乘子矛盾和同一游戏资源束桥的完整现行证明；区分全改善边势证书与真正均衡存在。 第四节用入射距离证明依游戏可分最小点选择与均衡存在等价，排除对原障碍量词的误用。",
       "topic": "weighted_congestion",
       "role": "obstruction",
       "package": "ordinal_potentials",
       "related_paths": [
         "research/reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md",
         "tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py",
-        "evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json"
+        "evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json",
+        "research/reviews/weighted_congestion/ordinal_potentials/minimizer_scope_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json"
       ]
     },
     {
@@ -2584,6 +2587,135 @@
         "research/current/weighted_congestion/separable_ordinal_obstruction.md",
         "research/reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md",
         "tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py"
+      ]
+    },
+    {
+      "path": "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+      "title": "有限动作模板：单项式压缩与全状态择证对偶",
+      "purpose": "固定权重和动作数后消去任意资源数，并把全状态严格改善覆盖化成非负系数与概率对偶的精确替代；用于有限反例搜索或上界证书构造，不给统一倍率。",
+      "topic": "weighted_congestion",
+      "role": "representation",
+      "package": "finite_action_certificates",
+      "related_paths": [
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json",
+        "examples/weighted_congestion/template_certificates/exact_fixtures.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md",
+      "title": "有限动作模板与全状态择证对偶：独立重构和攻击审查",
+      "purpose": "引用两个有限表示命题前核对冻结hash、闭负象限分离、有理证书、全零和单动作边界及实际代码复验范围。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "finite_action_certificates",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json",
+        "examples/weighted_congestion/template_certificates/exact_fixtures.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py",
+      "title": "动作签名、全状态margin与择证对偶的有理审计",
+      "purpose": "直接从资源策略重算成本，对照签名系数及全部真实偏离；验证显式primal/dual和小矩阵替代，默认stdout且拒绝覆盖证据。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "finite_action_certificates",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md",
+        "tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json",
+        "examples/weighted_congestion/template_certificates/exact_fixtures.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py",
+      "title": "两列矩阵严格替代的独立有理穷举",
+      "purpose": "不用作者顶点最大间隙过程，以一维严格区间和独立高斯消元交叉攻击分离证明的符号、边界与零margin。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "finite_action_certificates",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json",
+        "examples/weighted_congestion/template_certificates/exact_fixtures.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+      "title": "有限动作模板与最小点选择的冻结精确核验",
+      "purpose": "保存源码与输入hash、全部选定margin、显式对偶以及实际有限核验范围；作为实现证据读取，不升级全类目标。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "finite_action_certificates",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py",
+        "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json",
+        "examples/weighted_congestion/template_certificates/exact_fixtures.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json",
+      "title": "两列矩阵替代的独立穷举冻结证书摘要",
+      "purpose": "记录完整矩阵范围、两类证书数量、等号边界与有序证书流hash；重跑独立脚本可逐项复验。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "finite_action_certificates",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+        "examples/weighted_congestion/template_certificates/exact_fixtures.json"
+      ]
+    },
+    {
+      "path": "examples/weighted_congestion/template_certificates/exact_fixtures.json",
+      "title": "动作签名与全状态择证的精确边界输入",
+      "purpose": "三玩家全状态正证书及空策略、零/常数费用、未使用资源、单动作和反向切换对偶的实际有理输入。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "finite_action_certificates",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/ordinal_potentials/minimizer_scope_review.md",
+      "title": "依游戏资源可分最小点选择：量词边界审查",
+      "purpose": "重算入射距离唯一选择任意状态的引理，并区分对三项旧势障碍的informed核对及新增最小点等价的真实范围。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "ordinal_potentials",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+        "research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py",
+        "evidence/runs/weighted_congestion/template_certificates/exact_audit.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json",
+        "examples/weighted_congestion/template_certificates/exact_fixtures.json"
       ]
     }
   ]

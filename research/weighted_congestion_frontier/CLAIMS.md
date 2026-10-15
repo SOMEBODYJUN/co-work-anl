@@ -468,3 +468,27 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：全空精确均衡始终存在；非可分势、只选部分改善、依游戏选极小点目标不在排除范围；ρ_d端点不排除。未见所述范围内fatal objection。
 - Status：complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed。Truth=所述范围内部证明；Value=方法边界与量词修补；Novelty=未认证；Mechanism=有限多尺度与资源束；Ambition=不改变WC-TARGET OPEN。
 - Related Files：[独立审查](../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md)、[核验代码](../../tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py)、[冻结结果](../../evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json)。
+
+## WC-ACTION-SIGNATURE-COMPRESSION-v1 — INTERNALLY RECONSTRUCTED
+
+- 中文数学名称：有限动作的资源签名压缩。
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：对每个固定有限正实权向量、正动作数m_i、次数d≥0，所有资源数的MODEL游戏在全部状态及真实偏离成本上等价于2^(Σm_i)−1个非空动作签名资源，单项式系数非负。保留零费用资源区分动作，不要求逐字保留空策略。
+- Dependencies：MODEL与系数线性合并。Evidence：完整恒等式证明、独立先重构后攻击、Fraction复验。Counterevidence / Objections：不控制动作总数和无限模板族的统一倍率。
+- Status：完整一般证明及内部独立审查，未外审；Truth为表示定理，Value为消去任意资源数，Novelty未评估，Mechanism为关联签名，Ambition为工具。
+- Related Files：research/current/weighted_congestion/template_certificates/finite_action_duality.md；research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md；tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py；evidence/runs/weighted_congestion/template_certificates/exact_audit.json。
+
+## WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1 — INTERNALLY RECONSTRUCTED
+
+- 中文数学名称：全状态择证的精确线性替代。
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：对上述每个固定模板、每个实α≥1、每个逐状态合法偏离selector h，恰有a≥0,B_h a>0或λ≥0,Σλ=1,B_hᵀλ≤0之一成立。固定权重及动作数的所有游戏都有α-PNE，当且仅当每个h均有后一证书。权与α有理时可取有理证书；λ可依完整h。
+- Dependencies：WC-ACTION-SIGNATURE-COMPRESSION-v1、有限行凸包/闭负象限替代、自足有理仿射面论证。Evidence：一般证明、独立攻击和两份不同有理核验。Counterevidence / Objections：单个h的dual或单个环不等于全类保证；没有统一C,d0。
+- Status：完整一般证明及内部独立审查，未外审；Truth为精确替代，Value为全状态搜索与存在证书接口，Novelty未评估，Mechanism为线性锥替代，Ambition保持工具。
+- Related Files：research/current/weighted_congestion/template_certificates/finite_action_duality.md；research/reviews/weighted_congestion/template_certificates/finite_action_duality_review.md；tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py；evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json。
+
+## WC-GAME-SPECIFIC-MINIMIZER-EQUIVALENCE-v1 — SCOPE LEMMA
+
+- 中文数学名称：依游戏最小点选择与近似纯均衡存在等价。
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：对每个有限MODEL游戏G、每个实α≥1，G有α-PNE当且仅当存在可依整个游戏任意选择的资源集函数F_e，使Σ_eF_e(S_e(s))的每个全局最小点都是α-PNE。对任意指定合法s*，F_e(U)=|U△S_e(s*)|唯一选s*。
+- Dependencies：有限性和入射双重计数。Evidence：直接一般证明，子研究者独立提出、主研究者复核，有限目标状态对核验。Counterevidence / Objections：以s*为输入不提供找均衡方法，不能循环推出新倍率；不要求对全部改善下降。旧序势障碍身份不变。
+- Status：完整直接证明及内部核对，未外审；Truth为等价，Value为量词边界，Novelty未评估，Mechanism为入射距离，Ambition不是存在界。
+- Related Files：research/current/weighted_congestion/separable_ordinal_obstruction.md第四节；research/reviews/weighted_congestion/ordinal_potentials/minimizer_scope_review.md；tests/audits/weighted_congestion/template_certificates/verify_template_certificates.py；evidence/runs/weighted_congestion/template_certificates/exact_audit.json。

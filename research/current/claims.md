@@ -319,6 +319,10 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER | 依完整游戏选择的资源可分严格序势障碍 v1 | complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed | [完整现行证明](weighted_congestion/separable_ordinal_obstruction.md)、[独立攻击](../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md)；全类目标仍开放 |
 
+| WC-ACTION-SIGNATURE-COMPRESSION-v1 | 有限动作的资源签名压缩 | complete general proof; independently reconstructed and exactly audited; unrefereed | [精确模板与证明](weighted_congestion/template_certificates/finite_action_duality.md)、[独立攻击](../reviews/weighted_congestion/template_certificates/finite_action_duality_review.md)；固定权重/动作数，任意资源数，无全类倍率。 |
+| WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1 | 全状态择证的精确线性替代 | complete general proof; independently reconstructed and exactly audited; unrefereed | 同上；全状态selector逐一取dual，非单环或单selector的全类推断。 |
+| WC-GAME-SPECIFIC-MINIMIZER-EQUIVALENCE-v1 | 依游戏最小点选择与近似纯均衡存在等价 | complete elementary proof; independently checked and exactly audited; unrefereed | [一般等价证明](weighted_congestion/separable_ordinal_obstruction.md)第四节及[范围审查](../reviews/weighted_congestion/ordinal_potentials/minimizer_scope_review.md)；不提供新的α(d)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

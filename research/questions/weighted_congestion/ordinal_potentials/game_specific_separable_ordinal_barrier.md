@@ -145,7 +145,9 @@ Therefore no game-specific separable strict alpha-ordinal potential exists for G
 
 All-empty is an exact PNE because every player's cost is zero and costs are nonnegative. The witness therefore separates equilibrium existence from convergence certificates.
 
-The separable objective
+The stronger general equivalence is now proved as `WC-GAME-SPECIFIC-MINIMIZER-EQUIVALENCE-v1` in [the current account](../../../current/weighted_congestion/separable_ordinal_obstruction.md): for every fixed MODEL game, game-specific resource-separable every-global-minimizer selection is equivalent to alpha-PNE existence. An incidence Hamming-distance objective uniquely selects any prescribed legal state; this is a scope clarification and gives no new approximation bound. The ordinal barrier above retains exactly its original identity.
+
+The earlier all-empty example is the following special case. The separable objective
 
     K(s)=sum_{e in E}|S_e(s)|
 

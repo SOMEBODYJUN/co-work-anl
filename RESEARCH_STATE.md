@@ -12,6 +12,8 @@ R1 的线性重置实现与 R3 的同次数实现归属于共同机制，保留�
 
 全类上界仍是已核对文献 d。关键未解义务是全类 O(d/ln d) 存在性，或绕开当前全部 light-forcing 测试的更强全状态非存在机制。一般 cohort 奇环的实际均衡阈值也不能从证书失效推出。
 
+固定权重与动作数的[全状态线性证书接口](research/current/weighted_congestion/template_certificates/finite_action_duality.md)已独立重构：关联签名消去任意资源数，逐selector给非负系数/primal与概率dual替代。尚无统一C,d0；[最小点选择等价](research/current/weighted_congestion/separable_ordinal_obstruction.md)也只澄清旧势障碍的量词。
+
 ## 工具、边界与待审项
 
 - 已保存：文献源包络锐渐近与完整对称两列拓扑限制、稀疏权密度势及拼接、局部窄权带势、密度 padding、有限非对称拓扑分离、三负载曲率、异权端点还原、多列逃逸与辅助 step-DAG。

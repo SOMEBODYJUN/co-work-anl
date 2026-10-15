@@ -21,3 +21,5 @@
 每次阶段提交把正文、精确登记、中文命名及相关地图一起维护：在 `research/catalog.json` 写具体名称和读取用途，生成 CATALOG、FILES 及受影响的关系图，再运行对应检查。根地图每次审阅，目标、结果、依赖、状态、前沿或导航变化时更新；本题新资产必须从数学地图和资产目录可达。`checkpoint` 负责 Git 保存与远端确认，不代替内容核对或结构检查；默认范围外的入口更新须显式列入完整提交清单。启动提示词同时提供未上传可选 `work.py` 时的恢复办法。
 
 已闭合的方法审查入口：[任意玩家乘子与依游戏可分序势线性障碍](../current/weighted_congestion/separable_ordinal_obstruction.md)。只否定所写全改善边证书，全类匹配上界仍开放。
+
+不预设势的精确接口：[有限动作签名压缩与全状态择证对偶](../current/weighted_congestion/template_certificates/finite_action_duality.md)。固定权重/动作数的所有资源游戏等价于有限单项式系数族；普遍α存在等价于每个全状态selector自有对偶证书。统一于所有模板的倍率仍未证明。

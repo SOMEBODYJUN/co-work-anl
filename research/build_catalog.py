@@ -48,6 +48,7 @@ ROLES = {
 }
 PACKAGE_TITLES = {
     "研究入口": "研究入口、精确状态与文件合同",
+    "finite_action_certificates": "有限动作模板、全状态择证与精确对偶",
     "odd_ring": "奇环全状态下界、有限实现与精确证书包络",
     "source_envelope": "文献源族的锐包络与渐近",
     "source_topology": "对称两列拓扑的完整还原",
