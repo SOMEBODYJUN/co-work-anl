@@ -1022,7 +1022,6 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
 - **Related Files：** research/current/weighted_congestion/incidence_forest_private_reduction.md、research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md；代码/证据从正文和assets.json接入。
 
-
 ## WC-CLASS-FRONT-ALLSTATE-COMPILER-v1 — 同权类前沿全覆盖的次数可控全状态编译
 
 - **ID/version / 中文数学名称：** WC-CLASS-FRONT-ALLSTATE-COMPILER-v1，同权类前沿全覆盖的次数可控全状态编译；独立条件接口，不改旧严格环/前沿/编译器反例身份。
@@ -1032,3 +1031,23 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Counterevidence / Objections：** 条件要求全部product-front出口，单sweep环不够；没有增长输入族或B/η统一控制，D无独立跨类权比损失不表示参数与权谱无关。固定九玩家degree8证书仅前提非空与实现回归，不称新倍率/最优性或WC-TARGET完成。 未外审/新颖性未认证；无尚成立范围内fatal，审查覆盖及冻结hash单独记录。
 - **Status：** complete conditional proof; independently reconstructed and exactly audited; unrefereed。Truth为条件编译，Value为将全覆盖义务转移到较小front域，Mechanism为同权触发/修复与精确抵消，Ambition全类OPEN。
 - **Related Files：** 正文、审查、两代码、输入及两冻结记录均由assets/catalog登记；原有冻结证据不改。
+
+## WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1 — 固定主玩家后的异权轻玩家阈值序势与有序删除响应
+
+- **ID/version / 中文数学名称：** WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1，固定主玩家后的异权轻玩家阈值序势与有序删除响应。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 任意非负degree≤d多项式、d≥0、异权hub/light、唯一source且每side仅一light的二元同费副本模型，无UF。固定任意hub向量后，light子游戏由逐source二次阈值势（F常数时线性势）保留全部成本边的严格/平局符号，PNE恰势局部min且全部strict light改善终止。从全aligned按非降阈值删除，给每名light至多一次strict移动的exact响应。存在/FIP为Milchtaich1996已知两策略结果的直接应用；显式势和删除过程作自足重构接口，不主张新颖。 精确成本、阈值和平局合同以正文为准。
+- **Dependencies：** MODEL、unique-light固定外场定义、严格递增与有限阈值、二次式、有序删除不返性质；自足证明不调用外部存在定理，但存在/FIP文献身份是Paper Fact直接特例。
+- **Evidence：** [正文](../current/weighted_congestion/fixed_hub_light_threshold_response.md)、[先重构后冻结攻击](../reviews/weighted_congestion/fixed_hub_light_threshold_review.md)、LITERATURE一手p114/121/123及两路实际资源Fraction复验；完整输入/参数/seed/源码hash在JSON。
+- **Counterevidence / Objections：** 仅固定hub/unique-light；多light共享side可用旧三玩家例反驳exact响应。重选light后hub成本稳定不能替代冻结light的真实偏离，尚无跨hub响应兼容预算，不给全类C,d0或位多项式算法。 范围内无尚成立fatal；存在/FIP不宣称新颖。
+- **Status：** complete reconstruction of a known existence/FIP corollary; independently reconstructed and exactly audited; unrefereed。Truth只限冻结子游戏；Value为可调用无UF响应接口；Mechanism为阈值势和排序删除；Novelty未认证，Ambition全类仍OPEN。
+- **Related Files：** 正文、独立审查与所列两代码/冻结证据经assets/catalog接通。
+
+## WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2 — 一般群组奇环实际阈值与正测试包络一致
+
+- **ID/version / 中文数学名称：** WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2，一般群组奇环实际阈值与正测试包络一致。未入规范层v1草案给max{2,T_d}；v2使用统一奇数中心双标签及反向标量界收紧至T_d，旧Claim身份不变。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 每个d≥2、奇m≥3、n_i≥1、正实hub权u_i与群内共同light权v_i，任意同费动作副本及群内同费side、非负系数degree≤d多项式F_i/G_i（含零）的一般cohort奇环均有T_d-PNE；不要求UF。T_d=max_(R>1)[R(1+R)^d+1]/[(1+R)^d+R^(d+1)]。结合既有每α<T_d严格反例，该拓扑的普遍存在阈值恰T_d；T_d<d/ln d，故仅本拓扑C=1,d0=2。具体资源、两合法动作、真实成本及零成本边界完整固定在[正文第10节](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)。任意有限人数、任意实系数与权谱；端点用弱PNE不等式，非存在反设用strict。拓扑阈值指所有该类有限游戏的可行倍率交，不声称单实例达到sup。
+- **Dependencies：** MODEL、群内计数与单缺陷双取向消去、非负多项式平移、WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1及标量逐项式(S)；精确拓扑阈值等式另共同依赖WC-R3-ODD-RING-LOWER-v1。不导入新的外部定理。
+- **Evidence：** 独立审查者先仅据exact statement自行重构，再攻击v1/v2不同冻结hash；父逐式重算并核canonical差异。两套不互相导入的Fraction literal资源审计、内嵌输入/seed/版本/源码hash及冻结输出均由正文10.9连接。有限检查不替一般证明。
+- **Counterevidence / Objections：** 群内同权、每light私有双人side、同费动作副本及单奇环关联承重；不是MODEL全类上界。不声称某个有限实例取得拓扑sup，不改变旧证书/下界/单成员Claim。未入规范层的v1只给max{2,T_d}，本v2单列增强。奇数中心与singleton flexible、零形状的正分母、strict端点、mixed degree及共同费用删除已逐项攻击；所写范围无尚成立fatal。
+- **Status：** complete general-cohort topology threshold proof; independently reconstructed and exactly audited; unrefereed。Truth限该拓扑一般证明；Value闭合旧actual-cohort缺口；Mechanism为light稳定区间→单缺陷双标签→一致取向→成对light消去→正/反包络；Novelty与外审未认证；Ambition保留WC-TARGET OPEN。
+- **Related Files：** [正文](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)、[独立审查](../reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md)，规范代码/记录见正文10.9与assets.json。

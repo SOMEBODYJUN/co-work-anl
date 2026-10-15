@@ -24,7 +24,7 @@
 
 ## Claim Map / Dependency Graph
 
-加权拥塞的核心链为：资源策略与真实偏离成本 → 奇环全状态证书 → 正系数闭环 → 有限有理构造 → T_d 下界。局部证书包络只限制该方法，不是全类存在上界。固定权重和动作数的[签名压缩与全状态择证对偶](research/current/weighted_congestion/template_certificates/finite_action_duality.md)另给任意资源数的精确有限表示；仍缺统一于所有模板的估计。[严格反例整数规范形与端点](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)消去逐固定实倍率反例的实参数，并证明a_*(d)端点可行；没有全类搜索规模界。[任意乘子与依游戏可分序势障碍](research/current/weighted_congestion/separable_ordinal_obstruction.md)已作完整重构及独立攻击，只否定所写全改善边证书；全局选态仍开放。 [空交反链核心](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md#7-去包含支配与必选背景的空交反链核心)进一步把反例限制为人人至少两非空、无包含、空交策略，并给所有α≥1同时有效的单向lift；允许删玩家，不给规模界。
+加权拥塞的核心链为：资源策略与真实偏离成本 → 奇环全状态证书 → 正系数闭环 → 有限有理构造 → T_d 下界。局部证书包络本身只限制该方法；新增[一般群组奇环实际阈值证明](research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)以稳定计数和双取向消去独立证明该完整拓扑阈值恰T_d，含强迫失败，但不是全类存在上界。固定权重和动作数的[签名压缩与全状态择证对偶](research/current/weighted_congestion/template_certificates/finite_action_duality.md)另给任意资源数的精确有限表示；仍缺统一于所有模板的估计。[严格反例整数规范形与端点](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)消去逐固定实倍率反例的实参数，并证明a_*(d)端点可行；没有全类搜索规模界。[任意乘子与依游戏可分序势障碍](research/current/weighted_congestion/separable_ordinal_obstruction.md)已作完整重构及独立攻击，只否定所写全改善边证书；全局选态仍开放。 [空交反链核心](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md#7-去包含支配与必选背景的空交反链核心)进一步把反例限制为人人至少两非空、无包含、空交策略，并给所有α≥1同时有效的单向lift；允许删玩家，不给规模界。
 
 其他模型的定义、引理、反例和算法关系以及加权拥塞已登记结果统一放在[数学超图](research/index.html)及[结构化图](research/graph.json)。`derives` 列全体共同前提；实验只用 `checks`，失败与限制分别登记。图是导航，真值以精确陈述及证明为准。
 
@@ -93,5 +93,6 @@
 
 [潜在使用森林与单玩家挂树私人成本归约](research/current/weighted_congestion/incidence_forest_private_reduction.md)给任意正权、任意有限资源子集策略和非负非减费用的exactPNE；只在单核心玩家处附着的树可换私有常数，保多项式次数并将所有α≥1的reduced PNE用同一lift提升。单环二玩家例的最佳因子72/71说明森林不能无证扩域。先读两个精确合同，再读冻结审查/代码/证据。全类仍缺无界局部权比、非强迫反馈或有环核心的统一选态。
 
-
 [同权类前沿的全状态条件编译](research/current/weighted_congestion/class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)另以全部product-front的真实严格出口为前提，给不单独付跨类权比的时钟次数控制；α=1可消去余量对次数的影响。显式小输入只作回归。负向仍缺全前沿覆盖且余量受控的增长族，WC-TARGET保持OPEN。
+
+[固定主玩家的无强迫轻响应接口](research/current/weighted_congestion/fixed_hub_light_threshold_response.md)在每side仅一light时给显式阈值序势和每名至多一次strict移动的删除构造，允许异权及UF失败；存在/FIP本身已核为Milchtaich1996已知两策略定理特例，不作新存在结果。多light反边界复用旧例；真实hub偏离冻结lights，响应重选尚无兼容预算，不能把此接口当全类均衡。

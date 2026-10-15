@@ -37,3 +37,9 @@
 ## 原文归档与写作参考
 
 本轮固定上游 commit 并原样保存选定原文件及许可，逐字节哈希和来源在 SOURCES.md、upstream/manifest.json。包括 MathLab 原始 prompt 与架构、Anthropic 原始任务/idea 样例，以及 mathematical-academic-writing 与 polish_skill 的数学写作、贡献重建、优先权/相关工作和 TeX 保真材料；latex-paper-skills 只选 framing 原文。原文与适配分别标注，当前运行按本项目的角色号与异步公屏协议。团队结果已分类入库；现行数学与审查见 ../current/weighted_congestion/README.md。全球优先权与论文发表未认证。
+
+## 固定主玩家轻响应的已知两策略FIP身份
+
+**Paper Fact：** Igal Milchtaich, *Congestion Games with Player-Specific Payoff Functions*, Games and Economic Behavior 13 (1996), 111–124，[一手扫描PDF](https://www.cs.cornell.edu/courses/cs684/2005fa/milchtaich.pdf)。§4 Theorem1印刷p114证明共同策略数为2的player-specific singleton拥塞博弈具有FIP；§8 p121将拥塞改为任意正玩家权和并说明Theorem1证明仍适用；p123表格明确weighted/two strategies为FIP。已直接核对这些位置，不把无权一般多策略定理外推为有权一般存在。
+
+**精确应用与重构：** [固定hub阈值响应](../current/weighted_congestion/fixed_hub_light_threshold_response.md)在每side仅一light时，将每source两副本的玩家成本写成F(a+z)+q_i0与F(z)+q_i1，负号满足文献非增payoff、z为含自己的light权和。因此存在/FIP是已知特例；当前资产价值是显式阈值势、有序删除及对hub冻结偏离的准确范围，不称新存在定理。自足重构和两路有理审计独立于文献真值层，显式公式的新颖性未认证。

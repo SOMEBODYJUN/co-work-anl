@@ -359,12 +359,12 @@ mixed-polynomial tuning route; Novelty: unverified; Mechanism: positive
 denominator-weighted combinations; Ambition: mechanism boundary, not a stronger
 full-class lower or any full-class existence upper.
 
-The remaining actual-topology obligation is sharper: when these uniform tests
+The actual-topology obligation, subsequently closed for this exact class in section 10, was: when these uniform tests
 fail, must there be a real state with no alpha deviation? An all-anti state with
 one equal hub edge has only one possibly improving hub, but some anti lights
 can still prefer alignment. Partly aligned cohorts and these reverse light
 deviations must be controlled; neither this proof nor infeasibility supplies
-the needed state. This is the next informative attack on strong forcing.
+the needed state. Section 10 now supplies that state for every alpha>=T_d without assuming uniform forcing.
 
 ## 9. An actual-topology existence bound for singleton cohorts
 
@@ -432,3 +432,216 @@ safe alpha=d and does not numerically pretend to verify the irrational endpoint.
 
 ---
 整理来源与当前文件用途见[逐文件登记](../../../weighted_congestion_frontier/FILES.md)。程序统一通过 `python3 tests/audits/weighted_congestion/replay.py --list` 选择；历史命令、输出摘要与源码哈希属于原冻结版本。
+
+## 10. 一般群组奇环实际阈值与正测试包络一致
+
+ID/version：`WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2`。
+
+版本关系：未入规范层的v1草案只给max{2,T_d}；本v2改变结论，使用奇数群组中央双标签和反向标量界得到T_d。旧有证书、下界和单成员Claim的身份均不改变。独立审查记录各冻结版本的hash及增强覆盖，不以旧版审查自动升级。
+
+状态：完整一般子类证明；已独立重构并攻击，规范文件差异复核见配套审查。本文只处理下述奇环拓扑，不解决 WC-TARGET 全类命题。无外部定理导入，标量包络调用当前仓库已审的非负多项式正测试包络。
+
+### 10.1 精确命题与范围
+
+对每个整数 d≥2、奇整数 m≥3、正整数 n_i≥1、正实数 u_i,v_i，以及任意非负系数次数≤d 多项式 F_i,G_i（均允许零多项式），考虑以下有限游戏。指标模 m。Hub H_i 权 u_i，cohort i 有 n_i 名同权 v_i 的 light。互异资源为 A_i^b、B_ij^b，b∈{0,1}；两个 A 副本费用均为 F_i，同群全部 B 副本费用均为 G_i。Hub 的动作 h 使用 A_i^h 和每个 B_(i−1),j^h；light ij 的动作 l 使用 A_i^l 和 B_ij^(1−l)。成本不乘权重，真实偏离按 MODEL 重新负载。
+
+定义当前奇环包络
+
+    f_d(R) = [R(1+R)^d+1]/[(1+R)^d+R^(d+1)],
+    T_d = sup_{R>1} f_d(R),
+    A_d = T_d.
+
+d≥2时第4节已证T_d>1，因此下面取α≥T_d时始终α>1。
+
+**结论：每个上述游戏存在 T_d-PNE。** 更一般地每个 α≥T_d 均有 α-PNE。结合现有每个α<T_d的该拓扑严格反例，其实际拓扑最坏阈值恰为T_d（指有限实例最优倍率的上确界，不声称某个单独实例达到）。由于 T_d<d/ln d（第10.8节自足验证），此拓扑全体有 (d/ln d)-PNE，且其最坏阈值渐近为 d/ln d。没有声称所有实例最优因子相同，或全类有此上界。
+
+对象、定义域、量词、假设、范围、结论均如本节；依赖为非负多项式单调性、有限整数稳定区间、本文单缺陷比较及已证正测试包络。Truth 为所写子类内部证明；Value 是闭合一般cohort实际拓扑缺口；Novelty 未认证；Mechanism 单缺陷取向与消去成对light；Ambition 仍为结构子类。
+
+### 10.2 从真实资源导出的精确计数
+
+令 k_i∈{0,…,n_i} 是与 H_i 同位的 light 数，z_i=h_i xor h_(i+1)。二进制 hub 配置恰要求 Σ_i z_i 偶；反之每个偶 parity z 有两个互补 hub 配置，它们成本相同。设
+
+    q_i=G_i(v_i), V_i=G_i(v_i+u_(i+1)), D_i=V_i−q_i≥0.
+
+固定 k_i,z_i，有 aligned light 时其当前和偏离成本为
+
+    F_i(u_i+k_i v_i)+q_i+z_iD_i,
+    F_i((n_i−k_i+1)v_i)+q_i+(1−z_i)D_i.
+
+有 anti light 时其当前和偏离成本为
+
+    F_i((n_i−k_i)v_i)+q_i+(1−z_i)D_i,
+    F_i(u_i+(k_i+1)v_i)+q_i+z_iD_i.
+
+因此固定 z 的 light α稳定计数集 I_i(z) 恰由这两式各自的 current≤α·deviation（在相应类型非空时）定义。
+
+另记 W_i=G_i(u_(i+1))，Δ_i=V_i−W_i≥0，
+
+    r_i=z_i k_i+(1−z_i)(n_i−k_i).
+
+Hub i 当前及偏离成本恰为
+
+    F_i(u_i+k_i v_i)+n_(i−1)W_(i−1)+r_(i−1)Δ_(i−1),
+    F_i(u_i+(n_i−k_i)v_i)+n_(i−1)W_(i−1)+(n_(i−1)−r_(i−1))Δ_(i−1).
+
+零费用全用乘法不等式，无成本商。
+
+### 10.3 Light稳定区间与公共z=1代表
+
+以下仅需 α≥1 和非负非减费用。省指标，写
+
+    A_z(k)=F(u+kv)+q+zD,
+    B_z(k)=F((n−k+1)v)+q+(1−z)D,  1≤k≤n.
+
+A_z(k) 非减，B_z(k) 非增。计数 k 的 aligned 稳定条件是 A_z(k)≤αB_z(k)（k>0），anti 稳定条件是 B_z(k+1)≤αA_z(k+1)（k<n）。前者的可行集向下闭，后者向上闭。取最小满足 anti 条件的 k（n 自动满足），若 k>0，前一计数 anti 不稳给 B_z(k)>αA_z(k)，所以 A_z(k)<B_z(k)/α≤αB_z(k)。因此 I(z) 非空且是整数区间 [a_z,b_z]，含零费用情况。
+
+z 从0变1时 anti 当前费用下降、偏离费用上升，所以最小稳定计数 a_1≤a_0。还总有 a_1≤floor(n/2)：在 k=floor(n/2) 时 n−k≤k+1，anti 在 α=1 已稳定。以后固定
+
+    c_i=a_i(1)≤floor(n_i/2).
+
+此 c_i 是 z_i=1 的 α-stable 计数。
+
+若 I_i(0)=[a_i,b_i]，则 c_i≤a_i≤b_i。若 a_i>0，计数 a_i−1 的 aligned 条件由 a_i 的条件和单调性保证（a_i−1=0 时无需该条件），故它不稳只能由于 anti 严格改善：
+
+    F_i((n_i−a_i+1)v_i)+V_i
+       >α[F_i(u_i+a_i v_i)+q_i].                       (R-boundary)
+
+若 a_i>n_i/2，记 r_i=n_i−a_i。把上式与单调性比较，z=1 在 k=r_i+1 的 aligned 条件严格失败：
+
+    F_i(u_i+(r_i+1)v_i)+V_i
+       >α[F_i(a_i v_i)+q_i].
+
+因此 c_i≤r_i。若 b_i<n_i，类似地 b_i+1 只能因 aligned 严格改善而不稳：
+
+    F_i(u_i+(b_i+1)v_i)+q_i
+       >α[F_i((n_i−b_i)v_i)+V_i].                     (L-boundary)
+
+### 10.4 单缺陷状态、偶中心与奇数群组双标签
+
+对每个 i，让 z_i=0，其他 z_j=1。m 奇使 Σz=m−1 偶，故该状态合法。在非缺陷群 j≠i 取 k_j=c_j，在缺陷群选任意 k_i∈I_i(0)。全部light均 α稳定。
+
+若群 j 的 z_j=1 且 k_j≤n_j/2，它使其下一hub收到的 shared B 数≤n_j/2；若自身 k_j≤n_j/2，则该hub的主资源当前费用≤偏离费用。因此在上述单缺陷状态，除 H_i 与 H_(i+1) 外全部hub逐主/侧项不增，exact稳定。缺陷 k_i≤n_i/2 时 H_i 也exact稳定，仅 H_(i+1) 可能不稳；k_i≥n_i/2 时 H_(i+1) 的incoming侧不增，其自身c_(i+1)≤half，所以仅 H_i 可能不稳。
+
+若 n_i 偶且 n_i/2∈I_i(0)，两端均exact稳定，得到 α-PNE。
+
+以下反设没有 α-PNE；取α≥T_d>1。每个 I_i(0)=[a_i,b_i] 作以下分类：
+
+- 唯一 L：b_i<n_i/2，缺陷用真正最大端点 k_i=b_i，仅下一hub可能不稳；第10.3节给c_i≤b_i。
+- 唯一 R：a_i>n_i/2，缺陷用真正最小端点 k_i=a_i，仅自身hub可能不稳；令r_i=n_i−a_i，第10.3节给c_i≤r_i。
+- flexible：n_i奇，I_i(0)同时含floor(n_i/2)与ceil(n_i/2)。此群可任选L代表b=floor(n_i/2)或R代表a=ceil(n_i/2)，且c_i≤floor(n_i/2)=b=n_i−a，所以两种mixed比较的所需不等式均成立。代表可能不是真正端点，故此时不使用strict边界。
+
+分类穷尽：稳定集合为整数区间；偶n跨中心会包含已处理的精确中心；奇n跨中心必同时包含相邻两个中央整数。singleton [0,1] 正是flexible，且c=0。这套处理对所有奇n一样，不使用(n+1)/(n−1)或任何实际成本商。
+
+### 10.5 相邻L→R不可能：同一hub的双向严格改善矛盾
+
+假设群 i 可取 L代表 b，群 i+1 可取 R代表 a。令 S 是缺陷 i、k_i=b 的单缺陷状态，T 是缺陷 i+1、k_(i+1)=a 的单缺陷状态。其余群均取固定 c。没有 α-PNE 迫使同一个 H=H_(i+1) 在 S 和 T 都严格 α改善。
+
+写 n=n_i、c=c_i、v=v_(i+1)、u=u_(i+1)、N=n_(i+1)、C=c_(i+1)，以及 g0=G_i(u)、g1=G_i(u+v_i)。四个成本恰为
+
+    H(S)       =F_(i+1)(u+C v)+(n−b)g1+b g0,
+    H(Sflip)   =F_(i+1)(u+(N−C)v)+b g1+(n−b)g0,
+    H(T)       =F_(i+1)(u+a v)+c g1+(n−c)g0,
+    H(Tflip)   =F_(i+1)(u+(N−a)v)+(n−c)g1+c g0.
+
+c≤b、C≤N−a、g1≥g0和 F 单调给
+
+    H(T)≤H(Sflip),       H(S)≤H(Tflip).
+
+若两状态都严格 α改善，则 H(S)>αH(T) 且 H(T)>αH(S)，与 α≥1及非负成本矛盾（也涵盖零成本）。
+
+因此环上不可能有相邻 L→R。对每群任选一个可用标签，有限循环二字母串若两标签均出现必有 L→R，故只能全L或全R。若有flexible，先任意选标签所得串须常值，再仅翻转该flexible标签便成为非恒定串（m≥3），仍产生禁转折。因此没有flexible；全部群具有同一个唯一标签。
+
+### 10.6 全L被现有非负多项式测试包络排除
+
+每群都有真正最大稳定端点 b_i<n_i/2，并记
+
+    n'_i=n_i−2b_i≥1,
+    F'_i(x)=F_i(x+b_i v_i).
+
+平移量非负，所以 F'_i 仍为次数≤d非负系数多项式。由 (L-boundary) 得
+
+    F'_i(u_i+v_i)+G_i(v_i)
+       >α[F'_i(n'_i v_i)+G_i(v_i+u_(i+1))].          (L')
+
+缺陷 i 的状态只能由 H_(i+1) 严格改善。其自身 c_(i+1)≤b_(i+1)，可增大当前主费用到 F'_(i+1)(u_(i+1))，减小偏离主费用到 F'_(i+1)(u_(i+1)+n'_(i+1)v_(i+1))，仍保留strict。incoming B 两边均含非负共同项 b_i[G_i(u_(i+1))+G_i(u_(i+1)+v_i)]，α≥1允许删除，得到
+
+    F'_(i+1)(u_(i+1))+n'_iG_i(u_(i+1)+v_i)
+       >α[F'_(i+1)(u_(i+1)+n'_(i+1)v_(i+1))
+             +n'_iG_i(u_(i+1))].                    (H')
+
+(L'),(H')正是 `odd_ring/cohort_lower_bound_and_envelope.md`第8节测试（各amplitude取1），拥有奇数m、整数n'≥1、正实u,v、同费副本、非负degree≤d形状和strict α>1条件。F'≡0不能满足L'，G≡0不能满足随后H'，故该测试要求的非零形状也已推得。既有 `WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1` 证明其可行必有 α<T_d，与 α≥T_d 矛盾。没有把原游戏测试不可行直接当成PNE；是先由假设所有真实单缺陷态不稳重新导出新缩减游戏的完整strict测试。
+
+### 10.7 全R也被相同标量包络排除
+
+令 a_i=min I_i(0)>n_i/2、r_i=n_i−a_i、n'_i=2a_i−n_i≥1，以及F'_i(x)=F_i(x+r_i v_i)。定义
+
+    NF_i=F'_i(u_i+n'_i v_i)−αF'_i(u_i),
+    MF_i=αF'_i(u_i+n'_i v_i)−F'_i(v_i),
+    NG_i=G_i(v_i+u_(i+1))−αG_i(v_i),
+    MG_i=αG_i(v_i+u_(i+1))−G_i(u_(i+1)).
+
+(R-boundary)给NG_i>MF_i。缺陷 i 只能由H_i严格改善；其前群的z=1代表c_(i−1)≤r_(i−1)。把当前side shared数从c增到r、把偏离shared数从n−c减到n−r后保留strict，再删除两边共同的非负成对side项，给
+
+    NF_i>n'_(i−1)MG_(i−1).                           (RH)
+
+α>1及单调性给MF_i,MG_i≥0。F'_i≡0会令NF_i=0，矛盾RH；G_i≡0会令NG_i=0，矛盾NG_i>MF_i。因此F'_i,G_i非零，在正输入严格正，故MF_i,MG_i>0，进而NF_i,NG_i>0。将两组strict测试相乘可得
+
+    product_i [NF_i NG_i/(n'_i MF_i MG_i)]>1.          (RP)
+
+当前奇环标量包络给α≥T_d时任意非负次数≤d多项式P及正x,y满足
+
+    x[P(x+y)−αP(x)]≤y[αP(x+y)−P(y)].                (S)
+
+为自足核对：对单项式P(t)=t^k，除以y^(k+1)后、R=x/y，(S)恰等价于α≥f_k(R)。当R≤1，二项式系数逐项比较给f_k(R)≤1；当R>1，f_k(R)随k非减且f_k(R)≤T_d。k=0亦给f_0=1；逐项非负相加即得(S)。
+
+对F'_i用x=u_i、y=n'_iv_i，再用F'_i(v_i)≤F'_i(n'_iv_i)，得到
+
+    u_i NF_i
+      ≤ n'_iv_i[αF'_i(u_i+n'_iv_i)−F'_i(n'_iv_i)]
+      ≤ n'_iv_i MF_i,
+    NF_i/MF_i≤n'_iv_i/u_i.
+
+对G_i用x=v_i、y=u_(i+1)，得到
+
+    NG_i/MG_i≤u_(i+1)/v_i.
+
+将这些正数界相乘，(RP)左边≤product_i u_(i+1)/u_i=1，矛盾。
+
+第10.4至10.7节排除反设，证明α≥T_d存在α-PNE。所有代表来自有限集合，未要求连续极小值；所有反设用strict改善，与弱α-PNE端点完全相容。
+
+### 10.8 显式 (d/ln d) 子类上界
+
+既有标量证明给
+
+    T_d≤H_d+1/(2^d+1),
+    H_d=d/[(d+1)d^(1/(d+1))−d].
+
+e^x≥1+x给 H_d≤d/(1+ln d)。又 ln d≤d−1、1+ln d≤d，故
+
+    d/[ln d(1+ln d)]≥1/(d−1)>1/(2^d+1).
+
+所以 T_d<d/ln d，因此此拓扑可核验的绝对常数为 C=1、d0=2。**这是上述拓扑结论，不是原题全类C=1结论。**
+
+### 10.9 边界、潜在反驳与证据合同
+
+- 允许任意正实u,v，n任意增长，F/G常数、零和混合次数；正文始终只用非负单调性、非负平移和包络已覆盖的形状。
+- z=1代表与其他群无关，因为各light只见自身hub与next hub；cohort同权、同side费用承重。换异权light、同B多hub、不同动作费用、本环外资源后不能直接使用。
+- 单缺陷仅m奇时成立；偶m取全z1与每群α=1稳定c≤half即给exactPNE，但这不是本文ID的必要部分。
+- 任意奇n跨中心稳定区间（含singleton [0,1]）统一按双标签处理，绝不套用中心侧成本比例或成本商。
+- 当前证明独立于文献源拓扑还原；后者只启发成对light平移，未未经核查调用其不同模型。
+- 需要独立审查者重点攻击：I(z)非空的零成本边界、c≤r推导、mixed四成本的side方向、奇n跨中心双标签与flex环取向、全L平移形状与删除共同项、全R的strict正性与标量(S)适用。
+
+审查：[先自主重构与冻结攻击](../../../reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md)。
+
+可复现命令（在仓库根运行，均默认输出stdout，不覆盖冻结结果）：
+
+```bash
+python3 tests/audits/weighted_congestion/odd_ring_parameters/check_general_cohort_actual_upper.py
+python3 tests/audits/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.py
+```
+
+代码分别为[作者逐资源审计](../../../../tests/audits/weighted_congestion/odd_ring_parameters/check_general_cohort_actual_upper.py)和[独立资源策略重算](../../../../tests/audits/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.py)，输入内嵌、seed及解释器/源码hash记录于输出。[作者冻结记录](../../../../evidence/runs/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper.json)与[独立冻结记录](../../../../evidence/runs/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.json)说明实际有限覆盖。两代码不互相导入；全部算术采用Fraction，未用浮点决定稳定性或strict边界。作者输入另含正/反向严格非存在小例，检验两种缩减分支，并不声称这些小例给增长下界。一般实参数证明来自上文而非有限枚举。
+
+**证明给出的有限选态过程。** 固定α≥T_d，算每群I_i(0)=[a_i,b_i]与c_i=min I_i(1)。对于每个缺陷i，若a_i≤floor(n_i/2)，列出k_i=min{b_i,floor(n_i/2)}；若b_i≥ceil(n_i/2)，列出k_i=max{a_i,ceil(n_i/2)}，其余k_j=c_j。重复者只列一次，至多2m个计数状态；按固定次序令每群前k_j名light aligned，即给真实合法状态。上面的反设证明表明其中至少一个是α-PNE，故可直接逐状态验证后选择，不必枚举所有hub配置与cohort计数。没有声称任意实数输入的算法实现或位复杂度；有限池是所证存在机制的显式读取方式。
+
+主目标仍为MODEL全类匹配上界判定；本定理只闭合同权cohort、同费副本奇环的实际阈值，不能将该拓扑当全类规范形。下一步若沿此族寻更强下界，必须改变cohort同权、动作副本费用或资源关联等承重合同，并重新证明全状态覆盖。

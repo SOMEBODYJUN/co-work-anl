@@ -10,7 +10,7 @@ WC-TARGET v1 保持 OPEN。所有已发现远端研究分支的独有成果已�
 T_d=max_(R>1)[R(1+R)^d+1]/[(1+R)^d+R^(d+1)]∼d/ln d，因而 a_*(d)≥T_d。
 R1 的线性重置实现与 R3 的同次数实现归属于共同机制，保留原作者和各自独立审查。它们不是两项互不相关的突破。[现行数学入口](research/current/weighted_congestion/README.md)说明精确范围。
 
-全类上界仍是已核对文献 d。关键未解义务是全类 O(d/ln d) 存在性，或绕开当前全部 light-forcing 测试的更强全状态非存在机制。一般 cohort 奇环的实际均衡阈值也不能从证书失效推出。
+全类上界仍是已核对文献 d。关键未解义务是全类 O(d/ln d) 存在性，或绕开当前全部 light-forcing 测试的更强全状态非存在机制。一般cohort奇环的实际阈值现已由[单缺陷双取向证明](research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)闭合为T_d；不是从证书失效直接推得，而是重新构造真实稳定状态。后续负向须改变该拓扑的承重合同。
 
 固定权重与动作数的[全状态线性证书接口](research/current/weighted_congestion/template_certificates/finite_action_duality.md)已独立重构：关联签名消去任意资源数，逐selector给非负系数/primal与概率dual替代。[严格反例整数规范形与闭端点](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)又消去固定倍率反例的实参数：规范形仍无规模界，普遍阈值端点可行。尚无统一C,d0；[最小点选择等价](research/current/weighted_congestion/separable_ordinal_obstruction.md)也只澄清旧势障碍的量词。 [空交反链核心](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md#7-去包含支配与必选背景的空交反链核心)进一步把反例限制为人人至少两非空、无包含、空交策略，并给所有α≥1同时有效的单向lift；允许删玩家，不给规模界。
 
@@ -66,5 +66,6 @@ E1 提取的[正占用核](research/current/positive_kernels/README.md)新增独
 
 当前可调用的异权侧势条件为[UFhetτ下α≥R、ατ≥Kd](research/current/weighted_congestion/shared_side_truncated_potential.md)；全局最小点之间择优也不能消去R，新线性完整反例已独立核验。结构归约新增[潜在使用森林精确PNE与单核心玩家挂树fixed lift](research/current/weighted_congestion/incidence_forest_private_reduction.md)，允许任意权谱并保degree；它不控制有环核心，单环已有exact反例。下一项关键义务是一般核心/非UF的真实冻结偏离与响应兼容预算，而不是继续修补已被反例否定的同一E全局最小化。WC-TARGET保持OPEN。
 
-
 负向接口进一步明确：[同权类前沿全覆盖编译](research/current/weighted_congestion/class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)在全product-front保front出口前提下，以D=O(ln(α²BL/η))锁全部状态；α1分离预算不付余量。当前重点是同时获得高倍率前沿覆盖与增长族B/η控制；固定九玩家有理输入没有解决这个义务。
+
+非UF的unique-light局部义务现有[显式阈值/单遍响应](research/current/weighted_congestion/fixed_hub_light_threshold_response.md)可调用，FIP/存在为已核文献特例。当前缺口准确落在跨hub向量的多值响应选择与真实冻结偏离预算；不能将随h改变的Ψ_h望远镜求和，已有两玩家反例排除仅按重选后成本lift。无UF全类桥仍未闭合。

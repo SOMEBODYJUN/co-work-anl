@@ -6146,6 +6146,72 @@
       "status": "finite exact audit"
     },
     {
+      "id": "WC-FIXED-HUB-LIGHT-THRESHOLD-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "冻结hub的unique-light两主副本响应对象",
+      "detail": "每side仅一light，冻结全部hub后侧成本为玩家动作常数；每source独立，D_i(x)=F(a+x+w_i)−F(W−x)+q_i0−q_i1，W−x含自己。",
+      "refs": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "固定主玩家后的异权轻玩家阈值序势与有序删除响应",
+      "detail": "任意非负degree≤d多项式、d≥0、异权hub/light、唯一source且每side仅一light的二元同费副本模型，无UF。固定任意hub向量后，light子游戏由逐source二次阈值势（F常数时线性势）保留全部成本边的严格/平局符号，PNE恰势局部min且全部strict light改善终止。从全aligned按非降阈值删除，给每名light至多一次strict移动的exact响应。存在/FIP为Milchtaich1996已知两策略结果的直接应用；显式势和删除过程作自足重构接口，不主张新颖。",
+      "refs": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "research/reviews/weighted_congestion/fixed_hub_light_threshold_review.md",
+        "research/weighted_congestion_frontier/LITERATURE.md"
+      ],
+      "status": "complete reconstruction of a known existence/FIP corollary; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-FIXED-HUB-LIGHT-THRESHOLD-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "固定hub阈值符号、有序删除与旧多light反边界的双路精确核验",
+      "detail": "有限真实资源输入，逐态逐偏离、严格/平局全符号、单遍路径与旧三玩家多light反边界；输出实际输入和源码版本。",
+      "refs": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "tests/audits/weighted_congestion/verify_fixed_hub_light_threshold.py",
+        "tests/audits/weighted_congestion/independent_fixed_hub_light_threshold.py",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/author.json",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "一般群组奇环实际阈值与正测试包络一致",
+      "detail": "每个d≥2、奇m≥3、n_i≥1、正实hub权u_i与群内共同light权v_i，任意同费动作副本及群内同费side、非负系数degree≤d多项式F_i/G_i（含零）的一般cohort奇环均有T_d-PNE；不要求UF。T_d=max_(R>1)[R(1+R)^d+1]/[(1+R)^d+R^(d+1)]。结合既有每α<T_d严格反例，该拓扑的普遍存在阈值恰T_d；T_d<d/ln d，故仅本拓扑C=1,d0=2。 群内同权、每light私有双人side、同费动作副本及单奇环关联承重；不是MODEL全类上界。不声称某个有限实例取得拓扑sup，不改变旧证书/下界/单成员Claim。未入规范层的v1只给max{2,T_d}，本v2单列增强。",
+      "refs": [
+        "research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md",
+        "research/reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md"
+      ],
+      "status": "complete general-cohort topology threshold proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-ODD-RING-GENERAL-COHORT-ACTUAL-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "一般群组奇环单缺陷取向的双路有理核验",
+      "detail": "逐资源负载、全部玩家偏离、奇数中央双标签、正反缩减与标量界的有限Fraction审计，不替一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md",
+        "tests/audits/weighted_congestion/odd_ring_parameters/check_general_cohort_actual_upper.py",
+        "tests/audits/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.py",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper.json",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.json"
+      ],
+      "status": "executed finite exact audit"
+    },
+    {
       "id": "WC-CLASS-FRONT-COMPILER-DEFINITION",
       "kind": "definition",
       "track": "weighted_congestion",
@@ -14617,6 +14683,75 @@
         "research/current/weighted_congestion/incidence_forest_private_reduction.md"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-FIXED-HUB-LIGHT-THRESHOLD-DEFINITION"
+      ],
+      "conclusion": "WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1",
+      "statement": "严格递增真实成本差在有限可达集合有精确阈值；二次势保符号、平F用线性势；非降阈值删除的已离开者不回返，得到固定外场响应。存在/FIP同时是已核文献的直接特例。",
+      "refs": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "research/reviews/weighted_congestion/fixed_hub_light_threshold_review.md"
+      ],
+      "status": "complete reconstruction of a known existence/FIP corollary; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-FIXED-HUB-LIGHT-THRESHOLD-AUDIT"
+      ],
+      "conclusion": "WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1",
+      "statement": "两路有限literal资源与成对势核验；不将finite范围升级全类或把文献已知存在性称新。",
+      "refs": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "tests/audits/weighted_congestion/verify_fixed_hub_light_threshold.py",
+        "tests/audits/weighted_congestion/independent_fixed_hub_light_threshold.py",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/author.json",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "E-WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1",
+        "WC-R3-ODD-RING-LOWER-v1"
+      ],
+      "conclusion": "WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2",
+      "statement": "单缺陷双取向一般存在上界与既有同拓扑每α<T_d下界共同确定实际阈值；不从证书不可行直接推出均衡。",
+      "refs": [
+        "research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md",
+        "research/reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md"
+      ],
+      "status": "complete general-cohort topology threshold proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "E-WC-ODD-RING-GENERAL-COHORT-ACTUAL-AUDIT",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-ODD-RING-GENERAL-COHORT-ACTUAL-AUDIT"
+      ],
+      "conclusion": "WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2",
+      "statement": "两份独立literal Fraction审计仅检查实际有限输入和证明接口，计算不证明全部实参数。",
+      "refs": [
+        "research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md",
+        "tests/audits/weighted_congestion/odd_ring_parameters/check_general_cohort_actual_upper.py",
+        "tests/audits/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.py",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper.json",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.json"
+      ],
+      "status": "finite exact checks passed"
     },
     {
       "id": "DERIVE-WC-CLASS-FRONT-ALLSTATE-COMPILER-v1",
