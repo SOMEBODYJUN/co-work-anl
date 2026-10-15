@@ -72,3 +72,12 @@
 ## 从低阶成本空间直接推出小用户支持资源表示
 
 尝试先用degree≤d的低阶张量空间，再把每个cost interaction项当成只依赖少数玩家的合法正资源，从而降到有限interaction结构。[异权仿射全签名刚性](../current/weighted_congestion/template_certificates/selector_local_moments.md)给精确失败：V_i=s_iΣ_jw_js_j仅degree1、任意n≥2且权不全等，但一对异权的零contrast排掉共享高次，solo成本饱和迫全部正资源全用户且费用a_e x。任意提高有限degree仍不能全保真缩支持；正锥约束不是线性cost-space维界。等权pair高次表示说明不能删权假设。可回收≤D资源数量压缩、局部矩极锥和一般完整成本张量界；本障碍不排改权、加辅助玩家、仅保均衡/单向lift或近似成本归约。重试这些路线须重新写清并证明较弱保真合同，不能把本例有精确PNE误作全类反例。
+
+
+## 仅依结构参数给actual保环时钟统一次数
+
+尝试摆脱uniformδ预算后，直接要求次数cap只依p/n/权谱/α。失败发生在真实环余量：[actual接口第九节](../current/weighted_congestion/anchored_clock_actual_margins.md)对每cap构造同4玩家/同权/同α/p3的空交反链基体，以动作专属private三次成本压低全部环margin而保持0101/1010稳定gap；必要ΣS预算趋零，固定cap逐列效率有界，任意允许非统一clock只要保全环仍保这些均衡。系数幅度和资源数保持有界，不是无限幅度问题。可回收actual预算和padding压力测试；重试须控制特选输入的余量/稳定gap或改变架构/放弃保环，不排健康余量增长族或全类目标。
+
+## 把完整proper锥的dual自动限于recurrent或点质量
+
+旧子锥反例不能单独排除“完整锥会强制recurrent解”的希望。[local-moment第11节](../current/weighted_congestion/template_certificates/selector_local_moments.md)把低阶parity暂态dual与唯一真实strict坏环同时植入完整proper锥：任何dual必须有正暂态质量；singleton常数列又排除所有点质量。新增范围是无删列/无共同sink，不是任意selector可行法；实例质量下界依η/M，没有统一d估计。可回收同时化路由和概率质量分离，重试仍须处理任意selector的真正feature hull，而非交换singleton例的量词。

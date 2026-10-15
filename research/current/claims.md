@@ -487,6 +487,22 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-ANCHORED-FULL-UNIFORM-BUDGET-ESCAPE-v1 | 明示四玩家三次基体、权(1,1/2,1/4,1/8)、α=21/20；保留全部T012/T013/T023原010/101同费pair与统一M=2αB，只将次数取80，所得游戏全部16态有指定严格α出口且保留八条环边，但δ^80>η/(4α²BL)；满足(U)的最小整数为91。只证明(U)在原全三元统一幅度架构中也非必要，不称80最优或一般增长族。 | complete finite certificate; independently reconstructed and exactly audited; unrefereed；[正文第4节](weighted_congestion/anchored_clock_degree_barrier.md)、[审查](../reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md) |
 
 
+
+
+## 锚定保环时钟不可消去真实环余量依赖
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1 | 对每个整数D≥0，存在固定4玩家、权(1,1/2,1/4,1/8)、α=21/20、16正三次资源、两非空空交反链动作的有理MODEL基体G_D，原八边同序环全strictα；任意添加anchor0、全部允许T012/013/023、010/101同pair同费、degree≤D非负多项式时钟，只要保全部八环边strictα，就仍保0101/1010的所有翻位margin<−K_min/2<0。因此不存在仅依p,n,w,α而不依余量/实例细节的通用有限保环次数界。 | complete fixed-architecture all-cap obstruction; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/anchored_clock_actual_margins.md), [独立审查](../reviews/weighted_congestion/ordinal_potentials/actual_clock_margins_review.md)。只限制必须保原环的明示同费三元架构；不排特选健康余量增长输入、换支持/phase/两侧异费/aux或不保环。α=1不在新Claim范围。系数幅度保持有界，不声称幅度必须发散或任何全类结论。 |
+
+
+
+## 完整空交反链签名锥中暂态择证质量的必要性
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1 | 任d≥0、α≥1及n玩家positive-weight binary proper-resource degree≤d游戏的严格α简单环Q，补至n′=max(n,d+2)再加flag，在完整非空proper signature×0..d锥上有selector H，唯一recurrent为嵌入Q；同一完全暂态概率dual对全部β≥1可行。在给定α任何dual暂态质量≥η/(η+M)>0，且完整锥无共同PNE、任意点质量皆非dual。cyclic-clone的两互补动作给每d≥2、1≤α<ρ_d的实例。 | complete interface corollary; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/template_certificates/selector_local_moments.md), [独立审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)。旧parity暂态可行及删列锥必要性在完整proper锥的同时化推论，非任意selector统一法；singleton列依状态变化，¬∃s∀a不能交换为∃a∀s。不构造全类非存在族，不给C,d0。零向量不叫概率dual。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

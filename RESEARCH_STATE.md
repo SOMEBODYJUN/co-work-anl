@@ -47,9 +47,9 @@ R1 的线性重置实现与 R3 的同次数实现归属于共同机制，保留�
 
 [阶跃DAG极值幅度的多项式全入状态](research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)已直接控制真实多项式成本：不要求低漏/平台保真，幅度(N)下d≥16给4√(d/ln d)状态。全类题仍OPEN；当前最具体新缺口是任意卫星幅度如何归约或怎样选择其他稳定light集合，不能只改变已锚定费用形状。
 
-[有限次局部矩与全成本压缩](research/current/weighted_congestion/template_certificates/selector_local_moments.md)将签名接口细化为D维完整成本空间、≤D正单项式资源保真表示和≤D+1支撑dual；真正未解仍是每个selector的moment hull与resource polar是否在统一倍率相交。[循环窗口前沿商与不同步反例](research/current/weighted_congestion/class_front_phase_quotient.md)提供相对phase表示，但类内clock不能自动给错位front出口，故负向仍需新同步/离front覆盖机制。两包均未完成唯一全类题。
+[有限次局部矩与全成本压缩](research/current/weighted_congestion/template_certificates/selector_local_moments.md)将签名接口细化为D维完整成本空间、≤D正单项式资源保真表示和≤D+1支撑dual；完整proper锥另可同时实现近d真实唯一坏环和完全暂态dual，任何dual暂态质量必须为正；这是已知两机制的同时化，不给任意selector方法。真正未解仍是每个selector的moment hull与resource polar是否在统一倍率相交。[循环窗口前沿商与不同步反例](research/current/weighted_congestion/class_front_phase_quotient.md)提供相对phase表示，但类内clock不能自动给错位front出口，故负向仍需新同步/离front覆盖机制。两包均未完成唯一全类题。
 
-[共享侧资源截断势](research/current/weighted_congestion/shared_side_truncated_potential.md)把同权hub、unique-light/source、最坏负载UF子类扩到任意共享hub子集，给A_d≤2d/ln d；独立AS+B判据覆盖部分非UF实例。[实际时钟差分与预算](research/current/weighted_congestion/anchored_clock_actual_margins.md)给非统一clock的O(n²)充分LP、必要总预算和κ稳定条件，固定四玩家43次证书优于原uniform91选值但不称最优。原全三元、统一M架构另有80次全状态证书却不满足(U)，故(U)对原架构也非必要；这仍不是增长族。真正缺口仍是无界可动权类的全类选态、跨source/预算外反馈或次数效率可增长的全状态族。
+[共享侧资源截断势](research/current/weighted_congestion/shared_side_truncated_potential.md)把同权hub、unique-light/source、最坏负载UF子类扩到任意共享hub子集，给A_d≤2d/ln d；独立AS+B判据覆盖部分非UF实例。[实际时钟差分与预算](research/current/weighted_congestion/anchored_clock_actual_margins.md)给非统一clock的O(n²)充分LP、必要总预算和κ稳定条件，固定四玩家43次证书优于原uniform91选值但不称最优。原全三元、统一M架构另有80次全状态证书却不满足(U)，故(U)对原架构也非必要；这仍不是增长族。实际接口另证：固定人数/权谱/α/纯三次亦可用private成本压低环余量，阻止任意预给degree cap的保环三元clock；健康余量增长输入仍未排除。真正缺口仍是无界可动权类的全类选态、跨source/预算外反馈或次数效率可增长的全状态族。
 
 [共占图高度与实际改善环必要链](research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)把三角势参数从全局权类数放宽为同一降权共占图的路径高度；全局权种数可无界。实际严格改善闭词也必须跨越相应高度门槛，各弧可来自不同端点。仍无全类高度控制；动态换秩改变势，缺少高链SCC出口或瞬态dual。
 
