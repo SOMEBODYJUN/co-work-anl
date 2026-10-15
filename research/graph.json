@@ -5486,6 +5486,143 @@
         "examples/weighted_congestion/anchored_actual_clock_degree43.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "跨源多轻玩家共享侧资源的统一强迫 Rosenthal 势均衡",
+      "detail": "任意d≥2、实α≥1+√d，同权hub u、唯一main source的正权lights，side允许任意hub子集及跨source任意light子集，两副本同费非负degree≤d。令T_j为side全light权、m_j为hub数、W_v为source总light权；若每light满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥α[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则真实hub Rosenthal势任单hub局部最小点配全anti为α-PNE。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_shared_side_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "跨源多轻玩家共享侧资源的统一强迫 Rosenthal 势均衡的精确对象",
+      "detail": "同权hub跨source多light side拓扑、全anti状态和真实hub Rosenthal势；κ_d(t)=min(dt,t+1)，UFmulti使用side全部light总权。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "跨源多轻玩家共享侧资源的统一强迫 Rosenthal 势均衡的双路有理核验",
+      "detail": "两份不互相调用核心的Fraction审计；有限实现与边界核对，不替代一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_multisource_shared_side.py",
+        "tests/audits/weighted_congestion/independent_multisource_shared_side.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-APPROXIMATE-SUPPORT-DISTORTION-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "小用户支持近似成本表示的定量失真障碍",
+      "detail": "每个m≥1、ε>0，原binary成本V_i=s_i(s_0+εΣ_(l=1)^m s_l)。任意相同玩家/标签的有限MODEL表示允许改正权及任意有限degree；若全部正资源潜在支持≤r≥1且所有玩家/状态V≤Ĉ≤βV，则β≥max{1,m(1+ε)/[(r−1)(1+mε)+mε]}。对称A夹逼给A²同必要界。固定有限r、β选择m和正有理ε即不可表示，原费用仅degree1。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/approximate_support_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-APPROXIMATE-SUPPORT-DISTORTION-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "小用户支持近似成本表示的定量失真障碍的精确对象",
+      "detail": "相同玩家/二动作标签的完整成本乘性夹逼，允许改权；正资源潜在用户支持r；一个heavy与m名ε玩家的线性全用户成本表。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-APPROXIMATE-SUPPORT-DISTORTION-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "小用户支持近似成本表示的定量失真障碍的双路有理核验",
+      "detail": "两份不互相调用核心的Fraction审计；有限实现与边界核对，不替代一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_approximate_support.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_approximate_support.py",
+        "evidence/runs/weighted_congestion/template_certificates/approximate_support_author.json",
+        "evidence/runs/weighted_congestion/template_certificates/approximate_support_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "任意次数类内有序三元时钟的全状态编译障碍",
+      "detail": "显式12玩家/64资源degree8循环窗口binary游戏有24步strict21/20双同序环，但phase(0,0,1)是全部玩家严格exactPNE。任意有限fresh同类递增三元010/101互补pair，pair两侧同一非负非减费用，任何degree/幅度叠加均保留该严格exactPNE。因此仅追加这些clock不能对所有该倍率strict sweep输入保证全状态无PNE。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_internal_clock_compiler_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "任意次数类内有序三元时钟的全状态编译障碍的精确对象",
+      "detail": "同权clone类的prefix/suffix front及fresh递增三元010/101同费非负非减时钟；固定8测试actual有理系数输入。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "examples/weighted_congestion/class_internal_clock_compiler_obstruction.json"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "任意次数类内有序三元时钟的全状态编译障碍的双路有理核验",
+      "detail": "两份不互相调用核心的Fraction审计；有限实现与边界核对，不替代一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_class_internal_clock_compiler_obstruction.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_class_internal_clock_compiler.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-BOUNDED-DISTORTION-SUPPORT-REDUCTION-METHOD",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "固定有限失真和用户支持的完整成本归约",
+      "detail": "要求所有原degree1游戏都可在相同玩家/标签、允许改权/任意有限degree下，按固定有限r和β保持V≤Ĉ≤βV。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "method candidate; excluded in stated scope"
+    },
+    {
+      "id": "WC-CLASS-INTERNAL-TRIPLE-CLOCK-COMPILER-METHOD",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "仅追加同类有序三元时钟的通用全状态锁定",
+      "detail": "要求对每个strict21/20双同序binary sweep输入，仅追加fresh同类递增三元010/101同费非负非减clock，即可输出无21/20-PNE游戏；不含更高倍率专用输入类。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md"
+      ],
+      "status": "method candidate; excluded in stated scope"
     }
   ],
   "hyperedges": [
@@ -13071,6 +13208,136 @@
         "research/current/weighted_congestion/uniform_clock_budget_barrier.md"
       ],
       "status": "complete finite certificate; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-DEFINITION"
+      ],
+      "conclusion": "WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1",
+      "statement": "固定light边际等于真实hub普通成本差；逐lightκ重置，源加权和≤dF(u+W)，由(α−1)²≥d支付全部跨source反馈。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_shared_side_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-AUDIT"
+      ],
+      "conclusion": "WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1",
+      "statement": "实际有理输入/参数和真实负载逐项核验；不以有限枚举升级一般结论。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_multisource_shared_side.py",
+        "tests/audits/weighted_congestion/independent_multisource_shared_side.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-APPROXIMATE-SUPPORT-DISTORTION-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-APPROXIMATE-SUPPORT-DISTORTION-DEFINITION"
+      ],
+      "conclusion": "WC-APPROXIMATE-SUPPORT-DISTORTION-v1",
+      "statement": "零动作排正资源；light的singleton/pair成本跃升由含heavy资源支付，每条最多付r−1名light，收费到heavy全入成本。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/approximate_support_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-APPROXIMATE-SUPPORT-DISTORTION-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-APPROXIMATE-SUPPORT-DISTORTION-AUDIT"
+      ],
+      "conclusion": "WC-APPROXIMATE-SUPPORT-DISTORTION-v1",
+      "statement": "实际有理输入/参数和真实负载逐项核验；不以有限枚举升级一般结论。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_approximate_support.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_approximate_support.py",
+        "evidence/runs/weighted_congestion/template_certificates/approximate_support_author.json",
+        "evidence/runs/weighted_congestion/template_certificates/approximate_support_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-DEFINITION"
+      ],
+      "conclusion": "WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1",
+      "statement": "front在任意递增三元非触发，所有flip负载为2w→2w或w→3w；故时钟子游戏全front均exactPNE，无法消除base严格PNE。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_internal_clock_compiler_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-AUDIT"
+      ],
+      "conclusion": "WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1",
+      "statement": "实际有理输入/参数和真实负载逐项核验；不以有限枚举升级一般结论。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_class_internal_clock_compiler_obstruction.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_class_internal_clock_compiler.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "LIMIT-WC-BOUNDED-DISTORTION-SUPPORT-REDUCTION-METHOD",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-APPROXIMATE-SUPPORT-DISTORTION-v1"
+      ],
+      "conclusion": "WC-BOUNDED-DISTORTION-SUPPORT-REDUCTION-METHOD",
+      "statement": "所写一般方法合同被精确反例阻止；不扩大到全类PNE存在/非存在。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "LIMIT-WC-CLASS-INTERNAL-TRIPLE-CLOCK-COMPILER-METHOD",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1"
+      ],
+      "conclusion": "WC-CLASS-INTERNAL-TRIPLE-CLOCK-COMPILER-METHOD",
+      "statement": "所写一般方法合同被精确反例阻止；不扩大到全类PNE存在/非存在。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
     }
   ]
 }

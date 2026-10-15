@@ -20,3 +20,5 @@ Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须�
 共占高度扩展另有 `WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1` 与 `WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1`，见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)及原三角势正文第11–13节。两个新ID分别为潜在图结构存在界和实际严格闭词必要链；未改旧权类ID。
 
 [异权仿射全签名成本射线刚性](research/current/weighted_congestion/template_certificates/selector_local_moments.md)新增独立Claim：非全等权时全成本保真不能缩小全部资源的潜在用户支持，任意提高有限次数仍不行。原例有精确PNE；不升级全类存在/非存在状态。
+
+另首登三个独立ID：`WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1`（同权hub跨源UF平方根存在界）、`WC-APPROXIMATE-SUPPORT-DISTORTION-v1`（允许改权的完整成本近似小支持失真）、`WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1`（固定有理strict sweep及任意次数类内三元compiler反例）。精确对象、全部假设和证据见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)，不改旧Claim或WC-TARGET。

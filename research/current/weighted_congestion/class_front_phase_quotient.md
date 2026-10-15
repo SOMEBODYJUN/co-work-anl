@@ -1,14 +1,15 @@
 # 循环窗口的压缩前沿与不同步稳定状态
 
-本文登记两个独立身份，主目标保持OPEN。由真实费用定义直接证明：循环窗口复制的每类 prefix/suffix 状态有一个相对相位表示；给出端点真实费用表的闭式；再给一个有理实例，严格反驳“任意严格双轮循环基体在每个压缩前沿状态均有改善端点”这一潜在接续命题。它不是近似 PNE 非存在结论，不是所有类内时钟的不可能定理。
+本文登记相位商、端点障碍及类内时钟编译器反例三个独立身份，主目标保持OPEN。由真实费用定义直接证明：循环窗口复制的每类 prefix/suffix 状态有一个相对相位表示；给出端点真实费用表的闭式；再给一个有理实例，严格反驳“任意严格双轮循环基体在每个压缩前沿状态均有改善端点”这一潜在接续命题。它不是近似 PNE 非存在结论，原第5节不是所有类内时钟的不可能定理；第8节另给严格限定架构的通用编译器反例。
 
 ## 精确Claim身份与状态
 
 - **WC-CLONE-FRONT-PHASE-QUOTIENT-v1 — 循环窗口前沿的扭转平移与精确相位商。** 对第1节每个m≥2,N≥1、正实类权、覆盖每个类的有限合法测试和非负资源系数，命题A、2N相位编码、恰(2N)^(m−1)商状态、第3节真实forward费用及backward交换恒等式成立。p为任意非负整数；协变部分只需同test/index不变且pair两侧同费，任意共享费用函数亦成立。两种方向始终保留mover标签；不把class当可任意多步偏离的玩家。
 - **WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1 — 类内时钟的前沿出口障碍与不同步反例。** 对任意α≥1、同权类内递增锚定三元同费010/101时钟，任意留在合法前沿的单clone边clock margin≤0；第5节12玩家有理p8、α21/20实例有strict24步同序环，但某前沿六端点全稳定，且仍有两名内部clone严格改善。故“严格环自动给每个类前沿出口”不成立；不排全部compiler或离前沿出口。
-- **Objects / Domain / Quantifiers / Definitions / Assumptions / Scope：** 完全采用MODEL、第1节literal资源关联和第5节固定输入；有限非空玩家/资源、真实偏离负载、非负系数，角色名不暗示权大小。前者是一般表示，后者含一般局部恒等和固定反例；不能混为全状态PNE。
+- **WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1 — 任意次数类内有序三元时钟的全状态编译障碍。** 第8节独立固定基体有strict21/20 sweep及严格精确PNE前沿；任意有限fresh同类递增010/101同费非负非减时钟仍保留该PNE。只排所写追加compiler，不排跨类/其他arity/更高倍率专用输入类。新证据与独立审查见第8.5节。
+- **前两Claim的 Objects / Domain / Quantifiers / Definitions / Assumptions / Scope：** 完全采用MODEL、第1节literal资源关联和第5节固定输入；有限非空玩家/资源、真实偏离负载、非负系数，角色名不暗示权大小。前者是一般表示，后者含一般局部恒等和固定反例；不能混为全状态PNE。
 - **Dependencies：** WC-MODEL、WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1中的窗口关联定义（不需其所有倍率的存在结论）；直接位异或、负载计数。第二Claim另使用第一的前沿和端点定义。
-- **Evidence / Counterevidence / Objections / Status：** 两Claim均为complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。先独立重构瓶颈再攻击冻结hash、作者157248条费用表核验及独立全4096状态/512前沿literal审计；未见范围内fatal。Truth=精确表示/指定反例，Value=压缩状态与接续限制，Novelty未认证，Ambition保持唯一题OPEN。
+- **前两Claim的 Evidence / Counterevidence / Objections / Status：** 两Claim均为complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。先独立重构瓶颈再攻击冻结hash、作者157248条费用表核验及独立全4096状态/512前沿literal审计；未见范围内fatal。Truth=精确表示/指定反例，Value=压缩状态与接续限制，Novelty未认证，Ambition保持唯一题OPEN。
 
 ## 1. 对象与局部前沿
 
@@ -145,3 +146,124 @@ h 在动作0使用资源0；窗口玩家 u 在动作0使用资源 σ(h,u)=1[pos(
 ## 7. 规范重放命令
 
 作者：`python3 tests/audits/weighted_congestion/cyclic_clone/verify_class_fronts.py`；独立：`python3 tests/audits/weighted_congestion/cyclic_clone/independent_class_fronts.py`。均向stdout输出JSON，由运行者另存新路径，不原位重写冻结记录。独立代码从literal资源重算全部4096状态及512前沿，另复得恰8稳定前沿；代码和有限范围见审查。冻结证据为`evidence/runs/weighted_congestion/cyclic_clone/class_fronts.json`与`evidence/runs/weighted_congestion/cyclic_clone/independent_class_fronts.json`。
+
+## 8. 任意次数的类内时钟编译障碍：一个严格精确均衡前沿
+
+### 8.1 新命题身份与准确范围
+
+**ID/version。** `WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1`。
+
+**中文名称。** 任意次数类内有序三元时钟的全状态编译障碍。
+
+**Exact Statement / Objects / Domain / Quantifiers。** 存在以下显式12玩家、64资源、次数8、每人恰有两个动作的 MODEL 博弈 G，权重为三类 `(1,1/4,1/16)`、每类4名 clone，满足：
+
+1. 从全0开始按 `j=0,1,2,3`、同一 j 内按类 `a=0,1,2` 翻至全1，再同序翻回，共24条真实偏离均严格 `α=21/20` 改善。
+2. 第8.2节指定的类前沿状态 b 是 G 的严格精确 PNE。
+3. 任取有限族新增时钟：每个时钟只涉及同一类的一个递增三元 `j0<j1<j2`，对三名参与者按局部模式 `(0,1,0)` 使用两侧互补资源；同一对两资源费用相同，为任意非负、非减函数。则 b 仍是叠加游戏的严格精确 PNE。因此，不论这些时钟的数量、幅度和多项式次数如何选择，它们都不能把这个严格双轮环编译为无 `α-PNE`。
+
+**Definitions / Assumptions / Scope。** 每人只有构造给定的两个资源子集动作；成本、权重及真实偏离均采用 MODEL。新增资源与基体资源互不相交，且新增各资源对两两互不相交、每对仅由指定三人使用。允许每个三元有任意多对资源，允许零费用；本结论特别覆盖全部非负系数多项式费用、次数任意且可逐资源不同。时钟的锚点可为该三元最早的 clone，不限于类内 index0；不允许跨类三元、非递增相位模式或同一对两侧不同费用。本结论不限制这些其他架构，也不判定全类 `C d/ln d` 存在题。
+
+**Conclusion / Dependencies。** 结论是这个明示 compiler 架构在所有输入上的普遍性失败，强于只阻止某个指定端点偏离。只依赖第1节的循环窗口 literal 定义、MODEL，以及下面的逐资源计算和局部负载论证；不调用外部均衡存在定理。
+
+**Evidence / Counterevidence / Objections / Status。** 基体是显式有理有限证书，其24条环边和 b 的全部12条偏离由标准库 Fraction 按真实用户集合重算。任意时钟结论由第8.4节一般证明给出，不来自有限搜索。本文的新基体不是第5节原三测试基体：原状态仍有内部 clone 改善，而本状态是严格精确 PNE。旧 `WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1` 的身份与证据不变。Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。独立审查先重构局部机制再核查冻结fixture及正文，具体范围由第8.5节单独记录。Truth只及所写架构，Value是排除任意次数的类内 compiler 普遍性，Novelty未认证，Ambition保持全类题开放。
+
+### 8.2 不依赖归一化约定的显式输入
+
+玩家为 `p_(a,j)`，其中 `a∈{0,1,2}`、`j∈{0,1,2,3}`，权重 `w_a=4^(−a)`。其线性位置为 `pos(j,a)=3j+a`。对表中每个测试 `(a,b,K,o)` 和每个 `j` 建一对独立资源 `e_(τ,j,0),e_(τ,j,1)`，两侧费用均严格为表中实际系数乘 `x^8`。
+
+Distinguished 玩家 `p_(a,j)` 的动作0用资源0，动作1用资源1。令 `δ=1[a>b]`，对 `k=0,...,K−1` 的窗口玩家
+
+\[
+ u=p_{(b,(j+\delta+k)\bmod4)}
+\]
+
+规定动作0所用侧为 `1[pos(u)>pos(j,a)] xor 1[o=−1]`，动作1用另一侧。其他玩家不用该资源对。每人的两个动作分别是全部测试指定资源的并集；没有额外动作。这是完整资源关联定义。
+
+| 测试 `(a,b,K,o)` | 两侧资源的实际 `x^8` 系数 |
+| --- | --- |
+| `(0,1,2,+1)` | `196608/2070241` |
+| `(0,2,1,−1)` | `12884901888/6975757441` |
+| `(1,0,1,+1)` | `458752/390625` |
+| `(1,0,4,−1)` | `114688/1958731377` |
+| `(1,2,2,+1)` | `4294967296/2070241` |
+| `(2,0,3,−1)` | `4294967296/34646314945283` |
+| `(2,1,1,+1)` | `17179869184/390625` |
+| `(2,1,4,−1)` | `8589934592/1958731377` |
+
+每测试有4对资源，总计64资源，全部费用系数和玩家权重为正。每人两个动作非空、互不相交。状态 b 的类前沿相位为 `(0,0,1)`：只有 `p_(2,0)` 取动作1，其余11人取动作0。它属于第1节的 product-of-class-front 空间。
+
+### 8.3 严格环和严格精确 PNE 的有理证书
+
+对单个测试 `(a,b,K,+1)`，不计该测试系数时，一次 sweep 每个 a 类移动者的当前/偏离成本分别为
+
+\[
+ P_a=w_a^8,\qquad Q_a=(w_a+Kw_b)^8,
+\]
+
+每个 b 类移动者的对应成本分别为
+
+\[
+ P_b=\sum_{r=1}^{K}(w_a+rw_b)^8,
+ \qquad Q_b=\sum_{r=1}^{K}(rw_b)^8,
+\]
+
+其余类为零；`o=−1` 时交换 P、Q。证明是窗口内每个圆周秩恰出现一次：distinguished 翻位时从独用变为与 K 人共享；窗口移动者在 K 个所属窗口中，当前轻用户数和真实偏离后轻用户数分别枚举 `K,...,1` 和 `1,...,K`。跨越线性末端者也按同一圆周秩计数。两侧同费使第二轮逐用户集合互补，成本重复。
+
+将表中实际系数 z 乘入并相加，得到每类环边的严格 `α=21/20` margin γ：
+
+| 类 a | 精确 γ_a |
+| --- | --- |
+| 0 | `668952404678020797924570238508829288767787464/638047468517767349117246305566039154408203125` |
+| 1 | `101229878362539180212273/126720187645370531250000` |
+| 2 | `2651952901577059953262979194770765518068336861/1531313924442641637881391133358493970579687500` |
+
+每项严格大于 `3/4`，故全部24边严格改善。审计仍逐边重算真实负载，不以对称性替代字面核验。
+
+在 b 中，定义精确改善差
+
+\[
+ h_{a,j}=C_{a,j}^G(b)-C_{a,j}^G(b^{\oplus(a,j)}).
+\]
+
+由第8.2节的用户集合及实际系数直接代入，以下是逐项严格有理上界；每格是 `h_(a,j)<` 该数：
+
+| clone j | 类0 | 类1 | 类2 |
+| --- | --- | --- | --- |
+| 0 | `−1/2` | `−3` | `−3/4` |
+| 1 | `−6/5` | `−6/5` | `−19/10` |
+| 2 | `−4/5` | `−8` | `−2` |
+| 3 | `−4` | `−6` | `−7/5` |
+
+这些不等式仅含有限有理加法、八次幂和交叉乘法；配套程序输出全部当前成本、真实偏离成本和确切有理差，并逐格核对本表。特别地，全部 `h_(a,j)<−1/2`，所以 b 是 G 的严格精确 PNE。这里不通过 `0/0` 定义任何倍率。
+
+### 8.4 所有类前沿都是任意允许时钟子游戏的精确 PNE
+
+固定一个类、权重 w 和递增三元 `j0<j1<j2`。任意 prefix/suffix 前沿在该三元上都不可能有局部模式010或101。因此时钟两资源的用户数一定为2与1，从未完整触发。
+
+考察三元中任意一人翻位，注意偏离后仍要计入其自身权重。有且仅有以下两种情况：
+
+- 翻后未完整触发：移动者由二人组移入另一组，当前/真实偏离后负载为 `(2w,2w)`。
+- 翻后完整触发：移动者由独用移入另外两人的资源，当前/真实偏离后负载为 `(w,3w)`。
+
+不是每个离前沿翻位都触发每个稀疏时钟；证明只逐个检查实际参与的时钟。未参与的玩家在该时钟的成本恒零。
+
+同一对两侧同费 f，且 f 非负、非减，所以两种情况下当前成本都不超过偏离后成本。对任意 `α≥1`，该时钟贡献的 α-margin 也都非正。将有限多个允许时钟相加，得到每个类前沿状态对全部玩家翻位都是时钟子游戏的精确 PNE；该论证包括离开前沿的翻位。
+
+将这一性质用于 b。对任意允许叠加 H 和每名玩家 i，
+
+\[
+ C_i^{G+H}(b)-C_i^{G+H}(b^{\oplus i})
+ =h_i+[C_i^H(b)-C_i^H(b^{\oplus i})]
+ \le h_i<-1/2.
+\]
+
+故 b 仍是严格精确 PNE，自然也是 `21/20-PNE`。结论无需新游戏保留任何原环边；即使允许破坏原环，这些时钟仍不能消除此均衡。这完成任意次数、任意实非负系数和任意幅度范围内的固定架构反例。
+
+### 8.5 证据合同与真正未解义务
+
+- 显式实际系数输入：`examples/weighted_congestion/class_internal_clock_compiler_obstruction.json`。
+- 作者独立 literal 审计：`tests/audits/weighted_congestion/cyclic_clone/verify_class_internal_clock_compiler_obstruction.py`。它不导入既有窗口实现，按真实用户集合重建64资源、24条边和 b 的全部12条偏离；另枚举类宽3至9、全部前沿和全部递增三元，核对9828组局部负载仅为上述两种情况。
+- 从仓库根运行：`python3 tests/audits/weighted_congestion/cyclic_clone/verify_class_internal_clock_compiler_obstruction.py`。可用 `--input PATH` 指定固定输入。程序只向stdout输出JSON，不重写冻结证据；结果记录源代码hash、输入hash、命令、Python版本和精确算术范围。
+- 作者冻结输出：`evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_author.json`。[独立审查](../../reviews/weighted_congestion/ordinal_potentials/class_internal_clock_compiler_review.md)；独立审计命令`python3 tests/audits/weighted_congestion/cyclic_clone/independent_class_internal_clock_compiler.py`，冻结记录`evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_independent.json`。有限枚举不是第8.4节一般结论的证明来源。
+
+失败机制现在更精确：仅凭一个 strict global sweep 环，再用任意次数的这些同类时钟限制类内前沿，不足以保证全状态非存在，因为基体可以已经含一个精确稳定的不同步前沿，而此架构只能增加该前沿所有偏离的非负成本差。新结果没有证明所有近线性倍率循环窗口基体都含这种前沿，也没有排除其他时钟拓扑、跨类反馈、不同两侧费用或辅助玩家。要重新尝试该方向，必须为所选基体证明全部前沿没有稳定状态，或明确加入能够改变该前沿出口的架构；仅增加现有类内 clock 次数和幅度不会修复本反例。全类匹配上界/否定题仍开放。

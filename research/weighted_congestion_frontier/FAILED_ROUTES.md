@@ -72,3 +72,15 @@
 ## 从低阶成本空间直接推出小用户支持资源表示
 
 尝试先用degree≤d的低阶张量空间，再把每个cost interaction项当成只依赖少数玩家的合法正资源，从而降到有限interaction结构。[异权仿射全签名刚性](../current/weighted_congestion/template_certificates/selector_local_moments.md)给精确失败：V_i=s_iΣ_jw_js_j仅degree1、任意n≥2且权不全等，但一对异权的零contrast排掉共享高次，solo成本饱和迫全部正资源全用户且费用a_e x。任意提高有限degree仍不能全保真缩支持；正锥约束不是线性cost-space维界。等权pair高次表示说明不能删权假设。可回收≤D资源数量压缩、局部矩极锥和一般完整成本张量界；本障碍不排改权、加辅助玩家、仅保均衡/单向lift或近似成本归约。重试这些路线须重新写清并证明较弱保真合同，不能把本例有精确PNE误作全类反例。
+
+## 允许有限近似和改权后的小用户支持全成本归约
+
+尝试把degree低的完整cost table近似拆成统一有限支持r，再调用r-PNE。新[定量收费下界](../current/weighted_congestion/template_certificates/selector_local_moments.md)允许表示方改正权、提高任意有限degree，仍有β≥m(1+ε)/[(r−1)(1+mε)+mε]；固定r,β取m和正有理ε即失败。失败步骤是每个light在singleton到heavy-pair的成本跃升都需共享资源支付，而每条heavy小支持资源至多覆盖r−1名light，预算由heavy全入成本控制。回收pair收费与对称A²缩放；只限制相同玩家/标签的完整成本夹逼。原例全0 exactPNE，辅助玩家、只保均衡/单向lift及选择性成本保持仍可重试，不能把这一障碍说成无均衡。
+
+## 同类有序三元时钟不能通用锁定全部严格环输入
+
+旧不同步反例只缺front端点出口；新[64资源actual系数基体](../current/weighted_congestion/class_front_phase_quotient.md)本身就在phase(0,0,1)具有全部玩家严格exactPNE，同时保有strict21/20双轮环。所有类front在任意递增三元上非010/101，所以所有玩家翻位时clock负载只为2w→2w或w→3w，任意fresh同费非负非减三元clock叠加仍保留PNE。具体失败是时钟完全无法新增该front的任何真实出口，而非次数选择不足。回收front精确PNE局部引理和显式有理基体；跨类、其他arity、非对称副本、辅助玩家或更高倍率专用输入类尚未排除。仅加次数/幅度不能修复本输入；不把固定反例外推为全部近线性环都有稳定front。
+
+## 跨source共享侧资源也须超出准确强迫合同
+
+[新真实Rosenthal势](../current/weighted_congestion/shared_side_truncated_potential.md)以κ_d(t)=min(dt,t+1)控制已有外场上的重置增量，闭合此前TR仅从零外场出发的缺口。在同权hub及按side全部light总权的UFmulti下，任意跨source共享仍有1+√d-PNE。可回收reset预算和源超可加估计；不覆盖异权hub、非UF或多个main source，负向若只保全部该合同便不能放大。此为结构存在定理，不是全类上界。

@@ -54,3 +54,5 @@ R1 的线性重置实现与 R3 的同次数实现归属于共同机制，保留�
 [共占图高度与实际改善环必要链](research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)把三角势参数从全局权类数放宽为同一降权共占图的路径高度；全局权种数可无界。实际严格改善闭词也必须跨越相应高度门槛，各弧可来自不同端点。仍无全类高度控制；动态换秩改变势，缺少高链SCC出口或瞬态dual。
 
 [局部成本接口的刚性边界](research/current/weighted_congestion/template_certificates/selector_local_moments.md)把“资源数量可压缩”与“资源用户支持可缩小”分开：非全等权全用户仿射成本要求全用户线性资源，即使允许任意有限degree。只限制完整成本保真归约；全类相交义务和唯一题仍未闭合。
+
+跨source的同权hub侧反馈在UFmulti下已由真实Rosenthal势闭合到1+√d；不再把“共享多个source的light”本身当成逃逸机制。当前负向需UF失败、异权hub或其他架构。正向也不能仅靠固定有限失真的小资源支持全成本归约：degree1原表在允许改权后仍有定量失真障碍。类内有序三元clock通用编译器另被strict sweep中的严格精确PNE前沿阻止；所写任意次数/幅度均无效，但更高倍率专用输入类、跨类或其他arity不在排除范围。全类未解仍是无界可动权类的选态或次数效率可增长全状态族。

@@ -63,3 +63,5 @@
 [共享侧资源截断势](current/weighted_congestion/shared_side_truncated_potential.md)把同权hub、unique-light/source、最坏负载UF子类扩到任意共享hub子集，给A_d≤2d/ln d；独立AS+B判据覆盖部分非UF实例。[实际时钟差分与预算](current/weighted_congestion/anchored_clock_actual_margins.md)给非统一clock的O(n²)充分LP、必要总预算和κ稳定条件，固定四玩家43次证书优于原uniform91选值但不称最优。原全三元、统一M架构另有80次全状态证书却不满足(U)，故(U)对原架构也非必要；这仍不是增长族。真正缺口仍是无界可动权类的全类选态、跨source/预算外反馈或次数效率可增长的全状态族。
 
 [共占图高度与实际改善环必要链](current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)把三角势参数从全局权类数放宽为同一降权共占图的路径高度；全局权种数可无界。实际严格改善闭词也必须跨越相应高度门槛，各弧可来自不同端点。仍无全类高度控制；动态换秩改变势，缺少高链SCC出口或瞬态dual。
+
+跨源反馈现在有准确的[同权hub平方根子类界](current/weighted_congestion/shared_side_truncated_potential.md)：UFmulti按side全部light总权计，真实Rosenthal重置预算覆盖任意跨source分享。另有[完整成本小支持近似失真下界](current/weighted_congestion/template_certificates/selector_local_moments.md)及[任意次数类内三元clock的通用compiler反例](current/weighted_congestion/class_front_phase_quotient.md)；各为独立新Claim，旧结果身份保留。它们关闭具体桥或错误归约，全类Cd/ln d题仍OPEN。

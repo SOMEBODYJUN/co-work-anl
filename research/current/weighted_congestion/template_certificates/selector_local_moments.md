@@ -1,6 +1,6 @@
 # 有限次局部矩、全成本压缩与暂态择证对偶
 
-本稿三个独立Claim提供精确表示，不完成全类匹配上界。
+本稿分别登记局部矩表示、精确刚性与近似支持失真边界；均不完成全类匹配上界。
 
 ## Exact scope and status
 
@@ -452,3 +452,79 @@ k=0、1时花括号为0。k≥2时它等于
 本新Claim由同一[独立审查文件](../../../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)新增的刚性部分单独审查，挂冻结`7a2ee0b7…`，不把先前三Claim的f454审查自动外推。审查者在读稿前独立从较弱statement重构出“不全等权/n≥2/完整极射线”强化，再攻击本稿。
 
 运行`python3 tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py`；[冻结结果](../../../../evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json)记录命令/Python/source hash/精度及完整输入。225个pair代数/符号、2331个有限单项式signature列的逐face消元和7160个等权边界真实成本位置全部通过。每个后续face只在先前face上核非负，不假冒它对整个cone非负。无需会话暂存文件、solver、随机性或浮点容差；一般任意有限degree/实正权证明由第9节承担。
+
+## 11. 小用户支持近似表示的定量失真下界
+
+### 11.0. 独立 Claim 精确身份
+
+**ID/version / 中文数学名称：** `WC-APPROXIMATE-SUPPORT-DISTORTION-v1`，小用户支持近似成本表示的定量失真障碍。它不改变第9节精确刚性的身份；本节允许表示方改变玩家权重。
+
+**Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion。** 任意整数 m≥1、实 ε>0，原游戏有玩家0,...,m、两个动作标签0和1，权重(1,ε,...,ε)，完整成本表为
+
+    V_i(s)=s_i(s_0+εΣ_{l=1}^m s_l),  s∈{0,1}^{m+1}.
+
+它由一个仅在各人动作1使用、费用x的全用户资源实现，另加私人零费动作marker即可使所有动作非空、互异、空交且反链。固定整数 r≥1、实 β≥1。设另一个有限MODEL游戏使用相同玩家和动作标签，允许任意新的正实玩家权、任意有限最高费用次数及任意有限资源数；每个非零费用资源至多有r名潜在用户。若逐玩家逐状态有
+
+    V_i(s) ≤ Ĉ_i(s) ≤ β V_i(s),                         (AP)
+
+则必有
+
+    β ≥ B(m,r,ε):=m(1+ε)/[(r−1)(1+mε)+mε].             (21)
+
+有效下界是max{1,B}。特别对任何固定有限 r,β，选m>β(r−1)后取足够小的正有理ε，即使原游戏只有线性费用，也不存在满足(AP)的表示。因此不存在把所有原游戏完整成本以统一有限失真压成统一有限潜在用户支持的归约，即使允许改权和任意提高费用次数。常数可依原次数d仍不能救此全类归约，因为原反例费用次数恒为1，人数m任意。
+
+若改用对称夹逼 V_i/A≤Ĉ_i≤A V_i，A≥1，将表示方全部费用乘A得到(AP)且β=A²，故A²≥max{1,B}。这只是完整成本表示障碍；原游戏全0为精确PNE，不否定全类存在上界，也不限制添加辅助玩家、只保均衡或单向lift的归约。
+
+**Dependencies。** MODEL的正权、非负系数及真实负载；非零多项式在正负载严格正；资源费用单调；两个标签的完整成本表。下面证明自足，不依赖第9节异权contrast或外部均衡定理。
+
+**Status / Evidence / Objections。** 完整直接证明；独立审查者先仅据精确陈述重构出下面更强pair式，后攻击冻结正文，精确有限核验另列。外审和新颖性未认证。零成本保留、全部状态保真及禁止辅助玩家是承重合同；不能把结论扩到任意非负但非单调费用。一般实参数结论由解析证明承担，有限审计不替代证明。
+
+### 11.1. 零动作确定资源的方向
+
+由(AP)，任何玩家动作0时，其表示方成本恒为0。若某非零非负系数费用资源被该动作使用，正玩家权使其真实负载为正，因而贡献严格正费用，矛盾。因此忽略零费和无人用资源后，每个表示方资源e都仅在某些玩家的动作1使用；记用户集S_e，|S_e|≤r。这个结论对表示方新权任意成立。
+
+令e_i为仅玩家i动作1的状态，1为全1状态。令新权为ŵ_i>0。
+
+### 11.2. 逐pair增量与全入状态的收费预算
+
+对每名light l，考察从e_l到e_0+e_l（heavy从0改1），其自身动作保持1。只有同时含0和l的正资源影响其成本，故由真实负载
+
+    D_l:=Ĉ_l(e_0+e_l)−Ĉ_l(e_l)
+        =Σ_{e:0,l∈S_e}[c_e(ŵ_0+ŵ_l)−c_e(ŵ_l)]
+        ≥(1+ε)−βε.                                  (22)
+
+资源单调与非负使
+
+    D_l≤Σ_{e:0,l∈S_e}c_e(Σ_{i∈S_e}ŵ_i).
+
+对l求和，每个含heavy的资源最多计|S_e|−1≤r−1次，因此
+
+    Σ_l D_l ≤ (r−1)Ĉ_0(1) ≤ (r−1)β(1+mε).            (23)
+
+合并(22)和(23)即
+
+    m(1+ε)≤β[(r−1)(1+mε)+mε],
+
+分母严格正，得到(21)。r=1时D_l=0仍直接适用；r超过玩家数时该界可能小于1，只保留β≥1，不暗示锐性。
+
+固定r≥1、给定β≥1且m>β(r−1)、βr>1，只需
+
+    0<ε<[m−β(r−1)]/[m(βr−1)]
+
+即可令B>β（βr−1=0时r=β=1，B>1对所有ε成立）。因此全类不可能性不以不可取到的ε=0为输入。对称A夹逼的推论只是全局正缩放，保持同一资源支持和全部偏离。
+
+### 11.3. 机制、边界与可继续的路线
+
+第9节的精确刚性限制同权向量上的全部资源；本节定量界允许表示方改权，也允许有限乘性失真，机制是每条小支持heavy资源只能支付有限个light的pair成本跃升。它不声称B是最优失真，也不推出每个固定m,r,ε的极值表示。
+
+等权ε=1的高次pair表示（第9.4节）成本完全保持且支持2，并不冲突：此时B(m,2,1)=2m/(2m+1)<1。任意非负但非单调资源费用可在特定可达负载处为0而在较低负载处为正，零动作不再排除全部这类资源；不能据本证明删除多项式非负系数条件。较弱均衡lift、辅助玩家及选择性成本保持仍是不同合同。
+
+## 12. 近似支持失真边界的核验合同
+
+两份审计使用标准库Fraction；逐列收费、代数核对和实际资源负载复算合计覆盖改变表示方权重、r=1、零费marker、等权pair精确表示，以及非单调费用不在MODEL的反边界。一般必要不等式与完整成本归约的不可能性由第11节证明，不靠有限搜索。
+
+- 作者审计：`python3 tests/audits/weighted_congestion/template_certificates/verify_approximate_support.py`，冻结记录`evidence/runs/weighted_congestion/template_certificates/approximate_support_author.json`。
+- 独立审计：`python3 tests/audits/weighted_congestion/template_certificates/independent_approximate_support.py`，冻结记录`evidence/runs/weighted_congestion/template_certificates/approximate_support_independent.json`。
+- 独立先重构与冻结攻击：`research/reviews/weighted_congestion/template_certificates/approximate_support_review.md`；只覆盖本新ID，不借旧刚性审查升级。
+
+代码向stdout输出JSON，命令、Python版本、参数、算术及源码hash均保留，重跑不覆盖冻结证据。无外部solver或浮点容差。

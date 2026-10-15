@@ -103,3 +103,13 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 [原三角势正文第11–13节](weight_bands/finite_weight_class_potentials.md)用两个新ID登记共占高度扩展：`WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1`允许全局任意多权值，只需潜在可动玩家降权图height=k；`WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1`给严格α闭词的实际共占链必要条件α<A_(d,k)。原有限权类、固定背景、窄簇取整三个ID不变。共同层秩→身份子集排序边际→全状态势最小/闭词端点望远镜是证明链；同层异权不能按全局代表权计数。[独立重构与攻击](../../reviews/weighted_congestion/weight_types/interaction_height_review.md)、两路代码和证据由正文进入。
 
 目前需控制的是无界交互高度的选态，而不仅是全局权类数。长链不是无PNE充分条件；低单点高度不是PNE必要。动态重排会换势，尚无累计图高度控制、SCC统一出口或全类瞬态dual。
+
+## 跨源反馈、近似表示与类内锁定的精确边界
+
+| Claim | 数学增量、正文与审查 | 范围及剩余义务 |
+| --- | --- | --- |
+| WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1 | [跨源多light真实Rosenthal势](shared_side_truncated_potential.md)第八节给1+√d；[先重构后冻结攻击](../../reviews/weighted_congestion/multisource_shared_side_review.md)，两路真实资源Fraction审计由正文8.7接入 | 同权hub、唯一main source、二元同费副本、按side全部light总权的UFmulti；异权hub/强迫失败仍缺桥。未更改旧截断势或AS+B身份。 |
+| WC-APPROXIMATE-SUPPORT-DISTORTION-v1 | [小支持近似成本失真](template_certificates/selector_local_moments.md)第11–12节，允许表示方改权，β≥m(1+ε)/[(r−1)(1+mε)+mε]；[独立审查](../../reviews/weighted_congestion/template_certificates/approximate_support_review.md)及双路列/负载审计 | 只限相同玩家/二标签的完整逐状态乘性夹逼；原degree1游戏有exactPNE。允许辅助玩家/只保均衡为不同合同，不称B最优。 |
+| WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1 | [有序三元类内compiler障碍](class_front_phase_quotient.md)第8节：12玩家degree8有strict21/20 sweep及严格exactPNE前沿；[独立审查](../../reviews/weighted_congestion/ordinal_potentials/class_internal_clock_compiler_review.md)，actual系数/两份literal审计/run在正文8.5 | 任意数量、幅度、degree的fresh同类递增三元010/101同费单调clock保留该PNE。不能外推跨类/其他arity或更高倍率专用输入；旧第5节端点反例仍有内部出口。 |
+
+三项皆为独立身份的新结构资产；不据子类平方根界或方法障碍宣布全类命题解决。下一项承重义务是异权hub/非UF反馈、非势选态的可累加预算，或带完整覆盖且次数效率可增长的新族。普通priority激活/LP诊断尚无新可用桥，不当成证明。

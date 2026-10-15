@@ -35,3 +35,5 @@ WC-TARGET v1 OPEN。已分类入 main 的核心进展是奇环有限非存在族
 [共享侧资源截断势](../current/weighted_congestion/shared_side_truncated_potential.md)把同权hub、unique-light/source、最坏负载UF子类扩到任意共享hub子集，给A_d≤2d/ln d；独立AS+B判据覆盖部分非UF实例。[实际时钟差分与预算](../current/weighted_congestion/anchored_clock_actual_margins.md)给非统一clock的O(n²)充分LP、必要总预算和κ稳定条件，固定四玩家43次证书优于原uniform91选值但不称最优。原全三元、统一M架构另有80次全状态证书却不满足(U)，故(U)对原架构也非必要；这仍不是增长族。真正缺口仍是无界可动权类的全类选态、跨source/预算外反馈或次数效率可增长的全状态族。
 
 [共占图高度与实际改善环必要链](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)把三角势参数从全局权类数放宽为同一降权共占图的路径高度；全局权种数可无界。实际严格改善闭词也必须跨越相应高度门槛，各弧可来自不同端点。仍无全类高度控制；动态换秩改变势，缺少高链SCC出口或瞬态dual。
+
+[跨source多light side](../current/weighted_congestion/shared_side_truncated_potential.md)在同权hub、UFmulti下已得到1+√d-PNE：真正逃逸点须违反该条件或改变hub权/动作副本。新的[近似成本支持失真](../current/weighted_congestion/template_certificates/selector_local_moments.md)阻止固定有限失真/支持的全成本归约，允许改权亦然；[严格稳定前沿compiler反例](../current/weighted_congestion/class_front_phase_quotient.md)阻止在所有strict21/20 sweep输入上仅增加任意次数类内有序三元clock。当前仍缺异权/非UF反馈的控制、无界height的非势选态或次数效率增长族，不能将这三项升级为全类判定。

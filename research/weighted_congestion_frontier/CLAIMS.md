@@ -831,3 +831,33 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：稀疏43次例不能独自证明原uniform架构逃逸，本条补上该范围。固定实例不解决唯一题；uniform预算障碍在原假设下保持。无尚成立fatal；未外审/新颖性未认证。
 - Status：complete finite certificate; independently reconstructed and exactly audited; unrefereed。Truth为有限全状态证书及预算非必要；Value为原架构边界；Mechanism为真实有向差；Ambition全类仍OPEN。
 - Related Files：[正文](../current/weighted_congestion/anchored_clock_degree_barrier.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md)；两份新代码和新冻结记录从正文审计合同进入，基体输入复用原43次JSON而不改写。
+
+## WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1 — 跨源多轻玩家共享侧资源的统一强迫 Rosenthal 势均衡
+
+- **ID/version / 中文数学名称：** WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1，跨源多轻玩家共享侧资源的统一强迫 Rosenthal 势均衡；独立新身份，不改旧Claim。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 任意d≥2、实α≥1+√d，同权hub u、唯一main source的正权lights，side允许任意hub子集及跨source任意light子集，两副本同费非负degree≤d。令T_j为side全light权、m_j为hub数、W_v为source总light权；若每light满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥α[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则真实hub Rosenthal势任单hub局部最小点配全anti为α-PNE。 全部真实偏离和零成本按MODEL弱不等式解释。完整对象逐项见[正文](../current/weighted_congestion/shared_side_truncated_potential.md)对应新节。
+- **Dependencies：** MODEL、同权hub跨source多light side拓扑、全anti状态和真实hub Rosenthal势；κ_d(t)=min(dt,t+1)，UFmulti使用side全部light总权。；直接机制：固定light边际等于真实hub普通成本差；逐lightκ重置，源加权和≤dF(u+W)，由(α−1)²≥d支付全部跨source反馈。。正文自足，不导入外部均衡定理。
+- **Evidence：** 先仅据exact statement独立重构，再读冻结正文逐义务攻击；规范diff及hash见[独立审查](../reviews/weighted_congestion/multisource_shared_side_review.md)。两路Fraction审计实际重跑，源代码/输入/参数/seed及限度由正文合同与JSON记录。
+- **Counterevidence / Objections：** 同权hub、二元对称副本、唯一main source及UFmulti承重；不覆盖异权hub或UF失败，不改变全类OPEN。旧两个Claim身份保持。 无尚成立fatal objection；有限计算不替一般证明。
+- **Status：** complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth限所写范围；Value/Mechanism为上述接口和边界；Novelty/外审未认证；Ambition仍为全类题OPEN。
+- **Related Files：** 正文、独立审查及代码/证据由上述入口与assets.json接入。
+
+## WC-APPROXIMATE-SUPPORT-DISTORTION-v1 — 小用户支持近似成本表示的定量失真障碍
+
+- **ID/version / 中文数学名称：** WC-APPROXIMATE-SUPPORT-DISTORTION-v1，小用户支持近似成本表示的定量失真障碍；独立新身份，不改旧Claim。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 每个m≥1、ε>0，原binary成本V_i=s_i(s_0+εΣ_(l=1)^m s_l)。任意相同玩家/标签的有限MODEL表示允许改正权及任意有限degree；若全部正资源潜在支持≤r≥1且所有玩家/状态V≤Ĉ≤βV，则β≥max{1,m(1+ε)/[(r−1)(1+mε)+mε]}。对称A夹逼给A²同必要界。固定有限r、β选择m和正有理ε即不可表示，原费用仅degree1。 全部真实偏离和零成本按MODEL弱不等式解释。完整对象逐项见[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)对应新节。
+- **Dependencies：** MODEL、相同玩家/二动作标签的完整成本乘性夹逼，允许改权；正资源潜在用户支持r；一个heavy与m名ε玩家的线性全用户成本表。；直接机制：零动作排正资源；light的singleton/pair成本跃升由含heavy资源支付，每条最多付r−1名light，收费到heavy全入成本。。正文自足，不导入外部均衡定理。
+- **Evidence：** 先仅据exact statement独立重构，再读冻结正文逐义务攻击；规范diff及hash见[独立审查](../reviews/weighted_congestion/template_certificates/approximate_support_review.md)。两路Fraction审计实际重跑，源代码/输入/参数/seed及限度由正文合同与JSON记录。
+- **Counterevidence / Objections：** 完整逐状态成本、保零及无辅助玩家承重；原例有全0精确PNE。仅限制此近似表示归约，不排辅助玩家、均衡lift或全类存在，不声称固定参数sharp。 无尚成立fatal objection；有限计算不替一般证明。
+- **Status：** complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth限所写范围；Value/Mechanism为上述接口和边界；Novelty/外审未认证；Ambition仍为全类题OPEN。
+- **Related Files：** 正文、独立审查及代码/证据由上述入口与assets.json接入。
+
+## WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1 — 任意次数类内有序三元时钟的全状态编译障碍
+
+- **ID/version / 中文数学名称：** WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1，任意次数类内有序三元时钟的全状态编译障碍；独立新身份，不改旧Claim。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 显式12玩家/64资源degree8循环窗口binary游戏有24步strict21/20双同序环，但phase(0,0,1)是全部玩家严格exactPNE。任意有限fresh同类递增三元010/101互补pair，pair两侧同一非负非减费用，任何degree/幅度叠加均保留该严格exactPNE。因此仅追加这些clock不能对所有该倍率strict sweep输入保证全状态无PNE。 全部真实偏离和零成本按MODEL弱不等式解释。完整对象逐项见[正文](../current/weighted_congestion/class_front_phase_quotient.md)对应新节。
+- **Dependencies：** MODEL、同权clone类的prefix/suffix front及fresh递增三元010/101同费非负非减时钟；固定8测试actual有理系数输入。；直接机制：front在任意递增三元非触发，所有flip负载为2w→2w或w→3w；故时钟子游戏全front均exactPNE，无法消除base严格PNE。。正文自足，不导入外部均衡定理。
+- **Evidence：** 先仅据exact statement独立重构，再读冻结正文逐义务攻击；规范diff及hash见[独立审查](../reviews/weighted_congestion/ordinal_potentials/class_internal_clock_compiler_review.md)。两路Fraction审计实际重跑，源代码/输入/参数/seed及限度由正文合同与JSON记录。
+- **Counterevidence / Objections：** 只排所写追加compiler；不排跨类、其他arity/phase、不等费pair、辅助玩家或更高倍率专用输入类。旧端点反例仍非PNE，不改其ID；本新fixture是真exactPNE。 无尚成立fatal objection；有限计算不替一般证明。
+- **Status：** complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth限所写范围；Value/Mechanism为上述接口和边界；Novelty/外审未认证；Ambition仍为全类题OPEN。
+- **Related Files：** 正文、独立审查及代码/证据由上述入口与assets.json接入。
