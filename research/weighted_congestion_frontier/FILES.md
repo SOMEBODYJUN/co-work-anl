@@ -288,14 +288,14 @@
 
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
-| [共同研究验收门槛：局部资产、阶段结果与主目标](<ACCEPTANCE.md>) | `research/weighted_congestion_frontier/ACCEPTANCE.md` | 决定数学状态是否可以提升或主目标是否完成时，核对证明、反例攻击、文献范围与残余致命义务。 | 阅读导航；真值查精确正文及账本 |
+| [拥塞匹配上界命题的唯一完成标准与交付验收](<ACCEPTANCE.md>) | `research/weighted_congestion_frontier/ACCEPTANCE.md` | 判断全类匹配上界命题是否已获一般肯定或严格否定证明；核对规模无关常数、独立攻击、残余异议与完整入库，不把局部材料当题目完成。 | 阅读导航；真值查精确正文及账本 |
 | [拥塞协作贡献规则与阶段保存要求](<AGENTS.md>) | `research/weighted_congestion_frontier/AGENTS.md` | 加入该研究目录前核对适用工作规则、子 agent 协作方式及数学入库和状态升级的边界。 | 阅读导航；真值查精确正文及账本 |
 | [阶段成果一键保存：提交范围、失败恢复与远端确认](<CHECKPOINT.md>) | `research/weighted_congestion_frontier/CHECKPOINT.md` | 已有可复用阶段文件后选择正确路径运行保存，遇到同步冲突或断网时按实际失败状态恢复。 | 阅读导航；真值查精确正文及账本 |
 | [研究公屏协议：具体交流、版本与来源](<PROTOCOL.md>) | `research/weighted_congestion_frontier/PROTOCOL.md` | 需要跨对话讨论发现、异议或合作问题时查消息语义和冻结版本；公屏不代替规范研究资产。 | 阅读导航；真值查精确正文及账本 |
 | [共同研究操作手册：恢复、读屏、同步与保存](<RUNBOOK.md>) | `research/weighted_congestion_frontier/RUNBOOK.md` | 实际操作协作程序时查入口和认证配置；不把程序回归或网络状态当作数学结果。 | 阅读导航；真值查精确正文及账本 |
 | [异步公屏的定位、读取入口与资产边界](<board/README.md>) | `research/weighted_congestion_frontier/board/README.md` | 需要查看实时研讨时进入独立公屏分支；重要可复用成果必须另存 main 并连接真实正文。 | 阅读导航；真值查精确正文及账本 |
 | [拥塞可复用工具的提取与使用合同](<toolbox/README.md>) | `research/weighted_congestion_frontier/toolbox/README.md` | 从失败和中间推导提取工具时查原作者、精确假设、证明与复用场景，不能把改名本身当新工具。 | 阅读导航；真值查精确正文及账本 |
-| [完整共同解题启动词：目标、协作与真实验收](<prompts/TEAM.md>) | `research/weighted_congestion_frontier/prompts/TEAM.md` | 新 Work 对话启动平等研究团队时使用，恢复模型和当前状态、自主研究并及时保存准确等级的资产。 | 阅读导航；真值查精确正文及账本 |
+| [匹配上界唯一题目的共同研究启动词](<prompts/TEAM.md>) | `research/weighted_congestion_frontier/prompts/TEAM.md` | 新对话启动团队判定全类匹配上界命题，固定模型、唯一完成门槛、阶段材料位置与保存方法；局部结果保存后继续主问题。 | 阅读导航；真值查精确正文及账本 |
 | [同级研究者交流提示词：自主研究与异步研讨](<prompts/PEER.md>) | `research/weighted_congestion_frontier/prompts/PEER.md` | 需要组织跨对话数学交流时使用，允许同题独立探索和多路线合作，不以任务认领限制研究。 | 阅读导航；真值查精确正文及账本 |
 | [数学工具提取者提示词：从中间结果回收结构](<prompts/EXTRACTOR.md>) | `research/weighted_congestion_frontier/prompts/EXTRACTOR.md` | 独立重建可复用引理、表示、障碍或桥梁，保留出处和承重条件，提供实际复用场景并诚实验收。 | 阅读导航；真值查精确正文及账本 |
 | [论文整理者提示词：真实贡献、完整论证与成稿核验](<prompts/PAPER_WRITER.md>) | `research/weighted_congestion_frontier/prompts/PAPER_WRITER.md` | 出现足够成果后组织论文叙事、证明与图表，执行写作和逐页检查；包装不能改变精确范围或证据等级。 | 阅读导航；真值查精确正文及账本 |

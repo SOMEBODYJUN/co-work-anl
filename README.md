@@ -6,6 +6,8 @@
 
 ## Research Goal / Research Frontier
 
+当前天团的具体题目是：**全类 O(d/ln d) 近似纯均衡存在命题成立还是不成立**。量词与唯一完成标准见[本题验收](research/weighted_congestion_frontier/ACCEPTANCE.md)，下述长期前沿和其他资产不另作本次完成目标。
+
 加权拥塞的目标是刻画非负系数、次数至多 d 的多项式费用下的普遍存在阈值 a_*(d)。已收录的团队一般证明给出奇数环下界 T_d∼d/ln d；已核对文献给出普遍上界 d。**主目标仍开放：缺少匹配的全类存在上界，或超出现有强制偏离证书的新下界机制。**全球优先权与外部同行评审尚未认证。
 
 研究详情从[加权拥塞数学入口](research/current/weighted_congestion/README.md)进入。[当前状态](RESEARCH_STATE.md)只列当前前沿；[精确命题目录](CLAIMS.md)连接真正的命题身份；[失败路线](FAILED_ROUTES.md)区分命题反例与方法限制。

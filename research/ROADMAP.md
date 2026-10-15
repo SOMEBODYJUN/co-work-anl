@@ -6,6 +6,8 @@
 
 精确对象、全类量词和验收条件分别见[模型](weighted_congestion_frontier/MODEL.md)、[主题命题账本](weighted_congestion_frontier/CLAIMS.md)与[验收规范](weighted_congestion_frontier/ACCEPTANCE.md)。
 
+当前天团只判定**全类 O(d/ln d) 存在命题的成立或否定**。以下路线为该问题服务；若走非存在方向，完成必须严格否定该匹配上界命题，局部证书改进或某个固定实例不构成完成。其余研究线作为独立长期资产保留。
+
 | 推进义务 | 已有研究资产 | 必须跨过的界限 |
 | --- | --- | --- |
 | 给出与奇环下界匹配量级的全类存在界 | [奇环机制与精确包络](current/weighted_congestion/README.md)、[稀疏权密度势](current/weighted_congestion/weight_density.md)、[资源局部势拼接](current/weighted_congestion/power_bridge.md) | 结构参数在任意游戏中不受统一控制；受限类上界不能冒充全类结果 |

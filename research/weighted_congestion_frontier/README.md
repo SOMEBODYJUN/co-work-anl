@@ -2,6 +2,8 @@
 
 **数学从[现行整合说明](../current/weighted_congestion/README.md)进入。**主目标 WC-TARGET v1 仍开放，但团队已保存奇数环 T_d∼d/ln d 下界、独立审查及可复用结构工具。不能继续沿用旧版“尚无成果”的描述。
 
+当前天团具体判定全类 O(d/ln d) 近似纯均衡存在命题，给一般证明或严格否定证明才算完成；精确量词、规模无关常数及唯一标准见[本题验收](ACCEPTANCE.md)。局部材料按真实等级保存并继续为该题服务。
+
 新对话读根四入口、[MODEL](MODEL.md)、现行数学 README、[CLAIMS](CLAIMS.md)、[当前状态](RESEARCH_STATE.md)，再按当前义务选择证明与审查。开始工作用[TEAM](prompts/TEAM.md)；修改工具才需要完整读[运行说明](RUNBOOK.md)、[协议](PROTOCOL.md)及程序源码。写作、工具提取各有独立提示词，不要求所有研究者先通读全部上游原文。
 
 ## 当前数学地图

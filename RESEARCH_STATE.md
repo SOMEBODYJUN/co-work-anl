@@ -2,6 +2,8 @@
 
 ## 当前主攻：加权原子拥塞
 
+当前协作集中判定全类 O(d/ln d) 近似纯均衡存在命题，完成须给一般肯定证明或严格否定证明；常数和次数起点不能依赖博弈规模或权重。精确量词与唯一门槛见[本题验收](research/weighted_congestion_frontier/ACCEPTANCE.md)。局部引理、方法障碍和有限实例仍可入库，不能替代该完成标准。
+
 WC-TARGET v1 保持 OPEN。所有已发现远端研究分支的独有成果已经进入共同分类；精确去处见 [FILES.md](research/weighted_congestion_frontier/FILES.md)。旧公屏和旧会话不作为状态来源。
 
 最重要的已保存进展是奇环 hub/cohort 的有限全状态非存在构造：
