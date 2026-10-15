@@ -11,3 +11,5 @@ WC-TARGET v1 OPEN。已分类入 main 的核心进展是奇环有限非存在族
 按当前义务持续推进，完成可复用阶段资产及相应核验后保存到 main。一个对话一个发布标识，内部 subagent 自行协作；不设人数、工作时长、认领或排他任务。常规中途排错自行闭合；重要发现、实质障碍和合作需求才研讨。
 
 当前新增可调用接口：[有限动作全状态对偶](../current/weighted_congestion/template_certificates/finite_action_duality.md)给签名压缩及逐selector严格替代，独立审查/两份Fraction核验齐备；它消去固定动作数下的任意资源数，未控制权向量、人数或动作数的全类最坏倍率。[依游戏最小点选择等价](../current/weighted_congestion/separable_ordinal_obstruction.md)第四节表明，仅要求可分目标全局最小点是均衡并不是额外存在限制。下一步须构造非循环且有统一估计的dual机制，或给增长primal族；不能仅重述等价。
+
+新增[严格反例整数规范形与闭端点](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)：每个固定实α的反例存在等价于整数权、单位单项式、非空策略子类；全类可行倍率[a_*(d),∞)。已独立重构攻击及有理审计，未给规模上限或统一C,d0。下一步仍需对无限规范模板族作统一dual估计，或给超出d/log d的全状态primal族，枚举无输出不能作存在证据。

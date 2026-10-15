@@ -29,3 +29,7 @@ d∈Z_{≥0}。G_d 包含所有有限加权原子拥塞博弈：非空有限 E�
 ## Claim 身份与外部定理
 
 新 claim 必须列 ID/version、Exact Statement、Objects、Domain、Quantifiers、Assumptions、Definitions、Scope、Conclusion、Dependencies、Evidence、Counterevidence/Objections、Status、Related Files。变更任一量词、模型或范围建立新版本。外部定理逐项检查适用条件；工具失败没有数学真值含义。
+
+## 端点的后续已证性质（定义不变）
+
+[WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)在原inf定义下证明：全类可行倍率集是[a_*(d),∞)，因此端点对每个游戏分别可行。该结论不预设某个有限游戏取得全类上确界，也没有解决其增长阶；[严格反例规范形](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)另给逐固定倍率的整数单项式子类等价。

@@ -6,7 +6,7 @@
 
 | 你要研究什么 | 首读与主要资产 | 当前真正缺口 |
 | --- | --- | --- |
-| 加权原子拥塞的普遍存在门槛 | [数学总述](current/weighted_congestion/README.md) → [精确模型](weighted_congestion_frontier/MODEL.md) → 奇环全状态下界、正局部证书包络、结构势和[依游戏可分序势障碍](current/weighted_congestion/separable_ordinal_obstruction.md) | 下界与全类上界仍有对数缺口；需要全类存在机制或更强非存在机制 |
+| 加权原子拥塞的普遍存在门槛 | [数学总述](current/weighted_congestion/README.md) → [精确模型](weighted_congestion_frontier/MODEL.md) → 奇环全状态下界、正局部证书包络、结构势和[依游戏可分序势障碍](current/weighted_congestion/separable_ordinal_obstruction.md) | 下界与全类上界仍有对数缺口；需要全类存在机制或更强非存在机制；[整数规范反例与闭端点](current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)只提供精确搜索接口 |
 | 共同目录双设施的尖锐稳定性 | [黄金比成果与阅读顺序](current/shared/README.md) → 主定理、完整证明、尖锐下界、算法 → 小目录复杂度 | 已有内部成果的外部审查与优先权；实例最优倍率 EPTAS 仍是候选义务 |
 | 异构目录双设施及单交叠边界 | [异构成果与阅读顺序](current/heterogeneous/README.md) → 一般目录候选、单交叠全长锐界、长回应环 | 一般异构上界的候选状态不能被单交叠定理覆盖 |
 | 固定双设施布局的客户均衡 | [局部均衡与精确算法](current/local_and_exact/README.md) → 支持几何、局部强弦、精确求解及成本扩展 | 精确续局、有限证书与普遍全局保证分别核对 |

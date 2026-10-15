@@ -330,6 +330,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- | --- |
 | WC-HIGH-DEGREE-SHARE-v1 | 任意MODEL有限游戏；按每资源真实最低正次数、潜在权份额定义λ_e，零/常数/无人资源取1。 | 每单方势局部min为max λ_e^−1-PNE；纯d次非存在须有严格小份额；固定正权向量、最低次数增长的保证对全部有限拓扑一致趋1。不是全类匹配界。 | [完整正文](weighted_congestion/high_degree_share.md)、[冻结独立攻击](../reviews/weighted_congestion/high_degree_share_review.md)，完整内部证明，未外审/未认证新颖性。 |
 
+## 严格反例的整数规范形与普遍阈值端点
+
+| ID | 精确范围与结论 | 状态与权威正文 |
+| --- | --- | --- |
+| WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1 | 每个固定d≥0、实α≥1，全MODEL无α-PNE反例存在，当且仅当正整数权、单位x^k资源、非空策略反例存在；不保资源数或精确β。 | complete direct proof; independently reconstructed and exactly audited; unrefereed；[完整身份与证明](weighted_congestion/template_certificates/integer_counterexample_normal_form.md)、[独立攻击](../reviews/weighted_congestion/template_certificates/integer_counterexample_normal_form_review.md)。 |
+| WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1 | 单实例可行倍率[β(G),∞)，全类为[a_*(d),∞)，a_*等于规范形β的上确界；不声称一个游戏取得全类sup。 | 同上；没有统一C,d0，全类目标仍OPEN。 |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

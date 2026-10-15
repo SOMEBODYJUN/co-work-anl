@@ -4484,6 +4484,43 @@
         "evidence/runs/weighted_congestion/high_degree_share/independent_verification.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "严格反例的整数单位单项式规范形",
+      "detail": "For every fixed d>=0 and real alpha>=1, a full MODEL no-alpha-PNE game exists iff one with positive integer player weights, unit monomial resources x^k and nonempty strategies exists; no size bound is asserted.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md",
+        "research/reviews/weighted_congestion/template_certificates/integer_counterexample_normal_form_review.md"
+      ],
+      "status": "complete direct proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "普遍阈值的端点闭性",
+      "detail": "Every finite game has an attained finite best factor beta; the universal feasible factors are [a_*(d),infinity), and a_* equals the supremum over the integer monomial class. No single game need attain that supremum.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md",
+        "research/reviews/weighted_congestion/template_certificates/integer_counterexample_normal_form_review.md"
+      ],
+      "status": "complete direct proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-INTEGER-NORMAL-FORM-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "整数单项式规范形的逐状态有理核验",
+      "detail": "Exact finite checks of denominator clearing, literal unit resource costs, action quotients, empty strategies, zero costs, markers and weak endpoints; not a proof for arbitrary real parameters.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_integer_normal_form.py",
+        "evidence/runs/weighted_congestion/template_certificates/integer_normal_form_audit.json"
+      ],
+      "status": "executed finite exact audit"
     }
   ],
   "hyperedges": [
@@ -10869,6 +10906,69 @@
         "evidence/runs/weighted_congestion/high_degree_share/independent_verification.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL"
+      ],
+      "conclusion": "WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1",
+      "statement": "For every fixed d>=0 and real alpha>=1, a full MODEL no-alpha-PNE game exists iff one with positive integer player weights, unit monomial resources x^k and nonempty strategies exists; no size bound is asserted.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md",
+        "research/reviews/weighted_congestion/template_certificates/integer_counterexample_normal_form_review.md"
+      ],
+      "status": "complete direct proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-INTEGER-NORMAL-FORM-AUDIT"
+      ],
+      "conclusion": "WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1",
+      "statement": "Finite exact implementation and boundary checks only; the general real-parameter and endpoint proofs are in the manuscript.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_integer_normal_form.py",
+        "evidence/runs/weighted_congestion/template_certificates/integer_normal_form_audit.json"
+      ],
+      "status": "finite exact checks passed"
+    },
+    {
+      "id": "DERIVE-WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1"
+      ],
+      "conclusion": "WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1",
+      "statement": "Every finite game has an attained finite best factor beta; the universal feasible factors are [a_*(d),infinity), and a_* equals the supremum over the integer monomial class. No single game need attain that supremum.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md",
+        "research/reviews/weighted_congestion/template_certificates/integer_counterexample_normal_form_review.md"
+      ],
+      "status": "complete direct proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-INTEGER-NORMAL-FORM-AUDIT"
+      ],
+      "conclusion": "WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1",
+      "statement": "Finite exact implementation and boundary checks only; the general real-parameter and endpoint proofs are in the manuscript.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_integer_normal_form.py",
+        "evidence/runs/weighted_congestion/template_certificates/integer_normal_form_audit.json"
+      ],
+      "status": "finite exact checks passed"
     }
   ]
 }

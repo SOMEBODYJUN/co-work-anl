@@ -504,3 +504,25 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：无尚成立fatal；潜在份额只是充分界的实例参数，optional padding可使其失去判别力；必要小份额不是坏状态或改善者证书。低次混合/不同玩家乘子不能直接拼接。
 - Status：complete structural proof; internally reviewed; unrefereed。Truth：所述结构类已内部证明；Value：必要小份额与一致高次极限；Novelty：未认证；Mechanism：删去幂差及常数人数势；Ambition：全类目标仍OPEN。
 - Related Files：research/current/weighted_congestion/high_degree_share.md；research/reviews/weighted_congestion/high_degree_share_review.md；tests/audits/weighted_congestion/high_degree_share/verify.py; tests/audits/weighted_congestion/high_degree_share/check_independent.py; evidence/runs/weighted_congestion/high_degree_share/verification.json; evidence/runs/weighted_congestion/high_degree_share/independent_verification.json。
+
+## 严格反例规范形与普遍阈值端点
+
+### WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1 — 严格反例的整数单位单项式规范形
+
+- Exact Statement / Objects / Domain / Quantifiers：每个整数d≥0、每个实α≥1，全MODEL有无α-PNE反例，当且仅当正整数权、每资源费用x^k（0≤k≤d）、每策略非空的有限反例存在；玩家数可保持，不保策略/资源数。
+- Assumptions / Definitions / Scope / Conclusion：严格全状态改善、真实负载；允许起始零费/空策略/异构策略族。逐倍率反例存在归约，不声称保持原实例β或给统一规模界。
+- Dependencies：有限严格余量与连续性、有理稠密、清分母、资源复制和动作取商；无需外部均衡定理。
+- Evidence：完整自足证明、先重构后冻结攻击、Fraction实际复制资源oracle；配套见下。
+- Counterevidence / Objections：α为无理时只断言存在归约；固定有理α的枚举只半判定反例，未输出没有真值含义。
+- Status：complete direct proof; independently reconstructed and exactly audited; unrefereed。Truth为规范形等价；Value为可枚举反例域；Novelty未认证；Mechanism为strict margin；Ambition不含全类上界。
+- Related Files：[正文](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)、[独立攻击](../reviews/weighted_congestion/template_certificates/integer_counterexample_normal_form_review.md)、`tests/audits/weighted_congestion/template_certificates/verify_integer_normal_form.py`、`evidence/runs/weighted_congestion/template_certificates/integer_normal_form_audit.json`。
+
+### WC-UNIVERSAL-THRESHOLD-ENDPOINT-v1 — 普遍阈值的端点闭性
+
+- Exact Statement / Objects / Domain / Quantifiers：每个d≥0，单实例可行集为非空闭射线[β(G),∞)，β有限且由纯状态取得；有理游戏β有理。全类可行集是[a_*(d),∞)，a_*=sup_G β(G)，也等于整数单位单项式且非空策略子类的sup。
+- Assumptions / Definitions / Scope / Conclusion：MODEL原对象和inf定义不变；零成本直接分类。全类端点在每游戏分别可行，不意味着有某游戏取得sup或a_*有理/可计算。
+- Dependencies：有限状态闭射线、正文自足(d+1)粗存在界、WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1（规范子类sup等式）。
+- Evidence：完整证明及独立冻结攻击；有限审计只检查编码与端点语义。
+- Counterevidence / Objections：端点闭性没有缩小当前d/log d与d的缺口；没有全类参数紧致性假设。
+- Status：complete direct proof; independently reconstructed and exactly audited; unrefereed。Truth为端点；Value为精确全类量词接口；Novelty未认证；Mechanism为闭射线交；Ambition仍OPEN。
+- Related Files：同前项。

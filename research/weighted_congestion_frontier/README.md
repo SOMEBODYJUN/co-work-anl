@@ -23,3 +23,5 @@
 已闭合的方法审查入口：[任意玩家乘子与依游戏可分序势线性障碍](../current/weighted_congestion/separable_ordinal_obstruction.md)。只否定所写全改善边证书，全类匹配上界仍开放。
 
 不预设势的精确接口：[有限动作签名压缩与全状态择证对偶](../current/weighted_congestion/template_certificates/finite_action_duality.md)。固定权重/动作数的所有资源游戏等价于有限单项式系数族；普遍α存在等价于每个全状态selector自有对偶证书。统一于所有模板的倍率仍未证明。
+
+[严格反例的整数单项式规范形与普遍阈值端点](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)接有限动作择证接口：固定实倍率反例可只用整数权和单位单项式资源，且a_*端点可行；无全类规模截止界。配套独立审查、Fraction程序和冻结结果从正文或FILES进入。
