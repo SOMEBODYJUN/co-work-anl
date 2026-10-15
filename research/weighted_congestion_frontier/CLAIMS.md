@@ -793,3 +793,21 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：AS与源预算是充分假设，不证明所有该拓扑游戏都满足；仍限同权hub、unique-light/unique-source和同费副本。此ID扩大degree/alpha域并改变假设，未静默改UF-v1；后置抽象攻击不冒充初次未读稿全证明重构。 所述范围无尚成立fatal；外审和新颖性未认证。
 - Status：complete conditional proof; independently attacked after abstraction; exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留WC-TARGET OPEN。
 - Related Files：[正文](../current/weighted_congestion/shared_side_truncated_potential.md)、[独立审查](../reviews/weighted_congestion/shared_side_truncated_potential_review.md)，配套代码、输入、证据见正文审计合同。
+
+## WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1 — 潜在可动用户共占高度的三角排序势
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：对任意d≥2 MODEL游戏，先吸收singleton固定玩家背景；非空可动玩家图置i→j当wi>wj且二者各有策略使用同一资源，k为DAG最长路径顶点数。则有A_(d,k)-PNE及全部严格A改善下降的身份子集资源可加势。A仍为A=Σ_{j<k}((d−1)/A)^j在[1,d)唯一根；全局不同权值数任意大，无可动者精确PNE。
+- Dependencies：MODEL、跨资源共同层秩、原三角势根及排序边际、第7节背景吸收；完整证明见原稿第11–12节。H2只在闭词端点使用边际估计。
+- Evidence：先仅据新exact Claim自主重构，再攻击冻结hash；两路Fraction从身份排序/实际端点重算，运行参数/seed/精度/hash见正文第13节与JSON。
+- Counterevidence / Objections：潜在共占height是同一个全局玩家图参数，不能换成逐资源种类数或单点用户数；k无全类统一界。原有限权类ID中的k不变，本新ID单独扩大输入类。 已修去解释中未经本命题证明的存在暗示，无尚成立fatal；未外审/新颖性未认证。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth为所写结构界/必要条件；Value为相容层秩复用；Mechanism为身份子集排序及固定势望远镜；Ambition全类仍OPEN。
+- Related Files：[正文第11–13节](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)、[独立重构与冻结攻击](../reviews/weighted_congestion/weight_types/interaction_height_review.md)，代码/证据由正文进入。
+
+## WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1 — 严格改善闭合词中的实际共占长权链
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：对任意d≥2、实α≥1 MODEL游戏的非空有限严格α改善闭合真实单方词，令M为至少移动一次玩家；其余按沿词不变策略吸收背景。在M上按wi>wj及某端点状态实际同资源置弧，height为k，则α<A_(d,k)。所以任正整数K≥1、α≥A_(d,K)的这种闭词必含至少K+1顶点降权实际共占链，各边可来自不同状态/资源。
+- Dependencies：MODEL、跨资源共同层秩、原三角势根及排序边际、第7节背景吸收；完整证明见原稿第11–12节。H2只在闭词端点使用边际估计。
+- Evidence：先仅据新exact Claim自主重构，再攻击冻结hash；两路Fraction从身份排序/实际端点重算，运行参数/seed/精度/hash见正文第13节与JSON。
+- Counterevidence / Objections：只为给定严格改善闭词的必要链，不构造近d环，不证明无PNE；未访问状态不用相容，不把整链断言为同一状态共占。动态换秩改变势，尚无SCC出口或瞬态dual。 已修去解释中未经本命题证明的存在暗示，无尚成立fatal；未外审/新颖性未认证。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth为所写结构界/必要条件；Value为相容层秩复用；Mechanism为身份子集排序及固定势望远镜；Ambition全类仍OPEN。
+- Related Files：[正文第11–13节](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)、[独立重构与冻结攻击](../reviews/weighted_congestion/weight_types/interaction_height_review.md)，代码/证据由正文进入。

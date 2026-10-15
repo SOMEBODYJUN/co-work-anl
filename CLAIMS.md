@@ -16,3 +16,5 @@ Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须�
 [有限次局部成本与择证矩接口](research/current/weighted_congestion/template_certificates/selector_local_moments.md)登记保全部成本的D维压缩、小支撑dual及完全暂态parity机制；[循环窗口前沿商](research/current/weighted_congestion/class_front_phase_quotient.md)另登记精确表示与不同步出口反例。具体量词及假设修复只由主题账本和审查给出，均不升级WC-TARGET。
 
 共享侧资源与真实时钟另有三个精确ID：`WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1`、`WC-SHARED-SIDE-BUDGET-POTENTIAL-v1`和`WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1`，见[主题精确账本](research/weighted_congestion_frontier/CLAIMS.md)。前两者区分UF子类与直接AS+B判据；后者区分充分LP、必要预算和有限43次证书。均未升级WC-TARGET。
+
+共占高度扩展另有 `WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1` 与 `WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1`，见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)及原三角势正文第11–13节。两个新ID分别为潜在图结构存在界和实际严格闭词必要链；未改旧权类ID。

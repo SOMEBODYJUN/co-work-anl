@@ -3604,7 +3604,7 @@
     {
       "path": "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
       "title": "有限权类别的三角排序混合势：隐式次数界与背景吸收",
-      "purpose": "在跨尺度研究时读取：给全局有限权类的隐式A界、目标量级类别门槛、可动类别必要条件、固定背景吸收及窄簇取整；明确k无界仍趋d。",
+      "purpose": "有限可动权类的一般A_(d,k)三角势、固定背景与窄簇取整；第11–13节另用新ID把k放宽为潜在共占高度，并给实际严格改善闭词必要长权链。先分清三个旧ID和两个高度新ID的参数。",
       "topic": "weighted_congestion",
       "role": "account",
       "package": "有限权类别三角排序混合势",
@@ -3614,7 +3614,12 @@
         "tests/audits/weighted_congestion/weight_types/verify_triangular_classes.py",
         "tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py",
         "evidence/runs/weighted_congestion/weight_types/triangular_classes.json",
-        "evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json"
+        "evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json",
+        "research/reviews/weighted_congestion/weight_types/interaction_height_review.md",
+        "tests/audits/weighted_congestion/weight_types/verify_interaction_height.py",
+        "tests/audits/weighted_congestion/weight_types/independent_interaction_height.py",
+        "evidence/runs/weighted_congestion/weight_types/interaction_height.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_interaction_height.json"
       ]
     },
     {
@@ -4572,6 +4577,81 @@
         "tests/audits/weighted_congestion/independent_shared_side_budget.py",
         "evidence/runs/weighted_congestion/shared_side_truncation/author.json",
         "evidence/runs/weighted_congestion/shared_side_truncation/independent.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/weight_types/interaction_height_review.md",
+      "title": "共占降权图高度势：独立重构与冻结攻击",
+      "purpose": "核对新H1/H2相容层秩接口的先重构、冻结hash和全部量词；记录删除未证存在暗示、同层异权/同权异层及端点背景义务。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "weight_interaction_height",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "tests/audits/weighted_congestion/weight_types/verify_interaction_height.py",
+        "tests/audits/weighted_congestion/weight_types/independent_interaction_height.py",
+        "evidence/runs/weighted_congestion/weight_types/interaction_height.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_interaction_height.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/weight_types/verify_interaction_height.py",
+      "title": "交互高度三角势：身份子集与实际端点作者核验",
+      "purpose": "用精确有理根验证秩相容真实边际、完整多资源game、端点height低于潜在height及高单点高度精确PNE边界，不调用数值根。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "weight_interaction_height",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/interaction_height_review.md",
+        "tests/audits/weighted_congestion/weight_types/independent_interaction_height.py",
+        "evidence/runs/weighted_congestion/weight_types/interaction_height.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_interaction_height.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/weight_types/independent_interaction_height.py",
+      "title": "交互高度与闭词：独立真实边际核验",
+      "purpose": "独立计算图秩和右端积分，检查同层异权、同权异层、t1/2、固定背景、保留资源与闭词望远镜，不导入作者程序。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "weight_interaction_height",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/interaction_height_review.md",
+        "tests/audits/weighted_congestion/weight_types/verify_interaction_height.py",
+        "evidence/runs/weighted_congestion/weight_types/interaction_height.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_interaction_height.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/weight_types/interaction_height.json",
+      "title": "交互高度三角势：作者冻结精确运行",
+      "purpose": "保存显式有理权/秩夹具、根参数、完整game逐偏离和非严格闭词的实际检查；有限证据不证明严格环存在。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "weight_interaction_height",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/interaction_height_review.md",
+        "tests/audits/weighted_congestion/weight_types/verify_interaction_height.py",
+        "tests/audits/weighted_congestion/weight_types/independent_interaction_height.py",
+        "evidence/runs/weighted_congestion/weight_types/independent_interaction_height.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/weight_types/independent_interaction_height.json",
+      "title": "交互高度及实际闭词：独立冻结运行",
+      "purpose": "保存独立秩配对、原始/混合边际、多资源偏离、端点闭词及源码/seed/版本，供交叉重放。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "weight_interaction_height",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/interaction_height_review.md",
+        "tests/audits/weighted_congestion/weight_types/verify_interaction_height.py",
+        "tests/audits/weighted_congestion/weight_types/independent_interaction_height.py",
+        "evidence/runs/weighted_congestion/weight_types/interaction_height.json"
       ]
     }
   ]

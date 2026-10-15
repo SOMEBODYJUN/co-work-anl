@@ -460,6 +460,18 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | WC-SHARED-SIDE-BUDGET-POTENTIAL-v1 | 相同unique-light/shared-hub/unique-source拓扑，任意d≥0、实α≥1；H_j(m)=Σ_{r≤m}[G_j(w+ru)−αG_j(ru)]_+、M_v=αF_v(u+W_v)−F_v(u)。若逐light AS为F_v(W_v)+ΣG_j(w+|H_j|u)≤α[F_v(u+w)+ΣG_j(w)]，逐source Σ_jH_j(|H_j|)≤M_v，则同一有限势每个单hub局部最小点配全anti是αPNE。无需UF或α≥A_d。 | complete conditional proof; independently attacked after abstraction; exactly audited; unrefereed；[正文](weighted_congestion/shared_side_truncated_potential.md)、[独立审查](../reviews/weighted_congestion/shared_side_truncated_potential_review.md)。AS与源预算是充分假设，不证明所有该拓扑游戏都满足；仍限同权hub、unique-light/unique-source和同费副本。此ID扩大degree/alpha域并改变假设，未静默改UF-v1；后置抽象攻击不冒充初次未读稿全证明重构。 |
 
+## 潜在可动用户共占高度的三角排序势
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1 | 对任意d≥2 MODEL游戏，先吸收singleton固定玩家背景；非空可动玩家图置i→j当wi>wj且二者各有策略使用同一资源，k为DAG最长路径顶点数。则有A_(d,k)-PNE及全部严格A改善下降的身份子集资源可加势。A仍为A=Σ_{j<k}((d−1)/A)^j在[1,d)唯一根；全局不同权值数任意大，无可动者精确PNE。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[原稿新增第11–13节](weighted_congestion/weight_bands/finite_weight_class_potentials.md)、[独立攻击](../reviews/weighted_congestion/weight_types/interaction_height_review.md)。潜在共占height是同一个全局玩家图参数，不能换成逐资源种类数或单点用户数；k无全类统一界。原有限权类ID中的k不变，本新ID单独扩大输入类。 |
+
+## 严格改善闭合词中的实际共占长权链
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1 | 对任意d≥2、实α≥1 MODEL游戏的非空有限严格α改善闭合真实单方词，令M为至少移动一次玩家；其余按沿词不变策略吸收背景。在M上按wi>wj及某端点状态实际同资源置弧，height为k，则α<A_(d,k)。所以任正整数K≥1、α≥A_(d,K)的这种闭词必含至少K+1顶点降权实际共占链，各边可来自不同状态/资源。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[原稿新增第11–13节](weighted_congestion/weight_bands/finite_weight_class_potentials.md)、[独立攻击](../reviews/weighted_congestion/weight_types/interaction_height_review.md)。只为给定严格改善闭词的必要链，不构造近d环，不证明无PNE；未访问状态不用相容，不把整链断言为同一状态共占。动态换秩改变势，尚无SCC出口或瞬态dual。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

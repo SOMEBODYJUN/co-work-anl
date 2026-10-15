@@ -351,3 +351,70 @@ Truth、Value、Novelty、Mechanism、Ambition 分开：本文是经过内部独
 为说明固定 d、k→∞时的精确边界，令单调根极限L≤d。若L≤d−1，根右侧的k项和无界，矛盾；否则(d−1)/L<1，几何和极限给L=1/[1−(d−1)/L]，故L=d。
 
 Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。上述审查分别记录实际重构范围；有限核验不承担任意实参数、任意类别数的一般证明。
+
+## 11. 新 Claim：潜在可动用户共占高度的三角排序势
+
+**ID/version：WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1。中文数学名称：潜在可动用户共占高度的三角排序势。**
+
+**Objects / Domain / Quantifiers / Assumptions。** 对任意整数d≥2及任意MODEL有限游戏，先按第7节精确吸收策略族只有一个元素的固定玩家；剩余可动玩家集记M。若M为空，取原游戏的唯一状态即精确PNE。若M非空，在M上置弧i→j，当且仅当w_i>w_j且有某资源e分别属于i、j的至少一种合法策略。包含零费用资源，弧不要求在某个选定状态实际出现。沿弧权严格下降，因此为有限DAG。令k≥1为有向路径最大顶点数（孤点计1）。
+
+**Exact Statement / Definitions / Scope / Conclusion。** 该游戏有A_(d,k)-PNE，且下述按玩家身份子集定义的资源可加实势在每个严格A_(d,k)改善下下降。A_(d,k)仍为式(1)的根，但本新ID的k是共占图高度，原有限权类ID中的k仍为权类别数，未作静默改写。全局不同权值数、人数、权比及策略数可无界；k本身无全类统一上界。
+
+**Dependencies。** WC-MODEL、原WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1的根性质与第2–5节排序边际机制、第7节非负背景展开，以及下述跨资源相容层秩。没有导入外部均衡定理。
+
+**Proof。** 对玩家i取r_i为终止于i的最长有向路径顶点数，故1≤r_i≤k。任一资源的两名潜在可动用户，若w_i>w_j，则r_i<r_j；因此按r非降排列时权非增，同层共用户必等权。不同资源上的同层玩家可以异权，同权玩家也可处于不同层；不能把每层当作单一全局代表权。
+
+对每个b=1,...,k，在每个当前用户集合U上按层序
+
+    π_b=(k,k−1,...,b+1,1,2,...,b)
+
+排列，再按固定玩家身份处理同层次序，定义
+
+    P_(b,c)(U)=Σ_(j按该序) w_j c(Σ_(l不晚于j)w_l).
+
+这是用户身份子集的函数，不是全局代表权计数公式。同层共用户等权，故移动者可等价地放在该层末端来算插入边际。对秩r_i的玩家，第2–4节的后缀论证逐资源给
+
+    b<r_i: w_i c(Y)≤Δ_i P_(b,c)≤d w_i c(Y),
+    b=r_i: Δ_i P_(b,c)=w_i c(Y),
+    b>r_i: 0≤Δ_i P_(b,c)≤w_i c(Y).
+
+取第4节同一λ_b、S_r，混合F_c=Σ_bλ_bP_(b,c)，得到
+
+    h_i c(Y)≤Δ_iF_c≤A_(d,k)h_i c(Y),   h_i=w_iS_(r_i)>0.
+
+h_i跨全部资源一致。把所有资源势相加，式(15)对每个真实多资源偏离成立，含保留资源的非负项；严格A改善严格降势，有限全局最小点给A-PNE。恢复固定玩家保持全部约束。常数/零费、空策略、缺席层、零偏离和k=1全由同一式覆盖。λ和S只用有限和，t=(d−1)/A=1时无几何分母奇点。
+
+**Evidence / Status / Objections。** 完整所述范围证明；先只据新图高度命题独立重构，再攻击冻结稿与独立Fraction真实边际核验。Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。无尚成立fatal；新颖性/外审未认证。仅每资源分别有k种权值仍不够，跨资源链可能更长；未证明任意游戏的高度可压缩。Truth为结构存在界，Value为共享层秩接口，Mechanism为身份子集排序，Ambition保留全类题OPEN。
+
+## 12. 新 Claim：严格改善闭合词的实际共占长权链
+
+**ID/version：WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1。中文数学名称：严格改善闭合词中的实际共占长权链。**
+
+**Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion。** 对每个d≥2、实数α≥1、任意MODEL游戏及任意非空有限真实单方偏离闭合词
+
+    s⁰→s¹→...→sᴸ=s⁰,
+
+假设每步均严格α改善。令M为词中至少移动一次的玩家；其余玩家在整词策略固定，按该固定策略吸收为背景。在M上置弧i→j，当w_i>w_j且存在词中某端点状态sᵗ及某资源被i、j实际同时使用。令有向路径最大顶点数为k≥1。则
+
+    α<A_(d,k).
+
+所以对每个正整数K≥1，α≥A_(d,K)的严格改善闭合词必有至少K+1顶点的重到轻实际共占路径。各弧可来自不同状态/资源，没有同一状态或同一资源同时容纳整链的断言。
+
+**Dependencies。** 第11节的相容层秩边际机制、原三角根随k单调、未移动背景吸收、同一实势沿闭词望远镜。不是把全潜在共用图偷换成某单点实际图。
+
+**Proof。** 对此实际图取同一终点深度层秩。用第11节的身份排序定义资源势于未移动玩家策略固定的整个状态面；只在闭词端点使用其边际估计。对每次删除资源，旧端点的全体移动共用户两两相容；对每次添加资源，新端点相容。其余资源保留不变。因此式(15)沿每步成立，不需要未访问状态或全部潜在用户相容。若α≥A_(d,k)，非负成本使每步严格α改善也是严格A_(d,k)改善；势沿闭词严格下降后却回到同一初值，矛盾。根随k非减给K版本。M非空由严格非空偏离词保证；没有定义A_(d,0)。
+
+**Evidence / Counterevidence / Objections / Status。** 上述完整望远镜证明与独立先重构后冻结攻击；代码只检查端点真实边际，不声称样例闭词都是严格改善词。Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。长链只是改善环必要条件，不是无PNE充分条件；闭词、所有状态有出口及全类非存在量词不同。未外审、新颖性未认证。
+
+**对全类的真实缺口。** 若存在接近d的严格改善环，其实际共占高度必须超过相应门槛；本推论本身不构造这样的环。动态重排当前活跃层秩会改变势本身，不能逐步望远镜；没有保证总能选择严格改善且不把累计图高度增大的边，也没有高链非吸收SCC的统一出口或瞬态dual。单点低高度并非PNE必要：两相同x^d资源、任意多个两两异权玩家各选其一时，每态至少一资源容纳至少一半玩家（其降权链随人数增长），但平方总负载势最小点是精确PNE，因为任何严格有利搬移均降低该平方和。故不能把“无低高度状态”当全类反例。
+
+## 13. 共占高度扩展的审查与精确核验
+
+[独立重构与冻结攻击](../../../reviews/weighted_congestion/weight_types/interaction_height_review.md)记录整合前冻结hash，先重构的是新高度/端点接口，审查者已知原三角势；不冒充从零发现旧机制。整合已删除未证“可以越过高度”的存在暗示，明确α为实数≥1、K为正整数。原有限权类、固定背景和取整三个ID保持原范围。
+
+在仓库根执行：
+
+- `python3 tests/audits/weighted_congestion/weight_types/verify_interaction_height.py`：作者按玩家身份的层秩相容边际、固定背景、多资源游戏和实际端点闭词；输出stdout，不覆盖冻结结果。
+- `python3 tests/audits/weighted_congestion/weight_types/independent_interaction_height.py`：独立图/层秩、相同权异层、同层异权、t=1/2根、实际图小于潜在图和多资源保留项；不导入作者代码。
+
+冻结结果为`evidence/runs/weighted_congestion/weight_types/interaction_height.json`及`independent_interaction_height.json`。源码、参数、seed或无随机性、精确Fraction、Python版本与hash由JSON/代码明确。有限核验不替代任意实权的上述一般证明。两个新Claim的Related Files为本节审查/代码/证据、本文第2–5节及第7节。

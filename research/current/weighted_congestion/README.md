@@ -96,3 +96,9 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 - [锚定双轮时钟真实有向差分](anchored_clock_actual_margins.md)：`WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1`给合法g、非法g+ΣΔ、n+L充分LP、保环必要ΣS预算及逐次数κ稳定条件。不能把必要预算当充分条件或firstopp失败当PNE。固定四玩家43次全状态证书与uniform91选值均精确复验；没有最优性或增长族结论。[先重构与冻结攻击](../../reviews/weighted_congestion/ordinal_potentials/actual_clock_margins_review.md)和三路代码/显式输入/证据均从正文进入。
 
 全类题保持OPEN。下一步应控制无界类的全局选态、跨source预算或实际clock在增长输入族上的α ln q/q；只调已被封闭的uniform公式不能完成负向目标。
+
+## 潜在与实际共占高度的接续
+
+[原三角势正文第11–13节](weight_bands/finite_weight_class_potentials.md)用两个新ID登记共占高度扩展：`WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1`允许全局任意多权值，只需潜在可动玩家降权图height=k；`WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1`给严格α闭词的实际共占链必要条件α<A_(d,k)。原有限权类、固定背景、窄簇取整三个ID不变。共同层秩→身份子集排序边际→全状态势最小/闭词端点望远镜是证明链；同层异权不能按全局代表权计数。[独立重构与攻击](../../reviews/weighted_congestion/weight_types/interaction_height_review.md)、两路代码和证据由正文进入。
+
+目前需控制的是无界交互高度的选态，而不仅是全局权类数。长链不是无PNE充分条件；低单点高度不是PNE必要。动态重排会换势，尚无累计图高度控制、SCC统一出口或全类瞬态dual。

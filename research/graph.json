@@ -5350,6 +5350,67 @@
         "evidence/runs/weighted_congestion/shared_side_truncation/budget_boundaries.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "潜在可动用户共占高度的三角排序势",
+      "detail": "对任意d≥2 MODEL游戏，先吸收singleton固定玩家背景；非空可动玩家图置i→j当wi>wj且二者各有策略使用同一资源，k为DAG最长路径顶点数。则有A_(d,k)-PNE及全部严格A改善下降的身份子集资源可加势。A仍为A=Σ_{j<k}((d−1)/A)^j在[1,d)唯一根；全局不同权值数任意大，无可动者精确PNE。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/interaction_height_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "严格改善闭合词中的实际共占长权链",
+      "detail": "对任意d≥2、实α≥1 MODEL游戏的非空有限严格α改善闭合真实单方词，令M为至少移动一次玩家；其余按沿词不变策略吸收背景。在M上按wi>wj及某端点状态实际同资源置弧，height为k，则α<A_(d,k)。所以任正整数K≥1、α≥A_(d,K)的这种闭词必含至少K+1顶点降权实际共占链，各边可来自不同状态/资源。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/interaction_height_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-POTENTIAL-INTERACTION-HEIGHT-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "潜在可动用户的降权共占图及共同层秩",
+      "detail": "顶点为可动玩家，潜在同资源且权严格下降置弧；按最长路终点高度r取身份排序，同层只在各资源共用时等权。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md"
+      ],
+      "status": "specified exact graph"
+    },
+    {
+      "id": "WC-REALIZED-INTERACTION-HEIGHT-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "闭词移动者实际共占图与固定背景面",
+      "detail": "仅用闭词端点实际同占置降权弧；未移动者沿词固定；共同层秩只需端点插删的用户集相容。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md"
+      ],
+      "status": "specified endpoint graph"
+    },
+    {
+      "id": "WC-INTERACTION-HEIGHT-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "共占高度势的身份排序与实际闭词有理核验",
+      "detail": "作者精确根/完整game；独立同层异权、同权异层、固定背景与端点height低于潜在height，有限核验不替代一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "tests/audits/weighted_congestion/weight_types/verify_interaction_height.py",
+        "tests/audits/weighted_congestion/weight_types/independent_interaction_height.py",
+        "evidence/runs/weighted_congestion/weight_types/interaction_height.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_interaction_height.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -12784,6 +12845,75 @@
         "evidence/runs/weighted_congestion/shared_side_truncation/author.json",
         "evidence/runs/weighted_congestion/shared_side_truncation/independent.json",
         "evidence/runs/weighted_congestion/shared_side_truncation/budget_boundaries.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-POTENTIAL-INTERACTION-HEIGHT",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-TRIANGULAR-ORDER-DEFINITION",
+        "WC-POTENTIAL-INTERACTION-HEIGHT-DEFINITION",
+        "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1"
+      ],
+      "conclusion": "WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1",
+      "statement": "共同身份层秩使原三角边际成立；全状态最小化或闭词端点望远镜分别推出所述结论。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-POTENTIAL-INTERACTION-HEIGHT",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-INTERACTION-HEIGHT-AUDIT"
+      ],
+      "conclusion": "WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1",
+      "statement": "有限真实边际/闭词实施核验，不从有限例推一般存在或非存在。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "tests/audits/weighted_congestion/weight_types/verify_interaction_height.py",
+        "tests/audits/weighted_congestion/weight_types/independent_interaction_height.py",
+        "evidence/runs/weighted_congestion/weight_types/interaction_height.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_interaction_height.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-REALIZED-INTERACTION-CHAIN-CYCLE",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-TRIANGULAR-ORDER-DEFINITION",
+        "WC-REALIZED-INTERACTION-HEIGHT-DEFINITION"
+      ],
+      "conclusion": "WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1",
+      "statement": "共同身份层秩使原三角边际成立；全状态最小化或闭词端点望远镜分别推出所述结论。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-REALIZED-INTERACTION-CHAIN-CYCLE",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-INTERACTION-HEIGHT-AUDIT"
+      ],
+      "conclusion": "WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1",
+      "statement": "有限真实边际/闭词实施核验，不从有限例推一般存在或非存在。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "tests/audits/weighted_congestion/weight_types/verify_interaction_height.py",
+        "tests/audits/weighted_congestion/weight_types/independent_interaction_height.py",
+        "evidence/runs/weighted_congestion/weight_types/interaction_height.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_interaction_height.json"
       ],
       "status": "finite exact audit"
     }

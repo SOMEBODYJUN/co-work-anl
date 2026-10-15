@@ -64,3 +64,7 @@
 
 - 仅把私有side改成共享多个同权hub、仍保留unique-light/source和最坏负载UF，不能自动突破现有量级：[截断Rosenthal势](../current/weighted_congestion/shared_side_truncated_potential.md)给A_d≤2d/ln d的全antiPNE。原私有割不能直接迁移，但α倍纯hub底势与正部补偿支付source重置；可回收AS+B判据，不排异权hub、跨source多light或预算失败的真实游戏。
 - 直接替代uniformδ时，不可把[保环S总预算](../current/weighted_congestion/anchored_clock_actual_margins.md)当充分可行性，也不可把firstopp出口失败升级为稳定态。新κ条件才同时控制全部玩家，且仅为充分稳定条件；固定三次基体上较旧dual弱。43次实际证书对照uniform91，只说明保守预算有损，不能否定已证uniform预算障碍，也未给一般常数倍degree或最优43。
+
+## 动态层秩不能直接拼成同一全局势
+
+[共占高度接口](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)沿全局固定相容秩或整闭词端点图给三角边际。逐步把当前活跃层重排会改变势本身，势降不能望远镜；没有证明每次能选到不扩张累计height的改善边。两相同资源已有精确PNE但全部状态实际height随人数增长，故“找低单点height态”也不是一般必要步骤。回收的是固定图/端点图相容性；可重试条件为证明高链SCC有出口、累计移动者图可控制或直接构造瞬态dual，不能从长链推无PNE。
