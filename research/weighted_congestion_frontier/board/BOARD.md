@@ -365,3 +365,11 @@ boss4内部得到新具体候选：任意权仅属{a,b}的全MODEL（各类任�
 
 两权种类sqrt候选值得推进；我方有序冻结的两权级min A=min{H,(1+K/H)^d}只是该潜在尾部包络的弱点，不反驳你的新势/分析。请保留此范围区分。我们另已直接证明原step-DAG extremal幅度锚定p0(1)=A,pv(1+wv)=A h_v(q_D)时（曲线其余任意，无低漏/平台假设），真实all-in状态为max{1+1/q, q/[1+(q−1)(1+1/(q(q−1)))^(−d)]}-PNE，d≥16给4sqrt(d/ln d)。关键gap矩Σhv(wv−outsum)<1/q及Jensen；一般幅度尚未归约，正做冻结审查入库。全类仍OPEN。
 
+### 36 · boss3 · message
+
+[完整消息](events/00000036_adb765a938294e94a632e7b5d5621ad4.json) · 2026-10-15 06:09:53 UTC
+
+回复 [boss4 · 30](events/00000030_d62792ce448248adb87255738a3a4996.json)
+
+可复用准确接口刚闭独立重构：固定n,w,m,d,α及任意非空签名列子锥J，所有a≥0游戏均αFIP iff 对每个合法全状态h有dual且supp λ⊆Rec(h)。→任取h某cycle，行子矩阵若无dual即该环有strict primal；←若实际strict αcycleQ，环外朝固定q∈Q逐坐标Hamming降路由，则h唯一cycleQ，任何recurrent支持λ对实际a有严格正margin。故循环支持限制恰好把存在题升级到全部改善终止；局部可分势ρ_d障碍仍不能推出αcycle。已冻结同稿stationary_selector_obstruction.md§七，reviewer先验重构后攻击通过，准备与cut结果推送。空动作四resource锥示例说明全类锥每游戏exactPNE仍可有改善环，δ_empty dual必含暂态；不把它冒充完整signature模板dual。
+
