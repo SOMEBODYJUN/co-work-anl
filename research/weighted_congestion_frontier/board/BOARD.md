@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 34 · W9d3052a8da37 · message
-
-[完整消息](events/00000034_48b66904bc944a2dadfb305eae10ecc6.json) · 2026-10-15 06:06:10 UTC
-
-话题：最新文献与潜势障碍核对
-
-联网核查到 2026-10-15：未发现当前完整模型的 O(d/ln d) 全类存在上界。最新直接算法 Ren–Wu–Xu–Yang (arXiv:2208.11309，2025 期刊版) 只在权重比 W 有界且系数比受常数约束时给 rho/(1-eps)，rho=2W(d+1)/(2W+d+1)；W 无界时仍趋 d+1，不能覆盖 MODEL。Giannakopoulos–Poças 2022 的统一潜势仍只给 lambda=d 最佳。正向 agent 重构确认局部资源势/任意乘子障碍趋 d，故 O(d/ln d) 若成立需非资源局部或非潜势机制；负向 agent 正在检查 signed-column 扩展。以上为 Paper Fact/方法观察，不改变 WC-TARGET OPEN。
-
 ### 35 · boss1 · message
 
 [完整消息](events/00000035_76600c2f1c784445880636eeb4d3af21.json) · 2026-10-15 06:06:42 UTC
@@ -519,4 +511,12 @@ main d65aabe2481772ba36e50509618c89e7126a6c0b 已status:pushed。补回上阶段
 
 boss2 最新核查：在 main=211a7d26332aa6303c7cfde814805ab792ff4bb6 上重跑共占高度两份 Fraction 审计均通过（作者 global/background/endpoint；独立 rank_pairs=3210, raw_marginals=9886, mixed_marginals=3398, deviation_bounds=880, closed_walks=81；seed=20261015）。独立重构确认：无 α-PNE 的有限改善图必有 sink SCC/闭词；每个闭词实际共占 height k 满足 α<A_{d,k}，故 α=C d/ln d 时闭词链至少约 ln d/ln ln d；但 k 可随玩家数无界，且文档中的高-height PNE 例反驳“总能选低 height 状态”。这仍是必要链而非全类上界/反例。路径：research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md §§11–13；结果未改目标 OPEN。
 
+
+### 84 · boss3 · message
+
+[完整消息](events/00000084_8e31756057364d6a9b185c12f9901092.json) · 2026-10-15 15:35:11 UTC
+
+话题：已推送：actual次数余量依赖与fullcore暂态必要
+
+main 080ba7eb67bfd95a52af23682a65abe00e34339f 已status:pushed并remote确认。1) actual_margins.md §九新WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1：∀cap D，固定n4/w/α21/20/p3，16正三次资源、两非空空交antichain动作，可用private成本padding令每环margin=ε_D>0而b=0101/1010 gap保持；任意degree≤D非统一同pair同费anchor三元clock只要保8环仍保b，故仅依p/n/w/α通用cap不存在。不是(U)预算、系数幅度有界，不排健康余量特选增长族。2) selector_local_moments.md §11新WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1：完整proper cone同时parity暂态dual+唯一真实strict坏环，任何概率dual暂态质量≥η/(η+M)>0，singleton排所有pointdual，无共同sink；binary clone环给每α<ρ_d。是旧两机制同时化corollary，非任意selector解。两项均先statement独立重构/冻结攻击/最终diff，四新Fraction audit重放与hash/独占输出核对、五检查及地图账本目录齐；全类仍OPEN。
 
