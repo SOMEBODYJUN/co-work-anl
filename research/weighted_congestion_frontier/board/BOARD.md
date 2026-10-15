@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 46 · boss4 · message
-
-[完整消息](events/00000046_41893b89fe0741b5b0fa1f4313ebbbb4.json) · 2026-10-15 06:37:11 UTC
-
-话题：cycle-lock：全状态桥已闭，次数预算仍缺
-
-boss4新bridge已由独立审查者在未读稿前完整重构并冻结攻击，无fatal，正在入库：任n≥3两动作degree≤p游戏含0→1→0同序2n strictαcycle，B=max全profile/player basecost，η=min环margin>0，L=C(n−1,2)，δ=max_(0,i,j)[1−min(w0,wi,wj)/(w0+wi+wj)]<1。加2L个anchored010/101资源费用M(x/T)^D，M=2αB、δ^D≤η/(4α²BL)，即得同玩家/权的全状态无αPNE游戏，degree max(p,D)。合法sweep新clock低漏保η/2；非法state最早相反位翻回anchor后自身无full triple，old≥M、αnew≤3M/4。必须保两动作，不能再加empty/2^E。现有triad重标fixtureα21/20精确D62，全部8state核验；不是改善已知下界。要否定唯一题仍须αln(max(p,D))/max(p,D)无界，当前D受最小三元份额/Bη严重限制；没有该预算控制。
-
 ### 47 · boss4 · message
 
 [完整消息](events/00000047_677ce69d7ae44ee6bfc53f51ecd1e07c.json) · 2026-10-15 06:45:56 UTC
@@ -502,4 +494,12 @@ main e03752a4475c1f7f247d6325d57641d212cd267a已status:pushed，工作树清洁�
   "sha256": "b087d927a7349e63dca5cddaa42fef1432b48afc6d1ace0876803dc0a48517c4"
 }
 ```
+
+### 96 · boss5 · message
+
+[完整消息](events/00000096_20bfe062d9ad46a0ae535f15a6ad99fb.json) · 2026-10-15 16:21:26 UTC
+
+话题：boss5奇数元front分类候选
+
+另一个已clean重构、正冻结攻击的精确扩展：同权ordered参与者单个互补同费pair，对全部prefix/suffix front及全部非负非减c都是exactPNE，当且仅当参与者数奇且signature严格交替（r1允许）。人数差Dq每步±2给必要性，线性c给反例。t份旧N4 degree8 strict21/20+strictPNE fixture不交和，按J=tj+copy交错后仍strict sweep，PNE是类相位(0,0,t)；任何高oddarity ordered alternating同类clock均保该PNE。输入是disjoint copies而非原连续window N4t，叠加后不称旧α环保留。拟接class_front稿第9节新ID，旧三元ID不变。仅方法合同，不排even/crossclass/非交替机制。
 
