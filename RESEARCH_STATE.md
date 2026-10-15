@@ -38,3 +38,7 @@ R1 的线性重置实现与 R3 的同次数实现归属于共同机制，保留�
 根 README 保持稳定地图。本文件只呈现现在，过程提交留在 Git 历史。具体文件状态、来源和冻结证据分开登记，见 [仓库工作程序](research/REPOSITORY_GUIDE.md) 与 [逐文件索引](research/weighted_congestion_frontier/FILES.md)。
 
 研究读取现从[按问题分流的总目录](research/README.md)进入，各专题按证明链组织；[中文资产总目录](research/CATALOG.md)登记具体文件名、作用和状态依据。现行数学审查按模型归位，投稿旧判断从历史来源追溯，旧路线用固定 Git 版本恢复。命名与导航整理没有新增或升级数学结论。
+
+已审新边界：[择证循环支撑](research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)中单位速度平稳dual无界损失，仿射按移动者权重有显式dual，仅支撑recurrent states等价全模板αFIP；一般存在路线不应无证增加此要求。[有向分叉强迫割均衡](research/current/weighted_congestion/directed_fanout_forcing_cut.md)在UF下对异权light/多出侧/自环给α≥T_d全反位PNE。真正未解是全类统一dual估计或新全状态primal；可判别的下界逃逸点为UF失败、侧资源多hub共享及动作副本非对称，当前无闭合机制。
+
+[阶跃DAG极值幅度的多项式全入状态](research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)已直接控制真实多项式成本：不要求低漏/平台保真，幅度(N)下d≥16给4√(d/ln d)状态。全类题仍OPEN；当前最具体新缺口是任意卫星幅度如何归约或怎样选择其他稳定light集合，不能只改变已锚定费用形状。

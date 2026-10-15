@@ -3087,6 +3087,200 @@
       ]
     },
     {
+      "path": "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+      "title": "全状态择证的单位速度障碍与循环支撑边界",
+      "purpose": "设计全状态dual时读取：单位速度平稳要求损失无界；仿射循环可按移动者权重重加权；仅支撑回返状态等价全模板αFIP。区分存在性与全改善终止。",
+      "topic": "weighted_congestion",
+      "role": "account",
+      "package": "择证循环支撑边界",
+      "related_paths": [
+        "research/reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_stationary_selector_obstruction.py",
+        "evidence/runs/weighted_congestion/template_certificates/stationary_selector_obstruction_audit.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md",
+      "title": "择证平稳障碍、仿射循环和回返支撑：独立重构审查",
+      "purpose": "核对分阶段先从exact Claim独立重构、再攻击冻结稿的范围；覆盖全状态路由、全部签名、self-loop、归一化及PNE与αFIP量词。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "择证循环支撑边界",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_stationary_selector_obstruction.py",
+        "evidence/runs/weighted_congestion/template_certificates/stationary_selector_obstruction_audit.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/template_certificates/verify_stationary_selector_obstruction.py",
+      "title": "择证循环支撑：全部签名与真实资源有理核验",
+      "purpose": "复算唯一循环的单位平稳失败及加权dual；枚举含当前动作的tagged selector；实际资源例区分已有PNE与环支撑不可行。输出独占创建。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "择证循环支撑边界",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "research/reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md",
+        "evidence/runs/weighted_congestion/template_certificates/stationary_selector_obstruction_audit.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/template_certificates/stationary_selector_obstruction_audit.json",
+      "title": "择证循环支撑：精确审计冻结结果",
+      "purpose": "记录确定性K、权向量、tagged selector输入、代码摘要和实际覆盖；全部结论范围限有限实现，未宣称高次全类存在界。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "择证循环支撑边界",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "research/reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_stationary_selector_obstruction.py"
+      ]
+    },
+    {
+      "path": "research/current/weighted_congestion/directed_fanout_forcing_cut.md",
+      "title": "分叉双人侧资源反馈：统一轻玩家强迫下的割均衡",
+      "purpose": "研究扩展奇环强迫机制时读取：异权light和任意私有侧资源分叉共同消耗唯一源主资源预算，加权割在α≥T_d给全反位PNE；非UF或多hub共享侧资源另证。",
+      "topic": "weighted_congestion",
+      "role": "account",
+      "package": "有向分叉强迫割均衡",
+      "related_paths": [
+        "research/reviews/weighted_congestion/directed_fanout_forcing_cut_review.md",
+        "tests/audits/weighted_congestion/verify_directed_fanout_forcing_cut.py",
+        "evidence/runs/weighted_congestion/directed_fanout_forcing_cut_audit.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/directed_fanout_forcing_cut_review.md",
+      "title": "分叉侧反馈割均衡：独立重构与自环、端点攻击",
+      "purpose": "核查先独立预算/割推导再攻击冻结稿的记录，特别负Q正部、同主预算、弱UF、自环真实hub偏离和样本次数前提。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "有向分叉强迫割均衡",
+      "related_paths": [
+        "research/current/weighted_congestion/directed_fanout_forcing_cut.md",
+        "tests/audits/weighted_congestion/verify_directed_fanout_forcing_cut.py",
+        "evidence/runs/weighted_congestion/directed_fanout_forcing_cut_audit.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/verify_directed_fanout_forcing_cut.py",
+      "title": "分叉侧反馈：真实资源与局部割的精确核验",
+      "purpose": "按固定seed和完整有理输入重建真实资源、遍历状态及全部local cut minima；检查弱UF等号、零费、自环和整数有向图CUT。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "有向分叉强迫割均衡",
+      "related_paths": [
+        "research/current/weighted_congestion/directed_fanout_forcing_cut.md",
+        "research/reviews/weighted_congestion/directed_fanout_forcing_cut_review.md",
+        "evidence/runs/weighted_congestion/directed_fanout_forcing_cut_audit.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/directed_fanout_forcing_cut_audit.json",
+      "title": "分叉侧反馈：局部割与全状态核验冻结结果",
+      "purpose": "保存实际有理参数、seed/recipe、代码和Python版本、全部有限状态与局部割检查；不把有限扫描用作一般图证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "有向分叉强迫割均衡",
+      "related_paths": [
+        "research/current/weighted_congestion/directed_fanout_forcing_cut.md",
+        "research/reviews/weighted_congestion/directed_fanout_forcing_cut_review.md",
+        "tests/audits/weighted_congestion/verify_directed_fanout_forcing_cut.py"
+      ]
+    },
+    {
+      "path": "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+      "title": "阶跃DAG极值幅度的多项式全入状态",
+      "purpose": "直接核查任意多项式形状下的实际全入状态；读取幅度(N)、真实light/root偏离及缺口矩/Jensen，避免把子类保证误作全类界。",
+      "topic": "weighted_congestion",
+      "role": "account",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+      "title": "阶跃DAG极值幅度的多项式全入状态的独立重构与冻结攻击",
+      "purpose": "核查先从exact statement重构再读冻结作者稿的覆盖、路径法/双重求和法一致性及常数4、d0=16的解析证明。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+      "title": "DAG极值幅度全入状态的定义级资源审计",
+      "purpose": "从1099小DAG筛整数q并补大空图；重建全部资源和策略、归一化常数/混合/纯幂费用，精确检查每个全入状态偏离。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+      "title": "DAG全入状态的独立成本与缺口矩审计",
+      "purpose": "不调用作者代码，以seed524170实际图/权/系数检查真实偏离、缺口矩和Jensen比较；含degree0及W近1边界。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+      "title": "DAG极值幅度全入状态的作者冻结核验",
+      "purpose": "记录作者网格、算术、环境、代码hash及2715个实际游戏的有限覆盖；不由测试推一般实q结论。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json",
+      "title": "DAG全入状态的独立冻结核验",
+      "purpose": "记录独立210个实际输入和1470偏离、seed、完整费用系数与代码hash；精确复验不覆盖冻结文件。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json"
+      ]
+    },
+    {
       "path": "research/current/weighted_congestion/weight_bands/two_weight_order_blend.md",
       "title": "两权类别的双排序混合势：平方根次数存在界",
       "purpose": "在稠密两权群相互作用时读取：给任意人数/权比的A_d-PNE及全部严格A_d改善终止的完整一般证明，核对其全局两权限制。",

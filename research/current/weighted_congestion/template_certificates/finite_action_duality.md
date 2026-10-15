@@ -114,3 +114,7 @@ h 的集合有限，故 (5) 是有限但可能极大的条件。固定 n,w,m,d �
 - 冻结输出：`evidence/runs/weighted_congestion/template_certificates/exact_audit.json`。
 
 运行代码默认只读输入并在 stdout 输出记录；`--output NEW_PATH` 用独占创建拒绝覆盖旧证据。Fraction 不使用容差。审计覆盖范围由实际输出登记；一般实参数结论依赖正文证明。
+
+## 后续准确边界
+
+[单位速度平稳与循环支撑](stationary_selector_obstruction.md)给出：附加单位速度平稳方程损失无界；仿射可用移动者权重的显式循环dual；若对每个h强制dual仅支撑回返状态，恰等价该模板全部费用游戏的αFIP。因此一般PNE存在义务不应无证添加这些额外条件。原本稿替代与量词不变。

@@ -17,3 +17,7 @@ WC-TARGET v1 OPEN。已分类入 main 的核心进展是奇环有限非存在族
 新结构边界：[有序尾部冻结](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)给阶段选择的A-PNE，并精确证明最佳A在两权级族无界；[DAG端点泄漏](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)以全部路径总权给检测系统iff及固定ε的锐√d辅助阈值。下一步应控制真实而非潜在尾部/重开早组，或绕过统一端点低漏并直接核查多项式全部偏离；两项均不判定全类目标。
 
 [两权类别双排序混合势](../current/weighted_congestion/weight_bands/two_weight_order_blend.md)闭合全局两权子类：A_d=(1+√(4d−3))/2，任意人数与权比、任意混合费用/多资源策略，全部严格A_d改善终止。独立重构及有限精确核验齐备；不是全类Cd/ln d界。下一步攻击多权种类扩展的共同乘子。
+
+已审新边界：[择证循环支撑](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)中单位速度平稳dual无界损失，仿射按移动者权重有显式dual，仅支撑recurrent states等价全模板αFIP；一般存在路线不应无证增加此要求。[有向分叉强迫割均衡](../current/weighted_congestion/directed_fanout_forcing_cut.md)在UF下对异权light/多出侧/自环给α≥T_d全反位PNE。真正未解是全类统一dual估计或新全状态primal；可判别的下界逃逸点为UF失败、侧资源多hub共享及动作副本非对称，当前无闭合机制。
+
+[阶跃DAG极值幅度的多项式全入状态](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)已直接控制真实多项式成本：不要求低漏/平台保真，幅度(N)下d≥16给4√(d/ln d)状态。全类题仍OPEN；当前最具体新缺口是任意卫星幅度如何归约或怎样选择其他稳定light集合，不能只改变已锚定费用形状。

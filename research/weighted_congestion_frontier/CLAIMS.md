@@ -568,3 +568,49 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：已修正a=b时按固定类别选乘子和严格A_d改善措辞；未见所述范围内fatal。三类没有同样互补精确边际，全类任意多权仍OPEN。
 - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=子类完整内部证明；Value=任意权比/人数的两权桥；Novelty=未认证；Mechanism=双排序互补边际；Ambition=结构子类。
 - Related Files：research/current/weighted_congestion/weight_bands/two_weight_order_blend.md；research/reviews/weighted_congestion/weight_types/two_weight_order_blend_review.md；tests/audits/weighted_congestion/weight_types/verify_order_blend.py；tests/audits/weighted_congestion/weight_types/independent_order_blend.py；evidence/runs/weighted_congestion/weight_types/order_blend.json；evidence/runs/weighted_congestion/weight_types/independent_order_blend.json。
+
+### WC-SELECTOR-UNIT-SPEED-STATIONARY-BARRIER-v1 — 单位速度平稳择证的无界损失
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For every finite real alpha>=1 and d>=1, some finite positive rational weight two-action template and full selector have no unit-speed stationary dual, already witnessed by an affine column; this is no nonexistence result. 完整中文逐项身份及符号见[自足正文](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+- Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+- Evidence：[独立先重构后冻结攻击](../reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+- Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+- Related Files：上述正文、审查及从正文审计合同连接的code/run。
+
+### WC-AFFINE-SELECTOR-CYCLE-DUAL-v1 — 任意仿射择证的循环权重对偶
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For every finite positive-weight action template and tagged selector, every selected cycle gives an affine dual by lambda_s proportional to the selected mover weight; self-loops are allowed and all affine columns sum to zero at alpha=1. 完整中文逐项身份及符号见[自足正文](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+- Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+- Evidence：[独立先重构后冻结攻击](../reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+- Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+- Related Files：上述正文、审查及从正文审计合同连接的code/run。
+
+### WC-RECURRENT-SUPPORT-FIP-EQUIVALENCE-v1 — 循环支撑择证与全模板有限改善性等价
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For fixed finite weights, action counts, degree, real alpha>=1 and any fixed nonempty signature-column subcone, every selector admits a dual supported on its recurrent states iff every nonnegative-coefficient game on that template has no strict alpha-improvement cycle; this is stronger than mere PNE existence. 完整中文逐项身份及符号见[自足正文](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+- Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+- Evidence：[独立先重构后冻结攻击](../reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+- Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+- Related Files：上述正文、审查及从正文审计合同连接的code/run。
+
+### WC-DIRECTED-FANOUT-FORCING-CUT-v1 — 分叉双人侧反馈的统一强迫割均衡
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For d>=2 and alpha>=T_d, every finite unique-source light/multihead-private-pair-side topology satisfying the weak uniform aligned-light forcing inequalities admits an all-anti alpha-PNE selected by any local minimum of the stated weighted cut; no unrestricted existence claim. 完整中文逐项身份及符号见[自足正文](../current/weighted_congestion/directed_fanout_forcing_cut.md)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+- Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+- Evidence：[独立先重构后冻结攻击](../reviews/weighted_congestion/directed_fanout_forcing_cut_review.md)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+- Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+- Related Files：上述正文、审查及从正文审计合同连接的code/run。
+
+## WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1 — 阶跃DAG极值幅度的多项式全入状态
+
+- Exact Statement / Conclusion：任意非空有限simple DAG，root权1、正轻权W<1且outsum<w_v、原双列binary策略；两列相同非零非负degree≤d费用，d≥1。令q=q_D>1、h_v=(1+Σ_in h_u)/q且Σh=q−1，存在A>0使p0(1)=A、pv(1+w_v)=A h_v。真实全入状态是max{1+1/q,B_d(q)}-PNE，B_d(q)=q/[1+(q−1)(1+1/[q(q−1)])^(−d)]；d≥16时统一为4√(d/ln d)-PNE。不要求低漏/高平台保真，但必须保留极值幅度条件。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：对每个上述有限DAG、合法正实权和实系数；准确资源、策略与幅度(N)见[正文](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)第1节。费用正归一化，不将任意MODEL的零费用/空策略偷换进子类。
+- Dependencies：MODEL、WC-R1-DAG-STEP的q/h及路径展开、真实负载、单项式次数界、总权缺口矩、Jensen。与端点低泄漏预算无逻辑依赖。
+- Evidence：一般直接证明；先仅由exact statement独立重构，再逐式攻击冻结hash；两份不互相导入的Fraction实际资源审计。
+- Counterevidence / Objections：仅限所写DAG策略及极值幅度；任意幅度/全类策略尚无归约，不是本题一般肯定证明，也不是非存在下界。未发现所写范围内fatal；只升内部结果，外审/新颖性未认证。
+- Status：complete restricted proof; independently reconstructed and exactly audited; unrefereed。Truth为明确状态的实际存在界；Value为极值幅度模拟边界；Novelty未认证；Mechanism为缺口矩和Jensen；Ambition保留全类题OPEN。
+- Related Files：[正文](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)、[独立审查](../reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md)；具体代码和冻结记录见正文审计合同。

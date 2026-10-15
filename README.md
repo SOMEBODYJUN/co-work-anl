@@ -33,7 +33,7 @@
 | 成果包 | 精确成果和剩余限制 | 何时读取 |
 | --- | --- | --- |
 | 加权拥塞奇环 | 无限下界及正局部证书的精确包络；线性重置与同次数两种实现，内部独立审查，未外审 | 当前研究必读[整合说明](research/current/weighted_congestion/README.md) |
-| 加权拥塞工具 | 文献源族锐包络、完整对称拓扑限制、密度势、高次份额近精确势、[有序权组冻结与参数锐式](research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md)、[DAG低泄漏预算](research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)、资源局部势拼接、有限非对称分离与方法障碍；逐条审查等级不同 | 按具体义务选择[文件与状态表](research/weighted_congestion_frontier/FILES.md) |
+| 加权拥塞工具 | 文献源族锐包络、完整对称拓扑限制、密度势、高次份额近精确势、[有序权组冻结与参数锐式](research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md)、[DAG低泄漏预算](research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)与[极值幅度实际状态界](research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)、资源局部势拼接、有限非对称分离与方法障碍；逐条审查等级不同 | 按具体义务选择[文件与状态表](research/weighted_congestion_frontier/FILES.md) |
 | 双设施 | 共同目录尖锐 φ 及构造、稀疏异构尖锐 ρ、实例复杂度和四地点无 FPTAS；一般异构 2 保留候选状态 | [共同目录](research/current/shared/README.md)、[异构](research/current/heterogeneous/README.md) |
 | 任意设施数 | 一般因子 2 存在性及有限构造；一般输入位多项式算法仍开放 | [主定理及算法前沿](research/current/multi_facility/README.md) |
 | 顺序客户吸引 | 小人数和结构目录的福利上界、真实完整策略反例及安全值桥障碍；一般半覆盖仍开放 | [分支地图](research/current/customer_attraction/README.md) |
@@ -65,3 +65,5 @@
 | history/README.md | 仍有来源价值的原稿及 Git 恢复指针；追溯时按需读 |
 
 日常研究共同保存到 **main**。`wcg/board` 仅承担简短异步研讨；旧工作分支在内容入库并确认原提交可达后删除。程序不再创建随机会话分支。每个对话使用独立本地 clone，一个稳定发布标识，子 agent 无需登记；人数和工作时长不由提示词设限。
+
+全类非势接口的两个准确边界：[择证平稳与循环支撑](research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)区分概率dual与全改善终止；[有向分叉强迫割均衡](research/current/weighted_congestion/directed_fanout_forcing_cut.md)排除唯一源、私有双人侧资源在UF下越过T_d的放大。二者均未完成全类判定。

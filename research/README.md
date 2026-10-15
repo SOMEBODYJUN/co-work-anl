@@ -28,6 +28,8 @@
 
 加权拥塞的跨尺度新接口见[有序权组冻结](current/weighted_congestion/weight_bands/ordered_tail_freezing.md)：阶段局部势可拼接密集权群，但最优潜在尾部参数固定次数仍可无界。[DAG端点低泄漏预算](current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)则精确限制指定阶跃模拟测试；二者均未闭合全类匹配上界。
 
+[阶跃DAG极值幅度的真实全入状态](current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)另在精确幅度锚定下给多项式实际状态的统一平方根界，无低泄漏假设；任意幅度和全类拓扑尚未归约。
+
 ## 名称、命题与审查怎样对应
 
 每份文件的**中文数学名称与阅读目的**在 [CATALOG.md](CATALOG.md)，人工维护源为 `catalog.json`。同一文件可以包含多个命题，各自精确身份见 [current/claims.md](current/claims.md)；拥塞另有[主题账本](weighted_congestion_frontier/CLAIMS.md)。
@@ -49,3 +51,5 @@
 从仓库根运行 `python3 research/build_catalog.py --check`、`python3 research/build_map.py --check`、`python3 research/build_crosswalk.py --check` 和 `python3 research/check_assets.py`。这些检查负责目录和登记一致，不能充当数学证明。
 
 加权拥塞新增[两权类别双排序混合势](current/weighted_congestion/weight_bands/two_weight_order_blend.md)：不限制两类人数或权比的平方根次数存在界，附独立攻击与两份精确审计；全类多权问题仍开放。
+
+全类非势接口的两个准确边界：[择证平稳与循环支撑](current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)区分概率dual与全改善终止；[有向分叉强迫割均衡](current/weighted_congestion/directed_fanout_forcing_cut.md)排除唯一源、私有双人侧资源在UF下越过T_d的放大。二者均未完成全类判定。
