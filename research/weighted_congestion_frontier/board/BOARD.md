@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 18 · boss1 · message
-
-[完整消息](events/00000018_46849dd7304143f2a4be63b8fc01cf1d.json) · 2026-10-15 05:43:49 UTC
-
-话题：cohort实际匹配上界：max{2,T_d}候选已独立重构
-
-boss1团队现在得到完整候选：任意一般n_i cohort、正实u_i,v_i、两动作/组内侧资源同形非负degree≤d多项式（含零）的真实奇环有max{2,T_d}-PNE。普通r=0组取exact light稳定q_i≤floor(n_i/2)，active缺陷段p∈[q,n−q]；无均衡的端点连接迫全环low或high。all-low取p=max稳定区间，n′=n−2p、平移费用Ftilde(x)=F(x+p v)保留原u/v，将真实strict inequalities还原section8正多项式证书；α≥T_d矛盾。all-high用q≤floor(n/2)给V≥(α−1)G1及反向light不等式，α≥2时产品矛盾。root和先行重构review逐式攻击暂未见fatal；正在入库/真实resource Fraction核验。因d≥7有T_d>2，同形cohort类实际阈值将恰为T_d且端点存在。全类O(d/logd)仍OPEN。请有具体objection立即贴出。
-
 ### 19 · boss3 · message
 
 [完整消息](events/00000019_fcba1820541443e9868a8327bd1bfd13.json) · 2026-10-15 05:44:12 UTC
@@ -529,4 +521,23 @@ boss4当前两包已freeze独立审查收尾：1) 循环窗口有T扭转平移�
 话题：阶段提交与文献核查
 
 boss2 阶段 checkpoint 已推送 main 60c40ffe4098db688d8fe1fc6f69fa726c0b3ef5。新增/更新：research/weighted_congestion_frontier/LITERATURE.md（重新核查 2002.07466v3 §7 的 gap 与本轮有限 primary-source 检索范围，明确 Phi_d 不是存在因子）；research/weighted_congestion_frontier/tools/work.py（允许 WCG_ACTOR 环境变量安全固定本轮角色，默认行为不变）。catalog/map/crosswalk/assets/WC 结构检查及 py_compile 全部通过。主目标仍 OPEN：本轮没有 C,d0 或严格全状态否定族。
+
+### 68 · boss4 · message
+
+[完整消息](events/00000068_dd576e031998489c920b1c33dd45ebd9.json) · 2026-10-15 13:47:31 UTC
+
+话题：已推送：全成本局部矩接口与不同步前沿精确边界
+
+main已status:pushed：成果commit38cd5c7fb520e826f060f678aa6deb48d3163fe8，合并远端后tip48a1e09172d50a3c8e64c20797d4c066eca62a1c；最终合入仅文献记录/work actor环境选项，五检查已重跑过，clean。1) research/current/weighted_congestion/template_certificates/selector_local_moments.md SHA a6a89aab5a2c3ccf06a3fc89e84293ad253840c6aa105dac535185a80b3f71d7：WC-DEGREE-LOCAL-COST-COMPRESSION/SELECTOR-LOCAL-MOMENT-INTERFACE/TRANSIENT-PARITY-SELECTOR-DUAL v1，保全cost/deviation的≤D正monomial+markers，convΨ∩K^-与≤D+1支撑，一mover阈值矩、完全暂态parity可行（非必要）。独立先重构后f454固定攻击通过，freeze变动及精确diff如实记录。2) research/current/weighted_congestion/class_front_phase_quotient.md SHA 0237ee38595753602e3a11202410b232b817194a5a5442015b481dcf4d0e3dd1：WC-CLONE-FRONT-PHASE-QUOTIENT/WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION v1，扭转相位商+12player strictcycle但稳定错位front。独立审查发现缺席class空动作标签合并的模型域遗漏，首登v1已补每类参与test/保留zero资源，修复后scopePASS。两套Fraction各独立重放、4run及目录/地图/精确账本/graph齐备。全类题仍OPEN；下一步是对任意selector真正moment hull求统一polar交点，或超出类内clock自动front出口的同步机制。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "38cd5c7fb520e826f060f678aa6deb48d3163fe8",
+  "path": "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+  "sha256": "a6a89aab5a2c3ccf06a3fc89e84293ad253840c6aa105dac535185a80b3f71d7"
+}
+```
 
