@@ -59,3 +59,8 @@
 ## 用低阶局部一致矩替代完整selector支撑多面体
 
 [局部矩精确接口](../current/weighted_congestion/template_certificates/selector_local_moments.md)说明资源测试只看≤d对手，但可行feature必须来自conv{Ψ_h(s)}。擅自删掉全局selector-support兼容性会扩大可行集；D维或小支撑只改表示，未证明每selector可行。可回收张量基、正锥消元、dual小支撑和parity暂态例；重试须对真正凸包与资源极锥给统一相交证明，不可把parity例当暂态必要。
+
+## 共享侧强迫与真实时钟预算的新边界
+
+- 仅把私有side改成共享多个同权hub、仍保留unique-light/source和最坏负载UF，不能自动突破现有量级：[截断Rosenthal势](../current/weighted_congestion/shared_side_truncated_potential.md)给A_d≤2d/ln d的全antiPNE。原私有割不能直接迁移，但α倍纯hub底势与正部补偿支付source重置；可回收AS+B判据，不排异权hub、跨source多light或预算失败的真实游戏。
+- 直接替代uniformδ时，不可把[保环S总预算](../current/weighted_congestion/anchored_clock_actual_margins.md)当充分可行性，也不可把firstopp出口失败升级为稳定态。新κ条件才同时控制全部玩家，且仅为充分稳定条件；固定三次基体上较旧dual弱。43次实际证书对照uniform91，只说明保守预算有损，不能否定已证uniform预算障碍，也未给一般常数倍degree或最优43。

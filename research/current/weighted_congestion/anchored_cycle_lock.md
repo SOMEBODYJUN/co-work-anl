@@ -149,3 +149,5 @@ G'的费用次数至多max{p,D}，新增2L个资源，每个新增资源费用�
 ## 次数保持的精确架构边界
 
 [三次固定基体证书](anchored_clock_degree_barrier.md)证明：即使独立调所有anchor0三元pair的非负degree≤3多项式，只要保留两条弱环边，指定环外状态仍稳定。这比统一δ预算大D的保守分析更强，但只限制明示固定架构，不反驳本稿允许提高D的一般定理，也不排除常数倍degree。
+
+[实际有向差分接口](anchored_clock_actual_margins.md)在相同literal架构下允许逐三元任意非负多项式并保留新旧clock费用，给n+L充分LP、必要S预算和全玩家κ条件；不把uniform低漏条件当必要。固定四玩家例有43次真实证书，而其uniform预算选值91；这不是一般次数保持定理。

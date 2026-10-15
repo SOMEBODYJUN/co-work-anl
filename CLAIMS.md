@@ -14,3 +14,5 @@ Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须�
 [统一低泄漏锚定时钟预算的普适次数障碍](research/current/weighted_congestion/uniform_clock_budget_barrier.md)为新增限定方法命题；精确ID与全部量词在主题账本，不改变WC-TARGET身份。
 
 [有限次局部成本与择证矩接口](research/current/weighted_congestion/template_certificates/selector_local_moments.md)登记保全部成本的D维压缩、小支撑dual及完全暂态parity机制；[循环窗口前沿商](research/current/weighted_congestion/class_front_phase_quotient.md)另登记精确表示与不同步出口反例。具体量词及假设修复只由主题账本和审查给出，均不升级WC-TARGET。
+
+共享侧资源与真实时钟另有三个精确ID：`WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1`、`WC-SHARED-SIDE-BUDGET-POTENTIAL-v1`和`WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1`，见[主题精确账本](research/weighted_congestion_frontier/CLAIMS.md)。前两者区分UF子类与直接AS+B判据；后者区分充分LP、必要预算和有限43次证书。均未升级WC-TARGET。

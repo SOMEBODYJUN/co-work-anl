@@ -5246,6 +5246,110 @@
         "research/current/weighted_congestion/class_front_phase_quotient.md"
       ],
       "status": "definition"
+    },
+    {
+      "id": "WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "锚定双轮时钟的有向差分、线性预算与逐次数锐效率",
+      "detail": "任意n≥3、α≥1、正权两动作MODEL基体的严格双同序环，任意逐三元非负多项式同费010/101锚定pair：两半合法margin同为g_i，非法firstopp i的真实clock margin恰g_i+Σ_{j later同anchor}Δ_ij，Δ≥0。γ_i为两半base margin之min、B覆盖全部base成本时，γ_i+g_i>0及每i<j的g_i+Δ_ij>αB给全状态无αPNE的n+L条充分线性约束。保环必要Σg=−(α−1)ΣS、(α−1)ΣS<Γ；degree≤D的Δ/S锐界为逐0..D单项式max，一般不取最高次；κ逐状态列界另给保原αPNE的全玩家充分条件。明示四玩家三次基体有43次实际证书，原uniform预算选值91。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/actual_clock_margins_review.md"
+      ],
+      "status": "complete stated-scope interface proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "同权主玩家共享侧资源的统一强迫截断势均衡",
+      "detail": "对每个d≥2、有限同权u>0 hubs/任意正异权lights，每light唯一source、每side唯一light并允许任意hub子集H_j及空集/含source、两动作副本同费非负degree≤d；若α≥A_d=[1−(d−1)d^(−d/(d−1))]^(−1)，且逐light弱UF为F_v(u+w)+ΣG_j(w)≥α[F_v(W_v)+ΣG_j(w+|H_j|u)]，则所写截断Rosenthal势任hub单翻位局部最小点配全anti lights给αPNE。A_d≤2d/ln d对全部d≥2，常数仅限该子类。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/shared_side_truncated_potential_review.md"
+      ],
+      "status": "complete structural proof; independent bottleneck reconstruction and frozen attack; exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-SHARED-SIDE-BUDGET-POTENTIAL-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "同权主玩家共享侧资源的直接侧势预算均衡",
+      "detail": "相同unique-light/shared-hub/unique-source拓扑，任意d≥0、实α≥1；H_j(m)=Σ_{r≤m}[G_j(w+ru)−αG_j(ru)]_+、M_v=αF_v(u+W_v)−F_v(u)。若逐light AS为F_v(W_v)+ΣG_j(w+|H_j|u)≤α[F_v(u+w)+ΣG_j(w)]，逐source Σ_jH_j(|H_j|)≤M_v，则同一有限势每个单hub局部最小点配全anti是αPNE。无需UF或α≥A_d。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/shared_side_truncated_potential_review.md"
+      ],
+      "status": "complete conditional proof; independently attacked after abstraction; exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-ANCHORED-ACTUAL-CLOCK-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "非统一同费锚定时钟的真实差分合同",
+      "detail": "严格双同序环、逐三元非负多项式、g/Δ/S/κ及固定次数列效率；不预设uniform低漏预算。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md"
+      ],
+      "status": "specified exact contract"
+    },
+    {
+      "id": "WC-SHARED-SIDE-UF-MODEL",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "同权hub共享侧资源与最坏负载强迫",
+      "detail": "唯一source/light的共享side拓扑及UF，用w+|H_j|u覆盖侧最大负载；不是私有双人side模型。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "specified exact topology"
+    },
+    {
+      "id": "WC-SHARED-SIDE-BUDGET-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "全反位稳定与截断侧势的源重置预算",
+      "detail": "同权unique-light/source拓扑的AS及ΣH≤M；H正部和，势在hub局部最小点选态。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "specified sufficient assumptions"
+    },
+    {
+      "id": "WC-ACTUAL-CLOCK-MARGINS-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "真实时钟差分与43次全状态证书的有理核验",
+      "detail": "三路literal审计含先重构几何、κ、43次所有状态与uniform91幂反查，有限证据不替代一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_actual_clock_margins.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_actual_clock_geometry.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_actual_clock_certificate.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/actual_clock_margins.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_actual_clock_geometry.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_actual_clock_certificate.json",
+        "examples/weighted_congestion/anchored_actual_clock_degree43.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-SHARED-SIDE-TRUNCATION-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "共享侧资源与直接预算的独立真实负载核验",
+      "detail": "作者与独立UF资源审计及非UF AS+B边界；含A2端点、source∈H、空/零费用。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_shared_side_truncation.py",
+        "tests/audits/weighted_congestion/independent_shared_side_truncation.py",
+        "tests/audits/weighted_congestion/independent_shared_side_budget.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/independent.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/budget_boundaries.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -12576,6 +12680,112 @@
         "research/reviews/weighted_congestion/ordinal_potentials/class_fronts_review.md"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-ANCHORED-ACTUAL-MARGINS",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-ANCHORED-ACTUAL-CLOCK-DEFINITION"
+      ],
+      "conclusion": "WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1",
+      "statement": "直接用户表、非负列凸组合及保环预算推出明确条件接口。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md"
+      ],
+      "status": "complete stated-scope interface proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-SHARED-SIDE-DIRECT-BUDGET",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-SHARED-SIDE-BUDGET-DEFINITION"
+      ],
+      "conclusion": "WC-SHARED-SIDE-BUDGET-POTENTIAL-v1",
+      "statement": "固定light势边际和source重置由AS/B支付。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "complete conditional proof; independently attacked after abstraction; exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-SHARED-SIDE-UF-TRUNCATION",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-SHARED-SIDE-UF-MODEL",
+        "WC-SHARED-SIDE-BUDGET-POTENTIAL-v1"
+      ],
+      "conclusion": "WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1",
+      "statement": "A_d标量正部望远镜与UF一起推出AS及源预算，再用直接预算定理。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "complete structural proof; independent bottleneck reconstruction and frozen attack; exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-ANCHORED-CLOCK-ACTUAL-MARGINS",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-ACTUAL-CLOCK-MARGINS-AUDIT"
+      ],
+      "conclusion": "WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1",
+      "statement": "有限真实负载/边界核验只检查所列实现及证书；一般证明见正文。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_actual_clock_margins.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_actual_clock_geometry.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_actual_clock_certificate.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/actual_clock_margins.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_actual_clock_geometry.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_actual_clock_certificate.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-SHARED-SIDE-TRUNCATED-POTENTIAL",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SHARED-SIDE-TRUNCATION-AUDIT"
+      ],
+      "conclusion": "WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1",
+      "statement": "有限真实负载/边界核验只检查所列实现及证书；一般证明见正文。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_shared_side_truncation.py",
+        "tests/audits/weighted_congestion/independent_shared_side_truncation.py",
+        "tests/audits/weighted_congestion/independent_shared_side_budget.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/independent.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/budget_boundaries.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-SHARED-SIDE-BUDGET-POTENTIAL",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SHARED-SIDE-TRUNCATION-AUDIT"
+      ],
+      "conclusion": "WC-SHARED-SIDE-BUDGET-POTENTIAL-v1",
+      "statement": "有限真实负载/边界核验只检查所列实现及证书；一般证明见正文。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_shared_side_truncation.py",
+        "tests/audits/weighted_congestion/independent_shared_side_truncation.py",
+        "tests/audits/weighted_congestion/independent_shared_side_budget.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/independent.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/budget_boundaries.json"
+      ],
+      "status": "finite exact audit"
     }
   ]
 }

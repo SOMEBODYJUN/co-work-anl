@@ -89,3 +89,10 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 **负向接续接口。** 先读[真实双轮环](cyclic_clone_improvement_cycles.md)，限制为原两个动作，再读[锚定锁定](anchored_cycle_lock.md)及其独立审查/两类精确证据。全状态覆盖已闭合；[统一预算普适障碍](uniform_clock_budget_barrier.md)已证明该预算对全部输入均有α ln q/q<1，不能只继续调输入环。剩余须让实际时钟差、非统一费用/次数或其他机制的编译后q取得无界α ln q/q；此障碍不是任意时钟或全类方法障碍。
 
 **规范域接续。** [空交反链核心](template_certificates/integer_counterexample_normal_form.md)第7节将包含支配、固定者及必选背景从反例剥去；先读其新ID与单向lift，再读[独立攻击](../../reviews/weighted_congestion/template_certificates/antichain_core_normal_form_review.md)和两份代码/证据。此步骤不限制真正可动类别数，不能替代无界权谱的存在或非存在桥。
+
+## 共享侧资源与实际时钟的精确接口
+
+- [同权共享侧资源截断势及直接源预算](shared_side_truncated_potential.md)：`WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1`在unique-light/source、最坏负载UF下给A_d≤2d/ln d；`WC-SHARED-SIDE-BUDGET-POTENTIAL-v1`独立给d≥0、α≥1的AS+B判据。固定light边际→source重置误差→主预算→全anti局部势最小点是证明链；跨source、多light或异权hub未被覆盖。先读精确对象，再看[冻结攻击](../../reviews/weighted_congestion/shared_side_truncated_potential_review.md)及正文中的代码/证据合同。
+- [锚定双轮时钟真实有向差分](anchored_clock_actual_margins.md)：`WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1`给合法g、非法g+ΣΔ、n+L充分LP、保环必要ΣS预算及逐次数κ稳定条件。不能把必要预算当充分条件或firstopp失败当PNE。固定四玩家43次全状态证书与uniform91选值均精确复验；没有最优性或增长族结论。[先重构与冻结攻击](../../reviews/weighted_congestion/ordinal_potentials/actual_clock_margins_review.md)和三路代码/显式输入/证据均从正文进入。
+
+全类题保持OPEN。下一步应控制无界类的全局选态、跨source预算或实际clock在增长输入族上的α ln q/q；只调已被封闭的uniform公式不能完成负向目标。

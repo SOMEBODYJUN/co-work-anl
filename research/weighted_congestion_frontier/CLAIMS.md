@@ -766,3 +766,30 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：无未结范围内fatal；仅证明transient dual可行；唯一2cycle自身也有dual，不证明暂态必要/更优，不给任意selector或全类存在。
 - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=唯一全类题仍OPEN。
 - Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)及正文末节的audit/run。
+
+## WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1 — 锚定双轮时钟的有向差分、线性预算与逐次数锐效率
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：任意n≥3、α≥1、正权两动作MODEL基体的严格双同序环，任意逐三元非负多项式同费010/101锚定pair：两半合法margin同为g_i，非法firstopp i的真实clock margin恰g_i+Σ_{j later同anchor}Δ_ij，Δ≥0。γ_i为两半base margin之min、B覆盖全部base成本时，γ_i+g_i>0及每i<j的g_i+Δ_ij>αB给全状态无αPNE的n+L条充分线性约束。保环必要Σg=−(α−1)ΣS、(α−1)ΣS<Γ；degree≤D的Δ/S锐界为逐0..D单项式max，一般不取最高次；κ逐状态列界另给保原αPNE的全玩家充分条件。明示四玩家三次基体有43次实际证书，原uniform预算选值91。
+- Dependencies：WC-MODEL、锚定010/101实际用户表、非负多项式凸组合、有限最大最小；条件障碍只使用本文保环预算。
+- Evidence：完整一般推导、精确冻结审查及真实资源Fraction核验；源码、seed/参数、Python版本、误差控制和实际运行hash由[正文](../current/weighted_congestion/anchored_clock_actual_margins.md)末节连接。
+- Counterevidence / Objections：约束仅充分、总预算仅必要；κ稳定条件非必要，保firstopp失败不等于PNE；不保证给定D可行或B可多项式时间计算。43不称最优，91只是统一充分预算选值。没有一般次数效率或全类结论。 所述范围无尚成立fatal；外审和新颖性未认证。
+- Status：complete stated-scope interface proof; independently reconstructed and exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留WC-TARGET OPEN。
+- Related Files：[正文](../current/weighted_congestion/anchored_clock_actual_margins.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/actual_clock_margins_review.md)，配套代码、输入、证据见正文审计合同。
+
+## WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1 — 同权主玩家共享侧资源的统一强迫截断势均衡
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：对每个d≥2、有限同权u>0 hubs/任意正异权lights，每light唯一source、每side唯一light并允许任意hub子集H_j及空集/含source、两动作副本同费非负degree≤d；若α≥A_d=[1−(d−1)d^(−d/(d−1))]^(−1)，且逐light弱UF为F_v(u+w)+ΣG_j(w)≥α[F_v(W_v)+ΣG_j(w+|H_j|u)]，则所写截断Rosenthal势任hub单翻位局部最小点配全anti lights给αPNE。A_d≤2d/ln d对全部d≥2，常数仅限该子类。
+- Dependencies：WC-MODEL、WC-SHARED-SIDE-BUDGET-POTENTIAL-v1、本文正部望远镜(TR)及UF聚合预算；无外部定理。
+- Evidence：完整一般推导、精确冻结审查及真实资源Fraction核验；源码、seed/参数、Python版本、误差控制和实际运行hash由[正文](../current/weighted_congestion/shared_side_truncated_potential.md)末节连接。
+- Counterevidence / Objections：共同hub权、每side唯一light、每light唯一source、动作副本同费与UF最坏负载均承重。不覆盖异权hub、多source side或UF失败且直接AS+B未满足的全类情形；子类C2,d0=2不代替唯一题。 所述范围无尚成立fatal；外审和新颖性未认证。
+- Status：complete structural proof; independent bottleneck reconstruction and frozen attack; exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留WC-TARGET OPEN。
+- Related Files：[正文](../current/weighted_congestion/shared_side_truncated_potential.md)、[独立审查](../reviews/weighted_congestion/shared_side_truncated_potential_review.md)，配套代码、输入、证据见正文审计合同。
+
+## WC-SHARED-SIDE-BUDGET-POTENTIAL-v1 — 同权主玩家共享侧资源的直接侧势预算均衡
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：相同unique-light/shared-hub/unique-source拓扑，任意d≥0、实α≥1；H_j(m)=Σ_{r≤m}[G_j(w+ru)−αG_j(ru)]_+、M_v=αF_v(u+W_v)−F_v(u)。若逐light AS为F_v(W_v)+ΣG_j(w+|H_j|u)≤α[F_v(u+w)+ΣG_j(w)]，逐source Σ_jH_j(|H_j|)≤M_v，则同一有限势每个单hub局部最小点配全anti是αPNE。无需UF或α≥A_d。
+- Dependencies：WC-MODEL、同权fixed-light势边际、source重置误差、有限局部最小化；不调用TR/M标量界或UF聚合。
+- Evidence：完整一般推导、精确冻结审查及真实资源Fraction核验；源码、seed/参数、Python版本、误差控制和实际运行hash由[正文](../current/weighted_congestion/shared_side_truncated_potential.md)末节连接。
+- Counterevidence / Objections：AS与源预算是充分假设，不证明所有该拓扑游戏都满足；仍限同权hub、unique-light/unique-source和同费副本。此ID扩大degree/alpha域并改变假设，未静默改UF-v1；后置抽象攻击不冒充初次未读稿全证明重构。 所述范围无尚成立fatal；外审和新颖性未认证。
+- Status：complete conditional proof; independently attacked after abstraction; exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留WC-TARGET OPEN。
+- Related Files：[正文](../current/weighted_congestion/shared_side_truncated_potential.md)、[独立审查](../reviews/weighted_congestion/shared_side_truncated_potential_review.md)，配套代码、输入、证据见正文审计合同。
