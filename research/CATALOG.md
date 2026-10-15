@@ -332,11 +332,14 @@
 | [共同研究操作手册：恢复、读屏、同步与保存](<weighted_congestion_frontier/RUNBOOK.md>) | `research/weighted_congestion_frontier/RUNBOOK.md` | 实际操作协作程序时查入口和认证配置；不把程序回归或网络状态当作数学结果。 | 阅读导航；真值查精确正文及账本 |
 | [异步公屏的定位、读取入口与资产边界](<weighted_congestion_frontier/board/README.md>) | `research/weighted_congestion_frontier/board/README.md` | 需要查看实时研讨时进入独立公屏分支；重要可复用成果必须另存 main 并连接真实正文。 | 阅读导航；真值查精确正文及账本 |
 | [拥塞可复用工具的提取与使用合同](<weighted_congestion_frontier/toolbox/README.md>) | `research/weighted_congestion_frontier/toolbox/README.md` | 从失败和中间推导提取工具时查原作者、精确假设、证明与复用场景，不能把改名本身当新工具。 | 阅读导航；真值查精确正文及账本 |
-| [匹配上界唯一题目的共同研究启动词](<weighted_congestion_frontier/prompts/TEAM.md>) | `research/weighted_congestion_frontier/prompts/TEAM.md` | 新对话判定全类匹配上界命题，固定模型与完成门槛；规定中文命名、分层地图、生成检查及完整提交，缺少可选程序附件也能恢复。 | 阅读导航；真值查精确正文及账本 |
+| [匹配上界唯一题目的共同研究启动词](<weighted_congestion_frontier/prompts/TEAM.md>) | `research/weighted_congestion_frontier/prompts/TEAM.md` | 新研究对话判定全类匹配上界命题；固定唯一发布身份、中文命名、分层地图、生成检查和完整提交，缺少可选程序也能恢复。 | 阅读导航；真值查精确正文及账本 |
 | [同级研究者交流提示词：自主研究与异步研讨](<weighted_congestion_frontier/prompts/PEER.md>) | `research/weighted_congestion_frontier/prompts/PEER.md` | 需要组织跨对话数学交流时使用，允许同题独立探索和多路线合作，不以任务认领限制研究。 | 阅读导航；真值查精确正文及账本 |
-| [数学工具提取者提示词：从中间结果回收结构](<weighted_congestion_frontier/prompts/EXTRACTOR.md>) | `research/weighted_congestion_frontier/prompts/EXTRACTOR.md` | 独立重建可复用引理、表示、障碍或桥梁，保留出处和承重条件，提供实际复用场景并诚实验收。 | 阅读导航；真值查精确正文及账本 |
-| [论文整理者提示词：真实贡献、完整论证与成稿核验](<weighted_congestion_frontier/prompts/PAPER_WRITER.md>) | `research/weighted_congestion_frontier/prompts/PAPER_WRITER.md` | 出现足够成果后组织论文叙事、证明与图表，执行写作和逐页检查；包装不能改变精确范围或证据等级。 | 阅读导航；真值查精确正文及账本 |
+| [工具提取与Pro按需接口的启动词](<weighted_congestion_frontier/prompts/EXTRACTOR.md>) | `research/weighted_congestion_frontier/prompts/EXTRACTOR.md` | 重建可复用工具的输入输出、承重条件、来源与证据；准备Pro时只选可直接使用的必要接口，独立资产不强塞进交接。 | 阅读导航；真值查精确正文及账本 |
+| [数学论文写作与完整成稿核验的启动词](<weighted_congestion_frontier/prompts/PAPER_WRITER.md>) | `research/weighted_congestion_frontier/prompts/PAPER_WRITER.md` | 组织有证据的贡献与机制、完整证明及真实导出，和为Pro筛选材料的清晰者职责分开；共用身份、命名和保存规范。 | 阅读导航；真值查精确正文及账本 |
 | [子 agent 模型配置、实际能力与来源记录](<weighted_congestion_frontier/prompts/MODELS.md>) | `research/weighted_congestion_frontier/prompts/MODELS.md` | 启动独立探索或审查时查实际可用模型与配置的记录要求，不能把模型自评当成数学可信度。 | 阅读导航；真值查精确正文及账本 |
+| [Pro研究材料清晰者：精确问题、障碍与筛选](<weighted_congestion_frontier/prompts/CLEANER.md>) | `research/weighted_congestion_frontier/prompts/CLEANER.md` | 先由清晰者读正文和审查，分清方法障碍、反例、开放义务和有限观察，维护自足主材料并从冻结版本导出精简包；不预设开放路线。 | 阅读导航；真值查精确正文及账本 |
+| [Pro全类近似纯均衡门槛的自主攻题任务](<weighted_congestion_frontier/prompts/PRO_ATTACK.md>) | `research/weighted_congestion_frontier/prompts/PRO_ATTACK.md` | 实际整理材料完成后交给Pro，完整固定模型与正反验收；允许自主换工具，已审结论按范围调用，不要求先做仓库或历史审计。 | 阅读导航；真值查精确正文及账本 |
+| [各角色共用的恢复、唯一身份与资产保存合同](<weighted_congestion_frontier/prompts/OPERATIONS.md>) | `research/weighted_congestion_frontier/prompts/OPERATIONS.md` | Work角色启动及保存时读取：一个clone一个固定发布编号、统一main，正文与命名地图同次核验提交；明确默认范围与远端确认。 | 阅读导航；真值查精确正文及账本 |
 | [协作与写作参考原文的固定版本及许可](<weighted_congestion_frontier/SOURCES.md>) | `research/weighted_congestion_frontier/SOURCES.md` | 修改提示词或核对外部设计来源时查固定 commit、引用范围和许可证，区分原设计与本仓定制。 | 来源与恢复指针；不代替缺失证明 |
 
 ### 高次份额势

@@ -6,6 +6,21 @@
 
 新对话读根四入口、[MODEL](MODEL.md)、现行数学 README、[CLAIMS](CLAIMS.md)、[当前状态](RESEARCH_STATE.md)，再按当前义务选择证明与审查。开始工作用[TEAM](prompts/TEAM.md)；修改工具才需要完整读[运行说明](RUNBOOK.md)、[协议](PROTOCOL.md)及程序源码。写作、工具提取各有独立提示词，不要求所有研究者先通读全部上游原文。
 
+## 角色与 Pro 交接顺序
+
+| 入口 | 实际任务与交付 |
+| --- | --- |
+| [清晰者 CLEANER](prompts/CLEANER.md) | 从精确正文与审查筛出 Pro 必须知道的模型、已知事实和障碍；逐项保留否定范围，维护一份自足 PRO_BRIEF，最终从同一已推送版本导出精简包 |
+| [提取者 EXTRACTOR](prompts/EXTRACTOR.md) | 重建可复用工具的输入、输出、条件和证明；与清晰者核实按需接口，独立有价值但不助接题的资产仍留仓库 |
+| [Pro 攻题 PRO_ATTACK](prompts/PRO_ATTACK.md) | 收到实际整理材料后，自主解决原全类问题；不把 Git 操作、历史审计或写论文作为前置 |
+| [论文者 PAPER_WRITER](prompts/PAPER_WRITER.md) | 组织真实成果的贡献、机制、完整证明及实际成稿；不与交给 Pro 的材料筛选混为一个角色 |
+| [共同研究 TEAM](prompts/TEAM.md) | 持续攻击唯一题目并维护可复用资产；可以同题独立推导或探索多条路线 |
+| [共同操作 OPERATIONS](prompts/OPERATIONS.md) | 各 Work 角色共用的恢复、唯一发布身份、命名地图、阶段核验和完整推送合同；只需共用一份 work.py |
+
+本次准备顺序：清晰者与提取者可并行阅读和核对，清晰者整合及审读后再把精简包和 Pro 任务交出。论文成稿可另行进行，不是 Pro 攻题的先决条件。各角色首次生成不同前缀的随机唯一后缀并显式传入 `start --actor`；同 clone 接续复用，不照抄固定 W1/E1，也不为子 agent 登记。
+
+角色提示词就绪不表示交接材料已整理。`PRO_BRIEF.md` 仅在清晰者实际完成筛选后创建或修订；交付包仅带完整任务、必要数学正文及追溯 manifest，工具数学附录按需。历史聊天、测试日志、全仓文件和未证 idea 清单不作为默认 Pro 输入。方法障碍、断言反例、开放义务和有限观察分开，不将“没做出来”写成“不可能”。整理与提取完成也不表示主问题解决。
+
 ## 当前数学地图
 
 提取者新增的[正占用核专题](../current/positive_kernels/README.md)从boss4正Möbius展开重建独立的秩暴露面、锐截断及准确闭包；来源与具体传感器实例可核。它保留原WC身份，并明确一般签名/均衡桥缺口；工具索引见[toolbox](toolbox/README.md)。

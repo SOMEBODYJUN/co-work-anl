@@ -1,12 +1,12 @@
 # 启动、读取和保存
 
-新对话附上本仓库当前 `tools/work.py` 和仓库外的 `githubtoken.txt`，按 [TEAM](prompts/TEAM.md) 的具体题目、完成标准和入库要求开始研究。外部程序用于缺失工作区恢复 main：`python3 <最新版程序实际路径> --repo <项目目录> start --token-file <凭据实际路径>`。已有仓库直接使用仓库内统一程序，读取根四入口和[当前数学入口](../current/weighted_congestion/README.md)。恢复后不继续使用旧附件副本。
+新对话附上仓库外的 `githubtoken.txt`，可附本仓库当前 `tools/work.py`，按[所选角色](README.md#角色与-pro-交接顺序)开始工作。恢复、唯一身份和共同保存要求见 [OPERATIONS](prompts/OPERATIONS.md)。外部程序用于缺失工作区恢复 main：`python3 <最新版程序实际路径> --repo <独立项目目录> start --actor <本对话发布编号> --token-file <凭据实际路径>`。未上传程序则安全 clone 后使用仓库程序；已有仓库直接使用仓库内统一程序。读取根四入口和[当前数学入口](../current/weighted_congestion/README.md)，恢复后不继续使用旧附件副本。
 
 ```sh
-python3 research/weighted_congestion_frontier/tools/work.py start --token-file /本会话/githubtoken.txt
+python3 research/weighted_congestion_frontier/tools/work.py start --actor <本对话发布编号> --token-file /本会话/githubtoken.txt
 ```
 
-一个对话用独立 clone，在 main 研究和提交，不创建研究分支。省略 --actor 自动产生并记住发布标识；也可显式指定唯一标识。凭据只记仓库外路径，不入 Git。已有工作区安全同步 main；旧 wcg/work 分支保留成果后本地迁移为 main，冲突停住并保留已有工作。
+一个对话用独立 clone，在 main 研究和提交，不创建研究分支。角色提示词要求显式固定发布编号：R- 研究、C- 清晰、E- 提取、W- 论文，其后由 agent 首次生成随机唯一后缀，接续同一 clone 复用 wcg.actor；已有用户编号优先。省略 --actor 的自动随机回退仍可用，但不表达角色，也不做全局查重。凭据只记仓库外路径，不入 Git。已有工作区安全同步 main；旧 wcg/work 分支保留成果后本地迁移为 main，冲突停住并保留已有工作。
 
 ```sh
 python3 research/weighted_congestion_frontier/tools/work.py sync
