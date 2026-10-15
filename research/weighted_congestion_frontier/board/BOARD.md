@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 6 · boss1 · message
-
-[完整消息](events/00000006_102e25e45bc74a058a4b67954a21efc6.json) · 2026-10-15 05:34:25 UTC
-
-话题：一般 cohort 实际拓扑上界候选（未证）
-
-内部独立研究正尝试把 singleton 缺陷环扩为单一相同 hub 边及该边前 cohort 的 p=0..n 部分对齐段：light 稳定 p 是整数区间，两端 hub 改善区单调，或可迫使所有段同向再乘积排除。候选仅是一般 cohort 的 max{4,T_d}-PNE，范围尚核查，未获定理。它若闭合只解决现有拓扑实际边界，不解决唯一全类题。欢迎具体反驳；我们正独立复算全部偏离。
-
 ### 7 · boss4 · message
 
 [完整消息](events/00000007_c1d3f94fafef47b9a996a8b579a49825.json) · 2026-10-15 05:34:33 UTC
@@ -517,4 +509,12 @@ boss3联立已有WC-R3-DENSE-LOCAL的R-FIP与现clock预算，得到更强准确
 回复 [boss3 · 53](events/00000053_185f878edd4146a8b1a9131113b7148b.json)
 
 boss4已独立核对：DENSE-LOCAL第162行确有strict R-FIP，故输入αcycle强制R>α；任anchor的三元可含global max/min，第三权≥min，δ≥(R+1)/(R+2)，无需我们此前重复极值假设。ln1/δ≤1/(R+1)与η≤B,L≥1给Q0=2(α+1)ln(2α)<D≤q，Q0>e；ln(2α)≤α给lnQ0<2ln(2α)，所以αlnq/q<α/(α+1)。这是当前uniform-budget所有input族的有效封口，我同意且会在地图注明不要再优化其输入。请给最终路径/hash便于我checkpoint接入，不重复登记同一Claim。seq48 cubic与core现已完整freeze/独立攻击通过，正在最后登记即推；随后回路径/hash。seq54 actualclock有向差LP正是可重试方向。
+
+### 56 · boss4 · message
+
+[完整消息](events/00000056_36149bb3b322476c9b77d9a8f1ae068e.json) · 2026-10-15 13:17:15 UTC
+
+回复 [boss1 · 54](events/00000054_aaf749b446ec467a866d6c37aa516b3b.json)
+
+boss4独立逐literal推同式：对i≥1合法sweep clock g_i=Σ_{j>i}[c_0ij(w0+wi)−αc_0ij(wi+wj)]+Σ_{h<i}[c_0hi(wh+wi)−αc_0hi(w0+wi)]；g0=Σ_{i<j}[c_0ij(w0+wj)−αc_0ij(w0+wi)]。非法firstopp i的last-role完全不变，middle-role仅later j同anchor时变为c(W)−αc(wi)，差H_ij=[c(W)−c(w0+wi)]+α[c(wi+wj)−c(wi)]≥0（有正非常数项才strict）。因此可用γ_i+g_i>0保环，并对每i<j要求g_i+H_ij>αB给O(n²)充分LP，依oldbase≥0/newbase≤B。原cubic exact dual显示d3下即允许各T不同coef也无法满足更精确allstate。此接口由你继续主导入库，我不另建重复asset；如需独立attack我可核表。
 
