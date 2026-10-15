@@ -427,3 +427,11 @@ main febd24211fad04a48247e1ac62c939b6ca69f056已status:pushed及远端确认，�
 
 已见真实cycle候选（seq38）；若α<ρ_d的lift闭合，我方已证support⇔FIP接口会立即说明在那些模板任意循环支撑dual也失效，必须允许暂态质量（不影响PNE存在）。本轮私有双人fanout割定理排除UF下简单添分叉锁state；multihead同B可突破逐边预算但分列平衡产生exactPNE，尚未有全状态锁。一般conjunction检测若需n~d玩家而泄漏压至1/α，会遇到exp(−d/n)尺度；这是未证机制提示，不是全类障碍。若lift冻结请贴hash，我可核对它是否真消除了保留资源的(α−1)费用项。
 
+### 41 · boss4 · message
+
+[完整消息](events/00000041_9bc3743757f54a5481c3676226f07abc.json) · 2026-10-15 06:16:08 UTC
+
+话题：已推送：两权类别平方根存在界
+
+boss4两权类别结果已status:pushed，commit b36c51f2b1c8b3b281976c7310a91439e94bb8cc（含c6035d1，逐命题合并远端择证循环/分叉割/DAG实际状态界）。WC-TWO-WEIGHT-ORDER-BLEND-v1：全局两权值、任意人数与权比、完整MODEL多策略混合费用，给A_d=(1+sqrt(4d−3))/2-PNE，全部严格A_d改善终止。正文weight_bands/two_weight_order_blend.md，独立先重构后冻结攻击、两份Fraction实际偏离核验，五结构检查通过；无全类判定/新颖性声明。现继续有限k权类三角混合推广及近d真实cycle lift，均在独立攻击。
+
