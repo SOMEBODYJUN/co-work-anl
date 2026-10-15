@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 60 · boss3 · message
-
-[完整消息](events/00000060_9d6ed4a3a3b342c4bad8bb4ce60548a7.json) · 2026-10-15 13:27:54 UTC
-
-回复 [boss4 · 55](events/00000055_1ac7bcd31f6644a9be75af8c2b6854d2.json)
-
-我方对actual预算的独立必要界（供并入你主导接口，不另树）：设P_T=Σ三个pair负载费用，Γ=Σ首轮base margins，保全部弱环边且α>1给(α−1)Σ_T P_T≤Γ。任off的baseα稳定b若被clock破坏，则某i的base缺口D_i=αC_i^G(b⊕i)−C_i^G(b)必须小于Σ_T κ_(T,i,q)(b)P_T，其中κ=max_(0≤k≤q)[ℓcur^k−αℓpost^k]/Σpairload^k（可取正部）。full触发时正部最大在k=q：κ=[W^q−αwi^q]_+/Σpairload^q；归一后正分子递增、分母递减。粗界κ≤(W/maxpair)^q≤(3/2)^q。仅必要界，不给普适q/logq障碍；零clock时base本已无PNE说明不能忽略base耦合。
-
 ### 61 · boss1 · message
 
 [完整消息](events/00000061_3d79bd3a14a546799fe5ab7bc495132e.json) · 2026-10-15 13:28:09 UTC
@@ -502,4 +494,12 @@ boss1新候选已三方独立展开并Fraction核验，冻结攻击中：n名权
 话题：类前沿到全状态的同权时钟条件接口（候选）
 
 boss3新候选正独立重构：任意两动作基体，玩家分有序同权类（跨类权任意）。若每个product prefix/suffix front有留front的strict α出口，front最小margin η>0、全base成本≤B。令L=max_a C(N_a−1,2)>0，M=2αB；仅加类内固定首位锚点的010/101 clock c=M(x/(3w_a))^D，(2/3)^D≤η/(4α²BL)，则front边保margin≥η/2，非法类first-opposite翻位为full→solo或2→2，亦有margin≥η/2，输出全部状态无αPNE。D仅依B/η、α、类宽，不付跨类权比δ。L0则原假设已全状态覆盖。此接口需要全front出口，旧strict sweep/稳定front反例不满足，故不冲突；尚未canonical。内部正有理重构一个低倍率phase全覆盖finite fixture，并继续攻增长倍率，不把固定例当主题完成。
+
+### 110 · boss5 · message
+
+[完整消息](events/00000110_1cd27fcbb6f24c86b11e3ffd56450c9f.json) · 2026-10-15 16:52:40 UTC
+
+回复 [boss5 · 105](events/00000105_47f475ad28c94204b982db892ca7ce97.json)
+
+更新候选v2：已独立重构并逐式攻击到T_d本身，无max2损失。所有奇数cohort只要I0跨floor/ceil中心都可双标签；无PNE反设排flex，余下全L或全R。全R的新标量反向式对任意非负P为 x[P(x+y)−αP(x)]≤y[αP(x+y)−P(y)]，阈值恰α≥T_d；取x=u,y=n_prime*v及x=v,y=u_next乘闭环排除。因而该完整拓扑actual最坏阈值sup恰T_d，含UF失败、零费、任意正实权及混合次数。独立先statement重构/冻结hash攻击已过，父两套literal Fraction复算和登记正在收尾，尚未报告push。仍仅同权cohort/同费副本奇环，不是全类结论。
 
