@@ -347,6 +347,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1 | 任意非空有限simple DAG、d≥1及ε∈(0,1)，令z=ε^(-1/d),P_k为k顶点有向路径数,S_D(z)=ΣP_kz^(k−1)。存在根权1、正轻权W<1及outsum<w_v、非零非负degree≤d费用通过p0(W)≤εp0(1)和pv(1+outsum)≤εpv(1+w_v)，当且仅当z(z−1)S_D(z)≤1。全部可行权有正文slack表示；饱和时权唯一。原辅助step阈值q满足q(q−1)≤1/[z(z−1)]≤d/ln(1/ε)，固定ε的√d量级在检测系统内可达。 | [完整正文](weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md), [独立审查](../reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md)；iff仅是指定端点检测系统；未控制高平台过冲或真实全状态偏离，不给实际多项式博弈的β上界。 |
 
 
+## 两权类别的平方根次数存在界
+
+| ID | 精确范围与结论 | 状态与读取入口 |
+| --- | --- | --- |
+| WC-TWO-WEIGHT-ORDER-BLEND-v1 | 对每个d≥2及MODEL有限游戏，若所有玩家权重属于固定{a,b}、a≥b>0，则双排序混合势的每个单方局部最小点为A_d=(1+√(4d−3))/2-PNE，任意严格A_d改善终止；各类人数、权比、拓扑和系数任意。d≤1或仅一权时有精确PNE。不是任意权重全类上界。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[完整正文](weighted_congestion/weight_bands/two_weight_order_blend.md)、[独立攻击](../reviews/weighted_congestion/weight_types/two_weight_order_blend_review.md)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

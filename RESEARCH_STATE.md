@@ -25,6 +25,8 @@ R1 的线性重置实现与 R3 的同次数实现归属于共同机制，保留�
 
 [有序权组冻结](research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md)新增依分组的结构存在界与两权级精确参数限制：即使最佳分组，潜在尾部参数也不能全类统一。[DAG端点泄漏预算](research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)给任意DAG指定检测系统的可行充要条件；固定泄漏的辅助源门槛仅有平方根量级。下一步须超出这些潜在参数和检测合同；主目标不变。
 
+新增[两权类别双排序混合势](research/current/weighted_congestion/weight_bands/two_weight_order_blend.md)：全局仅两权时，任意cohort人数/权比均有平方根次数存在界；完整一般证明和独立攻击已核对。真正下一步是多权扩展与共享乘子控制，不把两权范围升级为全类。
+
 ## 其他长期资产
 
 设施选址保留共同目录双设施尖锐界、复杂度边界、任意设施数因子 2 存在性与有限构造；一般位多项式构造继续开放。顺序客户吸引保留真实完整 SPE、结构类福利界和失败桥，一般半覆盖继续开放。它们分别从根 README 的模型表进入，无需当前拥塞研究者先通读。

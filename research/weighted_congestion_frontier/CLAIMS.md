@@ -556,3 +556,15 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：iff仅是指定端点检测系统；未控制高平台过冲或真实全状态偏离，不给实际多项式博弈的β上界。未处理的全类义务不升级；外审/优先权未认证。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth按所写范围；Value为接口及准确边界；Novelty未认证；Mechanism见正文；Ambition不是全类完成。
 - Related Files：[正文](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)、[审查](../reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md)；规范代码和冻结结果见正文审计合同及assets.json。
+
+
+## WC-TWO-WEIGHT-ORDER-BLEND-v1 — 两权类别双排序混合势
+
+- Exact Statement / Objects / Domain / Quantifiers：对每个d≥2及MODEL有限游戏，若所有玩家权重属于固定{a,b}、a≥b>0，则双排序混合势的每个单方局部最小点为A_d=(1+√(4d−3))/2-PNE，任意严格A_d改善终止；各类人数、权比、拓扑和系数任意。d≤1或仅一权时有精确PNE。不是任意权重全类上界。
+- Assumptions / Definitions / Scope：固定全局两权值而非逐资源任意选两权，任意有限非空玩家/资源、正实权、任意有限非空资源子集策略族、非负degree≤d多项式；允许空策略、常数和零费用。D,U为相反排序加权离散积分，λ解(d−1)λ²=1+λ。
+- Conclusion：共享玩家乘子h重=λa、h轻=(1+λ)b，所有局部势最小点满足弱A_d-PNE；没有计算时间或全类匹配声明。
+- Dependencies：MODEL、凸排序交换、逐项导数界、有限势最小化；不导入外部存在定理。
+- Evidence：完整一般证明，先从exact statement独立重构后攻击冻结hash；两份不互相导入的Fraction核验。
+- Counterevidence / Objections：已修正a=b时按固定类别选乘子和严格A_d改善措辞；未见所述范围内fatal。三类没有同样互补精确边际，全类任意多权仍OPEN。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=子类完整内部证明；Value=任意权比/人数的两权桥；Novelty=未认证；Mechanism=双排序互补边际；Ambition=结构子类。
+- Related Files：research/current/weighted_congestion/weight_bands/two_weight_order_blend.md；research/reviews/weighted_congestion/weight_types/two_weight_order_blend_review.md；tests/audits/weighted_congestion/weight_types/verify_order_blend.py；tests/audits/weighted_congestion/weight_types/independent_order_blend.py；evidence/runs/weighted_congestion/weight_types/order_blend.json；evidence/runs/weighted_congestion/weight_types/independent_order_blend.json。

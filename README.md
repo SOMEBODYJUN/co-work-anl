@@ -38,6 +38,8 @@
 | 任意设施数 | 一般因子 2 存在性及有限构造；一般输入位多项式算法仍开放 | [主定理及算法前沿](research/current/multi_facility/README.md) |
 | 顺序客户吸引 | 小人数和结构目录的福利上界、真实完整策略反例及安全值桥障碍；一般半覆盖仍开放 | [分支地图](research/current/customer_attraction/README.md) |
 
+[两权类别双排序混合势](research/current/weighted_congestion/weight_bands/two_weight_order_blend.md)给全局两权、任意人数与权比的(1+√(4d−3))/2-PNE。它以互补精确边际绕过两权尾部参数无界，任意多权的全类桥仍开放。
+
 ## Refuted / Failed / Open Problems / Next Actions
 
 [失败路线入口](FAILED_ROUTES.md)记录失败的具体断言、反例范围和回收工具。下一步从当前 proof obligation 出发选方法；已有路线是搜索种子，不是方法白名单。有启发的未完成 idea、卡点、类比和合作问题可自由在公屏研讨，注明不确定性即可；整理入库和重要 claim 升级仍分别执行原有规范。

@@ -47,3 +47,5 @@
 [当前全仓路线](ROADMAP.md)列现在值得推进的义务；[入库规范](GROWTH.md)和[生产、读取、保存规则](REPOSITORY_GUIDE.md)决定新文件的位置。给新资产写具体名称、用途、精确范围和证据层级；完成相应核验后及时保存到 `main`。
 
 从仓库根运行 `python3 research/build_catalog.py --check`、`python3 research/build_map.py --check`、`python3 research/build_crosswalk.py --check` 和 `python3 research/check_assets.py`。这些检查负责目录和登记一致，不能充当数学证明。
+
+加权拥塞新增[两权类别双排序混合势](current/weighted_congestion/weight_bands/two_weight_order_blend.md)：不限制两类人数或权比的平方根次数存在界，附独立攻击与两份精确审计；全类多权问题仍开放。

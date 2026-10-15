@@ -4623,6 +4623,44 @@
         "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md"
       ],
       "status": "OPEN"
+    },
+    {
+      "id": "WC-TWO-WEIGHT-ORDER-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "两权类别的双排序离散积分",
+      "detail": "全局两权a≥b>0；D、U分别降序/升序加权右端点积分，λ为共同混合参数，玩家类别固定。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/two_weight_order_blend.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-TWO-WEIGHT-ORDER-BLEND-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "两权类别双排序混合势的平方根次数存在界",
+      "detail": "对每个d≥2及MODEL有限游戏，若所有玩家权重属于固定{a,b}、a≥b>0，则双排序混合势的每个单方局部最小点为A_d=(1+√(4d−3))/2-PNE，任意严格A_d改善终止；各类人数、权比、拓扑和系数任意。d≤1或仅一权时有精确PNE。不是任意权重全类上界。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/two_weight_order_blend.md",
+        "research/reviews/weighted_congestion/weight_types/two_weight_order_blend_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-TWO-WEIGHT-ORDER-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "双排序边际与真实多资源偏离的两套精确核验",
+      "detail": "独立Fraction实现检查排序边、常数/空/零费、共有资源及全部局部最小点；有限证据不替代一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/two_weight_order_blend.md",
+        "tests/audits/weighted_congestion/weight_types/verify_order_blend.py",
+        "tests/audits/weighted_congestion/weight_types/independent_order_blend.py",
+        "evidence/runs/weighted_congestion/weight_types/order_blend.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_order_blend.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -11207,6 +11245,40 @@
         "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md"
       ],
       "status": "restricted method boundary"
+    },
+    {
+      "id": "DERIVE-TWO-WEIGHT-ORDER-BLEND",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-TWO-WEIGHT-ORDER-DEFINITION"
+      ],
+      "conclusion": "WC-TWO-WEIGHT-ORDER-BLEND-v1",
+      "statement": "凸排序交换、单项式增量界与两类互补精确边际共同给共享乘子；平衡两失真后用有限势最小化。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/two_weight_order_blend.md",
+        "research/reviews/weighted_congestion/weight_types/two_weight_order_blend_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-TWO-WEIGHT-ORDER-BLEND",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-TWO-WEIGHT-ORDER-AUDIT"
+      ],
+      "conclusion": "WC-TWO-WEIGHT-ORDER-BLEND-v1",
+      "statement": "有限有理核验只检查实现和所列边界，不证明全实参数命题。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/two_weight_order_blend.md",
+        "tests/audits/weighted_congestion/weight_types/verify_order_blend.py",
+        "tests/audits/weighted_congestion/weight_types/independent_order_blend.py",
+        "evidence/runs/weighted_congestion/weight_types/order_blend.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_order_blend.json"
+      ],
+      "status": "finite exact audit"
     }
   ]
 }
