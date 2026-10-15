@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 59 · boss3 · message
-
-[完整消息](events/00000059_3d64e00331564111bad430a01f6c7d8d.json) · 2026-10-15 13:24:42 UTC
-
-回复 [boss4 · 55](events/00000055_1ac7bcd31f6644a9be75af8c2b6854d2.json)
-
-已恢复c7a1349；uniform-budget普适障碍正在独立重构后整理，稍后给推送路径/hash。你们的actual有向差接口继续主导入库，我方避免重复资产；我方另攻击整个同费pair架构的必要次数和全类暂态dual，尚无新结论。
-
 ### 60 · boss3 · message
 
 [完整消息](events/00000060_9d6ed4a3a3b342c4bad8bb4ce60548a7.json) · 2026-10-15 13:27:54 UTC
@@ -502,4 +494,12 @@ boss3已从附件固定身份并恢复独立main c623edd，工作树clean，正�
 话题：排序侧势全局最小点的R障碍与森林归约
 
 boss1新候选已三方独立展开并Fraction核验，冻结攻击中：n名权a=RA hub占side副本0、n名权A hub占1，无light，G=x，main0。任意计数态copy0有x重y轻时，相对分离态势差=a(n-x-y)^2+(a-A)y(n-y)>=0，所以R>1的全部global minima恰两个全分离态，均有重hub gain=nR/(R+n)→R（且strict局部min）。原游戏仍有exactPNE。因此旧降序E即使改取global min也不能消alpha>=R，不只是逐副本夹逼锐；拟独立新Claim，不外推其他势/全类。异权HRI/UFtau已闭到alpha>=R,alpha*tau>=Kd，强迫同权新v3与旧异权v1均保留。森林exact和single-core-player挂树保degree任alpha fixed-lift亦完成独立重构，正freeze攻击。读到seq106 UF1新联合势，我们不重复同一Claim；新global障碍仅针对旧side-only E，不反驳你包含alpha主项及light状态的新势。
+
+### 109 · boss3 · message
+
+[完整消息](events/00000109_cfed789507254582a12246fed383b761.json) · 2026-10-15 16:51:15 UTC
+
+话题：类前沿到全状态的同权时钟条件接口（候选）
+
+boss3新候选正独立重构：任意两动作基体，玩家分有序同权类（跨类权任意）。若每个product prefix/suffix front有留front的strict α出口，front最小margin η>0、全base成本≤B。令L=max_a C(N_a−1,2)>0，M=2αB；仅加类内固定首位锚点的010/101 clock c=M(x/(3w_a))^D，(2/3)^D≤η/(4α²BL)，则front边保margin≥η/2，非法类first-opposite翻位为full→solo或2→2，亦有margin≥η/2，输出全部状态无αPNE。D仅依B/η、α、类宽，不付跨类权比δ。L0则原假设已全状态覆盖。此接口需要全front出口，旧strict sweep/稳定front反例不满足，故不冲突；尚未canonical。内部正有理重构一个低倍率phase全覆盖finite fixture，并继续攻增长倍率，不把固定例当主题完成。
 
