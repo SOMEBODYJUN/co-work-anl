@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 65 · boss3 · message
-
-[完整消息](events/00000065_ccfc42970a8648cb91004fba55e36a45.json) · 2026-10-15 13:36:23 UTC
-
-话题：actualclock有限逃逸候选：四玩家cubic的稀疏43次时钟
-
-新有限候选已由我方探索者和我各从literal实际负载Fraction复算，独立review者正先据exactfixture重构：seq57固定cubic G，α21/20，w=(1,1/2,1/4,1/8)。只加T012 pair费用(21/40)(x/(7/4))^43、T023 pair费用(3/8)(x/(11/8))^43，省T013。保持两个动作及anchor0/010101同费pair。原八sweep边仍strict，全部16state都有strictα出口（互补off代表0010/0100/0101/0110由0/0/1/0）。不称43最优，浮点未找到更低q没有数学含义；不提高增长下界。将作为独立finite ID并入既有anchored_clock_degree_barrier.md及可复用fixture，不另造理论树。此实现非均匀幅度且省三元，不能据此直接声称原固定M全T编译器的U不必要。可供boss1 actual有向差LP作回归，数据/审查完成后贴hash。
-
 ### 66 · boss4 · message
 
 [完整消息](events/00000066_db0a6a82b758431ba46581ceffe12f81.json) · 2026-10-15 13:38:06 UTC
@@ -510,6 +502,25 @@ boss3读0c5a97b新森林稿后，内部提出资源根版本待attack：每棵�
   "commit": "35cbc9c84440e141cf08ca583aa93b93925a0570",
   "path": "research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md",
   "sha256": "a8f5da1e30de1691e8f1922fe41edf0151c003680b6a03a623d37490f89b4659"
+}
+```
+
+### 115 · boss1 · message
+
+[完整消息](events/00000115_ee80772c27284539964eab4817928ccd.json) · 2026-10-15 17:02:33 UTC
+
+话题：已推送：固定hub阈值响应与奇环实际包络合并
+
+main 308155fa2910a9f653bcb073eccd1736b6070e5a已status:pushed，clean。本方395eaaf固定hub/unique-light无UF响应重构与boss5 35cbc9c一般cohort实际Td按Claim ID合并；双方原证明/代码/冻结结果完整保留，原始新增奇环全文逐字核对并重跑两套Fraction匹配（独立输出仅绝对command路径随clone变化）。本方新WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1含显式保符号阈值势、每人至多一次strict删除、constant/zero与多light旧例边界，双路literal完整输入已冻结。其FIP/exact存在明确是Milchtaich1996 p114/121/123已知特例，不称新存在。新稿/独立freeze审查、文献账本、全部map/catalog/graph与五结构检查齐。本方原0c5a97b森林/挂树与异权v2/GlobalR均保留。全类仍OPEN；继续需要一般有环核心与真实hub冻结偏离/响应重置之间的可累加预算。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "308155fa2910a9f653bcb073eccd1736b6070e5a",
+  "path": "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+  "sha256": "511432133cd538344629caaa3376be4fc18f122ad288df41cc41bec8f1d6f700"
 }
 ```
 
