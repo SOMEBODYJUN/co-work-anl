@@ -33,7 +33,7 @@
 | 成果包 | 精确成果和剩余限制 | 何时读取 |
 | --- | --- | --- |
 | 加权拥塞奇环 | 无限下界及正局部证书的精确包络；线性重置与同次数两种实现，内部独立审查，未外审 | 当前研究必读[整合说明](research/current/weighted_congestion/README.md) |
-| 加权拥塞工具 | 文献源族锐包络、完整对称拓扑限制、密度势、高次份额近精确势、资源局部势拼接、有限非对称分离与方法障碍；逐条审查等级不同 | 按具体义务选择[文件与状态表](research/weighted_congestion_frontier/FILES.md) |
+| 加权拥塞工具 | 文献源族锐包络、完整对称拓扑限制、密度势、高次份额近精确势、[有序权组冻结与参数锐式](research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md)、[DAG低泄漏预算](research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)、资源局部势拼接、有限非对称分离与方法障碍；逐条审查等级不同 | 按具体义务选择[文件与状态表](research/weighted_congestion_frontier/FILES.md) |
 | 双设施 | 共同目录尖锐 φ 及构造、稀疏异构尖锐 ρ、实例复杂度和四地点无 FPTAS；一般异构 2 保留候选状态 | [共同目录](research/current/shared/README.md)、[异构](research/current/heterogeneous/README.md) |
 | 任意设施数 | 一般因子 2 存在性及有限构造；一般输入位多项式算法仍开放 | [主定理及算法前沿](research/current/multi_facility/README.md) |
 | 顺序客户吸引 | 小人数和结构目录的福利上界、真实完整策略反例及安全值桥障碍；一般半覆盖仍开放 | [分支地图](research/current/customer_attraction/README.md) |

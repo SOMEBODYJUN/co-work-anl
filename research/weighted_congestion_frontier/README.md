@@ -25,3 +25,5 @@
 不预设势的精确接口：[有限动作签名压缩与全状态择证对偶](../current/weighted_congestion/template_certificates/finite_action_duality.md)。固定权重/动作数的所有资源游戏等价于有限单项式系数族；普遍α存在等价于每个全状态selector自有对偶证书。统一于所有模板的倍率仍未证明。
 
 [严格反例的整数单项式规范形与普遍阈值端点](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)接有限动作择证接口：固定实倍率反例可只用整数权和单位单项式资源，且a_*端点可行；无全类规模截止界。配套独立审查、Fraction程序和冻结结果从正文或FILES进入。
+
+跨尺度结构接口：[有序权组冻结及两权级参数锐式](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)允许阶段局部势选择，但其最佳潜在尾部参数无统一界；[DAG端点低泄漏预算](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)只封闭指定检测系统，不代替全状态多项式证明。独立审查与实际代码/证据均由正文接入。

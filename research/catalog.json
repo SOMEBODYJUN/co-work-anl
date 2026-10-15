@@ -2859,6 +2859,232 @@
         "research/reviews/weighted_congestion/template_certificates/integer_counterexample_normal_form_review.md",
         "tests/audits/weighted_congestion/template_certificates/verify_integer_normal_form.py"
       ]
+    },
+    {
+      "path": "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+      "title": "有序权组的尾部负载冻结存在界",
+      "purpose": "处理密集权组跨尺度拼接，核对每阶段冻结与全部真实偏离；同时证明仅优化潜在尾部参数不能覆盖全类。",
+      "topic": "weighted_congestion",
+      "role": "account",
+      "package": "有序尾部冻结",
+      "related_paths": [
+        "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md",
+        "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_parameter.py",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing_independent.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_parameter_independent.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md",
+      "title": "有序尾部冻结的独立重构与冻结正文攻击",
+      "purpose": "核对实际所审hash、先独立推导后冻结攻击的顺序、边界及尚成立的范围限制；不将内审当外审。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "有序尾部冻结",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_parameter.py",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing_independent.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_parameter_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+      "title": "有序尾部冻结的阶段势与最终偏离核验",
+      "purpose": "保存seed712941实际输入，枚举全部阶段势最小、最终状态和偏离；另核验密集群及generalK参数锐式。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "有序尾部冻结",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_parameter.py",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing_independent.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_parameter_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py",
+      "title": "有序尾部冻结的独立阶段与份额审计",
+      "purpose": "以独立份额及真实资源oracle检验seed95471有限游戏的阶段最小和最终偏离，攻击零费、空策略、degree0及潜在用户边界。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "有序尾部冻结",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md",
+        "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_parameter.py",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing_independent.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_parameter_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/weight_bands/independent_tail_parameter.py",
+      "title": "两权级尾部参数的独立有序组型穷举",
+      "purpose": "按等权轻玩家置换商枚举全部有序分组，独立复验H²族的最优参数；不调用冻结算法。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "有序尾部冻结",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md",
+        "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing_independent.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_parameter_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+      "title": "有序尾部冻结：作者有限核验冻结结果",
+      "purpose": "保存配套同名审计的实际参数、精确算术、代码hash与覆盖；复验只读，禁止把有限通过升级为一般证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "有序尾部冻结",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md",
+        "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_parameter.py",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing_independent.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_parameter_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing_independent.json",
+      "title": "有序尾部冻结：独立有限核验冻结结果",
+      "purpose": "保存配套同名审计的实际参数、精确算术、代码hash与覆盖；复验只读，禁止把有限通过升级为一般证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "有序尾部冻结",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md",
+        "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_parameter.py",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_parameter_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/weight_bands/ordered_tail_parameter_independent.json",
+      "title": "有序尾部冻结：独立参数有限核验冻结结果",
+      "purpose": "保存配套同名审计的实际参数、精确算术、代码hash与覆盖；复验只读，禁止把有限通过升级为一般证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "有序尾部冻结",
+      "related_paths": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md",
+        "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_parameter.py",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing_independent.json"
+      ]
+    },
+    {
+      "path": "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+      "title": "有向无环阶跃端点的低泄漏次数预算",
+      "purpose": "在把辅助阶跃DAG转为多项式前，精确判定指定端点测试可行性并计算路径总权预算，避免靠图深或路径数误判放大。",
+      "topic": "weighted_congestion",
+      "role": "account",
+      "package": "DAG低泄漏次数预算",
+      "related_paths": [
+        "research/reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md",
+        "tests/audits/weighted_congestion/polynomial_curvature/verify_dag_low_leakage.py",
+        "tests/audits/weighted_congestion/polynomial_curvature/independent_dag_low_leakage.py",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage.json",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage_independent.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md",
+      "title": "DAG低泄漏次数预算的独立重构与冻结正文攻击",
+      "purpose": "核对实际所审hash、先独立推导后冻结攻击的顺序、边界及尚成立的范围限制；不将内审当外审。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "DAG低泄漏次数预算",
+      "related_paths": [
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "tests/audits/weighted_congestion/polynomial_curvature/verify_dag_low_leakage.py",
+        "tests/audits/weighted_congestion/polynomial_curvature/independent_dag_low_leakage.py",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage.json",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/polynomial_curvature/verify_dag_low_leakage.py",
+      "title": "DAG端点泄漏预算与slack权的精确核验",
+      "purpose": "枚举1至5顶点拓扑编号DAG，独立计算路径和最小权、slack权与混合多项式比值；包括代数等号边界。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "DAG低泄漏次数预算",
+      "related_paths": [
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "research/reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md",
+        "tests/audits/weighted_congestion/polynomial_curvature/independent_dag_low_leakage.py",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage.json",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/polynomial_curvature/independent_dag_low_leakage.py",
+      "title": "DAG泄漏预算的独立路径枚举与根包络",
+      "purpose": "用DFS实际路径和Fraction区间独立检查q不等式，并以Q(phi)精确核对可行等号；不导入作者递推。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "DAG低泄漏次数预算",
+      "related_paths": [
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "research/reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md",
+        "tests/audits/weighted_congestion/polynomial_curvature/verify_dag_low_leakage.py",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage.json",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage.json",
+      "title": "DAG低泄漏次数预算：作者有限核验冻结结果",
+      "purpose": "保存配套同名审计的实际参数、精确算术、代码hash与覆盖；复验只读，禁止把有限通过升级为一般证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "DAG低泄漏次数预算",
+      "related_paths": [
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "research/reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md",
+        "tests/audits/weighted_congestion/polynomial_curvature/verify_dag_low_leakage.py",
+        "tests/audits/weighted_congestion/polynomial_curvature/independent_dag_low_leakage.py",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage_independent.json",
+      "title": "DAG低泄漏次数预算：独立有限核验冻结结果",
+      "purpose": "保存配套同名审计的实际参数、精确算术、代码hash与覆盖；复验只读，禁止把有限通过升级为一般证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "DAG低泄漏次数预算",
+      "related_paths": [
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "research/reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md",
+        "tests/audits/weighted_congestion/polynomial_curvature/verify_dag_low_leakage.py",
+        "tests/audits/weighted_congestion/polynomial_curvature/independent_dag_low_leakage.py",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage.json"
+      ]
     }
   ]
 }

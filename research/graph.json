@@ -4521,6 +4521,108 @@
         "evidence/runs/weighted_congestion/template_certificates/integer_normal_form_audit.json"
       ],
       "status": "executed finite exact audit"
+    },
+    {
+      "id": "WC-ORDERED-TAIL-PARAMETERS",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "有序权组的潜在尾部参数",
+      "detail": "有序分割覆盖全部玩家；a,b在同资源同组潜在用户取最小/最大权，L为后续组潜在总权，A=max(b/a)(1+L/a)^d。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md"
+      ],
+      "status": "exact definition"
+    },
+    {
+      "id": "WC-DAG-ENDPOINT-TESTS",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "DAG低高端点检测与路径生成函数",
+      "detail": "非零非负degree≤d费用，只检测根W/1与卫星(1+out)/(1+w)的统一泄漏；P_k计k顶点路径。",
+      "refs": [
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md"
+      ],
+      "status": "exact definition"
+    },
+    {
+      "id": "WC-ORDERED-COHORT-FREEZING-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "有序权组的尾部负载冻结存在界",
+      "detail": "任意MODEL游戏、d≥0和玩家有序非空划分，资源组潜在用户最小/最大权a,b与后组潜在总权L定义A=max_(e,j)(b/a)(1+L/a)^d（无潜在用户取1）。依次固定先组背景，最小化按(1+L/a)^d/a缩放的活动组Shapley势并冻结，任取阶段全局最小均得到A-PNE。若组内比≤R且L≤εa，给R(1+ε)^d；不控制全类最佳划分参数。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-ORDERED-TAIL-PARAMETER-LIMIT-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "两权级有序尾部参数的精确最优值",
+      "detail": "任意d≥1,H≥1,K≥1，单资源一名权H玩家及K名单位权玩家、费用x^d、人人可选空策略或该资源。全部有序非空划分的最小A恰为min{H,(1+K/H)^d}。K=ceil(H²)时恰H，固定d仍可无界；游戏有全空精确PNE。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "有向无环阶跃端点的低泄漏次数预算",
+      "detail": "任意非空有限simple DAG、d≥1及ε∈(0,1)，令z=ε^(-1/d),P_k为k顶点有向路径数,S_D(z)=ΣP_kz^(k−1)。存在根权1、正轻权W<1及outsum<w_v、非零非负degree≤d费用通过p0(W)≤εp0(1)和pv(1+outsum)≤εpv(1+w_v)，当且仅当z(z−1)S_D(z)≤1。全部可行权有正文slack表示；饱和时权唯一。原辅助step阈值q满足q(q−1)≤1/[z(z−1)]≤d/ln(1/ε)，固定ε的√d量级在检测系统内可达。",
+      "refs": [
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "research/reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "ORDERED-TAIL-FREEZING-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "有序尾部冻结的独立有限精确证据",
+      "detail": "只核验冻结输入和实现，不证明任意实权或任意有限规模。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_parameter.py",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing_independent.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_parameter_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DAG-LOW-LEAKAGE-BUDGET-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "DAG低泄漏次数预算的独立有限精确证据",
+      "detail": "只核验冻结输入和实现，不证明任意实权或任意有限规模。",
+      "refs": [
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "tests/audits/weighted_congestion/polynomial_curvature/verify_dag_low_leakage.py",
+        "tests/audits/weighted_congestion/polynomial_curvature/independent_dag_low_leakage.py",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage.json",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-TAIL-AND-DAG-UNIFORM-GAP",
+      "kind": "obligation",
+      "track": "weighted_congestion",
+      "title": "潜在尾部与固定低泄漏以外的全类选态义务",
+      "detail": "A参数在两权级族无界；固定端点低漏的step阈值仅√d。仍须用实际占用、异质泄漏、重开早组或全状态非势机制判定全类目标。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md"
+      ],
+      "status": "OPEN"
     }
   ],
   "hyperedges": [
@@ -10969,6 +11071,142 @@
         "evidence/runs/weighted_congestion/template_certificates/integer_normal_form_audit.json"
       ],
       "status": "finite exact checks passed"
+    },
+    {
+      "id": "DERIVE-WC-ORDERED-COHORT-FREEZING-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-R3-DENSE-SHARE-v1",
+        "WC-ORDERED-TAIL-PARAMETERS"
+      ],
+      "conclusion": "WC-ORDERED-COHORT-FREEZING-v1",
+      "statement": "共同使用所列定义、模型及已证明前提；一般推导见完整正文，有限核验不作逻辑前提。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-ORDERED-TAIL-PARAMETER-LIMIT-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-ORDERED-TAIL-PARAMETERS"
+      ],
+      "conclusion": "WC-ORDERED-TAIL-PARAMETER-LIMIT-v1",
+      "statement": "共同使用所列定义、模型及已证明前提；一般推导见完整正文，有限核验不作逻辑前提。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "research/reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-DAG-ENDPOINT-TESTS",
+        "WC-R1-DAG-STEP"
+      ],
+      "conclusion": "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1",
+      "statement": "共同使用所列定义、模型及已证明前提；一般推导见完整正文，有限核验不作逻辑前提。",
+      "refs": [
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "research/reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-ORDERED-COHORT-FREEZING-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "ORDERED-TAIL-FREEZING-AUDIT"
+      ],
+      "conclusion": "WC-ORDERED-COHORT-FREEZING-v1",
+      "statement": "Fraction有限输入的真实负载、边界和指标核对，不提升一般命题状态。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_parameter.py",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing_independent.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_parameter_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-ORDERED-TAIL-PARAMETER-LIMIT-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "ORDERED-TAIL-FREEZING-AUDIT"
+      ],
+      "conclusion": "WC-ORDERED-TAIL-PARAMETER-LIMIT-v1",
+      "statement": "Fraction有限输入的真实负载、边界和指标核对，不提升一般命题状态。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+        "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py",
+        "tests/audits/weighted_congestion/weight_bands/independent_tail_parameter.py",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing_independent.json",
+        "evidence/runs/weighted_congestion/weight_bands/ordered_tail_parameter_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "DAG-LOW-LEAKAGE-BUDGET-AUDIT"
+      ],
+      "conclusion": "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1",
+      "statement": "Fraction有限输入的真实负载、边界和指标核对，不提升一般命题状态。",
+      "refs": [
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "tests/audits/weighted_congestion/polynomial_curvature/verify_dag_low_leakage.py",
+        "tests/audits/weighted_congestion/polynomial_curvature/independent_dag_low_leakage.py",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage.json",
+        "evidence/runs/weighted_congestion/polynomial_curvature/dag_low_leakage_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "LIMIT-WC-ORDERED-TAIL-PARAMETER-LIMIT-v1",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-ORDERED-TAIL-PARAMETER-LIMIT-v1"
+      ],
+      "conclusion": "WC-TAIL-AND-DAG-UNIFORM-GAP",
+      "statement": "只标所写参数或检测系统的准确边界，不能外推为全类无均衡。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md"
+      ],
+      "status": "restricted method boundary"
+    },
+    {
+      "id": "LIMIT-WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1"
+      ],
+      "conclusion": "WC-TAIL-AND-DAG-UNIFORM-GAP",
+      "statement": "只标所写参数或检测系统的准确边界，不能外推为全类无均衡。",
+      "refs": [
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md"
+      ],
+      "status": "restricted method boundary"
     }
   ]
 }

@@ -526,3 +526,33 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：端点闭性没有缩小当前d/log d与d的缺口；没有全类参数紧致性假设。
 - Status：complete direct proof; independently reconstructed and exactly audited; unrefereed。Truth为端点；Value为精确全类量词接口；Novelty未认证；Mechanism为闭射线交；Ambition仍OPEN。
 - Related Files：同前项。
+
+## WC-ORDERED-COHORT-FREEZING-v1 — 有序权组的尾部负载冻结存在界
+
+- Exact Statement / Conclusion：任意MODEL游戏、d≥0和玩家有序非空划分，资源组潜在用户最小/最大权a,b与后组潜在总权L定义A=max_(e,j)(b/a)(1+L/a)^d（无潜在用户取1）。依次固定先组背景，最小化按(1+L/a)^d/a缩放的活动组Shapley势并冻结，任取阶段全局最小均得到A-PNE。若组内比≤R且L≤εa，给R(1+ε)^d；不控制全类最佳划分参数。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完整采用[正文](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)的精确身份；每个实权、每个合法偏离按真实负载。对象限制不得省略；主目标保持OPEN。
+- Dependencies：WC-MODEL, WC-R3-DENSE-SHARE-v1, WC-ORDERED-TAIL-PARAMETERS；有限最小化、单项式比较或DAG拓扑递推；正文逐项给出，无外部存在定理导入。
+- Evidence：一般证明；先依据精确命题独立重构，后读冻结hash逐项攻击；Fraction独立实现与实际运行分开记录。
+- Counterevidence / Objections：只证此实例参数界，无全类Cd/ln d；不要求同一势对全部改善边下降。未处理的全类义务不升级；外审/优先权未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth按所写范围；Value为接口及准确边界；Novelty未认证；Mechanism见正文；Ambition不是全类完成。
+- Related Files：[正文](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)、[审查](../reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md)；规范代码和冻结结果见正文审计合同及assets.json。
+
+## WC-ORDERED-TAIL-PARAMETER-LIMIT-v1 — 两权级有序尾部参数的精确最优值
+
+- Exact Statement / Conclusion：任意d≥1,H≥1,K≥1，单资源一名权H玩家及K名单位权玩家、费用x^d、人人可选空策略或该资源。全部有序非空划分的最小A恰为min{H,(1+K/H)^d}。K=ceil(H²)时恰H，固定d仍可无界；游戏有全空精确PNE。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完整采用[正文](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)的精确身份；每个实权、每个合法偏离按真实负载。对象限制不得省略；主目标保持OPEN。
+- Dependencies：WC-MODEL, WC-ORDERED-TAIL-PARAMETERS；有限最小化、单项式比较或DAG拓扑递推；正文逐项给出，无外部存在定理导入。
+- Evidence：一般证明；先依据精确命题独立重构，后读冻结hash逐项攻击；Fraction独立实现与实际运行分开记录。
+- Counterevidence / Objections：只否定对该潜在尾部A参数的统一控制，不否定冻结程序可能有更精细分析，也不是均衡非存在。未处理的全类义务不升级；外审/优先权未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth按所写范围；Value为接口及准确边界；Novelty未认证；Mechanism见正文；Ambition不是全类完成。
+- Related Files：[正文](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)、[审查](../reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md)；规范代码和冻结结果见正文审计合同及assets.json。
+
+## WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1 — 有向无环阶跃端点的低泄漏次数预算
+
+- Exact Statement / Conclusion：任意非空有限simple DAG、d≥1及ε∈(0,1)，令z=ε^(-1/d),P_k为k顶点有向路径数,S_D(z)=ΣP_kz^(k−1)。存在根权1、正轻权W<1及outsum<w_v、非零非负degree≤d费用通过p0(W)≤εp0(1)和pv(1+outsum)≤εpv(1+w_v)，当且仅当z(z−1)S_D(z)≤1。全部可行权有正文slack表示；饱和时权唯一。原辅助step阈值q满足q(q−1)≤1/[z(z−1)]≤d/ln(1/ε)，固定ε的√d量级在检测系统内可达。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完整采用[正文](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)的精确身份；每个实权、每个合法偏离按真实负载。对象限制不得省略；主目标保持OPEN。
+- Dependencies：WC-MODEL, WC-DAG-ENDPOINT-TESTS, WC-R1-DAG-STEP；有限最小化、单项式比较或DAG拓扑递推；正文逐项给出，无外部存在定理导入。
+- Evidence：一般证明；先依据精确命题独立重构，后读冻结hash逐项攻击；Fraction独立实现与实际运行分开记录。
+- Counterevidence / Objections：iff仅是指定端点检测系统；未控制高平台过冲或真实全状态偏离，不给实际多项式博弈的β上界。未处理的全类义务不升级；外审/优先权未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth按所写范围；Value为接口及准确边界；Novelty未认证；Mechanism见正文；Ambition不是全类完成。
+- Related Files：[正文](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)、[审查](../reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md)；规范代码和冻结结果见正文审计合同及assets.json。

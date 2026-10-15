@@ -26,6 +26,8 @@
 | [../tests/audits/](../tests/audits) 与 [../evidence/](../evidence) | 独立核验代码、输入、证书和冻结结果 | 从对应正文或资产目录进入；计算不替代一般证明 |
 | [../history/](../history/README.md) | 必要原稿、来源和已退出当前优先序的投稿判断 | 只在追溯时读；旧路线快照不覆盖现行研究状态 |
 
+加权拥塞的跨尺度新接口见[有序权组冻结](current/weighted_congestion/weight_bands/ordered_tail_freezing.md)：阶段局部势可拼接密集权群，但最优潜在尾部参数固定次数仍可无界。[DAG端点低泄漏预算](current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)则精确限制指定阶跃模拟测试；二者均未闭合全类匹配上界。
+
 ## 名称、命题与审查怎样对应
 
 每份文件的**中文数学名称与阅读目的**在 [CATALOG.md](CATALOG.md)，人工维护源为 `catalog.json`。同一文件可以包含多个命题，各自精确身份见 [current/claims.md](current/claims.md)；拥塞另有[主题账本](weighted_congestion_frontier/CLAIMS.md)。
