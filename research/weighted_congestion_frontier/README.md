@@ -27,3 +27,5 @@
 [严格反例的整数单项式规范形与普遍阈值端点](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)接有限动作择证接口：固定实倍率反例可只用整数权和单位单项式资源，且a_*端点可行；无全类规模截止界。配套独立审查、Fraction程序和冻结结果从正文或FILES进入。
 
 跨尺度结构接口：[有序权组冻结及两权级参数锐式](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)允许阶段局部势选择，但其最佳潜在尾部参数无统一界；[DAG端点低泄漏预算](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)只封闭指定检测系统，不代替全状态多项式证明。独立审查与实际代码/证据均由正文接入。
+
+[择证平稳与循环支撑边界](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)、[有向分叉统一强迫割均衡](../current/weighted_congestion/directed_fanout_forcing_cut.md)连接新的非势路线限制和下界构造限制；逐项Claim、独立审查及可复算证据均从正文/FILES进入，主目标仍OPEN。

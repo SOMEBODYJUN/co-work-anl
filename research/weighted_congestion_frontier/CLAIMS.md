@@ -556,3 +556,39 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：iff仅是指定端点检测系统；未控制高平台过冲或真实全状态偏离，不给实际多项式博弈的β上界。未处理的全类义务不升级；外审/优先权未认证。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth按所写范围；Value为接口及准确边界；Novelty未认证；Mechanism见正文；Ambition不是全类完成。
 - Related Files：[正文](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)、[审查](../reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md)；规范代码和冻结结果见正文审计合同及assets.json。
+
+### WC-SELECTOR-UNIT-SPEED-STATIONARY-BARRIER-v1 — 单位速度平稳择证的无界损失
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For every finite real alpha>=1 and d>=1, some finite positive rational weight two-action template and full selector have no unit-speed stationary dual, already witnessed by an affine column; this is no nonexistence result. 完整中文逐项身份及符号见[自足正文](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+- Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+- Evidence：[独立先重构后冻结攻击](../reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+- Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+- Related Files：上述正文、审查及从正文审计合同连接的code/run。
+
+### WC-AFFINE-SELECTOR-CYCLE-DUAL-v1 — 任意仿射择证的循环权重对偶
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For every finite positive-weight action template and tagged selector, every selected cycle gives an affine dual by lambda_s proportional to the selected mover weight; self-loops are allowed and all affine columns sum to zero at alpha=1. 完整中文逐项身份及符号见[自足正文](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+- Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+- Evidence：[独立先重构后冻结攻击](../reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+- Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+- Related Files：上述正文、审查及从正文审计合同连接的code/run。
+
+### WC-RECURRENT-SUPPORT-FIP-EQUIVALENCE-v1 — 循环支撑择证与全模板有限改善性等价
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For fixed finite weights, action counts, degree, real alpha>=1 and any fixed nonempty signature-column subcone, every selector admits a dual supported on its recurrent states iff every nonnegative-coefficient game on that template has no strict alpha-improvement cycle; this is stronger than mere PNE existence. 完整中文逐项身份及符号见[自足正文](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+- Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+- Evidence：[独立先重构后冻结攻击](../reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+- Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+- Related Files：上述正文、审查及从正文审计合同连接的code/run。
+
+### WC-DIRECTED-FANOUT-FORCING-CUT-v1 — 分叉双人侧反馈的统一强迫割均衡
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For d>=2 and alpha>=T_d, every finite unique-source light/multihead-private-pair-side topology satisfying the weak uniform aligned-light forcing inequalities admits an all-anti alpha-PNE selected by any local minimum of the stated weighted cut; no unrestricted existence claim. 完整中文逐项身份及符号见[自足正文](../current/weighted_congestion/directed_fanout_forcing_cut.md)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+- Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+- Evidence：[独立先重构后冻结攻击](../reviews/weighted_congestion/directed_fanout_forcing_cut_review.md)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+- Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+- Related Files：上述正文、审查及从正文审计合同连接的code/run。

@@ -15,3 +15,5 @@ WC-TARGET v1 OPEN。已分类入 main 的核心进展是奇环有限非存在族
 新增[严格反例整数规范形与闭端点](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)：每个固定实α的反例存在等价于整数权、单位单项式、非空策略子类；全类可行倍率[a_*(d),∞)。已独立重构攻击及有理审计，未给规模上限或统一C,d0。下一步仍需对无限规范模板族作统一dual估计，或给超出d/log d的全状态primal族，枚举无输出不能作存在证据。
 
 新结构边界：[有序尾部冻结](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)给阶段选择的A-PNE，并精确证明最佳A在两权级族无界；[DAG端点泄漏](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)以全部路径总权给检测系统iff及固定ε的锐√d辅助阈值。下一步应控制真实而非潜在尾部/重开早组，或绕过统一端点低漏并直接核查多项式全部偏离；两项均不判定全类目标。
+
+已审新边界：[择证循环支撑](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)中单位速度平稳dual无界损失，仿射按移动者权重有显式dual，仅支撑recurrent states等价全模板αFIP；一般存在路线不应无证增加此要求。[有向分叉强迫割均衡](../current/weighted_congestion/directed_fanout_forcing_cut.md)在UF下对异权light/多出侧/自环给α≥T_d全反位PNE。真正未解是全类统一dual估计或新全状态primal；可判别的下界逃逸点为UF失败、侧资源多hub共享及动作副本非对称，当前无闭合机制。

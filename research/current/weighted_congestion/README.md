@@ -32,6 +32,8 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 
 | 成果包名称 | 正文入口与内容 | 作用与边界 |
 | --- | --- | --- |
+| 择证平稳与循环支撑边界 | [完整证明](template_certificates/stationary_selector_obstruction.md)、[独立攻击](../../reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md) | 单位速度平稳dual损失无界；仿射循环有权重dual；recurrent支撑等价全模板αFIP，强于PNE存在 |
+| 有向分叉强迫割均衡 | [一般证明](directed_fanout_forcing_cut.md)、[独立攻击](../../reviews/weighted_congestion/directed_fanout_forcing_cut_review.md) | 唯一源主资源＋私有双人侧资源＋UF下，α≥T_d有全反位PNE；不含共享多hub侧资源或UF失败 |
 | 严格反例规范形与普遍阈值端点 | [一般证明](template_certificates/integer_counterexample_normal_form.md)、[独立攻击](../../reviews/weighted_congestion/template_certificates/integer_counterexample_normal_form_review.md) | 固定实α的反例可限制到整数权、单位单项式、非空策略；a_*端点可行。没有统一规模截止或匹配上界 |
 | 有序权组的尾部负载冻结 | [一般证明与参数锐式](weight_bands/ordered_tail_freezing.md)、[独立攻击](../../reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md) | 任意分组给A=max(b/a)(1+L/a)^d；可拼接密集同权群。两权级最佳A恰min{H,(1+K/H)^d}，固定次数仍可无界 |
 | DAG端点低泄漏次数预算 | [检测充要条件](polynomial_curvature/dag_low_leakage_budget.md)、[冻结审查](../../reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md) | z(z−1)ΣP_k z^(k−1)≤1恰可行；固定ε的辅助源门槛锐为√d量级。未控制高平台或真实全状态偏离 |

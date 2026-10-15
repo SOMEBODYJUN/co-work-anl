@@ -20,3 +20,11 @@
 ## 序势障碍不能外推到任意依游戏最小点选择
 
 可能的错误延伸是：既然资源可分目标无法对全部α改善严格下降，就断言任何资源可分目标均不能选出α-PNE。[精确等价](../current/weighted_congestion/separable_ordinal_obstruction.md)第四节否定这种延伸：入射距离唯一选择任意给定合法状态。因此只要求依游戏目标的全部全局最小点为均衡，与该游戏均衡存在本身等价。可回收的是精确量词边界，不是更强无势或无均衡结论；若要求单调、费用局部、跨游戏同规则或非循环有效构造，则需另立并验证这些新增条件。
+
+## 全状态dual的平稳或回返支撑限制
+
+尝试把原dual概率取成selector单位速度链的平稳概率，会引入原替代不要求的流量方程。[明确增长反障碍](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)在仿射费用已让该条件的必要倍率无界，尽管原dual和exactPNE存在；具体失败是轻重移动访问频率不匹配。放宽为任意回返状态支撑也恰好要求全模板αFIP，强于只找PNE。可回收的是仿射循环按移动者权重重加权，以及回返支撑的准确量词。允许暂态质量或另选持留率时应重新研究，不受单位速度否定直接覆盖。
+
+## 有向分叉的统一强迫放大
+
+把一个light复制出多条私有双人side以影响多个hub，仍共同占用其唯一main强迫预算。[割均衡定理](../current/weighted_congestion/directed_fanout_forcing_cut.md)在弱UF及α≥T_d用加权割平衡入反馈，给全anti真实PNE，所以此准确拓扑和假设内无法放大非存在。失败是结构上已有均衡，不是浮点搜索失败；异权、异形side、并行和selfloop均被覆盖。可回收工具是预算不等式与正部割；UF失败、同一side含多hub、action-asymmetric副本或多主源改变承重条件时才值得重试。它不排除这些类外机制，更不证明全类上界。
