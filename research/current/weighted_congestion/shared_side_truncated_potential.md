@@ -770,3 +770,157 @@ v3 与独立 exact 强迫边界均已完成一般证明、独立重构、冻结�
 - `python3 tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py`；冻结结果 `evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json`。独立实现降序势和literal策略负载，另检查κ缩放、源正预算与各势局部最小点。
 
 代码、seed、参数生成、Python版本、Fraction精度和源码hash均由实际程序及JSON固定。有限核验只检查所列实例，不代替正实参数的区间覆盖、凸性尾均值与源预算证明。R,K无界仍缺全类控制，UFhet失败也未覆盖。
+
+## 十一、异权 hub 的重置增量与强迫倍率分离
+
+### 11.1. 精确身份与旧版本关系
+
+**ID/version / 中文数学名称：** `WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2`，局部异权主玩家排序侧势的重置增量乘积预算均衡。第十节 v1 的陈述和证据不改；新版本分离强迫倍率与目标倍率，并以增量重置预算放宽充分条件。
+
+**Objects / Domain / Quantifiers / Definitions：** 完全量化第十节的有限模型：有限非空 hub 集 V、任意正实 hub 权 a_v；有限 light 集，正实权 w_l 和唯一 source o(l)；每 source 两个同费主资源副本，每 side 两个同费资源副本；任意 side hub/light 子集 H_j,L_j，可空；二元策略、全部资源互异及非负实系数、次数至多整数 d≥2 的 F_v,G_j，均原样保留。沿用 U_j,T_j,W_v，非空 H_j 的 A_j，以及侧内比 R 和 source-to-side 比 K。沿用第10.1、10.3节按身份破同权 tie 的降序前缀势 P_j 和 E_het。
+
+**Assumptions / Exact Statement / Scope / Conclusion：** 对任意实数 τ≥1、α≥1，假设
+
+    α≥R,   ατ≥Kd,                                  (H2)
+
+且每名 light l（v=o(l)）满足
+
+    F_v(a_v+w_l)+Σ_(j:l∈L_j)G_j(w_l)
+      ≥τ[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+U_j)].        (UFhetτ)
+
+则同一 E_het 的**每个**单 hub 翻位局部最小点，配以全部 light 与各自 source 反位，均为真实 α-PNE。没有要求 τ 与 α 的大小排序。允许 τ=1、α=1（后者由 α≥R 强制 R=1）、零/常数费用、空 light 集、空 H_j/L_j、source 自身参加 side、source 不参加 side 及任意多 hub 权类。
+
+**Dependencies：** 第10.1节固定 light 的边际夹逼、下面非均匀前缀的重置增量引理、第9.9节主增量源标量引理 (SΔ)、κ_d 的单调与次齐次性，以及有限势局部最小点。没有调用外部均衡定理，没有把 v1 的结论当成前提。
+
+**Evidence / Counterevidence / Objections / Status：** 本草稿给出完整条件证明，有限 Fraction 审计另存；独立审查状态由主研究者在审查后填写。本范围仍依赖 R,K 和 (UFhetτ)，不能视为全类结论；下述独立方法反例给出全部全局最小点都坏的游戏，排除仅靠该势最小化删除 R 条件的推理，却不排除其他选态法。未外审、新颖性未认证。
+
+取 τ=α 时，新域是 α≥R、α²≥Kd；v1 的 α≥R、(α−1)²≥Kd 蕴含新域，故保留旧保证。同权 R=K=1 时，P_j 退化为原 Rosenthal 势，新域恰恢复第9.14节的 ατ≥d。局部 R,K 有界时，对固定 τ 给 max{R,Kd/τ} 的子类保证；这些仍是实例结构参数。
+
+### 11.2. 非均匀前缀的重置增量引理
+
+设 A>0、w>0、x≥0、T≥x+w、U≥0；若 n≥1，令
+
+    A≤p_1<p_2<⋯<p_n≤U,  p_(r+1)−p_r≥A,
+    Y=T+U.
+
+对任意非负系数、次数至多 d≥2 的多项式 G，有
+
+    Σ_(r=1)^n[G(x+w+p_r)−G(x+p_r)]
+      ≤κ_d(w/A)[G(Y)−G(w)],  κ_d(t)=min{dt,t+1}. (HRI)
+
+也允许 n=0，此时不要求任何 p_r，左侧零，因 Y≥T≥w，右侧非负。U=0 时只能使用 n=0。若 G 为常数或零，两边均零。以下 n≥1；前缀起点和间距条件给 U≥nA，所以 Y−w≥U≥nA>0。仅写“相邻间距≥A”而删除首起点/总长条件不够：n=1、p_1=0、x=0、Y=w 会使非恒定 G 的左侧正而右侧零；实际 hub 前缀满足所写完整条件。
+
+对每个 k≥1，Y^k−w^k≥(Y−w)Y^(k−1)。故逐非负系数比较，对 0≤z≤Y 有
+
+    G'(z)≤d[G(Y)−G(w)]/(Y−w).
+
+左侧是 n 个长度 w 区间 I_r=[x+p_r,x+w+p_r] 上 G' 的积分和，全部区间包含于 [0,Y]。因此其值至多
+
+    nw·d[G(Y)−G(w)]/(Y−w)
+      ≤d(w/A)[G(Y)−G(w)].                         (HRIa)
+
+再令 a=1+w/A，c(z) 为这些区间的覆盖密度。相邻起点间距至少 A，所以几乎处处 c(z)≤ceil(w/A)≤a，且 ∫_0^Y c=nw。令 q=G'(w)≥0。G' 非减，故
+
+    ∫_0^w cG'≤q∫_0^w c,
+    ∫_w^Y(a−c)G'≥q∫_w^Y(a−c).
+
+两式相减得
+
+    ∫_0^Y cG'−a[G(Y)−G(w)]
+      ≤q[nw−a(Y−w)]≤0,
+
+因为 a(Y−w)≥a nA=n(w+A)≥nw。这一步以 w 以上的剩余容量支付可能落在 w 以下的积分质量，并未假定所有原区间都位于 [w,Y]。结合 (HRIa) 即 (HRI)。
+
+应用到 side j 的任一 hub 子集 S：降序前缀 p_r 是相应 hub 权的部分和，首项及相邻间距都至少 A_j，末项至多 U_j。因此在 x+w≤T_j 时
+
+    P_j(S;x+w)−P_j(S;x)
+      ≤κ_d(w/A_j)[G_j(T_j+U_j)−G_j(w)].           (HRI-side)
+
+空 H_j 或空 S 的势恒零，直接以零处理，不定义或除以不存在的 A_j。
+
+### 11.3. 整名 light 领取一次预算，真实偏离闭合
+
+固定 source v，定义
+
+    Q_l=F_v(a_v+w_l)−τF_v(W_v),
+    D_lj=G_j(T_j+U_j)−G_j(w_l)≥0.
+
+由于 τ≥1，
+
+    τD_lj≤τG_j(T_j+U_j)−G_j(w_l).
+
+由 (UFhetτ)，每名 light 的全部 side 共同满足
+
+    τΣ_(j:l∈L_j)D_lj≤Q_l,  Q_l≥0.                (HP)
+
+固定 hub 翻位后，只在势比较中逐名重置 source=v 的 light。移出副本的势变化非正；移入副本使用 (HRI-side)，中间外场始终满足 x+w_l≤T_j。总正向误差 B_v 因而满足
+
+    B_v≤Σ_(o(l)=v)Σ_(j:l∈L_j,H_j≠∅)
+                  κ_d(w_l/A_j)D_lj
+       ≤KΣ_(o(l)=v)κ_d(w_l/a_v)Σ_(j:l∈L_j)D_lj
+       ≤(K/τ)Σ_(o(l)=v)κ_d(w_l/a_v)Q_l
+       ≤(Kd/τ)[F_v(a_v+W_v)−F_v(a_v)].            (HB)
+
+第二步使用 κ_d(w_l/A_j)≤Kκ_d(w_l/a_v)；(HP) 的 Q_l 非负，全部 side 只共领一次主预算。空 H_j 的实际势误差零，从其预算中省去非负项合法。末步直接使用 (SΔ)，取 u=a_v、t_l=w_l/a_v；它对 τ≥1 成立，不要求每个源括号自行非负（此处 UF 恰额外保证了非负）。这里只有除以正数 τ，没有除以 τ−1。
+
+令 Δ_v=F_v(a_v+W_v)−F_v(a_v)≥0，M_v=αF_v(a_v+W_v)−F_v(a_v)。由 (H2)、α≥1，
+
+    B_v≤(Kd/τ)Δ_v≤αΔ_v≤M_v.                     (HPay)
+
+无 source light 时 B_v=Δ_v=0，不需要任何正成本假设。
+
+取 E_het 的任一单 hub 局部最小点 h，并配全 anti。真实 hub v 单方翻位保持全部 light 动作固定。第10.1节边际夹逼和 α≥R 给真实 side 的 α 成本差不超过固定外场势差；随后仅供比较的 light 重置误差至多 B_v。因此
+
+    C_v(s)−αC_v(dev)
+      ≤−M_v+E_het(h)−E_het(h^v)+B_v≤0.
+
+每名 light 当前主负载 W_v，当前 side 负载至多 T_j+U_j；真实翻位后主负载 a_v+w_l，side 新负载至少 w_l。因此 (UFhetτ) 给 τC_l(s)≤C_l(dev)，再由 τ,α≥1 推出 C_l(s)≤αC_l(dev)。各玩家只有两个动作，保留动作自动满足。零偏离成本按这个不等式处理，没有费用商或 0/0。完成 v2 的条件证明。
+
+### 11.4. 独立方法 Claim：排序势的全部全局最小点均可损失 R 因子
+
+**ID/version / 中文数学名称：** `WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1`，降序侧势全局最小化保证的局部权比障碍。
+
+**Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 对每个实 R>1、每个实 1≤α<R、每个整数 d≥2 以及每个 τ≥1，存在第十节结构类的有限游戏：没有 light、全部主费用零、仅一个 side 副本对，侧费用 G(x)=x，侧内比恰 R、K=1，(UFhetτ) 真空成立。其降序势 E_het 的**全部全局最小点**都不是 α-PNE；每个全局最小点同时还是严格单 hub 翻位局部最小点。若还要求 ατ≥Kd=d，只需另选 τ≥d/α；同一反例保持。因此删去 α≥R 后，乘积预算不能保证该势任意局部最小点或任意全局最小点均为 α-PNE，且仅在全局最小点之间择优也不能修复。它不否定真实 exact PNE，更不是全类非存在下界。
+
+**Construction / Proof：** 固定任意 A>0，令 a=RA。取正整数
+
+    n>αR/(R−α).
+
+有 n 名 hub 权 a 和 n 名 hub 权 A，全部参加这一个 side 对；其主资源费用均为零。状态 h 把全部 n 名重 hub 放副本0，全部 n 名轻 hub 放副本1。
+
+任一重 hub 翻位时，重组部分的降序势减少 na，而目标副本的插入边际恰 (n+1)a，故 ΔE_het=a>0。任一轻 hub 翻位时，原副本势减少 nA，而新副本插入边际为 na+A，故
+
+    ΔE_het=na−(n−1)A>0.
+
+所以 h 是严格单 hub 翻位局部最小点，没有可供平坦移动规则离开的 tie。任一重 hub 当前真实成本是 na，翻位后真实成本是 a+nA，其严格改善比为
+
+    na/(a+nA)=nR/(R+n)>α,
+
+最后不等式与 n 的选择等价。固定 R 令 n→∞ 时该比趋于 R。没有 light 玩家，强迫假设对任意 τ 都真空成立；G 线性属于每个 d≥2 的次数上限，费用和权均合法。
+
+为核对**全部全局最小点**，令任一状态的副本0有 x 名重 hub 和 y 名轻 hub；副本1相应有 n−x 名重 hub 和 n−y 名轻 hub。因为 a>A，降序势先计重 hub，再计轻 hub，所以其势值为
+
+    P(x,y)=a/2[x(x+1)+(n−x)(n−x+1)]
+           +a[xy+(n−x)(n−y)]
+           +A/2[y(y+1)+(n−y)(n−y+1)].
+
+全分离态 h 的值是 P_sep=(a+A)n(n+1)/2。令 k=n−x、l=y，直接展开得到精确恒等式
+
+    P(x,y)−P_sep=a(k−l)^2+(a−A)l(n−l).          (GlobalR)
+
+对全部整数 0≤k,l≤n，两项非负。因 a>A，等号要求 k=l 且 l=0 或 n，故仅有 (x,y)=(n,0),(0,n) 两个全分离态。每一类玩家在这两个态中全部同位，故计数态各对应唯一身份状态。两个全局最小点由副本互换对称，均具有上面严格局部最小性质及严格重 hub 改善。因此所有 E_het 全局最小点都坏。
+
+**Dependencies / Evidence / Objections / Status / Related Files：** 仅依赖第10.1节势定义和 MODEL 的真实偏离。本构造把第10.4节的单副本边际锐性加强为完整对称游戏中全部全局最小点均坏；严格局部最小是同一 Claim 的附带结论，不另建重复身份。有限 Fraction 审计对所选适中 n 的实例枚举全部身份单人翻位，对其余参数精确核对两类对称闭式；另用精确多元多项式系数反算 (GlobalR) 并枚举有限计数格核对全局最小点。它排除仅以此排序势局部或全局最小化删除 R 的保证，不排除改用其他势、在非最小状态选择，或不同数学机制。主问题仍开放；独立审查、外审、新颖性分别另记。
+
+本游戏本身存在 exact PNE：在有限二副本状态中取总负载差绝对值最小的状态；若某 hub 可严格改善，则其当前副本负载大于翻位后副本负载，翻位严格缩小绝对负载差，矛盾。因此不能把上面坏局部最小点冒认为不存在均衡的例子。
+
+### 11.5. 冻结攻击、代码与有限证据
+
+第11.1—11.4节冻结 SHA256 为 `bf4478c57a426b5fd0817a07d06686951596f717cd888620ae663fb0a24afb76`，其数学字节原样保留；该冻结稿中的待填状态在此明确更新：两个 Claim 均有完整证明、独立先重构后冻结攻击，未发现范围内尚成立的 fatal objection。详见[独立审查](../../reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md)。未外审、未认证新颖性，WC-TARGET仍OPEN。
+
+在仓库根运行以下程序，仅输出JSON，重跑不得覆盖冻结结果：
+
+- `python3 tests/audits/weighted_congestion/verify_heterogeneous_reset_increment.py`；作者路，未导入旧程序核心，冻结结果 `evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_author.json`。
+- `python3 tests/audits/weighted_congestion/independent_heterogeneous_reset_increment.py`；审查者独立 literal 实现，冻结结果 `evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_independent.json`。
+
+参数生成、seed、Python版本、Fraction算术和源码hash由代码及JSON固定。核验覆盖非均匀重置、主增量、弱等号、零/常数费用、完整真实偏离及(GlobalR)系数反算；有限证据不替代一般证明。旧第九、十节及其冻结代码/结果均未改写。

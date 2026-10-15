@@ -6032,6 +6032,118 @@
         "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "WC-HETEROGENEOUS-RESET-PRODUCT-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "异权前缀重置及双倍率精确合同",
+      "detail": "沿用第十节异权资源与势；d≥2、τ≥1、α≥R、ατ≥Kd、UFhetτ；HRI首前缀≥A、间距≥A、末前缀≤U、x+w≤T。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "WC-INCIDENCE-TREE-PRICE-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "潜在使用二部森林与条件稳定报价接口",
+      "detail": "i—e iff某合法策略含e；根资源当前使用价p与冻结others进入价≥p，两个bit completion均令所有内部玩家exact稳定。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "局部异权主玩家排序侧势的重置增量乘积预算均衡",
+      "detail": "任意d≥2、任意有限第十节异权hub/唯一source light/二元同费主侧副本拓扑，正实权和非负degree≤d费用；沿用A_j、R、K。对全部实τ≥1、α≥1，若每light满足F_v(a_v+w_l)+ΣG_j(w_l)≥τ[F_v(W_v)+ΣG_j(T_j+U_j)]，且α≥R、ατ≥Kd，则原E_het每个单hub局部最小点配全anti为真实α-PNE。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "降序侧势全局最小化保证的局部权比障碍",
+      "detail": "每个实R>1、1≤α<R、整数d≥2与τ≥1，存在无线light、main零、单side G=x的合法游戏，侧内比R、K=1、UFτ真空；E_het全部全局最小点都是严格单翻位局部最小点且非α-PNE。取n>αR/(R−α)，n重RA与n轻A分离，重gain=nR/(R+n)；ΔE=a(n−x−y)^2+(a−A)y(n−y)使全局min恰两个分离态。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-INCIDENCE-FOREST-EXACT-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "潜在使用森林的精确纯均衡",
+      "detail": "每个有限正实权玩家、有限资源子集策略（可含空）且任意逐点有限非负非减资源费用的游戏，若玩家—资源潜在使用二部图为森林，则存在exactPNE；允许必用资源、任意策略耦合、不连续费用、零与常数。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "单核心玩家挂树的保次数私人成本提升",
+      "detail": "任意上述费用类游戏，非空保留玩家N0和资源E0，删除玩家不潜在使用E0；非E0附属二部图为森林且每分量至多接触一个保留玩家。各根边换非负私有常数资源，保留策略单射与玩家权，存在不依α的固定lift将reduced任实α≥1 PNE提升原；非负degree≤d多项式时保同次数上限d≥0。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "单环潜在使用图的二玩家精确均衡反例",
+      "detail": "明示权(1,2)二玩家四资源游戏，e=x²、f=(9/2)x、私人p=4、q=71/4，策略分别{e,p}/{f}及{e,f}/{q}。潜在使用图连通且圈秩1，四态均有strict改善，最佳纯状态因子恰72/71并由00取端点。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "HETEROGENEOUS-HUB-RESET-PRODUCT-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "异权排序侧势重置增量与全局最小化边界的双路有理核验",
+      "detail": "有限实际生成参数、seed、版本和源码hash；独立literal成本重建与弱端点反算，不替一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "INCIDENCE-FOREST-PRIVATE-REDUCTION-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "潜在使用森林精确均衡与单玩家挂树归约的双路有理核验",
+      "detail": "有限实际生成参数、seed、版本和源码hash；独立literal成本重建与弱端点反算，不替一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "tests/audits/weighted_congestion/verify_incidence_forest.py",
+        "tests/audits/weighted_congestion/independent_incidence_forest.py",
+        "evidence/runs/weighted_congestion/incidence_forest/author.json",
+        "evidence/runs/weighted_congestion/incidence_forest/independent.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -14254,6 +14366,206 @@
         "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-HETEROGENEOUS-RESET-PRODUCT-DEFINITION",
+        "WC-MULTISOURCE-FORCING-INCREMENT-DEFINITION"
+      ],
+      "conclusion": "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2",
+      "statement": "非均匀前缀HRI把reset界改为κ[G(Y)−G(w)]；UFτ按整light付款，SΔ给KdΔF/τ，α≥R控制真实hub边际，有限局部最小点闭合。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-HETEROGENEOUS-RESET-PRODUCT-DEFINITION"
+      ],
+      "conclusion": "WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1",
+      "statement": "完整对称线性游戏的精确计数势恒等式和全部最小点覆盖；ατ可另取足够大而坏最小点不变。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-INCIDENCE-FOREST-EXACT-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-INCIDENCE-TREE-PRICE-DEFINITION"
+      ],
+      "conclusion": "WC-INCIDENCE-FOREST-EXACT-v1",
+      "statement": "固定阈值顺序的星形贪心负载随背景非增；两个条件稳定延续给当前价=p、冻结进入价≥p，沿树递归选态。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-INCIDENCE-TREE-PRICE-DEFINITION",
+        "WC-INCIDENCE-FOREST-EXACT-v1"
+      ],
+      "conclusion": "WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1",
+      "statement": "保留玩家当前成本与reduced相等、冻结others真实偏离成本≥reduced偏离成本；附属玩家exact稳定，无根分量独立精确选态。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-INCIDENCE-TREE-PRICE-DEFINITION"
+      ],
+      "conclusion": "WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1",
+      "statement": "逐四状态八偏离直接负载计算，证明森林存在定理不能直接扩大到任意单环。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "HETEROGENEOUS-HUB-RESET-PRODUCT-AUDIT"
+      ],
+      "conclusion": "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2",
+      "statement": "两路精确有限验证；参数与边界范围以实际JSON和源码为准。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "HETEROGENEOUS-HUB-RESET-PRODUCT-AUDIT"
+      ],
+      "conclusion": "WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1",
+      "statement": "两路精确有限验证；参数与边界范围以实际JSON和源码为准。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-INCIDENCE-FOREST-EXACT-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "INCIDENCE-FOREST-PRIVATE-REDUCTION-AUDIT"
+      ],
+      "conclusion": "WC-INCIDENCE-FOREST-EXACT-v1",
+      "statement": "两路精确有限验证；参数与边界范围以实际JSON和源码为准。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "tests/audits/weighted_congestion/verify_incidence_forest.py",
+        "tests/audits/weighted_congestion/independent_incidence_forest.py",
+        "evidence/runs/weighted_congestion/incidence_forest/author.json",
+        "evidence/runs/weighted_congestion/incidence_forest/independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "INCIDENCE-FOREST-PRIVATE-REDUCTION-AUDIT"
+      ],
+      "conclusion": "WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1",
+      "statement": "两路精确有限验证；参数与边界范围以实际JSON和源码为准。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "tests/audits/weighted_congestion/verify_incidence_forest.py",
+        "tests/audits/weighted_congestion/independent_incidence_forest.py",
+        "evidence/runs/weighted_congestion/incidence_forest/author.json",
+        "evidence/runs/weighted_congestion/incidence_forest/independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "INCIDENCE-FOREST-PRIVATE-REDUCTION-AUDIT"
+      ],
+      "conclusion": "WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1",
+      "statement": "两路精确有限验证；参数与边界范围以实际JSON和源码为准。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "tests/audits/weighted_congestion/verify_incidence_forest.py",
+        "tests/audits/weighted_congestion/independent_incidence_forest.py",
+        "evidence/runs/weighted_congestion/incidence_forest/author.json",
+        "evidence/runs/weighted_congestion/incidence_forest/independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "LIMIT-SORTED-SIDE-R-REMOVAL",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1"
+      ],
+      "conclusion": "WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2",
+      "statement": "不能删除alpha≥R并仅靠同一E的全局最小化补救；不限制其他选态或全类存在。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "LIMIT-FOREST-TO-UNICYCLE",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1"
+      ],
+      "conclusion": "WC-INCIDENCE-FOREST-EXACT-v1",
+      "statement": "单环已可无exactPNE，森林保证不能直接扩到圈秩1；不是渐近下界。",
+      "refs": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
     }
   ]
 }

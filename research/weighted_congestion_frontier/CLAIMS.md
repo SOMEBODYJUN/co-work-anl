@@ -971,3 +971,53 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Counterevidence / Objections：** 同权hub、唯一main source、二元同费副本和原UFτ承重；不提供一般游戏的强迫表示、弱强迫下的统一选态或异权hub桥。v1/v2精确身份和原冻结证据保留。ατ≥d仅充分；独立sharp边界只限α1，WC-TARGET仍OPEN，未外审/新颖性未认证。 exact反例仅破α1，不能把改善幅度趋1升级成固定α>1反例。无尚成立范围内fatal。
 - **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确身份；Value为重置增量预算及独立exact强迫边界；Mechanism见正文；Novelty/外审未认证；Ambition全类OPEN。
 - **Related Files：** 原稿第九节、新审查追加部分、两路reset增量程序/冻结结果，经`research/assets.json`与`research/catalog.json`接入；v1/v2证据保持。
+
+## WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2 — 局部异权主玩家排序侧势的重置增量乘积预算均衡
+
+- **ID/version / 中文数学名称：** WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2，局部异权主玩家排序侧势的重置增量乘积预算均衡。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 任意d≥2、任意有限第十节异权hub/唯一source light/二元同费主侧副本拓扑，正实权和非负degree≤d费用；沿用A_j、R、K。对全部实τ≥1、α≥1，若每light满足F_v(a_v+w_l)+ΣG_j(w_l)≥τ[F_v(W_v)+ΣG_j(T_j+U_j)]，且α≥R、ατ≥Kd，则原E_het每个单hub局部最小点配全anti为真实α-PNE。 精确策略、定义和弱均衡端点以正文为准，不用摘要改变身份。
+- **Dependencies：** WC-MODEL, WC-HETEROGENEOUS-RESET-PRODUCT-DEFINITION, WC-MULTISOURCE-FORCING-INCREMENT-DEFINITION；非均匀前缀HRI把reset界改为κ[G(Y)−G(w)]；UFτ按整light付款，SΔ给KdΔF/τ，α≥R控制真实hub边际，有限局部最小点闭合。
+- **Evidence：** [自足正文](../current/weighted_congestion/shared_side_truncated_potential.md)、[先重构后冻结攻击](../reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md)及两路Fraction代码/冻结记录，实际参数、seed、版本和hash见正文审计合同。有限检查不替一般证明。
+- **Counterevidence / Objections：** 仍依R/K及UFτ；不是全类界。旧v1量词、正文和冻结证据保持；乘积域只称充分。 范围内没有尚成立fatal；未外审、新颖性未认证。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
+- **Related Files：** research/current/weighted_congestion/shared_side_truncated_potential.md、research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md；代码/证据从正文和assets.json接入。
+
+## WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1 — 降序侧势全局最小化保证的局部权比障碍
+
+- **ID/version / 中文数学名称：** WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1，降序侧势全局最小化保证的局部权比障碍。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 每个实R>1、1≤α<R、整数d≥2与τ≥1，存在无线light、main零、单side G=x的合法游戏，侧内比R、K=1、UFτ真空；E_het全部全局最小点都是严格单翻位局部最小点且非α-PNE。取n>αR/(R−α)，n重RA与n轻A分离，重gain=nR/(R+n)；ΔE=a(n−x−y)^2+(a−A)y(n−y)使全局min恰两个分离态。 精确策略、定义和弱均衡端点以正文为准，不用摘要改变身份。
+- **Dependencies：** WC-MODEL, WC-HETEROGENEOUS-RESET-PRODUCT-DEFINITION；完整对称线性游戏的精确计数势恒等式和全部最小点覆盖；ατ可另取足够大而坏最小点不变。
+- **Evidence：** [自足正文](../current/weighted_congestion/shared_side_truncated_potential.md)、[先重构后冻结攻击](../reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md)及两路Fraction代码/冻结记录，实际参数、seed、版本和hash见正文审计合同。有限检查不替一般证明。
+- **Counterevidence / Objections：** 只限制旧降序E的局部或全局最小化，连global-min间择优也无效；原游戏有exactPNE，不是全类非存在或其他势障碍。 范围内没有尚成立fatal；未外审、新颖性未认证。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
+- **Related Files：** research/current/weighted_congestion/shared_side_truncated_potential.md、research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md；代码/证据从正文和assets.json接入。
+
+## WC-INCIDENCE-FOREST-EXACT-v1 — 潜在使用森林的精确纯均衡
+
+- **ID/version / 中文数学名称：** WC-INCIDENCE-FOREST-EXACT-v1，潜在使用森林的精确纯均衡。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 每个有限正实权玩家、有限资源子集策略（可含空）且任意逐点有限非负非减资源费用的游戏，若玩家—资源潜在使用二部图为森林，则存在exactPNE；允许必用资源、任意策略耦合、不连续费用、零与常数。 精确策略、定义和弱均衡端点以正文为准，不用摘要改变身份。
+- **Dependencies：** WC-MODEL, WC-INCIDENCE-TREE-PRICE-DEFINITION；固定阈值顺序的星形贪心负载随背景非增；两个条件稳定延续给当前价=p、冻结进入价≥p，沿树递归选态。
+- **Evidence：** [自足正文](../current/weighted_congestion/incidence_forest_private_reduction.md)、[先重构后冻结攻击](../reviews/weighted_congestion/incidence_forest_private_reduction_review.md)及两路Fraction代码/冻结记录，实际参数、seed、版本和hash见正文审计合同。有限检查不替一般证明。
+- **Counterevidence / Objections：** 仅森林，不声称全部改善终止；无任意有环核心的规模或全类倍率界，单环已有明确反例。 范围内没有尚成立fatal；未外审、新颖性未认证。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
+- **Related Files：** research/current/weighted_congestion/incidence_forest_private_reduction.md、research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md；代码/证据从正文和assets.json接入。
+
+## WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1 — 单核心玩家挂树的保次数私人成本提升
+
+- **ID/version / 中文数学名称：** WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1，单核心玩家挂树的保次数私人成本提升。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 任意上述费用类游戏，非空保留玩家N0和资源E0，删除玩家不潜在使用E0；非E0附属二部图为森林且每分量至多接触一个保留玩家。各根边换非负私有常数资源，保留策略单射与玩家权，存在不依α的固定lift将reduced任实α≥1 PNE提升原；非负degree≤d多项式时保同次数上限d≥0。 精确策略、定义和弱均衡端点以正文为准，不用摘要改变身份。
+- **Dependencies：** WC-MODEL, WC-INCIDENCE-TREE-PRICE-DEFINITION, WC-INCIDENCE-FOREST-EXACT-v1；保留玩家当前成本与reduced相等、冻结others真实偏离成本≥reduced偏离成本；附属玩家exact稳定，无根分量独立精确选态。
+- **Evidence：** [自足正文](../current/weighted_congestion/incidence_forest_private_reduction.md)、[先重构后冻结攻击](../reviews/weighted_congestion/incidence_forest_private_reduction_review.md)及两路Fraction代码/冻结记录，实际参数、seed、版本和hash见正文审计合同。有限检查不替一般证明。
+- **Counterevidence / Objections：** 单向lift；不允许同一附属分量接触多个核心玩家或以核心资源为根，不保证最优倍率或原均衡反投影。 范围内没有尚成立fatal；未外审、新颖性未认证。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
+- **Related Files：** research/current/weighted_congestion/incidence_forest_private_reduction.md、research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md；代码/证据从正文和assets.json接入。
+
+## WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1 — 单环潜在使用图的二玩家精确均衡反例
+
+- **ID/version / 中文数学名称：** WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1，单环潜在使用图的二玩家精确均衡反例。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 明示权(1,2)二玩家四资源游戏，e=x²、f=(9/2)x、私人p=4、q=71/4，策略分别{e,p}/{f}及{e,f}/{q}。潜在使用图连通且圈秩1，四态均有strict改善，最佳纯状态因子恰72/71并由00取端点。 精确策略、定义和弱均衡端点以正文为准，不用摘要改变身份。
+- **Dependencies：** WC-MODEL, WC-INCIDENCE-TREE-PRICE-DEFINITION；逐四状态八偏离直接负载计算，证明森林存在定理不能直接扩大到任意单环。
+- **Evidence：** [自足正文](../current/weighted_congestion/incidence_forest_private_reduction.md)、[先重构后冻结攻击](../reviews/weighted_congestion/incidence_forest_private_reduction_review.md)及两路Fraction代码/冻结记录，实际参数、seed、版本和hash见正文审计合同。有限检查不替一般证明。
+- **Counterevidence / Objections：** 固定degree2、固定二玩家的exact存在反例，不是随次数增长下界或最坏单环阈值最优性。 范围内没有尚成立fatal；未外审、新颖性未认证。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
+- **Related Files：** research/current/weighted_congestion/incidence_forest_private_reduction.md、research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md；代码/证据从正文和assets.json接入。
