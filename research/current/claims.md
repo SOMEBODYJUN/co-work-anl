@@ -553,6 +553,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1 | 任意上述费用类游戏，非空保留玩家N0和资源E0，删除玩家不潜在使用E0；非E0附属二部图为森林且每分量至多接触一个保留玩家。各根边换非负私有常数资源，保留策略单射与玩家权，存在不依α的固定lift将reduced任实α≥1 PNE提升原；非负degree≤d多项式时保同次数上限d≥0。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/incidence_forest_private_reduction.md)。单向lift；不允许同一附属分量接触多个核心玩家或以核心资源为根，不保证最优倍率或原均衡反投影。 |
 | WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1 | 明示权(1,2)二玩家四资源游戏，e=x²、f=(9/2)x、私人p=4、q=71/4，策略分别{e,p}/{f}及{e,f}/{q}。潜在使用图连通且圈秩1，四态均有strict改善，最佳纯状态因子恰72/71并由00取端点。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/incidence_forest_private_reduction.md)。固定degree2、固定二玩家的exact存在反例，不是随次数增长下界或最坏单环阈值最优性。 |
 
+## 同权类前沿到全状态的条件编译
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-CLASS-FRONT-ALLSTATE-COMPILER-v1 | 任意p≥0、α≥1的MODEL两动作游戏，玩家分为有序同权类，跨类权任意。𝔉为各类至多一次相邻bit变化的product-front。若每个𝔉态有保𝔉严格α出口，令B=max全状态玩家成本、η=min前沿最大保前沿margin>0、L=max类C(n_a−1,2)。L0时原游戏已无αPNE；L≥1时仅加2Σ_a C(n_a−1,2)个同类固定首位010/101时钟，费用M[x/(3w_a)]^D、M=2αB，任D≥1满足(2/3)^D≤η/(4α²BL)，即全部状态有margin≥η/2的strictα出口，输出次数≤max(p,D)。保前沿边clock margin恰−(α−1)r_iM(2/3)^D，故可改用(2/3)^D≤1/(4αL)及(α−1)LM(2/3)^D≤η/2；α1第二式自动成立，D不依η。 | complete conditional proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)、[独立重构及冻结攻击](../reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md)。条件要求全部product-front出口，单sweep环不够；没有增长输入族或B/η统一控制，D无独立跨类权比损失不表示参数与权谱无关。固定九玩家degree8证书仅前提非空与实现回归，不称新倍率/最优性或WC-TARGET完成。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

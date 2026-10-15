@@ -4114,7 +4114,7 @@
     {
       "path": "research/current/weighted_congestion/class_front_phase_quotient.md",
       "title": "循环窗口的压缩前沿与不同步稳定状态",
-      "purpose": "在真实循环lift后读取；用全状态扭转协变和精确端点表压缩各类前沿，明确不同步反例阻止自动全前沿出口证明。；新增WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1：显式12玩家/64资源degree8循环窗口binary游戏有24步strict21/20双同序环，但phase(0,0,1)是全部玩家严格exactPNE。任意有限fresh同类递增三元010/101互补pair，pair两侧同一非负非减费用，任何degree/幅度叠加均保留该严格exactPNE。因此仅追加这些clock不能对所有该倍率strict sweep输入保证全状态无PNE。 只排所写追加compiler；不排跨类、其他arity/phase、不等费pair、辅助玩家或更高倍率专用输入类。旧端点反例仍非PNE，不改其ID；本新fixture是真exactPNE。",
+      "purpose": "在真实循环lift后读取；用全状态扭转协变和精确端点表压缩各类前沿，明确不同步反例阻止自动全前沿出口证明。；新增WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1：显式12玩家/64资源degree8循环窗口binary游戏有24步strict21/20双同序环，但phase(0,0,1)是全部玩家严格exactPNE。任意有限fresh同类递增三元010/101互补pair，pair两侧同一非负非减费用，任何degree/幅度叠加均保留该严格exactPNE。因此仅追加这些clock不能对所有该倍率strict sweep输入保证全状态无PNE。 只排所写追加compiler；不排跨类、其他arity/phase、不等费pair、辅助玩家或更高倍率专用输入类。旧端点反例仍非PNE，不改其ID；本新fixture是真exactPNE。；末节新增同权类前沿全覆盖的条件全状态编译：读取FC1以核对全部front出口、两种次数预算与α1精化，实际权谱只经B/η进入；增长输入尚缺。",
       "topic": "weighted_congestion",
       "role": "account",
       "package": "循环窗口的压缩前沿与不同步稳定状态",
@@ -4129,7 +4129,13 @@
         "tests/audits/weighted_congestion/cyclic_clone/independent_class_internal_clock_compiler.py",
         "evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_author.json",
         "evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_independent.json",
-        "examples/weighted_congestion/class_internal_clock_compiler_obstruction.json"
+        "examples/weighted_congestion/class_internal_clock_compiler_obstruction.json",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
       ]
     },
     {
@@ -5843,6 +5849,102 @@
         "tests/audits/weighted_congestion/verify_incidence_forest.py",
         "tests/audits/weighted_congestion/independent_incidence_forest.py",
         "evidence/runs/weighted_congestion/incidence_forest/author.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：独立重构与冻结攻击",
+      "purpose": "先仅据条件命题重构修复与精确抵消，再核查冻结正文、两预算、全部有理输入及增长量词；引用新编译定理前读取。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：作者真实资源审计",
+      "purpose": "读显式actual系数构建循环窗口资源及两套clock，重算216front出口与512全态指定偏离，检查D11/D4预算及同权三元几何。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：独立真实资源审计",
+      "purpose": "独立构造完整资源子集，遍历不同类宽/极端权比/α1与有理倍率的front及非法修复，并重建九玩家fixture；不调用作者核心。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
+      ]
+    },
+    {
+      "path": "examples/weighted_congestion/class_front_allstate_compiler.json",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：实际有理输入",
+      "purpose": "给出三类三复制玩家、六测试、归一化及actual系数；重现全front出口和次数保持小证书时使用，非增长族。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：作者冻结核验记录",
+      "purpose": "保存全部front出口证书、标准及分离预算、指定全态出口最小margin和代码/input hashes；仅有限覆盖。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：独立冻结核验记录",
+      "purpose": "保存独立资源重算、预算、边界和九玩家fixture的精确结果及版本/hash，复查作者实现时对照。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json"
       ]
     }
   ]

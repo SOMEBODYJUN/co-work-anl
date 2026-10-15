@@ -71,3 +71,6 @@
 [异权重置增量与全局最小点边界](../current/weighted_congestion/shared_side_truncated_potential.md)第十一节在UFhetτ下将条件加强为α≥R、ατ≥Kd；新版本保留旧身份。线性无light反例又证明同一排序势全部全局最小点均可有趋近R的真实改善，不能仅改取global min消R。独立审查及两路Fraction证据从正文11.5进入。
 
 [潜在使用森林与单玩家挂树私人成本归约](../current/weighted_congestion/incidence_forest_private_reduction.md)给任意正权、任意有限资源子集策略和非负非减费用的exactPNE；只在单核心玩家处附着的树可换私有常数，保多项式次数并将所有α≥1的reduced PNE用同一lift提升。单环二玩家例的最佳因子72/71说明森林不能无证扩域。先读两个精确合同，再读冻结审查/代码/证据。全类仍缺无界局部权比、非强迫反馈或有环核心的统一选态。
+
+
+[同权类前沿全覆盖编译](../current/weighted_congestion/class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)是新的条件接口：全部front严格出口→类内δ2/3修复全部状态；无独立跨类权比次数损失。双路有理小证书及冻结审查由正文进入，增长前提仍未实现。

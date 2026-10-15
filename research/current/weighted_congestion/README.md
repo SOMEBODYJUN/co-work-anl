@@ -128,3 +128,6 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 [异权重置增量与全局最小点边界](shared_side_truncated_potential.md)第十一节在UFhetτ下将条件加强为α≥R、ατ≥Kd；新版本保留旧身份。线性无light反例又证明同一排序势全部全局最小点均可有趋近R的真实改善，不能仅改取global min消R。独立审查及两路Fraction证据从正文11.5进入。
 
 [潜在使用森林与单玩家挂树私人成本归约](incidence_forest_private_reduction.md)给任意正权、任意有限资源子集策略和非负非减费用的exactPNE；只在单核心玩家处附着的树可换私有常数，保多项式次数并将所有α≥1的reduced PNE用同一lift提升。单环二玩家例的最佳因子72/71说明森林不能无证扩域。先读两个精确合同，再读冻结审查/代码/证据。全类仍缺无界局部权比、非强迫反馈或有环核心的统一选态。
+
+
+**全部类前沿出口的正面接口。** [原前沿稿末节](class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)新增 `WC-CLASS-FRONT-ALLSTATE-COMPILER-v1`：对任意两动作基体、各有序类内同权，若每个product-front有保front的strictα出口，则可用类内首位锚定clock覆盖全部状态；D=ceil[ln(4α²BL/η)/ln(3/2)]，无额外跨类权比项。精确保front边抵消另给分离预算，α1的D不依η。九玩家degree8有理输入全部216front/512态由[独立审查](../../reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md)与双路代码验证，分离预算D4保持degree8，标准D11仅充分选值。先读FC1完整前提，再读构造和审查/输入/证据。旧稳定front反例不满足前提；全类负向仍缺p=O(α)、ln(α²BL/η)=O(α)之类的有效增长输入，不把固定证书升级。

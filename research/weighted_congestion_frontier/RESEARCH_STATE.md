@@ -46,3 +46,6 @@ E1已将局部成本正展开提取为[正占用核独立结构](../current/posi
 [局部异权hub的排序侧势](../current/weighted_congestion/shared_side_truncated_potential.md)第十节已覆盖有界局部R/K而不限制全局权类数：UFhet和α≥R、(α−1)²≥Kd给全antiPNE。同权u只是R=K=1特例，原ID不变。当前需消去无界局部参数/强迫假设；所写单副本夹逼R在线性资源上渐近锐，换全局选态或成对抵消须新证明。
 
 当前可调用的异权侧势条件为[UFhetτ下α≥R、ατ≥Kd](../current/weighted_congestion/shared_side_truncated_potential.md)；全局最小点之间择优也不能消去R，新线性完整反例已独立核验。结构归约新增[潜在使用森林精确PNE与单核心玩家挂树fixed lift](../current/weighted_congestion/incidence_forest_private_reduction.md)，允许任意权谱并保degree；它不控制有环核心，单环已有exact反例。下一项关键义务是一般核心/非UF的真实冻结偏离与响应兼容预算，而不是继续修补已被反例否定的同一E全局最小化。WC-TARGET保持OPEN。
+
+
+[同权类前沿全覆盖的条件编译](../current/weighted_congestion/class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)已将跨类δ损失换成全部product-front出口前提，D只显依α、类宽及B/η；α1精化不依η。真正新负向义务是构造p=O(α)、ln(α²BL/η)=O(α)等足够效率的增长输入；小证书/有限筛查不完成该义务。

@@ -65,3 +65,6 @@ E1 提取的[正占用核](research/current/positive_kernels/README.md)新增独
 异权hub的局部比子类已由[降序侧势](research/current/weighted_congestion/shared_side_truncated_potential.md)第十节闭合：任意多权类、UFhet、α≥R与(α−1)²≥Kd给全antiPNE，旧同权Claim不变。当前真正未解是无界局部R/K或强迫失败的选态；单副本R边际损失在线性资源上可锐，不能直接把这个势的局部估计换成统一常数。
 
 当前可调用的异权侧势条件为[UFhetτ下α≥R、ατ≥Kd](research/current/weighted_congestion/shared_side_truncated_potential.md)；全局最小点之间择优也不能消去R，新线性完整反例已独立核验。结构归约新增[潜在使用森林精确PNE与单核心玩家挂树fixed lift](research/current/weighted_congestion/incidence_forest_private_reduction.md)，允许任意权谱并保degree；它不控制有环核心，单环已有exact反例。下一项关键义务是一般核心/非UF的真实冻结偏离与响应兼容预算，而不是继续修补已被反例否定的同一E全局最小化。WC-TARGET保持OPEN。
+
+
+负向接口进一步明确：[同权类前沿全覆盖编译](research/current/weighted_congestion/class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)在全product-front保front出口前提下，以D=O(ln(α²BL/η))锁全部状态；α1分离预算不付余量。当前重点是同时获得高倍率前沿覆盖与增长族B/η控制；固定九玩家有理输入没有解决这个义务。

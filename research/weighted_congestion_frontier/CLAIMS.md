@@ -1021,3 +1021,14 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Counterevidence / Objections：** 固定degree2、固定二玩家的exact存在反例，不是随次数增长下界或最坏单环阈值最优性。 范围内没有尚成立fatal；未外审、新颖性未认证。
 - **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
 - **Related Files：** research/current/weighted_congestion/incidence_forest_private_reduction.md、research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md；代码/证据从正文和assets.json接入。
+
+
+## WC-CLASS-FRONT-ALLSTATE-COMPILER-v1 — 同权类前沿全覆盖的次数可控全状态编译
+
+- **ID/version / 中文数学名称：** WC-CLASS-FRONT-ALLSTATE-COMPILER-v1，同权类前沿全覆盖的次数可控全状态编译；独立条件接口，不改旧严格环/前沿/编译器反例身份。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 任意p≥0、α≥1的MODEL两动作游戏，玩家分为有序同权类，跨类权任意。𝔉为各类至多一次相邻bit变化的product-front。若每个𝔉态有保𝔉严格α出口，令B=max全状态玩家成本、η=min前沿最大保前沿margin>0、L=max类C(n_a−1,2)。L0时原游戏已无αPNE；L≥1时仅加2Σ_a C(n_a−1,2)个同类固定首位010/101时钟，费用M[x/(3w_a)]^D、M=2αB，任D≥1满足(2/3)^D≤η/(4α²BL)，即全部状态有margin≥η/2的strictα出口，输出次数≤max(p,D)。保前沿边clock margin恰−(α−1)r_iM(2/3)^D，故可改用(2/3)^D≤1/(4αL)及(α−1)LM(2/3)^D≤η/2；α1第二式自动成立，D不依η。 所有正实权、实非负系数及真实偏离均按MODEL，允许旧空动作、零/常数费用；完整符号及两预算以[正文末节](../current/weighted_congestion/class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)为准。
+- **Dependencies：** MODEL、有限状态真实成本/余量、固定首位同权三元非触发等价前沿、最早反位修复及合法边2w→2w恒等；全部联合前提在正文自足证明，无外部均衡定理导入。
+- **Evidence：** 先仅据statement独立重构，再攻击冻结正文；作者与独立Fraction真实资源审计、显式actual有理输入与两种预算全部512态复算，由[独立审查](../reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md)及正文合同进入。一般结论不以有限计算承重。
+- **Counterevidence / Objections：** 条件要求全部product-front出口，单sweep环不够；没有增长输入族或B/η统一控制，D无独立跨类权比损失不表示参数与权谱无关。固定九玩家degree8证书仅前提非空与实现回归，不称新倍率/最优性或WC-TARGET完成。 未外审/新颖性未认证；无尚成立范围内fatal，审查覆盖及冻结hash单独记录。
+- **Status：** complete conditional proof; independently reconstructed and exactly audited; unrefereed。Truth为条件编译，Value为将全覆盖义务转移到较小front域，Mechanism为同权触发/修复与精确抵消，Ambition全类OPEN。
+- **Related Files：** 正文、审查、两代码、输入及两冻结记录均由assets/catalog登记；原有冻结证据不改。
