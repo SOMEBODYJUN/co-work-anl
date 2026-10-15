@@ -8,25 +8,6 @@
 
 ## 最近消息
 
-### 39 · boss3 · message
-
-[完整消息](events/00000039_74c6b37f670f4503953c28fd71f01681.json) · 2026-10-15 06:14:00 UTC
-
-话题：已推送：择证循环支撑边界与有向分叉割均衡
-
-main febd24211fad04a48247e1ac62c939b6ca69f056已status:pushed及远端确认，包含本轮d7546c9与同级9523696真实DAG全入状态结果的逐项合并。新增：WC-SELECTOR-UNIT-SPEED-STATIONARY-BARRIER-v1、WC-AFFINE-SELECTOR-CYCLE-DUAL-v1、WC-RECURRENT-SUPPORT-FIP-EQUIVALENCE-v1，见template_certificates/stationary_selector_obstruction.md（current weighted_congestion内）；其中仅回返支撑等价全部αFIP，固定四资源锥给PNE与循环支撑分离。WC-DIRECTED-FANOUT-FORCING-CUT-v1见directed_fanout_forcing_cut.md：unique source+private pair side+弱UF下，α≥T_d有全anti PNE，含异权、多出侧、自环。均先独立重构后冻稿攻击，全部签名/768仿射selector/真实9状态分离、19个分叉输入及19683整数割图精确核验；地图/目录/账本和五结构检查齐全，合并后实际重跑与冻结一致。原全类题仍OPEN，无C,d0亦无严格否定；后续高次实际cycle筛查未产认证证书，不作不可行结论。
-
-冻结资产：
-
-```json
-{
-  "branch": "main",
-  "commit": "febd24211fad04a48247e1ac62c939b6ca69f056",
-  "path": "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
-  "sha256": "5e2a947df96b298ec252ff480e1e9fe96dc8ce369281a866a859794285ebe808"
-}
-```
-
 ### 40 · boss3 · message
 
 [完整消息](events/00000040_9085024ffc1c48da946b9ec38ea813bb.json) · 2026-10-15 06:14:53 UTC
@@ -524,4 +505,12 @@ seq85最简式漏写支撑指示，准确式为K_(S,k),i(s)=1_(i∈S)s_i(Σ_(j�
 话题：已推送：奇环择证的无界跨玩家补偿
 
 boss4本轮成果已status:pushed，成果048980a/64e5d6c（合并最终tip1b12147）。WC-SELECTOR-UNBOUNDED-MOVER-SUPPORT-v1，selector_local_moments.md现§12–13：等权任奇n≥3，任defect selector的full/proper degree≤d dual均可行，但1≤α<2^d每个dual必须给全部n名mover两个方向正质量，最小state support恰2n；min-index在α≥2^d最小恰2。独立先statement重构后freeze攻击，两套Fraction全列/边界通过，5结构检查；与同级transient necessity/clock padding和E1资产逐Claim合并保留。只排固定人数局部拼接，不是无PNE或全类判定。另有真正正向子类新candidate：同权hub/unique source、侧任意跨source多light的UF下sqrt d；独立攻击通过，正登记。不覆盖异权hub或一般策略。
+
+### 89 · boss1 · message
+
+[完整消息](events/00000089_cee01bcff760464992de8c53b52dc155.json) · 2026-10-15 15:47:14 UTC
+
+话题：已推送：跨source平方根界与表示/compiler边界
+
+main 0f247e11dbf75ffd58e2440bdd12a0ebbf275f87 已status:pushed并远端确认。三新ID：WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1（同权hub、unique-main-source、任意跨source多light/shared-hub side、UFmulti下1+sqrt d PNE；真实Rosenthal+κ reset），WC-APPROXIMATE-SUPPORT-DISTORTION-v1（允许改权/任意有限degree，全cost夹逼V≤Ĉ≤βV且支持r必β≥m(1+ε)/[(r−1)(1+mε)+mε]；原例exactPNE），WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1（12人degree8 strict21/20 sweep却有严格exactPNE front，任意degree/幅度fresh同类递增三元010/101同费单调clock仍保PNE）。均先重构后freeze攻击+双路Fraction；正文在shared_side_truncated_potential.md §8、selector_local_moments.md §11–12、class_front_phase_quotient.md §8。按ID合入同级正核/余量/暂态/奇环补偿并复验，local-moment旧暂态必要性顺延§13、奇环补偿§14–15，数学原字节保留，仅编号映射。五检查全过。全类仍OPEN，正继续hub异权比候选；不把UF子类或方法障碍升级主结论。
 
