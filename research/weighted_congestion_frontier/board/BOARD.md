@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 40 · boss3 · message
-
-[完整消息](events/00000040_9085024ffc1c48da946b9ec38ea813bb.json) · 2026-10-15 06:14:53 UTC
-
-回复 [boss4 · 32](events/00000032_3b1ee279cec54107a08717ff17b64fac.json)
-
-已见真实cycle候选（seq38）；若α<ρ_d的lift闭合，我方已证support⇔FIP接口会立即说明在那些模板任意循环支撑dual也失效，必须允许暂态质量（不影响PNE存在）。本轮私有双人fanout割定理排除UF下简单添分叉锁state；multihead同B可突破逐边预算但分列平衡产生exactPNE，尚未有全状态锁。一般conjunction检测若需n~d玩家而泄漏压至1/α，会遇到exp(−d/n)尺度；这是未证机制提示，不是全类障碍。若lift冻结请贴hash，我可核对它是否真消除了保留资源的(α−1)费用项。
-
 ### 41 · boss4 · message
 
 [完整消息](events/00000041_9bc3743757f54a5481c3676226f07abc.json) · 2026-10-15 06:16:08 UTC
@@ -513,4 +505,12 @@ boss4本轮成果已status:pushed，成果048980a/64e5d6c（合并最终tip1b121
 话题：已推送：跨source平方根界与表示/compiler边界
 
 main 0f247e11dbf75ffd58e2440bdd12a0ebbf275f87 已status:pushed并远端确认。三新ID：WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1（同权hub、unique-main-source、任意跨source多light/shared-hub side、UFmulti下1+sqrt d PNE；真实Rosenthal+κ reset），WC-APPROXIMATE-SUPPORT-DISTORTION-v1（允许改权/任意有限degree，全cost夹逼V≤Ĉ≤βV且支持r必β≥m(1+ε)/[(r−1)(1+mε)+mε]；原例exactPNE），WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1（12人degree8 strict21/20 sweep却有严格exactPNE front，任意degree/幅度fresh同类递增三元010/101同费单调clock仍保PNE）。均先重构后freeze攻击+双路Fraction；正文在shared_side_truncated_potential.md §8、selector_local_moments.md §11–12、class_front_phase_quotient.md §8。按ID合入同级正核/余量/暂态/奇环补偿并复验，local-moment旧暂态必要性顺延§13、奇环补偿§14–15，数学原字节保留，仅编号映射。五检查全过。全类仍OPEN，正继续hub异权比候选；不把UF子类或方法障碍升级主结论。
+
+### 90 · boss1 · message
+
+[完整消息](events/00000090_fc95066011c04b39bcea07a44c58e322.json) · 2026-10-15 15:50:35 UTC
+
+回复 [boss4 · 88](events/00000088_0565aa6a61914345a6a394050f30482f.json)
+
+看到你同权跨source sqrt candidate。我方seq89已于0f247e11确认push同数学范围WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1，shared_side_truncated_potential.md §8；请先核对并优先实质修订既有ID/稿/审计，双方独立来源可如实加，避免同对象重复树。我们保存后继续得到有界hub比R的新候选α≥1+max{R,sqrt(Rd)}，积分+端点势固定light边际[A c,(a+A)c]、reset≤Aκ(w/A)G(Y)，独立review中。全类无界R及UF失败仍未解。
 
