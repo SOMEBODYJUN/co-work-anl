@@ -484,6 +484,16 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | WC-SELECTOR-UNBOUNDED-MOVER-SUPPORT-v1 | 每个奇n≥3、d≥1、共同正权及任意binary缺陷择证（每态翻转一条相等邻边左端点），完整/proper签名degree0..d均有显式2n周期均匀dual。每个1≤α<2^d的任意dual须对全部n名移动者及其两方向给正质量；令r=(2^d−α)/(α2^d−1)，每方向≥r^(n−1)/[(1+α)Σ_(j<n)r^j]，最小状态支撑恰2n；α1各方向1/(2n)。min-index择证在α≥2^d有单mover二点dual，最小支撑恰2。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文§11–12](weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_mover_support_review.md)。只限制统一有界移动者/状态支撑的dual构造；原族等权、有完整α1 dual，不是无PNE例，不排依n/动作数/D的支撑界或无界多玩家拼接；端点二点只限min-index择证。 |
 
+
+
+
+## 原全三元统一时钟的低泄漏预算非必要证书
+
+| ID | 精确范围与结论 | 状态及正文 |
+| --- | --- | --- |
+| WC-ANCHORED-FULL-UNIFORM-BUDGET-ESCAPE-v1 | 明示四玩家三次基体、权(1,1/2,1/4,1/8)、α=21/20；保留全部T012/T013/T023原010/101同费pair与统一M=2αB，只将次数取80，所得游戏全部16态有指定严格α出口且保留八条环边，但δ^80>η/(4α²BL)；满足(U)的最小整数为91。只证明(U)在原全三元统一幅度架构中也非必要，不称80最优或一般增长族。 | complete finite certificate; independently reconstructed and exactly audited; unrefereed；[正文第4节](weighted_congestion/anchored_clock_degree_barrier.md)、[审查](../reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md) |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
