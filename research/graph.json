@@ -4446,6 +4446,44 @@
         "examples/weighted_congestion/template_certificates/exact_fixtures.json"
       ],
       "status": "finite exact audit; no universal approximation bound"
+    },
+    {
+      "id": "WC-HIGH-DEGREE-SHARE-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "高次份额势的资源参数",
+      "detail": "U_e为潜在用户；q_e为最小个体份额，k_e为最低非零正次数；常数/无人资源λ_e=1，其余λ_e=1−(1−q_e)^k_e。",
+      "refs": [
+        "research/current/weighted_congestion/high_degree_share.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-HIGH-DEGREE-SHARE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "高次费用的份额势与必要小份额",
+      "detail": "每个MODEL有限游戏，费用c_e=a_e0+Σ_(j≥k_e)a_ej x^j，按实际非零最低正次数k_e定义λ_e=1−(1−min_(i∈U_e)w_i/Σ_(j∈U_e)w_j)^k_e；无用户或无正次项取λ_e=1。势Σ_e[a_e0 n_e+Σ_(j≥1)a_ej x_e^j]的每个单方局部最小点是(max_e λ_e^−1)-PNE。纯d次无α-PNE必有某正次收费资源潜在用户份额严格小于1−(1−1/α)^(1/d)。固定正权向量的最低正次数趋无穷时，保证对所有有限拓扑及系数一致趋1。",
+      "refs": [
+        "research/current/weighted_congestion/high_degree_share.md",
+        "research/reviews/weighted_congestion/high_degree_share_review.md"
+      ],
+      "status": "complete structural proof; internally reviewed; unrefereed"
+    },
+    {
+      "id": "WC-HIGH-DEGREE-SHARE-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "高次份额势的两套有限精确核验",
+      "detail": "作者local λ逐资源核验；独立global q简式全偏离核验。有限证据不替代一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/high_degree_share.md",
+        "tests/audits/weighted_congestion/high_degree_share/verify.py",
+        "tests/audits/weighted_congestion/high_degree_share/check_independent.py",
+        "evidence/runs/weighted_congestion/high_degree_share/verification.json",
+        "evidence/runs/weighted_congestion/high_degree_share/independent_verification.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -10795,6 +10833,40 @@
       "refs": [
         "research/current/weighted_congestion/separable_ordinal_obstruction.md",
         "evidence/runs/weighted_congestion/template_certificates/exact_audit.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-HIGH-DEGREE-SHARE",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-HIGH-DEGREE-SHARE-DEFINITION"
+      ],
+      "conclusion": "WC-HIGH-DEGREE-SHARE-v1",
+      "statement": "真实删除负载的幂差下界与加入幂差上界给出一步势差，再用有限最小化及严格反解；全部定义共同使用。",
+      "refs": [
+        "research/current/weighted_congestion/high_degree_share.md",
+        "research/reviews/weighted_congestion/high_degree_share_review.md"
+      ],
+      "status": "complete structural proof; internally reviewed; unrefereed"
+    },
+    {
+      "id": "CHECK-HIGH-DEGREE-SHARE",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-HIGH-DEGREE-SHARE-AUDIT"
+      ],
+      "conclusion": "WC-HIGH-DEGREE-SHARE-v1",
+      "statement": "有限有理输入只核对所述增量编码、边界与min状态，不证明任意实权的一般结论。",
+      "refs": [
+        "research/current/weighted_congestion/high_degree_share.md",
+        "tests/audits/weighted_congestion/high_degree_share/verify.py",
+        "tests/audits/weighted_congestion/high_degree_share/check_independent.py",
+        "evidence/runs/weighted_congestion/high_degree_share/verification.json",
+        "evidence/runs/weighted_congestion/high_degree_share/independent_verification.json"
       ],
       "status": "finite exact audit"
     }

@@ -42,6 +42,7 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 | 资源局部势拼接与两尺度路径 | [共同接口](power_bridge.md)、[路径障碍](power_bridge/path_obstruction.md)、[两权组分片势](power_bridge/affine_two_type.md) | 共享乘子可拼接，但固定次线性幂不能覆盖任意密集权谱；两精确权组有锐跨度界 |
 | 局部窄权带与跨带障碍 | [份额、存在界及选择器证明](weight_bands/README.md) | 局部权比存在界；跨带混合差分、标准势线性损失只约束指定方法 |
 | 潜在用户密度填充 | [投影与提升证明](density_padding/optional_user_density_padding.md) | 已占权重区间的最小人数可任意填充，有限倍率均衡逐一保持；不否定最大稀疏密度上界 |
+| 高次费用与资源最小份额 | [份额势与必要条件](high_degree_share.md)、[独立攻击](../../reviews/weighted_congestion/high_degree_share_review.md) | 每资源最低正次数和最小潜在权份额给近精确势；固定正权向量的高次保证对所有有限拓扑一致趋1；非全类界 |
 | 资源用户支持与双人资源界 | [资源支持存在界](resource_support.md)、[双人资源互补网络](odd_ring_linear/pair_obstruction/PAIR_OBSTRUCTION.md) | 限制有界支持小构件的放大；没有全类常数或多项式时间结论 |
 | 三玩家整数二次实例 | [完整成本表与最优倍率](quadratic_triad/three_player_integer_obstruction.md) | 有限精确证明；所引独立审查原件未找到，不补造审查通过 |
 | 文献源公式二次包络 | [有理参数上界](quadratic_source/source_family_envelope.md) | 指定源公式的有限次数边界，与三玩家实例分开比较 |

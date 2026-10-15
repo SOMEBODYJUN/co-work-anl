@@ -323,6 +323,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1 | 全状态择证的精确线性替代 | complete general proof; independently reconstructed and exactly audited; unrefereed | 同上；全状态selector逐一取dual，非单环或单selector的全类推断。 |
 | WC-GAME-SPECIFIC-MINIMIZER-EQUIVALENCE-v1 | 依游戏最小点选择与近似纯均衡存在等价 | complete elementary proof; independently checked and exactly audited; unrefereed | [一般等价证明](weighted_congestion/separable_ordinal_obstruction.md)第四节及[范围审查](../reviews/weighted_congestion/ordinal_potentials/minimizer_scope_review.md)；不提供新的α(d)。 |
 
+
+## 高次费用与最小个体份额
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| WC-HIGH-DEGREE-SHARE-v1 | 任意MODEL有限游戏；按每资源真实最低正次数、潜在权份额定义λ_e，零/常数/无人资源取1。 | 每单方势局部min为max λ_e^−1-PNE；纯d次非存在须有严格小份额；固定正权向量、最低次数增长的保证对全部有限拓扑一致趋1。不是全类匹配界。 | [完整正文](weighted_congestion/high_degree_share.md)、[冻结独立攻击](../reviews/weighted_congestion/high_degree_share_review.md)，完整内部证明，未外审/未认证新颖性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
