@@ -1,4 +1,4 @@
-# Six maximal coverages without globally private customers
+# 六极大无全局私有客户的强化界与九人以上推论
 
 Direct proof, 2026-10-10; independently reconstructed internally. Registered claim IDs:
 `CA-SIX-MAXIMA-NO-PRIVATE-HALF`; Section 5 adds

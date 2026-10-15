@@ -1,4 +1,4 @@
-# R3: resource-local narrow weights, and the cross-band obstruction
+# 资源局部窄权带：Shapley 存在界与跨带拼接障碍
 
 Date: 2026-10-14. Model: WC-TARGET v1, specifically the unweighted player
 cost `C_i = sum_e c_e(load_e)`, with positive real player weights, arbitrary

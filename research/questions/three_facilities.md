@@ -1,6 +1,6 @@
 # Q-3FAC / Q-K-FAC：三设施试验台与任意设施数的统一机制
 
-状态：任意 $k$ 的共同目录因子 2 **存在性已获完整内部证明**；最佳统一常数和位长多项式构造仍开放。[现行证明](../current/multi_facility/uniform_two.md)、[命题身份](../current/multi_facility/claims.md)及[范围与价值审查](../K_FACILITY_AUDIT_2026-10-02.md)为准。下文保留原三设施试验台的严格模型、旧因子 3 基线与尚未回答的受限布局形式问题；旧的旗舰验收语句是历史任务说明。
+状态：任意 $k$ 的共同目录因子 2 **存在性已获完整内部证明**；最佳统一常数和位长多项式构造仍开放。[现行证明](../current/multi_facility/uniform_two.md)、[命题身份](../current/multi_facility/claims.md)及[范围与价值审查](../reviews/facility/arbitrary_facility_factor_two.md)为准。下文保留原三设施试验台的严格模型、旧因子 3 基线与尚未回答的受限布局形式问题；旧的旗舰验收语句是历史任务说明。
 
 **2026-10-07 算法接口更新：**[SC-K-GREEDY-BOX-EXISTS / FINITE-2](../current/multi_facility/greedy_box_global_progress.md)
 进一步证明每个规范贪心布局有完整盒内精确客户 NE，并给出全局有限终止的

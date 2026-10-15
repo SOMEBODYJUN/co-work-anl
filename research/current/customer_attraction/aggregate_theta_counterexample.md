@@ -1,4 +1,4 @@
-# CA-AGGREGATE-LAST-FLOOR-NO：末位最坏最佳回复值的总收益桥也失败
+# 末位最坏最佳回复值的聚合收益桥反例（CA-AGGREGATE-LAST-FLOOR-NO）
 
 **状态：** 自含反例与任意 `n≥3` 构造证明；36 名单位客户的完整策略已获独立
 定义级精确重放。采用 [CAG-MODEL](model.md) 的共同目录、单位客户、单位玩家与

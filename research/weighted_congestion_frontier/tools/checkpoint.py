@@ -22,7 +22,7 @@ DEFAULT_PATHS = [SCOPE, "research/current/weighted_congestion",
                  "README.md", "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md",
                  "research/current/claims.md", "research/assets.json", "research/review_status.json",
                  "research/graph.json", "research/index.html", "research/source_crosswalk.json",
-                 "research/source_crosswalk.md"]
+                 "research/source_crosswalk.md", "research/catalog.json", "research/CATALOG.md"]
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}|-----BEGIN [A-Z ]*PRIVATE KEY-----")
 ROUTING = ("GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE",
            "GIT_OBJECT_DIRECTORY", "GIT_ALTERNATE_OBJECT_DIRECTORIES",

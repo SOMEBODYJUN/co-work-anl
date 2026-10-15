@@ -1,4 +1,4 @@
-# SC-K-THREE-SITE-CHAIN-BOX-EXISTS: arbitrary unequal light weights on an opening-directed three-site chain
+# 三站不等轻权开站链的盒均衡存在性
 
 ## Exact statement and scope
 

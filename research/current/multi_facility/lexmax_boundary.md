@@ -1,4 +1,4 @@
-# SC-K-LEXMAX-BARRIER: the selected layout can genuinely need almost two
+# 固定字典序极大占位本身可逼近因子二
 
 **Version 1, 2026-10-02; complete internal proof.** This is a sharp limitation of
 the *on-path layout selection* used by SC-K-2-E. It is NOT a sharpness lower bound

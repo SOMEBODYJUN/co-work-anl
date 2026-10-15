@@ -1,4 +1,4 @@
-# Complementary triad mechanism and a growing-support extension
+# 互补符号列：有限证书与增长支持族的开放扩展
 
 Author: R1 / cycle_family subagent. Date: 2026-10-14 UTC.
 

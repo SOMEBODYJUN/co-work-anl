@@ -1,4 +1,4 @@
-# Hierarchical maximal incidence: a sharp all-history sequential welfare bound
+# 客户极大关联集合成层级族时的锐福利界
 
 **Direct proof, 2026-10-10; independently reconstructed internally.** This file
 does not change canonical claim registries. The general common-catalog

@@ -1,4 +1,4 @@
-# Four strict moves for a converging four-site light path
+# 汇合四站轻路径的四步严格改善构造
 
 **Internal research draft, 2026-10-03.** Independently reviewed by Sol Reviewer
 after removal of the earlier draft's tight-A and equal-A/C restrictions. No

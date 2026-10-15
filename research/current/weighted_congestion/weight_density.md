@@ -1,4 +1,4 @@
-# Resource-local weight density and approximate pure equilibria
+# 资源局部权密度：锐矩不等式与纯近似均衡
 
 Date: 2026-10-14 UTC. Research actor: R2. This account was reconstructed
 from the exact model and the resource externality calculation, then independently

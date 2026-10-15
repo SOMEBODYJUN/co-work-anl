@@ -1,4 +1,4 @@
-# 共享目录分支：主张、依赖与完成标准
+# 共同目录黄金比存在性、构造与证书的分离陈述
 
 日期：2026-10-01。下列陈述区分[完整集成主稿](../../../history/source/manuscripts/shared_phi/main.tex)、[本组 Markdown 全分支重写](README.md)和外部同行评审状态。内部多轮审读不等于外部认证。记号与量词见 [model.md](model.md)。
 

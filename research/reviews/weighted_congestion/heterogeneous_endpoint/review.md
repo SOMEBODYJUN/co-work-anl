@@ -1,4 +1,4 @@
-# Independent internal review of the endpoint reduction
+# 异权端点还原：权重选择与重数取整独立审查
 
 Claim: **WC-R1-HET-ENDPOINT-REDUCTION v1**. Date: 2026-10-14.
 

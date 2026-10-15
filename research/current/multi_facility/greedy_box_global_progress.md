@@ -1,4 +1,4 @@
-# A threshold potential for boxed equilibria at every greedy occupancy
+# 任意规范贪心占位的完整盒均衡与有限构造
 
 Version 1, 2026-10-07. This note reconstructs the complete mathematical
 argument supplied in the user's 2026-10-07 conversation, and includes an

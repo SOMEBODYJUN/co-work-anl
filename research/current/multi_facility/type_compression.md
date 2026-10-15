@@ -1,4 +1,4 @@
-# Exact type compression for box equilibria and global selection
+# 盒均衡的客户类型压缩与参数化精确算法
 
 Current proof, 2026-10-03. Internally independently reversed; no external review or literature-priority finding. The Lenstra theorem below is imported, not a new integer-programming result.
 

@@ -1,4 +1,4 @@
-# Independent reconstruction and adversarial review of the Eq. (3) envelope
+# 文献两攻击公式统一上限：独立重构与反向审查
 
 Review identity: **WC-ENVELOPE-INDEPENDENT-REVIEW v1**, 2026-10-14.
 Reviewer: internal clean reconstruction agent under R1. This reconstruction was

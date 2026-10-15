@@ -113,13 +113,13 @@
 `f(1/ε)poly(L)` 精确续局近似构造。已有少数重支持谱与近带補全的全局 C² 候选，
 尚未登记完整 EPTAS 定理或一般位复杂度交付。见
 [候选和下一任务](../questions/shared_alpha_eptas.md)、
-[团队辩驳](../NEXT_DIRECTION_DEBATE_2026-10-09.md)。此义务不是已证明 Claim。
+[团队辩驳](../../history/source/notes/publication/facility_eptas_direction_debate_2026-10-09.md)。此义务不是已证明 Claim。
 
 ## 2026-10-09 四共同地点无 FPTAS
 
 | ID | Exact scope | Result and boundary | Proof and status |
 | --- | --- | --- | --- |
-| SC-FOUR-NO-FPTAS | 两设施、恰四共同地点、正二进制整数原子权、强制服务、实际负载成本、完整精确独立混合客户 NE 续局；优化域允许实概率，算法输出为显式有理概率。 | PARTITION 源 n=2max{t,2}，YES α*=13/10，NO 任意布局/续局 α*≥13/10+1/(100n²)；P≠NP 下无加性或乘性 FPTAS。不排除 PTAS/强 NP 难/一般任意盒 NE 搜索。 | [完整证明](shared/four_site_no_fptas.md)、[独立审查](../FOUR_SITE_FPTAS_AUDIT_2026-10-09.md)；完整内部证明和两套定义级精确审计；外审未记录，新颖性未认证。 |
+| SC-FOUR-NO-FPTAS | 两设施、恰四共同地点、正二进制整数原子权、强制服务、实际负载成本、完整精确独立混合客户 NE 续局；优化域允许实概率，算法输出为显式有理概率。 | PARTITION 源 n=2max{t,2}，YES α*=13/10，NO 任意布局/续局 α*≥13/10+1/(100n²)；P≠NP 下无加性或乘性 FPTAS。不排除 PTAS/强 NP 难/一般任意盒 NE 搜索。 | [完整证明](shared/four_site_no_fptas.md)、[独立审查](../reviews/facility/four_site_no_fptas.md)；完整内部证明和两套定义级精确审计；外审未记录，新颖性未认证。 |
 
 本结论对实例最优倍率近似，不改变一般盒内任意 NE 搜索的开放状态。
 
@@ -179,7 +179,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | SC-TWO-REACH-MULTI-NO | 共同目录恰三地点、五名正整数权客户、reach 为 $(20,20,16)$；AB 有两名共有客户 | 全部精确 NE 下实例最优因子 $\alpha^*=14/13>1$ | [全异址谱及同址正规形](shared/instance_complexity_barriers.md)；严格攻击删除 SC-TWO-REACH-SPARSE 的交叠条件，不攻击原命题。内部复算，外部未审。 |
 | SC-THREE-DEC1-HARD | 共同目录恰三地点、显式正整数客户权、每个带标签布局独立选精确独立混合 NE；判定 $\alpha^*\le1$ | 弱 NP 完全；整数总重参数存在伪多项式算法 | `LOCAL-HARD` 的二次有界子集和源 + AB 双等重、AC 单客户及 BC 硬群，逐项排除三个同址与三个异址。[全证明](shared/three_site_exact_hardness.md)；三条内部独立审查，外部未审。 |
 | SC-THREE-DECa-HARD | **对每个事先固定的有理 $1<a<(1+\sqrt3)/2$**，同一三地点共同目录、正整数客户权、完整精确混合 NE 存在量词 | 判定 $\alpha^*\le a$ 弱 NP 完全；不声称把 $a$ 作为输入时统一多项式，**恰三地点**端点和其上未分类 | `LOCAL-HARD` + $R_B>R_A>R_C$、AB/AC 各一共有客户、BC 硬群的完整 YES/NO 守卫；固定余量与正权预算、NP 证书、伪多项式上界。[全证明](shared/three_site_exact_hardness.md)；独立代数攻击和有限算术仅辅助，外部/优先权未核。 |
-| SC-FIVE-DECa-HARD | **对每个事先固定的有理 $1<a<\phi$**，两设施同一恰五地点目录、显式正整数权客户，存在逐布局独立精确混合 NE 的完整续局 | 判定 $\alpha^*\le a$ 弱 NP 完全；归约 YES 为 $\alpha^*=a$，NO 为 $\alpha^*>a$。不声称五地点最少、强 NP 困难或固定常数间隙 | 三态 SUBSET SUM 局部源 + 严格强制桥宏客户的双向 NE 引理 + 五地点正私有预算与所有 25 带标签布局守卫 + NP 证书及伪多项式 DP。[全证明](shared/five_site_exact_hardness.md)、[独立内部数学及价值审查](../FIVE_SITE_AUDIT_2026-10-02.md)；有限精确回归与普遍证明分开，外部审查和文献新颖性未核。 |
+| SC-FIVE-DECa-HARD | **对每个事先固定的有理 $1<a<\phi$**，两设施同一恰五地点目录、显式正整数权客户，存在逐布局独立精确混合 NE 的完整续局 | 判定 $\alpha^*\le a$ 弱 NP 完全；归约 YES 为 $\alpha^*=a$，NO 为 $\alpha^*>a$。不声称五地点最少、强 NP 困难或固定常数间隙 | 三态 SUBSET SUM 局部源 + 严格强制桥宏客户的双向 NE 引理 + 五地点正私有预算与所有 25 带标签布局守卫 + NP 证书及伪多项式 DP。[全证明](shared/five_site_exact_hardness.md)、[独立内部数学及价值审查](../reviews/facility/five_site_fixed_factor_hardness.md)；有限精确回归与普遍证明分开，外部审查和文献新颖性未核。 |
 | SC-GRANULAR-APPROX | 两设施共同非空目录、正实原子权、异址共有客户最大单体权 $\theta<R_{\max}=\max_s w(C_s)$；同址对半、异址可任取精确独立混合 NE | 存在完整规则与纯选址布局，倍率至多 $(R_{\max}+\theta)/(R_{\max}-\theta)$；$R_{\max}=0$ 时精确 | 已知可拆分客户对照的两设施字典序势 + (NE) 每异址坐标误差 $\le\theta/2$。[证明](shared/atomic_granularity.md)；定量界内部两路审读，外部/精确文献优先权未核。 |
 | LOCAL-ATOM-WARDROP-k | 任意固定 $k\ge2$ 家设施布局、任意客户可达关系、正实原子权与精确独立混合客户 NE；同一布局上的 Wardrop 可拆分流；$\theta$ 为多设施可达客户最大单体权 | 对**任意**上述两种 NE，逐设施负载误差 $\le(k-1)\theta/2$，链族对每个 $k$ 取等号；**无全 $k$ SPE 结论** | 运输矩阵的净流出与误差排序间隙证明、相邻边单位客户链。[逐式证明](local_and_exact/atomic_wardrop_gap.md)；内部独立审读，已有广义 atomic–Wardrop 文献，精确常数新颖性未核。 |
 | SC-SPARSE-3 | 共同目录至多三地点、每对**不同**地点至多一共有客户，正实权上界及正有理权同类下界 | 最优普遍倍率上确界为 $\sqrt2$ | 固定纯异址与重客户同址菜单的三地点矛盾；三客户匹配族排除所有布局/续局。[尖锐分类](shared/small_sparse_catalogs.md)；独立内部审读与精确有限样本，外部未审。 |
@@ -307,13 +307,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1 | Mixed polynomial shapes preserve the exact ring-test envelope | complete stated-scope proof with independent internal attack; unrefereed; global priority unverified | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
 | WC-R3-ODD-RING-SINGLETON-UPPER-v1 | Singleton cohorts admit a stable defect state | complete restricted existence proof with internal reconstruction; unrefereed; priority unverified | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
 
-| WC-ENVELOPE-CEILING | Source two-attack finite ceiling | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/source_ceiling/README.md) |
+| WC-ENVELOPE-CEILING | Source two-attack finite ceiling | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](weighted_congestion/source_ceiling/README.md) |
 | WC-R1-LF-SHARP | R1 source-envelope sharp candidate | complete account; stated extension review pending; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../questions/weighted_congestion/source_envelope_candidate/sharp_envelope.md) |
-| WC-R1-PREFIX-SMOOTHING | Nonnegative-polynomial prefix curvature obstruction | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/polynomial_curvature/proof.md) |
-| WC-R1-THREELOAD-ENVELOPE | Exact three-load polynomial tradeoff | complete account; stated extension review pending; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/polynomial_curvature/extension.md) |
-| WC-R1-HET-ENDPOINT-REDUCTION | Heterogeneous endpoint certificate reduction | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md) |
-| WC-R1-DAG-STEP | Exact auxiliary step-DAG threshold | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/step_dag/proof.md) |
-| WC-R1-MULTICOLUMN-2 | Balanced multicolumn escape | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/multicolumn/RESULT.md) |
+| WC-R1-PREFIX-SMOOTHING | Nonnegative-polynomial prefix curvature obstruction | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](weighted_congestion/polynomial_curvature/three_load_curvature_bound.md) |
+| WC-R1-THREELOAD-ENVELOPE | Exact three-load polynomial tradeoff | complete account; stated extension review pending; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](weighted_congestion/polynomial_curvature/three_point_polynomial_envelope.md) |
+| WC-R1-HET-ENDPOINT-REDUCTION | Heterogeneous endpoint certificate reduction | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md) |
+| WC-R1-DAG-STEP | Exact auxiliary step-DAG threshold | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](weighted_congestion/step_dag/step_dependency_threshold.md) |
+| WC-R1-MULTICOLUMN-2 | Balanced multicolumn escape | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](weighted_congestion/multicolumn/complement_column_escape.md) |
 
 ## 逻辑使用规则
 

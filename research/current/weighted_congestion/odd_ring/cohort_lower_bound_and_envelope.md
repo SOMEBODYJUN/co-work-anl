@@ -1,4 +1,4 @@
-# Odd hub/cohort rings: a growing lower bound and the exact certificate envelope
+# 奇数环总证明：全状态非存在、精确包络与同次数构造
 
 Authorship and provenance: the odd hub/cohort strategy construction was posted
 by R1 in public-board message 42 (`aa0ccec68ec54eed9ce2e6b3c0e5c909`). R3 independently

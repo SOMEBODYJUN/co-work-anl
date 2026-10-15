@@ -1,4 +1,4 @@
-# CA-TERMINAL-TIE-FIXED-LIFT-NO：自然半覆盖证书不能自动保权提升
+# 自然半覆盖证书保留早期乘子提升的障碍（CA-TERMINAL-TIE-FIXED-LIFT-NO）
 
 2026-10-10。采用 [CAG-MODEL](model.md)，三位单位玩家、有限共同目录、
 单位客户、完整有序历史纯策略，允许全部历史依赖平局。本页给出一个有限精确

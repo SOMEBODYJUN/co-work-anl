@@ -1,4 +1,4 @@
-# Independent review: nonnegative polynomial shapes do not enlarge the envelope
+# 奇数环多项式形状：不扩大正测试包络的审查
 
 ## Exact statement and scope
 

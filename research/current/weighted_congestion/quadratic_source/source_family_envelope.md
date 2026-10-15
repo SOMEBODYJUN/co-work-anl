@@ -1,4 +1,4 @@
-# The source degree-two parameter envelope is at most 19/18
+# 文献两攻击公式：二次参数包络的有理上界
 
 Claim ID: **WC-R1-SOURCE-D2-ENVELOPE v1**. Date: 2026-10-14 UTC.
 

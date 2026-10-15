@@ -1,4 +1,4 @@
-# Primary-source audit
+# 二次源公式参数域：一手文献核对
 
 Checked live on 2026-10-14 UTC:
 [arXiv:2002.07466v3](https://arxiv.org/html/2002.07466v3), version dated

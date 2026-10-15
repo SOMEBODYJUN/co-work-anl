@@ -1,4 +1,4 @@
-# R1 independent odd-ring asymptotic audit
+# 奇数环线性重置：显式下界与渐近常数审查
 
 Audit date: 2026-10-14. Reviewer: R1/ring_asymptotic_audit; a separate sub-review by `constant_attack` checked the original candidate's uniform constants. No Git mutation or board message was performed by this reviewer.
 

@@ -1,4 +1,4 @@
-# Independent adversarial review of WC-R1-PREFIX-SMOOTHING v1
+# 前缀阶跃模拟：三负载曲率的独立反向审查
 
 Reviewer: delegated independent mathematical attack, 2026-10-14.
 

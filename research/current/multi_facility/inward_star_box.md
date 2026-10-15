@@ -1,4 +1,4 @@
-# SC-K-INWARD-STAR-2: polynomial box selector for light edges pointing to a late center
+# 指向晚开中心的不等轻权星形盒均衡算法
 
 Internal proof, 2026-10-04. The star may have arbitrarily many leaves,
 individually named clients, and mutually unequal positive binary rational

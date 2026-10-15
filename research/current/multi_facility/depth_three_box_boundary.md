@@ -1,4 +1,4 @@
-# Depth-three greedy trees defeat the full-box potential selector
+# 深度三贪心树击败完整盒势最小选择器
 
 Current counterexample, 2026-10-04. Independently derived from a recursive-pool exchange attempt. Exact arithmetic independently reviewed by Sol Attack for the symmetric precursor; the strict version below removes all greedy ties. No external review or priority claim.
 

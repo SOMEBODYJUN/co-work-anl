@@ -1,4 +1,4 @@
-# WC-R1-LF-SHARP v1: sharp asymptotics of the published two-ratio envelope
+# 文献两攻击公式：锐渐近的另一份候选推导
 
 Author: R1/lower_family, with independent internal reconstruction by
 R1/lower_family/asymptotic_attack and R1/root. Date: 2026-10-14.

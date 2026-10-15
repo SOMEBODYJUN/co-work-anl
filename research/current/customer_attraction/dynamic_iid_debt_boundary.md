@@ -1,4 +1,4 @@
-# 动态 iid 债务接口与实际前缀的弱局部漂移反例
+# 动态独立查询的债务接口与弱局部漂移反例
 
 2026-10-10。本页的两个命题为 `CA-DYNAMIC-IID-DEBT-INTERFACE` 与
 `CA-WEAK-LOCAL-IID-DRIFT-NO`。前者证明任意合法背景中的静态凹势、KKT、残余

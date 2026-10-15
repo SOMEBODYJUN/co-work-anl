@@ -1,4 +1,4 @@
-# Independent attack of R3-SOURCE-SHARP-ASYMPTOTIC-v1
+# 文献两攻击公式锐渐近：上下两侧独立攻击
 
 Reviewer: R3 parent agent; 2026-10-14. The source researcher reconstructed
 the full proof independently. This reviewer rebuilt the lower-parameter

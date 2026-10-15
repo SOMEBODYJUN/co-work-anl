@@ -1,4 +1,4 @@
-# CA-UNIFORM-PORTFOLIO-TWO: a valid averaged cross-branch inequality
+# 任意背景两名剩余玩家的平均跨分支偏离恒等式（CA-UNIFORM-PORTFOLIO-TWO）
 
 **Scope and status.** This is a self-contained, independently internally audited
 proof in [CAG-MODEL](model.md),

@@ -1,4 +1,4 @@
-# A strict greedy full-box lexicographic maximum need not be a customer equilibrium
+# 完整盒内字典序极大分配未必是客户均衡
 
 Current counterexample, 2026-10-04. The exact instance and analytic classification below
 refute one selector on the fixed greedy occupancy. They do not refute boxed

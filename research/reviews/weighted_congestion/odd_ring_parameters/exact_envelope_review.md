@@ -1,4 +1,4 @@
-# Independent review of the exact certificate envelope
+# 奇数环参数包络：精确最值与有理特殊块审查
 
 Scope: this note bounds and attains the positive-product certificate
 interface, assuming the separate all-states odd-ring reduction. It does not

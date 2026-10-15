@@ -1,4 +1,4 @@
-# MULTICOLUMN-2 v1：R1 独立数学审查
+# 互补多列拓扑：二倍存在证明独立审查
 
 审查者：`/root/review_multicolumn`。日期：2026-10-14。
 

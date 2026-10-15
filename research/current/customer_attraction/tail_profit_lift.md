@@ -1,4 +1,4 @@
-# CA-TAIL-FOUR-ALL-N：任意背景利润界向一般人数的合法提升
+# 末四人背景利润界向任意总人数的合法提升（CA-TAIL-FOUR-ALL-N）
 
 2026-10-10。对 [CAG-MODEL](model.md) 的任意共同有限非空目录、每个完整历史依赖
 纯SPE及每个n≥4，

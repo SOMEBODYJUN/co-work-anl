@@ -1,8 +1,8 @@
-# 上传工具、完整策略与最后一步收益下界的独立审计
+# 外来求解工具与末位保底推广的独立审计
 
 本页使用 [CAG-MODEL](model.md)：有限共同目录、单位提供者、单位客户均分，
 完整有序历史依赖的纯 SPE。上传包原始字节保留在
-[uploaded_2026-10-10](../../../history/source/notes/customer_attraction/uploaded_2026-10-10/)。
+[uploaded_2026-10-10](../../../history/source/notes/customer_attraction/uploaded_2026-10-10)。
 原包是来源材料；本分支的规范求解器仍为 `customer_attraction/`。
 本页核验的是一个有限反例证书及实现之间的有限对照，不证明或否定一般半覆盖猜想。
 

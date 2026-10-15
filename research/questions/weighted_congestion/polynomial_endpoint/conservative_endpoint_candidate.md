@@ -1,4 +1,4 @@
-# Two conservative attacks: arbitrary polynomial costs give no larger threshold
+# 保守两攻击证书：任意多项式向单项式的还原候选
 
 ## Claim identity
 

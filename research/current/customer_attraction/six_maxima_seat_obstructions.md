@@ -1,4 +1,4 @@
-# Dynamic superset seats: exact six-maxima path obstructions
+# 六极大动态超集席位的合法路径收费障碍
 
 Direct mechanism audit, 2026-10-10. These are **not SPE welfare
 counterexamples**. They do not challenge the

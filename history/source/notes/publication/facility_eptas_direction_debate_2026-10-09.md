@@ -1,4 +1,4 @@
-# 下一 PRO 任务：价值辩驳、实质初探与接续决定
+# 双设施实例最优倍率 EPTAS 的选题辩驳与初探：2026-10-09 历史决定
 
 本轮先完成无 FPTAS 独立核验，并确认远端
 `303c8fadbcaaeac0b30c201802857c8f68734a18` 已发布，才开始本讨论。
@@ -34,9 +34,9 @@
 
 1. 严格外带 |Δ|>ηW 时，w≤ηW 的轻客必须纯选较低侧；自由重客户≤1/η。
    只需 `3^{O(1/η)}` 支持而不是 `N^{O(1/η)}` 身份枚举。
-2. [近带补全引理](current/shared/near_band_completion.md)已内部证明：固定重支持，
+2. [近带补全引理](../../../../research/current/shared/near_band_completion.md)已内部证明：固定重支持，
    多项式判定/输出 |Δ|≤H 的精确 NE，不解精确等分，不改变原权重。
-3. [完整组合候选](questions/shared_alpha_eptas.md)把外带闭谱与近带代表作为真实
+3. [完整组合候选](../../../../research/questions/shared_alpha_eptas.md)把外带闭谱与近带代表作为真实
    NE 菜单。near 两坐标与 W/2 同阶；真最小坐标很小或为零必在外带，精确保留。
    局部坐标惩罚近似≤C，替换在轨收益损失≤C，总误差候选 C²α*。
 4. root 与两位审查者逐项攻击全局量词、同址、零值、外带端点及续局冲突，
@@ -88,7 +88,7 @@
 - [TEAC 官方 SIGecom 征稿说明，PDF pp.23–24](https://www.sigecom.org/ec20/conference-bag.pdf)
   明列算法博弈和均衡计算；[Caragiannis 等 2015 公开作者机构记录](https://ris.uni-paderborn.de/record/320)
   对应加权拥塞近似均衡算法、结构和复杂性结果。
-- 近期模型与优先权核查见[无 FPTAS 审查](FOUR_SITE_FPTAS_AUDIT_2026-10-09.md)。
+- 近期模型与优先权核查见[无 FPTAS 审查](../../../../research/reviews/facility/four_site_no_fptas.md)。
   本轮另检索极值 Nash 与两机调度，已有纯 NE makespan PTAS 不能直接替代
   全部独立混合客户续局下的设施稳定倍率优化；这一点也需要正式稿继续核查。
 

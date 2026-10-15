@@ -1,4 +1,4 @@
-# Equal movable weights: an unconstrained flow selector for every greedy box
+# 等重可移动轻客户的无约束流均衡构造
 
 Version 1, 2026-10-07. This note independently reconstructs the user's
 [equal-weight source argument](../../../history/source/notes/multi_facility/equal_light_flow_pro_report_2026-10-07.md).

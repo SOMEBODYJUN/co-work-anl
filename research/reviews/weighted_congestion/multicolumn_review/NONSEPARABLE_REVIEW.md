@@ -1,4 +1,4 @@
-# R1-NONSEPARABLE-FRONTIER-v1：承重选择目标族独立审查
+# 非可分选择目标：幂和、乘积与对数目标反例审查
 
 审查者：`/root/review_multicolumn`。日期：2026-10-14。
 

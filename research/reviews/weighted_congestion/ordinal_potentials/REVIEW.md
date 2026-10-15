@@ -1,4 +1,4 @@
-# Dense-bridge internal review, 2026-10-14
+# 资源可分序势与成本幂目标：内部审查记录
 
 This directory contains three mechanism-boundary claims. None is a new
 WC-TARGET existence upper bound or equilibrium nonexistence construction.

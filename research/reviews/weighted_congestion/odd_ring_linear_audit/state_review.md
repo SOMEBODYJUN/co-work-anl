@@ -1,4 +1,4 @@
-# Independent state audit of the odd-ring certificate
+# 奇数环证书：状态覆盖、条件必要性与参数恢复审查
 
 **Review identity:** R1-ODD-RING-STATE-AUDIT-v1, 2026-10-14.
 **Status:** general sufficient certificate proved; coefficient feasibility proved exactly; conditional necessity proved; subsequently restored linear-reset proof and interface barrier independently checked. No literature or novelty claim is made.

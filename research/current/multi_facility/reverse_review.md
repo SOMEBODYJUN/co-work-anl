@@ -1,4 +1,4 @@
-# Reverse review of SC-K-2-E
+# 因子二存在证明的逆向重构与实质异议审查
 
 **Review scope:** the complete quantifiers and arbitrary-k proof in
 [uniform_two.md](uniform_two.md), not its numerical plausibility.
@@ -153,5 +153,5 @@ catalogs, or externally peer-reviewed priority.
 repository checkout was available; at that point merge, structure checks,
 regressions, commit and push were pending. The later independent mathematical
 review and actual integration checks are recorded in the
-[repository audit](../../K_FACILITY_AUDIT_2026-10-02.md). A delivery-only check
+[repository audit](../../reviews/facility/arbitrary_facility_factor_two.md). A delivery-only check
 does not by itself establish any of those subsequent operational steps.

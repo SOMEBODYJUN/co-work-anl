@@ -1,4 +1,4 @@
-# 单共有客户与一个短目录：尖锐常数 ρ
+# 单交叠且一侧短目录的尖锐 ρ 阈值
 
 **命题 ID：HC-RHO。** 原主稿已有完整证明；本页从模型重新展开严格分类、平局、短目录提升及匹配下界的全部分支。现行稿仍属内部研究审读，未经外部同行评审。来源：[主稿 §8](../../../history/source/manuscripts/heterogeneous/main.tex) 的 `lem:single`、`lem:classification`、`prop:strict-rho`、`prop:tie`、`thm:rho`、`prop:lower`；[历史分类推导 §§3–7](../../../history/proofs/heterogeneous/sparse_lower_prior.md)。这些链接用于追溯，不代替以下推导。
 

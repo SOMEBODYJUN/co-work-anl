@@ -1,6 +1,6 @@
-# Independent 6.1-sol max journal decision — 2026-10-02
+# 设施选址论文拆分、定理顺序与投稿门槛：2026-10-02 编辑决定
 
-Companion to the [research-arc handoff](JOURNAL_HANDOFF_2026-10-02.md) and [detailed internal audit](PUBLICATION_REVIEW.md). Three independent 6.1-sol max lines examined venue fit, publication overclaims/proof chains, and manuscript architecture. This is an internal editorial assessment, **not** external peer review, priority certification, or an acceptance forecast.
+Companion to the [research-arc handoff](facility_journal_handoff_2026-10-02.md) and [detailed internal audit](facility_publication_assessment_2026-10-01.md). Three independent 6.1-sol max lines examined venue fit, publication overclaims/proof chains, and manuscript architecture. This is an internal editorial assessment, **not** external peer review, priority certification, or an acceptance forecast.
 
 ## Decision
 

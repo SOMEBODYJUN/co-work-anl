@@ -97,4 +97,4 @@
 黄金比构造及四地点无 FPTAS 结果整合成文。若正式复核击穿路线，记录首个
 失效义务并评估是否还有明确正向构造；没有时转向已有成果的证明整理和成稿。
 
-选题收益与反方理由见[团队记录](../NEXT_DIRECTION_DEBATE_2026-10-09.md)。
+选题收益与反方理由见[团队记录](../../history/source/notes/publication/facility_eptas_direction_debate_2026-10-09.md)。

@@ -1,4 +1,4 @@
-# MF-MODEL: arbitrary many labeled facilities, common catalog
+# 任意设施数共同目录的模型与完整续局量词
 
 Version 1, 2026-10-02. This is an explicit extension of the two-facility model,
 not a silent change to `research/current/model.md`.

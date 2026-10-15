@@ -2,6 +2,8 @@
 
 本页按数学主题和用途导航。精确条件和逐命题文件关系在 [research/assets.json](research/assets.json)，五轴状态在 [research/review_status.json](research/review_status.json)，不在多份进展列表重复维护。
 
+查某份文件讲什么、该何时读取，直接用[中文研究资产总目录](research/CATALOG.md)；先选问题与阅读路线，用[研究总入口](research/README.md)。现行数学稿、问题、审查和已整合拥塞证据均有具体名称，历史原稿和规范程序分别从下表入口查询。
+
 | 主题 | 可复用数学资产 | 程序与证据 | 未解义务 |
 | --- | --- | --- | --- |
 | 加权原子拥塞 | [奇环下界、源族/拓扑、结构势、有限分离及工具](research/current/weighted_congestion/README.md)；[逐文件用途和状态](research/weighted_congestion_frontier/FILES.md) | 审计代码 tests/audits/weighted_congestion；原证据 evidence 下分开保存，使用 replay.py 隔离重放 | 普遍存在上界、超越局部强制测试的机制、准确标注的待审稿 |

@@ -1,175 +1,306 @@
-# 研究资产：逐文件用途与生产状态
+# 加权拥塞资产链：按数学成果包读取
 
-沿用 GROWTH 的目录合同。文件位置不代替审查等级；精确身份见主题 CLAIMS，五轴状态见 research/review_status.json。
-原分支、commit、原文件 SHA-256、当前去处与退役原因见 INTEGRATION.json。原稿中的历史命令不是当前写回证据的入口。
-核验统一通过 `python3 tests/audits/weighted_congestion/replay.py --list` 选择，再将代码路径传入同一程序。
+先读[当前数学地图](../current/weighted_congestion/README.md)，再选择下方成果包。每包依次连接数学正文、问题或方法边界、实际审查、核验代码与冻结证据；名称和用途来自[人工命名登记](../catalog.json)，不再从 basename 自动猜测。
+文件角色不代替审查等级。精确命题查 [CLAIMS](CLAIMS.md)，证明、重构、内审、外审与实现查[五轴账本](../review_status.json)。原稿中的 pending 等标签保留其历史时点含义，不能覆盖现行逐命题状态。
+原分支、commit、原文件 SHA-256、当前去处与退役原因在 [INTEGRATION](INTEGRATION.json)。全仓其他研究线见[中文资产总目录](../CATALOG.md)。
+核验通过 `python3 tests/audits/weighted_congestion/replay.py --list` 选择，再将代码路径传入同一程序。旧相对布局只在临时目录重建，原冻结证据不覆盖；浮点筛选、有限精确检查和一般证明按各自用途区分。
 
-| 完整路径 | 内容与存在理由 | 生产状态 | 何时读取 |
+### 研究入口、精确状态与文件合同
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
-| [evidence/certificates/weighted_congestion/crossover/degree32_certificate.json](../../evidence/certificates/weighted_congestion/crossover/degree32_certificate.json) | degree32_certificate.json | 原冻结证据；不原位覆盖 | crossover 接口或来源复验时 |
-| [evidence/certificates/weighted_congestion/crossover/degree40_failure_certificate.json](../../evidence/certificates/weighted_congestion/crossover/degree40_failure_certificate.json) | degree40_failure_certificate.json | 原冻结证据；不原位覆盖 | crossover 接口或来源复验时 |
-| [evidence/certificates/weighted_congestion/crossover/fixed_weight_limit_certificate.json](../../evidence/certificates/weighted_congestion/crossover/fixed_weight_limit_certificate.json) | fixed_weight_limit_certificate.json | 原冻结证据；不原位覆盖 | crossover 接口或来源复验时 |
-| [evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json](../../evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json) | retuned_m3_certificate.json | 原冻结证据；不原位覆盖 | crossover 接口或来源复验时 |
-| [evidence/certificates/weighted_congestion/source_degree32/certificate.json](../../evidence/certificates/weighted_congestion/source_degree32/certificate.json) | certificate.json | 原冻结证据；不原位覆盖 | source_degree32 接口或来源复验时 |
-| [evidence/runs/2026-10-14/weighted_congestion_density.json](../../evidence/runs/2026-10-14/weighted_congestion_density.json) | weighted_congestion_density.json | 原始来源或审计；按其实际合同使用 | weight_density 接口或来源复验时 |
-| [evidence/runs/2026-10-14/weighted_power_bridge.json](../../evidence/runs/2026-10-14/weighted_power_bridge.json) | weighted_power_bridge.json | 原始来源或审计；按其实际合同使用 | power_bridge 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/crossover/fixed_degree_scan.json](../../evidence/runs/weighted_congestion/crossover/fixed_degree_scan.json) | fixed_degree_scan.json | 原冻结证据；不原位覆盖 | crossover 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/crossover/limit_evidence/finite_scans.json](../../evidence/runs/weighted_congestion/crossover/limit_evidence/finite_scans.json) | finite_scans.json | 原冻结证据；不原位覆盖 | crossover 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/crossover/limit_evidence/scaled_limits.json](../../evidence/runs/weighted_congestion/crossover/limit_evidence/scaled_limits.json) | scaled_limits.json | 原冻结证据；不原位覆盖 | crossover 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/crossover/limit_evidence/uniform_bounds.json](../../evidence/runs/weighted_congestion/crossover/limit_evidence/uniform_bounds.json) | uniform_bounds.json | 原冻结证据；不原位覆盖 | crossover 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/crossover/main_check_results.json](../../evidence/runs/weighted_congestion/crossover/main_check_results.json) | main_check_results.json | 原冻结证据；不原位覆盖 | crossover 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json](../../evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json) | independent_evidence.json | 原冻结证据；不原位覆盖 | crossover_limit_review 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/density_padding/independent_verification.json](../../evidence/runs/weighted_congestion/density_padding/independent_verification.json) | independent_verification.json | 原冻结证据；不原位覆盖 | density_padding 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/density_padding/verification.json](../../evidence/runs/weighted_congestion/density_padding/verification.json) | verification.json | 原冻结证据；不原位覆盖 | density_padding 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/heterogeneous_endpoint/verification.json](../../evidence/runs/weighted_congestion/heterogeneous_endpoint/verification.json) | verification.json | 原冻结证据；不原位覆盖 | heterogeneous_endpoint 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/marginal_potentials/evidence.json](../../evidence/runs/weighted_congestion/marginal_potentials/evidence.json) | evidence.json | 原冻结证据；不原位覆盖 | marginal_potentials 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/marginal_potentials/multiplier_evidence.json](../../evidence/runs/weighted_congestion/marginal_potentials/multiplier_evidence.json) | multiplier_evidence.json | 原冻结证据；不原位覆盖 | marginal_potentials 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/multicolumn/evidence.json](../../evidence/runs/weighted_congestion/multicolumn/evidence.json) | evidence.json | 原冻结证据；不原位覆盖 | multicolumn 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/multicolumn_review/exact_test_results.json](../../evidence/runs/weighted_congestion/multicolumn_review/exact_test_results.json) | exact_test_results.json | 原冻结证据；不原位覆盖 | multicolumn_review 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring/verification.json](../../evidence/runs/weighted_congestion/odd_ring/verification.json) | verification.json | 原冻结证据；不原位覆盖 | odd_ring 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_independent/envelope_verification.json](../../evidence/runs/weighted_congestion/odd_ring_independent/envelope_verification.json) | envelope_verification.json | 原冻结证据；不原位覆盖 | odd_ring_independent 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_independent/verification.json](../../evidence/runs/weighted_congestion/odd_ring_independent/verification.json) | verification.json | 原冻结证据；不原位覆盖 | odd_ring_independent 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_linear/exact_evidence_20261014.json](../../evidence/runs/weighted_congestion/odd_ring_linear/exact_evidence_20261014.json) | exact_evidence_20261014.json | 原冻结证据；不原位覆盖 | odd_ring_linear 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_linear_audit/audit_checks.json](../../evidence/runs/weighted_congestion/odd_ring_linear_audit/audit_checks.json) | audit_checks.json | 原冻结证据；不原位覆盖 | odd_ring_linear_audit 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_linear_audit/linear_reset_verification.json](../../evidence/runs/weighted_congestion/odd_ring_linear_audit/linear_reset_verification.json) | linear_reset_verification.json | 原冻结证据；不原位覆盖 | odd_ring_linear_audit 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_linear_audit/recovery_provenance.json](../../evidence/runs/weighted_congestion/odd_ring_linear_audit/recovery_provenance.json) | recovery_provenance.json | 原冻结证据；不原位覆盖 | odd_ring_linear_audit 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_linear_audit/state_verification.json](../../evidence/runs/weighted_congestion/odd_ring_linear_audit/state_verification.json) | state_verification.json | 原冻结证据；不原位覆盖 | odd_ring_linear_audit 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_parameters/exact_envelope_verification.json](../../evidence/runs/weighted_congestion/odd_ring_parameters/exact_envelope_verification.json) | exact_envelope_verification.json | 原冻结证据；不原位覆盖 | odd_ring_parameters 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_parameters/exact_verification.json](../../evidence/runs/weighted_congestion/odd_ring_parameters/exact_verification.json) | exact_verification.json | 原冻结证据；不原位覆盖 | odd_ring_parameters 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_parameters/integer_family_verification.json](../../evidence/runs/weighted_congestion/odd_ring_parameters/integer_family_verification.json) | integer_family_verification.json | 原冻结证据；不原位覆盖 | odd_ring_parameters 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_parameters/polynomial_envelope_verification.json](../../evidence/runs/weighted_congestion/odd_ring_parameters/polynomial_envelope_verification.json) | polynomial_envelope_verification.json | 原冻结证据；不原位覆盖 | odd_ring_parameters 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/odd_ring_parameters/singleton_graph_verification.json](../../evidence/runs/weighted_congestion/odd_ring_parameters/singleton_graph_verification.json) | singleton_graph_verification.json | 原冻结证据；不原位覆盖 | odd_ring_parameters 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/ordinal_potentials/power_objective_exact_checks.json](../../evidence/runs/weighted_congestion/ordinal_potentials/power_objective_exact_checks.json) | power_objective_exact_checks.json | 原冻结证据；不原位覆盖 | ordinal_potentials 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/polynomial_curvature/results.json](../../evidence/runs/weighted_congestion/polynomial_curvature/results.json) | results.json | 原冻结证据；不原位覆盖 | polynomial_curvature 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/polynomial_endpoint/verification.json](../../evidence/runs/weighted_congestion/polynomial_endpoint/verification.json) | verification.json | 原冻结证据；不原位覆盖 | polynomial_endpoint 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/quadratic_source/verification.json](../../evidence/runs/weighted_congestion/quadratic_source/verification.json) | verification.json | 原冻结证据；不原位覆盖 | quadratic_source 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/quadratic_triad/verification.json](../../evidence/runs/weighted_congestion/quadratic_triad/verification.json) | verification.json | 原冻结证据；不原位覆盖 | quadratic_triad 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/signed_columns/screening.json](../../evidence/runs/weighted_congestion/signed_columns/screening.json) | screening.json | 原冻结证据；不原位覆盖 | signed_columns 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/signed_columns/verification.json](../../evidence/runs/weighted_congestion/signed_columns/verification.json) | verification.json | 原冻结证据；不原位覆盖 | signed_columns 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/source_ceiling/verification.json](../../evidence/runs/weighted_congestion/source_ceiling/verification.json) | verification.json | 原冻结证据；不原位覆盖 | source_ceiling 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/source_degree32/verification.json](../../evidence/runs/weighted_congestion/source_degree32/verification.json) | verification.json | 原冻结证据；不原位覆盖 | source_degree32 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/source_envelope/verification.json](../../evidence/runs/weighted_congestion/source_envelope/verification.json) | verification.json | 原冻结证据；不原位覆盖 | source_envelope 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/source_envelope_candidate/verification.json](../../evidence/runs/weighted_congestion/source_envelope_candidate/verification.json) | verification.json | 原冻结证据；不原位覆盖 | source_envelope_candidate 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/source_topology/results.json](../../evidence/runs/weighted_congestion/source_topology/results.json) | results.json | 原冻结证据；不原位覆盖 | source_topology 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/source_topology_review/review_results.json](../../evidence/runs/weighted_congestion/source_topology_review/review_results.json) | review_results.json | 原冻结证据；不原位覆盖 | source_topology_review 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/step_dag/verification.json](../../evidence/runs/weighted_congestion/step_dag/verification.json) | verification.json | 原冻结证据；不原位覆盖 | step_dag 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/two_column_orbits/evidence.json](../../evidence/runs/weighted_congestion/two_column_orbits/evidence.json) | evidence.json | 原冻结证据；不原位覆盖 | two_column_orbits 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/weight_bands/verification.json](../../evidence/runs/weighted_congestion/weight_bands/verification.json) | verification.json | 原冻结证据；不原位覆盖 | weight_bands 接口或来源复验时 |
-| [evidence/runs/weighted_congestion/weight_bands_review/independent_verification.json](../../evidence/runs/weighted_congestion/weight_bands_review/independent_verification.json) | independent_verification.json | 原冻结证据；不原位覆盖 | weight_bands_review 接口或来源复验时 |
-| [history/source/notes/weighted_congestion/density_externality.md](../../history/source/notes/weighted_congestion/density_externality.md) | R2 original resource-externality derivation, 2026-10-14 | 原始来源或审计；按其实际合同使用 | weight_density 接口或来源复验时 |
-| [history/source/notes/weighted_congestion_frontier/power_path_discovery.md](../../history/source/notes/weighted_congestion_frontier/power_path_discovery.md) | R2 原始机制记录：共享 power 乘子与两尺度路径 | 原始来源或审计；按其实际合同使用 | weight_density 接口或来源复验时 |
-| [research/current/weighted_congestion/crossover/README.md](../current/weighted_congestion/crossover/README.md) | R3 independent literal crossover audit | 现行数学稿；逐命题审查另查五轴表 | crossover 接口或来源复验时 |
-| [research/current/weighted_congestion/crossover/limit_family.md](../current/weighted_congestion/crossover/limit_family.md) | A precise scaling interface for the fourteen-resource construction | 现行数学稿；逐命题审查另查五轴表 | crossover 接口或来源复验时 |
-| [research/current/weighted_congestion/crossover/separation.md](../current/weighted_congestion/crossover/separation.md) | A finite-degree separation from the full symmetric two-column topology | 现行数学稿；逐命题审查另查五轴表 | crossover 接口或来源复验时 |
-| [research/current/weighted_congestion/density_padding/proof.md](../current/weighted_congestion/density_padding/proof.md) | Potential-user density can be padded without changing the equilibrium threshold | 现行数学稿；逐命题审查另查五轴表 | density_padding 接口或来源复验时 |
-| [research/current/weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md](../current/weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md) | Heterogeneous endpoint forcing reduces to one light weight | 现行数学稿；逐命题审查另查五轴表 | heterogeneous_endpoint 接口或来源复验时 |
-| [research/current/weighted_congestion/multicolumn/RESULT.md](../current/weighted_congestion/multicolumn/RESULT.md) | A sharp obstruction to the complementary multicolumn extension | 现行数学稿；逐命题审查另查五轴表 | multicolumn 接口或来源复验时 |
-| [research/current/weighted_congestion/odd_ring/PROOF.md](../current/weighted_congestion/odd_ring/PROOF.md) | Odd hub/cohort rings: a growing lower bound and the exact certificate envelope | 现行数学稿；逐命题审查另查五轴表 | odd_ring 接口或来源复验时 |
-| [research/current/weighted_congestion/odd_ring_linear.md](../current/weighted_congestion/odd_ring_linear.md) | 加权多项式拥塞：奇数环下界与剩余缺口 | 现行数学稿；逐命题审查另查五轴表 | odd_ring_linear 接口或来源复验时 |
-| [research/current/weighted_congestion/odd_ring_linear/INTERFACE_BARRIER.md](../current/weighted_congestion/odd_ring_linear/INTERFACE_BARRIER.md) | OC-INTERFACE-BARRIER-v1 | 现行数学稿；逐命题审查另查五轴表 | odd_ring_linear 接口或来源复验时 |
-| [research/current/weighted_congestion/odd_ring_linear/README.md](../current/weighted_congestion/odd_ring_linear/README.md) | R1 directed odd-ring certificate | 现行数学稿；逐命题审查另查五轴表 | odd_ring_linear 接口或来源复验时 |
-| [research/current/weighted_congestion/odd_ring_linear/general_lower_bound.md](../current/weighted_congestion/odd_ring_linear/general_lower_bound.md) | OC-AMPLIFIER-LIMIT-v1: a linear reset gives d/(ln d+2) | 现行数学稿；逐命题审查另查五轴表 | odd_ring_linear 接口或来源复验时 |
-| [research/current/weighted_congestion/odd_ring_linear/pair_obstruction/PAIR_OBSTRUCTION.md](../current/weighted_congestion/odd_ring_linear/pair_obstruction/PAIR_OBSTRUCTION.md) | R1 odd-cycle pair-resource obstruction | 现行数学稿；逐命题审查另查五轴表 | odd_ring_linear 接口或来源复验时 |
-| [research/current/weighted_congestion/polynomial_curvature/extension.md](../current/weighted_congestion/polynomial_curvature/extension.md) | Exact three-load tradeoff for nonnegative-coefficient polynomials | 现行数学稿；逐命题审查另查五轴表 | polynomial_curvature 接口或来源复验时 |
-| [research/current/weighted_congestion/polynomial_curvature/proof.md](../current/weighted_congestion/polynomial_curvature/proof.md) | WC-R1-PREFIX-SMOOTHING v1：非负系数的阶跃模拟曲率障碍 | 现行数学稿；逐命题审查另查五轴表 | polynomial_curvature 接口或来源复验时 |
-| [research/current/weighted_congestion/power_bridge.md](../current/weighted_congestion/power_bridge.md) | 加权拥塞：资源间拼接与仿射两权组的锐边际势 | 现行数学稿；逐命题审查另查五轴表 | power_bridge 接口或来源复验时 |
-| [research/current/weighted_congestion/power_bridge/affine_two_type.md](../current/weighted_congestion/power_bridge/affine_two_type.md) | 两个精确权组的线性费用：共享乘子边际的 sharp 平方根跨度界 | 现行数学稿；逐命题审查另查五轴表 | power_bridge 接口或来源复验时 |
-| [research/current/weighted_congestion/power_bridge/path_obstruction.md](../current/weighted_congestion/power_bridge/path_obstruction.md) | 两尺度路径障碍：固定次线性 power 乘子不能覆盖任意密度 | 现行数学稿；逐命题审查另查五轴表 | power_bridge 接口或来源复验时 |
-| [research/current/weighted_congestion/quadratic_source/proof.md](../current/weighted_congestion/quadratic_source/proof.md) | The source degree-two parameter envelope is at most 19/18 | 现行数学稿；逐命题审查另查五轴表 | quadratic_source 接口或来源复验时 |
-| [research/current/weighted_congestion/quadratic_triad/proof.md](../current/weighted_congestion/quadratic_triad/proof.md) | A six-resource integer quadratic game | 完整有限证明；所引独立 review 未保存 | quadratic_triad 接口或来源复验时 |
-| [research/current/weighted_congestion/resource_support.md](../current/weighted_congestion/resource_support.md) | WC-R1-RESOURCE-SUPPORT v1：资源用户支持给出的存在界 | 现行数学稿；逐命题审查另查五轴表 | resource_support 接口或来源复验时 |
-| [research/current/weighted_congestion/source_ceiling/README.md](../current/weighted_congestion/source_ceiling/README.md) | A uniform ceiling for the standard two-attack envelope | 现行数学稿；逐命题审查另查五轴表 | source_ceiling 接口或来源复验时 |
-| [research/current/weighted_congestion/source_degree32/PROOF.md](../current/weighted_congestion/source_degree32/PROOF.md) | 原式(3)在 d=32 的完整参数上界：F₃₂≤89/50 | 现行数学稿；逐命题审查另查五轴表 | source_degree32 接口或来源复验时 |
-| [research/current/weighted_congestion/source_envelope/README.md](../current/weighted_congestion/source_envelope/README.md) | R3 sharp source-parameter review | 现行数学稿；逐命题审查另查五轴表 | source_envelope 接口或来源复验时 |
-| [research/current/weighted_congestion/source_envelope/proof.md](../current/weighted_congestion/source_envelope/proof.md) | Independent reconstruction of the sharp source-parameter asymptotic | 现行数学稿；逐命题审查另查五轴表 | source_envelope 接口或来源复验时 |
-| [research/current/weighted_congestion/source_topology/proof.md](../current/weighted_congestion/source_topology/proof.md) | Full symmetric two-column topology: exact high-factor reduction | 现行数学稿；逐命题审查另查五轴表 | source_topology 接口或来源复验时 |
-| [research/current/weighted_congestion/step_dag/proof.md](../current/weighted_congestion/step_dag/proof.md) | Exact thresholds for acyclic step dependency games | 现行数学稿；逐命题审查另查五轴表 | step_dag 接口或来源复验时 |
-| [research/current/weighted_congestion/weight_bands/README.md](../current/weighted_congestion/weight_bands/README.md) | R3: resource-local narrow weights, and the cross-band obstruction | 现行数学稿；逐命题审查另查五轴表 | weight_bands 接口或来源复验时 |
-| [research/current/weighted_congestion/weight_density.md](../current/weighted_congestion/weight_density.md) | Resource-local weight density and approximate pure equilibria | 现行数学稿；逐命题审查另查五轴表 | weight_density 接口或来源复验时 |
-| [research/questions/weighted_congestion/marginal_potentials/arbitrary_multipliers.md](../questions/weighted_congestion/marginal_potentials/arbitrary_multipliers.md) | R1: finite multiscale obstruction with arbitrary player multipliers | 候选或开放义务；入 main 不升级 | marginal_potentials 接口或来源复验时 |
-| [research/questions/weighted_congestion/marginal_potentials/proof.md](../questions/weighted_congestion/marginal_potentials/proof.md) | R1: a linear barrier for uniformly weight-calibrated marginal potentials | 候选或开放义务；入 main 不升级 | marginal_potentials 接口或来源复验时 |
-| [research/questions/weighted_congestion/ordinal_potentials/game_specific_separable_ordinal_barrier.md](../questions/weighted_congestion/ordinal_potentials/game_specific_separable_ordinal_barrier.md) | Game-specific separable ordinal potentials still have a linear barrier | 候选或开放义务；入 main 不升级 | ordinal_potentials 接口或来源复验时 |
-| [research/questions/weighted_congestion/ordinal_potentials/power_of_total_cost_obstruction.md](../questions/weighted_congestion/ordinal_potentials/power_of_total_cost_obstruction.md) | WC-R1-TOTAL-COST-POWER-OBSTRUCTION v1 | 候选或开放义务；入 main 不升级 | ordinal_potentials 接口或来源复验时 |
-| [research/questions/weighted_congestion/ordinal_potentials/universal_additive_ordinal_bridge.md](../questions/weighted_congestion/ordinal_potentials/universal_additive_ordinal_bridge.md) | Universal additive ordinal rules imply a local marginal sandwich | 候选或开放义务；入 main 不升级 | ordinal_potentials 接口或来源复验时 |
-| [research/questions/weighted_congestion/polynomial_endpoint/proof.md](../questions/weighted_congestion/polynomial_endpoint/proof.md) | Two conservative attacks: arbitrary polynomial costs give no larger threshold | 候选或开放义务；入 main 不升级 | polynomial_endpoint 接口或来源复验时 |
-| [research/questions/weighted_congestion/polynomial_endpoint/side_polynomial/Q_ENDPOINT_REDUCTION.md](../questions/weighted_congestion/polynomial_endpoint/side_polynomial/Q_ENDPOINT_REDUCTION.md) | 副资源非负多项式的端点归约 | 候选或开放义务；入 main 不升级 | polynomial_endpoint 接口或来源复验时 |
-| [research/questions/weighted_congestion/signed_columns/TRIAD_AND_EXTENSION.md](../questions/weighted_congestion/signed_columns/TRIAD_AND_EXTENSION.md) | Complementary triad mechanism and a growing-support extension | 候选或开放义务；入 main 不升级 | signed_columns 接口或来源复验时 |
-| [research/questions/weighted_congestion/source_envelope_candidate/sharp_envelope.md](../questions/weighted_congestion/source_envelope_candidate/sharp_envelope.md) | WC-R1-LF-SHARP v1: sharp asymptotics of the published two-ratio envelope | 候选或开放义务；入 main 不升级 | source_envelope_candidate 接口或来源复验时 |
-| [research/questions/weighted_congestion/two_column_orbits/proof.md](../questions/weighted_congestion/two_column_orbits/proof.md) | 两列 gadget 的完整状态商与保守证书的严格损失 | 候选或开放义务；入 main 不升级 | two_column_orbits 接口或来源复验时 |
-| [research/reviews/weighted_congestion/crossover_limit_review/review.md](../reviews/weighted_congestion/crossover_limit_review/review.md) | Independent review of the shrinking-weight Boolean limit | 内部审查原记录；只覆盖明列版本和命题 | crossover_limit_review 接口或来源复验时 |
-| [research/reviews/weighted_congestion/density_padding/review.md](../reviews/weighted_congestion/density_padding/review.md) | 最小 potential-user 密度的 padding：独立重构与审查 | 内部审查原记录；只覆盖明列版本和命题 | density_padding 接口或来源复验时 |
-| [research/reviews/weighted_congestion/heterogeneous_endpoint/review.md](../reviews/weighted_congestion/heterogeneous_endpoint/review.md) | Independent internal review of the endpoint reduction | 内部审查原记录；只覆盖明列版本和命题 | heterogeneous_endpoint 接口或来源复验时 |
-| [research/reviews/weighted_congestion/multicolumn_review/NONSEPARABLE_REVIEW.md](../reviews/weighted_congestion/multicolumn_review/NONSEPARABLE_REVIEW.md) | R1-NONSEPARABLE-FRONTIER-v1：承重选择目标族独立审查 | 审查摘要；原 proof/程序缺失，不能替代证明 | multicolumn_review 接口或来源复验时 |
-| [research/reviews/weighted_congestion/multicolumn_review/REVIEW.md](../reviews/weighted_congestion/multicolumn_review/REVIEW.md) | MULTICOLUMN-2 v1：R1 独立数学审查 | 内部审查原记录；只覆盖明列版本和命题 | multicolumn_review 接口或来源复验时 |
-| [research/reviews/weighted_congestion/odd_ring_independent/EXACT_ENVELOPE_REVIEW.md](../reviews/weighted_congestion/odd_ring_independent/EXACT_ENVELOPE_REVIEW.md) | R3 独立审查：奇环乘积证书的精确 envelope v1 | 内部审查原记录；只覆盖明列版本和命题 | odd_ring_independent 接口或来源复验时 |
-| [research/reviews/weighted_congestion/odd_ring_independent/REVIEW.md](../reviews/weighted_congestion/odd_ring_independent/REVIEW.md) | R3 奇环机制：独立重构与逐资源审查 v1 | 内部审查原记录；只覆盖明列版本和命题 | odd_ring_independent 接口或来源复验时 |
-| [research/reviews/weighted_congestion/odd_ring_linear/independent_attack.md](../reviews/weighted_congestion/odd_ring_linear/independent_attack.md) | Independent literal-cost attack of the odd ring | 内部审查原记录；只覆盖明列版本和命题 | odd_ring_linear 接口或来源复验时 |
-| [research/reviews/weighted_congestion/odd_ring_linear_audit/asymptotic_review.md](../reviews/weighted_congestion/odd_ring_linear_audit/asymptotic_review.md) | R1 independent odd-ring asymptotic audit | 内部审查原记录；只覆盖明列版本和命题 | odd_ring_linear_audit 接口或来源复验时 |
-| [research/reviews/weighted_congestion/odd_ring_linear_audit/literature_review.md](../reviews/weighted_congestion/odd_ring_linear_audit/literature_review.md) | WC-TARGET v1: literature collision audit for the odd hub/cohort ring candidate | 内部审查原记录；只覆盖明列版本和命题 | odd_ring_linear_audit 接口或来源复验时 |
-| [research/reviews/weighted_congestion/odd_ring_linear_audit/state_review.md](../reviews/weighted_congestion/odd_ring_linear_audit/state_review.md) | Independent state audit of the odd-ring certificate | 内部审查原记录；只覆盖明列版本和命题 | odd_ring_linear_audit 接口或来源复验时 |
-| [research/reviews/weighted_congestion/odd_ring_literature/notes.md](../reviews/weighted_congestion/odd_ring_literature/notes.md) | Odd cyclic hubs 文献核对（R3 内部文献任务） | 内部审查原记录；只覆盖明列版本和命题 | odd_ring_literature 接口或来源复验时 |
-| [research/reviews/weighted_congestion/odd_ring_parameters/SINGLETON_NOTE.md](../reviews/weighted_congestion/odd_ring_parameters/SINGLETON_NOTE.md) | Actual-topology upper bound when every cohort has one player | 内部审查原记录；只覆盖明列版本和命题 | odd_ring_parameters 接口或来源复验时 |
-| [research/reviews/weighted_congestion/odd_ring_parameters/exact_envelope_review.md](../reviews/weighted_congestion/odd_ring_parameters/exact_envelope_review.md) | Independent review of the exact certificate envelope | 内部审查原记录；只覆盖明列版本和命题 | odd_ring_parameters 接口或来源复验时 |
-| [research/reviews/weighted_congestion/odd_ring_parameters/polynomial_envelope_review.md](../reviews/weighted_congestion/odd_ring_parameters/polynomial_envelope_review.md) | Independent review: nonnegative polynomial shapes do not enlarge the envelope | 内部审查原记录；只覆盖明列版本和命题 | odd_ring_parameters 接口或来源复验时 |
-| [research/reviews/weighted_congestion/ordinal_potentials/REVIEW.md](../reviews/weighted_congestion/ordinal_potentials/REVIEW.md) | Dense-bridge internal review, 2026-10-14 | 内部审查原记录；只覆盖明列版本和命题 | ordinal_potentials 接口或来源复验时 |
-| [research/reviews/weighted_congestion/polynomial_curvature/review.md](../reviews/weighted_congestion/polynomial_curvature/review.md) | Independent adversarial review of WC-R1-PREFIX-SMOOTHING v1 | 内部审查原记录；只覆盖明列版本和命题 | polynomial_curvature 接口或来源复验时 |
-| [research/reviews/weighted_congestion/power_bridge/independent_review.md](../reviews/weighted_congestion/power_bridge/independent_review.md) | R2 多尺度接口独立重构审查 v1 | 内部审查原记录；只覆盖明列版本和命题 | power_bridge 接口或来源复验时 |
-| [research/reviews/weighted_congestion/power_bridge/path_review.md](../reviews/weighted_congestion/power_bridge/path_review.md) | 路径障碍的独立重构审查 | 内部审查原记录；只覆盖明列版本和命题 | power_bridge 接口或来源复验时 |
-| [research/reviews/weighted_congestion/quadratic_source/source_audit.md](../reviews/weighted_congestion/quadratic_source/source_audit.md) | Primary-source audit | 内部审查原记录；只覆盖明列版本和命题 | quadratic_source 接口或来源复验时 |
-| [research/reviews/weighted_congestion/source_ceiling_review/independent_review.md](../reviews/weighted_congestion/source_ceiling_review/independent_review.md) | Independent reconstruction and adversarial review of the Eq. (3) envelope | 内部审查原记录；只覆盖明列版本和命题 | source_ceiling_review 接口或来源复验时 |
-| [research/reviews/weighted_congestion/source_envelope/review.md](../reviews/weighted_congestion/source_envelope/review.md) | Independent attack of R3-SOURCE-SHARP-ASYMPTOTIC-v1 | 内部审查原记录；只覆盖明列版本和命题 | source_envelope 接口或来源复验时 |
-| [research/reviews/weighted_congestion/source_envelope_candidate/source_audit.md](../reviews/weighted_congestion/source_envelope_candidate/source_audit.md) | Source audit for WC-R1-LF-SHARP v1 | 内部审查原记录；只覆盖明列版本和命题 | source_envelope_candidate 接口或来源复验时 |
-| [research/reviews/weighted_congestion/source_topology_review/review.md](../reviews/weighted_congestion/source_topology_review/review.md) | R3 independent topology attack: versions 1–3 | 内部审查原记录；只覆盖明列版本和命题 | source_topology_review 接口或来源复验时 |
-| [research/reviews/weighted_congestion/step_dag/independent_review.md](../reviews/weighted_congestion/step_dag/independent_review.md) | R1 独立重构：对称 tree-prefix 与 DAG step 辅助模型 | 内部审查原记录；只覆盖明列版本和命题 | step_dag 接口或来源复验时 |
-| [research/reviews/weighted_congestion/weight_bands_review/independent_review.md](../reviews/weighted_congestion/weight_bands_review/independent_review.md) | Independent review: resource-local weight bands and Shapley potential | 内部审查原记录；只覆盖明列版本和命题 | weight_bands_review 接口或来源复验时 |
-| [research/reviews/weighted_congestion/weight_density/review.md](../reviews/weighted_congestion/weight_density/review.md) | R2 权重密度势函数：独立重构与证明审查 | 内部审查原记录；只覆盖明列版本和命题 | weight_density 接口或来源复验时 |
-| [tests/audits/weighted_congestion/crossover/main_check.py](../../tests/audits/weighted_congestion/crossover/main_check.py) | main_check.py | 可重放精确核验；有限范围，不是一般证明 | crossover 接口或来源复验时 |
-| [tests/audits/weighted_congestion/crossover/verify_degree32.py](../../tests/audits/weighted_congestion/crossover/verify_degree32.py) | verify_degree32.py | 可重放精确核验；有限范围，不是一般证明 | crossover 接口或来源复验时 |
-| [tests/audits/weighted_congestion/crossover/verify_limit.py](../../tests/audits/weighted_congestion/crossover/verify_limit.py) | verify_limit.py | 可重放精确核验；有限范围，不是一般证明 | crossover 接口或来源复验时 |
-| [tests/audits/weighted_congestion/crossover_limit_review/check_independent.py](../../tests/audits/weighted_congestion/crossover_limit_review/check_independent.py) | check_independent.py | 可重放精确核验；有限范围，不是一般证明 | crossover_limit_review 接口或来源复验时 |
-| [tests/audits/weighted_congestion/density_padding/independent_check.py](../../tests/audits/weighted_congestion/density_padding/independent_check.py) | independent_check.py | 可重放精确核验；有限范围，不是一般证明 | density_padding 接口或来源复验时 |
-| [tests/audits/weighted_congestion/density_padding/verify.py](../../tests/audits/weighted_congestion/density_padding/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | density_padding 接口或来源复验时 |
-| [tests/audits/weighted_congestion/heterogeneous_endpoint/verify_endpoint_reduction.py](../../tests/audits/weighted_congestion/heterogeneous_endpoint/verify_endpoint_reduction.py) | verify_endpoint_reduction.py | 可重放精确核验；有限范围，不是一般证明 | heterogeneous_endpoint 接口或来源复验时 |
-| [tests/audits/weighted_congestion/marginal_potentials/verify.py](../../tests/audits/weighted_congestion/marginal_potentials/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | marginal_potentials 接口或来源复验时 |
-| [tests/audits/weighted_congestion/marginal_potentials/verify_multipliers.py](../../tests/audits/weighted_congestion/marginal_potentials/verify_multipliers.py) | verify_multipliers.py | 可重放精确核验；有限范围，不是一般证明 | marginal_potentials 接口或来源复验时 |
-| [tests/audits/weighted_congestion/multicolumn/verify.py](../../tests/audits/weighted_congestion/multicolumn/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | multicolumn 接口或来源复验时 |
-| [tests/audits/weighted_congestion/multicolumn_review/verify_multicolumn.py](../../tests/audits/weighted_congestion/multicolumn_review/verify_multicolumn.py) | verify_multicolumn.py | 可重放精确核验；有限范围，不是一般证明 | multicolumn_review 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring/verify.py](../../tests/audits/weighted_congestion/odd_ring/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_independent/verify_envelope.py](../../tests/audits/weighted_congestion/odd_ring_independent/verify_envelope.py) | verify_envelope.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_independent 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_independent/verify_literal.py](../../tests/audits/weighted_congestion/odd_ring_independent/verify_literal.py) | verify_literal.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_independent 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_linear/attack.py](../../tests/audits/weighted_congestion/odd_ring_linear/attack.py) | attack.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_linear 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_linear/verify_ring.py](../../tests/audits/weighted_congestion/odd_ring_linear/verify_ring.py) | verify_ring.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_linear 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_linear_audit/audit_checks.py](../../tests/audits/weighted_congestion/odd_ring_linear_audit/audit_checks.py) | audit_checks.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_linear_audit 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_linear_audit/verify_linear_reset.py](../../tests/audits/weighted_congestion/odd_ring_linear_audit/verify_linear_reset.py) | verify_linear_reset.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_linear_audit 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_linear_audit/verify_state_review.py](../../tests/audits/weighted_congestion/odd_ring_linear_audit/verify_state_review.py) | verify_state_review.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_linear_audit 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_parameters/check_exact_envelope.py](../../tests/audits/weighted_congestion/odd_ring_parameters/check_exact_envelope.py) | check_exact_envelope.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_parameters 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_parameters/check_integer_family.py](../../tests/audits/weighted_congestion/odd_ring_parameters/check_integer_family.py) | check_integer_family.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_parameters 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_parameters/check_parameters.py](../../tests/audits/weighted_congestion/odd_ring_parameters/check_parameters.py) | check_parameters.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_parameters 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_parameters/check_polynomial_envelope.py](../../tests/audits/weighted_congestion/odd_ring_parameters/check_polynomial_envelope.py) | check_polynomial_envelope.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_parameters 接口或来源复验时 |
-| [tests/audits/weighted_congestion/odd_ring_parameters/check_singleton_graph.py](../../tests/audits/weighted_congestion/odd_ring_parameters/check_singleton_graph.py) | check_singleton_graph.py | 可重放精确核验；有限范围，不是一般证明 | odd_ring_parameters 接口或来源复验时 |
-| [tests/audits/weighted_congestion/ordinal_potentials/verify_power_objective.py](../../tests/audits/weighted_congestion/ordinal_potentials/verify_power_objective.py) | verify_power_objective.py | 可重放精确核验；有限范围，不是一般证明 | ordinal_potentials 接口或来源复验时 |
-| [tests/audits/weighted_congestion/polynomial_curvature/extension_verify.py](../../tests/audits/weighted_congestion/polynomial_curvature/extension_verify.py) | extension_verify.py | 可重放精确核验；有限范围，不是一般证明 | polynomial_curvature 接口或来源复验时 |
-| [tests/audits/weighted_congestion/polynomial_curvature/verify.py](../../tests/audits/weighted_congestion/polynomial_curvature/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | polynomial_curvature 接口或来源复验时 |
-| [tests/audits/weighted_congestion/polynomial_endpoint/side_polynomial/check_q_endpoint.py](../../tests/audits/weighted_congestion/polynomial_endpoint/side_polynomial/check_q_endpoint.py) | check_q_endpoint.py | 可重放精确核验；有限范围，不是一般证明 | polynomial_endpoint 接口或来源复验时 |
-| [tests/audits/weighted_congestion/polynomial_endpoint/verify.py](../../tests/audits/weighted_congestion/polynomial_endpoint/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | polynomial_endpoint 接口或来源复验时 |
-| [tests/audits/weighted_congestion/power_bridge/verify_affine_two_type.py](../../tests/audits/weighted_congestion/power_bridge/verify_affine_two_type.py) | verify_affine_two_type.py | 可重放精确核验；有限范围，不是一般证明 | power_bridge 接口或来源复验时 |
-| [tests/audits/weighted_congestion/quadratic_source/verify.py](../../tests/audits/weighted_congestion/quadratic_source/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | quadratic_source 接口或来源复验时 |
-| [tests/audits/weighted_congestion/quadratic_triad/verify.py](../../tests/audits/weighted_congestion/quadratic_triad/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | quadratic_triad 接口或来源复验时 |
-| [tests/audits/weighted_congestion/signed_columns/search_layers.py](../../tests/audits/weighted_congestion/signed_columns/search_layers.py) | search_layers.py | 可重放精确核验；有限范围，不是一般证明 | signed_columns 接口或来源复验时 |
-| [tests/audits/weighted_congestion/signed_columns/verify.py](../../tests/audits/weighted_congestion/signed_columns/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | signed_columns 接口或来源复验时 |
-| [tests/audits/weighted_congestion/source_ceiling/verify.py](../../tests/audits/weighted_congestion/source_ceiling/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | source_ceiling 接口或来源复验时 |
-| [tests/audits/weighted_congestion/source_degree32/verify.py](../../tests/audits/weighted_congestion/source_degree32/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | source_degree32 接口或来源复验时 |
-| [tests/audits/weighted_congestion/source_envelope/verify_logs.py](../../tests/audits/weighted_congestion/source_envelope/verify_logs.py) | verify_logs.py | 可重放精确核验；有限范围，不是一般证明 | source_envelope 接口或来源复验时 |
-| [tests/audits/weighted_congestion/source_envelope_candidate/verify.py](../../tests/audits/weighted_congestion/source_envelope_candidate/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | source_envelope_candidate 接口或来源复验时 |
-| [tests/audits/weighted_congestion/source_topology/verify.py](../../tests/audits/weighted_congestion/source_topology/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | source_topology 接口或来源复验时 |
-| [tests/audits/weighted_congestion/source_topology_review/check_review.py](../../tests/audits/weighted_congestion/source_topology_review/check_review.py) | check_review.py | 可重放精确核验；有限范围，不是一般证明 | source_topology_review 接口或来源复验时 |
-| [tests/audits/weighted_congestion/step_dag/independent_audit.py](../../tests/audits/weighted_congestion/step_dag/independent_audit.py) | independent_audit.py | 可重放精确核验；有限范围，不是一般证明 | step_dag 接口或来源复验时 |
-| [tests/audits/weighted_congestion/step_dag/verify.py](../../tests/audits/weighted_congestion/step_dag/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | step_dag 接口或来源复验时 |
-| [tests/audits/weighted_congestion/two_column_orbits/verify.py](../../tests/audits/weighted_congestion/two_column_orbits/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | two_column_orbits 接口或来源复验时 |
-| [tests/audits/weighted_congestion/weight_bands/verify.py](../../tests/audits/weighted_congestion/weight_bands/verify.py) | verify.py | 可重放精确核验；有限范围，不是一般证明 | weight_bands 接口或来源复验时 |
-| [tests/audits/weighted_congestion/weight_bands_review/independent_check.py](../../tests/audits/weighted_congestion/weight_bands_review/independent_check.py) | independent_check.py | 可重放精确核验；有限范围，不是一般证明 | weight_bands_review 接口或来源复验时 |
-| [tests/audits/weighted_congestion_density.py](../../tests/audits/weighted_congestion_density.py) | weighted_congestion_density.py | 原始来源或审计；按其实际合同使用 | weight_density 接口或来源复验时 |
-| [tests/audits/weighted_power_bridge.py](../../tests/audits/weighted_power_bridge.py) | weighted_power_bridge.py | 原始来源或审计；按其实际合同使用 | power_bridge 接口或来源复验时 |
+| [加权原子拥塞：奇环下界、工具与一般门槛缺口地图](<../current/weighted_congestion/README.md>) | `research/current/weighted_congestion/README.md` | 先读精确模型与奇环共同机制，再按目标选择结构势、非对称机制或候选障碍；不能把局部证书包络当全类上界。 | 阅读导航；真值查精确正文及账本；关联 `WC-ENVELOPE-CEILING`、`WC-R1-DAG-STEP`、`WC-R1-HET-ENDPOINT-REDUCTION`，[命题合同（共 10 项）](../assets.json) |
+| [拥塞待审候选与未闭合义务地图](<../questions/weighted_congestion/README.md>) | `research/questions/weighted_congestion/README.md` | 查固定乘子势、序势、端点与两列轨道稿的真实证据等级和缺失审查，选可接续的准确义务。 | 阅读导航；真值查精确正文及账本 |
+| [加权拥塞共同研究与协作入口](<README.md>) | `research/weighted_congestion_frontier/README.md` | 数学阅读进入 current 的证明地图，需要运行协作或保存程序时再进入启动和协议。 | 阅读导航；真值查精确正文及账本 |
+| [拥塞逐成果包资产链：中文名称、正文、审查与证据](<FILES.md>) | `research/weighted_congestion_frontier/FILES.md` | 按数学成果包找到具体文件作用，追踪主稿到独立攻击、实际核验与冻结结果，不先读路径字典序清单。 | 阅读导航；真值查精确正文及账本 |
+| [加权原子拥塞精确模型与普遍门槛目标](<MODEL.md>) | `research/weighted_congestion_frontier/MODEL.md` | 核对正权、有限策略、非负多项式费用及弱不等式近似 PNE 的全类量词，防止偷偷缩小目标模型。 | 定义与模型；不隐含跨模型定理 |
+| [拥塞精确命题账本：目标、局部成果与候选版本](<CLAIMS.md>) | `research/weighted_congestion_frontier/CLAIMS.md` | 引用团队结果前核对稳定 ID、版本、定义域、假设、结论、证据和 objection；范围变化要另建版本。 | 精确命题登记；摘要不替代原陈述 |
+| [拥塞当前前沿、已保存工具和下一证明义务](<RESEARCH_STATE.md>) | `research/weighted_congestion_frontier/RESEARCH_STATE.md` | 接续研究时核对当前已知与未解，避免使用原稿时点状态或旧公屏代替共同账本。 | 精确命题登记；摘要不替代原陈述 |
+| [拥塞失败机制、局部证书边界与可回收结果](<FAILED_ROUTES.md>) | `research/weighted_congestion_frontier/FAILED_ROUTES.md` | 选择势方法、固定小构造或源族调参前查失败的准确量词；方法失败不得升级为全类不可能。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
+| [加权拥塞近似纯均衡的文献基线与核验范围](<LITERATURE.md>) | `research/weighted_congestion_frontier/LITERATURE.md` | 查原文真实模型、上界、下界和开放问题；文献事实、团队解释与尚未认证的新颖性分别引用。 | 文献核对；与团队新结果分别引用 |
+| [拥塞前人机制与可复用技术资产](<PRIOR_ASSETS.md>) | `research/weighted_congestion_frontier/PRIOR_ASSETS.md` | 选择势函数、下界构造或桥梁时查前人已经提供的对象、方法和适用限制，避免重复宣称发现。 | 文献核对；与团队新结果分别引用 |
+
+### 奇环全状态下界、有限实现与精确证书包络
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [奇数环总证明：全状态非存在、精确包络与同次数构造](<../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md>) | `research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md` | 从真实资源策略建立严格局部测试及正系数乘积判据，证明精确包络、有限有理同次数下界，并处理多项式与单成员子类。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同（共 5 项）](../assets.json) |
+| [奇数环线性重置：显式下界与完整证明链](<../current/weighted_congestion/odd_ring_linear.md>) | `research/current/weighted_congestion/odd_ring_linear.md` | 整合奇环全状态覆盖、权重闭环、线性重置放大及显式下界；说明与同次数包络的关系及全类上界缺口。 | 数学正文；按关联命题分别核对证明及审查；关联 `OC-AMPLIFIER-ENVELOPE-v1`、`OC-AMPLIFIER-LIMIT-v1`、`OC-INTERFACE-BARRIER-v1`，[命题合同（共 25 项）](../assets.json) |
+| [有向奇数环：资源策略与正系数闭环接口](<../current/weighted_congestion/odd_ring_linear/README.md>) | `research/current/weighted_congestion/odd_ring_linear/README.md` | 完整定义可变次数的有向奇环资源策略、全部纯状态覆盖与正系数可行性乘积条件，保留原稿时点状态。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [线性重置放大器：构造随次数增长的非存在下界](<../current/weighted_congestion/odd_ring_linear/general_lower_bound.md>) | `research/current/weighted_congestion/odd_ring_linear/general_lower_bound.md` | 给出有限重置/放大块的构造推导及其标量包络，作为现行线性重置总稿的详细机制来源。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [奇数环正系数接口：渐近放大能力的上限](<../current/weighted_congestion/odd_ring_linear/INTERFACE_BARRIER.md>) | `research/current/weighted_congestion/odd_ring_linear/INTERFACE_BARRIER.md` | 证明指定充分系数接口的必要标量不等式，限制该证书的渐近常数，不推出实际游戏或全类存在上界。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
+| [奇数环精确包络：必要性、充分性与端点独立审查](<../reviews/weighted_congestion/odd_ring_independent/EXACT_ENVELOPE_REVIEW.md>) | `research/reviews/weighted_congestion/odd_ring_independent/EXACT_ENVELOPE_REVIEW.md` | 在全状态奇环还原基础上独立重构正乘积证书的包络、端点和标量关系；不推出全类存在上界。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环资源策略：逐负载、全状态覆盖与闭环独立审查](<../reviews/weighted_congestion/odd_ring_independent/REVIEW.md>) | `research/reviews/weighted_congestion/odd_ring_independent/REVIEW.md` | 先由资源策略重建真实偏离成本与局部不等式，再审查成长参数；独立于原构造程序。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环线性实现：真实资源成本独立攻击](<../reviews/weighted_congestion/odd_ring_linear/independent_attack.md>) | `research/reviews/weighted_congestion/odd_ring_linear/independent_attack.md` | 以资源级成本和人数压缩状态检查指定奇环证书及给定次数实例；一般证书与有限检查分开。 | 实际审查记录；只覆盖所列版本与义务 |
+| [奇数环线性重置：显式下界与渐近常数审查](<../reviews/weighted_congestion/odd_ring_linear_audit/asymptotic_review.md>) | `research/reviews/weighted_congestion/odd_ring_linear_audit/asymptotic_review.md` | 核对原二进参数、恢复的线性重置证明及更强显式下界，记录与标量包络的关系。 | 实际审查记录；只覆盖所列版本与义务 |
+| [奇数环下界：文献基线与机制碰撞检索记录](<../reviews/weighted_congestion/odd_ring_linear_audit/literature_review.md>) | `research/reviews/weighted_congestion/odd_ring_linear_audit/literature_review.md` | 核对指定一手文献、模型和可比较下界；有限检索未发现碰撞不认证世界优先权。 | 实际审查记录；只覆盖所列版本与义务 |
+| [奇数环证书：状态覆盖、条件必要性与参数恢复审查](<../reviews/weighted_congestion/odd_ring_linear_audit/state_review.md>) | `research/reviews/weighted_congestion/odd_ring_linear_audit/state_review.md` | 独立从策略还原成本，检查全状态充分证书、系数可行性和后续恢复的重置/接口结论。 | 实际审查记录；只覆盖所列版本与义务 |
+| [奇数环与异权群组：多项式拥塞文献核对](<../reviews/weighted_congestion/odd_ring_literature/notes.md>) | `research/reviews/weighted_congestion/odd_ring_literature/notes.md` | 记录已查固定版本的模型、存在/非存在基线及奇环机制参照；不提供穷尽新颖性认证。 | 实际审查记录；只覆盖所列版本与义务 |
+| [奇数环单成员群组：实际游戏存在界的独立证明](<../reviews/weighted_congestion/odd_ring_parameters/SINGLETON_NOTE.md>) | `research/reviews/weighted_congestion/odd_ring_parameters/SINGLETON_NOTE.md` | 由单冲突状态图重建每组一名群组玩家的存在界，明确不覆盖一般多成员群组。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-R3-ODD-RING-SINGLETON-UPPER-v1`，[命题合同](../assets.json) |
+| [奇数环参数包络：精确最值与有理特殊块审查](<../reviews/weighted_congestion/odd_ring_parameters/exact_envelope_review.md>) | `research/reviews/weighted_congestion/odd_ring_parameters/exact_envelope_review.md` | 独立优化正乘积接口并核对有理特殊块的实现；以另行证明的全状态还原为前提。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环多项式形状：不扩大正测试包络的审查](<../reviews/weighted_congestion/odd_ring_parameters/polynomial_envelope_review.md>) | `research/reviews/weighted_congestion/odd_ring_parameters/polynomial_envelope_review.md` | 检查非负多项式混合、常数项及零形状边界，证明规定共享形状下的证书包络不变。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1`，[命题合同](../assets.json) |
+| [奇数环线性实现：独立真实成本攻击程序](<../../tests/audits/weighted_congestion/odd_ring_linear/attack.py>) | `tests/audits/weighted_congestion/odd_ring_linear/attack.py` | 以 Fraction 从策略和资源计算成本；人数压缩状态代表相应的带标签状态，默认只审明示实例。 | 有限计算核验；不代替一般证明 |
+| [有向奇数环：精确系数证书与压缩状态核验](<../../tests/audits/weighted_congestion/odd_ring_linear/verify_ring.py>) | `tests/audits/weighted_congestion/odd_ring_linear/verify_ring.py` | 检查闭环系数并枚举所报告实例的 hub 位和群组人数状态，Decimal 仅用于展示。 | 有限计算核验；不代替一般证明 |
+| [奇数环重置审查：有限有理回归与包络诊断](<../../tests/audits/weighted_congestion/odd_ring_linear_audit/audit_checks.py>) | `tests/audits/weighted_congestion/odd_ring_linear_audit/audit_checks.py` | 核对原候选与线性重置实例，并将 Decimal 包络诊断与精确证书检查分开。 | 有限计算核验；不代替一般证明；关联 `OC-AMPLIFIER-ENVELOPE-v1`、`OC-AMPLIFIER-LIMIT-v1`、`OC-INTERFACE-BARRIER-v1`，[命题合同（共 5 项）](../assets.json) |
+| [线性重置放大器：独立有理证书回归](<../../tests/audits/weighted_congestion/odd_ring_linear_audit/verify_linear_reset.py>) | `tests/audits/weighted_congestion/odd_ring_linear_audit/verify_linear_reset.py` | 不导入原奇环程序，精确重建有限重置证书及拒绝边界；Decimal 内容单列诊断。 | 有限计算核验；不代替一般证明；关联 `OC-AMPLIFIER-ENVELOPE-v1`、`OC-AMPLIFIER-LIMIT-v1`、`OC-INTERFACE-BARRIER-v1`，[命题合同（共 5 项）](../assets.json) |
+| [奇数环状态审查：逐资源成本与巨大参数证书核验](<../../tests/audits/weighted_congestion/odd_ring_linear_audit/verify_state_review.py>) | `tests/audits/weighted_congestion/odd_ring_linear_audit/verify_state_review.py` | 从策略重新构造负载，不用证书余量公式评估实际成本；巨大放大族只检查已证明的系数证书。 | 有限计算核验；不代替一般证明；关联 `OC-AMPLIFIER-ENVELOPE-v1`、`OC-AMPLIFIER-LIMIT-v1`、`OC-INTERFACE-BARRIER-v1`，[命题合同（共 5 项）](../assets.json) |
+| [奇数环精确包络：标量恒等式与同次数证书核验](<../../tests/audits/weighted_congestion/odd_ring_independent/verify_envelope.py>) | `tests/audits/weighted_congestion/odd_ring_independent/verify_envelope.py` | 使用整数/Fraction 检查包络恒等式、同次数可行证书和显式下界分离，任意参数结论由审查证明承担。 | 有限计算核验；不代替一般证明；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环独立资源审查：小实例全枚举与成长证书核验](<../../tests/audits/weighted_congestion/odd_ring_independent/verify_literal.py>) | `tests/audits/weighted_congestion/odd_ring_independent/verify_literal.py` | 从资源策略计算成本；仅明示小实例全枚举，巨大成长族按已证明局部证书检查。 | 有限计算核验；不代替一般证明；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环精确包络：有理特殊块构造核验](<../../tests/audits/weighted_congestion/odd_ring_parameters/check_exact_envelope.py>) | `tests/audits/weighted_congestion/odd_ring_parameters/check_exact_envelope.py` | 使用精确算术检查实现包络的有限有理特殊块及所报告参数。 | 有限计算核验；不代替一般证明；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环整数成长族：首项常数与精确证书核验](<../../tests/audits/weighted_congestion/odd_ring_parameters/check_integer_family.py>) | `tests/audits/weighted_congestion/odd_ring_parameters/check_integer_family.py` | 以整数算术检查独立推出的首项常数为一的成长族参数及证书。 | 有限计算核验；不代替一般证明；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环独立参数族：精确整数可行性核验](<../../tests/audits/weighted_congestion/odd_ring_parameters/check_parameters.py>) | `tests/audits/weighted_congestion/odd_ring_parameters/check_parameters.py` | 检查独立推导的成长参数配方和整数系数条件，不扩张有限测试的量词。 | 有限计算核验；不代替一般证明；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环多项式包络：混合、常数项与零形状核验](<../../tests/audits/weighted_congestion/odd_ring_parameters/check_polynomial_envelope.py>) | `tests/audits/weighted_congestion/odd_ring_parameters/check_polynomial_envelope.py` | 用有理算术检查混合费用的凸恒等式、常数单项式因子、零形状排除及包络上方失败。 | 有限计算核验；不代替一般证明；关联 `WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1`，[命题合同](../assets.json) |
+| [奇数环单成员群组：单冲突状态图与真实成本核验](<../../tests/audits/weighted_congestion/odd_ring_parameters/check_singleton_graph.py>) | `tests/audits/weighted_congestion/odd_ring_parameters/check_singleton_graph.py` | 精确核对单冲突状态转换图、玩家偏离成本及所报告零费用/反向映射边界。 | 有限计算核验；不代替一般证明；关联 `WC-R3-ODD-RING-SINGLETON-UPPER-v1`，[命题合同](../assets.json) |
+| [奇数环总证书：标量身份、构造证书与小游戏核验](<../../tests/audits/weighted_congestion/odd_ring/verify.py>) | `tests/audits/weighted_congestion/odd_ring/verify.py` | 用有理算术检查局部恒等式、构造参数及明示小游戏；巨大族仅按已证明局部测试检查。 | 有限计算核验；不代替一般证明；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [有向奇数环：原精确实例与系数检查记录](<../../evidence/runs/weighted_congestion/odd_ring_linear/exact_evidence_20261014.json>) | `evidence/runs/weighted_congestion/odd_ring_linear/exact_evidence_20261014.json` | 保存原奇环候选的实际有理算术测试案例及证书范围。 | 冻结输入、证书或结果；不原位覆盖 |
+| [奇数环重置审查：原候选、重置与包络记录](<../../evidence/runs/weighted_congestion/odd_ring_linear_audit/audit_checks.json>) | `evidence/runs/weighted_congestion/odd_ring_linear_audit/audit_checks.json` | 冻结原候选、线性重置及包络诊断的检查结果和局限。 | 冻结输入、证书或结果；不原位覆盖；关联 `OC-AMPLIFIER-ENVELOPE-v1`、`OC-AMPLIFIER-LIMIT-v1`、`OC-INTERFACE-BARRIER-v1`，[命题合同（共 5 项）](../assets.json) |
+| [线性重置放大器：精确案例与拒绝边界记录](<../../evidence/runs/weighted_congestion/odd_ring_linear_audit/linear_reset_verification.json>) | `evidence/runs/weighted_congestion/odd_ring_linear_audit/linear_reset_verification.json` | 记录精确重置案例、拒绝边界、源包络回归和非证明性的渐近诊断。 | 冻结输入、证书或结果；不原位覆盖；关联 `OC-AMPLIFIER-ENVELOPE-v1`、`OC-AMPLIFIER-LIMIT-v1`、`OC-INTERFACE-BARRIER-v1`，[命题合同（共 5 项）](../assets.json) |
+| [线性重置原稿恢复：来源提交与重放溯源记录](<../../evidence/runs/weighted_congestion/odd_ring_linear_audit/recovery_provenance.json>) | `evidence/runs/weighted_congestion/odd_ring_linear_audit/recovery_provenance.json` | 记录被恢复源文件、原 pending 标签、来源提交和重放命令；本文件是溯源证据，不是数学审查结论。 | 冻结输入、证书或结果；不原位覆盖；关联 `OC-AMPLIFIER-ENVELOPE-v1`、`OC-AMPLIFIER-LIMIT-v1`、`OC-INTERFACE-BARRIER-v1`，[命题合同（共 5 项）](../assets.json) |
+| [奇数环状态审查：真实成本与参数配方冻结记录](<../../evidence/runs/weighted_congestion/odd_ring_linear_audit/state_verification.json>) | `evidence/runs/weighted_congestion/odd_ring_linear_audit/state_verification.json` | 保存 hub 失效见证、真实状态审计、有理放大配方核验、程序哈希与覆盖限制。 | 冻结输入、证书或结果；不原位覆盖；关联 `OC-AMPLIFIER-ENVELOPE-v1`、`OC-AMPLIFIER-LIMIT-v1`、`OC-INTERFACE-BARRIER-v1`，[命题合同（共 5 项）](../assets.json) |
+| [奇数环精确包络：恒等式与同次数样例冻结记录](<../../evidence/runs/weighted_congestion/odd_ring_independent/envelope_verification.json>) | `evidence/runs/weighted_congestion/odd_ring_independent/envelope_verification.json` | 保存包络身份、全部次数相同的有限证书样例、显式包络分离检查及范围。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环独立资源审查：小实例与成长参数冻结记录](<../../evidence/runs/weighted_congestion/odd_ring_independent/verification.json>) | `evidence/runs/weighted_congestion/odd_ring_independent/verification.json` | 分开保存小型逐资源全状态实例及大族参数证书样本，避免混称巨大状态空间枚举。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环精确包络：有理特殊块冻结记录](<../../evidence/runs/weighted_congestion/odd_ring_parameters/exact_envelope_verification.json>) | `evidence/runs/weighted_congestion/odd_ring_parameters/exact_envelope_verification.json` | 记录有理特殊块的精确样例与证据范围，不替代连续参数包络证明。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环独立参数族：整数可行性冻结记录](<../../evidence/runs/weighted_congestion/odd_ring_parameters/exact_verification.json>) | `evidence/runs/weighted_congestion/odd_ring_parameters/exact_verification.json` | 冻结独立参数配方的实际整数案例及算术范围。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环整数成长族：精确参数冻结记录](<../../evidence/runs/weighted_congestion/odd_ring_parameters/integer_family_verification.json>) | `evidence/runs/weighted_congestion/odd_ring_parameters/integer_family_verification.json` | 保存整数成长族各明示参数的可行性检查及其范围。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+| [奇数环多项式包络：混合与退化边界冻结记录](<../../evidence/runs/weighted_congestion/odd_ring_parameters/polynomial_envelope_verification.json>) | `evidence/runs/weighted_congestion/odd_ring_parameters/polynomial_envelope_verification.json` | 保存次数、种子、非零形状对、正分子条件、常数和零形状检查；一般证明另见正文与审查。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1`，[命题合同](../assets.json) |
+| [奇数环单成员群组：状态图与玩家成本冻结记录](<../../evidence/runs/weighted_congestion/odd_ring_parameters/singleton_graph_verification.json>) | `evidence/runs/weighted_congestion/odd_ring_parameters/singleton_graph_verification.json` | 记录单成员奇环的有限状态图与成本检查；端点连续包络结论依赖一般证明。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-ODD-RING-SINGLETON-UPPER-v1`，[命题合同](../assets.json) |
+| [奇数环总证书：局部身份、参数与小游戏冻结记录](<../../evidence/runs/weighted_congestion/odd_ring/verification.json>) | `evidence/runs/weighted_congestion/odd_ring/verification.json` | 保存程序哈希、实际构造样例、逐资源小游戏和核验局限。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-ODD-RING-CERTIFICATE-v1`、`WC-R3-ODD-RING-ENVELOPE-v1`、`WC-R3-ODD-RING-LOWER-v1`，[命题合同](../assets.json) |
+
+### 文献源族的锐包络与渐近
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [文献两攻击公式：参数上确界的锐渐近证明](<../current/weighted_congestion/source_envelope/sharp_asymptotic_envelope.md>) | `research/current/weighted_congestion/source_envelope/sharp_asymptotic_envelope.md` | 在原整数重数、正轻权及次数域内证明源两测试参数上确界的匹配渐近，保留取整与全部参数序列分析。 | 数学正文；按关联命题分别核对证明及审查；关联 `R3-SOURCE-SHARP-ASYMPTOTIC-v1`，[命题合同](../assets.json) |
+| [文献两攻击公式：锐渐近成果与阅读入口](<../current/weighted_congestion/source_envelope/README.md>) | `research/current/weighted_congestion/source_envelope/README.md` | 指向锐渐近主证明、相应独立审查和分开标识的整数次数/连续代理数值诊断；旧时点标签不覆盖现行账本。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [文献两攻击公式：适用于全部参数的机制上限](<../current/weighted_congestion/source_ceiling/README.md>) | `research/current/weighted_congestion/source_ceiling/README.md` | 由两攻击倍率的耦合关系推出统一渐近上限，限制指定正测试；Decimal 检查仅为诊断。 | 方法障碍；否定范围以正文为准；关联 `WC-ENVELOPE-CEILING`，[命题合同](../assets.json) |
+| [文献两攻击公式：锐渐近的另一份候选推导](<../questions/weighted_congestion/source_envelope_candidate/sharp_envelope.md>) | `research/questions/weighted_congestion/source_envelope_candidate/sharp_envelope.md` | 保存独立提出的源公式锐渐近候选；另一路已审证明不自动替代本稿尚未完成的审查。 | 候选或未闭合义务；保存不升级状态；关联 `WC-R1-LF-SHARP`，[命题合同](../assets.json) |
+| [文献两攻击公式统一上限：独立重构与反向审查](<../reviews/weighted_congestion/source_ceiling_review/independent_review.md>) | `research/reviews/weighted_congestion/source_ceiling_review/independent_review.md` | 在合法源参数域中独立还原两倍率耦合与渐近上限，只审指定证书机制。 | 实际审查记录；只覆盖所列版本与义务 |
+| [文献两攻击公式锐渐近：上下两侧独立攻击](<../reviews/weighted_congestion/source_envelope/review.md>) | `research/reviews/weighted_congestion/source_envelope/review.md` | 先重建整数参数下界和上界消元，再逐式核对锐渐近主稿及源全状态覆盖。 | 实际审查记录；只覆盖所列版本与义务 |
+| [另一份锐渐近候选：原文版本与公式核对](<../reviews/weighted_congestion/source_envelope_candidate/source_audit.md>) | `research/reviews/weighted_congestion/source_envelope_candidate/source_audit.md` | 核对所用原论文版本、两攻击表达及其参数域；本源事实核对不等于候选锐渐近证明已完成独立审查。 | 实际审查记录；只覆盖所列版本与义务 |
+| [源两攻击统一上限：代数回归与 Decimal 诊断](<../../tests/audits/weighted_congestion/source_ceiling/verify.py>) | `tests/audits/weighted_congestion/source_ceiling/verify.py` | 对必要代数条件使用有理检查，对对数界使用非区间 Decimal 数值诊断；不替代全参数证明。 | 有限计算核验；不代替一般证明 |
+| [源锐渐近候选：有限状态核验与高精度样本](<../../tests/audits/weighted_congestion/source_envelope_candidate/verify.py>) | `tests/audits/weighted_congestion/source_envelope_candidate/verify.py` | 用 Fraction 复现有限游戏，用 Decimal 给出渐近诊断；后者不是区间证书或一般证明。 | 有限计算核验；不代替一般证明 |
+| [源公式锐渐近：整数取整与超大次数 Decimal 诊断](<../../tests/audits/weighted_congestion/source_envelope/verify_logs.py>) | `tests/audits/weighted_congestion/source_envelope/verify_logs.py` | 稳定计算高精度对数、整数前驱及取整；明确区分真实整数次数与连续代理，结果非区间证书。 | 有限计算核验；不代替一般证明；关联 `R3-SOURCE-SHARP-ASYMPTOTIC-v1`，[命题合同](../assets.json) |
+| [源两攻击统一上限：精确检查与数值诊断记录](<../../evidence/runs/weighted_congestion/source_ceiling/verification.json>) | `evidence/runs/weighted_congestion/source_ceiling/verification.json` | 分开保存精确代数回归、Decimal 诊断、适用限制与来源哈希。 | 冻结输入、证书或结果；不原位覆盖 |
+| [源锐渐近候选：精确有限检查与诊断样本](<../../evidence/runs/weighted_congestion/source_envelope_candidate/verification.json>) | `evidence/runs/weighted_congestion/source_envelope_candidate/verification.json` | 保留候选稿自身的精确检查与高精度采样，不能借另一份已审证明提升其审查状态。 | 冻结输入、证书或结果；不原位覆盖 |
+| [源公式锐渐近：整数次数与连续代理诊断记录](<../../evidence/runs/weighted_congestion/source_envelope/verification.json>) | `evidence/runs/weighted_congestion/source_envelope/verification.json` | 保存高精度环境、整数次数行和连续代理行；不作为普遍参数上界的证明。 | 冻结输入、证书或结果；不原位覆盖；关联 `R3-SOURCE-SHARP-ASYMPTOTIC-v1`，[命题合同](../assets.json) |
+
+### 对称两列拓扑的完整还原
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [完整对称两列拓扑：高倍率非存在还原至源公式](<../current/weighted_congestion/source_topology/symmetric_two_column_reduction.md>) | `research/current/weighted_congestion/source_topology/symmetric_two_column_reduction.md` | 对任意正共同轻权和两类非负多项式，在精确倍率范围内把实际非存在还原到源两测试；不覆盖异权或非对称费用。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R3-FULL-TOPOLOGY-REDUCTION-v3`，[命题合同](../assets.json) |
+| [对称两列游戏：完整状态商与保守证书损失候选](<../questions/weighted_congestion/two_column_orbits/two_column_orbit_candidate.md>) | `research/questions/weighted_congestion/two_column_orbits/two_column_orbit_candidate.md` | 将每个对称同轻权游戏的实例最优倍率化为人数轨道公式，并给保守两攻击与真实阈值的差异；所引独立审查原件未找到。 | 候选或未闭合义务；保存不升级状态 |
+| [完整对称两列拓扑：三个版本的还原审查](<../reviews/weighted_congestion/source_topology_review/review.md>) | `research/reviews/weighted_congestion/source_topology_review/review.md` | 独立重建状态瓶颈并核对第三版倍率范围、权重互换、平移和非负多项式还原。 | 实际审查记录；只覆盖所列版本与义务 |
+| [对称两列状态商：真实资源与人数轨道交叉核验](<../../tests/audits/weighted_congestion/two_column_orbits/verify.py>) | `tests/audits/weighted_congestion/two_column_orbits/verify.py` | 独立以 Fraction 重算所有明示实例的真实资源偏离，对照人数轨道、反向检查及保守证书损失。 | 有限计算核验；不代替一般证明 |
+| [完整对称两列拓扑：真实状态与还原接口核验](<../../tests/audits/weighted_congestion/source_topology/verify.py>) | `tests/audits/weighted_congestion/source_topology/verify.py` | 用有理算术核对人数轨道、实际偏离、权重互换、平移及多项式端点还原；不从样本推普遍性。 | 有限计算核验；不代替一般证明；关联 `WC-R3-FULL-TOPOLOGY-REDUCTION-v3`，[命题合同](../assets.json) |
+| [完整对称拓扑：独立真实状态与还原审计](<../../tests/audits/weighted_congestion/source_topology_review/check_review.py>) | `tests/audits/weighted_congestion/source_topology_review/check_review.py` | 独立实现资源状态预言及高倍率还原接口，只把明示参数测试作为有限证据。 | 有限计算核验；不代替一般证明；关联 `WC-R3-FULL-TOPOLOGY-REDUCTION-v3`，[命题合同](../assets.json) |
+| [对称两列状态商：真实阈值与保守证书冻结记录](<../../evidence/runs/weighted_congestion/two_column_orbits/evidence.json>) | `evidence/runs/weighted_congestion/two_column_orbits/evidence.json` | 保存参数域、真实状态/偏离、反向检查、实例阈值与保守证书的有限比较；所引独立审查仍缺失。 | 冻结输入、证书或结果；不原位覆盖 |
+| [完整对称两列拓扑：轨道、平移与还原冻结记录](<../../evidence/runs/weighted_congestion/source_topology/results.json>) | `evidence/runs/weighted_congestion/source_topology/results.json` | 保存种子、有限游戏/状态/偏离数及高倍率还原、非零平移和权重互换检查。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-FULL-TOPOLOGY-REDUCTION-v3`，[命题合同](../assets.json) |
+| [完整对称拓扑：独立倍率与还原结果记录](<../../evidence/runs/weighted_congestion/source_topology_review/review_results.json>) | `evidence/runs/weighted_congestion/source_topology_review/review_results.json` | 保存所用倍率、有限游戏和状态、左右方向非存在检查及适用范围。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-FULL-TOPOLOGY-REDUCTION-v3`，[命题合同](../assets.json) |
+
+### 固定次数源族的精确区间证书
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [文献两攻击公式：三十二次参数上界与整数符号证书](<../current/weighted_congestion/source_degree32/symmetric_source_interval_certificate.md>) | `research/current/weighted_congestion/source_degree32/symmetric_source_interval_certificate.md` | 消去幅度参数并严格约化整数重数，再以 Bernstein 系数符号证书覆盖全部合法实参数。；配套 [十四资源分离：真实策略与符号叶证书第二重构](<../../tests/audits/weighted_congestion/crossover/main_check.py>) | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R3-SOURCE32-178-v1`，[命题合同](../assets.json) |
+| [源公式三十二次界：Bernstein 整数符号证书核验](<../../tests/audits/weighted_congestion/source_degree32/verify.py>) | `tests/audits/weighted_congestion/source_degree32/verify.py` | 只用标准库整数/有理算术检查冻结 Bernstein 覆盖叶与负系数；显式新路径才生成新证书。 | 有限计算核验；不代替一般证明；关联 `WC-R3-SOURCE32-178-v1`，[命题合同](../assets.json) |
+| [源公式三十二次界：完整 Bernstein 覆盖证书](<../../evidence/certificates/weighted_congestion/source_degree32/certificate.json>) | `evidence/certificates/weighted_congestion/source_degree32/certificate.json` | 记录整数重数约化、每个必要多项式的区间覆盖与 Bernstein 叶符号，用于有限实域严格证明。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-SOURCE32-178-v1`，[命题合同](../assets.json) |
+| [源公式三十二次界：符号证书执行与哈希记录](<../../evidence/runs/weighted_congestion/source_degree32/verification.json>) | `evidence/runs/weighted_congestion/source_degree32/verification.json` | 冻结多项式/叶计数、细分深度、精确算术、程序文件哈希和本次符号核验范围。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-SOURCE32-178-v1`，[命题合同](../assets.json) |
+
+### 资源支持对固定小构造的限制
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [资源潜在用户支持：总成本最小点给出的存在界](<../current/weighted_congestion/resource_support.md>) | `research/current/weighted_congestion/resource_support.md` | 证明每资源潜在用户数上限给出相同因子的纯近似均衡，允许零费用、空策略和任意非递减费用；不提供多项式时间界。；配套 [互补符号列：三玩家与四玩家全状态有理核验](<../../tests/audits/weighted_congestion/signed_columns/verify.py>)；配套 [互补符号列：有限实例有理证书冻结记录](<../../evidence/runs/weighted_congestion/signed_columns/verification.json>) | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R1-RESOURCE-SUPPORT`，[命题合同](../assets.json) |
+| [双人资源互补网络：显式势函数保证二倍均衡](<../current/weighted_congestion/odd_ring_linear/pair_obstruction/PAIR_OBSTRUCTION.md>) | `research/current/weighted_congestion/odd_ring_linear/pair_obstruction/PAIR_OBSTRUCTION.md` | 在相同费用副本、任意正权和非负私有费用下证明二倍均衡；说明只有两名战略用户的资源不能单独产生增长下界。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
+
+### 稀疏权谱、密度势与矩界
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [资源局部权密度：锐矩不等式与纯近似均衡](<../current/weighted_congestion/weight_density.md>) | `research/current/weighted_congestion/weight_density.md` | 先证明半开乘法区间密度约束下的锐矩估计，再将其用于共享幂成本势的实例结构存在界。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](../assets.json) |
+| [资源局部权密度：锐矩估计与势函数独立审查](<../reviews/weighted_congestion/weight_density/review.md>) | `research/reviews/weighted_congestion/weight_density/review.md` | 独立核对潜在用户半开权区间密度、矩估计与共享幂成本势下降，处理空策略和零费用。 | 实际审查记录；只覆盖所列版本与义务 |
+| [资源权密度与锐矩估计：定义级有理审计](<../../tests/audits/weighted_congestion_density.py>) | `tests/audits/weighted_congestion_density.py` | 使用可由有理幂表示的权和精确整数幂比较检查矩与游戏势不等式；不使用浮点根误差。 | 有限计算核验；不代替一般证明；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](../assets.json) |
+| [资源权密度与锐矩估计：有限审计冻结记录](<../../evidence/runs/2026-10-14/weighted_congestion_density.json>) | `evidence/runs/2026-10-14/weighted_congestion_density.json` | 保存参数、种子、矩样例、实际游戏和边界计数、程序哈希及任意实权推广的证据限制。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](../assets.json) |
+| [资源外部性与权密度：初始推导来源记录](<../../history/source/notes/weighted_congestion/density_externality.md>) | `history/source/notes/weighted_congestion/density_externality.md` | 保留权密度势的原始外部性计算与研究起点；规范加强证明与独立审查另见现行资产。 | 来源或历史判断；不作为现行结论；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](../assets.json) |
+
+### 资源局部势拼接与异质接口
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [资源局部势拼接：共享乘子、两尺度障碍与两权组锐界](<../current/weighted_congestion/power_bridge.md>) | `research/current/weighted_congestion/power_bridge.md` | 统一登记资源级稀疏权谱拼接、固定次线性幂乘子的路径障碍、线性费用两权组的锐平方根跨度界。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R2-AFFINE-TWO-TYPE`、`WC-R2-POWER-PATH-OBSTRUCTION`、`WC-R2-RESOURCE-POWER-BRIDGE`，[命题合同](../assets.json) |
+| [线性费用两权组：分片势与锐平方根跨度界](<../current/weighted_congestion/power_bridge/affine_two_type.md>) | `research/current/weighted_congestion/power_bridge/affine_two_type.md` | 为两个精确权组构造分片二次集合势，证明边际夹逼的最优统一因子及人数增长下的锐性。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [固定次线性幂乘子：两尺度路径比障碍](<../current/weighted_congestion/power_bridge/path_obstruction.md>) | `research/current/weighted_congestion/power_bridge/path_obstruction.md` | 用重先轻后与轻先重后的两条插入路径，否定固定次线性幂乘子在任意密集权谱上的统一常数夹逼。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
+| [资源局部势拼接：强化边际下界与共享乘子独立审查](<../reviews/weighted_congestion/power_bridge/independent_review.md>) | `research/reviews/weighted_congestion/power_bridge/independent_review.md` | 指出弱边际下界不足的推理，并重建更强下界以修复指定资源缩放与共享乘子接口。 | 实际审查记录；只覆盖所列版本与义务 |
+| [两尺度路径障碍：固定幂乘子的独立重构审查](<../reviews/weighted_congestion/power_bridge/path_review.md>) | `research/reviews/weighted_congestion/power_bridge/path_review.md` | 独立重建两个权组的路径比反例，明确审查依据为收到的精确公式，未假称已读尚未出现的候选文件。 | 实际审查记录；只覆盖所列版本与义务 |
+| [线性费用两权组：分片边际与路径比有理核验](<../../tests/audits/weighted_congestion/power_bridge/verify_affine_two_type.py>) | `tests/audits/weighted_congestion/power_bridge/verify_affine_two_type.py` | 不用浮点线性规划，以 Fraction 检查分片集合势、插入边际和子集路径比。 | 有限计算核验；不代替一般证明 |
+| [资源局部势拼接：幂乘子路径与两权组独立核验](<../../tests/audits/weighted_power_bridge.py>) | `tests/audits/weighted_power_bridge.py` | 用有理算术检查幂乘子路径、资源拼接和线性两权组势；任意实权结论依赖正文证明。 | 有限计算核验；不代替一般证明；关联 `WC-R2-AFFINE-TWO-TYPE`、`WC-R2-POWER-PATH-OBSTRUCTION`、`WC-R2-RESOURCE-POWER-BRIDGE`，[命题合同](../assets.json) |
+| [资源局部势拼接：幂路径与两权组冻结记录](<../../evidence/runs/2026-10-14/weighted_power_bridge.json>) | `evidence/runs/2026-10-14/weighted_power_bridge.json` | 记录检查项、幂路径表、算术、程序哈希、重放命令和不由有限计算建立的结论。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R2-AFFINE-TWO-TYPE`、`WC-R2-POWER-PATH-OBSTRUCTION`、`WC-R2-RESOURCE-POWER-BRIDGE`，[命题合同](../assets.json) |
+| [共享幂乘子与两尺度路径：原始机制来源记录](<../../history/source/notes/weighted_congestion_frontier/power_path_discovery.md>) | `history/source/notes/weighted_congestion_frontier/power_path_discovery.md` | 保留从多尺度资源拼接义务发现路径障碍的原始推导；现行完整证明在 power_bridge 主稿。 | 来源或历史判断；不作为现行结论；关联 `WC-R2-AFFINE-TWO-TYPE`、`WC-R2-POWER-PATH-OBSTRUCTION`、`WC-R2-RESOURCE-POWER-BRIDGE`，[命题合同](../assets.json) |
+
+### 局部窄权带、Shapley 势与选择器边界
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [资源局部窄权带：Shapley 存在界与跨带拼接障碍](<../current/weighted_congestion/weight_bands/README.md>) | `research/current/weighted_congestion/weight_bands/README.md` | 给出局部权比存在界、指定势选择器锐性、跨权带归一化的混合差分障碍及标准势的线性损失。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R3-BAND-CURL-v1`、`WC-R3-BAND-LINEAR-v1`、`WC-R3-DENSE-LOCAL-v1`，[命题合同（共 5 项）](../assets.json) |
+| [资源局部窄权带：Shapley 份额与存在界独立审查](<../reviews/weighted_congestion/weight_bands_review/independent_review.md>) | `research/reviews/weighted_congestion/weight_bands_review/independent_review.md` | 从模型和原始子集 Shapley 定义重建份额夹逼、局部权比存在界与相关接口。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-R3-BAND-CURL-v1`、`WC-R3-BAND-LINEAR-v1`、`WC-R3-DENSE-LOCAL-v1`，[命题合同（共 5 项）](../assets.json) |
+| [局部窄权带：原始子集 Shapley 定义独立审计](<../../tests/audits/weighted_congestion/weight_bands_review/independent_check.py>) | `tests/audits/weighted_congestion/weight_bands_review/independent_check.py` | 从子集份额定义核对权序、份额夹逼和效率恒等式；默认只读比对冻结输出。 | 有限计算核验；不代替一般证明；关联 `WC-R3-DENSE-LOCAL-v1`、`WC-R3-DENSE-SHARE-v1`，[命题合同](../assets.json) |
+| [局部窄权带：份额界、混合差分与坏选择器回归](<../../tests/audits/weighted_congestion/weight_bands/verify.py>) | `tests/audits/weighted_congestion/weight_bands/verify.py` | 精确检查 Shapley 份额、份额次序、混合差分、密度增强、线性损失与锐选择器样例。 | 有限计算核验；不代替一般证明；关联 `WC-R3-BAND-CURL-v1`、`WC-R3-BAND-LINEAR-v1`、`WC-R3-DENSE-LOCAL-v1`，[命题合同（共 5 项）](../assets.json) |
+| [局部窄权带：独立 Shapley 份额审计记录](<../../evidence/runs/weighted_congestion/weight_bands_review/independent_verification.json>) | `evidence/runs/weighted_congestion/weight_bands_review/independent_verification.json` | 保存有限权向量、单项式次数、份额界和效率检查的确切范围。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-DENSE-LOCAL-v1`、`WC-R3-DENSE-SHARE-v1`，[命题合同](../assets.json) |
+| [局部窄权带：存在势与跨带障碍冻结记录](<../../evidence/runs/weighted_congestion/weight_bands/verification.json>) | `evidence/runs/weighted_congestion/weight_bands/verification.json` | 记录种子、有理份额样本、多资源游戏、curl、线性障碍和锐选择器的有限检查。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-BAND-CURL-v1`、`WC-R3-BAND-LINEAR-v1`、`WC-R3-DENSE-LOCAL-v1`，[命题合同（共 5 项）](../assets.json) |
+
+### 可选用户填充与密度参数边界
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [潜在用户密度填充：逐倍率保持均衡的投影与提升](<../current/weighted_congestion/density_padding/optional_user_density_padding.md>) | `research/current/weighted_congestion/density_padding/optional_user_density_padding.md` | 通过新增空策略/单资源玩家任意提高已占权重区间的用户数，同时保持原玩家全部偏离成本和有限倍率均衡存在性。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R3-POTENTIAL-DENSITY-PADDING-v1`，[命题合同](../assets.json) |
+| [潜在用户密度填充：投影、提升与占权区间独立审查](<../reviews/weighted_congestion/density_padding/review.md>) | `research/reviews/weighted_congestion/density_padding/review.md` | 独立证明所有有限倍率的双向保持，澄清密度下界只针对含潜在用户权重的区间，并检查零费用边界。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-R3-POTENTIAL-DENSITY-PADDING-v1`，[命题合同](../assets.json) |
+| [潜在用户填充：定义级投影与提升独立枚举](<../../tests/audits/weighted_congestion/density_padding/independent_check.py>) | `tests/audits/weighted_congestion/density_padding/independent_check.py` | 直接枚举全部有限状态及偏离，不用强制空策略捷径，检查均衡投影/提升及费用边界。 | 有限计算核验；不代替一般证明；关联 `WC-R3-POTENTIAL-DENSITY-PADDING-v1`，[命题合同](../assets.json) |
+| [潜在用户填充：双向保持与阶跃边界回归](<../../tests/audits/weighted_congestion/density_padding/verify.py>) | `tests/audits/weighted_congestion/density_padding/verify.py` | 有限精确核验填充前后的均衡投影与提升，并保留非多项式阶跃边界的限制。 | 有限计算核验；不代替一般证明；关联 `WC-R3-POTENTIAL-DENSITY-PADDING-v1`，[命题合同](../assets.json) |
+| [潜在用户填充：独立状态与倍率冻结记录](<../../evidence/runs/weighted_congestion/density_padding/independent_verification.json>) | `evidence/runs/weighted_congestion/density_padding/independent_verification.json` | 记录有限游戏、倍率、增强状态组合、投影/提升及阶跃边界反例的实际检查。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-POTENTIAL-DENSITY-PADDING-v1`，[命题合同](../assets.json) |
+| [潜在用户填充：均衡保持与边界冻结记录](<../../evidence/runs/weighted_congestion/density_padding/verification.json>) | `evidence/runs/weighted_congestion/density_padding/verification.json` | 冻结增强游戏样例、投影/提升结果与阶跃费用边界核验，不建立一般证明。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-POTENTIAL-DENSITY-PADDING-v1`，[命题合同](../assets.json) |
+
+### 非对称有限构造、缩权族与极限运输
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [十四资源缩权族：极限偏离锥与有限有理运输](<../current/weighted_congestion/crossover/limit_family.md>) | `research/current/weighted_congestion/crossover/limit_family.md` | 研究固定四玩家拓扑的缩权极限、原振幅与重调振幅、严格端点及由极限运输回有限多项式游戏的条件。 | 数学正文；按关联命题分别核对证明及审查；关联 `WCF-R3-SCALED-ORIGINAL-v1`、`WCF-R3-SCALED-RETUNED-v2`、`WCF-R3-SCALED-TEMPLATE-v1`，[命题合同](../assets.json) |
+| [非对称十四资源例与对称两列拓扑的有限次数分离](<../current/weighted_congestion/crossover/separation.md>) | `research/current/weighted_congestion/crossover/separation.md` | 结合源公式三十二次上界和完整拓扑还原，严格区分非对称实例与全部指定对称两列游戏。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1`，[命题合同](../assets.json) |
+| [四玩家十四资源非对称构造：三十二次全状态证书](<../current/weighted_congestion/crossover/README.md>) | `research/current/weighted_congestion/crossover/README.md` | 给出固定有理权、十四资源的完整实例与全状态偏离证书，并记录固定参数提高次数的失效边界。 | 反例；仅否定正文明确的命题；关联 `WCF-R3-CROSS32-AUDIT-v1`、`WCF-R3-FIXED-DEGREE-FAIL-v1`，[命题合同](../assets.json) |
+| [十四资源缩权族：布尔极限与有限运输独立审查](<../reviews/weighted_congestion/crossover_limit_review/review.md>) | `research/reviews/weighted_congestion/crossover_limit_review/review.md` | 独立重建极限辅助游戏、偏离锥和有限多项式游戏，核对缩权与重调振幅结论，不替代另一个固定次数实例审查。 | 实际审查记录；只覆盖所列版本与义务；关联 `WCF-R3-SCALED-ORIGINAL-v1`、`WCF-R3-SCALED-RETUNED-v2`、`WCF-R3-SCALED-TEMPLATE-v1`，[命题合同](../assets.json) |
+| [十四资源分离：真实策略与符号叶证书第二重构](<../../tests/audits/weighted_congestion/crossover/main_check.py>) | `tests/audits/weighted_congestion/crossover/main_check.py` | 不导入两份候选核验器，直接重建策略成本并核对源公式 Bernstein 叶证书。 | 有限计算核验；不代替一般证明；关联 `WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1`、`WC-R3-SOURCE32-178-v1`、`WCF-R3-CROSS32-AUDIT-v1`，[命题合同（共 4 项）](../assets.json) |
+| [十四资源有限实例：独立逐资源 Fraction 核验](<../../tests/audits/weighted_congestion/crossover/verify_degree32.py>) | `tests/audits/weighted_congestion/crossover/verify_degree32.py` | 不使用搜索实现或缓存矩阵，重算固定实例、次数失效和极限记录；默认比对冻结输出。 | 有限计算核验；不代替一般证明；关联 `WCF-R3-CROSS32-AUDIT-v1`、`WCF-R3-FIXED-DEGREE-FAIL-v1`，[命题合同](../assets.json) |
+| [十四资源缩权族：有限证书与有理误差界核验](<../../tests/audits/weighted_congestion/crossover/verify_limit.py>) | `tests/audits/weighted_congestion/crossover/verify_limit.py` | 独立实现缩权族成本、有限参数证书和运输误差界；默认比较冻结结果而不覆盖。 | 有限计算核验；不代替一般证明；关联 `WCF-R3-SCALED-ORIGINAL-v1`、`WCF-R3-SCALED-RETUNED-v2`、`WCF-R3-SCALED-TEMPLATE-v1`，[命题合同](../assets.json) |
+| [十四资源缩权族：极限与有限游戏独立重构程序](<../../tests/audits/weighted_congestion/crossover_limit_review/check_independent.py>) | `tests/audits/weighted_congestion/crossover_limit_review/check_independent.py` | 不导入构造者的核验代码或证据，分别实现辅助极限和有限多项式成本及形式见证。 | 有限计算核验；不代替一般证明；关联 `WCF-R3-SCALED-ORIGINAL-v1`、`WCF-R3-SCALED-RETUNED-v2`、`WCF-R3-SCALED-TEMPLATE-v1`，[命题合同](../assets.json) |
+| [十四资源三十二次实例：全部状态有理证书](<../../evidence/certificates/weighted_congestion/crossover/degree32_certificate.json>) | `evidence/certificates/weighted_congestion/crossover/degree32_certificate.json` | 保存固定非对称游戏的每状态真实成本、改善见证、精确最优倍率和取得状态。 | 冻结输入、证书或结果；不原位覆盖；关联 `WCF-R3-CROSS32-AUDIT-v1`，[命题合同](../assets.json) |
+| [十四资源固定参数四十次：原非存在主张失效证书](<../../evidence/certificates/weighted_congestion/crossover/degree40_failure_certificate.json>) | `evidence/certificates/weighted_congestion/crossover/degree40_failure_certificate.json` | 保存固定权与振幅仅增次数后的全部状态成本和较低因子均衡，用于精确否定该外推。 | 冻结输入、证书或结果；不原位覆盖；关联 `WCF-R3-FIXED-DEGREE-FAIL-v1`，[命题合同](../assets.json) |
+| [十四资源固定参数：有限次数扫描记录](<../../evidence/runs/weighted_congestion/crossover/fixed_degree_scan.json>) | `evidence/runs/weighted_congestion/crossover/fixed_degree_scan.json` | 保存固定权和振幅下各所列次数的实例倍率；有限扫描不建立全部次数定理。 | 冻结输入、证书或结果；不原位覆盖；关联 `WCF-R3-FIXED-DEGREE-FAIL-v1`，[命题合同](../assets.json) |
+| [十四资源固定权极限：有限布尔费用证书](<../../evidence/certificates/weighted_congestion/crossover/fixed_weight_limit_certificate.json>) | `evidence/certificates/weighted_congestion/crossover/fixed_weight_limit_certificate.json` | 记录保持原权和振幅时的极限辅助成本及最优倍率，限定固定参数次数外推能力。 | 冻结输入、证书或结果；不原位覆盖；关联 `WCF-R3-FIXED-DEGREE-FAIL-v1`，[命题合同](../assets.json) |
+| [十四资源缩权族：原振幅与重调振幅有限扫描](<../../evidence/runs/weighted_congestion/crossover/limit_evidence/finite_scans.json>) | `evidence/runs/weighted_congestion/crossover/limit_evidence/finite_scans.json` | 记录两套固定振幅下明示整数参数的有限全状态核验，不替代全部参数运输证明。 | 冻结输入、证书或结果；不原位覆盖；关联 `WCF-R3-SCALED-ORIGINAL-v1`、`WCF-R3-SCALED-RETUNED-v2`、`WCF-R3-SCALED-TEMPLATE-v1`，[命题合同](../assets.json) |
+| [十四资源重调缩权族：指定整数参数全状态证书](<../../evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json>) | `evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json` | 冻结指定重调振幅、有限次数、逐状态成本、严格见证余量及实例最优倍率。 | 冻结输入、证书或结果；不原位覆盖；关联 `WCF-R3-SCALED-ORIGINAL-v1`、`WCF-R3-SCALED-RETUNED-v2`、`WCF-R3-SCALED-TEMPLATE-v1`，[命题合同](../assets.json) |
+| [十四资源缩权族：两套振幅的极限费用记录](<../../evidence/runs/weighted_congestion/crossover/limit_evidence/scaled_limits.json>) | `evidence/runs/weighted_congestion/crossover/limit_evidence/scaled_limits.json` | 保存原振幅与重调振幅辅助极限游戏的精确比较结果。 | 冻结输入、证书或结果；不原位覆盖；关联 `WCF-R3-SCALED-ORIGINAL-v1`、`WCF-R3-SCALED-RETUNED-v2`、`WCF-R3-SCALED-TEMPLATE-v1`，[命题合同](../assets.json) |
+| [十四资源缩权族：严格见证的统一误差界记录](<../../evidence/runs/weighted_congestion/crossover/limit_evidence/uniform_bounds.json>) | `evidence/runs/weighted_congestion/crossover/limit_evidence/uniform_bounds.json` | 保存有限多项式向极限运输所用的有理界与所报告参数范围，证据限于记录的检查。 | 冻结输入、证书或结果；不原位覆盖；关联 `WCF-R3-SCALED-ORIGINAL-v1`、`WCF-R3-SCALED-RETUNED-v2`、`WCF-R3-SCALED-TEMPLATE-v1`，[命题合同](../assets.json) |
+| [十四资源分离：实例、固定参数失效与源界复核记录](<../../evidence/runs/weighted_congestion/crossover/main_check_results.json>) | `evidence/runs/weighted_congestion/crossover/main_check_results.json` | 记录第二重构对非对称实例、次数外推失败及源参数符号界的实际检查。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1`、`WC-R3-SOURCE32-178-v1`、`WCF-R3-CROSS32-AUDIT-v1`，[命题合同（共 4 项）](../assets.json) |
+| [十四资源缩权族：独立极限见证与有限运输记录](<../../evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json>) | `evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json` | 保存辅助极限、形式见证、有限实例及所报告统一参数范围的独立有理核验。 | 冻结输入、证书或结果；不原位覆盖；关联 `WCF-R3-SCALED-ORIGINAL-v1`、`WCF-R3-SCALED-RETUNED-v2`、`WCF-R3-SCALED-TEMPLATE-v1`，[命题合同](../assets.json) |
+
+### 二次源族的标量包络
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [文献两攻击公式：二次参数包络的有理上界](<../current/weighted_congestion/quadratic_source/source_family_envelope.md>) | `research/current/weighted_congestion/quadratic_source/source_family_envelope.md` | 在原整数重数和实参数域上证明两攻击倍率的共同上界，处理零分母边界；结论只属于指定源公式。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [二次源公式参数域：一手文献核对](<../reviews/weighted_congestion/quadratic_source/source_audit.md>) | `research/reviews/weighted_congestion/quadratic_source/source_audit.md` | 核对固定文献版本的玩家成本约定、弱均衡定义及原式整数/实参数域；不是一般数学证明审查。 | 实际审查记录；只覆盖所列版本与义务 |
+| [源公式二次包络：精确多项式核对与有限探索](<../../tests/audits/weighted_congestion/quadratic_source/verify.py>) | `tests/audits/weighted_congestion/quadratic_source/verify.py` | 分开执行精确代数恒等式检查和有限参数探索；数值结果不承担全参数上界的证明。 | 有限计算核验；不代替一般证明；关联 `WC-R1-SOURCE-D2-ENVELOPE`，[命题合同](../assets.json) |
+| [源公式二次包络：有理网格与数值探索记录](<../../evidence/runs/weighted_congestion/quadratic_source/verification.json>) | `evidence/runs/weighted_congestion/quadratic_source/verification.json` | 冻结精确检查、有理网格和另行标识的数值探索，范围限所报告参数。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R1-SOURCE-D2-ENVELOPE`，[命题合同](../assets.json) |
+
+### 三玩家二次整数障碍与来源欠账
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [三玩家六资源整数实例：二次费用的精确最优倍率](<../current/weighted_congestion/quadratic_triad/three_player_integer_obstruction.md>) | `research/current/weighted_congestion/quadratic_triad/three_player_integer_obstruction.md` | 保存固定整数权和一次/二次费用游戏的完整成本表、全部偏离与端点均衡；所引独立审查原件缺失另列。 | 反例；仅否定正文明确的命题；精确范围见本页正文 |
+| [三玩家六资源整数例：全部状态与偏离核验](<../../tests/audits/weighted_congestion/quadratic_triad/verify.py>) | `tests/audits/weighted_congestion/quadratic_triad/verify.py` | 用标准库有理算术直接重建资源负载、全部状态成本及端点近似均衡。 | 有限计算核验；不代替一般证明；关联 `WC-R1-INTEGER-TRIAD`，[命题合同](../assets.json) |
+| [三玩家六资源整数例：最优倍率与端点证书](<../../evidence/runs/weighted_congestion/quadratic_triad/verification.json>) | `evidence/runs/weighted_congestion/quadratic_triad/verification.json` | 冻结精确权重、资源、全部状态表、最优倍率、端点均衡与比较限制。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R1-INTEGER-TRIAD`，[命题合同](../assets.json) |
+
+### 补列、多列逃逸与非分离来源缺口
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [互补多列拓扑：二倍近似均衡与三列锐性](<../current/weighted_congestion/multicolumn/complement_column_escape.md>) | `research/current/weighted_congestion/multicolumn/complement_column_escape.md` | 证明共同轻权不超过重权的指定互补多列游戏总有二倍均衡，并给三列常数的渐近锐性。 | 方法障碍；否定范围以正文为准；关联 `WC-R1-MULTICOLUMN-2`，[命题合同](../assets.json) |
+| [互补多列拓扑：二倍存在证明独立审查](<../reviews/weighted_congestion/multicolumn_review/REVIEW.md>) | `research/reviews/weighted_congestion/multicolumn_review/REVIEW.md` | 从真实列人数成本重建组合缺口，核对一般非减费用下的二倍均衡与三列边界。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-R1-MULTICOLUMN-2`，[命题合同](../assets.json) |
+| [互补多列二倍界：真实资源与占用人数回归](<../../tests/audits/weighted_congestion/multicolumn/verify.py>) | `tests/audits/weighted_congestion/multicolumn/verify.py` | 精确核对资源成本公式、轻人数状态、平衡均衡及锐性样例，有限回归不替代一般证明。 | 有限计算核验；不代替一般证明 |
+| [互补多列二倍界：独立精确状态审计](<../../tests/audits/weighted_congestion/multicolumn_review/verify_multicolumn.py>) | `tests/audits/weighted_congestion/multicolumn_review/verify_multicolumn.py` | 不用比值作为断言，独立核对单调费用样本、直接资源配置及较大整数实例。 | 有限计算核验；不代替一般证明 |
+| [互补多列二倍界：存在与锐性样例冻结记录](<../../evidence/runs/weighted_congestion/multicolumn/evidence.json>) | `evidence/runs/weighted_congestion/multicolumn/evidence.json` | 保存直接资源公式、人数状态、平衡轻玩家均衡和锐性有限检查的实际范围。 | 冻结输入、证书或结果；不原位覆盖 |
+| [互补多列二倍界：独立审计冻结结果](<../../evidence/runs/weighted_congestion/multicolumn_review/exact_test_results.json>) | `evidence/runs/weighted_congestion/multicolumn_review/exact_test_results.json` | 记录独立资源配置与较大整数实例的确切覆盖范围，不把有限穷举称全类证明。 | 冻结输入、证书或结果；不原位覆盖 |
+
+### 多项式三负载曲率与三点包络
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [非负系数多项式：三负载比值的精确凸包络](<../current/weighted_congestion/polynomial_curvature/three_point_polynomial_envelope.md>) | `research/current/weighted_congestion/polynomial_curvature/three_point_polynomial_envelope.md` | 精确求解三个正负载上的费用比值权衡，识别相邻单项式最优解、最小可行次数与曲率指数。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R1-THREELOAD-ENVELOPE`，[命题合同](../assets.json) |
+| [前缀阶跃模拟：非负系数多项式的曲率障碍](<../current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md>) | `research/current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md` | 核对源前缀游戏的三个真实可达负载，并用对数负载凸性排除保持阶跃平台形状的直接多项式模拟。 | 方法障碍；否定范围以正文为准；关联 `WC-R1-PREFIX-SMOOTHING`，[命题合同](../assets.json) |
+| [前缀阶跃模拟：三负载曲率的独立反向审查](<../reviews/weighted_congestion/polynomial_curvature/review.md>) | `research/reviews/weighted_congestion/polynomial_curvature/review.md` | 用单项式概率权重和凸性独立重构局部曲率障碍，核对真实负载、次数与适用边界。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-R1-PREFIX-SMOOTHING`，[命题合同](../assets.json) |
+| [三负载精确凸包络：相邻单项式有限回归](<../../tests/audits/weighted_congestion/polynomial_curvature/extension_verify.py>) | `tests/audits/weighted_congestion/polynomial_curvature/extension_verify.py` | 核对三负载包络公式和相邻次数支撑的有限有理样例，不替代一般优化证明。 | 有限计算核验；不代替一般证明 |
+| [前缀阶跃曲率：真实负载与多项式有理回归](<../../tests/audits/weighted_congestion/polynomial_curvature/verify.py>) | `tests/audits/weighted_congestion/polynomial_curvature/verify.py` | 精确检查源前缀策略的可达负载、系数向量、曲率不等式、必要次数及零/常数边界。 | 有限计算核验；不代替一般证明 |
+| [前缀阶跃曲率：负载、曲率与次数边界记录](<../../evidence/runs/weighted_congestion/polynomial_curvature/results.json>) | `evidence/runs/weighted_congestion/polynomial_curvature/results.json` | 冻结种子、实际权/系数域、几何与真实负载计数、曲率和次数检查及适用范围。 | 冻结输入、证书或结果；不原位覆盖 |
+
+### 异权端点的精确还原
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [异权端点强制证书：还原为单一轻玩家权重](<../current/weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md>) | `research/current/weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md` | 在指定两类端点强制不等式下选取一个轻权并取整重数，得到同次数同权星形反例；不涵盖所有异权无均衡游戏。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R1-HET-ENDPOINT-REDUCTION`，[命题合同](../assets.json) |
+| [异权端点还原：权重选择与重数取整独立审查](<../reviews/weighted_congestion/heterogeneous_endpoint/review.md>) | `research/reviews/weighted_congestion/heterogeneous_endpoint/review.md` | 先独立重构端点强制命题，再核对权重选取、整数重数和有限精确程序；只覆盖该受限还原。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-R1-HET-ENDPOINT-REDUCTION`，[命题合同](../assets.json) |
+| [异权端点还原：有理密度选择与取整回归](<../../tests/audits/weighted_congestion/heterogeneous_endpoint/verify_endpoint_reduction.py>) | `tests/audits/weighted_congestion/heterogeneous_endpoint/verify_endpoint_reduction.py` | 以 Fraction 核对端点输入、轻权选择、实/整数重数、输出倍率和零主资源样例。 | 有限计算核验；不代替一般证明 |
+| [异权端点还原：输入输出与取整分支冻结记录](<../../evidence/runs/weighted_congestion/heterogeneous_endpoint/verification.json>) | `evidence/runs/weighted_congestion/heterogeneous_endpoint/verification.json` | 保存被核对的有理权、端点比值、所选索引、整数重数、输出倍率及边界样例。 | 冻结输入、证书或结果；不原位覆盖 |
+
+### 辅助阶跃依赖 DAG 及迁移限制
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [辅助阶跃依赖游戏：有向无环图的精确阈值](<../current/weighted_congestion/step_dag/step_dependency_threshold.md>) | `research/current/weighted_congestion/step_dag/step_dependency_threshold.md` | 以有向路径计数给出指定阶跃费用辅助模型的振幅最优阈值和端点取得；未把阶跃费用迁入多项式全类。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R1-DAG-STEP`，[命题合同](../assets.json) |
+| [辅助阶跃依赖模型：树与有向无环图独立重构](<../reviews/weighted_congestion/step_dag/independent_review.md>) | `research/reviews/weighted_congestion/step_dag/independent_review.md` | 独立核对源前缀策略并证明阶跃图模型阈值，覆盖零振幅、空图和严格负载边界；不声称多项式迁移。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-R1-DAG-STEP`，[命题合同](../assets.json) |
+| [辅助阶跃图模型：独立逐资源成本与阈值审计](<../../tests/audits/weighted_congestion/step_dag/independent_audit.py>) | `tests/audits/weighted_congestion/step_dag/independent_audit.py` | 不导入原证明或核验器，以整数缩放的正二进权从策略重建树/DAG 阶跃负载和偏离。 | 有限计算核验；不代替一般证明 |
+| [辅助阶跃依赖模型：真实资源与递推阈值回归](<../../tests/audits/weighted_congestion/step_dag/verify.py>) | `tests/audits/weighted_congestion/step_dag/verify.py` | 用精确资源成本检查明示 DAG 游戏及路径计数递推，不使用浮点、随机或外部核验器。 | 有限计算核验；不代替一般证明 |
+| [辅助阶跃依赖模型：路径计数与边界冻结记录](<../../evidence/runs/weighted_congestion/step_dag/verification.json>) | `evidence/runs/weighted_congestion/step_dag/verification.json` | 保存参数、实际精确样例与检查计数；仅支持阶跃辅助模型，不是多项式迁移证书。 | 冻结输入、证书或结果；不原位覆盖 |
+
+### 固定边际势与任意乘子候选障碍
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [任意玩家乘子势：有限多尺度边际夹逼障碍候选](<../questions/weighted_congestion/marginal_potentials/arbitrary_multipliers.md>) | `research/questions/weighted_congestion/marginal_potentials/arbitrary_multipliers.md` | 候选推广允许乘子依赖整个有限权向量；研究单资源全部子集上的边际夹逼，不是游戏均衡非存在。 | 候选或未闭合义务；保存不升级状态 |
+| [按玩家权重校准的边际势：线性障碍候选](<../questions/weighted_congestion/marginal_potentials/fixed_marginal_potential_obstruction.md>) | `research/questions/weighted_congestion/marginal_potentials/fixed_marginal_potential_obstruction.md` | 用有限两种插入次序给出权重校准边际夹逼的次数线性障碍；保留尚待进一步独立审查状态。 | 候选或未闭合义务；保存不升级状态 |
+| [权重校准边际势：两种插入次序精确证书核验](<../../tests/audits/weighted_congestion/marginal_potentials/verify.py>) | `tests/audits/weighted_congestion/marginal_potentials/verify.py` | 用 Fraction 比较有限权向量的两条插入路径；Decimal 仅用于显示，不由优化或样本提升一般障碍。 | 有限计算核验；不代替一般证明 |
+| [任意玩家乘子：有限多尺度压缩证书核验](<../../tests/audits/weighted_congestion/marginal_potentials/verify_multipliers.py>) | `tests/audits/weighted_congestion/marginal_potentials/verify_multipliers.py` | 精确检查允许任意正玩家乘子的多尺度有限压缩证书，不替代候选一般证明的独立审查。 | 有限计算核验；不代替一般证明 |
+| [权重校准边际势：路径比与证据限制冻结记录](<../../evidence/runs/weighted_congestion/marginal_potentials/evidence.json>) | `evidence/runs/weighted_congestion/marginal_potentials/evidence.json` | 保存有限两序列证书、精确路径比与本次运行没有建立的结论；正文仍按候选状态使用。 | 冻结输入、证书或结果；不原位覆盖 |
+| [任意玩家乘子：多尺度有限证书冻结记录](<../../evidence/runs/weighted_congestion/marginal_potentials/multiplier_evidence.json>) | `evidence/runs/weighted_congestion/marginal_potentials/multiplier_evidence.json` | 保存明示参数下任意乘子障碍的有限精确证书，不能把入库本身当作候选通过审查。 | 冻结输入、证书或结果；不原位覆盖 |
+
+### 序势候选、稠密桥与方法限制
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [依游戏选择的资源可分序势：线性障碍候选](<../questions/weighted_congestion/ordinal_potentials/game_specific_separable_ordinal_barrier.md>) | `research/questions/weighted_congestion/ordinal_potentials/game_specific_separable_ordinal_barrier.md` | 允许每个资源集合函数在看到完整游戏后选择，研究全部严格改善边下降的可分势障碍；所构游戏仍有精确均衡。 | 候选或未闭合义务；保存不升级状态 |
+| [玩家成本幂和目标：全局最小点的无界改善反例](<../questions/weighted_congestion/ordinal_potentials/power_of_total_cost_obstruction.md>) | `research/questions/weighted_congestion/ordinal_potentials/power_of_total_cost_obstruction.md` | 对非一次成本幂和给出仿射费用有限游戏，使唯一目标最小点存在任意大改善；不否定均衡本身。 | 候选或未闭合义务；保存不升级状态 |
+| [普适资源可加序势：由复制规则推出局部边际夹逼](<../questions/weighted_congestion/ordinal_potentials/universal_additive_ordinal_bridge.md>) | `research/questions/weighted_congestion/ordinal_potentials/universal_additive_ordinal_bridge.md` | 在规则不能依赖策略族和其他资源的精确条件下，将全游戏序势下降要求还原为共享玩家乘子的局部夹逼。 | 候选或未闭合义务；保存不升级状态 |
+| [非可分选择目标：幂和、乘积与对数目标反例审查](<../reviews/weighted_congestion/multicolumn_review/NONSEPARABLE_REVIEW.md>) | `research/reviews/weighted_congestion/multicolumn_review/NONSEPARABLE_REVIEW.md` | 审查指定目标的坏全局最小点族；原 frontier 证明/程序缺失需单列，此审查记录不冒充完整原资产。 | 实际审查记录；只覆盖所列版本与义务 |
+| [资源可分序势与成本幂目标：内部审查记录](<../reviews/weighted_congestion/ordinal_potentials/REVIEW.md>) | `research/reviews/weighted_congestion/ordinal_potentials/REVIEW.md` | 逐项记录成本幂目标、普适复制桥与游戏依赖可分势候选的内部审查覆盖；不认证一般存在或非存在。 | 实际审查记录；只覆盖所列版本与义务 |
+| [成本幂和目标：坏最小点的真实资源有理核验](<../../tests/audits/weighted_congestion/ordinal_potentials/verify_power_objective.py>) | `tests/audits/weighted_congestion/ordinal_potentials/verify_power_objective.py` | 重建有限仿射游戏成本；半次幂目标使用精确根式比较，其余比较使用 Fraction。 | 有限计算核验；不代替一般证明 |
+| [成本幂和目标：有限坏最小点冻结记录](<../../evidence/runs/weighted_congestion/ordinal_potentials/power_objective_exact_checks.json>) | `evidence/runs/weighted_congestion/ordinal_potentials/power_objective_exact_checks.json` | 保存逐实例的精确成本与目标比较，支持指定目标选择失败，不作为均衡非存在证据。 | 冻结输入、证书或结果；不原位覆盖 |
+
+### 保守多项式端点候选与侧列还原
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [保守两攻击证书：任意多项式向单项式的还原候选](<../questions/weighted_congestion/polynomial_endpoint/conservative_endpoint_candidate.md>) | `research/questions/weighted_congestion/polynomial_endpoint/conservative_endpoint_candidate.md` | 对指定对称两列的两条保守严格证书同时约化主副多项式与轻权；不把充分证书当完整拓扑必要条件。 | 候选或未闭合义务；保存不升级状态 |
+| [保守两攻击证书：副资源多项式的端点还原](<../questions/weighted_congestion/polynomial_endpoint/side_polynomial/Q_ENDPOINT_REDUCTION.md>) | `research/questions/weighted_congestion/polynomial_endpoint/side_polynomial/Q_ENDPOINT_REDUCTION.md` | 保持主资源多项式和合法轻权，将可行副资源多项式改为最高次单项式；其本地内部复核与整体候选状态分别读取。 | 候选或未闭合义务；保存不升级状态 |
+| [副资源端点还原：显式系数与余量有理回归](<../../tests/audits/weighted_congestion/polynomial_endpoint/side_polynomial/check_q_endpoint.py>) | `tests/audits/weighted_congestion/polynomial_endpoint/side_polynomial/check_q_endpoint.py` | 检查保守两攻击证书中副资源端点替换的系数及严格余量恒等式，仅覆盖有限参数。 | 有限计算核验；不代替一般证明 |
+| [保守两攻击多项式还原：有理参数与边界回归](<../../tests/audits/weighted_congestion/polynomial_endpoint/verify.py>) | `tests/audits/weighted_congestion/polynomial_endpoint/verify.py` | 检查端点替换、可行证书还原、边界和保守证书适用范围样例；不使用浮点优化。 | 有限计算核验；不代替一般证明 |
+| [保守两攻击多项式还原：端点与边界冻结记录](<../../evidence/runs/weighted_congestion/polynomial_endpoint/verification.json>) | `evidence/runs/weighted_congestion/polynomial_endpoint/verification.json` | 保存有限有理还原计数、具体例、边界及保守证书和实际游戏范围的区分。 | 冻结输入、证书或结果；不原位覆盖 |
+
+### 带符号列、三元组与扩展候选
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [互补符号列：有限证书与增长支持族的开放扩展](<../questions/weighted_congestion/signed_columns/TRIAD_AND_EXTENSION.md>) | `research/questions/weighted_congestion/signed_columns/TRIAD_AND_EXTENSION.md` | 保存三玩家机制、四玩家有限有理证书和增长支持构造；浮点筛选仅用于发现，尚无新的渐近全状态证明。 | 候选或未闭合义务；保存不升级状态 |
+| [互补符号列：增长支持的浮点筛选程序](<../../tests/audits/weighted_congestion/signed_columns/search_layers.py>) | `tests/audits/weighted_congestion/signed_columns/search_layers.py` | 用浮点 MILP 筛选全支持符号列候选；发现结果须经独立有理成本计算，不是精确证书。 | 有限计算核验；不代替一般证明 |
+| [互补符号列：三玩家与四玩家全状态有理核验](<../../tests/audits/weighted_congestion/signed_columns/verify.py>) | `tests/audits/weighted_congestion/signed_columns/verify.py` | 直接重算互补资源构造，检查原三玩家、取整四玩家及筛选后有理化实例。 同时有限核验真实偏离的资源支持势不等式，支持界不是独立的一般证明。 | 有限计算核验；不代替一般证明；关联 `WC-R1-RESOURCE-SUPPORT`，[命题合同](../assets.json) |
+| [互补符号列：浮点筛选候选记录](<../../evidence/runs/weighted_congestion/signed_columns/screening.json>) | `evidence/runs/weighted_congestion/signed_columns/screening.json` | 保存增长支持搜索的发现数据；只有另行通过有理核验的条目可作有限非存在证据。 | 冻结输入、证书或结果；不原位覆盖 |
+| [互补符号列：有限实例有理证书冻结记录](<../../evidence/runs/weighted_congestion/signed_columns/verification.json>) | `evidence/runs/weighted_congestion/signed_columns/verification.json` | 记录三玩家、四玩家取整例及有理化筛选候选的精确核验，不建立增长族一般结论。 同时有限核验真实偏离的资源支持势不等式，支持界不是独立的一般证明。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R1-RESOURCE-SUPPORT`，[命题合同](../assets.json) |
+
+### 协作、保存、启动与许可入口
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [共同研究验收门槛：局部资产、阶段结果与主目标](<ACCEPTANCE.md>) | `research/weighted_congestion_frontier/ACCEPTANCE.md` | 决定数学状态是否可以提升或主目标是否完成时，核对证明、反例攻击、文献范围与残余致命义务。 | 阅读导航；真值查精确正文及账本 |
+| [拥塞协作贡献规则与阶段保存要求](<AGENTS.md>) | `research/weighted_congestion_frontier/AGENTS.md` | 加入该研究目录前核对适用工作规则、子 agent 协作方式及数学入库和状态升级的边界。 | 阅读导航；真值查精确正文及账本 |
+| [阶段成果一键保存：提交范围、失败恢复与远端确认](<CHECKPOINT.md>) | `research/weighted_congestion_frontier/CHECKPOINT.md` | 已有可复用阶段文件后选择正确路径运行保存，遇到同步冲突或断网时按实际失败状态恢复。 | 阅读导航；真值查精确正文及账本 |
+| [研究公屏协议：具体交流、版本与来源](<PROTOCOL.md>) | `research/weighted_congestion_frontier/PROTOCOL.md` | 需要跨对话讨论发现、异议或合作问题时查消息语义和冻结版本；公屏不代替规范研究资产。 | 阅读导航；真值查精确正文及账本 |
+| [共同研究操作手册：恢复、读屏、同步与保存](<RUNBOOK.md>) | `research/weighted_congestion_frontier/RUNBOOK.md` | 实际操作协作程序时查入口和认证配置；不把程序回归或网络状态当作数学结果。 | 阅读导航；真值查精确正文及账本 |
+| [异步公屏的定位、读取入口与资产边界](<board/README.md>) | `research/weighted_congestion_frontier/board/README.md` | 需要查看实时研讨时进入独立公屏分支；重要可复用成果必须另存 main 并连接真实正文。 | 阅读导航；真值查精确正文及账本 |
+| [拥塞可复用工具的提取与使用合同](<toolbox/README.md>) | `research/weighted_congestion_frontier/toolbox/README.md` | 从失败和中间推导提取工具时查原作者、精确假设、证明与复用场景，不能把改名本身当新工具。 | 阅读导航；真值查精确正文及账本 |
+| [完整共同解题启动词：目标、协作与真实验收](<prompts/TEAM.md>) | `research/weighted_congestion_frontier/prompts/TEAM.md` | 新 Work 对话启动平等研究团队时使用，恢复模型和当前状态、自主研究并及时保存准确等级的资产。 | 阅读导航；真值查精确正文及账本 |
+| [同级研究者交流提示词：自主研究与异步研讨](<prompts/PEER.md>) | `research/weighted_congestion_frontier/prompts/PEER.md` | 需要组织跨对话数学交流时使用，允许同题独立探索和多路线合作，不以任务认领限制研究。 | 阅读导航；真值查精确正文及账本 |
+| [数学工具提取者提示词：从中间结果回收结构](<prompts/EXTRACTOR.md>) | `research/weighted_congestion_frontier/prompts/EXTRACTOR.md` | 独立重建可复用引理、表示、障碍或桥梁，保留出处和承重条件，提供实际复用场景并诚实验收。 | 阅读导航；真值查精确正文及账本 |
+| [论文整理者提示词：真实贡献、完整论证与成稿核验](<prompts/PAPER_WRITER.md>) | `research/weighted_congestion_frontier/prompts/PAPER_WRITER.md` | 出现足够成果后组织论文叙事、证明与图表，执行写作和逐页检查；包装不能改变精确范围或证据等级。 | 阅读导航；真值查精确正文及账本 |
+| [子 agent 模型配置、实际能力与来源记录](<prompts/MODELS.md>) | `research/weighted_congestion_frontier/prompts/MODELS.md` | 启动独立探索或审查时查实际可用模型与配置的记录要求，不能把模型自评当成数学可信度。 | 阅读导航；真值查精确正文及账本 |
+| [协作与写作参考原文的固定版本及许可](<SOURCES.md>) | `research/weighted_congestion_frontier/SOURCES.md` | 修改提示词或核对外部设计来源时查固定 commit、引用范围和许可证，区分原设计与本仓定制。 | 来源与恢复指针；不代替缺失证明 |
 
 ## 来源缺口
 

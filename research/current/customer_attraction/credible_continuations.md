@@ -1,4 +1,4 @@
-# CA-CREDIBLE-CONTINUATIONS：完整策略的非极小可信续局与联合候选接口
+# 非极小可信续局与完整策略的联合构造接口（CA-CREDIBLE-CONTINUATIONS）
 
 采用 [CAG-MODEL](model.md) 的共同目录、单位客户及单位提供者，纯策略在每个
 **有序**历史独立指定动作。本页给出精确有限接口及两棵可重放策略；没有证明任意

@@ -1,4 +1,4 @@
-# WC-R1-TOTAL-COST-POWER-OBSTRUCTION v1
+# 玩家成本幂和目标：全局最小点的无界改善反例
 
 ## Exact statement and identity
 

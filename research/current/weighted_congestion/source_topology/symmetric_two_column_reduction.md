@@ -1,4 +1,4 @@
-# Full symmetric two-column topology: exact high-factor reduction
+# 完整对称两列拓扑：高倍率非存在还原至源公式
 
 Claim ID: **WC-R3-FULL-TOPOLOGY-REDUCTION v3**.
 

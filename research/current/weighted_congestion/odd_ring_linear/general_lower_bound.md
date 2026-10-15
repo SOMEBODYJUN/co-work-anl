@@ -1,4 +1,4 @@
-# OC-AMPLIFIER-LIMIT-v1: a linear reset gives d/(ln d+2)
+# 线性重置放大器：构造随次数增长的非存在下界
 
 Status: complete mathematical derivation, pending independent review and literature/priority audit. This note asserts a construction in WC-TARGET v1, not novelty. Contributors: R1/odd_cycle proposed and derived the directed-ring coefficient interface and the linear-reset amplification; the R1 coordinator independently reconstructed literal player costs and the H_d criterion; R1/odd_cycle/pair_obstruction independently checked the interface, uniform families, and the linear-reset proof. Mathematical dependencies are reconstructed in full below; `README.md` is the broader reusable interface account.
 

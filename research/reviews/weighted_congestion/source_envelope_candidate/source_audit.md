@@ -1,4 +1,4 @@
-# Source audit for WC-R1-LF-SHARP v1
+# 另一份锐渐近候选：原文版本与公式核对
 
 Checked online 2026-10-14 by R1/lower_family.
 

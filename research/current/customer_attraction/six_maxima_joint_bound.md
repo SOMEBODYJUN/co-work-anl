@@ -1,4 +1,4 @@
-# CA-SIX-MAXIMA-HALF: arbitrary-provider half coverage with at most six maximal coverages
+# 至多六个极大覆盖的联合预算半覆盖界（CA-SIX-MAXIMA-HALF）
 
 Version: 2026-10-10. Complete current proof, exact author coefficient audit, independent exact audit and independent mathematical reconstruction. External peer review and novelty have not been certified.
 

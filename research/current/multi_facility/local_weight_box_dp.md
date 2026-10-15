@@ -1,4 +1,4 @@
-# Local weight diversity and bounded site-primal width: exact box NE DP
+# 站点树宽与局部权值多样性下的盒均衡动态规划
 
 Independent draft for internal review, 2026-10-04. No canonical implementation, external review, or priority assertion.
 

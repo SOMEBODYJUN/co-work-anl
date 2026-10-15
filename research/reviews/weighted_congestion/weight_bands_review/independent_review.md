@@ -1,4 +1,4 @@
-# Independent review: resource-local weight bands and Shapley potential
+# 资源局部窄权带：Shapley 份额与存在界独立审查
 
 This account was reconstructed from `MODEL.md` and the proposed mathematical objects before reading any candidate proof in `assets/R3/dense_bands/`. No novelty claim is made. The mathematical conclusion is affirmative; external-source comparison is a separate obligation.
 

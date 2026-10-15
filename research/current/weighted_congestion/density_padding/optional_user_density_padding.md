@@ -1,4 +1,4 @@
-# Potential-user density can be padded without changing the equilibrium threshold
+# 潜在用户密度填充：逐倍率保持均衡的投影与提升
 
 Claim ID/version: **WC-R3-POTENTIAL-DENSITY-PADDING-v1**.
 

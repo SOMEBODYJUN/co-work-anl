@@ -1,4 +1,4 @@
-# 加权拥塞：资源间拼接与仿射两权组的锐边际势
+# 资源局部势拼接：共享乘子、两尺度障碍与两权组锐界
 
 R2，2026-10-14。模型采用 [WC-MODEL](../../weighted_congestion_frontier/MODEL.md)。
 作者来源：主对话重建 packing、资源拼接及精确审计；内部 bridge_review 独立先重构；

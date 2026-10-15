@@ -1,4 +1,4 @@
-# Exact thresholds for acyclic step dependency games
+# 辅助阶跃依赖游戏：有向无环图的精确阈值
 
 Claim **WC-R1-DAG-STEP v1**, 2026-10-14. This is an auxiliary step-cost theorem, outside the polynomial class of WC-TARGET. Origin: R1 main reconstruction and the independent `tree_review` agent (requested gpt-6.1-sol / ultra). No priority claim or external review is made.
 

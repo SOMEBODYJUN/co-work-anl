@@ -1,4 +1,4 @@
-# Dynamic maximal-cover routing budget
+# 动态极大覆盖路由预算与至多五极大半覆盖
 
 Direct self-contained proof, 2026-10-10. The general arbitrary-maxima
 half-coverage conjecture remains open. Proposed claim IDs are
@@ -387,7 +387,7 @@ For n >= 2 the sum of these upper bounds is exactly
 
 \[
 \begin{aligned}
-\sum_{r=1}^{n}\left(n+\max\{3r/2,4\}ight)
+\sum_{r=1}^{n}\left(n+\max\{3r/2,4\}\right)
 &=n^2+\frac32\frac{n(n+1)}2+\frac72\\
 &=\frac{7n^2+3n+14}{4}.
 \end{aligned}

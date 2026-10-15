@@ -1,4 +1,4 @@
-# Three maximal coverages: all-history half coverage with arbitrary subthemes
+# 至多三个极大覆盖的静态席位半覆盖界
 
 **Direct proof, 2026-10-10.** Proposed claim ID:
 `CA-THREE-MAXIMA-HALF`. The input class has at most three distinct

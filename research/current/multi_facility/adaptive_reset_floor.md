@@ -1,4 +1,4 @@
-# Adaptive original-pool reset and forced-client floors
+# 自适应原池重置与强制客户下界的离轨补全
 
 Current conditional result, 2026-10-04. This is a self-contained
 conditional polynomial construction in the common-catalog MF-MODEL. It does

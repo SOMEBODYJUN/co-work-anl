@@ -1,4 +1,4 @@
-# SC-K-HEIGHT-TWO-BOX-EXISTS: opening-directed light graphs with paths of at most two edges
+# 开站有向轻图深度至多二的盒均衡存在性
 
 2026-10-03. Derived independently from the three-site exchange of Sol Box. Sol Box independently checked the algebra and feasibility; a further reviewer check is pending. No polynomial minimization assertion.
 

@@ -1,4 +1,4 @@
-# Exact three-load tradeoff for nonnegative-coefficient polynomials
+# 非负系数多项式：三负载比值的精确凸包络
 
 Claim ID: **WC-R1-THREELOAD-ENVELOPE v1**. Contribution: R1 independent
 curvature reviewer. Objects, domain, quantifiers, assumptions, definitions and

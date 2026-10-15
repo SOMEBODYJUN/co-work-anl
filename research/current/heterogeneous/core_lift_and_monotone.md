@@ -1,4 +1,4 @@
-# 跨目录核心提升与纯成本单调迁移
+# 全目录回应核心提升与纯客户费用单调迁移
 
 这两项结论各有自己的条件。核心提升是一个关于**任意两领导者延续选择**的结构引理；单调成本迁移只作用于本分支的**纯**客户均衡与逐实现严格占优，不能合并为一个“非线性混合均衡保留”命题。原始来源为[异构主稿 §3、§9](../../../history/source/manuscripts/heterogeneous/main.tex)与[响应核心笔记 §2A](../../../history/source/notes/heterogeneous/response_core.md)。
 

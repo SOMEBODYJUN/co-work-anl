@@ -163,6 +163,8 @@ def check() -> None:
                         ("evidence input/certificate changed", manifest.name, key))
     subprocess.run([sys.executable, str(ROOT / "research/check_wc_assets.py"), "--check"],
                    cwd=ROOT, check=True)
+    subprocess.run([sys.executable, str(ROOT / "research/build_catalog.py"), "--check"],
+                   cwd=ROOT, check=True)
     print(f"Validated {len(assets)} scoped asset routes, {len(implementations)} implementations, "
           f"{len(migration['moved'])} sourced files, "
           f"{len(crosswalk)} individually interpreted origins, "

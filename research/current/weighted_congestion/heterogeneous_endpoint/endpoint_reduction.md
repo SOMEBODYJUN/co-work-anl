@@ -1,4 +1,4 @@
-# Heterogeneous endpoint forcing reduces to one light weight
+# 异权端点强制证书：还原为单一轻玩家权重
 
 Claim ID: **WC-R1-HET-ENDPOINT-REDUCTION v1**. Author: R1 internal cohort collaborator. Date: 2026-10-14.
 

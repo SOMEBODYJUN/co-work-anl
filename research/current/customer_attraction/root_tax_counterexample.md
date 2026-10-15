@@ -1,4 +1,4 @@
-# CA-ROOT-TAX-NO：实际完整 SPE 的空背景根总税为假
+# 四人完整 SPE 的空背景根总税反例（CA-ROOT-TAX-NO）
 
 本页重构用户上传的第一个 Pro 研究结果。原始文本保存在
 [来源快照](../../../history/source/notes/customer_attraction/uploaded_pro_2026-10-10/root_tax_source.md)。

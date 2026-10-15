@@ -1,4 +1,4 @@
-# Independent review of the shrinking-weight Boolean limit
+# 十四资源缩权族：布尔极限与有限运输独立审查
 
 Review identity: R3 internal independent reconstruction, 2026-10-14. This review concerns a new scaling family, not the separately checked degree-32 game. The reviewer read the exact `MODEL.md`, independently rebuilt the auxiliary game, its costs and its witnesses, and only afterwards read `crossover_audit/verify_limit.py`. At that first inspection, `limit_family.md` did not yet exist; its full subsequently completed text was then reviewed. This review does not constitute external peer review.
 

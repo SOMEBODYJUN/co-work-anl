@@ -1,4 +1,4 @@
-# Exact claim identities: common catalog, arbitrary k
+# 任意设施数因子二及算法边界的精确命题账本
 
 ## 2026-10-08 共单例搜索接口补充
 
@@ -33,7 +33,7 @@ source = new current work; current proof = complete; internal review = reverse
 reconstruction, separate internal proof attacks, and exact independent-implementation
 checks; external review = not recorded; novelty = not certified. A passing computation
 is not the reason for any universal quantifier below. The repository's current
-claim ledger and [audit](../../K_FACILITY_AUDIT_2026-10-02.md) record the integrated scope.
+claim ledger and [audit](../../reviews/facility/arbitrary_facility_factor_two.md) record the integrated scope.
 
 ## SC-K-INCIDENCE-BOX-DP and SC-K-HEIGHT-TWO-INCIDENCE-2 -- sparse boxed selection
 

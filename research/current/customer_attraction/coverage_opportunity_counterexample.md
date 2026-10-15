@@ -1,4 +1,4 @@
-# CA-COVERAGE-OPPORTUNITY-NO：覆盖机会损失不能逐层用当期收益支付
+# 逐期最优覆盖补全损失的当期收费反例（CA-COVERAGE-OPPORTUNITY-NO）
 
 ## 输入、量词与结论
 

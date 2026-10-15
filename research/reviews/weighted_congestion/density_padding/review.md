@@ -1,4 +1,4 @@
-# 最小 potential-user 密度的 padding：独立重构与审查
+# 潜在用户密度填充：投影、提升与占权区间独立审查
 
 **Review ID / version:** `WC-R3-POTENTIAL-PADDING-INDEPENDENT-v1`。
 

@@ -1,4 +1,4 @@
-# CA-TWO-REMAINING-TAX：固定前缀下恰两名剩余提供者的税界
+# 固定前缀下恰两名剩余玩家的税界（CA-TWO-REMAINING-TAX）
 
 **2026-10-10 状态更新：** 空背景实际根总税现也由
 [CA-ROOT-TAX-NO](root_tax_counterexample.md)否定（四人61单位客户、严格差1/2）。

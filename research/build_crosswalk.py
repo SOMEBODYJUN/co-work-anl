@@ -79,6 +79,28 @@ def render():
                      f"[{current}](../{current}) | {note} |")
     if new_sources:
         lines.append("")
+    historical = data.get("historical_records", [])
+    seen_historical = set()
+    if historical:
+        lines += ["## 历史编辑判断与方向记录", "",
+                  "这些文件保留过去的投稿或方向判断。关联页用于理解当时背景，不表示该判断被重写成数学证明，也不覆盖现行目标、审查或新颖性状态。", "",
+                  "| 原位置 | 当前保存位置 | 相关研究背景 | 历史作用与边界 |",
+                  "| --- | --- | --- | --- |"]
+    for row in historical:
+        path = row["preserved_at"]
+        if (path in seen_historical or not path.startswith("history/")
+                or row["kind"] != "historical_editorial_assessment"
+                or not row["interpretation"] or not row["related_accounts"]
+                or not (ROOT / path).is_file()):
+            raise ValueError(("invalid historical editorial record", path))
+        seen_historical.add(path)
+        for account in row["related_accounts"]:
+            if (not account.startswith(("research/current/", "research/questions/"))
+                    or not (ROOT / account).is_file()):
+                raise ValueError(("missing historical context", path, account))
+        links = "、".join(f"[{p}](../{p})" for p in row["related_accounts"])
+        note = row["interpretation"].replace("|", r"\|")
+        lines.append(f"| `{row['original']}` | [{path}](../{path}) | {links} | {note} |")
     return "\n".join(lines).rstrip() + "\n"
 
 
@@ -95,7 +117,8 @@ def main():
         output.write_text(result)
     data = json.loads((HERE / "source_crosswalk.json").read_text())
     print(f"Validated {len(data['entries'])} migrated source/code paths and "
-          f"{len(data.get('new_sources', []))} new source records")
+          f"{len(data.get('new_sources', []))} new source records; "
+          f"{len(data.get('historical_records', []))} historical editorial records")
 
 
 if __name__ == "__main__":

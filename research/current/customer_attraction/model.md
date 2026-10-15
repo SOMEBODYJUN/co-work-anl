@@ -1,4 +1,4 @@
-# CAG-MODEL：依次选主题、固定均分的客户吸引博弈
+# 顺序客户吸引模型：主题、均分收益与完整历史纯 SPE（CAG-MODEL）
 
 本分支的客户不进行第二阶段优化；这是 Deng 等的 customer attraction game，
 与仓库既有 `research/current/model.md` 的主动原子客户设施模型不同。

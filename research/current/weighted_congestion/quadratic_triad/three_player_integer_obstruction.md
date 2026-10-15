@@ -1,4 +1,4 @@
-# A six-resource integer quadratic game
+# 三玩家六资源整数实例：二次费用的精确最优倍率
 
 ## WC-R1-INTEGER-TRIAD v1
 

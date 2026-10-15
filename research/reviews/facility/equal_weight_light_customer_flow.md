@@ -1,4 +1,4 @@
-# 等权流新稿：核验结果与实际增量
+# 等权轻客户无约束费用流：自动保盒与精确续局核验
 
 2026-10-07。整理基线为 `main@6ae3e42730ace91866174f78a4894a940cd60fd9`；
 原材料是本轮用户附上的完整文本和嵌入代码，已经归档并记录原文件 SHA-256。
@@ -32,7 +32,7 @@ O\bigl(m+E+n(n+m+2)(n+E)\bigr),\qquad E=\sum_i|A_i|.
 
 所有中间整数均有输入位长多项式的编码长度，不按重数或公共分母数值循环。
 准确命题和完整证明见
-[SC-K-EQUAL-LIGHT-FLOW-BOX](current/multi_facility/equal_light_flow.md)。
+[SC-K-EQUAL-LIGHT-FLOW-BOX](../../current/multi_facility/equal_light_flow.md)。
 
 ## 2. 相对已有结果，哪里进步了
 
@@ -54,9 +54,9 @@ O\bigl(m+E+n(n+m+2)(n+E)\bigr),\qquad E=\sum_i|A_i|.
 
 | 冻结记录 | 实际核验范围 |
 | --- | --- |
-| [核心审计](../evidence/runs/2026-10-07/equal_light_flow.json) | 5,242 输入、14,995 合法分配、全部 5,720 最小者；负基线、平局、多最优者、大二进制重数、大分母、32 类非法输入；12 项回归通过 |
-| [第二份独立攻击](../evidence/runs/2026-10-07/equal_light_flow_adversary.json) | 6,691 输入、89,521 分配、全部 7,902 最小者，分别核验规范实现和附稿实现；附稿另检 6,791 个残量图，其中 4,015 个有零费用环 |
-| [完整续局核验](../evidence/runs/2026-10-07/equal_light_flow_continuation.json) | 301 完整证书、1,338 实际带标签偏离、5,613 布局求值，其中 4,302 默认续局；覆盖源点消失重置、存续源、占据/未开目标、零收益、拒绝异权及防覆盖行为 |
+| [核心审计](../../../evidence/runs/2026-10-07/equal_light_flow.json) | 5,242 输入、14,995 合法分配、全部 5,720 最小者；负基线、平局、多最优者、大二进制重数、大分母、32 类非法输入；12 项回归通过 |
+| [第二份独立攻击](../../../evidence/runs/2026-10-07/equal_light_flow_adversary.json) | 6,691 输入、89,521 分配、全部 7,902 最小者，分别核验规范实现和附稿实现；附稿另检 6,791 个残量图，其中 4,015 个有零费用环 |
+| [完整续局核验](../../../evidence/runs/2026-10-07/equal_light_flow_continuation.json) | 301 完整证书、1,338 实际带标签偏离、5,613 布局求值，其中 4,302 默认续局；覆盖源点消失重置、存续源、占据/未开目标、零收益、拒绝异权及防覆盖行为 |
 
 以上样本集合可能重叠，不能相加成互不重叠总数；有限证据不代替全称证明。
 每份记录保存参数、种子及源码 SHA-256，已逐项核对。附稿残量仪器没有冒称
@@ -66,8 +66,8 @@ O\bigl(m+E+n(n+m+2)(n+E)\bigr),\qquad E=\sum_i|A_i|.
 单客户局部最小仍可能有负超额负载。另一个既有真实异权例，归位内部项恰为零，
 总势仍增加 `8/2025`；只控制内部项不能修复不同端点权重和回溯阈值。
 准确公式、原子身份、四态排除及原模型实现见
-[证明第 8 节](current/multi_facility/equal_light_flow.md)和
-[失败路线](../FAILED_ROUTES.md)。
+[证明第 8 节](../../current/multi_facility/equal_light_flow.md)和
+[失败路线](../../../FAILED_ROUTES.md)。
 
 从仓库根运行：
 
@@ -82,7 +82,7 @@ python3 -m multi_facility_spe examples/multi_facility/equal_light_flow_complete.
 ## 4. 交接给下一轮 Pro 的目标
 
 读取这份审查、完整等权证明和
-[一般位多项式任务页](questions/greedy_box_polytime.md)。不再把等权任意覆盖图
+[一般位多项式任务页](../../questions/greedy_box_polytime.md)。不再把等权任意覆盖图
 当作未解子问题；主攻一般异权客户的盒内精确 NE 位多项式构造，研究可有效
 选择的一种规则或新的直接终点机制。若采用交换路线，必须同时控制内部负载
 变化、两端权重和失效的共同阈值，且给出全部阶段的总时间界。

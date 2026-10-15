@@ -1,4 +1,4 @@
-# A uniform ceiling for the standard two-attack envelope
+# 文献两攻击公式：适用于全部参数的机制上限
 
 ## Claim identity
 

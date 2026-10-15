@@ -1,6 +1,6 @@
-# Sunflower 极大目录福利定理：独立内部审查
+# 顺序客户吸引的向日葵极大目录福利与超集席位：独立内部审查
 
-审查对象：[sunflower_maxima_bound.md](current/customer_attraction/sunflower_maxima_bound.md)，
+审查对象：[sunflower_maxima_bound.md](../../current/customer_attraction/sunflower_maxima_bound.md)，
 候选 `CA-SUNFLOWER-MAXIMA-2M1`。审查日期：2026-10-10。
 先根据阈值机制独立重构证明，再读正文攻击量词、平局和边界，最后运行独立有理枚举。
 

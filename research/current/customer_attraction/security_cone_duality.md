@@ -1,4 +1,4 @@
-# CA-SECURITY-CONE-DUAL：完整策略锥与静态安全值的精确对偶接口
+# 完整策略锥与静态安全值的对偶支付接口（CA-SECURITY-CONE-DUAL）
 
 本页由第二份[用户上传稿](../../../history/source/notes/customer_attraction/uploaded_pro_2026-10-10/global_security_source.md)
 独立重构。它是已有 [CA-STRATEGY-CONE](strategy_cone.md) 与有限minimax/Farkas的标准组合，

@@ -26,3 +26,5 @@ R1 的线性重置实现与 R3 的同次数实现归属于共同机制，保留�
 按 [GROWTH](research/GROWTH.md) 先固定 claim 再落正确目录；完成可复用阶段内容和相应核验后立即 checkpoint 到 main，不创建研究分支。候选可以按候选保存。公屏可自由研讨有启发的未完成 idea、卡点和合作问题，不要求先成稿或审查；致命反驳及时核查登记。普通排错和逐轮日志无需强制汇报或入库。
 
 根 README 保持稳定地图。本文件只呈现现在，过程提交留在 Git 历史。具体文件状态、来源和冻结证据分开登记，见 [仓库工作程序](research/REPOSITORY_GUIDE.md) 与 [逐文件索引](research/weighted_congestion_frontier/FILES.md)。
+
+研究读取现从[按问题分流的总目录](research/README.md)进入，各专题按证明链组织；[中文资产总目录](research/CATALOG.md)登记具体文件名、作用和状态依据。现行数学审查按模型归位，投稿旧判断从历史来源追溯，旧路线用固定 Git 版本恢复。命名与导航整理没有新增或升级数学结论。

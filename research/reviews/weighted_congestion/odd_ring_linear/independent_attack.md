@@ -1,4 +1,4 @@
-# Independent literal-cost attack of the odd ring
+# 奇数环线性实现：真实资源成本独立攻击
 
 ## Audit identity and result
 

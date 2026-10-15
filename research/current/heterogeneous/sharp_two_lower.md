@@ -1,4 +1,4 @@
-# 六顶点整数族：异构 sharp-2 的下界部分
+# 异构目录趋近因子二的六顶点整数下界族
 
 本节只证明下界和该族的精确最优因子；“通用常数恰为 2”另需[任意环上界](full_catalog_cycle.md)。源：[主稿](../../../history/source/manuscripts/heterogeneous/main.tex) §7 `thm:two-lower`、`eq:alpha-M`；[原始详细推导](../../../history/source/notes/heterogeneous/tight_two_lower.md) §§2–6。当前为可逐项重算的研究证明，待独立重构。
 

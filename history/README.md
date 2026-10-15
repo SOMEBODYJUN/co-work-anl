@@ -9,6 +9,7 @@
 | [source/audits](source/audits) | 内部反驳、量词审计和优先权意见 | 查审查实际覆盖了哪里；“内部独立”不冒充外部认证 |
 | [proofs](proofs)、[searches](searches) | 被替代的证明路线、交接及搜索 | 理解失败路线和反例来源，不能绕过现行条件直接引用 |
 | [退出当前树的副本](source/notes/retired_snapshots.md) | 旧整理、交接与过时导出 | 原提交可恢复，不作为新会话读取入口 |
+| [投稿评估与旧路线](source/notes/publication/) | 过去的组稿判断、投稿比较、EPTAS 方向辩驳；旧设施路线从现行路线页的固定提交链接恢复 | [逐文件中文说明](../research/CATALOG.md#publication)标出其历史作用；不覆盖当前主攻、数学状态或新颖性判断 |
 
 具体差异：旧共同目录存在性笔记依赖真实局部极小值，不能成为位数多项式菜单算法；旧强弦存在性取全局平方最大值，当前实现需要局部端点交换；旧稀疏异构稿末节的未闭合上界已被后来因子 2 整数族更新。每个冲突在相应[共享](../research/current/shared/README.md)、[异构](../research/current/heterogeneous/README.md)、[局部](../research/current/local_and_exact/README.md)新稿中标注。
 

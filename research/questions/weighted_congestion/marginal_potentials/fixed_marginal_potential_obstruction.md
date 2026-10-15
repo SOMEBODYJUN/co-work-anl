@@ -1,4 +1,4 @@
-# R1: a linear barrier for uniformly weight-calibrated marginal potentials
+# 按玩家权重校准的边际势：线性障碍候选
 
 Date: 2026-10-14. Author: R1 internal upper-mechanism agent (model inherited from parent; no model label inferred). Independent mathematical attack: internal `attack_sandwich`, requested `gpt-6.1-sol / ultra`; its returned checks are recorded separately. This document is a mechanism obstruction, not a lower bound on the universal equilibrium threshold.
 

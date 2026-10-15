@@ -1,4 +1,4 @@
-# Sunflower 极大目录：任意人数的锐顺序福利界
+# 极大覆盖为向日葵的任意人数锐福利界
 
 **登记 ID：`CA-SUNFLOWER-MAXIMA-2M1`；完整直接证明，经独立内部重构审查。** 对共同目录的不同包含极大主题形成
 sunflower 的全部实例，每个完整历史依赖纯 SPE 都满足下面的锐界。
@@ -305,5 +305,5 @@ v_j=|B_j\setminus P_j|,\quad f_j(k)=w_j/k+v_j/n\quad(1\le k\le n).
 Sunflower 情形正因为所有非私有块都等于同一个 `C`，才能额外分离 `c` 并在
 第 3 节只加回一次，从而闭合锐界。全零目录 `K=ν=W=OPT=0` 直接满足 (GS3)。
 
-独立审查记录：[SUNFLOWER_MAXIMA_REVIEW_2026-10-10.md](../../SUNFLOWER_MAXIMA_REVIEW_2026-10-10.md)。
+独立审查记录：[SUNFLOWER_MAXIMA_REVIEW_2026-10-10.md](../../reviews/customer_attraction/sunflower_maxima_and_superset_seats.md)。
 冻结实现核验：[customer_attraction_sunflower_maxima.json](../../../evidence/runs/2026-10-10/customer_attraction_sunflower_maxima.json)。

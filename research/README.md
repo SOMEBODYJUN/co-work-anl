@@ -1,28 +1,47 @@
-# 数学关系图、资产索引与增长接口
+# 研究总目录：先选问题，再读具体资产
 
-当前加权拥塞从[现行数学入口](current/weighted_congestion/README.md)进入，[原有设施现行研究](current/README.md)说明既有成果；[下一阶段路线](ROADMAP.md)排序真正的新问题，[开放问题](questions/README.md)记录其待解量词；[增长规则](GROWTH.md)及[命题模板](templates/claim.md)说明下一项成果怎么放入仓库。现行共享证明的 G1–G3、L1–L2 已在独立 Markdown 页重写，不混入开放问题。
+当前主攻是**加权原子拥塞博弈的普遍近似纯均衡门槛**。设施选址和顺序客户吸引是独立保留的研究线；它们有不同模型、量词和未解问题。完整的[中文资产名、文件位置、具体用途与状态依据](CATALOG.md)覆盖当前数学正文、问题、审查和已整合的拥塞核验资产。
 
-本目录有两份彼此不同的机器可读关系：
+## 我应该从哪里开始
 
-| 文件 | 表示什么 | 不表示什么 |
+| 你要研究什么 | 首读与主要资产 | 当前真正缺口 |
 | --- | --- | --- |
-| [graph.json](graph.json) 与[交互 HTML](index.html) | 定义、引理、反例、命题之间的**数学合取超边**。derives 需要全部前提；attacks 为反例；checks 为有限观测；implements 为程序关系；limits 为未解决处。 | 不是旧稿文件夹或普通链接图；测试边不证明普遍定理。 |
-| [assets.json](assets.json) | 每条命题的精确适用条件、现行新稿、规范实现、测试、冻结结果、历史来源。 | 历史来源不自动具有现行证明地位。 |
-| [review_status.json](review_status.json) | 所有现行命题的来源证明、当前重写、内部审读、外部审查、实现五个独立状态；构图时强制与命题节点一致。 | 内部审读不代替外部同行评审。 |
-| [path_migration.json](path_migration.json) | 原始文件搬迁和旧命令退出位置。 | 不要求继续在根目录保留旧模型命名。 |
-| [source_crosswalk.md](source_crosswalk.md) | 68 个原始文件/旧代码入口各自如何被新稿解释、保留或取代。 | 原稿文件本身不等于现行命题。 |
+| 加权原子拥塞的普遍存在门槛 | [数学总述](current/weighted_congestion/README.md) → [精确模型](weighted_congestion_frontier/MODEL.md) → 奇环全状态下界、正局部证书包络、结构势和方法障碍 | 下界与全类上界仍有对数缺口；需要全类存在机制或更强非存在机制 |
+| 共同目录双设施的尖锐稳定性 | [黄金比成果与阅读顺序](current/shared/README.md) → 主定理、完整证明、尖锐下界、算法 → 小目录复杂度 | 已有内部成果的外部审查与优先权；实例最优倍率 EPTAS 仍是候选义务 |
+| 异构目录双设施及单交叠边界 | [异构成果与阅读顺序](current/heterogeneous/README.md) → 一般目录候选、单交叠全长锐界、长回应环 | 一般异构上界的候选状态不能被单交叠定理覆盖 |
+| 固定双设施布局的客户均衡 | [局部均衡与精确算法](current/local_and_exact/README.md) → 支持几何、局部强弦、精确求解及成本扩展 | 精确续局、有限证书与普遍全局保证分别核对 |
+| 任意设施数的统一因子与构造 | [多设施成果与阅读顺序](current/multi_facility/README.md) → 因子二 → 完整盒有限构造 → 结构类算法与障碍 | 一般输入位多项式构造、最佳统一常数 |
+| 顺序客户吸引的一般半覆盖 | [福利界、工具和反例地图](current/customer_attraction/README.md) → 模型、小人数/结构类结果 → 完整策略和全局桥 | 一般半覆盖仍开放；辅助桥的反例不是主问题反例 |
 
-根目录的 `CLAIMS.md`、`FAILED_ROUTES.md`、`RESEARCH_STATE.md` 是本轮重新建立的现行入口；原先同名第一轮整理稿已退出当前文件树，其不可变原件见 `history/source/notes/retired_snapshots.md`，对应关系记于 `path_migration.json` 的 `reestablished_root_docs`，不能把新入口当成旧文件原样搬回。
+第一次进入仓库先读根 [README](../README.md)、[当前前沿](../RESEARCH_STATE.md)、[命题入口](../CLAIMS.md)、[失败入口](../FAILED_ROUTES.md)。随后只读所选专题；不用先通读全部旧稿、工具或协作提示词。
 
-超图每个节点有稳定 ID、数学细节、状态和来源，每条超边有联合前提、结论、类型、语句和证据位置。改动成本、目录、客户均衡、编码或量词时须新建或修订命题，并同步改动依赖边。当前结论编号见[命题登记](current/claims.md)。HTML 内嵌数据，不需要服务器；GitHub 直接预览会显示源码，下载后可在浏览器查看节点和边。
+## 文件按什么用途存放
 
-从仓库根目录运行：
+| 位置 | 里面是什么 | 如何用 |
+| --- | --- | --- |
+| [current/](current/README.md) | 当前数学定义、自足证明、反例和可复用方法 | 按各专题 README 的证明链阅读；目录位置不代表统一审查等级 |
+| [questions/](questions/README.md) | 仍未闭合的问题、候选稿及保留的已闭合问题合同 | 先看现在缺哪一步；旧探索计划不当成新任务 |
+| [reviews/](reviews/README.md) | 已实际发生的数学审查与独立攻击 | 核对冻结版本、覆盖 claim 与仍成立的异议 |
+| [weighted_congestion_frontier/](weighted_congestion_frontier/README.md) | 拥塞模型、账本、文献与协作程序 | 做数学先读模型/账本；需要协作操作时再读运行说明 |
+| [../tests/audits/](../tests/audits) 与 [../evidence/](../evidence) | 独立核验代码、输入、证书和冻结结果 | 从对应正文或资产目录进入；计算不替代一般证明 |
+| [../history/](../history/README.md) | 必要原稿、来源和已退出当前优先序的投稿判断 | 只在追溯时读；旧路线快照不覆盖现行研究状态 |
 
-    python3 research/build_map.py
-    python3 research/build_map.py --check
-    python3 research/build_crosswalk.py --check
-    python3 research/check_assets.py
+## 名称、命题与审查怎样对应
 
-第一个命令重建 HTML，后两个检查图结构、所有路径、现行稿/实现/历史来源的角色和旧入口确已退出。证明状态仍需人对数学推导负责；路径校验不会变成证明。
+每份文件的**中文数学名称与阅读目的**在 [CATALOG.md](CATALOG.md)，人工维护源为 `catalog.json`。同一文件可以包含多个命题，各自精确身份见 [current/claims.md](current/claims.md)；拥塞另有[主题账本](weighted_congestion_frontier/CLAIMS.md)。
 
-全仓文件生产、读取与分支保存规则见 [REPOSITORY_GUIDE](REPOSITORY_GUIDE.md)。加权拥塞逐文件来源分类另由 `python3 research/check_wc_assets.py --check` 核验。
+| 登记 | 它回答的问题 |
+| --- | --- |
+| [assets.json](assets.json) | 某个命题适用于什么输入，正文、实现、测试、证据和来源在哪里？ |
+| [review_status.json](review_status.json) | 来源证明、当前重构、内部审查、外部审查和实现分别到什么状态？ |
+| [graph.json](graph.json) / [交互图](index.html) | 哪些定义与全部共同前提推出结论，哪些边仅是有限检验、反例或未解限制？ |
+| [source_crosswalk.md](source_crosswalk.md) | 原始稿件怎样被当前数学解释、保留或取代？ |
+| [拥塞资产链](weighted_congestion_frontier/FILES.md) / [来源迁移记录](weighted_congestion_frontier/INTEGRATION.json) | 一个拥塞成果包怎样连接正文、审查、核验和冻结证据，原分支原件怎样恢复？ |
+
+关系图提供搜索种子。未出现在图上的方法仍可探索；状态、量词和真值以精确陈述及证明为准。
+
+## 下一步与新资产入库
+
+[当前全仓路线](ROADMAP.md)列现在值得推进的义务；[入库规范](GROWTH.md)和[生产、读取、保存规则](REPOSITORY_GUIDE.md)决定新文件的位置。给新资产写具体名称、用途、精确范围和证据层级；完成相应核验后及时保存到 `main`。
+
+从仓库根运行 `python3 research/build_catalog.py --check`、`python3 research/build_map.py --check`、`python3 research/build_crosswalk.py --check` 和 `python3 research/check_assets.py`。这些检查负责目录和登记一致，不能充当数学证明。

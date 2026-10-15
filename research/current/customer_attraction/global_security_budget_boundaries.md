@@ -1,4 +1,4 @@
-# 总去相关、激励松弛及完整 SPE 安全值支付的边界
+# 总去相关、激励松弛与全分布补偿预算的失败边界
 
 本页重构第二份用户上传研究结果，并补上由仓库既有36客户证书推出的更强失败边界。
 [上传原文](../../../history/source/notes/customer_attraction/uploaded_pro_2026-10-10/global_security_source.md)

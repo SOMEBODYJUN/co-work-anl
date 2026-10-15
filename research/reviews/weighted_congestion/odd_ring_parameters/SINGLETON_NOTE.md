@@ -1,4 +1,4 @@
-# Actual-topology upper bound when every cohort has one player
+# 奇数环单成员群组：实际游戏存在界的独立证明
 
 Status: complete internal proof in the stated subclass; independently
 reconstructed from the single-conflict state graph. This is an upper bound,

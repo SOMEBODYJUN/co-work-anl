@@ -1,4 +1,4 @@
-# R1 独立重构：对称 tree-prefix 与 DAG step 辅助模型
+# 辅助阶跃依赖模型：树与有向无环图独立重构
 
 日期：2026-10-14。贡献来源：`/root/tree_review` 子 agent 独立树重构、DAG 命题重构与定义级精确审查；DAG generalization 的问题陈述由 R1 主对话提出。本审查没有读取主对话的候选证明或 verifier。已读取本分支 MODEL、ACCEPTANCE、MODELS、PEER 以及根研究规则。
 

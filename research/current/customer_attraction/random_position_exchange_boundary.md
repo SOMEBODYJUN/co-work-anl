@@ -1,4 +1,4 @@
-# CA-RANDOM-PREFIX-EXCHANGE-NO：随机最优排列不能平均前缀席位
+# 随机最优主题排列的前缀席位交换反例（CA-RANDOM-PREFIX-EXCHANGE-NO）
 
 2026-10-10，模型为 [CAG-MODEL](model.md)。三人、三不交主题A、B、C，大小2、2、1，
 合计五名不同单位客户。下面反驳随机比较前缀的席位对称步骤，不反驳半覆盖或uniform接口。

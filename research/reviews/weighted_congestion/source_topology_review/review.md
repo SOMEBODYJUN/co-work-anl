@@ -1,4 +1,4 @@
-# R3 independent topology attack: versions 1–3
+# 完整对称两列拓扑：三个版本的还原审查
 
 Claim reviewed: **WC-R3-FULL-TOPOLOGY-REDUCTION v3**. Reviewer: R3 topology
 attack subagent. Review date: 2026-10-14. This is an internal mathematical

@@ -1,4 +1,4 @@
-# CA-THREE-REMAINING-PROFIT-5-3：任意合法背景下恰三剩余玩家的利润界
+# 任意合法背景下恰三名剩余玩家的利润界（CA-THREE-REMAINING-PROFIT-5-3）
 
 **版本与状态：** 2026-10-10，完整自包含代数证明，独立内部审查通过。
 本稿扩展 [三人根锐界](three_player_sharp.md) 的真实回复恒等式，精确算术审计已通过；

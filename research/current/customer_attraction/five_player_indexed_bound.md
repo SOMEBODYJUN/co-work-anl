@@ -1,4 +1,4 @@
-# CA-FIVE-INDEXED-UPPER：五人真实索引最优偏离的 2.061695 上界
+# 任意目录五人的索引最优偏离福利界（CA-FIVE-INDEXED-UPPER）
 
 版本：2026-10-10。直接节点推导、完整精确主审计已完成；独立精确审计完成；没有外部同行评审记录。本条保留旧 [CA-FIVE-REPLY-UPPER](five_player_reply_bound.md)，使用新的 claim 身份。
 

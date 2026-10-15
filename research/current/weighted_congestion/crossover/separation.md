@@ -1,4 +1,4 @@
-# A finite-degree separation from the full symmetric two-column topology
+# 非对称十四资源例与对称两列拓扑的有限次数分离
 
 Claim: **WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1**.
 
@@ -26,14 +26,14 @@ to rational inputs in the symmetric-topology upper bound.
 ## Proof and dependencies
 
 The source formula-(3) supremum satisfies F_32<=89/50 by the complete
-[real-parameter elimination and Bernstein proof](../source_degree32/PROOF.md).
+[real-parameter elimination and Bernstein proof](../source_degree32/symmetric_source_interval_certificate.md).
 That proof reduces a putative strict violation to n<=55, then proves the
 necessary polynomial negative on every corresponding real closed interval.
 The intervals are not sampled: all Bernstein coefficients on each covering
 leaf are strictly negative integers after positive rescaling.
 
 The previously frozen
-[full topology reduction v3](../source_topology/proof.md) gives
+[full topology reduction v3](../source_topology/symmetric_two_column_reduction.md) gives
 T_32<=max{rho,F_32}, where rho=(1+sqrt(3))/2. To check the constant comparison
 without rounded radicals, t=89/50>1 and 2t(t-1)=3471/1250>1, while
 rho is the unique root above 1 of 2x(x-1)=1. Hence rho<t.

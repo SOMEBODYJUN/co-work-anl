@@ -1,4 +1,4 @@
-# SC-K-2-E: a uniform factor two for every number of facilities
+# 任意设施数因子二存在性的完整证明
 
 **Version:** 1, 2026-10-02. **Status:** complete internal proof, accompanied by
 reverse reconstruction and a definition-level independent implementation.

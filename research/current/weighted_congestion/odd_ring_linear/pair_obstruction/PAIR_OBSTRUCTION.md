@@ -1,4 +1,4 @@
-# R1 odd-cycle pair-resource obstruction
+# 双人资源互补网络：显式势函数保证二倍均衡
 
 ## Claim R1-PAIR-2PNE v1
 

@@ -1,4 +1,4 @@
-# 全仓成果的投稿层级评估：2026-10-06
+# 设施选址全成果的贡献、优先权与投稿组合：2026-10-06 历史评估
 
 基线为实际克隆的 `main@c517c82a01bd54667fec5a6a11fd1018dcf54d44`。本轮核对根入口、全部现行命题登记与五轴状态，重点审读双设施 φ 证明接口、五地点全归约、全 k 因子 2、全长单交叠 ρ 和原子—Wardrop 工具。四位 GPT-6 Astra ultra 审查者独立负责文献、主证明、成果组合与期刊适配，主证明审查另有条件算法复核。不是全部命题逐行重新证明，不是外部同行评审或绝对优先权认证。
 
@@ -21,7 +21,7 @@
 | 精确谱、DP/MITM、实例最优/FPT、同址正规形、小目录常数 | 有完整可复现的结构与数值工具，支撑主理论并识别可算范围。 | 指数求解不能冒充普遍多项式算法；三、四地点尖锐界有结构价值，五地点 φ 下界复用既有构造。 |
 | 条件离轨接口、特殊图类与选择器反例 | 给定合适在轨状态可高效完成离轨，部分结构可高效产生该状态；明确哪些选择策略会失败。 | 一般在轨选择未解。指定 oracle 的 NP 难不等于因子2搜索困难；许多条件命题相加不等于一般算法。 |
 
-核心证明：[φ](current/shared/proof.md)、[五地点归约](current/shared/five_site_exact_hardness.md)、[全 k 因子2](current/multi_facility/uniform_two.md)、[全长ρ](current/heterogeneous/sparse_unbounded_rho.md)、[原子—Wardrop](current/local_and_exact/atomic_wardrop_gap.md)。
+核心证明：[φ](../../../../research/current/shared/proof.md)、[五地点归约](../../../../research/current/shared/five_site_exact_hardness.md)、[全 k 因子2](../../../../research/current/multi_facility/uniform_two.md)、[全长ρ](../../../../research/current/heterogeneous/sparse_unbounded_rho.md)、[原子—Wardrop](../../../../research/current/local_and_exact/atomic_wardrop_gap.md)。
 
 **五地点结果应比旧评估获得更高权重。** 原 IJCAI 困难性归约使用随输入增长的设施数和异构目录；本库归约把布局压到固定25个，并保留完整混合客户 NE 量词。它与 φ 算法是同一个核心模型，说明困难可以来自客户均衡选择，而非巨大的设施布局空间。这不只是把旧归约的地点数缩小。
 

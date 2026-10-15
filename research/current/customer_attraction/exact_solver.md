@@ -1,4 +1,4 @@
-# CA-EXACT-PURE-SPE-ALL：有限纯 SPE 终局全集与完整策略证书
+# 有限纯 SPE 终局全集与完整策略证书（CA-EXACT-PURE-SPE-ALL）
 
 ## 模型及陈述
 

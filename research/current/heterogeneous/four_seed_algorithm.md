@@ -1,4 +1,4 @@
-# 四种子纯算法：构造、量词与证书
+# 异构目录因子二候选的四种子纯均衡算法
 
 状态：按现行主稿与实现重写；通用完备性仍待独立重构。源：[主稿](../../../history/source/manuscripts/heterogeneous/main.tex) §4 `lem:preserve`、`lem:four-seed`，§6 `thm:two`；[实现](../../../facility_spe/heterogeneous_two.py) `make_menu`、`solve`、`verify`；[局部实现](../../../facility_spe/local/pure.py) `guarded_repair`。模型见[总览](README.md)。
 

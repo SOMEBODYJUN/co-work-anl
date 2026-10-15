@@ -1,4 +1,4 @@
-# R1 directed odd-ring certificate
+# 有向奇数环：资源策略与正系数闭环接口
 
 Status: candidate construction with a complete local coefficient interface; independent review is in progress. This file is not a claim of priority. Model: WC-TARGET v1. Mathematical contributors: R1 root, R1/odd_cycle, and R1/odd_cycle/pair_obstruction. Requested research configurations are recorded by the coordinating R1 session; this note does not infer a runtime model identity.
 

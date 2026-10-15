@@ -1,4 +1,4 @@
-# 任意交替环：四种子完备性的关键证明
+# 四种子候选算法的任意长度交替回应环论证
 
 这份说明重写核心推导，保留严格不等式、菜单量词及合法性条件。状态为内部研究候选，待独立重构。来源：[主稿](../../../history/source/manuscripts/heterogeneous/main.tex) §5 `lem:heavy`、`lem:allcycles`、式 `eq:badedge` 至 `eq:penultimate-private`；历史较大菜单版见 [universal_two_prior](../../../history/proofs/heterogeneous/universal_two_prior.md) §§3–6。先读[四种子算法](four_seed_algorithm.md)。
 

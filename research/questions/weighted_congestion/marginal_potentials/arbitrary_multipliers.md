@@ -1,4 +1,4 @@
-# R1: finite multiscale obstruction with arbitrary player multipliers
+# 任意玩家乘子势：有限多尺度边际夹逼障碍候选
 
 Date: 2026-10-14. Originator: internal `attack_sandwich` agent, requested configuration `gpt-6.1-sol / ultra`; independent reconstruction by R1 upper-mechanism agent. This is an additional mechanism claim. It does not change the scope of `WC-R1-SANDWICH-BARRIER v1` in the frozen `proof.md`.
 

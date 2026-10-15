@@ -1,4 +1,4 @@
-# OC-INTERFACE-BARRIER-v1
+# 奇数环正系数接口：渐近放大能力的上限
 
 Status: proved algebraic obstruction for the sufficient coefficient interface, pending independent review. Contributor: R1/odd_cycle. Scope is exactly the inequalities of OC-INTERFACE-v1 in `README.md`; this is not an existence theorem for all games in that architecture, and not a universal upper bound for WC-TARGET.
 

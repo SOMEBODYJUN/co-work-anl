@@ -1,4 +1,4 @@
-# Computing the arbitrary-k factor-two witness: two separated obligations
+# 因子二位多项式构造的算法族、接口与障碍
 
 Version 1, 2026-10-02, with conditional construction and selection-rule
 obstructions added 2026-10-03. The target is the **same** common-catalog, labeled-facility,

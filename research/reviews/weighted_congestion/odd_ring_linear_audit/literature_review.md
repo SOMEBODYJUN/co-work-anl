@@ -1,4 +1,4 @@
-# WC-TARGET v1: literature collision audit for the odd hub/cohort ring candidate
+# 奇数环下界：文献基线与机制碰撞检索记录
 
 Audit date: 2026-10-14 UTC. Author: internal literature-audit subagent of R1.
 Status: primary-source baseline checked; no stronger nonexistence collision found in this focused search. This is a search result, not a certification of novelty or completeness. Mathematical validity of the candidate is a separate obligation.

@@ -1,4 +1,4 @@
-# R3 independent literal crossover audit
+# 四玩家十四资源非对称构造：三十二次全状态证书
 
 Audit date: 2026-10-14 UTC. No search implementation or reported floating point factor was used by the verifier. The audit independently rebuilt the game directly from the seven masks, positive rational weights, and fourteen resource latency functions supplied for review.
 

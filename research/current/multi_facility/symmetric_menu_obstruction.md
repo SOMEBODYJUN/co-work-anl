@@ -1,4 +1,4 @@
-# SC-K-SYMMETRIC-MENU-OBSTRUCTION
+# 对称续局菜单的无界假威胁反例
 
 **Version 1, 2026-10-02. Status:** proved internally by the argument below;
 independently implemented exact regressions accompany it. This is a failed-menu

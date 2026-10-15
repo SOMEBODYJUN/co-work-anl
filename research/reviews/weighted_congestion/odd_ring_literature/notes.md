@@ -1,4 +1,4 @@
-# Odd cyclic hubs 文献核对（R3 内部文献任务）
+# 奇数环与异权群组：多项式拥塞文献核对
 
 核对时间：2026-10-14 UTC。任务范围是 WC-TARGET v1 的 degree-dependent 存在/非存在因子及 odd cyclic hubs、unequal cohorts 的机制参照。本文是有限检索审计，不是新颖性证明；未修改正式 claim 状态。
 

@@ -1,4 +1,4 @@
-# Independent reconstruction of the sharp source-parameter asymptotic
+# 文献两攻击公式：参数上确界的锐渐近证明
 
 Reviewer: R3 internal agent `sharp_source`. Date: 2026-10-14 UTC.
 

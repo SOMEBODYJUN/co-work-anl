@@ -2,6 +2,8 @@
 
 本仓库保留三个数学模型，分别维护定义和量词。当前主要研究方向是**加权原子拥塞博弈的普遍近似纯均衡门槛**。新对话以本仓库为准，旧对话、公屏和交接副本不再作为研究状态来源。
 
+**从这里查研究资产：[按问题进入研究总目录](research/README.md) · [全部中文资产名、路径与用途](research/CATALOG.md) · [当前未解义务](research/ROADMAP.md)。** 各专题入口给出证明链与阅读顺序；具体文件区分数学正文、候选、反例、独立审查、程序和冻结证据。
+
 ## Research Goal / Research Frontier
 
 加权拥塞的目标是刻画非负系数、次数至多 d 的多项式费用下的普遍存在阈值 a_*(d)。已收录的团队一般证明给出奇数环下界 T_d∼d/ln d；已核对文献给出普遍上界 d。**主目标仍开放：缺少匹配的全类存在上界，或超出现有强制偏离证书的新下界机制。**全球优先权与外部同行评审尚未认证。
@@ -43,6 +45,8 @@
 | 完整路径 | 内容、作用与读取时机 |
 | --- | --- |
 | README.md、RESEARCH_STATE.md、CLAIMS.md、FAILED_ROUTES.md | 全仓稳定地图、当前前沿、精确命题入口、失败范围；新对话首先读取 |
+| [research/README.md](research/README.md) | 按数学问题分流的研究总目录；先选模型，再沿专题阅读顺序进入具体资产 |
+| [research/CATALOG.md](research/CATALOG.md)、research/catalog.json | 全部现行数学正文、问题、审查及已整合拥塞核验资产的具体中文名称、完整路径与阅读用途；JSON 是人工命名源，Markdown 由程序生成 |
 | research/GROWTH.md | 原有入库规范：证明、问题、代码、测试、输入、证据和历史材料的归属；写文件前执行 |
 | research/REPOSITORY_GUIDE.md | 全仓生产状态、读取顺序、施工与上传、分支收口及交流规则 |
 | research/weighted_congestion_frontier/README.md | 当前协作入口；连接数学、启动程序和按需读取路径 |

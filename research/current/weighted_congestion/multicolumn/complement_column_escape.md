@@ -1,4 +1,4 @@
-# A sharp obstruction to the complementary multicolumn extension
+# 互补多列拓扑：二倍近似均衡与三列锐性
 
 Claim ID: **WC-R1-MULTICOLUMN-2-v1**. Date: 2026-10-14.
 

@@ -1,4 +1,4 @@
-# CA-TERMINAL-REPLY-DUAL-LIFT：末回复规范化的显式 dual 提升
+# 末回复规范化的条件性对偶提升与有向无环转移（CA-TERMINAL-REPLY-DUAL-LIFT）
 
 **版本与状态，2026-10-10。** 本页给任意人数的条件性证书提升定理、转移图的
 DAG 不变量及不对称收益预算。直接代数证明与独立内部 Fraction 审查完成；没有

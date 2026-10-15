@@ -1,4 +1,4 @@
-# CA-INDIVIDUAL-SECURITY-NO：34单位客户否定逐人混合安全值保底
+# 三人完整 SPE 中逐人混合安全值保底的反例（CA-INDIVIDUAL-SECURITY-NO）
 
 **范围与状态，2026-10-10。** 本页给 [CAG-MODEL](model.md) 的三人、六主题、
 34名不同单位客户及一份完整有序历史纯SPE。全部离轨比较与静态原始/对偶经两路

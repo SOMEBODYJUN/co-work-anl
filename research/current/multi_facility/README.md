@@ -1,273 +1,89 @@
-# Common-catalog arbitrary-k branch
+# 任意设施数共同目录：因子二存在、有限构造与高效算法前沿
 
-## Complement search: a faithful interface, not an equilibrium solver
+研究对象是任意数量带标签设施共享同一有限位置目录、正权原子客户及完整精确客户续局。主证明在途允许同址设施内独立均匀混合，离轨允许不对称纯客户均衡；不能强制两侧使用同一对称菜单。精确条件成本、客户可达与默认续局从 [模型](model.md)读取。
 
-[SC-K-COMPLEMENT-GREEDY-REDUCTION / SC-K-BOX-BOUNDED-COMPLEMENT](complement_search_reduction.md)
-realize co-singleton affine games at true canonical greedy layouts without
-multiplicity amplification. Every legal target state obeys the box and strict
-H, so no home return occurs; deviations and the specified dynamics correspond.
-Two speeds `1,2` give an ordinary source-bit polynomial search reduction.
-General binary q compilation counts explicit `k=1+sum(q)`; the separate
-bounded-complement import does not expand q and keeps its output bands.
-This diagnoses search structure without a general solver or hardness result.
+本分支已给**所有设施数的因子二存在性**和**任意规范贪心占位的完整盒均衡有限构造**。一般二进制有理输入的位多项式构造仍开放；最佳普遍常数仍未确定。证明完成度、内部审查、代码与外审彼此分开；外部同行评审和包括未取得的后续学位论文在内的优先权核查尚未完成。
 
-Run `python3 -m multi_facility_spe.complement_reduction examples/multi_facility/complement_source_two_speed.json --output compiled_search.json`.
-The output is an instance/interface, not an NE. Scope, corrections, independent
-exact checks and the freely chosen-method handoff are in the
-[2026-10-08 composite review](../../COMPLEMENT_REDUCTION_AUDIT_2026-10-08.md).
+## 主要结论与证据状态
 
-## Equal movable weights: unrestricted flow and a canonical implementation
+| 成果 | 精确结论与证明链 | 证据及实现边界 |
+| --- | --- | --- |
+| SC-K-2-E | 全局字典序极大 → 精确在轨 NE 与转移预算；结合原子装箱、离轨上界和完整续局，得所有 k 的因子二 | 完整内部证明、逆向重构和精确独立检查；有限构造不等于多项式算法 |
+| SC-K-GREEDY-BOX-EXISTS / FINITE-2 | 重客户与单选客户冻结；交错阈值截断负载和归家计数势控制改善与修复微步，完整盒始终存在精确 NE | 独立内部审查完成；一般终止步数未证多项式；不留轨迹时有限实现用多项式空间 |
+| SC-K-BOX-STRUCTURED-POLY-2 | 全盒存在性加个体关联 DP 或局部权值 DP，再接 BOX-TO-2 | 固定参数类的数学位多项式构造；DP 与导入的多项式离轨调度器尚无规范实现；旧命题保留原范围 |
+| 等重轻客户流 | 无约束全局势极小自动满足完整盒与 H；与旧下盒流的优化解集相同 | 规范 Bellman–Ford 在轨选择器已有完整位界，拒绝不等可移动轻权；实际 CLI 离轨/默认仍有限改善 |
+| 一般高效构造 | 已分离在轨选择、离轨补全、全局优化困难和局部 PLS 搜索 | 全局字典序或精确盒势最优困难不证明找任意因子二证书困难；一般输入问题保持开放 |
+| 共单例保真接口 | 共单例仿射游戏实现于真实贪心盒；所有合法状态自动保盒、严格保 H，并保留偏离与指定动力学 | 两速度有普通源位多项式搜索归约；一般重数显式计入设施数，抽象有界输出带另论；不是求解器或困难性结论 |
 
-[SC-K-EQUAL-LIGHT-FLOW-BOX](equal_light_flow.md) proves that every unconstrained
-global potential minimizer automatically obeys the full box and `(H)`.
-The equal-unit home paths remove the lower-bound constraints from the older
-`SC-K-UNIFORM-LIGHT-FLOW-2` selector; the original-model input class and the
-unit-augmentation principle were already covered there. The new note proves
-the exact identity and equality of the two optimizer sets, and supplies a
-canonical Bellman--Ford implementation with complete bit bounds.
+## 按数学成果族阅读
 
-Run `python3 -m multi_facility_spe examples/multi_facility/equal_light_flow_complete.json --method equal-light-flow --output equal_flow_certificate.json`.
-The on-path selector is bit-polynomial and rejects unequal movable weights;
-the connected executable still uses finite pure improvements off path and
-at default layouts. Its mathematical factor-two corollary uses the existing
-polynomial off-path interface. General unequal-weight bit-polynomial time
-remains open. A strict greedy example shows why arbitrary customer NE cannot
-replace global minima even in the equal-weight class.
+1. 理解普遍因子二：读 [模型](model.md) → [统一存在证明](uniform_two.md) → [逆向审查](reverse_review.md)。丢失单设施源地点的客户必须保留，不能删掉 orphan-aware 预算。共同目录双设施下界仅因本类包含双设施而给普遍下界端；当前最佳常数处于 φ 与二之间。
+2. 做一般高效算法：读 [算法前沿](polytime_frontier.md)与[贪心全盒有限构造](greedy_box_global_progress.md)，再按输入结构选流、DP、类型压缩、星或链。新版普遍全盒存在已取代旧深度二/两选项存在性假设；这些旧证明和快算法仍各自保留。
+3. 改离轨补全：先读 BOX-TO-2 与单设施原池重置，再读 [自适应重置](adaptive_reset_floor.md) 和 [冻结超载](frozen_overload_completion.md)。后者允许静止设施超出偏离者上界，不要求全局统一 cap。
+4. 判断某条路线是否被反例排除：先查固定占位、对称菜单、深度三势、盒内字典序和混合相关链的准确障碍，再选其他占位或证书。它们没有否定全盒存在性，也没有给一般搜索困难性。
 
-## Universal greedy full-box existence and finite construction (2026-10-07)
+## 全部分支数学正文
 
-[SC-K-GREEDY-BOX-EXISTS](greedy_box_global_progress.md) closes full-box exact site-pure/within-site-uniform customer NE existence at every canonical greedy occupancy, with heavy and singleton-option customers frozen. The interleaved threshold-clipped load and home-return-count potential strictly increases at every authorized improvement and return microstep. Arbitrary strict improvement choices followed by the specified repair therefore terminate, preserving `(H)` at batch boundaries; a deterministic finite exact implementation uses polynomial space when it does not retain its trace. The general number of steps is not proved polynomial.
+| 中文资产名 | 文件 | 数学内容与读取时机 |
+| --- | --- | --- |
+| [任意设施数共同目录的模型与完整续局量词](model.md) | `model.md` | 固定带标签设施、真实条件成本、同址独立均匀随机化和默认续局；所有多设施结论的定义入口。 |
+| [任意设施数因子二及算法边界的精确命题账本](claims.md) | `claims.md` | 逐项给命题身份、依赖、证据与范围；区分普遍存在、有限构造、结构类多项式算法和障碍。 |
+| [任意设施数因子二存在性的完整证明](uniform_two.md) | `uniform_two.md` | 以全局字典序极大、转移预算、原子装箱及离轨精确均衡组装完整续局；不声称一般多项式构造。 |
+| [因子二存在证明的逆向重构与实质异议审查](reverse_review.md) | `reverse_review.md` | 从目标离轨上界反推证明义务，记录独立实现证据和异议；不等于外部同行评审。 |
+| [任意规范贪心占位的完整盒均衡与有限构造](greedy_box_global_progress.md) | `greedy_box_global_progress.md` | 交错阈值势与归家计数证明完整盒总有精确客户 NE，修复过程有限终止；一般步数无多项式界。 |
+| [因子二位多项式构造的算法族、接口与障碍](polytime_frontier.md) | `polytime_frontier.md` | 分开在轨选择与离轨补全；集中登记全局优化困难、PLS 局部搜索、贪心预算、重数类算法及具体反例。 |
+| [等重可移动轻客户的无约束流均衡构造](equal_light_flow.md) | `equal_light_flow.md` | 证明无约束全局势最小解自动保完整盒和 H，给规范 Bellman–Ford 实现与位界；不同轻权仍开放。 |
+| [盒均衡的客户类型压缩与参数化精确算法](type_compression.md) | `type_compression.md` | 以目录和权值类型压缩客户状态，给固定参数选择及有界目录、权值多样性的 XP 因子二构造。 |
+| [有界关联树宽与客户度的盒均衡动态规划](bounded_incidence_box.md) | `bounded_incidence_box.md` | 在固定个体关联树宽和双侧客户度下精确选择完整盒 NE；站点邻接有界不能替代个体度约束。 |
+| [站点树宽与局部权值多样性下的盒均衡动态规划](local_weight_box_dp.md) | `local_weight_box_dp.md` | 固定站点 primal 树宽和每站点关联轻权种类时给精确位多项式选择；每条边客户数可无界。 |
+| [开站有向轻图深度至多二的盒均衡存在性](height_two_box.md) | `height_two_box.md` | 覆盖分叉、汇合和不等轻权；给存在论而非一般多项式受限势选择器，后由全盒定理扩展。 |
+| [三站不等轻权开站链的盒均衡存在性](three_site_chain_box.md) | `three_site_chain_box.md` | 用上游原客户池的势交换证明盒内均衡；不独立给多项式选择器。 |
+| [三轻客户汇合四站路径的有界步盒均衡构造](converging_path_box.md) | `converging_path_box.md` | 在汇合点下盒紧等条件下给有限步构造，处理非单向链取向；与后续四步扩展分别保留。 |
+| [汇合四站轻路径的四步严格改善构造](converging_four_moves.md) | `converging_four_moves.md` | 在每边一名轻客户条件下移除旧构造的汇合点紧等与部分重数相等假设。 |
+| [指向晚开中心的不等轻权星形盒均衡算法](inward_star_box.md) | `inward_star_box.md` | 以队列处理朝晚开中心的轻边；容许中心任意多不同轻权，补足另一取向星形算法。 |
+| [自适应原池重置与强制客户下界的离轨补全](adaptive_reset_floor.md) | `adaptive_reset_floor.md` | 由纯均衡的强制客户 floor 放宽源删除上界，严格扩展双 LPT 识别；无全输入识别保证。 |
+| [冻结静止超载与偏离者专属上界的多项式补全](frozen_overload_completion.md) | `frozen_overload_completion.md` | 允许非偏离设施保留高负载客户，以剩余强制 floor 和保持最大值的修复完成离轨均衡。 |
+| [共单例仿射搜索到真实贪心盒的保真归约](complement_search_reduction.md) | `complement_search_reduction.md` | 保留重数、偏离和指定动力学；两速度有源位多项式归约，一般输出带区间另论，不提供通用求解器。 |
+| [混合设施重数不能直接当作相关并行链速度](restricted_related_link_boundary.md) | `restricted_related_link_boundary.md` | 对比真实条件成本与相关链成本并给整数不一致例；正确共单例接口不等于一般复杂度下界。 |
+| [固定字典序极大占位本身可逼近因子二](lexmax_boundary.md) | `lexmax_boundary.md` | 即使改选全部客户均衡和离轨续局，该选定占位仍可接近因子二，而另一占位有精确 SPE。 |
+| [对称续局菜单的无界假威胁反例](symmetric_menu_obstruction.md) | `symmetric_menu_obstruction.md` | 全重数族使对称菜单威胁无界但原模型最优倍率为一，排除把菜单受限失败当作模型下界。 |
+| [深度三贪心树击败完整盒势最小选择器](depth_three_box_boundary.md) | `depth_three_box_boundary.md` | 给盒内均衡存在但特定受限势选择器失败的严格实例；不反驳贪心盒普遍存在性。 |
+| [完整盒内字典序极大分配未必是客户均衡](boxed_lexmax_boundary.md) | `boxed_lexmax_boundary.md` | 给严格贪心输入的特定字典序选择反例，限定在轨选择器而非一般因子二目标。 |
 
-`SC-K-GREEDY-BOX-FINITE-2` joins this on-path constructor to BOX-TO-2. Run `python3 -m multi_facility_spe examples/multi_facility/greedy_box_global.json --method greedy-box --output greedy_box_certificate.json`. The connected executable uses the existing finite pure best responses for actual deviations and the default rule; it does not implement the published polynomial off-path scheduler.
+## 高效算法族之间的关系
 
-The versioned `SC-K-BOX-STRUCTURED-POLY-2` now combines universal feasibility with either existing [individual-incidence DP](bounded_incidence_box.md) or [local-weight site-primal DP](local_weight_box_dp.md), and then BOX-TO-2. Each fixed-parameter class has a complete bit-polynomial mathematical construction without the earlier two-option or depth-two hypotheses. Old claim IDs keep their stated scopes. These DP algorithms and the imported polynomial scheduler still lack canonical implementations.
+[算法前沿](polytime_frontier.md)集中保留等重数、全异址、分量等重数、跨重数 range 检查、两站混合重数、all-or-one、嵌套锚、锚星、单向路径、原池重置及双 LPT。它们是不同充分条件，不可去掉条件后拼成一般算法：
 
-The source is the proof text pasted into this conversation, preserved as an attributed extraction; its linked ZIP was not obtained. Current reconstruction and independent internal review are complete, finite code checks are separate, and external review is unrecorded.
+- 等重数分量可导入受限相同链 Nashification；全异址已有因子二，早期因子三仍按历史身份保留。跨重数 range 证书放宽旧单站分量限制，容许部分轻客户跨重数。
+- 两站不等重数分量用一次降权遍历；all-or-one 允许每个客户仅一个或整个分量的选项；嵌套锚再允许真正部分交叠，但逆序选项会击败无约束 list 规则，仍可能另有 NE。
+- 等轻权流覆盖任意部分交叠与混合重数；普通下盒势直接扩到不等轻权会溢出上盒。星边、单向路径及汇合四步算法覆盖其他明确子类，不能由结构名猜测它们互相包含。
+- 个体关联 DP 同时约束树宽与双侧个体度；局部权值 DP 约束站点 primal 树宽与每站点轻权种类，允许每边任意多客户。类型压缩另给参数化精确选择和有界目录/权值种类的 XP 构造。
+- 单设施源重置使任何已供给的完整盒在轨 NE 都能接多项式离轨补全，无需旧 singleton 私有储备。自适应强制客户 floor 严格扩大原双 LPT 测试；冻结静止超载又扩大只管全局 cap 的接口。识别所有输入的有效证书仍无证明。
 
-## Deviator-specific completion beyond global caps (2026-10-04)
+## 反例的准确否定范围
 
-[Frozen stationary overloads](frozen_overload_completion.md) permit a non-deviating facility to keep several clients above the deviator's cap. Residual pure forced-client floors prevent these clients from leaving; maximum-preserving restricted-link Nashification repairs the remaining seed in bit-polynomial time. This strictly extends the isolated-macro/global-cap interface: the existing cap-41 obstruction passes by freezing E's load 44. The complete-continuation corollary accepts any supplied exact on-path NE plus successful certificates for every labeled deviation. Finding these certificates and a compatible on-path NE in bit-polynomial time on all inputs remains open.
+固定字典序极大占位可在所有客户均衡选择下逼近二，而另一占位有精确 SPE；因此亚二证明须允许改占位。标量装箱的等重饱和也只限制该接口。对称续局可制造无界表观威胁，却不妨碍原模型精确 SPE。
 
-**File map:** `frozen_overload_completion.md` contains the exact residual/frozen partition, cross-region best-response tests, polynomial completion proof, strict cap-obstruction separation, zero-payoff and complete-continuation cases. Read it before insisting all stationary loads must fit the deviator's cap; its canonical exact fixture audit is `tests/audits/kfac_frozen_overload.py`.
+贪心修复的任意严格改善、最重改善优先、仅向更低重数移动、固定占位字典序最大及精确势全局最小，都有各自严格反例。某些坏在轨 NE 令真实偏离在所有混合离轨 NE 中超过二，但同一占位仍有其他好 NE；因此这些证据排除具体选择器。静态原站装箱的失败要求允许跨站重排，不能称为贪心占位失败。深度三和盒内 lexmax 反例同理。
 
-## Exact interface boundary for mixed multiplicities (2026-10-04)
+混合重数的真实条件为 `(W_t−w_i)/q_t ≤ W_v/q_v`，不同于把 `q_t` 当相关链速度的公式；整数差异与文献适用边界见[专页](restricted_related_link_boundary.md)。[共单例归约](complement_search_reduction.md)给正确替代接口，但没有一般求解器。
 
-[混合设施重数与受限相关并行链边界](restricted_related_link_boundary.md) fixes the remaining selector interface as
-\((W_t-w_i)/q_t\le W_v/q_v\). Equal multiplicities reduce exactly to the published restricted-identical-link
-Nashification interface. A direct substitution of site multiplicities as related-link speeds is false; the
-integer mismatch witness and the literature boundary are recorded in the note and its exact audit
-`tests/audits/restricted_related_formula.py`. This is a reusable obstruction to an incorrect import, not a
-hardness theorem and not a solution of the mixed-q selector.
+## 规范程序、冻结证据与复核入口
 
-## Adaptive reset and exact selector boundaries (2026-10-04)
+规范包为 [multi_facility_spe](../../../multi_facility_spe)，核心 [two_exists.py](../../../multi_facility_spe/two_exists.py) 与 [CLI](../../../multi_facility_spe/__main__.py) 不改变双设施 API。普遍定理的实装和论文导入子程序分开：`greedy-box` 及 `equal-light-flow` CLI 的实际离轨和默认续局使用有限纯改善，尚未实装文献多项式调度器。
 
-[Adaptive original-pool reset and forced-client floors](adaptive_reset_floor.md) extend the conditional polynomial factor-two construction: a certified **pure** equilibrium's forced-client floor can justify a larger source deletion cap than `2 gamma`. The double-LPT recognition test strictly includes its predecessor; an exact triangle instance and [finite audit](../../../tests/audits/kfac_adaptive_reset.py) separate them. The imported polynomial scheduler has no canonical local implementation, and no all-input recognition guarantee is proved.
+从仓库根运行下列命令，输出写入新文件，勿覆盖冻结证据：
 
-Two independent [depth-three boxed-potential](depth_three_box_boundary.md) and [boxed lexmax](boxed_lexmax_boundary.md) counterexamples show that specific fixed-occupancy selection rules can choose a customer non-equilibrium even when a boxed equilibrium exists. Each has a self-contained exact audit. They continue to obstruct those particular selectors. General boxed-NE existence is now settled by SC-K-GREEDY-BOX-EXISTS; the arbitrary-k all-input bit-polynomial construction remains open.
+```sh
+python3 -m multi_facility_spe examples/multi_facility/greedy_box_global.json --method greedy-box --output greedy_box_certificate.json
+python3 -m multi_facility_spe examples/multi_facility/equal_light_flow_complete.json --method equal-light-flow --output equal_flow_certificate.json
+python3 -m multi_facility_spe.complement_reduction examples/multi_facility/complement_source_two_speed.json --output compiled_search.json
+```
 
+第三条输出是实例/搜索接口，不是 NE。[共单例复合审查](../../reviews/facility/complement_search_reduction.md)记录范围和更正；[等权流审计](../../reviews/facility/equal_weight_light_customer_flow.md)与[因子二证明审查](../../reviews/facility/arbitrary_facility_factor_two.md)分别记录实际增量与内部攻击。
 
-## Latest conditional advances (2026-10-04)
+[定义级检查](../../../tests/multi_facility/definition_check.py)直接重算条件成本；[构造审计](../../../tests/multi_facility/run_exact_audit.py)与[不导入构造器的逆向审计](../../../tests/multi_facility/run_reverse_audit.py)分别核对输出和有限小域全部 lexmax 平局/纯 NE。[冻结构造结果](../../../evidence/runs/kfac_two_exact.json)与[逆向结果](../../../evidence/runs/kfac_two_reverse.json)不作为普遍证明前提。
 
-The [site-primal local-weight DP](local_weight_box_dp.md) decides the frozen-heavy full-box customer NE problem in input-bit-polynomial time when primal treewidth and the number of distinct incident light weights per site are fixed. It allows arbitrarily many clients per edge; paired with the height-two existence theorem and BOX-TO-2, it gives a complete conditional factor-two constructor. The [inward-star queue algorithm](inward_star_box.md) handles the opposite orientation from the earlier anchored-star algorithm, with arbitrarily many distinct light weights at the late center. The [exact boxed-potential hardness proof](polytime_frontier.md#sc-k-box-potential-strong-hard-exact-boxed-potential-optimization) blocks global potential optimization as a generic selector, while leaving the full factor-two construction problem open. These three claims are separately scoped in the [branch ledger](claims.md).
+各专题还有 [自适应重置审计](../../../tests/audits/kfac_adaptive_reset.py)、[冻结超载审计](../../../tests/audits/kfac_frozen_overload.py)、[混合重数公式审计](../../../tests/audits/restricted_related_formula.py)、[星形审计](../../../tests/audits/kfac_star_edges.py)、[不等轻权势审计](../../../tests/audits/kfac_two_light_potential.py)及[贪心 cap 审计](../../../tests/audits/kfac_greedy_cap.py)。严格分离实例包括[双 LPT 三角形](../../../examples/multi_facility/greedy_double_lpt_triangle.json)、[星边输入](../../../examples/multi_facility/greedy_star_edges.json)及[两不等轻权势输入](../../../examples/multi_facility/greedy_two_light_potential.json)；修复顺序/最重改善见 examples/multi_facility 中相应输入及算法前沿。有限精确运算不会证明子类算法的普遍定理。
 
-The [individual-incidence bounded-width and bounded-degree selector](bounded_incidence_box.md) exactly decides boxed site-uniform NE at a greedy occupancy in input-bit-polynomial time for fixed treewidth `tau` and two-sided individual-client degree `d`. It replaces an unbounded potential search by a finite-domain CSP; paired with the independent [height-two directed-graph existence theorem](height_two_box.md), it yields a complete polynomial factor-two continuation on their intersection. Its original theorem is a decision method on other sparse incidence graphs; the new SC-K-BOX-STRUCTURED-POLY-2 uses universal feasibility to make it a total constructor throughout its fixed-parameter class. For the treewidth conversion, bounded site adjacency without bounding the number of individual light clients is insufficient. This reconstructed 2026-10-04 claim has no canonical implementation or external review.
-
-[Reset-pool completion and double LPT](polytime_frontier.md#sc-k-reset-pack-interface-reset-based-off-path-completion-beyond-the-box) give a bit-polynomial complete factor-two witness whenever two deterministic packings of each original greedy customer pool pass explicit tests. The constructed pure customer equilibrium may exceed a site's old greedy upper box; a [triangle instance](../../../examples/multi_facility/greedy_double_lpt_triangle.json) verifies this strict distinction. A separate [directed light-path algorithm](polytime_frontier.md#sc-k-path-edge-light-greedy-2-directed-light-paths) covers edgewise equal but mutually unequal light weights on P4 and longer paths. [Type compression](type_compression.md) gives fixed-parameter exact box-NE selection and an unconditional XP factor-two constructor when total catalog size and weight diversity are bounded. Arbitrary-parameter bit-polynomial factor two remains open.
-
-[Three-site unequal-weight chain existence](three_site_chain_box.md) additionally proves a full-box NE by an upstream-pool potential exchange, without a polynomial selector.
-
-A [three-light-client converging path](converging_path_box.md) also has a bounded-step box-NE constructor under a tight lower box at its junction, covering an orientation outside the directed-path condition.
-
-[Shallow opening-directed light graphs](height_two_box.md) of longest directed path at most two edges admit a boxed client NE for arbitrary branching, merging and unequal light weights. The proof is existential: no polynomial constrained-potential selector is known. It subsumes the direct [three-site chain](three_site_chain_box.md) existence theorem, while the directed-path and bounded converging-path algorithms remain separate polynomial results.
-
-The later [four-move converging-path constructor](converging_four_moves.md) drops both tightness at A and equality of the A/C multiplicities from the seven-step version while retaining the one-light-client-per-edge condition.
-
-## Research goal and current result
-
-The earlier [anchored light-star algorithm](polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges) processes each unequal-weight light client once, selecting the minimum-load eligible leaf among descending-weight edge queues. For light overlap components that are either constant-multiplicity or anchored stars, it constructs a box NE and then a polynomial complete factor-two continuation, even with frozen heavy customers crossing components. The [strict example](../../../examples/multi_facility/greedy_star_edges.json) and [exact arithmetic check](../../../tests/audits/kfac_star_edges.py) separate this condition from previous sufficient classes. The directed-path and double-LPT results above now cover additional unequal-weight nonstar partial overlaps; the unrestricted bit-polynomial algorithm remains open.
-
-The newest [two-unequal-light-client parameter family](polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights) isolates a failed extension of the uniform-light flow proof. All lower greedy boxes remain feasible, and the initial assignment is a box NE, but their weighted-potential minimum uniquely exceeds an upper box. See the [integer input](../../../examples/multi_facility/greedy_two_light_potential.json) and [Fraction audit](../../../tests/audits/kfac_two_light_potential.py). This is a selection-rule obstruction, not a factor-two lower bound. The remaining unrestricted task permits a box-NE selector, a reset-pack certificate beyond the box, or a different occupancy mechanism.
-
-Extend the exact-customer-equilibrium, complete-continuation shared-catalog
-model from two labeled facilities to arbitrary k. `SC-K-2-E` gives a complete
-internal existence proof of a uniform factor 2 for EVERY k>=2. This answers the
-constant-existence alternative; an unbounded optimum family cannot exist under
-these exact hypotheses. The best uniform constant remains in [phi,2], using
-the existing two-facility lower result only because k=2 is included. No
-polynomial-time construction or sharp value is claimed.
-
-The separate [mathematical and direction-value audit](../../K_FACILITY_AUDIT_2026-10-02.md)
-records independent internal proof attacks and the remaining literature and
-external-review obligations. Repository regression results and Git synchronization
-are operational facts recorded at the time of integration, not proof premises.
-
-## Objects and proof map
-
-`MF-MODEL` -> finite global lexmax of site-pure, within-site independent-uniform
-profiles -> `SC-K-LEX-BUDGET` (exact on-path NE plus orphan-aware transfer budgets).
-Together with `MF-PACK-2` and `MF-PURE-CAP`, this yields a pure exact NE after
-each actual deviation with deviator load <= twice its on-path load.
-`MF-CONT-COMPLETE` then assembles one full continuation -> `SC-K-2-E`.
-
-For the **algorithmic** question, [polytime_frontier.md](polytime_frontier.md)
-strengthens the off-path step to `MF-PURE-CAP-POLY` using the published
-restricted identical-link Nashification theorem. It proves
-`SC-K-LEXMAX-STRONG-HARD` for the exact global selection oracle, while
-`SC-K-LOCAL-PLS` shows a polynomial neighborhood local maximum is enough for
-all on-path NE and transfer budgets. Neither is a polynomial algorithm for
-finding that local maximum, nor hardness of finding some factor-two witness.
-The separate `SC-K-GREEDY-BUDGET` procedure already constructs all budgets
-in polynomial time, but a four-customer input proves that fixing its layout
-and Nashifying on path can destroy those sufficient inequalities.
-`SC-K-GREEDY-UNOPENED-2` sharpens this obstruction: along strict site-level
-customer repair at the greedy layout, all loads remain above the last greedy
-score, so an unopened deviation target always satisfies the actual factor-two
-initial deviator cap. The unresolved part is packing the surviving occupied
-sites and reaching the desired on-path exact NE in bit-polynomial time.
-For the recognizable output subclass with equal occupied-site multiplicity
-`q>=2`, the latter work *does* close: site-level restricted-identical-link
-Nashification preserves both load extrema, and equal `q` makes its site NE
-an exact original-game NE. All occupied and unopened budgets then hold and
-the complete factor-two continuation is bit-polynomial
-(`SC-K-EQUAL-MULT-GREEDY-2`). When greedy occupies k distinct sites, its
-first maximum-reach site gives a persistent R/2 candidate score; the
-range-preserving import gives a bit-polynomial **factor-two** continuation
-(`SC-K-DISTINCT-GREEDY-2`), strengthening the older factor-three proof.
-The more general `SC-K-COMPONENT-MULT-GREEDY-2` permits different
-multiplicities in different customer-overlap components. Each component
-must have constant multiplicity, and a multiplicity-one component must
-be a single site. Independent site-level Nashification plus unchanged
-singleton components preserve all four budgets and give polynomial factor two.
-The newer `SC-K-RANGE-GREEDY-2` groups occupied sites by multiplicity and
-checks an explicit bound on every client's incentive to cross to another
-multiplicity class. Within each group, restricted identical-machine
-Nashification retains its initial load range. For singleton sources, a
-greedy customer-pool inequality controls a disappearing site, with the
-deviator allowed initial load up to 2a at an unopened target. This removes
-the old singleton-component restriction and admits some *light* cross-q
-clients. `SC-K-LIGHT-COMPONENT-GREEDY-2` is a simpler sufficient test;
-`SC-K-GREEDY-HEAVY-OVERLAP-2` needs no on-path repair at all.
-The newer `SC-K-TWO-SITE-COMPONENT-GREEDY-2` also handles components with
-two sites of *unequal* multiplicity. Shared clients start at the higher-q
-site; one descending-weight pass transfers only strict improvements to the
-lower-q site. A scalar load difference rules out all return moves, every
-transfer preserves the greedy load box, and a pooled-orphan identity handles
-the disappearing lower-q site. Constant-q components use the published
-scheduler. This is bit-polynomial and admits some inputs that fail the range
-certificate. The broader `SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2` permits
-arbitrarily many mixed-q sites when each client has one occupied option or
-the entire component. It inserts all-site shared clients in descending
-weight at minimum current normalized load; private reserves and the greedy
-load box close singleton-source deviations. It includes every two-site
-component and a three-site q=(3,2,1) input failing RANGE.
-`SC-K-NESTED-ANCHOR-GREEDY-2` further admits genuine partial overlaps:
-the first-opened site covers all multi-option clients and, along a
-nonincreasing-weight order, their occupied option sets expand by inclusion.
-The restricted list rule then satisfies the last-job NE inequality, while
-the common anchor alone preserves the greedy load box. Private reserves
-close disappearing-singleton budgets. A strict three-site example separates
-it from ALL-OR-ONE and RANGE; reversing two option sets makes the unrestricted
-list rule fail NE but leaves another NE. The full mixed-q partial-overlap
-bit-polynomial algorithm problem remains open.
-`SC-K-GREEDY-SINGLETON-RESET` gives a stronger off-path interface: after
-departure from an originally singleton greedy site, reset old customers
-to greedy's initial assignment and use its original q=1 pool bound. This
-constructs a pure exact deviation NE with payoff at most 2 gamma when
-the on-path facility earns at least gamma, regardless of the on-path
-customer assignment. Hence **any supplied exact site-uniform on-path NE
-in the full greedy load box** has a bit-polynomial factor-two continuation
-(`SC-K-GREEDY-BOX-TO-2`), without singleton private reserves.
-`SC-K-UNIFORM-LIGHT-FLOW-2` constructs such a box NE for arbitrary partial
-overlaps and multiplicities when all multi-option customers lighter than
-gamma have the same weight delta; other weights are arbitrary. A
-lower-bounded integral convex-cost flow gives exact NE, and reversing a
-path of equal-weight transfers proves the upper box. A strict three-site
-H--M--L chain lies outside RANGE, ALL-OR-ONE and NESTED-ANCHOR. Finding
-a box NE on general mixed-light-weight input is now possible by a finite constructor; a general bit-polynomial selector remains open.
-Outside those conditional classes, `SC-K-GREEDY-STATIC-PACK-NO` gives a
-five-site integer instance where a reachable exact on-path NE leaves a
-different surviving site too heavy for the old cap packing if customer site
-assignments are frozen. The appropriate next interface must permit cross-site
-customer reassignment or select a more robust on-path state; the example
-does not preclude a factor-two continuation.
-The related `SC-K-GREEDY-CAP-INFEASIBLE` instance adds an unopened target
-with a forced private customer and proves **no** cross-site reassignment
-can meet the old *global* ordinary cap for one deviation; nevertheless an
-exact off-path NE gives the deviator less than twice its original load.
-The next all-input method needs a deviator-specific bound that permits
-safe overload elsewhere, or a different on-path mechanism.
-The exact integer input is `examples/multi_facility/greedy_cap_obstruction.json`;
-`python tests/audits/kfac_greedy_cap.py` independently rechecks greedy,
-strict moves, on/off-path customer NE, and the forced cap obstruction.
-This finite audit does not prove the conditional algorithmic theorems.
-Two further integer witnesses (`greedy_repair_order_escape.json` and
-`greedy_heaviest_escape.json`) show that arbitrary strict repair, and even
-choosing the heaviest improving client at each step, may end at exact NEs
-where a B-to-G deviation is **forced** above factor two in every mixed
-off-path NE. Both layouts also have another reachable exact NE retaining
-the four transfer budgets. Their scripts check finite arithmetic, not a
-general theorem. Polynomial-time selection of a suitable NE on range-certificate-failing
-mixed-q components of three or more sites with partial overlaps remains open;
-SC-K-GREEDY-BOX-EXISTS now supplies a finite exact selection.
-`SC-K-DESCENT-ONLY-TRAP-NO` gives a six-client three-site chain where the
-only maximal downward-q repair path stops before reaching customer NE;
-one upward return completes it. This does not refute greedy occupancy.
-In fact, the first
-integer witness makes the fixed-greedy-layout site-uniform lexmax customer
-assignment uniquely bad (`SC-K-GREEDY-FIXED-LEXMAX-NO`). A second integer
-witness has exactly two site-uniform NEs and makes the bad one the unique
-**global minimum of the exact customer improvement potential**
-(`SC-K-GREEDY-FIXED-POTENTIAL-NO`), despite a good NE at the same layout.
-These refute two specific on-path selection rules, not greedy occupancy.
-
-The proof deliberately changes the type of continuation: on path it uses
-independent mixing inside co-location groups; off path it isolates giant atoms
-on stationary facilities and uses asymmetric pure equilibria. Requiring symmetry
-on both sides can give unbounded apparent threats even for an instance with an
-exact SPE (`SC-K-SYMMETRIC-MENU-OBSTRUCTION`).
-
-## Claim and file map
-
-| Path relative to this directory | Mathematical role and when to read |
-|---|---|
-| `model.md` | Complete arbitrary-k quantifiers, conditional actual costs and deterministic default continuation. Read before using any claim. |
-| `claims.md` | Exact identities, dependencies, limits, and evidence of the current proof and obstruction claims. |
-| `uniform_two.md` | Full theorem and all multiplicity cases; Sections 3.2 and 5.2 prevent lost clients when a singleton source disappears. Section 8 distinguishes finite construction from polynomial time. |
-| `reverse_review.md` | Reverse reconstruction from the desired off-path cap; explicit objections and independent-implementation evidence, with no claim of external peer review. |
-| `lexmax_boundary.md` | For every fixed k, the selected lexmax occupancy itself can need factor tending to 2 under all NE choices, while another layout has an exact SPE; a sub-two proof must permit different layouts. |
-| `symmetric_menu_obstruction.md` | Explicit all-q family separating unbounded symmetric-menu threat from alpha^*=1 in the full model; read before proposing any menu-only lower bound. |
-| `polytime_frontier.md` | Exact global lexmax hardness, local PLS neighborhood, greedy budgets, distinct-site and mixed-q conditional algorithms. Universal singleton reset completes any supplied box-constrained exact on-path NE; lower-bounded integral flow constructs one for arbitrary partial overlaps with equal light multi-option weights. Includes strict repair, fixed-layout selection, anchored-list and descending-only obstructions. Read before proposing a universal greedy-output customer selection rule. |
-
-Implementation: `multi_facility_spe/two_exists.py` and `__main__.py`, a sibling
-package rather than a silent modification of the two-facility API.
-`tests/multi_facility/definition_check.py` recomputes conditional costs directly.
-`tests/multi_facility/run_exact_audit.py` exercises the constructor and saved certificates;
-`tests/multi_facility/run_reverse_audit.py` never imports that constructor and enumerates all
-lexmax ties and all pure NE in its small audit domain. Frozen data are
-`evidence/runs/kfac_two_exact.json` and `kfac_two_reverse.json`.
-
-## Frontier and next decisive obligations
-
-There are two genuine residual goals: sharpen the uniform factor in [phi,2],
-and obtain a bit-polynomial construction on explicit rational input. The scalar
-packing interface cannot simply replace 2 by a smaller constant: h+1 equal
-weights saturate its bin count. That does not rule out a more informative
-allocation invariant and a different layout-selection mechanism. In fact
-`SC-K-LEXMAX-BARRIER` proves that keeping the same selected layout and changing
-only its on-path NE or off-path selection cannot give a universal sub-two bound.
-Exact global lexmax selection is strongly NP-hard, and strict-improvement
-trajectory lengths have no polynomial bound proved here. Given the selected
-on-path state, off-path capped Nashification can instead run in polynomial
-time; the local-maximum search for a sufficient on-path state is in PLS, with
-no polynomial-time solver proved.
-The conditional range certificate now includes all-distinct output and
-multi-site singleton components. The remaining algorithmic cases are
-mixed-multiplicity inputs where some customer's cross-class incentive fails
-the initial range check. The exact greedy-repair-order counterexamples
-exclude two tempting choices of on-path NE, while explicitly retaining
-another good NE at those same layouts; they do not establish greedy
-occupancy failure or complexity hardness of the full search problem.
-
-External peer review and priority against later literature, particularly the
-unavailable 2025 dissertation, remain uncompleted. The existing two-facility
-results and five-site complexity theorem retain their separate scope.
+当前全盒来源是保留归属的原证明提取，所附 ZIP 未取得；这一来源缺失不等于现行证明缺失。精确状态查[分支账本](claims.md)、[全仓命题](../claims.md)及[五轴审查](../../review_status.json)。接续任务是[一般位多项式盒内选择](../../questions/greedy_box_polytime.md)，或者改善统一常数；也可换占位、换分配不变量或只控制偏离者的新证书，现有图不是方法白名单。

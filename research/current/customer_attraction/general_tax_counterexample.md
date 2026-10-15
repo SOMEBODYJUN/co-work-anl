@@ -1,4 +1,4 @@
-# CA-GENERAL-TAX-NO：非零固定背景下的一般总税界失败
+# 实际非零背景中的一般总税反例（CA-GENERAL-TAX-NO）
 
 **2026-10-10 状态更新：** 空背景实际根总税现也由
 [CA-ROOT-TAX-NO](root_tax_counterexample.md)否定（四人61单位客户、严格差1/2）。

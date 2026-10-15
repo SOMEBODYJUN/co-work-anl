@@ -1,4 +1,4 @@
-# A precise scaling interface for the fourteen-resource construction
+# 十四资源缩权族：极限偏离锥与有限有理运输
 
 Authoring date: 2026-10-14 UTC. This is a separate derivation from the degree-32 audit. Its limiting table, general witness cone, strict endpoint, rational interval construction and uniform transport have now been independently reconstructed and attacked in `../limit_review/review.md`. External review and priority remain unverified. The calculations in `verify_limit.py` are exact evidence within their stated finite scope.
 

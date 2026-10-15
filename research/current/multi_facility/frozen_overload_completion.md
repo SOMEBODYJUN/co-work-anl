@@ -1,4 +1,4 @@
-# Frozen stationary overloads and polynomial deviator-capped completion
+# 冻结静止超载与偏离者专属上界的多项式补全
 
 Version 1, 2026-10-04. The statements below are conditional certificate
 theorems in MF-MODEL. They strengthen the global capped-seed interface;

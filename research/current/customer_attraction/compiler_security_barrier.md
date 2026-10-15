@@ -1,4 +1,4 @@
-# CA-MOBIUS-SECURITY-BIAS-BARRIER: uniform-bias compilation cannot refute the individual security bridge
+# 均匀正偏置编译的安全值差额与反例生成限制（CA-MOBIUS-SECURITY-BIAS-BARRIER）
 
 **Status and version:** 2026-10-10, self-contained universal proof; internally reviewed. External peer review and worldwide novelty are not certified.
 

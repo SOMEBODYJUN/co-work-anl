@@ -1,4 +1,4 @@
-# Universal additive ordinal rules imply a local marginal sandwich
+# 普适资源可加序势：由复制规则推出局部边际夹逼
 
 Date: 2026-10-14. Independent derivation and review by `dense_bridge/local_curl`.
 

@@ -1,4 +1,4 @@
-# Game-specific separable ordinal potentials still have a linear barrier
+# 依游戏选择的资源可分序势：线性障碍候选
 
 Date: 2026-10-14. Independent derivation by `dense_bridge/local_curl`.
 

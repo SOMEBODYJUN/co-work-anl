@@ -1,4 +1,4 @@
-# SC-K-INCIDENCE-BOX-DP: exact boxed equilibrium on sparse incidence
+# 有界关联树宽与客户度的盒均衡动态规划
 
 Version 1, 2026-10-04, with a separately versioned corollary added 2026-10-07. This reconstructs an algorithmic claim whose earlier local checkpoint was not present in the remote repository. The mathematical proof below, rather than that missing checkpoint, is the evidence for this version. It uses a standard fixed-treewidth decomposition algorithm [Bodlaender, *SIAM J. Comput.* 25 (1996), 1305–1317, DOI 10.1137/S0097539793251219]; that imported algorithm is not a new contribution. No external review or canonical software implementation is recorded.
 

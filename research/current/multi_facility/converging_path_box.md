@@ -1,4 +1,4 @@
-# A converging four-site light path admits a box NE
+# 三轻客户汇合四站路径的有界步盒均衡构造
 
 Complete conditional proof, independently reverse-audited internally. No external or literature-priority review.
 

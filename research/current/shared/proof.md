@@ -1,4 +1,4 @@
-# 从局部均衡到全局黄金比：证明工作稿
+# 共同目录黄金比上界的全局证明主链
 
 本文组织共享目录证明的关键接口；原先在本页只标号的 G1–G3、L1–L2 已分别写成[大顾客对](heavy_pairs.md)、[星心与双锚](star_anchors.md)、[局部强弦](local_chord_full.md)三份现行 Markdown，且经过本轮逐式交叉审读。[原集成主稿](../../../history/source/manuscripts/shared_phi/main.tex)也写出全证明并经过多轮内部审读；外部同行评审尚未进行。模型和定理量词分别固定在 [model.md](model.md) 与 [theorems.md](theorems.md)。全文 $q=\phi^{-1}$、$a=1-q=q^2$、$c=\phi/2$。
 

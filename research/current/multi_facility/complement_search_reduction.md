@@ -1,4 +1,4 @@
-# 共单例搜索与真实贪心盒：保真归约及带区间表述
+# 共单例仿射搜索到真实贪心盒的保真归约
 
 - **命题 ID：** `SC-K-COMPLEMENT-GREEDY-REDUCTION`、`SC-K-BOX-BOUNDED-COMPLEMENT`。
 - **状态：** 2026-10-08 独立内部重构，逐式审读并作定义级精确核验；无外部同行评审或完整优先权认证。
@@ -276,6 +276,6 @@ w=(3/4,3/4),\quad A_0=\{0,1\},\ A_1=\{1,2\}.
 - [规范编译与解码](../../../multi_facility_spe/complement_reduction.py)提供 `compile_game`、`decode_ne`、`to_bounded_complement`、`as_facility_instance`；没有均衡求解器。
 - [独立定义级审计](../../../tests/audits/kfac_complement_reduction.py)从源成本和逐个带标签设施条件成本核对全部枚举状态，检查势、优先级、真实贪心及指定运行；另检验一般转换及区间边界。
 - [固定源输入](../../../examples/multi_facility/complement_source_two_speed.json)、[区间边界输入](../../../examples/multi_facility/bounded_complement_outside_box.json)、[最终冻结报告](../../../evidence/runs/2026-10-08/complement_reduction_final.json)。早期小数值程序的审计亦保留，两个运行不合计为独立样本。
-- [复合审查与过程记录](../../COMPLEMENT_REDUCTION_AUDIT_2026-10-08.md)区分代数证明、实现、有限证据、文献边界和研究解释。
+- [复合审查与过程记录](../../reviews/facility/complement_search_reduction.md)区分代数证明、实现、有限证据、文献边界和研究解释。
 
 这些审计是内部定义级交叉检查；不是外部同行评审，也不是普遍数学证明的替代品。
