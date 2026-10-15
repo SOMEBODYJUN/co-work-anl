@@ -114,3 +114,7 @@
 ## 将森林的递归稳定延续直接扩大到单环或多根
 
 [森林归约](../current/weighted_congestion/incidence_forest_private_reduction.md)靠互不相交子树的固定报价闭合任意耦合策略。单环二玩家四资源已无exactPNE；循环共享会破坏独立报价，不能仅按某个根的响应重置后费用替代真实冻结偏离。保次数lift只覆盖每附属分量至多一个核心玩家；核心资源挂树或多核心接触需新合同。回收当前价相等/进入价下界接口，不外推全类失败。
+
+## 把固定hub的精确轻响应当成整个游戏的提升
+
+[阈值响应接口](../current/weighted_congestion/fixed_hub_light_threshold_response.md)给unique-light、无UF的真实稳定light选态，但其势随hub向量改变，不能累计为同一全局势。原共享侧正文9.17两玩家例在每个固定hub都有精确light响应，重选后hub成本由补位对称相同，仍有真实冻结light的hub改善。因此失败是偏离合同和响应预算缺失，不是light响应不存在。多light共享side另由旧三玩家例直接阻止该exact响应推广；回收显式阈值势/单遍选择，下一步须支付冻结与重置成本差。存在/FIP为已知Milchtaich特例，新颖性不因重构升级。

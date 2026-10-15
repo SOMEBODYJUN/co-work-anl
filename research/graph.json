@@ -6144,6 +6144,45 @@
         "evidence/runs/weighted_congestion/incidence_forest/independent.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "WC-FIXED-HUB-LIGHT-THRESHOLD-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "冻结hub的unique-light两主副本响应对象",
+      "detail": "每side仅一light，冻结全部hub后侧成本为玩家动作常数；每source独立，D_i(x)=F(a+x+w_i)−F(W−x)+q_i0−q_i1，W−x含自己。",
+      "refs": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "固定主玩家后的异权轻玩家阈值序势与有序删除响应",
+      "detail": "任意非负degree≤d多项式、d≥0、异权hub/light、唯一source且每side仅一light的二元同费副本模型，无UF。固定任意hub向量后，light子游戏由逐source二次阈值势（F常数时线性势）保留全部成本边的严格/平局符号，PNE恰势局部min且全部strict light改善终止。从全aligned按非降阈值删除，给每名light至多一次strict移动的exact响应。存在/FIP为Milchtaich1996已知两策略结果的直接应用；显式势和删除过程作自足重构接口，不主张新颖。",
+      "refs": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "research/reviews/weighted_congestion/fixed_hub_light_threshold_review.md",
+        "research/weighted_congestion_frontier/LITERATURE.md"
+      ],
+      "status": "complete reconstruction of a known existence/FIP corollary; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-FIXED-HUB-LIGHT-THRESHOLD-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "固定hub阈值符号、有序删除与旧多light反边界的双路精确核验",
+      "detail": "有限真实资源输入，逐态逐偏离、严格/平局全符号、单遍路径与旧三玩家多light反边界；输出实际输入和源码版本。",
+      "refs": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "tests/audits/weighted_congestion/verify_fixed_hub_light_threshold.py",
+        "tests/audits/weighted_congestion/independent_fixed_hub_light_threshold.py",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/author.json",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/independent.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -14566,6 +14605,40 @@
         "research/current/weighted_congestion/incidence_forest_private_reduction.md"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-FIXED-HUB-LIGHT-THRESHOLD-DEFINITION"
+      ],
+      "conclusion": "WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1",
+      "statement": "严格递增真实成本差在有限可达集合有精确阈值；二次势保符号、平F用线性势；非降阈值删除的已离开者不回返，得到固定外场响应。存在/FIP同时是已核文献的直接特例。",
+      "refs": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "research/reviews/weighted_congestion/fixed_hub_light_threshold_review.md"
+      ],
+      "status": "complete reconstruction of a known existence/FIP corollary; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-FIXED-HUB-LIGHT-THRESHOLD-AUDIT"
+      ],
+      "conclusion": "WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1",
+      "statement": "两路有限literal资源与成对势核验；不将finite范围升级全类或把文献已知存在性称新。",
+      "refs": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "tests/audits/weighted_congestion/verify_fixed_hub_light_threshold.py",
+        "tests/audits/weighted_congestion/independent_fixed_hub_light_threshold.py",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/author.json",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/independent.json"
+      ],
+      "status": "finite exact audit"
     }
   ]
 }

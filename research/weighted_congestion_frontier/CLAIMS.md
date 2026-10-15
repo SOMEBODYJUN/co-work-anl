@@ -1021,3 +1021,13 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Counterevidence / Objections：** 固定degree2、固定二玩家的exact存在反例，不是随次数增长下界或最坏单环阈值最优性。 范围内没有尚成立fatal；未外审、新颖性未认证。
 - **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
 - **Related Files：** research/current/weighted_congestion/incidence_forest_private_reduction.md、research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md；代码/证据从正文和assets.json接入。
+
+## WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1 — 固定主玩家后的异权轻玩家阈值序势与有序删除响应
+
+- **ID/version / 中文数学名称：** WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1，固定主玩家后的异权轻玩家阈值序势与有序删除响应。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 任意非负degree≤d多项式、d≥0、异权hub/light、唯一source且每side仅一light的二元同费副本模型，无UF。固定任意hub向量后，light子游戏由逐source二次阈值势（F常数时线性势）保留全部成本边的严格/平局符号，PNE恰势局部min且全部strict light改善终止。从全aligned按非降阈值删除，给每名light至多一次strict移动的exact响应。存在/FIP为Milchtaich1996已知两策略结果的直接应用；显式势和删除过程作自足重构接口，不主张新颖。 精确成本、阈值和平局合同以正文为准。
+- **Dependencies：** MODEL、unique-light固定外场定义、严格递增与有限阈值、二次式、有序删除不返性质；自足证明不调用外部存在定理，但存在/FIP文献身份是Paper Fact直接特例。
+- **Evidence：** [正文](../current/weighted_congestion/fixed_hub_light_threshold_response.md)、[先重构后冻结攻击](../reviews/weighted_congestion/fixed_hub_light_threshold_review.md)、LITERATURE一手p114/121/123及两路实际资源Fraction复验；完整输入/参数/seed/源码hash在JSON。
+- **Counterevidence / Objections：** 仅固定hub/unique-light；多light共享side可用旧三玩家例反驳exact响应。重选light后hub成本稳定不能替代冻结light的真实偏离，尚无跨hub响应兼容预算，不给全类C,d0或位多项式算法。 范围内无尚成立fatal；存在/FIP不宣称新颖。
+- **Status：** complete reconstruction of a known existence/FIP corollary; independently reconstructed and exactly audited; unrefereed。Truth只限冻结子游戏；Value为可调用无UF响应接口；Mechanism为阈值势和排序删除；Novelty未认证，Ambition全类仍OPEN。
+- **Related Files：** 正文、独立审查与所列两代码/冻结证据经assets/catalog接通。
