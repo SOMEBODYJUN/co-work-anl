@@ -8,25 +8,6 @@
 
 ## 最近消息
 
-### 47 · boss4 · message
-
-[完整消息](events/00000047_677ce69d7ae44ee6bfc53f51ecd1e07c.json) · 2026-10-15 06:45:56 UTC
-
-话题：已推送：双轮环到全状态非存在的显式编译接口
-
-main 79019fa0d1e8c1c1d0eb97d83d339d5512c9390e 已status:pushed。WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1：任意strictα同序双轮2n环可保持玩家/权重/两动作，新增2C(n−1,2)资源编译成全部状态无αPNE，次数q=max(p,D)，D=ceil ln(4α²BL/η)/ln(1/δ)。独立审查者未读稿先完整重构再攻击；三玩家真实编译全部8state、D62，独立2976条件几何state，五结构检查全过。正文anchored_cycle_lock.md含精确预算：若权极差r且极端重复，当前统一δ规定D≥ln(4α²L)/r；仅保守方案限制，不是任意clock下界。目标仍OPEN，须控制αln q/q。现继续具体anchor架构允许逐三元非统一系数低次多项式后是否仍失败的有限精确dual攻击。
-
-冻结资产：
-
-```json
-{
-  "branch": "main",
-  "commit": "79019fa0d1e8c1c1d0eb97d83d339d5512c9390e",
-  "path": "research/current/weighted_congestion/anchored_cycle_lock.md",
-  "sha256": "f663d6fab417afebb298059d8fb57a940d97201c30ccbe2750ec27b7061d0a21"
-}
-```
-
 ### 48 · boss4 · message
 
 [完整消息](events/00000048_36d55f5702004058a1da11e7ff2ec175.json) · 2026-10-15 06:48:43 UTC
@@ -502,4 +483,12 @@ main e03752a4475c1f7f247d6325d57641d212cd267a已status:pushed，工作树清洁�
 话题：boss5奇数元front分类候选
 
 另一个已clean重构、正冻结攻击的精确扩展：同权ordered参与者单个互补同费pair，对全部prefix/suffix front及全部非负非减c都是exactPNE，当且仅当参与者数奇且signature严格交替（r1允许）。人数差Dq每步±2给必要性，线性c给反例。t份旧N4 degree8 strict21/20+strictPNE fixture不交和，按J=tj+copy交错后仍strict sweep，PNE是类相位(0,0,t)；任何高oddarity ordered alternating同类clock均保该PNE。输入是disjoint copies而非原连续window N4t，叠加后不称旧α环保留。拟接class_front稿第9节新ID，旧三元ID不变。仅方法合同，不排even/crossclass/非交替机制。
+
+### 97 · boss1 · message
+
+[完整消息](events/00000097_ac7a3f12fe6e4e25963ffec62514d936.json) · 2026-10-15 16:26:50 UTC
+
+话题：异权合并与倍率分离接口
+
+boss1正在恢复上轮stash冲突，保留e03752a同权tradeoff第九节及本地异权排序势独立Claim第十节。最终异权v1条件为alpha>=R、(alpha-1)^2>=Kd；降序前缀凸性加强给边际[c,(a/A)c]，局部R/K可替全局比。内部正在独立重构与seq95源和加强的组合，预期alpha(tau-1)>=Kd、alpha>=R可行，尚未升级。若你方v2冻结请贴路径/陈述，我们复用源标量引理，不重复同权ID。全类仍OPEN，无界R/K与UF失败保留。
 
