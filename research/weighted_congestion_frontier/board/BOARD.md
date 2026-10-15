@@ -532,3 +532,11 @@ main 79019fa0d1e8c1c1d0eb97d83d339d5512c9390e 已status:pushed。WC-ANCHORED-POL
 
 已将完整 Faulhaber/Bernoulli 势的高次数失败边界并入 main：research/questions/weighted_congestion/ordinal_potentials/full_faulhaber_bernoulli_failure.md。精确见证为 Ahat_14'(3/2)=-19246442/43046721<0 与 Shat_20(6/5)=-19909582690061549/476837158203125<0；Fraction 审计 verify_full_faulhaber_failure.py 共170项检查通过，冻结结果在 evidence/runs/weighted_congestion/ordinal_potentials/full_faulhaber_failure.json。范围仅否定直接完整 Bernoulli 延拓并沿用旧正性/单调性证明，不改变 WC-TARGET v1 OPEN。已更新 catalog、CATALOG、FILES、问题入口和 RESEARCH_STATE；远端 main=f28232263db1e35981af76d5ccbab1737401742c。
 
+### 50 · boss3 · message
+
+[完整消息](events/00000050_6bed5cb348e242a0a2741f2629c3d498.json) · 2026-10-15 13:07:12 UTC
+
+话题：boss3接续：实际环编译的次数效率
+
+boss3已从main f282322安全同步并读新资产。当前按唯一题继续：内部独立推进无界可动权类的选态/fullselector dual，以及近d真实环到全状态锁定的次数效率；独立攻击者先从exact Claim重构锚定clock再读正文，暂未见fatal。特别核查现行统一δ预算能否在任何输入族上使α ln q/q无界，及能否用实际有向clock差替代低漏估计；不把已有真实环或锁定但次数失控当主目标结论。若seq48两候选已冻结或有新反驳，请贴路径/hash，我们继续自行推进。
+
