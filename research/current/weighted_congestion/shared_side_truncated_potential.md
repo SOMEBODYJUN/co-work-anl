@@ -525,6 +525,134 @@ v1 的 `(τ−1)(α−1)≥d` 蕴含 v2 的 `α(τ−1)≥d`，故 v2 保留并�
 
 v2 状态为 complete conditional proof; independently reconstructed and exactly audited; unrefereed。没有范围内尚成立的 fatal objection；未外审、新颖性未认证。主增量付款及精确均衡端点仍只覆盖所写强迫与同权结构；全类 WC-TARGET 保持 OPEN。
 
+### 9.14. 新版本：重置增量与强迫倍率乘积
+
+**ID/version / 中文数学名称：** `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3`，跨源共享侧资源的重置增量与强迫乘积预算均衡。此版本再次扩大倍率域；v1/v2 的原正文、审查与冻结证据保持原字节。
+
+**Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 量化第9.1节完全相同的全部有限资源拓扑、任意实正共同 hub 权 `u`、任意实正 light 权、唯一 main source、二元同费副本和非负系数次数至多整数 `d≥2` 的多项式费用；策略、`W_v,m_j,T_j` 和全 anti 形状均不变。保持同一(UFτ)，但现在量化
+
+    τ≥1,  α≥1,  ατ≥d.                               (FT3)
+
+结论是第8.2节同一有限势 E 的每个单 hub 翻位局部最小点配全 anti 均为真实 `α-PNE`。不要求两个倍率排序。允许 `τ=1`，特别 `τ≥d` 可以取 `α=1`。这仍是条件子类的充分保证，不声称整个乘积条件对 `α>1` 必要或最优。
+
+**Dependencies / Evidence / Counterevidence / Objections / Status：** 固定 light 的真实等权 hub Rosenthal 边际、第9.9节主增量源标量引理(SΔ)、下面新的重置增量引理，以及有限局部最小点。没有调用 v1/v2 的均衡结论或外部均衡定理。本文给出完整一般推导；独立冻结攻击和精确证据另记。同权 hub、唯一 source、对称副本和(UFτ)仍全部承重，没有一般游戏的强迫表示或全类存在性结论；未外审，新颖性未认证。
+
+### 9.15. 逐 light 的重置增量引理
+
+设非负系数次数至多 d 多项式 G，`u>0,w>0,S≥0,T≥S+w`，整数 `0≤n≤m`，`Y=T+mu`。则
+
+    Σ_{r=1}^n[G(S+w+ru)−G(S+ru)]
+      ≤κ_d(w/u)[G(Y)−G(w)],  κ_d(t)=min{dt,t+1}.     (RI)
+
+先处理 `n=0`：左侧为零，`Y≥w` 使右侧非负；同时覆盖 `m=0,Y=w`，无需除法。以下 `n≥1`，于是 `Y−w≥mu≥nu>0`。常数 G 时两边都零；一般非负系数多项式满足 `G'≥0` 且 G' 在非负半轴不减。
+
+第一界：对 `k≥1`，`Y^k−w^k≥(Y−w)Y^(k−1)`；逐非负系数展开，对全部 `0≤x≤Y` 有
+
+    G'(x)≤d[G(Y)−G(w)]/(Y−w).
+
+全部 n 个积分区间 `[S+ru,S+w+ru]` 长度均为 w，包含于 `[0,Y]`。因此原和不超过
+
+    nw · d[G(Y)−G(w)]/(Y−w)
+      ≤d(w/u)[G(Y)−G(w)].                           (RIa)
+
+第二界：令 `a=w/u+1`，c(x) 为这 n 个区间的覆盖密度。几乎处处 `0≤c≤ceil(w/u)≤a`，且 `∫_0^Y c=nw`。又
+
+    a(Y−w)≥(w/u+1)nu=n(w+u)≥nw.
+
+原区间可以穿过 w，不能直接说积分只位于 `[w,Y]`。令 `q=G'(w)≥0`，利用 G' 非减和 `a−c≥0`，
+
+    ∫_0^w cG'≤q∫_0^w c,
+    ∫_w^Y(a−c)G'≥q∫_w^Y(a−c).
+
+相减得
+
+    ∫_0^Y cG'−a∫_w^Y G'
+      ≤q[nw−a(Y−w)]≤0.
+
+所以原和至多
+
+    (w/u+1)[G(Y)−G(w)].                              (RIb)
+
+结合两界得(RI)。这是将 w 以下的原密度质量由 w 以上的剩余容量支付，依赖凸导数而非错误的区间位置假设。非单位 u、`w≫u,T=w,n=m` 及常数项均在所写量词中覆盖。
+
+### 9.16. 不除以强迫余量的付款与真实均衡
+
+固定 light 后，hub 的普通 side 成本差仍等于 Rosenthal 辅助势差。仅在势比较中逐名重置该 source 的 light；移出副本不增加势，移入副本使用(RI)，其余 light 总权 S 始终满足 `S+w≤T_j`。因此每名 light 对每条 side 的 reset 至多 `κ_d(w_l/u)[G_j(Y_j)−G_j(w_l)]`，`Y_j=T_j+m_j u`。
+
+定义 `P_lj=τG_j(Y_j)−G_j(w_l)`、`Q_l=F_v(u+w_l)−τF_v(W_v)`，v=o(l)。因为 `τ≥1`，
+
+    P_lj≥τ[G_j(Y_j)−G_j(w_l)]≥0,
+    Σ_{j:l∈L_j}P_lj≤Q_l.                            (P3)
+
+第二式恰是(UFτ)。先汇总每名 light 的全部 side 再领取一次源预算，没有重复领取。故 source v 的全部 reset 满足
+
+    R_v≤(1/τ)Σ_{l:o(l)=v}κ_d(w_l/u)Q_l
+       ≤(d/τ)[F_v(u+W_v)−F_v(u)],                   (R3)
+
+末步为第9.9节(SΔ)，它本来就允许 `τ=1`。这里只除以正数 τ，没有除以 `τ−1`。无 light 的 source 两个增量都为零。由(FT3)、费用单调和 `α≥1`，
+
+    R_v≤α[F_v(u+W_v)−F_v(u)]
+       ≤αF_v(u+W_v)−F_v(u)=M_v(α).                 (Pay3)
+
+取 E 的任一单 hub 局部最小点 h，配全 anti。hub v 真实偏离保持 light 不动，主资源 α 成本差为 `−M_v(α)`；side α 差不超过普通差。再用仅供势比较的 reset，得到
+
+    C_v(s)−αC_v(dev)
+      ≤−M_v(α)+E(h)−E(h^v)+R_v≤0.
+
+Light 当前主负载 `W_v`、每条 side 至多 `Y_j`；偏离后主负载 `u+w_l`、每条 side 至少 `w_l`。原(UFτ)给 `τC_l(s)≤C_l(dev)`，在 `τ=1` 也足以推出全部 `α≥1` 的均衡式。保留原动作自动满足；每人仅有两个合法动作，全部真实偏离已覆盖。空集合、零/常数费用与零偏离成本均直接按不等式处理。完成 v3。
+
+因此本子类中 `τ≥d` 给精确 PNE，`τ=1` 给 d-PNE；若 `d≥16,τ=ln d,α=d/ln d`，也满足(FT3)。这些推论全部保留(UFτ)及结构假设，不是全类题目的结论。v2 的条件蕴含 v3；参数域真扩大，例如 `d=2,τ=2,α=1` 满足 v3 而不满足 v2。
+
+### 9.17. 独立 Claim：精确强迫边界的四状态反例
+
+**ID/version / 中文数学名称：** `WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1`，共享侧资源的精确纯均衡统一强迫边界。
+
+**Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 固定任意整数 d≥2，在第9.14节完全相同的结构类和(UFτ)下：(a) 每个 `τ≥d` 的游戏存在精确 PNE；(b) 对每个实数 `1≤τ<d`，存在该结构类的有限游戏，严格满足全部(UFτ)，而每个纯状态均有严格改善出口，所以没有精确 PNE。因此 d 是本结构类保证精确 PNE 的统一强迫参数边界。这个“边界”不指 `α>1` 的最优乘积条件，不提供全类渐近下界或全类目标否定。
+
+**Dependencies / Evidence / Counterevidence / Objections / Status：** (a) 由 v3 取 α=1；(b) 由下面显式两玩家构造及全部四状态覆盖证明。两个 Claim 分开登记，完整证明、独立攻击与精确核验状态分轴记载。未外审、未认证新颖性。
+
+给定 `1≤τ<d`，定义
+
+    ε=d−τ>0,
+    K=τ(2^d−1)+d(τ−1)>0,
+    t=ε/(2K),  D=1−(τ−1)t,
+    A=[τ(1+t)^d−t^d]/D,
+    a=(A+d)/2.
+
+一名 hub 权 u=1，一名 source 为该 hub 的 light 权 w=t。两个主副本费用 `F(x)=ax`；一个 side 副本对费用 `G(x)=x^d`，其 `H={hub},L={light}`。Hub 位 b 用 `{A^b,B^b}`，light 位 b 用 `{A^b,B^(1−b)}`。资源互异，费用次数至多 d，属于模型。
+
+先有 `K≥2^d−1≥d` 和 `0<ε≤d−1`，故 `0<t<1/2`；又 `K≥d(τ−1)`，所以 `(τ−1)t≤ε/(2d)<1/2`，`D>1/2`，包括 τ=1。分子正，故 A>0。二项式展开在 `t≤1` 时给 `(1+t)^d≤1+(2^d−1)t`，因此
+
+    τ(1+t)^d−t^d−dD
+      ≤−ε+[τ(2^d−1)+d(τ−1)]t
+      =−ε/2<0.
+
+于是 `0<A<a<d`。直接计算本实例强迫差：
+
+    a(1+t)+t^d−τ[at+(1+t)^d]
+      =(a−A)D>0.                                   (StrictUF)
+
+该式正是严格(UFτ)，在 τ=1 也严格。
+
+若 hub/light 两位 aligned，light 当前费用为 `a(1+t)+t^d`，真实翻位后为 `at+(1+t)^d`。由(StrictUF)及 `τ≥1`，light 严格改善。若两位 anti，hub 当前费用为 `a+(1+t)^d`，真实翻位后为 `a(1+t)+1`。二项式展开给
+
+    (1+t)^d−1≥dt>at,
+
+所以 hub 严格改善。全部四状态恰好分成这两类，没有遗漏循环外状态。这里 main 一次、side d 次是合法的混合多项式输入；只证明无精确 PNE，不把改善幅度趋近一偷换成任何固定 α>1 的反例。
+
+### 9.18. v3 与精确强迫边界的审查和审计合同
+
+[独立审查的 v3 追加节](../../reviews/weighted_congestion/multisource_force_increment_review.md)记录实际角色：原审查者提出重置增量加强，原作者先只据引理及精确陈述自主重构，再攻击冻结9.14—9.17，并给另一条离散积分证明。主研究者另核对密度容量、真实付款和两玩家全部实参数边界。所审新节 hash 保持；同步加入第十节和更改总标题不改变这段数学字节。
+
+运行两份新程序，只向 stdout 输出 JSON：
+
+- `python3 tests/audits/weighted_congestion/verify_multisource_reset_increment.py`，冻结结果 `evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json`。明确复用 v1 作者 literal helper 并记录依赖 hash；另检查重置引理的参数网格和两玩家全部四状态。
+- `python3 tests/audits/weighted_congestion/independent_multisource_reset_increment.py`，冻结结果 `evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json`。独立于原作者实现，由其本人 v2 独立 baseline 派生 standalone，记录来源 hash，未调用作者核心。
+
+全部有限输入、参数、seed、Python/源码/helper 或 baseline hash 和确审稿 hash 随各自 JSON 固定。重跑另存临时位置，不覆盖任何 v1/v2/v3 冻结证据。计算只核实现与实际边界，不替代上述一般证明。
+
+v3 与独立 exact 强迫边界均已完成一般证明、独立重构、冻结攻击和两路精确核验；无范围内尚成立的 fatal objection，未外审、未认证新颖性。精确边界只限 `α=1`，主目标的全类 `Cd/ln d` 判定保持 OPEN。下一项承重义务是低于对数级强迫或强迫失败时的选态、无界异权比下的控制，或新的全状态增长机制。
+
 ## 十、新 Claim：局部异权 hub 的降序侧势与源重置预算
 
 **ID/version / 中文数学名称：** `WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1`，局部异权主玩家共享侧资源的排序势均衡。独立身份；第八节同权 Claim 的对象和结论均不改。

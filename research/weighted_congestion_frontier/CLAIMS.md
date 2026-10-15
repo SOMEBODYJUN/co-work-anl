@@ -950,3 +950,24 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Counterevidence / Objections：** R,K及UFhet仍承重；允许全局任意多权类和无界跨度但不消去局部比。单副本排序边际R因子在线性资源上渐近锐，该实例有exactPNE，故只限制逐副本夹逼；无全类C,d0或非存在结论。 没有尚成立fatal；有限验证不替一般证明，未外审或认证新颖性。
 - **Status：** complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth限精确子类；Value为任意多权类的局部预算接口；Mechanism为排序边际与源重置；Ambition全类OPEN。
 - **Related Files：** [正文](../current/weighted_congestion/shared_side_truncated_potential.md)、[独立审查](../reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md)，规范code/run见正文10.5与assets.json。
+
+## WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3 — 跨源共享侧资源的重置增量与强迫乘积预算均衡
+
+- **ID/version / 中文数学名称：** `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3`，跨源共享侧资源的重置增量与强迫乘积预算均衡。v3相对v2明确改变倍率条件和τ域；exact边界另列身份，不把充分乘积条件称必要。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 第9.1节同权hub、唯一main source、任意跨source多light/shared-hub的二元同费副本模型，全部费用非负系数degree≤d，任意整数d≥2、实τ≥1及α≥1，满足原UFτ和ατ≥d时，同一真实hub Rosenthal势E每个单hub局部最小点配全anti为α-PNE。含τ1、零/常数费用、空集合及全部实正权/实非负系数。τ≥d可取α1；d≥16取τ=ln d给α=d/ln d。 完整真实策略及全部边界以[正文9.14—9.17](../current/weighted_congestion/shared_side_truncated_potential.md)为准；零成本用MODEL弱不等式，不计算0/0。
+- **Dependencies：** MODEL、同权hub固定light Rosenthal边际、新凸导数重置增量RI、已证源增量SΔ及有限局部min；exact边界上半另依v3，下半依明示2玩家F=ax/G=xd构造。凸导数的区间密度/差商给reset≤κ[G(Y)−G(w)]；UFτ支付τ倍side增量，源和≤dΔF，故reset≤dΔF/τ≤Mα；有限E局部min覆盖全部真实偏离。 原稿自足，无外部均衡定理导入。
+- **Evidence：** RI提出者与旧作者交换角色；旧作者先仅据新lemma/精确statement独立重构，后攻击冻结新节，并给独立离散Fubini证明。主研究者独立复算密度、真实付款和2玩家全实参数边界，见[实际审查记录](../reviews/weighted_congestion/multisource_force_increment_review.md)末节。新两路Fraction代码、实际输入、参数/seed/版本/helper或baseline hash及冻结结果由原稿末端合同进入；finite只支持实际覆盖。
+- **Counterevidence / Objections：** 同权hub、唯一main source、二元同费副本和原UFτ承重；不提供一般游戏的强迫表示、弱强迫下的统一选态或异权hub桥。v1/v2精确身份和原冻结证据保留。ατ≥d仅充分；独立sharp边界只限α1，WC-TARGET仍OPEN，未外审/新颖性未认证。 exact反例仅破α1，不能把改善幅度趋1升级成固定α>1反例。无尚成立范围内fatal。
+- **Status：** complete conditional proof; independently reconstructed and exactly audited; unrefereed。Truth限精确身份；Value为重置增量预算及独立exact强迫边界；Mechanism见正文；Novelty/外审未认证；Ambition全类OPEN。
+- **Related Files：** 原稿第九节、新审查追加部分、两路reset增量程序/冻结结果，经`research/assets.json`与`research/catalog.json`接入；v1/v2证据保持。
+
+
+## WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1 — 共享侧资源的精确纯均衡统一强迫边界
+
+- **ID/version / 中文数学名称：** `WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1`，共享侧资源的精确纯均衡统一强迫边界。v3相对v2明确改变倍率条件和τ域；exact边界另列身份，不把充分乘积条件称必要。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 对每个整数d≥2，在v3完全相同的同权hub/唯一source/二元同费副本结构类中，τ≥d的每个UFτ游戏均有精确PNE；对每个实1≤τ<d，显式2玩家4资源游戏严格满足UFτ却全部4态均有严格改善出口。因此该条件结构类保证精确PNE的统一强迫参数边界恰d并在端点取得。仅α1，不称α>1乘积边界必要，不是全类渐近非存在。 完整真实策略及全部边界以[正文9.14—9.17](../current/weighted_congestion/shared_side_truncated_potential.md)为准；零成本用MODEL弱不等式，不计算0/0。
+- **Dependencies：** MODEL、同权hub固定light Rosenthal边际、新凸导数重置增量RI、已证源增量SΔ及有限局部min；exact边界上半另依v3，下半依明示2玩家F=ax/G=xd构造。v3取α1给τ≥d上界；τ<d用t=(d−τ)/(2[τ(2^d−1)+d(τ−1)])及F=ax/G=xd构造，aligned态light严格改善、anti态hub严格改善，覆盖全部4态。 原稿自足，无外部均衡定理导入。
+- **Evidence：** RI提出者与旧作者交换角色；旧作者先仅据新lemma/精确statement独立重构，后攻击冻结新节，并给独立离散Fubini证明。主研究者独立复算密度、真实付款和2玩家全实参数边界，见[实际审查记录](../reviews/weighted_congestion/multisource_force_increment_review.md)末节。新两路Fraction代码、实际输入、参数/seed/版本/helper或baseline hash及冻结结果由原稿末端合同进入；finite只支持实际覆盖。
+- **Counterevidence / Objections：** 同权hub、唯一main source、二元同费副本和原UFτ承重；不提供一般游戏的强迫表示、弱强迫下的统一选态或异权hub桥。v1/v2精确身份和原冻结证据保留。ατ≥d仅充分；独立sharp边界只限α1，WC-TARGET仍OPEN，未外审/新颖性未认证。 exact反例仅破α1，不能把改善幅度趋1升级成固定α>1反例。无尚成立范围内fatal。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确身份；Value为重置增量预算及独立exact强迫边界；Mechanism见正文；Novelty/外审未认证；Ambition全类OPEN。
+- **Related Files：** 原稿第九节、新审查追加部分、两路reset增量程序/冻结结果，经`research/assets.json`与`research/catalog.json`接入；v1/v2证据保持。

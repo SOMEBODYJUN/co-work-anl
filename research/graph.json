@@ -5971,6 +5971,67 @@
         "research/current/weighted_congestion/shared_side_truncated_potential.md"
       ],
       "status": "definition"
+    },
+    {
+      "id": "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "跨源共享侧资源的重置增量与强迫乘积预算均衡",
+      "detail": "第9.1节同权hub、唯一main source、任意跨source多light/shared-hub的二元同费副本模型，全部费用非负系数degree≤d，任意整数d≥2、实τ≥1及α≥1，满足原UFτ和ατ≥d时，同一真实hub Rosenthal势E每个单hub局部最小点配全anti为α-PNE。含τ1、零/常数费用、空集合及全部实正权/实非负系数。τ≥d可取α1；d≥16取τ=ln d给α=d/ln d。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md"
+      ],
+      "status": "complete conditional proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "共享侧资源的精确纯均衡统一强迫边界",
+      "detail": "对每个整数d≥2，在v3完全相同的同权hub/唯一source/二元同费副本结构类中，τ≥d的每个UFτ游戏均有精确PNE；对每个实1≤τ<d，显式2玩家4资源游戏严格满足UFτ却全部4态均有严格改善出口。因此该条件结构类保证精确PNE的统一强迫参数边界恰d并在端点取得。仅α1，不称α>1乘积边界必要，不是全类渐近非存在。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-MULTISOURCE-RESET-INCREMENT-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "侧资源重置增量与τ1强迫合同",
+      "detail": "同一跨源结构，RI参数u>0,w>0,S+w≤T,n≤m,Y=T+mu；G非负degree≤d且凸。UFτ、τ≥1、ατ≥d。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-SHARED-SIDE-EXACT-FORCING-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "两玩家四状态强迫边界构造",
+      "detail": "每d≥2及1≤τ<d，K=τ(2^d−1)+d(τ−1)，t=(d−τ)/(2K)，D=1−(τ−1)t，A=[τ(1+t)^d−t^d]/D，a=(A+d)/2；hub1/lightt，main ax和side xd两个同费副本对。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-MULTISOURCE-RESET-INCREMENT-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "重置增量、τ1与精确强迫边界的双路有理核验",
+      "detail": "记录独立来源、baseline/helper hash；真实负载、α1端点、RI区间边界及lower全部4态，有限核验不替一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_multisource_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_multisource_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -14110,6 +14171,89 @@
         "research/reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md"
       ],
       "status": "scope limit"
+    },
+    {
+      "id": "DERIVE-WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-MULTISOURCE-RESET-INCREMENT-DEFINITION"
+      ],
+      "conclusion": "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3",
+      "statement": "凸导数的区间密度/差商给reset≤κ[G(Y)−G(w)]；UFτ支付τ倍side增量，源和≤dΔF，故reset≤dΔF/τ≤Mα；有限E局部min覆盖全部真实偏离。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md"
+      ],
+      "status": "complete conditional proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3",
+        "WC-SHARED-SIDE-EXACT-FORCING-DEFINITION"
+      ],
+      "conclusion": "WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1",
+      "statement": "v3取α1给τ≥d上界；τ<d用t=(d−τ)/(2[τ(2^d−1)+d(τ−1)])及F=ax/G=xd构造，aligned态light严格改善、anti态hub严格改善，覆盖全部4态。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "SPECIALIZE-TRADEOFF-v3-TO-v2",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3"
+      ],
+      "conclusion": "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2",
+      "statement": "v2的τ>1、α(τ−1)≥d蕴含v3的τ≥1、ατ≥d；旧域结论保留，原证明与冻结证据不改。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "complete conditional proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MULTISOURCE-RESET-INCREMENT-AUDIT"
+      ],
+      "conclusion": "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3",
+      "statement": "两路有理输入与真实偏离核对，包含τ1、τ=d精确端点和τ<d的全部4态出口；不把finite域升级一般结论。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_multisource_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_multisource_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MULTISOURCE-RESET-INCREMENT-AUDIT"
+      ],
+      "conclusion": "WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1",
+      "statement": "两路有理输入与真实偏离核对，包含τ1、τ=d精确端点和τ<d的全部4态出口；不把finite域升级一般结论。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_multisource_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_multisource_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json"
+      ],
+      "status": "finite exact audit"
     }
   ]
 }
