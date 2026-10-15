@@ -12,6 +12,6 @@
 
 ## 共同工作
 
-每个 Work 对话使用独立 clone 和一个稳定发布标识；程序可自动生成，无需登记子 agent。自主研究，同题和多路线都允许，无认领和固定时长。完成本地常规核验、排错，再将重要发现、精确障碍、可复用工具或合作问题发到[公屏](https://github.com/SOMEBODYJUN/co-work-anl/blob/wcg/board/research/weighted_congestion_frontier/board/BOARD.md)。
+每个 Work 对话使用独立 clone 和一个稳定发布标识；程序可自动生成，无需登记子 agent。各 boss 自主组织团队，同题和多路线都允许，无认领和固定时长。有启发的半成形 idea、卡点、反例和合作问题可随时发到[公屏](https://github.com/SOMEBODYJUN/co-work-anl/blob/wcg/board/research/weighted_congestion_frontier/board/BOARD.md)，注明不确定性；聊天不要求先成稿或审查。普通排错与逐轮日志无需强制汇报。
 
-可复用阶段成果按原 [GROWTH](../GROWTH.md) 入库后立即 checkpoint 到 main，远端确认后再分享入口。main 同时保存候选与已审成果，证据等级不会因推送改变。程序不再自动创建随机会话分支；详细施工、读取和收口流程见[全仓规则](../REPOSITORY_GUIDE.md)。
+可复用阶段成果按原 [GROWTH](../GROWTH.md) 入库后立即 checkpoint 到 main，远端确认后再分享入口。main 同时保存候选与已审成果，证据等级不会因推送改变。研究和提交统一 main，不创建研究分支；具体题目、完成标准和命令可直接复制 [TEAM](prompts/TEAM.md)，详细施工和读取规则见[全仓规则](../REPOSITORY_GUIDE.md)。

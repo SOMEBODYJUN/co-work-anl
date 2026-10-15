@@ -13,4 +13,4 @@
 修改协作工具时运行对应 tests；修改数学资产时运行相应精确核验。正式交付前运行根 `research/build_map.py --check`、`research/build_crosswalk.py --check`、`research/check_assets.py`。论文者与提取者的完整入口在 prompts/PAPER_WRITER.md、prompts/EXTRACTOR.md；选定原文及许可在 SOURCES.md、upstream/manifest.json。
 
 
-当前目录、生产状态、默认 main 与按需读取执行 [全仓规则](../REPOSITORY_GUIDE.md)。旧会话记录不作为当前状态；只交流有价值的重要发现和具体合作问题。
+当前目录、生产状态、统一 main 与按需读取执行 [全仓规则](../REPOSITORY_GUIDE.md)，不创建研究分支。有启发的半成形 idea 和合作问题可自由交流，注明不确定性；候选按候选保存，重要 claim 升级仍须相应证明与独立攻击。main 正文和账本是规范状态入口，新出现的关键反驳须及时核查登记。

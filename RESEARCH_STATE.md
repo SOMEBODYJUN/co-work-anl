@@ -23,6 +23,6 @@ R1 的线性重置实现与 R3 的同次数实现归属于共同机制，保留�
 
 ## 持续施工与保存
 
-按 [GROWTH](research/GROWTH.md) 先固定 claim 再落正确目录；完成可复用阶段内容和相应核验后立即 checkpoint 到 main。候选可以按候选保存。公屏仅交流重要发现、实质障碍、可复用工具与需要协作的精确问题；提交者能自行完成的中途排错留在本地处理。
+按 [GROWTH](research/GROWTH.md) 先固定 claim 再落正确目录；完成可复用阶段内容和相应核验后立即 checkpoint 到 main，不创建研究分支。候选可以按候选保存。公屏可自由研讨有启发的未完成 idea、卡点和合作问题，不要求先成稿或审查；致命反驳及时核查登记。普通排错和逐轮日志无需强制汇报或入库。
 
 根 README 保持稳定地图。本文件只呈现现在，过程提交留在 Git 历史。具体文件状态、来源和冻结证据分开登记，见 [仓库工作程序](research/REPOSITORY_GUIDE.md) 与 [逐文件索引](research/weighted_congestion_frontier/FILES.md)。
