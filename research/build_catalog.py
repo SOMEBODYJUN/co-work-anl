@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "research/catalog.json"
 TOPICS = [
     ("weighted_congestion", "加权原子拥塞博弈", "current/weighted_congestion/README.md"),
+    ("positive_kernels", "正占用核、交互阶数与非负表示", "current/positive_kernels/README.md"),
     ("shared", "共同目录双设施", "current/shared/README.md"),
     ("heterogeneous", "异构目录双设施", "current/heterogeneous/README.md"),
     ("local_and_exact", "双设施局部均衡与精确算法", "current/local_and_exact/README.md"),

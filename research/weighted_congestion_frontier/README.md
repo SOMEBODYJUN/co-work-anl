@@ -6,7 +6,24 @@
 
 新对话读根四入口、[MODEL](MODEL.md)、现行数学 README、[CLAIMS](CLAIMS.md)、[当前状态](RESEARCH_STATE.md)，再按当前义务选择证明与审查。开始工作用[TEAM](prompts/TEAM.md)；修改工具才需要完整读[运行说明](RUNBOOK.md)、[协议](PROTOCOL.md)及程序源码。写作、工具提取各有独立提示词，不要求所有研究者先通读全部上游原文。
 
+## 角色与 Pro 交接顺序
+
+| 入口 | 实际任务与交付 |
+| --- | --- |
+| [清晰者 CLEANER](prompts/CLEANER.md) | 从精确正文与审查筛出 Pro 必须知道的模型、已知事实和障碍；逐项保留否定范围，维护一份自足 PRO_BRIEF，最终从同一已推送版本导出精简包 |
+| [提取者 EXTRACTOR](prompts/EXTRACTOR.md) | 重建可复用工具的输入、输出、条件和证明；与清晰者核实按需接口，独立有价值但不助接题的资产仍留仓库 |
+| [Pro 攻题 PRO_ATTACK](prompts/PRO_ATTACK.md) | 收到实际整理材料后，自主解决原全类问题；不把 Git 操作、历史审计或写论文作为前置 |
+| [论文者 PAPER_WRITER](prompts/PAPER_WRITER.md) | 组织真实成果的贡献、机制、完整证明及实际成稿；不与交给 Pro 的材料筛选混为一个角色 |
+| [共同研究 TEAM](prompts/TEAM.md) | 持续攻击唯一题目并维护可复用资产；可以同题独立推导或探索多条路线 |
+| [共同操作 OPERATIONS](prompts/OPERATIONS.md) | 各 Work 角色共用的恢复、唯一发布身份、命名地图、阶段核验和完整推送合同；只需共用一份 work.py |
+
+本次准备顺序：清晰者与提取者可并行阅读和核对，清晰者整合及审读后再把精简包和 Pro 任务交出。论文成稿可另行进行，不是 Pro 攻题的先决条件。各角色首次生成不同前缀的随机唯一后缀并显式传入 `start --actor`；同 clone 接续复用，不照抄固定 W1/E1，也不为子 agent 登记。
+
+角色提示词就绪不表示交接材料已整理。`PRO_BRIEF.md` 仅在清晰者实际完成筛选后创建或修订；交付包仅带完整任务、必要数学正文及追溯 manifest，工具数学附录按需。历史聊天、测试日志、全仓文件和未证 idea 清单不作为默认 Pro 输入。方法障碍、断言反例、开放义务和有限观察分开，不将“没做出来”写成“不可能”。整理与提取完成也不表示主问题解决。
+
 ## 当前数学地图
+
+提取者新增的[正占用核专题](../current/positive_kernels/README.md)从boss4正Möbius展开重建独立的秩暴露面、锐截断及准确闭包；来源与具体传感器实例可核。它保留原WC身份，并明确一般签名/均衡桥缺口；工具索引见[toolbox](toolbox/README.md)。
 
 正权有限资源博弈 → 真实成本与 α-PNE → 全类阈值 a_*(d)。奇环策略 → 全状态严格偏离 → 权重及系数闭环 → 有限有理构造 → T_d 下界。文献上界 d 仍留对数缺口；精确目标见 MODEL。[高次份额势](../current/weighted_congestion/high_degree_share.md)、源族、稀疏密度、窄权带、非对称有限例和势方法障碍的范围各自独立。
 
@@ -38,9 +55,9 @@
 
 [有限可动权类的三角排序势](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)已给A_(d,k)隐式界，固定k为d^(1−1/k)，任意固定背景精确吸收、k个R窄簇损失R^d。d≥16且k≤ln d/lnln d的明确子类达到2d/ln d；无界可动类别时A趋d，唯一全类题仍OPEN。真正前沿已收缩为无界可动权类的选态桥或全状态增长反例，不再把固定背景或仅两类稠密cohort当未解接口。
 
-[有限次局部矩与全成本压缩](../current/weighted_congestion/template_certificates/selector_local_moments.md)将签名接口细化为D维完整成本空间、≤D正单项式资源保真表示和≤D+1支撑dual；其仿射全签名刚性另表明：非全等权下，低degree成本不能保真拆成全小用户支持资源，即使提高次数。真正未解仍是每个selector的moment hull与resource polar是否在统一倍率相交。[循环窗口前沿商与不同步反例](../current/weighted_congestion/class_front_phase_quotient.md)提供相对phase表示，但类内clock不能自动给错位front出口，故负向仍需新同步/离front覆盖机制。两包均未完成唯一全类题。
+[有限次局部矩与全成本压缩](../current/weighted_congestion/template_certificates/selector_local_moments.md)将签名接口细化为D维完整成本空间、≤D正单项式资源保真表示和≤D+1支撑dual；其仿射全签名刚性另表明：非全等权下，低degree成本不能保真拆成全小用户支持资源，即使提高次数。完整proper锥另可同时实现近d真实唯一坏环和完全暂态dual，任何dual暂态质量必须为正；这是已知两机制的同时化，不给任意selector方法。真正未解仍是每个selector的moment hull与resource polar是否在统一倍率相交。[循环窗口前沿商与不同步反例](../current/weighted_congestion/class_front_phase_quotient.md)提供相对phase表示，但类内clock不能自动给错位front出口，故负向仍需新同步/离front覆盖机制。两包均未完成唯一全类题。
 
-[共享侧资源截断势](../current/weighted_congestion/shared_side_truncated_potential.md)把同权hub、unique-light/source、最坏负载UF子类扩到任意共享hub子集，给A_d≤2d/ln d；独立AS+B判据覆盖部分非UF实例。[实际时钟差分与预算](../current/weighted_congestion/anchored_clock_actual_margins.md)给非统一clock的O(n²)充分LP、必要总预算和κ稳定条件，固定四玩家43次证书优于原uniform91选值但不称最优。原全三元、统一M架构另有80次全状态证书却不满足(U)，故(U)对原架构也非必要；这仍不是增长族。真正缺口仍是无界可动权类的全类选态、跨source/预算外反馈或次数效率可增长的全状态族。
+[共享侧资源截断势](../current/weighted_congestion/shared_side_truncated_potential.md)把同权hub、unique-light/source、最坏负载UF子类扩到任意共享hub子集，给A_d≤2d/ln d；独立AS+B判据覆盖部分非UF实例。[实际时钟差分与预算](../current/weighted_congestion/anchored_clock_actual_margins.md)给非统一clock的O(n²)充分LP、必要总预算和κ稳定条件，固定四玩家43次证书优于原uniform91选值但不称最优。原全三元、统一M架构另有80次全状态证书却不满足(U)，故(U)对原架构也非必要；这仍不是增长族。实际接口另证：固定人数/权谱/α/纯三次亦可用private成本压低环余量，阻止任意预给degree cap的保环三元clock；健康余量增长输入仍未排除。真正缺口仍是无界可动权类的全类选态、跨source/预算外反馈或次数效率可增长的全状态族。
 
 [共占图高度与实际改善环必要链](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)把三角势参数从全局权类数放宽为同一降权共占图的路径高度；全局权种数可无界。实际严格改善闭词也必须跨越相应高度门槛，各弧可来自不同端点。仍无全类高度控制；动态换秩改变势，缺少高链SCC出口或瞬态dual。
 

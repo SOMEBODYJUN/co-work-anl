@@ -5623,6 +5623,156 @@
         "research/current/weighted_congestion/class_front_phase_quotient.md"
       ],
       "status": "method candidate; excluded in stated scope"
+    },
+    {
+      "id": "PK-OCCUPANCY-KERNEL-DEFINITION",
+      "kind": "definition",
+      "track": "extensions",
+      "title": "正质量Boolean占用核、active秩与顶背景差分",
+      "detail": "有限Boolean输入、固定正质量、整数非负幂与非负混合；active表唯一多重线性秩、顶背景差分泛函、全激活质量B与unanimity极限方向。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "PK-RANK-FACE-EXACT-AUDIT",
+      "kind": "evidence",
+      "track": "evidence",
+      "title": "正核秩面与锐预算的双路精确审计",
+      "detail": "实际Boolean表、Mobius秩、顶背景差分、sharp k=q、全部背景正差分、删项复用及零权/底背景/非闭边界；有限Fraction不代普遍证明。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "tests/audits/positive_kernels/verify_rank_faces.py",
+        "tests/audits/positive_kernels/independent_rank_face.py",
+        "evidence/runs/positive_kernels/rank_faces_author.json",
+        "evidence/runs/positive_kernels/rank_faces_independent.json",
+        "examples/positive_kernels/rank_face_inputs.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "PK-GENERAL-SIGNATURE-BRIDGE",
+      "kind": "obligation",
+      "track": "extensions",
+      "title": "正占用核到一般签名与selector可行性的未证桥",
+      "detail": "没有零成本动作时正资源可能用于0或两动作并使差分换号；须重建可用正结构或直接控制selector极锥相交。当前PK工具不保证均衡存在。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "PK-INTERACTION-RANK-FACE-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "正占用核的交互秩暴露面",
+      "detail": "每个n≥1、正实质量w、整数r≥0及C∈K_fin：C的active秩≤r iff每个有限非负表示的所有正项min{k,|S|−1}≤r；r≤n−2时恰为顶背景(r+1)阶差分和L的零暴露面，r≥n−1为全锥。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "PK-SHARP-FORBIDDEN-MASS-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "正占用核的锐坏项质量预算",
+      "detail": "每个n≥2、正实w、0≤r≤n−2，q=r+1；γ=min_|S|≥q+1 q!(|S|−q)e_q(w_S)/(|S|W_S^q)>0。任有限非负表示删除min{k,|S|−1}>r项得合法低秩C_low，bad全激活质量≤L_q(C)/γ，逐坐标0≤C−C_low≤L_q(C)/γ。γ是全部bad单核L/B精确最小且k=q达到；任意低秩绝对ε近似给n binom(n−1,q)2^q ε/γ界。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "PK-OCCUPANCY-CONE-CLOSURE-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "正占用核的非闭锥补全与秩面闭包",
+      "detail": "每个n≥1、正实w：cl K_fin=cone({K_(S,k)}∪{U_S})，U_(S,i)=1_(i∈S)prod_(j∈S)s_j且cone仍有限和。n≥2原锥非闭；每r≥0有cl K_fin∩V_r=cl(K_fin∩V_r)，r≤n−2亦等于cl K_fin∩ker L_(r+1)。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-ANCHORED-MARGIN-PADDING-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "锚定保环时钟不可消去真实环余量依赖：精确接口",
+      "detail": "固定三次基体、γ_i及环外gap K_i；Q=(3/2)^D，ε=min{η/2,(α−1)K_min/(8Q)}；两动作专属同费private cubic实现恒定t_i=(γ_i−ε)/(α−1)。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md"
+      ],
+      "status": "specified exact contract"
+    },
+    {
+      "id": "WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "锚定保环时钟不可消去真实环余量依赖",
+      "detail": "对每个整数D≥0，存在固定4玩家、权(1,1/2,1/4,1/8)、α=21/20、16正三次资源、两非空空交反链动作的有理MODEL基体G_D，原八边同序环全strictα；任意添加anchor0、全部允许T012/013/023、010/101同pair同费、degree≤D非负多项式时钟，只要保全部八环边strictα，就仍保0101/1010的所有翻位margin<−K_min/2<0。因此不存在仅依p,n,w,α而不依余量/实例细节的通用有限保环次数界。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/actual_clock_margins_review.md"
+      ],
+      "status": "complete fixed-architecture all-cap obstruction; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "锚定保环时钟不可消去真实环余量依赖：独立有理核验",
+      "detail": "先statement独立重构，攻击冻结dacc9daf；两路Fraction采用不同显式ε，核全部16态/8环、pure-cubic private及空交等价、任意非负混合所需列预算；独立核验含D=1000。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_margin_padding.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock_margin_padding.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/clock_margin_padding.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock_margin_padding.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-FULL-CORE-CYCLE-IMPLANT-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "完整空交反链签名锥中暂态择证质量的必要性：精确接口",
+      "detail": "完整proper二动作签名锥；d+2个active parity坐标、flag层、给定坏简单环；概率dual归一化和η/M质量缺口。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "specified exact contract"
+    },
+    {
+      "id": "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "完整空交反链签名锥中暂态择证质量的必要性",
+      "detail": "任d≥0、α≥1及n玩家positive-weight binary proper-resource degree≤d游戏的严格α简单环Q，补至n′=max(n,d+2)再加flag，在完整非空proper signature×0..d锥上有selector H，唯一recurrent为嵌入Q；同一完全暂态概率dual对全部β≥1可行。在给定α任何dual暂态质量≥η/(η+M)>0，且完整锥无共同PNE、任意点质量皆非dual。cyclic-clone的两互补动作给每d≥2、1≤α<ρ_d的实例。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete interface corollary; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "完整空交反链签名锥中暂态择证质量的必要性：独立有理核验",
+      "detail": "先statement独立重构parity层和flag路由，再攻击c55819d7 statement/c2cde533 proof；两路Fraction枚举完整proper列、全state路由、真实环margin、singleton点dual反证及超次数不抵消边界。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_transient_core_implant.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_transient_core_implant.py",
+        "evidence/runs/weighted_congestion/template_certificates/transient_core_implant.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_transient_core_implant.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -13338,6 +13488,219 @@
         "research/current/weighted_congestion/class_front_phase_quotient.md"
       ],
       "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-PK-INTERACTION-RANK-FACE-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "PK-OCCUPANCY-KERNEL-DEFINITION"
+      ],
+      "conclusion": "PK-INTERACTION-RANK-FACE-v1",
+      "statement": "非负多重线性展开使混合差分无消去，顶背景泛函恰检全部超阶项；正和为零逐项为零。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-PK-INTERACTION-RANK-FACE-v1",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "PK-RANK-FACE-EXACT-AUDIT"
+      ],
+      "conclusion": "PK-INTERACTION-RANK-FACE-v1",
+      "statement": "双路独立Fraction核验实际有限表、边界及复用算例；任意实质量/无界次数/闭包由解析证明承担。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "tests/audits/positive_kernels/verify_rank_faces.py",
+        "tests/audits/positive_kernels/independent_rank_face.py",
+        "evidence/runs/positive_kernels/rank_faces_author.json",
+        "evidence/runs/positive_kernels/rank_faces_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-PK-SHARP-FORBIDDEN-MASS-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "PK-OCCUPANCY-KERNEL-DEFINITION",
+        "PK-INTERACTION-RANK-FACE-v1"
+      ],
+      "conclusion": "PK-SHARP-FORBIDDEN-MASS-v1",
+      "statement": "顶背景归一化差分是抽样覆盖事件，随次数单调且k=q取sharp值，有限support最小后线性叠加。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-PK-SHARP-FORBIDDEN-MASS-v1",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "PK-RANK-FACE-EXACT-AUDIT"
+      ],
+      "conclusion": "PK-SHARP-FORBIDDEN-MASS-v1",
+      "statement": "双路独立Fraction核验实际有限表、边界及复用算例；任意实质量/无界次数/闭包由解析证明承担。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "tests/audits/positive_kernels/verify_rank_faces.py",
+        "tests/audits/positive_kernels/independent_rank_face.py",
+        "evidence/runs/positive_kernels/rank_faces_author.json",
+        "evidence/runs/positive_kernels/rank_faces_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-PK-OCCUPANCY-CONE-CLOSURE-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "PK-OCCUPANCY-KERNEL-DEFINITION",
+        "PK-INTERACTION-RANK-FACE-v1",
+        "PK-SHARP-FORBIDDEN-MASS-v1"
+      ],
+      "conclusion": "PK-OCCUPANCY-CONE-CLOSURE-v1",
+      "statement": "正权归一化核仅有unanimity聚点；紧归一化生成集给闭锥，sharp删项预算使低秩截面与闭包交换。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "research/reviews/positive_kernels/rank_face_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-PK-OCCUPANCY-CONE-CLOSURE-v1",
+      "kind": "checks",
+      "track": "evidence",
+      "premises": [
+        "PK-RANK-FACE-EXACT-AUDIT"
+      ],
+      "conclusion": "PK-OCCUPANCY-CONE-CLOSURE-v1",
+      "statement": "双路独立Fraction核验实际有限表、边界及复用算例；任意实质量/无界次数/闭包由解析证明承担。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md",
+        "tests/audits/positive_kernels/verify_rank_faces.py",
+        "tests/audits/positive_kernels/independent_rank_face.py",
+        "evidence/runs/positive_kernels/rank_faces_author.json",
+        "evidence/runs/positive_kernels/rank_faces_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "LIMIT-PK-INTERACTION-RANK-FACE-v1-GENERAL-SIGNATURE",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "PK-INTERACTION-RANK-FACE-v1"
+      ],
+      "conclusion": "PK-GENERAL-SIGNATURE-BRIDGE",
+      "statement": "只为正向占用核的完整成本结构；没有零动作定向、符号差分控制或selector可行性证明时不能外推均衡。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md"
+      ],
+      "status": "open bridge; no equilibrium theorem"
+    },
+    {
+      "id": "LIMIT-PK-SHARP-FORBIDDEN-MASS-v1-GENERAL-SIGNATURE",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "PK-SHARP-FORBIDDEN-MASS-v1"
+      ],
+      "conclusion": "PK-GENERAL-SIGNATURE-BRIDGE",
+      "statement": "只为正向占用核的完整成本结构；没有零动作定向、符号差分控制或selector可行性证明时不能外推均衡。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md"
+      ],
+      "status": "open bridge; no equilibrium theorem"
+    },
+    {
+      "id": "LIMIT-PK-OCCUPANCY-CONE-CLOSURE-v1-GENERAL-SIGNATURE",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "PK-OCCUPANCY-CONE-CLOSURE-v1"
+      ],
+      "conclusion": "PK-GENERAL-SIGNATURE-BRIDGE",
+      "statement": "只为正向占用核的完整成本结构；没有零动作定向、符号差分控制或selector可行性证明时不能外推均衡。",
+      "refs": [
+        "research/current/positive_kernels/occupancy_rank_faces.md"
+      ],
+      "status": "open bridge; no equilibrium theorem"
+    },
+    {
+      "id": "DERIVE-WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1",
+        "WC-ANCHORED-MARGIN-PADDING-DEFINITION"
+      ],
+      "conclusion": "WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1",
+      "statement": "MODEL、固定基体γ/K的实际负载、真实三元Σg=−(α−1)ΣS预算、非负单项式列及private三次padding成本恒等。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md"
+      ],
+      "status": "complete fixed-architecture all-cap obstruction; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-AUDIT"
+      ],
+      "conclusion": "WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1",
+      "statement": "有限literal/Fraction检查实现、范围和边界；一般量词由正文证明。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_margin_padding.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock_margin_padding.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/clock_margin_padding.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock_margin_padding.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+        "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1",
+        "WC-FULL-CORE-CYCLE-IMPLANT-DEFINITION"
+      ],
+      "conclusion": "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+      "statement": "MODEL、全签名概率dual、低阶parity抵消、合法翻位flag路由、给定严格环的非负费用分离；近d推论另依循环窗口两互补动作的真实环。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "complete interface corollary; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-AUDIT"
+      ],
+      "conclusion": "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+      "statement": "有限literal/Fraction检查实现、范围和边界；一般量词由正文证明。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_transient_core_implant.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_transient_core_implant.py",
+        "evidence/runs/weighted_congestion/template_certificates/transient_core_implant.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_transient_core_implant.json"
+      ],
+      "status": "finite exact audit"
     }
   ]
 }

@@ -9,6 +9,8 @@
 凭据：本会话上传的 githubtoken.txt，仅用于该仓库认证，留在仓库外，不写进正文、公屏、日志或 remote URL。
 每个对话使用独立 clone，研究成果统一提交 main，不创建研究分支。本团队的 Git 写入和对外发言由 boss 统一执行；子 agent 无需登记独立发布身份。
 
+本对话发布身份使用 R- 前缀：用户已分配唯一编号就使用该编号，否则首次用 Python uuid.uuid4().hex 生成唯一后缀，通过 start --actor 固定并核对回执；接续同一 clone 读取并复用 wcg.actor，不每轮换号，不照抄其他对话的编号。程序不做跨 clone 全局查重，Git 作者字段可能沿用已有配置；实际作者和来源另行保留。共同操作细节见 prompts/OPERATIONS.md，按本角色执行；其他角色不需要额外执行本提示词的攻题职责。
+
 【唯一题目与身份】
 
 判定：是否存在绝对常数 C≥1 和整数 d0≥2，使每个整数 d≥d0、每个非负系数多项式费用次数至多 d 的有限加权原子拥塞博弈，都存在 (C d/ln d)-近似纯 Nash 均衡？ln 表示自然对数。
@@ -32,9 +34,9 @@ C_i(s) ≤ (C d/ln d) C_i(t_i,s_−i)。
 
 先检查本地目录、git status、origin 和远端状态，保留已有未提交成果，不覆盖其他项目。
 若本会话上传了最新版 work.py，用实际路径运行：
-python3 <work.py实际路径> --repo <本对话项目目录> start --token-file <githubtoken.txt实际路径>
+python3 <work.py实际路径> --repo <本对话项目目录> start --actor <本对话发布编号> --token-file <githubtoken.txt实际路径>
 
-若未上传 work.py：已有正确项目就先保留本地成果并安全同步 main，使用同步后的仓库程序；项目不存在则用仓库外凭据安全 clone 指定仓库的 main 到本对话独立目录，再用仓库内 work.py 执行同一 start。不得因缺少可选程序附件而停在启动步骤。恢复后只使用仓库内最新版 research/weighted_congestion_frontier/tools/work.py。
+若未上传 work.py：已有正确项目就先保留本地成果并安全同步 main，使用同步后的仓库程序；项目不存在则用仓库外凭据安全 clone 指定仓库的 main 到本对话独立目录，再用仓库内 work.py 执行同一 start，保留同一个 --actor。不得因缺少可选程序附件而停在启动步骤。恢复后只使用仓库内最新版 research/weighted_congestion_frontier/tools/work.py。
 
 先读根 README.md、RESEARCH_STATE.md、CLAIMS.md、FAILED_ROUTES.md、AGENTS.md，以及本题目录适用的 AGENTS.md，再读：
 research/README.md

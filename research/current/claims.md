@@ -495,6 +495,28 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-APPROXIMATE-SUPPORT-DISTORTION-v1 | 每个m≥1、ε>0，原binary成本V_i=s_i(s_0+εΣ_(l=1)^m s_l)。任意相同玩家/标签的有限MODEL表示允许改正权及任意有限degree；若全部正资源潜在支持≤r≥1且所有玩家/状态V≤Ĉ≤βV，则β≥max{1,m(1+ε)/[(r−1)(1+mε)+mε]}。对称A夹逼给A²同必要界。固定有限r、β选择m和正有理ε即不可表示，原费用仅degree1。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/approximate_support_review.md)。完整逐状态成本、保零及无辅助玩家承重；原例有全0精确PNE。仅限制此近似表示归约，不排辅助玩家、均衡lift或全类存在，不声称固定参数sharp。 |
 | WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1 | 显式12玩家/64资源degree8循环窗口binary游戏有24步strict21/20双同序环，但phase(0,0,1)是全部玩家严格exactPNE。任意有限fresh同类递增三元010/101互补pair，pair两侧同一非负非减费用，任何degree/幅度叠加均保留该严格exactPNE。因此仅追加这些clock不能对所有该倍率strict sweep输入保证全状态无PNE。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/class_front_phase_quotient.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/class_internal_clock_compiler_review.md)。只排所写追加compiler；不排跨类、其他arity/phase、不等费pair、辅助玩家或更高倍率专用输入类。旧端点反例仍非PNE，不改其ID；本新fixture是真exactPNE。 |
 
+## 正占用核的独立结构接口
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| PK-INTERACTION-RANK-FACE-v1 | 每个n≥1、正实质量w、整数r≥0及C∈K_fin：C的active秩≤r iff每个有限非负表示的所有正项min{k,|S|−1}≤r；r≤n−2时恰为顶背景(r+1)阶差分和L的零暴露面，r≥n−1为全锥。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)。不覆盖负混合或零/负质量；低阶大支持线性项仍允许，不能推出全小用户支持。 |
+| PK-SHARP-FORBIDDEN-MASS-v1 | 每个n≥2、正实w、0≤r≤n−2，q=r+1；γ=min_|S|≥q+1 q!(|S|−q)e_q(w_S)/(|S|W_S^q)>0。任有限非负表示删除min{k,|S|−1}>r项得合法低秩C_low，bad全激活质量≤L_q(C)/γ，逐坐标0≤C−C_low≤L_q(C)/γ。γ是全部bad单核L/B精确最小且k=q达到；任意低秩绝对ε近似给n binom(n−1,q)2^q ε/γ界。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)。锐性只指单核L/B预算比；不称最终距离界最优、不恢复未知表示；q≥2时常数非跨正质量统一。 |
+| PK-OCCUPANCY-CONE-CLOSURE-v1 | 每个n≥1、正实w：cl K_fin=cone({K_(S,k)}∪{U_S})，U_(S,i)=1_(i∈S)prod_(j∈S)s_j且cone仍有限和。n≥2原锥非闭；每r≥0有cl K_fin∩V_r=cl(K_fin∩V_r)，r≤n−2亦等于cl K_fin∩ker L_(r+1)。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)。闭包新增对象不能冒充原有限表示；底背景差分无稳定gap，不能用其零面替代顶背景；没有均衡桥。 |
+
+## 锚定保环时钟不可消去真实环余量依赖
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1 | 对每个整数D≥0，存在固定4玩家、权(1,1/2,1/4,1/8)、α=21/20、16正三次资源、两非空空交反链动作的有理MODEL基体G_D，原八边同序环全strictα；任意添加anchor0、全部允许T012/013/023、010/101同pair同费、degree≤D非负多项式时钟，只要保全部八环边strictα，就仍保0101/1010的所有翻位margin<−K_min/2<0。因此不存在仅依p,n,w,α而不依余量/实例细节的通用有限保环次数界。 | complete fixed-architecture all-cap obstruction; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/anchored_clock_actual_margins.md), [独立审查](../reviews/weighted_congestion/ordinal_potentials/actual_clock_margins_review.md)。只限制必须保原环的明示同费三元架构；不排特选健康余量增长输入、换支持/phase/两侧异费/aux或不保环。α=1不在新Claim范围。系数幅度保持有界，不声称幅度必须发散或任何全类结论。 |
+
+
+
+## 完整空交反链签名锥中暂态择证质量的必要性
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1 | 任d≥0、α≥1及n玩家positive-weight binary proper-resource degree≤d游戏的严格α简单环Q，补至n′=max(n,d+2)再加flag，在完整非空proper signature×0..d锥上有selector H，唯一recurrent为嵌入Q；同一完全暂态概率dual对全部β≥1可行。在给定α任何dual暂态质量≥η/(η+M)>0，且完整锥无共同PNE、任意点质量皆非dual。cyclic-clone的两互补动作给每d≥2、1≤α<ρ_d的实例。 | complete interface corollary; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/template_certificates/selector_local_moments.md), [独立审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)。旧parity暂态可行及删列锥必要性在完整proper锥的同时化推论，非任意selector统一法；singleton列依状态变化，¬∃s∀a不能交换为∃a∀s。不构造全类非存在族，不给C,d0。零向量不叫概率dual。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -2,6 +2,8 @@
 
 WC-TARGET v1 OPEN。已分类入 main 的核心进展是奇环有限非存在族：a_*(d)≥T_d∼d/ln d；两种实现与独立审查在[现行数学入口](../current/weighted_congestion/README.md)。普遍存在上界仍是已核实文献 d。全球优先权及外部同行评审未认证。
 
+E1已将局部成本正展开提取为[正占用核独立结构](../current/positive_kernels/README.md)：秩面、锐截断与闭包三PK身份不改变WC结论。完整响应保真/正权/非负混合承重，一般签名与selector桥仍缺；可用于先过滤或审计正共享负载字典。
+
 新增已审结构工具：[高次份额势](../current/weighted_congestion/high_degree_share.md)给实例相关近精确界；纯d次非存在必须有严格小的潜在个体份额，固定正权向量的最低正次数增长给一致趋1。低次混合与全类任意小份额不受此界解决。
 
 真正未解：全类 O(d/ln d) 存在性；新全状态机制超出现有 light-forcing 包络；一般 cohort 奇环的实际均衡上界。现有 barrier 只限制准确写出的机制。
@@ -30,9 +32,9 @@ WC-TARGET v1 OPEN。已分类入 main 的核心进展是奇环有限非存在族
 
 [有限可动权类的三角排序势](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)已给A_(d,k)隐式界，固定k为d^(1−1/k)，任意固定背景精确吸收、k个R窄簇损失R^d。d≥16且k≤ln d/lnln d的明确子类达到2d/ln d；无界可动类别时A趋d，唯一全类题仍OPEN。真正前沿已收缩为无界可动权类的选态桥或全状态增长反例，不再把固定背景或仅两类稠密cohort当未解接口。
 
-[有限次局部矩与全成本压缩](../current/weighted_congestion/template_certificates/selector_local_moments.md)将签名接口细化为D维完整成本空间、≤D正单项式资源保真表示和≤D+1支撑dual；其仿射全签名刚性另表明：非全等权下，低degree成本不能保真拆成全小用户支持资源，即使提高次数。真正未解仍是每个selector的moment hull与resource polar是否在统一倍率相交。[循环窗口前沿商与不同步反例](../current/weighted_congestion/class_front_phase_quotient.md)提供相对phase表示，但类内clock不能自动给错位front出口，故负向仍需新同步/离front覆盖机制。两包均未完成唯一全类题。
+[有限次局部矩与全成本压缩](../current/weighted_congestion/template_certificates/selector_local_moments.md)将签名接口细化为D维完整成本空间、≤D正单项式资源保真表示和≤D+1支撑dual；其仿射全签名刚性另表明：非全等权下，低degree成本不能保真拆成全小用户支持资源，即使提高次数。完整proper锥另可同时实现近d真实唯一坏环和完全暂态dual，任何dual暂态质量必须为正；这是已知两机制的同时化，不给任意selector方法。真正未解仍是每个selector的moment hull与resource polar是否在统一倍率相交。[循环窗口前沿商与不同步反例](../current/weighted_congestion/class_front_phase_quotient.md)提供相对phase表示，但类内clock不能自动给错位front出口，故负向仍需新同步/离front覆盖机制。两包均未完成唯一全类题。
 
-[共享侧资源截断势](../current/weighted_congestion/shared_side_truncated_potential.md)把同权hub、unique-light/source、最坏负载UF子类扩到任意共享hub子集，给A_d≤2d/ln d；独立AS+B判据覆盖部分非UF实例。[实际时钟差分与预算](../current/weighted_congestion/anchored_clock_actual_margins.md)给非统一clock的O(n²)充分LP、必要总预算和κ稳定条件，固定四玩家43次证书优于原uniform91选值但不称最优。原全三元、统一M架构另有80次全状态证书却不满足(U)，故(U)对原架构也非必要；这仍不是增长族。真正缺口仍是无界可动权类的全类选态、跨source/预算外反馈或次数效率可增长的全状态族。
+[共享侧资源截断势](../current/weighted_congestion/shared_side_truncated_potential.md)把同权hub、unique-light/source、最坏负载UF子类扩到任意共享hub子集，给A_d≤2d/ln d；独立AS+B判据覆盖部分非UF实例。[实际时钟差分与预算](../current/weighted_congestion/anchored_clock_actual_margins.md)给非统一clock的O(n²)充分LP、必要总预算和κ稳定条件，固定四玩家43次证书优于原uniform91选值但不称最优。原全三元、统一M架构另有80次全状态证书却不满足(U)，故(U)对原架构也非必要；这仍不是增长族。实际接口另证：固定人数/权谱/α/纯三次亦可用private成本压低环余量，阻止任意预给degree cap的保环三元clock；健康余量增长输入仍未排除。真正缺口仍是无界可动权类的全类选态、跨source/预算外反馈或次数效率可增长的全状态族。
 
 [共占图高度与实际改善环必要链](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)把三角势参数从全局权类数放宽为同一降权共占图的路径高度；全局权种数可无界。实际严格改善闭词也必须跨越相应高度门槛，各弧可来自不同端点。仍无全类高度控制；动态换秩改变势，缺少高链SCC出口或瞬态dual。
 

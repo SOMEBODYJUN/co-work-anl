@@ -528,3 +528,86 @@ k=0、1时花括号为0。k≥2时它等于
 - 独立先重构与冻结攻击：`research/reviews/weighted_congestion/template_certificates/approximate_support_review.md`；只覆盖本新ID，不借旧刚性审查升级。
 
 代码向stdout输出JSON，命令、Python版本、参数、算术及源码hash均保留，重跑不覆盖冻结证据。无外部solver或浮点容差。
+
+
+## 13. 完整空交反链签名锥中暂态择证质量的必要性
+
+**ID/version：** `WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1`。本节是既有奇偶暂态构造与真实坏环路由的同时化推论，新增范围为完整proper签名锥及近d倍率，而非删列子锥；不提供任意selector的统一构造。
+
+此处概率dual均指μ_s≥0、Σ_sμ_s=1且B_H(β)^Tμ≤0，排除零向量。B_H(β)的(s,σ,k)列为所选玩家在s的真实资源成本减β倍偏离后真实成本。proper签名对每名玩家只能是不参与、仅动作0参与、仅动作1参与；锥包含全部非空proper签名及0到d单项式次数的非负组合。
+
+设 d≥0、α≥1，且某个 n 玩家二动作 MODEL 游戏 G（权向量 w>0、费用次数≤d）有一条非空严格 α 改善简单有向环 Q。要求 G 的每条正费用资源对每名玩家至多出现在一个动作中（即二动作 proper signature）；环无自环。令 n′=max{n,d+2}。任取 n′−n 个正附加权和一个正 flag 权，构造 n′+1 玩家二动作、全部非空 proper signatures 与次数 0,…,d 的完整列锥 K。
+
+**定理。** 存在一个在每态都选择真实动作翻转的 selector H，满足：
+
+1. H 唯一 recurrent cycle 是 G 原环 Q（附加玩家动作固定为0，flag动作固定为1）。
+2. H 有一个完全支撑于 transient states 的概率 dual λ，且同一 λ 对该完整 K 在 β=1 以及每个 β≥1 都有 B_H(β)^Tλ≤0。
+3. 在原给定 α，H 的任何 dual 都给 transient states 严格正质量；尤其不存在 recurrent-only dual。
+4. 完整 K 没有任何模板共同 α-PNE，且 H 在任何倍率 β≥1 都没有点质量 dual：每态 s 的当前所选玩家动作 singleton signature 常数列在该行等于1。
+5. 若 a 是原游戏 G 的列系数向量在 K 的零延拓，b(s)=(B_H(α)a)_s，η=min_{s∈Q}b(s)>0，M=max_{s∉Q}max{0,−b(s)}≥0，则每个 dual μ 都满足 μ(Transient)≥η/(η+M)>0。M=0时该界恰为1。这里 η,M 依实例，不给统一次数收益。
+
+**接已有结果的明确推论。** WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1 的环来自二动作 proper resources。因此对每个整数 d≥2、每个 1≤α<ρ_d，存在正有理权、binary/full-proper-core selector 满足1–5。该推论仍不是全类存在上界，也不构造没有 α-PNE 的费用游戏。
+
+**范围与价值。** 这是既有 parity transient dual 和唯一坏环路由的同时化；既有 stationary 稿§7已在删列子锥中给过 δ_empty 暂态必要，本命题的新增范围仅为完整 proper-signature cone、无共同 sink、无人为空动作、任何点质量均失败，并可到近 d 倍率。它不是一种能处理任意 selector 的构造。
+
+
+### 明确构造
+
+把原状态写成 y∈{0,1}^n。补 n′−n 个二动作玩家，补零得到嵌入环 Q′⊂{0,1}^{n′}。在 Q′ 取一个指定顶点 q。另加一个 flag 玩家 F；全部状态写成 (x,b)∈{0,1}^{n′}×{0,1}。选前 m=d+2 个 ordinary coordinates 为 active，记 p(x)=Σ_{j=1}^m x_j mod2。
+
+* b=0,p(x)=0：翻转 ordinary 玩家1。
+* b=0,p(x)=1：翻转 flag，使 b=1。
+* b=1,x∈Q′：依原简单环翻转指定的原玩家。
+* b=1,x∉Q′：取最小 j 满足 x_j≠q_j，翻转 j 使其等于 q_j。
+
+最后一种有定义，因为 x=q 则已在 Q′。每条边均是恰好一名玩家的合法不同动作偏离。flag0 至多两步进入 flag1；flag1 永不返回 flag0；flag1 在首次进入 Q′ 前每步严格减少与 q 的 Hamming 距离，至多 n′ 步入环。故唯一 recurrent cycle 为 Q′×{1}。特别地 flag0 全部 transient。
+
+### 完整锥的完全暂态 dual
+
+固定非active普通坐标 x_j=q_j（j>m）。令 S 为 flag0、active even parity 的全部状态；其大小 2^{m−1}=2^{d+1}。令 λ 在 S 上均匀，别处0。S上 H 只选择 ordinary 玩家1；翻转1将 even active cube 双射到 odd active cube，非active与flag不变。
+
+任取完整 proper signature σ、费用单项式次数0≤k≤d。令 f_j为各坐标动作的资源 membership predicate（可为0或一个动作的 indicator）。所选玩家1的真实资源费用在 flag0 是
+
+    g(x)=f_1(x_1) [w_1 + w_F f_F(0) + Σ_{j≠1} w_j f_j(x_j)]^k.
+
+指示量为0时乘积消去费用，故可把自己的权固定写在方括号内。把非active坐标固定，上式是 active binary cube 上多线性化次数≤k+1≤d+1<m的函数。对常数项 k=0 也成立；无需计算成本比或0/0。
+
+每个次数<m单项式都遗漏一名 active 坐标。按该坐标取0/1配对，完整cube的 signed parity sum为0。因此 Σ_even g=Σ_odd g。翻转1双射即给该列 (B_H(1)^Tλ)_(σ,k)=0。由于偏离后真实资源费用非负，β≥1时 B_H(β)=B_H(1)−(β−1)Arrival，故同一 λ 逐列≤0。证明甚至允许每名玩家同时两动作使用该资源的完整签名；但主命题只需 proper cone。
+
+全proper模板可把每个signature保留成零费用资源，并含每动作的 singleton signature，故人人两个策略都非空、互不包含、空交，标签不会合并。λ构造无需空策略、固定玩家或共同零成本动作。
+
+### Recurrent 支撑被原游戏分离
+
+把原游戏的全部正资源和系数 a 延拓：附加 ordinary 玩家、flag不使用旧资源。它们的任一动作可用私人零费用 marker 区分。环 Q′×{1} 的真实旧/新成本逐项与 G 原环相同，所以 b(s)=(B_H(α)a)_s>0于全部recurrent states。
+
+若 μ 是完整锥的概率dual而只支撑Q′×{1}，则
+
+    0 < Σ_s μ_s b(s) = a·B_H(α)^Tμ ≤0,
+
+矛盾。这里仅用 a≥0；没有把有限计算当作一般证明。
+
+对任意dual μ，令 t=μ(Transient)，η=min_Q b>0，M=max_Transient(−b)_+。则
+
+    0 ≥ E_μ b ≥ η(1−t)−Mt,
+
+给 t≥η/(η+M)>0。这里一般界只需 M≥0；若恰有 M=0，则界强迫t=1，完全允许。η>0保证分母严格正，不需要除任何玩家成本。
+
+### 无点质量dual和无共同均衡
+
+对任意态s，令i为H当前所选玩家。取只由玩家i当前动作使用、其他玩家不用的singleton signature，费用为1。其B_H(β)行值恰为1−β·0=1。所以δ_s不是任意β≥1的dual。
+
+同一singleton资源游戏中，s的玩家i从成本1偏离到0，因此s不是任何有限β-PNE。由于每态都能单独这样选择一个允许费用游戏，模板不存在被所有费用游戏共享的PNE状态。它不说明这些游戏没有各自的PNE。
+
+
+
+### 13.1. 近d推论的binary域与无共同均衡的量词
+
+应用循环窗口定理时，先取其第3–4节构造中的两个互补动作，删去其后为原方法障碍添加的全部2^E策略；严格环仍在，每名玩家的资源proper性仍保持。必要时从严格闭walk中抽取简单有向环，再应用本节。不得把原全文的2^E输入直接称作binary。新增零费用signature资源区分动作，MODEL允许费用为零。
+
+“没有模板共同均衡”的准确量词为¬∃s∀a≥0：s是费用a游戏的α-PNE；不是∃a≥0∀s：s非α-PNE。singleton列依s变化，不能交换量词。每个具体游戏仍可能有均衡；本节不构造无均衡增长族。
+
+### 13.2. 独立攻击与有理重现
+
+独立审查先仅接收statement，自主重构parity层、flag路由和质量分离，再攻击冻结statement c55819d7与proof c2cde533；见[同一local-moment审查稿新增部分](../../../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)。内部未发现本范围内fatal。Status：complete interface corollary; independently reconstructed and exactly audited; unrefereed。Value为完整锥下暂态必要性的范围闭合，Mechanism为低阶奇偶抵消加唯一真实坏环，Novelty未认证，Ambition全类OPEN。
+
+运行`python3 tests/audits/weighted_congestion/template_certificates/verify_transient_core_implant.py`及`python3 tests/audits/weighted_congestion/template_certificates/independent_transient_core_implant.py`。默认stdout，`--output NEW_PATH`独占创建。冻结结果为`evidence/runs/weighted_congestion/template_certificates/transient_core_implant.json`及`evidence/runs/weighted_congestion/template_certificates/independent_transient_core_implant.json`。作者审计从literal重建二次、三次两fixture的所有proper及全部签名列；独立审计使用不同附加权，重建二次例所有726列并核验超次数一列不再抵消。代码、参数、次数、Python与hash记录在各JSON；任意d及任意给定坏环的证明由本节承担，有限检查不替一般证明。
