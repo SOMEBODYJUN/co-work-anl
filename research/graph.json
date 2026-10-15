@@ -5560,6 +5560,82 @@
         "research/reviews/positive_kernels/rank_face_review.md"
       ],
       "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-ANCHORED-MARGIN-PADDING-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "锚定保环时钟不可消去真实环余量依赖：精确接口",
+      "detail": "固定三次基体、γ_i及环外gap K_i；Q=(3/2)^D，ε=min{η/2,(α−1)K_min/(8Q)}；两动作专属同费private cubic实现恒定t_i=(γ_i−ε)/(α−1)。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md"
+      ],
+      "status": "specified exact contract"
+    },
+    {
+      "id": "WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "锚定保环时钟不可消去真实环余量依赖",
+      "detail": "对每个整数D≥0，存在固定4玩家、权(1,1/2,1/4,1/8)、α=21/20、16正三次资源、两非空空交反链动作的有理MODEL基体G_D，原八边同序环全strictα；任意添加anchor0、全部允许T012/013/023、010/101同pair同费、degree≤D非负多项式时钟，只要保全部八环边strictα，就仍保0101/1010的所有翻位margin<−K_min/2<0。因此不存在仅依p,n,w,α而不依余量/实例细节的通用有限保环次数界。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/actual_clock_margins_review.md"
+      ],
+      "status": "complete fixed-architecture all-cap obstruction; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "锚定保环时钟不可消去真实环余量依赖：独立有理核验",
+      "detail": "先statement独立重构，攻击冻结dacc9daf；两路Fraction采用不同显式ε，核全部16态/8环、pure-cubic private及空交等价、任意非负混合所需列预算；独立核验含D=1000。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_margin_padding.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock_margin_padding.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/clock_margin_padding.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock_margin_padding.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-FULL-CORE-CYCLE-IMPLANT-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "完整空交反链签名锥中暂态择证质量的必要性：精确接口",
+      "detail": "完整proper二动作签名锥；d+2个active parity坐标、flag层、给定坏简单环；概率dual归一化和η/M质量缺口。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "specified exact contract"
+    },
+    {
+      "id": "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "完整空交反链签名锥中暂态择证质量的必要性",
+      "detail": "任d≥0、α≥1及n玩家positive-weight binary proper-resource degree≤d游戏的严格α简单环Q，补至n′=max(n,d+2)再加flag，在完整非空proper signature×0..d锥上有selector H，唯一recurrent为嵌入Q；同一完全暂态概率dual对全部β≥1可行。在给定α任何dual暂态质量≥η/(η+M)>0，且完整锥无共同PNE、任意点质量皆非dual。cyclic-clone的两互补动作给每d≥2、1≤α<ρ_d的实例。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete interface corollary; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "完整空交反链签名锥中暂态择证质量的必要性：独立有理核验",
+      "detail": "先statement独立重构parity层和flag路由，再攻击c55819d7 statement/c2cde533 proof；两路Fraction枚举完整proper列、全state路由、真实环margin、singleton点dual反证及超次数不抵消边界。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_transient_core_implant.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_transient_core_implant.py",
+        "evidence/runs/weighted_congestion/template_certificates/transient_core_implant.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_transient_core_implant.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -13289,6 +13365,75 @@
         "research/current/positive_kernels/occupancy_rank_faces.md"
       ],
       "status": "open bridge; no equilibrium theorem"
+    },
+    {
+      "id": "DERIVE-WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1",
+        "WC-ANCHORED-MARGIN-PADDING-DEFINITION"
+      ],
+      "conclusion": "WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1",
+      "statement": "MODEL、固定基体γ/K的实际负载、真实三元Σg=−(α−1)ΣS预算、非负单项式列及private三次padding成本恒等。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md"
+      ],
+      "status": "complete fixed-architecture all-cap obstruction; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-AUDIT"
+      ],
+      "conclusion": "WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1",
+      "statement": "有限literal/Fraction检查实现、范围和边界；一般量词由正文证明。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_actual_margins.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_margin_padding.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock_margin_padding.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/clock_margin_padding.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock_margin_padding.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+        "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1",
+        "WC-FULL-CORE-CYCLE-IMPLANT-DEFINITION"
+      ],
+      "conclusion": "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+      "statement": "MODEL、全签名概率dual、低阶parity抵消、合法翻位flag路由、给定严格环的非负费用分离；近d推论另依循环窗口两互补动作的真实环。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "complete interface corollary; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-AUDIT"
+      ],
+      "conclusion": "WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1",
+      "statement": "有限literal/Fraction检查实现、范围和边界；一般量词由正文证明。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_transient_core_implant.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_transient_core_implant.py",
+        "evidence/runs/weighted_congestion/template_certificates/transient_core_implant.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_transient_core_implant.json"
+      ],
+      "status": "finite exact audit"
     }
   ]
 }

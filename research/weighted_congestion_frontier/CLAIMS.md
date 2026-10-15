@@ -858,3 +858,24 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：闭包新增对象不能冒充原有限表示；底背景差分无稳定gap，不能用其零面替代顶背景；没有均衡桥。 零质量例曾漏算零质量观察者，实测发现后改为(1,0,0)并加入回归；范围量词已显式限定C∈K_fin，无未结范围内fatal。
 - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅所写结构接口；Value为可复用模型字典过滤/预算/闭包；Novelty未认证，Mechanism见正文，Ambition不改变WC-TARGET OPEN。
 - Related Files：[正文](../current/positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)、`history/source/notes/positive_kernels/occupancy_source_manifest.json`；实际代码/输入/冻结输出由正文第八节进入。
+
+## WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1 — 锚定保环时钟不可消去真实环余量依赖
+
+- ID/version / 中文数学名称：WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1，锚定保环时钟不可消去真实环余量依赖；独立新身份，不改旧Claim。
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：对每个整数D≥0，存在固定4玩家、权(1,1/2,1/4,1/8)、α=21/20、16正三次资源、两非空空交反链动作的有理MODEL基体G_D，原八边同序环全strictα；任意添加anchor0、全部允许T012/013/023、010/101同pair同费、degree≤D非负多项式时钟，只要保全部八环边strictα，就仍保0101/1010的所有翻位margin<−K_min/2<0。因此不存在仅依p,n,w,α而不依余量/实例细节的通用有限保环次数界。 全定义和边界以[正文](../current/weighted_congestion/anchored_clock_actual_margins.md)新增节为准。
+- Dependencies：MODEL、固定基体γ/K的实际负载、真实三元Σg=−(α−1)ΣS预算、非负单项式列及private三次padding成本恒等。
+- Evidence：先statement独立重构，攻击冻结dacc9daf；两路Fraction采用不同显式ε，核全部16态/8环、pure-cubic private及空交等价、任意非负混合所需列预算；独立核验含D=1000。 精确输入、参数、seed（无随机性）、源码hash及实际结果从正文规范合同进入；有限测试不替一般证明。
+- Counterevidence / Objections：只限制必须保原环的明示同费三元架构；不排特选健康余量增长输入、换支持/phase/两侧异费/aux或不保环。α=1不在新Claim范围。系数幅度保持有界，不声称幅度必须发散或任何全类结论。 无尚成立fatal；未外审或认证新颖性。
+- Status：complete fixed-architecture all-cap obstruction; independently reconstructed and exactly audited; unrefereed。Truth仅精确Claim；Value为范围明确的接口/障碍；Mechanism见完整证明；Ambition全类OPEN。
+- Related Files：[正文](../current/weighted_congestion/anchored_clock_actual_margins.md), [审查](../reviews/weighted_congestion/ordinal_potentials/actual_clock_margins_review.md), 规范代码和新冻结证据见正文。
+
+
+## WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1 — 完整空交反链签名锥中暂态择证质量的必要性
+
+- ID/version / 中文数学名称：WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1，完整空交反链签名锥中暂态择证质量的必要性；独立新身份，不改旧Claim。
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：任d≥0、α≥1及n玩家positive-weight binary proper-resource degree≤d游戏的严格α简单环Q，补至n′=max(n,d+2)再加flag，在完整非空proper signature×0..d锥上有selector H，唯一recurrent为嵌入Q；同一完全暂态概率dual对全部β≥1可行。在给定α任何dual暂态质量≥η/(η+M)>0，且完整锥无共同PNE、任意点质量皆非dual。cyclic-clone的两互补动作给每d≥2、1≤α<ρ_d的实例。 全定义和边界以[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)新增节为准。
+- Dependencies：MODEL、全签名概率dual、低阶parity抵消、合法翻位flag路由、给定严格环的非负费用分离；近d推论另依循环窗口两互补动作的真实环。
+- Evidence：先statement独立重构parity层和flag路由，再攻击c55819d7 statement/c2cde533 proof；两路Fraction枚举完整proper列、全state路由、真实环margin、singleton点dual反证及超次数不抵消边界。 精确输入、参数、seed（无随机性）、源码hash及实际结果从正文规范合同进入；有限测试不替一般证明。
+- Counterevidence / Objections：旧parity暂态可行及删列锥必要性在完整proper锥的同时化推论，非任意selector统一法；singleton列依状态变化，¬∃s∀a不能交换为∃a∀s。不构造全类非存在族，不给C,d0。零向量不叫概率dual。 无尚成立fatal；未外审或认证新颖性。
+- Status：complete interface corollary; independently reconstructed and exactly audited; unrefereed。Truth仅精确Claim；Value为范围明确的接口/障碍；Mechanism见完整证明；Ambition全类OPEN。
+- Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md), [审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md), 规范代码和新冻结证据见正文。
