@@ -32,6 +32,11 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 
 | 成果包名称 | 正文入口与内容 | 作用与边界 |
 | --- | --- | --- |
+| 近线性倍率的真实改善环 | [循环窗口复制证明](cyclic_clone_improvement_cycles.md)、[冻结攻击](../../reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md) | α<ρ_d、ρ_d/d→1时有真实改善闭环且全空为精确PNE；排除任意全局全边下降势，仍不排除选择动态/均衡存在 |
+| 共同幂混合的坏全局最小点 | [同一四玩家构造](common_power_mixture_obstruction.md)、[独立攻击](../../reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md) | 全部非零非负共同μ（含连续）均选坏最小点，d≥32、α<d/16；限保留原系数的目标族，有精确PNE |
+| 双轮环的锚定三元全状态锁定 | [编译证明](anchored_cycle_lock.md)、[独立重构攻击](../../reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md) | 保持玩家/权重/两动作，新增2L个单项式，使全部状态无αPNE；q=max(p,D)依δ、B/η及n，尚无目标量级次数控制 |
+| 有限可动权类三角排序混合势 | [一般证明与推论](weight_bands/finite_weight_class_potentials.md)、[重构攻击](../../reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md) | A=Σ((d−1)/A)^j；有限k任意人数/权比，固定背景可吸收，窄簇损失R^d。d≥16且k≤ln d/lnln d给2d/ln d；k无界仍趋d |
+| 两权类别双排序混合势 | [一般证明](weight_bands/two_weight_order_blend.md)、[独立攻击](../../reviews/weighted_congestion/weight_types/two_weight_order_blend_review.md) | 全局仅两种权值、任意人数/权比有(1+√(4d−3))/2-PNE，所有严格该因子改善终止。不能外推任意权类 |
 | 择证平稳与循环支撑边界 | [完整证明](template_certificates/stationary_selector_obstruction.md)、[独立攻击](../../reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md) | 单位速度平稳dual损失无界；仿射循环有权重dual；recurrent支撑等价全模板αFIP，强于PNE存在 |
 | 有向分叉强迫割均衡 | [一般证明](directed_fanout_forcing_cut.md)、[独立攻击](../../reviews/weighted_congestion/directed_fanout_forcing_cut_review.md) | 唯一源主资源＋私有双人侧资源＋UF下，α≥T_d有全反位PNE；不含共享多hub侧资源或UF失败 |
 | 严格反例规范形与普遍阈值端点 | [一般证明](template_certificates/integer_counterexample_normal_form.md)、[独立攻击](../../reviews/weighted_congestion/template_certificates/integer_counterexample_normal_form_review.md) | 固定实α的反例可限制到整数权、单位单项式、非空策略；a_*端点可行。没有统一规模截止或匹配上界 |
@@ -64,8 +69,8 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 
 ## 从当前义务继续
 
-- **全类 O(d/ln d) 存在性。** 可用[全状态择证对偶](template_certificates/finite_action_duality.md)寻找依完整selector的概率证书；必须对所有权重、动作数和selector给统一估计。结构势路线先读权密度、资源拼接和窄权带三包，核对稠密尺度及共享乘子的未解接口；[边际势和序势候选](../../questions/weighted_congestion/README.md)只按实际审查等级使用。
-- **跨权组与阶跃模拟。** [冻结界](weight_bands/ordered_tail_freezing.md)的逐资源β缩放不可省略；不能再希望仅优化潜在尾部参数得到统一倍率。[DAG泄漏预算](polynomial_curvature/dag_low_leakage_budget.md)只限制指定低高端点系统，[极值幅度全入界](step_dag/polynomial_extremal_all_in.md)已直接容纳任意过冲和泄漏，但只在幅度(N)下；实际占用与任意幅度仍须另证。
+- **全类 O(d/ln d) 存在性。** 可用[全状态择证对偶](template_certificates/finite_action_duality.md)寻找依完整selector的概率证书；必须对所有权重、动作数和selector给统一估计。[真实近d循环](cyclic_clone_improvement_cycles.md)已排除只在回返状态找dual/让全部改善终止的一般路线；仍可依完整selector在暂态分配质量或选择部分改善。结构势路线先读权密度、资源拼接和窄权带三包，核对稠密尺度及共享乘子的未解接口；[边际势和序势候选](../../questions/weighted_congestion/README.md)只按实际审查等级使用。
+- **跨权组与阶跃模拟。** [双排序混合势](weight_bands/two_weight_order_blend.md)已越过两权尾部参数无界，给统一平方根次数界；[三角排序](weight_bands/finite_weight_class_potentials.md)已覆盖任意有限k，并精确吸收固定玩家背景；剩余缺口是无界可动类别或无法用少量窄簇覆盖的权谱。 [冻结界](weight_bands/ordered_tail_freezing.md)的逐资源β缩放不可省略；不能再希望仅优化潜在尾部参数得到统一倍率。[DAG泄漏预算](polynomial_curvature/dag_low_leakage_budget.md)只限制指定低高端点系统，[极值幅度全入界](step_dag/polynomial_extremal_all_in.md)已直接容纳任意过冲和泄漏，但只在幅度(N)下；实际占用与任意幅度仍须另证。
 - **超越现有奇环下界。** 先读奇环精确包络，再看非对称缩权族、曲率和多列逃逸；需要改变全状态覆盖机制，不能把证书失效当实际均衡存在。
 - **一般群组奇环的实际阈值。** 从总证明的单成员子类与[单冲突图独立证明](../../reviews/weighted_congestion/odd_ring_parameters/SINGLETON_NOTE.md)起步，明确多成员使哪一步状态表示失效。
 
@@ -76,3 +81,5 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 程序统一从仓库根运行 `python3 tests/audits/weighted_congestion/replay.py --list` 选择具体核验，再把代码路径传给同一程序。它在临时目录恢复原相对布局，避免覆盖冻结证据。Decimal 诊断、浮点发现、有限有理枚举和整数符号证书在文件目录中分别命名。
 
 部分详细稿保留撰写时的 pending 标签或历史相对路径。现行逐命题审查查[主题账本](../../weighted_congestion_frontier/CLAIMS.md)及[五轴表](../../review_status.json)，实际审查范围查对应审查正文；没有审查记录的结论不能靠入口摘要升级。不可变原件及恢复路径见 [INTEGRATION](../../weighted_congestion_frontier/INTEGRATION.json)。
+
+**负向接续接口。** 先读[真实双轮环](cyclic_clone_improvement_cycles.md)，限制为原两个动作，再读[锚定锁定](anchored_cycle_lock.md)及其独立审查/两类精确证据。全状态覆盖已闭合；剩余是让编译后q上α ln q/q无界。δ极近1时当前统一泄漏方案的D可能很大，不得将其当任意时钟或全类方法障碍。

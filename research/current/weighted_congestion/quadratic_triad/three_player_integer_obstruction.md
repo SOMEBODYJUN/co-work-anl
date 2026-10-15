@@ -35,7 +35,7 @@ Write s=(s₀,s₁,s₂). A simultaneous complement of all actions interchanges 
 
 Direct integer cross multiplication gives that the smallest of the four displayed largest ratios is `286/267`. Every α below it has a strict improving deviation in each profile. At α=`286/267`, profile `010` and its complement `101` satisfy every player's weak inequality, including player 0's equality. This proves the exact instance threshold, including the endpoint.
 
-The improvement cycle in the quotient is `000 → 010 → 001 → 000`; `011` has its own exit to the cycle. The table, rather than the existence of a cycle alone, proves nonexistence over the full state space.
+The improvement cycle in the complement quotient is `010 → 001 → 011 → 010`; `000` has an exit to `010`. Its literal six-state realization is `010 → 110 → 100 → 101 → 001 → 011 → 010`, updating players `0,1,2,0,1,2`. The three repeated ratios are `2002/1869`, `1507/1403`, and `1926/1796`, whose minimum is `286/267`. This corrects the earlier cycle narration; the complete cost table and instance threshold are unchanged. The table, rather than the existence of a cycle alone, proves nonexistence over the full state space.
 
 ## Exact replay and comparison boundary
 

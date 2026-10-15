@@ -3211,6 +3211,178 @@
       ],
       "source_role": "辅助step-DAG前提的历史基线指针；新的真实多项式状态证明在current直接推导，不把旧step非存在结论迁入多项式类。",
       "limit": "仅限所写DAG策略及极值幅度；任意幅度/全类策略尚无归约，不是本题一般肯定证明，也不是非存在下界。"
+    },
+    {
+      "id": "two-weight-order-blend",
+      "claims": [
+        "WC-TWO-WEIGHT-ORDER-BLEND-v1"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed",
+      "applies_when": [
+        "对每个d≥2及MODEL有限游戏，若所有玩家权重属于固定{a,b}、a≥b>0，则双排序混合势的每个单方局部最小点为A_d=(1+√(4d−3))/2-PNE，任意严格A_d改善终止；各类人数、权比、拓扑和系数任意。d≤1或仅一权时有精确PNE。不是任意权重全类上界。"
+      ],
+      "produces": "Uniform O(sqrt(d)) PNE and ordinal potential for exactly two global weight values; no bound on weight ratio or cohort sizes",
+      "implementation": [],
+      "proof": [
+        "research/current/weighted_congestion/weight_bands/two_weight_order_blend.md"
+      ],
+      "candidates": [],
+      "reviews": [
+        "research/reviews/weighted_congestion/weight_types/two_weight_order_blend_review.md"
+      ],
+      "tests": [
+        "tests/audits/weighted_congestion/weight_types/verify_order_blend.py",
+        "tests/audits/weighted_congestion/weight_types/independent_order_blend.py"
+      ],
+      "records": [
+        "evidence/runs/weighted_congestion/weight_types/order_blend.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_order_blend.json"
+      ],
+      "examples": [],
+      "sources": [
+        "history/source/notes/weighted_congestion/branch_sources.md"
+      ],
+      "source_role": "Prior WC repository provenance and baseline-recovery pointer only. This authored theorem is not copied or derived from that archive; its complete direct proof and creation provenance are in the current account and review.",
+      "limit": "No arbitrary-weight class bound, polynomial-time termination, sharpness or priority assertion."
+    },
+    {
+      "id": "cyclic-clone-improvement-cycles",
+      "claims": [
+        "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed",
+      "applies_when": [
+        "对每个d≥2、每个1≤α<ρ_d=sup_t>0[(d+1)(1+t)^d+t^(d+1)]/[d+(1+t)^(d+1)]，存在正有理权、全部资源费用x^d、人人策略族2^E的有限MODEL游戏，真实偏离图含严格α改善环，同时全空是精确PNE。ρ_d/d→1，故任何全局实值函数（含非可分）不能在该游戏全部严格α改善边下降。"
+      ],
+      "produces": "循环窗口复制实现近线性倍率的真实改善环",
+      "implementation": [],
+      "proof": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md"
+      ],
+      "reviews": [
+        "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md"
+      ],
+      "tests": [
+        "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py"
+      ],
+      "records": [
+        "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json"
+      ],
+      "examples": [],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/weighted_congestion/branch_sources.md"
+      ],
+      "source_role": "Prior WC baseline-recovery provenance only. This authored proof is not copied from that archive; the exact statement, direct proof, and creation provenance are in its current account and review.",
+      "limit": "Only all-improvement termination and global strict ordinal potentials are obstructed; no PNE-nonexistence, chosen-step or minimizer-selection obstruction."
+    },
+    {
+      "id": "common-power-mixture-minimizer",
+      "claims": [
+        "WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed",
+      "applies_when": [
+        "对每个d≥32，存在四玩家四资源、正有理权/系数、纯d次费用且有精确PNE的有限游戏，使任意非零非负Borel测度μ（全部状态目标有限）给出的Pμ(s)=Σ_e a_e∫_(p>0)x_e(s)^p dμ(p)每个全局最小点都非α-PNE，对全部1≤α<d/16成立；μ可依完整游戏。"
+      ],
+      "produces": "共同幂混合全局最小点的线性障碍",
+      "implementation": [],
+      "proof": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md"
+      ],
+      "reviews": [
+        "research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md"
+      ],
+      "tests": [
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py",
+        "tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py"
+      ],
+      "records": [
+        "evidence/runs/weighted_congestion/common_power_mixture/author.json",
+        "evidence/runs/weighted_congestion/common_power_mixture/independent.json"
+      ],
+      "examples": [],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/weighted_congestion/branch_sources.md"
+      ],
+      "source_role": "Prior WC baseline-recovery provenance only. This authored proof is not copied from that archive; the exact statement, direct proof, and creation provenance are in its current account and review.",
+      "limit": "Does not cover per-resource normalization, elimination of fixed-background players followed by a new coefficient rule, arbitrary separable objectives, nonseparable objectives or PNE nonexistence."
+    },
+    {
+      "id": "finite-weight-class-triangular-potentials",
+      "claims": [
+        "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1",
+        "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+        "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed",
+      "applies_when": [
+        "对每个d≥2,k≥1，全MODEL中全球正权值至多k种的每个游戏有A_(d,k)-PNE，其中A∈[1,d)唯一满足A=Σ_(j=0)^(k−1)((d−1)/A)^j。三角排序混合势的每个单方局部min均是该均衡，全部严格A改善终止；任意人数、权比、费用/策略均覆盖。A≤B=(d−1)/(d^(1/k)−1)，固定k时A∼d^(1−1/k)，k≤ln d/lnln d且d≥16给2d/ln d。",
+        "对每个d≥2,k≥1，全MODEL中只有可动玩家（策略族非单元素）的权值至多k种时，即使任意固定玩家的权种类无限制，仍有A_(d,k)-PNE。c_e(B_e+x)展开仍非负系数并逐状态保持可动者成本；无可动玩家时唯一状态精确。",
+        "对每个d≥2,k≥1,R≥1，若每个可动玩家有固定标签τ使v_τ≤w_i≤Rv_τ，其中k个代表权为正，则全MODEL原游戏有R^d A_(d,k)-PNE；固定玩家无需取整且权不受限。代表可重复/缺席；R=exp(1/d)时损失e，结合类别门槛给2e d/ln d的该明确子类界。"
+      ],
+      "produces": "PNE and strict ordinal potential for finite mobile weight classes, exact fixed-background reduction, and narrow-cluster rounding guarantee.",
+      "implementation": [],
+      "proof": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md"
+      ],
+      "reviews": [
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md"
+      ],
+      "tests": [
+        "tests/audits/weighted_congestion/weight_types/verify_triangular_classes.py",
+        "tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py"
+      ],
+      "records": [
+        "evidence/runs/weighted_congestion/weight_types/triangular_classes.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json"
+      ],
+      "examples": [],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/weighted_congestion/branch_sources.md"
+      ],
+      "source_role": "Baseline-recovery provenance only; the current direct authored theorem does not derive from archived proofs. Earlier ordering-integral literature is cited in the account.",
+      "limit": "No arbitrary-mobile-class bound: A_d,k increases to d for fixed d. No uniform running-time, sharp-threshold or global-priority claim."
+    },
+    {
+      "id": "anchored-polynomial-cycle-lock",
+      "claims": [
+        "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed",
+      "applies_when": [
+        "任意n≥3,p≥0的MODEL两动作游戏，若有按0,…,n−1翻全1再同序翻回0的严格α≥1改善环，则仅加2L个正单项式资源、保持原玩家/权重/旧资源及两个动作标签，可得到无α-PNE游戏，次数≤max(p,D)。L=C(n−1,2)，B上界全部原状态玩家成本，η为环最小严格差，δ=max_(0,i,j)(1−min(w0,wi,wj)/(w0+wi+wj))，D=ceil[ln(4α²BL/η)/ln(1/δ)]。全有理输入给全有理输出。"
+      ],
+      "produces": "Same-player and same-weight two-action all-state alpha-PNE nonexistence compiler, with an explicit instance-dependent degree budget.",
+      "implementation": [],
+      "proof": [
+        "research/current/weighted_congestion/anchored_cycle_lock.md"
+      ],
+      "reviews": [
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md"
+      ],
+      "tests": [
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock.py"
+      ],
+      "records": [
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json"
+      ],
+      "examples": [],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/weighted_congestion/branch_sources.md"
+      ],
+      "source_role": "Baseline-recovery provenance only; this direct authored compiler is not derived from archived source proofs.",
+      "limit": "No degree-preserving claim and no target-scale lower bound; the specified two-action domain cannot be expanded."
     }
   ]
 }

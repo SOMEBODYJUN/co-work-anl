@@ -362,6 +362,38 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1 | 任意非空有限simple DAG，root权1、正轻权W<1且outsum<w_v、原双列binary策略；两列相同非零非负degree≤d费用，d≥1。令q=q_D>1、h_v=(1+Σ_in h_u)/q且Σh=q−1，存在A>0使p0(1)=A、pv(1+w_v)=A h_v。真实全入状态是max{1+1/q,B_d(q)}-PNE，B_d(q)=q/[1+(q−1)(1+1/[q(q−1)])^(−d)]；d≥16时统一为4√(d/ln d)-PNE。不要求低漏/高平台保真，但必须保留极值幅度条件。 | [正文](weighted_congestion/step_dag/polynomial_extremal_all_in.md)、[冻结独立攻击](../reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md)；仅限所写DAG策略及极值幅度；任意幅度/全类策略尚无归约，不是本题一般肯定证明，也不是非存在下界。 |
 
+## 两权类别的平方根次数存在界
+
+| ID | 精确范围与结论 | 状态与读取入口 |
+| --- | --- | --- |
+| WC-TWO-WEIGHT-ORDER-BLEND-v1 | 对每个d≥2及MODEL有限游戏，若所有玩家权重属于固定{a,b}、a≥b>0，则双排序混合势的每个单方局部最小点为A_d=(1+√(4d−3))/2-PNE，任意严格A_d改善终止；各类人数、权比、拓扑和系数任意。d≤1或仅一权时有精确PNE。不是任意权重全类上界。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[完整正文](weighted_congestion/weight_bands/two_weight_order_blend.md)、[独立攻击](../reviews/weighted_congestion/weight_types/two_weight_order_blend_review.md)。 |
+
+## 循环窗口复制实现近线性倍率的真实改善环
+
+| ID | 精确范围与结论 | 正文与实际状态 |
+| --- | --- | --- |
+| WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1 | 对每个d≥2、每个1≤α<ρ_d=sup_t>0[(d+1)(1+t)^d+t^(d+1)]/[d+(1+t)^(d+1)]，存在正有理权、全部资源费用x^d、人人策略族2^E的有限MODEL游戏，真实偏离图含严格α改善环，同时全空是精确PNE。ρ_d/d→1，故任何全局实值函数（含非可分）不能在该游戏全部严格α改善边下降。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/cyclic_clone_improvement_cycles.md)、[审查](../reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md)；Only all-improvement termination and global strict ordinal potentials are obstructed; no PNE-nonexistence, chosen-step or minimizer-selection obstruction. |
+
+## 共同幂混合全局最小点的线性障碍
+
+| ID | 精确范围与结论 | 正文与实际状态 |
+| --- | --- | --- |
+| WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1 | 对每个d≥32，存在四玩家四资源、正有理权/系数、纯d次费用且有精确PNE的有限游戏，使任意非零非负Borel测度μ（全部状态目标有限）给出的Pμ(s)=Σ_e a_e∫_(p>0)x_e(s)^p dμ(p)每个全局最小点都非α-PNE，对全部1≤α<d/16成立；μ可依完整游戏。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/common_power_mixture_obstruction.md)、[审查](../reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md)；Does not cover per-resource normalization, elimination of fixed-background players followed by a new coefficient rule, arbitrary separable objectives, nonseparable objectives or PNE nonexistence. |
+
+## 有限可动权类别与窄权簇
+
+| ID | 精确范围和结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1 | 对每个d≥2,k≥1，全MODEL中全球正权值至多k种的每个游戏有A_(d,k)-PNE，其中A∈[1,d)唯一满足A=Σ_(j=0)^(k−1)((d−1)/A)^j。三角排序混合势的每个单方局部min均是该均衡，全部严格A改善终止；任意人数、权比、费用/策略均覆盖。A≤B=(d−1)/(d^(1/k)−1)，固定k时A∼d^(1−1/k)，k≤ln d/lnln d且d≥16给2d/ln d。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/weight_bands/finite_weight_class_potentials.md)、[重构攻击](../reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md)、[informed攻击](../reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md)。 |
+| WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1 | 对每个d≥2,k≥1，全MODEL中只有可动玩家（策略族非单元素）的权值至多k种时，即使任意固定玩家的权种类无限制，仍有A_(d,k)-PNE。c_e(B_e+x)展开仍非负系数并逐状态保持可动者成本；无可动玩家时唯一状态精确。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/weight_bands/finite_weight_class_potentials.md)、[重构攻击](../reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md)、[informed攻击](../reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md)。 |
+| WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1 | 对每个d≥2,k≥1,R≥1，若每个可动玩家有固定标签τ使v_τ≤w_i≤Rv_τ，其中k个代表权为正，则全MODEL原游戏有R^d A_(d,k)-PNE；固定玩家无需取整且权不受限。代表可重复/缺席；R=exp(1/d)时损失e，结合类别门槛给2e d/ln d的该明确子类界。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/weight_bands/finite_weight_class_potentials.md)、[重构攻击](../reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md)、[informed攻击](../reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md)。 |
+
+## 双轮环的全状态锁定编译
+
+| ID | 精确范围和结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1 | 每个n≥3、degree≤p、两动作MODEL游戏的严格α≥1双同序2n环，可保持玩家/权重/旧资源，增加2L个正单项式资源编译为无αPNE游戏。q≤max(p,D)，D=ceil[ln(4α²BL/η)/ln(1/δ)]，B为全状态成本界、η为环余量，L=C(n−1,2)，δ为锚定三元缺员负载比。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[完整证明](weighted_congestion/anchored_cycle_lock.md)、[独立重构攻击](../reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md)。D依实例且输出只保留两个动作；无全类次数预算。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

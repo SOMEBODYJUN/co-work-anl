@@ -6,7 +6,7 @@
 | 同一重轻两列拓扑靠调参或多项式变强 | [完整拓扑还原](../current/weighted_congestion/source_topology/symmetric_two_column_reduction.md)在精确倍率范围还原到源族 | 异权和非对称资源不在范围；有限 crossover 给分离 |
 | 固定小支持 gadget 重复堆叠 | 资源潜在用户数 r 有 r-PNE 的总成本证明；[三玩家例](../current/weighted_congestion/quadratic_triad/three_player_integer_obstruction.md)不可能独自给随 d 无界的下界 | 需增长用户支持或改变机制；有限例仍可复用 |
 | 自然 complementary multicolumn 扩展 | [平衡轻玩家状态](../current/weighted_congestion/multicolumn/complement_column_escape.md)提供两倍逃逸 | 只排除此拓扑的放大；非所有多列构造 |
-| 仅通过优化有序分组的潜在尾部参数A求统一界 | [两权级锐式](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)给min A=min{H,(1+K/H)^d}；K=ceil(H²)时固定次数仍随H无界 | 只否定此A包络控制；同一游戏有全空精确PNE，不能推断冻结程序本身选坏状态。可回收阶段Shapley拼接；实际占用或重开早组改变合同后可重试 |
+| 仅通过优化有序分组的潜在尾部参数A求统一界 | [两权级锐式](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)给min A=min{H,(1+K/H)^d}；K=ceil(H²)时固定次数仍随H无界 | 只否定此A包络控制；同一游戏有全空精确PNE，不能推断冻结程序本身选坏状态。可回收阶段Shapley拼接；[双排序混合势](../current/weighted_congestion/weight_bands/two_weight_order_blend.md)已给两权整个子类统一平方根次数界，故参数无界不能外推为该子类存在性障碍；实际占用或重开早组改变合同后可重试 |
 | 保留统一固定低漏、只靠更深或更密DAG放大阶跃源 | [精确路径预算](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)把检测可行性化为z(z−1)ΣP_kz^(k−1)≤1，原step阈值至多O(√d) | 只限制所列低高端点；不控制过冲或实际多项式β。可回收最小/slack权表示；异质泄漏、改权或直接全状态机制需另证 |
 | 固定step-DAG极值幅度，只改多项式曲线以利用过冲或漏费 | [实际全入状态界](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)在p0(1)=A,pv(1+wv)=A h_v(q_D)下给d≥16的4√(d/ln d)-PNE | 直接处理所有玩家真实偏离，但仅限该锚定幅度；任意幅度未被排除。回收缺口矩Σh_v(w_v−outsum)<1/q与Jensen；改幅度/选其他light集合时需新证明 |
 | 固定正权向量，仅把所有正次数提高 | [高次份额势](../current/weighted_congestion/high_degree_share.md)证明，即使拓扑与系数变化，最低正次数趋无穷时近似保证一致趋1 | 排除这一纯高次放大路线；权向量随次数变化或保留低次项不在范围。必要小份额仍非充分反例 |
@@ -29,3 +29,13 @@
 ## 有向分叉的统一强迫放大
 
 把一个light复制出多条私有双人side以影响多个hub，仍共同占用其唯一main强迫预算。[割均衡定理](../current/weighted_congestion/directed_fanout_forcing_cut.md)在弱UF及α≥T_d用加权割平衡入反馈，给全anti真实PNE，所以此准确拓扑和假设内无法放大非存在。失败是结构上已有均衡，不是浮点搜索失败；异权、异形side、并行和selfloop均被覆盖。可回收工具是预算不等式与正部割；UF失败、同一side含多hub、action-asymmetric副本或多主源改变承重条件时才值得重试。它不排除这些类外机制，更不证明全类上界。
+
+## 全部改善终止与共同幂混合选态的两种真实失败
+
+[循环窗口复制](../current/weighted_congestion/cyclic_clone_improvement_cycles.md)先补连接测试、重新求有限gain锥，再以逐人圆周秩实现真实近d环，故旧局部循环实现义务已闭合：任意全局函数也不能对全部严格α改善下降（α<ρ_d）。这是方法失败而非无均衡，因为全空精确PNE保留。可回收循环lift与连接guard；只选部分改善步、非循环地选全局最小点仍可重试。
+
+[共同幂混合](../current/weighted_congestion/common_power_mixture_obstruction.md)在一个四玩家游戏中用同一严格正分离击败全部非负μ，而非把逐单幂坏例交换量词。失败精确限于保留原a_e、资源共同μ的目标族；固定背景消去后的新规则、资源分别归一化或集合型目标尚未排除。回收点态分离再积分的全局最小点攻击工具。
+
+## 用已有近d环直接否定全类：缺失的是次数预算
+
+原先直接把改善环当无均衡的推断仍无效，因为全空精确PNE存在。[锚定三元锁定](../current/weighted_congestion/anchored_cycle_lock.md)现在通过限制回两个动作并新增资源，解决指定双轮环的全状态出口，但输出次数q=max(p,D)，D依δ、B/η、n。具体失败步骤是把原环倍率α≈p直接当作输出次数q上的倍率；尚未证明α ln q/q无界。可回收的是完整全状态编译与确定first-opposite修复。可重试条件是改善次数预算、另造更均衡且余量可控的输入环，或另用不受当前统一δ估计约束的锁定机制；这里没有证明所有时钟不可能。

@@ -25,6 +25,12 @@ R1 的线性重置实现与 R3 的同次数实现归属于共同机制，保留�
 
 [有序权组冻结](research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md)新增依分组的结构存在界与两权级精确参数限制：即使最佳分组，潜在尾部参数也不能全类统一。[DAG端点泄漏预算](research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)给任意DAG指定检测系统的可行充要条件；固定泄漏的辅助源门槛仅有平方根量级。下一步须超出这些潜在参数和检测合同；主目标不变。
 
+新增[两权类别双排序混合势](research/current/weighted_congestion/weight_bands/two_weight_order_blend.md)：全局仅两权时，任意cohort人数/权比均有平方根次数存在界；完整一般证明和独立攻击已核对。有限k扩展见下述三角势；真正缺口为无界可动类别，不把两权范围升级为全类。
+
+[循环窗口复制的真实近d改善环](research/current/weighted_congestion/cyclic_clone_improvement_cycles.md)将旧可分势障碍提升为任意全局全边下降势障碍，仍有全空精确PNE。[共同幂混合最小点障碍](research/current/weighted_congestion/common_power_mixture_obstruction.md)另直接排除指定连续目标族的全部最小点。全类存在性仍OPEN；环本身不能当无均衡；[锚定三元全状态锁定](research/current/weighted_congestion/anchored_cycle_lock.md)已将严格双轮环编译成无α-PNE，但新增次数依实例。负向前沿为控制编译后q的α ln q/q；正向仍需选步或超出这些目标族的选态。
+
+[有限可动权类的三角排序势](research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)已给A_(d,k)隐式界，固定k为d^(1−1/k)，任意固定背景精确吸收、k个R窄簇损失R^d。d≥16且k≤ln d/lnln d的明确子类达到2d/ln d；无界可动类别时A趋d，唯一全类题仍OPEN。真正前沿已收缩为无界可动权类的选态桥或全状态增长反例，不再把固定背景或仅两类稠密cohort当未解接口。
+
 ## 其他长期资产
 
 设施选址保留共同目录双设施尖锐界、复杂度边界、任意设施数因子 2 存在性与有限构造；一般位多项式构造继续开放。顺序客户吸引保留真实完整 SPE、结构类福利界和失败桥，一般半覆盖继续开放。它们分别从根 README 的模型表进入，无需当前拥塞研究者先通读。

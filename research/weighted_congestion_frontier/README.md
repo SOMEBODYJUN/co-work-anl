@@ -28,6 +28,12 @@
 
 跨尺度结构接口：[有序权组冻结及两权级参数锐式](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)允许阶段局部势选择，但其最佳潜在尾部参数无统一界；[DAG端点低泄漏预算](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)只封闭指定检测系统，不代替全状态多项式证明。独立审查与实际代码/证据均由正文接入。
 
+两权跨尺度新增[双排序混合势](../current/weighted_congestion/weight_bands/two_weight_order_blend.md)：任意两权cohort给统一平方根次数存在界；不依赖潜在尾部量。独立攻击与代码从正文进入。多权共享乘子桥仍OPEN。
+
 [择证平稳与循环支撑边界](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)、[有向分叉统一强迫割均衡](../current/weighted_congestion/directed_fanout_forcing_cut.md)连接新的非势路线限制和下界构造限制；逐项Claim、独立审查及可复算证据均从正文/FILES进入，主目标仍OPEN。
 
 真实多项式子类的新边界：[阶跃DAG极值幅度的多项式全入状态](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)。请先核对幅度(N)再调用；它不依赖端点低漏测试，仍没有全类幅度/拓扑归约。
+
+[循环窗口复制的真实近d改善环](../current/weighted_congestion/cyclic_clone_improvement_cycles.md)将旧可分势障碍提升为任意全局全边下降势障碍，仍有全空精确PNE。[共同幂混合最小点障碍](../current/weighted_congestion/common_power_mixture_obstruction.md)另直接排除指定连续目标族的全部最小点。全类存在性仍OPEN；环本身不能当无均衡；[锚定三元全状态锁定](../current/weighted_congestion/anchored_cycle_lock.md)已将严格双轮环编译成无α-PNE，但新增次数依实例。负向前沿为控制编译后q的α ln q/q；正向仍需选步或超出这些目标族的选态。
+
+[有限可动权类的三角排序势](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)已给A_(d,k)隐式界，固定k为d^(1−1/k)，任意固定背景精确吸收、k个R窄簇损失R^d。d≥16且k≤ln d/lnln d的明确子类达到2d/ln d；无界可动类别时A趋d，唯一全类题仍OPEN。真正前沿已收缩为无界可动权类的选态桥或全状态增长反例，不再把固定背景或仅两类稠密cohort当未解接口。
