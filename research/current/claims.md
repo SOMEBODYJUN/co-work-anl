@@ -388,6 +388,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1 | 对每个d≥2,k≥1，全MODEL中只有可动玩家（策略族非单元素）的权值至多k种时，即使任意固定玩家的权种类无限制，仍有A_(d,k)-PNE。c_e(B_e+x)展开仍非负系数并逐状态保持可动者成本；无可动玩家时唯一状态精确。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/weight_bands/finite_weight_class_potentials.md)、[重构攻击](../reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md)、[informed攻击](../reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md)。 |
 | WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1 | 对每个d≥2,k≥1,R≥1，若每个可动玩家有固定标签τ使v_τ≤w_i≤Rv_τ，其中k个代表权为正，则全MODEL原游戏有R^d A_(d,k)-PNE；固定玩家无需取整且权不受限。代表可重复/缺席；R=exp(1/d)时损失e，结合类别门槛给2e d/ln d的该明确子类界。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/weight_bands/finite_weight_class_potentials.md)、[重构攻击](../reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md)、[informed攻击](../reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md)。 |
 
+## 双轮环的全状态锁定编译
+
+| ID | 精确范围和结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1 | 每个n≥3、degree≤p、两动作MODEL游戏的严格α≥1双同序2n环，可保持玩家/权重/旧资源，增加2L个正单项式资源编译为无αPNE游戏。q≤max(p,D)，D=ceil[ln(4α²BL/η)/ln(1/δ)]，B为全状态成本界、η为环余量，L=C(n−1,2)，δ为锚定三元缺员负载比。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[完整证明](weighted_congestion/anchored_cycle_lock.md)、[独立重构攻击](../reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md)。D依实例且输出只保留两个动作；无全类次数预算。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

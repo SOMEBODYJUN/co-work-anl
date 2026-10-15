@@ -165,3 +165,7 @@
 - 独立审查：[冻结攻击](../../reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md)。
 - 代码：`tests/audits/weighted_congestion/cyclic_clone/verify_lift.py`、`verify_cycle_certificate.py`、`independent_lift.py`。
 - 证据：`evidence/runs/weighted_congestion/cyclic_clone/lift.json`、`cycle_certificate.json`、`independent_lift.json`。作者两程序仅stdout；独立程序传 `--output NEW_PATH` 并拒绝覆盖。
+
+## 后续接口：全状态锁定与次数缺口
+
+[锚定三元时钟](anchored_cycle_lock.md)对本构造实现环的两个动作可编译成全状态无α-PNE，但必须删除后来扩充的2^E动作族，并新增degree D资源。旧Claim与其精确全空均衡不变；新编译定理另立身份。能否控制q=max(d,D)使α ln q/q无界仍OPEN。

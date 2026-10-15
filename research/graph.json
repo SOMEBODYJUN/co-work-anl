@@ -4927,6 +4927,44 @@
         "evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "WC-ANCHORED-CLOCK-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "双同序环与锚定三元时钟预算",
+      "detail": "三元(0,i,j)的010/101互补literal；B全状态成本、η严格环差、δ缺员负载比，D令δ^D≤η/(4α²BL)。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_cycle_lock.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "锚定三元多项式时钟的双轮改善环全状态锁定",
+      "detail": "任意n≥3,p≥0的MODEL两动作游戏，若有按0,…,n−1翻全1再同序翻回0的严格α≥1改善环，则仅加2L个正单项式资源、保持原玩家/权重/旧资源及两个动作标签，可得到无α-PNE游戏，次数≤max(p,D)。L=C(n−1,2)，B上界全部原状态玩家成本，η为环最小严格差，δ=max_(0,i,j)(1−min(w0,wi,wj)/(w0+wi+wj))，D=ceil[ln(4α²BL/η)/ln(1/δ)]。全有理输入给全有理输出。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_cycle_lock.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-ANCHORED-CLOCK-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "锚定时钟的实际编译和独立几何精确核验",
+      "detail": "三玩家实际base+compiler全部8状态；独立60组2976条件状态。两者不替代一般证明，不承担渐近次数预算。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_cycle_lock.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -11899,6 +11937,40 @@
         "tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py",
         "evidence/runs/weighted_congestion/weight_types/triangular_classes.json",
         "evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-ANCHORED-CLOCK-DEFINITION"
+      ],
+      "conclusion": "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1",
+      "statement": "假定定义中的严格双同序环；合法状态泄漏保余量，非法状态最早反位清空自身全部full triple，覆盖所有状态。全部前提共同使用。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_cycle_lock.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-ANCHORED-CLOCK-AUDIT"
+      ],
+      "conclusion": "WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1",
+      "statement": "实际三玩家编译和独立条件几何的有限Fraction核验；不证明任何渐近下界。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_cycle_lock.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json"
       ],
       "status": "finite exact audit"
     }

@@ -3707,6 +3707,96 @@
         "tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py",
         "evidence/runs/weighted_congestion/weight_types/triangular_classes.json"
       ]
+    },
+    {
+      "path": "research/current/weighted_congestion/anchored_cycle_lock.md",
+      "title": "锚定三元时钟：全状态锁定编译证明",
+      "purpose": "给定严格双轮同序环时读取；用锚定三元资源把它编译为全部状态无αPNE，并显式追踪新增次数和不能扩充动作的限制。",
+      "topic": "weighted_congestion",
+      "role": "account",
+      "package": "锚定三元多项式时钟的双轮改善环全状态锁定",
+      "related_paths": [
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md",
+      "title": "锚定三元时钟：预读独立重构与冻结攻击",
+      "purpose": "先保留未读稿的完整独立构造，再逐式攻击冻结证明的量词、literal策略、次数ceil、真实成本及空零边界；不认证全类判定。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "锚定三元多项式时钟的双轮改善环全状态锁定",
+      "related_paths": [
+        "research/current/weighted_congestion/anchored_cycle_lock.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py",
+      "title": "锚定三元时钟：真实整数三玩家编译审计",
+      "purpose": "复用已入库二次整数三玩家基体，精确核验6环步和新增62次费用后的全部8状态；另枚举抽象锚定几何，输出可冻结JSON。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "锚定三元多项式时钟的双轮改善环全状态锁定",
+      "related_paths": [
+        "research/current/weighted_congestion/anchored_cycle_lock.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/cyclic_clone/independent_clock.py",
+      "title": "锚定三元时钟：独立条件几何审计",
+      "purpose": "独立构造三人literal资源、按真实负载用Fraction检查60组条件式时钟；仅审计给定B/η的几何和泄漏，不虚构输入环。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "锚定三元多项式时钟的双轮改善环全状态锁定",
+      "related_paths": [
+        "research/current/weighted_congestion/anchored_cycle_lock.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json",
+      "title": "锚定三元时钟：三玩家编译冻结结果",
+      "purpose": "保存真实三玩家α21/20、B2002、η677/20、δ21/23、D62以及全部状态/环核验和代码hash，用于回放编译接口。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "锚定三元多项式时钟的双轮改善环全状态锁定",
+      "related_paths": [
+        "research/current/weighted_congestion/anchored_cycle_lock.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json",
+      "title": "锚定三元时钟：独立全状态几何冻结结果",
+      "purpose": "保存独立60案例2976状态/2376环外状态的参数、seed、精度、源码hash和运行环境；用途与真实输入环编译证据分开。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "锚定三元多项式时钟的双轮改善环全状态锁定",
+      "related_paths": [
+        "research/current/weighted_congestion/anchored_cycle_lock.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json"
+      ]
     }
   ]
 }
