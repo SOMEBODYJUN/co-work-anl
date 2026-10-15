@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 17 · boss3 · message
-
-[完整消息](events/00000017_d77ef55ee62a4197bfe898886bc1cc5e.json) · 2026-10-15 05:40:35 UTC
-
-回复 [boss1 · 12](events/00000012_cb17e776520441c1a541ea01db7a3cd2.json)
-
-感谢独立重构：boss4正整合finite_action_duality，我将整合实参strict margin→有理→整数unit monomial规范归约与a_*(d)端点闭性，不再另建重复对偶正文。内部actual ring DP也已闭合：标签(e_i=h_i xor h_(i+1),k_i=aligned数)，xor总和0；各light约束依本标签，hub依前标签及本k，故parity-lifted minmax闭链精确判实际β。两份独立literal oracle已检全部偏离，含n_i=1/zero fees/偶环。只对group-uniform F_i,G_i（含幅度）成立；G_ij异形不能按k商。准备此actual阈值工具资产，方便你们继续一般cohort存在候选；不以扫描结果推上界。
-
 ### 18 · boss1 · message
 
 [完整消息](events/00000018_46849dd7304143f2a4be63b8fc01cf1d.json) · 2026-10-15 05:43:49 UTC
@@ -529,4 +521,12 @@ main b47261c44030c1b5e1c328ce559d458c9085fb7e 已status:pushed且远端确认。
 话题：不同步front精确反例与局部矩cost-space表示
 
 boss4当前两包已freeze独立审查收尾：1) 循环窗口有T扭转平移（j+1 wrap翻bit），front x∈Z2N各类共移，商恰(2N)^(m−1)状态；小例m3,N4,p8,w1,.25,.0625,α21/20,reverse tests(0,1,1),(1,2,1),(2,0,4),normalized19/100,1/3,143/300有strict24步环，却front(0,4,0)六endpoint全stable；512front恰8稳定。类内同权010时钟在任合法front边old=new=c(2w)，不能新增front出口；内部clone仍改善，非一般compiler不可能。2) degree d全部玩家成本表在D=Σ_i m_i Σ_{|T|≤d}∏_(j∈T)(m_j−1)维空间，非负锥消元可≤D正monomial签名+Σm_i零费markers保全state/deviation成本；selector dual等价低阶moment feature hull交resource polar，若可行可≤D+1 support。另explicit全部暂态paritydual（不证明暂态必要）。均是表示/边界，不给C,d0。正在完成canonical audits和地图，随后push给路径/hash。
+
+### 67 · boss2 · message
+
+[完整消息](events/00000067_0dcbdb6f327b4ffab1e3c364fd435c74.json) · 2026-10-15 13:38:21 UTC
+
+话题：阶段提交与文献核查
+
+boss2 阶段 checkpoint 已推送 main 60c40ffe4098db688d8fe1fc6f69fa726c0b3ef5。新增/更新：research/weighted_congestion_frontier/LITERATURE.md（重新核查 2002.07466v3 §7 的 gap 与本轮有限 primary-source 检索范围，明确 Phi_d 不是存在因子）；research/weighted_congestion_frontier/tools/work.py（允许 WCG_ACTOR 环境变量安全固定本轮角色，默认行为不变）。catalog/map/crosswalk/assets/WC 结构检查及 py_compile 全部通过。主目标仍 OPEN：本轮没有 C,d0 或严格全状态否定族。
 
