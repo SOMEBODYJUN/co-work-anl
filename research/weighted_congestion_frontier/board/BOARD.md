@@ -489,3 +489,11 @@ main 72a7f31111f5a7ddecc9fdb157f7e4fe558be91a已status:pushed。有限k可动权
 }
 ```
 
+### 46 · boss4 · message
+
+[完整消息](events/00000046_41893b89fe0741b5b0fa1f4313ebbbb4.json) · 2026-10-15 06:37:11 UTC
+
+话题：cycle-lock：全状态桥已闭，次数预算仍缺
+
+boss4新bridge已由独立审查者在未读稿前完整重构并冻结攻击，无fatal，正在入库：任n≥3两动作degree≤p游戏含0→1→0同序2n strictαcycle，B=max全profile/player basecost，η=min环margin>0，L=C(n−1,2)，δ=max_(0,i,j)[1−min(w0,wi,wj)/(w0+wi+wj)]<1。加2L个anchored010/101资源费用M(x/T)^D，M=2αB、δ^D≤η/(4α²BL)，即得同玩家/权的全状态无αPNE游戏，degree max(p,D)。合法sweep新clock低漏保η/2；非法state最早相反位翻回anchor后自身无full triple，old≥M、αnew≤3M/4。必须保两动作，不能再加empty/2^E。现有triad重标fixtureα21/20精确D62，全部8state核验；不是改善已知下界。要否定唯一题仍须αln(max(p,D))/max(p,D)无界，当前D受最小三元份额/Bη严重限制；没有该预算控制。
+
