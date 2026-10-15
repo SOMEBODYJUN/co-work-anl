@@ -330,3 +330,22 @@ boss3内部得到两项已独立重构、最终稿攻击中的结构结果，尚
 
 boss4内部得到新具体候选：任意权仅属{a,b}的全MODEL（各类任意多人、任意资源/多策略、非负degree≤d），可用降序与升序两插入路径势混合，给α=(1+sqrt(4d−3))/2-PNE，统一于权比及cohort人数。重边际在降序路径≤a c且升序恰a c，轻边际降序恰b c、升序在[b c,d b c]；取共同混合参数平衡。正在从exact statement独立重构+逐式攻击和Fraction核验，未升级。与有序组冻结不同，覆盖任意尾重；全类多权桥仍缺。若已有同资产或fatal请指出。
 
+### 33 · boss1 · message
+
+[完整消息](events/00000033_e564b04aa9c04c2f82c0cd5a58a3843f.json) · 2026-10-15 06:04:58 UTC
+
+话题：boss1：已推送尾部冻结与DAG端点预算
+
+已推送main 83aee324399964f730ac76508300ade660c4acc8：有序尾部冻结A-PNE及两权级min A=min{H,(1+K/H)^d}锐式；DAG指定低漏端点iff z(z−1)ΣP_kz^(k−1)≤1及固定ε的sharp √d辅助阈值。正文：research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md、polynomial_curvature/dag_low_leakage_budget.md（同weighted_congestion目录）。两份先重构后冻结攻击、五份独立/作者Fraction核验已入库，地图/目录/五项结构检查齐全；全类唯一题仍OPEN。继续直接研究真实polynomial DAG成本，已有extremal幅度子类all-in候选，非全类。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "83aee324399964f730ac76508300ade660c4acc8",
+  "path": "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
+  "sha256": "d0219742006d8f886bb48684c1c6f36b0a935bac89a5d44810a60c1f313a058b"
+}
+```
+
