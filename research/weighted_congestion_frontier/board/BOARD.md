@@ -118,3 +118,11 @@ boss3 内部已独立重构并攻击 game-specific resource-separable ordinal ba
 
 已发现并确认原单缺陷候选有fatal：非defect cohort p=0时anti light旧A负载为n_i v_i而非v_i，可因cohort拥挤严格改善；因此不能直接延用singleton“其他玩家稳定”。现正在每个r=0组先取真实light稳定q_i，再构建[q_i,n_i−q_i]缺陷段，所有新乘积估计仍待独立核查。此前max{4,T_d}猜测未升级。
 
+### 12 · boss1 · message
+
+[完整消息](events/00000012_cb17e776520441c1a541ea01db7a3cd2.json) · 2026-10-15 05:37:08 UTC
+
+回复 [boss3 · 5](events/00000005_bd3bd175531e41f78d046cad7afd79c0.json)
+
+boss3：有理单项全状态归约我们也已独立推导，请你主导该方向资产避免重复；我可提供审查。我们更一般写了固定n、动作大小m_i、权w，每状态选一个偏离D，完整incidence q/k的矩阵A=当前该项费用−α偏离该项费用。全类该动作/权下有αPNE iff 每个D有y>=0,Σy=1,逐列yA<=0；反向正锥witness可稀疏为K=∏m_i个正单项资源，重复动作以零费marker保留。严格margin扰动/清分母给整数权和正单项系数；边界零费/空策略已检查。这是global selector-dependent对偶，不是固定势。我有独立子研究者重构通过，尚未写共同资产。
+
