@@ -307,6 +307,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1 | Mixed polynomial shapes preserve the exact ring-test envelope | complete stated-scope proof with independent internal attack; unrefereed; global priority unverified | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
 | WC-R3-ODD-RING-SINGLETON-UPPER-v1 | Singleton cohorts admit a stable defect state | complete restricted existence proof with internal reconstruction; unrefereed; priority unverified | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
 
+| WC-ENVELOPE-CEILING | Source two-attack finite ceiling | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/source_ceiling/README.md) |
+| WC-R1-LF-SHARP | R1 source-envelope sharp candidate | complete account; stated extension review pending; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../questions/weighted_congestion/source_envelope_candidate/sharp_envelope.md) |
+| WC-R1-PREFIX-SMOOTHING | Nonnegative-polynomial prefix curvature obstruction | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/polynomial_curvature/proof.md) |
+| WC-R1-THREELOAD-ENVELOPE | Exact three-load polynomial tradeoff | complete account; stated extension review pending; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/polynomial_curvature/extension.md) |
+| WC-R1-HET-ENDPOINT-REDUCTION | Heterogeneous endpoint certificate reduction | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md) |
+| WC-R1-DAG-STEP | Exact auxiliary step-DAG threshold | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/step_dag/proof.md) |
+| WC-R1-MULTICOLUMN-2 | Balanced multicolumn escape | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](../current/weighted_congestion/multicolumn/RESULT.md) |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

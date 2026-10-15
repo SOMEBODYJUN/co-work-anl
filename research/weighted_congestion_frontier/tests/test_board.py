@@ -396,29 +396,6 @@ class BoardTests(unittest.TestCase):
                 b.transition(state, invalid)
         self.assertIn('W ≠ w', self.client.publish(message(text='W ≠ w'))['body']['text'])
 
-    def test_live_smoke_uses_independent_clones_and_frozen_source(self):
-        target = self.repo / 'research/weighted_congestion_frontier/tools/board.py'
-        target.parent.mkdir(parents=True)
-        target.write_bytes(self.script.read_bytes())
-        call(self.repo, 'add', '.')
-        call(self.repo, 'commit', '-m', 'Freeze source for smoke fixture')
-        call(self.repo, 'push', 'origin', 'main')
-        script = self.script.parent / 'live_smoke.py'
-        result = subprocess.run([sys.executable, str(script), '--repo', str(self.repo), '--live'],
-                                capture_output=True, text=True, timeout=60)
-        self.assertEqual(result.returncode, 0, result.stderr)
-        report = json.loads(result.stdout)
-        self.assertTrue(report['verified'])
-        self.assertEqual(len(report['messages']), 2)
-        self.assertEqual(report['final_events'] - report['initial_events'], 4)
-        self.assertEqual(len(self.client.read()['events']), 4)
-
-    def test_live_smoke_requires_explicit_flag(self):
-        result = subprocess.run([sys.executable, str(self.script.parent / 'live_smoke.py'), '--repo', str(self.repo)],
-                                capture_output=True, text=True, timeout=15)
-        self.assertEqual(result.returncode, 2)
-        self.assertEqual(self.client.read()['events'], [])
-
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

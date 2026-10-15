@@ -167,7 +167,7 @@
 ## WC-R1-RESOURCE-SUPPORT v1 — LOCAL ASSET
 
 - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：All finite positive-weight congestion games with nonnegative nondecreasing costs and at most r>=1 potential users per resource; unweighted social-cost minimizers are r-PNE. No full-class o(d) claim.
-- Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Bounded resource user support gives r-PNE](../questions/weighted_congestion/signed_columns/resource_support.md)；精确复算见[tests/audits/weighted_congestion/signed_columns/verify.py](../../tests/audits/weighted_congestion/signed_columns/verify.py)与[evidence/runs/weighted_congestion/signed_columns/verification.json](../../evidence/runs/weighted_congestion/signed_columns/verification.json)。完整证明与精确核验已保存，独立审查按五轴表分别登记；外审及新颖性未认证。WC-TARGET v1仍OPEN。
+- Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Bounded resource user support gives r-PNE](../current/weighted_congestion/resource_support.md)；精确复算见[tests/audits/weighted_congestion/signed_columns/verify.py](../../tests/audits/weighted_congestion/signed_columns/verify.py)与[evidence/runs/weighted_congestion/signed_columns/verification.json](../../evidence/runs/weighted_congestion/signed_columns/verification.json)。完整证明与精确核验已保存，独立审查按五轴表分别登记；外审及新颖性未认证。WC-TARGET v1仍OPEN。
 
 
 ## WC-R1-SOURCE-D2-ENVELOPE v1 — LOCAL ASSET

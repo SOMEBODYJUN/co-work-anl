@@ -6,6 +6,7 @@ import json
 import hashlib
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -75,14 +76,16 @@ def check() -> None:
         covered_claims.update(entry["claims"])
         require(entry["applies_when"] and entry["status"] and entry["produces"], entry["id"])
         require(entry["proof"] and entry["sources"] and entry["limit"], entry["id"])
-        for field in ("implementation", "proof", "sources", "tests", "records", "examples"):
-            for path in entry[field]:
+        for field in ("implementation", "proof", "sources", "tests", "records", "examples", "reviews", "candidates"):
+            for path in entry.get(field, []):
                 require((ROOT / path).is_file(), (entry["id"], path))
                 expected = {"implementation": ("facility_spe/", "multi_facility_spe/", "customer_attraction/"),
                             "proof": "research/current/",
                             "sources": "history/",
                             "tests": "tests/",
-                            "records": "evidence/"}
+                            "records": "evidence/",
+                            "reviews": "research/reviews/",
+                            "candidates": "research/questions/"}
                 if field in expected:
                     require(path.startswith(expected[field]),
                             ("incorrect asset role", entry["id"], field, path))
@@ -158,6 +161,8 @@ def check() -> None:
                 require(source.is_file() and hashlib.sha256(source.read_bytes()).hexdigest()
                         == report[key + "_sha256"],
                         ("evidence input/certificate changed", manifest.name, key))
+    subprocess.run([sys.executable, str(ROOT / "research/check_wc_assets.py"), "--check"],
+                   cwd=ROOT, check=True)
     print(f"Validated {len(assets)} scoped asset routes, {len(implementations)} implementations, "
           f"{len(migration['moved'])} sourced files, "
           f"{len(crosswalk)} individually interpreted origins, "

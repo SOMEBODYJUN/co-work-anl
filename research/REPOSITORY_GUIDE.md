@@ -48,3 +48,5 @@
 先完成本地能自行闭合的工作。有价值或重要的发现、可复用障碍、致命反驳、精确合作需求才交流。无需把半成品、常规排错和测试过程拿出来让大家审查。独立攻击用于承重 claim 的提升，不是每次文件保存的审批。
 
 本轮分支逐项处置与来源见 [INTEGRATION](weighted_congestion_frontier/INTEGRATION.json)。旧会话和公屏退出当前读取流程；新对话能只凭 main 接续。
+
+本轮所有分支的实际处置见 [BRANCHES](BRANCHES.md)，本轮核验命令、代码哈希与证据限度见 [冻结核验记录](../evidence/runs/weighted_congestion/repository_curation.json)。

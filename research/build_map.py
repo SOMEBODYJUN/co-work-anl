@@ -12,7 +12,7 @@ KINDS = {"definition", "lemma", "construction", "counterexample",
          "claim", "source", "evidence", "obligation", "rejected", "artifact"}
 RELATIONS = {"derives", "attacks", "checks", "implements", "limits"}
 TRACKS = {"model", "local", "shared", "heterogeneous", "computation",
-          "extensions", "evidence"}
+          "extensions", "evidence", "weighted_congestion"}
 REVIEW_STATES = {
     "source_proof": {"complete", "source_note", "published_lower_plus_sketch", "synthesis", "new_current_work"},
     "current_proof": {"complete", "candidate", "conditional", "depends_on_claims", "direct"},
@@ -89,7 +89,7 @@ HTML = r'''<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>双设施研究：数学超图</title>
+<title>共同研究：数学超图</title>
 <style>
 :root { color-scheme: light; --ink:#17252d; --muted:#52636b; --line:#ccd9dc; --paper:#f5f7f5; --card:#fff; --teal:#146b69; --ochre:#a36c18; --red:#aa4a45; }
 * { box-sizing:border-box }
@@ -159,7 +159,7 @@ const track = document.getElementById('track');
 const kind = document.getElementById('kind');
 const clear = document.getElementById('clear');
 let selected = null;
-const trackNames = {model:'Model',local:'Local geometry',shared:'Shared phi',heterogeneous:'Heterogeneous',computation:'Exact computation',extensions:'Cost extensions',evidence:'Evidence'};
+const trackNames = {model:'Model',local:'Local geometry',shared:'Shared phi',heterogeneous:'Heterogeneous',computation:'Exact computation',extensions:'Cost extensions',evidence:'Evidence',weighted_congestion:'加权拥塞'};
 const add = (parent,tag,text,cls) => { const e=document.createElement(tag); if(text!==null)e.textContent=text; if(cls)e.className=cls; parent.appendChild(e); return e; };
 const link = (parent,path) => { const a=add(parent,'a',path); a.href='../'+path; a.target='_blank'; a.rel='noopener'; return a; };
 for(const t of Object.keys(trackNames)) { const o=add(track,'option',trackNames[t]); o.value=t; }
