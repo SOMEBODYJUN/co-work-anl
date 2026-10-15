@@ -5411,6 +5411,53 @@
         "evidence/runs/weighted_congestion/weight_types/independent_interaction_height.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "异权仿射全签名成本射线的刚性",
+      "detail": "每个n≥2及不全相等正实权w、binary标签，V_i(s)=s_iΣ_jw_js_j的任何同玩家/权/标签完整成本保真有限非负系数多项式资源表示，在忽略零费/无人用资源后只能为全n玩家仅动作1使用、费用a_e x且Σa_e=1。任意提高有限degree仍不能把全部正资源潜在用户支持降到<n；V为有限表示锥K_fin的极射线。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-AFFINE-FULL-SIGNATURE-CONE-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "固定权binary完整成本表的有限多项式资源锥",
+      "detail": "K_fin为固定n/正权/二动作标签、有限非负多项式资源表示之完整成本向量锥；V_i=s_iΣ_jw_js_j，权不全等；不取闭包或无限资源表示。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-AFFINE-FULL-SIGNATURE-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "仿射全签名刚性和等权边界的独立精确审计",
+      "detail": "225 pair恒等式/符号、2331 signature monomial列逐face、7160等权真实成本位置；标准库Fraction、无随机/solver/容差，有限检查非一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py",
+        "evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-LOW-DEGREE-SMALL-SUPPORT-REDUCTION-SCHEME",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "以低cost interaction degree推小资源潜在支持的保真归约",
+      "detail": "候选推断：低degree成本表可由全部潜在用户支持小于n的正资源保全部玩家/状态成本，允许提高degree但不改玩家/权/标签。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "method candidate; excluded in stated scope"
     }
   ],
   "hyperedges": [
@@ -12916,6 +12963,53 @@
         "evidence/runs/weighted_congestion/weight_types/independent_interaction_height.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-AFFINE-FULL-SIGNATURE-CONE-DEFINITION"
+      ],
+      "conclusion": "WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1",
+      "statement": "共同使用非负多项式/正权/真实负载及完整成本身份：零动作定向、一对异权contrast排高次、solo预算饱和后传播全用户，有限叠加给极射线。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-AFFINE-FULL-SIGNATURE-AUDIT"
+      ],
+      "conclusion": "WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1",
+      "statement": "独立有限Fraction核恒等式、连续face过滤及等权反边界；不代替任意实参数或任意有限degree解析证明。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py",
+        "evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "LIMIT-LOW-DEGREE-SMALL-SUPPORT-REDUCTION",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1"
+      ],
+      "conclusion": "WC-LOW-DEGREE-SMALL-SUPPORT-REDUCTION-SCHEME",
+      "statement": "非全等权时一个degree1的全用户成本射线已排除同玩家/权/标签完整成本保真的全小支持资源表示，任意提高次数仍不行；不排均衡lift/辅助玩家/改权/近似成本归约。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
     }
   ]
 }

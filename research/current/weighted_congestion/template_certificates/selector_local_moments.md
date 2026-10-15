@@ -360,3 +360,95 @@ the missing uniform existence theorem.
 - **独立运行：** `python3 tests/audits/weighted_congestion/template_certificates/independent_selector_local_moments.py`；冻结结果`evidence/runs/weighted_congestion/template_certificates/independent_selector_local_moments.json`。7组压缩/标签/core边界，1730高阶差分、两组dual支持压缩逐1023列保全部期望、6组one-mover span。完整输入在各源码；命令/Python/hash/精度在冻结记录。
 
 两份程序均只向stdout输出JSON，运行者可另存新路径；不依赖会话暂存正文路径、不原位重写已冻结run。一般实参数与任意degree的结论由解析证明承担，有限审计不承担全类增长界。
+
+## 9. 异权仿射全签名成本射线的刚性
+
+### 9.0. 新Claim精确身份
+
+**ID/version：** `WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1`。
+
+**Exact Statement / Objects / Domain / Quantifiers。** 对每个n≥2、每个不全相等的正实权向量w，固定每玩家两个动作标签0、1及成本表
+
+\[
+ V_i(s)=s_i\sum_{j=1}^n w_j s_j,\qquad s\in\{0,1\}^n.
+\]
+
+任何同玩家/同权/同两个动作标签、以任意有限数量资源和任意有限次数非负系数多项式费用构成、逐玩家逐状态成本恰为V的MODEL表示，必具有以下刚性：忽略零费用资源及无人使用资源后，每个资源均在且仅在每名玩家的动作1使用，费用恰为a_e x、a_e>0，且Σ_e a_e=1。特别地每个有使用者的正费用资源都具有全部n名潜在用户；不可能通过提高费用次数/增加资源，把V保真压到全部正资源支持小于n。
+
+**Cone consequence。** 固定w及binary标签，令K_fin为所有由有限非负系数多项式资源得到的完整成本表向量之锥（每个表示可有自己的有限最高次数）。V生成K_fin的极射线：V=U+Z、U,Z∈K_fin必有U=θV、Z=(1−θ)V，0≤θ≤1。只说K_fin，不声称其闭包的极射线或暴露射线。
+
+**Definitions / Assumptions / Scope。** 正费用表示多项式不恒为0，潜在用户是至少一个合法动作使用该资源的玩家。全部偏离按真实负载；零费资源可用于保持非空/反链/空交及标签，不计正资源支持。保持全部cost table即保持全部真实偏离成本。原V由一条费用x、人人仅动作1使用的资源实现；另添每动作私人零费marker即可成为空交反链core，故scope不依赖空策略。原游戏有全0精确PNE；这只是cost-preserving表示障碍，不是PNE不存在或全类目标结论。允许改玩家权或只保近似不等式的归约不被排除。
+
+**Dependencies / Evidence / Status。** 直接非负费用、两人参与时真实负载、二项式及成本锥的有限非负叠加；不调用外部均衡定理。独立审查先仅由statement重构并强化到“不全等权”，再读本freeze攻击。独立重构后冻结攻击已PASS，无未结数学fatal；状态为complete structural proof; independently reconstructed and exactly audited; unrefereed。有限审计只核代数，不替一般证明。未外审、未认证新颖性。
+
+### 9.1. 零成本动作强迫正资源的方向
+
+每名玩家选择动作0时其成本在所有对手状态都为0。若某正费用资源被玩家i动作0使用，因为w_i>0且非负系数非零多项式在正负载上严格正，就会贡献正成本，矛盾。因此任何正费用资源只可能由各玩家的动作1使用。记其非空潜在用户集为S_e；无人用资源贡献零向量，可忽略。
+
+令e_i为仅玩家i动作1的状态。由V有
+
+\[
+ C_i(e_i)=w_i,\qquad
+ \Delta_{ij}:=C_i(e_i+e_j)-C_i(e_i)=w_j.
+\]
+
+共享资源的Δ贡献为c_e(w_i+w_j)−c_e(w_i)，没有冻结偏离后负载。
+
+### 9.2. 一对异权排除其共同资源的高次项
+
+选一对p,q使a=w_p>b=w_q。目标表给aΔ_pq−bΔ_qp=0。对任一共同资源c(x)=Σ_k c_k x^k，其贡献为
+
+\[
+ \sum_k c_k\{(a-b)(a+b)^k-a^{k+1}+b^{k+1}\}.
+\]
+
+k=0、1时花括号为0。k≥2时它等于
+
+\[
+ (a-b)\left[(a+b)^k-\sum_{r=0}^k a^{k-r}b^r\right]>0,
+\]
+
+因为二项式系数均≥1且某个内项系数严格>1。所有c_k≥0，故总和为0强迫每个p,q共同资源都无k≥2项，即均为A_e x+B_e、A_e,B_e≥0。
+
+由Δ_pq=b及b>0，共同资源斜率Σ_(e:p,q∈S_e)A_e=1。它们给p在e_p的成本至少Σ A_e a=a，恰已用完其目标solo成本a。各资源费用非负，所以：这些共同资源所有B_e=0，且p不能使用任何其他正费用资源。故p全部正资源恰为这些A_e x，A_e>0且ΣA_e=1。
+
+### 9.3. 该玩家的资源被迫包含全体，继而排除余项
+
+固定任意j≠p。p在e_p+e_j的Δ_pj=w_j，且其全部正资源已是线性，所以
+
+\[
+ w_j=w_j\sum_{e:p,j\in S_e}A_e.
+\]
+
+因此Σ_(p,j共同)A_e=1。p的全部斜率总和就是1且逐项严格正，故每个p正资源都必须含j。任意j均成立，所以这些资源全部具有S_e=N。
+
+它们在任意玩家i的solo状态恰贡献Σ A_e w_i=w_i，用完其目标solo成本。任何其他有使用者正资源都将对至少一个玩家增加严格正solo成本，矛盾。于是没有余下正资源，证明完整刚性。
+
+若V=U+Z，将两表示资源并置就得到V的有限表示；按刚性，每个正资源是同一完整成本向量V的正倍，分属U、Z的斜率相加分别给θ与1−θ。故V是K_fin极射线；不需要锥闭性。
+
+### 9.4. 不全等权假设与等权边界
+
+等权时刚性确实可能失败。取n≥3、w_i=1，任意整数q≥1使2^q≥n。为每对玩家增加一条仅其动作1使用的资源，费用x^q/(2^q−1)；每名玩家再有只在动作1使用的私人常数资源
+
+\[
+ 1-\frac{n-1}{2^q-1}\ge0.
+\]
+
+当玩家i动作1且另有m名玩家动作1时，成本恰
+
+\[
+ \frac{m2^q+(n-1-m)}{2^q-1}
+ +1-\frac{n-1}{2^q-1}=1+m.
+\]
+
+动作0成本仍0，故逐状态精确保持V，却只用支持至多2的正资源。加入零费动作marker仍保core结构。n=3,q=2已经是显式小例；因此“不全等权”不是可无证删除的条件。
+
+### 9.5. 与局部成本空间压缩的关系
+
+有限d的cost-space维数小，不表示该正资源锥由小潜在支持的资源生成。上面原费用只有degree1，仍在非等权时刚性要求全n支持，即使表示方任意提高次数。该例有精确均衡；它不限制只保均衡/单向lift、改变权重、引入辅助玩家或非保真表示，也不给全类Cd/ln d上界或更强无均衡族。
+
+## 10. 刚性证明的独立核验合同
+
+本新Claim由同一[独立审查文件](../../../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)新增的刚性部分单独审查，挂冻结`7a2ee0b7…`，不把先前三Claim的f454审查自动外推。审查者在读稿前独立从较弱statement重构出“不全等权/n≥2/完整极射线”强化，再攻击本稿。
+
+运行`python3 tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py`；[冻结结果](../../../../evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json)记录命令/Python/source hash/精度及完整输入。225个pair代数/符号、2331个有限单项式signature列的逐face消元和7160个等权边界真实成本位置全部通过。每个后续face只在先前face上核非负，不假冒它对整个cone非负。无需会话暂存文件、solver、随机性或浮点容差；一般任意有限degree/实正权证明由第9节承担。

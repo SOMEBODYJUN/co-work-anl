@@ -811,3 +811,13 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：只为给定严格改善闭词的必要链，不构造近d环，不证明无PNE；未访问状态不用相容，不把整链断言为同一状态共占。动态换秩改变势，尚无SCC出口或瞬态dual。 已修去解释中未经本命题证明的存在暗示，无尚成立fatal；未外审/新颖性未认证。
 - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth为所写结构界/必要条件；Value为相容层秩复用；Mechanism为身份子集排序及固定势望远镜；Ambition全类仍OPEN。
 - Related Files：[正文第11–13节](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)、[独立重构与冻结攻击](../reviews/weighted_congestion/weight_types/interaction_height_review.md)，代码/证据由正文进入。
+
+## WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1 — 异权仿射全签名成本射线的刚性
+
+- ID/version / 中文数学名称：WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1，异权仿射全签名成本射线的刚性。独立新身份，不改先前局部矩/压缩/暂态Claim。
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：每个n≥2及不全相等正实权w、binary标签，V_i(s)=s_iΣ_jw_js_j的任何同玩家/权/标签完整成本保真有限非负系数多项式资源表示，在忽略零费/无人用资源后只能为全n玩家仅动作1使用、费用a_e x且Σa_e=1。任意提高有限degree仍不能把全部正资源潜在用户支持降到<n；V为有限表示锥K_fin的极射线。正费用指非零多项式，潜在用户指至少一合法动作使用资源；完整成本含所有真实偏离成本。
+- Dependencies：WC-MODEL、非负资源锥及binary完整成本表定义、正权使非零多项式在正负载严格正、两人真实负载差分、二项式严格不等式、有限非负叠加。全部在[正文第9节](../current/weighted_congestion/template_certificates/selector_local_moments.md)自足证明，不依赖其他均衡定理。
+- Evidence：独立审查先从较弱statement重构并强化到n≥2/不全等权/极射线，再攻击冻结7a2ee0b7；规范正文只读diff通过。独立Fraction审计225个pair代数、2331列逐face消元和7160个等权边界成本位置，代码/run由正文第10节接入；有限检查不替一般实参数/任意有限degree证明。
+- Counterevidence / Objections：只限完整成本保真、固定玩家/权/标签和有限表示锥，不声称闭包/暴露射线；等权存在≤2用户高次资源表示。原V有全0精确PNE，不限制改权/加玩家/仅保均衡或单向lift，也不反驳≤D资源数量压缩，未解全类题。等权n≥3用pair资源x^q/(2^q−1)和私人常数可保全成本；n2等权也有非线性同负载表示。无尚成立数学fatal。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅完整成本保真表示障碍；Value为资源锥不可局部化边界；Mechanism为一对异权contrast加solo预算饱和；Novelty/外审未认证，Ambition保留WC-TARGET OPEN。
+- Related Files：[同一正文§9–10](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查刚性部分](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)、`tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py`、`evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json`。

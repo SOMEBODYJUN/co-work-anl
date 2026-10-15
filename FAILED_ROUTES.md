@@ -19,3 +19,5 @@
 [共享侧资源与真实clock的限制](research/weighted_congestion_frontier/FAILED_ROUTES.md)现区分：UF下同权共享side仍有目标量级PNE；保环总预算只是必要条件；firstopp失败不等于PNE；43次固定证书不代表最优次数或增长反例族。
 
 [动态层秩的拼接缺口](research/weighted_congestion_frontier/FAILED_ROUTES.md)已区分固定共占height势与逐步换秩：换秩改变势，长实际链不代表无PNE，低单点height也非PNE必要；真正缺少累计图/SCC出口或瞬态dual。
+
+[异权全签名刚性](research/current/weighted_congestion/template_certificates/selector_local_moments.md)排除了从低cost interaction degree直接推出全小用户支持的完整成本保真表示。失败是正资源锥的全用户极射线，非维数计算错误；≤D资源数量压缩仍成立，改权/辅助玩家/只保均衡lift的归约不受此结论排除，详见主题失败记录。

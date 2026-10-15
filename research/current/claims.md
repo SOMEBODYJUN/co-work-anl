@@ -472,6 +472,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1 | 对任意d≥2、实α≥1 MODEL游戏的非空有限严格α改善闭合真实单方词，令M为至少移动一次玩家；其余按沿词不变策略吸收背景。在M上按wi>wj及某端点状态实际同资源置弧，height为k，则α<A_(d,k)。所以任正整数K≥1、α≥A_(d,K)的这种闭词必含至少K+1顶点降权实际共占链，各边可来自不同状态/资源。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[原稿新增第11–13节](weighted_congestion/weight_bands/finite_weight_class_potentials.md)、[独立攻击](../reviews/weighted_congestion/weight_types/interaction_height_review.md)。只为给定严格改善闭词的必要链，不构造近d环，不证明无PNE；未访问状态不用相容，不把整链断言为同一状态共占。动态换秩改变势，尚无SCC出口或瞬态dual。 |
 
+## 异权仿射全签名成本射线的刚性
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1 | 每个n≥2及不全相等正实权w、binary标签，V_i(s)=s_iΣ_jw_js_j的任何同玩家/权/标签完整成本保真有限非负系数多项式资源表示，在忽略零费/无人用资源后只能为全n玩家仅动作1使用、费用a_e x且Σa_e=1。任意提高有限degree仍不能把全部正资源潜在用户支持降到<n；V为有限表示锥K_fin的极射线。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文§9–10](weighted_congestion/template_certificates/selector_local_moments.md)、[独立重构与攻击](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)。只限完整成本保真、固定玩家/权/标签和有限表示锥，不声称闭包/暴露射线；等权存在≤2用户高次资源表示。原V有全0精确PNE，不限制改权/加玩家/仅保均衡或单向lift，也不反驳≤D资源数量压缩，未解全类题。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

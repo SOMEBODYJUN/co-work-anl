@@ -68,3 +68,7 @@
 ## 动态层秩不能直接拼成同一全局势
 
 [共占高度接口](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)沿全局固定相容秩或整闭词端点图给三角边际。逐步把当前活跃层重排会改变势本身，势降不能望远镜；没有证明每次能选到不扩张累计height的改善边。两相同资源已有精确PNE但全部状态实际height随人数增长，故“找低单点height态”也不是一般必要步骤。回收的是固定图/端点图相容性；可重试条件为证明高链SCC有出口、累计移动者图可控制或直接构造瞬态dual，不能从长链推无PNE。
+
+## 从低阶成本空间直接推出小用户支持资源表示
+
+尝试先用degree≤d的低阶张量空间，再把每个cost interaction项当成只依赖少数玩家的合法正资源，从而降到有限interaction结构。[异权仿射全签名刚性](../current/weighted_congestion/template_certificates/selector_local_moments.md)给精确失败：V_i=s_iΣ_jw_js_j仅degree1、任意n≥2且权不全等，但一对异权的零contrast排掉共享高次，solo成本饱和迫全部正资源全用户且费用a_e x。任意提高有限degree仍不能全保真缩支持；正锥约束不是线性cost-space维界。等权pair高次表示说明不能删权假设。可回收≤D资源数量压缩、局部矩极锥和一般完整成本张量界；本障碍不排改权、加辅助玩家、仅保均衡/单向lift或近似成本归约。重试这些路线须重新写清并证明较弱保真合同，不能把本例有精确PNE误作全类反例。

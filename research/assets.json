@@ -3523,13 +3523,15 @@
       "claims": [
         "WC-DEGREE-LOCAL-COST-COMPRESSION-v1",
         "WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1",
-        "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1"
+        "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+        "WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1"
       ],
       "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed",
       "applies_when": [
         "固定n≥1,m_i≥1,d≥0与正实权，D=Σ_i m_i Σ_(T⊆N\\i,|T|≤d)∏_(j∈T)(m_j−1)。全部玩家cost tables位于维D局部张量空间；任意游戏可用≤D正系数单项式签名类型及≤Σm_i零费私有动作marker保所有state/deviation成本和动作标签，core可保持。binary时D=2nΣ_(r≤min(d,n−1))C(n−1,r)，一般D=O_d((Σm_i)^(d+1))。",
         "固定任意完整selector h及实α≥1，其概率dual等价conv{Ψ_h(s)}∩K^-非空；Ψ只含所选动作边和≤d对手动作的signed discounted矩，K为全部允许资源cost vectors锥。若dual存在，有≤D+1状态支撑dual。binary指定单mover翻位支撑且α1时，dual存在等价两方向≤d上下文矩匹配/无degree≤d严格多项式分离；α>1仅primitive非负tests乘性夹逼。",
-        "每个d≥0、每个d+3维正实权向量，都有binary无self-loop且唯一2cycle的selector，及全部支撑在暂态state的概率λ，对全部signature的degree0..d列在α1恰零、对所有α≥1非正；限制core proper signatures仍成立。flag0偶active states均匀分布，active维d+2使cost active-degree≤d+1严格低于维数。"
+        "每个d≥0、每个d+3维正实权向量，都有binary无self-loop且唯一2cycle的selector，及全部支撑在暂态state的概率λ，对全部signature的degree0..d列在α1恰零、对所有α≥1非正；限制core proper signatures仍成立。flag0偶active states均匀分布，active维d+2使cost active-degree≤d+1严格低于维数。",
+        "每个n≥2及不全相等正实权w、binary标签，V_i(s)=s_iΣ_jw_js_j的任何同玩家/权/标签完整成本保真有限非负系数多项式资源表示，在忽略零费/无人用资源后只能为全n玩家仅动作1使用、费用a_e x且Σa_e=1。任意提高有限degree仍不能把全部正资源潜在用户支持降到<n；V为有限表示锥K_fin的极射线。"
       ],
       "produces": "有限次局部矩、全成本压缩与暂态择证对偶",
       "implementation": [],
@@ -3541,11 +3543,13 @@
       ],
       "tests": [
         "tests/audits/weighted_congestion/template_certificates/verify_selector_local_moments.py",
-        "tests/audits/weighted_congestion/template_certificates/independent_selector_local_moments.py"
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_local_moments.py",
+        "tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py"
       ],
       "records": [
         "evidence/runs/weighted_congestion/template_certificates/selector_local_moments.json",
-        "evidence/runs/weighted_congestion/template_certificates/independent_selector_local_moments.json"
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_local_moments.json",
+        "evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json"
       ],
       "examples": [],
       "candidates": [],
@@ -3553,7 +3557,7 @@
         "history/source/notes/weighted_congestion/branch_sources.md"
       ],
       "source_role": "Baseline-recovery pointer only; these direct authored and independently reconstructed interfaces are not copied from archived proofs.",
-      "limit": "不保原资源身份、单位系数或算法效率；零成本可用0正资源但markers保MODEL合法。所有人数/动作数无界，维界不是全类规模截止。 不能删selector-support marginal-polytope条件、改成任意局部一致矩或强求feature=0；不要求stationary/recurrent，未保证每selector可行或单mover证书。 仅证明transient dual可行；唯一2cycle自身也有dual，不证明暂态必要/更优，不给任意selector或全类存在。"
+      "limit": "不保原资源身份、单位系数或算法效率；零成本可用0正资源但markers保MODEL合法。所有人数/动作数无界，维界不是全类规模截止。 不能删selector-support marginal-polytope条件、改成任意局部一致矩或强求feature=0；不要求stationary/recurrent，未保证每selector可行或单mover证书。 仅证明transient dual可行；唯一2cycle自身也有dual，不证明暂态必要/更优，不给任意selector或全类存在。 只限完整成本保真、固定玩家/权/标签和有限表示锥，不声称闭包/暴露射线；等权存在≤2用户高次资源表示。原V有全0精确PNE，不限制改权/加玩家/仅保均衡或单向lift，也不反驳≤D资源数量压缩，未解全类题。"
     },
     {
       "id": "anchored-clock-actual-margins",

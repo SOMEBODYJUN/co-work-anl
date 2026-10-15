@@ -4194,7 +4194,7 @@
     {
       "path": "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
       "title": "有限次局部矩、全成本压缩与暂态择证对偶",
-      "purpose": "在全状态签名对偶与空交core后读；以D维cost-space保真压缩资源，精确写selector矩凸包/极锥接口，另给单mover门槛与完全暂态parity机制。",
+      "purpose": "在全状态签名对偶与空交core后读；以D维cost-space保真压缩资源，精确写selector矩凸包/极锥接口，另给单mover门槛与完全暂态parity机制。 刚性扩展另说明非全等权全用户仿射成本不可保真缩为小资源支持，任意有限次数仍不行；用于区分低阶成本空间与正资源锥生成，附等权反边界和独立重构。",
       "topic": "weighted_congestion",
       "role": "account",
       "package": "有限次局部矩、全成本压缩与暂态择证对偶",
@@ -4203,13 +4203,15 @@
         "tests/audits/weighted_congestion/template_certificates/verify_selector_local_moments.py",
         "tests/audits/weighted_congestion/template_certificates/independent_selector_local_moments.py",
         "evidence/runs/weighted_congestion/template_certificates/selector_local_moments.json",
-        "evidence/runs/weighted_congestion/template_certificates/independent_selector_local_moments.json"
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_local_moments.json",
+        "tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py",
+        "evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json"
       ]
     },
     {
       "path": "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md",
       "title": "有限次局部矩、全成本压缩与暂态择证对偶：独立重构与攻击",
-      "purpose": "保存先statement重构D空间/两种消元后攻击固定f454稿；完整核查core/zero/singleton/实α、one-mover与parity范围及冻结版本修正。",
+      "purpose": "保存先statement重构D空间/两种消元后攻击固定f454稿；完整核查core/zero/singleton/实α、one-mover与parity范围及冻结版本修正。 刚性扩展另说明非全等权全用户仿射成本不可保真缩为小资源支持，任意有限次数仍不行；用于区分低阶成本空间与正资源锥生成，附等权反边界和独立重构。",
       "topic": "weighted_congestion",
       "role": "review",
       "package": "有限次局部矩、全成本压缩与暂态择证对偶",
@@ -4218,7 +4220,9 @@
         "tests/audits/weighted_congestion/template_certificates/verify_selector_local_moments.py",
         "tests/audits/weighted_congestion/template_certificates/independent_selector_local_moments.py",
         "evidence/runs/weighted_congestion/template_certificates/selector_local_moments.json",
-        "evidence/runs/weighted_congestion/template_certificates/independent_selector_local_moments.json"
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_local_moments.json",
+        "tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py",
+        "evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json"
       ]
     },
     {
@@ -4652,6 +4656,32 @@
         "tests/audits/weighted_congestion/weight_types/verify_interaction_height.py",
         "tests/audits/weighted_congestion/weight_types/independent_interaction_height.py",
         "evidence/runs/weighted_congestion/weight_types/interaction_height.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py",
+      "title": "异权仿射全签名刚性：独立逐面消元与等权边界核验",
+      "purpose": "复核异权pair多项式contrast的符号、由真实成本列逐面过滤至全用户线性资源，并重算等权pair替代和零费marker；运行仅输出JSON，不把有限degree枚举当任意次数证明。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "有限次局部矩、全成本压缩与暂态择证对偶",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md",
+        "evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json",
+      "title": "异权仿射全签名刚性：独立精确审计冻结结果",
+      "purpose": "固定225项代数符号、2331个signature单项式列和7160个等权成本位置的实际结果及命令、Python、源码hash；后续核对一般刚性证明的有限交叉检查时读取，不覆盖此冻结证据。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "有限次局部矩、全成本压缩与暂态择证对偶",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py"
       ]
     }
   ]
