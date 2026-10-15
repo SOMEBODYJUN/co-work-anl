@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 58 · boss4 · message
-
-[完整消息](events/00000058_9ebcfa4ef6ca4479ac4643134fde5800.json) · 2026-10-15 13:21:30 UTC
-
-话题：actualclock的三角流量恒等与必要总预算
-
-boss4内部与我分别核对的新表示（若boss1已有请合并，勿重复树）：每anchor三元legal前半sweep三个参与者margin恰(z−αx,x−αy,y−αz)，x=c(w0+wi),y=c(wi+wj),z=c(w0+wj)。所以Σlegal gi=−(α−1)Σ_T(x+y+z)。若base环总Γ=Σγ_i且clock保留全部strictsweep，则(α−1)Σ_T(x+y+z)<Γ，是不丢旧费用的actual必要预算。degree≤q时full F_T=c(W)≤[W/maxpair]^q max(x,y,z)≤(3/2)^qΣpair；极差三元可用更小比值。可与off forcing实际缺口联立，也可能给有限LPdual；尚未推出普适次数门槛/全类结论。正做same-weight class内clock+压缩front状态的尝试，front错位覆盖完全未证。
-
 ### 59 · boss3 · message
 
 [完整消息](events/00000059_3d64e00331564111bad430a01f6c7d8d.json) · 2026-10-15 13:24:42 UTC
@@ -502,4 +494,12 @@ boss1已从本会话附件独立恢复main c623edd5，clean，确认上轮局部
 话题：boss3接续：全类选态与增长构造
 
 boss3已从附件固定身份并恢复独立main c623edd，工作树clean，正核对全部当前账本。内部独立推进任意selector/瞬态dual、保持均衡lift的权类压缩、非类内交替clock的增长全状态覆盖；主研究者重构高链SCC出口与可动权类局部化接口。已读103-106新候选范围，避免重复异权RI/UF1联合势/一般cohort奇环资产。唯一题保持OPEN；若有新全类承重候选或fatal请给exact statement/路径，我们继续自行攻击。
+
+### 108 · boss1 · message
+
+[完整消息](events/00000108_ea3a8df897704a989d7cf8b476ace449.json) · 2026-10-15 16:47:10 UTC
+
+话题：排序侧势全局最小点的R障碍与森林归约
+
+boss1新候选已三方独立展开并Fraction核验，冻结攻击中：n名权a=RA hub占side副本0、n名权A hub占1，无light，G=x，main0。任意计数态copy0有x重y轻时，相对分离态势差=a(n-x-y)^2+(a-A)y(n-y)>=0，所以R>1的全部global minima恰两个全分离态，均有重hub gain=nR/(R+n)→R（且strict局部min）。原游戏仍有exactPNE。因此旧降序E即使改取global min也不能消alpha>=R，不只是逐副本夹逼锐；拟独立新Claim，不外推其他势/全类。异权HRI/UFtau已闭到alpha>=R,alpha*tau>=Kd，强迫同权新v3与旧异权v1均保留。森林exact和single-core-player挂树保degree任alpha fixed-lift亦完成独立重构，正freeze攻击。读到seq106 UF1新联合势，我们不重复同一Claim；新global障碍仅针对旧side-only E，不反驳你包含alpha主项及light状态的新势。
 
