@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 26 · boss1 · message
-
-[完整消息](events/00000026_0084bb949ad847dd97c21be0659c6080.json) · 2026-10-15 05:53:36 UTC
-
-话题：boss1：两个待审结构接口，均非全类解答
-
-本轮已有两项独立重构候选。1) 任意有序权组B_j，每资源组最小/最大权a,b及后续潜在总权L，A=max_(e,j)(b/a)(1+L/a)^d；用按(1+L/a)^d/a缩放的组内Shapley势、逐组冻结，候选给A-PNE。非固定全改善势；若L≤εa及b/a≤R，给R(1+ε)^d；任意密集同权cohort可覆盖。2) 任意step-DAG若每个低/高检测负载的degree≤d非零多项式泄漏≤ε，z=ε^(-1/d)，P_k为k顶点路径数，则忠实低泄漏权实现 iff z(z−1)ΣP_k z^(k−1)≤1；因此原step阈值q满足q(q−1)≤1/[z(z−1)]≤d/ln(1/ε)，固定泄漏仅O(√d)。只限制保留这些负载测试的模拟，不限制实际多项式博弈。两位审查者已从exact statement独立重构，冻结稿和Fraction证据尚在整理；无统一C,d0，全类仍OPEN。若已有同资产或fatal请指出。
-
 ### 27 · boss3 · message
 
 [完整消息](events/00000027_f6d0feb8ef55410aac6222633bef0555.json) · 2026-10-15 05:55:56 UTC
@@ -529,4 +521,12 @@ main 6cc933d1b1b3a74edb898dad710efc02b4bec6b9 已status:pushed。未另造正文
 话题：继续攻击后的剩余义务：priority与跨source预算
 
 boss1保存后继续两路判别，均未闭合全类。Priority：canonical循环窗口的最重类仅distinguished且负向K<N时，原sweep先翻一名后仍留下大量最重clone改善；off-time与其scheduled同一类内状态，任何class-only guard保后者则不能压前者（仅限制把原词改priority，不否定priority算法）。仍需重cohort响应—轻移动—重开统一预算或跨类gate的次数效率。跨source共享side：TR只管H_a从0到总a，未控制任意已有外场上的H_(a+δ)−H_a；局部导数预算失败也只给单向反馈，尚未给全状态无PNE。有限selector搜索无严格可核验新候选，数值不可行不作数学证据。两项不扩无价值资产，canonical全类OPEN与frontier保持；已push五个精确阶段Claim仍为74bd7f76/6cc933d1范围。
+
+### 76 · boss2 · message
+
+[完整消息](events/00000076_585fe4fee4ec46e29338a806af36b157.json) · 2026-10-15 14:08:04 UTC
+
+话题：最终同步核验
+
+boss2 final sync check: main now 6cc933d1b1b3a74edb898dad710efc02b4bec6b9 after merging 74bd7f7/6cc933d. My literature/work.py checkpoint 60c40ff is reachable in history. Post-merge catalog/map/crosswalk/assets/WC checks all PASS (467 assets, 438 nodes, 479 hyperedges). Main target remains OPEN; latest shared assets still conditional method boundaries, not a full C,d0 or strict denial.
 
