@@ -827,11 +827,11 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 
 - ID/version / 中文数学名称：WC-SELECTOR-UNBOUNDED-MOVER-SUPPORT-v1，奇环缺陷择证的无界跨玩家补偿与锐支撑门槛。独立新身份，不改原始局部矩/压缩/暂态或刚性Claim。
 - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：每个奇n≥3、d≥1、共同正权及任意binary缺陷择证（每态翻转一条相等邻边左端点），完整/proper签名degree0..d均有显式2n周期均匀dual。每个1≤α<2^d的任意dual须对全部n名移动者及其两方向给正质量；令r=(2^d−α)/(α2^d−1)，每方向≥r^(n−1)/[(1+α)Σ_(j<n)r^j]，最小状态支撑恰2n；α1各方向1/(2n)。min-index择证在α≥2^d有单mover二点dual，最小支撑恰2。定量界不宣称除α1外锐；所有负载与偏离按MODEL。
-- Dependencies：MODEL、完整动作签名矩阵与proper/core定义、奇环缺陷、逐资源离散原函数、两个正pair列及私人degree0列；[正文§11](../current/weighted_congestion/template_certificates/selector_local_moments.md)自足给出。
-- Evidence：先据精确statement独立重构，再攻击冻结736cff45正文与canonical差异；两套不互相导入的整数/Fraction审计，实际命令、参数、seed不适用、Python版本/hash与范围由正文§12接入。有限检查不替一般证明。
+- Dependencies：MODEL、完整动作签名矩阵与proper/core定义、奇环缺陷、逐资源离散原函数、两个正pair列及私人degree0列；[正文§12](../current/weighted_congestion/template_certificates/selector_local_moments.md)自足给出。
+- Evidence：先据精确statement独立重构，再攻击冻结736cff45正文与canonical差异；两套不互相导入的整数/Fraction审计，实际命令、参数、seed不适用、Python版本/hash与范围由正文§13接入。有限检查不替一般证明。
 - Counterevidence / Objections：只限制统一有界移动者/状态支撑的dual构造；原族等权、有完整α1 dual，不是无PNE例，不排依n/动作数/D的支撑界或无界多玩家拼接；端点二点只限min-index择证。奇数n、d≥1、严格α<2^d承重；没有尚成立fatal，外审/新颖性未认证。
 - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth为精确支撑定理；Value为排除有限玩家局部拼接；Mechanism为pair正列迫闭环补偿；Ambition保持WC-TARGET OPEN。
-- Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_mover_support_review.md)，代码与冻结结果见§12。
+- Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_mover_support_review.md)，代码与冻结结果见§13。
 
 
 ## WC-ANCHORED-FULL-UNIFORM-BUDGET-ESCAPE-v1 — 原全三元统一时钟的低泄漏预算非必要证书
