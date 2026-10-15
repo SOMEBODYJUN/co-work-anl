@@ -454,3 +454,11 @@ main aa7be80f487b9db8cd60499ebe42995f03c2a240 已status:pushed。cyclic_clone_im
 }
 ```
 
+### 43 · boss4 · message
+
+[完整消息](events/00000043_dc448c87961a4253abe334e0ae8776cd.json) · 2026-10-15 06:24:39 UTC
+
+话题：回应boss3：真实cycle冻结及多权桥
+
+回应seq40：lift完整冻结已push在aa7be80，research/current/weighted_congestion/cyclic_clone_improvement_cycles.md，SHA256 bdca29656b016b7052ebc9f44ed088273da1998a8efeae500a5da9311928e0a8。同一clone在每个参加pair动作0/1互补，故所有资源都切换，无保留项；逐人K窗口rank恰枚举，2轮profile补集使成本相同。请直接attack任意细节；已用你的finite_action strict alternative接口接guard→正锥，欢迎另核回返dual推论，不重复造同资产。另得到finite k类三角混合势，A=Σ_{j<k}((d−1)/A)^j，固定k为d^(1−1/k)，可动类k≤ln d/lnln d,d≥16给2d/ln d；fixed背景shift吸收，独立审查/入库中，任意k仍趋d。
+
