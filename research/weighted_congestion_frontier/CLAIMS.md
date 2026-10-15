@@ -930,3 +930,13 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Counterevidence / Objections：** 同权hub、唯一main source、二元同费副本及所写UFτ均承重；不包含τ=1、不提供任意实例满足强迫条件的表示或稳定light选择，不覆盖异权hub或一般策略。旧三个Claim不变，WC-TARGET保持OPEN；未外审或认证新颖性。 无尚成立的范围内fatal objection。
 - **Status：** complete conditional proof; independently reconstructed and exactly audited; unrefereed。Truth限精确子类；Value为减少达到目标量级所需强迫条件；Mechanism为两个余量的乘积支付；Novelty未认证；Ambition保留全类判定。
 - **Related Files：** [原正文第九节](../current/weighted_congestion/shared_side_truncated_potential.md)、[新独立审查](../reviews/weighted_congestion/multisource_force_tradeoff_review.md)及第9.7节所列代码/冻结结果，资产合同见`research/assets.json`。
+
+## WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2 — 跨源共享侧资源的主增量支付与精确均衡强迫阈值
+
+- **ID/version / 中文数学名称：** `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2`，跨源共享侧资源的主增量支付与精确均衡强迫阈值；相对v1改变倍率条件的新版本，v1依原式保持。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 第9.1节同权hub、唯一main-source、任意跨source多light/shared-hub的二元同费副本模型，费用非负系数degree≤d，任意整数d≥2、实τ>1及α≥1，保持UFτ但只需α(τ−1)≥d；同一真实hub Rosenthal势E每个单hub局部最小点配全anti为α-PNE。τ≥d+1时给精确PNE；d≥16且τ=1+ln d时给(d/ln d)-PNE。全部实正权/实非负系数、有限拓扑、零常数费用和空集合边界均量化。 精确策略、UFτ与边界以[正文9.8—9.12](../current/weighted_congestion/shared_side_truncated_potential.md)为准。
+- **Dependencies：** MODEL、固定light真实Rosenthal边际、逐lightκ重置及UFτ接口；新主增量源标量界。源标量强化为Σκ[F(u(1+t))−τF(uT)]≤d[F(u(1+T))−F(u)]；reset≤dΔF/(τ−1)由目标α支付，有限势局部最小点覆盖真实偏离。 全部自足，无外部均衡定理导入。
+- **Evidence：** 先statement独立重构，再攻击冻结9.8—9.12与所有α1边界，见[独立审查](../reviews/weighted_congestion/multisource_force_increment_review.md)。新两路Fraction代码/输入/版本/seed/依赖hash及冻结结果从原稿新审计合同进入；作者明确复用旧helper，独立程序只复用其本人baseline，无作者核心调用。有限证据不替一般证明。
+- **Counterevidence / Objections：** v2严格扩大v1充分条件域，旧版本不改；不称倍率条件必要或最优。同权hub/唯一main source/二元同费副本/UFτ承重；不含τ=1或一般游戏的强迫表示与light稳定选择，WC-TARGET保持OPEN；未外审、新颖性未认证。 无尚成立范围内fatal objection。
+- **Status：** complete conditional proof; independently reconstructed and exactly audited; unrefereed。Truth为条件子类存在界；Value为保留主增量并纳入精确PNE端点；Mechanism见完整付款链；Novelty未认证；Ambition全类OPEN。
+- **Related Files：** 原稿9.8起、新独立审查、新作者/独立审计和冻结输出均由`research/assets.json`与`research/catalog.json`接入。

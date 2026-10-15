@@ -63,4 +63,4 @@
 
 [跨源多light平方根存在界](../current/weighted_congestion/shared_side_truncated_potential.md)、[完整成本近似小支持失真](../current/weighted_congestion/template_certificates/selector_local_moments.md)及[类内有序三元clock通用compiler反例](../current/weighted_congestion/class_front_phase_quotient.md)已各以新ID接入CLAIMS和数学入口；正文末节分别连接独立freeze审查、规范代码与冻结有理结果。全类题仍OPEN：第一项有UFmulti/同权hub假设，后两项仅限表示或clock架构。
 
-[跨源共享侧资源的强迫与目标倍率分离](../current/weighted_congestion/shared_side_truncated_potential.md)第九节（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`）给出独立新身份：同权hub、唯一main source及二元同费副本下，UF强迫τ>1与目标α只需(τ−1)(α−1)≥d，无大小排序。d≥16取τ=1+ln d即得α=1+d/ln d≤2d/ln d；旧平方根Claim为τ=α的特例。独立先重构后冻结攻击及双路Fraction证据已接入原稿。仍缺异权hub、强迫失败时的稳定light/反馈控制与全类非势选态，WC-TARGET保持OPEN。
+[跨源共享侧资源的强迫与目标倍率分离](../current/weighted_congestion/shared_side_truncated_potential.md)第九节（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`）给出独立新身份：同权hub、唯一main source及二元同费副本下，UF强迫τ>1与目标α只需(τ−1)(α−1)≥d，无大小排序。d≥16取τ=1+ln d即得α=1+d/ln d≤2d/ln d；旧平方根Claim为τ=α的特例。v2（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2`）保留主费用增量，把条件进一步降为α(τ−1)≥d，τ≥d+1给精确PNE，τ=1+ln d给d/ln d。v1身份与原证据保留；两版本独立重构/冻结攻击及新旧双路Fraction已接入原稿。仍缺异权hub、强迫失败时的稳定light/反馈控制与全类非势选态，WC-TARGET保持OPEN。

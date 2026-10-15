@@ -4492,7 +4492,7 @@
     {
       "path": "research/current/weighted_congestion/shared_side_truncated_potential.md",
       "title": "同权主玩家共享侧资源：截断势与直接源预算",
-      "purpose": "侧资源含多hub时读取：UF推出A_d≤2d/ln d的全anti均衡；另独立ID给任d≥0、α≥1的AS+B势判据，处理source重置。；新增WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1：任意d≥2、实α≥1+√d，同权hub u、唯一main source的正权lights，side允许任意hub子集及跨source任意light子集，两副本同费非负degree≤d。令T_j为side全light权、m_j为hub数、W_v为source总light权；若每light满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥α[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则真实hub Rosenthal势任单hub局部最小点配全anti为α-PNE。 同权hub、二元对称副本、唯一main source及UFmulti承重；不覆盖异权hub或UF失败，不改变全类OPEN。旧两个Claim身份保持。 第九节分离强迫τ与目标α：(τ−1)(α−1)≥d即充分；调用对数级UF子类保证时先核所写同权和真实重置合同，不得当全类。",
+      "purpose": "侧资源含多hub时读取：UF推出A_d≤2d/ln d的全anti均衡；另独立ID给任d≥0、α≥1的AS+B势判据，处理source重置。；新增WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1：任意d≥2、实α≥1+√d，同权hub u、唯一main source的正权lights，side允许任意hub子集及跨source任意light子集，两副本同费非负degree≤d。令T_j为side全light权、m_j为hub数、W_v为source总light权；若每light满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥α[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则真实hub Rosenthal势任单hub局部最小点配全anti为α-PNE。 同权hub、二元对称副本、唯一main source及UFmulti承重；不覆盖异权hub或UF失败，不改变全类OPEN。旧两个Claim身份保持。 第九节分离强迫τ与目标α：(τ−1)(α−1)≥d即充分；调用对数级UF子类保证时先核所写同权和真实重置合同，不得当全类。 第9.8—9.12节v2保留主费增量，把条件降为α(τ−1)≥d，包含τ≥d+1的精确PNE充分条件。",
       "topic": "weighted_congestion",
       "role": "account",
       "package": "shared-side-truncated-potential",
@@ -4513,7 +4513,12 @@
         "tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py",
         "tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py",
         "evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json",
-        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json"
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_exact_threshold.py",
+        "tests/audits/weighted_congestion/independent_multisource_force_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_exact_threshold_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json"
       ]
     },
     {
@@ -5447,6 +5452,81 @@
         "tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py",
         "tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py",
         "evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/multisource_force_increment_review.md",
+      "title": "跨源共享侧资源的主增量支付与精确均衡强迫阈值：独立重构与冻结攻击",
+      "purpose": "先自主重构增量源界，再攻击冻结9.8—9.12，核对α1非空端点、GΔ均值链与旧版本关系，引用加强版时读取。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_exact_threshold.py",
+        "tests/audits/weighted_congestion/independent_multisource_force_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_exact_threshold_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/verify_multisource_forcing_exact_threshold.py",
+      "title": "跨源共享侧资源的主增量支付与精确均衡强迫阈值：作者精确审计",
+      "purpose": "复用已冻结v1作者literal helper并记录依赖hash，核65016单项式/400混合源项及172个新域游戏，包含88个α1实例。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md",
+        "tests/audits/weighted_congestion/independent_multisource_force_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_exact_threshold_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/independent_multisource_force_increment.py",
+      "title": "跨源共享侧资源的主增量支付与精确均衡强迫阈值：独立精确审计",
+      "purpose": "从审查者自身v1 baseline派生standalone，不调用作者，核107个v1域外游戏与51个α1实例；重建所有资源负载和势局部min偏离。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_exact_threshold.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_exact_threshold_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/shared_side_truncation/forcing_exact_threshold_author.json",
+      "title": "跨源共享侧资源的主增量支付与精确均衡强迫阈值：作者冻结结果",
+      "purpose": "保存seed441079、依赖源码hash、172游戏完整输入及3270真实偏离/2110reset；只有有限核验范围，不原位改写。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_exact_threshold.py",
+        "tests/audits/weighted_congestion/independent_multisource_force_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json",
+      "title": "跨源共享侧资源的主增量支付与精确均衡强迫阈值：独立冻结结果",
+      "purpose": "保存独立seed/冻结稿和baseline hash、107新域游戏及2664真实偏离/2754reset、10200源项检查，复现v2端点实现时对照。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_exact_threshold.py",
+        "tests/audits/weighted_congestion/independent_multisource_force_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_exact_threshold_author.json"
       ]
     }
   ]

@@ -116,4 +116,4 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 
 三项皆为独立身份的新结构资产；不据子类平方根界或方法障碍宣布全类命题解决。下一项承重义务是异权hub/非UF反馈、非势选态的可累加预算，或带完整覆盖且次数效率可增长的新族。普通priority激活/LP诊断尚无新可用桥，不当成证明。
 
-[跨源共享侧资源的强迫与目标倍率分离](shared_side_truncated_potential.md)第九节（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`）给出独立新身份：同权hub、唯一main source及二元同费副本下，UF强迫τ>1与目标α只需(τ−1)(α−1)≥d，无大小排序。d≥16取τ=1+ln d即得α=1+d/ln d≤2d/ln d；旧平方根Claim为τ=α的特例。独立先重构后冻结攻击及双路Fraction证据已接入原稿。仍缺异权hub、强迫失败时的稳定light/反馈控制与全类非势选态，WC-TARGET保持OPEN。
+[跨源共享侧资源的强迫与目标倍率分离](shared_side_truncated_potential.md)第九节（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`）给出独立新身份：同权hub、唯一main source及二元同费副本下，UF强迫τ>1与目标α只需(τ−1)(α−1)≥d，无大小排序。d≥16取τ=1+ln d即得α=1+d/ln d≤2d/ln d；旧平方根Claim为τ=α的特例。v2（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2`）保留主费用增量，把条件进一步降为α(τ−1)≥d，τ≥d+1给精确PNE，τ=1+ln d给d/ln d。v1身份与原证据保留；两版本独立重构/冻结攻击及新旧双路Fraction已接入原稿。仍缺异权hub、强迫失败时的稳定light/反馈控制与全类非势选态，WC-TARGET保持OPEN。

@@ -413,3 +413,114 @@ light l当前主资源负载W_v，每条side当前负载≤T_j+m_ju；偏离后�
 两路冻结结果分别为 `evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json` 与 `evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json`。每份记录列实际生成输入、参数、seed、算术、版本、源码 hash 与有限覆盖范围；重跑仅向 stdout 或临时文件输出，不覆盖冻结字节。代码和结果由 `research/assets.json`、`research/catalog.json` 接入。
 
 本 Claim 的一般证明已完成独立重构与冻结攻击，精确审计通过；状态为 complete conditional proof; independently reconstructed and exactly audited; unrefereed。它降低的是达到目标量级时所需的强迫倍率，未提供一般实例的强迫表示或稳定 light 选择。下一项承重义务仍是异权 hub、强迫失败时的反馈控制或无界交互高度的非势选态；全类题保持 OPEN。
+
+### 9.8. 新版本：保留主资源增量后的加强倍率域
+
+**ID/version / 中文数学名称：** `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2`，跨源共享侧资源的主增量支付与精确均衡强迫阈值。此版本更改了 v1 的倍率假设，独立列出精确身份；v1 正文、原冻结审计和原审查不因此改写。
+
+**Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 量化第9.1节完全相同的全部有限资源拓扑、任意实正 hub 同权 `u`、任意实正 light 权、唯一 main source、非负系数次数至多整数 `d≥2` 的多项式费用与任意实 `τ>1,α≥1`，保持同一个(UFτ)，将倍率条件改为
+
+    α(τ−1)≥d.                                        (FT2)
+
+结论不变：第8.2节同一有限势 `E` 的每个单 hub 翻位局部最小点，配以全部 light 与 source 反位，是原真实负载游戏的 `α-PNE`。允许所有此前所列零/常数费用和空用户子集边界。特别允许 `α=1`，没有将 `τ=1` 纳入量词域。
+
+**Dependencies：** 第8.2—8.3节固定 light Rosenthal 边际和逐 light 重置引理，第9.3节从(UFτ)得到(P)的预算接口，以及下述新的主增量源标量引理。一般证明不调用 v1 的结论，不调用外部均衡定理。
+
+**Evidence / Counterevidence / Objections / Status：** 下文给出完整一般推导；审查和精确证据的状态另行记录，不由作者候选预设。同权 hub、唯一 source、二元同费副本和(UFτ)均承重；没有覆盖异权 hub、强迫失败或一般游戏的选态。未外审、新颖性未认证。此版本扩大可保证的参数域，不声称(FT2)是该结构类中必要或最优的均衡判据。
+
+### 9.9. 主增量源标量引理
+
+对任意有限正数列 `t_l`、`T=Σ_l t_l`（允许空列）、`u>0`、整数 `d≥2`、实数 `τ≥1` 与非负系数次数至多 `d` 的多项式 F，有
+
+    Σ_lκ_d(t_l)[F(u(1+t_l))−τF(uT)]
+      ≤d[F(u(1+T))−F(u)].                            (SΔ)
+
+证明：空列时两边零。左侧随 `τ` 单调不增，只需证 `τ=1`。逐单项式证明；常数项 `k=0` 在 `τ=1` 时为零，在更大 `τ` 时非正。以下 `1≤k≤d`，先令 `u=1`，最后乘 `u^k` 并非负线性组合。
+
+若 `0<T≤1`，每个 `(1+t_l)^k−T^k≥0`，用 `κ_d(t_l)≤dt_l` 得
+
+    Σ_lκ_d(t_l)[(1+t_l)^k−T^k]
+      ≤dT[(1+T)^k−T^k]
+      ≤d[(1+T)^k−1].                                (D1)
+
+末步在 `T=1` 时取等号；在 `0<T<1` 时等价于
+
+    (1+T)^k≥(1−T^(k+1))/(1−T)=Σ_{r=0}^k T^r,
+
+由二项式系数均至少一成立。
+
+若 `T≥1`，复用第9.2节(C)及 `f_k(t)/t` 单调的超可加证明（它不含强迫倍率），将和压成
+
+    Σ_lκ_d(t_l)[(1+t_l)^k−T^k]
+      ≤κ_d(T)[(1+T)^k−T^k].                         (D2)
+
+`k=1` 时右侧为 `κ_d(T)≤T+1≤dT`，即所需界。若 `k≥2`，记 `x=T/(1+T)∈[1/2,1)`。递减等比数列的均值满足
+
+    (1/k)Σ_{r=0}^{k−1}x^r≤(1+x)/2.
+
+具体可由 `Σx^r≤1+(k−1)x` 和 `(k−2)(1−x)≥0` 验证。另由 `k≥2` 及
+
+    2x−x²−(1+x)/2=(2x−1)(1−x)/2≥0,
+
+有 `1−(1−x)^k≥2x−x²≥(1+x)/2`。因此
+
+    Σ_{r=0}^{k−1}x^r≤k[1−(1−x)^k].
+
+乘 `(1+T)^k` 并用 `1−x=1/(1+T)`，得到
+
+    (T+1)[(T+1)^k−T^k]≤k[(T+1)^k−1].              (GΔ)
+
+由 `κ_d(T)≤T+1` 及 `k≤d`，(D2)至多 `d[(1+T)^k−1]`。完成单项式、缩放和非负线性组合证明。源标量引理没有使用(UFτ)，也不要求各 light 的源括号分别非负。
+
+### 9.10. 保留主资源增量的付款与真实均衡
+
+仍定义 `Q_l=F_v(u+w_l)−τF_v(W_v)`。由第9.3节(P)和第8.3节逐 light 重置界，source v 的全部重置满足
+
+    R_v≤1/(τ−1)Σ_{l:o(l)=v}κ_d(w_l/u)Q_l
+       ≤r Δ_v,
+    r=d/(τ−1),  Δ_v=F_v(u+W_v)−F_v(u)≥0.           (RΔ)
+
+若 source 无 light，`R_v=Δ_v=0`。主资源真实 `α` 成本差仍为
+
+    −M_v(α),   M_v(α)=αF_v(u+W_v)−F_v(u).
+
+若 `r≤1`，直接有 `R_v≤rΔ_v≤Δ_v≤M_v(α)`。若 `r≥1`，(FT2)给 `α≥r`，且
+
+    M_v(α)−rΔ_v
+      =(α−r)F_v(u+W_v)+(r−1)F_v(u)≥0.              (Pay2)
+
+所以两种分支均支付全部重置。取 E 的任一单 hub 局部最小点；真实 hub 偏离保持 light 动作不变，只在比较势时重置该 source 的 light。逐 hub 有
+
+    C_v(s)−αC_v(s_v',s_−v)
+      ≤−M_v(α)+E(h)−E(h^v)+R_v≤0.
+
+每名 light 仍由(UFτ)满足 `τC_l(s)≤C_l(s_l',s_−l)`，它对全部 `α≥1` 蕴含目标均衡不等式。常数费用通过非负主预算处理；零成本与零偏离成本直接用不等式处理，不计算费用比值。全部真实单方偏离均已覆盖，证明 v2。
+
+### 9.11. 精确均衡阈值、目标推论及版本关系
+
+在本严格子类中：
+
+- 若 `τ≥d+1`，取 `α=1` 满足(FT2)，同一势局部最小点给**精确纯 Nash 均衡**。
+- 若 `τ=1+ln d`，取 `α=max{1,d/ln d}` 满足(FT2)。特别地 `d≥16` 时 `α=d/ln d>1`，给目标量级。
+
+这两个结论都要求原文(UFτ)及全部结构假设。第一个结论不声称一般加权拥塞博弈存在精确均衡；第二个结论不解决全类匹配上界。
+
+v1 的 `(τ−1)(α−1)≥d` 蕴含 v2 的 `α(τ−1)≥d`，故 v2 保留并严格扩展已保证的参数域。例如 `d=4,τ=5,α=1` 满足 v2 却不满足 v1；非零多 light 跨 source 实例也可满足此强迫式，配套审计提供显式有理参数。所谓严格扩展指充分条件的参数域严格扩大，不声称旧域以外曾无均衡。
+
+### 9.12. v2 作者精确审计合同
+
+运行
+
+    python3 tests/audits/weighted_congestion/verify_multisource_forcing_exact_threshold.py
+
+程序检查新(SΔ)、(FT2)、两种付款分支、真实固定 light 偏离与重置，并枚举 E 的全部单 hub 局部最小点；必须实际包含 `τ=d+1` 和 `τ>d+1`、`α=1` 的非零、多 source、多 light 共享 side 实例。该审计复用 v1 作者程序的真实资源重建与输入生成函数，输出所用依赖源码 hash，并不自称独立实现。v1 审计和冻结证据保持原字节；新运行另存新证据文件。有限审计仅核对实际参数，不替代实参数一般证明。
+
+### 9.13. v2 独立攻击与冻结结果
+
+[v2 独立审查](../../reviews/weighted_congestion/multisource_force_increment_review.md)先据加强陈述重构源增量界，再逐式攻击冻结9.8—9.12，记录所审版本/hash，核对 `α=1` 的非零跨源实例及其与 v1 的域关系。新独立程序为
+
+    python3 tests/audits/weighted_congestion/independent_multisource_force_increment.py
+
+该程序由审查者自己的 v1 literal 实现派生，独立于作者，运行时不导入任何 baseline；JSON 明列 baseline 路径/hash。两路新冻结结果为 `evidence/runs/weighted_congestion/shared_side_truncation/forcing_exact_threshold_author.json` 与 `evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json`，包括全部实际输入、参数、seed、Python/代码/依赖 hash。重跑保存到 stdout 或临时路径，不覆盖冻结结果。
+
+v2 状态为 complete conditional proof; independently reconstructed and exactly audited; unrefereed。没有范围内尚成立的 fatal objection；未外审、新颖性未认证。主增量付款及精确均衡端点仍只覆盖所写强迫与同权结构；全类 WC-TARGET 保持 OPEN。
