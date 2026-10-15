@@ -4492,7 +4492,7 @@
     {
       "path": "research/current/weighted_congestion/shared_side_truncated_potential.md",
       "title": "共享侧资源的强迫均衡：截断势、同权倍率权衡与异权排序势",
-      "purpose": "第1–7节为同权hub单light截断势与直接AS+B预算；第8节为同权跨source多light的1+√d界。第9节分离强迫τ与目标α：WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1在UFτ下以(τ−1)(α−1)≥d给α-PNE；第9.8—9.12节独立v2保留主费增量，将充分条件改进为α(τ−1)≥d，包含τ≥d+1的精确PNE充分条件。两版本均要求同权hub、唯一main source及所写二元同费副本合同，τ>1、α≥1无需排序。第10节WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1处理局部异权hub：UFhet下α≥R且(α−1)²≥Kd给全anti α-PNE，固定局部比仍可有无界全局跨度。按范围核对精确陈述、真实重置合同及配套审查和代码；无界局部比及非UF仍开放，各独立Claim身份保持，不提供全类统一C、d0。",
+      "purpose": "第1–7节为同权hub单light截断势与直接AS+B预算；第8节为同权跨source多light的1+√d界。第9节分离强迫τ与目标α：WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1在UFτ下以(τ−1)(α−1)≥d给α-PNE；第9.8—9.12节独立v2保留主费增量，将充分条件改进为α(τ−1)≥d，包含τ≥d+1的精确PNE充分条件。两版本均要求同权hub、唯一main source及所写二元同费副本合同，τ>1、α≥1无需排序。第10节WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1处理局部异权hub：UFhet下α≥R且(α−1)²≥Kd给全anti α-PNE，固定局部比仍可有无界全局跨度。按范围核对精确陈述、真实重置合同及配套审查和代码；无界局部比及非UF仍开放，各独立Claim身份保持，不提供全类统一C、d0。 第9.14起v3用侧资源增量把条件改为ατ≥d并纳τ1；独立exact边界Claim用2玩家覆盖全部4态，证明该结构类τ=d恰保证精确PNE；不称一般α乘积最优。",
       "topic": "weighted_congestion",
       "role": "account",
       "package": "shared-side-truncated-potential",
@@ -4523,7 +4523,11 @@
         "tests/audits/weighted_congestion/verify_heterogeneous_sorted_side.py",
         "tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py",
         "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_author.json",
-        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json"
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_independent.json",
+        "tests/audits/weighted_congestion/verify_multisource_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_multisource_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json"
       ]
     },
     {
@@ -5462,7 +5466,7 @@
     {
       "path": "research/reviews/weighted_congestion/multisource_force_increment_review.md",
       "title": "跨源共享侧资源的主增量支付与精确均衡强迫阈值：独立重构与冻结攻击",
-      "purpose": "先自主重构增量源界，再攻击冻结9.8—9.12，核对α1非空端点、GΔ均值链与旧版本关系，引用加强版时读取。",
+      "purpose": "先自主重构增量源界，再攻击冻结9.8—9.12，核对α1非空端点、GΔ均值链与旧版本关系，引用加强版时读取。 末节另外记录v3原审查者提出RI后由原作者先独立重构、再冻结攻击的实际角色和第二个Fubini证明，以及exact强迫阈值两边；不冒称同一人审自己的发现。",
       "topic": "weighted_congestion",
       "role": "review",
       "package": "shared-side-truncated-potential",
@@ -5471,7 +5475,11 @@
         "tests/audits/weighted_congestion/verify_multisource_forcing_exact_threshold.py",
         "tests/audits/weighted_congestion/independent_multisource_force_increment.py",
         "evidence/runs/weighted_congestion/shared_side_truncation/forcing_exact_threshold_author.json",
-        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json"
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_increment_independent.json",
+        "tests/audits/weighted_congestion/verify_multisource_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_multisource_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json"
       ]
     },
     {
@@ -5607,6 +5615,66 @@
         "tests/audits/weighted_congestion/verify_heterogeneous_sorted_side.py",
         "tests/audits/weighted_congestion/independent_heterogeneous_sorted_side.py",
         "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_author.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/verify_multisource_reset_increment.py",
+      "title": "跨源共享侧资源的重置增量与强迫乘积预算均衡：重置与四状态作者审计",
+      "purpose": "复用v1作者literal helper并记录hash，核85050个RI单项式、196个真实游戏与τ1/τd端点，另逐资源核20个sharp exact反例全部80态。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md",
+        "tests/audits/weighted_congestion/independent_multisource_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/independent_multisource_reset_increment.py",
+      "title": "跨源共享侧资源的重置增量与强迫乘积预算均衡：独立重置与强迫边界审计",
+      "purpose": "由RI提出者独立于旧作者实现，重建资源负载、源增量/重置、局部min和exact边界四状态；来源baseline/hash在JSON明确。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md",
+        "tests/audits/weighted_congestion/verify_multisource_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json",
+      "title": "跨源共享侧资源的重置增量与强迫乘积预算均衡：重置与四状态作者冻结结果",
+      "purpose": "保存seed441083、helper hash及全部游戏输入、3860偏离/2368重置、RI/源项检查和20个无exactPNE反例；冻结后不改写。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md",
+        "tests/audits/weighted_congestion/verify_multisource_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_multisource_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json",
+      "title": "跨源共享侧资源的重置增量与强迫乘积预算均衡：独立重置与强迫边界冻结结果",
+      "purpose": "保存独立真实输入、代码/baseline/确审稿hash、τ1和α1参数及全部4态出口；对照两路实现，有限证据不替一般证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_increment_review.md",
+        "tests/audits/weighted_congestion/verify_multisource_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_multisource_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json"
       ]
     },
     {
