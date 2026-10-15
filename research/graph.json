@@ -5090,6 +5090,162 @@
       ],
       "status": "finite exact audit",
       "track": "weighted_congestion"
+    },
+    {
+      "id": "WC-CLONE-FRONT-PHASE-QUOTIENT-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "循环窗口前沿的扭转平移与精确相位商",
+      "detail": "任意m≥2,N≥1正类权、每类至少参与一test的循环窗口两动作lift（保留零系数资源），同test全部index及pair两侧同费；共同index平移并wrap翻bit逐成本/偏离协变。合法class prefix/suffix由x∈(Z2N)^m编码，对角T使x各加1，商恰(2N)^(m−1)，单clone留front动作恰±1（N1两邻居重合）。有显式2N长forward成本表及backward r+1交换式。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_fronts_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "类内时钟的前沿出口障碍与不同步反例",
+      "detail": "任意α≥1，同权类内递增锚定010/101同费三元时钟在每条合法front边的own old=new=c(2w)，clock margin≤0。显式12player/N4/degree8/α21/20有理窗口lift有strict24步环，但phase(0,4,0)六端点margin<−9/50；512front恰8稳定，仍有内部clone margin>1/5。故strict环不自动给每个类front改善端点，任意此类clock不新增front内改善。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_fronts_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-DEGREE-LOCAL-COST-COMPRESSION-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "有限次局部成本空间与全成本资源压缩",
+      "detail": "固定n≥1,m_i≥1,d≥0与正实权，D=Σ_i m_i Σ_(T⊆N\\i,|T|≤d)∏_(j∈T)(m_j−1)。全部玩家cost tables位于维D局部张量空间；任意游戏可用≤D正系数单项式签名类型及≤Σm_i零费私有动作marker保所有state/deviation成本和动作标签，core可保持。binary时D=2nΣ_(r≤min(d,n−1))C(n−1,r)，一般D=O_d((Σm_i)^(d+1))。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "全状态择证的低阶矩极锥与小支撑接口",
+      "detail": "固定任意完整selector h及实α≥1，其概率dual等价conv{Ψ_h(s)}∩K^-非空；Ψ只含所选动作边和≤d对手动作的signed discounted矩，K为全部允许资源cost vectors锥。若dual存在，有≤D+1状态支撑dual。binary指定单mover翻位支撑且α1时，dual存在等价两方向≤d上下文矩匹配/无degree≤d严格多项式分离；α>1仅primitive非负tests乘性夹逼。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "完全暂态奇偶支撑的择证对偶",
+      "detail": "每个d≥0、每个d+3维正实权向量，都有binary无self-loop且唯一2cycle的selector，及全部支撑在暂态state的概率λ，对全部signature的degree0..d列在α1恰零、对所有α≥1非正；限制core proper signatures仍成立。flag0偶active states均匀分布，active维d+2使cost active-degree≤d+1严格低于维数。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-CLASS-FRONT-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "循环窗口的压缩前沿与不同步稳定状态的两套有限精确审计",
+      "detail": "逐真实负载/偏离或有限矩阵核对；覆盖和数目仅按代码/冻结记录，不替代任意参数的解析证明。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_class_fronts.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_class_fronts.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/class_fronts.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_class_fronts.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-SELECTOR-LOCAL-MOMENT-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "有限次局部矩、全成本压缩与暂态择证对偶的两套有限精确审计",
+      "detail": "逐真实负载/偏离或有限矩阵核对；覆盖和数目仅按代码/冻结记录，不替代任意参数的解析证明。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_selector_local_moments.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_local_moments.py",
+        "evidence/runs/weighted_congestion/template_certificates/selector_local_moments.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_local_moments.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-CLASS-FRONT-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "循环窗口literal与前缀后缀相位",
+      "detail": "覆盖每类的完整窗口资源两动作；T为全classindex+1及wrap翻bit，Bx表示2N前沿；保留零系数资源以使动作互异。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-CLASS-FRONT-FIXTURE",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "十二玩家不同步前沿与递增同权clock",
+      "detail": "m3,N4,p8,w1/1/4/1/16，三组reverse test及有理系数见正文；clock仅递增锚定三元，两端非full条件。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-DEGREE-LOCAL-SPACE-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "至多d对手的cost-space张量基",
+      "detail": "W_i由自身action全基与至多d个对手非基准动作indicator乘积张成，dimW=D；resource g_i=f_i(s_i)(wi+Σothers wj fj)^k。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-SELECTOR-MOMENT-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "低阶择证feature凸包与资源负极锥",
+      "detail": "Ψ_h的每坐标为mover标签×(oldactionindicator−αnewactionindicator)×至多d对手indicator；K为允许resource cost cone，dual为convΨ∩K^-。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-PARITY-SELECTOR-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "带旗标的偶态暂态择证",
+      "detail": "d+2 activebits和一flag；flag0偶态翻player1、奇态升flag，flag1清其他1后唯一2cycle；λ均匀flag0偶态。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-CLASS-FRONT-AUTOMATIC-EXIT-SCHEME",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "先类内锁定再假设自动front出口的候选",
+      "detail": "尝试以每类同权010clock免跨类极差，再未经证明要求所有classfront仍有base改善端点。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md"
+      ],
+      "status": "definition"
     }
   ],
   "hyperedges": [
@@ -12231,6 +12387,195 @@
       ],
       "status": "finite exact audit",
       "track": "weighted_congestion"
+    },
+    {
+      "id": "DERIVE-WC-CLONE-FRONT-PHASE-QUOTIENT-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-CLASS-FRONT-DEFINITION"
+      ],
+      "conclusion": "WC-CLONE-FRONT-PHASE-QUOTIENT-v1",
+      "statement": "共同使用全部所列前提，按正文对应分节得精确表示/有限反例或机制，不外推唯一全类结论。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_fronts_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-CLONE-FRONT-PHASE-QUOTIENT-v1",
+        "WC-CLASS-FRONT-FIXTURE"
+      ],
+      "conclusion": "WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1",
+      "statement": "共同使用全部所列前提，按正文对应分节得精确表示/有限反例或机制，不外推唯一全类结论。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_fronts_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-DEGREE-LOCAL-COST-COMPRESSION-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-DEGREE-LOCAL-SPACE-DEFINITION"
+      ],
+      "conclusion": "WC-DEGREE-LOCAL-COST-COMPRESSION-v1",
+      "statement": "共同使用全部所列前提，按正文对应分节得精确表示/有限反例或机制，不外推唯一全类结论。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-DEGREE-LOCAL-COST-COMPRESSION-v1",
+        "WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1",
+        "WC-ANTICHAIN-CORE-NORMAL-FORM-v1",
+        "WC-SELECTOR-MOMENT-DEFINITION"
+      ],
+      "conclusion": "WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1",
+      "statement": "共同使用全部所列前提，按正文对应分节得精确表示/有限反例或机制，不外推唯一全类结论。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1",
+        "WC-PARITY-SELECTOR-DEFINITION"
+      ],
+      "conclusion": "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+      "statement": "共同使用全部所列前提，按正文对应分节得精确表示/有限反例或机制，不外推唯一全类结论。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-CLONE-FRONT-PHASE-QUOTIENT-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-CLASS-FRONT-AUDIT"
+      ],
+      "conclusion": "WC-CLONE-FRONT-PHASE-QUOTIENT-v1",
+      "statement": "有限Fraction证据检查对应公式/映射/反例，不能升级全类存在或非存在。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_class_fronts.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_class_fronts.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/class_fronts.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_class_fronts.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-CLASS-FRONT-AUDIT"
+      ],
+      "conclusion": "WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1",
+      "statement": "有限Fraction证据检查对应公式/映射/反例，不能升级全类存在或非存在。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_class_fronts.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_class_fronts.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/class_fronts.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_class_fronts.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-DEGREE-LOCAL-COST-COMPRESSION-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SELECTOR-LOCAL-MOMENT-AUDIT"
+      ],
+      "conclusion": "WC-DEGREE-LOCAL-COST-COMPRESSION-v1",
+      "statement": "有限Fraction证据检查对应公式/映射/反例，不能升级全类存在或非存在。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_selector_local_moments.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_local_moments.py",
+        "evidence/runs/weighted_congestion/template_certificates/selector_local_moments.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_local_moments.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SELECTOR-LOCAL-MOMENT-AUDIT"
+      ],
+      "conclusion": "WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1",
+      "statement": "有限Fraction证据检查对应公式/映射/反例，不能升级全类存在或非存在。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_selector_local_moments.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_local_moments.py",
+        "evidence/runs/weighted_congestion/template_certificates/selector_local_moments.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_local_moments.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SELECTOR-LOCAL-MOMENT-AUDIT"
+      ],
+      "conclusion": "WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1",
+      "statement": "有限Fraction证据检查对应公式/映射/反例，不能升级全类存在或非存在。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_selector_local_moments.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_local_moments.py",
+        "evidence/runs/weighted_congestion/template_certificates/selector_local_moments.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_local_moments.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "LIMIT-CLASS-FRONT-AUTOMATIC-EXIT",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1"
+      ],
+      "conclusion": "WC-CLASS-FRONT-AUTOMATIC-EXIT-SCHEME",
+      "statement": "12player strictcycle有稳定不同步front，同权类内clock不新增合法front出口；仍可能有离front出口，不排一般compiler。",
+      "refs": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_fronts_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
     }
   ]
 }

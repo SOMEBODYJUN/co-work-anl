@@ -51,3 +51,11 @@
 ## 在统一低泄漏clock预算内继续优化输入环
 
 尝试用近p倍率双轮环、换anchor或优化B/η/n，再沿δ^D≤η/(4α²BL)得到超q/lnq全状态反例。失败机制现在有[普适证明](../current/weighted_congestion/uniform_clock_budget_barrier.md)：完整MODEL的strict R-FIP迫使R>α，任意anchor含全局极大极小三元给δ≥(R+1)/(R+2)，因此所有满足该预算的D都超2(α+1)ln(2α)，实际次数q≥D有αlnq/q<α/(α+1)<1。无需重复极值，也不要求α趋无穷。可回收R-FIP/极端三元/一元单调性接口；只封闭该充分预算的输入调参，重试须使用actual新旧clock差、逐三元不同预算或新全状态机制。没有证明该预算必要或游戏本身有q/lnq-PNE。
+
+## 类内同权锁定后假设不同步前沿自动有出口
+
+尝试仅在同权clone类内加clock避免global极差，再把每类prefix/suffix合法性当全局sweep。[12player反例](../current/weighted_congestion/class_front_phase_quotient.md)有strict24步环却在phase(0,4,0)六端点全稳定；任意递增同权010/101 clock在留front边old=new，不能新造出口。失败步骤正是未证的全front base出口，不是一般clock不可能；内部clone仍有改善。可回收扭转phase商、2N费用表和literal反例；重试须明确处理错位同步或保留/控制离front出口。
+
+## 用低阶局部一致矩替代完整selector支撑多面体
+
+[局部矩精确接口](../current/weighted_congestion/template_certificates/selector_local_moments.md)说明资源测试只看≤d对手，但可行feature必须来自conv{Ψ_h(s)}。擅自删掉全局selector-support兼容性会扩大可行集；D维或小支撑只改表示，未证明每selector可行。可回收张量基、正锥消元、dual小支撑和parity暂态例；重试须对真正凸包与资源极锥给统一相交证明，不可把parity例当暂态必要。

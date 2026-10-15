@@ -711,3 +711,58 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：不将(U)提升为必要条件；actual有向clock差、非统一幅度/次数、多项式或其他架构不受限制；无αPNE不代表无更大倍率PNE。
 - Status：complete budget-obstruction proof; independently reconstructed and exactly audited; unrefereed。Truth仅预算障碍，Value为封闭输入优化路线，Novelty未认证，Mechanism为R-FIP与最坏三元耦合，Ambition保持唯一全类题OPEN。
 - Related Files：[统一低泄漏锚定时钟预算的普适次数障碍](../current/weighted_congestion/uniform_clock_budget_barrier.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/uniform_clock_budget_barrier_review.md)；两代码与冻结记录从正文读取。
+
+
+## WC-CLONE-FRONT-PHASE-QUOTIENT-v1 — 循环窗口前沿的扭转平移与精确相位商
+
+- Exact Statement / Conclusion：任意m≥2,N≥1正类权、每类至少参与一test的循环窗口两动作lift（保留零系数资源），同test全部index及pair两侧同费；共同index平移并wrap翻bit逐成本/偏离协变。合法class prefix/suffix由x∈(Z2N)^m编码，对角T使x各加1，商恰(2N)^(m−1)，单clone留front动作恰±1（N1两邻居重合）。有显式2N长forward成本表及backward r+1交换式。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确条件与完整定义见[正文](../current/weighted_congestion/class_front_phase_quotient.md)；采用MODEL非负费用、正权和真实偏离。count是互异MODEL动作状态；单测试子项可缺席类，但不能把空/空标签当两策略。class0商动作改变所有相对相位，须保mover标签。不是对全front出口或PNE的断言。
+- Dependencies：WC-MODEL, WC-CLASS-FRONT-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
+- Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
+- Counterevidence / Objections：无未结范围内fatal；count是互异MODEL动作状态；单测试子项可缺席类，但不能把空/空标签当两策略。class0商动作改变所有相对相位，须保mover标签。不是对全front出口或PNE的断言。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=唯一全类题仍OPEN。
+- Related Files：[正文](../current/weighted_congestion/class_front_phase_quotient.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/class_fronts_review.md)及正文末节的audit/run。
+
+
+## WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1 — 类内时钟的前沿出口障碍与不同步反例
+
+- Exact Statement / Conclusion：任意α≥1，同权类内递增锚定010/101同费三元时钟在每条合法front边的own old=new=c(2w)，clock margin≤0。显式12player/N4/degree8/α21/20有理窗口lift有strict24步环，但phase(0,4,0)六端点margin<−9/50；512front恰8稳定，仍有内部clone margin>1/5。故strict环不自动给每个类front改善端点，任意此类clock不新增front内改善。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确条件与完整定义见[正文](../current/weighted_congestion/class_front_phase_quotient.md)；采用MODEL非负费用、正权和真实偏离。局部lemma要两端均非full触发；front使用递增锚定三元，不涵盖任意乱序wrap。实例非αPNE，有离front出口；不排所有类内compiler或其他同步机制。
+- Dependencies：WC-MODEL, WC-CLONE-FRONT-PHASE-QUOTIENT-v1, WC-CLASS-FRONT-FIXTURE；共同前提的使用与自足代数证明由正文分节给出。
+- Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
+- Counterevidence / Objections：无未结范围内fatal；局部lemma要两端均非full触发；front使用递增锚定三元，不涵盖任意乱序wrap。实例非αPNE，有离front出口；不排所有类内compiler或其他同步机制。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=唯一全类题仍OPEN。
+- Related Files：[正文](../current/weighted_congestion/class_front_phase_quotient.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/class_fronts_review.md)及正文末节的audit/run。
+
+
+## WC-DEGREE-LOCAL-COST-COMPRESSION-v1 — 有限次局部成本空间与全成本资源压缩
+
+- Exact Statement / Conclusion：固定n≥1,m_i≥1,d≥0与正实权，D=Σ_i m_i Σ_(T⊆N\i,|T|≤d)∏_(j∈T)(m_j−1)。全部玩家cost tables位于维D局部张量空间；任意游戏可用≤D正系数单项式签名类型及≤Σm_i零费私有动作marker保所有state/deviation成本和动作标签，core可保持。binary时D=2nΣ_(r≤min(d,n−1))C(n−1,r)，一般D=O_d((Σm_i)^(d+1))。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确条件与完整定义见[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)；采用MODEL非负费用、正权和真实偏离。不保原资源身份、单位系数或算法效率；零成本可用0正资源但markers保MODEL合法。所有人数/动作数无界，维界不是全类规模截止。
+- Dependencies：WC-MODEL, WC-DEGREE-LOCAL-SPACE-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
+- Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
+- Counterevidence / Objections：无未结范围内fatal；不保原资源身份、单位系数或算法效率；零成本可用0正资源但markers保MODEL合法。所有人数/动作数无界，维界不是全类规模截止。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=唯一全类题仍OPEN。
+- Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)及正文末节的audit/run。
+
+
+## WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1 — 全状态择证的低阶矩极锥与小支撑接口
+
+- Exact Statement / Conclusion：固定任意完整selector h及实α≥1，其概率dual等价conv{Ψ_h(s)}∩K^-非空；Ψ只含所选动作边和≤d对手动作的signed discounted矩，K为全部允许资源cost vectors锥。若dual存在，有≤D+1状态支撑dual。binary指定单mover翻位支撑且α1时，dual存在等价两方向≤d上下文矩匹配/无degree≤d严格多项式分离；α>1仅primitive非负tests乘性夹逼。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确条件与完整定义见[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)；采用MODEL非负费用、正权和真实偏离。不能删selector-support marginal-polytope条件、改成任意局部一致矩或强求feature=0；不要求stationary/recurrent，未保证每selector可行或单mover证书。
+- Dependencies：WC-DEGREE-LOCAL-COST-COMPRESSION-v1, WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1, WC-ANTICHAIN-CORE-NORMAL-FORM-v1, WC-SELECTOR-MOMENT-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
+- Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
+- Counterevidence / Objections：无未结范围内fatal；不能删selector-support marginal-polytope条件、改成任意局部一致矩或强求feature=0；不要求stationary/recurrent，未保证每selector可行或单mover证书。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=唯一全类题仍OPEN。
+- Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)及正文末节的audit/run。
+
+
+## WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1 — 完全暂态奇偶支撑的择证对偶
+
+- Exact Statement / Conclusion：每个d≥0、每个d+3维正实权向量，都有binary无self-loop且唯一2cycle的selector，及全部支撑在暂态state的概率λ，对全部signature的degree0..d列在α1恰零、对所有α≥1非正；限制core proper signatures仍成立。flag0偶active states均匀分布，active维d+2使cost active-degree≤d+1严格低于维数。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确条件与完整定义见[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)；采用MODEL非负费用、正权和真实偏离。仅证明transient dual可行；唯一2cycle自身也有dual，不证明暂态必要/更优，不给任意selector或全类存在。
+- Dependencies：WC-MODEL, WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1, WC-PARITY-SELECTOR-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
+- Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
+- Counterevidence / Objections：无未结范围内fatal；仅证明transient dual可行；唯一2cycle自身也有dual，不证明暂态必要/更优，不给任意selector或全类存在。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=唯一全类题仍OPEN。
+- Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)及正文末节的audit/run。

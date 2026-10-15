@@ -169,3 +169,7 @@
 ## 后续接口：全状态锁定与次数缺口
 
 [锚定三元时钟](anchored_cycle_lock.md)对本构造实现环的两个动作可编译成全状态无α-PNE，但必须删除后来扩充的2^E动作族，并新增degree D资源。旧Claim与其精确全空均衡不变；新编译定理另立身份。能否控制q=max(d,D)使α ln q/q无界仍OPEN。
+
+## 类内锁定的后续限制
+
+[前沿相位商与不同步反例](class_front_phase_quotient.md)精确压缩各class的prefix/suffix状态，但strict原环不自动给这些状态改善端点。同权类内clock在合法front边只加相同非负成本，不能补这种出口；反例仍有离front改善，不能升级一般compiler失败。
