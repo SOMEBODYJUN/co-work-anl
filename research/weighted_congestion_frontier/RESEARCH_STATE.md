@@ -26,6 +26,6 @@ WC-TARGET v1 OPEN。已分类入 main 的核心进展是奇环有限非存在族
 
 [阶跃DAG极值幅度的多项式全入状态](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)已直接控制真实多项式成本：不要求低漏/平台保真，幅度(N)下d≥16给4√(d/ln d)状态。全类题仍OPEN；当前最具体新缺口是任意卫星幅度如何归约或怎样选择其他稳定light集合，不能只改变已锚定费用形状。
 
-[循环窗口复制的真实近d改善环](../current/weighted_congestion/cyclic_clone_improvement_cycles.md)将旧可分势障碍提升为任意全局全边下降势障碍，仍有全空精确PNE。[共同幂混合最小点障碍](../current/weighted_congestion/common_power_mixture_obstruction.md)另直接排除指定连续目标族的全部最小点。全类存在性仍OPEN；环本身不能当无均衡；[锚定三元全状态锁定](../current/weighted_congestion/anchored_cycle_lock.md)已将严格双轮环编译成无α-PNE，但新增次数依实例。负向前沿为控制编译后q的α ln q/q；[三次锚定架构证书](../current/weighted_congestion/anchored_clock_degree_barrier.md)已排除在指定基体上保持原degree的方案，未排常数倍degree。正向仍需选步或超出这些目标族的选态。
+[循环窗口复制的真实近d改善环](../current/weighted_congestion/cyclic_clone_improvement_cycles.md)将旧可分势障碍提升为任意全局全边下降势障碍，仍有全空精确PNE。[共同幂混合最小点障碍](../current/weighted_congestion/common_power_mixture_obstruction.md)另直接排除指定连续目标族的全部最小点。全类存在性仍OPEN；环本身不能当无均衡；[锚定三元全状态锁定](../current/weighted_congestion/anchored_cycle_lock.md)已将严格双轮环编译成无α-PNE，但新增次数依实例。[统一低泄漏锚定时钟预算的普适次数障碍](../current/weighted_congestion/uniform_clock_budget_barrier.md)已证明满足现行统一预算的全部输入均有α ln q/q<α/(α+1)<1；负向前沿须改用实际时钟差、非统一预算或其他全状态机制；[三次锚定架构证书](../current/weighted_congestion/anchored_clock_degree_barrier.md)已排除在指定基体上保持原degree的方案，未排常数倍degree。正向仍需选步或超出这些目标族的选态。
 
 [有限可动权类的三角排序势](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)已给A_(d,k)隐式界，固定k为d^(1−1/k)，任意固定背景精确吸收、k个R窄簇损失R^d。d≥16且k≤ln d/lnln d的明确子类达到2d/ln d；无界可动类别时A趋d，唯一全类题仍OPEN。真正前沿已收缩为无界可动权类的选态桥或全状态增长反例，不再把固定背景或仅两类稠密cohort当未解接口。

@@ -116,7 +116,7 @@ G'的费用次数至多max{p,D}，新增2L个资源，每个新增资源费用�
  \frac{\alpha\ln q}{q}\to\infty
 \]
 
-（或对每个C提供足够大的该比值），并给出所需增长及整数次数。现有编译界D依赖ln(B/η)、lnL和1/ln(1/δ)；δ在多尺度权谱上可能极近1。没有这样的统一控制时，本定理只是一项接口，不能替代主目标证明。
+（或对每个C提供足够大的该比值），并给出所需增长及整数次数。[统一预算的普适次数障碍](uniform_clock_budget_barrier.md)现已证明：对全部严格双轮输入、任意anchor和满足(2)的D，实际次数q≥D均有αlnq/q<α/(α+1)<1。因此沿本稿保守预算继续调输入环不能完成该义务；必须改用实际新旧clock差、非统一预算或其他全状态机制。本编译定理的量词和正确性不变。
 
 ### 当前统一泄漏预算与权重极差
 
@@ -142,7 +142,7 @@ G'的费用次数至多max{p,D}，新增2L个资源，每个新增资源费用�
 - 运行：`python3 tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py`。标准输出与运行命令、Python版本、源码hash封存在[实际编译结果](../../../evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json)。该实例已知本身无较小倍率PNE；本次仅核验编译接口，不提高既有下界。
 - [独立时钟审计](../../../tests/audits/weighted_congestion/cyclic_clone/independent_clock.py)在读作者稿前编写，按实际资源literal/负载遍历n=3,...,7、α∈{1,3/2,2}及seed=0,...,3的60案例，共2976状态、2376环外状态，最大D=107。它假定B=1、η=1/4，仅核验条件式时钟几何及泄漏余量；没有声称这些参数均有真实输入环。
 - 运行：`python3 tests/audits/weighted_congestion/cyclic_clone/independent_clock.py --output <新的输出路径>`，独占创建文件；[独立冻结记录](../../../evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json)保存参数、代码hash、运行环境及结果。两份代码不互相导入。有限核验不替代一般证明。
-- 读取顺序为本命题身份→一至五节证明→[独立重构攻击](../../reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md)→两份代码与冻结证据→第六节开放次数预算。若输入取自[循环窗口复制](cyclic_clone_improvement_cycles.md)，须先限制为实现环的两个动作，不能保留该旧Claim中的全部2^E策略。
+- 读取顺序为本命题身份→一至五节证明→[独立重构攻击](../../reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md)→两份代码与冻结证据→第六节预算障碍与开放替代机制。若输入取自[循环窗口复制](cyclic_clone_improvement_cycles.md)，须先限制为实现环的两个动作，不能保留该旧Claim中的全部2^E策略。
 
 三玩家旧正文曾把原六步环误简写成000→010→001→000；本次只修正叙述为010→110→100→101→001→011→010，原全状态表、286/267结论和Claim身份不变。
 

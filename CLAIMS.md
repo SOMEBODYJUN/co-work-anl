@@ -10,3 +10,5 @@
 | 顺序客户吸引 | [分支精确地图](research/current/customer_attraction/README.md)与全仓逐命题登记 | 一般半覆盖 OPEN；子类上界和辅助桥反例分别保存 |
 
 Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须分开。完整证明、独立审查、软件状态、外部审查和新颖性各自记录。尚成立的致命 objection 阻止升级。
+
+[统一低泄漏锚定时钟预算的普适次数障碍](research/current/weighted_congestion/uniform_clock_budget_barrier.md)为新增限定方法命题；精确ID与全部量词在主题账本，不改变WC-TARGET身份。

@@ -702,3 +702,12 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：无尚成立fatal；提升单向、不保人数/资源数、不保最佳因子或逐状态反投影；没有无限规范模板的规模截止或全类C,d0。旧整数v1身份/保人数义务不改。
 - Status：complete direct proof; independently reconstructed and exactly audited; unrefereed。Truth=上述限定命题；Value=可复用桥或精确方法限制；Novelty=未认证；Mechanism=A_i为包含极小动作，F_i=∩A_i=∩S_i，B_e为全体必选权和；用c_e(B_e+x)、a减F_i，删除singleton；原成本=core成本+自身偏离不变K_i≥0。 Ambition=全类匹配上界判定仍OPEN。
 - Related Files：research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md；research/reviews/weighted_congestion/template_certificates/antichain_core_normal_form_review.md；tests/audits/weighted_congestion/template_certificates/verify_antichain_core.py；tests/audits/weighted_congestion/template_certificates/independent_antichain_core.py；evidence/runs/weighted_congestion/template_certificates/antichain_core.json；evidence/runs/weighted_congestion/template_certificates/independent_antichain_core.json。
+
+## WC-UNIFORM-CLOCK-BUDGET-BARRIER-v1 — 统一低泄漏锚定时钟预算的普适次数障碍
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：任意n≥3、整数p≥0的MODEL两动作严格α≥1双同序环、任意锚点，B为全状态原成本有限上界、η为环最小严格差、L=C(n−1,2)、δ=max锚定三元(1−minw/Σw)。若任意整数D≥1满足δ^D≤η/(4α²BL)，则全局权比R>α、D>(R+1)ln(4α²BL/η)>2(α+1)ln(2α)，且每个实q≥D均有αlnq/q<α/(α+1)<1；包括实际输出最高次数。只封闭该统一充分预算的目标否定证书，非实际最小锁定次数下界或全类PNE存在结论。
+- Dependencies：MODEL；WC-R3-DENSE-LOCAL-v1 的 strict R-FIP；WC-ANCHORED-CLOCK-DEFINITION 的双轮输入和统一预算；初等对数单调性。非从均衡存在性推出无改善环。
+- Evidence：完整一般证明；先独立重构后冻结攻击；两份Fraction、有理对数余项及最小D反验，作者另重算真实三玩家输入。
+- Counterevidence / Objections：不将(U)提升为必要条件；actual有向clock差、非统一幅度/次数、多项式或其他架构不受限制；无αPNE不代表无更大倍率PNE。
+- Status：complete budget-obstruction proof; independently reconstructed and exactly audited; unrefereed。Truth仅预算障碍，Value为封闭输入优化路线，Novelty未认证，Mechanism为R-FIP与最坏三元耦合，Ambition保持唯一全类题OPEN。
+- Related Files：[统一低泄漏锚定时钟预算的普适次数障碍](../current/weighted_congestion/uniform_clock_budget_barrier.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/uniform_clock_budget_barrier_review.md)；两代码与冻结记录从正文读取。

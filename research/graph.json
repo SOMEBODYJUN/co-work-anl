@@ -5052,6 +5052,44 @@
         "research/current/weighted_congestion/anchored_clock_degree_barrier.md"
       ],
       "status": "definition"
+    },
+    {
+      "id": "WC-UNIFORM-CLOCK-BUDGET-BARRIER-v1",
+      "kind": "claim",
+      "title": "统一低泄漏锚定时钟预算的普适次数障碍",
+      "detail": "任意n≥3、整数p≥0的MODEL两动作严格α≥1双同序环、任意锚点，B为全状态原成本有限上界、η为环最小严格差、L=C(n−1,2)、δ=max锚定三元(1−minw/Σw)。若任意整数D≥1满足δ^D≤η/(4α²BL)，则全局权比R>α、D>(R+1)ln(4α²BL/η)>2(α+1)ln(2α)，且每个实q≥D均有αlnq/q<α/(α+1)<1；包括实际输出最高次数。只封闭该统一充分预算的目标否定证书，非实际最小锁定次数下界或全类PNE存在结论。",
+      "refs": [
+        "research/current/weighted_congestion/uniform_clock_budget_barrier.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/uniform_clock_budget_barrier_review.md"
+      ],
+      "status": "complete budget-obstruction proof; independently reconstructed and exactly audited; unrefereed",
+      "track": "weighted_congestion"
+    },
+    {
+      "id": "WC-UNIFORM-CLOCK-TARGET-SCHEME",
+      "kind": "definition",
+      "title": "统一低泄漏clock的超匹配下界候选方案",
+      "detail": "尝试只优化严格双轮输入及anchor，保持δ^D≤η/(4α²BL)的统一预算，以编译后实际次数取得无界αlnq/q。",
+      "refs": [
+        "research/current/weighted_congestion/uniform_clock_budget_barrier.md"
+      ],
+      "status": "definition",
+      "track": "weighted_congestion"
+    },
+    {
+      "id": "WC-UNIFORM-CLOCK-BUDGET-AUDIT",
+      "kind": "evidence",
+      "title": "统一clock次数预算的双路有理区间审计",
+      "detail": "作者必要参数与真实三玩家重算；独立all-anchor参数与非最小D检验。精确幂及有理log包络，不虚构每组参数的输入游戏。",
+      "refs": [
+        "research/current/weighted_congestion/uniform_clock_budget_barrier.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_uniform_clock_budget.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_uniform_clock_budget.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/uniform_clock_budget.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_uniform_clock_budget.json"
+      ],
+      "status": "finite exact audit",
+      "track": "weighted_congestion"
     }
   ],
   "hyperedges": [
@@ -12143,6 +12181,56 @@
         "research/current/weighted_congestion/anchored_clock_degree_barrier.md"
       ],
       "status": "complete fixed-architecture proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-UNIFORM-CLOCK-BUDGET-BARRIER-v1",
+      "kind": "derives",
+      "premises": [
+        "WC-MODEL",
+        "WC-R3-DENSE-LOCAL-v1",
+        "WC-ANCHORED-CLOCK-DEFINITION"
+      ],
+      "conclusion": "WC-UNIFORM-CLOCK-BUDGET-BARRIER-v1",
+      "statement": "共同使用完整MODEL严格R-FIP、双同序输入环和统一clock参数/预算；α<R及极端三元迫使D超2(α+1)ln(2α)，一元单调性给所有q≥D的归一化界。",
+      "refs": [
+        "research/current/weighted_congestion/uniform_clock_budget_barrier.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/uniform_clock_budget_barrier_review.md"
+      ],
+      "status": "complete budget-obstruction proof; independently reconstructed and exactly audited; unrefereed",
+      "track": "weighted_congestion"
+    },
+    {
+      "id": "LIMIT-UNIFORM-CLOCK-TARGET-SCHEME",
+      "kind": "limits",
+      "premises": [
+        "WC-UNIFORM-CLOCK-BUDGET-BARRIER-v1"
+      ],
+      "conclusion": "WC-UNIFORM-CLOCK-TARGET-SCHEME",
+      "statement": "全部输入、anchor及预算D的αlnq/q均小于1，不能靠输入调参取得严格否定唯一题所需无界比值；actual有向差和非均匀clock不在限制内。",
+      "refs": [
+        "research/current/weighted_congestion/uniform_clock_budget_barrier.md"
+      ],
+      "status": "complete budget-obstruction proof; independently reconstructed and exactly audited; unrefereed",
+      "track": "weighted_congestion"
+    },
+    {
+      "id": "CHECK-WC-UNIFORM-CLOCK-BUDGET-BARRIER-v1",
+      "kind": "checks",
+      "premises": [
+        "WC-UNIFORM-CLOCK-BUDGET-AUDIT"
+      ],
+      "conclusion": "WC-UNIFORM-CLOCK-BUDGET-BARRIER-v1",
+      "statement": "两份独立Fraction及有理log包络有限核验；其中一份另从真实三玩家资源负载重算环与参数，有限证据不替代一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/uniform_clock_budget_barrier.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/uniform_clock_budget_barrier_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_uniform_clock_budget.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_uniform_clock_budget.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/uniform_clock_budget.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_uniform_clock_budget.json"
+      ],
+      "status": "finite exact audit",
+      "track": "weighted_congestion"
     }
   ]
 }

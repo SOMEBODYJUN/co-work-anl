@@ -406,6 +406,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | WC-ANTICHAIN-CORE-NORMAL-FORM-v1 | 任意d≥0 MODEL游戏有不依α的有限core变换：或给显式exactPNE，或得到同次数界、原玩家非空子集/原权的H，人人≥2非空两两不可包含且交集空的策略；固定lift将每个实α≥1的任意H αPNE提升原游戏。同一固定d、实α处，全类无αPNE反例存在等价于该core策略结构的正整数权/单位单项式x^j(j≤d)反例存在。 | complete direct proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/template_certificates/integer_counterexample_normal_form.md)、[独立审查](../reviews/weighted_congestion/template_certificates/antichain_core_normal_form_review.md)。提升单向、不保人数/资源数、不保最佳因子或逐状态反投影；没有无限规范模板的规模截止或全类C,d0。旧整数v1身份/保人数义务不改。 |
 
+## 统一低泄漏锚定时钟预算的普适次数障碍
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-UNIFORM-CLOCK-BUDGET-BARRIER-v1 | 任意n≥3、整数p≥0的MODEL两动作严格α≥1双同序环、任意锚点，B为全状态原成本有限上界、η为环最小严格差、L=C(n−1,2)、δ=max锚定三元(1−minw/Σw)。若任意整数D≥1满足δ^D≤η/(4α²BL)，则全局权比R>α、D>(R+1)ln(4α²BL/η)>2(α+1)ln(2α)，且每个实q≥D均有αlnq/q<α/(α+1)<1；包括实际输出最高次数。只封闭该统一充分预算的目标否定证书，非实际最小锁定次数下界或全类PNE存在结论。 | complete budget-obstruction proof; independently reconstructed and exactly audited; unrefereed；[一般证明](weighted_congestion/uniform_clock_budget_barrier.md)、[独立重构攻击](../reviews/weighted_congestion/ordinal_potentials/uniform_clock_budget_barrier_review.md)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

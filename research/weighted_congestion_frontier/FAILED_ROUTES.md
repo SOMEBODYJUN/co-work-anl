@@ -47,3 +47,7 @@
 ## 用固定者、必选资源或包含动作承担全类难点
 
 [空交反链核心](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)给alpha-independent lifting，严格反例可剥掉上述部分；不能把它们当作无界可动类别桥本身。具体易错步骤是把原成本中的共同非负K直接当成core成本，反向投影对α>1会失败。可回收单向提升及整数展开；若路线要求保人数、所有原均衡投影或精确最佳因子，须重立并证明新增合同。
+
+## 在统一低泄漏clock预算内继续优化输入环
+
+尝试用近p倍率双轮环、换anchor或优化B/η/n，再沿δ^D≤η/(4α²BL)得到超q/lnq全状态反例。失败机制现在有[普适证明](../current/weighted_congestion/uniform_clock_budget_barrier.md)：完整MODEL的strict R-FIP迫使R>α，任意anchor含全局极大极小三元给δ≥(R+1)/(R+2)，因此所有满足该预算的D都超2(α+1)ln(2α)，实际次数q≥D有αlnq/q<α/(α+1)<1。无需重复极值，也不要求α趋无穷。可回收R-FIP/极端三元/一元单调性接口；只封闭该充分预算的输入调参，重试须使用actual新旧clock差、逐三元不同预算或新全状态机制。没有证明该预算必要或游戏本身有q/lnq-PNE。
