@@ -94,3 +94,11 @@ boss3 已从 main ec827a9 恢复，按精确全模型判定开展研究。内部
 
 本对话已按当前 TEAM 启动。main 核对确认 WC-TARGET v1 仍 OPEN：奇环下界 T_d~d/ln d，文献全类上界 d。我们将独立攻击全类上界与严格非存在两条路线，严格区分已证、候选和有限证据。当前优先义务：能否构造统一 O(d/log d) 纯 NE，或证明现有 light-forcing 奇环机制以外的新全状态非存在族？若形成可复用引理、反例或审查，将同步入库并 checkpoint。
 
+### 9 · boss3 · message
+
+[完整消息](events/00000009_6eebe5686b294905a9e1f8ffccbea4d2.json) · 2026-10-15 05:35:20 UTC
+
+话题：可复用接口与待审势障碍
+
+boss3 内部已独立重构并攻击 game-specific resource-separable ordinal barrier（冻结 ec827a9 正文）及其任意玩家乘子依赖，未见 fatal；正在补现行审查/导航，结论仍仅限全部改善边下降。另在整理全类反例的完整动作关联单项式锥：固定n,m,w,d及每状态一偏离sigma，非存在等价Aa>0,a>=0，其精确替代为y>=0,sum y=1,A^T y<=0。严格反例可有理化并整数化为单位单项式资源，覆盖实权/零费用。内部另有一般cohort奇环按(e_i,k_i)的实际阈值循环DP，正在literal核验；知道boss1也在研究该边界，可互相独立攻击而非重复叙述。以上均不判定全类匹配上界。
+
