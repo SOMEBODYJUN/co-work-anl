@@ -524,6 +524,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | WC-FULL-CORE-TRANSIENT-MASS-NECESSITY-v1 | 任d≥0、α≥1及n玩家positive-weight binary proper-resource degree≤d游戏的严格α简单环Q，补至n′=max(n,d+2)再加flag，在完整非空proper signature×0..d锥上有selector H，唯一recurrent为嵌入Q；同一完全暂态概率dual对全部β≥1可行。在给定α任何dual暂态质量≥η/(η+M)>0，且完整锥无共同PNE、任意点质量皆非dual。cyclic-clone的两互补动作给每d≥2、1≤α<ρ_d的实例。 | complete interface corollary; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/template_certificates/selector_local_moments.md), [独立审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)。旧parity暂态可行及删列锥必要性在完整proper锥的同时化推论，非任意selector统一法；singleton列依状态变化，¬∃s∀a不能交换为∃a∀s。不构造全类非存在族，不给C,d0。零向量不叫概率dual。 |
 
+## 跨源共享侧资源的强迫与目标倍率分离
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1 | 任意整数d≥2、实τ>1和α≥1满足(τ−1)(α−1)≥d；同权hub u>0、正权light各唯一main source，二元同费主/侧副本，side任意hub及跨source多light用户子集，全部费用非负系数degree≤d。记W_v为源light总权、T_j为side全部light总权、m_j为hub数。若每light l满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥τ[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则第8.2节真实hub Rosenthal势E任单hub局部最小点配全anti lights为α-PNE。τ与α无需大小排序；d≥16取τ=1+ln d给α=1+d/ln d≤2d/ln d。 | complete conditional proof; independently reconstructed and exactly audited; unrefereed；[正文第九节](weighted_congestion/shared_side_truncated_potential.md)、[独立审查](../reviews/weighted_congestion/multisource_force_tradeoff_review.md)。同权hub、唯一main source、二元同费副本及所写UFτ均承重；不包含τ=1、不提供任意实例满足强迫条件的表示或稳定light选择，不覆盖异权hub或一般策略。旧三个Claim不变，WC-TARGET保持OPEN；未外审或认证新颖性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -58,3 +58,5 @@ E1 提取的[正占用核](research/current/positive_kernels/README.md)新增独
 [局部成本接口的刚性边界](research/current/weighted_congestion/template_certificates/selector_local_moments.md)把“资源数量可压缩”与“资源用户支持可缩小”分开：非全等权全用户仿射成本要求全用户线性资源，即使允许任意有限degree。只限制完整成本保真归约；全类相交义务和唯一题仍未闭合。
 
 跨source的同权hub侧反馈在UFmulti下已由真实Rosenthal势闭合到1+√d；不再把“共享多个source的light”本身当成逃逸机制。当前负向需UF失败、异权hub或其他架构。正向也不能仅靠固定有限失真的小资源支持全成本归约：degree1原表在允许改权后仍有定量失真障碍。类内有序三元clock通用编译器另被strict sweep中的严格精确PNE前沿阻止；所写任意次数/幅度均无效，但更高倍率专用输入类、跨类或其他arity不在排除范围。全类未解仍是无界可动权类的选态或次数效率可增长全状态族。
+
+[跨源共享侧资源的强迫与目标倍率分离](research/current/weighted_congestion/shared_side_truncated_potential.md)第九节（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`）给出独立新身份：同权hub、唯一main source及二元同费副本下，UF强迫τ>1与目标α只需(τ−1)(α−1)≥d，无大小排序。d≥16取τ=1+ln d即得α=1+d/ln d≤2d/ln d；旧平方根Claim为τ=α的特例。独立先重构后冻结攻击及双路Fraction证据已接入原稿。仍缺异权hub、强迫失败时的稳定light/反馈控制与全类非势选态，WC-TARGET保持OPEN。

@@ -920,3 +920,13 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：旧parity暂态可行及删列锥必要性在完整proper锥的同时化推论，非任意selector统一法；singleton列依状态变化，¬∃s∀a不能交换为∃a∀s。不构造全类非存在族，不给C,d0。零向量不叫概率dual。 无尚成立fatal；未外审或认证新颖性。
 - Status：complete interface corollary; independently reconstructed and exactly audited; unrefereed。Truth仅精确Claim；Value为范围明确的接口/障碍；Mechanism见完整证明；Ambition全类OPEN。
 - Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md), [审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md), 规范代码和新冻结证据见正文。
+
+## WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1 — 跨源共享侧资源的强迫与目标倍率乘积预算均衡
+
+- **ID/version / 中文数学名称：** `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`，跨源共享侧资源的强迫与目标倍率乘积预算均衡。分离两个倍率的新身份，不改既有三个侧资源Claim。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 任意整数d≥2、实τ>1和α≥1满足(τ−1)(α−1)≥d；同权hub u>0、正权light各唯一main source，二元同费主/侧副本，side任意hub及跨source多light用户子集，全部费用非负系数degree≤d。记W_v为源light总权、T_j为side全部light总权、m_j为hub数。若每light l满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥τ[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则第8.2节真实hub Rosenthal势E任单hub局部最小点配全anti lights为α-PNE。τ与α无需大小排序；d≥16取τ=1+ln d给α=1+d/ln d≤2d/ln d。 全部策略和真实负载按[正文第9.1节](../current/weighted_congestion/shared_side_truncated_potential.md)；全部合法偏离使用MODEL弱不等式，允许零费、常数费、空L/H及弱等号。
+- **Dependencies：** MODEL，第8.2节固定light普通Rosenthal边际，第8.3节κ_d(t)=min(dt,t+1)重置；第9.2节任τ≥1的源标量引理及有限势局部最小点。固定light真实hub普通边际→逐lightκ重置→UFτ以(τ−1)支付全部side→任τ≥1的源和≤dF(u+W)→hub余量(α−1)支付；有限势局部min给全anti均衡。 不导入外部均衡定理。
+- **Evidence：** 先仅据statement独立重构，后攻击冻结第九节，逐式范围核对见[独立审查](../reviews/weighted_congestion/multisource_force_tradeoff_review.md)。两路不互相调用核心的Fraction程序实际核真实资源/重置、乘积等号、三个倍率顺序和UFτ严格弱于UFα的实例；完整输入/参数/seed/版本/hash从正文9.7进入。有限证据不替一般证明。
+- **Counterevidence / Objections：** 同权hub、唯一main source、二元同费副本及所写UFτ均承重；不包含τ=1、不提供任意实例满足强迫条件的表示或稳定light选择，不覆盖异权hub或一般策略。旧三个Claim不变，WC-TARGET保持OPEN；未外审或认证新颖性。 无尚成立的范围内fatal objection。
+- **Status：** complete conditional proof; independently reconstructed and exactly audited; unrefereed。Truth限精确子类；Value为减少达到目标量级所需强迫条件；Mechanism为两个余量的乘积支付；Novelty未认证；Ambition保留全类判定。
+- **Related Files：** [原正文第九节](../current/weighted_congestion/shared_side_truncated_potential.md)、[新独立审查](../reviews/weighted_congestion/multisource_force_tradeoff_review.md)及第9.7节所列代码/冻结结果，资产合同见`research/assets.json`。

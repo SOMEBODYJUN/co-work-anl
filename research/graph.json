@@ -5822,6 +5822,44 @@
         "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
       ],
       "status": "method candidate; excluded in stated scope"
+    },
+    {
+      "id": "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "跨源共享侧资源的强迫与目标倍率乘积预算均衡",
+      "detail": "任意整数d≥2、实τ>1和α≥1满足(τ−1)(α−1)≥d；同权hub u>0、正权light各唯一main source，二元同费主/侧副本，side任意hub及跨source多light用户子集，全部费用非负系数degree≤d。记W_v为源light总权、T_j为side全部light总权、m_j为hub数。若每light l满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥τ[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则第8.2节真实hub Rosenthal势E任单hub局部最小点配全anti lights为α-PNE。τ与α无需大小排序；d≥16取τ=1+ln d给α=1+d/ln d≤2d/ln d。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_tradeoff_review.md"
+      ],
+      "status": "complete conditional proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "跨源共享侧资源的分离倍率强迫合同",
+      "detail": "沿同权hub/唯一main source/跨source多light的二元同费副本对象，τ>1、α≥1及(τ−1)(α−1)≥d；UFτ按side全部light总权计。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "强迫与目标倍率乘积预算的双路精确审计",
+      "detail": "两份不互相调用核心的Fraction审计，检查倍率三种顺序、乘积等号、真实资源和全部势局部min；有限检查不替一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py",
+        "tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -13799,6 +13837,54 @@
         "research/reviews/weighted_congestion/template_certificates/selector_mover_support_review.md"
       ],
       "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-DEFINITION"
+      ],
+      "conclusion": "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1",
+      "statement": "固定light真实hub普通边际→逐lightκ重置→UFτ以(τ−1)支付全部side→任τ≥1的源和≤dF(u+W)→hub余量(α−1)支付；有限势局部min给全anti均衡。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_tradeoff_review.md"
+      ],
+      "status": "complete conditional proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-AUDIT"
+      ],
+      "conclusion": "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1",
+      "statement": "Fraction检查真实偏离/重置、源标量、UFτ成立但UFα失败的实例与空零边界；有限覆盖不替实参数证明。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py",
+        "tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "SPECIALIZE-FORCING-TARGET-TO-EQUAL",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1"
+      ],
+      "conclusion": "WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1",
+      "statement": "取τ=α≥1+√d恢复既有UFmulti平方根子类定理；旧Claim域与身份不变。",
+      "refs": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md"
+      ],
+      "status": "complete conditional proof; independently reconstructed and exactly audited; unrefereed"
     }
   ]
 }

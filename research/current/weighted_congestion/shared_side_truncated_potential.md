@@ -286,3 +286,130 @@ light l当前主资源负载W_v，每条side当前负载≤T_j+m_ju；偏离后�
 - [独立重构与冻结攻击](../../reviews/weighted_congestion/multisource_shared_side_review.md)单独审查本新ID，旧UF审查不能代替。
 
 两份审计均只向stdout写JSON，保留真实生成参数、seed（适用时）、有理倍率、Python及源码hash；从literal资源重新计算偏离，包含非单位hub权、跨source、多light、空H/L、零常数、source在side及source无light边界。阈值前提以(α−1)²≥d精确检查，不用浮点舍入充当证明。重跑另存临时路径，不原位覆盖冻结证据。
+
+
+## 九、新 Claim：轻玩家强迫倍率与目标均衡倍率的分离
+
+**ID/version / 中文数学名称：** `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`，跨源共享侧资源的强迫与目标倍率乘积预算均衡。此为新 Claim；第一、七、八节的三个既有 Claim 及其域和假设保持不变。它把第八节同一机制中的两个倍率分开，不能解读为删去强迫假设。
+
+### 9.1. 精确身份与冻结陈述
+
+**Objects / Domain / Quantifiers / Definitions / Assumptions：** 量化第8.1节的全部有限对象：有限非空 hub 集、同一实正 hub 权重 `u`；有限 light 集、各自实正权重与唯一 main source；每 source 的两个同费主资源副本；任意同费 side 副本对及任意 hub/light 用户子集；非负实系数、次数至多整数 `d≥2` 的全部 `F_v,G_j`。全部资源策略、`W_v,m_j,T_j` 及全 anti 形状沿用第8.1节精确定义。另量化任意实数
+
+    τ>1,  α≥1,  (τ−1)(α−1)≥d.                         (FT)
+
+对每名 light l，v=o(l)，假设
+
+    F_v(u+w_l)+Σ_{j:l∈L_j}G_j(w_l)
+      ≥τ[F_v(W_v)+Σ_{j:l∈L_j}G_j(T_j+m_j u)].         (UFτ)
+
+**Exact Statement / Scope / Conclusion：** 第8.2节定义的有限势 `E` 的每个单 hub 翻位局部最小点，配以全部 light 与各自 source 反位，均为原真实负载博弈的 `α-PNE`。不要求 `τ≤α`、`τ=α` 或 `τ≥α`；两个倍率的大小顺序均可。结论覆盖弱等号、零费用、常数费用、空 light 集、空 side 用户子集、source 属于 side hub 集以及同一 side 含不同 source 的多名 light。
+
+**Dependencies：** MODEL 的真实单方偏离，第8.2节的固定 light 普通 Rosenthal 边际恒等式，第8.3节逐 light 重置界，以及下文对任意 `τ>1` 的源标量引理；有限状态局部最小点。不调用第八节以 `τ=α` 表示的结论，不调用外部均衡定理。
+
+**Evidence / Counterevidence / Objections / Status：** 本节给出完整一般推导；独立审查、实际代码与冻结证据的状态由配套审查和账本分别记录，不由本节文字预设。`UFτ`、同权 hub、唯一 main source、二元同费副本仍是承重假设；`τ=1` 没有被除法或极限纳入。没有证明任意游戏存在满足这些条件的表示，亦未解决全类 WC-TARGET。Truth 仅指所写子类；Value 为可单独量化强迫和目标余量；Mechanism 为 source 重置预算的乘积支付；Novelty/外审未认证。
+
+### 9.2. 任意强迫倍率的源标量引理
+
+设有限正数列 `t_l`，`T=Σ_l t_l`；允许空列 `T=0`。记 `κ_d(t)=min(dt,t+1)`。对任意 `τ≥1`、`u>0` 及非负系数次数至多 `d` 的多项式 `F`，
+
+    Σ_l κ_d(t_l)[F(u(1+t_l))−τF(uT)]
+       ≤d F(u(1+T)).                                (Sτ)
+
+证明直接给出全部量词，不假定源预算中的每个括号非负。空列时左侧零，结论成立。若 `0<T≤1`，用 `κ_d(t_l)≤dt_l`、单调性并丢弃非正项，左侧至多
+
+    Σ_l dt_l F(u(1+T))=dT F(u(1+T))≤dF(u(1+T)).
+
+若 `T≥1`，逐单项式处理。固定整数 `0≤k≤d`。`κ_d` 凹且在零点为零，故
+
+    Σ_l κ_d(t_l)≥κ_d(T).                             (C)
+
+对 `k≥1`，函数 `f_k(t)=κ_d(t)((1+t)^k−1)` 超可加：在 `t>0`，其比值 `f_k(t)/t` 在 `t≤1/(d−1)` 时为 `d((1+t)^k−1)`，在 `t≥1/(d−1)` 时为
+
+    Σ_{r=1}^k binom(k,r)(t^r+t^(r−1)).
+
+两段均单调不减且接点连续。因此 `f_k(t_l)≤(t_l/T)f_k(T)`，相加即得 `Σ_l f_k(t_l)≤f_k(T)`。`k=0` 时 `f_k` 恒零。因为 `1−τT^k≤0`，由(C)得
+
+    Σ_lκ_d(t_l)[(1+t_l)^k−τT^k]
+      ≤κ_d(T)[(1+T)^k−τT^k].                         (S1)
+
+若右侧括号非正，已经得到(Sτ)的单项式版本。否则 `k≥1`，用 `τ≥1`、`κ_d(T)≤T+1` 和几何级数界 `1−x^k≤k(1−x)`，有
+
+    κ_d(T)[(1+T)^k−τT^k]
+      ≤(T+1)[(1+T)^k−T^k]
+      =(1+T)^(k+1)[1−(T/(1+T))^k]
+      ≤k(1+T)^k≤d(1+T)^k.
+
+乘 `u^k` 后对非负系数相加，证明(Sτ)。常数项 `k=0` 的左侧非正，不需删除费用常数。
+
+### 9.3. 从强迫预算支付真实重置
+
+对每名 light l，定义 `Y_j=T_j+m_j u` 及
+
+    P_lj=τG_j(Y_j)−G_j(w_l),
+    Q_l=F_v(u+w_l)−τF_v(W_v),  v=o(l).
+
+因为 `w_l≤Y_j`、费用单调且 `τ>1`，
+
+    P_lj≥(τ−1)G_j(Y_j)≥0,
+    Σ_{j:l∈L_j}P_lj≤Q_l,                            (P)
+
+其中第二式恰为(UFτ)。特别地每个 `Q_l≥0`，但源标量引理本身不需要这个附加事实。第8.3节在真实 hub 翻位后逐 light 重置，给 source v 的势增加上界
+
+    R_v≤Σ_{l:o(l)=v}κ_d(w_l/u)Σ_{j:l∈L_j}G_j(Y_j)
+       ≤1/(τ−1) Σ_{l:o(l)=v}κ_d(w_l/u)Q_l
+       ≤d/(τ−1) F_v(u+W_v).                         (Rτ)
+
+一次 light 的全部 side 费用先求和后领取其主资源预算；没有逐 side 重复领取同一 `Q_l`。由(FT)及 `F_v(u)≤F_v(u+W_v)`，
+
+    R_v≤(α−1)F_v(u+W_v)
+       ≤αF_v(u+W_v)−F_v(u)=M_v(α).                 (Bτα)
+
+无 light 的 source 直接有 `R_v=0≤M_v(α)`。即使全部费用为零也不作费用比值或 `0/0`。
+
+### 9.4. 真实单方偏离与有限选态
+
+在有限 hub 位空间中取 `E` 的任意单翻位局部最小点 h，全 light 按定义反位。hub v 真实偏离时 light 保持旧动作。固定 light 的侧费用普通差等于辅助势差，而真实 `α` 侧成本差不大于普通差，因为 `α≥1` 且偏离成本非负。其后仅在势的比较中将 v 的 light 重置，使用(Rτ)，所以
+
+    C_v(s)−αC_v(s_v',s_−v)
+      ≤−M_v(α)+E(h)−E(h^v)+R_v≤0.
+
+这里的重置是势的定义比较，不是允许 light 在真实 hub 单方偏离中同时移动。
+
+对 light l，当前主资源负载恰为 `W_v`，每条当前 side 负载不超过 `Y_j`；真实翻位后的主资源负载为 `u+w_l`，每条新 side 负载至少 `w_l`。因此(UFτ)直接给
+
+    τ C_l(s)≤C_l(s_l',s_−l).
+
+它蕴含 `C_l(s)≤αC_l(s_l',s_−l)`，只需 `τ>1,α≥1`，不需两个倍率间再有排序。保留原动作由 `α≥1` 自动满足。故原游戏的全部合法单方偏离都满足 `α-PNE` 不等式。
+
+取 `τ=α=1+√d` 恰恢复第八节的条件与结论，但本 Claim 的量词还允许不同倍率，因此以新身份登记。
+
+### 9.5. 目标量级的显式子类推论
+
+对每个整数 `d≥16`，取
+
+    τ=1+ln d,  α=1+d/ln d.
+
+余量乘积恰为 `d`，故满足(UFτ)的上述子类具有 `α-PNE`。又 `ln d≤d`，故
+
+    α≤2d/ln d.
+
+因此在该子类，轻玩家只须满足对数级的统一强迫倍率即可保证目标量级。此推论仍量化全部该子类实例，常数不依赖人数、权重或费用系数；它没有覆盖(UFτ)失败或异权 hub 的一般游戏，也不是全类题目的 `C=2,d0=16` 结论。
+
+### 9.6. 核验接口
+
+作者精确审计：
+
+    python3 tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py
+
+程序只向 stdout 输出 JSON，逐资源重建真实负载与单方偏离，用标准库 `Fraction` 检查(FT)、(UFτ)、固定 light Rosenthal 恒等式、source 重置上界及势局部最小点。它还包含 `τ<α`、`τ>α`、`τ=α`、`τ` 接近一的有理端点、零/常数费用、无 light/空用户子集，以及满足(UFτ)但不满足以 `α` 替换 `τ` 的强迫式的实例。完整参数、seed、Python 和代码 hash 随 JSON 输出；有限证据不替代本节的实参数证明。
+
+### 9.7. 独立攻击、冻结结果与接续义务
+
+[独立审查](../../reviews/weighted_congestion/multisource_force_tradeoff_review.md)先仅据精确陈述重构源预算，再攻击冻结第九节，记录所审 hash、倍率无序关系、真实偏离与重置的区别及全部承重条件。独立程序不调用作者实现：
+
+    python3 tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py
+
+两路冻结结果分别为 `evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json` 与 `evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json`。每份记录列实际生成输入、参数、seed、算术、版本、源码 hash 与有限覆盖范围；重跑仅向 stdout 或临时文件输出，不覆盖冻结字节。代码和结果由 `research/assets.json`、`research/catalog.json` 接入。
+
+本 Claim 的一般证明已完成独立重构与冻结攻击，精确审计通过；状态为 complete conditional proof; independently reconstructed and exactly audited; unrefereed。它降低的是达到目标量级时所需的强迫倍率，未提供一般实例的强迫表示或稳定 light 选择。下一项承重义务仍是异权 hub、强迫失败时的反馈控制或无界交互高度的非势选态；全类题保持 OPEN。

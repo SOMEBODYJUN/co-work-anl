@@ -26,3 +26,5 @@ Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须�
 另首登三个独立ID：`WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1`（同权hub跨源UF平方根存在界）、`WC-APPROXIMATE-SUPPORT-DISTORTION-v1`（允许改权的完整成本近似小支持失真）、`WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1`（固定有理strict sweep及任意次数类内三元compiler反例）。精确对象、全部假设和证据见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)，不改旧Claim或WC-TARGET。
 
 实际时钟余量依赖与完整proper锥必要暂态质量另有独立精确身份，见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)；不改变WC-TARGET。
+
+强迫与目标倍率另以新身份 `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1` 分列：同权跨源side模型的UFτ和(τ−1)(α−1)≥d给α-PNE，τ=1+ln d只覆盖所写子类。精确条件、独立攻击和冻结证据见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)与原正文第九节；旧三个Claim和全类OPEN身份不变。

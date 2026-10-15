@@ -39,3 +39,5 @@ E1已将局部成本正展开提取为[正占用核独立结构](../current/posi
 [共占图高度与实际改善环必要链](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)把三角势参数从全局权类数放宽为同一降权共占图的路径高度；全局权种数可无界。实际严格改善闭词也必须跨越相应高度门槛，各弧可来自不同端点。仍无全类高度控制；动态换秩改变势，缺少高链SCC出口或瞬态dual。
 
 [跨source多light side](../current/weighted_congestion/shared_side_truncated_potential.md)在同权hub、UFmulti下已得到1+√d-PNE：真正逃逸点须违反该条件或改变hub权/动作副本。新的[近似成本支持失真](../current/weighted_congestion/template_certificates/selector_local_moments.md)阻止固定有限失真/支持的全成本归约，允许改权亦然；[严格稳定前沿compiler反例](../current/weighted_congestion/class_front_phase_quotient.md)阻止在所有strict21/20 sweep输入上仅增加任意次数类内有序三元clock。当前仍缺异权/非UF反馈的控制、无界height的非势选态或次数效率增长族，不能将这三项升级为全类判定。
+
+[跨源共享侧资源的强迫与目标倍率分离](../current/weighted_congestion/shared_side_truncated_potential.md)第九节（`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1`）给出独立新身份：同权hub、唯一main source及二元同费副本下，UF强迫τ>1与目标α只需(τ−1)(α−1)≥d，无大小排序。d≥16取τ=1+ln d即得α=1+d/ln d≤2d/ln d；旧平方根Claim为τ=α的特例。独立先重构后冻结攻击及双路Fraction证据已接入原稿。仍缺异权hub、强迫失败时的稳定light/反馈控制与全类非势选态，WC-TARGET保持OPEN。

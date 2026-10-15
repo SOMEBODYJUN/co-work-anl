@@ -4492,7 +4492,7 @@
     {
       "path": "research/current/weighted_congestion/shared_side_truncated_potential.md",
       "title": "同权主玩家共享侧资源：截断势与直接源预算",
-      "purpose": "侧资源含多hub时读取：UF推出A_d≤2d/ln d的全anti均衡；另独立ID给任d≥0、α≥1的AS+B势判据，处理source重置。；新增WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1：任意d≥2、实α≥1+√d，同权hub u、唯一main source的正权lights，side允许任意hub子集及跨source任意light子集，两副本同费非负degree≤d。令T_j为side全light权、m_j为hub数、W_v为source总light权；若每light满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥α[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则真实hub Rosenthal势任单hub局部最小点配全anti为α-PNE。 同权hub、二元对称副本、唯一main source及UFmulti承重；不覆盖异权hub或UF失败，不改变全类OPEN。旧两个Claim身份保持。",
+      "purpose": "侧资源含多hub时读取：UF推出A_d≤2d/ln d的全anti均衡；另独立ID给任d≥0、α≥1的AS+B势判据，处理source重置。；新增WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1：任意d≥2、实α≥1+√d，同权hub u、唯一main source的正权lights，side允许任意hub子集及跨source任意light子集，两副本同费非负degree≤d。令T_j为side全light权、m_j为hub数、W_v为source总light权；若每light满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥α[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则真实hub Rosenthal势任单hub局部最小点配全anti为α-PNE。 同权hub、二元对称副本、唯一main source及UFmulti承重；不覆盖异权hub或UF失败，不改变全类OPEN。旧两个Claim身份保持。 第九节分离强迫τ与目标α：(τ−1)(α−1)≥d即充分；调用对数级UF子类保证时先核所写同权和真实重置合同，不得当全类。",
       "topic": "weighted_congestion",
       "role": "account",
       "package": "shared-side-truncated-potential",
@@ -4508,7 +4508,12 @@
         "tests/audits/weighted_congestion/verify_multisource_shared_side.py",
         "tests/audits/weighted_congestion/independent_multisource_shared_side.py",
         "evidence/runs/weighted_congestion/shared_side_truncation/multisource_author.json",
-        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_independent.json"
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_independent.json",
+        "research/reviews/weighted_congestion/multisource_force_tradeoff_review.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py",
+        "tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json"
       ]
     },
     {
@@ -5367,6 +5372,81 @@
         "tests/audits/weighted_congestion/template_certificates/verify_selector_mover_support.py",
         "tests/audits/weighted_congestion/template_certificates/independent_selector_mover_support.py",
         "evidence/runs/weighted_congestion/template_certificates/selector_mover_support.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/multisource_force_tradeoff_review.md",
+      "title": "跨源共享侧资源的强迫与目标倍率乘积预算均衡：独立重构与冻结攻击",
+      "purpose": "先独立重构倍率分离的源预算，再攻击冻结第九节的真实偏离、重置、τ与α无序关系和零费用端点；引用新Claim时读取。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py",
+        "tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py",
+      "title": "跨源共享侧资源的强迫与目标倍率乘积预算均衡：作者Fraction审计",
+      "purpose": "按literal资源核73游戏、倍率全部顺序与5280源单项式，显式给UFτ成立但UFα失败的跨源实例；改乘积预算时重跑。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_tradeoff_review.md",
+        "tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py",
+      "title": "跨源共享侧资源的强迫与目标倍率乘积预算均衡：独立Fraction审计",
+      "purpose": "不导入作者模块，独立物化跨源资源、重建真实偏离与势局部min，覆盖τ或α近1、混合主费与倍率相等；核审查实现时运行。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_tradeoff_review.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json",
+      "title": "跨源共享侧资源的强迫与目标倍率乘积预算均衡：作者冻结结果",
+      "purpose": "保存73游戏全部有理参数、seed441073、源码hash与1618真实偏离/882重置；仅有限审计，重跑不覆盖。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_tradeoff_review.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py",
+        "tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json",
+      "title": "跨源共享侧资源的强迫与目标倍率乘积预算均衡：独立冻结结果",
+      "purpose": "保存独立107游戏全部参数、seed1197043、冻结稿hash与2820真实偏离/2424重置、8500源标量检查；与作者结果交叉核对。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "shared-side-truncated-potential",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/multisource_force_tradeoff_review.md",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py",
+        "tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json"
       ]
     }
   ]

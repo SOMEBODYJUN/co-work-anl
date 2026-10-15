@@ -3616,35 +3616,42 @@
       "id": "shared-side-truncated-potential",
       "claims": [
         "WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1",
-        "WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1"
+        "WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1",
+        "WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1"
       ],
       "status": "complete structural proof; independent bottleneck reconstruction and frozen attack; exactly audited; unrefereed",
       "applies_when": [
         "对每个d≥2、有限同权u>0 hubs/任意正异权lights，每light唯一source、每side唯一light并允许任意hub子集H_j及空集/含source、两动作副本同费非负degree≤d；若α≥A_d=[1−(d−1)d^(−d/(d−1))]^(−1)，且逐light弱UF为F_v(u+w)+ΣG_j(w)≥α[F_v(W_v)+ΣG_j(w+|H_j|u)]，则所写截断Rosenthal势任hub单翻位局部最小点配全anti lights给αPNE。A_d≤2d/ln d对全部d≥2，常数仅限该子类。",
-        "任意d≥2、实α≥1+√d，同权hub u、唯一main source的正权lights，side允许任意hub子集及跨source任意light子集，两副本同费非负degree≤d。令T_j为side全light权、m_j为hub数、W_v为source总light权；若每light满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥α[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则真实hub Rosenthal势任单hub局部最小点配全anti为α-PNE。"
+        "任意d≥2、实α≥1+√d，同权hub u、唯一main source的正权lights，side允许任意hub子集及跨source任意light子集，两副本同费非负degree≤d。令T_j为side全light权、m_j为hub数、W_v为source总light权；若每light满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥α[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则真实hub Rosenthal势任单hub局部最小点配全anti为α-PNE。",
+        "任意整数d≥2、实τ>1和α≥1满足(τ−1)(α−1)≥d；同权hub u>0、正权light各唯一main source，二元同费主/侧副本，side任意hub及跨source多light用户子集，全部费用非负系数degree≤d。记W_v为源light总权、T_j为side全部light总权、m_j为hub数。若每light l满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥τ[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则第8.2节真实hub Rosenthal势E任单hub局部最小点配全anti lights为α-PNE。τ与α无需大小排序；d≥16取τ=1+ln d给α=1+d/ln d≤2d/ln d。"
       ],
-      "produces": "同权主玩家共享侧资源的统一强迫截断势均衡",
+      "produces": "同权主玩家共享侧资源的截断势、平方根界与强迫/目标分离均衡",
       "implementation": [],
       "proof": [
         "research/current/weighted_congestion/shared_side_truncated_potential.md"
       ],
       "reviews": [
         "research/reviews/weighted_congestion/shared_side_truncated_potential_review.md",
-        "research/reviews/weighted_congestion/multisource_shared_side_review.md"
+        "research/reviews/weighted_congestion/multisource_shared_side_review.md",
+        "research/reviews/weighted_congestion/multisource_force_tradeoff_review.md"
       ],
       "tests": [
         "tests/audits/weighted_congestion/verify_shared_side_truncation.py",
         "tests/audits/weighted_congestion/independent_shared_side_truncation.py",
         "tests/audits/weighted_congestion/independent_shared_side_budget.py",
         "tests/audits/weighted_congestion/verify_multisource_shared_side.py",
-        "tests/audits/weighted_congestion/independent_multisource_shared_side.py"
+        "tests/audits/weighted_congestion/independent_multisource_shared_side.py",
+        "tests/audits/weighted_congestion/verify_multisource_forcing_target_tradeoff.py",
+        "tests/audits/weighted_congestion/independent_multisource_force_tradeoff.py"
       ],
       "records": [
         "evidence/runs/weighted_congestion/shared_side_truncation/author.json",
         "evidence/runs/weighted_congestion/shared_side_truncation/independent.json",
         "evidence/runs/weighted_congestion/shared_side_truncation/budget_boundaries.json",
         "evidence/runs/weighted_congestion/shared_side_truncation/multisource_author.json",
-        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_independent.json"
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_independent.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/forcing_target_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/multisource_force_tradeoff_independent.json"
       ],
       "examples": [],
       "candidates": [],
@@ -3652,7 +3659,7 @@
         "history/source/notes/weighted_congestion/branch_sources.md"
       ],
       "source_role": "Existing baseline provenance pointer required by repository source schema; this newly authored proof is not contained in or derived from that historical note. Actual mathematical dependencies and independent reconstruction/attack are identified in the manuscript and graph.",
-      "limit": "共同hub权、每side唯一light、每light唯一source、动作副本同费与UF最坏负载均承重。不覆盖异权hub、多source side或UF失败且直接AS+B未满足的全类情形；子类C2,d0=2不代替唯一题。 新ID：同权hub、二元对称副本、唯一main source及UFmulti承重；不覆盖异权hub或UF失败，不改变全类OPEN。旧两个Claim身份保持。"
+      "limit": "共同hub权、每side唯一light、每light唯一source、动作副本同费与UF最坏负载均承重。不覆盖异权hub、多source side或UF失败且直接AS+B未满足的全类情形；子类C2,d0=2不代替唯一题。 新ID：同权hub、二元对称副本、唯一main source及UFmulti承重；不覆盖异权hub或UF失败，不改变全类OPEN。旧两个Claim身份保持。 新乘积预算Claim：同权hub、唯一main source、二元同费副本及所写UFτ均承重；不包含τ=1、不提供任意实例满足强迫条件的表示或稳定light选择，不覆盖异权hub或一般策略。旧三个Claim不变，WC-TARGET保持OPEN；未外审或认证新颖性。"
     },
     {
       "id": "shared-side-budget-potential",

@@ -87,7 +87,7 @@
 
 ## 跨source共享侧资源也须超出准确强迫合同
 
-[新真实Rosenthal势](../current/weighted_congestion/shared_side_truncated_potential.md)以κ_d(t)=min(dt,t+1)控制已有外场上的重置增量，闭合此前TR仅从零外场出发的缺口。在同权hub及按side全部light总权的UFmulti下，任意跨source共享仍有1+√d-PNE。可回收reset预算和源超可加估计；不覆盖异权hub、非UF或多个main source，负向若只保全部该合同便不能放大。此为结构存在定理，不是全类上界。
+[新真实Rosenthal势](../current/weighted_congestion/shared_side_truncated_potential.md)以κ_d(t)=min(dt,t+1)控制已有外场上的重置增量，闭合此前TR仅从零外场出发的缺口。在同权hub及按side全部light总权的UFmulti下，任意跨source共享仍有1+√d-PNE。 同稿第九节进一步分离UF强迫τ与目标α，(τ−1)(α−1)≥d即足够；因此达到目标量级也不需把强迫倍率提高到目标倍率，τ=1+ln d已给α=1+d/ln d。可回收reset预算和源超可加估计；不覆盖异权hub、非UF或多个main source，负向若只保全部该合同便不能放大。此为结构存在定理，不是全类上界。
 
 
 ## 仅依结构参数给actual保环时钟统一次数
