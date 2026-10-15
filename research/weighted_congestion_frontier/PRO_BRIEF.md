@@ -2,7 +2,7 @@
 
 本稿是现行数学资产的派生读取稿，不另立真值账本。默认只读本稿与任务正文即可接题；原证明、审查、程序和证书按来源编号定点查阅。本稿没有预设开放路线，也没有新增数学 Claim。
 
-**数学源快照：** `SOMEBODYJUN/co-work-anl` 的 `4be5814ae0c2d8b4fff3e87b23d65c909e708109`。下文所有 S 编号均指该提交的原文件和所列具体节，末表连接实际审查。内部已审不等于外部同行评审；未认证全球新颖性。当前唯一全类问题仍 **OPEN**。原历史身份 `WC-TARGET v1` 的宽目标不改写，本次完成条件固定如下。
+**数学源快照：** `SOMEBODYJUN/co-work-anl` 的 `c623edd5f717e5f58151e6ab3363499c7ea2b114`。下文所有 S 编号均指该提交的原文件和所列具体节，末表连接实际审查。内部已审不等于外部同行评审；未认证全球新颖性。当前唯一全类问题仍 **OPEN**。原历史身份 `WC-TARGET v1` 的宽目标不改写，本次完成条件固定如下。
 
 ## 1. 完整模型、符号与唯一问题
 
@@ -268,34 +268,59 @@ $$
 
 **共同拓扑。** $d\ge2$，hub集 $V\ne\varnothing$，每light $l$ 权 $w_l>0$，有唯一 main source $o(l)\in V$。主副本 $A_v^0,A_v^1$ 同费 $F_v$；每side $j$ 有同费 $G_j$ 两副本、hub子集 $H_j$、light子集 $L_j$，允许跨source多light、多hub及空集。所有副本资源互异，费用均非负系数次数至多 $d$。对 $b\in\{0,1\}$，hub位 $b$ 用 $\{A_v^b\}\cup\{B_j^b:v\in H_j\}$；light位 $b$ 用 $\{A_{o(l)}^b\}\cup\{B_j^{1-b}:l\in L_j\}$。定义 $W_v=\sum_{o(l)=v}w_l,T_j=\sum_{l\in L_j}w_l$。全anti指light位为 $1-h_{o(l)}$。
 
-**同权hub，保留最强已审版本：WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2。** 所有hub权为 $u>0$，$m_j=|H_j|$。给任意实数 $\tau>1,\alpha\ge1$，若
+**同权hub，保留最强已审版本：WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3。** 所有hub权为 $u>0$，$m_j=|H_j|$。给任意实数 $\tau\ge1,\alpha\ge1$，若
 
 $$
-\alpha(\tau-1)\ge d,\qquad
+\alpha\tau\ge d,\qquad
 F_v(u+w_l)+\sum_{j:l\in L_j}G_j(w_l)
 \ge\tau\left[F_v(W_v)+\sum_{j:l\in L_j}G_j(T_j+m_ju)\right],
 \quad v=o(l),
 \tag{UFtau}
 $$
 
-则有全anti的 $\alpha$-PNE；$\tau,\alpha$ 不需大小排序。特别 $\tau\ge d+1$ 可取 $\alpha=1$；$d\ge16,\tau=1+\ln d$ 可取 $\alpha=d/\ln d$，都是明确强迫子类，非全类结论。v1的条件 $(\tau-1)(\alpha-1)\ge d$ 是旧已审子域；v2另立版本扩大充分条件，不改v1。旧 **WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1** 的平方根保证仍成立，但不再当最强接口单列。
+则有全anti的 $\alpha$-PNE；$\tau,\alpha$ 不需大小排序。特别 $\tau\ge d$ 可取 $\alpha=1$；$d\ge16,\tau=\ln d$ 可取 $\alpha=d/\ln d$，都是明确强迫子类，非全类结论。旧v1/v2原身份和冻结证据保留；本稿只调用已扩大的v3充分域，不宣称 $\alpha>1$ 的乘积条件必要或最优。
 
-关键支付机制是固定light时的真实Rosenthal边际，以及仅用于比较势的source light重置。令 $\kappa_d(t)=\min\{dt,t+1\}$；对每source写 $W=\sum_lw_l$。新源增量界
+关键支付机制是固定light时的真实Rosenthal边际，以及仅用于比较势的source light重置。令 $\kappa_d(t)=\min\{dt,t+1\}$。对非负系数次数至多 $d$ 的 $G$、$u,w>0,S\ge0,T\ge S+w$、整数 $0\le n\le m$ 及 $Y=T+mu$，新重置增量界为
+
+$$
+\sum_{r=1}^n[G(S+w+ru)-G(S+ru)]
+\le\kappa_d(w/u)[G(Y)-G(w)].
+$$
+
+短证：$n=0$ 直接成立；否则 $Y-w\ge nu>0$。逐项导数界 $G'(x)\le d[G(Y)-G(w)]/(Y-w)$ 对 $0\le x\le Y$ 成立，积分得 $d(w/u)$ 倍界。另一界令 $c(x)$ 为这 $n$ 个长 $w$ 区间的覆盖密度、$a=w/u+1$。几乎处处 $0\le c\le a$，$\int c=nw\le a(Y-w)$。因 $G'$ 非减，以 $G'(w)$ 分割低高段，得 $\int cG'\le a\int_w^YG'$，即 $(w/u+1)$ 倍界。原积分区间可以穿过 $w$，不能误用区间包含代替这步凸性容量论证；常数与零费用亦成立。
+
+对每source写 $W=\sum_lw_l$，已证源增量界为
 
 $$
 \sum_l\kappa_d(w_l/u)[F(u+w_l)-\tau F(W)]
-\le d[F(u+W)-F(u)]
+\le d[F(u+W)-F(u)]\qquad(\tau\ge1).
 $$
 
-对任意 $\tau\ge1$ 成立（空列两边零，非负系数逐项证明）。强迫式使每light全部side共用一次主预算，因此重置增量
-$R_v\le d\Delta_v/(\tau-1)\le\alpha\Delta_v\le\alpha F_v(u+W_v)-F_v(u)$，
-其中 $\Delta_v=F_v(u+W_v)-F_v(u)\ge0$，直接覆盖 $\alpha=1$，不再除以 $\alpha-1$。
+空列两边零，非负系数逐项证明在[S10]§9.9。令 $Y_j=T_j+m_ju$，$\tau G_j(Y_j)-G_j(w_l)\ge\tau[G_j(Y_j)-G_j(w_l)]\ge0$。将强迫式中每light的全部side先合计，再共用一次源预算，故重置增量
+$R_v\le d\Delta_v/\tau\le\alpha\Delta_v\le\alpha F_v(u+W_v)-F_v(u)$，
+其中 $\Delta_v=F_v(u+W_v)-F_v(u)\ge0$。这里只除以 $\tau>0$，同时覆盖 $\tau=1$ 与 $\alpha=1$。
 
 可实际选态的有限势为
 $E(h)=\sum_{j,b}\sum_{r=1}^{n_{jb}(h)}G_j(x_{jb}(h)+ru)$，
 $n_{jb}=|\{v\in H_j:h_v=b\}|$，
 $x_{jb}=\sum_{l\in L_j:h_{o(l)}=b}w_l$。
-其任一单hub翻位局部最小点配全anti给所需均衡。真实hub偏离时light保持原动作，重置不是联合偏离。light由强迫式满足更强的 $\tau C_{\rm current}\le C_{\rm deviation}$。[S10]§§8.1–8.3、9.8–9.13；v2有单独新版本的先重构/冻结攻击，已知旧机制的范围如实保留。
+其任一单hub翻位局部最小点配全anti给所需均衡。真实hub偏离时light保持原动作，重置不是联合偏离。light由强迫式满足更强的 $\tau C_{\rm current}\le C_{\rm deviation}$。[S10]§§8.1–8.3、9.9、9.14–9.18。实际审查是旧v2证明者先仅据新引理与精确陈述重构，再攻击原审查者提出的v3冻结稿，并非同一作者自审；双方已有旧机制知识，未外审。
+
+**严格反例：WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1。** 同一结构类保证**精确**PNE的统一强迫阈值恰为 $\tau=d$：上半由v3取 $\alpha=1$；对每个实数 $1\le\tau<d$，下面两玩家、四资源游戏严格满足(UFtau)，却四态均有严格改善。
+
+令 $\varepsilon=d-\tau>0$，$K_0=\tau(2^d-1)+d(\tau-1)$，
+$t=\varepsilon/(2K_0)$，$D=1-(\tau-1)t$，
+$A=[\tau(1+t)^d-t^d]/D$，$a=(A+d)/2$。
+hub权1、light权 $t$，只有该hub作为source，$F(x)=ax,G(x)=x^d$，策略用共同拓扑中的一主一side。$0<t<1/2,D>1/2$，且
+
+$$
+\tau(1+t)^d-t^d-dD\le-\varepsilon+K_0t=-\varepsilon/2<0
+\quad\Longrightarrow\quad0<A<a<d.
+$$
+
+强迫差为 $a(1+t)+t^d-\tau[at+(1+t)^d]=(a-A)D>0$。两个aligned态由light翻位严格改善；两个anti态由hub翻位，成本减少 $(1+t)^d-1-at\ge(d-a)t>0$，覆盖全部四态。[S10]§9.17及新增冻结攻击。
+
+这严格反驳“(UFtau)在任意 $\tau\ge1$ 均保证精确PNE”，防止把强迫本身当通用精确均衡工具。**仅否定 $\alpha=1$**；改善幅度可以趋近1，不能升级为固定 $\alpha>1$ 的反例，更没有否定全类目标。它也没有证明v3在 $\alpha>1$ 的充分乘积界是必要界。
 
 **局部异权hub：WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1。** 同一拓扑，改hub权为任意 $a_v>0$，令 $U_j=\sum_{v\in H_j}a_v$。仅对 $H_j\ne\varnothing$ 定义 $A_j=\min_{v\in H_j}a_v$，并令
 
@@ -322,7 +347,7 @@ $P_j(S;x)=\sum_{r=1}^{|S|}G_j(x+\sum_{t\le r}a_{v_t})$，
 $c\le\Delta P_j\le(a_v/A_j)c\le Rc$；
 light重置满足 $\kappa_d(w_l/A_j)\le K\kappa_d(w_l/a_v)$ 的预算。由条件支付主资源余量，任一单hub局部最小点即给上述均衡。完整证明和两名审查者的冻结攻击在[S10]§10及对应审查；凸性加强从 $1+a_v/A_j$ 到 $a_v/A_j$ 已重新核对，没有沿用较弱冻结覆盖。
 
-**准确排除范围：** 满足各自强迫式及倍率条件的上述二元同费、唯一主源拓扑，不能成为同一倍率的全状态非存在反例；仅增加跨源共享side，或局部 $R,K$ 受控的异权hub，不解除这些条件界。**没有排除：** 不满足条件的游戏。一般实例的 $R,K$ 和强迫假设没有统一控制；条件失败既不是已有反例，也不是其他选态方法不可能。上述两个Claim不能未经新证明拼成“异权hub也有同样的双倍率v2界”。
+**准确排除范围：** 满足各自强迫式及倍率条件的上述二元同费、唯一主源拓扑，不能成为同一倍率的全状态非存在反例；仅增加跨源共享side，或局部 $R,K$ 受控的异权hub，不解除这些条件界。**没有排除：** 不满足条件的游戏。一般实例的 $R,K$ 和强迫假设没有统一控制；单凭条件失败不能判定反例，也不证明其他选态方法不可能。同权v3与异权排序势这两个均衡定理，不能未经新证明拼成“异权hub也有同样的双倍率v3界”。
 
 ### 4.3 三负载曲率约束只限制保形模拟
 
@@ -548,7 +573,7 @@ complete 签名允许某玩家的块 $\sigma_i=A_i$；proper/core 签名要求�
 | [S7] | template_certificates/stationary_selector_obstruction.md §§2–4、7 | template_certificates/stationary_selector_obstruction_review.md，追加仿射引理/回返等价有单独冻结攻击，非高次仿射推广 |
 | [S8] | common_power_mixture_obstruction.md §§1–4 | ordinal_potentials/common_power_mixture_review.md，所有实幂/非负连续混合/全部最小点均独立攻击 |
 | [S9] | separable_ordinal_obstruction.md §4 | ordinal_potentials/minimizer_scope_review.md；直接范围引理与内部复核，不提供新存在界 |
-| [S10] | shared_side_truncated_potential.md §§8.1–8.3、9.8–9.13、10 | multisource_force_increment_review.md、heterogeneous_hub_sorted_side_review.md；v2和异权新ID分别独立重构/冻结攻击，旧v1及同权ID不改 |
+| [S10] | shared_side_truncated_potential.md §§8.1–8.3、9.9、9.14–9.18、10 | multisource_force_increment_review.md、heterogeneous_hub_sorted_side_review.md；v3、精确强迫阈值与异权ID各按实际独立重构/冻结攻击；v3审查角色互换，旧v1/v2身份不改 |
 | [S11] | polynomial_curvature/three_load_curvature_bound.md §§1–4 | polynomial_curvature/review.md；曲率原稿有独立冻结攻击。精确相邻次数扩展账本仍candidate，不调用 |
 | [S12] | template_certificates/integer_counterexample_normal_form.md §§1–4、7–8 | integer_counterexample_normal_form_review.md 与 antichain_core_normal_form_review.md（均在 reviews/weighted_congestion/template_certificates/） |
 | [S13] | template_certificates/selector_local_moments.md §§11–12、14–15 | 同审查目录 approximate_support_review.md、selector_mover_support_review.md；合入改节号有diff复核，未改变数学 |
@@ -560,22 +585,22 @@ complete 签名允许某玩家的块 $\sigma_i=A_i$；proper/core 签名要求�
 
 上表数学正文（[S2]–[S18]）均位于 `research/current/weighted_congestion/`；审查均位于 `research/reviews/weighted_congestion/`，特别标明者除外。[S0]/[S1] 位于 `research/weighted_congestion_frontier/`。
 
-[S0]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/weighted_congestion_frontier/MODEL.md
-[S1]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/weighted_congestion_frontier/LITERATURE.md
-[S2]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md
-[S3]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/resource_support.md
-[S4]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md
-[S5]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/high_degree_share.md
-[S6]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/cyclic_clone_improvement_cycles.md
-[S7]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md
-[S8]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/common_power_mixture_obstruction.md
-[S9]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/separable_ordinal_obstruction.md
-[S10]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/shared_side_truncated_potential.md
-[S11]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md
-[S12]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md
-[S13]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/template_certificates/selector_local_moments.md
-[S14]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/anchored_cycle_lock.md
-[S15]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/uniform_clock_budget_barrier.md
-[S16]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/anchored_clock_actual_margins.md
-[S17]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/class_front_phase_quotient.md
-[S18]: https://github.com/SOMEBODYJUN/co-work-anl/blob/4be5814ae0c2d8b4fff3e87b23d65c909e708109/research/current/weighted_congestion/template_certificates/finite_action_duality.md
+[S0]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/weighted_congestion_frontier/MODEL.md
+[S1]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/weighted_congestion_frontier/LITERATURE.md
+[S2]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md
+[S3]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/resource_support.md
+[S4]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md
+[S5]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/high_degree_share.md
+[S6]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/cyclic_clone_improvement_cycles.md
+[S7]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md
+[S8]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/common_power_mixture_obstruction.md
+[S9]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/separable_ordinal_obstruction.md
+[S10]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/shared_side_truncated_potential.md
+[S11]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md
+[S12]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md
+[S13]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/template_certificates/selector_local_moments.md
+[S14]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/anchored_cycle_lock.md
+[S15]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/uniform_clock_budget_barrier.md
+[S16]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/anchored_clock_actual_margins.md
+[S17]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/class_front_phase_quotient.md
+[S18]: https://github.com/SOMEBODYJUN/co-work-anl/blob/c623edd5f717e5f58151e6ab3363499c7ea2b114/research/current/weighted_congestion/template_certificates/finite_action_duality.md
