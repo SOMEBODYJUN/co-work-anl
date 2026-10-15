@@ -4625,6 +4625,91 @@
       "status": "OPEN"
     },
     {
+      "id": "WC-SELECTOR-UNIT-SPEED-STATIONARY-BARRIER-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "单位速度平稳择证的无界损失",
+      "detail": "For every finite real alpha>=1 and d>=1, some finite positive rational weight two-action template and full selector have no unit-speed stationary dual, already witnessed by an affine column; this is no nonexistence result.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "research/reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-AFFINE-SELECTOR-CYCLE-DUAL-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "任意仿射择证的循环权重对偶",
+      "detail": "For every finite positive-weight action template and tagged selector, every selected cycle gives an affine dual by lambda_s proportional to the selected mover weight; self-loops are allowed and all affine columns sum to zero at alpha=1.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "research/reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-RECURRENT-SUPPORT-FIP-EQUIVALENCE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "循环支撑择证与全模板有限改善性等价",
+      "detail": "For fixed finite weights, action counts, degree and real alpha>=1, and every fixed nonempty column subcone (including the full signature family), every selector admits a dual supported on its recurrent states iff every nonnegative-coefficient game on that template has no strict alpha-improvement cycle; this is stronger than mere PNE existence.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "research/reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-DIRECTED-FANOUT-FORCING-CUT-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "分叉双人侧反馈的统一强迫割均衡",
+      "detail": "For d>=2 and alpha>=T_d, every finite unique-source light/multihead-private-pair-side topology satisfying the weak uniform aligned-light forcing inequalities admits an all-anti alpha-PNE selected by any local minimum of the stated weighted cut; no unrestricted existence claim.",
+      "refs": [
+        "research/current/weighted_congestion/directed_fanout_forcing_cut.md",
+        "research/reviews/weighted_congestion/directed_fanout_forcing_cut_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-DIRECTED-FANOUT-UF-MODEL",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "唯一源主资源、私有双人侧反馈与统一强迫条件",
+      "detail": "Each light has one main-resource source and finitely many private side pairs with one destination hub each; symmetric binary resource copies, real positive weights and UF as explicitly written.",
+      "refs": [
+        "research/current/weighted_congestion/directed_fanout_forcing_cut.md"
+      ],
+      "status": "specified exact topology and forcing hypothesis"
+    },
+    {
+      "id": "WC-SELECTOR-CYCLE-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "择证循环、全部签名与回返支撑的有理审计",
+      "detail": "Exact finite implementation checks only; general real-parameter claims rest on their manuscript proofs.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_stationary_selector_obstruction.py",
+        "evidence/runs/weighted_congestion/template_certificates/stationary_selector_obstruction_audit.json"
+      ],
+      "status": "executed finite exact audit"
+    },
+    {
+      "id": "WC-FANOUT-CUT-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "有向分叉实际资源、局部割与端点的有理审计",
+      "detail": "Exact finite implementation checks only; general real-parameter claims rest on their manuscript proofs.",
+      "refs": [
+        "research/current/weighted_congestion/directed_fanout_forcing_cut.md",
+        "tests/audits/weighted_congestion/verify_directed_fanout_forcing_cut.py",
+        "evidence/runs/weighted_congestion/directed_fanout_forcing_cut_audit.json"
+      ],
+      "status": "executed finite exact audit"
+    },
+    {
       "id": "WC-DAG-EXTREMAL-AMPLITUDE-NORMALIZATION",
       "kind": "definition",
       "track": "weighted_congestion",
@@ -11245,6 +11330,135 @@
         "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md"
       ],
       "status": "restricted method boundary"
+    },
+    {
+      "id": "DERIVE-WC-SELECTOR-UNIT-SPEED-STATIONARY-BARRIER-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-ACTION-SIGNATURE-COMPRESSION-v1"
+      ],
+      "conclusion": "WC-SELECTOR-UNIT-SPEED-STATIONARY-BARRIER-v1",
+      "statement": "For every finite real alpha>=1 and d>=1, some finite positive rational weight two-action template and full selector have no unit-speed stationary dual, already witnessed by an affine column; this is no nonexistence result.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "research/reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-SELECTOR-UNIT-SPEED-STATIONARY-BARRIER-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SELECTOR-CYCLE-AUDIT"
+      ],
+      "conclusion": "WC-SELECTOR-UNIT-SPEED-STATIONARY-BARRIER-v1",
+      "statement": "Finite exact implementation and boundary checks only, not the general proof.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_stationary_selector_obstruction.py",
+        "evidence/runs/weighted_congestion/template_certificates/stationary_selector_obstruction_audit.json"
+      ],
+      "status": "finite exact checks passed"
+    },
+    {
+      "id": "DERIVE-WC-AFFINE-SELECTOR-CYCLE-DUAL-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-ACTION-SIGNATURE-COMPRESSION-v1"
+      ],
+      "conclusion": "WC-AFFINE-SELECTOR-CYCLE-DUAL-v1",
+      "statement": "For every finite positive-weight action template and tagged selector, every selected cycle gives an affine dual by lambda_s proportional to the selected mover weight; self-loops are allowed and all affine columns sum to zero at alpha=1.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "research/reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-AFFINE-SELECTOR-CYCLE-DUAL-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SELECTOR-CYCLE-AUDIT"
+      ],
+      "conclusion": "WC-AFFINE-SELECTOR-CYCLE-DUAL-v1",
+      "statement": "Finite exact implementation and boundary checks only, not the general proof.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_stationary_selector_obstruction.py",
+        "evidence/runs/weighted_congestion/template_certificates/stationary_selector_obstruction_audit.json"
+      ],
+      "status": "finite exact checks passed"
+    },
+    {
+      "id": "DERIVE-WC-RECURRENT-SUPPORT-FIP-EQUIVALENCE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-ACTION-SIGNATURE-COMPRESSION-v1",
+        "WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1"
+      ],
+      "conclusion": "WC-RECURRENT-SUPPORT-FIP-EQUIVALENCE-v1",
+      "statement": "For fixed finite weights, action counts, degree and real alpha>=1, and every fixed nonempty column subcone (including the full signature family), every selector admits a dual supported on its recurrent states iff every nonnegative-coefficient game on that template has no strict alpha-improvement cycle; this is stronger than mere PNE existence.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "research/reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-RECURRENT-SUPPORT-FIP-EQUIVALENCE-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SELECTOR-CYCLE-AUDIT"
+      ],
+      "conclusion": "WC-RECURRENT-SUPPORT-FIP-EQUIVALENCE-v1",
+      "statement": "Finite exact implementation and boundary checks only, not the general proof.",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_stationary_selector_obstruction.py",
+        "evidence/runs/weighted_congestion/template_certificates/stationary_selector_obstruction_audit.json"
+      ],
+      "status": "finite exact checks passed"
+    },
+    {
+      "id": "DERIVE-WC-DIRECTED-FANOUT-FORCING-CUT-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-DIRECTED-FANOUT-UF-MODEL"
+      ],
+      "conclusion": "WC-DIRECTED-FANOUT-FORCING-CUT-v1",
+      "statement": "For d>=2 and alpha>=T_d, every finite unique-source light/multihead-private-pair-side topology satisfying the weak uniform aligned-light forcing inequalities admits an all-anti alpha-PNE selected by any local minimum of the stated weighted cut; no unrestricted existence claim.",
+      "refs": [
+        "research/current/weighted_congestion/directed_fanout_forcing_cut.md",
+        "research/reviews/weighted_congestion/directed_fanout_forcing_cut_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-DIRECTED-FANOUT-FORCING-CUT-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-FANOUT-CUT-AUDIT"
+      ],
+      "conclusion": "WC-DIRECTED-FANOUT-FORCING-CUT-v1",
+      "statement": "Finite exact implementation and boundary checks only, not the general proof.",
+      "refs": [
+        "research/current/weighted_congestion/directed_fanout_forcing_cut.md",
+        "tests/audits/weighted_congestion/verify_directed_fanout_forcing_cut.py",
+        "evidence/runs/weighted_congestion/directed_fanout_forcing_cut_audit.json"
+      ],
+      "status": "finite exact checks passed"
     },
     {
       "id": "DERIVE-WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
