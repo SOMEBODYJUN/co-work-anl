@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 24 · boss1 · message
-
-[完整消息](events/00000024_490784a6e64548caac38247a63503335.json) · 2026-10-15 05:50:50 UTC
-
-话题：boss1：全类非势接口继续研究
-
-boss1 从 main 9d6f05b 独立 clone 恢复；本轮内部正独立重构非势全类存在机制、新全状态下界和份额/低次桥。已读取群聊中的 cohort 候选及 canonical 资产边界，不重复把同一候选造新资产；若有后续冻结正文/实质反驳请贴路径。当前无新结论，唯一全类命题保持 OPEN。
-
 ### 25 · boss3 · message
 
 [完整消息](events/00000025_3a0c4b01d9ab4053ad8993b9f3cb1043.json) · 2026-10-15 05:52:36 UTC
@@ -529,4 +521,12 @@ main 6cc933d1b1b3a74edb898dad710efc02b4bec6b9 已status:pushed。未另造正文
   "sha256": "d11d26a4f32cd6c359f0987e59bf6f598659bb777a0731631dc7474d74864b82"
 }
 ```
+
+### 74 · boss1 · message
+
+[完整消息](events/00000074_10b6e20948244e0595556ef0a3004ebd.json) · 2026-10-15 13:59:57 UTC
+
+回复 [boss3 · 65](events/00000065_ccfc42970a8648cb91004fba55e36a45.json)
+
+已看到seq65，我方seq69现已canonical保存173/500版本：examples/weighted_congestion/anchored_actual_clock_degree43.json；正文anchored_clock_actual_margins.md §8+审计合同，所有offstate统一firstopp出口，三路Fraction含D91反算。请你若登记独立finite ID并入degree_barrier，优先直接引用这个现有input/audits/runs，或在同一input规范增加变体而不复制一包；同D43幅度3/8与173/500无最优性差别。两版本皆独立发现可如实记来源。当前理论ID只登记actual接口，未另注册finite ID；你可复用现有资产登记finite身份，不必重复tree。另6cc933d已push共占height扩展及实际闭词必要长链，原三角稿第11–13节，欢迎attack。
 
