@@ -614,3 +614,25 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：仅限所写DAG策略及极值幅度；任意幅度/全类策略尚无归约，不是本题一般肯定证明，也不是非存在下界。未发现所写范围内fatal；只升内部结果，外审/新颖性未认证。
 - Status：complete restricted proof; independently reconstructed and exactly audited; unrefereed。Truth为明确状态的实际存在界；Value为极值幅度模拟边界；Novelty未认证；Mechanism为缺口矩和Jensen；Ambition保留全类题OPEN。
 - Related Files：[正文](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)、[独立审查](../reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md)；具体代码和冻结记录见正文审计合同。
+
+
+## WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1 — 循环窗口复制实现近线性倍率的真实改善环
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Scope / Conclusion：对每个d≥2、每个1≤α<ρ_d=sup_t>0[(d+1)(1+t)^d+t^(d+1)]/[d+(1+t)^(d+1)]，存在正有理权、全部资源费用x^d、人人策略族2^E的有限MODEL游戏，真实偏离图含严格α改善环，同时全空是精确PNE。ρ_d/d→1，故任何全局实值函数（含非可分）不能在该游戏全部严格α改善边下降。
+- Definitions：循环类窗口、互补资源对、双同序翻转及加入guard后的有限gain锥；每名light的rank完整枚举而非期望。
+- Dependencies：WC-MODEL、WC-R1-MULTIPLIER-BARRIER、WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1；循环窗口的逐人秩均匀化、非负dual零坐标连接、严格锥替代。
+- Evidence：完整一般证明；独立先重构瓶颈后攻击冻结稿；代码、参数、seed（适用时）、源码hash、精度和实际结果由正文末节链接。
+- Counterevidence / Objections：Only all-improvement termination and global strict ordinal potentials are obstructed; no PNE-nonexistence, chosen-step or minimizer-selection obstruction. 该游戏有精确PNE；不能据此否定唯一题。未见所述范围内fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所写方法边界；Value=可复用构造或分离；Novelty=未认证；Mechanism=循环窗口的逐人秩均匀化、非负dual零坐标连接、严格锥替代；Ambition=全类仍OPEN。
+- Related Files：research/current/weighted_congestion/cyclic_clone_improvement_cycles.md；research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md；tests/audits/weighted_congestion/cyclic_clone/verify_lift.py；tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py；tests/audits/weighted_congestion/cyclic_clone/independent_lift.py；evidence/runs/weighted_congestion/cyclic_clone/lift.json；evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json；evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json。
+
+
+## WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1 — 共同幂混合全局最小点的线性障碍
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Scope / Conclusion：对每个d≥32，存在四玩家四资源、正有理权/系数、纯d次费用且有精确PNE的有限游戏，使任意非零非负Borel测度μ（全部状态目标有限）给出的Pμ(s)=Σ_e a_e∫_(p>0)x_e(s)^p dμ(p)每个全局最小点都非α-PNE，对全部1≤α<d/16成立；μ可依完整游戏。
+- Definitions：同一实例的两独立移动者及固定背景；保留原a_e、全部资源共同非负μ，p>0时0^p=0。
+- Dependencies：WC-MODEL；两构件目标差的同一正系数逐实幂严格分离并积分。
+- Evidence：完整一般证明；独立先重构瓶颈后攻击冻结稿；代码、参数、seed（适用时）、源码hash、精度和实际结果由正文末节链接。
+- Counterevidence / Objections：Does not cover per-resource normalization, elimination of fixed-background players followed by a new coefficient rule, arbitrary separable objectives, nonseparable objectives or PNE nonexistence. 该游戏有精确PNE；不能据此否定唯一题。未见所述范围内fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所写方法边界；Value=可复用构造或分离；Novelty=未认证；Mechanism=两构件目标差的同一正系数逐实幂严格分离并积分；Ambition=全类仍OPEN。
+- Related Files：research/current/weighted_congestion/common_power_mixture_obstruction.md；research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md；tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py；tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py；evidence/runs/weighted_congestion/common_power_mixture/author.json；evidence/runs/weighted_congestion/common_power_mixture/independent.json。

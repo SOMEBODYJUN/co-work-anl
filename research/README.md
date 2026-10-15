@@ -53,3 +53,5 @@
 加权拥塞新增[两权类别双排序混合势](current/weighted_congestion/weight_bands/two_weight_order_blend.md)：不限制两类人数或权比的平方根次数存在界，附独立攻击与两份精确审计；全类多权问题仍开放。
 
 全类非势接口的两个准确边界：[择证平稳与循环支撑](current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)区分概率dual与全改善终止；[有向分叉强迫割均衡](current/weighted_congestion/directed_fanout_forcing_cut.md)排除唯一源、私有双人侧资源在UF下越过T_d的放大。二者均未完成全类判定。
+
+[循环窗口复制的真实近d改善环](current/weighted_congestion/cyclic_clone_improvement_cycles.md)将旧可分势障碍提升为任意全局全边下降势障碍，仍有全空精确PNE。[共同幂混合最小点障碍](current/weighted_congestion/common_power_mixture_obstruction.md)另直接排除指定连续目标族的全部最小点。全类存在性仍OPEN；下一步须选择改善步或构造超出这些目标族的全局选态，不能把循环当无均衡。

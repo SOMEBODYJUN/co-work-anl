@@ -40,6 +40,8 @@
 
 [两权类别双排序混合势](research/current/weighted_congestion/weight_bands/two_weight_order_blend.md)给全局两权、任意人数与权比的(1+√(4d−3))/2-PNE。它以互补精确边际绕过两权尾部参数无界，任意多权的全类桥仍开放。
 
+[循环窗口复制的真实近d改善环](research/current/weighted_congestion/cyclic_clone_improvement_cycles.md)将旧可分势障碍提升为任意全局全边下降势障碍，仍有全空精确PNE。[共同幂混合最小点障碍](research/current/weighted_congestion/common_power_mixture_obstruction.md)另直接排除指定连续目标族的全部最小点。全类存在性仍OPEN；下一步须选择改善步或构造超出这些目标族的全局选态，不能把循环当无均衡。
+
 ## Refuted / Failed / Open Problems / Next Actions
 
 [失败路线入口](FAILED_ROUTES.md)记录失败的具体断言、反例范围和回收工具。下一步从当前 proof obligation 出发选方法；已有路线是搜索种子，不是方法白名单。有启发的未完成 idea、卡点、类比和合作问题可自由在公屏研讨，注明不确定性即可；整理入库和重要 claim 升级仍分别执行原有规范。

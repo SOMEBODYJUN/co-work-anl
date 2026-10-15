@@ -3244,6 +3244,74 @@
       ],
       "source_role": "Prior WC repository provenance and baseline-recovery pointer only. This authored theorem is not copied or derived from that archive; its complete direct proof and creation provenance are in the current account and review.",
       "limit": "No arbitrary-weight class bound, polynomial-time termination, sharpness or priority assertion."
+    },
+    {
+      "id": "cyclic-clone-improvement-cycles",
+      "claims": [
+        "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed",
+      "applies_when": [
+        "对每个d≥2、每个1≤α<ρ_d=sup_t>0[(d+1)(1+t)^d+t^(d+1)]/[d+(1+t)^(d+1)]，存在正有理权、全部资源费用x^d、人人策略族2^E的有限MODEL游戏，真实偏离图含严格α改善环，同时全空是精确PNE。ρ_d/d→1，故任何全局实值函数（含非可分）不能在该游戏全部严格α改善边下降。"
+      ],
+      "produces": "循环窗口复制实现近线性倍率的真实改善环",
+      "implementation": [],
+      "proof": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md"
+      ],
+      "reviews": [
+        "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md"
+      ],
+      "tests": [
+        "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py"
+      ],
+      "records": [
+        "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json"
+      ],
+      "examples": [],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/weighted_congestion/branch_sources.md"
+      ],
+      "source_role": "Prior WC baseline-recovery provenance only. This authored proof is not copied from that archive; the exact statement, direct proof, and creation provenance are in its current account and review.",
+      "limit": "Only all-improvement termination and global strict ordinal potentials are obstructed; no PNE-nonexistence, chosen-step or minimizer-selection obstruction."
+    },
+    {
+      "id": "common-power-mixture-minimizer",
+      "claims": [
+        "WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed",
+      "applies_when": [
+        "对每个d≥32，存在四玩家四资源、正有理权/系数、纯d次费用且有精确PNE的有限游戏，使任意非零非负Borel测度μ（全部状态目标有限）给出的Pμ(s)=Σ_e a_e∫_(p>0)x_e(s)^p dμ(p)每个全局最小点都非α-PNE，对全部1≤α<d/16成立；μ可依完整游戏。"
+      ],
+      "produces": "共同幂混合全局最小点的线性障碍",
+      "implementation": [],
+      "proof": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md"
+      ],
+      "reviews": [
+        "research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md"
+      ],
+      "tests": [
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py",
+        "tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py"
+      ],
+      "records": [
+        "evidence/runs/weighted_congestion/common_power_mixture/author.json",
+        "evidence/runs/weighted_congestion/common_power_mixture/independent.json"
+      ],
+      "examples": [],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/weighted_congestion/branch_sources.md"
+      ],
+      "source_role": "Prior WC baseline-recovery provenance only. This authored proof is not copied from that archive; the exact statement, direct proof, and creation provenance are in its current account and review.",
+      "limit": "Does not cover per-resource normalization, elimination of fixed-background players followed by a new coefficient rule, arbitrary separable objectives, nonseparable objectives or PNE nonexistence."
     }
   ]
 }

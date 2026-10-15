@@ -4784,6 +4784,84 @@
         "evidence/runs/weighted_congestion/weight_types/independent_order_blend.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "循环窗口复制实现近线性倍率的真实改善环的构造参数",
+      "detail": "循环类窗口、互补资源对、双同序翻转及加入guard后的有限gain锥；每名light的rank完整枚举而非期望。",
+      "refs": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "循环窗口复制实现近线性倍率的真实改善环",
+      "detail": "对每个d≥2、每个1≤α<ρ_d=sup_t>0[(d+1)(1+t)^d+t^(d+1)]/[d+(1+t)^(d+1)]，存在正有理权、全部资源费用x^d、人人策略族2^E的有限MODEL游戏，真实偏离图含严格α改善环，同时全空是精确PNE。ρ_d/d→1，故任何全局实值函数（含非可分）不能在该游戏全部严格α改善边下降。",
+      "refs": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "循环窗口复制实现近线性倍率的真实改善环的独立精确核验",
+      "detail": "有限Fraction实现和明确有理参数，仅检查所列编码与边界，不代替实参数证明。",
+      "refs": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "共同幂混合全局最小点的线性障碍的构造参数",
+      "detail": "同一实例的两独立移动者及固定背景；保留原a_e、全部资源共同非负μ，p>0时0^p=0。",
+      "refs": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "共同幂混合全局最小点的线性障碍",
+      "detail": "对每个d≥32，存在四玩家四资源、正有理权/系数、纯d次费用且有精确PNE的有限游戏，使任意非零非负Borel测度μ（全部状态目标有限）给出的Pμ(s)=Σ_e a_e∫_(p>0)x_e(s)^p dμ(p)每个全局最小点都非α-PNE，对全部1≤α<d/16成立；μ可依完整游戏。",
+      "refs": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "共同幂混合全局最小点的线性障碍的独立精确核验",
+      "detail": "有限Fraction实现和明确有理参数，仅检查所列编码与边界，不代替实参数证明。",
+      "refs": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md",
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py",
+        "tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py",
+        "evidence/runs/weighted_congestion/common_power_mixture/author.json",
+        "evidence/runs/weighted_congestion/common_power_mixture/independent.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -11579,6 +11657,78 @@
         "tests/audits/weighted_congestion/weight_types/independent_order_blend.py",
         "evidence/runs/weighted_congestion/weight_types/order_blend.json",
         "evidence/runs/weighted_congestion/weight_types/independent_order_blend.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-R1-MULTIPLIER-BARRIER",
+        "WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1",
+        "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1-DEFINITION"
+      ],
+      "conclusion": "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1",
+      "statement": "循环窗口的逐人秩均匀化、非负dual零坐标连接、严格锥替代；全部共同前提在此列明。",
+      "refs": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1-AUDIT"
+      ],
+      "conclusion": "WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1",
+      "statement": "有限核验只检查实现、证书和所列边界，不证明一般结论。",
+      "refs": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1-DEFINITION"
+      ],
+      "conclusion": "WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1",
+      "statement": "两构件目标差的同一正系数逐实幂严格分离并积分；全部共同前提在此列明。",
+      "refs": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1-AUDIT"
+      ],
+      "conclusion": "WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1",
+      "statement": "有限核验只检查实现、证书和所列边界，不证明一般结论。",
+      "refs": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md",
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py",
+        "tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py",
+        "evidence/runs/weighted_congestion/common_power_mixture/author.json",
+        "evidence/runs/weighted_congestion/common_power_mixture/independent.json"
       ],
       "status": "finite exact audit"
     }

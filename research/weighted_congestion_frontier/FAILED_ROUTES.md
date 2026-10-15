@@ -29,3 +29,9 @@
 ## 有向分叉的统一强迫放大
 
 把一个light复制出多条私有双人side以影响多个hub，仍共同占用其唯一main强迫预算。[割均衡定理](../current/weighted_congestion/directed_fanout_forcing_cut.md)在弱UF及α≥T_d用加权割平衡入反馈，给全anti真实PNE，所以此准确拓扑和假设内无法放大非存在。失败是结构上已有均衡，不是浮点搜索失败；异权、异形side、并行和selfloop均被覆盖。可回收工具是预算不等式与正部割；UF失败、同一side含多hub、action-asymmetric副本或多主源改变承重条件时才值得重试。它不排除这些类外机制，更不证明全类上界。
+
+## 全部改善终止与共同幂混合选态的两种真实失败
+
+[循环窗口复制](../current/weighted_congestion/cyclic_clone_improvement_cycles.md)先补连接测试、重新求有限gain锥，再以逐人圆周秩实现真实近d环，故旧局部循环实现义务已闭合：任意全局函数也不能对全部严格α改善下降（α<ρ_d）。这是方法失败而非无均衡，因为全空精确PNE保留。可回收循环lift与连接guard；只选部分改善步、非循环地选全局最小点仍可重试。
+
+[共同幂混合](../current/weighted_congestion/common_power_mixture_obstruction.md)在一个四玩家游戏中用同一严格正分离击败全部非负μ，而非把逐单幂坏例交换量词。失败精确限于保留原a_e、资源共同μ的目标族；固定背景消去后的新规则、资源分别归一化或集合型目标尚未排除。回收点态分离再积分的全局最小点攻击工具。

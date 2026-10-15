@@ -368,6 +368,18 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | WC-TWO-WEIGHT-ORDER-BLEND-v1 | 对每个d≥2及MODEL有限游戏，若所有玩家权重属于固定{a,b}、a≥b>0，则双排序混合势的每个单方局部最小点为A_d=(1+√(4d−3))/2-PNE，任意严格A_d改善终止；各类人数、权比、拓扑和系数任意。d≤1或仅一权时有精确PNE。不是任意权重全类上界。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[完整正文](weighted_congestion/weight_bands/two_weight_order_blend.md)、[独立攻击](../reviews/weighted_congestion/weight_types/two_weight_order_blend_review.md)。 |
 
+## 循环窗口复制实现近线性倍率的真实改善环
+
+| ID | 精确范围与结论 | 正文与实际状态 |
+| --- | --- | --- |
+| WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1 | 对每个d≥2、每个1≤α<ρ_d=sup_t>0[(d+1)(1+t)^d+t^(d+1)]/[d+(1+t)^(d+1)]，存在正有理权、全部资源费用x^d、人人策略族2^E的有限MODEL游戏，真实偏离图含严格α改善环，同时全空是精确PNE。ρ_d/d→1，故任何全局实值函数（含非可分）不能在该游戏全部严格α改善边下降。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/cyclic_clone_improvement_cycles.md)、[审查](../reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md)；Only all-improvement termination and global strict ordinal potentials are obstructed; no PNE-nonexistence, chosen-step or minimizer-selection obstruction. |
+
+## 共同幂混合全局最小点的线性障碍
+
+| ID | 精确范围与结论 | 正文与实际状态 |
+| --- | --- | --- |
+| WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1 | 对每个d≥32，存在四玩家四资源、正有理权/系数、纯d次费用且有精确PNE的有限游戏，使任意非零非负Borel测度μ（全部状态目标有限）给出的Pμ(s)=Σ_e a_e∫_(p>0)x_e(s)^p dμ(p)每个全局最小点都非α-PNE，对全部1≤α<d/16成立；μ可依完整游戏。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/common_power_mixture_obstruction.md)、[审查](../reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md)；Does not cover per-resource normalization, elimination of fixed-background players followed by a new coefficient rule, arbitrary separable objectives, nonseparable objectives or PNE nonexistence. |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

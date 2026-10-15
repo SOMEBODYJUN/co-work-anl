@@ -3369,6 +3369,232 @@
         "tests/audits/weighted_congestion/weight_types/independent_order_blend.py",
         "evidence/runs/weighted_congestion/weight_types/order_blend.json"
       ]
+    },
+    {
+      "path": "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+      "title": "循环窗口复制实现近线性倍率的真实改善环",
+      "purpose": "引用近d全局序势障碍时读取：从有限路径gain、连接guard到真实逐人闭环完整推导，并明确全空精确均衡仍存在。",
+      "topic": "weighted_congestion",
+      "role": "account",
+      "package": "循环窗口复制与真实改善环",
+      "related_paths": [
+        "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md",
+      "title": "循环窗口复制实现近线性倍率的真实改善环：独立重构与冻结攻击",
+      "purpose": "核查循环实现前读取：绑定冻结hash，记录先重构瓶颈再攻击wrap、逐人秩、非负dual及有理化，不把循环当非存在。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "循环窗口复制与真实改善环",
+      "related_paths": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+      "title": "循环窗口复制实现近线性倍率的真实改善环：verify lift精确核验",
+      "purpose": "从实际两套资源子集逐步重算负载，核对单测试窗口秩和两轮闭合；覆盖K=N及两方向，默认stdout。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "循环窗口复制与真实改善环",
+      "related_paths": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+      "title": "循环窗口复制实现近线性倍率的真实改善环：verify cycle certificate精确核验",
+      "purpose": "直接复算有理四类400玩家800资源800步证书的每次严格改善，不依赖浮点LP；保存参数和轨迹成本hash。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "循环窗口复制与真实改善环",
+      "related_paths": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py",
+      "title": "循环窗口复制实现近线性倍率的真实改善环：independent lift精确核验",
+      "purpose": "独立原始策略实现单测试和随机多测试叠加，逐次全重算，检查无保留、反方向、跨wrap及zero系数。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "循环窗口复制与真实改善环",
+      "related_paths": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+      "title": "循环窗口复制实现近线性倍率的真实改善环：lift冻结结果",
+      "purpose": "作者单测试Fraction审计的冻结参数、源码hash与运行结果；不是一般循环定理的证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "循环窗口复制与真实改善环",
+      "related_paths": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json",
+      "title": "循环窗口复制实现近线性倍率的真实改善环：cycle certificate冻结结果",
+      "purpose": "明确有限严格循环的实际有理输入/系数、各类margin、所有步骤成本轨迹hash及核验范围。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "循环窗口复制与真实改善环",
+      "related_paths": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json",
+      "title": "循环窗口复制实现近线性倍率的真实改善环：independent lift冻结结果",
+      "purpose": "独立全重算的冻结范围、seed、源码hash与51162次实际翻转；不升级全类PNE目标。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "循环窗口复制与真实改善环",
+      "related_paths": [
+        "research/current/weighted_congestion/cyclic_clone_improvement_cycles.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_lift.py",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_lift.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/lift.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json"
+      ]
+    },
+    {
+      "path": "research/current/weighted_congestion/common_power_mixture_obstruction.md",
+      "title": "共同幂混合全局最小点的线性障碍",
+      "purpose": "优化积分势/费用幂混合前读取：一个四玩家实例同时击败所有共同非负实幂混合的全部全局最小点，含连续测度及平局。",
+      "topic": "weighted_congestion",
+      "role": "account",
+      "package": "共同幂混合最小点障碍",
+      "related_paths": [
+        "research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md",
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py",
+        "tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py",
+        "evidence/runs/weighted_congestion/common_power_mixture/author.json",
+        "evidence/runs/weighted_congestion/common_power_mixture/independent.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md",
+      "title": "共同幂混合全局最小点的线性障碍：独立重构与冻结攻击",
+      "purpose": "引用障碍前核对：先重构混合参数锥再逐区间攻击，检查可积、p趋零/无穷和固定原系数量词，不泛化任意选态。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "共同幂混合最小点障碍",
+      "related_paths": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md",
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py",
+        "tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py",
+        "evidence/runs/weighted_congestion/common_power_mixture/author.json",
+        "evidence/runs/weighted_congestion/common_power_mixture/independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py",
+      "title": "共同幂混合全局最小点的线性障碍：verify common power mixture精确核验",
+      "purpose": "用Fraction检查显式参数与整数幂、两类精确平局混合；实指数和连续测度由一般证明承担，默认stdout。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "共同幂混合最小点障碍",
+      "related_paths": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md",
+        "tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py",
+        "evidence/runs/weighted_congestion/common_power_mixture/author.json",
+        "evidence/runs/weighted_congestion/common_power_mixture/independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py",
+      "title": "共同幂混合全局最小点的线性障碍：independent common power mixture精确核验",
+      "purpose": "独立检查481组次数参数、原始四资源状态和正混合；源码绑定规范正文hash，不调用作者差函数。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "共同幂混合最小点障碍",
+      "related_paths": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md",
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py",
+        "evidence/runs/weighted_congestion/common_power_mixture/author.json",
+        "evidence/runs/weighted_congestion/common_power_mixture/independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/common_power_mixture/author.json",
+      "title": "共同幂混合全局最小点的线性障碍：author冻结结果",
+      "purpose": "作者参数、整数幂与精确平局混合的冻结结果和源码hash；不作为连续实幂的计算证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "共同幂混合最小点障碍",
+      "related_paths": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md",
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py",
+        "tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py",
+        "evidence/runs/weighted_congestion/common_power_mixture/independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/common_power_mixture/independent.json",
+      "title": "共同幂混合全局最小点的线性障碍：independent冻结结果",
+      "purpose": "独立源hash、运行命令、次数范围和真实状态/混合覆盖；与逐区间一般审查配套读取。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "共同幂混合最小点障碍",
+      "related_paths": [
+        "research/current/weighted_congestion/common_power_mixture_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md",
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py",
+        "tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py",
+        "evidence/runs/weighted_congestion/common_power_mixture/author.json"
+      ]
     }
   ]
 }
