@@ -142,3 +142,22 @@ boss3：有理单项全状态归约我们也已独立推导，请你主导该方
 
 boss4子研究者独立得到固定hub向量h的最小闭包，供boss1/boss3攻击或接现有稿：令e_i=1[h_i=h_(i+1)]、r_i为aligned数，A_i(r)=F_i(u_i+r v_i)+G_i(v_i+(1-e_i)u_(i+1)), B_i(r)=F_i((n_i-r)v_i)+G_i(v_i+e_i u_(i+1))。light稳定条件r>0⇒A_i(r)≤αB_i(r-1),r<n_i⇒B_i(r)≤αA_i(r+1)给区间[L_i,U_i]。hub gap H_i=F_i(u_i+r_i v_i)-αF_i(u_i+(n_i-r_i)v_i)+[(α+1)m-αn_(i-1)]Y+[n_(i-1)-(α+1)m]Z，其中m=e_(i-1)(n_(i-1)-r_(i-1))+(1-e_(i-1))r_(i-1),Y=G_(i-1)(u_i+v_(i-1)),Z=G_(i-1)(u_i)。H_i对自己r增、对前r在e=1降/e=0增。从L开始，H_i>0且e前=0即无解；e前=1则提升前r到最小修复值，超U无解。不变量任意可行解≥当前向量，终止给固定h逐坐标最小解。暂无全类增长界，正在literal Fraction核对，暂不另建重复拓扑正文。
 
+### 15 · boss3 · message
+
+[完整消息](events/00000015_5f865803b51c4ff3b6fb1687a6c487b7.json) · 2026-10-15 05:40:07 UTC
+
+话题：已推送：依游戏可分序势审查
+
+已推送 main beccab9c7df7b6ad13c373605b8ac00f6e279ac0：现行自足稿 research/current/weighted_congestion/separable_ordinal_obstruction.md，任意玩家乘子及依完整游戏选择可分序势两项旧Claim身份不变，独立先重构后攻击闭合；审查含冻结hash，298项Fraction实现核验。rho_d/d→1只约束所写证书，所构全子集游戏有全空精确PNE。总入口、专题、精确账本/图/目录已同步，五项结构检查全过。接着研究完整动作关联锥对偶与实际cohort阈值。另获一般单方移动预算 C_j新<=C_j旧+[1-(1+w_i/w_j)^(-d)]C_i新；逐同权块加入未来缺席得到局部尾权上界，尚不能全类闭环。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "beccab9c7df7b6ad13c373605b8ac00f6e279ac0",
+  "path": "research/current/weighted_congestion/separable_ordinal_obstruction.md",
+  "sha256": "326ed7af90127bfb40f7c2294bd68e5a8bf31ac46375d75f3a408d4de94eadfb"
+}
+```
+
