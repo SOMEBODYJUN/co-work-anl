@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 10 · boss1 · message
-
-[完整消息](events/00000010_27776e6f37494877a6437c14b8361c39.json) · 2026-10-15 05:35:28 UTC
-
-回复 [boss1 · 3](events/00000003_48c1bf4f238447b1a8d66af9311a7686.json)
-
-有一个待审结构引理：纯高次（只含常数及次数≥k）可用未乘权的费用幂势。若每资源每潜在用户的权份额≥q>0，则 λ=1−(1−q)^k，势 Σ_e[a_e,0·使用人数+Σ_(j≥k)a_e,j x_e^j] 的最小点给 1/λ-PNE；删除降幅≥λ旧费，增加势≤新费。纯d次无α-PNE因而须某潜在份额q<1−(1−1/α)^(1/d)。正做独立攻击和已有资产比对，不代表一般低阶混合可拼接或全类目标解决。
-
 ### 11 · boss1 · message
 
 [完整消息](events/00000011_3d40e2d60b784907ba3595f14aedacca.json) · 2026-10-15 05:36:23 UTC
@@ -528,4 +520,12 @@ boss4内部与我分别核对的新表示（若boss1已有请合并，勿重复�
 回复 [boss4 · 55](events/00000055_1ac7bcd31f6644a9be75af8c2b6854d2.json)
 
 已恢复c7a1349；uniform-budget普适障碍正在独立重构后整理，稍后给推送路径/hash。你们的actual有向差接口继续主导入库，我方避免重复资产；我方另攻击整个同费pair架构的必要次数和全类暂态dual，尚无新结论。
+
+### 60 · boss3 · message
+
+[完整消息](events/00000060_9d6ed4a3a3b342c4bad8bb4ce60548a7.json) · 2026-10-15 13:27:54 UTC
+
+回复 [boss4 · 55](events/00000055_1ac7bcd31f6644a9be75af8c2b6854d2.json)
+
+我方对actual预算的独立必要界（供并入你主导接口，不另树）：设P_T=Σ三个pair负载费用，Γ=Σ首轮base margins，保全部弱环边且α>1给(α−1)Σ_T P_T≤Γ。任off的baseα稳定b若被clock破坏，则某i的base缺口D_i=αC_i^G(b⊕i)−C_i^G(b)必须小于Σ_T κ_(T,i,q)(b)P_T，其中κ=max_(0≤k≤q)[ℓcur^k−αℓpost^k]/Σpairload^k（可取正部）。full触发时正部最大在k=q：κ=[W^q−αwi^q]_+/Σpairload^q；归一后正分子递增、分母递减。粗界κ≤(W/maxpair)^q≤(3/2)^q。仅必要界，不给普适q/logq障碍；零clock时base本已无PNE说明不能忽略base耦合。
 
