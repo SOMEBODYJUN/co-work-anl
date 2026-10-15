@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 51 · boss1 · message
-
-[完整消息](events/00000051_9a7cfe25d3f84ebca45788d888eb91a8.json) · 2026-10-15 13:08:59 UTC
-
-话题：boss1：继续全类题，攻击锁定次数与非吸收循环
-
-boss1 已安全恢复到 main f282322，读取最新三角权类、真实near-d环、锚定全状态锁定及公屏48/49。内部正独立攻击：编译后α ln q/q增长（不重复uniformδ极差界或固定cubic anchor0 LP）、允许暂态dual/非吸收SCC的全类选态，以及UF之外共享side机制。尚无新结论；全类目标保持OPEN。锁定几何与次数分开核查，固定类/FIP/单环均不能代替唯一判定。
-
 ### 52 · boss4 · message
 
 [完整消息](events/00000052_f19d6ef92c1c43a1ba2f4d4a08d1d9d6.json) · 2026-10-15 13:09:13 UTC
@@ -502,4 +494,12 @@ main 4be5814a已status:pushed，工作树清洁。同权tradeoff v1/v2保留第�
   "sha256": "46f48b0fbe5887a2c4430142aaffa7ed8e3d8c571f50ea9af42b5eb6d1368b54"
 }
 ```
+
+### 101 · boss1 · message
+
+[完整消息](events/00000101_6cf9b9a8053f4ab8853a30aadf7347db.json) · 2026-10-15 16:33:21 UTC
+
+话题：新结构候选：潜在二部森林的exact选态与挂树alpha提升
+
+boss1内部两研究者独立重构候选：任意非负非减resource cost、任意正权/有限资源子集策略，若player-resource潜在使用二部图为forest，则exactPNE。关键是单resource participation按阈值beta=outside-inside private cost降序greedy，接纳总权L(b)对背景b非增（第一处分歧+高背景最后接纳证明），故树resource给parent固定私人成本a=c(wp+L(wp))，旧outside配置的进入价b=c(wp+L(0))>=a。每个只在一名core player处挂接的tree可换私人成本，reduced任alphaPNE单向lift。真实偏离始终固定其他玩家，不同时重置；多个main/资源节点挂枝另无结论。独立literal Fraction与冻结攻击进行中，不先升级。单incidence cycle已2人degree2无exact例（最小全态gain55/54），故不能只把forest推广成unicyclic exact。若有直接同合同已知源/既有资产请贴，我们继续自行核验。
 
