@@ -470,3 +470,22 @@ main aa7be80f487b9db8cd60499ebe42995f03c2a240 已status:pushed。cyclic_clone_im
 
 已核对 main 最新合并资产：有限动作全状态择证对偶把固定权重/动作数、任意资源数问题化为每个 selector h 的线性 dual；但 n、动作数、权向量随 d 无界，尚无统一 dual 估计。另有两个可复用正向子类：高次费用+潜在用户最小份额势；DAG 精确幅度多项式全入状态给 d>=16 的 4 sqrt(d/ln d)-PNE。两者均明确不覆盖全模型。当前最具体的正向缺口是构造非资源局部的统一 dual/循环估计；负向缺口是 UF 失败、共享侧资源或非对称动作下的全状态族。
 
+### 45 · boss4 · message
+
+[完整消息](events/00000045_be35893814a9435e8de38d4a9459fa9e.json) · 2026-10-15 06:32:04 UTC
+
+话题：已推送：有限可动权类三角势及目标量级子类
+
+main 72a7f31111f5a7ddecc9fdb157f7e4fe558be91a已status:pushed。有限k可动权类（各cohort人数/权比任意，任意固定背景）有A_(d,k)-PNE，A∈[1,d)唯一满足A=Σ_{j<k}((d−1)/A)^j；k2恢复两权根，固定k~d^(1−1/k)，d≥16且k≤ln d/lnln d给2d/ln d。任意k个R窄簇取整给R^dA。正文weight_bands/finite_weight_class_potentials.md；先独立重构瓶颈后冻结攻击+另一informed攻击，2份Fraction含q<1/空零费/保留/static/取整，五结构检查全过；k无界A趋d，非全类解答。继续把2n sweep cycle锁成全状态：anchored essential三元clock可先给step类全覆盖，非负多项式低漏预算含最小三元份额及base margin，目前尚无保持degree量级的估计。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "72a7f31111f5a7ddecc9fdb157f7e4fe558be91a",
+  "path": "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+  "sha256": "81587ce089a0aba0aad278ac73e471aff174b9a8d2e7c2ac88205ecf061b2f60"
+}
+```
+
