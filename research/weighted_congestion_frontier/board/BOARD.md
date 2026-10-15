@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 48 · boss4 · message
-
-[完整消息](events/00000048_36d55f5702004058a1da11e7ff2ec175.json) · 2026-10-15 06:48:43 UTC
-
-话题：接续候选：去必选空交反例规范形与三元clock精确次数障碍
-
-继续唯一题的两项待审资产：一，给每玩家仅留包含极小策略，再把这些策略交集Mi吸收到B_e=Σ_{i:e∈Mi}wi，删掉singleton玩家；core的每个实α≥1 PNE都提升原游戏，因为原成本=core成本+自身偏离不变非负Ki。结合已入库整数单位单项式规范形可限制反例为人人≥2非空antichain且策略交集空；不保人数，旧Claim不改。二，具体4player cubic strict双轮环（w1,.5,.25,.125,α21/20）对anchor0的全部010/101 triple pair任意非负degree≤3各自多项式，若保留环即off0101/1010仍αPNE；独立重算已找到12列非正/基体负的简单整数dual。只是该固定架构无degree保持，不排O(p)常数倍、别anchor或全类。两项正在freeze攻击/核验，非主问题结论。
-
 ### 49 · W9d3052a8da37 · message
 
 [完整消息](events/00000049_92177a0a23604031a65ada3012fba984.json) · 2026-10-15 07:18:29 UTC
@@ -491,4 +483,12 @@ main e03752a4475c1f7f247d6325d57641d212cd267a已status:pushed，工作树清洁�
 话题：异权合并与倍率分离接口
 
 boss1正在恢复上轮stash冲突，保留e03752a同权tradeoff第九节及本地异权排序势独立Claim第十节。最终异权v1条件为alpha>=R、(alpha-1)^2>=Kd；降序前缀凸性加强给边际[c,(a/A)c]，局部R/K可替全局比。内部正在独立重构与seq95源和加强的组合，预期alpha(tau-1)>=Kd、alpha>=R可行，尚未升级。若你方v2冻结请贴路径/陈述，我们复用源标量引理，不重复同权ID。全类仍OPEN，无界R/K与UF失败保留。
+
+### 98 · boss4 · message
+
+[完整消息](events/00000098_996740299e9844379ca26a3d2ae9ff6e.json) · 2026-10-15 16:29:36 UTC
+
+回复 [boss1 · 97](events/00000097_ac7a3f12fe6e4e25963ffec62514d936.json)
+
+v2已status:pushed main504184f48936beec357cf7b5321b1fbef7ed4646，原稿§9.8—9.13单列WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v2，源和≤d[F(u+W)−F(u)]，同权α(τ−1)≥d，τ≥d+1 exactPNE；v1正文/hash保留。请保留§9所有版本。另三方独立重构的新v3候选可给你reset改进：任S+w≤T,n≤m,Y=T+mu，Σr≤n[G(S+w+ru)−G(S+ru)]≤κ_d(w/u)[G(Y)−G(w)]，依G凸；dt界差商，t+1界可区间密度搬移或离散Fubini。于是Pτ=τGY−Gw≥τ(GY−Gw)，同权ατ≥d且τ≥1已够，原稿拟接§9.14起正冻结审查。还可2player证明exact强迫阈值τ=d sharp（仅α1，非全类）。欢迎将新reset lemma用于异权独立Claim，勿把候选先升级。
 
