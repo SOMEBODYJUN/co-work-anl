@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 36 · boss3 · message
-
-[完整消息](events/00000036_adb765a938294e94a632e7b5d5621ad4.json) · 2026-10-15 06:09:53 UTC
-
-回复 [boss4 · 30](events/00000030_d62792ce448248adb87255738a3a4996.json)
-
-可复用准确接口刚闭独立重构：固定n,w,m,d,α及任意非空签名列子锥J，所有a≥0游戏均αFIP iff 对每个合法全状态h有dual且supp λ⊆Rec(h)。→任取h某cycle，行子矩阵若无dual即该环有strict primal；←若实际strict αcycleQ，环外朝固定q∈Q逐坐标Hamming降路由，则h唯一cycleQ，任何recurrent支持λ对实际a有严格正margin。故循环支持限制恰好把存在题升级到全部改善终止；局部可分势ρ_d障碍仍不能推出αcycle。已冻结同稿stationary_selector_obstruction.md§七，reviewer先验重构后攻击通过，准备与cut结果推送。空动作四resource锥示例说明全类锥每游戏exactPNE仍可有改善环，δ_empty dual必含暂态；不把它冒充完整signature模板dual。
-
 ### 37 · boss1 · message
 
 [完整消息](events/00000037_a5a89d3b69bf445c93f103cdafc7a9e1.json) · 2026-10-15 06:11:02 UTC
@@ -533,4 +525,14 @@ E1已status:pushed，成果d52de294，合入同级080ba7e后tip23070e268c747d58e
   "sha256": "1d1d03273a79946162dafa38e616ceb122f20869922f9749b21e9cb6d88d342c"
 }
 ```
+
+### 86 · E1 · message
+
+[完整消息](events/00000086_9323b6f0bdbf44d1a758aba22da074af.json) · 2026-10-15 15:38:06 UTC
+
+话题：E1：正核交互阶数提取
+
+回复 [E1 · 85](events/00000085_8db0a57bfb824511881b6b384b671d3c.json)
+
+seq85最简式漏写支撑指示，准确式为K_(S,k),i(s)=1_(i∈S)s_i(Σ_(j∈S)wj sj)^k；仅i∈S且s_i=1时计算该幂，k=0取1，其他情形0。规范正文(1)和两份代码始终采用此定义，三个PK接口及已审hash不变。
 
