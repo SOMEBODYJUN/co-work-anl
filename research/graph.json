@@ -4862,6 +4862,71 @@
         "evidence/runs/weighted_congestion/common_power_mixture/independent.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "WC-TRIANGULAR-ORDER-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "三角排序、隐式根与累计类乘子",
+      "detail": "π_r=(k,…,r+1,1,…,r)，A=Σ((d−1)/A)^j；λ_r=t^(r−1)/A，总和1，S_i累计，h_i=S_i a_i；全部资源共享同一类型排序。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "有限权类别三角排序混合势",
+      "detail": "对每个d≥2,k≥1，全MODEL中全球正权值至多k种的每个游戏有A_(d,k)-PNE，其中A∈[1,d)唯一满足A=Σ_(j=0)^(k−1)((d−1)/A)^j。三角排序混合势的每个单方局部min均是该均衡，全部严格A改善终止；任意人数、权比、费用/策略均覆盖。A≤B=(d−1)/(d^(1/k)−1)，固定k时A∼d^(1−1/k)，k≤ln d/lnln d且d≥16给2d/ln d。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "固定玩家背景的非负多项式精确吸收",
+      "detail": "对每个d≥2,k≥1，全MODEL中只有可动玩家（策略族非单元素）的权值至多k种时，即使任意固定玩家的权种类无限制，仍有A_(d,k)-PNE。c_e(B_e+x)展开仍非负系数并逐状态保持可动者成本；无可动玩家时唯一状态精确。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "窄权簇的单向取整与近似均衡提升",
+      "detail": "对每个d≥2,k≥1,R≥1，若每个可动玩家有固定标签τ使v_τ≤w_i≤Rv_τ，其中k个代表权为正，则全MODEL原游戏有R^d A_(d,k)-PNE；固定玩家无需取整且权不受限。代表可重复/缺席；R=exp(1/d)时损失e，结合类别门槛给2e d/ln d的该明确子类界。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-TRIANGULAR-CLASS-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "三角排序与背景取整的两套精确有限审计",
+      "detail": "有理exact roots及明确有理upper roots；q<1、空/零费/保留/缺类、固定背景和R^d费用夹逼。浮点log扫描只诊断。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "tests/audits/weighted_congestion/weight_types/verify_triangular_classes.py",
+        "tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py",
+        "evidence/runs/weighted_congestion/weight_types/triangular_classes.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -11729,6 +11794,111 @@
         "tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py",
         "evidence/runs/weighted_congestion/common_power_mixture/author.json",
         "evidence/runs/weighted_congestion/common_power_mixture/independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-TRIANGULAR-ORDER-DEFINITION"
+      ],
+      "conclusion": "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1",
+      "statement": "三角轻重后缀与共同乘子给核心势；固定背景用二项式展开；窄簇由逐状态单向费用夹逼只损失R^d。使用本边列明的全部前提。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-TRIANGULAR-CLASS-AUDIT"
+      ],
+      "conclusion": "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1",
+      "statement": "两份Fraction只检查所列插入边、完整游戏/偏离与背景/取整编码，不证明任意实参数定理。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "tests/audits/weighted_congestion/weight_types/verify_triangular_classes.py",
+        "tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py",
+        "evidence/runs/weighted_congestion/weight_types/triangular_classes.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1"
+      ],
+      "conclusion": "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+      "statement": "三角轻重后缀与共同乘子给核心势；固定背景用二项式展开；窄簇由逐状态单向费用夹逼只损失R^d。使用本边列明的全部前提。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-TRIANGULAR-CLASS-AUDIT"
+      ],
+      "conclusion": "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+      "statement": "两份Fraction只检查所列插入边、完整游戏/偏离与背景/取整编码，不证明任意实参数定理。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "tests/audits/weighted_congestion/weight_types/verify_triangular_classes.py",
+        "tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py",
+        "evidence/runs/weighted_congestion/weight_types/triangular_classes.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1"
+      ],
+      "conclusion": "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1",
+      "statement": "三角轻重后缀与共同乘子给核心势；固定背景用二项式展开；窄簇由逐状态单向费用夹逼只损失R^d。使用本边列明的全部前提。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-TRIANGULAR-CLASS-AUDIT"
+      ],
+      "conclusion": "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1",
+      "statement": "两份Fraction只检查所列插入边、完整游戏/偏离与背景/取整编码，不证明任意实参数定理。",
+      "refs": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md",
+        "tests/audits/weighted_congestion/weight_types/verify_triangular_classes.py",
+        "tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py",
+        "evidence/runs/weighted_congestion/weight_types/triangular_classes.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json"
       ],
       "status": "finite exact audit"
     }

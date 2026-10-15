@@ -3312,6 +3312,44 @@
       ],
       "source_role": "Prior WC baseline-recovery provenance only. This authored proof is not copied from that archive; the exact statement, direct proof, and creation provenance are in its current account and review.",
       "limit": "Does not cover per-resource normalization, elimination of fixed-background players followed by a new coefficient rule, arbitrary separable objectives, nonseparable objectives or PNE nonexistence."
+    },
+    {
+      "id": "finite-weight-class-triangular-potentials",
+      "claims": [
+        "WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1",
+        "WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1",
+        "WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed",
+      "applies_when": [
+        "对每个d≥2,k≥1，全MODEL中全球正权值至多k种的每个游戏有A_(d,k)-PNE，其中A∈[1,d)唯一满足A=Σ_(j=0)^(k−1)((d−1)/A)^j。三角排序混合势的每个单方局部min均是该均衡，全部严格A改善终止；任意人数、权比、费用/策略均覆盖。A≤B=(d−1)/(d^(1/k)−1)，固定k时A∼d^(1−1/k)，k≤ln d/lnln d且d≥16给2d/ln d。",
+        "对每个d≥2,k≥1，全MODEL中只有可动玩家（策略族非单元素）的权值至多k种时，即使任意固定玩家的权种类无限制，仍有A_(d,k)-PNE。c_e(B_e+x)展开仍非负系数并逐状态保持可动者成本；无可动玩家时唯一状态精确。",
+        "对每个d≥2,k≥1,R≥1，若每个可动玩家有固定标签τ使v_τ≤w_i≤Rv_τ，其中k个代表权为正，则全MODEL原游戏有R^d A_(d,k)-PNE；固定玩家无需取整且权不受限。代表可重复/缺席；R=exp(1/d)时损失e，结合类别门槛给2e d/ln d的该明确子类界。"
+      ],
+      "produces": "PNE and strict ordinal potential for finite mobile weight classes, exact fixed-background reduction, and narrow-cluster rounding guarantee.",
+      "implementation": [],
+      "proof": [
+        "research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md"
+      ],
+      "reviews": [
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md",
+        "research/reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md"
+      ],
+      "tests": [
+        "tests/audits/weighted_congestion/weight_types/verify_triangular_classes.py",
+        "tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py"
+      ],
+      "records": [
+        "evidence/runs/weighted_congestion/weight_types/triangular_classes.json",
+        "evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json"
+      ],
+      "examples": [],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/weighted_congestion/branch_sources.md"
+      ],
+      "source_role": "Baseline-recovery provenance only; the current direct authored theorem does not derive from archived proofs. Earlier ordering-integral literature is cited in the account.",
+      "limit": "No arbitrary-mobile-class bound: A_d,k increases to d for fixed d. No uniform running-time, sharp-threshold or global-priority claim."
     }
   ]
 }
