@@ -10,6 +10,6 @@
 | 稀疏权谱下模拟阶跃坏博弈 | [曲率](../current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md)与[密度存在界](../current/weighted_congestion/weight_density.md)限制对应保持结构的替换 | 引入稠密 cohort 或改变覆盖结构时另行研究 |
 | 同资源密集尺度固定 power 乘子拼接 | [仿射路径](../current/weighted_congestion/power_bridge.md)在固定 p<1 下无统一夹逼，另有 sharp 两类型损失 | 不是博弈无均衡；允许实例相关乘子、跨资源支付等须另证 |
 | 窄权带单独归一化 Shapley | [mixed difference/curl 与 selector 线性损失](../current/weighted_congestion/weight_bands/README.md) | 限指定势与归一化规则，不反驳全类次线性存在 |
-| 任意固定玩家乘子、universal ordinal、game-specific separable 的更广障碍 | 原稿保留在[候选区](../questions/weighted_congestion/README.md)，其中部分仍待父对话审查 | 未完成独立审查的强结论不作为已审 barrier；先核对原证明与缺失依赖 |
+| 任意固定玩家乘子及依游戏可分序势覆盖全部改善边 | [有限多尺度与固定资源束证明](../current/weighted_congestion/separable_ordinal_obstruction.md)已独立重构攻击；扭曲门槛ρ_d/d→1 | 只否定边际夹逼和全改善边可分序势；全空仍为精确均衡。非可分势、选定改善步或全局极小点接口改变时可重试；普适复制桥其他推论仍各自核对 |
 
 失败本身有价值，但不得悄悄扩大否定量词。程序失败和有限搜索无结果没有数学真值含义。

@@ -4357,6 +4357,43 @@
         "research/reviews/weighted_congestion/multicolumn_review/REVIEW.md"
       ],
       "status": "complete restricted proof; internally reviewed; unrefereed"
+    },
+    {
+      "id": "WC-R1-MULTIPLIER-BARRIER",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "任意玩家乘子的有限多尺度边际势障碍",
+      "detail": "For every d>=2 and alpha<rho_d, one finite weight vector defeats all set functions and all positive player multipliers in the all-subsets marginal sandwich.",
+      "refs": [
+        "research/current/weighted_congestion/separable_ordinal_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md"
+      ],
+      "status": "complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed"
+    },
+    {
+      "id": "WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "依完整游戏选择的资源可分序势线性障碍",
+      "detail": "For every d>=2 and alpha<rho_d, a fixed full-subset monomial game admits no resource-separable strict alpha-ordinal potential chosen after seeing the entire game; all-empty remains an exact PNE.",
+      "refs": [
+        "research/current/weighted_congestion/separable_ordinal_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md"
+      ],
+      "status": "complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed"
+    },
+    {
+      "id": "WC-SEPARABLE-BUNDLE-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "多尺度路径、有限资源束与对称化的有理审计",
+      "detail": "Direct finite power sums, strict floor bounds and nonanonymous resource averaging; exact finite checks do not prove the general theorem.",
+      "refs": [
+        "research/current/weighted_congestion/separable_ordinal_obstruction.md",
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py",
+        "evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json"
+      ],
+      "status": "executed finite exact audit"
     }
   ],
   "hyperedges": [
@@ -10552,6 +10589,69 @@
         "research/reviews/weighted_congestion/multicolumn_review/REVIEW.md"
       ],
       "status": "complete restricted proof; internally reviewed; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-R1-MULTIPLIER-BARRIER",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL"
+      ],
+      "conclusion": "WC-R1-MULTIPLIER-BARRIER",
+      "statement": "Equal-weight class averaging plus same-endpoint paths, finite Riemann separation and a finite scale chain exclude every fixed player multiplier sandwich.",
+      "refs": [
+        "research/current/weighted_congestion/separable_ordinal_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md"
+      ],
+      "status": "complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-R1-MULTIPLIER-BARRIER",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SEPARABLE-BUNDLE-AUDIT"
+      ],
+      "conclusion": "WC-R1-MULTIPLIER-BARRIER",
+      "statement": "The exact finite audit checks implementation and boundary arithmetic; the general proof is separate.",
+      "refs": [
+        "research/current/weighted_congestion/separable_ordinal_obstruction.md",
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py",
+        "evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json"
+      ],
+      "status": "finite exact checks passed"
+    },
+    {
+      "id": "DERIVE-WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-R1-MULTIPLIER-BARRIER"
+      ],
+      "conclusion": "WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER",
+      "statement": "A resource count fixed before the potential and averaging actual automorphisms force a forbidden R-sandwich in one finite game.",
+      "refs": [
+        "research/current/weighted_congestion/separable_ordinal_obstruction.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md"
+      ],
+      "status": "complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SEPARABLE-BUNDLE-AUDIT"
+      ],
+      "conclusion": "WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER",
+      "statement": "The exact finite audit checks implementation and boundary arithmetic; the general proof is separate.",
+      "refs": [
+        "research/current/weighted_congestion/separable_ordinal_obstruction.md",
+        "tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py",
+        "evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json"
+      ],
+      "status": "finite exact checks passed"
     }
   ]
 }

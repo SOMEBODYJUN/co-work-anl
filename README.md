@@ -24,7 +24,7 @@
 
 ## Claim Map / Dependency Graph
 
-加权拥塞的核心链为：资源策略与真实偏离成本 → 奇环全状态证书 → 正系数闭环 → 有限有理构造 → T_d 下界。局部证书包络只限制该方法，不是全类存在上界。
+加权拥塞的核心链为：资源策略与真实偏离成本 → 奇环全状态证书 → 正系数闭环 → 有限有理构造 → T_d 下界。局部证书包络只限制该方法，不是全类存在上界。[任意乘子与依游戏可分序势障碍](research/current/weighted_congestion/separable_ordinal_obstruction.md)已作完整重构及独立攻击，只否定所写全改善边证书；全局选态仍开放。
 
 其他模型的定义、引理、反例和算法关系以及加权拥塞已登记结果统一放在[数学超图](research/index.html)及[结构化图](research/graph.json)。`derives` 列全体共同前提；实验只用 `checks`，失败与限制分别登记。图是导航，真值以精确陈述及证明为准。
 

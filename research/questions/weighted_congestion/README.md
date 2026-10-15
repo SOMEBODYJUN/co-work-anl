@@ -15,9 +15,9 @@
 | 候选成果名称 | 主稿与具体内容 | 尚需核查的义务与使用边界 |
 | --- | --- | --- |
 | 权重校准边际势的线性障碍 | [完整候选稿](marginal_potentials/fixed_marginal_potential_obstruction.md) | 单资源全部子集、固定权重校准夹逼；原稿保留 parent review pending，不能当全游戏非存在 |
-| 任意玩家乘子的有限多尺度障碍 | [推广候选](marginal_potentials/arbitrary_multipliers.md) | 允许乘子依赖整个权向量；精确有限证书不代替一般证明的独立攻击 |
+| 任意玩家乘子的有限多尺度障碍 | [原推广推导](marginal_potentials/arbitrary_multipliers.md)、[已审现行重构](../../current/weighted_congestion/separable_ordinal_obstruction.md) | 本项独立攻击已闭合；只排除全部子集上的固定乘子夹逼，不是均衡非存在 |
 | 普适资源可加序势的局部夹逼桥 | [复制规则推导](ordinal_potentials/universal_additive_ordinal_bridge.md) | 规则不能依赖策略族、其他资源和游戏规模；需保持这些量词才能调用 |
-| 依游戏选择的资源可分序势障碍 | [候选证明](ordinal_potentials/game_specific_separable_ordinal_barrier.md) | 游戏自身有精确均衡，否定的是资源可分势证书；对照[内部审查记录](../../reviews/weighted_congestion/ordinal_potentials/REVIEW.md)逐项核范围 |
+| 依游戏选择的资源可分序势障碍 | [原证明](ordinal_potentials/game_specific_separable_ordinal_barrier.md)、[已审现行重构](../../current/weighted_congestion/separable_ordinal_obstruction.md) | 独立攻击已核对先固定游戏再量化任意势；游戏有精确均衡，仅否定全部改善边可分序势 |
 | 玩家成本幂和的坏全局最小点 | [完整有限族推导](ordinal_potentials/power_of_total_cost_obstruction.md) | 特定目标的选择失败，不是无均衡；程序使用真实成本与精确根式比较 |
 | 保守两攻击的多项式端点还原 | [整体候选](polynomial_endpoint/conservative_endpoint_candidate.md)、[副资源端点子命题](polynomial_endpoint/side_polynomial/Q_ENDPOINT_REDUCTION.md) | 子命题的本地复核与整体候选状态分别保留；只比较所写两条充分证书 |
 | 完整对称两列状态商与证书损失 | [轨道公式及有限比较](two_column_orbits/two_column_orbit_candidate.md) | 一般直接推导已保存，但所引独立 review 原件未找到；有限优化不证明全参数最优 |

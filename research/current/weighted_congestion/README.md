@@ -47,6 +47,7 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 | 阶跃模拟曲率与三负载凸包络 | [前缀模拟障碍](polynomial_curvature/three_load_curvature_bound.md)、[精确三点最优工具](polynomial_curvature/three_point_polynomial_envelope.md) | 排除保持源平台形状的直接模拟；改变权重、拓扑或状态覆盖须另论 |
 | 异权端点强制还原 | [单一轻权还原证明](heterogeneous_endpoint/endpoint_reduction.md) | 只作用于所写两类端点强制不等式，不是全部异权拓扑等价 |
 | 互补多列拓扑的二倍逃逸 | [存在与三列锐性证明](multicolumn/complement_column_escape.md) | 排除指定共同轻权、多列关联方式的放大；不排除全部多列构造 |
+| 任意玩家乘子与依游戏可分序势障碍 | [现行完整重构](separable_ordinal_obstruction.md)、[冻结证明独立攻击](../../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md) | 线性障碍只针对全部改善边下降的可分证书；所构游戏有全空精确均衡，不排除全局选态 |
 | 有向无环阶跃依赖辅助模型 | [路径计数与精确阈值](step_dag/step_dependency_threshold.md) | 费用为阶跃函数，属于辅助模型；迁入当前多项式类需要新证明 |
 
 这些包中的 theorem、obstruction、counterexample、review 和 evidence 是不同类型的资产。同包材料可以互相指向，但来源相同、通过有限计算或位于 current 都不自动提升数学状态。

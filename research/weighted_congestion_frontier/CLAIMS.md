@@ -448,3 +448,23 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections: more than one light per group destroys the simple defect-cycle representation; cannot promote this to arbitrary cohorts. No unresolved fatal within stated scope.
 - Status: internally proved, unrefereed. Truth: stated subclass proved; Value: actual-topology boundary and representation; Novelty: unverified; Mechanism: arc counting/reversed roles/support; Ambition: structural subcase, WC-TARGET OPEN.
 - Related Files: research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md section9; research/reviews/weighted_congestion/odd_ring_parameters/SINGLETON_NOTE.md; check_singleton_graph.py; singleton_graph_verification.json.
+
+## WC-R1-MULTIPLIER-BARRIER v1 — INTERNALLY REVIEWED METHOD OBSTRUCTION
+
+- 中文数学名称：任意玩家乘子的有限多尺度边际夹逼障碍。
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：完整身份与证明固定于[现行重构](../current/weighted_congestion/separable_ordinal_obstruction.md)“精确身份”；d≥2、1≤α<ρ_d，任意正实权，有限见证。第一项允许F,h依完整权向量；第二项允许F_e依完整游戏但要求每条严格α改善边下降，游戏所有费用x^d、策略族2^E。两项不能互换，也不能升级为无均衡。
+- Dependencies：第一项为MODEL、等权类双重平均、同端点路径、有限黎曼和分离；第二项共同依赖MODEL、第一项、先固定有限资源数和同一游戏自同构平均。
+- Evidence：冻结ec827a9原证明的独立先重构后攻击，父研究者逐式核查及新现行自足重构；Fraction有限核验另列。
+- Counterevidence / Objections：全空精确均衡始终存在；非可分势、只选部分改善、依游戏选极小点目标不在排除范围；ρ_d端点不排除。未见所述范围内fatal objection。
+- Status：complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed。Truth=所述范围内部证明；Value=方法边界与量词修补；Novelty=未认证；Mechanism=有限多尺度与资源束；Ambition=不改变WC-TARGET OPEN。
+- Related Files：[独立审查](../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md)、[核验代码](../../tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py)、[冻结结果](../../evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json)。
+
+## WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER v1 — INTERNALLY REVIEWED METHOD OBSTRUCTION
+
+- 中文数学名称：依完整游戏选择的资源可分严格序势障碍。
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：完整身份与证明固定于[现行重构](../current/weighted_congestion/separable_ordinal_obstruction.md)“精确身份”；d≥2、1≤α<ρ_d，任意正实权，有限见证。第一项允许F,h依完整权向量；第二项允许F_e依完整游戏但要求每条严格α改善边下降，游戏所有费用x^d、策略族2^E。两项不能互换，也不能升级为无均衡。
+- Dependencies：第一项为MODEL、等权类双重平均、同端点路径、有限黎曼和分离；第二项共同依赖MODEL、第一项、先固定有限资源数和同一游戏自同构平均。
+- Evidence：冻结ec827a9原证明的独立先重构后攻击，父研究者逐式核查及新现行自足重构；Fraction有限核验另列。
+- Counterevidence / Objections：全空精确均衡始终存在；非可分势、只选部分改善、依游戏选极小点目标不在排除范围；ρ_d端点不排除。未见所述范围内fatal objection。
+- Status：complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed。Truth=所述范围内部证明；Value=方法边界与量词修补；Novelty=未认证；Mechanism=有限多尺度与资源束；Ambition=不改变WC-TARGET OPEN。
+- Related Files：[独立审查](../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md)、[核验代码](../../tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py)、[冻结结果](../../evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json)。

@@ -315,6 +315,10 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-R1-DAG-STEP | Exact auxiliary step-DAG threshold | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](weighted_congestion/step_dag/step_dependency_threshold.md) |
 | WC-R1-MULTICOLUMN-2 | Balanced multicolumn escape | complete restricted proof; internally reviewed; unrefereed | [完整身份](../weighted_congestion_frontier/CLAIMS.md)；[正文](weighted_congestion/multicolumn/complement_column_escape.md) |
 
+| WC-R1-MULTIPLIER-BARRIER | 任意玩家乘子的有限多尺度边际夹逼障碍 v1 | complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed | [完整现行证明](weighted_congestion/separable_ordinal_obstruction.md)、[独立攻击](../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md)；全类目标仍开放 |
+
+| WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER | 依完整游戏选择的资源可分严格序势障碍 v1 | complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed | [完整现行证明](weighted_congestion/separable_ordinal_obstruction.md)、[独立攻击](../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md)；全类目标仍开放 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
