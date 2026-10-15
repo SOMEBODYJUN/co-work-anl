@@ -468,3 +468,15 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：全空精确均衡始终存在；非可分势、只选部分改善、依游戏选极小点目标不在排除范围；ρ_d端点不排除。未见所述范围内fatal objection。
 - Status：complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed。Truth=所述范围内部证明；Value=方法边界与量词修补；Novelty=未认证；Mechanism=有限多尺度与资源束；Ambition=不改变WC-TARGET OPEN。
 - Related Files：[独立审查](../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md)、[核验代码](../../tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py)、[冻结结果](../../evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json)。
+
+
+## WC-HIGH-DEGREE-SHARE-v1 — 高次费用与资源最小个体份额
+
+- Exact Statement / Conclusion：每个MODEL有限游戏，费用c_e=a_e0+Σ_(j≥k_e)a_ej x^j，按实际非零最低正次数k_e定义λ_e=1−(1−min_(i∈U_e)w_i/Σ_(j∈U_e)w_j)^k_e；无用户或无正次项取λ_e=1。势Σ_e[a_e0 n_e+Σ_(j≥1)a_ej x_e^j]的每个单方局部最小点是(max_e λ_e^−1)-PNE。纯d次无α-PNE必有某正次收费资源潜在用户份额严格小于1−(1−1/α)^(1/d)。固定正权向量的最低正次数趋无穷时，保证对所有有限拓扑及系数一致趋1。
+- Objects / Domain / Quantifiers / Assumptions / Definitions：任意有限非空玩家/资源、正实权、任意非空有限资源子集策略族（含空策略）、非负系数。q_e只在非空潜在用户上取；λ_e取法、势和每次真实偏离详见正文。所有近似不等式取弱边界，无0/0。
+- Scope：实例相关结构存在界；最低正次数不能换成最高次数，全类q无统一下界。固定人数但权随次数变化不在一致极限范围。
+- Dependencies：MODEL、真实负载、有限状态最小化、非负整数幂差；不导入外部存在定理。
+- Evidence：完整直接证明；先独立重构后读冻结正文攻击，绑定正文SHA256 f01084498e843db3e8491014debe02cb421b2091aeb4d12344e7d0175e14cabd；两套Fraction有限审计。
+- Counterevidence / Objections：无尚成立fatal；潜在份额只是充分界的实例参数，optional padding可使其失去判别力；必要小份额不是坏状态或改善者证书。低次混合/不同玩家乘子不能直接拼接。
+- Status：complete structural proof; internally reviewed; unrefereed。Truth：所述结构类已内部证明；Value：必要小份额与一致高次极限；Novelty：未认证；Mechanism：删去幂差及常数人数势；Ambition：全类目标仍OPEN。
+- Related Files：research/current/weighted_congestion/high_degree_share.md；research/reviews/weighted_congestion/high_degree_share_review.md；tests/audits/weighted_congestion/high_degree_share/verify.py; tests/audits/weighted_congestion/high_degree_share/check_independent.py; evidence/runs/weighted_congestion/high_degree_share/verification.json; evidence/runs/weighted_congestion/high_degree_share/independent_verification.json。

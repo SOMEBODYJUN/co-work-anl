@@ -319,6 +319,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER | 依完整游戏选择的资源可分严格序势障碍 v1 | complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed | [完整现行证明](weighted_congestion/separable_ordinal_obstruction.md)、[独立攻击](../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md)；全类目标仍开放 |
 
+
+## 高次费用与最小个体份额
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| WC-HIGH-DEGREE-SHARE-v1 | 任意MODEL有限游戏；按每资源真实最低正次数、潜在权份额定义λ_e，零/常数/无人资源取1。 | 每单方势局部min为max λ_e^−1-PNE；纯d次非存在须有严格小份额；固定正权向量、最低次数增长的保证对全部有限拓扑一致趋1。不是全类匹配界。 | [完整正文](weighted_congestion/high_degree_share.md)、[冻结独立攻击](../reviews/weighted_congestion/high_degree_share_review.md)，完整内部证明，未外审/未认证新颖性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

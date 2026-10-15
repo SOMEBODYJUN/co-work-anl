@@ -2938,6 +2938,39 @@
         "history/source/notes/weighted_congestion/branch_sources.md"
       ],
       "limit": "Only the exact certificate classes are excluded. Nonseparable potentials, selected moves and game-specific minimizer selectors remain possible. No target resolution or priority certification."
+    },
+    {
+      "id": "high-degree-share",
+      "claims": [
+        "WC-HIGH-DEGREE-SHARE-v1"
+      ],
+      "status": "complete structural proof; internally reviewed; unrefereed",
+      "applies_when": [
+        "每个MODEL有限游戏，费用c_e=a_e0+Σ_(j≥k_e)a_ej x^j，按实际非零最低正次数k_e定义λ_e=1−(1−min_(i∈U_e)w_i/Σ_(j∈U_e)w_j)^k_e；无用户或无正次项取λ_e=1。势Σ_e[a_e0 n_e+Σ_(j≥1)a_ej x_e^j]的每个单方局部最小点是(max_e λ_e^−1)-PNE。纯d次无α-PNE必有某正次收费资源潜在用户份额严格小于1−(1−1/α)^(1/d)。固定正权向量的最低正次数趋无穷时，保证对所有有限拓扑及系数一致趋1。"
+      ],
+      "produces": "Resource-specific near-exact PNE factor and necessary small-share condition for pure high-degree obstructions",
+      "implementation": [],
+      "proof": [
+        "research/current/weighted_congestion/high_degree_share.md"
+      ],
+      "candidates": [],
+      "reviews": [
+        "research/reviews/weighted_congestion/high_degree_share_review.md"
+      ],
+      "tests": [
+        "tests/audits/weighted_congestion/high_degree_share/verify.py",
+        "tests/audits/weighted_congestion/high_degree_share/check_independent.py"
+      ],
+      "records": [
+        "evidence/runs/weighted_congestion/high_degree_share/verification.json",
+        "evidence/runs/weighted_congestion/high_degree_share/independent_verification.json"
+      ],
+      "examples": [],
+      "sources": [
+        "history/source/notes/weighted_congestion/branch_sources.md"
+      ],
+      "source_role": "Existing WC baseline provenance only; the new proof is authored directly here and does not derive from an archived source.",
+      "limit": "No universal Cd/ln d bound, no novelty certification, no claim that potential-user small share is sufficient for nonexistence."
     }
   ]
 }
