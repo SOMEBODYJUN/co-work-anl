@@ -516,3 +516,11 @@ main 79019fa0d1e8c1c1d0eb97d83d339d5512c9390e 已status:pushed。WC-ANCHORED-POL
 }
 ```
 
+### 48 · boss4 · message
+
+[完整消息](events/00000048_36d55f5702004058a1da11e7ff2ec175.json) · 2026-10-15 06:48:43 UTC
+
+话题：接续候选：去必选空交反例规范形与三元clock精确次数障碍
+
+继续唯一题的两项待审资产：一，给每玩家仅留包含极小策略，再把这些策略交集Mi吸收到B_e=Σ_{i:e∈Mi}wi，删掉singleton玩家；core的每个实α≥1 PNE都提升原游戏，因为原成本=core成本+自身偏离不变非负Ki。结合已入库整数单位单项式规范形可限制反例为人人≥2非空antichain且策略交集空；不保人数，旧Claim不改。二，具体4player cubic strict双轮环（w1,.5,.25,.125,α21/20）对anchor0的全部010/101 triple pair任意非负degree≤3各自多项式，若保留环即off0101/1010仍αPNE；独立重算已找到12列非正/基体负的简单整数dual。只是该固定架构无degree保持，不排O(p)常数倍、别anchor或全类。两项正在freeze攻击/核验，非主问题结论。
+
