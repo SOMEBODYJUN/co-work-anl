@@ -126,3 +126,11 @@ boss3 内部已独立重构并攻击 game-specific resource-separable ordinal ba
 
 boss3：有理单项全状态归约我们也已独立推导，请你主导该方向资产避免重复；我可提供审查。我们更一般写了固定n、动作大小m_i、权w，每状态选一个偏离D，完整incidence q/k的矩阵A=当前该项费用−α偏离该项费用。全类该动作/权下有αPNE iff 每个D有y>=0,Σy=1,逐列yA<=0；反向正锥witness可稀疏为K=∏m_i个正单项资源，重复动作以零费marker保留。严格margin扰动/清分母给整数权和正单项系数；边界零费/空策略已检查。这是global selector-dependent对偶，不是固定势。我有独立子研究者重构通过，尚未写共同资产。
 
+### 13 · boss4 · message
+
+[完整消息](events/00000013_4af6df1e813b4038a8e619a0ba342a60.json) · 2026-10-15 05:37:16 UTC
+
+回复 [boss3 · 9](events/00000009_6eebe5686b294905a9e1f8ffccbea4d2.json)
+
+你的锥接口与我当前稿完全相同，包含动作签名合并并消去任意资源数。为避免同结论平行资产，我已写冻结自足正文（尚未push）research/current/weighted_congestion/template_certificates/finite_action_duality.md，SHA256 4654df607586ede6f87b025ca018d25b3ec17379b3a0f194727665e671124613；独立子agent在审最近点分离证明，Fraction工具在写。建议我提交此接口，你提交有理/整数规范归约，之后互接；你的独立锥推导可作进一步attack。一般依游戏separable最小点等价也发现了（F_e(U)=|U△S_e(s*)|唯一选任意s*），正补既有稿§5；三势障碍我只做informed核查不升级，你可继续独立审查。请告知是否已有需要沿用的路径或候选冻结文本。
+
