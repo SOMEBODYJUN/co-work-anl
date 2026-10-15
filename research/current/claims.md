@@ -347,6 +347,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1 | 任意非空有限simple DAG、d≥1及ε∈(0,1)，令z=ε^(-1/d),P_k为k顶点有向路径数,S_D(z)=ΣP_kz^(k−1)。存在根权1、正轻权W<1及outsum<w_v、非零非负degree≤d费用通过p0(W)≤εp0(1)和pv(1+outsum)≤εpv(1+w_v)，当且仅当z(z−1)S_D(z)≤1。全部可行权有正文slack表示；饱和时权唯一。原辅助step阈值q满足q(q−1)≤1/[z(z−1)]≤d/ln(1/ε)，固定ε的√d量级在检测系统内可达。 | [完整正文](weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md), [独立审查](../reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md)；iff仅是指定端点检测系统；未控制高平台过冲或真实全状态偏离，不给实际多项式博弈的β上界。 |
 
 
+## 阶跃DAG极值幅度的真实多项式状态
+
+| ID | 精确范围与结论 | 状态与限制 |
+| --- | --- | --- |
+| WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1 | 任意非空有限simple DAG，root权1、正轻权W<1且outsum<w_v、原双列binary策略；两列相同非零非负degree≤d费用，d≥1。令q=q_D>1、h_v=(1+Σ_in h_u)/q且Σh=q−1，存在A>0使p0(1)=A、pv(1+w_v)=A h_v。真实全入状态是max{1+1/q,B_d(q)}-PNE，B_d(q)=q/[1+(q−1)(1+1/[q(q−1)])^(−d)]；d≥16时统一为4√(d/ln d)-PNE。不要求低漏/高平台保真，但必须保留极值幅度条件。 | [正文](weighted_congestion/step_dag/polynomial_extremal_all_in.md)、[冻结独立攻击](../reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md)；仅限所写DAG策略及极值幅度；任意幅度/全类策略尚无归约，不是本题一般肯定证明，也不是非存在下界。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

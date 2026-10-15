@@ -4623,6 +4623,44 @@
         "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md"
       ],
       "status": "OPEN"
+    },
+    {
+      "id": "WC-DAG-EXTREMAL-AMPLITUDE-NORMALIZATION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "DAG双列多项式与阶跃极值幅度锚定",
+      "detail": "固定原DAG binary策略、root1、W<1、outsum<w；p0(1)=A>0,pv(1+wv)=A hv(q_D)，其余非负多项式形状任意。",
+      "refs": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md"
+      ],
+      "status": "exact restricted definition"
+    },
+    {
+      "id": "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "阶跃DAG极值幅度的多项式全入状态",
+      "detail": "任意非空有限simple DAG，root权1、正轻权W<1且outsum<w_v、原双列binary策略；两列相同非零非负degree≤d费用，d≥1。令q=q_D>1、h_v=(1+Σ_in h_u)/q且Σh=q−1，存在A>0使p0(1)=A、pv(1+w_v)=A h_v。真实全入状态是max{1+1/q,B_d(q)}-PNE，B_d(q)=q/[1+(q−1)(1+1/[q(q−1)])^(−d)]；d≥16时统一为4√(d/ln d)-PNE。不要求低漏/高平台保真，但必须保留极值幅度条件。",
+      "refs": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md"
+      ],
+      "status": "complete restricted proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-DAG-EXTREMAL-ALL-IN-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "真实多项式全入状态的两份有限精确证据",
+      "detail": "作者整数q图网格与独立seed实际资源输入；只检查实现及边界，不证明所有有限DAG。",
+      "refs": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -11207,6 +11245,56 @@
         "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md"
       ],
       "status": "restricted method boundary"
+    },
+    {
+      "id": "DERIVE-WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-R1-DAG-STEP",
+        "WC-DAG-EXTREMAL-AMPLITUDE-NORMALIZATION"
+      ],
+      "conclusion": "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
+      "statement": "共同使用真实模型、q/h定义和极值幅度；缺口加权矩由路径展开或独立双重求和控制，再经Jensen与实际偏离成本得到子类状态界。",
+      "refs": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md"
+      ],
+      "status": "complete restricted proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-DAG-EXTREMAL-ALL-IN-AUDIT"
+      ],
+      "conclusion": "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
+      "statement": "仅有限Fraction输入的真实负载和不等式核验，不能替代一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "LIMIT-WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1"
+      ],
+      "conclusion": "WC-TAIL-AND-DAG-UNIFORM-GAP",
+      "statement": "只封闭固定极值幅度(N)下多项式形状改变的实际放大；任意幅度和全类策略的桥梁仍未证明。",
+      "refs": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md"
+      ],
+      "status": "restricted actual-topology boundary"
     }
   ]
 }

@@ -36,3 +36,5 @@ R1 的线性重置实现与 R3 的同次数实现归属于共同机制，保留�
 根 README 保持稳定地图。本文件只呈现现在，过程提交留在 Git 历史。具体文件状态、来源和冻结证据分开登记，见 [仓库工作程序](research/REPOSITORY_GUIDE.md) 与 [逐文件索引](research/weighted_congestion_frontier/FILES.md)。
 
 研究读取现从[按问题分流的总目录](research/README.md)进入，各专题按证明链组织；[中文资产总目录](research/CATALOG.md)登记具体文件名、作用和状态依据。现行数学审查按模型归位，投稿旧判断从历史来源追溯，旧路线用固定 Git 版本恢复。命名与导航整理没有新增或升级数学结论。
+
+[阶跃DAG极值幅度的多项式全入状态](research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)已直接控制真实多项式成本：不要求低漏/平台保真，幅度(N)下d≥16给4√(d/ln d)状态。全类题仍OPEN；当前最具体新缺口是任意卫星幅度如何归约或怎样选择其他稳定light集合，不能只改变已锚定费用形状。
