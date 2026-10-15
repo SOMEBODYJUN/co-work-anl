@@ -592,3 +592,13 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
 - Related Files：上述正文、审查及从正文审计合同连接的code/run。
+
+## WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1 — 阶跃DAG极值幅度的多项式全入状态
+
+- Exact Statement / Conclusion：任意非空有限simple DAG，root权1、正轻权W<1且outsum<w_v、原双列binary策略；两列相同非零非负degree≤d费用，d≥1。令q=q_D>1、h_v=(1+Σ_in h_u)/q且Σh=q−1，存在A>0使p0(1)=A、pv(1+w_v)=A h_v。真实全入状态是max{1+1/q,B_d(q)}-PNE，B_d(q)=q/[1+(q−1)(1+1/[q(q−1)])^(−d)]；d≥16时统一为4√(d/ln d)-PNE。不要求低漏/高平台保真，但必须保留极值幅度条件。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：对每个上述有限DAG、合法正实权和实系数；准确资源、策略与幅度(N)见[正文](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)第1节。费用正归一化，不将任意MODEL的零费用/空策略偷换进子类。
+- Dependencies：MODEL、WC-R1-DAG-STEP的q/h及路径展开、真实负载、单项式次数界、总权缺口矩、Jensen。与端点低泄漏预算无逻辑依赖。
+- Evidence：一般直接证明；先仅由exact statement独立重构，再逐式攻击冻结hash；两份不互相导入的Fraction实际资源审计。
+- Counterevidence / Objections：仅限所写DAG策略及极值幅度；任意幅度/全类策略尚无归约，不是本题一般肯定证明，也不是非存在下界。未发现所写范围内fatal；只升内部结果，外审/新颖性未认证。
+- Status：complete restricted proof; independently reconstructed and exactly audited; unrefereed。Truth为明确状态的实际存在界；Value为极值幅度模拟边界；Novelty未认证；Mechanism为缺口矩和Jensen；Ambition保留全类题OPEN。
+- Related Files：[正文](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)、[独立审查](../reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md)；具体代码和冻结记录见正文审计合同。

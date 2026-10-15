@@ -29,3 +29,5 @@
 跨尺度结构接口：[有序权组冻结及两权级参数锐式](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)允许阶段局部势选择，但其最佳潜在尾部参数无统一界；[DAG端点低泄漏预算](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)只封闭指定检测系统，不代替全状态多项式证明。独立审查与实际代码/证据均由正文接入。
 
 [择证平稳与循环支撑边界](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)、[有向分叉统一强迫割均衡](../current/weighted_congestion/directed_fanout_forcing_cut.md)连接新的非势路线限制和下界构造限制；逐项Claim、独立审查及可复算证据均从正文/FILES进入，主目标仍OPEN。
+
+真实多项式子类的新边界：[阶跃DAG极值幅度的多项式全入状态](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)。请先核对幅度(N)再调用；它不依赖端点低漏测试，仍没有全类幅度/拓扑归约。

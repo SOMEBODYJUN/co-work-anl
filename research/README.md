@@ -28,6 +28,8 @@
 
 加权拥塞的跨尺度新接口见[有序权组冻结](current/weighted_congestion/weight_bands/ordered_tail_freezing.md)：阶段局部势可拼接密集权群，但最优潜在尾部参数固定次数仍可无界。[DAG端点低泄漏预算](current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)则精确限制指定阶跃模拟测试；二者均未闭合全类匹配上界。
 
+[阶跃DAG极值幅度的真实全入状态](current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)另在精确幅度锚定下给多项式实际状态的统一平方根界，无低泄漏假设；任意幅度和全类拓扑尚未归约。
+
 ## 名称、命题与审查怎样对应
 
 每份文件的**中文数学名称与阅读目的**在 [CATALOG.md](CATALOG.md)，人工维护源为 `catalog.json`。同一文件可以包含多个命题，各自精确身份见 [current/claims.md](current/claims.md)；拥塞另有[主题账本](weighted_congestion_frontier/CLAIMS.md)。

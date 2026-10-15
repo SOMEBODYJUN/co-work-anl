@@ -3189,6 +3189,96 @@
         "research/reviews/weighted_congestion/directed_fanout_forcing_cut_review.md",
         "tests/audits/weighted_congestion/verify_directed_fanout_forcing_cut.py"
       ]
+    },
+    {
+      "path": "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+      "title": "阶跃DAG极值幅度的多项式全入状态",
+      "purpose": "直接核查任意多项式形状下的实际全入状态；读取幅度(N)、真实light/root偏离及缺口矩/Jensen，避免把子类保证误作全类界。",
+      "topic": "weighted_congestion",
+      "role": "account",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+      "title": "阶跃DAG极值幅度的多项式全入状态的独立重构与冻结攻击",
+      "purpose": "核查先从exact statement重构再读冻结作者稿的覆盖、路径法/双重求和法一致性及常数4、d0=16的解析证明。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+      "title": "DAG极值幅度全入状态的定义级资源审计",
+      "purpose": "从1099小DAG筛整数q并补大空图；重建全部资源和策略、归一化常数/混合/纯幂费用，精确检查每个全入状态偏离。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+      "title": "DAG全入状态的独立成本与缺口矩审计",
+      "purpose": "不调用作者代码，以seed524170实际图/权/系数检查真实偏离、缺口矩和Jensen比较；含degree0及W近1边界。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json",
+      "title": "DAG极值幅度全入状态的作者冻结核验",
+      "purpose": "记录作者网格、算术、环境、代码hash及2715个实际游戏的有限覆盖；不由测试推一般实q结论。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in_independent.json",
+      "title": "DAG全入状态的独立冻结核验",
+      "purpose": "记录独立210个实际输入和1470偏离、seed、完整费用系数与代码hash；精确复验不覆盖冻结文件。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "DAG极值幅度全入状态",
+      "related_paths": [
+        "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+        "research/reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md",
+        "tests/audits/weighted_congestion/step_dag/verify_polynomial_extremal_all_in.py",
+        "tests/audits/weighted_congestion/step_dag/independent_polynomial_all_in.py",
+        "evidence/runs/weighted_congestion/step_dag/polynomial_extremal_all_in.json"
+      ]
     }
   ]
 }

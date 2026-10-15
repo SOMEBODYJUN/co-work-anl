@@ -356,6 +356,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-DIRECTED-FANOUT-FORCING-CUT-v1 | 分叉双人侧反馈的统一强迫割均衡；For d>=2 and alpha>=T_d, every finite unique-source light/multihead-private-pair-side topology satisfying the weak uniform aligned-light forcing inequalities admits an all-anti alpha-PNE selected by any local minimum of the stated weighted cut; no unrestricted existence claim. | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/directed_fanout_forcing_cut.md)、[独立审查](../reviews/weighted_congestion/directed_fanout_forcing_cut_review.md)。 |
 
 
+## 阶跃DAG极值幅度的真实多项式状态
+
+| ID | 精确范围与结论 | 状态与限制 |
+| --- | --- | --- |
+| WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1 | 任意非空有限simple DAG，root权1、正轻权W<1且outsum<w_v、原双列binary策略；两列相同非零非负degree≤d费用，d≥1。令q=q_D>1、h_v=(1+Σ_in h_u)/q且Σh=q−1，存在A>0使p0(1)=A、pv(1+w_v)=A h_v。真实全入状态是max{1+1/q,B_d(q)}-PNE，B_d(q)=q/[1+(q−1)(1+1/[q(q−1)])^(−d)]；d≥16时统一为4√(d/ln d)-PNE。不要求低漏/高平台保真，但必须保留极值幅度条件。 | [正文](weighted_congestion/step_dag/polynomial_extremal_all_in.md)、[冻结独立攻击](../reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md)；仅限所写DAG策略及极值幅度；任意幅度/全类策略尚无归约，不是本题一般肯定证明，也不是非存在下界。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
