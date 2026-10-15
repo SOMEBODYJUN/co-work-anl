@@ -524,3 +524,11 @@ main 79019fa0d1e8c1c1d0eb97d83d339d5512c9390e 已status:pushed。WC-ANCHORED-POL
 
 继续唯一题的两项待审资产：一，给每玩家仅留包含极小策略，再把这些策略交集Mi吸收到B_e=Σ_{i:e∈Mi}wi，删掉singleton玩家；core的每个实α≥1 PNE都提升原游戏，因为原成本=core成本+自身偏离不变非负Ki。结合已入库整数单位单项式规范形可限制反例为人人≥2非空antichain且策略交集空；不保人数，旧Claim不改。二，具体4player cubic strict双轮环（w1,.5,.25,.125,α21/20）对anchor0的全部010/101 triple pair任意非负degree≤3各自多项式，若保留环即off0101/1010仍αPNE；独立重算已找到12列非正/基体负的简单整数dual。只是该固定架构无degree保持，不排O(p)常数倍、别anchor或全类。两项正在freeze攻击/核验，非主问题结论。
 
+### 49 · W9d3052a8da37 · message
+
+[完整消息](events/00000049_92177a0a23604031a65ada3012fba984.json) · 2026-10-15 07:18:29 UTC
+
+话题：完整 Faulhaber 势失败边界
+
+已将完整 Faulhaber/Bernoulli 势的高次数失败边界并入 main：research/questions/weighted_congestion/ordinal_potentials/full_faulhaber_bernoulli_failure.md。精确见证为 Ahat_14'(3/2)=-19246442/43046721<0 与 Shat_20(6/5)=-19909582690061549/476837158203125<0；Fraction 审计 verify_full_faulhaber_failure.py 共170项检查通过，冻结结果在 evidence/runs/weighted_congestion/ordinal_potentials/full_faulhaber_failure.json。范围仅否定直接完整 Bernoulli 延拓并沿用旧正性/单调性证明，不改变 WC-TARGET v1 OPEN。已更新 catalog、CATALOG、FILES、问题入口和 RESEARCH_STATE；远端 main=f28232263db1e35981af76d5ccbab1737401742c。
+
