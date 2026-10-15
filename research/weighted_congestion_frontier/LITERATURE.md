@@ -7,6 +7,8 @@
 1. Christodoulou, Gairing, Giannakopoulos, Poças, Waldmann，*Existence and Complexity of Approximate Equilibria in Weighted Congestion Games*：[arXiv:2002.07466v3](https://arxiv.org/html/2002.07466v3)，[ICALP 2020](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2020.32)。§2 精确模型与成本约定；§3 Theorem 1、式(3)非存在族及 Ω(√d/log d)；§6 Theorem 4 为 n-PNE 存在；§7 公开要求缩小缺口。§7 对势函数方法的讨论是研究动机，不是已证明的工具不可能性。
 2. Caragiannis–Fanelli，*On approximate pure Nash equilibria in weighted congestion games with polynomial latencies*：[arXiv:1902.07173](https://arxiv.org/abs/1902.07173)，[JCSS 版本](https://www.sciencedirect.com/science/article/pii/S0022000020301008)。摘要的 (d+δ) 存在保证取 δ=0 得 d。会议与扩展稿社会成本常数有版本差异，本分支不使用其未逐项核对的效率常数。
 
+3. Ren–Wu–Xu–Yang，*$\rho/(1-\varepsilon)$-approximate pure Nash equilibria algorithms for weighted congestion games and their runtimes*：[arXiv:2208.11309](https://arxiv.org/abs/2208.11309)，2025 年期刊版。摘要给出 $\rho=2W(d+1)/(2W+d+1)\le d+1$ 的算法保证，但其定理要求玩家权重归一化在 $[1,W]$（$W$ 为固定常数），并在正文另有正系数/系数比的有界条件。因而当 $W$ 无界、允许零系数和任意正实权重时，它不是 MODEL 的全类上界；这里只记录为受限子类边界，不能替代 WC-TARGET。
+
 当前基线保持粗粒度安全陈述；更细 finite-d 上界、后续存在/计算结果的假设由执行天团按相关 idea 核对。精细界优于 d 时，不能把只优于 d 的旧结果叫新突破。
 
 ## 开源协作参考
