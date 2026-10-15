@@ -10,6 +10,8 @@ WC-TARGET v1 OPEN。已分类入 main 的核心进展是奇环有限非存在族
 
 最新检索到的 Ren–Wu–Xu–Yang 算法只覆盖固定有界权重比及额外系数条件；其 $\rho=2W(d+1)/(2W+d+1)$ 在 $W\to\infty$ 时仍趋于 $d+1$，所以没有缩小当前全模型缺口。该条是文献边界记录，不改变 WC-TARGET 的 OPEN 状态。
 
+新保存的[完整 Faulhaber 势失败边界](../questions/weighted_congestion/ordinal_potentials/full_faulhaber_bernoulli_failure.md)给出两个独立有理反例：\(\widehat A_{14}'(3/2)<0\) 与 \(\widehat S_{20}(6/5)<0\)。它只否定把完整 Bernoulli 延拓直接当作任意实负载资源势并沿用旧单调性证明；不能推出全类否定，也不改变 WC-TARGET 的 OPEN 状态。
+
 按当前义务持续推进，完成可复用阶段资产及相应核验后保存到 main。一个对话一个发布标识，内部 subagent 自行协作；不设人数、工作时长、认领或排他任务。常规中途排错自行闭合；重要发现、实质障碍和合作需求才研讨。
 
 当前新增可调用接口：[有限动作全状态对偶](../current/weighted_congestion/template_certificates/finite_action_duality.md)给签名压缩及逐selector严格替代，独立审查/两份Fraction核验齐备；它消去固定动作数下的任意资源数，未控制权向量、人数或动作数的全类最坏倍率。[依游戏最小点选择等价](../current/weighted_congestion/separable_ordinal_obstruction.md)第四节表明，仅要求可分目标全局最小点是均衡并不是额外存在限制。下一步须构造非循环且有统一估计的dual机制，或给增长primal族；不能仅重述等价。
