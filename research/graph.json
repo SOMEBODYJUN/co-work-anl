@@ -4965,6 +4965,93 @@
         "evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "WC-CUBIC-ANCHOR-CONE-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "三次固定基体、十二锚定列与两条保边条件",
+      "detail": "四对显式有理x³基体；三种anchor0 triple各degree0..3共12列；四个简单非负dual仅用γ0、γ2，clock残差非正且base严格负。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-ANCHORED-DEGREE-THREE-LOCK-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "三次双轮环的锚定时钟次数保持障碍",
+      "detail": "显式四玩家有理三次基体G，权(1,1/2,1/4,1/8)、α=21/20，有严格双同序环及0101/1010精确PNE。任意λ>0，对λG只加anchor0的T012,T013,T023互补010/101同费pair，每T独立任意degree≤3非负多项式（可零/省略），若0000玩家0及1100玩家2的总αmargin均≥0，则0101/1010全部四个翻位margin均<0，故仍αPNE。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md"
+      ],
+      "status": "complete fixed-architecture proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-CUBIC-ANCHOR-CONE-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "三次双轮环的锚定时钟次数保持障碍的两套有限精确核验",
+      "detail": "数学输入与范围见两份源码；有限检查只是checks，不替代一般证明或非负锥延拓。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_degree_barrier.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/clock_degree_barrier.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-ANTICHAIN-CORE-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "包含极小反链、必选背景与统一提升映射",
+      "detail": "A_i为包含极小动作，F_i=∩A_i=∩S_i，B_e为全体必选权和；用c_e(B_e+x)、a减F_i，删除singleton；原成本=core成本+自身偏离不变K_i≥0。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-ANTICHAIN-CORE-NORMAL-FORM-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "去包含支配与必选背景的空交反链核心规范形",
+      "detail": "任意d≥0 MODEL游戏有不依α的有限core变换：或给显式exactPNE，或得到同次数界、原玩家非空子集/原权的H，人人≥2非空两两不可包含且交集空的策略；固定lift将每个实α≥1的任意H αPNE提升原游戏。同一固定d、实α处，全类无αPNE反例存在等价于该core策略结构的正整数权/单位单项式x^j(j≤d)反例存在。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md",
+        "research/reviews/weighted_congestion/template_certificates/antichain_core_normal_form_review.md"
+      ],
+      "status": "complete direct proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-ANTICHAIN-CORE-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "去包含支配与必选背景的空交反链核心规范形的两套有限精确核验",
+      "detail": "数学输入与范围见两份源码；有限检查只是checks，不替代一般证明或非负锥延拓。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_antichain_core.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_antichain_core.py",
+        "evidence/runs/weighted_congestion/template_certificates/antichain_core.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_antichain_core.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "WC-ANCHOR-SAME-DEGREE-SCHEME",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "同次数锚定三元锁定候选方案",
+      "detail": "尝试仅在原degree以内调anchor0三元pair各自非负多项式，保持原环并消灭所有环外均衡；具体四玩家原p3为测试域。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md"
+      ],
+      "status": "definition"
     }
   ],
   "hyperedges": [
@@ -11973,6 +12060,89 @@
         "evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-ANCHORED-DEGREE-THREE-LOCK-OBSTRUCTION-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-CUBIC-ANCHOR-CONE-DEFINITION"
+      ],
+      "conclusion": "WC-ANCHORED-DEGREE-THREE-LOCK-OBSTRUCTION-v1",
+      "statement": "共同使用本边列明的全部前提；证明与独立重构给定量或结构结论，范围不外推全类目标。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md"
+      ],
+      "status": "complete fixed-architecture proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-ANCHORED-DEGREE-THREE-LOCK-OBSTRUCTION-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-CUBIC-ANCHOR-CONE-AUDIT"
+      ],
+      "conclusion": "WC-ANCHORED-DEGREE-THREE-LOCK-OBSTRUCTION-v1",
+      "statement": "两套独立Fraction核对所列真实成本、映射或证书代数；证据有限范围严格按源码/正文合同。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_clock_degree_barrier.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/clock_degree_barrier.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVE-WC-ANTICHAIN-CORE-NORMAL-FORM-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-ANTICHAIN-CORE-DEFINITION",
+        "WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1"
+      ],
+      "conclusion": "WC-ANTICHAIN-CORE-NORMAL-FORM-v1",
+      "statement": "共同使用本边列明的全部前提；证明与独立重构给定量或结构结论，范围不外推全类目标。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md",
+        "research/reviews/weighted_congestion/template_certificates/antichain_core_normal_form_review.md"
+      ],
+      "status": "complete direct proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-ANTICHAIN-CORE-NORMAL-FORM-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-ANTICHAIN-CORE-AUDIT"
+      ],
+      "conclusion": "WC-ANTICHAIN-CORE-NORMAL-FORM-v1",
+      "statement": "两套独立Fraction核对所列真实成本、映射或证书代数；证据有限范围严格按源码/正文合同。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_antichain_core.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_antichain_core.py",
+        "evidence/runs/weighted_congestion/template_certificates/antichain_core.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_antichain_core.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "LIMIT-CUBIC-ANCHORED-DEGREE-RETENTION",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-ANCHORED-DEGREE-THREE-LOCK-OBSTRUCTION-v1"
+      ],
+      "conclusion": "WC-ANCHOR-SAME-DEGREE-SCHEME",
+      "statement": "显式三次基体上即使只保两条弱环边，off0101/1010仍是αPNE；不限制higherdegree一般compiler。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md"
+      ],
+      "status": "complete fixed-architecture proof; independently reconstructed and exactly audited; unrefereed"
     }
   ]
 }

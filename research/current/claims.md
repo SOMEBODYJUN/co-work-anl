@@ -394,6 +394,18 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1 | 每个n≥3、degree≤p、两动作MODEL游戏的严格α≥1双同序2n环，可保持玩家/权重/旧资源，增加2L个正单项式资源编译为无αPNE游戏。q≤max(p,D)，D=ceil[ln(4α²BL/η)/ln(1/δ)]，B为全状态成本界、η为环余量，L=C(n−1,2)，δ为锚定三元缺员负载比。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[完整证明](weighted_congestion/anchored_cycle_lock.md)、[独立重构攻击](../reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md)。D依实例且输出只保留两个动作；无全类次数预算。 |
 
+## 三次双轮环的锚定时钟次数保持障碍
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-ANCHORED-DEGREE-THREE-LOCK-OBSTRUCTION-v1 | 显式四玩家有理三次基体G，权(1,1/2,1/4,1/8)、α=21/20，有严格双同序环及0101/1010精确PNE。任意λ>0，对λG只加anchor0的T012,T013,T023互补010/101同费pair，每T独立任意degree≤3非负多项式（可零/省略），若0000玩家0及1100玩家2的总αmargin均≥0，则0101/1010全部四个翻位margin均<0，故仍αPNE。 | complete fixed-architecture proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/anchored_clock_degree_barrier.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md)。只限明示基体、anchor、phase、同pair两侧同费及degree≤3；不排常数倍degree、其他anchor、两侧异费、辅助玩家或其他拓扑。 |
+
+## 去包含支配与必选背景的空交反链核心规范形
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-ANTICHAIN-CORE-NORMAL-FORM-v1 | 任意d≥0 MODEL游戏有不依α的有限core变换：或给显式exactPNE，或得到同次数界、原玩家非空子集/原权的H，人人≥2非空两两不可包含且交集空的策略；固定lift将每个实α≥1的任意H αPNE提升原游戏。同一固定d、实α处，全类无αPNE反例存在等价于该core策略结构的正整数权/单位单项式x^j(j≤d)反例存在。 | complete direct proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/template_certificates/integer_counterexample_normal_form.md)、[独立审查](../reviews/weighted_congestion/template_certificates/antichain_core_normal_form_review.md)。提升单向、不保人数/资源数、不保最佳因子或逐状态反投影；没有无限规范模板的规模截止或全类C,d0。旧整数v1身份/保人数义务不改。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

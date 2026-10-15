@@ -1,4 +1,4 @@
-# 严格反例的整数单项式规范形与普遍阈值端点
+# 严格反例的整数单项式规范形、空交核心与普遍阈值端点
 
 本稿补全[有限动作全状态择证对偶](finite_action_duality.md)的全类接口：固定一个实倍率，实参数反例存在当且仅当整数权、单位单项式资源的有限反例存在。它不控制玩家数、策略数、权大小或复制资源数，也不给全类匹配上界。这里的规范形是反例存在归约；不声称任意实参数游戏本身都有成本完全相同的整数表示。
 
@@ -114,3 +114,79 @@
 - 冻结输出：`evidence/runs/weighted_congestion/template_certificates/integer_normal_form_audit.json`。
 
 审计检查有理清分母后的全部状态与偏离、动作取商、零成本、常数、空策略及余量放大。有限检查不能验证任意实参数的有理稠密性或全部游戏的端点；这些义务由正文一般证明承担。没有新增外部定理；文献基线从专题LITERATURE读取，全球优先权仍未认证。
+
+## 7. 去包含支配与必选背景的空交反链核心
+
+### 新Claim精确命题身份
+
+**ID/version：** `WC-ANTICHAIN-CORE-NORMAL-FORM-v1`。
+
+**中文数学名称：** 去包含支配与必选背景的空交反链核心规范形。
+
+**Exact Statement / Objects / Domain / Quantifiers：** 对每个整数d≥0、每个MODEL游戏G，存在一个不依近似倍率的有限变换，输出以下两者之一：(i) G的一个显式精确PNE；(ii) 一个同费用次数上限的MODEL游戏H，其玩家是G的某个非空子集并保留原权重，人人有至少两个非空合法策略，策略两两不可包含且总交集为空，并有一个固定lift，使对每个实α≥1，H的每个α-PNE都提升为G的α-PNE。
+
+另对每个固定整数d≥0及每个固定实α≥1，整个MODEL类中存在无α-PNE的有限游戏，当且仅当存在正整数玩家权、每资源费用恰为x^j（0≤j≤d）、满足上述至少两非空策略/反链/空交条件的无α-PNE有限游戏。允许删除玩家，不承诺保持人数、资源数或策略数，不承诺逐状态反向投影或最佳因子相等。
+
+**Assumptions / Definitions / Scope：** 完全采用MODEL，任意正实权与非负实多项式系数，允许原空策略、零费用、不同玩家策略族；所有成本都按偏离后真实负载求和。subset表示资源子集包含，antichain表示任意两个不同策略均互不包含；交集为空按每玩家自己的完整策略族理解。lift是在输出前固定的映射，不依α或均衡选择。
+
+**Dependencies：** 有限集合偏序、非负费用、非负系数多项式的正平移、已有`WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1`（仅整数单位单项式推论需要）。一般core变换本身不需要整数化或外部存在定理。
+
+**Evidence / Objections / Status：** 下文直接一般证明；独立审查已先从本statement完整重构，再逐式攻击冻结稿，无尚成立fatal；状态为complete direct proof; independently reconstructed and exactly audited; unrefereed。该归约不证明全类存在，不给规模截止，不保持每个原均衡的投影；旧整数规范形v1的“可保持玩家数”仍是旧Claim自己的义务，不移植到本新Claim。未外审，未认证新颖性。
+
+### 7.1. 极小动作与共同核
+
+对每名玩家i，令A_i为原有限非空策略族S_i在包含偏序下的全部极小元素。A_i非空且为反链。每个原策略t都包含某个a∈A_i：在包含于t的非空有限子族中取一个极小元素，若还有更小原策略便仍包含于t，矛盾。
+
+固定其他玩家，若a⊆t，则选择a时，在a所含每个资源上的实际负载与选择t时相同；a只少付t\a上非负成本。因此C_i(a,s_-i)≤C_i(t,s_-i)。这不冻结偏离负载，也不引入同一资源的比较错误。
+
+写F_i=∩_(a∈A_i)a，B_e=Σ_(i:e∈F_i)w_i。实际上F_i也是S_i的交集，因为每个t包含一个包含F_i的极小动作。对每个资源置c'_e(x)=c_e(B_e+x)。二项式展开给非负系数、次数至多d，允许B_e=0及原费用为零。
+
+令J={i:|A_i|≥2}。若i不在J，记其唯一极小动作a_i；它包含于该玩家每个原动作，且F_i=a_i。
+
+### 7.2. 核心游戏与结构
+
+若J非空，H采用原资源集E、玩家集J、原权w_i，资源费用c'_e，玩家i策略族为T_i={a\F_i:a∈A_i}。映射a↦a\F_i单射（所有a均含F_i），所以|T_i|=|A_i|≥2。若某a\F_i为空，则a=F_i包含于A_i所有其他动作，违背反链；所以每个T_i动作非空。若a\F_i⊆b\F_i，则a⊆b，所以反链保留。集合恒等式给∩_(u∈T_i)u=(∩_(a∈A_i)a)\F_i=∅。
+
+H因此是MODEL合法有限非空玩家/资源游戏。资源可未被H任一策略使用，MODEL允许这一点。定义固定lift：J中玩家补回F_i；其余玩家固定为a_i。
+
+若J为空，输出原状态s_i=a_i；每个a_i包含于其所有原偏离，故各玩家都没有成本下降，得到显式精确PNE。没有构造空玩家游戏来冒充MODEL对象。
+
+### 7.3. 所有倍率同时提升
+
+固定H状态u及其lift s。每个原资源的实际负载恰B_e加H可选使用者权和。因此对i∈J，
+
+C_i^G(s)=C_i^H(u)+K_i(u_-i),
+
+其中
+
+K_i(u_-i)=Σ_(e∈F_i)c_e(B_e+Σ_(j∈J\{i}:e∈u_j)w_j)≥0。
+
+由于u_i不含F_i，该项独立i自己的动作，并且对i任意极小动作偏离a同样有C_i^G(a,s_-i)=C_i^H(a\F_i,u_-i)+K_i(u_-i)。所有这些等式均按真实负载重新计算。
+
+若u为H的α-PNE，α≥1，则对任意a∈A_i，
+
+C_i^G(s)≤α C_i^H(a\F_i,u_-i)+K_i≤α[C_i^H(a\F_i,u_-i)+K_i]=α C_i^G(a,s_-i)。
+
+对任意原合法t_i，取a∈A_i且a⊆t_i，§7.1给C_i^G(a,s_-i)≤C_i^G(t_i,s_-i)，故原α-PNE不等式也成立。对i不在J，当前唯一极小a_i包含于每个原t_i，故该玩家甚至是精确最佳回应。这样同一个lift覆盖所有实α≥1，包括零成本；不计算任何0/0。
+
+此提升是单向的。共同非负基项可掩盖原游戏中的相对改善；不能从原游戏某状态为α-PNE反推core状态也为α-PNE。α=1的极小动作对应成本差确实相同，但本命题不要求原游戏所有精确均衡都选择极小动作。
+
+### 7.4. 严格反例的整数单位单项式版本
+
+固定d≥0、实α≥1，若全类有无α-PNE的游戏，先用既有整数规范形v1得到正整数权、每资源x^k且k≤d的无α-PNE游戏Q。对Q执行上面的α-independent core变换。J不可能为空，否则输出Q的精确PNE；core H也不可能有α-PNE，否则lift反驳Q。
+
+整数权使B_e为非负整数。原单位资源x^k变为(B_e+x)^k，二项式展开的全部系数是非负整数，且x^k首项系数为1（k=0时就是常数1）。把资源e替换为这些系数所指定数目的、各自费用恰x^j的不同复制资源，任何使用e的策略使用它的完整复制块。各块非空且互不相交；负载、成本和任意真实偏离成本逐状态精确相同。
+
+资源e到非空块的集合替换保持策略非空、不同策略数、两两不可包含及交集为空：包含/相等当且仅当原集合包含/相等，且没有资源块能同时出现在所有策略中。于是得到所需整数单位单项式反例。反向只是MODEL子类包含。
+
+这不增加旧Claim身份或改写其量词：本新Claim允许删除原固定玩家，旧v1保人数仍按原证明成立。本新结果没有给反例的统一人数、权值、资源数或动作数上界。
+
+### 7.5. 主目标中可回收的接口
+
+对题设d≥2处的α=C d/ln d（C≥1故α≥1），全类存在性可以只在上述空交反链整数规范子类判定。固定玩家、包含支配和必选资源均可从反例中移除，不是必须由无界权类桥处理的额外困难。剩余仍是任意规模、无界可动权类及真正的可选策略相互作用；本规范形没有给C、d0或增长反例族。
+
+## 8. 空交核心的审查与精确核验
+
+- 新Claim的独立先重构后冻结攻击：`research/reviews/weighted_congestion/template_certificates/antichain_core_normal_form_review.md`；原两个Claim的审查路径仍在第6节，不能相互代替。
+- 作者字面审计：`tests/audits/weighted_congestion/template_certificates/verify_antichain_core.py`，运行`python3 tests/audits/weighted_congestion/template_certificates/verify_antichain_core.py`；冻结记录`evidence/runs/weighted_congestion/template_certificates/antichain_core.json`。五组确定输入覆盖重叠必选/可选使用者、包含动作、固定者、空/零、d=0、分数参数及整数复制。全删分支的空active record只用于枚举显式exact-PNE，不当作MODEL游戏。
+- 独立审计`tests/audits/weighted_congestion/template_certificates/independent_antichain_core.py`与冻结记录`evidence/runs/weighted_congestion/template_certificates/independent_antichain_core.json`由独立审查合同连接；源码包含完整输入，使用Fraction、无随机性或浮点。有限audit只检查所列映射/费用/偏离；实参数一般证明和全类反例存在等价由第7节承担。

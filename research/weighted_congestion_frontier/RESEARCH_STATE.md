@@ -16,7 +16,7 @@ WC-TARGET v1 OPEN。已分类入 main 的核心进展是奇环有限非存在族
 
 当前新增可调用接口：[有限动作全状态对偶](../current/weighted_congestion/template_certificates/finite_action_duality.md)给签名压缩及逐selector严格替代，独立审查/两份Fraction核验齐备；它消去固定动作数下的任意资源数，未控制权向量、人数或动作数的全类最坏倍率。[依游戏最小点选择等价](../current/weighted_congestion/separable_ordinal_obstruction.md)第四节表明，仅要求可分目标全局最小点是均衡并不是额外存在限制。下一步须构造非循环且有统一估计的dual机制，或给增长primal族；不能仅重述等价。
 
-新增[严格反例整数规范形与闭端点](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)：每个固定实α的反例存在等价于整数权、单位单项式、非空策略子类；全类可行倍率[a_*(d),∞)。已独立重构攻击及有理审计，未给规模上限或统一C,d0。下一步仍需对无限规范模板族作统一dual估计，或给超出d/log d的全状态primal族，枚举无输出不能作存在证据。
+新增[严格反例整数规范形与闭端点](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)：每个固定实α的反例存在等价于整数权、单位单项式、非空策略子类；全类可行倍率[a_*(d),∞)。已独立重构攻击及有理审计，未给规模上限或统一C,d0。下一步仍需对无限规范模板族作统一dual估计，或给超出d/log d的全状态primal族，枚举无输出不能作存在证据。 [空交反链核心](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md#7-去包含支配与必选背景的空交反链核心)进一步把反例限制为人人至少两非空、无包含、空交策略，并给所有α≥1同时有效的单向lift；允许删玩家，不给规模界。
 
 新结构边界：[有序尾部冻结](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)给阶段选择的A-PNE，并精确证明最佳A在两权级族无界；[DAG端点泄漏](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)以全部路径总权给检测系统iff及固定ε的锐√d辅助阈值。下一步应控制真实而非潜在尾部/重开早组，或绕过统一端点低漏并直接核查多项式全部偏离；两项均不判定全类目标。
 
@@ -26,6 +26,6 @@ WC-TARGET v1 OPEN。已分类入 main 的核心进展是奇环有限非存在族
 
 [阶跃DAG极值幅度的多项式全入状态](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)已直接控制真实多项式成本：不要求低漏/平台保真，幅度(N)下d≥16给4√(d/ln d)状态。全类题仍OPEN；当前最具体新缺口是任意卫星幅度如何归约或怎样选择其他稳定light集合，不能只改变已锚定费用形状。
 
-[循环窗口复制的真实近d改善环](../current/weighted_congestion/cyclic_clone_improvement_cycles.md)将旧可分势障碍提升为任意全局全边下降势障碍，仍有全空精确PNE。[共同幂混合最小点障碍](../current/weighted_congestion/common_power_mixture_obstruction.md)另直接排除指定连续目标族的全部最小点。全类存在性仍OPEN；环本身不能当无均衡；[锚定三元全状态锁定](../current/weighted_congestion/anchored_cycle_lock.md)已将严格双轮环编译成无α-PNE，但新增次数依实例。负向前沿为控制编译后q的α ln q/q；正向仍需选步或超出这些目标族的选态。
+[循环窗口复制的真实近d改善环](../current/weighted_congestion/cyclic_clone_improvement_cycles.md)将旧可分势障碍提升为任意全局全边下降势障碍，仍有全空精确PNE。[共同幂混合最小点障碍](../current/weighted_congestion/common_power_mixture_obstruction.md)另直接排除指定连续目标族的全部最小点。全类存在性仍OPEN；环本身不能当无均衡；[锚定三元全状态锁定](../current/weighted_congestion/anchored_cycle_lock.md)已将严格双轮环编译成无α-PNE，但新增次数依实例。负向前沿为控制编译后q的α ln q/q；[三次锚定架构证书](../current/weighted_congestion/anchored_clock_degree_barrier.md)已排除在指定基体上保持原degree的方案，未排常数倍degree。正向仍需选步或超出这些目标族的选态。
 
 [有限可动权类的三角排序势](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)已给A_(d,k)隐式界，固定k为d^(1−1/k)，任意固定背景精确吸收、k个R窄簇损失R^d。d≥16且k≤ln d/lnln d的明确子类达到2d/ln d；无界可动类别时A趋d，唯一全类题仍OPEN。真正前沿已收缩为无界可动权类的选态桥或全状态增长反例，不再把固定背景或仅两类稠密cohort当未解接口。

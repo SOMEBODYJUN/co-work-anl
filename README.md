@@ -24,7 +24,7 @@
 
 ## Claim Map / Dependency Graph
 
-加权拥塞的核心链为：资源策略与真实偏离成本 → 奇环全状态证书 → 正系数闭环 → 有限有理构造 → T_d 下界。局部证书包络只限制该方法，不是全类存在上界。固定权重和动作数的[签名压缩与全状态择证对偶](research/current/weighted_congestion/template_certificates/finite_action_duality.md)另给任意资源数的精确有限表示；仍缺统一于所有模板的估计。[严格反例整数规范形与端点](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)消去逐固定实倍率反例的实参数，并证明a_*(d)端点可行；没有全类搜索规模界。[任意乘子与依游戏可分序势障碍](research/current/weighted_congestion/separable_ordinal_obstruction.md)已作完整重构及独立攻击，只否定所写全改善边证书；全局选态仍开放。
+加权拥塞的核心链为：资源策略与真实偏离成本 → 奇环全状态证书 → 正系数闭环 → 有限有理构造 → T_d 下界。局部证书包络只限制该方法，不是全类存在上界。固定权重和动作数的[签名压缩与全状态择证对偶](research/current/weighted_congestion/template_certificates/finite_action_duality.md)另给任意资源数的精确有限表示；仍缺统一于所有模板的估计。[严格反例整数规范形与端点](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)消去逐固定实倍率反例的实参数，并证明a_*(d)端点可行；没有全类搜索规模界。[任意乘子与依游戏可分序势障碍](research/current/weighted_congestion/separable_ordinal_obstruction.md)已作完整重构及独立攻击，只否定所写全改善边证书；全局选态仍开放。 [空交反链核心](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md#7-去包含支配与必选背景的空交反链核心)进一步把反例限制为人人至少两非空、无包含、空交策略，并给所有α≥1同时有效的单向lift；允许删玩家，不给规模界。
 
 其他模型的定义、引理、反例和算法关系以及加权拥塞已登记结果统一放在[数学超图](research/index.html)及[结构化图](research/graph.json)。`derives` 列全体共同前提；实验只用 `checks`，失败与限制分别登记。图是导航，真值以精确陈述及证明为准。
 
@@ -40,7 +40,7 @@
 
 [两权类别双排序混合势](research/current/weighted_congestion/weight_bands/two_weight_order_blend.md)给全局两权、任意人数与权比的(1+√(4d−3))/2-PNE。它以互补精确边际绕过两权尾部参数无界，任意多权的全类桥仍开放。
 
-[循环窗口复制的真实近d改善环](research/current/weighted_congestion/cyclic_clone_improvement_cycles.md)将旧可分势障碍提升为任意全局全边下降势障碍，仍有全空精确PNE。[共同幂混合最小点障碍](research/current/weighted_congestion/common_power_mixture_obstruction.md)另直接排除指定连续目标族的全部最小点。全类存在性仍OPEN；环本身不能当无均衡；[锚定三元全状态锁定](research/current/weighted_congestion/anchored_cycle_lock.md)已将严格双轮环编译成无α-PNE，但新增次数依实例。负向前沿为控制编译后q的α ln q/q；正向仍需选步或超出这些目标族的选态。
+[循环窗口复制的真实近d改善环](research/current/weighted_congestion/cyclic_clone_improvement_cycles.md)将旧可分势障碍提升为任意全局全边下降势障碍，仍有全空精确PNE。[共同幂混合最小点障碍](research/current/weighted_congestion/common_power_mixture_obstruction.md)另直接排除指定连续目标族的全部最小点。全类存在性仍OPEN；环本身不能当无均衡；[锚定三元全状态锁定](research/current/weighted_congestion/anchored_cycle_lock.md)已将严格双轮环编译成无α-PNE，但新增次数依实例。负向前沿为控制编译后q的α ln q/q；[三次锚定架构证书](research/current/weighted_congestion/anchored_clock_degree_barrier.md)已排除在指定基体上保持原degree的方案，未排常数倍degree。正向仍需选步或超出这些目标族的选态。
 
 [有限可动权类的三角排序势](research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)已给A_(d,k)隐式界，固定k为d^(1−1/k)，任意固定背景精确吸收、k个R窄簇损失R^d。d≥16且k≤ln d/lnln d的明确子类达到2d/ln d；无界可动类别时A趋d，唯一全类题仍OPEN。真正前沿已收缩为无界可动权类的选态桥或全状态增长反例，不再把固定背景或仅两类稠密cohort当未解接口。
 

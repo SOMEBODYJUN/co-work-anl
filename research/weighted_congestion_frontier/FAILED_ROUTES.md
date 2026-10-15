@@ -39,3 +39,11 @@
 ## 用已有近d环直接否定全类：缺失的是次数预算
 
 原先直接把改善环当无均衡的推断仍无效，因为全空精确PNE存在。[锚定三元锁定](../current/weighted_congestion/anchored_cycle_lock.md)现在通过限制回两个动作并新增资源，解决指定双轮环的全状态出口，但输出次数q=max(p,D)，D依δ、B/η、n。具体失败步骤是把原环倍率α≈p直接当作输出次数q上的倍率；尚未证明α ln q/q无界。可回收的是完整全状态编译与确定first-opposite修复。可重试条件是改善次数预算、另造更均衡且余量可控的输入环，或另用不受当前统一δ估计约束的锁定机制；这里没有证明所有时钟不可能。
+
+## 在原次数内仅调锚定三元费用
+
+尝试为每个anchor0三元自由选择同pair同费非负多项式而保持p。失败不只是统一δ估计松：[显式三次基体](../current/weighted_congestion/anchored_clock_degree_barrier.md)的12列非负锥有精确整数dual，只需两条sweep弱margin≥0就强制0101/1010所有偏离margin<0。准确范围是该基体、anchor、phase、同费pair、degree≤3；不否定O(p)常数倍degree。可回收有限列分离及允许非均匀幅度的攻击接口；重试须改次数预算、拓扑、相位/两侧费用或基体。
+
+## 用固定者、必选资源或包含动作承担全类难点
+
+[空交反链核心](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)给alpha-independent lifting，严格反例可剥掉上述部分；不能把它们当作无界可动类别桥本身。具体易错步骤是把原成本中的共同非负K直接当成core成本，反向投影对α>1会失败。可回收单向提升及整数展开；若路线要求保人数、所有原均衡投影或精确最佳因子，须重立并证明新增合同。

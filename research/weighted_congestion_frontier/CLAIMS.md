@@ -680,3 +680,25 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：无尚成立fatal；D依完整实例，未控制q=max(p,D)上的α ln q/q，不能用本接口替代全类否定或上界。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所述全状态编译定理；Value=可复用cycle-to-no-PNE桥；Novelty=未认证；Mechanism=锚定三元与最早反位修复；Ambition=唯一全类判定仍OPEN。
 - Related Files：research/current/weighted_congestion/anchored_cycle_lock.md；research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md；tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py；tests/audits/weighted_congestion/cyclic_clone/independent_clock.py；evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json；evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json。
+
+
+## WC-ANCHORED-DEGREE-THREE-LOCK-OBSTRUCTION-v1 — 三次双轮环的锚定时钟次数保持障碍
+
+- Exact Statement / Conclusion：显式四玩家有理三次基体G，权(1,1/2,1/4,1/8)、α=21/20，有严格双同序环及0101/1010精确PNE。任意λ>0，对λG只加anchor0的T012,T013,T023互补010/101同费pair，每T独立任意degree≤3非负多项式（可零/省略），若0000玩家0及1100玩家2的总αmargin均≥0，则0101/1010全部四个翻位margin均<0，故仍αPNE。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确系数、对象和变换固定在[正文](../current/weighted_congestion/anchored_clock_degree_barrier.md)；完整采用MODEL的真实成本和零成本不等式。只限明示基体、anchor、phase、同pair两侧同费及degree≤3；不排常数倍degree、其他anchor、两侧异费、辅助玩家或其他拓扑。
+- Dependencies：WC-MODEL, WC-CUBIC-ANCHOR-CONE-DEFINITION；前提的直接证明及使用位置由正文明确。
+- Evidence：先从精确statement独立重构，再攻击freeze；两份不互相导入的Fraction实际成本代码及运行命令/环境/hash/输入/seed适用性由正文审计合同连接。
+- Counterevidence / Objections：无尚成立fatal；只限明示基体、anchor、phase、同pair两侧同费及degree≤3；不排常数倍degree、其他anchor、两侧异费、辅助玩家或其他拓扑。
+- Status：complete fixed-architecture proof; independently reconstructed and exactly audited; unrefereed。Truth=上述限定命题；Value=可复用桥或精确方法限制；Novelty=未认证；Mechanism=四对显式有理x³基体；三种anchor0 triple各degree0..3共12列；四个简单非负dual仅用γ0、γ2，clock残差非正且base严格负。 Ambition=全类匹配上界判定仍OPEN。
+- Related Files：research/current/weighted_congestion/anchored_clock_degree_barrier.md；research/reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md；tests/audits/weighted_congestion/cyclic_clone/verify_clock_degree_barrier.py；tests/audits/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.py；evidence/runs/weighted_congestion/cyclic_clone/clock_degree_barrier.json；evidence/runs/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.json。
+
+
+## WC-ANTICHAIN-CORE-NORMAL-FORM-v1 — 去包含支配与必选背景的空交反链核心规范形
+
+- Exact Statement / Conclusion：任意d≥0 MODEL游戏有不依α的有限core变换：或给显式exactPNE，或得到同次数界、原玩家非空子集/原权的H，人人≥2非空两两不可包含且交集空的策略；固定lift将每个实α≥1的任意H αPNE提升原游戏。同一固定d、实α处，全类无αPNE反例存在等价于该core策略结构的正整数权/单位单项式x^j(j≤d)反例存在。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确系数、对象和变换固定在[正文](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)；完整采用MODEL的真实成本和零成本不等式。提升单向、不保人数/资源数、不保最佳因子或逐状态反投影；没有无限规范模板的规模截止或全类C,d0。旧整数v1身份/保人数义务不改。
+- Dependencies：WC-MODEL, WC-ANTICHAIN-CORE-DEFINITION, WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1；前提的直接证明及使用位置由正文明确。
+- Evidence：先从精确statement独立重构，再攻击freeze；两份不互相导入的Fraction实际成本代码及运行命令/环境/hash/输入/seed适用性由正文审计合同连接。
+- Counterevidence / Objections：无尚成立fatal；提升单向、不保人数/资源数、不保最佳因子或逐状态反投影；没有无限规范模板的规模截止或全类C,d0。旧整数v1身份/保人数义务不改。
+- Status：complete direct proof; independently reconstructed and exactly audited; unrefereed。Truth=上述限定命题；Value=可复用桥或精确方法限制；Novelty=未认证；Mechanism=A_i为包含极小动作，F_i=∩A_i=∩S_i，B_e为全体必选权和；用c_e(B_e+x)、a减F_i，删除singleton；原成本=core成本+自身偏离不变K_i≥0。 Ambition=全类匹配上界判定仍OPEN。
+- Related Files：research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md；research/reviews/weighted_congestion/template_certificates/antichain_core_normal_form_review.md；tests/audits/weighted_congestion/template_certificates/verify_antichain_core.py；tests/audits/weighted_congestion/template_certificates/independent_antichain_core.py；evidence/runs/weighted_congestion/template_certificates/antichain_core.json；evidence/runs/weighted_congestion/template_certificates/independent_antichain_core.json。

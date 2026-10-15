@@ -34,12 +34,13 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 | --- | --- | --- |
 | 近线性倍率的真实改善环 | [循环窗口复制证明](cyclic_clone_improvement_cycles.md)、[冻结攻击](../../reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md) | α<ρ_d、ρ_d/d→1时有真实改善闭环且全空为精确PNE；排除任意全局全边下降势，仍不排除选择动态/均衡存在 |
 | 共同幂混合的坏全局最小点 | [同一四玩家构造](common_power_mixture_obstruction.md)、[独立攻击](../../reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md) | 全部非零非负共同μ（含连续）均选坏最小点，d≥32、α<d/16；限保留原系数的目标族，有精确PNE |
+| 三次锚定时钟次数保持障碍 | [完整证书](anchored_clock_degree_barrier.md)、[独立强化审查](../../reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md) | 指定4player p3基体，任意degree≤3三元pair各自非负多项式，只保两条弱环边也留0101/1010均衡；仅限制固定架构 |
 | 双轮环的锚定三元全状态锁定 | [编译证明](anchored_cycle_lock.md)、[独立重构攻击](../../reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md) | 保持玩家/权重/两动作，新增2L个单项式，使全部状态无αPNE；q=max(p,D)依δ、B/η及n，尚无目标量级次数控制 |
 | 有限可动权类三角排序混合势 | [一般证明与推论](weight_bands/finite_weight_class_potentials.md)、[重构攻击](../../reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md) | A=Σ((d−1)/A)^j；有限k任意人数/权比，固定背景可吸收，窄簇损失R^d。d≥16且k≤ln d/lnln d给2d/ln d；k无界仍趋d |
 | 两权类别双排序混合势 | [一般证明](weight_bands/two_weight_order_blend.md)、[独立攻击](../../reviews/weighted_congestion/weight_types/two_weight_order_blend_review.md) | 全局仅两种权值、任意人数/权比有(1+√(4d−3))/2-PNE，所有严格该因子改善终止。不能外推任意权类 |
 | 择证平稳与循环支撑边界 | [完整证明](template_certificates/stationary_selector_obstruction.md)、[独立攻击](../../reviews/weighted_congestion/template_certificates/stationary_selector_obstruction_review.md) | 单位速度平稳dual损失无界；仿射循环有权重dual；recurrent支撑等价全模板αFIP，强于PNE存在 |
 | 有向分叉强迫割均衡 | [一般证明](directed_fanout_forcing_cut.md)、[独立攻击](../../reviews/weighted_congestion/directed_fanout_forcing_cut_review.md) | 唯一源主资源＋私有双人侧资源＋UF下，α≥T_d有全反位PNE；不含共享多hub侧资源或UF失败 |
-| 严格反例规范形与普遍阈值端点 | [一般证明](template_certificates/integer_counterexample_normal_form.md)、[独立攻击](../../reviews/weighted_congestion/template_certificates/integer_counterexample_normal_form_review.md) | 固定实α的反例可限制到整数权、单位单项式、非空策略；a_*端点可行。没有统一规模截止或匹配上界 |
+| 严格反例规范形与普遍阈值端点 | [一般证明](template_certificates/integer_counterexample_normal_form.md)、[独立攻击](../../reviews/weighted_congestion/template_certificates/integer_counterexample_normal_form_review.md) | 固定实α反例可限制整数权/单位单项式；新core允许删玩家，进一步人人≥2非空antichain空交策略，且所有α同一lift；a_*端点可行，仍无规模截止/匹配上界 |
 | 有序权组的尾部负载冻结 | [一般证明与参数锐式](weight_bands/ordered_tail_freezing.md)、[独立攻击](../../reviews/weighted_congestion/weight_bands/ordered_tail_freezing_review.md) | 任意分组给A=max(b/a)(1+L/a)^d；可拼接密集同权群。两权级最佳A恰min{H,(1+K/H)^d}，固定次数仍可无界 |
 | 阶跃DAG极值幅度的多项式全入状态 | [实际成本证明](step_dag/polynomial_extremal_all_in.md)、[独立冻结攻击](../../reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md) | 精确幅度(N)下全入状态有max{1+1/q,B_d(q)}保证，d≥16统一4√(d/ln d)；不要求低漏，但任意幅度尚未覆盖 |
 | DAG端点低泄漏次数预算 | [检测充要条件](polynomial_curvature/dag_low_leakage_budget.md)、[冻结审查](../../reviews/weighted_congestion/polynomial_curvature/dag_low_leakage_budget_review.md) | z(z−1)ΣP_k z^(k−1)≤1恰可行；固定ε的辅助源门槛锐为√d量级。未控制高平台或真实全状态偏离 |
@@ -83,3 +84,5 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 部分详细稿保留撰写时的 pending 标签或历史相对路径。现行逐命题审查查[主题账本](../../weighted_congestion_frontier/CLAIMS.md)及[五轴表](../../review_status.json)，实际审查范围查对应审查正文；没有审查记录的结论不能靠入口摘要升级。不可变原件及恢复路径见 [INTEGRATION](../../weighted_congestion_frontier/INTEGRATION.json)。
 
 **负向接续接口。** 先读[真实双轮环](cyclic_clone_improvement_cycles.md)，限制为原两个动作，再读[锚定锁定](anchored_cycle_lock.md)及其独立审查/两类精确证据。全状态覆盖已闭合；剩余是让编译后q上α ln q/q无界。δ极近1时当前统一泄漏方案的D可能很大，不得将其当任意时钟或全类方法障碍。
+
+**规范域接续。** [空交反链核心](template_certificates/integer_counterexample_normal_form.md)第7节将包含支配、固定者及必选背景从反例剥去；先读其新ID与单向lift，再读[独立攻击](../../reviews/weighted_congestion/template_certificates/antichain_core_normal_form_review.md)和两份代码/证据。此步骤不限制真正可动类别数，不能替代无界权谱的存在或非存在桥。

@@ -145,3 +145,7 @@ G'的费用次数至多max{p,D}，新增2L个资源，每个新增资源费用�
 - 读取顺序为本命题身份→一至五节证明→[独立重构攻击](../../reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md)→两份代码与冻结证据→第六节开放次数预算。若输入取自[循环窗口复制](cyclic_clone_improvement_cycles.md)，须先限制为实现环的两个动作，不能保留该旧Claim中的全部2^E策略。
 
 三玩家旧正文曾把原六步环误简写成000→010→001→000；本次只修正叙述为010→110→100→101→001→011→010，原全状态表、286/267结论和Claim身份不变。
+
+## 次数保持的精确架构边界
+
+[三次固定基体证书](anchored_clock_degree_barrier.md)证明：即使独立调所有anchor0三元pair的非负degree≤3多项式，只要保留两条弱环边，指定环外状态仍稳定。这比统一δ预算大D的保守分析更强，但只限制明示固定架构，不反驳本稿允许提高D的一般定理，也不排除常数倍degree。
