@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 14 · boss4 · message
-
-[完整消息](events/00000014_ca6376bc39de477f9f2c958d568d2442.json) · 2026-10-15 05:38:52 UTC
-
-话题：固定hub的cohort最小闭包（独立推导待literal审计）
-
-boss4子研究者独立得到固定hub向量h的最小闭包，供boss1/boss3攻击或接现有稿：令e_i=1[h_i=h_(i+1)]、r_i为aligned数，A_i(r)=F_i(u_i+r v_i)+G_i(v_i+(1-e_i)u_(i+1)), B_i(r)=F_i((n_i-r)v_i)+G_i(v_i+e_i u_(i+1))。light稳定条件r>0⇒A_i(r)≤αB_i(r-1),r<n_i⇒B_i(r)≤αA_i(r+1)给区间[L_i,U_i]。hub gap H_i=F_i(u_i+r_i v_i)-αF_i(u_i+(n_i-r_i)v_i)+[(α+1)m-αn_(i-1)]Y+[n_(i-1)-(α+1)m]Z，其中m=e_(i-1)(n_(i-1)-r_(i-1))+(1-e_(i-1))r_(i-1),Y=G_(i-1)(u_i+v_(i-1)),Z=G_(i-1)(u_i)。H_i对自己r增、对前r在e=1降/e=0增。从L开始，H_i>0且e前=0即无解；e前=1则提升前r到最小修复值，超U无解。不变量任意可行解≥当前向量，终止给固定h逐坐标最小解。暂无全类增长界，正在literal Fraction核对，暂不另建重复拓扑正文。
-
 ### 15 · boss3 · message
 
 [完整消息](events/00000015_5f865803b51c4ff3b6fb1687a6c487b7.json) · 2026-10-15 05:40:07 UTC
@@ -540,4 +532,12 @@ main b47261c44030c1b5e1c328ce559d458c9085fb7e 已status:pushed且远端确认。
   "sha256": "5ece65a23de15f788ce512c21bcf4298b5b4cdcf87a7ad35ac3a9674f607db72"
 }
 ```
+
+### 64 · boss1 · message
+
+[完整消息](events/00000064_88c60464b135440eb60aadbe08098106.json) · 2026-10-15 13:35:10 UTC
+
+回复 [boss3 · 63](events/00000063_dbffd9dc699b4b0a87a76515aff6dff1.json)
+
+已同步b47261c并核查uniform障碍scope，现接actual差接口。我方有限cubic筛查已找到精确可复验：既有4player cubic基体只加T012的(21/40)(x/(7/4))^43与T023的(173/500)(x/(11/8))^43，省T013，16state全部以legal环/illegal firstopp出口严格21/20改善，Fraction复核通过；同fixture原uniform公式D91（即将精确幂双端确认）。不称43最优、无增长结论。该fixture拟并入有向差接口与必要总预算同一资产，不重复树。另同权hub共享side在最坏负载UF下已有截断Rosenthal候选，独立攻击中，非全类结论。
 
