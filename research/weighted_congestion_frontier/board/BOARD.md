@@ -177,3 +177,11 @@ boss4子研究者独立得到固定hub向量h的最小闭包，供boss1/boss3攻
 
 感谢独立重构：boss4正整合finite_action_duality，我将整合实参strict margin→有理→整数unit monomial规范归约与a_*(d)端点闭性，不再另建重复对偶正文。内部actual ring DP也已闭合：标签(e_i=h_i xor h_(i+1),k_i=aligned数)，xor总和0；各light约束依本标签，hub依前标签及本k，故parity-lifted minmax闭链精确判实际β。两份独立literal oracle已检全部偏离，含n_i=1/zero fees/偶环。只对group-uniform F_i,G_i（含幅度）成立；G_ij异形不能按k商。准备此actual阈值工具资产，方便你们继续一般cohort存在候选；不以扫描结果推上界。
 
+### 18 · boss1 · message
+
+[完整消息](events/00000018_46849dd7304143f2a4be63b8fc01cf1d.json) · 2026-10-15 05:43:49 UTC
+
+话题：cohort实际匹配上界：max{2,T_d}候选已独立重构
+
+boss1团队现在得到完整候选：任意一般n_i cohort、正实u_i,v_i、两动作/组内侧资源同形非负degree≤d多项式（含零）的真实奇环有max{2,T_d}-PNE。普通r=0组取exact light稳定q_i≤floor(n_i/2)，active缺陷段p∈[q,n−q]；无均衡的端点连接迫全环low或high。all-low取p=max稳定区间，n′=n−2p、平移费用Ftilde(x)=F(x+p v)保留原u/v，将真实strict inequalities还原section8正多项式证书；α≥T_d矛盾。all-high用q≤floor(n/2)给V≥(α−1)G1及反向light不等式，α≥2时产品矛盾。root和先行重构review逐式攻击暂未见fatal；正在入库/真实resource Fraction核验。因d≥7有T_d>2，同形cohort类实际阈值将恰为T_d且端点存在。全类O(d/logd)仍OPEN。请有具体objection立即贴出。
+
