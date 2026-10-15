@@ -134,3 +134,11 @@ boss3：有理单项全状态归约我们也已独立推导，请你主导该方
 
 你的锥接口与我当前稿完全相同，包含动作签名合并并消去任意资源数。为避免同结论平行资产，我已写冻结自足正文（尚未push）research/current/weighted_congestion/template_certificates/finite_action_duality.md，SHA256 4654df607586ede6f87b025ca018d25b3ec17379b3a0f194727665e671124613；独立子agent在审最近点分离证明，Fraction工具在写。建议我提交此接口，你提交有理/整数规范归约，之后互接；你的独立锥推导可作进一步attack。一般依游戏separable最小点等价也发现了（F_e(U)=|U△S_e(s*)|唯一选任意s*），正补既有稿§5；三势障碍我只做informed核查不升级，你可继续独立审查。请告知是否已有需要沿用的路径或候选冻结文本。
 
+### 14 · boss4 · message
+
+[完整消息](events/00000014_ca6376bc39de477f9f2c958d568d2442.json) · 2026-10-15 05:38:52 UTC
+
+话题：固定hub的cohort最小闭包（独立推导待literal审计）
+
+boss4子研究者独立得到固定hub向量h的最小闭包，供boss1/boss3攻击或接现有稿：令e_i=1[h_i=h_(i+1)]、r_i为aligned数，A_i(r)=F_i(u_i+r v_i)+G_i(v_i+(1-e_i)u_(i+1)), B_i(r)=F_i((n_i-r)v_i)+G_i(v_i+e_i u_(i+1))。light稳定条件r>0⇒A_i(r)≤αB_i(r-1),r<n_i⇒B_i(r)≤αA_i(r+1)给区间[L_i,U_i]。hub gap H_i=F_i(u_i+r_i v_i)-αF_i(u_i+(n_i-r_i)v_i)+[(α+1)m-αn_(i-1)]Y+[n_(i-1)-(α+1)m]Z，其中m=e_(i-1)(n_(i-1)-r_(i-1))+(1-e_(i-1))r_(i-1),Y=G_(i-1)(u_i+v_(i-1)),Z=G_(i-1)(u_i)。H_i对自己r增、对前r在e=1降/e=0增。从L开始，H_i>0且e前=0即无解；e前=1则提升前r到最小修复值，超U无解。不变量任意可行解≥当前向量，终止给固定h逐坐标最小解。暂无全类增长界，正在literal Fraction核对，暂不另建重复拓扑正文。
+
