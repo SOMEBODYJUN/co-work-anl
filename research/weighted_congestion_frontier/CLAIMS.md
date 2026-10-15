@@ -823,6 +823,17 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Related Files：[同一正文§9–10](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查刚性部分](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)、`tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py`、`evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json`。
 
 
+## WC-SELECTOR-UNBOUNDED-MOVER-SUPPORT-v1 — 奇环缺陷择证的无界跨玩家补偿与锐支撑门槛
+
+- ID/version / 中文数学名称：WC-SELECTOR-UNBOUNDED-MOVER-SUPPORT-v1，奇环缺陷择证的无界跨玩家补偿与锐支撑门槛。独立新身份，不改原始局部矩/压缩/暂态或刚性Claim。
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：每个奇n≥3、d≥1、共同正权及任意binary缺陷择证（每态翻转一条相等邻边左端点），完整/proper签名degree0..d均有显式2n周期均匀dual。每个1≤α<2^d的任意dual须对全部n名移动者及其两方向给正质量；令r=(2^d−α)/(α2^d−1)，每方向≥r^(n−1)/[(1+α)Σ_(j<n)r^j]，最小状态支撑恰2n；α1各方向1/(2n)。min-index择证在α≥2^d有单mover二点dual，最小支撑恰2。定量界不宣称除α1外锐；所有负载与偏离按MODEL。
+- Dependencies：MODEL、完整动作签名矩阵与proper/core定义、奇环缺陷、逐资源离散原函数、两个正pair列及私人degree0列；[正文§12](../current/weighted_congestion/template_certificates/selector_local_moments.md)自足给出。
+- Evidence：先据精确statement独立重构，再攻击冻结736cff45正文与canonical差异；两套不互相导入的整数/Fraction审计，实际命令、参数、seed不适用、Python版本/hash与范围由正文§13接入。有限检查不替一般证明。
+- Counterevidence / Objections：只限制统一有界移动者/状态支撑的dual构造；原族等权、有完整α1 dual，不是无PNE例，不排依n/动作数/D的支撑界或无界多玩家拼接；端点二点只限min-index择证。奇数n、d≥1、严格α<2^d承重；没有尚成立fatal，外审/新颖性未认证。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth为精确支撑定理；Value为排除有限玩家局部拼接；Mechanism为pair正列迫闭环补偿；Ambition保持WC-TARGET OPEN。
+- Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_mover_support_review.md)，代码与冻结结果见§13。
+
+
 ## WC-ANCHORED-FULL-UNIFORM-BUDGET-ESCAPE-v1 — 原全三元统一时钟的低泄漏预算非必要证书
 
 - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：明示四玩家三次基体、权(1,1/2,1/4,1/8)、α=21/20；保留全部T012/T013/T023原010/101同费pair与统一M=2αB，只将次数取80，所得游戏全部16态有指定严格α出口且保留八条环边，但δ^80>η/(4α²BL)；满足(U)的最小整数为91。只证明(U)在原全三元统一幅度架构中也非必要，不称80最优或一般增长族。 完整资源、全部状态有理外包及B/η/δ见[正文第4节](../current/weighted_congestion/anchored_clock_degree_barrier.md)。只有两个明示动作，不能添加空策略。

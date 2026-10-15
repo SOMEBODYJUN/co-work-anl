@@ -27,3 +27,5 @@
 新增两项可复用方法失败：[完整成本近似小支持归约](research/current/weighted_congestion/template_certificates/selector_local_moments.md)即使允许改权仍须付人数相关失真；[仅追加同类有序三元clock](research/current/weighted_congestion/class_front_phase_quotient.md)在固定strict sweep输入保留严格精确PNE，任意次数/幅度均不能修复。前者不排辅助玩家或均衡lift，后者不排跨类/其他arity或更高倍率专用输入类；具体收费机制、反例与重试条件见主题失败账本。
 
 [真实环余量依赖与完整锥暂态必要性](research/weighted_congestion_frontier/FAILED_ROUTES.md)分别限制仅依结构参数的actual保环次数、recurrent/点质量dual；均保留特选健康输入或一般瞬态dual的开放接口。
+
+[奇环缺陷择证的补偿链](research/current/weighted_congestion/template_certificates/selector_local_moments.md)排除了固定数量移动者的dual截断：等权可行例仍需全部玩家两方向质量，最小支撑随人数无界；只限制局部拼接，不否定一般存在。

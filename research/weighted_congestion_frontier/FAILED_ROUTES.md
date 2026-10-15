@@ -97,3 +97,8 @@
 ## 把完整proper锥的dual自动限于recurrent或点质量
 
 旧子锥反例不能单独排除“完整锥会强制recurrent解”的希望。[local-moment第11节](../current/weighted_congestion/template_certificates/selector_local_moments.md)把低阶parity暂态dual与唯一真实strict坏环同时植入完整proper锥：任何dual必须有正暂态质量；singleton常数列又排除所有点质量。新增范围是无删列/无共同sink，不是任意selector可行法；实例质量下界依η/M，没有统一d估计。可回收同时化路由和概率质量分离，重试仍须处理任意selector的真正feature hull，而非交换singleton例的量词。
+
+
+## 将全状态择证对偶截断为固定数量移动者
+
+尝试用少量玩家的方向矩匹配或局部transfer覆盖每个selector，再拼成全类证书。[奇环缺陷择证](../current/weighted_congestion/template_certificates/selector_local_moments.md)给出具体失败：等权奇n、任意d≥1与1≤α<2^d，两个proper邻边degree-d列迫相邻移动者质量互相为正，私人常数列再迫每个方向正质量；最小状态支撑恰2n而n任意大。原selector有显式α1 dual，故失败是人数截断而非全类dual不可行或无均衡。回收的是完整补偿链、定量质量界及min-index的2^d锐边界。重试必须允许无界数量玩家、证明可控全局transfer或使用依模板/D的支撑界；不能把本例当作主目标否定。

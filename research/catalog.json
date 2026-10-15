@@ -4210,7 +4210,7 @@
     {
       "path": "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
       "title": "有限次局部矩、全成本压缩与暂态择证对偶",
-      "purpose": "在全状态签名对偶与空交core后读；以D维cost-space保真压缩资源，精确写selector矩凸包/极锥接口，另给单mover门槛与完全暂态parity机制。 刚性扩展另说明非全等权全用户仿射成本不可保真缩为小资源支持，任意有限次数仍不行；用于区分低阶成本空间与正资源锥生成，附等权反边界和独立重构。；新增WC-APPROXIMATE-SUPPORT-DISTORTION-v1：每个m≥1、ε>0，原binary成本V_i=s_i(s_0+εΣ_(l=1)^m s_l)。任意相同玩家/标签的有限MODEL表示允许改正权及任意有限degree；若全部正资源潜在支持≤r≥1且所有玩家/状态V≤Ĉ≤βV，则β≥max{1,m(1+ε)/[(r−1)(1+mε)+mε]}。对称A夹逼给A²同必要界。固定有限r、β选择m和正有理ε即不可表示，原费用仅degree1。 完整逐状态成本、保零及无辅助玩家承重；原例有全0精确PNE。仅限制此近似表示归约，不排辅助玩家、均衡lift或全类存在，不声称固定参数sharp。 新增完整空交反链签名锥中暂态择证质量的必要性的精确范围、证明或独立攻击。",
+      "purpose": "在全状态签名对偶与空交core后读；以D维cost-space保真压缩资源，精确写selector矩凸包/极锥接口，另给单mover门槛与完全暂态parity机制。 刚性扩展另说明非全等权全用户仿射成本不可保真缩为小资源支持，任意有限次数仍不行；用于区分低阶成本空间与正资源锥生成，附等权反边界和独立重构。；新增WC-APPROXIMATE-SUPPORT-DISTORTION-v1：每个m≥1、ε>0，原binary成本V_i=s_i(s_0+εΣ_(l=1)^m s_l)。任意相同玩家/标签的有限MODEL表示允许改正权及任意有限degree；若全部正资源潜在支持≤r≥1且所有玩家/状态V≤Ĉ≤βV，则β≥max{1,m(1+ε)/[(r−1)(1+mε)+mε]}。对称A夹逼给A²同必要界。固定有限r、β选择m和正有理ε即不可表示，原费用仅degree1。 完整逐状态成本、保零及无辅助玩家承重；原例有全0精确PNE。仅限制此近似表示归约，不排辅助玩家、均衡lift或全类存在，不声称固定参数sharp。 新增完整空交反链签名锥中暂态择证质量的必要性的精确范围、证明或独立攻击。 奇环补偿扩展证明α<2^d时dual必有全部移动者两方向质量及精确2n支撑，用于拒绝固定人数局部拼接；不是一般dual不可行。",
       "topic": "weighted_congestion",
       "role": "account",
       "package": "有限次局部矩、全成本压缩与暂态择证对偶",
@@ -4230,7 +4230,12 @@
         "tests/audits/weighted_congestion/template_certificates/verify_transient_core_implant.py",
         "tests/audits/weighted_congestion/template_certificates/independent_transient_core_implant.py",
         "evidence/runs/weighted_congestion/template_certificates/transient_core_implant.json",
-        "evidence/runs/weighted_congestion/template_certificates/independent_transient_core_implant.json"
+        "evidence/runs/weighted_congestion/template_certificates/independent_transient_core_implant.json",
+        "research/reviews/weighted_congestion/template_certificates/selector_mover_support_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_selector_mover_support.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_mover_support.py",
+        "evidence/runs/weighted_congestion/template_certificates/selector_mover_support.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_mover_support.json"
       ]
     },
     {
@@ -5288,6 +5293,81 @@
       "topic": "weighted_congestion",
       "role": "navigation",
       "package": "协作程序"
+    },
+    {
+      "path": "research/reviews/weighted_congestion/template_certificates/selector_mover_support_review.md",
+      "title": "奇环缺陷择证：独立重构与冻结攻击",
+      "purpose": "核对736c冻结正文和canonical差异、proper/full两锥、方向质量、精确2n及端点二点；不把等权可行例误作无均衡。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "有限次局部矩、全成本压缩与暂态择证对偶",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_selector_mover_support.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_mover_support.py",
+        "evidence/runs/weighted_congestion/template_certificates/selector_mover_support.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_mover_support.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/template_certificates/verify_selector_mover_support.py",
+      "title": "奇环缺陷择证：作者真实资源列精确审计",
+      "purpose": "逐所有允许defect movers核pair及private行，枚举完整签名的周期和端点dual；无solver/浮点，输入嵌入源码。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "有限次局部矩、全成本压缩与暂态择证对偶",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_mover_support_review.md",
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_mover_support.py",
+        "evidence/runs/weighted_congestion/template_certificates/selector_mover_support.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_mover_support.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/template_certificates/independent_selector_mover_support.py",
+      "title": "奇环缺陷择证：独立逐负载与边界核验",
+      "purpose": "不调用作者实现，重算共同正分数权、全部defect选择及full/proper列；含偶数无defect、degree0与点质量反边界。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "有限次局部矩、全成本压缩与暂态择证对偶",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_mover_support_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_selector_mover_support.py",
+        "evidence/runs/weighted_congestion/template_certificates/selector_mover_support.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_mover_support.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/template_certificates/selector_mover_support.json",
+      "title": "奇环缺陷择证：作者冻结精确结果",
+      "purpose": "冻结作者audit的完整输入、覆盖计数、Python/source hash和实际命令；不覆盖且不替一般量词证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "有限次局部矩、全成本压缩与暂态择证对偶",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_mover_support_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_selector_mover_support.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_mover_support.py",
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_mover_support.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/template_certificates/independent_selector_mover_support.json",
+      "title": "奇环缺陷择证：独立冻结精确结果",
+      "purpose": "冻结独立逐负载核验、点质量攻击及不适用边界；重跑用临时目录，不原位覆盖。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "有限次局部矩、全成本压缩与暂态择证对偶",
+      "related_paths": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_mover_support_review.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_selector_mover_support.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_mover_support.py",
+        "evidence/runs/weighted_congestion/template_certificates/selector_mover_support.json"
+      ]
     }
   ]
 }

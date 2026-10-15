@@ -1,6 +1,6 @@
 # 有限次局部矩、全成本压缩与暂态择证对偶
 
-本稿分别登记局部矩表示、精确刚性与近似支持失真边界；均不完成全类匹配上界。
+本稿分别登记局部矩表示、精确刚性、近似支持失真、完整锥暂态必要性及奇环跨玩家补偿的独立身份；均不完成全类匹配上界。
 
 ## Exact scope and status
 
@@ -611,3 +611,115 @@ k=0、1时花括号为0。k≥2时它等于
 独立审查先仅接收statement，自主重构parity层、flag路由和质量分离，再攻击冻结statement c55819d7与proof c2cde533；见[同一local-moment审查稿新增部分](../../../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)。内部未发现本范围内fatal。Status：complete interface corollary; independently reconstructed and exactly audited; unrefereed。Value为完整锥下暂态必要性的范围闭合，Mechanism为低阶奇偶抵消加唯一真实坏环，Novelty未认证，Ambition全类OPEN。
 
 运行`python3 tests/audits/weighted_congestion/template_certificates/verify_transient_core_implant.py`及`python3 tests/audits/weighted_congestion/template_certificates/independent_transient_core_implant.py`。默认stdout，`--output NEW_PATH`独占创建。冻结结果为`evidence/runs/weighted_congestion/template_certificates/transient_core_implant.json`及`evidence/runs/weighted_congestion/template_certificates/independent_transient_core_implant.json`。作者审计从literal重建二次、三次两fixture的所有proper及全部签名列；独立审计使用不同附加权，重建二次例所有726列并核验超次数一列不再抵消。代码、参数、次数、Python与hash记录在各JSON；任意d及任意给定坏环的证明由本节承担，有限检查不替一般证明。
+
+## 14. 奇环缺陷择证的无界移动者支撑与补偿阈值
+
+**ID/version：`WC-SELECTOR-UNBOUNDED-MOVER-SUPPORT-v1`。** 中文数学名称：奇环缺陷择证的无界跨玩家补偿与锐支撑门槛。完整证明与内部独立重构、冻结攻击分开记录；不是全类存在或非存在结论。
+
+### 14.1. 精确身份
+
+固定任意奇数 n≥3、整数 d≥1。任意共同正权u均适用；各degree-k列除以正数u^k归一化，以下取u=1。取 n 名权重均为1、动作标签均为0和1的玩家，状态空间 Ω={0,1}^n。考虑所有非空完整动作关联签名和次数 k=0,…,d 的矩阵 B_h(α)；也可只保留每个玩家块均为真子集的非空 proper/core 签名。
+
+圈下标以 Z/nZ 计，程序以0,…,n−1计。对每个状态 s，任选一个下标 i 满足 s_i=s_(i+1)，令 h(s)选择玩家 i 翻转其动作。因为 n 为奇数，所有相邻位置不可能都不等，这类合法selector对每个状态都有定义，且没有自环。第1–3项结论适用于每个这样的defect-resolving selector；第4项端点证书则指定其中的最小下标selector。
+
+Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion 如下。
+
+1. 对每个实 α≥1，上述完整签名矩阵均有概率dual λ≥0、Σλ=1、B_h(α)^Tλ≤0。可取仅支撑恰有一条相等邻边的2n个状态的均匀概率，在 α=1 时全部列积恰为0。
+2. 若 1≤α<2^d，则任意这样的dual均须对每名玩家的两个翻位方向分别给正质量。写 μ_i=Σ_(s:h(s)选i)λ_s，μ_(i,a)=Σ_(s:h(s)选i且s_i=a)λ_s，则 μ_(i,a)>0 对每个 i,a 成立。因此dual至少使用全部n名移动者，其状态支撑至少为2n；第1项均匀环证书达到2n，所以最小支撑恰为2n。不能统一限制为固定数目的移动者或状态；n在固定d、α下可无界。
+3. 更定量地，置 A=2^d−α>0，B=α2^d−1>0，r=A/B∈(0,1]。每个dual均满足 μ_(i+1)≥r μ_i。特别地
+
+   μ_i ≥ r^(n−1)/(Σ_(j=0)^(n−1) r^j) >0。
+
+   此外 μ_(i,a)≥μ_i/(1+α)≥r^(n−1)/[(1+α)Σr^j]。当 α=1 时 r=1，于是每名移动者质量恰为1/n，每个翻位方向质量恰为1/(2n)。这些下界只是必要条件，不宣称对任意参数可达到。
+4. 指定 h 总取最小缺陷下标时，门槛 2^d 对“全部移动者必须正质量”结论是准确边界：当 α≥2^d，存在只由玩家0移动的二状态支撑dual。取 s^0=(0,…,0)、s^1=(1,1,0,…,0)，各质量1/2。两状态都由 h 选择玩家0。
+
+该结论在完整签名和proper/core签名两种锥下分别成立。proper签名实际可通过零费用单点marker保持非空、空交且反链的动作策略；不依赖空策略、固定玩家、必选正费用或自偏离。
+
+### 14.2. 唯一相等邻边构成显式2n环
+
+恰有一条相等邻边的状态有2n个：指定该边和一名端点的bit后，沿其余n−1条不等边唯一确定全部状态；奇n保证绕回一致。若唯一相等边是(i,i+1)，翻转玩家i后该边变不等，而边(i−1,i)由不等变相等，其他边不动。因此缺陷向下标减1方向移动。走n步后每名玩家恰翻转一次，得到原状态逐位补集；再走n步回到原状态。缺陷位置在前n步互异，后n步同位置的状态是补集而不同，故这2n点构成一个长度2n的简单有向环Q。
+
+不需要断言全h只有这一个循环，也不需要断言所有其他状态都进入Q。
+
+### 14.3. 等权资源势给出全签名可行dual
+
+对任意签名σ，令 z_j(s)=1_(玩家j当前标签在σ_j中)，负载 L(s)=Σ_j z_j(s)为非负整数。次数k的单资源定义离散原函数
+
+    F_k(L)=Σ_(a=1)^L a^k，F_k(0)=0。
+
+对任意翻位 s→t，若移动玩家对该资源的使用不变，则其当前与真实偏离后费用相等，且负载相等；若其离开资源，F_k(L(s))−F_k(L(t))=L(s)^k；若其加入资源，差为−L(t)^k。因此对所有完整签名和0≤k≤d，
+
+    B_h(1)[s,(σ,k)]=F_k(L(s))−F_k(L(H(s)))。
+
+沿Q求和恰为0，故Q上均匀分布是α=1的全列dual。α增大时，每列额外减去(α−1)乘以非负真实arrival费用，故同一分布对所有α≥1仍可行。常数项k=0的约定由F_0(L)=L覆盖；未使用资源由指示量消去，不涉及0/0。
+
+### 14.4. 每条邻边的两个正资源迫使相邻移动者补偿
+
+固定邻边(i,i+1)。取两个资源列，均为次数d、系数1：
+
+- r_i^0只由玩家i和i+1的动作0使用；
+- r_i^1只由玩家i和i+1的动作1使用。
+
+其他玩家都不使用这两个资源。二列都是proper/core列，故下面必要条件对完整与core锥都有效。
+
+对状态s，其两列margin的和记D_i(s)。若移动者不是i或i+1，D_i(s)=0。若移动者属于这两个端点，则：
+
+- 若当前两端动作相等，移动者当前费用为2^d，翻位后为1，故D_i(s)=2^d−α=A；
+- 若当前两端动作不等，当前费用为1，翻位后为2^d，故D_i(s)=1−α2^d=−B。
+
+h选择i时，按定义s_i=s_(i+1)，所以必为第一种；h选择i+1时两种均可能，所以总有D_i(s)≥−B。任一dual对两列分别非正，相加给
+
+    0 ≥ E_λ D_i ≥ A μ_i−B μ_(i+1)。
+
+所以 μ_(i+1)≥r μ_i。若某 μ_i=0，沿反方向由A>0逐次迫所有μ为0，与Σμ=1矛盾。因此全部μ_i>0。
+
+对于定量下界，固定i，沿反向逐次用 μ_(i−j)≤μ_i/r^j，j=0,…,n−1。归一化给
+
+    1=Σμ≤μ_i Σ_(j=0)^(n−1) r^(−j)，
+
+即 μ_i≥r^(n−1)/(Σ_(j=0)^(n−1)r^j)。当r=1，环上所有不等式迫相等且归一化为1/n。
+
+对每名玩家i，另取两个只在其动作a使用的私人常数资源列（degree0）。dual分别给 μ_(i,0)≤α μ_(i,1) 和 μ_(i,1)≤α μ_(i,0)。故每个方向至少为 μ_i/(1+α)，特别地全部2n个玩家方向都有正质量。每个状态仅选择一个玩家的一种方向，所以任何dual至少支撑2n个状态；第14.3节的均匀环证书恰有2n点，故最小状态支撑恰为2n。当α=1时两个方向相等，均为1/(2n)。
+
+注意：此处将两条正资源列相加，仅推出必要的dual约束；没有用负费用、负资源系数，也没有把一般极锥换成带符号全部多项式矩。
+
+### 14.5. 端点的单移动者dual
+
+令两个支持状态分别为s^0=(0,…,0)、s^1=(1,1,0,…,0)，各质量1/2。边(0,1)在这两状态均相等且下标最小，故h都选择玩家0翻位。
+
+固定任意签名σ和次数k≤d。
+
+- 若玩家0的两个动作都不用资源，则两行均为0。
+- 若两个动作都用资源，则每次玩家0翻位保持该资源用户集不变，因此各行均为(1−α)乘以非负费用，非正。
+- 若仅一个动作用资源，则两行一个是departure费用、一个是负α倍arrival费用。两处除玩家1外的资源使用完全相同；玩家0被使用时总贡献自身1，玩家1的贡献至多改变1。故两个正负载L,L'≥1且|L−L'|≤1，因而 max(L^k/L'^k,L'^k/L^k)≤2^k≤2^d。于是α≥2^d时，两行等质量的列积非正。
+
+这覆盖所有完整签名，也覆盖其proper子集。α=2^d时第14.4节A=0，所推μ约束不再迫所有玩家有正质量，与显式二状态证书一致。任一单状态点质量都违反所选玩家当前动作的degree0私人列（该行恰为1），故在此端点及其上，最小状态支撑恰为2。
+
+### 14.6. 准确含义与主目标的缺口
+
+本族的玩家全部等权，所有此类游戏都具有标准离散资源势；本文甚至给出这个selector在α=1的显式全列dual。它不是无均衡反例，也不是一般dual不可行证据。
+
+它排除的是统一有界移动者支撑的dual构造：每个固定d≥1和1≤α<2^d，所需移动者数可无界。尤其任何拟定常数C，当C d/ln d<2^d的次数范围内，不能希望通过固定数量玩家的局部证书保证完整selector dual。不同玩家的资源成本补偿无法被无证拆成独立的单玩家矩匹配。
+
+仍未解决：任意selector在统一O(d/ln d)倍率是否存在dual；一般权向量下如何组织无界数量玩家之间的补偿；是否存在比已知d/ln d下界更强的全状态非存在机制。
+
+Dependencies：MODEL、完整动作签名矩阵定义、奇环缺陷图、逐资源离散原函数及两个proper pair列的必要不等式。无需外部PNE定理；不以有限穷举证明任意参数。
+
+Evidence：审查者仅据精确statement独立重构奇环与必要补偿链，然后攻击冻结正文SHA256 `736cff453a3a750c58ebdac2b7fe133e2128a56b8d203abd54ebe31610a7ca28`；方向质量、最小2n支撑及端点二点证书另作独立攻击。
+
+Counterevidence / Objections：任意全类存在证明仍可使用无界数量玩家；不排除小于D+1的其他依模板支撑界，亦不否定一般dual。等权全类具有精确势，原例不是均衡非存在；奇数n、d≥1与严格α<2^d均承重。完整与proper两锥的身份分别成立，零费marker只区分动作。
+
+Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅所述择证补偿/支撑定理；Value为排除统一有界移动者局部拼接；Mechanism为正pair列迫循环补偿；Novelty和外审未认证；Ambition保持WC-TARGET OPEN。
+
+Related Files与复验合同见下节。
+
+## 15. 奇环补偿的独立核验与继续义务
+
+[独立重构与冻结攻击](../../../reviews/weighted_congestion/template_certificates/selector_mover_support_review.md)只覆盖新ID，不将本稿原始三Claim及刚性审查自动外推。
+
+在仓库根运行：
+
+- `python3 tests/audits/weighted_congestion/template_certificates/verify_selector_mover_support.py`：作者按真实资源签名核验全部允许defect移动者、pair列公式、私人方向行、全签名环dual和端点二点dual；冻结输出为`evidence/runs/weighted_congestion/template_certificates/selector_mover_support.json`。
+- `python3 tests/audits/weighted_congestion/template_certificates/independent_selector_mover_support.py`：独立实现重算相同承重身份，另覆盖共同正分数权、偶数n/degree0不适用边界及支撑计数；冻结输出为`evidence/runs/weighted_congestion/template_certificates/independent_selector_mover_support.json`。
+
+两份代码均为整数/Fraction、无随机seed、无solver与浮点容差；完整参数、命令、Python版本及源码SHA在代码/JSON中明确。一般实α和任意奇n证明由第14节承担。现在真正缺少的是组织任意权、任意selector上无界多玩家的全局补偿，不能再无证限制为固定数量移动者。
