@@ -184,8 +184,7 @@ g_i\le\frac{1}{\alpha-1}\sum_{j>i}\ell_{ij}.
 令 E_i^*=max_{j>i}E_D(w_0,w_i,w_j;α)。任意 first-opposite 为 i 的非法态有
 
 \[
-h_i^H(s)\le\left(\frac1{\alpha-1}+E_i^*
-ight)\gamma_0. \tag{15}
+h_i^H(s)\le\left(\frac1{\alpha-1}+E_i^*\right)\gamma_0. \tag{15}
 \]
 
 因此若该状态的原 margin 不大于右侧的负值，指定 first-opposite 翻位不能成为严格改善出口。这只否定此指定出口；其他玩家可能改善，不能据此声称该状态是 PNE，更不能声称全部时钟或全类题失败。要建立 actual 全状态障碍仍需同时控制其他玩家的出口，或给有限列的完整分离证书。
@@ -261,7 +260,7 @@ h_i^H(b)\le\kappa_i(b,D)\sum_T S_T.
 - T012：c_12(x)=(21/40)(x/(7/4))^43；
 - T023：c_23(x)=(173/500)(x/(11/8))^43。
 
-独立按真实用户负载遍历16个状态，合法8态使用原环出口，其余8态使用 first-opposite 出口；全部严格 α margin 为正，精确值逐态存于 `actual_clock_audit_final.json`，最小值存于其 `minimum_margin` 字段。显式输入存于 `examples/weighted_congestion/anchored_actual_clock_degree43.json`。这证明该固定基体的同费锚定架构在次数43可行，与同次数3障碍相容；也展示实际有向差接口容许非统一幅度、省略某些三元。没有从该固定实例外推增长族或一般 D=O(p) 编译器。
+独立按真实用户负载遍历16个状态，合法8态使用原环出口，其余8态使用 first-opposite 出口；全部严格 α margin 为正，精确值逐态存于 `evidence/runs/weighted_congestion/cyclic_clone/actual_clock_margins.json` 的 `degree43_fixture` 字段，最小值存于该字段的 `minimum_margin`。显式输入存于 `examples/weighted_congestion/anchored_actual_clock_degree43.json`。这证明该固定基体的同费锚定架构在次数43可行，与同次数3障碍相容；也展示实际有向差接口容许非统一幅度、省略某些三元。没有从该固定实例外推增长族或一般 D=O(p) 编译器。
 
 同一显式基体的统一泄漏预算使用 B=56643761/70312500、η=49676111/6750000000、δ=12/13、L=3；脚本以有理数逐次幂检查，满足 δ^D≤η/(4α²BL) 的最小整数为 D=91，并反查 D−1 不满足。因此本固定实例实际43次证书优于这项统一预算选值；不据此声称43最优、此前91为必要实际次数，或得到一般次数改善。
 

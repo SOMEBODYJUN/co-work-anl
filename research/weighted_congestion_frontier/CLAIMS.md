@@ -821,3 +821,13 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Counterevidence / Objections：只限完整成本保真、固定玩家/权/标签和有限表示锥，不声称闭包/暴露射线；等权存在≤2用户高次资源表示。原V有全0精确PNE，不限制改权/加玩家/仅保均衡或单向lift，也不反驳≤D资源数量压缩，未解全类题。等权n≥3用pair资源x^q/(2^q−1)和私人常数可保全成本；n2等权也有非线性同负载表示。无尚成立数学fatal。
 - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅完整成本保真表示障碍；Value为资源锥不可局部化边界；Mechanism为一对异权contrast加solo预算饱和；Novelty/外审未认证，Ambition保留WC-TARGET OPEN。
 - Related Files：[同一正文§9–10](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查刚性部分](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)、`tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py`、`evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json`。
+
+
+## WC-ANCHORED-FULL-UNIFORM-BUDGET-ESCAPE-v1 — 原全三元统一时钟的低泄漏预算非必要证书
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：明示四玩家三次基体、权(1,1/2,1/4,1/8)、α=21/20；保留全部T012/T013/T023原010/101同费pair与统一M=2αB，只将次数取80，所得游戏全部16态有指定严格α出口且保留八条环边，但δ^80>η/(4α²BL)；满足(U)的最小整数为91。只证明(U)在原全三元统一幅度架构中也非必要，不称80最优或一般增长族。 完整资源、全部状态有理外包及B/η/δ见[正文第4节](../current/weighted_congestion/anchored_clock_degree_barrier.md)。只有两个明示动作，不能添加空策略。
+- Dependencies：MODEL、明示固定三次基体、原时钟literal和真实负载、有限有理整数幂；不以LP或uniform充分条件证明非存在。
+- Evidence：独立statement重构后攻击冻结2d9591c0；两路不互相导入的Fraction重建全部资源/状态/偏离、互补、八行区间与80/90/91幂反查。
+- Counterevidence / Objections：稀疏43次例不能独自证明原uniform架构逃逸，本条补上该范围。固定实例不解决唯一题；uniform预算障碍在原假设下保持。无尚成立fatal；未外审/新颖性未认证。
+- Status：complete finite certificate; independently reconstructed and exactly audited; unrefereed。Truth为有限全状态证书及预算非必要；Value为原架构边界；Mechanism为真实有向差；Ambition全类仍OPEN。
+- Related Files：[正文](../current/weighted_congestion/anchored_clock_degree_barrier.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md)；两份新代码和新冻结记录从正文审计合同进入，基体输入复用原43次JSON而不改写。

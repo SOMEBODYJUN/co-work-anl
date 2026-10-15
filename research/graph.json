@@ -5458,6 +5458,34 @@
         "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
       ],
       "status": "method candidate; excluded in stated scope"
+    },
+    {
+      "id": "WC-ANCHORED-FULL-UNIFORM-BUDGET-ESCAPE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "原全三元统一时钟的低泄漏预算非必要证书",
+      "detail": "明示四玩家三次基体、权(1,1/2,1/4,1/8)、α=21/20；保留全部T012/T013/T023原010/101同费pair与统一M=2αB，只将次数取80，所得游戏全部16态有指定严格α出口且保留八条环边，但δ^80>η/(4α²BL)；满足(U)的最小整数为91。只证明(U)在原全三元统一幅度架构中也非必要，不称80最优或一般增长族。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md"
+      ],
+      "status": "complete finite certificate; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-FULL-UNIFORM-CLOCK-EVIDENCE",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "全三元统一幅度80次时钟的双路全状态有理证书",
+      "detail": "逐资源重建16态64成本/偏离及全部指定出口，反算原(U)次数91。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_full_uniform_clock.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_full_uniform_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/full_uniform_clock_degree80.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_full_uniform_clock_degree80.json",
+        "examples/weighted_congestion/anchored_actual_clock_degree43.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -13010,6 +13038,39 @@
         "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
       ],
       "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-FULL-UNIFORM-CLOCK-ESCAPE",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-FULL-UNIFORM-CLOCK-EVIDENCE"
+      ],
+      "conclusion": "WC-ANCHORED-FULL-UNIFORM-BUDGET-ESCAPE-v1",
+      "statement": "完整有限有理证书直接证明固定实例；不推广次数最优或增长族。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_full_uniform_clock.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_full_uniform_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/full_uniform_clock_degree80.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_full_uniform_clock_degree80.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "LIMIT-UNIFORM-CLOCK-BUDGET-NECESSITY",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-ANCHORED-FULL-UNIFORM-BUDGET-ESCAPE-v1"
+      ],
+      "conclusion": "WC-UNIFORM-CLOCK-BUDGET-BARRIER-v1",
+      "statement": "(U)不是原全三元统一幅度架构的必要条件；原障碍的假设和结论均不变。",
+      "refs": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "research/current/weighted_congestion/uniform_clock_budget_barrier.md"
+      ],
+      "status": "complete finite certificate; independently reconstructed and exactly audited; unrefereed"
     }
   ]
 }

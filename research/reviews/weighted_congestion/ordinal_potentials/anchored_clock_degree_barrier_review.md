@@ -219,3 +219,14 @@ the unrestricted main existence/nonexistence question remains unresolved.
 ## 入库强化版本合同
 
 现行正文为[三次锚定时钟次数保持障碍](../../../current/weighted_congestion/anchored_clock_degree_barrier.md)。它把本审查预读阶段独立发现的简单四个dual及两条弱环条件纳入同一新Claim身份；原作者冻结稿的全严格环命题是其推论，不静默改写其他既有Claim。作者代码迁入`tests/audits/weighted_congestion/cyclic_clone/verify_clock_degree_barrier.py`，主研究者在原代码上追加本节简单证书逐项检查并冻结新结果`evidence/runs/weighted_congestion/cyclic_clone/clock_degree_barrier.json`；它仍核查原52个严格内积。独立源码逐字迁移，运行所得新规范路径记录见上述独立证据，所列旧run hash只标识审查时先前冻结版本。正文表格的12列上界和全部承重不等式在本审查已完整给出，两份代码均重算它们；不把入库路径变更当新数学证明。
+
+
+## 原全三元统一幅度80次证书：独立重构与冻结攻击
+
+本节只审查新增的 `WC-ANCHORED-FULL-UNIFORM-BUDGET-ESCAPE-v1`，不改变前述degree≤3架构障碍。审查者为本轮独立 `uniform_fixture_review`。先仅接收精确statement及canonical显式基体，未读作者稿、作者实现或作者输出，独立按每一个实际资源及动作membership重建16态64个成本/偏离。随后攻击冻结正文 `research/current/weighted_congestion/anchored_clock_degree_barrier.md`，SHA256 `2d9591c0c341fe4623f1d2f2c219e8c7d8dda27a8293d63bf47b7629481f2019` 的新增第4节。
+
+独立核验全部三个三元、相同幅度M=2αB、局部010/101、D=80，没有省T013、改变两侧费用或借用43次输入的clock。全16态的指定出口严格，其中合法态用原环，非法态用first opposite；任意玩家偏离的真实负载、互补成本/margin及策略非空且不同均直接核对。八行有理外包表按精确分数检查，所有下端点>1/500。B、η、δ、M、阈值以及80不满足(U)、90仍不满足、91首次满足(U)均以有理幂及正分母反乘确认。未找到fatal objection。
+
+独立规范代码 `tests/audits/weighted_congestion/cyclic_clone/independent_full_uniform_clock.py`，冻结结果 `evidence/runs/weighted_congestion/cyclic_clone/independent_full_uniform_clock_degree80.json`。不导入作者代码。默认stdout和`--output`独占创建已检查；旧冻结输入和结果未改写。另一路从不同pair表示实现的 `verify_full_uniform_clock.py` 保存独立复算。
+
+本节结论为固定有限证书及(U)对原架构也非必要；既不反驳满足(U)时的普适次数障碍，也不证明最优80或增长族。内部核验通过不代表外部同行评审或新颖性认证。

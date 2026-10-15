@@ -114,3 +114,70 @@
 - 所有输入有理数已在两份代码显式给定；冻结记录含源码hash、参数、Python版本、精度及命令。发现阶段的浮点LP只用来寻找候选；本结论仅依明示有限有理证书与非负锥线性，不能把求解器失败当成证明。
 
 [一般锚定编译器](anchored_cycle_lock.md)仍能用更高D锁定这个基体。本结果仅证明这个固定G、anchor0、指定互补phase及同费pair的degree≤3选项不能工作；不排除D=O(p)中常数大于1的编译器、其他anchor、不同两侧费用、辅助玩家或其他clock拓扑，不提供唯一题所需α ln(max{p,D})/max{p,D}增长族。
+
+## 四、原全三元统一幅度架构也能逃离充分预算
+
+**独立身份。** `WC-ANCHORED-FULL-UNIFORM-BUDGET-ESCAPE-v1`，原全三元统一时钟的低泄漏预算非必要证书。它不修改前述degree≤3障碍的任何量词。
+
+**精确陈述、对象和范围。** 只取第一节明示的四玩家基体G、权重和α=21/20。令B为G的全部状态玩家成本最大值，η为原八条环边的最小严格α差。对全部三个T012、T013、T023，各加入原编译器的两互补010/101同费资源，费用统一为
+
+\[
+ c_T(x)=M(x/W_T)^{80},\qquad
+ M=2\alpha B=\frac{396506327}{234375000},\quad
+ (W_{012},W_{013},W_{023})=(7/4,13/8,11/8).
+\]
+
+那么这个次数80的有限MODEL游戏没有21/20-PNE，且原八条环边均仍严格21/20改善；其余八态均由最早与anchor动作不同的玩家翻位严格改善。同时，原编译器的统一充分条件
+
+\[
+ (U)\qquad \delta^D\le\eta/(4\alpha^2BL)
+\]
+
+在D=80不成立。这里没有省略三元、改变幅度M、改变phase或两侧费用；唯一改变是按真实差选D，而不要求(U)。因此(U)对原全三元统一幅度架构本身也不是必要条件。此为一个固定实例，不声称80最优、一般常数倍次数编译器或增长族；[统一预算障碍](uniform_clock_budget_barrier.md)的原条件结论保持成立。
+
+**直接全状态证书。** 仍按真实资源负载计算。对状态s的指定玩家r，写m_G(s,r)=C_r^G(s)−αC_r^G(s^{⊕r})。在T中，r当前及翻位后所用时钟资源的负载分别为l_T(s,r)和l_T(s^{⊕r},r)。总改善差精确等于
+
+\[
+ m(s,r)=m_G(s,r)+M\sum_{T\ni r}
+ \left[(l_T(s,r)/W_T)^{80}
+       -\alpha(l_T(s^{\oplus r},r)/W_T)^{80}\right]. \tag{2}
+\]
+
+互补资源保证m(s,r)=m(1−s,r)，所以只需下表八态。表中区间为严格有理外包，端点分母整除10000；将本节权、幅度、第一节基体和负载代入(2)，通分乘正分母即可逐项检验。全精确分数和各玩家的当前/偏离后成本另存冻结证据。
+
+| s | 指定玩家r | m(s,r)的有理区间 |
+| --- | --- | --- |
+| 0000 | 0 | [7/2000,9/2500) |
+| 0001 | 3 | [73/10000,37/5000) |
+| 0010 | 2 | [13461/10000,6731/5000) |
+| 0011 | 2 | [81/10000,41/5000) |
+| 0100 | 1 | [2913/1000,29131/10000) |
+| 0101 | 1 | [11699/10000,117/100) |
+| 0110 | 1 | [2203/1250,141/80) |
+| 0111 | 1 | [101/10000,51/5000) |
+
+全部下端点都大于1/500。八态及其互补穷尽全部状态，因此得到严格全状态非存在，未把单环当作无均衡。
+
+**预算反算。** 从同一基体精确得到
+
+\[
+ B=\frac{56643761}{70312500},\quad
+ \eta=\frac{49676111}{6750000000},\quad
+ L=3,\quad\delta=\frac{12}{13},\quad
+ \frac\eta{4\alpha^2BL}=\frac{1241902775}{1798552699272}.
+\]
+
+有理整数幂直接给
+
+\[
+ (12/13)^{80}>
+ \frac{1241902775}{1798552699272},\qquad
+ (12/13)^{91}\le
+ \frac{1241902775}{1798552699272}<(12/13)^{90}.
+\]
+
+由于0<12/13<1，91是满足(U)的最小非负整数次数；这不是实际最小锁定次数。上面80的证书比[实际差分接口](anchored_clock_actual_margins.md)中的稀疏非统一43次证书弱，但其独立作用是排除“只有放宽原架构才能逃离(U)”的误读。
+
+**依赖、审查及边界。** 依赖MODEL真实成本、第一节固定基体和本节完整资源公式；不依赖LP结果或外部定理。作者与审查者分别从资源用户集以Fraction重构全部状态；审查冻结版本和覆盖见原审查稿新增节。Status：complete finite certificate; independently reconstructed and exactly audited; unrefereed。Truth只含该有限证书及预算非必要性；Value为原架构的精确边界；Novelty未认证，Ambition保留全类命题OPEN。零费用/空策略在全MODEL允许，但本证书的策略族仅为这两个明确动作，不能添空动作。
+
+**重现合同。** 输入基体直接复用不改写的`examples/weighted_congestion/anchored_actual_clock_degree43.json`的`base_pairs`；该文件的`clock_pairs`不用于本节。审计程序在自身参数中明确构造全部三个三元、M=2αB、D=80。运行`python3 tests/audits/weighted_congestion/cyclic_clone/verify_full_uniform_clock.py`及`python3 tests/audits/weighted_congestion/cyclic_clone/independent_full_uniform_clock.py`；默认stdout，`--output NEW_PATH`独占创建。对应新冻结记录为`evidence/runs/weighted_congestion/cyclic_clone/full_uniform_clock_degree80.json`和`evidence/runs/weighted_congestion/cyclic_clone/independent_full_uniform_clock_degree80.json`。旧输入、旧代码快照和旧运行均保持原字节。

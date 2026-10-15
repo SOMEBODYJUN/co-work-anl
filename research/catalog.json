@@ -3849,7 +3849,7 @@
     {
       "path": "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
       "title": "三次双轮环的锚定时钟次数保持障碍：完整正文",
-      "purpose": "给定一般cycle-lock后读取；用固定三次基体和12列精确非负锥证书排除该锚定架构的degree保持，明确不外推常数倍次数。",
+      "purpose": "给定一般cycle-lock后读取；用固定三次基体和12列精确非负锥证书排除该锚定架构的degree保持，明确不外推常数倍次数。 新增第4节/对应审查以原全三元统一幅度80次证书精确区分(U)充分性与实际必要性。",
       "topic": "weighted_congestion",
       "role": "account",
       "package": "三次双轮环的锚定时钟次数保持障碍",
@@ -3858,13 +3858,18 @@
         "tests/audits/weighted_congestion/cyclic_clone/verify_clock_degree_barrier.py",
         "tests/audits/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.py",
         "evidence/runs/weighted_congestion/cyclic_clone/clock_degree_barrier.json",
-        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.json"
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.json",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_full_uniform_clock.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_full_uniform_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/full_uniform_clock_degree80.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_full_uniform_clock_degree80.json",
+        "examples/weighted_congestion/anchored_actual_clock_degree43.json"
       ]
     },
     {
       "path": "research/reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md",
       "title": "三次双轮环的锚定时钟次数保持障碍：独立重构与攻击",
-      "purpose": "保存未读稿的独立literal列重算、更简单dual和两弱边强化，再攻击作者freeze，区分真实架构障碍与主问题。",
+      "purpose": "保存未读稿的独立literal列重算、更简单dual和两弱边强化，再攻击作者freeze，区分真实架构障碍与主问题。 新增第4节/对应审查以原全三元统一幅度80次证书精确区分(U)充分性与实际必要性。",
       "topic": "weighted_congestion",
       "role": "review",
       "package": "三次双轮环的锚定时钟次数保持障碍",
@@ -3873,7 +3878,12 @@
         "tests/audits/weighted_congestion/cyclic_clone/verify_clock_degree_barrier.py",
         "tests/audits/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.py",
         "evidence/runs/weighted_congestion/cyclic_clone/clock_degree_barrier.json",
-        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.json"
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.json",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_full_uniform_clock.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_full_uniform_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/full_uniform_clock_degree80.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_full_uniform_clock_degree80.json",
+        "examples/weighted_congestion/anchored_actual_clock_degree43.json"
       ]
     },
     {
@@ -4682,6 +4692,70 @@
         "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
         "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md",
         "tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/cyclic_clone/verify_full_uniform_clock.py",
+      "title": "全三元统一幅度80次时钟：独立pair有理重建",
+      "purpose": "仅读旧输入基体，重建全部三元和原统一M，逐态真实成本与出口及80/90/91预算反算；用于原架构充分预算非必要性。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "anchored-full-uniform-budget-escape",
+      "related_paths": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_full_uniform_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/full_uniform_clock_degree80.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_full_uniform_clock_degree80.json",
+        "examples/weighted_congestion/anchored_actual_clock_degree43.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/cyclic_clone/independent_full_uniform_clock.py",
+      "title": "原统一时钟80次证书：逐资源独立攻击",
+      "purpose": "以每一实际资源的membership重建16态64偏离，检查表格有理外包、互补、策略和(U)幂反查，不导入另一实现。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "anchored-full-uniform-budget-escape",
+      "related_paths": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_full_uniform_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/full_uniform_clock_degree80.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_full_uniform_clock_degree80.json",
+        "examples/weighted_congestion/anchored_actual_clock_degree43.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/cyclic_clone/full_uniform_clock_degree80.json",
+      "title": "全三元统一幅度80次时钟：pair重建冻结结果",
+      "purpose": "冻结全状态选定出口、所有玩家margin、输入与代码hash及预算反算，不外推增长族。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "anchored-full-uniform-budget-escape",
+      "related_paths": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_full_uniform_clock.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_full_uniform_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/independent_full_uniform_clock_degree80.json",
+        "examples/weighted_congestion/anchored_actual_clock_degree43.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/cyclic_clone/independent_full_uniform_clock_degree80.json",
+      "title": "原统一时钟80次证书：逐资源冻结结果",
+      "purpose": "冻结独立64成本/偏离和八行有理区间检查，作为原架构有限证书交叉证据。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "anchored-full-uniform-budget-escape",
+      "related_paths": [
+        "research/current/weighted_congestion/anchored_clock_degree_barrier.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_full_uniform_clock.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_full_uniform_clock.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/full_uniform_clock_degree80.json",
+        "examples/weighted_congestion/anchored_actual_clock_degree43.json"
       ]
     }
   ]
