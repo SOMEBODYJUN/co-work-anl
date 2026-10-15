@@ -30,3 +30,5 @@ Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须�
 新增独立ID `WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1`：[共享侧资源正文第十节](research/current/weighted_congestion/shared_side_truncated_potential.md)给局部异权R/K条件下的UFhet均衡；精确全部量词和审查状态在主题账本。没有改写旧同权身份或WC-TARGET。
 
 分离倍率的当前最强版 `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3` 以UFτ和ατ≥d给所写同权子类α-PNE（τ≥1）；独立`WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1`给该结构类精确PNE的τ=d锐边界，lower覆盖全部4态，只限α1。v1/v2身份、完整量词与冻结审查保持在[主题账本](research/weighted_congestion_frontier/CLAIMS.md)；全类目标OPEN。
+
+[异权乘积预算及森林私人成本归约的新精确身份](research/weighted_congestion_frontier/CLAIMS.md)：`WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2`保留R/K与UFτ，`WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1`限制同一势的全部global minima；`WC-INCIDENCE-FOREST-EXACT-v1`与`WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1`分别给森林exact及保degree固定提升，`WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1`给单环准确边界。一般证明、冻结攻击与有限证据分层，主目标不变。

@@ -4492,7 +4492,7 @@
     {
       "path": "research/current/weighted_congestion/shared_side_truncated_potential.md",
       "title": "共享侧资源的强迫均衡：截断势、同权倍率权衡与异权排序势",
-      "purpose": "第1–7节为同权hub单light截断势与直接AS+B预算；第8节为同权跨source多light的1+√d界。第9节分离强迫τ与目标α：WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1在UFτ下以(τ−1)(α−1)≥d给α-PNE；第9.8—9.12节独立v2保留主费增量，将充分条件改进为α(τ−1)≥d，包含τ≥d+1的精确PNE充分条件。两版本均要求同权hub、唯一main source及所写二元同费副本合同，τ>1、α≥1无需排序。第10节WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1处理局部异权hub：UFhet下α≥R且(α−1)²≥Kd给全anti α-PNE，固定局部比仍可有无界全局跨度。按范围核对精确陈述、真实重置合同及配套审查和代码；无界局部比及非UF仍开放，各独立Claim身份保持，不提供全类统一C、d0。 第9.14起v3用侧资源增量把条件改为ατ≥d并纳τ1；独立exact边界Claim用2玩家覆盖全部4态，证明该结构类τ=d恰保证精确PNE；不称一般α乘积最优。",
+      "purpose": "第1–7节为同权hub单light截断势与直接AS+B预算；第8节为同权跨source多light的1+√d界。第9节分离强迫τ与目标α：WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v1在UFτ下以(τ−1)(α−1)≥d给α-PNE；第9.8—9.12节独立v2保留主费增量，将充分条件改进为α(τ−1)≥d，包含τ≥d+1的精确PNE充分条件。两版本均要求同权hub、唯一main source及所写二元同费副本合同，τ>1、α≥1无需排序。第10节WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1处理局部异权hub：UFhet下α≥R且(α−1)²≥Kd给全anti α-PNE，固定局部比仍可有无界全局跨度。按范围核对精确陈述、真实重置合同及配套审查和代码；无界局部比及非UF仍开放，各独立Claim身份保持，不提供全类统一C、d0。 第9.14起v3用侧资源增量把条件改为ατ≥d并纳τ1；独立exact边界Claim用2玩家覆盖全部4态，证明该结构类τ=d恰保证精确PNE；不称一般α乘积最优。 第十一节另核异权UFτ乘积预算α≥R、ατ≥Kd及旧降序势全部global minima的局部权比障碍；与同权v1/v2/v3及异权旧v1分版本调用。",
       "topic": "weighted_congestion",
       "role": "account",
       "package": "shared-side-truncated-potential",
@@ -4527,7 +4527,10 @@
         "tests/audits/weighted_congestion/verify_multisource_reset_increment.py",
         "tests/audits/weighted_congestion/independent_multisource_reset_increment.py",
         "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json",
-        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json"
+        "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_independent.json",
+        "research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_reset_increment.py"
       ]
     },
     {
@@ -5675,6 +5678,171 @@
         "tests/audits/weighted_congestion/verify_multisource_reset_increment.py",
         "tests/audits/weighted_congestion/independent_multisource_reset_increment.py",
         "evidence/runs/weighted_congestion/shared_side_truncation/reset_increment_author.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md",
+      "title": "异权排序侧势重置增量与全局最小化边界：独立冻结攻击",
+      "purpose": "核对异权v2与GlobalR的先statement重构、两次冻结hash和真实偏离攻击；检查HRI总长、τ1、每light一次付款以及仅限旧降序势的全局最小化反例。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "heterogeneous-hub-reset-product",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/verify_heterogeneous_reset_increment.py",
+      "title": "异权排序侧势重置增量与全局最小化边界：作者审计",
+      "purpose": "复算非均匀前缀重置增量、UFτ整light源预算、排序边际及每个势局部min的真实偏离；另核GlobalR全计数格和精确系数反算，使用seed与源码hash复现。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "heterogeneous-hub-reset-product",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md",
+        "tests/audits/weighted_congestion/independent_heterogeneous_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/independent_heterogeneous_reset_increment.py",
+      "title": "异权排序侧势重置增量与全局最小化边界：独立审计",
+      "purpose": "独立于作者从literal资源重建异权游戏和全状态真实偏离；交叉核验HRI、κ缩放、源增量、乘积等号及GlobalR全部最小点，输出参数、seed及源码hash。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "heterogeneous-hub-reset-product",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_author.json",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_author.json",
+      "title": "异权排序侧势重置增量与全局最小化边界：作者冻结结果",
+      "purpose": "保存异权乘积预算的实际游戏生成参数、weak端点、HRI与GlobalR计数核验及本路源码hash；与另一实现交叉核对，不将有限范围升级为全类保证。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "heterogeneous-hub-reset-product",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_independent.json",
+      "title": "异权排序侧势重置增量与全局最小化边界：独立冻结结果",
+      "purpose": "保存异权乘积预算的实际游戏生成参数、weak端点、HRI与GlobalR计数核验及本路源码hash；与另一实现交叉核对，不将有限范围升级为全类保证。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "heterogeneous-hub-reset-product",
+      "related_paths": [
+        "research/current/weighted_congestion/shared_side_truncated_potential.md",
+        "research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md",
+        "tests/audits/weighted_congestion/verify_heterogeneous_reset_increment.py",
+        "tests/audits/weighted_congestion/independent_heterogeneous_reset_increment.py",
+        "evidence/runs/weighted_congestion/shared_side_truncation/heterogeneous_reset_increment_author.json"
+      ]
+    },
+    {
+      "path": "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+      "title": "潜在使用森林精确均衡与单玩家挂树归约：完整证明",
+      "purpose": "从潜在使用二部森林定义读阈值贪心与两侧报价递归；调用exactPNE或单核心玩家挂树保degree固定提升前核连接合同，单环四态表说明扩域边界。",
+      "topic": "weighted_congestion",
+      "role": "account",
+      "package": "incidence-forest-private-reduction",
+      "related_paths": [
+        "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md",
+        "tests/audits/weighted_congestion/verify_incidence_forest.py",
+        "tests/audits/weighted_congestion/independent_incidence_forest.py",
+        "evidence/runs/weighted_congestion/incidence_forest/author.json",
+        "evidence/runs/weighted_congestion/incidence_forest/independent.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md",
+      "title": "潜在使用森林精确均衡与单玩家挂树归约：独立冻结攻击",
+      "purpose": "核对森林精确存在和挂树lift的先statement独立重构与冻结hash；重点攻击mandatory、任意策略耦合、冻结进入价格、多根误用及单环全部八偏离。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "incidence-forest-private-reduction",
+      "related_paths": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "tests/audits/weighted_congestion/verify_incidence_forest.py",
+        "tests/audits/weighted_congestion/independent_incidence_forest.py",
+        "evidence/runs/weighted_congestion/incidence_forest/author.json",
+        "evidence/runs/weighted_congestion/incidence_forest/independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/verify_incidence_forest.py",
+      "title": "潜在使用森林精确均衡与单玩家挂树归约：作者审计",
+      "purpose": "以有理星形背景和任意耦合森林策略复算报价递归；在有环core挂树的全部测试状态比较当前价相等和冻结偏离下界，并核单环四态端点。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "incidence-forest-private-reduction",
+      "related_paths": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md",
+        "tests/audits/weighted_congestion/independent_incidence_forest.py",
+        "evidence/runs/weighted_congestion/incidence_forest/author.json",
+        "evidence/runs/weighted_congestion/incidence_forest/independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/independent_incidence_forest.py",
+      "title": "潜在使用森林精确均衡与单玩家挂树归约：独立审计",
+      "purpose": "以有理星形背景和任意耦合森林策略复算报价递归；在有环core挂树的全部测试状态比较当前价相等和冻结偏离下界，并核单环四态端点。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "incidence-forest-private-reduction",
+      "related_paths": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md",
+        "tests/audits/weighted_congestion/verify_incidence_forest.py",
+        "evidence/runs/weighted_congestion/incidence_forest/author.json",
+        "evidence/runs/weighted_congestion/incidence_forest/independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/incidence_forest/author.json",
+      "title": "潜在使用森林精确均衡与单玩家挂树归约：作者冻结结果",
+      "purpose": "保存森林、阶跃星形与有环core挂树归约的实际参数生成、seed、源码版本及单环四状态证书；用于复算递归报价/lift，有限枚举不替一般实参数证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "incidence-forest-private-reduction",
+      "related_paths": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md",
+        "tests/audits/weighted_congestion/verify_incidence_forest.py",
+        "tests/audits/weighted_congestion/independent_incidence_forest.py",
+        "evidence/runs/weighted_congestion/incidence_forest/independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/incidence_forest/independent.json",
+      "title": "潜在使用森林精确均衡与单玩家挂树归约：独立冻结结果",
+      "purpose": "保存森林、阶跃星形与有环core挂树归约的实际参数生成、seed、源码版本及单环四状态证书；用于复算递归报价/lift，有限枚举不替一般实参数证明。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "incidence-forest-private-reduction",
+      "related_paths": [
+        "research/current/weighted_congestion/incidence_forest_private_reduction.md",
+        "research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md",
+        "tests/audits/weighted_congestion/verify_incidence_forest.py",
+        "tests/audits/weighted_congestion/independent_incidence_forest.py",
+        "evidence/runs/weighted_congestion/incidence_forest/author.json"
       ]
     }
   ]

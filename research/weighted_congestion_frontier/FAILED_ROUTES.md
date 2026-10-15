@@ -106,3 +106,11 @@
 ## 把异权hub直接当同权Rosenthal边际
 
 [局部异权排序侧势](../current/weighted_congestion/shared_side_truncated_potential.md)第十节用降序前缀取代真实同权计数；凸性给边际[G,(a/A_j)G]，源重置另付K。原exact marginal不能原样使用：配套审查有三hub整数二次side-only游戏，八态均有strict改善。即使只分析新排序势，其单副本R损失在线性例的比值(n+1)R/(R+n)→R，故不能从该夹逼直接消R。这不是全类存在障碍；单side锐式例由最小绝对负载差给exactPNE，pair-only仍受既有2-PNE界覆盖。可回收排序边际/κ重置和局部R/K充分界；重试需利用副本差额或新选态，并重新证明全部真实偏离。
+
+## 只改取降序侧势的全局最小点来删除局部R
+
+第十节原边际锐性只限制逐副本夹逼；现在[第十一节完整线性游戏](../current/weighted_congestion/shared_side_truncated_potential.md)证明更强失败：n重n轻分离时，全部全局最小点精确由非负恒等式覆盖，且均有趋近R的真实改善，也均为严格局部最小点。因此global-min间tie-breaking不能修复删除α≥R的论证。该游戏仍有exactPNE，失败只限这个势的最小化；回收GlobalR恒等式和完整方法反例，换势或选择非最小状态时可重试。
+
+## 将森林的递归稳定延续直接扩大到单环或多根
+
+[森林归约](../current/weighted_congestion/incidence_forest_private_reduction.md)靠互不相交子树的固定报价闭合任意耦合策略。单环二玩家四资源已无exactPNE；循环共享会破坏独立报价，不能仅按某个根的响应重置后费用替代真实冻结偏离。保次数lift只覆盖每附属分量至多一个核心玩家；核心资源挂树或多核心接触需新合同。回收当前价相等/进入价下界接口，不外推全类失败。

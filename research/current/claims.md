@@ -542,6 +542,17 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3 | 第9.1节同权hub、唯一main source、任意跨source多light/shared-hub的二元同费副本模型，全部费用非负系数degree≤d，任意整数d≥2、实τ≥1及α≥1，满足原UFτ和ατ≥d时，同一真实hub Rosenthal势E每个单hub局部最小点配全anti为α-PNE。含τ1、零/常数费用、空集合及全部实正权/实非负系数。τ≥d可取α1；d≥16取τ=ln d给α=d/ln d。 | complete conditional proof; independently reconstructed and exactly audited; unrefereed；[原稿9.14—9.16](weighted_congestion/shared_side_truncated_potential.md)、[独立重构与冻结攻击](../reviews/weighted_congestion/multisource_force_increment_review.md)。同权hub、唯一main source、二元同费副本和原UFτ承重；不提供一般游戏的强迫表示、弱强迫下的统一选态或异权hub桥。v1/v2精确身份和原冻结证据保留。ατ≥d仅充分；独立sharp边界只限α1，WC-TARGET仍OPEN，未外审/新颖性未认证。 |
 | WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1 | 对每个整数d≥2，在v3完全相同的同权hub/唯一source/二元同费副本结构类中，τ≥d的每个UFτ游戏均有精确PNE；对每个实1≤τ<d，显式2玩家4资源游戏严格满足UFτ却全部4态均有严格改善出口。因此该条件结构类保证精确PNE的统一强迫参数边界恰d并在端点取得。仅α1，不称α>1乘积边界必要，不是全类渐近非存在。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[原稿9.17](weighted_congestion/shared_side_truncated_potential.md)、[独立审查](../reviews/weighted_congestion/multisource_force_increment_review.md)。两边完整一般证明；仅exact forcing子类阈值，无全类否定。 |
 
+
+## 异权乘积预算与潜在使用森林
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2 | 任意d≥2、任意有限第十节异权hub/唯一source light/二元同费主侧副本拓扑，正实权和非负degree≤d费用；沿用A_j、R、K。对全部实τ≥1、α≥1，若每light满足F_v(a_v+w_l)+ΣG_j(w_l)≥τ[F_v(W_v)+ΣG_j(T_j+U_j)]，且α≥R、ατ≥Kd，则原E_het每个单hub局部最小点配全anti为真实α-PNE。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/shared_side_truncated_potential.md)。仍依R/K及UFτ；不是全类界。旧v1量词、正文和冻结证据保持；乘积域只称充分。 |
+| WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1 | 每个实R>1、1≤α<R、整数d≥2与τ≥1，存在无线light、main零、单side G=x的合法游戏，侧内比R、K=1、UFτ真空；E_het全部全局最小点都是严格单翻位局部最小点且非α-PNE。取n>αR/(R−α)，n重RA与n轻A分离，重gain=nR/(R+n)；ΔE=a(n−x−y)^2+(a−A)y(n−y)使全局min恰两个分离态。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/shared_side_truncated_potential.md)。只限制旧降序E的局部或全局最小化，连global-min间择优也无效；原游戏有exactPNE，不是全类非存在或其他势障碍。 |
+| WC-INCIDENCE-FOREST-EXACT-v1 | 每个有限正实权玩家、有限资源子集策略（可含空）且任意逐点有限非负非减资源费用的游戏，若玩家—资源潜在使用二部图为森林，则存在exactPNE；允许必用资源、任意策略耦合、不连续费用、零与常数。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/incidence_forest_private_reduction.md)。仅森林，不声称全部改善终止；无任意有环核心的规模或全类倍率界，单环已有明确反例。 |
+| WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1 | 任意上述费用类游戏，非空保留玩家N0和资源E0，删除玩家不潜在使用E0；非E0附属二部图为森林且每分量至多接触一个保留玩家。各根边换非负私有常数资源，保留策略单射与玩家权，存在不依α的固定lift将reduced任实α≥1 PNE提升原；非负degree≤d多项式时保同次数上限d≥0。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/incidence_forest_private_reduction.md)。单向lift；不允许同一附属分量接触多个核心玩家或以核心资源为根，不保证最优倍率或原均衡反投影。 |
+| WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1 | 明示权(1,2)二玩家四资源游戏，e=x²、f=(9/2)x、私人p=4、q=71/4，策略分别{e,p}/{f}及{e,f}/{q}。潜在使用图连通且圈秩1，四态均有strict改善，最佳纯状态因子恰72/71并由00取端点。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/incidence_forest_private_reduction.md)。固定degree2、固定二玩家的exact存在反例，不是随次数增长下界或最坏单环阈值最优性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

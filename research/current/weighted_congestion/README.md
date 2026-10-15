@@ -124,3 +124,7 @@ T_d=\max_{R>1}\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}},\qquad d\ge2.
 [共享侧资源正文第十节](shared_side_truncated_potential.md)的 `WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1` 使用每非空side的最小hub权A_j，侧内比R及source相对比K；在完整UFhet、α≥R和(α−1)²≥Kd下给全antiα-PNE。允许任意多hub权类以及局部比有界而全局跨度任意大；全局比R0仅为充分参数之一，给max{R0,1+√(R0d)}。同权R=K=1恰恢复旧1+√d，旧Claim不变。
 
 证明链为降序边际覆盖→凸性尾均值上界→κ重置及source局部比缩放→UF整名light预算→有限hub势局部最小点。两名独立重构者分别核查原冻结、凸性加强和最终diff；[审查](../../reviews/weighted_congestion/heterogeneous_hub_sorted_side_review.md)、作者与独立Fraction代码/冻结结果见正文10.5。单副本R因子在线性资源上锐，只限所写方法合同，不是全类障碍。真正开放仍是无界局部R/K、非UF及一般策略的选态，或次数效率增长的全状态族。
+
+[异权重置增量与全局最小点边界](shared_side_truncated_potential.md)第十一节在UFhetτ下将条件加强为α≥R、ατ≥Kd；新版本保留旧身份。线性无light反例又证明同一排序势全部全局最小点均可有趋近R的真实改善，不能仅改取global min消R。独立审查及两路Fraction证据从正文11.5进入。
+
+[潜在使用森林与单玩家挂树私人成本归约](incidence_forest_private_reduction.md)给任意正权、任意有限资源子集策略和非负非减费用的exactPNE；只在单核心玩家处附着的树可换私有常数，保多项式次数并将所有α≥1的reduced PNE用同一lift提升。单环二玩家例的最佳因子72/71说明森林不能无证扩域。先读两个精确合同，再读冻结审查/代码/证据。全类仍缺无界局部权比、非强迫反馈或有环核心的统一选态。
