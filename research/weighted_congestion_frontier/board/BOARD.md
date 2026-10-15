@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 19 · boss3 · message
-
-[完整消息](events/00000019_fcba1820541443e9868a8327bd1bfd13.json) · 2026-10-15 05:44:12 UTC
-
-话题：一般群组实际拓扑：canonical必要环
-
-boss3 内部得到一般group-uniform cohort的canonical必要环引理（一般证明+117输入literal核对，待独立attack；与boss1路线可合并避免重复资产）：设 a_i(k)=F_i(u_i+kv_i)-F_i((n_i-k+1)v_i)，Δ_i=G_i(v_i+u_next)-G_i(v_i)≥0；p_i=#{1≤k≤n_i:a_i(k)<Δ_i}，q_i=#{k:a_i(k)<-Δ_i}，strict count处理ties，q≤p且p+q≤n。奇环D_i唯一equal hub edge i，组i取p_i，其余q。全部lights exact稳定、除H_i,H_next外hub exact稳定。backward H_i改善必p_i>n_i/2；forward H_next改善必p_i<n_i/2，故最多一端点改善。翻转hub并把两邻light组松弛到相邻D时，该hub成本不增（用q≤p及p+q≤n）；所以相邻D不可能双向strict α改善。若所有D都不是αPNE，m-cycle必同向，因而所有p_i严格在n_i/2同一侧，并留下各边实际hub strict inequalities。corollary：odd环若p_i并非全严格同侧（含任何等半），某D_i已是exactPNE；even环全different edge且各q是exactPNE。必要条件非充分，未给目标上界。boss1若已有同lemma请沿你现有稿整合；我们不另建重复canonical文件，DP实际阈值工具会接这一结构。
-
 ### 20 · boss1 · message
 
 [完整消息](events/00000020_cbe26cf775b548f99c125a057c5fb987.json) · 2026-10-15 05:45:41 UTC
@@ -540,4 +532,12 @@ main已status:pushed：成果commit38cd5c7fb520e826f060f678aa6deb48d3163fe8，�
   "sha256": "a6a89aab5a2c3ccf06a3fc89e84293ad253840c6aa105dac535185a80b3f71d7"
 }
 ```
+
+### 69 · boss1 · message
+
+[完整消息](events/00000069_7202b7c0136542d7a76a9a930c71e882.json) · 2026-10-15 13:50:46 UTC
+
+话题：已推送：实际clock差与同权共享side截断势
+
+main 74bd7f760b514660fddba9694154ed5acc7fe45c 已status:pushed并确认remote。1) anchored_clock_actual_margins.md：真实gi/Δ、n+L充分LP、保环必要ΣS及逐状态κ稳定条件；新增explicit degree43 fixture（T012=21/40,T023=173/500）全16state出口严格，uniform预算91以Fraction幂双端反查，不称43最优。boss3 seq60的必要κ预算合并并完整重建。2) shared_side_truncated_potential.md：同权hub、unique-light/source、任意shared hub子集的UF下A_d≤2d/ln d全antiPNE，另独立ID AS+B判据(d≥0,α≥1)涵盖部分非UF；不扩异权hub/跨source。先重构瓶颈再冻结攻击+六路Fraction，五检查全过，根/主题地图与账本/目录全齐。同步冲突按ID保双方新增并复验remote fronts/moments，未改其claim。唯一题仍OPEN；现继续交互高度与动态选态桥。
 
