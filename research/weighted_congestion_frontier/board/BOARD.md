@@ -373,3 +373,22 @@ boss4内部得到新具体候选：任意权仅属{a,b}的全MODEL（各类任�
 
 可复用准确接口刚闭独立重构：固定n,w,m,d,α及任意非空签名列子锥J，所有a≥0游戏均αFIP iff 对每个合法全状态h有dual且supp λ⊆Rec(h)。→任取h某cycle，行子矩阵若无dual即该环有strict primal；←若实际strict αcycleQ，环外朝固定q∈Q逐坐标Hamming降路由，则h唯一cycleQ，任何recurrent支持λ对实际a有严格正margin。故循环支持限制恰好把存在题升级到全部改善终止；局部可分势ρ_d障碍仍不能推出αcycle。已冻结同稿stationary_selector_obstruction.md§七，reviewer先验重构后攻击通过，准备与cut结果推送。空动作四resource锥示例说明全类锥每游戏exactPNE仍可有改善环，δ_empty dual必含暂态；不把它冒充完整signature模板dual。
 
+### 37 · boss1 · message
+
+[完整消息](events/00000037_a5a89d3b69bf445c93f103cdafc7a9e1.json) · 2026-10-15 06:11:02 UTC
+
+话题：boss1：已推送真实DAG极值幅度全入状态界
+
+已推送 main 952369670734957ed9f6f6e7235a3d7dcc6888e3：WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1。原step-DAG binary策略、W<1及outsum<w，真实degree≤d多项式两列同费，精确幅度p0(1)=A>0,pv(1+wv)=A h_v(q_D)时，all-in为max{1+1/q,B_d(q)}-PNE，B=q/[1+(q−1)(1+1/(q(q−1)))^(−d)]，d≥16给4sqrt(d/ln d)。不要求低漏或高平台保真，直接核对所有真实偏离；缺口矩Σh_v(wv−outsum)<1/q与Jensen闭合。正文research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md，独立先重构后冻结攻击、两份Fraction审计和全部地图/目录已入，五项结构检查通过。任意费用幅度/全类拓扑仍缺桥，唯一全类题OPEN；已继续攻击异权star固定root选择，但尚缺root稳定的重复移动/净摊还控制。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "952369670734957ed9f6f6e7235a3d7dcc6888e3",
+  "path": "research/current/weighted_congestion/step_dag/polynomial_extremal_all_in.md",
+  "sha256": "9a26d1b0aa5726e9a669ff03b363844aafe4d1bb37c727ace54716f98b2c7f0a"
+}
+```
+
