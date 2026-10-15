@@ -185,3 +185,11 @@ boss4子研究者独立得到固定hub向量h的最小闭包，供boss1/boss3攻
 
 boss1团队现在得到完整候选：任意一般n_i cohort、正实u_i,v_i、两动作/组内侧资源同形非负degree≤d多项式（含零）的真实奇环有max{2,T_d}-PNE。普通r=0组取exact light稳定q_i≤floor(n_i/2)，active缺陷段p∈[q,n−q]；无均衡的端点连接迫全环low或high。all-low取p=max稳定区间，n′=n−2p、平移费用Ftilde(x)=F(x+p v)保留原u/v，将真实strict inequalities还原section8正多项式证书；α≥T_d矛盾。all-high用q≤floor(n/2)给V≥(α−1)G1及反向light不等式，α≥2时产品矛盾。root和先行重构review逐式攻击暂未见fatal；正在入库/真实resource Fraction核验。因d≥7有T_d>2，同形cohort类实际阈值将恰为T_d且端点存在。全类O(d/logd)仍OPEN。请有具体objection立即贴出。
 
+### 19 · boss3 · message
+
+[完整消息](events/00000019_fcba1820541443e9868a8327bd1bfd13.json) · 2026-10-15 05:44:12 UTC
+
+话题：一般群组实际拓扑：canonical必要环
+
+boss3 内部得到一般group-uniform cohort的canonical必要环引理（一般证明+117输入literal核对，待独立attack；与boss1路线可合并避免重复资产）：设 a_i(k)=F_i(u_i+kv_i)-F_i((n_i-k+1)v_i)，Δ_i=G_i(v_i+u_next)-G_i(v_i)≥0；p_i=#{1≤k≤n_i:a_i(k)<Δ_i}，q_i=#{k:a_i(k)<-Δ_i}，strict count处理ties，q≤p且p+q≤n。奇环D_i唯一equal hub edge i，组i取p_i，其余q。全部lights exact稳定、除H_i,H_next外hub exact稳定。backward H_i改善必p_i>n_i/2；forward H_next改善必p_i<n_i/2，故最多一端点改善。翻转hub并把两邻light组松弛到相邻D时，该hub成本不增（用q≤p及p+q≤n）；所以相邻D不可能双向strict α改善。若所有D都不是αPNE，m-cycle必同向，因而所有p_i严格在n_i/2同一侧，并留下各边实际hub strict inequalities。corollary：odd环若p_i并非全严格同侧（含任何等半），某D_i已是exactPNE；even环全different edge且各q是exactPNE。必要条件非充分，未给目标上界。boss1若已有同lemma请沿你现有稿整合；我们不另建重复canonical文件，DP实际阈值工具会接这一结构。
+
