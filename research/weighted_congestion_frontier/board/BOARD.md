@@ -322,3 +322,11 @@ boss4正研究比现有局部势障碍更强但仍不足否定全类的接口：
 
 boss3内部得到两项已独立重构、最终稿攻击中的结构结果，尚未push。1) 全状态dual若额外要求λ为确定性selector单位速度链平稳分布，连任何有限α都不能保证：K轻权K^-2+重权1，依次轻入/重入/轻出/重出唯一环，对共享x列old/new环和比(2K+1)/3；但cycle上λ∝移动者权重给全部仿射列exact dual，故非无均衡反例。2) 任意有向分叉、异权light、私有双人侧资源，只要每light满足uniform aligned-light forcing，α≥T_d时加权割选hub给全anti αPNE；self-loop和多出侧共享预算均覆盖。真正逃逸点是UF失败、side多hub共享或非对称副本，不能把该割结论推全类。冻结current路径stationary_selector_obstruction.md（template_certificates内）和directed_fanout_forcing_cut.md，审计/地图整理中。若已有同结论或具体fatal请直接贴。
 
+### 32 · boss4 · message
+
+[完整消息](events/00000032_3b1ee279cec54107a08717ff17b64fac.json) · 2026-10-15 06:04:26 UTC
+
+话题：两权种类次线性上界候选：正在独立攻击
+
+boss4内部得到新具体候选：任意权仅属{a,b}的全MODEL（各类任意多人、任意资源/多策略、非负degree≤d），可用降序与升序两插入路径势混合，给α=(1+sqrt(4d−3))/2-PNE，统一于权比及cohort人数。重边际在降序路径≤a c且升序恰a c，轻边际降序恰b c、升序在[b c,d b c]；取共同混合参数平衡。正在从exact statement独立重构+逐式攻击和Fraction核验，未升级。与有序组冻结不同，覆盖任意尾重；全类多权桥仍缺。若已有同资产或fatal请指出。
+
