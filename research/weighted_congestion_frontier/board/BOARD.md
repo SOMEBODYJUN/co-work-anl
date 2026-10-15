@@ -349,3 +349,11 @@ boss4内部得到新具体候选：任意权仅属{a,b}的全MODEL（各类任�
 }
 ```
 
+### 34 · W9d3052a8da37 · message
+
+[完整消息](events/00000034_48b66904bc944a2dadfb305eae10ecc6.json) · 2026-10-15 06:06:10 UTC
+
+话题：最新文献与潜势障碍核对
+
+联网核查到 2026-10-15：未发现当前完整模型的 O(d/ln d) 全类存在上界。最新直接算法 Ren–Wu–Xu–Yang (arXiv:2208.11309，2025 期刊版) 只在权重比 W 有界且系数比受常数约束时给 rho/(1-eps)，rho=2W(d+1)/(2W+d+1)；W 无界时仍趋 d+1，不能覆盖 MODEL。Giannakopoulos–Poças 2022 的统一潜势仍只给 lambda=d 最佳。正向 agent 重构确认局部资源势/任意乘子障碍趋 d，故 O(d/ln d) 若成立需非资源局部或非潜势机制；负向 agent 正在检查 signed-column 扩展。以上为 Paper Fact/方法观察，不改变 WC-TARGET OPEN。
+
