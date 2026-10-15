@@ -72,3 +72,8 @@
 ## 从低阶成本空间直接推出小用户支持资源表示
 
 尝试先用degree≤d的低阶张量空间，再把每个cost interaction项当成只依赖少数玩家的合法正资源，从而降到有限interaction结构。[异权仿射全签名刚性](../current/weighted_congestion/template_certificates/selector_local_moments.md)给精确失败：V_i=s_iΣ_jw_js_j仅degree1、任意n≥2且权不全等，但一对异权的零contrast排掉共享高次，solo成本饱和迫全部正资源全用户且费用a_e x。任意提高有限degree仍不能全保真缩支持；正锥约束不是线性cost-space维界。等权pair高次表示说明不能删权假设。可回收≤D资源数量压缩、局部矩极锥和一般完整成本张量界；本障碍不排改权、加辅助玩家、仅保均衡/单向lift或近似成本归约。重试这些路线须重新写清并证明较弱保真合同，不能把本例有精确PNE误作全类反例。
+
+
+## 将全状态择证对偶截断为固定数量移动者
+
+尝试用少量玩家的方向矩匹配或局部transfer覆盖每个selector，再拼成全类证书。[奇环缺陷择证](../current/weighted_congestion/template_certificates/selector_local_moments.md)给出具体失败：等权奇n、任意d≥1与1≤α<2^d，两个proper邻边degree-d列迫相邻移动者质量互相为正，私人常数列再迫每个方向正质量；最小状态支撑恰2n而n任意大。原selector有显式α1 dual，故失败是人数截断而非全类dual不可行或无均衡。回收的是完整补偿链、定量质量界及min-index的2^d锐边界。重试必须允许无界数量玩家、证明可控全局transfer或使用依模板/D的支撑界；不能把本例当作主目标否定。

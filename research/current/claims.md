@@ -478,6 +478,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | WC-AFFINE-FULL-SIGNATURE-RIGIDITY-v1 | 每个n≥2及不全相等正实权w、binary标签，V_i(s)=s_iΣ_jw_js_j的任何同玩家/权/标签完整成本保真有限非负系数多项式资源表示，在忽略零费/无人用资源后只能为全n玩家仅动作1使用、费用a_e x且Σa_e=1。任意提高有限degree仍不能把全部正资源潜在用户支持降到<n；V为有限表示锥K_fin的极射线。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文§9–10](weighted_congestion/template_certificates/selector_local_moments.md)、[独立重构与攻击](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)。只限完整成本保真、固定玩家/权/标签和有限表示锥，不声称闭包/暴露射线；等权存在≤2用户高次资源表示。原V有全0精确PNE，不限制改权/加玩家/仅保均衡或单向lift，也不反驳≤D资源数量压缩，未解全类题。 |
 
+## 奇环缺陷择证的无界跨玩家补偿与锐支撑门槛
+
+| ID | 精确范围与结论 | 当前状态、证据与限制 |
+| --- | --- | --- |
+| WC-SELECTOR-UNBOUNDED-MOVER-SUPPORT-v1 | 每个奇n≥3、d≥1、共同正权及任意binary缺陷择证（每态翻转一条相等邻边左端点），完整/proper签名degree0..d均有显式2n周期均匀dual。每个1≤α<2^d的任意dual须对全部n名移动者及其两方向给正质量；令r=(2^d−α)/(α2^d−1)，每方向≥r^(n−1)/[(1+α)Σ_(j<n)r^j]，最小状态支撑恰2n；α1各方向1/(2n)。min-index择证在α≥2^d有单mover二点dual，最小支撑恰2。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文§11–12](weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_mover_support_review.md)。只限制统一有界移动者/状态支撑的dual构造；原族等权、有完整α1 dual，不是无PNE例，不排依n/动作数/D的支撑界或无界多玩家拼接；端点二点只限min-index择证。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

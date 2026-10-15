@@ -5458,6 +5458,55 @@
         "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
       ],
       "status": "method candidate; excluded in stated scope"
+    },
+    {
+      "id": "WC-ODD-DEFECT-SELECTOR-DEFINITION",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "等权奇环的相等邻边缺陷择证",
+      "detail": "奇n≥3 binary每态选择任一相等邻边左端点翻位；完整/proper签名次数0..d。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "WC-SELECTOR-UNBOUNDED-MOVER-SUPPORT-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "奇环缺陷择证的无界跨玩家补偿与锐支撑门槛",
+      "detail": "每个奇n≥3、d≥1、共同正权及任意binary缺陷择证（每态翻转一条相等邻边左端点），完整/proper签名degree0..d均有显式2n周期均匀dual。每个1≤α<2^d的任意dual须对全部n名移动者及其两方向给正质量；令r=(2^d−α)/(α2^d−1)，每方向≥r^(n−1)/[(1+α)Σ_(j<n)r^j]，最小状态支撑恰2n；α1各方向1/(2n)。min-index择证在α≥2^d有单mover二点dual，最小支撑恰2。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_mover_support_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "WC-SELECTOR-MOVER-SUPPORT-AUDIT",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "奇环缺陷择证的独立整数有理列审计",
+      "detail": "两套不互相导入的逐负载pair/private行、full/proper周期和端点列、共同权与不适用边界；仅有限证据。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_selector_mover_support.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_mover_support.py",
+        "evidence/runs/weighted_congestion/template_certificates/selector_mover_support.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_mover_support.json"
+      ],
+      "status": "exact finite audit; not general proof"
+    },
+    {
+      "id": "WC-BOUNDED-MOVER-DUAL-SCHEME",
+      "kind": "definition",
+      "track": "weighted_congestion",
+      "title": "统一有界移动者支撑的全状态dual拼接方案",
+      "detail": "试图在固定d及α下只用不依n的固定数量selected players分配dual质量。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md"
+      ],
+      "status": "method candidate; excluded in stated scope"
     }
   ],
   "hyperedges": [
@@ -13008,6 +13057,55 @@
       "refs": [
         "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
         "research/reviews/weighted_congestion/template_certificates/selector_local_moments_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "DERIVE-SELECTOR-UNBOUNDED-MOVER-SUPPORT",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-ODD-DEFECT-SELECTOR-DEFINITION"
+      ],
+      "conclusion": "WC-SELECTOR-UNBOUNDED-MOVER-SUPPORT-v1",
+      "statement": "奇环2n周期上的资源原函数望远镜给可行dual；两个proper pair正列与私人常数列迫全玩家两方向质量和锐支撑门槛。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_mover_support_review.md"
+      ],
+      "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
+    },
+    {
+      "id": "CHECK-SELECTOR-MOVER-SUPPORT",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SELECTOR-MOVER-SUPPORT-AUDIT"
+      ],
+      "conclusion": "WC-SELECTOR-UNBOUNDED-MOVER-SUPPORT-v1",
+      "statement": "有限整数/Fraction核验实际列恒等式、显式证书及边界；不承担任意实参数量词。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "tests/audits/weighted_congestion/template_certificates/verify_selector_mover_support.py",
+        "tests/audits/weighted_congestion/template_certificates/independent_selector_mover_support.py",
+        "evidence/runs/weighted_congestion/template_certificates/selector_mover_support.json",
+        "evidence/runs/weighted_congestion/template_certificates/independent_selector_mover_support.json"
+      ],
+      "status": "exact finite check"
+    },
+    {
+      "id": "LIMIT-BOUNDED-MOVER-DUAL",
+      "kind": "limits",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-SELECTOR-UNBOUNDED-MOVER-SUPPORT-v1"
+      ],
+      "conclusion": "WC-BOUNDED-MOVER-DUAL-SCHEME",
+      "statement": "只限制统一有界移动者/状态支撑的dual构造；原族等权、有完整α1 dual，不是无PNE例，不排依n/动作数/D的支撑界或无界多玩家拼接；端点二点只限min-index择证。",
+      "refs": [
+        "research/current/weighted_congestion/template_certificates/selector_local_moments.md",
+        "research/reviews/weighted_congestion/template_certificates/selector_mover_support_review.md"
       ],
       "status": "complete structural proof; independently reconstructed and exactly audited; unrefereed"
     }
