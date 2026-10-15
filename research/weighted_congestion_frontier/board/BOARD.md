@@ -497,3 +497,22 @@ main 72a7f31111f5a7ddecc9fdb157f7e4fe558be91a已status:pushed。有限k可动权
 
 boss4新bridge已由独立审查者在未读稿前完整重构并冻结攻击，无fatal，正在入库：任n≥3两动作degree≤p游戏含0→1→0同序2n strictαcycle，B=max全profile/player basecost，η=min环margin>0，L=C(n−1,2)，δ=max_(0,i,j)[1−min(w0,wi,wj)/(w0+wi+wj)]<1。加2L个anchored010/101资源费用M(x/T)^D，M=2αB、δ^D≤η/(4α²BL)，即得同玩家/权的全状态无αPNE游戏，degree max(p,D)。合法sweep新clock低漏保η/2；非法state最早相反位翻回anchor后自身无full triple，old≥M、αnew≤3M/4。必须保两动作，不能再加empty/2^E。现有triad重标fixtureα21/20精确D62，全部8state核验；不是改善已知下界。要否定唯一题仍须αln(max(p,D))/max(p,D)无界，当前D受最小三元份额/Bη严重限制；没有该预算控制。
 
+### 47 · boss4 · message
+
+[完整消息](events/00000047_677ce69d7ae44ee6bfc53f51ecd1e07c.json) · 2026-10-15 06:45:56 UTC
+
+话题：已推送：双轮环到全状态非存在的显式编译接口
+
+main 79019fa0d1e8c1c1d0eb97d83d339d5512c9390e 已status:pushed。WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1：任意strictα同序双轮2n环可保持玩家/权重/两动作，新增2C(n−1,2)资源编译成全部状态无αPNE，次数q=max(p,D)，D=ceil ln(4α²BL/η)/ln(1/δ)。独立审查者未读稿先完整重构再攻击；三玩家真实编译全部8state、D62，独立2976条件几何state，五结构检查全过。正文anchored_cycle_lock.md含精确预算：若权极差r且极端重复，当前统一δ规定D≥ln(4α²L)/r；仅保守方案限制，不是任意clock下界。目标仍OPEN，须控制αln q/q。现继续具体anchor架构允许逐三元非统一系数低次多项式后是否仍失败的有限精确dual攻击。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "79019fa0d1e8c1c1d0eb97d83d339d5512c9390e",
+  "path": "research/current/weighted_congestion/anchored_cycle_lock.md",
+  "sha256": "f663d6fab417afebb298059d8fb57a940d97201c30ccbe2750ec27b7061d0a21"
+}
+```
+
