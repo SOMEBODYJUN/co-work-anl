@@ -1,6 +1,6 @@
 # 双设施选址博弈：规范模型
 
-本页定义所有现行命题共同使用的对象。以后改变参与规则、客户成本、设施目录或延续均衡的量词，必须建立新命题编号，不能把改变藏在某一证明的注释里。历史定义见[第一轮整理稿](../../history/curation-2026-10-01/MODEL.md)；完整推导来源为[共同目录手稿](../../history/source/manuscripts/shared_phi/main.tex)与[异构目录手稿](../../history/source/manuscripts/heterogeneous/main.tex)。
+本页定义所有现行命题共同使用的对象。以后改变参与规则、客户成本、设施目录或延续均衡的量词，必须建立新命题编号，不能把改变藏在某一证明的注释里。历史定义见[第一轮整理稿](https://github.com/SOMEBODYJUN/co-work-anl/blob/bd7798d5bbcc8086217ff54d7f91b445d0374b4f/history/curation-2026-10-01/MODEL.md)；完整推导来源为[共同目录手稿](../../history/source/manuscripts/shared_phi/main.tex)与[异构目录手稿](../../history/source/manuscripts/heterogeneous/main.tex)。
 
 ## 1. 输入、行动与收益
 

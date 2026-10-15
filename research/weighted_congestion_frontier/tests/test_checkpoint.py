@@ -42,7 +42,7 @@ class CheckpointTests(unittest.TestCase):
         (self.repo / "outside.md").write_text("outside baseline\n")
         run(self.repo, "add", ".")
         run(self.repo, "commit", "-m", "baseline")
-        self.branch = "wcg/work/fixture/session"
+        self.branch = "main"
         run(self.repo, "branch", "-M", self.branch)
         run(self.repo, "push", "origin", self.branch)
         self.before = run(self.repo, "rev-parse", "HEAD")

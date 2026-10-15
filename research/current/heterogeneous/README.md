@@ -53,7 +53,7 @@
 | [稀疏历史稿](../../../history/proofs/heterogeneous/sparse_lower_prior.md) §§9、11 | “尚不知两共有客户能否超过 ρ”和区间 [ρ,2] 已过时 | sharp-2 整数族已反驳；不能作为当前开放问题 |
 | [响应核心笔记](../../../history/source/notes/heterogeneous/response_core.md) §§1、2A、2C | 既含依赖共享 φ 的旧充分条件，又含独立异构 2 | 不把旧共享菜单当作四种子定理前提 |
 | [最终审计](../../../history/source/audits/heterogeneous_final.md) 开头、§3.7；[攻击审读](../../../history/source/audits/heterogeneous_adversarial.md) §7 | 使用迁移前 `r_menu_solver.py`、`universal_two.md` 等名称；“独立”指同一研究流程内的审读；压缩说明有不同写法 | 当前代码映射至 `facility_spe/heterogeneous_two.py`；正式采用主稿全环最大原子证明；外部独立重构仍待完成 |
-| [CLAIMS](../../../history/curation-2026-10-01/CLAIMS.md) HC-2 与 CORE-LIFT 项 | 个别证据名称仍写 `r_menu_solver.py`、`meta.md` | 对应现行 [facility_spe/heterogeneous_two.py](../../../facility_spe/heterogeneous_two.py) 与 [history/source/notes/heterogeneous/response_core.md](../../../history/source/notes/heterogeneous/response_core.md)，不凭旧名称新增来源 |
+| [CLAIMS](https://github.com/SOMEBODYJUN/co-work-anl/blob/bd7798d5bbcc8086217ff54d7f91b445d0374b4f/history/curation-2026-10-01/CLAIMS.md) HC-2 与 CORE-LIFT 项 | 个别证据名称仍写 `r_menu_solver.py`、`meta.md` | 对应现行 [facility_spe/heterogeneous_two.py](../../../facility_spe/heterogeneous_two.py) 与 [history/source/notes/heterogeneous/response_core.md](../../../history/source/notes/heterogeneous/response_core.md)，不凭旧名称新增来源 |
 
 历史上失败的推断也必须区别于现行命题。`response_core.md` §3.1 的 A=1、B=0、共有权重 (2,4) 具有均衡负载差集合 {-1,3}，却无法满足双方各得自身 reach 一半的配额；所以“配额失败必有唯一支配原子”是**错误命题**。两目录均任意大、跨对至多一共有客户的统一 ρ 已由本轮新证明闭合，不能再列为开放边界。
 

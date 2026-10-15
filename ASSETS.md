@@ -1,80 +1,14 @@
-# 现行研究资产：命题而非旧文件的清单
+# 研究资产入口与文件合同
 
+本页按数学主题和用途导航。精确条件和逐命题文件关系在 [research/assets.json](research/assets.json)，五轴状态在 [research/review_status.json](research/review_status.json)，不在多份进展列表重复维护。
 
-顺序 CAG 新资产：
-[三人锐5/3证明](research/current/customer_attraction/three_player_sharp.md)、
-[先前三人142/81独立机制](research/current/customer_attraction/three_player_bound.md)、
-[空背景首步税桥反例](research/current/customer_attraction/tax_bridge_counterexample.md)、
-[一般背景总税反例及无限族](research/current/customer_attraction/general_tax_counterexample.md)、
-[完整策略有理重数锥和精确对偶](research/current/customer_attraction/strategy_cone.md)。
-[四人1499/750证明](research/current/customer_attraction/four_player_bound.md)、
-[任意人数极大花瓣结构子类锐界](research/current/customer_attraction/disjoint_maxima_bound.md)、
-[两人平均真实偏离恒等式](research/current/customer_attraction/global_new_uniform_portfolio_two.md)、
-[五人460行模板障碍](research/current/customer_attraction/five_player_lift_obstruction.md)、
-[完整可信续局与联合候选接口](research/current/customer_attraction/credible_continuations.md)。
-人数和目录条件逐项保留；模板障碍没有完整SPE证书，一般目录五人及以上仍开放。
+| 主题 | 可复用数学资产 | 程序与证据 | 未解义务 |
+| --- | --- | --- | --- |
+| 加权原子拥塞 | [奇环下界、源族/拓扑、结构势、有限分离及工具](research/current/weighted_congestion/README.md)；[逐文件用途和状态](research/weighted_congestion_frontier/FILES.md) | 审计代码 tests/audits/weighted_congestion；原证据 evidence 下分开保存，使用 replay.py 隔离重放 | 普遍存在上界、超越局部强制测试的机制、准确标注的待审稿 |
+| 双设施共同目录 | [现行定义、尖锐界、算法和复杂度](research/current/shared/README.md) | facility_spe；tests、examples、evidence 按原合同分开 | EPTAS 候选等见问题库；不把有限证书当普遍或最优性证明 |
+| 双设施异构目录 | [一般与稀疏范围、短目录与全长结果](research/current/heterogeneous/README.md) | facility_spe，来源和实际运行由资产表连接 | 一般异构 2 的候选状态和各范围审查分别登记 |
+| 任意设施数 | [统一因子 2、完整盒及有限改善、结构算法](research/current/multi_facility/README.md) | multi_facility_spe；输入、证书及精确审计独立 | 一般输入位多项式构造 |
+| 顺序客户吸引 | [完整 SPE、结构目录上界与真实反例](research/current/customer_attraction/README.md) | customer_attraction；定义级完整策略验证 | 一般半覆盖及仍成立的安全值桥缺口 |
+| 人类学习 | [当前学习路线与成稿](learning/README.md) | manifest 登记当前教学正文和权威数学读取 | 教学不提升证明/同行评审状态 |
 
-2026-10-09 提交后新增[近带补全引理](research/current/shared/near_band_completion.md)与
-[EPTAS 具体候选](research/questions/shared_alpha_eptas.md)，两路局部精确攻击和有限
-全局原型审计已保存。[选题辩驳](research/NEXT_DIRECTION_DEBATE_2026-10-09.md)
-区分局部定理、全局候选、实际核验和未交付位复杂度，不登记一般EPTAS已完成。
-
-2026-10-09 的[四共同地点无 FPTAS](research/current/shared/four_site_no_fptas.md)
-已独立重构全局间隙、支持端点和位规模，规范[归约构造器](facility_spe/shared/four_site_fptas_hardness.py)
-仅构造实例，不求均衡。[审查记录](research/FOUR_SITE_FPTAS_AUDIT_2026-10-09.md)
-连接两份独立精确核验、冻结结果与来源摘录；没有登记 PTAS 不可能或一般盒搜索困难。
-
-2026-10-08 的[共单例搜索归约与带区间表述](research/current/multi_facility/complement_search_reduction.md)
-已经过代数、编码合同、反例攻击及实际设施成本的复合审查。
-[规范编译/解码](multi_facility_spe/complement_reduction.py)、
-[独立精确核验](tests/audits/kfac_complement_reduction.py)、
-[快速边界回归](tests/test_complement_reduction.py)、
-[最终冻结结果](evidence/runs/2026-10-08/complement_reduction_final.json)
-及原附稿追溯均已登记。[过程记录](research/COMPLEMENT_REDUCTION_AUDIT_2026-10-08.md)
-保存真实增量、人类解释与自由选路交接；没有登记一般求解器或困难性。
-
-2026-10-07 的[等权无约束流选择器](research/current/multi_facility/equal_light_flow.md)
-重构了自动完整盒与 `(H)` 的全部最优解定理，删除旧流的冗余下界约束。
-[规范在轨实现](multi_facility_spe/equal_light_flow.py)、
-[独立全局最优审计](tests/audits/kfac_equal_light_flow.py)、
-[第二份独立攻击](tests/audits/kfac_equal_light_flow_adversary.py)及
-[完整续局核验](tests/audits/kfac_equal_light_flow_continuation.py)分别登记到机器索引。
-该等权原模型输入类和单位增广原理此前已有；当前完整软件离轨仍有限改善。
-
-新增 [SC-K-STAR-LIGHT-GREEDY-2 算法与证明](research/current/multi_facility/polytime_frontier.md#sc-k-star-light-greedy-2-unequal-light-weights-on-anchored-star-edges)：[逐命题量词](research/current/multi_facility/claims.md)、[严格区分旧条件类的整数输入](examples/multi_facility/greedy_star_edges.json)、[精确算术核验](tests/audits/kfac_star_edges.py)。以后研究异重轻客户的非星形交叠时应读；证明为一般条件算法，脚本只验固定实例。
-
-新增 [SC-K-TWO-LIGHT-LOWER-POTENTIAL-NO 参数族](research/current/multi_facility/polytime_frontier.md#sc-k-two-light-lower-potential-no-lower-bounded-potential-can-overflow-with-two-weights)：[现行命题](research/current/multi_facility/claims.md)、[六客户整数输入](examples/multi_facility/greedy_two_light_potential.json)和[独立精确审查](tests/audits/kfac_two_light_potential.py)。它隔离了异重轻客户下带下盒势最小不能保上盒的机制，后续研究选均衡规则时应先读；没有否定盒内 NE 的存在。
-
-本表以[双设施模型](research/current/model.md)和[任意设施数共同目录模型](research/current/multi_facility/model.md)为起点。每行沿着**同一组前提 → 数学结论 → 本轮新写的推导 → 程序/验证 → 待补义务**阅读；源 ZIP 中的旧文仅在 [history/source](history/source) 作追溯。[逐文件来源解释表](research/source_crosswalk.md)把 68 个原始文件或旧代码路径逐一连接到新稿中的判断。[assets.json](research/assets.json)为机器可读的逐命题文件关系，[数学超图](research/graph.json)记录证明所需的合取前提，[旧路径表](research/path_migration.json)记录每个迁移与退出的入口。
-
-| 命题 | 必须同时成立的条件与所获结论 | 本轮新写的数学资产 | 规范实现和实例检验 | 尚待完成 |
-| --- | --- | --- | --- | --- |
-| SC-PHI-E/A | **相同非空目录**、正权重、强制服务、线性实际负载成本、逐布局存在性选择独立混合精确 NE；二进制有理输入才谈位复杂度。构造一个因子 ≤φ 的证书，非实例最优。 | [完整集成主稿](history/source/manuscripts/shared_phi/main.tex)、[精确命题](research/current/shared/theorems.md)、[现行全分支证明](research/current/shared/README.md)、[算法与证书](research/current/shared/algorithm.md) | [共享构造](facility_spe/shared_phi.py)、[独立实例检查器](facility_spe/cli/verify_phi.py)、[753 实例回归及全游戏三混合 C 例](tests/test_shared_phi.py) | 全分支现行 Markdown 经内部交叉审读；独立检查器证明指定实例的达到性；无外部同行评审 |
-| SC-K-2-E / SC-K-LEX-BUDGET / MF-PACK-2 / MF-PURE-CAP / MF-CONT-COMPLETE | **任意 $k\ge2$** 设施共用相同非空目录；正权原子客户、完整精确独立混合续局。总存在因子 2 的纯选址近似 SPE。 | [模型和全称证明](research/current/multi_facility/README.md)、[独立内部审查及方向价值](research/K_FACILITY_AUDIT_2026-10-02.md) | [有限精确构造](multi_facility_spe/two_exists.py)、[定义级审查](tests/multi_facility/definition_check.py)、[冻结运行](evidence/runs/kfac_delivery_validation_v2.json) | 因子 2 是否尖锐、位长多项式构造及后续文献优先权均未证；无外部同行评审 |
-| SC-K-TWO-SITE-COMPONENT-GREEDY-2 / SC-K-GREEDY-FIXED-LEXMAX-NO / SC-K-GREEDY-FIXED-POTENTIAL-NO | 贪心占据地点的客户交叠分量每个同重数或至多两地点时，有位长多项式完整 2 倍构造；两份整数例分别使固定布局客户 lexmax、全局客户势最小化唯一选中超过 2 倍的坏 NE。 | [递减权重改派、负载区间、偏离预算与两份严格障碍证明](research/current/multi_facility/polytime_frontier.md) | [lexmax 整数例和 16 状态审查](examples/multi_facility/greedy_repair_order_escape.json)、[势最小整数例](examples/multi_facility/greedy_potential_escape.json)、[独立势值/NE 枚举](tests/audits/kfac_greedy_potential.py) | 条件定理尚无规范实现及外部审稿；固定布局反例不是贪心选址或全部在轨混合策略的失败；较大分量的全站共有客户子类另由下一行覆盖 |
-| SC-K-ALL-OR-ONE-COMPONENT-GREEDY-2 / SC-K-DESCENT-ONLY-TRAP-NO | 贪心交叠分量重数一致或每客户已占选项是唯一站/全部站时，任意大混合重数分量也可位长多项式构造完整 2 倍续局；三站链部分交叠例证明所有严格下降重数客户改派路径停在非 NE，须允许上升回返。 | [最小单位负载列表分配、单设施站私有储备、全部离轨预算及反例逐步证明](research/current/multi_facility/polytime_frontier.md) | [三站六客户整数输入](examples/multi_facility/greedy_descent_trap.json)、[唯一改派路径 Fraction 审查](tests/audits/kfac_descent_trap.py) | 条件证明未经外审，完整软件未实现；返回例不是 2 倍反例；三站以上**部分交叠**混合重数类仍开放 |
-| SC-K-NESTED-ANCHOR-GREEDY-2 | 贪心分量的首开站覆盖全部多选项客户，且他们按权非增时可达站集合逐步包含扩张；允许任意大混合重数和真正的部分交叠。 | [受限列表的最后入站 NE、共同锚站负载盒和孤儿预算](research/current/multi_facility/polytime_frontier.md) | [三站整数输入](examples/multi_facility/greedy_nested_anchor.json)、[嵌套成功与反序失败的 Fraction 审查](tests/audits/kfac_nested_anchor.py) | 位长多项式完整 2 倍**条件定理**，内部逆审、未外审或实现；反序例只否定无条件列表规则，非嵌套/无锚站类仍开放 |
-| SC-K-GREEDY-SINGLETON-RESET / SC-K-GREEDY-BOX-TO-2 / SC-K-UNIFORM-LIGHT-FLOW-2 | 原 $q=1$ 设施的离轨重置不依赖在轨客户分配；任意给定盒内精确站纯 NE 可多项式完成 2 倍续局；全部轻多选项客户同重时可用带下界费用流构造这样的 NE，允许无锚部分交叠。 | [客户池重置、全源离轨续局及同重逆向运输路径证明](research/current/multi_facility/polytime_frontier.md) | [三站链整数输入](examples/multi_facility/greedy_uniform_light_flow.json)、[独立 Fraction 小实例势/NE 审查](tests/audits/kfac_uniform_light_flow.py) | 一般混合轻权的盒内 NE 存在性/位多项式选择仍开放；新条件定理经内部逆审，未外审或规范实现；有限例不是普遍证明 |
-| SC-K-SYMMETRIC-MENU-OBSTRUCTION / SC-K-LEXMAX-BARRIER | 对称离轨菜单可出现假性无界威胁；字典序最优布局的最佳倍率可趋近 2，但这些实例全局有精确 SPE。 | [菜单障碍](research/current/multi_facility/symmetric_menu_obstruction.md)、[布局边界](research/current/multi_facility/lexmax_boundary.md) | [独立边界审查](tests/multi_facility/run_lexmax_barrier_audit.py) | 两者限制特定方法，均非全类的因子 2 下界 |
-| SC-PHI-SHARP | 上界 SC-PHI-E 与六地点下界都在**同一个共同目录、正有理数**实例类。最优普遍因子为上确界 φ。 | [全布局下界与统一有理扰动](research/current/shared/sharp_phi_lower.md)明确修正原图权重并逐项重算 | [整数输入](examples/shared/sharp_lower_rational.json)、[精确实例最优证书](evidence/certificates/shared/sharp_lower_rational.json) | 有限整数例不代替全称扰动证明；修正版尚无外部同行评审 |
-| SC-DIAG-NORMAL / SC-OFFDIAG-FPT | 两设施共同目录、完整精确续局、显式正有理输入谈算法；实例最优值与完整证书可全同址对半，指数参数仅为异址交叠。 | [正规形与零收益证明](research/current/shared/instance_complexity_barriers.md) | [精确求解器](facility_spe/exact/shared_offdiag.py)、[独立比较](tests/test_shared_offdiag.py) | 无界异址交叠的固定 $a<\phi$ 全局判定已有弱 NP 完全性；验证达到证书不证明最优值 |
-| SC-THREE-DEC1-HARD / SC-THREE-DECa-HARD | 两设施、恰好三处共同可选地点、正整数原子权、完整精确客户续局；每个固定有理 $1\le a<\sigma=(1+\sqrt3)/2$ 的实例最优倍率判定弱 NP 完全。 | [三地点全布局归约与两种守卫模板](research/current/shared/three_site_exact_hardness.md) | 复用[局部谱 DP](facility_spe/exact/threshold_dp.py)和[异址精确求解器](facility_spe/exact/shared_offdiag.py)；全局论断依赖归约而非有限测试 | **三地点**端点及 $\sigma\le a<\phi$ 未分类；全类区间另由五地点证明闭合；外部审稿与文献优先权待核 |
-| SC-FIVE-DECa-HARD | 两设施、恰五处相同目录、正整数客户、完整精确独立混合 NE；每个固定有理 $1<a<\phi$ 的全局判定弱 NP 完全，归约 YES 精确达到 $a$、NO 严格超过。 | [五地点全布局证明](research/current/shared/five_site_exact_hardness.md)、[范围与价值审查](research/FIVE_SITE_AUDIT_2026-10-02.md) | [精确构造器](facility_spe/shared/five_site_hardness.py)、[两批定义级审查](tests/audits/five_site_hardness.py)、[整数实例](examples/shared/five_site_a3_2_yes.json) | 内部独立审读与有限复核通过；无外部同行评审、完整文献新颖性核查；不是强或固定间隙困难性 |
-| SC-GRANULAR-APPROX / LOCAL-ATOM-WARDROP-k | 两设施共同目录时，异址共有客户最大单体重 $\theta<R_{\max}$ 给可构造完整续局倍率 $(R_{\max}+\theta)/(R_{\max}-\theta)$；任意 $k$ 固定客户布局的原子 NE 与 Wardrop 负载误差至多 $(k-1)\theta/2$，常数尖锐。 | [两设施粒度桥](research/current/shared/atomic_granularity.md)、[任意设施数局部引理](research/current/local_and_exact/atomic_wardrop_gap.md) | 证明为负载比较与字典序选址势；未声称一般 $k$ 的选址界 | 两个精确常数的新颖性与外部审稿待核；局部尖锐例不是全局下界 |
-| SC-SPARSE-3 / SC-SPARSE-4 / SC-SPARSE-5 | 同一共同目录、每对不同地点至多一共有客户、地点数分别至多 3/4/5。尖锐普遍因子 $\sqrt2,\sqrt[3]4,\phi$。 | [纯菜单上界、三/四地点正有理族、五地点旧下界剪枝](research/current/shared/small_sparse_catalogs.md) | [三/四/五地点精确交叉核对](tests/test_shared_offdiag.py) | 三/四地点上界依赖现行全称证明，有限测试不替代；外部审稿与优先权调查未完成 |
-| HC-2-UP/LOW/SHARP | 两个非空目录可不同；相同负载模型。四种子纯延续得 ≤2；另一六顶点**异构**族的最优因子趋于 2。下界不属于共享目录类。 | [四种子](research/current/heterogeneous/four_seed_algorithm.md)、[任意环](research/current/heterogeneous/full_catalog_cycle.md)、[下界逐格计算](research/current/heterogeneous/sharp_two_lower.md) | [异构构造](facility_spe/heterogeneous_two.py)、[回归](tests/test_heterogeneous.py)、[M=1000 输入](examples/heterogeneous/tight_two_M1000.json) | 完整环分类及优先权的外部复核 |
-| HC-RHO | **同时**每跨目录地点对至多一名公共客户、至少一侧目录至多两个地点。内部证明的尖锐普遍因子 ρ。 | [严格分类、平局、短目录提升与下界全文](research/current/heterogeneous/restricted_rho.md) | [单交叠实例精确求解](facility_spe/exact/single_overlap.py)、[下界输入](examples/heterogeneous/rho_lower.json) | 当前全分支重写经过内部核对；外部审查未进行；双侧目录均任意大的范围另由 [SPARSE-RHO-ALL](research/current/heterogeneous/sparse_unbounded_rho.md) 闭合 |
-| SPARSE-RHO-ALL / SPARSE-BAD-LONG / SPARSE-BAD-LONG-ALL | 两设施、双侧任意有限目录、每跨对至多一名公共客户。固定 reach 优先级的完整纯 NE 规则给出尖锐普遍因子 ρ；坏长环旧版本量化 `3/2<r<ρ`，新版本证明所有 `1≤r<ρ` 均无固定大小的精确回应闭核心。 | [全类上界与机制](research/current/heterogeneous/sparse_unbounded_rho.md)、[阈值以下长环与新版本](research/current/heterogeneous/sparse_bad_long_cycles.md) | [单交叠实例最优求解](facility_spe/exact/single_overlap.py)、[固定 `7/4` 精确长环审查](tests/audits/sparse_bad_long_cycles.py) | 新全称证明和构造经多路线内部审查；外部审稿与完整优先权调查未完成；有限审查不是全称证明 |
-| CORE-LIFT / HC-MONOTONE | 核心引理需两方非负收益、各布局可独立选延续且坐标极小值可达；单调迁移需两设施、相同的客户函数作用于两边且限**纯**客户延续。 | [核心等式和逐实现符号证明](research/current/heterogeneous/core_lift_and_monotone.md) | 核心为结构证明，无独立求真极小值的快速程序；纯四种子代码仍以线性输入运行 | 真实极小值可计算性、混合 NE 保持均不由这些结论给出 |
-| LOCAL-CHORD-IFF/POLY | 单个局部布局的两处可达量 U≥V>φU/2、公共重 C<V/φ，需**双侧配额**。最大原子判别控制强弦构造，可有三名以上混合者。 | [局部 NE 几何与判别](research/current/local_and_exact/local_geometry_and_chord.md)、[全分支构造与交换界](research/current/shared/local_chord_full.md) | [强弦程序](facility_spe/local/strong_chord.py)、[局部审计](tests/audits/strong_chord_iff.py) | 交换界与退化分支已在现行全文重写并经内部审读；外部复核尚未进行；局部端点最优不等于全局平方最优 |
-| EXACT-KAPPA | 两设施、正有理权重、线性成本、全部独立混合精确 NE；最大合法交叠 κ。算**该实例**最优因子，时间对 κ 指数。 | [支持区间与全局最优判据](research/current/local_and_exact/exact_algorithms_and_extensions.md) | [枚举求解](facility_spe/exact/bounded_overlap.py)、[实例及证书](evidence/certificates/heterogeneous/tight_two_M1000.json) | 简短证书只验达到值，最优性需完整支持枚举推导 |
-| DP-W / FPT-D / LOCAL-HARD | 固定局部布局；DP 用总重 W 的正整数公共权重；FPT 用显式列出的 d 种有理权重；困难性用二进制整数。 | [谱 DP、固定维归约和困难性](research/current/local_and_exact/exact_algorithms_and_extensions.md) | [DP 代码](facility_spe/exact/threshold_dp.py)、[有限困难性审计](tests/audits/hardness_enum.py) | DP 为伪多项式；FPT 尚未实现；局部困难性不推出普遍构造困难 |
-| MITM-EXACT | 共同目录实例或一个局部布局，正有理线性负载，接受指数时间与空间。 | [半枚举的单谷目标论证](research/current/local_and_exact/exact_algorithms_and_extensions.md) | [MITM 程序](facility_spe/exact/mitm.py)、[延迟环审计](tests/test_lazy_ring.py) | 延迟剪枝没有多项式最坏界；不能自动推广到异构接口 |
-| QUAD-EQ / QUAD-PHI | **恰好两设施**、强制服务、客户在两设施使用同一个严格递增二次函数。局部 NE/CE/CCE 约束与线性模型同形；φ 转移以 SC-PHI-E 成立为前提。 | [逐实现代数等式](research/current/local_and_exact/exact_algorithms_and_extensions.md) | 无新的通用求解器；沿用线性结论需先满足条件 | 任意凸成本的混合对应不成立 |
-| POLY-CONT | 两领导者非负收益，布局间可独立选后续；每布局收益集为显式多项式规模有理多面体并可实现概率见证。 | [LP 形式及可实现性条件](research/current/local_and_exact/exact_algorithms_and_extensions.md) | 尚无实现 | 不等于一般非线性客户博弈的多项式算法 |
-
-## 来源、证据、增长
-
-- [原始手稿](history/source/manuscripts)及[旧局部证明](history/source/notes)保留可核对的原始推导；[上一轮整理稿](history/curation-2026-10-01)不再作为现行证明入口。真正失败或被后续结论替代的尝试见[历史说明](history/README.md)。
-- [测试](tests)给有限实例事实，[冻结记录](evidence/runs)说明当时运行规模，[证书](evidence/certificates)验证一个实际输入。它们与普遍证明和实例最优证明分别记录。
-- 新研究按[增长协议](research/GROWTH.md)进入[问题区](research/questions)或[现行分支](research/current)，以新命题 ID 更新索引和超边。任何旧材料都不能只靠重新命名取得现行证明地位。
+来源从 history 按需追溯。过时整理稿、交接副本和旧导出已退出当前树；不可变恢复入口在 [retired_snapshots](history/source/notes/retired_snapshots.md)。新成果遵守 [GROWTH](research/GROWTH.md) 与 [生产/读取/保存流程](research/REPOSITORY_GUIDE.md)。

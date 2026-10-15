@@ -80,4 +80,4 @@ x\ge qd(t),\qquad y\ge qd(s), \tag{Q}
 
 ## 来源与本次重写范围
 
-定义与公式核对：[MODEL.md M1–M4](../../../history/curation-2026-10-01/MODEL.md)、[主稿 §§1–2](../../../history/source/manuscripts/shared_phi/main.tex)；实现核对：[shared_phi.py 的 `parsed`、`exact_ne`、`verify`](../../../facility_spe/shared_phi.py)。这些路径是来源定位，不替代上面的定义或推导。
+定义与公式核对：[MODEL.md M1–M4](https://github.com/SOMEBODYJUN/co-work-anl/blob/bd7798d5bbcc8086217ff54d7f91b445d0374b4f/history/curation-2026-10-01/MODEL.md)、[主稿 §§1–2](../../../history/source/manuscripts/shared_phi/main.tex)；实现核对：[shared_phi.py 的 `parsed`、`exact_ne`、`verify`](../../../facility_spe/shared_phi.py)。这些路径是来源定位，不替代上面的定义或推导。

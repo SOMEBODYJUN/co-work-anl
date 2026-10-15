@@ -13,6 +13,16 @@ import subprocess
 import sys
 
 SCOPE = "research/weighted_congestion_frontier"
+DEFAULT_PATHS = [SCOPE, "research/current/weighted_congestion",
+                 "research/questions/weighted_congestion", "research/reviews/weighted_congestion",
+                 "tests/audits/weighted_congestion", "tests/audits/weighted_congestion_density.py",
+                 "tests/audits/weighted_power_bridge.py", "evidence/runs/weighted_congestion",
+                 "evidence/certificates/weighted_congestion", "examples/weighted_congestion",
+                 "history/source/notes/weighted_congestion", "history/source/notes/weighted_congestion_frontier",
+                 "README.md", "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md",
+                 "research/current/claims.md", "research/assets.json", "research/review_status.json",
+                 "research/graph.json", "research/index.html", "research/source_crosswalk.json",
+                 "research/source_crosswalk.md"]
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}|-----BEGIN [A-Z ]*PRIVATE KEY-----")
 ROUTING = ("GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE",
            "GIT_OBJECT_DIRECTORY", "GIT_ALTERNATE_OBJECT_DIRECTORIES",
@@ -87,6 +97,8 @@ def locked_save(repo, common, cache, args):
     branch = branch_result.stdout.decode().strip()
     if branch == "wcg/board":
         raise Stop("Board messages must use board.py.")
+    if branch != "main":
+        raise Stop("Run work.py start to preserve and migrate this old work branch to main before checkpointing.")
     for item in ("MERGE_HEAD", "CHERRY_PICK_HEAD", "REVERT_HEAD", "rebase-merge", "rebase-apply"):
         if Path(value(repo, "rev-parse", "--git-path", item)).is_absolute():
             p = Path(value(repo, "rev-parse", "--git-path", item))
@@ -115,7 +127,9 @@ def locked_save(repo, common, cache, args):
         os.environ["WCG_CHECKPOINT_TOKEN_FILE"] = str(credential)
         os.environ["GIT_ASKPASS"] = str(Path(__file__).resolve())
         os.environ["WCG_CHECKPOINT_ASKPASS"] = "1"
-    paths = [relative(repo, p) for p in (args.paths or [SCOPE])]
+    defaults = [p for p in DEFAULT_PATHS if (repo / p).exists()
+                or git(repo, "ls-files", "--", ":(literal)" + p).stdout]
+    paths = [relative(repo, p) for p in (args.paths or defaults)]
     specs = [":(literal)" + p for p in paths]
     for p, spec in zip(paths, specs):
         if not (repo / p).exists() and not git(repo, "ls-files", "--", spec).stdout:

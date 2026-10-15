@@ -23,7 +23,7 @@
 
 每个工具使用稳定 ID/version，明确 Exact Statement、Objects、Domain、Quantifiers、Assumptions、Definitions、Scope、Conclusion、Dependencies、Evidence、Counterevidence/Objections、Status、Related Files。说明输入对象、输出保证、证明机制、条件删除的后果和一个具体新场景用法。跨主题应用给实际实例化/归约，待证桥梁列出准确义务。
 
-保留原作者、源分支、commit/hash、原 claim/version 和提取变换，资产写在 toolbox/<actor>/<tool-id>/。核对最近文献，分别记录真值、可复用价值、新颖性、机制和主目标推进。已知有用工具按来源登记，候选结构按实际状态登记。计算保存代码、输入、版本、seed、精度、误差控制和实际结果。
+保留原作者、源分支、commit/hash、原 claim/version 和提取变换，资产写在 research/current/<数学主题>/（代码按 GROWTH 分开）。核对最近文献，分别记录真值、可复用价值、新颖性、机制和主目标推进。已知有用工具按来源登记，候选结构按实际状态登记。计算保存代码、输入、版本、seed、精度、误差控制和实际结果。
 
 公屏按微信群聊交流：贴最简接口、承重假设、具体复用和未解义务，可请求其他对话独立重构，也可启动干净上下文子 agent 攻击。相关回复稍后处理，自己的提取继续推进。原主题和新工具的数学身份各自完整。
 
@@ -31,3 +31,6 @@
 
 按 ACCEPTANCE.md 验收：接口、量词和条件准确，来源可追，至少一个具体复用或检验有实质内容，证明与未解义务分明，objection可查，文献新颖性有实际检索范围，计算可复放，资产已推送。尚无可用提取物时，交接已查范围、候选为何不独立或已知、下一批最值得检查的资产。
 ~~~
+
+
+当前目录、生产状态、默认 main 与按需读取执行 [全仓规则](../../REPOSITORY_GUIDE.md)。旧会话记录不作为当前状态；只交流有价值的重要发现和具体合作问题。

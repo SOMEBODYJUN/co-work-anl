@@ -10,7 +10,7 @@
 | [精确算法与条件扩展](exact_algorithms_and_extensions.md) | 如何求局部极值和实例最优 SPE 倍率？何种费用扩展成立？ | DP、MITM、有界交叠最优化不依赖全局 φ 上界；将它们用于保证 φ 的搜索才依赖该上界。二次费用等价独立成立。 |
 | [任意 $k$ 的原子—Wardrop 误差](atomic_wardrop_gap.md) | 固定布局上的任意原子客户 NE 与可拆分 Wardrop 负载相差多远？ | 运输耦合给每坐标尖锐 $(k-1)\theta/2$，链族取等；不声称全 $k$ SPE。与已有大规模拥塞博弈近似文献分开核新颖性。 |
 
-现行模型与状态以[规范模型](../model.md)和[现行命题](../claims.md)为准。原始来源为[共享主稿](../../../history/source/manuscripts/shared_phi/main.tex)，第一轮的[局部概览](../../../history/curation-2026-10-01/LOCAL_GAME.md)与[计算概览](../../../history/curation-2026-10-01/COMPUTATION_AND_EXTENSIONS.md)仅作可追溯的中间整理。有限测试是实现证据，不是任意规模证明。
+现行模型与状态以[规范模型](../model.md)和[现行命题](../claims.md)为准。原始来源为[共享主稿](../../../history/source/manuscripts/shared_phi/main.tex)，第一轮的[局部概览](https://github.com/SOMEBODYJUN/co-work-anl/blob/bd7798d5bbcc8086217ff54d7f91b445d0374b4f/history/curation-2026-10-01/LOCAL_GAME.md)与[计算概览](https://github.com/SOMEBODYJUN/co-work-anl/blob/bd7798d5bbcc8086217ff54d7f91b445d0374b4f/history/curation-2026-10-01/COMPUTATION_AND_EXTENSIONS.md)仅作可追溯的中间整理。有限测试是实现证据，不是任意规模证明。
 
 ## 本次来源核对发现
 

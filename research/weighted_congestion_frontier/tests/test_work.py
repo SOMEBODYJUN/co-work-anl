@@ -40,6 +40,45 @@ def value(repo, *args):
 
 
 class WorkTests(unittest.TestCase):
+    def test_automatic_actor_is_stable_and_creates_no_work_branch(self):
+        result = self.work("start", "--token-file", str(self.credential),
+                           "--remote", str(self.remote))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        first = json.loads(result.stdout.splitlines()[0])
+        self.assertRegex(first["actor"], r"^W[0-9a-f]{12}$")
+        self.assertEqual(first["branch"], "main")
+        result = self.work("start", "--remote", str(self.remote))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(json.loads(result.stdout.splitlines()[0])["actor"], first["actor"])
+        self.assertEqual(value(self.remote, "for-each-ref", "--format=%(refname)",
+                               "refs/heads/wcg/work"), "")
+
+    def test_legacy_branch_migration_preserves_commit_index_and_dirty_files(self):
+        self.start()
+        git(self.repo, "switch", "-c", "wcg/work/001/legacy")
+        note = self.repo / SCOPE / "note.md"
+        note.write_text("legacy committed proof\n")
+        git(self.repo, "add", str(note))
+        git(self.repo, "commit", "-m", "valuable legacy result")
+        legacy = value(self.repo, "rev-parse", "HEAD")
+        outside = self.repo / "outside.md"
+        outside.write_text("staged work\n")
+        git(self.repo, "add", "outside.md")
+        note.write_text("legacy committed proof\nplus unstaged derivation\n")
+        (self.repo / "untracked.txt").write_text("untracked idea\n")
+        self.advance_main("peer.md", "new peer result\n")
+        result = self.work("start", "--remote", str(self.remote))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(value(self.repo, "branch", "--show-current"), "main")
+        self.assertEqual(git(self.repo, "merge-base", "--is-ancestor", legacy, "HEAD",
+                             check=False).returncode, 0)
+        self.assertEqual(value(self.repo, "show", ":outside.md"), "staged work")
+        self.assertIn("plus unstaged derivation", note.read_text())
+        self.assertEqual((self.repo / "untracked.txt").read_text(), "untracked idea\n")
+        self.assertEqual((self.repo / "peer.md").read_text(), "new peer result\n")
+        self.assertTrue(value(self.repo, "for-each-ref", "--format=%(refname)",
+                              "refs/wcg/recovery"))
+
     def setUp(self):
         common = (ROOT / value(ROOT, "rev-parse", "--git-common-dir")).resolve()
         self.tmp = tempfile.TemporaryDirectory(prefix="work-entry-test-", dir=common)
@@ -99,7 +138,7 @@ class WorkTests(unittest.TestCase):
         self.assertFalse(self.repo.exists())
         first = self.start()
         self.assertEqual(first["actor"], "001")
-        self.assertTrue(first["branch"].startswith("wcg/work/001/"))
+        self.assertEqual(first["branch"], "main")
         self.assertEqual(value(self.repo, "config", "wcg.actor"), "001")
         self.assertEqual(value(self.repo, "config", "wcg.tokenFile"), str(self.credential))
         self.assertNotIn(self.token, first.__str__())
@@ -121,7 +160,7 @@ class WorkTests(unittest.TestCase):
         loose = self.repo / "untracked with spaces.txt"
         loose.write_text("independent idea\n")
         first = self.start()
-        self.assertTrue(first["branch"].startswith("wcg/work/001/"))
+        self.assertEqual(first["branch"], "main")
         self.assertEqual(note.read_text(), "staged research\nunstaged continuation\n")
         self.assertEqual(value(self.repo, "show", ":" + SCOPE + "/note.md"), "staged research")
         self.assertEqual(loose.read_text(), "independent idea\n")
@@ -240,8 +279,9 @@ class WorkTests(unittest.TestCase):
         self.assertTrue(all(event["body"]["thread"] == "gap-A" for event in state["events"]))
         self.assertNotIn("members", state)
         self.assertNotIn("ideas", state)
-        self.assertNotEqual(value(self.repo, "branch", "--show-current"),
-                            value(second_repo, "branch", "--show-current"))
+        self.assertEqual(value(self.repo, "branch", "--show-current"), "main")
+        self.assertEqual(value(second_repo, "branch", "--show-current"), "main")
+        self.assertNotEqual(self.repo, second_repo)
 
     def test_checkpoint_pushes_and_result_asset_can_be_sent_with_saved_configuration(self):
         self.start()

@@ -10,4 +10,4 @@ These notes retain exact calculations from the original individual research file
 | [exact](exact) | Full ternary support enumeration and bounded-overlap instance optimum. |
 | [extensions](extensions) | Same-at-both quadratic algebra and conditional rational-polyhedral continuation. |
 
-The [normalized claim registry](../../curation-2026-10-01/CLAIMS.md) supplies the exact quantifiers and current status. These source notes retain distinctive proof details but are not parallel, independently certified theorem versions.
+The [normalized claim registry](https://github.com/SOMEBODYJUN/co-work-anl/blob/bd7798d5bbcc8086217ff54d7f91b445d0374b4f/history/curation-2026-10-01/CLAIMS.md) supplies the exact quantifiers and current status. These source notes retain distinctive proof details but are not parallel, independently certified theorem versions.

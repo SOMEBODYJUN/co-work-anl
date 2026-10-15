@@ -269,6 +269,44 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 
 
+## 加权拥塞：精确范围与分开登记的审查
+
+| ID | 结论入口 | 当前状态 | 条件与证明 |
+| --- | --- | --- | --- |
+| OC-INTERFACE-v1 | Odd-ring full-state and positive coefficient certificate | complete current proof, independently reconstructed and exactly audited; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| OC-AMPLIFIER-LIMIT-v1 | Linear reset gives an infinite d/log d lower bound | complete current proof, independently reconstructed and exactly audited; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| OC-AMPLIFIER-ENVELOPE-v1 | Explicit E_d is excluded at its endpoint | complete current proof, independently reconstructed and exactly audited; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| OC-LIGHT-FORCING-EXACT-v1 | A failed hub edge gives a real approximate equilibrium | complete current proof, independently reconstructed and exactly audited; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| OC-INTERFACE-BARRIER-v1 | Sharp leading order inside the forcing certificate | complete current proof, independently reconstructed and exactly audited; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R1-INTEGER-TRIAD | Integer quadratic triad has exact pure factor 286/267 | complete proof and exact replay; independent frozen review not recorded; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R1-RESOURCE-SUPPORT | Bounded resource user support gives r-PNE | complete proof and exact replay; independent frozen review not recorded; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R1-SOURCE-D2-ENVELOPE | Source equation (3) at d=2 has ceiling 19/18 | complete self-contained proof, internally reconstructed and exactly checked; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R2-DENSITY-MOMENT | Sharp finite sparse power-moment inequality v1 | complete general proof, independently internally checked; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R2-WEIGHT-DENSITY | Resource-local weight-density PNE existence v1 | complete general proof, independently internally checked; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R2-RESOURCE-POWER-BRIDGE | Sparse power / ordered resource bridge | complete stated-scope proof, independently internally reconstructed and exactly checked; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R2-POWER-PATH-OBSTRUCTION | Fixed sublinear power multiplier path obstruction | complete stated-scope proof, independently internally reconstructed and exactly checked; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R2-AFFINE-TWO-TYPE | Sharp affine two-type marginal certificate | complete stated-scope proof, independently internally reconstructed and exactly checked; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| R3-SOURCE-SHARP-ASYMPTOTIC-v1 | Sharp source-envelope asymptotic | complete current proofs, independently internally attacked; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-FULL-TOPOLOGY-REDUCTION-v3 | Full symmetric topology reduction | complete current proofs, independently internally attacked; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-SOURCE32-178-v1 | Source d=32 full-parameter upper bound | complete exact statements with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WCF-R3-CROSS32-AUDIT-v1 | Four-player degree-32 strict 9/5 obstruction | complete exact statements with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WCF-R3-FIXED-DEGREE-FAIL-v1 | Fixed crossover coefficients do not preserve 9/5 | complete exact statements with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-CROSS32-TOPOLOGY-SEPARATION-v1 | Crossover exceeds the entire symmetric degree-32 topology | complete exact statements with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-DENSE-SHARE-v1 | Shapley share ordering and local weight envelope | complete stated-scope proofs with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-DENSE-LOCAL-v1 | Resource-local R-PNE through Shapley potential | complete stated-scope proofs with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-DENSE-POT-SHARP-v1 | Sharpness of the specified R Shapley selector | complete stated-scope proofs with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-BAND-CURL-v1 | Separate band normalization violates ordinary potential integrability | complete stated-scope proofs with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-BAND-LINEAR-v1 | Linear selected-potential loss across dense singleton bands | complete stated-scope proofs with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WCF-R3-SCALED-ORIGINAL-v1 | Original crossover shrinking-weight constant family | complete stated-scope proofs with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WCF-R3-SCALED-RETUNED-v2 | Retuned constant family and stronger uniform starting index | complete stated-scope proofs with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WCF-R3-SCALED-TEMPLATE-v1 | Cubic feasibility boundary of the prescribed witnesses | complete stated-scope proofs with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-POTENTIAL-DENSITY-PADDING-v1 | Potential-density padding preserves the entire existence question | complete stated-scope proofs with independent internal reconstruction; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-ODD-RING-CERTIFICATE-v1 | Odd-ring all-state and rational-coefficient certificate | complete general proofs with independent internal reconstruction; unrefereed; global priority unverified | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-ODD-RING-ENVELOPE-v1 | Exact degree-dependent odd-ring certificate envelope | complete general proofs with independent internal reconstruction; unrefereed; global priority unverified | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-ODD-RING-LOWER-v1 | Full-model growing lower bound with leading constant one | complete general proofs with independent internal reconstruction; unrefereed; global priority unverified | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1 | Mixed polynomial shapes preserve the exact ring-test envelope | complete stated-scope proof with independent internal attack; unrefereed; global priority unverified | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+| WC-R3-ODD-RING-SINGLETON-UPPER-v1 | Singleton cohorts admit a stable defect state | complete restricted existence proof with internal reconstruction; unrefereed; priority unverified | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

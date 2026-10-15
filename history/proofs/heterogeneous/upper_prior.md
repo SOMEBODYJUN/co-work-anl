@@ -1,4 +1,4 @@
-> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../../../README.md), [claim registry](../../curation-2026-10-01/CLAIMS.md) and [source-status guide](../../curation-2026-10-01/PROVENANCE.md) for current scope.
+> **Historical research note (superseded frontier statements).** Preserve the derivation below as provenance; use [the current mathematical map](../../../README.md), [claim registry](https://github.com/SOMEBODYJUN/co-work-anl/blob/bd7798d5bbcc8086217ff54d7f91b445d0374b4f/history/curation-2026-10-01/CLAIMS.md) and [source-status guide](https://github.com/SOMEBODYJUN/co-work-anl/blob/bd7798d5bbcc8086217ff54d7f91b445d0374b4f/history/curation-2026-10-01/PROVENANCE.md) for current scope.
 
 # 异构选址集：双色回应环结构与通用 2 上界的研究过程
 

@@ -1,153 +1,59 @@
-# 两阶段设施选址博弈：研究与人类学习入口
+# 共同研究：数学地图与唯一读取入口
 
-独立新研究：[加权原子拥塞博弈的普遍近似纯均衡门槛](research/weighted_congestion_frontier/README.md)。
-每个 Work 对话填好自己的角色号，使用本地程序与本会话 txt 凭据直接恢复、同步、读公屏、发言和 checkpoint。各对话自主探索，内部按需要使用 subagent，同题可独立推进。
+本仓库保留三个数学模型，分别维护定义和量词。当前主要研究方向是**加权原子拥塞博弈的普遍近似纯均衡门槛**。新对话以本仓库为准，旧对话、公屏和交接副本不再作为研究状态来源。
 
-[本地运行说明](research/weighted_congestion_frontier/RUNBOOK.md)提供完整入口；[异步公屏协议](research/weighted_congestion_frontier/PROTOCOL.md)按群聊交流；[阶段保存](research/weighted_congestion_frontier/CHECKPOINT.md)自动提交、推送并确认远端。额外的[论文者](research/weighted_congestion_frontier/prompts/PAPER_WRITER.md)和[提取者](research/weighted_congestion_frontier/prompts/EXTRACTOR.md)分别组织贡献表达与独立工具。[来源记录](research/weighted_congestion_frontier/SOURCES.md)保留固定版本、许可和适配。WC-TARGET v1 仍开放。
+## Research Goal / Research Frontier
 
-新增一般运输接口：[末位平局行商空间](research/current/customer_attraction/terminal_tie_quotient.md)严格扩大证书提升条件，并给出真实四边与跨计数支付。但[自然半覆盖证书的固定早期支付](research/current/customer_attraction/terminal_tie_lift_obstruction.md)可留下无法追加支付的负债；全局乘子必须联合构造。一般半覆盖与弱聚合安全桥仍开放。
+加权拥塞的目标是刻画非负系数、次数至多 d 的多项式费用下的普遍存在阈值 a_*(d)。已收录的团队一般证明给出奇数环下界 T_d∼d/ln d；已核对文献给出普遍上界 d。**主目标仍开放：缺少匹配的全类存在上界，或超出现有强制偏离证书的新下界机制。**全球优先权与外部同行评审尚未认证。
 
+研究详情从[加权拥塞数学入口](research/current/weighted_congestion/README.md)进入。[当前状态](RESEARCH_STATE.md)只列当前前沿；[精确命题目录](CLAIMS.md)连接真正的命题身份；[失败路线](FAILED_ROUTES.md)区分命题反例与方法限制。
 
-最新一般机制边界：[34单位客户完整SPE](research/current/customer_attraction/individual_security_counterexample.md)
-严格否定真正逐人混合安全值保底；[完整树按节点平均偏离](research/current/customer_attraction/iid_security_and_flow_barriers.md)
-即使用任意非负权重也不足。聚合安全值与主半覆盖仍开放，
-[两个可直接交给GPT Pro的攻坚任务](research/questions/customer_attraction_general_handoff.md)精确列出缺口。
-[无目录限制的一般尾部提升](research/current/customer_attraction/tail_profit_lift.md)给OPT_n≤(n/2−1/750)W，尚未达到常数二。
+## Mathematical Objects / Definition Map
 
-顺序CAG新增失败边界：[61客户完整根SPE](research/current/customer_attraction/root_tax_counterexample.md)
-严格否定此前开放的根总税。第二份上传结果的89客户证书成立，但全p补偿去相关预算已由
-[既有36客户策略](research/current/customer_attraction/global_security_budget_boundaries.md)否定。
-[全树安全值锥对偶](research/current/customer_attraction/security_cone_duality.md)等价成立，真正总安全值支付与一般半覆盖仍开放。
-
-本轮另启动独立的[顺序客户吸引博弈分支](research/current/customer_attraction/README.md)：
-研究 Deng 等共同目录、单位均分模型的[任意纯 SPE 半覆盖目标](research/questions/customer_attraction_half_coverage.md)。
-已建立保留全部历史依赖平局的有限精确工具，**任意人数上界仍未证明**。
-[三人锐界](research/current/customer_attraction/three_player_sharp.md)已完整内部独立审查：
-每个完整纯 SPE 满足 `OPT_3≤(5/3)W`，且下界达到。
-真实离轨回复和跨节点比较闭合上界，不依赖已失败的税归纳。
-[先前142/81推导](research/current/customer_attraction/three_player_bound.md)作为两人税机制的独立回收保留。
-[四人普遍上界](research/current/customer_attraction/four_player_bound.md)亦已内部独立审查：
-每个完整纯 SPE 满足 `OPT_4≤(1499/750)W<2W`（正覆盖），
-通过根偏离真实后继节点比较与非负逐客户恒等式闭合；五人及以上仍开放。
-[至多三个极大覆盖的任意人数半覆盖](research/current/customer_attraction/three_maxima_bound.md)
-现已完整内部审查：允许任意内部子主题及交叉关联，全部历史纯SPE满足
-`OPT_n≤2W−c`（n≥2，c为极大共同核心）；n=1最优。
-它与不限极大主题数的层级类不可比较，四极大主题的静态席位union预算已有明确障碍。
-[五人一般目录的新回复菜单上界](research/current/customer_attraction/five_player_reply_bound.md)
-已完整内部审查：`OPT_5≤[493266145873827/234749688354196]W≈2.101243W`。
-三个真实最优回复菜单及24个合法slack改善[旧约2.209867界](research/current/customer_attraction/five_player_bound.md)；
-系数仍大于2，**一般目录五人及以上半覆盖仍开放**。
-
-[任意人数结构子类定理](research/current/customer_attraction/disjoint_maxima_bound.md)证明：
-删除共同核心后，若不同极大主题互不相交，则每个完整纯 SPE 满足锐界 `2−1/m`；
-允许极大主题内部的子主题任意交叠，包含全部 laminar 目录。
-[Sunflower极大目录锐界](research/current/customer_attraction/sunflower_maxima_bound.md)严格扩大上述结构类：
-内部子主题可以遗漏极大共同核心，任意至多两个不同极大主题的目录均涵盖；
-全部历史纯SPE满足 `OPT_n≤|C|+(2−1/n)(W−|C|)`。
-同稿给[任意目录superset席位接口](research/current/customer_attraction/sunflower_maxima_bound.md#8-任意共同目录可用的-superset-席位接口)，一般共享union预算仍开放。
-[客户极大关联层级定理](research/current/customer_attraction/laminar_incidence_bound.md)进一步扩展到
-各客户在极大主题间的关联集合为 laminar 的目录，内部子主题仍任意；任意人数有同一锐界
-`OPT_n≤|C|+(2−1/n)(W−|C|)`，包含全部历史平局。
-[聚合末位保底反例](research/current/customer_attraction/aggregate_theta_counterexample.md)则证明
-任意 `n≥3` 均可能 `W<nθ_n`；36客户三人完整证书给 `W=34<36=3θ_3`，未反驳半覆盖。
-[混合安全值锐界](research/current/customer_attraction/oblivious_security.md)给一般目录
-`v_n≥OPT_n/(2n−1)`；竞争组合须不观察随机动作，向可信顺序续局的桥仍开放。
-[可信续局安全值边界](research/current/customer_attraction/continuation_security_barriers.md)补明：
-一后继去相关恒等式成立，多后继普遍去相关已被完整四人SPE否定；
-每个n≥3真实根回复菜单的自由混合都可不足，36客户例有菜单值11而根收益与v3均10。
-静态安全值仍有效，尚缺把扩大菜单中的跨分支组合支付给真实终局的预算。
-[上传工具独立审计](research/current/customer_attraction/uploaded_tool_audit.md)确认其全平局递推
-与规范工具一致；新增四人完整证书否定“每人收益都至少为末位最坏最佳回应值θ”。
-[末两人逐人保底](research/current/customer_attraction/last_two_floor.md)则成立，
-并给出较弱全人数界 `W≥4(n−1)OPT_n/[n(2n−1)]`，不改变五人及以上的开放状态。
-[Möbius编译定理](research/current/customer_attraction/mobius_compiler.md)将子集势的边际收益游戏
-嵌入合法共同目录unit CAG，并严格证明安全大偏置自身不能反驳半覆盖。
-[任意背景三剩余人的利润锐界](research/current/customer_attraction/three_remaining_profit_bound.md)
-给 `F3(b)≤(5/3)R_b(实际)`；非零背景中的剩余利润与覆盖必须区分。
-[任意背景四剩余人的利润界](research/current/customer_attraction/four_remaining_profit_bound.md)
-给 `F4(b)≤(1499/750)R_b(实际)`，新增背景校正修复直接平移根税聚合的失败；
-同样保留全部真实历史回复，尚不能闭合五人根半覆盖。
-[固定背景两人税界](research/current/customer_attraction/two_remaining_tax.md)仍成立，
-但[首步机会成本桥](research/current/customer_attraction/tax_bridge_counterexample.md)在空背景三人即失败，
-[一般背景总税界](research/current/customer_attraction/general_tax_counterexample.md)也有完整根 SPE 内的反例。
-[完整策略重数锥](research/current/customer_attraction/strategy_cone.md)给固定人数与主题标签数的有理精确优化接口，
-没有将有限策略样本升级为一般上界。
-该模型的客户不主动优化，与下述既有设施研究没有直接定理迁移。
-
-[动态极大主题预算](research/current/customer_attraction/dynamic_maxima_bound.md)现证明：
-**至多五个不同包含极大主题、任意人数、全部历史依赖纯SPE都有 `OPT_n≤2W`**，
-内部子主题任意且可遗漏共同核心。新的逐历史路由预算与后继包含支配绕过四极大静态席位障碍；
-五人临界步分别保留私有/共享客户质量；一般目录五人及以上仍开放。
-
-本项目研究正权原子客户的两阶段设施选址：设施先选位置，客户随后选择设施并形成精确独立 Nash 均衡。我们寻找一个纯设施布局和覆盖全部布局的客户均衡续局，使设施单边搬迁的收益受统一倍率控制。
-
-**人类团队从 [learning/README.md](learning/README.md) 开始。** 顺读入口是 [从一个搬迁问题开始](learning/00_guide.md)，模型与技术课之后由 [两条主证明的接口](learning/01b_proof_map.md)进入长证明；[精确证书课](learning/10_certificates.md)把概率策略与定义级核验连起来。已有预备课、手算、[分析式证明技术](learning/01a_proof_techniques.md)、核心证明讲义、有限必要障碍与 [两周研讨安排](learning/07_seminar.md)。先掌握主线，不按提交时间通读所有研究分支。
-
-## 当前目标与主要成果
-
-当前主要算法目标是：对任意设施数、共同目录、显式可达集合和正二进制有理原子权，在联合输入位长多项式时间内构造完整因子 2 近似 SPE。**一般因子 2 存在性已有完整内部证明，高效构造仍开放。** 最佳统一常数是否小于 2 是另一项研究问题。
-
-| 成果 | 精确范围与结论 | 现行入口 |
+| 模型 | 对象与定义链 | 权威定义与研究入口 |
 | --- | --- | --- |
-| 四共同地点无 FPTAS | 两设施、正整数原子权；在全部纯布局与完整精确独立混合续局之间优化实例稳定倍率，P≠NP 下不存在加性/乘性 FPTAS；不排除 PTAS 或一般任意盒 NE 搜索 | [全局间隙证明](research/current/shared/four_site_no_fptas.md)、[审查、实际核验及文献差异](research/FOUR_SITE_FPTAS_AUDIT_2026-10-09.md) |
-| 共同目录双设施 φ | 任意覆盖和正原子权；尖锐普遍因子 φ，显式有理输入有位多项式构造 | [分支](research/current/shared/README.md)、[完整证明](research/current/shared/proof.md)、[锐性下界](research/current/shared/sharp_phi_lower.md) |
-| 一般异构双设施 2 | 不同目录；四种子/全环上界及匹配下界；当前账本仍为内部候选 | [分支](research/current/heterogeneous/README.md)、[全环](research/current/heterogeneous/full_catalog_cycle.md) |
-| 任意长单交叠异构目录 ρ | 每个合法跨目录对至多一个共有客户；固定完整纯规则给出尖锐 ρ；双侧目录长度不受限 | [全长直接证明](research/current/heterogeneous/sparse_unbounded_rho.md) |
-| 共同目录实例复杂度 | 每个事先固定的有理 1≤a<φ，判定实例最优倍率≤a 弱 NP 完全；三地点处理 a=1，五地点覆盖全部 1<a<φ | [结构与算法边界](research/current/shared/instance_complexity_barriers.md)、[五地点全归约](research/current/shared/five_site_exact_hardness.md) |
-| 任意设施数共同目录 2 | 存在纯选址、站内均匀在轨客户 NE 和完整精确纯离轨续局；不声称 2 尖锐或一般位多项式 | [主定理](research/current/multi_facility/uniform_two.md)、[逆审](research/current/multi_facility/reverse_review.md) |
-| 任意规模贪心完整盒 NE | 固定规范贪心布局；阈值截断负载与离乡人数的交错字典序势证明任意严格改善加归位修复有限终止，构造完整盒内精确客户 NE；无一般多项式总步数界 | [全局进展证明](research/current/multi_facility/greedy_box_global_progress.md)、[运行](USAGE.md) |
-| 等权可移动客户的无约束流选择器 | 任意覆盖图与二进制重数；无约束目标的每个全局最小者自动在完整盒内并满足 `(H)`。等权原模型子类此前已可多项式求解；本轮删除冗余下界、强化最优解性质并补规范实现 | [完整新证明与旧结果比较](research/current/multi_facility/equal_light_flow.md)、[实现](multi_facility_spe/equal_light_flow.py) |
+| 加权原子拥塞 | 正权玩家＋有限资源子集策略＋非负多项式费用 → 资源负载 → 玩家成本 → α-PNE → 全类阈值 a_*(d) | [MODEL](research/weighted_congestion_frontier/MODEL.md)、[数学资产](research/current/weighted_congestion/README.md) |
+| 两阶段设施选址 | 设施布局＋可达关系＋正权原子客户 → 精确独立客户 NE → 完整续局 → 近似 SPE | [模型](research/current/model.md)、[成果地图](research/current/README.md) |
+| 顺序客户吸引 | 共同主题目录＋单位客户 → 历史依赖纯策略 → 完整纯 SPE → 覆盖福利 | [独立入口](research/current/customer_attraction/README.md) |
 
-以上成果审查状态不同，均无外部同行评审记录。精确作用域、来源证明、现行重构、内部审查与实现分别登记在 [命题账本](research/current/claims.md) 和 [五轴状态表](research/review_status.json)。内部证明、有限实例证书及学术发表是不同层次。
+模型间的工具迁移需要明确桥梁；目录相邻不表示定理互相适用。
 
-## 算法前沿在哪里
+## Claim Map / Dependency Graph
 
-双设施另有一个可集中完成的[实例最优倍率 EPTAS 候选](research/questions/shared_alpha_eptas.md)：
-[固定重支持的近带精确补全](research/current/shared/near_band_completion.md)已内部证明，
-外带少量重客户枚举及全局 C² 误差有明确路线；规范一般算法、完整位复杂度和实现仍待交付。
-[团队价值辩驳与实际初探](research/NEXT_DIRECTION_DEBATE_2026-10-09.md)记录选择理由。
-这一方向与一般盒内任意 NE 的多项式目标独立，不把候选升级为已完成 EPTAS。
+加权拥塞的核心链为：资源策略与真实偏离成本 → 奇环全状态证书 → 正系数闭环 → 有限有理构造 → T_d 下界。局部证书包络只限制该方法，不是全类存在上界。
 
-2026-10-08 的[共单例搜索接口](research/current/multi_facility/complement_search_reduction.md)
-将另一类负载均衡搜索精确实现为真实贪心实例：全状态保盒且严格保 `(H)`，没有归位修复，仍保留全部客户选择关系。两速度 `1,2` 的归约为通常位多项式；一般带区间表述不展开重数。它是结构定位成果，编译器不求均衡，不证明一般高效构造或困难性。证明、实现、独立精确核验及近期解释/自由选路目标已汇入[复合审查记录](research/COMPLEMENT_REDUCTION_AUDIT_2026-10-08.md)。
+其他模型的定义、引理、反例和算法关系以及加权拥塞已登记结果统一放在[数学超图](research/index.html)及[结构化图](research/graph.json)。`derives` 列全体共同前提；实验只用 `checks`，失败与限制分别登记。图是导航，真值以精确陈述及证明为准。
 
-[完整盒内存在性与改善—归位全局终止](research/current/multi_facility/greedy_box_global_progress.md) 已闭合：规范贪心布局总有精确站纯、站内独立均匀客户 NE，有限精确构造可接完整因子 2 续局。一般输入剩余的是**总运行时间的位多项式界**，精确下一目标见[交接页](research/questions/greedy_box_polytime.md)。[计算前沿](research/current/multi_facility/polytime_frontier.md) 的离轨多项式定理仍成立；当前可执行完整构造使用有限的帽容量纯改善过程，未实现该文献调度算法。
+## Known Results
 
-普遍盒可行性还与既有两个精确 DP 相接：固定逐名关联图树宽及双侧度，或固定地点 primal 树宽及每站不同轻权种类数，均有完整位多项式因子 2 数学构造，无需旧浅层有向图条件。这一新版推论不改变旧命题的假设；一般参数下仍开放。
+| 成果包 | 精确成果和剩余限制 | 何时读取 |
+| --- | --- | --- |
+| 加权拥塞奇环 | 无限下界及正局部证书的精确包络；线性重置与同次数两种实现，内部独立审查，未外审 | 当前研究必读[整合说明](research/current/weighted_congestion/README.md) |
+| 加权拥塞工具 | 文献源族锐包络、完整对称拓扑限制、密度势、资源局部势拼接、有限非对称分离与方法障碍；逐条审查等级不同 | 按具体义务选择[文件与状态表](research/weighted_congestion_frontier/FILES.md) |
+| 双设施 | 共同目录尖锐 φ 及构造、稀疏异构尖锐 ρ、实例复杂度和四地点无 FPTAS；一般异构 2 保留候选状态 | [共同目录](research/current/shared/README.md)、[异构](research/current/heterogeneous/README.md) |
+| 任意设施数 | 一般因子 2 存在性及有限构造；一般输入位多项式算法仍开放 | [主定理及算法前沿](research/current/multi_facility/README.md) |
+| 顺序客户吸引 | 小人数和结构目录的福利上界、真实完整策略反例及安全值桥障碍；一般半覆盖仍开放 | [分支地图](research/current/customer_attraction/README.md) |
 
-本轮[审查汇总](research/EQUAL_LIGHT_FLOW_AUDIT_2026-10-07.md)区分旧结果、新增性质和实际复现范围。等权可移动轻客户现在另有[规范无约束流实现](research/current/multi_facility/equal_light_flow.md)。它允许冻结客户异权，恰有逐客户单位增广；`--method equal-light-flow` 已接完整证书。该方法的在轨阶段为位多项式，当前软件的离轨及默认阶段仍是有限纯改善。它不扩大旧 `SC-K-UNIFORM-LIGHT-FLOW-2` 的原模型输入类，也未解决一般异权总时间。
+## Refuted / Failed / Open Problems / Next Actions
 
-[盒内完成](research/current/multi_facility/polytime_frontier.md)、[自适应原池重置](research/current/multi_facility/adaptive_reset_floor.md) 和 [冻结安全超载](research/current/multi_facility/frozen_overload_completion.md) 是三类可复用接口。最后一类只给偏离者设收益帽，允许其他设施安全超载。它们不提供任意输入的成功证书生成器。特殊可算类按讲义 [工具](learning/05_tools.md) 分类阅读；必要障碍集中在 [前沿](learning/06_frontier.md)，不必逐个记住优先规则反例。
+[失败路线入口](FAILED_ROUTES.md)记录失败的具体断言、反例范围和回收工具。下一步从当前 proof obligation 出发选方法；已有路线是搜索种子，不是方法白名单。普通可完成工作与内部核验在提交者处闭合，仅把重要发现、可复用障碍、实质异议或需要合作的精确问题拿到公屏讨论。
 
-实时进展放在 [RESEARCH_STATE.md](RESEARCH_STATE.md)，准确失败量词见 [FAILED_ROUTES.md](FAILED_ROUTES.md)。[路线图](research/ROADMAP.md) 与 [问题库](research/questions) 用于选题，不替代现行证明。[2026-10-05 发表对标](research/PUBLICATION_BENCHMARK_2026-10-05.md)比较实际期刊论文、各成果包的贡献力度及投稿判断，并记录对 2025 博士论文相关章节的优先权核查；不提升数学审查状态。2026-10-01 的 [出版评估](research/PUBLICATION_REVIEW.md) 保留为历史快照。
+## File Map / 工作程序
 
-最新的 [全仓投稿层级评估](research/PUBLICATION_ASSESSMENT_2026-10-06.md) 按问题意义、可复用机制与用户期刊目录定位成果，重估两设施共同目录五地点困难性的贡献，并澄清广义 φ 猜想的目录边界；不提升数学命题或外审状态。
-
-## 仓库结构
-
-| 区域 | 用途 |
+| 完整路径 | 内容、作用与读取时机 |
 | --- | --- |
-| [learning](learning) | 人类团队的分层课程、练习、核心证明路线与两周研讨会 |
-| [research/current](research/current) | 现行模型、命题、完整数学证明与算法解释；定义与结论的权威入口 |
-| [facility_spe](facility_spe) | 双设施规范算法、局部/实例精确求解和验证器 |
-| [multi_facility_spe](multi_facility_spe) | 任意设施数的有限精确构造器；支持全局枚举与贪心盒内构造，尚无一般多项式总时间保证 |
-| [customer_attraction](customer_attraction) | 独立的顺序主题选择、单位客户均分模型；全部纯 SPE 终局及完整历史证书，服务半覆盖猜想 |
-| [tests](tests) | 回归、独立定义级比较和有限精确攻击，分别标明验证范围 |
-| [examples](examples) / [evidence](evidence) | 输入、证书、冻结实验；不以有限成功替代全称证明 |
-| [history](history) | 来源手稿与旧推导，保留追溯；不是新人入口 |
+| README.md、RESEARCH_STATE.md、CLAIMS.md、FAILED_ROUTES.md | 全仓稳定地图、当前前沿、精确命题入口、失败范围；新对话首先读取 |
+| research/GROWTH.md | 原有入库规范：证明、问题、代码、测试、输入、证据和历史材料的归属；写文件前执行 |
+| research/REPOSITORY_GUIDE.md | 全仓生产状态、读取顺序、施工与上传、分支收口及交流规则 |
+| research/weighted_congestion_frontier/README.md | 当前协作入口；连接数学、启动程序和按需读取路径 |
+| research/weighted_congestion_frontier/FILES.md | 本轮逐文件用途、状态和去处；查具体成果、证据或待审项 |
+| research/weighted_congestion_frontier/INTEGRATION.json | 各原分支 tip、文件来源/hash、当前路径与退役理由；只在来源审计与恢复时读 |
+| research/current/claims.md、research/review_status.json、research/assets.json | 全仓逐命题范围与五轴状态、资产合同；修改或引用结论时查询 |
+| research/current/ | 可连续阅读的现行数学稿；审查状态独立记录 |
+| research/questions/、research/reviews/ | 开放义务与待审候选；已发生的审查及其覆盖范围 |
+| facility_spe/、multi_facility_spe/、customer_attraction/ | 各现有模型的唯一规范程序，运行见 USAGE.md |
+| tests/、examples/、evidence/ | 回归及独立审计、输入、冻结证据；运行不得覆盖冻结记录 |
+| learning/README.md | 人类研讨学习路线与当前成稿；不替代数学权威稿 |
+| history/README.md | 仍有来源价值的原稿及 Git 恢复指针；追溯时按需读 |
 
-[ASSETS.md](ASSETS.md) 将命题连到证明、代码和证据；[数学超图](research/index.html) 的推导边列出全部共同前提。GitHub 显示 HTML 源码，下载后可交互查看。[来源对照](research/source_crosswalk.md) 和 [迁移记录](research/path_migration.json) 保留原资产的当前解释。
-
-## 怎样参与与复现
-
-新人先按课程完成模型与主定理的过关任务。研究贡献遵守 [AGENTS.md](AGENTS.md) 和 [新增研究规则](research/GROWTH.md)：候选、现行证明、实现、有限证据分开登记；改变模型、量词或适用域要明确版本；教学整理不提升数学状态。
-
-程序入口和限制见 [USAGE.md](USAGE.md)。从仓库根运行维护检查：
-
-```sh
-python3 research/build_map.py --check
-python3 research/build_crosswalk.py --check
-python3 research/check_assets.py
-```
-
-本次人类交接的范围、发现及验证见 [learning/AUDIT.md](learning/AUDIT.md)。
+日常研究共同保存到 **main**。`wcg/board` 仅承担简短异步研讨；旧工作分支在内容入库并确认原提交可达后删除。程序不再创建随机会话分支。每个对话使用独立本地 clone，一个稳定发布标识，子 agent 无需登记；人数和工作时长不由提示词设限。

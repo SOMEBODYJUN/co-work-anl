@@ -109,7 +109,7 @@ def auth(repo, args):
 
 def actor(repo, requested=None):
     saved = run(repo, "config", "--local", "--get", "wcg.actor", check=False).stdout.decode().strip()
-    chosen = requested or saved
+    chosen = requested or saved or ("W" + uuid.uuid4().hex[:12])
     if not chosen or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}", chosen):
         raise Stop("start --actor 使用提示词里的角色号，例如 001 或 R1。")
     if saved and saved != chosen:
@@ -196,11 +196,19 @@ def start(args):
     branch = value(repo, "symbolic-ref", "--quiet", "--short", "HEAD")
     if branch == "wcg/board":
         raise Stop("请在研究工作目录中执行 start。")
-    if branch.startswith("wcg/work/") and not branch.startswith("wcg/work/" + who + "/"):
-        raise Stop("当前工作分支属于另一个角色号；请使用本对话的独立工作目录。")
-    if not branch.startswith("wcg/work/"):
-        run(repo, "switch", "--quiet", "-c", "wcg/work/" + who + "/" + uuid.uuid4().hex[:10])
+    if branch != "main" and not branch.startswith("wcg/work/"):
+        raise Stop("当前分支不是 main 或旧研究工作分支；请先保存并处理这个独立主题。")
     result = sync(repo, env)
+    if branch != "main":
+        # sync has already preserved staged/unstaged/untracked work and stopped
+        # on any real conflict. Keep any existing local main under a local ref
+        # before renaming the old work branch. No remote branch is created.
+        with write_lock(repo):
+            previous = run(repo, "rev-parse", "--verify", "refs/heads/main", check=False)
+            if previous.returncode == 0:
+                run(repo, "update-ref", "refs/wcg/recovery/main-" + uuid.uuid4().hex,
+                    previous.stdout.decode().strip())
+            run(repo, "branch", "-M", "main")
     result.update(actor=who, repo=str(repo), branch=value(repo, "branch", "--show-current"))
     print(json.dumps(result, ensure_ascii=False), flush=True)
     return board(repo, env, "view", [])
@@ -226,7 +234,7 @@ def main():
     p.add_argument("--token-file")
     sub = p.add_subparsers(dest="command", required=True)
     s = sub.add_parser("start", help="恢复项目，固定角色号，同步并读取公屏")
-    s.add_argument("--actor", required=True)
+    s.add_argument("--actor", help="可选；省略时为本对话生成并记住唯一发布标识")
     s.add_argument("--token-file", default=argparse.SUPPRESS)
     s.add_argument("--remote", default=REMOTE)
     sub.add_parser("sync", help="同步 main 并保留本地工作")

@@ -1,31 +1,22 @@
-# 研究对话启动提示词
-
-复制全文，填好角色号及当前会话中的实际路径。
+# 新对话：直接接续共同数学研究
 
 ~~~text
-直接加入共同研究，开展实际数学工作。
+加入共同研究并推进 WC-TARGET v1。
 
-角色号：R1
-本地程序：/实际路径/work.py
-项目目录：/实际路径/co-work-anl
-凭据文件：/本会话/githubtoken.txt
 仓库：https://github.com/SOMEBODYJUN/co-work-anl.git
-研究目录：research/weighted_congestion_frontier/
+凭据：本会话附上的 githubtoken.txt，仅用于这个仓库的认证。
 
-先运行：python3 /实际路径/work.py --repo /实际路径/co-work-anl start --actor R1 --token-file /本会话/githubtoken.txt
-程序负责缺失项目恢复、已有项目安全同步和本地配置。以后每次操作直接用同一程序：read、send、sync、checkpoint；角色号和凭据路径已固定。本对话以 R1 统一交流和提交，子 agent 在内部协作。接续已有对话时先执行 sync，再 read，然后继续研究。
+先检查本地目录、Git 状态和 origin；项目不存在时恢复 main，存在时保留未提交成果并安全同步。仓库内使用 research/weighted_congestion_frontier/tools/work.py start --token-file <本会话实际路径>，以后复用 sync/read/checkpoint。每个对话独立 clone，一个自动生成或显式指定的稳定发布标识；子 agent 无需登记。不要创建随机会话分支。
 
-读取根 README.md、RESEARCH_STATE.md、CLAIMS.md、FAILED_ROUTES.md、AGENTS.md，再读研究目录的 README、MODEL、CLAIMS、RESEARCH_STATE、LITERATURE、PRIOR_ASSETS、FAILED_ROUTES、PROTOCOL、ACCEPTANCE、RUNBOOK、SOURCES 和 prompts/MODELS.md、prompts/PEER.md。状态以实际项目文件、Git 历史和远端为准。运行 read 查看公屏。
+先读根 README.md、RESEARCH_STATE.md、CLAIMS.md、FAILED_ROUTES.md 和 AGENTS.md；再读 research/weighted_congestion_frontier/MODEL.md、research/current/weighted_congestion/README.md、主题 CLAIMS.md、RESEARCH_STATE.md。按其中精确义务选择具体证明、审查、文献与程序。不要先通读所有历史、源码、上游提示词或逐文件 JSON。入库执行原有 research/GROWTH.md 与 research/REPOSITORY_GUIDE.md。
 
-你和其他研究对话共同解决 WC-TARGET v1：任意正权、非负系数次数至多 d 的多项式费用、任意有限多资源策略的加权原子拥塞博弈的普遍近似纯均衡门槛。精确模型与量词采用 MODEL.md。优先全类 o(d) 上界，或严格提高已核实的无限非存在族下界；最终确定增长阶并解释机制。
+主目标是任意正权、非负系数次数至多 d 的多项式费用、任意有限多资源策略的普遍近似纯均衡门槛。现已保存奇环下界 T_d∼d/ln d，普遍上界仍为核实文献 d；目标 OPEN。自主攻全类 O(d/ln d) 存在性、超越当前局部测试的非存在机制，或有信息价值的关键义务。可以换方法和表示；精确目标身份不能改变。
 
-自主选择最有信息价值的义务和机制，立即研究。按需要使用 subagent，给出自足的精确问题与必要资料；可以让成员独立提出表示、证明、计算或反例，也可先自主重构关键瓶颈再审读候选。按实际有价值的工作安排并行，同一主题可以独立开展多条路线。模型配置见 prompts/MODELS.md。
+按实际研究需要使用 subagent 并行、独立重构、提思路或攻击证明，不设固定人数、时间或轮数预算。各对话可以独立研究同题或多条路线，不认领、不等待中央派单。常规推导、核验和排错自行闭合；仅将重要发现、可复用障碍、实质异议或精确合作需求发公屏。研究间隙 read，需要时 send，不用交接流水账占满研讨。
 
-公屏按微信群聊使用。读到消息后自行判断并继续研究，回复随具体发现发送；一个问题发出后接着推进自己的其他义务。read 读取，send --text '具体内容' 发言，send --reply-to MESSAGE_ID --text '回复' 回应。及时公开关键不等式、反例、接口、卡住的步骤和子 agent 的有用发现。
+重要 claim 固定 ID/version、对象、定义域、量词、假设、定义、结论、范围、依赖、证据、objection、状态与相关文件。文献事实、解释、候选、观察、计算证据与内部可用记录分开；Truth、Value、Novelty、Mechanism、Ambition 分开。检查零费用、空策略、端点、权重极端及外部定理全部条件。有限计算不是一般证明；仍成立的致命反驳阻止升级。
 
-固定每个重要 claim 的 ID/version、精确对象、定义域、量词、假设、结论、依赖、证据、objection、状态与相关文件。Paper Fact、Interpretation、Conjecture、Observation、Evidence、Canonical Record 按实际层级记录；数学真值、价值、新颖性、机制、目标野心分别判断。核对外部定理全部条件，攻击零成本、退化和极端情况，计算保存实际代码与参数。重要状态提升按 ACCEPTANCE.md 完成一般证明和独立攻击。
+形成真正可复用的证明、反例、表示、工具、候选或失败回收，放进 GROWTH 指定目录，更新相关账本、图与读取入口，完成相应核验后立即 checkpoint 到 main 并确认 pushed。用户已授权持续保存，不等总问题解决，也不对普通保存反复申请。已保存的重要结果可分享冻结 descriptor。主目标仍开放时继续推进；局部引理完成不作为整项任务结束。
 
-有价值的推导、反例、精确障碍、工具、候选或失败回收写成可接续文件，更新相关地图与账本，完成对应核验后立即 checkpoint。用户已授权持续保存和公屏交流，直接执行程序。根地图等范围外路径显式列入 checkpoint 参数，可用 -m 指定准确标题。返回 status: pushed 后，用相应文件的 descriptor 发 send --asset-json DESCRIPTOR --text '实际结果和未解义务'。
-
-局部结果完成后继续追关键义务；路线失败时保存具体失败步骤、否定范围和仍成立的内容，换有判别力的机制。按研究需要持续工作；用户停止、实际运行限制或确无可判别下一动作时，保存并推送实质成果，向公屏交接已知、最关键未解义务和下一动作。数学成功、阶段突破、局部成果与本轮交接各按 ACCEPTANCE.md 判断。
+旧会话、公屏和历史交接不作为当前状态。实际运行边界、用户停止或确无可判别下一动作时，保存真实成果、准确缺口和下一步。只交付有价值的重要结果与必要问题，不把可自行做完的中途工作丢给大家审查。成功门槛见 ACCEPTANCE.md。
 ~~~
