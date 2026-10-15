@@ -9,6 +9,8 @@
 | 任意设施数 | [一般因子 2](research/current/multi_facility/uniform_two.md)、[改善过程](research/current/multi_facility/greedy_box_global_progress.md)、[高效构造义务](research/questions/greedy_box_polytime.md) | 存在性/有限构造已内部证明；一般位多项式构造 OPEN |
 | 顺序客户吸引 | [分支精确地图](research/current/customer_attraction/README.md)与全仓逐命题登记 | 一般半覆盖 OPEN；子类上界和辅助桥反例分别保存 |
 
+新增 `WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2`：一般同权cohort/同费副本奇环在无UF假设下均有T_d-PNE，配合既有下界，实际拓扑阈值恰T_d；[精确账本](research/weighted_congestion_frontier/CLAIMS.md)及[正文第10节](research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)给完整对象和独立审查。全类仍OPEN。
+
 Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须分开。完整证明、独立审查、软件状态、外部审查和新颖性各自记录。尚成立的致命 objection 阻止升级。
 
 跨主题的 `PK-INTERACTION-RANK-FACE-v1`、`PK-SHARP-FORBIDDEN-MASS-v1` 与 `PK-OCCUPANCY-CONE-CLOSURE-v1` 见[正占用核接口](research/current/positive_kernels/occupancy_rank_faces.md)和全仓精确账本。三项分别为表示过滤、锐单核预算与闭包定理，不是WC全类存在界。

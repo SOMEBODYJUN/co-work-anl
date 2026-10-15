@@ -553,6 +553,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1 | 任意上述费用类游戏，非空保留玩家N0和资源E0，删除玩家不潜在使用E0；非E0附属二部图为森林且每分量至多接触一个保留玩家。各根边换非负私有常数资源，保留策略单射与玩家权，存在不依α的固定lift将reduced任实α≥1 PNE提升原；非负degree≤d多项式时保同次数上限d≥0。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/incidence_forest_private_reduction.md)。单向lift；不允许同一附属分量接触多个核心玩家或以核心资源为根，不保证最优倍率或原均衡反投影。 |
 | WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1 | 明示权(1,2)二玩家四资源游戏，e=x²、f=(9/2)x、私人p=4、q=71/4，策略分别{e,p}/{f}及{e,f}/{q}。潜在使用图连通且圈秩1，四态均有strict改善，最佳纯状态因子恰72/71并由00取端点。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](weighted_congestion/incidence_forest_private_reduction.md)。固定degree2、固定二玩家的exact存在反例，不是随次数增长下界或最坏单环阈值最优性。 |
 
+## 一般群组奇环的精确实际阈值
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2 | 每个d≥2、奇m≥3、n_i≥1、正实hub权u_i与群内共同light权v_i，任意同费动作副本及群内同费side、非负系数degree≤d多项式F_i/G_i（含零）的一般cohort奇环均有T_d-PNE；不要求UF。T_d=max_(R>1)[R(1+R)^d+1]/[(1+R)^d+R^(d+1)]。结合既有每α<T_d严格反例，该拓扑的普遍存在阈值恰T_d；T_d<d/ln d，故仅本拓扑C=1,d0=2。 | complete general-cohort topology threshold proof; independently reconstructed and exactly audited; unrefereed；[正文第10节](weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)、[独立重构与攻击](../reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md)。群内同权、每light私有双人side、同费动作副本及单奇环关联承重；不是MODEL全类上界。不声称某个有限实例取得拓扑sup，不改变旧证书/下界/单成员Claim。未入规范层的v1只给max{2,T_d}，本v2单列增强。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

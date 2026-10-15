@@ -24,7 +24,7 @@
 
 ## Claim Map / Dependency Graph
 
-加权拥塞的核心链为：资源策略与真实偏离成本 → 奇环全状态证书 → 正系数闭环 → 有限有理构造 → T_d 下界。局部证书包络只限制该方法，不是全类存在上界。固定权重和动作数的[签名压缩与全状态择证对偶](research/current/weighted_congestion/template_certificates/finite_action_duality.md)另给任意资源数的精确有限表示；仍缺统一于所有模板的估计。[严格反例整数规范形与端点](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)消去逐固定实倍率反例的实参数，并证明a_*(d)端点可行；没有全类搜索规模界。[任意乘子与依游戏可分序势障碍](research/current/weighted_congestion/separable_ordinal_obstruction.md)已作完整重构及独立攻击，只否定所写全改善边证书；全局选态仍开放。 [空交反链核心](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md#7-去包含支配与必选背景的空交反链核心)进一步把反例限制为人人至少两非空、无包含、空交策略，并给所有α≥1同时有效的单向lift；允许删玩家，不给规模界。
+加权拥塞的核心链为：资源策略与真实偏离成本 → 奇环全状态证书 → 正系数闭环 → 有限有理构造 → T_d 下界。局部证书包络本身只限制该方法；新增[一般群组奇环实际阈值证明](research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)以稳定计数和双取向消去独立证明该完整拓扑阈值恰T_d，含强迫失败，但不是全类存在上界。固定权重和动作数的[签名压缩与全状态择证对偶](research/current/weighted_congestion/template_certificates/finite_action_duality.md)另给任意资源数的精确有限表示；仍缺统一于所有模板的估计。[严格反例整数规范形与端点](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)消去逐固定实倍率反例的实参数，并证明a_*(d)端点可行；没有全类搜索规模界。[任意乘子与依游戏可分序势障碍](research/current/weighted_congestion/separable_ordinal_obstruction.md)已作完整重构及独立攻击，只否定所写全改善边证书；全局选态仍开放。 [空交反链核心](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md#7-去包含支配与必选背景的空交反链核心)进一步把反例限制为人人至少两非空、无包含、空交策略，并给所有α≥1同时有效的单向lift；允许删玩家，不给规模界。
 
 其他模型的定义、引理、反例和算法关系以及加权拥塞已登记结果统一放在[数学超图](research/index.html)及[结构化图](research/graph.json)。`derives` 列全体共同前提；实验只用 `checks`，失败与限制分别登记。图是导航，真值以精确陈述及证明为准。
 

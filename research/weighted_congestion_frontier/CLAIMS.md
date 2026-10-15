@@ -1021,3 +1021,14 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Counterevidence / Objections：** 固定degree2、固定二玩家的exact存在反例，不是随次数增长下界或最坏单环阈值最优性。 范围内没有尚成立fatal；未外审、新颖性未认证。
 - **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
 - **Related Files：** research/current/weighted_congestion/incidence_forest_private_reduction.md、research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md；代码/证据从正文和assets.json接入。
+
+
+## WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2 — 一般群组奇环实际阈值与正测试包络一致
+
+- **ID/version / 中文数学名称：** WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2，一般群组奇环实际阈值与正测试包络一致。未入规范层v1草案给max{2,T_d}；v2使用统一奇数中心双标签及反向标量界收紧至T_d，旧Claim身份不变。
+- **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 每个d≥2、奇m≥3、n_i≥1、正实hub权u_i与群内共同light权v_i，任意同费动作副本及群内同费side、非负系数degree≤d多项式F_i/G_i（含零）的一般cohort奇环均有T_d-PNE；不要求UF。T_d=max_(R>1)[R(1+R)^d+1]/[(1+R)^d+R^(d+1)]。结合既有每α<T_d严格反例，该拓扑的普遍存在阈值恰T_d；T_d<d/ln d，故仅本拓扑C=1,d0=2。具体资源、两合法动作、真实成本及零成本边界完整固定在[正文第10节](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)。任意有限人数、任意实系数与权谱；端点用弱PNE不等式，非存在反设用strict。拓扑阈值指所有该类有限游戏的可行倍率交，不声称单实例达到sup。
+- **Dependencies：** MODEL、群内计数与单缺陷双取向消去、非负多项式平移、WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1及标量逐项式(S)；精确拓扑阈值等式另共同依赖WC-R3-ODD-RING-LOWER-v1。不导入新的外部定理。
+- **Evidence：** 独立审查者先仅据exact statement自行重构，再攻击v1/v2不同冻结hash；父逐式重算并核canonical差异。两套不互相导入的Fraction literal资源审计、内嵌输入/seed/版本/源码hash及冻结输出均由正文10.9连接。有限检查不替一般证明。
+- **Counterevidence / Objections：** 群内同权、每light私有双人side、同费动作副本及单奇环关联承重；不是MODEL全类上界。不声称某个有限实例取得拓扑sup，不改变旧证书/下界/单成员Claim。未入规范层的v1只给max{2,T_d}，本v2单列增强。奇数中心与singleton flexible、零形状的正分母、strict端点、mixed degree及共同费用删除已逐项攻击；所写范围无尚成立fatal。
+- **Status：** complete general-cohort topology threshold proof; independently reconstructed and exactly audited; unrefereed。Truth限该拓扑一般证明；Value闭合旧actual-cohort缺口；Mechanism为light稳定区间→单缺陷双标签→一致取向→成对light消去→正/反包络；Novelty与外审未认证；Ambition保留WC-TARGET OPEN。
+- **Related Files：** [正文](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)、[独立审查](../reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md)，规范代码/记录见正文10.9与assets.json。

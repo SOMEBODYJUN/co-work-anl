@@ -10,7 +10,7 @@ WC-TARGET v1 保持 OPEN。所有已发现远端研究分支的独有成果已�
 T_d=max_(R>1)[R(1+R)^d+1]/[(1+R)^d+R^(d+1)]∼d/ln d，因而 a_*(d)≥T_d。
 R1 的线性重置实现与 R3 的同次数实现归属于共同机制，保留原作者和各自独立审查。它们不是两项互不相关的突破。[现行数学入口](research/current/weighted_congestion/README.md)说明精确范围。
 
-全类上界仍是已核对文献 d。关键未解义务是全类 O(d/ln d) 存在性，或绕开当前全部 light-forcing 测试的更强全状态非存在机制。一般 cohort 奇环的实际均衡阈值也不能从证书失效推出。
+全类上界仍是已核对文献 d。关键未解义务是全类 O(d/ln d) 存在性，或绕开当前全部 light-forcing 测试的更强全状态非存在机制。一般cohort奇环的实际阈值现已由[单缺陷双取向证明](research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)闭合为T_d；不是从证书失效直接推得，而是重新构造真实稳定状态。后续负向须改变该拓扑的承重合同。
 
 固定权重与动作数的[全状态线性证书接口](research/current/weighted_congestion/template_certificates/finite_action_duality.md)已独立重构：关联签名消去任意资源数，逐selector给非负系数/primal与概率dual替代。[严格反例整数规范形与闭端点](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)又消去固定倍率反例的实参数：规范形仍无规模界，普遍阈值端点可行。尚无统一C,d0；[最小点选择等价](research/current/weighted_congestion/separable_ordinal_obstruction.md)也只澄清旧势障碍的量词。 [空交反链核心](research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md#7-去包含支配与必选背景的空交反链核心)进一步把反例限制为人人至少两非空、无包含、空交策略，并给所有α≥1同时有效的单向lift；允许删玩家，不给规模界。
 
