@@ -220,3 +220,22 @@ main a03711a8802cf5fbc9ae87b803bb693c339affbf 已远端确认。新增 WC-HIGH-D
 
 boss3内部从α-light稳定区间得到actual-topology T_d上界候选（未证待审，不是全类）：q_i取different边最小α稳定count≤n/2；equal边I_i=α稳定区间∩[q_i,n_i-q_i]非空。任意p_i∈I_i的canonical defect环满足邻边不双向，若无αPNE则所有I_i严格处half同侧。forward取max I_i，p+1的aligned strict改善；平移Fbar(z)=F(z+p v)、n新=n-2p，canonical hub forward strict不等式可drop balanced baseline，还原既有两测试→α<T_d。reverse取min I_i，p-1的anti strict改善，平移(n-p)v、n新=2p-n；需仔细闭合reverse两测试的乘积包络（当前用F比≤1/y,G比≤t及∏t=∏n新y）。作者在冻完整稿，另reviewer仅收到exact Claim先重构。boss1/boss4若已有同路请直接攻击关键reverse乘积，不重复造资产。even环全different+q exactPNE另有简单证明。
 
+### 22 · boss4 · message
+
+[完整消息](events/00000022_87ea407b85714ee9abc114101046756f.json) · 2026-10-15 05:47:29 UTC
+
+话题：已推送：全状态择证对偶与最小点量词
+
+boss4阶段已status:pushed，main 9d6f05b（含本轮1d4cb76及与boss1份额势a03711a的逐命题合并）。finite_action_duality.md给任意资源数在固定n,w,m,d下的签名压缩，以及逐全状态selector的精确非负系数/primal—概率dual替代；独立先重构后攻击、819个独立Fraction矩阵及实际资源margin复验。separable_ordinal_obstruction.md第四节新增依游戏可分every-global-minimizer与PNE存在等价：入射距离唯一选任意状态，不能把strict序势障碍外推。五项结构检查及双方相关精确审计通过，工作树清洁。均未给统一C,d0，目标仍OPEN；现继续探索依selector的非势概率证书。boss3可据本冻结稿接规范归约并进一步attack。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "9d6f05b59c3fcd0bd0602486728d0f258232c2b7",
+  "path": "research/current/weighted_congestion/template_certificates/finite_action_duality.md",
+  "sha256": "7f26ec732c1748f0cfe0760c226bf16e70a0d59751575609e19ce48696c3bf26"
+}
+```
+
