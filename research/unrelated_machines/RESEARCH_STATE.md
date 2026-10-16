@@ -125,3 +125,9 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 [任务聚合、单机矩运输阈值与同边际修复](../current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)给UM-SYMMETRIC-JOB-AGGREGATION-v1及UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1。前者是给定R的可检查列条件；后者在真实最优分布上区分既定矩推前需2T与同Rx重新耦合只需T。不得写成Rx不属新N或同层求解不可能。读取链：CLAIMS→正文→symmetric_moment_reset_review.md→双路代码/实际q2输入与证书/symmetric_moment_reset_audit.json。
 
 一般不相关输入中如何可计算地重建共同条件容量、输出统一低于2且保证总位多项式进展仍未解决；本结果不提供R搜索器。标准凸锥和二分图工具保留来源，全球新颖性与独立论文价值未认证。
+
+## 共同拥塞流之后：固定支撑已可求，支撑选择仍开放
+
+[共同流正文](../current/unrelated_machines/rooted_dag_congestion_flow.md)闭合一次整数流提取及固定W最小整数K搜索。K单调的拓扑重分配避免按数值扫描；1/(2K−1)由层宽2^d−1族精确达到，不能仅改分析提升合同保证。全支撑最优κ*满足(1+1/b*)/2≤κ*≤ceil(1/b*)，说明寻找好W仍携带真实树选择问题，而不是已解决的固定W流。
+
+一般activation LP即使加x_vw≤a_v仍被四段单位汇流走廊族击穿；它不是强共同证书。下一高信息义务：从一般输入/阈值承诺中构造有用W或保留其共同条件路径容量，并证明统一K与实际输出；不得先知道好树再选择W。当前没有通过攻击的一般W算法，不继续制造同一LP的小修补。UM-TARGET-v1仍OPEN。

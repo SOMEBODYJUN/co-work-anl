@@ -75,3 +75,5 @@
 尝试：从共同对称条件矩删一机器并吸收包，仅将该机的旧choices确定送到后备机器，再使用RYRᵀ。失效是命题错误：显式均匀真实最优分布在任何吸收负载<2T时都有新true列超载；旧矩来自真实最优分布，且在T≤包负载<2T的区间残余真实T调度存在。[正文§3–5](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)给精确反例。
 
 回收：§2给任务聚合的逐列保留条件；§6证明同一个Rx在T包时可由真实匹配分解重建有效矩。因此反例仅否定既定矩的特定运输，不否定同层重新求解，更不是N(P) gap或主目标困难性。重试条件是可计算的重新耦合/改其他旧choices，并证明一般残余容量和输出复杂度。
+
+需求树的[激活边际走廊失效](research/current/unrelated_machines/rooted_dag_congestion_flow.md)排除含父激活上界的LP直接给统一正常数根树比例；回收共同拥塞流的可构造接口，未知支撑选择未解。未导入调度困难性。

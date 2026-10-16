@@ -136,3 +136,7 @@ C_max≤2−b(H)≤2−b*/2。
 
 
 规范实现 `tests/audits/unrelated_machines/depth_two_quota_greedy.py` 提供 half_stars 与 depth_two_half，并调用既有实际树→调度接口。独立 `depth_two_quota_independent.py` 不导入该贪心核心，遍历最小配额中心并列及全部叶选择。两份冻结运行分别为 `evidence/runs/unrelated_machines/depth_two_quota_{audit,independent}.json`；审查见 `research/reviews/unrelated_machines/depth_two_quota_review.md`。一般证明、有限核验与新颖性各自分开。
+
+## 8. 共同拥塞流的可构造接续
+
+[共同拥塞证书正文](rooted_dag_congestion_flow.md)给任意深度下的一次整数流提取、固定W最小K搜索与精确锐比例1/(2K−1)，并明确激活边际LP的单位汇流走廊失效。与第7节浅层半比例构造输入合同不同；两者都未给一般输入上的好支撑搜索。真实树输出可直接交给本页树→调度构造，未建立一般UM输入到这些合同的逆归约。

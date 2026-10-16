@@ -5138,6 +5138,77 @@
       ],
       "candidates": [],
       "limit": "No N(P) projection gap, no impossibility of re-solving moments, no general approximation or hierarchy transfer; standard algebraic/matching ingredients, novelty unverified."
+    },
+    {
+      "id": "um_dag_congestion_flow_v1",
+      "claims": [
+        "UM-DAG-CONGESTION-FLOW-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "∀显式根简单DAG及二进制非负需求（零需求仅原终端），∀整数K≥1及含根支撑W上的正文共同K证书，可确定性总位多项式用一次整数流输出真实根树b≥1/(2K−1)。固定W,K的证书可行性与一整数流饱和等价；可行性对K单调，可位多项式求最小可行K或报告该W无证书。∀K≥2存在本合同证书族且真实b*=1/(2K−1)。全支撑最优κ*在b*>0时满足(1+1/b*)/2≤κ*≤ceil(1/b*)；给评分β>0的实际树及K≥1/β可构造其支撑证书。",
+        "D,k,r；b为选中原正需求点的截断最小出度比例。B:k≥K，L:0<k<K，Z:k=0；同一有理流f在非根I≤K、B上O≥k、非根L上O=I、低根O≥K，Z无输出。",
+        "W、K明确输入，允许不可达组件、正需求死点、任意根、极大二进制需求；K为整数。输出可用E[W]的零f边。给定W的不可行不意味着无好树。没有一般支撑搜索、统一常数K或一般调度算法。"
+      ],
+      "produces": "共同拥塞证书的根树提取与固定支撑最小拥塞",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/rooted_dag_congestion_flow.py",
+        "tests/audits/unrelated_machines/rooted_dag_congestion_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/rooted_dag_congestion_cases.json",
+        "evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/rooted_dag_congestion_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
+      ],
+      "limit": "W、K明确输入，允许不可达组件、正需求死点、任意根、极大二进制需求；K为整数。输出可用E[W]的零f边。给定W的不可行不意味着无好树。没有一般支撑搜索、统一常数K或一般调度算法。 Standard-flow application; novelty unverified. The source is model/assignment-LP context only; the stated flow theorem and explicit corridor family are proved self-contained in the current account, not imported as paper facts."
+    },
+    {
+      "id": "um_dag_activation_corridor_gap_v1",
+      "claims": [
+        "UM-DAG-ACTIVATION-CORRIDOR-GAP-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "∀整数q≥2，正文四段DAG有1+q(q+3)点、2q²+2q边，根/走廊需求1、q个分叉点需求q、末端需求0。加强激活LP a_r=1、非根a_v=Σ_u x_uv≤1、Σ_w x_vw≥k_va_v、0≤x_vw≤a_v精确有理可行，但真实根树最优b*=1/q。",
+        "r→v_i→w_ij→x_i→t_i的显式根DAG；同一i内q条需求1走廊共享x_i。",
+        "仅上述激活边际LP的统一正常数充分性反例；未满足或否定共同K强证书，未导入SA或调度困难性，未认证全球新颖性。"
+      ],
+      "produces": "父激活上界LP在单位需求汇流走廊的失效",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/rooted_dag_congestion_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/rooted_dag_congestion_cases.json",
+        "evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/rooted_dag_congestion_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
+      ],
+      "limit": "仅上述激活边际LP的统一正常数充分性反例；未满足或否定共同K强证书，未导入SA或调度困难性，未认证全球新颖性。 Standard-flow application; novelty unverified. The source is model/assignment-LP context only; the stated flow theorem and explicit corridor family are proved self-contained in the current account, not imported as paper facts."
     }
   ]
 }

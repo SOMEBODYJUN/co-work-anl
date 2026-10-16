@@ -7639,6 +7639,68 @@
         "evidence/runs/unrelated_machines/symmetric_reset_independent_formatting_rerun.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-DAG-CONGESTION-CERTIFICATE-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "支撑内的共同拥塞、分叉供给和低点守恒合同",
+      "detail": "D,k,r；b为选中原正需求点的截断最小出度比例。B:k≥K，L:0<k<K，Z:k=0；同一有理流f在非根I≤K、B上O≥k、非根L上O=I、低根O≥K，Z无输出。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "UM-DAG-ACTIVATION-SUFFICIENCY",
+      "kind": "rejected",
+      "track": "unrelated_machines",
+      "title": "激活边际LP可行即可保证统一正常数需求比例的假充分性",
+      "detail": "被四段单位汇流走廊族反驳；仅此LP合同，不是主目标。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
+      ],
+      "status": "refuted in stated scope"
+    },
+    {
+      "id": "UM-DAG-CONGESTION-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "共同拥塞流、最小整数拥塞和激活走廊的有限精确核验",
+      "detail": "原边流枚举与独立上下界环流/根树oracle，任意根、巨大需求、终端根、不可达高点、锐族、深走廊；仅实际冻结范围。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md",
+        "tests/audits/unrelated_machines/rooted_dag_congestion_flow.py",
+        "tests/audits/unrelated_machines/rooted_dag_congestion_independent.py",
+        "evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json",
+        "examples/unrelated_machines/rooted_dag_congestion_cases.json",
+        "evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-DAG-CONGESTION-FLOW-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共同拥塞证书的根树提取与固定支撑最小拥塞",
+      "detail": "∀显式根简单DAG及二进制非负需求（零需求仅原终端），∀整数K≥1及含根支撑W上的正文共同K证书，可确定性总位多项式用一次整数流输出真实根树b≥1/(2K−1)。固定W,K的证书可行性与一整数流饱和等价；可行性对K单调，可位多项式求最小可行K或报告该W无证书。∀K≥2存在本合同证书族且真实b*=1/(2K−1)。全支撑最优κ*在b*>0时满足(1+1/b*)/2≤κ*≤ceil(1/b*)；给评分β>0的实际树及K≥1/β可构造其支撑证书。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md",
+        "research/reviews/unrelated_machines/rooted_dag_congestion_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-DAG-ACTIVATION-CORRIDOR-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "父激活上界LP在单位需求汇流走廊的失效",
+      "detail": "∀整数q≥2，正文四段DAG有1+q(q+3)点、2q²+2q边，根/走廊需求1、q个分叉点需求q、末端需求0。加强激活LP a_r=1、非根a_v=Σ_u x_uv≤1、Σ_w x_vw≥k_va_v、0≤x_vw≤a_v精确有理可行，但真实根树最优b*=1/q。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md",
+        "research/reviews/unrelated_machines/rooted_dag_congestion_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -18426,6 +18488,107 @@
         "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "D-UM-DAG-CONGESTION-FLOW-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-MODEL-v1",
+        "UM-DAG-CONGESTION-CERTIFICATE-v1"
+      ],
+      "conclusion": "UM-DAG-CONGESTION-FLOW-v1",
+      "statement": "自足路径截取、拆点整数增广、比例反算、最短增广位复杂度、K单调拓扑构造、锐层宽及树到证书证明；独立先重构后冻结攻击，有限原边流/根树oracle与大整数核验。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-DAG-CONGESTION-FLOW-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-CONGESTION-AUDIT-v1"
+      ],
+      "conclusion": "UM-DAG-CONGESTION-FLOW-v1",
+      "statement": "独立精确有限实现/证书核对；一般证明另见正文。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md",
+        "evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-DAG-CONGESTION-FLOW-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-CONGESTION-FLOW-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "W、K明确输入，允许不可达组件、正需求死点、任意根、极大二进制需求；K为整数。输出可用E[W]的零f边。给定W的不可行不意味着无好树。没有一般支撑搜索、统一常数K或一般调度算法。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-DAG-ACTIVATION-CORRIDOR-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-MODEL-v1"
+      ],
+      "conclusion": "UM-DAG-ACTIVATION-CORRIDOR-GAP-v1",
+      "statement": "逐变量有理赋值、选中w须继续至同一x的入度唯一性上界、实际达到路径；独立Fraction逐约束及小根树枚举。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-DAG-ACTIVATION-CORRIDOR-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-CONGESTION-AUDIT-v1"
+      ],
+      "conclusion": "UM-DAG-ACTIVATION-CORRIDOR-GAP-v1",
+      "statement": "独立精确有限实现/证书核对；一般证明另见正文。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md",
+        "evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-DAG-ACTIVATION-CORRIDOR-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-ACTIVATION-CORRIDOR-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅上述激活边际LP的统一正常数充分性反例；未满足或否定共同K强证书，未导入SA或调度困难性，未认证全球新颖性。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "A-UM-DAG-ACTIVATION-CORRIDOR-GAP-v1",
+      "kind": "attacks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-ACTIVATION-CORRIDOR-GAP-v1"
+      ],
+      "conclusion": "UM-DAG-ACTIVATION-SUFFICIENCY",
+      "statement": "每q都有LP可行且b*=1/q，排除此LP的统一正常数充分性；不攻击共同拥塞强合同。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
+      ],
+      "status": "refuted in stated scope"
     }
   ]
 }
