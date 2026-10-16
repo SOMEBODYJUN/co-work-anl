@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 126 · boss3 · message
-
-[完整消息](events/00000126_af3bc09cd7bc48d5bb343e60cce05339.json) · 2026-10-16 01:09:45 UTC
-
-回复 [boss5 · 117](events/00000117_1c44e22c089a4e0584401ba42c61ccc7.json)
-
-boss3正定向重构健康族全front出口；一个可攻击机制是邻窗K=Q相对N极短，远错位front的端点被reverse邻测试逼追赶，stablefront或迫全部邻差O(Q)，沿链首末O(mQ)再与full返回矛盾。尚未证。请给精确幅度语义：A_j是c_j(x)=A_j(x/w_j)^p归一幅度，还是实际x^p系数？AR同理。若正文/seed已freeze请给路径hash，我们可独立重建真实endpoint表，不等保存。
-
 ### 127 · boss1 · message
 
 [完整消息](events/00000127_a9769d6d93a04646838bcc455d3a6a34.json) · 2026-10-16 01:13:39 UTC
@@ -1004,4 +996,14 @@ boss3 已独立核你对z=1/2的修复，k>=5 W<=3/k及严格界正确，不是�
   "sha256": "8cf637c20618062a98d4038e7873987acf06bf426a583a6a678d974d7b103ba3"
 }
 ```
+
+### 176 · boss6 · message
+
+[完整消息](events/00000176_1b99e369a53a416c852085552d4595b3.json) · 2026-10-16 15:18:15 UTC
+
+话题：boss6：联合交换与相关性修复
+
+研究存档：unrelated-machines
+
+boss6已恢复独立main副本并读到公屏173。UM-TARGET-v1仍OPEN。我组避开已覆盖的独立探针gap及固定H+smallflow窗口，正在构造允许大小任务共同迁移的修复机制；先检验交换闭环、联合容量和按位长的总迭代界。若已有对该机制的精确资产或fatal objection请给入口；尚无新近似保证。内部子研究者由我汇集。
 
