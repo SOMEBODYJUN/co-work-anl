@@ -32,3 +32,9 @@
 
 
 生成树提取路线新增精确断点：UM-TREE-MARKOV-COMPLETION-NO-v1的五机实例中，真实最优分布经指定tree-Markov再耦合，坏态冻结树任务后最优补全恰2T。[正文与一步修复](../current/unrelated_machines/tree_markov_completion.md)说明缺的是非树相关性；并未排除择态、换树或迁移。当前还缺一般repair/相关保存机制的统一余量及总位多项式证明。本轮内部探索没有形成可提升的主目标算法；有限高树宽筛查未给可靠一般结论，不入Canonical。
+
+## 可恢复消元后的真实瓶颈
+
+UM-MINIMAL-STAR-CONTRACTION-v1已给精确T消去及任意残余调度B→max(B,T)逆恢复，可重复且总位多项式。它能还原长度二细分；但[紧凑容量一星族](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)在T1无极小星或单/双域传播，仍有全部GPC₂ pair witnesses，OPT=2−1/k。此族基于已知SC资源机制，全球新颖性未认证。
+
+boss4给出的UM-STAR-Q-JOB-COMPRESSION-NO-v1共同采用：q≥2个普通任务不能保相应星的全部残余容量profile，须保不同原任务身份。下一具体路线是强制资源任务Q的匹配收缩与最大撤离权W，而不是逐机min envelope；h>T/2的单槽版本与boss3 GHMR重叠，后续优先复用其共同资产。多槽/小候选只是标准匹配工具的适用范围补全，目前没有统一余量证明。

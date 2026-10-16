@@ -8,6 +8,8 @@
 
 新[五机树再耦合反例](research/current/unrelated_machines/tree_markov_completion.md)表明：真实最优分布也可能在丢掉非树相关性后产生冻结任务无法低于2T补全的态；本例可一步修复，仍缺一般repair/位复杂度证明。
 
+新增[极小超载星精确消去](research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)可提升实际调度，已独立攻击；它与现有传播/pair强化仍被紧凑共享容量族限制。多任务压缩须保身份，下一路线是资源池匹配接口，尚无统一ε。
+
 ## 已完成的拥塞旧题：严格否定
 
 [线性次数的全状态无均衡族](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md)已给完整一般证明：每整数d≥2^20存在MODEL有限游戏，每个纯状态都有严格(d/10)改善。新身份`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`与`WC-MATCHING-LOG-UPPER-NEGATIVE-v1`严格否定绝对C,d0的普遍(Cd/ln d)-PNE保证。所有参数正有理、费用纯d次、每人两个非空不交动作；不限制人数、资源数或权比。

@@ -13,6 +13,7 @@
 | 你要研究什么 | 首读与主要资产 | 当前真正缺口 |
 | --- | --- | --- |
 | 一般不相关并行机的统一常数突破 | [本题地图](current/unrelated_machines/README.md) → [精确账本](unrelated_machines/CLAIMS.md) → [长链联合投影边界](current/unrelated_machines/long_path_coalition_gap.md) | UM-TARGET-v1仍OPEN；固定机器见证只共享单机边际仍gap2，完整多机交叠相容性与一般图构造复杂度是当前缺口。 |
+| 一般不相关机统一常数近似 | [本题地图](current/unrelated_machines/README.md)→[精确星消去与容量接口](current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md) | 已有可恢复消元、安全下界及准确障碍；一般统一ε与位多项式调度输出仍未证明。 |
 | 加权原子拥塞的普遍存在门槛 | [数学总述](current/weighted_congestion/README.md) → [精确模型](weighted_congestion_frontier/MODEL.md) → [线性次数全状态下界与原题否定](current/weighted_congestion/linear_degree_allstate_lower_bound.md) → 正文所链两份独立审查及代码/冻结证据 | 本次Cd/ln d判定已严格否定：每d≥2^20无(d/10)-PNE族；全类门槛增长阶Θ(d)，精确常数/有限d值、外部评审和新颖性另待核查。 |
 | 非负共享负载响应的低阶表示 | [正占用核接口](current/positive_kernels/README.md) → 交互秩面 → 锐截断 → 非闭锥补全 | 固定正质量、完整Boolean表与正混合；一般动作签名及selector桥未建立，独立传感器实例已给 |
 | 共同目录双设施的尖锐稳定性 | [黄金比成果与阅读顺序](current/shared/README.md) → 主定理、完整证明、尖锐下界、算法 → 小目录复杂度 | 已有内部成果的外部审查与优先权；实例最优倍率 EPTAS 仍是候选义务 |

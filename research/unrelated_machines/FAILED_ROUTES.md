@@ -38,3 +38,9 @@ GHMR版的失败：占位任务都新增共同z上的1/2小边，故不再属于
 ## 已实际攻击：树再耦合后冻结任务再补全
 
 尝试：从完整相容数据只保留生成树pair，再用残量LP/ST补非树任务。五机反例即使起点是真实全局T分布，tree-Markov支持也有1/4坏态使两端容量都耗尽，剩余唯一任务最优补全2T。失效属于丢失非树相关性，不是源分布不相容或ST错误。准确身份UM-TREE-MARKOV-COMPLETION-NO-v1，见[正文](../current/unrelated_machines/tree_markov_completion.md)。回收：至多四机连通树的中心覆盖保证T补全；本坏态一次迁移即可修复。重试应允许repair/聪明选态或保存非树相关性，不将此小例扩大成普遍困难性。
+
+## 已实际攻击：先消去极小超载星再耦合两机器
+
+消去是正确并可恢复调度的接口，不应随主路线失败删除。它修复长度二mid的隔离，却在中心/全局/局部三层容量一竞争中无可触发机器；全部任务≥3可用机，旧单/双域传播也无起点，GPC₂证书仍T1可行而OPT→2。失败属强度不足；回收精确min见证、逆序恢复与位多项式消元。
+
+对q≥2外溢重复min会复用同一原任务，rank envelope又可能丢正向可行性；boss4一般profile证明排除q个普通任务的完整残余接口表示。保identity的matching/matroid接口、辅助结构或近似消去未被排除。精确域、一般证明、来源与证据见[自足稿](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)。

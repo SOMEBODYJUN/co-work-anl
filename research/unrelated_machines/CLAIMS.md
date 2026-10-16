@@ -156,3 +156,41 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：本坏态只需迁移一个任务即可修复；好的择态、换树、更多相关信息和使用原D均未被排除。
 - Status：完整所述范围反例，独立内部攻击、未外审、全球新颖性未认证；UM-TARGET-v1保持OPEN。
 - Related Files：[正文](../current/unrelated_machines/tree_markov_completion.md)、[冻结审查](../reviews/unrelated_machines/tree_markov_completion_review.md)，代码和冻结输入/结果由正文链接。
+
+## 精确星消去与共享容量接口
+
+### UM-MINIMAL-STAR-CONTRACTION-v1：极小超载星的精确消去与调度提升
+
+- Exact Statement / Quantifiers：For every legal P,T>=0 after pruning p>T, if a machine full neighborhood F has S>T and S-p_va<=T for every a, its replacement by one job with outside min times preserves T-feasibility. Every reduced schedule B lifts in deterministic bit-polynomial time to max(B,T); <=m repeated contractions retain the same bound.
+- Objects / Domain / Definitions：UM-MODEL-v1；新稿第1节剪枝/极小星，第3节显式资源族，第4节GPC₂，第5节残余profile。
+- Assumptions / Scope：消元针对全邻域并保持阈值T；gap仅正最优输入与所定义pair/预处理合同；q压缩仅固定q普通任务、同外机及全部列明profile。
+- Conclusion：精确可恢复消元、特定强化上确界间隙、特定表示不可能性；均不代替UM-TARGET-v1。
+- Dependencies：UM-MODEL-v1；gap上界另用UM-ST-ROUND-v1、UM-CARDINALITY-CLOSURE-v1及极小星恢复引理。具体条件和自足证明见新稿。
+- Evidence：一般证明、独立先重构后攻击、精确有限审计；原始BLMRS2024只作为机制来源，第5节来源boss4。
+- Counterevidence / Objections：不允许部分邻域消去、不允许重复min当多任务身份、不把pair witnesses当全joint；初稿OPT>0域省略已修补。已声明范围无尚成立fatal objection。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。已知资源机制/标准工具扣除后不宣称新近似或独立论文价值。
+- Related Files：[自足正文](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结审查](../reviews/unrelated_machines/minimal_star_capacity_review.md)、`evidence/runs/unrelated_machines/minimal_star_capacity_audit.json`。
+
+### UM-CAPACITY-ONE-PAIR-GAP-v1：不可极小星消去的容量一资源族及全pair间隙2
+
+- Exact Statement / Quantifiers：Over positive-OPT UM inputs the general pair-configuration LP GPC2 has supremum gap 2, even after iterating the specified residual-cardinality filter and minimal-star contraction. Explicit two-value family has m=k²+3k-1,n=2k²+k,T=1,OPT=2-1/k, all pair witnesses, and neither preprocessing rule triggers for k>=3.
+- Objects / Domain / Definitions：UM-MODEL-v1；新稿第1节剪枝/极小星，第3节显式资源族，第4节GPC₂，第5节残余profile。
+- Assumptions / Scope：消元针对全邻域并保持阈值T；gap仅正最优输入与所定义pair/预处理合同；q压缩仅固定q普通任务、同外机及全部列明profile。
+- Conclusion：精确可恢复消元、特定强化上确界间隙、特定表示不可能性；均不代替UM-TARGET-v1。
+- Dependencies：UM-MODEL-v1；gap上界另用UM-ST-ROUND-v1、UM-CARDINALITY-CLOSURE-v1及极小星恢复引理。具体条件和自足证明见新稿。
+- Evidence：一般证明、独立先重构后攻击、精确有限审计；原始BLMRS2024只作为机制来源，第5节来源boss4。
+- Counterevidence / Objections：不允许部分邻域消去、不允许重复min当多任务身份、不把pair witnesses当全joint；初稿OPT>0域省略已修补。已声明范围无尚成立fatal objection。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。已知资源机制/标准工具扣除后不宣称新近似或独立论文价值。
+- Related Files：[自足正文](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结审查](../reviews/unrelated_machines/minimal_star_capacity_review.md)、`evidence/runs/unrelated_machines/minimal_star_capacity_audit.json`。
+
+### UM-STAR-Q-JOB-COMPRESSION-NO-v1：任意多任务星的普通任务残余接口压缩障碍
+
+- Exact Statement / Quantifiers：For every integer q>=2, there is a (q+1)-job star with T=1 for which no q ordinary replacement jobs on the same external machines, with arbitrary nonnegative/infinite times and no extra identity constraints, preserve feasibility for every specified A/B residual capacity profile.
+- Objects / Domain / Definitions：UM-MODEL-v1；新稿第1节剪枝/极小星，第3节显式资源族，第4节GPC₂，第5节残余profile。
+- Assumptions / Scope：消元针对全邻域并保持阈值T；gap仅正最优输入与所定义pair/预处理合同；q压缩仅固定q普通任务、同外机及全部列明profile。
+- Conclusion：精确可恢复消元、特定强化上确界间隙、特定表示不可能性；均不代替UM-TARGET-v1。
+- Dependencies：UM-MODEL-v1；gap上界另用UM-ST-ROUND-v1、UM-CARDINALITY-CLOSURE-v1及极小星恢复引理。具体条件和自足证明见新稿。
+- Evidence：一般证明、独立先重构后攻击、精确有限审计；原始BLMRS2024只作为机制来源，第5节来源boss4。
+- Counterevidence / Objections：不允许部分邻域消去、不允许重复min当多任务身份、不把pair witnesses当全joint；初稿OPT>0域省略已修补。已声明范围无尚成立fatal objection。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。已知资源机制/标准工具扣除后不宣称新近似或独立论文价值。
+- Related Files：[自足正文](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结审查](../reviews/unrelated_machines/minimal_star_capacity_review.md)、`evidence/runs/unrelated_machines/minimal_star_capacity_audit.json`。

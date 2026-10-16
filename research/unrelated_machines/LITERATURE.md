@@ -31,3 +31,7 @@
 已逐步重构的核心是[有序槽舍入与两树配置间隙](../current/unrelated_machines/model_and_classical_barriers.md)。可复现实验在tests/audits/unrelated_machines，证据范围逐项冻结。困难性归约、2005完整舍入和受限指派局部搜索仍待按承重需要复原。
 
 教材Vazirani第17章、Schuurman–Woeginger综述及其他附件中提到的外围论文尚未构成已审原文库；清单中没有的原始25项JSON和构建说明没有被假称找回。继续沿种子文献的参考文献/后续引用扩展、去重并记录版本。
+
+## 新路线实际承重的归约来源
+
+BLMRS2024：[Santa Claus meets Makespan and Matroids](https://ir.cwi.nl/pub/36041/36041.pdf)，arXiv:2307.08453v1，37页，原字节与hash已取得。Theorem1印页2是一般近似归约的Paper Fact；Section2.1.2印页9–11的Lemmas12–14已直接重构selector/configuration/resource及调度转换。Lemma11/AppendixB仍未完整独立内化。印页6回顾标准Santa Claus间隙；本题[容量一紧凑星](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)是机制简化的自足推导，不冒充新近似或新困难性。Corollary6的two-value改善依赖输入规模，不关闭UM-TARGET-v1。

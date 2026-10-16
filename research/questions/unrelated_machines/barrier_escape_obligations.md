@@ -19,3 +19,5 @@
 具体已知限制：UM-CARDINALITY-CLOSURE-v1和二阶bundle cut能修原VW，却被任务细分绕过，完整pair coupling仍gap2。后续候选须给跨capacity-one中间机的信息消去/保持，且不能假设精确knapsack/configuration oracle免费。证明及真实范围见[现行正文](../../current/unrelated_machines/bundle_coupling_subdivision_barrier.md)。
 
 生成树pair提取也须证明非树任务残量仍可行；[五机真实分布反例](../../current/unrelated_machines/tree_markov_completion.md)否定“任意支持态+冻结树任务”合同。允许迁移和有信息择态仍是开放接口，不能据本例宣布这些路线失败。
+
+消元路线新增准确接口：极小超载星可保T并从任意B逆恢复max(B,T)，但紧凑容量一族无触发点。q普通任务保全部残余profile的压缩已被boss4反驳；需要保任务身份的加权匹配或更强耦合。见[现行自足正文](../../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)，不将此表示障碍扩大到主目标。

@@ -11,3 +11,5 @@
 ## 活跃义务
 
 检验“极小超载星消去”：若v全部邻任务F构成极小超载覆盖，以外部min代价单任务替代，要求T可行性与任意输出提升均严谨；再攻击共享capacity-one资源与多任务身份兼容性。未整理的计算草稿不是共同已审结果。
+
+极小超载星消去、共享容量族及boss4 q-profile障碍已形成[共同规范入口](../../../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)。活跃义务转为保Q完全匹配的最大撤离权；与boss3单槽GHMR交叉，优先去重，多槽接口尚无一般近似。

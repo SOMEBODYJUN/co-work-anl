@@ -6628,6 +6628,69 @@
         "evidence/runs/unrelated_machines/independent_tree_markov_completion_audit.json"
       ],
       "status": "finite computational evidence"
+    },
+    {
+      "id": "UM-GENERAL-PAIR-DEFINITION-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "多可用机任务的两机器不交配置耦合",
+      "detail": "GPC2 keeps singleton machine distributions and every pair disjoint, with exact total job coverage; no multi-machine overlap consistency.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-MINIMAL-STAR-CONTRACTION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "极小超载星的精确消去与调度提升",
+      "detail": "For every legal P,T>=0 after pruning p>T, if a machine full neighborhood F has S>T and S-p_va<=T for every a, its replacement by one job with outside min times preserves T-feasibility. Every reduced schedule B lifts in deterministic bit-polynomial time to max(B,T); <=m repeated contractions retain the same bound.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "research/reviews/unrelated_machines/minimal_star_capacity_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-CAPACITY-ONE-PAIR-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "不可极小星消去的容量一资源族及全pair间隙2",
+      "detail": "Over positive-OPT UM inputs the general pair-configuration LP GPC2 has supremum gap 2, even after iterating the specified residual-cardinality filter and minimal-star contraction. Explicit two-value family has m=k²+3k-1,n=2k²+k,T=1,OPT=2-1/k, all pair witnesses, and neither preprocessing rule triggers for k>=3.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "research/reviews/unrelated_machines/minimal_star_capacity_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-STAR-Q-JOB-COMPRESSION-NO-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意多任务星的普通任务残余接口压缩障碍",
+      "detail": "For every integer q>=2, there is a (q+1)-job star with T=1 for which no q ordinary replacement jobs on the same external machines, with arbitrary nonnegative/infinite times and no extra identity constraints, preserve feasibility for every specified A/B residual capacity profile.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "research/reviews/unrelated_machines/minimal_star_capacity_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-STAR-CAPACITY-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "星消元、共享容量及q压缩profile有限证据",
+      "detail": "Separate single/nested lifting, independent schedule oracle, explicit/factorized pair witnesses and finite original-star capacity profiles.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "evidence/runs/unrelated_machines/minimal_star_capacity_audit.json",
+        "tests/audits/unrelated_machines/minimal_overload_star.py",
+        "tests/audits/unrelated_machines/capacity_one_star_pair.py",
+        "tests/audits/unrelated_machines/independent_minimal_star.py",
+        "tests/audits/unrelated_machines/star_profile_compression.py"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -15831,6 +15894,112 @@
       "statement": "Only arbitrary-state Markov gluing with tree jobs frozen is refuted. Repair-aware selection, changing the tree and global algorithms are not excluded.",
       "refs": [
         "research/current/unrelated_machines/tree_markov_completion.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "DERIVE-UM-MINIMAL-STAR-CONTRACTION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-MINIMAL-STAR-CONTRACTION-v1",
+      "statement": "Complete stated-scope proof in account; no generic LP oracle is assumed. The q-obstruction is credited to boss4.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-MINIMAL-STAR-CONTRACTION-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-STAR-CAPACITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-MINIMAL-STAR-CONTRACTION-v1",
+      "statement": "Finite exact checks only; arbitrary replacement matrices excluded by proof.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "evidence/runs/unrelated_machines/minimal_star_capacity_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-UM-CAPACITY-ONE-PAIR-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-GENERAL-PAIR-DEFINITION-v1",
+        "UM-MINIMAL-STAR-CONTRACTION-v1",
+        "UM-CARDINALITY-CLOSURE-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-CAPACITY-ONE-PAIR-GAP-v1",
+      "statement": "Complete stated-scope proof in account; no generic LP oracle is assumed. The q-obstruction is credited to boss4.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-CAPACITY-ONE-PAIR-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-STAR-CAPACITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-CAPACITY-ONE-PAIR-GAP-v1",
+      "statement": "Finite exact checks only; arbitrary replacement matrices excluded by proof.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "evidence/runs/unrelated_machines/minimal_star_capacity_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-UM-STAR-Q-JOB-COMPRESSION-NO-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-STAR-Q-JOB-COMPRESSION-NO-v1",
+      "statement": "Complete stated-scope proof in account; no generic LP oracle is assumed. The q-obstruction is credited to boss4.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-STAR-Q-JOB-COMPRESSION-NO-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-STAR-CAPACITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-STAR-Q-JOB-COMPRESSION-NO-v1",
+      "statement": "Finite exact checks only; arbitrary replacement matrices excluded by proof.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "evidence/runs/unrelated_machines/minimal_star_capacity_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMIT-STAR-CAPACITY-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CAPACITY-ONE-PAIR-GAP-v1",
+        "UM-STAR-Q-JOB-COMPRESSION-NO-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only the specified threshold and ordinary-job compression contracts are excluded; matching identities, stronger consistency and OPT-relative algorithms remain open.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
       ],
       "status": "method boundary"
     }

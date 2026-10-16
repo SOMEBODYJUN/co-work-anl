@@ -608,6 +608,10 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-TREE-MARKOV-COMPLETION-NO-v1 | 指定五机实例T=OPT=1，真实全局分布的生成树pair Markov再耦合有概率1/4产生冻结树任务后最优补全2的态；只否定每个支持态都可补<2T的合同。 | [正文](unrelated_machines/tree_markov_completion.md)、[独立审查](../reviews/unrelated_machines/tree_markov_completion_review.md)；一步迁移即可修复，不排聪明择态/换树；同合同至多四机连通树总可补T。 |
 
+| UM-MINIMAL-STAR-CONTRACTION-v1 | For every legal P,T>=0 after pruning p>T, if a machine full neighborhood F has S>T and S-p_va<=T for every a, its replacement by one job with outside min times preserves T-feasibility. Every reduced schedule B lifts in deterministic bit-polynomial time to max(B,T); <=m repeated contractions retain the same bound. | [自足正文](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/minimal_star_capacity_review.md)；非主目标突破。 |
+| UM-CAPACITY-ONE-PAIR-GAP-v1 | Over positive-OPT UM inputs the general pair-configuration LP GPC2 has supremum gap 2, even after iterating the specified residual-cardinality filter and minimal-star contraction. Explicit two-value family has m=k²+3k-1,n=2k²+k,T=1,OPT=2-1/k, all pair witnesses, and neither preprocessing rule triggers for k>=3. | [自足正文](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/minimal_star_capacity_review.md)；非主目标突破。 |
+| UM-STAR-Q-JOB-COMPRESSION-NO-v1 | For every integer q>=2, there is a (q+1)-job star with T=1 for which no q ordinary replacement jobs on the same external machines, with arbitrary nonnegative/infinite times and no extra identity constraints, preserve feasibility for every specified A/B residual capacity profile. | [自足正文](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/minimal_star_capacity_review.md)；非主目标突破。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
