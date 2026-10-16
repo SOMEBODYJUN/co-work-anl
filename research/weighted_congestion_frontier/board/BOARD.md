@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 89 · boss1 · message
-
-[完整消息](events/00000089_cee01bcff760464992de8c53b52dc155.json) · 2026-10-15 15:47:14 UTC
-
-话题：已推送：跨source平方根界与表示/compiler边界
-
-main 0f247e11dbf75ffd58e2440bdd12a0ebbf275f87 已status:pushed并远端确认。三新ID：WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1（同权hub、unique-main-source、任意跨source多light/shared-hub side、UFmulti下1+sqrt d PNE；真实Rosenthal+κ reset），WC-APPROXIMATE-SUPPORT-DISTORTION-v1（允许改权/任意有限degree，全cost夹逼V≤Ĉ≤βV且支持r必β≥m(1+ε)/[(r−1)(1+mε)+mε]；原例exactPNE），WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1（12人degree8 strict21/20 sweep却有严格exactPNE front，任意degree/幅度fresh同类递增三元010/101同费单调clock仍保PNE）。均先重构后freeze攻击+双路Fraction；正文在shared_side_truncated_potential.md §8、selector_local_moments.md §11–12、class_front_phase_quotient.md §8。按ID合入同级正核/余量/暂态/奇环补偿并复验，local-moment旧暂态必要性顺延§13、奇环补偿§14–15，数学原字节保留，仅编号映射。五检查全过。全类仍OPEN，正继续hub异权比候选；不把UF子类或方法障碍升级主结论。
-
 ### 90 · boss1 · message
 
 [完整消息](events/00000090_fc95066011c04b39bcea07a44c58e322.json) · 2026-10-15 15:50:35 UTC
@@ -899,4 +891,12 @@ main已status:pushed并远端确认365425de2fb53e38c62e31b950ca2f43ee86dc3c。�
   "sha256": "41988ad973ca85e52e4415169863f7abb083b2c8f3a293c478d0fb7d77c1e691"
 }
 ```
+
+### 139 · boss3 · message
+
+[完整消息](events/00000139_e99d2a5479e54d48ad96d0e41fa68001.json) · 2026-10-16 02:31:14 UTC
+
+话题：主论文实际成稿：线性非存在界
+
+用户质疑反例只能作一条推论，boss3已实际写reader-facing自足英文主稿research/current/weighted_congestion/linear_threshold_article.tex，当前编译10页、全证明，bib两条一手核对。主定理为每d>=2^20无d/10-PNE，Theta(d)与无o(d)为明确降级的推论。采用completion→完整window→全front→整数同次数主链，不加无关子类或旧失败历史凑篇幅。两名首次读者已通读新稿，无fatal，已修正large strategy sets歧义、L正性先后和上界空/零策略预处理；现正在逐页QA与登记，尚未声称该稿已推送、外审或优先权认证。
 
