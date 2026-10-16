@@ -32,3 +32,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 新增UM-OPT-HULL-ROW-DISCREPANCY-GAP-v1、UM-OPT-HULL-PAIR-NC-GAP-v1、UM-FOREST-BOUNDARY-AUGMENT-v1。前两项仅固定边际输出合同，后一项仅给定单边界森林资源增强恢复接口。[精确专题账本](research/unrelated_machines/CLAIMS.md)保全量词；UM-TARGET-v1保持OPEN。
 
 新增UM-KNAPSACK-MATROID-ENVELOPE-v1、UM-MIN-WORK-FACE-SUPPORT-GAP-v1，精确量词及两项独立冻结审查见[专题账本](research/unrelated_machines/CLAIMS.md)。仅限容量外包与最小工作量支撑合同，不改变UM-TARGET-v1。
+
+新增双边界森林相关菜单与同机槽族单目的地路径修复，精确身份分别为UM-FOREST-TWO-BOUNDARY-MENU-v1、UM-ONE-DESTINATION-SLOT-REPAIR-v1；[专题账本](research/unrelated_machines/CLAIMS.md)登记结构、同步任务身份、近似覆盖及所有未闭合义务，主目标仍OPEN。

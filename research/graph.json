@@ -7403,6 +7403,70 @@
         "evidence/runs/unrelated_machines/minimum_work_face_audit.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "UM-FOREST-TWO-BOUNDARY-GRID-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "异质容量森林DP与保零几何预算",
+      "detail": "a保真实目标；内部按T、b按几何C逐项圆整，独立C0严格禁正b端；每预算精确森林消息及回溯。",
+      "refs": [
+        "research/current/unrelated_machines/forest_boundary_contraction.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-FOREST-TWO-BOUNDARY-MENU-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "双边界森林的一端精确与另一端乘性保零菜单",
+      "detail": "∀给定双边界a≠b的森林任务gadget、二进制有理T≥0及0<η≤1，存在确定性poly(总位长,1/η)算法输出多项式大小的实际分配菜单；每项内部及b负载≤(1+η)T。∀原分配ρ，若内部≤T且L_b(ρ)≤T（a不限容），则∃同一菜单项τ使L_a(τ)≤L_a(ρ)、L_b(τ)≤(1+η)L_b(ρ)，因此严格保b=0。",
+      "refs": [
+        "research/current/unrelated_machines/forest_boundary_contraction.md",
+        "research/reviews/unrelated_machines/forest_boundary_contraction_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-FOREST-TWO-BOUNDARY-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "双边界森林的一端精确与另一端乘性保零菜单的有限精确核验",
+      "detail": "规范500例及每候选完整枚举；独立458例/1211份强域调度，411份a>T、589份b0，深树/大分母/共享边界及错误拒绝检查；仅所列有限范围。",
+      "refs": [
+        "research/current/unrelated_machines/forest_boundary_contraction.md",
+        "tests/audits/unrelated_machines/forest_two_boundary_menu.py",
+        "tests/audits/unrelated_machines/forest_two_boundary_independent.py",
+        "evidence/runs/unrelated_machines/forest_two_boundary_audit.json",
+        "evidence/runs/unrelated_machines/forest_two_boundary_independent_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-ONE-DESTINATION-SLOT-REPAIR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "同机槽族的单目的地最小迁移与逐批严格下降",
+      "detail": "∀m≥2及UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1的任一槽输出σ，若每原来源机器全部迁出原任务至多去一个外部目的地，则达到OPT1的最小Hamming为m(m−1)/2；强制big搬走时最小为m(m+1)/2。big不动的达到构造可按路径逐批执行，第t批后C_t=(2m−t)/(m+1)，每整批严格降1/(m+1)，t=1,…,m−1。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "research/reviews/unrelated_machines/optimal_convex_slot_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-ONE-DESTINATION-SLOT-REPAIR-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "同机槽族的单目的地最小迁移与逐批严格下降的有限精确核验",
+      "detail": "原任务全枚举m2/3，聚合整数流m2..5；独立身份枚举m2/3及m2..40共780个整批的完整Fraction负载。一般下界另由自足证明。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "tests/audits/unrelated_machines/one_destination_slot_repair.py",
+        "tests/audits/unrelated_machines/one_destination_slot_repair_independent.py",
+        "evidence/runs/unrelated_machines/one_destination_slot_repair_audit.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -17799,6 +17863,107 @@
       ],
       "conclusion": "UM-TARGET-v1",
       "statement": "The family is not the true-optimal-convex-hull contract and no configuration-LP face is asserted. Changing objective/support or allowing positive total-work increase is unrestricted; no fixed relative cost-relaxation obstruction or general scheduling hardness.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-FOREST-TWO-BOUNDARY-GRID-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-FOREST-SCALAR-DP-v1"
+      ],
+      "conclusion": "UM-FOREST-TWO-BOUNDARY-GRID-v1",
+      "statement": "给定森林与两边界，推广到每机独立整数权和容量，a目标保持真实有理；原模型及标量消息的单调可实现性是全部共同前提。",
+      "refs": [
+        "research/current/unrelated_machines/forest_boundary_contraction.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "D-UM-FOREST-TWO-BOUNDARY-MENU-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-FOREST-TWO-BOUNDARY-GRID-v1"
+      ],
+      "conclusion": "UM-FOREST-TWO-BOUNDARY-MENU-v1",
+      "statement": "b几何预算加独立零预算，内部和b异质逐项ceil，a保真实精确目标；每预算森林标量DP精确优化，G=O(1+位长/η)、K=O(N/η)，显式backpointer恢复。",
+      "refs": [
+        "research/current/unrelated_machines/forest_boundary_contraction.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-FOREST-TWO-BOUNDARY-MENU-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FOREST-TWO-BOUNDARY-AUDIT-v1"
+      ],
+      "conclusion": "UM-FOREST-TWO-BOUNDARY-MENU-v1",
+      "statement": "规范500例及每候选完整枚举；独立458例/1211份强域调度，411份a>T、589份b0，深树/大分母/共享边界及错误拒绝检查；仅所列有限范围。",
+      "refs": [
+        "research/current/unrelated_machines/forest_boundary_contraction.md"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-FOREST-TWO-BOUNDARY-MENU-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FOREST-TWO-BOUNDARY-MENU-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "给定结构的可恢复接口；同批任务/内部不交挂件可共享存活边界，前向乘性贡献求和不按件数累计，选好项后逆恢复max(B,(1+η)T)。不包括结构寻找、普通job替换、一般核心共同选择或免费串行嵌套。",
+      "refs": [
+        "research/current/unrelated_machines/forest_boundary_contraction.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-ONE-DESTINATION-SLOT-REPAIR-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1"
+      ],
+      "conclusion": "UM-ONE-DESTINATION-SLOT-REPAIR-v1",
+      "statement": "原任务批量路径达到；功能图首次访问前缀的唯一外向边与净供需给三角下界；big搬走时A为净需求2无外迁汇，路径强制m,…,2并加big一次。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-ONE-DESTINATION-SLOT-REPAIR-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ONE-DESTINATION-SLOT-REPAIR-AUDIT-v1"
+      ],
+      "conclusion": "UM-ONE-DESTINATION-SLOT-REPAIR-v1",
+      "statement": "原任务全枚举m2/3，聚合整数流m2..5；独立身份枚举m2/3及m2..40共780个整批的完整Fraction负载。一般下界另由自足证明。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-ONE-DESTINATION-SLOT-REPAIR-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ONE-DESTINATION-SLOT-REPAIR-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅此显式族的正面修复与精确修改数；接收机可增载。原不限制目的地的m−1最优迁移Claim不改变。没有一般配置初始化的首次进展或统一近似结论。",
       "refs": [
         "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
       ],

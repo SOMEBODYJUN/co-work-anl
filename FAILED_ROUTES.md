@@ -59,3 +59,5 @@
 [固定真实最优边际的逐行偏差与负相关方法边界](research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md)已有精确反例及尖锐值。该私有sink族直接可最优解；只排固定边际输出合同，重选点/正相关集中迁移和一般近似仍不受排除。
 
 原任务固定数量拟阵完整外包与最小总工作量面保支撑均有新的[准确失效及回收](research/unrelated_machines/FAILED_ROUTES.md)；不能升级为一般调度困难性。
+
+双端精确Pareto可能指数不排除近似相关菜单；已有同机槽反例也可用单目的地路径修复。两项范围修正与未解义务见[专题失败及回收](research/unrelated_machines/FAILED_ROUTES.md)，不升级为主目标算法。

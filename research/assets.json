@@ -4782,14 +4782,15 @@
       "id": "unrelated_optimal_convex_fixed_slots",
       "claims": [
         "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
-        "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1"
+        "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+        "UM-ONE-DESTINATION-SLOT-REPAIR-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
         "UM-MODEL-v1; explicit m>=2 identical-machine family; positive rational times",
         "Prescribed uniform marginal of m true optimal schedules; final output constrained to its standard ordered slot graph"
       ],
-      "produces": "Exact fixed-slot makespan 2m/(m+1) at true OPT=1, for every covering matching and every tie order; exact m-1-change cross-slot optimal repair",
+      "produces": "Exact fixed-slot makespan 2m/(m+1) at true OPT=1, for every covering matching and every tie order; exact m-1-change cross-slot optimal repair; 同机槽族的单目的地最小迁移与逐批严格下降",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
@@ -4797,11 +4798,14 @@
       "tests": [
         "tests/audits/unrelated_machines/optimal_convex_slot_gap.py",
         "tests/audits/unrelated_machines/optimal_convex_slot_independent.py",
-        "tests/audits/unrelated_machines/optimal_convex_slot_repair_independent.py"
+        "tests/audits/unrelated_machines/optimal_convex_slot_repair_independent.py",
+        "tests/audits/unrelated_machines/one_destination_slot_repair.py",
+        "tests/audits/unrelated_machines/one_destination_slot_repair_independent.py"
       ],
       "records": [
         "evidence/runs/unrelated_machines/optimal_convex_slot_gap_audit.json",
-        "evidence/certificates/unrelated_machines/optimal_convex_slot_witness.json"
+        "evidence/certificates/unrelated_machines/optimal_convex_slot_witness.json",
+        "evidence/runs/unrelated_machines/one_destination_slot_repair_audit.json"
       ],
       "examples": [
         "examples/unrelated_machines/optimal_convex_slot_input.json"
@@ -4812,7 +4816,7 @@
       "sources": [
         "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
       ],
-      "limit": "Output-space obstruction, not LP gap, general algorithm impossibility, new approximation, or novelty certification. Supplied convex components themselves are optimal outputs."
+      "limit": "Output-space obstruction, not LP gap, general algorithm impossibility, new approximation, or novelty certification. Supplied convex components themselves are optimal outputs. Added one-destination repair applies only to this family; receivers may increase and only complete batches strictly decrease makespan."
     },
     {
       "id": "unrelated_machines_cyclic_batch_repair",
@@ -4942,14 +4946,16 @@
     {
       "id": "unrelated_machines_forest_boundary",
       "claims": [
-        "UM-FOREST-BOUNDARY-AUGMENT-v1"
+        "UM-FOREST-BOUNDARY-AUGMENT-v1",
+        "UM-FOREST-TWO-BOUNDARY-MENU-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
         "given unique-boundary machine forest; no outside internal endpoints",
-        "arbitrary parallel jobs with <=2 available machines; T>=0, eta in (0,1]"
+        "arbitrary parallel jobs with <=2 available machines; T>=0, eta in (0,1]",
+        "Explicit two-boundary forest menu contract of §9; original comparator bounds internal machines and b, with a uncapped"
       ],
-      "produces": "Actual batch reassignment with boundary b<=b*(T) and max-composing resource-augmented recovery",
+      "produces": "Actual batch reassignment with boundary b<=b*(T) and max-composing resource-augmented recovery; 双边界森林的一端精确与另一端乘性保零菜单",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/forest_boundary_contraction.md"
@@ -4961,20 +4967,24 @@
         "tests/audits/unrelated_machines/forest_boundary_upward.py",
         "tests/audits/unrelated_machines/forest_boundary_downward.py",
         "tests/audits/unrelated_machines/forest_boundary_family_probe.py",
-        "tests/audits/unrelated_machines/forest_boundary_crosscheck.py"
+        "tests/audits/unrelated_machines/forest_boundary_crosscheck.py",
+        "tests/audits/unrelated_machines/forest_two_boundary_menu.py",
+        "tests/audits/unrelated_machines/forest_two_boundary_independent.py"
       ],
       "records": [
         "evidence/runs/unrelated_machines/forest_boundary_upward_audit.json",
         "evidence/runs/unrelated_machines/forest_boundary_downward_audit.json",
         "evidence/runs/unrelated_machines/forest_boundary_family_probe.json",
-        "evidence/runs/unrelated_machines/forest_boundary_crosscheck.json"
+        "evidence/runs/unrelated_machines/forest_boundary_crosscheck.json",
+        "evidence/runs/unrelated_machines/forest_two_boundary_audit.json",
+        "evidence/runs/unrelated_machines/forest_two_boundary_independent_audit.json"
       ],
       "examples": [],
       "reviews": [
         "research/reviews/unrelated_machines/forest_boundary_contraction_review.md"
       ],
       "candidates": [],
-      "limit": "Given forest only, no general structure-selection or cyclic/multi-boundary core algorithm. Runtime poly(L,1/eta); known DP interface, novelty unverified."
+      "limit": "Given one/two-boundary forests only. Two-boundary output is a correlated menu, not ordinary jobs; no general core selection or free nested approximation. Known DP/approximate-Pareto extension; novelty unverified."
     },
     {
       "id": "um_knapsack_matroid_envelope_v1",

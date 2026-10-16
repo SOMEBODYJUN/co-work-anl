@@ -101,3 +101,9 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 [真实最优边际的舍入断点](research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md)给固定row/count包络sup2及同sink pair负相关的尖锐期望/尾界；x本可为真实OPT调度的显式平均。[单边界森林批量恢复](research/current/unrelated_machines/forest_boundary_contraction.md)给实际根负载支配、内部(1+η)T和max恢复，无深度累计。后者是已知结构DP机制的接口化；一般多边界/有环核心与统一ε仍OPEN。
 
 [原任务拟阵容量外包](research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#7-原任务地集上多拟阵容量外包的精确损失)与[整个最小总处理量面的支撑边界](research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md#6-最小总处理量的整个最优面也可能丢掉修复边)给联合迁移接口的两个锐限制。一般构造仍须重开原零质量边、允许接收机增载并共同守容；两项均未给新近似比或新颖性认证。
+
+[双边界森林的相关菜单](research/current/unrelated_machines/forest_boundary_contraction.md)：`UM-FOREST-TWO-BOUNDARY-MENU-v1`给a精确支配、b乘性保零和实际任务见证，任务不交挂件共享边界可求和；菜单共同选择与串行嵌套仍需新机制。
+
+[同机槽族的单目的地修复](research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md)：`UM-ONE-DESTINATION-SLOT-REPAIR-v1`给最小迁移m(m−1)/2，并可整批沿路径严格下降至OPT；仅此显式族，接收机允许增载。
+
+两项均已自足证明、独立内部攻击和有限精确核验；都是限结构正面接口/修复，未认证全球新颖性，不形成一般输入的统一ε。UM-TARGET-v1保持OPEN。

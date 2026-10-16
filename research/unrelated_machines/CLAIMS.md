@@ -545,3 +545,27 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：No remaining fatal objection at the frozen version. The family is not the true-optimal-convex-hull contract and no configuration-LP face is asserted. Changing objective/support or allowing positive total-work increase is unrestricted; no fixed relative cost-relaxation obstruction or general scheduling hardness.
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified; known-tool direct extension, not a new approximation algorithm or certified independent publication result.
 - Related Files：[optimal_convex_fixed_slot_gap.md](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md), research/reviews/unrelated_machines/optimal_convex_slot_review.md, tests/audits/unrelated_machines/minimum_work_face_audit.py, tests/audits/unrelated_machines/minimum_work_face_independent.py, evidence/runs/unrelated_machines/minimum_work_face_audit.json.
+
+## UM-FOREST-TWO-BOUNDARY-MENU-v1：双边界森林的一端精确与另一端乘性保零菜单
+
+- Exact Statement / Quantifiers：∀给定双边界a≠b的森林任务gadget、二进制有理T≥0及0<η≤1，存在确定性poly(总位长,1/η)算法输出多项式大小的实际分配菜单；每项内部及b负载≤(1+η)T。∀原分配ρ，若内部≤T且L_b(ρ)≤T（a不限容），则∃同一菜单项τ使L_a(τ)≤L_a(ρ)、L_b(τ)≤(1+η)L_b(ρ)，因此严格保b=0。
+- Objects / Domain / Definitions：每任务一/两有限端、允许任意平行bundle及私人任务，合并平行边的机器图为森林；内部与外部任务隔离，两个边界可有外部任务。菜单项携原任务身份及两端真实负载。
+- Assumptions / Scope：给定结构的可恢复接口；同批任务/内部不交挂件可共享存活边界，前向乘性贡献求和不按件数累计，选好项后逆恢复max(B,(1+η)T)。不包括结构寻找、普通job替换、一般核心共同选择或免费串行嵌套。
+- Conclusion / Mechanism：b几何预算加独立零预算，内部和b异质逐项ceil，a保真实精确目标；每预算森林标量DP精确优化，G=O(1+位长/η)、K=O(N/η)，显式backpointer恢复。
+- Dependencies：UM-MODEL-v1, UM-FOREST-TWO-BOUNDARY-GRID-v1；算法对象及所有共同前提见正文。
+- Evidence：完整自足证明、先盲重构后冻结攻击；规范500例及每候选完整枚举；独立458例/1211份强域调度，411份a>T、589份b0，深树/大分母/共享边界及错误拒绝检查；仅所列有限范围。
+- Counterevidence / Objections：T=0必须允许a接正时间；已修复并独立重跑。非空菜单不判定原T可行。已有结构FPTAS与近似Pareto机制是背景；不认证新颖性。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；主目标UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/forest_boundary_contraction.md](../current/unrelated_machines/forest_boundary_contraction.md)、research/reviews/unrelated_machines/forest_boundary_contraction_review.md及正文链接的代码/冻结记录。
+
+## UM-ONE-DESTINATION-SLOT-REPAIR-v1：同机槽族的单目的地最小迁移与逐批严格下降
+
+- Exact Statement / Quantifiers：∀m≥2及UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1的任一槽输出σ，若每原来源机器全部迁出原任务至多去一个外部目的地，则达到OPT1的最小Hamming为m(m−1)/2；强制big搬走时最小为m(m+1)/2。big不动的达到构造可按路径逐批执行，第t批后C_t=(2m−t)/(m+1)，每整批严格降1/(m+1)，t=1,…,m−1。
+- Objects / Domain / Definitions：已有同机族：一个unit、m²−1条1/(m+1)的small；原σ每机m任务。Hamming比较原σ与最终分配，单目的地按原初owner计，不允许以中转偷换一次迁移。
+- Assumptions / Scope：仅此显式族的正面修复与精确修改数；接收机可增载。原不限制目的地的m−1最优迁移Claim不改变。没有一般配置初始化的首次进展或统一近似结论。
+- Conclusion / Mechanism：原任务批量路径达到；功能图首次访问前缀的唯一外向边与净供需给三角下界；big搬走时A为净需求2无外迁汇，路径强制m,…,2并加big一次。
+- Dependencies：UM-MODEL-v1, UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1；算法对象及所有共同前提见正文。
+- Evidence：完整自足证明、先盲重构后冻结攻击；原任务全枚举m2/3，聚合整数流m2..5；独立身份枚举m2/3及m2..40共780个整批的完整Fraction负载。一般下界另由自足证明。
+- Counterevidence / Objections：big不动的所有修复不必是路径或等距离：m3有支持7带尾循环，已记录并改用前缀割下界。只保证每整批严格下降，不保证逐任务严格下降；新颖性未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；主目标UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md)、research/reviews/unrelated_machines/optimal_convex_slot_review.md及正文链接的代码/冻结记录。

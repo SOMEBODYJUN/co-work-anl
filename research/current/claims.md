@@ -723,6 +723,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-KNAPSACK-MATROID-ENVELOPE-v1 | For all integers k,p>=1, on one weight-1 item and k weight-1/k items, the minimum over all p same-ground-set matroids whose common independent sets contain every weight<=1 subset of the maximum common-independent-set weight equals max(1,2-p/k), and is attained by partition matroids. A uniform bound 2-epsilon requires p>=ceil(epsilon*k) on this family. | [原任务地集上多拟阵容量外包的精确损失](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)；独立冻结审查通过；标准工具直接扩展，主目标OPEN，外审/新颖性未认证。 |
 | UM-MIN-WORK-FACE-SUPPORT-GAP-v1 | For every m>=2 the positive finite m-machine home-penalty family has OPT=m+1/m and T_LST=m. At T=OPT every minimum-total-processing-time assignment-LP point has the same support and every supported integer assignment has makespan 2m-1; the face contains an explicit vertex of the original LP. Exact nonincreasing total-work schedules have the same bad value. With integer q>=0 small off-home moves allowed, the exact optimum is max(2m-1-min(q,m-1),m+1/m). | [最小总处理量整个最优面的支撑损失](unrelated_machines/optimal_convex_fixed_slot_gap.md)；独立冻结审查通过；标准工具直接扩展，主目标OPEN，外审/新颖性未认证。 |
 
+## 不相关机：双边界相关菜单与单目的地路径修复
+
+| ID | Exact scope and result | Boundary and evidence |
+| --- | --- | --- |
+| UM-FOREST-TWO-BOUNDARY-MENU-v1 | ∀给定双边界a≠b的森林任务gadget、二进制有理T≥0及0<η≤1，存在确定性poly(总位长,1/η)算法输出多项式大小的实际分配菜单；每项内部及b负载≤(1+η)T。∀原分配ρ，若内部≤T且L_b(ρ)≤T（a不限容），则∃同一菜单项τ使L_a(τ)≤L_a(ρ)、L_b(τ)≤(1+η)L_b(ρ)，因此严格保b=0。 | 给定结构的可恢复接口；同批任务/内部不交挂件可共享存活边界，前向乘性贡献求和不按件数累计，选好项后逆恢复max(B,(1+η)T)。不包括结构寻找、普通job替换、一般核心共同选择或免费串行嵌套。 [正文](unrelated_machines/forest_boundary_contraction.md)。独立内审及有限精确核验，未外审/未认证新颖性。 |
+| UM-ONE-DESTINATION-SLOT-REPAIR-v1 | ∀m≥2及UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1的任一槽输出σ，若每原来源机器全部迁出原任务至多去一个外部目的地，则达到OPT1的最小Hamming为m(m−1)/2；强制big搬走时最小为m(m+1)/2。big不动的达到构造可按路径逐批执行，第t批后C_t=(2m−t)/(m+1)，每整批严格降1/(m+1)，t=1,…,m−1。 | 仅此显式族的正面修复与精确修改数；接收机可增载。原不限制目的地的m−1最优迁移Claim不改变。没有一般配置初始化的首次进展或统一近似结论。 [正文](unrelated_machines/optimal_convex_fixed_slot_gap.md)。独立内审及有限精确核验，未外审/未认证新颖性。 |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
