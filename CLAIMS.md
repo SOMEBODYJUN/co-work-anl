@@ -45,3 +45,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 新增UM-DAG-CONGESTION-FLOW-v1与UM-DAG-ACTIVATION-CORRIDOR-GAP-v1：[专题账本](research/unrelated_machines/CLAIMS.md)固定共同流、整数K、未知W及激活LP的不同合同；条件提取/固定支撑搜索已内部独立核对，主目标仍OPEN。
 
 新增UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1、UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1、UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1；[专题精确账本](research/unrelated_machines/CLAIMS.md)分开支撑界、给定T构造与OPT promise近似。固定K、私有分组及宏阈值不进入一般主目标。
+
+守恒扩区与非单位分叉另立UM-DAG-TRANSIT-CONGESTION-v1、UM-DAG-NONUNIT-PARAMETER-EXACT-v1：[正文](research/current/unrelated_machines/rooted_dag_congestion_flow.md)§7–10和专题账本固定新2K合同及2^h精确树复杂度；未改旧Claim，主目标仍OPEN。

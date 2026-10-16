@@ -28,3 +28,5 @@
 [CATALOG](CATALOG.md)给具体中文名和用途；[current/claims](current/claims.md)与各专题CLAIMS固定身份；[review_status](review_status.json)分列来源证明、当前重构、内审、外审、实现；[assets](assets.json)绑定文件合同；[图](index.html)区分推导、有限核验、攻击和限制；[来源解释](source_crosswalk.md)保留原件与现行重写关系。旧模型的全文、证据和历史通过这些入口保留，不作为新题必读清单。
 
 入库按[GROWTH](GROWTH.md)及[生产、读取和保存规则](REPOSITORY_GUIDE.md)。根地图保持稳定，阶段状态写专题前沿。每次相关更新运行build_catalog、build_map、build_crosswalk和check_assets；后者包含[当前课题路由检查](check_active_research.py)，防止默认入口退回旧题。
+
+[共同流正文](current/unrelated_machines/rooted_dag_congestion_flow.md)§7–10新增守恒扩区及非单位分叉参数算法：单位走廊与汇流全部交给一次共同流，只有h个非单位点的支撑选择仍付2^h。精确实际根树与主目标的一般多项式量词分开；按新ID/冻结审查读取，不改旧合同。

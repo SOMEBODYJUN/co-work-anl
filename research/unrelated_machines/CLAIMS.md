@@ -755,3 +755,27 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：本族明确可从链尾逐件预修，每步仅两机且Cmax不增；前置步lex恶化，故不否定弱Cmax单调路径。两个已给凸分量可直接返回，不构成算法困难性或一般下界；无当前范围fatal异议。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；全球新颖性、独立论文价值与外审未认证；UM-TARGET-v1仍OPEN。
 - Related Files：[research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§10；research/reviews/unrelated_machines/optimal_hull_long_chain_review.md；tests/audits/unrelated_machines/optimal_hull_long_chain_gap.py、tests/audits/unrelated_machines/optimal_hull_long_chain_independent.py；两份optimal_hull_long_chain冻结JSON及k3d1输入/证书。
+
+## UM-DAG-TRANSIT-CONGESTION-v1：扩大守恒区间的共同拥塞提取与分叉支撑搜索
+
+- Exact Statement / Quantifiers：∀上述合法D,k,r,K，新共同证书可总位多项式提取真实树b≥1/(2K−1)，每个K由单边k_r=2K−1族精确达到；固定W/K证书与一次整数流饱和等价，K可行单调且最小K位多项式可求。令h_K=#{k≥2K}，枚举这些高点子集、免费补入全L/Z，在2^{h_K}poly(总位长)判定某W证书并输出W/f/树。旧k≥K合同同W/K证书可拓扑裁流转新，反向不总成立。
+- Objects / Definitions：含根W及E[W]上共同非负有理f；整数K≥1，B:k≥2K，L:1≤k≤2K−1，Z:k=0；非根I≤K，B上O≥k，非根L上O=I，低根O≥K。输出允许使用E[W]中零f边。
+- Domain / Assumptions：显式非空有限简单DAG，原入度0的任意编号根，二进制非负整数需求，零需求只能是原终端；真实根树对全部选中原正需求点收费，包括输出叶。
+- Scope / Conclusion：新合同另立身份，不更改UM-DAG-CONGESTION-FLOW-v1。指数因子2^{h_K}仍在，未证明一般好支撑可多项式搜索，未给统一常数K或一般UM算法。
+- Dependencies：UM-DAG-DEGREE-MODEL-v1, UM-DAG-TRANSIT-CERTIFICATE-v1；标准整数流自足重构，不依赖未取得的外部定理。
+- Evidence：路径分解删过量、拆点整数流、逐点同时比例、拓扑K单调/旧到新裁流、单边sharp及L/Z零流扩支撑的自足证明；先盲重构后冻结攻击，双路全树/原边流精确有限核验。
+- Counterevidence / Objections：本范围内未发现仍成立fatal；一般高点共同选择及UM结构提取未解；全球新颖性未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；外审未记录，UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/rooted_dag_congestion_flow.md](../current/unrelated_machines/rooted_dag_congestion_flow.md)§7–10；research/reviews/unrelated_machines/rooted_dag_congestion_review.md；tests/audits/unrelated_machines/rooted_dag_transit_branch_search.py、tests/audits/unrelated_machines/rooted_dag_transit_independent.py；evidence/runs/unrelated_machines/rooted_dag_transit_branch_audit.json。
+
+## UM-DAG-NONUNIT-PARAMETER-EXACT-v1：非单位分叉点个数参数的精确需求根树算法
+
+- Exact Statement / Quantifiers：∀上述合法D,k,r，令h=#{v:k_v≥2}和总二进制位长B_in；有确定性2^h poly(B_in)算法输出实际根树H，精确达到b(H)=b*。含b*=0、根终端、巨大二进制需求；不按k数值枚举。
+- Objects / Definitions：b=min({1}∪{所选正需求点实际出度/k})；Γ={1}∪{a/k_v:1≤a≤min(k_v,deg_D⁺v)}，|Γ|≤|E|+1。τ阈值用k′=ceil(τk)及新K=1合同，非单位点数不增加。
+- Domain / Assumptions：显式非空有限简单DAG，原入度0的任意编号根，二进制非负整数需求，零需求只能是原终端；真实根树对全部选中原正需求点收费，包括输出叶。
+- Scope / Conclusion：h是输入参数，任意h时2^h不是多项式。此为根树对象的精确FPT算法，不承诺一般调度近似，不免费从任意处理时间矩阵取得需求树结构。
+- Dependencies：UM-DAG-DEGREE-MODEL-v1, UM-DAG-TRANSIT-CONGESTION-v1, UM-DAG-NONUNIT-PARAMETER-v1；标准整数流自足重构，不依赖未取得的外部定理。
+- Evidence：K=1证书⇔满比例真实树的双向构造、全部有效阈值集合、整数向上缩放与总位复杂度证明；两份独立9496对象全树核验，另500随机/根重标、深单位走廊及大整数fixture。
+- Counterevidence / Objections：本范围内未发现仍成立fatal；一般高点共同选择及UM结构提取未解；全球新颖性未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；外审未记录，UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/rooted_dag_congestion_flow.md](../current/unrelated_machines/rooted_dag_congestion_flow.md)§7–10；research/reviews/unrelated_machines/rooted_dag_congestion_review.md；tests/audits/unrelated_machines/rooted_dag_transit_branch_search.py、tests/audits/unrelated_machines/rooted_dag_transit_independent.py；evidence/runs/unrelated_machines/rooted_dag_transit_branch_audit.json。

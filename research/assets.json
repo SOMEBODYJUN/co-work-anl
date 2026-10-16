@@ -5334,6 +5334,74 @@
       ],
       "candidates": [],
       "limit": "Fixed K only for scheduling; supplied private groups and macro/OPT promise distinct. No general LP/heavy-enumeration implementation; finite audit is not a polynomial scheduler or novelty certification."
+    },
+    {
+      "id": "um_dag_transit_congestion_v1",
+      "claims": [
+        "UM-DAG-TRANSIT-CONGESTION-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "显式非空有限简单DAG，原入度0的任意编号根，二进制非负整数需求，零需求只能是原终端；真实根树对全部选中原正需求点收费，包括输出叶。",
+        "含根W及E[W]上共同非负有理f；整数K≥1，B:k≥2K，L:1≤k≤2K−1，Z:k=0；非根I≤K，B上O≥k，非根L上O=I，低根O≥K。输出允许使用E[W]中零f边。",
+        "∀上述合法D,k,r,K，新共同证书可总位多项式提取真实树b≥1/(2K−1)，每个K由单边k_r=2K−1族精确达到；固定W/K证书与一次整数流饱和等价，K可行单调且最小K位多项式可求。令h_K=#{k≥2K}，枚举这些高点子集、免费补入全L/Z，在2^{h_K}poly(总位长)判定某W证书并输出W/f/树。旧k≥K合同同W/K证书可拓扑裁流转新，反向不总成立。",
+        "新合同另立身份，不更改UM-DAG-CONGESTION-FLOW-v1。指数因子2^{h_K}仍在，未证明一般好支撑可多项式搜索，未给统一常数K或一般UM算法。"
+      ],
+      "produces": "扩大守恒区间的共同拥塞提取与分叉支撑搜索",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/rooted_dag_transit_branch_search.py",
+        "tests/audits/unrelated_machines/rooted_dag_transit_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/rooted_dag_transit_branch_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/rooted_dag_congestion_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
+      ],
+      "limit": "新合同另立身份，不更改UM-DAG-CONGESTION-FLOW-v1。指数因子2^{h_K}仍在，未证明一般好支撑可多项式搜索，未给统一常数K或一般UM算法。 The archived source supplies demand-DAG/assignment-LP context only, not the new stated claims; proofs are self-contained standard-flow applications and novelty is unverified."
+    },
+    {
+      "id": "um_dag_nonunit_parameter_exact_v1",
+      "claims": [
+        "UM-DAG-NONUNIT-PARAMETER-EXACT-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "显式非空有限简单DAG，原入度0的任意编号根，二进制非负整数需求，零需求只能是原终端；真实根树对全部选中原正需求点收费，包括输出叶。",
+        "b=min({1}∪{所选正需求点实际出度/k})；Γ={1}∪{a/k_v:1≤a≤min(k_v,deg_D⁺v)}，|Γ|≤|E|+1。τ阈值用k′=ceil(τk)及新K=1合同，非单位点数不增加。",
+        "∀上述合法D,k,r，令h=#{v:k_v≥2}和总二进制位长B_in；有确定性2^h poly(B_in)算法输出实际根树H，精确达到b(H)=b*。含b*=0、根终端、巨大二进制需求；不按k数值枚举。",
+        "h是输入参数，任意h时2^h不是多项式。此为根树对象的精确FPT算法，不承诺一般调度近似，不免费从任意处理时间矩阵取得需求树结构。"
+      ],
+      "produces": "非单位分叉点个数参数的精确需求根树算法",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/rooted_dag_transit_branch_search.py",
+        "tests/audits/unrelated_machines/rooted_dag_transit_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/rooted_dag_transit_branch_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/rooted_dag_congestion_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
+      ],
+      "limit": "h是输入参数，任意h时2^h不是多项式。此为根树对象的精确FPT算法，不承诺一般调度近似，不免费从任意处理时间矩阵取得需求树结构。 The archived source supplies demand-DAG/assignment-LP context only, not the new stated claims; proofs are self-contained standard-flow applications and novelty is unverified."
     }
   ]
 }

@@ -789,6 +789,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1 | ∀k≥3,d≥1，两个真实OPT1调度平均点的全部mincost ST输出σ都有Cmax=2−1/k；严格lex改善的最小任务支持d+1、最小新旧端点参与机数d+2同时达到，每源仅迁一件。 | [循环正文§10](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)、[冻结审查](../reviews/unrelated_machines/optimal_hull_long_chain_review.md)。中性Cmax链尾预修明确可行，未排一般算法，未外审/未核新颖性。 |
 
+## 守恒扩区与非单位分叉参数的独立身份
+
+| ID | Exact Statement | 范围与证据 |
+| --- | --- | --- |
+| UM-DAG-TRANSIT-CONGESTION-v1 | ∀上述合法D,k,r,K，新共同证书可总位多项式提取真实树b≥1/(2K−1)，每个K由单边k_r=2K−1族精确达到；固定W/K证书与一次整数流饱和等价，K可行单调且最小K位多项式可求。令h_K=#{k≥2K}，枚举这些高点子集、免费补入全L/Z，在2^{h_K}poly(总位长)判定某W证书并输出W/f/树。旧k≥K合同同W/K证书可拓扑裁流转新，反向不总成立。 | 新合同另立身份，不更改UM-DAG-CONGESTION-FLOW-v1。指数因子2^{h_K}仍在，未证明一般好支撑可多项式搜索，未给统一常数K或一般UM算法。 [正文](unrelated_machines/rooted_dag_congestion_flow.md)§7–10、[冻结审查](../reviews/unrelated_machines/rooted_dag_congestion_review.md)。内部独立核对，未外审/未认证新颖性。 |
+| UM-DAG-NONUNIT-PARAMETER-EXACT-v1 | ∀上述合法D,k,r，令h=#{v:k_v≥2}和总二进制位长B_in；有确定性2^h poly(B_in)算法输出实际根树H，精确达到b(H)=b*。含b*=0、根终端、巨大二进制需求；不按k数值枚举。 | h是输入参数，任意h时2^h不是多项式。此为根树对象的精确FPT算法，不承诺一般调度近似，不免费从任意处理时间矩阵取得需求树结构。 [正文](unrelated_machines/rooted_dag_congestion_flow.md)§7–10、[冻结审查](../reviews/unrelated_machines/rooted_dag_congestion_review.md)。内部独立核对，未外审/未认证新颖性。 |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
