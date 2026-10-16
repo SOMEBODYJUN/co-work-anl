@@ -662,6 +662,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-ROW-SPREAD-TWO-ROUND-v1 | ∀合法非负有理UM输入，删除有零端任务后，若每个非空机器行的有限正时间均在某[γ_i,2γ_i]内（各γ_i>0可不同），则存在确定性位多项式算法输出全部原任务合法调度，C_max≤3OPT/2；含空任务/OPT0。 | [完整构造](unrelated_machines/joint_slot_prefix_rounding.md)、[独立审查](../reviews/unrelated_machines/joint_slot_prefix_review.md)；已知机制直接推论，非一般目标突破，新颖性未认证。 |
 
+## 稀疏深树的独立条件配置边界
+
+| ID | Exact Statement及范围 | 正文与审查 |
+| --- | --- | --- |
+| UM-SPARSE-CONDITIONED-CONFIG-GAP-v1 | 每k≥3的显式三选族OPT=2−1/k，T=1+1/k下每条有限边各有强制为1的完整配置点；独立单边配置删边/基数LST均零删除，sup相对证书阈值间隙2。不同查询不需共同基点或交叠一致性，不含星消元预处理。 | [自足稿](unrelated_machines/sparse_conditioned_configuration_gap.md)、[独立审查](../reviews/unrelated_machines/sparse_conditioned_configuration_review.md)；不排主目标。 |
+
+
 
 ## 逻辑使用规则
 

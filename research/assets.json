@@ -4702,6 +4702,40 @@
         "research/questions/unrelated_machines/barrier_escape_obligations.md"
       ],
       "limit": "Known-tool direct corollary; extra row-spread assumption does not solve UM-TARGET. No generic LP solver implemented by audit scripts; finite row checks and one explicit actual parity instance only."
+    },
+    {
+      "id": "unrelated_sparse_conditioned_configuration_gap",
+      "claims": [
+        "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified",
+      "applies_when": [
+        "UM-MODEL-v1; explicit k>=3 sparse deep-tree family; each job at most three eligible machines",
+        "Independent edge-forced configuration points at T=1+1/k; no common base-point recovery or separator consistency"
+      ],
+      "produces": "Exact OPT=2-1/k and all-edge conditioned CONFIG certificates with shared-sink capacity paid simultaneously per query",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/sparse_conditioned_configuration.py",
+        "tests/audits/unrelated_machines/sparse_conditioned_configuration_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "evidence/certificates/unrelated_machines/sparse_conditioned_configuration_witness.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/sparse_conditioned_configuration_input.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/sparse_conditioned_configuration_review.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
+      ],
+      "limit": "Not a complexity lower bound or full consistency-hierarchy gap. Minimal-star contractions trigger on endpoint terminals; no claim for preprocessing plus probing. Known mechanism synthesized with peer event168; novelty unverified. The archived VW source is the original two-tree mechanism; the new sparse conditioned certificates and whole-block repair are derived self-contained in the current proof."
     }
   ]
 }

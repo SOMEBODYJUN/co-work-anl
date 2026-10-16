@@ -75,3 +75,5 @@
 [全局单行基数匹配与紧凑共享逃逸](current/unrelated_machines/row_count_escape_gap.md)把资源池路线推进到准确边界：一次全局任务权匹配涵盖同一下界的全部子池，但每机/每配置独立守计数仍不等于共同真实负载。新族为多项式规模，GPC₂与所有单行见证仍gap2；现有条件块切面可修复，主目标OPEN。
 
 [直接联合槽的正面衔接](current/unrelated_machines/joint_slot_prefix_rounding.md)给UM-ROW-SPREAD-TWO-ROUND-v1：删去零任务后每行正时间跨度≤2（逐机尺度不同）时，显式前缀计数LP加一次全任务槽匹配给3/2位多项式构造。它是VW/ST已知机制的直接推论，绕过过强(Aδ)见证；未消除一般行内跨尺度混合，主目标仍OPEN。
+
+[三选稀疏深树的独立条件配置边界](current/unrelated_machines/sparse_conditioned_configuration_gap.md)区分“每条边都可单独强制”和“这些条件点有共同多机相关性”。前者仍gap2，完整四机器bag交集联合一致性在本族精确；沿正文进入独立审查、双路代码和实际输入/证书。

@@ -35,3 +35,5 @@
 新增联合攻击基准UM-DILUTED-ESCAPE-PROBE-GAP-v1：配置＋现行GHMR＋全部普通LST边探针仍gap2。不能仅把这些独立测试叠加后宣称统一余量；须在每次条件内保留共同槽/小端容量。
 
 [逐机两倍跨度联合舍入](../../current/unrelated_machines/joint_slot_prefix_rounding.md)已经给受限类3/2算法，显示半单位见证障碍可以绕过。剩余具体义务是：对任意行内尺度混合，保留tiny任务的覆盖及真实剩余容量，同时取得统一排序槽损失或可修复的联合状态。当前没有这样的归约或舍入证明，不能把额外行跨度假设当免费预处理。
+
+独立条件配置的新边界为[UM-SPARSE-CONDITIONED-CONFIG-GAP-v1](../../current/unrelated_machines/sparse_conditioned_configuration_gap.md)：单边查询内已保持全部单机配置，仍不足以跨不同查询保留共同容量。下一步须明确多机交叠相关性、消元后保持或大小任务联合迁移的新机制；不能继续以更多彼此独立的单机证书充当统一舍入义务。完整四机器bag一致性在该族精确，但一般状态规模和构造复杂度未解决。
