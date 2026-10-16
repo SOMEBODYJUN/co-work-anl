@@ -136,3 +136,5 @@ GHMR版的失败：占位任务都新增共同z上的1/2小边，故不再属于
 ## 跨路线拼接时新增的审查界面
 
 局部菜单可以高效求出，仍不能免费在任意核心共同选择：单任务双边界菜单保留原双端分配问题。真实低秩矩可恢复仿射候选，但通用低秩真矩提取在全big半单位族中会恢复精确调度；不能以存在Dirac矩替代提取。阈值内修复也不自动是真实负载下降。准确推导、范围、可回收标准流标尺及未升级候选见[共同容量整合审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)。没有排除一般主目标或其他矩/菜单机制。
+
+多个sink并非一概阻断共同选择：[占位基与大贡献分支](../current/unrelated_machines/fixed_sink_occupation_rounding.md)在每固定K下可输出≤3T/2；不能把macro身份相关的完整匹配边菜单套用2K支撑引理，也不能取扩展空间basic点代替投影顶点。回收占位基交换与精确home DP；真正未解仍是K不受限、多home任务及一般统一ε。

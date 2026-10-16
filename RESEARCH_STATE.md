@@ -82,3 +82,5 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 ## 不相关机路线的整合判断
 
 [共同容量路线整合审查](research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)已核双边界菜单、浅层半比例和macro迁移前沿的实际范围。一般共同选择与总进展仍未闭合；单汇点共同macro接口已入库并补读，但不把多汇点整数化或低秩真矩提取当免费步骤。未改变UM-TARGET-v1的OPEN状态。
+
+[固定数量共享汇点的占位基交换与三半调度](research/current/unrelated_machines/fixed_sink_occupation_rounding.md)给三个分离身份：UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1允许任意K但仅界定2K个分数组；UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1在固定K的给定阈值下输出实际≤3T/2；UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1用含OPT的大宏promise及非单调one-sided整数二分给真正≤3OPT/2。唯一home/给定分组和固定K仍承重，通用LP软件未实现，新颖性未认证。一般主目标下一缺口是不受限的接收容量与跨home/跨尺寸任务身份，UM-TARGET-v1仍OPEN。

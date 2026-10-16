@@ -109,3 +109,5 @@
 [共同拥塞需求树的正面流接口](current/unrelated_machines/rooted_dag_congestion_flow.md)允许任意深度的低需求走廊与汇流；给证书提取、固定W最小K均位多项式，保证1/(2K−1)精确尖锐。下一缺口是未知W的共同选择，不能用已被反驳的激活边际LP替代。
 
 [共同容量路线整合审查](reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)连接菜单、条件矩、需求树与宏任务修复：核准局部范围、一般核心残留及新候选的精确提取/进展义务；不是另一个模型或新统一算法。
+
+[固定数量共享汇点的占位基交换与三半调度](current/unrelated_machines/fixed_sink_occupation_rounding.md)给三个分离身份：UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1允许任意K但仅界定2K个分数组；UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1在固定K的给定阈值下输出实际≤3T/2；UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1用含OPT的大宏promise及非单调one-sided整数二分给真正≤3OPT/2。唯一home/给定分组和固定K仍承重，通用LP软件未实现，新颖性未认证。一般主目标下一缺口是不受限的接收容量与跨home/跨尺寸任务身份，UM-TARGET-v1仍OPEN。

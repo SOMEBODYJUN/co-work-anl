@@ -769,6 +769,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 跨路线[补充审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)仅核所列UM接口和拼接义务，未更改上述Claim量词、状态或新增主目标算法。
 
+## 固定数量共享汇点的共同占位与实际调度
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1 | ∀有宏全覆盖匹配的有限宏/home二分图、每home有限非空带0/1占位标签的模式库、整数K≥0，P={每home模式和1、占位边际属于宏可匹配home基凸包}加任意K个线性侧不等式后，每个模式投影顶点至多2K个home有多于一个正模式。正支持内可用整数下界匹配和实际模式恢复，仅改变这些home；不承诺侧预算保持。 | K可随输入增长；一般结论只给2K支撑界。模式只依占位bit，不能依具体macro身份/残余容量；所有额外耦合约束须计入侧约束rank。 [正文](unrelated_machines/fixed_sink_occupation_rounding.md)、[冻结审查](../reviews/unrelated_machines/fixed_sink_occupation_review.md)。限域完整证明，未外审/未认证新颖性。 |
+| UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1 | ∀固定整数K≥1，∃确定性A_K，∀给定H∪Z(|Z|=K)、仅H可用且每有限边>T/2的宏任务B、不交私有组J_h（每件仅{h}∪Z的非空子集可用）、二进制有理T≥0，A_K按输入总位长多项式返回可靠FAIL或实际调度Cmax≤3T/2；OPT≤T必成功。私有尺寸任意，有限p>T先剪枝。多项式次数依K。 | 给定T的one-sided资源增广；成功不判定T精确可行。固定K与唯一home分组承重，不提供一般实例分区/分组提取，不含K增长的统一多项式保证。 [正文](unrelated_machines/fixed_sink_occupation_rounding.md)、[冻结审查](../reviews/unrelated_machines/fixed_sink_occupation_review.md)。限域完整证明，未外审/未认证新颖性。 |
+| UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1 | ∀固定整数K≥1，∃确定性位多项式算法，∀同给定H/Z/B/私有组但无T的合法实例，若每条有限宏任务时间严格>OPT(P)/2（B可空），则输出实际调度Cmax≤3OPT(P)/2。零最优值精确零输出；算法不验证含OPT的promise，不要求给OPT或好调度。次数依K。 | 含OPT的大宏任务promise与结构分区为额外假设；不是一般UM-TARGET-v1。通过共同分母整数网格及可靠FAIL/任意成功负载界二分，不假定接受集合单调。 [正文](unrelated_machines/fixed_sink_occupation_rounding.md)、[冻结审查](../reviews/unrelated_machines/fixed_sink_occupation_review.md)。限域完整证明，未外审/未认证新颖性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
