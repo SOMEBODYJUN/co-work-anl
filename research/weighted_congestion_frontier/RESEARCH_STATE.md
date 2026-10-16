@@ -4,7 +4,7 @@
 
 [线性次数的全状态无均衡族](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)已给完整一般证明：每整数d≥2^20存在MODEL有限游戏，每个纯状态都有严格(d/10)改善。新身份`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`与`WC-MATCHING-LOG-UPPER-NEGATIVE-v1`严格否定绝对C,d0的普遍(Cd/ln d)-PNE保证。所有参数正有理、费用纯d次、每人两个非空不交动作；不限制人数、资源数或权比。
 
-承重链为健康窗口成本预算→全部product-front端点覆盖→同类最早异位单人修复→实际clock degree=d→∀C∀d0否定量词。两份独立先重构后冻结攻击覆盖这条链；五路整数/Fraction审计只支持所列实际有限输入。W漏定义和B_actual未定义已修复并按最终hash复核；没有尚成立的fatal objection。外部同行评审、新颖性与最优常数未认证。
+承重链为健康窗口成本预算→全部product-front端点覆盖→同类最早异位单人修复→实际clock degree=d→∀C∀d0否定量词。独立先重构后冻结攻击覆盖这条链；整数/Fraction审计只支持所列实际有限输入。追加审查另给不经对数或微分的整数分层次数证明，完整多类拼装核验明确区分基体扭转与固定锚点时钟的非对称性；原冻结正文及Claim范围不变。W漏定义和B_actual未定义已修复并按最终hash复核；没有尚成立的fatal objection。外部同行评审、新颖性与最优常数未认证。
 
 ## 长期目标与剩余义务
 

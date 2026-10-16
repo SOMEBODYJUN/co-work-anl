@@ -1058,7 +1058,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Objects / Domain / Quantifiers / Assumptions / Definitions：MODEL的真实资源费用成本与单人偏离；全部参数、资源关联及两个动作由[正文](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)第1—2节完整定义。一般α-margin指当前成本减α乘真实偏离成本。
 - Scope：仅基体的环和全状态成本上界；本条不声称无均衡。
 - Dependencies：WC-MODEL, WC-LINEAR-DEGREE-CONSTRUCTION；正文自足重建，不依赖外部存在定理。
-- Evidence：完整一般分析；两次独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节。
+- Evidence：完整一般分析；独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节；[审查补节](../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给免对数的次数证明、完整多类拼装及基体/时钟对称边界。
 - Counterevidence / Objections：W漏定义和B_actual未定义已字面修复并经最终hash核对；backward r+1、返回缺陷、原次数预算、非法状态单人修复均被直接攻击，未发现尚成立的fatal objection。
 - Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
 - Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。
@@ -1070,7 +1070,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Objects / Domain / Quantifiers / Assumptions / Definitions：MODEL的真实资源费用成本与单人偏离；全部参数、资源关联及两个动作由[正文](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)第1—2节完整定义。一般α-margin指当前成本减α乘真实偏离成本。
 - Scope：η0是统一下界，非真实min-max精确值；仅本显式族，不把任意strict sweep当全前沿覆盖。
 - Dependencies：WC-HEALTHY-LINEAR-SWEEP-v1；正文自足重建，不依赖外部存在定理。
-- Evidence：完整一般分析；两次独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节。
+- Evidence：完整一般分析；独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节；[审查补节](../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给免对数的次数证明、完整多类拼装及基体/时钟对称边界。
 - Counterevidence / Objections：W漏定义和B_actual未定义已字面修复并经最终hash核对；backward r+1、返回缺陷、原次数预算、非法状态单人修复均被直接攻击，未发现尚成立的fatal objection。
 - Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
 - Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。
@@ -1082,7 +1082,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Objects / Domain / Quantifiers / Assumptions / Definitions：MODEL的真实资源费用成本与单人偏离；全部参数、资源关联及两个动作由[正文](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)第1—2节完整定义。一般α-margin指当前成本减α乘真实偏离成本。
 - Scope：全状态非存在证明；允许巨大人数、资源数、权比和系数，不作输入规模/复杂度或最优常数承诺。
 - Dependencies：WC-MODEL, WC-HEALTHY-LINEAR-SWEEP-v1, WC-HEALTHY-FRONT-COVERAGE-v1, WC-CLASS-FRONT-ALLSTATE-COMPILER-v1；正文自足重建，不依赖外部存在定理。
-- Evidence：完整一般分析；两次独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节。
+- Evidence：完整一般分析；独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节；[审查补节](../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给免对数的次数证明、完整多类拼装及基体/时钟对称边界。
 - Counterevidence / Objections：W漏定义和B_actual未定义已字面修复并经最终hash核对；backward r+1、返回缺陷、原次数预算、非法状态单人修复均被直接攻击，未发现尚成立的fatal objection。
 - Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
 - Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。
@@ -1094,7 +1094,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Objects / Domain / Quantifiers / Assumptions / Definitions：MODEL的真实资源费用成本与单人偏离；全部参数、资源关联及两个动作由[正文](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)第1—2节完整定义。一般α-margin指当前成本减α乘真实偏离成本。
 - Scope：严格否定本题全类存在命题；不改变WC-TARGET v1原长期目标身份，不声称精确a*(d)。
 - Dependencies：WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1；正文自足重建，不依赖外部存在定理。
-- Evidence：完整一般分析；两次独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节。
+- Evidence：完整一般分析；独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节；[审查补节](../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给免对数的次数证明、完整多类拼装及基体/时钟对称边界。
 - Counterevidence / Objections：W漏定义和B_actual未定义已字面修复并经最终hash核对；backward r+1、返回缺陷、原次数预算、非法状态单人修复均被直接攻击，未发现尚成立的fatal objection。
 - Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
 - Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。

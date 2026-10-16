@@ -27,7 +27,7 @@
 
 健康循环窗口参数→全部类前沿真实端点出口→同类010/101时钟修复非法态→原次数预算→唯一题目严格否定。新下界与单列文献d上界合用给a_*(d)=Θ(d)，不称精确常数。旧奇环T_d及一般cohort实际阈值、结构存在工具、完整selector接口和方法障碍各自保留，具体合同见[数学地图](../current/weighted_congestion/README.md)。
 
-正文第10节接两次独立重构/攻击、五份审计、实际输入、版本hash和冻结结果；有限精确计算不是一般证明。候选继续在questions，审查在reviews，数学状态分别登记在review_status/assets/graph；[FILES](FILES.md)和[CATALOG](../CATALOG.md)用于导航。[INTEGRATION](INTEGRATION.json)只用于原件追溯；原始来源不为新证明改写。
+正文第10节接独立重构/攻击、实际输入、版本hash和冻结结果；[既有审查的补充复核](../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另接免对数的次数证明与完整多类拼装审计。有限精确计算不是一般证明。候选继续在questions，审查在reviews，数学状态分别登记在review_status/assets/graph；[FILES](FILES.md)和[CATALOG](../CATALOG.md)用于导航。[INTEGRATION](INTEGRATION.json)只用于原件追溯；原始来源不为新证明改写。
 
 ## 共同工作
 

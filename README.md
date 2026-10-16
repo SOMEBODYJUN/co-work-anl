@@ -8,7 +8,7 @@
 
 本次唯一题目已有**严格否定证明**：[线性次数的全状态无均衡族](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md)对每个整数d≥2^20，给出正有理权、正有理纯d次费用、每人两个非空不交动作的有限游戏，全部纯状态都有严格(d/10)改善。任给C≥1,d0≥2，取足够大d≥d0且ln d>10C，即无(Cd/ln d)-PNE。因此不存在原题所问的绝对C,d0。
 
-证明链为健康循环窗口参数 → 全部类前沿出口 → 同类三元时钟修复非法状态 → 原次数预算 → 原题否定量词；每一态而非单个改善环均被覆盖。已有两次独立先重构后冻结攻击，五份精确审计仅核查其实际有限范围。外部同行评审、新颖性与最优常数未认证。精确ID是`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`及`WC-MATCHING-LOG-UPPER-NEGATIVE-v1`。
+证明链为健康循环窗口参数 → 全部类前沿出口 → 同类三元时钟修复非法状态 → 原次数预算 → 原题否定量词；每一态而非单个改善环均被覆盖。独立先重构后冻结攻击已覆盖该链；[审查补节](research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给整数分层次数证明及完整多类拼装核验，精确审计仅核查其实际有限范围。外部同行评审、新颖性与最优常数未认证。精确ID是`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`及`WC-MATCHING-LOG-UPPER-NEGATIVE-v1`。
 
 WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述。新a_*(d)≥d/10与单列Paper Fact的一般d上界合用给增长阶Θ(d)；精确常数、有限d最优值及复杂度仍未刻画。旧奇环T_d∼d/ln d下界和该拓扑实际阈值恰T_d仍成立，现为独立子类资产。
 

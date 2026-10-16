@@ -9,7 +9,7 @@
 1. [MODEL](../../weighted_congestion_frontier/MODEL.md)和[唯一验收标准](../../weighted_congestion_frontier/ACCEPTANCE.md)，明确全状态与全部量词。
 2. [线性次数的全状态无均衡族与匹配对数上界的严格否定](linear_degree_allstate_lower_bound.md)：第2—3节完整基体/健康预算，第4—5节全部错位前沿，第6节非法状态修复，第7节同次数，第8节否定量词。
 3. [分阶段独立重构和最终稿审查](../../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md)与[从原题开始的独立攻击](../../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_clean_attack.md)：均绑定冻结hash，核对修复及攻击范围。
-4. 正文第10节给全部实际输入、五份精确审计和冻结证据；有限计算不是一般证明。
+4. 正文第10节给原有精确审计；[独立审查补节](../../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给免对数的整数预算证明、[完整多类拼装审计](../../../tests/audits/weighted_congestion/cyclic_clone/independent_multiclass_assembly.py)与[冻结结果](../../../evidence/runs/weighted_congestion/cyclic_clone/linear_degree_multiclass_assembly.json)。有限计算不是一般证明。
 5. [精确Claim](../../weighted_congestion_frontier/CLAIMS.md)、[五轴状态](../../review_status.json)、[当前义务](../../weighted_congestion_frontier/RESEARCH_STATE.md)与[目录](../../weighted_congestion_frontier/FILES.md)，再按下表选择结构工具。
 
 ## 主结果与依赖
