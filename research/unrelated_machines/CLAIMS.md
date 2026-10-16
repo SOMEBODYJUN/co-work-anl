@@ -333,3 +333,15 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：既有条件块cut直接适配即可把本族强化阈值恢复θ_k；这不是该更强机制的反例。N块/激活缺口与旧k块/缺口1族不同，不覆盖旧Claim。无尚成立fatal objection，全球新颖性未认证。
 - Status：完整所述合同反例、内部独立已审；未外审，未给统一近似算法。
 - Related Files：[正文§2–5](../current/unrelated_machines/row_count_escape_gap.md)、row_count_escape_review.md、compact_count_escape.py、independent_row_count_escape.py、row_count_escape_audit.json及k2实际输入/证书。
+
+## UM-SPARSE-CONDITIONED-CONFIG-GAP-v1：三选稀疏深树的全边独立条件配置间隙
+
+- Exact Statement / Quantifiers：∀整数k≥3，按正文s0、M及任意合法H构造的有限实例P满足每任务至多3台可用机器、有限时间仅{1/k,1,γ}，γ=2^(2−H)，OPT=2−1/k。在T=1+1/k时，∀有限边(i,j)，存在同一完整实例的配置LP点满足x_ij=1。因此仅迭代删除无独立条件配置证书的边，从初始域第一轮即零删除；基数LST单边探针亦全通过。由本族比值2−3/(k+1)及ST上界，正目标独立证书合同的sup相对阈值间隙为2。
+- Objects / Domain / Definitions：UM-MODEL-v1；两棵H层k叉核心树、每底簇k星终端与k−1路径占位任务、全局γ成本逃逸机z；s0=min{s≥1:k((k−1)/k)^s≤1}，M=(k−1)k^(s0−2)，H≥s0且2^(H−2)≥M。配置及强制覆盖定义见正文。
+- Assumptions / Scope：T>0的显式反例族；各边查询的配置分布相互独立，不要求共同基点、平均回收或多机交叠一致性。允许∞；每任务有有限边。不声称精确配置oracle位多项式，也不声称对log k多项式展开。
+- Conclusion：加强到每次探针内完整单机配置仍不足以相对其阈值统一优于2；不排除UM-TARGET-v1或相对OPT的其他算法。
+- Dependencies：UM-MODEL-v1；正文内部α→((k−1)/k)α配置递推、坏簇全移z的共同容量证书、整数二叉激活计数与单路径上界；sup上界另用UM-ST-ROUND-v1。机制来源连接既有共享逃逸及boss1事件168，正文自足重构。
+- Evidence：全部6类强制边的一般证书、独立先重构后冻结攻击、双路Fraction；k3,H5实际729机1051任务全部2426有限边逐点核验；大k仅冻结结果记载的压缩公式核验。
+- Counterevidence / Objections：只移ceil(kβ−1)条固定路径占位边的总槽捷径无效，已改为坏簇全部撤离且总数≤M。完整四机器bag联合分布在整个交集上一致可精确glue本族；路径端点可触发极小星消元，本命题未覆盖加入该预处理后的合同。
+- Status：完整所述范围证明、内部独立重构及冻结审查；未外审、未认证全球新颖性或独立论文价值。主目标仍OPEN。
+- Related Files：[research/current/unrelated_machines/sparse_conditioned_configuration_gap.md](../current/unrelated_machines/sparse_conditioned_configuration_gap.md)、[research/reviews/unrelated_machines/sparse_conditioned_configuration_review.md](../reviews/unrelated_machines/sparse_conditioned_configuration_review.md)；正文链接两路代码、实际稀疏输入、配置/调度证书与冻结结果。

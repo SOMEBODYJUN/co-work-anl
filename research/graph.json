@@ -6933,6 +6933,46 @@
         "tests/audits/unrelated_machines/independent_row_count_escape.py"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "UM-INDEPENDENT-EDGE-CONFIG-PROBES-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "独立单边强制的完整配置证书合同",
+      "detail": "For every retained eligible edge separately, a full configuration-LP point has x_ij=1; different query points need no common base or separator joint marginals.",
+      "refs": [
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "三选稀疏深树的独立条件配置间隙2",
+      "detail": "For every k>=3 the explicit family has OPT=2-1/k and every finite edge separately has a forced CONFIG certificate at T=1+1/k; the positive-threshold independent certificate class has supremum gap2. No claim for contractions or full joint-separator consistency.",
+      "refs": [
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md",
+        "research/reviews/unrelated_machines/sparse_conditioned_configuration_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-SPARSE-CONDITIONED-CONFIG-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "稀疏条件配置的双路逐边精确核验",
+      "detail": "Two independent Fraction generators check all eligible edges in the expanded k3,H5 input; higher k only compressed formula checks.",
+      "refs": [
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md",
+        "tests/audits/unrelated_machines/sparse_conditioned_configuration.py",
+        "tests/audits/unrelated_machines/sparse_conditioned_configuration_independent.py",
+        "examples/unrelated_machines/sparse_conditioned_configuration_input.json",
+        "evidence/certificates/unrelated_machines/sparse_conditioned_configuration_witness.json",
+        "evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "research/reviews/unrelated_machines/sparse_conditioned_configuration_review.md"
+      ],
+      "status": "finite computational evidence"
     }
   ],
   "hyperedges": [
@@ -16646,6 +16686,52 @@
         "research/current/unrelated_machines/row_count_escape_gap.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "DERIVE-UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-INDEPENDENT-EDGE-CONFIG-PROBES-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+      "statement": "Self-contained deep-tree configuration certificates, whole-block evacuation, exact integer branching and path upper schedule prove the stated family; ST supplies the supremum upper bound.",
+      "refs": [
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SPARSE-CONDITIONED-CONFIG-AUDIT-v1"
+      ],
+      "conclusion": "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+      "statement": "Exact finite certificate and parameter checks only, not the general proof.",
+      "refs": [
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md",
+        "evidence/runs/unrelated_machines/sparse_conditioned_configuration_audit.json",
+        "research/reviews/unrelated_machines/sparse_conditioned_configuration_review.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMIT-UM-SPARSE-CONFIG-PROBES-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Independent single-edge CONFIG/LST-cardinality tests alone cannot promise uniform improvement relative to their threshold; full separator consistency, preprocessing and other algorithms remain outside this limit.",
+      "refs": [
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
+      ],
+      "status": "stated method boundary"
     }
   ]
 }

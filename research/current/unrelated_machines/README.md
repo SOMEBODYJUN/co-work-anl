@@ -87,3 +87,9 @@
 [全局单行基数匹配与紧凑共享逃逸](row_count_escape_gap.md)给UM-GLOBAL-ROW-COUNT-FILTER-v1与UM-COMPACT-COUNT-ESCAPE-GAP-v1。固定全行下界时无需枚举资源子池；但紧凑族有每机avoid证书，连任意单机配置都可延伸成全局计数见证，GPC₂仍T1可行而OPT=2−1/k。读取顺序：精确账本→正文§1合同/§2–4证明→row_count_escape_review.md→row_count_escape_audit.json与三份审计代码；实际k2输入/配置/达到调度也已保存。
 
 失败点是把真实超载移到当前未精确查询的其他中心。条件块cut直接适配能修本族，不另宣称新成果；下一义务是一般可分离的共同负载/条件容量及统一舍入，不再只优化逐机最大卸载值。外审与全球新颖性未认证，主目标仍OPEN。
+
+## 稀疏全边条件配置的准确边界
+
+[三选稀疏深树与微小共享逃逸](sparse_conditioned_configuration_gap.md)给UM-SPARSE-CONDITIONED-CONFIG-GAP-v1：每k≥3、每任务至多三选，OPT=2−1/k；T=1+1/k下每条有限边分别有x_ij=1完整配置证书，因此独立配置探针和基数LST删边均无起点。不同查询不共用相关性是实质缺口；完整四机器bag在整个交集的联合分布一致可精确拼接本族。路径端点可触发极小星，未覆盖预处理后的合同。
+
+读取链：精确账本→自足稿→sparse_conditioned_configuration_review.md→sparse_conditioned_configuration.py及独立程序→实际稀疏输入、最高逃逸配置/调度证书、sparse_conditioned_configuration_audit.json。主目标仍OPEN；此为条件松弛的方法边界，不是一般近似困难性。
