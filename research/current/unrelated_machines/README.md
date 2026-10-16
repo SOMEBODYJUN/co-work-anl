@@ -119,3 +119,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 [有向需求树与真实调度的精确任务桥梁](rooted_dag_degree_token_bridge.md)给UM-DAG-DEGREE-TOKEN-IDENTITY-v1及UM-TARGET-IMPLIES-DAG-DEGREE-v1：一顶点一机器、unit入任务与本地子任务外溢，精确OPT=2−截断最大需求比例；二进制大需求用单填充保持任务数O(E+V)。正确阈值缩放使任何主目标算法都须构造常数比例需求根树。一般方向已由MMDA/Santa Claus文献知道，本页是可复用直接重构，不冒充新算法/新困难性。
 
 读取链：本题账本→正文§1合同/§2–5构造及位复杂度→rooted_dag_token_bridge_review.md→rooted_dag_token_bridge.py及独立审计→rooted_dag_token_bridge_audit.json。原始Bamas2025 v2字节与定义/脚注位置见manifest；一轮SA定理只核对陈述，未转成调度层级结论。
+
+新增派生UM-COORDINATE-REPAIR-ST-GAP-v1（循环批次正文cyclic_batch_repair_and_fork_obstruction.md§9）：与boss7真实最优凸包固定槽族衔接，工作量守恒使本逐坐标优化器仍0轮且gap→2。这个限制已覆盖配置来源；它不扩大fork关于one-destination、makespan非增的另一合同。下一机制必须允许低负载接收机上升并共同控制最大负载，不能把更强初始化单独当成循环算法的补丁。

@@ -54,4 +54,4 @@
 
 [固定ST槽图的真实最优凸包反例](research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md)否定“更强分数点＋同图择优matching”这一充分接口；全局最优凸分量都可被槽基数排除。本例跨槽迁移即恢复1，不排一般repair或UM-TARGET-v1。
 
-[循环批量局部优化的分流缺口](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)：总多项式终止仍不保证统一改善，唯一最小成本槽输出可无任何单目的地单调修复；配置投影初始化不在反例范围。
+[循环批量局部优化的分流缺口](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)：总多项式终止不保证近似改善；逐坐标版本在真最优凸包槽族也零轮停滞。另一单目的地makespan非增fork边界仅限一般LST点，二者范围分开。

@@ -51,6 +51,6 @@ WC-TARGET v1原身份保持刻画a_*(d)。新下界d/10与另列Paper Fact的一
 
 不相关并行机新增[真实最优凸包与固定槽图边界](research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md)：identical族的全局最优凸分解平均点，其固定ST图每个cover值仍趋2OPT。本族有明确跨槽最优修复；下一步需一般相关保持/迁移与总位复杂度，不再把仅增强分数点当作足够机制。
 
-不相关机已有[鲁棒循环批量局部优化器](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)，总轮数与总位复杂度闭合；其分流反例使唯一最小成本槽输出仍可停在2−1/k。真正缺口是多目的地共同修复或更强初始化；主目标仍OPEN。
+不相关机的[鲁棒循环批量局部优化器](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)已闭合总位复杂度，但与boss7真最优凸包槽族衔接后，逐坐标单调明确不足：工作量守恒使它零轮停在近2。下一缺口是允许接收机增载、共同控制max的分流合流，而非仅增强初始化。
 
 本题另有[有向需求树的精确任务桥梁](research/current/unrelated_machines/rooted_dag_degree_token_bridge.md)：一般DAG/大二进制需求也可多项式构造真实调度OPT=2−b*；通过正确缩放，主目标算法必须具常数比例根树构造能力。只重构已知方向，没有新算法、SA转移或困难性声明。

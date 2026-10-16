@@ -7234,6 +7234,32 @@
         "evidence/runs/unrelated_machines/rooted_dag_token_bridge_audit.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "UM-COORDINATE-REPAIR-ST-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "真最优凸包槽输出上的逐坐标修复近2停滞",
+      "detail": "For every integer m>=2 and rational eta in (0,1), on the boss7 identical-machine family P_m with T=OPT=1 and x in the true optimal-schedule convex hull, every ordered-slot matching output sigma has Cmax=2m/(m+1), and the robust cyclic-batch optimizer returns sigma in zero rounds. More generally every coordinatewise load-nonincreasing reassignment sequence preserves every load on identical machines. All such matchings have the same minimum total processing cost.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "research/reviews/unrelated_machines/cyclic_batch_fork_review.md",
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "direct corollary with complete proof; independently attacked and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-COORDINATE-ST-BRIDGE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "真实凸包槽输出与循环停滞的实际衔接证据",
+      "detail": "m2..8 actual calls and true convex components; 19699 legal schedules independently enumerated only at m2/3; no universal computation claim.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "tests/audits/unrelated_machines/identical_work_invariant_audit.py",
+        "evidence/runs/unrelated_machines/identical_work_invariant_audit.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -17372,6 +17398,51 @@
         "evidence/runs/unrelated_machines/rooted_dag_token_bridge_audit.json"
       ],
       "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-COORDINATE-ST-GAP",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+        "UM-ROBUST-CYCLIC-BATCH-OPT-v1"
+      ],
+      "conclusion": "UM-COORDINATE-REPAIR-ST-GAP-v1",
+      "statement": "Use the imported true-optimal convex fixed-slot family and the optimizer coordinatewise monotonicity. The elementary identical-machine work-conservation identity forces all load coordinates to remain unchanged; hence zero robust rounds and the same gap. Both contracts are joint premises.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "direct corollary"
+    },
+    {
+      "id": "CHECK-COORDINATE-ST-BRIDGE",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-COORDINATE-ST-BRIDGE-AUDIT-v1"
+      ],
+      "conclusion": "UM-COORDINATE-REPAIR-ST-GAP-v1",
+      "statement": "Only actual m2..8 and exhaustive m2/3 scopes; general result follows from work conservation, not finite enumeration.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "evidence/runs/unrelated_machines/identical_work_invariant_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-COORDINATE-ST-BRIDGE-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-COORDINATE-REPAIR-ST-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Rules out the coordinatewise nonincreasing repair extension, even with true-optimal convex initialization; allows low receivers to gain load while decreasing makespan, and does not expand the separate one-destination fork obstruction.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }

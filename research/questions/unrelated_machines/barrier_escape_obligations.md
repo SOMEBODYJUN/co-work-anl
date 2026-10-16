@@ -51,3 +51,5 @@ UM-ROBUST-CYCLIC-BATCH-OPT-v1已闭合局部优化器的总位复杂度，但没
 ## 需求树上的共同资源不能免费复用
 
 [直接任务桥梁](../../current/unrelated_machines/rooted_dag_degree_token_bridge.md)把正需求激活机器的外溢精确变成根树出度，全局孩子机器unit容量禁止多父复用。主目标算法在正确缩放实例上必须给常数比例根树。下一候选要说明它如何同时选分支/避免合流资源重复，并保持位多项式；浅层共享例或MMDA独立SA点不足。
+
+该新机制必须允许接收机负载上升：UM-COORDINATE-REPAIR-ST-GAP-v1已排除即使真OPT凸包初始化后的纯逐坐标单调优化。可研究目标max阈值下多源分流的共同容量，但不能把单中心分别可行的撤离LP当作共同调度。

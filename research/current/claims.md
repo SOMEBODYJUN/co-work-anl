@@ -702,6 +702,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-DAG-DEGREE-TOKEN-IDENTITY-v1 | ∀显式根简单DAG及正文二进制需求，q=min(k,d)个tokens＋filler构造的真实调度OPT=2−截断需求树最优比例；任意C<2调度可解码比例≥2−C，反向也位多项式可构造。 | [自足正文](unrelated_machines/rooted_dag_degree_token_bridge.md)、[冻结独立审查](../reviews/unrelated_machines/rooted_dag_token_bridge_review.md)；已知机制直接重构，无SA/困难性转移。 |
 | UM-TARGET-IMPLIES-DAG-DEGREE-v1 | 若UM-TARGET-v1有统一ε，则同一个调度算法在≤1+|E|个正确缩放输入上给所有上述DAG的真实根树，b(H)≥εb*，总确定性位多项式。 | 同正文§5；条件必要能力，不是新近似算法或新颖性认证。 |
 
+## 逐坐标循环修复与真实最优凸包的衔接
+
+| ID | 精确范围与结论 | 正文与限制 |
+| --- | --- | --- |
+| UM-COORDINATE-REPAIR-ST-GAP-v1 | ∀m≥2、∀有理η∈(0,1)，boss7真最优凸包槽族的任意matching输出接鲁棒循环优化仍0轮，值2m/(m+1)→2。相同机器任意逐坐标非增序列都保持每台负载。 | [正文§9](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)、追加冻结审查；守恒＋既有族的直接推论，不是新族，不排低机上升的makespan改善。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

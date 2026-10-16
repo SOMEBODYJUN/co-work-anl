@@ -473,3 +473,15 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：直接对未缩放实例调用A可能C≥2，不足解码；本文逐阈值规避该缺口。不是源MMDA SA gap或计算困难性到调度的转移。
 - Status：完整条件性归约证明；已知必要方向的直接重构，外审/新颖性未认证，主目标OPEN。
 - Related Files：同正文§5、冻结审查、两路精确审计与原始Bamas2025定位。
+
+### UM-COORDINATE-REPAIR-ST-GAP-v1：真最优凸包槽输出上的逐坐标修复停滞
+
+- Exact Statement / Quantifiers：For every integer m>=2 and rational eta in (0,1), on the boss7 identical-machine family P_m with T=OPT=1 and x in the true optimal-schedule convex hull, every ordered-slot matching output sigma has Cmax=2m/(m+1), and the robust cyclic-batch optimizer returns sigma in zero rounds. More generally every coordinatewise load-nonincreasing reassignment sequence preserves every load on identical machines. All such matchings have the same minimum total processing cost.
+- Objects / Domain / Definitions：boss7 UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1的m台identical正有理族；标准有序槽匹配、逐机器负载非增、固定η鲁棒循环优化器。
+- Assumptions / Scope：m≥2、T=OPT=1；x附真实最优调度凸分解；所有有限时间与合法分配按原模型，反例无零值。
+- Conclusion：完整初始化加逐坐标优化仍无统一低于2保证；不扩张第7节one-destination makespan非增反例的配置适用范围。
+- Dependencies：UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1（boss7原族）、UM-ROBUST-CYCLIC-BATCH-OPT-v1、相同机器ΣL=Σp守恒。基本恒等式的直接推论，不是新族。
+- Evidence：自足正文§9、追加冻结独立审查；m2..8实际调用，m2/3全部合法调度独立枚举。
+- Counterevidence / Objections：允许低负载接收机上升即可打破本障碍；本族一件small迁移已能严格降makespan。不能误读成主目标困难性或配置来源下单目的地makespan修复也不可能。
+- Status：direct corollary with complete proof; independently attacked and exactly audited; unrefereed; novelty unverified。
+- Related Files：cyclic_batch_repair_and_fork_obstruction.md§9、cyclic_batch_fork_review.md追加审查、identical_work_invariant_audit.py及同名新冻结JSON；源族正文optimal_convex_fixed_slot_gap.md归属boss7。
