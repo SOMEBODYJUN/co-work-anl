@@ -69,3 +69,5 @@
 从仓库根运行 `python3 research/build_catalog.py --check`、`python3 research/build_map.py --check`、`python3 research/build_crosswalk.py --check` 和 `python3 research/check_assets.py`。这些检查负责目录和登记一致，不能充当数学证明。
 
 不相关并行机的[稀释终端与条件探针比较](current/unrelated_machines/diluted_sink_probe_gap.md)解释独立配置/逐边LST为何仍gap2，并给出条件内保留大任务基数的可算修复；全局统一近似仍OPEN。
+
+半单位新身份已关闭固定大小分界的共同见证窗口：每个固定δ∈[0,1/2)的(Aδ)存在性NP完全；P≠NP下无总位多项式OPT≤T承诺构造。它仍不是统一低于2算法的困难性，下一步转向实际联合舍入损失。见[共同选择正文§3a](current/unrelated_machines/joint_matching_completion_and_block_cuts.md)。

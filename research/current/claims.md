@@ -642,6 +642,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-DILUTED-ESCAPE-PROBE-GAP-v1 | 配置可行＋所有边独立强制LST＋现行GHMR＋局部星匹配合用仍sup gap2；稀释底座加共享1/2小端，OPT=2−1/k。 | [正文§11](unrelated_machines/diluted_sink_probe_gap.md)、[冻结独立攻击](../reviews/unrelated_machines/diluted_sink_probe_review.md)；不含条件配置/条件基数；主目标OPEN。 |
 
+## 半单位共同见证的全窗口边界
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-JOINT-HALF-CHOICE-NP-v1 | ∀固定有理δ∈[0,1/2)，T=1、唯一small端、有限时间仅{1/2,1}时(Aδ)存在性NP完全，且该整个子类上(Aδ)存在⇔OPT≤1。 | [完整证明](unrelated_machines/joint_matching_completion_and_block_cuts.md)§3a、[独立攻击](../reviews/unrelated_machines/half_unit_joint_choice_review.md)；内部已审，外审/新颖性未认证。 |
+| UM-JOINT-HALF-PROMISE-NO-v1 | 假设P≠NP，∀固定有理δ∈[0,1/2)，不存在总确定性位多项式算法，对所有OPT≤T的合法输入保证输出(Aδ)见证；即使只要求T1、唯一small、时间{1/2,1}子类亦不可能。域外可任意输出。 | [完整证明](unrelated_machines/joint_matching_completion_and_block_cuts.md)§3a、[独立攻击](../reviews/unrelated_machines/half_unit_joint_choice_review.md)；内部已审，外审/新颖性未认证。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

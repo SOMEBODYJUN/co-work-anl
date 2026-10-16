@@ -36,3 +36,5 @@ WC-TARGET v1原身份保持刻画a_*(d)。新下界d/10与另列Paper Fact的一
 
 
 共享小端与稀释终端组合已进一步反驳“配置＋GHMR＋全部普通LST边探针”这一必要证书合取的统一阈值改善；主目标仍OPEN，条件内更强约束尚未被排除。
+
+半单位新身份已关闭固定大小分界的共同见证窗口：每个固定δ∈[0,1/2)的(Aδ)存在性NP完全；P≠NP下无总位多项式OPT≤T承诺构造。它仍不是统一低于2算法的困难性，下一步转向实际联合舍入损失。见[共同选择正文§3a](research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md)。

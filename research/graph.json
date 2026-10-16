@@ -6845,6 +6845,55 @@
         "evidence/runs/unrelated_machines/independent_diluted_escape_audit.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-JOINT-HALF-CHOICE-NP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "半单位共同选择的全窗口NP完全边界",
+      "detail": "∀固定有理δ∈[0,1/2)，T=1、唯一small端、有限时间仅{1/2,1}时(Aδ)存在性NP完全，且该整个子类上(Aδ)存在⇔OPT≤1。",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "research/reviews/unrelated_machines/half_unit_joint_choice_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-JOINT-HALF-PROMISE-NO-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "半单位共同见证承诺搜索的全窗口障碍",
+      "detail": "假设P≠NP，∀固定有理δ∈[0,1/2)，不存在总确定性位多项式算法，对所有OPT≤T的合法输入保证输出(Aδ)见证；即使只要求T1、唯一small、时间{1/2,1}子类亦不可能。域外可任意输出。",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "research/reviews/unrelated_machines/half_unit_joint_choice_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-P-NE-NP-ASSUMPTION",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "P不等于NP的显式条件",
+      "detail": "Assumption only, not an established fact; used for the promise-selector exclusion.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md"
+      ],
+      "status": "explicit complexity assumption"
+    },
+    {
+      "id": "UM-HALF-CHOICE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "半单位共同选择的独立有限精确核验",
+      "detail": "362 explicit cases and 1448 rational-delta queries in one implementation; separate 265-case generic scheduler; not a universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "evidence/runs/unrelated_machines/half_unit_joint_choice_audit.json",
+        "tests/audits/unrelated_machines/half_unit_joint_choice.py",
+        "tests/audits/unrelated_machines/half_unit_schedule_independent.py"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -16403,6 +16452,83 @@
         "research/current/unrelated_machines/diluted_sink_probe_gap.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "DERIVE-UM-JOINT-HALF-CHOICE-NP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-JOINT-HYBRID-INTERFACE-v1",
+        "UM-SOURCE-KARP-3DM"
+      ],
+      "conclusion": "UM-JOINT-HALF-CHOICE-NP-v1",
+      "statement": "Two-way explicit half-unit reduction and NP certificate bounds.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "research/reviews/unrelated_machines/half_unit_joint_choice_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-JOINT-HALF-CHOICE-NP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HALF-CHOICE-AUDIT-v1"
+      ],
+      "conclusion": "UM-JOINT-HALF-CHOICE-NP-v1",
+      "statement": "Finite source/interface/actual-schedule and endpoint checks only; universal or conditional claims use the proof.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "evidence/runs/unrelated_machines/half_unit_joint_choice_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "DERIVE-UM-JOINT-HALF-PROMISE-NO-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-JOINT-HALF-CHOICE-NP-v1",
+        "UM-P-NE-NP-ASSUMPTION"
+      ],
+      "conclusion": "UM-JOINT-HALF-PROMISE-NO-v1",
+      "statement": "On these inputs A_delta existence equals OPT<=1; run a total guaranteed selector and verify to decide perfect3DM under P!=NP.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "research/reviews/unrelated_machines/half_unit_joint_choice_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-JOINT-HALF-PROMISE-NO-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HALF-CHOICE-AUDIT-v1"
+      ],
+      "conclusion": "UM-JOINT-HALF-PROMISE-NO-v1",
+      "statement": "Finite source/interface/actual-schedule and endpoint checks only; universal or conditional claims use the proof.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "evidence/runs/unrelated_machines/half_unit_joint_choice_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-HALF-CHOICE-HYBRID",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-JOINT-HALF-PROMISE-NO-v1"
+      ],
+      "conclusion": "UM-JOINT-HYBRID-INTERFACE-v1",
+      "statement": "Under P!=NP excludes promised bit-polynomial A_delta witness construction for fixed delta<1/2; does not attack UM-TARGET or alternative joint rounding.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md"
+      ],
+      "status": "stated interface boundary"
     }
   ]
 }

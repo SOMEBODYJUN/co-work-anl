@@ -79,3 +79,5 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 需要把当前研究交给 Pro 时，可复用上述自足简报和冻结导出器，但须核对其来源提交及当前否定证明，按[角色与交接顺序](research/weighted_congestion_frontier/README.md#角色与-pro-交接顺序)先由清晰者筛出必要事实与精确障碍、提取者核实按需工具，再提交实际数学材料。论文者独立负责成稿；提示词就绪和材料整理完成分别核验。
 
 不相关并行机新增[条件LP与稀释终端边界](research/current/unrelated_machines/diluted_sink_probe_gap.md)：全部边各有LST强制点仍不足以耦合配置槽；加强基数探针可修复该族，主目标保持OPEN。
+
+半单位新身份已关闭固定大小分界的共同见证窗口：每个固定δ∈[0,1/2)的(Aδ)存在性NP完全；P≠NP下无总位多项式OPT≤T承诺构造。它仍不是统一低于2算法的困难性，下一步转向实际联合舍入损失。见[共同选择正文§3a](research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md)。

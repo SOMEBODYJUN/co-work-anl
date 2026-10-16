@@ -18,3 +18,5 @@
 
 
 新增UM-DILUTED-ESCAPE-PROBE-GAP-v1精确身份：共享逃逸合并后仍通过所有普通边探针与GHMR；只限该合同，依赖与同行来源见本题账本。
+
+半单位新身份已关闭固定大小分界的共同见证窗口：每个固定δ∈[0,1/2)的(Aδ)存在性NP完全；P≠NP下无总位多项式OPT≤T承诺构造。它仍不是统一低于2算法的困难性，下一步转向实际联合舍入损失。见[共同选择正文§3a](research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md)。
