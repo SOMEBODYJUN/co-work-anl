@@ -6601,6 +6601,33 @@
         "evidence/runs/unrelated_machines/heavy_matching_escape_independent.json"
       ],
       "status": "finite computational evidence"
+    },
+    {
+      "id": "UM-TREE-MARKOV-COMPLETION-NO-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "真实分布经树再耦合仍可能产生不可低于2补全的态",
+      "detail": "A fixed five-machine spanning-path Markov gluing of pair marginals from a real OPT=1 distribution has a 1/4 support state whose frozen tree jobs force best completion 2. Intelligent selection and repair remain open.",
+      "refs": [
+        "research/current/unrelated_machines/tree_markov_completion.md",
+        "research/reviews/unrelated_machines/tree_markov_completion_review.md"
+      ],
+      "status": "complete stated-interface counterexample; independently reconstructed and exactly audited; unrefereed; novelty unestablished"
+    },
+    {
+      "id": "UM-TREE-MARKOV-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "五机树耦合与最优补全的双路精确证据",
+      "detail": "Both independent Fraction programs enumerate every legal assignment, all four support states, singleton and tree-pair marginals, and both completions.",
+      "refs": [
+        "research/current/unrelated_machines/tree_markov_completion.md",
+        "tests/audits/unrelated_machines/tree_markov_completion.py",
+        "tests/audits/unrelated_machines/independent_tree_markov_completion.py",
+        "evidence/runs/unrelated_machines/tree_markov_completion_audit.json",
+        "evidence/runs/unrelated_machines/independent_tree_markov_completion_audit.json"
+      ],
+      "status": "finite computational evidence"
     }
   ],
   "hyperedges": [
@@ -15758,6 +15785,52 @@
       "statement": "Only independent configuration feasibility plus this exact per-star matching fixed point retains gap2; not a computational lower bound or a restriction on all coupled strengthenings.",
       "refs": [
         "research/current/unrelated_machines/heavy_matching_residual_and_escape.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "UM-E-TREE-MARKOV-NO",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-TREE-MARKOV-COMPLETION-NO-v1",
+      "statement": "The current account defines the exact source/pair/tree/frozen-task contract and supplies the full explicit counterexample; no complexity assumption is used.",
+      "refs": [
+        "research/current/unrelated_machines/tree_markov_completion.md"
+      ],
+      "status": "complete stated-interface proof"
+    },
+    {
+      "id": "UM-E-TREE-MARKOV-CHECK",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TREE-MARKOV-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-TREE-MARKOV-COMPLETION-NO-v1",
+      "statement": "Finite exact enumeration checks the explicit witness, full-state marginals and best completion; the small-machine structural boundary is proved separately.",
+      "refs": [
+        "research/current/unrelated_machines/tree_markov_completion.md",
+        "tests/audits/unrelated_machines/tree_markov_completion.py",
+        "tests/audits/unrelated_machines/independent_tree_markov_completion.py",
+        "evidence/runs/unrelated_machines/tree_markov_completion_audit.json",
+        "evidence/runs/unrelated_machines/independent_tree_markov_completion_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "UM-E-TREE-MARKOV-LIMIT",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TREE-MARKOV-COMPLETION-NO-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only arbitrary-state Markov gluing with tree jobs frozen is refuted. Repair-aware selection, changing the tree and global algorithms are not excluded.",
+      "refs": [
+        "research/current/unrelated_machines/tree_markov_completion.md"
       ],
       "status": "method boundary"
     }

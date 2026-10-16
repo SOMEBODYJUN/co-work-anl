@@ -4467,6 +4467,43 @@
         "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
       ],
       "limit": "No universal epsilon, schedule construction or NP-hardness of approximation. Joint configuration distributions, nested probing and global residual coupling are outside the counterexample contract. Global novelty is not certified."
+    },
+    {
+      "id": "unrelated_machines_tree_markov_completion",
+      "claims": [
+        "UM-TREE-MARKOV-COMPLETION-NO-v1"
+      ],
+      "status": "complete stated-interface counterexample; independently reconstructed and exactly audited; unrefereed; novelty unestablished",
+      "applies_when": [
+        "UM-MODEL-v1; exactly two eligible machines/job and simple machine graph",
+        "Common marginals originate in a real global T schedule distribution; connected spanning tree Markov gluing",
+        "The refuted contract freezes all tree jobs and requires completion below 2T for EVERY positive-probability output state"
+      ],
+      "produces": "Five-machine counterexample with OPT=T=1 and bad output probability 1/4, exact best completion 2; at most four machines with connected tree always permit T completion under the stated source contract.",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/tree_markov_completion.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/tree_markov_completion.py",
+        "tests/audits/unrelated_machines/independent_tree_markov_completion.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/tree_markov_completion_audit.json",
+        "evidence/runs/unrelated_machines/independent_tree_markov_completion_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/tree_markov_completion_review.md"
+      ],
+      "candidates": [
+        "research/questions/unrelated_machines/barrier_escape_obligations.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "limit": "Does not exclude intelligent state/tree selection or moving frozen jobs; one migration repairs the displayed bad state. No universal approximation lower bound or novelty certification.",
+      "source_interpretation": "Background only: the ST residual-rounding interface requires a feasible residual LP. This paper is NOT the source or proof of the new explicit counterexample; its actual input and source distribution are fully present in the current account, audit code and frozen records."
     }
   ]
 }

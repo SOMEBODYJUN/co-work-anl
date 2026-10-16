@@ -143,3 +143,16 @@ LST的2近似/ρ<3/2困难性、SV的2−1/m、restricted assignment的估值/�
 - Related Files：[research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md](../current/unrelated_machines/bundle_coupling_subdivision_barrier.md)、[冻结审查](../reviews/unrelated_machines/bundle_subdivision_review.md)、`evidence/runs/unrelated_machines/bundle_subdivision_audit.json`。
 
 UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=2特例；本页登记保留独立长度2重构及与计数闭包的准确合同，不把两个身份当作两次原创突破。
+
+
+## UM-TREE-MARKOV-COMPLETION-NO-v1：生成树投影后的固定补全反例
+
+- Exact Statement / Quantifiers：存在五机、每任务恰两端的简单机器图输入P、T=OPT=1、真实全局T分布D及指定连通生成树F，使D的完整单机/树边pair边际经Markov树耦合后，有正概率1/4的态在冻结F任务后任何补全都至少2T，且可达2T。
+- Objects / Domain / Definitions：UM-MODEL-v1的上述子类；树耦合按完整父配置条件化。非树任务暂时选择丢弃，仅冻结F任务。
+- Assumptions / Scope：被否定的是“所有这类输入、每个正概率态都可补<2T”的合同；不更换树、不迁移F任务。正面边界：同合同连通树至多四机均可补T。
+- Conclusion：不能在任意树支持态后沿用原残量LP可行性或直接保证统一低于2；不排算法本身。
+- Dependencies：UM-MODEL-v1、明确有限输入与真实D、标准Markov树条件耦合；不依赖复杂度假设。
+- Evidence：五机逐项证明、中心顶点/边的小机器数边界、两个独立Fraction实现及全部32个调度枚举。
+- Counterevidence / Objections：本坏态只需迁移一个任务即可修复；好的择态、换树、更多相关信息和使用原D均未被排除。
+- Status：完整所述范围反例，独立内部攻击、未外审、全球新颖性未认证；UM-TARGET-v1保持OPEN。
+- Related Files：[正文](../current/unrelated_machines/tree_markov_completion.md)、[冻结审查](../reviews/unrelated_machines/tree_markov_completion_review.md)，代码和冻结输入/结果由正文链接。

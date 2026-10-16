@@ -6,6 +6,8 @@
 
 已形成[强制残余容量计数闭包与细分攻击](research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md)：过滤器健全且位多项式，在原两树族精确但被任务细分绕过；完整两机器配置耦合仍有sup gap2。此为准确方法边界，未给统一新近似比。独立覆盖与有限证据见正文入口。
 
+新[五机树再耦合反例](research/current/unrelated_machines/tree_markov_completion.md)表明：真实最优分布也可能在丢掉非树相关性后产生冻结任务无法低于2T补全的态；本例可一步修复，仍缺一般repair/位复杂度证明。
+
 ## 已完成的拥塞旧题：严格否定
 
 [线性次数的全状态无均衡族](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md)已给完整一般证明：每整数d≥2^20存在MODEL有限游戏，每个纯状态都有严格(d/10)改善。新身份`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`与`WC-MATCHING-LOG-UPPER-NEGATIVE-v1`严格否定绝对C,d0的普遍(Cd/ln d)-PNE保证。所有参数正有理、费用纯d次、每人两个非空不交动作；不限制人数、资源数或权比。

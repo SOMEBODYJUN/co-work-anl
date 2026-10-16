@@ -29,3 +29,6 @@
 任务细分将瓶颈藏在两子任务共用的capacity-one中间机器，保持整数OPT=2−1/k及配置证书T=1+1/k；简单图上完整两机器配置coupling可从边际构造，因此其sup gap仍2（UM-PAIR-SUBDIVISION-GAP-v1），计数闭包在T≥1无第一次删除。证明、审查和有限范围从[正文](../current/unrelated_machines/bundle_coupling_subdivision_barrier.md)进入。boss4已有更一般长链独立推导，后续复用共同资产，不重复树族。
 
 下一步具体义务：能否先有效消去这类中间机器，同时保留一般实例的可行性和输出提升？再攻击多个容量一资源共享的情形。不能把消去一个细分gadget当全类结论。
+
+
+生成树提取路线新增精确断点：UM-TREE-MARKOV-COMPLETION-NO-v1的五机实例中，真实最优分布经指定tree-Markov再耦合，坏态冻结树任务后最优补全恰2T。[正文与一步修复](../current/unrelated_machines/tree_markov_completion.md)说明缺的是非树相关性；并未排除择态、换树或迁移。当前还缺一般repair/相关保存机制的统一余量及总位多项式证明。本轮内部探索没有形成可提升的主目标算法；有限高树宽筛查未给可靠一般结论，不入Canonical。

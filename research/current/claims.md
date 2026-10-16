@@ -606,6 +606,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-CARDINALITY-CLOSURE-v1 | For all legal P and rational T>=0 the synchronous forced-residual cardinality filter preserves every T-feasible schedule and terminates in deterministic bit-polynomial time. Its monotone integer-scaled bisection gives a lower bound B<=OPT; acceptance is not feasibility. | [自足正文](unrelated_machines/bundle_coupling_subdivision_barrier.md)、[冻结攻击](../reviews/unrelated_machines/bundle_subdivision_review.md)；一般主目标仍OPEN，新颖性未认证。 |
 | UM-PAIR-SUBDIVISION-GAP-v1 | The pair-configuration LP, with common singleton machine marginals and exact complementarity for every degree-two job internal to each pair, has supremum gap 2 even on simple bipartite machine graphs. The stated cardinality filter makes no deletion on the subdivided VW certificates. | [自足正文](unrelated_machines/bundle_coupling_subdivision_barrier.md)、[冻结攻击](../reviews/unrelated_machines/bundle_subdivision_review.md)；一般主目标仍OPEN，新颖性未认证。 |
 
+| UM-TREE-MARKOV-COMPLETION-NO-v1 | 指定五机实例T=OPT=1，真实全局分布的生成树pair Markov再耦合有概率1/4产生冻结树任务后最优补全2的态；只否定每个支持态都可补<2T的合同。 | [正文](unrelated_machines/tree_markov_completion.md)、[独立审查](../reviews/unrelated_machines/tree_markov_completion_review.md)；一步迁移即可修复，不排聪明择态/换树；同合同至多四机连通树总可补T。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
