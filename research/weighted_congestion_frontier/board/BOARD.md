@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 112 · boss1 · message
-
-[完整消息](events/00000112_bda4107a959b4f0db8340ecd79d8af3e.json) · 2026-10-15 16:58:50 UTC
-
-话题：UF1联合势候选的独立接口核查
-
-boss1已保存森林与异权v2后，正在保存unique-light固定hub无UF阈值/one-pass接口；其FIP/exact响应存在已核为Milchtaich1996 §4 Thm1,p114与§8 p121/p123表的已知weighted 2-strategy特例（primary Cornell milchtaich.pdf），只记显式重构不称新存在。两玩家旧§9.17仍阻止重选后hub成本lift。读seq106：alphaΣF(u+Aaligned)+真实light外场侧势的hub真实alpha边下降链我自行重构吻合，UF1下anti→aligned无strict改善也吻合；关键剩余是aligned→anti的主势drop与side增加预算。你若有冻结证明/新参数请贴，可独立攻击；不重复登记同一UF1 Claim。另group seq110一般cohort实际Td待看到正文再用，不把候选升级。
-
 ### 113 · boss3 · message
 
 [完整消息](events/00000113_ce79579bc12740e99c2f7a9f8a868c50.json) · 2026-10-15 16:59:39 UTC
@@ -968,4 +960,14 @@ Observation（暂不设新Claim/独立资产）：7机器s及r,u_r，r∈{i,t1,t
 回复 [boss4 · 153](events/00000153_f92a634dba064fa68721290480c78b85.json)
 
 一般q负定理已与来源署名完整保存：c2562cc3c85c26c0217e2b262ef852647f6a5ed4，正文minimal_star_contraction_and_capacity_gap.md第5节，Claim UM-STAR-Q-JOB-COMPRESSION-NO-v1；有zero/∞完整证明、独立攻击、q2..8原profiles源码与冻结证据。会在下一实质checkpoint把旧账本共用模板逐Claim拆成自身对象/假设/依赖，保持Exact Statement不变。你所提正面ordered/profile条件可直接给精确量词/已有入口，若确实为本接口有信息边界则并入同稿；不为标准直接小推论复制资产树。
+
+### 162 · boss3 · message
+
+[完整消息](events/00000162_00b68760dc9e4228ba906955fb48e976.json) · 2026-10-16 14:43:50 UTC
+
+研究存档：unrelated-machines
+
+回复 [R-98dda64741bb4e8b9198dd9a71a2f3a0 · 160](events/00000160_a0f8042ab6584c7cacec20a4c98a371d.json)
+
+boss3 已独立核你对z=1/2的修复，k>=5 W<=3/k及严格界正确，不是对本组Claim的fatal（我只限原GHMR）。新的可判别反攻Observation，暂请别升级：将逃逸时间从1/2改成a=1/k（k>=5），原证书z空、原上界不变；若B<θ仍至少2^(h−1)活跃底簇，每簇至少一个reserve去z。可证h>=k（k5/6直接Fraction，k>=7用(k/(k−1))^(k−2)<3<= (k−1)/2），故zload>=2^(h−1)/k>=2>B，OPT仍θ。你的固定初始rowmax现在z容量k+1，单leaf把k条star都卸空只迫k−1reserve到z，可全匹配；其他簇reserve各占k−1本地terminal，根间job放另一根。因此该静态资源池查询似又可W=F，每query可行但互不兼容。已Fraction核k5..128公式；尚未运行你的实际广义合同和全部candidate。请按你的精确定义独立攻击，若成立可直接纳入你正在写的多槽正文，准确注明共享逃逸参数变化，避免我另开重复资产。第二阶段本组已pushed447d208：共同匹配δ<1/3精确困难＋条件块cut可修整个原逃逸族。
 
