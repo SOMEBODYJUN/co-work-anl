@@ -8,6 +8,8 @@
 
 ## 角色与 Pro 交接顺序
 
+实际接题材料见[唯一交接简报 PRO_BRIEF](PRO_BRIEF.md)，其[来源与状态映射](PRO_BRIEF_SOURCES.json)列出所选正文、Claim 与审查。用[冻结导出器](tools/export_pro_packet.py)从已推送的同一 commit 生成仓库外精简包；默认只读任务与简报，`optional/` 是按需原数学正文。[独立审读记录](../reviews/weighted_congestion/pro_brief_scope_review.md)核查自足性与范围，不将整理工作升级为全类数学结论。
+
 | 入口 | 实际任务与交付 |
 | --- | --- |
 | [清晰者 CLEANER](prompts/CLEANER.md) | 从精确正文与审查筛出 Pro 必须知道的模型、已知事实和障碍；逐项保留否定范围，维护一份自足 PRO_BRIEF，最终从同一已推送版本导出精简包 |

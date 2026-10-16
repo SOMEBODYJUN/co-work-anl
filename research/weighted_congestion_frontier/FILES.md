@@ -14,6 +14,7 @@
 | [加权拥塞共同研究与协作入口](<README.md>) | `research/weighted_congestion_frontier/README.md` | 数学阅读进入 current 的证明地图；阶段保存时核对命名、账本和地图共同提交，运行程序时再进入启动和协议。 | 阅读导航；真值查精确正文及账本 |
 | [拥塞逐成果包资产链：中文名称、正文、审查与证据](<FILES.md>) | `research/weighted_congestion_frontier/FILES.md` | 按数学成果包找到具体文件作用，追踪主稿到独立攻击、实际核验与冻结结果，不先读路径字典序清单。 | 阅读导航；真值查精确正文及账本 |
 | [加权原子拥塞：Pro 接题材料与精确方法障碍](<PRO_BRIEF.md>) | `research/weighted_congestion_frontier/PRO_BRIEF.md` | 供未读仓库的研究者只凭一份派生正文接题：自足模型与正反完成量词、可靠边界、按机制合并的准确障碍及有限签名/反例核心接口；调用时核对文内冻结源、实际审查等级和OPEN义务，不替代精确账本。；配套 [加权原子拥塞精确模型与普遍门槛目标](<MODEL.md>)；配套 [拥塞匹配上界命题的唯一完成标准与交付验收](<ACCEPTANCE.md>)；配套 [Pro全类近似纯均衡门槛的自主攻题任务](<prompts/PRO_ATTACK.md>)；配套 [加权原子拥塞：奇环下界、工具与一般门槛缺口地图](<../current/weighted_congestion/README.md>)；配套 [拥塞精确命题账本：目标、局部成果与候选版本](<CLAIMS.md>) | 阅读导航；真值查精确正文及账本 |
+| [Pro交接简报的冻结来源与导出选择映射](<PRO_BRIEF_SOURCES.json>) | `research/weighted_congestion_frontier/PRO_BRIEF_SOURCES.json` | 把唯一PRO_BRIEF的S0至S20连接到原数学正文、精确Claim和实际审查；供冻结导出器检查所选源字节与数学基线一致，并在manifest中保留各自状态，不另立数学真值账本。；配套 [加权原子拥塞：Pro 接题材料与精确方法障碍](<PRO_BRIEF.md>)；配套 [Pro任务与数学简报的单提交冻结导出器](<tools/export_pro_packet.py>)；配套 [Pro 派生接题材料：独立盲读、来源范围与修订核查](<../reviews/weighted_congestion/pro_brief_scope_review.md>) | 阅读导航；真值查精确正文及账本 |
 | [加权原子拥塞精确模型与普遍门槛目标](<MODEL.md>) | `research/weighted_congestion_frontier/MODEL.md` | 核对正权、有限策略、非负多项式费用及弱不等式近似 PNE 的全类量词，防止偷偷缩小目标模型。 | 定义与模型；不隐含跨模型定理 |
 | [拥塞精确命题账本：目标、局部成果与候选版本](<CLAIMS.md>) | `research/weighted_congestion_frontier/CLAIMS.md` | 引用团队结果前核对稳定 ID、版本、定义域、假设、结论、证据和 objection；范围变化要另建版本。 | 精确命题登记；摘要不替代原陈述 |
 | [拥塞当前前沿、已保存工具和下一证明义务](<RESEARCH_STATE.md>) | `research/weighted_congestion_frontier/RESEARCH_STATE.md` | 接续研究时核对当前已知与未解，避免使用原稿时点状态或旧公屏代替共同账本。 | 精确命题登记；摘要不替代原陈述 |
@@ -21,6 +22,8 @@
 | [加权拥塞近似纯均衡的文献基线与核验范围](<LITERATURE.md>) | `research/weighted_congestion_frontier/LITERATURE.md` | 查原文真实模型、上界、下界和开放问题；文献事实、团队解释与尚未认证的新颖性分别引用。 | 文献核对；与团队新结果分别引用 |
 | [拥塞前人机制与可复用技术资产](<PRIOR_ASSETS.md>) | `research/weighted_congestion_frontier/PRIOR_ASSETS.md` | 选择势函数、下界构造或桥梁时查前人已经提供的对象、方法和适用限制，避免重复宣称发现。 | 文献核对；与团队新结果分别引用 |
 | [Pro 派生接题材料：独立盲读、来源范围与修订核查](<../reviews/weighted_congestion/pro_brief_scope_review.md>) | `research/reviews/weighted_congestion/pro_brief_scope_review.md` | 核对唯一PRO_BRIEF与完整任务正文的模型/正反量词和每条障碍排除范围：先仅盲读两文件重构，再核冻结源与实际审查，记录压缩歧义、状态冲突处理、修订及真实覆盖；不新增数学Claim，不替代原证明或推送回执。；配套 [加权原子拥塞：Pro 接题材料与精确方法障碍](<PRO_BRIEF.md>)；配套 [Pro全类近似纯均衡门槛的自主攻题任务](<prompts/PRO_ATTACK.md>)；配套 [拥塞精确命题账本：目标、局部成果与候选版本](<CLAIMS.md>) | 实际审查记录；只覆盖所列版本与义务 |
+| [Pro冻结交付包的独立接题与来源一致性核查](<../reviews/weighted_congestion/pro_packet_delivery_review.md>) | `research/reviews/weighted_congestion/pro_packet_delivery_review.md` | 记录对实际交付简报和任务的再次盲读重构、随后定点来源检查及导出边界；区分先前数学范围审读、此次实际覆盖与交付核验，不将包成功或内部审读当成主问题证明。；配套 [加权原子拥塞：Pro 接题材料与精确方法障碍](<PRO_BRIEF.md>)；配套 [Pro 派生接题材料：独立盲读、来源范围与修订核查](<../reviews/weighted_congestion/pro_brief_scope_review.md>)；配套 [Pro任务与数学简报的单提交冻结导出器](<tools/export_pro_packet.py>)；配套 [Pro交接简报的冻结来源与导出选择映射](<PRO_BRIEF_SOURCES.json>) | 实际审查记录；只覆盖所列版本与义务 |
+| [Pro任务与数学简报的单提交冻结导出器](<tools/export_pro_packet.py>) | `research/weighted_congestion_frontier/tools/export_pro_packet.py` | 从显式Git提交只读导出完整任务、自足简报及按需数学证明，在仓库外生成带源状态与SHA256的精简ZIP；拒绝覆盖和源快照混用并复读压缩包，不导出凭据、Git、研究运行工具或公屏。；配套 [加权原子拥塞：Pro 接题材料与精确方法障碍](<PRO_BRIEF.md>)；配套 [Pro交接简报的冻结来源与导出选择映射](<PRO_BRIEF_SOURCES.json>)；配套 [Pro全类近似纯均衡门槛的自主攻题任务](<prompts/PRO_ATTACK.md>) | 有限计算核验；不代替一般证明 |
 
 ### 有限动作模板、全状态择证与精确对偶
 

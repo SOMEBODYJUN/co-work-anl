@@ -12,6 +12,8 @@
 
 研究详情从[加权拥塞数学入口](research/current/weighted_congestion/README.md)进入。[当前状态](RESEARCH_STATE.md)只列当前前沿；[精确命题目录](CLAIMS.md)连接真正的命题身份；[失败路线](FAILED_ROUTES.md)区分命题反例与方法限制。
 
+独立研究者接题可直接读[全类判定交接简报](research/weighted_congestion_frontier/PRO_BRIEF.md)：自足模型、当前上下界、已闭合子类及准确方法障碍。它是现行材料的派生入口，不改变主问题开放状态；[冻结导出器](research/weighted_congestion_frontier/tools/export_pro_packet.py)仅从指定提交导出任务、简报及按需证明。
+
 ## Mathematical Objects / Definition Map
 
 | 模型 | 对象与定义链 | 权威定义与研究入口 |
