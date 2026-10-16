@@ -147,3 +147,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 两项均已自足证明、独立内部攻击和有限精确核验；都是限结构正面接口/修复，未认证全球新颖性，不形成一般输入的统一ε。UM-TARGET-v1保持OPEN。
 
 新增UM-STAR-CONFIG-TRANSFER-v1（[星正文§8](minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)）：逐步外部配置互斥使CONFIG双向可行、全部条件边向前保持，支持最多每步加一；缺占用/反向probe有反例。UM-CONTRACTED-SPARSE-CONFIG-GAP-v1（[稀疏正文末节](sparse_conditioned_configuration_gap.md)）收两端后无规则、仍全边独立CONFIG且gap2，补旧v1预处理缺口。读取链为专题CLAIMS→两正文→star_configuration_transfer_review.md→两份同名前缀代码及实际输入/证书/star_configuration_transfer_audit.json。主目标OPEN，完整共同base/联合迁移未排。
+
+[单共享汇点的共同宏任务匹配](shared_sink_joint_macro_assignment.md)：UM-SHARED-SINK-JOINT-MACRO-v1。∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。 每个macro/home或empty模式的真实最小整组撤离成本，保零乘性覆盖DP与带dummy成本的全局最小权完美匹配；误差只对同一个真实sink预算求和，不按home数量累积。 仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。 一般UM-TARGET-v1仍OPEN。

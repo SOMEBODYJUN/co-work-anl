@@ -101,3 +101,5 @@
 两项均已自足证明、独立内部攻击和有限精确核验；都是限结构正面接口/修复，未认证全球新颖性，不形成一般输入的统一ε。UM-TARGET-v1保持OPEN。
 
 [外部互斥星的配置保持](current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)补精确正面证书接口；[收缩后稀疏终态](current/unrelated_machines/sparse_conditioned_configuration_gap.md)又补先极小星消元后独立CONFIG探针的gap2范围。证明→star_configuration_transfer_review.md→双路代码/实际终态/冻结证据可接续；一般共同选择与统一ε仍OPEN。
+
+[单共享汇点的宏任务共同匹配与私有任务整组撤离](current/unrelated_machines/shared_sink_joint_macro_assignment.md)：UM-SHARED-SINK-JOINT-MACRO-v1以保零覆盖背包成本+dummy全局匹配给home≤T、z≤(1+η)T的位多项式实际构造；宏图任意，私有任务无尺寸限制。一般多预算/跨home任务仍OPEN。

@@ -111,3 +111,5 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 两项均已自足证明、独立内部攻击和有限精确核验；都是限结构正面接口/修复，未认证全球新颖性，不形成一般输入的统一ε。UM-TARGET-v1保持OPEN。
 
 [星收缩的配置保持](research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)给可复用正面接口：外部配置互斥时配置可行性双向转移、全部条件边向前转移，重复支持只加不乘；[稀疏族收缩终态](research/current/unrelated_machines/sparse_conditioned_configuration_gap.md)仍无极小星且独立条件证书gap2。主目标OPEN，真正缺口仍是共同相关性和实际联合舍入。
+
+[单共享汇点的共同宏任务匹配](research/current/unrelated_machines/shared_sink_joint_macro_assignment.md)给UM-SHARED-SINK-JOINT-MACRO-v1：不固定宏任务，覆盖背包真实撤离成本与一次全局匹配同时协调全部home和z，home≤T、z≤(1+η)T；仅唯一home/单sink结构。一般多接收容量与跨尺寸身份仍未闭合，UM-TARGET-v1继续OPEN。

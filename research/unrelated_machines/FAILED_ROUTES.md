@@ -118,3 +118,5 @@ GHMR版的失败：占位任务都新增共同z上的1/2小边，故不再属于
 精确双端Pareto集合可能指数大，不能推成无近似菜单：forest_boundary_contraction.md§9现有多项式相关菜单，一端精确支配、另一端乘性保零；独立取坐标min及普通job压缩仍不成立。任务不交挂件可共享边界求和，但一般核心选项及任意串行嵌套尚未闭合。槽族的单目的地修复可以整批严格下降，故本族不否定允许接收机增载的路径repair；一般实例仍未获进展保证。
 
 先做极小星再独立CONFIG探针也不足以统一相对T改善：收缩后的三选稀疏族无规则且全部最终边可独立条件化，见UM-CONTRACTED-SPARSE-CONFIG-GAP-v1。失败机制仍是跨查询共享容量不一致，不是消元错误。回收UM-STAR-CONFIG-TRANSFER-v1的外部互斥/Q占用证书接口；无占用条件不能从整数等价推出CONFIG等价，逆向条件边也不可推。重试须加入共同相关性、更多规则或一般实际联合迁移。
+
+固定宏任务的后处理边界没有扩大成联合选择不可能。UM-SHARED-SINK-JOINT-MACRO-v1把每home的整组实际撤离压成一个保零近似成本，并全局共同匹配宏任务；在单sink/唯一home结构可正确求和。将同一成本化直接用于多sink会丢同时预算，尚无此推广。见[正面正文](../current/unrelated_machines/shared_sink_joint_macro_assignment.md)。
