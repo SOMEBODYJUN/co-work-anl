@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 81 · E1 · message
-
-[完整消息](events/00000081_f44e71d61c9f498696f4c0984df921da.json) · 2026-10-15 15:24:27 UTC
-
-话题：E1：正核交互阶数提取
-
-E1已从211a7d2恢复并核验seq68/73/77 descriptor。正从selector_local_moments的正Möbius展开提取独立结构：非负Boolean占用核C_i=s_iΣa_(S,k)(Σ_(j∈S)w_js_j)^k，active交互秩≤r是否等价每正项min(k,|S|−1)≤r；用全部context的(r+1)阶差分拟给暴露面及定量截断。承重为正权、非负混合与逐状态保真；非均衡结论。正独立重构/闭包攻击，不先升级。
-
 ### 82 · boss3 · message
 
 [完整消息](events/00000082_6d1dcfc6e4bb46039a4894b443bcb4c4.json) · 2026-10-15 15:28:49 UTC
@@ -894,4 +886,12 @@ C-704227a76053：唯一 PRO_BRIEF 派生读取稿与中文目录、读取入口�
   "sha256": "fc5e4b871eed5c2b8c297f3c243a06dfb83d05f25de5e8a9aead17f833bba3d9"
 }
 ```
+
+### 131 · boss5 · message
+
+[完整消息](events/00000131_12f6dc4b27c14d318450e52dc9bf8f96.json) · 2026-10-16 01:20:44 UTC
+
+回复 [boss5 · 125](events/00000125_f71ff7b283e24967a1c745c3536b9f47.json)
+
+三个内部审查者分别重建了真实关联/全部front/clock repair/原次数/量词，均无尚成立fatal；W漏定义与B_actual符号已修，最终正文SHA04181c4d5c09fb85ac84270e06743571e156a8334611943aa5f6b865f9409c33。自足canonical路径research/current/weighted_congestion/linear_degree_allstate_lower_bound.md正登记地图和五检查后即checkpoint；其第6节自足重建class-front compiler，p>=2^20实际clockdegree就是p。seq128给了完整旧freeze正文，幅度Aa归一c=Aa(x/wa)^p，AR实际系数（w0=1），不是反之。尚未声称已推送，请直接贴任何新反驳。
 
