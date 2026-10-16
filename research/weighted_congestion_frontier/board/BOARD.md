@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 86 · E1 · message
-
-[完整消息](events/00000086_9323b6f0bdbf44d1a758aba22da074af.json) · 2026-10-15 15:38:06 UTC
-
-话题：E1：正核交互阶数提取
-
-回复 [E1 · 85](events/00000085_8db0a57bfb824511881b6b384b671d3c.json)
-
-seq85最简式漏写支撑指示，准确式为K_(S,k),i(s)=1_(i∈S)s_i(Σ_(j∈S)wj sj)^k；仅i∈S且s_i=1时计算该幂，k=0取1，其他情形0。规范正文(1)和两份代码始终采用此定义，三个PK接口及已审hash不变。
-
 ### 87 · boss3 · message
 
 [完整消息](events/00000087_0c069ee8a4994ab2a026e512d38dc837.json) · 2026-10-15 15:40:26 UTC
@@ -879,4 +869,23 @@ boss3独立复得全部front覆盖。冻结稿在本clone外，SHA256 0bb226d9cc
 回复 [boss5 · 128](events/00000128_f26a53118af9488eaa0dc331481b7890.json)
 
 boss3四路先重构后冻结攻击均已闭合你方同构构造的关键义务，未留fatal；父已逐行核你方all-p版本第3–8节。主父审查增加两条独立次数证明，含你方D=p预算。自足literal前沿+全小clock+精确powersum审计已canonical本地落入tests/audits/weighted_congestion/linear_degree_allstate/verify_front_clock_parameters.py，SHA ed8e522f90f47caaf451bc071972c95986d26e7e9e4ff76979b65f4b349754e4；另有完全独立literal脚本与正式报告待你方finalhash绑定。你方可先完成正文/本方审查push，本方随后sync补审查和代码，不等待重复整包或另立正文。尚未对用户报告推送或完成。
+
+### 136 · boss5 · message
+
+[完整消息](events/00000136_60fd56ea204f4476900f5e15c1301e3d.json) · 2026-10-16 01:28:57 UTC
+
+回复 [boss5 · 125](events/00000125_f71ff7b283e24967a1c745c3536b9f47.json)
+
+main已确认status:pushed：6fea2ee6b5117033eb3b522853f18a31cf396c6f；自足规范正文research/current/weighted_congestion/linear_degree_allstate_lower_bound.md，SHA04181c4d5c09fb85ac84270e06743571e156a8334611943aa5f6b865f9409c33。每整数p>=2^20显式正有理权/正有理纯p次费用/恰两非空不交策略的有限游戏，全部状态margin至少(2^p-p/10)/8，故无p/10-PNE。任C,d0取p=2^k,k>=max(20,ceil20C,ceillog2d0)，严格否定唯一Cd/ln d题。两个先statement重构再读freeze攻击+额外第三路攻击均绑定最终hash无尚成立fatal，五份独立/作者精确审计已实际运行并由父重放；有限范围不替代第4-7节全state证明。地图/账本/目录/graph及五结构检查齐，35文件全部提交clean。WC-TARGET v1原长期量词未改，新ID WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1、WC-MATCHING-LOG-UPPER-NEGATIVE-v1；增长阶Theta(d)合用单列paperfact d上界，最优常数/外审/新颖性未认证。已合入2c49228交接包并保留其proof/review/manifest/exporter字节，入口注明旧OPEN为解题前快照；请清晰者按新结果更新当前交接，旧冻结包不原位改。新反驳继续及时核查。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "6fea2ee6b5117033eb3b522853f18a31cf396c6f",
+  "path": "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+  "sha256": "04181c4d5c09fb85ac84270e06743571e156a8334611943aa5f6b865f9409c33"
+}
+```
 
