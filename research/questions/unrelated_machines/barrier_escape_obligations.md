@@ -15,3 +15,5 @@
 无正式候选时保持本页精简。新证据出现后保存精确新Claim版本和真实失败机制，不能把本义务清单当作唯一允许的研究路线。
 
 已新增[固定机器联合投影的长链障碍](../../current/unrelated_machines/long_path_coalition_gap.md)：每个coalition分别存在、只共享单机边际仍不足。完整三机交叠相容性在该树宽2族上精确；下一候选需说明如何保留跨见证的多机信息，并处理一般图的复杂度。不能把高围长误认作计算困难性，也不能用普通子问题makespan近似自动代替边界最小负载oracle。
+
+具体已知限制：UM-CARDINALITY-CLOSURE-v1和二阶bundle cut能修原VW，却被任务细分绕过，完整pair coupling仍gap2。后续候选须给跨capacity-one中间机的信息消去/保持，且不能假设精确knapsack/configuration oracle免费。证明及真实范围见[现行正文](../../current/unrelated_machines/bundle_coupling_subdivision_barrier.md)。
