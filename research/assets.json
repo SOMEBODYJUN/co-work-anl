@@ -4777,6 +4777,42 @@
         "research/questions/unrelated_machines/barrier_escape_obligations.md"
       ],
       "limit": "Not an approximation/hardness/hierarchy theorem; (MP) is not generally necessary for integer feasibility; only delete failed configurations safely. Does not impose shared conditional pair/base data. Novelty unverified."
+    },
+    {
+      "id": "unrelated_optimal_convex_fixed_slots",
+      "claims": [
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+        "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "UM-MODEL-v1; explicit m>=2 identical-machine family; positive rational times",
+        "Prescribed uniform marginal of m true optimal schedules; final output constrained to its standard ordered slot graph"
+      ],
+      "produces": "Exact fixed-slot makespan 2m/(m+1) at true OPT=1, for every covering matching and every tie order; exact m-1-change cross-slot optimal repair",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/optimal_convex_slot_gap.py",
+        "tests/audits/unrelated_machines/optimal_convex_slot_independent.py",
+        "tests/audits/unrelated_machines/optimal_convex_slot_repair_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/optimal_convex_slot_gap_audit.json",
+        "evidence/certificates/unrelated_machines/optimal_convex_slot_witness.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/optimal_convex_slot_input.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/optimal_convex_slot_review.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "limit": "Output-space obstruction, not LP gap, general algorithm impossibility, new approximation, or novelty certification. Supplied convex components themselves are optimal outputs."
     }
   ]
 }

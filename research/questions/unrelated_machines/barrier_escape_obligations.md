@@ -39,3 +39,7 @@
 独立条件配置的新边界为[UM-SPARSE-CONDITIONED-CONFIG-GAP-v1](../../current/unrelated_machines/sparse_conditioned_configuration_gap.md)：单边查询内已保持全部单机配置，仍不足以跨不同查询保留共同容量。下一步须明确多机交叠相关性、消元后保持或大小任务联合迁移的新机制；不能继续以更多彼此独立的单机证书充当统一舍入义务。完整四机器bag一致性在该族精确，但一般状态规模和构造复杂度未解决。
 
 完整单机配置的独立LP延伸已被UM-MACHINE-CONFIG-PROBE-GAP-v1的紧凑族排除为充分信息。下个候选须说明如何让条件证书共享一个base（至少跨块逃逸的一阶矩），或绕过该证书架构直接联合舍入；不能把∀i∀C∃各自延伸误读成全局分布。
+
+## 固定槽输出空间必须可改变
+
+UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1说明即使x有真实最优凸分解，固定标准ST图也可不存在统一低于2的匹配。新联合舍入须明确如何允许逐机任务数突破ceil(Σx_ij)、保留凸分量的负载相关性，或怎样做跨槽repair。该族的一轮最优修复必须通过，但单族成功不证明一般余量/位多项式迭代。见[完整反例与修复](../../current/unrelated_machines/optimal_convex_fixed_slot_gap.md)。

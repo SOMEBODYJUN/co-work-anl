@@ -51,3 +51,5 @@
 [稀疏深树](research/current/unrelated_machines/sparse_conditioned_configuration_gap.md)使所有单边完整配置探针各自通过，仍有gap趋2；失败在查询间共同相关性缺失。坏簇路径占位须整体撤离，不能只用总槽计数。完整交叠一致性、星消元后探针和主目标未被排除。
 
 完整单机配置分别强制到完整配置LP也不足：紧凑族在每项探针内部守所有机器容量，仍无共同条件base而gap趋2。可回收显式完整y证书；共同逃逸一阶矩/条件块cut未被排除。该性质非一般可行的必要条件，安全操作仅删除无延伸配置，不能因某一失败配置直接拒绝。
+
+[固定ST槽图的真实最优凸包反例](research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md)否定“更强分数点＋同图择优matching”这一充分接口；全局最优凸分量都可被槽基数排除。本例跨槽迁移即恢复1，不排一般repair或UM-TARGET-v1。

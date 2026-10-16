@@ -7073,6 +7073,46 @@
         "evidence/runs/unrelated_machines/compact_config_probe_audit.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "真实最优凸包的固定有序槽图仍趋2损失",
+      "detail": "Explicit identical-machine true OPT=1 family; all prescribed-slot covering matchings have value 2m/(m+1), arbitrary tie orders. Not algorithmic hardness.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "research/reviews/unrelated_machines/optimal_convex_slot_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-OPTIMAL-CONVEX-SLOT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "真实最优凸包固定槽图的双路精确审计",
+      "detail": "Actual optimum components and ST calls; finite all-assignment/all-slot matching checks; no universal proof by testing.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "tests/audits/unrelated_machines/optimal_convex_slot_gap.py",
+        "tests/audits/unrelated_machines/optimal_convex_slot_independent.py",
+        "examples/unrelated_machines/optimal_convex_slot_input.json",
+        "evidence/certificates/unrelated_machines/optimal_convex_slot_witness.json",
+        "evidence/runs/unrelated_machines/optimal_convex_slot_gap_audit.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "固定槽反例族的一轮最少迁移最优修复",
+      "detail": "Every fixed-slot covering assignment of the explicit family admits an m-1-change optimum repair, and this Hamming distance is sharp.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "research/reviews/unrelated_machines/optimal_convex_slot_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -16966,6 +17006,80 @@
         "research/current/unrelated_machines/row_count_escape_gap.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "DERIVE-UM-OPTIMAL-CONVEX-ST-SLOT-GAP",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+      "statement": "Explicit cyclic true-optimal components give uniform marginal; saturated integer total slots force balanced task counts and the exact near-2 value.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-OPTIMAL-CONVEX-SLOT",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPTIMAL-CONVEX-SLOT-AUDIT-v1"
+      ],
+      "conclusion": "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1",
+      "statement": "Finite exact optimum and slot-cover oracles, actual ST rounding, ties and repair; not universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "evidence/runs/unrelated_machines/optimal_convex_slot_gap_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMIT-UM-OPTIMAL-CONVEX-FIXED-SLOTS",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Even true optimal convex marginals do not give uniform improvement if output remains in their fixed ST graph; changing x/slots or cross-slot repair remains unrestricted.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "stated method boundary"
+    },
+    {
+      "id": "DERIVE-UM-OPTIMAL-CONVEX-SLOT-REPAIR",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1"
+      ],
+      "conclusion": "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+      "statement": "Balanced task counts allow one-to-one small-task evacuation; keeping or moving the big job gives the sharp Hamming lower bound.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "research/reviews/unrelated_machines/optimal_convex_slot_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-OPTIMAL-CONVEX-SLOT-REPAIR",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPTIMAL-CONVEX-SLOT-AUDIT-v1"
+      ],
+      "conclusion": "UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1",
+      "statement": "Finite independent exhaustive Hamming comparisons and explicit repair checks.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "evidence/runs/unrelated_machines/optimal_convex_slot_gap_audit.json"
+      ],
+      "status": "finite evidence"
     }
   ]
 }

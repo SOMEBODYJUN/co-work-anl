@@ -387,3 +387,27 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：(MP)不是一般T整数可行的必要条件，不能因一个失败配置直接拒绝；仅可安全删除该配置。共同base的逃逸一阶矩恒等式立即导出既有条件块cut并排本族；未建立一般求解/舍入、新颖性或外审。
 - Status：完整所述范围证明，实际独立内部审查与双路精确核验；未外审，未认证全球新颖性，主目标OPEN。
 - Related Files：row_count_escape_gap.md§7、machine_config_probe_review.md、compact_config_probe.py、compact_config_probe_independent.py、compact_config_probe_audit.json。来源保留boss2紧凑族、boss3稀疏修复与boss1本节新延伸机制。
+
+## UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1：真实最优凸包内的固定槽舍入近2损失
+
+- Exact Statement / Quantifiers：∀整数m≥2，正文P_m为m台完全相同机器、n=m²任务的合法正有理输入，OPT=1；m个显式真实最优调度均匀平均得全正x_ij=1/m。由该x构造的标准有序单位槽图，对任意逐机平局次序，其每一个覆盖全部任务的匹配都输出makespan=2m/(m+1)。跨槽修复另记UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1。
+- Objects / Domain / Definitions：UM-MODEL-v1；一个unit任务，其余m²−1任务各为1/(m+1)，所有机器同值；标准槽图仅连接正区间交长，定义沿UM-ST-ROUND-v1。
+- Assumptions / Scope：T=真实OPT=1；x甚至附显式全局最优凸分解；最终输出若被限制为这个固定图的覆盖matching才受此边界。m无界，处理时间全正，无不可用边。
+- Conclusion：∀统一ε>0，选m+1>2/ε，该固定输出空间不存在≤(2−ε)OPT的调度。不是松弛值低估或某个坏匹配。
+- Dependencies：UM-MODEL-v1、标准槽构造/Hall覆盖；正文显式循环最优调度、整数槽数饱和及迁移计数。
+- Evidence：自足一般证明；先盲重构后冻结攻击；两路Fraction审计，实际枚举范围见冻结证据；m=1控制另核。
+- Counterevidence / Objections：给出凸分量时可直接返回任一最优分量，故不排一般算法；允许换x/换槽/跨槽迁移也不被排除。行跨度m+1无界，不与两倍行跨度正面结果冲突。
+- Status：完整所述范围证明及内部独立重构/冻结攻击；外审/新颖性/独立论文价值未认证；UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md)、[research/reviews/unrelated_machines/optimal_convex_slot_review.md](../reviews/unrelated_machines/optimal_convex_slot_review.md)、两份代码、输入/证书及evidence/runs/unrelated_machines/optimal_convex_slot_gap_audit.json。
+
+## UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1：固定槽族的一轮最少迁移最优修复
+
+- Exact Statement / Quantifiers：∀整数m≥2，∀上述P_m任意ties固定槽图的覆盖matching对应σ，可在扫描σ后的O(n+m)组合操作及总位多项式时间内改恰m−1个任务的机器，得到C_max=OPT=1；min_{τ:C_max(τ)=1}|{j:σ(j)≠τ(j)}|=m−1。m=1按同公式为空修复。
+- Objects / Domain / Definitions：前一身份的显式identical族及所有覆盖matching调度；Hamming按最终任务机器标签变化计。
+- Assumptions / Scope：允许离开原槽图；只对这个可显式求解族，不是通用repair。
+- Conclusion：跨槽一轮最优修复及精确最小修改数。
+- Dependencies：UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1给每机任务数；双射迁移与big留/移两分支计数。
+- Evidence：正文§4自足推导；冻结增补独立攻击；Fraction修复与不导入核心的整数全枚举。
+- Counterevidence / Objections：不保证一般输入的修复余量、搜索或迭代复杂度；不反驳固定槽gap，因为修复突破旧槽容量。
+- Status：完整所述范围证明及内部独立攻击；外审/新颖性未认证，主目标OPEN。
+- Related Files：同一正文、optimal_convex_slot_review.md、两份主审计、optimal_convex_slot_repair_independent.py及统一冻结记录。

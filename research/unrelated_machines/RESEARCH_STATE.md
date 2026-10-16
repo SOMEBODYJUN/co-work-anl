@@ -75,3 +75,7 @@ UM-DILUTED-ESCAPE-PROBE-GAP-v1进一步使配置＋全部普通LST边探针＋�
 ## 完整条件证书仍缺共同base
 
 UM-MACHINE-CONFIG-PROBE-GAP-v1已将“加强每个探针”推进到全部本地合法配置各自可在完整配置LP取概率1。紧凑族T1仍OPT=2−1/k，原基数/pair合同同时成立但未在条件内部重新耦合。已有共同逃逸一阶矩立即导出块cut；下一高信息行动应选择可计算共同条件容量或直接联合舍入，不能继续把独立条件LP可行性当成一致性。证明/双路实际证书/独立冻结审查从row_count_escape_gap.md§7进入。
+
+## 联合槽路线的真实OPT断点
+
+UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1在完全相同机器上给OPT1及显式真实最优凸分解，所有固定ST槽matching却恰2m/(m+1)。问题是逐机ceil期望任务数的容量，连选择最佳matching也无法避免。所有支撑边均正，分数负载恰真实OPT，并非LPgap。该族可以一轮跨槽迁移恢复最优，见[正文](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md)。下一义务必须允许改变槽输出空间/保留联合配置或repair；单纯让x更强不够。一般统一余量及位多项式迭代仍未解。

@@ -101,3 +101,9 @@
 ## 完整单机配置探针的精确新边界
 
 UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法完整C分别有y_iC=1的完整配置LP延伸，OPT=2−1/k。它不要求共同base或条件pair相容；(MP)本身不是整数可行必要条件，仅安全删失败配置。读取链：专题CLAIMS→row_count_escape_gap.md§7→machine_config_probe_review.md→compact_config_probe.py与compact_config_probe_independent.py→compact_config_probe_audit.json。双路实际有限核验与一般证明分开；共同逃逸一阶矩可恢复旧块cut，主目标OPEN，外审/新颖性未认证。
+
+## 真实最优凸包仍会丢失于固定槽图
+
+[真实最优凸包与固定有序槽图](optimal_convex_fixed_slot_gap.md)给UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1：完全相同机器上也可有显式OPT1的全局凸分解，而由平均x生成的每一个槽匹配都逼近2OPT。每机槽数饱和强制平衡任务数，排除了好整数分量。不是配置gap；更强x或在同图里择优均不足，本族却有一轮最优跨槽修复。主目标仍OPEN。
+
+读取链：本题账本→正文→optimal_convex_slot_review.md→optimal_convex_slot_gap.py及独立审计→optimal_convex_slot_gap_audit.json；输入及显式凸分量/匹配证书由正文链接。下一义务是改变联合槽容量/保留配置相关性或给一般repair，不能将本例升级为算法困难性。

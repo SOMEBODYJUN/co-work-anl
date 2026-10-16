@@ -680,6 +680,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-MACHINE-CONFIG-PROBE-GAP-v1 | ∀k≥2，既有紧凑族在T1对每机器每个合法C分别有y_iC=1完整配置LP点，OPT=2−1/k，故该合同sup gap2。∀i∀C∃各自y，不含共同base/条件混合恒等式；(MP)非整数可行必要条件，安全规则仅删失败配置，本族无首次删除。 | [正文§7](unrelated_machines/row_count_escape_gap.md)、[独立审查](../reviews/unrelated_machines/machine_config_probe_review.md)；全部分类/位长/来源见正文与专题CLAIMS，双路有限证据不代一般证明；外审/新颖性未认证，主目标OPEN。 |
 
+## 真实最优凸包与固定槽输出空间
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1 | ∀m≥2，m台identical机器/n=m²正有理任务有OPT1及m个显式最优调度均匀边际x=1/m；任意逐机ties的固定有序槽图，每个覆盖匹配值均为2m/(m+1)→2。修复另见下项。 | [自足正文](unrelated_machines/optimal_convex_fixed_slot_gap.md)、[冻结独立审查](../reviews/unrelated_machines/optimal_convex_slot_review.md)；不排换x/换槽/repair或主目标，不声称新颖性。 |
+| UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1 | 对固定槽反例族的任意覆盖matching调度，恰m−1任务跨槽迁移即可达到OPT1，且该Hamming修改数最优；扫描与重分配为O(n+m)组合操作。 | 同正文§4及增补审查；只针对显式族，不是一般repair算法。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
