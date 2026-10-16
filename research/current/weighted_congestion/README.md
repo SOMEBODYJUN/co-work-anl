@@ -12,6 +12,10 @@
 4. 正文第10节给原有精确审计；[独立审查补节](../../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给免对数的整数预算证明、[完整多类拼装审计](../../../tests/audits/weighted_congestion/cyclic_clone/independent_multiclass_assembly.py)与[冻结结果](../../../evidence/runs/weighted_congestion/cyclic_clone/linear_degree_multiclass_assembly.json)。有限计算不是一般证明。
 5. [精确Claim](../../weighted_congestion_frontier/CLAIMS.md)、[五轴状态](../../review_status.json)、[当前义务](../../weighted_congestion_frontier/RESEARCH_STATE.md)与[目录](../../weighted_congestion_frontier/FILES.md)，再按下表选择结构工具。
 
+## 面向评审读者的连续主稿
+
+[完整英文PDF](linear_threshold_article.pdf)与[LaTeX源稿](linear_threshold_article.tex)将已审线性下界重构为自足文章：主定理及模型 → 同权类前沿编译 → 完整循环窗口与预算 → 全部错位前沿 → 同次数拼装 → 对数保证否定及Theta(d)推论。没有把旧方法障碍或小反例并入主线凑篇幅。稿件[审读与产物核查](../../reviews/weighted_congestion/linear_threshold_article_review.md)绑定源/PDF hash，说明已处理问题、引用边界及实际十页视觉检查；[BibTeX](linear_threshold_references.bib)与源稿同目录。原规范数学正文和Claim身份不变，成稿不等于外审、优先权或录用认证。
+
 ## 主结果与依赖
 
 健康邻接反向短窗口与正向全返回给α=p/10双扫环、B*/η=exp(O(log²p))；单个环不是非存在。任意类前沿相位差若离两个短区间，heavy端点给出口；否则短差累计，末类返回端点按parity选择方向，有限缺陷低于余量，从而全部product-front有统一η0=H/4出口。同类010/101锚定时钟再以最早异位单人修复覆盖其余状态；p≥2^20时实际新增degree直接取p，得到全状态无(p/10)-PNE。完整正文从资源定义重建每一环节，不导入外部存在定理。

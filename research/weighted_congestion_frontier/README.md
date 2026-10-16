@@ -2,6 +2,8 @@
 
 本次`Cd/ln d`全类存在命题已有[完整严格否定证明](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)：每整数d≥2^20有全部状态严格(d/10)改善的有限正有理两动作游戏。精确新身份、全部量词与审查在[CLAIMS](CLAIMS.md)，数学从[专题地图](../current/weighted_congestion/README.md)进入。外部评审/新颖性未认证；WC-TARGET v1长期精确门槛身份不改写。
 
+连续评审阅读另有[完整英文主稿PDF](../current/weighted_congestion/linear_threshold_article.pdf)、[LaTeX源](../current/weighted_congestion/linear_threshold_article.tex)和[成稿审读](../reviews/weighted_congestion/linear_threshold_article_review.md)；它们重构已审结论，不新增数学状态或承诺录用。
+
 新对话先读根四入口、[MODEL](MODEL.md)、[ACCEPTANCE](ACCEPTANCE.md)、现行数学地图与两份独立审查，再按实际义务读取。当前最重要的后续是核查/简化新证明、常数、有限d与外审，不能仍把全类o(d)存在性列为未解。
 
 ## 角色与 Pro 交接顺序

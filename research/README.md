@@ -2,6 +2,8 @@
 
 当前主要成果是**加权原子拥塞博弈的线性全状态非存在下界及Cd/ln d保证的严格否定**。设施选址和顺序客户吸引是独立保留的研究线；它们有不同模型、量词和未解问题。完整的[中文资产名、文件位置、具体用途与状态依据](CATALOG.md)覆盖当前数学正文、问题、审查和已整合的拥塞核验资产。
 
+面向审稿式连续阅读，可直接读[线性非存在界英文主稿PDF](current/weighted_congestion/linear_threshold_article.pdf)和[成稿核查](reviews/weighted_congestion/linear_threshold_article_review.md)；含完整证明，未认证优先权或期刊录用。
+
 交给未读仓库的研究者：先读[当前线性全状态否定证明](current/weighted_congestion/linear_degree_allstate_lower_bound.md)及其独立审查；解题前冻结整理可复用[自足接题材料与精确方法障碍](weighted_congestion_frontier/PRO_BRIEF.md)和[完整任务正文](weighted_congestion_frontier/prompts/PRO_ATTACK.md)；旧整理稿的OPEN状态由新否定结论取代，其余数学、审查与证据仍可按冻结短指针追溯，不要求默认通读历史。
 
 ## 我应该从哪里开始

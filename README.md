@@ -10,6 +10,8 @@
 
 证明链为健康循环窗口参数 → 全部类前沿出口 → 同类三元时钟修复非法状态 → 原次数预算 → 原题否定量词；每一态而非单个改善环均被覆盖。独立先重构后冻结攻击已覆盖该链；[审查补节](research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给整数分层次数证明及完整多类拼装核验，精确审计仅核查其实际有限范围。外部同行评审、新颖性与最优常数未认证。精确ID是`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`及`WC-MATCHING-LOG-UPPER-NEGATIVE-v1`。
 
+面向评审读者的[自足英文主稿PDF](research/current/weighted_congestion/linear_threshold_article.pdf)与[LaTeX源](research/current/weighted_congestion/linear_threshold_article.tex)已完成内部全文审读和十页版面检查；[稿件核查](research/reviews/weighted_congestion/linear_threshold_article_review.md)区分完整主证明、文献推论与尚未认证的外审/新颖性。数学规范正文和Claim身份不变。
+
 WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述。新a_*(d)≥d/10与单列Paper Fact的一般d上界合用给增长阶Θ(d)；精确常数、有限d最优值及复杂度仍未刻画。旧奇环T_d∼d/ln d下界和该拓扑实际阈值恰T_d仍成立，现为独立子类资产。
 
 独立接续先读新全状态证明。既有[Pro自足简报](research/weighted_congestion_frontier/PRO_BRIEF.md)、[来源manifest](research/weighted_congestion_frontier/PRO_BRIEF_SOURCES.json)及[冻结导出器](research/weighted_congestion_frontier/tools/export_pro_packet.py)保留2c49228及其前序快照的模型与工具整理；其旧OPEN状态已由当前新否定证明取代，当前交接应另附新正文与审查。冻结包按指定提交导出，不原位改写。

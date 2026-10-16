@@ -1073,6 +1073,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Evidence：完整一般分析；独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节；[审查补节](../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给免对数的次数证明、完整多类拼装及基体/时钟对称边界。
 - Counterevidence / Objections：W漏定义和B_actual未定义已字面修复并经最终hash核对；backward r+1、返回缺陷、原次数预算、非法状态单人修复均被直接攻击，未发现尚成立的fatal objection。
 - Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
+- 连续成稿：[自足英文主稿](../current/weighted_congestion/linear_threshold_article.tex)、[PDF](../current/weighted_congestion/linear_threshold_article.pdf)及[审读记录](../reviews/weighted_congestion/linear_threshold_article_review.md)；不新增数学状态。
 - Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。
 
 ## WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1 — INTERNALLY REVIEWED
@@ -1085,6 +1086,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Evidence：完整一般分析；独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节；[审查补节](../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给免对数的次数证明、完整多类拼装及基体/时钟对称边界。
 - Counterevidence / Objections：W漏定义和B_actual未定义已字面修复并经最终hash核对；backward r+1、返回缺陷、原次数预算、非法状态单人修复均被直接攻击，未发现尚成立的fatal objection。
 - Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
+- 连续成稿：[自足英文主稿](../current/weighted_congestion/linear_threshold_article.tex)、[PDF](../current/weighted_congestion/linear_threshold_article.pdf)及[审读记录](../reviews/weighted_congestion/linear_threshold_article_review.md)；不新增数学状态。
 - Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。
 
 ## WC-MATCHING-LOG-UPPER-NEGATIVE-v1 — INTERNALLY REVIEWED
@@ -1097,4 +1099,5 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Evidence：完整一般分析；独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节；[审查补节](../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给免对数的次数证明、完整多类拼装及基体/时钟对称边界。
 - Counterevidence / Objections：W漏定义和B_actual未定义已字面修复并经最终hash核对；backward r+1、返回缺陷、原次数预算、非法状态单人修复均被直接攻击，未发现尚成立的fatal objection。
 - Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
+- 连续成稿：[自足英文主稿](../current/weighted_congestion/linear_threshold_article.tex)、[PDF](../current/weighted_congestion/linear_threshold_article.pdf)及[审读记录](../reviews/weighted_congestion/linear_threshold_article_review.md)；不新增数学状态。
 - Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。
