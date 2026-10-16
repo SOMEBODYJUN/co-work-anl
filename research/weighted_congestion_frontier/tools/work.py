@@ -17,6 +17,9 @@ import uuid
 
 REMOTE = "https://github.com/SOMEBODYJUN/co-work-anl.git"
 TOOLS = "research/weighted_congestion_frontier/tools"
+WORKSPACES = "research/workspaces"
+DEFAULT_SAVE = "shared"
+IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}")
 TOKEN = re.compile(rb"(?:github_pat_|ghp_)[A-Za-z0-9_]{12,}")
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}")
 ROUTING = {"GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE",
@@ -113,7 +116,7 @@ def actor(repo, requested=None):
     # useful for an explicitly assigned research lead while preserving the
     # historical random fallback for ordinary sessions.
     requested_from_env = os.environ.get("WCG_ACTOR", "").strip()
-    chosen = requested or requested_from_env or saved or ("W" + uuid.uuid4().hex[:12])
+    chosen = requested if requested is not None else (requested_from_env or saved or ("W" + uuid.uuid4().hex[:12]))
     if not chosen or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}", chosen):
         raise Stop("start --actor 使用提示词里的角色号，例如 001 或 R1。")
     if saved and saved != chosen:
@@ -137,8 +140,11 @@ def write_lock(repo):
         yield
 
 
-def sync(repo, env):
+def sync(repo, env, allow_legacy=False):
     with write_lock(repo):
+        branch = value(repo, "branch", "--show-current")
+        if branch != "main" and not (allow_legacy and branch.startswith("wcg/work/")):
+            raise Stop("日常同步只允许 main；保留当前分支，旧工作分支请用 start 安全迁移。")
         for item in ("MERGE_HEAD", "CHERRY_PICK_HEAD", "REVERT_HEAD", "rebase-merge", "rebase-apply"):
             p = Path(value(repo, "rev-parse", "--git-path", item))
             if ((repo / p).resolve()).exists():
@@ -172,6 +178,97 @@ def sync(repo, env):
         return {"status": "synced", "main": tip, "preserved_work": True}
 
 
+def save_id(repo, requested=None):
+    saved = run(repo, "config", "--local", "--get", "wcg.save", check=False).stdout.decode().strip()
+    chosen = requested if requested is not None else (saved or DEFAULT_SAVE)
+    if not IDENTIFIER.fullmatch(chosen):
+        raise Stop("研究存档请使用安全 ID：字母、数字、点、下划线或连字符。")
+    if saved and requested and requested != saved:
+        raise Stop("本目录已绑定存档 " + saved + "；其他存档请使用独立 clone。")
+    if not saved:
+        run(repo, "config", "--local", "wcg.save", chosen)
+    return chosen
+
+
+def workspace_path(repo, save, who):
+    if not IDENTIFIER.fullmatch(save) or not IDENTIFIER.fullmatch(who):
+        raise Stop("工作区 ID 不合法。")
+    relative = Path(WORKSPACES) / save / who
+    cursor = repo
+    for part in relative.parts:
+        cursor /= part
+        if cursor.is_symlink():
+            raise Stop("工作区路径不能经过符号链接。")
+    return relative
+
+
+def workspace_init(repo, save, who, resume=False):
+    with write_lock(repo):
+        if value(repo, "branch", "--show-current") != "main":
+            raise Stop("个人工作区只能在 main 准备；不切换或创建研究分支。")
+        relative = workspace_path(repo, save, who)
+        root = repo / relative
+        profile = root / "workspace.json"
+        readme = root / "README.md"
+        if profile.is_symlink() or readme.is_symlink():
+            raise Stop("工作区文件不能是符号链接。")
+        instance = run(repo, "config", "--local", "--get", "wcg.instance", check=False).stdout.decode().strip()
+        if not instance:
+            instance = uuid.uuid4().hex
+        if not re.fullmatch(r"[0-9a-f]{32}", instance):
+            raise Stop("本地工作区身份配置损坏；先保留并核对。")
+        created = not profile.exists()
+        if not created:
+            old = json.loads(profile.read_text())
+            if (not isinstance(old, dict) or set(old) != {"schema", "save", "actor", "instance"}
+                    or type(old["schema"]) is not int or old["schema"] != 1
+                    or old["save"] != save or old["actor"] != who
+                    or not isinstance(old["instance"], str)
+                    or not re.fullmatch(r"[0-9a-f]{32}", old["instance"])):
+                raise Stop("已存在的工作区身份不相容；保留原内容，不覆盖。")
+            if old["instance"] != instance:
+                if not resume:
+                    raise Stop("这个编号已有其他工作区；新对话换编号，确实接续旧身份时用 start --resume。")
+                instance = old["instance"]
+        root.mkdir(parents=True, exist_ok=True)
+        if created:
+            with profile.open("x") as stream:
+                json.dump({"schema": 1, "save": save, "actor": who, "instance": instance},
+                          stream, ensure_ascii=False, indent=2)
+                stream.write("\n")
+        if not readme.exists():
+            with readme.open("x") as stream:
+                stream.write(f"# {who} 的个人研究工作区\n\n研究存档：`{save}`；发布身份：`{who}`。\n\n"
+                             "## 当前研究\n\n在这里写准确问题、采用的定义/命题版本、当前表示与卡点。\n\n"
+                             "## 可访问材料\n\n按需要在 notes/、experiments/、candidates/ 中保存有接续价值的材料，并在此链接。"
+                             "成熟资产沿既有规范入库，此处链接正文，不重复复制。\n\n"
+                             "## 交流与状态\n\n可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。"
+                             "本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。\n")
+        run(repo, "config", "--local", "wcg.instance", instance)
+        remote = run(repo, "ls-tree", "origin/main", "--", relative.as_posix(), check=False)
+        return {"path": relative.as_posix(), "created": created,
+                "remote_directory_exists": bool(remote.returncode == 0 and remote.stdout),
+                "note": "local preparation; checkpoint and remote confirmation publish new changes"}
+
+
+def visit(repo, env, save, who, path="README.md"):
+    relative = workspace_path(repo, save, who)
+    tail = Path(path)
+    if (tail.is_absolute() or not tail.parts or any(p in {".", ".."} for p in tail.parts)
+            or "\\" in path or any(c in path for c in "\x00\r\n:")):
+        raise Stop("访问路径必须是工作区内的普通相对文件路径。")
+    target = (relative / tail).as_posix()
+    with write_lock(repo):
+        run(repo, "fetch", "--quiet", "--no-tags", "origin",
+            "+refs/heads/main:refs/remotes/origin/main", env=env)
+        tip = value(repo, "rev-parse", "origin/main")
+        entry = run(repo, "ls-tree", tip, "--", ":(literal)" + target).stdout
+        if not entry.startswith((b"100644 blob ", b"100755 blob ")):
+            raise Stop("远端尚无这个普通文件；本地未推送材料不可被访问。")
+        content = run(repo, "show", tip + ":" + target).stdout.decode()
+    return {"actor": who, "save": save, "commit": tip, "path": target, "text": content}
+
+
 def start(args):
     repo = Path(args.repo).expanduser().resolve()
     if not (repo / ".git").exists():
@@ -202,7 +299,8 @@ def start(args):
         raise Stop("请在研究工作目录中执行 start。")
     if branch != "main" and not branch.startswith("wcg/work/"):
         raise Stop("当前分支不是 main 或旧研究工作分支；请先保存并处理这个独立主题。")
-    result = sync(repo, env)
+    save = save_id(repo, getattr(args, "save", None))
+    result = sync(repo, env, allow_legacy=branch.startswith("wcg/work/"))
     if branch != "main":
         # sync has already preserved staged/unstaged/untracked work and stopped
         # on any real conflict. Keep any existing local main under a local ref
@@ -213,9 +311,11 @@ def start(args):
                 run(repo, "update-ref", "refs/wcg/recovery/main-" + uuid.uuid4().hex,
                     previous.stdout.decode().strip())
             run(repo, "branch", "-M", "main")
-    result.update(actor=who, repo=str(repo), branch=value(repo, "branch", "--show-current"))
+    workspace = workspace_init(repo, save, who, getattr(args, "resume", False))
+    result.update(actor=who, save=save, workspace=workspace,
+                  repo=str(repo), branch=value(repo, "branch", "--show-current"))
     print(json.dumps(result, ensure_ascii=False), flush=True)
-    return board(repo, env, "view", [])
+    return board(repo, env, "view", ["--save", save])
 
 
 def board(repo, env, command, extra):
@@ -236,11 +336,14 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--repo", default=default_repo())
     p.add_argument("--token-file")
+    p.add_argument("--save", help="研究存档 ID；首次绑定后同 clone 保持不变")
     sub = p.add_subparsers(dest="command", required=True)
     s = sub.add_parser("start", help="恢复项目，固定角色号，同步并读取公屏")
     s.add_argument("--actor", help="可选；省略时为本对话生成并记住唯一发布标识")
     s.add_argument("--token-file", default=argparse.SUPPRESS)
     s.add_argument("--remote", default=REMOTE)
+    s.add_argument("--save", default=argparse.SUPPRESS)
+    s.add_argument("--resume", action="store_true", help="明确接续已存在的同号工作区")
     sub.add_parser("sync", help="同步 main 并保留本地工作")
     r = sub.add_parser("read", help="读取异步公屏")
     r.add_argument("--json", action="store_true")
@@ -253,6 +356,27 @@ def main():
     text.add_argument("--text-file")
     for name in ("thread", "reply-to", "asset-json", "kind", "event-id"):
         s.add_argument("--" + name)
+    s.add_argument("--mention", action="append", default=[])
+    s.add_argument("--to", help="定向私聊收件人；省略时为公屏")
+    dm = sub.add_parser("dm", help="发送或读取与一位 Worker 的双方私聊")
+    dm.add_argument("--to", required=True)
+    text = dm.add_mutually_exclusive_group()
+    text.add_argument("--text")
+    text.add_argument("--text-file")
+    dm.add_argument("--json", action="store_true")
+    for name in ("thread", "reply-to", "asset-json", "kind", "event-id"):
+        dm.add_argument("--" + name)
+    inbox = sub.add_parser("inbox", help="查看自己的私聊、提及和回复；默认未读")
+    inbox.add_argument("--json", action="store_true")
+    inbox.add_argument("--all", action="store_true")
+    inbox.add_argument("--limit", type=int)
+    ack = sub.add_parser("ack", help="标记收件箱消息已读，不代表数学采用")
+    ack.add_argument("ids", nargs="+")
+    workspace = sub.add_parser("workspace", help="准备自己的个人研究工作区")
+    workspace.add_argument("--resume", action="store_true")
+    v = sub.add_parser("visit", help="只读访问别人已推送的工作区文件")
+    v.add_argument("actor")
+    v.add_argument("--path", default="README.md")
     c = sub.add_parser("checkpoint", help="立即保存阶段资产并推送")
     c.add_argument("paths", nargs="*")
     c.add_argument("-m", "--message")
@@ -267,11 +391,15 @@ def main():
     repo = checked_repo(a.repo)
     env = auth(repo, a)
     who = actor(repo)
+    save = save_id(repo, a.save)
+    target = getattr(a, "to", None)
+    if target is not None and (not IDENTIFIER.fullmatch(target) or target == who):
+        raise Stop("私聊必须指定另一位 Worker 的有效编号；不会改发到公屏。")
     if a.command == "sync":
         print(json.dumps(sync(repo, env), ensure_ascii=False))
         return 0
     if a.command == "read":
-        extra = ["--json"] if a.json else []
+        extra = ["--save", save] + (["--json"] if a.json else [])
         if a.thread is not None:
             extra += ["--thread", a.thread]
         if a.limit is not None:
@@ -279,15 +407,47 @@ def main():
                 raise Stop("read --limit 必须是非负整数。")
             extra += ["--limit", str(a.limit)]
         return board(repo, env, "view", extra)
-    if a.command == "send":
-        extra = ["--actor", who]
+    if a.command == "workspace":
+        print(json.dumps(workspace_init(repo, save, who, a.resume), ensure_ascii=False))
+        return 0
+    if a.command == "visit":
+        print(json.dumps(visit(repo, env, save, a.actor, a.path), ensure_ascii=False, indent=2))
+        return 0
+    if a.command == "ack":
+        extra = ["--actor", who, "--save", save]
+        for ident in a.ids:
+            extra += ["--event-id", ident]
+        return board(repo, env, "ack", extra)
+    if a.command == "inbox":
+        extra = ["--actor", who, "--save", save, "--inbox"]
+        if not a.all:
+            extra += ["--unread"]
+        if a.json:
+            extra += ["--json"]
+        if a.limit is not None:
+            extra += ["--limit", str(a.limit)]
+        return board(repo, env, "view", extra)
+    if a.command == "dm" and a.text is None and a.text_file is None:
+        extra = ["--actor", who, "--save", save, "--peer", a.to]
+        if a.json:
+            extra += ["--json"]
+        if a.thread:
+            extra += ["--thread", a.thread]
+        return board(repo, env, "view", extra)
+    if a.command in ("send", "dm"):
+        extra = ["--actor", who, "--save", save]
         for name in ("text", "text_file", "thread", "reply_to", "asset_json", "kind", "event_id"):
             v = getattr(a, name)
             if v is not None:
                 extra += ["--" + name.replace("_", "-"), v]
+        if getattr(a, "to", None) is not None:
+            extra += ["--to", a.to]
+        for person in getattr(a, "mention", []):
+            extra += ["--mention", person]
         return board(repo, env, "say", extra)
     if a.command in ("pending", "retry", "discard"):
-        return board(repo, env, a.command, ["--event-id", a.event_id] if a.command != "pending" else [])
+        return board(repo, env, a.command,
+                     ["--event-id", a.event_id, "--actor", who] if a.command != "pending" else [])
     if a.command == "checkpoint":
         command = [sys.executable, str(repo / TOOLS / "checkpoint.py"), "--repo", str(repo), *a.paths]
         if a.message:

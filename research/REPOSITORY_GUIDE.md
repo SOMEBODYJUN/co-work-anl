@@ -1,5 +1,7 @@
 # 仓库生产、读取与保存规则
 
+个人研究桌面见 [workspaces/README.md](workspaces/README.md)：每个 Work 的本人目录保存在 main，其他人可以访问已推送版本并私聊。默认保存只追加本人的桌面；私聊仍走原公屏分支，默认公屏过滤私聊，二者不产生新研究分支。保存程序审查全部待推本地历史，避免范围外旧提交夹带；实际操作见 [RUNBOOK](weighted_congestion_frontier/RUNBOOK.md)。
+
 沿用 [GROWTH.md](GROWTH.md) 的目录合同及根 [AGENTS.md](../AGENTS.md) 的数学资产规范。这里补齐分支到共同状态的环节，不另立一套数学身份规则。
 
 按问题阅读先用[研究总目录](README.md)，查具体文件名字与用途用[中文资产总目录](CATALOG.md)。`catalog.json` 维护逐文件名称和读取目的，`assets.json` 维护逐命题文件合同，`review_status.json` 维护分轴状态，三者职责不同。当前数学稿与审查从各专题 README 沿证明链进入；投稿旧评估只在历史来源中追溯。

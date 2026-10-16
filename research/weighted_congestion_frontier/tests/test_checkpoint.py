@@ -275,6 +275,192 @@ class CheckpointTests(unittest.TestCase):
             self.save()
         self.assertEqual(run(self.repo, "rev-parse", "HEAD"), self.before)
 
+    def test_preexisting_out_of_scope_commit_cannot_hitchhike_on_checkpoint(self):
+        (self.repo / "outside.md").write_text("unrelated earlier draft\n")
+        run(self.repo, "add", "outside.md")
+        run(self.repo, "commit", "-m", "earlier unrelated work")
+        earlier = run(self.repo, "rev-parse", "HEAD")
+        self.note.write_text("intended scoped result\n")
+        with self.assertRaisesRegex(c.Stop, "outside checkpoint scope.*outside.md"):
+            self.save(paths=[c.SCOPE])
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+        self.assertEqual(run(self.repo, "show", "HEAD:" + c.SCOPE + "/note.md"), "intended scoped result")
+        self.assertEqual(run(self.repo, "merge-base", "--is-ancestor", earlier, "HEAD"), "")
+
+    def test_explicit_backlog_scope_has_complete_receipt_and_descriptors(self):
+        (self.repo / "outside.md").write_text("explicitly included earlier draft\n")
+        run(self.repo, "add", "outside.md")
+        run(self.repo, "commit", "-m", "earlier draft")
+        earlier = run(self.repo, "rev-parse", "HEAD")
+        self.note.write_text("current result\n")
+        result = self.save(paths=[c.SCOPE, "outside.md"])
+        expected = {"outside.md", c.SCOPE + "/note.md"}
+        self.assertEqual(set(result["files"]), expected)
+        self.assertEqual(set(result["outgoing_files"]), expected)
+        self.assertEqual(set(result["outgoing_commits"]), {earlier, result["commit"]})
+        self.assertEqual(result["pushed_head"], run(self.remote, "rev-parse", "main"))
+        self.assertEqual({d["asset"]["path"] for d in result["assets"]}, expected)
+        for descriptor in result["assets"]:
+            asset = descriptor["asset"]
+            blob = subprocess.check_output(["git", "cat-file", "blob", asset["commit"] + ":" + asset["path"]], cwd=self.remote)
+            self.assertEqual(hashlib.sha256(blob).hexdigest(), asset["sha256"])
+
+    def test_historical_secret_overwritten_by_safe_text_is_not_pushed(self):
+        self.note.write_text("ghp_" + "A" * 32)
+        run(self.repo, "add", c.SCOPE)
+        run(self.repo, "commit", "-m", "accidental credential")
+        self.note.write_text("safe final text\n")
+        with self.assertRaisesRegex(c.Stop, "Credential-like content in outgoing history"):
+            self.save()
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+        self.assertEqual(self.note.read_text(), "safe final text\n")
+
+    def test_historical_secret_deleted_before_checkpoint_is_not_pushed(self):
+        deleted = self.scope / "temporary.txt"
+        deleted.write_text("ghp_" + "A" * 32)
+        run(self.repo, "add", c.SCOPE)
+        run(self.repo, "commit", "-m", "temporary file")
+        deleted.unlink()
+        run(self.repo, "add", "-A")
+        run(self.repo, "commit", "-m", "remove temporary file")
+        with self.assertRaisesRegex(c.Stop, "Credential-like content in outgoing history"):
+            self.save()
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+
+    def test_historical_credential_filename_and_commit_metadata_are_rejected(self):
+        special = self.scope / "githubtoken.txt"
+        special.write_text("placeholder\n")
+        run(self.repo, "add", c.SCOPE)
+        run(self.repo, "commit", "-m", "temporary placeholder")
+        special.unlink()
+        run(self.repo, "add", "-A")
+        run(self.repo, "commit", "-m", "remove placeholder")
+        with self.assertRaisesRegex(c.Stop, "Credential-like filename in outgoing history"):
+            self.save()
+        # A separate local reset only changes this disposable test fixture.
+        run(self.repo, "reset", "--hard", self.before)
+        self.note.write_text("ordinary text\n")
+        run(self.repo, "add", c.SCOPE)
+        run(self.repo, "commit", "-m", "ghp_" + "A" * 32)
+        with self.assertRaisesRegex(c.Stop, "Credential-like commit metadata"):
+            self.save()
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+
+    def test_historical_symlink_removed_before_checkpoint_is_rejected(self):
+        link = self.scope / "link"
+        link.symlink_to("note.md")
+        run(self.repo, "add", c.SCOPE)
+        run(self.repo, "commit", "-m", "temporary symlink")
+        link.unlink()
+        run(self.repo, "add", "-A")
+        run(self.repo, "commit", "-m", "remove symlink")
+        with self.assertRaisesRegex(c.Stop, "Outgoing nonregular file"):
+            self.save()
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+
+    def test_peer_changes_outside_scope_do_not_block_disjoint_merge(self):
+        directory = self.root / "outside-peer"
+        run(self.root, "clone", "--branch", "main", str(self.remote), str(directory))
+        run(directory, "config", "user.name", "Peer")
+        run(directory, "config", "user.email", "peer@example.invalid")
+        (directory / "outside.md").write_text("already-published peer change\n")
+        run(directory, "add", "outside.md")
+        run(directory, "commit", "-m", "peer unrelated area")
+        run(directory, "push", "origin", "main")
+        self.note.write_text("our scoped change\n")
+        result = self.save(paths=[c.SCOPE])
+        self.assertEqual(result["status"], "pushed")
+        self.assertEqual(result["outgoing_files"], [c.SCOPE + "/note.md"])
+        self.assertEqual((self.repo / "outside.md").read_text(), "already-published peer change\n")
+
+    def test_historical_secret_in_merge_resolution_is_not_pushed(self):
+        self.note.write_text("left side\n")
+        run(self.repo, "add", c.SCOPE)
+        run(self.repo, "commit", "-m", "left side")
+        left = run(self.repo, "rev-parse", "HEAD")
+        run(self.repo, "checkout", "-b", "fixture-side", self.before)
+        self.note.write_text("right side\n")
+        run(self.repo, "add", c.SCOPE)
+        run(self.repo, "commit", "-m", "right side")
+        right = run(self.repo, "rev-parse", "HEAD")
+        run(self.repo, "checkout", "main")
+        failed = subprocess.run(["git", "merge", "--no-edit", right], cwd=self.repo,
+                                capture_output=True)
+        self.assertNotEqual(failed.returncode, 0)
+        self.note.write_text("ghp_" + "A" * 32)
+        run(self.repo, "add", c.SCOPE)
+        run(self.repo, "commit", "-m", "resolve merge")
+        self.assertEqual(len(run(self.repo, "rev-list", "--parents", "-n", "1", "HEAD").split()), 3)
+        self.note.write_text("safe final result\n")
+        with self.assertRaisesRegex(c.Stop, "Credential-like content in outgoing history"):
+            self.save()
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+        self.assertEqual(run(self.repo, "merge-base", "--is-ancestor", left, "HEAD"), "")
+
+    def test_default_scope_includes_own_workspace_and_leaves_peer_draft(self):
+        run(self.repo, "config", "--local", "wcg.actor", "R-self")
+        run(self.repo, "config", "--local", "wcg.save", "topic-a")
+        own = self.repo / "research/workspaces/topic-a/R-self/note.md"
+        peer = self.repo / "research/workspaces/topic-a/R-peer/note.md"
+        own.parent.mkdir(parents=True)
+        peer.parent.mkdir(parents=True)
+        own.write_text("our organized draft\n")
+        peer.write_text("peer unfinished draft\n")
+        result = self.save()
+        self.assertEqual(result["files"], [own.relative_to(self.repo).as_posix()])
+        self.assertEqual(run(self.remote, "show", "main:" + own.relative_to(self.repo).as_posix()), "our organized draft")
+        self.assertEqual(run(self.remote, "ls-tree", "-r", "main", "--", peer.relative_to(self.repo).as_posix()), "")
+        self.assertEqual(peer.read_text(), "peer unfinished draft\n")
+
+    def test_default_workspace_save_and_explicit_scope_for_peer(self):
+        run(self.repo, "config", "--local", "wcg.actor", "R-self")
+        own = self.repo / "research/workspaces/shared/R-self/note.md"
+        peer = self.repo / "research/workspaces/shared/R-peer/note.md"
+        own.parent.mkdir(parents=True)
+        peer.parent.mkdir(parents=True)
+        own.write_text("own draft\n")
+        peer.write_text("explicitly handled peer file\n")
+        first = self.save()
+        self.assertEqual(first["outgoing_files"], [own.relative_to(self.repo).as_posix()])
+        result = self.save(paths=[peer.parent.relative_to(self.repo).as_posix()])
+        self.assertEqual(result["outgoing_files"], [peer.relative_to(self.repo).as_posix()])
+        self.assertEqual(run(self.remote, "show", "main:" + peer.relative_to(self.repo).as_posix()), "explicitly handled peer file")
+
+    def test_precommitted_peer_workspace_is_not_in_default_scope(self):
+        run(self.repo, "config", "--local", "wcg.actor", "R-self")
+        peer = self.repo / "research/workspaces/shared/R-peer/note.md"
+        peer.parent.mkdir(parents=True)
+        peer.write_text("precommitted peer draft\n")
+        run(self.repo, "add", "research/workspaces")
+        run(self.repo, "commit", "-m", "peer draft included earlier")
+        self.note.write_text("our result\n")
+        with self.assertRaisesRegex(c.Stop, "outside checkpoint scope.*R-peer/note.md"):
+            self.save()
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+
+    def test_workspace_ids_cannot_escape_default_scope(self):
+        run(self.repo, "config", "--local", "wcg.actor", "../peer")
+        with self.assertRaisesRegex(c.Stop, "Invalid local actor/save"):
+            self.save()
+        self.assertEqual(run(self.repo, "rev-parse", "HEAD"), self.before)
+
+    def test_unavailable_remote_baseline_never_pushes_unexamined_history(self):
+        self.note.write_text("local checkpoint remains recoverable\n")
+        original = c.git
+        pushes = []
+        def unavailable(repo, *args, **kwargs):
+            if args and args[0] == "fetch":
+                return subprocess.CompletedProcess(args, 1, b"", b"offline")
+            if args and args[0] == "push":
+                pushes.append(args)
+            return original(repo, *args, **kwargs)
+        with patch.object(c, "git", unavailable):
+            with self.assertRaisesRegex(c.Stop, "Remote confirmation unavailable"):
+                self.save()
+        self.assertEqual(pushes, [])
+        self.assertNotEqual(run(self.repo, "rev-parse", "HEAD"), self.before)
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+
 
 if __name__ == "__main__":
     unittest.main()

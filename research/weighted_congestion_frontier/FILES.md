@@ -318,8 +318,8 @@
 | [拥塞匹配上界命题的唯一完成标准与交付验收](<ACCEPTANCE.md>) | `research/weighted_congestion_frontier/ACCEPTANCE.md` | 判断全类匹配上界命题是否已获一般肯定或严格否定证明；核对规模无关常数、独立攻击、残余异议与完整入库，不把局部材料当题目完成。 | 阅读导航；真值查精确正文及账本 |
 | [拥塞协作贡献规则与阶段保存要求](<AGENTS.md>) | `research/weighted_congestion_frontier/AGENTS.md` | 加入该研究目录前核对适用工作规则、子 agent 协作方式及数学入库和状态升级的边界。 | 阅读导航；真值查精确正文及账本 |
 | [阶段成果一键保存：提交范围、失败恢复与远端确认](<CHECKPOINT.md>) | `research/weighted_congestion_frontier/CHECKPOINT.md` | 已有可复用阶段文件后选择正确路径运行保存，遇到同步冲突或断网时按实际失败状态恢复。 | 阅读导航；真值查精确正文及账本 |
-| [研究公屏协议：具体交流、版本与来源](<PROTOCOL.md>) | `research/weighted_congestion_frontier/PROTOCOL.md` | 需要跨对话讨论发现、异议或合作问题时查消息语义和冻结版本；公屏不代替规范研究资产。 | 阅读导航；真值查精确正文及账本 |
-| [共同研究操作手册：恢复、读屏、同步与保存](<RUNBOOK.md>) | `research/weighted_congestion_frontier/RUNBOOK.md` | 实际操作协作程序时查入口和认证配置；不把程序回归或网络状态当作数学结果。 | 阅读导航；真值查精确正文及账本 |
+| [共同研究公屏与私聊：参与者、存档和重试](<PROTOCOL.md>) | `research/weighted_congestion_frontier/PROTOCOL.md` | 跨对话交流前核对公屏与双方私聊的范围、回复约束、唯一消息ID及已读语义；不把收信当数学采用。 | 阅读导航；真值查精确正文及账本 |
+| [共同研究操作手册：工作区、收信、访问与完整保存](<RUNBOOK.md>) | `research/weighted_congestion_frontier/RUNBOOK.md` | 实际运行恢复、私聊、提及、收件箱、只读访问和checkpoint时查命令；核对本人范围、完整历史审计及远端确认。 | 阅读导航；真值查精确正文及账本 |
 | [异步公屏的定位、读取入口与资产边界](<board/README.md>) | `research/weighted_congestion_frontier/board/README.md` | 需要查看实时研讨时进入独立公屏分支；重要可复用成果必须另存 main 并连接真实正文。 | 阅读导航；真值查精确正文及账本 |
 | [拥塞可复用工具的提取与使用合同](<toolbox/README.md>) | `research/weighted_congestion_frontier/toolbox/README.md` | 从失败和中间推导提取工具时查原作者、精确假设、证明与复用场景，不能把改名本身当新工具。 | 阅读导航；真值查精确正文及账本 |
 | [匹配上界唯一题目的共同研究启动词](<prompts/TEAM.md>) | `research/weighted_congestion_frontier/prompts/TEAM.md` | 新研究对话判定全类匹配上界命题；固定唯一发布身份、中文命名、分层地图、生成检查和完整提交，缺少可选程序也能恢复。 | 阅读导航；真值查精确正文及账本 |
@@ -330,6 +330,7 @@
 | [Pro研究材料清晰者：精确问题、障碍与筛选](<prompts/CLEANER.md>) | `research/weighted_congestion_frontier/prompts/CLEANER.md` | 先由清晰者读正文和审查，分清方法障碍、反例、开放义务和有限观察，维护自足主材料并从冻结版本导出精简包；不预设开放路线。 | 阅读导航；真值查精确正文及账本 |
 | [Pro全类近似纯均衡门槛的自主攻题任务](<prompts/PRO_ATTACK.md>) | `research/weighted_congestion_frontier/prompts/PRO_ATTACK.md` | 实际整理材料完成后交给Pro，完整固定模型与正反验收；允许自主换工具，已审结论按范围调用，不要求先做仓库或历史审计。 | 阅读导航；真值查精确正文及账本 |
 | [各角色共用的恢复、唯一身份与资产保存合同](<prompts/OPERATIONS.md>) | `research/weighted_congestion_frontier/prompts/OPERATIONS.md` | Work角色启动及保存时读取：一个clone一个固定发布编号、统一main，正文与命名地图同次核验提交；明确默认范围与远端确认。 | 阅读导航；真值查精确正文及账本 |
+| [个人研究工作区、收件箱与已发布材料访问](<../workspaces/README.md>) | `research/workspaces/README.md` | Work启动和交流时查本人目录、私聊提及、已读回执、同行访问与默认保存范围；不把同仓私聊当权限隔离。 | 阅读导航；真值查精确正文及账本 |
 | [协作与写作参考原文的固定版本及许可](<SOURCES.md>) | `research/weighted_congestion_frontier/SOURCES.md` | 修改提示词或核对外部设计来源时查固定 commit、引用范围和许可证，区分原设计与本仓定制。 | 来源与恢复指针；不代替缺失证明 |
 
 ### 高次份额势

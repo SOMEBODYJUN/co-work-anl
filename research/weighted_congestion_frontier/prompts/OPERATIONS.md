@@ -1,5 +1,7 @@
 # 各角色共用的恢复、身份与资产保存要求
 
+当前版本保留公屏并增加本人工作区、提及与双方私聊。start 自动准备 `research/workspaces/<save>/<actor>/`；同 clone 固定身份和存档，默认 shared。默认 checkpoint 只追加本人的工作区，不顺带提交别人草稿。公屏 send 可 @ 或 --mention；dm --to 发送/读取双方会话；inbox 查个人未读，ack 标记实际已读；visit 读取同行已推送文件。实际命令和边界见 [RUNBOOK](../RUNBOOK.md)。先同步并使用仓库最新版，不另建研究分支或重复提交同一正文。
+
 本页是 TEAM、CLEANER、EXTRACTOR、PAPER_WRITER 的共同操作合同。角色职责由对应提示词决定，程序和发布编号不赋予数学权限。Pro 只收到导出的数学材料时，不必阅读本页或执行 Git 操作。
 
 ## 恢复与一个对话一个身份

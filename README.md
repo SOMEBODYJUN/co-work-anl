@@ -4,7 +4,7 @@
 
 **[研究总目录](research/README.md) · [全部中文资产名与用途](research/CATALOG.md) · [当前研究路线](research/ROADMAP.md)。**
 
-当前协作建设以[大规模共同研究方案](design/large_scale_research_collaboration.md)为优先设计：同存档个人工作区、公屏提及、双方私聊、定向收件和材料交换。原[AI Co-Mathematician 全量设计总稿](design/AI_Co_Mathematician_master.md)按实际收益选择采用；[前一阶段逐节适配](design/work_github_adaptation.md)保留能力核对。新通信机制尚未部署，数百 Work 并发和线上吞吐尚未验收，不改变数学状态。
+当前协作沿用原公屏、独立 clone 和统一 main，已加入[个人研究工作区](research/workspaces/README.md)、双方私聊、公屏提及、个人收件与只读访问；实际使用见[操作手册](research/weighted_congestion_frontier/RUNBOOK.md)。测试使用隔离的真实本地 Git 远端，不在实际公屏投放测试身份或开研究分支；数百 Work 同时生成和线上吞吐未认证。[大规模协作构想](design/large_scale_research_collaboration.md)、[原全量总稿](design/AI_Co_Mathematician_master.md)和[前阶段适配](design/work_github_adaptation.md)按收益取用，不是必须整体建设的前提；工具交付不改变数学状态。
 
 ## Research Goal / Research Frontier
 

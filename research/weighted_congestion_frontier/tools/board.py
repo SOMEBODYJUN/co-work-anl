@@ -7,6 +7,8 @@ pushes reload the latest remote history while leaving the caller's checkout alon
 from __future__ import annotations
 import argparse
 import copy
+import contextlib
+import fcntl
 import hashlib
 import json
 import os
@@ -25,7 +27,9 @@ UUID = re.compile(r'[0-9a-f]{32}')
 KINDS = {'message', 'discussion', 'progress', 'help', 'objection',
          'review_request', 'review', 'barrier', 'result'}
 INTENT_KEYS = {'id', 'actor', 'kind', 'body'}
-BODY_KEYS = {'text', 'thread', 'reply_to', 'asset'}
+BODY_KEYS = {'text', 'thread', 'reply_to', 'asset', 'save', 'to', 'mentions'}
+ADDRESS = re.compile(r'[A-Za-z0-9][A-Za-z0-9._-]{0,63}')
+DEFAULT_SAVE = 'shared'
 
 
 class BoardError(Exception):
@@ -52,6 +56,35 @@ def guard(value):
 def valid_id(value):
     if not isinstance(value, str) or not UUID.fullmatch(value):
         raise ValidationError('Message IDs must be 32 lowercase hex characters.')
+
+
+def address(value):
+    if not isinstance(value, str) or not ADDRESS.fullmatch(value):
+        raise ValidationError('Use a safe Worker or save ID (letters, digits, dot, underscore, hyphen).')
+    return value
+
+
+def save_of(event):
+    return event['body'].get('save', DEFAULT_SAVE)
+
+
+def participants(event):
+    target = event['body'].get('to')
+    return frozenset((event['actor'], target)) if target else frozenset()
+
+
+def visible(event, actor=None):
+    return not participants(event) or actor in participants(event)
+
+
+def attention(event, actor, by_id):
+    body = event['body']
+    if body.get('to'):
+        return body['to'] == actor
+    if event['actor'] == actor:
+        return False
+    parent = by_id.get(body.get('reply_to'))
+    return actor in body.get('mentions', []) or bool(parent and parent['actor'] == actor)
 
 
 def asset_shape(asset):
@@ -90,6 +123,20 @@ def validate_intent(intent):
         raise ValidationError('Thread must be a nonempty single-line label of at most 160 characters.')
     if 'reply_to' in body:
         valid_id(body['reply_to'])
+    if 'save' in body:
+        address(body['save'])
+    if 'to' in body:
+        address(body['to'])
+        if body['to'] == actor:
+            raise ValidationError('A direct message needs another Worker.')
+    if 'mentions' in body:
+        mentions = body['mentions']
+        if not isinstance(mentions, list) or len(mentions) != len(set(mentions)):
+            raise ValidationError('mentions must be a list of distinct Worker IDs.')
+        for person in mentions:
+            address(person)
+        if body.get('to') and set(mentions) - {actor, body['to']}:
+            raise ValidationError('A direct message cannot notify an outside participant.')
     if 'asset' in body:
         asset_shape(body['asset'])
     if intent['kind'] == 'result' and 'asset' not in body:
@@ -118,9 +165,14 @@ def transition(state, event):
         raise ValidationError('Invalid message time.')
     if any(old['id'] == event['id'] for old in state['events']):
         raise Conflict('Duplicate message ID.')
-    if 'reply_to' in event['body'] and not any(
-            old['id'] == event['body']['reply_to'] for old in state['events']):
-        raise ValidationError('reply_to is not an existing message.')
+    if 'reply_to' in event['body']:
+        parent = next((old for old in state['events'] if old['id'] == event['body']['reply_to']), None)
+        if parent is None:
+            raise ValidationError('reply_to is not an existing message.')
+        if save_of(parent) != save_of(event):
+            raise ValidationError('A reply cannot cross research saves.')
+        if participants(parent) and participants(event) != participants(parent):
+            raise ValidationError('A private reply must keep the same two participants.')
     out = copy.deepcopy(state)
     out['events'].append(copy.deepcopy(event))
     out['last_time'] = event['time']
@@ -155,13 +207,14 @@ def retry_pause(event_id, attempt):
     time.sleep(min(0.5, 0.03 * 2 ** min(attempt, 4)) * (0.5 + jitter))
 
 
-def render(state, now=None, selected=None):
+def render(state, now=None, selected=None, actor=None):
     lines = ['# 研究公屏', '', '每个 Work 对话使用一个稳定发布标识署名；程序可自动生成。',
              '消息随时发布、异步回复；同题的多条研究路线可以同时推进。',
              '子 agent 的发现由所在对话转述。', '',
              '研究资产统一保存在 main；公屏用于异步研讨，消息中的冻结文件附带 commit 和 SHA-256。', '',
              '## 最近消息', '']
-    displayed = state['events'][-50:] if selected is None else selected
+    allowed = [e for e in state['events'] if visible(e, actor)]
+    displayed = allowed[-50:] if selected is None else [e for e in selected if visible(e, actor)]
     by_id = {event['id']: event for event in state['events']}
     for event in displayed:
         path = f"events/{event['seq']:08d}_{event['id']}.json"
@@ -170,6 +223,12 @@ def render(state, now=None, selected=None):
                   f'[完整消息]({path}) · {utc(event["time"])}', '']
         if 'thread' in body:
             lines += ['话题：' + body['thread'], '']
+        if body.get('to'):
+            lines += [f'双方私聊：{event["actor"]} → {body["to"]}（同仓可读，不是权限隔离）', '']
+        if 'save' in body:
+            lines += ['研究存档：' + body['save'], '']
+        if body.get('mentions'):
+            lines += ['提及：' + ' '.join('@' + p for p in body['mentions']), '']
         if 'reply_to' in body:
             parent = by_id[body['reply_to']]
             target = f"events/{parent['seq']:08d}_{parent['id']}.json"
@@ -312,6 +371,57 @@ class Board:
             self.setup(directory)
             return self.load(directory)
 
+    @contextlib.contextmanager
+    def seen_lock(self, actor, save):
+        key = hashlib.sha256(f'{address(actor)}:{address(save)}'.encode()).hexdigest()
+        path = self.cache / ('seen-' + key + '.json')
+        with (self.cache / ('seen-' + key + '.lock')).open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            yield path
+
+    def seen(self, actor, save):
+        with self.seen_lock(actor, save) as path:
+            if not path.exists():
+                return set()
+            result = json.loads(path.read_text())
+            if not isinstance(result, list):
+                raise ValidationError('Unread cursor is damaged; preserve it before resetting.')
+            for ident in result:
+                valid_id(ident)
+            return set(result)
+
+    def acknowledge(self, actor, save, ids):
+        state = self.read()
+        by_id = {e['id']: e for e in state['events']}
+        for ident in ids:
+            valid_id(ident)
+            event = by_id.get(ident)
+            if event is None or save_of(event) != save or not visible(event, actor):
+                raise ValidationError('Cannot acknowledge an absent or unrelated message.')
+            if not attention(event, actor, by_id):
+                raise ValidationError('This message is not addressed to this inbox.')
+        with self.seen_lock(actor, save) as path:
+            old = json.loads(path.read_text()) if path.exists() else []
+            if not isinstance(old, list):
+                raise ValidationError('Unread cursor is damaged.')
+            for ident in old:
+                valid_id(ident)
+            with tempfile.NamedTemporaryFile(mode='w', dir=self.cache, delete=False) as stream:
+                temporary = Path(stream.name)
+                try:
+                    stream.write(encode(sorted(set(old) | set(ids))))
+                    stream.flush()
+                    os.fsync(stream.fileno())
+                except BaseException:
+                    temporary.unlink(missing_ok=True)
+                    raise
+            try:
+                os.replace(temporary, path)
+            finally:
+                temporary.unlink(missing_ok=True)
+        return {'status': 'read', 'actor': actor, 'save': save, 'ids': ids,
+                'meaning': 'read receipt only; not mathematical adoption'}
+
     def check_asset(self, asset):
         asset_shape(asset)
         guard(asset)
@@ -409,10 +519,20 @@ def main():
     view.add_argument('--json', action='store_true')
     view.add_argument('--thread')
     view.add_argument('--limit', type=int)
+    view.add_argument('--save')
+    view.add_argument('--actor')
+    view.add_argument('--peer')
+    view.add_argument('--inbox', action='store_true')
+    view.add_argument('--unread', action='store_true')
+    ack = sub.add_parser('ack', help='Record a local read receipt, not mathematical acceptance')
+    ack.add_argument('--actor', required=True)
+    ack.add_argument('--save', default=DEFAULT_SAVE)
+    ack.add_argument('--event-id', action='append', required=True)
     sub.add_parser('pending')
     for command in ('retry', 'discard'):
         operation = sub.add_parser(command)
         operation.add_argument('--event-id', required=True)
+        operation.add_argument('--actor')
     say = sub.add_parser('say')
     say.add_argument('--actor', required=True)
     say.add_argument('--event-id')
@@ -423,6 +543,9 @@ def main():
     say.add_argument('--thread')
     say.add_argument('--reply-to')
     say.add_argument('--asset-json')
+    say.add_argument('--save')
+    say.add_argument('--to')
+    say.add_argument('--mention', action='append', default=[])
     args = parser.parse_args()
     client = Board(args.repo, args.branch, retries=args.retries)
     if args.command == 'init':
@@ -433,31 +556,64 @@ def main():
         if args.limit is not None and args.limit < 0:
             raise ValidationError('View limit must be nonnegative; zero shows all messages.')
         state = client.read()
-        if args.json and not args.thread and args.limit is None:
-            print(encode(state), end='')
-            return
-        selected = [e for e in state['events'] if not args.thread or e['body'].get('thread') == args.thread]
+        if args.actor is not None:
+            address(args.actor)
+        if args.save is not None:
+            address(args.save)
+        if args.peer is not None:
+            address(args.peer)
+            if args.peer == args.actor:
+                raise ValidationError('A private conversation needs another Worker.')
+        if (args.inbox or args.peer or args.unread) and not args.actor:
+            raise ValidationError('Personal views require an explicit Worker ID.')
+        by_id = {e['id']: e for e in state['events']}
+        selected = [e for e in state['events']
+                    if (args.save is None or save_of(e) == args.save)
+                    and visible(e, args.actor if args.inbox or args.peer else None)
+                    and (not args.thread or e['body'].get('thread') == args.thread)]
+        if args.peer:
+            selected = [e for e in selected if participants(e) == {args.actor, args.peer}]
+        if args.inbox:
+            selected = [e for e in selected if attention(e, args.actor, by_id)]
+        if args.unread:
+            if not args.save:
+                raise ValidationError('Unread queries require a research save.')
+            seen = client.seen(args.actor, args.save)
+            selected = [e for e in selected if e['id'] not in seen]
         limit = args.limit if args.limit is not None else (0 if args.json else 50)
         if limit:
             selected = selected[-limit:]
-        print(encode(dict(state, events=selected)) if args.json else render(state, selected=selected), end='')
+        print(encode(dict(state, events=selected)) if args.json else render(
+            state, selected=selected, actor=args.actor if args.inbox or args.peer else None), end='')
+    elif args.command == 'ack':
+        print(encode(client.acknowledge(address(args.actor), address(args.save), args.event_id)), end='')
     elif args.command == 'pending':
         print(encode([p.stem for p in sorted(client.outbox.glob('*.json'))]), end='')
     elif args.command in ('retry', 'discard'):
         valid_id(args.event_id)
+        if args.actor is not None:
+            address(args.actor)
         path = client.outbox / (args.event_id + '.json')
+        try:
+            saved = json.loads(path.read_text())
+        except FileNotFoundError:
+            saved = None
+        if saved is not None:
+            validate_intent(saved)
+            if args.actor is not None and saved['actor'] != args.actor:
+                raise ValidationError('Pending messages must be retried or discarded by their sender.')
+            if participants(saved) and args.actor != saved['actor']:
+                raise ValidationError('A private pending operation requires its sender Worker ID.')
         if args.command == 'discard':
             path.unlink(missing_ok=True)
             print('Local pending message discarded.')
         else:
-            try:
-                saved = json.loads(path.read_text())
-            except FileNotFoundError:
-                saved = None
             found = client.publish(saved) if saved is not None else next(
                 (e for e in client.read()['events'] if e['id'] == args.event_id), None)
             if found is None:
                 raise BoardError('No pending or remote message with that ID.')
+            if not visible(found, args.actor):
+                raise ValidationError('A private replay requires a participant Worker ID.')
             print(encode(found), end='')
     else:
         body = {'text': Path(args.text_file).read_text() if args.text_file else args.text}
@@ -466,6 +622,13 @@ def main():
                 body[key] = getattr(args, key)
         if args.asset_json:
             body['asset'] = json.loads(Path(args.asset_json).read_text())
+        for key in ('save', 'to'):
+            if getattr(args, key) is not None:
+                body[key] = getattr(args, key)
+        mentions = set(args.mention)
+        mentions.update(re.findall(r'(?<![A-Za-z0-9_])@([A-Za-z0-9][A-Za-z0-9._-]{0,63})', body['text']))
+        if mentions:
+            body['mentions'] = sorted(mentions)
         print(encode(client.publish(make_intent(args.actor, args.kind, body, args.event_id))), end='')
 
 
