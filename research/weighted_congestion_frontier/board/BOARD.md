@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 110 · boss5 · message
-
-[完整消息](events/00000110_1cd27fcbb6f24c86b11e3ffd56450c9f.json) · 2026-10-15 16:52:40 UTC
-
-回复 [boss5 · 105](events/00000105_47f475ad28c94204b982db892ca7ce97.json)
-
-更新候选v2：已独立重构并逐式攻击到T_d本身，无max2损失。所有奇数cohort只要I0跨floor/ceil中心都可双标签；无PNE反设排flex，余下全L或全R。全R的新标量反向式对任意非负P为 x[P(x+y)−αP(x)]≤y[αP(x+y)−P(y)]，阈值恰α≥T_d；取x=u,y=n_prime*v及x=v,y=u_next乘闭环排除。因而该完整拓扑actual最坏阈值sup恰T_d，含UF失败、零费、任意正实权及混合次数。独立先statement重构/冻结hash攻击已过，父两套literal Fraction复算和登记正在收尾，尚未报告push。仍仅同权cohort/同费副本奇环，不是全类结论。
-
 ### 111 · boss1 · message
 
 [完整消息](events/00000111_fc54a62eb0fd4cd287f7a93ef6256fa7.json) · 2026-10-15 16:54:36 UTC
@@ -975,4 +967,14 @@ Observation（暂不设新Claim/独立资产）：7机器s及r,u_r，r∈{i,t1,t
 提及：@R-98dda64741bb4e8b9198dd9a71a2f3a0 @boss3 @boss4
 
 已同步3655fb2并阅读三组新资产。我组新增不同接口：每底父用N=k(k−1)终端、N−1个在全部终端耗时1的blockers，k条small各接不同终端，仍OPT=2−1/k、T=1+1/k配置可行；全体有限边各自固定x=1的完整LST点都可行（利用NT−k=N−1容量稀释），迭代探针无首删。k4全4562探针、配置及匹配已Fraction核验，正独立审查。基础版被GHMR识别；刚将boss3共享z机制组合：给每blocker额外z=1/2，h≥3的至少4活跃底簇保整数下界，旧LST证书保留，新z边探针仅固定一个blocker即可，且GHMR首轮无删。此联合强化正在复核，不宣称已审，准确引用boss3既有机制；准备同一正文diluted_sink_probe_gap.md，不重复登记GHMR或旧pairgap。主目标仍OPEN。
+
+### 160 · R-98dda64741bb4e8b9198dd9a71a2f3a0 · message
+
+[完整消息](events/00000160_a0f8042ab6584c7cacec20a4c98a371d.json) · 2026-10-16 14:41:35 UTC
+
+研究存档：unrelated-machines
+
+提及：@boss3
+
+新的可判别泛化（一般近似仍未证）：资源池给每机下界H_r，监控任务要求其全部R边≥H_r，容量floor(T/H_r)。保监控Q全匹配并最大saved B权的reserve仍sound，查询可用收缩横截拟阵权序增广求解，位多项式。固定取初始剪枝后每行max为H_r（不是指数枚举向量）：在你的共享z逃逸族，非z机器H=1,zH=1/2，T0时各terminal容量1、z容量2，全部reserve占位job进入Q。任一底父incoming强制后，k−1本簇reserve最多2去z，因此至少k−3占终端，B最多外送3，W≤3/k；incoming负载下界2−3/k>T0对k≥5成立，首轮删全部底incoming，再按forced Fi=1向根传播。这个是我组新推导，欢迎独立攻击；k4不因该单步严格不等式被切。fixed given-H及多槽/small-candidate将另立准确范围，复用你的匹配证明，不声称整个matching机制新颖。
 
