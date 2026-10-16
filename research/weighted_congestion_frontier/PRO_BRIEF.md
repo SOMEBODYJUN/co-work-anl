@@ -2,7 +2,7 @@
 
 本稿是现行数学资产的派生读取稿，不另立真值账本。默认只读本稿与任务正文即可接题；原证明、审查、程序和证书按来源编号定点查阅。本稿没有预设开放路线，也没有新增数学 Claim。
 
-**数学源快照：** `SOMEBODYJUN/co-work-anl` 的 `0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1`。下文所有 S 编号均指该提交的原文件和所列具体节，末表连接实际审查。内部已审不等于外部同行评审；未认证全球新颖性。当前唯一全类问题仍 **OPEN**。原历史身份 `WC-TARGET v1` 的宽目标不改写，本次完成条件固定如下。
+**数学源快照：** `SOMEBODYJUN/co-work-anl` 的 `d5492a5deb217e85f438a38a4809057d8ece1f6e`。下文所有 S 编号均指该提交的原文件和所列具体节，末表连接实际审查。内部已审不等于外部同行评审；未认证全球新颖性。当前唯一全类问题仍 **OPEN**。原历史身份 `WC-TARGET v1` 的宽目标不改写，本次完成条件固定如下。
 
 ## 1. 完整模型、符号与唯一问题
 
@@ -254,38 +254,50 @@ $F_e(U)=|U\triangle U_e(s^*)|$ 唯一选出：$\sum_eF_e(U_e(s))=\sum_i|s_i\tria
 
 ## 4. 已证结构限制：强迫反馈与多项式替换
 
-### 4.1 奇环正测试的精确 ceiling，不是整个拓扑的存在界
+### 4.1 一般同权cohort奇环的实际阈值已闭合到 $T_d$
 
-`WC-R3-ODD-RING-CERTIFICATE-v1` 与 `WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1`。奇数 $m\ge3$，hub $H_i$ 权 $u_i>0$，cohort $i$ 有整数 $n_i\ge1$ 名共同权 $v_i>0$ light，下标模 $m$。主资源两副本 $A_i^b$ 同费 $a_iF_i$，侧资源 $B_{ij}^b$（$j=1,\ldots,n_i,\ b\in\{0,1\}$）同费 $b_iG_i$，$a_i,b_i>0$，$F_i,G_i$ 为非零非负系数次数至多 $d$ 多项式。hub 位 $h$ 用 $A_i^h$ 及所有 incoming $B_{i-1,j}^h$；light 位 $l$ 用 $A_i^l,B_{ij}^{1-l}$。
+WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2：整数 $d\ge2$、奇数 $m\ge3$，hub $H_i$ 权 $u_i>0$，cohort $i$ 有整数 $n_i\ge1$ 名共同权 $v_i>0$ 的light，下标模 $m$。互异主资源副本 $A_i^b$ 同费 $F_i$，侧资源 $B_{ij}^b$ 同费 $G_i$（同cohort全部side同费）；$F_i,G_i$ 为任意非负系数次数至多 $d$ 多项式，允许零。hub位 $h$ 用 $\{A_i^h\}\cup\{B_{i-1,j}^h:1\le j\le n_{i-1}\}$；light位 $l$ 用 $\{A_i^l,B_{ij}^{1-l}\}$。
 
-对 $\alpha>1$，令
-
-$$
-\begin{aligned}
-N_i&=F_i(u_i+v_i)-\alpha F_i(n_iv_i),&
-M_i&=\alpha F_i(u_i+n_iv_i)-F_i(u_i),\\
-P_i&=\alpha G_i(u_{i+1}+v_i)-G_i(v_i),&
-Q_i&=G_i(u_{i+1}+v_i)-\alpha G_i(u_{i+1}).
-\end{aligned}
-$$
-
-称 light 位等于自身 hub 位为 aligned，不等为 anti。所限制的证书要求**每名 aligned light 在所有配置中都严格改善**，再用奇性覆盖全 anti 状态的 hub；其正系数可行性恰为
+**每个如此游戏都有 $T_d$-PNE，不需要任何统一强迫假设。** 和2.1同拓扑下界合用，其有限实例最优倍率的上确界恰为 $T_d$，不声称某一个有限游戏取得。并有
 
 $$
-N_i,Q_i>0\ (\forall i),\qquad
-\prod_i\frac{n_iN_iQ_i}{M_iP_i}>1.
+T_d\le H_d+\frac1{2^d+1}
+\le\frac d{1+\ln d}+\frac1{2^d+1}<\frac d{\ln d}.
 $$
 
-在允许自由选择上述奇环参数和 shapes 的整个证书族内，**存在**通过这些正测试的参数，当且仅当 $\alpha<T_d$；固定参数须用前面的正性/乘积判据，不保证每组固定参数在阈值以下都通过。关键必要性：$x_i=v_i/u_i,t_i=v_i/u_{i+1}$ 必有 $\prod x_i=\prod t_i$。每个单项式的归一化因子
+最后严格性由 $\ln d\le d-1,\ 1+\ln d\le d$ 给
+$d/[\ln d(1+\ln d)]\ge1/(d-1)>1/(2^d+1)$。因此本拓扑可取 $C=1,d_0=2$，**不是全类结论**。[S2]§10及 general_cohort_actual_upper_review.md：完整一般证明、先重构与最终冻结攻击；未外审。未规范登记的早期v1草案只给较弱上界，不作为第二项结果。
+
+**可直接核验的有限选态接口。** 固定任意 $\alpha\ge T_d>1$。令 $k_i$ 为aligned light数，aligned意为light位等于自身hub位，anti意为不等；$z_i=h_i\mathbin{\mathrm{xor}}h_{i+1}$。置 $q_i=G_i(v_i)$，$D_i=G_i(v_i+u_{i+1})-q_i\ge0$，
 
 $$
-\mathcal F_{k,n}(x)=nx\frac{(1+x)^k-\alpha(nx)^k}{\alpha(1+nx)^k-1}
-\le\mathcal F_{k,1}(nx)
+A_{iz}(k)=F_i(u_i+kv_i)+q_i+zD_i,\qquad
+B_{iz}(k)=F_i((n_i-k+1)v_i)+q_i+(1-z)D_i.
 $$
 
-在 $\alpha\ge T_d$ 均不超过1；$k=0$ 时为 $-nx$。混合多项式时 $xnN/M$、$Q/(tP)$ 分别是这些因子的正分母加权凸组合；总 $N,Q>0$ 使两总因子为正。沿环相乘并用权闭合，乘积至多1，矛盾。[S2]§§3–5、8及其独立包络审查。
+真实light稳定计数集 $I_i(z)$ 由
+$A_{iz}(k)\le\alpha B_{iz}(k)$（$k>0$）和
+$B_{iz}(k+1)\le\alpha A_{iz}(k+1)$（$k<n_i$）定义，是非空整数区间。写 $I_i(0)=[a_i,b_i]$，$c_i=\min I_i(1)\le\lfloor n_i/2\rfloor$。
+每个缺陷位置 $i$ 取 $z_i=0$、其余 $z_j=1$，奇数 $m$ 保证合法偶parity；任选一组相容hub位，另一组全局互补费用相同。非缺陷群取 $k_j=c_j$；缺陷群只列
 
-**否定的是** 任意环长、cohort 数、正权和上述 group shapes 内的这套同时强迫正测试越过 $T_d$。允许多项式混合也不救此证书。**没有证明** 一般 cohort 的实际游戏都存在 $T_d$-PNE；测试失败时，反位 light 仍可能通过重新对齐改善。整个拓扑的存在问题不能由正测试不可行推出，当前此义务 **OPEN**。
+$$
+k_i=\min\{b_i,\lfloor n_i/2\rfloor\}\quad(a_i\le\lfloor n_i/2\rfloor),\qquad
+k_i=\max\{a_i,\lceil n_i/2\rceil\}\quad(b_i\ge\lceil n_i/2\rceil).
+$$
+
+去重后至多 $2m$ 个计数候选，每群固定前 $k_j$ 名light aligned 即成为真实状态；其中至少一个是 $\alpha$-PNE。可逐候选用真实偏离验证，无任意实数输入的有效算法或位复杂度承诺。
+
+关键理由不是“正测试失败所以有均衡”：先得到全部light稳定的单缺陷候选，只有缺陷两端可能有坏hub。稳定区间位于半数左/右时记L/R；奇数中心同时可取两中央计数时允许两个标签。相邻L→R会迫同一hub在两个候选 $S,T$ 满足
+$C_H(S)>\alpha C_H(T)$、$C_H(T)>\alpha C_H(S)$，与非负性矛盾，故全不稳反设只能全部同向且无双标签。全L通过消去成对light及非负平移，重新导出完整strict正测试，才调用已审包络；全R由下式逐群相乘得到同一矛盾：
+
+$$
+x[P(x+y)-\alpha P(x)]\le y[\alpha P(x+y)-P(y)]
+\quad(x,y>0,\ \alpha\ge T_d).
+$$
+
+此式对单项式 $P(t)=t^k$ 等价于 $\alpha\ge f_k(x/y)$，$k=0$ 亦成立，故逐非负系数求和适用；先从strict边界排除零分母再作全R比值相乘，权比沿环消去。完整推导及奇数中央双标签处理在[S2]§§10.3–10.7。
+
+**准确排除范围：** 保持上述cohort内同权、同side费用、同费动作副本、奇环关联的全部游戏，不能给超过 $T_d$ 的实际非存在因子；这比旧 WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1 只限制同时强迫正测试更强，旧证书及下界身份不改。**未被否定：** 不满足此拓扑合同的游戏。不能把该拓扑当全类规范形，也不能把没有统一强迫这一点单独当成逃出本定理的条件。删除本项会遗漏已闭合的实际拓扑边界，重复把其旧OPEN当成未解问题。
 
 ### 4.2 共享 side 的最强条件存在界与排序势障碍
 
@@ -505,6 +517,43 @@ $$
 **反驳的断言：** 对所有严格双轮输入，仅追加这些类内有序三元clock即可得到无同倍率PNE。此通用断言为假。
 **没有反驳：** 只处理更高增长倍率或附额外输入条件的编译器、跨类/非递增相位、两侧异费、共享clock资源、其他arity、辅助玩家。固定 $21/20$ 反例没有无界量词；旧仅端点无出口而仍有内部改善的反例已被这一更强同机制版本替代，不另列。
 
+### 5.4 已闭合的条件接口：全前沿出口可编译成全状态覆盖
+
+WC-CLASS-FRONT-ALLSTATE-COMPILER-v1：输入MODEL游戏 $G$，旧费用次数至多整数 $p\ge0$，实数 $\alpha\ge1$，每人恰两个互异资源子集动作0/1；允许旧空动作、零和常数费用。全体玩家划分为非空有序类 $a$，类宽 $n_a\ge1$、类内权同为 $w_a>0$；不同类权可相同，跨类权比任意。类前沿沿固定顺序至多一次bit变化，$\mathcal F$ 为全部类都处于前沿的状态集，$s\oplus i$ 为玩家翻位。定义
+
+$$
+B=\max_{s,i}C_i^G(s),\qquad
+\eta=\min_{s\in\mathcal F}\max_{i:s\oplus i\in\mathcal F}
+\{C_i^G(s)-\alpha C_i^G(s\oplus i)\},\qquad
+L=\max_a\binom{n_a-1}{2}.
+$$
+
+类宽至多2时该二项式取0；每个前沿有保前沿翻位。**承重前提 $\eta>0$：每个product-front都有保product-front的strict $\alpha$ 出口。** 它不是单个strict sweep环；有限性给 $0<\eta\le B$。若 $L=0$，前沿已经是全状态，原游戏即无 $\alpha$-PNE。
+
+若 $L\ge1$，置 $M=2\alpha B$，取正整数 $D$ 满足
+
+$$
+\delta_D=(2/3)^D\le\frac{\eta}{4\alpha^2BL}.
+$$
+
+每类每个 $1\le j<k\le n_a-1$，给三人 $(a,0),(a,j),(a,k)$ 添加一对fresh、仅三人使用、两侧同费的互补010/101时钟；费用
+$c_a(x)=M[x/(3w_a)]^D$。共添 $2\sum_a\binom{n_a-1}{2}$ 条资源，保持玩家、权重、旧动作和全部旧资源使用；输出次数至多 $q=\max\{p,D\}$，全状态均有strict $\alpha$ 出口，选定出口真实余量至少 $\eta/2$。可取
+$D=\lceil\ln(4\alpha^2BL/\eta)/\ln(3/2)\rceil$。它只显示新增次数无独立跨类权比损失，**不证明 $B/\eta$ 与权谱、人数无关**。[S17]“条件编译接口：全部同权类前沿出口到全状态非存在”。
+
+短证：所有锚定三元都不触发恰等价于各类是前沿。前沿保前沿出口的clock新成本至多 $LM\delta_D$，故余量至少 $\eta-\alpha LM\delta_D\ge\eta/2$。非前沿类取最早反于首位的玩家；其后有同首位者，因此至少一项旧clock成本 $M$，翻位后全部incident三元不满载。真实基体新成本至多 $B$，余量至少
+$M-\alpha B-\alpha LM\delta_D\ge\eta/2$。没有同时重置其他玩家。
+
+更精确地，每条保前沿边的参与clock前后均为真实用户数 $2\to2$，成本完全相同；若mover参与 $r_i\le L$ 对，clock $\alpha$-margin恰为 $-(\alpha-1)r_iM\delta_D$。故也可用分离预算
+
+$$
+\delta_D\le\frac1{4\alpha L},\qquad
+(\alpha-1)LM\delta_D\le\eta/2.
+$$
+
+$\alpha=1$ 时第二式自动成立，不能除以 $\alpha-1$；此时所需新增次数不依 $\eta$。一般实参数证明和两套预算均由独立重构及冻结攻击覆盖，未外审；有理数据及有理 $\alpha$ 可用有理幂比较选择 $D$，不靠浮点舍入证书。
+
+**与已证障碍的关系：** 5.3中的严格稳定前沿不满足 $\eta>0$，故新定理没有推翻旧反例；5.2的真实余量依赖也未被删除。已闭合的是此精确合同下从全部前沿出口到全部状态出口的步骤。**OPEN：** 尚无满足全类严格否定增长量词的输入族与实际输出次数估计；须按输出的实际次数核对第1节增长证书，不能把基体次数上限 $p$ 当输出实际次数。固定输入非存在不补齐增长量词。删除本项会把已经成立的编译步骤继续误写成缺口，或误把旧sweep反例扩大到具有全前沿出口的新合同。
+
 ## 6. 完整成本归约不能自动缩成小用户支持
 
 `WC-APPROXIMATE-SUPPORT-DISTORTION-v1`。$m\ge1,\varepsilon>0$，原权为 $(1,\varepsilon,\ldots,\varepsilon)$，二标签成本表
@@ -540,11 +589,11 @@ $$
 
 ## 7. OPEN 与证据边界
 
-本题的一般肯定或严格否定证明仍缺。上述子类界没有全类归约；真实改善环没有全状态非存在量词；全状态时钟编译没有所需增长次数效率；有限签名替代没有统一于所有权、人数、动作和selector的倍率估计。这些是缺失义务，**不表示未排除的路线不可能**，也不列推荐路线或答案猜测。
+本题的一般肯定或严格否定证明仍缺。上述子类界没有全类归约；真实改善环没有自动给全状态非存在量词；条件编译器已有明确全覆盖和次数预算，但尚无满足严格否定增长量词的输入族；有限签名替代没有统一于所有权、人数、动作和selector的倍率估计。这些是缺失义务，**不表示未排除的路线不可能**，也不列推荐路线或答案猜测。
 
 本稿没有采用承重未决候选。源中旧 pending、旧节号或原审查hash，均按后续实际审查与规范diff确定覆盖范围；S表记录实际层级。源三玩家稿所引缺失审查、非分离frontier缺失原稿，以及未审完整轨道/保守端点推广，不作为可调用事实。有限搜索未果、固定次数扫描和工具失败不进默认正文。全类题开放不抹去2节的可靠成果。
 
-## 附录 A：可直接调用的有限签名与严格反例规范接口
+## 附录 A：可直接调用的补充接口
 
 ### A.1 全状态 selector 的精确线性替代
 
@@ -590,6 +639,34 @@ $$
 
 complete 签名允许某玩家的块 $\sigma_i=A_i$；proper/core 签名要求每块 $\sigma_i\subsetneq A_i$，允许空块，仅排全空签名。二动作proper每人块为 $\varnothing,\{0\},\{1\}$，共 $3^{|N|}-1$ 个非空签名。人人至少两动作时保留全部proper字典与零费singleton标记可得到合法core。必须先用上述单向lift说明为什么能限制core，不能随手删complete列就宣称仍刻画原所有游戏。
 
+### A.3 无UF的固定hub精确light响应
+
+WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1。采用4.2二元同费、唯一source结构，但进一步要求**每条side只有唯一light**，可含任意hub子集；费用次数允许 $d=0$，权任意正实。输入任意固定的全部hub位 $h$，只允许light移动，不需UF。输出精确light响应，全部strict light改善路径终止；下述序势对每条light偏离保留全符号和平局，单light局部最小点恰为精确响应。[S20]。
+
+各source独立。把其hub副本重标为0、权为 $a>0$，light集合 $I$、总权 $W=\sum_{i\in I}w_i$；固定hub后每light的全部side成本 $q_i^0,q_i^1$ 都为常数。若其他light在0的总权为 $x$，真实成本差为
+
+$$
+D_i(x)=F(a+x+w_i)+q_i^0-F(W-x)-q_i^1.
+$$
+
+$W-x$ 包含偏离者自身，不能改成 $W-w_i-x$。$F$ 非常数时 $D_i$ 严格递增；在有限可达集
+$X_i=\{\sum_{j\in T}w_j:T\subseteq I\setminus\{i\}\}$ 上选 $t_i$ 使
+$\operatorname{sgn}(x-t_i)=\operatorname{sgn}D_i(x)$，可达零点必须精确取为阈值。对0侧集合 $S$、负载 $L(S)$，
+
+$$
+\Psi(S)=\frac12L(S)^2-\sum_{i\in S}w_i(t_i+w_i/2),\qquad
+\Psi(S\cup\{i\})-\Psi(S)=w_i(L(S)-t_i)\quad(i\notin S).
+$$
+
+势差与加入0的真实成本差同号，反向删除符号相反。$F$ 恒定时改取
+$\Psi(S)=\sum_{i\in S}(q_i^0-q_i^1)$，不可强套二次式伪造平局。各source势相加，有限状态给FIP及精确响应。
+
+可直接选态：从本source全部light在0开始，按 $t_i$ 非降扫描，当前0侧总权为 $L$；仅当 $L>t_i+w_i$ 才将 $i$ 删除到1。保留者以后 $L$ 只降，不想离开；删除者当时新 $L>t_i$，后续删除 $j$ 时新 $L>t_j\ge t_i$，所以不想回返。每名light至多一次strict移动；常数 $F$ 时独立取较小side成本即可。阈值的直接构造可能枚举指数多子集，不承诺输入位复杂度。
+
+存在/FIP本身是Milchtaich(1996) §4 Theorem1与§8正权扩展的**已知推论**：每source是共同两策略、player-specific singleton加权游戏，成本函数 $F(a+z)+q_i^0,F(z)+q_i^1$ 非减。当前价值是显式阈值势及删除接口；一般证明、文献适用性、冻结攻击和独立literal审计齐备，不认证这些表示的新颖性。[S20]与同快照LITERATURE的“Milchtaich(1996)”条目。
+
+**准确范围与错误lift：** 不覆盖多light共享side，不给跨不同 $h$ 的共同势。更不能把“先重置light，再判断hub是否改善”当真实hub偏离：4.2的两玩家 $\tau<d$ 无精确PNE例，每个固定hub都有精确light响应，整体互补使重选响应后的hub成本相同，真实冻结light的hub翻位却严格改善。故固定hub精确响应/重置后稳定不能自动提升为原游戏均衡；缺少的是这种跨 $h$ 使用时的兼容预算，仍为OPEN。本接口保留是为准确闭合固定外场响应义务，同时防止把它误升为共同选态定理。
+
 ## 来源、精确版本与实际审查层级
 
 所有原数学状态另见同快照的 `research/weighted_congestion_frontier/CLAIMS.md`、`research/review_status.json`；本表不取代它们。各正文的具体 Claim ID 已写在对应节。表中“独立”指仓库内部真实先重构关键义务、随后冻结攻击；是否先自行发现整套构造由实际审查明写，均不是外审。路径均相对于仓库根，S链接固定同一数学源提交。
@@ -598,7 +675,7 @@ complete 签名允许某玩家的块 $\sigma_i=A_i$；proper/core 签名要求�
 | --- | --- | --- |
 | [S0] | MODEL.md 全文；ACCEPTANCE.md「本次题目与唯一完成标准」 | 定义/任务，不是新定理；WC-TARGET v1保持OPEN |
 | [S1] | CLAIMS.md「WC-LIT-UPPER-D v1」；LITERATURE.md「数学基线」 | Paper Fact；外部一手文献陈述，本项目未独立重建全文 |
-| [S2] | odd_ring/cohort_lower_bound_and_envelope.md §§1–6、8 | odd_ring_independent/REVIEW.md、EXACT_ENVELOPE_REVIEW.md；odd_ring_parameters/polynomial_envelope_review.md，一般证明与内部独立审查；非整个拓扑阈值 |
+| [S2] | odd_ring/cohort_lower_bound_and_envelope.md §§1–6、8、10 | odd_ring_independent/REVIEW.md、EXACT_ENVELOPE_REVIEW.md、odd_ring_parameters/polynomial_envelope_review.md、general_cohort_actual_upper_review.md；下界、正测试及一般同权cohort实际阈值各按对应冻结覆盖，非全类上界 |
 | [S3] | resource_support.md 全文 | 完整直接短证明；独立冻结审查未记录，未外审 |
 | [S4] | weight_bands/finite_weight_class_potentials.md §§1–8、11–13 | weight_types/finite_weight_classes_reconstruction_review.md；interaction_height_review.md，完整证明与内部独立攻击（高度审查已知旧机制） |
 | [S5] | high_degree_share.md「精确陈述」至「固定正权向量」 | high_degree_share_review.md 最终逐资源版复核；原独立计算简式与一般证明覆盖分开 |
@@ -613,30 +690,33 @@ complete 签名允许某玩家的块 $\sigma_i=A_i$；proper/core 签名要求�
 | [S14] | anchored_cycle_lock.md「精确身份」及全状态证明 | ordinal_potentials/anchored_cycle_lock_review.md；一般编译完整，输出次数依实例 |
 | [S15] | uniform_clock_budget_barrier.md §§1–4 | ordinal_potentials/uniform_clock_budget_barrier_review.md；实际输出次数强化与最终diff已核，不把充分预算说成必要 |
 | [S16] | anchored_clock_actual_margins.md §§1–6、9 | ordinal_potentials/actual_clock_margins_review.md；接口与新增余量反例分别冻结攻击，曾pending处已由后续冻结攻击/空core追加核查闭合 |
-| [S17] | class_front_phase_quotient.md §8.1–8.4 | ordinal_potentials/class_internal_clock_compiler_review.md；仅审新§8，旧端点例不是同一反例 |
+| [S17] | class_front_phase_quotient.md §8.1–8.4及“条件编译接口”整节 | ordinal_potentials/class_internal_clock_compiler_review.md、class_front_allstate_compiler_review.md；旧通用编译障碍与新全前沿出口条件编译分别冻结攻击，合同不同 |
 | [S18] | template_certificates/finite_action_duality.md §§1–4 | template_certificates/finite_action_duality_review.md；一般替代内部独立重构与精确核验 |
 | [S19] | incidence_forest_private_reduction.md §§1–6、8 | incidence_forest_private_reduction_review.md；森林存在/单根挂树lift完整证明与独立冻结攻击，初稿candidate由最终状态明确更新；不调用固定单环例 |
+| [S20] | fixed_hub_light_threshold_response.md 全文 | fixed_hub_light_threshold_review.md；已知FIP/存在推论的完整重构与独立冻结攻击，显式势/删除接口，非原游戏共同均衡 |
 
-上表数学正文（[S2]–[S19]）均位于 `research/current/weighted_congestion/`；审查均位于 `research/reviews/weighted_congestion/`，特别标明者除外。[S0]/[S1] 位于 `research/weighted_congestion_frontier/`。
+上表数学正文（[S2]–[S20]）均位于 `research/current/weighted_congestion/`；审查均位于 `research/reviews/weighted_congestion/`，特别标明者除外。[S0]/[S1] 位于 `research/weighted_congestion_frontier/`。
 
-[S0]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/weighted_congestion_frontier/MODEL.md
-[S1]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/weighted_congestion_frontier/LITERATURE.md
-[S2]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md
-[S3]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/resource_support.md
-[S4]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md
-[S5]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/high_degree_share.md
-[S6]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/cyclic_clone_improvement_cycles.md
-[S7]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md
-[S8]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/common_power_mixture_obstruction.md
-[S9]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/separable_ordinal_obstruction.md
-[S10]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/shared_side_truncated_potential.md
-[S11]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md
-[S12]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md
-[S13]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/template_certificates/selector_local_moments.md
-[S14]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/anchored_cycle_lock.md
-[S15]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/uniform_clock_budget_barrier.md
-[S16]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/anchored_clock_actual_margins.md
-[S17]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/class_front_phase_quotient.md
-[S18]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/template_certificates/finite_action_duality.md
+[S0]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/weighted_congestion_frontier/MODEL.md
+[S1]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/weighted_congestion_frontier/LITERATURE.md
+[S2]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md
+[S3]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/resource_support.md
+[S4]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md
+[S5]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/high_degree_share.md
+[S6]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/cyclic_clone_improvement_cycles.md
+[S7]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/template_certificates/stationary_selector_obstruction.md
+[S8]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/common_power_mixture_obstruction.md
+[S9]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/separable_ordinal_obstruction.md
+[S10]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/shared_side_truncated_potential.md
+[S11]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md
+[S12]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md
+[S13]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/template_certificates/selector_local_moments.md
+[S14]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/anchored_cycle_lock.md
+[S15]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/uniform_clock_budget_barrier.md
+[S16]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/anchored_clock_actual_margins.md
+[S17]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/class_front_phase_quotient.md
+[S18]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/template_certificates/finite_action_duality.md
 
-[S19]: https://github.com/SOMEBODYJUN/co-work-anl/blob/0c5a97b68ae086f7a4ae0d23a1e9dc811980cbb1/research/current/weighted_congestion/incidence_forest_private_reduction.md
+[S19]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/incidence_forest_private_reduction.md
+
+[S20]: https://github.com/SOMEBODYJUN/co-work-anl/blob/d5492a5deb217e85f438a38a4809057d8ece1f6e/research/current/weighted_congestion/fixed_hub_light_threshold_response.md
