@@ -6437,6 +6437,57 @@
         "research/reviews/unrelated_machines/classical_foundation_review.md"
       ],
       "status": "finite computational evidence"
+    },
+    {
+      "id": "UM-CC-DEFINITION-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "只保持单机分布的固定机器联合配置",
+      "detail": "Common full machine configuration marginals y and independent witnesses for every <=r-machine coalition; no multi-machine overlap consistency. Ratios only at positive OPT.",
+      "refs": [
+        "research/current/unrelated_machines/long_path_coalition_gap.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-LONG-PATH-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意大围长简单图的配置间隙2",
+      "detail": "For every prescribed girth g>=3, supremum configuration gap is 2 even with exactly two eligible machines and simple machine graph; long-path transfer preserves OPT=2-1/k and feasible T=1+1/k.",
+      "refs": [
+        "research/current/unrelated_machines/long_path_coalition_gap.md",
+        "research/reviews/unrelated_machines/long_path_coalition_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unestablished"
+    },
+    {
+      "id": "UM-COALITION-PROJECTION-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "固定机器联合投影仍有上确界间隙2",
+      "detail": "For every fixed r and girth g, precisely defined CC_r has supremum gap 2. Forest coupling preserves full singleton-machine marginals; complete overlap consistency is excluded.",
+      "refs": [
+        "research/current/unrelated_machines/long_path_coalition_gap.md",
+        "research/reviews/unrelated_machines/long_path_coalition_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unestablished"
+    },
+    {
+      "id": "UM-LONG-PATH-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "长链配置与森林耦合的双路有限核验",
+      "detail": "Sparse exact Fraction certificates, small complete orientations, full-config forest couplings, independent global-task completion and zero-probability boundary fixtures; finite only.",
+      "refs": [
+        "research/current/unrelated_machines/long_path_coalition_gap.md",
+        "tests/audits/unrelated_machines/long_path_coalition_gap.py",
+        "tests/audits/unrelated_machines/independent_coalition_gluing.py",
+        "evidence/runs/unrelated_machines/long_path_coalition_gap_audit.json",
+        "examples/unrelated_machines/long_path_gap_small_instance.json",
+        "evidence/certificates/unrelated_machines/long_path_gap_small_configuration.json"
+      ],
+      "status": "finite computational evidence"
     }
   ],
   "hyperedges": [
@@ -15298,6 +15349,87 @@
         "research/current/unrelated_machines/model_and_classical_barriers.md"
       ],
       "status": "finite evidence"
+    },
+    {
+      "id": "UM-E-LONG-PATH",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TREE-CERTIFICATE-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-LONG-PATH-GAP-v1",
+      "statement": "Classic family plus C<2 chain contraction and explicit fractional transfer; ordered-slot upper bound completes supremum equality.",
+      "refs": [
+        "research/current/unrelated_machines/long_path_coalition_gap.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "UM-E-COALITION",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-CC-DEFINITION-v1",
+        "UM-LONG-PATH-GAP-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-COALITION-PROJECTION-GAP-v1",
+      "statement": "Induced forests at girth>r admit binary-conditioned gluing; common full single-machine distributions give every weak coalition witness.",
+      "refs": [
+        "research/current/unrelated_machines/long_path_coalition_gap.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "UM-E-COALITION-LIMIT",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-COALITION-PROJECTION-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only excludes guarantees measured solely against this weak coalition threshold; full-overlap 3-machine consistency already solves this treewidth-2 family, and the general target remains open.",
+      "refs": [
+        "research/current/unrelated_machines/long_path_coalition_gap.md"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "UM-E-CHECK-LONG-PATH",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LONG-PATH-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-LONG-PATH-GAP-v1",
+      "statement": "Only stated generated parameters, small complete integer oracles, exact marginal and schedule witness checks.",
+      "refs": [
+        "research/current/unrelated_machines/long_path_coalition_gap.md",
+        "tests/audits/unrelated_machines/long_path_coalition_gap.py",
+        "tests/audits/unrelated_machines/independent_coalition_gluing.py",
+        "evidence/runs/unrelated_machines/long_path_coalition_gap_audit.json"
+      ],
+      "status": "recorded within stated scope"
+    },
+    {
+      "id": "UM-E-CHECK-COALITION",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LONG-PATH-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-COALITION-PROJECTION-GAP-v1",
+      "statement": "Finite explicit joint-state marginals and complete-task extension; not a proof over all r or all matrices.",
+      "refs": [
+        "research/current/unrelated_machines/long_path_coalition_gap.md",
+        "tests/audits/unrelated_machines/long_path_coalition_gap.py",
+        "tests/audits/unrelated_machines/independent_coalition_gluing.py",
+        "evidence/runs/unrelated_machines/long_path_coalition_gap_audit.json"
+      ],
+      "status": "recorded within stated scope"
     }
   ]
 }

@@ -587,6 +587,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-TARGET-v1 | ∃统一ε∈(0,1)，∃确定性位多项式算法，∀合法非负有理/不可用边输入（m,n可变），输出全部任务的合法分配且C_max≤(2−ε)OPT；零最优值亦覆盖。 | OPEN，无新算法；精确身份见[本题账本](../unrelated_machines/CLAIMS.md)。 |
 | UM-ST-ROUND-v1 | ∀P,T≥0及剪枝LST有理可行x，可确定性位多项式舍入为每机器L_i≤分数负载+支撑最大值≤2T。 | 已知结果的[自足重构](unrelated_machines/model_and_classical_barriers.md)与[独立攻击](../reviews/unrelated_machines/classical_foundation_review.md)；只实现给定x接口，非新贡献。 |
 | UM-CONF-GAP-v1 | 配置LP在正最优值实例上sup OPT/T_CONF=2，即使每任务至多两台可用机。 | [重索引两树证明](unrelated_machines/model_and_classical_barriers.md)；原高度疑点显式处理；只限相对该LP值的合同，不证明主目标为假。 |
+| UM-LONG-PATH-GAP-v1 | 对每个整数g≥3，正最优值、恰两可用机器/任务、简单机器图围长≥g子类上sup OPT/T_CONF=2。 | [长链阈值保真证明](unrelated_machines/long_path_coalition_gap.md)、[冻结独立攻击](../reviews/unrelated_machines/long_path_coalition_review.md)；非算法困难性，全球新颖性未认证。 |
+| UM-COALITION-PROJECTION-GAP-v1 | 对每个整数r≥1、g≥3，上述子类精确定义CC_r的sup gap=2；各coalition仅共享完整单机配置分布，不要求多机overlap一致。 | [正文定义和森林耦合](unrelated_machines/long_path_coalition_gap.md)；完整三机交叠相容性在本树宽2族精确；主目标OPEN，独立内部已审、未外审。 |
 
 ## 逻辑使用规则
 
