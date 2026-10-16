@@ -244,6 +244,9 @@ def main():
     sub.add_parser("sync", help="同步 main 并保留本地工作")
     r = sub.add_parser("read", help="读取异步公屏")
     r.add_argument("--json", action="store_true")
+    r.add_argument("--thread")
+    r.add_argument("--limit", type=int,
+                   help="只显示最近若干条消息；0 表示全部")
     s = sub.add_parser("send", help="署名发言，回复和资产引用均可选")
     text = s.add_mutually_exclusive_group(required=True)
     text.add_argument("--text")
@@ -268,7 +271,14 @@ def main():
         print(json.dumps(sync(repo, env), ensure_ascii=False))
         return 0
     if a.command == "read":
-        return board(repo, env, "view", ["--json"] if a.json else [])
+        extra = ["--json"] if a.json else []
+        if a.thread is not None:
+            extra += ["--thread", a.thread]
+        if a.limit is not None:
+            if a.limit < 0:
+                raise Stop("read --limit 必须是非负整数。")
+            extra += ["--limit", str(a.limit)]
+        return board(repo, env, "view", extra)
     if a.command == "send":
         extra = ["--actor", who]
         for name in ("text", "text_file", "thread", "reply_to", "asset_json", "kind", "event_id"):
