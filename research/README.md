@@ -70,5 +70,6 @@
 
 不相关并行机的[稀释终端与条件探针比较](current/unrelated_machines/diluted_sink_probe_gap.md)解释独立配置/逐边LST为何仍gap2，并给出条件内保留大任务基数的可算修复；全局统一近似仍OPEN。
 
+半单位新身份已关闭固定大小分界的共同见证窗口：每个固定δ∈[0,1/2)的(Aδ)存在性NP完全；P≠NP下无总位多项式OPT≤T承诺构造。它仍不是统一低于2算法的困难性，下一步转向实际联合舍入损失。见[共同选择正文§3a](current/unrelated_machines/joint_matching_completion_and_block_cuts.md)。
 
 [全局单行基数匹配与紧凑共享逃逸](current/unrelated_machines/row_count_escape_gap.md)把资源池路线推进到准确边界：一次全局任务权匹配涵盖同一下界的全部子池，但每机/每配置独立守计数仍不等于共同真实负载。新族为多项式规模，GPC₂与所有单行见证仍gap2；现有条件块切面可修复，主目标OPEN。

@@ -164,7 +164,7 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Conclusion：整体H与残余容量耦合不是免费匹配oracle；不是主目标或某个近似比的困难性结论。
 - Dependencies：UM-MODEL-v1、接口(Aδ)、Karp1972完美3DM NP完全性Paper Fact（原p94/95，本次2010重印PDF14/15已图像核对）、正文无pins归约和NP证书位长证明。
 - Evidence：正反两向全量词归约；q=0/s=0边界；唯一small使剩余质量0/1、负载1/3网格；两路独立调度oracle。
-- Counterevidence / Objections：δ=1/3时q1空三元组、4激活任务源负载4/3给归约失效；δ∈[1/3,1/2)及其他算法均未排除。
+- Counterevidence / Objections：δ=1/3时q1空三元组、4激活任务源负载4/3给归约失效；旧归约本身不排δ∈[1/3,1/2)；新UM-JOINT-HALF-CHOICE-NP-v1另用半单位输入关闭该窗口。其他算法仍未排除。
 - Status：完整限域复杂度证明、内部独立审查；经典源困难性未在本专题重证，外审/新颖性未认证。
 - Related Files：同正文§3、原始Karp重印/manifest、审查和精确代码/冻结证据。
 
@@ -280,6 +280,35 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Status：完整所述合同反例、内部独立已审；外审/全球新颖性未认证，主目标OPEN。
 - Related Files：[正文§11](../current/unrelated_machines/diluted_sink_probe_gap.md#11-共享小端与稀释终端的共同探针边界)、[两阶段审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)、diluted_escape_probe_gap.py与independent_diluted_escape_audit.py及冻结结果。
 
+## UM-JOINT-HALF-CHOICE-NP-v1：半单位共同选择的全窗口NP完全边界
+
+- Exact Statement / Quantifiers：∀固定有理δ∈[0,1/2)，T=1、唯一small端、有限时间仅{1/2,1}时(Aδ)存在性NP完全，且该整个子类上(Aδ)存在⇔OPT≤1。
+- Objects：UM-MODEL-v1，正文(Aδ)的大边匹配H和剩余small分数分配x。
+- Domain：显式合法矩阵；T=1；每任务恰一个small端；有限时间仅1/2和1；m,n可变。
+- Definitions：大小分界固定原T/2；未选任务唯一small使剩余分配0/1。
+- Assumptions：NP完全性本身无P≠NP假设，导入完美3DM源事实。
+- Scope：δ∈[0,1/2)，不含1/2；旧UM-JOINT-CHOICE-NP-v1的时间与范围不变。
+- Conclusion：整个δ<1/2见证存在性窗口NP完全；不是统一低于2近似困难性。
+- Dependencies：UM-MODEL-v1、(Aδ)、Karp1972完美3DM事实、逐x源显式归约、半整数与NP证书界。
+- Evidence：自足两向证明、先重构后冻结攻击、双路整数/Fraction审计。来源boss4公屏166；本阶段核实与规范化保存。
+- Counterevidence / Objections：δ=1/2时本构造全部留small即通过；q0用闲置机器修补m≥1。当前声明范围无未解fatal；未认证新颖性。
+- Status：complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified。
+- Related Files：[research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md](../current/unrelated_machines/joint_matching_completion_and_block_cuts.md)§3a、`research/reviews/unrelated_machines/half_unit_joint_choice_review.md`、`evidence/runs/unrelated_machines/half_unit_joint_choice_audit.json`及两份新审计。
+
+## UM-JOINT-HALF-PROMISE-NO-v1：半单位共同见证承诺搜索的全窗口障碍
+
+- Exact Statement / Quantifiers：假设P≠NP，∀固定有理δ∈[0,1/2)，不存在总确定性位多项式算法，对所有OPT≤T的合法输入保证输出(Aδ)见证；即使只要求T1、唯一small、时间{1/2,1}子类亦不可能。域外可任意输出。
+- Objects：UM-MODEL-v1，正文(Aδ)的大边匹配H和剩余small分数分配x。
+- Domain：显式合法矩阵；T=1；每任务恰一个small端；有限时间仅1/2和1；m,n可变。
+- Definitions：大小分界固定原T/2；未选任务唯一small使剩余分配0/1。
+- Assumptions：明确假设P≠NP及算法总确定性位多项式；非承诺输入可任意输出。
+- Scope：δ∈[0,1/2)，不含1/2；旧UM-JOINT-CHOICE-NP-v1的时间与范围不变。
+- Conclusion：排除这条充分见证路线；不排联合舍入或不输出该见证的调度算法。
+- Dependencies：UM-JOINT-HALF-CHOICE-NP-v1、P≠NP、总时间界和可验证证书。
+- Evidence：自足两向证明、先重构后冻结攻击、双路整数/Fraction审计。来源boss4公屏166；本阶段核实与规范化保存。
+- Counterevidence / Objections：δ=1/2时本构造全部留small即通过；q0用闲置机器修补m≥1。当前声明范围无未解fatal；未认证新颖性。
+- Status：complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified。
+- Related Files：[research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md](../current/unrelated_machines/joint_matching_completion_and_block_cuts.md)§3a、`research/reviews/unrelated_machines/half_unit_joint_choice_review.md`、`evidence/runs/unrelated_machines/half_unit_joint_choice_audit.json`及两份新审计。
 
 ## UM-GLOBAL-ROW-COUNT-FILTER-v1：全局单行基数匹配的安全过滤
 

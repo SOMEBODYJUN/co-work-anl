@@ -3,7 +3,7 @@
 新主攻的[配置LP障碍、模型迁移和复杂度误用](research/unrelated_machines/FAILED_ROUTES.md)单独维护；新增长链反例精确限制仅共享单机边际的固定机器联合投影，未限制完整多机overlap相容性；逐星匹配另被共享小端容量击穿，保留安全过滤接口；五机反例另限制任意树再耦合态冻结任务后的低于2补全合同；这些方法边界与配置gap都不证明一般算法目标为假。下列旧题记录保持原范围。
 此前拥塞题已有[线性次数的全状态严格反例](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md)，准确否定普遍Cd/ln d保证。旧同类clock路线缺失的全前沿覆盖已由新专用健康输入另证；全局极差预算及通用strict-sweep反例仍有效。
 
-共同大边匹配再补小流的精确选择也有明确[3DM接口障碍](research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md)，未排除固定较大容量余量的近似选择或主目标。
+共同大边匹配再补小流的精确选择也有明确[3DM接口障碍](research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md)，新半单位身份排除所有固定δ<1/2的上述见证承诺构造（P≠NP）；主目标与其他调度接口仍未排除。
 
 这是全仓入口。失败记录属于数学资产：须说明尝试机制、具体失败步骤、反例或缺口、排除范围、仍成立的回收结果及重试条件。
 
@@ -44,5 +44,6 @@
 
 独立配置＋GHMR＋所有普通LST边探针的联合合同也被稀释共享小端族击穿；仍不排条件内基数/配置及块容量信息。
 
+半单位新身份已关闭固定大小分界的共同见证窗口：每个固定δ∈[0,1/2)的(Aδ)存在性NP完全；P≠NP下无总位多项式OPT≤T承诺构造。它仍不是统一低于2算法的困难性，下一步转向实际联合舍入损失。见[共同选择正文§3a](research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md)。
 
 全局多槽匹配的[紧凑共享逃逸反例](research/current/unrelated_machines/row_count_escape_gap.md)说明：即使每个查询覆盖全部资源任务，其他机器只守计数仍能把真实超载移到不同中心；不排条件LST/config及共同负载。安全过滤与全池支配引理保留，条件块cut可修本族。

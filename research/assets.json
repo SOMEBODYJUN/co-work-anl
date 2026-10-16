@@ -4547,14 +4547,18 @@
       "claims": [
         "UM-JOINT-SMALL-ROUND-v1",
         "UM-JOINT-CHOICE-NP-v1",
-        "UM-ESCAPE-BLOCK-CUT-v1"
+        "UM-ESCAPE-BLOCK-CUT-v1",
+        "UM-JOINT-HALF-CHOICE-NP-v1",
+        "UM-JOINT-HALF-PROMISE-NO-v1"
       ],
       "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified",
       "applies_when": [
         "UM-MODEL-v1; exact rational thresholdT>=0; matching big edges(T/2,T], remaining small edges<=T/2",
         "Given-witness rounding allows rationaldelta>=0 and uses input witness bit length",
         "NP-completeness: every fixed rationaldelta in[0,1/3), T1, Nempty, one small edge per job, times{1/3,1}",
-        "Block-cut threshold statement only for the recognized shared-z escape family withk>=4 and coefficients recomputed at eachB"
+        "Block-cut threshold statement only for the recognized shared-z escape family withk>=4 and coefficients recomputed at eachB",
+        "New half-unit identities: fixed rational delta in[0,1/2), unique-small, T1, finite times{1/2,1}; old third-unit identity unchanged",
+        "Promise nonexistence conditional on P!=NP and a total deterministic bit-polynomial time bound; does not rule out joint rounding"
       ],
       "produces": "Conditional(3/2+delta)T constructive rounding, exact joint-choice hardness, and conditional bottom-block cuts recovering the entire escape-family threshold",
       "implementation": [],
@@ -4564,20 +4568,24 @@
       "tests": [
         "tests/audits/unrelated_machines/joint_matching_completion.py",
         "tests/audits/unrelated_machines/unique_small_matching_audit.py",
-        "tests/audits/unrelated_machines/joint_matching_completion_independent.py"
+        "tests/audits/unrelated_machines/joint_matching_completion_independent.py",
+        "tests/audits/unrelated_machines/half_unit_joint_choice.py",
+        "tests/audits/unrelated_machines/half_unit_schedule_independent.py"
       ],
       "records": [
-        "evidence/runs/unrelated_machines/joint_matching_completion_audit.json"
+        "evidence/runs/unrelated_machines/joint_matching_completion_audit.json",
+        "evidence/runs/unrelated_machines/half_unit_joint_choice_audit.json"
       ],
       "examples": [],
       "reviews": [
-        "research/reviews/unrelated_machines/joint_matching_completion_review.md"
+        "research/reviews/unrelated_machines/joint_matching_completion_review.md",
+        "research/reviews/unrelated_machines/half_unit_joint_choice_review.md"
       ],
       "sources": [
         "history/source/literature/unrelated_machines/karp_1972_reprinted_2010_reducibility.pdf",
         "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
       ],
-      "limit": "No universal(2-epsilon) algorithm, approximation-hardness result, generic block separation or exact heavy-choice oracle. Source3DM NP-completeness is explicitly imported, not independently reconstructed in full."
+      "limit": "No universal(2-epsilon) algorithm, approximation-hardness result, generic block separation or exact heavy-choice oracle. Source3DM NP-completeness is explicitly imported, not independently reconstructed in full. Half-unit extension closes the entire A_delta witness window delta<1/2, not UM-TARGET or actual rounding contracts."
     },
     {
       "id": "unrelated_machines_diluted_sink_probes",
