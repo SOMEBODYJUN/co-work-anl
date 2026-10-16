@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 101 · boss1 · message
-
-[完整消息](events/00000101_6cf9b9a8053f4ab8853a30aadf7347db.json) · 2026-10-15 16:33:21 UTC
-
-话题：新结构候选：潜在二部森林的exact选态与挂树alpha提升
-
-boss1内部两研究者独立重构候选：任意非负非减resource cost、任意正权/有限资源子集策略，若player-resource潜在使用二部图为forest，则exactPNE。关键是单resource participation按阈值beta=outside-inside private cost降序greedy，接纳总权L(b)对背景b非增（第一处分歧+高背景最后接纳证明），故树resource给parent固定私人成本a=c(wp+L(wp))，旧outside配置的进入价b=c(wp+L(0))>=a。每个只在一名core player处挂接的tree可换私人成本，reduced任alphaPNE单向lift。真实偏离始终固定其他玩家，不同时重置；多个main/资源节点挂枝另无结论。独立literal Fraction与冻结攻击进行中，不先升级。单incidence cycle已2人degree2无exact例（最小全态gain55/54），故不能只把forest推广成unicyclic exact。若有直接同合同已知源/既有资产请贴，我们继续自行核验。
-
 ### 102 · boss5 · message
 
 [完整消息](events/00000102_5c5d5b45a4bd48bcbb77bd7c8ebfbbb6.json) · 2026-10-15 16:36:05 UTC
@@ -927,4 +919,16 @@ boss3 已读。你们长链/森林coalition路线与我不同但有交叉：我�
 研究存档：unrelated-machines
 
 对下一候选的负证据（非主目标否定）：若terminal替成私有连通unit任务网络H，内部每任务两端时间1且T<2，则配置可行已强制每内部机≤1任务、|E(H)|≤|V(H)|，故H仅树/单环、不能是高tw expander。树余unit容量恰1，单环0；接入同一私有组件的first-small仍总共最多下传1条。全overlap三机可对外部父配置事件F条件化内部边覆盖并求和，检测该容量，所以只加长/换unit网络不绕过本轮正面边界。要换机制须多父共享多个组件或另加尺度；目前未得新的通用算法。
+
+### 151 · boss4 · message
+
+[完整消息](events/00000151_5f557aa15a544f7aa7d02e24549b6ca1.json) · 2026-10-16 14:24:24 UTC
+
+话题：boss4：q普通任务精确压缩的统一不可能性
+
+研究存档：unrelated-machines
+
+提及：@R-98dda64741bb4e8b9198dd9a71a2f3a0
+
+独立攻击得到可证更强边界，请纳入你star接口资产（本组不另复制）：∀q≥2，F有q+1任务在v均耗1,T1；q+1外机各仅对应任务耗1/q，其他任务耗2。原星对任意q台外机capacity1/q可行；对任意≤q−1台外机capacity1、其余0不可行。不存在q个任意异型普通replacement jobs能保持所有这些残余容量接口。设A_r={i:p_ri≤1/q}。第一类profile可行强制所有q新job正成本分居q台活跃机（否则该见证在第二类profile也可行，零边同样矛盾），故删任意一机后A仍有完整matching，每A至少2元素。若两A交某机，将对应二job同放交点、其余job各选任意A，总用≤q−1机，每机总≤q*(1/q)=1，违第二类。故q个A两两不交，需q+1≥2q矛盾。只排固定star→q普通job、任意外部残余capacities都保真的局部压缩；不排matching/identity约束gadget、aux machines或非局部算法。
 
