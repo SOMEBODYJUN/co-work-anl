@@ -79,3 +79,5 @@
 [三选稀疏深树的独立条件配置边界](current/unrelated_machines/sparse_conditioned_configuration_gap.md)区分“每条边都可单独强制”和“这些条件点有共同多机相关性”。前者仍gap2，完整四机器bag交集联合一致性在本族精确；沿正文进入独立审查、双路代码和实际输入/证书。
 
 紧凑共享逃逸正文§6另给UM-COMPACT-MULTIROW-EXTENSION-v1：任意U含至多N−2k个中心时，每个单机配置均可延伸并让U全部机器同时守真实容量；N−2k+1中心加z空pin有明确失败。故“更多独立行见证”仍缺共同相关性，尖锐预算和实际构造不改变主目标OPEN状态。
+
+[完整单机配置的独立全LP延伸](current/unrelated_machines/row_count_escape_gap.md#7-完整单机配置也分别能延伸到完整配置lp)给出比逐边条件LST更强的准确边界：所有本地配置各自有完整证书仍gap2，下一缺口是共同条件矩与可构造舍入。

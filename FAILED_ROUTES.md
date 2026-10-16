@@ -49,3 +49,5 @@
 全局多槽匹配的[紧凑共享逃逸反例](research/current/unrelated_machines/row_count_escape_gap.md)说明：即使每个查询覆盖全部资源任务，其他机器只守计数仍能把真实超载移到不同中心；不排条件LST/config及共同负载。安全过滤与全池支配引理保留，条件块cut可修本族。
 
 [稀疏深树](research/current/unrelated_machines/sparse_conditioned_configuration_gap.md)使所有单边完整配置探针各自通过，仍有gap趋2；失败在查询间共同相关性缺失。坏簇路径占位须整体撤离，不能只用总槽计数。完整交叠一致性、星消元后探针和主目标未被排除。
+
+完整单机配置分别强制到完整配置LP也不足：紧凑族在每项探针内部守所有机器容量，仍无共同条件base而gap趋2。可回收显式完整y证书；共同逃逸一阶矩/条件块cut未被排除。该性质非一般可行的必要条件，安全操作仅删除无延伸配置，不能因某一失败配置直接拒绝。

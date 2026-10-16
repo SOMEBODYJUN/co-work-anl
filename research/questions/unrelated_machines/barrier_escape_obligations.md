@@ -37,3 +37,5 @@
 [逐机两倍跨度联合舍入](../../current/unrelated_machines/joint_slot_prefix_rounding.md)已经给受限类3/2算法，显示半单位见证障碍可以绕过。剩余具体义务是：对任意行内尺度混合，保留tiny任务的覆盖及真实剩余容量，同时取得统一排序槽损失或可修复的联合状态。当前没有这样的归约或舍入证明，不能把额外行跨度假设当免费预处理。
 
 独立条件配置的新边界为[UM-SPARSE-CONDITIONED-CONFIG-GAP-v1](../../current/unrelated_machines/sparse_conditioned_configuration_gap.md)：单边查询内已保持全部单机配置，仍不足以跨不同查询保留共同容量。下一步须明确多机交叠相关性、消元后保持或大小任务联合迁移的新机制；不能继续以更多彼此独立的单机证书充当统一舍入义务。完整四机器bag一致性在该族精确，但一般状态规模和构造复杂度未解决。
+
+完整单机配置的独立LP延伸已被UM-MACHINE-CONFIG-PROBE-GAP-v1的紧凑族排除为充分信息。下个候选须说明如何让条件证书共享一个base（至少跨块逃逸的一阶矩），或绕过该证书架构直接联合舍入；不能把∀i∀C∃各自延伸误读成全局分布。

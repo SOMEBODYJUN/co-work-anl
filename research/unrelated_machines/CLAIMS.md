@@ -372,3 +372,18 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：sharp查询z空会禁止所有Y逃逸，才迫U内中心不能接X；不能省该pin或将G+1的失败说成每个查询都失败。此前单行v1范围保持不变。
 - Status：完整所述范围证明及内部独立审查；未外审，全球新颖性和独立论文价值未认证，主目标OPEN。
 - Related Files：[正文§6](../current/unrelated_machines/row_count_escape_gap.md)、row_count_escape_review.md末节、multirow_count_extension.py与对应冻结结果。
+
+## UM-MACHINE-CONFIG-PROBE-GAP-v1：全部完整单机配置的独立延伸仍有间隙2
+
+- Exact Statement / Quantifiers：∀整数k≥2，row_count_escape_gap.md§2的同一紧凑实例P_k在T=1满足∀机器i、∀本地合法配置C∈C_i(1)，∃完整配置LP可行点y^(i,C)，y^(i,C)_(i,C)=1；OPT(P_k)=2−1/k。故正OPT且满足该(MP)合同的实例/目标对上sup OPT/T=2；本族与原GPC₂及列明过滤固定点也同时相容，不要求条件点自身满足GPC₂。
+- Objects：UM-MODEL-v1；同一N=2k²块、G=N−2k全局机、Y在共享z耗1/k的多项式规模族；完整配置点含每机归一、合法配置容量和每任务精确覆盖。
+- Domain：T=1，k≥2，有限处理时间{1/k,1}；m=2k³+6k²−2k+1、n=4k³+2k²；主目标的一般合法输入子族。
+- Definitions：(MP)=∀i∀C∃y^(i,C)，不是一个共同base y及其条件分布。固定C要求该机C外任务边际0。
+- Assumptions：不同探针可用不同完整LP点；无跨探针混合恒等式、条件pair一致或完整SA/LS条件。
+- Scope：全部合法单机配置包括空、全部Z子集、G/R单任务及z任意≤k个Y；每给定C可多项式位长构造延伸，但未声称多项式枚举全部配置或通用精确LP求解。
+- Conclusion：反驳基于这些独立延伸性质的统一(2−ε)T保证，包含全部边独立CONFIG强制探针；不否定相对OPT算法或UM-TARGET-v1。安全删配置迭代无第一次删除。
+- Dependencies：UM-MODEL-v1、UM-COMPACT-COUNT-ESCAPE-GAP-v1的实际族/整数最优值；§7全部分类证书和有理单位槽装配；UM-ST-ROUND-v1给sup上界。GPC₂仅独立同时成立，不作为条件证书前提。
+- Evidence：§7自足证明；先独立重构再冻结攻击；主实现实际核k2全部333配置、k3/4全部非z及列明z配置，独立不导入生成器复核k2全配置、k3..8代表及k2..128标量。
+- Counterevidence / Objections：(MP)不是一般T整数可行的必要条件，不能因一个失败配置直接拒绝；仅可安全删除该配置。共同base的逃逸一阶矩恒等式立即导出既有条件块cut并排本族；未建立一般求解/舍入、新颖性或外审。
+- Status：完整所述范围证明，实际独立内部审查与双路精确核验；未外审，未认证全球新颖性，主目标OPEN。
+- Related Files：row_count_escape_gap.md§7、machine_config_probe_review.md、compact_config_probe.py、compact_config_probe_independent.py、compact_config_probe_audit.json。来源保留boss2紧凑族、boss3稀疏修复与boss1本节新延伸机制。

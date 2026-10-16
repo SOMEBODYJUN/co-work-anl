@@ -7047,6 +7047,32 @@
         "evidence/runs/unrelated_machines/multirow_count_extension_audit.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "UM-MACHINE-CONFIG-PROBE-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "全部单机完整配置的独立延伸仍保留间隙2",
+      "detail": "For every machine and every local feasible C, a full configuration LP point pins C. Compact family OPT=2-1/k at T1; witnesses are independent, not shared-base conditional data.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md",
+        "research/reviews/unrelated_machines/machine_config_probe_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-MACHINE-CONFIG-PROBE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "完整单机配置延伸的双路精确证书审计",
+      "detail": "All k2 configurations, all non-z k3/4 plus stated z cases, independent representatives k3..8 and scalar k2..128; finite evidence only.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md",
+        "tests/audits/unrelated_machines/compact_config_probe.py",
+        "tests/audits/unrelated_machines/compact_config_probe_independent.py",
+        "evidence/runs/unrelated_machines/compact_config_probe_audit.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -16895,6 +16921,51 @@
         "evidence/runs/unrelated_machines/multirow_count_extension_audit.json"
       ],
       "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-UM-MACHINE-CONFIG-PROBE-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-COMPACT-COUNT-ESCAPE-GAP-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-MACHINE-CONFIG-PROBE-GAP-v1",
+      "statement": "Use the existing compact family/OPT; all local configurations are explicitly classified and extended via exact unit-slot distributions, giving gap lower bound and ST upper2.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-MACHINE-CONFIG-PROBE-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MACHINE-CONFIG-PROBE-AUDIT-v1"
+      ],
+      "conclusion": "UM-MACHINE-CONFIG-PROBE-GAP-v1",
+      "statement": "Independent full-y arithmetic audits in the recorded finite scope; no universal truth inferred from finite tests.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md",
+        "evidence/runs/unrelated_machines/compact_config_probe_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-MACHINE-CONFIG-PROBES-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MACHINE-CONFIG-PROBE-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only independent local-configuration extension information is insufficient; shared conditional moments/block cuts and OPT-relative algorithms remain possible.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }

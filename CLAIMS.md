@@ -24,3 +24,5 @@
 [全局单行基数与紧凑共享逃逸](research/current/unrelated_machines/row_count_escape_gap.md)新增安全位多项式查询及准确反例：完整任务身份/多槽/每机每配置计数延伸仍与GPC₂合用保持gap2；条件块切面仍可识别本族。UM-TARGET-v1继续OPEN；一般共同负载耦合与统一舍入未解。
 
 新身份`UM-SPARSE-CONDITIONED-CONFIG-GAP-v1`为每任务至多三选的全边独立条件配置间隙；[精确账本](research/unrelated_machines/CLAIMS.md)固定不同查询不耦合及未覆盖预处理的范围，不升级主目标。
+
+UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自完整配置LP延伸”的间隙2身份；精确范围、非必要条件警示及共同base边界见[专题账本](research/unrelated_machines/CLAIMS.md)与紧凑族正文§7。

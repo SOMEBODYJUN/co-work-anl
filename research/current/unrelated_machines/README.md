@@ -97,3 +97,7 @@
 读取链：精确账本→自足稿→sparse_conditioned_configuration_review.md→sparse_conditioned_configuration.py及独立程序→实际稀疏输入、最高逃逸配置/调度证书、sparse_conditioned_configuration_audit.json。主目标仍OPEN；此为条件松弛的方法边界，不是一般近似困难性。
 
 紧凑共享逃逸正文§6另给UM-COMPACT-MULTIROW-EXTENSION-v1：任意U含至多N−2k个中心时，每个单机配置均可延伸并让U全部机器同时守真实容量；N−2k+1中心加z空pin有明确失败。故“更多独立行见证”仍缺共同相关性，尖锐预算和实际构造不改变主目标OPEN状态。
+
+## 完整单机配置探针的精确新边界
+
+UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法完整C分别有y_iC=1的完整配置LP延伸，OPT=2−1/k。它不要求共同base或条件pair相容；(MP)本身不是整数可行必要条件，仅安全删失败配置。读取链：专题CLAIMS→row_count_escape_gap.md§7→machine_config_probe_review.md→compact_config_probe.py与compact_config_probe_independent.py→compact_config_probe_audit.json。双路实际有限核验与一般证明分开；共同逃逸一阶矩可恢复旧块cut，主目标OPEN，外审/新颖性未认证。

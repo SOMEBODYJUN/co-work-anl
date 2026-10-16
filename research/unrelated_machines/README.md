@@ -76,3 +76,5 @@
 新增[三选稀疏深树与微小共享逃逸](../current/unrelated_machines/sparse_conditioned_configuration_gap.md)：全部有限边分别有完整条件配置证书，但整数间隙趋2。正文自足，来源连接既有逃逸与同行168；独立审查和实际输入/证据沿链接读取，未声称完整层级障碍。
 
 紧凑共享逃逸正文§6另给UM-COMPACT-MULTIROW-EXTENSION-v1：任意U含至多N−2k个中心时，每个单机配置均可延伸并让U全部机器同时守真实容量；N−2k+1中心加z空pin有明确失败。故“更多独立行见证”仍缺共同相关性，尖锐预算和实际构造不改变主目标OPEN状态。
+
+完整条件化新增[UM-MACHINE-CONFIG-PROBE-GAP-v1](../current/unrelated_machines/row_count_escape_gap.md#7-完整单机配置也分别能延伸到完整配置lp)：同一紧凑族每个合法单机配置均独立延伸到完整配置LP；需共同条件矩才能跨越此障碍，非完整层级下界。

@@ -673,6 +673,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-COMPACT-MULTIROW-EXTENSION-v1 | For each k>=2 compact family, every U with card(U intersect V)<=N-2k, every v in U and every T=1 configuration C of v has an explicit complete assignment with v exactly C, true load<=1 on all U, and initial row-min count caps on every machine. This universal center budget is sharp: some U with N-2k+1 centers plus z and pin z=empty has no such assignment. Different queries share no joint witness; no general solver is claimed. | [正文§6](unrelated_machines/row_count_escape_gap.md)、[追加冻结攻击](../reviews/unrelated_machines/row_count_escape_review.md)；主目标OPEN，外审/新颖性未认证。 |
 
 
+
+## 完整单机配置的独立全LP延伸
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-MACHINE-CONFIG-PROBE-GAP-v1 | ∀k≥2，既有紧凑族在T1对每机器每个合法C分别有y_iC=1完整配置LP点，OPT=2−1/k，故该合同sup gap2。∀i∀C∃各自y，不含共同base/条件混合恒等式；(MP)非整数可行必要条件，安全规则仅删失败配置，本族无首次删除。 | [正文§7](unrelated_machines/row_count_escape_gap.md)、[独立审查](../reviews/unrelated_machines/machine_config_probe_review.md)；全部分类/位长/来源见正文与专题CLAIMS，双路有限证据不代一般证明；外审/新颖性未认证，主目标OPEN。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

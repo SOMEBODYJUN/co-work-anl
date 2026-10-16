@@ -89,3 +89,5 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 新增[三选稀疏深树的全边条件配置反例](research/current/unrelated_machines/sparse_conditioned_configuration_gap.md)：每条边分别取得完整配置证书仍不能耦合跨查询的共享容量，sup相对阈值间隙仍2。完整四机器交集一致性及可恢复消元不在该障碍范围；主目标仍OPEN。
 
 紧凑共享逃逸正文§6另给UM-COMPACT-MULTIROW-EXTENSION-v1：任意U含至多N−2k个中心时，每个单机配置均可延伸并让U全部机器同时守真实容量；N−2k+1中心加z空pin有明确失败。故“更多独立行见证”仍缺共同相关性，尖锐预算和实际构造不改变主目标OPEN状态。
+
+[完整单机配置探针边界](research/current/unrelated_machines/row_count_escape_gap.md#7-完整单机配置也分别能延伸到完整配置lp)：同一多项式规模族的每个合法单机配置都能分别延伸到完整配置LP，间隙仍趋2；共同条件一阶矩可修复本族，主目标仍OPEN。
