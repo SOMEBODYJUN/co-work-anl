@@ -87,3 +87,5 @@
 [循环批量修复与分流合流](current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)连接可终止局部优化、无界撤离及唯一成本LST分流边界；新增与boss7真最优凸包槽族的守恒桥梁，证明逐坐标修复也会近2停滞。一般多源共同容量仍OPEN。
 
 [有向需求树与不相关机负载的精确桥梁](current/unrelated_machines/rooted_dag_degree_token_bridge.md)把MMDA已知必要方向重构为无需配置枚举的实际任务输入，含最优值恒等、大需求填充、有限阈值及总位复杂度；用于检验联合迁移的资源相容性。
+
+[真实最优边际的舍入断点](current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md)给固定row/count包络sup2及同sink pair负相关的尖锐期望/尾界；x本可为真实OPT调度的显式平均。[单边界森林批量恢复](current/unrelated_machines/forest_boundary_contraction.md)给实际根负载支配、内部(1+η)T和max恢复，无深度累计。后者是已知结构DP机制的接口化；一般多边界/有环核心与统一ε仍OPEN。

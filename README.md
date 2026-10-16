@@ -97,3 +97,5 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 不相关机新增[循环批量局部优化与分流障碍](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)：有总位多项式局部优化器，但逐坐标单调在真实最优凸包槽初始化上也可零轮、近2停滞；另有唯一成本LST分配要求多目的地修复的准确边界。一般统一改善仍OPEN。
 
 [需求树与真实调度的直接桥梁](research/current/unrelated_machines/rooted_dag_degree_token_bridge.md)给精确OPT=2−截断需求比例、实际双向构造与二进制大需求压缩。它把一般联合迁移的必要能力写成可复用输入；属于已知MMDA机制重构，主目标仍OPEN。
+
+[真实最优边际的舍入断点](research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md)给固定row/count包络sup2及同sink pair负相关的尖锐期望/尾界；x本可为真实OPT调度的显式平均。[单边界森林批量恢复](research/current/unrelated_machines/forest_boundary_contraction.md)给实际根负载支配、内部(1+η)T和max恢复，无深度累计。后者是已知结构DP机制的接口化；一般多边界/有环核心与统一ε仍OPEN。

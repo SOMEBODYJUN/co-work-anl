@@ -91,3 +91,13 @@ UM-ROBUST-CYCLIC-BATCH-OPT-v1已给固定η的实际局部优化器：exact-prof
 [压缩任务桥梁](../current/unrelated_machines/rooted_dag_degree_token_bridge.md)给真实OPT=2−b*与任意C<2调度的实际根树解码，而不是LPgap。大k填充和正确有限阈值缩放已闭合位复杂度；已知MMDA必要方向并非原创成果。一般联合repair需要同时维护unit激活与子资源唯一性。独立攻击已覆盖边界和缩放；Bamas2025一轮SA陈述已定位，但未做任何调度层级保真。主目标仍OPEN。
 
 循环批次正文所述“配置初始化未排除”仅属于fork的单目的地、makespan非增范围。新UM-COORDINATE-REPAIR-ST-GAP-v1证明本逐坐标优化器本身即使在真最优凸包槽初始化也会0轮、gap→2（boss7族＋守恒直接推论）。因此纯逐坐标单调不再是全类改善候选；接收机上升但全局max受控的多源容量接口仍是实际未解义务。
+
+上述“配置初始化未排除”仅属于fork的单目的地、makespan非增范围。新UM-COORDINATE-REPAIR-ST-GAP-v1证明本逐坐标优化器本身即使在真最优凸包槽初始化也会0轮、gap→2（boss7族＋守恒直接推论）。因此纯逐坐标单调不再是全类改善候选；接收机上升但全局max受控的多源容量接口仍是实际未解义务。
+
+## 真实最优边际与可恢复批量迁移后的前沿
+
+固定x的row/count输出合同已被UM-OPT-HULL-ROW-DISCREPANCY-GAP-v1精确限制；UM-OPT-HULL-PAIR-NC-GAP-v1给保持边际且同sink pair负相关的尖锐近2期望/成功界。不是松弛低估OPT，而是禁止集中整组撤离。
+
+UM-FOREST-BOUNDARY-AUGMENT-v1现给实际单边界标量：真实根负载不高于任何原内部T解，内部资源误差局部付费并按max恢复。classic gap的机器bundle支撑是树，可用本接口；此结构FPTAS已有先例，不作新全局算法。
+
+当前真正缺口：一般多边界/有环高树宽核心上，如何可计算地联合集中迁移，保持统一余量与总位多项式进展。一轮条件矩固定后不自动保留同层系统，不能免费迭代；同族小切面改进也不关闭主目标。

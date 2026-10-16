@@ -49,3 +49,9 @@ VW2010 arXiv v1第4节Theorem8（PDF9/印刷8）及紧随证明的计数LP说明
 Bamas, *Lift-and-Project Integrality Gaps for Santa Claus*, [arXiv:2406.18273v2](https://arxiv.org/html/2406.18273v2)，2024-10-17，SODA2025作者版56页。[原始PDF字节](../../history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf)的SHA256/版本/取得状态见manifest。印/PDF页12 §2.1定义异需求分层MMDA；页3脚注1明确MMDA→Santa Claus近似保持关系，结合BLMRS2024的一般必要方向已经存在。
 
 [本仓库直接token桥梁](../current/unrelated_machines/rooted_dag_degree_token_bridge.md)独立重构真实整数转换，给一般DAG及二进制需求填充的准确合同。源页5 Theorem1只核对一轮SA陈述，未独立重构全文证明，也未建立调度SA保真；不能把它当调度困难性。Theorem2深度比值记号与上下文有倒置疑点，本阶段不导入。下载/定位/机制重构/SA完整证明各自分开记录。
+
+## 森林边界接口的结构算法背景与经典舍入祖先
+
+Jansen–Maack–Solis-Oba, [Structural Parameters for Scheduling with Assignment Restrictions](https://arxiv.org/abs/1701.07242)，arXiv1701.07242v1，Theorem3（印页/PDF3）和§3末Results（印页/PDF11）给一般R∥Cmax在常数dual/incidence treewidth时的FPTAS。原始19页PDF已取得；投稿2017-01-25与PDF内部2018-10-08分开，hash见manifest的JMS2017_structural。只核相关陈述/机制，不声称全部证明已内化。[森林边界正文](../current/unrelated_machines/forest_boundary_contraction.md)自行证明根负载支配和恢复，未认证新颖性。
+
+固定最优边际的舍入边界另核ST1993图1、印页464–465经典tight例；与私有sink新scope比较见[正文§9](../current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md)。SV2005单任务加性sharpness不升级为所有算法不可能。

@@ -54,3 +54,5 @@ WC-TARGET v1原身份保持刻画a_*(d)。新下界d/10与另列Paper Fact的一
 不相关机的[鲁棒循环批量局部优化器](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)已闭合总位复杂度，但与boss7真最优凸包槽族衔接后，逐坐标单调明确不足：工作量守恒使它零轮停在近2。下一缺口是允许接收机增载、共同控制max的分流合流，而非仅增强初始化。
 
 本题另有[有向需求树的精确任务桥梁](research/current/unrelated_machines/rooted_dag_degree_token_bridge.md)：一般DAG/大二进制需求也可多项式构造真实调度OPT=2−b*；通过正确缩放，主目标算法必须具常数比例根树构造能力。只重构已知方向，没有新算法、SA转移或困难性声明。
+
+固定最优边际不保证可逐行接近地舍入：私有sink给row/count精确sup2及pair-NC尖锐期望/尾界。正面单边界森林batch接口已构造并独立核对，max(B,(1+η)T)恢复无深度累计。主目标仍OPEN；一般多边界/有环核心的共同选择、统一余量与总进展界仍缺，不能反复免费使用单层条件矩或仅换槽排序。

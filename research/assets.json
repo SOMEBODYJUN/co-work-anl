@@ -4899,6 +4899,82 @@
         "history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
       ],
       "limit": "Known MMDA/Santa Claus mechanism reconstructed directly; no new approximation/hardness or SA-preserving reduction. Finite audits do not prove universal claims."
+    },
+    {
+      "id": "unrelated_machines_optimal_hull_marginal",
+      "claims": [
+        "UM-OPT-HULL-ROW-DISCREPANCY-GAP-v1",
+        "UM-OPT-HULL-PAIR-NC-GAP-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "true optimal-hull fixed marginals, OPT>0",
+        "specified row/count or same-sink pair-NC output contract"
+      ],
+      "produces": "Exact sup2 for row/count envelopes; sharp expected/tail NC bounds and explicit true-optimal distributions",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/private_sink_marginal_barrier.py",
+        "tests/audits/unrelated_machines/independent_marginal_row_oracle.py",
+        "tests/audits/unrelated_machines/independent_marginal_pairwise_oracle.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/private_sink_marginal_audit.json",
+        "evidence/runs/unrelated_machines/marginal_row_independent.json",
+        "evidence/runs/unrelated_machines/marginal_pairwise_independent.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/private_sink_k2_r4.json",
+        "evidence/certificates/unrelated_machines/private_sink_opt_hull_and_nc_k2_r4.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/optimal_hull_marginal_review.md"
+      ],
+      "candidates": [],
+      "limit": "Family directly optimally solvable. No general algorithm impossibility; adaptive points and positively correlated migration remain possible."
+    },
+    {
+      "id": "unrelated_machines_forest_boundary",
+      "claims": [
+        "UM-FOREST-BOUNDARY-AUGMENT-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "given unique-boundary machine forest; no outside internal endpoints",
+        "arbitrary parallel jobs with <=2 available machines; T>=0, eta in (0,1]"
+      ],
+      "produces": "Actual batch reassignment with boundary b<=b*(T) and max-composing resource-augmented recovery",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/forest_boundary_contraction.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/jansen_maack_solis_oba_2017_structural_parameters_v1.pdf"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/forest_boundary_upward.py",
+        "tests/audits/unrelated_machines/forest_boundary_downward.py",
+        "tests/audits/unrelated_machines/forest_boundary_family_probe.py",
+        "tests/audits/unrelated_machines/forest_boundary_crosscheck.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/forest_boundary_upward_audit.json",
+        "evidence/runs/unrelated_machines/forest_boundary_downward_audit.json",
+        "evidence/runs/unrelated_machines/forest_boundary_family_probe.json",
+        "evidence/runs/unrelated_machines/forest_boundary_crosscheck.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/forest_boundary_contraction_review.md"
+      ],
+      "candidates": [],
+      "limit": "Given forest only, no general structure-selection or cyclic/multi-boundary core algorithm. Runtime poly(L,1/eta); known DP interface, novelty unverified."
     }
   ]
 }

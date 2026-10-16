@@ -708,6 +708,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-COORDINATE-REPAIR-ST-GAP-v1 | ∀m≥2、∀有理η∈(0,1)，boss7真最优凸包槽族的任意matching输出接鲁棒循环优化仍0轮，值2m/(m+1)→2。相同机器任意逐坐标非增序列都保持每台负载。 | [正文§9](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)、追加冻结审查；守恒＋既有族的直接推论，不是新族，不排低机上升的makespan改善。 |
 
+## 不相关机：固定最优边际的舍入断点与森林批量恢复
+
+| ID | Exact scope and result | Boundary and evidence |
+| --- | --- | --- |
+| UM-OPT-HULL-ROW-DISCREPANCY-GAP-v1 | ∀固定实常数a,b≥1，取所有OPT(P)>0的UM-MODEL-v1输入和有理x∈conv(最优整数调度)。ell_i=Σ_{j:p_ij<∞}p_ij x_ij，s_i=max_{x_ij>0}p_ij（空0），R_ab={合法σ:∀i L_i≤a ell_i+b s_i}。R_ab总非空，且sup_{P,x} min_{σ∈R_ab} C_max(σ)/OPT(P)=2。另∀固定整数b0≥0，每机任务数≤ceil(Σx_ij)+b0的合法集也非空且sup最佳比2。 | 本族直接可最优求解；换x/集中迁移不受排除。不是配置gap、算法困难性或主目标否定。 [正文](unrelated_machines/optimal_hull_marginal_rounding_barrier.md)，内部独立审查/有限精确核验；未外审/新颖性未核。 |
+| UM-OPT-HULL-PAIR-NC-GAP-v1 | ∀整数k≥2,r≥k，在私有sink族的OPT1和固定最优平均x上，∀保持全部x边际的合法随机Σ，若每对同sink不同small的联合概率≤1/r²，则E C_max≥2−1/k−(k−1)/(2r)。∀ε∈(0,1)，q=ceil(εk)≥2时P(C_max≤2−ε)≤min(1,k(k−1)/(r q(q−1)))。r≥max(k,binom(k,2))时期望下界和每个q的非截断尾上界均分别精确达到。 | 真实最优平均的组内small为正相关，不属NC类。保持正相关、重选点/选好态和一般随机算法未被排除。 [正文](unrelated_machines/optimal_hull_marginal_rounding_barrier.md)，内部独立审查/有限精确核验；未外审/新颖性未核。 |
+| UM-FOREST-BOUNDARY-AUGMENT-v1 | ∀给定单边界森林gadget(V,r,K)、有理T≥0和0<η≤1，存在确定性poly(总位长,1/η)算法，返回FAIL（蕴含内部≤T无解）或实际τ,b≥0，根负载b、内部负载≤(1+η)T；对每个内部≤T的原分配ρ均b≤L_r(ρ)。用单端根任务b替换，保全局T可行性正向，任意约化调度B恢复≤max(B,(1+η)T)。同T,η每次删至少一机器的≤m次嵌套消元保持同界。 | 成功不等于原T精确可行，根b可>T。单边界承重，多边界不能逐坐标min；已有bounded-treewidth FPTAS是背景，未认证接口新颖性。 [正文](unrelated_machines/forest_boundary_contraction.md)，内部独立审查/有限精确核验；未外审/新颖性未核。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
