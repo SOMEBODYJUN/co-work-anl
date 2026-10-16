@@ -159,3 +159,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 [共同拥塞流与支撑搜索](rooted_dag_congestion_flow.md)给UM-DAG-CONGESTION-FLOW-v1：给同一K证书，一次整数流输出b≥1/(2K−1)，对所有整数K尖锐；固定W的证书/最小K均位多项式可求，未知W选择仍承重。UM-DAG-ACTIVATION-CORRIDOR-GAP-v1表明父激活上界及单位走廊守恒的边际LP仍可b*=1/q。正文→冻结审查→规范与独立代码→实际输入/证书/冻结证据均互连；不升级主目标。
 
 完整路径：`research/current/unrelated_machines/rooted_dag_congestion_flow.md`、`research/reviews/unrelated_machines/rooted_dag_congestion_review.md`、`tests/audits/unrelated_machines/rooted_dag_congestion_flow.py`、`tests/audits/unrelated_machines/rooted_dag_congestion_independent.py`、`evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json`；分别承担自足证明、冻结攻击、规范构造、独立oracle和有限结果。
+
+同一正文§9另立UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1：独立均匀转移旧删机choices所生的新矩可确定精确计算，最小包q+2、负载1+2/q，q≥3严格小于固定后备的2。必须修同任务对角；一般m不保此界、个别态仍2T，故只作为限族正面运输，不提升主目标。双路实际矩/原分布coins枚举及冻结审查从正文进入。

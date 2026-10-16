@@ -7701,6 +7701,32 @@
         "research/reviews/unrelated_machines/rooted_dag_congestion_review.md"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "独立均匀后备的条件矩运输只需q加二任务",
+      "detail": "For every q>=2 with m=2q,n=2q^2,p=1/q, the fixed uniform balanced optimal-distribution matrix under independent uniform rerouting of old deleted-machine choices satisfies residual P0(1) true/false capacities iff absorbed integer job count c>=q+2. Other old choices stay fixed; no conditioning on absorbed labels. Exact moments are deterministically bit-polynomial computable; transported states may still have load2. q=1 separately has threshold1.",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "research/reviews/unrelated_machines/symmetric_moment_reset_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-UNIFORM-RANDOM-RESET-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "独立均匀矩运输的原分布枚举与逐列审计",
+      "detail": "Finite Fraction moment checks and complete small-source/coin enumeration, not universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "tests/audits/unrelated_machines/uniform_random_moment_reset.py",
+        "tests/audits/unrelated_machines/uniform_random_reset_independent.py",
+        "evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -18589,6 +18615,36 @@
         "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
       ],
       "status": "refuted in stated scope"
+    },
+    {
+      "id": "C-UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIFORM-RANDOM-RESET-AUDIT-v1"
+      ],
+      "conclusion": "UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "statement": "双路实际矩、全部真假列与小源分布/coins枚举；有限证据不替代一般公式证明。",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json"
+      ],
+      "status": "finite check"
+    },
+    {
+      "id": "L-UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅m=2q均匀族上的可计算矩运输；一般机器数门槛可超过2T，且个别运输态仍达2T；无调度近似突破。",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "research/reviews/unrelated_machines/symmetric_moment_reset_review.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }

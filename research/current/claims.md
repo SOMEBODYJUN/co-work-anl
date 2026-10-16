@@ -761,6 +761,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-DAG-CONGESTION-FLOW-v1 | ∀显式根简单DAG及二进制非负需求（零需求仅原终端），∀整数K≥1及含根支撑W上的正文共同K证书，可确定性总位多项式用一次整数流输出真实根树b≥1/(2K−1)。固定W,K的证书可行性与一整数流饱和等价；可行性对K单调，可位多项式求最小可行K或报告该W无证书。∀K≥2存在本合同证书族且真实b*=1/(2K−1)。全支撑最优κ*在b*>0时满足(1+1/b*)/2≤κ*≤ceil(1/b*)；给评分β>0的实际树及K≥1/β可构造其支撑证书。 | W、K明确输入，允许不可达组件、正需求死点、任意根、极大二进制需求；K为整数。输出可用E[W]的零f边。给定W的不可行不意味着无好树。没有一般支撑搜索、统一常数K或一般调度算法。 [自足正文](unrelated_machines/rooted_dag_congestion_flow.md)、[冻结审查](../reviews/unrelated_machines/rooted_dag_congestion_review.md)。独立内审及精确有限核验，未外审/未认证新颖性。 |
 | UM-DAG-ACTIVATION-CORRIDOR-GAP-v1 | ∀整数q≥2，正文四段DAG有1+q(q+3)点、2q²+2q边，根/走廊需求1、q个分叉点需求q、末端需求0。加强激活LP a_r=1、非根a_v=Σ_u x_uv≤1、Σ_w x_vw≥k_va_v、0≤x_vw≤a_v精确有理可行，但真实根树最优b*=1/q。 | 仅上述激活边际LP的统一正常数充分性反例；未满足或否定共同K强证书，未导入SA或调度困难性，未认证全球新颖性。 [自足正文](unrelated_machines/rooted_dag_congestion_flow.md)、[冻结审查](../reviews/unrelated_machines/rooted_dag_congestion_review.md)。独立内审及精确有限核验，未外审/未认证新颖性。 |
 
+
+## 独立均匀选择的正面条件矩运输
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1 | For every q>=2 with m=2q,n=2q^2,p=1/q, the fixed uniform balanced optimal-distribution matrix under independent uniform rerouting of old deleted-machine choices satisfies residual P0(1) true/false capacities iff absorbed integer job count c>=q+2. Other old choices stay fixed; no conditioning on absorbed labels. Exact moments are deterministically bit-polynomial computable; transported states may still have load2. q=1 separately has threshold1. | [正文§9](unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)、追加冻结审查和双路真实矩核验；非调度算法，m=2q不可省，主目标OPEN。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

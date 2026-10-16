@@ -679,3 +679,15 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：声明范围内未见尚成立fatal objection；一般W选择及从任意UM输入得到相应结构仍未解决。固定支撑最小K不等于全支撑κ*。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准工具应用，UM-TARGET-v1仍OPEN。
 - Related Files：[research/current/unrelated_machines/rooted_dag_congestion_flow.md](../current/unrelated_machines/rooted_dag_congestion_flow.md)、research/reviews/unrelated_machines/rooted_dag_congestion_review.md；tests/audits/unrelated_machines/rooted_dag_congestion_flow.py、tests/audits/unrelated_machines/rooted_dag_congestion_independent.py、evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json、examples/unrelated_machines/rooted_dag_congestion_cases.json、evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json。
+
+## UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1：独立均匀后备的条件矩运输只需q加二任务
+
+- Exact Statement / Quantifiers：For every q>=2 with m=2q,n=2q^2,p=1/q, the fixed uniform balanced optimal-distribution matrix under independent uniform rerouting of old deleted-machine choices satisfies residual P0(1) true/false capacities iff absorbed integer job count c>=q+2. Other old choices stay fixed; no conditioning on absorbed labels. Exact moments are deterministically bit-polynomial computable; transported states may still have load2. q=1 separately has threshold1.
+- Objects / Domain：正文§3的q≥2均匀族、真实最优均匀D、任意标签包C和机器i，独立均匀后备随机量；0≤c≤n。q1单列。
+- Assumptions / Definitions：不是对D条件化；每个保留任务旧非i选择保持，旧i选择独立均匀去其余K=2q−1台。新矩按真实随机实验，不能只用平均R的RYRᵀ，须修同任务块。
+- Scope / Conclusion：最小c=q+2、吸收负载1+2/q，q≥3严格优于固定后备2T，q2相等；输出精确有理矩为确定性位多项式，不是随机或确定性近似调度输出。
+- Dependencies：UM-MODEL-v1；§3均匀二点矩；全概率与onehot混合。完整证明§9.1–9.3，位复杂度沿§7显式输入规模。
+- Evidence：两名内部研究者先盲推后核冻结稿；两路Fraction；q2全部2520源态及所有独立路由分支，q1空/退化，q2..64所有c及主q2..128范围独立登记。
+- Counterevidence / Objections：m=2q不可省；一般m时q2,m8需c5即2.5T。转换分布的坏态仍可达2T；未证明一般重置、相同边际修复或主目标近似算法。当前无尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准二点概率计算扩展，新颖性和独立论文价值未认证。
+- Related Files：research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md§9；research/reviews/unrelated_machines/symmetric_moment_reset_review.md追加审查；tests/audits/unrelated_machines/uniform_random_moment_reset.py、tests/audits/unrelated_machines/uniform_random_reset_independent.py、evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json。
