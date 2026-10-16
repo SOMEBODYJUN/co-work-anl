@@ -7183,6 +7183,57 @@
         "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
       ],
       "status": "refuted stated-scope method extension"
+    },
+    {
+      "id": "UM-DAG-DEGREE-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "有根DAG正需求与截断出度比例",
+      "detail": "Selected original positive-demand vertices are constrained, even output leaves. Zero-demand vertices must be sinks; binary k may exceed degree. Score is capped at one.",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "exact definition"
+    },
+    {
+      "id": "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "有向需求树的压缩任务与真实OPT恒等",
+      "detail": "One machine per vertex, min(k,d) tokens plus forced filler and root unit give OPT=2-b*, with constructive true-schedule/tree conversions.",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+        "research/reviews/unrelated_machines/rooted_dag_token_bridge_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-TARGET-IMPLIES-DAG-DEGREE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "统一低于2调度算法的需求根树必要能力",
+      "detail": "Assuming UM target, polynomially many finite scaled-demand calls give b(H)>=epsilon b*; no input optimum/epsilon oracle is used.",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+        "research/reviews/unrelated_machines/rooted_dag_token_bridge_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-DAG-DEGREE-TOKEN-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "需求树压缩任务的双路有限精确审计",
+      "detail": "Separate root-tree/schedule enumeration, actual decoders, binary-demand fillers and finite thresholds; no hierarchy or hardness transfer.",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+        "tests/audits/unrelated_machines/rooted_dag_token_bridge.py",
+        "tests/audits/unrelated_machines/rooted_dag_token_independent.py",
+        "examples/unrelated_machines/rooted_dag_token_input.json",
+        "evidence/certificates/unrelated_machines/rooted_dag_token_witness.json",
+        "evidence/runs/unrelated_machines/rooted_dag_token_bridge_audit.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -17260,6 +17311,67 @@
         "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "DERIVE-UM-DAG-DEGREE-TOKEN-IDENTITY",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-DAG-DEGREE-MODEL-v1"
+      ],
+      "conclusion": "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+      "statement": "Compressed tokens/filler have local mass one; unit receivers enforce unique parents; two-way conversion gives exact optimum.",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "DERIVE-UM-TARGET-IMPLIES-DAG-DEGREE",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TARGET-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+        "UM-DAG-DEGREE-MODEL-v1"
+      ],
+      "conclusion": "UM-TARGET-IMPLIES-DAG-DEGREE-v1",
+      "statement": "At an enumerated optimal degree threshold, ceil-rescaled demands have scheduling OPT=1, allowing actual below-two decoding.",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-TOKEN-AUDIT-v1"
+      ],
+      "conclusion": "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+      "statement": "Independent bounded exact tree/schedule/threshold oracles; universal and conditional proofs remain separate.",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+        "evidence/runs/unrelated_machines/rooted_dag_token_bridge_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "CHECK-UM-TARGET-IMPLIES-DAG-DEGREE-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-TOKEN-AUDIT-v1"
+      ],
+      "conclusion": "UM-TARGET-IMPLIES-DAG-DEGREE-v1",
+      "statement": "Independent bounded exact tree/schedule/threshold oracles; universal and conditional proofs remain separate.",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+        "evidence/runs/unrelated_machines/rooted_dag_token_bridge_audit.json"
+      ],
+      "status": "finite evidence"
     }
   ]
 }

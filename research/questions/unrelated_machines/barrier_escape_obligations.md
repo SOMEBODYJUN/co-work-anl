@@ -47,3 +47,7 @@ UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1说明即使x有真实最优凸分解，固定�
 ## 循环菜单之后的分流义务
 
 UM-ROBUST-CYCLIC-BATCH-OPT-v1已闭合局部优化器的总位复杂度，但没有全类比例。UM-FORK-MINCOST-ROUND-REPAIR-NO-v1排除任意LST点＋唯一成本槽分配后仅用one-destination单调repair的充分合同；其x非配置投影。下一可判别问题：能否在配置/可构造更强初始化上始终找到带统一损失界的多源多目的联合批次，而不调用已被半单位归约排除的精确共同H接口？[算法和反例入口](../../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)。
+
+## 需求树上的共同资源不能免费复用
+
+[直接任务桥梁](../../current/unrelated_machines/rooted_dag_degree_token_bridge.md)把正需求激活机器的外溢精确变成根树出度，全局孩子机器unit容量禁止多父复用。主目标算法在正确缩放实例上必须给常数比例根树。下一候选要说明它如何同时选分支/避免合流资源重复，并保持位多项式；浅层共享例或MMDA独立SA点不足。

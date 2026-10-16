@@ -449,3 +449,27 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：The supplied x is not claimed basic and violates configuration big-cardinality at A. Does not refute configuration-derived or specially chosen initialization, support changes, multi-destination repair or nonmonotone algorithms.
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准工具扣除后的全球新颖性及独立成文价值未认证。
 - Related Files：research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md，research/reviews/unrelated_machines/cyclic_batch_fork_review.md；规范代码、独立审计、实际输入和冻结记录沿正文§8读取。
+
+## UM-DAG-DEGREE-TOKEN-IDENTITY-v1：有向需求树的精确压缩任务恒等
+
+- Exact Statement / Quantifiers：∀正文(D,k)：显式非空简单DAG、入度0根、二进制非负需求且k=0仅在出度0顶点，逐点q=min(k,d)任务＋必要填充＋根unit构造P，有OPT(P)=2−b*。∀实际C<2调度可位多项式解码b(H)≥2−C根树；∀给定根树可位多项式构造C≤2−b(H)调度。
+- Objects / Domain / Definitions：b(H)=min({1}∪{deg_H⁺(v)/k_v：选中v且k_v>0})，b*=max根树b(H)。正需求输出叶仍受约束；k=0只允许原sink。一般DAG、不固定层深；允许正需求死端、k>d、大二进制需求和不可达点。
+- Assumptions / Scope：P是一般UM输入的显式正有理子类；任务数≤1+|E|+|V|，逐项可构造；不是对所有调度实例的逆表示。
+- Conclusion：真实整数OPT恒等与双向实际输出；不含松弛或SA层级传递。
+- Dependencies：UM-MODEL-v1、正文DAG需求定义、unit接收容量与本地1总量恒等、根可达解码、截断剪树和大k填充。
+- Evidence：自足一般证明；先独立重构后冻结攻击；两份不导入彼此的精确枚举审计，实际范围见evidence/runs/unrelated_machines/rooted_dag_token_bridge_audit.json。
+- Counterevidence / Objections：需要DAG和本文需求定义；不把输出叶作免费终端，不按巨大k展开。没有已成立fatal objection；SA伪分布未保真，不能升级为调度SA间隙或困难性。
+- Status：已知MMDA/Santa Claus机制的直接自足重构与位复杂度补全；完整所述范围及独立内部攻击，未外审/未认证新颖性；UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/rooted_dag_degree_token_bridge.md](../current/unrelated_machines/rooted_dag_degree_token_bridge.md)、rooted_dag_token_bridge_review.md、两份代码、输入/证书及冻结证据；原文版本见manifest。
+
+## UM-TARGET-IMPLIES-DAG-DEGREE-v1：统一调度改善的需求树必要输出能力
+
+- Exact Statement / Quantifiers：若UM-TARGET-v1对某统一ε>0成立，则∃一个确定性位多项式算法，∀上述(D,k)输出真实根树H且b(H)≥εb*；算法不需输入b*或ε数值，对至多1+|E|个多项式规模调度输入调用同一个A。
+- Objects / Domain / Definitions：前一身份的D,k及截断目标；Γ={1}∪{h/k_v：1≤h≤min(k_v,d_v)}，正阈值τ下k'_v=ceil(τk_v)，原终端仍0。
+- Assumptions / Scope：明确以目标算法存在为前提；不声称现已有该A或需求树常数算法。
+- Conclusion：实际树输出、确定性与总位多项式保持；一般b*小的实例也由正确需求缩放处理。
+- Dependencies：UM-TARGET-v1、UM-DAG-DEGREE-TOKEN-IDENTITY-v1、最优正比值属于有限Γ、τ=b*时scaled OPT=1以及精确评分。
+- Evidence：完整阈值证明和独立冻结攻击；有限阈值/oracle核验单列。
+- Counterevidence / Objections：直接对未缩放实例调用A可能C≥2，不足解码；本文逐阈值规避该缺口。不是源MMDA SA gap或计算困难性到调度的转移。
+- Status：完整条件性归约证明；已知必要方向的直接重构，外审/新颖性未认证，主目标OPEN。
+- Related Files：同正文§5、冻结审查、两路精确审计与原始Bamas2025定位。

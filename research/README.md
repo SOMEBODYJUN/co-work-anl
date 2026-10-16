@@ -85,3 +85,5 @@
 [真实最优调度凸包与固定槽输出空间](current/unrelated_machines/optimal_convex_fixed_slot_gap.md)是本题联合舍入的新压力测试：分数点已在真实最优凸包内，所有固定槽matching仍趋2；跨槽修复可恢复最优。由正文进入精确身份、冻结审查、双路审计及输入/证书；无主目标算法突破。
 
 [循环批量修复与分流合流](current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)连接可终止局部优化器、无界单机迁出义务和唯一最小成本LST输出的真实OPT反例；局部最优不升级近似比，配置初始化仍未排除。
+
+[有向需求树与不相关机负载的精确桥梁](current/unrelated_machines/rooted_dag_degree_token_bridge.md)把MMDA已知必要方向重构为无需配置枚举的实际任务输入，含最优值恒等、大需求填充、有限阈值及总位复杂度；用于检验联合迁移的资源相容性。

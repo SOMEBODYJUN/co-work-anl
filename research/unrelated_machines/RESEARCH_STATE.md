@@ -85,3 +85,7 @@ UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1在完全相同机器上给OPT1及显式真实�
 UM-ROBUST-CYCLIC-BATCH-OPT-v1已给固定η的实际局部优化器：exact-profit菜单＋严格转向＋重复机器剪接，≤4m/η成功轮，终态无ηT鲁棒循环；并未给近似比。UM-BATCH-SUPPORT-REPAIR-NO-v1要求同机撤离任务数无界；UM-FORK-MINCOST-ROUND-REPAIR-NO-v1的正支撑padding甚至使最小成本槽分配唯一，值2−1/k，但任何每机单目的地的makespan不增repair皆无首次变化。
 
 范围关键：该x不是配置投影（A上big质量>1），未称basic，不能据此否定配置初始化。下一高信息义务是可共同实现的多目的地分流合流，或一个能排除该相关结构的具体初始化不变量；仅正支撑、总成本不增或增大循环菜单不足。自足入口为[正文](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)与其冻结审查/实际证据。
+
+## 用实际需求树检验联合迁移
+
+[压缩任务桥梁](../current/unrelated_machines/rooted_dag_degree_token_bridge.md)给真实OPT=2−b*与任意C<2调度的实际根树解码，而不是LPgap。大k填充和正确有限阈值缩放已闭合位复杂度；已知MMDA必要方向并非原创成果。一般联合repair需要同时维护unit激活与子资源唯一性。独立攻击已覆盖边界和缩放；Bamas2025一轮SA陈述已定位，但未做任何调度层级保真。主目标仍OPEN。

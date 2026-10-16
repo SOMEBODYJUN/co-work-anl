@@ -43,3 +43,9 @@ BLMRS2024：[Santa Claus meets Makespan and Matroids](https://ir.cwi.nl/pub/3604
 ## 联合槽前缀的针对性机制重构
 
 VW2010 arXiv v1第4节Theorem8（PDF9/印刷8）及紧随证明的计数LP说明已针对性复核；原文是共同区间[γ,3γ]的11/6结果。新[逐机跨度2正文](../current/unrelated_machines/joint_slot_prefix_rounding.md)是相同机制的自行重构推论，γ_i可不同；不把它登记为Paper Fact或新颖性认证。Theorem9的已知机器type信息仍有额外假设，本阶段未宣称完整重建其全部技术报告证明。
+
+## MMDA相关性机制的新定位来源
+
+Bamas, *Lift-and-Project Integrality Gaps for Santa Claus*, [arXiv:2406.18273v2](https://arxiv.org/html/2406.18273v2)，2024-10-17，SODA2025作者版56页。[原始PDF字节](../../history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf)的SHA256/版本/取得状态见manifest。印/PDF页12 §2.1定义异需求分层MMDA；页3脚注1明确MMDA→Santa Claus近似保持关系，结合BLMRS2024的一般必要方向已经存在。
+
+[本仓库直接token桥梁](../current/unrelated_machines/rooted_dag_degree_token_bridge.md)独立重构真实整数转换，给一般DAG及二进制需求填充的准确合同。源页5 Theorem1只核对一轮SA陈述，未独立重构全文证明，也未建立调度SA保真；不能把它当调度困难性。Theorem2深度比值记号与上下文有倒置疑点，本阶段不导入。下载/定位/机制重构/SA完整证明各自分开记录。
