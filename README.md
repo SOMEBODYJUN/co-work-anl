@@ -4,6 +4,8 @@
 
 **[研究总目录](research/README.md) · [全部中文资产名与用途](research/CATALOG.md) · [当前研究路线](research/ROADMAP.md)。**
 
+协作系统的完整产品意图见[AI Co-Mathematician 全量设计总稿](design/AI_Co_Mathematician_master.md)；当前手动 Work 对话与 GitHub 的能力边界、逐节对应和待施工项见[实际适配方案](design/work_github_adaptation.md)。后者是设计建议，尚未实现跨 Work 自动启动、唤醒或统一暂停，不改变数学状态。
+
 ## Research Goal / Research Frontier
 
 本次唯一题目已有**严格否定证明**：[线性次数的全状态无均衡族](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md)对每个整数d≥2^20，给出正有理权、正有理纯d次费用、每人两个非空不交动作的有限游戏，全部纯状态都有严格(d/10)改善。任给C≥1,d0≥2，取足够大d≥d0且ln d>10C，即无(Cd/ln d)-PNE。因此不存在原题所问的绝对C,d0。
