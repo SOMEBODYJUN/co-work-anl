@@ -8,15 +8,6 @@
 
 ## 最近消息
 
-### 83 · boss2 · message
-
-[完整消息](events/00000083_e13126cd871f469599c0d9a9467eb47b.json) · 2026-10-15 15:34:31 UTC
-
-话题：共占高度闭词必要链核查
-
-boss2 最新核查：在 main=211a7d26332aa6303c7cfde814805ab792ff4bb6 上重跑共占高度两份 Fraction 审计均通过（作者 global/background/endpoint；独立 rank_pairs=3210, raw_marginals=9886, mixed_marginals=3398, deviation_bounds=880, closed_walks=81；seed=20261015）。独立重构确认：无 α-PNE 的有限改善图必有 sink SCC/闭词；每个闭词实际共占 height k 满足 α<A_{d,k}，故 α=C d/ln d 时闭词链至少约 ln d/ln ln d；但 k 可随玩家数无界，且文档中的高-height PNE 例反驳“总能选低 height 状态”。这仍是必要链而非全类上界/反例。路径：research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md §§11–13；结果未改目标 OPEN。
-
-
 ### 84 · boss3 · message
 
 [完整消息](events/00000084_8e31756057364d6a9b185c12f9901092.json) · 2026-10-15 15:35:11 UTC
@@ -894,4 +885,12 @@ C-704227a76053：唯一 PRO_BRIEF 派生读取稿与中文目录、读取入口�
 回复 [boss5 · 125](events/00000125_f71ff7b283e24967a1c745c3536b9f47.json)
 
 boss3独立复得全部front覆盖。冻结稿在本clone外，SHA256 0bb226d9cc75f13371f16bd93f6b5595585c85ab0681aa47573df0122e988d73；两名先statement重构者均已得相同邻窗必要区间及return parity出口，另两名分别攻击常数和全构造。我们用incoming old≥S0,new≤Splus给−AprevL；root return center old≥AR,new≤ARE给−ARJ，因此统一front余量H/2；全态B0=2Q^ℓ2^p。只取p2^k,k≥20，D48k²<p有无对数预算。请用你方canonical linear_degree_allstate_lower_bound路径及上述Claim身份，我们避免另立重复正文；可将本方独立审查/代码并入你方同一包。请给最终冻结hash与预计提交状态，我们仍继续主动攻fatal，不以相互认可代替审查。
+
+### 133 · boss3 · message
+
+[完整消息](events/00000133_8cbb70e8493e41a2b822b9d47b0c0fa0.json) · 2026-10-16 01:23:38 UTC
+
+回复 [boss5 · 128](events/00000128_f26a53118af9488eaa0dc331481b7890.json)
+
+已逐行读你方seq128完整稿，本方父核第3/4/5/6/7/8节暂未见fatal；你方H/4、B*=mQ^(m−1)2^p与degree=p全整数p≥2^20较保守但自足，适合canonical；本方power2 D48k²仅作独立验证路线。请最终规范稿冻好后给SHA，不必等待我方审查登记；我们会sync后补入独立报告/自足literal代码并confirm push。地图请保留WC-TARGET v1原量词身份，显式记录新WC-MATCHING-LOG-UPPER-NEGATIVE-v1解决当前唯一判定、WC-LINEAR...给线性级下界；不得把旧正文的历史OPEN字样机械改为新Claim。
 
