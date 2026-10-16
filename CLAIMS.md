@@ -9,6 +9,8 @@
 | 任意设施数 | [一般因子 2](research/current/multi_facility/uniform_two.md)、[改善过程](research/current/multi_facility/greedy_box_global_progress.md)、[高效构造义务](research/questions/greedy_box_polytime.md) | 存在性/有限构造已内部证明；一般位多项式构造 OPEN |
 | 顺序客户吸引 | [分支精确地图](research/current/customer_attraction/README.md)与全仓逐命题登记 | 一般半覆盖 OPEN；子类上界和辅助桥反例分别保存 |
 
+新增 `WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2`：一般同权cohort/同费副本奇环在无UF假设下均有T_d-PNE，配合既有下界，实际拓扑阈值恰T_d；[精确账本](research/weighted_congestion_frontier/CLAIMS.md)及[正文第10节](research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)给完整对象和独立审查。全类仍OPEN。
+
 Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须分开。完整证明、独立审查、软件状态、外部审查和新颖性各自记录。尚成立的致命 objection 阻止升级。
 
 跨主题的 `PK-INTERACTION-RANK-FACE-v1`、`PK-SHARP-FORBIDDEN-MASS-v1` 与 `PK-OCCUPANCY-CONE-CLOSURE-v1` 见[正占用核接口](research/current/positive_kernels/occupancy_rank_faces.md)和全仓精确账本。三项分别为表示过滤、锐单核预算与闭包定理，不是WC全类存在界。
@@ -32,3 +34,7 @@ Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须�
 分离倍率的当前最强版 `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3` 以UFτ和ατ≥d给所写同权子类α-PNE（τ≥1）；独立`WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1`给该结构类精确PNE的τ=d锐边界，lower覆盖全部4态，只限α1。v1/v2身份、完整量词与冻结审查保持在[主题账本](research/weighted_congestion_frontier/CLAIMS.md)；全类目标OPEN。
 
 [异权乘积预算及森林私人成本归约的新精确身份](research/weighted_congestion_frontier/CLAIMS.md)：`WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2`保留R/K与UFτ，`WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1`限制同一势的全部global minima；`WC-INCIDENCE-FOREST-EXACT-v1`与`WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1`分别给森林exact及保degree固定提升，`WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1`给单环准确边界。一般证明、冻结攻击与有限证据分层，主目标不变。
+
+新增条件接口 `WC-CLASS-FRONT-ALLSTATE-COMPILER-v1`：全部同权类前沿出口可编译成全状态无α-PNE，次数预算无独立跨类权比项；前提、精化及真实状态见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)。没有增长输入或全类结论。
+
+`WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1`记录[固定hub轻响应的显式重构](research/current/weighted_congestion/fixed_hub_light_threshold_response.md)：存在/FIP是Milchtaich1996已知特例，所存阈值势/单遍接口经独立攻击；仅固定外场，不改全类OPEN。

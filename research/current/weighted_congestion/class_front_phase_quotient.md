@@ -267,3 +267,140 @@ Distinguished 玩家 `p_(a,j)` 的动作0用资源0，动作1用资源1。令 `�
 - 作者冻结输出：`evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_author.json`。[独立审查](../../reviews/weighted_congestion/ordinal_potentials/class_internal_clock_compiler_review.md)；独立审计命令`python3 tests/audits/weighted_congestion/cyclic_clone/independent_class_internal_clock_compiler.py`，冻结记录`evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_independent.json`。有限枚举不是第8.4节一般结论的证明来源。
 
 失败机制现在更精确：仅凭一个 strict global sweep 环，再用任意次数的这些同类时钟限制类内前沿，不足以保证全状态非存在，因为基体可以已经含一个精确稳定的不同步前沿，而此架构只能增加该前沿所有偏离的非负成本差。新结果没有证明所有近线性倍率循环窗口基体都含这种前沿，也没有排除其他时钟拓扑、跨类反馈、不同两侧费用或辅助玩家。要重新尝试该方向，必须为所选基体证明全部前沿没有稳定状态，或明确加入能够改变该前沿出口的架构；仅增加现有类内 clock 次数和幅度不会修复本反例。全类匹配上界/否定题仍开放。
+
+
+## 条件编译接口：全部同权类前沿出口到全状态非存在
+
+### 精确命题与输入合同
+
+**ID/version：WC-CLASS-FRONT-ALLSTATE-COMPILER-v1。中文数学名称：同权类前沿全覆盖的次数可控全状态编译。** 本节是新增的条件编译定理，不改变前文三个 Claim，也不把一条严格 sweep 环当成全前沿出口。
+
+**Objects / Domain / Quantifiers / Assumptions。** 任取整数 `p≥0`、实数 `α≥1` 和 MODEL 中的有限游戏 G，每个玩家恰有两个互异资源子集动作，标签为0、1。将全体玩家划分为非空有序类 `a=1,…,m`；类 a 有 `n_a≥1` 名玩家 `(a,0),…,(a,n_a−1)`，权重都为 `w_a>0`。不同类的权值可以相同，跨类权比任意，费用为非负系数、次数至多 p 的多项式。允许旧空动作、常数费用和零费用。
+
+**Definitions。** 类前沿指相邻位变化次数至多一次的局部二元串，包含全0、全1。令 `𝔉` 为全部类都处于前沿的状态集合，`s⊕i` 表示玩家 i 翻位。定义
+
+\[
+ B=\max_{s,i}C_i^G(s),\qquad
+ \eta=\min_{s\in\mathcal F}\max_{i:s\oplus i\in\mathcal F}
+       \{C_i^G(s)-\alpha C_i^G(s\oplus i)\}.
+\tag{FC1}
+\]
+
+每个前沿都有保前沿的单人翻位，故内部最大集合非空。假设 `η>0`，即**每个 product-front 都有保 product-front 的严格 α 改善**。于是 `B≥η>0`。令
+
+\[
+ L_a=\binom{n_a-1}{2},\qquad L=\max_a L_a,
+\tag{FC2}
+\]
+
+其中 `n_a≤2` 时 `L_a=0`。
+
+**Exact Statement / Conclusion。** 若 `L=0`，则 `𝔉` 已是全部状态，G 本身没有 α-PNE。若 `L≥1`，取 `M=2αB` 和任意正整数 D 满足
+
+\[
+ (2/3)^D\le\frac{\eta}{4\alpha^2BL}.
+\tag{FC3}
+\]
+
+仅添加 `2Σ_a L_a` 个同类互补时钟资源，保持玩家、权重、动作标签及所有旧资源的使用，即得到每个状态都有严格 α 改善的游戏 G′，其次数至多 `q=max{p,D}`。各新增资源费用均为
+
+\[
+ c_a(x)=M\left(\frac{x}{3w_a}\right)^D.
+\tag{FC4}
+\]
+
+全部选定出口的真实 α-margin 至少 `η/2`。可以取
+
+\[
+ D=\left\lceil\frac{\ln(4\alpha^2BL/\eta)}{\ln(3/2)}\right\rceil.
+\tag{FC5}
+\]
+
+D 的显示参数只含 `α,L,B/η`；跨类权比没有独立的额外损失，类数 m 也只可能通过这些实例参数进入。**这不声称 B/η 独立于权重或人数。** 若原数据及 α 有理，构造可全取有理，D 可用有理幂逐项比较确定。
+
+**Dependencies。** MODEL、有限最大最小、同权三元的真实使用者表及非负成本。不导入均衡存在定理；与旧全局锚定编译器的关系是共享局部修复机制，不以其跨权 δ 估计为前提。
+
+### 构造及前沿的准确几何
+
+对每个类 a 和 `1≤j<k≤n_a−1`，新建一对仅由 `(a,0),(a,j),(a,k)` 使用的资源。三人的局部相位为 `(0,1,0)`：动作位分别与该相位异或，所得值决定使用两资源中的哪一侧。同一对两侧费用均为 (FC4)；不同三元、不同类的资源以及旧资源两两不交。
+
+局部模式010或101时三人同侧，参与者费用为 M；其他模式的两侧用户数为2与1，任何使用者费用至多 `Mδ_D`，其中 `δ_D=(2/3)^D`。每名玩家参与至多 `L_a≤L` 对时钟。时钟无新动作，原两动作互异仍然保持。
+
+固定类首位的锚定三元全部不触发，当且仅当该类是前沿。正向由前沿不能包含010/101子序列得到。反向：非前沿串相对首位 b 必有子序列 `b,1−b,b`；取最早反位 i 和之后某个同首位 j，即得到触发的三元 `(0,i,j)`。
+
+### 前沿出口与非法状态修复
+
+若 `s∈𝔉`，按 (FC1) 选 i，使 `s⊕i∈𝔉` 且基体 margin 至少 η。其所有参与时钟在两端都不触发。丢去旧时钟的非负成本，新增后的 margin 至少
+
+\[
+ \eta-\alpha LM\delta_D\ge\eta/2>0.
+\tag{FC6}
+\]
+
+若 `s∉𝔉`，取一个非前沿类，首位为 b；令 i 为该类最早与 b 不同的位置。存在 `j>i` 仍为 b，故 `(0,i,j)` 时钟完全触发，i 的旧时钟成本至少 M。将 i 翻为 b。对其参与的每个锚定三元：i 若居中，则翻后与锚点相同；i 若居末，则中位比 i 更早，按最早性与锚点同位。因此翻后均不完全触发，新时钟总成本至多 `LMδ_D`。i 不使用其他类时钟，真实基体新成本至多 B，所以
+
+\[
+ C_i^{G'}(s)-\alpha C_i^{G'}(s\oplus i)
+ \ge M-\alpha B-\alpha LM\delta_D
+ \ge\alpha B-\eta/2\ge\eta/2>0.
+\tag{FC7}
+\]
+
+这覆盖全部纯状态。没有同时重置其他玩家，没有把修复后的成本当成固定旧负载。零费用直接保留不等式；没有费用比或0/0。
+
+### 保前沿边的精确抵消与 α=1 端点
+
+可以弱化 (FC3)。在每条保前沿边上，任一参与三元的 mover 翻位前后的用户数之和为4；两端都不能为3，故两端都恰为2。因此它的时钟成本前后相同，而非只受泄漏上界控制。若 i 参与 `r_i≤L` 个时钟，时钟 α-margin 恰为
+
+\[
+ -(\alpha-1)r_iM\delta_D.
+\tag{FC8}
+\]
+
+在保持 `M=2αB` 时，以下分离预算已足够：
+
+\[
+ \delta_D\le\frac1{4\alpha L},\qquad
+ (\alpha-1)LM\delta_D\le\eta/2.
+\tag{FC9}
+\]
+
+`α>1` 时第二式等价于 `δ_D≤η/[4α(α−1)BL]`；`α=1` 时第二式自动成立，所需 D 不依 η。保前沿边由 (FC8) 得 margin 至少 η/2，非法修复由第一式得 margin 至少 `αB/2≥η/2`。标准 (FC3) 同时蕴含两式，故 (FC5) 是方便的统一选值，不称最优次数。两种预算都没有跨类权比 δ。
+
+### 有理小输入与有限核验合同
+
+配套输入为三类、每类三名玩家，类权 `(1,1/4,1/16)`、`p=8`、`α=21/20`。按第1节循环窗口 literal 规则构造六个测试，`o=+1` 为原方向、`o=−1` 交换轻角色的两动作相位：
+
+| `(a,b,K,o)` | 归一化 θ，费用 `θ[x/(w_a+Kw_b)]^8` |
+| --- | --- |
+| `(0,1,1,−1)` | 1 |
+| `(0,1,2,−1)` | 2 |
+| `(1,0,1,+1)` | 1 |
+| `(1,2,1,+1)` | 10 |
+| `(2,0,2,−1)` | 8 |
+| `(2,1,3,+1)` | 4 |
+
+输入另逐项列出实际单项式系数。全部216个 product-front 状态都有保前沿 strict 出口；基体有36资源。准确参数为
+
+\[
+ \eta=\frac{1410469765084842635603}{1070401852096200000000},\quad
+ B=\frac{16553910168}{815730721}.
+\]
+
+标准预算的最小正整数 D 为11，分离预算的最小 D 为4；两者都实际加入每类一对、共6个时钟资源，并对全部512态重算全部单人真实偏离。后者输出次数仍为8。这里的“最小”只指相应充分预算，不是最小锁定次数。该固定输入只验证前提非空与实现，不声称新下界倍率、最优性或增长族。
+
+- 实际输入：`examples/weighted_congestion/class_front_allstate_compiler.json`。
+- 作者审计：`tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py`。
+- 独立审计：`tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py`。
+- 两路冻结输出：`evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json`、`evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json`。
+- 独立重构及冻结攻击：`research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md`。
+
+运行从仓库根进行；审计用 Fraction 和实际资源子集重算，输出记录命令、Python版本、输入及源码hash、参数和有限覆盖，拒绝覆盖冻结结果。一般实参数编译结论由本节证明承担。
+
+### 状态、既有反例和真正增长义务
+
+**Evidence / Status。** 本节由 boss3 的负向研究者提出条件接口，主研究者独立逐式重构；另一研究者先仅据精确命题自行重构，之后攻击冻结正文和真实有理输入。最终审查范围及冻结hash以配套审查为准。无外审或新颖性认证。Truth 是所写条件编译；Value 是将全状态覆盖义务转移到较小前沿域；Mechanism 是同权局部触发与非法修复；Ambition 保留全类题 OPEN。
+
+**Counterevidence / Objections / Scope。** 第5及第8节的 sweep 反例不满足 (FC1) 的全前沿出口条件。新定理没有把严格环提升为该条件，没有推翻旧方法障碍，也没有给一般游戏的均衡/非均衡归约。类内等权、固定顺序首位锚点、二元动作和全前沿出口均承重；近似等权或仅部分前沿出口没有由本节证明覆盖。
+
+全类否定仍需构造增长的输入族，使全部前沿有出口且输出实际次数 q 满足 `α ln q/q` 无界。一个可核验的**充分**效率目标是 `α→∞`、`p=O(α)` 及 `ln(α²BL/η)=O(α)`，此时 (FC5) 给 `q=O(α)`，因而 `α ln q/q→∞`。这里仅列条件蕴含，没有这样的增长族。`B/η` 可能随类宽和权谱剧增；固定小输入和有限筛查不提供该控制。肯定方向仍需任意模板/selector的统一存在机制。

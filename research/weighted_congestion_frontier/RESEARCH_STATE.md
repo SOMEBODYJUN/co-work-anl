@@ -6,7 +6,7 @@ E1已将局部成本正展开提取为[正占用核独立结构](../current/posi
 
 新增已审结构工具：[高次份额势](../current/weighted_congestion/high_degree_share.md)给实例相关近精确界；纯d次非存在必须有严格小的潜在个体份额，固定正权向量的最低正次数增长给一致趋1。低次混合与全类任意小份额不受此界解决。
 
-真正未解：全类 O(d/ln d) 存在性；新全状态机制超出现有 light-forcing 包络；一般 cohort 奇环的实际均衡上界。现有 barrier 只限制准确写出的机制。
+真正未解：全类 O(d/ln d) 存在性或新全状态增长反例。一般cohort奇环的实际均衡上界已由[双取向消去](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)闭合到T_d，无UF假设，完整拓扑最坏阈值恰T_d。前沿须超出同权cohort/同费副本/奇环关联，或把其稳定区间与全局选态机制迁移到一般模型；尚无归约。现有barrier仍只限制准确写出的机制。
 
 源族锐渐近、对称拓扑还原、密度与权带接口、padding、有限分离及若干独立工具已经入库。任意玩家乘子及依游戏可分序势障碍已在[现行重构](../current/weighted_congestion/separable_ordinal_obstruction.md)闭合独立攻击；只排除对应证书。其余待审势障碍、完整轨道和缺失原稿分别放在问题区和[逐文件状态](FILES.md)。旧分支摘要和旧公屏不再是唯一来源。
 
@@ -46,3 +46,7 @@ E1已将局部成本正展开提取为[正占用核独立结构](../current/posi
 [局部异权hub的排序侧势](../current/weighted_congestion/shared_side_truncated_potential.md)第十节已覆盖有界局部R/K而不限制全局权类数：UFhet和α≥R、(α−1)²≥Kd给全antiPNE。同权u只是R=K=1特例，原ID不变。当前需消去无界局部参数/强迫假设；所写单副本夹逼R在线性资源上渐近锐，换全局选态或成对抵消须新证明。
 
 当前可调用的异权侧势条件为[UFhetτ下α≥R、ατ≥Kd](../current/weighted_congestion/shared_side_truncated_potential.md)；全局最小点之间择优也不能消去R，新线性完整反例已独立核验。结构归约新增[潜在使用森林精确PNE与单核心玩家挂树fixed lift](../current/weighted_congestion/incidence_forest_private_reduction.md)，允许任意权谱并保degree；它不控制有环核心，单环已有exact反例。下一项关键义务是一般核心/非UF的真实冻结偏离与响应兼容预算，而不是继续修补已被反例否定的同一E全局最小化。WC-TARGET保持OPEN。
+
+[同权类前沿全覆盖的条件编译](../current/weighted_congestion/class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)已将跨类δ损失换成全部product-front出口前提，D只显依α、类宽及B/η；α1精化不依η。真正新负向义务是构造p=O(α)、ln(α²BL/η)=O(α)等足够效率的增长输入；小证书/有限筛查不完成该义务。
+
+非UF的unique-light局部义务现有[显式阈值/单遍响应](../current/weighted_congestion/fixed_hub_light_threshold_response.md)可调用，FIP/存在为已核文献特例。当前缺口准确落在跨hub向量的多值响应选择与真实冻结偏离预算；不能将随h改变的Ψ_h望远镜求和，已有两玩家反例排除仅按重选后成本lift。无UF全类桥仍未闭合。

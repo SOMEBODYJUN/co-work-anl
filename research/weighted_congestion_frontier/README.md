@@ -29,6 +29,8 @@
 
 正权有限资源博弈 → 真实成本与 α-PNE → 全类阈值 a_*(d)。奇环策略 → 全状态严格偏离 → 权重及系数闭环 → 有限有理构造 → T_d 下界。文献上界 d 仍留对数缺口；精确目标见 MODEL。[高次份额势](../current/weighted_congestion/high_degree_share.md)、源族、稀疏密度、窄权带、非对称有限例和势方法障碍的范围各自独立。
 
+新增[一般cohort奇环实际阈值](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)：稳定区间→单缺陷双标签→同向强迫→正/反包络，证明无UF时仍有T_d-PNE；结合旧下界得该拓扑阈值恰T_d。精确v2身份和独立冻结攻击由账本/正文连接，不更改WC-TARGET OPEN。
+
 已审正文在 `research/current/weighted_congestion/`，待审候选在 `research/questions/weighted_congestion/`，实际审查在 `research/reviews/weighted_congestion/`，核验代码在 `tests/audits/weighted_congestion/`，冻结证据在 `evidence/`。完整用途和状态见 [FILES](FILES.md)，不可变原件和分支处置见 [INTEGRATION](INTEGRATION.json)。[LITERATURE](LITERATURE.md)、[PRIOR_ASSETS](PRIOR_ASSETS.md)按需查来源与前人机制；新颖性尚未认证。
 
 ## 共同工作
@@ -73,3 +75,7 @@
 [异权重置增量与全局最小点边界](../current/weighted_congestion/shared_side_truncated_potential.md)第十一节在UFhetτ下将条件加强为α≥R、ατ≥Kd；新版本保留旧身份。线性无light反例又证明同一排序势全部全局最小点均可有趋近R的真实改善，不能仅改取global min消R。独立审查及两路Fraction证据从正文11.5进入。
 
 [潜在使用森林与单玩家挂树私人成本归约](../current/weighted_congestion/incidence_forest_private_reduction.md)给任意正权、任意有限资源子集策略和非负非减费用的exactPNE；只在单核心玩家处附着的树可换私有常数，保多项式次数并将所有α≥1的reduced PNE用同一lift提升。单环二玩家例的最佳因子72/71说明森林不能无证扩域。先读两个精确合同，再读冻结审查/代码/证据。全类仍缺无界局部权比、非强迫反馈或有环核心的统一选态。
+
+[同权类前沿全覆盖编译](../current/weighted_congestion/class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)是新的条件接口：全部front严格出口→类内δ2/3修复全部状态；无独立跨类权比次数损失。双路有理小证书及冻结审查由正文进入，增长前提仍未实现。
+
+[固定主玩家的无强迫轻响应接口](../current/weighted_congestion/fixed_hub_light_threshold_response.md)在每side仅一light时给显式阈值序势和每名至多一次strict移动的删除构造，允许异权及UF失败；存在/FIP本身已核为Milchtaich1996已知两策略定理特例，不作新存在结果。多light反边界复用旧例；真实hub偏离冻结lights，响应重选尚无兼容预算，不能把此接口当全类均衡。

@@ -18,6 +18,8 @@
 
 第一次进入仓库先读根 [README](../README.md)、[当前前沿](../RESEARCH_STATE.md)、[命题入口](../CLAIMS.md)、[失败入口](../FAILED_ROUTES.md)。随后只读所选专题；不用先通读全部旧稿、工具或协作提示词。
 
+一般群组奇环的actual缺口已由[单缺陷双取向消去](current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)闭合：不要求UF、允许部分aligned light和混合多项式，全部该拓扑均有T_d-PNE，实际最坏阈值恰T_d。先读精确拓扑和[独立攻击](reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md)，再调用两路Fraction证据；不能把这个拓扑当全类规范形。
+
 ## 文件按什么用途存放
 
 | 位置 | 里面是什么 | 如何用 |
@@ -77,3 +79,7 @@
 [异权重置增量与全局最小点边界](current/weighted_congestion/shared_side_truncated_potential.md)第十一节在UFhetτ下将条件加强为α≥R、ατ≥Kd；新版本保留旧身份。线性无light反例又证明同一排序势全部全局最小点均可有趋近R的真实改善，不能仅改取global min消R。独立审查及两路Fraction证据从正文11.5进入。
 
 [潜在使用森林与单玩家挂树私人成本归约](current/weighted_congestion/incidence_forest_private_reduction.md)给任意正权、任意有限资源子集策略和非负非减费用的exactPNE；只在单核心玩家处附着的树可换私有常数，保多项式次数并将所有α≥1的reduced PNE用同一lift提升。单环二玩家例的最佳因子72/71说明森林不能无证扩域。先读两个精确合同，再读冻结审查/代码/证据。全类仍缺无界局部权比、非强迫反馈或有环核心的统一选态。
+
+[全部同权类前沿出口到全状态的条件编译](current/weighted_congestion/class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)把非存在的全覆盖义务转移到product-front，时钟D依α、类宽及B/η而无额外跨类权比；分离预算含α1无余量损失。前提不由strict sweep推出，仍缺次数效率足够的增长输入。
+
+[固定主玩家的无强迫轻响应接口](current/weighted_congestion/fixed_hub_light_threshold_response.md)在每side仅一light时给显式阈值序势和每名至多一次strict移动的删除构造，允许异权及UF失败；存在/FIP本身已核为Milchtaich1996已知两策略定理特例，不作新存在结果。多light反边界复用旧例；真实hub偏离冻结lights，响应重选尚无兼容预算，不能把此接口当全类均衡。

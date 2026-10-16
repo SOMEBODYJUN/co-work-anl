@@ -2,7 +2,7 @@
 
 | 尝试与关键机制 | 具体失败或限制 | 排除范围、回收与重试条件 |
 | --- | --- | --- |
-| 奇环所有 aligned light 强制偏离，再用 odd hub 覆盖 | [精确 T_d 包络](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)限制全部这套正测试，多项式混合不扩大 | 只限制证书；一般 cohort 实际游戏存在界未证明。需改变状态覆盖而非只调次数 |
+| 奇环所有 aligned light 强制偏离，再用 odd hub 覆盖 | [精确 T_d 包络](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)限制全部这套正测试，多项式混合不扩大 | 证书上限本身仍非存在证明；但新增[第10节](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)用稳定区间/双取向/平移消去独立证明一般cohort实际阈值恰T_d。该同权同费奇环内即使放弃UF也不能放大；需改变承重拓扑/权/费用合同 |
 | 同一重轻两列拓扑靠调参或多项式变强 | [完整拓扑还原](../current/weighted_congestion/source_topology/symmetric_two_column_reduction.md)在精确倍率范围还原到源族 | 异权和非对称资源不在范围；有限 crossover 给分离 |
 | 固定小支持 gadget 重复堆叠 | 资源潜在用户数 r 有 r-PNE 的总成本证明；[三玩家例](../current/weighted_congestion/quadratic_triad/three_player_integer_obstruction.md)不可能独自给随 d 无界的下界 | 需增长用户支持或改变机制；有限例仍可复用 |
 | 自然 complementary multicolumn 扩展 | [平衡轻玩家状态](../current/weighted_congestion/multicolumn/complement_column_escape.md)提供两倍逃逸 | 只排除此拓扑的放大；非所有多列构造 |
@@ -114,3 +114,9 @@
 ## 将森林的递归稳定延续直接扩大到单环或多根
 
 [森林归约](../current/weighted_congestion/incidence_forest_private_reduction.md)靠互不相交子树的固定报价闭合任意耦合策略。单环二玩家四资源已无exactPNE；循环共享会破坏独立报价，不能仅按某个根的响应重置后费用替代真实冻结偏离。保次数lift只覆盖每附属分量至多一个核心玩家；核心资源挂树或多核心接触需新合同。回收当前价相等/进入价下界接口，不外推全类失败。
+
+全前沿条件编译没有修复strict sweep自动覆盖的失败：它另要求全部front保front严格出口，增长输入与B/η控制仍缺。
+
+## 把固定hub的精确轻响应当成整个游戏的提升
+
+[阈值响应接口](../current/weighted_congestion/fixed_hub_light_threshold_response.md)给unique-light、无UF的真实稳定light选态，但其势随hub向量改变，不能累计为同一全局势。原共享侧正文9.17两玩家例在每个固定hub都有精确light响应，重选后hub成本由补位对称相同，仍有真实冻结light的hub改善。因此失败是偏离合同和响应预算缺失，不是light响应不存在。多light共享side另由旧三玩家例直接阻止该exact响应推广；回收显式阈值势/单遍选择，下一步须支付冻结与重置成本差。存在/FIP为已知Milchtaich特例，新颖性不因重构升级。

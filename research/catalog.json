@@ -830,10 +830,17 @@
     {
       "path": "research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md",
       "title": "奇数环总证明：全状态非存在、精确包络与同次数构造",
-      "purpose": "从真实资源策略建立严格局部测试及正系数乘积判据，证明精确包络、有限有理同次数下界，并处理多项式与单成员子类。",
+      "purpose": "从真实策略证明奇环全状态下界与正测试包络；第10节再以稳定计数、双取向与平移消去证明一般cohort实际阈值恰T_d，需区分拓扑结论与全类OPEN。",
       "topic": "weighted_congestion",
       "role": "account",
-      "package": "odd_ring"
+      "package": "odd_ring",
+      "related_paths": [
+        "research/reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md",
+        "tests/audits/weighted_congestion/odd_ring_parameters/check_general_cohort_actual_upper.py",
+        "tests/audits/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.py",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper.json",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.json"
+      ]
     },
     {
       "path": "research/current/weighted_congestion/odd_ring_linear.md",
@@ -4114,7 +4121,7 @@
     {
       "path": "research/current/weighted_congestion/class_front_phase_quotient.md",
       "title": "循环窗口的压缩前沿与不同步稳定状态",
-      "purpose": "在真实循环lift后读取；用全状态扭转协变和精确端点表压缩各类前沿，明确不同步反例阻止自动全前沿出口证明。；新增WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1：显式12玩家/64资源degree8循环窗口binary游戏有24步strict21/20双同序环，但phase(0,0,1)是全部玩家严格exactPNE。任意有限fresh同类递增三元010/101互补pair，pair两侧同一非负非减费用，任何degree/幅度叠加均保留该严格exactPNE。因此仅追加这些clock不能对所有该倍率strict sweep输入保证全状态无PNE。 只排所写追加compiler；不排跨类、其他arity/phase、不等费pair、辅助玩家或更高倍率专用输入类。旧端点反例仍非PNE，不改其ID；本新fixture是真exactPNE。",
+      "purpose": "在真实循环lift后读取；用全状态扭转协变和精确端点表压缩各类前沿，明确不同步反例阻止自动全前沿出口证明。；新增WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1：显式12玩家/64资源degree8循环窗口binary游戏有24步strict21/20双同序环，但phase(0,0,1)是全部玩家严格exactPNE。任意有限fresh同类递增三元010/101互补pair，pair两侧同一非负非减费用，任何degree/幅度叠加均保留该严格exactPNE。因此仅追加这些clock不能对所有该倍率strict sweep输入保证全状态无PNE。 只排所写追加compiler；不排跨类、其他arity/phase、不等费pair、辅助玩家或更高倍率专用输入类。旧端点反例仍非PNE，不改其ID；本新fixture是真exactPNE。；末节新增同权类前沿全覆盖的条件全状态编译：读取FC1以核对全部front出口、两种次数预算与α1精化，实际权谱只经B/η进入；增长输入尚缺。",
       "topic": "weighted_congestion",
       "role": "account",
       "package": "循环窗口的压缩前沿与不同步稳定状态",
@@ -4129,7 +4136,13 @@
         "tests/audits/weighted_congestion/cyclic_clone/independent_class_internal_clock_compiler.py",
         "evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_author.json",
         "evidence/runs/weighted_congestion/cyclic_clone/class_internal_clock_compiler_obstruction_independent.json",
-        "examples/weighted_congestion/class_internal_clock_compiler_obstruction.json"
+        "examples/weighted_congestion/class_internal_clock_compiler_obstruction.json",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
       ]
     },
     {
@@ -5843,6 +5856,267 @@
         "tests/audits/weighted_congestion/verify_incidence_forest.py",
         "tests/audits/weighted_congestion/independent_incidence_forest.py",
         "evidence/runs/weighted_congestion/incidence_forest/author.json"
+      ]
+    },
+    {
+      "path": "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+      "title": "固定主玩家后的异权轻玩家阈值序势与有序删除响应",
+      "purpose": "固定hub后调用无UF轻玩家响应前，先核unique-light/source合同；读取精确阈值势与单遍删除、已知文献身份和真实hub重置不能lift的边界。",
+      "topic": "weighted_congestion",
+      "role": "account",
+      "package": "fixed-hub-light-threshold-response",
+      "related_paths": [
+        "research/reviews/weighted_congestion/fixed_hub_light_threshold_review.md",
+        "tests/audits/weighted_congestion/verify_fixed_hub_light_threshold.py",
+        "tests/audits/weighted_congestion/independent_fixed_hub_light_threshold.py",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/author.json",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/independent.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/fixed_hub_light_threshold_review.md",
+      "title": "固定hub轻响应的独立重构、文献身份与冻结攻击",
+      "purpose": "核阈值符号/平费/端点及有序删除的先读稿前重构，再核冻结hash；准确区分Milchtaich已知FIP与本显式接口，并复算旧multi-light边界。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "fixed-hub-light-threshold-response",
+      "related_paths": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "tests/audits/weighted_congestion/verify_fixed_hub_light_threshold.py",
+        "tests/audits/weighted_congestion/independent_fixed_hub_light_threshold.py",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/author.json",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/verify_fixed_hub_light_threshold.py",
+      "title": "固定hub异权轻响应的作者字面资源审计",
+      "purpose": "逐实际输入、所有light状态和真实偏离核式(1)、势符号与有序删除；记录全部参数和每例结果，含常数/零F及复用的多light边界。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "fixed-hub-light-threshold-response",
+      "related_paths": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "research/reviews/weighted_congestion/fixed_hub_light_threshold_review.md",
+        "tests/audits/weighted_congestion/independent_fixed_hub_light_threshold.py",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/author.json",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/independent_fixed_hub_light_threshold.py",
+      "title": "固定hub异权轻响应的独立成对势审计",
+      "purpose": "独立literal成本与成对项势交叉核对全符号、strict图DAG、阈值平局及两种tie排序删除；输出全部输入及规范稿/代码hash。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "fixed-hub-light-threshold-response",
+      "related_paths": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "research/reviews/weighted_congestion/fixed_hub_light_threshold_review.md",
+        "tests/audits/weighted_congestion/verify_fixed_hub_light_threshold.py",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/author.json",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/fixed_hub_light_response/author.json",
+      "title": "固定hub阈值响应的作者完整输入与冻结结果",
+      "purpose": "保存作者实际固定hub输入、全部逐例状态/严格边统计、有序删除与旧反边界输出，用于复算而非证明全类存在。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "fixed-hub-light-threshold-response",
+      "related_paths": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "research/reviews/weighted_congestion/fixed_hub_light_threshold_review.md",
+        "tests/audits/weighted_congestion/verify_fixed_hub_light_threshold.py",
+        "tests/audits/weighted_congestion/independent_fixed_hub_light_threshold.py",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/fixed_hub_light_response/independent.json",
+      "title": "固定hub阈值响应的独立完整输入与冻结结果",
+      "purpose": "保存独立literal输入、成本平局与阈值零样本、成对势和DAG/单遍路径核验；记录规范稿hash以追踪正式路由。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "fixed-hub-light-threshold-response",
+      "related_paths": [
+        "research/current/weighted_congestion/fixed_hub_light_threshold_response.md",
+        "research/reviews/weighted_congestion/fixed_hub_light_threshold_review.md",
+        "tests/audits/weighted_congestion/verify_fixed_hub_light_threshold.py",
+        "tests/audits/weighted_congestion/independent_fixed_hub_light_threshold.py",
+        "evidence/runs/weighted_congestion/fixed_hub_light_response/author.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md",
+      "title": "一般群组奇环实际阈值：独立重构与冻结攻击",
+      "purpose": "核查先于读稿的重构、奇数中央双标签与singleton边界、正反缩减和标量条件，并追踪两个不同冻结版本及canonical差异。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "odd_ring",
+      "related_paths": [
+        "research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md",
+        "tests/audits/weighted_congestion/odd_ring_parameters/check_general_cohort_actual_upper.py",
+        "tests/audits/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.py",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper.json",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/odd_ring_parameters/check_general_cohort_actual_upper.py",
+      "title": "一般群组奇环实际阈值：作者逐资源有理审计",
+      "purpose": "从内嵌资源策略重算有限全部计数状态和真实偏离，检查稳定区间、双标签、两方向非存在缩减及低于2的倍率边界。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "odd_ring",
+      "related_paths": [
+        "research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md",
+        "research/reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md",
+        "tests/audits/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.py",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper.json",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.py",
+      "title": "一般群组奇环实际阈值：独立策略负载重算",
+      "purpose": "独立构造资源与动作并用Fraction重算负载、真实偏离与单缺陷相反hub比较，另核包络上界和反向标量式；不导入作者审计。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "odd_ring",
+      "related_paths": [
+        "research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md",
+        "research/reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md",
+        "tests/audits/weighted_congestion/odd_ring_parameters/check_general_cohort_actual_upper.py",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper.json",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper.json",
+      "title": "一般群组奇环实际阈值：作者冻结核验",
+      "purpose": "保存实际147个有限实例、正反严格反例分支、内嵌参数seed、Python版本及规范代码hash；重放时输出到临时文件。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "odd_ring",
+      "related_paths": [
+        "research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md",
+        "research/reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md",
+        "tests/audits/weighted_congestion/odd_ring_parameters/check_general_cohort_actual_upper.py",
+        "tests/audits/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.py",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.json",
+      "title": "一般群组奇环实际阈值：独立冻结核验",
+      "purpose": "保存独立37实例的资源/偏离、端点边界、中央状态和反向标量有限检查，含seed、输入hash、解释器和代码hash。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "odd_ring",
+      "related_paths": [
+        "research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md",
+        "research/reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md",
+        "tests/audits/weighted_congestion/odd_ring_parameters/check_general_cohort_actual_upper.py",
+        "tests/audits/weighted_congestion/odd_ring_parameters/independent_general_cohort_actual_upper.py",
+        "evidence/runs/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper.json"
+      ]
+    },
+    {
+      "path": "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：独立重构与冻结攻击",
+      "purpose": "先仅据条件命题重构修复与精确抵消，再核查冻结正文、两预算、全部有理输入及增长量词；引用新编译定理前读取。",
+      "topic": "weighted_congestion",
+      "role": "review",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：作者真实资源审计",
+      "purpose": "读显式actual系数构建循环窗口资源及两套clock，重算216front出口与512全态指定偏离，检查D11/D4预算及同权三元几何。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
+      ]
+    },
+    {
+      "path": "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：独立真实资源审计",
+      "purpose": "独立构造完整资源子集，遍历不同类宽/极端权比/α1与有理倍率的front及非法修复，并重建九玩家fixture；不调用作者核心。",
+      "topic": "weighted_congestion",
+      "role": "audit_code",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
+      ]
+    },
+    {
+      "path": "examples/weighted_congestion/class_front_allstate_compiler.json",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：实际有理输入",
+      "purpose": "给出三类三复制玩家、六测试、归一化及actual系数；重现全front出口和次数保持小证书时使用，非增长族。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：作者冻结核验记录",
+      "purpose": "保存全部front出口证书、标准及分离预算、指定全态出口最小margin和代码/input hashes；仅有限覆盖。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_independent.json",
+      "title": "同权类前沿全覆盖的次数可控全状态编译：独立冻结核验记录",
+      "purpose": "保存独立资源重算、预算、边界和九玩家fixture的精确结果及版本/hash，复查作者实现时对照。",
+      "topic": "weighted_congestion",
+      "role": "frozen_evidence",
+      "package": "循环窗口的压缩前沿与不同步稳定状态",
+      "related_paths": [
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/class_front_allstate_compiler_review.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_front_allstate_compiler.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_front_allstate_compiler.py",
+        "examples/weighted_congestion/class_front_allstate_compiler.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/front_allstate_compiler_author.json"
       ]
     },
     {
