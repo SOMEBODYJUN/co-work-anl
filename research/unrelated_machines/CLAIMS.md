@@ -655,3 +655,7 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：q=1必须排除阈值下界；允许重新求矩/改其他机器choices未被排除；同一个Rx有正面修复，无层级gap、无一般算法困难性。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；部分实现仅限显式族；主目标OPEN。
 - Related Files：research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md；research/reviews/unrelated_machines/symmetric_moment_reset_review.md；两份symmetric_reset审计、examples/unrelated_machines/symmetric_reset_q2.json、evidence/certificates/unrelated_machines/symmetric_reset_q2_recoupling.json、evidence/runs/unrelated_machines/symmetric_moment_reset_audit.json。
+
+## 跨路线补充审查与身份保持
+
+[共同容量路线整合审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)补核UM-FOREST-TWO-BOUNDARY-MENU-v1、UM-DEPTH-TWO-HALF-v1、UM-FROZEN-MACRO-TINY-REOPT-GAP-v1、UM-MACRO-MIGRATION-FRONTIER-v1及UM-ONE-DESTINATION-SLOT-REPAIR-v1的所列范围。没有改变这些身份或主目标状态；标准流/仿射恢复推导用于检验接口，不另冒充新的特殊类研究成果。后续共同矩正文与研讨候选的实际覆盖另在审查中注明。

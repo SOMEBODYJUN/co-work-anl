@@ -125,3 +125,7 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 [任务聚合、单机矩运输阈值与同边际修复](../current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)给UM-SYMMETRIC-JOB-AGGREGATION-v1及UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1。前者是给定R的可检查列条件；后者在真实最优分布上区分既定矩推前需2T与同Rx重新耦合只需T。不得写成Rx不属新N或同层求解不可能。读取链：CLAIMS→正文→symmetric_moment_reset_review.md→双路代码/实际q2输入与证书/symmetric_moment_reset_audit.json。
 
 一般不相关输入中如何可计算地重建共同条件容量、输出统一低于2且保证总位多项式进展仍未解决；本结果不提供R搜索器。标准凸锥和二分图工具保留来源，全球新颖性与独立论文价值未认证。
+
+## 跨路线整合后的可判别前沿
+
+[冻结整合审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)确认已有真实局部构造，尚无一般统一ε。菜单全局选择已含unrelated graph balancing；DAG-token任意深度且非根需求有固定上界时已有标准最大流标尺，不能只加深路径当新机制；真低秩矩存在不等于可提取。最新阈值repair仍缺真实进展势，失败不是不可行；单sink共同macro候选靠可加真实成本耦合，多sink需另证整数选择。优先判别一般共同容量/重新耦合与总位进展，不重复独立探针或把局部修复当全类保证。

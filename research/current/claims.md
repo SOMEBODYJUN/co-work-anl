@@ -754,6 +754,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-SYMMETRIC-JOB-AGGREGATION-v1 | For every nonempty bounded one-hot rational P, symmetric normalized certificate (x,Y), and given deterministic jobwise aggregation/deletion R with at least one retained job, mapped old true columns in their scaled P-prime imply (Rx,RYR^T) is a same-layer certificate. With no retained jobs check the zero-dimensional base separately. Given data and explicit P-prime can be checked in bit-polynomial time; finding R is not solved. | [正文](unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)、[冻结审查](../reviews/unrelated_machines/symmetric_moment_reset_review.md)；限范围完整证明/双路精确审计，外审与新颖性未认证，主目标OPEN。 |
 | UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1 | For each q>=2, m=2q machines and n=2q^2 identical jobs p=1/q,T=OPT=1, the uniform balanced true-optimum moment matrix needs exactly 2q absorbed jobs for some deterministic single-machine fallback pushforward to satisfy residual true/false capacities. Every c<2q and every fallback fail. At c=q balanced groups, the same first moment Rx has a rebuilt true residual T-distribution, in deterministic bit-polynomial time. | [正文](unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)、[冻结审查](../reviews/unrelated_machines/symmetric_moment_reset_review.md)；限范围完整证明/双路精确审计，外审与新颖性未认证，主目标OPEN。 |
 
+跨路线[补充审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)仅核所列UM接口和拼接义务，未更改上述Claim量词、状态或新增主目标算法。
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

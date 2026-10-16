@@ -74,3 +74,7 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 星预处理的配置义务已闭合到精确范围：UM-STAR-CONFIG-TRANSFER-v1在逐步外部互斥下双向保持CONFIG、向前保持条件边；缺Q占用或声称反向条件边均有小反例。UM-CONTRACTED-SPARSE-CONFIG-GAP-v1给无极小星的收缩终态仍通过全部独立条件配置探针。新的信息需求是共同条件相关性/联合迁移，不是重复端点消元；主目标仍OPEN。
 
 [对称条件矩的运输与重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。
+
+## 不相关机路线的整合判断
+
+[共同容量路线整合审查](research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)已核双边界菜单、浅层半比例和macro迁移前沿的实际范围。一般共同选择与总进展仍未闭合；单汇点共同macro候选有正面机制，但不把多汇点整数化或低秩真矩提取当免费步骤。未改变UM-TARGET-v1的OPEN状态。

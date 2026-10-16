@@ -113,3 +113,5 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 [星收缩的配置保持](research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)给可复用正面接口：外部配置互斥时配置可行性双向转移、全部条件边向前转移，重复支持只加不乘；[稀疏族收缩终态](research/current/unrelated_machines/sparse_conditioned_configuration_gap.md)仍无极小星且独立条件证书gap2。主目标OPEN，真正缺口仍是共同相关性和实际联合舍入。
 
 [对称条件矩的运输与重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。
+
+[共同容量路线整合审查](research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)把已核局部构造与一般核心残留分开：菜单可算不等于核心可选，固定macro的tiny重开仍不足，真实低秩矩恢复不等于可求矩。含Astra独立攻击与精确有限核验；没有新增统一近似保证。

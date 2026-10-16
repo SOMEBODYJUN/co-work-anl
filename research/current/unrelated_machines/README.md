@@ -153,3 +153,7 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 [任务聚合、单机矩运输阈值与同边际修复](symmetric_moment_reset_and_single_machine_threshold.md)给UM-SYMMETRIC-JOB-AGGREGATION-v1及UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1。前者是给定R的可检查列条件；后者在真实最优分布上区分既定矩推前需2T与同Rx重新耦合只需T。不得写成Rx不属新N或同层求解不可能。读取链：CLAIMS→正文→symmetric_moment_reset_review.md→双路代码/实际q2输入与证书/symmetric_moment_reset_audit.json。
 
 一般不相关输入中如何可计算地重建共同条件容量、输出统一低于2且保证总位多项式进展仍未解决；本结果不提供R搜索器。标准凸锥和二分图工具保留来源，全球新颖性与独立论文价值未认证。
+
+## 跨路线的当前可行性判断
+
+[共同容量路线整合审查](../../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)冻结三条正面接口及单目的地修复的独立覆盖，区分一般菜单核心、矩提取与实际共同迁移。附最大流标准标尺及精确有限审计；不新增或扩大主目标Claim。它说明哪些是可复用局部构造，哪些候选仍缺同一证书中的全机器容量与总位多项式进展。
