@@ -114,6 +114,8 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 
 身份：UM-ROBUST-CYCLIC-BATCH-OPT-v1, UM-BATCH-SUPPORT-REPAIR-NO-v1, UM-FORK-MINCOST-ROUND-REPAIR-NO-v1。
 
+[UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1：真最优凸包长链修复](cyclic_batch_repair_and_fork_obstruction.md#10-真实最优凸包初始化后的无界机器长链义务)把参与机器数的义务与单机批量分开：所有mincost槽输出值2−1/k，严格lex改善恰需d+1任务/d+2台机器。两个真实最优分量、实际槽图、双路证据与[冻结攻击](../../reviews/unrelated_machines/optimal_hull_long_chain_review.md)可追溯；允许先中性腾空链尾即有逐件弱Cmax修复，不是一般算法障碍。
+
 ## 联合迁移的需求树压力接口
 
 [有向需求树与真实调度的精确任务桥梁](rooted_dag_degree_token_bridge.md)给UM-DAG-DEGREE-TOKEN-IDENTITY-v1及UM-TARGET-IMPLIES-DAG-DEGREE-v1：一顶点一机器、unit入任务与本地子任务外溢，精确OPT=2−截断最大需求比例；二进制大需求用单填充保持任务数O(E+V)。正确阈值缩放使任何主目标算法都须构造常数比例需求根树。一般方向已由MMDA/Santa Claus文献知道，本页是可复用直接重构，不冒充新算法/新困难性。

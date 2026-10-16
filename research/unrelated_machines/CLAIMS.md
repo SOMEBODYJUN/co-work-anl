@@ -743,3 +743,15 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：不能以扩展LP basic vertex代替模式投影顶点；已用逐坐标lex精确LP避免。多预算matching边模式不满足占位基结构；无一般K/多home提取。声明范围无尚成立fatal。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；通用LP软件未实现，外审/新颖性未认证，主目标仍OPEN。
 - Related Files：[research/current/unrelated_machines/fixed_sink_occupation_rounding.md](../current/unrelated_machines/fixed_sink_occupation_rounding.md)、research/reviews/unrelated_machines/fixed_sink_occupation_review.md；代码/冻结记录见正文§11。
+
+## UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1：真实最优凸包槽初始化的无界机器长链修复
+
+- Exact Statement / Quantifiers：∀整数k≥3,d≥1，正文§10的正有理两端任务族有T=OPT=1，x由两个真实最优调度显式凸组合给出。固定任意tiny平局序，全部最小总处理时间槽覆盖匹配共同诱导同一σ，Cmax=2−1/k。每个严格降序负载lex改善至少改变d+1任务并涉及d+2台新旧owner端点机器；同一实际修复同时达到两下界，Cmax=2−2/k且每源至多迁出一件。
+- Objects / Domain / Definitions：UM-MODEL-v1；δ=1/k,a=1−1/(2k),D=d+2k−1；root宏/微任务各自有专属容量释放链。H={j:τ(j)≠σ(j)}，参与机为{σ(j),τ(j):j∈H}。ST边只用正长度槽交。
+- Assumptions / Scope：固定σ出发的一次严格lex下降邻域；k,d均可无界。真凸包/配置来源成立，但不要求x基本。任意统一ε和固定参与机预算均可独立选k,d攻击。
+- Conclusion：强初始化与最小成本择优不能保证有界参与机器的严格下降；不同于三机无界批量，也不同于单目的地分流障碍。
+- Dependencies：UM-MODEL-v1、标准ST槽定义；正文直接给两最优调度、严格激活成本差1/(2k)、链容量分类与精确支持计数。无新外部定理。
+- Evidence：完整自足证明、statement-first独立重构及冻结正文攻击；规范24参数精确最小成本流，独立3参数270336份全部实际分配和逐机槽匹配；范围见冻结记录。
+- Counterevidence / Objections：本族明确可从链尾逐件预修，每步仅两机且Cmax不增；前置步lex恶化，故不否定弱Cmax单调路径。两个已给凸分量可直接返回，不构成算法困难性或一般下界；无当前范围fatal异议。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；全球新颖性、独立论文价值与外审未认证；UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§10；research/reviews/unrelated_machines/optimal_hull_long_chain_review.md；tests/audits/unrelated_machines/optimal_hull_long_chain_gap.py、tests/audits/unrelated_machines/optimal_hull_long_chain_independent.py；两份optimal_hull_long_chain冻结JSON及k3d1输入/证书。

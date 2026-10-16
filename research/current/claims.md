@@ -783,6 +783,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1 | ∀固定整数K≥1，∃确定性A_K，∀给定H∪Z(|Z|=K)、仅H可用且每有限边>T/2的宏任务B、不交私有组J_h（每件仅{h}∪Z的非空子集可用）、二进制有理T≥0，A_K按输入总位长多项式返回可靠FAIL或实际调度Cmax≤3T/2；OPT≤T必成功。私有尺寸任意，有限p>T先剪枝。多项式次数依K。 | 给定T的one-sided资源增广；成功不判定T精确可行。固定K与唯一home分组承重，不提供一般实例分区/分组提取，不含K增长的统一多项式保证。 [正文](unrelated_machines/fixed_sink_occupation_rounding.md)、[冻结审查](../reviews/unrelated_machines/fixed_sink_occupation_review.md)。限域完整证明，未外审/未认证新颖性。 |
 | UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1 | ∀固定整数K≥1，∃确定性位多项式算法，∀同给定H/Z/B/私有组但无T的合法实例，若每条有限宏任务时间严格>OPT(P)/2（B可空），则输出实际调度Cmax≤3OPT(P)/2。零最优值精确零输出；算法不验证含OPT的promise，不要求给OPT或好调度。次数依K。 | 含OPT的大宏任务promise与结构分区为额外假设；不是一般UM-TARGET-v1。通过共同分母整数网格及可靠FAIL/任意成功负载界二分，不假定接受集合单调。 [正文](unrelated_machines/fixed_sink_occupation_rounding.md)、[冻结审查](../reviews/unrelated_machines/fixed_sink_occupation_review.md)。限域完整证明，未外审/未认证新颖性。 |
 
+## 真实最优凸包初始化的长链修复边界
+
+| ID | 精确范围与结论 | 正文与限制 |
+| --- | --- | --- |
+| UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1 | ∀k≥3,d≥1，两个真实OPT1调度平均点的全部mincost ST输出σ都有Cmax=2−1/k；严格lex改善的最小任务支持d+1、最小新旧端点参与机数d+2同时达到，每源仅迁一件。 | [循环正文§10](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)、[冻结审查](../reviews/unrelated_machines/optimal_hull_long_chain_review.md)。中性Cmax链尾预修明确可行，未排一般算法，未外审/未核新颖性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

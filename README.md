@@ -95,7 +95,7 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 
 [真实最优凸包内的固定槽损失](research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md)进一步把两类障碍分开：即使x来自真实OPT调度凸包，固定有序槽图的所有匹配仍可趋2OPT；本族跨槽迁移可恢复最优。它限制输出空间，不否定一般算法；主目标仍OPEN。
 
-不相关机新增[循环批量局部优化与分流障碍](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)：有总位多项式局部优化器，但逐坐标单调在真实最优凸包槽初始化上也可零轮、近2停滞；另有唯一成本LST分配要求多目的地修复的准确边界。一般统一改善仍OPEN。
+不相关机新增[循环批量局部优化与分流障碍](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)：有总位多项式局部优化器，但逐坐标单调在真实最优凸包槽初始化上也可零轮、近2停滞；另有唯一成本LST分配要求多目的地修复的准确边界。一般统一改善仍OPEN。 新增§10的真实最优凸包长链族：全部最小成本槽输出仍近2，严格lex修复的最小参与机数可任意大；链尾中性预修明确可行，故不限制弱Cmax单调路径。
 
 [需求树与真实调度的直接桥梁](research/current/unrelated_machines/rooted_dag_degree_token_bridge.md)给精确OPT=2−截断需求比例、实际双向构造与二进制大需求压缩。它把一般联合迁移的必要能力写成可复用输入；属于已知MMDA机制重构，主目标仍OPEN。
 

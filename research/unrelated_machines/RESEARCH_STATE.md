@@ -86,6 +86,10 @@ UM-ROBUST-CYCLIC-BATCH-OPT-v1已给固定η的实际局部优化器：exact-prof
 
 范围关键：该x不是配置投影（A上big质量>1），未称basic，不能据此否定配置初始化。下一高信息义务是可共同实现的多目的地分流合流，或一个能排除该相关结构的具体初始化不变量；仅正支撑、总成本不增或增大循环菜单不足。自足入口为[正文](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)与其冻结审查/实际证据。
 
+## 严格下降邻域的机器规模与可回收中性路径
+
+UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1在两个真实OPT调度凸组合与全部mincost ST输出上给C=2−1/k，严格lex改善的最小参与机器数恰d+2。它排除固定机器邻域的严格下降假充分义务；不排弱Cmax单调算法，本族从链尾逆序腾空后单件迁入即可改进。证明、槽证书和独立270336全调度审计见[循环正文§10](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)。下一高信息行动是在一般实例找可共同实现、允许中性预修的容量释放结构，并证明总进展界；不是扩大固定严格下降邻域。
+
 ## 用实际需求树检验联合迁移
 
 [压缩任务桥梁](../current/unrelated_machines/rooted_dag_degree_token_bridge.md)给真实OPT=2−b*与任意C<2调度的实际根树解码，而不是LPgap。大k填充和正确有限阈值缩放已闭合位复杂度；已知MMDA必要方向并非原创成果。一般联合repair需要同时维护unit激活与子资源唯一性。独立攻击已覆盖边界和缩放；Bamas2025一轮SA陈述已定位，但未做任何调度层级保真。主目标仍OPEN。
