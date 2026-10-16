@@ -305,6 +305,32 @@ class WorkTests(unittest.TestCase):
         self.assertEqual(repeated.returncode, 0, repeated.stderr)
         self.assertEqual(json.loads(repeated.stdout)["commit"], receipt["commit"])
 
+    def test_new_archive_checkpoint_uses_saved_topic_scope(self):
+        started = self.work("start", "--actor", "001", "--save", "unrelated-machines",
+                            "--token-file", str(self.credential), "--remote", str(self.remote))
+        self.assertEqual(started.returncode, 0, started.stderr)
+        note = self.repo / "research/current/unrelated_machines/boundary.md"
+        note.parent.mkdir(parents=True)
+        note.write_text("new archive boundary\n")
+        old_note = self.repo / SCOPE / "note.md"
+        old_note.write_text("old archive draft remains local\n")
+        peer = self.repo / "research/workspaces/unrelated-machines/peer/note.md"
+        peer.parent.mkdir(parents=True)
+        peer.write_text("peer draft remains local\n")
+        result = self.work("checkpoint", "-m", "new archive checkpoint")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        receipt = json.loads(result.stdout)
+        self.assertEqual(receipt["status"], "pushed")
+        self.assertIn(note.relative_to(self.repo).as_posix(), receipt["files"])
+        self.assertNotIn(SCOPE + "/note.md", receipt["files"])
+        self.assertEqual(value(self.remote, "show", "main:" + SCOPE + "/note.md"), "baseline")
+        self.assertEqual(value(self.remote, "show", "main:" + note.relative_to(self.repo).as_posix()),
+                         "new archive boundary")
+        self.assertEqual(value(self.remote, "ls-tree", "-r", "main", "--", peer.relative_to(self.repo).as_posix()), "")
+        self.assertEqual(old_note.read_text(), "old archive draft remains local\n")
+        self.assertEqual(peer.read_text(), "peer draft remains local\n")
+        self.assertEqual(value(self.repo, "branch", "--show-current"), "main")
+
     def test_missing_repo_and_nonempty_destination_report_actionable_errors(self):
         result = self.work("read")
         self.assertEqual(result.returncode, 2)

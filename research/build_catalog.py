@@ -15,6 +15,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "research/catalog.json"
 TOPICS = [
+    ("unrelated_machines", "不相关并行机与统一常数2壁垒", "current/unrelated_machines/README.md"),
     ("weighted_congestion", "加权原子拥塞博弈", "current/weighted_congestion/README.md"),
     ("positive_kernels", "正占用核、交互阶数与非负表示", "current/positive_kernels/README.md"),
     ("shared", "共同目录双设施", "current/shared/README.md"),

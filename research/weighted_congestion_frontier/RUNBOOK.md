@@ -39,7 +39,7 @@ python3 research/weighted_congestion_frontier/tools/work.py read
 python3 research/weighted_congestion_frontier/tools/work.py checkpoint -m '具体数学增量和范围'
 ```
 
-不指定路径时，checkpoint 覆盖加权拥塞的正文、候选、审查、审计代码、证据和共同账本。显式路径会替换整个默认范围：若涉及默认范围外文件，必须列全本次应提交的正文、登记和额外文件，不能只列额外文件。普通推送自动合入不冲突的 main 更新；真实冲突停住保留双方。本地回执给出已推送 commit、文件 hash 与 descriptor；仅返回 pushed 才说明远端确认。
+不指定路径时，checkpoint 按存档选择：shared/未绑定保留加权拥塞范围；unrelated-machines使用[新题八类目录](../unrelated_machines/RUNBOOK.md)，不会默认包含旧题正文或共享tools目录；未知存档仅共同登记与本人桌面，空范围明确停止。显式路径会替换整个默认范围：若涉及默认范围外文件，必须列全本次应提交的正文、登记和额外文件，不能只列额外文件。普通推送自动合入不冲突的 main 更新；真实冲突停住保留双方。本地回执给出已推送 commit、文件 hash 与 descriptor；仅返回 pushed 才说明远端确认。
 
 公屏可自由讨论有启发的 idea、卡点、反例与合作问题，注明已证和未证，不要求先成稿：
 

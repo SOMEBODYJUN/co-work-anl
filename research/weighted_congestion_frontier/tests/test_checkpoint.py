@@ -412,6 +412,108 @@ class CheckpointTests(unittest.TestCase):
         self.assertEqual(run(self.remote, "ls-tree", "-r", "main", "--", peer.relative_to(self.repo).as_posix()), "")
         self.assertEqual(peer.read_text(), "peer unfinished draft\n")
 
+    def test_unrelated_archive_defaults_select_its_topic_and_common_registers_only(self):
+        run(self.repo, "config", "--local", "wcg.actor", "R-self")
+        run(self.repo, "config", "--local", "wcg.save", "unrelated-machines")
+        topic_paths = ["research/current/unrelated_machines", "research/questions/unrelated_machines",
+                       "research/reviews/unrelated_machines", "research/unrelated_machines",
+                       "tests/audits/unrelated_machines", "examples/unrelated_machines",
+                       "evidence/runs/unrelated_machines", "evidence/certificates/unrelated_machines"]
+        common_paths = ["README.md", "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md",
+                        "research/current/claims.md", "research/assets.json", "research/review_status.json",
+                        "research/graph.json", "research/index.html", "research/source_crosswalk.json",
+                        "research/source_crosswalk.md", "research/catalog.json", "research/CATALOG.md"]
+        own_path = "research/workspaces/unrelated-machines/R-self"
+        expected_files = []
+        for name in topic_paths + [own_path]:
+            path = self.repo / name / "note.md"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("archive asset\n")
+            expected_files.append(path.relative_to(self.repo).as_posix())
+        for name in common_paths:
+            path = self.repo / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("common register\n")
+            expected_files.append(name)
+        excluded = ["research/workspaces/unrelated-machines/R-peer/note.md",
+                    "research/workspaces/shared/R-self/note.md",
+                    "research/current/unrelated_machines_extra/note.md"]
+        for name in excluded:
+            path = self.repo / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("unpublished unrelated draft\n")
+        self.note.write_text("old topic draft must stay local\n")
+        self.assertEqual(set(c.default_paths(self.repo)), set(topic_paths + common_paths + [own_path]))
+        result = self.save()
+        self.assertEqual(set(result["files"]), set(expected_files))
+        self.assertEqual(set(result["outgoing_files"]), set(expected_files))
+        self.assertEqual(run(self.remote, "show", "main:" + c.SCOPE + "/note.md"), "baseline")
+        for name in excluded:
+            self.assertEqual(run(self.remote, "ls-tree", "-r", "main", "--", name), "")
+            self.assertEqual((self.repo / name).read_text(), "unpublished unrelated draft\n")
+        self.assertEqual(self.note.read_text(), "old topic draft must stay local\n")
+
+    def test_unrelated_archive_precommitted_old_topic_cannot_hitchhike(self):
+        run(self.repo, "config", "--local", "wcg.save", "unrelated-machines")
+        self.note.write_text("precommitted old-topic draft\n")
+        run(self.repo, "add", c.SCOPE)
+        run(self.repo, "commit", "-m", "old topic draft")
+        current = self.repo / "research/current/unrelated_machines/note.md"
+        current.parent.mkdir(parents=True)
+        current.write_text("new topic asset\n")
+        with self.assertRaisesRegex(c.Stop, "outside checkpoint scope.*weighted_congestion_frontier/note.md"):
+            self.save()
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+        self.assertEqual(current.read_text(), "new topic asset\n")
+
+    def test_unknown_archive_defaults_include_only_common_registers_and_own_workspace(self):
+        run(self.repo, "config", "--local", "wcg.actor", "R-self")
+        run(self.repo, "config", "--local", "wcg.save", "new-topic")
+        own = self.repo / "research/workspaces/new-topic/R-self/note.md"
+        peer = self.repo / "research/workspaces/new-topic/R-peer/note.md"
+        unregistered = self.repo / "research/current/new_topic/note.md"
+        for path in (own, peer, unregistered):
+            path.parent.mkdir(parents=True)
+            path.write_text("local asset\n")
+        (self.repo / "README.md").write_text("shared research map\n")
+        self.note.write_text("old topic local draft\n")
+        self.assertEqual(set(c.default_paths(self.repo)), {"README.md", own.parent.relative_to(self.repo).as_posix()})
+        result = self.save()
+        self.assertEqual(set(result["files"]), {"README.md", own.relative_to(self.repo).as_posix()})
+        self.assertEqual(run(self.remote, "show", "main:" + c.SCOPE + "/note.md"), "baseline")
+        self.assertEqual(peer.read_text(), "local asset\n")
+        self.assertEqual(unregistered.read_text(), "local asset\n")
+
+    def test_archive_with_no_effective_default_paths_requires_explicit_scope(self):
+        run(self.repo, "config", "--local", "wcg.save", "new-topic")
+        self.note.write_text("old topic local draft\n")
+        with self.assertRaisesRegex(c.Stop, "No default checkpoint paths.*supply explicit paths"):
+            self.save()
+        self.assertEqual(run(self.repo, "rev-parse", "HEAD"), self.before)
+        self.assertEqual(run(self.repo, "diff", "--cached", "--name-only"), "")
+        result = self.save(paths=[c.SCOPE + "/note.md"])
+        self.assertEqual(result["status"], "pushed")
+
+    def test_explicit_shared_archive_preserves_legacy_topic_defaults(self):
+        run(self.repo, "config", "--local", "wcg.save", "shared")
+        self.note.write_text("legacy archive asset\n")
+        result = self.save()
+        self.assertEqual(result["files"], [c.SCOPE + "/note.md"])
+        self.assertEqual(run(self.remote, "show", "main:" + c.SCOPE + "/note.md"), "legacy archive asset")
+
+    def test_deleted_unrelated_archive_asset_remains_in_default_scope(self):
+        run(self.repo, "config", "--local", "wcg.save", "unrelated-machines")
+        path = self.repo / "research/current/unrelated_machines/note.md"
+        path.parent.mkdir(parents=True)
+        path.write_text("obsolete new topic asset\n")
+        run(self.repo, "add", path.relative_to(self.repo).as_posix())
+        run(self.repo, "commit", "-m", "baseline archive asset")
+        run(self.repo, "push", "origin", "main")
+        path.unlink()
+        result = self.save()
+        self.assertEqual(result["files"], [path.relative_to(self.repo).as_posix()])
+        self.assertEqual(run(self.remote, "ls-tree", "-r", "main", "--", path.relative_to(self.repo).as_posix()), "")
+
     def test_default_workspace_save_and_explicit_scope_for_peer(self):
         run(self.repo, "config", "--local", "wcg.actor", "R-self")
         own = self.repo / "research/workspaces/shared/R-self/note.md"
@@ -440,6 +542,13 @@ class CheckpointTests(unittest.TestCase):
 
     def test_workspace_ids_cannot_escape_default_scope(self):
         run(self.repo, "config", "--local", "wcg.actor", "../peer")
+        with self.assertRaisesRegex(c.Stop, "Invalid local actor/save"):
+            self.save()
+        self.assertEqual(run(self.repo, "rev-parse", "HEAD"), self.before)
+
+    def test_invalid_archive_without_actor_is_rejected(self):
+        run(self.repo, "config", "--local", "wcg.save", "../weighted_congestion")
+        self.note.write_text("draft\n")
         with self.assertRaisesRegex(c.Stop, "Invalid local actor/save"):
             self.save()
         self.assertEqual(run(self.repo, "rev-parse", "HEAD"), self.before)

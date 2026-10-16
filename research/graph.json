@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "title": "共同研究：设施选址、顺序客户吸引与加权拥塞的数学关系",
+  "title": "共同研究：不相关并行机、加权拥塞、设施与客户吸引的数学关系",
   "updated": "2026-10-16",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
@@ -6364,6 +6364,79 @@
         "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_multiclass_assembly.json"
       ],
       "status": "finite exact audits passed"
+    },
+    {
+      "id": "UM-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "不相关并行机的位编码模型",
+      "detail": "Nonnegative rational processing matrix, forbidden edges, all jobs integral and mandatory; zero optimum handled explicitly.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-TARGET-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "一般调度统一常数优于2的构造目标",
+      "detail": "Exists a fixed universal epsilon>0 and a deterministic polynomial algorithm in input bit length, for all legal variable-m inputs, outputting an integral schedule of makespan at most (2-epsilon)OPT.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md",
+        "research/unrelated_machines/CLAIMS.md"
+      ],
+      "status": "OPEN: fixed universal epsilon, deterministic bit-polynomial constructive algorithm not known"
+    },
+    {
+      "id": "UM-ST-ROUND-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "有序单位槽匹配的加性负载舍入",
+      "detail": "For every feasible pruned rational LST assignment at T>=0, deterministic bit-polynomial rounding yields machine load <= fractional load + support maximum <=2T. No LP solver implementation claimed.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md",
+        "research/reviews/unrelated_machines/classical_foundation_review.md"
+      ],
+      "status": "known rounding theorem, self-contained reconstruction independently attacked; no novelty claim"
+    },
+    {
+      "id": "UM-CONF-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "异长两机指派的配置LP上确界间隙2",
+      "detail": "Sup OPT/T_CONF=2, even degree-two job eligibility. Reindexed two-tree family and root marginal thinning; only obstructs guarantees measured solely against this LP value.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md",
+        "research/reviews/unrelated_machines/classical_foundation_review.md"
+      ],
+      "status": "known supremum gap, reindexed reconstruction independently attacked; not algorithmic hardness"
+    },
+    {
+      "id": "UM-TREE-CERTIFICATE-v1",
+      "kind": "construction",
+      "track": "unrelated_machines",
+      "title": "两树整数障碍与递推配置证书",
+      "detail": "For k>=4 minimal h with q^(h-1)/(k-1)>=1/2: explicit legal family, OPT=2-1/k, configuration feasibility at 1+1/k; no equality T_CONF=T asserted.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md",
+        "tests/audits/unrelated_machines/rounding_and_gap.py"
+      ],
+      "status": "known family reconstructed, finite exact audits separately scoped"
+    },
+    {
+      "id": "UM-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "舍入、配置证书和独立枚举的有限精确核验",
+      "detail": "Exact Fraction audit with source hash and seed; finite enumerations and compressed DP of one explicit family do not prove the universal target.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md",
+        "evidence/runs/unrelated_machines/classical_baseline_audit.json",
+        "tests/audits/unrelated_machines/rounding_and_gap.py",
+        "research/reviews/unrelated_machines/classical_foundation_review.md"
+      ],
+      "status": "finite computational evidence"
     }
   ],
   "hyperedges": [
@@ -15125,6 +15198,106 @@
         "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md"
       ],
       "status": "resolved in the negative"
+    },
+    {
+      "id": "UM-E-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Specifies the exact open input/output contract; this edge is not a proof of the target.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "UM-E-ROUND",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-ST-ROUND-v1",
+      "statement": "The current account supplies all additional definitions and the full ordered-slot Hall matching/load proof for the stated feasible-x contract.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "known theorem reconstructed"
+    },
+    {
+      "id": "UM-E-TREE",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-TREE-CERTIFICATE-v1",
+      "statement": "The explicit two-tree construction, integer propagation and normalized configuration induction are proved in the cited account.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "known construction reconstructed"
+    },
+    {
+      "id": "UM-E-GAP",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1",
+        "UM-TREE-CERTIFICATE-v1"
+      ],
+      "conclusion": "UM-CONF-GAP-v1",
+      "statement": "Configuration marginal projection plus rounding gives <=2; the full family gives ratios >=2-3/(k+1), hence supremum 2.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "known theorem reconstructed"
+    },
+    {
+      "id": "UM-E-LIMIT",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CONF-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only excludes a guarantee relative solely to the unstrengthened LP threshold; the OPT-relative target remains open.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "UM-E-AUDIT-ROUND",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-ST-ROUND-v1",
+      "statement": "Finite exact computations check implementations and boundary cases only.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "UM-E-AUDIT-TREE",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-TREE-CERTIFICATE-v1",
+      "statement": "Expanded configurations for small k, exhaustive small orientations, and family-specific compressed recurrences.",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "finite evidence"
     }
   ]
 }

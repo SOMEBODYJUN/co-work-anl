@@ -7,6 +7,7 @@
 
 | 数学专题 | 首读入口 | 逐文件目录 |
 | --- | --- | --- |
+| 不相关并行机与统一常数2壁垒 | [研究说明](current/unrelated_machines/README.md) | [中文资产名与用途](#unrelated_machines) |
 | 加权原子拥塞博弈 | [研究说明](current/weighted_congestion/README.md) | [中文资产名与用途](#weighted_congestion) |
 | 正占用核、交互阶数与非负表示 | [研究说明](current/positive_kernels/README.md) | [中文资产名与用途](#positive_kernels) |
 | 共同目录双设施 | [研究说明](current/shared/README.md) | [中文资产名与用途](#shared) |
@@ -20,6 +21,39 @@
 | 历史投稿判断与旧方向选择 | [研究说明](../history/README.md) | [中文资产名与用途](#publication) |
 
 维护方法：先在 `catalog.json` 写具体名称和用途，再运行 `python3 research/build_catalog.py`；`--check` 同时拒绝漏登记、缺文件、无中文名称和过时生成稿。新增候选按原等级保存，不能为通过目录检查而升级结论。
+
+<a id="unrelated_machines"></a>
+
+## 不相关并行机与统一常数2壁垒
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [不相关并行机的目标与经典障碍地图](<current/unrelated_machines/README.md>) | `research/current/unrelated_machines/README.md` | 导航主目标、精确模型、已知重构、文献与有限证据；新研究先从此选择承重义务。 | 阅读导航；真值查精确正文及账本；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [不相关并行机的精确目标、经典舍入与配置间隙](<current/unrelated_machines/model_and_classical_barriers.md>) | `research/current/unrelated_machines/model_and_classical_barriers.md` | 自足给模型、零值边界、Hall槽匹配与重索引两树gap；引用算法保证和方法限制前核对全量词。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [不相关并行机研究存档与协作入口](<unrelated_machines/README.md>) | `research/unrelated_machines/README.md` | 固定unrelated-machines存档，连接数学地图、原文、启动提示词及隔离范围；新对话首次读取。 | 阅读导航；真值查精确正文及账本 |
+| [不相关并行机主目标与已知工具的精确身份账本](<unrelated_machines/CLAIMS.md>) | `research/unrelated_machines/CLAIMS.md` | 保留对象、输入域、统一量词、依赖、反驳与真实状态；修改候选或引用结果时核对。 | 精确命题登记；摘要不替代原陈述 |
+| [不相关并行机的真实前沿与承重义务](<unrelated_machines/RESEARCH_STATE.md>) | `research/unrelated_machines/RESEARCH_STATE.md` | 说明未形成新算法、配置障碍以外仍缺什么，以及最有信息价值的下一步；实质进展时更新。 | 阅读导航；真值查精确正文及账本 |
+| [配置下界、模型迁移与复杂度的准确障碍](<unrelated_machines/FAILED_ROUTES.md>) | `research/unrelated_machines/FAILED_ROUTES.md` | 记录各已知失败合同、仍可回收工具和重试条件；避免把局部障碍升级成原问题不可能。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
+| [不相关并行机原文版本、定理位置与适用范围](<unrelated_machines/LITERATURE.md>) | `research/unrelated_machines/LITERATURE.md` | 区分一般、受限、估值、构造、预测及分布式来源；使用外部定理前进入原文核对。 | 文献核对；与团队新结果分别引用 |
+| [不相关并行机首批原文的版本与哈希清单](<unrelated_machines/literature_manifest.json>) | `research/unrelated_machines/literature_manifest.json` | 逐条记录取得状态、原始URL、定理定位、PDF字节哈希与缺失项；恢复或查版本时读取。 | 文献核对；与团队新结果分别引用 |
+| [不相关并行机主研究者的完整启动提示词](<unrelated_machines/BOSS_START.md>) | `research/unrelated_machines/BOSS_START.md` | 供新对话复制使用，绑定目标与save，规定自主研究、同级交流、精确资产和阶段保存。 | 阅读导航；真值查精确正文及账本 |
+| [不相关并行机存档的恢复、通信与保存手册](<unrelated_machines/RUNBOOK.md>) | `research/unrelated_machines/RUNBOOK.md` | 给实际统一入口命令、默认范围和冲突行为；避免旧题scope与新题混用。 | 阅读导航；真值查精确正文及账本 |
+| [跨配置间隙的新算法与位复杂度义务](<questions/unrelated_machines/barrier_escape_obligations.md>) | `research/questions/unrelated_machines/barrier_escape_obligations.md` | 把新增信息、统一余量、实际输出、oracle和总位复杂度拆成可攻击义务；候选出现时细化。 | 问题记录；开放/已闭合部分见用途及正文；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [经典舍入与两树配置间隙的独立重构和攻击](<reviews/unrelated_machines/classical_foundation_review.md>) | `research/reviews/unrelated_machines/classical_foundation_review.md` | 冻结正文与代码hash，重建数学链并保留独立可执行扩展审计；状态升级前读取真实覆盖。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [有序槽舍入与两树配置证书的Fraction核验](<../tests/audits/unrelated_machines/rounding_and_gap.py>) | `tests/audits/unrelated_machines/rounding_and_gap.py` | 运行给定x舍入、独立枚举、显式配置和特定树DP；只检查真实有限参数，不充当通用求解器。 | 有限计算核验；不代替一般证明；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [经典舍入与配置间隙的首轮冻结精确证据](<../evidence/runs/unrelated_machines/classical_baseline_audit.json>) | `evidence/runs/unrelated_machines/classical_baseline_audit.json` | 保留代码hash、seed、算术、枚举范围与限制；重跑另写scratch，不覆盖本记录。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [LST1990的原文版本与精确出处](<../history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf>) | `history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [ST1993的原文版本与精确出处](<../history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf>) | `history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [EKS2008_2014的原文版本与精确出处](<../history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.pdf>) | `history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [图平衡作者稿的原始PostScript来源](<../history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.ps>) | `history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.ps` | 保存作者站点原始PS字节，与派生PDF分别记录哈希；还原来源或重新转换时读取。 | 来源或历史判断；不作为现行结论 |
+| [VW2014的原文版本与精确出处](<../history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf>) | `history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [Svensson2011的原文版本与精确出处](<../history/source/literature/unrelated_machines/svensson_2011_santa_claus_schedules_v2.pdf>) | `history/source/literature/unrelated_machines/svensson_2011_santa_claus_schedules_v2.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [JR2016的原文版本与精确出处](<../history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf>) | `history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [JR2019的原文版本与精确出处](<../history/source/literature/unrelated_machines/jansen_rohwedder_2019_quasi_polynomial_v2.pdf>) | `history/source/literature/unrelated_machines/jansen_rohwedder_2019_quasi_polynomial_v2.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [Li2023的原文版本与精确出处](<../history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf>) | `history/source/literature/unrelated_machines/li_2023_nearly_linear_scheduling_v2.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [Baba2026的原文版本与精确出处](<../history/source/literature/unrelated_machines/baba_bampis_mitropoulos_2026_learning_augmented_v1.pdf>) | `history/source/literature/unrelated_machines/baba_bampis_mitropoulos_2026_learning_augmented_v1.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [BGW2026的原文版本与精确出处](<../history/source/literature/unrelated_machines/bernstein_gupta_wang_2026_distributed_load_v1.pdf>) | `history/source/literature/unrelated_machines/bernstein_gupta_wang_2026_distributed_load_v1.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [不相关并行机存档提交隔离的工程回归证据](<../evidence/runs/collaboration/unrelated_machines_scope_release.json>) | `evidence/runs/collaboration/unrelated_machines_scope_release.json` | 记录新save默认范围修补、实际103项回归、代码哈希和本地远端限制；维护保存程序或核对上线范围时读取。 | 冻结输入、证书或结果；不原位覆盖 |
 
 <a id="weighted_congestion"></a>
 

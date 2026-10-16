@@ -1,6 +1,7 @@
 # 共同研究：数学地图与唯一读取入口
 
-本仓库分别维护加权原子拥塞、两阶段设施选址和顺序客户吸引三个数学模型。数学状态以main正文与精确账本为准；旧会话和公屏用于交流，不能覆盖规范记录。
+**新主攻：[一般不相关并行机的统一常数2近似壁垒](research/current/unrelated_machines/README.md)。** 精确目标 `UM-TARGET-v1` 仍OPEN；[完整BOSS启动词](research/unrelated_machines/BOSS_START.md)固定存档 `unrelated-machines`，复用现有公屏、私聊和个人桌面。经典舍入与配置gap已重构并配可复现精确证据；全文下载、证明重构、独立审查和原创进展分别记录。旧题成果与身份保留。
+本仓库维护不相关并行机、加权原子拥塞、两阶段设施选址和顺序客户吸引等独立数学模型。数学状态以main正文与精确账本为准；旧会话和公屏用于交流，不能覆盖规范记录。
 
 **[研究总目录](research/README.md) · [全部中文资产名与用途](research/CATALOG.md) · [当前研究路线](research/ROADMAP.md)。**
 
@@ -8,7 +9,7 @@
 
 ## Research Goal / Research Frontier
 
-本次唯一题目已有**严格否定证明**：[线性次数的全状态无均衡族](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md)对每个整数d≥2^20，给出正有理权、正有理纯d次费用、每人两个非空不交动作的有限游戏，全部纯状态都有严格(d/10)改善。任给C≥1,d0≥2，取足够大d≥d0且ln d>10C，即无(Cd/ln d)-PNE。因此不存在原题所问的绝对C,d0。
+此前拥塞题已有**严格否定证明**：[线性次数的全状态无均衡族](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md)对每个整数d≥2^20，给出正有理权、正有理纯d次费用、每人两个非空不交动作的有限游戏，全部纯状态都有严格(d/10)改善。任给C≥1,d0≥2，取足够大d≥d0且ln d>10C，即无(Cd/ln d)-PNE。因此不存在原题所问的绝对C,d0。
 
 证明链为健康循环窗口参数 → 全部类前沿出口 → 同类三元时钟修复非法状态 → 原次数预算 → 原题否定量词；每一态而非单个改善环均被覆盖。独立先重构后冻结攻击已覆盖该链；[审查补节](research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给整数分层次数证明及完整多类拼装核验，精确审计仅核查其实际有限范围。外部同行评审、新颖性与最优常数未认证。精确ID是`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`及`WC-MATCHING-LOG-UPPER-NEGATIVE-v1`。
 
@@ -22,6 +23,7 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 
 | 模型 | 对象与定义链 | 权威定义与研究入口 |
 | --- | --- | --- |
+| 不相关并行机 | 非负有理处理时间矩阵＋不可用边 → 不可拆分全任务分配 → 最大机器负载 → 统一常数(2−ε)位多项式构造 | [新主攻数学地图](research/current/unrelated_machines/README.md)、[精确身份与边界](research/unrelated_machines/CLAIMS.md) |
 | 加权原子拥塞 | 正权玩家＋有限资源子集策略＋非负多项式费用 → 资源负载 → 玩家成本 → α-PNE → 全类阈值 a_*(d) | [MODEL](research/weighted_congestion_frontier/MODEL.md)、[数学资产](research/current/weighted_congestion/README.md) |
 | 两阶段设施选址 | 设施布局＋可达关系＋正权原子客户 → 精确独立客户 NE → 完整续局 → 近似 SPE | [模型](research/current/model.md)、[成果地图](research/current/README.md) |
 | 顺序客户吸引 | 共同主题目录＋单位客户 → 历史依赖纯策略 → 完整纯 SPE → 覆盖福利 | [独立入口](research/current/customer_attraction/README.md) |
@@ -51,6 +53,8 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 
 | 完整路径 | 内容、作用与读取时机 |
 | --- | --- |
+| [research/unrelated_machines/README.md](research/unrelated_machines/README.md)、[BOSS_START.md](research/unrelated_machines/BOSS_START.md) | 新存档与完整启动词，绑定unrelated-machines；先恢复精确主目标、文献与真实障碍，再自主选路线；不会把旧TEAM中的拥塞命题带入新题 |
+| research/current/unrelated_machines/model_and_classical_barriers.md、research/unrelated_machines/literature_manifest.json | 自足模型、槽匹配和重索引配置gap；manifest连接真实原文版本/哈希/定理位置和缺失项；引用已知工具或攻击新算法前读取 |
 | README.md、RESEARCH_STATE.md、CLAIMS.md、FAILED_ROUTES.md | 全仓稳定地图、当前前沿、精确命题入口、失败范围；新对话首先读取 |
 | [research/README.md](research/README.md) | 按数学问题分流的研究总目录；先选模型，再沿专题阅读顺序进入具体资产 |
 | [research/CATALOG.md](research/CATALOG.md)、research/catalog.json | 全部现行数学正文、问题、审查及已整合拥塞核验资产的具体中文名称、完整路径与阅读用途；JSON 是人工命名源，Markdown 由程序生成 |

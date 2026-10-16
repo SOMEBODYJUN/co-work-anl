@@ -14,16 +14,25 @@ import sys
 import time
 
 SCOPE = "research/weighted_congestion_frontier"
-DEFAULT_PATHS = [SCOPE, "research/current/weighted_congestion",
-                 "research/questions/weighted_congestion", "research/reviews/weighted_congestion",
-                 "tests/audits/weighted_congestion", "tests/audits/weighted_congestion_density.py",
-                 "tests/audits/weighted_power_bridge.py", "evidence/runs/weighted_congestion",
-                 "evidence/certificates/weighted_congestion", "examples/weighted_congestion",
-                 "history/source/notes/weighted_congestion", "history/source/notes/weighted_congestion_frontier",
-                 "README.md", "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md",
-                 "research/current/claims.md", "research/assets.json", "research/review_status.json",
-                 "research/graph.json", "research/index.html", "research/source_crosswalk.json",
-                 "research/source_crosswalk.md", "research/catalog.json", "research/CATALOG.md"]
+COMMON_PATHS = ["README.md", "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md",
+                "research/current/claims.md", "research/assets.json", "research/review_status.json",
+                "research/graph.json", "research/index.html", "research/source_crosswalk.json",
+                "research/source_crosswalk.md", "research/catalog.json", "research/CATALOG.md"]
+SAVE_PATHS = {
+    # Keep the original unbound/shared workflow compatible. Other archives must
+    # opt into their own research paths, never inherit this topic implicitly.
+    "shared": [SCOPE, "research/current/weighted_congestion",
+               "research/questions/weighted_congestion", "research/reviews/weighted_congestion",
+               "tests/audits/weighted_congestion", "tests/audits/weighted_congestion_density.py",
+               "tests/audits/weighted_power_bridge.py", "evidence/runs/weighted_congestion",
+               "evidence/certificates/weighted_congestion", "examples/weighted_congestion",
+               "history/source/notes/weighted_congestion", "history/source/notes/weighted_congestion_frontier"],
+    "unrelated-machines": ["research/current/unrelated_machines",
+                           "research/questions/unrelated_machines", "research/reviews/unrelated_machines",
+                           "research/unrelated_machines", "tests/audits/unrelated_machines",
+                           "examples/unrelated_machines", "evidence/runs/unrelated_machines",
+                           "evidence/certificates/unrelated_machines"],
+}
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}|-----BEGIN [A-Z ]*PRIVATE KEY-----")
 ROUTING = ("GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE",
            "GIT_OBJECT_DIRECTORY", "GIT_ALTERNATE_OBJECT_DIRECTORIES",
@@ -133,16 +142,22 @@ def describe_assets(repo, directory, commit, files):
 
 
 def default_paths(repo):
-    paths = list(DEFAULT_PATHS)
     actor = git(repo, "config", "--local", "--get", "wcg.actor", check=False).stdout.decode().strip()
     save = git(repo, "config", "--local", "--get", "wcg.save", check=False).stdout.decode().strip() or "shared"
     safe_id = r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}"
+    if not re.fullmatch(safe_id, save) or (actor and not re.fullmatch(safe_id, actor)):
+        raise Stop("Invalid local actor/save ID; repair the local Work configuration first.")
+    # Unknown archives may save shared registers and their own workspace, but
+    # must select new mathematical directories explicitly until registered here.
+    paths = list(SAVE_PATHS.get(save, [])) + COMMON_PATHS
     if actor:
-        if not re.fullmatch(safe_id, actor) or not re.fullmatch(safe_id, save):
-            raise Stop("Invalid local actor/save ID; repair the local Work configuration first.")
         paths.append("research/workspaces/" + save + "/" + actor)
-    return [p for p in paths if (repo / p).exists()
-            or git(repo, "ls-files", "--", ":(literal)" + p).stdout]
+    paths = [p for p in paths if (repo / p).exists()
+             or git(repo, "ls-files", "--", ":(literal)" + p).stdout]
+    if not paths:
+        raise Stop("No default checkpoint paths for archive " + save +
+                   "; initialize your workspace or supply explicit paths.")
+    return paths
 
 
 def save(args):

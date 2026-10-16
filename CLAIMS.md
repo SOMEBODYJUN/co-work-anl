@@ -1,5 +1,6 @@
 # 精确命题入口
 
+新主攻 `UM-TARGET-v1` 及经典工具 `UM-ST-ROUND-v1`、`UM-CONF-GAP-v1` 见[不相关并行机精确账本](research/unrelated_machines/CLAIMS.md)。主目标仍OPEN；既有结果重构不升级为新算法。
 本页是目录，不以摘要替代量词。每项现行命题的精确范围、依赖和五轴审查状态分别在 [research/current/claims.md](research/current/claims.md) 与 [research/review_status.json](research/review_status.json)。改变对象、假设、量词、成本或结论必须创建新版本。
 
 | 研究线 | Exact Statement 的权威位置 | 当前前沿 |

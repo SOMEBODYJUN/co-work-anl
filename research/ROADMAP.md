@@ -1,5 +1,8 @@
 # 当前研究路线：明确目标、已有资产与缺失义务
 
+## 新主攻：不相关并行机R∥C_max
+
+[UM-TARGET-v1](unrelated_machines/CLAIMS.md)要求一般输入的统一常数(2−ε)确定性位多项式构造，仍OPEN。[当前前沿](unrelated_machines/RESEARCH_STATE.md)与[跨配置间隙义务](questions/unrelated_machines/barrier_escape_obligations.md)给搜索种子；不固定路线，不以特殊情形或书目整理替代主目标。
 本页维护现在值得推进的问题，日期过程留在 Git 历史。旧设施路线的完整原文在[历史快照](https://github.com/SOMEBODYJUN/co-work-anl/blob/dc9d968d3bcc21cb1ce6793862f0c7d8806d5368/research/ROADMAP.md)，其中已经闭合的任务不再占据当前主攻入口。下面的路线是搜索种子，可以为更有信息价值的方法而改变。
 
 ## 加权拥塞：本题否定后的精确义务

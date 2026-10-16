@@ -580,6 +580,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1 | 每个整数p≥2^20，存在本文显式有限MODEL游戏G_p，权重均正有理，资源费用均正有理系数乘x^p，每名玩家恰两个非空不交资源子集动作；每个纯状态都有合法单人偏离满足C_i(s)−(p/10)C_i(t_i,s_−i)≥H/8>0。 | 全状态非存在证明；允许巨大人数、资源数、权比和系数，不作输入规模/复杂度或最优常数承诺。 | [自足正文](weighted_congestion/linear_degree_allstate_lower_bound.md)、独立重构/攻击及原有精确审计见正文第10节，[审查补节](../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给整数次数证明与完整多类核验；[自足主稿](weighted_congestion/linear_threshold_article.tex)与[成稿核查](../reviews/weighted_congestion/linear_threshold_article_review.md)另供连续阅读；完整一般证明，内部已审，外审/新颖性未认证。 |
 | WC-MATCHING-LOG-UPPER-NEGATIVE-v1 | 对每个实C≥1与整数d0≥2，存在整数d≥d0和有限MODEL游戏，使每个纯状态s都有合法偏离C_i(s)>(Cd/ln d)C_i(t_i,s_−i)。选整数k≥max{20,ceil(20C),ceil(log_2d0)}、d=2^k即可。 | 严格否定本题全类存在命题；不改变WC-TARGET v1原长期目标身份，不声称精确a*(d)。 | [自足正文](weighted_congestion/linear_degree_allstate_lower_bound.md)、独立重构/攻击及原有精确审计见正文第10节，[审查补节](../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给整数次数证明与完整多类核验；[自足主稿](weighted_congestion/linear_threshold_article.tex)与[成稿核查](../reviews/weighted_congestion/linear_threshold_article_review.md)另供连续阅读；完整一般证明，内部已审，外审/新颖性未认证。 |
 
+## 不相关并行机：新主目标与已知地基重构
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-TARGET-v1 | ∃统一ε∈(0,1)，∃确定性位多项式算法，∀合法非负有理/不可用边输入（m,n可变），输出全部任务的合法分配且C_max≤(2−ε)OPT；零最优值亦覆盖。 | OPEN，无新算法；精确身份见[本题账本](../unrelated_machines/CLAIMS.md)。 |
+| UM-ST-ROUND-v1 | ∀P,T≥0及剪枝LST有理可行x，可确定性位多项式舍入为每机器L_i≤分数负载+支撑最大值≤2T。 | 已知结果的[自足重构](unrelated_machines/model_and_classical_barriers.md)与[独立攻击](../reviews/unrelated_machines/classical_foundation_review.md)；只实现给定x接口，非新贡献。 |
+| UM-CONF-GAP-v1 | 配置LP在正最优值实例上sup OPT/T_CONF=2，即使每任务至多两台可用机。 | [重索引两树证明](unrelated_machines/model_and_classical_barriers.md)；原高度疑点显式处理；只限相对该LP值的合同，不证明主目标为假。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
