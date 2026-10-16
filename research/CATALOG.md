@@ -55,6 +55,7 @@
 | [BGW2026的原文版本与精确出处](<../history/source/literature/unrelated_machines/bernstein_gupta_wang_2026_distributed_load_v1.pdf>) | `history/source/literature/unrelated_machines/bernstein_gupta_wang_2026_distributed_load_v1.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [不相关并行机存档提交隔离的工程回归证据](<../evidence/runs/collaboration/unrelated_machines_scope_release.json>) | `evidence/runs/collaboration/unrelated_machines_scope_release.json` | 记录新save默认范围修补、实际103项回归、代码哈希和本地远端限制；维护保存程序或核对上线范围时读取。 | 冻结输入、证书或结果；不原位覆盖 |
 | [新存档从真实远端恢复的独立启动与字节核验](<../evidence/runs/unrelated_machines/remote_startup_smoke.json>) | `evidence/runs/unrelated_machines/remote_startup_smoke.json` | 冻结实际GitHub提交恢复、单文件入口、save绑定、文件哈希与分支检查；不是线上并发容量认证。 | 冻结输入、证书或结果；不原位覆盖 |
+| [本题原始文献默认保存与跨主题隔离的补充核验](<../evidence/runs/unrelated_machines/raw_literature_scope_audit.json>) | `evidence/runs/unrelated_machines/raw_literature_scope_audit.json` | 冻结原文目录随新存档保存、旧题与相似前缀排除的42项相关回归；与此前103项完整回归分开解释。 | 冻结输入、证书或结果；不原位覆盖 |
 
 <a id="weighted_congestion"></a>
 

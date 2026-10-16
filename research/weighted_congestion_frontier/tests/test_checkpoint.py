@@ -418,7 +418,8 @@ class CheckpointTests(unittest.TestCase):
         topic_paths = ["research/current/unrelated_machines", "research/questions/unrelated_machines",
                        "research/reviews/unrelated_machines", "research/unrelated_machines",
                        "tests/audits/unrelated_machines", "examples/unrelated_machines",
-                       "evidence/runs/unrelated_machines", "evidence/certificates/unrelated_machines"]
+                       "evidence/runs/unrelated_machines", "evidence/certificates/unrelated_machines",
+                       "history/source/literature/unrelated_machines"]
         common_paths = ["README.md", "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md",
                         "research/current/claims.md", "research/assets.json", "research/review_status.json",
                         "research/graph.json", "research/index.html", "research/source_crosswalk.json",
@@ -437,7 +438,9 @@ class CheckpointTests(unittest.TestCase):
             expected_files.append(name)
         excluded = ["research/workspaces/unrelated-machines/R-peer/note.md",
                     "research/workspaces/shared/R-self/note.md",
-                    "research/current/unrelated_machines_extra/note.md"]
+                    "research/current/unrelated_machines_extra/note.md",
+                    "history/source/literature/weighted_congestion/note.md",
+                    "history/source/literature/unrelated_machines_extra/note.md"]
         for name in excluded:
             path = self.repo / name
             path.parent.mkdir(parents=True, exist_ok=True)

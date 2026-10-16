@@ -31,7 +31,8 @@ SAVE_PATHS = {
                            "research/questions/unrelated_machines", "research/reviews/unrelated_machines",
                            "research/unrelated_machines", "tests/audits/unrelated_machines",
                            "examples/unrelated_machines", "evidence/runs/unrelated_machines",
-                           "evidence/certificates/unrelated_machines"],
+                           "evidence/certificates/unrelated_machines",
+                           "history/source/literature/unrelated_machines"],
 }
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}|-----BEGIN [A-Z ]*PRIVATE KEY-----")
 ROUTING = ("GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE",

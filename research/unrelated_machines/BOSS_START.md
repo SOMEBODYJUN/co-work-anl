@@ -66,6 +66,6 @@ Paper Fact、解释、猜想、观察、证据、Canonical Record分层。证明
 按本次改动运行精确核验；python3 research/build_catalog.py、research/build_map.py、research/build_crosswalk.py生成受影响入口，再运行各--check、research/check_assets.py、research/check_wc_assets.py --check。不靠虚构登记、削弱检查或升级状态通过。冻结输出不原位覆盖。
 先安全同步，检查git diff/status与全部待推历史，再执行：
 python3 research/weighted_congestion_frontier/tools/work.py checkpoint -m '真实数学增量与范围'
-本save默认仅本题目录、共同登记、本人桌面；修改额外导航或共享工具时显式列全本次paths（显式会替换默认范围）。真实冲突保留双方，禁止force push、自动ours/theirs或另建研究分支。只有status:pushed后报告远端保存；核对远端提交/文件及无遗漏。若合入同行更新，复查受影响的Claim、objection和最终文件并重跑必要核验。
+本save默认仅本题目录、history/source/literature/unrelated_machines原文、共同登记、本人桌面；修改额外导航或共享工具时显式列全本次paths（显式会替换默认范围）。真实冲突保留双方，禁止force push、自动ours/theirs或另建研究分支。只有status:pushed后报告远端保存；核对远端提交/文件及无遗漏。若合入同行更新，复查受影响的Claim、objection和最终文件并重跑必要核验。
 阶段保存后继续主目标；若确无可判别的下一步或运行边界迫使停止，明确已知、未解关键义务、证据范围、停止原因与下一项高信息行动，不宣称解决，不制造空转资产。
 ~~~

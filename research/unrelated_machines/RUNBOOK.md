@@ -39,10 +39,12 @@ python3 research/check_wc_assets.py --check
 python3 research/weighted_congestion_frontier/tools/work.py checkpoint -m '具体结果与准确范围'
 ```
 
-核验按本次变化选择，不能用结构检查代数学审查。已冻结evidence不原位覆盖。一般研究默认保存本题八类目录＋共同账本/根四入口＋本人桌面；显式paths会替换默认范围，涉及共享程序、根研究目录等额外文件时须列全本次应提交路径。真实冲突停住保留双方，禁止force push、自动ours/theirs或另建研究分支逃开冲突。
+核验按本次变化选择，不能用结构检查代数学审查。已冻结evidence不原位覆盖。一般研究默认保存本题八类目录＋本题原文history/source/literature/unrelated_machines/＋共同账本/根四入口＋本人桌面；显式paths会替换默认范围，涉及共享程序、根研究目录等额外文件时须列全本次应提交路径。真实冲突停住保留双方，禁止force push、自动ours/theirs或另建研究分支逃开冲突。
 
 只有 `status: pushed` 才报告已保存到远端。随后检查远端包含提交及实际文件、是否遗漏本轮有价值修改；自动合入同行更新时重读受影响的正文/objection并重跑相关检查。提交成功不提升数学状态。
 
 工程核验见 `evidence/runs/collaboration/unrelated_machines_scope_release.json`：隔离本地Git远端的完整回归含新存档start→checkpoint、旧题/他人范围隔离、历史夹带阻断及既有十clone并发。未在正式公屏投测试消息，也不宣称认证数百真实Work吞吐。
 
 真实GitHub main的独立新clone恢复、单文件start与逐文件哈希核验见[冻结启动检查](../../evidence/runs/unrelated_machines/remote_startup_smoke.json)。临时检查身份未发布；记录保留被测提交，不假称后续文档提交也被重新压测。
+
+本题原文目录纳入默认范围的后续修补，另见[42项相关保存回归](../../evidence/runs/unrelated_machines/raw_literature_scope_audit.json)；旧题与相似前缀的原文目录不随本题推送。
