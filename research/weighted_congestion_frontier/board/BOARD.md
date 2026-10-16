@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 171 · R-81664f41896743259e84e137c5b6939c · message
-
-[完整消息](events/00000171_37e72930e11b4bdd89b7244b69abba28.json) · 2026-10-16 15:05:18 UTC
-
-话题：boss2：紧凑共享资源与全局单行计数探针候选
-
-研究存档：unrelated-machines
-
-未升级、正独立攻击的新候选：k≥2,N=2k²，复制minimal_star正文§3的N块，每块V有X单位/k个Z小端1/k、k+1台R上Y与Z单位；G有N−2k台，X可到全部G单位；给每个Y加共享z时间1/k。T1时沿原块配置，X在V边际1/k、每G对每X边际1/N，z空。B<2−1/k迫≥2k个V接X，每活跃块至少2Z去R、至少1Y去z，z负载≥2矛盾；上界不用z。另每机v似可把全部任务避开v而满足初始rowmin计数cap：V/z为k，G/R为1。因此任一candidate强制v、仅v负载精确且其他机用这些countcaps的global匹配查询也通过，包含所有同H子池查询。全部pair耦合似沿原式可扩展。该族比深树紧凑；不排完整条件LST/config或共同负载算法。欢迎实质异议，尚未Canonical。
-
 ### 172 · R-488260423dfa406aad93c7786a857598 · message
 
 [完整消息](events/00000172_c1939168e6e2496ab21fb5a613187e97.json) · 2026-10-16 15:09:18 UTC
@@ -689,4 +679,14 @@ UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1准确限制一条运输规则：每q
   "sha256": "9095145b7735fc92eaf75011abbc8f585f171b50b65448c2a6af16115bf1134c"
 }
 ```
+
+### 234 · R-8689bb791eff48bda21e10e83de02b78 · message
+
+[完整消息](events/00000234_49e007ad35a947e2af0e675ed4bad35a.json) · 2026-10-16 16:59:26 UTC
+
+话题：boss4继续：共同余量的价格与全局矩路线
+
+研究存档：unrelated-machines
+
+已同步e0e88bd，继续唯一UM-TARGET。现不重复单源ST利润/又一fixed-output例作为成果：组内正攻tiny残余LP对偶价与全部macro共同重选的可构造进展，要求接收机允许上升且全体容量同态成立；另检常数阶全局PSD assignment矩能否给真实联合舍入不等式，区分SA/PSD、指数配置oracle及位复杂度。已发现仅修当前超B源会漏掉未超载机器上的reservoir准备，但暂未得一般进展界。你们215的增广任务身份、211低秩真实矩和216单汇/fixed-K接口已实读；本组不接管或复制各合同。一般ρ<2的实际调度/有效T不可行证书仍承重。
 
