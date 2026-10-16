@@ -4868,50 +4868,61 @@
       "id": "unrelated_rooted_dag_degree_token_bridge",
       "claims": [
         "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
-        "UM-TARGET-IMPLIES-DAG-DEGREE-v1"
+        "UM-TARGET-IMPLIES-DAG-DEGREE-v1",
+        "UM-DEPTH-TWO-HALF-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
         "Explicit nonempty simple DAG with indegree-zero root; binary nonnegative demands; zero demand only at sinks",
         "Positive-demand dead ends, arbitrarily large binary demands and unreachable components are included"
       ],
-      "produces": "Polynomial explicit scheduling input with OPT=2-capped degree optimum, actual two-way conversions, and conditional epsilon-factor tree algorithm from UM target via finite scaled demands",
+      "produces": "Polynomial explicit scheduling input with OPT=2-capped degree optimum, actual two-way conversions, and conditional epsilon-factor tree algorithm from UM target via finite scaled demands; on explicit depth-two inputs, actual half-optimal capped-degree tree and 3/2 schedule",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
       ],
       "tests": [
         "tests/audits/unrelated_machines/rooted_dag_token_bridge.py",
-        "tests/audits/unrelated_machines/rooted_dag_token_independent.py"
+        "tests/audits/unrelated_machines/rooted_dag_token_independent.py",
+        "tests/audits/unrelated_machines/depth_two_quota_greedy.py",
+        "tests/audits/unrelated_machines/depth_two_quota_independent.py",
+        "tests/audits/unrelated_machines/depth_two_quota_conformance.py"
       ],
       "records": [
         "evidence/runs/unrelated_machines/rooted_dag_token_bridge_audit.json",
-        "evidence/certificates/unrelated_machines/rooted_dag_token_witness.json"
+        "evidence/certificates/unrelated_machines/rooted_dag_token_witness.json",
+        "evidence/runs/unrelated_machines/depth_two_quota_audit.json",
+        "evidence/runs/unrelated_machines/depth_two_quota_independent.json",
+        "evidence/runs/unrelated_machines/depth_two_quota_conformance.json"
       ],
       "examples": [
         "examples/unrelated_machines/rooted_dag_token_input.json"
       ],
       "reviews": [
-        "research/reviews/unrelated_machines/rooted_dag_token_bridge_review.md"
+        "research/reviews/unrelated_machines/rooted_dag_token_bridge_review.md",
+        "research/reviews/unrelated_machines/depth_two_quota_review.md"
       ],
       "sources": [
         "history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf",
         "history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
       ],
-      "limit": "Known MMDA/Santa Claus mechanism reconstructed directly; no new approximation/hardness or SA-preserving reduction. Finite audits do not prove universal claims."
+      "limit": "Known MMDA/Santa Claus mechanism reconstructed directly; no new general approximation/hardness or SA-preserving reduction. Finite audits do not prove universal claims. Depth-two half-ratio greedy is a special constructive corollary, not a general DAG constant approximation."
     },
     {
       "id": "unrelated_machines_optimal_hull_marginal",
       "claims": [
         "UM-OPT-HULL-ROW-DISCREPANCY-GAP-v1",
-        "UM-OPT-HULL-PAIR-NC-GAP-v1"
+        "UM-OPT-HULL-PAIR-NC-GAP-v1",
+        "UM-FROZEN-MACRO-TINY-REOPT-GAP-v1",
+        "UM-MACRO-MIGRATION-FRONTIER-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
         "true optimal-hull fixed marginals, OPT>0",
-        "specified row/count or same-sink pair-NC output contract"
+        "specified row/count or same-sink pair-NC output contract",
+        "Shared-sink family with fixed or bounded macro machine changes; tiny assignments unrestricted"
       ],
-      "produces": "Exact sup2 for row/count envelopes; sharp expected/tail NC bounds and explicit true-optimal distributions",
+      "produces": "Exact sup2 for row/count envelopes; sharp expected/tail NC bounds and explicit true-optimal distributions; exact frozen-macro tiny reoptimization optimum and discrete macro migration frontier",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
@@ -4922,19 +4933,24 @@
       "tests": [
         "tests/audits/unrelated_machines/private_sink_marginal_barrier.py",
         "tests/audits/unrelated_machines/independent_marginal_row_oracle.py",
-        "tests/audits/unrelated_machines/independent_marginal_pairwise_oracle.py"
+        "tests/audits/unrelated_machines/independent_marginal_pairwise_oracle.py",
+        "tests/audits/unrelated_machines/frozen_macro_tiny_reoptimization.py",
+        "tests/audits/unrelated_machines/frozen_macro_tiny_independent.py"
       ],
       "records": [
         "evidence/runs/unrelated_machines/private_sink_marginal_audit.json",
         "evidence/runs/unrelated_machines/marginal_row_independent.json",
-        "evidence/runs/unrelated_machines/marginal_pairwise_independent.json"
+        "evidence/runs/unrelated_machines/marginal_pairwise_independent.json",
+        "evidence/runs/unrelated_machines/frozen_macro_tiny_audit.json",
+        "evidence/runs/unrelated_machines/frozen_macro_tiny_independent.json"
       ],
       "examples": [
         "examples/unrelated_machines/private_sink_k2_r4.json",
         "evidence/certificates/unrelated_machines/private_sink_opt_hull_and_nc_k2_r4.json"
       ],
       "reviews": [
-        "research/reviews/unrelated_machines/optimal_hull_marginal_review.md"
+        "research/reviews/unrelated_machines/optimal_hull_marginal_review.md",
+        "research/reviews/unrelated_machines/frozen_macro_tiny_review.md"
       ],
       "candidates": [],
       "limit": "Family directly optimally solvable. No general algorithm impossibility; adaptive points and positively correlated migration remain possible."

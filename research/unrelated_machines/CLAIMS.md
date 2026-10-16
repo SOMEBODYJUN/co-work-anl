@@ -545,3 +545,39 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：No remaining fatal objection at the frozen version. The family is not the true-optimal-convex-hull contract and no configuration-LP face is asserted. Changing objective/support or allowing positive total-work increase is unrestricted; no fixed relative cost-relaxation obstruction or general scheduling hardness.
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified; known-tool direct extension, not a new approximation algorithm or certified independent publication result.
 - Related Files：[optimal_convex_fixed_slot_gap.md](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md), research/reviews/unrelated_machines/optimal_convex_slot_review.md, tests/audits/unrelated_machines/minimum_work_face_audit.py, tests/audits/unrelated_machines/minimum_work_face_independent.py, evidence/runs/unrelated_machines/minimum_work_face_audit.json.
+
+## UM-FROZEN-MACRO-TINY-REOPT-GAP-v1：冻结宏任务后的全部微任务重开间隙
+
+- Exact Statement / Quantifiers：∀整数r≥1，k=r(r+1)，存在所述受限指派P_r、r²个真实最优调度平均点x及真实ST槽输出σ，OPT=1、Cmax(σ)=2−1/r；固定全部宏任务位置后，允许全部微任务任意使用其所有有限边联合重优化，精确最优为2r/(r+1)。∀固定δ,ε∈(0,1)，可选r使微任务1/k≤δ且该值>(2−ε)OPT。
+- Objects / Domain / Definitions：2r台机器H/Q/Z，r个unit宏任务，rk个大小1/k的私有home/共同Z微任务；r=1包含。
+- Assumptions / Scope：宏任务最终机器保持σ；微任务可任意迁移、任意联合求解、可离开槽图。不要求x基本，不声称所有槽匹配坏。
+- Conclusion：冻结宏任务后的全部微任务重开间隙；不改变UM-TARGET-v1身份。
+- Dependencies：UM-MODEL-v1, UM-SHARED-SINK-MACRO-FAMILY-v1；完整定义/推导见正文新增节。
+- Evidence：完整显式凸分解、正交长槽注入、工作守恒及每组外送2r件达到。先独立重构再冻结攻击；实际有限范围见审查和运行记录。
+- Counterevidence / Objections：只排固定宏任务的后处理合同；重选宏任务或换x/匹配、一般算法均不受排除。当前声明范围无尚成立fatal objection。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。
+- Related Files：[research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md](../current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md)、`research/reviews/unrelated_machines/frozen_macro_tiny_review.md`；代码/冻结记录由正文新增节链接。
+
+## UM-MACRO-MIGRATION-FRONTIER-v1：共同汇点族的尖锐宏任务迁移前沿
+
+- Exact Statement / Quantifiers：∀整数r≥1、0≤d≤r−1，k=r(r+1)、s=r−d，从指定σ改至多d个宏任务最终机器、微任务全自由时，精确最优F_r(d)=ceil(2sk/(s+1))/k。∀实α∈[1,2)，M=floor(kα)，达到Cmax≤α的最少宏任务改数恰max(0,r−floor(M/(2k−M)))。允许≥r−1次改动时OPT=1。
+- Objects / Domain / Definitions：同一共享Z族、指定σ及按最终机器标签计数的宏任务Hamming预算。
+- Assumptions / Scope：原微任务所有有限边均可用，临时步骤不受限制；实α仅数学恒等，计算接口只用有理α。
+- Conclusion：共同汇点族的尖锐宏任务迁移前沿；不改变UM-TARGET-v1身份。
+- Dependencies：UM-MODEL-v1, UM-SHARED-SINK-MACRO-FAMILY-v1；完整定义/推导见正文新增节。
+- Evidence：整数负载格点、s(2k−M)≤M及移动d个宏任务到不同Q的达到构造。先独立重构再冻结攻击；实际有限范围见审查和运行记录。
+- Counterevidence / Objections：固定改善必改r−O(1/ε)个宏任务，但不排一次改变线性数量宏任务的位多项式算法。当前声明范围无尚成立fatal objection。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。
+- Related Files：[research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md](../current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md)、`research/reviews/unrelated_machines/frozen_macro_tiny_review.md`；代码/冻结记录由正文新增节链接。
+
+## UM-DEPTH-TWO-HALF-v1：两层异质需求的半比例树及实际调度
+
+- Exact Statement / Quantifiers：∀显式层状简单DAG D:{r}→U→W，r/U需求为正二进制整数、W需求0，存在确定性总位多项式算法输出真实根树H，b(H)≥b*/2；对原token/filler桥梁P(D,k)，实际输出调度Cmax≤2−b*/2≤3OPT/2。根为零需求终端的情形由原桥梁精确处理。
+- Objects / Domain / Definitions：原需求截断评分b、共享终端、任意异质大需求、不可达U、死端和空层。
+- Assumptions / Scope：只限深度二的桥梁输入族，U—W可任意共享且无宽度限制。阈值枚举只按显式出度，不求NP难完整星包装。
+- Conclusion：两层异质需求的半比例树及实际调度；不改变UM-TARGET-v1身份。
+- Dependencies：UM-MODEL-v1, UM-DAG-DEGREE-TOKEN-IDENTITY-v1, UM-DEPTH-TWO-STAR-PACKING-v1；完整定义/推导见正文新增节。
+- Evidence：最小半配额贪心、首次失效私有叶收费、Γ含b*、真实树→调度及总位复杂度。先独立重构再冻结攻击；实际有限范围见审查和运行记录。
+- Counterevidence / Objections：标准贪心收费的局部构造；深层资源共享和一般R||Cmax均未解决，新颖性未认证。当前声明范围无尚成立fatal objection。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。
+- Related Files：[research/current/unrelated_machines/rooted_dag_degree_token_bridge.md](../current/unrelated_machines/rooted_dag_degree_token_bridge.md)、`research/reviews/unrelated_machines/depth_two_quota_review.md`；代码/冻结记录由正文新增节链接。

@@ -7403,6 +7403,96 @@
         "evidence/runs/unrelated_machines/minimum_work_face_audit.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "UM-SHARED-SINK-MACRO-FAMILY-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "宏任务共同占位与微任务共享汇点族",
+      "detail": "2r机器、k=r(r+1)、r个unit宏任务和rk个私有home/共同Z微任务，附显式r²分配、平均x和指定槽配对。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
+      ],
+      "status": "explicit definition and self-contained lemma"
+    },
+    {
+      "id": "UM-DEPTH-TWO-STAR-PACKING-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "两层半配额星包装接口",
+      "detail": "给定U—W邻接与正整数完整配额d_u，逐次选择最小ceil(d_u/2)可行中心和互异未占叶的确定性规则。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-FROZEN-MACRO-TINY-REOPT-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "冻结宏任务后的全部微任务重开间隙",
+      "detail": "∀整数r≥1，k=r(r+1)，存在所述受限指派P_r、r²个真实最优调度平均点x及真实ST槽输出σ，OPT=1、Cmax(σ)=2−1/r；固定全部宏任务位置后，允许全部微任务任意使用其所有有限边联合重优化，精确最优为2r/(r+1)。∀固定δ,ε∈(0,1)，可选r使微任务1/k≤δ且该值>(2−ε)OPT。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md",
+        "research/reviews/unrelated_machines/frozen_macro_tiny_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-MACRO-MIGRATION-FRONTIER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共同汇点族的尖锐宏任务迁移前沿",
+      "detail": "∀整数r≥1、0≤d≤r−1，k=r(r+1)、s=r−d，从指定σ改至多d个宏任务最终机器、微任务全自由时，精确最优F_r(d)=ceil(2sk/(s+1))/k。∀实α∈[1,2)，M=floor(kα)，达到Cmax≤α的最少宏任务改数恰max(0,r−floor(M/(2k−M)))。允许≥r−1次改动时OPT=1。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md",
+        "research/reviews/unrelated_machines/frozen_macro_tiny_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-DEPTH-TWO-HALF-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两层异质需求的半比例树及实际调度",
+      "detail": "∀显式层状简单DAG D:{r}→U→W，r/U需求为正二进制整数、W需求0，存在确定性总位多项式算法输出真实根树H，b(H)≥b*/2；对原token/filler桥梁P(D,k)，实际输出调度Cmax≤2−b*/2≤3OPT/2。根为零需求终端的情形由原桥梁精确处理。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+        "research/reviews/unrelated_machines/depth_two_quota_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-FROZEN-MACRO-TINY-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "冻结宏任务和尖锐前沿的双路有限审计",
+      "detail": "Only actual finite scopes in frozen records; universal proof is separate.",
+      "refs": [
+        "tests/audits/unrelated_machines/frozen_macro_tiny_reoptimization.py",
+        "tests/audits/unrelated_machines/frozen_macro_tiny_independent.py",
+        "evidence/runs/unrelated_machines/frozen_macro_tiny_audit.json",
+        "evidence/runs/unrelated_machines/frozen_macro_tiny_independent.json",
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "UM-DEPTH-TWO-QUOTA-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "异质半配额与规范构造的三路有限审计",
+      "detail": "Only actual finite scopes in frozen records; universal proof is separate.",
+      "refs": [
+        "tests/audits/unrelated_machines/depth_two_quota_greedy.py",
+        "tests/audits/unrelated_machines/depth_two_quota_independent.py",
+        "tests/audits/unrelated_machines/depth_two_quota_conformance.py",
+        "evidence/runs/unrelated_machines/depth_two_quota_audit.json",
+        "evidence/runs/unrelated_machines/depth_two_quota_independent.json",
+        "evidence/runs/unrelated_machines/depth_two_quota_conformance.json",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -17803,6 +17893,150 @@
         "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "D-UM-FROZEN-MACRO-TINY-REOPT-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-SHARED-SINK-MACRO-FAMILY-v1"
+      ],
+      "conclusion": "UM-FROZEN-MACRO-TINY-REOPT-GAP-v1",
+      "statement": "完整显式凸分解、正交长槽注入、工作守恒及每组外送2r件达到。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "L-UM-FROZEN-MACRO-TINY-REOPT-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FROZEN-MACRO-TINY-REOPT-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只排固定宏任务的后处理合同；重选宏任务或换x/匹配、一般算法均不受排除。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
+      ],
+      "status": "method or input-class boundary"
+    },
+    {
+      "id": "D-UM-MACRO-MIGRATION-FRONTIER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-SHARED-SINK-MACRO-FAMILY-v1"
+      ],
+      "conclusion": "UM-MACRO-MIGRATION-FRONTIER-v1",
+      "statement": "整数负载格点、s(2k−M)≤M及移动d个宏任务到不同Q的达到构造。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "L-UM-MACRO-MIGRATION-FRONTIER-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MACRO-MIGRATION-FRONTIER-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "固定改善必改r−O(1/ε)个宏任务，但不排一次改变线性数量宏任务的位多项式算法。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
+      ],
+      "status": "method or input-class boundary"
+    },
+    {
+      "id": "D-UM-DEPTH-TWO-HALF-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+        "UM-DEPTH-TWO-STAR-PACKING-v1"
+      ],
+      "conclusion": "UM-DEPTH-TWO-HALF-v1",
+      "statement": "最小半配额贪心、首次失效私有叶收费、Γ含b*、真实树→调度及总位复杂度。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "L-UM-DEPTH-TWO-HALF-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DEPTH-TWO-HALF-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "标准贪心收费的局部构造；深层资源共享和一般R||Cmax均未解决，新颖性未认证。",
+      "refs": [
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "method or input-class boundary"
+    },
+    {
+      "id": "C-UM-FROZEN-MACRO-TINY-REOPT-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FROZEN-MACRO-TINY-AUDIT-v1"
+      ],
+      "conclusion": "UM-FROZEN-MACRO-TINY-REOPT-GAP-v1",
+      "statement": "Finite exact oracles and implementation checks; not a general proof.",
+      "refs": [
+        "tests/audits/unrelated_machines/frozen_macro_tiny_reoptimization.py",
+        "tests/audits/unrelated_machines/frozen_macro_tiny_independent.py",
+        "evidence/runs/unrelated_machines/frozen_macro_tiny_audit.json",
+        "evidence/runs/unrelated_machines/frozen_macro_tiny_independent.json",
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "C-UM-MACRO-MIGRATION-FRONTIER-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FROZEN-MACRO-TINY-AUDIT-v1"
+      ],
+      "conclusion": "UM-MACRO-MIGRATION-FRONTIER-v1",
+      "statement": "Finite exact oracles and implementation checks; not a general proof.",
+      "refs": [
+        "tests/audits/unrelated_machines/frozen_macro_tiny_reoptimization.py",
+        "tests/audits/unrelated_machines/frozen_macro_tiny_independent.py",
+        "evidence/runs/unrelated_machines/frozen_macro_tiny_audit.json",
+        "evidence/runs/unrelated_machines/frozen_macro_tiny_independent.json",
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "C-UM-DEPTH-TWO-HALF-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DEPTH-TWO-QUOTA-AUDIT-v1"
+      ],
+      "conclusion": "UM-DEPTH-TWO-HALF-v1",
+      "statement": "Finite exact oracles and implementation checks; not a general proof.",
+      "refs": [
+        "tests/audits/unrelated_machines/depth_two_quota_greedy.py",
+        "tests/audits/unrelated_machines/depth_two_quota_independent.py",
+        "tests/audits/unrelated_machines/depth_two_quota_conformance.py",
+        "evidence/runs/unrelated_machines/depth_two_quota_audit.json",
+        "evidence/runs/unrelated_machines/depth_two_quota_independent.json",
+        "evidence/runs/unrelated_machines/depth_two_quota_conformance.json",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "finite exact evidence"
     }
   ]
 }

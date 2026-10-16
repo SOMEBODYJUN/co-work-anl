@@ -105,3 +105,9 @@ UM-FOREST-BOUNDARY-AUGMENT-v1现给实际单边界标量：真实根负载不高
 ## 联合迁移候选的新准确边界
 
 [多拟阵容量外包](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#7-原任务地集上多拟阵容量外包的精确损失)与[最小总处理量面](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md#6-最小总处理量的整个最优面也可能丢掉修复边)新增两个准确接口边界：保全部本地可行集的p拟阵交最优容量损失max(1,2−p/k)；basic且整个最小处理量面的支撑也可近2OPT，即使OPT/LST→1。两者均为已知工具的简单扩展，不能排除一般联合迁移；重新开放零质量边和允许真实工作量上升仍是下一义务。
+
+## 大小任务共同重选与浅层正面构造
+
+UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局重优化，仍有精确值2r/(r+1)；UM-MACRO-MIGRATION-FRONTIER-v1量化达到固定2−ε必须改r−O(1/ε)个宏任务。故仅把tiny LP重开不能作一般充分步骤，宏任务共同占位本身必须可变。正文为optimal_hull_marginal_rounding_barrier.md§10。
+
+正面UM-DEPTH-TWO-HALF-v1对r→U→W异质需求、任意共享终端，给半比例实际根树及相应token族3/2调度；无树宽约束，按需求位长多项式。它是标准贪心收费的限域构造，未解决再多一层的共享资源，也没有一般统一ε。下一步应探索能同时改变宏任务并保真实共享容量的可计算标量/相关接口，而不把浅层或tiny单独改善代替主目标。

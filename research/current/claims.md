@@ -723,6 +723,15 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-KNAPSACK-MATROID-ENVELOPE-v1 | For all integers k,p>=1, on one weight-1 item and k weight-1/k items, the minimum over all p same-ground-set matroids whose common independent sets contain every weight<=1 subset of the maximum common-independent-set weight equals max(1,2-p/k), and is attained by partition matroids. A uniform bound 2-epsilon requires p>=ceil(epsilon*k) on this family. | [原任务地集上多拟阵容量外包的精确损失](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)；独立冻结审查通过；标准工具直接扩展，主目标OPEN，外审/新颖性未认证。 |
 | UM-MIN-WORK-FACE-SUPPORT-GAP-v1 | For every m>=2 the positive finite m-machine home-penalty family has OPT=m+1/m and T_LST=m. At T=OPT every minimum-total-processing-time assignment-LP point has the same support and every supported integer assignment has makespan 2m-1; the face contains an explicit vertex of the original LP. Exact nonincreasing total-work schedules have the same bad value. With integer q>=0 small off-home moves allowed, the exact optimum is max(2m-1-min(q,m-1),m+1/m). | [最小总处理量整个最优面的支撑损失](unrelated_machines/optimal_convex_fixed_slot_gap.md)；独立冻结审查通过；标准工具直接扩展，主目标OPEN，外审/新颖性未认证。 |
 
+### 大小任务共同迁移的新增限域身份
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-FROZEN-MACRO-TINY-REOPT-GAP-v1 | ∀整数r≥1，k=r(r+1)，存在所述受限指派P_r、r²个真实最优调度平均点x及真实ST槽输出σ，OPT=1、Cmax(σ)=2−1/r；固定全部宏任务位置后，允许全部微任务任意使用其所有有限边联合重优化，精确最优为2r/(r+1)。∀固定δ,ε∈(0,1)，可选r使微任务1/k≤δ且该值>(2−ε)OPT。 | 只排固定宏任务的后处理合同；重选宏任务或换x/匹配、一般算法均不受排除。 [正文](unrelated_machines/optimal_hull_marginal_rounding_barrier.md)；独立内部已审，未外审。 |
+| UM-MACRO-MIGRATION-FRONTIER-v1 | ∀整数r≥1、0≤d≤r−1，k=r(r+1)、s=r−d，从指定σ改至多d个宏任务最终机器、微任务全自由时，精确最优F_r(d)=ceil(2sk/(s+1))/k。∀实α∈[1,2)，M=floor(kα)，达到Cmax≤α的最少宏任务改数恰max(0,r−floor(M/(2k−M)))。允许≥r−1次改动时OPT=1。 | 固定改善必改r−O(1/ε)个宏任务，但不排一次改变线性数量宏任务的位多项式算法。 [正文](unrelated_machines/optimal_hull_marginal_rounding_barrier.md)；独立内部已审，未外审。 |
+| UM-DEPTH-TWO-HALF-v1 | ∀显式层状简单DAG D:{r}→U→W，r/U需求为正二进制整数、W需求0，存在确定性总位多项式算法输出真实根树H，b(H)≥b*/2；对原token/filler桥梁P(D,k)，实际输出调度Cmax≤2−b*/2≤3OPT/2。根为零需求终端的情形由原桥梁精确处理。 | 标准贪心收费的局部构造；深层资源共享和一般R∥Cmax均未解决，新颖性未认证。 [正文](unrelated_machines/rooted_dag_degree_token_bridge.md)；独立内部已审，未外审。 |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
