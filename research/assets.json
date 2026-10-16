@@ -4634,15 +4634,17 @@
       "id": "unrelated_machines_row_count_escape",
       "claims": [
         "UM-GLOBAL-ROW-COUNT-FILTER-v1",
-        "UM-COMPACT-COUNT-ESCAPE-GAP-v1"
+        "UM-COMPACT-COUNT-ESCAPE-GAP-v1",
+        "UM-COMPACT-MULTIROW-EXTENSION-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
         "UM-MODEL-v1 and rational target T>=0 for filter",
         "fixed globally valid row bounds for subpool dominance",
-        "positive OPT for gap ratios; explicit compact family k>=2"
+        "positive OPT for gap ratios; explicit compact family k>=2",
+        "Explicit compact family for sharp multirow center budget; independently chosen configuration pins"
       ],
-      "produces": "Safe global row-count filter; compact full-pair/count-extension gap2 and exact limitation of independent one-row witnesses.",
+      "produces": "Safe global row-count filter; compact full-pair/count-extension gap2 and exact limitation of independent one-row witnesses. Sharp true-load center budget for every configuration pin, with an explicit constructible extension and boundary obstruction.",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/row_count_escape_gap.md"
@@ -4650,10 +4652,12 @@
       "tests": [
         "tests/audits/unrelated_machines/row_count_probe.py",
         "tests/audits/unrelated_machines/compact_count_escape.py",
-        "tests/audits/unrelated_machines/independent_row_count_escape.py"
+        "tests/audits/unrelated_machines/independent_row_count_escape.py",
+        "tests/audits/unrelated_machines/multirow_count_extension.py"
       ],
       "records": [
-        "evidence/runs/unrelated_machines/row_count_escape_audit.json"
+        "evidence/runs/unrelated_machines/row_count_escape_audit.json",
+        "evidence/runs/unrelated_machines/multirow_count_extension_audit.json"
       ],
       "examples": [
         "examples/unrelated_machines/compact_count_escape_k2.json",

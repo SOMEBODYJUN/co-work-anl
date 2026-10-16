@@ -662,6 +662,9 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-SPARSE-CONDITIONED-CONFIG-GAP-v1 | 每k≥3的显式三选族OPT=2−1/k，T=1+1/k下每条有限边各有强制为1的完整配置点；独立单边配置删边/基数LST均零删除，sup相对证书阈值间隙2。不同查询不需共同基点或交叠一致性，不含星消元预处理。 | [自足稿](unrelated_machines/sparse_conditioned_configuration_gap.md)、[独立审查](../reviews/unrelated_machines/sparse_conditioned_configuration_review.md)；不排主目标。 |
 
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-COMPACT-MULTIROW-EXTENSION-v1 | For each k>=2 compact family, every U with card(U intersect V)<=N-2k, every v in U and every T=1 configuration C of v has an explicit complete assignment with v exactly C, true load<=1 on all U, and initial row-min count caps on every machine. This universal center budget is sharp: some U with N-2k+1 centers plus z and pin z=empty has no such assignment. Different queries share no joint witness; no general solver is claimed. | [正文§6](unrelated_machines/row_count_escape_gap.md)、[追加冻结攻击](../reviews/unrelated_machines/row_count_escape_review.md)；主目标OPEN，外审/新颖性未认证。 |
 
 ## 逻辑使用规则
 

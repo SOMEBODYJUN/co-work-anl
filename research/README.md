@@ -75,3 +75,5 @@
 [全局单行基数匹配与紧凑共享逃逸](current/unrelated_machines/row_count_escape_gap.md)把资源池路线推进到准确边界：一次全局任务权匹配涵盖同一下界的全部子池，但每机/每配置独立守计数仍不等于共同真实负载。新族为多项式规模，GPC₂与所有单行见证仍gap2；现有条件块切面可修复，主目标OPEN。
 
 [三选稀疏深树的独立条件配置边界](current/unrelated_machines/sparse_conditioned_configuration_gap.md)区分“每条边都可单独强制”和“这些条件点有共同多机相关性”。前者仍gap2，完整四机器bag交集联合一致性在本族精确；沿正文进入独立审查、双路代码和实际输入/证书。
+
+紧凑共享逃逸正文§6另给UM-COMPACT-MULTIROW-EXTENSION-v1：任意U含至多N−2k个中心时，每个单机配置均可延伸并让U全部机器同时守真实容量；N−2k+1中心加z空pin有明确失败。故“更多独立行见证”仍缺共同相关性，尖锐预算和实际构造不改变主目标OPEN状态。

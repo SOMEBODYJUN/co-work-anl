@@ -6973,6 +6973,31 @@
         "research/reviews/unrelated_machines/sparse_conditioned_configuration_review.md"
       ],
       "status": "finite computational evidence"
+    },
+    {
+      "id": "UM-COMPACT-MULTIROW-EXTENSION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "紧凑共享逃逸的多行真实容量尖锐预算",
+      "detail": "For each k>=2 compact family, every U with |U intersect V|<=N-2k, every v in U and every T=1 configuration C of v has an explicit complete assignment with v exactly C, true load<=1 on all U, and initial row-min count caps on every machine. This universal center budget is sharp: some U with N-2k+1 centers plus z and pin z=empty has no such assignment. Different queries share no joint witness; no general solver is claimed.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md",
+        "research/reviews/unrelated_machines/row_count_escape_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-MULTIROW-COUNT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "多行真实容量延伸与尖锐预算的有限审计",
+      "detail": "Recorded exact configurations/center subsets and actual assignments; not a universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md",
+        "tests/audits/unrelated_machines/multirow_count_extension.py",
+        "evidence/runs/unrelated_machines/multirow_count_extension_audit.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -16732,6 +16757,35 @@
         "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
       ],
       "status": "stated method boundary"
+    },
+    {
+      "id": "DERIVE-UM-COMPACT-MULTIROW-EXTENSION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-COMPACT-COUNT-ESCAPE-GAP-v1"
+      ],
+      "conclusion": "UM-COMPACT-MULTIROW-EXTENSION-v1",
+      "statement": "Explicit baseline, one full evacuation, boundary replacement, and sharp z-empty Hall obstruction.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-COMPACT-MULTIROW-EXTENSION-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MULTIROW-COUNT-AUDIT-v1"
+      ],
+      "conclusion": "UM-COMPACT-MULTIROW-EXTENSION-v1",
+      "statement": "Finite exact configurations and subsets with independently checked assignment loads/counts.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md",
+        "evidence/runs/unrelated_machines/multirow_count_extension_audit.json"
+      ],
+      "status": "finite evidence"
     }
   ]
 }

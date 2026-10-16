@@ -345,3 +345,15 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：只移ceil(kβ−1)条固定路径占位边的总槽捷径无效，已改为坏簇全部撤离且总数≤M。完整四机器bag联合分布在整个交集上一致可精确glue本族；路径端点可触发极小星消元，本命题未覆盖加入该预处理后的合同。
 - Status：完整所述范围证明、内部独立重构及冻结审查；未外审、未认证全球新颖性或独立论文价值。主目标仍OPEN。
 - Related Files：[research/current/unrelated_machines/sparse_conditioned_configuration_gap.md](../current/unrelated_machines/sparse_conditioned_configuration_gap.md)、[research/reviews/unrelated_machines/sparse_conditioned_configuration_review.md](../reviews/unrelated_machines/sparse_conditioned_configuration_review.md)；正文链接两路代码、实际稀疏输入、配置/调度证书与冻结结果。
+
+## UM-COMPACT-MULTIROW-EXTENSION-v1：共同真实负载行数的尖锐中心预算
+
+- Exact Statement / Quantifiers：∀整数k≥2，在UM-COMPACT-COUNT-ESCAPE-GAP-v1的同一族中，∀U⊆M且|U∩V|≤N−2k，∀v∈U，∀C∈C_v(1)，可确定性输出完整合法σ，σ⁻¹(v)=C，∀i∈U有L_i≤1，∀i∈M任务数≤初始c_i。构造时间在族实际编码长度上多项式。该统一预算尖锐：∃含N−2k+1个中心及z的U、v=z、C=∅使上述分配不存在。
+- Objects / Domain / Definitions：N=2k²；V为中心集合；c_V=c_z=k、c_G=c_R=1；(4)由正文§6精确定义。非中心机器均可加入U，不改变结论。
+- Assumptions / Scope：仍是指定两值族，非一般P结构定理。不同(U,v,C)独立选见证，无共同全局概率/多机边际一致性；不主张一般(4)可多项式求解，也不是条件LST/configuration或SA障碍。
+- Conclusion：同时对除2k个中心以外的全部机器检查真实负载，仍可通过每个单独配置pin；再多要求一个中心则有明确失败查询。任意固定r的独立真实行/单配置见证仍不能单凭该合同相对T统一优于2。
+- Dependencies：UM-COMPACT-COUNT-ESCAPE-GAP-v1的族/基线、至多一次完整卸载、边界补位与全局X槽计数；无新增外部定理。
+- Evidence：§6一般构造、尖锐计数证明、独立重构/冻结攻击；有限全配置/中心子集审计范围见multirow_count_extension_audit.json，未枚举所有k。
+- Counterevidence / Objections：sharp查询z空会禁止所有Y逃逸，才迫U内中心不能接X；不能省该pin或将G+1的失败说成每个查询都失败。此前单行v1范围保持不变。
+- Status：完整所述范围证明及内部独立审查；未外审，全球新颖性和独立论文价值未认证，主目标OPEN。
+- Related Files：[正文§6](../current/unrelated_machines/row_count_escape_gap.md)、row_count_escape_review.md末节、multirow_count_extension.py与对应冻结结果。
