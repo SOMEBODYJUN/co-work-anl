@@ -2,20 +2,16 @@
 
 本页维护现在值得推进的问题，日期过程留在 Git 历史。旧设施路线的完整原文在[历史快照](https://github.com/SOMEBODYJUN/co-work-anl/blob/dc9d968d3bcc21cb1ce6793862f0c7d8806d5368/research/ROADMAP.md)，其中已经闭合的任务不再占据当前主攻入口。下面的路线是搜索种子，可以为更有信息价值的方法而改变。
 
-## 当前主攻：加权原子拥塞的普遍门槛
+## 加权拥塞：本题否定后的精确义务
 
-精确对象、全类量词和验收条件分别见[模型](weighted_congestion_frontier/MODEL.md)、[主题命题账本](weighted_congestion_frontier/CLAIMS.md)与[验收规范](weighted_congestion_frontier/ACCEPTANCE.md)。
+[完整全状态线性下界](current/weighted_congestion/linear_degree_allstate_lower_bound.md)已严格否定本次全类Cd/ln d存在命题；每整数d≥2^20都有无(d/10)-PNE族。精确范围、独立冻结攻击和有限核验从[专题地图](current/weighted_congestion/README.md)进入。WC-TARGET v1原长期身份仍是刻画a_*(d)；增长阶Θ(d)不等于精确常数。
 
-当前天团只判定**全类 O(d/ln d) 存在命题的成立或否定**。以下路线为该问题服务；若走非存在方向，完成必须严格否定该匹配上界命题，局部证书改进或某个固定实例不构成完成。其余研究线作为独立长期资产保留。
-
-| 推进义务 | 已有研究资产 | 必须跨过的界限 |
+| 后续义务 | 已有资产 | 准确边界 |
 | --- | --- | --- |
-| 给出与奇环下界匹配量级的全类存在界 | [奇环机制与精确包络](current/weighted_congestion/README.md)、[稀疏权密度势](current/weighted_congestion/weight_density.md)、[资源局部势拼接](current/weighted_congestion/power_bridge.md) | 结构参数在任意游戏中不受统一控制；受限类上界不能冒充全类结果 |
-| 建立超出现有局部强制证书的非存在机制 | 同一[数学入口](current/weighted_congestion/README.md)中的全状态奇环、非对称有限例、三负载与端点限制 | 局部证书上限不是普遍存在定理；固定人数有限例不自动给增长下界 |
-| 判定一般 cohort 的真实均衡结构 | 奇环构造、singleton 子类结论、全状态成本重算 | 测试条件失效不等于真实均衡存在，必须处理全部纯状态 |
-| 消化可接续的势函数与多项式端点候选 | [候选与义务目录](questions/weighted_congestion/README.md) | 未消除的 objection 与缺失来源须逐项核查；不能靠整理入库升级状态 |
-
-主目标仍开放。具体正文、独立攻击与有限核验从[拥塞中文资产链](weighted_congestion_frontier/FILES.md)选择；全球优先权和外部评审另行核实。
+| 核对/简化线性全状态反例 | 自足证明、两份先重构后攻击、四份精确审计及最终hash | 新实质反驳必须处理；外部评审未记录 |
+| 最优常数与有限d阈值 | d≥2^20下界d/10及单列Paper Fact上界d，旧奇环准确T_d阈值 | 不声称1/10锐、sup被有限游戏取得或已有高效构造 |
+| 文献优先权与发表 | 已核基线来源、完整正文和独立审查 | 有限检索不认证世界首次；写作/外审与数学证明分开 |
+| 结构工具与其他候选复用 | [精确账本](weighted_congestion_frontier/CLAIMS.md)、[资产目录](CATALOG.md) | 子类结果、方法障碍和未闭合候选保持各自等级 |
 
 ## 保留的独立研究线
 

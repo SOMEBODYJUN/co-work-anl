@@ -1,16 +1,15 @@
 # 命题账本
 
-本分支已有独立审查的奇数环下界和若干结构结果；部分候选仍待审。下列文献条目是 Paper Fact，团队并未独立认证全文证明。不得把公屏 idea、数值证据或多人赞同升级为 Canonical Record。
+本分支已有独立审查的线性全状态下界、原题严格否定、奇数环准确阈值和结构结果；其他候选仍按原等级。下列文献条目是 Paper Fact，团队并未独立认证全文证明。不得把公屏 idea、数值证据或多人赞同升级为 Canonical Record。
 
-## WC-TARGET v1 — OPEN
+## WC-TARGET v1 — 原身份保留；本次匹配上界判定已否定
 
-- Exact Statement / Conclusion：刻画 MODEL 中 a_*(d)，优先全类 o(d) 存在上界或严格提高核实过基线的无限非存在族下界。
-- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完全采用 MODEL.md；任意有限 E,N、多资源策略、任意正实权、非负系数次数至多 d，不限制人数。
-- Dependencies：WC-LIT-UPPER-D、WC-LIT-LOWER、WC-LIT-N 是基线和约束，不是完成证明。
-- Evidence：奇数环两种有限构造给出 a_*(d)≥T_d∼d/ln d；见现行奇数环证明与逐命题审查表。
-- Counterevidence / Objections：全类上界尚未达到同阶；文献后续与精细 finite-d 界须在成功评估前重新核对。
-- Status：OPEN；Truth 未判定、Value 取决于贡献、Novelty 未认证、Mechanism 已有奇数环下界，普遍上界机制待研究、Ambition 保持全类。
-- Related Files：MODEL.md、LITERATURE.md、PRIOR_ASSETS.md、ACCEPTANCE.md。
+- Exact Statement / Conclusion：刻画 MODEL 中 a_*(d)，优先全类 o(d) 存在上界或严格提高核实过基线的无限非存在族下界。此长期目标原陈述不改写。
+- Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完全采用MODEL；任意有限资源及玩家、任意正实权、非负系数次数至多d，不限制人数或策略族。
+- Dependencies / Evidence：新 `WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1` 对每整数d≥2^20给无(d/10)-PNE族；故a_*(d)≥d/10。结合另列Paper Fact `WC-LIT-UPPER-D` 的a_*(d)≤d，增长阶为Θ(d)，精确常数/有限d阈值仍未刻画。
+- Counterevidence / Objections：本文构造每态有严格出口，已处理改善环不足、全部错位前沿、时钟次数、极端权重、零偏离成本和量词；独立攻击未发现尚成立的fatal objection。
+- Status：本次 `Cd/ln d` 存在命题由新身份 `WC-MATCHING-LOG-UPPER-NEGATIVE-v1` 严格否定；全部o(d)普遍保证也被线性下界排除。Truth=本题否定；Value=一般线性下界；Novelty/外部同行评审未认证；Ambition仍为全类精确门槛。
+- Related Files：[完整自足证明](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)、ACCEPTANCE.md、MODEL.md；配套独立审查/代码/证据由正文第10节进入。
 
 ## WC-LIT-UPPER-D v1 — PAPER FACT
 
@@ -70,7 +69,7 @@
 - Dependencies：OC-INTERFACE-v1、有限 R≡1 mod4 与 floor 参数、显式正系数 recipe；数学一般证明无需外部 import。
 - Evidence：原冻结 commit a3f0c7a 的 complete proof；本轮两项独立审查；有理 exact coefficient tests；与原式(3)全域 O(√d) ceiling 的自足比较，d≥256 严格超越。
 - Counterevidence / Objections：未发现 fatal objection；实例可能极大；有限验证不是无限族证明；文献检索非全球优先权认证。
-- Status：完整一般证明与内部独立审查；相对于已核实文献基线满足阶段下界突破，WC-TARGET 仍 OPEN。
+- Status：完整一般证明与内部独立审查；相对于已核实文献基线满足阶段下界突破，本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：../current/weighted_congestion/README.md、research/current/weighted_congestion/odd_ring_linear/general_lower_bound.md、research/reviews/weighted_congestion/odd_ring_linear_audit/asymptotic_review.md、research/reviews/weighted_congestion/odd_ring_linear_audit/literature_review.md。
 
 
@@ -137,7 +136,7 @@
 - Dependencies：log p(exp t) 的凸性在 proof.md 自足证明；原文 Theorem 5 的权重和策略已核对。
 - Evidence：一般证明；标准库 Fraction 检查实际可达负载、全部指定系数向量及次数不等式，结果见 results.json；独立先重构攻击见 review.md。
 - Counterevidence / Objections：m=2 不满足所写指数结论；零多项式不作除法；基础分析不主张新颖。该 obstruction 不是 a_*(d) 上界/下界。
-- Status：一般证明的局部研究资产，内部独立审查；没有外部评审或完整优先权认证。WC-TARGET v1 仍 OPEN。
+- Status：一般证明的局部研究资产，内部独立审查；没有外部评审或完整优先权认证。本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：research/current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md、verify.py、results.json、review.md。
 
 
@@ -154,26 +153,26 @@
 - Dependencies：单调性、主多项式凸性、按权重密度选择与整数向下取整；一般证明自足。
 - Evidence：独立先重构攻击通过；实际有理输入/输出各全状态检查，含常数、零卫星与近整数边界，见 verification.json、review.md。
 - Counterevidence / Objections：若某个 singleton 由其他偏离者覆盖而不满足所写轻玩家测试，本条不能应用；n<1 的假想残余量也不能自动取整。
-- Status：一般证明的局部 reduction，内部独立审查；新颖性与外部评审未认证。WC-TARGET v1 仍 OPEN。
+- Status：一般证明的局部 reduction，内部独立审查；新颖性与外部评审未认证。本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：research/current/weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md、verify_endpoint_reduction.py、verification.json、review.md。
 
 
 ## WC-R1-INTEGER-TRIAD v1 — LOCAL ASSET
 
 - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：Exactly the six-resource degree-two game with weights (16,2,5); all eight binary profiles and 24 deviations, including endpoint PNE.
-- Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Integer quadratic triad has exact pure factor 286/267](../current/weighted_congestion/quadratic_triad/three_player_integer_obstruction.md)；精确复算见[tests/audits/weighted_congestion/quadratic_triad/verify.py](../../tests/audits/weighted_congestion/quadratic_triad/verify.py)与[evidence/runs/weighted_congestion/quadratic_triad/verification.json](../../evidence/runs/weighted_congestion/quadratic_triad/verification.json)。完整证明与精确核验已保存，独立审查按五轴表分别登记；外审及新颖性未认证。WC-TARGET v1仍OPEN。
+- Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Integer quadratic triad has exact pure factor 286/267](../current/weighted_congestion/quadratic_triad/three_player_integer_obstruction.md)；精确复算见[tests/audits/weighted_congestion/quadratic_triad/verify.py](../../tests/audits/weighted_congestion/quadratic_triad/verify.py)与[evidence/runs/weighted_congestion/quadratic_triad/verification.json](../../evidence/runs/weighted_congestion/quadratic_triad/verification.json)。完整证明与精确核验已保存，独立审查按五轴表分别登记；外审及新颖性未认证。本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 
 
 ## WC-R1-RESOURCE-SUPPORT v1 — LOCAL ASSET
 
 - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：All finite positive-weight congestion games with nonnegative nondecreasing costs and at most r>=1 potential users per resource; unweighted social-cost minimizers are r-PNE. No full-class o(d) claim.
-- Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Bounded resource user support gives r-PNE](../current/weighted_congestion/resource_support.md)；精确复算见[tests/audits/weighted_congestion/signed_columns/verify.py](../../tests/audits/weighted_congestion/signed_columns/verify.py)与[evidence/runs/weighted_congestion/signed_columns/verification.json](../../evidence/runs/weighted_congestion/signed_columns/verification.json)。完整证明与精确核验已保存，独立审查按五轴表分别登记；外审及新颖性未认证。WC-TARGET v1仍OPEN。
+- Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Bounded resource user support gives r-PNE](../current/weighted_congestion/resource_support.md)；精确复算见[tests/audits/weighted_congestion/signed_columns/verify.py](../../tests/audits/weighted_congestion/signed_columns/verify.py)与[evidence/runs/weighted_congestion/signed_columns/verification.json](../../evidence/runs/weighted_congestion/signed_columns/verification.json)。完整证明与精确核验已保存，独立审查按五轴表分别登记；外审及新颖性未认证。本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 
 
 ## WC-R1-SOURCE-D2-ENVELOPE v1 — LOCAL ASSET
 
 - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：All integer n>=1,k in {1,2}, w,beta in [0,1] in arXiv:2002.07466v3 equation (3); strict polynomial inequalities cover zero denominators. Not a G2 upper bound.
-- Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Source equation (3) at d=2 has ceiling 19/18](../current/weighted_congestion/quadratic_source/source_family_envelope.md)；精确复算见[tests/audits/weighted_congestion/quadratic_source/verify.py](../../tests/audits/weighted_congestion/quadratic_source/verify.py)与[evidence/runs/weighted_congestion/quadratic_source/verification.json](../../evidence/runs/weighted_congestion/quadratic_source/verification.json)。完整证明与精确核验已保存，独立审查按五轴表分别登记；外审及新颖性未认证。WC-TARGET v1仍OPEN。
+- Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Source equation (3) at d=2 has ceiling 19/18](../current/weighted_congestion/quadratic_source/source_family_envelope.md)；精确复算见[tests/audits/weighted_congestion/quadratic_source/verify.py](../../tests/audits/weighted_congestion/quadratic_source/verify.py)与[evidence/runs/weighted_congestion/quadratic_source/verification.json](../../evidence/runs/weighted_congestion/quadratic_source/verification.json)。完整证明与精确核验已保存，独立审查按五轴表分别登记；外审及新颖性未认证。本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 
 ## WC-R1-DAG-STEP v1 — 内部独立证明，辅助模型
 
@@ -211,7 +210,7 @@
 - Dependencies：WC-R2-DENSITY-MOMENT v1、实际总负载多项式增量界、有限势min。
 - Evidence：[完整一般证明](../current/weighted_congestion/weight_density.md)、先自主重构再攻击的内部review、Fraction字面全偏离核验。
 - Counterevidence/Objections：K_R全类无界，等权人多时不能直接推出全类o(d)；固定p微权外部增量确无统一界。零cost/空strategy/commonresource均已处理；不声称sharp均衡阈值。
-- Status：内部完整证明，Canonical Record限本精确scope；Truth按proof，Value为结构机制，Novelty未认证，Mechanism为敏感度×稀疏moment，Ambition为结构子类；WC-TARGET仍OPEN。
+- Status：内部完整证明，Canonical Record限本精确scope；Truth按proof，Value为结构机制，Novelty未认证，Mechanism为敏感度×稀疏moment，Ambition为结构子类；本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：同上一条。
 
 ## R2 方法资产 v1 — 完整内部证明，非主目标突破
@@ -221,7 +220,7 @@ WC-R2-AFFINE-TWO-TYPE v1 的 Exact Statement、Objects、Domain、Quantifiers、
 Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status、Related Files
 完整固定在[规范证明](../current/weighted_congestion/power_bridge.md)第1节，
 及根[现行命题登记](../current/claims.md)。依赖分别为谱packing/排序、路径求和、C1梯度/自项；
-有限Fraction与独立重构记录均由README索引。外审与新颖性未认证，WC-TARGET仍OPEN。
+有限Fraction与独立重构记录均由README索引。外审与新颖性未认证，本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 
 ## R3-SOURCE-SHARP-ASYMPTOTIC-v1 — INTERNAL PROOF
 
@@ -254,7 +253,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-SOURCE-FORMULA; all joint premises remain explicit.
 - Evidence: evidence/certificates/weighted_congestion/source_degree32/certificate.json, evidence/runs/weighted_congestion/source_degree32/verification.json, evidence/runs/weighted_congestion/crossover/main_check_results.json; separate independently authored verifier and direct reconstruction.
 - Counterevidence / Objections: no remaining objection to the exact stated scope; fixed-degree improvement does not prove an unbounded family. External review and priority unverified.
-- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: WC-TARGET OPEN.
+- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/source_degree32/symmetric_source_interval_certificate.md, tests/audits/weighted_congestion/source_degree32/verify.py, tests/audits/weighted_congestion/crossover/main_check.py
 
 
@@ -265,7 +264,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL; all joint premises remain explicit.
 - Evidence: evidence/certificates/weighted_congestion/crossover/degree32_certificate.json, evidence/runs/weighted_congestion/crossover/main_check_results.json; separate independently authored verifier and direct reconstruction.
 - Counterevidence / Objections: no remaining objection to the exact stated scope; fixed-degree improvement does not prove an unbounded family. External review and priority unverified.
-- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: WC-TARGET OPEN.
+- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/crossover/README.md, tests/audits/weighted_congestion/crossover/verify_degree32.py, tests/audits/weighted_congestion/crossover/main_check.py
 
 
@@ -276,7 +275,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL; all joint premises remain explicit.
 - Evidence: evidence/certificates/weighted_congestion/crossover/degree40_failure_certificate.json, evidence/certificates/weighted_congestion/crossover/fixed_weight_limit_certificate.json, evidence/runs/weighted_congestion/crossover/fixed_degree_scan.json, evidence/runs/weighted_congestion/crossover/main_check_results.json; separate independently authored verifier and direct reconstruction.
 - Counterevidence / Objections: no remaining objection to the exact stated scope; fixed-degree improvement does not prove an unbounded family. External review and priority unverified.
-- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: WC-TARGET OPEN.
+- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/crossover/README.md, tests/audits/weighted_congestion/crossover/verify_degree32.py, tests/audits/weighted_congestion/crossover/main_check.py
 
 
@@ -287,7 +286,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-R3-SOURCE32-178-v1, WCF-R3-CROSS32-AUDIT-v1, WC-R3-FULL-TOPOLOGY-REDUCTION-v3; all joint premises remain explicit.
 - Evidence: evidence/runs/weighted_congestion/crossover/main_check_results.json; separate independently authored verifier and direct reconstruction.
 - Counterevidence / Objections: no remaining objection to the exact stated scope; fixed-degree improvement does not prove an unbounded family. External review and priority unverified.
-- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: WC-TARGET OPEN.
+- Status: complete exact statements with independent internal reconstruction; unrefereed. Truth: proved stated scope; Value: reusable separation/sign certificate/failure; Novelty: unassessed; Mechanism: explicit incidence and real-domain elimination; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/crossover/separation.md, tests/audits/weighted_congestion/crossover/main_check.py
 
 
@@ -298,7 +297,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL and the direct proof in the linked account. No unproved migration between models.
 - Evidence: authored general proof, independently reconstructed review `research/reviews/weighted_congestion/weight_bands_review/independent_review.md`, and actual exact code/records listed below. Finite sampling remains separate from proof.
 - Counterevidence / Objections: selector failures do not prove nonexistence; occupied interval is not every geometric interval; retuned m1,m2 fail; cubic boundary is only for prescribed witnesses. No unresolved fatal objection within stated scope.
-- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: full WC-TARGET remains OPEN.
+- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/weight_bands/README.md, research/reviews/weighted_congestion/weight_bands_review/independent_review.md, tests/audits/weighted_congestion/weight_bands/verify.py, tests/audits/weighted_congestion/weight_bands_review/independent_check.py, evidence/runs/weighted_congestion/weight_bands/verification.json, evidence/runs/weighted_congestion/weight_bands_review/independent_verification.json
 
 
@@ -309,7 +308,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL, WC-R3-DENSE-SHARE-v1 and the direct proof in the linked account. No unproved migration between models.
 - Evidence: authored general proof, independently reconstructed review `research/reviews/weighted_congestion/weight_bands_review/independent_review.md`, and actual exact code/records listed below. Finite sampling remains separate from proof.
 - Counterevidence / Objections: selector failures do not prove nonexistence; occupied interval is not every geometric interval; retuned m1,m2 fail; cubic boundary is only for prescribed witnesses. No unresolved fatal objection within stated scope.
-- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: full WC-TARGET remains OPEN.
+- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/weight_bands/README.md, research/reviews/weighted_congestion/weight_bands_review/independent_review.md, tests/audits/weighted_congestion/weight_bands/verify.py, tests/audits/weighted_congestion/weight_bands_review/independent_check.py, evidence/runs/weighted_congestion/weight_bands/verification.json, evidence/runs/weighted_congestion/weight_bands_review/independent_verification.json
 
 
@@ -320,7 +319,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL, WC-R3-DENSE-SHARE-v1 and the direct proof in the linked account. No unproved migration between models.
 - Evidence: authored general proof, independently reconstructed review `research/reviews/weighted_congestion/weight_bands_review/independent_review.md`, and actual exact code/records listed below. Finite sampling remains separate from proof.
 - Counterevidence / Objections: selector failures do not prove nonexistence; occupied interval is not every geometric interval; retuned m1,m2 fail; cubic boundary is only for prescribed witnesses. No unresolved fatal objection within stated scope.
-- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: full WC-TARGET remains OPEN.
+- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/weight_bands/README.md, research/reviews/weighted_congestion/weight_bands_review/independent_review.md, tests/audits/weighted_congestion/weight_bands/verify.py, evidence/runs/weighted_congestion/weight_bands/verification.json
 
 
@@ -331,7 +330,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-R3-DENSE-SHARE-v1 and the direct proof in the linked account. No unproved migration between models.
 - Evidence: authored general proof, independently reconstructed review `research/reviews/weighted_congestion/weight_bands_review/independent_review.md`, and actual exact code/records listed below. Finite sampling remains separate from proof.
 - Counterevidence / Objections: selector failures do not prove nonexistence; occupied interval is not every geometric interval; retuned m1,m2 fail; cubic boundary is only for prescribed witnesses. No unresolved fatal objection within stated scope.
-- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: full WC-TARGET remains OPEN.
+- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/weight_bands/README.md, research/reviews/weighted_congestion/weight_bands_review/independent_review.md, tests/audits/weighted_congestion/weight_bands/verify.py, evidence/runs/weighted_congestion/weight_bands/verification.json
 
 
@@ -342,7 +341,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL, WC-R3-DENSE-SHARE-v1 and the direct proof in the linked account. No unproved migration between models.
 - Evidence: authored general proof, independently reconstructed review `research/reviews/weighted_congestion/weight_bands_review/independent_review.md`, and actual exact code/records listed below. Finite sampling remains separate from proof.
 - Counterevidence / Objections: selector failures do not prove nonexistence; occupied interval is not every geometric interval; retuned m1,m2 fail; cubic boundary is only for prescribed witnesses. No unresolved fatal objection within stated scope.
-- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: full WC-TARGET remains OPEN.
+- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/weight_bands/README.md, research/reviews/weighted_congestion/weight_bands_review/independent_review.md, tests/audits/weighted_congestion/weight_bands/verify.py, evidence/runs/weighted_congestion/weight_bands/verification.json
 
 
@@ -353,7 +352,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL and the direct proof in the linked account. No unproved migration between models.
 - Evidence: authored general proof, independently reconstructed review `research/reviews/weighted_congestion/crossover_limit_review/review.md`, and actual exact code/records listed below. Finite sampling remains separate from proof.
 - Counterevidence / Objections: selector failures do not prove nonexistence; occupied interval is not every geometric interval; retuned m1,m2 fail; cubic boundary is only for prescribed witnesses. No unresolved fatal objection within stated scope.
-- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: full WC-TARGET remains OPEN.
+- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/crossover/limit_family.md, research/reviews/weighted_congestion/crossover_limit_review/review.md, tests/audits/weighted_congestion/crossover/verify_limit.py, tests/audits/weighted_congestion/crossover_limit_review/check_independent.py, evidence/runs/weighted_congestion/crossover/limit_evidence/finite_scans.json, evidence/runs/weighted_congestion/crossover/limit_evidence/scaled_limits.json, evidence/runs/weighted_congestion/crossover/limit_evidence/uniform_bounds.json, evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json, evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json
 
 
@@ -364,7 +363,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL and the direct proof in the linked account. No unproved migration between models.
 - Evidence: authored general proof, independently reconstructed review `research/reviews/weighted_congestion/crossover_limit_review/review.md`, and actual exact code/records listed below. Finite sampling remains separate from proof.
 - Counterevidence / Objections: selector failures do not prove nonexistence; occupied interval is not every geometric interval; retuned m1,m2 fail; cubic boundary is only for prescribed witnesses. No unresolved fatal objection within stated scope.
-- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: full WC-TARGET remains OPEN.
+- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/crossover/limit_family.md, research/reviews/weighted_congestion/crossover_limit_review/review.md, tests/audits/weighted_congestion/crossover/verify_limit.py, tests/audits/weighted_congestion/crossover_limit_review/check_independent.py, evidence/runs/weighted_congestion/crossover/limit_evidence/finite_scans.json, evidence/runs/weighted_congestion/crossover/limit_evidence/scaled_limits.json, evidence/runs/weighted_congestion/crossover/limit_evidence/uniform_bounds.json, evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json, evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json
 
 
@@ -375,7 +374,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL and the direct proof in the linked account. No unproved migration between models.
 - Evidence: authored general proof, independently reconstructed review `research/reviews/weighted_congestion/crossover_limit_review/review.md`, and actual exact code/records listed below. Finite sampling remains separate from proof.
 - Counterevidence / Objections: selector failures do not prove nonexistence; occupied interval is not every geometric interval; retuned m1,m2 fail; cubic boundary is only for prescribed witnesses. No unresolved fatal objection within stated scope.
-- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: full WC-TARGET remains OPEN.
+- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/crossover/limit_family.md, research/reviews/weighted_congestion/crossover_limit_review/review.md, tests/audits/weighted_congestion/crossover/verify_limit.py, tests/audits/weighted_congestion/crossover_limit_review/check_independent.py, evidence/runs/weighted_congestion/crossover/limit_evidence/finite_scans.json, evidence/runs/weighted_congestion/crossover/limit_evidence/scaled_limits.json, evidence/runs/weighted_congestion/crossover/limit_evidence/uniform_bounds.json, evidence/certificates/weighted_congestion/crossover/limit_evidence/retuned_m3_certificate.json, evidence/runs/weighted_congestion/crossover_limit_review/independent_evidence.json
 
 
@@ -386,7 +385,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL and the direct proof in the linked account. No unproved migration between models.
 - Evidence: authored general proof, independently reconstructed review `research/reviews/weighted_congestion/density_padding/review.md`, and actual exact code/records listed below. Finite sampling remains separate from proof.
 - Counterevidence / Objections: selector failures do not prove nonexistence; occupied interval is not every geometric interval; retuned m1,m2 fail; cubic boundary is only for prescribed witnesses. No unresolved fatal objection within stated scope.
-- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: full WC-TARGET remains OPEN.
+- Status: complete stated-scope proofs with independent internal reconstruction; unrefereed. Truth: stated scope proved; Value: reusable interface/obstruction/reduction; Novelty: unassessed; Mechanism: explicit linked derivation; Ambition: 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/density_padding/optional_user_density_padding.md, research/reviews/weighted_congestion/density_padding/review.md, tests/audits/weighted_congestion/density_padding/verify.py, tests/audits/weighted_congestion/density_padding/independent_check.py, evidence/runs/weighted_congestion/density_padding/verification.json, evidence/runs/weighted_congestion/density_padding/independent_verification.json
 
 
@@ -398,7 +397,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL; explicit elementary proofs, no imported nonexistence theorem.
 - Evidence: complete general proof, independent reconstruction before reading the initial route, two envelope attacks, Fraction full-state small game and separate exact growing-certificate checks.
 - Counterevidence / Objections: no unresolved fatal objection in the stated scope; finite tests do not prove generality. Later-literature search is not exhaustive; global priority unverified.
-- Status: canonical stated-scope internal mathematical result, unrefereed. Truth: proved scope; Value: growing lower/usable mechanism boundary; Novelty: unverified; Mechanism: odd parity and weight-cycle amplification; Ambition: lower stage breakthrough, WC-TARGET OPEN.
+- Status: canonical stated-scope internal mathematical result, unrefereed. Truth: proved scope; Value: growing lower/usable mechanism boundary; Novelty: unverified; Mechanism: odd parity and weight-cycle amplification; Ambition: lower stage breakthrough, 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: `research/current/weighted_congestion/odd_ring_linear.md`, `research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md`, `tests/audits/weighted_congestion/odd_ring/verify.py`, `evidence/runs/weighted_congestion/odd_ring/verification.json`, `research/reviews/weighted_congestion/odd_ring_independent/REVIEW.md`, `research/reviews/weighted_congestion/odd_ring_independent/EXACT_ENVELOPE_REVIEW.md`, `research/reviews/weighted_congestion/odd_ring_parameters/exact_envelope_review.md`, `research/reviews/weighted_congestion/odd_ring_literature/notes.md`.
 
 
@@ -410,7 +409,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL, WC-R3-ODD-RING-CERTIFICATE-v1; explicit elementary proofs, no imported nonexistence theorem.
 - Evidence: complete general proof, independent reconstruction before reading the initial route, two envelope attacks, Fraction full-state small game and separate exact growing-certificate checks.
 - Counterevidence / Objections: no unresolved fatal objection in the stated scope; finite tests do not prove generality. Later-literature search is not exhaustive; global priority unverified.
-- Status: canonical stated-scope internal mathematical result, unrefereed. Truth: proved scope; Value: growing lower/usable mechanism boundary; Novelty: unverified; Mechanism: odd parity and weight-cycle amplification; Ambition: lower stage breakthrough, WC-TARGET OPEN.
+- Status: canonical stated-scope internal mathematical result, unrefereed. Truth: proved scope; Value: growing lower/usable mechanism boundary; Novelty: unverified; Mechanism: odd parity and weight-cycle amplification; Ambition: lower stage breakthrough, 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: `research/current/weighted_congestion/odd_ring_linear.md`, `research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md`, `tests/audits/weighted_congestion/odd_ring/verify.py`, `evidence/runs/weighted_congestion/odd_ring/verification.json`, `research/reviews/weighted_congestion/odd_ring_independent/REVIEW.md`, `research/reviews/weighted_congestion/odd_ring_independent/EXACT_ENVELOPE_REVIEW.md`, `research/reviews/weighted_congestion/odd_ring_parameters/exact_envelope_review.md`, `research/reviews/weighted_congestion/odd_ring_literature/notes.md`.
 
 
@@ -422,7 +421,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-MODEL, WC-R3-ODD-RING-CERTIFICATE-v1, WC-R3-ODD-RING-ENVELOPE-v1; explicit elementary proofs, no imported nonexistence theorem.
 - Evidence: complete general proof, independent reconstruction before reading the initial route, two envelope attacks, Fraction full-state small game and separate exact growing-certificate checks.
 - Counterevidence / Objections: no unresolved fatal objection in the stated scope; finite tests do not prove generality. Later-literature search is not exhaustive; global priority unverified.
-- Status: canonical stated-scope internal mathematical result, unrefereed. Truth: proved scope; Value: growing lower/usable mechanism boundary; Novelty: unverified; Mechanism: odd parity and weight-cycle amplification; Ambition: lower stage breakthrough, WC-TARGET OPEN.
+- Status: canonical stated-scope internal mathematical result, unrefereed. Truth: proved scope; Value: growing lower/usable mechanism boundary; Novelty: unverified; Mechanism: odd parity and weight-cycle amplification; Ambition: lower stage breakthrough, 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: `research/current/weighted_congestion/odd_ring_linear.md`, `research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md`, `tests/audits/weighted_congestion/odd_ring/verify.py`, `evidence/runs/weighted_congestion/odd_ring/verification.json`, `research/reviews/weighted_congestion/odd_ring_independent/REVIEW.md`, `research/reviews/weighted_congestion/odd_ring_independent/EXACT_ENVELOPE_REVIEW.md`, `research/reviews/weighted_congestion/odd_ring_parameters/exact_envelope_review.md`, `research/reviews/weighted_congestion/odd_ring_literature/notes.md`.
 
 
@@ -434,7 +433,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-R3-ODD-RING-CERTIFICATE-v1 and ENVELOPE-v1, plus exact denominator-weighted convex identities, including degree0 negative factors.
 - Evidence: general proof independently attacked; actual Fraction mixed-degree checks with constants, zero-shape exclusions and signed individual differences.
 - Counterevidence / Objections: no unresolved fatal within scope; infeasibility does not supply a pure stable profile. General partially aligned cohort and reverse light deviations remain an actual-topology gap.
-- Status: stated-scope internally proved, unrefereed. Truth: proved; Value: closes mixed-shape tuning; Novelty: unassessed; Mechanism: convexity with positive denominators; Ambition: boundary, WC-TARGET OPEN.
+- Status: stated-scope internally proved, unrefereed. Truth: proved; Value: closes mixed-shape tuning; Novelty: unassessed; Mechanism: convexity with positive denominators; Ambition: boundary, 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md section8; research/reviews/weighted_congestion/odd_ring_parameters/polynomial_envelope_review.md; check_polynomial_envelope.py; polynomial_envelope_verification.json.
 
 
@@ -446,7 +445,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies: WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1; exact defect-state cycle, correct reversed ring/role map, direct total-cost support-two inequality in PROOF.md section9.
 - Evidence: internal independent defect-graph derivation, root reconstruction and exact small graph checks including zero fees and reverse resource/player map. Finite code uses safe alpha=d; endpoint T_d is established by the general proof.
 - Counterevidence / Objections: more than one light per group destroys the simple defect-cycle representation; cannot promote this to arbitrary cohorts. No unresolved fatal within stated scope.
-- Status: internally proved, unrefereed. Truth: stated subclass proved; Value: actual-topology boundary and representation; Novelty: unverified; Mechanism: arc counting/reversed roles/support; Ambition: structural subcase, WC-TARGET OPEN.
+- Status: internally proved, unrefereed. Truth: stated subclass proved; Value: actual-topology boundary and representation; Novelty: unverified; Mechanism: arc counting/reversed roles/support; Ambition: structural subcase, 本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1.
 - Related Files: research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md section9; research/reviews/weighted_congestion/odd_ring_parameters/SINGLETON_NOTE.md; check_singleton_graph.py; singleton_graph_verification.json.
 
 ## WC-R1-MULTIPLIER-BARRIER v1 — INTERNALLY REVIEWED METHOD OBSTRUCTION
@@ -456,7 +455,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：第一项为MODEL、等权类双重平均、同端点路径、有限黎曼和分离；第二项共同依赖MODEL、第一项、先固定有限资源数和同一游戏自同构平均。
 - Evidence：冻结ec827a9原证明的独立先重构后攻击，父研究者逐式核查及新现行自足重构；Fraction有限核验另列。
 - Counterevidence / Objections：全空精确均衡始终存在；非可分势、只选部分改善、依游戏选极小点目标不在排除范围；ρ_d端点不排除。未见所述范围内fatal objection。
-- Status：complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed。Truth=所述范围内部证明；Value=方法边界与量词修补；Novelty=未认证；Mechanism=有限多尺度与资源束；Ambition=不改变WC-TARGET OPEN。
+- Status：complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed。Truth=所述范围内部证明；Value=方法边界与量词修补；Novelty=未认证；Mechanism=有限多尺度与资源束；Ambition=不改变本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[独立审查](../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md)、[核验代码](../../tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py)、[冻结结果](../../evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json)。
 
 ## WC-R1-GAME-SPECIFIC-SEPARABLE-ORDINAL-BARRIER v1 — INTERNALLY REVIEWED METHOD OBSTRUCTION
@@ -466,7 +465,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：第一项为MODEL、等权类双重平均、同端点路径、有限黎曼和分离；第二项共同依赖MODEL、第一项、先固定有限资源数和同一游戏自同构平均。
 - Evidence：冻结ec827a9原证明的独立先重构后攻击，父研究者逐式核查及新现行自足重构；Fraction有限核验另列。
 - Counterevidence / Objections：全空精确均衡始终存在；非可分势、只选部分改善、依游戏选极小点目标不在排除范围；ρ_d端点不排除。未见所述范围内fatal objection。
-- Status：complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed。Truth=所述范围内部证明；Value=方法边界与量词修补；Novelty=未认证；Mechanism=有限多尺度与资源束；Ambition=不改变WC-TARGET OPEN。
+- Status：complete stated-scope proof with independent reconstruction and exact finite audit; unrefereed。Truth=所述范围内部证明；Value=方法边界与量词修补；Novelty=未认证；Mechanism=有限多尺度与资源束；Ambition=不改变本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[独立审查](../reviews/weighted_congestion/ordinal_potentials/game_specific_independent_attack.md)、[核验代码](../../tests/audits/weighted_congestion/ordinal_potentials/verify_finite_bundle_bridge.py)、[冻结结果](../../evidence/runs/weighted_congestion/ordinal_potentials/finite_bundle_independent_checks.json)。
 
 ## WC-ACTION-SIGNATURE-COMPRESSION-v1 — INTERNALLY RECONSTRUCTED
@@ -612,7 +611,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：MODEL、WC-R1-DAG-STEP的q/h及路径展开、真实负载、单项式次数界、总权缺口矩、Jensen。与端点低泄漏预算无逻辑依赖。
 - Evidence：一般直接证明；先仅由exact statement独立重构，再逐式攻击冻结hash；两份不互相导入的Fraction实际资源审计。
 - Counterevidence / Objections：仅限所写DAG策略及极值幅度；任意幅度/全类策略尚无归约，不是本题一般肯定证明，也不是非存在下界。未发现所写范围内fatal；只升内部结果，外审/新颖性未认证。
-- Status：complete restricted proof; independently reconstructed and exactly audited; unrefereed。Truth为明确状态的实际存在界；Value为极值幅度模拟边界；Novelty未认证；Mechanism为缺口矩和Jensen；Ambition保留全类题OPEN。
+- Status：complete restricted proof; independently reconstructed and exactly audited; unrefereed。Truth为明确状态的实际存在界；Value为极值幅度模拟边界；Novelty未认证；Mechanism为缺口矩和Jensen；Ambition保留本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)、[独立审查](../reviews/weighted_congestion/step_dag/polynomial_extremal_all_in_review.md)；具体代码和冻结记录见正文审计合同。
 
 
@@ -709,7 +708,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：MODEL；WC-R3-DENSE-LOCAL-v1 的 strict R-FIP；WC-ANCHORED-CLOCK-DEFINITION 的双轮输入和统一预算；初等对数单调性。非从均衡存在性推出无改善环。
 - Evidence：完整一般证明；先独立重构后冻结攻击；两份Fraction、有理对数余项及最小D反验，作者另重算真实三玩家输入。
 - Counterevidence / Objections：不将(U)提升为必要条件；actual有向clock差、非统一幅度/次数、多项式或其他架构不受限制；无αPNE不代表无更大倍率PNE。
-- Status：complete budget-obstruction proof; independently reconstructed and exactly audited; unrefereed。Truth仅预算障碍，Value为封闭输入优化路线，Novelty未认证，Mechanism为R-FIP与最坏三元耦合，Ambition保持唯一全类题OPEN。
+- Status：complete budget-obstruction proof; independently reconstructed and exactly audited; unrefereed。Truth仅预算障碍，Value为封闭输入优化路线，Novelty未认证，Mechanism为R-FIP与最坏三元耦合，Ambition保持唯一本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[统一低泄漏锚定时钟预算的普适次数障碍](../current/weighted_congestion/uniform_clock_budget_barrier.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/uniform_clock_budget_barrier_review.md)；两代码与冻结记录从正文读取。
 
 
@@ -720,7 +719,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：WC-MODEL, WC-CLASS-FRONT-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
 - Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
 - Counterevidence / Objections：无未结范围内fatal；count是互异MODEL动作状态；单测试子项可缺席类，但不能把空/空标签当两策略。class0商动作改变所有相对相位，须保mover标签。不是对全front出口或PNE的断言。
-- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=唯一全类题仍OPEN。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/weighted_congestion/class_front_phase_quotient.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/class_fronts_review.md)及正文末节的audit/run。
 
 
@@ -731,7 +730,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：WC-MODEL, WC-CLONE-FRONT-PHASE-QUOTIENT-v1, WC-CLASS-FRONT-FIXTURE；共同前提的使用与自足代数证明由正文分节给出。
 - Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
 - Counterevidence / Objections：无未结范围内fatal；局部lemma要两端均非full触发；front使用递增锚定三元，不涵盖任意乱序wrap。实例非αPNE，有离front出口；不排所有类内compiler或其他同步机制。
-- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=唯一全类题仍OPEN。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/weighted_congestion/class_front_phase_quotient.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/class_fronts_review.md)及正文末节的audit/run。
 
 
@@ -742,7 +741,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：WC-MODEL, WC-DEGREE-LOCAL-SPACE-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
 - Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
 - Counterevidence / Objections：无未结范围内fatal；不保原资源身份、单位系数或算法效率；零成本可用0正资源但markers保MODEL合法。所有人数/动作数无界，维界不是全类规模截止。
-- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=唯一全类题仍OPEN。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)及正文末节的audit/run。
 
 
@@ -753,7 +752,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：WC-DEGREE-LOCAL-COST-COMPRESSION-v1, WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1, WC-ANTICHAIN-CORE-NORMAL-FORM-v1, WC-SELECTOR-MOMENT-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
 - Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
 - Counterevidence / Objections：无未结范围内fatal；不能删selector-support marginal-polytope条件、改成任意局部一致矩或强求feature=0；不要求stationary/recurrent，未保证每selector可行或单mover证书。
-- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=唯一全类题仍OPEN。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)及正文末节的audit/run。
 
 
@@ -764,7 +763,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：WC-MODEL, WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1, WC-PARITY-SELECTOR-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
 - Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
 - Counterevidence / Objections：无未结范围内fatal；仅证明transient dual可行；唯一2cycle自身也有dual，不证明暂态必要/更优，不给任意selector或全类存在。
-- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=唯一全类题仍OPEN。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)及正文末节的audit/run。
 
 ## WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1 — 锚定双轮时钟的有向差分、线性预算与逐次数锐效率
@@ -773,7 +772,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：WC-MODEL、锚定010/101实际用户表、非负多项式凸组合、有限最大最小；条件障碍只使用本文保环预算。
 - Evidence：完整一般推导、精确冻结审查及真实资源Fraction核验；源码、seed/参数、Python版本、误差控制和实际运行hash由[正文](../current/weighted_congestion/anchored_clock_actual_margins.md)末节连接。
 - Counterevidence / Objections：约束仅充分、总预算仅必要；κ稳定条件非必要，保firstopp失败不等于PNE；不保证给定D可行或B可多项式时间计算。43不称最优，91只是统一充分预算选值。没有一般次数效率或全类结论。 所述范围无尚成立fatal；外审和新颖性未认证。
-- Status：complete stated-scope interface proof; independently reconstructed and exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留WC-TARGET OPEN。
+- Status：complete stated-scope interface proof; independently reconstructed and exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/weighted_congestion/anchored_clock_actual_margins.md)、[独立审查](../reviews/weighted_congestion/ordinal_potentials/actual_clock_margins_review.md)，配套代码、输入、证据见正文审计合同。
 
 ## WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1 — 同权主玩家共享侧资源的统一强迫截断势均衡
@@ -782,7 +781,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：WC-MODEL、WC-SHARED-SIDE-BUDGET-POTENTIAL-v1、本文正部望远镜(TR)及UF聚合预算；无外部定理。
 - Evidence：完整一般推导、精确冻结审查及真实资源Fraction核验；源码、seed/参数、Python版本、误差控制和实际运行hash由[正文](../current/weighted_congestion/shared_side_truncated_potential.md)末节连接。
 - Counterevidence / Objections：共同hub权、每side唯一light、每light唯一source、动作副本同费与UF最坏负载均承重。不覆盖异权hub、多source side或UF失败且直接AS+B未满足的全类情形；子类C2,d0=2不代替唯一题。 所述范围无尚成立fatal；外审和新颖性未认证。
-- Status：complete structural proof; independent bottleneck reconstruction and frozen attack; exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留WC-TARGET OPEN。
+- Status：complete structural proof; independent bottleneck reconstruction and frozen attack; exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/weighted_congestion/shared_side_truncated_potential.md)、[独立审查](../reviews/weighted_congestion/shared_side_truncated_potential_review.md)，配套代码、输入、证据见正文审计合同。
 
 ## WC-SHARED-SIDE-BUDGET-POTENTIAL-v1 — 同权主玩家共享侧资源的直接侧势预算均衡
@@ -791,7 +790,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：WC-MODEL、同权fixed-light势边际、source重置误差、有限局部最小化；不调用TR/M标量界或UF聚合。
 - Evidence：完整一般推导、精确冻结审查及真实资源Fraction核验；源码、seed/参数、Python版本、误差控制和实际运行hash由[正文](../current/weighted_congestion/shared_side_truncated_potential.md)末节连接。
 - Counterevidence / Objections：AS与源预算是充分假设，不证明所有该拓扑游戏都满足；仍限同权hub、unique-light/unique-source和同费副本。此ID扩大degree/alpha域并改变假设，未静默改UF-v1；后置抽象攻击不冒充初次未读稿全证明重构。 所述范围无尚成立fatal；外审和新颖性未认证。
-- Status：complete conditional proof; independently attacked after abstraction; exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留WC-TARGET OPEN。
+- Status：complete conditional proof; independently attacked after abstraction; exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/weighted_congestion/shared_side_truncated_potential.md)、[独立审查](../reviews/weighted_congestion/shared_side_truncated_potential_review.md)，配套代码、输入、证据见正文审计合同。
 
 ## WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1 — 潜在可动用户共占高度的三角排序势
@@ -819,7 +818,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：WC-MODEL、非负资源锥及binary完整成本表定义、正权使非零多项式在正负载严格正、两人真实负载差分、二项式严格不等式、有限非负叠加。全部在[正文第9节](../current/weighted_congestion/template_certificates/selector_local_moments.md)自足证明，不依赖其他均衡定理。
 - Evidence：独立审查先从较弱statement重构并强化到n≥2/不全等权/极射线，再攻击冻结7a2ee0b7；规范正文只读diff通过。独立Fraction审计225个pair代数、2331列逐face消元和7160个等权边界成本位置，代码/run由正文第10节接入；有限检查不替一般实参数/任意有限degree证明。
 - Counterevidence / Objections：只限完整成本保真、固定玩家/权/标签和有限表示锥，不声称闭包/暴露射线；等权存在≤2用户高次资源表示。原V有全0精确PNE，不限制改权/加玩家/仅保均衡或单向lift，也不反驳≤D资源数量压缩，未解全类题。等权n≥3用pair资源x^q/(2^q−1)和私人常数可保全成本；n2等权也有非线性同负载表示。无尚成立数学fatal。
-- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅完整成本保真表示障碍；Value为资源锥不可局部化边界；Mechanism为一对异权contrast加solo预算饱和；Novelty/外审未认证，Ambition保留WC-TARGET OPEN。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅完整成本保真表示障碍；Value为资源锥不可局部化边界；Mechanism为一对异权contrast加solo预算饱和；Novelty/外审未认证，Ambition保留本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[同一正文§9–10](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查刚性部分](../reviews/weighted_congestion/template_certificates/selector_local_moments_review.md)、`tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py`、`evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json`。
 
 
@@ -830,7 +829,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：MODEL、完整动作签名矩阵与proper/core定义、奇环缺陷、逐资源离散原函数、两个正pair列及私人degree0列；[正文§12](../current/weighted_congestion/template_certificates/selector_local_moments.md)自足给出。
 - Evidence：先据精确statement独立重构，再攻击冻结736cff45正文与canonical差异；两套不互相导入的整数/Fraction审计，实际命令、参数、seed不适用、Python版本/hash与范围由正文§13接入。有限检查不替一般证明。
 - Counterevidence / Objections：只限制统一有界移动者/状态支撑的dual构造；原族等权、有完整α1 dual，不是无PNE例，不排依n/动作数/D的支撑界或无界多玩家拼接；端点二点只限min-index择证。奇数n、d≥1、严格α<2^d承重；没有尚成立fatal，外审/新颖性未认证。
-- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth为精确支撑定理；Value为排除有限玩家局部拼接；Mechanism为pair正列迫闭环补偿；Ambition保持WC-TARGET OPEN。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth为精确支撑定理；Value为排除有限玩家局部拼接；Mechanism为pair正列迫闭环补偿；Ambition保持本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/weighted_congestion/template_certificates/selector_local_moments.md)、[独立审查](../reviews/weighted_congestion/template_certificates/selector_mover_support_review.md)，代码与冻结结果见§13。
 
 
@@ -850,7 +849,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Dependencies：** MODEL、同权hub跨source多light side拓扑、全anti状态和真实hub Rosenthal势；κ_d(t)=min(dt,t+1)，UFmulti使用side全部light总权。；直接机制：固定light边际等于真实hub普通成本差；逐lightκ重置，源加权和≤dF(u+W)，由(α−1)²≥d支付全部跨source反馈。。正文自足，不导入外部均衡定理。
 - **Evidence：** 先仅据exact statement独立重构，再读冻结正文逐义务攻击；规范diff及hash见[独立审查](../reviews/weighted_congestion/multisource_shared_side_review.md)。两路Fraction审计实际重跑，源代码/输入/参数/seed及限度由正文合同与JSON记录。
 - **Counterevidence / Objections：** 同权hub、二元对称副本、唯一main source及UFmulti承重；不覆盖异权hub或UF失败，不改变全类OPEN。旧两个Claim身份保持。 无尚成立fatal objection；有限计算不替一般证明。
-- **Status：** complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth限所写范围；Value/Mechanism为上述接口和边界；Novelty/外审未认证；Ambition仍为全类题OPEN。
+- **Status：** complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth限所写范围；Value/Mechanism为上述接口和边界；Novelty/外审未认证；Ambition仍为本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - **Related Files：** 正文、独立审查及代码/证据由上述入口与assets.json接入。
 
 ## WC-APPROXIMATE-SUPPORT-DISTORTION-v1 — 小用户支持近似成本表示的定量失真障碍
@@ -860,7 +859,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Dependencies：** MODEL、相同玩家/二动作标签的完整成本乘性夹逼，允许改权；正资源潜在用户支持r；一个heavy与m名ε玩家的线性全用户成本表。；直接机制：零动作排正资源；light的singleton/pair成本跃升由含heavy资源支付，每条最多付r−1名light，收费到heavy全入成本。。正文自足，不导入外部均衡定理。
 - **Evidence：** 先仅据exact statement独立重构，再读冻结正文逐义务攻击；规范diff及hash见[独立审查](../reviews/weighted_congestion/template_certificates/approximate_support_review.md)。两路Fraction审计实际重跑，源代码/输入/参数/seed及限度由正文合同与JSON记录。
 - **Counterevidence / Objections：** 完整逐状态成本、保零及无辅助玩家承重；原例有全0精确PNE。仅限制此近似表示归约，不排辅助玩家、均衡lift或全类存在，不声称固定参数sharp。 无尚成立fatal objection；有限计算不替一般证明。
-- **Status：** complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth限所写范围；Value/Mechanism为上述接口和边界；Novelty/外审未认证；Ambition仍为全类题OPEN。
+- **Status：** complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth限所写范围；Value/Mechanism为上述接口和边界；Novelty/外审未认证；Ambition仍为本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - **Related Files：** 正文、独立审查及代码/证据由上述入口与assets.json接入。
 
 ## WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1 — 任意次数类内有序三元时钟的全状态编译障碍
@@ -870,7 +869,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Dependencies：** MODEL、同权clone类的prefix/suffix front及fresh递增三元010/101同费非负非减时钟；固定8测试actual有理系数输入。；直接机制：front在任意递增三元非触发，所有flip负载为2w→2w或w→3w；故时钟子游戏全front均exactPNE，无法消除base严格PNE。。正文自足，不导入外部均衡定理。
 - **Evidence：** 先仅据exact statement独立重构，再读冻结正文逐义务攻击；规范diff及hash见[独立审查](../reviews/weighted_congestion/ordinal_potentials/class_internal_clock_compiler_review.md)。两路Fraction审计实际重跑，源代码/输入/参数/seed及限度由正文合同与JSON记录。
 - **Counterevidence / Objections：** 只排所写追加compiler；不排跨类、其他arity/phase、不等费pair、辅助玩家或更高倍率专用输入类。旧端点反例仍非PNE，不改其ID；本新fixture是真exactPNE。 无尚成立fatal objection；有限计算不替一般证明。
-- **Status：** complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth限所写范围；Value/Mechanism为上述接口和边界；Novelty/外审未认证；Ambition仍为全类题OPEN。
+- **Status：** complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth限所写范围；Value/Mechanism为上述接口和边界；Novelty/外审未认证；Ambition仍为本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - **Related Files：** 正文、独立审查及代码/证据由上述入口与assets.json接入。
 
 ## PK-INTERACTION-RANK-FACE-v1 — 正占用核的交互秩暴露面
@@ -879,7 +878,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：非负多项式、Boolean正Möbius展开、容斥/有限抽样和有限维紧归一化；依赖链在正文第一节逐条分列。
 - Evidence：独立先重构有限锥陈述，后参与闭包强化，再攻击两份冻结稿；双路实际Fraction审计和复用例见正文第八节。
 - Counterevidence / Objections：不覆盖负混合或零/负质量；低阶大支持线性项仍允许，不能推出全小用户支持。 零质量例曾漏算零质量观察者，实测发现后改为(1,0,0)并加入回归；范围量词已显式限定C∈K_fin，无未结范围内fatal。
-- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅所写结构接口；Value为可复用模型字典过滤/预算/闭包；Novelty未认证，Mechanism见正文，Ambition不改变WC-TARGET OPEN。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅所写结构接口；Value为可复用模型字典过滤/预算/闭包；Novelty未认证，Mechanism见正文，Ambition不改变本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)、`history/source/notes/positive_kernels/occupancy_source_manifest.json`；实际代码/输入/冻结输出由正文第八节进入。
 
 ## PK-SHARP-FORBIDDEN-MASS-v1 — 正占用核的锐坏项质量预算
@@ -888,7 +887,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：非负多项式、Boolean正Möbius展开、容斥/有限抽样和有限维紧归一化；依赖链在正文第一节逐条分列。
 - Evidence：独立先重构有限锥陈述，后参与闭包强化，再攻击两份冻结稿；双路实际Fraction审计和复用例见正文第八节。
 - Counterevidence / Objections：锐性只指单核L/B预算比；不称最终距离界最优、不恢复未知表示；q≥2时常数非跨正质量统一。 零质量例曾漏算零质量观察者，实测发现后改为(1,0,0)并加入回归；范围量词已显式限定C∈K_fin，无未结范围内fatal。
-- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅所写结构接口；Value为可复用模型字典过滤/预算/闭包；Novelty未认证，Mechanism见正文，Ambition不改变WC-TARGET OPEN。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅所写结构接口；Value为可复用模型字典过滤/预算/闭包；Novelty未认证，Mechanism见正文，Ambition不改变本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)、`history/source/notes/positive_kernels/occupancy_source_manifest.json`；实际代码/输入/冻结输出由正文第八节进入。
 
 ## PK-OCCUPANCY-CONE-CLOSURE-v1 — 正占用核的非闭锥补全与秩面闭包
@@ -897,7 +896,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Dependencies：非负多项式、Boolean正Möbius展开、容斥/有限抽样和有限维紧归一化；依赖链在正文第一节逐条分列。
 - Evidence：独立先重构有限锥陈述，后参与闭包强化，再攻击两份冻结稿；双路实际Fraction审计和复用例见正文第八节。
 - Counterevidence / Objections：闭包新增对象不能冒充原有限表示；底背景差分无稳定gap，不能用其零面替代顶背景；没有均衡桥。 零质量例曾漏算零质量观察者，实测发现后改为(1,0,0)并加入回归；范围量词已显式限定C∈K_fin，无未结范围内fatal。
-- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅所写结构接口；Value为可复用模型字典过滤/预算/闭包；Novelty未认证，Mechanism见正文，Ambition不改变WC-TARGET OPEN。
+- Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth仅所写结构接口；Value为可复用模型字典过滤/预算/闭包；Novelty未认证，Mechanism见正文，Ambition不改变本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - Related Files：[正文](../current/positive_kernels/occupancy_rank_faces.md)、[独立审查](../reviews/positive_kernels/rank_face_review.md)、`history/source/notes/positive_kernels/occupancy_source_manifest.json`；实际代码/输入/冻结输出由正文第八节进入。
 
 ## WC-ANCHORED-MARGIN-DEPENDENCE-OBSTRUCTION-v1 — 锚定保环时钟不可消去真实环余量依赖
@@ -927,7 +926,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 任意整数d≥2、实τ>1和α≥1满足(τ−1)(α−1)≥d；同权hub u>0、正权light各唯一main source，二元同费主/侧副本，side任意hub及跨source多light用户子集，全部费用非负系数degree≤d。记W_v为源light总权、T_j为side全部light总权、m_j为hub数。若每light l满足F_v(u+w_l)+Σ_(j:l∈L_j)G_j(w_l)≥τ[F_v(W_v)+Σ_(j:l∈L_j)G_j(T_j+m_ju)]，则第8.2节真实hub Rosenthal势E任单hub局部最小点配全anti lights为α-PNE。τ与α无需大小排序；d≥16取τ=1+ln d给α=1+d/ln d≤2d/ln d。 全部策略和真实负载按[正文第9.1节](../current/weighted_congestion/shared_side_truncated_potential.md)；全部合法偏离使用MODEL弱不等式，允许零费、常数费、空L/H及弱等号。
 - **Dependencies：** MODEL，第8.2节固定light普通Rosenthal边际，第8.3节κ_d(t)=min(dt,t+1)重置；第9.2节任τ≥1的源标量引理及有限势局部最小点。固定light真实hub普通边际→逐lightκ重置→UFτ以(τ−1)支付全部side→任τ≥1的源和≤dF(u+W)→hub余量(α−1)支付；有限势局部min给全anti均衡。 不导入外部均衡定理。
 - **Evidence：** 先仅据statement独立重构，后攻击冻结第九节，逐式范围核对见[独立审查](../reviews/weighted_congestion/multisource_force_tradeoff_review.md)。两路不互相调用核心的Fraction程序实际核真实资源/重置、乘积等号、三个倍率顺序和UFτ严格弱于UFα的实例；完整输入/参数/seed/版本/hash从正文9.7进入。有限证据不替一般证明。
-- **Counterevidence / Objections：** 同权hub、唯一main source、二元同费副本及所写UFτ均承重；不包含τ=1、不提供任意实例满足强迫条件的表示或稳定light选择，不覆盖异权hub或一般策略。旧三个Claim不变，WC-TARGET保持OPEN；未外审或认证新颖性。 无尚成立的范围内fatal objection。
+- **Counterevidence / Objections：** 同权hub、唯一main source、二元同费副本及所写UFτ均承重；不包含τ=1、不提供任意实例满足强迫条件的表示或稳定light选择，不覆盖异权hub或一般策略。旧三个Claim不变，本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1；未外审或认证新颖性。 无尚成立的范围内fatal objection。
 - **Status：** complete conditional proof; independently reconstructed and exactly audited; unrefereed。Truth限精确子类；Value为减少达到目标量级所需强迫条件；Mechanism为两个余量的乘积支付；Novelty未认证；Ambition保留全类判定。
 - **Related Files：** [原正文第九节](../current/weighted_congestion/shared_side_truncated_potential.md)、[新独立审查](../reviews/weighted_congestion/multisource_force_tradeoff_review.md)及第9.7节所列代码/冻结结果，资产合同见`research/assets.json`。
 
@@ -937,7 +936,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 第9.1节同权hub、唯一main-source、任意跨source多light/shared-hub的二元同费副本模型，费用非负系数degree≤d，任意整数d≥2、实τ>1及α≥1，保持UFτ但只需α(τ−1)≥d；同一真实hub Rosenthal势E每个单hub局部最小点配全anti为α-PNE。τ≥d+1时给精确PNE；d≥16且τ=1+ln d时给(d/ln d)-PNE。全部实正权/实非负系数、有限拓扑、零常数费用和空集合边界均量化。 精确策略、UFτ与边界以[正文9.8—9.12](../current/weighted_congestion/shared_side_truncated_potential.md)为准。
 - **Dependencies：** MODEL、固定light真实Rosenthal边际、逐lightκ重置及UFτ接口；新主增量源标量界。源标量强化为Σκ[F(u(1+t))−τF(uT)]≤d[F(u(1+T))−F(u)]；reset≤dΔF/(τ−1)由目标α支付，有限势局部最小点覆盖真实偏离。 全部自足，无外部均衡定理导入。
 - **Evidence：** 先statement独立重构，再攻击冻结9.8—9.12与所有α1边界，见[独立审查](../reviews/weighted_congestion/multisource_force_increment_review.md)。新两路Fraction代码/输入/版本/seed/依赖hash及冻结结果从原稿新审计合同进入；作者明确复用旧helper，独立程序只复用其本人baseline，无作者核心调用。有限证据不替一般证明。
-- **Counterevidence / Objections：** v2严格扩大v1充分条件域，旧版本不改；不称倍率条件必要或最优。同权hub/唯一main source/二元同费副本/UFτ承重；不含τ=1或一般游戏的强迫表示与light稳定选择，WC-TARGET保持OPEN；未外审、新颖性未认证。 无尚成立范围内fatal objection。
+- **Counterevidence / Objections：** v2严格扩大v1充分条件域，旧版本不改；不称倍率条件必要或最优。同权hub/唯一main source/二元同费副本/UFτ承重；不含τ=1或一般游戏的强迫表示与light稳定选择，本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1；未外审、新颖性未认证。 无尚成立范围内fatal objection。
 - **Status：** complete conditional proof; independently reconstructed and exactly audited; unrefereed。Truth为条件子类存在界；Value为保留主增量并纳入精确PNE端点；Mechanism见完整付款链；Novelty未认证；Ambition全类OPEN。
 - **Related Files：** 原稿9.8起、新独立审查、新作者/独立审计和冻结输出均由`research/assets.json`与`research/catalog.json`接入。
 
@@ -957,7 +956,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 第9.1节同权hub、唯一main source、任意跨source多light/shared-hub的二元同费副本模型，全部费用非负系数degree≤d，任意整数d≥2、实τ≥1及α≥1，满足原UFτ和ατ≥d时，同一真实hub Rosenthal势E每个单hub局部最小点配全anti为α-PNE。含τ1、零/常数费用、空集合及全部实正权/实非负系数。τ≥d可取α1；d≥16取τ=ln d给α=d/ln d。 完整真实策略及全部边界以[正文9.14—9.17](../current/weighted_congestion/shared_side_truncated_potential.md)为准；零成本用MODEL弱不等式，不计算0/0。
 - **Dependencies：** MODEL、同权hub固定light Rosenthal边际、新凸导数重置增量RI、已证源增量SΔ及有限局部min；exact边界上半另依v3，下半依明示2玩家F=ax/G=xd构造。凸导数的区间密度/差商给reset≤κ[G(Y)−G(w)]；UFτ支付τ倍side增量，源和≤dΔF，故reset≤dΔF/τ≤Mα；有限E局部min覆盖全部真实偏离。 原稿自足，无外部均衡定理导入。
 - **Evidence：** RI提出者与旧作者交换角色；旧作者先仅据新lemma/精确statement独立重构，后攻击冻结新节，并给独立离散Fubini证明。主研究者独立复算密度、真实付款和2玩家全实参数边界，见[实际审查记录](../reviews/weighted_congestion/multisource_force_increment_review.md)末节。新两路Fraction代码、实际输入、参数/seed/版本/helper或baseline hash及冻结结果由原稿末端合同进入；finite只支持实际覆盖。
-- **Counterevidence / Objections：** 同权hub、唯一main source、二元同费副本和原UFτ承重；不提供一般游戏的强迫表示、弱强迫下的统一选态或异权hub桥。v1/v2精确身份和原冻结证据保留。ατ≥d仅充分；独立sharp边界只限α1，WC-TARGET仍OPEN，未外审/新颖性未认证。 exact反例仅破α1，不能把改善幅度趋1升级成固定α>1反例。无尚成立范围内fatal。
+- **Counterevidence / Objections：** 同权hub、唯一main source、二元同费副本和原UFτ承重；不提供一般游戏的强迫表示、弱强迫下的统一选态或异权hub桥。v1/v2精确身份和原冻结证据保留。ατ≥d仅充分；独立sharp边界只限α1，本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1，未外审/新颖性未认证。 exact反例仅破α1，不能把改善幅度趋1升级成固定α>1反例。无尚成立范围内fatal。
 - **Status：** complete conditional proof; independently reconstructed and exactly audited; unrefereed。Truth限精确身份；Value为重置增量预算及独立exact强迫边界；Mechanism见正文；Novelty/外审未认证；Ambition全类OPEN。
 - **Related Files：** 原稿第九节、新审查追加部分、两路reset增量程序/冻结结果，经`research/assets.json`与`research/catalog.json`接入；v1/v2证据保持。
 
@@ -968,7 +967,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：** 对每个整数d≥2，在v3完全相同的同权hub/唯一source/二元同费副本结构类中，τ≥d的每个UFτ游戏均有精确PNE；对每个实1≤τ<d，显式2玩家4资源游戏严格满足UFτ却全部4态均有严格改善出口。因此该条件结构类保证精确PNE的统一强迫参数边界恰d并在端点取得。仅α1，不称α>1乘积边界必要，不是全类渐近非存在。 完整真实策略及全部边界以[正文9.14—9.17](../current/weighted_congestion/shared_side_truncated_potential.md)为准；零成本用MODEL弱不等式，不计算0/0。
 - **Dependencies：** MODEL、同权hub固定light Rosenthal边际、新凸导数重置增量RI、已证源增量SΔ及有限局部min；exact边界上半另依v3，下半依明示2玩家F=ax/G=xd构造。v3取α1给τ≥d上界；τ<d用t=(d−τ)/(2[τ(2^d−1)+d(τ−1)])及F=ax/G=xd构造，aligned态light严格改善、anti态hub严格改善，覆盖全部4态。 原稿自足，无外部均衡定理导入。
 - **Evidence：** RI提出者与旧作者交换角色；旧作者先仅据新lemma/精确statement独立重构，后攻击冻结新节，并给独立离散Fubini证明。主研究者独立复算密度、真实付款和2玩家全实参数边界，见[实际审查记录](../reviews/weighted_congestion/multisource_force_increment_review.md)末节。新两路Fraction代码、实际输入、参数/seed/版本/helper或baseline hash及冻结结果由原稿末端合同进入；finite只支持实际覆盖。
-- **Counterevidence / Objections：** 同权hub、唯一main source、二元同费副本和原UFτ承重；不提供一般游戏的强迫表示、弱强迫下的统一选态或异权hub桥。v1/v2精确身份和原冻结证据保留。ατ≥d仅充分；独立sharp边界只限α1，WC-TARGET仍OPEN，未外审/新颖性未认证。 exact反例仅破α1，不能把改善幅度趋1升级成固定α>1反例。无尚成立范围内fatal。
+- **Counterevidence / Objections：** 同权hub、唯一main source、二元同费副本和原UFτ承重；不提供一般游戏的强迫表示、弱强迫下的统一选态或异权hub桥。v1/v2精确身份和原冻结证据保留。ατ≥d仅充分；独立sharp边界只限α1，本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1，未外审/新颖性未认证。 exact反例仅破α1，不能把改善幅度趋1升级成固定α>1反例。无尚成立范围内fatal。
 - **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确身份；Value为重置增量预算及独立exact强迫边界；Mechanism见正文；Novelty/外审未认证；Ambition全类OPEN。
 - **Related Files：** 原稿第九节、新审查追加部分、两路reset增量程序/冻结结果，经`research/assets.json`与`research/catalog.json`接入；v1/v2证据保持。
 
@@ -979,7 +978,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Dependencies：** WC-MODEL, WC-HETEROGENEOUS-RESET-PRODUCT-DEFINITION, WC-MULTISOURCE-FORCING-INCREMENT-DEFINITION；非均匀前缀HRI把reset界改为κ[G(Y)−G(w)]；UFτ按整light付款，SΔ给KdΔF/τ，α≥R控制真实hub边际，有限局部最小点闭合。
 - **Evidence：** [自足正文](../current/weighted_congestion/shared_side_truncated_potential.md)、[先重构后冻结攻击](../reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md)及两路Fraction代码/冻结记录，实际参数、seed、版本和hash见正文审计合同。有限检查不替一般证明。
 - **Counterevidence / Objections：** 仍依R/K及UFτ；不是全类界。旧v1量词、正文和冻结证据保持；乘积域只称充分。 范围内没有尚成立fatal；未外审、新颖性未认证。
-- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - **Related Files：** research/current/weighted_congestion/shared_side_truncated_potential.md、research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md；代码/证据从正文和assets.json接入。
 
 ## WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1 — 降序侧势全局最小化保证的局部权比障碍
@@ -989,7 +988,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Dependencies：** WC-MODEL, WC-HETEROGENEOUS-RESET-PRODUCT-DEFINITION；完整对称线性游戏的精确计数势恒等式和全部最小点覆盖；ατ可另取足够大而坏最小点不变。
 - **Evidence：** [自足正文](../current/weighted_congestion/shared_side_truncated_potential.md)、[先重构后冻结攻击](../reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md)及两路Fraction代码/冻结记录，实际参数、seed、版本和hash见正文审计合同。有限检查不替一般证明。
 - **Counterevidence / Objections：** 只限制旧降序E的局部或全局最小化，连global-min间择优也无效；原游戏有exactPNE，不是全类非存在或其他势障碍。 范围内没有尚成立fatal；未外审、新颖性未认证。
-- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - **Related Files：** research/current/weighted_congestion/shared_side_truncated_potential.md、research/reviews/weighted_congestion/heterogeneous_hub_product_budget_review.md；代码/证据从正文和assets.json接入。
 
 ## WC-INCIDENCE-FOREST-EXACT-v1 — 潜在使用森林的精确纯均衡
@@ -999,7 +998,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Dependencies：** WC-MODEL, WC-INCIDENCE-TREE-PRICE-DEFINITION；固定阈值顺序的星形贪心负载随背景非增；两个条件稳定延续给当前价=p、冻结进入价≥p，沿树递归选态。
 - **Evidence：** [自足正文](../current/weighted_congestion/incidence_forest_private_reduction.md)、[先重构后冻结攻击](../reviews/weighted_congestion/incidence_forest_private_reduction_review.md)及两路Fraction代码/冻结记录，实际参数、seed、版本和hash见正文审计合同。有限检查不替一般证明。
 - **Counterevidence / Objections：** 仅森林，不声称全部改善终止；无任意有环核心的规模或全类倍率界，单环已有明确反例。 范围内没有尚成立fatal；未外审、新颖性未认证。
-- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - **Related Files：** research/current/weighted_congestion/incidence_forest_private_reduction.md、research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md；代码/证据从正文和assets.json接入。
 
 ## WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1 — 单核心玩家挂树的保次数私人成本提升
@@ -1009,7 +1008,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Dependencies：** WC-MODEL, WC-INCIDENCE-TREE-PRICE-DEFINITION, WC-INCIDENCE-FOREST-EXACT-v1；保留玩家当前成本与reduced相等、冻结others真实偏离成本≥reduced偏离成本；附属玩家exact稳定，无根分量独立精确选态。
 - **Evidence：** [自足正文](../current/weighted_congestion/incidence_forest_private_reduction.md)、[先重构后冻结攻击](../reviews/weighted_congestion/incidence_forest_private_reduction_review.md)及两路Fraction代码/冻结记录，实际参数、seed、版本和hash见正文审计合同。有限检查不替一般证明。
 - **Counterevidence / Objections：** 单向lift；不允许同一附属分量接触多个核心玩家或以核心资源为根，不保证最优倍率或原均衡反投影。 范围内没有尚成立fatal；未外审、新颖性未认证。
-- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - **Related Files：** research/current/weighted_congestion/incidence_forest_private_reduction.md、research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md；代码/证据从正文和assets.json接入。
 
 ## WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1 — 单环潜在使用图的二玩家精确均衡反例
@@ -1019,7 +1018,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Dependencies：** WC-MODEL, WC-INCIDENCE-TREE-PRICE-DEFINITION；逐四状态八偏离直接负载计算，证明森林存在定理不能直接扩大到任意单环。
 - **Evidence：** [自足正文](../current/weighted_congestion/incidence_forest_private_reduction.md)、[先重构后冻结攻击](../reviews/weighted_congestion/incidence_forest_private_reduction_review.md)及两路Fraction代码/冻结记录，实际参数、seed、版本和hash见正文审计合同。有限检查不替一般证明。
 - **Counterevidence / Objections：** 固定degree2、固定二玩家的exact存在反例，不是随次数增长下界或最坏单环阈值最优性。 范围内没有尚成立fatal；未外审、新颖性未认证。
-- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持WC-TARGET OPEN。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth限精确范围，Value为所写接口或边界，Mechanism如上，Ambition保持本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - **Related Files：** research/current/weighted_congestion/incidence_forest_private_reduction.md、research/reviews/weighted_congestion/incidence_forest_private_reduction_review.md；代码/证据从正文和assets.json接入。
 
 ## WC-CLASS-FRONT-ALLSTATE-COMPILER-v1 — 同权类前沿全覆盖的次数可控全状态编译
@@ -1049,5 +1048,53 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Dependencies：** MODEL、群内计数与单缺陷双取向消去、非负多项式平移、WC-R3-ODD-RING-POLYNOMIAL-ENVELOPE-v1及标量逐项式(S)；精确拓扑阈值等式另共同依赖WC-R3-ODD-RING-LOWER-v1。不导入新的外部定理。
 - **Evidence：** 独立审查者先仅据exact statement自行重构，再攻击v1/v2不同冻结hash；父逐式重算并核canonical差异。两套不互相导入的Fraction literal资源审计、内嵌输入/seed/版本/源码hash及冻结输出均由正文10.9连接。有限检查不替一般证明。
 - **Counterevidence / Objections：** 群内同权、每light私有双人side、同费动作副本及单奇环关联承重；不是MODEL全类上界。不声称某个有限实例取得拓扑sup，不改变旧证书/下界/单成员Claim。未入规范层的v1只给max{2,T_d}，本v2单列增强。奇数中心与singleton flexible、零形状的正分母、strict端点、mixed degree及共同费用删除已逐项攻击；所写范围无尚成立fatal。
-- **Status：** complete general-cohort topology threshold proof; independently reconstructed and exactly audited; unrefereed。Truth限该拓扑一般证明；Value闭合旧actual-cohort缺口；Mechanism为light稳定区间→单缺陷双标签→一致取向→成对light消去→正/反包络；Novelty与外审未认证；Ambition保留WC-TARGET OPEN。
+- **Status：** complete general-cohort topology threshold proof; independently reconstructed and exactly audited; unrefereed。Truth限该拓扑一般证明；Value闭合旧actual-cohort缺口；Mechanism为light稳定区间→单缺陷双标签→一致取向→成对light消去→正/反包络；Novelty与外审未认证；Ambition保留本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
 - **Related Files：** [正文](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)、[独立审查](../reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md)，规范代码/记录见正文10.9与assets.json。
+
+## WC-HEALTHY-LINEAR-SWEEP-v1 — INTERNALLY REVIEWED
+
+- 中文数学名称：健康近线性双扫环与全状态成本预算。
+- Exact Statement / Conclusion：每个整数p≥20，α=p/10、Q=p^4、m−1=ceil(log_2(p²))、N=p^(4m−5)的显式两动作循环窗口基体有strictα双同序环；真实最小环margin恰H/2，H=2^p−α；全部基体状态全部玩家成本≤B*=mQ^(m−1)2^p，ln(B*/(H/2))=O((lnp)^2)。
+- Objects / Domain / Quantifiers / Assumptions / Definitions：MODEL的真实资源费用成本与单人偏离；全部参数、资源关联及两个动作由[正文](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)第1—2节完整定义。一般α-margin指当前成本减α乘真实偏离成本。
+- Scope：仅基体的环和全状态成本上界；本条不声称无均衡。
+- Dependencies：WC-MODEL, WC-LINEAR-DEGREE-CONSTRUCTION；正文自足重建，不依赖外部存在定理。
+- Evidence：完整一般分析；两次独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节。
+- Counterevidence / Objections：W漏定义和B_actual未定义已字面修复并经最终hash核对；backward r+1、返回缺陷、原次数预算、非法状态单人修复均被直接攻击，未发现尚成立的fatal objection。
+- Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
+- Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。
+
+## WC-HEALTHY-FRONT-COVERAGE-v1 — INTERNALLY REVIEWED
+
+- 中文数学名称：健康窗口族的全部类前沿严格出口。
+- Exact Statement / Conclusion：每个整数p≥20，同一基体的每个product-of-class-front状态都有保持前沿的合法单clone偏离，真实α=p/10 margin≥η0=H/4。前沿指每类按0,...,N−1线性顺序至多一次相邻位变化。
+- Objects / Domain / Quantifiers / Assumptions / Definitions：MODEL的真实资源费用成本与单人偏离；全部参数、资源关联及两个动作由[正文](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)第1—2节完整定义。一般α-margin指当前成本减α乘真实偏离成本。
+- Scope：η0是统一下界，非真实min-max精确值；仅本显式族，不把任意strict sweep当全前沿覆盖。
+- Dependencies：WC-HEALTHY-LINEAR-SWEEP-v1；正文自足重建，不依赖外部存在定理。
+- Evidence：完整一般分析；两次独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节。
+- Counterevidence / Objections：W漏定义和B_actual未定义已字面修复并经最终hash核对；backward r+1、返回缺陷、原次数预算、非法状态单人修复均被直接攻击，未发现尚成立的fatal objection。
+- Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
+- Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。
+
+## WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1 — INTERNALLY REVIEWED
+
+- 中文数学名称：原次数内的线性倍率全状态非存在族。
+- Exact Statement / Conclusion：每个整数p≥2^20，存在本文显式有限MODEL游戏G_p，权重均正有理，资源费用均正有理系数乘x^p，每名玩家恰两个非空不交资源子集动作；每个纯状态都有合法单人偏离满足C_i(s)−(p/10)C_i(t_i,s_−i)≥H/8>0。
+- Objects / Domain / Quantifiers / Assumptions / Definitions：MODEL的真实资源费用成本与单人偏离；全部参数、资源关联及两个动作由[正文](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)第1—2节完整定义。一般α-margin指当前成本减α乘真实偏离成本。
+- Scope：全状态非存在证明；允许巨大人数、资源数、权比和系数，不作输入规模/复杂度或最优常数承诺。
+- Dependencies：WC-MODEL, WC-HEALTHY-LINEAR-SWEEP-v1, WC-HEALTHY-FRONT-COVERAGE-v1, WC-CLASS-FRONT-ALLSTATE-COMPILER-v1；正文自足重建，不依赖外部存在定理。
+- Evidence：完整一般分析；两次独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节。
+- Counterevidence / Objections：W漏定义和B_actual未定义已字面修复并经最终hash核对；backward r+1、返回缺陷、原次数预算、非法状态单人修复均被直接攻击，未发现尚成立的fatal objection。
+- Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
+- Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。
+
+## WC-MATCHING-LOG-UPPER-NEGATIVE-v1 — INTERNALLY REVIEWED
+
+- 中文数学名称：全类匹配对数上界的严格否定。
+- Exact Statement / Conclusion：对每个实C≥1与整数d0≥2，存在整数d≥d0和有限MODEL游戏，使每个纯状态s都有合法偏离C_i(s)>(Cd/ln d)C_i(t_i,s_−i)。选整数k≥max{20,ceil(20C),ceil(log_2d0)}、d=2^k即可。
+- Objects / Domain / Quantifiers / Assumptions / Definitions：MODEL的真实资源费用成本与单人偏离；全部参数、资源关联及两个动作由[正文](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)第1—2节完整定义。一般α-margin指当前成本减α乘真实偏离成本。
+- Scope：严格否定本题全类存在命题；不改变WC-TARGET v1原长期目标身份，不声称精确a*(d)。
+- Dependencies：WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1；正文自足重建，不依赖外部存在定理。
+- Evidence：完整一般分析；两次独立先重构后冻结攻击；作者及独立literal Fraction/整数核验，有限证据范围与hash见正文第10节。
+- Counterevidence / Objections：W漏定义和B_actual未定义已字面修复并经最终hash核对；backward r+1、返回缺陷、原次数预算、非法状态单人修复均被直接攻击，未发现尚成立的fatal objection。
+- Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
+- Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。

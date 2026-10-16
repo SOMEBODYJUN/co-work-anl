@@ -1,14 +1,14 @@
 # 研究总目录：先选问题，再读具体资产
 
-当前主攻是**加权原子拥塞博弈的普遍近似纯均衡门槛**。设施选址和顺序客户吸引是独立保留的研究线；它们有不同模型、量词和未解问题。完整的[中文资产名、文件位置、具体用途与状态依据](CATALOG.md)覆盖当前数学正文、问题、审查和已整合的拥塞核验资产。
+当前主要成果是**加权原子拥塞博弈的线性全状态非存在下界及Cd/ln d保证的严格否定**。设施选址和顺序客户吸引是独立保留的研究线；它们有不同模型、量词和未解问题。完整的[中文资产名、文件位置、具体用途与状态依据](CATALOG.md)覆盖当前数学正文、问题、审查和已整合的拥塞核验资产。
 
-交给未读仓库的 Pro：先读[自足接题材料与精确方法障碍](weighted_congestion_frontier/PRO_BRIEF.md)和[完整任务正文](weighted_congestion_frontier/prompts/PRO_ATTACK.md)；原数学、审查与证据由主材料中的冻结短指针按需追溯，不要求默认通读历史。
+交给未读仓库的研究者：先读[当前线性全状态否定证明](current/weighted_congestion/linear_degree_allstate_lower_bound.md)及其独立审查；解题前冻结整理可复用[自足接题材料与精确方法障碍](weighted_congestion_frontier/PRO_BRIEF.md)和[完整任务正文](weighted_congestion_frontier/prompts/PRO_ATTACK.md)；旧整理稿的OPEN状态由新否定结论取代，其余数学、审查与证据仍可按冻结短指针追溯，不要求默认通读历史。
 
 ## 我应该从哪里开始
 
 | 你要研究什么 | 首读与主要资产 | 当前真正缺口 |
 | --- | --- | --- |
-| 加权原子拥塞的普遍存在门槛 | [数学总述](current/weighted_congestion/README.md) → [精确模型](weighted_congestion_frontier/MODEL.md) → 奇环全状态下界、正局部证书包络、结构势和[依游戏可分序势障碍](current/weighted_congestion/separable_ordinal_obstruction.md) | 下界与全类上界仍有对数缺口；需要全类存在机制或更强非存在机制；[整数规范反例与闭端点](current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)只提供精确搜索接口；[空交反链核心](current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md#7-去包含支配与必选背景的空交反链核心)进一步把反例限制为人人至少两非空、无包含、空交策略，并给所有α≥1同时有效的单向lift；允许删玩家，不给规模界。 |
+| 加权原子拥塞的普遍存在门槛 | [数学总述](current/weighted_congestion/README.md) → [精确模型](weighted_congestion_frontier/MODEL.md) → [线性次数全状态下界与原题否定](current/weighted_congestion/linear_degree_allstate_lower_bound.md) → 正文所链两份独立审查及代码/冻结证据 | 本次Cd/ln d判定已严格否定：每d≥2^20无(d/10)-PNE族；全类门槛增长阶Θ(d)，精确常数/有限d值、外部评审和新颖性另待核查。 |
 | 非负共享负载响应的低阶表示 | [正占用核接口](current/positive_kernels/README.md) → 交互秩面 → 锐截断 → 非闭锥补全 | 固定正质量、完整Boolean表与正混合；一般动作签名及selector桥未建立，独立传感器实例已给 |
 | 共同目录双设施的尖锐稳定性 | [黄金比成果与阅读顺序](current/shared/README.md) → 主定理、完整证明、尖锐下界、算法 → 小目录复杂度 | 已有内部成果的外部审查与优先权；实例最优倍率 EPTAS 仍是候选义务 |
 | 异构目录双设施及单交叠边界 | [异构成果与阅读顺序](current/heterogeneous/README.md) → 一般目录候选、单交叠全长锐界、长回应环 | 一般异构上界的候选状态不能被单交叠定理覆盖 |
@@ -56,32 +56,3 @@
 [当前全仓路线](ROADMAP.md)列现在值得推进的义务；[入库规范](GROWTH.md)和[生产、读取、保存规则](REPOSITORY_GUIDE.md)决定新文件的位置。给新资产写具体名称、用途、精确范围和证据层级；完成相应核验后及时保存到 `main`。
 
 从仓库根运行 `python3 research/build_catalog.py --check`、`python3 research/build_map.py --check`、`python3 research/build_crosswalk.py --check` 和 `python3 research/check_assets.py`。这些检查负责目录和登记一致，不能充当数学证明。
-
-加权拥塞新增[两权类别双排序混合势](current/weighted_congestion/weight_bands/two_weight_order_blend.md)：不限制两类人数或权比的平方根次数存在界，附独立攻击与两份精确审计；全类多权问题仍开放。
-
-全类非势接口的两个准确边界：[择证平稳与循环支撑](current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)区分概率dual与全改善终止；[有向分叉强迫割均衡](current/weighted_congestion/directed_fanout_forcing_cut.md)排除唯一源、私有双人侧资源在UF下越过T_d的放大。二者均未完成全类判定。
-
-[循环窗口复制的真实近d改善环](current/weighted_congestion/cyclic_clone_improvement_cycles.md)将旧可分势障碍提升为任意全局全边下降势障碍，仍有全空精确PNE。[共同幂混合最小点障碍](current/weighted_congestion/common_power_mixture_obstruction.md)另直接排除指定连续目标族的全部最小点。全类存在性仍OPEN；环本身不能当无均衡；[锚定三元全状态锁定](current/weighted_congestion/anchored_cycle_lock.md)已将严格双轮环编译成无α-PNE，但新增次数依实例。[统一低泄漏锚定时钟预算的普适次数障碍](current/weighted_congestion/uniform_clock_budget_barrier.md)已证明满足现行统一预算的全部输入均有α ln q/q<α/(α+1)<1；负向前沿须改用实际时钟差、非统一预算或其他全状态机制；[三次锚定架构证书](current/weighted_congestion/anchored_clock_degree_barrier.md)已排除在指定基体上保持原degree的方案，未排常数倍degree。正向仍需选步或超出这些目标族的选态。
-
-[有限可动权类的三角排序势](current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)已给A_(d,k)隐式界，固定k为d^(1−1/k)，任意固定背景精确吸收、k个R窄簇损失R^d。d≥16且k≤ln d/lnln d的明确子类达到2d/ln d；无界可动类别时A趋d，唯一全类题仍OPEN。真正前沿已收缩为无界可动权类的选态桥或全状态增长反例，不再把固定背景或仅两类稠密cohort当未解接口。
-
-[有限次局部矩与全成本压缩](current/weighted_congestion/template_certificates/selector_local_moments.md)将签名接口细化为D维完整成本空间、≤D正单项式资源保真表示和≤D+1支撑dual；其仿射全签名刚性另表明：非全等权下，低degree成本不能保真拆成全小用户支持资源，即使提高次数。完整proper锥另可同时实现近d真实唯一坏环和完全暂态dual，任何dual暂态质量必须为正；这是已知两机制的同时化，不给任意selector方法。奇环缺陷择证另迫使任意α<2^d的dual同时覆盖全部移动者，两方向均有正质量，最小状态支撑恰2n；等权可行例已排除固定人数的局部补偿截断。真正未解仍是每个selector的moment hull与resource polar是否在统一倍率相交。[循环窗口前沿商与不同步反例](current/weighted_congestion/class_front_phase_quotient.md)提供相对phase表示，但类内clock不能自动给错位front出口，故负向仍需新同步/离front覆盖机制。两包均未完成唯一全类题。
-
-[共享侧资源截断势](current/weighted_congestion/shared_side_truncated_potential.md)把同权hub、unique-light/source、最坏负载UF子类扩到任意共享hub子集，给A_d≤2d/ln d；独立AS+B判据覆盖部分非UF实例。[实际时钟差分与预算](current/weighted_congestion/anchored_clock_actual_margins.md)给非统一clock的O(n²)充分LP、必要总预算和κ稳定条件，固定四玩家43次证书优于原uniform91选值但不称最优。原全三元、统一M架构另有80次全状态证书却不满足(U)，故(U)对原架构也非必要；这仍不是增长族。实际接口另证：固定人数/权谱/α/纯三次亦可用private成本压低环余量，阻止任意预给degree cap的保环三元clock；健康余量增长输入仍未排除。真正缺口仍是无界可动权类的全类选态、跨source/预算外反馈或次数效率可增长的全状态族。
-
-[共占图高度与实际改善环必要链](current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)把三角势参数从全局权类数放宽为同一降权共占图的路径高度；全局权种数可无界。实际严格改善闭词也必须跨越相应高度门槛，各弧可来自不同端点。仍无全类高度控制；动态换秩改变势，缺少高链SCC出口或瞬态dual。
-
-跨源反馈现在有准确的[同权hub平方根子类界](current/weighted_congestion/shared_side_truncated_potential.md)：UFmulti按side全部light总权计，真实Rosenthal重置预算覆盖任意跨source分享。另有[完整成本小支持近似失真下界](current/weighted_congestion/template_certificates/selector_local_moments.md)及[任意次数类内三元clock的通用compiler反例](current/weighted_congestion/class_front_phase_quotient.md)；各为独立新Claim，旧结果身份保留。它们关闭具体桥或错误归约，全类Cd/ln d题仍OPEN。
-
-[跨源共享侧资源的重置增量预算](current/weighted_congestion/shared_side_truncated_potential.md)第九节的`WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3`在同权hub、唯一main source、二元同费副本及原UFτ下给ατ≥d的α-PNE，允许τ≥1；d≥16取τ=ln d即得d/ln d。独立`WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1`又证明：该结构类保证精确PNE的强迫边界恰τ=d，任1≤τ<d均有2玩家全部4态反例。sharp只限α1，不称整个乘积域必要。v1/v2精确身份及原冻结证据保留，新RI经独立重构/冻结攻击和双路Fraction核验。全类仍缺低于对数级强迫或强迫失败时的稳定light/反馈控制、异权hub桥及无界高度非势选态，WC-TARGET保持OPEN。
-
-
-[局部异权主玩家的共享侧排序势](current/weighted_congestion/shared_side_truncated_potential.md)第十节在UFhet下以R控制真实hub边际、K控制跨source重置；α≥R且(α−1)²≥Kd给全anti均衡，可含无界全局权跨度。先查局部比和UF，再读独立攻击及双路代码；不将该条件界作为全类上界。
-
-[异权重置增量与全局最小点边界](current/weighted_congestion/shared_side_truncated_potential.md)第十一节在UFhetτ下将条件加强为α≥R、ατ≥Kd；新版本保留旧身份。线性无light反例又证明同一排序势全部全局最小点均可有趋近R的真实改善，不能仅改取global min消R。独立审查及两路Fraction证据从正文11.5进入。
-
-[潜在使用森林与单玩家挂树私人成本归约](current/weighted_congestion/incidence_forest_private_reduction.md)给任意正权、任意有限资源子集策略和非负非减费用的exactPNE；只在单核心玩家处附着的树可换私有常数，保多项式次数并将所有α≥1的reduced PNE用同一lift提升。单环二玩家例的最佳因子72/71说明森林不能无证扩域。先读两个精确合同，再读冻结审查/代码/证据。全类仍缺无界局部权比、非强迫反馈或有环核心的统一选态。
-
-[全部同权类前沿出口到全状态的条件编译](current/weighted_congestion/class_front_phase_quotient.md#条件编译接口全部同权类前沿出口到全状态非存在)把非存在的全覆盖义务转移到product-front，时钟D依α、类宽及B/η而无额外跨类权比；分离预算含α1无余量损失。前提不由strict sweep推出，仍缺次数效率足够的增长输入。
-
-[固定主玩家的无强迫轻响应接口](current/weighted_congestion/fixed_hub_light_threshold_response.md)在每side仅一light时给显式阈值序势和每名至多一次strict移动的删除构造，允许异权及UF失败；存在/FIP本身已核为Milchtaich1996已知两策略定理特例，不作新存在结果。多light反边界复用旧例；真实hub偏离冻结lights，响应重选尚无兼容预算，不能把此接口当全类均衡。

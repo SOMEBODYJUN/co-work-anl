@@ -4,37 +4,10 @@
 
 | 研究线 | Exact Statement 的权威位置 | 当前前沿 |
 | --- | --- | --- |
-| 加权拥塞 WC-TARGET v1 | [MODEL](research/weighted_congestion_frontier/MODEL.md)、[精确账本](research/weighted_congestion_frontier/CLAIMS.md)、[现行证明](research/current/weighted_congestion/README.md) | 奇环下界 T_d∼d/ln d；全类普遍上界仍为已核实文献 d。目标 OPEN |
+| 加权拥塞 WC-TARGET v1 | [MODEL](research/weighted_congestion_frontier/MODEL.md)、[精确账本](research/weighted_congestion_frontier/CLAIMS.md)、[现行证明](research/current/weighted_congestion/README.md) | 每d≥2^20无(d/10)-PNE的全状态族，严格否定Cd/ln d保证；增长阶Θ(d)，最优常数/有限d值未定 |
 | 双设施共同/异构目录 | [逐命题登记](research/current/claims.md)、[共同目录](research/current/shared/README.md)、[异构目录](research/current/heterogeneous/README.md) | 共同目录尖锐界、稀疏异构与复杂度结果各有精确输入类；一般异构 2 保留候选 |
 | 任意设施数 | [一般因子 2](research/current/multi_facility/uniform_two.md)、[改善过程](research/current/multi_facility/greedy_box_global_progress.md)、[高效构造义务](research/questions/greedy_box_polytime.md) | 存在性/有限构造已内部证明；一般位多项式构造 OPEN |
 | 顺序客户吸引 | [分支精确地图](research/current/customer_attraction/README.md)与全仓逐命题登记 | 一般半覆盖 OPEN；子类上界和辅助桥反例分别保存 |
 
-新增 `WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2`：一般同权cohort/同费副本奇环在无UF假设下均有T_d-PNE，配合既有下界，实际拓扑阈值恰T_d；[精确账本](research/weighted_congestion_frontier/CLAIMS.md)及[正文第10节](research/current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)给完整对象和独立审查。全类仍OPEN。
 
-Paper Fact、解释、猜想、观察、计算证据和内部可用记录必须分开。完整证明、独立审查、软件状态、外部审查和新颖性各自记录。尚成立的致命 objection 阻止升级。
-
-跨主题的 `PK-INTERACTION-RANK-FACE-v1`、`PK-SHARP-FORBIDDEN-MASS-v1` 与 `PK-OCCUPANCY-CONE-CLOSURE-v1` 见[正占用核接口](research/current/positive_kernels/occupancy_rank_faces.md)和全仓精确账本。三项分别为表示过滤、锐单核预算与闭包定理，不是WC全类存在界。
-
-[统一低泄漏锚定时钟预算的普适次数障碍](research/current/weighted_congestion/uniform_clock_budget_barrier.md)为新增限定方法命题；精确ID与全部量词在主题账本，不改变WC-TARGET身份。
-
-[有限次局部成本与择证矩接口](research/current/weighted_congestion/template_certificates/selector_local_moments.md)登记保全部成本的D维压缩、小支撑dual及完全暂态parity机制；[循环窗口前沿商](research/current/weighted_congestion/class_front_phase_quotient.md)另登记精确表示与不同步出口反例。具体量词及假设修复只由主题账本和审查给出，均不升级WC-TARGET。
-
-共享侧资源与真实时钟另有三个精确ID：`WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1`、`WC-SHARED-SIDE-BUDGET-POTENTIAL-v1`和`WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1`，见[主题精确账本](research/weighted_congestion_frontier/CLAIMS.md)。前两者区分UF子类与直接AS+B判据；后者区分充分LP、必要预算和有限43次证书。均未升级WC-TARGET。
-
-共占高度扩展另有 `WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1` 与 `WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1`，见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)及原三角势正文第11–13节。两个新ID分别为潜在图结构存在界和实际严格闭词必要链；未改旧权类ID。
-
-[异权仿射全签名成本射线刚性](research/current/weighted_congestion/template_certificates/selector_local_moments.md)新增独立Claim：非全等权时全成本保真不能缩小全部资源的潜在用户支持，任意提高有限次数仍不行。原例有精确PNE；不升级全类存在/非存在状态。
-
-另首登三个独立ID：`WC-MULTISOURCE-SHARED-SIDE-ROSENTHAL-v1`（同权hub跨源UF平方根存在界）、`WC-APPROXIMATE-SUPPORT-DISTORTION-v1`（允许改权的完整成本近似小支持失真）、`WC-CLASS-INTERNAL-CLOCK-COMPILER-OBSTRUCTION-v1`（固定有理strict sweep及任意次数类内三元compiler反例）。精确对象、全部假设和证据见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)，不改旧Claim或WC-TARGET。
-
-实际时钟余量依赖与完整proper锥必要暂态质量另有独立精确身份，见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)；不改变WC-TARGET。
-
-新增独立ID `WC-HETEROGENEOUS-HUB-SORTED-SIDE-v1`：[共享侧资源正文第十节](research/current/weighted_congestion/shared_side_truncated_potential.md)给局部异权R/K条件下的UFhet均衡；精确全部量词和审查状态在主题账本。没有改写旧同权身份或WC-TARGET。
-
-分离倍率的当前最强版 `WC-MULTISOURCE-FORCING-TARGET-TRADEOFF-v3` 以UFτ和ατ≥d给所写同权子类α-PNE（τ≥1）；独立`WC-SHARED-SIDE-EXACT-FORCING-THRESHOLD-v1`给该结构类精确PNE的τ=d锐边界，lower覆盖全部4态，只限α1。v1/v2身份、完整量词与冻结审查保持在[主题账本](research/weighted_congestion_frontier/CLAIMS.md)；全类目标OPEN。
-
-[异权乘积预算及森林私人成本归约的新精确身份](research/weighted_congestion_frontier/CLAIMS.md)：`WC-HETEROGENEOUS-HUB-SORTED-SIDE-v2`保留R/K与UFτ，`WC-SORTED-SIDE-GLOBAL-MINIMUM-R-BARRIER-v1`限制同一势的全部global minima；`WC-INCIDENCE-FOREST-EXACT-v1`与`WC-ONE-PLAYER-TREE-PRIVATE-LIFT-v1`分别给森林exact及保degree固定提升，`WC-INCIDENCE-UNICYCLE-COUNTEREXAMPLE-v1`给单环准确边界。一般证明、冻结攻击与有限证据分层，主目标不变。
-
-新增条件接口 `WC-CLASS-FRONT-ALLSTATE-COMPILER-v1`：全部同权类前沿出口可编译成全状态无α-PNE，次数预算无独立跨类权比项；前提、精化及真实状态见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)。没有增长输入或全类结论。
-
-`WC-FIXED-HUB-LIGHT-THRESHOLD-RESPONSE-v1`记录[固定hub轻响应的显式重构](research/current/weighted_congestion/fixed_hub_light_threshold_response.md)：存在/FIP是Milchtaich1996已知特例，所存阈值势/单遍接口经独立攻击；仅固定外场，不改全类OPEN。
+本次四个新精确身份为`WC-HEALTHY-LINEAR-SWEEP-v1`、`WC-HEALTHY-FRONT-COVERAGE-v1`、`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`、`WC-MATCHING-LOG-UPPER-NEGATIVE-v1`；各自量词、依赖、边界和完整证据链见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)及[自足正文](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md)。WC-TARGET v1原身份保留，其他结构定理/候选不因本题完成升级。

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "共同研究：设施选址、顺序客户吸引与加权拥塞的数学关系",
-  "updated": "2026-10-10",
+  "updated": "2026-10-16",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -3987,11 +3987,12 @@
       "kind": "obligation",
       "track": "weighted_congestion",
       "title": "待解：跨资源或依赖状态的稠密权尺度存在性桥",
-      "detail": "Uniform power-multiplier subset comparisons cannot handle arbitrary dense scales; a main-goal route must change the certificate or use additional full-deviation structure.",
+      "detail": "无条件稠密权尺度o(d)存在性桥已被线性全状态族否定；原power-multiplier限制仍只约束原方法，结构子类工具可继续复用。",
       "refs": [
-        "research/current/weighted_congestion/power_bridge.md"
+        "research/current/weighted_congestion/power_bridge.md",
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md"
       ],
-      "status": "open; no all-class o(d) result"
+      "status": "unconditional o(d) bridge refuted; conditional tools retain their scope"
     },
     {
       "id": "WC-SOURCE-FORMULA",
@@ -4617,12 +4618,13 @@
       "kind": "obligation",
       "track": "weighted_congestion",
       "title": "潜在尾部与固定低泄漏以外的全类选态义务",
-      "detail": "A参数在两权级族无界；固定端点低漏的step阈值仅√d。仍须用实际占用、异质泄漏、重开早组或全状态非势机制判定全类目标。",
+      "detail": "原“全类存在或更强非存在”的判定义务已由线性全状态族负向解决；潜在尾部与DAG检测障碍仍限准确合同。",
       "refs": [
         "research/current/weighted_congestion/weight_bands/ordered_tail_freezing.md",
-        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md"
+        "research/current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md",
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md"
       ],
-      "status": "OPEN"
+      "status": "resolved by explicit allstate negative family"
     },
     {
       "id": "WC-SELECTOR-UNIT-SPEED-STATIONARY-BARRIER-v1",
@@ -5954,12 +5956,13 @@
       "kind": "obligation",
       "track": "weighted_congestion",
       "title": "无界局部hub比和强迫之外的全类选态义务",
-      "detail": "局部R/K条件界不提供MODEL全类统一C,d0；需消去无界局部比/强迫合同，或以新机制给次数效率增长的全状态反例。单副本排序边际锐式不决定存在性。",
+      "detail": "新同权类时钟/循环窗口族解决原全类判定；异权hub的特定结构最优保证仍可单独研究，不能再要求推出全类o(d)保证。",
       "refs": [
         "research/current/weighted_congestion/shared_side_truncated_potential.md",
-        "research/weighted_congestion_frontier/ACCEPTANCE.md"
+        "research/weighted_congestion_frontier/ACCEPTANCE.md",
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md"
       ],
-      "status": "open"
+      "status": "resolved negatively for the universal target; subclass questions remain"
     },
     {
       "id": "WC-SOURCE-SCALAR-PARAMETERS",
@@ -6256,11 +6259,101 @@
       "kind": "obligation",
       "track": "weighted_congestion",
       "title": "高倍率全前沿覆盖与余量受控的增长输入",
-      "detail": "充分效率目标：α→∞、p=O(α)、ln(α²BL/η)=O(α)并满足FC1，才可由编译q=O(α)推出αlnq/q无界；尚无此族。",
+      "detail": "既有条件编译所缺增长输入现由WC-HEALTHY-FRONT-COVERAGE-v1与成本预算提供；ln(α²B*L/η0)=O(log²p)，p≥2^20直接保持D=p。",
       "refs": [
-        "research/current/weighted_congestion/class_front_phase_quotient.md"
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md"
       ],
-      "status": "open"
+      "status": "closed by explicit healthy front family"
+    },
+    {
+      "id": "WC-LINEAR-DEGREE-CONSTRUCTION",
+      "kind": "construction",
+      "track": "weighted_congestion",
+      "title": "健康循环窗口与同类锚定时钟的显式有理构造",
+      "detail": "p/10倍率；Q=p^4，m−1=ceil(log_2p²)，N=p^(4m−5)；邻接反向Q窗口和正向全返回，类内010/101时钟实际次数p。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md"
+      ],
+      "status": "explicit finite rational construction"
+    },
+    {
+      "id": "WC-HEALTHY-LINEAR-SWEEP-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "健康近线性双扫环与全状态成本预算",
+      "detail": "每个整数p≥20，α=p/10、Q=p^4、m−1=ceil(log_2(p²))、N=p^(4m−5)的显式两动作循环窗口基体有strictα双同序环；真实最小环margin恰H/2，H=2^p−α；全部基体状态全部玩家成本≤B*=mQ^(m−1)2^p，ln(B*/(H/2))=O((lnp)^2)。 仅基体的环和全状态成本上界；本条不声称无均衡。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_clean_attack.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_full_phase_attack.md"
+      ],
+      "status": "complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed"
+    },
+    {
+      "id": "WC-HEALTHY-FRONT-COVERAGE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "健康窗口族的全部类前沿严格出口",
+      "detail": "每个整数p≥20，同一基体的每个product-of-class-front状态都有保持前沿的合法单clone偏离，真实α=p/10 margin≥η0=H/4。前沿指每类按0,...,N−1线性顺序至多一次相邻位变化。 η0是统一下界，非真实min-max精确值；仅本显式族，不把任意strict sweep当全前沿覆盖。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_clean_attack.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_full_phase_attack.md"
+      ],
+      "status": "complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed"
+    },
+    {
+      "id": "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "原次数内的线性倍率全状态非存在族",
+      "detail": "每个整数p≥2^20，存在本文显式有限MODEL游戏G_p，权重均正有理，资源费用均正有理系数乘x^p，每名玩家恰两个非空不交资源子集动作；每个纯状态都有合法单人偏离满足C_i(s)−(p/10)C_i(t_i,s_−i)≥H/8>0。 全状态非存在证明；允许巨大人数、资源数、权比和系数，不作输入规模/复杂度或最优常数承诺。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_clean_attack.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_full_phase_attack.md"
+      ],
+      "status": "complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed"
+    },
+    {
+      "id": "WC-MATCHING-LOG-UPPER-NEGATIVE-v1",
+      "kind": "claim",
+      "track": "weighted_congestion",
+      "title": "全类匹配对数上界的严格否定",
+      "detail": "对每个实C≥1与整数d0≥2，存在整数d≥d0和有限MODEL游戏，使每个纯状态s都有合法偏离C_i(s)>(Cd/ln d)C_i(t_i,s_−i)。选整数k≥max{20,ceil(20C),ceil(log_2d0)}、d=2^k即可。 严格否定本题全类存在命题；不改变WC-TARGET v1原长期目标身份，不声称精确a*(d)。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_clean_attack.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_full_phase_attack.md"
+      ],
+      "status": "complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed"
+    },
+    {
+      "id": "WC-LINEAR-DEGREE-AUDITS",
+      "kind": "evidence",
+      "track": "weighted_congestion",
+      "title": "线性次数全状态构造的多路精确有限核验",
+      "detail": "独立literal资源、两向端点、扭转平移、非法状态修复、巨大实际参数幂和及百万次数整数预算；有限证据不代替一般证明。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_linear_degree_front_cover.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_sweep.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_front.py",
+        "tests/audits/weighted_congestion/cyclic_clone/clean_attack_linear_degree.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_front_cover.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_sweep_independent.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_front_independent.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_clean_attack.json",
+        "examples/weighted_congestion/cyclic_clone/linear_degree_front_audit.json",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_allphases.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_allphases_independent.json"
+      ],
+      "status": "finite exact audits passed"
     }
   ],
   "hyperedges": [
@@ -14795,11 +14888,225 @@
         "WC-CLASS-FRONT-ALLSTATE-COMPILER-v1"
       ],
       "conclusion": "WC-CLASS-FRONT-GROWTH-INPUT-OBLIGATION",
-      "statement": "条件编译提供次数公式；需要独立高倍率front全覆盖与B/η增长控制，不能由strict sweep或小fixture替代。",
+      "statement": "strict sweep和小fixture不自动给前提；新显式健康族另证明全部前沿覆盖和增长预算，故原缺口已由新证明闭合。",
       "refs": [
-        "research/current/weighted_congestion/class_front_phase_quotient.md"
+        "research/current/weighted_congestion/class_front_phase_quotient.md",
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md"
       ],
-      "status": "open obligation"
+      "status": "conditional-interface limitation; growth obligation now closed"
+    },
+    {
+      "id": "DERIVE-WC-HEALTHY-LINEAR-SWEEP-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-LINEAR-DEGREE-CONSTRUCTION"
+      ],
+      "conclusion": "WC-HEALTHY-LINEAR-SWEEP-v1",
+      "statement": "每个整数p≥20，α=p/10、Q=p^4、m−1=ceil(log_2(p²))、N=p^(4m−5)的显式两动作循环窗口基体有strictα双同序环；真实最小环margin恰H/2，H=2^p−α；全部基体状态全部玩家成本≤B*=mQ^(m−1)2^p，ln(B*/(H/2))=O((lnp)^2)。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_clean_attack.md"
+      ],
+      "status": "complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-HEALTHY-FRONT-COVERAGE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-HEALTHY-LINEAR-SWEEP-v1"
+      ],
+      "conclusion": "WC-HEALTHY-FRONT-COVERAGE-v1",
+      "statement": "每个整数p≥20，同一基体的每个product-of-class-front状态都有保持前沿的合法单clone偏离，真实α=p/10 margin≥η0=H/4。前沿指每类按0,...,N−1线性顺序至多一次相邻位变化。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_clean_attack.md"
+      ],
+      "status": "complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MODEL",
+        "WC-HEALTHY-LINEAR-SWEEP-v1",
+        "WC-HEALTHY-FRONT-COVERAGE-v1",
+        "WC-CLASS-FRONT-ALLSTATE-COMPILER-v1"
+      ],
+      "conclusion": "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1",
+      "statement": "每个整数p≥2^20，存在本文显式有限MODEL游戏G_p，权重均正有理，资源费用均正有理系数乘x^p，每名玩家恰两个非空不交资源子集动作；每个纯状态都有合法单人偏离满足C_i(s)−(p/10)C_i(t_i,s_−i)≥H/8>0。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_clean_attack.md"
+      ],
+      "status": "complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed"
+    },
+    {
+      "id": "DERIVE-WC-MATCHING-LOG-UPPER-NEGATIVE-v1",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1"
+      ],
+      "conclusion": "WC-MATCHING-LOG-UPPER-NEGATIVE-v1",
+      "statement": "对每个实C≥1与整数d0≥2，存在整数d≥d0和有限MODEL游戏，使每个纯状态s都有合法偏离C_i(s)>(Cd/ln d)C_i(t_i,s_−i)。选整数k≥max{20,ceil(20C),ceil(log_2d0)}、d=2^k即可。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md",
+        "research/reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_clean_attack.md"
+      ],
+      "status": "complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed"
+    },
+    {
+      "id": "CHECK-WC-HEALTHY-LINEAR-SWEEP-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-LINEAR-DEGREE-AUDITS"
+      ],
+      "conclusion": "WC-HEALTHY-LINEAR-SWEEP-v1",
+      "statement": "只核查实际有限参数、恒等式与实现，不由枚举推全部参数证明。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_linear_degree_front_cover.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_sweep.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_front.py",
+        "tests/audits/weighted_congestion/cyclic_clone/clean_attack_linear_degree.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_front_cover.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_sweep_independent.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_front_independent.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_clean_attack.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-HEALTHY-FRONT-COVERAGE-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-LINEAR-DEGREE-AUDITS"
+      ],
+      "conclusion": "WC-HEALTHY-FRONT-COVERAGE-v1",
+      "statement": "只核查实际有限参数、恒等式与实现，不由枚举推全部参数证明。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_linear_degree_front_cover.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_sweep.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_front.py",
+        "tests/audits/weighted_congestion/cyclic_clone/clean_attack_linear_degree.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_front_cover.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_sweep_independent.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_front_independent.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_clean_attack.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-LINEAR-DEGREE-AUDITS"
+      ],
+      "conclusion": "WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1",
+      "statement": "只核查实际有限参数、恒等式与实现，不由枚举推全部参数证明。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_linear_degree_front_cover.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_sweep.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_front.py",
+        "tests/audits/weighted_congestion/cyclic_clone/clean_attack_linear_degree.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_front_cover.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_sweep_independent.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_front_independent.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_clean_attack.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CHECK-WC-MATCHING-LOG-UPPER-NEGATIVE-v1",
+      "kind": "checks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-LINEAR-DEGREE-AUDITS"
+      ],
+      "conclusion": "WC-MATCHING-LOG-UPPER-NEGATIVE-v1",
+      "statement": "只核查实际有限参数、恒等式与实现，不由枚举推全部参数证明。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_linear_degree_front_cover.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_sweep.py",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_front.py",
+        "tests/audits/weighted_congestion/cyclic_clone/clean_attack_linear_degree.py",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_front_cover.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_sweep_independent.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_front_independent.json",
+        "evidence/runs/weighted_congestion/cyclic_clone/linear_degree_clean_attack.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "CLOSE-WC-CLASS-FRONT-GROWTH-INPUT",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-HEALTHY-LINEAR-SWEEP-v1",
+        "WC-HEALTHY-FRONT-COVERAGE-v1"
+      ],
+      "conclusion": "WC-CLASS-FRONT-GROWTH-INPUT-OBLIGATION",
+      "statement": "独立给出全部front出口及健康预算，完成既有条件接口缺失的增长输入。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md"
+      ],
+      "status": "closed"
+    },
+    {
+      "id": "RESOLVE-WC-R2-DENSE-SCALE-GAP",
+      "kind": "attacks",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MATCHING-LOG-UPPER-NEGATIVE-v1"
+      ],
+      "conclusion": "WC-R2-DENSE-SCALE-GAP",
+      "statement": "全类Cd/ln d存在命题由严格全状态反例否定；保留原子类/方法身份，关闭旧全类判定义务。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md"
+      ],
+      "status": "resolved in the negative"
+    },
+    {
+      "id": "RESOLVE-WC-TAIL-AND-DAG-UNIFORM-GAP",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MATCHING-LOG-UPPER-NEGATIVE-v1"
+      ],
+      "conclusion": "WC-TAIL-AND-DAG-UNIFORM-GAP",
+      "statement": "全类Cd/ln d存在命题由严格全状态反例否定；保留原子类/方法身份，关闭旧全类判定义务。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md"
+      ],
+      "status": "resolved in the negative"
+    },
+    {
+      "id": "RESOLVE-WC-HUB-UNBOUNDED-LOCAL-RATIO-GAP",
+      "kind": "derives",
+      "track": "weighted_congestion",
+      "premises": [
+        "WC-MATCHING-LOG-UPPER-NEGATIVE-v1"
+      ],
+      "conclusion": "WC-HUB-UNBOUNDED-LOCAL-RATIO-GAP",
+      "statement": "全类Cd/ln d存在命题由严格全状态反例否定；保留原子类/方法身份，关闭旧全类判定义务。",
+      "refs": [
+        "research/current/weighted_congestion/linear_degree_allstate_lower_bound.md"
+      ],
+      "status": "resolved in the negative"
     }
   ]
 }

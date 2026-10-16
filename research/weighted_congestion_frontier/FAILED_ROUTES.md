@@ -1,5 +1,13 @@
 # 失败机制与可回收结果
 
+当前原题已由[线性次数全状态族](../current/weighted_congestion/linear_degree_allstate_lower_bound.md)严格否定。下列旧障碍各自范围仍成立；不能把它们扩大为新类内架构的不可能性。
+
+## 原题匹配上界及旧前沿缺口的关闭
+
+尝试从奇环T_d∼d/ln d下界猜测全类同阶存在上界，缺失的是任意权谱/策略族的统一选态。新显式族对每整数d≥2^20的每个纯状态给strict d/10出口，故准确否定全类o(d)保证，特别是否定本题Cd/ln d命题；不是仅证明某个候选势失效。可回收全部子类势、奇环精确阈值与择证表示；重试全类肯定命题必须改变模型、参数范围或近似量级。
+
+同类clock路线先前失败在未经证明的“strict sweep自动覆盖所有不同步前沿”。新专用健康参数并未使用该错误推论：独立证明短邻相位差或heavy端点出口，累计短差再由full-return按parity给出口，且B*/η0=exp(O(log²d))。类内三元clock只有2/3泄漏，原次数预算在d≥2^20闭合。旧稳定front反例与全局极差时钟统一预算障碍均保留；只关闭本专用增长输入缺口，不把通用strict-sweep编译断言恢复为真。
+
 | 尝试与关键机制 | 具体失败或限制 | 排除范围、回收与重试条件 |
 | --- | --- | --- |
 | 奇环所有 aligned light 强制偏离，再用 odd hub 覆盖 | [精确 T_d 包络](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)限制全部这套正测试，多项式混合不扩大 | 证书上限本身仍非存在证明；但新增[第10节](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)用稳定区间/双取向/平移消去独立证明一般cohort实际阈值恰T_d。该同权同费奇环内即使放弃UF也不能放大；需改变承重拓扑/权/费用合同 |

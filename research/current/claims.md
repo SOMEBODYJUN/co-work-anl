@@ -571,6 +571,15 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | WC-ODD-RING-GENERAL-COHORT-ACTUAL-UPPER-v2 | 每个d≥2、奇m≥3、n_i≥1、正实hub权u_i与群内共同light权v_i，任意同费动作副本及群内同费side、非负系数degree≤d多项式F_i/G_i（含零）的一般cohort奇环均有T_d-PNE；不要求UF。T_d=max_(R>1)[R(1+R)^d+1]/[(1+R)^d+R^(d+1)]。结合既有每α<T_d严格反例，该拓扑的普遍存在阈值恰T_d；T_d<d/ln d，故仅本拓扑C=1,d0=2。 | complete general-cohort topology threshold proof; independently reconstructed and exactly audited; unrefereed；[正文第10节](weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)、[独立重构与攻击](../reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md)。群内同权、每light私有双人side、同费动作副本及单奇环关联承重；不是MODEL全类上界。不声称某个有限实例取得拓扑sup，不改变旧证书/下界/单成员Claim。未入规范层的v1只给max{2,T_d}，本v2单列增强。 |
 
+## 加权拥塞：线性次数的全状态下界与本题否定
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| WC-HEALTHY-LINEAR-SWEEP-v1 | 每个整数p≥20，α=p/10、Q=p^4、m−1=ceil(log_2(p²))、N=p^(4m−5)的显式两动作循环窗口基体有strictα双同序环；真实最小环margin恰H/2，H=2^p−α；全部基体状态全部玩家成本≤B*=mQ^(m−1)2^p，ln(B*/(H/2))=O((lnp)^2)。 | 仅基体的环和全状态成本上界；本条不声称无均衡。 | [自足正文](weighted_congestion/linear_degree_allstate_lower_bound.md)、两份先重构后攻击及四路精确审计见正文第10节；完整一般证明，内部已审，外审/新颖性未认证。 |
+| WC-HEALTHY-FRONT-COVERAGE-v1 | 每个整数p≥20，同一基体的每个product-of-class-front状态都有保持前沿的合法单clone偏离，真实α=p/10 margin≥η0=H/4。前沿指每类按0,...,N−1线性顺序至多一次相邻位变化。 | η0是统一下界，非真实min-max精确值；仅本显式族，不把任意strict sweep当全前沿覆盖。 | [自足正文](weighted_congestion/linear_degree_allstate_lower_bound.md)、两份先重构后攻击及四路精确审计见正文第10节；完整一般证明，内部已审，外审/新颖性未认证。 |
+| WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1 | 每个整数p≥2^20，存在本文显式有限MODEL游戏G_p，权重均正有理，资源费用均正有理系数乘x^p，每名玩家恰两个非空不交资源子集动作；每个纯状态都有合法单人偏离满足C_i(s)−(p/10)C_i(t_i,s_−i)≥H/8>0。 | 全状态非存在证明；允许巨大人数、资源数、权比和系数，不作输入规模/复杂度或最优常数承诺。 | [自足正文](weighted_congestion/linear_degree_allstate_lower_bound.md)、两份先重构后攻击及四路精确审计见正文第10节；完整一般证明，内部已审，外审/新颖性未认证。 |
+| WC-MATCHING-LOG-UPPER-NEGATIVE-v1 | 对每个实C≥1与整数d0≥2，存在整数d≥d0和有限MODEL游戏，使每个纯状态s都有合法偏离C_i(s)>(Cd/ln d)C_i(t_i,s_−i)。选整数k≥max{20,ceil(20C),ceil(log_2d0)}、d=2^k即可。 | 严格否定本题全类存在命题；不改变WC-TARGET v1原长期目标身份，不声称精确a*(d)。 | [自足正文](weighted_congestion/linear_degree_allstate_lower_bound.md)、两份先重构后攻击及四路精确审计见正文第10节；完整一般证明，内部已审，外审/新颖性未认证。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
