@@ -598,6 +598,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-SIMPLE-SUPPORT-GAP-v1 | 每k≥4路径终端两树：每任务恰2选、每机器对至多1任务、OPT=2−1/k、配置T₀=1+1/k可行；此子类sup gap=2。 | 同正文§4，已内部独立审查；已知障碍支撑简化，不是算法困难性。 |
 | UM-ESCAPE-MATCH-GAP-v1 | 每k≥4，共享z成本1/2逃逸族OPT=2−1/k，配置T₀可行且GHMR首轮零删边；∀固定ε>0能击穿相对T的(2−ε)合同。 | 同正文§5，核心/星2选、占位3选；不排除联合强化或OPT相对算法。 |
 
+## 不相关并行机：成束相容与计数闭包
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-BUNDLE-MOMENT-v1 | For every k>=4 the canonical VW two-tree instance has strengthened configuration threshold exactly 2-1/k after adding the aggregate second-moment complement equation for each terminal bundle. | [自足正文](unrelated_machines/bundle_coupling_subdivision_barrier.md)、[冻结攻击](../reviews/unrelated_machines/bundle_subdivision_review.md)；一般主目标仍OPEN，新颖性未认证。 |
+| UM-CARDINALITY-CLOSURE-v1 | For all legal P and rational T>=0 the synchronous forced-residual cardinality filter preserves every T-feasible schedule and terminates in deterministic bit-polynomial time. Its monotone integer-scaled bisection gives a lower bound B<=OPT; acceptance is not feasibility. | [自足正文](unrelated_machines/bundle_coupling_subdivision_barrier.md)、[冻结攻击](../reviews/unrelated_machines/bundle_subdivision_review.md)；一般主目标仍OPEN，新颖性未认证。 |
+| UM-PAIR-SUBDIVISION-GAP-v1 | The pair-configuration LP, with common singleton machine marginals and exact complementarity for every degree-two job internal to each pair, has supremum gap 2 even on simple bipartite machine graphs. The stated cardinality filter makes no deletion on the subdivided VW certificates. | [自足正文](unrelated_machines/bundle_coupling_subdivision_barrier.md)、[冻结攻击](../reviews/unrelated_machines/bundle_subdivision_review.md)；一般主目标仍OPEN，新颖性未认证。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

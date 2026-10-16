@@ -27,6 +27,9 @@
 
 一般群组奇环的actual缺口已由[单缺陷双取向消去](current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)闭合：不要求UF、允许部分aligned light和混合多项式，全部该拓扑均有T_d-PNE，实际最坏阈值恰T_d。先读精确拓扑和[独立攻击](reviews/weighted_congestion/odd_ring_parameters/general_cohort_actual_upper_review.md)，再调用两路Fraction证据；不能把这个拓扑当全类规范形。
 
+
+本题新增[计数传播与成束相容性](current/unrelated_machines/bundle_coupling_subdivision_barrier.md)：可位多项式计算下界、旧gap族上的修复及其细分失败。只排除相应下界合同，目标仍OPEN；先读本题精确账本再使用。
+
 ## 文件按什么用途存放
 
 | 位置 | 里面是什么 | 如何用 |

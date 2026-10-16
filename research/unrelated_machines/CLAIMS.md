@@ -101,3 +101,45 @@ LST的2近似/ρ<3/2困难性、SV的2−1/m、restricted assignment的估值/�
 - Counterevidence / Objections：k=2,3的h=1不在身份内（添加z可能降低OPT）；遗漏此条件会使声明错误。单查询未匹配任务的小端容量以及查询间一致性均未表达。
 - Status：本轮限范围完整方法反例及内部独立审查；主目标OPEN，外审/新颖性未认证。
 - Related Files：正文§5–7、heavy_matching_escape_review.md、两路审计与冻结证据。
+
+## 成束强化与细分攻击的新接口
+
+三个身份只限制准确的方法合同，不关闭UM-TARGET-v1。
+
+### UM-BUNDLE-MOMENT-v1：末端任务束的聚合二阶相容阈值
+
+- Exact Statement / Quantifiers：For every k>=4 the canonical VW two-tree instance has strengthened configuration threshold exactly 2-1/k after adding the aggregate second-moment complement equation for each terminal bundle.
+- Objects / Domain / Definitions：UM-MODEL-v1；正文第2节式(1)、第3节闭包或第4节两机器LP，各自范围不互换。
+- Assumptions / Scope：第一项仅既有k≥4族；第二项一般合法输入、T≥0；第三项每任务恰两台可用机器、正最优值，m,n无界。
+- Conclusion：分别为旧族强化效果、健全过滤/可算下界、特定LP上确界间隙2；均非新的OPT相对近似保证。
+- Dependencies：UM-MODEL-v1；族结论使用UM-TREE-CERTIFICATE-v1；gap上界另用UM-ST-ROUND-v1。具体定义与完整推导见正文。
+- Evidence：自足一般证明，冻结审查，Fraction与独立枚举，范围见实际记录。
+- Counterevidence / Objections：过滤器及二阶修补被任务细分绕过；不能将接受当作调度可行；不排三机器overlap一致性或先消去mid。没有在已声明范围内尚成立的fatal objection。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；源机制可能为标准工具直接推论，外部评审/新颖性未认证。
+- Related Files：[research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md](../current/unrelated_machines/bundle_coupling_subdivision_barrier.md)、[冻结审查](../reviews/unrelated_machines/bundle_subdivision_review.md)、`evidence/runs/unrelated_machines/bundle_subdivision_audit.json`。
+
+### UM-CARDINALITY-CLOSURE-v1：强制残余容量的健全多项式计数闭包
+
+- Exact Statement / Quantifiers：For all legal P and rational T>=0 the synchronous forced-residual cardinality filter preserves every T-feasible schedule and terminates in deterministic bit-polynomial time. Its monotone integer-scaled bisection gives a lower bound B<=OPT; acceptance is not feasibility.
+- Objects / Domain / Definitions：UM-MODEL-v1；正文第2节式(1)、第3节闭包或第4节两机器LP，各自范围不互换。
+- Assumptions / Scope：第一项仅既有k≥4族；第二项一般合法输入、T≥0；第三项每任务恰两台可用机器、正最优值，m,n无界。
+- Conclusion：分别为旧族强化效果、健全过滤/可算下界、特定LP上确界间隙2；均非新的OPT相对近似保证。
+- Dependencies：UM-MODEL-v1；族结论使用UM-TREE-CERTIFICATE-v1；gap上界另用UM-ST-ROUND-v1。具体定义与完整推导见正文。
+- Evidence：自足一般证明，冻结审查，Fraction与独立枚举，范围见实际记录。
+- Counterevidence / Objections：过滤器及二阶修补被任务细分绕过；不能将接受当作调度可行；不排三机器overlap一致性或先消去mid。没有在已声明范围内尚成立的fatal objection。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；源机制可能为标准工具直接推论，外部评审/新颖性未认证。
+- Related Files：[research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md](../current/unrelated_machines/bundle_coupling_subdivision_barrier.md)、[冻结审查](../reviews/unrelated_machines/bundle_subdivision_review.md)、`evidence/runs/unrelated_machines/bundle_subdivision_audit.json`。
+
+### UM-PAIR-SUBDIVISION-GAP-v1：两机器配置耦合的细分间隙2
+
+- Exact Statement / Quantifiers：The pair-configuration LP, with common singleton machine marginals and exact complementarity for every degree-two job internal to each pair, has supremum gap 2 even on simple bipartite machine graphs. The stated cardinality filter makes no deletion on the subdivided VW certificates.
+- Objects / Domain / Definitions：UM-MODEL-v1；正文第2节式(1)、第3节闭包或第4节两机器LP，各自范围不互换。
+- Assumptions / Scope：第一项仅既有k≥4族；第二项一般合法输入、T≥0；第三项每任务恰两台可用机器、正最优值，m,n无界。
+- Conclusion：分别为旧族强化效果、健全过滤/可算下界、特定LP上确界间隙2；均非新的OPT相对近似保证。
+- Dependencies：UM-MODEL-v1；族结论使用UM-TREE-CERTIFICATE-v1；gap上界另用UM-ST-ROUND-v1。具体定义与完整推导见正文。
+- Evidence：自足一般证明，冻结审查，Fraction与独立枚举，范围见实际记录。
+- Counterevidence / Objections：过滤器及二阶修补被任务细分绕过；不能将接受当作调度可行；不排三机器overlap一致性或先消去mid。没有在已声明范围内尚成立的fatal objection。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；源机制可能为标准工具直接推论，外部评审/新颖性未认证。
+- Related Files：[research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md](../current/unrelated_machines/bundle_coupling_subdivision_barrier.md)、[冻结审查](../reviews/unrelated_machines/bundle_subdivision_review.md)、`evidence/runs/unrelated_machines/bundle_subdivision_audit.json`。
+
+UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=2特例；本页登记保留独立长度2重构及与计数闭包的准确合同，不把两个身份当作两次原创突破。

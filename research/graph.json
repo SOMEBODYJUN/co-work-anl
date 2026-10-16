@@ -6490,6 +6490,68 @@
       "status": "finite computational evidence"
     },
     {
+      "id": "UM-PAIR-COUPLING-DEFINITION-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "单机配置边际及两机器任务互补耦合",
+      "detail": "Pair witnesses share singleton machine distributions but need not share higher-order overlap marginals. Degree-two jobs internal to a pair must be assigned exactly once.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-BUNDLE-MOMENT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "末端任务束的聚合二阶相容阈值",
+      "detail": "For every k>=4 the canonical VW two-tree instance has strengthened configuration threshold exactly 2-1/k after adding the aggregate second-moment complement equation for each terminal bundle.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md",
+        "research/reviews/unrelated_machines/bundle_subdivision_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-CARDINALITY-CLOSURE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "强制残余容量的健全多项式计数闭包",
+      "detail": "For all legal P and rational T>=0 the synchronous forced-residual cardinality filter preserves every T-feasible schedule and terminates in deterministic bit-polynomial time. Its monotone integer-scaled bisection gives a lower bound B<=OPT; acceptance is not feasibility.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md",
+        "research/reviews/unrelated_machines/bundle_subdivision_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-PAIR-SUBDIVISION-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两机器配置耦合的细分间隙2",
+      "detail": "The pair-configuration LP, with common singleton machine marginals and exact complementarity for every degree-two job internal to each pair, has supremum gap 2 even on simple bipartite machine graphs. The stated cardinality filter makes no deletion on the subdivided VW certificates.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md",
+        "research/reviews/unrelated_machines/bundle_subdivision_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-BUNDLE-SUBDIVISION-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "计数闭包、成束相关与细分压回的有限精确证据",
+      "detail": "Exact finite scope and independently implemented oracles; not general proofs.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md",
+        "evidence/runs/unrelated_machines/bundle_subdivision_audit.json",
+        "tests/audits/unrelated_machines/pair_coupling_subdivision.py",
+        "tests/audits/unrelated_machines/cardinality_closure.py",
+        "tests/audits/unrelated_machines/independent_pair_coupling.py"
+      ],
+      "status": "finite exact audit"
+    },
+    {
       "id": "UM-HEAVY-MATCH-FILTER-v1",
       "kind": "claim",
       "track": "unrelated_machines",
@@ -15481,6 +15543,112 @@
         "evidence/runs/unrelated_machines/long_path_coalition_gap_audit.json"
       ],
       "status": "recorded within stated scope"
+    },
+    {
+      "id": "DERIVE-UM-BUNDLE-MOMENT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TREE-CERTIFICATE-v1"
+      ],
+      "conclusion": "UM-BUNDLE-MOMENT-v1",
+      "statement": "All additional definitions, transformations and direct proof steps are stated in the self-contained account; no generic LP oracle is assumed.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-BUNDLE-MOMENT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BUNDLE-SUBDIVISION-AUDIT-v1"
+      ],
+      "conclusion": "UM-BUNDLE-MOMENT-v1",
+      "statement": "Finite implementation, certificate and oracle checks only.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md",
+        "evidence/runs/unrelated_machines/bundle_subdivision_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-UM-CARDINALITY-CLOSURE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TREE-CERTIFICATE-v1"
+      ],
+      "conclusion": "UM-CARDINALITY-CLOSURE-v1",
+      "statement": "All additional definitions, transformations and direct proof steps are stated in the self-contained account; no generic LP oracle is assumed.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-CARDINALITY-CLOSURE-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BUNDLE-SUBDIVISION-AUDIT-v1"
+      ],
+      "conclusion": "UM-CARDINALITY-CLOSURE-v1",
+      "statement": "Finite implementation, certificate and oracle checks only.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md",
+        "evidence/runs/unrelated_machines/bundle_subdivision_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-UM-PAIR-SUBDIVISION-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TREE-CERTIFICATE-v1",
+        "UM-PAIR-COUPLING-DEFINITION-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-PAIR-SUBDIVISION-GAP-v1",
+      "statement": "All additional definitions, transformations and direct proof steps are stated in the self-contained account; no generic LP oracle is assumed.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-PAIR-SUBDIVISION-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BUNDLE-SUBDIVISION-AUDIT-v1"
+      ],
+      "conclusion": "UM-PAIR-SUBDIVISION-GAP-v1",
+      "statement": "Finite implementation, certificate and oracle checks only.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md",
+        "evidence/runs/unrelated_machines/bundle_subdivision_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMIT-PAIR-SUBDIVISION-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PAIR-SUBDIVISION-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only excludes guarantees relative solely to this pair LP threshold; no algorithmic hardness or OPT-relative impossibility follows.",
+      "refs": [
+        "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md"
+      ],
+      "status": "method boundary"
     },
     {
       "id": "DERIVE-UM-HEAVY-MATCH-FILTER-v1",
