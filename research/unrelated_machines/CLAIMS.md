@@ -708,6 +708,42 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 
 [共同容量路线整合审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)补核UM-FOREST-TWO-BOUNDARY-MENU-v1、UM-DEPTH-TWO-HALF-v1、UM-FROZEN-MACRO-TINY-REOPT-GAP-v1、UM-MACRO-MIGRATION-FRONTIER-v1及UM-ONE-DESTINATION-SLOT-REPAIR-v1的所列范围。没有改变这些身份或主目标状态；标准流/仿射恢复推导用于检验接口，不另冒充新的特殊类研究成果。后续共同矩正文与研讨候选的实际覆盖另在审查中注明。
 
+## UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1：占位模式基扩展的侧约束低维支撑
+
+- Exact Statement / Quantifiers：∀有宏全覆盖匹配的有限宏/home二分图、每home有限非空带0/1占位标签的模式库、整数K≥0，P={每home模式和1、占位边际属于宏可匹配home基凸包}加任意K个线性侧不等式后，每个模式投影顶点至多2K个home有多于一个正模式。正支持内可用整数下界匹配和实际模式恢复，仅改变这些home；不承诺侧预算保持。
+- Objects / Domain / Definitions：有限宏/home二分图、每home有限非空0/1占位模式库、可匹配全部宏任务的home基凸包，以及任意K个线性侧不等式。没有任务处理时间或T/OPT的额外假设；实际调度是后两身份的应用。
+- Assumptions / Scope：K可随输入增长；一般结论只给2K支撑界。模式只依占位bit，不能依具体macro身份/残余容量；所有额外耦合约束须计入侧约束rank。
+- Conclusion / Mechanism：模式积分凸包、双匹配同时交换给基面维数下界、正支持纤维维数与K个侧约束rank给R≤2K；支持内下界匹配只改这些home，资源增量由应用另行支付。
+- Dependencies：UM-OCCUPATION-PATTERN-MODEL-v1；正文§4–9a自足重构交换/维数/恢复与总位复杂度。
+- Evidence：先盲重构后冻结攻击；规范26小多面体/58顶点/88支持恢复，独立304宏匹配表示/20760暴露面。后两调度身份的DP、零目标和二分核验不是本抽象引理的额外前提；有限检查不替代一般证明。
+- Counterevidence / Objections：不能以扩展LP basic vertex代替模式投影顶点；已用逐坐标lex精确LP避免。多预算matching边模式不满足占位基结构；无一般K/多home提取。声明范围无尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；通用LP软件未实现，外审/新颖性未认证，主目标仍OPEN。
+- Related Files：[research/current/unrelated_machines/fixed_sink_occupation_rounding.md](../current/unrelated_machines/fixed_sink_occupation_rounding.md)、research/reviews/unrelated_machines/fixed_sink_occupation_review.md；代码/冻结记录见正文§11。
+
+## UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1：固定数量共享汇点的三半阈值构造
+
+- Exact Statement / Quantifiers：∀固定整数K≥1，∃确定性A_K，∀给定H∪Z(|Z|=K)、仅H可用且每有限边>T/2的宏任务B、不交私有组J_h（每件仅{h}∪Z的非空子集可用）、二进制有理T≥0，A_K按输入总位长多项式返回可靠FAIL或实际调度Cmax≤3T/2；OPT≤T必成功。私有尺寸任意，有限p>T先剪枝。多项式次数依K。
+- Objects / Domain / Definitions：UM-OCCUPATION-PATTERN-MODEL-v1；阈值版本与OPT promise版本分开。非负有理/∞，显式有限矩阵、零目标、空任务和强制端包含。
+- Assumptions / Scope：给定T的one-sided资源增广；成功不判定T精确可行。固定K与唯一home分组承重，不提供一般实例分区/分组提取，不含K增长的统一多项式保证。
+- Conclusion / Mechanism：真实home负载的多维sink上取整DP；宏任务仅保占位基；至多10K²个大贡献home分支固定后，模式投影极点至多2K个非积分home，正支持内实际宏匹配恢复；γ1/4与β1/(8K)同时付清全部sink预算。
+- Dependencies：UM-MODEL-v1, UM-OCCUPATION-PATTERN-MODEL-v1, UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1；正文§4–9a自足重构交换/维数/恢复与总位复杂度。
+- Evidence：先盲重构后冻结攻击；112局部菜单与997分配、4454零目标矩阵与33910分配、26小多面体/58顶点/88支持舍入/12实际恢复；独立304宏匹配表示/20760暴露面，仅有限核心范围。另16380个非单调接受表与1024宏网格合同核二分。未实现通用多项式LP/全部heavy生产调度器。
+- Counterevidence / Objections：不能以扩展LP basic vertex代替模式投影顶点；已用逐坐标lex精确LP避免。多预算matching边模式不满足占位基结构；无一般K/多home提取。声明范围无尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；通用LP软件未实现，外审/新颖性未认证，主目标仍OPEN。
+- Related Files：[research/current/unrelated_machines/fixed_sink_occupation_rounding.md](../current/unrelated_machines/fixed_sink_occupation_rounding.md)、research/reviews/unrelated_machines/fixed_sink_occupation_review.md；代码/冻结记录见正文§11。
+
+## UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1：固定数量共享汇点的大宏任务promise三半近似
+
+- Exact Statement / Quantifiers：∀固定整数K≥1，∃确定性位多项式算法，∀同给定H/Z/B/私有组但无T的合法实例，若每条有限宏任务时间严格>OPT(P)/2（B可空），则输出实际调度Cmax≤3OPT(P)/2。零最优值精确零输出；算法不验证含OPT的promise，不要求给OPT或好调度。次数依K。
+- Objects / Domain / Definitions：UM-OCCUPATION-PATTERN-MODEL-v1；阈值版本与OPT promise版本分开。非负有理/∞，显式有限矩阵、零目标、空任务和强制端包含。
+- Assumptions / Scope：含OPT的大宏任务promise与结构分区为额外假设；不是一般UM-TARGET-v1。通过共同分母整数网格及可靠FAIL/任意成功负载界二分，不假定接受集合单调。
+- Conclusion / Mechanism：真实home负载的多维sink上取整DP；宏任务仅保占位基；至多10K²个大贡献home分支固定后，模式投影极点至多2K个非积分home，正支持内实际宏匹配恢复；γ1/4与β1/(8K)同时付清全部sink预算。
+- Dependencies：UM-MODEL-v1, UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1；正文§4–9a自足重构交换/维数/恢复与总位复杂度。
+- Evidence：先盲重构后冻结攻击；112局部菜单与997分配、4454零目标矩阵与33910分配、26小多面体/58顶点/88支持舍入/12实际恢复；独立304宏匹配表示/20760暴露面，仅有限核心范围。另16380个非单调接受表与1024宏网格合同核二分。未实现通用多项式LP/全部heavy生产调度器。
+- Counterevidence / Objections：不能以扩展LP basic vertex代替模式投影顶点；已用逐坐标lex精确LP避免。多预算matching边模式不满足占位基结构；无一般K/多home提取。声明范围无尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；通用LP软件未实现，外审/新颖性未认证，主目标仍OPEN。
+- Related Files：[research/current/unrelated_machines/fixed_sink_occupation_rounding.md](../current/unrelated_machines/fixed_sink_occupation_rounding.md)、research/reviews/unrelated_machines/fixed_sink_occupation_review.md；代码/冻结记录见正文§11。
+
 ## UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1：真实最优凸包槽初始化的无界机器长链修复
 
 - Exact Statement / Quantifiers：∀整数k≥3,d≥1，正文§10的正有理两端任务族有T=OPT=1，x由两个真实最优调度显式凸组合给出。固定任意tiny平局序，全部最小总处理时间槽覆盖匹配共同诱导同一σ，Cmax=2−1/k。每个严格降序负载lex改善至少改变d+1任务并涉及d+2台新旧owner端点机器；同一实际修复同时达到两下界，Cmax=2−2/k且每源至多迁出一件。

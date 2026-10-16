@@ -81,4 +81,6 @@
 
 需求树的[激活边际走廊失效](research/current/unrelated_machines/rooted_dag_congestion_flow.md)排除含父激活上界的LP直接给统一正常数根树比例；回收共同拥塞流的可构造接口，未知支撑选择未解。未导入调度困难性。
 
+多个sink并非一概阻断共同选择：[占位基与大贡献分支](research/current/unrelated_machines/fixed_sink_occupation_rounding.md)在每固定K下可输出≤3T/2；不能把macro身份相关的完整匹配边菜单套用2K支撑引理，也不能取扩展空间basic点代替投影顶点。回收占位基交换与精确home DP；真正未解仍是K不受限、多home任务及一般统一ε。
+
 同族的确定后备2T门槛不可外推到随机选择的新矩：新§9在m=2q时把精确包门槛降为q+2。它不改变旧RYRᵀ反例，因为随机任务选择需额外同任务对角修正；同样不能将限族矩输出误作实际调度算法。

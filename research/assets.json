@@ -5297,6 +5297,43 @@
       ],
       "candidates": [],
       "limit": "Not a new scheduling approximation, novelty claim, general true-moment extractor or proof that joint repair is impossible. Conditional candidate recovery and peer feedback are scoped explicitly."
+    },
+    {
+      "id": "um_fixed_sink_occupation_v1",
+      "claims": [
+        "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1",
+        "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1",
+        "UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "∀有宏全覆盖匹配的有限宏/home二分图、每home有限非空带0/1占位标签的模式库、整数K≥0，P={每home模式和1、占位边际属于宏可匹配home基凸包}加任意K个线性侧不等式后，每个模式投影顶点至多2K个home有多于一个正模式。正支持内可用整数下界匹配和实际模式恢复，仅改变这些home；不承诺侧预算保持。",
+        "∀固定整数K≥1，∃确定性A_K，∀给定H∪Z(|Z|=K)、仅H可用且每有限边>T/2的宏任务B、不交私有组J_h（每件仅{h}∪Z的非空子集可用）、二进制有理T≥0，A_K按输入总位长多项式返回可靠FAIL或实际调度Cmax≤3T/2；OPT≤T必成功。私有尺寸任意，有限p>T先剪枝。多项式次数依K。",
+        "∀固定整数K≥1，∃确定性位多项式算法，∀同给定H/Z/B/私有组但无T的合法实例，若每条有限宏任务时间严格>OPT(P)/2（B可空），则输出实际调度Cmax≤3OPT(P)/2。零最优值精确零输出；算法不验证含OPT的promise，不要求给OPT或好调度。次数依K。"
+      ],
+      "produces": "固定数量汇点的真实共同宏任务与私有任务调度；支撑引理和promise搜索分开",
+      "proof": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "source_scope": "Historical source is standard scheduling/matching background only; present occupation-face argument and fixed-sink proof are self-contained, not attributed as a theorem of that source.",
+      "implementation": [],
+      "tests": [
+        "tests/audits/unrelated_machines/fixed_sink_occupation_audit.py",
+        "tests/audits/unrelated_machines/occupation_base_face_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/fixed_sink_occupation_audit.json",
+        "evidence/runs/unrelated_machines/occupation_base_face_independent_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/fixed_sink_occupation_review.md"
+      ],
+      "candidates": [],
+      "limit": "Fixed K only for scheduling; supplied private groups and macro/OPT promise distinct. No general LP/heavy-enumeration implementation; finite audit is not a polynomial scheduler or novelty certification."
     }
   ]
 }

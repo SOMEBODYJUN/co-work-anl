@@ -43,3 +43,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 新增UM-SHARED-SINK-JOINT-MACRO-v1；[专题精确账本](research/unrelated_machines/CLAIMS.md)固定唯一home、单sink、严格宏边阈值与实际构造量词。它给共同选择的正面接口，不改变一般主目标OPEN。
 
 新增UM-DAG-CONGESTION-FLOW-v1与UM-DAG-ACTIVATION-CORRIDOR-GAP-v1：[专题账本](research/unrelated_machines/CLAIMS.md)固定共同流、整数K、未知W及激活LP的不同合同；条件提取/固定支撑搜索已内部独立核对，主目标仍OPEN。
+
+新增UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1、UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1、UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1；[专题精确账本](research/unrelated_machines/CLAIMS.md)分开支撑界、给定T构造与OPT promise近似。固定K、私有分组及宏阈值不进入一般主目标。

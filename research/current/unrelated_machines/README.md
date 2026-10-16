@@ -169,3 +169,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 ## 跨路线的当前可行性判断
 
 [共同容量路线整合审查](../../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)冻结三条正面接口及单目的地修复的独立覆盖，区分一般菜单核心、矩提取与实际共同迁移。附最大流标准标尺及精确有限审计；不新增或扩大主目标Claim。它说明哪些是可复用局部构造，哪些候选仍缺同一证书中的全机器容量与总位多项式进展。
+
+[固定数量共享汇点的占位基交换与三半调度](fixed_sink_occupation_rounding.md)给三个分离身份：UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1允许任意K但仅界定2K个分数组；UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1在固定K的给定阈值下输出实际≤3T/2；UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1用含OPT的大宏promise及非单调one-sided整数二分给真正≤3OPT/2。唯一home/给定分组和固定K仍承重，通用LP软件未实现，新颖性未认证。一般主目标下一缺口是不受限的接收容量与跨home/跨尺寸任务身份，UM-TARGET-v1仍OPEN。

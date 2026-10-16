@@ -36,6 +36,8 @@
 
 当前共同构造另有[单共享汇点的宏任务匹配](research/current/unrelated_machines/shared_sink_joint_macro_assignment.md)；局部修复需核对[严格lex参与机数与中性路径的区别](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)。[路线整合审查](research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)汇集结构接口、真实矩提取和一般进展的剩余义务；[条件矩正文](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)§9给特定族的新矩构造，仍未给一般调度保证。UM-TARGET-v1保持OPEN。
 
+[固定数量共享汇点的占位基交换与三半调度](research/current/unrelated_machines/fixed_sink_occupation_rounding.md)给三个分离身份：UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1允许任意K但仅界定2K个分数组；UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1在固定K的给定阈值下输出实际≤3T/2；UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1用含OPT的大宏promise及非单调one-sided整数二分给真正≤3OPT/2。唯一home/给定分组和固定K仍承重，通用LP软件未实现，新颖性未认证。一般主目标下一缺口是不受限的接收容量与跨home/跨尺寸任务身份，UM-TARGET-v1仍OPEN。
+
 ## 独立保留的旧研究
 
 [加权拥塞](research/current/weighted_congestion/README.md)、[设施选址](research/current/README.md)和[顺序客户吸引](research/current/customer_attraction/README.md)各保留原模型、身份、正文和证据。拥塞的Cd/ln d全类存在命题已有线性全状态反例；其精确门槛等后续义务见旧题地图。旧目录内tools承担共享协作功能，目录名不把新题改成拥塞。旧数学交接包只用于该模型的历史追溯。

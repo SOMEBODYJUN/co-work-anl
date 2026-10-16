@@ -7796,6 +7796,68 @@
       "status": "finite exact evidence only"
     },
     {
+      "id": "UM-OCCUPATION-PATTERN-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "宏匹配占位基与私有任务的真实模式库",
+      "detail": "显式宏/home图，模式仅有occupied bit与真实私有组见证；给定T版宏>T/2，OPT promise版另作假设。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-FIXED-SINK-OCCUPATION-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "占位模式、零目标、支持恢复和one-sided搜索的有限精确核验",
+      "detail": "112局部菜单与997分配、4454零目标矩阵与33910分配、26小多面体/58顶点/88支持舍入/12实际恢复；独立304宏匹配表示/20760暴露面，仅有限核心范围。另16380个非单调接受表与1024宏网格合同核二分。未实现通用多项式LP/全部heavy生产调度器。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md",
+        "tests/audits/unrelated_machines/fixed_sink_occupation_audit.py",
+        "tests/audits/unrelated_machines/occupation_base_face_independent.py",
+        "evidence/runs/unrelated_machines/fixed_sink_occupation_audit.json",
+        "evidence/runs/unrelated_machines/occupation_base_face_independent_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "占位模式基扩展的侧约束低维支撑",
+      "detail": "∀有宏全覆盖匹配的有限宏/home二分图、每home有限非空带0/1占位标签的模式库、整数K≥0，P={每home模式和1、占位边际属于宏可匹配home基凸包}加任意K个线性侧不等式后，每个模式投影顶点至多2K个home有多于一个正模式。正支持内可用整数下界匹配和实际模式恢复，仅改变这些home；不承诺侧预算保持。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md",
+        "research/reviews/unrelated_machines/fixed_sink_occupation_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "固定数量共享汇点的三半阈值构造",
+      "detail": "∀固定整数K≥1，∃确定性A_K，∀给定H∪Z(|Z|=K)、仅H可用且每有限边>T/2的宏任务B、不交私有组J_h（每件仅{h}∪Z的非空子集可用）、二进制有理T≥0，A_K按输入总位长多项式返回可靠FAIL或实际调度Cmax≤3T/2；OPT≤T必成功。私有尺寸任意，有限p>T先剪枝。多项式次数依K。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md",
+        "research/reviews/unrelated_machines/fixed_sink_occupation_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "固定数量共享汇点的大宏任务promise三半近似",
+      "detail": "∀固定整数K≥1，∃确定性位多项式算法，∀同给定H/Z/B/私有组但无T的合法实例，若每条有限宏任务时间严格>OPT(P)/2（B可空），则输出实际调度Cmax≤3OPT(P)/2。零最优值精确零输出；算法不验证含OPT的promise，不要求给OPT或好调度。次数依K。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md",
+        "research/reviews/unrelated_machines/fixed_sink_occupation_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
       "id": "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1",
       "kind": "claim",
       "track": "unrelated_machines",
@@ -18822,6 +18884,141 @@
         "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
       ],
       "status": "scope and remaining obligations"
+    },
+    {
+      "id": "D-UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OCCUPATION-PATTERN-MODEL-v1"
+      ],
+      "conclusion": "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1",
+      "statement": "占位基凸分解给模式多面体积分性，双宏匹配交替路径的最优等权交换给基面维数≥半数非固定坐标；正支持纤维维数及K个侧约束rank推出R≤2K，整数下界匹配实现支持内恢复。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FIXED-SINK-OCCUPATION-AUDIT-v1"
+      ],
+      "conclusion": "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1",
+      "statement": "规范26小多面体、58顶点、88支持恢复；独立304宏匹配表示/20760暴露面精确维数检查，仅所列有限核心范围。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md",
+        "evidence/runs/unrelated_machines/fixed_sink_occupation_audit.json",
+        "evidence/runs/unrelated_machines/occupation_base_face_independent_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "K可随输入增长；一般结论只给2K支撑界。模式只依占位bit，不能依具体macro身份/残余容量；所有额外耦合约束须计入侧约束rank。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-OCCUPATION-PATTERN-MODEL-v1",
+        "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1"
+      ],
+      "conclusion": "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1",
+      "statement": "真实home负载的多维sink上取整DP；宏任务仅保占位基；至多10K²个大贡献home分支固定后，模式投影极点至多2K个非积分home，正支持内实际宏匹配恢复；γ1/4与β1/(8K)同时付清全部sink预算。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FIXED-SINK-OCCUPATION-AUDIT-v1"
+      ],
+      "conclusion": "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1",
+      "statement": "112局部菜单与997分配、4454零目标矩阵与33910分配、26小多面体/58顶点/88支持舍入/12实际恢复；独立304宏匹配表示/20760暴露面，仅有限核心范围。另16380个非单调接受表与1024宏网格合同核二分。未实现通用多项式LP/全部heavy生产调度器。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md",
+        "evidence/runs/unrelated_machines/fixed_sink_occupation_audit.json",
+        "evidence/runs/unrelated_machines/occupation_base_face_independent_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "给定T的one-sided资源增广；成功不判定T精确可行。固定K与唯一home分组承重，不提供一般实例分区/分组提取，不含K增长的统一多项式保证。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1"
+      ],
+      "conclusion": "UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1",
+      "statement": "完整共同分母整数网格、promise确保全部搜索目标的macro阈值、lo曾失败及hi曾成功不变式，无需接受集合单调；总调用数按位长。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FIXED-SINK-OCCUPATION-AUDIT-v1"
+      ],
+      "conclusion": "UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1",
+      "statement": "16380个非单调接受表及1024个宏整数网格合同验证二分逻辑；实际调度保证另依给定T构造的一般证明，不称完整promise调度器实测。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md",
+        "evidence/runs/unrelated_machines/fixed_sink_occupation_audit.json",
+        "evidence/runs/unrelated_machines/occupation_base_face_independent_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "含OPT的大宏任务promise与结构分区为额外假设；不是一般UM-TARGET-v1。通过共同分母整数网格及可靠FAIL/任意成功负载界二分，不假定接受集合单调。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sink_occupation_rounding.md"
+      ],
+      "status": "method boundary"
     },
     {
       "id": "DERIVE-OPT-HULL-LONG-CHAIN",

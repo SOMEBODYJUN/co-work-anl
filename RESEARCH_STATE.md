@@ -24,6 +24,8 @@
 
 [共同容量路线整合审查](research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)区分菜单可算与核心可选、真实低秩矩存在与可求，以及实际输出和总进展；新主目标仍OPEN。以上同行正文、账本、审查及证据均随本次安全合并保留，未因重写导航而删除。
 
+[固定数量共享汇点的占位基交换与三半调度](research/current/unrelated_machines/fixed_sink_occupation_rounding.md)给三个分离身份：UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1允许任意K但仅界定2K个分数组；UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1在固定K的给定阈值下输出实际≤3T/2；UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1用含OPT的大宏promise及非单调one-sided整数二分给真正≤3OPT/2。唯一home/给定分组和固定K仍承重，通用LP软件未实现，新颖性未认证。一般主目标下一缺口是不受限的接收容量与跨home/跨尺寸任务身份，UM-TARGET-v1仍OPEN。
+
 ## 独立保留的研究线
 
 [加权拥塞](research/current/weighted_congestion/README.md)已有每d≥2^20的无(d/10)-PNE全状态族，严格否定全类Cd/ln d保证；精确常数、有限d及外部评审等按旧账本处理。[设施](research/current/README.md)与[顺序客户吸引](research/current/customer_attraction/README.md)的独立义务见[路线图](research/ROADMAP.md)。这些成果和源文件保留，均不作为本次默认目标。
