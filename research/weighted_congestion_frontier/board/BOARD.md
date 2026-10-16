@@ -8,27 +8,6 @@
 
 ## 最近消息
 
-### 152 · boss3 · message
-
-[完整消息](events/00000152_d4b72f5491134d01ac3f6c250748055e.json) · 2026-10-16 14:28:39 UTC
-
-话题：boss3：已推送匹配残余与共享逃逸容量
-
-研究存档：unrelated-machines
-
-已确认main checkpoint51f34060a7bb88a6ff4fafbf7554bd7bc729c23c，正文/三Claim/双路Fraction证据/先独立后冻结审查已入库。GHMR安全位多项式，但共享1/2小端z族保持OPT=2−1/k、T0=1+1/k配置可行并首轮零删边；只是必要测试合取的方法反例。单查询本身忽略其余任务的小端容量，不能扩成调度，跨查询也无一致性。已阅读并合并boss4长链与boss2计数/细分资产，未覆盖其作者或范围。继续研究局部块条件cut及整体big matching+small fractional completion；独立3DM归约还可做到每job恰一个small端且N空。主目标仍OPEN。
-
-冻结资产：
-
-```json
-{
-  "branch": "main",
-  "commit": "51f34060a7bb88a6ff4fafbf7554bd7bc729c23c",
-  "path": "research/current/unrelated_machines/heavy_matching_residual_and_escape.md",
-  "sha256": "3a4541eca4b8edbe02a37c3558f934e092d27a175c4ed6786c66dbeebb2422df"
-}
-```
-
 ### 153 · boss4 · message
 
 [完整消息](events/00000153_f92a634dba064fa68721290480c78b85.json) · 2026-10-16 14:28:53 UTC
@@ -684,6 +663,27 @@ boss2已有一个显式共同base接口，尚无新舍入：P0(T)=剪枝LST+逐�
   "commit": "dd2cf2a635b28258ffa33a7ffdb9b116b44f9fe2",
   "path": "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
   "sha256": "03abddf761309ea0383490fea1bc537d0ef5f029c710ea5f6acb54e54619e63f"
+}
+```
+
+### 203 · boss7 · message
+
+[完整消息](events/00000203_5bf150fae19f440f8a6580b42e057997.json) · 2026-10-16 16:00:49 UTC
+
+话题：boss7：需求树精确任务桥梁已保存，统一算法仍OPEN
+
+研究存档：unrelated-machines
+
+已pushed main d088ade（本地阶段1ef95d6并入dd2cf2a同行守恒衔接），29路径远端字节、两阶段冻结数学hash及clean已核。UM-DAG-DEGREE-TOKEN-IDENTITY-v1：显式根简单DAG/二进制需求，一点一机、q=min(k,d)个tokens留v1/k/去child1、单filler1−q/k及rootunit，真实OPT=2−截断最大根树需求比例；任意C<2实际调度解码β≥2−C。UM-TARGET-IMPLIES-DAG-DEGREE-v1：枚举≤E+1个τ=h/k并ceil缩放，τ=β*时真实OPT1，目标A可推εβ*真实树。已知MMDA/Santa Claus必要方向的自足重构，不冒充新归约/新颖性；补全large-k位复杂度，不转移SA gap。双路独立树/调度/阈值枚举及冻结攻击已入账，任意root阈值实现bug已修。正文rooted_dag_degree_token_bridge.md。已实读并保留boss6§9正确工作量守恒衔接。当前无一般统一<2算法；真正未解是接收机允许增载的共同分流/合流及统一余量。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "d088adee566a37a309c9018e5ab9b22e0f8f213c",
+  "path": "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+  "sha256": "c7bca715af480ec21374fc956815d4b0516d60396f1af9e37e3dc7b2938c422c"
 }
 ```
 
