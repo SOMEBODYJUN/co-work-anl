@@ -64,3 +64,9 @@ WC-TARGET v1原身份保持刻画a_*(d)。新下界d/10与另列Paper Fact的一
 UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局重优化，仍有精确值2r/(r+1)；UM-MACRO-MIGRATION-FRONTIER-v1量化达到固定2−ε必须改r−O(1/ε)个宏任务。故仅把tiny LP重开不能作一般充分步骤，宏任务共同占位本身必须可变。正文为optimal_hull_marginal_rounding_barrier.md§10。
 
 正面UM-DEPTH-TWO-HALF-v1对r→U→W异质需求、任意共享终端，给半比例实际根树及相应token族3/2调度；无树宽约束，按需求位长多项式。它是标准贪心收费的限域构造，未解决再多一层的共享资源，也没有一般统一ε。下一步应探索能同时改变宏任务并保真实共享容量的可计算标量/相关接口，而不把浅层或tiny单独改善代替主目标。
+
+[双边界森林的相关菜单](research/current/unrelated_machines/forest_boundary_contraction.md)：`UM-FOREST-TWO-BOUNDARY-MENU-v1`给a精确支配、b乘性保零和实际任务见证，任务不交挂件共享边界可求和；菜单共同选择与串行嵌套仍需新机制。
+
+[同机槽族的单目的地修复](research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md)：`UM-ONE-DESTINATION-SLOT-REPAIR-v1`给最小迁移m(m−1)/2，并可整批沿路径严格下降至OPT；仅此显式族，接收机允许增载。
+
+两项均已自足证明、独立内部攻击和有限精确核验；都是限结构正面接口/修复，未认证全球新颖性，不形成一般输入的统一ε。UM-TARGET-v1保持OPEN。

@@ -7492,7 +7492,7 @@
     {
       "path": "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
       "title": "真实最优调度凸包与固定有序槽图的近2损失",
-      "purpose": "分离松弛强度与固定舍入输出空间；含显式最优凸分解、任意ties所有matching下界及最优跨槽修复。 第6节另给整个最小总处理量面及basic初始化的支撑边界和工作量修复阶梯。",
+      "purpose": "分离松弛强度与固定舍入输出空间；含显式最优凸分解、任意ties所有matching下界及最优跨槽修复。 第6节另给整个最小总处理量面及basic初始化的支撑边界和工作量修复阶梯。 单目的地路径修复的精确Hamming及逐批下降见§4a。",
       "topic": "unrelated_machines",
       "role": "counterexample"
     },
@@ -7729,8 +7729,8 @@
     },
     {
       "path": "research/current/unrelated_machines/forest_boundary_contraction.md",
-      "title": "单边界森林的根负载支配与批量恢复接口",
-      "purpose": "真实父端标量、两种舍入算法、max恢复及位复杂度；遇pendant森林时读。",
+      "title": "森林边界的单端根负载支配与双端相关菜单",
+      "purpose": "单边界标量无累计恢复；双边界一端精确另一端乘性保零菜单，核其核心选择与嵌套限制。",
       "topic": "unrelated_machines",
       "role": "account"
     },
@@ -7950,6 +7950,55 @@
       "purpose": "核对首次失效收费、未知b*阈值枚举、总位复杂度及实际调度，区分三个有限审计和一般证明。",
       "topic": "unrelated_machines",
       "role": "review"
+    },
+    {
+      "path": "tests/audits/unrelated_machines/forest_two_boundary_menu.py",
+      "title": "双边界森林的一端精确与另一端乘性保零菜单的规范审计",
+      "purpose": "规范500例及每候选完整枚举；独立458例/1211份强域调度，411份a>T、589份b0，深树/大分母/共享边界及错误拒绝检查；仅所列有限范围。 重跑写scratch；有限枚举不是一般算法步骤。",
+      "topic": "unrelated_machines",
+      "role": "audit_code"
+    },
+    {
+      "path": "tests/audits/unrelated_machines/forest_two_boundary_independent.py",
+      "title": "双边界森林的一端精确与另一端乘性保零菜单的独立审计",
+      "purpose": "规范500例及每候选完整枚举；独立458例/1211份强域调度，411份a>T、589份b0，深树/大分母/共享边界及错误拒绝检查；仅所列有限范围。 重跑写scratch；有限枚举不是一般算法步骤。",
+      "topic": "unrelated_machines",
+      "role": "audit_code"
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/forest_two_boundary_audit.json",
+      "title": "双边界森林的一端精确与另一端乘性保零菜单的冻结精确结果",
+      "purpose": "保存实际参数、运行范围、源码身份与可重现有限证据，不替代正文一般证明。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence"
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/forest_two_boundary_independent_audit.json",
+      "title": "双边界森林的一端精确与另一端乘性保零菜单的独立冻结结果",
+      "purpose": "保存实际参数、运行范围、源码身份与可重现有限证据，不替代正文一般证明。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence"
+    },
+    {
+      "path": "tests/audits/unrelated_machines/one_destination_slot_repair.py",
+      "title": "同机槽族的单目的地最小迁移与逐批严格下降的规范审计",
+      "purpose": "原任务全枚举m2/3，聚合整数流m2..5；独立身份枚举m2/3及m2..40共780个整批的完整Fraction负载。一般下界另由自足证明。 重跑写scratch；有限枚举不是一般算法步骤。",
+      "topic": "unrelated_machines",
+      "role": "audit_code"
+    },
+    {
+      "path": "tests/audits/unrelated_machines/one_destination_slot_repair_independent.py",
+      "title": "同机槽族的单目的地最小迁移与逐批严格下降的独立审计",
+      "purpose": "原任务全枚举m2/3，聚合整数流m2..5；独立身份枚举m2/3及m2..40共780个整批的完整Fraction负载。一般下界另由自足证明。 重跑写scratch；有限枚举不是一般算法步骤。",
+      "topic": "unrelated_machines",
+      "role": "audit_code"
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/one_destination_slot_repair_audit.json",
+      "title": "同机槽族的单目的地最小迁移与逐批严格下降的冻结精确结果",
+      "purpose": "保存实际参数、运行范围、源码身份与可重现有限证据，不替代正文一般证明。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence"
     }
   ]
 }

@@ -731,6 +731,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-MACRO-MIGRATION-FRONTIER-v1 | ∀整数r≥1、0≤d≤r−1，k=r(r+1)、s=r−d，从指定σ改至多d个宏任务最终机器、微任务全自由时，精确最优F_r(d)=ceil(2sk/(s+1))/k。∀实α∈[1,2)，M=floor(kα)，达到Cmax≤α的最少宏任务改数恰max(0,r−floor(M/(2k−M)))。允许≥r−1次改动时OPT=1。 | 固定改善必改r−O(1/ε)个宏任务，但不排一次改变线性数量宏任务的位多项式算法。 [正文](unrelated_machines/optimal_hull_marginal_rounding_barrier.md)；独立内部已审，未外审。 |
 | UM-DEPTH-TWO-HALF-v1 | ∀显式层状简单DAG D:{r}→U→W，r/U需求为正二进制整数、W需求0，存在确定性总位多项式算法输出真实根树H，b(H)≥b*/2；对原token/filler桥梁P(D,k)，实际输出调度Cmax≤2−b*/2≤3OPT/2。根为零需求终端的情形由原桥梁精确处理。 | 标准贪心收费的局部构造；深层资源共享和一般R∥Cmax均未解决，新颖性未认证。 [正文](unrelated_machines/rooted_dag_degree_token_bridge.md)；独立内部已审，未外审。 |
 
+## 不相关机：双边界相关菜单与单目的地路径修复
+
+| ID | Exact scope and result | Boundary and evidence |
+| --- | --- | --- |
+| UM-FOREST-TWO-BOUNDARY-MENU-v1 | ∀给定双边界a≠b的森林任务gadget、二进制有理T≥0及0<η≤1，存在确定性poly(总位长,1/η)算法输出多项式大小的实际分配菜单；每项内部及b负载≤(1+η)T。∀原分配ρ，若内部≤T且L_b(ρ)≤T（a不限容），则∃同一菜单项τ使L_a(τ)≤L_a(ρ)、L_b(τ)≤(1+η)L_b(ρ)，因此严格保b=0。 | 给定结构的可恢复接口；同批任务/内部不交挂件可共享存活边界，前向乘性贡献求和不按件数累计，选好项后逆恢复max(B,(1+η)T)。不包括结构寻找、普通job替换、一般核心共同选择或免费串行嵌套。 [正文](unrelated_machines/forest_boundary_contraction.md)。独立内审及有限精确核验，未外审/未认证新颖性。 |
+| UM-ONE-DESTINATION-SLOT-REPAIR-v1 | ∀m≥2及UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1的任一槽输出σ，若每原来源机器全部迁出原任务至多去一个外部目的地，则达到OPT1的最小Hamming为m(m−1)/2；强制big搬走时最小为m(m+1)/2。big不动的达到构造可按路径逐批执行，第t批后C_t=(2m−t)/(m+1)，每整批严格降1/(m+1)，t=1,…,m−1。 | 仅此显式族的正面修复与精确修改数；接收机可增载。原不限制目的地的m−1最优迁移Claim不改变。没有一般配置初始化的首次进展或统一近似结论。 [正文](unrelated_machines/optimal_convex_fixed_slot_gap.md)。独立内审及有限精确核验，未外审/未认证新颖性。 |
+
 
 ## 逻辑使用规则
 

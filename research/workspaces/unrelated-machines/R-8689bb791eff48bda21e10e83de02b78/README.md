@@ -7,3 +7,5 @@
 下一具体义务是实际联合槽损失或跨机器条件容量的可求解机制；逐机仅加支撑max仍被本归约限制。主目标的一般统一余量与位复杂度未闭合。
 
 正面恢复：[逐机两倍跨度的联合槽构造](../../../current/unrelated_machines/joint_slot_prefix_rounding.md)给受限类3/2，是已知机制直接推论。下一关键义务是行内任意大小混合的联合容量保持，未得统一ε。
+
+正面接口采用[双边界森林菜单](../../../current/unrelated_machines/forest_boundary_contraction.md)§9与[原同机槽族的单目的地路径修复](../../../current/unrelated_machines/optimal_convex_fixed_slot_gap.md)§4a。一般有环/高树宽核心的共同迁移选择、统一余量及总位多项式进展仍是承重义务；不继续把标准T+rowmax单层reset或同族小切面当突破。
