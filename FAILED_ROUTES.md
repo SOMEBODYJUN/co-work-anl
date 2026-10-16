@@ -38,3 +38,5 @@
 [降序侧势全局最小点与森林扩域的准确失败范围](research/weighted_congestion_frontier/FAILED_ROUTES.md)：同一E的全部global minima均可有近R改善，因此global-min择优不能消局部比；单环也可无exactPNE，单根森林报价不能无证用于有环或多根。两个反例均不否定全类目标，具体可回收接口及重试条件从主题失败账本进入。
 
 [固定hub响应不能自动提升](research/current/weighted_congestion/fixed_hub_light_threshold_response.md)：unique-light子游戏虽有已知FIP并有显式单遍响应，hub偏离仍冻结旧light状态。重选后比较不等于真实单方偏离，现有反例已排除直接lift；可回收阈值接口，仍须新的跨hub兼容预算。
+
+[稀释终端](research/current/unrelated_machines/diluted_sink_probe_gap.md)反驳独立配置＋全部普通线性边探针的统一阈值改善；条件内加入大任务槽可修复本族，所以未排除更强探针或主目标。

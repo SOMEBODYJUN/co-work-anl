@@ -57,3 +57,5 @@
 下一义务已具体到固定δ∈[1/3,1/2)的共同容量余量或可分离/可舍入的条件块强化；没有统一新算法。文件入口完整路径为research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md、research/reviews/unrelated_machines/joint_matching_completion_review.md、tests/audits/unrelated_machines/{joint_matching_completion,unique_small_matching_audit,joint_matching_completion_independent}.py及evidence/runs/unrelated_machines/joint_matching_completion_audit.json；新候选必须同时攻击共享z、长链与一般多小端输入。
 
 针对细分修补，新增[极小超载星精确消去与高阶容量边界](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)，包含实际调度提升、无规则紧凑族及boss4多任务接口障碍；不是近似突破。
+
+新的[稀释终端与逐边线性探针边界](../current/unrelated_machines/diluted_sink_probe_gap.md)连接独立配置/条件点证书为何仍不够；加强探针仅对该族精确，主目标仍OPEN。冻结审查和双路证据从数学地图进入。

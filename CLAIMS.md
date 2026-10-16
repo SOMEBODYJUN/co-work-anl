@@ -13,3 +13,5 @@
 
 
 本次四个新精确身份为`WC-HEALTHY-LINEAR-SWEEP-v1`、`WC-HEALTHY-FRONT-COVERAGE-v1`、`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`、`WC-MATCHING-LOG-UPPER-NEGATIVE-v1`；各自量词、依赖、边界和完整证据链见[主题账本](research/weighted_congestion_frontier/CLAIMS.md)及[自足正文](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md)。WC-TARGET v1原身份保留，其他结构定理/候选不因本题完成升级。
+
+条件证书新增UM-HEAVY-ALTERNATIVE-FILTER-v1、UM-DILUTED-SINK-PROBE-GAP-v1、UM-BIG-CARDINALITY-PROBE-v1，分别是安全接口、准确方法边界及仅对该族的加强效果；见[精确账本](research/unrelated_machines/CLAIMS.md)。

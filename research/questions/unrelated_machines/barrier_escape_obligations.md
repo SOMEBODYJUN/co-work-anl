@@ -27,3 +27,6 @@
 生成树pair提取也须证明非树任务残量仍可行；[五机真实分布反例](../../current/unrelated_machines/tree_markov_completion.md)否定“任意支持态+冻结树任务”合同。允许迁移和有信息择态仍是开放接口，不能据本例宣布这些路线失败。
 
 消元路线新增准确接口：极小超载星可保T并从任意B逆恢复max(B,T)，但紧凑容量一族无触发点。q普通任务保全部残余profile的压缩已被boss4反驳；需要保任务身份的加权匹配或更强耦合。见[现行自足正文](../../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)，不将此表示障碍扩大到主目标。
+
+
+当前条件LP路线应先区分：普通逐边LST（已被UM-DILUTED-SINK-PROBE-GAP-v1排除相对阈值统一改善）和每次探针内加大任务基数（可识别该族、一般保证OPEN）。候选须同时攻击共享z容量和稀释终端，说明约束是否在同一条件内守恒；下一目标是统一舍入或新反例，不是再验证旧族被切。

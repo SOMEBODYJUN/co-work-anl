@@ -6767,6 +6767,57 @@
         "tests/audits/unrelated_machines/joint_matching_completion_independent.py"
       ],
       "status": "finite computational evidence"
+    },
+    {
+      "id": "UM-HEAVY-ALTERNATIVE-FILTER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "重备选星匹配的安全删边",
+      "detail": "Sound deterministic bit-polynomial necessary-condition filter; no global mandatory-heavy reservation outside F.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md",
+        "research/reviews/unrelated_machines/diluted_sink_probe_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-DILUTED-SINK-PROBE-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "稀释终端保留逐边线性探针与配置共同间隙2",
+      "detail": "For k>=4, OPT=2-1/k and T=1+1/k config feasibility, every edge individually forced-LST feasible and local star stable; ratio tends2. Not OPT-relative impossibility.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md",
+        "research/reviews/unrelated_machines/diluted_sink_probe_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-BIG-CARDINALITY-PROBE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "在条件探针内保留大任务槽",
+      "detail": "Pruned LST plus large-job cardinality per machine inside each forced-edge probe is sound/polytime; its closure recovers OPT on the unescaped diluted family only.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md",
+        "research/reviews/unrelated_machines/diluted_sink_probe_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-DILUTED-SINK-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "稀释终端实际条件证书的双路Fraction核验",
+      "detail": "Expanded k2,3,4; main all edges; independent actual vectors/star/config checks and finite generic safety; no generic LP solver.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md",
+        "tests/audits/unrelated_machines/diluted_sink_probe_gap.py",
+        "tests/audits/unrelated_machines/independent_dilution_audit.py",
+        "evidence/runs/unrelated_machines/diluted_sink_probe_gap_audit.json",
+        "evidence/runs/unrelated_machines/independent_dilution_audit.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -16186,6 +16237,97 @@
         "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md"
       ],
       "status": "open algorithmic obligation"
+    },
+    {
+      "id": "DERIVE-UM-HEAVY-ALTERNATIVE-FILTER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-HEAVY-ALTERNATIVE-FILTER-v1",
+      "statement": "Actual heavy alternatives inject into machines; maximum-weight matching bounds removed source load; bounded deletions and matching bit complexity.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "DERIVE-UM-DILUTED-SINK-PROBE-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TREE-CERTIFICATE-v1",
+        "UM-ST-ROUND-v1",
+        "UM-HEAVY-ALTERNATIVE-FILTER-v1"
+      ],
+      "conclusion": "UM-DILUTED-SINK-PROBE-GAP-v1",
+      "statement": "Tree construction plus explicit terminal dilation, integer optimum, all forced-LST and star witnesses; ST supplies supremum upper2.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "DERIVE-UM-BIG-CARDINALITY-PROBE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-BIG-CARDINALITY-PROBE-v1",
+      "statement": "Full valid-cardinality proof and rational LP/deletion bound; explicit-family exact threshold established directly in account.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "LIMIT-DILUTED-SINK-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DILUTED-SINK-PROBE-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only the independent certificate contract is obstructed; polynomial cardinality within probes and OPT-relative algorithms remain unrefuted.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "CHECK-DILUTED-UM-HEAVY-ALTERNATIVE-FILTER-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DILUTED-SINK-AUDIT-v1"
+      ],
+      "conclusion": "UM-HEAVY-ALTERNATIVE-FILTER-v1",
+      "statement": "Finite exact arithmetic and independent recomputation within recorded scope; not universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md",
+        "evidence/runs/unrelated_machines/diluted_sink_probe_gap_audit.json",
+        "evidence/runs/unrelated_machines/independent_dilution_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "CHECK-DILUTED-UM-DILUTED-SINK-PROBE-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DILUTED-SINK-AUDIT-v1"
+      ],
+      "conclusion": "UM-DILUTED-SINK-PROBE-GAP-v1",
+      "statement": "Finite exact arithmetic and independent recomputation within recorded scope; not universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md",
+        "evidence/runs/unrelated_machines/diluted_sink_probe_gap_audit.json",
+        "evidence/runs/unrelated_machines/independent_dilution_audit.json"
+      ],
+      "status": "finite exact evidence"
     }
   ]
 }

@@ -628,6 +628,15 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-CAPACITY-ONE-PAIR-GAP-v1 | Over positive-OPT UM inputs the general pair-configuration LP GPC2 has supremum gap 2, even after iterating the specified residual-cardinality filter and minimal-star contraction. Explicit two-value family has m=k²+3k-1,n=2k²+k,T=1,OPT=2-1/k, all pair witnesses, and neither preprocessing rule triggers for k>=3. | [自足正文](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/minimal_star_capacity_review.md)；非主目标突破。 |
 | UM-STAR-Q-JOB-COMPRESSION-NO-v1 | For every integer q>=2, there is a (q+1)-job star with T=1 for which no q ordinary replacement jobs on the same external machines, with arbitrary nonnegative/infinite times and no extra identity constraints, preserve feasibility for every specified A/B residual capacity profile. | [自足正文](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/minimal_star_capacity_review.md)；非主目标突破。 |
 
+
+## 条件证书与终端容量稀释
+
+| ID | 精确增量与限制 | 正文/审查 |
+| --- | --- | --- |
+| UM-HEAVY-ALTERNATIVE-FILTER-v1 | 重备选源权部分匹配的安全位多项式删边；不额外覆盖全局必经大任务。 | [正文](unrelated_machines/diluted_sink_probe_gap.md)、[冻结审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)；外审/新颖性未认证。 |
+| UM-DILUTED-SINK-PROBE-GAP-v1 | 配置可行＋全部逐边强制LST可行＋星匹配固定点仍sup gap2；阻塞任务多端，不是OPT相对否定。 | [正文](unrelated_machines/diluted_sink_probe_gap.md)、[冻结审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)；外审/新颖性未认证。 |
+| UM-BIG-CARDINALITY-PROBE-v1 | 条件LST内加入大任务基数的安全位多项式探针；只证明对未加逃逸边的稀释族准确识别OPT。 | [正文](unrelated_machines/diluted_sink_probe_gap.md)、[冻结审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)；外审/新颖性未认证。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

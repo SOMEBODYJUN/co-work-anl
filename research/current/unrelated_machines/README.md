@@ -64,3 +64,15 @@
 [极小超载星消去、容量一资源竞争与普通任务压缩边界](minimal_star_contraction_and_capacity_gap.md)：UM-MINIMAL-STAR-CONTRACTION-v1保T可行性，任何新调度B可提升≤max(B,T)；可以消去前一阶段的中间机器。紧凑资源族却让本消元、计数闭包及一般完整pair coupling合用仍gap2（UM-CAPACITY-ONE-PAIR-GAP-v1）。boss4提供的UM-STAR-Q-JOB-COMPRESSION-NO-v1进一步说明q≥2外溢不能用q个独立普通任务保全部残余容量。
 
 读取链：精确账本→新稿第1节恢复算法→第3–5节准确失败范围→[独立冻结审查](../../reviews/unrelated_machines/minimal_star_capacity_review.md)→实际代码/冻结证据。原始BLMRS2024的取得、机制重构和未读全证明单列manifest。一般匹配身份接口及统一近似仍OPEN。
+
+
+## 逐边线性探针与配置证书仍缺共同条件容量
+
+[稀释终端正文](diluted_sink_probe_gap.md)给出新的严格合同边界：N=k(k−1)个终端与N−1个单位阻塞任务保持整数一槽，却让全部边分别强制为1的LST点利用NT−k=N−1分数余量。因此配置可行＋全部线性边探针＋局部星匹配仍sup gap2。它不否定GHMR、更强条件LP或UM-TARGET-v1。把大任务基数放入每个探针内部就能准确识别此族，说明额外约束必须在条件内共同守容。
+
+| 入口 | 何时读取 |
+| --- | --- |
+| research/current/unrelated_machines/diluted_sink_probe_gap.md | 设计逐边条件LP时先核对独立证书与共同条件约束的差别；含完整族、算法合同、位复杂度及精确范围 |
+| research/reviews/unrelated_machines/diluted_sink_probe_review.md | 引用三项局部结论前核对冻结哈希、独立攻击和C有理编码修补 |
+| tests/audits/unrelated_machines/diluted_sink_probe_gap.py、independent_dilution_audit.py | 重跑实际稀疏配置与条件点；主全边和独立抽样覆盖严格分开 |
+| evidence/runs/unrelated_machines/diluted_sink_probe_gap_audit.json、independent_dilution_audit.json | 查真实参数、算术、源哈希和未核验范围；不覆盖冻结结果 |

@@ -230,3 +230,39 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：不允许部分邻域消去、不允许重复min当多任务身份、不把pair witnesses当全joint；初稿OPT>0域省略已修补。已声明范围无尚成立fatal objection。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。已知资源机制/标准工具扣除后不宣称新近似或独立论文价值。
 - Related Files：[自足正文](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结审查](../reviews/unrelated_machines/minimal_star_capacity_review.md)、`evidence/runs/unrelated_machines/minimal_star_capacity_audit.json`。
+
+## UM-HEAVY-ALTERNATIVE-FILTER-v1：重备选星匹配的安全删边接口
+
+- Exact Statement / Quantifiers：∀合法P、∀二进制有理T≥0，从p≤T的域开始反复执行正文§2式(1)，保留每一个makespan≤T调度的全部边，并在(P,T)总位长的确定性多项式时间内终止；空域蕴含OPT>T。
+- Objects / Domain / Definitions：UM-MODEL-v1；F_i(j)包含除j外能在i执行且全部其他当前端均耗时>T/2的任务（无备选按空真）；W是F到其他机器的最大任务源端权部分匹配。
+- Assumptions / Scope：只使用p_ij+sum_F p_iell−W>T删边；包括小探测、零、空任务、单可用边；不额外覆盖F外的全局必经大任务。
+- Conclusion：安全必要条件，接受不意味着可行或输出调度。与既有GHMR相关但合同不同；不重复主张匹配工具的新颖性。
+- Dependencies：UM-MODEL-v1；真实移出任务的大于半阈值注入、非负负载、标准最大权二分匹配。
+- Evidence：正文§2的一般证明与总轮数/位长；先独立重构后冻结攻击；独立3375小矩阵上8192可行调度边保持核验。
+- Counterevidence / Objections：UM-DILUTED-SINK-PROBE-GAP-v1使此过滤无首次删除；没有全局近似保证。
+- Status：完整所述范围证明及内部独立审查；标准匹配接口，外审/新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/diluted_sink_probe_gap.md)、[冻结审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)、两路代码与证据由正文和本题地图链接。
+
+## UM-DILUTED-SINK-PROBE-GAP-v1：独立配置证书与全部逐边线性探针的共同间隙2
+
+- Exact Statement / Quantifiers：∀整数k≥4，存在正文§4显式合法P_k、T_k=1+1/k，使OPT=2−1/k，配置LP在T_k可行，全部有限边均未剪枝且每边分别有x_ij=1的同目标剪枝LST点，UM-HEAVY-ALTERNATIVE-FILTER-v1不删任何边。因此这些独立证书测试合取/联合迭代的相对阈值sup gap=2。
+- Objects / Domain / Definitions：UM-MODEL-v1；重索引两树每底端换N=k(k−1)终端和N−1个全终端可用unit阻塞任务；条件LST点彼此独立，配置证书与条件点不耦合。
+- Assumptions / Scope：每个k给有限实例；阻塞任务有N可用机器，不保留degree2；有限时间仅{1/k,1}。未声称精确配置阈值等于T_k或实例规模在log k上多项式。
+- Conclusion：∀统一ε>0，∃通过全部上述测试的(P,T)而OPT>(2−ε)T；不否定UM-TARGET-v1或相对OPT的其他算法。
+- Dependencies：UM-MODEL-v1、UM-TREE-CERTIFICATE-v1的树内递推、第3节容量稀释引理、第5–8节全部证书；sup上界另用UM-ST-ROUND-v1。
+- Evidence：完整一般证明、先独立重构后冻结攻击、Fraction实际配置/条件点/星匹配/整数上界；k4主审计全4562边、独立审计58条件点及全部星；k2独立128调度枚举。
+- Counterevidence / Objections：在条件LP内部加入大任务基数约束即识别此族；本族也被覆盖全部unit阻塞任务的GHMR识别。未排除条件配置LP、SA、全局容量相关或更强过滤。
+- Status：完整所述范围方法反例、内部独立已审，外审/新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/diluted_sink_probe_gap.md)、[审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)、diluted_sink_probe_gap.py、independent_dilution_audit.py及两份冻结结果。
+
+## UM-BIG-CARDINALITY-PROBE-v1：条件化大任务槽的安全探针与本族精确识别
+
+- Exact Statement / Quantifiers：∀合法P、∀二进制非负有理C，逐边强制x_ij=1并在剪枝LST内加入每机sum_{j:p_ij>C/2}x_ij≤1、删去不可行边并迭代，保留全部C可行调度且总位多项式；对每个UM-DILUTED-SINK-PROBE-GAP-v1实例P_k，拒绝当且仅当C<OPT=2−1/k。
+- Objects / Domain / Definitions：UM-MODEL-v1；条件化前每次重建当前域LP；严格>C/2为大边；拒绝为空域。
+- Assumptions / Scope：一般安全性包括零值、空任务、单可用边；准确阈值只针对本文未加逃逸边的显式族。标准有理LP算法可调用，未实现通用LP求解器。
+- Conclusion：多项式必要条件及一族的精确识别；未建立一般间隙、舍入保证或主目标算法。
+- Dependencies：UM-MODEL-v1、真实大任务每机至多一项、单调域收缩、安全删边归纳、第9节终端槽总和与底向上传播。
+- Evidence：正文一般证明、独立冻结审查；软件状态为未实现通用LP，有限证书审计不能当作该程序运行。
+- Counterevidence / Objections：尚无其与配置可行性合取后的全类统一余量或一般构造；本文旧反例不是对该更强合同的反例。
+- Status：完整所述范围证明、内部独立已审；外审/新颖性未认证，未宣称新算法近似比。
+- Related Files：[正文§9](../current/unrelated_machines/diluted_sink_probe_gap.md#9-多项式的加强探针准确识别本族)、[审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)。

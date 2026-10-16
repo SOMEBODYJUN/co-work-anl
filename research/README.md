@@ -67,3 +67,5 @@
 [当前全仓路线](ROADMAP.md)列现在值得推进的义务；[入库规范](GROWTH.md)和[生产、读取、保存规则](REPOSITORY_GUIDE.md)决定新文件的位置。给新资产写具体名称、用途、精确范围和证据层级；完成相应核验后及时保存到 `main`。
 
 从仓库根运行 `python3 research/build_catalog.py --check`、`python3 research/build_map.py --check`、`python3 research/build_crosswalk.py --check` 和 `python3 research/check_assets.py`。这些检查负责目录和登记一致，不能充当数学证明。
+
+不相关并行机的[稀释终端与条件探针比较](current/unrelated_machines/diluted_sink_probe_gap.md)解释独立配置/逐边LST为何仍gap2，并给出条件内保留大任务基数的可算修复；全局统一近似仍OPEN。
