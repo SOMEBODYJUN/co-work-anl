@@ -411,3 +411,41 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：不保证一般输入的修复余量、搜索或迭代复杂度；不反驳固定槽gap，因为修复突破旧槽容量。
 - Status：完整所述范围证明及内部独立攻击；外审/新颖性未认证，主目标OPEN。
 - Related Files：同一正文、optimal_convex_slot_review.md、两份主审计、optimal_convex_slot_repair_independent.py及统一冻结记录。
+
+## 循环批量修复与分流合流的准确身份
+
+### UM-ROBUST-CYCLIC-BATCH-OPT-v1：鲁棒循环批量交换的位多项式局部优化
+
+- Exact Statement / Quantifiers：For every fixed rational eta in (0,1), all legal P,T>0 and pruned actual schedules sigma with Cmax<=2T admit deterministic bit-polynomial coordinatewise nonincreasing optimization to a state with no machine-simple arbitrary-bundle cycle reducing every participating load by eta*T. At most floor(4m/eta) successful rounds. Variable-eta complexity is polynomial in 1/eta, not log(1/eta).
+- Objects / Domain / Definitions：UM-MODEL-v1；[自足正文](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§1–7的允许边、菜单和精确族。
+- Assumptions / Scope：给定实际σ，使用p≤T的边且Cmax≤2T，T>0、η固定；η变量时只声称关于1/η多项式。
+- Conclusion：鲁棒循环批量交换的位多项式局部优化；主目标仍OPEN。
+- Dependencies：UM-MODEL-v1; explicit-menu strict-turn SCC and repeated-machine splice; exact rounded-profit minimum-arrival subset DP; fixed positive potential decrement.
+- Evidence：完整一般推导；独立先重构后冻结审查，实际Fraction/整数枚举、真实槽证书见正文§8。
+- Counterevidence / Objections：No makespan approximation follows; cycle existence fails on the fork family. T=0 handled separately without a no-zero-margin-cycle conclusion.
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准工具扣除后的全球新颖性及独立成文价值未认证。
+- Related Files：research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md，research/reviews/unrelated_machines/cyclic_batch_fork_review.md；规范代码、独立审计、实际输入和冻结记录沿正文§8读取。
+
+### UM-BATCH-SUPPORT-REPAIR-NO-v1：真实最优值一调度的无界单机撤离义务
+
+- Exact Statement / Quantifiers：For every integer k>=1 the section5 three-machine family has OPT=1, a pruned schedule of loads (2,2,2), minimum sorted-lex improvement support k+1, and minimum maximum per-machine outgoing count k. Thus neither constant support nor constant outgoing budget guarantees monotone improvement.
+- Objects / Domain / Definitions：UM-MODEL-v1；[自足正文](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§1–7的允许边、菜单和精确族。
+- Assumptions / Scope：整数k≥1的三机两端任务族，初始负载全2，改善指按负载非增排序的lex严格下降；k=1单独覆盖。
+- Conclusion：真实最优值一调度的无界单机撤离义务；主目标仍OPEN。
+- Dependencies：UM-MODEL-v1; section5 exact four-parameter classification and attaining moves.
+- Evidence：完整一般推导；独立先重构后冻结审查，实际Fraction/整数枚举、真实槽证书见正文§8。
+- Counterevidence / Objections：A repair-neighborhood boundary only; k1 admits a one-out exchange. No LP-output claim for this family and no approximation hardness.
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准工具扣除后的全球新颖性及独立成文价值未认证。
+- Related Files：research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md，research/reviews/unrelated_machines/cyclic_batch_fork_review.md；规范代码、独立审计、实际输入和冻结记录沿正文§8读取。
+
+### UM-FORK-MINCOST-ROUND-REPAIR-NO-v1：唯一最小成本槽分配仍须分流合流的间隙族
+
+- Exact Statement / Quantifiers：For every integer k>=2 the sections6-7 padded fork has T=OPT=1 and explicit feasible rational assignment x; every minimum-processing-cost ordered-slot matching induces the same actual schedule sigma of makespan 2-1/k. No nontrivial makespan-nonincreasing reassignment from sigma can have at most one outgoing destination per source machine, even with arbitrary bundle size and arbitrarily many machines.
+- Objects / Domain / Definitions：UM-MODEL-v1；[自足正文](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§1–7的允许边、菜单和精确族。
+- Assumptions / Scope：整数k≥2，m=8k+3,n=8k+6，正文uniform-current a与padding矩阵、显式x和固定槽排序；不要求x为基本点或配置投影。
+- Conclusion：唯一最小成本槽分配仍须分流合流的间隙族；主目标仍OPEN。
+- Dependencies：UM-MODEL-v1; section6 fork capacity implications; section7 private padding, explicit rational x, positive slot injection and strict per-job support-cost minima.
+- Evidence：完整一般推导；独立先重构后冻结审查，实际Fraction/整数枚举、真实槽证书见正文§8。
+- Counterevidence / Objections：The supplied x is not claimed basic and violates configuration big-cardinality at A. Does not refute configuration-derived or specially chosen initialization, support changes, multi-destination repair or nonmonotone algorithms.
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准工具扣除后的全球新颖性及独立成文价值未认证。
+- Related Files：research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md，research/reviews/unrelated_machines/cyclic_batch_fork_review.md；规范代码、独立审计、实际输入和冻结记录沿正文§8读取。

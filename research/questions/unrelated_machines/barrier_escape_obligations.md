@@ -43,3 +43,7 @@
 ## 固定槽输出空间必须可改变
 
 UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1说明即使x有真实最优凸分解，固定标准ST图也可不存在统一低于2的匹配。新联合舍入须明确如何允许逐机任务数突破ceil(Σx_ij)、保留凸分量的负载相关性，或怎样做跨槽repair。该族的一轮最优修复必须通过，但单族成功不证明一般余量/位多项式迭代。见[完整反例与修复](../../current/unrelated_machines/optimal_convex_fixed_slot_gap.md)。
+
+## 循环菜单之后的分流义务
+
+UM-ROBUST-CYCLIC-BATCH-OPT-v1已闭合局部优化器的总位复杂度，但没有全类比例。UM-FORK-MINCOST-ROUND-REPAIR-NO-v1排除任意LST点＋唯一成本槽分配后仅用one-destination单调repair的充分合同；其x非配置投影。下一可判别问题：能否在配置/可构造更强初始化上始终找到带统一损失界的多源多目的联合批次，而不调用已被半单位归约排除的精确共同H接口？[算法和反例入口](../../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)。

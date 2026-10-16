@@ -80,3 +80,7 @@
 完整条件化新增[UM-MACHINE-CONFIG-PROBE-GAP-v1](../current/unrelated_machines/row_count_escape_gap.md#7-完整单机配置也分别能延伸到完整配置lp)：同一紧凑族每个合法单机配置均独立延伸到完整配置LP；需共同条件矩才能跨越此障碍，非完整层级下界。
 
 [固定槽图的真实OPT边界](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md)新增一个与LPgap不同的断点：x可有显式全局最优凸分解，所有固定槽matching仍趋2；本族有一轮跨槽修复。完整定义、审查、双路代码与冻结证据由该正文连接；主目标仍OPEN。
+
+## 循环批量修复与真正的分流义务
+
+[循环批量修复与分流合流障碍](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)给三个准确身份：固定η的总位多项式局部优化器，常数单机迁出数的真实OPT障碍，以及唯一最小成本LST槽分配仍须多目的地分流的padding族。程序允许任意批量和循环长度，成功轮数≤4m/η，但局部终态没有统一近似保证。反例所用x违反配置大任务基数，未排配置投影/选基本点/换支撑。读取链：本题Claim→正文§2–4算法/§5–7边界→冻结审查→规范实现与独立审计、实际k2输入/槽证书与运行记录。标准图搜索和背包缩放扣除后的全球新颖性、独立论文价值未认证。

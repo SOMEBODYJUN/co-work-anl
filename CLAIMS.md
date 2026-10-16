@@ -26,3 +26,5 @@
 新身份`UM-SPARSE-CONDITIONED-CONFIG-GAP-v1`为每任务至多三选的全边独立条件配置间隙；[精确账本](research/unrelated_machines/CLAIMS.md)固定不同查询不耦合及未覆盖预处理的范围，不升级主目标。
 
 UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自完整配置LP延伸”的间隙2身份；精确范围、非必要条件警示及共同base边界见[专题账本](research/unrelated_machines/CLAIMS.md)与紧凑族正文§7。
+
+循环批量修复新增UM-ROBUST-CYCLIC-BATCH-OPT-v1、UM-BATCH-SUPPORT-REPAIR-NO-v1、UM-FORK-MINCOST-ROUND-REPAIR-NO-v1；[准确量词与范围](research/unrelated_machines/CLAIMS.md)区分局部构造和修复反例，未得统一近似。

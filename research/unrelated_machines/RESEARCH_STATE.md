@@ -79,3 +79,9 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1已将“加强每个探针”推进到全部本�
 ## 联合槽路线的真实OPT断点
 
 UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1在完全相同机器上给OPT1及显式真实最优凸分解，所有固定ST槽matching却恰2m/(m+1)。问题是逐机ceil期望任务数的容量，连选择最佳matching也无法避免。所有支撑边均正，分数负载恰真实OPT，并非LPgap。该族可以一轮跨槽迁移恢复最优，见[正文](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md)。下一义务必须允许改变槽输出空间/保留联合配置或repair；单纯让x更强不够。一般统一余量及位多项式迭代仍未解。
+
+## 可求解循环批次与初始化后的分流缺口
+
+UM-ROBUST-CYCLIC-BATCH-OPT-v1已给固定η的实际局部优化器：exact-profit菜单＋严格转向＋重复机器剪接，≤4m/η成功轮，终态无ηT鲁棒循环；并未给近似比。UM-BATCH-SUPPORT-REPAIR-NO-v1要求同机撤离任务数无界；UM-FORK-MINCOST-ROUND-REPAIR-NO-v1的正支撑padding甚至使最小成本槽分配唯一，值2−1/k，但任何每机单目的地的makespan不增repair皆无首次变化。
+
+范围关键：该x不是配置投影（A上big质量>1），未称basic，不能据此否定配置初始化。下一高信息义务是可共同实现的多目的地分流合流，或一个能排除该相关结构的具体初始化不变量；仅正支撑、总成本不增或增大循环菜单不足。自足入口为[正文](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)与其冻结审查/实际证据。

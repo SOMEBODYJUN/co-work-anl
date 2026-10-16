@@ -687,6 +687,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1 | ∀m≥2，m台identical机器/n=m²正有理任务有OPT1及m个显式最优调度均匀边际x=1/m；任意逐机ties的固定有序槽图，每个覆盖匹配值均为2m/(m+1)→2。修复另见下项。 | [自足正文](unrelated_machines/optimal_convex_fixed_slot_gap.md)、[冻结独立审查](../reviews/unrelated_machines/optimal_convex_slot_review.md)；不排换x/换槽/repair或主目标，不声称新颖性。 |
 | UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1 | 对固定槽反例族的任意覆盖matching调度，恰m−1任务跨槽迁移即可达到OPT1，且该Hamming修改数最优；扫描与重分配为O(n+m)组合操作。 | 同正文§4及增补审查；只针对显式族，不是一般repair算法。 |
 
+## 不相关并行机：循环批量修复与分流合流
+
+| ID | 精确范围与结论 | 正文与限制 |
+| --- | --- | --- |
+| UM-ROBUST-CYCLIC-BATCH-OPT-v1 | For every fixed rational eta in (0,1), all legal P,T>0 and pruned actual schedules sigma with Cmax<=2T admit deterministic bit-polynomial coordinatewise nonincreasing optimization to a state with no machine-simple arbitrary-bundle cycle reducing every participating load by eta*T. At most floor(4m/eta) successful rounds. Variable-eta complexity is polynomial in 1/eta, not log(1/eta). | [自足正文](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)；[冻结审查](../reviews/unrelated_machines/cyclic_batch_fork_review.md)；主目标OPEN、新颖性未认证。 |
+| UM-BATCH-SUPPORT-REPAIR-NO-v1 | For every integer k>=1 the section5 three-machine family has OPT=1, a pruned schedule of loads (2,2,2), minimum sorted-lex improvement support k+1, and minimum maximum per-machine outgoing count k. Thus neither constant support nor constant outgoing budget guarantees monotone improvement. | [自足正文](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)；[冻结审查](../reviews/unrelated_machines/cyclic_batch_fork_review.md)；主目标OPEN、新颖性未认证。 |
+| UM-FORK-MINCOST-ROUND-REPAIR-NO-v1 | For every integer k>=2 the sections6-7 padded fork has T=OPT=1 and explicit feasible rational assignment x; every minimum-processing-cost ordered-slot matching induces the same actual schedule sigma of makespan 2-1/k. No nontrivial makespan-nonincreasing reassignment from sigma can have at most one outgoing destination per source machine, even with arbitrary bundle size and arbitrarily many machines. | [自足正文](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)；[冻结审查](../reviews/unrelated_machines/cyclic_batch_fork_review.md)；主目标OPEN、新颖性未认证。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

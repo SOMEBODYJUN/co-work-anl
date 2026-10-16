@@ -107,3 +107,9 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 [真实最优凸包与固定有序槽图](optimal_convex_fixed_slot_gap.md)给UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1：完全相同机器上也可有显式OPT1的全局凸分解，而由平均x生成的每一个槽匹配都逼近2OPT。每机槽数饱和强制平衡任务数，排除了好整数分量。不是配置gap；更强x或在同图里择优均不足，本族却有一轮最优跨槽修复。主目标仍OPEN。
 
 读取链：本题账本→正文→optimal_convex_slot_review.md→optimal_convex_slot_gap.py及独立审计→optimal_convex_slot_gap_audit.json；输入及显式凸分量/匹配证书由正文链接。下一义务是改变联合槽容量/保留配置相关性或给一般repair，不能将本例升级为算法困难性。
+
+## 循环批量修复与真正的分流义务
+
+[循环批量修复与分流合流障碍](cyclic_batch_repair_and_fork_obstruction.md)给三个准确身份：固定η的总位多项式局部优化器，常数单机迁出数的真实OPT障碍，以及唯一最小成本LST槽分配仍须多目的地分流的padding族。程序允许任意批量和循环长度，成功轮数≤4m/η，但局部终态没有统一近似保证。反例所用x违反配置大任务基数，未排配置投影/选基本点/换支撑。读取链：本题Claim→正文§2–4算法/§5–7边界→冻结审查→规范实现与独立审计、实际k2输入/槽证书与运行记录。标准图搜索和背包缩放扣除后的全球新颖性、独立论文价值未认证。
+
+身份：UM-ROBUST-CYCLIC-BATCH-OPT-v1, UM-BATCH-SUPPORT-REPAIR-NO-v1, UM-FORK-MINCOST-ROUND-REPAIR-NO-v1。

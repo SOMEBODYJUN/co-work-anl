@@ -50,3 +50,5 @@ WC-TARGET v1原身份保持刻画a_*(d)。新下界d/10与另列Paper Fact的一
 最新条件化义务已细化：UM-MACHINE-CONFIG-PROBE-GAP-v1在紧凑共享逃逸族上证明所有单机完整配置均有各自完整配置LP延伸。单个证书已同时守住各机容量，失败来自证书之间无共同base。对共同逃逸一阶矩的条件混合要求会恢复已有块cut；一般可计算耦合/联合舍入仍缺。
 
 不相关并行机新增[真实最优凸包与固定槽图边界](research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md)：identical族的全局最优凸分解平均点，其固定ST图每个cover值仍趋2OPT。本族有明确跨槽最优修复；下一步需一般相关保持/迁移与总位复杂度，不再把仅增强分数点当作足够机制。
+
+不相关机已有[鲁棒循环批量局部优化器](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)，总轮数与总位复杂度闭合；其分流反例使唯一最小成本槽输出仍可停在2−1/k。真正缺口是多目的地共同修复或更强初始化；主目标仍OPEN。
