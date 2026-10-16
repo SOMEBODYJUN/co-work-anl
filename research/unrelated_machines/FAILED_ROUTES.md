@@ -119,6 +119,8 @@ GHMR版的失败：占位任务都新增共同z上的1/2小边，故不再属于
 
 先做极小星再独立CONFIG探针也不足以统一相对T改善：收缩后的三选稀疏族无规则且全部最终边可独立条件化，见UM-CONTRACTED-SPARSE-CONFIG-GAP-v1。失败机制仍是跨查询共享容量不一致，不是消元错误。回收UM-STAR-CONFIG-TRANSFER-v1的外部互斥/Q占用证书接口；无占用条件不能从整数等价推出CONFIG等价，逆向条件边也不可推。重试须加入共同相关性、更多规则或一般实际联合迁移。
 
+固定宏任务的后处理边界没有扩大成联合选择不可能。UM-SHARED-SINK-JOINT-MACRO-v1把每home的整组实际撤离压成一个保零近似成本，并全局共同匹配宏任务；在单sink/唯一home结构可正确求和。将同一成本化直接用于多sink会丢同时预算，尚无此推广。见[正面正文](../current/unrelated_machines/shared_sink_joint_macro_assignment.md)。
+
 ## 既定条件矩运输不能免费视为同层重置
 
 尝试：从共同对称条件矩删一机器并吸收包，仅将该机的旧choices确定送到后备机器，再使用RYRᵀ。失效是命题错误：显式均匀真实最优分布在任何吸收负载<2T时都有新true列超载；旧矩来自真实最优分布，且在T≤包负载<2T的区间残余真实T调度存在。正文symmetric_moment_reset_and_single_machine_threshold.md§3–5给精确反例。

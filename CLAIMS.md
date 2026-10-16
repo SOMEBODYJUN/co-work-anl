@@ -37,6 +37,8 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 
 新增UM-STAR-CONFIG-TRANSFER-v1与UM-CONTRACTED-SPARSE-CONFIG-GAP-v1，分别固定配置转换的充分条件/方向/支持位复杂度与先消元后探针的准确gap范围。[精确身份](research/unrelated_machines/CLAIMS.md)保全量词，未改变主目标OPEN。
 
+新增UM-SHARED-SINK-JOINT-MACRO-v1；[专题精确账本](research/unrelated_machines/CLAIMS.md)固定唯一home、单sink、严格宏边阈值与实际构造量词。它给共同选择的正面接口，不改变一般主目标OPEN。
+
 [对称条件矩的运输与重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。
 
 新增UM-DAG-CONGESTION-FLOW-v1与UM-DAG-ACTIVATION-CORRIDOR-GAP-v1：[专题账本](research/unrelated_machines/CLAIMS.md)固定共同流、整数K、未知W及激活LP的不同合同；条件提取/固定支撑搜索已内部独立核对，主目标仍OPEN。

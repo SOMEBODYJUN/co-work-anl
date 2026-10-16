@@ -747,6 +747,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-STAR-CONFIG-TRANSFER-v1 | 全邻域极小星满足逐外机配置互斥时，配置可行性双向保持，全部独立单边条件证书向前保持；单点前向仅需外部占用Q≥1。每步全球最多分裂一列，复杂度计入给定证书。 | [星正文§8](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/star_configuration_transfer_review.md)；缺条件及逆向probe均有反例；未外审/未核新颖性。 |
 | UM-CONTRACTED-SPARSE-CONFIG-GAP-v1 | 每k≥3稀疏深树沿指定合法次序收两端后，无极小星、全部最终边条件CONFIG可行，OPT=2−1/k，T=1+1/k；组合接受合同sup2。 | [稀疏正文末节](unrelated_machines/sparse_conditioned_configuration_gap.md)；双路全最终边有限核验与一般证明分开，不排共同base或主目标。 |
 
+## 单共享汇点的宏任务共同选择
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-SHARED-SINK-JOINT-MACRO-v1 | ∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。 | 仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。 [自足证明](unrelated_machines/shared_sink_joint_macro_assignment.md)、[冻结审查](../reviews/unrelated_machines/shared_sink_joint_review.md)。独立内部核验，未外审。 |
+
 ## 对称共同条件矩的运输与重新耦合
 
 | ID | 精确范围与结论 | 正文与状态 |
