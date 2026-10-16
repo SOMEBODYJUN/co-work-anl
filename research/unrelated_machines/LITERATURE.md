@@ -39,3 +39,7 @@ Karp1972的完美3DM为NP完全，Main Theorem原p94及第17项p95。本次实�
 ## 新路线实际承重的归约来源
 
 BLMRS2024：[Santa Claus meets Makespan and Matroids](https://ir.cwi.nl/pub/36041/36041.pdf)，arXiv:2307.08453v1，37页，原字节与hash已取得。Theorem1印页2是一般近似归约的Paper Fact；Section2.1.2印页9–11的Lemmas12–14已直接重构selector/configuration/resource及调度转换。Lemma11/AppendixB仍未完整独立内化。印页6回顾标准Santa Claus间隙；本题[容量一紧凑星](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)是机制简化的自足推导，不冒充新近似或新困难性。Corollary6的two-value改善依赖输入规模，不关闭UM-TARGET-v1。
+
+## 联合槽前缀的针对性机制重构
+
+VW2010 arXiv v1第4节Theorem8（PDF9/印刷8）及紧随证明的计数LP说明已针对性复核；原文是共同区间[γ,3γ]的11/6结果。新[逐机跨度2正文](../current/unrelated_machines/joint_slot_prefix_rounding.md)是相同机制的自行重构推论，γ_i可不同；不把它登记为Paper Fact或新颖性认证。Theorem9的已知机器type信息仍有额外假设，本阶段未宣称完整重建其全部技术报告证明。

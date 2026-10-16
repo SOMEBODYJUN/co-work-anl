@@ -333,3 +333,18 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：既有条件块cut直接适配即可把本族强化阈值恢复θ_k；这不是该更强机制的反例。N块/激活缺口与旧k块/缺口1族不同，不覆盖旧Claim。无尚成立fatal objection，全球新颖性未认证。
 - Status：完整所述合同反例、内部独立已审；未外审，未给统一近似算法。
 - Related Files：[正文§2–5](../current/unrelated_machines/row_count_escape_gap.md)、row_count_escape_review.md、compact_count_escape.py、independent_row_count_escape.py、row_count_escape_audit.json及k2实际输入/证书。
+
+## UM-ROW-SPREAD-TWO-ROUND-v1：逐机两倍跨度的直接联合槽构造
+
+- Exact Statement / Quantifiers：∀合法非负有理UM输入，删除有零端任务后，若每个非空机器行的有限正时间均在某[γ_i,2γ_i]内（各γ_i>0可不同），则存在确定性位多项式算法输出全部原任务合法调度，C_max≤3OPT/2；含空任务/OPT0。
+- Objects：UM-MODEL-v1的原始矩阵、零任务预处理、逐行固定γ_i、目标T、分数LP及覆盖槽匹配。
+- Domain：二进制非负有理/∞，m≥1,n≥0；行尺度和分母不固定。
+- Definitions：剩余行γ_i取最小有限时间，跨度max/min≤2；两个严格阈值前缀及T<4γ_i时的总计数。
+- Assumptions：保留明确额外行跨度结构；只调用标准有理LP位多项式算法，不调用配置或共同H oracle。
+- Scope：该受限类全输入；一般跨度无界不在范围。
+- Conclusion：实际全部任务的确定性位多项式3/2近似；不输出NP难的(Aδ)中间证书。
+- Dependencies：UM-MODEL-v1、UM-ST-ROUND-v1、整数前缀槽保持、四区间估计、有理gcd格点及单调LP搜索；VW2010 Theorem8为机制来源，不把本推论说成原文定理。
+- Evidence：自足证明、先重构后冻结攻击、83810局部行及实际半单位奇偶实例精确核验。
+- Counterevidence / Objections：行内tiny与large任意混合无法归入本类；尚无一般跨尺度归约；无当前范围fatal异议。
+- Status：complete stated-scope proof; known-tool corollary with independent reconstruction and exact audits; unrefereed; novelty unverified。
+- Related Files：[research/current/unrelated_machines/joint_slot_prefix_rounding.md](../current/unrelated_machines/joint_slot_prefix_rounding.md)、`research/reviews/unrelated_machines/joint_slot_prefix_review.md`、两份审计与`evidence/runs/unrelated_machines/joint_slot_prefix_audit.json`。

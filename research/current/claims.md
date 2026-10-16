@@ -656,6 +656,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-GLOBAL-ROW-COUNT-FILTER-v1 | For every legal P and rational T>=0, the synchronous global single-row exact-load/count-capacity filter of section 1 preserves every T-feasible schedule edge and terminates in deterministic bit-polynomial time. With fixed globally valid row bounds/caps, the global query is equivalent in strength to all corresponding resource-subpool queries. Acceptance is not feasibility. | [自足正文](unrelated_machines/row_count_escape_gap.md)、[冻结审查](../reviews/unrelated_machines/row_count_escape_review.md)；主目标OPEN，外审/新颖性未认证。 |
 | UM-COMPACT-COUNT-ESCAPE-GAP-v1 | For every integer k>=2, the section 2 family with N=2k² blocks, N-2k global unit slots and common Y escape cost 1/k has OPT=2-1/k and GPC2(1) certificates. No minimal-star/cardinality rule starts; all global row-count forced-edge queries pass in the first round. Every machine configuration at T=1 extends to a complete assignment obeying other machines initial row-min count caps. The conjunction contract has supremum gap 2 on positive-OPT inputs; it does not include conditional LST/configuration LP. | [自足正文](unrelated_machines/row_count_escape_gap.md)、[冻结审查](../reviews/unrelated_machines/row_count_escape_review.md)；主目标OPEN，外审/新颖性未认证。 |
 
+## 直接联合舍入的受限类正面衔接
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-ROW-SPREAD-TWO-ROUND-v1 | ∀合法非负有理UM输入，删除有零端任务后，若每个非空机器行的有限正时间均在某[γ_i,2γ_i]内（各γ_i>0可不同），则存在确定性位多项式算法输出全部原任务合法调度，C_max≤3OPT/2；含空任务/OPT0。 | [完整构造](unrelated_machines/joint_slot_prefix_rounding.md)、[独立审查](../reviews/unrelated_machines/joint_slot_prefix_review.md)；已知机制直接推论，非一般目标突破，新颖性未认证。 |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

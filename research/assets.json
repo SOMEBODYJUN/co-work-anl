@@ -4666,6 +4666,42 @@
         "history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
       ],
       "limit": "No conditional LST/configuration-LP gap claim, no generic scheduler/LP solver or novelty certification; old block cuts still repair the family."
+    },
+    {
+      "id": "unrelated_row_spread_joint_slots",
+      "claims": [
+        "UM-ROW-SPREAD-TWO-ROUND-v1"
+      ],
+      "status": "complete stated-scope proof; known-tool corollary with independent reconstruction and exact audits; unrefereed; novelty unverified",
+      "applies_when": [
+        "UM-MODEL-v1; zero-eligible tasks assigned free and removed",
+        "Each nonempty remaining row has positive rational gamma_i with p_ij in[gamma_i,2gamma_i] or infinity",
+        "Machine scales, denominators, m and n variable; no preselected big matching"
+      ],
+      "produces": "Deterministic bit-polynomial 3/2 approximation on the explicit row-spread subclass, using necessary prefix-count LP and one all-task ordered-slot matching",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/joint_slot_prefix_rounding.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf",
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/row_spread_prefix.py",
+        "tests/audits/unrelated_machines/half_unit_joint_slot.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/joint_slot_prefix_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/joint_slot_prefix_review.md"
+      ],
+      "candidates": [
+        "research/questions/unrelated_machines/barrier_escape_obligations.md"
+      ],
+      "limit": "Known-tool direct corollary; extra row-spread assumption does not solve UM-TARGET. No generic LP solver implemented by audit scripts; finite row checks and one explicit actual parity instance only."
     }
   ]
 }
