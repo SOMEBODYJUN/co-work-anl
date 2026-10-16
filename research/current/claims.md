@@ -606,8 +606,24 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-CARDINALITY-CLOSURE-v1 | For all legal P and rational T>=0 the synchronous forced-residual cardinality filter preserves every T-feasible schedule and terminates in deterministic bit-polynomial time. Its monotone integer-scaled bisection gives a lower bound B<=OPT; acceptance is not feasibility. | [自足正文](unrelated_machines/bundle_coupling_subdivision_barrier.md)、[冻结攻击](../reviews/unrelated_machines/bundle_subdivision_review.md)；一般主目标仍OPEN，新颖性未认证。 |
 | UM-PAIR-SUBDIVISION-GAP-v1 | The pair-configuration LP, with common singleton machine marginals and exact complementarity for every degree-two job internal to each pair, has supremum gap 2 even on simple bipartite machine graphs. The stated cardinality filter makes no deletion on the subdivided VW certificates. | [自足正文](unrelated_machines/bundle_coupling_subdivision_barrier.md)、[冻结攻击](../reviews/unrelated_machines/bundle_subdivision_review.md)；一般主目标仍OPEN，新颖性未认证。 |
 
+## 不相关并行机：共同匹配补全与条件块容量
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-JOINT-SMALL-ROUND-v1 | ∀P,T≥0,δ≥0及给定(Aδ)有理H,x，位多项式输出保持H的合法调度，全部L_i≤(3/2+δ)T。 | [自足接口](unrelated_machines/joint_matching_completion_and_block_cuts.md)；ST直接推论，未给选择H算法。 |
+| UM-JOINT-CHOICE-NP-v1 | 每固定有理δ∈[0,1/3)，(Aδ)存在性判定NP完全，即使T1、N空、每任务唯一small、时间{1/3,1}；不含δ1/3。 | 同正文§3；导入Karp3DM及完整新归约，精确接口障碍，不是UM近似困难性。 |
+| UM-ESCAPE-BLOCK-CUT-v1 | 每k≥4、1≤B≤θ，末簇Z_g≥(r_B−1)Y_v有效；随B重算的块强化在共享z族的阈值恰θ=2−1/k。 | 同正文§4；对整个强化解的计数证明，尚无一般分离/舍入。 |
+
+## 不相关并行机：生成树再耦合的固定补全边界
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
 | UM-TREE-MARKOV-COMPLETION-NO-v1 | 指定五机实例T=OPT=1，真实全局分布的生成树pair Markov再耦合有概率1/4产生冻结树任务后最优补全2的态；只否定每个支持态都可补<2T的合同。 | [正文](unrelated_machines/tree_markov_completion.md)、[独立审查](../reviews/unrelated_machines/tree_markov_completion_review.md)；一步迁移即可修复，不排聪明择态/换树；同合同至多四机连通树总可补T。 |
 
+## 不相关并行机：可恢复星消去与容量身份
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
 | UM-MINIMAL-STAR-CONTRACTION-v1 | For every legal P,T>=0 after pruning p>T, if a machine full neighborhood F has S>T and S-p_va<=T for every a, its replacement by one job with outside min times preserves T-feasibility. Every reduced schedule B lifts in deterministic bit-polynomial time to max(B,T); <=m repeated contractions retain the same bound. | [自足正文](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/minimal_star_capacity_review.md)；非主目标突破。 |
 | UM-CAPACITY-ONE-PAIR-GAP-v1 | Over positive-OPT UM inputs the general pair-configuration LP GPC2 has supremum gap 2, even after iterating the specified residual-cardinality filter and minimal-star contraction. Explicit two-value family has m=k²+3k-1,n=2k²+k,T=1,OPT=2-1/k, all pair witnesses, and neither preprocessing rule triggers for k>=3. | [自足正文](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/minimal_star_capacity_review.md)；非主目标突破。 |
 | UM-STAR-Q-JOB-COMPRESSION-NO-v1 | For every integer q>=2, there is a (q+1)-job star with T=1 for which no q ordinary replacement jobs on the same external machines, with arbitrary nonnegative/infinite times and no extra identity constraints, preserve feasibility for every specified A/B residual capacity profile. | [自足正文](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/minimal_star_capacity_review.md)；非主目标突破。 |

@@ -32,6 +32,10 @@
 
 教材Vazirani第17章、Schuurman–Woeginger综述及其他附件中提到的外围论文尚未构成已审原文库；清单中没有的原始25项JSON和构建说明没有被假称找回。继续沿种子文献的参考文献/后续引用扩展、去重并记录版本。
 
+## 共同匹配接口新增的明确外部依赖
+
+Karp1972的完美3DM为NP完全，Main Theorem原p94及第17项p95。本次实际取得[2010重印中的原稿扫描](../../history/source/literature/unrelated_machines/karp_1972_reprinted_2010_reducibility.pdf)，PDF第14/15页已渲染并图像核对；它不是1972原排版的单独PDF。真实URL、重印DOI、23页、字节及SHA256见manifest的Karp1972_reprint2010。这里只导入NP完全性Paper Fact，未独立重证Karp的完整源归约。其用于[共同大边选择的精确接口](../current/unrelated_machines/joint_matching_completion_and_block_cuts.md)；不是UM-TARGET-v1或任何近似比例的困难性证明。
+
 ## 新路线实际承重的归约来源
 
 BLMRS2024：[Santa Claus meets Makespan and Matroids](https://ir.cwi.nl/pub/36041/36041.pdf)，arXiv:2307.08453v1，37页，原字节与hash已取得。Theorem1印页2是一般近似归约的Paper Fact；Section2.1.2印页9–11的Lemmas12–14已直接重构selector/configuration/resource及调度转换。Lemma11/AppendixB仍未完整独立内化。印页6回顾标准Santa Claus间隙；本题[容量一紧凑星](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)是机制简化的自足推导，不冒充新近似或新困难性。Corollary6的two-value改善依赖输入规模，不关闭UM-TARGET-v1。

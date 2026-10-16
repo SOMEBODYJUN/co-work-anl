@@ -6,6 +6,8 @@
 
 已形成[强制残余容量计数闭包与细分攻击](research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md)：过滤器健全且位多项式，在原两树族精确但被任务细分绕过；完整两机器配置耦合仍有sup gap2。此为准确方法边界，未给统一新近似比。独立覆盖与有限证据见正文入口。
 
+[共同大边选择与块容量](research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md)进一步定位：给定见证可条件舍入，低余量精确选择NP完全；专用条件块切面恢复整个共享逃逸族阈值。仍缺一般统一余量和构造；这些接口结果不升级主目标。
+
 新[五机树再耦合反例](research/current/unrelated_machines/tree_markov_completion.md)表明：真实最优分布也可能在丢掉非树相关性后产生冻结任务无法低于2T补全的态；本例可一步修复，仍缺一般repair/位复杂度证明。
 
 新增[极小超载星精确消去](research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)可提升实际调度，已独立攻击；它与现有传播/pair强化仍被紧凑共享容量族限制。多任务压缩须保身份，下一路线是资源池匹配接口，尚无统一ε。

@@ -6691,6 +6691,82 @@
         "tests/audits/unrelated_machines/star_profile_compression.py"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "UM-JOINT-HYBRID-INTERFACE-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "共同大边整数匹配与小边余量容量合同",
+      "detail": "One common matchingH on(T/2,T], every remaining job fractionally assigned only on<=T/2, total fractional load<= (1+delta)T. Size cutoff remains originalT/2.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-SOURCE-KARP-3DM",
+      "kind": "source",
+      "track": "unrelated_machines",
+      "title": "完美三维匹配NP完全性的原始导入",
+      "detail": "Karp1972 MainTheorem p94/item17 p95; actual2010 reprintPDF14/15 visually inspected. Source full reduction not independently reconstructed.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "history/source/literature/unrelated_machines/karp_1972_reprinted_2010_reducibility.pdf",
+        "research/unrelated_machines/literature_manifest.json"
+      ],
+      "status": "Paper Fact: target theorem and source definition verified"
+    },
+    {
+      "id": "UM-JOINT-SMALL-ROUND-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "给定共同大边匹配的条件小边舍入",
+      "detail": "GivenP,T,delta,H,x satisfying the explicit interface, deterministic bit-polynomial rounding yields every load<= (3/2+delta)T; a directST corollary, not a general scheduler.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "research/reviews/unrelated_machines/joint_matching_completion_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-JOINT-CHOICE-NP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "唯一小端共同选择接口的限域NP完全边界",
+      "detail": "For every fixed rationaldelta in[0,1/3), exact interface feasibility isNP-complete evenNempty/unique-small/times{1/3,1}/T1; no approximation gap.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "research/reviews/unrelated_machines/joint_matching_completion_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-ESCAPE-BLOCK-CUT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "条件末簇容量切面恢复整个逃逸族阈值",
+      "detail": "For everyk>=4 and1<=B<=theta, validZ_g>=(r_B-1)Y_v; adding all bottom cuts with B-dependent coefficients makes the escape-family threshold exactlytheta=2-1/k.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "research/reviews/unrelated_machines/joint_matching_completion_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-JOINT-MATCH-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "共同匹配与块容量的两路精确有限核验",
+      "detail": "Independent source cover and actual scheduling oracles, given-witness rounding, local path orientation and floor intervals; not a universal proof or heavy-choice solver.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "research/reviews/unrelated_machines/joint_matching_completion_review.md",
+        "evidence/runs/unrelated_machines/joint_matching_completion_audit.json",
+        "tests/audits/unrelated_machines/joint_matching_completion.py",
+        "tests/audits/unrelated_machines/unique_small_matching_audit.py",
+        "tests/audits/unrelated_machines/joint_matching_completion_independent.py"
+      ],
+      "status": "finite computational evidence"
     }
   ],
   "hyperedges": [
@@ -16002,6 +16078,114 @@
         "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "DERIVE-UM-JOINT-SMALL-ROUND-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1",
+        "UM-JOINT-HYBRID-INTERFACE-v1"
+      ],
+      "conclusion": "UM-JOINT-SMALL-ROUND-v1",
+      "statement": "The cited account supplies the complete conditional rounding, two-way3DM reduction, or B-dependent bottom-block capacity proof with the listed joint prerequisites.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-JOINT-SMALL-ROUND-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-JOINT-MATCH-AUDIT-v1"
+      ],
+      "conclusion": "UM-JOINT-SMALL-ROUND-v1",
+      "statement": "Finite exact source/reduction/rounding and recognized-family checks only; general claims depend on mathematical proofs.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "evidence/runs/unrelated_machines/joint_matching_completion_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-UM-JOINT-CHOICE-NP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-JOINT-HYBRID-INTERFACE-v1",
+        "UM-SOURCE-KARP-3DM"
+      ],
+      "conclusion": "UM-JOINT-CHOICE-NP-v1",
+      "statement": "The cited account supplies the complete conditional rounding, two-way3DM reduction, or B-dependent bottom-block capacity proof with the listed joint prerequisites.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-JOINT-CHOICE-NP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-JOINT-MATCH-AUDIT-v1"
+      ],
+      "conclusion": "UM-JOINT-CHOICE-NP-v1",
+      "statement": "Finite exact source/reduction/rounding and recognized-family checks only; general claims depend on mathematical proofs.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "evidence/runs/unrelated_machines/joint_matching_completion_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-UM-ESCAPE-BLOCK-CUT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ESCAPE-MATCH-GAP-v1"
+      ],
+      "conclusion": "UM-ESCAPE-BLOCK-CUT-v1",
+      "statement": "The cited account supplies the complete conditional rounding, two-way3DM reduction, or B-dependent bottom-block capacity proof with the listed joint prerequisites.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-ESCAPE-BLOCK-CUT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-JOINT-MATCH-AUDIT-v1"
+      ],
+      "conclusion": "UM-ESCAPE-BLOCK-CUT-v1",
+      "statement": "Finite exact source/reduction/rounding and recognized-family checks only; general claims depend on mathematical proofs.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md",
+        "evidence/runs/unrelated_machines/joint_matching_completion_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMIT-UM-JOINT-COMPLETION-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-JOINT-SMALL-ROUND-v1",
+        "UM-JOINT-CHOICE-NP-v1",
+        "UM-ESCAPE-BLOCK-CUT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Conditional witnesses suffice, exact low-slack choice is hard, and recognized-family cuts help; the fixed slack interval[1/3,1/2), general separation and universal constructive guarantee remain open.",
+      "refs": [
+        "research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md"
+      ],
+      "status": "open algorithmic obligation"
     }
   ]
 }

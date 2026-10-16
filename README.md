@@ -19,6 +19,8 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 
 独立接续先读新全状态证明。既有[Pro自足简报](research/weighted_congestion_frontier/PRO_BRIEF.md)、[来源manifest](research/weighted_congestion_frontier/PRO_BRIEF_SOURCES.json)及[冻结导出器](research/weighted_congestion_frontier/tools/export_pro_packet.py)保留2c49228及其前序快照的模型与工具整理；其旧OPEN状态已由当前新否定证明取代，当前交接应另附新正文与审查。冻结包按指定提交导出，不原位改写。
 
+不相关并行机的新[共同匹配补全接口](research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md)区分条件构造、精确选择NP完全与专用条件块切面；下一步为一般可求解耦合与统一容量余量，主目标仍OPEN。
+
 ## Mathematical Objects / Definition Map
 
 | 模型 | 对象与定义链 | 权威定义与研究入口 |

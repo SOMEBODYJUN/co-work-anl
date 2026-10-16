@@ -1,6 +1,7 @@
 # 精确命题入口
 
-新主攻 `UM-TARGET-v1` 、阶段边界 `UM-LONG-PATH-GAP-v1`、`UM-COALITION-PROJECTION-GAP-v1`、`UM-TREE-MARKOV-COMPLETION-NO-v1` 及经典工具 `UM-ST-ROUND-v1`、`UM-CONF-GAP-v1` 见[不相关并行机精确账本](research/unrelated_machines/CLAIMS.md)。主目标仍OPEN；另有`UM-HEAVY-MATCH-FILTER-v1`、`UM-SIMPLE-SUPPORT-GAP-v1`与`UM-ESCAPE-MATCH-GAP-v1`的限范围安全过滤和方法反例，均非主目标近似算法；既有结果重构不升级为新算法。
+新主攻 `UM-TARGET-v1` 及经典工具、长链/联合投影、树再耦合、匹配残余/共享逃逸等阶段边界见[不相关并行机精确账本](research/unrelated_machines/CLAIMS.md)。主目标仍OPEN；既有工具重构与限范围方法反例不升级为新近似算法。
+另有[共同大边选择与条件块容量](research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md)的条件舍入、限域精确选择NP完全和专用族强化身份，均不关闭主目标。
 本页是目录，不以摘要替代量词。每项现行命题的精确范围、依赖和五轴审查状态分别在 [research/current/claims.md](research/current/claims.md) 与 [research/review_status.json](research/review_status.json)。改变对象、假设、量词、成本或结论必须创建新版本。
 
 | 研究线 | Exact Statement 的权威位置 | 当前前沿 |

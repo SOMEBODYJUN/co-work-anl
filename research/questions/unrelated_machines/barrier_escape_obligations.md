@@ -18,6 +18,12 @@
 
 具体已知限制：UM-CARDINALITY-CLOSURE-v1和二阶bundle cut能修原VW，却被任务细分绕过，完整pair coupling仍gap2。后续候选须给跨capacity-one中间机的信息消去/保持，且不能假设精确knapsack/configuration oracle免费。证明及真实范围见[现行正文](../../current/unrelated_machines/bundle_coupling_subdivision_barrier.md)。
 
+## 已收窄的共同匹配容量义务
+
+已证边界见[共同大边选择与条件块切面](../../current/unrelated_machines/joint_matching_completion_and_block_cuts.md)。大小分界固定原T/2。要攻主目标的一条充分路线是：选一个共同big匹配H，使未选任务有small分数解，总负载≤(1+δ)T；固定δ<1/2再接槽舍入给(3/2+δ)T。精确选择对每固定有理δ<1/3已NP完全，即使N空/唯一small，所以不能继续把低余量exact接口当免费oracle；δ∈[1/3,1/2)仍未被此归约排除。
+
+需要判别的具体问题：能否在某固定δ∈[1/3,1/2)下，对所有原OPT≤T输入构造上述共同见证，且对其余输入也有总位多项式停止界？或能否给可分离、可舍入的条件块强化？共享z族已被随B重算的末簇cut完全识别，但这只是专用族的有效接口。一般多small端、长链相关性、oracle精度、输出调度和目标搜索仍须同时闭合。
+
 生成树pair提取也须证明非树任务残量仍可行；[五机真实分布反例](../../current/unrelated_machines/tree_markov_completion.md)否定“任意支持态+冻结树任务”合同。允许迁移和有信息择态仍是开放接口，不能据本例宣布这些路线失败。
 
 消元路线新增准确接口：极小超载星可保T并从任意B逆恢复max(B,T)，但紧凑容量一族无触发点。q普通任务保全部残余profile的压缩已被boss4反驳；需要保任务身份的加权匹配或更强耦合。见[现行自足正文](../../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)，不将此表示障碍扩大到主目标。

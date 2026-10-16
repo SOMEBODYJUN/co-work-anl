@@ -144,6 +144,42 @@ LST的2近似/ρ<3/2困难性、SV的2−1/m、restricted assignment的估值/�
 
 UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=2特例；本页登记保留独立长度2重构及与计数闭包的准确合同，不把两个身份当作两次原创突破。
 
+## UM-JOINT-SMALL-ROUND-v1：给定共同大边见证的条件舍入
+
+- Exact Statement / Quantifiers：∀合法P、∀有理T≥0、δ≥0及正文(Aδ)的有理见证H,x，可在(P,T,δ,H,x)总位长的多项式时间内确定性输出全部任务合法调度，保持H，∀i有L_i≤(3/2+δ)T。
+- Objects / Domain / Definitions：UM-MODEL-v1；H为p∈(T/2,T]的大边整数匹配，剩余x只用p≤T/2小边，且h_i+Σp_ijx_ij≤(1+δ)T。
+- Assumptions / Scope：输入已经给出共同H与x；T=0、空任务和零边包含；不含找到H的算法。
+- Conclusion：真实调度及全部机器同时负载界；δ=0的3/2是ST直接推论，不是无条件通用3/2算法。
+- Dependencies：UM-MODEL-v1、UM-ST-ROUND-v1的加性排序槽证明，精确合同(Aδ)。
+- Evidence：完整推导、冻结独立审查，实际给定见证舍入与边界检查。
+- Counterevidence / Objections：共同H选择不可当普通匹配；UM-JOINT-CHOICE-NP-v1仅限精确/低余量接口，不排所有近似路线。
+- Status：完整条件性构造证明，标准工具直接推论；内部独立审查，外审/新颖性未认证。
+- Related Files：[共同选择与块切面正文](../current/unrelated_machines/joint_matching_completion_and_block_cuts.md)、joint_matching_completion_review.md、三份相关审计代码与joint_matching_completion_audit.json。
+
+## UM-JOINT-CHOICE-NP-v1：唯一小端共同匹配选择的精确困难
+
+- Exact Statement / Quantifiers：∀固定有理δ∈[0,1/3)，判定上述(Aδ)见证是否存在为NP完全，即使T=1、每任务恰一个small端（N空）、所有有限时间仅{1/3,1}。
+- Objects / Domain / Definitions：大小分界仍按原T/2，匹配大边限p≤T；δ仅放宽剩余总分数容量，不改大小边定义。
+- Assumptions / Scope：显式有限3DM输入多项式归约；NP完全性无假设，排多项式精确oracle需P≠NP；不含δ=1/3。
+- Conclusion：整体H与残余容量耦合不是免费匹配oracle；不是主目标或某个近似比的困难性结论。
+- Dependencies：UM-MODEL-v1、接口(Aδ)、Karp1972完美3DM NP完全性Paper Fact（原p94/95，本次2010重印PDF14/15已图像核对）、正文无pins归约和NP证书位长证明。
+- Evidence：正反两向全量词归约；q=0/s=0边界；唯一small使剩余质量0/1、负载1/3网格；两路独立调度oracle。
+- Counterevidence / Objections：δ=1/3时q1空三元组、4激活任务源负载4/3给归约失效；δ∈[1/3,1/2)及其他算法均未排除。
+- Status：完整限域复杂度证明、内部独立审查；经典源困难性未在本专题重证，外审/新颖性未认证。
+- Related Files：同正文§3、原始Karp重印/manifest、审查和精确代码/冻结证据。
+
+## UM-ESCAPE-BLOCK-CUT-v1：条件末簇容量恢复逃逸族真实阈值
+
+- Exact Statement / Quantifiers：∀整数k≥4、∀有理1≤B≤θ_k=2−1/k，在P_k^esc末簇g上，Z_g≥(r_B−1)Y_v为每个B可行整数调度的有效不等式，r_B=k−floor(k(B−1))。将每簇该切面加到配置LP，则B<θ_k时不可行，B=θ_k时可行，故该族强化阈值恰θ_k；B<1由根任务拒绝。
+- Objects / Domain / Definitions：UM-ESCAPE-MATCH-GAP-v1的明确族；Y_v父端incoming选择，Z_g该簇reserve去共同z数量，配置版用相应包含边际。
+- Assumptions / Scope：切面随B重算；在T₀时r−1=k−2，但θ处系数0；只对已识别本族，未给一般块分离oracle。
+- Conclusion：修复整个逃逸族而不只是单份旧证书；没有一般gap界或调度近似。
+- Dependencies：UM-MODEL-v1、UM-ESCAPE-MATCH-GAP-v1族及上界调度、每层单机配置计数+任务覆盖、终端条件占位计数、z的配置负载≤B。
+- Evidence：一般不等式/对所有强化解的矛盾证明；两路局部定向枚举和精确floor区间检查。
+- Counterevidence / Objections：固定使用T₀系数到θ会变成无效切面，禁止；多机条件化可能是标准层级投影，新颖性未认证。
+- Status：完整限族强化证明及内部独立审查；一般求解、分离和舍入仍OPEN。
+- Related Files：同正文§4、冻结审查和块容量有限核验。
+
 
 ## UM-TREE-MARKOV-COMPLETION-NO-v1：生成树投影后的固定补全反例
 

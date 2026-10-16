@@ -5,3 +5,5 @@
 已采用UM-MODEL-v1与三个限范围身份：UM-HEAVY-MATCH-FILTER-v1、UM-SIMPLE-SUPPORT-GAP-v1、UM-ESCAPE-MATCH-GAP-v1。成熟资产统一在[正文](../../../current/unrelated_machines/heavy_matching_residual_and_escape.md)与[精确账本](../../../unrelated_machines/CLAIMS.md)，本桌面不复制正文。
 
 当前精确卡点：单个U_i的最优撤离匹配没有计其余任务的小端容量；共享z族使所有单星查询通过而OPT/T趋2。下一步检验跨星条件容量切面，以及整体大边匹配＋小边分数补全接口的计算复杂度和条件舍入。不能把精确选择oracle免费化。证据与实际内审从正文链接，外审和全球新颖性未认证。
+
+第二阶段规范入口：[共同匹配补全与条件块切面](../../../current/unrelated_machines/joint_matching_completion_and_block_cuts.md)。精确大边选择在δ<1/3已NP完全（固定有理δ，N空/唯一small），而δ∈[1/3,1/2)未排除；随B重算的条件末簇cut把共享z族阈值恢复OPT，但没有一般分离算法。外部3DM源只导入准确Paper Fact，本轮已经图像核对原始重印p94/95。下一位接续者先读此接口与独立审查，再决定算法路线；勿重复调用精确oracle。

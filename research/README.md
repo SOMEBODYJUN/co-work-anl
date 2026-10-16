@@ -8,6 +8,8 @@
 
 交给未读仓库的研究者：先读[当前线性全状态否定证明](current/weighted_congestion/linear_degree_allstate_lower_bound.md)及其独立审查；解题前冻结整理可复用[自足接题材料与精确方法障碍](weighted_congestion_frontier/PRO_BRIEF.md)和[完整任务正文](weighted_congestion_frontier/prompts/PRO_ATTACK.md)；旧整理稿的OPEN状态由新否定结论取代，其余数学、审查与证据仍可按冻结短指针追溯，不要求默认通读历史。
 
+本题后续从[共同匹配选择与条件块容量](current/unrelated_machines/joint_matching_completion_and_block_cuts.md)进入：条件舍入、低余量精确选择障碍、专用共享容量切面与仍OPEN的统一构造分开登记。
+
 ## 我应该从哪里开始
 
 | 你要研究什么 | 首读与主要资产 | 当前真正缺口 |
