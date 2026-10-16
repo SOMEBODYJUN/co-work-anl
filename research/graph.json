@@ -7794,6 +7794,37 @@
         "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
       ],
       "status": "finite exact evidence only"
+    },
+    {
+      "id": "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "真实最优凸包槽初始化的无界机器长链修复",
+      "detail": "For every integer k>=3,d>=1 the explicit degree-two positive rational instance has T=OPT=1 and x given as a convex combination of two actual optimal schedules. For every fixed tiny tie order, every minimum-total-processing-time ordered-slot cover matching induces the same assignment sigma with Cmax=2-1/k. Every strict descending-sorted-load lex improvement changes at least d+1 jobs and touches at least d+2 old/new owner endpoints; one reassignment jointly attains both bounds, gives Cmax=2-2/k and moves at most one job out of each machine. Only fixed-sigma bounded-machine strict-lex descent; the family explicitly has two-machine single-job weak-makespan-monotone suffix preparation followed by improvement. Does not exclude neutral preprocessing, arbitrary long paths, alternate initialization or a general algorithm. Two supplied optimal components can be returned directly.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "research/reviews/unrelated_machines/optimal_hull_long_chain_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-OPT-HULL-LONG-CHAIN-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "长链最优凸分解与最小改善支持的双路精确证据",
+      "detail": "24 parameter cases plus boundary fixtures; independent complete owner enumeration for k3d1,k3d2,k4d1, total270336 schedules, with actual positive-overlap slot matching. Reviewer additionally uses interleaved job numbering and per-machine subset-DP cover counting at the same finite parameters.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_gap.py",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_independent.py",
+        "examples/unrelated_machines/optimal_hull_long_chain_k3d1.json",
+        "evidence/certificates/unrelated_machines/optimal_hull_long_chain_k3d1.json",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_audit.json",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_independent.json",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_reviewer.py",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_reviewer.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -18791,6 +18822,52 @@
         "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
       ],
       "status": "scope and remaining obligations"
+    },
+    {
+      "id": "DERIVE-OPT-HULL-LONG-CHAIN",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1",
+      "statement": "Direct explicit-family proof in account section10: two optimal schedules, standard slot graph, strictly separated activation costs and exact endpoint-support classification. No complexity assumption or free oracle.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
+      ],
+      "status": "direct stated-scope proof"
+    },
+    {
+      "id": "CHECK-OPT-HULL-LONG-CHAIN",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPT-HULL-LONG-CHAIN-AUDIT-v1"
+      ],
+      "conclusion": "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1",
+      "statement": "Checks only the listed finite parameters and complete labeled owner enumeration, not a computational proof of universal quantifiers.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_gap.py",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_independent.py",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_audit.json",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_independent.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-OPT-HULL-LONG-CHAIN-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only fixed-sigma bounded-machine strict-lex descent; the family explicitly has two-machine single-job weak-makespan-monotone suffix preparation followed by improvement. Does not exclude neutral preprocessing, arbitrary long paths, alternate initialization or a general algorithm. Two supplied optimal components can be returned directly.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }

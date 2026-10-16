@@ -4824,15 +4824,17 @@
         "UM-ROBUST-CYCLIC-BATCH-OPT-v1",
         "UM-BATCH-SUPPORT-REPAIR-NO-v1",
         "UM-FORK-MINCOST-ROUND-REPAIR-NO-v1",
-        "UM-COORDINATE-REPAIR-ST-GAP-v1"
+        "UM-COORDINATE-REPAIR-ST-GAP-v1",
+        "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
         "UM-MODEL-v1; actual legal schedule and pruned edges at T",
         "Optimizer T>0 and fixed rational eta in (0,1), Cmax(sigma)<=2T",
-        "Counterexamples are explicitly defined families, not general complexity lower bounds"
+        "Counterexamples are explicitly defined families, not general complexity lower bounds",
+        "Long-chain family: integer k>=3,d>=1, true-optimal convex x, fixed tiny tie order; strict lex descent and changed-job endpoint count."
       ],
-      "produces": "Deterministic bit-polynomial robust cyclic-batch local optimizer, exact eviction-support boundary, and a unique-minimum-cost LST-output fork obstruction requiring simultaneous multi-destination repair. Direct work-conservation bridge to true-optimal convex slot outputs shows the coordinatewise optimizer can stagnate at gap tending to two even under that stronger initialization.",
+      "produces": "Deterministic bit-polynomial robust cyclic-batch local optimizer, exact eviction-support boundary, and a unique-minimum-cost LST-output fork obstruction requiring simultaneous multi-destination repair. Direct work-conservation bridge to true-optimal convex slot outputs shows the coordinatewise optimizer can stagnate at gap tending to two even under that stronger initialization. The added true-optimal-convex chain family quantifies exact unbounded machine participation for strict lex repair, with an explicit weak-makespan-monotone path escape.",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
@@ -4846,7 +4848,10 @@
         "tests/audits/unrelated_machines/batch_support_independent.py",
         "tests/audits/unrelated_machines/padded_fork_unique_cost_independent.py",
         "tests/audits/unrelated_machines/cyclic_frozen_independent_crosscheck.py",
-        "tests/audits/unrelated_machines/identical_work_invariant_audit.py"
+        "tests/audits/unrelated_machines/identical_work_invariant_audit.py",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_gap.py",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_independent.py",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_reviewer.py"
       ],
       "records": [
         "evidence/runs/unrelated_machines/cyclic_batch_repair_audit.json",
@@ -4854,19 +4859,25 @@
         "evidence/runs/unrelated_machines/batch_support_independent_audit.json",
         "evidence/runs/unrelated_machines/padded_fork_unique_cost_audit.json",
         "evidence/runs/unrelated_machines/cyclic_frozen_crosscheck_reproducible.json",
-        "evidence/runs/unrelated_machines/identical_work_invariant_audit.json"
+        "evidence/runs/unrelated_machines/identical_work_invariant_audit.json",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_audit.json",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_independent.json",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_reviewer.json"
       ],
       "examples": [
         "examples/unrelated_machines/padded_fork_k2.json",
-        "evidence/certificates/unrelated_machines/padded_fork_k2_certificate.json"
+        "evidence/certificates/unrelated_machines/padded_fork_k2_certificate.json",
+        "examples/unrelated_machines/optimal_hull_long_chain_k3d1.json",
+        "evidence/certificates/unrelated_machines/optimal_hull_long_chain_k3d1.json"
       ],
       "reviews": [
-        "research/reviews/unrelated_machines/cyclic_batch_fork_review.md"
+        "research/reviews/unrelated_machines/cyclic_batch_fork_review.md",
+        "research/reviews/unrelated_machines/optimal_hull_long_chain_review.md"
       ],
       "candidates": [
         "research/questions/unrelated_machines/barrier_escape_obligations.md"
       ],
-      "limit": "No uniform improved approximation. ST source is contextual prior art; new local contracts are proved directly. Padded fractional point is not a configuration projection or asserted basic. Standard primitives and unverified global novelty are separated. The configuration-projection caveat belongs to the separate one-destination fork contract; coordinatewise monotonicity is now refuted even on true-optimal convex initialization."
+      "limit": "No uniform improved approximation. ST source is contextual prior art; new local contracts are proved directly. Padded fractional point is not a configuration projection or asserted basic. Standard primitives and unverified global novelty are separated. The configuration-projection caveat belongs to the separate one-destination fork contract; coordinatewise monotonicity is now refuted even on true-optimal convex initialization. Only fixed-sigma bounded-machine strict-lex descent; the family explicitly has two-machine single-job weak-makespan-monotone suffix preparation followed by improvement. Does not exclude neutral preprocessing, arbitrary long paths, alternate initialization or a general algorithm. Two supplied optimal components can be returned directly."
     },
     {
       "id": "unrelated_rooted_dag_degree_token_bridge",
