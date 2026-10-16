@@ -75,4 +75,10 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 
 [对称条件矩的运输与重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。 后续§9另给独立均匀选择的精确新矩：同族吸收q+2任务即可保全部条件，门槛为(1+2/q)T；这仍非一般输入界或实际调度保证。
 
+[单共享汇点的共同宏任务匹配](research/current/unrelated_machines/shared_sink_joint_macro_assignment.md)已闭合单汇点正面接口：宏任务全局重选、任意尺寸私有任务批量撤离、误差不按home数累积；算法、独立构造与有限精确核验分别登记。下一承重义务是多个真实接收预算及一般任务跨home变化，不能把标量成本直接推广。UM-TARGET-v1仍OPEN。
+
 不相关机的[共同拥塞流](research/current/unrelated_machines/rooted_dag_congestion_flow.md)已闭合条件根树提取、固定支撑最小K及精确锐界；一般选择好支撑W仍未解，激活边际LP被单位汇流走廊反驳。UM-TARGET-v1保持OPEN；这是可复用条件构造，不是统一新近似算法。
+
+## 不相关机路线的整合判断
+
+[共同容量路线整合审查](research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)已核双边界菜单、浅层半比例和macro迁移前沿的实际范围。一般共同选择与总进展仍未闭合；单汇点共同macro接口已入库并补读，但不把多汇点整数化或低秩真矩提取当免费步骤。未改变UM-TARGET-v1的OPEN状态。

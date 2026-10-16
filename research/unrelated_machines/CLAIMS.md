@@ -632,6 +632,18 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Status：完整限合同证明与独立内部审查，有限计算非一般证明；外审/新颖性未认证，主目标OPEN。
 - Related Files：research/current/unrelated_machines/sparse_conditioned_configuration_gap.md末节；同新审查/双路代码/冻结记录；examples/unrelated_machines/contracted_sparse_configuration_input.json和evidence/certificates/unrelated_machines/contracted_sparse_configuration_witness.json。
 
+## UM-SHARED-SINK-JOINT-MACRO-v1：单共享汇点的宏任务共同匹配与整组撤离
+
+- Exact Statement / Quantifiers：∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。
+- Objects / Domain / Definitions：UM-SHARED-SINK-MODEL-v1；非负有理/∞、显式分组、home数与宏任务数均可增长；仅一个sink。空组、强制端、T0和大分母包含。
+- Assumptions / Scope：仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。
+- Conclusion / Mechanism：每个macro/home或empty模式的真实最小整组撤离成本，保零乘性覆盖DP与带dummy成本的全局最小权完美匹配；误差只对同一个真实sink预算求和，不按home数量累积。
+- Dependencies：UM-MODEL-v1、UM-SHARED-SINK-MODEL-v1；正文自足的覆盖缩放与有理最小成本二分图匹配。不调用最优调度/分布或配置oracle。
+- Evidence：规范Fraction覆盖子集/匹配排列/原任务分配oracle；独立全局N绝对预算floor-DP与独立实际分配枚举；实际范围、代码hash和修复见冻结审查/记录。有限核验不是一般证明。
+- Counterevidence / Objections：独立审查发现的Python float/bool输入歧义已统一拒绝并重跑；宏边放宽至等号会错拒两半任务，不作此推广；多预算匹配不自动积分。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；一般UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/shared_sink_joint_macro_assignment.md](../current/unrelated_machines/shared_sink_joint_macro_assignment.md)、research/reviews/unrelated_machines/shared_sink_joint_review.md；实现/冻结记录见正文§7。
+
 ## UM-SYMMETRIC-JOB-AGGREGATION-v1：对称条件矩的任务选择聚合接口
 
 - Exact Statement / Quantifiers：For every nonempty bounded one-hot rational P, every symmetric normalized certificate (x,Y), every given deterministic jobwise aggregation/deletion R, and every new one-hot rational polytope P′, if RY_:e belongs to x_e P′ for every old choice of every retained job, then (Rx,RYRᵀ) belongs to the same-layer pair certificate set of P′. At least one retained job is required for this sufficient criterion; no retained jobs instead require checking the zero-dimensional base. Given data and explicit P′ are checkable in bit-polynomial time.
@@ -691,3 +703,7 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：m=2q不可省；一般m时q2,m8需c5即2.5T。转换分布的坏态仍可达2T；未证明一般重置、相同边际修复或主目标近似算法。当前无尚成立fatal。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准二点概率计算扩展，新颖性和独立论文价值未认证。
 - Related Files：research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md§9；research/reviews/unrelated_machines/symmetric_moment_reset_review.md追加审查；tests/audits/unrelated_machines/uniform_random_moment_reset.py、tests/audits/unrelated_machines/uniform_random_reset_independent.py、evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json。
+
+## 跨路线补充审查与身份保持
+
+[共同容量路线整合审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)补核UM-FOREST-TWO-BOUNDARY-MENU-v1、UM-DEPTH-TWO-HALF-v1、UM-FROZEN-MACRO-TINY-REOPT-GAP-v1、UM-MACRO-MIGRATION-FRONTIER-v1及UM-ONE-DESTINATION-SLOT-REPAIR-v1的所列范围。没有改变这些身份或主目标状态；标准流/仿射恢复推导用于检验接口，不另冒充新的特殊类研究成果。后续共同矩正文与研讨候选的实际覆盖另在审查中注明。

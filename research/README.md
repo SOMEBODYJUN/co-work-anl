@@ -104,4 +104,8 @@
 
 [对称条件矩的运输与重新耦合](current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。 后续§9另给独立均匀选择的精确新矩：同族吸收q+2任务即可保全部条件，门槛为(1+2/q)T；这仍非一般输入界或实际调度保证。
 
+[单共享汇点的宏任务共同匹配与私有任务整组撤离](current/unrelated_machines/shared_sink_joint_macro_assignment.md)：UM-SHARED-SINK-JOINT-MACRO-v1以保零覆盖背包成本+dummy全局匹配给home≤T、z≤(1+η)T的位多项式实际构造；宏图任意，私有任务无尺寸限制。一般多预算/跨home任务仍OPEN。
+
 [共同拥塞需求树的正面流接口](current/unrelated_machines/rooted_dag_congestion_flow.md)允许任意深度的低需求走廊与汇流；给证书提取、固定W最小K均位多项式，保证1/(2K−1)精确尖锐。下一缺口是未知W的共同选择，不能用已被反驳的激活边际LP替代。
+
+[共同容量路线整合审查](reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)连接菜单、条件矩、需求树与宏任务修复：核准局部范围、一般核心残留及新候选的精确提取/进展义务；不是另一个模型或新统一算法。

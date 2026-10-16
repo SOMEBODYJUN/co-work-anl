@@ -120,6 +120,8 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 
 端点预处理缺口已按新身份闭合：每步外部配置互斥保证CONFIG双向与条件边前向转换，支持S+r、位复杂度计入显式证书。稀疏族P_k收每底簇两端后无极小星，全部最终边仍可独立强制，OPT/T→2。不是所有预处理或共同base的否定；下一高信息义务仍为一般相关保存和联合容量，更多同类独立探测不提供统一余量。
 
+[单共享汇点的共同宏任务匹配](../current/unrelated_machines/shared_sink_joint_macro_assignment.md)：UM-SHARED-SINK-JOINT-MACRO-v1。∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。 每个macro/home或empty模式的真实最小整组撤离成本，保零乘性覆盖DP与带dummy成本的全局最小权完美匹配；误差只对同一个真实sink预算求和，不按home数量累积。 仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。 一般UM-TARGET-v1仍OPEN。
+
 ## 对称矩重置后的准确前沿
 
 [任务聚合、单机矩运输阈值与同边际修复](../current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)给UM-SYMMETRIC-JOB-AGGREGATION-v1及UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1。前者是给定R的可检查列条件；后者在真实最优分布上区分既定矩推前需2T与同Rx重新耦合只需T。不得写成Rx不属新N或同层求解不可能。读取链：CLAIMS→正文→symmetric_moment_reset_review.md→双路代码/实际q2输入与证书/symmetric_moment_reset_audit.json。
@@ -133,3 +135,7 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 一般activation LP即使加x_vw≤a_v仍被四段单位汇流走廊族击穿；它不是强共同证书。下一高信息义务：从一般输入/阈值承诺中构造有用W或保留其共同条件路径容量，并证明统一K与实际输出；不得先知道好树再选择W。当前没有通过攻击的一般W算法，不继续制造同一LP的小修补。UM-TARGET-v1仍OPEN。
 
 同一正文§9另立UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1：独立均匀转移旧删机choices所生的新矩可确定精确计算，最小包q+2、负载1+2/q，q≥3严格小于固定后备的2。必须修同任务对角；一般m不保此界、个别态仍2T，故只作为限族正面运输，不提升主目标。双路实际矩/原分布coins枚举及冻结审查从正文进入。
+
+## 跨路线整合后的可判别前沿
+
+[冻结整合审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)确认已有真实局部构造，尚无一般统一ε。菜单全局选择已含unrelated graph balancing；DAG-token任意深度且非根需求有固定上界时已有标准最大流标尺，不能只加深路径当新机制；真低秩矩存在不等于可提取。最新阈值repair仍缺真实进展势，失败不是不可行；单sink共同macro接口靠可加真实成本耦合，多sink需另证整数选择。优先判别一般共同容量/重新耦合与总位进展，不重复独立探针或把局部修复当全类保证。

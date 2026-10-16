@@ -7727,6 +7727,73 @@
         "evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-SHARED-SINK-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "唯一home与单共享汇点的宏任务占位模式",
+      "detail": "给定显式homes、单z、私有分组以及每有限边>T/2的宏任务，覆盖成本保持真实任务身份；T0/零端点包含。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单共享汇点的宏任务共同匹配与私有任务整组撤离",
+      "detail": "∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
+        "research/reviews/unrelated_machines/shared_sink_joint_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-SHARED-SINK-JOINT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "单共享汇点共同选择的双路精确有限审计",
+      "detail": "规范Fraction覆盖子集/匹配排列/原任务分配oracle；独立全局N绝对预算floor-DP与独立实际分配枚举；实际范围、代码hash和修复见冻结审查/记录。有限核验不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
+        "tests/audits/unrelated_machines/shared_sink_joint_assignment.py",
+        "tests/audits/unrelated_machines/shared_sink_joint_independent.py",
+        "evidence/runs/unrelated_machines/shared_sink_joint_assignment_audit.json",
+        "evidence/runs/unrelated_machines/shared_sink_joint_independent_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-JOINT-ROUTE-REVIEW-v1",
+      "kind": "artifact",
+      "track": "unrelated_machines",
+      "title": "共同容量路线整合审查",
+      "detail": "准确区分局部可构造进展、原核心残留、矩提取与真正负载进展；标准推导和研讨候选不升级主目标。",
+      "refs": [
+        "research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md",
+        "research/current/unrelated_machines/forest_boundary_contraction.md",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md",
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "supplementary scope review; target open"
+    },
+    {
+      "id": "UM-ROUTE-COMPOSITION-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "菜单、需求流与仿射真矩恢复的有限核验",
+      "detail": "48单任务菜单、1885组装/14425分配、1076单位需求、9176有界需求与548分布；另零目标、死端、大分母、伪PSD及全tiny边界。",
+      "refs": [
+        "tests/audits/unrelated_machines/route_composition_review.py",
+        "evidence/runs/unrelated_machines/route_composition_review_audit.json",
+        "research/current/unrelated_machines/forest_boundary_contraction.md",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "finite exact evidence only"
     }
   ],
   "hyperedges": [
@@ -18645,6 +18712,85 @@
         "research/reviews/unrelated_machines/symmetric_moment_reset_review.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "D-UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-SHARED-SINK-MODEL-v1"
+      ],
+      "conclusion": "UM-SHARED-SINK-JOINT-MACRO-v1",
+      "statement": "每个macro/home或empty模式的真实最小整组撤离成本，保零乘性覆盖DP与带dummy成本的全局最小权完美匹配；误差只对同一个真实sink预算求和，不按home数量累积。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SHARED-SINK-JOINT-AUDIT-v1"
+      ],
+      "conclusion": "UM-SHARED-SINK-JOINT-MACRO-v1",
+      "statement": "规范Fraction覆盖子集/匹配排列/原任务分配oracle；独立全局N绝对预算floor-DP与独立实际分配枚举；实际范围、代码hash和修复见冻结审查/记录。有限核验不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
+        "evidence/runs/unrelated_machines/shared_sink_joint_assignment_audit.json",
+        "evidence/runs/unrelated_machines/shared_sink_joint_independent_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SHARED-SINK-JOINT-MACRO-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "CHECK-UM-ROUTE-COMPOSITION-REVIEW",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROUTE-COMPOSITION-AUDIT-v1"
+      ],
+      "conclusion": "UM-JOINT-ROUTE-REVIEW-v1",
+      "statement": "Finite exact interface corroboration and independent rerun only; no general theorem or approximation inferred from enumeration.",
+      "refs": [
+        "research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md",
+        "evidence/runs/unrelated_machines/route_composition_review_audit.json",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMIT-UM-JOINT-ROUTE-REVIEW-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-JOINT-ROUTE-REVIEW-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Local menus, shallow trees, given true moments and one-shot cap repair do not supply general core choice, a computable shared certificate, a uniform epsilon or total progress. This review does not negate the target.",
+      "refs": [
+        "research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md",
+        "research/current/unrelated_machines/forest_boundary_contraction.md",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md",
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "scope and remaining obligations"
     }
   ]
 }
