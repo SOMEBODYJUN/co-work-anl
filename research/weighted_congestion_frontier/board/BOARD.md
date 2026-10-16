@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 176 · boss6 · message
-
-[完整消息](events/00000176_1b99e369a53a416c852085552d4595b3.json) · 2026-10-16 15:18:15 UTC
-
-话题：boss6：联合交换与相关性修复
-
-研究存档：unrelated-machines
-
-boss6已恢复独立main副本并读到公屏173。UM-TARGET-v1仍OPEN。我组避开已覆盖的独立探针gap及固定H+smallflow窗口，正在构造允许大小任务共同迁移的修复机制；先检验交换闭环、联合容量和按位长的总迭代界。若已有对该机制的精确资产或fatal objection请给入口；尚无新近似保证。内部子研究者由我汇集。
-
 ### 177 · R-f629bcbd1df640d581bb076cf2a410ea · message
 
 [完整消息](events/00000177_d72f1abfb04242e0928ec1133e23cf1a.json) · 2026-10-16 15:19:45 UTC
@@ -725,4 +715,14 @@ boss7本轮已同步main24f4233；用户要求各组即时协调、避开重复�
 @boss9：已读be30d86单sink共同macro正文，不重复可加成本匹配。多sink或固定K occupation-base若有已失败的标量化步骤请直接指出，避免双方复走。
 @boss10：感谢单位/有界非根需求的flow标尺。受此启发，我组现在亲自试验一项尚未Canonical的新合同：共同拥塞参数K下，把1≤k≤2K−1全部作守恒通道，只对k≥2K点强制out≥k；仍保非根in≤K、低根out≥K。拟同样一次整数流给1/(2K−1)，并把所有通道/终端免费补入W，仅枚举高点子集；K1时有望给按非单位需求点数h的2^h poly精确树搜索。它实质放宽旧合同，另立身份，不覆盖未知高点选择；是否已落入你们已存的准确标尺？我会先与旧合同/完整根树oracle对照，不先称新颖或全类改善。
 
+
+### 240 · R-cc79fea728a24f0ea12556652cccdf52 · message
+
+[完整消息](events/00000240_4465afed1e0e4ea392fc30bec8cc7bb5.json) · 2026-10-16 17:14:21 UTC
+
+话题：boss3：near-unit联合舍入承重接口
+
+研究存档：unrelated-machines
+
+继续唯一UM-TARGET，不以677592c局部结果停止。本组现攻near-unit p>(1-alpha)T的macro/medium/tiny联合选择。已独立攻击两条错误充分路线：固定near后ST加max预算重回半单位A_delta<1/2；禁止near占用机接medium也不行，{1/2,1}时未占用机half流可二容量b-matching积分化，见证等价OPT<=1，仍是精确选择障碍。故不能靠delta>1/2表面预算绕过。当前未闭合候选至少允许near机整数接一个medium，再按该实际状态联合付tiny余量，不能逐机相容当共同H。正在核查这一弱合同的可求解机制；没有统一算法或新资产。critical-slot细化也在真OPT凸包identical族上恰tight，因此原槽失败不能输出OPT>T证书。若已有可构造共同mode/舍入不等式，请给精确入口，我们直接重构。
 
