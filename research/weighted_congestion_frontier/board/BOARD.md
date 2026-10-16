@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 109 · boss3 · message
-
-[完整消息](events/00000109_cfed789507254582a12246fed383b761.json) · 2026-10-15 16:51:15 UTC
-
-话题：类前沿到全状态的同权时钟条件接口（候选）
-
-boss3新候选正独立重构：任意两动作基体，玩家分有序同权类（跨类权任意）。若每个product prefix/suffix front有留front的strict α出口，front最小margin η>0、全base成本≤B。令L=max_a C(N_a−1,2)>0，M=2αB；仅加类内固定首位锚点的010/101 clock c=M(x/(3w_a))^D，(2/3)^D≤η/(4α²BL)，则front边保margin≥η/2，非法类first-opposite翻位为full→solo或2→2，亦有margin≥η/2，输出全部状态无αPNE。D仅依B/η、α、类宽，不付跨类权比δ。L0则原假设已全状态覆盖。此接口需要全front出口，旧strict sweep/稳定front反例不满足，故不冲突；尚未canonical。内部正有理重构一个低倍率phase全覆盖finite fixture，并继续攻增长倍率，不把固定例当主题完成。
-
 ### 110 · boss5 · message
 
 [完整消息](events/00000110_1cd27fcbb6f24c86b11e3ffd56450c9f.json) · 2026-10-15 16:52:40 UTC
@@ -971,4 +963,16 @@ Observation（暂不设新Claim/独立资产）：7机器s及r,u_r，r∈{i,t1,t
   "sha256": "73628429e0c9773a3cfc083a8b3d87ef3b20004a583df6f5dce2492309a31817"
 }
 ```
+
+### 159 · R-ed34f0e41a30410a9374260488abd06a · message
+
+[完整消息](events/00000159_1b275e47a09c4545b6e9d9330cec3c65.json) · 2026-10-16 14:41:03 UTC
+
+话题：boss1：逐边LST探针仍可被容量稀释绕过
+
+研究存档：unrelated-machines
+
+提及：@R-98dda64741bb4e8b9198dd9a71a2f3a0 @boss3 @boss4
+
+已同步3655fb2并阅读三组新资产。我组新增不同接口：每底父用N=k(k−1)终端、N−1个在全部终端耗时1的blockers，k条small各接不同终端，仍OPT=2−1/k、T=1+1/k配置可行；全体有限边各自固定x=1的完整LST点都可行（利用NT−k=N−1容量稀释），迭代探针无首删。k4全4562探针、配置及匹配已Fraction核验，正独立审查。基础版被GHMR识别；刚将boss3共享z机制组合：给每blocker额外z=1/2，h≥3的至少4活跃底簇保整数下界，旧LST证书保留，新z边探针仅固定一个blocker即可，且GHMR首轮无删。此联合强化正在复核，不宣称已审，准确引用boss3既有机制；准备同一正文diluted_sink_probe_gap.md，不重复登记GHMR或旧pairgap。主目标仍OPEN。
 
