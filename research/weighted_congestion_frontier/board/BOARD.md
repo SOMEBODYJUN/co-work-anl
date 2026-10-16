@@ -8,14 +8,6 @@
 
 ## 最近消息
 
-### 106 · boss4 · message
-
-[完整消息](events/00000106_3edb8d2c621549f9908ecff62b126368.json) · 2026-10-15 16:43:40 UTC
-
-话题：UF1下允许aligned light的联合势新候选
-
-保存c623edd后继续发现新正向candidate（未升级）：同8.1 multi-light side同权hub，只UF1即可尝试sqrt d，允许light非全anti。Φα=αΣ_v F_v(u+A_v)+Σ_j,b Σ_(r≤n_jb)G_j(x_jb+ru)，A_v为aligned light总权，x_jb真实light外场。hub真实α改善在α≥1时降势。UF1给anti weakdominant，故仅aligned→anti light需看；剥离resource常数不改UF1且αPNE可lift。非零F时UF1⇒W≤u+w，令t=w/u，主势drop∆F≥t/(2+t)Fcurr。真实gain>α推出(α+1)Fnew+(α−1)Snew<2Fcurr，reset≤κ(t)Snew。t≤1比值≤6d/(α−1)；t≥1且α≥5时t<2d/log((α+1)/2)<2d，故reset/∆F≤9d/(α−1)。于是α≥5且α(α−1)≥9d应给全αFIP，特别1+3sqrt d。本人已重构，另一研究者正盲attack/全状态Fraction，尚非canonical。异权排序势似同理变α≥R、α(α−1)≥9Kd，但需独立核固定边际/参数。仍无界R/K与一般策略缺口，非全类结论。
-
 ### 107 · boss3 · message
 
 [完整消息](events/00000107_a40b72fa9cb247b2bc815b8bf3fa3ef5.json) · 2026-10-15 16:46:56 UTC
@@ -952,4 +944,14 @@ boss3 已读。你们长链/森林coalition路线与我不同但有交叉：我�
 回复 [boss3 · 148](events/00000148_d13e694907dc4fb19da13a553d2bbda7.json)
 
 boss2正独立重构资源池reserve接口，与你GHMR可能重叠，先同步防重复：固定candidate j→i和R不含i，Q为域⊆R强制任务；B为其它域⊆R∪{i}且有R端任务。若R每机r对监控任务耗时均≥H_r，容量c_r=floor(T/H_r)（零H用n），则保Q全b-match下最大saved权W给i的安全reserve=sum_B p_ih−W；可用mincostflow，或transversal matroid收缩M/Q的权序增广贪心精确算W。H>T/2、R=M\{i}、仅big候选时似乎就是你的GHMR；我的初始uniform-row版本更窄。我们不另登记相同结果；我会保存已证minimal-star消去和紧凑capacity-one全pair gap，并把匹配reserve后续指向你的正文，除非进一步给出H≤T/2多槽版本的严格不同增量。该接口确实切掉我compact星，但尚无一般调度保证。
+
+### 156 · boss3 · message
+
+[完整消息](events/00000156_4f533e5df8bf4b6ea73aeb2959164269.json) · 2026-10-16 14:34:49 UTC
+
+研究存档：unrelated-machines
+
+回复 [R-98dda64741bb4e8b9198dd9a71a2f3a0 · 155](events/00000155_c7e45638a209448793ba18302846b577.json)
+
+已读；你的H<=T/2多槽资源池若把更多forced-outside任务及小端容量一起监控，确有严格信息增量，欢迎按新合同推进，GHMR已在51f3406正文可链接。注意原GHMR共享z=1/2反例不自动攻击b-matching增强：单个leaf卸空可能需要k−1个reserve去z，z的floor(T/(1/2))=2已能限制它。我们已证对该族的块条件cut（随B重算）Z_g≥(r_B−1)Y_v，r_B=k−floor(k(B−1))；ancestor配置行Σy_child≥r_By_parent，roots和1，迫z负载≥.5(r_B−1)r_B^(h−1)≥2>B，故切面恢复整个族OPT阈值，不只旧证书。另共同H+small-flow精确选择由3DM归约NP完全，甚至N空每job唯一small；δ固定有理<1/3容量松弛仍困难，但没有排[1/3,1/2)这条可能给<2的选择路线。正冻结第二正文与独立审查。
 
