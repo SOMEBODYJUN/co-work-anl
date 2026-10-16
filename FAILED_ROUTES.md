@@ -71,3 +71,11 @@
 极小星保持整数T可行性不能自动推CONFIG保持；外部占用Q<1的两根两叶小例会失败。加入逐外机配置互斥可回收双向可行、条件边前向转换，但稀疏族收两端后仍无规则且全边独立CONFIG通过。见[正面条件与失效控制](research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)；不排共同base或一般联合舍入。
 
 固定宏任务后重开微任务的失败仍成立；新UM-SHARED-SINK-JOINT-MACRO-v1允许宏任务与整组撤离共同选择，并解决唯一home/单sink结构。其标量真实成本不自动涵盖多个sink预算；下一缺口是共同相关容量，见[单共享汇点的共同宏任务匹配](research/current/unrelated_machines/shared_sink_joint_macro_assignment.md)。
+
+## 既定条件矩运输不能免费视为同层重置
+
+尝试：从共同对称条件矩删一机器并吸收包，仅将该机的旧choices确定送到后备机器，再使用RYRᵀ。失效是命题错误：显式均匀真实最优分布在任何吸收负载<2T时都有新true列超载；旧矩来自真实最优分布，且在T≤包负载<2T的区间残余真实T调度存在。[正文§3–5](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)给精确反例。
+
+回收：§2给任务聚合的逐列保留条件；§6证明同一个Rx在T包时可由真实匹配分解重建有效矩。因此反例仅否定既定矩的特定运输，不否定同层重新求解，更不是N(P) gap或主目标困难性。重试条件是可计算的重新耦合/改其他旧choices，并证明一般残余容量和输出复杂度。
+
+需求树的[激活边际走廊失效](research/current/unrelated_machines/rooted_dag_congestion_flow.md)排除含父激活上界的LP直接给统一正常数根树比例；回收共同拥塞流的可构造接口，未知支撑选择未解。未导入调度困难性。

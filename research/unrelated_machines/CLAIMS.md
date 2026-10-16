@@ -643,3 +643,51 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：独立审查发现的Python float/bool输入歧义已统一拒绝并重跑；宏边放宽至等号会错拒两半任务，不作此推广；多预算匹配不自动积分。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；一般UM-TARGET-v1仍OPEN。
 - Related Files：[research/current/unrelated_machines/shared_sink_joint_macro_assignment.md](../current/unrelated_machines/shared_sink_joint_macro_assignment.md)、research/reviews/unrelated_machines/shared_sink_joint_review.md；实现/冻结记录见正文§7。
+
+## UM-SYMMETRIC-JOB-AGGREGATION-v1：对称条件矩的任务选择聚合接口
+
+- Exact Statement / Quantifiers：For every nonempty bounded one-hot rational P, every symmetric normalized certificate (x,Y), every given deterministic jobwise aggregation/deletion R, and every new one-hot rational polytope P′, if RY_:e belongs to x_e P′ for every old choice of every retained job, then (Rx,RYRᵀ) belongs to the same-layer pair certificate set of P′. At least one retained job is required for this sufficient criterion; no retained jobs instead require checking the zero-dimensional base. Given data and explicit P′ are checkable in bit-polynomial time.
+- Objects / Domain：任意有限任务选择集、同任务选择单纯形上的有界有理多面体P、证书对(x,Y)、旧choice到同一保留任务新choice的确定映射；允许整任务删除，不允许跨任务聚合。
+- Assumptions / Definitions：对称、diag=x、每个真/假齐次列；0P={0}；新系统显式有理表示。不是只给每个旧literal各自条件点的非对称N₀。
+- Scope / Conclusion：正文式(3)给准确真/补列检查等价式；式(4)是更强的充分条件。只核给定R，不提供寻找R算法，也不保证旧可行性自动带来新列可行性。
+- Dependencies：原始LS对称列定义、同任务互斥、对称整块求和、凸锥求和。完整证明见正文§1–2；无近似算法前提。
+- Evidence：两名内部研究者先盲重构后核冻结正文；调度专用实例的Fraction实际聚合另在双路程序检查。有限证据不替代代数证明。
+- Counterevidence / Objections：非对称系统不能默用整块恒等式；额外分支专用约束须实际放进P′检查。单机均匀族说明新列容量并不免费成立。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准凸锥代数接口，不称新算法。
+- Related Files：research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md§1–2；research/reviews/unrelated_machines/symmetric_moment_reset_review.md；专用程序/证据从正文§8进入。
+
+## UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1：单机既定矩推前的2T阈值与同边际T修复
+
+- Exact Statement / Quantifiers：For each q>=2, m=2q,n=2q^2 identical jobs p=1/q,T=OPT=1, the uniform balanced true-optimum moment matrix needs exactly 2q absorbed jobs for some deterministic single-machine fallback pushforward to satisfy residual true/false capacities. Every c<2q and every fallback fail. At c=q balanced groups, the same first moment Rx has a rebuilt true residual T-distribution, in deterministic bit-polynomial time.
+- Objects / Domain：§1明确的有界有理onehot多面体P、对称证书对(x,Y)、给定任务选择聚合R；阈值族q≥2、m=2q、n=2q²、p=1/q、T=OPT=1。
+- Assumptions / Definitions：证书包含对称、diag=x、每个真/假齐次列；负结论固定旧真实均匀最优分布，只重定向旧删机choices，其他choices不变。包固定不是对旧分布条件化。
+- Scope / Conclusion：聚合只给可检查充分条件，不寻找R；阈值精确限制既定RYRᵀ。c=q时相同Rx能重建真实残余T矩，不可写Rx∉N(P′)。
+- Dependencies：UM-MODEL-v1；原始LS定义；onehot互斥/对称块求和、均匀二点概率与Hall计数。一般证明见正文§2–6，复杂度§7。
+- Evidence：冻结独立审查、两路Fraction核验；q2原2520调度枚举及同base真实匹配分解。有限运行不替代全称证明。
+- Counterevidence / Objections：q=1必须排除阈值下界；允许重新求矩/改其他机器choices未被排除；同一个Rx有正面修复，无层级gap、无一般算法困难性。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；部分实现仅限显式族；主目标OPEN。
+- Related Files：research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md；research/reviews/unrelated_machines/symmetric_moment_reset_review.md；两份symmetric_reset审计、examples/unrelated_machines/symmetric_reset_q2.json、evidence/certificates/unrelated_machines/symmetric_reset_q2_recoupling.json、evidence/runs/unrelated_machines/symmetric_moment_reset_audit.json。
+
+## UM-DAG-CONGESTION-FLOW-v1：共同拥塞证书的根树提取与固定支撑最小拥塞
+
+- Exact Statement / Quantifiers：∀显式根简单DAG及二进制非负需求（零需求仅原终端），∀整数K≥1及含根支撑W上的正文共同K证书，可确定性总位多项式用一次整数流输出真实根树b≥1/(2K−1)。固定W,K的证书可行性与一整数流饱和等价；可行性对K单调，可位多项式求最小可行K或报告该W无证书。∀K≥2存在本合同证书族且真实b*=1/(2K−1)。全支撑最优κ*在b*>0时满足(1+1/b*)/2≤κ*≤ceil(1/b*)；给评分β>0的实际树及K≥1/β可构造其支撑证书。
+- Objects / Definitions：D,k,r；b为选中原正需求点的截断最小出度比例。B:k≥K，L:0<k<K，Z:k=0；同一有理流f在非根I≤K、B上O≥k、非根L上O=I、低根O≥K，Z无输出。
+- Domain / Assumptions：显式有限简单DAG；根原入度0；非负整数需求二进制；零需求点原出度0；评分定义与UM-DAG-DEGREE-MODEL-v1一致。
+- Scope / Conclusion：W、K明确输入，允许不可达组件、正需求死点、任意根、极大二进制需求；K为整数。输出可用E[W]的零f边。给定W的不可行不意味着无好树。没有一般支撑搜索、统一常数K或一般调度算法。
+- Dependencies：UM-DAG-DEGREE-MODEL-v1, UM-DAG-CONGESTION-CERTIFICATE-v1；正文逐节自证所需整数流、路径与容量性质。
+- Evidence：自足路径截取、拆点整数增广、比例反算、最短增广位复杂度、K单调拓扑构造、锐层宽及树到证书证明；独立先重构后冻结攻击，有限原边流/根树oracle与大整数核验。
+- Counterevidence / Objections：声明范围内未见尚成立fatal objection；一般W选择及从任意UM输入得到相应结构仍未解决。固定支撑最小K不等于全支撑κ*。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准工具应用，UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/rooted_dag_congestion_flow.md](../current/unrelated_machines/rooted_dag_congestion_flow.md)、research/reviews/unrelated_machines/rooted_dag_congestion_review.md；tests/audits/unrelated_machines/rooted_dag_congestion_flow.py、tests/audits/unrelated_machines/rooted_dag_congestion_independent.py、evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json、examples/unrelated_machines/rooted_dag_congestion_cases.json、evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json。
+
+## UM-DAG-ACTIVATION-CORRIDOR-GAP-v1：父激活上界LP在单位需求汇流走廊的失效
+
+- Exact Statement / Quantifiers：∀整数q≥2，正文四段DAG有1+q(q+3)点、2q²+2q边，根/走廊需求1、q个分叉点需求q、末端需求0。加强激活LP a_r=1、非根a_v=Σ_u x_uv≤1、Σ_w x_vw≥k_va_v、0≤x_vw≤a_v精确有理可行，但真实根树最优b*=1/q。
+- Objects / Definitions：r→v_i→w_ij→x_i→t_i的显式根DAG；同一i内q条需求1走廊共享x_i。
+- Domain / Assumptions：显式有限简单DAG；根原入度0；非负整数需求二进制；零需求点原出度0；评分定义与UM-DAG-DEGREE-MODEL-v1一致。
+- Scope / Conclusion：仅上述激活边际LP的统一正常数充分性反例；未满足或否定共同K强证书，未导入SA或调度困难性，未认证全球新颖性。
+- Dependencies：UM-DAG-DEGREE-MODEL-v1；正文逐节自证所需整数流、路径与容量性质。
+- Evidence：逐变量有理赋值、选中w须继续至同一x的入度唯一性上界、实际达到路径；独立Fraction逐约束及小根树枚举。
+- Counterevidence / Objections：声明范围内未见尚成立fatal objection；一般W选择及从任意UM输入得到相应结构仍未解决。固定支撑最小K不等于全支撑κ*。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准工具应用，UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/rooted_dag_congestion_flow.md](../current/unrelated_machines/rooted_dag_congestion_flow.md)、research/reviews/unrelated_machines/rooted_dag_congestion_review.md；tests/audits/unrelated_machines/rooted_dag_congestion_flow.py、tests/audits/unrelated_machines/rooted_dag_congestion_independent.py、evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json、examples/unrelated_machines/rooted_dag_congestion_cases.json、evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json。

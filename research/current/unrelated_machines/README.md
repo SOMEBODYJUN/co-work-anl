@@ -149,3 +149,15 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 新增UM-STAR-CONFIG-TRANSFER-v1（[星正文§8](minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)）：逐步外部配置互斥使CONFIG双向可行、全部条件边向前保持，支持最多每步加一；缺占用/反向probe有反例。UM-CONTRACTED-SPARSE-CONFIG-GAP-v1（[稀疏正文末节](sparse_conditioned_configuration_gap.md)）收两端后无规则、仍全边独立CONFIG且gap2，补旧v1预处理缺口。读取链为专题CLAIMS→两正文→star_configuration_transfer_review.md→两份同名前缀代码及实际输入/证书/star_configuration_transfer_audit.json。主目标OPEN，完整共同base/联合迁移未排。
 
 [单共享汇点的共同宏任务匹配](shared_sink_joint_macro_assignment.md)：UM-SHARED-SINK-JOINT-MACRO-v1。∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。 每个macro/home或empty模式的真实最小整组撤离成本，保零乘性覆盖DP与带dummy成本的全局最小权完美匹配；误差只对同一个真实sink预算求和，不按home数量累积。 仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。 一般UM-TARGET-v1仍OPEN。
+
+## 对称矩重置后的准确前沿
+
+[任务聚合、单机矩运输阈值与同边际修复](symmetric_moment_reset_and_single_machine_threshold.md)给UM-SYMMETRIC-JOB-AGGREGATION-v1及UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1。前者是给定R的可检查列条件；后者在真实最优分布上区分既定矩推前需2T与同Rx重新耦合只需T。不得写成Rx不属新N或同层求解不可能。读取链：CLAIMS→正文→symmetric_moment_reset_review.md→双路代码/实际q2输入与证书/symmetric_moment_reset_audit.json。
+
+一般不相关输入中如何可计算地重建共同条件容量、输出统一低于2且保证总位多项式进展仍未解决；本结果不提供R搜索器。标准凸锥和二分图工具保留来源，全球新颖性与独立论文价值未认证。
+
+## 共同流的正面提取与真正的支撑选择
+
+[共同拥塞流与支撑搜索](rooted_dag_congestion_flow.md)给UM-DAG-CONGESTION-FLOW-v1：给同一K证书，一次整数流输出b≥1/(2K−1)，对所有整数K尖锐；固定W的证书/最小K均位多项式可求，未知W选择仍承重。UM-DAG-ACTIVATION-CORRIDOR-GAP-v1表明父激活上界及单位走廊守恒的边际LP仍可b*=1/q。正文→冻结审查→规范与独立代码→实际输入/证书/冻结证据均互连；不升级主目标。
+
+完整路径：`research/current/unrelated_machines/rooted_dag_congestion_flow.md`、`research/reviews/unrelated_machines/rooted_dag_congestion_review.md`、`tests/audits/unrelated_machines/rooted_dag_congestion_flow.py`、`tests/audits/unrelated_machines/rooted_dag_congestion_independent.py`、`evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json`；分别承担自足证明、冻结攻击、规范构造、独立oracle和有限结果。

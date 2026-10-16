@@ -40,6 +40,7 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 
 | 成果包 | 精确成果和限制 | 读取入口 |
 | --- | --- | --- |
+| 需求树共同拥塞流 | 一次流给b≥1/(2K−1)，比例精确尖锐；固定W最小K可求，一般W选择未解 | [共同证书与实现](research/current/unrelated_machines/rooted_dag_congestion_flow.md) |
 | 不相关机可恢复消元 | 极小超载星保T且输出提升≤max(B,T)；共享容量族/多任务接口仍有准确障碍，主目标OPEN | [自足接口与证据](research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md) |
 | 加权拥塞全状态线性下界 | 每整数d≥2^20无(d/10)-PNE族，严格否定统一Cd/ln d保证；内部独立已审，未外审 | [完整证明与证据链](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md) |
 | 加权拥塞结构工具 | 奇环精确T_d阈值、有限权类/交互高度势、资源支持/密度势、完整择证对偶、规范反例、条件时钟编译及准确方法障碍，各有独立输入合同 | [专题数学地图](research/current/weighted_congestion/README.md) |
@@ -113,3 +114,5 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 [星收缩的配置保持](research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)给可复用正面接口：外部配置互斥时配置可行性双向转移、全部条件边向前转移，重复支持只加不乘；[稀疏族收缩终态](research/current/unrelated_machines/sparse_conditioned_configuration_gap.md)仍无极小星且独立条件证书gap2。主目标OPEN，真正缺口仍是共同相关性和实际联合舍入。
 
 [单共享汇点的共同宏任务匹配](research/current/unrelated_machines/shared_sink_joint_macro_assignment.md)给UM-SHARED-SINK-JOINT-MACRO-v1：不固定宏任务，覆盖背包真实撤离成本与一次全局匹配同时协调全部home和z，home≤T、z≤(1+η)T；仅唯一home/单sink结构。一般多接收容量与跨尺寸身份仍未闭合，UM-TARGET-v1继续OPEN。
+
+[对称条件矩的运输与重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。

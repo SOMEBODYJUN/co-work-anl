@@ -74,3 +74,7 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 星预处理的配置义务已闭合到精确范围：UM-STAR-CONFIG-TRANSFER-v1在逐步外部互斥下双向保持CONFIG、向前保持条件边；缺Q占用或声称反向条件边均有小反例。UM-CONTRACTED-SPARSE-CONFIG-GAP-v1给无极小星的收缩终态仍通过全部独立条件配置探针。新的信息需求是共同条件相关性/联合迁移，不是重复端点消元；主目标仍OPEN。
 
 [单共享汇点的共同宏任务匹配](research/current/unrelated_machines/shared_sink_joint_macro_assignment.md)已闭合单汇点正面接口：宏任务全局重选、任意尺寸私有任务批量撤离、误差不按home数累积；算法、独立构造与有限精确核验分别登记。下一承重义务是多个真实接收预算及一般任务跨home变化，不能把标量成本直接推广。UM-TARGET-v1仍OPEN。
+
+[对称条件矩的运输与重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。
+
+不相关机的[共同拥塞流](research/current/unrelated_machines/rooted_dag_congestion_flow.md)已闭合条件根树提取、固定支撑最小K及精确锐界；一般选择好支撑W仍未解，激活边际LP被单位汇流走廊反驳。UM-TARGET-v1保持OPEN；这是可复用条件构造，不是统一新近似算法。
