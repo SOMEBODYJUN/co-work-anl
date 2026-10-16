@@ -104,4 +104,6 @@
 
 [对称条件矩的运输与重新耦合](current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。
 
+[共同拥塞需求树的正面流接口](current/unrelated_machines/rooted_dag_congestion_flow.md)允许任意深度的低需求走廊与汇流；给证书提取、固定W最小K均位多项式，保证1/(2K−1)精确尖锐。下一缺口是未知W的共同选择，不能用已被反驳的激活边际LP替代。
+
 [共同容量路线整合审查](reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)连接菜单、条件矩、需求树与宏任务修复：核准局部范围、一般核心残留及新候选的精确提取/进展义务；不是另一个模型或新统一算法。

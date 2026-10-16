@@ -656,6 +656,30 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；部分实现仅限显式族；主目标OPEN。
 - Related Files：research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md；research/reviews/unrelated_machines/symmetric_moment_reset_review.md；两份symmetric_reset审计、examples/unrelated_machines/symmetric_reset_q2.json、evidence/certificates/unrelated_machines/symmetric_reset_q2_recoupling.json、evidence/runs/unrelated_machines/symmetric_moment_reset_audit.json。
 
+## UM-DAG-CONGESTION-FLOW-v1：共同拥塞证书的根树提取与固定支撑最小拥塞
+
+- Exact Statement / Quantifiers：∀显式根简单DAG及二进制非负需求（零需求仅原终端），∀整数K≥1及含根支撑W上的正文共同K证书，可确定性总位多项式用一次整数流输出真实根树b≥1/(2K−1)。固定W,K的证书可行性与一整数流饱和等价；可行性对K单调，可位多项式求最小可行K或报告该W无证书。∀K≥2存在本合同证书族且真实b*=1/(2K−1)。全支撑最优κ*在b*>0时满足(1+1/b*)/2≤κ*≤ceil(1/b*)；给评分β>0的实际树及K≥1/β可构造其支撑证书。
+- Objects / Definitions：D,k,r；b为选中原正需求点的截断最小出度比例。B:k≥K，L:0<k<K，Z:k=0；同一有理流f在非根I≤K、B上O≥k、非根L上O=I、低根O≥K，Z无输出。
+- Domain / Assumptions：显式有限简单DAG；根原入度0；非负整数需求二进制；零需求点原出度0；评分定义与UM-DAG-DEGREE-MODEL-v1一致。
+- Scope / Conclusion：W、K明确输入，允许不可达组件、正需求死点、任意根、极大二进制需求；K为整数。输出可用E[W]的零f边。给定W的不可行不意味着无好树。没有一般支撑搜索、统一常数K或一般调度算法。
+- Dependencies：UM-DAG-DEGREE-MODEL-v1, UM-DAG-CONGESTION-CERTIFICATE-v1；正文逐节自证所需整数流、路径与容量性质。
+- Evidence：自足路径截取、拆点整数增广、比例反算、最短增广位复杂度、K单调拓扑构造、锐层宽及树到证书证明；独立先重构后冻结攻击，有限原边流/根树oracle与大整数核验。
+- Counterevidence / Objections：声明范围内未见尚成立fatal objection；一般W选择及从任意UM输入得到相应结构仍未解决。固定支撑最小K不等于全支撑κ*。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准工具应用，UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/rooted_dag_congestion_flow.md](../current/unrelated_machines/rooted_dag_congestion_flow.md)、research/reviews/unrelated_machines/rooted_dag_congestion_review.md；tests/audits/unrelated_machines/rooted_dag_congestion_flow.py、tests/audits/unrelated_machines/rooted_dag_congestion_independent.py、evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json、examples/unrelated_machines/rooted_dag_congestion_cases.json、evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json。
+
+## UM-DAG-ACTIVATION-CORRIDOR-GAP-v1：父激活上界LP在单位需求汇流走廊的失效
+
+- Exact Statement / Quantifiers：∀整数q≥2，正文四段DAG有1+q(q+3)点、2q²+2q边，根/走廊需求1、q个分叉点需求q、末端需求0。加强激活LP a_r=1、非根a_v=Σ_u x_uv≤1、Σ_w x_vw≥k_va_v、0≤x_vw≤a_v精确有理可行，但真实根树最优b*=1/q。
+- Objects / Definitions：r→v_i→w_ij→x_i→t_i的显式根DAG；同一i内q条需求1走廊共享x_i。
+- Domain / Assumptions：显式有限简单DAG；根原入度0；非负整数需求二进制；零需求点原出度0；评分定义与UM-DAG-DEGREE-MODEL-v1一致。
+- Scope / Conclusion：仅上述激活边际LP的统一正常数充分性反例；未满足或否定共同K强证书，未导入SA或调度困难性，未认证全球新颖性。
+- Dependencies：UM-DAG-DEGREE-MODEL-v1；正文逐节自证所需整数流、路径与容量性质。
+- Evidence：逐变量有理赋值、选中w须继续至同一x的入度唯一性上界、实际达到路径；独立Fraction逐约束及小根树枚举。
+- Counterevidence / Objections：声明范围内未见尚成立fatal objection；一般W选择及从任意UM输入得到相应结构仍未解决。固定支撑最小K不等于全支撑κ*。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准工具应用，UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/rooted_dag_congestion_flow.md](../current/unrelated_machines/rooted_dag_congestion_flow.md)、research/reviews/unrelated_machines/rooted_dag_congestion_review.md；tests/audits/unrelated_machines/rooted_dag_congestion_flow.py、tests/audits/unrelated_machines/rooted_dag_congestion_independent.py、evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json、examples/unrelated_machines/rooted_dag_congestion_cases.json、evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json。
+
 ## 跨路线补充审查与身份保持
 
 [共同容量路线整合审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)补核UM-FOREST-TWO-BOUNDARY-MENU-v1、UM-DEPTH-TWO-HALF-v1、UM-FROZEN-MACRO-TINY-REOPT-GAP-v1、UM-MACRO-MIGRATION-FRONTIER-v1及UM-ONE-DESTINATION-SLOT-REPAIR-v1的所列范围。没有改变这些身份或主目标状态；标准流/仿射恢复推导用于检验接口，不另冒充新的特殊类研究成果。后续共同矩正文与研讨候选的实际覆盖另在审查中注明。

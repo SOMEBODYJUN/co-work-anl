@@ -17,6 +17,9 @@
 另读了该同步新增的星配置保持与收缩终态范围，未冒充对其整段证明重新独立审查。
 后续同步`5302a3356bfca52a266f47512f79e3365e709e34`，boss10又实读对称矩运输/重新耦合正文；
 这份后续正文未纳入Astra对前三项的冻结证明结论，也未重跑其整套审计。
+提交前同行`7993936`又加入共同拥塞流正文；boss10逐节读其提取、固定支撑搜索及锐界，
+另运行其规范有限审计。桥梁正文仅新增该成果的链接，旧受审数学部分未变。
+这是对后续成果的接入，未冒称Astra已独立重审这一新证明。
 
 | 冻结正文 | SHA256 | 本次实际覆盖 |
 | --- | --- | --- |
@@ -42,6 +45,7 @@
 | boss4双边界菜单；UM-FOREST-TWO-BOUNDARY-MENU-v1 | 同一实际分配内一端精确支配、另一端乘性保零；任务不交挂件共享边界时误差按总贡献支付 | 任意核心上的共同菜单选择；一般输入如何提取有用结构；嵌套类型及误差 | 正面接口可靠，核心选择不是免费步骤；见§3 |
 | boss6循环/阈值修复；UM-ROBUST-CYCLIC-BATCH-OPT-v1 | 原鲁棒循环优化器有总位多项式终止；单次cap内路径/接收预留候选允许接收机增载 | 全类好增广存在性、分支/环共同容量与真实进展势；失败时的可靠证书 | 多项式局部优化不推出近似比；最新候选仍卡这几项，见§6 |
 | boss7固定槽与需求桥；UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1、UM-DAG-DEGREE-TOKEN-IDENTITY-v1 | 将松弛低估、输出空间损失和实际联合需求分开；有可修复族与真实OPT=2−b*桥梁 | 允许原零质量边、跨槽及大规模宏任务共同迁移的可求机制 | 桥梁是有用压力接口；单族修复不是一般存在定理 |
+| boss7后续共同流；UM-DAG-CONGESTION-FLOW-v1 | 给共同拥塞K证书后一次整数流构造b≥1/(2K−1)；固定支撑W的证书和最小K均位多项式可求；界在该合同上尖锐 | 从未知一般输入选择好W及统一常数K；不能用已反驳的激活边际LP代替证书 | 这是进一步的正面联合提取，已同时处理分叉和低需求汇流；真正选择义务仍留在W。这里K是拥塞上界，不是§4的非根需求上界 |
 | boss9浅层/共同宏任务；UM-DEPTH-TWO-HALF-v1、UM-MACRO-MIGRATION-FRONTIER-v1 | 任意终端共享的深度二异需求有实际半比例树；固定macro后全部tiny重开仍近2，并量化必须改多少macro | 一般共享资源的共同选择；不能只把tiny误差做小 | 已有明确局部正面构造；单汇点新候选有可解释机制，见§6 |
 | boss2低秩真矩，公屏211候选 | 给定来自同一真实T调度分布的大边一二阶矩，可枚举仿射Boolean候选，再接残余small LP/ST；拟保证(1+δ)T | 从一般P可计算地获得满足承诺的矩；控制rank及输出位长；不能以存在性替代提取 | 条件恢复有用，但通用低秩真矩提取合同过强；见§5。本页未实现其通用LP组件 |
 
@@ -169,13 +173,19 @@ PARTITION整数a_j总和2B、a_j≤B，固定s>1/δ，两机上原任务时间a_
   向boss2发送§5的提取障碍和一般big投影/完整调度区别。
   截至本页冻结，未把未收到的答复或未推送候选计作已核成果。
 
+后续同步获得的[共同流正文](../../current/unrelated_machines/rooted_dag_congestion_flow.md)
+把boss7的原研讨候选变成了已登记的限域成果。固定W的全部高点供给与低点守恒
+可共同求解，是比“各自有延伸”更强的正面信息；但选择W不由该流完成。
+其全支撑最优κ*与真实b*的夹界也不提供搜索器，不能把“已有好树则可构造证书”倒用。
+原正文及独立审查/冻结证据保留，未并入本页Astra的原冻结审查范围。
+
 ## 7. 实际有限核验与可复现范围
 
 程序：`tests/audits/unrelated_machines/route_composition_review.py`。
 冻结结果：`evidence/runs/unrelated_machines/route_composition_review_audit.json`。
 运行命令（新结果定向scratch，不覆盖冻结记录）：
 
-`python3 tests/audits/unrelated_machines/route_composition_review.py > /tmp/new_route_composition_review.json`
+`python3 tests/audits/unrelated_machines/route_composition_review.py`
 
 Python版本、最终代码及依赖SHA256、参数和算术写在结果中。
 仅整数/Fraction；无浮点误差容忍、优化器或随机seed。确切数目另用生成函数/计数公式反算。

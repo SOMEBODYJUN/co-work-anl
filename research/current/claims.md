@@ -754,6 +754,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-SYMMETRIC-JOB-AGGREGATION-v1 | For every nonempty bounded one-hot rational P, symmetric normalized certificate (x,Y), and given deterministic jobwise aggregation/deletion R with at least one retained job, mapped old true columns in their scaled P-prime imply (Rx,RYR^T) is a same-layer certificate. With no retained jobs check the zero-dimensional base separately. Given data and explicit P-prime can be checked in bit-polynomial time; finding R is not solved. | [正文](unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)、[冻结审查](../reviews/unrelated_machines/symmetric_moment_reset_review.md)；限范围完整证明/双路精确审计，外审与新颖性未认证，主目标OPEN。 |
 | UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1 | For each q>=2, m=2q machines and n=2q^2 identical jobs p=1/q,T=OPT=1, the uniform balanced true-optimum moment matrix needs exactly 2q absorbed jobs for some deterministic single-machine fallback pushforward to satisfy residual true/false capacities. Every c<2q and every fallback fail. At c=q balanced groups, the same first moment Rx has a rebuilt true residual T-distribution, in deterministic bit-polynomial time. | [正文](unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)、[冻结审查](../reviews/unrelated_machines/symmetric_moment_reset_review.md)；限范围完整证明/双路精确审计，外审与新颖性未认证，主目标OPEN。 |
 
+## 共同拥塞流、支撑选择和单位走廊的准确身份
+
+| ID | Exact Statement | 范围与入口 |
+| --- | --- | --- |
+| UM-DAG-CONGESTION-FLOW-v1 | ∀显式根简单DAG及二进制非负需求（零需求仅原终端），∀整数K≥1及含根支撑W上的正文共同K证书，可确定性总位多项式用一次整数流输出真实根树b≥1/(2K−1)。固定W,K的证书可行性与一整数流饱和等价；可行性对K单调，可位多项式求最小可行K或报告该W无证书。∀K≥2存在本合同证书族且真实b*=1/(2K−1)。全支撑最优κ*在b*>0时满足(1+1/b*)/2≤κ*≤ceil(1/b*)；给评分β>0的实际树及K≥1/β可构造其支撑证书。 | W、K明确输入，允许不可达组件、正需求死点、任意根、极大二进制需求；K为整数。输出可用E[W]的零f边。给定W的不可行不意味着无好树。没有一般支撑搜索、统一常数K或一般调度算法。 [自足正文](unrelated_machines/rooted_dag_congestion_flow.md)、[冻结审查](../reviews/unrelated_machines/rooted_dag_congestion_review.md)。独立内审及精确有限核验，未外审/未认证新颖性。 |
+| UM-DAG-ACTIVATION-CORRIDOR-GAP-v1 | ∀整数q≥2，正文四段DAG有1+q(q+3)点、2q²+2q边，根/走廊需求1、q个分叉点需求q、末端需求0。加强激活LP a_r=1、非根a_v=Σ_u x_uv≤1、Σ_w x_vw≥k_va_v、0≤x_vw≤a_v精确有理可行，但真实根树最优b*=1/q。 | 仅上述激活边际LP的统一正常数充分性反例；未满足或否定共同K强证书，未导入SA或调度困难性，未认证全球新颖性。 [自足正文](unrelated_machines/rooted_dag_congestion_flow.md)、[冻结审查](../reviews/unrelated_machines/rooted_dag_congestion_review.md)。独立内审及精确有限核验，未外审/未认证新颖性。 |
+
 跨路线[补充审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)仅核所列UM接口和拼接义务，未更改上述Claim量词、状态或新增主目标算法。
 
 ## 逻辑使用规则
