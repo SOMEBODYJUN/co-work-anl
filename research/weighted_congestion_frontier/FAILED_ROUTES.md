@@ -11,7 +11,7 @@
 | 固定step-DAG极值幅度，只改多项式曲线以利用过冲或漏费 | [实际全入状态界](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)在p0(1)=A,pv(1+wv)=A h_v(q_D)下给d≥16的4√(d/ln d)-PNE | 直接处理所有玩家真实偏离，但仅限该锚定幅度；任意幅度未被排除。回收缺口矩Σh_v(w_v−outsum)<1/q与Jensen；改幅度/选其他light集合时需新证明 |
 | 固定正权向量，仅把所有正次数提高 | [高次份额势](../current/weighted_congestion/high_degree_share.md)证明，即使拓扑与系数变化，最低正次数趋无穷时近似保证一致趋1 | 排除这一纯高次放大路线；权向量随次数变化或保留低次项不在范围。必要小份额仍非充分反例 |
 | 保持 crossover 权和系数只提高次数 | [degree40 与精确极限](../current/weighted_congestion/crossover/README.md)已有较低因子均衡 | 缩权和调幅可重试；固定四玩家仍只能给常数 |
-| 稀疏权谱下模拟阶跃坏博弈 | [曲率](../current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md)与[密度存在界](../current/weighted_congestion/weight_density.md)限制对应保持结构的替换 | 引入稠密 cohort 或改变覆盖结构时另行研究 |
+| 稀疏权谱下模拟阶跃坏博弈 | [曲率](../current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md)与[密度存在界](../current/weighted_congestion/weight_density.md)限制对应保持结构的替换。更直接地，若同一非负系数次数至多 d 的多项式 p 要在两个正负载 L<H 上实现 \(p(H)/p(L)\ge1/\varepsilon\)，则 \(d\ge\ln(1/\varepsilon)/\ln(H/L)\)，因为 \(p(H)/p(L)\le(H/L)^d\)。Theorem 5 型稀疏权重中 H/L=1+2^{-i}，所以第 i 层要求的次数至少约 \(2^i\ln(1/\varepsilon)\)；阶跃阈值的 n/ln n 玩家放大不能直接搬到 n≫log d。 | 这只否定同一资源、同一稀疏权谱上的 faithful step-simulation 路线；不排引入稠密 cohort、改变覆盖结构、放弃平台保真或直接构造全状态偏离。 |
 | 同资源密集尺度固定 power 乘子拼接 | [仿射路径](../current/weighted_congestion/power_bridge.md)在固定 p<1 下无统一夹逼，另有 sharp 两类型损失 | 不是博弈无均衡；允许实例相关乘子、跨资源支付等须另证 |
 | 窄权带单独归一化 Shapley | [mixed difference/curl 与 selector 线性损失](../current/weighted_congestion/weight_bands/README.md) | 限指定势与归一化规则，不反驳全类次线性存在 |
 | 任意固定玩家乘子及依游戏可分序势覆盖全部改善边 | [有限多尺度与固定资源束证明](../current/weighted_congestion/separable_ordinal_obstruction.md)已独立重构攻击；扭曲门槛ρ_d/d→1 | 只否定边际夹逼和全改善边可分序势；全空仍为精确均衡。非可分势、选定改善步或全局极小点接口改变时可重试；普适复制桥其他推论仍各自核对 |
