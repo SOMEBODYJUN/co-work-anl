@@ -6488,6 +6488,57 @@
         "evidence/certificates/unrelated_machines/long_path_gap_small_configuration.json"
       ],
       "status": "finite computational evidence"
+    },
+    {
+      "id": "UM-HEAVY-MATCH-FILTER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "大边匹配残余的安全位多项式过滤",
+      "detail": "For every P,T>=0 exact GHMR preserves every T-feasible schedule edge; rejection implies OPT>T. Acceptance gives no feasibility or approximation.",
+      "refs": [
+        "research/current/unrelated_machines/heavy_matching_residual_and_escape.md",
+        "research/reviews/unrelated_machines/heavy_matching_escape_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-SIMPLE-SUPPORT-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "简单机器支撑的配置间隙2",
+      "detail": "Path-terminal replacement: k>=4, every job has exactly2 eligible machines, each machine pair supports at most1 job, OPT=2-1/k and configuration feasibility at1+1/k.",
+      "refs": [
+        "research/current/unrelated_machines/heavy_matching_residual_and_escape.md",
+        "research/reviews/unrelated_machines/heavy_matching_escape_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-ESCAPE-MATCH-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共享小端逃逸击穿逐星匹配残余",
+      "detail": "For each k>=4, one shared1/2 escape option on reserve jobs preserves OPT=2-1/k while configurationT0 feasible and all GHMR queries pass without deletion.",
+      "refs": [
+        "research/current/unrelated_machines/heavy_matching_residual_and_escape.md",
+        "research/reviews/unrelated_machines/heavy_matching_escape_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-MATCH-ESCAPE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "匹配残余与逃逸族的两路精确有限核验",
+      "detail": "Task-weight matching oracle, schedule-edge preservation and explicit family certificates; compressed parameter checks are not full schedule enumeration.",
+      "refs": [
+        "research/current/unrelated_machines/heavy_matching_residual_and_escape.md",
+        "tests/audits/unrelated_machines/heavy_matching_residual.py",
+        "tests/audits/unrelated_machines/ghmr_independent.py",
+        "evidence/runs/unrelated_machines/heavy_matching_residual_audit.json",
+        "evidence/runs/unrelated_machines/heavy_matching_escape_independent.json"
+      ],
+      "status": "finite computational evidence"
     }
   ],
   "hyperedges": [
@@ -15430,6 +15481,117 @@
         "evidence/runs/unrelated_machines/long_path_coalition_gap_audit.json"
       ],
       "status": "recorded within stated scope"
+    },
+    {
+      "id": "DERIVE-UM-HEAVY-MATCH-FILTER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-HEAVY-MATCH-FILTER-v1",
+      "statement": "The cited self-contained account supplies the matching safety or complete family counting/configuration construction for this precise stated-scope claim.",
+      "refs": [
+        "research/current/unrelated_machines/heavy_matching_residual_and_escape.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-HEAVY-MATCH-FILTER-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MATCH-ESCAPE-AUDIT-v1"
+      ],
+      "conclusion": "UM-HEAVY-MATCH-FILTER-v1",
+      "statement": "Finite exact audits check implementations and listed family parameters only; universal claims follow from mathematical proofs.",
+      "refs": [
+        "research/current/unrelated_machines/heavy_matching_residual_and_escape.md",
+        "research/reviews/unrelated_machines/heavy_matching_escape_review.md",
+        "evidence/runs/unrelated_machines/heavy_matching_residual_audit.json",
+        "evidence/runs/unrelated_machines/heavy_matching_escape_independent.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-UM-SIMPLE-SUPPORT-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TREE-CERTIFICATE-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-SIMPLE-SUPPORT-GAP-v1",
+      "statement": "The cited self-contained account supplies the matching safety or complete family counting/configuration construction for this precise stated-scope claim.",
+      "refs": [
+        "research/current/unrelated_machines/heavy_matching_residual_and_escape.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-SIMPLE-SUPPORT-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MATCH-ESCAPE-AUDIT-v1"
+      ],
+      "conclusion": "UM-SIMPLE-SUPPORT-GAP-v1",
+      "statement": "Finite exact audits check implementations and listed family parameters only; universal claims follow from mathematical proofs.",
+      "refs": [
+        "research/current/unrelated_machines/heavy_matching_residual_and_escape.md",
+        "research/reviews/unrelated_machines/heavy_matching_escape_review.md",
+        "evidence/runs/unrelated_machines/heavy_matching_residual_audit.json",
+        "evidence/runs/unrelated_machines/heavy_matching_escape_independent.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-UM-ESCAPE-MATCH-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-HEAVY-MATCH-FILTER-v1",
+        "UM-SIMPLE-SUPPORT-GAP-v1"
+      ],
+      "conclusion": "UM-ESCAPE-MATCH-GAP-v1",
+      "statement": "The cited self-contained account supplies the matching safety or complete family counting/configuration construction for this precise stated-scope claim.",
+      "refs": [
+        "research/current/unrelated_machines/heavy_matching_residual_and_escape.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-ESCAPE-MATCH-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MATCH-ESCAPE-AUDIT-v1"
+      ],
+      "conclusion": "UM-ESCAPE-MATCH-GAP-v1",
+      "statement": "Finite exact audits check implementations and listed family parameters only; universal claims follow from mathematical proofs.",
+      "refs": [
+        "research/current/unrelated_machines/heavy_matching_residual_and_escape.md",
+        "research/reviews/unrelated_machines/heavy_matching_escape_review.md",
+        "evidence/runs/unrelated_machines/heavy_matching_residual_audit.json",
+        "evidence/runs/unrelated_machines/heavy_matching_escape_independent.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMIT-UM-ESCAPE-MATCH-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ESCAPE-MATCH-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only independent configuration feasibility plus this exact per-star matching fixed point retains gap2; not a computational lower bound or a restriction on all coupled strengthenings.",
+      "refs": [
+        "research/current/unrelated_machines/heavy_matching_residual_and_escape.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }

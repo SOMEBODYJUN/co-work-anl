@@ -1,6 +1,7 @@
 # 研究总目录：先选问题，再读具体资产
 
 **新主攻入口：[一般不相关并行机的统一常数2近似壁垒](current/unrelated_machines/README.md)**。先读模型/精确账本与本题前沿，使用[新BOSS启动词](unrelated_machines/BOSS_START.md)；旧题地图按需读取，不能把旧拥塞目标带入新save。
+本题新增[大边匹配残余及共享容量方法反例](current/unrelated_machines/heavy_matching_residual_and_escape.md)：安全过滤能识别原间隙族，但共享逃逸族仍保持gap趋2；统一常数突破仍OPEN。
 当前主要成果是**加权原子拥塞博弈的线性全状态非存在下界及Cd/ln d保证的严格否定**。设施选址和顺序客户吸引是独立保留的研究线；它们有不同模型、量词和未解问题。完整的[中文资产名、文件位置、具体用途与状态依据](CATALOG.md)覆盖当前数学正文、问题、审查和已整合的拥塞核验资产。
 
 面向审稿式连续阅读，可直接读[线性非存在界英文主稿PDF](current/weighted_congestion/linear_threshold_article.pdf)和[成稿核查](reviews/weighted_congestion/linear_threshold_article_review.md)；含完整证明，未认证优先权或期刊录用。

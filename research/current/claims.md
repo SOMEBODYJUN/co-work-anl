@@ -590,6 +590,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-LONG-PATH-GAP-v1 | 对每个整数g≥3，正最优值、恰两可用机器/任务、简单机器图围长≥g子类上sup OPT/T_CONF=2。 | [长链阈值保真证明](unrelated_machines/long_path_coalition_gap.md)、[冻结独立攻击](../reviews/unrelated_machines/long_path_coalition_review.md)；非算法困难性，全球新颖性未认证。 |
 | UM-COALITION-PROJECTION-GAP-v1 | 对每个整数r≥1、g≥3，上述子类精确定义CC_r的sup gap=2；各coalition仅共享完整单机配置分布，不要求多机overlap一致。 | [正文定义和森林耦合](unrelated_machines/long_path_coalition_gap.md)；完整三机交叠相容性在本树宽2族精确；主目标OPEN，独立内部已审、未外审。 |
 
+## 不相关并行机：大边残余与共享容量方法边界
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-HEAVY-MATCH-FILTER-v1 | ∀合法P,T≥0，精确GHMR在总位多项式内保留所有T可行调度的使用边；拒绝⇒OPT>T，接受不蕴含可行。 | [完整安全性及复杂度](unrelated_machines/heavy_matching_residual_and_escape.md)、内部独立冻结审查；无近似保证/全球新颖性认证。 |
+| UM-SIMPLE-SUPPORT-GAP-v1 | 每k≥4路径终端两树：每任务恰2选、每机器对至多1任务、OPT=2−1/k、配置T₀=1+1/k可行；此子类sup gap=2。 | 同正文§4，已内部独立审查；已知障碍支撑简化，不是算法困难性。 |
+| UM-ESCAPE-MATCH-GAP-v1 | 每k≥4，共享z成本1/2逃逸族OPT=2−1/k，配置T₀可行且GHMR首轮零删边；∀固定ε>0能击穿相对T的(2−ε)合同。 | 同正文§5，核心/星2选、占位3选；不排除联合强化或OPT相对算法。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

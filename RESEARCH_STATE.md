@@ -2,7 +2,7 @@
 
 ## 新主攻：一般不相关并行机的统一常数2壁垒
 
-`UM-TARGET-v1` 仍OPEN；本次建立独立存档 `unrelated-machines`、[精确模型与地基](research/current/unrelated_machines/README.md)、[承重前沿](research/unrelated_machines/RESEARCH_STATE.md)及[BOSS启动](research/unrelated_machines/BOSS_START.md)。已知槽舍入与配置gap重构不作为原创突破；尚无一般新算法。新增[长链与固定机器联合投影边界](research/current/unrelated_machines/long_path_coalition_gap.md)：任意大围长简单图仍保留gap2；只共享单机边际的固定大小联合见证不足，完整三机交叠相容性在该树宽2族上精确。该阶段已内部独立攻击，无一般算法或新颖性认证。新存档按scope隔离保存，旧研究保留原精确身份。
+`UM-TARGET-v1` 仍OPEN；本次建立独立存档 `unrelated-machines`、[精确模型与地基](research/current/unrelated_machines/README.md)、[承重前沿](research/unrelated_machines/RESEARCH_STATE.md)及[BOSS启动](research/unrelated_machines/BOSS_START.md)。已知槽舍入与配置gap重构不作为原创突破；新增[安全大边匹配过滤及共享逃逸容量反例](research/current/unrelated_machines/heavy_matching_residual_and_escape.md)，逐星匹配即使覆盖必经大边也仍可保留gap趋2。尚无一般新算法。新增[长链与固定机器联合投影边界](research/current/unrelated_machines/long_path_coalition_gap.md)：任意大围长简单图仍保留gap2；只共享单机边际的固定大小联合见证不足，完整三机交叠相容性在该树宽2族上精确。该阶段已内部独立攻击，无一般算法或新颖性认证。新存档按scope隔离保存，旧研究保留原精确身份。
 ## 已完成的拥塞旧题：严格否定
 
 [线性次数的全状态无均衡族](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md)已给完整一般证明：每整数d≥2^20存在MODEL有限游戏，每个纯状态都有严格(d/10)改善。新身份`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`与`WC-MATCHING-LOG-UPPER-NEGATIVE-v1`严格否定绝对C,d0的普遍(Cd/ln d)-PNE保证。所有参数正有理、费用纯d次、每人两个非空不交动作；不限制人数、资源数或权比。

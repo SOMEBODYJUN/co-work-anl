@@ -65,3 +65,39 @@
 ## Paper Fact、解释与观察的边界
 
 LST的2近似/ρ<3/2困难性、SV的2−1/m、restricted assignment的估值/准多项式构造等，逐条位置与假设在[LITERATURE](LITERATURE.md)和manifest；尚未重构的完整证明不能借本账本自动升级。没有“所有有限实验通过所以主目标成立”的Claim。更强困难性是可研究的独立方向，必须另定假设、常数和归约身份，不能把“某个2−ε不能达到”当作排除全部统一改善。
+
+## UM-HEAVY-MATCH-FILTER-v1：大边匹配残余安全过滤
+
+- Exact Statement / Quantifiers：∀合法P、∀有理T≥0，从p_ij≤T域出发执行正文§1精确GHMR，整个确定性过程在P,T总位长上多项式，保留每一个C_max≤T调度的所有使用边；拒绝蕴含OPT>T。
+- Objects / Domain / Definitions：UM-MODEL-v1；小边p≤T/2，大边p>T/2；N无小端、U_i唯一小端i、F_i总小端时间；每个大边j→i查询覆盖N∪{j}且固定j→i的最大U_i任务权匹配W_ij。
+- Assumptions / Scope：每大边机器最多一任务；仅删除无匹配或p_ij+F_i−W_ij>T的边，迭代到固定点；无配置求解或嵌套探测。零、空和不可用边均含。
+- Conclusion：安全必要条件与位多项式过滤；接受不蕴含T可行，没有近似比例或一般输出调度。
+- Dependencies：UM-MODEL-v1，任务权匹配贪心/增广的完整§2证明，逐次安全删边归纳。
+- Evidence：自足普遍证明、先独立重构后冻结攻击、两路Fraction有限核验。
+- Counterevidence / Objections：UM-ESCAPE-MATCH-GAP-v1保留gap趋2；未把逐查询最优匹配当共同调度。
+- Status：本轮限范围完整证明及内部独立审查；标准匹配工具，全球新颖性/外审未认证。
+- Related Files：[正文§1–3](../current/unrelated_machines/heavy_matching_residual_and_escape.md)、[审查](../reviews/unrelated_machines/heavy_matching_escape_review.md)、tests/audits/unrelated_machines/heavy_matching_residual.py及独立审计、evidence/runs/unrelated_machines/heavy_matching_residual_audit.json与heavy_matching_escape_independent.json。
+
+## UM-SIMPLE-SUPPORT-GAP-v1：简单机器支撑的配置间隙
+
+- Exact Statement / Quantifiers：∀整数k≥4，正文§4路径终端两树族合法、每任务恰2有限边、每无序机器对至多1任务，所有时间仅{1/k,1}，OPT=2−1/k，配置LP在T₀=1+1/k可行；故此子类sup OPT/T_CONF=2。
+- Objects / Domain / Definitions：UM-MODEL-v1及UM-CONF-GAP-v1的重索引h、配置定义；末端平行束替换为k终端星及k−1条unit占位路径。
+- Assumptions / Scope：k无界，实例有限但可很大；给出阈值证书而不声称T_CONF=T₀，不声称有限实例取得2。
+- Conclusion：已知配置障碍在简单支撑下保持；不是计算复杂度困难性。
+- Dependencies：UM-MODEL-v1、UM-ST-ROUND-v1（上界）、原两树核心配置递推、正文§4终端计数与显式配置。
+- Evidence：普遍替换证明、独立同构重构、k=4逐配置与匹配证书；大k只作明确压缩核验。
+- Counterevidence / Objections：没有尚成立fatal objection；该小强化可能属于标准改造，不能认证新颖性。
+- Status：本轮限范围完整证明及内部独立审查，非新的近似算法；外审/新颖性未认证。
+- Related Files：同正文§4及同审查/代码/证据；原经典gap身份不变。
+
+## UM-ESCAPE-MATCH-GAP-v1：共享逃逸容量击穿逐星匹配
+
+- Exact Statement / Quantifiers：∀整数k≥4，正文§5三选占位任务族P_k^esc满足OPT=2−1/k、T₀=1+1/k配置可行，GHMR从全部剪枝域首轮零删边即接受；故∀固定ε>0，∃(P,T)通过上述两个必要测试但OPT>(2−ε)T。
+- Objects / Domain / Definitions：§4族加一机器z，每占位任务新增成本1/2的z边；核心/星任务恰2选，占位任务恰3选；GHMR为本页精确定义的UM-HEAVY-MATCH-FILTER-v1。
+- Assumptions / Scope：k≥4保证h≥3；配置与各查询是独立证书，不声称存在共享联合分布；不包含nested probing、联合容量或所有匹配强化。
+- Conclusion：这两个必要测试的合取不足以得到相对其T的统一低于2保证；不排除相对OPT的新算法。
+- Dependencies：UM-MODEL-v1、§4路径配置和上界调度、§5至少二叉下传及四活跃簇迫使z负载≥2、逐类强制匹配证书。
+- Evidence：一般证明、独立重构和冻结攻击；展开k=4的配置及全部大边匹配，压缩参数范围单独记录。
+- Counterevidence / Objections：k=2,3的h=1不在身份内（添加z可能降低OPT）；遗漏此条件会使声明错误。单查询未匹配任务的小端容量以及查询间一致性均未表达。
+- Status：本轮限范围完整方法反例及内部独立审查；主目标OPEN，外审/新颖性未认证。
+- Related Files：正文§5–7、heavy_matching_escape_review.md、两路审计与冻结证据。

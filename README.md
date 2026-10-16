@@ -1,6 +1,6 @@
 # 共同研究：数学地图与唯一读取入口
 
-**新主攻：[一般不相关并行机的统一常数2近似壁垒](research/current/unrelated_machines/README.md)。** 精确目标 `UM-TARGET-v1` 仍OPEN；[完整BOSS启动词](research/unrelated_machines/BOSS_START.md)固定存档 `unrelated-machines`，复用现有公屏、私聊和个人桌面。经典舍入与配置gap已重构并配可复现精确证据；[长链扩展](research/current/unrelated_machines/long_path_coalition_gap.md)进一步给任意围长简单图及精确定义的固定机器联合投影gap2，完整多机交叠相容性不被排除；全文下载、证明重构、独立审查和原创进展分别记录。旧题成果与身份保留。
+**新主攻：[一般不相关并行机的统一常数2近似壁垒](research/current/unrelated_machines/README.md)。** 精确目标 `UM-TARGET-v1` 仍OPEN；[完整BOSS启动词](research/unrelated_machines/BOSS_START.md)固定存档 `unrelated-machines`，复用现有公屏、私聊和个人桌面。经典舍入与配置gap已重构并配可复现精确证据；[长链扩展](research/current/unrelated_machines/long_path_coalition_gap.md)进一步给任意围长简单图及精确定义的固定机器联合投影gap2，完整多机交叠相容性不被排除；[匹配残余与共享逃逸反例](research/current/unrelated_machines/heavy_matching_residual_and_escape.md)新增安全过滤及准确方法障碍，仍无统一常数改善算法；全文下载、证明重构、独立审查和原创进展分别记录。旧题成果与身份保留。
 本仓库维护不相关并行机、加权原子拥塞、两阶段设施选址和顺序客户吸引等独立数学模型。数学状态以main正文与精确账本为准；旧会话和公屏用于交流，不能覆盖规范记录。
 
 **[研究总目录](research/README.md) · [全部中文资产名与用途](research/CATALOG.md) · [当前研究路线](research/ROADMAP.md)。**
