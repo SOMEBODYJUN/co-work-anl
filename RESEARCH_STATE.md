@@ -17,6 +17,13 @@
 
 当前[work.py](research/weighted_congestion_frontier/tools/work.py)与checkpoint的未绑定默认统一为新题；start回执显示研究入口。已绑定shared的旧clone保留原存档；新题另用独立clone。新题默认保存本题专题目录、原始文献、共同登记与本人桌面，具体命令和显式路径规则见[本题手册](research/unrelated_machines/RUNBOOK.md)。根导航、角色提示词和嵌套规则以[课题路由合同](research/active_research.json)检查，避免旧题再次成为默认任务。
 
+
+## 同步后的具体接续入口
+
+[单共享汇点共同宏任务匹配](research/current/unrelated_machines/shared_sink_joint_macro_assignment.md)已有结构性实际构造，一般多接收预算及跨home任务仍缺。[严格lex修复长链族](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§10说明最小参与机数可增长，链尾中性预修可行，不能把该反例扩成弱C_max单调路径不可能。[条件矩正文](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)§9给同族独立均匀新矩的精确构造，不是一般调度算法。
+
+[共同容量路线整合审查](research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)区分菜单可算与核心可选、真实低秩矩存在与可求，以及实际输出和总进展；新主目标仍OPEN。以上同行正文、账本、审查及证据均随本次安全合并保留，未因重写导航而删除。
+
 ## 独立保留的研究线
 
 [加权拥塞](research/current/weighted_congestion/README.md)已有每d≥2^20的无(d/10)-PNE全状态族，严格否定全类Cd/ln d保证；精确常数、有限d及外部评审等按旧账本处理。[设施](research/current/README.md)与[顺序客户吸引](research/current/customer_attraction/README.md)的独立义务见[路线图](research/ROADMAP.md)。这些成果和源文件保留，均不作为本次默认目标。

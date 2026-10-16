@@ -28,7 +28,7 @@
 
 UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自完整配置LP延伸”的间隙2身份；精确范围、非必要条件警示及共同base边界见[专题账本](research/unrelated_machines/CLAIMS.md)与紧凑族正文§7。
 
-循环批量修复新增UM-ROBUST-CYCLIC-BATCH-OPT-v1、UM-BATCH-SUPPORT-REPAIR-NO-v1、UM-FORK-MINCOST-ROUND-REPAIR-NO-v1；另以UM-COORDINATE-REPAIR-ST-GAP-v1登记与boss7真凸包槽族的守恒直接推论。[准确量词与范围](research/unrelated_machines/CLAIMS.md)区分局部构造和修复反例，未得统一近似。
+循环批量修复新增UM-ROBUST-CYCLIC-BATCH-OPT-v1、UM-BATCH-SUPPORT-REPAIR-NO-v1、UM-FORK-MINCOST-ROUND-REPAIR-NO-v1；另以UM-COORDINATE-REPAIR-ST-GAP-v1登记与boss7真凸包槽族的守恒直接推论。[准确量词与范围](research/unrelated_machines/CLAIMS.md)区分局部构造和修复反例，未得统一近似。 UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1另登记真凸包mincost初始化后的无界机器严格lex支持；中性预修不被排除。
 
 新增UM-OPT-HULL-ROW-DISCREPANCY-GAP-v1、UM-OPT-HULL-PAIR-NC-GAP-v1、UM-FOREST-BOUNDARY-AUGMENT-v1。前两项仅固定边际输出合同，后一项仅给定单边界森林资源增强恢复接口。[精确专题账本](research/unrelated_machines/CLAIMS.md)保全量词；UM-TARGET-v1保持OPEN。
 
@@ -38,6 +38,8 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 
 新增UM-STAR-CONFIG-TRANSFER-v1与UM-CONTRACTED-SPARSE-CONFIG-GAP-v1，分别固定配置转换的充分条件/方向/支持位复杂度与先消元后探针的准确gap范围。[精确身份](research/unrelated_machines/CLAIMS.md)保全量词，未改变主目标OPEN。
 
-[对称条件矩的运输与重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。
+[对称条件矩的运输与重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。 后续§9另给独立均匀选择的精确新矩：同族吸收q+2任务即可保全部条件，门槛为(1+2/q)T；这仍非一般输入界或实际调度保证。
+
+新增UM-SHARED-SINK-JOINT-MACRO-v1；[专题精确账本](research/unrelated_machines/CLAIMS.md)固定唯一home、单sink、严格宏边阈值与实际构造量词。它给共同选择的正面接口，不改变一般主目标OPEN。
 
 新增UM-DAG-CONGESTION-FLOW-v1与UM-DAG-ACTIVATION-CORRIDOR-GAP-v1：[专题账本](research/unrelated_machines/CLAIMS.md)固定共同流、整数K、未知W及激活LP的不同合同；条件提取/固定支撑搜索已内部独立核对，主目标仍OPEN。

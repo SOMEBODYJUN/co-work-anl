@@ -33,6 +33,9 @@
 | [生产规则](research/REPOSITORY_GUIDE.md) / [增长规则](research/GROWTH.md) / [路线图](research/ROADMAP.md) | 读取、入库、状态与下一义务 |
 | [当前课题路由](research/active_research.json) | 当前目标、save和入口的可检查合同；运行research/check_active_research.py |
 
+
+当前共同构造另有[单共享汇点的宏任务匹配](research/current/unrelated_machines/shared_sink_joint_macro_assignment.md)；局部修复需核对[严格lex参与机数与中性路径的区别](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)。[路线整合审查](research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)汇集结构接口、真实矩提取和一般进展的剩余义务；[条件矩正文](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)§9给特定族的新矩构造，仍未给一般调度保证。UM-TARGET-v1保持OPEN。
+
 ## 独立保留的旧研究
 
 [加权拥塞](research/current/weighted_congestion/README.md)、[设施选址](research/current/README.md)和[顺序客户吸引](research/current/customer_attraction/README.md)各保留原模型、身份、正文和证据。拥塞的Cd/ln d全类存在命题已有线性全状态反例；其精确门槛等后续义务见旧题地图。旧目录内tools承担共享协作功能，目录名不把新题改成拥塞。旧数学交接包只用于该模型的历史追溯。

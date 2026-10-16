@@ -632,6 +632,18 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Status：完整限合同证明与独立内部审查，有限计算非一般证明；外审/新颖性未认证，主目标OPEN。
 - Related Files：research/current/unrelated_machines/sparse_conditioned_configuration_gap.md末节；同新审查/双路代码/冻结记录；examples/unrelated_machines/contracted_sparse_configuration_input.json和evidence/certificates/unrelated_machines/contracted_sparse_configuration_witness.json。
 
+## UM-SHARED-SINK-JOINT-MACRO-v1：单共享汇点的宏任务共同匹配与整组撤离
+
+- Exact Statement / Quantifiers：∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。
+- Objects / Domain / Definitions：UM-SHARED-SINK-MODEL-v1；非负有理/∞、显式分组、home数与宏任务数均可增长；仅一个sink。空组、强制端、T0和大分母包含。
+- Assumptions / Scope：仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。
+- Conclusion / Mechanism：每个macro/home或empty模式的真实最小整组撤离成本，保零乘性覆盖DP与带dummy成本的全局最小权完美匹配；误差只对同一个真实sink预算求和，不按home数量累积。
+- Dependencies：UM-MODEL-v1、UM-SHARED-SINK-MODEL-v1；正文自足的覆盖缩放与有理最小成本二分图匹配。不调用最优调度/分布或配置oracle。
+- Evidence：规范Fraction覆盖子集/匹配排列/原任务分配oracle；独立全局N绝对预算floor-DP与独立实际分配枚举；实际范围、代码hash和修复见冻结审查/记录。有限核验不是一般证明。
+- Counterevidence / Objections：独立审查发现的Python float/bool输入歧义已统一拒绝并重跑；宏边放宽至等号会错拒两半任务，不作此推广；多预算匹配不自动积分。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；一般UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/shared_sink_joint_macro_assignment.md](../current/unrelated_machines/shared_sink_joint_macro_assignment.md)、research/reviews/unrelated_machines/shared_sink_joint_review.md；实现/冻结记录见正文§7。
+
 ## UM-SYMMETRIC-JOB-AGGREGATION-v1：对称条件矩的任务选择聚合接口
 
 - Exact Statement / Quantifiers：For every nonempty bounded one-hot rational P, every symmetric normalized certificate (x,Y), every given deterministic jobwise aggregation/deletion R, and every new one-hot rational polytope P′, if RY_:e belongs to x_e P′ for every old choice of every retained job, then (Rx,RYRᵀ) belongs to the same-layer pair certificate set of P′. At least one retained job is required for this sufficient criterion; no retained jobs instead require checking the zero-dimensional base. Given data and explicit P′ are checkable in bit-polynomial time.
@@ -679,3 +691,31 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：声明范围内未见尚成立fatal objection；一般W选择及从任意UM输入得到相应结构仍未解决。固定支撑最小K不等于全支撑κ*。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准工具应用，UM-TARGET-v1仍OPEN。
 - Related Files：[research/current/unrelated_machines/rooted_dag_congestion_flow.md](../current/unrelated_machines/rooted_dag_congestion_flow.md)、research/reviews/unrelated_machines/rooted_dag_congestion_review.md；tests/audits/unrelated_machines/rooted_dag_congestion_flow.py、tests/audits/unrelated_machines/rooted_dag_congestion_independent.py、evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json、examples/unrelated_machines/rooted_dag_congestion_cases.json、evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json。
+
+## UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1：独立均匀后备的条件矩运输只需q加二任务
+
+- Exact Statement / Quantifiers：For every q>=2 with m=2q,n=2q^2,p=1/q, the fixed uniform balanced optimal-distribution matrix under independent uniform rerouting of old deleted-machine choices satisfies residual P0(1) true/false capacities iff absorbed integer job count c>=q+2. Other old choices stay fixed; no conditioning on absorbed labels. Exact moments are deterministically bit-polynomial computable; transported states may still have load2. q=1 separately has threshold1.
+- Objects / Domain：正文§3的q≥2均匀族、真实最优均匀D、任意标签包C和机器i，独立均匀后备随机量；0≤c≤n。q1单列。
+- Assumptions / Definitions：不是对D条件化；每个保留任务旧非i选择保持，旧i选择独立均匀去其余K=2q−1台。新矩按真实随机实验，不能只用平均R的RYRᵀ，须修同任务块。
+- Scope / Conclusion：最小c=q+2、吸收负载1+2/q，q≥3严格优于固定后备2T，q2相等；输出精确有理矩为确定性位多项式，不是随机或确定性近似调度输出。
+- Dependencies：UM-MODEL-v1；§3均匀二点矩；全概率与onehot混合。完整证明§9.1–9.3，位复杂度沿§7显式输入规模。
+- Evidence：两名内部研究者先盲推后核冻结稿；两路Fraction；q2全部2520源态及所有独立路由分支，q1空/退化，q2..64所有c及主q2..128范围独立登记。
+- Counterevidence / Objections：m=2q不可省；一般m时q2,m8需c5即2.5T。转换分布的坏态仍可达2T；未证明一般重置、相同边际修复或主目标近似算法。当前无尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准二点概率计算扩展，新颖性和独立论文价值未认证。
+- Related Files：research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md§9；research/reviews/unrelated_machines/symmetric_moment_reset_review.md追加审查；tests/audits/unrelated_machines/uniform_random_moment_reset.py、tests/audits/unrelated_machines/uniform_random_reset_independent.py、evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json。
+
+## 跨路线补充审查与身份保持
+
+[共同容量路线整合审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)补核UM-FOREST-TWO-BOUNDARY-MENU-v1、UM-DEPTH-TWO-HALF-v1、UM-FROZEN-MACRO-TINY-REOPT-GAP-v1、UM-MACRO-MIGRATION-FRONTIER-v1及UM-ONE-DESTINATION-SLOT-REPAIR-v1的所列范围。没有改变这些身份或主目标状态；标准流/仿射恢复推导用于检验接口，不另冒充新的特殊类研究成果。后续共同矩正文与研讨候选的实际覆盖另在审查中注明。
+
+## UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1：真实最优凸包槽初始化的无界机器长链修复
+
+- Exact Statement / Quantifiers：∀整数k≥3,d≥1，正文§10的正有理两端任务族有T=OPT=1，x由两个真实最优调度显式凸组合给出。固定任意tiny平局序，全部最小总处理时间槽覆盖匹配共同诱导同一σ，Cmax=2−1/k。每个严格降序负载lex改善至少改变d+1任务并涉及d+2台新旧owner端点机器；同一实际修复同时达到两下界，Cmax=2−2/k且每源至多迁出一件。
+- Objects / Domain / Definitions：UM-MODEL-v1；δ=1/k,a=1−1/(2k),D=d+2k−1；root宏/微任务各自有专属容量释放链。H={j:τ(j)≠σ(j)}，参与机为{σ(j),τ(j):j∈H}。ST边只用正长度槽交。
+- Assumptions / Scope：固定σ出发的一次严格lex下降邻域；k,d均可无界。真凸包/配置来源成立，但不要求x基本。任意统一ε和固定参与机预算均可独立选k,d攻击。
+- Conclusion：强初始化与最小成本择优不能保证有界参与机器的严格下降；不同于三机无界批量，也不同于单目的地分流障碍。
+- Dependencies：UM-MODEL-v1、标准ST槽定义；正文直接给两最优调度、严格激活成本差1/(2k)、链容量分类与精确支持计数。无新外部定理。
+- Evidence：完整自足证明、statement-first独立重构及冻结正文攻击；规范24参数精确最小成本流，独立3参数270336份全部实际分配和逐机槽匹配；范围见冻结记录。
+- Counterevidence / Objections：本族明确可从链尾逐件预修，每步仅两机且Cmax不增；前置步lex恶化，故不否定弱Cmax单调路径。两个已给凸分量可直接返回，不构成算法困难性或一般下界；无当前范围fatal异议。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；全球新颖性、独立论文价值与外审未认证；UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§10；research/reviews/unrelated_machines/optimal_hull_long_chain_review.md；tests/audits/unrelated_machines/optimal_hull_long_chain_gap.py、tests/audits/unrelated_machines/optimal_hull_long_chain_independent.py；两份optimal_hull_long_chain冻结JSON及k3d1输入/证书。

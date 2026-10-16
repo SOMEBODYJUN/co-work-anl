@@ -86,6 +86,10 @@ UM-ROBUST-CYCLIC-BATCH-OPT-v1已给固定η的实际局部优化器：exact-prof
 
 范围关键：该x不是配置投影（A上big质量>1），未称basic，不能据此否定配置初始化。下一高信息义务是可共同实现的多目的地分流合流，或一个能排除该相关结构的具体初始化不变量；仅正支撑、总成本不增或增大循环菜单不足。自足入口为[正文](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)与其冻结审查/实际证据。
 
+## 严格下降邻域的机器规模与可回收中性路径
+
+UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1在两个真实OPT调度凸组合与全部mincost ST输出上给C=2−1/k，严格lex改善的最小参与机器数恰d+2。它排除固定机器邻域的严格下降假充分义务；不排弱Cmax单调算法，本族从链尾逆序腾空后单件迁入即可改进。证明、槽证书和独立270336全调度审计见[循环正文§10](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)。下一高信息行动是在一般实例找可共同实现、允许中性预修的容量释放结构，并证明总进展界；不是扩大固定严格下降邻域。
+
 ## 用实际需求树检验联合迁移
 
 [压缩任务桥梁](../current/unrelated_machines/rooted_dag_degree_token_bridge.md)给真实OPT=2−b*与任意C<2调度的实际根树解码，而不是LPgap。大k填充和正确有限阈值缩放已闭合位复杂度；已知MMDA必要方向并非原创成果。一般联合repair需要同时维护unit激活与子资源唯一性。独立攻击已覆盖边界和缩放；Bamas2025一轮SA陈述已定位，但未做任何调度层级保真。主目标仍OPEN。
@@ -120,6 +124,8 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 
 端点预处理缺口已按新身份闭合：每步外部配置互斥保证CONFIG双向与条件边前向转换，支持S+r、位复杂度计入显式证书。稀疏族P_k收每底簇两端后无极小星，全部最终边仍可独立强制，OPT/T→2。不是所有预处理或共同base的否定；下一高信息义务仍为一般相关保存和联合容量，更多同类独立探测不提供统一余量。
 
+[单共享汇点的共同宏任务匹配](../current/unrelated_machines/shared_sink_joint_macro_assignment.md)：UM-SHARED-SINK-JOINT-MACRO-v1。∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。 每个macro/home或empty模式的真实最小整组撤离成本，保零乘性覆盖DP与带dummy成本的全局最小权完美匹配；误差只对同一个真实sink预算求和，不按home数量累积。 仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。 一般UM-TARGET-v1仍OPEN。
+
 ## 对称矩重置后的准确前沿
 
 [任务聚合、单机矩运输阈值与同边际修复](../current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)给UM-SYMMETRIC-JOB-AGGREGATION-v1及UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1。前者是给定R的可检查列条件；后者在真实最优分布上区分既定矩推前需2T与同Rx重新耦合只需T。不得写成Rx不属新N或同层求解不可能。读取链：CLAIMS→正文→symmetric_moment_reset_review.md→双路代码/实际q2输入与证书/symmetric_moment_reset_audit.json。
@@ -131,3 +137,9 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 [共同流正文](../current/unrelated_machines/rooted_dag_congestion_flow.md)闭合一次整数流提取及固定W最小整数K搜索。K单调的拓扑重分配避免按数值扫描；1/(2K−1)由层宽2^d−1族精确达到，不能仅改分析提升合同保证。全支撑最优κ*满足(1+1/b*)/2≤κ*≤ceil(1/b*)，说明寻找好W仍携带真实树选择问题，而不是已解决的固定W流。
 
 一般activation LP即使加x_vw≤a_v仍被四段单位汇流走廊族击穿；它不是强共同证书。下一高信息义务：从一般输入/阈值承诺中构造有用W或保留其共同条件路径容量，并证明统一K与实际输出；不得先知道好树再选择W。当前没有通过攻击的一般W算法，不继续制造同一LP的小修补。UM-TARGET-v1仍OPEN。
+
+同一正文§9另立UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1：独立均匀转移旧删机choices所生的新矩可确定精确计算，最小包q+2、负载1+2/q，q≥3严格小于固定后备的2。必须修同任务对角；一般m不保此界、个别态仍2T，故只作为限族正面运输，不提升主目标。双路实际矩/原分布coins枚举及冻结审查从正文进入。
+
+## 跨路线整合后的可判别前沿
+
+[冻结整合审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)确认已有真实局部构造，尚无一般统一ε。菜单全局选择已含unrelated graph balancing；DAG-token任意深度且非根需求有固定上界时已有标准最大流标尺，不能只加深路径当新机制；真低秩矩存在不等于可提取。最新阈值repair仍缺真实进展势，失败不是不可行；单sink共同macro接口靠可加真实成本耦合，多sink需另证整数选择。优先判别一般共同容量/重新耦合与总位进展，不重复独立探针或把局部修复当全类保证。

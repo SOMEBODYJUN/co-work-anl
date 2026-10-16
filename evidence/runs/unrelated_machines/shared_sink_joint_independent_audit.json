@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "seed": 20905,
+  "python": "3.12.14",
+  "arithmetic": "exact Fraction loads and integer floor budgets; independent residual-flow matching",
+  "candidate_sha256": "bf28617b661c2afa08b9a77debdbb0265272bb2efbd900cbea34965a1d8bb8e2",
+  "proof_sha256": "acba46c31415f9c07f538077adb2f329d5e0161dbe79cf127bc8aaacf94af977",
+  "independent_source_sha256": "7f93138c2d31719b60be5bb37f4e14cf0c0731560f2c2cab34aa82af92023911",
+  "systematic_cases": 39200,
+  "random_cases": 2000,
+  "independent_invalid_contract_cases": 14,
+  "cases": 41207,
+  "actual_assignments": 593913,
+  "promised": 23280,
+  "candidate_success": 25252,
+  "independent_success": 23663,
+  "candidate_success_without_T_feasibility": 1972,
+  "independent_success_without_T_feasibility": 383,
+  "boundary_cases": [
+    {
+      "name": "no_home_empty",
+      "candidate": "SCHEDULE",
+      "independent_success": true
+    },
+    {
+      "name": "no_private_with_feasible_macro",
+      "candidate": "SCHEDULE",
+      "independent_success": true
+    },
+    {
+      "name": "no_private_infeasible_macros",
+      "candidate": "REJECT_TARGET",
+      "independent_success": false
+    },
+    {
+      "name": "zero_global_optimum_positive_target",
+      "candidate": "SCHEDULE",
+      "independent_success": true
+    },
+    {
+      "name": "positive_sink_rounds_to_zero",
+      "candidate": "SCHEDULE",
+      "independent_success": true
+    },
+    {
+      "name": "huge_denominators",
+      "candidate": "SCHEDULE",
+      "independent_success": true
+    },
+    {
+      "name": "empty_home_baseline_cost",
+      "candidate": "SCHEDULE",
+      "independent_success": true
+    }
+  ],
+  "limitations": "Finite tests do not prove the theorem or novelty. The independent constructor has an additive sink budget and need not return zero for an actual zero optimum when T>0; that stronger promise is tested only for the candidate."
+}

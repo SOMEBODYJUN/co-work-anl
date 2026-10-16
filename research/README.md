@@ -8,6 +8,9 @@
 
 方法障碍、条件正面结果与特殊情形不升级成主目标突破。共同多机容量、实际联合迁移、可恢复菜单、条件矩重耦合与需求树支撑选择等路线均可探索；[路线图](ROADMAP.md)是搜索种子。
 
+
+本题最新结构接口还包括[单共享汇点共同宏任务匹配](current/unrelated_machines/shared_sink_joint_macro_assignment.md)，及[循环修复正文](current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§10的严格lex长链边界。按[共同容量路线整合审查](reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)区分局部构造、核心共同选择与总进展；特定族[条件矩新构造](current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)§9不能直接提升为一般算法。
+
 ## 各模型分别读取
 
 | 模型 | 权威入口 | 状态与范围 |

@@ -7701,6 +7701,130 @@
         "research/reviews/unrelated_machines/rooted_dag_congestion_review.md"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "独立均匀后备的条件矩运输只需q加二任务",
+      "detail": "For every q>=2 with m=2q,n=2q^2,p=1/q, the fixed uniform balanced optimal-distribution matrix under independent uniform rerouting of old deleted-machine choices satisfies residual P0(1) true/false capacities iff absorbed integer job count c>=q+2. Other old choices stay fixed; no conditioning on absorbed labels. Exact moments are deterministically bit-polynomial computable; transported states may still have load2. q=1 separately has threshold1.",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "research/reviews/unrelated_machines/symmetric_moment_reset_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-UNIFORM-RANDOM-RESET-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "独立均匀矩运输的原分布枚举与逐列审计",
+      "detail": "Finite Fraction moment checks and complete small-source/coin enumeration, not universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "tests/audits/unrelated_machines/uniform_random_moment_reset.py",
+        "tests/audits/unrelated_machines/uniform_random_reset_independent.py",
+        "evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-SHARED-SINK-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "唯一home与单共享汇点的宏任务占位模式",
+      "detail": "给定显式homes、单z、私有分组以及每有限边>T/2的宏任务，覆盖成本保持真实任务身份；T0/零端点包含。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单共享汇点的宏任务共同匹配与私有任务整组撤离",
+      "detail": "∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
+        "research/reviews/unrelated_machines/shared_sink_joint_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-SHARED-SINK-JOINT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "单共享汇点共同选择的双路精确有限审计",
+      "detail": "规范Fraction覆盖子集/匹配排列/原任务分配oracle；独立全局N绝对预算floor-DP与独立实际分配枚举；实际范围、代码hash和修复见冻结审查/记录。有限核验不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
+        "tests/audits/unrelated_machines/shared_sink_joint_assignment.py",
+        "tests/audits/unrelated_machines/shared_sink_joint_independent.py",
+        "evidence/runs/unrelated_machines/shared_sink_joint_assignment_audit.json",
+        "evidence/runs/unrelated_machines/shared_sink_joint_independent_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-JOINT-ROUTE-REVIEW-v1",
+      "kind": "artifact",
+      "track": "unrelated_machines",
+      "title": "共同容量路线整合审查",
+      "detail": "准确区分局部可构造进展、原核心残留、矩提取与真正负载进展；标准推导和研讨候选不升级主目标。",
+      "refs": [
+        "research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md",
+        "research/current/unrelated_machines/forest_boundary_contraction.md",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md",
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "supplementary scope review; target open"
+    },
+    {
+      "id": "UM-ROUTE-COMPOSITION-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "菜单、需求流与仿射真矩恢复的有限核验",
+      "detail": "48单任务菜单、1885组装/14425分配、1076单位需求、9176有界需求与548分布；另零目标、死端、大分母、伪PSD及全tiny边界。",
+      "refs": [
+        "tests/audits/unrelated_machines/route_composition_review.py",
+        "evidence/runs/unrelated_machines/route_composition_review_audit.json",
+        "research/current/unrelated_machines/forest_boundary_contraction.md",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "finite exact evidence only"
+    },
+    {
+      "id": "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "真实最优凸包槽初始化的无界机器长链修复",
+      "detail": "For every integer k>=3,d>=1 the explicit degree-two positive rational instance has T=OPT=1 and x given as a convex combination of two actual optimal schedules. For every fixed tiny tie order, every minimum-total-processing-time ordered-slot cover matching induces the same assignment sigma with Cmax=2-1/k. Every strict descending-sorted-load lex improvement changes at least d+1 jobs and touches at least d+2 old/new owner endpoints; one reassignment jointly attains both bounds, gives Cmax=2-2/k and moves at most one job out of each machine. Only fixed-sigma bounded-machine strict-lex descent; the family explicitly has two-machine single-job weak-makespan-monotone suffix preparation followed by improvement. Does not exclude neutral preprocessing, arbitrary long paths, alternate initialization or a general algorithm. Two supplied optimal components can be returned directly.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "research/reviews/unrelated_machines/optimal_hull_long_chain_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-OPT-HULL-LONG-CHAIN-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "长链最优凸分解与最小改善支持的双路精确证据",
+      "detail": "24 parameter cases plus boundary fixtures; independent complete owner enumeration for k3d1,k3d2,k4d1, total270336 schedules, with actual positive-overlap slot matching. Reviewer additionally uses interleaved job numbering and per-machine subset-DP cover counting at the same finite parameters.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_gap.py",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_independent.py",
+        "examples/unrelated_machines/optimal_hull_long_chain_k3d1.json",
+        "evidence/certificates/unrelated_machines/optimal_hull_long_chain_k3d1.json",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_audit.json",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_independent.json",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_reviewer.py",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_reviewer.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -18589,6 +18713,161 @@
         "research/current/unrelated_machines/rooted_dag_congestion_flow.md"
       ],
       "status": "refuted in stated scope"
+    },
+    {
+      "id": "C-UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIFORM-RANDOM-RESET-AUDIT-v1"
+      ],
+      "conclusion": "UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "statement": "双路实际矩、全部真假列与小源分布/coins枚举；有限证据不替代一般公式证明。",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json"
+      ],
+      "status": "finite check"
+    },
+    {
+      "id": "L-UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅m=2q均匀族上的可计算矩运输；一般机器数门槛可超过2T，且个别运输态仍达2T；无调度近似突破。",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "research/reviews/unrelated_machines/symmetric_moment_reset_review.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-SHARED-SINK-MODEL-v1"
+      ],
+      "conclusion": "UM-SHARED-SINK-JOINT-MACRO-v1",
+      "statement": "每个macro/home或empty模式的真实最小整组撤离成本，保零乘性覆盖DP与带dummy成本的全局最小权完美匹配；误差只对同一个真实sink预算求和，不按home数量累积。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SHARED-SINK-JOINT-AUDIT-v1"
+      ],
+      "conclusion": "UM-SHARED-SINK-JOINT-MACRO-v1",
+      "statement": "规范Fraction覆盖子集/匹配排列/原任务分配oracle；独立全局N绝对预算floor-DP与独立实际分配枚举；实际范围、代码hash和修复见冻结审查/记录。有限核验不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
+        "evidence/runs/unrelated_machines/shared_sink_joint_assignment_audit.json",
+        "evidence/runs/unrelated_machines/shared_sink_joint_independent_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SHARED-SINK-JOINT-MACRO-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "CHECK-UM-ROUTE-COMPOSITION-REVIEW",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROUTE-COMPOSITION-AUDIT-v1"
+      ],
+      "conclusion": "UM-JOINT-ROUTE-REVIEW-v1",
+      "statement": "Finite exact interface corroboration and independent rerun only; no general theorem or approximation inferred from enumeration.",
+      "refs": [
+        "research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md",
+        "evidence/runs/unrelated_machines/route_composition_review_audit.json",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMIT-UM-JOINT-ROUTE-REVIEW-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-JOINT-ROUTE-REVIEW-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Local menus, shallow trees, given true moments and one-shot cap repair do not supply general core choice, a computable shared certificate, a uniform epsilon or total progress. This review does not negate the target.",
+      "refs": [
+        "research/reviews/unrelated_machines/joint_capacity_route_feasibility_review.md",
+        "research/current/unrelated_machines/forest_boundary_contraction.md",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md",
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "scope and remaining obligations"
+    },
+    {
+      "id": "DERIVE-OPT-HULL-LONG-CHAIN",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1",
+      "statement": "Direct explicit-family proof in account section10: two optimal schedules, standard slot graph, strictly separated activation costs and exact endpoint-support classification. No complexity assumption or free oracle.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
+      ],
+      "status": "direct stated-scope proof"
+    },
+    {
+      "id": "CHECK-OPT-HULL-LONG-CHAIN",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPT-HULL-LONG-CHAIN-AUDIT-v1"
+      ],
+      "conclusion": "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1",
+      "statement": "Checks only the listed finite parameters and complete labeled owner enumeration, not a computational proof of universal quantifiers.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_gap.py",
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_independent.py",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_audit.json",
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_independent.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-OPT-HULL-LONG-CHAIN-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only fixed-sigma bounded-machine strict-lex descent; the family explicitly has two-machine single-job weak-makespan-monotone suffix preparation followed by improvement. Does not exclude neutral preprocessing, arbitrary long paths, alternate initialization or a general algorithm. Two supplied optimal components can be returned directly.",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }

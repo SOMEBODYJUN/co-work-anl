@@ -747,6 +747,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-STAR-CONFIG-TRANSFER-v1 | 全邻域极小星满足逐外机配置互斥时，配置可行性双向保持，全部独立单边条件证书向前保持；单点前向仅需外部占用Q≥1。每步全球最多分裂一列，复杂度计入给定证书。 | [星正文§8](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/star_configuration_transfer_review.md)；缺条件及逆向probe均有反例；未外审/未核新颖性。 |
 | UM-CONTRACTED-SPARSE-CONFIG-GAP-v1 | 每k≥3稀疏深树沿指定合法次序收两端后，无极小星、全部最终边条件CONFIG可行，OPT=2−1/k，T=1+1/k；组合接受合同sup2。 | [稀疏正文末节](unrelated_machines/sparse_conditioned_configuration_gap.md)；双路全最终边有限核验与一般证明分开，不排共同base或主目标。 |
 
+## 单共享汇点的宏任务共同选择
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-SHARED-SINK-JOINT-MACRO-v1 | ∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。 | 仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。 [自足证明](unrelated_machines/shared_sink_joint_macro_assignment.md)、[冻结审查](../reviews/unrelated_machines/shared_sink_joint_review.md)。独立内部核验，未外审。 |
+
 ## 对称共同条件矩的运输与重新耦合
 
 | ID | 精确范围与结论 | 正文与状态 |
@@ -760,6 +766,20 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-DAG-CONGESTION-FLOW-v1 | ∀显式根简单DAG及二进制非负需求（零需求仅原终端），∀整数K≥1及含根支撑W上的正文共同K证书，可确定性总位多项式用一次整数流输出真实根树b≥1/(2K−1)。固定W,K的证书可行性与一整数流饱和等价；可行性对K单调，可位多项式求最小可行K或报告该W无证书。∀K≥2存在本合同证书族且真实b*=1/(2K−1)。全支撑最优κ*在b*>0时满足(1+1/b*)/2≤κ*≤ceil(1/b*)；给评分β>0的实际树及K≥1/β可构造其支撑证书。 | W、K明确输入，允许不可达组件、正需求死点、任意根、极大二进制需求；K为整数。输出可用E[W]的零f边。给定W的不可行不意味着无好树。没有一般支撑搜索、统一常数K或一般调度算法。 [自足正文](unrelated_machines/rooted_dag_congestion_flow.md)、[冻结审查](../reviews/unrelated_machines/rooted_dag_congestion_review.md)。独立内审及精确有限核验，未外审/未认证新颖性。 |
 | UM-DAG-ACTIVATION-CORRIDOR-GAP-v1 | ∀整数q≥2，正文四段DAG有1+q(q+3)点、2q²+2q边，根/走廊需求1、q个分叉点需求q、末端需求0。加强激活LP a_r=1、非根a_v=Σ_u x_uv≤1、Σ_w x_vw≥k_va_v、0≤x_vw≤a_v精确有理可行，但真实根树最优b*=1/q。 | 仅上述激活边际LP的统一正常数充分性反例；未满足或否定共同K强证书，未导入SA或调度困难性，未认证全球新颖性。 [自足正文](unrelated_machines/rooted_dag_congestion_flow.md)、[冻结审查](../reviews/unrelated_machines/rooted_dag_congestion_review.md)。独立内审及精确有限核验，未外审/未认证新颖性。 |
+
+## 独立均匀选择的正面条件矩运输
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1 | For every q>=2 with m=2q,n=2q^2,p=1/q, the fixed uniform balanced optimal-distribution matrix under independent uniform rerouting of old deleted-machine choices satisfies residual P0(1) true/false capacities iff absorbed integer job count c>=q+2. Other old choices stay fixed; no conditioning on absorbed labels. Exact moments are deterministically bit-polynomial computable; transported states may still have load2. q=1 separately has threshold1. | [正文§9](unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)、追加冻结审查和双路真实矩核验；非调度算法，m=2q不可省，主目标OPEN。 |
+
+跨路线[补充审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)仅核所列UM接口和拼接义务，未更改上述Claim量词、状态或新增主目标算法。
+
+## 真实最优凸包初始化的长链修复边界
+
+| ID | 精确范围与结论 | 正文与限制 |
+| --- | --- | --- |
+| UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1 | ∀k≥3,d≥1，两个真实OPT1调度平均点的全部mincost ST输出σ都有Cmax=2−1/k；严格lex改善的最小任务支持d+1、最小新旧端点参与机数d+2同时达到，每源仅迁一件。 | [循环正文§10](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)、[冻结审查](../reviews/unrelated_machines/optimal_hull_long_chain_review.md)。中性Cmax链尾预修明确可行，未排一般算法，未外审/未核新颖性。 |
 
 ## 逻辑使用规则
 
