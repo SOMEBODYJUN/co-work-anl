@@ -1,6 +1,8 @@
-# 运行算法：先核对数学条件
+# 运行程序：当前调度研究与各模型算法
 
-从仓库根目录以 Python 3 运行规范包，不需要第三方依赖。每个命令对应不同的问题；[规范模型](research/current/model.md)规定客户成本与延续选择，[命题登记](research/current/claims.md)记录结果状态。此仓库没有选定公共许可或稳定的安装式 API。
+当前主攻 `UM-TARGET-v1`，存档 `unrelated-machines`。启动、通信和提交统一使用[work.py](research/weighted_congestion_frontier/tools/work.py)，完整命令在[新题手册](research/unrelated_machines/RUNBOOK.md)，新对话粘贴[完整提示词](research/unrelated_machines/BOSS_START.md)。新建未绑定clone默认新题，旧绑定保留。调度精确核验代码从[本题地图](research/current/unrelated_machines/README.md)按Claim选择；目前没有解决主目标的一般新算法。
+
+下表是独立保留的设施模型算法。仅在研究该模型时，从仓库根目录以 Python 3 运行规范包，不需要第三方依赖。每个命令对应不同的问题；[规范模型](research/current/model.md)规定客户成本与延续选择，[命题登记](research/current/claims.md)记录结果状态。此仓库没有选定公共许可或稳定的安装式 API。
 
 | 所需结果 | 额外输入条件 | 运行命令 | 输出含义 |
 | --- | --- | --- | --- |

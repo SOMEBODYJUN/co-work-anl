@@ -1,0 +1,246 @@
+{
+  "schema": 2,
+  "recorded_at_utc": "2026-10-16T17:08:30.094712+00:00",
+  "repository": "SOMEBODYJUN/co-work-anl",
+  "base_commit_at_tool_edit_start": "7993936",
+  "purpose": "Current-topic routing, legacy archive compatibility and collaboration regression; engineering evidence only.",
+  "regression": {
+    "command": "python3 -m unittest discover -s research/weighted_congestion_frontier/tests -v",
+    "cwd": "/workspace/scratch/64645c05f687/co-work-anl",
+    "actual_unittest_summary": "Ran 109 tests in 69.649s\n\nOK",
+    "tests_run": 109,
+    "elapsed_seconds": 69.649,
+    "exit_code": 0,
+    "result": "passed",
+    "note": "Summary transcribed from this task actual completed exec session 14404; full stdout was returned in tool output chunks, not written as a standalone log.",
+    "scope_note": "Initial full-suite regression against tested_source_sha256. See validation_stages for the later metadata correction and final-source targeted regression."
+  },
+  "tested_source_sha256": {
+    "research/weighted_congestion_frontier/tools/work.py": "04af433ddbb4a063d3073ad1155150dea86a0753ef1772ce66bb54600e1d6f62",
+    "research/weighted_congestion_frontier/tools/checkpoint.py": "79f6aea353eeebecda8cbca85be98746e0017028d3f6c8e23d798fc03104e4fc",
+    "research/weighted_congestion_frontier/tools/board.py": "11dc1a9ca8f3d1dc789cece1ac11fe9a2589323c55f2ea490d4ccba2d3027831",
+    "research/weighted_congestion_frontier/tests/test_board.py": "50d38cf002c554ba54dea4f81c79251d8cd8398bc5dbdd77ce8db412dbbb9a52",
+    "research/weighted_congestion_frontier/tests/test_board_entry.py": "a2495c0ea47989a3e398e2a2a9ef8dd71a1983e55ec5519bb142b68c3b62fce8",
+    "research/weighted_congestion_frontier/tests/test_checkpoint.py": "80d1542fcabe1623029f3300af425ad4eca11fa885dda564386c820d3ac5f0bd",
+    "research/weighted_congestion_frontier/tests/test_collaboration_concurrency.py": "e46f4ba745dc357548a27795825aebe3b37e93bb31b642b45e72fbaf5c18b79c",
+    "research/weighted_congestion_frontier/tests/test_collaboration_safety.py": "15497930408391f143c13c65587e04f10323bd0bb25acf24af4c9309b84e4d0b",
+    "research/weighted_congestion_frontier/tests/test_work.py": "2e7bd17ff11f2353460ddb54353fa18b4a36bce2cfefbd920f963e24d0b6ad03"
+  },
+  "new_behavior": [
+    "Unbound work.py defaults to unrelated-machines and records wcg.save on its first normal command.",
+    "Direct unbound checkpoint.py selects unrelated-machines topic paths; it cannot fall back to weighted-congestion paths.",
+    "Start receipt includes selected save and the exact active-topic math-map/prompt paths; legacy shared identifies its old README with an explicit null prompt, and unknown archives inherit neither entry.",
+    "Previously bound shared remains shared; explicit shared keeps the historical checkpoint scope; switching binding in-place is refused.",
+    "Unknown archive retains common registers plus its own workspace only, with no inherited topic entry.",
+    "Standalone non-executable uploaded work.py can restore a missing clone without additional local configuration assets.",
+    "Default current-topic checkpoint publishes current-topic assets and own workspace, leaving historical-topic and other-worker drafts local."
+  ],
+  "regression_coverage": [
+    "Ten independent local clones use the new default, exchange public mentions and private messages, and concurrently checkpoint only their own published workspaces.",
+    "Unbound direct checkpoint, explicit legacy archive, existing legacy binding, unknown archive, current-topic deletions, and explicit scope.",
+    "Historical outgoing revisions remain audited for scope, secrets, removed blobs, symlinks and merge resolutions.",
+    "Dirty/staged/untracked local work, true conflicts, retry behavior, stable message IDs and private export routing.",
+    "Bootstrap/checkpoint default agreement and existence of registered repository entry files."
+  ],
+  "supplemental_read_only_routing_audit": {
+    "method": "Read source and run in-memory CLI probes using a fake Board and mocked work.py boundary calls; no Git/network or production board operations.",
+    "board_default_save": "shared",
+    "historical_missing_save_interpretation": "shared",
+    "direct_board_say_without_save": "body has no save and save_of interprets it as shared",
+    "direct_board_ack_without_save": "shared",
+    "direct_board_view_without_save": "all-save public aggregate; private messages remain absent",
+    "direct_board_view_with_current_save": "only unrelated-machines public messages",
+    "work_routes": [
+      {
+        "work_command": [
+          "read",
+          "--json"
+        ],
+        "board_command": "view",
+        "explicit_save": "unrelated-machines",
+        "passed": true
+      },
+      {
+        "work_command": [
+          "send",
+          "--text",
+          "probe"
+        ],
+        "board_command": "say",
+        "explicit_save": "unrelated-machines",
+        "passed": true
+      },
+      {
+        "work_command": [
+          "dm",
+          "--to",
+          "R-two",
+          "--text",
+          "probe"
+        ],
+        "board_command": "say",
+        "explicit_save": "unrelated-machines",
+        "passed": true
+      },
+      {
+        "work_command": [
+          "dm",
+          "--to",
+          "R-two",
+          "--json"
+        ],
+        "board_command": "view",
+        "explicit_save": "unrelated-machines",
+        "passed": true
+      },
+      {
+        "work_command": [
+          "inbox",
+          "--json"
+        ],
+        "board_command": "view",
+        "explicit_save": "unrelated-machines",
+        "passed": true
+      },
+      {
+        "work_command": [
+          "ack",
+          "11111111111111111111111111111111"
+        ],
+        "board_command": "ack",
+        "explicit_save": "unrelated-machines",
+        "passed": true
+      }
+    ],
+    "start_route": "Source and real-clone regression confirm start passes --save explicitly to the board view.",
+    "pending_retry_discard": "No --save is passed intentionally: pending lists the local outbox; retry/discard use an explicit original message ID and sender identity. Retry preserves the stored body/save rather than rerouting to the active topic.",
+    "board_source_modified": false,
+    "passed": true
+  },
+  "limits": [
+    "Real Git integration tests used disposable local bare remotes; no hundreds-of-live-Work capacity claim or production throughput measurement.",
+    "No production board messages were created and no commits or pushes were performed by this subtask.",
+    "Existing bound shared clones are deliberately not automatically rebound. New-topic research should use its own unrelated-machines clone.",
+    "Direct board.py is a low-level compatibility entry: callers bypassing work.py must choose --save explicitly for current-topic sends and filtered reads.",
+    "A consciously retried legacy pending message remains in its original shared archive; pending lists are local-outbox-wide.",
+    "The test summary establishes engineering behavior, not proof of mathematical results or universal absence of bugs.",
+    "Known save defaults are duplicated in two standalone tools and protected by regression instead of introducing a bootstrap-breaking configuration dependency.",
+    "After a final metadata-only entry correction, test_work.py was rerun successfully (21 tests); the earlier 109-test full suite was not rerun. Both tested-source hash sets and actual summaries are preserved separately."
+  ],
+  "updated_at_utc": "2026-10-16T17:13:00.119292+00:00",
+  "validation_stages": [
+    {
+      "command": "python3 -m unittest discover -s research/weighted_congestion_frontier/tests -v",
+      "cwd": "/workspace/scratch/64645c05f687/co-work-anl",
+      "actual_unittest_summary": "Ran 109 tests in 69.649s\n\nOK",
+      "tests_run": 109,
+      "elapsed_seconds": 69.649,
+      "exit_code": 0,
+      "result": "passed",
+      "note": "Summary transcribed from this task actual completed exec session 14404; full stdout was returned in tool output chunks, not written as a standalone log.",
+      "stage": "initial_current_default_full_collaboration_regression",
+      "tested_source_sha256": {
+        "research/weighted_congestion_frontier/tools/work.py": "04af433ddbb4a063d3073ad1155150dea86a0753ef1772ce66bb54600e1d6f62",
+        "research/weighted_congestion_frontier/tools/checkpoint.py": "79f6aea353eeebecda8cbca85be98746e0017028d3f6c8e23d798fc03104e4fc",
+        "research/weighted_congestion_frontier/tools/board.py": "11dc1a9ca8f3d1dc789cece1ac11fe9a2589323c55f2ea490d4ccba2d3027831",
+        "research/weighted_congestion_frontier/tests/test_board.py": "50d38cf002c554ba54dea4f81c79251d8cd8398bc5dbdd77ce8db412dbbb9a52",
+        "research/weighted_congestion_frontier/tests/test_board_entry.py": "a2495c0ea47989a3e398e2a2a9ef8dd71a1983e55ec5519bb142b68c3b62fce8",
+        "research/weighted_congestion_frontier/tests/test_checkpoint.py": "80d1542fcabe1623029f3300af425ad4eca11fa885dda564386c820d3ac5f0bd",
+        "research/weighted_congestion_frontier/tests/test_collaboration_concurrency.py": "e46f4ba745dc357548a27795825aebe3b37e93bb31b642b45e72fbaf5c18b79c",
+        "research/weighted_congestion_frontier/tests/test_collaboration_safety.py": "15497930408391f143c13c65587e04f10323bd0bb25acf24af4c9309b84e4d0b",
+        "research/weighted_congestion_frontier/tests/test_work.py": "2e7bd17ff11f2353460ddb54353fa18b4a36bce2cfefbd920f963e24d0b6ad03"
+      }
+    },
+    {
+      "stage": "final_entry_metadata_correction_targeted_regression",
+      "command": "python3 -m unittest discover -s research/weighted_congestion_frontier/tests -p test_work.py -v",
+      "cwd": "/workspace/scratch/64645c05f687/co-work-anl",
+      "actual_unittest_summary": "Ran 21 tests in 14.983s\n\nOK",
+      "tests_run": 21,
+      "elapsed_seconds": 14.983,
+      "exit_code": 0,
+      "result": "passed",
+      "note": "Summary transcribed from this task actual completed exec session 65523. Only the work.py entry metadata and its exact assertions changed after the full 109-test run.",
+      "tested_source_sha256": {
+        "research/weighted_congestion_frontier/tools/work.py": "ea646ed6363e130568d36340c51afa0fb6cfa9bcffae463ce72ae2ce925aeeb7",
+        "research/weighted_congestion_frontier/tools/checkpoint.py": "79f6aea353eeebecda8cbca85be98746e0017028d3f6c8e23d798fc03104e4fc",
+        "research/weighted_congestion_frontier/tools/board.py": "11dc1a9ca8f3d1dc789cece1ac11fe9a2589323c55f2ea490d4ccba2d3027831",
+        "research/weighted_congestion_frontier/tests/test_board.py": "50d38cf002c554ba54dea4f81c79251d8cd8398bc5dbdd77ce8db412dbbb9a52",
+        "research/weighted_congestion_frontier/tests/test_board_entry.py": "a2495c0ea47989a3e398e2a2a9ef8dd71a1983e55ec5519bb142b68c3b62fce8",
+        "research/weighted_congestion_frontier/tests/test_checkpoint.py": "80d1542fcabe1623029f3300af425ad4eca11fa885dda564386c820d3ac5f0bd",
+        "research/weighted_congestion_frontier/tests/test_collaboration_concurrency.py": "e46f4ba745dc357548a27795825aebe3b37e93bb31b642b45e72fbaf5c18b79c",
+        "research/weighted_congestion_frontier/tests/test_collaboration_safety.py": "15497930408391f143c13c65587e04f10323bd0bb25acf24af4c9309b84e4d0b",
+        "research/weighted_congestion_frontier/tests/test_work.py": "871042f1d66300080d6fd3b6d99e627cab8adfa350d840a209e7906a9ed153fd"
+      },
+      "changes_from_first_stage": [
+        "Current unrelated-machines research_entry now points to research/current/unrelated_machines/README.md.",
+        "Legacy shared research_prompt is null because historical prompts/TEAM.md is now maintained as an active-topic compatibility entry; shared still points to its legacy README.",
+        "Tests assert both exact registered entry mappings and the null prompt in a real shared start receipt."
+      ]
+    }
+  ],
+  "final_source_sha256": {
+    "research/weighted_congestion_frontier/tools/work.py": "ea646ed6363e130568d36340c51afa0fb6cfa9bcffae463ce72ae2ce925aeeb7",
+    "research/weighted_congestion_frontier/tools/checkpoint.py": "79f6aea353eeebecda8cbca85be98746e0017028d3f6c8e23d798fc03104e4fc",
+    "research/weighted_congestion_frontier/tools/board.py": "11dc1a9ca8f3d1dc789cece1ac11fe9a2589323c55f2ea490d4ccba2d3027831",
+    "research/weighted_congestion_frontier/tests/test_board.py": "50d38cf002c554ba54dea4f81c79251d8cd8398bc5dbdd77ce8db412dbbb9a52",
+    "research/weighted_congestion_frontier/tests/test_board_entry.py": "a2495c0ea47989a3e398e2a2a9ef8dd71a1983e55ec5519bb142b68c3b62fce8",
+    "research/weighted_congestion_frontier/tests/test_checkpoint.py": "80d1542fcabe1623029f3300af425ad4eca11fa885dda564386c820d3ac5f0bd",
+    "research/weighted_congestion_frontier/tests/test_collaboration_concurrency.py": "e46f4ba745dc357548a27795825aebe3b37e93bb31b642b45e72fbaf5c18b79c",
+    "research/weighted_congestion_frontier/tests/test_collaboration_safety.py": "15497930408391f143c13c65587e04f10323bd0bb25acf24af4c9309b84e4d0b",
+    "research/weighted_congestion_frontier/tests/test_work.py": "871042f1d66300080d6fd3b6d99e627cab8adfa350d840a209e7906a9ed153fd"
+  },
+  "source_files_changed_after_full_regression": [
+    "research/weighted_congestion_frontier/tools/work.py",
+    "research/weighted_congestion_frontier/tests/test_work.py"
+  ],
+  "final_entry_mappings": {
+    "unrelated-machines": {
+      "research_entry": "research/current/unrelated_machines/README.md",
+      "research_prompt": "research/unrelated_machines/BOSS_START.md"
+    },
+    "shared": {
+      "research_entry": "research/weighted_congestion_frontier/README.md",
+      "research_prompt": null
+    }
+  },
+  "active_navigation_validation": {
+    "command": "python3 research/check_active_research.py",
+    "result": {
+      "target": "UM-TARGET-v1",
+      "save": "unrelated-machines",
+      "checked_entrypoints": 29,
+      "checked_local_links": 384,
+      "complete_boss_and_team_agree": true
+    },
+    "failure_regression": {
+      "command": "python3 -m unittest tests.test_active_research_routing -v",
+      "tests_run": 7,
+      "actual_unittest_summary": "Ran 7 tests in 0.458s\n\nOK",
+      "result": "passed"
+    },
+    "structure_commands": [
+      "python3 research/build_catalog.py --check",
+      "python3 research/build_map.py --check",
+      "python3 research/build_crosswalk.py --check",
+      "python3 research/check_assets.py",
+      "python3 research/check_wc_assets.py --check",
+      "git diff --check"
+    ],
+    "structure_results": "All passed after regeneration; check_assets invokes the active-topic checker.",
+    "sha256": {
+      "research/active_research.json": "082cfbc20baa4a67cccced827a8ae13daf3b413fee92a2e3a493835183816ee7",
+      "research/check_active_research.py": "8ace0b11ba8733901b02e90e0334ba4995cb295a73ece47157bd580377247aad",
+      "tests/test_active_research_routing.py": "b03baf580900287f93d8fad41a40eacc04a7fd828e2cd86f8f1e064a154ede94",
+      "research/unrelated_machines/BOSS_START.md": "9ce8d6a32f062f094b1bcc06f457bf95536efeaadaa276383aafd17f01c60dda",
+      "research/weighted_congestion_frontier/prompts/TEAM.md": "654499ddcf0839f3e274482a1ba2c07eadaf0706914f77df97e6f948b33a806b"
+    },
+    "limits": "Static routing and local link checks cover the declared active entrypoints, not every historical statement or all future human instructions. Mutation tests exercise isolated copies of real entries."
+  },
+  "reviewed_source_recovery": {
+    "source": "history/source/notes/unrelated_machines/bundle_subdivision_pre_cross_reference.md",
+    "sha256": "f923212d74e42ac3b32c09d73e15382dd656e90e10b39ea22bc4fa29559cd894",
+    "matches_frozen_evidence": true,
+    "change": "Recover exact reviewed pre-cross-reference bytes; add reachable provenance, leaving frozen evidence and current mathematical source unchanged."
+  }
+}

@@ -18,7 +18,19 @@ import uuid
 REMOTE = "https://github.com/SOMEBODYJUN/co-work-anl.git"
 TOOLS = "research/weighted_congestion_frontier/tools"
 WORKSPACES = "research/workspaces"
-DEFAULT_SAVE = "shared"
+# This file must also work alone as an uploaded bootstrap. Keep the matching
+# checkpoint.py fallback in sync; bound clones always retain their own save.
+DEFAULT_SAVE = "unrelated-machines"
+RESEARCH_ENTRIES = {
+    "unrelated-machines": {
+        "research_entry": "research/current/unrelated_machines/README.md",
+        "research_prompt": "research/unrelated_machines/BOSS_START.md",
+    },
+    "shared": {
+        "research_entry": "research/weighted_congestion_frontier/README.md",
+        "research_prompt": None,
+    },
+}
 IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}")
 TOKEN = re.compile(rb"(?:github_pat_|ghp_)[A-Za-z0-9_]{12,}")
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}")
@@ -314,6 +326,10 @@ def start(args):
     workspace = workspace_init(repo, save, who, getattr(args, "resume", False))
     result.update(actor=who, save=save, workspace=workspace,
                   repo=str(repo), branch=value(repo, "branch", "--show-current"))
+    result.update(RESEARCH_ENTRIES.get(save, {
+        "research_entry": None, "research_prompt": None,
+        "research_note": "Unregistered archive: select its research entry explicitly; no topic is inherited.",
+    }))
     print(json.dumps(result, ensure_ascii=False), flush=True)
     return board(repo, env, "view", ["--save", save])
 
@@ -336,7 +352,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--repo", default=default_repo())
     p.add_argument("--token-file")
-    p.add_argument("--save", help="研究存档 ID；首次绑定后同 clone 保持不变")
+    p.add_argument("--save", help="研究存档 ID；首次默认 unrelated-machines，已绑定 clone 保持原存档")
     sub = p.add_subparsers(dest="command", required=True)
     s = sub.add_parser("start", help="恢复项目，固定角色号，同步并读取公屏")
     s.add_argument("--actor", help="可选；省略时为本对话生成并记住唯一发布标识")

@@ -164,6 +164,8 @@ def check() -> None:
                 require(source.is_file() and hashlib.sha256(source.read_bytes()).hexdigest()
                         == report[key + "_sha256"],
                         ("evidence input/certificate changed", manifest.name, key))
+    subprocess.run([sys.executable, str(ROOT / "research/check_active_research.py")],
+                   cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / "research/check_wc_assets.py"), "--check"],
                    cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / "research/build_catalog.py"), "--check"],

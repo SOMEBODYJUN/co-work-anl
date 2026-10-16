@@ -4,7 +4,8 @@
 
 | 模型与专题 | 先读什么 | 然后进入什么 |
 | --- | --- | --- |
-| **当前主攻：加权原子拥塞** | [数学目标、已知下界和未解缺口](weighted_congestion/README.md) | 奇环全状态构造与包络 → 结构势/非对称有限机制 → 准确方法障碍；待审稿在 questions |
+| **当前主攻：不相关并行机，UM-TARGET-v1，save=unrelated-machines** | [精确模型、经典地基与当前义务](unrelated_machines/README.md) | [精确账本](../unrelated_machines/CLAIMS.md) → 实际证明/审查/证据；统一ε目标仍OPEN；[完整启动词](../unrelated_machines/BOSS_START.md) |
+| 保留：加权原子拥塞 | [数学目标、已知下界和未解缺口](weighted_congestion/README.md) | 奇环全状态构造与包络 → 结构势/非对称有限机制 → 准确方法障碍；待审稿在 questions |
 | 独立工具：正占用核 | [交互秩暴露面、锐坏项预算与闭包](positive_kernels/README.md) | 非负共享负载响应 → 所有表示的次数/支持联合过滤 → 定量删除 → unanimity补全；来自拥塞正展开，均衡桥另列 |
 | **两阶段设施选址：公共基础** | [输入、成本、精确独立 NE 与完整续局量词](model.md) | 再根据共同/异构目录和设施数选择以下专题；不能直接换成本或续局量词 |
 | 共同目录双设施 | [黄金比主链及复杂度地图](shared/README.md) | 主定理 → 完整证明与承重引理 → 构造算法 → 尖锐下界和小目录复杂度 |

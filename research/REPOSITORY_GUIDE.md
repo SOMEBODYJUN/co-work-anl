@@ -1,8 +1,8 @@
 # 仓库生产、读取与保存规则
 
-个人研究桌面见 [workspaces/README.md](workspaces/README.md)：每个 Work 的本人目录保存在 main，其他人可以访问已推送版本并私聊。默认保存只追加本人的桌面；私聊仍走原公屏分支，默认公屏过滤私聊，二者不产生新研究分支。保存程序审查全部待推本地历史，避免范围外旧提交夹带；实际操作见 [RUNBOOK](weighted_congestion_frontier/RUNBOOK.md)。
+个人研究桌面见 [workspaces/README.md](workspaces/README.md)：每个 Work 的本人目录保存在 main，其他人可以访问已推送版本并私聊。默认保存只追加本人的桌面；私聊仍走原公屏分支，默认公屏过滤私聊，二者不产生新研究分支。保存程序审查全部待推本地历史，避免范围外旧提交夹带；实际操作见 [RUNBOOK](unrelated_machines/RUNBOOK.md)。
 
-沿用 [GROWTH.md](GROWTH.md) 的目录合同及根 [AGENTS.md](../AGENTS.md) 的数学资产规范。这里补齐分支到共同状态的环节，不另立一套数学身份规则。
+沿用 [GROWTH.md](GROWTH.md) 的目录合同及根 [AGENTS.md](../AGENTS.md) 的数学资产规范。当前主攻 UM-TARGET-v1，存档 unrelated-machines。这里补齐分支到共同状态的环节，不另立一套数学身份规则。
 
 按问题阅读先用[研究总目录](README.md)，查具体文件名字与用途用[中文资产总目录](CATALOG.md)。`catalog.json` 维护逐文件名称和读取目的，`assets.json` 维护逐命题文件合同，`review_status.json` 维护分轴状态，三者职责不同。当前数学稿与审查从各专题 README 沿证明链进入；投稿旧评估只在历史来源中追溯。
 
@@ -27,7 +27,7 @@
 
 1. 检查本地状态、origin、远端并安全同步；保存已有未提交成果，冲突不覆盖。
 2. 根 README、RESEARCH_STATE、CLAIMS、FAILED_ROUTES 提供全仓地图，随后只进入所研究模型。
-3. 加权拥塞先读 MODEL、现行数学 README、主题 CLAIMS 和当前状态，再按 README 中的 obligation 选择具体证明、审查或证据。
+3. 当前新题先读current/unrelated_machines/README.md、unrelated_machines/CLAIMS.md与RESEARCH_STATE.md、current/unrelated_machines/model_and_classical_barriers.md，再按具体义务选正文、审查或证据。只有明确研究旧模型时才读它的MODEL和账本。
 4. 做研究不必先通读工具源码、全部上游提示词、全部原始历史和逐文件 JSON。修改协作程序才读其协议和测试；写论文才完整读 PAPER_WRITER 指定的写作原文。
 5. 引用结果时沿 claim → 正文 → 独立审查 → 计算证据核对范围；需要原件时再查 INTEGRATION。
 
@@ -37,7 +37,7 @@
 
 每个有价值阶段：正确目录写自足正文 → 精确身份与审查登记 → 更新相关资产/超图/地图 → 对应核验 → `checkpoint` 提交、普通推送并确认远端可达。主目标尚未解决不妨碍保存阶段成果；保存不触发状态升级。
 
-一键程序不指定路径时按本clone绑定的存档选范围：shared/未绑定兼容原加权拥塞范围；unrelated-machines选不相关并行机八类专题目录及本题原文目录；其他未登记存档只选共同登记和本人工作区，不默用旧题。所有存档均只追加本人的桌面。显式路径会替换默认范围，涉及额外文件时须列全本次应提交的正文、登记及额外文件。真实文件冲突时停住保留双方，不能自动选 ours/theirs 解决数学冲突。工具只在远端确认后报告 pushed。
+一键程序不指定路径时按本clone绑定的存档选范围：未绑定默认unrelated-machines；已绑定或显式shared兼容原加权拥塞范围；unrelated-machines选不相关并行机八类专题目录及本题原文目录；其他未登记存档只选共同登记和本人工作区，不默用旧题。所有存档均只追加本人的桌面。显式路径会替换默认范围，涉及额外文件时须列全本次应提交的正文、登记及额外文件。真实文件冲突时停住保留双方，不能自动选 ours/theirs 解决数学冲突。工具只在远端确认后报告 pushed。
 
 ## 分支与交流
 

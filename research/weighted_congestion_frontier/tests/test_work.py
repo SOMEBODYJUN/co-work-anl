@@ -47,6 +47,10 @@ class WorkTests(unittest.TestCase):
         first = json.loads(result.stdout.splitlines()[0])
         self.assertRegex(first["actor"], r"^W[0-9a-f]{12}$")
         self.assertEqual(first["branch"], "main")
+        self.assertEqual(first["save"], "unrelated-machines")
+        self.assertEqual(first["research_entry"], "research/current/unrelated_machines/README.md")
+        self.assertEqual(first["research_prompt"], "research/unrelated_machines/BOSS_START.md")
+        self.assertNotIn("MODEL.md", result.stdout)
         result = self.work("start", "--remote", str(self.remote))
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(json.loads(result.stdout.splitlines()[0])["actor"], first["actor"])
@@ -284,7 +288,9 @@ class WorkTests(unittest.TestCase):
         self.assertNotEqual(self.repo, second_repo)
 
     def test_checkpoint_pushes_and_result_asset_can_be_sent_with_saved_configuration(self):
-        self.start()
+        started = self.work("start", "--actor", "001", "--save", "shared",
+                            "--token-file", str(self.credential), "--remote", str(self.remote))
+        self.assertEqual(started.returncode, 0, started.stderr)
         note = self.repo / SCOPE / "note.md"
         note.write_text("a reusable exact boundary\n")
         result = self.work("checkpoint", "-m", "checkpoint: exact boundary")
@@ -306,9 +312,10 @@ class WorkTests(unittest.TestCase):
         self.assertEqual(json.loads(repeated.stdout)["commit"], receipt["commit"])
 
     def test_new_archive_checkpoint_uses_saved_topic_scope(self):
-        started = self.work("start", "--actor", "001", "--save", "unrelated-machines",
+        started = self.work("start", "--actor", "001",
                             "--token-file", str(self.credential), "--remote", str(self.remote))
         self.assertEqual(started.returncode, 0, started.stderr)
+        self.assertEqual(json.loads(started.stdout.splitlines()[0])["save"], "unrelated-machines")
         note = self.repo / "research/current/unrelated_machines/boundary.md"
         note.parent.mkdir(parents=True)
         note.write_text("new archive boundary\n")
@@ -322,6 +329,7 @@ class WorkTests(unittest.TestCase):
         receipt = json.loads(result.stdout)
         self.assertEqual(receipt["status"], "pushed")
         self.assertIn(note.relative_to(self.repo).as_posix(), receipt["files"])
+        self.assertIn("research/workspaces/unrelated-machines/001/README.md", receipt["files"])
         self.assertNotIn(SCOPE + "/note.md", receipt["files"])
         self.assertEqual(value(self.remote, "show", "main:" + SCOPE + "/note.md"), "baseline")
         self.assertEqual(value(self.remote, "show", "main:" + note.relative_to(self.repo).as_posix()),
@@ -330,6 +338,84 @@ class WorkTests(unittest.TestCase):
         self.assertEqual(old_note.read_text(), "old archive draft remains local\n")
         self.assertEqual(peer.read_text(), "peer draft remains local\n")
         self.assertEqual(value(self.repo, "branch", "--show-current"), "main")
+
+    def test_existing_legacy_binding_is_not_changed_and_explicit_shared_keeps_legacy_scope(self):
+        started = self.work("start", "--actor", "001", "--save", "shared",
+                            "--remote", str(self.remote))
+        self.assertEqual(started.returncode, 0, started.stderr)
+        first = json.loads(started.stdout.splitlines()[0])
+        self.assertEqual(first["save"], "shared")
+        self.assertEqual(first["research_entry"], SCOPE + "/README.md")
+        self.assertIsNone(first["research_prompt"])
+        repeated = self.work("start", "--remote", str(self.remote))
+        self.assertEqual(repeated.returncode, 0, repeated.stderr)
+        self.assertEqual(json.loads(repeated.stdout.splitlines()[0])["save"], "shared")
+        self.assertEqual(value(self.repo, "config", "--local", "wcg.save"), "shared")
+        note = self.repo / SCOPE / "note.md"
+        note.write_text("legacy scoped result\n")
+        current = self.repo / "research/current/unrelated_machines/unpublished.md"
+        current.parent.mkdir(parents=True)
+        current.write_text("current topic stays local in legacy clone\n")
+        saved = self.work("checkpoint", "-m", "legacy explicit scope")
+        self.assertEqual(saved.returncode, 0, saved.stderr)
+        self.assertEqual(value(self.remote, "show", "main:" + SCOPE + "/note.md"), "legacy scoped result")
+        self.assertEqual(value(self.remote, "ls-tree", "-r", "main", "--", current.relative_to(self.repo).as_posix()), "")
+        refused = self.work("start", "--save", "unrelated-machines", "--remote", str(self.remote))
+        self.assertEqual(refused.returncode, 2)
+        self.assertEqual(value(self.repo, "config", "--local", "wcg.save"), "shared")
+        self.assertEqual(current.read_text(), "current topic stays local in legacy clone\n")
+
+    def test_unknown_archive_does_not_inherit_a_registered_topic_entry(self):
+        started = self.work("start", "--actor", "001", "--save", "new-topic",
+                            "--remote", str(self.remote))
+        self.assertEqual(started.returncode, 0, started.stderr)
+        first = json.loads(started.stdout.splitlines()[0])
+        self.assertEqual(first["save"], "new-topic")
+        self.assertIsNone(first["research_entry"])
+        self.assertIsNone(first["research_prompt"])
+        self.assertNotIn("MODEL.md", started.stdout)
+
+    def test_uploaded_standalone_restores_missing_clone_with_current_topic_defaults(self):
+        uploaded = self.root / "uploaded work.py"
+        shutil.copyfile(WORK, uploaded)
+        uploaded.chmod(0o644)
+        self.assertFalse(self.repo.exists())
+        result = subprocess.run([sys.executable, str(uploaded), "--repo", str(self.repo),
+                                 "start", "--actor", "001", "--remote", str(self.remote),
+                                 "--token-file", str(self.credential)],
+                                cwd=self.root, env=clean_env(), capture_output=True, text=True, timeout=45)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        first = json.loads(result.stdout.splitlines()[0])
+        self.assertEqual(first["save"], "unrelated-machines")
+        self.assertEqual(first["research_entry"], "research/current/unrelated_machines/README.md")
+        self.assertEqual(value(self.repo, "config", "--local", "wcg.save"), "unrelated-machines")
+        self.assertTrue((self.repo / first["workspace"]["path"] / "workspace.json").is_file())
+        self.assertEqual(value(self.repo, "branch", "--show-current"), "main")
+        self.assertNotIn(self.token, result.stdout + result.stderr)
+
+    def test_bootstrap_checkpoint_default_and_known_research_entries_cannot_drift(self):
+        modules = []
+        for filename in ("work.py", "checkpoint.py"):
+            spec = importlib.util.spec_from_file_location("default_" + filename[:-3], TOOLS / filename)
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            modules.append(module)
+        work, checkpoint = modules
+        self.assertEqual(work.DEFAULT_SAVE, "unrelated-machines")
+        self.assertEqual(work.DEFAULT_SAVE, checkpoint.DEFAULT_SAVE)
+        self.assertIn(work.DEFAULT_SAVE, checkpoint.SAVE_PATHS)
+        self.assertEqual(work.RESEARCH_ENTRIES["unrelated-machines"], {
+            "research_entry": "research/current/unrelated_machines/README.md",
+            "research_prompt": "research/unrelated_machines/BOSS_START.md",
+        })
+        self.assertEqual(work.RESEARCH_ENTRIES["shared"], {
+            "research_entry": "research/weighted_congestion_frontier/README.md",
+            "research_prompt": None,
+        })
+        for entry in work.RESEARCH_ENTRIES.values():
+            for path in entry.values():
+                if path is not None:
+                    self.assertTrue((ROOT / path).is_file(), path)
 
     def test_missing_repo_and_nonempty_destination_report_actionable_errors(self):
         result = self.work("read")

@@ -26,6 +26,18 @@
 
 ## 不相关并行机与统一常数2壁垒
 
+### 协作、保存、启动与许可入口
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [不相关并行机完整共同研究提示词](<weighted_congestion_frontier/prompts/TEAM.md>) | `research/weighted_congestion_frontier/prompts/TEAM.md` | 当前UM-TARGET-v1的角色与实际操作要求；旧路径作为共享协作入口，旧题版本仅从Git历史恢复。 | 阅读导航；真值查精确正文及账本 |
+| [不相关并行机内部研究者任务](<weighted_congestion_frontier/prompts/PEER.md>) | `research/weighted_congestion_frontier/prompts/PEER.md` | 当前UM-TARGET-v1的角色与实际操作要求；旧路径作为共享协作入口，旧题版本仅从Git历史恢复。 | 阅读导航；真值查精确正文及账本 |
+| [不相关并行机可复用工具提取者任务](<weighted_congestion_frontier/prompts/EXTRACTOR.md>) | `research/weighted_congestion_frontier/prompts/EXTRACTOR.md` | 当前UM-TARGET-v1的角色与实际操作要求；旧路径作为共享协作入口，旧题版本仅从Git历史恢复。 | 阅读导航；真值查精确正文及账本 |
+| [不相关并行机真实成果论文者任务](<weighted_congestion_frontier/prompts/PAPER_WRITER.md>) | `research/weighted_congestion_frontier/prompts/PAPER_WRITER.md` | 当前UM-TARGET-v1的角色与实际操作要求；旧路径作为共享协作入口，旧题版本仅从Git历史恢复。 | 阅读导航；真值查精确正文及账本 |
+| [不相关并行机接题材料清晰者任务](<weighted_congestion_frontier/prompts/CLEANER.md>) | `research/weighted_congestion_frontier/prompts/CLEANER.md` | 当前UM-TARGET-v1的角色与实际操作要求；旧路径作为共享协作入口，旧题版本仅从Git历史恢复。 | 阅读导航；真值查精确正文及账本 |
+| [不相关并行机外部独立攻题任务](<weighted_congestion_frontier/prompts/PRO_ATTACK.md>) | `research/weighted_congestion_frontier/prompts/PRO_ATTACK.md` | 当前UM-TARGET-v1的角色与实际操作要求；旧路径作为共享协作入口，旧题版本仅从Git历史恢复。 | 阅读导航；真值查精确正文及账本 |
+| [不相关并行机共同操作合同](<weighted_congestion_frontier/prompts/OPERATIONS.md>) | `research/weighted_congestion_frontier/prompts/OPERATIONS.md` | 当前UM-TARGET-v1的角色与实际操作要求；旧路径作为共享协作入口，旧题版本仅从Git历史恢复。 | 阅读导航；真值查精确正文及账本 |
+
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
 | [不相关并行机的目标与经典障碍地图](<current/unrelated_machines/README.md>) | `research/current/unrelated_machines/README.md` | 导航主目标、精确模型、已知重构、文献与有限证据；新研究先从此选择承重义务。 | 阅读导航；真值查精确正文及账本；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
@@ -230,6 +242,11 @@
 | [共同拥塞流与最小整数拥塞的冻结双路精确结果](<../evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json>) | `evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json` | 保留真实运行参数、软件与源hash及有限覆盖；不把枚举升级为证明。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-DAG-ACTIVATION-CORRIDOR-GAP-v1`、`UM-DAG-CONGESTION-FLOW-v1`，[命题合同](assets.json) |
 | [尖锐层宽与低根不可达高点的实际需求图输入](<../examples/unrelated_machines/rooted_dag_congestion_cases.json>) | `examples/unrelated_machines/rooted_dag_congestion_cases.json` | 实际K2锐例与低根走廊图，供独立重跑共同流、根树和调度桥梁。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-DAG-ACTIVATION-CORRIDOR-GAP-v1`、`UM-DAG-CONGESTION-FLOW-v1`，[命题合同](assets.json) |
 | [尖锐与低根实例的共同流、实际根树及调度证书](<../evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json>) | `evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json` | 明确有理流、输出边、固定W最小K及真实调度负载，连到实际输入。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-DAG-ACTIVATION-CORRIDOR-GAP-v1`、`UM-DAG-CONGESTION-FLOW-v1`，[命题合同](assets.json) |
+| [新题目标与默认入口路由合同](<active_research.json>) | `research/active_research.json` | 固定UM-TARGET-v1、unrelated-machines及活跃入口，检查程序默认/启动回执/角色提示词一致；不改数学真值。 | 阅读导航；真值查精确正文及账本 |
+| [新题导航与程序默认的防回退检查](<check_active_research.py>) | `research/check_active_research.py` | 校验启动默认、旧绑定入口、完整BOSS与TEAM一致和实际本地链接；由check_assets调用。 | 有限计算核验；不代替一般证明 |
+| [细分障碍审查所用的交叉引用前原稿](<../history/source/notes/unrelated_machines/bundle_subdivision_pre_cross_reference.md>) | `history/source/notes/unrelated_machines/bundle_subdivision_pre_cross_reference.md` | 以准确SHA256恢复冻结证据引用的f923212d稿件，只补版本取回链，不新增审查。 | 来源或历史判断；不作为现行结论 |
+| [新题默认路由与完整协作回归记录](<../evidence/runs/collaboration/active_topic_routing_release.json>) | `evidence/runs/collaboration/active_topic_routing_release.json` | 记录实际完整回归、最终工具元数据回归、导航防回退和证据限度；不是数学证明。 | 冻结输入、证书或结果；不原位覆盖 |
+| [新题默认、角色正文与导航失效的隔离回归](<../tests/test_active_research_routing.py>) | `tests/test_active_research_routing.py` | 复制实际入口并注入旧默认、错误shared提示词、TEAM漂移、旧题默认指引和断链，确认自动检查拒绝。 | 有限计算核验；不代替一般证明 |
 
 <a id="weighted_congestion"></a>
 
@@ -241,9 +258,9 @@
 | --- | --- | --- | --- |
 | [加权原子拥塞：奇环下界、工具与一般门槛缺口地图](<current/weighted_congestion/README.md>) | `research/current/weighted_congestion/README.md` | 先读精确模型与奇环共同机制，再按目标选择结构势、非对称机制或候选障碍；不能把局部证书包络当全类上界。 | 阅读导航；真值查精确正文及账本；关联 `WC-ENVELOPE-CEILING`、`WC-R1-DAG-STEP`、`WC-R1-HET-ENDPOINT-REDUCTION`，[命题合同（共 10 项）](assets.json) |
 | [拥塞待审候选与未闭合义务地图](<questions/weighted_congestion/README.md>) | `research/questions/weighted_congestion/README.md` | 查固定乘子势、序势、端点与两列轨道稿的真实证据等级和缺失审查，选可接续的准确义务。 | 阅读导航；真值查精确正文及账本 |
-| [加权拥塞共同研究与协作入口](<weighted_congestion_frontier/README.md>) | `research/weighted_congestion_frontier/README.md` | 数学阅读进入 current 的证明地图；阶段保存时核对命名、账本和地图共同提交，运行程序时再进入启动和协议。 | 阅读导航；真值查精确正文及账本 |
+| [加权拥塞独立旧题与共享协作程序](<weighted_congestion_frontier/README.md>) | `research/weighted_congestion_frontier/README.md` | 区分旧拥塞数学与当前新调度的统一工具、角色和操作；旧冻结Pro包仅追溯，不作为新题任务。 | 阅读导航；真值查精确正文及账本 |
 | [拥塞逐成果包资产链：中文名称、正文、审查与证据](<weighted_congestion_frontier/FILES.md>) | `research/weighted_congestion_frontier/FILES.md` | 按数学成果包找到具体文件作用，追踪主稿到独立攻击、实际核验与冻结结果，不先读路径字典序清单。 | 阅读导航；真值查精确正文及账本 |
-| [加权原子拥塞：Pro 接题材料与精确方法障碍](<weighted_congestion_frontier/PRO_BRIEF.md>) | `research/weighted_congestion_frontier/PRO_BRIEF.md` | 供未读仓库的研究者只凭一份派生正文接题：自足模型与正反完成量词、可靠边界、按机制合并的准确障碍及有限签名/反例核心接口；调用时核对文内冻结源、实际审查等级和OPEN义务，不替代精确账本。；配套 [加权原子拥塞精确模型与普遍门槛目标](<weighted_congestion_frontier/MODEL.md>)；配套 [拥塞匹配上界命题的唯一完成标准与交付验收](<weighted_congestion_frontier/ACCEPTANCE.md>)；配套 [Pro全类近似纯均衡门槛的自主攻题任务](<weighted_congestion_frontier/prompts/PRO_ATTACK.md>)；配套 [加权原子拥塞：奇环下界、工具与一般门槛缺口地图](<current/weighted_congestion/README.md>)；配套 [拥塞精确命题账本：目标、局部成果与候选版本](<weighted_congestion_frontier/CLAIMS.md>) | 阅读导航；真值查精确正文及账本 |
+| [加权原子拥塞：Pro 接题材料与精确方法障碍](<weighted_congestion_frontier/PRO_BRIEF.md>) | `research/weighted_congestion_frontier/PRO_BRIEF.md` | 供未读仓库的研究者只凭一份派生正文接题：自足模型与正反完成量词、可靠边界、按机制合并的准确障碍及有限签名/反例核心接口；调用时核对文内冻结源、实际审查等级和OPEN义务，不替代精确账本。；配套 [加权原子拥塞精确模型与普遍门槛目标](<weighted_congestion_frontier/MODEL.md>)；配套 [拥塞匹配上界命题的唯一完成标准与交付验收](<weighted_congestion_frontier/ACCEPTANCE.md>)；配套 [不相关并行机外部独立攻题任务](<weighted_congestion_frontier/prompts/PRO_ATTACK.md>)；配套 [加权原子拥塞：奇环下界、工具与一般门槛缺口地图](<current/weighted_congestion/README.md>)；配套 [拥塞精确命题账本：目标、局部成果与候选版本](<weighted_congestion_frontier/CLAIMS.md>) | 阅读导航；真值查精确正文及账本 |
 | [Pro交接简报的冻结来源与导出选择映射](<weighted_congestion_frontier/PRO_BRIEF_SOURCES.json>) | `research/weighted_congestion_frontier/PRO_BRIEF_SOURCES.json` | 把唯一PRO_BRIEF的S0至S20连接到原数学正文、精确Claim和实际审查；供冻结导出器检查所选源字节与数学基线一致，并在manifest中保留各自状态，不另立数学真值账本。；配套 [加权原子拥塞：Pro 接题材料与精确方法障碍](<weighted_congestion_frontier/PRO_BRIEF.md>)；配套 [Pro任务与数学简报的单提交冻结导出器](<weighted_congestion_frontier/tools/export_pro_packet.py>)；配套 [Pro 派生接题材料：独立盲读、来源范围与修订核查](<reviews/weighted_congestion/pro_brief_scope_review.md>) | 阅读导航；真值查精确正文及账本 |
 | [加权原子拥塞精确模型与普遍门槛目标](<weighted_congestion_frontier/MODEL.md>) | `research/weighted_congestion_frontier/MODEL.md` | 核对正权、有限策略、非负多项式费用及弱不等式近似 PNE 的全类量词，防止偷偷缩小目标模型。 | 定义与模型；不隐含跨模型定理 |
 | [拥塞精确命题账本：目标、局部成果与候选版本](<weighted_congestion_frontier/CLAIMS.md>) | `research/weighted_congestion_frontier/CLAIMS.md` | 引用团队结果前核对稳定 ID、版本、定义域、假设、结论、证据和 objection；范围变化要另建版本。 | 精确命题登记；摘要不替代原陈述 |
@@ -251,9 +268,9 @@
 | [拥塞失败机制、局部证书边界与可回收结果](<weighted_congestion_frontier/FAILED_ROUTES.md>) | `research/weighted_congestion_frontier/FAILED_ROUTES.md` | 选择势方法、固定小构造或源族调参前查失败的准确量词；方法失败不得升级为全类不可能。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
 | [加权拥塞近似纯均衡的文献基线与核验范围](<weighted_congestion_frontier/LITERATURE.md>) | `research/weighted_congestion_frontier/LITERATURE.md` | 查原文真实模型、上界、下界和开放问题；文献事实、团队解释与尚未认证的新颖性分别引用。 | 文献核对；与团队新结果分别引用 |
 | [拥塞前人机制与可复用技术资产](<weighted_congestion_frontier/PRIOR_ASSETS.md>) | `research/weighted_congestion_frontier/PRIOR_ASSETS.md` | 选择势函数、下界构造或桥梁时查前人已经提供的对象、方法和适用限制，避免重复宣称发现。 | 文献核对；与团队新结果分别引用 |
-| [Pro 派生接题材料：独立盲读、来源范围与修订核查](<reviews/weighted_congestion/pro_brief_scope_review.md>) | `research/reviews/weighted_congestion/pro_brief_scope_review.md` | 核对唯一PRO_BRIEF与完整任务正文的模型/正反量词和每条障碍排除范围：先仅盲读两文件重构，再核冻结源与实际审查，记录压缩歧义、状态冲突处理、修订及真实覆盖；不新增数学Claim，不替代原证明或推送回执。；配套 [加权原子拥塞：Pro 接题材料与精确方法障碍](<weighted_congestion_frontier/PRO_BRIEF.md>)；配套 [Pro全类近似纯均衡门槛的自主攻题任务](<weighted_congestion_frontier/prompts/PRO_ATTACK.md>)；配套 [拥塞精确命题账本：目标、局部成果与候选版本](<weighted_congestion_frontier/CLAIMS.md>) | 实际审查记录；只覆盖所列版本与义务 |
+| [Pro 派生接题材料：独立盲读、来源范围与修订核查](<reviews/weighted_congestion/pro_brief_scope_review.md>) | `research/reviews/weighted_congestion/pro_brief_scope_review.md` | 核对唯一PRO_BRIEF与完整任务正文的模型/正反量词和每条障碍排除范围：先仅盲读两文件重构，再核冻结源与实际审查，记录压缩歧义、状态冲突处理、修订及真实覆盖；不新增数学Claim，不替代原证明或推送回执。；配套 [加权原子拥塞：Pro 接题材料与精确方法障碍](<weighted_congestion_frontier/PRO_BRIEF.md>)；配套 [不相关并行机外部独立攻题任务](<weighted_congestion_frontier/prompts/PRO_ATTACK.md>)；配套 [拥塞精确命题账本：目标、局部成果与候选版本](<weighted_congestion_frontier/CLAIMS.md>) | 实际审查记录；只覆盖所列版本与义务 |
 | [Pro冻结交付包的独立接题与来源一致性核查](<reviews/weighted_congestion/pro_packet_delivery_review.md>) | `research/reviews/weighted_congestion/pro_packet_delivery_review.md` | 记录对实际交付简报和任务的再次盲读重构、随后定点来源检查及导出边界；区分先前数学范围审读、此次实际覆盖与交付核验，不将包成功或内部审读当成主问题证明。；配套 [加权原子拥塞：Pro 接题材料与精确方法障碍](<weighted_congestion_frontier/PRO_BRIEF.md>)；配套 [Pro 派生接题材料：独立盲读、来源范围与修订核查](<reviews/weighted_congestion/pro_brief_scope_review.md>)；配套 [Pro任务与数学简报的单提交冻结导出器](<weighted_congestion_frontier/tools/export_pro_packet.py>)；配套 [Pro交接简报的冻结来源与导出选择映射](<weighted_congestion_frontier/PRO_BRIEF_SOURCES.json>) | 实际审查记录；只覆盖所列版本与义务 |
-| [Pro任务与数学简报的单提交冻结导出器](<weighted_congestion_frontier/tools/export_pro_packet.py>) | `research/weighted_congestion_frontier/tools/export_pro_packet.py` | 从显式Git提交只读导出完整任务、自足简报及按需数学证明，在仓库外生成带源状态与SHA256的精简ZIP；拒绝覆盖和源快照混用并复读压缩包，不导出凭据、Git、研究运行工具或公屏。；配套 [加权原子拥塞：Pro 接题材料与精确方法障碍](<weighted_congestion_frontier/PRO_BRIEF.md>)；配套 [Pro交接简报的冻结来源与导出选择映射](<weighted_congestion_frontier/PRO_BRIEF_SOURCES.json>)；配套 [Pro全类近似纯均衡门槛的自主攻题任务](<weighted_congestion_frontier/prompts/PRO_ATTACK.md>) | 有限计算核验；不代替一般证明 |
+| [Pro任务与数学简报的单提交冻结导出器](<weighted_congestion_frontier/tools/export_pro_packet.py>) | `research/weighted_congestion_frontier/tools/export_pro_packet.py` | 从显式Git提交只读导出完整任务、自足简报及按需数学证明，在仓库外生成带源状态与SHA256的精简ZIP；拒绝覆盖和源快照混用并复读压缩包，不导出凭据、Git、研究运行工具或公屏。；配套 [加权原子拥塞：Pro 接题材料与精确方法障碍](<weighted_congestion_frontier/PRO_BRIEF.md>)；配套 [Pro交接简报的冻结来源与导出选择映射](<weighted_congestion_frontier/PRO_BRIEF_SOURCES.json>)；配套 [不相关并行机外部独立攻题任务](<weighted_congestion_frontier/prompts/PRO_ATTACK.md>) | 有限计算核验；不代替一般证明 |
 
 ### 有限动作模板、全状态择证与精确对偶
 
@@ -546,20 +563,13 @@
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
 | [拥塞匹配上界命题的唯一完成标准与交付验收](<weighted_congestion_frontier/ACCEPTANCE.md>) | `research/weighted_congestion_frontier/ACCEPTANCE.md` | 判断全类匹配上界命题是否已获一般肯定或严格否定证明；核对规模无关常数、独立攻击、残余异议与完整入库，不把局部材料当题目完成。 | 阅读导航；真值查精确正文及账本 |
-| [拥塞协作贡献规则与阶段保存要求](<weighted_congestion_frontier/AGENTS.md>) | `research/weighted_congestion_frontier/AGENTS.md` | 加入该研究目录前核对适用工作规则、子 agent 协作方式及数学入库和状态升级的边界。 | 阅读导航；真值查精确正文及账本 |
+| [共享工具与独立拥塞资产的适用规则](<weighted_congestion_frontier/AGENTS.md>) | `research/weighted_congestion_frontier/AGENTS.md` | 当前UM-TARGET-v1使用共享工具，旧MODEL/ACCEPTANCE只约束旧题；保存原绑定及原始证据。 | 阅读导航；真值查精确正文及账本 |
 | [阶段成果一键保存：提交范围、失败恢复与远端确认](<weighted_congestion_frontier/CHECKPOINT.md>) | `research/weighted_congestion_frontier/CHECKPOINT.md` | 已有可复用阶段文件后选择正确路径运行保存，遇到同步冲突或断网时按实际失败状态恢复。 | 阅读导航；真值查精确正文及账本 |
 | [共同研究公屏与私聊：参与者、存档和重试](<weighted_congestion_frontier/PROTOCOL.md>) | `research/weighted_congestion_frontier/PROTOCOL.md` | 跨对话交流前核对公屏与双方私聊的范围、回复约束、唯一消息ID及已读语义；不把收信当数学采用。 | 阅读导航；真值查精确正文及账本 |
-| [共同研究操作手册：工作区、收信、访问与完整保存](<weighted_congestion_frontier/RUNBOOK.md>) | `research/weighted_congestion_frontier/RUNBOOK.md` | 实际运行恢复、私聊、提及、收件箱、只读访问和checkpoint时查命令；核对本人范围、完整历史审计及远端确认。 | 阅读导航；真值查精确正文及账本 |
+| [共享程序的新题入口与旧存档兼容手册](<weighted_congestion_frontier/RUNBOOK.md>) | `research/weighted_congestion_frontier/RUNBOOK.md` | 新题命令统一转到本题手册；说明已绑定旧clone、显式shared及底层消息历史语义。 | 阅读导航；真值查精确正文及账本 |
 | [异步公屏的定位、读取入口与资产边界](<weighted_congestion_frontier/board/README.md>) | `research/weighted_congestion_frontier/board/README.md` | 需要查看实时研讨时进入独立公屏分支；重要可复用成果必须另存 main 并连接真实正文。 | 阅读导航；真值查精确正文及账本 |
 | [拥塞可复用工具的提取与使用合同](<weighted_congestion_frontier/toolbox/README.md>) | `research/weighted_congestion_frontier/toolbox/README.md` | 从失败和中间推导提取工具时查原作者、精确假设、证明与复用场景，不能把改名本身当新工具。 | 阅读导航；真值查精确正文及账本 |
-| [匹配上界唯一题目的共同研究启动词](<weighted_congestion_frontier/prompts/TEAM.md>) | `research/weighted_congestion_frontier/prompts/TEAM.md` | 新研究对话判定全类匹配上界命题；固定唯一发布身份、中文命名、分层地图、生成检查和完整提交，缺少可选程序也能恢复。 | 阅读导航；真值查精确正文及账本 |
-| [同级研究者交流提示词：自主研究与异步研讨](<weighted_congestion_frontier/prompts/PEER.md>) | `research/weighted_congestion_frontier/prompts/PEER.md` | 需要组织跨对话数学交流时使用，允许同题独立探索和多路线合作，不以任务认领限制研究。 | 阅读导航；真值查精确正文及账本 |
-| [工具提取与Pro按需接口的启动词](<weighted_congestion_frontier/prompts/EXTRACTOR.md>) | `research/weighted_congestion_frontier/prompts/EXTRACTOR.md` | 重建可复用工具的输入输出、承重条件、来源与证据；准备Pro时只选可直接使用的必要接口，独立资产不强塞进交接。 | 阅读导航；真值查精确正文及账本 |
-| [数学论文写作与完整成稿核验的启动词](<weighted_congestion_frontier/prompts/PAPER_WRITER.md>) | `research/weighted_congestion_frontier/prompts/PAPER_WRITER.md` | 组织有证据的贡献与机制、完整证明及真实导出，和为Pro筛选材料的清晰者职责分开；共用身份、命名和保存规范。 | 阅读导航；真值查精确正文及账本 |
 | [子 agent 模型配置、实际能力与来源记录](<weighted_congestion_frontier/prompts/MODELS.md>) | `research/weighted_congestion_frontier/prompts/MODELS.md` | 启动独立探索或审查时查实际可用模型与配置的记录要求，不能把模型自评当成数学可信度。 | 阅读导航；真值查精确正文及账本 |
-| [Pro研究材料清晰者：精确问题、障碍与筛选](<weighted_congestion_frontier/prompts/CLEANER.md>) | `research/weighted_congestion_frontier/prompts/CLEANER.md` | 先由清晰者读正文和审查，分清方法障碍、反例、开放义务和有限观察，维护自足主材料并从冻结版本导出精简包；不预设开放路线。 | 阅读导航；真值查精确正文及账本 |
-| [Pro全类近似纯均衡门槛的自主攻题任务](<weighted_congestion_frontier/prompts/PRO_ATTACK.md>) | `research/weighted_congestion_frontier/prompts/PRO_ATTACK.md` | 实际整理材料完成后交给Pro，完整固定模型与正反验收；允许自主换工具，已审结论按范围调用，不要求先做仓库或历史审计。 | 阅读导航；真值查精确正文及账本 |
-| [各角色共用的恢复、唯一身份与资产保存合同](<weighted_congestion_frontier/prompts/OPERATIONS.md>) | `research/weighted_congestion_frontier/prompts/OPERATIONS.md` | Work角色启动及保存时读取：一个clone一个固定发布编号、统一main，正文与命名地图同次核验提交；明确默认范围与远端确认。 | 阅读导航；真值查精确正文及账本 |
 | [个人研究工作区、收件箱与已发布材料访问](<workspaces/README.md>) | `research/workspaces/README.md` | Work启动和交流时查本人目录、私聊提及、已读回执、同行访问与默认保存范围；不把同仓私聊当权限隔离。 | 阅读导航；真值查精确正文及账本 |
 | [协作与写作参考原文的固定版本及许可](<weighted_congestion_frontier/SOURCES.md>) | `research/weighted_congestion_frontier/SOURCES.md` | 修改提示词或核对外部设计来源时查固定 commit、引用范围和许可证，区分原设计与本仓定制。 | 来源与恢复指针；不代替缺失证明 |
 
@@ -1119,11 +1129,11 @@
 | [当前全仓研究路线与未闭合证明义务](<ROADMAP.md>) | `research/ROADMAP.md` | 选下一步研究时查真正开放的目标、已有工具和阻碍；旧设施路线只从历史快照追溯。 | 阅读导航；真值查精确正文及账本 |
 | [旧研究分支收口与来源恢复记录](<BRANCHES.md>) | `research/BRANCHES.md` | 仅在追溯分支处置、原提交可达性或旧会话迁移时读取；不作为当前数学结论的证据。 | 来源与恢复指针；不代替缺失证明 |
 | [设施选址与顺序吸引的失败机制及回收边界](<FAILED_ROUTES_FACILITY.md>) | `research/FAILED_ROUTES_FACILITY.md` | 研究局部菜单、算法复杂度、续局量词或安全值桥前，核对已经被否定的准确断言和可保留信息。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
-| [当前数学正文的模型分流与证明链入口](<current/README.md>) | `research/current/README.md` | 决定进入拥塞、两阶段设施选址或顺序客户吸引；避免把相邻目录误认成同一模型的结论。 | 阅读导航；真值查精确正文及账本 |
+| [当前数学正文的模型分流与证明链入口](<current/README.md>) | `research/current/README.md` | 默认进入不相关并行机，再按明确选择进入拥塞、设施或顺序客户吸引；沿各自证明链核对范围。 | 阅读导航；真值查精确正文及账本 |
 | [两阶段设施选址公共模型：精确独立 NE 与完整续局](<current/model.md>) | `research/current/model.md` | 引用共同、异构或多设施结果前核对输入、实际负载成本、独立随机化与完整续局的量词。 | 定义与模型；不隐含跨模型定理；关联 `HC-2-LOW`、`HC-2-SHARP`、`HC-2-UP`，[命题合同（共 7 项）](assets.json) |
 | [全仓精确命题登记：范围、依赖与状态位置](<current/claims.md>) | `research/current/claims.md` | 引用或变更某条命题时查稳定 ID、精确输入和证据；不以导航摘要替代原有量词。 | 精确命题登记；摘要不替代原陈述 |
 | [全仓问题目录：开放义务、候选与已闭合原合同](<questions/README.md>) | `research/questions/README.md` | 开始攻坚前分清正在缺的证明和已获内部答案的旧任务；从准确问题页进入实际资产。 | 阅读导航；真值查精确正文及账本 |
-| [独立审查总入口：冻结版本、覆盖范围与异议](<reviews/README.md>) | `research/reviews/README.md` | 按拥塞、设施或顺序吸引选择实际发生的审查，核对哪些义务被攻击、哪些来源仍缺失。 | 阅读导航；真值查精确正文及账本 |
+| [独立审查总入口：新调度与独立旧模型](<reviews/README.md>) | `research/reviews/README.md` | 当前先从不相关并行机Claim进入实际冻结审查，旧模型审查按明确选择读取。 | 阅读导航；真值查精确正文及账本 |
 
 <a id="facility_review"></a>
 

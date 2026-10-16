@@ -141,7 +141,7 @@ class WorkspaceSafetyTests(unittest.TestCase):
         self.addCleanup(self.fixture.doCleanups)
         self.fixture.start()
         self.repo = self.fixture.repo
-        self.own = self.repo / "research/workspaces/shared/001"
+        self.own = self.repo / "research/workspaces/unrelated-machines/001"
 
     def test_repeated_start_and_workspace_prepare_never_overwrite_drafts(self):
         readme = self.own / "README.md"
@@ -173,7 +173,7 @@ class WorkspaceSafetyTests(unittest.TestCase):
         self.assertNotIn("MUST_NOT_READ_PRIVATE_TARGET", result.stdout + result.stderr)
 
     def test_visit_fetches_remote_file_without_touching_head_index_or_drafts(self):
-        relative = "research/workspaces/shared/peer/README.md"
+        relative = "research/workspaces/unrelated-machines/peer/README.md"
         self.fixture.advance_main(relative, "published peer reasoning\n")
         outside = self.repo / "outside.md"
         outside.write_text("staged unrelated research\n")
@@ -231,7 +231,7 @@ class WorkspaceSafetyTests(unittest.TestCase):
         self.assertEqual(json.loads(public.stdout)["events"], [])
 
     def test_visit_rejects_remote_symlink_leaf_and_explicit_empty_save(self):
-        path = self.fixture.seed / "research/workspaces/shared/peer/linked.md"
+        path = self.fixture.seed / "research/workspaces/unrelated-machines/peer/linked.md"
         path.parent.mkdir(parents=True)
         path.symlink_to("../../../../outside.md")
         work_fixture.git(self.fixture.seed, "add", "research/workspaces")

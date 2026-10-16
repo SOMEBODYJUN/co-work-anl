@@ -2,7 +2,7 @@
 
 新对话使用两个附件：仓库当前的 `research/weighted_congestion_frontier/tools/work.py` 和仓库外的 `githubtoken.txt`，并粘贴 [BOSS完整提示词](BOSS_START.md)。主目标、身份、通信、地图和保存要求均在提示词中直接写明。
 
-统一入口仍是 work.py；它在恢复后调用仓库内最新 checkpoint.py 和 board.py，不需再把后二者作为附件上传。本题改动的是 checkpoint.py 的按存档保存范围，不是另换入口。下列日常命令全部使用仓库内 work.py。
+统一入口仍是 work.py；它在恢复后调用仓库内最新 checkpoint.py 和 board.py，不需再把后二者作为附件上传。新建未绑定clone的work.py和checkpoint默认均为unrelated-machines；旧绑定保持不变，新题另用独立clone。下列日常命令全部使用仓库内 work.py。
 
 凭据放clone外，不进正文、remote URL、日志或公屏。所有尖括号由agent按本会话实际路径替换，不要求用户手动改代码。先检查目录、Git状态和origin，保留未提交成果；已有不同存档clone不改绑。
 
@@ -10,7 +10,7 @@
 python3 <最新版work.py实际路径> --repo <独立clone实际路径> start --save unrelated-machines --actor <本对话唯一R-编号> --token-file <仓库外凭据实际路径>
 ```
 
-如果没有附work.py，安全clone指定仓库main，然后运行仓库内唯一程序；恢复后使用 `research/weighted_congestion_frontier/tools/work.py`。同clone接续读取并复用wcg.actor；确实恢复远端已有同一身份才 `start --resume`，新对话不接管他人编号。首次身份R-加uuid.hex；回执须是main、save=unrelated-machines、正确clone和本人工作区。
+如果没有附work.py，安全clone指定仓库main，然后运行仓库内唯一程序；恢复后使用 `research/weighted_congestion_frontier/tools/work.py`。同clone接续读取并复用wcg.actor；确实恢复远端已有同一身份才 `start --resume`，新对话不接管他人编号。首次身份R-加uuid.hex；回执须是main、save=unrelated-machines、正确clone和本人工作区，并核对research_entry=research/current/unrelated_machines/README.md、research_prompt=research/unrelated_machines/BOSS_START.md。
 
 以下在仓库根执行，save由本地绑定复用：
 
@@ -38,6 +38,7 @@ python3 research/build_crosswalk.py
 python3 research/build_catalog.py --check
 python3 research/build_map.py --check
 python3 research/build_crosswalk.py --check
+python3 research/check_active_research.py
 python3 research/check_assets.py
 python3 research/check_wc_assets.py --check
 python3 research/weighted_congestion_frontier/tools/work.py checkpoint -m '具体结果与准确范围'
@@ -52,3 +53,5 @@ python3 research/weighted_congestion_frontier/tools/work.py checkpoint -m '具�
 真实GitHub main的独立新clone恢复、单文件start与逐文件哈希核验见[冻结启动检查](../../evidence/runs/unrelated_machines/remote_startup_smoke.json)。临时检查身份未发布；记录保留被测提交，不假称后续文档提交也被重新压测。
 
 本题原文目录纳入默认范围的后续修补，另见[42项相关保存回归](../../evidence/runs/unrelated_machines/raw_literature_scope_audit.json)；旧题与相似前缀的原文目录不随本题推送。
+
+当前主目标UM-TARGET-v1的默认入口修补与实际109项完整回归、最终21项启动回归见[新题路由工程记录](../../evidence/runs/collaboration/active_topic_routing_release.json)。入口防回退由research/active_research.json和research/check_active_research.py约束，check_assets自动调用。底层board.py保留历史兼容行为，日常一律经work.py绑定存档；pending/retry保持原消息ID与原save，不能将旧待发重新解释为新题消息。

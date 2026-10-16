@@ -14,13 +14,15 @@ import sys
 import time
 
 SCOPE = "research/weighted_congestion_frontier"
+# Match the standalone work.py bootstrap; an existing wcg.save takes priority.
+DEFAULT_SAVE = "unrelated-machines"
 COMMON_PATHS = ["README.md", "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md",
                 "research/current/claims.md", "research/assets.json", "research/review_status.json",
                 "research/graph.json", "research/index.html", "research/source_crosswalk.json",
                 "research/source_crosswalk.md", "research/catalog.json", "research/CATALOG.md"]
 SAVE_PATHS = {
-    # Keep the original unbound/shared workflow compatible. Other archives must
-    # opt into their own research paths, never inherit this topic implicitly.
+    # Explicit or previously bound shared archives retain their legacy scope.
+    # Unbound clones use DEFAULT_SAVE, never inherit this historical topic.
     "shared": [SCOPE, "research/current/weighted_congestion",
                "research/questions/weighted_congestion", "research/reviews/weighted_congestion",
                "tests/audits/weighted_congestion", "tests/audits/weighted_congestion_density.py",
@@ -144,7 +146,7 @@ def describe_assets(repo, directory, commit, files):
 
 def default_paths(repo):
     actor = git(repo, "config", "--local", "--get", "wcg.actor", check=False).stdout.decode().strip()
-    save = git(repo, "config", "--local", "--get", "wcg.save", check=False).stdout.decode().strip() or "shared"
+    save = git(repo, "config", "--local", "--get", "wcg.save", check=False).stdout.decode().strip() or DEFAULT_SAVE
     safe_id = r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}"
     if not re.fullmatch(safe_id, save) or (actor and not re.fullmatch(safe_id, actor)):
         raise Stop("Invalid local actor/save ID; repair the local Work configuration first.")

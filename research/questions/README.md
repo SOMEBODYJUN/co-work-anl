@@ -1,12 +1,13 @@
 # 研究问题与候选：先区分仍开放和已经闭合
 
-当前主攻是[加权原子拥塞的普遍门槛](weighted_congestion/README.md)。本目录还保留设施选址与顺序客户吸引的独立问题。文件留在 questions 可以是候选、未解义务或原问题合同，不能只凭路径判定它仍未解决。
+当前主攻是 `UM-TARGET-v1`，存档 `unrelated-machines`：[一般不相关并行机的统一常数2壁垒](../current/unrelated_machines/README.md)。本目录还保留设施选址与顺序客户吸引的独立问题。文件留在 questions 可以是候选、未解义务或原问题合同，不能只凭路径判定它仍未解决。
 
 ## 仍有明确缺口的问题
 
 | 中文问题名 | 当前缺什么 | 对应结果入口 |
 | --- | --- | --- |
-| [加权原子拥塞：全类存在界与更强非存在机制](weighted_congestion/README.md) | 仍缺与奇环下界匹配量级的全类上界，或越过现有局部证书的新机制；势函数/端点/两列轨道稿按实际待审等级读取 | [当前数学资产](../current/weighted_congestion/README.md) |
+| [不相关并行机：统一ε与一般构造](unrelated_machines/barrier_escape_obligations.md) | 共同容量、实际联合舍入及总位多项式复杂度；现有gap与结构接口没有关闭主目标 | [本题地图](../current/unrelated_machines/README.md)、[完整启动词](../unrelated_machines/BOSS_START.md) |
+| [保留的加权拥塞精确门槛](weighted_congestion/README.md) | Cd/ln d存在命题已被线性全状态族否定；后续是精确常数、有限d及各候选本身的义务 | [当前旧题数学资产](../current/weighted_congestion/README.md) |
 | [顺序客户吸引：任意完整纯 SPE 的半覆盖](customer_attraction_half_coverage.md) | 小人数与目录结构结果没有覆盖一般情形；需一般全局支付或真实分支转移 | [已证子类、工具与失败桥](../current/customer_attraction/README.md)、[两条具体攻坚接口](customer_attraction_general_handoff.md) |
 | [任意设施数：一般输入的位多项式盒内 NE 构造](greedy_box_polytime.md) | 完整盒存在和有限构造已内部闭合；一般输入多项式总时间或直接构造仍缺 | [多设施成果地图](../current/multi_facility/README.md) |
 | [共同目录双设施：实例最优倍率 EPTAS](shared_alpha_eptas.md) | 近带补全已有工具，完整全局误差、精确续局与位复杂度合同尚未闭合 | [共同目录复杂度与算法](../current/shared/README.md) |

@@ -35,6 +35,9 @@ class CheckpointTests(unittest.TestCase):
         run(self.root, "clone", str(self.remote), str(self.repo))
         run(self.repo, "config", "user.name", "Fixture")
         run(self.repo, "config", "user.email", "fixture@example.invalid")
+        # These historical checkpoint fixtures exercise the explicit legacy
+        # archive. Unbound-current behavior is tested separately below.
+        run(self.repo, "config", "--local", "wcg.save", "shared")
         self.scope = self.repo / c.SCOPE
         self.scope.mkdir(parents=True)
         self.note = self.scope / "note.md"
@@ -455,6 +458,37 @@ class CheckpointTests(unittest.TestCase):
             self.assertEqual(run(self.remote, "ls-tree", "-r", "main", "--", name), "")
             self.assertEqual((self.repo / name).read_text(), "unpublished unrelated draft\n")
         self.assertEqual(self.note.read_text(), "old topic draft must stay local\n")
+
+    def test_unbound_checkpoint_uses_current_topic_and_only_own_current_workspace(self):
+        run(self.repo, "config", "--local", "--unset", "wcg.save")
+        run(self.repo, "config", "--local", "wcg.actor", "R-self")
+        current = self.repo / "research/current/unrelated_machines/boundary.md"
+        own = self.repo / "research/workspaces/unrelated-machines/R-self/note.md"
+        excluded = [self.repo / "research/workspaces/unrelated-machines/R-peer/note.md",
+                    self.repo / "research/workspaces/shared/R-self/note.md"]
+        for path in [current, own] + excluded:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("local exact asset\n")
+        self.note.write_text("legacy draft stays local\n")
+        result = self.save()
+        self.assertEqual(result["status"], "pushed")
+        expected = {p.relative_to(self.repo).as_posix() for p in (current, own)}
+        self.assertEqual(set(result["files"]), expected)
+        self.assertEqual(set(result["outgoing_files"]), expected)
+        self.assertEqual(run(self.remote, "show", "main:" + c.SCOPE + "/note.md"), "baseline")
+        for path in excluded:
+            self.assertEqual(run(self.remote, "ls-tree", "-r", "main", "--", path.relative_to(self.repo).as_posix()), "")
+            self.assertEqual(path.read_text(), "local exact asset\n")
+        self.assertEqual(self.note.read_text(), "legacy draft stays local\n")
+
+    def test_unbound_checkpoint_with_only_legacy_paths_requires_explicit_scope(self):
+        run(self.repo, "config", "--local", "--unset", "wcg.save")
+        self.note.write_text("legacy draft stays local\n")
+        with self.assertRaisesRegex(c.Stop, "No default checkpoint paths for archive unrelated-machines"):
+            self.save()
+        self.assertEqual(run(self.repo, "rev-parse", "HEAD"), self.before)
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+        self.assertEqual(self.note.read_text(), "legacy draft stays local\n")
 
     def test_unrelated_archive_precommitted_old_topic_cannot_hitchhike(self):
         run(self.repo, "config", "--local", "wcg.save", "unrelated-machines")
