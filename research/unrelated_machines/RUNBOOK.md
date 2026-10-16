@@ -1,5 +1,9 @@
 # 不相关并行机存档的启动、通信与保存
 
+新对话使用两个附件：仓库当前的 `research/weighted_congestion_frontier/tools/work.py` 和仓库外的 `githubtoken.txt`，并粘贴 [BOSS完整提示词](BOSS_START.md)。主目标、身份、通信、地图和保存要求均在提示词中直接写明。
+
+统一入口仍是 work.py；它在恢复后调用仓库内最新 checkpoint.py 和 board.py，不需再把后二者作为附件上传。本题改动的是 checkpoint.py 的按存档保存范围，不是另换入口。下列日常命令全部使用仓库内 work.py。
+
 凭据放clone外，不进正文、remote URL、日志或公屏。所有尖括号由agent按本会话实际路径替换，不要求用户手动改代码。先检查目录、Git状态和origin，保留未提交成果；已有不同存档clone不改绑。
 
 ```sh

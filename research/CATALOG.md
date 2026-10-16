@@ -36,7 +36,7 @@
 | [配置下界、模型迁移与复杂度的准确障碍](<unrelated_machines/FAILED_ROUTES.md>) | `research/unrelated_machines/FAILED_ROUTES.md` | 记录各已知失败合同、仍可回收工具和重试条件；避免把局部障碍升级成原问题不可能。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
 | [不相关并行机原文版本、定理位置与适用范围](<unrelated_machines/LITERATURE.md>) | `research/unrelated_machines/LITERATURE.md` | 区分一般、受限、估值、构造、预测及分布式来源；使用外部定理前进入原文核对。 | 文献核对；与团队新结果分别引用 |
 | [不相关并行机首批原文的版本与哈希清单](<unrelated_machines/literature_manifest.json>) | `research/unrelated_machines/literature_manifest.json` | 逐条记录取得状态、原始URL、定理定位、PDF字节哈希与缺失项；恢复或查版本时读取。 | 文献核对；与团队新结果分别引用 |
-| [不相关并行机主研究者的完整启动提示词](<unrelated_machines/BOSS_START.md>) | `research/unrelated_machines/BOSS_START.md` | 供新对话复制使用，绑定目标与save，规定自主研究、同级交流、精确资产和阶段保存。 | 阅读导航；真值查精确正文及账本 |
+| [不相关并行机主研究者的完整启动提示词](<unrelated_machines/BOSS_START.md>) | `research/unrelated_machines/BOSS_START.md` | 直接给出一般R∥C_max的全量词目标、完成标准和完整仓库操作，说明work.py附件、通信、地图、核验、提交与持续研究；供新对话全文复制。 | 阅读导航；真值查精确正文及账本 |
 | [不相关并行机存档的恢复、通信与保存手册](<unrelated_machines/RUNBOOK.md>) | `research/unrelated_machines/RUNBOOK.md` | 给实际统一入口命令、默认范围和冲突行为；避免旧题scope与新题混用。 | 阅读导航；真值查精确正文及账本 |
 | [跨配置间隙的新算法与位复杂度义务](<questions/unrelated_machines/barrier_escape_obligations.md>) | `research/questions/unrelated_machines/barrier_escape_obligations.md` | 把新增信息、统一余量、实际输出、oracle和总位复杂度拆成可攻击义务；候选出现时细化。 | 问题记录；开放/已闭合部分见用途及正文；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [经典舍入与两树配置间隙的独立重构和攻击](<reviews/unrelated_machines/classical_foundation_review.md>) | `research/reviews/unrelated_machines/classical_foundation_review.md` | 冻结正文与代码hash，重建数学链并保留独立可执行扩展审计；状态升级前读取真实覆盖。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
