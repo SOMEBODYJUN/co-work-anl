@@ -44,3 +44,5 @@ python3 research/weighted_congestion_frontier/tools/work.py checkpoint -m '具�
 只有 `status: pushed` 才报告已保存到远端。随后检查远端包含提交及实际文件、是否遗漏本轮有价值修改；自动合入同行更新时重读受影响的正文/objection并重跑相关检查。提交成功不提升数学状态。
 
 工程核验见 `evidence/runs/collaboration/unrelated_machines_scope_release.json`：隔离本地Git远端的完整回归含新存档start→checkpoint、旧题/他人范围隔离、历史夹带阻断及既有十clone并发。未在正式公屏投测试消息，也不宣称认证数百真实Work吞吐。
+
+真实GitHub main的独立新clone恢复、单文件start与逐文件哈希核验见[冻结启动检查](../../evidence/runs/unrelated_machines/remote_startup_smoke.json)。临时检查身份未发布；记录保留被测提交，不假称后续文档提交也被重新压测。
