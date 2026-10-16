@@ -279,3 +279,28 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：同行随B重算的条件块切面Z_g≥(r_B−1)Y_v仍识别此族：本N终端组同样最多N−d个单位blockers留终端；见UM-ESCAPE-BLOCK-CUT-v1，未另报为新定理。第9节底座准确阈值不自动推广到此变体。
 - Status：完整所述合同反例、内部独立已审；外审/全球新颖性未认证，主目标OPEN。
 - Related Files：[正文§11](../current/unrelated_machines/diluted_sink_probe_gap.md#11-共享小端与稀释终端的共同探针边界)、[两阶段审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)、diluted_escape_probe_gap.py与independent_diluted_escape_audit.py及冻结结果。
+
+
+## UM-GLOBAL-ROW-COUNT-FILTER-v1：全局单行基数匹配的安全过滤
+
+- Exact Statement / Quantifiers：∀合法P、有理T≥0，正文§1同步过滤在(P,T)总编码位长多项式内终止，保留每一个T可行调度使用的全部边。固定同一组全行有效H_i及c_i时，最大全局查询等价支配所有相应资源子池查询。
+- Objects / Domain / Definitions：UM-MODEL-v1；当前剪枝域D；h_i为全当前行最小存活时间，空行c_i=0、零min为n、正min为min(n,floor(T/h_i))。每边j→v固定后，覆盖所有不能留v的任务，以容量匹配最大化其他邻任务从v的卸载权。
+- Assumptions / Scope：任务权仅依任务，非任意边权；全机真实负载只对被查询v精确，其余只约束计数。每池另行提高下界不属全池支配结论。含空、零、不可用边、大分母。
+- Conclusion：健全位多项式必要条件；拒绝⇒OPT>T，接受不是调度可行或新近似保证。
+- Dependencies：模型；任务权匹配前缀/增广证明及容量克隆；逐轮保边归纳；至多e个删边轮。
+- Evidence：自足一般证明、独立先重构后冻结攻击；全部所列小矩阵的精确全分配oracle核查询值/真调度保边。
+- Counterevidence / Objections：UM-COMPACT-COUNT-ESCAPE-GAP-v1中所有查询通过而OPT趋2。H=0不能除法或复制巨大槽，规范实现作n截断；未留此异议。
+- Status：完整所述范围证明及内部独立审查；标准匹配容量扩展，外审/全球新颖性未认证。
+- Related Files：[正文§1](../current/unrelated_machines/row_count_escape_gap.md)、row_count_escape_review.md、row_count_probe.py、row_count_escape_audit.json。
+
+## UM-COMPACT-COUNT-ESCAPE-GAP-v1：紧凑共享逃逸与全部单行计数见证
+
+- Exact Statement / Quantifiers：∀整数k≥2，正文§2的N=2k²块、N−2k全局单位机、Y共享z成本1/k族满足OPT=2−1/k、GPC₂(1)可行。极小星消元与既有单/双域计数闭包无起点；UM-GLOBAL-ROW-COUNT-FILTER-v1首轮零删边。对每台v、每个C∈C_v(1)，均存在v精确取C且全部其他机器守初始row-min计数cap的全任务分配。因此这些必要条件合取在正OPT输入的sup gap恰2。
+- Objects / Domain / Definitions：UM-MODEL-v1；m=2k³+6k²−2k+1、n=4k³+2k²，时间仅{1/k,1,∞}。GPC₂为完整单机边际与各pair不双选，不要求跨pair交叠一致；V/z cap k、G/R cap1。
+- Assumptions / Scope：不同查询/配置延伸可用不同分配；其他机器不要求真实负载≤1；不含条件LST、条件配置LP或全部共同负载。预处理仅指正文列明的规则，非所有局部消元。
+- Conclusion：任何固定ε>0取k>1/ε即击穿相对接受T的(2−ε)T合同；不否定相对OPT算法或UM-TARGET-v1。
+- Dependencies：模型、GPC₂定义、全局过滤合同；显式配置/pair及avoid-v构造、整数容量计数；ST加性舍入给gap上界，若先消元用max(2T,T)恢复。
+- Evidence：一般证明及冻结独立攻击；两路精确配置/pair、全机avoid证书、k2全部实际优化查询、独立单块真实转移对称DP。真实有限参数在冻结记录，未做全实例全调度枚举。
+- Counterevidence / Objections：既有条件块cut直接适配即可把本族强化阈值恢复θ_k；这不是该更强机制的反例。N块/激活缺口与旧k块/缺口1族不同，不覆盖旧Claim。无尚成立fatal objection，全球新颖性未认证。
+- Status：完整所述合同反例、内部独立已审；未外审，未给统一近似算法。
+- Related Files：[正文§2–5](../current/unrelated_machines/row_count_escape_gap.md)、row_count_escape_review.md、compact_count_escape.py、independent_row_count_escape.py、row_count_escape_audit.json及k2实际输入/证书。

@@ -6845,6 +6845,45 @@
         "evidence/runs/unrelated_machines/independent_diluted_escape_audit.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-GLOBAL-ROW-COUNT-FILTER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "全局单行基数匹配的安全过滤",
+      "detail": "For every legal P and rational T>=0, the synchronous global single-row exact-load/count-capacity filter of section 1 preserves every T-feasible schedule edge and terminates in deterministic bit-polynomial time. With fixed globally valid row bounds/caps, the global query is equivalent in strength to all corresponding resource-subpool queries. Acceptance is not feasibility.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md",
+        "research/reviews/unrelated_machines/row_count_escape_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-COMPACT-COUNT-ESCAPE-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "紧凑共享逃逸与全部单行计数见证的间隙2",
+      "detail": "For every integer k>=2, the section 2 family with N=2k² blocks, N-2k global unit slots and common Y escape cost 1/k has OPT=2-1/k and GPC2(1) certificates. No minimal-star/cardinality rule starts; all global row-count forced-edge queries pass in the first round. Every machine configuration at T=1 extends to a complete assignment obeying other machines initial row-min count caps. The conjunction contract has supremum gap 2 on positive-OPT inputs; it does not include conditional LST/configuration LP.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md",
+        "research/reviews/unrelated_machines/row_count_escape_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-ROW-COUNT-ESCAPE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "全局单行基数、双机配置与独立空机证据",
+      "detail": "Finite exact all-assignment probe oracle; compact full-pair certificates; independent avoidance and symmetric assignment DP.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md",
+        "evidence/runs/unrelated_machines/row_count_escape_audit.json",
+        "tests/audits/unrelated_machines/row_count_probe.py",
+        "tests/audits/unrelated_machines/compact_count_escape.py",
+        "tests/audits/unrelated_machines/independent_row_count_escape.py"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -16401,6 +16440,84 @@
       "statement": "Only independent certificate conjunction is refuted; within-condition cardinality/configuration, nested filters and other algorithms remain unrefuted.",
       "refs": [
         "research/current/unrelated_machines/diluted_sink_probe_gap.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "DERIVE-UM-GLOBAL-ROW-COUNT-FILTER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-HEAVY-MATCH-FILTER-v1"
+      ],
+      "conclusion": "UM-GLOBAL-ROW-COUNT-FILTER-v1",
+      "statement": "Self-contained stated-scope proof and all common prerequisites; no free configuration oracle.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-GLOBAL-ROW-COUNT-FILTER-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROW-COUNT-ESCAPE-AUDIT-v1"
+      ],
+      "conclusion": "UM-GLOBAL-ROW-COUNT-FILTER-v1",
+      "statement": "Recorded finite exact checks, not universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md",
+        "evidence/runs/unrelated_machines/row_count_escape_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-UM-COMPACT-COUNT-ESCAPE-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-GENERAL-PAIR-DEFINITION-v1",
+        "UM-GLOBAL-ROW-COUNT-FILTER-v1",
+        "UM-MINIMAL-STAR-CONTRACTION-v1",
+        "UM-CARDINALITY-CLOSURE-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-COMPACT-COUNT-ESCAPE-GAP-v1",
+      "statement": "Self-contained stated-scope proof and all common prerequisites; no free configuration oracle.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-COMPACT-COUNT-ESCAPE-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROW-COUNT-ESCAPE-AUDIT-v1"
+      ],
+      "conclusion": "UM-COMPACT-COUNT-ESCAPE-GAP-v1",
+      "statement": "Recorded finite exact checks, not universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md",
+        "evidence/runs/unrelated_machines/row_count_escape_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMIT-ROW-COUNT-ESCAPE-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-COMPACT-COUNT-ESCAPE-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only independent exact-one-row/count-capacity witnesses plus GPC2 are obstructed; true joint loads/conditional LST/configuration and OPT-relative algorithms remain open.",
+      "refs": [
+        "research/current/unrelated_machines/row_count_escape_gap.md"
       ],
       "status": "method boundary"
     }

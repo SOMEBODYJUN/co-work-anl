@@ -79,3 +79,6 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 需要把当前研究交给 Pro 时，可复用上述自足简报和冻结导出器，但须核对其来源提交及当前否定证明，按[角色与交接顺序](research/weighted_congestion_frontier/README.md#角色与-pro-交接顺序)先由清晰者筛出必要事实与精确障碍、提取者核实按需工具，再提交实际数学材料。论文者独立负责成稿；提示词就绪和材料整理完成分别核验。
 
 不相关并行机新增[条件LP与稀释终端边界](research/current/unrelated_machines/diluted_sink_probe_gap.md)：全部边各有LST强制点仍不足以耦合配置槽；加强基数探针可修复该族，主目标保持OPEN。
+
+
+[全局单行基数匹配与紧凑共享逃逸](research/current/unrelated_machines/row_count_escape_gap.md)把资源池路线推进到准确边界：一次全局任务权匹配涵盖同一下界的全部子池，但每机/每配置独立守计数仍不等于共同真实负载。新族为多项式规模，GPC₂与所有单行见证仍gap2；现有条件块切面可修复，主目标OPEN。

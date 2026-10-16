@@ -642,6 +642,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-DILUTED-ESCAPE-PROBE-GAP-v1 | 配置可行＋所有边独立强制LST＋现行GHMR＋局部星匹配合用仍sup gap2；稀释底座加共享1/2小端，OPT=2−1/k。 | [正文§11](unrelated_machines/diluted_sink_probe_gap.md)、[冻结独立攻击](../reviews/unrelated_machines/diluted_sink_probe_review.md)；不含条件配置/条件基数；主目标OPEN。 |
 
+## 全局单行基数匹配与紧凑共享逃逸
+
+| ID | 精确范围与结论 | 正文/审查 |
+| --- | --- | --- |
+| UM-GLOBAL-ROW-COUNT-FILTER-v1 | For every legal P and rational T>=0, the synchronous global single-row exact-load/count-capacity filter of section 1 preserves every T-feasible schedule edge and terminates in deterministic bit-polynomial time. With fixed globally valid row bounds/caps, the global query is equivalent in strength to all corresponding resource-subpool queries. Acceptance is not feasibility. | [自足正文](unrelated_machines/row_count_escape_gap.md)、[冻结审查](../reviews/unrelated_machines/row_count_escape_review.md)；主目标OPEN，外审/新颖性未认证。 |
+| UM-COMPACT-COUNT-ESCAPE-GAP-v1 | For every integer k>=2, the section 2 family with N=2k² blocks, N-2k global unit slots and common Y escape cost 1/k has OPT=2-1/k and GPC2(1) certificates. No minimal-star/cardinality rule starts; all global row-count forced-edge queries pass in the first round. Every machine configuration at T=1 extends to a complete assignment obeying other machines initial row-min count caps. The conjunction contract has supremum gap 2 on positive-OPT inputs; it does not include conditional LST/configuration LP. | [自足正文](unrelated_machines/row_count_escape_gap.md)、[冻结审查](../reviews/unrelated_machines/row_count_escape_review.md)；主目标OPEN，外审/新颖性未认证。 |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

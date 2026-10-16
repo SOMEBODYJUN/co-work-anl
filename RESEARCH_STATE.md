@@ -36,3 +36,6 @@ WC-TARGET v1原身份保持刻画a_*(d)。新下界d/10与另列Paper Fact的一
 
 
 共享小端与稀释终端组合已进一步反驳“配置＋GHMR＋全部普通LST边探针”这一必要证书合取的统一阈值改善；主目标仍OPEN，条件内更强约束尚未被排除。
+
+
+[全局单行基数与紧凑共享逃逸](research/current/unrelated_machines/row_count_escape_gap.md)新增安全位多项式查询及准确反例：完整任务身份/多槽/每机每配置计数延伸仍与GPC₂合用保持gap2；条件块切面仍可识别本族。UM-TARGET-v1继续OPEN；一般共同负载耦合与统一舍入未解。

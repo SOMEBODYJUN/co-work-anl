@@ -18,3 +18,6 @@
 
 
 新增UM-DILUTED-ESCAPE-PROBE-GAP-v1精确身份：共享逃逸合并后仍通过所有普通边探针与GHMR；只限该合同，依赖与同行来源见本题账本。
+
+
+[全局单行基数与紧凑共享逃逸](research/current/unrelated_machines/row_count_escape_gap.md)新增安全位多项式查询及准确反例：完整任务身份/多槽/每机每配置计数延伸仍与GPC₂合用保持gap2；条件块切面仍可识别本族。UM-TARGET-v1继续OPEN；一般共同负载耦合与统一舍入未解。
