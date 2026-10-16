@@ -739,6 +739,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-ONE-DESTINATION-SLOT-REPAIR-v1 | ∀m≥2及UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1的任一槽输出σ，若每原来源机器全部迁出原任务至多去一个外部目的地，则达到OPT1的最小Hamming为m(m−1)/2；强制big搬走时最小为m(m+1)/2。big不动的达到构造可按路径逐批执行，第t批后C_t=(2m−t)/(m+1)，每整批严格降1/(m+1)，t=1,…,m−1。 | 仅此显式族的正面修复与精确修改数；接收机可增载。原不限制目的地的m−1最优迁移Claim不改变。没有一般配置初始化的首次进展或统一近似结论。 [正文](unrelated_machines/optimal_convex_fixed_slot_gap.md)。独立内审及有限精确核验，未外审/未认证新颖性。 |
 
 
+
+## 星收缩的配置接口与预处理组合边界
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-STAR-CONFIG-TRANSFER-v1 | 全邻域极小星满足逐外机配置互斥时，配置可行性双向保持，全部独立单边条件证书向前保持；单点前向仅需外部占用Q≥1。每步全球最多分裂一列，复杂度计入给定证书。 | [星正文§8](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/star_configuration_transfer_review.md)；缺条件及逆向probe均有反例；未外审/未核新颖性。 |
+| UM-CONTRACTED-SPARSE-CONFIG-GAP-v1 | 每k≥3稀疏深树沿指定合法次序收两端后，无极小星、全部最终边条件CONFIG可行，OPT=2−1/k，T=1+1/k；组合接受合同sup2。 | [稀疏正文末节](unrelated_machines/sparse_conditioned_configuration_gap.md)；双路全最终边有限核验与一般证明分开，不排共同base或主目标。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

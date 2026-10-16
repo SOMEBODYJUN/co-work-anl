@@ -34,3 +34,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 新增UM-KNAPSACK-MATROID-ENVELOPE-v1、UM-MIN-WORK-FACE-SUPPORT-GAP-v1，精确量词及两项独立冻结审查见[专题账本](research/unrelated_machines/CLAIMS.md)。仅限容量外包与最小工作量支撑合同，不改变UM-TARGET-v1。
 
 新增双边界森林相关菜单与同机槽族单目的地路径修复，精确身份分别为UM-FOREST-TWO-BOUNDARY-MENU-v1、UM-ONE-DESTINATION-SLOT-REPAIR-v1；[专题账本](research/unrelated_machines/CLAIMS.md)登记结构、同步任务身份、近似覆盖及所有未闭合义务，主目标仍OPEN。
+
+新增UM-STAR-CONFIG-TRANSFER-v1与UM-CONTRACTED-SPARSE-CONFIG-GAP-v1，分别固定配置转换的充分条件/方向/支持位复杂度与先消元后探针的准确gap范围。[精确身份](research/unrelated_machines/CLAIMS.md)保全量词，未改变主目标OPEN。

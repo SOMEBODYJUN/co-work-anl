@@ -7557,6 +7557,47 @@
         "evidence/runs/unrelated_machines/one_destination_slot_repair_audit.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-STAR-CONFIG-TRANSFER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "外部互斥星的配置双向保持与条件边前向转换",
+      "detail": "For every current minimal full-neighborhood star, external configuration exclusivity gives CONFIG equivalence and forward all-edge conditioned certificates; arbitrary-point forward needs Q>=1, inverse unconditioned transfer is unconditional. Explicit-certificate bit complexity and S+r support.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "research/reviews/unrelated_machines/star_configuration_transfer_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "端点星穷尽收缩后的三选条件配置间隙2",
+      "detail": "For every k>=3 and legal deep-tree H, the stated endpoint contraction sequence leaves no minimal star, preserves every final edge conditioned CONFIG point at T=1+1/k, and OPT=2-1/k. Relative accepted-threshold supremum2; no common-base or general algorithm conclusion.",
+      "refs": [
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md",
+        "research/reviews/unrelated_machines/star_configuration_transfer_review.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-STAR-CONFIG-TRANSFER-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "星配置保持与收缩终态的双路精确核验",
+      "detail": "One expanded k3,H5 instance, all final finite edges; zero/rational/priority/assumption controls and separate mathematical proofs.",
+      "refs": [
+        "tests/audits/unrelated_machines/star_configuration_transfer.py",
+        "tests/audits/unrelated_machines/star_configuration_transfer_independent.py",
+        "evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "examples/unrelated_machines/contracted_sparse_configuration_input.json",
+        "evidence/certificates/unrelated_machines/contracted_sparse_configuration_witness.json",
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -18202,6 +18243,86 @@
         "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "DERIVE-UM-STAR-CONFIG-TRANSFER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-MINIMAL-STAR-CONTRACTION-v1",
+        "UM-INDEPENDENT-EDGE-CONFIG-PROBES-v1"
+      ],
+      "conclusion": "UM-STAR-CONFIG-TRANSFER-v1",
+      "statement": "Use all stated assumptions and the self-contained construction in the account; independent finite calculations do not supply the universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-STAR-CONFIG-TRANSFER-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-STAR-CONFIG-TRANSFER-AUDIT-v1"
+      ],
+      "conclusion": "UM-STAR-CONFIG-TRANSFER-v1",
+      "statement": "Exact finite transfer/countercontrol/final-probe checks only; no general-truth inference from finite tests.",
+      "refs": [
+        "research/reviews/unrelated_machines/star_configuration_transfer_review.md",
+        "evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "DERIVE-UM-CONTRACTED-SPARSE-CONFIG-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
+        "UM-STAR-CONFIG-TRANSFER-v1",
+        "UM-MINIMAL-STAR-CONTRACTION-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1",
+      "statement": "Use all stated assumptions and the self-contained construction in the account; independent finite calculations do not supply the universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-CONTRACTED-SPARSE-CONFIG-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-STAR-CONFIG-TRANSFER-AUDIT-v1"
+      ],
+      "conclusion": "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1",
+      "statement": "Exact finite transfer/countercontrol/final-probe checks only; no general-truth inference from finite tests.",
+      "refs": [
+        "research/reviews/unrelated_machines/star_configuration_transfer_review.md",
+        "evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMIT-UM-CONTRACTED-SPARSE-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "The specified minimal-star preprocessing plus independent edge-CONFIG probes cannot supply a uniform improvement relative to their accepted T. Common-base, full separator correlation, additional rules and general scheduling algorithms are outside scope.",
+      "refs": [
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
+      ],
+      "status": "stated method boundary"
     }
   ]
 }

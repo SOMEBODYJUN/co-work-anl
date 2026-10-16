@@ -70,3 +70,5 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 [同机槽族的单目的地修复](research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md)：`UM-ONE-DESTINATION-SLOT-REPAIR-v1`给最小迁移m(m−1)/2，并可整批沿路径严格下降至OPT；仅此显式族，接收机允许增载。
 
 两项均已自足证明、独立内部攻击和有限精确核验；都是限结构正面接口/修复，未认证全球新颖性，不形成一般输入的统一ε。UM-TARGET-v1保持OPEN。
+
+星预处理的配置义务已闭合到精确范围：UM-STAR-CONFIG-TRANSFER-v1在逐步外部互斥下双向保持CONFIG、向前保持条件边；缺Q占用或声称反向条件边均有小反例。UM-CONTRACTED-SPARSE-CONFIG-GAP-v1给无极小星的收缩终态仍通过全部独立条件配置探针。新的信息需求是共同条件相关性/联合迁移，不是重复端点消元；主目标仍OPEN。

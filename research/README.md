@@ -99,3 +99,5 @@
 [同机槽族的单目的地修复](current/unrelated_machines/optimal_convex_fixed_slot_gap.md)：`UM-ONE-DESTINATION-SLOT-REPAIR-v1`给最小迁移m(m−1)/2，并可整批沿路径严格下降至OPT；仅此显式族，接收机允许增载。
 
 两项均已自足证明、独立内部攻击和有限精确核验；都是限结构正面接口/修复，未认证全球新颖性，不形成一般输入的统一ε。UM-TARGET-v1保持OPEN。
+
+[外部互斥星的配置保持](current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)补精确正面证书接口；[收缩后稀疏终态](current/unrelated_machines/sparse_conditioned_configuration_gap.md)又补先极小星消元后独立CONFIG探针的gap2范围。证明→star_configuration_transfer_review.md→双路代码/实际终态/冻结证据可接续；一般共同选择与统一ε仍OPEN。

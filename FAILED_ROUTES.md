@@ -67,3 +67,5 @@
 回收：尖锐迁移前沿ceil(2(r−d)k/(r−d+1))/k；固定改善必改近乎全部宏任务，而本族共同重选宏任务后直接可最优解。只限制上述固定/有限宏任务变动合同，不是一般近似困难性。再试必须共同选择宏任务及微任务卸载的共享真实容量。精确身份、独立冻结审查和双路实际枚举见optimal_hull_marginal_rounding_barrier.md§10。
 
 双端精确Pareto可能指数不排除近似相关菜单；已有同机槽反例也可用单目的地路径修复。两项范围修正与未解义务见[专题失败及回收](research/unrelated_machines/FAILED_ROUTES.md)，不升级为主目标算法。
+
+极小星保持整数T可行性不能自动推CONFIG保持；外部占用Q<1的两根两叶小例会失败。加入逐外机配置互斥可回收双向可行、条件边前向转换，但稀疏族收两端后仍无规则且全边独立CONFIG通过。见[正面条件与失效控制](research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)；不排共同base或一般联合舍入。

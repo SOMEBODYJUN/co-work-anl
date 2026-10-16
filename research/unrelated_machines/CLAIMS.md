@@ -605,3 +605,29 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：big不动的所有修复不必是路径或等距离：m3有支持7带尾循环，已记录并改用前缀割下界。只保证每整批严格下降，不保证逐任务严格下降；新颖性未认证。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；主目标UM-TARGET-v1仍OPEN。
 - Related Files：[research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md)、research/reviews/unrelated_machines/optimal_convex_slot_review.md及正文链接的代码/冻结记录。
+
+
+## UM-STAR-CONFIG-TRANSFER-v1：外部互斥极小星的配置保持与条件边前向转换
+
+- Objects / Domain：UM-MODEL-v1；剪枝后当前矩阵、有理T≥0、机器v的全部邻任务F满足极小超载条件，替代e按外机min定义。给定显式有理配置点或逐边证书族。
+- Exact Statement / Quantifiers：对任意上述单步，约化T配置点均可逆转为原T配置点；原点y若Q_F(y)=Σ外机含F配置质量≥1，则可正向转换。特别当任意外机i、不同a,b∈F均p_ia+p_ib>T时，配置可行性双向保持，原全部有限边各有独立强制配置点⇒约化全部边也如此。对每一步都满足该条件的≤m步链，结论迭代成立。
+- Definitions：不可用条目为∞；Q为配置占用概率质量，不是任务边际之和；单边强制x_ij=1，彼此不要求共同base。新e强制查询优先指定机器选mass1。
+- Assumptions / Scope：全邻域极小星、同一T、每步当前互斥；前向单点只需Q≥1。运行时间相对矩阵、T与给定点/证书族总位长多项式，不提供寻找配置点或一般LP oracle。
+- Conclusion：真实完整配置证书转换。前向支持S'≤S−S_v+1、r步≤S+r；初始权的公共分母格不增长。逆向单步新增v支持≤|F|。
+- Dependencies：UM-MODEL-v1、UM-MINIMAL-STAR-CONTRACTION-v1、配置覆盖/归一、正文§8显式贪心和补集恢复；不是由整数等价自动推出。
+- Evidence：先独立重构后冻结攻击，双路Fraction全边转移；有理/零/空、指定机器优先负控制、缺互斥与反向probe反例。
+- Counterevidence / Objections：无外部占用条件时两根两叶小例使原CONFIG可行而约化不可行；即使互斥，反向全部单边探针保持也不成立。不得扩大为任意星或双向probe。声明范围无尚成立fatal。
+- Status：完整限范围证明、独立内部审查与精确有限核验；外审/全球新颖性未认证，主目标OPEN。
+- Related Files：research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md §8；research/reviews/unrelated_machines/star_configuration_transfer_review.md；tests/audits/unrelated_machines/star_configuration_transfer.py及独立程序；evidence/runs/unrelated_machines/star_configuration_transfer_audit.json。
+
+## UM-CONTRACTED-SPARSE-CONFIG-GAP-v1：穷尽端点星收缩后的三选全边条件配置间隙
+
+- Objects / Domain / Definitions：UM-SPARSE-CONDITIONED-CONFIG-GAP-v1的全部k≥3、合法H与γ实例P_k，T=1+1/k；按固定底簇顺序分别收缩左右路径端点，得P'_k。各端点全邻域两unit，外部域不交。
+- Exact Statement / Quantifiers：对每个上述参数，P'_k每任务至多三条有限边、时间仅{1/k,1,γ}，无极小超载星；OPT(P'_k)=2−1/k。在T下每一有限边分别有完整强制配置点，故先按指定合法次序穷尽星消元、再迭代独立单边CONFIG删边仍接受；以P'_k直接启动也无两规则起点。正目标该接受合同的sup OPT/T恰2。
+- Assumptions / Scope：证明一条明确合法穷尽次序，不声称所有消元序列相同；各探针独立，无共同base、条件混合或完整bag联合一致性。未声称通用CONFIG oracle多项式。
+- Conclusion：补足旧稀疏v1留下的星预处理组合范围；不改变旧命题身份，不否定UM-TARGET-v1。
+- Dependencies：UM-MODEL-v1、UM-SPARSE-CONDITIONED-CONFIG-GAP-v1、UM-STAR-CONFIG-TRANSFER-v1、UM-MINIMAL-STAR-CONTRACTION-v1；sup上界另用UM-ST-ROUND-v1。
+- Evidence：自足一般证明、独立冻结攻击；k3,H5旧729机1051任务经324收缩得405机727任务1778有限边，双路全部最终边完整CONFIG核验。主程序另核整数上界压缩/完整逆恢复，旧证据未改写。
+- Counterevidence / Objections：下界用恢复，θ上界另在θ<2下正向压缩，不能混同方向。更多规则、共同条件相关性或一般联合舍入未排；无尚成立fatal。
+- Status：完整限合同证明与独立内部审查，有限计算非一般证明；外审/新颖性未认证，主目标OPEN。
+- Related Files：research/current/unrelated_machines/sparse_conditioned_configuration_gap.md末节；同新审查/双路代码/冻结记录；examples/unrelated_machines/contracted_sparse_configuration_input.json和evidence/certificates/unrelated_machines/contracted_sparse_configuration_witness.json。

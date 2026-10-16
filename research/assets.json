@@ -5064,6 +5064,43 @@
         "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
       ],
       "limit": "The family is not the true-optimal-convex-hull contract and no configuration-LP face is asserted. Changing objective/support or allowing positive total-work increase is unrestricted; no fixed relative cost-relaxation obstruction or general scheduling hardness. Known-tool extension; no novelty certification."
+    },
+    {
+      "id": "unrelated_star_configuration_transfer",
+      "claims": [
+        "UM-STAR-CONFIG-TRANSFER-v1",
+        "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1"
+      ],
+      "status": "complete stated-scope proof with independent internal reconstruction and exact audits; unrefereed; novelty unverified",
+      "applies_when": [
+        "Full-neighborhood minimal star and every current outside T-configuration contains at most one merged job; single-point forward transfer only needs occupancy Q>=1.",
+        "Contracted sparse-family gap: k>=3, all legal H, explicit left/right endpoint contraction sequence; independent probes, no common base."
+      ],
+      "produces": "Bidirectional CONFIG feasibility, forward independent edge certificates with additive support, and a star-irreducible degree-three supremum-gap2 family.",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/star_configuration_transfer.py",
+        "tests/audits/unrelated_machines/star_configuration_transfer_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/star_configuration_transfer_audit.json",
+        "evidence/certificates/unrelated_machines/contracted_sparse_configuration_witness.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/contracted_sparse_configuration_input.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/star_configuration_transfer_review.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
+      ],
+      "limit": "Does not preserve all conditioned edges in reverse; without occupancy even forward CONFIG can fail. No general scheduling approximation or complexity lower bound; no global novelty certification.",
+      "source_scope": "VW source is the ancestor two-tree configuration-gap mechanism only. The new star transfer and sparse endpoint proof are self-contained in the current accounts, not claimed to appear in that source."
     }
   ]
 }
