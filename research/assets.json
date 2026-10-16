@@ -5139,14 +5139,15 @@
       "id": "unrelated_machines_symmetric_reset",
       "claims": [
         "UM-SYMMETRIC-JOB-AGGREGATION-v1",
-        "UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1"
+        "UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1",
+        "UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
         "given explicit symmetric normalized pair certificate and deterministic one-hot job aggregation",
         "sharp threshold and same-base repair only on q>=2 uniform balanced family"
       ],
-      "produces": "Exact column preservation criterion; sharp fixed-matrix reset boundary; same-first-moment true residual schedule decomposition",
+      "produces": "Exact column preservation criterion; sharp fixed-matrix reset boundary; same-first-moment true residual schedule decomposition; uniform-family independent stochastic moment transfer at exact threshold q+2",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md"
@@ -5156,12 +5157,15 @@
       ],
       "tests": [
         "tests/audits/unrelated_machines/symmetric_reset_pushforward.py",
-        "tests/audits/unrelated_machines/symmetric_reset_independent.py"
+        "tests/audits/unrelated_machines/symmetric_reset_independent.py",
+        "tests/audits/unrelated_machines/uniform_random_moment_reset.py",
+        "tests/audits/unrelated_machines/uniform_random_reset_independent.py"
       ],
       "records": [
         "evidence/runs/unrelated_machines/symmetric_moment_reset_audit.json",
         "evidence/certificates/unrelated_machines/symmetric_reset_q2_recoupling.json",
-        "evidence/runs/unrelated_machines/symmetric_reset_independent_formatting_rerun.json"
+        "evidence/runs/unrelated_machines/symmetric_reset_independent_formatting_rerun.json",
+        "evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json"
       ],
       "examples": [
         "examples/unrelated_machines/symmetric_reset_q2.json"
@@ -5170,7 +5174,7 @@
         "research/reviews/unrelated_machines/symmetric_moment_reset_review.md"
       ],
       "candidates": [],
-      "limit": "No N(P) projection gap, no impossibility of re-solving moments, no general approximation or hierarchy transfer; standard algebraic/matching ingredients, novelty unverified."
+      "limit": "No N(P) projection gap, no impossibility of re-solving moments, no general approximation or hierarchy transfer; standard algebraic/matching ingredients, novelty unverified. Independent uniform transfer is limited to m=2q; output is a moment matrix, not a feasible-support schedule distribution."
     },
     {
       "id": "um_dag_congestion_flow_v1",

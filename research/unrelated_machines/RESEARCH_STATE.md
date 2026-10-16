@@ -134,6 +134,8 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 
 一般activation LP即使加x_vw≤a_v仍被四段单位汇流走廊族击穿；它不是强共同证书。下一高信息义务：从一般输入/阈值承诺中构造有用W或保留其共同条件路径容量，并证明统一K与实际输出；不得先知道好树再选择W。当前没有通过攻击的一般W算法，不继续制造同一LP的小修补。UM-TARGET-v1仍OPEN。
 
+同一正文§9另立UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1：独立均匀转移旧删机choices所生的新矩可确定精确计算，最小包q+2、负载1+2/q，q≥3严格小于固定后备的2。必须修同任务对角；一般m不保此界、个别态仍2T，故只作为限族正面运输，不提升主目标。双路实际矩/原分布coins枚举及冻结审查从正文进入。
+
 ## 跨路线整合后的可判别前沿
 
 [冻结整合审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)确认已有真实局部构造，尚无一般统一ε。菜单全局选择已含unrelated graph balancing；DAG-token任意深度且非根需求有固定上界时已有标准最大流标尺，不能只加深路径当新机制；真低秩矩存在不等于可提取。最新阈值repair仍缺真实进展势，失败不是不可行；单sink共同macro接口靠可加真实成本耦合，多sink需另证整数选择。优先判别一般共同容量/重新耦合与总位进展，不重复独立探针或把局部修复当全类保证。

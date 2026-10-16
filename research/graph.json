@@ -7600,44 +7600,6 @@
       "status": "finite exact evidence"
     },
     {
-      "id": "UM-SHARED-SINK-MODEL-v1",
-      "kind": "definition",
-      "track": "unrelated_machines",
-      "title": "唯一home与单共享汇点的宏任务占位模式",
-      "detail": "给定显式homes、单z、私有分组以及每有限边>T/2的宏任务，覆盖成本保持真实任务身份；T0/零端点包含。",
-      "refs": [
-        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
-      ],
-      "status": "explicit definition"
-    },
-    {
-      "id": "UM-SHARED-SINK-JOINT-MACRO-v1",
-      "kind": "claim",
-      "track": "unrelated_machines",
-      "title": "单共享汇点的宏任务共同匹配与私有任务整组撤离",
-      "detail": "∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。",
-      "refs": [
-        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
-        "research/reviews/unrelated_machines/shared_sink_joint_review.md"
-      ],
-      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
-    },
-    {
-      "id": "UM-SHARED-SINK-JOINT-AUDIT-v1",
-      "kind": "evidence",
-      "track": "unrelated_machines",
-      "title": "单共享汇点共同选择的双路精确有限审计",
-      "detail": "规范Fraction覆盖子集/匹配排列/原任务分配oracle；独立全局N绝对预算floor-DP与独立实际分配枚举；实际范围、代码hash和修复见冻结审查/记录。有限核验不是一般证明。",
-      "refs": [
-        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
-        "tests/audits/unrelated_machines/shared_sink_joint_assignment.py",
-        "tests/audits/unrelated_machines/shared_sink_joint_independent.py",
-        "evidence/runs/unrelated_machines/shared_sink_joint_assignment_audit.json",
-        "evidence/runs/unrelated_machines/shared_sink_joint_independent_audit.json"
-      ],
-      "status": "finite exact evidence"
-    },
-    {
       "id": "UM-SYMMETRIC-JOB-AGGREGATION-v1",
       "kind": "claim",
       "track": "unrelated_machines",
@@ -7739,6 +7701,70 @@
         "research/reviews/unrelated_machines/rooted_dag_congestion_review.md"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "独立均匀后备的条件矩运输只需q加二任务",
+      "detail": "For every q>=2 with m=2q,n=2q^2,p=1/q, the fixed uniform balanced optimal-distribution matrix under independent uniform rerouting of old deleted-machine choices satisfies residual P0(1) true/false capacities iff absorbed integer job count c>=q+2. Other old choices stay fixed; no conditioning on absorbed labels. Exact moments are deterministically bit-polynomial computable; transported states may still have load2. q=1 separately has threshold1.",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "research/reviews/unrelated_machines/symmetric_moment_reset_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-UNIFORM-RANDOM-RESET-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "独立均匀矩运输的原分布枚举与逐列审计",
+      "detail": "Finite Fraction moment checks and complete small-source/coin enumeration, not universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "tests/audits/unrelated_machines/uniform_random_moment_reset.py",
+        "tests/audits/unrelated_machines/uniform_random_reset_independent.py",
+        "evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-SHARED-SINK-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "唯一home与单共享汇点的宏任务占位模式",
+      "detail": "给定显式homes、单z、私有分组以及每有限边>T/2的宏任务，覆盖成本保持真实任务身份；T0/零端点包含。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单共享汇点的宏任务共同匹配与私有任务整组撤离",
+      "detail": "∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
+        "research/reviews/unrelated_machines/shared_sink_joint_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-SHARED-SINK-JOINT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "单共享汇点共同选择的双路精确有限审计",
+      "detail": "规范Fraction覆盖子集/匹配排列/原任务分配oracle；独立全局N绝对预算floor-DP与独立实际分配枚举；实际范围、代码hash和修复见冻结审查/记录。有限核验不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
+        "tests/audits/unrelated_machines/shared_sink_joint_assignment.py",
+        "tests/audits/unrelated_machines/shared_sink_joint_independent.py",
+        "evidence/runs/unrelated_machines/shared_sink_joint_assignment_audit.json",
+        "evidence/runs/unrelated_machines/shared_sink_joint_independent_audit.json"
+      ],
+      "status": "finite exact evidence"
     },
     {
       "id": "UM-JOINT-ROUTE-REVIEW-v1",
@@ -18557,51 +18583,6 @@
       "status": "stated method boundary"
     },
     {
-      "id": "D-UM-SHARED-SINK-JOINT-MACRO-v1",
-      "kind": "derives",
-      "track": "unrelated_machines",
-      "premises": [
-        "UM-MODEL-v1",
-        "UM-SHARED-SINK-MODEL-v1"
-      ],
-      "conclusion": "UM-SHARED-SINK-JOINT-MACRO-v1",
-      "statement": "每个macro/home或empty模式的真实最小整组撤离成本，保零乘性覆盖DP与带dummy成本的全局最小权完美匹配；误差只对同一个真实sink预算求和，不按home数量累积。",
-      "refs": [
-        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
-      ],
-      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
-    },
-    {
-      "id": "C-UM-SHARED-SINK-JOINT-MACRO-v1",
-      "kind": "checks",
-      "track": "unrelated_machines",
-      "premises": [
-        "UM-SHARED-SINK-JOINT-AUDIT-v1"
-      ],
-      "conclusion": "UM-SHARED-SINK-JOINT-MACRO-v1",
-      "statement": "规范Fraction覆盖子集/匹配排列/原任务分配oracle；独立全局N绝对预算floor-DP与独立实际分配枚举；实际范围、代码hash和修复见冻结审查/记录。有限核验不是一般证明。",
-      "refs": [
-        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
-        "evidence/runs/unrelated_machines/shared_sink_joint_assignment_audit.json",
-        "evidence/runs/unrelated_machines/shared_sink_joint_independent_audit.json"
-      ],
-      "status": "finite exact evidence"
-    },
-    {
-      "id": "L-UM-SHARED-SINK-JOINT-MACRO-v1",
-      "kind": "limits",
-      "track": "unrelated_machines",
-      "premises": [
-        "UM-SHARED-SINK-JOINT-MACRO-v1"
-      ],
-      "conclusion": "UM-TARGET-v1",
-      "statement": "仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。",
-      "refs": [
-        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
-      ],
-      "status": "method boundary"
-    },
-    {
       "id": "C-UM-SYMMETRIC-JOB-AGGREGATION-v1",
       "kind": "checks",
       "track": "unrelated_machines",
@@ -18765,6 +18746,81 @@
       "status": "refuted in stated scope"
     },
     {
+      "id": "C-UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIFORM-RANDOM-RESET-AUDIT-v1"
+      ],
+      "conclusion": "UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "statement": "双路实际矩、全部真假列与小源分布/coins枚举；有限证据不替代一般公式证明。",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json"
+      ],
+      "status": "finite check"
+    },
+    {
+      "id": "L-UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅m=2q均匀族上的可计算矩运输；一般机器数门槛可超过2T，且个别运输态仍达2T；无调度近似突破。",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "research/reviews/unrelated_machines/symmetric_moment_reset_review.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-SHARED-SINK-MODEL-v1"
+      ],
+      "conclusion": "UM-SHARED-SINK-JOINT-MACRO-v1",
+      "statement": "每个macro/home或empty模式的真实最小整组撤离成本，保零乘性覆盖DP与带dummy成本的全局最小权完美匹配；误差只对同一个真实sink预算求和，不按home数量累积。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SHARED-SINK-JOINT-AUDIT-v1"
+      ],
+      "conclusion": "UM-SHARED-SINK-JOINT-MACRO-v1",
+      "statement": "规范Fraction覆盖子集/匹配排列/原任务分配oracle；独立全局N绝对预算floor-DP与独立实际分配枚举；实际范围、代码hash和修复见冻结审查/记录。有限核验不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
+        "evidence/runs/unrelated_machines/shared_sink_joint_assignment_audit.json",
+        "evidence/runs/unrelated_machines/shared_sink_joint_independent_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-SHARED-SINK-JOINT-MACRO-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SHARED-SINK-JOINT-MACRO-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。",
+      "refs": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "status": "method boundary"
+    },
+    {
       "id": "CHECK-UM-ROUTE-COMPOSITION-REVIEW",
       "kind": "checks",
       "track": "unrelated_machines",
@@ -18820,7 +18876,7 @@
         "UM-FIXED-SINK-OCCUPATION-AUDIT-v1"
       ],
       "conclusion": "UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1",
-      "statement": "112局部菜单与997分配、4454零目标矩阵与33910分配、26小多面体/58顶点/88支持舍入/12实际恢复；独立304宏匹配表示/20760暴露面，仅有限核心范围。另16380个非单调接受表与1024宏网格合同核二分。未实现通用多项式LP/全部heavy生产调度器。",
+      "statement": "规范26小多面体、58顶点、88支持恢复；独立304宏匹配表示/20760暴露面精确维数检查，仅所列有限核心范围。",
       "refs": [
         "research/current/unrelated_machines/fixed_sink_occupation_rounding.md",
         "evidence/runs/unrelated_machines/fixed_sink_occupation_audit.json",
@@ -18911,7 +18967,7 @@
         "UM-FIXED-SINK-OCCUPATION-AUDIT-v1"
       ],
       "conclusion": "UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1",
-      "statement": "112局部菜单与997分配、4454零目标矩阵与33910分配、26小多面体/58顶点/88支持舍入/12实际恢复；独立304宏匹配表示/20760暴露面，仅有限核心范围。另16380个非单调接受表与1024宏网格合同核二分。未实现通用多项式LP/全部heavy生产调度器。",
+      "statement": "16380个非单调接受表及1024个宏整数网格合同验证二分逻辑；实际调度保证另依给定T构造的一般证明，不称完整promise调度器实测。",
       "refs": [
         "research/current/unrelated_machines/fixed_sink_occupation_rounding.md",
         "evidence/runs/unrelated_machines/fixed_sink_occupation_audit.json",

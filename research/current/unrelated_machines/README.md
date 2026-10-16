@@ -162,6 +162,8 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 
 完整路径：`research/current/unrelated_machines/rooted_dag_congestion_flow.md`、`research/reviews/unrelated_machines/rooted_dag_congestion_review.md`、`tests/audits/unrelated_machines/rooted_dag_congestion_flow.py`、`tests/audits/unrelated_machines/rooted_dag_congestion_independent.py`、`evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json`；分别承担自足证明、冻结攻击、规范构造、独立oracle和有限结果。
 
+同一正文§9另立UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1：独立均匀转移旧删机choices所生的新矩可确定精确计算，最小包q+2、负载1+2/q，q≥3严格小于固定后备的2。必须修同任务对角；一般m不保此界、个别态仍2T，故只作为限族正面运输，不提升主目标。双路实际矩/原分布coins枚举及冻结审查从正文进入。
+
 ## 跨路线的当前可行性判断
 
 [共同容量路线整合审查](../../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)冻结三条正面接口及单目的地修复的独立覆盖，区分一般菜单核心、矩提取与实际共同迁移。附最大流标准标尺及精确有限审计；不新增或扩大主目标Claim。它说明哪些是可复用局部构造，哪些候选仍缺同一证书中的全机器容量与总位多项式进展。

@@ -102,9 +102,9 @@
 
 [外部互斥星的配置保持](current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)补精确正面证书接口；[收缩后稀疏终态](current/unrelated_machines/sparse_conditioned_configuration_gap.md)又补先极小星消元后独立CONFIG探针的gap2范围。证明→star_configuration_transfer_review.md→双路代码/实际终态/冻结证据可接续；一般共同选择与统一ε仍OPEN。
 
-[单共享汇点的宏任务共同匹配与私有任务整组撤离](current/unrelated_machines/shared_sink_joint_macro_assignment.md)：UM-SHARED-SINK-JOINT-MACRO-v1以保零覆盖背包成本+dummy全局匹配给home≤T、z≤(1+η)T的位多项式实际构造；宏图任意，私有任务无尺寸限制。一般多预算/跨home任务仍OPEN。
+[对称条件矩的运输与重新耦合](current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。 后续§9另给独立均匀选择的精确新矩：同族吸收q+2任务即可保全部条件，门槛为(1+2/q)T；这仍非一般输入界或实际调度保证。
 
-[对称条件矩的运输与重新耦合](current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。
+[单共享汇点的宏任务共同匹配与私有任务整组撤离](current/unrelated_machines/shared_sink_joint_macro_assignment.md)：UM-SHARED-SINK-JOINT-MACRO-v1以保零覆盖背包成本+dummy全局匹配给home≤T、z≤(1+η)T的位多项式实际构造；宏图任意，私有任务无尺寸限制。一般多预算/跨home任务仍OPEN。
 
 [共同拥塞需求树的正面流接口](current/unrelated_machines/rooted_dag_congestion_flow.md)允许任意深度的低需求走廊与汇流；给证书提取、固定W最小K均位多项式，保证1/(2K−1)精确尖锐。下一缺口是未知W的共同选择，不能用已被反驳的激活边际LP替代。
 

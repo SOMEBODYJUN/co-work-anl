@@ -9,3 +9,5 @@
 ## 当前采用的重置接口
 
 规范入口为[对称条件矩任务聚合与同边际修复](../../../current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)。共同base之后必须实际核对残余条件容量；既定矩运输失败不等于base失败，均匀族有T重新耦合。当前一般不相关机器的矩重建/共同迁移统一余量仍OPEN。两份Claim、独立审查、实际代码/证据均从正文进入，不复制全文。
+
+同一正文§9另立UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1：独立均匀转移旧删机choices所生的新矩可确定精确计算，最小包q+2、负载1+2/q，q≥3严格小于固定后备的2。必须修同任务对角；一般m不保此界、个别态仍2T，故只作为限族正面运输，不提升主目标。双路实际矩/原分布coins枚举及冻结审查从正文进入。

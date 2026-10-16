@@ -692,6 +692,18 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准工具应用，UM-TARGET-v1仍OPEN。
 - Related Files：[research/current/unrelated_machines/rooted_dag_congestion_flow.md](../current/unrelated_machines/rooted_dag_congestion_flow.md)、research/reviews/unrelated_machines/rooted_dag_congestion_review.md；tests/audits/unrelated_machines/rooted_dag_congestion_flow.py、tests/audits/unrelated_machines/rooted_dag_congestion_independent.py、evidence/runs/unrelated_machines/rooted_dag_congestion_audit.json、examples/unrelated_machines/rooted_dag_congestion_cases.json、evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json。
 
+## UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1：独立均匀后备的条件矩运输只需q加二任务
+
+- Exact Statement / Quantifiers：For every q>=2 with m=2q,n=2q^2,p=1/q, the fixed uniform balanced optimal-distribution matrix under independent uniform rerouting of old deleted-machine choices satisfies residual P0(1) true/false capacities iff absorbed integer job count c>=q+2. Other old choices stay fixed; no conditioning on absorbed labels. Exact moments are deterministically bit-polynomial computable; transported states may still have load2. q=1 separately has threshold1.
+- Objects / Domain：正文§3的q≥2均匀族、真实最优均匀D、任意标签包C和机器i，独立均匀后备随机量；0≤c≤n。q1单列。
+- Assumptions / Definitions：不是对D条件化；每个保留任务旧非i选择保持，旧i选择独立均匀去其余K=2q−1台。新矩按真实随机实验，不能只用平均R的RYRᵀ，须修同任务块。
+- Scope / Conclusion：最小c=q+2、吸收负载1+2/q，q≥3严格优于固定后备2T，q2相等；输出精确有理矩为确定性位多项式，不是随机或确定性近似调度输出。
+- Dependencies：UM-MODEL-v1；§3均匀二点矩；全概率与onehot混合。完整证明§9.1–9.3，位复杂度沿§7显式输入规模。
+- Evidence：两名内部研究者先盲推后核冻结稿；两路Fraction；q2全部2520源态及所有独立路由分支，q1空/退化，q2..64所有c及主q2..128范围独立登记。
+- Counterevidence / Objections：m=2q不可省；一般m时q2,m8需c5即2.5T。转换分布的坏态仍可达2T；未证明一般重置、相同边际修复或主目标近似算法。当前无尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准二点概率计算扩展，新颖性和独立论文价值未认证。
+- Related Files：research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md§9；research/reviews/unrelated_machines/symmetric_moment_reset_review.md追加审查；tests/audits/unrelated_machines/uniform_random_moment_reset.py、tests/audits/unrelated_machines/uniform_random_reset_independent.py、evidence/runs/unrelated_machines/uniform_random_moment_reset_audit.json。
+
 ## 跨路线补充审查与身份保持
 
 [共同容量路线整合审查](../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)补核UM-FOREST-TWO-BOUNDARY-MENU-v1、UM-DEPTH-TWO-HALF-v1、UM-FROZEN-MACRO-TINY-REOPT-GAP-v1、UM-MACRO-MIGRATION-FRONTIER-v1及UM-ONE-DESTINATION-SLOT-REPAIR-v1的所列范围。没有改变这些身份或主目标状态；标准流/仿射恢复推导用于检验接口，不另冒充新的特殊类研究成果。后续共同矩正文与研讨候选的实际覆盖另在审查中注明。
@@ -699,11 +711,11 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 ## UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1：占位模式基扩展的侧约束低维支撑
 
 - Exact Statement / Quantifiers：∀有宏全覆盖匹配的有限宏/home二分图、每home有限非空带0/1占位标签的模式库、整数K≥0，P={每home模式和1、占位边际属于宏可匹配home基凸包}加任意K个线性侧不等式后，每个模式投影顶点至多2K个home有多于一个正模式。正支持内可用整数下界匹配和实际模式恢复，仅改变这些home；不承诺侧预算保持。
-- Objects / Domain / Definitions：UM-OCCUPATION-PATTERN-MODEL-v1；阈值版本与OPT promise版本分开。非负有理/∞，显式有限矩阵、零目标、空任务和强制端包含。
+- Objects / Domain / Definitions：有限宏/home二分图、每home有限非空0/1占位模式库、可匹配全部宏任务的home基凸包，以及任意K个线性侧不等式。没有任务处理时间或T/OPT的额外假设；实际调度是后两身份的应用。
 - Assumptions / Scope：K可随输入增长；一般结论只给2K支撑界。模式只依占位bit，不能依具体macro身份/残余容量；所有额外耦合约束须计入侧约束rank。
-- Conclusion / Mechanism：真实home负载的多维sink上取整DP；宏任务仅保占位基；至多10K²个大贡献home分支固定后，模式投影极点至多2K个非积分home，正支持内实际宏匹配恢复；γ1/4与β1/(8K)同时付清全部sink预算。
+- Conclusion / Mechanism：模式积分凸包、双匹配同时交换给基面维数下界、正支持纤维维数与K个侧约束rank给R≤2K；支持内下界匹配只改这些home，资源增量由应用另行支付。
 - Dependencies：UM-OCCUPATION-PATTERN-MODEL-v1；正文§4–9a自足重构交换/维数/恢复与总位复杂度。
-- Evidence：先盲重构后冻结攻击；112局部菜单与997分配、4454零目标矩阵与33910分配、26小多面体/58顶点/88支持舍入/12实际恢复；独立304宏匹配表示/20760暴露面，仅有限核心范围。另16380个非单调接受表与1024宏网格合同核二分。未实现通用多项式LP/全部heavy生产调度器。
+- Evidence：先盲重构后冻结攻击；规范26小多面体/58顶点/88支持恢复，独立304宏匹配表示/20760暴露面。后两调度身份的DP、零目标和二分核验不是本抽象引理的额外前提；有限检查不替代一般证明。
 - Counterevidence / Objections：不能以扩展LP basic vertex代替模式投影顶点；已用逐坐标lex精确LP避免。多预算matching边模式不满足占位基结构；无一般K/多home提取。声明范围无尚成立fatal。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；通用LP软件未实现，外审/新颖性未认证，主目标仍OPEN。
 - Related Files：[research/current/unrelated_machines/fixed_sink_occupation_rounding.md](../current/unrelated_machines/fixed_sink_occupation_rounding.md)、research/reviews/unrelated_machines/fixed_sink_occupation_review.md；代码/冻结记录见正文§11。
