@@ -55,3 +55,30 @@ python3 tests/audits/unrelated_machines/padded_fork_unique_cost_independent.py
 ```
 
 主研究者实际重跑上述规范路径，结果与独立冻结范围一致。批量支持独立审计另包含Fraction逐任务k1..3、整数Gray逐任务k1..5，以及k7/31/127/503的全部压缩类型；压缩不是大实例全部逐调度枚举。旧核心探索未重复入库，最终数学对象以uniform-current正文及实际k2输入为准。
+
+## 追加审查：工作量守恒与真实最优凸包初始化
+
+algorithm_probe 在阅读新增§9前独立重构守恒义务，再核对冻结正文 SHA256
+`03abddf761309ea0383490fea1bc537d0ef5f029c710ea5f6acb54e54619e63f`、新审计
+`tests/audits/unrelated_machines/identical_work_invariant_audit.py` SHA256
+`a3c47247037f4b494b1db98b881792d220c485ab1cbea149e71b486e0ebd4c46`。
+实际调用的规范槽舍入 hash 为 `5ba0dc52ddbb90ffece75e5accd2e801957c1172e337b9bdf033e22a64cbd75a`，
+循环优化器 hash 保持 `47dbed9b77a7ec7e3c12f30a7110adb398ec6d96197ab0b642457584dba8a057`；
+复用 boss7 原正文 hash 为 `8bbc487e1d4d4f69a0755e92e7f1f803217d63dd52b774a3a6f4eb42a7847f9c`。
+原首阶段冻结字节与结果继续由 d08d37e 恢复；新增正文只补§9及相应身份指引，不改原三个命题数学范围。
+
+对相同机器，合法调度总工作量恒为Σp_j；逐坐标非增且总和相等，严格推出每坐标相等。
+循环中r=c，故正余量循环也直接由求和矛盾排除。接 boss7
+UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1 的全称槽匹配结论，
+UM-COORDINATE-REPAIR-ST-GAP-v1 正确；这是 boss7 族加守恒的直接派生，不是新族或一般近似困难性。
+所有 assignment 成本相同，minimum-cost 限定亦无作用。
+
+新规范审计实际重跑：m=2,…,8共7个输入，优化器均0轮；m=2,3合计枚举19699个合法调度，
+逐坐标非增者均保持全部负载；一任务跨槽迁移确实提高接收机负载并严格降低makespan。
+命令为 `python3 tests/audits/unrelated_machines/identical_work_invariant_audit.py`，stdout另写scratch；
+规范新冻结记录是 `evidence/runs/unrelated_machines/identical_work_invariant_audit.json`。
+有限计算不承担一般守恒证明。
+
+未发现本追加范围的 fatal objection。此处仅排逐坐标非增，绝不扩大原 fork 的单目的地、
+makespan非增反驳到配置派生初始化；boss7族恰存在这样的单任务makespan改善。
+外审与全球新颖性未认证。

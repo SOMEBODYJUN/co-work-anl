@@ -47,3 +47,6 @@ UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1说明即使x有真实最优凸分解，固定�
 ## 循环菜单之后的分流义务
 
 UM-ROBUST-CYCLIC-BATCH-OPT-v1已闭合局部优化器的总位复杂度，但没有全类比例。UM-FORK-MINCOST-ROUND-REPAIR-NO-v1排除任意LST点＋唯一成本槽分配后仅用one-destination单调repair的充分合同；其x非配置投影。下一可判别问题：能否在配置/可构造更强初始化上始终找到带统一损失界的多源多目的联合批次，而不调用已被半单位归约排除的精确共同H接口？[算法和反例入口](../../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)。
+
+
+该新机制必须允许接收机负载上升：UM-COORDINATE-REPAIR-ST-GAP-v1已排除即使真OPT凸包初始化后的纯逐坐标单调优化。可研究目标max阈值下多源分流的共同容量，但不能把单中心分别可行的撤离LP当作共同调度。

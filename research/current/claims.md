@@ -695,6 +695,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-BATCH-SUPPORT-REPAIR-NO-v1 | For every integer k>=1 the section5 three-machine family has OPT=1, a pruned schedule of loads (2,2,2), minimum sorted-lex improvement support k+1, and minimum maximum per-machine outgoing count k. Thus neither constant support nor constant outgoing budget guarantees monotone improvement. | [自足正文](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)；[冻结审查](../reviews/unrelated_machines/cyclic_batch_fork_review.md)；主目标OPEN、新颖性未认证。 |
 | UM-FORK-MINCOST-ROUND-REPAIR-NO-v1 | For every integer k>=2 the sections6-7 padded fork has T=OPT=1 and explicit feasible rational assignment x; every minimum-processing-cost ordered-slot matching induces the same actual schedule sigma of makespan 2-1/k. No nontrivial makespan-nonincreasing reassignment from sigma can have at most one outgoing destination per source machine, even with arbitrary bundle size and arbitrarily many machines. | [自足正文](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)；[冻结审查](../reviews/unrelated_machines/cyclic_batch_fork_review.md)；主目标OPEN、新颖性未认证。 |
 
+## 逐坐标循环修复与真实最优凸包的衔接
+
+| ID | 精确范围与结论 | 正文与限制 |
+| --- | --- | --- |
+| UM-COORDINATE-REPAIR-ST-GAP-v1 | ∀m≥2、∀有理η∈(0,1)，boss7真最优凸包槽族的任意matching输出接鲁棒循环优化仍0轮，值2m/(m+1)→2。相同机器任意逐坐标非增序列都保持每台负载。 | [正文§9](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)、追加冻结审查；守恒＋既有族的直接推论，不是新族，不排低机上升的makespan改善。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -4819,7 +4819,8 @@
       "claims": [
         "UM-ROBUST-CYCLIC-BATCH-OPT-v1",
         "UM-BATCH-SUPPORT-REPAIR-NO-v1",
-        "UM-FORK-MINCOST-ROUND-REPAIR-NO-v1"
+        "UM-FORK-MINCOST-ROUND-REPAIR-NO-v1",
+        "UM-COORDINATE-REPAIR-ST-GAP-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
@@ -4827,7 +4828,7 @@
         "Optimizer T>0 and fixed rational eta in (0,1), Cmax(sigma)<=2T",
         "Counterexamples are explicitly defined families, not general complexity lower bounds"
       ],
-      "produces": "Deterministic bit-polynomial robust cyclic-batch local optimizer, exact eviction-support boundary, and a unique-minimum-cost LST-output fork obstruction requiring simultaneous multi-destination repair.",
+      "produces": "Deterministic bit-polynomial robust cyclic-batch local optimizer, exact eviction-support boundary, and a unique-minimum-cost LST-output fork obstruction requiring simultaneous multi-destination repair. Direct work-conservation bridge to true-optimal convex slot outputs shows the coordinatewise optimizer can stagnate at gap tending to two even under that stronger initialization.",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
@@ -4840,14 +4841,16 @@
         "tests/audits/unrelated_machines/cyclic_menu_independent.py",
         "tests/audits/unrelated_machines/batch_support_independent.py",
         "tests/audits/unrelated_machines/padded_fork_unique_cost_independent.py",
-        "tests/audits/unrelated_machines/cyclic_frozen_independent_crosscheck.py"
+        "tests/audits/unrelated_machines/cyclic_frozen_independent_crosscheck.py",
+        "tests/audits/unrelated_machines/identical_work_invariant_audit.py"
       ],
       "records": [
         "evidence/runs/unrelated_machines/cyclic_batch_repair_audit.json",
         "evidence/runs/unrelated_machines/cyclic_menu_independent_audit.json",
         "evidence/runs/unrelated_machines/batch_support_independent_audit.json",
         "evidence/runs/unrelated_machines/padded_fork_unique_cost_audit.json",
-        "evidence/runs/unrelated_machines/cyclic_frozen_crosscheck_reproducible.json"
+        "evidence/runs/unrelated_machines/cyclic_frozen_crosscheck_reproducible.json",
+        "evidence/runs/unrelated_machines/identical_work_invariant_audit.json"
       ],
       "examples": [
         "examples/unrelated_machines/padded_fork_k2.json",
@@ -4859,7 +4862,7 @@
       "candidates": [
         "research/questions/unrelated_machines/barrier_escape_obligations.md"
       ],
-      "limit": "No uniform improved approximation. ST source is contextual prior art; new local contracts are proved directly. Padded fractional point is not a configuration projection or asserted basic. Standard primitives and unverified global novelty are separated."
+      "limit": "No uniform improved approximation. ST source is contextual prior art; new local contracts are proved directly. Padded fractional point is not a configuration projection or asserted basic. Standard primitives and unverified global novelty are separated. The configuration-projection caveat belongs to the separate one-destination fork contract; coordinatewise monotonicity is now refuted even on true-optimal convex initialization."
     }
   ]
 }

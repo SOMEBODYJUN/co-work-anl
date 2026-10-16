@@ -85,3 +85,6 @@ UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1在完全相同机器上给OPT1及显式真实�
 UM-ROBUST-CYCLIC-BATCH-OPT-v1已给固定η的实际局部优化器：exact-profit菜单＋严格转向＋重复机器剪接，≤4m/η成功轮，终态无ηT鲁棒循环；并未给近似比。UM-BATCH-SUPPORT-REPAIR-NO-v1要求同机撤离任务数无界；UM-FORK-MINCOST-ROUND-REPAIR-NO-v1的正支撑padding甚至使最小成本槽分配唯一，值2−1/k，但任何每机单目的地的makespan不增repair皆无首次变化。
 
 范围关键：该x不是配置投影（A上big质量>1），未称basic，不能据此否定配置初始化。下一高信息义务是可共同实现的多目的地分流合流，或一个能排除该相关结构的具体初始化不变量；仅正支撑、总成本不增或增大循环菜单不足。自足入口为[正文](../current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)与其冻结审查/实际证据。
+
+
+上述“配置初始化未排除”仅属于fork的单目的地、makespan非增范围。新UM-COORDINATE-REPAIR-ST-GAP-v1证明本逐坐标优化器本身即使在真最优凸包槽初始化也会0轮、gap→2（boss7族＋守恒直接推论）。因此纯逐坐标单调不再是全类改善候选；接收机上升但全局max受控的多源容量接口仍是实际未解义务。
