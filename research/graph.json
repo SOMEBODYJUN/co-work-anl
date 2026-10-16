@@ -6935,6 +6935,55 @@
       "status": "finite exact audit"
     },
     {
+      "id": "UM-ROW-SPREAD-TWO-CLASS",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "零任务删除后的逐机两倍跨度类",
+      "detail": "After deleting every job with a zero eligible edge, each nonempty row has its own gamma_i>0 and finite times in[gamma_i,2gamma_i].",
+      "refs": [
+        "research/current/unrelated_machines/joint_slot_prefix_rounding.md"
+      ],
+      "status": "explicit restricted input class"
+    },
+    {
+      "id": "UM-ROW-SPREAD-TWO-ROUND-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "逐机两倍跨度的直接联合槽3/2构造",
+      "detail": "∀合法非负有理UM输入，删除有零端任务后，若每个非空机器行的有限正时间均在某[γ_i,2γ_i]内（各γ_i>0可不同），则存在确定性位多项式算法输出全部原任务合法调度，C_max≤3OPT/2；含空任务/OPT0。",
+      "refs": [
+        "research/current/unrelated_machines/joint_slot_prefix_rounding.md",
+        "research/reviews/unrelated_machines/joint_slot_prefix_review.md"
+      ],
+      "status": "complete stated-scope proof; known-tool corollary with independent reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-ROW-SPREAD-PREFIX-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "整数前缀槽与实际半单位联合调度的精确核验",
+      "detail": "83810 local row cases,39673 feasible; actual 10-machine14-job parity certificate and schedule. Does not enumerate all global LPs.",
+      "refs": [
+        "research/current/unrelated_machines/joint_slot_prefix_rounding.md",
+        "evidence/runs/unrelated_machines/joint_slot_prefix_audit.json",
+        "tests/audits/unrelated_machines/row_spread_prefix.py",
+        "tests/audits/unrelated_machines/half_unit_joint_slot.py"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-CROSS-SCALE-JOINT-ROUNDING-OBLIGATION",
+      "kind": "obligation",
+      "track": "unrelated_machines",
+      "title": "一般行内尺度混合的统一联合舍入余量",
+      "detail": "Recover a uniform loss bound when row spread is unbounded while preserving tiny-job coverage and residual capacities; no algorithm or reduction established.",
+      "refs": [
+        "research/current/unrelated_machines/joint_slot_prefix_rounding.md",
+        "research/questions/unrelated_machines/barrier_escape_obligations.md"
+      ],
+      "status": "open"
+    },
+    {
       "id": "UM-INDEPENDENT-EDGE-CONFIG-PROBES-v1",
       "kind": "definition",
       "track": "unrelated_machines",
@@ -16711,6 +16760,66 @@
         "research/current/unrelated_machines/row_count_escape_gap.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "DERIVE-UM-ROW-SPREAD-TWO-ROUND-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1",
+        "UM-ROW-SPREAD-TWO-CLASS"
+      ],
+      "conclusion": "UM-ROW-SPREAD-TWO-ROUND-v1",
+      "statement": "Valid integer prefix-count LP, preservation under one covering slot matching, four exact row regimes and rational monotone target search.",
+      "refs": [
+        "research/current/unrelated_machines/joint_slot_prefix_rounding.md",
+        "research/reviews/unrelated_machines/joint_slot_prefix_review.md"
+      ],
+      "status": "complete stated-scope proof; known-tool corollary with independent reconstruction and exact audits; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-ROW-SPREAD-TWO-ROUND-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROW-SPREAD-PREFIX-AUDIT-v1"
+      ],
+      "conclusion": "UM-ROW-SPREAD-TWO-ROUND-v1",
+      "statement": "Finite local slot envelopes, recorded rational boundary samples and one global actual joint schedule; general result uses proof.",
+      "refs": [
+        "research/current/unrelated_machines/joint_slot_prefix_rounding.md",
+        "evidence/runs/unrelated_machines/joint_slot_prefix_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-ROW-SPREAD-TO-GENERAL",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROW-SPREAD-TWO-ROUND-v1"
+      ],
+      "conclusion": "UM-CROSS-SCALE-JOINT-ROUNDING-OBLIGATION",
+      "statement": "Extra row-spread assumption remains; this constructive subclass does not extend to arbitrary scale mixtures without a new preservation mechanism.",
+      "refs": [
+        "research/current/unrelated_machines/joint_slot_prefix_rounding.md"
+      ],
+      "status": "open general extension"
+    },
+    {
+      "id": "LIMIT-CROSS-SCALE-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CROSS-SCALE-JOINT-ROUNDING-OBLIGATION"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "This route would need a valid general cross-scale reduction or direct uniform rounding; not a proof that this is the only route to UM-TARGET.",
+      "refs": [
+        "research/current/unrelated_machines/joint_slot_prefix_rounding.md"
+      ],
+      "status": "open route obligation"
     },
     {
       "id": "DERIVE-UM-SPARSE-CONDITIONED-CONFIG-GAP-v1",
