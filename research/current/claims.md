@@ -747,6 +747,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-STAR-CONFIG-TRANSFER-v1 | 全邻域极小星满足逐外机配置互斥时，配置可行性双向保持，全部独立单边条件证书向前保持；单点前向仅需外部占用Q≥1。每步全球最多分裂一列，复杂度计入给定证书。 | [星正文§8](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[冻结攻击](../reviews/unrelated_machines/star_configuration_transfer_review.md)；缺条件及逆向probe均有反例；未外审/未核新颖性。 |
 | UM-CONTRACTED-SPARSE-CONFIG-GAP-v1 | 每k≥3稀疏深树沿指定合法次序收两端后，无极小星、全部最终边条件CONFIG可行，OPT=2−1/k，T=1+1/k；组合接受合同sup2。 | [稀疏正文末节](unrelated_machines/sparse_conditioned_configuration_gap.md)；双路全最终边有限核验与一般证明分开，不排共同base或主目标。 |
 
+## 对称共同条件矩的运输与重新耦合
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-SYMMETRIC-JOB-AGGREGATION-v1 | For every nonempty bounded one-hot rational P, symmetric normalized certificate (x,Y), and given deterministic jobwise aggregation/deletion R with at least one retained job, mapped old true columns in their scaled P-prime imply (Rx,RYR^T) is a same-layer certificate. With no retained jobs check the zero-dimensional base separately. Given data and explicit P-prime can be checked in bit-polynomial time; finding R is not solved. | [正文](unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)、[冻结审查](../reviews/unrelated_machines/symmetric_moment_reset_review.md)；限范围完整证明/双路精确审计，外审与新颖性未认证，主目标OPEN。 |
+| UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1 | For each q>=2, m=2q machines and n=2q^2 identical jobs p=1/q,T=OPT=1, the uniform balanced true-optimum moment matrix needs exactly 2q absorbed jobs for some deterministic single-machine fallback pushforward to satisfy residual true/false capacities. Every c<2q and every fallback fail. At c=q balanced groups, the same first moment Rx has a rebuilt true residual T-distribution, in deterministic bit-polynomial time. | [正文](unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)、[冻结审查](../reviews/unrelated_machines/symmetric_moment_reset_review.md)；限范围完整证明/双路精确审计，外审与新颖性未认证，主目标OPEN。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

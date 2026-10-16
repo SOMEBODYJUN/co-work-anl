@@ -112,3 +112,9 @@
 两项均已自足证明、独立内部攻击和有限精确核验；都是限结构正面接口/修复，未认证全球新颖性，不形成一般输入的统一ε。UM-TARGET-v1保持OPEN。
 
 [星配置保持§8](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)与[无规则收缩终态](../current/unrelated_machines/sparse_conditioned_configuration_gap.md)补UM-STAR-CONFIG-TRANSFER-v1及UM-CONTRACTED-SPARSE-CONFIG-GAP-v1。已独立冻结攻击和双路全部最终边核验；前者可复用正面接口，后者仅指定预处理＋独立探针边界，主目标仍OPEN。
+
+## 对称矩重置后的准确前沿
+
+[任务聚合、单机矩运输阈值与同边际修复](../current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)给UM-SYMMETRIC-JOB-AGGREGATION-v1及UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1。前者是给定R的可检查列条件；后者在真实最优分布上区分既定矩推前需2T与同Rx重新耦合只需T。不得写成Rx不属新N或同层求解不可能。读取链：CLAIMS→正文→symmetric_moment_reset_review.md→双路代码/实际q2输入与证书/symmetric_moment_reset_audit.json。
+
+一般不相关输入中如何可计算地重建共同条件容量、输出统一低于2且保证总位多项式进展仍未解决；本结果不提供R搜索器。标准凸锥和二分图工具保留来源，全球新颖性与独立论文价值未认证。

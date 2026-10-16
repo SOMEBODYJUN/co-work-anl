@@ -7598,6 +7598,47 @@
         "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-SYMMETRIC-JOB-AGGREGATION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "对称条件矩的任务选择聚合接口",
+      "detail": "For every nonempty bounded one-hot rational P, symmetric normalized certificate (x,Y), and given deterministic jobwise aggregation/deletion R with at least one retained job, mapped old true columns in their scaled P-prime imply (Rx,RYR^T) is a same-layer certificate. With no retained jobs check the zero-dimensional base separately. Given data and explicit P-prime can be checked in bit-polynomial time; finding R is not solved.",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "research/reviews/unrelated_machines/symmetric_moment_reset_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单机既定矩推前的2T阈值与同边际T修复",
+      "detail": "For each q>=2, m=2q machines and n=2q^2 identical jobs p=1/q,T=OPT=1, the uniform balanced true-optimum moment matrix needs exactly 2q absorbed jobs for some deterministic single-machine fallback pushforward to satisfy residual true/false capacities. Every c<2q and every fallback fail. At c=q balanced groups, the same first moment Rx has a rebuilt true residual T-distribution, in deterministic bit-polynomial time.",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "research/reviews/unrelated_machines/symmetric_moment_reset_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-SYMMETRIC-RESET-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "对称矩运输与同边际重新耦合双路精确核验",
+      "detail": "Finite exact Fraction checks and actual matching decompositions; not a universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "tests/audits/unrelated_machines/symmetric_reset_pushforward.py",
+        "tests/audits/unrelated_machines/symmetric_reset_independent.py",
+        "evidence/runs/unrelated_machines/symmetric_moment_reset_audit.json",
+        "examples/unrelated_machines/symmetric_reset_q2.json",
+        "evidence/certificates/unrelated_machines/symmetric_reset_q2_recoupling.json",
+        "evidence/runs/unrelated_machines/symmetric_reset_independent_formatting_rerun.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -18323,6 +18364,68 @@
         "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md"
       ],
       "status": "stated method boundary"
+    },
+    {
+      "id": "C-UM-SYMMETRIC-JOB-AGGREGATION-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SYMMETRIC-RESET-AUDIT-v1"
+      ],
+      "conclusion": "UM-SYMMETRIC-JOB-AGGREGATION-v1",
+      "statement": "有限参数、实际矩与真实调度分解核验仅支持所列范围，不替代正文一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "evidence/runs/unrelated_machines/symmetric_moment_reset_audit.json",
+        "tests/audits/unrelated_machines/symmetric_reset_pushforward.py",
+        "tests/audits/unrelated_machines/symmetric_reset_independent.py"
+      ],
+      "status": "finite check"
+    },
+    {
+      "id": "L-UM-SYMMETRIC-JOB-AGGREGATION-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SYMMETRIC-JOB-AGGREGATION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "给定矩运输与重新求矩不同；没有一般R选择、共同容量重建或统一低于2近似。",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "C-UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SYMMETRIC-RESET-AUDIT-v1"
+      ],
+      "conclusion": "UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1",
+      "statement": "有限参数、实际矩与真实调度分解核验仅支持所列范围，不替代正文一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md",
+        "evidence/runs/unrelated_machines/symmetric_moment_reset_audit.json",
+        "tests/audits/unrelated_machines/symmetric_reset_pushforward.py",
+        "tests/audits/unrelated_machines/symmetric_reset_independent.py"
+      ],
+      "status": "finite check"
+    },
+    {
+      "id": "L-UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "给定矩运输与重新求矩不同；没有一般R选择、共同容量重建或统一低于2近似。",
+      "refs": [
+        "research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }

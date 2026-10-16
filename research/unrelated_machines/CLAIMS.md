@@ -631,3 +631,27 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：下界用恢复，θ上界另在θ<2下正向压缩，不能混同方向。更多规则、共同条件相关性或一般联合舍入未排；无尚成立fatal。
 - Status：完整限合同证明与独立内部审查，有限计算非一般证明；外审/新颖性未认证，主目标OPEN。
 - Related Files：research/current/unrelated_machines/sparse_conditioned_configuration_gap.md末节；同新审查/双路代码/冻结记录；examples/unrelated_machines/contracted_sparse_configuration_input.json和evidence/certificates/unrelated_machines/contracted_sparse_configuration_witness.json。
+
+## UM-SYMMETRIC-JOB-AGGREGATION-v1：对称条件矩的任务选择聚合接口
+
+- Exact Statement / Quantifiers：For every nonempty bounded one-hot rational P, every symmetric normalized certificate (x,Y), every given deterministic jobwise aggregation/deletion R, and every new one-hot rational polytope P′, if RY_:e belongs to x_e P′ for every old choice of every retained job, then (Rx,RYRᵀ) belongs to the same-layer pair certificate set of P′. At least one retained job is required for this sufficient criterion; no retained jobs instead require checking the zero-dimensional base. Given data and explicit P′ are checkable in bit-polynomial time.
+- Objects / Domain：任意有限任务选择集、同任务选择单纯形上的有界有理多面体P、证书对(x,Y)、旧choice到同一保留任务新choice的确定映射；允许整任务删除，不允许跨任务聚合。
+- Assumptions / Definitions：对称、diag=x、每个真/假齐次列；0P={0}；新系统显式有理表示。不是只给每个旧literal各自条件点的非对称N₀。
+- Scope / Conclusion：正文式(3)给准确真/补列检查等价式；式(4)是更强的充分条件。只核给定R，不提供寻找R算法，也不保证旧可行性自动带来新列可行性。
+- Dependencies：原始LS对称列定义、同任务互斥、对称整块求和、凸锥求和。完整证明见正文§1–2；无近似算法前提。
+- Evidence：两名内部研究者先盲重构后核冻结正文；调度专用实例的Fraction实际聚合另在双路程序检查。有限证据不替代代数证明。
+- Counterevidence / Objections：非对称系统不能默用整块恒等式；额外分支专用约束须实际放进P′检查。单机均匀族说明新列容量并不免费成立。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准凸锥代数接口，不称新算法。
+- Related Files：research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md§1–2；research/reviews/unrelated_machines/symmetric_moment_reset_review.md；专用程序/证据从正文§8进入。
+
+## UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1：单机既定矩推前的2T阈值与同边际T修复
+
+- Exact Statement / Quantifiers：For each q>=2, m=2q,n=2q^2 identical jobs p=1/q,T=OPT=1, the uniform balanced true-optimum moment matrix needs exactly 2q absorbed jobs for some deterministic single-machine fallback pushforward to satisfy residual true/false capacities. Every c<2q and every fallback fail. At c=q balanced groups, the same first moment Rx has a rebuilt true residual T-distribution, in deterministic bit-polynomial time.
+- Objects / Domain：§1明确的有界有理onehot多面体P、对称证书对(x,Y)、给定任务选择聚合R；阈值族q≥2、m=2q、n=2q²、p=1/q、T=OPT=1。
+- Assumptions / Definitions：证书包含对称、diag=x、每个真/假齐次列；负结论固定旧真实均匀最优分布，只重定向旧删机choices，其他choices不变。包固定不是对旧分布条件化。
+- Scope / Conclusion：聚合只给可检查充分条件，不寻找R；阈值精确限制既定RYRᵀ。c=q时相同Rx能重建真实残余T矩，不可写Rx∉N(P′)。
+- Dependencies：UM-MODEL-v1；原始LS定义；onehot互斥/对称块求和、均匀二点概率与Hall计数。一般证明见正文§2–6，复杂度§7。
+- Evidence：冻结独立审查、两路Fraction核验；q2原2520调度枚举及同base真实匹配分解。有限运行不替代全称证明。
+- Counterevidence / Objections：q=1必须排除阈值下界；允许重新求矩/改其他机器choices未被排除；同一个Rx有正面修复，无层级gap、无一般算法困难性。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；部分实现仅限显式族；主目标OPEN。
+- Related Files：research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md；research/reviews/unrelated_machines/symmetric_moment_reset_review.md；两份symmetric_reset审计、examples/unrelated_machines/symmetric_reset_q2.json、evidence/certificates/unrelated_machines/symmetric_reset_q2_recoupling.json、evidence/runs/unrelated_machines/symmetric_moment_reset_audit.json。

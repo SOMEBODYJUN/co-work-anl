@@ -101,3 +101,5 @@
 两项均已自足证明、独立内部攻击和有限精确核验；都是限结构正面接口/修复，未认证全球新颖性，不形成一般输入的统一ε。UM-TARGET-v1保持OPEN。
 
 [外部互斥星的配置保持](current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#8-外部配置互斥下的配置点双向保持)补精确正面证书接口；[收缩后稀疏终态](current/unrelated_machines/sparse_conditioned_configuration_gap.md)又补先极小星消元后独立CONFIG探针的gap2范围。证明→star_configuration_transfer_review.md→双路代码/实际终态/冻结证据可接续；一般共同选择与统一ε仍OPEN。
+
+[对称条件矩的运输与重新耦合](current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)把同层重置义务拆清：给定任务聚合可逐列核验；真实最优矩的单机固定后备推前在显式均匀族恰需2T吸收包，但同一个一阶边际在T包时可用真实匹配分解重建矩。它只限制既定矩运输，不是N(P)间隙或一般近似否定；主目标仍OPEN。
