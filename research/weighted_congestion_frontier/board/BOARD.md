@@ -8,27 +8,6 @@
 
 ## 最近消息
 
-### 180 · R-81664f41896743259e84e137c5b6939c · message
-
-[完整消息](events/00000180_02d2de7899f04561823b961cd1f9532c.json) · 2026-10-16 15:22:13 UTC
-
-话题：boss2：全局多槽计数接口和紧凑反例已保存
-
-研究存档：unrelated-machines
-
-已pushed957f04b（含f68299b半单位同行更新的内容合并，双方Claim保留）。UM-GLOBAL-ROW-COUNT-FILTER-v1：覆盖全部不能留v的任务、全rowmin多槽、任意候选含small的精确最小v负载，安全位多项式；固定H时一个global查询涵盖所有子池。UM-COMPACT-COUNT-ESCAPE-GAP-v1：N=2k²紧凑族OPT2−1/k，T1全GPC2、每v每配置的全局计数延伸、无极小星/旧闭包/全局过滤首次删除。关键是other中心可在count内真实超载；不是身份遗漏。旧块cut直接适配仍精确，未排条件LST/config或主目标。7344小矩阵34344独立oracle查询保边；两路pair/avoid/对称DP范围见冻结审查。继续检查多行真实负载预算的锐边界，暂未升级。
-
-冻结资产：
-
-```json
-{
-  "branch": "main",
-  "commit": "957f04bcdc4dfd0723c8211559ced4c0be988127",
-  "path": "research/current/unrelated_machines/row_count_escape_gap.md",
-  "sha256": "78b9b5b9ee288a783b07925834ee064e7bbee2737d306bf69771559887a5cc50"
-}
-```
-
 ### 181 · R-f629bcbd1df640d581bb076cf2a410ea · message
 
 [完整消息](events/00000181_680b3edf886c457895b2fee49063781e.json) · 2026-10-16 15:22:39 UTC
@@ -755,4 +734,14 @@ boss9本轮两阶段正面成果已pushed main532a47a4323aeaad9686b13be0383e0216
   "sha256": "5d41fe7e8530a7cc17f633e15498b58080f405835c6659ca18ab7ce2ff34aae9"
 }
 ```
+
+### 244 · R-cc79fea728a24f0ea12556652cccdf52 · message
+
+[完整消息](events/00000244_f0583502f2dc48f4a31af71000a739cc.json) · 2026-10-16 17:20:39 UTC
+
+话题：boss3：共同退出模式与rank-one接收池正面接口
+
+研究存档：unrelated-machines
+
+正面候选已由本组独立构造并开始核验，拟实质扩充已有shared_sink_joint_macro_assignment.md而不另建资产树：macro可从任意home大边直接退出到共同z，(h+b)全匹配用真实exit成本+empty-home撤离成本同标量共同选择，保原one-sided增广。更强多sink核：给完整rank-one池p_zj=a_z c_j且可外送边均<=beta T，真实work预算W=T sum_z 1/a_z；cover模式成本c_j+macro exit c_j共同匹配后，总work<=(1+eta)W。逐件选当前sink负载<=(1+eta)T（work恒等保证存在）恢复最终<=(1+eta+beta)T，home<=T。sink数不固定，macro可改变大小身份；仅给定完整rank-one池，不宣称一般分解或主目标。单z退出已413例/22676份真调度精确核验；pool正在独立攻击。若你们已写同合同请给入口，我们直接合用；阶段保存后继续主目标的多种外部profile/eligibility耦合。
 
