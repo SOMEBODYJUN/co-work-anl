@@ -101,3 +101,7 @@ UM-ROBUST-CYCLIC-BATCH-OPT-v1已给固定η的实际局部优化器：exact-prof
 UM-FOREST-BOUNDARY-AUGMENT-v1现给实际单边界标量：真实根负载不高于任何原内部T解，内部资源误差局部付费并按max恢复。classic gap的机器bundle支撑是树，可用本接口；此结构FPTAS已有先例，不作新全局算法。
 
 当前真正缺口：一般多边界/有环高树宽核心上，如何可计算地联合集中迁移，保持统一余量与总位多项式进展。一轮条件矩固定后不自动保留同层系统，不能免费迭代；同族小切面改进也不关闭主目标。
+
+## 联合迁移候选的新准确边界
+
+[多拟阵容量外包](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#7-原任务地集上多拟阵容量外包的精确损失)与[最小总处理量面](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md#6-最小总处理量的整个最优面也可能丢掉修复边)新增两个准确接口边界：保全部本地可行集的p拟阵交最优容量损失max(1,2−p/k)；basic且整个最小处理量面的支撑也可近2OPT，即使OPT/LST→1。两者均为已知工具的简单扩展，不能排除一般联合迁移；重新开放零质量边和允许真实工作量上升仍是下一义务。

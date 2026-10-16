@@ -101,3 +101,10 @@ GHMR版的失败：占位任务都新增共同z上的1/2小边，故不再属于
 尝试保持给定x的行计数/负载，靠重排、偏移或固定额外槽改善。私有sink把整组OPT撤离在均匀边际中稀释为每sink负载1/r；固定a,b包络只准floor(ak/r+b)项，B所在home仍趋2。失败在输出合同阻止集中迁移，不在x松弛低估OPT。
 
 取消逐次row界后，同sink pair-NC仍使碰撞对不足；期望/尾界与尖锐分布见optimal_hull_marginal_rounding_barrier.md。回收精确放大量与碰撞预算；换x、正相关迁移/选态未被排除。forest_boundary_contraction.md允许整批修复这些森林，故不作一般困难性。其单标量不适用于未证的多边界情形。
+
+
+## 完整保留背包的固定数量拟阵交及精确总工作量保持
+
+本轮实际尝试以原任务拟阵接口协调多源分流/合流。匹配可保身份，但一般背包若完整外包成p个拟阵交，单重件+k小件的最小最坏容量恰max(1,2−p/k)；固定p仍趋2。失败是局部接口强度不足，不是匹配安全性错误。回收精确分类、命中集公式和随p增长的锐门槛；辅助元素、选择性profile及全局择优未排除。见minimal_star_contraction_and_capacity_gap.md§7及UM-KNAPSACK-MATROID-ENVELOPE-v1。
+
+另一补救猜想是选assignment-LP basic或最小真实工作量点，再保支撑/冻积分任务/精确不增总工作量。跨机小扰动使整个最小工作量面都丢掉必须用的边，尽管OPT/LST→1；相对OPT的输出比仍趋2。属于输出合同失败，不是一般下界差距。回收显式basic点和精确工作量修复阶梯：允许m−1件重开后仅增(m−1)/m工作量即OPT，相对成本增幅趋0，故不能否定任何固定乘法成本余量。见optimal_convex_fixed_slot_gap.md§6及UM-MIN-WORK-FACE-SUPPORT-GAP-v1。

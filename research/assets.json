@@ -4975,6 +4975,69 @@
       ],
       "candidates": [],
       "limit": "Given forest only, no general structure-selection or cyclic/multi-boundary core algorithm. Runtime poly(L,1/eta); known DP interface, novelty unverified."
+    },
+    {
+      "id": "um_knapsack_matroid_envelope_v1",
+      "claims": [
+        "UM-KNAPSACK-MATROID-ENVELOPE-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "For all integers k,p>=1, on one weight-1 item and k weight-1/k items, the minimum over all p same-ground-set matroids whose common independent sets contain every weight<=1 subset of the maximum common-independent-set weight equals max(1,2-p/k), and is attained by partition matroids. A uniform bound 2-epsilon requires p>=ceil(epsilon*k) on this family.",
+        "Only complete local outer envelopes on the original ground set and guarantees for every common independent set; does not force a global algorithm to choose a bad set or exclude auxiliary elements, projections, bases or selective profiles."
+      ],
+      "produces": "原任务地集上多拟阵容量外包的精确损失",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/knapsack_matroid_envelope_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/knapsack_matroid_envelope_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/minimal_star_capacity_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/goemans_2011_matroid_optimization_notes.pdf"
+      ],
+      "limit": "Only complete local outer envelopes on the original ground set and guarantees for every common independent set; does not force a global algorithm to choose a bad set or exclude auxiliary elements, projections, bases or selective profiles. Known-tool extension; no novelty certification."
+    },
+    {
+      "id": "um_min_work_face_support_gap_v1",
+      "claims": [
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "For every m>=2 the positive finite m-machine home-penalty family has OPT=m+1/m and T_LST=m. At T=OPT every minimum-total-processing-time assignment-LP point has the same support and every supported integer assignment has makespan 2m-1; the face contains an explicit vertex of the original LP. Exact nonincreasing total-work schedules have the same bad value. With integer q>=0 small off-home moves allowed, the exact optimum is max(2m-1-min(q,m-1),m+1/m).",
+        "The family is not the true-optimal-convex-hull contract and no configuration-LP face is asserted. Changing objective/support or allowing positive total-work increase is unrestricted; no fixed relative cost-relaxation obstruction or general scheduling hardness."
+      ],
+      "produces": "最小总处理量整个最优面的支撑损失",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/minimum_work_face_audit.py",
+        "tests/audits/unrelated_machines/minimum_work_face_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/minimum_work_face_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/optimal_convex_slot_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "limit": "The family is not the true-optimal-convex-hull contract and no configuration-LP face is asserted. Changing objective/support or allowing positive total-work increase is unrestricted; no fixed relative cost-relaxation obstruction or general scheduling hardness. Known-tool extension; no novelty certification."
     }
   ]
 }

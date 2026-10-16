@@ -7352,6 +7352,57 @@
         "evidence/runs/unrelated_machines/forest_boundary_downward_audit.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-KNAPSACK-MATROID-ENVELOPE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "原任务地集上多拟阵容量外包的精确损失",
+      "detail": "For all integers k,p>=1, on one weight-1 item and k weight-1/k items, the minimum over all p same-ground-set matroids whose common independent sets contain every weight<=1 subset of the maximum common-independent-set weight equals max(1,2-p/k), and is attained by partition matroids. A uniform bound 2-epsilon requires p>=ceil(epsilon*k) on this family.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "research/reviews/unrelated_machines/minimal_star_capacity_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-KNAPSACK-MATROID-ENVELOPE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "原任务地集上多拟阵容量外包的精确损失的有限精确审计",
+      "detail": "Finite exact audit at the recorded scope, not a universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "tests/audits/unrelated_machines/knapsack_matroid_envelope_independent.py",
+        "evidence/runs/unrelated_machines/knapsack_matroid_envelope_audit.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "UM-MIN-WORK-FACE-SUPPORT-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "最小总处理量整个最优面的支撑损失",
+      "detail": "For every m>=2 the positive finite m-machine home-penalty family has OPT=m+1/m and T_LST=m. At T=OPT every minimum-total-processing-time assignment-LP point has the same support and every supported integer assignment has makespan 2m-1; the face contains an explicit vertex of the original LP. Exact nonincreasing total-work schedules have the same bad value. With integer q>=0 small off-home moves allowed, the exact optimum is max(2m-1-min(q,m-1),m+1/m).",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "research/reviews/unrelated_machines/optimal_convex_slot_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-MIN-WORK-FACE-SUPPORT-GAP-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "最小总处理量整个最优面的支撑损失的有限精确审计",
+      "detail": "Finite exact audit at the recorded scope, not a universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "tests/audits/unrelated_machines/minimum_work_face_audit.py",
+        "tests/audits/unrelated_machines/minimum_work_face_independent.py",
+        "evidence/runs/unrelated_machines/minimum_work_face_audit.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -17663,6 +17714,93 @@
       "statement": "成功不等于原T精确可行，根b可>T。单边界承重，多边界不能逐坐标min；已有bounded-treewidth FPTAS是背景，未认证接口新颖性。",
       "refs": [
         "research/current/unrelated_machines/forest_boundary_contraction.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "DERIVES-UM-KNAPSACK-MATROID-ENVELOPE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-KNAPSACK-MATROID-ENVELOPE-v1",
+      "statement": "Self-contained proof with all declared premises; standard-tool direct extension, not an approximation breakthrough.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECKS-UM-KNAPSACK-MATROID-ENVELOPE-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-KNAPSACK-MATROID-ENVELOPE-AUDIT-v1"
+      ],
+      "conclusion": "UM-KNAPSACK-MATROID-ENVELOPE-v1",
+      "statement": "Actual finite checks only; the all-parameter result comes from proof.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "evidence/runs/unrelated_machines/knapsack_matroid_envelope_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMITS-UM-KNAPSACK-MATROID-ENVELOPE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-KNAPSACK-MATROID-ENVELOPE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only complete local outer envelopes on the original ground set and guarantees for every common independent set; does not force a global algorithm to choose a bad set or exclude auxiliary elements, projections, bases or selective profiles.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "DERIVES-UM-MIN-WORK-FACE-SUPPORT-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-MIN-WORK-FACE-SUPPORT-GAP-v1",
+      "statement": "Self-contained proof with all declared premises; standard-tool direct extension, not an approximation breakthrough.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECKS-UM-MIN-WORK-FACE-SUPPORT-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-AUDIT-v1"
+      ],
+      "conclusion": "UM-MIN-WORK-FACE-SUPPORT-GAP-v1",
+      "statement": "Actual finite checks only; the all-parameter result comes from proof.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md",
+        "evidence/runs/unrelated_machines/minimum_work_face_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMITS-UM-MIN-WORK-FACE-SUPPORT-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MIN-WORK-FACE-SUPPORT-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "The family is not the true-optimal-convex-hull contract and no configuration-LP face is asserted. Changing objective/support or allowing positive total-work increase is unrestricted; no fixed relative cost-relaxation obstruction or general scheduling hardness.",
+      "refs": [
+        "research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md"
       ],
       "status": "method boundary"
     }

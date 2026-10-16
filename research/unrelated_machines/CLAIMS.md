@@ -521,3 +521,27 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：成功不等于原T精确可行，根b可>T。单边界承重，多边界不能逐坐标min；已有bounded-treewidth FPTAS是背景，未认证接口新颖性。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；未外审，Truth/Value/Novelty/Mechanism/Ambition分列正文。
 - Related Files：research/current/unrelated_machines/forest_boundary_contraction.md；research/reviews/unrelated_machines/forest_boundary_contraction_review.md；代码/输入/证据精确路径见正文。
+
+## UM-KNAPSACK-MATROID-ENVELOPE-v1：原任务地集上多拟阵容量外包的精确损失
+
+- Objects / Domain / Definitions：E={h,s1,...,sk}, capacity T=1, positive rational weights 1 and 1/k; F is the intersection of p independence families on exactly E.
+- Quantifiers / Exact Statement：For all integers k,p>=1, on one weight-1 item and k weight-1/k items, the minimum over all p same-ground-set matroids whose common independent sets contain every weight<=1 subset of the maximum common-independent-set weight equals max(1,2-p/k), and is attained by partition matroids. A uniform bound 2-epsilon requires p>=ceil(epsilon*k) on this family.
+- Assumptions / Scope：Only complete local outer envelopes on the original ground set and guarantees for every common independent set; does not force a global algorithm to choose a bad set or exclude auxiliary elements, projections, bases or selective profiles.
+- Conclusion：Sharp local capacity-envelope tradeoff, with a hitting-set identity for every admissible matroid tuple.
+- Dependencies：UM-MODEL-v1; self-contained elementary classification/counting and sharp constructions in the account.
+- Evidence：Complete stated-scope proof; independent statement-first reconstruction then frozen attack; exact finite audit at the scope in the new record.
+- Counterevidence / Objections：No remaining fatal objection at the frozen version. Only complete local outer envelopes on the original ground set and guarantees for every common independent set; does not force a global algorithm to choose a bad set or exclude auxiliary elements, projections, bases or selective profiles.
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified; known-tool direct extension, not a new approximation algorithm or certified independent publication result.
+- Related Files：[minimal_star_contraction_and_capacity_gap.md](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md), research/reviews/unrelated_machines/minimal_star_capacity_review.md, tests/audits/unrelated_machines/knapsack_matroid_envelope_independent.py, evidence/runs/unrelated_machines/knapsack_matroid_envelope_audit.json.
+
+## UM-MIN-WORK-FACE-SUPPORT-GAP-v1：最小总处理量整个最优面的支撑损失
+
+- Objects / Domain / Definitions：m>=2, B costs m everywhere; m-1 small jobs per home cost 1 at home and 1+1/m elsewhere; assignment LP with cutoff T and objective W=sum p*x.
+- Quantifiers / Exact Statement：For every m>=2 the positive finite m-machine home-penalty family has OPT=m+1/m and T_LST=m. At T=OPT every minimum-total-processing-time assignment-LP point has the same support and every supported integer assignment has makespan 2m-1; the face contains an explicit vertex of the original LP. Exact nonincreasing total-work schedules have the same bad value. With integer q>=0 small off-home moves allowed, the exact optimum is max(2m-1-min(q,m-1),m+1/m).
+- Assumptions / Scope：The family is not the true-optimal-convex-hull contract and no configuration-LP face is asserted. Changing objective/support or allowing positive total-work increase is unrestricted; no fixed relative cost-relaxation obstruction or general scheduling hardness.
+- Conclusion：Near-2 support loss despite OPT/T_LST tending to 1; explicit basic witness and exact work-versus-makespan repair staircase.
+- Dependencies：UM-MODEL-v1, UM-ST-ROUND-v1; self-contained elementary classification/counting and sharp constructions in the account.
+- Evidence：Complete stated-scope proof; independent statement-first reconstruction then frozen attack; exact finite audit at the scope in the new record.
+- Counterevidence / Objections：No remaining fatal objection at the frozen version. The family is not the true-optimal-convex-hull contract and no configuration-LP face is asserted. Changing objective/support or allowing positive total-work increase is unrestricted; no fixed relative cost-relaxation obstruction or general scheduling hardness.
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified; known-tool direct extension, not a new approximation algorithm or certified independent publication result.
+- Related Files：[optimal_convex_fixed_slot_gap.md](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md), research/reviews/unrelated_machines/optimal_convex_slot_review.md, tests/audits/unrelated_machines/minimum_work_face_audit.py, tests/audits/unrelated_machines/minimum_work_face_independent.py, evidence/runs/unrelated_machines/minimum_work_face_audit.json.

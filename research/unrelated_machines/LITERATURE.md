@@ -55,3 +55,7 @@ Bamas, *Lift-and-Project Integrality Gaps for Santa Claus*, [arXiv:2406.18273v2]
 Jansen–Maack–Solis-Oba, [Structural Parameters for Scheduling with Assignment Restrictions](https://arxiv.org/abs/1701.07242)，arXiv1701.07242v1，Theorem3（印页/PDF3）和§3末Results（印页/PDF11）给一般R∥Cmax在常数dual/incidence treewidth时的FPTAS。原始19页PDF已取得；投稿2017-01-25与PDF内部2018-10-08分开，hash见manifest的JMS2017_structural。只核相关陈述/机制，不声称全部证明已内化。[森林边界正文](../current/unrelated_machines/forest_boundary_contraction.md)自行证明根负载支配和恢复，未认证新颖性。
 
 固定最优边际的舍入边界另核ST1993图1、印页464–465经典tight例；与私有sink新scope比较见[正文§9](../current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md)。SV2005单任务加性sharpness不升级为所有算法不可能。
+
+## 原任务拟阵容量外包的标准背景
+
+Goemans, [MIT18.433拟阵讲义](https://math.mit.edu/~goemans/18433S11/matroid-notes.pdf)，2011-03-16 Handout9，第1页定义/partition例及第4页Theorem4.1唯一回路性质已核。15页原始PDF字节与hash见manifest；当前star正文第7节由augmentation自行证明所需特例及锐容量权衡，不认证新颖性或一般调度结论。

@@ -105,3 +105,30 @@ m=1、2、3 分别枚举全部 1、16、19683 个调度，得到最优调度数 
 最终代码位于正文所链的三份tests/audits/unrelated_machines/文件，原scratch路径只记录首轮冻结来源。规范主审计调用真实rounding_and_gap.py，独立槽审计不导入它或主审计，Hamming审计又不导入前两份。boss7已在规范路径重跑三份代码并独立验证m3输入、全部最优分量、覆盖匹配负载和跨槽修复证书。精确代码hash、命令、参数/seed、Python版本及实际结果统一冻结于evidence/runs/unrelated_machines/optimal_convex_slot_gap_audit.json；该记录的有限范围不扩大一般证明或外审状态。
 
 最终独立复核回执：原盲重构审查者已完整读取最终规范正文并自行计算SHA256，确认`8bbc487e1d4d4f69a0755e92e7f1f803217d63dd52b774a3a6f4eb42a7847f9c`；原ID仅1–3、派生修复另立身份，量词、任意ties、Hamming两分支及主目标OPEN限制均与已审数学一致。前述身份异议已关闭，无新增fatal objection。
+
+## 增补：最小总处理量面与 basic 支撑障碍的独立冻结审查
+
+审查身份：boss7 内部研究者 `joint_repair`。审查顺序确认为：先仅接收 m 机 home-penalty 构造及待证精确结论，在未读 adaptive 草稿及本节正文时，独立推导 OPT、LST 阈值、整个最小工作量面、basic 点和 q 阶梯，并独立写出整数单位/Fraction 审计；随后才读取下述冻结正文及两份审计代码。本增补只审新第 6 节，不重新审查旧第 1–5 节真最优凸包结果。
+
+### 冻结对象与范围
+
+* 正文：`research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md` 第 6 节；读取时整文件 SHA256 `100b50fefe91906fa63d85b9ba4b56690455b92d6e9c47b9663ffce3b9bfd0a9`。
+* 主审计：`tests/audits/unrelated_machines/minimum_work_face_audit.py`，SHA256 `55695ebf87c1e85c8f84cf6cf54a717e8390614da9e336e70f1f7f8b2349ce59`。
+* 第二审计：`tests/audits/unrelated_machines/minimum_work_face_independent.py`，SHA256 `02bbe8c6de0bc3a50ba1741ed618eb9543a17fd4f1f7a748d20060d50bd386c1`。
+* 精确身份 `UM-MIN-WORK-FACE-SUPPORT-GAP-v1`：m>=2 的正、有限处理时间构造；剪枝 assignment LP 在 T=真实 OPT 的整个最小真实总工作量面；全部正支撑整数分配及精确成本保持分配的坏值；原 LP basic 点；允许整数 q>=0 件 small 离 home 的锐修复阶梯。没有导入配置 LP 或真最优凸包前提。
+
+### 独立重构与针对性攻击
+
+1. **真实 OPT 和 LST 阈值。** B 机若有 small，负载至少 m+1>m+1/m；若无 small，至少 m−1 个 home-small 外迁，其他 m−1 台上的 small 总负载至少 m(m−1)+(m−1)/m，平均 m+1/m。正文达到调度匹配该下界。T<m 时 B 被剪除；T=m 的 home-small+B 均匀点可行，且所有原边已存活。未把真实 OPT 的改善误说成 LP 值近 2 的间隙。
+2. **整个面与统一支撑。** 恒等式 W(x)=m²+(1/m)S(x) 对任何 assignment-LP 点成立。S>=0 且 home-small+B 均匀点在 T=OPT 可行，因此最优面恰为 S=0 加 B 的 capped simplex。每个 b_i>=1−(m−1)(m+1)/m²=1/m²>0，故不仅某个坏点，而是全体最优点和整个面的支撑并集，都没有 small 跨机边且包含全部 B 边。支撑内整数分配的 makespan 恒为 2m−1，无需依赖槽平局或成本平局。
+3. **原 LP 的 basic 性。** 正支撑恰 m² 变量。全部任务等式与前 m−1 个 tight load 等式在这些列上满秩：先固定所有 small 方向，再固定前 m−1 个 B 方向，最后任务等式固定剩余方向。加全部零变量的活跃非负约束后确实是原可行多面体顶点。独立标准形重构加入最后一行 slack，所得方阵绝对行列式为 m^(m−1)，最后 slack=1；不是只验证成本面内的顶点。
+4. **q=0、q>=m−1 与工作量解释。** q 明确为非负整数。q=0 的构造没有接收机，最大负载仍恰 2m−1，公式中的第二项不会变成虚假上界，因为 m>=2 时 2m−1>=m+1/m。q>=m−1 时由 min 截断，已有 m−1 次迁移达到真实 OPT。成本恒等式也对实际调度成立，所以“至多 q 件离 home”等价于 W<=m²+q/m。最后的成本乘法松弛范围备注正确：完整修复只增 (m−1)/m，总成本相对增幅 (m−1)/m³ 趋 0，不能据本例否定固定正乘法松弛。
+5. **来源和模型边界。** 实际读取 manifest 中 SHA256 为 `a7495d8be833d156aa9b4ce9c9c0615a7d333f484f7ced3515275b37880669c1` 的 ST1993 原 PDF 印页 464 图 1 及 465 末段。前者的 m 机概括确为一个大小 m 的任务、m(m−1) 个单位任务，积分 small-home 加均匀 B；后者明确指出积分坐标保持及该例的渐近 tight 性。新内容是严格正跨机扰动导致整个最小真实工作量面共同丢失边；正文没有把经典机制或简单线性代数称作原创近似下界。该面也不是本文件旧真最优调度凸包的对象：真实 OPT 调度必须有至少 m−1 次 small 外迁，而本面 S=0。delta=0 时整个最优面断言失效，m=1 被明确排除；本正值反例不改动一般模型的零值、空任务或不可用边合同。
+
+### 实际核验与结论
+
+两份冻结审计均由本审查者重跑，输出到 scratch 新文件，没有覆盖冻结证据。主者 m=2,3,4 的完整 home-count 状态数依次为 8、648、640000，覆盖标号分配的对称类；第二者直接枚举 m=2,3 的全部 8、2187 个标号分配，两者均通过。basic 活跃秩核到 m=2,...,8；主程序还实际构造其所列 m 参数的 ST 槽覆盖，δ=0、δ=1 的有限边界检查均通过。
+
+此外，审查者在读冻结稿前编写的 `joint_repair_scratch/home_penalty_assignment_face_audit.py`（SHA256 `e2c0cdc8f2164cd94fd4a3f5bb4a465b539f2f2094726f998aa7fe8bc489fc00`）独立枚举 m=2,3 的标号分配及全部 q 预算，以标准形行列式重建 m=2,...,8 的 basic 证书，并核对大 m 显式迁移/反算。全部为整数/Fraction。该 scratch 文件不是长期共同证据的必要依赖；规范两份代码及冻结运行已覆盖正文所需有限审计范围。有限核验不承担 m 全称证明。
+
+**结论：本次冻结第 6 节在所述合同内未发现仍成立的 fatal objection，内部独立重构/攻击通过。** 主目标仍 OPEN；没有审查一般配置 LP 初始化、其他目标、重新开放零质量边或允许工作量增加的一般修复，也未认证全球新颖性、独立论文价值或外部同行评审。

@@ -99,3 +99,5 @@ WC-TARGET v1的长期身份仍是刻画全类门槛a_*(d)，未改写原陈述�
 [需求树与真实调度的直接桥梁](research/current/unrelated_machines/rooted_dag_degree_token_bridge.md)给精确OPT=2−截断需求比例、实际双向构造与二进制大需求压缩。它把一般联合迁移的必要能力写成可复用输入；属于已知MMDA机制重构，主目标仍OPEN。
 
 [真实最优边际的舍入断点](research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md)给固定row/count包络sup2及同sink pair负相关的尖锐期望/尾界；x本可为真实OPT调度的显式平均。[单边界森林批量恢复](research/current/unrelated_machines/forest_boundary_contraction.md)给实际根负载支配、内部(1+η)T和max恢复，无深度累计。后者是已知结构DP机制的接口化；一般多边界/有环核心与统一ε仍OPEN。
+
+[原任务拟阵容量外包](research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#7-原任务地集上多拟阵容量外包的精确损失)与[整个最小总处理量面的支撑边界](research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md#6-最小总处理量的整个最优面也可能丢掉修复边)给联合迁移接口的两个锐限制。一般构造仍须重开原零质量边、允许接收机增载并共同守容；两项均未给新近似比或新颖性认证。

@@ -89,3 +89,5 @@
 [有向需求树与不相关机负载的精确桥梁](current/unrelated_machines/rooted_dag_degree_token_bridge.md)把MMDA已知必要方向重构为无需配置枚举的实际任务输入，含最优值恒等、大需求填充、有限阈值及总位复杂度；用于检验联合迁移的资源相容性。
 
 [真实最优边际的舍入断点](current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md)给固定row/count包络sup2及同sink pair负相关的尖锐期望/尾界；x本可为真实OPT调度的显式平均。[单边界森林批量恢复](current/unrelated_machines/forest_boundary_contraction.md)给实际根负载支配、内部(1+η)T和max恢复，无深度累计。后者是已知结构DP机制的接口化；一般多边界/有环核心与统一ε仍OPEN。
+
+[原任务拟阵容量外包](current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#7-原任务地集上多拟阵容量外包的精确损失)与[整个最小总处理量面的支撑边界](current/unrelated_machines/optimal_convex_fixed_slot_gap.md#6-最小总处理量的整个最优面也可能丢掉修复边)给联合迁移接口的两个锐限制。一般构造仍须重开原零质量边、允许接收机增载并共同守容；两项均未给新近似比或新颖性认证。
