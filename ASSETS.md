@@ -15,4 +15,4 @@
 
 来源从 history 按需追溯。过时整理稿、交接副本和旧导出已退出当前树；不可变恢复入口在 [retired_snapshots](history/source/notes/retired_snapshots.md)。新成果遵守 [GROWTH](research/GROWTH.md) 与 [生产/读取/保存流程](research/REPOSITORY_GUIDE.md)。
 
-协作制度与产品设计另见 [AI Co-Mathematician 全量设计总稿](design/AI_Co_Mathematician_master.md)及[手动 Work 与 GitHub 的实际适配方案](design/work_github_adaptation.md)。前者保留原始产品意图和未决项，后者逐节区分现有能力、协作替代和待施工接口；二者不是数学命题、证明或已实现功能的凭证。
+协作制度的当前优先设计见[大规模共同研究方案](design/large_scale_research_collaboration.md)，附本地规格模型与有限核对结果。原[全量总稿](design/AI_Co_Mathematician_master.md)按收益取用，[前一阶段逐节适配](design/work_github_adaptation.md)保留原能力核对；这些设计不是数学命题、证明或已实现功能的凭证。

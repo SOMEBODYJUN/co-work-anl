@@ -1,5 +1,7 @@
 # 手动 Work 对话与 GitHub 共同研究：总稿逐项适配方案
 
+后续用户已将主目标明确为大规模共同研究，并允许按实际收益选择采用原稿。当前优先设计见[大规模协作方案](large_scale_research_collaboration.md)；本页保留前一阶段逐节能力核对，不再要求当前工程完整迁移总稿。
+
 本文是针对现有使用条件的**实施建议与能力核对**，不是功能已经实现的声明，也不把建议升级为用户裁决。完整产品意图以[全量设计总稿](AI_Co_Mathematician_master.md)及用户后续明确纠正为准。原总稿按上传原件逐字节保存；原件 SHA-256 为 `70db712ad5d884e2474b57f122e45c36838671516c30edd3c4c7f26a6707ae3d`。
 
 本次核对的实际仓库基线为 `eec21343f8ada10f41d3f784bc28e68cfe1a71b6`。检查了根四入口、AGENTS、GROWTH、REPOSITORY_GUIDE、现行协作协议和 work.py、board.py、checkpoint.py。这里只评价协作能力，不重新评定数学结果或论文价值。

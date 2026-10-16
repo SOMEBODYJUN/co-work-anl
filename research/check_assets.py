@@ -144,7 +144,8 @@ def check() -> None:
     root_docs = {".gitignore", "AGENTS.md", "README.md", "ASSETS.md", "USAGE.md",
                  "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md",
                  "design/AI_Co_Mathematician_master.md",
-                 "design/work_github_adaptation.md"}
+                 "design/work_github_adaptation.md",
+                 "design/large_scale_research_collaboration.md"}
     unknown = {p for p in tracked if p.split("/", 1)[0] not in roots
                and p not in root_docs}
     require(not unknown, ("unclassified repository files", sorted(unknown)))
