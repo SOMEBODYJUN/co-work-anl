@@ -33,3 +33,6 @@ WC-TARGET v1原身份保持刻画a_*(d)。新下界d/10与另列Paper Fact的一
 研究状态、证明、内审、外审、实现和新颖性分开记录。按[研究生产规则](research/REPOSITORY_GUIDE.md)维护正文、精确账本、数学图、目录与入口，运行相应核验并通过work.py checkpoint普通推送main；远端送达和数学验收分别核对。
 
 不相关并行机的独立配置＋逐边普通LST路线新增稀释终端gap2；在条件探针内保留大任务基数可以准确识别该族。详见[正文与下一义务](research/current/unrelated_machines/diluted_sink_probe_gap.md)，未得统一改善算法。
+
+
+共享小端与稀释终端组合已进一步反驳“配置＋GHMR＋全部普通LST边探针”这一必要证书合取的统一阈值改善；主目标仍OPEN，条件内更强约束尚未被排除。

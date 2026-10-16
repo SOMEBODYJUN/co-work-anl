@@ -266,3 +266,16 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：尚无其与配置可行性合取后的全类统一余量或一般构造；本文旧反例不是对该更强合同的反例。
 - Status：完整所述范围证明、内部独立已审；外审/新颖性未认证，未宣称新算法近似比。
 - Related Files：[正文§9](../current/unrelated_machines/diluted_sink_probe_gap.md#9-多项式的加强探针准确识别本族)、[审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)。
+
+
+## UM-DILUTED-ESCAPE-PROBE-GAP-v1：共享逃逸与全部普通边探针的共同间隙2
+
+- Exact Statement / Quantifiers：∀整数k≥4，正文§11的显式新实例P̂_k在T=1+1/k配置可行，全部有限边（含新增z边）分别有x_ij=1的同目标剪枝LST点，既有GHMR及本页星匹配均首轮零删除，而OPT=2−1/k。因此这四种独立必要证书合取/迭代的相对阈值sup gap=2。
+- Objects / Domain / Definitions：UM-MODEL-v1；UM-DILUTED-SINK-PROBE-GAP-v1的每个阻塞任务另加同一z上1/2边；GHMR精确采用UM-HEAVY-MATCH-FILTER-v1；不同条件点不要求共享分布。
+- Assumptions / Scope：k≥4保证h≥3；阻塞任务有N+1个可用机器，有限时间{1/k,1/2,1}；不含强制后嵌套GHMR、条件配置LP或条件大任务基数。
+- Conclusion：∀固定ε>0，∃上述通过全部测试的(P,T)而OPT>(2−ε)T；未否定OPT相对算法或UM-TARGET-v1。
+- Dependencies：UM-MODEL-v1、UM-DILUTED-SINK-PROBE-GAP-v1的底座证书、UM-ESCAPE-MATCH-GAP-v1的共享小端机制、现行GHMR合同；上界另用UM-ST-ROUND-v1；新增边后整数下界重新证明。
+- Evidence：至少四活跃底簇的一般证明、全部边分类证书、先独立重构后冻结攻击；k4主审计全部4914边LST点/星、4394 GHMR查询、实际规范GHMR零删除；独立102条件点及全部匹配重算。
+- Counterevidence / Objections：同行随B重算的条件块切面Z_g≥(r_B−1)Y_v仍识别此族：本N终端组同样最多N−d个单位blockers留终端；见UM-ESCAPE-BLOCK-CUT-v1，未另报为新定理。第9节底座准确阈值不自动推广到此变体。
+- Status：完整所述合同反例、内部独立已审；外审/全球新颖性未认证，主目标OPEN。
+- Related Files：[正文§11](../current/unrelated_machines/diluted_sink_probe_gap.md#11-共享小端与稀释终端的共同探针边界)、[两阶段审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)、diluted_escape_probe_gap.py与independent_diluted_escape_audit.py及冻结结果。

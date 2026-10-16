@@ -4584,7 +4584,8 @@
       "claims": [
         "UM-HEAVY-ALTERNATIVE-FILTER-v1",
         "UM-DILUTED-SINK-PROBE-GAP-v1",
-        "UM-BIG-CARDINALITY-PROBE-v1"
+        "UM-BIG-CARDINALITY-PROBE-v1",
+        "UM-DILUTED-ESCAPE-PROBE-GAP-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
@@ -4592,7 +4593,7 @@
         "general safety includes zero/empty; gap family k>=4 with multi-eligible blockers",
         "independent per-edge LST certificates are not conditioned configuration certificates"
       ],
-      "produces": "Safe star interface, reusable capacity-dilution lemma, gap2 after independent config and all edge-LST tests, stronger polynomial cardinality probe detecting the explicit family",
+      "produces": "Safe star interface, reusable capacity-dilution lemma, gap2 after independent config and all edge-LST tests, stronger polynomial cardinality probe detecting the explicit family; shared-escape extension also passes current GHMR and all ordinary edge LST probes",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/diluted_sink_probe_gap.md"
@@ -4602,11 +4603,15 @@
       ],
       "tests": [
         "tests/audits/unrelated_machines/diluted_sink_probe_gap.py",
-        "tests/audits/unrelated_machines/independent_dilution_audit.py"
+        "tests/audits/unrelated_machines/independent_dilution_audit.py",
+        "tests/audits/unrelated_machines/diluted_escape_probe_gap.py",
+        "tests/audits/unrelated_machines/independent_diluted_escape_audit.py"
       ],
       "records": [
         "evidence/runs/unrelated_machines/diluted_sink_probe_gap_audit.json",
-        "evidence/runs/unrelated_machines/independent_dilution_audit.json"
+        "evidence/runs/unrelated_machines/independent_dilution_audit.json",
+        "evidence/runs/unrelated_machines/diluted_escape_probe_gap_audit.json",
+        "evidence/runs/unrelated_machines/independent_diluted_escape_audit.json"
       ],
       "examples": [],
       "reviews": [
@@ -4615,7 +4620,7 @@
       "candidates": [
         "research/questions/unrelated_machines/barrier_escape_obligations.md"
       ],
-      "limit": "No uniform approximation, hardness, hierarchy gap or degree-two assertion for modified family; no generic LP implementation; novelty unverified."
+      "limit": "No uniform approximation, hardness, hierarchy gap or degree-two assertion for modified family; no generic LP implementation; novelty unverified. Shared escape credits boss3; conditional cardinality/configuration and nested GHMR are not refuted."
     }
   ]
 }

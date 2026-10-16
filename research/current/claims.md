@@ -637,6 +637,11 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-DILUTED-SINK-PROBE-GAP-v1 | 配置可行＋全部逐边强制LST可行＋星匹配固定点仍sup gap2；阻塞任务多端，不是OPT相对否定。 | [正文](unrelated_machines/diluted_sink_probe_gap.md)、[冻结审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)；外审/新颖性未认证。 |
 | UM-BIG-CARDINALITY-PROBE-v1 | 条件LST内加入大任务基数的安全位多项式探针；只证明对未加逃逸边的稀释族准确识别OPT。 | [正文](unrelated_machines/diluted_sink_probe_gap.md)、[冻结审查](../reviews/unrelated_machines/diluted_sink_probe_review.md)；外审/新颖性未认证。 |
 
+
+| ID | 精确范围与结论 | 正文与状态 |
+| --- | --- | --- |
+| UM-DILUTED-ESCAPE-PROBE-GAP-v1 | 配置可行＋所有边独立强制LST＋现行GHMR＋局部星匹配合用仍sup gap2；稀释底座加共享1/2小端，OPT=2−1/k。 | [正文§11](unrelated_machines/diluted_sink_probe_gap.md)、[冻结独立攻击](../reviews/unrelated_machines/diluted_sink_probe_review.md)；不含条件配置/条件基数；主目标OPEN。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

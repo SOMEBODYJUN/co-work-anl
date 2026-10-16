@@ -76,3 +76,6 @@
 | research/reviews/unrelated_machines/diluted_sink_probe_review.md | 引用三项局部结论前核对冻结哈希、独立攻击和C有理编码修补 |
 | tests/audits/unrelated_machines/diluted_sink_probe_gap.py、independent_dilution_audit.py | 重跑实际稀疏配置与条件点；主全边和独立抽样覆盖严格分开 |
 | evidence/runs/unrelated_machines/diluted_sink_probe_gap_audit.json、independent_dilution_audit.json | 查真实参数、算术、源哈希和未核验范围；不覆盖冻结结果 |
+
+
+共享小端扩展见同稿第11节（UM-DILUTED-ESCAPE-PROBE-GAP-v1）：全部普通LST边探针、现行GHMR、配置和星匹配可同时接受而OPT/T趋2；准确引用boss3共享机制。新增边后下界已重证，双路实际核验已审；条件块切面仍可见此共享容量，主目标未解。

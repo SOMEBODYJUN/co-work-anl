@@ -6818,6 +6818,33 @@
         "evidence/runs/unrelated_machines/independent_dilution_audit.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-DILUTED-ESCAPE-PROBE-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共享小端与全部普通逐边探针共同保留间隙2",
+      "detail": "Diluted sink plus common1/2 escape: config, every forced-LST edge, GHMR and star stable; OPT/T tends2. Does not refute conditioned config/cardinality or nested filtering.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md",
+        "research/reviews/unrelated_machines/diluted_sink_probe_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-DILUTED-ESCAPE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "共享逃逸稀释族全部边探针与规范GHMR交叉核验",
+      "detail": "Expandedk4:all4914LSTpoints,all4394GHMRmatchingqueries; independent102points/allmatchingchecks; k4..64formulaonly.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md",
+        "tests/audits/unrelated_machines/diluted_escape_probe_gap.py",
+        "tests/audits/unrelated_machines/independent_diluted_escape_audit.py",
+        "evidence/runs/unrelated_machines/diluted_escape_probe_gap_audit.json",
+        "evidence/runs/unrelated_machines/independent_diluted_escape_audit.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -16328,6 +16355,54 @@
         "evidence/runs/unrelated_machines/independent_dilution_audit.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "DERIVE-UM-DILUTED-ESCAPE-PROBE-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-DILUTED-SINK-PROBE-GAP-v1",
+        "UM-ESCAPE-MATCH-GAP-v1",
+        "UM-HEAVY-MATCH-FILTER-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-DILUTED-ESCAPE-PROBE-GAP-v1",
+      "statement": "Reprove integer lower bound after adding shared small escape; retain old config/LST points and construct every new escape point, all GHMR/star witnesses; ST gives upper2.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-DILUTED-ESCAPE-PROBE-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DILUTED-ESCAPE-AUDIT-v1"
+      ],
+      "conclusion": "UM-DILUTED-ESCAPE-PROBE-GAP-v1",
+      "statement": "Exact finite actual-vector and independent matching checks; no universal theorem follows from computations.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md",
+        "evidence/runs/unrelated_machines/diluted_escape_probe_gap_audit.json",
+        "evidence/runs/unrelated_machines/independent_diluted_escape_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-DILUTED-ESCAPE-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DILUTED-ESCAPE-PROBE-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Only independent certificate conjunction is refuted; within-condition cardinality/configuration, nested filters and other algorithms remain unrefuted.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_sink_probe_gap.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }
