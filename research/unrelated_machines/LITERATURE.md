@@ -112,3 +112,7 @@ Magniez等，[递归多数原始PDF](https://arxiv.org/pdf/1309.7565)，§2.2 PD
 Lok–Romero Morales–Vermeulen (2005)，[大学原PDF](https://cris.maastrichtuniversity.nl/ws/files/1037187/guid-9485980d-bc86-4240-b008-d8fb2096cc3d-ASSET1.0.pdf)，§3.2印p5/PDF6为job-only资源消耗；§6.3 Theorem6.2/Cor6.3印pp17–18/PDF18–19为机集合次模。Kulik等ESA2019，[正式PDF](https://drops.dagstuhl.de/storage/00lipics/lipics-vol144-esa2019/LIPIcs.ESA.2019.69/LIPIcs.ESA.2019.69.pdf)，§2.1.1/Theorem1及§3为共同job大小下的item子集LP值次模。两者仅为相关祖先，不当作任意异端p容量格定理；[本阶段自足证明](../current/unrelated_machines/residual_throughput_and_occupation_projection.md)自行处理对偶格封闭。仅web定位读原PDF，未物化字节/填写hash或宣称完整内化；Topkis原件没有被本阶段读取，全球新颖性未认证。
 
 既有Karp1972再版原文新增用途：[树估值minorant域](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)的标准Independent Set源。root重新渲染PDF14/原印94核Main Theorem与item3 CLIQUE，补图保阈值；只导入标准NP完全性，不称本轮重构Karp全证明，不复制另一份扫描。该计算障碍不属于makespan近似困难性。
+
+## 近单位promise源的原始定理与普通扇出边界
+
+新增原件：BBKO arXiv1811.00970v3，73页，Def5.16/Prop5.17在PDF33/印33给strong C-fixing minion criterion；KKR arXiv1602.03124v6，33页，Thm7/8 PDF5/印0:5仅普通edge-CSP；Feder作者原PS12页，Theorems3–4印8–11的clauses/minimal-support/三坐标机制。root及独立审查实际读取相关范围，原字节/hash见manifest；未宣称重构所有外部证明。当前[自足PCSP正文](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)导入BBKO，另外两源只核ordinary→promise迁移不能免费成立。Feder期刊2001元数据与未注明日期的作者PS版本分开；不把转制PDF冒原件。

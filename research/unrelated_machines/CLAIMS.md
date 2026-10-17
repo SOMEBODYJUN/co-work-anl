@@ -1969,3 +1969,25 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Evidence / Counterevidence or Objections：陈述先行与后读冻结证明内部攻击；没有实现BLMRS通用算法；图族LPgap2不反驳相对OPT近似。
 - Status：限定证明完整与独立攻击通过；数学归约与实际σ构造可算，source算法未集成。外审/新颖性未认证，主目标正反面不变。
 - Related Files：[正文](../current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)、[实际审查](../reviews/unrelated_machines/uniform_port_parking_matroid_review.md)、`tests/audits/unrelated_machines/cotransversal_uniform_configuration_gap.py`、`evidence/runs/unrelated_machines/cotransversal_uniform_configuration_gap_audit.json`。
+
+## UM-NEAR-UNIT-PCSP-EXACT-MINION-v1：近单位蕴含promise的精确winning-set minion
+
+- Exact Statement / Conclusion：固定k≥2、1≤r≤k−1时，Pol恰为非空单调相交winning族且全部minwinner大小≤k−r；同一minwinner双侧fixing，不保证bounded essential arity。
+- Objects / Domain / Quantifiers：固定k≥2、1≤r≤k−1，底集0/1；全部正有限arity函数/全部一般PCSP实例；变量可任意重复，无physical次数/类型保证。
+- Assumptions / Definitions：strict b0或≥k−1 out，weak b0或≥r out，加exact AMO2/ONE；单调winning族、minimal指inclusion-minimal。
+- Scope：unrestricted source；不是实际UM gap，不是主目标反面。
+- Dependencies：仅显式模板与正文自足有限矩阵证明。
+- Evidence / Counterevidence or Objections：实际先陈述独立重构、原始定理相关页读取、后读canonical攻击；r1 purearc flow与一般hard不矛盾；ordinaryFeder投影的weak cube不能补物理编译。
+- Status：限定证明完整、内部独立攻击通过；没有新实现/有限审计，外审/新颖性未认证，physical compiler OPEN。
+- Related Files：[自足正文](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、[实际审查](../reviews/unrelated_machines/near_unit_implication_pcsp_review.md)、原始文献与manifest。
+
+## UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1：强fixing导入的一般PCSP困难性
+
+- Exact Statement / Conclusion：对每个固定k,r，A_k→B_k,r加exact AMO2/ONE的unrestricted PCSP NP-hard；没有保持physical two-occurrence/端口类型的归约。
+- Objects / Domain / Quantifiers：固定k≥2、1≤r≤k−1，底集0/1；全部正有限arity函数/全部一般PCSP实例；变量可任意重复，无physical次数/类型保证。
+- Assumptions / Definitions：strict b0或≥k−1 out，weak b0或≥r out，加exact AMO2/ONE；标准deterministic polynomial many-one promise hardness；P≠NP仅无poly求解器推论使用。
+- Scope：unrestricted source；不是实际UM gap，不是主目标反面。
+- Dependencies：UM-NEAR-UNIT-PCSP-EXACT-MINION-v1及BBKO v3 Def5.16/Prop5.17；identity homomorphism与固定C共同满足。
+- Evidence / Counterevidence or Objections：实际先陈述独立重构、原始定理相关页读取、后读canonical攻击；r1 purearc flow与一般hard不矛盾；ordinaryFeder投影的weak cube不能补物理编译。
+- Status：限定证明完整、内部独立攻击通过；没有新实现/有限审计，外审/新颖性未认证，physical compiler OPEN。
+- Related Files：[自足正文](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、[实际审查](../reviews/unrelated_machines/near_unit_implication_pcsp_review.md)、原始文献与manifest。

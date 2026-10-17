@@ -104,3 +104,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 [逐行均匀相关读出](research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md)新增限定身份 `UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2` 与 `UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`：共享同一左标签仍有逐点ceil-half共同资源匹配；其显式平层原矩阵可完整输出三二调度。非均匀、重复自查询、多层祖先约束及一般UM正反面不在此结论内；外审和新颖性未认证。
 
 [私有分叉树估值与支持域](research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)新增精确signed demand、全叶XOS包络损失k[1−(1−1/k)^h]及single-state紧凑minorant LP；显式叶预算最大损失阶logB/loglogB。一般源计算gap和共同资源分配未由这些oracle解决；generic LP优化未实现，外审与新颖性未认证。
+
+[近单位蕴含PCSP](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)另给精确minion及所有固定k,r的一般NP-hardness；变量任意出现、无物理编译承诺，不能升级UM-TARGET-v1反面。

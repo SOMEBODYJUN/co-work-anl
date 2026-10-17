@@ -113,3 +113,5 @@
 pDM阈值桥的[合入审查](research/reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md)保留原v1完整源域及gap方向异议：非退化固定参数域的算术内核成立，但尚未写显然NO/空YES合法分支；加一是NO下界。合法编译另由已有槽定理给(1,1+1/d) promise边界。原v1暂记条件性，不以默补假设维持完整归约状态。
 
 [显式树源表示](research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)已区分精确需求与共同资源分配，并量化XOS下包络损失；它是反面归约工具，不是主目标正反证明。
+
+[一般近单位promise源](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)的strong-fixing困难性已闭合，真实任务类型/全机负载/source decoder仍未闭合。两端三型与native多端one-hot/one-cold都是可研究接口；没有把two-occurrence或DAG设为主目标限制。

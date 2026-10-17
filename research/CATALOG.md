@@ -659,6 +659,16 @@
 | [余横截统一配置族的完整Fraction构造器](<../tests/audits/unrelated_machines/cotransversal_uniform_configuration_gap.py>) | `tests/audits/unrelated_machines/cotransversal_uniform_configuration_gap.py` | 生成全部P/config/σ和真实mandatory匹配，D3/D4有限Hall审计。 | 有限计算核验；不代替一般证明；关联 `UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1`，[命题合同](assets.json) |
 | [余横截配置锐化族的冻结完整证书](<../evidence/runs/unrelated_machines/cotransversal_uniform_configuration_gap_audit.json>) | `evidence/runs/unrelated_machines/cotransversal_uniform_configuration_gap_audit.json` | 保留D3/D4完整原P、配置覆盖、所有单C/边际匹配及完整σ；非一般困难性。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1`，[命题合同](assets.json) |
 
+### near_unit_pcsp
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [近单位蕴含PCSP的精确minion与物理复制义务](<current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md>) | `research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md` | 读取已证明的一般源hardness、尚未保持的实际次数/类型及ordinary fanout塌陷。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同](assets.json) |
+| [近单位PCSP先陈述后证明的实际独立攻击](<reviews/unrelated_machines/near_unit_implication_pcsp_review.md>) | `research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md` | 核iff全量词、BBKO准确版本、三型任务语义、grid公式与未完成compiler。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同](assets.json) |
+| [BBKO2019代数PCSP原始v3](<../history/source/literature/unrelated_machines/barto_bulin_krokhin_oprsal_2019_algebraic_pcsp_v3.pdf>) | `history/source/literature/unrelated_machines/barto_bulin_krokhin_oprsal_2019_algebraic_pcsp_v3.pdf` | 只按原字节读取Def5.16/Prop5.17及适用条件；不称重构全PCP证明。 | 来源或历史判断；不作为现行结论；关联 `UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同](assets.json) |
+| [KKR2018偶delta-matroid原始v6](<../history/source/literature/unrelated_machines/kazda_kolmogorov_rolinek_2018_even_delta_matroids_v6.pdf>) | `history/source/literature/unrelated_machines/kazda_kolmogorov_rolinek_2018_even_delta_matroids_v6.pdf` | 核普通edge-CSP Theorem7/8的准确条件，防止错导promise硬度。 | 来源或历史判断；不作为现行结论；关联 `UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同](assets.json) |
+| [Feder扇出限制的作者原始PostScript](<../history/source/literature/unrelated_machines/feder_fanout_limitations_author_original.ps>) | `history/source/literature/unrelated_machines/feder_fanout_limitations_author_original.ps` | 保原PS而不替换成转制PDF；读取Theorems3–4印8–11的ordinary fanout步骤。 | 来源或历史判断；不作为现行结论；关联 `UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同](assets.json) |
+
 <a id="weighted_congestion"></a>
 
 ## 加权原子拥塞博弈

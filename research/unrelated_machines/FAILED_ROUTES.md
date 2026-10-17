@@ -317,3 +317,7 @@ u_t) 的一般复杂度。
 ## 统一端口数量加unit parking不能把fractional gap升级成实际hardness
 
 [同一结构的两份合同](../current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)：每C vacancy-independent且uniform边际属于P(M)仍有1/D共同保留；但真实最佳保留β*可由published two-value polymatroid算法常数近似，普通UM得到2−1/(4+η)。失败是把βLP1误当完整integer YES。可回收精确OPT=2−β*、Rado计数和显式Hall家族；重试需真正退出该合同，不把更多aux/大LPgap当新计算障碍。
+
+## Ordinary non-delta扇出不能原样保近单位promise
+
+[精确源与塌陷公式](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)区分一般PCSP真NP-hard和物理编译缺口。pin一out0、量化k−3个out，strict为b⇒y=z1，weak为b⇒y+z≥max(0,r−k+3)；r≤k−3后weak完全无约束。失败是把ordinary最小support在weak端也当最小，不否定更大promise gadget、实际循环或多尺度设计。可回收精确strongfixing源与三型合法任务语义，重试必须给共同source decoder。

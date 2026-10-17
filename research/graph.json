@@ -10113,6 +10113,100 @@
         "tests/audits/unrelated_machines/cotransversal_uniform_configuration_gap.py"
       ],
       "status": "finite exact check; not universal proof"
+    },
+    {
+      "id": "UM-NEAR-UNIT-PCSP-TEMPLATE",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "近单位蕴含一般promise模板",
+      "detail": "固定k,r，A_k→B_k,r及exact AMO2/ONE，无变量次数/端口类型保证。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-SOURCE-BBKO-STRONG-FIXING",
+      "kind": "source",
+      "track": "unrelated_machines",
+      "title": "BBKO强fixing的一般PCSP困难性判据",
+      "detail": "v3 Def5.16/Prop5.17，固定C Boolean minion homomorphism给NP-hard；target statement读取。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+        "history/source/literature/unrelated_machines/barto_bulin_krokhin_oprsal_2019_algebraic_pcsp_v3.pdf"
+      ],
+      "status": "Paper Fact; targeted primary theorem read only"
+    },
+    {
+      "id": "UM-SOURCE-KKR-ORDINARY-EDGE-CSP",
+      "kind": "source",
+      "track": "unrelated_machines",
+      "title": "KKR转述Feder普通edge-CSP定理",
+      "detail": "v6 Thm7，双unary常量、ordinaryCSP硬及non-delta；不是promise typed theorem。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+        "history/source/literature/unrelated_machines/kazda_kolmogorov_rolinek_2018_even_delta_matroids_v6.pdf"
+      ],
+      "status": "Paper Fact; targeted primary theorem read only"
+    },
+    {
+      "id": "UM-SOURCE-FEDER-ORDINARY-FANOUT",
+      "kind": "source",
+      "track": "unrelated_machines",
+      "title": "Feder作者原PS的普通扇出机制",
+      "detail": "Theorems3–4印8–11，clauses/minimal support/三坐标/循环均为ordinary setting。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+        "history/source/literature/unrelated_machines/feder_fanout_limitations_author_original.ps"
+      ],
+      "status": "Paper Fact; targeted primary theorem read only"
+    },
+    {
+      "id": "UM-NEAR-UNIT-PHYSICAL-JOB-TYPES",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "普通UM三型两端任务的Boolean语义",
+      "detail": "smallunit out-in EQ、unitunit in-in NEQ、smallsmall out-out NEQ；不提供out-out EQ。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-NEAR-UNIT-PHYSICAL-COPY-OBLIGATION",
+      "kind": "obligation",
+      "track": "unrelated_machines",
+      "title": "近单位一般源到实际UM的共同复制和解码",
+      "detail": "必须保任务两端/类型/全机负载/位poly，任意低C实际σ解码sourceweak；尚未构造。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+        "research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md"
+      ],
+      "status": "OPEN physical compiler obligation"
+    },
+    {
+      "id": "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "近单位蕴含promise的精确winning-set minion",
+      "detail": "固定k≥2、1≤r≤k−1时，Pol恰为非空单调相交winning族且全部minwinner大小≤k−r；同一minwinner双侧fixing，不保证bounded essential arity。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+        "research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md"
+      ],
+      "status": "complete stated-scope proof; independent statement-first and read-after review; no physical compiler or novelty certification"
+    },
+    {
+      "id": "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "强fixing导入的一般PCSP困难性",
+      "detail": "对每个固定k,r，A_k→B_k,r加exact AMO2/ONE的unrestricted PCSP NP-hard；没有保持physical two-occurrence/端口类型的归约。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+        "research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md"
+      ],
+      "status": "complete stated-scope proof; independent statement-first and read-after review; no physical compiler or novelty certification"
     }
   ],
   "hyperedges": [
@@ -24920,6 +25014,72 @@
         "evidence/runs/unrelated_machines/cotransversal_uniform_configuration_gap_audit.json"
       ],
       "status": "finite exact checks"
+    },
+    {
+      "id": "um_near_unit_pcsp_exact_minion_derivation",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NEAR-UNIT-PCSP-TEMPLATE"
+      ],
+      "conclusion": "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1",
+      "statement": "AMO/ONE、repeated superset列、minimal删除列与active rows unionbound完整给iff及双侧fixing。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+        "research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_near_unit_pcsp_hardness_derivation",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NEAR-UNIT-PCSP-TEMPLATE",
+        "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1",
+        "UM-SOURCE-BBKO-STRONG-FIXING"
+      ],
+      "conclusion": "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1",
+      "statement": "C=k−r固定正数，identity minion homomorphism给一般PCSP NP-hard；无physical transfer。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+        "research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md"
+      ],
+      "status": "complete stated-scope paper corollary"
+    },
+    {
+      "id": "um_near_unit_pcsp_to_physical_open",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NEAR-UNIT-PCSP-EXACT-MINION-v1",
+        "UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1",
+        "UM-NEAR-UNIT-PHYSICAL-JOB-TYPES",
+        "UM-SOURCE-KKR-ORDINARY-EDGE-CSP",
+        "UM-SOURCE-FEDER-ORDINARY-FANOUT"
+      ],
+      "conclusion": "UM-NEAR-UNIT-PHYSICAL-COPY-OBLIGATION",
+      "statement": "一般hardness与ordinary fanout不自动保promise/两端类型；r≤k−3三坐标投影weak变full cube，主decoder仍缺。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+        "research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md"
+      ],
+      "status": "open transfer; no main-target conclusion"
+    },
+    {
+      "id": "um_near_unit_physical_main_scope",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NEAR-UNIT-PHYSICAL-COPY-OBLIGATION"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只有真正完成r2任意大固定k的物理compiler才由grid ratio2−3/(k+1)足够反面；此compiler未完成。",
+      "refs": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md",
+        "research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md"
+      ],
+      "status": "conditional sufficiency; target remains open"
     }
   ]
 }

@@ -44,3 +44,5 @@
 [私有分叉树估值与支持域](../../../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)新增精确signed demand、全叶XOS包络损失k[1−(1−1/k)^h]及single-state紧凑minorant LP；显式叶预算最大损失阶logB/loglogB。一般源计算gap和共同资源分配未由这些oracle解决；generic LP优化未实现，外审与新颖性未认证。
 
 [统一端口与全局单位停车](../../../current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)把每C独立仍1/D共同保留的显式余横截CONFIGgap，与BLMRS两值polymatroid算法给同结构真实2−1/(4+η)近似分开；D不统一或非单位停车未覆盖，通用算法未实现。
+
+[近单位蕴含promise与物理复制](../../../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)给精确minion及所有固定k,r的一般PCSP NP-hardness，ordinaryFeder三坐标步骤在weak端可塌成full cube；真实两端/类型/全机decoder仍OPEN，不升级主反面。

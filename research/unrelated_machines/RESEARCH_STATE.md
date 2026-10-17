@@ -409,3 +409,7 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 ## 统一D的全局单位停车已由published算法封闭
 
 [余横截与真实算法](../current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)证明纯fractional边际即使每个full配置独立仍可只保1/D、普通UM配置gap趋2；但相对真实OPT的统一D类通过BLMRS Theorem4已有2−1/(4+η)实际近似。继续near2反面必须改变统一D/可压缩资源机制或给真正新的source gap；更多unit parking aux不能免费提供hardness。
+
+## 真正一般源hardness与实际compiler分开
+
+[近单位PCSP](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)已闭合unrestricted A_k→B_r+AMO/ONE的精确minion与NP-hardness；BBKO强fixing来源准确，非bounded-essential论据。物理小大/大大/小小三型分别给out-in EQ、in-in NEQ、out-out NEQ。仍缺任意weak实际σ的source decoder及每job两端/总位poly compiler。若r2可保到任意大固定k，grid ratio2−3/(k+1)足够主反面；这是未完成条件，不是已构造归约。

@@ -1127,6 +1127,9 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1 | D≥3,m=D+1显式余横截状态族 | 显式D≥3,m=D+1族，每C独立M且uniform边际属于P(M)，但最优min保留1/D；普通UM有Tconf1、真OPT2−1/D。 | [正文](unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)、内部陈述先行/读后审查；有限证书实现。 |
 | UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1 | 共同D≥1平层ports+任意外部unit aux，固定η | 统一D、固定外资源ports、任意mandatory unit aux且parents/external分离时，由BLMRS Thm4得实际2−1/(4+η)近似；Baux≥2或U空分支精确。 | [正文](unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)、内部陈述先行/读后审查；published算法未集成。 |
 
+| UM-NEAR-UNIT-PCSP-EXACT-MINION-v1 | 固定k≥2,r∈[1,k−1]；一般Boolean约束无次数/类型承诺 | 固定k≥2、1≤r≤k−1时，Pol恰为非空单调相交winning族且全部minwinner大小≤k−r；同一minwinner双侧fixing，不保证bounded essential arity。 | [正文](unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、陈述先行/读后独立审查；physical compiler OPEN。 |
+| UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1 | 固定k≥2,r∈[1,k−1]；一般Boolean约束无次数/类型承诺 | 对每个固定k,r，A_k→B_k,r加exact AMO2/ONE的unrestricted PCSP NP-hard；没有保持physical two-occurrence/端口类型的归约。 | [正文](unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、陈述先行/读后独立审查；physical compiler OPEN。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
