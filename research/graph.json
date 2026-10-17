@@ -8481,9 +8481,10 @@
       "kind": "claim",
       "track": "unrelated_machines",
       "title": "四阶 C₂ 与深层真前缀容量的锐利信息边界",
-      "detail": "同一6任务/2机器矩阵的偶奇五位真实T=1可行分布全部≤4阶矩相同，但深度四前缀的下一步容量相反，需五阶矩。",
+      "detail": "修复见证为7任务3机器、四零前缀、一个单位A/B任务、一个零任务及C单位2锚；真实OPT2的偶奇来源有共同四阶表，F下完整B负载0/1；只限源信息，允许重耦合。",
       "refs": [
-        "research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md"
+        "research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md",
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
       ],
       "status": "complete stated-scope proof; internally exactly enumerated; external review and novelty unverified"
     },
@@ -8586,7 +8587,7 @@
       "kind": "claim",
       "track": "unrelated_machines",
       "title": "k-均匀资源束分层匹配地板",
-      "detail": "b*=max_t min(nu_t/q,t/K)，必须同时控制所有j-of-k层。",
+      "detail": "b*=max_t min(nu_t/q,t/K)，必须同时控制所有j-of-k层；固定K,delta的直接YES/NO bundle接口在delta<1/(floor(K delta)+2)时可被极大匹配多项式地区分。",
       "refs": [
         "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md"
       ],
@@ -8851,6 +8852,33 @@
       "status": "complete stated-scope obstruction; exact finite audit; external review and novelty unverified"
     },
     {
+      "id": "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单任务外接端口的向下投影与复制锐界",
+      "detail": "两一致态强制2^z(2^a+2^b−1)严格状态；固定T>0逐参数锐，k≥2单翻位混合。",
+      "refs": [
+        "research/current/unrelated_machines/signed_one_job_port_downset.md",
+        "research/reviews/unrelated_machines/signed_one_job_port_downset_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-SIGNED-ONE-JOB-PORT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "单任务端口双路实际分配审计",
+      "detail": "有限Fraction枚举、零权锐例、已有见证单翻位及私有外host完整σ；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/signed_one_job_port_downset.md",
+        "tests/audits/unrelated_machines/signed_one_job_port_downset.py",
+        "tests/audits/unrelated_machines/signed_one_job_port_independent.py",
+        "evidence/runs/unrelated_machines/signed_one_job_port_downset_audit.json",
+        "examples/unrelated_machines/signed_one_job_port_sharp_profiles.json"
+      ],
+      "status": "finite exact checks; not a general proof"
+    },
+    {
       "id": "UM-SQRT-MULTIPLICITY-FLOOR-v1",
       "kind": "claim",
       "track": "unrelated_machines",
@@ -8872,6 +8900,898 @@
         "research/current/unrelated_machines/santa_conditional_reverse_barrier.md"
       ],
       "status": "conditional logic complete; bit-growth applicability open; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-TWO-YES-AVAILABILITY-INTERFACES-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "三外接预载与三特殊物品的两实际YES接口",
+      "detail": "分别定义基础任务固定的三host独立空/满预载和一般非负加性SC三特殊item可用性；两输入见证均为实际整数分配，不承诺寻找未知YES。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "三外接机器可用性选择器的锐三半逃逸",
+      "detail": "对任意内部机器及三不同外host a,b,c，基础任务/资格固定，非负二进制有理时间，阈值T≥0；blocked host加不可迁移预载T且原边仍可用，free预载0，内部无额外预载。若only-a和b+c-free各有实际完整总C≤T调度，则only-b或only-c至少一侧有实际完整C≤3T/2调度。给两YES可确定性总位多项式输出该侧、全部σ及负载，系数每T>0精确锐。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "research/reviews/unrelated_machines/three_host_majority_selector_review.md"
+      ],
+      "status": "complete stated-scope proof; independently attacked and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-TWO-YES-SC-DUPLICATION-HALF-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "三物品可用性复制的无条件锐半值",
+      "detail": "至少一参与者的一般非负有理加性Santa Claus，普通物品始终可用、三不同特殊item A,B,C；ordinary+A和ordinary+B+C各有minvalue≥1实际分配，则ordinary+B或ordinary+C至少一侧有minvalue≥1/2实际分配。给两YES可确定性总位多项式输出；特殊及ordinary正度任意，half由单agent数值1,1/2,1/2锐。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "research/reviews/unrelated_machines/three_host_majority_selector_review.md"
+      ],
+      "status": "complete stated-scope proof; independently attacked and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-THREE-HOST-MAJORITY-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "二色选择器的实际调度与物品分配精确审计",
+      "detail": "规范仅核三host；独立SC/补集实际调度；完整原矩阵最优值oracle与受测规范输出。分别声明有限范围，不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "tests/audits/unrelated_machines/three_host_majority_selector.py",
+        "tests/audits/unrelated_machines/three_host_and_santa_majority_independent.py",
+        "tests/audits/unrelated_machines/three_host_selector_optimum_independent.py",
+        "evidence/runs/unrelated_machines/three_host_selector_majority_audit.json",
+        "examples/unrelated_machines/three_host_selector_sharp_profiles.json"
+      ],
+      "status": "finite exact checks; not a general proof"
+    },
+    {
+      "id": "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "Santa restricted边界与token桥梁非保真",
+      "detail": "restricted Santa要求同一物品所有非零端点值相同；需求k>1的桥梁任务含1/k与1，因此不能直接导入restricted常数结果。",
+      "refs": [
+        "research/current/unrelated_machines/santa_restricted_bridge_boundary.md",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "complete stated-scope model boundary; primary source targeted read; novelty unverified"
+    },
+    {
+      "id": "UM-DUPLICATION-TWO-COPY-FLOOR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两份完整复制的一半一致性地板",
+      "detail": "每份副本内部资源束不交时，对并集资源作二着色并选较大颜色类，普适输出b≥1/2；简单duplication不能把NO压到低于1/2。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_two_copy_floor.md",
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md"
+      ],
+      "status": "complete stated-scope obstruction; independent sanity check; novelty unverified"
+    },
+    {
+      "id": "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两状态残余的多数状态地板",
+      "detail": "状态内不交的残余束，较大好状态给b≥min{|G(delta)|/(2q_r),delta}；附属全K锐性已修正，主下界保持。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "tests/audits/unrelated_machines/robust_consistency_state_majority.py"
+      ],
+      "status": "complete stated-scope obstruction; finite exact audit; external review and novelty unverified"
+    },
+    {
+      "id": "UM-DUPLICATION-STATE-MAJORITY-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "两状态多数地板有限审计",
+      "detail": "34389个有限小系统检验主多数下界；单个多数侧fixture不证明混合部分束最优值。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "tests/audits/unrelated_machines/robust_consistency_state_majority.py",
+        "evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json"
+      ],
+      "status": "finite computational evidence"
+    },
+    {
+      "id": "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "可调阈值共同组的实际舍入与one-sided搜索",
+      "detail": "旧固定前缀恢复已由同行撤回；修复FPTAS上界、截断成本DP并直接恢复同一覆盖后，实际成本等于LP槽权重，原结构R*与one-sided搜索经独立复核重新闭合；一般输入结构仍缺。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md",
+        "research/questions/unrelated_machines/barrier_escape_obligations.md",
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ],
+      "status": "complete stated-scope structural proof; one-sided OPT search corrected; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "真实OPT=1的LST正支撑释放前沿",
+      "detail": "r个独立块的固定LST正支撑在少于r条零质量边释放时最优最大负载为2-1/m，释放每块一条后为1；m增长时相对OPT趋近2。",
+      "refs": [
+        "research/current/unrelated_machines/lst_support_release_optimal_gap.md",
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ],
+      "status": "complete stated-scope obstruction; exact finite audit; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-COMMON-SIZE-REOPEN-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共同尺寸微任务的可重开容量流",
+      "detail": "给定冻结核心和共同尺寸残余流证书时，允许接收机增载的有序槽整化；支持连通分量单尺寸时由整数槽流无加性损失恢复。",
+      "refs": [
+        "research/current/unrelated_machines/common_size_reopen_capacity_flow.md",
+        "research/reviews/unrelated_machines/common_size_reopen_capacity_flow_review.md"
+      ],
+      "status": "complete stated-scope interface; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-TWO-STATE-POOL-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "可裁剪标签束的残余行列池",
+      "detail": "显式s×s池、2s变量、根需求2s、标签K≥s；每变量只有一个非空行/列标签，资源真实唯一父亲。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两状态残余池的精确整数前沿",
+      "detail": "b*=max_k min(k/(2s),min(s,floor(s²/k))/K)，有实际循环达到构造；sK4为5/8，原多数下界不受影响。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "research/reviews/unrelated_machines/two_state_pool_partial_resource_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-TWO-STATE-POOL-EXACT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "残余池实际树与精确配额独立审计",
+      "detail": "两独立程序真实匹配/资源三选/循环构造，明确有限范围及旧锐性失败；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "research/reviews/unrelated_machines/two_state_pool_partial_resource_review.md",
+        "tests/audits/unrelated_machines/two_state_pool_exact_frontier.py",
+        "tests/audits/unrelated_machines/two_state_pool_partial_resource_independent.py",
+        "examples/unrelated_machines/two_state_pool_partial_tree_counterexample.json",
+        "evidence/runs/unrelated_machines/two_state_pool_exact_frontier_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-MULTI-HOST-TWO-YES-PROFILE-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "多输出独立预载与两实际YES状态模型",
+      "detail": "任意K/β、状态P_Ki以及真实μ/ν，基础任务资格固定、host预载0/T且关闭不删原边。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_fanout_profile_boundary.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "多输出两YES接口的加权构造与真实OPT总预算",
+      "detail": "q≥2个输出B、输入a及任意内部机器，基础时间/资格固定、非负二进制有理数；关闭host加不可迁移T，原有限边仍可用。给only-a与all-B-free两实际C≤T调度，对每K⊆B,k≥2和每显式有理β≥0,sum1，实际输出某i∈K状态blocked=a∪(K\\{i})的完整σ，C≤(2−β_i)T。真实最优μ_{K,i}之和≤(2k−1)T，加权星整个面精确取等。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+        "research/reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意扇出缺一状态的两两三半锐预算",
+      "detail": "同一接口下，ν_i为关闭a及b_i、其余输出free的真实OPT。任意u≠v有ν_u+ν_v≤3T，给u/v可实际构造其中之一C≤1.5T，至多一个ν_i>1.5T，且Σν_i≤1.5qT。每q≥2,T>0有degree2满二叉树使全部ν_i=1.5T，同时精确锐。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+        "research/reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-WEIGHTED-FANOUT-PROFILE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "加权扇出原矩阵及全状态预算实际核验",
+      "detail": "规范实际构造及独立完整原σ枚举；两种生成方式/树尺度和zero逻辑状态，有限证据不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+        "research/reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md",
+        "tests/audits/unrelated_machines/multi_host_weighted_fanout.py",
+        "tests/audits/unrelated_machines/weighted_fanout_profile_independent.py",
+        "examples/unrelated_machines/weighted_fanout_profile_star.json",
+        "evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-NORMALIZED-DUAL-RAIL-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "归一化双轨全类的实际三半界的精确模型",
+      "detail": "每变量两私有轨、selector两端时间1；每真实occurrence内部1/K(v,s)、外部单clause时间1/A_c，A_c≥1且arity≤2A_c−1。无额外jobs/预载/资格。任意源公式均可总位poly输出全σ且C≤3/2；存在selector时给本类3/2近似。10机15job重复occurrence例真实OPT=3/2，锐性仅为绝对T1界。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "归一化双轨全类的实际三半界",
+      "detail": "每变量两私有轨、selector两端时间1；每真实occurrence内部1/K(v,s)、外部单clause时间1/A_c，A_c≥1且arity≤2A_c−1。无额外jobs/预载/资格。任意源公式均可总位poly输出全σ且C≤3/2；存在selector时给本类3/2近似。10机15job重复occurrence例真实OPT=3/2，锐性仅为绝对T1界。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md",
+        "research/reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-SPLIT-UNIT-DUAL-RAIL-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "split unit外部容量的全类三半界的精确模型",
+      "detail": "与scalar不同的真实P：外部每clause有min(A_c,m_c)台互异unit机器、port可至其任一台且时间1；arity≤2A_c。其余归一化轨不变。任意源均可总位poly输出全σ，轨≤3/2、unit≤1；14机15job重复例真实OPT=3/2，绝对T1界锐。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "split unit外部容量的全类三半界",
+      "detail": "与scalar不同的真实P：外部每clause有min(A_c,m_c)台互异unit机器、port可至其任一台且时间1；arity≤2A_c。其余归一化轨不变。任意源均可总位poly输出全σ，轨≤3/2、unit≤1；14机15job重复例真实OPT=3/2，绝对T1界锐。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md",
+        "research/reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-WEIGHTED-EXCEPTION-DUAL-RAIL-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "非均匀内端的单例外匹配合同的精确模型",
+      "detail": "另一模型：port内部非负有理w_e、每轨总W≤1；selector1；外部统一scalar1/A、arity≤2A。给ρ≥1，空轨预处理，其余每轨指定exception满足W−w_e≤ρ−1。可总位poly完整C≤ρ且clause≤1。对ρ1，arity2A+1的两clause族真实OPT=1+1/A，显示arity假设锐。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "非均匀内端的单例外匹配合同",
+      "detail": "另一模型：port内部非负有理w_e、每轨总W≤1；selector1；外部统一scalar1/A、arity≤2A。给ρ≥1，空轨预处理，其余每轨指定exception满足W−w_e≤ρ−1。可总位poly完整C≤ρ且clause≤1。对ρ1，arity2A+1的两clause族真实OPT=1+1/A，显示arity假设锐。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md",
+        "research/reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-FULL-SIGNED-CUBE-DUAL-RAIL-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "完整符号cube的真实OPT精确前沿与近一逃逸的精确模型",
+      "detail": "归一化scalar的特殊族：A≥1,d=2A−1,k=2^(d−1)，含全部2^d符号clauses。R_B=Σ_s(s−B)_+ binom(d,s)、r_B=ceil(R_B/d)。真实OPT=min_{B=A..d}max(B/A,1+r_B/k)，可按显式展开P位poly构造。A≥2源弱阈值d−1仍NO，而OPT≤1+1/(2sqrt(d))+1/k→1。A3真实OPT9/8。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完整符号cube的真实OPT精确前沿与近一逃逸",
+      "detail": "归一化scalar的特殊族：A≥1,d=2A−1,k=2^(d−1)，含全部2^d符号clauses。R_B=Σ_s(s−B)_+ binom(d,s)、r_B=ceil(R_B/d)。真实OPT=min_{B=A..d}max(B/A,1+r_B/k)，可按显式展开P位poly构造。A≥2源弱阈值d−1仍NO，而OPT≤1+1/(2sqrt(d))+1/k→1。A3真实OPT9/8。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md",
+        "research/reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-DUAL-RAIL-THRESHOLD-BOUNDARY-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "四双轨合同的精确实际审计",
+      "detail": "全部原边/机器负载，scalar物理枚举、split模式和cube cuts分别计数，有限结果不承担一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md",
+        "research/reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md",
+        "tests/audits/unrelated_machines/normalized_dual_rail_three_halves.py",
+        "tests/audits/unrelated_machines/normalized_dual_rail_half_slot_independent.py",
+        "tests/audits/unrelated_machines/split_capacity_dual_rail_three_halves.py",
+        "tests/audits/unrelated_machines/balanced_dual_rail_fullcube.py",
+        "tests/audits/unrelated_machines/balanced_dual_rail_fullcube_independent.py",
+        "tests/audits/unrelated_machines/dual_rail_one_exception_independent.py",
+        "examples/unrelated_machines/dual_rail_scalar_and_unit_sharp_input.json",
+        "examples/unrelated_machines/dual_rail_fullcube_A3_actual_certificate.json",
+        "examples/unrelated_machines/dual_rail_exception_arity_sharp_certificates.json",
+        "evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "私有满k叉双树的完整单位slot读出",
+      "detail": "每变量一selector，两私有满树；内部父1/k子1、叶父1/k或clause私有unit；原资格恰声明边，无背景pins；A截arity。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-FULL-KARY-FIXED-DEPTH-PRUNING-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "固定原深度的恰r分叉树与叶命中",
+      "detail": "完整显式k叉深h树，叶在原深h，恰r孩子不得提前停止；q=k−r+1。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单位读出全变量必选配额森林恒等式",
+      "detail": "每变量两私有满k叉深h树；selector两根时间1、内部edge父1/k子1、leaf父1/k或本clause任一unit slot时间1。原资格恰此、slots跨clause互异无pins。对每有理1≤C<2，r=ceil(k(2−C))，真实C可行当且仅当每变量恰选一sign的深h恰r分叉森林可注入slots；给任方向见证可显式输入总位poly转另一方向。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "半密度单位读出全高度三半锐界",
+      "detail": "同一模型另有每clause arity d_c≤2A_c。任意树深和任意wiring均可确定性总位poly输出全部原jobs实际C≤1+floor(k/2)/k≤3/2，所有外unit≤1。k1非空OPT1；k2h1复用14机15job split例真实OPT3/2，使整类绝对T1界锐，不声称近似比锐。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "修剪树叶命中与虚拟叶门槛",
+      "detail": "完整k叉深h树、1≤r≤k，q=k−r+1。命中每个rooted深h恰r分叉子树的最小叶集恰q^h；不含任何该子树的叶子集最大恰k^h−q^h，所有参数锐。显式树双色DP可构造蓝r子树或红q子树；真实叶少于q^h时补集有纯dummy r子树，实际逃逸仍需外部共同容量。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-PRUNED-FOREST-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "配额森林原P、半槽与全叶染色精确核验",
+      "detail": "六完整原σ及两个同64open的真OPT对比；全变量森林提取；24/26小参数的两路穷举分开计，有限核验非一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md",
+        "tests/audits/unrelated_machines/unit_readout_two_tree_certificates.py",
+        "tests/audits/unrelated_machines/unit_readout_two_tree_independent.py",
+        "tests/audits/unrelated_machines/unit_readout_half_density_three_halves.py",
+        "tests/audits/unrelated_machines/pruned_tree_leaf_hitting.py",
+        "tests/audits/unrelated_machines/pruned_tree_leaf_hitting_independent.py",
+        "examples/unrelated_machines/unit_readout_two_tree_actual_certificates.json",
+        "evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-UNIT-READOUT-DOWNSTREAM-CARDINALITY-CERT-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "下传有理质量和整数行基数证书",
+      "detail": "selector质量和1，internal Σdown≥r−1+incoming，clauseΣleafdown≤A；L=k−r+1整数；D密度与uniform深度校准另明示。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "给定下传基数证书的校准实际槽舍入",
+      "detail": "同私有k叉双树unit读出模型，给1≤r≤k、有理edge/leaf下传t∈[0,1]、selector两根质量合1；每internal Σout t≥r−1+incoming且每clause Σleaf t≤A。可按P加见证总位长poly输出全σ，内部≤2−r/k、unit≤1。uniform x0=1/2,x_l=(r−1+xprev)/k使行取等，若d_c x_h≤A_c则所有wiring均可构造。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md",
+        "research/reviews/unrelated_machines/unit_readout_calibrated_cardinality_slots_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "固定clause密度类的统一次二算法",
+      "detail": "对每个固定有理D≥2，同unit读出模型中若全部d_c≤D A_c，存在deterministic总位poly完整σ使C≤(2−1/(4D))OPT，允许k,h无界。大k校准r=1+floor((k−1)/(2D))；小k用r1容量匹配，失败证OPT2并全parent达到。空变量OPT0。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md",
+        "research/reviews/unrelated_machines/unit_readout_calibrated_cardinality_slots_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-CALIBRATED-SLOT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "任意有理槽与固定密度的原P精确审计",
+      "detail": "两独立核、1698小原σ、522bit及5000decimal输入、所有实际目的地和负载；有限运行不承担一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md",
+        "research/reviews/unrelated_machines/unit_readout_calibrated_cardinality_slots_review.md",
+        "tests/audits/unrelated_machines/unit_readout_calibrated_cardinality.py",
+        "tests/audits/unrelated_machines/unit_readout_calibrated_independent.py",
+        "examples/unrelated_machines/unit_readout_calibrated_counterexamples.json",
+        "evidence/runs/unrelated_machines/unit_readout_calibrated_cardinality_slots_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "机器价格凸化与锐容量界",
+      "detail": "固定T角色；价格条件恰是LST+big分数基数，joint supgap2；无剪枝固定m锐界m；精确dual共同big面可恢复，但无全输入保证。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_price_convexification.md",
+        "research/reviews/unrelated_machines/heavy_light_price_convexification_review.md",
+        "tests/audits/unrelated_machines/heavy_light_price_convexification.py",
+        "evidence/runs/unrelated_machines/heavy_light_price_convexification_release_audit.json"
+      ],
+      "status": "complete direct consequence; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-HEAVY-LIGHT-PRICE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "价格凸化的独立有理原P核验",
+      "detail": "有限primal顶点/dual折点、零空/丢边/混合角色/极大分母和实际ST；小树全σ回算。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_price_convexification.md",
+        "research/reviews/unrelated_machines/heavy_light_price_convexification_review.md",
+        "tests/audits/unrelated_machines/heavy_light_price_convexification.py",
+        "evidence/runs/unrelated_machines/heavy_light_price_convexification_release_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "固定残余容量格次模与角色变化缺口",
+      "detail": "固定有限 M,R,E 与非负有理 p 下，F(c) 对实容量向量满足格次模；有理 c,d 的 LP 求值按输入位长多项式。固定占位 D 超模；H 同时改变 R 不继承。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md",
+        "research/reviews/unrelated_machines/residual_throughput_occupation_review.md",
+        "tests/audits/unrelated_machines/residual_throughput_lattice.py",
+        "tests/audits/unrelated_machines/occupation_induced_edge_deficit.py",
+        "evidence/runs/unrelated_machines/residual_throughput_lattice_release.json",
+        "evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "严格次二占位的诱导边缺口表示",
+      "detail": "固定有理 α,δ；任意显式图可实现 D=e(I) 与全部独立集，原 P 有显式 OPT=1；非-hardness。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md",
+        "research/reviews/unrelated_machines/residual_throughput_occupation_review.md",
+        "tests/audits/unrelated_machines/residual_throughput_lattice.py",
+        "tests/audits/unrelated_machines/occupation_induced_edge_deficit.py",
+        "evidence/runs/unrelated_machines/residual_throughput_lattice_release.json",
+        "evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-RESIDUAL-THROUGHPUT-OCCUPATION-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "残余格与占位公式的独立精确审计",
+      "detail": "小LP双oracle与角色原矩阵；实际图P/全σ及flow/定向交叉核对。有限证据不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md",
+        "research/reviews/unrelated_machines/residual_throughput_occupation_review.md",
+        "tests/audits/unrelated_machines/residual_throughput_lattice.py",
+        "tests/audits/unrelated_machines/occupation_induced_edge_deficit.py",
+        "evidence/runs/unrelated_machines/residual_throughput_lattice_release.json",
+        "evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两状态残余树的quota orientation等价",
+      "detail": "固定delta下，真实根树b≥delta恰等价于选变量rail、满足标签quota并令资源子集全局单射；完整支付层是2-SAT，部分支付层是quota packing。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_orientation_obligation.md",
+        "research/current/unrelated_machines/duplication_state_majority_floor.md"
+      ],
+      "status": "complete stated-scope equivalence proof; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-GLOBAL-LEAF-FLOW-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "全变量共同真实叶容量流",
+      "detail": "每变量源容量b、每原叶容量1、原clause容量A；总流必须b|V|；保留sign与真实地址，忽略祖先仅用于下界。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-COMPLETE-YES-COVER-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "同一完整P的YES选择覆盖",
+      "detail": "p份完整实际C≤1、每变量指定covered根、非空N≥p；只有指定轨叶arity有d*≤pA，另一轨可无界。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意密度完整单位树的固定高度次二近似",
+      "detail": "任意clause密度的私有双k叉深h单位读出完整模型，可确定性按显式输入总位长poly输出全部原jobs的合法σ，C≤(1+2^(−1/h))OPT；h≤固定H时统一严格小于2，h1给3/2。算法不求未知OPT；b0分支证明OPT2并全parent达到；空变量先返0。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完整YES支持的指定selector重组锐界",
+      "detail": "同一P给p≥1份完整实际C≤1调度，每变量指定一个至少在一见证采用过的selector sign；非空另需N=k^h≥p。可按P加全部见证位长poly输出满足全部指定根的完整σ，C≤2−1/(2p−1)。大k取r=floor(k/p)，小k取r1；p1直接原YES。对每p该指定profile保证精确锐，而原全局OPT1。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-GLOBAL-CONSTRUCTIVE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "完整叶流/selector重组的实际原P与独立锐证书",
+      "detail": "7+7关键规范构造，root26完整σ/1359job/5流割；独立p1..4原矩阵3002项，不做全σ枚举。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "tests/audits/unrelated_machines/unit_readout_leaf_flow.py",
+        "tests/audits/unrelated_machines/unit_readout_selector_mixing.py",
+        "tests/audits/unrelated_machines/unit_readout_selector_profile_independent.py",
+        "examples/unrelated_machines/unit_readout_selector_mixing_sharp_profiles.json",
+        "evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完整槽包络的精确调度表示与两种凸化身份",
+      "detail": "任意非负有理行的E=ΣΔp ceil(prefix x)；固定B子水平凸包恰配置多面体、至多d+1有理原子。全局min max E=OPT，可ST实际恢复；先固定B逐行凸化恰CONFIG，先凸化上图仅线性负载。",
+      "refs": [
+        "research/current/unrelated_machines/slot_envelope_and_configuration_identity.md",
+        "research/reviews/unrelated_machines/slot_envelope_identity_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "同一一阶配置与全局四阶矩合取的锐利二间隙",
+      "detail": "弱H2=C2-load(T)+共享一阶x的完整CONFIG(T)，一般正值sup OPT/T=2。k≥3,b=k²稀释资源星在T=1+(k−1)/(k²+1)有显式有理全局PSD/全localizer与同x CONFIG1，真实OPT=2−1/k。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共享行二阶矩的条件单槽容量与资源星精确阈值",
+      "detail": "若容量一行CONFIG同机pair与全局M2共享，则任意端f有Σ_row y_fe≤x_f；在同一k≥3,b=k²无z星族，共享每行二阶CONFIG的强H2阈值恰2−1/k=OPT，所有T<OPT均不可行，真实Dirac达到。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-C2-GENERAL-MULTISLICE-CONSTRUCTION-v1",
+      "kind": "construction",
+      "track": "unrelated_machines",
+      "title": "一般任务数的四阶多色slice半正定证书",
+      "detail": "整数m≥3,N≥m+1，t=N/m；μ_S=∏a(t)_{c_a}/(N)_{|S|}到四阶满足M2 PSD、one-hot与所有degree3行计数恒等式。自足radical与四块harmonic证明；不当作真实分布。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md"
+      ],
+      "status": "self-contained general construction"
+    },
+    {
+      "id": "UM-SLOT-ENVELOPE-MINIMAL-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "槽包络最小精确核对",
+      "detail": "明确有限fixture；不承担参数化普遍结论，强H2精确阈值只由证明给出。",
+      "refs": [
+        "research/current/unrelated_machines/slot_envelope_and_configuration_identity.md",
+        "tests/audits/unrelated_machines/slot_envelope_identity.py",
+        "evidence/runs/unrelated_machines/slot_envelope_identity_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "UM-WEAK-H2-MINIMAL-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "弱H2最小矩与同点配置核对",
+      "detail": "明确有限fixture；不承担参数化普遍结论，强H2精确阈值只由证明给出。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py",
+        "evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "核心私有资源全层配额与真实近二障碍",
+      "detail": "核心—私有四层需求DAG的全层ν_t闭式给b*=s/K，需求树桥梁给实际OPT=2−s/K；私有padding把基系统全部中间层soundness平移到实际任务。",
+      "refs": [
+        "research/current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md",
+        "research/reviews/unrelated_machines/cross_layer_quota_matching_review.md",
+        "tests/audits/unrelated_machines/cross_layer_quota_matching.py",
+        "evidence/runs/unrelated_machines/cross_layer_quota_matching_candidate.json"
+      ],
+      "status": "complete stated-scope obstruction; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共同大任务选择的独立集阈值障碍",
+      "detail": "全图unit宏任务、私有tiny和边tiny的精确阈值 Cmax≤alpha 恰等价大小k独立集，NO下界为min{2,alpha+h}；只限制先big后残余流接口。",
+      "refs": [
+        "research/questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md",
+        "research/reviews/unrelated_machines/independent_set_big_residual_review.md",
+        "tests/audits/unrelated_machines/independent_set_big_residual_audit.py",
+        "evidence/runs/unrelated_machines/independent_set_big_residual_audit.json",
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "candidate exact-threshold interface obstruction; internally reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "固定总工作量下凸势与排序势的近二局部极小",
+      "detail": "完全相同机器上的固定工作量族使二次势和排序势成为严格单任务局部极小，初始比值趋二且次二目标需无界批量迁移。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md",
+        "research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md",
+        "tests/audits/unrelated_machines/fixed_work_convex_local_minimum.py",
+        "evidence/runs/unrelated_machines/fixed_work_convex_local_minimum_audit.json"
+      ],
+      "status": "complete stated-scope obstruction; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两状态 quota orientation 的固定方向 Hall 切分解",
+      "detail": "固定变量子集与rail方向的资源支付恰由所有标签子集Hall邻域不等式决定；资源度二时分解为私有、内部共享和边界共享，完整支付才退化为2-SAT。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md",
+        "research/current/unrelated_machines/two_state_quota_orientation_obligation.md"
+      ],
+      "status": "complete stated-scope fixed-direction Hall expansion; global orientation remains open; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-LITERAL-LP-WITNESS-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "完整轨的共同literal LP见证",
+      "detail": "同一原P每变量y0+y1=1，所有clause Σn_cvs y_vs≤A；可求的有理全局见证，不假设真实C1存在。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "私有单位树的配置正部多面体",
+      "detail": "对完整私有单位双树，T∈[1,2)、s=floor k(T−1)，CONFIG可行恰为共同边际满足Σ(q−t)+≤sq和clause容量；显式有理分解、多项式LP及精确阈值网格。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "严格单位阈值的整轨LP五三间隙算法",
+      "detail": "CONFIG1等价整轨literal LP；可行时多数轨active-only槽输出全部原jobs C≤5/3，偶k≤3/2，k1≤1；为(1,5/3) promise gap，不是任意OPT比例。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "闭合两树的精确配置阈值",
+      "detail": "每末父k叶共一私有unit的闭合两树，OPT=2−1/k，Tconf=1+s*/k，s*=min{s:(k−s)^h≤2k^(h−1)}；经典gap高度下精确1+1/k。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-CONFIG-THRESHOLD-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "单位树配置阈值与五三实际输出的有限核验",
+      "detail": "4337完整σ/59121任务；1278单row网格分为894精确支持及384精确分离、9边界，8闭合参数。只核实现与有限实例。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "tests/audits/unrelated_machines/unit_readout_literal_gap.py",
+        "tests/audits/unrelated_machines/unit_readout_configuration_row_decomposition.py",
+        "evidence/runs/unrelated_machines/unit_readout_configuration_threshold_audit.json",
+        "examples/unrelated_machines/unit_readout_configuration_threshold_examples.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "UM-PRUNED-FIRST-MOVE-BOUND-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "剪枝调度首步临时容量的全输入分段上界",
+      "detail": "对任意合法P、有理T≥0与T≤C≤2T、使用p≤T端且Cmaxσ≤C的实际σ，若存在不同τ且Cmaxτ≤T，则某一件直接σ→τ迁移后的最大负载≤U=max(2T,C+T/2)。不给τ时可位多项式返回DONE、此类MOVE或可靠NO_T_SCHEDULE⇒OPT>T；MOVE不保证改善。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "有界批量环族的逐参数锐临时峰值",
+      "detail": "对每k≥1、每有理T>0及T≤C≤2T，显式m=k+1环族全部有限边≤T、每任务≤2端、OPT=T、初值C；任意非空≤k件同步变化新值≥U=max(2T,C+T/2)，到指定不同最优τ的最小路径峰恰U（单件路径达到）。孤立图范围C≤B<U；C=T不排零步到OPT集合。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-PRUNED-FIRST-MOVE-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "首步容量、完整原输入与锐环状态图精确核验",
+      "detail": "规范98,584端点网格；独立3,616矩阵/36,064端点对及26锐族；完整原矩阵1,261例核DONE/MOVE/NO单向语义。所有范围有限。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json",
+        "tests/audits/unrelated_machines/pruned_first_move_transient_peak.py",
+        "tests/audits/unrelated_machines/pruned_first_move_independent.py",
+        "tests/audits/unrelated_machines/pruned_first_move_full_input.py",
+        "examples/unrelated_machines/transient_peak_two_job_cycle.json",
+        "evidence/certificates/unrelated_machines/transient_peak_two_job_cycle.json"
+      ],
+      "status": "exact finite audits; not a universal proof"
+    },
+    {
+      "id": "UM-FULL-DEGREE-MOMENT-DECODING-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "全阶共同矩与负载局部化器的整数提取桥",
+      "detail": "次数2n+1共同矩原子权重筛出真实T调度。",
+      "refs": [
+        "research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md",
+        "research/reviews/unrelated_machines/full_degree_moment_localizer_review.md",
+        "tests/audits/unrelated_machines/full_degree_moment_and_saddle.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "重轻角色的自洽对偶证书与YES固定点边界",
+      "detail": "自洽残余对偶给条件全局角色，YES族排除纯saddle存在性。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_saddle_certificate_and_cycle.md",
+        "research/reviews/unrelated_machines/heavy_light_saddle_certificate_review.md",
+        "tests/audits/unrelated_machines/full_degree_moment_and_saddle.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-INCIDENCE-FEEDBACK-EXACT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "机器—任务关联反馈边参数的精确阈值算法",
+      "detail": "反馈边枚举后森林叶交换给出2^b poly(L)实际精确算法。",
+      "refs": [
+        "research/current/unrelated_machines/incidence_cycle_rank_exact.md",
+        "research/reviews/unrelated_machines/incidence_cycle_rank_review.md",
+        "tests/audits/unrelated_machines/incidence_cycle_rank_exact.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
     },
     {
       "id": "UM-PDM-THRESHOLD-EXACT-v1",
@@ -21246,7 +22166,7 @@
         "UM-SINGLE-LAYER-QUOTA-VALUE-v1"
       ],
       "conclusion": "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
-      "statement": "允许每个选择点拥有多个候选超边且每束大小至多k时，树值仍按全部t-束匹配层取最大最小值。",
+      "statement": "需求树单父约束给出逐层束匹配恒等式；固定层极大匹配给出的复杂度地板是其自足组合推论。",
       "refs": [
         "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md"
       ],
@@ -21697,10 +22617,10 @@
       "kind": "limits",
       "track": "unrelated_machines",
       "premises": [
-        "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1"
+        "UM-STRICT-SUB2-BATCH-BARRIER-v1"
       ],
-      "conclusion": "UM-STRICT-SUB2-BATCH-BARRIER-v1",
-      "statement": "把局部修复限制为<=k批量且中间严格<2仍有OPT=1孤立坏态；不构成一般困难性。",
+      "conclusion": "UM-TARGET-v1",
+      "statement": "任意初态OPT1坏态在<=k批量、全程严格<2时孤立；没有真最优凸包/ST初始化保证，不可替代闭环合同，也不是一般困难性。",
       "refs": [
         "research/current/unrelated_machines/strict_sub2_batch_barrier.md",
         "research/reviews/unrelated_machines/strict_sub2_batch_barrier_review.md"
@@ -21718,6 +22638,53 @@
       "statement": "一般输入仍缺宏/tiny分层提取、|B|=|H|保证和跨身份共同容量；结构候选不关闭主目标。",
       "refs": [
         "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1",
+      "statement": "在明确内部投影定义下，删除端口的非负内部负载保同一辅助见证；互补支持主理想计数，二机辅助选择达到。",
+      "refs": [
+        "research/current/unrelated_machines/signed_one_job_port_downset.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SIGNED-ONE-JOB-PORT-AUDIT-v1"
+      ],
+      "conclusion": "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1",
+      "statement": "双路实际辅助分配及明确越界负控检查有限实现，不将有限枚举当一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/signed_one_job_port_downset.md",
+        "tests/audits/unrelated_machines/signed_one_job_port_downset.py",
+        "tests/audits/unrelated_machines/signed_one_job_port_independent.py",
+        "evidence/runs/unrelated_machines/signed_one_job_port_downset_audit.json",
+        "research/reviews/unrelated_machines/signed_one_job_port_downset_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "一般PCSP困难性仍缺双出现保真；只排单任务纯内部复制，不排多任务/外部联合容量或一般调度算法。",
+      "refs": [
+        "research/current/unrelated_machines/signed_one_job_port_downset.md",
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"
@@ -21765,6 +22732,1407 @@
         "research/unrelated_machines/LITERATURE.md"
       ],
       "status": "conditional open barrier"
+    },
+    {
+      "id": "D-UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TWO-YES-AVAILABILITY-INTERFACES-v1"
+      ],
+      "conclusion": "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+      "statement": "自足非负行权二色单调闭包及实际拼接/唯一物品转移；不依赖外部近似或困难性定理。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-TWO-YES-SC-DUPLICATION-HALF-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-YES-AVAILABILITY-INTERFACES-v1"
+      ],
+      "conclusion": "UM-TWO-YES-SC-DUPLICATION-HALF-v1",
+      "statement": "自足非负行权二色单调闭包及实际拼接/唯一物品转移；不依赖外部近似或困难性定理。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-THREE-HOST-MAJORITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+      "statement": "有限实现核验只覆盖冻结记录中该claim实际运行部分；三host规范代码没有免费检查SC。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "evidence/runs/unrelated_machines/three_host_selector_majority_audit.json",
+        "research/reviews/unrelated_machines/three_host_majority_selector_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "C-UM-TWO-YES-SC-DUPLICATION-HALF-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-THREE-HOST-MAJORITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-TWO-YES-SC-DUPLICATION-HALF-v1",
+      "statement": "有限实现核验只覆盖冻结记录中该claim实际运行部分；三host规范代码没有免费检查SC。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "evidence/runs/unrelated_machines/three_host_selector_majority_audit.json",
+        "research/reviews/unrelated_machines/three_host_majority_selector_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-AVAILABILITY-SELECTOR-TARGET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+        "UM-TWO-YES-SC-DUPLICATION-HALF-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "局部可用性复制有锐地板；一般近二NO可靠性仍缺外部联合资源/不同编码及全局源解码，受限锐界不关闭主目标任一方向。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+        "UM-SANTA-NO-CONSTANT-CONDITIONAL-v1"
+      ],
+      "conclusion": "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1",
+      "statement": "逐边检查token任务的1/k与1异端时间，结合restricted模型定义，得到桥梁非保真边界。",
+      "refs": [
+        "research/current/unrelated_machines/santa_restricted_bridge_boundary.md",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "complete stated-scope model boundary"
+    },
+    {
+      "id": "D-UM-DUPLICATION-TWO-COPY-FLOOR-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+        "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1"
+      ],
+      "conclusion": "UM-DUPLICATION-TWO-COPY-FLOOR-v1",
+      "statement": "资源二着色是有界碰撞地板在两份内部无冲突复制合同下的专门构造。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_two_copy_floor.md",
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md"
+      ],
+      "status": "complete stated-scope obstruction"
+    },
+    {
+      "id": "L-UM-DUPLICATION-TARGET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DUPLICATION-TWO-COPY-FLOOR-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "简单两份完整复制至少保留一半真实树，不能独立给近2的任意固定NO gap。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_two_copy_floor.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DUPLICATION-TWO-COPY-FLOOR-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+      ],
+      "conclusion": "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "statement": "固定多数状态并直接取其内部不交残余束，得到delta级真实树地板；行列池只在明确参数范围给锐例，原过宽锐性撤回。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "research/reviews/unrelated_machines/bcg_mmda_hardness_import_review.md"
+      ],
+      "status": "complete stated-scope obstruction"
+    },
+    {
+      "id": "C-UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DUPLICATION-STATE-MAJORITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "statement": "有限Fraction枚举核对小状态对、非空删点和尖锐参数；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "tests/audits/unrelated_machines/robust_consistency_state_majority.py",
+        "evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "D-UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEIGHTED-GROUP-JOINT-SLOT-v1"
+      ],
+      "conclusion": "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+      "statement": "原共同组联合槽机制加修复后的精确覆盖成本FPTAS与同一覆盖实际恢复，给原R和one-sided OPT搜索；固定前缀恢复论证撤回。",
+      "refs": [
+        "research/questions/unrelated_machines/barrier_escape_obligations.md",
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md",
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
+      ],
+      "status": "complete stated-scope derivation after frozen recovery repair"
+    },
+    {
+      "id": "L-UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-THRESHOLD-COVER-JOINT-SLOT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "唯一home、共同资格和等端时间的结构分解仍未从一般矩阵中构造；该结果不关闭主目标。",
+      "refs": [
+        "research/questions/unrelated_machines/barrier_escape_obligations.md",
+        "research/unrelated_machines/RESEARCH_STATE.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "open structural extraction obligation"
+    },
+    {
+      "id": "D-UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+      "statement": "从位编码调度模型构造r个独立块并精确计算固定LST支撑释放预算的负载前沿。",
+      "refs": [
+        "research/current/unrelated_machines/lst_support_release_optimal_gap.md"
+      ],
+      "status": "complete stated-scope construction"
+    },
+    {
+      "id": "L-UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "该障碍只排除固定支撑加有限零边释放合同，不是一般近二困难性；联合重选和一般算法仍开放。",
+      "refs": [
+        "research/current/unrelated_machines/lst_support_release_optimal_gap.md",
+        "research/unrelated_machines/RESEARCH_STATE.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-COMMON-SIZE-REOPEN-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-COMMON-SIZE-REOPEN-v1",
+      "statement": "固定核心后的共同尺寸残余容量由有理流、头部余量和有序槽整化闭合；单位尺寸连通分量由整数最大流精确恢复。",
+      "refs": [
+        "research/current/unrelated_machines/common_size_reopen_capacity_flow.md",
+        "research/reviews/unrelated_machines/common_size_reopen_capacity_flow_review.md"
+      ],
+      "status": "complete stated-scope interface"
+    },
+    {
+      "id": "L-UM-COMMON-SIZE-REOPEN-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-COMMON-SIZE-REOPEN-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "一般矩阵没有共同尺寸表示，头部余量可能退化到二倍，且固定核心/满足头部的支持选择仍未解。",
+      "refs": [
+        "research/current/unrelated_machines/common_size_reopen_capacity_flow.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "open generalization obligation"
+    },
+    {
+      "id": "D-UM-TWO-STATE-POOL-EXACT-FRONTIER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-STATE-POOL-MODEL-v1"
+      ],
+      "conclusion": "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1",
+      "statement": "资源总数与单标签度上界；每k循环先给列再给行达到统一h_k；非统一孩子数不超最小整数配额。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-TWO-STATE-POOL-EXACT-FRONTIER-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-STATE-POOL-EXACT-AUDIT-v1"
+      ],
+      "conclusion": "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1",
+      "statement": "有限独立匹配、资源分配及显式26点树核验。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "evidence/runs/unrelated_machines/two_state_pool_exact_frontier_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-TWO-STATE-POOL-MAJORITY-SHARPNESS-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1"
+      ],
+      "conclusion": "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "statement": "主下界保留；只撤回旧附属全K≥s锐性及整束不可共选推理，不从本例宣称一般困难性。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "research/reviews/unrelated_machines/two_state_pool_partial_resource_review.md"
+      ],
+      "status": "corrected ancillary sharpness"
+    },
+    {
+      "id": "D-UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-MULTI-HOST-TWO-YES-PROFILE-MODEL-v1"
+      ],
+      "conclusion": "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1",
+      "statement": "非负行权顺序加权闭包；原S1源时间与S2接收时间分开计费；μ仅在存在性反证使用，非算法oracle。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_fanout_profile_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-FANOUT-MISSING-ONE-THREE-HALVES-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MULTI-HOST-TWO-YES-PROFILE-MODEL-v1",
+        "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1"
+      ],
+      "conclusion": "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1",
+      "statement": "把K外输出撤预载视内部，K2预算；满二叉树根=a的严格强制传播下界及单边上移达到。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_fanout_profile_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEIGHTED-FANOUT-PROFILE-AUDIT-v1"
+      ],
+      "conclusion": "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1",
+      "statement": "冻结实际运行绑定正确范围；生产算法不使用有限oracle。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+        "evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "C-UM-FANOUT-MISSING-ONE-THREE-HALVES-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEIGHTED-FANOUT-PROFILE-AUDIT-v1"
+      ],
+      "conclusion": "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1",
+      "statement": "冻结实际运行绑定正确范围；生产算法不使用有限oracle。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+        "evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-WEIGHTED-FANOUT-TARGET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1",
+        "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只排明确独立预载复制NO合同，不排联合外部容量；尚缺一般近二归约与可靠源解码。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_fanout_profile_boundary.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-NORMALIZED-DUAL-RAIL-MODEL-v1"
+      ],
+      "conclusion": "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1",
+      "statement": "ST半质量有序槽直接推论；联合quarter流为另一实现，不主张新算法。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-SPLIT-UNIT-DUAL-RAIL-MODEL-v1"
+      ],
+      "conclusion": "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1",
+      "statement": "变量供给floor((K++K−)/2)的共享整数流，再挑达到ceil(K_s/2)的一sign，只保留该sign外送。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-WEIGHTED-EXCEPTION-DUAL-RAIL-MODEL-v1"
+      ],
+      "conclusion": "UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1",
+      "statement": "两exception候选各半质量与clause容量A的整数匹配；不能用自由max替换固定指定端口。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-FULL-SIGNED-CUBE-DUAL-RAIL-MODEL-v1",
+        "UM-NORMALIZED-DUAL-RAIL-MODEL-v1"
+      ],
+      "conclusion": "UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1",
+      "statement": "完整cube符号同构、整数内留计数下界、变量置换对称分数flow与整数化精确上界；必须min_B，不能总取B=A。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DUAL-RAIL-THRESHOLD-BOUNDARY-AUDIT-v1"
+      ],
+      "conclusion": "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1",
+      "statement": "冻结正文、代码与实际stdout；独立实现及original-matrix回算。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md",
+        "evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "C-UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DUAL-RAIL-THRESHOLD-BOUNDARY-AUDIT-v1"
+      ],
+      "conclusion": "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1",
+      "statement": "冻结正文、代码与实际stdout；独立实现及original-matrix回算。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md",
+        "evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "C-UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DUAL-RAIL-THRESHOLD-BOUNDARY-AUDIT-v1"
+      ],
+      "conclusion": "UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1",
+      "statement": "冻结正文、代码与实际stdout；独立实现及original-matrix回算。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md",
+        "evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "C-UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DUAL-RAIL-THRESHOLD-BOUNDARY-AUDIT-v1"
+      ],
+      "conclusion": "UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1",
+      "statement": "冻结正文、代码与实际stdout；独立实现及original-matrix回算。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md",
+        "evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-DUAL-RAIL-THRESHOLD-BOUNDARY-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1",
+        "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1",
+        "UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1",
+        "UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "排除具体source编码的自动NO解码；不排其他算法/归约，近二一般困难性仍缺。",
+      "refs": [
+        "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-STRICT-SUB2-BATCH-BARRIER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BATCH-SUPPORT-REPAIR-NO-v1"
+      ],
+      "conclusion": "UM-STRICT-SUB2-BATCH-BARRIER-v1",
+      "statement": "旧三机分流族作正文给定的仿射缩放、加入固定填充并重新核全程<2容量不等式，得任意初态常数批量孤立界；不是由最优凸包长链初始化推出。",
+      "refs": [
+        "research/current/unrelated_machines/strict_sub2_batch_barrier.md",
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "research/reviews/unrelated_machines/strict_sub2_batch_barrier_review.md"
+      ],
+      "status": "complete stated-scope construction"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-FULL-KARY-FIXED-DEPTH-PRUNING-MODEL-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "statement": "原实际incoming1→至少r条实际下传；只保子集并复用原slot，所有其余jobs父置；active负载2−r/k、inactive1。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "statement": "经典ST半质量直接推论；每内机唯一incoming半片优先，clause半片成对使用真实units，Hall一次全jobs匹配。 锐下界明确复用split h1 k2合同。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FULL-KARY-FIXED-DEPTH-PRUNING-MODEL-v1"
+      ],
+      "conclusion": "UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "statement": "标准threshold证书递推/补集对偶；根命中 iff 至少q个children各命中。非新一般树技术。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "statement": "冻结全部原资格/全机负载与自足树计数；检查不代替一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "statement": "冻结全部原资格/全机负载与自足树计数；检查不代替一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "C-UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-AUDIT-v1"
+      ],
+      "conclusion": "UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "statement": "冻结全部原资格/全机负载与自足树计数；检查不代替一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-UNIT-READOUT-PRUNED-FOREST-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅关闭半密度私有树near2复制合同，非所有归约；仍缺非此结构的全局源解码与真实近二NP gap。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-UNIT-READOUT-DOWNSTREAM-CARDINALITY-CERT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+      "statement": "原行分数任务数≤整数k−r+1，大incoming优先唯一首槽；质量Hall一次覆盖全部jobs。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-UNIT-READOUT-DOWNSTREAM-CARDINALITY-CERT-v1",
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+      "statement": "校准质量≤1/D；rootselector给OPT≥1；r1 mandatory path匹配的必要性使失败分支精确最优。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+      "statement": "最终源码/正文hash与root真实stdout绑定，未调用LP/OPT生产oracle。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md",
+        "evidence/runs/unrelated_machines/unit_readout_calibrated_cardinality_slots_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+      "statement": "最终源码/正文hash与root真实stdout绑定，未调用LP/OPT生产oracle。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md",
+        "evidence/runs/unrelated_machines/unit_readout_calibrated_cardinality_slots_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "限定结构类与固定D；输入D无界则ε退化，不能升级一般正反面。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1",
+        "UM-CONF-GAP-v1"
+      ],
+      "conclusion": "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1",
+      "statement": "模型、整数流凸包/有理分离及ST保big首槽共同给等价与上界；经典两树唯一light端给下界；强对偶给共同面恢复。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_price_convexification.md"
+      ],
+      "status": "complete direct synthesis"
+    },
+    {
+      "id": "C-UM-HEAVY-LIGHT-PRICE-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HEAVY-LIGHT-PRICE-AUDIT-v1"
+      ],
+      "conclusion": "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1",
+      "statement": "仅列明有限有理fixture和小树原P核验；不承担一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_price_convexification.md",
+        "research/reviews/unrelated_machines/heavy_light_price_convexification_review.md",
+        "tests/audits/unrelated_machines/heavy_light_price_convexification.py",
+        "evidence/runs/unrelated_machines/heavy_light_price_convexification_release_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-HEAVY-LIGHT-PRICE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅标量机器价格/局部凸化不能给共同见证统一余量；最优共同面未保证存在，不排更多信息或一般算法。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_price_convexification.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+      "statement": "非负处理时间、显式有理LP强对偶与混合格重排给固定R性质。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RESIDUAL-THROUGHPUT-OCCUPATION-AUDIT-v1"
+      ],
+      "conclusion": "UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+      "statement": "只列明有限有理参数与实际任务输出；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md",
+        "research/reviews/unrelated_machines/residual_throughput_occupation_review.md",
+        "tests/audits/unrelated_machines/residual_throughput_lattice.py",
+        "tests/audits/unrelated_machines/occupation_induced_edge_deficit.py",
+        "evidence/runs/unrelated_machines/residual_throughput_lattice_release.json",
+        "evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "D-UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-RESIDUAL-THROUGHPUT-LATTICE-v1"
+      ],
+      "conclusion": "UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1",
+      "statement": "固定参数完整宏/tiny构造、容量计数与实际定向达到给D=e(I)；使用F的定义，非借有限审计推导。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RESIDUAL-THROUGHPUT-OCCUPATION-AUDIT-v1"
+      ],
+      "conclusion": "UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1",
+      "statement": "只列明有限有理参数与实际任务输出；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md",
+        "research/reviews/unrelated_machines/residual_throughput_occupation_review.md",
+        "tests/audits/unrelated_machines/residual_throughput_lattice.py",
+        "tests/audits/unrelated_machines/occupation_induced_edge_deficit.py",
+        "evidence/runs/unrelated_machines/residual_throughput_lattice_release.json",
+        "evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-RESIDUAL-THROUGHPUT-OCCUPATION-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+        "UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "未给R(H)/h(H)共同选择或实际统一余量；原图族可最优解，不排一般算法。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+        "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1"
+      ],
+      "conclusion": "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1",
+      "statement": "把根树的整数出度阈值逐一翻译为rail orientation、quota槽和资源单射，并反向构树。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_orientation_obligation.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "L-UM-TWO-STATE-QUOTA-TARGET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "两状态反面路线的最小新义务是quota orientation的固定delta gap/soundness；完整2-SAT可行性不覆盖部分quota支付。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_orientation_obligation.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-UNIT-READOUT-GLOBAL-LEAF-FLOW-v1",
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "statement": "最大共同真实叶流b→多数sign→r=k−floor((k^h−ceil(b/2))^(1/h))的真实祖先子树；只删同一flow叶保共同容量；最优r*给b≥r*^h，导数给因子。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-GLOBAL-CONSTRUCTIVE-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "statement": "规范实际构造、真实负载/flow割与独立原矩阵仅作有限实现核验，非一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-UNIT-READOUT-COMPLETE-YES-COVER-v1",
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "statement": "完整YES强制所选轨全外送，指定轨arity d*≤pA；只指定轨建x0=1计数槽，另一轨固定parent；共同Hall保指定根和所有机器。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-GLOBAL-CONSTRUCTIVE-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "statement": "规范实际构造、真实负载/flow割与独立原矩阵仅作有限实现核验，非一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-UNIT-READOUT-GLOBAL-CONSTRUCTIVE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "限定私有unit树；固定高度改善与给定YES重组不代替一般算法/近二困难性，所有低σ的源解码仍缺。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1",
+        "UM-CONF-GAP-v1"
+      ],
+      "conclusion": "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "statement": "任意非负有理行的E=ΣΔp ceil(prefix x)；固定B子水平凸包恰配置多面体、至多d+1有理原子。全局min max E=OPT，可ST实际恢复；先固定B逐行凸化恰CONFIG，先凸化上图仅线性负载。 由正文一般证明，不由有限运行推出。",
+      "refs": [
+        "research/current/unrelated_machines/slot_envelope_and_configuration_identity.md",
+        "research/reviews/unrelated_machines/slot_envelope_identity_review.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "L-UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "精确表示不等于可求非凸选择；CONFIG的二倍gap为既有结论复用；未给主目标近似算法。",
+      "refs": [
+        "research/current/unrelated_machines/slot_envelope_and_configuration_identity.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-C2-GENERAL-MULTISLICE-CONSTRUCTION-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "statement": "弱H2=C2-load(T)+共享一阶x的完整CONFIG(T)，一般正值sup OPT/T=2。k≥3,b=k²稀释资源星在T=1+(k−1)/(k²+1)有显式有理全局PSD/全localizer与同x CONFIG1，真实OPT=2−1/k。 由正文一般证明，不由有限运行推出。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "L-UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "不共享行二阶且三阶仍可负；不含强二阶H2、完整SoS(CONFIG)或一般计算困难性；本族可直接最优解。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1",
+      "statement": "若容量一行CONFIG同机pair与全局M2共享，则任意端f有Σ_row y_fe≤x_f；在同一k≥3,b=k²无z星族，共享每行二阶CONFIG的强H2阈值恰2−1/k=OPT，所有T<OPT均不可行，真实Dirac达到。 由正文一般证明，不由有限运行推出。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "L-UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅此族的强合同精确校准，不含一般强H2间隙改善或求解复杂度；该条件容量证明不需要负载localizer。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-C2-GENERAL-MULTISLICE",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-C2-GENERAL-MULTISLICE-CONSTRUCTION-v1",
+      "statement": "正文§3在一般N≥m+1下自足重构张成/Gram并用N−2≥m−1证PSD；旧n=m+1命题未被静默扩域。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md"
+      ],
+      "status": "self-contained proof"
+    },
+    {
+      "id": "C-UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SLOT-ENVELOPE-MINIMAL-AUDIT-v1"
+      ],
+      "conclusion": "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "statement": "只核冻结记录列明的参数/公式与实际小证书；不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/slot_envelope_and_configuration_identity.md",
+        "tests/audits/unrelated_machines/slot_envelope_identity.py",
+        "evidence/runs/unrelated_machines/slot_envelope_identity_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "C-UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEAK-H2-MINIMAL-AUDIT-v1"
+      ],
+      "conclusion": "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "statement": "只核冻结记录列明的参数/公式与实际小证书；不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py",
+        "evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "um_cross_layer_core_private_identity",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SINGLE-LAYER-QUOTA-VALUE-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+      ],
+      "conclusion": "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1",
+      "statement": "在共同核心与私有padding集合系统中闭式计算全部配额层并通过需求树桥梁得到实际近二整数族。",
+      "refs": [
+        "research/current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md",
+        "research/reviews/unrelated_machines/cross_layer_quota_matching_review.md"
+      ],
+      "status": "complete stated-scope proof; finite checks"
+    },
+    {
+      "id": "um_independent_set_big_residual_limit",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-RESIDUAL-THROUGHPUT-LATTICE-v1"
+      ],
+      "conclusion": "UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1",
+      "statement": "固定big占位后再调用残余流的精确可行性可编码最大度图独立集；这不是一般近二hardness。",
+      "refs": [
+        "research/questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md",
+        "research/reviews/unrelated_machines/independent_set_big_residual_review.md",
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "candidate exact-threshold obstruction"
+    },
+    {
+      "id": "um_fixed_work_convex_local_limit",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1"
+      ],
+      "conclusion": "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1",
+      "statement": "固定总工作量不救固定二次/排序势的单任务局部下降；趋二族要求无界同步迁移。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md",
+        "research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md"
+      ],
+      "status": "complete stated-scope obstruction; finite checks"
+    },
+    {
+      "id": "D-UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1"
+      ],
+      "conclusion": "UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+      "statement": "固定方向的quota单射是二部匹配；Hall邻域切给出精确整数支付和规范化缺口。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "L-UM-TWO-STATE-QUOTA-HALL-TARGET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-STATE-QUOTA-HALL-CUT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "固定方向Hall失败只排除该方向；全输入桥仍缺联合rail选择、变量子集和全方向sound FAIL。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "statement": "对完整私有单位双树，T∈[1,2)、s=floor k(T−1)，CONFIG可行恰为共同边际满足Σ(q−t)+≤sq和clause容量；显式有理分解、多项式LP及精确阈值网格。 证明见正文，不由有限网格推出。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-CONFIG-THRESHOLD-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "statement": "有限精确原P/单row/参数核验仅为checks；不作为一般证明前提。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "evidence/runs/unrelated_machines/unit_readout_configuration_threshold_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-UNIT-READOUT-LITERAL-LP-WITNESS-v1",
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "statement": "CONFIG1等价整轨literal LP；可行时多数轨active-only槽输出全部原jobs C≤5/3，偶k≤3/2，k1≤1；为(1,5/3) promise gap，不是任意OPT比例。 证明见正文，不由有限网格推出。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-CONFIG-THRESHOLD-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "statement": "有限精确原P/单row/参数核验仅为checks；不作为一般证明前提。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "evidence/runs/unrelated_machines/unit_readout_configuration_threshold_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "statement": "每末父k叶共一私有unit的闭合两树，OPT=2−1/k，Tconf=1+s*/k，s*=min{s:(k−s)^h≤2k^(h−1)}；经典gap高度下精确1+1/k。 证明见正文，不由有限网格推出。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-CONFIG-THRESHOLD-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "statement": "有限精确原P/单row/参数核验仅为checks；不作为一般证明前提。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "evidence/runs/unrelated_machines/unit_readout_configuration_threshold_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-UNIT-READOUT-STRICT-UNIT-TARGET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "严格1阈值可舍入不限制近单位阈值的配置gap；经典同结构Tconf1+1/k仍趋二。一般算法和真实源解码均OPEN。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-PRUNED-FIRST-MOVE-BOUND-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-PRUNED-FIRST-MOVE-BOUND-v1",
+      "statement": "正文中明确的源端剪枝、目标容量及存在不同τ前提下的自足计数证明。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-PRUNED-FIRST-MOVE-BOUND-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRUNED-FIRST-MOVE-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-PRUNED-FIRST-MOVE-BOUND-v1",
+      "statement": "冻结记录列明的网格、原矩阵、状态图与实际代码有限核验；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json",
+        "tests/audits/unrelated_machines/pruned_first_move_transient_peak.py",
+        "tests/audits/unrelated_machines/pruned_first_move_independent.py",
+        "tests/audits/unrelated_machines/pruned_first_move_full_input.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "D-UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "statement": "对正文逐参数显式环族，用非空批量边界、最短时间总和下界及一/两圈实际路径自足证明。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRUNED-FIRST-MOVE-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "statement": "冻结记录列明的网格、原矩阵、状态图与实际代码有限核验；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json",
+        "tests/audits/unrelated_machines/pruned_first_move_transient_peak.py",
+        "tests/audits/unrelated_machines/pruned_first_move_independent.py",
+        "tests/audits/unrelated_machines/pruned_first_move_full_input.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "L-UM-TRANSIENT-PEAK-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRUNED-FIRST-MOVE-BOUND-v1",
+        "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "首步可增载，不能从C<=2T无证明迭代；锐例不声明ST或真最优凸包来源。一般共同容量、未知目标与总进展仍开放。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "um_full_degree_moment_bridge_edge",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-FULL-DEGREE-MOMENT-DECODING-v1",
+      "statement": "全阶Boolean/one-hot原子分解与负载localizer给真实T调度。",
+      "refs": [
+        "research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_heavy_light_saddle_edge",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1",
+      "statement": "残余强对偶、自洽heavy最小化与ST加性损失给条件输出。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_saddle_certificate_and_cycle.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_incidence_feedback_exact_edge",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-INCIDENCE-FEEDBACK-EXACT-v1",
+      "statement": "反馈边枚举化森林，叶交换保持阈值可行性。",
+      "refs": [
+        "research/current/unrelated_machines/incidence_cycle_rank_exact.md"
+      ],
+      "status": "complete stated-scope proof"
     },
     {
       "id": "L-UM-PDM-THRESHOLD-EXACT-v1",

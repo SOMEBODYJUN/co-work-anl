@@ -1,0 +1,2351 @@
+{
+  "claims": [
+    "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+    "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+  ],
+  "source_hashes": {
+    "research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md": "dd33b681f22b957fecb5c4a29beca173cb7b619d77c542e99e91c0bd88b5bd88",
+    "research/reviews/unrelated_machines/unit_readout_calibrated_cardinality_slots_review.md": "91d7cd4c34a39da263ca64e8bc9cecfe1d6376be2a0ef57f2c0b91c3dd004fa2",
+    "tests/audits/unrelated_machines/unit_readout_calibrated_cardinality.py": "039ac7dbbfc0858aa9f51086ad8debb2b2f403b282e6a516ada328e2ebf175c4",
+    "tests/audits/unrelated_machines/unit_readout_calibrated_independent.py": "b87e5c382ccbe2c85e69cc8c81e98e35fb7967491914d5e5db26896f01608b1e",
+    "examples/unrelated_machines/unit_readout_calibrated_counterexamples.json": "56bd2e6fb9b7449ff6e7bb49f66aedcb74967be174321ca8c7c8f9f23347f4e6"
+  },
+  "root_actual_runs": {
+    "normative": {
+      "status": "passed",
+      "source_claims": [
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+      ],
+      "script_sha256": "039ac7dbbfc0858aa9f51086ad8debb2b2f403b282e6a516ada328e2ebf175c4",
+      "seed": 110841,
+      "python": "3.12.14",
+      "counts": {
+        "actual_schedules": 1464,
+        "actual_jobs": 85094,
+        "exhaustive_calibrated_wirings_r": 895,
+        "random_general_given_witnesses": 240,
+        "random_bounded_density": 320,
+        "bounded-density-calibrated": 156,
+        "bounded-density-path-matching": 163,
+        "bounded-density-optimum-two": 1,
+        "small_original_OPT_instances": 3,
+        "all_legal_assignments_enumerated": 1698,
+        "empty_huge_binary_boundaries": 2,
+        "deep_explicit_large_capacity_boundaries": 2,
+        "decimal_text_over_4300_digits_exact_cases": 2,
+        "invalid_inputs_rejected": 2,
+        "invalid_D_rejected": 3
+      },
+      "actual_makespan_histogram": {
+        "0": 2,
+        "1": 600,
+        "11/6": 33,
+        "2": 2,
+        "3/2": 447,
+        "4/3": 79,
+        "5/3": 157,
+        "5/4": 14,
+        "7/4": 79,
+        "8/5": 11,
+        "9/5": 40
+      },
+      "actual_original_matrix_boundary_certificates": [
+        {
+          "name": "strong-LP-not-necessary-four-machines-five-jobs",
+          "input": {
+            "k": 2,
+            "h": 1,
+            "variables": [
+              {
+                "id": 0,
+                "positive": [
+                  {
+                    "path": [
+                      0
+                    ],
+                    "clause": 0
+                  },
+                  {
+                    "path": [
+                      1
+                    ],
+                    "clause": 0
+                  }
+                ],
+                "negative": [
+                  {
+                    "path": [
+                      0
+                    ],
+                    "clause": 0
+                  },
+                  {
+                    "path": [
+                      1
+                    ],
+                    "clause": 0
+                  }
+                ]
+              }
+            ],
+            "clause_capacities": [
+              2
+            ]
+          },
+          "optimum": "1",
+          "assignments_enumerated": 162,
+          "certificate": {
+            "source_claims": [
+              "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+              "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+            ],
+            "k": 2,
+            "h": 1,
+            "variable_labels": [
+              0
+            ],
+            "roots": [
+              [
+                0,
+                1
+              ]
+            ],
+            "jobs": [
+              {
+                "job": 0,
+                "kind": "selector",
+                "variable": 0,
+                "edges": [
+                  [
+                    0,
+                    "1"
+                  ],
+                  [
+                    1,
+                    "1"
+                  ]
+                ]
+              },
+              {
+                "job": 1,
+                "variable": 0,
+                "sign": 0,
+                "path": [
+                  0
+                ],
+                "parent": 0,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    0,
+                    "1/2"
+                  ],
+                  [
+                    2,
+                    "1"
+                  ],
+                  [
+                    3,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 2,
+                  "count": 2,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 2,
+                "variable": 0,
+                "sign": 0,
+                "path": [
+                  1
+                ],
+                "parent": 0,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    0,
+                    "1/2"
+                  ],
+                  [
+                    2,
+                    "1"
+                  ],
+                  [
+                    3,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 2,
+                  "count": 2,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 3,
+                "variable": 0,
+                "sign": 1,
+                "path": [
+                  0
+                ],
+                "parent": 1,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    1,
+                    "1/2"
+                  ],
+                  [
+                    2,
+                    "1"
+                  ],
+                  [
+                    3,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 2,
+                  "count": 2,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 4,
+                "variable": 0,
+                "sign": 1,
+                "path": [
+                  1
+                ],
+                "parent": 1,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    1,
+                    "1/2"
+                  ],
+                  [
+                    2,
+                    "1"
+                  ],
+                  [
+                    3,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 2,
+                  "count": 2,
+                  "time": "1"
+                }
+              }
+            ],
+            "sigma": [
+              0,
+              2,
+              3,
+              1,
+              1
+            ],
+            "listed_machines": [
+              {
+                "machine": 0,
+                "kind": "internal",
+                "variable": 0,
+                "sign": 0,
+                "path": []
+              },
+              {
+                "machine": 1,
+                "kind": "internal",
+                "variable": 0,
+                "sign": 1,
+                "path": []
+              },
+              {
+                "machine": 2,
+                "kind": "clause_unit",
+                "clause": 0,
+                "unit": 0
+              },
+              {
+                "machine": 3,
+                "kind": "clause_unit",
+                "clause": 0,
+                "unit": 1
+              }
+            ],
+            "listed_loads": [
+              {
+                "machine": 0,
+                "load": "1"
+              },
+              {
+                "machine": 1,
+                "load": "1"
+              },
+              {
+                "machine": 2,
+                "load": "1"
+              },
+              {
+                "machine": 3,
+                "load": "1"
+              }
+            ],
+            "clause_ranges": [
+              {
+                "clause": 0,
+                "start": 2,
+                "count": 2,
+                "arity": 4,
+                "listed_units": 2
+              }
+            ],
+            "full_machine_count": 4,
+            "dummy_used": false,
+            "internal_machine_count": 2,
+            "omitted_unit_machine_count": 0,
+            "omitted_unit_machine_load": "0",
+            "makespan": "1",
+            "bound": "1"
+          },
+          "strong_LP_total_outflow_lower_bound": 3,
+          "clause_capacity": 2
+        },
+        {
+          "name": "weak-LP-not-sufficient-four-machines-nine-jobs",
+          "input": {
+            "k": 4,
+            "h": 1,
+            "variables": [
+              {
+                "id": 0,
+                "positive": [
+                  {
+                    "path": [
+                      0
+                    ],
+                    "clause": 0
+                  },
+                  {
+                    "path": [
+                      1
+                    ],
+                    "clause": 0
+                  },
+                  {
+                    "path": [
+                      2
+                    ],
+                    "clause": 0
+                  },
+                  {
+                    "path": [
+                      3
+                    ],
+                    "clause": 0
+                  }
+                ],
+                "negative": [
+                  {
+                    "path": [
+                      0
+                    ],
+                    "clause": 1
+                  },
+                  {
+                    "path": [
+                      1
+                    ],
+                    "clause": 1
+                  },
+                  {
+                    "path": [
+                      2
+                    ],
+                    "clause": 1
+                  },
+                  {
+                    "path": [
+                      3
+                    ],
+                    "clause": 1
+                  }
+                ]
+              }
+            ],
+            "clause_capacities": [
+              1,
+              1
+            ]
+          },
+          "optimum": "7/4",
+          "assignments_enumerated": 512,
+          "weak_t": [
+            "1/2",
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4",
+            "1/4"
+          ],
+          "certificate": {
+            "source_claims": [
+              "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+              "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+            ],
+            "k": 4,
+            "h": 1,
+            "variable_labels": [
+              0
+            ],
+            "roots": [
+              [
+                0,
+                1
+              ]
+            ],
+            "jobs": [
+              {
+                "job": 0,
+                "kind": "selector",
+                "variable": 0,
+                "edges": [
+                  [
+                    0,
+                    "1"
+                  ],
+                  [
+                    1,
+                    "1"
+                  ]
+                ]
+              },
+              {
+                "job": 1,
+                "variable": 0,
+                "sign": 0,
+                "path": [
+                  0
+                ],
+                "parent": 0,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    0,
+                    "1/4"
+                  ],
+                  [
+                    2,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 2,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 2,
+                "variable": 0,
+                "sign": 0,
+                "path": [
+                  1
+                ],
+                "parent": 0,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    0,
+                    "1/4"
+                  ],
+                  [
+                    2,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 2,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 3,
+                "variable": 0,
+                "sign": 0,
+                "path": [
+                  2
+                ],
+                "parent": 0,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    0,
+                    "1/4"
+                  ],
+                  [
+                    2,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 2,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 4,
+                "variable": 0,
+                "sign": 0,
+                "path": [
+                  3
+                ],
+                "parent": 0,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    0,
+                    "1/4"
+                  ],
+                  [
+                    2,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 2,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 5,
+                "variable": 0,
+                "sign": 1,
+                "path": [
+                  0
+                ],
+                "parent": 1,
+                "kind": "port",
+                "clause": 1,
+                "edges": [
+                  [
+                    1,
+                    "1/4"
+                  ],
+                  [
+                    3,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 3,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 6,
+                "variable": 0,
+                "sign": 1,
+                "path": [
+                  1
+                ],
+                "parent": 1,
+                "kind": "port",
+                "clause": 1,
+                "edges": [
+                  [
+                    1,
+                    "1/4"
+                  ],
+                  [
+                    3,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 3,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 7,
+                "variable": 0,
+                "sign": 1,
+                "path": [
+                  2
+                ],
+                "parent": 1,
+                "kind": "port",
+                "clause": 1,
+                "edges": [
+                  [
+                    1,
+                    "1/4"
+                  ],
+                  [
+                    3,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 3,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 8,
+                "variable": 0,
+                "sign": 1,
+                "path": [
+                  3
+                ],
+                "parent": 1,
+                "kind": "port",
+                "clause": 1,
+                "edges": [
+                  [
+                    1,
+                    "1/4"
+                  ],
+                  [
+                    3,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 3,
+                  "count": 1,
+                  "time": "1"
+                }
+              }
+            ],
+            "sigma": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "listed_machines": [
+              {
+                "machine": 0,
+                "kind": "internal",
+                "variable": 0,
+                "sign": 0,
+                "path": []
+              },
+              {
+                "machine": 1,
+                "kind": "internal",
+                "variable": 0,
+                "sign": 1,
+                "path": []
+              },
+              {
+                "machine": 2,
+                "kind": "clause_unit",
+                "clause": 0,
+                "unit": 0
+              },
+              {
+                "machine": 3,
+                "kind": "clause_unit",
+                "clause": 1,
+                "unit": 0
+              }
+            ],
+            "listed_loads": [
+              {
+                "machine": 0,
+                "load": "7/4"
+              },
+              {
+                "machine": 1,
+                "load": "1"
+              },
+              {
+                "machine": 2,
+                "load": "1"
+              },
+              {
+                "machine": 3,
+                "load": "0"
+              }
+            ],
+            "clause_ranges": [
+              {
+                "clause": 0,
+                "start": 2,
+                "count": 1,
+                "arity": 4,
+                "listed_units": 1
+              },
+              {
+                "clause": 1,
+                "start": 3,
+                "count": 1,
+                "arity": 4,
+                "listed_units": 1
+              }
+            ],
+            "full_machine_count": 4,
+            "dummy_used": false,
+            "internal_machine_count": 2,
+            "omitted_unit_machine_count": 0,
+            "omitted_unit_machine_load": "0",
+            "makespan": "7/4",
+            "bound": "7/4"
+          }
+        },
+        {
+          "name": "small-k-failed-matching-optimum-two",
+          "input": {
+            "k": 2,
+            "h": 1,
+            "variables": [
+              {
+                "id": 0,
+                "positive": [
+                  {
+                    "path": [
+                      0
+                    ],
+                    "clause": 0
+                  },
+                  {
+                    "path": [
+                      1
+                    ],
+                    "clause": 0
+                  }
+                ],
+                "negative": [
+                  {
+                    "path": [
+                      0
+                    ],
+                    "clause": 0
+                  },
+                  {
+                    "path": [
+                      1
+                    ],
+                    "clause": 0
+                  }
+                ]
+              },
+              {
+                "id": 1,
+                "positive": [
+                  {
+                    "path": [
+                      0
+                    ],
+                    "clause": 0
+                  },
+                  {
+                    "path": [
+                      1
+                    ],
+                    "clause": 0
+                  }
+                ],
+                "negative": [
+                  {
+                    "path": [
+                      0
+                    ],
+                    "clause": 0
+                  },
+                  {
+                    "path": [
+                      1
+                    ],
+                    "clause": 0
+                  }
+                ]
+              }
+            ],
+            "clause_capacities": [
+              1
+            ]
+          },
+          "optimum": "2",
+          "assignments_enumerated": 1024,
+          "certificate": {
+            "source_claims": [
+              "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+              "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+            ],
+            "k": 2,
+            "h": 1,
+            "variable_labels": [
+              0,
+              1
+            ],
+            "roots": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "jobs": [
+              {
+                "job": 0,
+                "kind": "selector",
+                "variable": 0,
+                "edges": [
+                  [
+                    0,
+                    "1"
+                  ],
+                  [
+                    1,
+                    "1"
+                  ]
+                ]
+              },
+              {
+                "job": 1,
+                "kind": "selector",
+                "variable": 1,
+                "edges": [
+                  [
+                    2,
+                    "1"
+                  ],
+                  [
+                    3,
+                    "1"
+                  ]
+                ]
+              },
+              {
+                "job": 2,
+                "variable": 0,
+                "sign": 0,
+                "path": [
+                  0
+                ],
+                "parent": 0,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    0,
+                    "1/2"
+                  ],
+                  [
+                    4,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 4,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 3,
+                "variable": 0,
+                "sign": 0,
+                "path": [
+                  1
+                ],
+                "parent": 0,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    0,
+                    "1/2"
+                  ],
+                  [
+                    4,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 4,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 4,
+                "variable": 0,
+                "sign": 1,
+                "path": [
+                  0
+                ],
+                "parent": 1,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    1,
+                    "1/2"
+                  ],
+                  [
+                    4,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 4,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 5,
+                "variable": 0,
+                "sign": 1,
+                "path": [
+                  1
+                ],
+                "parent": 1,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    1,
+                    "1/2"
+                  ],
+                  [
+                    4,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 4,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 6,
+                "variable": 1,
+                "sign": 0,
+                "path": [
+                  0
+                ],
+                "parent": 2,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    2,
+                    "1/2"
+                  ],
+                  [
+                    4,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 4,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 7,
+                "variable": 1,
+                "sign": 0,
+                "path": [
+                  1
+                ],
+                "parent": 2,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    2,
+                    "1/2"
+                  ],
+                  [
+                    4,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 4,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 8,
+                "variable": 1,
+                "sign": 1,
+                "path": [
+                  0
+                ],
+                "parent": 3,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    3,
+                    "1/2"
+                  ],
+                  [
+                    4,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 4,
+                  "count": 1,
+                  "time": "1"
+                }
+              },
+              {
+                "job": 9,
+                "variable": 1,
+                "sign": 1,
+                "path": [
+                  1
+                ],
+                "parent": 3,
+                "kind": "port",
+                "clause": 0,
+                "edges": [
+                  [
+                    3,
+                    "1/2"
+                  ],
+                  [
+                    4,
+                    "1"
+                  ]
+                ],
+                "external": {
+                  "start": 4,
+                  "count": 1,
+                  "time": "1"
+                }
+              }
+            ],
+            "sigma": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              2,
+              2,
+              3,
+              3
+            ],
+            "listed_machines": [
+              {
+                "machine": 0,
+                "kind": "internal",
+                "variable": 0,
+                "sign": 0,
+                "path": []
+              },
+              {
+                "machine": 1,
+                "kind": "internal",
+                "variable": 0,
+                "sign": 1,
+                "path": []
+              },
+              {
+                "machine": 2,
+                "kind": "internal",
+                "variable": 1,
+                "sign": 0,
+                "path": []
+              },
+              {
+                "machine": 3,
+                "kind": "internal",
+                "variable": 1,
+                "sign": 1,
+                "path": []
+              },
+              {
+                "machine": 4,
+                "kind": "clause_unit",
+                "clause": 0,
+                "unit": 0
+              }
+            ],
+            "listed_loads": [
+              {
+                "machine": 0,
+                "load": "2"
+              },
+              {
+                "machine": 1,
+                "load": "1"
+              },
+              {
+                "machine": 2,
+                "load": "2"
+              },
+              {
+                "machine": 3,
+                "load": "1"
+              },
+              {
+                "machine": 4,
+                "load": "0"
+              }
+            ],
+            "clause_ranges": [
+              {
+                "clause": 0,
+                "start": 4,
+                "count": 1,
+                "arity": 8,
+                "listed_units": 1
+              }
+            ],
+            "full_machine_count": 5,
+            "dummy_used": false,
+            "internal_machine_count": 4,
+            "omitted_unit_machine_count": 0,
+            "omitted_unit_machine_load": "0",
+            "makespan": "2",
+            "bound": "2",
+            "mode": "bounded-density-optimum-two",
+            "D": "8",
+            "approximation_ratio": "63/32",
+            "exact_optimum": "2",
+            "matching_hall_cut": {
+              "variables": [
+                0,
+                1
+              ],
+              "clauses": [
+                0
+              ],
+              "capacity": 1,
+              "variable_count": 2
+            }
+          }
+        }
+      ],
+      "scope": "Finite exact checks of production schedules and three small original-P optimum examples; not a general proof or novelty certification. Given-witness is a sufficient contract only; no LP solver; production never calls OPT oracle.",
+      "elapsed_seconds": 27.37346603399783
+    },
+    "independent": {
+      "bounded_D_sample": [
+        {
+          "D": "2",
+          "actual_C": "1",
+          "h": 1,
+          "k": 1,
+          "result": "one_path_matching"
+        },
+        {
+          "D": "2",
+          "actual_C": "1",
+          "h": 1,
+          "k": 1,
+          "result": "one_path_matching"
+        },
+        {
+          "D": "2",
+          "actual_C": "1",
+          "h": 1,
+          "k": 1,
+          "result": "one_path_matching"
+        },
+        {
+          "D": "2",
+          "actual_C": "1",
+          "h": 2,
+          "k": 1,
+          "result": "one_path_matching"
+        },
+        {
+          "D": "2",
+          "actual_C": "1",
+          "h": 2,
+          "k": 1,
+          "result": "one_path_matching"
+        },
+        {
+          "D": "2",
+          "actual_C": "1",
+          "h": 2,
+          "k": 1,
+          "result": "one_path_matching"
+        },
+        {
+          "D": "2",
+          "actual_C": "3/2",
+          "h": 1,
+          "k": 2,
+          "result": "uniform_lp"
+        },
+        {
+          "D": "2",
+          "actual_C": "3/2",
+          "h": 1,
+          "k": 2,
+          "result": "uniform_lp"
+        },
+        {
+          "D": "10",
+          "actual_C": "2",
+          "h": 1,
+          "k": 1,
+          "result": "matching_failure_exact_two"
+        },
+        {
+          "D": "10",
+          "actual_C": "2",
+          "h": 2,
+          "k": 1,
+          "result": "matching_failure_exact_two"
+        }
+      ],
+      "code_sha256": "b87e5c382ccbe2c85e69cc8c81e98e35fb7967491914d5e5db26896f01608b1e",
+      "counts": {
+        "actual_one_density_profiles": 188,
+        "deliberate_matching_obstruction": 1,
+        "empty_lp_rounded": 1,
+        "feasible_lp_rounded": 90,
+        "giant_denominator_lp_rounded": 1,
+        "matching_failure_exact_two": 2,
+        "one_path_matching": 118,
+        "unconditional_necessity_negative_control": 1,
+        "uniform_lp": 168
+      },
+      "giant_denominator_bit_length": 522,
+      "limits": [
+        "finite audits do not prove the general claims",
+        "no LP infeasibility oracle or physical-schedule enumeration was run",
+        "matching-failure OPT=2 uses the separate mandatory-path proof"
+      ],
+      "observed_rounded_makespans": [
+        "1",
+        "6/5",
+        "5/4",
+        "4/3",
+        "7/5",
+        "3/2",
+        "8/5",
+        "5/3",
+        "7/4",
+        "9/5"
+      ],
+      "seed": 430691,
+      "version": "unitforest-independent-cardinality-slots-v2"
+    },
+    "root_original_P": {
+      "status": "passed",
+      "precision": "independent root Fraction enumeration of original eligible edges; no normative import",
+      "records": [
+        {
+          "name": "strong-LP-not-necessary-four-machines-five-jobs",
+          "machines": 4,
+          "jobs": 5,
+          "all_legal_sigma": 162,
+          "exact_OPT": "1",
+          "original_P_and_all_sigma_recomputed": true
+        },
+        {
+          "name": "weak-LP-not-sufficient-four-machines-nine-jobs",
+          "machines": 4,
+          "jobs": 9,
+          "all_legal_sigma": 512,
+          "exact_OPT": "7/4",
+          "original_P_and_all_sigma_recomputed": true
+        },
+        {
+          "name": "small-k-failed-matching-optimum-two",
+          "machines": 5,
+          "jobs": 10,
+          "all_legal_sigma": 1024,
+          "exact_OPT": "2",
+          "original_P_and_all_sigma_recomputed": true
+        }
+      ]
+    },
+    "three_CLI": {
+      "bounded": {
+        "source_claims": [
+          "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+          "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+        ],
+        "k": 2,
+        "h": 1,
+        "variable_labels": [
+          0
+        ],
+        "roots": [
+          [
+            0,
+            1
+          ]
+        ],
+        "jobs": [
+          {
+            "job": 0,
+            "kind": "selector",
+            "variable": 0,
+            "edges": [
+              [
+                0,
+                "1"
+              ],
+              [
+                1,
+                "1"
+              ]
+            ]
+          },
+          {
+            "job": 1,
+            "variable": 0,
+            "sign": 0,
+            "path": [
+              0
+            ],
+            "parent": 0,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                0,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          },
+          {
+            "job": 2,
+            "variable": 0,
+            "sign": 0,
+            "path": [
+              1
+            ],
+            "parent": 0,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                0,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          },
+          {
+            "job": 3,
+            "variable": 0,
+            "sign": 1,
+            "path": [
+              0
+            ],
+            "parent": 1,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                1,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          },
+          {
+            "job": 4,
+            "variable": 0,
+            "sign": 1,
+            "path": [
+              1
+            ],
+            "parent": 1,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                1,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          }
+        ],
+        "sigma": [
+          0,
+          0,
+          2,
+          1,
+          1
+        ],
+        "listed_machines": [
+          {
+            "machine": 0,
+            "kind": "internal",
+            "variable": 0,
+            "sign": 0,
+            "path": []
+          },
+          {
+            "machine": 1,
+            "kind": "internal",
+            "variable": 0,
+            "sign": 1,
+            "path": []
+          },
+          {
+            "machine": 2,
+            "kind": "clause_unit",
+            "clause": 0,
+            "unit": 0
+          },
+          {
+            "machine": 3,
+            "kind": "clause_unit",
+            "clause": 0,
+            "unit": 1
+          }
+        ],
+        "listed_loads": [
+          {
+            "machine": 0,
+            "load": "3/2"
+          },
+          {
+            "machine": 1,
+            "load": "1"
+          },
+          {
+            "machine": 2,
+            "load": "1"
+          },
+          {
+            "machine": 3,
+            "load": "0"
+          }
+        ],
+        "clause_ranges": [
+          {
+            "clause": 0,
+            "start": 2,
+            "count": 2,
+            "arity": 4,
+            "listed_units": 2
+          }
+        ],
+        "full_machine_count": 4,
+        "dummy_used": false,
+        "internal_machine_count": 2,
+        "omitted_unit_machine_count": 0,
+        "omitted_unit_machine_load": "0",
+        "makespan": "3/2",
+        "bound": "3/2",
+        "mode": "bounded-density-calibrated",
+        "r": 1,
+        "t": [
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4"
+        ],
+        "internal_row_cardinality": [
+          "2",
+          "2"
+        ],
+        "clause_fractional_mass": [
+          "1"
+        ],
+        "slots": [
+          {
+            "slot": 0,
+            "machine": 0,
+            "fractions": [
+              [
+                0,
+                "1/2"
+              ],
+              [
+                1,
+                "1/2"
+              ]
+            ]
+          },
+          {
+            "slot": 1,
+            "machine": 0,
+            "fractions": [
+              [
+                1,
+                "1/4"
+              ],
+              [
+                2,
+                "3/4"
+              ]
+            ]
+          },
+          {
+            "slot": 2,
+            "machine": 1,
+            "fractions": [
+              [
+                0,
+                "1/2"
+              ],
+              [
+                3,
+                "1/2"
+              ]
+            ]
+          },
+          {
+            "slot": 3,
+            "machine": 1,
+            "fractions": [
+              [
+                3,
+                "1/4"
+              ],
+              [
+                4,
+                "3/4"
+              ]
+            ]
+          },
+          {
+            "slot": 4,
+            "machine": 2,
+            "fractions": [
+              [
+                1,
+                "1/4"
+              ],
+              [
+                2,
+                "1/4"
+              ],
+              [
+                3,
+                "1/4"
+              ],
+              [
+                4,
+                "1/4"
+              ]
+            ]
+          }
+        ],
+        "job_slots": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "matching": [
+          0,
+          1,
+          4,
+          2,
+          3
+        ],
+        "x_by_depth": [
+          "1/2",
+          "1/4"
+        ],
+        "x_h": "1/4",
+        "D": "2",
+        "approximation_ratio": "15/8"
+      },
+      "calibrated": {
+        "source_claims": [
+          "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+          "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+        ],
+        "k": 2,
+        "h": 1,
+        "variable_labels": [
+          0
+        ],
+        "roots": [
+          [
+            0,
+            1
+          ]
+        ],
+        "jobs": [
+          {
+            "job": 0,
+            "kind": "selector",
+            "variable": 0,
+            "edges": [
+              [
+                0,
+                "1"
+              ],
+              [
+                1,
+                "1"
+              ]
+            ]
+          },
+          {
+            "job": 1,
+            "variable": 0,
+            "sign": 0,
+            "path": [
+              0
+            ],
+            "parent": 0,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                0,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          },
+          {
+            "job": 2,
+            "variable": 0,
+            "sign": 0,
+            "path": [
+              1
+            ],
+            "parent": 0,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                0,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          },
+          {
+            "job": 3,
+            "variable": 0,
+            "sign": 1,
+            "path": [
+              0
+            ],
+            "parent": 1,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                1,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          },
+          {
+            "job": 4,
+            "variable": 0,
+            "sign": 1,
+            "path": [
+              1
+            ],
+            "parent": 1,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                1,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          }
+        ],
+        "sigma": [
+          0,
+          0,
+          2,
+          1,
+          1
+        ],
+        "listed_machines": [
+          {
+            "machine": 0,
+            "kind": "internal",
+            "variable": 0,
+            "sign": 0,
+            "path": []
+          },
+          {
+            "machine": 1,
+            "kind": "internal",
+            "variable": 0,
+            "sign": 1,
+            "path": []
+          },
+          {
+            "machine": 2,
+            "kind": "clause_unit",
+            "clause": 0,
+            "unit": 0
+          },
+          {
+            "machine": 3,
+            "kind": "clause_unit",
+            "clause": 0,
+            "unit": 1
+          }
+        ],
+        "listed_loads": [
+          {
+            "machine": 0,
+            "load": "3/2"
+          },
+          {
+            "machine": 1,
+            "load": "1"
+          },
+          {
+            "machine": 2,
+            "load": "1"
+          },
+          {
+            "machine": 3,
+            "load": "0"
+          }
+        ],
+        "clause_ranges": [
+          {
+            "clause": 0,
+            "start": 2,
+            "count": 2,
+            "arity": 4,
+            "listed_units": 2
+          }
+        ],
+        "full_machine_count": 4,
+        "dummy_used": false,
+        "internal_machine_count": 2,
+        "omitted_unit_machine_count": 0,
+        "omitted_unit_machine_load": "0",
+        "makespan": "3/2",
+        "bound": "3/2",
+        "mode": "calibrated",
+        "r": 1,
+        "t": [
+          "1/2",
+          "1/4",
+          "1/4",
+          "1/4",
+          "1/4"
+        ],
+        "internal_row_cardinality": [
+          "2",
+          "2"
+        ],
+        "clause_fractional_mass": [
+          "1"
+        ],
+        "slots": [
+          {
+            "slot": 0,
+            "machine": 0,
+            "fractions": [
+              [
+                0,
+                "1/2"
+              ],
+              [
+                1,
+                "1/2"
+              ]
+            ]
+          },
+          {
+            "slot": 1,
+            "machine": 0,
+            "fractions": [
+              [
+                1,
+                "1/4"
+              ],
+              [
+                2,
+                "3/4"
+              ]
+            ]
+          },
+          {
+            "slot": 2,
+            "machine": 1,
+            "fractions": [
+              [
+                0,
+                "1/2"
+              ],
+              [
+                3,
+                "1/2"
+              ]
+            ]
+          },
+          {
+            "slot": 3,
+            "machine": 1,
+            "fractions": [
+              [
+                3,
+                "1/4"
+              ],
+              [
+                4,
+                "3/4"
+              ]
+            ]
+          },
+          {
+            "slot": 4,
+            "machine": 2,
+            "fractions": [
+              [
+                1,
+                "1/4"
+              ],
+              [
+                2,
+                "1/4"
+              ],
+              [
+                3,
+                "1/4"
+              ],
+              [
+                4,
+                "1/4"
+              ]
+            ]
+          }
+        ],
+        "job_slots": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "matching": [
+          0,
+          1,
+          4,
+          2,
+          3
+        ],
+        "x_by_depth": [
+          "1/2",
+          "1/4"
+        ],
+        "x_h": "1/4"
+      },
+      "witness": {
+        "source_claims": [
+          "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+          "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1"
+        ],
+        "k": 2,
+        "h": 1,
+        "variable_labels": [
+          0
+        ],
+        "roots": [
+          [
+            0,
+            1
+          ]
+        ],
+        "jobs": [
+          {
+            "job": 0,
+            "kind": "selector",
+            "variable": 0,
+            "edges": [
+              [
+                0,
+                "1"
+              ],
+              [
+                1,
+                "1"
+              ]
+            ]
+          },
+          {
+            "job": 1,
+            "variable": 0,
+            "sign": 0,
+            "path": [
+              0
+            ],
+            "parent": 0,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                0,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          },
+          {
+            "job": 2,
+            "variable": 0,
+            "sign": 0,
+            "path": [
+              1
+            ],
+            "parent": 0,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                0,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          },
+          {
+            "job": 3,
+            "variable": 0,
+            "sign": 1,
+            "path": [
+              0
+            ],
+            "parent": 1,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                1,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          },
+          {
+            "job": 4,
+            "variable": 0,
+            "sign": 1,
+            "path": [
+              1
+            ],
+            "parent": 1,
+            "kind": "port",
+            "clause": 0,
+            "edges": [
+              [
+                1,
+                "1/2"
+              ],
+              [
+                2,
+                "1"
+              ],
+              [
+                3,
+                "1"
+              ]
+            ],
+            "external": {
+              "start": 2,
+              "count": 2,
+              "time": "1"
+            }
+          }
+        ],
+        "sigma": [
+          0,
+          2,
+          3,
+          1,
+          1
+        ],
+        "listed_machines": [
+          {
+            "machine": 0,
+            "kind": "internal",
+            "variable": 0,
+            "sign": 0,
+            "path": []
+          },
+          {
+            "machine": 1,
+            "kind": "internal",
+            "variable": 0,
+            "sign": 1,
+            "path": []
+          },
+          {
+            "machine": 2,
+            "kind": "clause_unit",
+            "clause": 0,
+            "unit": 0
+          },
+          {
+            "machine": 3,
+            "kind": "clause_unit",
+            "clause": 0,
+            "unit": 1
+          }
+        ],
+        "listed_loads": [
+          {
+            "machine": 0,
+            "load": "1"
+          },
+          {
+            "machine": 1,
+            "load": "1"
+          },
+          {
+            "machine": 2,
+            "load": "1"
+          },
+          {
+            "machine": 3,
+            "load": "1"
+          }
+        ],
+        "clause_ranges": [
+          {
+            "clause": 0,
+            "start": 2,
+            "count": 2,
+            "arity": 4,
+            "listed_units": 2
+          }
+        ],
+        "full_machine_count": 4,
+        "dummy_used": false,
+        "internal_machine_count": 2,
+        "omitted_unit_machine_count": 0,
+        "omitted_unit_machine_load": "0",
+        "makespan": "1",
+        "bound": "3/2",
+        "mode": "given-strong-witness",
+        "r": 1,
+        "t": [
+          "1",
+          "1",
+          "1",
+          "0",
+          "0"
+        ],
+        "internal_row_cardinality": [
+          "1",
+          "2"
+        ],
+        "clause_fractional_mass": [
+          "2"
+        ],
+        "slots": [
+          {
+            "slot": 0,
+            "machine": 0,
+            "fractions": [
+              [
+                0,
+                "1"
+              ]
+            ]
+          },
+          {
+            "slot": 1,
+            "machine": 1,
+            "fractions": [
+              [
+                3,
+                "1"
+              ]
+            ]
+          },
+          {
+            "slot": 2,
+            "machine": 1,
+            "fractions": [
+              [
+                4,
+                "1"
+              ]
+            ]
+          },
+          {
+            "slot": 3,
+            "machine": 2,
+            "fractions": [
+              [
+                1,
+                "1"
+              ]
+            ]
+          },
+          {
+            "slot": 4,
+            "machine": 3,
+            "fractions": [
+              [
+                2,
+                "1"
+              ]
+            ]
+          }
+        ],
+        "job_slots": [
+          [
+            0
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "matching": [
+          0,
+          3,
+          4,
+          1,
+          2
+        ]
+      }
+    }
+  },
+  "review_source_hashes": {
+    "unit_readout_calibrated_cardinality_slots_final_mathematical_review.md": "c80286686366564473d7f13afb1bb472ee31cb713f1a8a79c02feb4997e743a0",
+    "canonical_calibrated_slots_read_after_attack.md": "cd2fb4eff4ca1d25abe3f81746c87408c04f2cfd96ee6d8862564b4920a24dce",
+    "calibrated_slots_vw_deduction_changed_only_confirmation.md": "912880962089eacc932688a978e27bb2c41a7914462dc83e1689b37193bac370"
+  },
+  "process_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "reviewed_math_body_recovery_sha256": "c3b0182635999fb3cdbb3abde2cd0c9cb48286094dca91cd8c2f38257ad6cc23",
+  "limits": "Finite checks separate from proof. General LP not integrated; sufficient witness not necessary without extra assumptions. Fixed-D result not general UM. Classical ST and VW gcd/max predecessor deducted; no novelty/external-review certification."
+}

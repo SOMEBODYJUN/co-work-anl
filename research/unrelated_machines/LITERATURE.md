@@ -16,6 +16,8 @@
 | Baba2026 | Prediction of heavy job assignments enables 1+epsilon with sufficiently accurate prediction; guarantee smoothly degrades and is capped by 2 OPT. Search budget K gives running time (mn)^K poly(m,n,log P,1/epsilon). K must remain constant for stated polynomial search; arbitrary prediction does not yield uniform <2 ratio. | [Learning-Augmented Approximation for Unrelated-Machines Makespan Scheduling](https://arxiv.org/pdf/2606.13133v1)；[本地原文](../../history/source/literature/unrelated_machines/baba_bampis_mitropoulos_2026_learning_augmented_v1.pdf)；Theorem 5.2 and Corollaries 5.3–5.4, Section 5.3; full HTML https://arxiv.org/html/2606.13133v1。版本：v1 submitted 2026-06-11; 22 pages; unreviewed preprint |
 | BGW2026 | Polylog-round CONGEST algorithm with 2+epsilon integral guarantee or 1+epsilon fractional guarantee. Distributed communication model; better-than-2 round lower bound is not NP-hardness or a central-polynomial-time lower bound. | [Distributed Load Balancing on Unrelated Machines](https://arxiv.org/pdf/2607.10075v1)；[本地原文](../../history/source/literature/unrelated_machines/bernstein_gupta_wang_2026_distributed_load_v1.pdf)；Theorem 1.2 (PDF p. 4), formal Theorem 4.3; Remark 1.3 fractional alternative。版本：v1 submitted 2026-07-11; preprint |
 
+| BCG2009 | Bateni–Charikar–Guruswami, *New Approximation Algorithms for Degree Lower-bounded Arborescences and Max-Min Allocation*: Theorems 3.1/4.2 give factor-2 hardness for additive DegreeTwo/InfDegreeOne Max-Min Allocation; Definition 4.3/Lemma 4.6 use a forest M-pyramid containing all sources. §7's duplication gadget only records a barrier below factor 2. These statements do not yield the rooted single-tree (b^*=1) versus (b^*\le\delta) gap. | [作者PDF](https://mhbateni.com/academic/pubs/maxmin-tech09.pdf)；[本地原文](../../history/source/literature/unrelated_machines/bateni_charikar_guruswami_2009_maxmin.pdf)；Theorems 3.1/4.2, Definition 4.3/Lemma 4.6, §7 Definition 7.1/Lemma 7.2。版本：TR-848-09 author PDF; targeted theorem locations read, full proof not independently reconstructed |
+
 ## 可以沿用什么、还缺什么
 
 - LST的通用2近似与低于3/2的困难性分开引用；不把ρ=3/2也写成排除。已保存的LST公开全文是1987报告，未假装成1990期刊排版。
@@ -81,7 +83,7 @@ Asahiro–Miyano–Ono，*Graph classes and the complexity of the graph orientat
 
 ## 标签一致性接口的已知困难性方法边界
 
-Bateni–Charikar–Guruswami，TR-848-09，[49页作者PDF](https://mhbateni.com/academic/pubs/maxmin-tech09.pdf)，§7 Definition7.1/Lemma7.2，PDF/印页47–48，讨论三个外部物品的duplication gadget：保留两个完整分配的并集可使物品度至多二，再由度二Santa Claus算法限制该困难性途径。本次只联网核读该定位，未落地原始字节或宣称全文内化；manifest的BCG2009_duplication_barrier明确状态。它是[低重数标签资源](../current/unrelated_machines/bounded_collision_label_resource_floor.md)的机制比较，非本页树着色证明的导入前提，也不是调度近二困难性。
+Bateni–Charikar–Guruswami，TR-848-09，[49页作者PDF](https://mhbateni.com/academic/pubs/maxmin-tech09.pdf)，Theorems 3.1/4.2 给 additive DegreeTwo/InfDegreeOne Max-Min Allocation 的因子<2困难；Definition4.3/Lemma4.6 的 M-pyramid 是含全部源点的 forest。§7 Definition7.1/Lemma7.2 只把 duplication gadget 路线限制到低于2，未给 α≥2。已下载原字节并做目标位置文本核读；当前树模型的非可导入性见 [两份完整复制地板](../current/unrelated_machines/duplication_two_copy_floor.md)。
 
 
 ## 整束缺陷着色的标准势函数来源
@@ -91,3 +93,20 @@ Fuchs–Kuhn，*List Defective Colorings: Distributed Algorithms and Application
 ## 现行裸C2接口的针对性对照
 
 Verdugo–Verschae–Wiese，[arXiv:1811.08539v3](https://arxiv.org/abs/1811.08539v3)，2020-05-16，34页；PDF/印3 Theorem1及AppendixB（33–34）已联网核读其陈述/定义。它研究CONFIG上高轮SoS的小常数间隙；本文 `UM-C2-LOAD-UNIT-GAP-v1` 的[单位伪矩证明](../current/unrelated_machines/c2_unit_multislice_gap.md)只是对仓库裸degree-four负载合同的精确自足判定，不能将后者包装成更强CONFIG层级下界。该源仅web读取，未落地原始字节或重构全文；全球新颖性未认证。
+
+## 有符号阈值 PCSP 的源困难性及出现次数缺口
+
+Brakensiek–Guruswami，[ECCC TR16-183 原始PDF](https://eccc.weizmann.ac.il/report/2016/183/download)，35页，Theorem1.3 PDF6/印4已实际核读。对arity2A−1、严格重量0..A、弱重量0..B且A≤B≤2A−2，允许否定和常量的一般PCSP为NP-hard；固定ρ<2可取A>1/(2−ρ)、B=floorρA。这只是原分类的直接代入，不是调度困难性。原定理不限制变量双出现、相反符号；每机等权的调度端口合同则可容量匹配精确解。[单任务投影正文](../current/unrelated_machines/signed_one_job_port_downset.md)定位普通复制缺口。仅web核原陈述，原字节未落地、全部源归约未重构，取得状态及限制见manifest。
+
+## 三特殊物品复制接口的针对性扣除
+
+BCG2009 的已登记 TR-848-09 §7 Definition7.1/Lemma7.2（原作者PDF/印47–48）已经提出三特殊item a vsbc的完整分配复制合同和两完整分配剪度。本次[三host/半值正文](../current/unrelated_machines/three_host_selector_sharp_three_halves.md)不把该接口或剪度冒充原创；规范proof独立用非负二色阈值闭包，给无条件half实际allocation及含全部预载的锐3/2完整调度，未导入该文困难性或配置算法。本组初核仅web读取§7/准确范围；本次合并保留同行随后取得的原始PDF字节及manifest哈希，全球新颖性仍未认证。
+
+CCK2009，[arXiv:0901.0205v1](https://arxiv.org/abs/0901.0205v1)，35页，§6.1 PDF28–31的Claim3/Theorem6及逆向环证明已针对性核读；已给精确配置证书时可精确减半。它只出现在第二名审查者的独立K4重构中；规范二色proof不依赖该定理。近似pricing的ε不能置零；web-only取得状态及完整前提见manifest和审查，未取得原字节。
+
+
+Magniez等，[递归多数原始PDF](https://arxiv.org/pdf/1309.7565)，§2.2 PDF4–5定义完整三叉多数树。仅作为[叶命中递推](../current/unrelated_machines/unit_readout_pruned_forest_boundary.md)的经典模型背景，不将query复杂度结果当通用横截定理或调度困难性；全(k,r,h)命中式由自足递推证明，未认证新颖性。仅web实读、未落地原字节，已准确登记manifest。
+
+## 连续残余通过量与次模背景
+
+Lok–Romero Morales–Vermeulen (2005)，[大学原PDF](https://cris.maastrichtuniversity.nl/ws/files/1037187/guid-9485980d-bc86-4240-b008-d8fb2096cc3d-ASSET1.0.pdf)，§3.2印p5/PDF6为job-only资源消耗；§6.3 Theorem6.2/Cor6.3印pp17–18/PDF18–19为机集合次模。Kulik等ESA2019，[正式PDF](https://drops.dagstuhl.de/storage/00lipics/lipics-vol144-esa2019/LIPIcs.ESA.2019.69/LIPIcs.ESA.2019.69.pdf)，§2.1.1/Theorem1及§3为共同job大小下的item子集LP值次模。两者仅为相关祖先，不当作任意异端p容量格定理；[本阶段自足证明](../current/unrelated_machines/residual_throughput_and_occupation_projection.md)自行处理对偶格封闭。仅web定位读原PDF，未物化字节/填写hash或宣称完整内化；Topkis原件没有被本阶段读取，全球新颖性未认证。

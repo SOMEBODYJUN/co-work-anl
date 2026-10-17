@@ -51,10 +51,13 @@ def lst_support_obstruction():
         core_load = F(51, 100) + F(m + 1, m) * s
         assert core_load == 1
         assert F(0) <= s < F(49, 100)
-        # OPT=1 is witnessed by A_i on distinct core machines, m B's on cores,
-        # and one remaining B on the extension machine.
+        # The old family has OPT strictly below 1: one B per core and one on
+        # the extension gives 51/100+s. This corrects the former false label
+        # "OPT=1"; the witness is still enough to refute the support-locking
+        # contract at threshold T=1.
         witness = tuple(range(m)) + tuple(list(range(m)) + [m])
-        assert max(loads(witness, p, m + 1)) < 1
+        opt_exact = F(51, 100) + s
+        assert max(loads(witness, p, m + 1)) == opt_exact < 1
         # Any matching of the heavy A jobs must occupy every core, one each.
         # Under the LST positive support, all B jobs then remain on core machines,
         # each with residual capacity 49/100; two B's exceed it for m>=2.
@@ -70,6 +73,7 @@ def lst_support_obstruction():
                 break
         assert not feasible_residual
         rows.append({"m": m, "small": str(s), "lst_row_load": str(core_load),
+                     "old_family_opt_exact": str(opt_exact),
                      "opt_witness_max": str(max(loads(witness, p, m + 1))),
                      "support_residual_feasible": feasible_residual})
     return rows

@@ -5,6 +5,7 @@
 新阶段边界见[长链替换与固定机器联合投影](long_path_coalition_gap.md)：经典gap可移到任意大围长的简单机器图；只共享单机边际的固定大小联合见证仍有sup gap2。完整多机交叠相容性不在该否定范围，且三机完整相容性已能解决这批树宽2反例。完整证明、独立攻击和有限核验分别登记，未声称原创算法或全球新颖性。
 
 先读[协作入口](../../unrelated_machines/README.md)与[精确账本](../../unrelated_machines/CLAIMS.md)，再读[模型、舍入与配置间隙的自足重构](model_and_classical_barriers.md)。[文献清单](../../unrelated_machines/literature_manifest.json)区分已取得原文、已核结果和待处理来源。[当前前沿](../../unrelated_machines/RESEARCH_STATE.md)说明下一步需要完成什么。
+本轮方向审计见[team_direction_audit.md](../../reviews/unrelated_machines/team_direction_audit.md)：已有资产主要关闭局部合同，任意输入的共同容量桥仍是唯一主轴。
 
 | 定义/Claim | 内容与真实状态 | 依赖和作用 |
 | --- | --- | --- |
@@ -56,6 +57,8 @@
 读取顺序：本题精确账本→正文§1合同/§2条件舍入/§3限域复杂度/§4限族切面→joint_matching_completion_review.md→joint_matching_completion_audit.json及其三份实际审计代码。原始Karp重印源的版本/hash与读到的位置见manifest；没有把下载说成完整源证明重构。
 
 下一义务已被半单位扩展修正：固定δ<1/2的(Aδ)承诺搜索在P≠NP下均不可能；应转向实际槽损失或可分离/可舍入的条件块强化，仍无统一新算法。文件入口完整路径为research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md、research/reviews/unrelated_machines/joint_matching_completion_review.md、tests/audits/unrelated_machines/{joint_matching_completion,unique_small_matching_audit,joint_matching_completion_independent}.py及evidence/runs/unrelated_machines/joint_matching_completion_audit.json；新候选必须同时攻击共享z、长链与一般多小端输入。
+
+新增失败路线见[固定工作量与中任务配置分解边界](../../questions/unrelated_machines/fixed_work_and_medium_config_barriers.md)：固定阈值的“配置 LP 加 tiny 槽损失”在 α<1/5 时退化为经典配置间隙；固定总工作量和固定非减凸分离势也会被私有昂贵叶族锁在近二。该页只排除所列合同，重开边与自适应共同势仍是开放方向。
 
 [生成树再耦合的五机反例](tree_markov_completion.md)进一步定位算法接口：即使pair来自真实全局最优分布，任意tree-Markov态冻结树任务后仍可能只可补到2T；一步迁移可修复此例，不排一般repair。状态见UM-TREE-MARKOV-COMPLETION-NO-v1及正文链接的独立审查/双路证据。
 
@@ -123,8 +126,6 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 读取链：本题账本→正文§1合同/§2–5构造及位复杂度→rooted_dag_token_bridge_review.md→rooted_dag_token_bridge.py及独立审计→rooted_dag_token_bridge_audit.json。原始Bamas2025 v2字节与定义/脚注位置见manifest；一轮SA定理只核对陈述，未转成调度层级结论。
 
 新增派生UM-COORDINATE-REPAIR-ST-GAP-v1（循环批次正文cyclic_batch_repair_and_fork_obstruction.md§9）：与boss7真实最优凸包固定槽族衔接，工作量守恒使本逐坐标优化器仍0轮且gap→2。这个限制已覆盖配置来源；它不扩大fork关于one-destination、makespan非增的另一合同。下一机制必须允许低负载接收机上升并共同控制最大负载，不能把更强初始化单独当成循环算法的补丁。
-
-新增派生UM-COORDINATE-REPAIR-ST-GAP-v1（同稿§9）：与boss7真实最优凸包固定槽族衔接，工作量守恒使本逐坐标优化器仍0轮且gap→2。这个限制已覆盖配置来源；它不扩大fork关于one-destination、makespan非增的另一合同。下一机制必须允许低负载接收机上升并共同控制最大负载，不能把更强初始化单独当成循环算法的补丁。
 
 ## 固定最优边际断点与单边界批量恢复
 
@@ -208,11 +209,11 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 
 本结果终止的是固定顺序max||Aeψ||²后左乘的具体充分机制。真实所有阶矩和逐行容量算子也不能免费保过去联合支撑；仍不排重新耦合、自适应顺序、好μ选择或其他提取。§8的交换算子边界可回收；真正未解仍是一般输入可求的共同容量与实际输出/总进展，UM-TARGET-v1保持OPEN。
 
-## 新的可重开候选与零质量支撑边界
+## 新的可重开结构与零质量支撑边界
 
-[跨过配置间隙后的开放义务](../../questions/unrelated_machines/barrier_escape_obligations.md)新增 `UM-THRESHOLD-COVER-JOINT-SLOT-v1`：在共同资格、等端时间私有组结构下，乘法最小覆盖 FPTAS 加可调阈值 `τ` 和一次宏/home/sink 联合槽流，给定 `T` 的候选界为 `R*=((1+η)(3+δ))/(2+η)<2`。它是既有 `3/2+δ` 组接口的 sharpen，未知 `OPT` 的单调搜索与一般任务分解仍未闭合。
+[跨过配置间隙后的开放义务](../../questions/unrelated_machines/barrier_escape_obligations.md)登记 `UM-THRESHOLD-COVER-JOINT-SLOT-v1` 的共同资格/等端私有组门槛界。原FPTAS见证换固定前缀的恢复有fatal gap，同行已正确撤回旧完成状态；本次修复可证二近似UB与截断DP，实际迁出同一覆盖X，使真实成本等于LP权重。经[独立冻结复核](../../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)，原 `R*=((1+η)(3+δ))/(2+η)<2` 和one-sided搜索在声明结构类内重新闭合。一般任务分解、共同容量生成仍未闭。
 
-同页的 `UM-LST-SUPPORT-RELEASE-v0` 精确反例族表明：即使 `OPT=T=1`，给定 LST 正支撑上的大边匹配也可能让残余整型任务无解，而真实调度使用了零质量边。容量释放机制必须允许支撑扩张或共同 `(H,z)` 证书。rank-jump-one 路线已分层：对真实有限正权支持可用 Boolean 代数闭合恢复 `R+1` 原子；对一般伪矩仍缺共同交换投影与 `V2` localizer。`4-2√2` 支持候选未认证。
+同页的 `UM-LST-SUPPORT-RELEASE-v0` 旧族仍反驳固定正支撑填充，但其精确 `OPT=1−49/[100(m+1)]<1`，撤回旧的 `OPT=T=1` 标签。新增 `UM-LST-SUPPORT-RELEASE-OPTIMAL-v1` 用 `r` 个独立块把真实 `OPT` 固定为1，并证明少于 `r` 条零质量边时比值为 `2−1/m`；容量释放机制必须允许支撑扩张或共同 `(H,z)` 证书。rank-jump-one 路线已分层：对真实有限正权支持可用 Boolean 代数闭合恢复 `R+1` 原子；对一般伪矩仍缺共同交换投影与 `V2` localizer。`4-2√2` 支持候选未认证。
 
 ## 加权共同组的新增正面接口
 
@@ -269,10 +270,81 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 
 正文给UM-LARGE-BUNDLE-COLLISION-FLOOR-v1完整域及式(9)精确必要量；读取冻结审查、两份large_bundle_collision代码及独立原父点/实际调度证据后再用于归约。不能把可解的平方池近二OPT当NP困难性。
 
-[全局四阶负载松弛的锐利二间隙](c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。
+[全局四阶负载松弛的锐利二间隙](c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。该裸C2命题的范围不变；后续[弱H2合取的新二间隙](weak_h2_configuration_moment_gap.md)另行关闭只共享一阶CONFIG的合同。共享行二阶在该新族上阈值精确，一般强合同与UM-TARGET-v1仍OPEN。
 
 [闭环容量释放](../../../research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§11把严格下降障碍推进到弱最大负载单调小步：真实最优凸包的全部最小成本槽输出仍趋2，最小非平凡改件/参与机恰d+1；但单任务到OPT的最小峰值仅为B+1/k²。它不是一般困难性，且该cactus族可精确解。
 
 [异端有界畸变共同组](../../../research/current/unrelated_machines/distorted_group_joint_slot_rounding.md)在给定上下比例包络、唯一home/共同资格结构下联合选宏与接收机，给home≤(1+r+δ)T、sink≤[κ+B̄(1−r)]T，且闭合未知OPT搜索；固定κ+B̄δ<2时只有该结构类具统一改善。 一般UM-TARGET-v1仍OPEN；下一高信息义务是允许可控临时增载的共同容量修复及总位多项式进展，或在一般矩阵中生成保统一余量的相关结构。
 
+## 路线复盘与下一道硬门槛
+
+本题目前属于“诊断与限域接口取得实质进展，通用桥梁尚未推进”的状态。逐边/逐机/多行条件证书的趋二反例，已经把缺口从“再加一个局部不等式”收紧为多机共同相关容量；单汇点、固定 home、固定需求上界和固定支撑的联合构造，则证明受限共同成本确实可以被一次整数过程控制。两类成果都保留，但不能合并成一般算法。
+
+后续候选必须对准 `JC-THRESHOLD-ε(T)`：对任意输入和候选 `T≥0`，从 `P` 本身产生共同容量证书并实际输出所有任务的整数分配，使每台机器≤`(2−ε)T`；若失败，必须有可独立验证的 `FAIL⇒OPT>T` 语义。`T=0`、零边、不可用边、空任务和极大分母属于同一合同。若采用 big/tiny 分解，固定 `β<1` 时“big 联合可求且 tiny 在剩余容量有分数解”确实会由 ST 给 `(1+β)T`，但 big 选择、tiny 可行性与全部机器容量的共同求解正是未解义务，不能把它当作免费匹配/流 oracle。
+
+路线若在两树/长链、共享小端多行、全 tiny 分区、零质量支撑边和异长二机攻击上仍缺全输入可求证书、共同整数输出、统一不退化 `ε`、可靠 FAIL 语义或总位长多项式进展，就只登记为局部边界/反例并停止同类微调。详见专题前沿中的路线复盘段。
+
+本轮团队资产清点已经写入[专题研究状态](../../unrelated_machines/RESEARCH_STATE.md#团队阶段清点去重后的路线矩阵-2026-10-17)。boss3 的大边/小边条件块路线与 boss6 的批量修复路线都指向“多目的地共同容量与实际整数输出”这一共享义务；后续应合并检查，不再各自复制逐星探针或逐坐标反例。其他路线按该矩阵分别归入经典前提、联合迁移、受限正面接口、矩/需求树和反面硬度，工作桌面只保留入口与卡点。
+
+[单任务外接端口的向下投影与锐计数](signed_one_job_port_downset.md)给`UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1`：保留一个外部出现端点且排除外部容量时，两一致态强制至少2^z(2^a+2^b−1)个严格可行状态，固定T>0逐参数锐；不能用该纯内部接口实现等值复制。BG一般signed阈值PCSP的近二困难性不保持调度双出现限制；多任务编码及外部联合容量仍未解，UM-TARGET-v1保持OPEN。
+
 [单层配额超图平方根重数地板](single_layer_quota_sqrt_multiplicity_floor.md)：对每个邻域至少 K、资源总重数至多 Δ 的单层接口，计数得 b≥1/(√Δ+1)−1/K，并由资源总量给 b≤1/√Δ（在相应密度下）。这比有界碰撞的 1/Δ 地板更强，明确要求近二归约使用平方级碰撞或跨层一致性；不构成一般硬度。
+
+[三外接机器选择器的锐三半界](three_host_selector_sharp_three_halves.md)：给only-a和b+c-free的两份实际C≤T调度，单调二色行权闭包输出only-b或only-c的完整C≤3T/2调度，且两任务锐；内部规模、资格任意，所有预载逐台核。同一机制对一般SC三特殊item给无条件可构造半值，亦锐。两者仅限制明确可用性复制接口；一般主目标和反面仍OPEN，新颖性/外审未认证。
+
+## 反面路线新增的模型与复制边界
+
+[Santa restricted边界](santa_restricted_bridge_boundary.md)核清 Haeupler–Saha–Srinivasan 的常数算法只适用于每件物品具有统一固有值的 restricted Santa；需求 \(k_v>1\) 的 token 桥梁任务在父/子端分别为 \(1/k_v\) 与 \(1\)，不保持该结构。故 restricted Santa 结果不能导入一般 UM 或当前 MMDA 反面路线。
+
+[两份完整复制地板](duplication_two_copy_floor.md)证明：若每个变量的两份完整标签束在各自副本内不交，则资源二着色给出 \(b\ge1/2\) 的实际根树；这把简单 duplication 的 soundness 上限写成精确一半，并与 BCG §7 的复制警示分开。当前仍缺跨层整数一致性，使 YES 保持 \(b^*=1\) 而 NO 的每个高比例树都能解码源见证。
+
+
+## 共同尺寸可重开 repair 接口
+
+[共同尺寸微任务的可重开容量流](common_size_reopen_capacity_flow.md)登记 `UM-COMMON-SIZE-REOPEN-v1`：给定冻结核心、共同尺寸资格流和 `q_max` 头部余量时，有序槽允许接收机增载并输出实际整修复；每个支持连通分量内单一尺寸时，整数槽最大流无加性损失。Farkas 价格给一般可分流的精确阻塞证书；两机三件的 Fraction 反例说明分数共同容量不保证不可拆分整性。一般核心选择、异端时间和统一余量仍未解决。
+
+[两状态行列池锐性修复](duplication_state_majority_floor.md)：标签可只选部分资源，s=K=4的真实最优为5/8，反驳旧附属1/2断言；主多数下界仍成立。新精确整数前沿及显式达到构造已独立重构，原K≥2s数例保留；不是一般近二困难性。
+
+[多输出加权状态预算](weighted_fanout_profile_boundary.md)扩展三host接口：给两实际YES，对任意候选输出集K和有理β构造实际C≤(2−β_i)T；真实OPT总和≤(2|K|−1)T，加权星取等。任意两个缺一OPT之和≤3T，至多一个可严格超三半，任意扇出二叉树同时锐；不能用仅单输出近二星代替全局复制soundness。主目标保持OPEN。
+
+[双轨阈值编码边界](dual_rail_threshold_soundness_boundary.md)：归一化scalar整类总有实际3/2（ST半质量直接推论），改unit容量亦总3/2，两种绝对T1界各有完整锐例。非均匀单例外有精确匹配合同；完整signedcube的真实OPT有min_B精确式且趋1。四成本模型分开，未将NO源自动解码为NO调度，主目标正反面仍OPEN。
+
+[单位读出配额森林边界](unit_readout_pruned_forest_boundary.md)：一般arity下实际C<2等价全部变量mandatory r=ceil(k(2−C))森林可注入slots；但arity≤2A时，任意深度和任意wiring均有实际≤1+floor(k/2)/k≤3/2（经典ST半质量推论），14机15job绝对界锐。叶命中精确门槛(k−r+1)^h说明dummy补齐义务；相同64open的两模块真实OPT为1与7/4，叶容量不能代替祖先兼容。一般目标正反面仍OPEN。
+
+[校准计数槽](unit_readout_calibrated_cardinality_slots.md)将单位读出树的半质量推广为有理下传证书：行分数任务数≤整数k−r+1给实际2−r/k。uniform x_h闭式提供所有wiring密度界；任意固定D≥2、arity≤D A的同结构类有确定性位poly统一2−1/(4D)算法，k,h可无界。已扣VW既有2−1/k及经典ST；D无界或一般P仍无统一ε，反面目标保持OPEN。
+
+## 机器价格路线的精确退出条件
+
+[价格凸化与锐容量界](heavy_light_price_convexification.md)将原min–max候选修正为显式LP：剪枝后全部标量机器价格仅给LST+big基数，joint gap仍sup2；不剪枝固定m锐界m。精确dual最优价若暴露同一big放置，可检验并恢复共同light见证和实际ST输出；一般输入没有这种面保证，面失败也不能可靠拒绝T。下界复用经典两树，不宣称新困难性。下一义务是可计算的非可加跨机器状态或实际联合损失，而非调价/anchor局部凸化。
+
+## 固定残余函数与任务身份耦合
+
+[容量格次模与占位图表示](residual_throughput_and_occupation_projection.md)给任意异端p、固定R的可求throughput格次模性质；固定占位时缺口D是超模。任务身份随H改变则不继承（2×2实际OPT1/2负控制）。更精确地，对每固定α<2及tiny上界，严格次二完成族可实现任意图独立集，D(I)恰为诱导边数；这些实例原OPT1可直接构造，故不是一般困难性。下一步仍是同时处理容量扣减、任务角色变化及实际舍入损失，不能从固定R次模或免费拟阵识别补上。
+
+
+[两状态quota orientation表示](two_state_quota_orientation_obligation.md)把固定 \(\delta\) 的真实根树存在性精确翻译成rail方向、标签quota和资源单射；完整支付才是2-SAT，部分支付是quota packing。此表示替代继续堆叠资源复制，下一义务是证明该quota对象的gap soundness或构造其不可行障碍。
+
+[完整单位树的叶流与选择重组](unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。
+
+## 同点合取的新增理论边界
+
+[弱H2与强二阶配置的分离](weak_h2_configuration_moment_gap.md)给参数化一般证明：全局C2-load与完整CONFIG仅共享同一一阶x时，正值整数间隙上确界仍为2。k≥3的多项式规模稀释星族在T=1+(k−1)/(k²+1)有显式有理共同证书，而真实OPT=2−1/k；关键是条件激活中的伪矩超额在一阶配置投影中被稀释。全局PSD、所有负载localizer、相同x配置及位复杂度均分别证明。共享行二阶的强合同则在**同一族所有T**上阈值恰等于OPT；零pair经PSD传输成全局条件单槽容量。二者是不同Claim，不能外推成一般强H2定理或计算困难性。
+
+[完整槽包络的精确表示](slot_envelope_and_configuration_identity.md)把所有尺度的真实槽上界写成E=ΣΔp·ceil(prefix x)，证明全局min max E=OPT。固定T后逐行凸化子水平集恰CONFIG；先凸化整个上图则只剩线性分数负载。可验证完整损失并未免费解决共同选择。后续要攻共享二阶及更强跨机信息的可计算性/实际提取，或绕过这些松弛的一般构造，停止把上述已排弱合取当充分接口。
+
+[允许换轨的稀疏部分投影解码接口](../../questions/unrelated_machines/sparse_partial_projection_coupling_decoder_obligation.md)仅保留下一反面承重义务：同一vertex边际μ、projection次耦合及β/L>γ的真实浓缩。标准有给定证书decoder不等于调度归约；统一alphabet R的基线1/R使只保直方图或恰β=θ、L=θR时无法严格分离；近似量需另核常数。调度→证书OPEN，未进入canonical图/完成Claim账本。
+
+
+[两状态quota orientation的Hall切分解](two_state_quota_hall_cut_decomposition.md)进一步给定变量子集与rail方向的精确支付判据：所有标签子集都必须通过Hall邻域不等式，资源度至多二时可拆分为私有、内部共享和边界共享三项。固定方向可由整数流输出实际支付或给出独立Hall缺口；同时选择方向和把单方向失败提升为全输入 `FAIL` 仍未解决。
+
+[配置正部阈值与严格单位五三界](unit_readout_configuration_threshold_polytope.md)：完整私有单位树的CONFIG(T<2)恰由Σ(q−t)+≤floor(k(T−1))q描述；CONFIG1等价整轨LP并有完整C≤5/3输出（偶k≤3/2，k1≤1）。闭合两树精确Tconf=1+s*/k，经典gap族仍为1+1/k，故不外推为一般次二或近二困难性。
+
+[剪枝调度首步与有界批量临时峰值](pruned_first_move_and_transient_peak.md)登记 UM-PRUNED-FIRST-MOVE-BOUND-v1 与 UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1：给定T剪枝σ、T≤C≤2T且另一τ≤T，某直接单件步≤U=max(2T,C+T/2)；无需τ可枚举一步或可靠NO。每固定k的m=k+1环族达到U及指定目标minimax。C=T排除零步歧义、孤立区间C≤B<U。一步可能增载，下一承重义务是一般缓冲集合/共同容量和总进展；初态不假设ST来源。正文→pruned_first_move_transient_peak_review.md→三个审计/实际输入及路径证书→pruned_first_move_transient_peak_audit.json。
+
+## 本轮新增的精确桥与可解结构
+
+[机器—任务关联反馈边参数的精确阈值算法](incidence_cycle_rank_exact.md)登记 `UM-INCIDENCE-FEEDBACK-EXACT-v1`：对有限关联图的反馈边数 `b`，枚举实际使用的反馈边后把余图化为森林，用叶交换精确输出 `T`-可行调度，复杂度 `2^b·poly(L)`；`b≤1` 时覆盖任意任务支持度的位多项式精确子类。它把一般输入的剩余难点定位到有环核心，不改变主目标 OPEN 状态。
+
+[全阶共同矩与负载局部化器的整数提取桥](full_degree_moment_localizer_decoding_bridge.md)登记 `UM-FULL-DEGREE-MOMENT-DECODING-v1`：次数 `2n+1` 的 Boolean/one-hot 共同泛函和次数 `n` 负载 localizer 必然含真实 `T`-可行原子；证书和原子族可指数大，故这是共同矩路线的完结义务而非多项式算法。
+
+[重轻角色的自洽对偶证书与YES固定点边界](heavy_light_saddle_certificate_and_cycle.md)登记 `UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1`：残余 LP 最优对偶与同价重任务最小化共同给全局角色及 `(1+β)T` ST 输出；参数化两机 YES 族表明纯 saddle 在 `OPT≤T` 时也可能不存在。逐价格 min–max 仍不能直接替代共同角色。

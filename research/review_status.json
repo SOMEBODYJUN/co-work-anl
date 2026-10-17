@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checked_on": "2026-10-10",
+  "checked_on": "2026-10-17",
   "scope": "All IDs declared in current/claims.md. Five review fields and graph status remain independent; this is not peer certification.",
   "entries": [
     {
@@ -3496,11 +3496,11 @@
       "id": "UM-C2-PREFIX-CONDITIONING-DEGREE-v1",
       "source_proof": "new_current_work",
       "current_proof": "complete",
-      "internal_review": "self_attack_and_exact_audit",
+      "internal_review": "current_exact_audit",
       "external_review": "not_recorded",
       "implementation": "audit_only",
       "graph_status": "complete stated-scope proof; internally exactly enumerated; external review and novelty unverified",
-      "implementation_detail": "偶奇5-bit/6-task parity构造，32态整数枚举核验；不提供一般C2 oracle"
+      "implementation_detail": "显式替换错误互补见证；7任务3机器，实际端单项式、完整负载、独立PSD和全合法调度核验；只限指定来源信息"
     },
     {
       "id": "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
@@ -3590,7 +3590,7 @@
       "external_review": "not_recorded",
       "implementation": "audit_only",
       "graph_status": "complete stated-scope obstruction; exact finite audit; external review and novelty unverified",
-      "implementation_detail": "k-均匀资源束的逐层匹配恒等式；规范审计通过"
+      "implementation_detail": "k-均匀资源束的逐层匹配恒等式；新增固定层极大匹配复杂度地板为自足组合推导；规范审计通过"
     },
     {
       "id": "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1",
@@ -3723,6 +3723,16 @@
       "implementation_detail": "k=2,3,7,100 Fraction核验；OPT=1、坏态C<2孤立于<=k批量状态图"
     },
     {
+      "id": "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "给定两一致实际见证的单翻位构造；双路独立Fraction实际辅助分配、零时间锐计数及外部私有host完整调度审计；无一般内部求解器。"
+    },
+    {
       "id": "UM-SQRT-MULTIPLICITY-FLOOR-v1",
       "source_proof": "new_current_work",
       "current_proof": "complete",
@@ -3741,6 +3751,416 @@
       "implementation": "none",
       "graph_status": "conditional logic complete; bit-growth applicability open; unrefereed; novelty unverified",
       "implementation_detail": "Deterministic, actual allocation output; excludes randomized/expected guarantees."
+    },
+    {
+      "id": "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently attacked and exactly audited; external review and novelty unverified",
+      "implementation_detail": "输入两已给实际YES；调度规范二色拼接及独立SC half allocation均实现，实际负载/效用精确回算；不存在未知YES求解能力。"
+    },
+    {
+      "id": "UM-TWO-YES-SC-DUPLICATION-HALF-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently attacked and exactly audited; external review and novelty unverified",
+      "implementation_detail": "输入两已给实际YES；调度规范二色拼接及独立SC half allocation均实现，实际负载/效用精确回算；不存在未知YES求解能力。"
+    },
+    {
+      "id": "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1",
+      "source_proof": "source_note",
+      "current_proof": "complete",
+      "internal_review": "self_attack_and_exact_audit",
+      "external_review": "not_recorded",
+      "implementation": "not_applicable",
+      "graph_status": "complete stated-scope model boundary; primary source targeted read; novelty unverified",
+      "implementation_detail": "最小k=2,d=1任务给出1/2与1两个非零端点，直接违反restricted定义。"
+    },
+    {
+      "id": "UM-DUPLICATION-TWO-COPY-FLOOR-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "self_attack_and_exact_audit",
+      "external_review": "not_recorded",
+      "implementation": "none",
+      "graph_status": "complete stated-scope obstruction; independent sanity check; novelty unverified",
+      "implementation_detail": "资源二着色、颜色类变量计数和边界量词；未把BCG的forest结果当作本证明。"
+    },
+    {
+      "id": "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "self_attack_and_exact_audit",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope obstruction; finite exact audit; external review and novelty unverified",
+      "implementation_detail": "34389个小系统检验主多数下界；旧sharp fixture不是混合部分束最优性证明。附属全K锐性已撤回，新增独立真实树/精确前沿审查。"
+    },
+    {
+      "id": "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "current_exact_audit",
+      "external_review": "not_recorded",
+      "implementation": "partial",
+      "graph_status": "complete stated-scope structural proof; one-sided OPT search corrected; unrefereed; novelty unverified",
+      "implementation_detail": "旧前缀证明已撤回；本次T>0给定精确LP见证的覆盖FPTAS/同见证恢复冻结复核；通用LP、T0外层、unknownOPT软件未实现"
+    },
+    {
+      "id": "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "current_exact_audit",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope obstruction; exact finite audit; unrefereed; novelty unverified",
+      "implementation_detail": "Fraction enumeration m=2..5,r=1..3; parameterized proof handles all m>=2,r>=1"
+    },
+    {
+      "id": "UM-COMMON-SIZE-REOPEN-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "current_exact_audit",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope interface; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "implementation_detail": "Fraction boundary audit; no general core-selection algorithm"
+    },
+    {
+      "id": "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "显式池公式与循环构造实现；独立完整资源分配和整数匹配审计；不循环到K"
+    },
+    {
+      "id": "UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "实际β闭包/完整σ/全部pins；两份原矩阵有限状态OPT审计，未知μ仅在audit不在构造输入。"
+    },
+    {
+      "id": "UM-FANOUT-MISSING-ONE-THREE-HALVES-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "实际β闭包/完整σ/全部pins；两份原矩阵有限状态OPT审计，未知μ仅在audit不在构造输入。"
+    },
+    {
+      "id": "UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "完整原σ及全机负载精确核验；单例外是审计实现，cube按显式展开规模，有限oracle不是一般证明。"
+    },
+    {
+      "id": "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "完整原σ及全机负载精确核验；单例外是审计实现，cube按显式展开规模，有限oracle不是一般证明。"
+    },
+    {
+      "id": "UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "完整原σ及全机负载精确核验；单例外是审计实现，cube按显式展开规模，有限oracle不是一般证明。"
+    },
+    {
+      "id": "UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "完整原σ及全机负载精确核验；单例外是审计实现，cube按显式展开规模，有限oracle不是一般证明。"
+    },
+    {
+      "id": "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "半密度公共API完整实际σ与外机零区间；forest双向仅数学构造及针对证书审计；叶DP独立显式实现和有限全染色核验。"
+    },
+    {
+      "id": "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "半密度公共API完整实际σ与外机零区间；forest双向仅数学构造及针对证书审计；叶DP独立显式实现和有限全染色核验。"
+    },
+    {
+      "id": "UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "半密度公共API完整实际σ与外机零区间；forest双向仅数学构造及针对证书审计；叶DP独立显式实现和有限全染色核验。"
+    },
+    {
+      "id": "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "given-witness、uniform calibration和bounded-D三实际CLI已实现；无通用LP solver。独立任意有理槽核验，root原P全σ回算。"
+    },
+    {
+      "id": "UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "given-witness、uniform calibration和bounded-D三实际CLI已实现；无通用LP solver。独立任意有理槽核验，root原P全σ回算。"
+    },
+    {
+      "id": "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1",
+      "source_proof": "synthesis",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete direct consequence; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "独立小有理LP顶点/二机价格折点oracle、实际ST负载和小树全分配；一般LP/priceflow软件未集成。"
+    },
+    {
+      "id": "UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+      "source_proof": "synthesis",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "有限有理primal/dual、实际图矩阵生成/σ/整数flow审计；不实现一般LP，图构造只对固定参数声明poly。"
+    },
+    {
+      "id": "UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "有限有理primal/dual、实际图矩阵生成/σ/整数flow审计；不实现一般LP，图构造只对固定参数声明poly。"
+    },
+    {
+      "id": "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "candidate",
+      "external_review": "not_recorded",
+      "implementation": "none",
+      "graph_status": "complete stated-scope equivalence proof; external review and novelty unverified",
+      "implementation_detail": "方向选择、quota单射与根树双向构造；无枚举/代码依赖。"
+    },
+    {
+      "id": "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "实际全原σ和逐机负载；两个规范复用旧模型核，mixing另有不import该核的原矩阵锐证书；不求OPT/LP。"
+    },
+    {
+      "id": "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "实际全原σ和逐机负载；两个规范复用旧模型核，mixing另有不import该核的原矩阵锐证书；不求OPT/LP。"
+    },
+    {
+      "id": "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "implementation_detail": "仅最小精确公式/矩/配置核对；无一般非凸、CONFIG或SDP优化器。强阈值为一般证明，非程序求解结果。"
+    },
+    {
+      "id": "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "implementation_detail": "仅最小精确公式/矩/配置核对；无一般非凸、CONFIG或SDP优化器。强阈值为一般证明，非程序求解结果。"
+    },
+    {
+      "id": "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "implementation_detail": "仅最小精确公式/矩/配置核对；无一般非凸、CONFIG或SDP优化器。强阈值为一般证明，非程序求解结果。"
+    },
+    {
+      "id": "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope obstruction; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "Fraction小集合全枚举、闭式4950参数检查、三组桥梁实际负载样本；不实现一般decoder。"
+    },
+    {
+      "id": "UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "candidate",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "candidate exact-threshold interface obstruction; internally reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "最大度3小图1080个Fraction实际分配枚举；一般α/h/r与近二hardness未审计。"
+    },
+    {
+      "id": "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope obstruction; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "m=3全分配枚举及m=4,5,8,12 Fraction局部势、排序和支持下界核验；不实现全局势oracle。"
+    },
+    {
+      "id": "UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope fixed-direction Hall expansion; global orientation remains open; external review and novelty unverified",
+      "implementation_detail": "独立审查修复了p/e/partial互斥定义及规范化最小割措辞；279936个固定方向实例的有限审计已冻结。"
+    },
+    {
+      "id": "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "精确单row构造、894支持/384分离证书及9边界；闭合族8参数回算。未集成全局精确LP/全机配置构造器。"
+    },
+    {
+      "id": "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "给定精确literal LP见证的完整原σ实现；4337调度/59121任务独立回算，15非法输入拒绝。一般LP求解未集成。"
+    },
+    {
+      "id": "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "精确单row构造、894支持/384分离证书及9边界；闭合族8参数回算。未集成全局精确LP/全机配置构造器。"
+    },
+    {
+      "id": "UM-PRUNED-FIRST-MOVE-BOUND-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "implemented",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "首步实际选择器及独立原矩阵/状态图审计已实现；没有一般全程算法或目标调度求解器。"
+    },
+    {
+      "id": "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "multiple_audits",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "首步实际选择器及独立原矩阵/状态图审计已实现；没有一般全程算法或目标调度求解器。"
+    },
+    {
+      "id": "UM-FULL-DEGREE-MOMENT-DECODING-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "self_attack_and_exact_audit",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "有限原子/Fraction核验；不存储指数矩，不实现解码器。"
+    },
+    {
+      "id": "UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "self_attack_and_exact_audit",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "参数化两机YES反例与对偶矩阵Fraction核验；不实现一般角色选择。"
+    },
+    {
+      "id": "UM-INCIDENCE-FEEDBACK-EXACT-v1",
+      "source_proof": "new_current_work",
+      "current_proof": "complete",
+      "internal_review": "self_attack_and_exact_audit",
+      "external_review": "not_recorded",
+      "implementation": "audit_only",
+      "graph_status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "implementation_detail": "反馈边枚举、森林叶消元、单环边界小例Fraction核验；未实现生产求解器。"
     },
     {
       "id": "UM-PDM-THRESHOLD-EXACT-v1",

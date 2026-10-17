@@ -112,10 +112,50 @@
 
 进一步的[大需求束碰撞界与平方池锐性](research/current/unrelated_machines/large_bundle_collision_square_root_floor.md)给含根上取整的Λ_c真实树，q=Δ=K=t²时精确maxΛ=b*=1/t；带η→0及ηKmin→∞条件的NO侧必要量为liminfη²Δ≥1。只约束资源束接口，源问题解码和一般困难性仍缺。
 
-[全局四阶负载松弛的锐利二间隙](research/current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。
+[全局四阶负载松弛的锐利二间隙](research/current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。该裸C2命题的范围不变；后续[弱H2合取的新二间隙](research/current/unrelated_machines/weak_h2_configuration_moment_gap.md)另行关闭只共享一阶CONFIG的合同。共享行二阶在该新族上阈值精确，一般强合同与UM-TARGET-v1仍OPEN。
 
 ## 弱单调小步的闭环失效及可回收临时超额
 
 尝试以中性预修普遍补足旧严格lex长链搜索：闭环族把尾边正回流到已满root，任意局部后缀先增root，任何Cmax非增非平凡动作必须完整激活一个新环。全部最小成本槽初始化来自真实最优凸包，最小改件/参与机恰d+1，可随规模线性增长。失败属于该修复合同本身错误，不是主目标困难性。回收：单任务路径到OPT的最小峰值精确B+c，c=1/k²；只需微小暂时超额，且该cactus可精确解。重试应允许可控超额或原子长环，并证明一般共同守容及总进展。见[闭环正文](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§11。
 
 异端时间也不是一概阻断共同选择：上下比例包络可把真实出口转成κ预算，用b_hz d_h成本排序及同一home容量流恢复所有sink。只有上包络时LP必要性仍失效；共同资格/唯一home仍承重。见[有界畸变正面合同](research/current/unrelated_machines/distorted_group_joint_slot_rounding.md)。
+
+单任务复制端口的纯内部一致性接口已由[向下投影锐界](research/current/unrelated_machines/signed_one_job_port_downset.md)限制：移出任何入向端口只减少内部负载，两一致态遂强制混合态；精确计数逐参数可达到。失效步骤是把一般PCSP变量多次出现免费复制成两端真实任务。只否定保留外部出现槽、外部容量不参与投影的single-job接口；外部共同容量的两任务负控确能等值。可回收的是计数/零值处理/已有见证的实际混合构造；重试必须改变为多任务编码或共同外部一致性并证明完整调度低负载解码，不能只增内部辅助图。
+
+[三host可用性复制的锐三半障碍](research/current/unrelated_machines/three_host_selector_sharp_three_halves.md)排除“只用a或同时用b,c保完整YES、两单输出坏侧都推近2”的独立空/满预载接口：非负行权二色闭包可实际拼接出某坏侧≤3T/2，任意加大内部图或多任务仍不能改变。失效步骤是把满载机器视为近似调度中完全不可停车；实际NO允许的剩余容量必须计入。同一机制给SC三特殊item复制的half锐界。回收二色闭包/实际拼接/逐台预载核验；重试必须改外部联合状态/解码合同，不从此排所有gadgets或一般算法。
+
+[整束冲突偷换的具体失败](research/current/unrelated_machines/duplication_state_majority_floor.md)：残余label只需选择部分孩子，行/列全束交叠不能禁止二者同时出现在真实树。sK4可选5组各3格得5/8；旧所有K≥s的1/2锐性撤回，正确的多数下界和K≥2s锐例保留。重试需按每标签整数配额的真实Hall容量解码，不能用全束交叠图代替。
+
+[增加独立预载扇出不能消除缺一逃逸](research/current/unrelated_machines/weighted_fanout_profile_boundary.md)：给only-a与all-B实际YES，则任意输出pair的两个缺一OPT和≤3T；内部图增大、多任务、任意源端时间均不能让每缺一状态接近二。只有one-output-free的星虽可2−1/q，也不满足这个NO合同。回收加权闭包与真实状态预算；重试须给跨模块共同容量或另一读出合同及完整源解码。
+
+[仅严格端正确的双轨阈值编码无法自动保留近二NO](research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md)：C1确等价源严格解，但C>1可只外送真轨一部分ports。scalar整类及unit外部容量整类均有实际3/2；全cube源连弱端也NO却实际OPT趋1。否定范围仅明确归一化/单例外合同；可回收整数流、原P锐例和cube精确式。重试需不同的跨层一致性/相关选择以及对所有低负载实际σ的可靠解码。
+
+[加深私有树或重排半密度unit读出仍不能放大到近二](research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md)：唯一unit incoming+k枚总small负载1让半质量槽匹配给全高度三半，涵盖所有arity≤2A wiring。改d>2A若仍全正负degree平衡，非空源严格YES已空；补dummy须防纯dummy配额子树并核共同外部容量。失败范围不超出明确成本/私有结构/密度；可回收一般forest IFF、树命中门槛及同64open真OPT1对7/4，后续需真实非此域联合soundness。
+
+[仅把clause密度提高到另一个固定D仍不足作任意近二归约](research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md)：校准计数槽给每固定D统一2−1/(4D)结构类算法，即使k,h增长。D可以随目标ε改变，未被一般排除；仍需实际YES和所有pruned森林NO解码。强基数LP一般只充分，不能用不可行偷判NO；弱激活LP又不支持舍入。回收精确见证/两反例/有界密度算法；重试须真正避开共同基数证书。
+
+## 逐机器价格与局部 anchor 不能免费交换全局选择
+
+尝试对每个非负机器价格优化big匹配，再用残余light流，希望由所有价格各自通过推出同一个匹配。失效在凸化：这些测试精确等价任务守恒+big分数基数+LST容量，仍包含经典CONFIG趋二族；不是价格oracle不可算。原两机数值例还遗漏δ>3/20分类范围，且OPT>T，只能说明量词交换。漏掉p≤T剪枝时甚至固定m损失m。回收显式最小费用流oracle、精确min–max身份及最优价格共同big面的可检验成功证书；普通扰动价唯一不足，面失败不能作OPT>T证据。逐机anchor凸化也含CONFIG，a_i>0不能给统一ε。重试须新的跨机器状态/实际联合舍入损失，不是更多价格或专族样本。详见[自足正文](research/current/unrelated_machines/heavy_light_price_convexification.md)；此为已知工具的接口综合，非一般不可能性。
+
+## 不能从固定残余次模免费推出共同角色选择
+
+尝试用残余throughput的次模性选择大任务占位。正确部分是任意异端p的固定R容量格次模；失效步骤有两处：占位损失D本为超模，且H同时移除任务与扣容量后V根本不继承次模（2×2原OPT1/2、四值2/1/1/2）。即使宏身份固定、tiny同尺寸，任意固定严格次二α的可行占位族仍能精确为任意图独立集，D=诱导边数，故不是免费拟阵或固定p交换系统。回收一般F性质、primal/dual求值证书与精确图表示；原实例都有显式OPT1，不是调度困难性。重试需同时保留R(H)、h(H)的共同恢复与实际联合舍入余量，不能以近似总通过量代替全任务完成。见[完整范围](research/current/unrelated_machines/residual_throughput_and_occupation_projection.md)。
+
+[完整单位树的叶流与选择重组](research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。
+
+## 同一一阶CONFIG合取与槽损失凸化的失败机制
+
+尝试：把C2-load共同四阶矩与完整CONFIG共享同一一阶点，或将完整实际槽损失逐机凸化，期望统一跨过相对T的二倍壁垒。失效：稀释星族中，条件激活块的单位multislice伪矩容纳b+k任务于b+1资源，但激活仅1/k，使同一一阶资源占用恰1，CONFIG1完全看不到该条件超额；实际整数OPT仍2−1/k。参数化PSD/所有localizer和同x配置均已证明，不是有限搜索反例。
+
+回收：一般N≥m+1的degree2 multislice PSD及可显式生成的条件张量/混合；共享同机二阶后，零pair的PSD传播给任意端条件单槽容量，从而**整个同族强阈值**精确等于OPT。失败只排弱H2，不排强二阶/三阶非负/其他算法，亦非一般困难性。准确Claim、证明及审查沿[同一正文](research/current/unrelated_machines/weak_h2_configuration_moment_gap.md)读取。
+
+另[完整槽包络](research/current/unrelated_machines/slot_envelope_and_configuration_identity.md)精确区分两个常混淆动作：固定容量后凸化子水平集恰CONFIG；先凸化上图则只剩线性负载。非凸min max包络本身等于OPT，因此没有免费共同选择。重试必须新增跨机相关机制或给可计算近似非凸进展；只精确计费单行损失或重新调价不够。
+
+## 固定势与局部repair的新增失败机制
+
+固定总工作量并不能保证局部势下降有效：`research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md` 的同机族使二次势、排序势和固定批量单调路线均停在趋二状态。失败原因是必要迁移批量随机器数线性增长，而不是总工作量变化；未来若允许全局或无界批量，需另给可计算势下降及位复杂度证明。
+
+严格unit双树源编译的新增失败范围见[专题记录](research/unrelated_machines/FAILED_ROUTES.md)：CONFIG1整轨LP可求且可五三实际输出，但近unit阈值1+1/k仍保经典趋二gap；不得把两阈值混用。
+
+[固定批量且仅给小幅临时增载](research/current/unrelated_machines/pruned_first_move_and_transient_peak.md)也可能无法启动：m=k+1的真实OPT=T环族，任意非空≤k件首批负载至少max(2T,C+T/2)。此上界同时是一般剪枝首步的锐界；不能因首步存在就宣称全程或改善。初态不声明ST来源，强初始化和无界共同批次未排除。

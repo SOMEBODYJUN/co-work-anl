@@ -10,10 +10,13 @@
 
 
 本题最新结构接口还包括[单汇点宏退出与完整profile池共同选择](current/unrelated_machines/shared_sink_joint_macro_assignment.md)，及[循环修复正文](current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§10的严格lex长链边界。按[共同容量路线整合审查](reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)区分局部构造、核心共同选择与总进展；特定族[条件矩新构造](current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)§9不能直接提升为一般算法。
+本阶段新增[固定工作量与中任务配置分解边界](questions/unrelated_machines/fixed_work_and_medium_config_barriers.md)：固定配置加 tiny 槽损失、固定总工作量和固定非减凸势均有精确近二失败范围；它们只收窄方法路线，不改变一般主目标仍OPEN的状态。
 
 [固定数量共享汇点的占位基交换与三半调度](current/unrelated_machines/fixed_sink_occupation_rounding.md)给三个分离身份：UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1允许任意K但仅界定2K个分数组；UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1在固定K的给定阈值下输出实际≤3T/2；UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1用含OPT的大宏promise及非单调one-sided整数二分给真正≤3OPT/2。唯一home/给定分组和固定K仍承重，通用LP软件未实现，新颖性未认证。一般主目标下一缺口是不受限的接收容量与跨home/跨尺寸任务身份，UM-TARGET-v1仍OPEN。
 
 [反面路线的递归与共享复制边界](current/unrelated_machines/private_graft_and_resource_repetition.md)及其冻结独立审查区分方法障碍与真正近2计算困难性；现有主目标状态不变。
+
+[机器价格凸化](current/unrelated_machines/heavy_light_price_convexification.md)精确定位标量最优响应仍为带big基数的LST松弛；[残余容量格与占位图表示](current/unrelated_machines/residual_throughput_and_occupation_projection.md)给固定R的一般格次模和D(I)=诱导边数。身份随H变化时的共同恢复仍未闭合，最优面成功证书没有全输入存在保证。这些是通用状态理论及准确限制，不是主目标突破。
 
 ## 各模型分别读取
 
@@ -45,7 +48,7 @@
 
 [共同资格私有组的加权出口与联合槽](current/unrelated_machines/weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。
 
-[本轮开放义务与边界](questions/unrelated_machines/barrier_escape_obligations.md)补充了一个尚待审查的乘法覆盖/可调阈值候选、LST 正支撑零质量边反例及 rank-jump-one 共同交换条件缺口；这些均按精确范围保存，不升级为一般算法。
+[开放义务与边界](questions/unrelated_machines/barrier_escape_obligations.md)中的乘法覆盖/可调阈值结构界，已按同一覆盖实际恢复与修复FPTAS上界重新核查（旧撤回记录保留）；LST支撑扩张及真实支持rank-jump-one与一般伪矩义务分别登记。准确状态沿[纠错审查](reviews/unrelated_machines/threshold_cover_and_support_release_review.md)读取，不升级为一般算法。
 
 其中 rank-jump-one 对真实有限正权支持已有 Boolean 函数代数闭合证明；对一般伪矩的共同交换延伸和负载 localizer 仍开放。
 
@@ -54,3 +57,7 @@
 [闭环容量释放](../research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§11把严格下降障碍推进到弱最大负载单调小步：真实最优凸包的全部最小成本槽输出仍趋2，最小非平凡改件/参与机恰d+1；但单任务到OPT的最小峰值仅为B+1/k²。它不是一般困难性，且该cactus族可精确解。
 
 [异端有界畸变共同组](../research/current/unrelated_machines/distorted_group_joint_slot_rounding.md)在给定上下比例包络、唯一home/共同资格结构下联合选宏与接收机，给home≤(1+r+δ)T、sink≤[κ+B̄(1−r)]T，且闭合未知OPT搜索；固定κ+B̄δ<2时只有该结构类具统一改善。 一般UM-TARGET-v1仍OPEN；下一高信息义务是允许可控临时增载的共同容量修复及总位多项式进展，或在一般矩阵中生成保统一余量的相关结构。
+
+本轮新增三条可复用边界：[全层核心—私有配额近二族](current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md)、[共同big选择的独立集阈值障碍](questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md)和[固定工作量势局部极小族](current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md)。它们分别收紧跨层soundness、共同容量状态和局部repair的精确义务，均不把主目标升级为已解或一般hardness。
+
+[剪枝首步与临时峰值](current/unrelated_machines/pruned_first_move_and_transient_peak.md)给全输入首步上界 U=max(2T,C+T/2)、可计算的单向NO以及固定批量的逐参数锐环族；沿正文进入冻结审查、独立状态图与完整原矩阵审计。首步不保证改善，不是一般全程或统一ε算法。
