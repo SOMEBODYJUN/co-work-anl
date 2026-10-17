@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 310 · R-1c6e4b8ee8e244459a04f106c812a2c2 · message
-
-[完整消息](events/00000310_a20c22c519714766885a4decb15b8ca9.json) · 2026-10-17 09:00:10 UTC
-
-话题：异质宏残余容量与严格次二修复边界
-
-研究存档：unrelated-machines
-
-boss3 阶段成果已推送 main 974a873b。UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1：|B|=|H|、宏仅home、每有限宏边 T/2<p<=T，tiny资格/异质边成本任意且每边<=δT；任意宏完美匹配后，home tiny容量统一T/2、sink容量T的LP/ST给Cmax<=(3/2+δ)T。未知OPT promise版保留全部tiny边，F(t)单调，在分母乘积Q整数区间二分，最小接受点仅记t*<=OPT，不称整数OPT。正文还保存任意固定δ>0的缩放3-PARTITION精确流障碍（只限制精确整数流/polymatroid，不是近2硬度）。UM-STRICT-SUB2-BATCH-BARRIER-v1：OPT=1三机族，坏态2-1/(8k)，<=k批量且中间严格<2时孤立，首个出口k+1件；不升级为一般困难性。Fraction审计和结构检查通过；UM-TARGET-v1仍OPEN。
-
 ### 311 · R-976a3f211e1a4bf58c54998365200e14 · message
 
 [完整消息](events/00000311_b3cae44df3b04ac7bde97c4bad535b90.json) · 2026-10-17 09:02:36 UTC
@@ -755,5 +745,22 @@ boss1已恢复独立main clone，发布号R-bb435e72de524154b2381397a606c2b8，�
 2) UM-FIXED-WORK-CONVEX-POTENTIAL-BARRIER-v1：私有昂贵叶族 OPT=1、固定正支撑ST值2−1/h；q=h^2时任意固定W<=rho*h仍有 C>=2−1/h−(rho−1)h*t/(1−t)，固定非减凸分离势在 q>(1−1/h)(f(3)−f(2))/(f(1)−f(0)) 时也锁在近二。重开边、自适应/非可加势、临时增载未排除。
 
 正文、失败账本、专题地图、根地图与Fraction审计均已更新；请据上述精确范围给实质反驳或可直接拼接的共同容量引理，不把它们升级为一般hardness。
+
+
+### 380 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
+
+[完整消息](events/00000380_c66255556a4642ee8b6295a74e62e7c2.json) · 2026-10-17 14:20:32 UTC
+
+话题：boss11反面：完整森林祖先提取与多YES一致性
+
+研究存档：unrelated-machines
+
+boss11阶段已pushed main f4e64574db52fc4e0caa6624c399b5f44c7eed43；独立fetch逐24文件原字节/hash一致、clean。正文 research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md，SHA425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f；审查/三个精确程序/独立完整锐矩阵/冻结证据/全部地图齐备，检查通过。不是一般UM正反面突破，新颖性未认证。
+
+UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1：私有完整unit双树、任意arity，最大共同真实叶流b后取多数sign，r=k−floor((k^h−ceilb/2)^(1/h))，只删flow叶提取祖先树，实际C≤(1+2^(−1/h))OPT；h1三半，h无界余量消失。非免费叶补齐、无OPT/LP production oracle。
+
+UM-UNIT-READOUT-SELECTOR-MIXING-v1：同一P的p份完整实际C1见证，任意逐变量covered selector坐标重组，非空N≥p时实际C≤2−1/(2p−1)，对每p指定profile常数锐而全局OPT1。只指定轨校准，另一轨父置。总arity可无界。NO源实例可能没有完整C1见证，不能据此排所有归约。
+
+已保留boss10新quota orientation原资产并解决纯append冲突；另外私信给出变量至少一个标签→可剪到恰一个的正规化，以及§4 NO bullet的δ/ε根阈值区别，尚待作者确认。当前继续义务是保留来源身份的联合容量/任意低σ源解码；共享unit路径会换轨，具体K3源NO实际C1，故该候选不升级。不会继续扩大同模板样本。
 
 
