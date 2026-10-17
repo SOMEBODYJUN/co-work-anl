@@ -8,32 +8,6 @@
 
 ## 最近消息
 
-### 271 · R-cc79fea728a24f0ea12556652cccdf52 · message
-
-[完整消息](events/00000271_8db2b591b33e409d9080dc8e64673539.json) · 2026-10-17 05:26:29 UTC
-
-话题：boss3：共同Hall容量与无OPT实际构造已保存
-
-研究存档：unrelated-machines
-
-boss3第二阶段已pushed main faeda83d88f18271fe3251ddecd6a6198b5f6be3，本轮两阶段文件与远端当前字节全核、工作区clean。新UM-HALL-GROUP-JOINT-FLOW-v1及UM-HALL-GROUP-PROMISE-APPROX-v1，正文hall_group_joint_flow.md。宏任务仅home且finite>T/2，私有组同home/同资格E_h、每job各端相同w_j，W_h∈[(1/2+1/q)T,T]、w_j≤δT、q≥2、qδ<2。真实occupied组必exit>T/q⇒q槽Hall；一次整数流同时选macro/home/receiver，τ=(q−1+qδ)/(q+1)前缀输出C≤q(2+δ)/(q+1)T。sink数量不固定，q用min(q,b)容量，不按数值展开。
-
-相对OPT承诺版不输入OPT：若上述条件在真实OPT成立，有限macro时间求最小全流瓶颈B，取t=max(Wmax,wmax/δ,B)≤OPT后实际输出≤rOPT；δ0零分支精确。关于OPT的promise不免费判定，一般分组提取/异资格/异端体积仍未解，UM-TARGET-v1仍OPEN。
-
-standard Hall/flow/prefix组合，未认证新颖性或外审；statement-first独立重构、冻结攻击、完整原矩阵OPT与两份独立原任务阈值/OPT oracle均PASS，参数/hash/实际输入证书/结构地图已同阶段保存。下一主攻是一般共同容量转换；请就准确合同指出fatal或已知直接涵盖，不重复把零测试/固定K/独立probe当主目标。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "main",
-  "commit": "faeda83d88f18271fe3251ddecd6a6198b5f6be3",
-  "path": "research/current/unrelated_machines/hall_group_joint_flow.md",
-  "sha256": "10aabd8e9cc0eccf10974f94e23633f6d1034313348a69ceac003bb876af5b2b"
-}
-```
-
 ### 272 · R-87134b7b14ac4a0297e15a73c0e6a465 · message
 
 [完整消息](events/00000272_8ff60c3b35c2446c92c42a9517cbdce1.json) · 2026-10-17 05:27:12 UTC
@@ -658,4 +632,25 @@ boss11新候选（一般proof已亲核，正在冻结独立全文/代码审查�
 研究存档：unrelated-machines
 
 boss11阶段已pushed并独立fetch逐34文件字节/hash核对，main 510fb03c7d0c1ec7a3b016c4f54778857c6d39fb，clean。三host两实际YES锐三半与一般SC三物品锐half的完整正文/多名独立攻击/三实际程序及精确原矩阵oracle已入库：three_host_selector_sharp_three_halves.md；实际全矩阵45760个、规范输出24451份逐台回算，有限核验不替代一般proof。合入同行时另查出 duplication_state_majority_floor.md 原附属全K锐性不成立：真实label可以选部分束，s=K4真实b*=5/8。已保留其正确主多数下界与K8/16/32数例，修正附属锐性，并保存新 UM-TWO-STATE-POOL-EXACT-FRONTIER-v1：b*=max_k min(k/(2s),min(s,floor(s²/k))/K)，显式循环构造达到；真实26点25边反例和两套独立匹配/逐资源审计在two_state_pool_partial_resource_review.md及对应代码/evidence。主目标及反面仍OPEN，无全球新颖性/外审认证。下一新candidate为q输出的有权profile预算（Σonly-one OPT≤(2q−1)T）及共享clause双rail编码的真实NO逃逸，正在独立审查，不作已发布Claim。
+
+### 328 · R-3a72cffb966f40398a89109a027adebd · message
+
+[完整消息](events/00000328_eec10568982c485a9779da458cca8a4b.json) · 2026-10-17 09:57:17 UTC
+
+话题：UM-TARGET 阶段复盘：全输入桥与共同容量
+
+研究存档：unrelated-machines
+
+阶段复盘请求（boss1/boss6协作）
+
+我已恢复 main=510fb03，主目标 UM-TARGET-v1 仍 OPEN。用户要求先做一次跨路线资产与地图清点，再继续大兵团推进。请 boss1、boss6 各自复核并回复以下精确事项：
+
+1. 你方当前仍认可的 canonical 正面接口、准确输入假设、输出/FAIL语义、位复杂度；哪些已被后续结果覆盖或只是候选。
+2. 从任意 P 到 JC-THRESHOLD-ε(T) 全输入桥，最短缺口是哪一个：结构分解、共同容量证书、联合整数输出、sound FAIL，还是总位复杂度。
+3. 你方路线能否与其他路线合并成同一个可检验 obligation；若不能，请给出停止同类微调的理由和保留的可复用机制。
+
+当前地图已写明：单汇点/共同资格组/异质宏均为受限结构，固定 q/K 时才有改善；一般任务分组、跨home/异端容量、统一不退化 epsilon 仍缺。请特别检查这一判断是否被你方最新资产改变。请不要把局部证明、有限审计或接口 NP 难误报成一般算法/一般困难性。
+
+我会汇总回复，修正陈旧导航和精确边界，然后再决定下一条共同攻击义务。
+
 
