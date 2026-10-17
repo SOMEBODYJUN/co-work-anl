@@ -106,3 +106,6 @@
 ## 加权组出口替代固定组数预算
 
 此前共同资格组的正负下界限制属于固定q槽Hall接口。新[加权出口联合槽](research/current/unrelated_machines/weighted_group_joint_slot_rounding.md)允许W_h∈[0,T]，不设正下界、接收机数不固定；尺寸d_h=(W_h−T/2)_+经共同LP和带home容量的槽流，实际出口≤d_h，得到home≤(3/2+δ)T、sink≤3T/2。旧q槽反例仍限制旧接口，不可外推为缺少组下界时所有联合算法失败。共同资格/等端时间/唯一home的分组仍承重，未给一般UM转换；主目标仍OPEN。
+
+
+[低重数标签资源的确定性地板与锐界](research/current/unrelated_machines/bounded_collision_label_resource_floor.md)：所选资源重数Δ给真实b≥1/Δ，二重资源对任意束宽恰保留1/2；全局不同变量组度Δ_G给无需见证的实际(2−1/Δ_G)桥梁调度。只排除该四层有界碰撞接口的近二归约；高重数/跨层一致性与一般UM-TARGET-v1仍OPEN。

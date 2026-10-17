@@ -244,3 +244,10 @@ u) 是三维匹配。故完美 YES 的值恰为 (2/K)；放大三元组需求不
 
 [k-均匀资源束地板](k_uniform_bundle_matching_floor.md) 冻结 `UM-K-UNIFORM-BUNDLE-FLOOR-v1`：对根→(X)→超边→资源的需求树，精确有 (b^*=\max_t\min(\nu_t/q,t/K))，其中 (
 u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配的 (1/2) 逃逸只是 (k=K=2) 特例。任何近2反面归约必须同时压低所有 (j)-of-(k) 层；只压低完整超边匹配、提高需求或复制资源都不够。
+
+
+## 低重数标签资源的新精确边界
+
+[低重数标签资源的确定性地板与锐界](bounded_collision_label_resource_floor.md)：所选资源重数Δ给真实b≥1/Δ，二重资源对任意束宽恰保留1/2；全局不同变量组度Δ_G给无需见证的实际(2−1/Δ_G)桥梁调度。只排除该四层有界碰撞接口的近二归约；高重数/跨层一致性与一般UM-TARGET-v1仍OPEN。
+
+读取正文§1–3a的三个精确身份→bounded_collision_label_floor_review.md→两份bounded_collision_bundle审计及冻结记录；后续应攻击每个局部完整选择均高碰撞的源相关解码，不能只增加成对冲突资源数量。

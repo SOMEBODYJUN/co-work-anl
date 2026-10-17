@@ -177,3 +177,10 @@
 ### 固定宏占位与任意私有资格
 
 新增候选 `UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1`：`|B|=|H|`，宏只在 homes，且每个 home 的宏端处理时间只依赖 home、满足 `P_h>T/2`；任意私有任务可在任意显式资格边上运行，只要求每条私有边≤`δT`。固定任意宏完美匹配后，LST/ST 给 `(1+δ)T`；承诺 `P_h>OPT/2` 时用网格测试得到未知OPT候选。它精确显示共同资格与唯一home可去掉，但宏占位同质性仍是额外结构，不能替代一般 `UM-TARGET-v1`。
+
+
+## 低重数标签资源的新精确边界
+
+[低重数标签资源的确定性地板与锐界](../current/unrelated_machines/bounded_collision_label_resource_floor.md)：所选资源重数Δ给真实b≥1/Δ，二重资源对任意束宽恰保留1/2；全局不同变量组度Δ_G给无需见证的实际(2−1/Δ_G)桥梁调度。只排除该四层有界碰撞接口的近二归约；高重数/跨层一致性与一般UM-TARGET-v1仍OPEN。
+
+读取正文§1–3a的三个精确身份→bounded_collision_label_floor_review.md→两份bounded_collision_bundle审计及冻结记录；后续应攻击每个局部完整选择均高碰撞的源相关解码，不能只增加成对冲突资源数量。

@@ -8591,6 +8591,68 @@
         "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md"
       ],
       "status": "complete stated-scope obstruction; exact finite audit; external review and novelty unverified"
+    },
+    {
+      "id": "UM-LABEL-RESOURCE-COLLISION-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "四层标签束、所选资源重数及变量组关联度",
+      "detail": "r需求|X|、X需求1、变量私有标签正整数需求、R零需求；所选Δ与全局不同变量组Δ_G分开，U为局部比例排序上界。",
+      "refs": [
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "所选标签资源的有界碰撞比例地板",
+      "detail": "∀显式四层r→X→E_x→R需求DAG，q=|X|≥1，d_r=q,d_x=1,d_e=K_e≥1,d_R=0、各E_x不交；∀给定每x一标签e_x及K_e个不同邻资源B_x，设Δ=max_u|{x:u∈B_x}|，有确定性总位多项式算法输出真实根树b(H)≥1/Δ；既有token桥梁给完整实际调度Cmax≤2−1/Δ。",
+      "refs": [
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md",
+        "research/reviews/unrelated_machines/bounded_collision_label_floor_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-PAIRWISE-LABEL-FLOOR-SHARP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "二重标签资源的逐束宽锐界",
+      "detail": "∀k≥1，q=2s≥2个变量成对、每变量唯一需求k标签、同对共享恰k资源且不同对不交时，b*=1/2及token实例OPT=3/2。另∀Δ≥1，q=sΔ变量每Δ个共享同一singleton、标签需求1时b*=1/Δ、OPT=2−1/Δ。",
+      "refs": [
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md",
+        "research/reviews/unrelated_machines/bounded_collision_label_floor_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-GROUP-DEGREE-LABEL-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "变量组关联度控制的真实根树与调度近似",
+      "detail": "∀上述显式四层DAG，不要求局部完整；令Δ_G=max({0}∪{每资源涉及的不同变量组数})。q≥1且Δ_G≥1时，不给标签见证或b*，确定性总位多项式输出b(H)≥U/Δ_G≥b*/Δ_G，其中a_x=max_e min(1,|S_e|/K_e)、空max0、U=max_s min(s/q,a_(s))；token桥梁实际Cmax≤(2−1/Δ_G)OPT。q0根终端精确1；Δ_G0且q≥1精确b*=0。",
+      "refs": [
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md",
+        "research/reviews/unrelated_machines/bounded_collision_label_floor_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-LABEL-COLLISION-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "标签资源着色与原父点双路有限精确证据",
+      "detail": "规范实际构造、独立多标签树oracle与不同阈值实现；不代替一般组合证明。",
+      "refs": [
+        "tests/audits/unrelated_machines/bounded_collision_bundle_floor.py",
+        "tests/audits/unrelated_machines/bounded_collision_bundle_independent.py",
+        "evidence/runs/unrelated_machines/bounded_collision_label_floor_audit.json",
+        "examples/unrelated_machines/pairwise_label_resource_floor.json",
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md"
+      ],
+      "status": "finite computational evidence"
     }
   ],
   "hyperedges": [
@@ -20971,6 +21033,124 @@
       "statement": "k-均匀共享束仍需所有j-of-k层的整数soundness，不是一般近2困难性。",
       "refs": [
         "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-BOUNDED-COLLISION-LABEL-FLOOR-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LABEL-RESOURCE-COLLISION-MODEL-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+      ],
+      "conclusion": "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1",
+      "statement": "资源处单射着色和根变量计数给1/Δ；实际负载另依赖token桥梁。",
+      "refs": [
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md",
+        "research/reviews/unrelated_machines/bounded_collision_label_floor_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-BOUNDED-COLLISION-LABEL-FLOOR-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LABEL-COLLISION-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1",
+      "statement": "有限Fraction枚举与实际σ回算仅核对所列实现、参数和边界。",
+      "refs": [
+        "tests/audits/unrelated_machines/bounded_collision_bundle_floor.py",
+        "tests/audits/unrelated_machines/bounded_collision_bundle_independent.py",
+        "evidence/runs/unrelated_machines/bounded_collision_label_floor_audit.json",
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "D-UM-PAIRWISE-LABEL-FLOOR-SHARP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LABEL-RESOURCE-COLLISION-MODEL-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+        "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1"
+      ],
+      "conclusion": "UM-PAIRWISE-LABEL-FLOOR-SHARP-v1",
+      "statement": "对称对/单资源计数给精确上界，显式树达到，桥梁给真实OPT。",
+      "refs": [
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md",
+        "research/reviews/unrelated_machines/bounded_collision_label_floor_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-PAIRWISE-LABEL-FLOOR-SHARP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LABEL-COLLISION-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-PAIRWISE-LABEL-FLOOR-SHARP-v1",
+      "statement": "有限Fraction枚举与实际σ回算仅核对所列实现、参数和边界。",
+      "refs": [
+        "tests/audits/unrelated_machines/bounded_collision_bundle_floor.py",
+        "tests/audits/unrelated_machines/bounded_collision_bundle_independent.py",
+        "evidence/runs/unrelated_machines/bounded_collision_label_floor_audit.json",
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "D-UM-GROUP-DEGREE-LABEL-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LABEL-RESOURCE-COLLISION-MODEL-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+        "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1"
+      ],
+      "conclusion": "UM-GROUP-DEGREE-LABEL-APPROX-v1",
+      "statement": "局部比例排序给b*≤U；选前缀后调用有界碰撞构造并按原需求评分，桥梁给实际近似。",
+      "refs": [
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md",
+        "research/reviews/unrelated_machines/bounded_collision_label_floor_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-GROUP-DEGREE-LABEL-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LABEL-COLLISION-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-GROUP-DEGREE-LABEL-APPROX-v1",
+      "statement": "有限Fraction枚举与实际σ回算仅核对所列实现、参数和边界。",
+      "refs": [
+        "tests/audits/unrelated_machines/bounded_collision_bundle_floor.py",
+        "tests/audits/unrelated_machines/bounded_collision_bundle_independent.py",
+        "evidence/runs/unrelated_machines/bounded_collision_label_floor_audit.json",
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "L-UM-LABEL-COLLISION-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1",
+        "UM-PAIRWISE-LABEL-FLOOR-SHARP-v1",
+        "UM-GROUP-DEGREE-LABEL-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "有界重数四层冲突不能产生任意小NO比例；高重数、跨层资源、源解码及固定ε多项式规模仍开放，不是一般反面。",
+      "refs": [
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md",
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"

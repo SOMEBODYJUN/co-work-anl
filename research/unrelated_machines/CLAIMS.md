@@ -1150,3 +1150,48 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - **Counterevidence / Objections：** 只限制该层状局部接口；不排共享标签、高距离编码或其它全局一致性归约，不证明主目标反面。
 - **Status：** complete stated-scope obstruction; exact finite audit; external review and novelty unverified.
 - **Related Files：** `research/current/unrelated_machines/k_uniform_bundle_matching_floor.md`; `tests/audits/unrelated_machines/k_uniform_bundle_matching_floor.py`; `evidence/runs/unrelated_machines/k_uniform_bundle_matching_floor_audit.json`。
+
+
+## UM-BOUNDED-COLLISION-LABEL-FLOOR-v1：所选标签资源的有界碰撞比例地板
+
+- Exact Statement / Quantifiers：∀显式四层r→X→E_x→R需求DAG，q=|X|≥1，d_r=q,d_x=1,d_e=K_e≥1,d_R=0、各E_x不交；∀给定每x一标签e_x及K_e个不同邻资源B_x，设Δ=max_u|{x:u∈B_x}|，有确定性总位多项式算法输出真实根树b(H)≥1/Δ；既有token桥梁给完整实际调度Cmax≤2−1/Δ。
+- Objects / Domain：显式简单四层DAG、根需求q、变量需求1、标签正二进制整数需求、资源零需求；真实树包含所有选中正需求点的出度收费，标签节点按变量不交。
+- Definitions：所选重数Δ、全局变量组关联度Δ_G及局部上界U分别按正文§1/§3a定义；空根/零度分支明列。
+- Assumptions：无复杂度假设；总位长计输入与给定见证，巨大需求不按数值展开。
+- Scope：低重数是给定选择的实际重数；未给寻找最小Δ的算法，不排高重数/跨层/一般归约。
+- Conclusion：可构造真实树、实际调度或所述精确锐例；不是近二困难性或UM-TARGET-v1反面。
+- Dependencies：UM-DAG-DEGREE-MODEL-v1；正文资源处单射着色/鸽巢与排序上界；UM-DAG-DEGREE-TOKEN-IDENTITY-v1仅用于实际调度翻译。
+- Evidence：自足一般证明；statement-first独立U重构、冻结正文攻击；规范与不导入核心的原资源父点枚举及不同阈值构造，全部Fraction；范围见冻结记录。
+- Counterevidence / Objections：R为空时max0与η>0的定义精度已修；未发现冻结范围内尚成立fatal；全球新颖性及外审未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified
+- Related Files：research/current/unrelated_machines/bounded_collision_label_resource_floor.md；research/reviews/unrelated_machines/bounded_collision_label_floor_review.md；tests/audits/unrelated_machines/bounded_collision_bundle_floor.py；tests/audits/unrelated_machines/bounded_collision_bundle_independent.py；evidence/runs/unrelated_machines/bounded_collision_label_floor_audit.json；examples/unrelated_machines/pairwise_label_resource_floor.json。
+
+
+## UM-PAIRWISE-LABEL-FLOOR-SHARP-v1：二重标签资源的逐束宽锐界
+
+- Exact Statement / Quantifiers：∀k≥1，q=2s≥2个变量成对、每变量唯一需求k标签、同对共享恰k资源且不同对不交时，b*=1/2及token实例OPT=3/2。另∀Δ≥1，q=sΔ变量每Δ个共享同一singleton、标签需求1时b*=1/Δ、OPT=2−1/Δ。
+- Objects / Domain：显式简单四层DAG、根需求q、变量需求1、标签正二进制整数需求、资源零需求；真实树包含所有选中正需求点的出度收费，标签节点按变量不交。
+- Definitions：所选重数Δ、全局变量组关联度Δ_G及局部上界U分别按正文§1/§3a定义；空根/零度分支明列。
+- Assumptions：无复杂度假设；总位长计输入与给定见证，巨大需求不按数值展开。
+- Scope：Δ2对每个束宽锐；一般Δ只声称singleton通用锐性，不声称所有固定束宽1/Δ锐。
+- Conclusion：可构造真实树、实际调度或所述精确锐例；不是近二困难性或UM-TARGET-v1反面。
+- Dependencies：UM-DAG-DEGREE-MODEL-v1；正文资源处单射着色/鸽巢与排序上界；UM-DAG-DEGREE-TOKEN-IDENTITY-v1仅用于实际调度翻译。
+- Evidence：自足一般证明；statement-first独立U重构、冻结正文攻击；规范与不导入核心的原资源父点枚举及不同阈值构造，全部Fraction；范围见冻结记录。
+- Counterevidence / Objections：R为空时max0与η>0的定义精度已修；未发现冻结范围内尚成立fatal；全球新颖性及外审未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified
+- Related Files：research/current/unrelated_machines/bounded_collision_label_resource_floor.md；research/reviews/unrelated_machines/bounded_collision_label_floor_review.md；tests/audits/unrelated_machines/bounded_collision_bundle_floor.py；tests/audits/unrelated_machines/bounded_collision_bundle_independent.py；evidence/runs/unrelated_machines/bounded_collision_label_floor_audit.json；examples/unrelated_machines/pairwise_label_resource_floor.json。
+
+
+## UM-GROUP-DEGREE-LABEL-APPROX-v1：变量组关联度控制的真实根树与调度近似
+
+- Exact Statement / Quantifiers：∀上述显式四层DAG，不要求局部完整；令Δ_G=max({0}∪{每资源涉及的不同变量组数})。q≥1且Δ_G≥1时，不给标签见证或b*，确定性总位多项式输出b(H)≥U/Δ_G≥b*/Δ_G，其中a_x=max_e min(1,|S_e|/K_e)、空max0、U=max_s min(s/q,a_(s))；token桥梁实际Cmax≤(2−1/Δ_G)OPT。q0根终端精确1；Δ_G0且q≥1精确b*=0。
+- Objects / Domain：显式简单四层DAG、根需求q、变量需求1、标签正二进制整数需求、资源零需求；真实树包含所有选中正需求点的出度收费，标签节点按变量不交。
+- Definitions：所选重数Δ、全局变量组关联度Δ_G及局部上界U分别按正文§1/§3a定义；空根/零度分支明列。
+- Assumptions：无复杂度假设；总位长计输入与给定见证，巨大需求不按数值展开。
+- Scope：Δ_G计不同变量组而非标签总入度；仅此四层桥梁族。Δ_G增长无统一ε；非一般UM逆表示。
+- Conclusion：可构造真实树、实际调度或所述精确锐例；不是近二困难性或UM-TARGET-v1反面。
+- Dependencies：UM-DAG-DEGREE-MODEL-v1；正文资源处单射着色/鸽巢与排序上界；UM-DAG-DEGREE-TOKEN-IDENTITY-v1仅用于实际调度翻译。
+- Evidence：自足一般证明；statement-first独立U重构、冻结正文攻击；规范与不导入核心的原资源父点枚举及不同阈值构造，全部Fraction；范围见冻结记录。
+- Counterevidence / Objections：R为空时max0与η>0的定义精度已修；未发现冻结范围内尚成立fatal；全球新颖性及外审未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified
+- Related Files：research/current/unrelated_machines/bounded_collision_label_resource_floor.md；research/reviews/unrelated_machines/bounded_collision_label_floor_review.md；tests/audits/unrelated_machines/bounded_collision_bundle_floor.py；tests/audits/unrelated_machines/bounded_collision_bundle_independent.py；evidence/runs/unrelated_machines/bounded_collision_label_floor_audit.json；examples/unrelated_machines/pairwise_label_resource_floor.json。

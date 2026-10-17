@@ -77,3 +77,8 @@ Vontobel–Koetter，[arXiv:cs/0512078v1](https://arxiv.org/pdf/cs/0512078v1)，
 ## 仙人掌精确算法的最近祖先
 
 Asahiro–Miyano–Ono，*Graph classes and the complexity of the graph orientation minimizing the maximum weighted outdegree*，[作者稿](https://kyutech.repo.nii.ac.jp/record/2000093/files/10347755.pdf)，DAM2011。§3（PDF/印5–11）及Theorem9（PDF/印11）给对称端点边权cactus精确算法；§3.1另含顶点固定权。原始字节/hash见manifest的AMO2011_cactus_orientation。本文不能把cactus精确求解笼统称新；[块参数与配置锐界正文](../current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)自行重构非对称端点权/最大块环秩扩展及伪森林边界，不将其标为AMO的原文定理，也未认证全球优先权。
+
+
+## 标签一致性接口的已知困难性方法边界
+
+Bateni–Charikar–Guruswami，TR-848-09，[49页作者PDF](https://mhbateni.com/academic/pubs/maxmin-tech09.pdf)，§7 Definition7.1/Lemma7.2，PDF/印页47–48，讨论三个外部物品的duplication gadget：保留两个完整分配的并集可使物品度至多二，再由度二Santa Claus算法限制该困难性途径。本次只联网核读该定位，未落地原始字节或宣称全文内化；manifest的BCG2009_duplication_barrier明确状态。它是[低重数标签资源](../current/unrelated_machines/bounded_collision_label_resource_floor.md)的机制比较，非本页树着色证明的导入前提，也不是调度近二困难性。

@@ -62,3 +62,6 @@
 同页还分离了 rank-jump-one 的真实支持引理：有限正权真实矩在 `rank(M2)=rank(M1)+1` 时可恢复 `R+1` 个原子；这不延伸到任意伪矩，也不认证公屏的 `4−2√2` 常数。
 
 反面路线新增的可复用障碍是 [k-均匀资源束分层地板](research/current/unrelated_machines/k_uniform_bundle_matching_floor.md)：标准需求树的 (b^*) 同时由所有 (j)-of-(k) 束匹配层决定；三维匹配的 (1/2) 单终端逃逸只是特例。它把近2反面归约的真正 soundness 义务收窄为：共享标签必须同时压低所有低层束匹配，且保持固定 ε 下位多项式规模。该结果不关闭 UM-TARGET-v1。
+
+
+[低重数标签资源的确定性地板与锐界](research/current/unrelated_machines/bounded_collision_label_resource_floor.md)：所选资源重数Δ给真实b≥1/Δ，二重资源对任意束宽恰保留1/2；全局不同变量组度Δ_G给无需见证的实际(2−1/Δ_G)桥梁调度。只排除该四层有界碰撞接口的近二归约；高重数/跨层一致性与一般UM-TARGET-v1仍OPEN。

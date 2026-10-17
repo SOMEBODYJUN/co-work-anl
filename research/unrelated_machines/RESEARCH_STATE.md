@@ -218,3 +218,10 @@ u/q\to0) 但 (mu/q=1)，故标准需求树仍 (b^*=1/2)、调度OPT=3/2；若 (m
 [ k-均匀资源束地板](../current/unrelated_machines/k_uniform_bundle_matching_floor.md) 给出 `UM-K-UNIFORM-BUNDLE-FLOOR-v1`：标准根—X—超边—资源需求树的 (b^*) 精确等于所有 (t)-束匹配层 (
 u_t) 与比例 (t/K) 的最大最小值。三维匹配的 (1/2) 逃逸只是特例；若 (
 u_1=q)，总有 (b^*\ge1/K)。因此要构造 YES (b^*=1)、NO (b^*\le\varepsilon/2)，必须同时击穿所有低层 (t)-of-(k) 选择，并保留位多项式的共享标签一致性。固定 (k) 或只做完整张量仍不足。
+
+
+## 低重数标签资源的新精确边界
+
+[低重数标签资源的确定性地板与锐界](../current/unrelated_machines/bounded_collision_label_resource_floor.md)：所选资源重数Δ给真实b≥1/Δ，二重资源对任意束宽恰保留1/2；全局不同变量组度Δ_G给无需见证的实际(2−1/Δ_G)桥梁调度。只排除该四层有界碰撞接口的近二归约；高重数/跨层一致性与一般UM-TARGET-v1仍OPEN。
+
+读取正文§1–3a的三个精确身份→bounded_collision_label_floor_review.md→两份bounded_collision_bundle审计及冻结记录；后续应攻击每个局部完整选择均高碰撞的源相关解码，不能只增加成对冲突资源数量。

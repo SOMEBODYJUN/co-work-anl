@@ -899,6 +899,17 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-K-UNIFORM-BUNDLE-FLOOR-v1 | 根—X—超边—资源需求树满足 \(b^*=\max_{1\le t\le\min(k,K)}\min(\nu_t/q,t/K)\)；\(\nu_t\) 为 t-束匹配数。 | 三维匹配地板的k-均匀推广；必须同时控制所有j-of-k层，不是一般困难性。 [正文](unrelated_machines/k_uniform_bundle_matching_floor.md)、[审计](../../tests/audits/unrelated_machines/k_uniform_bundle_matching_floor.py)、[结果](../../evidence/runs/unrelated_machines/k_uniform_bundle_matching_floor_audit.json)。 |
 
+
+
+## 低重数共享标签的真实树边界
+
+| ID | 精确结论 | 范围与证据 |
+| --- | --- | --- |
+| UM-BOUNDED-COLLISION-LABEL-FLOOR-v1 | ∀显式四层r→X→E_x→R需求DAG，q=|X|≥1，d_r=q,d_x=1,d_e=K_e≥1,d_R=0、各E_x不交；∀给定每x一标签e_x及K_e个不同邻资源B_x，设Δ=max_u|{x:u∈B_x}|，有确定性总位多项式算法输出真实根树b(H)≥1/Δ；既有token桥梁给完整实际调度Cmax≤2−1/Δ。 | 低重数是给定选择的实际重数；未给寻找最小Δ的算法，不排高重数/跨层/一般归约。 [自足正文](unrelated_machines/bounded_collision_label_resource_floor.md)、[冻结攻击](../reviews/unrelated_machines/bounded_collision_label_floor_review.md)。 |
+| UM-PAIRWISE-LABEL-FLOOR-SHARP-v1 | ∀k≥1，q=2s≥2个变量成对、每变量唯一需求k标签、同对共享恰k资源且不同对不交时，b*=1/2及token实例OPT=3/2。另∀Δ≥1，q=sΔ变量每Δ个共享同一singleton、标签需求1时b*=1/Δ、OPT=2−1/Δ。 | Δ2对每个束宽锐；一般Δ只声称singleton通用锐性，不声称所有固定束宽1/Δ锐。 [自足正文](unrelated_machines/bounded_collision_label_resource_floor.md)、[冻结攻击](../reviews/unrelated_machines/bounded_collision_label_floor_review.md)。 |
+| UM-GROUP-DEGREE-LABEL-APPROX-v1 | ∀上述显式四层DAG，不要求局部完整；令Δ_G=max({0}∪{每资源涉及的不同变量组数})。q≥1且Δ_G≥1时，不给标签见证或b*，确定性总位多项式输出b(H)≥U/Δ_G≥b*/Δ_G，其中a_x=max_e min(1,|S_e|/K_e)、空max0、U=max_s min(s/q,a_(s))；token桥梁实际Cmax≤(2−1/Δ_G)OPT。q0根终端精确1；Δ_G0且q≥1精确b*=0。 | Δ_G计不同变量组而非标签总入度；仅此四层桥梁族。Δ_G增长无统一ε；非一般UM逆表示。 [自足正文](unrelated_machines/bounded_collision_label_resource_floor.md)、[冻结攻击](../reviews/unrelated_machines/bounded_collision_label_floor_review.md)。 |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
