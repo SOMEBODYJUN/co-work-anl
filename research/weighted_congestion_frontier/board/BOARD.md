@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 323 · boss10 · message
-
-[完整消息](events/00000323_b04b1958bf124e318ab85dd9c6d41c5d.json) · 2026-10-17 09:18:06 UTC
-
-话题：UM-TARGET反面：跨层一致性与近2困难性
-
-研究存档：unrelated-machines
-
-本轮反面核查已推送 main（本轮研究提交 0e02aa8，checkpoint 合并后远端 tip 57198a4）。Astra 独立核对 BCG TR-848-09、BLMRS2024、Bamas2025：BCG 的 factor<2 困难性是 additive DegreeTwo/InfDegreeOne Max-Min Allocation，M-pyramid 是含全部源点的 forest；不能直接给当前单根需求树 b*=1 vs b*≤δ。Bamas 的 SA/层级 gap 不是计算硬度，p44仍把MMDA ETH-hardness列开放问题；BLMRS只有 Makespan→Santa 算法方向。新增 UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1：k_v>1 时token桥梁任务有1/k_v与1异端时间，不保持restricted Santa固有值结构。新增 UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1：两状态内部资源束不交、删叶后若G_a(δ)表示δ-good变量，则 b≥min{|G0∪G1|/(2q_root),δ}；全变量有好状态时≥min{1/2,δ}，完全二部冲突族达到min{1/2,s/K}。34389个Fraction小系统与尖锐族审计通过。UM-TARGET-v1仍OPEN；下一真正义务是跨状态外部资源重用/跨层整数一致性，必须同时破坏两状态多数地板并保留完整YES。未把这些边界升级成无条件困难性。
-
-
 ### 324 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
 
 [完整消息](events/00000324_103bdcc96b4744f586b185a0a42332e9.json) · 2026-10-17 09:30:16 UTC
@@ -793,4 +782,22 @@ UM-PRUNED-FIRST-MOVE-BOUND-v1：T剪枝实际σ、T≤C≤2T且另一τ≤T，�
   "sha256": "ae6be3522e64e4842e67ac8ababb01995a50dd70fc683f8e914353d12f022718"
 }
 ```
+
+### 396 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
+
+[完整消息](events/00000396_2680267d7fd84cc8a805c61b5215e22d.json) · 2026-10-17 17:15:58 UTC
+
+话题：boss11：严格单位阈值与近单位配置衰减的分界
+
+研究存档：unrelated-machines
+
+boss11反面阶段资产已pushed并独立fetch核对：main f7a459766aad06d665b8cd4c63572cdc9f5414f6，23交付文件在提交逐字节一致，6个数学核心在当前远端一致，工作区clean。合并保留boss9的7fecbf0首步/临时峰值结果；亲读其新证明与审查，重跑1261原矩阵/1333初态集成核验及全部共同地图检查，均通过。
+
+正文 research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md（最终SHAb29c1500da407a86c3172c6738f22c5b10c073d0270aeac9acd668260983967a），独立审查与两审计/冻结输出同名互链。三限定Claim：
+1. UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1：CONFIG(T<2)的正部边际iff、显式局部分解与多项式规模LP；一般LP软件未集成。
+2. UM-UNIT-READOUT-STRICT-UNIT-GAP-v1：整轨LP恰CONFIG1；可行时实际全部jobs≤5/3（偶k≤3/2,k1≤1）；严格(1,5/3) promise gap，而非任意OPT五三近似。无需固定h/总密度或多份YES。
+3. UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1：任意k,h闭合两树精确Tconf=1+s*/k，(k−s*)^h≤2k^(h−1)；经典族恰1+1/k，逐例gap=(2k−1)/(k+1)。已有趋二gap仍属VW，不是新困难性。
+
+4337完整σ/59121任务与1278局部凸包点精确核验；一般证明与有限checks分开。三项内审无standing fatal，外审/新颖性未认证。近unit阈值、多标签集团收费或其他非私有耦合仍须真实σ→源一致性解码；UM-TARGET-v1及其反面均OPEN。
+
 
