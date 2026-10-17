@@ -941,6 +941,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1 | 对任意固定 `δ>0`，强 3-PARTITION 可缩放为 tiny 边均 `≤δT` 的残余阈值实例；T-feasible 整数调度当且仅当 3-partition，均匀分数 LP 始终可行。 | 只反驳把异质接收成本精确化为普通整数流/简单可积多面体；不反驳带 ST 加性余量的 `(3/2+δ)` 候选，也不是近 2 困难性。 |
 | UM-STRICT-SUB2-BATCH-BARRIER-v1 | 对每个 `k≥2` 存在 `OPT=1` 实例和负载 `<2` 坏态；允许每步最多 k 件迁移且所有中间态保持 `<2` 时，坏态在状态图中孤立，首个出口需 `k+1` 件。 | 只限制常数批量、严格次二局部修复；允许无界批量、跨过 2 或重新求解时不适用。正文与 Fraction 审计见 `strict_sub2_batch_barrier.md`。 |
 
+## 单任务外接端口的等值复制边界
+
+| ID | 精确结论 | 范围与证据 |
+| --- | --- | --- |
+| UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1 | 一个内部端点/一个固定外部端点的真实端口任务，排除外部容量的内部投影对入向位向下闭。若两全局一致态可行，正时间两符号数a,b、零时间位z，则状态数≥2^z(2^a+2^b−1)，任意T>0逐参数锐；k≥2可从已有一致见证单翻位构造混合严格见证，故任意ρ≥1不能纯等值复制。 | 不排多任务编码或外部联合容量。一般signed PCSP近二源难度没有自动保留双出现限制。[正文](unrelated_machines/signed_one_job_port_downset.md)、[冻结攻击](../reviews/unrelated_machines/signed_one_job_port_downset_review.md)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

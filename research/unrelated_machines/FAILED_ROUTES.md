@@ -239,3 +239,5 @@ u_t) 的一般复杂度。
 尝试以中性预修普遍补足旧严格lex长链搜索：闭环族把尾边正回流到已满root，任意局部后缀先增root，任何Cmax非增非平凡动作必须完整激活一个新环。全部最小成本槽初始化来自真实最优凸包，最小改件/参与机恰d+1，可随规模线性增长。失败属于该修复合同本身错误，不是主目标困难性。回收：单任务路径到OPT的最小峰值精确B+c，c=1/k²；只需微小暂时超额，且该cactus可精确解。重试应允许可控超额或原子长环，并证明一般共同守容及总进展。见[闭环正文](../../research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§11。
 
 异端时间也不是一概阻断共同选择：上下比例包络可把真实出口转成κ预算，用b_hz d_h成本排序及同一home容量流恢复所有sink。只有上包络时LP必要性仍失效；共同资格/唯一home仍承重。见[有界畸变正面合同](../../research/current/unrelated_machines/distorted_group_joint_slot_rounding.md)。
+
+单任务复制端口的纯内部一致性接口已由[向下投影锐界](../current/unrelated_machines/signed_one_job_port_downset.md)限制：移出任何入向端口只减少内部负载，两一致态遂强制混合态；精确计数逐参数可达到。失效步骤是把一般PCSP变量多次出现免费复制成两端真实任务。只否定保留外部出现槽、外部容量不参与投影的single-job接口；外部共同容量的两任务负控确能等值。可回收的是计数/零值处理/已有见证的实际混合构造；重试必须改变为多任务编码或共同外部一致性并证明完整调度低负载解码，不能只增内部辅助图。

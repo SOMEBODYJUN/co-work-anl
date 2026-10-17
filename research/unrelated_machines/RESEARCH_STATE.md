@@ -247,3 +247,5 @@ u_1=q)，总有 (b^*\ge1/K)。因此要构造 YES (b^*=1)、NO (b^*\le\varepsilo
 同一正文的 `UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1` 表明，对任意固定 `δ>0`，异质 tiny 边可以缩放到 `δT` 以下，而精确 `T` 整数可行性仍强 NP 完全，分数 LP 却可行。该障碍只关闭普通整数流或简单 polymatroid 的精确完成路线，不反驳带 ST 加性余量的结构候选。
 
 `UM-STRICT-SUB2-BATCH-BARRIER-v1` 给中性容量释放一个新边界：每个 `k≥2` 有真实 `OPT=1` 三机族，坏态负载 `2−1/(8k)`，在每步最多 `k` 件且所有中间态严格 `<2` 的状态图中孤立，首个出口需 `k+1` 件。它覆盖接收机增载和中性批量，但允许无界批量、跨过 2 或重新求解时不适用，不能升级为一般困难性。
+
+[单任务外接端口的向下投影与锐计数](../current/unrelated_machines/signed_one_job_port_downset.md)给`UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1`：保留一个外部出现端点且排除外部容量时，两一致态强制至少2^z(2^a+2^b−1)个严格可行状态，固定T>0逐参数锐；不能用该纯内部接口实现等值复制。BG一般signed阈值PCSP的近二困难性不保持调度双出现限制；多任务编码及外部联合容量仍未解，UM-TARGET-v1保持OPEN。

@@ -1302,3 +1302,18 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - **Exact Statement / Quantifiers：** 对每个 `k≥2` 存在 `OPT=1` 实例和 `Cmax<2` 坏态；允许每步至多 `k` 件迁移且全部中间态保持严格 `<2` 时，坏态孤立，首个出口需 `k+1` 件。
 - **Scope / Conclusion：** 只限制常数批量、严格次二局部修复；允许无界批量、跨过 2 或重新求解时不适用，不是一般近似困难性。
 - **Evidence / Status：** `research/current/unrelated_machines/strict_sub2_batch_barrier.md`；`tests/audits/unrelated_machines/strict_sub2_batch_barrier.py`；Fraction 审计 `k=2,3,7,100` 通过；外审/新颖性未认证。
+
+## UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1：单任务外接端口投影的锐计数与复制障碍
+
+- Exact Statement：内部机器非空、辅助任务仅内部、每端口恰一个内部端点及一个固定外端、时间非负有理；投影R_T完全排除外部容量。其局部入向位像向下闭。若全0与全1均可行，a0=#符号0，则|R_T|≥2^a0+2^(k−a0)−1≥2^floor(k/2)+2^ceil(k/2)−1。令z=#零时间端口，a,b为正时间两符号数，则|R_T|≥2^z(2^a+2^b−1)，任意T>0/a,b,z有锐例；T0且两一致态可行时全cube。
+- Objects：UM-MODEL-v1的真实任务、内部/外部机器划分、状态独立辅助任务和signed single-job ports。
+- Domain：显式有限图，非负有理处理时间及T；辅助任务可有任意非空有限内部资格。端口另一端外接但其容量不在投影。
+- Quantifiers：∀上述输入；计数以两一致态可行为前提；∀k≥2、ρ≥1弱投影不能仅保留等值。给定两个具体一致见证可总位多项式构造单翻位混合内部见证，不求解未知辅助分配。
+- Assumptions / Definitions：R_T由正文式(1)的全部内部容量及辅助分配存在性定义；global x=s为入向。零时间位自由，正时间两一致态支持互补。
+- Scope：只否定single-job/free-external-occurrence的纯内部等值复制；多任务编码、外部联合容量、联合源/一致性机器或非等值解码不在否定范围。
+- Conclusion：复制端口的精确状态计数及两机器达到例；一般signed-threshold PCSP源困难性尚缺次数保真接口，不能直接导成UM困难性。
+- Dependencies：UM-MODEL-v1、非负容量单调性及布尔主理想计数；BG2016 Theorem1.3只作第5节独立源定理对照，不是本计数证明前提。
+- Evidence：完整自足证明、先仅statement独立重构再冻结全文攻击、两套不互相import的Fraction实际辅助分配核验及明确外部私有host完整σ。
+- Counterevidence / Objections：双内部端点或把外部共同容量加回时2任务2机能实现等值至ρ<2；这是排除假设的必要负控，不是本Claim反例。零阈值前提、未知见证可求性与实ρ阈值定义已明确。无声明范围内尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; global novelty and standalone publication value unverified。实现为已给见证的混合构造及有限审计，不是一般调度求解器。
+- Related Files：`research/current/unrelated_machines/signed_one_job_port_downset.md`；`research/reviews/unrelated_machines/signed_one_job_port_downset_review.md`；`evidence/runs/unrelated_machines/signed_one_job_port_downset_audit.json`。

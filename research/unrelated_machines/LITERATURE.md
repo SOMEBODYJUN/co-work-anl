@@ -91,3 +91,7 @@ Fuchs–Kuhn，*List Defective Colorings: Distributed Algorithms and Application
 ## 现行裸C2接口的针对性对照
 
 Verdugo–Verschae–Wiese，[arXiv:1811.08539v3](https://arxiv.org/abs/1811.08539v3)，2020-05-16，34页；PDF/印3 Theorem1及AppendixB（33–34）已联网核读其陈述/定义。它研究CONFIG上高轮SoS的小常数间隙；本文 `UM-C2-LOAD-UNIT-GAP-v1` 的[单位伪矩证明](../current/unrelated_machines/c2_unit_multislice_gap.md)只是对仓库裸degree-four负载合同的精确自足判定，不能将后者包装成更强CONFIG层级下界。该源仅web读取，未落地原始字节或重构全文；全球新颖性未认证。
+
+## 有符号阈值 PCSP 的源困难性及出现次数缺口
+
+Brakensiek–Guruswami，[ECCC TR16-183 原始PDF](https://eccc.weizmann.ac.il/report/2016/183/download)，35页，Theorem1.3 PDF6/印4已实际核读。对arity2A−1、严格重量0..A、弱重量0..B且A≤B≤2A−2，允许否定和常量的一般PCSP为NP-hard；固定ρ<2可取A>1/(2−ρ)、B=floorρA。这只是原分类的直接代入，不是调度困难性。原定理不限制变量双出现、相反符号；每机等权的调度端口合同则可容量匹配精确解。[单任务投影正文](../current/unrelated_machines/signed_one_job_port_downset.md)定位普通复制缺口。仅web核原陈述，原字节未落地、全部源归约未重构，取得状态及限制见manifest。
