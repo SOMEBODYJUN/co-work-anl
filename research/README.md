@@ -32,3 +32,5 @@
 [共同流正文](current/unrelated_machines/rooted_dag_congestion_flow.md)§7–10新增守恒扩区及非单位分叉参数算法：单位走廊与汇流全部交给一次共同流，只有h个非单位点的支撑选择仍付2^h。精确实际根树与主目标的一般多项式量词分开；按新ID/冻结审查读取，不改旧合同。
 
 [共同资格私有组的无界sink联合流](current/unrelated_machines/hall_group_joint_flow.md)：实际输出比例`q(2+δ)/(q+1)`，并有未知OPT的结构承诺版本；同组资格/等端体积及组总量范围仍承重，q增长时无统一ε。一般主目标保持OPEN，下一义务是可恢复的一般分组或异资格/异端容量转换。
+
+[真实最优矩上的固定阶压缩向量贪心](current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)有严格、任务顺序无关的线性最坏界；它给出实际提取规则的限制，与矩是否来自真实最优分布分开。按精确身份 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1、冻结审查和双路核验读取，一般目标仍OPEN。

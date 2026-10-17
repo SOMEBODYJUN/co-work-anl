@@ -1,0 +1,57 @@
+{
+  "title": "真实最优矩上固定阶向量贪心的冻结核验账本",
+  "claim": "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1",
+  "proof": "research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md",
+  "proof_sha256": "3db8fd05677780e40074ddf33f5bdb64c6fefc0260f6e6396e17b25e093da4cc",
+  "arithmetic": "integer and Fraction, no random sampling or tolerance",
+  "python": "3.12.14",
+  "commands": [
+    "python3 tests/audits/unrelated_machines/polynomial_vector_greedy.py --export-directory <new scratch directory> > <new scratch result>",
+    "python3 tests/audits/unrelated_machines/polynomial_vector_greedy_independent.py > <new scratch result>"
+  ],
+  "files": [
+    {
+      "path": "tests/audits/unrelated_machines/polynomial_vector_greedy.py",
+      "sha256": "ea650c03b8f33b956f3971f255a4a59eaf9fbb3d9cab4108d87aa81156d0afef"
+    },
+    {
+      "path": "tests/audits/unrelated_machines/polynomial_vector_greedy_independent.py",
+      "sha256": "228fd10f35897a515876c9637cdf0e5386d81b6a7a6ec2163c0991b614e548c1"
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/polynomial_vector_greedy_primary.json",
+      "sha256": "21ce05bc036fd19c4c3ddf307e85129daf856cd68ee3596011f96d0a8ec07180"
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/polynomial_vector_greedy_independent.json",
+      "sha256": "223a1b23ab554cb79b640bb5782ae37984793a1dd8e6e1c32d519dea7c864e64"
+    },
+    {
+      "path": "examples/unrelated_machines/polynomial_vector_greedy_q13.json",
+      "sha256": "7646b90d73744266e15d886f9aba08d4ebeeb21e5f62d17b530f73e3ed6fd0d3"
+    },
+    {
+      "path": "evidence/certificates/unrelated_machines/polynomial_vector_greedy_q13.json",
+      "sha256": "ccf657daee06d2b084e84f2d912d5b30413a470f4ae73f94f5a40b936831c03a"
+    }
+  ],
+  "actual_input_check": "Boss reread raw P and every listed certificate assignment: 2197 legal source schedules each makespan6; greedy schedule makespan13; private anchor proves OPT>=6.",
+  "coverage": {
+    "primary": "r1 q3/5/7/13 every source and all up-to3 distinct-job raw/merged counts; r2 q11 all161051 sources,10 selected job sets up to5; r2 q3 actual243-source full7-dimensional projection;3038 exact score recurrence checks r1..4 prime q<80",
+    "independent": "r1 q3/5/7 actual full Gram and all degree3 compressed effects, forward/reverse Fraction paths plus anchor identity; q13 all2197 sources, all377 up-to3 subsets and exact score identity; no full q13 matrix inversion"
+  },
+  "objections": [
+    "The primary scratch audit initially used an integer empty product leading to floating division in the constant Gram entry; corrected to Fraction before canonical freezing, then rerun; no frozen failing data overwritten.",
+    "OPT0 statement explicitly applies to optimal-source/T=OPT=0 promise; generic T-source guarantees nT only."
+  ],
+  "limitations": [
+    "Finite evidence does not prove arbitrary r,q or order.",
+    "No full high-degree matrix inversion at bad r2 primes.",
+    "No hierarchy integrality gap or generic scheduling hardness; literature novelty unverified."
+  ],
+  "review": {
+    "path": "research/reviews/unrelated_machines/truncated_vector_greedy_review.md",
+    "sha256": "f44814c28e337ff312506d6caf6c5c34ce6c6aa78b3c10f5e8f2ae34b5383369",
+    "final_proof_sha256": "3db8fd05677780e40074ddf33f5bdb64c6fefc0260f6e6396e17b25e093da4cc"
+  }
+}

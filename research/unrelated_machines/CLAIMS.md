@@ -827,3 +827,15 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：共同资格、体积、组下界省略会破证明；q槽不能凭strict Hall降为q−1；没有一般结构提取或一般容量转换。
 - Status：限域完整证明、独立内部已审、规范实际构造已实现；标准工具组合，未外审/未认证全球新颖性或独立论文价值。
 - Related Files：[正文](../current/unrelated_machines/hall_group_joint_flow.md)、[冻结审查](../reviews/unrelated_machines/hall_group_joint_flow_review.md)、hall_group_joint_flow三份代码/冻结报告与实际输入/任务分配。
+
+## UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1：真实最优矩上固定阶向量贪心的线性最坏界
+
+- Exact Statement / Quantifiers：每固定r≥1、每素数q>4r+2，q台机器/q+1任务的显式实例有真实最优源D，OPT=4r+2；固定V_r压缩乘法向量范数贪心在任何任务顺序上都严格把q个普通任务送0，输出比q/(4r+2)=(n−1)/(4r+2)。一般真实T源下该规则合法且≤nT；固定r故最坏量级线性。
+- Objects / Domain / Definitions：UM-MODEL-v1；H=L²(D)、V_r为至多r任务指标单项式空间，A_e=P_r M_xe，ψ初始1；每任务一次选最大‖A_eψ‖²后更新。精确矩来自同一个有限有理真实T可行源；最优版T=OPT。正文§1准确合同。
+- Assumptions / Scope：r固定但任意；整个过程固定D/V_r/A_e，任意任务顺序含自适应；平局可任意。下界q>4r+2为素数，普通单位时间与独占anchor时间4r+2；q≤B仅边界核验。
+- Conclusion：该准确规则最坏比沿无限族Ω(n)，结合一般O(n)为线性量级；严格选择、顺序无关。不是一般近似突破。
+- Dependencies：模型；(2r+1)-wise分类变量正交分解及fresh压缩恒等式；Vandermonde满射与单变量根数界；均在正文证明。
+- Evidence：自足一般证明、先独立重构后冻结攻击；实际q3/5/7一级Gram/全部三阶/Fraction路径，q13全部源与三点计数，二级有限源和小投影另列范围。q13原矩阵及全部2197个最优源原子可复查。
+- Counterevidence / Objections：零最优句已澄清为最优源T=OPT=0；一般真实T源仅得nT。仅固定原矩/子空间反复压缩乘法并贪心最大化向量范数的准确规则；不是层级整数间隙或一般算法困难性。真正条件化、重建矩和容量反馈未排除；主目标仍OPEN。固定r的复杂度不可扩为r输入时统一多项式。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。证明、内审、实现、新颖性分别登记；固定r矩输入位多项式不提供最优矩oracle。
+- Related Files：[正文](../current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)、[冻结审查](../reviews/unrelated_machines/truncated_vector_greedy_review.md)、正文§7全部代码/输入/证书/证据。
