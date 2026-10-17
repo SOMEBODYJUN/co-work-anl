@@ -152,3 +152,9 @@
 ## 真实最优矩的固定阶向量贪心边界
 
 [固定阶压缩乘法向量贪心](../current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)证明 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1：一般真实T源上该规则合法且≤nT；对每固定r，有限域多项式真实最优源使任何任务顺序都严格选同一普通机器，近似比(n−1)/(4r+2)。故其最坏量级线性，即使给完整真实矩及容量局部化条件也如此。它不排真正条件化、重新构矩、容量反馈或其他算法；主目标仍OPEN。读取链为精确账本→正文§1–5→冻结审查→实际Gram/Fraction审计→q13输入与2197个最优源原子。有限高阶检查范围按冻结记录，全球新颖性未认证。
+
+## 真实最优矩的固定向量规则已被严格击穿
+
+[压缩向量贪心正文](../current/unrelated_machines/projected_vector_greedy_unbounded.md)另立两个身份：UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1在三机、全正有限时间、真实最优分布上给无界比；UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1给五机五单位任务的严格2倍小证书。正文§2–5的重复净化保同一V，并逐阶段控制非零overlap；独立审查及双路实际Fraction证据已串联，未认证新颖性或外审。
+
+本结果终止的是固定顺序max||Aeψ||²后左乘的具体充分机制。真实所有阶矩和逐行容量算子也不能免费保过去联合支撑；仍不排重新耦合、自适应顺序、好μ选择或其他提取。§8的交换算子边界可回收；真正未解仍是一般输入可求的共同容量与实际输出/总进展，UM-TARGET-v1保持OPEN。

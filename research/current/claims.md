@@ -838,6 +838,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1 | 每固定r≥1、每素数q>4r+2，q台机器/q+1任务的显式实例有真实最优源D，OPT=4r+2；固定V_r压缩乘法向量范数贪心在任何任务顺序上都严格把q个普通任务送0，输出比q/(4r+2)=(n−1)/(4r+2)。一般真实T源下该规则合法且≤nT；固定r故最坏量级线性。 | 固定D/V_r/A_e并逐任务最大化‖A_eψ‖²；源矩真实，选择严格。不是任何层级gap。固定r矩输入位多项式，不提供最优源oracle。[自足正文](unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)、[冻结审查](../reviews/unrelated_machines/truncated_vector_greedy_review.md)；内部审查/有限核验，未外审/未认证新颖性。 |
 
+## 真实最优矩的固定向量规则与非交换遗忘
+
+| ID | Exact Statement | 范围与证据 |
+| --- | --- | --- |
+| UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1 | ∀整数k≥2，存在三机全正有限有理矩阵P、有限正有理真实最优调度分布μ及固定任务序，T=OPT=1，V=span{1,x_ij}上的真实压缩A_ij=ΠM_xij|V，从ψ=1按max||A_ijψ||²选边后左乘的规则全部严格选择，实际Cmax>k−1/2。 | 任意给定真实最优分布/固定顺序的该规则无统一有限近似比。未要求全边际正；不排选择好μ、自适应调序、重新耦合、其他更新或UM-TARGET-v1。副本数仅有效有限，未给poly(k)反例大小。 [正文](unrelated_machines/projected_vector_greedy_unbounded.md)、[审查](../reviews/unrelated_machines/projected_vector_greedy_review.md)。内审及精确审计，未外审/未认证新颖性。 |
+| UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1 | 存在五机五任务全时间1及14个真实OPT1排列的均匀分布，dimV=12；固定顺序1..5的同一压缩向量规则全严格输出(1,2,3,4,2)，Cmax=2；全部120序按最小机器破平局恰118个输出1、2个输出2。 | 只限给定显式分布/固定规则。成功调序存在，不称所有调序坏，不称全局最坏比恰2，不含主目标困难性。 [正文](unrelated_machines/projected_vector_greedy_unbounded.md)、[审查](../reviews/unrelated_machines/projected_vector_greedy_review.md)。内审及精确审计，未外审/未认证新颖性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -8273,6 +8273,66 @@
         "evidence/certificates/unrelated_machines/cactus_high_girth_k4_g7_witness.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-PROJECTED-VECTOR-RULE-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "真实分布上一阶literal空间的固定向量规则",
+      "detail": "Finite true distribution μ, V=span{1,x}, A=ΠM_x|V; ψ starts one, each fixed-order job maximizes ||Aψ||² and left-multiplies. No recoupling or task reordering.",
+      "refs": [
+        "research/current/unrelated_machines/projected_vector_greedy_unbounded.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-EVENT-PURIFICATION-CHAIN-v1",
+      "kind": "construction",
+      "track": "unrelated_machines",
+      "title": "正有理控制立方体与重复指示事件链",
+      "detail": "Strict majority persistence, one-dimensional event support eigenspaces, positive-overlap finite repetition, full conditional cube and all-positive three-machine calibration; all premises are constructed explicitly in §§2–5.",
+      "refs": [
+        "research/current/unrelated_machines/projected_vector_greedy_unbounded.md"
+      ],
+      "status": "self-contained construction"
+    },
+    {
+      "id": "UM-PROJECTED-VECTOR-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "投影向量碰撞的双路有理有限证据",
+      "detail": "Actual 14-unit atoms and 12-atom 323-job positive matrix; exact Gram inverse/sample projection, all 120 unit orders and stated boundary/scalar checks. Not a universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/projected_vector_greedy_unbounded.md",
+        "evidence/runs/unrelated_machines/projected_vector_greedy_audit.json",
+        "tests/audits/unrelated_machines/projected_vector_greedy.py",
+        "tests/audits/unrelated_machines/vector_moment_greedy_independent.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "真实最优矩压缩向量规则的三机全正无界比",
+      "detail": "∀整数k≥2，存在三机全正有限有理矩阵P、有限正有理真实最优调度分布μ及固定任务序，T=OPT=1，V=span{1,x_ij}上的真实压缩A_ij=ΠM_xij|V，从ψ=1按max||A_ijψ||²选边后左乘的规则全部严格选择，实际Cmax>k−1/2。",
+      "refs": [
+        "research/current/unrelated_machines/projected_vector_greedy_unbounded.md",
+        "research/reviews/unrelated_machines/projected_vector_greedy_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "五机单位任务真实矩的严格投影碰撞",
+      "detail": "存在五机五任务全时间1及14个真实OPT1排列的均匀分布，dimV=12；固定顺序1..5的同一压缩向量规则全严格输出(1,2,3,4,2)，Cmax=2；全部120序按最小机器破平局恰118个输出1、2个输出2。",
+      "refs": [
+        "research/current/unrelated_machines/projected_vector_greedy_unbounded.md",
+        "research/reviews/unrelated_machines/projected_vector_greedy_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -20043,6 +20103,95 @@
         "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
       ],
       "status": "structural/method boundary"
+    },
+    {
+      "id": "D-UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PROJECTED-VECTOR-RULE-v1",
+        "UM-EVENT-PURIFICATION-CHAIN-v1"
+      ],
+      "conclusion": "UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1",
+      "statement": "∀整数k≥2，存在三机全正有限有理矩阵P、有限正有理真实最优调度分布μ及固定任务序，T=OPT=1，V=span{1,x_ij}上的真实压缩A_ij=ΠM_xij|V，从ψ=1按max||A_ijψ||²选边后左乘的规则全部严格选择，实际Cmax>k−1/2。 General proof or explicit finite linear-algebra certificate is in the cited account; empirical sampling is not a premise.",
+      "refs": [
+        "research/current/unrelated_machines/projected_vector_greedy_unbounded.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PROJECTED-VECTOR-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1",
+      "statement": "Finite independent implementations check only the supplied witnesses, scalar ranges and stated task orders.",
+      "refs": [
+        "research/current/unrelated_machines/projected_vector_greedy_unbounded.md",
+        "evidence/runs/unrelated_machines/projected_vector_greedy_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "L-UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "任意给定真实最优分布/固定顺序的该规则无统一有限近似比。未要求全边际正；不排选择好μ、自适应调序、重新耦合、其他更新或UM-TARGET-v1。副本数仅有效有限，未给poly(k)反例大小。",
+      "refs": [
+        "research/current/unrelated_machines/projected_vector_greedy_unbounded.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PROJECTED-VECTOR-RULE-v1"
+      ],
+      "conclusion": "UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1",
+      "statement": "存在五机五任务全时间1及14个真实OPT1排列的均匀分布，dimV=12；固定顺序1..5的同一压缩向量规则全严格输出(1,2,3,4,2)，Cmax=2；全部120序按最小机器破平局恰118个输出1、2个输出2。 General proof or explicit finite linear-algebra certificate is in the cited account; empirical sampling is not a premise.",
+      "refs": [
+        "research/current/unrelated_machines/projected_vector_greedy_unbounded.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PROJECTED-VECTOR-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1",
+      "statement": "Finite independent implementations check only the supplied witnesses, scalar ranges and stated task orders.",
+      "refs": [
+        "research/current/unrelated_machines/projected_vector_greedy_unbounded.md",
+        "evidence/runs/unrelated_machines/projected_vector_greedy_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "L-UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只限给定显式分布/固定规则。成功调序存在，不称所有调序坏，不称全局最坏比恰2，不含主目标困难性。",
+      "refs": [
+        "research/current/unrelated_machines/projected_vector_greedy_unbounded.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }

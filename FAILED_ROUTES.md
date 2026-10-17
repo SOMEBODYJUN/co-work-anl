@@ -98,3 +98,5 @@
 [反面路线的递归与资源重复边界](research/current/unrelated_machines/private_graft_and_resource_repetition.md)记录两个不同失效：私有重复的值是max/min而非乘积；完全元素池可能把分数完美匹配整数化，导致源NO变YES。只限制明确合同，不是一般算法或所有困难性归约的不可能性。
 
 [固定阶压缩乘法向量贪心](research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)每步丢弃最高次共同相关性。即使矩来自真实最优源，全部选择严格且任意顺序仍有(n−1)/(4r+2)坏例；一般nT上界给同量级。此失败仅限准确评分与固定算子规则，真正条件化/重建未排除。
+
+[真实最优矩的固定压缩向量规则](research/current/unrelated_machines/projected_vector_greedy_unbounded.md)也可能遗忘过去联合支撑：三机全正时间上具体max-norm左乘规则近似比无界。回收事件净化与交换边界；不限制重新耦合、好分布选择、自适应调序或一般算法。

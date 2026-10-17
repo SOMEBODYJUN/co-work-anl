@@ -911,3 +911,33 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：零最优句已澄清为最优源T=OPT=0；一般真实T源仅得nT。仅固定原矩/子空间反复压缩乘法并贪心最大化向量范数的准确规则；不是层级整数间隙或一般算法困难性。真正条件化、重建矩和容量反馈未排除；主目标仍OPEN。固定r的复杂度不可扩为r输入时统一多项式。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。证明、内审、实现、新颖性分别登记；固定r矩输入位多项式不提供最优矩oracle。
 - Related Files：[正文](../current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)、[冻结审查](../reviews/unrelated_machines/truncated_vector_greedy_review.md)、正文§7全部代码/输入/证书/证据。
+
+## UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1：真实最优矩压缩向量规则的三机全正无界比
+
+- Exact Statement / Quantifiers：∀整数k≥2，存在三机全正有限有理矩阵P、有限正有理真实最优调度分布μ及固定任务序，T=OPT=1，V=span{1,x_ij}上的真实压缩A_ij=ΠM_xij|V，从ψ=1按max||A_ijψ||²选边后左乘的规则全部严格选择，实际Cmax>k−1/2。
+- Objects / Domain：UM-MODEL-v1；有限正有理真实完整调度分布、L²(μ)、完整一阶literal张成V、真实正交压缩与固定输入任务序。反例全时间严格正且有限。
+- Definitions：UM-PROJECTED-VECTOR-RULE-v1，正文§1。每步更新不重求矩，不对过去已选事件真实条件化；非零标量归一化不改赢家。
+- Assumptions：μ每个支撑原子正概率、makespan=OPT=1；不要求每条有限边边际正。严格赢家使反例不依赖平局规则。
+- Scope / Conclusion：任意给定真实最优分布/固定顺序的该规则无统一有限近似比。未要求全边际正；不排选择好μ、自适应调序、重新耦合、其他更新或UM-TARGET-v1。副本数仅有效有限，未给poly(k)反例大小。
+- Dependencies：UM-MODEL-v1；真实压缩定义。无界身份由§2多数恒等/持续性/净化、§3有限路径、§4正有理fullcube、§5三机全正提升共同推出；单位身份由§7显式输入及精确线性代数证书推出。无外部困难性假设。
+- Evidence：完整自足一般证明与先盲后冻结攻击；规范Gram逆与独立样本投影从实际P/全部真实原子核验。三机12原子/323步、单位14原子/120序、边界和公式范围见冻结JSON；有限检查不是一般证明。
+- Counterevidence / Objections：初审∞·0求和及未访问H0表述已修；非零overlap、最终V固定、finite repeats、全部机器同时守容均已独立攻击。声明范围无尚成立fatal；全球新颖性及外审未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。实现为给定显式分布的审计程序，不是一般真矩oracle或主目标算法。
+- Related Files：research/current/unrelated_machines/projected_vector_greedy_unbounded.md、research/reviews/unrelated_machines/projected_vector_greedy_review.md、两份projected/vector审计、两个实际输入、evidence/runs/unrelated_machines/projected_vector_greedy_audit.json。来源公屏249具体规则，本对话boss2及内部独立重构。
+
+## UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1：五机单位任务真实矩的严格投影碰撞
+
+- Exact Statement / Quantifiers：存在五机五任务全时间1及14个真实OPT1排列的均匀分布，dimV=12；固定顺序1..5的同一压缩向量规则全严格输出(1,2,3,4,2)，Cmax=2；全部120序按最小机器破平局恰118个输出1、2个输出2。
+- Objects / Domain：UM-MODEL-v1；有限正有理真实完整调度分布、L²(μ)、完整一阶literal张成V、真实正交压缩与固定输入任务序。反例全时间严格正且有限。
+- Definitions：UM-PROJECTED-VECTOR-RULE-v1，正文§1。每步更新不重求矩，不对过去已选事件真实条件化；非零标量归一化不改赢家。
+- Assumptions：μ每个支撑原子正概率、makespan=OPT=1；不要求每条有限边边际正。严格赢家使反例不依赖平局规则。
+- Scope / Conclusion：只限给定显式分布/固定规则。成功调序存在，不称所有调序坏，不称全局最坏比恰2，不含主目标困难性。
+- Dependencies：UM-MODEL-v1；真实压缩定义。无界身份由§2多数恒等/持续性/净化、§3有限路径、§4正有理fullcube、§5三机全正提升共同推出；单位身份由§7显式输入及精确线性代数证书推出。无外部困难性假设。
+- Evidence：完整自足一般证明与先盲后冻结攻击；规范Gram逆与独立样本投影从实际P/全部真实原子核验。三机12原子/323步、单位14原子/120序、边界和公式范围见冻结JSON；有限检查不是一般证明。
+- Counterevidence / Objections：初审∞·0求和及未访问H0表述已修；非零overlap、最终V固定、finite repeats、全部机器同时守容均已独立攻击。声明范围无尚成立fatal；全球新颖性及外审未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。实现为给定显式分布的审计程序，不是一般真矩oracle或主目标算法。
+- Related Files：research/current/unrelated_machines/projected_vector_greedy_unbounded.md、research/reviews/unrelated_machines/projected_vector_greedy_review.md、两份projected/vector审计、两个实际输入、evidence/runs/unrelated_machines/projected_vector_greedy_audit.json。来源公屏249具体规则，本对话boss2及内部独立重构。
+
+## 真实矩提取两条反例机制的交叉定位
+
+本组UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1给固定三机、全严格正有限时间、固定序上的重复净化失效；同行UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1的[独立正文](../current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)另给每固定r、任意顺序的线性量级族。后者有增长机器数和专用anchor，与本组范围不同；彼此不是证明前提。已实际读取其§1–7，保留全部原身份、代码与冻结证据，不重复认领其有限独立源机制。

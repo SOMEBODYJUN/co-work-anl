@@ -59,3 +59,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 [反面路线的递归与资源重复边界](research/current/unrelated_machines/private_graft_and_resource_repetition.md)的两个身份UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1、UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1已入本题精确账本；不改变UM-TARGET-v1的OPEN状态。
 
 固定阶真实矩提取的精确身份 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1 见[专题账本](research/unrelated_machines/CLAIMS.md)及[自足证明](research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)：一般nT上界、任意固定r的线性下界；不关闭UM-TARGET-v1。
+
+新增UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1、UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1；[精确专题账本](research/unrelated_machines/CLAIMS.md)固定真实最优分布/给定任务顺序/特定压缩更新的范围。一般无界证明及单位小证书均不否定UM-TARGET-v1。
