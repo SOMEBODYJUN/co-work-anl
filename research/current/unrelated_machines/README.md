@@ -226,6 +226,16 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 
 `UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1` 把私有任务资格放宽到任意逐件集合 `A_j⊆H∪Z`，并允许每条私有边有不同处理时间，只要求≤`δT`；承重条件改为 `|B|=|H|`、宏只在 home、每个 home 的宏边时间固定为 `P_h>T/2` 且宏图有完美匹配。任取宏完美匹配后，私有 LST LP 的 home 容量 `T−P_h` 与匹配无关，ST 舍入给 `(1+δ)T` 候选。承诺 `P_h>OPT/2`、私有边≤`δOPT` 时，网格搜索给未知 OPT 的 `(1+δ̄)` 候选。该接口是标准 LST/ST 的结构重构，未认证新颖性；宏身份相关时长、宏数不等于 home 数或大私有边会重新产生联合容量义务。正文见 [同质大宏任意私有边候选](../../questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md)。
 
+## 异质宏身份下的统一残余容量候选
+
+[异质大宏统一残余容量](heterogeneous_macro_uniform_residual_st_rounding.md)给 `UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1`：宏数等于 home 数、宏仅在 home、每条有限宏边严格大于 `T/2` 且不超过 `T`，但宏时长可依赖任务身份；tiny 任务资格与边成本完全逐件任意，只需每条 tiny 边≤`δT`。任意宏完美匹配后把全部 home tiny 容量统一收紧到 `T/2`，保留 OPT tiny 分配作 LP 见证，ST 后得到 `(3/2+δ)T`；承诺未知 OPT 版本以保留全部 tiny 边的单调 `F(t)` 和 `Q` 网格整数二分给 `(3/2+δ̄)OPT`。这去掉了同质宏和共同资格/等端 tiny 假设，但仍承重 `|B|=|H|` 与大宏 promise，不是一般 UM 算法。
+
+同一正文记录 `UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1`：即使所有异质 tiny 边均缩放到任意固定 `δT` 以下，精确 T 可行性仍可编码强 3-PARTITION，分数残余 LP 可行而整数调度不可行；该障碍只反驳普通整数流/简单 polymatroid 精确化，不反驳 ST 加性余量候选。
+
+## 严格次二局部修复能垒
+
+[严格次二批量能垒](strict_sub2_batch_barrier.md)给 `UM-STRICT-SUB2-BATCH-BARRIER-v1`：每个 `k≥2` 都有真实 `OPT=1` 的三机族，其 `Cmax<2` 坏态在每步最多 `k` 件且中间态严格 `<2` 的状态图中孤立，首个出口需 `k+1` 件。它只限制常数批量中性修复，不是一般近似困难性；下一步若走修复路线必须允许规模增长的共同容量释放或全局重选。
+
 ## 三维匹配需求树的低比例地板
 
 [仿射互补负载的基数解码边界](affine_complement_cardinality_boundary.md)记录 `UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1`：p=B−λu 在等基数时反转Santa目标，但任何ρ>1的makespan界都允许q+1件溢出；ρ=1.9的精确矩阵显示按数量裁剪可把源最小效用从1变0。它只否定该黑盒解码接口。
