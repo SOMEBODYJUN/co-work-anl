@@ -8,23 +8,6 @@
 
 ## 最近消息
 
-### 290 · R-3ca58b5dea8d4167bff0398f36b05e75 · message
-
-[完整消息](events/00000290_609eba5c69104ac685f1cb0e70f9b98a.json) · 2026-10-17 07:36:07 UTC
-
-话题：固定宏占位与C2深层条件化边界
-
-研究存档：unrelated-machines
-
-本阶段已验证并推送 dba783aede1f15705727be14e540f04beb2fb92e，UM-TARGET-v1 仍 OPEN。
-
-1) 新候选 UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1：|B|=|H|，宏只在 homes；对每个 home h，所有宏边时间只依赖 home、均为 P_h>T/2，宏图有完美匹配。私有任务可有任意逐件资格 A_j⊆H∪Z，且每条私有边 p_ij≤δT。任取宏完美匹配后，私有 LST LP 的 home 容量 T−P_h 与宏身份无关，ST 舍入给所有机器 ≤(1+δ)T；承诺 P_h>OPT/2、私有边≤δOPT 时，网格测试给 ≤(1+δ̄)OPT 候选。它是标准 LST/ST 的结构重构，不宣称新颖或一般算法；宏占位同质性仍是承重边界。
-
-2) 新精确表示边界 UM-C2-PREFIX-CONDITIONING-DEGREE-v1：7任务/3机器同一处理矩阵上，偶/奇五位 parity 的两份真实 OPT=T=2 调度分布所有 ≤4 阶 one-hot C2 数据完全相同；深度4前缀 F 后，任务5/6 的唯一容量安全续接相反，隐藏差异是五阶矩。32态精确审计通过。这只排除从四阶 C2 自动反复条件化，不是调度困难性。
-
-同时登记了两个较窄的可回收候选：任意资格等量子下界流、组—汇点比例成本联合槽。完整账本、图谱、审计和入口已更新；结构检查、精确审计、远端可达和工作区 clean 均已核对。
-
-
 ### 291 · R-aba0b2b728764e70a75058d600afe6b6 · message
 
 [完整消息](events/00000291_4cd9455e3b8643ce9b1228e3617346d0.json) · 2026-10-17 07:39:50 UTC
@@ -700,4 +683,16 @@ boss11反面阶段已pushed并独立fetch验证main aecc5528829d96f0366bd273e209
 研究存档：unrelated-machines
 
 [PROCESS][UM-TARGET-v1][ACTIVE]\n用户指出大规模枚举不等于数学进展。已将团队协议更新到 ddaf1d5：每个任务先写 Claim Card，只允许一个承重 proof obligation；正向轨道必须给共同容量不变量+实际整数输出或 sound FAIL，反向轨道必须对每个固定有理 δ>0给真实整数 gap+任意低调度 decoder；构造者与盲审/red-team/复杂度审计分离。连续两轮只增样本或局部微调即 Salvage/Kill。下一 gate：R1 各交一页 theorem/reduction，R2 盲审攻击，R3 go/no-go。请不要继续扩大树、完整分配、随机、加权和预算枚举。
+
+### 357 · R-d3e1929c722e40a58462ca476c61ed30 · message
+
+[完整消息](events/00000357_14b518bda3984cf8bc00d4f34c0d52b6.json) · 2026-10-17 11:15:06 UTC
+
+话题：UM-TARGET团队研究模式重整
+
+研究存档：unrelated-machines
+
+[PROCESS][UM-TARGET-v1][ACTIVE]
+用户指出大规模枚举不等于数学进展。已将团队协议更新到 ddaf1d5：每个任务先写 Claim Card，只允许一个承重 proof obligation；正向轨道必须给共同容量不变量+实际整数输出或 sound FAIL，反向轨道必须对每个固定有理 δ>0给真实整数 gap+任意低调度 decoder；构造者与盲审/red-team/复杂度审计分离。连续两轮只增样本或局部微调即 Salvage/Kill。下一 gate：R1 各交一页 theorem/reduction，R2 盲审攻击，R3 go/no-go。请不要继续扩大树、完整分配、随机、加权和预算枚举。
+
 
