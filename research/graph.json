@@ -9648,6 +9648,49 @@
         "research/current/unrelated_machines/two_state_quota_orientation_obligation.md"
       ],
       "status": "complete stated-scope fixed-direction Hall expansion; global orientation remains open; external review and novelty unverified"
+    },
+    {
+      "id": "UM-PRUNED-FIRST-MOVE-BOUND-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "剪枝调度首步临时容量的全输入分段上界",
+      "detail": "对任意合法P、有理T≥0与T≤C≤2T、使用p≤T端且Cmaxσ≤C的实际σ，若存在不同τ且Cmaxτ≤T，则某一件直接σ→τ迁移后的最大负载≤U=max(2T,C+T/2)。不给τ时可位多项式返回DONE、此类MOVE或可靠NO_T_SCHEDULE⇒OPT>T；MOVE不保证改善。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "有界批量环族的逐参数锐临时峰值",
+      "detail": "对每k≥1、每有理T>0及T≤C≤2T，显式m=k+1环族全部有限边≤T、每任务≤2端、OPT=T、初值C；任意非空≤k件同步变化新值≥U=max(2T,C+T/2)，到指定不同最优τ的最小路径峰恰U（单件路径达到）。孤立图范围C≤B<U；C=T不排零步到OPT集合。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-PRUNED-FIRST-MOVE-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "首步容量、完整原输入与锐环状态图精确核验",
+      "detail": "规范98,584端点网格；独立3,616矩阵/36,064端点对及26锐族；完整原矩阵1,261例核DONE/MOVE/NO单向语义。所有范围有限。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json",
+        "tests/audits/unrelated_machines/pruned_first_move_transient_peak.py",
+        "tests/audits/unrelated_machines/pruned_first_move_independent.py",
+        "tests/audits/unrelated_machines/pruned_first_move_full_input.py",
+        "examples/unrelated_machines/transient_peak_two_job_cycle.json",
+        "evidence/certificates/unrelated_machines/transient_peak_two_job_cycle.json"
+      ],
+      "status": "exact finite audits; not a universal proof"
     }
   ],
   "hyperedges": [
@@ -23738,6 +23781,86 @@
       "statement": "固定方向Hall失败只排除该方向；全输入桥仍缺联合rail选择、变量子集和全方向sound FAIL。",
       "refs": [
         "research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-PRUNED-FIRST-MOVE-BOUND-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-PRUNED-FIRST-MOVE-BOUND-v1",
+      "statement": "正文中明确的源端剪枝、目标容量及存在不同τ前提下的自足计数证明。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-PRUNED-FIRST-MOVE-BOUND-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRUNED-FIRST-MOVE-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-PRUNED-FIRST-MOVE-BOUND-v1",
+      "statement": "冻结记录列明的网格、原矩阵、状态图与实际代码有限核验；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json",
+        "tests/audits/unrelated_machines/pruned_first_move_transient_peak.py",
+        "tests/audits/unrelated_machines/pruned_first_move_independent.py",
+        "tests/audits/unrelated_machines/pruned_first_move_full_input.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "D-UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "statement": "对正文逐参数显式环族，用非空批量边界、最短时间总和下界及一/两圈实际路径自足证明。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRUNED-FIRST-MOVE-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1",
+      "statement": "冻结记录列明的网格、原矩阵、状态图与实际代码有限核验；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json",
+        "tests/audits/unrelated_machines/pruned_first_move_transient_peak.py",
+        "tests/audits/unrelated_machines/pruned_first_move_independent.py",
+        "tests/audits/unrelated_machines/pruned_first_move_full_input.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "L-UM-TRANSIENT-PEAK-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRUNED-FIRST-MOVE-BOUND-v1",
+        "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "首步可增载，不能从C<=2T无证明迭代；锐例不声明ST或真最优凸包来源。一般共同容量、未知目标与总进展仍开放。",
+      "refs": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"

@@ -375,3 +375,9 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 同一 bundle-floor 接口新增固定层复杂度筛选：若直接 promise 的 YES 满足 \(\nu_K=q\)、NO 满足 \(b^*\le\delta\)，令 \(t_0=\lfloor K\delta\rfloor+1\)。当 \(\delta<1/(t_0+1)\) 时，把 (t_0)-束候选编成 \((t_0+1)\)-均匀超图，极大匹配的 \(1/(t_0+1)\) 保证即可区分两侧；固定 (K,\delta) 下这在输入位长上多项式。故这类直接近二归约至少要避开约 (K\delta^2<1) 的区域并承担真正跨层一致性，不能只增加 bundle 宽度或复制资源。
 
 新增固定方向的精确接口：[两状态quota orientation的Hall切分解](../current/unrelated_machines/two_state_quota_hall_cut_decomposition.md)证明，选定变量子集、rail方向与整数标签需求后，实际资源支付恰等价所有标签子集的Hall邻域不等式；资源度至多二时邻域可分解为私有/内部共享/边界共享资源。它把局部失败证书和整数流输出明确化，但不解决联合方向选择，也不提供全方向 `FAIL⇒OPT>T`。因此主目标仍OPEN。
+
+## 首步临时容量已闭合，全程共同容量仍缺
+
+[剪枝首步分段锐界](../current/unrelated_machines/pruned_first_move_and_transient_peak.md)证明 U=max(2T,C+T/2) 是首次非平凡单步的最小统一上界；枚举全部T剪枝步可计算MOVE或可靠NO。两支m=k+1环对每固定批量k、每C/T∈[1,2]达到首批下界与指定目标路径峰，区别于旧闭环的趋零超额。声明不含ST/最优凸包初态，亦非一般困难性。
+
+唯一未闭承重义务仍是任意P的共同容量及实际次二输出。尤其一步后可能超2T、MOVE可恶化，不能迭代原引理；简单单缓冲链也会分叉。下一高信息动作应给可计算的缓冲集合/多目的地守容及总进展，或真正强初始化的不变量，不能仅增加环样本。强H2一般求解/舍入依旧未解；本次不把小常数SoS(CONFIG)文献或按size聚合映射当作其趋二间隙。

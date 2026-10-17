@@ -289,3 +289,9 @@ u_t) 的一般复杂度。
 回收：一般N≥m+1的degree2 multislice PSD及可显式生成的条件张量/混合；共享同机二阶后，零pair的PSD传播给任意端条件单槽容量，从而**整个同族强阈值**精确等于OPT。失败只排弱H2，不排强二阶/三阶非负/其他算法，亦非一般困难性。准确Claim、证明及审查沿[同一正文](../current/unrelated_machines/weak_h2_configuration_moment_gap.md)读取。
 
 另[完整槽包络](../current/unrelated_machines/slot_envelope_and_configuration_identity.md)精确区分两个常混淆动作：固定容量后凸化子水平集恰CONFIG；先凸化上图则只剩线性负载。非凸min max包络本身等于OPT，因此没有免费共同选择。重试必须新增跨机相关机制或给可计算近似非凸进展；只精确计费单行损失或重新调价不够。
+
+## 首步可算不等于全程进展，小幅临时预算也会锁死
+
+尝试允许接收机增载，以一个缓冲机器沿链迁移，期望首次可动即有全程守容。一般首步U=max(2T,C+T/2)确可计算，计数证明与单向NO保留；但移动后可超原2T，直接迭代失去假设。迁出量小于缓冲超额还可能同时产生第二个缓冲机器，单链不变量不足。
+
+新的精确障碍不是同族数值样本：对每C/T∈[1,2]及固定批量k，m=k+1环族OPT=T、任意非空≤k改变后值≥U，且单件到指定另一最优调度的最小峰恰U。C=T允许零步到最优集合，孤立图只取C≤B<U。坏初态不声称来自ST/配置最优凸包，不能升级成这些初始化或一般困难性。回收首步计数与显式峰值路径；重试须给新的缓冲集合/共同容量及总进展。见[正文](../current/unrelated_machines/pruned_first_move_and_transient_peak.md)。

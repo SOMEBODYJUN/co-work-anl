@@ -1765,3 +1765,29 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - **Counterevidence / Objections：** 尚未得到对 rail 方向/变量子集联合选择的算法或全方向失败证书；单固定方向的 Hall 缺口不能拒绝原阈值 \(T\)。
 - **Status：** complete stated-scope proof; internal blind review completed with wording repairs; external review and novelty unverified。
 - **Related Files：** `research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md`、`tests/audits/unrelated_machines/two_state_quota_hall.py`、`evidence/runs/unrelated_machines/two_state_quota_hall_audit.json`。
+
+
+## UM-PRUNED-FIRST-MOVE-BOUND-v1：剪枝调度首步临时容量的全输入分段上界
+
+- Exact Statement / Quantifiers：对任意合法P、有理T≥0与T≤C≤2T、使用p≤T端且Cmaxσ≤C的实际σ，若存在不同τ且Cmaxτ≤T，则某一件直接σ→τ迁移后的最大负载≤U=max(2T,C+T/2)。不给τ时可位多项式返回DONE、此类MOVE或可靠NO_T_SCHEDULE⇒OPT>T；MOVE不保证改善。
+- Objects / Domain / Definitions：UM-MODEL-v1；二进制非负有理/∞，实际完整分配；E_T={p_ij≤T}；U与非空同步批量、指定目标路径按正文§1定义。
+- Assumptions / Scope：首步上界承重σ使用边≤T；T0单独精确处理；锐族T>0、k由m=k+1显式体现。初态不声称来自ST/配置/真最优凸包。不是一般全程U上界、未知目标求解器或次二近似。
+- Conclusion：确定性总位多项式实际单步及单向拒绝证书；不是进展保证。
+- Dependencies：UM-MODEL-v1；正文自足端点入/出计数、非负性、环边界、逐件负载与最短时间总和平均下界。两项一般证明相互独立；不依赖外部定理或有限实验。
+- Evidence：两名内部研究者先陈述独立重构、后冻结全文攻击；主研究者亲核。规范、完全不导入规范的独立状态oracle、完整原矩阵OPT集成审计及实际输入/路径证书均已冻结。
+- Counterevidence / Objections：C=T零步到OPT与B<C不在状态图的原措辞已在首版冻结前修正；一步可超过2T，不能无证明迭代。公开结构能直接求τ，未导入调度困难性。声明范围无尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实际首步实现、内审、外审和新颖性分轴，UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/pruned_first_move_and_transient_peak.md](../current/unrelated_machines/pruned_first_move_and_transient_peak.md)、research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md；三份审计代码、evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json、examples/unrelated_machines/transient_peak_two_job_cycle.json与evidence/certificates/unrelated_machines/transient_peak_two_job_cycle.json。
+
+
+## UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1：有界批量环族的逐参数锐临时峰值
+
+- Exact Statement / Quantifiers：对每k≥1、每有理T>0及T≤C≤2T，显式m=k+1环族全部有限边≤T、每任务≤2端、OPT=T、初值C；任意非空≤k件同步变化新值≥U=max(2T,C+T/2)，到指定不同最优τ的最小路径峰恰U（单件路径达到）。孤立图范围C≤B<U；C=T不排零步到OPT集合。
+- Objects / Domain / Definitions：UM-MODEL-v1；二进制非负有理/∞，实际完整分配；E_T={p_ij≤T}；U与非空同步批量、指定目标路径按正文§1定义。
+- Assumptions / Scope：首步上界承重σ使用边≤T；T0单独精确处理；锐族T>0、k由m=k+1显式体现。初态不声称来自ST/配置/真最优凸包。不是一般全程U上界、未知目标求解器或次二近似。
+- Conclusion：固定批量的首步临时预算与指定目标minimax逐参数锐；C>T才同时限制到整个最优集合。
+- Dependencies：UM-MODEL-v1；正文自足端点入/出计数、非负性、环边界、逐件负载与最短时间总和平均下界。两项一般证明相互独立；不依赖外部定理或有限实验。
+- Evidence：两名内部研究者先陈述独立重构、后冻结全文攻击；主研究者亲核。规范、完全不导入规范的独立状态oracle、完整原矩阵OPT集成审计及实际输入/路径证书均已冻结。
+- Counterevidence / Objections：C=T零步到OPT与B<C不在状态图的原措辞已在首版冻结前修正；一步可超过2T，不能无证明迭代。公开结构能直接求τ，未导入调度困难性。声明范围无尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实际首步实现、内审、外审和新颖性分轴，UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/pruned_first_move_and_transient_peak.md](../current/unrelated_machines/pruned_first_move_and_transient_peak.md)、research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md；三份审计代码、evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json、examples/unrelated_machines/transient_peak_two_job_cycle.json与evidence/certificates/unrelated_machines/transient_peak_two_job_cycle.json。

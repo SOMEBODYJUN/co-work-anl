@@ -336,3 +336,5 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 
 
 [两状态quota orientation的Hall切分解](two_state_quota_hall_cut_decomposition.md)进一步给定变量子集与rail方向的精确支付判据：所有标签子集都必须通过Hall邻域不等式，资源度至多二时可拆分为私有、内部共享和边界共享三项。固定方向可由整数流输出实际支付或给出独立Hall缺口；同时选择方向和把单方向失败提升为全输入 `FAIL` 仍未解决。
+
+[剪枝调度首步与有界批量临时峰值](pruned_first_move_and_transient_peak.md)登记 UM-PRUNED-FIRST-MOVE-BOUND-v1 与 UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1：给定T剪枝σ、T≤C≤2T且另一τ≤T，某直接单件步≤U=max(2T,C+T/2)；无需τ可枚举一步或可靠NO。每固定k的m=k+1环族达到U及指定目标minimax。C=T排除零步歧义、孤立区间C≤B<U。一步可能增载，下一承重义务是一般缓冲集合/共同容量和总进展；初态不假设ST来源。正文→pruned_first_move_transient_peak_review.md→三个审计/实际输入及路径证书→pruned_first_move_transient_peak_audit.json。

@@ -155,3 +155,5 @@
 ## 固定势与局部repair的新增失败机制
 
 固定总工作量并不能保证局部势下降有效：`research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md` 的同机族使二次势、排序势和固定批量单调路线均停在趋二状态。失败原因是必要迁移批量随机器数线性增长，而不是总工作量变化；未来若允许全局或无界批量，需另给可计算势下降及位复杂度证明。
+
+[固定批量且仅给小幅临时增载](research/current/unrelated_machines/pruned_first_move_and_transient_peak.md)也可能无法启动：m=k+1的真实OPT=T环族，任意非空≤k件首批负载至少max(2T,C+T/2)。此上界同时是一般剪枝首步的锐界；不能因首步存在就宣称全程或改善。初态不声明ST来源，强初始化和无界共同批次未排除。
