@@ -803,3 +803,15 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：紧凑H编码异议由显式机器合同解决；没有一般分解/资格恢复器；无尚成立范围内fatal。
 - Status：限域完整证明及内部独立审查；标准工具组合，未外审，未认证全球新颖性或独立论文价值。
 - Related Files：[正文§8–10](../current/unrelated_machines/shared_sink_joint_macro_assignment.md)、[冻结审查](../reviews/unrelated_machines/private_group_exit_pool_review.md)、private_group_exit_pool的规范/独立代码、实际输入/证书及两份冻结报告。
+
+## UM-CONFIG-FINITE-COVER-v1：配置下界的有限覆盖实现及高围长可靠性缺口
+
+- Exact Statement / Quantifiers：∀合法UM实例P，∀有限置换incidence覆盖Q，T_CONF(Q)=T_CONF(P)且T_CONF(P)≤OPT(Q)≤OPT(P)。∀整数g≥1，min_{有限cover Q,incidence girth>g}OPT(Q)=T_CONF(P)，最小值取得；不加g时可取q≤r^(r/2)，r≤m+n为配置等式系统rank。给定有理配置证书可输出敏感地精确实现为某cover的真实调度。
+- Objects / Domain / Definitions：UM-MODEL-v1；全部有限边的机器—任务二部incidence图，q≥1，机器(i,b)、任务(j,a)及每有限(i,j)置换π_ij:a↦b，处理时间仍p_ij；配置含空集、每任务精确覆盖。
+- Assumptions / Scope：非负二进制有理/∞、显式有限输入，空任务、零时间、单端、断连与孤机均含。给定证书共同分母可巨大；g限制不继承q行列式上界。
+- Conclusion：cover不放大配置间隙；存在真调度坍缩到原配置阈值的cover，任意预设高围长仍可如此。
+- Dependencies：UM-MODEL-v1、UM-PERMUTATION-COVER-MODEL-v1；正文自证配置投影/提升、整数socket配对、0/1基矩阵Cramer/Hadamard、自由字有限置换群与正规作用。旧编码graph-cover机制仅作来源背景，不把调度恒等式冒充源定理。
+- Evidence：自足一般证明；statement-first独立重构再攻击冻结稿；规范128种原调度/160混合及边界，独立128调度/570自由字；证据有限范围另列。
+- Counterevidence / Objections：仅原机器/任务等q复制及逐incidence置换、保原时间的覆盖；高围长存在性不保证小尺寸或随机概率。未排精选接线/扩张条件/其他归约，未证明UM-TARGET-v1反面；不提供相对原输入的位多项式配置求解或覆盖输出。 声明范围无尚成立fatal；精选接线仍缺源解码与位规模。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；标准graph-cover机制调度专门重构，全球新颖性/独立论文价值未认证；主目标OPEN。
+- Related Files：[configuration_finite_cover_obstruction.md](../current/unrelated_machines/configuration_finite_cover_obstruction.md)、[configuration_finite_cover_review.md](../reviews/unrelated_machines/configuration_finite_cover_review.md)；代码/输入/真实证书/两份冻结结果由正文互链。

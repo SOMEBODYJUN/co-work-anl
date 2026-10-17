@@ -136,3 +136,7 @@
 [共同流正文](../current/unrelated_machines/rooted_dag_congestion_flow.md)§7–10另立UM-DAG-TRANSIT-CONGESTION-v1和UM-DAG-NONUNIT-PARAMETER-EXACT-v1：把k<2K改为守恒而不降低1/(2K−1)锐界，全部L/Z可零流补入W；支撑搜索只猜高点，K=1配合阈值缩放给h=#{k≥2}的2^h poly(位长)精确实际根树。旧合同身份保留；指数未消失，一般UM目标仍OPEN。规范亲身实现、独立全树/原边流、冻结审查和结果由正文互链，新颖性未认证。
 
 [新增共同退出合同](../current/unrelated_machines/shared_sink_joint_macro_assignment.md#8-宏任务也可退出共同匹配而非冻结大小身份)：`UM-SHARED-SINK-MACRO-EXIT-v1`允许宏任务真实退出及宏数超过home数；`UM-BOUNDED-PROFILE-EXIT-POOL-v1`在显式完整pool且`a_zc_j≤p_zj≤ρa_zc_j, p_zj≤βT`时，共同选择全部宏与私有撤离，输出home≤T、pool≤`[ρ(1+η)+β]T`，OPT≤T必成功。sink数不固定。标准cover/匹配/加权总量恢复组合，已独立审查及两路Fraction核验；一般资格、跨home任务与结构提取仍未闭合，UM-TARGET-v1仍OPEN。
+
+## 反向困难性：有限覆盖不能免费提供可靠性
+
+[配置下界的有限覆盖实现](../current/unrelated_machines/configuration_finite_cover_obstruction.md)给`UM-CONFIG-FINITE-COVER-v1`：任意置换cover保持T_CONF且整数OPT不增；某个cover甚至在任意预设高围长下恰达到T_CONF。这是标准图覆盖机制的调度重构，只限制“所有接线/仅高围长自动soundness”，不排精选接线或其他归约。读取正文→冻结审查→双路精确构造与真实证书；主目标及其反面仍未证明。下一义务是源相关YES/NO调度解码与位多项式规模，不能继续用局部gap代替。

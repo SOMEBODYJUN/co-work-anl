@@ -154,3 +154,9 @@ GHMR版的失败：占位任务都新增共同z上的1/2小边，故不再属于
 ## 多接收预算的标量化何时可回收
 
 一般多sink任意资格下，最小加权和仍不能免费保证全部容量。新[完整profile池正文§9](../current/unrelated_machines/shared_sink_joint_macro_assignment.md#9-有界-profile-畸变的完整接收池)明确增加完整资格和给定共同work上下包络，才可由总work预算加逐边βT界恢复全部真实负载；允许macro真实退出，未冻结大小身份。回收范围是该显式结构；重试一般模型必须控制局部Hall容量或证明合用的分解，不能只把多预算再写成一个标量。
+
+## 从配置gap种子到任意覆盖接线的soundness步骤失败
+
+尝试：等倍复制机器/任务、逐incidence置换接线并消短环，希望每个输出继承原近2整数负载。失效是该普遍soundness命题错误：有理配置证书可被某finite cover精确实现成真实调度；再取高围长cover仍保持该负载。任意cover反而满足T_CONF不变、OPT不增。具体4机7任务种子OPT5/3、T_CONF4/3，6-cover可真调度到4/3，而恒等6-cover仍5/3。
+
+回收：[有限覆盖恒等式](../current/unrelated_machines/configuration_finite_cover_obstruction.md)及输出敏感构造、自由字高围长存在性。否定范围仅所有接线/只凭高围长的合同；精选接线、扩张性、随机高概率结论和源相关PCP归约未被排除。重试须给排除坍缩接线的新全局限制、低负载调度的源解码及实际多项式规模。UM-TARGET-v1仍OPEN。

@@ -88,3 +88,5 @@
 [守恒扩区](research/current/unrelated_machines/rooted_dag_congestion_flow.md)能把支撑指数选择限制到非单位分叉；尚不能去掉一般h增长的2^h因子。单位路径标准流不是全类共同选择的证明。
 
 一般多接收预算不能免费标量化；新增[完整profile接收池](research/current/unrelated_machines/shared_sink_joint_macro_assignment.md#9-有界-profile-畸变的完整接收池)通过完整资格、共同work上下包络及逐边尺寸获得可回收正面范围，未消除一般资格/跨home瓶颈。
+
+[有限覆盖与反向困难性可靠性缺口](research/current/unrelated_machines/configuration_finite_cover_obstruction.md)已给标准机制的准确调度重构：即使高围长也存在整数OPT坍缩到配置阈值的cover；精选接线与一般困难性仍未排除，UM-TARGET-v1保持OPEN。

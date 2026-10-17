@@ -804,6 +804,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-SHARED-SINK-MACRO-EXIT-v1 | ∀显式给定H∪{z}及宏B/唯一home私有组、非负二进制有理T≥0与0<η≤1；macro可在home或z使用，所有有限home宏时间>T/2。存在确定性poly(总位长,1/η)算法FAIL或输出home≤T、z≤(1+η)T的实际调度；OPT≤T必成功。宏数可超过home数，OPT0保持0。 | 仅单sink、唯一home与给定macro划分；不限制macro sink大小，不提供一般多sink容量恢复或一般输入划分。 [正文§8–10](unrelated_machines/shared_sink_joint_macro_assignment.md)、[独立审查](../reviews/unrelated_machines/private_group_exit_pool_review.md)。 |
 | UM-BOUNDED-PROFILE-EXIT-POOL-v1 | ∀显式给定H∪Z(Z非空)、同样macro/唯一home私有组、T≥0、0<η≤1、ρ≥1、β≥0、a_z>0及c_j≥0；每任务在Z全可用或全不可用，前者逐z满足a_z c_j≤p_zj≤ρa_z c_j及p_zj≤βT。存在确定性poly(总位长,1/η)算法FAIL或实际调度，home≤T、各pool≤[ρ(1+η)+β]T；OPT≤T必成功，OPT0保持0。 | sink数不固定，但完整资格、给定共同profile上下包络、各pool边≤βT及唯一home承重；不输出一般矩阵分解，非一般统一ε。 [正文§8–10](unrelated_machines/shared_sink_joint_macro_assignment.md)、[独立审查](../reviews/unrelated_machines/private_group_exit_pool_review.md)。 |
 
+## 有限覆盖的精确配置实现与反向困难性边界
+
+| ID | Exact Statement | 范围与审查 |
+| --- | --- | --- |
+| UM-CONFIG-FINITE-COVER-v1 | ∀合法UM实例P，∀有限置换incidence覆盖Q，T_CONF(Q)=T_CONF(P)且T_CONF(P)≤OPT(Q)≤OPT(P)。∀整数g≥1，min_{有限cover Q,incidence girth>g}OPT(Q)=T_CONF(P)，最小值取得；不加g时可取q≤r^(r/2)，r≤m+n为配置等式系统rank。给定有理配置证书可输出敏感地精确实现为某cover的真实调度。 | 仅原机器/任务等q复制及逐incidence置换、保原时间的覆盖；高围长存在性不保证小尺寸或随机概率。未排精选接线/扩张条件/其他归约，未证明UM-TARGET-v1反面；不提供相对原输入的位多项式配置求解或覆盖输出。 [自足正文](unrelated_machines/configuration_finite_cover_obstruction.md)、[冻结攻击](../reviews/unrelated_machines/configuration_finite_cover_review.md)。独立内审/有限精确核验，未外审/未认证新颖性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -31,3 +31,5 @@
 [加权拥塞](research/current/weighted_congestion/README.md)已有每d≥2^20的无(d/10)-PNE全状态族，严格否定全类Cd/ln d保证；精确常数、有限d及外部评审等按旧账本处理。[设施](research/current/README.md)与[顺序客户吸引](research/current/customer_attraction/README.md)的独立义务见[路线图](research/ROADMAP.md)。这些成果和源文件保留，均不作为本次默认目标。
 
 新增共同退出合同：`UM-SHARED-SINK-MACRO-EXIT-v1`允许宏任务真实退出及宏数超过home数；`UM-BOUNDED-PROFILE-EXIT-POOL-v1`在显式完整pool且`a_zc_j≤p_zj≤ρa_zc_j, p_zj≤βT`时，共同选择全部宏与私有撤离，输出home≤T、pool≤`[ρ(1+η)+β]T`，OPT≤T必成功。sink数不固定。标准cover/匹配/加权总量恢复组合，已独立审查及两路Fraction核验；一般资格、跨home任务与结构提取仍未闭合，UM-TARGET-v1仍OPEN。
+
+[有限覆盖与反向困难性可靠性缺口](research/current/unrelated_machines/configuration_finite_cover_obstruction.md)已给标准机制的准确调度重构：即使高围长也存在整数OPT坍缩到配置阈值的cover；精选接线与一般困难性仍未排除，UM-TARGET-v1保持OPEN。

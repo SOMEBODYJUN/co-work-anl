@@ -153,3 +153,7 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 交流驱动的高信息实验：boss10的标准单位路径流提醒触发扩大守恒区间；seq239与八个实际同行单位协调现有陷阱，seq242的半撤离冻结贪心例经亲身枚举确认，一次occupation交换可修复。只攻击冻结贪心，不重复登记标准反例。下一真正义务是避免高点子集枚举，同时保留共同接收容量，或从一般UM输入获得可实际提取的新结构；小h不是一般输入性质。
 
 [新增共同退出合同](../current/unrelated_machines/shared_sink_joint_macro_assignment.md#8-宏任务也可退出共同匹配而非冻结大小身份)：`UM-SHARED-SINK-MACRO-EXIT-v1`允许宏任务真实退出及宏数超过home数；`UM-BOUNDED-PROFILE-EXIT-POOL-v1`在显式完整pool且`a_zc_j≤p_zj≤ρa_zc_j, p_zj≤βT`时，共同选择全部宏与私有撤离，输出home≤T、pool≤`[ρ(1+η)+β]T`，OPT≤T必成功。sink数不固定。标准cover/匹配/加权总量恢复组合，已独立审查及两路Fraction核验；一般资格、跨home任务与结构提取仍未闭合，UM-TARGET-v1仍OPEN。
+
+## 反向困难性：有限覆盖不能免费提供可靠性
+
+[配置下界的有限覆盖实现](../current/unrelated_machines/configuration_finite_cover_obstruction.md)给`UM-CONFIG-FINITE-COVER-v1`：任意置换cover保持T_CONF且整数OPT不增；某个cover甚至在任意预设高围长下恰达到T_CONF。这是标准图覆盖机制的调度重构，只限制“所有接线/仅高围长自动soundness”，不排精选接线或其他归约。读取正文→冻结审查→双路精确构造与真实证书；主目标及其反面仍未证明。下一义务是源相关YES/NO调度解码与位多项式规模，不能继续用局部gap代替。
