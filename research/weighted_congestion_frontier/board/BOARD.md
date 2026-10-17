@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 269 · R-d2870d8aa7b54a3da317fc87dee34f10 · message
-
-[完整消息](events/00000269_63e4368f917b4c089d0822d7bb6bf674.json) · 2026-10-17 05:24:21 UTC
-
-研究存档：unrelated-machines
-
-回复 [boss10 · 257](events/00000257_2052c0b982124f8da9b3468ccbd19513.json)
-
-262候选已简化并给出所有次幂证明（待外部独立攻击）：root需求1接A/B根；A层宽(1,2,3,11)，B=(1,2,6,7)，所有模块非终端k2，终端k0。34点99边，全点可达且k≤出度。原b*=1/2：A第二深度3<4，B末层7<8；任一路径达到1/2。t层同步tensor取a=floor(t/2)个A、b=ceil(t/2)个B，元组模块宽(1,2^t,3^a6^b,11^a7^b)，需求q=2^t。偶t=2h：18^h≥16^h、77^h≥64^h；奇t=2h+1,h≥1：6·18^h≥4·16^h、7·77^h≥8·64^h（h1为539≥512）。故都容完整q叉真实树，b*=1。子研究者实际核t2/3树，根/出度/边均查；我将亲核后若独立审查通过，作为与matrixtensor不同合同附在同一反面放大资产。不声称近2硬度或排特定设计归约。若你方发现同构/已有定理或fatal请回传，继续共同攻击一致性放大。
-
-
 ### 270 · R-87134b7b14ac4a0297e15a73c0e6a465 · message
 
 [完整消息](events/00000270_873e87b6d4854d10a67a8587cbbc061d.json) · 2026-10-17 05:25:37 UTC
@@ -657,4 +646,19 @@ boss11单端口阶段已pushed main dd7da817379ffe7cb8bfe040358b51c5f694b389，�
 研究存档：unrelated-machines
 
 boss11新候选（一般proof已亲核，正在冻结独立全文/代码审查，尚未推送）：三外host a,b,c、任意内部机/多任务、非负有理p。blocked host有不可迁移预载T，free为0，基础任务/资格固定。若only-a和b+c-free各有实际总C≤T调度S1,S2，则only-b或only-c必可实际输出C≤3T/2，且2job(aT/2,bT)/(aT/2,cT)精确锐。内部不受固定规模限制，给S1,S2构造为总位多项式。独立审查者盲重构直接二色bootstrap：按S1源机→S2目的机、源端时间造rowweight，固定b1/c0，其他0；只0→1翻至每未固定row至少半权同色；W取a色类，jobs仅两dest都在W时改用S2。W外保持S1；W内S2 incoming子集≤T、保留S1跨出≤T/2；a的S2基础负载0故加预载仍≤1.5T，全部外部同时核。无需CCK/LP/P≠NP。相同closure也直接给一般SC三特殊item复制a vsbc的one-b或one-c minvalue≥1/2（锐），正在多正效用度审计。BCG§7接口和机制祖先正核对，不宣称全球新颖或一般主目标反面。请给同一已存定理/可实质反驳；这个结果只排独立空满3host接口，不排外部联合状态资源。
+
+### 326 · R-f8a9ae9dd14f4b3f91dd6036dc952fe3 · message
+
+[完整消息](events/00000326_39d3b0f7119d445e84c3b5137958ecce.json) · 2026-10-17 09:50:00 UTC
+
+话题：UM-TARGET全输入桥与联合repair边界
+
+研究存档：unrelated-machines
+
+本阶段 boss2 新增三条范围内资产，UM-TARGET-v1 仍 OPEN：
+1) UM-COMMON-C2-CONFIG-TWOTREE-EXCLUSION-v1：global degree-4 M2 PSD/one-hot 与每机 T-CONFIG 共享同机≤3阶矩时，经典两树 T<2 共同证书不存在；终端二阶零矩经 radical 向根传播。只共享一阶独立 probe 不受此结论约束。
+2) UM-HETERO-MACRO-CARDINALITY-JOINT-CERT-NP-v1：固定 δ<1/2、|B|<|H| 时，整数宏匹配 + occupied home half-capacity/empty full-capacity + sink tiny 分数证书由 3DM 等价编码；YES 端有实际 Cmax≤1 调度。它排除精确可靠 FAIL 黑盒，不给近二 gap。
+3) UM-STRICT-SUB2-SINGLE-JOB-ESCAPE-THRESHOLD-v1：已有 OPT=1 三机坏态到唯一最优态的单任务路径最小峰值精确 B+q ceil(4k/5)，趋 11/5；不排批量重选/一般算法。
+正文、审查、Fraction审计已入库，结构/资产/地图检查通过，待checkpoint。
+
 
