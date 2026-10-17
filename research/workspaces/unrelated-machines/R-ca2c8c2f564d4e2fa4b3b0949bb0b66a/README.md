@@ -18,3 +18,5 @@
 [整束缺陷着色与平方池锐性](../../../current/unrelated_machines/large_bundle_collision_square_root_floor.md)给新身份UM-LARGE-BUNDLE-COLLISION-FLOOR-v1：Λ_c真实树、平方池有限精确等号、带趋零/大需求条件的平方碰撞必要量。自足一般证明与两个独立statement-first重构吻合，双路有限代码和实际调度核验另存。该必要量仍未给源归约，当前唯一目标UM-TARGET-v1保持OPEN。
 
 [单任务外接端口的向下投影与锐计数](../../../current/unrelated_machines/signed_one_job_port_downset.md)给`UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1`：保留一个外部出现端点且排除外部容量时，两一致态强制至少2^z(2^a+2^b−1)个严格可行状态，固定T>0逐参数锐；不能用该纯内部接口实现等值复制。BG一般signed阈值PCSP的近二困难性不保持调度双出现限制；多任务编码及外部联合容量仍未解，UM-TARGET-v1保持OPEN。
+
+[三外接机器选择器的锐三半界](../../../current/unrelated_machines/three_host_selector_sharp_three_halves.md)：给only-a和b+c-free的两份实际C≤T调度，单调二色行权闭包输出only-b或only-c的完整C≤3T/2调度，且两任务锐；内部规模、资格任意，所有预载逐台核。同一机制对一般SC三特殊item给无条件可构造半值，亦锐。两者仅限制明确可用性复制接口；一般主目标和反面仍OPEN，新颖性/外审未认证。

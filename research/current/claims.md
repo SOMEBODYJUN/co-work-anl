@@ -959,6 +959,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1 | 一个内部端点/一个固定外部端点的真实端口任务，排除外部容量的内部投影对入向位向下闭。若两全局一致态可行，正时间两符号数a,b、零时间位z，则状态数≥2^z(2^a+2^b−1)，任意T>0逐参数锐；k≥2可从已有一致见证单翻位构造混合严格见证，故任意ρ≥1不能纯等值复制。 | 不排多任务编码或外部联合容量。一般signed PCSP近二源难度没有自动保留双出现限制。[正文](unrelated_machines/signed_one_job_port_downset.md)、[冻结攻击](../reviews/unrelated_machines/signed_one_job_port_downset_review.md)。 |
 
+## 两完整状态下的可用性复制锐界
+
+| ID | 精确结论 | 范围与证据 |
+| --- | --- | --- |
+| UM-THREE-HOST-SELECTOR-THREE-HALVES-v1 | 三host独立空/满T预载，给only-a与b+c-free两实际C≤T分配，单调二色拼接总位多项式实际输出only-b或only-c的C≤3T/2分配；每T>0两任务精确锐，含T0/空/零/多可用端。 | 不求未知YES，不排共同外部容量。[正文](unrelated_machines/three_host_selector_sharp_three_halves.md)、[审查](../reviews/unrelated_machines/three_host_majority_selector_review.md)。 |
+| UM-TWO-YES-SC-DUPLICATION-HALF-v1 | 一般非负加性SC给ordinary+A、ordinary+B+C的minvalue≥1分配；同一闭包实际输出ordinary+B或ordinary+C的minvalue≥1/2分配，正degree任意且常数锐，无复杂度假设。 | 只限制三特殊物品可用性复制，不给一般SC常数算法或一般UM困难性。同一正文及独立实际allocation审计。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -205,3 +205,5 @@
 [严格次二状态图的参数化批量能垒](../current/unrelated_machines/strict_sub2_batch_barrier.md) 给 `UM-STRICT-SUB2-BATCH-BARRIER-v1`：`OPT=1` 坏态负载趋近 2，在每步至多 `k` 件、所有中间态严格 `<2` 的图中孤立，首个出口需 `k+1` 件。它只限制常数批量中性修复，不能作为一般近似困难性。
 
 [单任务外接端口的向下投影与锐计数](../current/unrelated_machines/signed_one_job_port_downset.md)给`UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1`：保留一个外部出现端点且排除外部容量时，两一致态强制至少2^z(2^a+2^b−1)个严格可行状态，固定T>0逐参数锐；不能用该纯内部接口实现等值复制。BG一般signed阈值PCSP的近二困难性不保持调度双出现限制；多任务编码及外部联合容量仍未解，UM-TARGET-v1保持OPEN。
+
+[三外接机器选择器的锐三半界](../current/unrelated_machines/three_host_selector_sharp_three_halves.md)：给only-a和b+c-free的两份实际C≤T调度，单调二色行权闭包输出only-b或only-c的完整C≤3T/2调度，且两任务锐；内部规模、资格任意，所有预载逐台核。同一机制对一般SC三特殊item给无条件可构造半值，亦锐。两者仅限制明确可用性复制接口；一般主目标和反面仍OPEN，新颖性/外审未认证。

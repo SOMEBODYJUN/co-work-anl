@@ -121,3 +121,5 @@
 异端时间也不是一概阻断共同选择：上下比例包络可把真实出口转成κ预算，用b_hz d_h成本排序及同一home容量流恢复所有sink。只有上包络时LP必要性仍失效；共同资格/唯一home仍承重。见[有界畸变正面合同](research/current/unrelated_machines/distorted_group_joint_slot_rounding.md)。
 
 单任务复制端口的纯内部一致性接口已由[向下投影锐界](research/current/unrelated_machines/signed_one_job_port_downset.md)限制：移出任何入向端口只减少内部负载，两一致态遂强制混合态；精确计数逐参数可达到。失效步骤是把一般PCSP变量多次出现免费复制成两端真实任务。只否定保留外部出现槽、外部容量不参与投影的single-job接口；外部共同容量的两任务负控确能等值。可回收的是计数/零值处理/已有见证的实际混合构造；重试必须改变为多任务编码或共同外部一致性并证明完整调度低负载解码，不能只增内部辅助图。
+
+[三host可用性复制的锐三半障碍](research/current/unrelated_machines/three_host_selector_sharp_three_halves.md)排除“只用a或同时用b,c保完整YES、两单输出坏侧都推近2”的独立空/满预载接口：非负行权二色闭包可实际拼接出某坏侧≤3T/2，任意加大内部图或多任务仍不能改变。失效步骤是把满载机器视为近似调度中完全不可停车；实际NO允许的剩余容量必须计入。同一机制给SC三特殊item复制的half锐界。回收二色闭包/实际拼接/逐台预载核验；重试必须改外部联合状态/解码合同，不从此排所有gadgets或一般算法。

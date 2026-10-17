@@ -95,3 +95,9 @@ Verdugo–Verschae–Wiese，[arXiv:1811.08539v3](https://arxiv.org/abs/1811.085
 ## 有符号阈值 PCSP 的源困难性及出现次数缺口
 
 Brakensiek–Guruswami，[ECCC TR16-183 原始PDF](https://eccc.weizmann.ac.il/report/2016/183/download)，35页，Theorem1.3 PDF6/印4已实际核读。对arity2A−1、严格重量0..A、弱重量0..B且A≤B≤2A−2，允许否定和常量的一般PCSP为NP-hard；固定ρ<2可取A>1/(2−ρ)、B=floorρA。这只是原分类的直接代入，不是调度困难性。原定理不限制变量双出现、相反符号；每机等权的调度端口合同则可容量匹配精确解。[单任务投影正文](../current/unrelated_machines/signed_one_job_port_downset.md)定位普通复制缺口。仅web核原陈述，原字节未落地、全部源归约未重构，取得状态及限制见manifest。
+
+## 三特殊物品复制接口的针对性扣除
+
+BCG2009 的已登记 TR-848-09 §7 Definition7.1/Lemma7.2（原作者PDF/印47–48）已经提出三特殊item a vsbc的完整分配复制合同和两完整分配剪度。本次[三host/半值正文](../current/unrelated_machines/three_host_selector_sharp_three_halves.md)不把该接口或剪度冒充原创；规范proof独立用非负二色阈值闭包，给无条件half实际allocation及含全部预载的锐3/2完整调度，未导入该文困难性或配置算法。只web核§7/准确范围，原字节取得状态保持manifest原记载；全球新颖性仍未认证。
+
+CCK2009，[arXiv:0901.0205v1](https://arxiv.org/abs/0901.0205v1)，35页，§6.1 PDF28–31的Claim3/Theorem6及逆向环证明已针对性核读；已给精确配置证书时可精确减半。它只出现在第二名审查者的独立K4重构中；规范二色proof不依赖该定理。近似pricing的ε不能置零；web-only取得状态及完整前提见manifest和审查，未取得原字节。

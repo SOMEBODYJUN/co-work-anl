@@ -1320,3 +1320,33 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：双内部端点或把外部共同容量加回时2任务2机能实现等值至ρ<2；这是排除假设的必要负控，不是本Claim反例。零阈值前提、未知见证可求性与实ρ阈值定义已明确。无声明范围内尚成立fatal。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; global novelty and standalone publication value unverified。实现为已给见证的混合构造及有限审计，不是一般调度求解器。
 - Related Files：`research/current/unrelated_machines/signed_one_job_port_downset.md`；`research/reviews/unrelated_machines/signed_one_job_port_downset_review.md`；`evidence/runs/unrelated_machines/signed_one_job_port_downset_audit.json`。
+
+## UM-THREE-HOST-SELECTOR-THREE-HALVES-v1：三外接机器可用性选择器的锐三半逃逸
+
+- Exact Statement：对任意内部机器及三不同外host a,b,c，基础任务/资格固定，非负二进制有理时间，阈值T≥0；blocked host加不可迁移预载T且原边仍可用，free预载0，内部无额外预载。若only-a和b+c-free各有实际完整总C≤T调度，则only-b或only-c至少一侧有实际完整C≤3T/2调度。给两YES可确定性总位多项式输出该侧、全部σ及负载，系数每T>0精确锐。
+- Objects：UM-MODEL-v1真实不可拆分任务、固定外接空/满预载、两已给实际YES；全体机器逐台总负载。
+- Domain：显式有限输入，任意多可用边、零/空/单可用及T0；m≥3由三不同host保证。
+- Quantifiers：∀上述输入和两实际YES；∃由明确算法输出的坏侧完整σ；∀T>0有两任务sharp。
+- Assumptions / Definitions：两完整见证实际给定；所有权非负；正文第1或第5节定义的外部可用性状态。满预载的有限任务边不被删除；物品分配不复制物品。
+- Scope：独立空/满预载读出承重；不排状态相关资格、任意共同外部任务或不可私有化的跨模块残余容量，不求未知YES。
+- Conclusion / Mechanism：按S1源机→S2目的机、S1端时间造非负行权，固定b1/c0只0→1闭包；W取a色类，原任务两dest均在W才用S2。W外保持S1；W内S2进入子集与S1跨出保留负载分别≤T及T/2；三host预载逐台加入。
+- Dependencies：正文自足二色非负行权闭包；调度模型和本页明确两YES接口定义。BCG§7仅作既有接口对照，不依赖CCK/CONFIG/NP-hardness。
+- Evidence：规范构造、独立SC补集构造、独立全矩阵最优值oracle及实际规范σ逐台核验。 先陈述攻击/读后攻击真实来源见review；有限输出不代替一般证明。
+- Counterevidence / Objections：W内必须分别按真实两端时间计费，blocked零负载不等于无任务；SC来源方向与调度不同。直接平均/任意外部context不提供本合同之外结论。声明范围无尚成立fatal；全球新颖性未认证。
+- Status：complete stated-scope proof; internally attacked and exact finite audited; implementation for given actual witnesses; external review and standalone publication value unverified。UM-TARGET-v1保持OPEN。
+- Related Files：`research/current/unrelated_machines/three_host_selector_sharp_three_halves.md`；`research/reviews/unrelated_machines/three_host_majority_selector_review.md`；`evidence/runs/unrelated_machines/three_host_selector_majority_audit.json`。
+
+## UM-TWO-YES-SC-DUPLICATION-HALF-v1：三物品可用性复制的无条件锐半值
+
+- Exact Statement：至少一参与者的一般非负有理加性Santa Claus，普通物品始终可用、三不同特殊item A,B,C；ordinary+A和ordinary+B+C各有minvalue≥1实际分配，则ordinary+B或ordinary+C至少一侧有minvalue≥1/2实际分配。给两YES可确定性总位多项式输出；特殊及ordinary正度任意，half由单agent数值1,1/2,1/2锐。
+- Objects：真实可闲置单件物品、加性效用、三特殊可用性状态、两具体YES allocation。
+- Domain：至少一agent、有限显式非负有理values，普通可空、zero/unused允许、B/C同recipient允许，无正度上界。
+- Quantifiers：∀上述输入/两实际YES，∃算法输出bad可用侧和逐件allocation；无P≠NP假设。
+- Assumptions / Definitions：两完整见证实际给定；所有权非负；正文第1或第5节定义的外部可用性状态。满预载的有限任务边不被删除；物品分配不复制物品。
+- Scope：只限制明确三特殊item可用性复制，不是任意Santa Claus实例常数算法，不能把效用半值直接当一般调度负载。
+- Conclusion / Mechanism：补齐S1普通正物品来源，按S2接受者行及S1来源列造效用权；固定B/C来源二色闭包，W取A原recipient色类。W外保S1满值、W内得S2至少半值，逐item唯一分配。
+- Dependencies：正文自足二色非负行权闭包；调度模型和本页明确两YES接口定义。BCG§7仅作既有接口对照，不依赖CCK/CONFIG/NP-hardness。
+- Evidence：独立SC任意正度穷举/随机与退化回算；actual脚本明确不声称同时核SC。 先陈述攻击/读后攻击真实来源见review；有限输出不代替一般证明。
+- Counterevidence / Objections：W内必须分别按真实两端时间计费，blocked零负载不等于无任务；SC来源方向与调度不同。直接平均/任意外部context不提供本合同之外结论。声明范围无尚成立fatal；全球新颖性未认证。
+- Status：complete stated-scope proof; internally attacked and exact finite audited; implementation for given actual witnesses; external review and standalone publication value unverified。UM-TARGET-v1保持OPEN。
+- Related Files：`research/current/unrelated_machines/three_host_selector_sharp_three_halves.md`；`research/reviews/unrelated_machines/three_host_majority_selector_review.md`；`evidence/runs/unrelated_machines/three_host_selector_majority_audit.json`。

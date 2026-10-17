@@ -8899,6 +8899,57 @@
         "research/current/unrelated_machines/santa_conditional_reverse_barrier.md"
       ],
       "status": "conditional logic complete; bit-growth applicability open; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-TWO-YES-AVAILABILITY-INTERFACES-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "三外接预载与三特殊物品的两实际YES接口",
+      "detail": "分别定义基础任务固定的三host独立空/满预载和一般非负加性SC三特殊item可用性；两输入见证均为实际整数分配，不承诺寻找未知YES。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "三外接机器可用性选择器的锐三半逃逸",
+      "detail": "对任意内部机器及三不同外host a,b,c，基础任务/资格固定，非负二进制有理时间，阈值T≥0；blocked host加不可迁移预载T且原边仍可用，free预载0，内部无额外预载。若only-a和b+c-free各有实际完整总C≤T调度，则only-b或only-c至少一侧有实际完整C≤3T/2调度。给两YES可确定性总位多项式输出该侧、全部σ及负载，系数每T>0精确锐。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "research/reviews/unrelated_machines/three_host_majority_selector_review.md"
+      ],
+      "status": "complete stated-scope proof; independently attacked and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-TWO-YES-SC-DUPLICATION-HALF-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "三物品可用性复制的无条件锐半值",
+      "detail": "至少一参与者的一般非负有理加性Santa Claus，普通物品始终可用、三不同特殊item A,B,C；ordinary+A和ordinary+B+C各有minvalue≥1实际分配，则ordinary+B或ordinary+C至少一侧有minvalue≥1/2实际分配。给两YES可确定性总位多项式输出；特殊及ordinary正度任意，half由单agent数值1,1/2,1/2锐。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "research/reviews/unrelated_machines/three_host_majority_selector_review.md"
+      ],
+      "status": "complete stated-scope proof; independently attacked and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-THREE-HOST-MAJORITY-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "二色选择器的实际调度与物品分配精确审计",
+      "detail": "规范仅核三host；独立SC/补集实际调度；完整原矩阵最优值oracle与受测规范输出。分别声明有限范围，不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "tests/audits/unrelated_machines/three_host_majority_selector.py",
+        "tests/audits/unrelated_machines/three_host_and_santa_majority_independent.py",
+        "tests/audits/unrelated_machines/three_host_selector_optimum_independent.py",
+        "evidence/runs/unrelated_machines/three_host_selector_majority_audit.json",
+        "examples/unrelated_machines/three_host_selector_sharp_profiles.json"
+      ],
+      "status": "finite exact checks; not a general proof"
     }
   ],
   "hyperedges": [
@@ -21828,6 +21879,83 @@
         "research/unrelated_machines/LITERATURE.md"
       ],
       "status": "conditional open barrier"
+    },
+    {
+      "id": "D-UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TWO-YES-AVAILABILITY-INTERFACES-v1"
+      ],
+      "conclusion": "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+      "statement": "自足非负行权二色单调闭包及实际拼接/唯一物品转移；不依赖外部近似或困难性定理。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-TWO-YES-SC-DUPLICATION-HALF-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-YES-AVAILABILITY-INTERFACES-v1"
+      ],
+      "conclusion": "UM-TWO-YES-SC-DUPLICATION-HALF-v1",
+      "statement": "自足非负行权二色单调闭包及实际拼接/唯一物品转移；不依赖外部近似或困难性定理。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-THREE-HOST-MAJORITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+      "statement": "有限实现核验只覆盖冻结记录中该claim实际运行部分；三host规范代码没有免费检查SC。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "evidence/runs/unrelated_machines/three_host_selector_majority_audit.json",
+        "research/reviews/unrelated_machines/three_host_majority_selector_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "C-UM-TWO-YES-SC-DUPLICATION-HALF-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-THREE-HOST-MAJORITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-TWO-YES-SC-DUPLICATION-HALF-v1",
+      "statement": "有限实现核验只覆盖冻结记录中该claim实际运行部分；三host规范代码没有免费检查SC。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "evidence/runs/unrelated_machines/three_host_selector_majority_audit.json",
+        "research/reviews/unrelated_machines/three_host_majority_selector_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-AVAILABILITY-SELECTOR-TARGET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-THREE-HOST-SELECTOR-THREE-HALVES-v1",
+        "UM-TWO-YES-SC-DUPLICATION-HALF-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "局部可用性复制有锐地板；一般近二NO可靠性仍缺外部联合资源/不同编码及全局源解码，受限锐界不关闭主目标任一方向。",
+      "refs": [
+        "research/current/unrelated_machines/three_host_selector_sharp_three_halves.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
     }
   ]
 }
