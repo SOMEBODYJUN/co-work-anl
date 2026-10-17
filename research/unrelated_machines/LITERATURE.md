@@ -135,3 +135,5 @@ FMW TR26-179 Revision2的Definition1.1/Theorem1.6及AppendixB已实际核读，1
 
 
 AFS2008作者稿Thm2/3与Annamalai2016v2 Thm1.1/1.3已实际核读并存原PDF，manifest区分经典匹配框架与本文[私有树配置桥](../current/unrelated_machines/private_injective_tree_configuration_floor.md)，未导入不适用的变rank构造算法。
+
+PSM2018作者稿§6/Fig5/Thm2已实际核读，总资格≤2/3/4及big-buffer框架；原PDF版本/hash见manifest。common-b双small合同见[正文](../current/unrelated_machines/joint_slot_prefix_rounding.md)，明确直接框架推广，非原文字面无限unit域。

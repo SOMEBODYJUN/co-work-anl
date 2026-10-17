@@ -1156,6 +1156,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2 | 显式完整同深三叉树，整棵tree每叶色全局出现次数≤2或≤3；所有原/辅助色均计入。 重数≤2全部存在binary rainbow；重数≤3仍NP完全，3SAT归约hO(logs)/全输出poly，原P资源资格≤3、YES≤4/3/NO5/3。精确门槛非near2。 | [正文](unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)、[审查](../reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md)；无一般UM升级。 |
 
+| UM-TWO-SMALL-INCIDENCE-SHARP-APPROXIMATION-v2 | 共同b>0且finite p≤b、每全行正非unit资格至多2（unit/zero无限、jobs任意共享）；确定性位poly实际3/2近似、OPT<b精确、中阈值one-sided；3DM给同域ρ<3/2除非P=NP不可能。PSM2018框架直接推广，非一般UM反证。 | [正文](unrelated_machines/joint_slot_prefix_rounding.md)、[实际审查](../reviews/unrelated_machines/joint_slot_prefix_review.md)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -438,3 +438,5 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 
 
 [重数CFG边界](../current/unrelated_machines/private_injective_tree_configuration_floor.md)一阶渐近已锐，但固定μ精确G未知；[全局2/3复杂性门槛](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)已核低重数控制色与全部P。仍缺near2全局放大/weak解码。
+
+[共同b双small行实际sharp3/2](../current/unrelated_machines/joint_slot_prefix_rounding.md)已双陈述先行/双读后审查并root精确核验；PSM2018框架直接推广，旧row-spread域不改。near2须退出该行结构并有真实低σ解码，一般目标正反面仍OPEN。

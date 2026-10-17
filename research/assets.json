@@ -4676,29 +4676,41 @@
     {
       "id": "unrelated_row_spread_joint_slots",
       "claims": [
-        "UM-ROW-SPREAD-TWO-ROUND-v1"
+        "UM-ROW-SPREAD-TWO-ROUND-v1",
+        "UM-TWO-SMALL-INCIDENCE-SHARP-APPROXIMATION-v2"
       ],
       "status": "complete stated-scope proof; known-tool corollary with independent reconstruction and exact audits; unrefereed; novelty unverified",
       "applies_when": [
         "UM-MODEL-v1; zero-eligible tasks assigned free and removed",
         "Each nonempty remaining row has positive rational gamma_i with p_ij in[gamma_i,2gamma_i] or infinity",
-        "Machine scales, denominators, m and n variable; no preselected big matching"
+        "Machine scales, denominators, m and n variable; no preselected big matching",
+        "Alternative common-b domain: finite p≤b, each whole row≤2 positive nonunit qualifications; arbitrary unit/zero and sharing. Different from old row-spread premise."
       ],
-      "produces": "Deterministic bit-polynomial 3/2 approximation on the explicit row-spread subclass, using necessary prefix-count LP and one all-task ordered-slot matching",
+      "produces": "Deterministic bit-polynomial 3/2 approximation on the explicit row-spread subclass, using necessary prefix-count LP and one all-task ordered-slot matching; alternatively sharp3/2 on common-b two-small-row domain, exact OPT<b and middle one-sided output.",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/joint_slot_prefix_rounding.md"
       ],
       "sources": [
         "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf",
-        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf",
+        "history/source/literature/unrelated_machines/page_solis_oba_maack_2018_bounded_job_assignments_author.pdf",
+        "history/source/notes/unrelated_machines/two_small_incidence_sharp_v2_exact_statement_source.md",
+        "history/source/notes/unrelated_machines/two_small_incidence_sharp_v2_root_frozen_proof_source.md",
+        "history/source/notes/unrelated_machines/two_small_incidence_sharp_v2_independent_literal_source.md",
+        "history/source/notes/unrelated_machines/two_small_incidence_sharp_v2_independent_shared_source.md",
+        "history/source/notes/unrelated_machines/two_small_incidence_sharp_v2_read_after_literal_source.md",
+        "history/source/notes/unrelated_machines/two_small_incidence_sharp_v2_read_after_shared_scope_source.md",
+        "history/source/notes/unrelated_machines/two_small_incidence_sharp_v2_final_canonical_receipt_source.md"
       ],
       "tests": [
         "tests/audits/unrelated_machines/row_spread_prefix.py",
-        "tests/audits/unrelated_machines/half_unit_joint_slot.py"
+        "tests/audits/unrelated_machines/half_unit_joint_slot.py",
+        "tests/audits/unrelated_machines/two_small_incidence_flow_audit.py"
       ],
       "records": [
-        "evidence/runs/unrelated_machines/joint_slot_prefix_audit.json"
+        "evidence/runs/unrelated_machines/joint_slot_prefix_audit.json",
+        "evidence/runs/unrelated_machines/two_small_incidence_flow_audit.json"
       ],
       "examples": [],
       "reviews": [
@@ -4707,7 +4719,7 @@
       "candidates": [
         "research/questions/unrelated_machines/barrier_escape_obligations.md"
       ],
-      "limit": "Known-tool direct corollary; extra row-spread assumption does not solve UM-TARGET. No generic LP solver implemented by audit scripts; finite row checks and one explicit actual parity instance only."
+      "limit": "Known-tool direct corollary; extra row-spread assumption does not solve UM-TARGET. No generic LP solver implemented by audit scripts; finite row checks and one explicit actual parity instance only. New common-b domain is PSM2018 framework adaptation, not≥3small or arbitrary different big sizes; no general negative result."
     },
     {
       "id": "unrelated_sparse_conditioned_configuration_gap",

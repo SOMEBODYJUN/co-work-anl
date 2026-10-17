@@ -344,3 +344,5 @@ u_t) 的一般复杂度。
 
 
 私有uniform树仅靠有界每state叶重数的CONFIG证书不能免费给任意near2 NO：上界2−1/(μ+2)，所需μ至少约1/δ。平星可精确解却有G一阶趋2，所以参数gap也不是算法困难性。见[重数界](../current/unrelated_machines/private_injective_tree_configuration_floor.md)。单tree源虽在全局重数3已NP完全，仍只k3小比值；低重数SAT逻辑门不自动放大分叉gap。
+
+共同b且每行≤2正非unit资格的近二承载已由[实际sharp3/2算法](../current/unrelated_machines/joint_slot_prefix_rounding.md)排除；不是只相对CONFIG障碍。重试需退出此域并核全原job身份和共享负载；不推广至三small/不同big时间，更不否定主命题。

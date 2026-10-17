@@ -387,3 +387,5 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 
 
 [私有树重数界](private_injective_tree_configuration_floor.md)全CONFIG≤2−1/(μ+2)且G一阶系数1；[三叉彩虹](ternary_rainbow_subtree_exact_hardness.md)全局重数2/3为精确NP门槛。
+
+[共同b双small行实际sharp3/2](joint_slot_prefix_rounding.md)已双陈述先行/双读后审查并root精确核验；PSM2018框架直接推广，旧row-spread域不改。near2须退出该行结构并有真实低σ解码，一般目标正反面仍OPEN。

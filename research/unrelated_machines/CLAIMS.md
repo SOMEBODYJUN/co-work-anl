@@ -2165,3 +2165,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Evidence / Counterevidence：新Exact先冻结、仅陈述独立重构后全文读proof；root亲核实际记录。v3退化d1措辞已附可行前提；NP旧高重模板不能自动导入；G平星可直接解故非hardness。
 - Status：proof complete；actual two-stage internal review；external review/novelty unverified；implementation none。
 - Related Files：[正文](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)、[审查](../reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md)、assets/crosswalk冻结原字节。
+
+## UM-TWO-SMALL-INCIDENCE-SHARP-APPROXIMATION-v2：共同b双小边的实际三半锐界
+
+- ID/version：UM-TWO-SMALL-INCIDENCE-SHARP-APPROXIMATION-v2；旧row-spread身份不改。
+- Exact Statement / Quantifiers：∀完整binary rational UM及显式b>0，finite p≤b且∀row正small数≤2，确定性位poly全σ C≤3OPT/2；∀T<b精确判定并解OPT<b；∀T=b+a<2b，OPT≤T必成功C≤3b/2+a、FAIL⇒OPT>T；∀固定ρ<3/2，同类ρ近似除非P=NP不存在。
+- Objects / Domain / Definitions：unit恰b、small为0<p<b、zero无限；任意共享/多端，含n0/OPT0/单机/松b。
+- Assumptions / Dependencies：UM-MODEL-v1、UM-ST-ROUND-v1、标准LP/流、Karp3DM及PSM2018已有机器方案。
+- Scope / Conclusion：受限类sharp3/2实际算法及条件复杂性下界，非三small或任意不同big时间扩域。
+- Evidence：双陈述先行重构/双读后攻击/root核全证明；有限精确flow审计16128local/300矩阵/7997阈值/256源子集。
+- Counterevidence/Objections：无standing fatal；原文总资格≤3非本字面域，common-b适配自证；有限测试不代一般证明。
+- Status：限定证明完成/已内审，synthesis；外审未记录，新颖性/论文价值未认证；audit_only。
+- Related Files：research/current/unrelated_machines/joint_slot_prefix_rounding.md、research/reviews/unrelated_machines/joint_slot_prefix_review.md、tests/audits/unrelated_machines/two_small_incidence_flow_audit.py、evidence/runs/unrelated_machines/two_small_incidence_flow_audit.json及manifest/六冻结源。
