@@ -1146,6 +1146,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5 | 固定G≥2；任意非空显式无权二部multigraph，原degree/两侧大小不限；非空typed ΣA,ΣB明确列举，全π:ΣA→ΣB；binaryg≥2,rho∈(0,1],Q=max域大小≥2且Qgamma≥1。 t_v=deg(v)z质量复制，N′=2M0z,M′=dN′/2；随机硬位poly输出FAIL或simple balanced exactdregular girth>G，保原typed表/equalfibers；FAIL<.1，val≤gamma时≥.8概率全cost≤gN′copylists cover<rho；perfect每nonFAIL保真。fixed-error PCP不需原regular/degree常数；Qpoly(g)才另得dO(g)。 | [同专题正文](unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)与两阶段审查；修复v4非空域，source only/none。 |
 
+| UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2 | 显式均匀d叉高h私有state树，任意非空有限菜单，selector与下端unit1、父端1/d；每leaf唯一外机；B要求每完整state叶map单射，C允许非注入。 共同CONFIG(T)导出a=d−floor(d(T−1))叉树分布；若(a−r+1)^h≥2r^h−1则actualC≤2−r/d，故注入类配置gap≤5/3；一般原菜单过滤给严格(OPT≤1,OPT>5/3)确定性位poly判定，不输出σ。 | [正文](unrelated_machines/private_injective_tree_configuration_floor.md)、[审查](../reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md)；存在性与decision分开，implementation none。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

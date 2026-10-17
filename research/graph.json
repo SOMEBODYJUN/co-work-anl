@@ -10478,6 +10478,42 @@
         "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
       ],
       "status": "complete stated-scope degree-mass regularization; corrected nonempty typed domain; independent Exact-first and read-after review; no UM compiler; novelty unverified"
+    },
+    {
+      "id": "UM-ARBITRARY-MENU-PRIVATE-UNIFORM-TREE-MODEL",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "任意菜单私有均匀树与状态注入域",
+      "detail": "显式均匀d叉高h私有state树，任意非空有限菜单，selector与下端unit1、父端1/d；每leaf唯一外机；B要求每完整state叶map单射，C允许非注入。",
+      "refs": [
+        "research/current/unrelated_machines/private_injective_tree_configuration_floor.md"
+      ],
+      "status": "explicit full original P domain"
+    },
+    {
+      "id": "UM-HAXELL-RESOURCE-TRANSVERSAL-PAPER-FACT",
+      "kind": "source",
+      "track": "unrelated_machines",
+      "title": "Haxell资源侧transversal匹配外部定理",
+      "detail": "总edge rank R+1，全部I的τ>(2R−1)(|I|−1)保证root-perfect matching；AFS普通子集框架已有，现代构造需固定rank/slack。",
+      "refs": [
+        "research/current/unrelated_machines/private_injective_tree_configuration_floor.md",
+        "history/source/literature/unrelated_machines/afs_2008_santa_claus_hypergraph_author.pdf",
+        "history/source/literature/unrelated_machines/annamalai_2016_hypergraph_matchings_arxiv_v2.pdf"
+      ],
+      "status": "targeted primary theorem and prior-method reading; original1995 proof not reconstructed"
+    },
+    {
+      "id": "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "私有注入树全配置阈值五三界与严格判定",
+      "detail": "共同CONFIG(T)导出a=d−floor(d(T−1))叉树分布；若(a−r+1)^h≥2r^h−1则actualC≤2−r/d，故注入类配置gap≤5/3；一般原菜单过滤给严格(OPT≤1,OPT>5/3)确定性位poly判定，不输出σ。",
+      "refs": [
+        "research/current/unrelated_machines/private_injective_tree_configuration_floor.md",
+        "research/reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md"
+      ],
+      "status": "complete stated-scope proof; Exact-first independent reconstructions and read-after attacks; no uniform polynomial sigma construction or novelty certification"
     }
   ],
   "hyperedges": [
@@ -25645,6 +25681,38 @@
         "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
       ],
       "status": "actual compiler open"
+    },
+    {
+      "id": "um_private_injective_tree_configuration_floor_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ARBITRARY-MENU-PRIVATE-UNIFORM-TREE-MODEL",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1",
+        "UM-HAXELL-RESOURCE-TRANSVERSAL-PAPER-FACT"
+      ],
+      "conclusion": "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2",
+      "statement": "共同完整CONFIG(T)正部行导出同一a树分布，注入叶命中数与容量加权满足严格Haxell，回填全部原d分枝；C过滤仅判定。标准有理LP和uniformmatroid凸分解在正文自足列出适用条件。",
+      "refs": [
+        "research/current/unrelated_machines/private_injective_tree_configuration_floor.md",
+        "research/reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md"
+      ],
+      "status": "complete scoped proof with two-stage independent attacks"
+    },
+    {
+      "id": "um_private_injective_tree_latin_compiler_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2"
+      ],
+      "conclusion": "UM-NEAR-UNIT-PHYSICAL-COPY-OBLIGATION",
+      "statement": "任意均匀私有注入state编译若对全部源有CONFIG1，则actual≤5/3，独立重编号不补近2NO；只限制此合同，非一般UM或非注入配置gap。",
+      "refs": [
+        "research/current/unrelated_machines/private_injective_tree_configuration_floor.md",
+        "research/reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md"
+      ],
+      "status": "exact structural route limitation"
     }
   ]
 }

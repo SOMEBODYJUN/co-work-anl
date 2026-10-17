@@ -2103,3 +2103,16 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Evidence / Counterevidence or Objections：v4空alphabet使val未定义，保真原Exact记录失败；v5显式两域非空，两个先陈述独立推导后读冻结proof无standingfatal；root核原文指定页与proof，不声称全球新颖或全PCP重审。
 - Status：限定证明完成、内审完成；implementation=none，外审/新颖性未认证；无真实UM费用或weak decoder。
 - Related Files：[同专题正文](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)、[实际审查](../reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md)、来源及文献manifest。
+
+
+## UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2：私有注入树的全配置五三界
+
+- Exact Statement / Conclusion：共同CONFIG(T)导出a=d−floor(d(T−1))叉树分布；若(a−r+1)^h≥2r^h−1则actualC≤2−r/d，故注入类配置gap≤5/3；一般原菜单过滤给严格(OPT≤1,OPT>5/3)确定性位poly判定，不输出σ。 A另给CONFIG1 iff共同full-state λ，按叶multiplicity计；T≥2由全父置C≤2补齐。完整定理及证明见[正文](../current/unrelated_machines/private_injective_tree_configuration_floor.md)。
+- Objects / Domain：显式均匀d叉高h私有state树，任意非空有限菜单，selector与下端unit1、父端1/d；每leaf唯一外机；B要求每完整state叶map单射，C允许非注入。 U非空得Tconf≥1；空U单列OPT0/空σ。所有state/tree/jobs资格显式付费，不处理隐式巨大树。
+- Quantifiers：∀d,h≥1、∀完整显式P、∀可行有理T与满足条件的r；∃针对全部原jobs的真实σ。C另∃确定性位poly判定器，∀其严格promise输入，非σ算法。
+- Assumptions / Definitions：无额外任务/预载，不同state内部机器互异；Haxell超边每root加r^h个不同资源，资源transversal对全部root子集量化；共同分布与capacity不逐叶重选。
+- Scope：限定结构配置界、严格promise decision及编译方法限制；非一般UM、非非注入配置gap、非近二困难性、非5/3锐界。
+- Dependencies：UM-PRUNED-TREE-LEAF-HITTING-v1；显式模型；Haxell匹配PaperFact（AFS2008 Thm2/Annamalai2016 Thm1.1）；有理LP/均匀matroid分解；正文自足共同a树桥与原P回填。
+- Evidence / Counterevidence：两个陈述先行独立重构后读作者proof无standingfatal；root亲核primary准确rank及所有原jobs。粗Σt≥aq不足，非注入叶打断阻断计数；共享internals/nonuniform等结构不在域。无有限测试代证明。
+- Status：proof complete；internal review multiple audits；implementation none；external review/novelty unverified；UM-TARGET-v1OPEN。
+- Related Files：[正文](../current/unrelated_machines/private_injective_tree_configuration_floor.md)、[实际审查](../reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md)、assets中的冻结原字节及文献manifest。

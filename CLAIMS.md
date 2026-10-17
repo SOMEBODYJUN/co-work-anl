@@ -120,3 +120,6 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 
 
 新增UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5；[账本](research/unrelated_machines/CLAIMS.md)明确非空typed域及任意原degree的质量复制，v4域缺口保留。
+
+
+新增UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2；[专题账本](research/unrelated_machines/CLAIMS.md)区分私有注入类CONFIGgap≤5/3与原非注入严格promise判定，未给一般σ算法。

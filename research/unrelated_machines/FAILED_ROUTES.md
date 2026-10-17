@@ -338,3 +338,6 @@ u_t) 的一般复杂度。
 
 
 [v3正则高围长源](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)消除“复制后任意lists失控/删环破正规性”这一特定源接口障碍；靠rare-tail同时性与有限switch，不是任意lift保hardness。高girth和正则性仍不能替代实际weak调度的源解码。
+
+
+均匀私有完整状态树若叶map各自单射且对所有源都保CONFIG1，则无论任意菜单/端口编号，actualOPT≤5/3；因此它不可能提供近2的NO源soundness。失效环节是把源不一致自动变成叶资源不可pack，Haxell给出反向存在。参见[完整边界](../current/unrelated_machines/private_injective_tree_configuration_floor.md)。重试需超出该精确域，不能仅独立重编号；这不否定一般UM或非注入近二CONFIG族。

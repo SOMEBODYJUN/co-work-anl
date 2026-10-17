@@ -132,3 +132,6 @@ v3源比较新增Kun arXiv0706.1701v2（已核12页原字节，Thm1/9）及DKR T
 
 
 FMW TR26-179 Revision2的Definition1.1/Theorem1.6及AppendixB已实际核读，119页原PDF、版本/SHA/bytes见manifest。它给perfect exact4-to1固定误差Paper Fact；不自动给regular/degree/girth、Qpoly(g)或UM反证。[v5源](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)以度数比例copies补正规化，仍为随机归约。
+
+
+AFS2008作者稿Thm2/3与Annamalai2016v2 Thm1.1/1.3已实际核读并存原PDF，manifest区分经典匹配框架与本文[私有树配置桥](../current/unrelated_machines/private_injective_tree_configuration_floor.md)，未导入不适用的变rank构造算法。

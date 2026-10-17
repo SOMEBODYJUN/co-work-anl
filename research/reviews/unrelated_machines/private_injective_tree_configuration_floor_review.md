@@ -1,0 +1,18 @@
+# 私有注入树配置五三界的实际独立审查
+
+现行对象 [v2正文](../../current/unrelated_machines/private_injective_tree_configuration_floor.md)，ID `UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2`。这是真实内部审查，非外审、投票认证或新颖性保证。
+
+shared先提出v1共同full-state分数证书与hitting/Haxell链。v1 Exact SHA `aa3ed3a09e04d291b1266468af5814ffd8bd649cac4746514f60a79e791ecf54`、作者proof `f4900b3693d6242cd08f218cbc478bb1e40ee6f072fb3205a5619b21fd1f40c5`。cover与literal先只看陈述，各自重构并冻原稿，SHA分别 `96e2fd6d3a98093c3aa923457d23fc5ebdfad570656f3762ced2fb2e977f46c7`、`9f60a21914a49efab98beacfedd93494dd98ddbd2478afee7ff8453f20432a4b`；作者未把其proof给两位。root已知Exact及旧命中引理后自行重构，不称零信息盲审。
+
+root在此基础上提出新增A/B/C并另冻v2 Exact `ad33f6b2c42c184b943651e61437ece2d1372ee1445443017e62534d83487900`，root proof `e524ac4cf8df7310729477dc12f91c14842a90dff58953e66d3952397574a05a`。cover与literal仍只收到新Exact，分别冻完整独立稿 `e197ac223247fb90471bb701dc139440b8f3f2c00419425a8adab8f88e4434d2`、`13491bd3332d25c5b49dccc9812b3c5cc61f7e5b4e4ba3be3ef03b55a04d9ff7`；shared已知自己的v1但未读root v2，另独立冻 `0dd146d01bd47f6a403418c3899ed64759d4accb4c8c27e358b1137ec69be474`。此前没有给他们root proof或彼此新推导；他们的新CONFIG(T)主链各自从真实条件配置分布抽a树闭合，不能把其v1先验隐去。
+
+两份新独立稿冻结后，root才给cover/literal v1与v2作者proof。两者全文读后另冻 `75ad91e3215bf5856ae6ae9042947f84d28738142b356c09a2b57f4f42a4f493`、`aa4e8b4cc643adfa671f907a5d810a2ec58ffa10756b09234b0f6d75cf813f77`，无standingfatal。原v1/v2所有Exact、作者proof、独立稿、读后稿均按原字节存入history/source/notes，见assets与crosswalk。
+
+root实际全文读作者v1/v2与三份新增独立稿及两读后稿，逐式核对：CONFIG行必须为Σmin(q,t)≥a q而非Σt≥a q；后者d4,a3,q.1,t(.3,0,0,0)即坏。正部行的模q区间分解、零概率端点、统一有理可行点后b流、有限共同a树分布、每resource同一capacity、单射叶阻断数及Haxell总rank R+1与严格差2R−1均已核。全部未选原d树jobs回填父端，原负载分母d未换成a。C只给decision，LP失败仅排除OPT≤1，可行只保证OPT≤5/3，中间带不受promise约束；非注入CONFIG gap未升级。
+
+root在本次入库前实际打开并读AFS2008作者PDF5 Thm2及PDF6 Thm3、Annamalai2016v2 PDF2 Thm1.1及PDF3 Thm1.3/固定rank与slack依赖；取得原字节并用pypdf核11/19页。未取得/重构Haxell1995完整proof，依赖可读primary研究论文中的精确外部定理陈述。冻结root稿中的primary读取措辞不能替代这次实际打开记录。经典方法已扣除，不称Haxell/AFS框架原创。
+
+canonical入库时仅补显式先选有理可行点和读取范围措辞，不改Exact量词。未新增代码、有限例运行、生产实现、一般变参输出σ、外审或新颖性认证。主目标正反面OPEN。
+
+
+最终canonical字节另经literal实际全文核读，SHA `002990f2d65a83424f601c43dcef8322dc86d69c699a3f3c5adce6555bf41372`；其scratch回执SHA `f0203e0105d7fb78d099726be6e740df3eaa792ee002e8266754c0bf12146eee`。未引入新数学量词/错误scope/fatal；这次是已知proof后的最终文件核读，不倒改成盲审。

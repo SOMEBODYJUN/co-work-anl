@@ -268,3 +268,6 @@
 
 
 [源v5](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)以degree质量copies去除原regular/两侧等大要求，并保typed等纤维；固定误差PCP可接，但一般Q不自动poly(g)。
+
+
+[私有注入树配置五三界](../current/unrelated_machines/private_injective_tree_configuration_floor.md)：任意菜单、全阈值配置界与严格过滤判定；存在性不冒算法。

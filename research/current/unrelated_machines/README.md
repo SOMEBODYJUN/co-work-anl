@@ -378,3 +378,6 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 
 
 [源v5](partial_minrep_linear_degree_source_and_fee_bridge.md)处理任意不正规typed源，degree-mass复制同时保便宜copylists NO与equalfibers；v4非空域已显式修复，仍未供UMdecoder。
+
+
+[私有注入树配置五三界](private_injective_tree_configuration_floor.md)：均匀small/私有内部/状态注入的精确结构边界，任意重新编号端口仍适用。

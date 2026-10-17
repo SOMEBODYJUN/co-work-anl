@@ -62,3 +62,6 @@
 
 
 [度数质量源v5](../../../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)补任意typed PCP正规化；当前物理Latin反馈在保源padding下全树actual1，继续攻独立端口/其他真实耦合。
+
+
+[私有注入五三边界](../../../current/unrelated_machines/private_injective_tree_configuration_floor.md)已经闭合任意端口重编号路线；当前反面继续攻重复叶色且height增长、共享内部及真实job身份。原源v5仍只供源，不当UMdecoder。

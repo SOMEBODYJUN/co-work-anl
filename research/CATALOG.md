@@ -714,6 +714,13 @@
 | [坐标切片原矩阵与配置覆盖的独立小例核验](<../tests/audits/unrelated_machines/coordinate_slice_physical_configuration_audit.py>) | `tests/audits/unrelated_machines/coordinate_slice_physical_configuration_audit.py` | 复核十七小矩阵逐job实际负载/CONFIG覆盖，勿作为大参数概率NO或OPT证明。 | 有限计算核验；不代替一般证明；关联 `UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4`，[命题合同](assets.json) |
 | [坐标切片十七小矩阵的冻结结构核验](<../evidence/runs/unrelated_machines/coordinate_slice_physical_configuration_audit.json>) | `evidence/runs/unrelated_machines/coordinate_slice_physical_configuration_audit.json` | 查看root亲跑一致的actual/config计数与hash，不用于源NO或精确OPT验证。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4`，[命题合同](assets.json) |
 
+### private_injective_tree_configuration
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [私有注入树的全配置阈值五三界与严格承诺判定](<current/unrelated_machines/private_injective_tree_configuration_floor.md>) | `research/current/unrelated_machines/private_injective_tree_configuration_floor.md` | 核共同a树分布、注入叶阻断及全部原任务回填，区分配置存在性和严格promise判定。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2`，[命题合同](assets.json) |
+| [私有注入配置五三界的陈述先行与读后独立攻击](<reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md>) | `research/reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md` | 核两阶段来源隔离、CONFIG联合行、Haxell严格rank、原d树回填及未导入算法范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2`，[命题合同](assets.json) |
+
 <a id="weighted_congestion"></a>
 
 ## 加权原子拥塞博弈

@@ -129,3 +129,6 @@ pDM阈值桥的[合入审查](research/reviews/unrelated_machines/pdm_threshold_
 
 
 [源v5](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)用t_v=deg(v)z补任意源的regularization，并保typed exactfibers；可接FMW新perfect4to1 Paper Fact，未得实际UM编译。
+
+
+[私有注入树五三界](research/current/unrelated_machines/private_injective_tree_configuration_floor.md)用共同a树分布和Haxell限制任意端口重编号；反面继续在重复叶色/增长height或共享内部等域外机制，主目标OPEN。

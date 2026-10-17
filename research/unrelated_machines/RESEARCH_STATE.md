@@ -429,3 +429,6 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 
 
 [v5](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)质量归一化和异长fiber cycle界已独立核，原PCP degree可无界；FMW exact4源正规化不再依赖未证regularity前提。这里只是源，主反面OPEN。
+
+
+[私有注入树五三界](../current/unrelated_machines/private_injective_tree_configuration_floor.md)已由CONFIG(T)共同a树支配、精确叶阻断和Haxell闭合；配置判定与实际σ复杂度分开。一般非注入、共享内部、非均匀等仍OPEN。
