@@ -953,6 +953,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1 | 对任意固定 `δ>0`，强 3-PARTITION 可缩放为 tiny 边均 `≤δT` 的残余阈值实例；T-feasible 整数调度当且仅当 3-partition，均匀分数 LP 始终可行。 | 只反驳把异质接收成本精确化为普通整数流/简单可积多面体；不反驳带 ST 加性余量的 `(3/2+δ)` 候选，也不是近 2 困难性。 |
 | UM-STRICT-SUB2-BATCH-BARRIER-v1 | 对每个 `k≥2` 存在 `OPT=1` 实例和负载 `<2` 坏态；允许每步最多 k 件迁移且所有中间态保持 `<2` 时，坏态在状态图中孤立，首个出口需 `k+1` 件。 | 只限制常数批量、严格次二局部修复；允许无界批量、跨过 2 或重新求解时不适用。正文与 Fraction 审计见 `strict_sub2_batch_barrier.md`。 |
 
+## UM-PDM-THRESHOLD-EXACT-v1：pDM 的整数阈值调度桥梁
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-PDM-THRESHOLD-EXACT-v1 | 对固定 d≥3、b>d 且 gcd(b,d)=1 的 d-dimensional matching，构造受限整数 R∥Cmax：incident 顶点任务耗时 b，dummy 任务耗时 d。源有完美匹配当且仅当调度可达阈值 bd；无完美匹配时整数 OPT≥bd+1。 | 自足阈值证明；乘性 gap 仅 1+1/(bd)，不能推出统一 (2−ε) 反面。最新 pDM 文献只作来源背景，不把近一 gap 升级为近二硬度。 [正文](unrelated_machines/pdm_threshold_scheduling_bridge.md)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
