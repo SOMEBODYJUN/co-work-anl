@@ -32,3 +32,7 @@
 [校准计数槽](../../../current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md)将单位读出树的半质量推广为有理下传证书：行分数任务数≤整数k−r+1给实际2−r/k。uniform x_h闭式提供所有wiring密度界；任意固定D≥2、arity≤D A的同结构类有确定性位poly统一2−1/(4D)算法，k,h可无界。已扣VW既有2−1/k及经典ST；D无界或一般P仍无统一ε，反面目标保持OPEN。
 
 [完整单位树的叶流与选择重组](../../../current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。
+
+[允许换轨的稀疏部分投影解码接口](../../../questions/unrelated_machines/sparse_partial_projection_coupling_decoder_obligation.md)仅保留下一反面承重义务：同一vertex边际μ、projection次耦合及β/L>γ的真实浓缩。标准有给定证书decoder不等于调度归约；统一alphabet R的基线1/R使只保直方图或恰β=θ、L=θR时无法严格分离；近似量需另核常数。调度→证书OPEN，未进入canonical图/完成Claim账本。
+
+[固定层joint上容量的强化tensor逃逸候选](../../../questions/unrelated_machines/bounded_level_tensor_capacity_escape.md)：parity源ν1而乘积可有完美整数matching并过每固定L层所有共同计数guard。root已独立重构，尚未盲审，未登记canonical；一般B不承诺位poly可求，实际UM转移仍缺。

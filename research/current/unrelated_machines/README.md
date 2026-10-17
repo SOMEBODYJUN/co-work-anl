@@ -331,3 +331,5 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 [弱H2与强二阶配置的分离](weak_h2_configuration_moment_gap.md)给参数化一般证明：全局C2-load与完整CONFIG仅共享同一一阶x时，正值整数间隙上确界仍为2。k≥3的多项式规模稀释星族在T=1+(k−1)/(k²+1)有显式有理共同证书，而真实OPT=2−1/k；关键是条件激活中的伪矩超额在一阶配置投影中被稀释。全局PSD、所有负载localizer、相同x配置及位复杂度均分别证明。共享行二阶的强合同则在**同一族所有T**上阈值恰等于OPT；零pair经PSD传输成全局条件单槽容量。二者是不同Claim，不能外推成一般强H2定理或计算困难性。
 
 [完整槽包络的精确表示](slot_envelope_and_configuration_identity.md)把所有尺度的真实槽上界写成E=ΣΔp·ceil(prefix x)，证明全局min max E=OPT。固定T后逐行凸化子水平集恰CONFIG；先凸化整个上图则只剩线性分数负载。可验证完整损失并未免费解决共同选择。后续要攻共享二阶及更强跨机信息的可计算性/实际提取，或绕过这些松弛的一般构造，停止把上述已排弱合取当充分接口。
+
+[允许换轨的稀疏部分投影解码接口](../../questions/unrelated_machines/sparse_partial_projection_coupling_decoder_obligation.md)仅保留下一反面承重义务：同一vertex边际μ、projection次耦合及β/L>γ的真实浓缩。标准有给定证书decoder不等于调度归约；统一alphabet R的基线1/R使只保直方图或恰β=θ、L=θR时无法严格分离；近似量需另核常数。调度→证书OPEN，未进入canonical图/完成Claim账本。

@@ -368,3 +368,5 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 - `UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1`：固定总工作量的完全同机族中，二次势和排序势单任务下降均锁死，趋二修复需 `2+ceil(εm)` 件同步迁移。
 
 这些结果收紧了跨层一致性、共同容量状态和局部 repair 的 proof obligations，但没有提供一般输入的统一 epsilon 算法；主目标继续 OPEN.
+
+[允许换轨的稀疏部分投影解码接口](../questions/unrelated_machines/sparse_partial_projection_coupling_decoder_obligation.md)仅保留下一反面承重义务：同一vertex边际μ、projection次耦合及β/L>γ的真实浓缩。标准有给定证书decoder不等于调度归约；统一alphabet R的基线1/R使只保直方图或恰β=θ、L=θR时无法严格分离；近似量需另核常数。调度→证书OPEN，未进入canonical图/完成Claim账本。
