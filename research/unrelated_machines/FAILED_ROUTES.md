@@ -335,3 +335,6 @@ u_t) 的一般复杂度。
 源预算本身的logg障碍已被[线性degree源](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)绕过：更低原cover配rare上尾，而非普通常数尾界。但把source度数改成O(g)没有实现实际首label费用；旧component一次收费、拉长cycle或code distance仍须逐job核c/F。重试条件为真实π接口、constant-fraction trigger及固定费的完整P；未否定其它归约。
 
 [坐标切片编译](../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)的fatal为每对手坐标只删一个值，全树仍D−1叉。已给完整P、NO精确OPT1+1/D、保源NO的private-output padding，以及双射/均匀纤维/CONFIG1反例。只否定该叶共享与坐标顺序，非一般q或UM；重试须改变实际跨test耦合。
+
+
+[v3正则高围长源](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)消除“复制后任意lists失控/删环破正规性”这一特定源接口障碍；靠rare-tail同时性与有限switch，不是任意lift保hardness。高girth和正则性仍不能替代实际weak调度的源解码。

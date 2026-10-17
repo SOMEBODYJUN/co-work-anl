@@ -123,3 +123,6 @@ pDM阈值桥的[合入审查](research/reviews/unrelated_machines/pdm_threshold_
 [部分MinRep源](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)已核Δ=O(g)及同阶必要性，固定参数随机源采用NP不包含BPP；不把源进展升级为UM反面，继续攻真实常数费用/π接口。
 
 [坐标slice路线](research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)经两阶段独立审查：source NO与actualOPT1+1/D可并存，private-output padding保NO，双射和精确CONFIG1仍不足。下一义务为实际跨test耦合，主反面保持OPEN。
+
+
+[部分MinRep源](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)已加强为固定高围长、simple、exact regular；任意复制列表NO同时性已核，仍无实际UM弱调度decoder。

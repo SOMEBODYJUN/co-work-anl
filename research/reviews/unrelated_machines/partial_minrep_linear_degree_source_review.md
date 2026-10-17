@@ -38,3 +38,19 @@ root 与作者实读 Manurangsi arXiv 原 PDF §3完整证明、Lemma7及讨论�
 ## 状态
 
 自足数学证明完成，实际陈述先行重构及读后内审无 standing fatal；root 已核外部来源的实际适用条件。没有生产实现或有限实验完成声明。外部同行审查、全球新颖性和独立成文价值未认证；实际 UM compiler、源一致性和 weak 调度解码仍 OPEN，UM-TARGET-v1 正反面不升级。
+
+
+## v3 正规、简单与固定高围长的实际独立审查
+
+另审精确身份 `UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3`，保留 v2 原算法及域。root 提出参数和证明，不能称自身盲审。Exact-only 原稿 SHA `0e2b614ae0a0af12c592d3b57558e2c3baf13cf4377b90b26769fc6e5d24cc61`，证明另冻 SHA `f43e32fa61899de87121c161e3ca51ac76dbaa47daccef5fce7a02ba8609e646`，原字节见 [Exact](../../../history/source/notes/unrelated_machines/partial_minrep_regular_high_girth_v3_exact_source.md) 与 [冻结证明](../../../history/source/notes/unrelated_machines/partial_minrep_regular_high_girth_v3_frozen_proof_source.md)。
+
+两位实际审查者只收到 Exact 后分别重构，未读新作者证明或互传本次证明。二者都已知道旧 v2 的 cheap-list 截长和 rare-tail 思路，此先验如实披露；不是宣称对整个方向零背景。row 独立稿 SHA `7493f719723990b2aa4416b151bef1c84e947eaa71392cd378c0195c9b26fc3d`，pcsp 独立稿 SHA `f9c965c6a8b608ba088e135444c4cc8f19c7ed36798b5259c397b84b09b26396`。两稿自行把 covered 模板子图二部着色，抽一个每份 permutation 暴露≤ceil(t/2) slots 的半数 witness，再以≤4p_e 的逐边条件概率控制全部 copy lists；与作者后来的 e^(2k) 点态密度证明不同。两稿也分别闭合 cycle 期望、same-type/layer repair、统一2B误差和固定G位复杂度。
+
+两稿冻结后，才给予上述作者证明。row [读后稿](../../../history/source/notes/unrelated_machines/partial_minrep_regular_high_girth_v3_read_after_row_source.md) SHA `a012d2d0b32b4691d76e839ac0e87a97b68fd722ff9583ee75c80a60c6613c3e`；pcsp [读后稿](../../../history/source/notes/unrelated_machines/partial_minrep_regular_high_girth_v3_read_after_pcsp_source.md) SHA `8db3a1405825c243a21c57b7e603b72bcbcba43c48c78732cda8424366474fc0`。二者实际核读后均接受作者 factorial-moment、参照独立 samples、真实相关 permutations 的密度比较、实数 Chernoff 阈值和全 lists 同时性；末端 slot 及其 template mate fresh 的短环证明也无 standing fatal。root 亲读两份独立推导与作者全文，核这些承重点及全部参数代数。
+
+两处诚实勘误保留旧字节：作者冻结稿保守多计为2dN份 permutations，真实为dN，故其 samplingFAIL≤.001仍有效；现行正文写实际dN及≤1/2000。pcsp 原独立稿写 z>GB+4U+1，应为 z≥GB+4U+1>GB+4U，仍足保证可选f；其读后稿已明确更正。cycle枚举的安全多项式界按显式顶点和边身份计 O((N′+M′)^G) 即可，不借错误的精细计时声明。
+
+root 另实际打开 Kun v2 原PDF、读取 Theorem1 与 Theorem9/交换证明（物理页1–2、6–7），并核本地12页原字节；打开 Dinitz–Kortsarz–Raz final 原PDF §3（物理页8–9）Lemma3.1、Theorem3.2–3.4。Kun 已有换纤维置换修围长；DKR 以采样/删短环保gap。二者只用于准确比较，不是 v3 自足概率/repair 证明的隐藏前提。DKR final 下载403，未虚构本地原件；manifest如实记web读取。v3仍无生产实现、有限运行或全球新颖性认证，无外部审查及实际UM费用/弱调度解码。主目标正反面均OPEN。
+
+
+v3现行誊写后，pcsp又实际核SHA并全文读同专题canonical（cd68fd767ed68c15ad3b6b58c5826513cfc7059852bf67ea9c22df30fe8afa96），确认v2/v3域、实际draw数及费用N′M′转写无standingfatal。其新Kun/DKR原文未亲读，因此此回执不认证新增外部比较；root实际读取责任仍如上单独列明。

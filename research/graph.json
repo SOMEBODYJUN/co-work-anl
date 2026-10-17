@@ -10420,6 +10420,29 @@
         "evidence/runs/unrelated_machines/coordinate_slice_physical_configuration_audit.json"
       ],
       "status": "finite physical/config index check only"
+    },
+    {
+      "id": "UM-PARTIAL-MINREP-FIXED-GIRTH-COPY-DOMAIN",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "固定围长与独立复制列表的显式源域",
+      "detail": "固定G≥2；显式平衡Dregular无权全投影游戏可有parallel types；binary g≥2、0<rho≤1，Q≥2且Qrho³≥10^9g^8；copies可独立选lists，总cost≤gN′。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md"
+      ],
+      "status": "explicit fixed-G and Qgamma domain"
+    },
+    {
+      "id": "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "正规高围长线性degree部分MinRep源",
+      "detail": "随机硬位poly返回FAIL或simple平衡exact dregular/girth>G投影源；d=ceil(1000gλ/(rho floorlog2g))，N′=Nt,M′=dN′/2；FAIL<.1，val≤gamma时≥.8概率全部cheap copylists cover<rho；YES每nonFAIL保真。固定参数PCP下Q=poly_rho(g),d=O_rho(g)。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
+      ],
+      "status": "complete stated-scope regular high-girth source proof; independent statement-first reconstruction and read-after review; fixed-G randomized source only; no UM compiler; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -25524,6 +25547,38 @@
         "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
       ],
       "status": "specific compiler obstruction; general target open"
+    },
+    {
+      "id": "um_partial_minrep_regular_high_girth_source_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PARTIAL-MINREP-EXPLICIT-REGULAR-MODEL",
+        "UM-PERFECT-COMPLETE-PCP-REPETITION-SOURCE",
+        "UM-PARTIAL-MINREP-FIXED-GIRTH-COPY-DOMAIN"
+      ],
+      "conclusion": "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3",
+      "statement": "显式模型及固定G/Qgamma域下自足permutation density、全部copylists同时上尾、cycle暴露与保类型repair；外部perfectPCP共同给固定参数degreeO(g)源推论。Kun/DKR只比较。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
+      ],
+      "status": "complete stated-scope source proof; no implementation"
+    },
+    {
+      "id": "um_partial_minrep_regular_high_girth_physical_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3"
+      ],
+      "conclusion": "UM-NEAR-UNIT-PHYSICAL-COPY-OBLIGATION",
+      "statement": "正则/高girth/全copylistNO只补源结构，真实P、trigger、共同标签解码和固定F仍缺；v3费用代数以N′M′和Δ=d计。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
+      ],
+      "status": "actual compiler open"
     }
   ]
 }

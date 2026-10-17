@@ -126,3 +126,6 @@ Lok–Romero Morales–Vermeulen (2005)，[大学原PDF](https://cris.maastricht
 新增DS作者2014 PDF及Manurangsi arXiv原字节，SHA/版本/bytes与实际读取范围见manifest。Mosh final另实际读印223–224的完美完备PCP定义与Thm2.1/2.3，固定误差重复即可，不用PGC。Manurangsi Lem7已有采样/trimming、O(glogg) degree框架；[现行源证明](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)以更低原soundness与rare covered上尾、一次共同总边数事件给较粗polynomial alphabet下O(g) degree，并未宣称同时最佳字母表或全球首创。
 
 Minzer–Zheng ECCC TR24-027的2026 revision1 §7.4/Lem7.12/Thm7.13显示定理仍给O(glogg) degree和O(g^{2+epsilon}) alphabet。root及作者实际读相关primary段；初web-only比较冻结后实际取得2026原字节并核hash/106页，manifest记录获取顺序，原比较不倒改。此处不认证其整个应用证明、新颖性或连通性应用改进，实际UM compiler仍缺。
+
+
+v3源比较新增Kun arXiv0706.1701v2（已核12页原字节，Thm1/9）及DKR TALG2015 final §3（web实际读，下载403不伪称本地原件）。高girth CSP和同纤维换位修短环是已有技术；[正文](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)只把复制列表同时性/degree/regular固定girth组合列为本次已证增量，未认证新颖性。

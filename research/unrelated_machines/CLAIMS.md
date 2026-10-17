@@ -2079,3 +2079,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Evidence / Counterevidence or Objections：真实Exact-first独立重构后冻结proof/完整canonical攻击无standing fatal；root读独立小审计并全复跑一致。有限数据不满足概率NO参数，不核NO或OPT。parallel和变参数树展开不在合同。
 - Status：限定证明完成、内审完成；implementation=audit_only；外审/新颖性未认证；实际主目标hardness未得。
 - Related Files：[正文](../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)、[实际审查](../reviews/unrelated_machines/private_tree_branching_valuation_review.md)、代码和冻结输出互链。
+
+
+## UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3：复制列表同时性的正规高围长部分MinRep源
+
+- Exact Statement / Conclusion：随机硬位poly返回FAIL或simple平衡exact dregular/girth>G投影源；d=ceil(1000gλ/(rho floorlog2g))，N′=Nt,M′=dN′/2；FAIL<.1，val≤gamma时≥.8概率全部cheap copylists cover<rho；YES每nonFAIL保真。固定参数PCP下Q=poly_rho(g),d=O_rho(g)。 完整z,t、bounded rejection、same-type/layer repair和概率量词见正文；非FAIL每seed满足结构，NO同时量化所有lists。
+- Objects / Domain / Quantifiers：固定G≥2；显式平衡Dregular无权全投影游戏可有parallel types；binary g≥2、0<rho≤1，Q≥2且Qrho³≥10^9g^8；copies可独立选lists，总cost≤gN′。 G预先固定；PCP链先固定g,rho,G，显式游戏变换另有统一binary位复杂度。
+- Definitions / Assumptions：gamma=rho³/(10^9g^8)，每type继承原全投影；各copy lists可完全不同。FAIL是flag、可由调用者作YES分支，不伪装成合法girth源；非空val≤gamma蕴含Qgamma≥1。
+- Scope：线性degree、simple、正则和固定高围长的随机部分覆盖源；不是实际UM reduction、任意cover保soundness或主目标反证。确定性promise判别器仅导出NP⊆BPP。
+- Dependencies：显式regular投影模型；heavy-copy随机代表、生成函数、两侧permutation点态密度/factorial moments、shortcycle暴露、保类型交换；固定参数PCP另用已有Mosh/DS及精确保value正规化/padding。Kun/DKR只比较不承重。
+- Evidence / Counterevidence or Objections：两份Exact-first独立witness重构，后读作者factorial-moment全文均无standingfatal；sampling保守多计与z不等号笔误在新读后记录纠正、旧字节冻结。
+- Status：一般限定source证明完成、内审完成；implementation=none；外审、新颖性未认证；实际fee和weak decoder缺，UM-TARGET正反面OPEN。
+- Related Files：[同专题正文](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)、[实际审查](../reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md)与六份保真来源。

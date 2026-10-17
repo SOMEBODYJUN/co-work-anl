@@ -372,3 +372,6 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [部分MinRep线性度数源](partial_minrep_linear_degree_source_and_fee_bridge.md)用更强原soundness与rare covered上尾得到Δ=O_rho(g)，同覆盖禁令必需Ω(g)度数。它把充分物理费从logg降为固定常数；实际P、constant-fraction trigger、原投影decoder和fee仍未构造，随机归约采用NP不包含BPP，主反面OPEN。
 
 [坐标切片编译反例](coordinate_slice_source_compilation_counterexample.md)给strictP1 iff完美源及NO实际OPT恰1+1/D；保promise padding仍低C，双射/均匀纤维和CONFIG1也不能修复。需真正跨test一致性/新叶共享，未得一般q或UM困难性。
+
+
+[部分MinRep源v3](partial_minrep_linear_degree_source_and_fee_bridge.md)联合保证arbitrary-copy列表NO、线性degree、simple正则及任意固定高围长；固定G/FAIL/随机归约不略，未得物理decoder。

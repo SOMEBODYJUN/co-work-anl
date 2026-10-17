@@ -1142,6 +1142,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4 | simple平衡Dregular全投影源、D≥3、共同Q≥2；明确坐标slice叶/完整树port矩阵；显式展开。padding和随机双射族各按正文附加参数。 strictP≤1 iff fullLC；linear-degree cheap-list NO显式家却OPT=1+1/D；proper-color private-output padding保NO仍低C；随机conditioned-bijection族至少1/2概率同NO，每seed Tconfig1/实际C≤1+1/D，好NO整数OPT精确。 | [正文](unrelated_machines/coordinate_slice_source_compilation_counterexample.md)与分版本实际审查；有限I/J检查不验证NO/OPT；audit_only，非一般UM结论。 |
 
+| UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3 | 固定G≥2；显式平衡Dregular无权全投影游戏可有parallel types；binary g≥2、0<rho≤1，Q≥2且Qrho³≥10^9g^8；copies可独立选lists，总cost≤gN′。 随机硬位poly返回FAIL或simple平衡exact dregular/girth>G投影源；d=ceil(1000gλ/(rho floorlog2g))，N′=Nt,M′=dN′/2；FAIL<.1，val≤gamma时≥.8概率全部cheap copylists cover<rho；YES每nonFAIL保真。固定参数PCP下Q=poly_rho(g),d=O_rho(g)。 | [同专题正文](unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)与两阶段独立审查；source only，implementation=none，固定G/FAIL不略。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

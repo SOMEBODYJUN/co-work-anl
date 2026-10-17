@@ -56,3 +56,6 @@
 [部分MinRep源](../../../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)得到部分覆盖合同的线性degree及同阶必要性；不再以logg费用为必要前置，继续寻找实际固定F编译器，未得主目标反证。
 
 [坐标切片完整失败机制](../../../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)已核actualOPT1+1/D、source-padding和双射CONFIG证书；停止加深此坐标表示，转cross-walk/非unique局部SAT视图的真实一致性。
+
+
+[源v3](../../../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)已把线性degree和全部copy列表NO扩到simple正则、固定高girth；继续攻击复用寄存器/非私有耦合的实际decoder，不以源进展当主反证。
