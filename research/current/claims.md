@@ -1144,6 +1144,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3 | 固定G≥2；显式平衡Dregular无权全投影游戏可有parallel types；binary g≥2、0<rho≤1，Q≥2且Qrho³≥10^9g^8；copies可独立选lists，总cost≤gN′。 随机硬位poly返回FAIL或simple平衡exact dregular/girth>G投影源；d=ceil(1000gλ/(rho floorlog2g))，N′=Nt,M′=dN′/2；FAIL<.1，val≤gamma时≥.8概率全部cheap copylists cover<rho；YES每nonFAIL保真。固定参数PCP下Q=poly_rho(g),d=O_rho(g)。 | [同专题正文](unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)与两阶段独立审查；source only，implementation=none，固定G/FAIL不略。 |
 
+| UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5 | 固定G≥2；任意非空显式无权二部multigraph，原degree/两侧大小不限；非空typed ΣA,ΣB明确列举，全π:ΣA→ΣB；binaryg≥2,rho∈(0,1],Q=max域大小≥2且Qgamma≥1。 t_v=deg(v)z质量复制，N′=2M0z,M′=dN′/2；随机硬位poly输出FAIL或simple balanced exactdregular girth>G，保原typed表/equalfibers；FAIL<.1，val≤gamma时≥.8概率全cost≤gN′copylists cover<rho；perfect每nonFAIL保真。fixed-error PCP不需原regular/degree常数；Qpoly(g)才另得dO(g)。 | [同专题正文](unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)与两阶段审查；修复v4非空域，source only/none。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

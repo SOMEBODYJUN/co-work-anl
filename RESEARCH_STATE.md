@@ -126,3 +126,6 @@ pDM阈值桥的[合入审查](research/reviews/unrelated_machines/pdm_threshold_
 
 
 [部分MinRep源](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)已加强为固定高围长、simple、exact regular；任意复制列表NO同时性已核，仍无实际UM弱调度decoder。
+
+
+[源v5](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)用t_v=deg(v)z补任意源的regularization，并保typed exactfibers；可接FMW新perfect4to1 Paper Fact，未得实际UM编译。

@@ -375,3 +375,6 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 
 
 [部分MinRep源v3](partial_minrep_linear_degree_source_and_fee_bridge.md)联合保证arbitrary-copy列表NO、线性degree、simple正则及任意固定高围长；固定G/FAIL/随机归约不略，未得物理decoder。
+
+
+[源v5](partial_minrep_linear_degree_source_and_fee_bridge.md)处理任意不正规typed源，degree-mass复制同时保便宜copylists NO与equalfibers；v4非空域已显式修复，仍未供UMdecoder。

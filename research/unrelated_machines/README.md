@@ -265,3 +265,6 @@
 
 
 [部分MinRep源v3](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)把arbitrary-copy列表同时性、d=O(g)、simple正则与任意固定girth联合保证；固定G位poly、显式FAIL和随机NP⊄BPP边界保留。
+
+
+[源v5](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)以degree质量copies去除原regular/两侧等大要求，并保typed等纤维；固定误差PCP可接，但一般Q不自动poly(g)。

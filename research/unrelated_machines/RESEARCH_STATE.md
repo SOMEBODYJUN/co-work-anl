@@ -426,3 +426,6 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 
 
 [部分MinRep源v3](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)已核两侧permutation稀少覆盖上尾及保类型有限repair：对全部copy lists同时保NO，可要求simple/exact regular/固定高girth。真实source-to-UM编译仍缺，非近二困难性。
+
+
+[v5](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)质量归一化和异长fiber cycle界已独立核，原PCP degree可无界；FMW exact4源正规化不再依赖未证regularity前提。这里只是源，主反面OPEN。

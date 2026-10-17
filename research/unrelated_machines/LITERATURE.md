@@ -129,3 +129,6 @@ Minzer–Zheng ECCC TR24-027的2026 revision1 §7.4/Lem7.12/Thm7.13显示定理�
 
 
 v3源比较新增Kun arXiv0706.1701v2（已核12页原字节，Thm1/9）及DKR TALG2015 final §3（web实际读，下载403不伪称本地原件）。高girth CSP和同纤维换位修短环是已有技术；[正文](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)只把复制列表同时性/degree/regular固定girth组合列为本次已证增量，未认证新颖性。
+
+
+FMW TR26-179 Revision2的Definition1.1/Theorem1.6及AppendixB已实际核读，119页原PDF、版本/SHA/bytes见manifest。它给perfect exact4-to1固定误差Paper Fact；不自动给regular/degree/girth、Qpoly(g)或UM反证。[v5源](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)以度数比例copies补正规化，仍为随机归约。

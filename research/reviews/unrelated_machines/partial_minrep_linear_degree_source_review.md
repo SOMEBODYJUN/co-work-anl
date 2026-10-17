@@ -54,3 +54,16 @@ root 另实际打开 Kun v2 原PDF、读取 Theorem1 与 Theorem9/交换证明�
 
 
 v3现行誊写后，pcsp又实际核SHA并全文读同专题canonical（cd68fd767ed68c15ad3b6b58c5826513cfc7059852bf67ea9c22df30fe8afa96），确认v2/v3域、实际draw数及费用N′M′转写无standingfatal。其新Kun/DKR原文未亲读，因此此回执不认证新增外部比较；root实际读取责任仍如上单独列明。
+
+
+## v5 度数质量复制：任意原degree与typed域
+
+只登记 `UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5`。作者root先冻v4 Exact SHA `45c1d754332fc556066b994bffbda407bd2d619a05a77a539969f5ef2dc66b38`，给row和pcsp仅陈述重构；root已有证明，不能自称盲审。row独立指出typed域未显式要求两alphabet非空，若左域空则全投影空表存在但val未定义，v4字面完整域不成立。root保留旧字节，另冻v5 Exact SHA `86dcd98daaa2cc479260e444f47f4e9eb3d8ae56936b220f0a1d18e82863d693`：仅加两域非空及修复记录，算法/参数/非空域结论不改。两版来源分别见 [v4](../../../history/source/notes/unrelated_machines/partial_minrep_degree_mass_v4_original_exact_source.md)、[v5](../../../history/source/notes/unrelated_machines/partial_minrep_degree_mass_v5_exact_source.md)。
+
+row先自行重构并发现缺口，收到已知修订v5后全文/diff核查；其独立冻结稿 SHA `fab9db01a1e7b483d6e0659ab98c869ea3153697a41c5c376837f86cd9b5ddfd`。pcsp在收到转述前已按通常非空game定义完成并冻结非空域证明 SHA `36950255eaf5df611e01440082a13fec02a353841d408a876741e982f14fbe63`，其中也建议显式非空，但不冒称其独立提出row的formal objection；收到转述和v5后另冻修复域记录 SHA `cb9baf54a78c86ffb2fb344934f4f23a1583a90725436b51dc7523048d398f11`。两位都有v3先验；本次均未在独立稿之前读新root proof或彼此推导。
+
+两者都独立核出：随机原edge端点-copy边际按deg(v)/M₀/t_v恰抵消至1/(M₀z)，heavy-copy权重按两侧总2h/N′；不同长度fiber的cycle闭合率必须按起始v求和Σ_vt_v/(t_v−G)≤2N₀，不能粗乘N′导致错误参数；typed标签总bit positions≤QN′且真实cost逐copy/typed符号计。同步source标签clone保值和equal fibers，参数固定后的预处理不冒称域外uniformbinarypoly。
+
+独立稿冻结后才给v5 root [冻结proof](../../../history/source/notes/unrelated_machines/partial_minrep_degree_mass_v5_frozen_proof_source.md)，SHA `e2e60ca49cb6fcaf14a865a83c1d537d3213eb01a8d60c1e1f6baa1054b86c29`。row实际全文读后攻击冻 SHA `f873d271dad2dc4341bc538f201c1c5bf1efacfc0b01b0956a7d7c51b92839a6`，pcsp读后冻 SHA `5f3f086ed5a838fa8d30e97abe24f759bc526efc2b9c712503a213da5d010811`，均无新增standingfatal。root亲读两份独立推导、复核归一化/全部lists概率/异长fiber暴露/逐原像保持及位复杂度。原v4未倒升为完整域已证明。
+
+root和row实际打开新primary FMW TR26-179 Revision2；root另取得1,781,648bytes/119页原PDF、SHA `48baa160d5d15e61aaf99b24b6fc15518c20f204d165fc96de1251d9d8a82ea0`，全文提取指定页4–5、99–100，核Definition1.1、Theorem1.6与AppendixB的exactification。它是新preprint Paper Fact，未完整重构119页PCP证明；只调用它的perfect/任意固定误差/exact4事实，原文不自动保证regular或degree常数，这部分由v5自足证明补上。λ及d按实际新alphabet计，不把表中tag叫隐藏routing别名。其一般error-alphabet关系不据此宣称poly(g)。无生产实现、有限运行、外部审查或全球新颖性认证，仍无实际UM decoder。

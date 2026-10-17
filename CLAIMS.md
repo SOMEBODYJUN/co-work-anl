@@ -117,3 +117,6 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 
 
 新增 UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3；[专题账本](research/unrelated_machines/CLAIMS.md)给arbitrary-copylists同时性及正则高围长源，非UM反面。
+
+
+新增UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5；[账本](research/unrelated_machines/CLAIMS.md)明确非空typed域及任意原degree的质量复制，v4域缺口保留。

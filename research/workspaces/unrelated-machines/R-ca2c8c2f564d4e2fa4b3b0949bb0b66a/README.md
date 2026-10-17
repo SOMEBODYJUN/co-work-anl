@@ -59,3 +59,6 @@
 
 
 [源v3](../../../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)已把线性degree和全部copy列表NO扩到simple正则、固定高girth；继续攻击复用寄存器/非私有耦合的实际decoder，不以源进展当主反证。
+
+
+[度数质量源v5](../../../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)补任意typed PCP正规化；当前物理Latin反馈在保源padding下全树actual1，继续攻独立端口/其他真实耦合。

@@ -10443,6 +10443,41 @@
         "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
       ],
       "status": "complete stated-scope regular high-girth source proof; independent statement-first reconstruction and read-after review; fixed-G randomized source only; no UM compiler; novelty unverified"
+    },
+    {
+      "id": "UM-PARTIAL-MINREP-ARBITRARY-TYPED-DEGREE-MASS-DOMAIN",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "非空typed任意degree源的质量复制域",
+      "detail": "固定G≥2；任意非空显式无权二部multigraph，原degree/两侧大小不限；非空typed ΣA,ΣB明确列举，全π:ΣA→ΣB；binaryg≥2,rho∈(0,1],Q=max域大小≥2且Qgamma≥1。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md"
+      ],
+      "status": "explicit corrected nonempty typed domain"
+    },
+    {
+      "id": "UM-PERFECT-EXACT-FOUR-TO-ONE-FMW2026-PAPER-FACT",
+      "kind": "source",
+      "track": "unrelated_machines",
+      "title": "FMW2026完美exact4to1固定误差源",
+      "detail": "Definition1.1/Thm1.6与AppendixB；新preprint PaperFact，未导入regular或Qpoly(g)。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "history/source/literature/unrelated_machines/fei_minzer_wang_2026_exact_four_to_one_eccc_revision2.pdf"
+      ],
+      "status": "targeted primary theorem reading; full PCP proof not reconstructed"
+    },
+    {
+      "id": "UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意typed源的degree-mass正规化",
+      "detail": "t_v=deg(v)z质量复制，N′=2M0z,M′=dN′/2；随机硬位poly输出FAIL或simple balanced exactdregular girth>G，保原typed表/equalfibers；FAIL<.1，val≤gamma时≥.8概率全cost≤gN′copylists cover<rho；perfect每nonFAIL保真。fixed-error PCP不需原regular/degree常数；Qpoly(g)才另得dO(g)。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
+      ],
+      "status": "complete stated-scope degree-mass regularization; corrected nonempty typed domain; independent Exact-first and read-after review; no UM compiler; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -25574,6 +25609,37 @@
       ],
       "conclusion": "UM-NEAR-UNIT-PHYSICAL-COPY-OBLIGATION",
       "statement": "正则/高girth/全copylistNO只补源结构，真实P、trigger、共同标签解码和固定F仍缺；v3费用代数以N′M′和Δ=d计。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
+      ],
+      "status": "actual compiler open"
+    },
+    {
+      "id": "um_partial_minrep_degree_mass_regularization_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PARTIAL-MINREP-ARBITRARY-TYPED-DEGREE-MASS-DOMAIN",
+        "UM-PERFECT-EXACT-FOUR-TO-ONE-FMW2026-PAPER-FACT"
+      ],
+      "conclusion": "UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5",
+      "statement": "任意源主变换自足；度数质量抵消heavycopy、异长fibercycle按原v求和、e^{2k}联合密度与有限repair。具体exact4PCP推论共同使用FMW PaperFact，未依赖原degree常数。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
+      ],
+      "status": "complete scoped source proof and conditional PaperFact application"
+    },
+    {
+      "id": "um_partial_minrep_degree_mass_physical_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5"
+      ],
+      "conclusion": "UM-NEAR-UNIT-PHYSICAL-COPY-OBLIGATION",
+      "statement": "正规源/等纤维仍不补actualP与weak解码；费用以实际N′M′/d算，一般FMW alphabet未量化poly(g)，不自动给独立g固定F。",
       "refs": [
         "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
         "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"

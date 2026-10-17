@@ -2091,3 +2091,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Evidence / Counterevidence or Objections：两份Exact-first独立witness重构，后读作者factorial-moment全文均无standingfatal；sampling保守多计与z不等号笔误在新读后记录纠正、旧字节冻结。
 - Status：一般限定source证明完成、内审完成；implementation=none；外审、新颖性未认证；实际fee和weak decoder缺，UM-TARGET正反面OPEN。
 - Related Files：[同专题正文](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)、[实际审查](../reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md)与六份保真来源。
+
+
+## UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5：任意typed源的度数质量复制正规化
+
+- Exact Statement / Conclusion：t_v=deg(v)z质量复制，N′=2M0z,M′=dN′/2；随机硬位poly输出FAIL或simple balanced exactdregular girth>G，保原typed表/equalfibers；FAIL<.1，val≤gamma时≥.8概率全cost≤gN′copylists cover<rho；perfect每nonFAIL保真。fixed-error PCP不需原regular/degree常数；Qpoly(g)才另得dO(g)。 d=ceil(1000gλ/(rho floorlog2g))，gamma=rho³/(10^9g^8)；完整z及bounded采样/repair见同专题正文。
+- Objects / Domain / Quantifiers：固定G≥2；任意非空显式无权二部multigraph，原degree/两侧大小不限；非空typed ΣA,ΣB明确列举，全π:ΣA→ΣB；binaryg≥2,rho∈(0,1],Q=max域大小≥2且Qgamma≥1。 同时量化全部copies独立lists，成本不需按原degree加权；先删孤点，M0≥1。
+- Assumptions / Definitions：G预先固定；FAIL明确flag；typed反向不伪造为函数。新source标签clone若用须逐符号计cost、Qλd按新域算，仅fixed-parameter PCP corollary可作域外padding。
+- Scope：一般显式源的随机正规化，保exact kfibers；调用FMW新preprint Paper Fact给exact4源。不是UM reduction；随机判别器矛盾采用NP不包含BPP。
+- Dependencies：任意typed投影模型、质量抵消heavycopy界、已证异长permutation density/factorialmoment和短cycle按起始v求和、same-type修复；固定PCP应用另用其精确外部定理，未免费导入regular。
+- Evidence / Counterevidence or Objections：v4空alphabet使val未定义，保真原Exact记录失败；v5显式两域非空，两个先陈述独立推导后读冻结proof无standingfatal；root核原文指定页与proof，不声称全球新颖或全PCP重审。
+- Status：限定证明完成、内审完成；implementation=none，外审/新颖性未认证；无真实UM费用或weak decoder。
+- Related Files：[同专题正文](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)、[实际审查](../reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md)、来源及文献manifest。

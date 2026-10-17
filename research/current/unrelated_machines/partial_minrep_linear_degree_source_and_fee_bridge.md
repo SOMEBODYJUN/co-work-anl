@@ -1,6 +1,6 @@
 # 部分 Min-Rep 源的线性度数与真实调度费用义务
 
-精确身份：`UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2` 与 `UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3`，分别量化原顶点删边和新增复制顶点的正规高围长构造。读取目的：核对一个完美完备、部分覆盖 soundness 的源构造，并据此计算实际 UM 编译器需要支付的费用。结论只到源和条件费用桥；没有构造 UM 困难性归约。早期 v1 只在 scratch 中冻结，参数较弱，不是另一份现行资产。
+精确身份：`UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2` 与 `UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3`，以及 `UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5`；分别量化原顶点删边、等份复制正规源及任意原degree/typed域的质量复制。读取目的：核对一个完美完备、部分覆盖 soundness 的源构造，并据此计算实际 UM 编译器需要支付的费用。结论只到源和条件费用桥；没有构造 UM 困难性归约。早期 v1 只在 scratch 中冻结，参数较弱，不是另一份现行资产。
 
 ## 对象、量词与精确结论
 
@@ -196,6 +196,105 @@ FAIL 是明确 flag，不是伪造的 girth 游戏。源归约调用者可在 FA
 
 本节没有实现生产代码，没有把某个随机 lift 的 soundness 升级为任意 cover 均保持 soundness，也不否定配置有限覆盖整数化障碍。v3 沿用既存源的强错误率及 rare-covered-tail 框架，增加复制 lists 的同时控制、固定高围长 regular 输出和有限 repair。其全球新颖性未认证；高围长本身不是一般 UM 的费用或 source decoder，后文真实 trigger、π 接口、预算 B 和固定费用 F 的义务仍全部保留。UM-TARGET-v1 正反面均保持 OPEN。
 
+## 任意不正规 typed 源的度数质量复制
+
+精确身份 `UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5`。这项加强不要求原图 regular、两侧等大或原最大degree有常数界；两个字母表保留各自的真实类型。v4漏写非空字母表会使val不良定，故其字面全域不获接受；本节只登记显式修复后的v5，不倒改旧冻结记录。
+
+固定整数 G≥2。输入任意非空、有限、显式无权二部multigraph Π=(A,B,E)，M₀=|E|≥1。先删孤点，令N₀=|A|+|B|。左右字母表Σ_A、Σ_B均非空、明确列举，Q=max(|Σ_A|,|Σ_B|)≥2；每条edge type e给显式全投影π_e:Σ_A→Σ_B。平行约束逐type计。列表可空，cost逐实际标签符号计。给binary整数g≥2和binary有理0<ρ≤1，沿用ℓ、λ、τ、γ、d的公式，但此处λ由typed域的最大大小Q计算，并要求Qγ≥1。
+
+设
+
+\[
+S=\sum_{j=2}^{G}d^j,\qquad B_0=40N_0S,\qquad
+U=\sum_{j=0}^{G+1}d^j,\qquad m_*=dM_0,
+\]
+\[
+z=\left\lceil\max\left\{2G+1,\ GB_0+4U+1,
+\frac{8B_0}{\rho m_*}\right\}\right\rceil.
+\]
+
+每个原v建立t_v=deg_Π(v)z个copies及同数slots。按v的incident原edge types分成每组z个，同type两端按局部序号配对成template。独立建立d层，每个原v、每层抽一份uniform[t_v] permutation重命名到其copies。每层为左右全部slots的perfect matching，每个(type,layer)bucket总有z条matching边。
+
+因为左右Σ_vdeg(v)均为M₀，输出每侧恰M₀z个copies，
+
+\[
+N'=2M_0z,\qquad M'=dM_0z=dN'/2.
+\]
+
+因此全部copies的degree恰为d。与v3一样，保留type/layer标记，采用same-type/layer有限换边修短cycle。每条边继承原π_e，不合并左右alphabet、不构造反向全函数，不改变任何原边的surjectivity或equal-fiber属性。
+
+精确合同为：每个seed返回FAIL或simple、balanced、exact d-regular、girth>G的显式游戏。全部域内输入FAIL概率<0.1；若原val=1，任一非FAIL输出复制原labels即全满足。若原val≤γ，至少0.8概率返回非FAIL输出，并对**所有**cost≤gN′的真实copy lists同时有covered<ρM′。同一原点copies可取完全不同的lists；不要求原点成本按degree加权。对固定G，最坏时间、输出规模和硬随机位数均为总显式输入及binary g、ρ长度的多项式。
+
+### 质量归一化为何不需要原regularity
+
+固定cost≤gN′的copy lists，令H=4g/τ，并令h_v为原v的heavy copies数，heavy指list长度>H；总h≤gN′/H。对原edge e=(a,b)，p_e为独立均匀抽其两端copies时lists覆盖的概率。随机均匀抽一条原edge，再抽两端copies，触及heavy的概率至多
+
+\[
+\frac1{M_0}\sum_{e=(a,b)}\left(\frac{h_a}{t_a}+\frac{h_b}{t_b}\right)
+=\frac{\sum_vh_v}{M_0z}=\frac{2h}{N'}\le\frac{2g}{H}.
+\]
+
+deg(v)和t_v=deg(v)z精确抵消。这是度数质量复制相对固定fiber尺寸的新增承重步骤；若仍按每原v相同份数复制，上式一般不成立。
+
+逐原v独立抽一个copy，再在其非空list均匀取typed标签，空list任取合法标签。由val≤γ及light-covered pair至少以1/H²概率满足，
+
+\[
+\frac1{M_0}\sum_ep_e\le\frac{2g}{H}+\gamma H^2
+=\frac\tau2+\frac{16\tau}{1000}<\tau.
+\]
+
+每type在d层共出现dz次，所有模板边覆盖边际和mbar=dzΣ_ep_e<τM′。没有将copy lists合并成一份廉价原lists，也没有把随机代表copy的原成本说成必受gN₀控制。
+
+每份不同长度t_v permutation在j个distinct slots上的点态密度同样≤e^j；因此v3的factorial-moment证明逐对象沿用，总2k slots给e^(2k)。对固定lists仍有
+
+\[
+\Pr[Z\ge\rho M'/2]<\exp(-\rho M'\ln g).
+\]
+
+typed标签的bit positions总数为Σ_vt_v|Σ_{side(v)}|≤QN′，故全部cheap lists数≤exp(gN′λ)。d的选择给ρM′ln g≥250gN′λ，全列表坏事件<0.001。只用Q上界计数不代表把typed labels识别成相同符号。
+
+### 不同fiber的短cycle、repair与硬位数
+
+固定一个属于原v的起始copy及长度j≤G的layer序列。若实际walk形成simple cycle，相邻layers必不同。最后当前copy与起始copy在最后层均fresh，template mate亦fresh；若mate不属于原v闭合概率为0，否则其image在v的至少t_v−G个未用copy编号中均匀。因此闭合到起始copy概率≤1/(t_v−G)。按起始原v分组求和，得到
+
+\[
+\mathbb EX\le\sum_v\frac{t_v}{t_v-G}\sum_{j=2}^{G}d^j
+\le2N_0S,
+\qquad \Pr[X>B_0]\le1/20,
+\]
+
+其中t_v≥z≥2G+1。这里没有用N′乘最小fiber闭合界；B₀只按原非孤点数N₀计费。不同层parallel2-cycles已包含，单边往返不计。
+
+X≤B₀时，短cycle vertices至多GB₀；当前输出degree为d，选中坏边两端的半径G balls至多2Σ_{j=0}^Gd^j个vertices。每bucket是matching，故其触及禁点的边数≤GB₀+2Σd^j<z，所需干净远距f必存在。与v3同一双边交换证明保证不生新短cycles，≤B₀步终止。对所有lists covered统一增量≤2B₀；M′=zm_*≥8B₀/ρ使最终仍covered<3ρM′/4<ρM′。
+
+Fisher–Yates实际整数draws数为
+
+\[
+K_0=d\sum_v(t_v-1)>0.
+\]
+
+每draw使用至多R=ceil log₂(2000K₀)轮拒绝采样，任一耗尽返回FAIL；sampling FAIL≤1/2000。range预定、bit blocks独立，条件全部成功后仍为精确独立uniform permutations。因此所有输入FAIL≤.0505<.1，NO再扣全lists坏事件<.001，成功概率>.9，满足保守.8合同。
+
+Qγ≥1支付数值g、1/ρ、d；删孤点后N₀≤2M₀、原degree≤M₀，固定G时z及t_v≤M₀z、N′=2M₀z均为显式输入固定多项式。硬随机位、cycle枚举、BFS、扫描bucket及≤B₀次repair同样多项式。G变参的指数依赖、没有Qγ域时的数值展开均不属于合同。此变换未构造任何UM矩阵。
+
+### 保exact k-to1的固定误差PCP应用
+
+若有perfect-complete、任意固定误差、常数字母表的exact k-to1投影PCP（k先固定），先固定g、ρ、G并取误差≤γ，再接本变换。原PCP可以不regular、degree随输入长增长、两侧点数不同；结论给simple、balanced、constant exact degree、固定高girth，同时保exact k fibers的随机source family。
+
+若起点Qγ<1，可在这个**先固定参数的PCP corollary**中显式同步复制alphabet：取足够大的固定整数L，左右新域分别为Σ_A×[L]、Σ_B×[L]，新投影为
+
+\[
+\pi'_e(\alpha,s)=(\pi_e(\alpha),s).
+\]
+
+每个(α,s)是新source中一个真实标签，列表逐这种pair计cost，π完整读取并保留tag；tag不是隐藏的route alias。所有后续Q′、λ、d由新alphabet实际大小重算。丢tag把新满足边投回旧满足边，给val_new≤val_old；旧最优赋值统一tag给反向≥，故value恰保持。每个(β,s)有原先恰k个preimages，equalfibers和surjectivity均保持。
+
+取L≥1/(Qγ)即可进入Q′γ≥1。参数先固定时L为常数，PCP归约仍多项式。这里没有把域外任意binary g、ρ的小Q输入按巨大L展开，继而冒称该padding也有uniform位多项式保证。主图变换在其Qγ域内的uniform位复杂度与本固定参数预处理不同。
+
+一般fixed-error PCP仅给字母表为某个常数，不自动给Q=poly_ρ(g)。只有另给这个定量alphabet界时，才由λ/ℓ=O_ρ(1)推出d=O_ρ(g)；若还需同步clone，Q′≤Q+1/γ仍保这个多项式界。新exact4-to1 primary theorem可作为本条件应用的外部Paper Fact，原文定位和读取范围单独登记，不用本节内部概率证明替代PCP审查。
+
+FAIL为明确flag，调用者可按YES处理；原perfect标签对每个非FAIL输出均满足。确定性promise判别器与此随机source归约复合仅推出NP⊆BPP，所用明确假设可为NP⊄BPP，不能改称P≠NP下确定性hardness。没有真实UMcompiler、没有新颖性认证或生产实现，UM-TARGET-v1保持OPEN。
+
 ## 线性度数的必要性
 
 对任意非空平衡全投影游戏，先在每个左点任选一标签，成本 N/2。任选 t 条不同边，将所选左标签沿这些边的投影加入右列表；增加成本至多 t，覆盖至少这 t 条边。令整数 B=(g−1/2)N。若 ρM≤B，则 t=ceil(ρM)≤min(B,M)，由此得到 cost≤N/2+B=gN、覆盖比例≥ρ 的列表，违反严格 NO 禁令。因此
@@ -225,3 +324,6 @@ Manurangsi 2019 Lemma 7 已有独立采样、高度 trimming 与同时廉价列�
 
 
 v3 的相关原文边界：Kun arXiv:0706.1701v2 Theorem1已有 CSP 的固定高围长等价，Theorem9用 twisted-product 内的同纤维置换修短环；因此这里不把换边或高围长本身称作新机制。Dinitz–Kortsarz–Raz TALG2015 §3/Lemma3.1、Theorem3.2–3.4 以采样和删除短环保 Label-Cover/Min-Rep gap，其输出不保证恰正规。v3 的实际增量在 arbitrary copy lists 的两侧置换同时性、线性阶 degree 与保类型的有限修复之组合；尚未认证全球新颖性。原文、读取范围及无法下载的版本见 manifest。
+
+
+v5的具体Paper Fact应用：Fei–Minzer–Wang ECCC TR26-179 Revision2 Theorem1.6 给任意固定误差下perfect-complete exact4-to1游戏的NP-hardness；Definition1.1中的4-to1确为每个右标签恰4个左原像，允许平行约束。root实际读原PDF对应定义/定理及AppendixB的sub→exact变换，并核119页原字节；不声称完整重审其PCP证明，也不从该定理免费导入常数degree或regularity。v5本身补上所需正规化，因此可接出constant-degree、simple、balanced、固定高girth的exact4随机源；一般字母表随误差的定量增长未由此原文推出poly(g)，所以不自动得到d=O(g)。原文身份、读取范围与局限见manifest。
