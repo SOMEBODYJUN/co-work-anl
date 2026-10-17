@@ -116,3 +116,5 @@
 本轮研究又固定了三个承重边界：核心—私有资源的全层 matching 近二族、共同 big 选择的独立集阈值障碍、以及固定工作量下二次/排序势的单任务局部极小。它们的精确证明、独立审查和 Fraction 证据已沿本题地图登记；一般统一 (2−ε) 算法仍未得到。
 
 [剪枝首步临时容量锐界](research/current/unrelated_machines/pruned_first_move_and_transient_peak.md)把暂时增载义务精确分成首步与全程：一般首步可确定性守住 U=max(2T,C+T/2)，固定批量环族逐参数达到，C接近2T时可需接近5T/2的常数临时峰。初态不声明ST来源，一步不保证改善；一般全程共同修复仍OPEN。
+
+本阶段另有三项经自足推导与小型有理核验的入口：关联图反馈边参数的 `2^b·poly(L)` 精确阈值算法（`research/current/unrelated_machines/incidence_cycle_rank_exact.md`）、全阶共同矩整数提取桥（`research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md`）以及重轻自洽对偶证书与 YES 固定点边界（`research/current/unrelated_machines/heavy_light_saddle_certificate_and_cycle.md`）。它们均保留准确范围，不升级为一般统一小于2算法。

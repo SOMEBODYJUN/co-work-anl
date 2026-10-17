@@ -1817,3 +1817,24 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：C=T零步到OPT与B<C不在状态图的原措辞已在首版冻结前修正；一步可超过2T，不能无证明迭代。公开结构能直接求τ，未导入调度困难性。声明范围无尚成立fatal。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实际首步实现、内审、外审和新颖性分轴，UM-TARGET-v1仍OPEN。
 - Related Files：[research/current/unrelated_machines/pruned_first_move_and_transient_peak.md](../current/unrelated_machines/pruned_first_move_and_transient_peak.md)、research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md；三份审计代码、evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json、examples/unrelated_machines/transient_peak_two_job_cycle.json与evidence/certificates/unrelated_machines/transient_peak_two_job_cycle.json。
+
+## UM-FULL-DEGREE-MOMENT-DECODING-v1：全阶共同矩与负载局部化器的整数提取
+
+- Exact Statement / Quantifiers：对任意合法二进制有理 `P`、`T≥0`，若给定次数至多 `2n+1` 的 Boolean/one-hot 泛函 `L`，满足次数 `n` 平方正性与每台机器次数 `n` 负载 localizer 正性，则存在真实 `T`-可行整数调度。
+- Scope / Conclusion：`m_σ` 原子权重非负且总和1，超载原子权重为0；证书和原子族可指数大，不是位多项式算法或一般输入证书生成器。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; novelty/external review unverified；`UM-TARGET-v1`仍OPEN。
+- Related Files：`research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md`、`research/reviews/unrelated_machines/full_degree_moment_localizer_review.md`、`tests/audits/unrelated_machines/full_degree_moment_and_saddle.py`。
+
+## UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1：重轻角色的自洽对偶证书与YES固定点边界
+
+- Exact Statement / Quantifiers：固定 `T,β` 与 admissible heavy placement `H`。若 `λ*` 是残余 LP 的最优归一化对偶，且 `H` 全局最小化 `g(·,λ*)`，则 `H` 全局最小化所有 admissible placement 的残余 makespan；若 `R(H)≤T`，有序槽舍入输出 `(1+β)T`。
+- Counterevidence / Objections：对任意 `β∈[1/2,1)` 存在 `OPT≤T` 的两机参数族，无 placement 满足该纯 saddle 条件；因此最佳响应循环不能当作一般选择器。
+- Status：complete stated-scope conditional proof plus exact obstruction; independently attacked and audited; not a general hardness result；`UM-TARGET-v1`仍OPEN。
+- Related Files：`research/current/unrelated_machines/heavy_light_saddle_certificate_and_cycle.md`、`research/reviews/unrelated_machines/heavy_light_saddle_certificate_review.md`、`tests/audits/unrelated_machines/full_degree_moment_and_saddle.py`。
+
+## UM-INCIDENCE-FEEDBACK-EXACT-v1：机器—任务关联反馈边参数的精确阈值算法
+
+- Exact Statement / Quantifiers：对任意合法 `P,T`，令有限关联图反馈边数 `b=|E|-|V|+c`。反馈边子集枚举、固定任务、删除未选反馈边后，剩余森林由叶交换精确求解；总时间 `2^b·poly(L)`，失败可靠蕴含 `OPT>T`。`b≤1` 时为总位多项式精确算法，任务支持度不受限。
+- Scope / Conclusion：这是实际调度输出的 FPT 结构结果；一般 `b` 无界时不解决主目标，也不提供困难性。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; novelty/external review unverified；`UM-TARGET-v1`仍OPEN。
+- Related Files：`research/current/unrelated_machines/incidence_cycle_rank_exact.md`、`research/reviews/unrelated_machines/incidence_cycle_rank_review.md`、`tests/audits/unrelated_machines/incidence_cycle_rank_exact.py`。

@@ -58,7 +58,7 @@
 | [ST1993的原文版本与精确出处](<../history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf>) | `history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-BATCH-SUPPORT-REPAIR-NO-v1`、`UM-BOUNDED-PROFILE-EXIT-POOL-v1`、`UM-BUNDLE-MOMENT-v1`，[命题合同（共 71 项）](assets.json) |
 | [EKS2008_2014的原文版本与精确出处](<../history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.pdf>) | `history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [图平衡作者稿的原始PostScript来源](<../history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.ps>) | `history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.ps` | 保存作者站点原始PS字节，与派生PDF分别记录哈希；还原来源或重新转换时读取。 | 来源或历史判断；不作为现行结论 |
-| [VW2014的原文版本与精确出处](<../history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf>) | `history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-BIG-CARDINALITY-PROBE-v1`、`UM-BUNDLE-MOMENT-v1`、`UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1`，[命题合同（共 35 项）](assets.json) |
+| [VW2014的原文版本与精确出处](<../history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf>) | `history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-BIG-CARDINALITY-PROBE-v1`、`UM-BUNDLE-MOMENT-v1`、`UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1`，[命题合同（共 37 项）](assets.json) |
 | [Svensson2011的原文版本与精确出处](<../history/source/literature/unrelated_machines/svensson_2011_santa_claus_schedules_v2.pdf>) | `history/source/literature/unrelated_machines/svensson_2011_santa_claus_schedules_v2.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [JR2016的原文版本与精确出处](<../history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf>) | `history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [JR2019的原文版本与精确出处](<../history/source/literature/unrelated_machines/jansen_rohwedder_2019_quasi_polynomial_v2.pdf>) | `history/source/literature/unrelated_machines/jansen_rohwedder_2019_quasi_polynomial_v2.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
@@ -186,7 +186,7 @@
 | [森林批量近似消元的独立重构与冻结审查](<reviews/unrelated_machines/forest_boundary_contraction_review.md>) | `research/reviews/unrelated_machines/forest_boundary_contraction_review.md` | 核根负载一侧支配、零/大分母、深度与嵌套恢复，分开实现合同和一般证明。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-FOREST-BOUNDARY-AUGMENT-v1`、`UM-FOREST-TWO-BOUNDARY-MENU-v1`，[命题合同](assets.json) |
 | [私有汇点二乘四族的完整有标号输入](<../examples/unrelated_machines/private_sink_k2_r4.json>) | `examples/unrelated_machines/private_sink_k2_r4.json` | 原始八机九任务及不可用边，连接两个固定边际Claim。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-FROZEN-MACRO-TINY-REOPT-GAP-v1`、`UM-MACRO-MIGRATION-FRONTIER-v1`、`UM-OPT-HULL-PAIR-NC-GAP-v1`，[命题合同（共 4 项）](assets.json) |
 | [私有汇点最优凸组合与负相关尖锐证书](<../evidence/certificates/unrelated_machines/private_sink_opt_hull_and_nc_k2_r4.json>) | `evidence/certificates/unrelated_machines/private_sink_opt_hull_and_nc_k2_r4.json` | 四个OPT1调度平均和完整有理联合分布，输入/证书/一般证明分开。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-FROZEN-MACRO-TINY-REOPT-GAP-v1`、`UM-MACRO-MIGRATION-FRONTIER-v1`、`UM-OPT-HULL-PAIR-NC-GAP-v1`，[命题合同（共 4 项）](assets.json) |
-| [有界结构宽度不相关机FPTAS的原始预印本](<../history/source/literature/unrelated_machines/jansen_maack_solis_oba_2017_structural_parameters_v1.pdf>) | `history/source/literature/unrelated_machines/jansen_maack_solis_oba_2017_structural_parameters_v1.pdf` | JMS2017原PDF19页；查Theorem3、Results和真实内化范围。 | 来源或历史判断；不作为现行结论；关联 `UM-DEPTH-TWO-HALF-v1`、`UM-FOREST-BOUNDARY-AUGMENT-v1`、`UM-FOREST-TWO-BOUNDARY-MENU-v1`，[命题合同（共 6 项）](assets.json) |
+| [有界结构宽度不相关机FPTAS的原始预印本](<../history/source/literature/unrelated_machines/jansen_maack_solis_oba_2017_structural_parameters_v1.pdf>) | `history/source/literature/unrelated_machines/jansen_maack_solis_oba_2017_structural_parameters_v1.pdf` | JMS2017原PDF19页；查Theorem3、Results和真实内化范围。 | 来源或历史判断；不作为现行结论；关联 `UM-DEPTH-TWO-HALF-v1`、`UM-FOREST-BOUNDARY-AUGMENT-v1`、`UM-FOREST-TWO-BOUNDARY-MENU-v1`，[命题合同（共 7 项）](assets.json) |
 | [私有汇点边际与尖锐负相关分布精确审计](<../tests/audits/unrelated_machines/private_sink_marginal_barrier.py>) | `tests/audits/unrelated_machines/private_sink_marginal_barrier.py` | 可重现有限完整枚举/分布核验；无通用调度算法或一般证明替代。 | 有限计算核验；不代替一般证明；关联 `UM-FROZEN-MACRO-TINY-REOPT-GAP-v1`、`UM-MACRO-MIGRATION-FRONTIER-v1`、`UM-OPT-HULL-PAIR-NC-GAP-v1`，[命题合同（共 4 项）](assets.json) |
 | [逐行边际包络的独立整数枚举](<../tests/audits/unrelated_machines/independent_marginal_row_oracle.py>) | `tests/audits/unrelated_machines/independent_marginal_row_oracle.py` | 可重现有限完整枚举/分布核验；无通用调度算法或一般证明替代。 | 有限计算核验；不代替一般证明；关联 `UM-FROZEN-MACRO-TINY-REOPT-GAP-v1`、`UM-MACRO-MIGRATION-FRONTIER-v1`、`UM-OPT-HULL-PAIR-NC-GAP-v1`，[命题合同（共 4 项）](assets.json) |
 | [尖锐负相关联合分布的独立概率核验](<../tests/audits/unrelated_machines/independent_marginal_pairwise_oracle.py>) | `tests/audits/unrelated_machines/independent_marginal_pairwise_oracle.py` | 可重现有限完整枚举/分布核验；无通用调度算法或一般证明替代。 | 有限计算核验；不代替一般证明；关联 `UM-FROZEN-MACRO-TINY-REOPT-GAP-v1`、`UM-MACRO-MIGRATION-FRONTIER-v1`、`UM-OPT-HULL-PAIR-NC-GAP-v1`，[命题合同（共 4 项）](assets.json) |
@@ -583,6 +583,29 @@
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
 | [允许换轨的稀疏部分投影解码接口](<questions/unrelated_machines/sparse_partial_projection_coupling_decoder_obligation.md>) | `research/questions/unrelated_machines/sparse_partial_projection_coupling_decoder_obligation.md` | 标准稀疏解码β/L、参数化锐shift族与γ≥1/R精确定位浓缩要求；调度转移仍OPEN。；配套 [完整单位树的叶流祖先舍入与多见证选择重组](<current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md>)；配套 [部分投影解码候选的独立线性加强与冻结审查](<reviews/unrelated_machines/sparse_partial_projection_decoder_candidate_review.md>) | 候选或未闭合义务；保存不升级状态；关联 `UM-UNIT-READOUT-SELECTOR-MIXING-v1`，[命题合同](assets.json) |
+
+### moment-bridges
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [全阶共同矩与负载局部化器的整数提取桥](<current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md>) | `research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md` | 读取共同矩路线从低阶证书走向真实整数调度所需的最高阶原子权义务；明确指数信息瓶颈。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-FULL-DEGREE-MOMENT-DECODING-v1`，[命题合同](assets.json) |
+| [全阶共同矩整数提取桥的独立核对](<reviews/unrelated_machines/full_degree_moment_localizer_review.md>) | `research/reviews/unrelated_machines/full_degree_moment_localizer_review.md` | 核对原子权重、局部化器筛选、T=0/空任务边界及指数信息限制。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-FULL-DEGREE-MOMENT-DECODING-v1`，[命题合同](assets.json) |
+| [全阶矩与重轻saddle的Fraction审计](<../tests/audits/unrelated_machines/full_degree_moment_and_saddle.py>) | `tests/audits/unrelated_machines/full_degree_moment_and_saddle.py` | 以小型有理实例核对原子权重、局部化器筛选、β参数化负载和对偶二循环；有限检查不替代一般证明。 | 有限计算核验；不代替一般证明；关联 `UM-FULL-DEGREE-MOMENT-DECODING-v1`、`UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1`，[命题合同](assets.json) |
+
+### joint-capacity
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [重轻角色的自洽对偶证书与YES固定点边界](<current/unrelated_machines/heavy_light_saddle_certificate_and_cycle.md>) | `research/current/unrelated_machines/heavy_light_saddle_certificate_and_cycle.md` | 核对重轻残余LP的自洽对偶充分条件、实际ST输出合同及即使OPT≤T也无纯saddle的参数化反例。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1`，[命题合同](assets.json) |
+| [重轻自洽对偶证书的独立核对](<reviews/unrelated_machines/heavy_light_saddle_certificate_review.md>) | `research/reviews/unrelated_machines/heavy_light_saddle_certificate_review.md` | 核对saddle量词、轻任务基线扣除和OPT≤T固定点反例；引用该条件证书前先读。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1`，[命题合同](assets.json) |
+
+### exact-tractable-subclasses
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [机器—任务关联反馈边参数的精确阈值算法](<current/unrelated_machines/incidence_cycle_rank_exact.md>) | `research/current/unrelated_machines/incidence_cycle_rank_exact.md` | 读取任意任务支持度下的反馈边枚举、森林叶交换和b≤1单环精确边界；用于识别可被一般桥绕开的低环秩子类。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-INCIDENCE-FEEDBACK-EXACT-v1`，[命题合同](assets.json) |
+| [机器—任务关联反馈边精确算法的独立核对](<reviews/unrelated_machines/incidence_cycle_rank_review.md>) | `research/reviews/unrelated_machines/incidence_cycle_rank_review.md` | 核对反馈边分支完备性、森林叶交换可靠性、单环边界和位复杂度范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-INCIDENCE-FEEDBACK-EXACT-v1`，[命题合同](assets.json) |
+| [反馈边精确阈值的小型Fraction审计](<../tests/audits/unrelated_machines/incidence_cycle_rank_exact.py>) | `tests/audits/unrelated_machines/incidence_cycle_rank_exact.py` | 核对任意支持度森林、四点环、零值、空任务和容量失败边界；不代替反馈边枚举的一般证明。 | 有限计算核验；不代替一般证明；关联 `UM-INCIDENCE-FEEDBACK-EXACT-v1`，[命题合同](assets.json) |
 
 <a id="weighted_congestion"></a>
 

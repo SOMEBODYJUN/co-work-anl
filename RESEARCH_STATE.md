@@ -103,3 +103,5 @@
 [配置正部阈值与严格单位五三界](research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)：完整私有单位树的CONFIG(T<2)恰由Σ(q−t)+≤floor(k(T−1))q描述；CONFIG1等价整轨LP并有完整C≤5/3输出（偶k≤3/2，k1≤1）。闭合两树精确Tconf=1+s*/k，经典gap族仍为1+1/k，故不外推为一般次二或近二困难性。 主目标及反面仍OPEN，严格1与1+1/k的阈值区别已核清。
 
 首步暂时容量已有[分段锐界](research/current/unrelated_machines/pruned_first_move_and_transient_peak.md)：T剪枝二倍初态可计算地找到≤max(2T,C+T/2)的一步，或在当前值>T且无此步时可靠拒绝T；固定批量环族达到这一首步阈值。剩余关键义务是维持全程共同容量并保证终态改善/位多项式进展；目前既无一般5T/2路径定理，也无从未知目标生成次二输出。
+
+本阶段另有三项可复用边界：关联图反馈边参数的 `2^b·poly(L)` 精确阈值算法、全阶共同矩到真实整数调度的原子提取桥，以及重轻自洽对偶证书并在 `OPT≤T` YES 实例上的纯固定点反例。它们分别关闭低环秩子类、钉死共同矩的全阶承重义务、并否定把逐价最佳响应当作一般共同选择器；`UM-TARGET-v1` 仍 OPEN。

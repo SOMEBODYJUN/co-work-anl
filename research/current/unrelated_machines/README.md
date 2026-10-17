@@ -340,3 +340,11 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 [配置正部阈值与严格单位五三界](unit_readout_configuration_threshold_polytope.md)：完整私有单位树的CONFIG(T<2)恰由Σ(q−t)+≤floor(k(T−1))q描述；CONFIG1等价整轨LP并有完整C≤5/3输出（偶k≤3/2，k1≤1）。闭合两树精确Tconf=1+s*/k，经典gap族仍为1+1/k，故不外推为一般次二或近二困难性。
 
 [剪枝调度首步与有界批量临时峰值](pruned_first_move_and_transient_peak.md)登记 UM-PRUNED-FIRST-MOVE-BOUND-v1 与 UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1：给定T剪枝σ、T≤C≤2T且另一τ≤T，某直接单件步≤U=max(2T,C+T/2)；无需τ可枚举一步或可靠NO。每固定k的m=k+1环族达到U及指定目标minimax。C=T排除零步歧义、孤立区间C≤B<U。一步可能增载，下一承重义务是一般缓冲集合/共同容量和总进展；初态不假设ST来源。正文→pruned_first_move_transient_peak_review.md→三个审计/实际输入及路径证书→pruned_first_move_transient_peak_audit.json。
+
+## 本轮新增的精确桥与可解结构
+
+[机器—任务关联反馈边参数的精确阈值算法](incidence_cycle_rank_exact.md)登记 `UM-INCIDENCE-FEEDBACK-EXACT-v1`：对有限关联图的反馈边数 `b`，枚举实际使用的反馈边后把余图化为森林，用叶交换精确输出 `T`-可行调度，复杂度 `2^b·poly(L)`；`b≤1` 时覆盖任意任务支持度的位多项式精确子类。它把一般输入的剩余难点定位到有环核心，不改变主目标 OPEN 状态。
+
+[全阶共同矩与负载局部化器的整数提取桥](full_degree_moment_localizer_decoding_bridge.md)登记 `UM-FULL-DEGREE-MOMENT-DECODING-v1`：次数 `2n+1` 的 Boolean/one-hot 共同泛函和次数 `n` 负载 localizer 必然含真实 `T`-可行原子；证书和原子族可指数大，故这是共同矩路线的完结义务而非多项式算法。
+
+[重轻角色的自洽对偶证书与YES固定点边界](heavy_light_saddle_certificate_and_cycle.md)登记 `UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1`：残余 LP 最优对偶与同价重任务最小化共同给全局角色及 `(1+β)T` ST 输出；参数化两机 YES 族表明纯 saddle 在 `OPT≤T` 时也可能不存在。逐价格 min–max 仍不能直接替代共同角色。

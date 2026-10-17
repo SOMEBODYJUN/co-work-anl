@@ -9753,6 +9753,45 @@
         "evidence/certificates/unrelated_machines/transient_peak_two_job_cycle.json"
       ],
       "status": "exact finite audits; not a universal proof"
+    },
+    {
+      "id": "UM-FULL-DEGREE-MOMENT-DECODING-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "全阶共同矩与负载局部化器的整数提取桥",
+      "detail": "次数2n+1共同矩原子权重筛出真实T调度。",
+      "refs": [
+        "research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md",
+        "research/reviews/unrelated_machines/full_degree_moment_localizer_review.md",
+        "tests/audits/unrelated_machines/full_degree_moment_and_saddle.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "重轻角色的自洽对偶证书与YES固定点边界",
+      "detail": "自洽残余对偶给条件全局角色，YES族排除纯saddle存在性。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_saddle_certificate_and_cycle.md",
+        "research/reviews/unrelated_machines/heavy_light_saddle_certificate_review.md",
+        "tests/audits/unrelated_machines/full_degree_moment_and_saddle.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-INCIDENCE-FEEDBACK-EXACT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "机器—任务关联反馈边参数的精确阈值算法",
+      "detail": "反馈边枚举后森林叶交换给出2^b poly(L)实际精确算法。",
+      "refs": [
+        "research/current/unrelated_machines/incidence_cycle_rank_exact.md",
+        "research/reviews/unrelated_machines/incidence_cycle_rank_review.md",
+        "tests/audits/unrelated_machines/incidence_cycle_rank_exact.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -24040,6 +24079,49 @@
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"
+    },
+    {
+      "id": "um_full_degree_moment_bridge_edge",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-FULL-DEGREE-MOMENT-DECODING-v1",
+      "statement": "全阶Boolean/one-hot原子分解与负载localizer给真实T调度。",
+      "refs": [
+        "research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_heavy_light_saddle_edge",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1",
+      "statement": "残余强对偶、自洽heavy最小化与ST加性损失给条件输出。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_saddle_certificate_and_cycle.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_incidence_feedback_exact_edge",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-INCIDENCE-FEEDBACK-EXACT-v1",
+      "statement": "反馈边枚举化森林，叶交换保持阈值可行性。",
+      "refs": [
+        "research/current/unrelated_machines/incidence_cycle_rank_exact.md"
+      ],
+      "status": "complete stated-scope proof"
     }
   ]
 }
