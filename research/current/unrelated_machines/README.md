@@ -345,6 +345,10 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 
 [机器—任务关联反馈边参数的精确阈值算法](incidence_cycle_rank_exact.md)登记 `UM-INCIDENCE-FEEDBACK-EXACT-v1`：对有限关联图的反馈边数 `b`，枚举实际使用的反馈边后把余图化为森林，用叶交换精确输出 `T`-可行调度，复杂度 `2^b·poly(L)`；`b≤1` 时覆盖任意任务支持度的位多项式精确子类。它把一般输入的剩余难点定位到有环核心，不改变主目标 OPEN 状态。
 
+[子线性联合投影的高围长近二边界](sublinear_coalition_projection_high_girth_gap.md)把上述长链构造按机器数对角化到任意 `r(M)=o(M)`：围长最终超过 `r(M)`，但 `OPT/T_CC_{r(M)}` 仍趋2；这是固定阶联合投影结果的量词加强，不是总位长困难性。
+
+[重轻自洽 saddle 的森林整数补全边界](heavy_light_forest_integrality_boundary.md)给 `T=1` 参数族：残余分数值恰 `T`、均匀对偶是纯自洽，关联图仍是森林，但整数 `OPT/T=1+β−β/m` 可趋2。它只否定纯分数补全合同，不能替代反馈边森林的精确 `FAIL` 语义。
+
 [全阶共同矩与负载局部化器的整数提取桥](full_degree_moment_localizer_decoding_bridge.md)登记 `UM-FULL-DEGREE-MOMENT-DECODING-v1`：次数 `2n+1` 的 Boolean/one-hot 共同泛函和次数 `n` 负载 localizer 必然含真实 `T`-可行原子；证书和原子族可指数大，故这是共同矩路线的完结义务而非多项式算法。
 
 [重轻角色的自洽对偶证书与YES固定点边界](heavy_light_saddle_certificate_and_cycle.md)登记 `UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1`：残余 LP 最优对偶与同价重任务最小化共同给全局角色及 `(1+β)T` ST 输出；参数化两机 YES 族表明纯 saddle 在 `OPT≤T` 时也可能不存在。逐价格 min–max 仍不能直接替代共同角色。

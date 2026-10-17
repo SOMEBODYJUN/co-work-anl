@@ -58,7 +58,7 @@
 | [ST1993的原文版本与精确出处](<../history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf>) | `history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-BATCH-SUPPORT-REPAIR-NO-v1`、`UM-BOUNDED-PROFILE-EXIT-POOL-v1`、`UM-BUNDLE-MOMENT-v1`，[命题合同（共 71 项）](assets.json) |
 | [EKS2008_2014的原文版本与精确出处](<../history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.pdf>) | `history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [图平衡作者稿的原始PostScript来源](<../history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.ps>) | `history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.ps` | 保存作者站点原始PS字节，与派生PDF分别记录哈希；还原来源或重新转换时读取。 | 来源或历史判断；不作为现行结论 |
-| [VW2014的原文版本与精确出处](<../history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf>) | `history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-BIG-CARDINALITY-PROBE-v1`、`UM-BUNDLE-MOMENT-v1`、`UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1`，[命题合同（共 37 项）](assets.json) |
+| [VW2014的原文版本与精确出处](<../history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf>) | `history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-BIG-CARDINALITY-PROBE-v1`、`UM-BUNDLE-MOMENT-v1`、`UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1`，[命题合同（共 39 项）](assets.json) |
 | [Svensson2011的原文版本与精确出处](<../history/source/literature/unrelated_machines/svensson_2011_santa_claus_schedules_v2.pdf>) | `history/source/literature/unrelated_machines/svensson_2011_santa_claus_schedules_v2.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [JR2016的原文版本与精确出处](<../history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf>) | `history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [JR2019的原文版本与精确出处](<../history/source/literature/unrelated_machines/jansen_rohwedder_2019_quasi_polynomial_v2.pdf>) | `history/source/literature/unrelated_machines/jansen_rohwedder_2019_quasi_polynomial_v2.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
@@ -606,6 +606,22 @@
 | [机器—任务关联反馈边参数的精确阈值算法](<current/unrelated_machines/incidence_cycle_rank_exact.md>) | `research/current/unrelated_machines/incidence_cycle_rank_exact.md` | 读取任意任务支持度下的反馈边枚举、森林叶交换和b≤1单环精确边界；用于识别可被一般桥绕开的低环秩子类。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-INCIDENCE-FEEDBACK-EXACT-v1`，[命题合同](assets.json) |
 | [机器—任务关联反馈边精确算法的独立核对](<reviews/unrelated_machines/incidence_cycle_rank_review.md>) | `research/reviews/unrelated_machines/incidence_cycle_rank_review.md` | 核对反馈边分支完备性、森林叶交换可靠性、单环边界和位复杂度范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-INCIDENCE-FEEDBACK-EXACT-v1`，[命题合同](assets.json) |
 | [反馈边精确阈值的小型Fraction审计](<../tests/audits/unrelated_machines/incidence_cycle_rank_exact.py>) | `tests/audits/unrelated_machines/incidence_cycle_rank_exact.py` | 核对任意支持度森林、四点环、零值、空任务和容量失败边界；不代替反馈边枚举的一般证明。 | 有限计算核验；不代替一般证明；关联 `UM-INCIDENCE-FEEDBACK-EXACT-v1`，[命题合同](assets.json) |
+
+### coalition-projection-boundaries
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [子线性联合投影的高围长近二边界](<current/unrelated_machines/sublinear_coalition_projection_high_girth_gap.md>) | `research/current/unrelated_machines/sublinear_coalition_projection_high_girth_gap.md` | 读取固定联合投影阶对角化到任意机器数子线性阶的精确量词、机器数计数与非位长范围。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-SUBLINEAR-CC-PROJECTION-GAP-v1`，[命题合同](assets.json) |
+| [子线性联合投影间隙的计数审计](<../tests/audits/unrelated_machines/sublinear_coalition_projection_gap.py>) | `tests/audits/unrelated_machines/sublinear_coalition_projection_gap.py` | 用整数和Fraction核对长链机器数、任务数、比例恒等式及示例子线性阶的围长窗口。 | 有限计算核验；不代替一般证明；关联 `UM-SUBLINEAR-CC-PROJECTION-GAP-v1`，[命题合同](assets.json) |
+| [子线性联合投影高围长间隙的独立审查](<reviews/unrelated_machines/sublinear_coalition_projection_review.md>) | `research/reviews/unrelated_machines/sublinear_coalition_projection_review.md` | 记录量词对角化、机器数尺度、围长与比值证明的statement-first重构和范围攻击。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-SUBLINEAR-CC-PROJECTION-GAP-v1`，[命题合同](assets.json) |
+
+### joint-capacity-boundaries
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [重轻自洽saddle的森林整数补全边界](<current/unrelated_machines/heavy_light_forest_integrality_boundary.md>) | `research/current/unrelated_machines/heavy_light_forest_integrality_boundary.md` | 读取残余分数LP与纯saddle即使在森林上仍可趋二整数失败的参数族和接口缺口。 | 方法障碍；否定范围以正文为准；关联 `UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1`，[命题合同](assets.json) |
+| [森林残余整数边界的Fraction审计](<../tests/audits/unrelated_machines/heavy_light_forest_integrality_boundary.py>) | `tests/audits/unrelated_machines/heavy_light_forest_integrality_boundary.py` | 用精确有理算术核对saddle分数负载、对偶值、整数负载、反馈秩及趋二参数族。 | 有限计算核验；不代替一般证明；关联 `UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1`，[命题合同](assets.json) |
+| [重轻自洽saddle森林整数边界的独立审查](<reviews/unrelated_machines/heavy_light_forest_integrality_boundary_review.md>) | `research/reviews/unrelated_machines/heavy_light_forest_integrality_boundary_review.md` | 记录参数族分数saddle、趋二整数缺口、最小例对偶函数和森林反馈秩的盲审。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1`，[命题合同](assets.json) |
 
 <a id="weighted_congestion"></a>
 

@@ -25,6 +25,8 @@
 
 [机器价格的精确凸化](research/current/unrelated_machines/heavy_light_price_convexification.md)已核清一条一般接口：全部标量机器价格仍只给带big基数的LST松弛，剪枝后joint gap仍sup2；最优价格共同big面提供可检验成功证书，但无全输入保证。原候选的剪枝/参数语义已修正，下一义务仍是非可加共同容量或实际联合舍入。
 
+[子线性联合投影间隙](research/current/unrelated_machines/sublinear_coalition_projection_high_girth_gap.md)把高围长 `CC_r` 障碍加强到任意机器数子线性阶 `r(M)=o(M)`（仅机器数尺度）；[森林残余整数边界](research/current/unrelated_machines/heavy_light_forest_integrality_boundary.md)则显示重轻纯 saddle 与 `R(H)=T` 即使在森林上也可能有趋二整数缺口。两者都只是方法边界，需与共同容量和实际整数输出义务分开读取。
+
 [一般残余容量结构](research/current/unrelated_machines/residual_throughput_and_occupation_projection.md)进一步给出固定R的容量格次模与精确占位缺口D(I)=诱导边数。任务角色随大边选择变化时，联合目标不继承该性质；这明确了下一共同选择义务，不是一般近似或困难性突破。
 
 本阶段新增[固定工作量与中任务配置分解边界](research/questions/unrelated_machines/fixed_work_and_medium_config_barriers.md)：固定配置加 tiny 槽损失、固定总工作量和固定非减凸势的近二失败范围均已精确记录；它们只收窄方法路线，不改变 UM-TARGET-v1 的 OPEN 状态。

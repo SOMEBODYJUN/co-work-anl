@@ -1838,3 +1838,19 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Scope / Conclusion：这是实际调度输出的 FPT 结构结果；一般 `b` 无界时不解决主目标，也不提供困难性。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; novelty/external review unverified；`UM-TARGET-v1`仍OPEN。
 - Related Files：`research/current/unrelated_machines/incidence_cycle_rank_exact.md`、`research/reviews/unrelated_machines/incidence_cycle_rank_review.md`、`tests/audits/unrelated_machines/incidence_cycle_rank_exact.py`。
+
+## UM-SUBLINEAR-CC-PROJECTION-GAP-v1：子线性联合投影的高围长近二边界
+
+- Exact Statement：对任意 `r(s)=o(s)`（`s` 为机器数）及任意 `epsilon>0`，存在每任务恰两端、机器图简单且围长严格大于 `r(M)` 的实例 `P`，满足 `OPT(P)/T_CC_{r(M)}(P)>2-epsilon`。`CC_q` 采用长链正文的共同完整单机配置边际定义。
+- Dependencies：`UM-LONG-PATH-GAP-v1` 的森林耦合、整数收缩和配置证书；机器数 `M_{k,ell}=A_k+B_k ell`，围长为 `2ell`。
+- Scope / Limits：大小参数是机器数（或本族同阶关联边数），不是总二进制输入位长；这是固定 `r` 结果的对角量词加强，不是一般近二困难性。
+- Status：自足 stated-scope proof；独立盲审待完成；外部优先权和新颖性未认证；`UM-TARGET-v1` 仍 OPEN。
+- Related files：`research/current/unrelated_machines/sublinear_coalition_projection_high_girth_gap.md`、`tests/audits/unrelated_machines/sublinear_coalition_projection_gap.py`。
+
+## UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1：重轻自洽 saddle 的森林整数补全边界
+
+- Exact Statement：在 `T=1` 参数族中，中心任务在每台机器成本 `beta`、每机私有任务成本 `a=1-beta/m`；残余 LP 有 `R(H)=1` 及均匀价格的纯自洽 saddle，但任何整数分配的最大负载为 `a+beta=1+beta-beta/m`，可趋近 `2`。`T=3,beta=2/3,m=2` 是时间同时乘 `9/2` 的最小审计特例，且关联图为树、反馈秩为 `0`。
+- Dependencies：`UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1` 的残余对偶定义与 `UM-INCIDENCE-FEEDBACK-EXACT-v1` 的森林叶消元。
+- Boundary：反例只否定“森林残余 + `R(H)≤T` 自动给整数补全”；森林阈值问题仍可由叶消元精确判定，不能升级为一般困难性。
+- Status：自足 exact method boundary；独立盲审待完成；外部优先权未核查；`UM-TARGET-v1` 仍 OPEN。
+- Related files：`research/current/unrelated_machines/heavy_light_forest_integrality_boundary.md`、`tests/audits/unrelated_machines/heavy_light_forest_integrality_boundary.py`。

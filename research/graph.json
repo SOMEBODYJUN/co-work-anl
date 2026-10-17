@@ -9792,6 +9792,56 @@
         "tests/audits/unrelated_machines/incidence_cycle_rank_exact.py"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-SUBLINEAR-CC-PROJECTION-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "子线性联合投影的高围长近二边界",
+      "detail": "对任意机器数子线性r(M)=o(M)，高围长长链仍有OPT/T_CC_{r(M)}趋2；固定r结果的对角量词加强，非位长结论。",
+      "refs": [
+        "research/current/unrelated_machines/sublinear_coalition_projection_high_girth_gap.md",
+        "tests/audits/unrelated_machines/sublinear_coalition_projection_gap.py",
+        "research/reviews/unrelated_machines/sublinear_coalition_projection_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and blind-reviewed; exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "重轻自洽saddle的森林整数补全边界",
+      "detail": "残余森林与纯saddle、R(H)=T仍可有趋二整数OPT；暴露分数角色到整数容量的接口缺口。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_forest_integrality_boundary.md",
+        "tests/audits/unrelated_machines/heavy_light_forest_integrality_boundary.py",
+        "research/reviews/unrelated_machines/heavy_light_forest_integrality_boundary_review.md"
+      ],
+      "status": "complete stated-scope method boundary; independently reconstructed and blind-reviewed; exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-SUBLINEAR-CC-PROJECTION-GAP-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "子线性联合投影边界有限核验",
+      "detail": "机器数/任务数计数、比例恒等式和示例子线性阶窗口的有限整数核验。",
+      "refs": [
+        "research/current/unrelated_machines/sublinear_coalition_projection_high_girth_gap.md",
+        "tests/audits/unrelated_machines/sublinear_coalition_projection_gap.py"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "UM-HEAVY-LIGHT-FOREST-INTEGRALITY-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "森林残余整数边界有限核验",
+      "detail": "T=3最小例、均匀对偶、整数枚举、反馈秩和趋二参数族的Fraction核验。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_forest_integrality_boundary.md",
+        "tests/audits/unrelated_machines/heavy_light_forest_integrality_boundary.py"
+      ],
+      "status": "finite exact checks"
     }
   ],
   "hyperedges": [
@@ -24122,6 +24172,100 @@
         "research/current/unrelated_machines/incidence_cycle_rank_exact.md"
       ],
       "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-SUBLINEAR-CC-PROJECTION-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-LONG-PATH-GAP-v1",
+        "UM-COALITION-PROJECTION-GAP-v1"
+      ],
+      "conclusion": "UM-SUBLINEAR-CC-PROJECTION-GAP-v1",
+      "statement": "固定r的长链森林耦合按机器数M对角化到任意r(M)=o(M)，比值仍至少2−3/(k+1)。",
+      "refs": [
+        "research/current/unrelated_machines/sublinear_coalition_projection_high_girth_gap.md",
+        "research/reviews/unrelated_machines/sublinear_coalition_projection_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-SUBLINEAR-CC-PROJECTION-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SUBLINEAR-CC-PROJECTION-GAP-AUDIT-v1"
+      ],
+      "conclusion": "UM-SUBLINEAR-CC-PROJECTION-GAP-v1",
+      "statement": "有限代码只核计数/比例/示例窗口；一般结论来自正文极限证明。",
+      "refs": [
+        "research/current/unrelated_machines/sublinear_coalition_projection_high_girth_gap.md",
+        "tests/audits/unrelated_machines/sublinear_coalition_projection_gap.py"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "D-UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1",
+        "UM-INCIDENCE-FEEDBACK-EXACT-v1"
+      ],
+      "conclusion": "UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1",
+      "statement": "残余森林、纯saddle与R(H)=T不推出整数T补全；参数族整数比值可趋2。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_forest_integrality_boundary.md",
+        "research/reviews/unrelated_machines/heavy_light_forest_integrality_boundary_review.md"
+      ],
+      "status": "complete stated-scope method boundary"
+    },
+    {
+      "id": "C-UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HEAVY-LIGHT-FOREST-INTEGRALITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1",
+      "statement": "Fraction审计核对最小例、参数族、反馈秩和整数负载；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_forest_integrality_boundary.md",
+        "tests/audits/unrelated_machines/heavy_light_forest_integrality_boundary.py"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-SUBLINEAR-CC-PROJECTION-GAP-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SUBLINEAR-CC-PROJECTION-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅子线性机器集合联合投影仍不足；全交叠一致性、联合整数输出与位长桥仍开放。",
+      "refs": [
+        "research/current/unrelated_machines/sublinear_coalition_projection_high_girth_gap.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "L-UM-HEAVY-LIGHT-FOREST-INTEGRALITY-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "分数残余/纯saddle不能替代整数容量证书；仍可用配置、反馈边或其它全局联合信息逃逸。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_forest_integrality_boundary.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
     }
   ]
 }

@@ -105,3 +105,5 @@
 首步暂时容量已有[分段锐界](research/current/unrelated_machines/pruned_first_move_and_transient_peak.md)：T剪枝二倍初态可计算地找到≤max(2T,C+T/2)的一步，或在当前值>T且无此步时可靠拒绝T；固定批量环族达到这一首步阈值。剩余关键义务是维持全程共同容量并保证终态改善/位多项式进展；目前既无一般5T/2路径定理，也无从未知目标生成次二输出。
 
 本阶段另有三项可复用边界：关联图反馈边参数的 `2^b·poly(L)` 精确阈值算法、全阶共同矩到真实整数调度的原子提取桥，以及重轻自洽对偶证书并在 `OPT≤T` YES 实例上的纯固定点反例。它们分别关闭低环秩子类、钉死共同矩的全阶承重义务、并否定把逐价最佳响应当作一般共同选择器；`UM-TARGET-v1` 仍 OPEN。
+
+本轮新增两条精确边界：`UM-SUBLINEAR-CC-PROJECTION-GAP-v1` 将长链高围长障碍对角化到任意机器数子线性阶 `r(M)=o(M)`，但明确不宣称总编码位长结论或一般困难性；`UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1` 给出重轻纯 saddle、森林残余与 `R(H)=T` 仍可产生趋二整数缺口的参数族。后者把“分数角色选择”和“整数容量补全”分成独立承重义务：反馈边森林算法可以可靠 `FAIL`，残余 LP 数值不能替代它。两条均有 Fraction/计数审计，`UM-TARGET-v1` 仍 OPEN。
