@@ -859,6 +859,16 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-WEIGHTED-GROUP-JOINT-SLOT-v1 | ∀显式不交H∪Z、宏B及唯一home私有组J_h，共同E_h且私有等端时间w_j≥0；∀有理T≥0,0≤δ<1/2，全部有限宏端>T/2，W_h≤T,w_j≤δT。确定性总位poly返回FAIL或完整σ，home≤(3/2+δ)T、sink≤3T/2；OPT≤T必成功。无组正下界、sink数不固定。 | [完整正文](unrelated_machines/weighted_group_joint_slot_rounding.md)§1–5、[独立审查](../reviews/unrelated_machines/weighted_group_joint_slot_review.md)；给定精确流见证的舍入已实现，通用LP后端未实现；外审/新颖性未认证，主目标OPEN。 |
 | UM-WEIGHTED-GROUP-PROMISE-APPROX-v1 | ∀同结构和0≤δ<1/2，不给OPT；promise在OPT处宏端>OPT/2、W_h≤OPT,w_j≤δOPT。确定性总位poly输出完整σ且Cmax≤(3/2+δ)OPT，含OPT0、δ0。固定δ有本类统一ε=1/2−δ。 | [完整正文](unrelated_machines/weighted_group_joint_slot_rounding.md)§6；Q-grid单调LP搜索。未实现未知OPT端到端软件；不提供一般分组、promise识别或一般UM改善。 |
 
+
+| UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1 | `|B|=|H|`、宏仅home且每个home的有限宏边同一 `P_h>T/2`；私有任务任意逐件资格、每条有限私有边≤δT。固定宏完美匹配后 LST/ST 给所有机器≤(1+δ)T，OPT≤T时LP必可行。 | [同质大宏任意私有边 ST 候选](../questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md)；标准机制结构重构，候选审查未冻结。 |
+| UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1 | 同结构未知 `OPT`，承诺每个home `P_h>OPT/2`、私有边≤δOPT；有理网格单调LP候选输出≤(1+δ̄)OPT（固定δ̄<1）。 | [同质大宏任意私有边 ST 候选](../questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md)§2；承诺算法候选，主目标OPEN。 |
+| UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1 | 全局同量子 `u`、恰 `|H|` 个全home可用home固定宏时长 `p>T/2`、逐私有任务资格 `E_j` 任意；带下界整数流可行当且仅当 `T` 可行，输出精确 `Cmax≤T` 调度。 | [任意资格等量子流候选](../questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md)；候选证明及3000个小实例穷举，正式审查/新颖性未认证。 |
+| UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1 | 同结构未知 `OPT`，承诺 `OPT<2p`；在 `{p+ku}∪{ku}` 断点上单调测试下界流，候选精确求 `OPT` 并输出实际调度。 | [任意资格等量子流候选](../questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md)；断点/边界待冻结核验，主目标OPEN。 |
+| UM-RATIO-GROUP-JOINT-SLOT-v1 | 唯一home共同资格组内 `p_zj=ρ_hz w_j`，给定T、W_h≤T、w_j≤δT、宏端>T/2；候选联合槽输出 home≤(3/2+δ)T、sink≤(1+ρ_max/2)T，ρ_max<2。 | [比例组联合槽候选](../questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md)；候选证明草稿，内部两路攻击无fatal报告，正式审查/新颖性未认证；主目标OPEN。 |
+| UM-RATIO-GROUP-PROMISE-APPROX-v1 | 同一比例组结构，OPT处承诺阈值，固定 δ̄<1/2、ρ̄<2 时候选 `Cmax≤max(3/2+δ̄,1+ρ̄/2)OPT`；比例分组不是一般输入免费结构。 | [比例组联合槽候选](../questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md)§1、§5；候选状态，未替代UM-TARGET-v1。 |
+
+| UM-C2-PREFIX-CONDITIONING-DEGREE-v1 | 同一7任务/3机器矩阵的偶奇五位真实OPT=T=2分布，全部≤4阶one-hot C₂数据相同；深度4前缀F下任务5的B条件负载分别0/1，差异需5阶矩。 | [四阶C₂与深层真前缀容量边界](unrelated_machines/c2_prefix_conditioning_degree_boundary.md)；完整限定范围证明及32态精确枚举；是 limits，不是一般困难性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

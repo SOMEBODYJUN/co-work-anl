@@ -8451,6 +8451,89 @@
         "research/reviews/unrelated_machines/weighted_group_joint_slot_review.md"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-RATIO-GROUP-JOINT-SLOT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "组—汇点比例处理时间的联合槽候选",
+      "detail": "唯一home共同资格组中 p_zj=ρ_hz w_j；给定T时 home≤(3/2+δ)T、sink≤(1+ρ_max/2)T 的结构候选。",
+      "refs": [
+        "research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified"
+    },
+    {
+      "id": "UM-RATIO-GROUP-PROMISE-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "组—汇点比例结构的未知OPT候选",
+      "detail": "同一比例组结构在 OPT 承诺下给出 max(3/2+δ̄,1+ρ̄/2)OPT；固定边界余量才统一低于2。",
+      "refs": [
+        "research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified"
+    },
+    {
+      "id": "UM-C2-PREFIX-CONDITIONING-DEGREE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "四阶 C₂ 与深层真前缀容量的锐利信息边界",
+      "detail": "同一6任务/2机器矩阵的偶奇五位真实T=1可行分布全部≤4阶矩相同，但深度四前缀的下一步容量相反，需五阶矩。",
+      "refs": [
+        "research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md"
+      ],
+      "status": "complete stated-scope proof; internally exactly enumerated; external review and novelty unverified"
+    },
+    {
+      "id": "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意逐件资格的等量子下界流候选",
+      "detail": "全占用home固定宏时长、全局等量子私有任务、任意逐件出口资格下，带下界整数流精确等价于T可行调度。",
+      "refs": [
+        "research/questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified"
+    },
+    {
+      "id": "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "等量子任意资格的未知OPT精确搜索候选",
+      "detail": "同结构并承诺OPT<2p时，显式floor断点上的单调下界流候选精确恢复OPT。",
+      "refs": [
+        "research/questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified"
+    },
+    {
+      "id": "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "同质大宏占位下任意逐件资格的 ST 候选",
+      "detail": "宏数等于home、宏同质且大于半阈值时，固定完美匹配后任意私有小边由LST/ST给1+δ候选。",
+      "refs": [
+        "research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified"
+    },
+    {
+      "id": "UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "home固定宏时长承诺下任意私有边的未知OPT候选",
+      "detail": "同结构承诺p>OPT/2和私有边≤δOPT时，单调网格LP候选输出≤(1+δ̄)OPT。",
+      "refs": [
+        "research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -20471,6 +20554,220 @@
       "statement": "唯一home/给定分组、同组共同接收资格、私有任务等端体积、macro全部端大于半阈值、尺寸δ<1/2仍承重；不是一般UM算法。LP和未知OPT是完整数学算法，软件仅实现给定精确LP见证后的验证/舍入，未实现通用有理LP后端或端到端未知OPT。",
       "refs": [
         "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-RATIO-GROUP-JOINT-SLOT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-WEIGHTED-GROUP-JOINT-SLOT-v1"
+      ],
+      "conclusion": "UM-RATIO-GROUP-JOINT-SLOT-v1",
+      "statement": "比例组候选保留原唯一home/共同资格结构，将等端时间替换为每组—汇点恒定比例并按真实比例成本造槽；这是候选扩展而非一般UM算法。",
+      "refs": [
+        "research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate derivation"
+    },
+    {
+      "id": "D-UM-RATIO-GROUP-PROMISE-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-RATIO-GROUP-JOINT-SLOT-v1",
+        "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1"
+      ],
+      "conclusion": "UM-RATIO-GROUP-PROMISE-APPROX-v1",
+      "statement": "比例成本LP的单调阈值网格把给定T候选提升为未知OPT承诺候选；仅在固定δ̄<1/2、ρ̄<2时有统一余量。",
+      "refs": [
+        "research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate derivation"
+    },
+    {
+      "id": "L-UM-RATIO-GROUP-JOINT-SLOT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RATIO-GROUP-JOINT-SLOT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "唯一home、共同资格、宏大边和精确组—汇点比例仍是额外结构；分组生成与一般矩阵转换未解决，不能替代主目标。",
+      "refs": [
+        "research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "L-UM-RATIO-GROUP-PROMISE-APPROX-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RATIO-GROUP-PROMISE-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "承诺结构不是一般输入合同；边界参数逼近时统一ε消失，候选不关闭UM-TARGET-v1。",
+      "refs": [
+        "research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-C2-PREFIX-CONDITIONING-DEGREE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-C2-PREFIX-CONDITIONING-DEGREE-v1",
+      "statement": "one-hot矩定义与偶奇parity枚举给出四阶数据对深层真前缀容量的不确定性；这是表示边界而非一般困难性。",
+      "refs": [
+        "research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "L-UM-C2-PREFIX-CONDITIONING-DEGREE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-C2-PREFIX-CONDITIONING-DEGREE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅四阶C₂不能自动反复条件化到深度4；高阶oracle或重新生成证书仍未解决一般UM。",
+      "refs": [
+        "research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
+      "statement": "全占用home固定宏时长固定每个home的宏占位，等量子把私有任务容量转成整数件数，逐件资格由带下界流联合恢复；这是受限结构候选。",
+      "refs": [
+        "research/questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate derivation"
+    },
+    {
+      "id": "D-UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1"
+      ],
+      "conclusion": "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1",
+      "statement": "宏同质且OPT<2p时，floor断点只有多项式多个，单调下界流可候选精确搜索未知OPT。",
+      "refs": [
+        "research/questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate derivation"
+    },
+    {
+      "id": "L-UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "全局等量子、全占用home固定宏时长和唯一home仍是额外结构；放宽量子或占位会回到加权联合舍入缺口。",
+      "refs": [
+        "research/questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "L-UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "OPT<2p为结构承诺，不是一般输入识别算法；候选不关闭UM-TARGET-v1。",
+      "refs": [
+        "research/questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1",
+      "statement": "宏同质且|B|=|H|使home残余容量与宏匹配无关；标准LST/ST在私有资格边上给结构候选。",
+      "refs": [
+        "research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate derivation"
+    },
+    {
+      "id": "D-UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1"
+      ],
+      "conclusion": "UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1",
+      "statement": "home固定宏时长承诺下阈值LP单调，网格搜索结合ST加性δOPT给未知OPT候选。",
+      "refs": [
+        "research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "candidate derivation"
+    },
+    {
+      "id": "L-UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "宏同质、数量等于home且p>T/2、私有边小尺度仍是额外结构；一般输入的宏分层和冻结占位未得到。",
+      "refs": [
+        "research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "L-UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "p>OPT/2和δ≤δ̄是结构承诺，不是一般输入识别；候选不关闭主目标。",
+      "refs": [
+        "research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md",
+        "research/current/unrelated_machines/README.md"
       ],
       "status": "method boundary"
     }
