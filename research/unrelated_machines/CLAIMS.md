@@ -965,3 +965,27 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 ## 真实矩提取两条反例机制的交叉定位
 
 本组UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1给固定三机、全严格正有限时间、固定序上的重复净化失效；同行UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1的[独立正文](../current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)另给每固定r、任意顺序的线性量级族。后者有增长机器数和专用anchor，与本组范围不同；彼此不是证明前提。已实际读取其§1–7，保留全部原身份、代码与冻结证据，不重复认领其有限独立源机制。
+
+## UM-WEIGHTED-GROUP-JOINT-SLOT-v1：共同资格组的加权出口联合槽阈值舍入
+
+- Exact Statement / Quantifiers：∀显式不交H∪Z、宏B与唯一home私有组J_h；macro仅H可用且全部有限p>T/2；j∈J_h恰在{h}∪E_h可用、同组共同E_h⊆Z且全部有限端时间相同w_j≥0。∀有理T≥0、0≤δ<1/2，若W_h≤T、w_j≤δT，则确定性总位poly返回FAIL或实际完整σ，home≤(3/2+δ)T、sink≤3T/2；OPT≤T必成功。无组负载正下界、sink数不固定。
+- Objects / Domain / Definitions：一般UM的显式非负二进制有理/∞输入，机器不交H∪Z、原任务不交B及J_h；全部符号按[research/current/unrelated_machines/weighted_group_joint_slot_rounding.md](../current/unrelated_machines/weighted_group_joint_slot_rounding.md)§1–2，空任务/零值明确处理。
+- Assumptions / Scope：唯一home/给定分组、同组共同接收资格、私有任务等端体积、macro全部端大于半阈值、尺寸δ<1/2仍承重；不是一般UM算法。LP和未知OPT是完整数学算法，软件仅实现给定精确LP见证后的验证/舍入，未实现通用有理LP后端或端到端未知OPT。
+- Conclusion：具体合法完整分配，所有机器同时的负载界；阈值版为one-sided FAIL，promise版不读取OPT。
+- Dependencies：UM-MODEL-v1, UM-WEIGHTED-GROUP-MODEL-v1；标准有理LP、ST有序槽和整数增广流；自足证明§2–6。
+- Evidence：真实occupied组出口>d_h=(W_h−T/2)_+给共同加权token LP；按d_h造槽并用带home容量的一个整数流联合选择macro/home/sink；首次撤离前缀留量≤(1/2+δ)T使actual出口≤d_h。未知OPT用原时间分母乘积Q的整数网格和单调LP测试，最小接受t≤OPT。 独立statement-first重构及冻结攻击、两路Fraction实际任务核验；有限范围见阶段记录，不替代一般证明。
+- Counterevidence / Objections：无尚成立fatal；去掉共同资格/等端体积/home角色不交会破当前证明，未主张相应一般模型不可能。全球新颖性、外审及独立论文价值未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。
+- Related Files：research/current/unrelated_machines/weighted_group_joint_slot_rounding.md；research/reviews/unrelated_machines/weighted_group_joint_slot_review.md；tests/audits/unrelated_machines/weighted_group_joint_slot.py, tests/audits/unrelated_machines/weighted_group_slot_independent.py；evidence/runs/unrelated_machines/weighted_group_joint_slot_audit.json；examples/unrelated_machines/weighted_group_joint_slot_cases.json；evidence/certificates/unrelated_machines/weighted_group_joint_slot_witness.json。
+
+## UM-WEIGHTED-GROUP-PROMISE-APPROX-v1：未知最优值下加权共同组的实际近似
+
+- Exact Statement / Quantifiers：∀同样显式结构及有理0≤δ<1/2，不给T；promise在OPT处全部有限macro p>OPT/2、W_h≤OPT、w_j≤δOPT。确定性总位poly输出全部实际任务分配且Cmax≤(3/2+δ)OPT，含OPT0及δ0。固定δ有本类统一ε=1/2−δ；不提供一般分组或识别promise。
+- Objects / Domain / Definitions：一般UM的显式非负二进制有理/∞输入，机器不交H∪Z、原任务不交B及J_h；全部符号按[research/current/unrelated_machines/weighted_group_joint_slot_rounding.md](../current/unrelated_machines/weighted_group_joint_slot_rounding.md)§1–2，空任务/零值明确处理。
+- Assumptions / Scope：唯一home/给定分组、同组共同接收资格、私有任务等端体积、macro全部端大于半阈值、尺寸δ<1/2仍承重；不是一般UM算法。LP和未知OPT是完整数学算法，软件仅实现给定精确LP见证后的验证/舍入，未实现通用有理LP后端或端到端未知OPT。
+- Conclusion：具体合法完整分配，所有机器同时的负载界；阈值版为one-sided FAIL，promise版不读取OPT。
+- Dependencies：UM-MODEL-v1, UM-WEIGHTED-GROUP-PROMISE-MODEL-v1, UM-WEIGHTED-GROUP-JOINT-SLOT-v1；标准有理LP、ST有序槽和整数增广流；自足证明§2–6。
+- Evidence：真实occupied组出口>d_h=(W_h−T/2)_+给共同加权token LP；按d_h造槽并用带home容量的一个整数流联合选择macro/home/sink；首次撤离前缀留量≤(1/2+δ)T使actual出口≤d_h。未知OPT用原时间分母乘积Q的整数网格和单调LP测试，最小接受t≤OPT。 独立statement-first重构及冻结攻击、两路Fraction实际任务核验；有限范围见阶段记录，不替代一般证明。
+- Counterevidence / Objections：无尚成立fatal；去掉共同资格/等端体积/home角色不交会破当前证明，未主张相应一般模型不可能。全球新颖性、外审及独立论文价值未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。
+- Related Files：research/current/unrelated_machines/weighted_group_joint_slot_rounding.md；research/reviews/unrelated_machines/weighted_group_joint_slot_review.md；tests/audits/unrelated_machines/weighted_group_joint_slot.py, tests/audits/unrelated_machines/weighted_group_slot_independent.py；evidence/runs/unrelated_machines/weighted_group_joint_slot_audit.json；examples/unrelated_machines/weighted_group_joint_slot_cases.json；evidence/certificates/unrelated_machines/weighted_group_joint_slot_witness.json。

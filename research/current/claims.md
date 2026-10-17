@@ -852,6 +852,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1 | ∀整数k≥2，存在三机全正有限有理矩阵P、有限正有理真实最优调度分布μ及固定任务序，T=OPT=1，V=span{1,x_ij}上的真实压缩A_ij=ΠM_xij|V，从ψ=1按max||A_ijψ||²选边后左乘的规则全部严格选择，实际Cmax>k−1/2。 | 任意给定真实最优分布/固定顺序的该规则无统一有限近似比。未要求全边际正；不排选择好μ、自适应调序、重新耦合、其他更新或UM-TARGET-v1。副本数仅有效有限，未给poly(k)反例大小。 [正文](unrelated_machines/projected_vector_greedy_unbounded.md)、[审查](../reviews/unrelated_machines/projected_vector_greedy_review.md)。内审及精确审计，未外审/未认证新颖性。 |
 | UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1 | 存在五机五任务全时间1及14个真实OPT1排列的均匀分布，dimV=12；固定顺序1..5的同一压缩向量规则全严格输出(1,2,3,4,2)，Cmax=2；全部120序按最小机器破平局恰118个输出1、2个输出2。 | 只限给定显式分布/固定规则。成功调序存在，不称所有调序坏，不称全局最坏比恰2，不含主目标困难性。 [正文](unrelated_machines/projected_vector_greedy_unbounded.md)、[审查](../reviews/unrelated_machines/projected_vector_greedy_review.md)。内审及精确审计，未外审/未认证新颖性。 |
 
+## 加权共同资格私有组的联合槽接口
+
+| ID | Exact Statement | 范围与状态 |
+| --- | --- | --- |
+| UM-WEIGHTED-GROUP-JOINT-SLOT-v1 | ∀显式不交H∪Z、宏B及唯一home私有组J_h，共同E_h且私有等端时间w_j≥0；∀有理T≥0,0≤δ<1/2，全部有限宏端>T/2，W_h≤T,w_j≤δT。确定性总位poly返回FAIL或完整σ，home≤(3/2+δ)T、sink≤3T/2；OPT≤T必成功。无组正下界、sink数不固定。 | [完整正文](unrelated_machines/weighted_group_joint_slot_rounding.md)§1–5、[独立审查](../reviews/unrelated_machines/weighted_group_joint_slot_review.md)；给定精确流见证的舍入已实现，通用LP后端未实现；外审/新颖性未认证，主目标OPEN。 |
+| UM-WEIGHTED-GROUP-PROMISE-APPROX-v1 | ∀同结构和0≤δ<1/2，不给OPT；promise在OPT处宏端>OPT/2、W_h≤OPT,w_j≤δOPT。确定性总位poly输出完整σ且Cmax≤(3/2+δ)OPT，含OPT0、δ0。固定δ有本类统一ε=1/2−δ。 | [完整正文](unrelated_machines/weighted_group_joint_slot_rounding.md)§6；Q-grid单调LP搜索。未实现未知OPT端到端软件；不提供一般分组、promise识别或一般UM改善。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

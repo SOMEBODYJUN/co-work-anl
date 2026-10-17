@@ -8389,6 +8389,68 @@
         "research/reviews/unrelated_machines/projected_vector_greedy_review.md"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-WEIGHTED-GROUP-SLOT-EXACT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "共同组加权槽流与真实前缀的双路精确核验",
+      "detail": "已给有理LP见证的规范舍入、独立原矩阵T可行DFS及独立流/前缀回算；不覆盖通用LP或端到端未知OPT。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md",
+        "tests/audits/unrelated_machines/weighted_group_joint_slot.py",
+        "tests/audits/unrelated_machines/weighted_group_slot_independent.py",
+        "evidence/runs/unrelated_machines/weighted_group_joint_slot_audit.json",
+        "examples/unrelated_machines/weighted_group_joint_slot_cases.json",
+        "evidence/certificates/unrelated_machines/weighted_group_joint_slot_witness.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-WEIGHTED-GROUP-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "共同资格组的加权出口联合槽阈值舍入的精确输入合同",
+      "detail": "∀显式不交H∪Z、宏B与唯一home私有组J_h；macro仅H可用且全部有限p>T/2；j∈J_h恰在{h}∪E_h可用、同组共同E_h⊆Z且全部有限端时间相同w_j≥0。∀有理T≥0、0≤δ<1/2，若W_h≤T、w_j≤δT，则确定性总位poly返回FAIL或实际完整σ，home≤(3/2+δ)T、sink≤3T/2；OPT≤T必成功。无组负载正下界、sink数不固定。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共同资格组的加权出口联合槽阈值舍入",
+      "detail": "∀显式不交H∪Z、宏B与唯一home私有组J_h；macro仅H可用且全部有限p>T/2；j∈J_h恰在{h}∪E_h可用、同组共同E_h⊆Z且全部有限端时间相同w_j≥0。∀有理T≥0、0≤δ<1/2，若W_h≤T、w_j≤δT，则确定性总位poly返回FAIL或实际完整σ，home≤(3/2+δ)T、sink≤3T/2；OPT≤T必成功。无组负载正下界、sink数不固定。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md",
+        "research/reviews/unrelated_machines/weighted_group_joint_slot_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-WEIGHTED-GROUP-PROMISE-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "未知最优值下加权共同组的实际近似的精确输入合同",
+      "detail": "∀同样显式结构及有理0≤δ<1/2，不给T；promise在OPT处全部有限macro p>OPT/2、W_h≤OPT、w_j≤δOPT。确定性总位poly输出全部实际任务分配且Cmax≤(3/2+δ)OPT，含OPT0及δ0。固定δ有本类统一ε=1/2−δ；不提供一般分组或识别promise。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "未知最优值下加权共同组的实际近似",
+      "detail": "∀同样显式结构及有理0≤δ<1/2，不给T；promise在OPT处全部有限macro p>OPT/2、W_h≤OPT、w_j≤δOPT。确定性总位poly输出全部实际任务分配且Cmax≤(3/2+δ)OPT，含OPT0及δ0。固定δ有本类统一ε=1/2−δ；不提供一般分组或识别promise。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md",
+        "research/reviews/unrelated_machines/weighted_group_joint_slot_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -20335,6 +20397,80 @@
       "statement": "只限给定显式分布/固定规则。成功调序存在，不称所有调序坏，不称全局最坏比恰2，不含主目标困难性。",
       "refs": [
         "research/current/unrelated_machines/projected_vector_greedy_unbounded.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-WEIGHTED-GROUP-MODEL-v1"
+      ],
+      "conclusion": "UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
+      "statement": "真实occupied组出口>d_h=(W_h−T/2)_+给共同加权token LP；按d_h造槽并用带home容量的一个整数流联合选择macro/home/sink；首次撤离前缀留量≤(1/2+δ)T使actual出口≤d_h。未知OPT用原时间分母乘积Q的整数网格和单调LP测试，最小接受t≤OPT。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "L-UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEIGHTED-GROUP-JOINT-SLOT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "唯一home/给定分组、同组共同接收资格、私有任务等端体积、macro全部端大于半阈值、尺寸δ<1/2仍承重；不是一般UM算法。LP和未知OPT是完整数学算法，软件仅实现给定精确LP见证后的验证/舍入，未实现通用有理LP后端或端到端未知OPT。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "C-UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEIGHTED-GROUP-SLOT-EXACT-AUDIT-v1"
+      ],
+      "conclusion": "UM-WEIGHTED-GROUP-JOINT-SLOT-v1",
+      "statement": "仅对给定精确token见证后的舍入作有限核验；一般证明见正文，通用LP/未知OPT无端到端软件。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md",
+        "evidence/runs/unrelated_machines/weighted_group_joint_slot_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "D-UM-WEIGHTED-GROUP-PROMISE-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-WEIGHTED-GROUP-PROMISE-MODEL-v1",
+        "UM-WEIGHTED-GROUP-JOINT-SLOT-v1"
+      ],
+      "conclusion": "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1",
+      "statement": "真实occupied组出口>d_h=(W_h−T/2)_+给共同加权token LP；按d_h造槽并用带home容量的一个整数流联合选择macro/home/sink；首次撤离前缀留量≤(1/2+δ)T使actual出口≤d_h。未知OPT用原时间分母乘积Q的整数网格和单调LP测试，最小接受t≤OPT。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "L-UM-WEIGHTED-GROUP-PROMISE-APPROX-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEIGHTED-GROUP-PROMISE-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "唯一home/给定分组、同组共同接收资格、私有任务等端体积、macro全部端大于半阈值、尺寸δ<1/2仍承重；不是一般UM算法。LP和未知OPT是完整数学算法，软件仅实现给定精确LP见证后的验证/舍入，未实现通用有理LP后端或端到端未知OPT。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
       ],
       "status": "method boundary"
     }

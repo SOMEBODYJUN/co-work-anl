@@ -40,3 +40,7 @@
 [全局分配矩正文](current/unrelated_machines/global_assignment_moment_rounding.md)连到显式证书合同、近平坦有理提取、真实最优分布HS反例、冻结审查和双路精确代码。经典平坦来源与新定量推导分开；一般生成/大缺陷舍入未解决，UM-TARGET-v1仍OPEN。
 
 [真实最优矩上的固定阶压缩向量贪心](current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)有严格、任务顺序无关的线性最坏界；它给出实际提取规则的限制，与矩是否来自真实最优分布分开。按精确身份 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1、冻结审查和双路核验读取，一般目标仍OPEN。
+
+## 加权共同组的新增正面接口
+
+[共同资格私有组的加权出口与联合槽](current/unrelated_machines/weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。

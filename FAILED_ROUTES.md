@@ -102,3 +102,7 @@
 [固定阶压缩乘法向量贪心](research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)每步丢弃最高次共同相关性。即使矩来自真实最优源，全部选择严格且任意顺序仍有(n−1)/(4r+2)坏例；一般nT上界给同量级。此失败仅限准确评分与固定算子规则，真正条件化/重建未排除。
 
 [真实最优矩的固定压缩向量规则](research/current/unrelated_machines/projected_vector_greedy_unbounded.md)也可能遗忘过去联合支撑：三机全正时间上具体max-norm左乘规则近似比无界。回收事件净化与交换边界；不限制重新耦合、好分布选择、自适应调序或一般算法。
+
+## 加权组出口替代固定组数预算
+
+此前共同资格组的正负下界限制属于固定q槽Hall接口。新[加权出口联合槽](research/current/unrelated_machines/weighted_group_joint_slot_rounding.md)允许W_h∈[0,T]，不设正下界、接收机数不固定；尺寸d_h=(W_h−T/2)_+经共同LP和带home容量的槽流，实际出口≤d_h，得到home≤(3/2+δ)T、sink≤3T/2。旧q槽反例仍限制旧接口，不可外推为缺少组下界时所有联合算法失败。共同资格/等端时间/唯一home的分组仍承重，未给一般UM转换；主目标仍OPEN。

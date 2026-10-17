@@ -46,3 +46,7 @@
 ## 固定向量提取的真实矩边界
 
 [投影向量正文](research/current/unrelated_machines/projected_vector_greedy_unbounded.md)严格排除一条新的具体充分规则：三机全正时间和真实OPT分布上，固定顺序max-norm左乘的比值仍无界；单位5×5还有严格2倍小证书。它不限制其他矩提取或UM-TARGET-v1。精确身份、一般事件链、审查及实际输入沿专题地图进入；一般可求共同容量/重新耦合仍未解决。
+
+## 加权共同组的新增正面接口
+
+[共同资格私有组的加权出口与联合槽](research/current/unrelated_machines/weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。
