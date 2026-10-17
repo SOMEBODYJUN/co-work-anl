@@ -8167,6 +8167,36 @@
         "research/current/unrelated_machines/configuration_finite_cover_obstruction.md"
       ],
       "status": "OPEN; sufficient obligation, not a hardness theorem"
+    },
+    {
+      "id": "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "真实最优矩上的固定阶向量贪心线性最坏界",
+      "detail": "每固定r≥1、每素数q>4r+2，q台机器/q+1任务的显式实例有真实最优源D，OPT=4r+2；固定V_r压缩乘法向量范数贪心在任何任务顺序上都严格把q个普通任务送0，输出比q/(4r+2)=(n−1)/(4r+2)。一般真实T源下该规则合法且≤nT；固定r故最坏量级线性。",
+      "refs": [
+        "research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md",
+        "research/reviews/unrelated_machines/truncated_vector_greedy_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-POLYNOMIAL-VECTOR-GREEDY-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "多项式真实源与精确压缩贪心的双路有限核验",
+      "detail": "Exact actual-source Gram and degree-three audits on listed r1 primes; r2 selected source/matrix checks only. Not universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md",
+        "tests/audits/unrelated_machines/polynomial_vector_greedy.py",
+        "tests/audits/unrelated_machines/polynomial_vector_greedy_independent.py",
+        "evidence/runs/unrelated_machines/polynomial_vector_greedy_primary.json",
+        "evidence/runs/unrelated_machines/polynomial_vector_greedy_independent.json",
+        "evidence/runs/unrelated_machines/polynomial_vector_greedy_audit.json",
+        "examples/unrelated_machines/polynomial_vector_greedy_q13.json",
+        "evidence/certificates/unrelated_machines/polynomial_vector_greedy_q13.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -19772,6 +19802,35 @@
         "research/current/unrelated_machines/configuration_finite_cover_obstruction.md"
       ],
       "status": "open proof obligation"
+    },
+    {
+      "id": "C-UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-POLYNOMIAL-VECTOR-GREEDY-AUDIT-v1"
+      ],
+      "conclusion": "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1",
+      "statement": "实际源、完整一级Gram/三阶及Fraction路径的有限范围核验；任意r/q/任务顺序的证明由正文承担。",
+      "refs": [
+        "research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md",
+        "evidence/runs/unrelated_machines/polynomial_vector_greedy_audit.json"
+      ],
+      "status": "finite check"
+    },
+    {
+      "id": "L-UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅固定原矩/子空间反复压缩乘法并贪心最大化向量范数的准确规则；不是层级整数间隙或一般算法困难性。真正条件化、重建矩和容量反馈未排除；主目标仍OPEN。固定r的复杂度不可扩为r输入时统一多项式。",
+      "refs": [
+        "research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }

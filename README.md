@@ -13,7 +13,7 @@
 | 精确模型与经典地基 | [模型、槽舍入及两树配置间隙](research/current/unrelated_machines/model_and_classical_barriers.md)；[文献与取得状态](research/unrelated_machines/LITERATURE.md) |
 | 跨机器共同容量与相关性 | [长链联合投影](research/current/unrelated_machines/long_path_coalition_gap.md)、[共享逃逸与完整单机配置延伸](research/current/unrelated_machines/row_count_escape_gap.md)、[稀疏条件配置边界](research/current/unrelated_machines/sparse_conditioned_configuration_gap.md)；各自反例只限制其精确定义的接口 |
 | 可恢复结构与实际联合迁移 | [极小星及配置保持](research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[森林边界菜单](research/current/unrelated_machines/forest_boundary_contraction.md)、[真实最优边际与固定槽](research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md)；一般共同选择及进展仍未闭合 |
-| 新表示与可构造性 | [条件矩运输和重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)、[需求树精确桥梁](research/current/unrelated_machines/rooted_dag_degree_token_bridge.md)、[共同拥塞流接口](research/current/unrelated_machines/rooted_dag_congestion_flow.md)；按正文核对给定证书、未知支撑及总位复杂度；共同流§7–10给非单位分叉参数2^h精确树，尚非一般多项式 |
+| 新表示与可构造性 | [条件矩运输和重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)、[需求树精确桥梁](research/current/unrelated_machines/rooted_dag_degree_token_bridge.md)、[共同拥塞流接口](research/current/unrelated_machines/rooted_dag_congestion_flow.md)、[固定阶真实矩贪心的线性最坏界](research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)；按正文核对给定证书、未知支撑及总位复杂度；共同流§7–10给非单位分叉参数2^h精确树，尚非一般多项式 |
 | 条件困难性与gap放大 | [私有组合与资源重复边界](research/current/unrelated_machines/private_graft_and_resource_repetition.md)：精确max/min无放大、完全pool分数整数化；真正近2整数OPT soundness仍缺，不是主目标反证 |
 
 路线是搜索种子，可以改变方法。仅有配置间隙、固定槽损失、某个见证选择困难性或特殊情形算法，均不关闭主目标。所有精确身份与新增成果沿本题地图和账本维护，根入口保持稳定，不逐轮追加摘要。

@@ -9,7 +9,7 @@
 | 下界与共同容量 | 经典配置gap、长链、共享逃逸及独立条件配置见证仍有gap2；[准确范围](research/unrelated_machines/FAILED_ROUTES.md)分别记录 | 可计算的共同多机相关性或绕开这些接口的算法，不能把方法障碍当原题困难性 |
 | 实际舍入与迁移 | 真最优凸包点的固定槽和固定行包络仍可损失近2；若干显式族可跨槽或沿路径修复 | 一般输入的联合重选、允许接收机增载的共同守容，以及总位多项式进展 |
 | 可恢复消元 | 极小星有精确恢复；配置保持须外部互斥；一/双边界森林有实际任务菜单 | 多个菜单共同选择、嵌套/有环核心的可恢复兼容性 |
-| 条件矩与需求树 | [矩运输/重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)区分固定推前与同边际重求；[共同流](research/current/unrelated_machines/rooted_dag_congestion_flow.md)给定K证书可提取1/(2K−1)，固定W最小K可求 | 一般重新耦合、未知支撑W的共同选择；新守恒合同已给2^h精确树（h为非单位点数），一般指数仍在；激活边际不是求解器 |
+| 条件矩与需求树 | [矩运输/重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)区分固定推前与同边际重求；[共同流](research/current/unrelated_machines/rooted_dag_congestion_flow.md)给定K证书可提取1/(2K−1)，固定W最小K可求；[固定阶压缩向量贪心](research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)即使真最优矩也有严格顺序无关线性坏例 | 一般重新耦合、未知支撑W的共同选择；新守恒合同已给2^h精确树（h为非单位点数），一般指数仍在；激活边际不是求解器 |
 | 反面归约 | [私有组合/资源重复](research/current/unrelated_machines/private_graft_and_resource_repetition.md)有精确公式和NO变YES反例 | 对每固定ε的近2真实OPT gap、整数一致性soundness及合法输出规模，均尚未完成 |
 
 完整身份、正文、实际内部审查、代码和冻结证据沿[专题账本](research/unrelated_machines/CLAIMS.md)及数学地图读取。结构性结果、已知工具重构和新颖性判断分别记录，未认证统一算法或外部同行评审。

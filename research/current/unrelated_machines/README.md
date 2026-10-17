@@ -189,3 +189,7 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 [私有需求树组合与共享重复](private_graft_and_resource_repetition.md)给UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1及UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1：私有递归只取瓶颈，完整YES保留时不能缩小固定NO比例；完全元素池等价分母受限分数匹配，parity源坐标张量所有t≥2反变YES。不是近2困难性，UM-TARGET-v1仍OPEN。
 
 读取链：专题CLAIMS→正文§1真正gap合同/§2–3恒等/§4–5反例→private_graft_repetition_review.md→三份规范/独立审计与private_graft_repetition_audit.json。不是所有共享或所有tensor归约的排除；一般低比例树到源NO矛盾的soundness仍缺。
+
+## 真实最优矩的固定阶向量贪心边界
+
+[固定阶压缩乘法向量贪心](truncated_multiplication_vector_greedy_barrier.md)证明 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1：一般真实T源上该规则合法且≤nT；对每固定r，有限域多项式真实最优源使任何任务顺序都严格选同一普通机器，近似比(n−1)/(4r+2)。故其最坏量级线性，即使给完整真实矩及容量局部化条件也如此。它不排真正条件化、重新构矩、容量反馈或其他算法；主目标仍OPEN。读取链为精确账本→正文§1–5→冻结审查→实际Gram/Fraction审计→q13输入与2197个最优源原子。有限高阶检查范围按冻结记录，全球新颖性未认证。
