@@ -797,6 +797,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-DAG-NONUNIT-PARAMETER-EXACT-v1 | ∀上述合法D,k,r，令h=#{v:k_v≥2}和总二进制位长B_in；有确定性2^h poly(B_in)算法输出实际根树H，精确达到b(H)=b*。含b*=0、根终端、巨大二进制需求；不按k数值枚举。 | h是输入参数，任意h时2^h不是多项式。此为根树对象的精确FPT算法，不承诺一般调度近似，不免费从任意处理时间矩阵取得需求树结构。 [正文](unrelated_machines/rooted_dag_congestion_flow.md)§7–10、[冻结审查](../reviews/unrelated_machines/rooted_dag_congestion_review.md)。内部独立核对，未外审/未认证新颖性。 |
 
 
+## 宏任务真实退出与完整profile接收池
+
+| ID | Exact Statement | 范围与证据 |
+| --- | --- | --- |
+| UM-SHARED-SINK-MACRO-EXIT-v1 | ∀显式给定H∪{z}及宏B/唯一home私有组、非负二进制有理T≥0与0<η≤1；macro可在home或z使用，所有有限home宏时间>T/2。存在确定性poly(总位长,1/η)算法FAIL或输出home≤T、z≤(1+η)T的实际调度；OPT≤T必成功。宏数可超过home数，OPT0保持0。 | 仅单sink、唯一home与给定macro划分；不限制macro sink大小，不提供一般多sink容量恢复或一般输入划分。 [正文§8–10](unrelated_machines/shared_sink_joint_macro_assignment.md)、[独立审查](../reviews/unrelated_machines/private_group_exit_pool_review.md)。 |
+| UM-BOUNDED-PROFILE-EXIT-POOL-v1 | ∀显式给定H∪Z(Z非空)、同样macro/唯一home私有组、T≥0、0<η≤1、ρ≥1、β≥0、a_z>0及c_j≥0；每任务在Z全可用或全不可用，前者逐z满足a_z c_j≤p_zj≤ρa_z c_j及p_zj≤βT。存在确定性poly(总位长,1/η)算法FAIL或实际调度，home≤T、各pool≤[ρ(1+η)+β]T；OPT≤T必成功，OPT0保持0。 | sink数不固定，但完整资格、给定共同profile上下包络、各pool边≤βT及唯一home承重；不输出一般矩阵分解，非一般统一ε。 [正文§8–10](unrelated_machines/shared_sink_joint_macro_assignment.md)、[独立审查](../reviews/unrelated_machines/private_group_exit_pool_review.md)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

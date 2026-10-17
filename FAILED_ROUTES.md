@@ -86,3 +86,5 @@
 同族的确定后备2T门槛不可外推到随机选择的新矩：新§9在m=2q时把精确包门槛降为q+2。它不改变旧RYRᵀ反例，因为随机任务选择需额外同任务对角修正；同样不能将限族矩输出误作实际调度算法。
 
 [守恒扩区](research/current/unrelated_machines/rooted_dag_congestion_flow.md)能把支撑指数选择限制到非单位分叉；尚不能去掉一般h增长的2^h因子。单位路径标准流不是全类共同选择的证明。
+
+一般多接收预算不能免费标量化；新增[完整profile接收池](research/current/unrelated_machines/shared_sink_joint_macro_assignment.md#9-有界-profile-畸变的完整接收池)通过完整资格、共同work上下包络及逐边尺寸获得可回收正面范围，未消除一般资格/跨home瓶颈。

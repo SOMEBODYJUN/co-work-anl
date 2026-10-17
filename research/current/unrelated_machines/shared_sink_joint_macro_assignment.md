@@ -1,4 +1,4 @@
-# 单共享汇点的宏任务共同匹配与私有任务整组撤离
+# 共享汇点、宏任务退出与完整接收池的共同选择
 
 ## 1. 精确身份与主目标的关系
 
@@ -68,7 +68,7 @@
 
 至多 `h(b+1)` 个模式，每个至多执行 `O(q_h⁴/η)` 覆盖 DP。匹配图至多 `2h` 个顶点和 `h²` 条边；可用单位容量最小成本流：从零流开始，每次沿残余最短增广路增加一单位，至多 `h` 次。以精确有理 Bellman–Ford 求最短路，反向边成本取负；最小成本流的逐流量最优性保证不存在负残余环，故所得完美匹配为最小成本。固定顶点/边顺序及平局规则使算法确定。规范代码采用等价的整数 Hungarian：将实际有理模式成本的全部分母乘积清掉，用严格大于任何全有限完美匹配成本的大罚表示禁边，并在结束后检查是否用了禁边；其状态和迭代为 O(h³)。
 
-所有成本是原 `p_zj` 的实际子集和，覆盖值是原 `p_hj` 的实际子集和；有理最短路和总成本的分母位长受输入分母位长总和及多项式运算次数控制。这里证明的是整个构造的总多项式界，不是只说每步多项式；审计中的指数枚举不属于算法。
+这里机器列表按逐台显式编码；因而输入长度至少与机器数同阶。API的整数H只是显式列表的编号简写，不声称对二进制H加稀疏私有组这一更紧凑编码也有相同时间界。所有成本是原 `p_zj` 的实际子集和，覆盖值是原 `p_hj` 的实际子集和；有理最短路和总成本的分母位长受输入分母位长总和及多项式运算次数控制。这里证明的是整个构造的总多项式界，不是只说每步多项式；审计中的指数枚举不属于算法。
 
 空任务返回空分配。`H=∅` 时宏任务与全部私有任务均为空，唯一机器 `z` 的负载为零。`T=0` 且有宏任务时，所有宏任务有限时间均正，剪枝后无可用边，安全 FAIL；无宏任务时，以上零成本分支精确检查是否可把每件任务分给零边。仅一个有限端点、空私有组、零 home 时间、零 sink 时间、完全相同成本、极大有理分母均由同一构造覆盖。
 
@@ -89,3 +89,55 @@
 [冻结独立审查](../../reviews/unrelated_machines/shared_sink_joint_review.md)记录先行重构与最终版本。规范[冻结结果](../../../evidence/runs/unrelated_machines/shared_sink_joint_assignment_audit.json)为500个覆盖子集、200个匹配排列、600个原分配随机用例和14个边界，实际枚举155915个调度；10个非法合同检查。独立[第二实现](../../../tests/audits/unrelated_machines/shared_sink_joint_independent.py)及其[冻结结果](../../../evidence/runs/unrelated_machines/shared_sink_joint_independent_audit.json)检查41207个合法用例、593913个实际分配，23280个OPT≤T实例两构造均成功。不同算法在OPT>T时可作不同选择，可靠FAIL与资源增广成功不矛盾。
 
 独立实现的不同机制为全局尺度 `s=ηT/N`（N为全部私有任务数，N0/T0另分支），对各sink时间floor，整数预算 `Q=floor(N/η)`；每home按整数sink成本保存最小真实home负载，所有home的总舍入损失小于Ns。它保证本命题的one-sided接口，不声称对一般home可行最小sink成本有乘性近似；第3节的乘性证明仅用于规范构造。
+
+## 8. 宏任务也可退出：共同匹配而非冻结大小身份
+
+另立 `UM-SHARED-SINK-MACRO-EXIT-v1`，不改第1节旧命题。保留其全部输入约定，只将宏任务的有限端点放宽为 `H∪{z}` 的非空子集；仅有限 home 边要求严格大于 `T/2`，宏任务的 sink 时间可以是任意非负有理数。允许 `b>h` 及 `H=∅`。结论仍是确定性 `poly(总位长,1/η)` 返回 FAIL 或实际调度、home≤T、sink≤(1+η)T，且 `OPT≤T` 时必成功。
+
+**算法。** 私有任务的强制部分、空模式与宏任务/home 模式完全沿用第2–3节。建 `(b+h)×(b+h)` 匹配矩阵：左侧为 b 个宏任务与 h 个 dummy，右侧为 h 个 homes 与 b 个互异退出位置。宏任务到 home 的边成本为该模式的实际近似覆盖成本；宏任务到每个退出位置的成本为其真实 sink 时间，禁止退出时无边。每个 dummy 到 home 的成本为该 home 空模式的覆盖成本，到退出位置的成本为0。输出实际完美匹配并恢复各模式。强制私有 sink 成本在最后加一次；超出 `(1+η)T` 则 FAIL。
+
+**证明。** 任意 `T` 调度在每个 home 至多放一个宏任务，其余宏任务直接退出。设 k 个宏任务在 home，则 b−k 个宏任务占退出位置，h−k 个空 home 配 dummy，余下 k 个 dummy 配余下 k 个退出位置，得到完美匹配。这个匹配上所有精确模式最小成本，加宏任务真实退出成本及强制私有成本，不超过T。模式成本逐项至多乘 `(1+η)`，其他成本不变；全局最小匹配加强制成本因而不超过 `(1+η)T`。逆恢复时每个 home 恰有一个真实或空模式，私有组不交，全部宏任务与私有任务各分配一次。证明没有给不同宏任务分别使用同一份退出预算。
+
+**位复杂度与零值。** 模式数仍至多 `h(b+1)`；匹配矩阵大小 `b+h`，Hungarian 至多 `O((b+h)^3)` 整数步骤，成本清分母的位长为多项式。T=0时宏任务若存在，只能走零 sink 边；home-only 的正时间任务会使全部相关模式无解。所有任务各有零边时直接逐件选择零边，精确保留OPT=0，即使调用者提供正T。空任务、无home、仅一个可用端点均允许；Z={z}始终非空。
+
+## 9. 有界 profile 畸变的完整接收池
+
+`UM-BOUNDED-PROFILE-EXIT-POOL-v1` 是另一限域输入合同，不是任意多sink的推广。
+
+**Objects / Domain / Definitions。** 显式逐台给定不交的 `H∪Z`，`Z≠∅`，宏任务B与私有组 `S_h`。宏任务在任意 homes 可用，所有有限 home 时间 `>T/2`；私有任务最多有一个有限 home，指定为h。每个任务或者在整个Z均不可用，或者在全部Z均可用；后者给非负有理 work `c_j`。给正有理 `a_z`、有理 `ρ≥1, β≥0, T≥0, 0<η≤1`，要求所有 pool-enabled 任务满足
+
+`a_z c_j ≤ p_zj ≤ ρ a_z c_j` 且 `p_zj≤βT`，对全部z同时成立。
+
+宏任务也允许直接进入pool；其 pool 时间无需大于T/2。每个任务至少有一条有限边。Z、H、任务数、ρ及各有理分母均不固定。`ρ=1` 是完整 rank-one pool；资格不完整和逐任务任意 profile 不在本合同内。
+
+**Exact Statement / Quantifiers。** 对所有上述给定输入，有统一确定性 `poly(总位长,1/η)` 算法，返回FAIL或完整合法分配，并对每个成功输出保证
+
+`L_h≤T`，`L_z≤[ρ(1+η)+β]T`。
+
+若 `OPT≤T`，必成功，故FAIL蕴含OPT>T；成功不判定精确T可行。若固定 `ρ(1+η)+β<2`，这是相对给定阈值的统一低于2合同，但只适用于上述结构；没有给一般矩阵的分解器，也没有宣称一般 `UM-TARGET-v1`。
+
+**算法及证明。** 令 `S=Σ_(z∈Z)1/a_z>0`。把每个 pool-enabled 任务的虚拟 sink 时间设为 `c_j/S`，home 时间与不可用性不变，调用第8节算法。如果原实例有T调度，该调度在各pool机器承担的work满足
+
+`Σ_(σ(j)=z)c_j ≤ L_z/a_z ≤ T/a_z`。
+
+总退出work≤TS，故原T调度的home模式和宏任务去向给虚拟单sink的T可行调度。第8节必成功，并共同选出真实退出集合E，满足 `Σ_(j∈E)c_j≤(1+η)TS`，所有home负载≤T。若虚拟算法FAIL，则原实例不可能T可行。
+
+恢复时按固定任务编号，逐件把E中的任务放到当前实际负载最小的pool机器；平局选最小编号。设 `A=ρ(1+η)T`。在每次放置前，必有某个pool机器负载≤A。否则，已分配任务满足
+
+`Σ_(已分配j)c_j ≥ Σ_z L_z/(ρa_z) > (A/ρ)S = (1+η)TS`，
+
+与全部待放/已放任务非负work且总work受限矛盾。选中的机器因此原负载≤A，新任务实际时间≤βT；最后一次收任务后负载≤A+βT，以后不再改变。全部机器同时满足声明界。这里按**实际负载**选机器，不把多sink真实容量免费变成无条件的单预算：完整资格与共同 profile 上下界正是恢复所用的额外信息。
+
+**总位复杂度。** S的有理位长受输入位长多项式控制；`c_j/S` 只增多项式位长。虚拟算法的cover次数、状态数和匹配大小由第8节给出。恢复至多 `|J||Z|` 次负载比较，全部加数来自真实输入时间，输出恰|J|个机器编号。ρ、T、a的数值大小和有理分母不增加循环次数；除1/η外没有以数值参数计的伪多项式循环。
+
+**边界。** T=0时全部pool边由βT强制为0，home正负载会在虚拟步骤被拒绝；β=0或c=0由上界强制相应pool时间为0。每任务有零边时可逐件安排零边，代码在虚拟构造中保持此性质；正rates保证零虚拟时间等价于零work。H可空，Z可只有一台机器，宏任务数可超过home数；home-only、pool-only、空私有组及空任务都含在量词内。
+
+## 10. 新合同的证据、来源与剩余义务
+
+第8–9节依赖第3节自足cover FPTAS与精确最小成本匹配，pool恢复是上述加权总量收费。此为标准工具的限结构组合；未认证全球新颖性或独立论文价值。旧命题及boss9的[固定sink数占位基构造](fixed_sink_occupation_rounding.md)保留其原身份：本节允许sink数增长及宏任务直接退出，但用完整、有界畸变profile和每pool边≤βT替代了任意资格/任意时间。两个范围互不自动包含。
+
+规范实现为 [private_group_exit_pool.py](../../../tests/audits/unrelated_machines/private_group_exit_pool.py)，单sink API为`solve_shared_sink_with_exits`，pool API为`solve_exit_pool`；返回逐任务实际分配和Fraction负载。复用第7节的cover/Hungarian原语，没有另造同一原语。非精确浮点、负输入、空pool、零rate、不完整资格、越出envelope和非法macro/home阈值被拒绝。
+
+规范[原分配审计](../../../tests/audits/unrelated_machines/private_group_exit_pool_audit.py)用实际矩阵枚举而非虚拟成本来查one-sided保证；[第二实现](../../../tests/audits/unrelated_machines/private_group_exit_pool_independent.py)枚举宏任务去向与实际cover子集，并使用不同的顺序阈值放置重建pool。它们不是生产算法的指数步骤。实际输入与输出分别见[六组边界输入](../../../examples/unrelated_machines/private_group_exit_pool_cases.json)及[实际分配](../../../evidence/certificates/unrelated_machines/private_group_exit_pool_witness.json)。冻结结果为[规范报告](../../../evidence/runs/unrelated_machines/private_group_exit_pool_audit.json)与[独立报告](../../../evidence/runs/unrelated_machines/private_group_exit_pool_independent.json)。独立重构及冻结攻击的实际顺序见[审查](../../reviews/unrelated_machines/private_group_exit_pool_review.md)。有限枚举、一般证明、实现及新颖性分别登记。
+
+尚缺的主目标义务没有消失：一般任务可在多个home上改变大小身份，接收资格与profile可任意，未给把一般矩阵变为本合同而损失统一余量的步骤。只有总work没有完整pool恢复结构时，Hall局部容量可失败；不能以这里的标量匹配替代一般共同容量。这一阶段保存后，继续研究资格容量与共同占位的可交换接口，不重复独立条件probe。

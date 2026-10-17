@@ -5402,6 +5402,80 @@
         "history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
       ],
       "limit": "h是输入参数，任意h时2^h不是多项式。此为根树对象的精确FPT算法，不承诺一般调度近似，不免费从任意处理时间矩阵取得需求树结构。 The archived source supplies demand-DAG/assignment-LP context only, not the new stated claims; proofs are self-contained standard-flow applications and novelty is unverified."
+    },
+    {
+      "id": "um_shared_sink_macro_exit_v1",
+      "claims": [
+        "UM-SHARED-SINK-MACRO-EXIT-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "∀显式给定H∪{z}及宏B/唯一home私有组、非负二进制有理T≥0与0<η≤1；macro可在home或z使用，所有有限home宏时间>T/2。存在确定性poly(总位长,1/η)算法FAIL或输出home≤T、z≤(1+η)T的实际调度；OPT≤T必成功。宏数可超过home数，OPT0保持0。",
+        "仅单sink、唯一home与给定macro划分；不限制macro sink大小，不提供一般多sink容量恢复或一般输入划分。"
+      ],
+      "produces": "宏任务可共同退出的单汇点匹配",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/private_group_exit_pool.py",
+        "tests/audits/unrelated_machines/private_group_exit_pool_audit.py",
+        "tests/audits/unrelated_machines/private_group_exit_pool_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/private_group_exit_pool_audit.json",
+        "evidence/runs/unrelated_machines/private_group_exit_pool_independent.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/private_group_exit_pool_cases.json",
+        "evidence/certificates/unrelated_machines/private_group_exit_pool_witness.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/private_group_exit_pool_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "limit": "仅单sink、唯一home与给定macro划分；不限制macro sink大小，不提供一般多sink容量恢复或一般输入划分。 标准cover/matching/list机制自足组合，无新颖性认证。 Listed ST1993 is inherited scheduling/matching background only; the new extension proof is self-contained and is not attributed to that source."
+    },
+    {
+      "id": "um_bounded_profile_exit_pool_v1",
+      "claims": [
+        "UM-BOUNDED-PROFILE-EXIT-POOL-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "∀显式给定H∪Z(Z非空)、同样macro/唯一home私有组、T≥0、0<η≤1、ρ≥1、β≥0、a_z>0及c_j≥0；每任务在Z全可用或全不可用，前者逐z满足a_z c_j≤p_zj≤ρa_z c_j及p_zj≤βT。存在确定性poly(总位长,1/η)算法FAIL或实际调度，home≤T、各pool≤[ρ(1+η)+β]T；OPT≤T必成功，OPT0保持0。",
+        "sink数不固定，但完整资格、给定共同profile上下包络、各pool边≤βT及唯一home承重；不输出一般矩阵分解，非一般统一ε。"
+      ],
+      "produces": "有界profile完整池的共同退出与实际恢复",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/private_group_exit_pool.py",
+        "tests/audits/unrelated_machines/private_group_exit_pool_audit.py",
+        "tests/audits/unrelated_machines/private_group_exit_pool_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/private_group_exit_pool_audit.json",
+        "evidence/runs/unrelated_machines/private_group_exit_pool_independent.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/private_group_exit_pool_cases.json",
+        "evidence/certificates/unrelated_machines/private_group_exit_pool_witness.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/private_group_exit_pool_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "limit": "sink数不固定，但完整资格、给定共同profile上下包络、各pool边≤βT及唯一home承重；不输出一般矩阵分解，非一般统一ε。 标准cover/matching/list机制自足组合，无新颖性认证。 Listed ST1993 is inherited scheduling/matching background only; the new extension proof is self-contained and is not attributed to that source."
     }
   ]
 }

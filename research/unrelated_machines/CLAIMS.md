@@ -779,3 +779,27 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：本范围内未发现仍成立fatal；一般高点共同选择及UM结构提取未解；全球新颖性未认证。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；外审未记录，UM-TARGET-v1仍OPEN。
 - Related Files：[research/current/unrelated_machines/rooted_dag_congestion_flow.md](../current/unrelated_machines/rooted_dag_congestion_flow.md)§7–10；research/reviews/unrelated_machines/rooted_dag_congestion_review.md；tests/audits/unrelated_machines/rooted_dag_transit_branch_search.py、tests/audits/unrelated_machines/rooted_dag_transit_independent.py；evidence/runs/unrelated_machines/rooted_dag_transit_branch_audit.json。
+
+## UM-SHARED-SINK-MACRO-EXIT-v1：宏任务可共同退出的单汇点匹配
+
+- Exact Statement / Quantifiers：∀显式给定H∪{z}及宏B/唯一home私有组、非负二进制有理T≥0与0<η≤1；macro可在home或z使用，所有有限home宏时间>T/2。存在确定性poly(总位长,1/η)算法FAIL或输出home≤T、z≤(1+η)T的实际调度；OPT≤T必成功。宏数可超过home数，OPT0保持0。
+- Objects / Domain / Definitions：UM-MODEL-v1；显式逐台机器列表，正文§8–9定义的macro/private划分及有限边，全部任务必须实际安排。
+- Assumptions / Scope：仅单sink、唯一home与给定macro划分；不限制macro sink大小，不提供一般多sink容量恢复或一般输入划分。
+- Conclusion：可靠FAIL或逐任务合法分配；成功不判定T精确可行，条件阈值合同不改UM-TARGET-v1。
+- Dependencies：UM-MODEL-v1, UM-MACRO-EXIT-MODEL-v1；正文§3自足cover FPTAS、精确二分匹配及所列恢复证明。
+- Evidence：(b+h)方阵dummy/exit完美匹配同时选择macro/home或真实sink退出与全部私有组cover；真实exit及强制成本只计一次，局部误差对同一预算相加。 一般证明、独立重构和冻结攻击；两套原矩阵Fraction核验见正文§10。
+- Counterevidence / Objections：紧凑H编码异议由显式机器合同解决；没有一般分解/资格恢复器；无尚成立范围内fatal。
+- Status：限域完整证明及内部独立审查；标准工具组合，未外审，未认证全球新颖性或独立论文价值。
+- Related Files：[正文§8–10](../current/unrelated_machines/shared_sink_joint_macro_assignment.md)、[冻结审查](../reviews/unrelated_machines/private_group_exit_pool_review.md)、private_group_exit_pool的规范/独立代码、实际输入/证书及两份冻结报告。
+
+## UM-BOUNDED-PROFILE-EXIT-POOL-v1：有界profile完整池的共同退出与实际恢复
+
+- Exact Statement / Quantifiers：∀显式给定H∪Z(Z非空)、同样macro/唯一home私有组、T≥0、0<η≤1、ρ≥1、β≥0、a_z>0及c_j≥0；每任务在Z全可用或全不可用，前者逐z满足a_z c_j≤p_zj≤ρa_z c_j及p_zj≤βT。存在确定性poly(总位长,1/η)算法FAIL或实际调度，home≤T、各pool≤[ρ(1+η)+β]T；OPT≤T必成功，OPT0保持0。
+- Objects / Domain / Definitions：UM-MODEL-v1；显式逐台机器列表，正文§8–9定义的macro/private划分及有限边，全部任务必须实际安排。
+- Assumptions / Scope：sink数不固定，但完整资格、给定共同profile上下包络、各pool边≤βT及唯一home承重；不输出一般矩阵分解，非一般统一ε。
+- Conclusion：可靠FAIL或逐任务合法分配；成功不判定T精确可行，条件阈值合同不改UM-TARGET-v1。
+- Dependencies：UM-MODEL-v1, UM-MACRO-EXIT-MODEL-v1, UM-EXIT-POOL-PROFILE-MODEL-v1, UM-SHARED-SINK-MACRO-EXIT-v1；正文§3自足cover FPTAS、精确二分匹配及所列恢复证明。
+- Evidence：以S=Σ1/a把总work归一化为虚拟sink并共同选择退出集合；实际最小负载list恢复，用加权已分配work守恒与逐边βT支付增量。 一般证明、独立重构和冻结攻击；两套原矩阵Fraction核验见正文§10。
+- Counterevidence / Objections：紧凑H编码异议由显式机器合同解决；没有一般分解/资格恢复器；无尚成立范围内fatal。
+- Status：限域完整证明及内部独立审查；标准工具组合，未外审，未认证全球新颖性或独立论文价值。
+- Related Files：[正文§8–10](../current/unrelated_machines/shared_sink_joint_macro_assignment.md)、[冻结审查](../reviews/unrelated_machines/private_group_exit_pool_review.md)、private_group_exit_pool的规范/独立代码、实际输入/证书及两份冻结报告。

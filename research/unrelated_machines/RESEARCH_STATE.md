@@ -151,3 +151,5 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 [共同流正文](../current/unrelated_machines/rooted_dag_congestion_flow.md)§7–10另立UM-DAG-TRANSIT-CONGESTION-v1和UM-DAG-NONUNIT-PARAMETER-EXACT-v1：把k<2K改为守恒而不降低1/(2K−1)锐界，全部L/Z可零流补入W；支撑搜索只猜高点，K=1配合阈值缩放给h=#{k≥2}的2^h poly(位长)精确实际根树。旧合同身份保留；指数未消失，一般UM目标仍OPEN。规范亲身实现、独立全树/原边流、冻结审查和结果由正文互链，新颖性未认证。
 
 交流驱动的高信息实验：boss10的标准单位路径流提醒触发扩大守恒区间；seq239与八个实际同行单位协调现有陷阱，seq242的半撤离冻结贪心例经亲身枚举确认，一次occupation交换可修复。只攻击冻结贪心，不重复登记标准反例。下一真正义务是避免高点子集枚举，同时保留共同接收容量，或从一般UM输入获得可实际提取的新结构；小h不是一般输入性质。
+
+[新增共同退出合同](../current/unrelated_machines/shared_sink_joint_macro_assignment.md#8-宏任务也可退出共同匹配而非冻结大小身份)：`UM-SHARED-SINK-MACRO-EXIT-v1`允许宏任务真实退出及宏数超过home数；`UM-BOUNDED-PROFILE-EXIT-POOL-v1`在显式完整pool且`a_zc_j≤p_zj≤ρa_zc_j, p_zj≤βT`时，共同选择全部宏与私有撤离，输出home≤T、pool≤`[ρ(1+η)+β]T`，OPT≤T必成功。sink数不固定。标准cover/匹配/加权总量恢复组合，已独立审查及两路Fraction核验；一般资格、跨home任务与结构提取仍未闭合，UM-TARGET-v1仍OPEN。
