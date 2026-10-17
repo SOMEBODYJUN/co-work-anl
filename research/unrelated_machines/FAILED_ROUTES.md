@@ -160,3 +160,7 @@ GHMR版的失败：占位任务都新增共同z上的1/2小边，故不再属于
 尝试：等倍复制机器/任务、逐incidence置换接线并消短环，希望每个输出继承原近2整数负载。失效是该普遍soundness命题错误：有理配置证书可被某finite cover精确实现成真实调度；再取高围长cover仍保持该负载。任意cover反而满足T_CONF不变、OPT不增。具体4机7任务种子OPT5/3、T_CONF4/3，6-cover可真调度到4/3，而恒等6-cover仍5/3。
 
 回收：[有限覆盖恒等式](../current/unrelated_machines/configuration_finite_cover_obstruction.md)及输出敏感构造、自由字高围长存在性。否定范围仅所有接线/只凭高围长的合同；精选接线、扩张性、随机高概率结论和源相关PCP归约未被排除。重试须给排除坍缩接线的新全局限制、低负载调度的源解码及实际多项式规模。UM-TARGET-v1仍OPEN。
+
+## 不完整资格可共同恢复，但任意残余容量不能免费当拟阵
+
+[共同资格组联合流](../current/unrelated_machines/hall_group_joint_flow.md)不要求pool完整：每组真实最低出口给q槽Hall后，macro和接收资格可在一个整数流共同选。它回收无界sink数的正面范围，但依赖同组共同资格/等端体积和组总量下界。省去组下界可漏掉T真解，strict Hall不能把每机q槽降成q−1；任意有理接收余量的unit-demand可分流组族也不必满足拟阵交换（正文§6四个半容量sink负控制）。失败只限这些免费推广，不是一般近似困难性。下一步需一般分组提取或允许不同任务资格/异端时间的可恢复容量。

@@ -8013,6 +8013,71 @@
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
     },
     {
+      "id": "UM-HALL-GROUP-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "共同资格组的给定阈值宏微模型",
+      "detail": "∀显式H∪Z、宏B/私有组J_h、整数q≥2、有理T≥0和δ≥0且qδ<2；macro仅homes且所有finite p>T/2；j∈J_h恰在h及同组共同E_h⊆Z可用且时间同为w_j≥0，(1/2+1/q)T≤W_h≤T、w_j≤δT。确定性总位poly返回FAIL或完整实际σ，Cmax≤q(2+δ)/(q+1)T；OPT≤T必成功。含T0、空Z/E及二进制q输入，实际机器至少一。",
+      "refs": [
+        "research/current/unrelated_machines/hall_group_joint_flow.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-HALL-GROUP-PROMISE-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "共同资格组在真实OPT处的结构承诺",
+      "detail": "∀同拓扑及q≥2,δ≥0,qδ<2，不给OPT；promise在真实OPT处所有finite macro p>OPT/2、(1/2+1/q)OPT≤W_h≤OPT、w_j≤δOPT。存在统一确定性总位poly算法输出完整实际σ，Cmax≤q(2+δ)/(q+1)OPT，OPT0含在内。q/δ可输入；固定q/δ时为该承诺类统一低于2。",
+      "refs": [
+        "research/current/unrelated_machines/hall_group_joint_flow.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-HALL-GROUP-EXACT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "共同资格组联合流与未知OPT的原矩阵精确审计",
+      "detail": "规范完整原矩阵OPT、独立阈值DFS、独立OPT子集和阈值DFS，实际任务输出逐件回算；仅冻结有限范围。",
+      "refs": [
+        "research/current/unrelated_machines/hall_group_joint_flow.md",
+        "tests/audits/unrelated_machines/hall_group_joint_flow.py",
+        "tests/audits/unrelated_machines/hall_group_joint_flow_independent.py",
+        "tests/audits/unrelated_machines/hall_group_opt_promise_independent.py",
+        "evidence/runs/unrelated_machines/hall_group_joint_flow_audit.json",
+        "evidence/runs/unrelated_machines/hall_group_joint_flow_independent.json",
+        "evidence/runs/unrelated_machines/hall_group_opt_promise_independent.json",
+        "examples/unrelated_machines/hall_group_joint_flow_cases.json",
+        "evidence/certificates/unrelated_machines/hall_group_joint_flow_witness.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-HALL-GROUP-JOINT-FLOW-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共同资格私有组的宏微联合流阈值舍入",
+      "detail": "∀显式H∪Z、宏B/私有组J_h、整数q≥2、有理T≥0和δ≥0且qδ<2；macro仅homes且所有finite p>T/2；j∈J_h恰在h及同组共同E_h⊆Z可用且时间同为w_j≥0，(1/2+1/q)T≤W_h≤T、w_j≤δT。确定性总位poly返回FAIL或完整实际σ，Cmax≤q(2+δ)/(q+1)T；OPT≤T必成功。含T0、空Z/E及二进制q输入，实际机器至少一。",
+      "refs": [
+        "research/current/unrelated_machines/hall_group_joint_flow.md",
+        "research/reviews/unrelated_machines/hall_group_joint_flow_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-HALL-GROUP-PROMISE-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "未知最优值下的共同资格组实际近似",
+      "detail": "∀同拓扑及q≥2,δ≥0,qδ<2，不给OPT；promise在真实OPT处所有finite macro p>OPT/2、(1/2+1/q)OPT≤W_h≤OPT、w_j≤δOPT。存在统一确定性总位poly算法输出完整实际σ，Cmax≤q(2+δ)/(q+1)OPT，OPT0含在内。q/δ可输入；固定q/δ时为该承诺类统一低于2。",
+      "refs": [
+        "research/current/unrelated_machines/hall_group_joint_flow.md",
+        "research/reviews/unrelated_machines/hall_group_joint_flow_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
       "id": "UM-PERMUTATION-COVER-MODEL-v1",
       "kind": "definition",
       "track": "unrelated_machines",
@@ -19419,6 +19484,99 @@
       "statement": "sink数不固定，但完整资格、给定共同profile上下包络、各pool边≤βT及唯一home承重；不输出一般矩阵分解，非一般统一ε。",
       "refs": [
         "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-HALL-GROUP-JOINT-FLOW-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-HALL-GROUP-MODEL-v1"
+      ],
+      "conclusion": "UM-HALL-GROUP-JOINT-FLOW-v1",
+      "statement": "真实occupied组每组出口>T/q推出共同q槽Hall；一次macro→home→receiver整数流共同选位置；τ=(q−1+qδ)/(q+1)真实前缀平衡home及sink负载，不复制q个sink。",
+      "refs": [
+        "research/current/unrelated_machines/hall_group_joint_flow.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-HALL-GROUP-JOINT-FLOW-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HALL-GROUP-EXACT-AUDIT-v1"
+      ],
+      "conclusion": "UM-HALL-GROUP-JOINT-FLOW-v1",
+      "statement": "原矩阵有限精确核验不是一般证明，范围/代码hash与零值边界见冻结报告。",
+      "refs": [
+        "research/current/unrelated_machines/hall_group_joint_flow.md",
+        "evidence/runs/unrelated_machines/hall_group_joint_flow_audit.json",
+        "evidence/runs/unrelated_machines/hall_group_joint_flow_independent.json",
+        "evidence/runs/unrelated_machines/hall_group_opt_promise_independent.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-HALL-GROUP-JOINT-FLOW-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HALL-GROUP-JOINT-FLOW-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "给定分组、同组共同资格、私有任务等端体积及组负载下界承重；q增长时改善趋零，不是一般UM统一ε。",
+      "refs": [
+        "research/current/unrelated_machines/hall_group_joint_flow.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-HALL-GROUP-PROMISE-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-HALL-GROUP-PROMISE-MODEL-v1",
+        "UM-HALL-GROUP-JOINT-FLOW-v1"
+      ],
+      "conclusion": "UM-HALL-GROUP-PROMISE-APPROX-v1",
+      "statement": "有限macro边值的最小全流瓶颈B可二分求出；t=max(Wmax,wmax/δ,B)≤OPT，由promise在t仍满足阈值合同；δ0先零端检查。无需最优精度oracle或连续搜索。",
+      "refs": [
+        "research/current/unrelated_machines/hall_group_joint_flow.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-HALL-GROUP-PROMISE-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HALL-GROUP-EXACT-AUDIT-v1"
+      ],
+      "conclusion": "UM-HALL-GROUP-PROMISE-APPROX-v1",
+      "statement": "原矩阵有限精确核验不是一般证明，范围/代码hash与零值边界见冻结报告。",
+      "refs": [
+        "research/current/unrelated_machines/hall_group_joint_flow.md",
+        "evidence/runs/unrelated_machines/hall_group_joint_flow_audit.json",
+        "evidence/runs/unrelated_machines/hall_group_joint_flow_independent.json",
+        "evidence/runs/unrelated_machines/hall_group_opt_promise_independent.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-HALL-GROUP-PROMISE-APPROX-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HALL-GROUP-PROMISE-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "不判定关于OPT的结构承诺；不提供一般矩阵分解，同组共同资格/等端体积和组负载范围保留；可变q时无统一正ε。",
+      "refs": [
+        "research/current/unrelated_machines/hall_group_joint_flow.md"
       ],
       "status": "method boundary"
     },
