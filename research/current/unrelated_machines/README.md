@@ -320,3 +320,6 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 ## 固定残余函数与任务身份耦合
 
 [容量格次模与占位图表示](residual_throughput_and_occupation_projection.md)给任意异端p、固定R的可求throughput格次模性质；固定占位时缺口D是超模。任务身份随H改变则不继承（2×2实际OPT1/2负控制）。更精确地，对每固定α<2及tiny上界，严格次二完成族可实现任意图独立集，D(I)恰为诱导边数；这些实例原OPT1可直接构造，故不是一般困难性。下一步仍是同时处理容量扣减、任务角色变化及实际舍入损失，不能从固定R次模或免费拟阵识别补上。
+
+
+[两状态quota orientation表示](two_state_quota_orientation_obligation.md)把固定 \(\delta\) 的真实根树存在性精确翻译成rail方向、标签quota和资源单射；完整支付才是2-SAT，部分支付是quota packing。此表示替代继续堆叠资源复制，下一义务是证明该quota对象的gap soundness或构造其不可行障碍。

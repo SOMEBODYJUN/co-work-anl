@@ -345,3 +345,6 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 ## 一般残余容量性质与共同选择的第一缺口
 
 [固定R容量格次模/占位图表示](../current/unrelated_machines/residual_throughput_and_occupation_projection.md)已自足证明并独立攻击：异端资格无结构要求的F(c)格次模、固定占位缺口D超模；2×2原矩阵证明H改变任务身份后联合目标并不继承。严格次二α下还能精确实现D(I)=诱导边数，原OPT1仍显式可解。这次增加了可复用的状态理论，尚未闭合全输入桥中的共同选择。下一高信息命题必须同时处理R(H)与h(H)并分析实际联合损失；不继续以更多固定R/独立集样本替代它。
+
+
+本轮停止大规模Fraction循环，新增 `UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1`：两状态残余树的固定delta可行性恰等价于two-rail quota orientation。\(delta=1\)的完整支付层退化为2-SAT；\(delta<1\)的部分资源支付是带方向约束的quota packing。行列池修正说明混合标签会逃逸整束冲突；真正的反面义务是跨层整数一致性和quota gap soundness。

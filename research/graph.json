@@ -9445,6 +9445,18 @@
         "evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两状态残余树的quota orientation等价",
+      "detail": "固定delta下，真实根树b≥delta恰等价于选变量rail、满足标签quota并令资源子集全局单射；完整支付层是2-SAT，部分支付层是quota packing。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_orientation_obligation.md",
+        "research/current/unrelated_machines/duplication_state_majority_floor.md"
+      ],
+      "status": "complete stated-scope equivalence proof; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -23209,6 +23221,36 @@
       "statement": "未给R(H)/h(H)共同选择或实际统一余量；原图族可最优解，不排一般算法。",
       "refs": [
         "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+        "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1"
+      ],
+      "conclusion": "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1",
+      "statement": "把根树的整数出度阈值逐一翻译为rail orientation、quota槽和资源单射，并反向构树。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_orientation_obligation.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "L-UM-TWO-STATE-QUOTA-TARGET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "两状态反面路线的最小新义务是quota orientation的固定delta gap/soundness；完整2-SAT可行性不覆盖部分quota支付。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_orientation_obligation.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"
     }

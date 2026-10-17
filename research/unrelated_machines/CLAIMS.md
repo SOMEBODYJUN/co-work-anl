@@ -1619,3 +1619,11 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：每个生成的原实例都直接可最优解，不能把投影选择升级为UM困难性；改变宏必须进图或减少辅助机是新合同。αδ二进制极值会使显式tiny数大，未误报统一位poly。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified。只关闭免费拟阵/固定交换界的状态识别；一般主目标仍OPEN，新颖性/论文价值未认证。
 - Related Files：`research/current/unrelated_machines/residual_throughput_and_occupation_projection.md`；`research/reviews/unrelated_machines/residual_throughput_occupation_review.md`；`tests/audits/unrelated_machines/occupation_induced_edge_deficit.py`；`evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json`。
+
+
+## UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1：两状态残余树的 two-rail quota orientation 表示
+
+- **Exact Statement：** 固定 \(\delta\in(0,1]\) 时，状态内资源不交的两状态残余树满足 \(b(H)\ge\delta\) 当且仅当存在至少 \(\lceil\delta q_r\rceil\) 个变量的rail选择、每个标签至少 \(\lceil\delta K\rceil\) 个资源槽且所有资源像互不交。
+- **Mathematical role：** 完整支付层是2-SAT禁冲突；部分支付层是带方向约束的quota packing，正是两状态近二soundness的最小对象。
+- **Status：** complete stated-scope equivalence proof; external review and novelty unverified。
+- **Related Files：** `research/current/unrelated_machines/two_state_quota_orientation_obligation.md`。
