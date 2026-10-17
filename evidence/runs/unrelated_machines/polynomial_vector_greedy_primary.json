@@ -1,0 +1,89 @@
+{
+  "title": "固定阶压缩乘法向量贪心的多项式真实源精确核验",
+  "source_sha256": "ea650c03b8f33b956f3971f255a4a59eaf9fbb3d9cab4108d87aa81156d0afef",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "arithmetic": "integer field operations; exact fractions; deterministic full source enumeration, no seed or floating tolerance",
+  "r1_cases": [
+    {
+      "q": 3,
+      "r": 1,
+      "source_atoms": 27,
+      "distinct_job_sets_checked": 7,
+      "source_capacity_max": 3,
+      "anchor_load": 6,
+      "optimum": "6",
+      "greedy_makespan": "6",
+      "ratio": "1"
+    },
+    {
+      "q": 5,
+      "r": 1,
+      "source_atoms": 125,
+      "distinct_job_sets_checked": 25,
+      "source_capacity_max": 4,
+      "anchor_load": 6,
+      "optimum": "6",
+      "greedy_makespan": "6",
+      "ratio": "1"
+    },
+    {
+      "q": 7,
+      "r": 1,
+      "source_atoms": 343,
+      "distinct_job_sets_checked": 63,
+      "source_capacity_max": 4,
+      "anchor_load": 6,
+      "optimum": "6",
+      "greedy_makespan": "7",
+      "ratio": "7/6"
+    },
+    {
+      "q": 13,
+      "r": 1,
+      "source_atoms": 2197,
+      "distinct_job_sets_checked": 377,
+      "source_capacity_max": 6,
+      "anchor_load": 6,
+      "optimum": "6",
+      "greedy_makespan": "13",
+      "ratio": "13/6"
+    }
+  ],
+  "r2_full_source": {
+    "q": 11,
+    "r": 2,
+    "source_atoms": 161051,
+    "source_max": 7,
+    "anchor_load": 10,
+    "selected_job_sets_checked": 10
+  },
+  "r2_actual_projection": {
+    "q": 3,
+    "r": 2,
+    "source_atoms": 243,
+    "basis_dimension": 7,
+    "actual_gram_and_projection": true,
+    "scores": [
+      [
+        "2/3",
+        "1/3"
+      ],
+      [
+        "4/9",
+        "2/9"
+      ],
+      [
+        "208/729",
+        "100/729"
+      ]
+    ]
+  },
+  "score_recurrence_checks": 3038,
+  "limitations": [
+    "finite computations are not universal proof",
+    "r1 triple independence checked for all job subsets only in listed q",
+    "r2 q11 tests selected job subsets, all source capacities; r2 q3 checks actual compressed effects",
+    "no hierarchy integrality gap or general scheduling impossibility"
+  ]
+}

@@ -94,3 +94,7 @@
 不完整资格并非一概排除正面构造：[共同资格私有组](research/current/unrelated_machines/hall_group_joint_flow.md)由真实最低出口量给整数Hall容量，可联合选择macro与receiver；缺少组下界、共同资格或等端体积时不能免费沿用。任意残余容量的组族也不必是拟阵；准确负控制与回收见正文§6。
 
 [高围长仙人掌的配置锐界与精确块算法](research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)表明simple cactus可同时有CONFIG supgap2和真实精确P；单环分量配置精确、最大顶点块环秩b给2^b poly算法。它们限制反面归约的结构，不证明一般目标不存在。
+
+[反面路线的递归与资源重复边界](research/current/unrelated_machines/private_graft_and_resource_repetition.md)记录两个不同失效：私有重复的值是max/min而非乘积；完全元素池可能把分数完美匹配整数化，导致源NO变YES。只限制明确合同，不是一般算法或所有困难性归约的不可能性。
+
+[固定阶压缩乘法向量贪心](research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)每步丢弃最高次共同相关性。即使矩来自真实最优源，全部选择严格且任意顺序仍有(n−1)/(4r+2)坏例；一般nT上界给同量级。此失败仅限准确评分与固定算子规则，真正条件化/重建未排除。

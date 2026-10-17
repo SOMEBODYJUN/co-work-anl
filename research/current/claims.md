@@ -822,8 +822,21 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | ID | Exact Statement | 范围与入口 |
 | --- | --- | --- |
 | UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1 | ∀整数g≥3，在正OPT、每任务恰2有限端且简单机器支撑为cactus、girth≥g的实例上，sup OPT/T_CONF=2。具体∀k≥2有全时间{1/k,1}、每非桥块为g环的P_(k,g)，OPT=2−1/k、CONFIG在T=1+1/k有显式稀疏有理证书。 | T只是可行配置阈值，不声称最小T_CONF=T或有限例取得2；族规模不要求对log k多项式。cactus可被真实结构精确求解，本gap不导入计算困难性或UM-TARGET反面。 [自足正文](unrelated_machines/cactus_configuration_gap_and_block_exactness.md)、[独立冻结攻击](../reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md)。 |
-| UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1 | ∀support≤2合法UM输入，保留每双端任务为独立labelled机器多重边，顶点双连通块（桥独立）B的b_B=|E_B|−|V_B|+1，b=max({0}∪{b_B})，存在确定性2^b poly(总输入位长L)算法输出精确OPT及实际调度；空/零/单端/平行均含。 | b可增长；一般时指数不消失。不能合并平行任务来计b，也不是treewidth精确算法。b=O(log L)类可解只限制此范围hardness归约，不改变一般UM-TARGET。AMO已有对称cactus算法，端点非对称及参数版本优先权未认证。 [自足正文](unrelated_machines/cactus_configuration_gap_and_block_exactness.md)、[独立冻结攻击](../reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md)。 |
+| UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1 | ∀support≤2合法UM输入，保留每双端任务为独立labelled机器多重边，顶点双连通块（桥独立）B的b_B=\|E_B\|−\|V_B\|+1，b=max({0}∪{b_B})，存在确定性2^b poly(总输入位长L)算法输出精确OPT及实际调度；空/零/单端/平行均含。 | b可增长；一般时指数不消失。不能合并平行任务来计b，也不是treewidth精确算法。b=O(log L)类可解只限制此范围hardness归约，不改变一般UM-TARGET。AMO已有对称cactus算法，端点非对称及参数版本优先权未认证。 [自足正文](unrelated_machines/cactus_configuration_gap_and_block_exactness.md)、[独立冻结攻击](../reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md)。 |
 | UM-PSEUDOFOREST-CONFIG-EXACT-v1 | ∀support≤2合法UM实例P及有理T≥0，若保labelled平行任务的机器多重图每连通分量环秩≤1，则CONFIG(T)可行⇔存在真实makespan≤T调度；包含两平行边的长度2环、森林、单端、零时间和空任务。 | 要求每连通分量至多一环，不能弱化为每顶点块至多一环；多环cactus已有supgap2。没有改变一般CONFIG身份，也不导入一般近似或困难性。 [自足正文](unrelated_machines/cactus_configuration_gap_and_block_exactness.md)、[独立冻结攻击](../reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md)。 |
+
+## 反面路线的递归与共享复制边界
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1 | ∀合法需求DAG G,H，私有终端替换满足b*(G∘H)=min(b*G,b*H)，异质终端有式(2)的精确max–min；正需求k根接m个私有模块的值为max_s min(1,s/k,β_(s))（m=0取0）。固定结构/需求及常数模块、同一β输入的有限私有组合是f(β)=max(f(0),min(f(1),β))，若保YES f(1)=1则f(β)≥β，不产生NO比例放大。 | 只限制已定义的私有值组合；不排跨模块共享、一致性测试、输入结构依赖归约或一般算法。完整根门k>0承重；式子不是已能高效求b*。 [正文](unrelated_machines/private_graft_and_resource_repetition.md)、[冻结审查](../reviews/unrelated_machines/private_graft_repetition_review.md)。限域证明已独立攻击，未外审/未认证新颖性；主目标OPEN。 |
+| UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1 | ∀显式3DM A、整数r≥1，每元素r克隆且每原边含全部r³组合的完全池A^[r]有完美匹配，当且仅当A有权重属于(1/r)Z≥0的分数完美匹配。四边parity A={000,011,101,110}原无完美匹配，r2完全池及每个t≥2的直接坐标张量均有完美匹配；相应需求树token调度的真实OPT由3/2降至1。 | pool和坐标张量是不同操作；只否定这些明确NO保真合同。固定r显式多项式，二进制增长r的显式复制不保证位多项式。不是近2计算困难性，也不是所有张量归约障碍。 [正文](unrelated_machines/private_graft_and_resource_repetition.md)、[冻结审查](../reviews/unrelated_machines/private_graft_repetition_review.md)。限域证明已独立攻击，未外审/未认证新颖性；主目标OPEN。 |
+
+## 真实最优矩的固定阶压缩向量贪心
+
+| ID | Exact Statement | 范围与入口 |
+| --- | --- | --- |
+| UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1 | 每固定r≥1、每素数q>4r+2，q台机器/q+1任务的显式实例有真实最优源D，OPT=4r+2；固定V_r压缩乘法向量范数贪心在任何任务顺序上都严格把q个普通任务送0，输出比q/(4r+2)=(n−1)/(4r+2)。一般真实T源下该规则合法且≤nT；固定r故最坏量级线性。 | 固定D/V_r/A_e并逐任务最大化‖A_eψ‖²；源矩真实，选择严格。不是任何层级gap。固定r矩输入位多项式，不提供最优源oracle。[自足正文](unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)、[冻结审查](../reviews/unrelated_machines/truncated_vector_greedy_review.md)；内部审查/有限核验，未外审/未认证新颖性。 |
 
 ## 逻辑使用规则
 

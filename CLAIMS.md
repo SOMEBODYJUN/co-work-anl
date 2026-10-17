@@ -55,3 +55,7 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 新增UM-HALL-GROUP-JOINT-FLOW-v1与UM-HALL-GROUP-PROMISE-APPROX-v1：[共同资格组正文](research/current/unrelated_machines/hall_group_joint_flow.md)给无界sink数量的实际联合流舍入、未知OPT的有限瓶颈恢复；保留组身份/等端体积/负载范围，不改变一般UM-TARGET-v1。
 
 [高围长仙人掌的配置锐界与精确块算法](research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)表明simple cactus可同时有CONFIG supgap2和真实精确P；单环分量配置精确、最大顶点块环秩b给2^b poly算法。它们限制反面归约的结构，不证明一般目标不存在。
+
+[反面路线的递归与资源重复边界](research/current/unrelated_machines/private_graft_and_resource_repetition.md)的两个身份UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1、UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1已入本题精确账本；不改变UM-TARGET-v1的OPEN状态。
+
+固定阶真实矩提取的精确身份 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1 见[专题账本](research/unrelated_machines/CLAIMS.md)及[自足证明](research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)：一般nT上界、任意固定r的线性下界；不关闭UM-TARGET-v1。

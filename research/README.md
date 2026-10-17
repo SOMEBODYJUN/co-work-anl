@@ -13,6 +13,8 @@
 
 [固定数量共享汇点的占位基交换与三半调度](current/unrelated_machines/fixed_sink_occupation_rounding.md)给三个分离身份：UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1允许任意K但仅界定2K个分数组；UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1在固定K的给定阈值下输出实际≤3T/2；UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1用含OPT的大宏promise及非单调one-sided整数二分给真正≤3OPT/2。唯一home/给定分组和固定K仍承重，通用LP软件未实现，新颖性未认证。一般主目标下一缺口是不受限的接收容量与跨home/跨尺寸任务身份，UM-TARGET-v1仍OPEN。
 
+[反面路线的递归与共享复制边界](current/unrelated_machines/private_graft_and_resource_repetition.md)及其冻结独立审查区分方法障碍与真正近2计算困难性；现有主目标状态不变。
+
 ## 各模型分别读取
 
 | 模型 | 权威入口 | 状态与范围 |
@@ -32,3 +34,5 @@
 [共同流正文](current/unrelated_machines/rooted_dag_congestion_flow.md)§7–10新增守恒扩区及非单位分叉参数算法：单位走廊与汇流全部交给一次共同流，只有h个非单位点的支撑选择仍付2^h。精确实际根树与主目标的一般多项式量词分开；按新ID/冻结审查读取，不改旧合同。
 
 [共同资格私有组的无界sink联合流](current/unrelated_machines/hall_group_joint_flow.md)：实际输出比例`q(2+δ)/(q+1)`，并有未知OPT的结构承诺版本；同组资格/等端体积及组总量范围仍承重，q增长时无统一ε。一般主目标保持OPEN，下一义务是可恢复的一般分组或异资格/异端容量转换。
+
+[真实最优矩上的固定阶压缩向量贪心](current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)有严格、任务顺序无关的线性最坏界；它给出实际提取规则的限制，与矩是否来自真实最优分布分开。按精确身份 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1、冻结审查和双路核验读取，一般目标仍OPEN。
