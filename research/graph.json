@@ -8653,6 +8653,32 @@
         "research/current/unrelated_machines/bounded_collision_label_resource_floor.md"
       ],
       "status": "finite computational evidence"
+    },
+    {
+      "id": "UM-LARGE-BUNDLE-COLLISION-FLOOR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "大需求标签束的有限碰撞界与平方池锐性",
+      "detail": "∀q≥1显式完整束B_x、K_x=|B_x|、Δ为所选束实际资源重数、∀整数1≤c≤q，确定性总位多项式输出真实根树b≥Λ_c=min{ceil(q/c)/q,min_x floor(K_x c/(c+Δ−1))/K_x}。q=Δ=K_x=t²、标签邻域恰共同t²池且无额外边时，max_cΛ_c=b*=1/t（t≥2取c=t+1，t1取c1）。若b*≤η∈(0,1)，cη=ceil(1/η)−1，则Δ≥1+cη[1/(η+1/Kmin)−1]；沿η→0且ηKmin→∞必要liminfη²Δ≥1，平方池达到。",
+      "refs": [
+        "research/current/unrelated_machines/large_bundle_collision_square_root_floor.md",
+        "research/reviews/unrelated_machines/large_bundle_collision_floor_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-LARGE-BUNDLE-COLLISION-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "大需求束重染色、资源匹配与实际调度精确证据",
+      "detail": "双路原资源父点oracle与独立Hall子集检查、有限η必要量和实际token负载/解码，不代替一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/large_bundle_collision_square_root_floor.md",
+        "tests/audits/unrelated_machines/large_bundle_collision_floor.py",
+        "tests/audits/unrelated_machines/large_bundle_collision_independent.py",
+        "evidence/runs/unrelated_machines/large_bundle_collision_square_root_audit.json"
+      ],
+      "status": "finite computational evidence"
     }
   ],
   "hyperedges": [
@@ -21151,6 +21177,55 @@
       "statement": "有界重数四层冲突不能产生任意小NO比例；高重数、跨层资源、源解码及固定ε多项式规模仍开放，不是一般反面。",
       "refs": [
         "research/current/unrelated_machines/bounded_collision_label_resource_floor.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-LARGE-BUNDLE-COLLISION-FLOOR-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LABEL-RESOURCE-COLLISION-MODEL-v1",
+        "UM-DAG-DEGREE-MODEL-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+      ],
+      "conclusion": "UM-LARGE-BUNDLE-COLLISION-FLOOR-v1",
+      "statement": "整数同色碰撞势逐束控制、Cauchy+容量Hall、根上取整共同给Λ；平方池计数给等号，η严格根项给必要碰撞。",
+      "refs": [
+        "research/current/unrelated_machines/large_bundle_collision_square_root_floor.md",
+        "research/reviews/unrelated_machines/large_bundle_collision_floor_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-LARGE-BUNDLE-COLLISION-FLOOR-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LARGE-BUNDLE-COLLISION-AUDIT-v1"
+      ],
+      "conclusion": "UM-LARGE-BUNDLE-COLLISION-FLOOR-v1",
+      "statement": "有限重染色/原父点与Hall枚举只核实现、实际任务和所列参数；非一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/large_bundle_collision_square_root_floor.md",
+        "tests/audits/unrelated_machines/large_bundle_collision_floor.py",
+        "tests/audits/unrelated_machines/large_bundle_collision_independent.py",
+        "evidence/runs/unrelated_machines/large_bundle_collision_square_root_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "L-UM-LARGE-BUNDLE-COLLISION-FLOOR-v1-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LARGE-BUNDLE-COLLISION-FLOOR-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "平方碰撞为完整束且大需求/趋零参数范围的必要量；高碰撞源一致性、低比例实际树解码与固定ε位多项式归约仍缺。",
+      "refs": [
+        "research/current/unrelated_machines/large_bundle_collision_square_root_floor.md",
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"

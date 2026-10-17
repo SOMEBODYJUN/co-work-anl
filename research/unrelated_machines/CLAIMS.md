@@ -1195,3 +1195,18 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：R为空时max0与η>0的定义精度已修；未发现冻结范围内尚成立fatal；全球新颖性及外审未认证。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified
 - Related Files：research/current/unrelated_machines/bounded_collision_label_resource_floor.md；research/reviews/unrelated_machines/bounded_collision_label_floor_review.md；tests/audits/unrelated_machines/bounded_collision_bundle_floor.py；tests/audits/unrelated_machines/bounded_collision_bundle_independent.py；evidence/runs/unrelated_machines/bounded_collision_label_floor_audit.json；examples/unrelated_machines/pairwise_label_resource_floor.json。
+
+
+## UM-LARGE-BUNDLE-COLLISION-FLOOR-v1：大需求标签束的有限碰撞界与平方池锐性
+
+- Exact Statement / Quantifiers：∀q≥1显式完整束B_x、K_x=|B_x|、Δ为所选束实际资源重数、∀整数1≤c≤q，确定性总位多项式输出真实根树b≥Λ_c=min{ceil(q/c)/q,min_x floor(K_x c/(c+Δ−1))/K_x}。q=Δ=K_x=t²、标签邻域恰共同t²池且无额外边时，max_cΛ_c=b*=1/t（t≥2取c=t+1，t1取c1）。若b*≤η∈(0,1)，cη=ceil(1/η)−1，则Δ≥1+cη[1/(η+1/Kmin)−1]；沿η→0且ηKmin→∞必要liminfη²Δ≥1，平方池达到。
+- Objects / Domain：四层r→x→私有标签e_x→终端资源，根需求q、变量1、所选标签需求K_x=显式束大小，允许原图其他标签/边；有限锐例单列禁止额外边。
+- Definitions：Λ_c、整数同色碰撞势Ψ、容量配额匹配及cη按正文§1–6；每个原正需求点包括输出叶均收费。
+- Assumptions：无复杂度假设；给定完整束选择承重，1≤Δ≤q；复杂度按显式关联及身份总位长。
+- Scope：有限参数下界、平方池精确值和带η→0/大需求条件的必要量；不主张一般b*=maxΛ，不扩展到非完整束或一般UM逆表示。
+- Conclusion：真实树和token实际调度≤2−Λ_c；近2归约中的高碰撞必要条件，不是一般困难性或主目标反面。
+- Dependencies：UM-LABEL-RESOURCE-COLLISION-MODEL-v1、UM-DAG-DEGREE-MODEL-v1；自足整数缺陷着色势、Cauchy及容量Hall；UM-DAG-DEGREE-TOKEN-IDENTITY-v1用于实际调度。
+- Evidence：独立statement-first重构；冻结正文攻击；规范与不导入核心的原资源父点oracle/不同重染色和Hall子集审计；实际树、调度、逐机回算及零比例分支。
+- Counterevidence / Objections：已明确有限锐例不得额外资源边、ε渐近必须ε→0；无尚成立fatal。singleton阻止无大需求的平方改善；高碰撞本身不证明NO，新颖性未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified
+- Related Files：research/current/unrelated_machines/large_bundle_collision_square_root_floor.md；research/reviews/unrelated_machines/large_bundle_collision_floor_review.md；tests/audits/unrelated_machines/large_bundle_collision_floor.py；tests/audits/unrelated_machines/large_bundle_collision_independent.py；evidence/runs/unrelated_machines/large_bundle_collision_square_root_audit.json。

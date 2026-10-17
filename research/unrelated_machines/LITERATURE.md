@@ -82,3 +82,8 @@ Asahiro–Miyano–Ono，*Graph classes and the complexity of the graph orientat
 ## 标签一致性接口的已知困难性方法边界
 
 Bateni–Charikar–Guruswami，TR-848-09，[49页作者PDF](https://mhbateni.com/academic/pubs/maxmin-tech09.pdf)，§7 Definition7.1/Lemma7.2，PDF/印页47–48，讨论三个外部物品的duplication gadget：保留两个完整分配的并集可使物品度至多二，再由度二Santa Claus算法限制该困难性途径。本次只联网核读该定位，未落地原始字节或宣称全文内化；manifest的BCG2009_duplication_barrier明确状态。它是[低重数标签资源](../current/unrelated_machines/bounded_collision_label_resource_floor.md)的机制比较，非本页树着色证明的导入前提，也不是调度近二困难性。
+
+
+## 整束缺陷着色的标准势函数来源
+
+Fuchs–Kuhn，*List Defective Colorings: Distributed Algorithms and Applications*，[DISC2023正式PDF](https://drops.dagstuhl.de/storage/00lipics/lipics-vol281-disc2023/LIPIcs.DISC.2023.22/LIPIcs.DISC.2023.22.pdf)，PDF4/印22:4，在Definition1后明确将缺陷着色存在性和势函数机制追溯Lovász1966。只联网核这一定义/机制归属，未保存原字节或宣称分布式算法全文内化；manifest的FK2023_defective_coloring_background明确取得状态。[大需求束正文](../current/unrelated_machines/large_bundle_collision_square_root_floor.md)自行证明整数势+Cauchy+容量Hall，未把该组合公式冒充源定理或认证新颖性。

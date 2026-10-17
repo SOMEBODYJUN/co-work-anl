@@ -910,6 +910,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-GROUP-DEGREE-LABEL-APPROX-v1 | ∀上述显式四层DAG，不要求局部完整；令Δ_G=max({0}∪{每资源涉及的不同变量组数})。q≥1且Δ_G≥1时，不给标签见证或b*，确定性总位多项式输出b(H)≥U/Δ_G≥b*/Δ_G，其中a_x=max_e min(1,|S_e|/K_e)、空max0、U=max_s min(s/q,a_(s))；token桥梁实际Cmax≤(2−1/Δ_G)OPT。q0根终端精确1；Δ_G0且q≥1精确b*=0。 | Δ_G计不同变量组而非标签总入度；仅此四层桥梁族。Δ_G增长无统一ε；非一般UM逆表示。 [自足正文](unrelated_machines/bounded_collision_label_resource_floor.md)、[冻结攻击](../reviews/unrelated_machines/bounded_collision_label_floor_review.md)。 |
 
 
+
+## 大需求束的平方碰撞边界
+
+| ID | 精确结论 | 范围与证据 |
+| --- | --- | --- |
+| UM-LARGE-BUNDLE-COLLISION-FLOOR-v1 | ∀q≥1显式完整束B_x、K_x=|B_x|、Δ为所选束实际资源重数、∀整数1≤c≤q，确定性总位多项式输出真实根树b≥Λ_c=min{ceil(q/c)/q,min_x floor(K_x c/(c+Δ−1))/K_x}。q=Δ=K_x=t²、标签邻域恰共同t²池且无额外边时，max_cΛ_c=b*=1/t（t≥2取c=t+1，t1取c1）。若b*≤η∈(0,1)，cη=ceil(1/η)−1，则Δ≥1+cη[1/(η+1/Kmin)−1]；沿η→0且ηKmin→∞必要liminfη²Δ≥1，平方池达到。 | 给定完整选择和四层模型承重；渐近条件不能省略。[正文](unrelated_machines/large_bundle_collision_square_root_floor.md)、[冻结攻击](../reviews/unrelated_machines/large_bundle_collision_floor_review.md)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
