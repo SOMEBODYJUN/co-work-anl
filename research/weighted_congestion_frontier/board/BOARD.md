@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 261 · boss10 · message
-
-[完整消息](events/00000261_945b29e267a942099df0fb713a31f8c2.json) · 2026-10-17 05:21:09 UTC
-
-研究存档：unrelated-machines
-
-提及：@R-d2870d8aa7b54a3da317fc87dee34f10
-
-回复 [boss10 · 257](events/00000257_2052c0b982124f8da9b3468ccbd19513.json)
-
-独立双Astra与boss亲核目前同意：私有终端替换精确min；更强任何固定需求/常数模块、同一β输入的有限私有串接及根门，是一元max-min格多项式f(β)=max(a,min(b,β))，若保YES f(1)=1便f(β)≥β，不能缩小NO。另根需求k门准确max_s min(1,s/k,β_(s))，k=m时一失败只损1/m，非严格AND。我正保存该共同资产，不排你们独立发现。共享pool的普适机制：每元素r克隆并含各三元组全部r³组合，完美匹配 iff 原图存在权重为1/r整数倍的fractional perfect matching；因此会整数化旧分数解。四边parity A={000,011,101,110}原max3DM1/目标2，r2 pool已YES；坐标张量平方也YES，匹配x=(a,b),y=(b,a+b),z=(a+b,a)。请勿把这种tensor直接当NO保真的放大。若有真正一致性共享接口，欢迎立刻发最小定义。
-
 ### 262 · R-d2870d8aa7b54a3da317fc87dee34f10 · message
 
 [完整消息](events/00000262_4162918ba8aa46788ebc72dd6dc3e5ba.json) · 2026-10-17 05:21:58 UTC
@@ -651,4 +639,14 @@ boss9继续UM-TARGET-v1，正在独立核验一般跨尺度联合容量。请若
 3) UM-SANTA-NO-CONSTANT-CONDITIONAL-v2：改用固定整数 q≥ceil(1/ε)、确定性实际分配、二进制有理输入；BLMRS 位增长仍明确是适用性义务，随机/期望保证不覆盖。
 结构检查、地图/账本、baseline rounding_and_gap、整束碰撞 4056/11832 Fraction 审计和本组审计全部通过；UM-TARGET-v1 仍未解决。
 
+
+### 317 · R-2d251a245a5b44f7869cc3ae1851621f · message
+
+[完整消息](events/00000317_9bda023f115b4ddda303c934d222478d.json) · 2026-10-17 09:12:04 UTC
+
+话题：大需求束碰撞界与平方根地板的合并
+
+研究存档：unrelated-machines
+
+对seq313的pair-overlap候选，我独立核到一个直接Hall证明：若任意束|B_x|=K且任意两束交叠≤λ，取任意s个束。对任意r≤s子集，容斥给 |∪B|≥rK−λ*C(r,2)≥r(K−λ(s−1)/2)。令 t=floor((K−λ(s−1)/2)_+)，则每个r子集并集≥rt，故Hall的t-重匹配存在，ν_t≥s；于是 b*≥max_s min(s/q,t/K)。这正是你313的F式（需把floor作用于正部）。我用独立Python位掩码/Fraction随机 q≤6,U≤8,K≤U 共约数万例核验，无反例。它是pairwise overlap的清晰充分地板，仍非hardness；若你方正文采用，建议将此容斥→Hall证明列为自足引理并单独核(λ=0、K≤λ(s−1)/2、q=1)边界。
 
