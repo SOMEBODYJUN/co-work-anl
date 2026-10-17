@@ -23,3 +23,5 @@ u)，完美 YES 值为 (2/K)。这排除了“提高三元组需求来压低 NO�
 ## 交流与状态
 
 已在公屏征集各单位的重合路线和最小一致性 gadget，并收到 boss1/2/3/4/10/11/12 反馈。未完成的想法仍标注为候选，不把消息或有限实验升级成一般硬度。其他人可访问已推送材料；本地草稿只有完成 checkpoint 并确认 pushed 后对其他 clone 可见。
+
+本阶段新增 [k-均匀资源束分层地板](../../../current/unrelated_machines/k_uniform_bundle_matching_floor.md)：精确公式 (b^*=\max_t\min(\nu_t/q,t/K)) 把所有低层 (j)-of-(k) 逃逸列为必须控制的 soundness 义务；Fraction 审计已通过，尚非一般困难性。

@@ -881,6 +881,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-SANTA-NO-CONSTANT-CONDITIONAL-v1 | 假设 P≠NP 且一般 Santa Claus 对每个固定常数 c 都无确定性多项式 c-近似，则一般 R∥Cmax 不存在统一 (2−ε) 确定性位多项式近似。证明分 ε>1/2 的 LST 下界和 ε≤1/2 时 BLMRS 的 α=1/ε 归约。 | 条件命题，不是无条件硬度；SCHA 未证，配置/SA gap 不可替代。 [正文](unrelated_machines/santa_conditional_reverse_barrier.md)。 |
 
+## UM-K-UNIFORM-BUNDLE-FLOOR-v1：k-均匀资源束的分层匹配地板
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-K-UNIFORM-BUNDLE-FLOOR-v1 | 根—X—超边—资源需求树满足 \(b^*=\max_{1\le t\le\min(k,K)}\min(\nu_t/q,t/K)\)；\(\nu_t\) 为 t-束匹配数。 | 三维匹配地板的k-均匀推广；必须同时控制所有j-of-k层，不是一般困难性。 [正文](unrelated_machines/k_uniform_bundle_matching_floor.md)、[审计](../../tests/audits/unrelated_machines/k_uniform_bundle_matching_floor.py)、[结果](../../evidence/runs/unrelated_machines/k_uniform_bundle_matching_floor_audit.json)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

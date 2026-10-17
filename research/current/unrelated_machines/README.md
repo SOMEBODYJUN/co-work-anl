@@ -235,3 +235,8 @@ u) 是三维匹配。故完美 YES 的值恰为 (2/K)；放大三元组需求不
 ## 条件反面路线的最短缺口
 
 [Santa Claus 无常数近似假设下的条件反面界](santa_conditional_reverse_barrier.md)冻结 `UM-SANTA-NO-CONSTANT-CONDITIONAL-v1`：若假设一般 Santa Claus 对每个固定常数都无多项式近似，则结合 LST 的 (<3/2) 困难性和 BLMRS 的 (2-1/\\alpha\to\\alpha+\\eta) 转换，可条件排除所有统一 (2-\\varepsilon) 调度算法。该假设尚未证明，故这是条件技术路线和精确缺口，不是主目标无条件反面。
+
+## k-均匀资源束的分层逃逸障碍
+
+[k-均匀资源束地板](k_uniform_bundle_matching_floor.md) 冻结 `UM-K-UNIFORM-BUNDLE-FLOOR-v1`：对根→(X)→超边→资源的需求树，精确有 (b^*=\max_t\min(\nu_t/q,t/K))，其中 (
+u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配的 (1/2) 逃逸只是 (k=K=2) 特例。任何近2反面归约必须同时压低所有 (j)-of-(k) 层；只压低完整超边匹配、提高需求或复制资源都不够。

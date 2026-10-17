@@ -205,3 +205,9 @@ u/q\to0) 但 (mu/q=1)，故标准需求树仍 (b^*=1/2)、调度OPT=3/2；若 (m
 ## 条件反面路线
 
 新稿 [santa_conditional_reverse_barrier.md](../current/unrelated_machines/santa_conditional_reverse_barrier.md) 记录 `UM-SANTA-NO-CONSTANT-CONDITIONAL-v1`：假设一般 Santa Claus 对每个固定常数都无多项式近似时，LST 与 BLMRS 两分支逻辑排除任意统一 (2-\\varepsilon) 调度算法。SCHA 未被证明；Santa 的已知固定因子困难性和 SA/配置间隙不足以替代它。因而当前真正的无条件义务仍是每个固定 ε 的实际整数 OPT gap 归约，或先证明该 Santa 强假设。
+
+## 新的分层资源束障碍
+
+[ k-均匀资源束地板](../current/unrelated_machines/k_uniform_bundle_matching_floor.md) 给出 `UM-K-UNIFORM-BUNDLE-FLOOR-v1`：标准根—X—超边—资源需求树的 (b^*) 精确等于所有 (t)-束匹配层 (
+u_t) 与比例 (t/K) 的最大最小值。三维匹配的 (1/2) 逃逸只是特例；若 (
+u_1=q)，总有 (b^*\ge1/K)。因此要构造 YES (b^*=1)、NO (b^*\le\varepsilon/2)，必须同时击穿所有低层 (t)-of-(k) 选择，并保留位多项式的共享标签一致性。固定 (k) 或只做完整张量仍不足。

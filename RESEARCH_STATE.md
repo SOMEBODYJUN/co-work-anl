@@ -52,3 +52,5 @@
 ## 加权共同组的新增正面接口
 
 [共同资格私有组的加权出口与联合槽](research/current/unrelated_machines/weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。
+
+新反面障碍 [k-均匀资源束分层地板](research/current/unrelated_machines/k_uniform_bundle_matching_floor.md) 已入账：标准层状需求树满足 (b^*=\max_t\min(\nu_t/q,t/K))，必须同时控制所有 (j)-of-(k) 选择层。它推广三维匹配的单终端地板，并排除仅提高需求、复制资源或压低完整超边匹配的近2归约；主目标仍开放。

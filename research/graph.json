@@ -8558,6 +8558,18 @@
         "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
       ],
       "status": "conditional proof under SCHA; assumption unproved; external review and novelty unverified"
+    },
+    {
+      "id": "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "k-均匀资源束的分层匹配地板",
+      "detail": "根—X—超边—资源DAG的b*精确由所有t-束匹配层给出；三维匹配1/2逃逸是特例。",
+      "refs": [
+        "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "complete stated-scope obstruction; exact finite audit; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -20853,6 +20865,36 @@
         "research/unrelated_machines/LITERATURE.md"
       ],
       "status": "conditional open barrier"
+    },
+    {
+      "id": "L-UM-K-UNIFORM-BUNDLE-FLOOR-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+      ],
+      "conclusion": "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
+      "statement": "所有j-of-k匹配层共同决定b*；只压低完整超边匹配不能得到近2 soundness。",
+      "refs": [
+        "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+        "tests/audits/unrelated_machines/k_uniform_bundle_matching_floor.py"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "L-UM-K-UNIFORM-BUNDLE-FLOOR-OPEN-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-K-UNIFORM-BUNDLE-FLOOR-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仍需共享标签/高距离一致性，阻止每个低t层逃逸并保持固定epsilon下的位多项式规模。",
+      "refs": [
+        "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
     }
   ]
 }

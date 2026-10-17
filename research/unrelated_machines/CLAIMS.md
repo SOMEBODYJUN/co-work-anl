@@ -1138,3 +1138,15 @@ u) 为三维匹配数，则 (b^*(D_K(A))=\max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\}
 - **Dependencies：** LST 的 (<3/2) 困难性；BLMRS Theorem 1 的 (2-1/\alpha) Makespan 到 (\alpha+\eta) Santa 转换。
 - **Scope / Status：** 条件逻辑合成；SCHA 未证，不能升级为主目标无条件反面。
 - **Related Files：** `research/current/unrelated_machines/santa_conditional_reverse_barrier.md`。
+
+## UM-K-UNIFORM-BUNDLE-FLOOR-v1：k-均匀资源束的分层匹配地板
+
+- **Exact Statement / Quantifiers：** 对任意根需求 (q)、超边资源束大小至多 (k)、超边需求 (K) 的标准需求 DAG，令 (
+u_t) 为每个选中超边取 (t) 个互不相交资源的最大束匹配数，则 (b^*=\max_{1\le t\le\min(k,K)}\min(\nu_t/q,t/K))。
+- **Scope / Conclusion：** 直接局部资源束 gadget 的精确逃逸公式；三维匹配 (1/2) 地板是特例。近2 soundness 必须同时压低所有 (t)-层，不能只压低完整匹配。
+- **Dependencies：** `UM-DAG-DEGREE-TOKEN-IDENTITY-v1`、树的单父约束和束匹配定义。
+- **Evidence：** 自足上下界证明；Fraction 审计覆盖 (q=1) 全集合系统、(q=2) 固定种子随机系统及 (
+u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
+- **Counterevidence / Objections：** 只限制该层状局部接口；不排共享标签、高距离编码或其它全局一致性归约，不证明主目标反面。
+- **Status：** complete stated-scope obstruction; exact finite audit; external review and novelty unverified.
+- **Related Files：** `research/current/unrelated_machines/k_uniform_bundle_matching_floor.md`; `tests/audits/unrelated_machines/k_uniform_bundle_matching_floor.py`; `evidence/runs/unrelated_machines/k_uniform_bundle_matching_floor_audit.json`。

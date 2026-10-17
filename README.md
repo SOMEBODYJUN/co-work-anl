@@ -60,3 +60,5 @@
 [开放义务与本轮边界](research/questions/unrelated_machines/barrier_escape_obligations.md)另记一个尚待审查的门槛/FPTAS sharpen `R*=((1+η)(3+δ))/(2+η)<2`，以及 `OPT=T=1` 的 LST 正支撑零质量边反例；二者分别是结构候选和方法边界，不是一般算法或困难性证明。
 
 同页还分离了 rank-jump-one 的真实支持引理：有限正权真实矩在 `rank(M2)=rank(M1)+1` 时可恢复 `R+1` 个原子；这不延伸到任意伪矩，也不认证公屏的 `4−2√2` 常数。
+
+反面路线新增的可复用障碍是 [k-均匀资源束分层地板](research/current/unrelated_machines/k_uniform_bundle_matching_floor.md)：标准需求树的 (b^*) 同时由所有 (j)-of-(k) 束匹配层决定；三维匹配的 (1/2) 单终端逃逸只是特例。它把近2反面归约的真正 soundness 义务收窄为：共享标签必须同时压低所有低层束匹配，且保持固定 ε 下位多项式规模。该结果不关闭 UM-TARGET-v1。
