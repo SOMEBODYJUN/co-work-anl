@@ -208,11 +208,11 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 
 本结果终止的是固定顺序max||Aeψ||²后左乘的具体充分机制。真实所有阶矩和逐行容量算子也不能免费保过去联合支撑；仍不排重新耦合、自适应顺序、好μ选择或其他提取。§8的交换算子边界可回收；真正未解仍是一般输入可求的共同容量与实际输出/总进展，UM-TARGET-v1保持OPEN。
 
-## 新的可重开候选与零质量支撑边界
+## 新的可重开结构与零质量支撑边界
 
-[跨过配置间隙后的开放义务](../../questions/unrelated_machines/barrier_escape_obligations.md)新增 `UM-THRESHOLD-COVER-JOINT-SLOT-v1`：在共同资格、等端时间私有组结构下，乘法最小覆盖 FPTAS 加可调阈值 `τ` 和一次宏/home/sink 联合槽流，给定 `T` 的候选界为 `R*=((1+η)(3+δ))/(2+η)<2`。它是既有 `3/2+δ` 组接口的 sharpen，未知 `OPT` 的单调搜索与一般任务分解仍未闭合。
+[跨过配置间隙后的开放义务](../../questions/unrelated_machines/barrier_escape_obligations.md)新增 `UM-THRESHOLD-COVER-JOINT-SLOT-v1`：在共同资格、等端时间私有组结构下，乘法最小覆盖 FPTAS 加可调阈值 `τ` 和一次宏/home/sink 联合槽流，给定 `T` 的界为 `R*=((1+η)(3+δ))/(2+η)<2`。FPTAS 见证集只用于LP可行性，实际输出用固定顺序前缀；未知 `OPT` 以所有 `t≥OPT` 接受的 one-sided 网格二分闭合。一般任务分解仍未闭合。
 
-同页的 `UM-LST-SUPPORT-RELEASE-v0` 精确反例族表明：即使 `OPT=T=1`，给定 LST 正支撑上的大边匹配也可能让残余整型任务无解，而真实调度使用了零质量边。容量释放机制必须允许支撑扩张或共同 `(H,z)` 证书。rank-jump-one 路线已分层：对真实有限正权支持可用 Boolean 代数闭合恢复 `R+1` 原子；对一般伪矩仍缺共同交换投影与 `V2` localizer。`4-2√2` 支持候选未认证。
+同页的 `UM-LST-SUPPORT-RELEASE-v0` 旧族仍反驳固定正支撑填充，但其精确 `OPT=1−49/[100(m+1)]<1`，撤回旧的 `OPT=T=1` 标签。新增 `UM-LST-SUPPORT-RELEASE-OPTIMAL-v1` 用 `r` 个独立块把真实 `OPT` 固定为1，并证明少于 `r` 条零质量边时比值为 `2−1/m`；容量释放机制必须允许支撑扩张或共同 `(H,z)` 证书。rank-jump-one 路线已分层：对真实有限正权支持可用 Boolean 代数闭合恢复 `R+1` 原子；对一般伪矩仍缺共同交换投影与 `V2` localizer。`4-2√2` 支持候选未认证。
 
 ## 加权共同组的新增正面接口
 
@@ -287,8 +287,14 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 
 [单层配额超图平方根重数地板](single_layer_quota_sqrt_multiplicity_floor.md)：对每个邻域至少 K、资源总重数至多 Δ 的单层接口，计数得 b≥1/(√Δ+1)−1/K，并由资源总量给 b≤1/√Δ（在相应密度下）。这比有界碰撞的 1/Δ 地板更强，明确要求近二归约使用平方级碰撞或跨层一致性；不构成一般硬度。
 
+
 ## 反面路线新增的模型与复制边界
 
 [Santa restricted边界](santa_restricted_bridge_boundary.md)核清 Haeupler–Saha–Srinivasan 的常数算法只适用于每件物品具有统一固有值的 restricted Santa；需求 \(k_v>1\) 的 token 桥梁任务在父/子端分别为 \(1/k_v\) 与 \(1\)，不保持该结构。故 restricted Santa 结果不能导入一般 UM 或当前 MMDA 反面路线。
 
 [两份完整复制地板](duplication_two_copy_floor.md)证明：若每个变量的两份完整标签束在各自副本内不交，则资源二着色给出 \(b\ge1/2\) 的实际根树；这把简单 duplication 的 soundness 上限写成精确一半，并与 BCG §7 的复制警示分开。当前仍缺跨层整数一致性，使 YES 保持 \(b^*=1\) 而 NO 的每个高比例树都能解码源见证。
+
+
+## 共同尺寸可重开 repair 接口
+
+[共同尺寸微任务的可重开容量流](common_size_reopen_capacity_flow.md)登记 `UM-COMMON-SIZE-REOPEN-v1`：给定冻结核心、共同尺寸资格流和 `q_max` 头部余量时，有序槽允许接收机增载并输出实际整修复；每个支持连通分量内单一尺寸时，整数槽最大流无加性损失。Farkas 价格给一般可分流的精确阻塞证书；两机三件的 Fraction 反例说明分数共同容量不保证不可拆分整性。一般核心选择、异端时间和统一余量仍未解决。

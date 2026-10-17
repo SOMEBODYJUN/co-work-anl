@@ -953,6 +953,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1 | 对任意固定 `δ>0`，强 3-PARTITION 可缩放为 tiny 边均 `≤δT` 的残余阈值实例；T-feasible 整数调度当且仅当 3-partition，均匀分数 LP 始终可行。 | 只反驳把异质接收成本精确化为普通整数流/简单可积多面体；不反驳带 ST 加性余量的 `(3/2+δ)` 候选，也不是近 2 困难性。 |
 | UM-STRICT-SUB2-BATCH-BARRIER-v1 | 对每个 `k≥2` 存在 `OPT=1` 实例和负载 `<2` 坏态；允许每步最多 k 件迁移且所有中间态保持 `<2` 时，坏态在状态图中孤立，首个出口需 `k+1` 件。 | 只限制常数批量、严格次二局部修复；允许无界批量、跨过 2 或重新求解时不适用。正文与 Fraction 审计见 `strict_sub2_batch_barrier.md`。 |
 
+
 ## 单任务外接端口的等值复制边界
 
 | ID | 精确结论 | 范围与证据 |
@@ -979,8 +980,26 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1 | 两状态标签束各自内部不交；对保留变量 \\(Y\\) 和任意 \\(\\delta\\)，令 \\(G_a(\\delta)=\\{x:|R_x^a|\\ge\\delta K_x^a\\}\\)。若 \\(G_0\\cup G_1\\ne\\varnothing\\)，确定性选较大状态得到 \\(b(H)\\ge\\min\\{|G_0\\cup G_1|/(2q_r),\\delta\\}\\)；根需求为 \\(|Y|\\) 且每变量有一好状态时得 \\(\\min\\{1/2,\\delta\\}\\)。 | 允许任意删叶/删变量但保留状态内不交；完全二部冲突族达到 \\(\\min\\{1/2,s/K\\}\\)。比一般 \\(\\Delta_G\\le2\\) 的 \\(\\delta/2\\) 更强；不排跨状态外部重用导致状态内不交失效。 [正文](unrelated_machines/duplication_state_majority_floor.md)、[审计](../../tests/audits/unrelated_machines/robust_consistency_state_majority.py)、[冻结结果](../../evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json)。 |
 
+
+## 2026-10-17：门槛覆盖修正与真实 OPT=1 支撑释放前沿
+
+| ID | Exact scope | Result and boundary |
+| --- | --- | --- |
+| UM-THRESHOLD-COVER-JOINT-SLOT-v1 | 共同资格、等端时间、唯一 home 的宏/私有组结构；固定 `δ,η` 满足 `δ+η+δη<1`，宏/组条件按 `barrier_escape_obligations.md`。 | 乘法最小覆盖 FPTAS、联合 home/sink 槽流和固定顺序前缀给 `R*=((1+η)(3+δ))/(2+η)<2`。FPTAS 见证集不直接输出；未知 `OPT` 的接受谓词可能非单调，但 promise 下所有 `t≥OPT` 接受，one-sided 分母网格二分输出 `t≤OPT`。结构提取仍未解，主目标 OPEN。 [正文](../questions/unrelated_machines/barrier_escape_obligations.md)、[独立复核](../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)。 |
+| UM-LST-SUPPORT-RELEASE-OPTIMAL-v1 | `r` 个独立块，每块 `m≥2` 核心机、一备用机、私有任务大小 `1−1/m` 和单位锚任务；固定 LST 点的零质量边释放预算 `k`。 | `OPT=1`；约束至多 `k` 条 `x=0` 边时，`F(k)=2−1/m` 对 `k<r`，`F(k)=1` 对 `k≥r`。令 `m` 增长得到固定不足预算时相对 OPT 趋2。只排除固定支撑释放合同，不是一般困难性。 [正文](unrelated_machines/lst_support_release_optimal_gap.md)、[审计](../../tests/audits/unrelated_machines/lst_support_release_optimal.py)。 |
+
+## 2026-10-17：共同尺寸可重开容量流
+
+| ID | Exact scope | Result and boundary |
+| --- | --- | --- |
+| UM-COMMON-SIZE-REOPEN-v1 | 给定冻结核心、残余任务共同尺寸资格边和有理流证书；接收机允许增载。 | 分数共同容量加 `q_max` 头部余量时可由有序槽构造整修复；支持连通分量内单一尺寸时普通整数槽流无加性损失。一般异端/混尺寸仍有整数缺口，不关闭 UM-TARGET-v1。 [正文](unrelated_machines/common_size_reopen_capacity_flow.md)、[审查](../reviews/unrelated_machines/common_size_reopen_capacity_flow_review.md)。 |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
 - EXACT-KAPPA、MITM-EXACT 返回特定实例的最优因子；SC-PHI-A、HC-2-UP 返回符合普遍上界的一个因子。不能从一个短的达到证书推断它已达到实例最优。
 - 保留历史稿中的推导供追溯，但以[现行分支](README.md)的命题条件为准。修改条件时新建 ID 或明确版本，不覆写旧 ID 的含义。
+
+
+| UM-COMMON-SIZE-REOPEN-v1 | 给定冻结核心、残余任务共同尺寸资格边和有理流证书；接收机允许增载。 | 分数共同容量加 `q_max` 头部余量时可由有序槽构造整修复；支持连通分量内单一尺寸时普通整数槽流无加性损失。一般异端/混尺寸仍有整数缺口，不关闭 UM-TARGET-v1。 [正文](unrelated_machines/common_size_reopen_capacity_flow.md)、[审查](../reviews/unrelated_machines/common_size_reopen_capacity_flow_review.md)。 |

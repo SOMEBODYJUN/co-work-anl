@@ -6728,6 +6728,101 @@
       ],
       "source_role": "BCG duplication机制背景；多数状态引理为本仓自足推导",
       "limit": "不排跨状态外部重用导致状态内不交失效，不给一般UM硬度"
+    },
+    {
+      "id": "um_threshold_cover_joint_slot_v1",
+      "claims": [
+        "UM-THRESHOLD-COVER-JOINT-SLOT-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "Explicit disjoint home/sink groups with common per-group sink eligibility and equal endpoint job sizes; macro/home/sink structure and fixed delta,eta satisfy the threshold contract in barrier_escape_obligations.md",
+        "The proof uses a min-cover multiplicative FPTAS with exact original coverage, a joint home/sink slot flow, prefix recovery, and one-sided grid search; it does not generate this structure from a general unrelated instance."
+      ],
+      "produces": "可调保留阈值的共同组实际舍入与未知OPT one-sided搜索",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ],
+      "candidates": [
+        "research/questions/unrelated_machines/barrier_escape_obligations.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "limit": "Only the stated grouped structure; FPTAS witness subsets are not output subsets, and no general decomposition or UM-TARGET algorithm follows."
+    },
+    {
+      "id": "um_lst_support_release_optimal_v1",
+      "claims": [
+        "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1"
+      ],
+      "status": "complete stated-scope obstruction; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "r disjoint blocks with m>=2 core machines, one spare, private jobs of size 1-1/m on own core/spare, and one unit anchor job on all local machines; fixed LST point assigns anchor uniformly to cores",
+        "Outputs are constrained to use at most k finite edges with x=0; this is a method-contract obstruction, not a general hardness statement."
+      ],
+      "produces": "真实OPT=1下固定LST正支撑释放预算的精确近二前沿",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/lst_support_release_optimal_gap.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/lst_support_release_optimal.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/lst_support_release_optimal_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf"
+      ],
+      "limit": "Only fixed-support plus finite zero-edge release contracts; joint support re-selection, unbounded release, and all general algorithms remain open."
+    },
+    {
+      "id": "um_common_size_reopen_v1",
+      "claims": [
+        "UM-COMMON-SIZE-REOPEN-v1"
+      ],
+      "status": "complete stated-scope interface; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "A frozen core allocation leaves residual jobs with equal processing time q_j on every eligible machine; a rational fractional residual flow and q_max headroom certificate are given",
+        "If each support connected component has one common q, integer slot max flow gives exact repair; arbitrary endpoint costs and core selection are outside scope."
+      ],
+      "produces": "接收机可增载的共同尺寸联合repair、Farkas阻塞价格与单位尺寸精确流分支",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/common_size_reopen_capacity_flow.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/common_size_reopen_capacity_flow.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/common_size_reopen_capacity_flow_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/common_size_reopen_capacity_flow_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "limit": "Given-core/flow certificate only; q_max can cost almost one full task and arbitrary mixed sizes or general core selection remain open."
     }
   ]
 }

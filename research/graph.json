@@ -8948,6 +8948,43 @@
         "evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json"
       ],
       "status": "finite computational evidence"
+    },
+    {
+      "id": "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "可调阈值共同组的实际舍入与one-sided搜索",
+      "detail": "共同资格/等端时间/唯一home结构下，min-cover FPTAS、联合槽流和前缀恢复给R*=((1+eta)(3+delta))/(2+eta)<2；未知OPT以所有t>=OPT接受的上闭核二分处理。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md",
+        "research/questions/unrelated_machines/barrier_escape_obligations.md",
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ],
+      "status": "complete stated-scope structural proof; one-sided OPT search corrected; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "真实OPT=1的LST正支撑释放前沿",
+      "detail": "r个独立块的固定LST正支撑在少于r条零质量边释放时最优最大负载为2-1/m，释放每块一条后为1；m增长时相对OPT趋近2。",
+      "refs": [
+        "research/current/unrelated_machines/lst_support_release_optimal_gap.md",
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ],
+      "status": "complete stated-scope obstruction; exact finite audit; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-COMMON-SIZE-REOPEN-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共同尺寸微任务的可重开容量流",
+      "detail": "给定冻结核心和共同尺寸残余流证书时，允许接收机增载的有序槽整化；支持连通分量单尺寸时由整数槽流无加性损失恢复。",
+      "refs": [
+        "research/current/unrelated_machines/common_size_reopen_capacity_flow.md",
+        "research/reviews/unrelated_machines/common_size_reopen_capacity_flow_review.md"
+      ],
+      "status": "complete stated-scope interface; independently reconstructed and exactly audited; unrefereed; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -21956,6 +21993,98 @@
         "evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json"
       ],
       "status": "finite evidence"
+    },
+    {
+      "id": "D-UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEIGHTED-GROUP-JOINT-SLOT-v1"
+      ],
+      "conclusion": "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+      "statement": "在共同组联合槽机制上加入精确覆盖成本、可调阈值和one-sided OPT搜索，得到结构类低于2的界。",
+      "refs": [
+        "research/questions/unrelated_machines/barrier_escape_obligations.md",
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md",
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
+      ],
+      "status": "complete stated-scope derivation"
+    },
+    {
+      "id": "L-UM-THRESHOLD-COVER-JOINT-SLOT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-THRESHOLD-COVER-JOINT-SLOT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "唯一home、共同资格和等端时间的结构分解仍未从一般矩阵中构造；该结果不关闭主目标。",
+      "refs": [
+        "research/questions/unrelated_machines/barrier_escape_obligations.md",
+        "research/unrelated_machines/RESEARCH_STATE.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "open structural extraction obligation"
+    },
+    {
+      "id": "D-UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+      "statement": "从位编码调度模型构造r个独立块并精确计算固定LST支撑释放预算的负载前沿。",
+      "refs": [
+        "research/current/unrelated_machines/lst_support_release_optimal_gap.md"
+      ],
+      "status": "complete stated-scope construction"
+    },
+    {
+      "id": "L-UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "该障碍只排除固定支撑加有限零边释放合同，不是一般近二困难性；联合重选和一般算法仍开放。",
+      "refs": [
+        "research/current/unrelated_machines/lst_support_release_optimal_gap.md",
+        "research/unrelated_machines/RESEARCH_STATE.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-COMMON-SIZE-REOPEN-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-COMMON-SIZE-REOPEN-v1",
+      "statement": "固定核心后的共同尺寸残余容量由有理流、头部余量和有序槽整化闭合；单位尺寸连通分量由整数最大流精确恢复。",
+      "refs": [
+        "research/current/unrelated_machines/common_size_reopen_capacity_flow.md",
+        "research/reviews/unrelated_machines/common_size_reopen_capacity_flow_review.md"
+      ],
+      "status": "complete stated-scope interface"
+    },
+    {
+      "id": "L-UM-COMMON-SIZE-REOPEN-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-COMMON-SIZE-REOPEN-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "一般矩阵没有共同尺寸表示，头部余量可能退化到二倍，且固定核心/满足头部的支持选择仍未解。",
+      "refs": [
+        "research/current/unrelated_machines/common_size_reopen_capacity_flow.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "open generalization obligation"
     }
   ]
 }

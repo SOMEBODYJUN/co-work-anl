@@ -106,7 +106,7 @@ UM-FOREST-BOUNDARY-AUGMENT-v1现给实际单边界标量：真实根负载不高
 
 当前真正缺口：一般多边界/有环高树宽核心上，如何可计算地联合集中迁移，保持统一余量与总位多项式进展。一轮条件矩固定后不自动保留同层系统，不能免费迭代；同族小切面改进也不关闭主目标。
 
-本轮新增两条准确边界。第一，`barrier_escape_obligations.md` 的 `UM-THRESHOLD-COVER-JOINT-SLOT-v1` 候选在共同资格、等端时间的私有组结构中，用乘法最小覆盖 FPTAS 和可调保留阈值 `τ` 得到给定 `T` 的 `R*=((1+η)(3+δ))/(2+η)<2`；它尚未解决未知 `OPT` 的单调搜索，也不适用于一般矩阵。第二，`UM-LST-SUPPORT-RELEASE-v0` 被 `m=2,…,7` 的精确族反驳：真实 `OPT=T=1` 调度依赖 LST 正支撑外的零质量边，故容量释放必须允许支撑扩张或联合证书。该族不是配置 gap 或一般困难性结论。
+本轮新增两条准确边界。第一，`barrier_escape_obligations.md` 的 `UM-THRESHOLD-COVER-JOINT-SLOT-v1` 在共同资格、等端时间的私有组结构中，用乘法最小覆盖 FPTAS 和可调保留阈值 `τ` 得到给定 `T` 的 `R*=((1+η)(3+δ))/(2+η)<2`；FPTAS 输出只作LP见证，实际用前缀，未知 `OPT` 以 one-sided 网格二分闭合；一般任务分解仍缺。第二，旧 `UM-LST-SUPPORT-RELEASE-v0` 的 `OPT=T=1` 标签经精确复核撤回；新增 `UM-LST-SUPPORT-RELEASE-OPTIMAL-v1` 用 `r` 独立块确保 `OPT=1`，少于 `r` 条零质量边时保留 `2−1/m`。两者都不是一般算法或困难性结论。
 
 共同矩路线也有一条新的分层结论：对有限正权真实支持，`rank(M2)-rank(M1)=1` 可由 Boolean 函数代数闭合证明自动恢复 `R+1` 个共同 one-hot 原子；对仅满足 PSD/守恒的伪矩，仍需跨块交换条件和 `V2` 负载 localizer。公屏提出的 `4-2√2` 支持常数没有精确定义，暂不采用。
 
@@ -279,6 +279,7 @@ u_1=q)，总有 (b^*\ge1/K)。因此要构造 YES (b^*=1)、NO (b^*\le\varepsilo
 
 [单层配额超图平方根重数地板](../current/unrelated_machines/single_layer_quota_sqrt_multiplicity_floor.md)：对每个邻域至少 K、资源总重数至多 Δ 的单层接口，计数得 b≥1/(√Δ+1)−1/K，并由资源总量给 b≤1/√Δ（在相应密度下）。这比有界碰撞的 1/Δ 地板更强，明确要求近二归约使用平方级碰撞或跨层一致性；不构成一般硬度。
 
+
 ## 反面路线的新模型核查与复制地板（2026-10-17）
 
 Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困难性属于 additive DegreeTwo/InfDegreeOne Max-Min Allocation，M-pyramid 是含全部源点的 forest；不能直接成为本单根树 \(b^*=1\) 对 \(b^*\le\delta\) 的 gap。Bamas2025 的 SA/层级间隙不是计算硬度，并在 p.44 将 MMDA 的 ETH-hardness列为开放问题；BLMRS 只有 Makespan→Santa 的算法方向。
@@ -286,3 +287,8 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 新 `UM-DUPLICATION-TWO-COPY-FLOOR-v1` 对两份副本各自内部无冲突的完整标签束给出资源二着色 \(b\ge1/2\)；新 `UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1` 证明需求 \(k_v>1\) 时 token 桥梁不保持 restricted Santa 的固有值结构。反面路线因此仍卡在跨层整数一致性与每固定 ε 的真实 OPT gap；这些模型边界和地板已写入对应正文与账本，未升级为无条件否定。
 
 新增 `UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1`：两状态内部不交的残余束中，多数状态给 \(b\ge\min\{|G(\delta)|/(2q_r),\delta\}\)，全变量有好状态时为 \(\min\{1/2,\delta\}\)；完全二部冲突族锐。该 sharpen 已用34389个Fraction小系统审计，仍不排跨状态外部资源重用。
+
+
+## 共同尺寸重开与容量阻塞证书
+
+新增 `UM-COMMON-SIZE-REOPEN-v1`：给定冻结核心和残余共同尺寸有理流，`q_max` 头部条件下可用一次联合槽匹配整化，允许接收机增载；支持连通分量单尺寸时普通整数槽流精确修复。一般可分容量由 Farkas 价格判定，但两机三件等端任务的分数/整数缺口和异端最小值误判已精确记录。该接口不能选择一般核心，也不能消除混尺寸装箱或统一近二余量；UM-TARGET-v1 仍 OPEN。
