@@ -63,3 +63,5 @@ Goemans, [MIT18.433拟阵讲义](https://math.mit.edu/~goemans/18433S11/matroid-
 ## 对称共同条件矩的原始定义
 
 Lovász–Schrijver, *Cones of Matrices and Setfunctions, and 0-1 Optimization*, CWI BS-R8925（1989-10），[原始38页报告](https://ir.cwi.nl/pub/5815/5815D.pdf)。实际字节已保存，hash见manifest的LS1989_matrix_cones；PDF8/印5 §1(a)(i)要求对称，PDF10/印7 (iii″)给列/补列，PDF11/印8式(3)区分非对称投影。此处印刷页码来自PDF页面底部，与公屏207曾少一页的定位不同；正文数学无冲突。只核这些定义，不宣称全文证明内化。[任务聚合与重置正文](../current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)自足证明特定运输规则的2T门槛，同时在同一边际上给T重新耦合；不是源定理或LS间隙。
+
+反面路线的新增定位阅读：Bamas2025 arXiv:2406.18273v2 PDF/印刷p44开放问题4明确询问MMDA的ETH困难性，并指出直观转换会指数规模；不把SA gap当近2调度hardness。BLMRS arXiv:2307.08453v1 Theorem1为PDF3/印刷2页的算法归约方向。只新增定位核对，原PDF字节及完整证明重构状态未变；见[私有组合正文§1](../current/unrelated_machines/private_graft_and_resource_repetition.md)。

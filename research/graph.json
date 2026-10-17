@@ -8076,6 +8076,46 @@
         "research/reviews/unrelated_machines/hall_group_joint_flow_review.md"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "需求树私有组合的精确瓶颈与无放大范围",
+      "detail": "∀合法需求DAG G,H，私有终端替换满足b*(G∘H)=min(b*G,b*H)，异质终端有式(2)的精确max–min；正需求k根接m个私有模块的值为max_s min(1,s/k,β_(s))（m=0取0）。固定结构/需求及常数模块、同一β输入的有限私有组合是f(β)=max(f(0),min(f(1),β))，若保YES f(1)=1则f(β)≥β，不产生NO比例放大。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "research/reviews/unrelated_machines/private_graft_repetition_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完全元素池的分数整数化与直接重复的保真反例",
+      "detail": "∀显式3DM A、整数r≥1，每元素r克隆且每原边含全部r³组合的完全池A^[r]有完美匹配，当且仅当A有权重属于(1/r)Z≥0的分数完美匹配。四边parity A={000,011,101,110}原无完美匹配，r2完全池及每个t≥2的直接坐标张量均有完美匹配；相应需求树token调度的真实OPT由3/2降至1。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "research/reviews/unrelated_machines/private_graft_repetition_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-PRIVATE-RESOURCE-REPETITION-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "私有需求树组合及资源复制的双路有限证据",
+      "detail": "21384 canonical graft cases, original-job assignment oracle, 6500 independent tree/gate cases, 768 independent pool checks, and explicit tensor witnesses; not a universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "evidence/runs/unrelated_machines/private_graft_repetition_audit.json",
+        "tests/audits/unrelated_machines/private_graft_and_resource_repetition.py",
+        "tests/audits/unrelated_machines/private_graft_independent.py",
+        "tests/audits/unrelated_machines/resource_pool_independent.py",
+        "examples/unrelated_machines/parity_3dm_repetition.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -19526,6 +19566,100 @@
       "statement": "不判定关于OPT的结构承诺；不提供一般矩阵分解，同组共同资格/等端体积和组负载范围保留；可变q时无统一正ε。",
       "refs": [
         "research/current/unrelated_machines/hall_group_joint_flow.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "DERIVE-UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-MODEL-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+      ],
+      "conclusion": "UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1",
+      "statement": "Self-contained finite-tree/max-min or integer multi-edge proof in account; token identity only for the actual scheduling translation. No complexity assumption or free oracle.",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "CHECK-UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-RESOURCE-REPETITION-AUDIT-v1"
+      ],
+      "conclusion": "UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1",
+      "statement": "Only the finite exact cases and explicit witnesses in the frozen run; general quantifiers are proved in the account.",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "evidence/runs/unrelated_machines/private_graft_repetition_audit.json",
+        "tests/audits/unrelated_machines/private_graft_and_resource_repetition.py",
+        "tests/audits/unrelated_machines/private_graft_independent.py",
+        "tests/audits/unrelated_machines/resource_pool_independent.py"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只限制已定义的私有值组合；不排跨模块共享、一致性测试、输入结构依赖归约或一般算法。完整根门k>0承重；式子不是已能高效求b*。 Does not prove or refute the target.",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "DERIVE-UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-MODEL-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+      ],
+      "conclusion": "UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1",
+      "statement": "Self-contained finite-tree/max-min or integer multi-edge proof in account; token identity only for the actual scheduling translation. No complexity assumption or free oracle.",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "CHECK-UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-RESOURCE-REPETITION-AUDIT-v1"
+      ],
+      "conclusion": "UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1",
+      "statement": "Only the finite exact cases and explicit witnesses in the frozen run; general quantifiers are proved in the account.",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "evidence/runs/unrelated_machines/private_graft_repetition_audit.json",
+        "tests/audits/unrelated_machines/private_graft_and_resource_repetition.py",
+        "tests/audits/unrelated_machines/private_graft_independent.py",
+        "tests/audits/unrelated_machines/resource_pool_independent.py"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "pool和坐标张量是不同操作；只否定这些明确NO保真合同。固定r显式多项式，二进制增长r的显式复制不保证位多项式。不是近2计算困难性，也不是所有张量归约障碍。 Does not prove or refute the target.",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md"
       ],
       "status": "method boundary"
     }

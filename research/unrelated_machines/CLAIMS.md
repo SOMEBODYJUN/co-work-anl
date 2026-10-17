@@ -827,3 +827,27 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：共同资格、体积、组下界省略会破证明；q槽不能凭strict Hall降为q−1；没有一般结构提取或一般容量转换。
 - Status：限域完整证明、独立内部已审、规范实际构造已实现；标准工具组合，未外审/未认证全球新颖性或独立论文价值。
 - Related Files：[正文](../current/unrelated_machines/hall_group_joint_flow.md)、[冻结审查](../reviews/unrelated_machines/hall_group_joint_flow_review.md)、hall_group_joint_flow三份代码/冻结报告与实际输入/任务分配。
+
+## UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1：需求树私有组合的精确瓶颈与无放大范围
+
+- Exact Statement / Quantifiers：∀合法需求DAG G,H，私有终端替换满足b*(G∘H)=min(b*G,b*H)，异质终端有式(2)的精确max–min；正需求k根接m个私有模块的值为max_s min(1,s/k,β_(s))（m=0取0）。固定结构/需求及常数模块、同一β输入的有限私有组合是f(β)=max(f(0),min(f(1),β))，若保YES f(1)=1则f(β)≥β，不产生NO比例放大。
+- Objects / Domain / Definitions：第1节需求DAG/真实根树；私有识别、正需求根门与完全pool/直接坐标tensor分别按[正文](../current/unrelated_machines/private_graft_and_resource_repetition.md)§2–5定义。零需求只限原终端；正需求死端仍收费；3DM坐标带标签。
+- Assumptions：无复杂度假设；第1节P≠NP下近2 gap合同是未完成义务，不是本Claim假设或已得结论。
+- Scope / Conclusion：只限制已定义的私有值组合；不排跨模块共享、一致性测试、输入结构依赖归约或一般算法。完整根门k>0承重；式子不是已能高效求b*。 UM-TARGET-v1仍OPEN。
+- Dependencies：UM-DAG-DEGREE-MODEL-v1；UM-DAG-DEGREE-TOKEN-IDENTITY-v1只用于真实调度翻译；自足有限树/max–min或整数多重边证明。不承重导入SA困难性。
+- Evidence：双Astra先独立重构、再冻结hash攻击；boss亲核。规范21384替换对及实际13任务调度oracle，独立4500替换/2000根门、768 pool案例；范围与hash在冻结结果，不代替一般证明。
+- Counterevidence / Objections：无尚成立fatal；冻结审查指出BLMRS页码非致命错误已修。共享接口不满足私有性；所得边界不支持否定通用调度算法。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。外审及全球新颖性未认证，不称独立论文突破。
+- Related Files：research/current/unrelated_machines/private_graft_and_resource_repetition.md；research/reviews/unrelated_machines/private_graft_repetition_review.md；tests/audits/unrelated_machines/private_graft_and_resource_repetition.py；tests/audits/unrelated_machines/private_graft_independent.py；tests/audits/unrelated_machines/resource_pool_independent.py；evidence/runs/unrelated_machines/private_graft_repetition_audit.json；examples/unrelated_machines/parity_3dm_repetition.json。
+
+## UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1：完全元素池的分数整数化与直接重复的保真反例
+
+- Exact Statement / Quantifiers：∀显式3DM A、整数r≥1，每元素r克隆且每原边含全部r³组合的完全池A^[r]有完美匹配，当且仅当A有权重属于(1/r)Z≥0的分数完美匹配。四边parity A={000,011,101,110}原无完美匹配，r2完全池及每个t≥2的直接坐标张量均有完美匹配；相应需求树token调度的真实OPT由3/2降至1。
+- Objects / Domain / Definitions：第1节需求DAG/真实根树；私有识别、正需求根门与完全pool/直接坐标tensor分别按[正文](../current/unrelated_machines/private_graft_and_resource_repetition.md)§2–5定义。零需求只限原终端；正需求死端仍收费；3DM坐标带标签。
+- Assumptions：无复杂度假设；第1节P≠NP下近2 gap合同是未完成义务，不是本Claim假设或已得结论。
+- Scope / Conclusion：pool和坐标张量是不同操作；只否定这些明确NO保真合同。固定r显式多项式，二进制增长r的显式复制不保证位多项式。不是近2计算困难性，也不是所有张量归约障碍。 UM-TARGET-v1仍OPEN。
+- Dependencies：UM-DAG-DEGREE-MODEL-v1；UM-DAG-DEGREE-TOKEN-IDENTITY-v1只用于真实调度翻译；自足有限树/max–min或整数多重边证明。不承重导入SA困难性。
+- Evidence：双Astra先独立重构、再冻结hash攻击；boss亲核。规范21384替换对及实际13任务调度oracle，独立4500替换/2000根门、768 pool案例；范围与hash在冻结结果，不代替一般证明。
+- Counterevidence / Objections：无尚成立fatal；冻结审查指出BLMRS页码非致命错误已修。共享接口不满足私有性；所得边界不支持否定通用调度算法。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。外审及全球新颖性未认证，不称独立论文突破。
+- Related Files：research/current/unrelated_machines/private_graft_and_resource_repetition.md；research/reviews/unrelated_machines/private_graft_repetition_review.md；tests/audits/unrelated_machines/private_graft_and_resource_repetition.py；tests/audits/unrelated_machines/private_graft_independent.py；tests/audits/unrelated_machines/resource_pool_independent.py；evidence/runs/unrelated_machines/private_graft_repetition_audit.json；examples/unrelated_machines/parity_3dm_repetition.json。

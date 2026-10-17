@@ -155,3 +155,9 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 [新增共同退出合同](../current/unrelated_machines/shared_sink_joint_macro_assignment.md#8-宏任务也可退出共同匹配而非冻结大小身份)：`UM-SHARED-SINK-MACRO-EXIT-v1`允许宏任务真实退出及宏数超过home数；`UM-BOUNDED-PROFILE-EXIT-POOL-v1`在显式完整pool且`a_zc_j≤p_zj≤ρa_zc_j, p_zj≤βT`时，共同选择全部宏与私有撤离，输出home≤T、pool≤`[ρ(1+η)+β]T`，OPT≤T必成功。sink数不固定。标准cover/匹配/加权总量恢复组合，已独立审查及两路Fraction核验；一般资格、跨home任务与结构提取仍未闭合，UM-TARGET-v1仍OPEN。
 
 [共同资格组的联合流与未知OPT恢复](../current/unrelated_machines/hall_group_joint_flow.md)：共同资格私有组现可在**sink数不固定**时共同选择macro/home/receiver：`UM-HALL-GROUP-JOINT-FLOW-v1`用每occupied组出口>T/q的Hall条件、一个整数流和真实前缀输出≤`q(2+δ)/(q+1)T`；`UM-HALL-GROUP-PROMISE-APPROX-v1`在同结构关于OPT的承诺下用有限瓶颈搜索直接输出相同比例OPT调度。q≥2、qδ<2，W_h∈[(1/2+1/q)T,T]、每私有件≤δT、同组共同资格与等端体积承重。q增长时改善可趋零；一般矩阵分组/跨home/异端时间转换仍未解。标准Hall/flow/prefix组合，未认证新颖性，UM-TARGET-v1保持OPEN。
+
+## 反面路线的精确放大断点
+
+[私有需求树组合与共享重复](../current/unrelated_machines/private_graft_and_resource_repetition.md)给UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1及UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1：私有递归只取瓶颈，完整YES保留时不能缩小固定NO比例；完全元素池等价分母受限分数匹配，parity源坐标张量所有t≥2反变YES。不是近2困难性，UM-TARGET-v1仍OPEN。
+
+尚缺：对每个固定ε>0，在明确P≠NP或其他准确假设下给位多项式YES b*=1 / NO b*≤ε/2源归约，或其他真正近2整数OPT gap。Bamas2025 p44仍把MMDA ETH困难性列为开放问题，不能把其SA gap当源hardness。boss10与boss7独立重合的parity全次直积已合入同一资产；boss7的实际处理矩阵Kronecker对象另行审查，不混为同一个tensor。下一关键动作是跨模块整数一致性soundness，同时保持完整YES和输出规模；现无通过攻击的实现。

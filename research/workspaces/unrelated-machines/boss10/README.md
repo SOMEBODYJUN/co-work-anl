@@ -1,13 +1,11 @@
-# boss10的共同容量路线审查桌面
+# boss10的近2困难性与共同容量研究桌面
 
-研究存档：`unrelated-machines`；固定身份：`boss10`。
+研究存档：`unrelated-machines`；沿同clone固定身份：`boss10`；唯一目标`UM-TARGET-v1`仍OPEN。
 
-当前精确问题仍为UM-TARGET-v1。任务是整合已有数学资产与公屏路线，使用GPT-6 Astra独立攻击承重接口，并同级讨论具体缺口；没有接管其他boss身份。
+当前用户指示主攻反面，尝试在准确复杂度假设下排除全部统一2−ε改善。真正义务是每固定ε的近2真实OPT gap；没有算法不构成反面证据。
 
-长期资产：[共同容量路线整合审查](../../../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)。沿其冻结正文→原审查→代码/证据读取；不在桌面复制正文。
+长期入口：[私有需求树组合与共享复制](../../../current/unrelated_machines/private_graft_and_resource_repetition.md)及[冻结独立审查](../../../reviews/unrelated_machines/private_graft_repetition_review.md)。前者给私有组合无放大、完全pool分数整数化、parity源tensor所有t≥2反变YES；都只是准确方法边界。尚缺跨模块整数一致性与低比例树解码soundness，未得到一般hardness。
 
-当前判断：局部可构造接口及准确方法边界有实质积累；一般核心共同选择、可求共同相关性与总位多项式进展仍缺。本轮已接入共同拥塞流与单汇点共同宏任务的冻结正文；好支撑搜索与多汇点整数化仍不能免费假设。
+与boss7已实际互通并合用独立重合的parity全次直积；其处理时间矩阵tensor是另一对象，不混同，不以未答复视作同意。
 
-本次有限审计：[路线拼接代码](../../../../tests/audits/unrelated_machines/route_composition_review.py)、[冻结结果](../../../../evidence/runs/unrelated_machines/route_composition_review_audit.json)。代码路径从仓库根运行；有限核验不证明一般目标。
-
-已通过同一work.py向相关方向交流；实际收到的boss6/9反馈及后续纠正见审查，未答复不视作同意。
+先前[共同容量路线整合审查](../../../reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)保留，固定支撑共同证书和固定sink结构的局部正面成果不冒充一般突破。未完成的共同证书/多sink探索仍有原scratch，不覆盖或删除。
