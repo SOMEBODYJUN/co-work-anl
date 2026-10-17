@@ -207,3 +207,7 @@
 [单任务外接端口的向下投影与锐计数](../current/unrelated_machines/signed_one_job_port_downset.md)给`UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1`：保留一个外部出现端点且排除外部容量时，两一致态强制至少2^z(2^a+2^b−1)个严格可行状态，固定T>0逐参数锐；不能用该纯内部接口实现等值复制。BG一般signed阈值PCSP的近二困难性不保持调度双出现限制；多任务编码及外部联合容量仍未解，UM-TARGET-v1保持OPEN。
 
 [三外接机器选择器的锐三半界](../current/unrelated_machines/three_host_selector_sharp_three_halves.md)：给only-a和b+c-free的两份实际C≤T调度，单调二色行权闭包输出only-b或only-c的完整C≤3T/2调度，且两任务锐；内部规模、资格任意，所有预载逐台核。同一机制对一般SC三特殊item给无条件可构造半值，亦锐。两者仅限制明确可用性复制接口；一般主目标和反面仍OPEN，新颖性/外审未认证。
+
+本轮反面路线新增：[Santa restricted边界与需求树桥梁的非保真性](../current/unrelated_machines/santa_restricted_bridge_boundary.md)核对 restricted Santa 结果不适用于 \(k_v>1\) 的 token 任务；[两份完整复制的一半一致性地板](../current/unrelated_machines/duplication_two_copy_floor.md)给简单 duplication 合同的 \(b\ge1/2\) 构造。BCG/Bamas/BLMRS 的精确 import 范围与原文哈希已登记在 `LITERATURE.md`、`literature_manifest.json`，不把 SA/LP gap升级为硬度。
+
+[两状态行列池锐性修复](../current/unrelated_machines/duplication_state_majority_floor.md)：标签可只选部分资源，s=K=4的真实最优为5/8，反驳旧附属1/2断言；主多数下界仍成立。新精确整数前沿及显式达到构造已独立重构，原K≥2s数例保留；不是一般近二困难性。

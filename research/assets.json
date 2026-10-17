@@ -6713,6 +6713,232 @@
       ],
       "source_role": "仅为调度与SC模型/桥梁背景；本页自足闭包证明不导入其定理。BCG§7原接口对照已web登记manifest，未冒称原字节落地。",
       "limit": "∀上述输入/两实际YES，∃算法输出bad可用侧和逐件allocation；无P≠NP假设。"
+    },
+    {
+      "id": "um_santa_restricted_bridge_boundary",
+      "claims": [
+        "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1"
+      ],
+      "status": "complete stated-scope model boundary; primary source targeted read; external review and novelty unverified",
+      "applies_when": [
+        "需求树token桥梁P(D,k)",
+        "restricted Santa定义v_ci in {0,p_i}"
+      ],
+      "produces": "k_v>1时桥梁任务出现1/k_v与1异端非零时间；k_v=1全类才退化为restricted但b仅0/1层",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/santa_restricted_bridge_boundary.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/bcg_mmda_hardness_import_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/bateni_charikar_guruswami_2009_maxmin.pdf",
+        "history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
+      ],
+      "source_role": "restricted/general Santa模型边界的Paper Fact与桥梁逐边自足检查",
+      "limit": "不产生一般算法或困难性；仅排除restricted Santa直接导入"
+    },
+    {
+      "id": "um_duplication_two_copy_floor",
+      "claims": [
+        "UM-DUPLICATION-TWO-COPY-FLOOR-v1"
+      ],
+      "status": "complete stated-scope proof; independent sanity check; external review and novelty unverified",
+      "applies_when": [
+        "每变量两候选标签及完整资源束",
+        "每份副本内部资源束两两不交；并集资源出现次数至多二"
+      ],
+      "produces": "资源二着色得到真实根树b≥1/2及token桥梁绝对负载≤3/2",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/duplication_two_copy_floor.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/bcg_mmda_hardness_import_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/bateni_charikar_guruswami_2009_maxmin.pdf"
+      ],
+      "source_role": "BCG duplication警示仅作机制背景；二着色证明为本仓自足推导",
+      "limit": "只排除两份内部无冲突复制合同；不排跨层一致性或一般近二困难性"
+    },
+    {
+      "id": "um_duplication_state_majority_floor",
+      "claims": [
+        "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1"
+      ],
+      "status": "complete stated-scope proof; finite exact audit; external review and novelty unverified",
+      "applies_when": [
+        "两状态标签束各自内部不交",
+        "任意删叶/删变量后的残余束与根需求q_r"
+      ],
+      "produces": "主多数下界不变；行列池仅在准确参数范围声称锐性，原过宽式(3)已撤回",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/robust_consistency_state_majority.py",
+        "tests/audits/unrelated_machines/two_state_pool_exact_frontier.py",
+        "tests/audits/unrelated_machines/two_state_pool_partial_resource_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json",
+        "evidence/runs/unrelated_machines/two_state_pool_exact_frontier_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/two_state_pool_partial_tree_counterexample.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/bcg_mmda_hardness_import_review.md",
+        "research/reviews/unrelated_machines/two_state_pool_partial_resource_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/bateni_charikar_guruswami_2009_maxmin.pdf"
+      ],
+      "source_role": "BCG duplication机制背景；多数状态引理为本仓自足推导",
+      "limit": "不排跨状态外部重用导致状态内不交失效，不给一般UM硬度"
+    },
+    {
+      "id": "um_threshold_cover_joint_slot_v1",
+      "claims": [
+        "UM-THRESHOLD-COVER-JOINT-SLOT-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "Explicit disjoint home/sink groups with common per-group sink eligibility and equal endpoint job sizes; macro/home/sink structure and fixed delta,eta satisfy the threshold contract in barrier_escape_obligations.md",
+        "The proof uses a min-cover multiplicative FPTAS with exact original coverage, a joint home/sink slot flow, prefix recovery, and one-sided grid search; it does not generate this structure from a general unrelated instance."
+      ],
+      "produces": "可调保留阈值的共同组实际舍入与未知OPT one-sided搜索",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ],
+      "candidates": [
+        "research/questions/unrelated_machines/barrier_escape_obligations.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "limit": "Only the stated grouped structure; FPTAS witness subsets are not output subsets, and no general decomposition or UM-TARGET algorithm follows."
+    },
+    {
+      "id": "um_lst_support_release_optimal_v1",
+      "claims": [
+        "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1"
+      ],
+      "status": "complete stated-scope obstruction; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "r disjoint blocks with m>=2 core machines, one spare, private jobs of size 1-1/m on own core/spare, and one unit anchor job on all local machines; fixed LST point assigns anchor uniformly to cores",
+        "Outputs are constrained to use at most k finite edges with x=0; this is a method-contract obstruction, not a general hardness statement."
+      ],
+      "produces": "真实OPT=1下固定LST正支撑释放预算的精确近二前沿",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/lst_support_release_optimal_gap.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/lst_support_release_optimal.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/lst_support_release_optimal_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf"
+      ],
+      "limit": "Only fixed-support plus finite zero-edge release contracts; joint support re-selection, unbounded release, and all general algorithms remain open."
+    },
+    {
+      "id": "um_common_size_reopen_v1",
+      "claims": [
+        "UM-COMMON-SIZE-REOPEN-v1"
+      ],
+      "status": "complete stated-scope interface; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "A frozen core allocation leaves residual jobs with equal processing time q_j on every eligible machine; a rational fractional residual flow and q_max headroom certificate are given",
+        "If each support connected component has one common q, integer slot max flow gives exact repair; arbitrary endpoint costs and core selection are outside scope."
+      ],
+      "produces": "接收机可增载的共同尺寸联合repair、Farkas阻塞价格与单位尺寸精确流分支",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/common_size_reopen_capacity_flow.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/common_size_reopen_capacity_flow.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/common_size_reopen_capacity_flow_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/common_size_reopen_capacity_flow_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "limit": "Given-core/flow certificate only; q_max can cost almost one full task and arbitrary mixed sizes or general core selection remain open."
+    },
+    {
+      "id": "um_two_state_pool_exact_frontier",
+      "claims": [
+        "UM-TWO-STATE-POOL-EXACT-FRONTIER-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "applies_when": [
+        "显式残余s×s行列资源池",
+        "原需求K≥s≥1二进制整数",
+        "可选变量子集及部分标签资源"
+      ],
+      "produces": "精确b*与达到值的完整根树；具体纠正旧附属锐性",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/two_state_pool_exact_frontier.py",
+        "tests/audits/unrelated_machines/two_state_pool_partial_resource_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/two_state_pool_exact_frontier_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/two_state_pool_partial_tree_counterexample.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/two_state_pool_partial_resource_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/bateni_charikar_guruswami_2009_maxmin.pdf"
+      ],
+      "source_role": "仅模型/duplication背景；精确前沿由自足资源计数和循环构造证明",
+      "limit": "不是一般两状态资源系统算法或UM困难性"
     }
   ]
 }

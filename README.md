@@ -18,6 +18,8 @@
 
 路线是搜索种子，可以改变方法。仅有配置间隙、固定槽损失、某个见证选择困难性或特殊情形算法，均不关闭主目标。所有精确身份与新增成果沿本题地图和账本维护，根入口保持稳定，不逐轮追加摘要。
 
+本阶段的路线复盘和下一道硬门槛见[专题前沿的全输入桥合同](research/unrelated_machines/RESEARCH_STATE.md#路线复盘从局部合同转向全输入桥)：已有成果主要诊断局部证书不足并建立受限联合构造；只有从任意输入产生可验证共同容量、实际全机整数输出及可靠阈值失败语义，才算直接推进 `UM-TARGET-v1`。
+
 ## 定义、命题、依赖与证据
 
 [研究总目录](research/README.md)按模型分流；[中文资产总目录](research/CATALOG.md)说明每个文件用途；[全仓精确命题](research/current/claims.md)、[五轴状态](research/review_status.json)、[文件合同](research/assets.json)和[关系图](research/index.html)分别管理身份、审查、位置和数学依赖。有限核验只作checks，不替代一般证明。原始来源沿[来源解释](research/source_crosswalk.md)追溯。
@@ -81,3 +83,5 @@
 [单层配额超图平方根重数地板](research/current/unrelated_machines/single_layer_quota_sqrt_multiplicity_floor.md)进一步证明全局资源重数 Δ 下的中间层地板为 1/(√Δ+1)−1/K（同阶上界由资源总量给出）；它把共享标签反面归约的必要碰撞规模收紧到平方级，但不是一般困难性。
 
 [三外接机器选择器的锐三半界](research/current/unrelated_machines/three_host_selector_sharp_three_halves.md)：给only-a和b+c-free的两份实际C≤T调度，单调二色行权闭包输出only-b或only-c的完整C≤3T/2调度，且两任务锐；内部规模、资格任意，所有预载逐台核。同一机制对一般SC三特殊item给无条件可构造半值，亦锐。两者仅限制明确可用性复制接口；一般主目标和反面仍OPEN，新颖性/外审未认证。
+
+[两状态行列池锐性修复](research/current/unrelated_machines/duplication_state_majority_floor.md)：标签可只选部分资源，s=K=4的真实最优为5/8，反驳旧附属1/2断言；主多数下界仍成立。新精确整数前沿及显式达到构造已独立重构，原K≥2s数例保留；不是一般近二困难性。
