@@ -112,6 +112,18 @@ research/REPOSITORY_GUIDE.md
 
 数字先用 Python 计算并反算；可枚举部分用独立 oracle，必要时用 Fraction/整数或明确误差控制。输入编码长度、每步代价、循环次数和输出位长分别检查，不能用“每步多项式”代替总复杂度证明。有限测试、数值表现、超时或工具失败都不决定一般数学真值。可能变化的事实和承重文献结论查原始来源并保留精确定位。
 
+【七A、门控研究模式（每个新任务必须遵守）】
+
+团队协议见 `research/unrelated_machines/TEAM_OPERATING_MODEL.md`。角色是职责，不要求一角色一 agent；主研究者每周期最多选择一个正向和一个反向承重义务，按 fatal objection 做 go/no-go，不按投票升级。
+
+任何推导或代码前，先写 Claim Card：`Claim ID/version；route=F/R/B；Exact Statement；Objects/Domain/Quantifiers/Assumptions/Scope；它关闭的唯一 proof obligation；相比 LST/ST/configuration-LP 新增的信息；一个核心 lemma/构造；复杂度与位长账本；边界与攻击族；预算、停止条件、owner、independent auditor、交付路径。`
+
+正向候选必须一次性说明共同容量不变量、实际整数输出、固定 ε、阈值/FAIL 语义和位多项式；反向候选必须对每个固定 δ>0 给真实整数 YES/NO gap、任意低调度的 decoder、复杂性假设和规模位长。配置/SA gap、单个固定 ρ<2、局部 NP 难、给定矩/支撑/分组和大规模有限枚举都不能替代这些合同。
+
+计算只服务于事前写明的可证伪问题，不能报告样本数量作为一般证据。连续两个周期只增加样本或同一局部 lemma 而未减少主 proof obligation，自动转为 `Salvage` 或 `Kill`，记录失败机制后停止同类路线。构造者、盲审者、red-team 和复杂度审计者分离；存在未处理 fatal objection 时不得升级 Claim。
+
+公屏消息使用 `[TYPE][CLAIM-ID][STATUS]`，只发精确结果、证据/异议、一个下一问题和 owner/auditor。每两周期做 route gate；只有改变数学认识的引理、参数化障碍、完整归约、文献事实或审计结论才进入 checkpoint。
+
 【八、公屏、提及、回复、私聊和个人桌面】
 
 启动、研究间隙和需要合作时读取本 save 的公屏及收件箱。按需增加读取范围，不反复无目的通读全部聊天。未完成 idea、类比、猜想、卡点、反例和合作问题标明认知层级即可交流，不要求先成稿、先提交或先独立审查。发问后继续推进自己能独立完成的工作。

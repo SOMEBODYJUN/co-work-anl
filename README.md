@@ -4,6 +4,8 @@
 
 新对话使用[完整BOSS提示词](research/unrelated_machines/BOSS_START.md)和[最新版work.py](research/weighted_congestion_frontier/tools/work.py)，附仓库外凭据。提示词直接写明主目标、启动、通信、地图和提交操作。[操作手册](research/unrelated_machines/RUNBOOK.md)给全部命令；新建且未绑定的clone默认进入新题，已绑定旧存档的clone保持原绑定，新题另用独立clone。
 
+团队协作改用[门控研究协议](research/unrelated_machines/TEAM_OPERATING_MODEL.md)：Claim Card→架构→盲审→red-team→复杂度审计→route gate。样本数量、随机成功率和提交数量不再作为研究进度指标。
+
 ## 研究目标与当前前沿
 
 从[本题数学地图](research/current/unrelated_machines/README.md)进入[精确账本](research/unrelated_machines/CLAIMS.md)、[当前前沿](research/unrelated_machines/RESEARCH_STATE.md)和[失败与回收](research/unrelated_machines/FAILED_ROUTES.md)。经典LST/ST舍入、配置LP间隙是已知工具重构；现有方法障碍和结构性正面接口均未给出一般输入的统一常数改善。证明、内审、外审、实现及新颖性分别记录。
