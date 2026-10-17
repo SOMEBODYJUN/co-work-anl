@@ -1222,3 +1222,53 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：m=2失败，已给负平方；本族三阶同机矩为−1/m^4，另加三阶非负即排该证书；CONFIG阈值为2，不能声称C2+CONFIG间隙。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。UM-TARGET-v1保持OPEN。
 - Related Files：research/current/unrelated_machines/c2_unit_multislice_gap.md；research/reviews/unrelated_machines/c2_unit_multislice_gap_review.md；tests/audits/unrelated_machines/c2_unit_multislice_gap.py；tests/audits/unrelated_machines/c2_unit_multislice_independent.py；evidence/runs/unrelated_machines/c2_unit_multislice_gap_audit.json；examples/unrelated_machines/c2_unit_multislice_m3.json；evidence/certificates/unrelated_machines/c2_unit_multislice_m3.json。
+
+## 闭环弱单调修复与异端共同容量的新准确身份
+
+### UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1：真最优凸包槽初始化后的弱最大负载闭环邻域锐界
+
+- Exact Statement / Quantifiers：∀整数k≥3,d≥1，§11的显式正有理两选实例满足T=OPT=1、所有有限边≤1；x为两个实际最优调度的正有理凸组合。任意逐机等尺寸平局排序下，标准有序单位槽的全部最小总处理时间覆盖匹配诱导同一σ，Cmax(σ)=B_k=2−3/k+3/(2k²)。任意不同于σ且Cmax(τ)≤B_k的合法τ，改变原任务数及其新旧机器端点并集大小分别至少d+1；同一严格下降动作同时达到两界。
+- Objects / Domain / Definitions：UM-MODEL-v1；正文§11显式k,d环、Hamming改件、全部新旧端点和路径峰值。
+- Assumptions / Scope：仅固定σ的小支持弱最大负载单调修复及本显式族单任务路径；不排无界同步动作、微小暂时增载、换初始化或一般算法。机器图为cactus，可由已有块算法精确解。
+- Conclusion：真最优凸包槽初始化后的弱最大负载闭环邻域锐界；UM-TARGET-v1仍OPEN。
+- Dependencies：UM-MODEL-v1、ST单位槽定义与本稿显式环构造；逃逸阈值另依赖同一B和首步分类。
+- Evidence：完整自足推导、先声明后冻结独立攻击、精确逐件输入/输出与双路以上有限核验；详细范围在冻结结果。
+- Counterevidence / Objections：声明范围未发现尚成立fatal；暂时超额仅c=1/k²即能逐件到OPT，不能推固定正势垒或一般复杂度困难性。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。软件为显式族构造/审计，不是通用修复器。
+- Related Files：`research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md`；`research/reviews/unrelated_machines/optimal_hull_closed_cycle_review.md`；`evidence/runs/unrelated_machines/optimal_hull_closed_cycle_audit.json`。
+
+### UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1：闭环族单任务最优逃逸路径的精确临时超额
+
+- Exact Statement / Quantifiers：∀上述k,d及同一σ，在所有从σ出发、终点满足Cmax=1的有限单任务合法迁移路径中，最小可能路径最大负载精确为B_k+c，其中c=1/k²；显式(k−1)(d+1)步路径达到该值。所有非平凡单任务首步峰值至少B_k+c，故下界不要求中间单调。
+- Objects / Domain / Definitions：UM-MODEL-v1；正文§11显式k,d环、Hamming改件、全部新旧端点和路径峰值。
+- Assumptions / Scope：仅固定σ的小支持弱最大负载单调修复及本显式族单任务路径；不排无界同步动作、微小暂时增载、换初始化或一般算法。机器图为cactus，可由已有块算法精确解。
+- Conclusion：闭环族单任务最优逃逸路径的精确临时超额；UM-TARGET-v1仍OPEN。
+- Dependencies：UM-MODEL-v1、ST单位槽定义与本稿显式环构造；逃逸阈值另依赖同一B和首步分类。
+- Evidence：完整自足推导、先声明后冻结独立攻击、精确逐件输入/输出与双路以上有限核验；详细范围在冻结结果。
+- Counterevidence / Objections：声明范围未发现尚成立fatal；暂时超额仅c=1/k²即能逐件到OPT，不能推固定正势垒或一般复杂度困难性。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。软件为显式族构造/审计，不是通用修复器。
+- Related Files：`research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md`；`research/reviews/unrelated_machines/optimal_hull_closed_cycle_review.md`；`evidence/runs/unrelated_machines/optimal_hull_closed_cycle_audit.json`。
+
+### UM-DISTORTED-GROUP-JOINT-SLOT-v1：组内异端有界畸变的共同出口槽阈值舍入
+
+- Exact Statement / Quantifiers：∀显式不交H∪Z、宏B与唯一home私有组J_h；组内共同E_h，home时间w_j，给有理0≤δ<1/2、κ≥1、B̄≥0、0≤b_hz≤B̄，满足(b_hz/κ)w_j≤p_zj≤b_hz w_j。∀有理T≥0、1/2≤r<1−δ，若W_h≤T、w_j≤δT且全部有限宏端>T/2，则有确定性总位多项式算法返回FAIL或实际完整σ，home≤(1+r+δ)T、sink≤[κ+B̄(1−r)]T，OPT≤T必成功。
+- Objects / Domain / Definitions：UM-MODEL-v1；正文§1–2的H/Z、B/J_h、上下包络、d_h=(W_h−rT)_+及c_hz=b_hz d_h。
+- Assumptions / Scope：唯一home、共同资格、输入给定包络、小私有任务、宏大边承重；接收机数不固定。不是一般矩阵分解器或一般UM算法。
+- Conclusion：组内异端有界畸变的共同出口槽阈值舍入；UM-TARGET-v1仍OPEN。
+- Dependencies：UM-MODEL-v1、标准有理LP可解性、整数流、ST有序槽；真实出口上下包络及前缀恢复由正文自证。
+- Evidence：完整自足推导、先声明后冻结独立攻击、精确逐件输入/输出与双路以上有限核验；详细范围在冻结结果。
+- Counterevidence / Objections：声明范围未发现尚成立fatal；缺少下包络无法保证LP必要性，缺少上包络/共同资格无法恢复选定前缀；一般结构提取仍未解。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。数学算法完整；软件只实现给定精确LP见证的验证/舍入，通用LP后端及未知OPT端到端未实现。
+- Related Files：`research/current/unrelated_machines/distorted_group_joint_slot_rounding.md`；`research/reviews/unrelated_machines/distorted_group_joint_slot_review.md`；`evidence/runs/unrelated_machines/distorted_group_joint_slot_audit.json`。
+
+### UM-DISTORTED-GROUP-PROMISE-APPROX-v1：异端有界畸变结构的未知最优值实际近似
+
+- Exact Statement / Quantifiers：∀同一显式包络结构及有理参数，不给OPT；承诺在真实OPT处W_h≤OPT、w_j≤δOPT、全部有限宏端>OPT/2，则确定性总位多项式算法输出Cmax≤α(r)OPT的实际完整调度，α=max(1+r+δ,κ+B̄(1−r))，含空任务/OPT0。固定δ,κ,B̄满足κ+B̄δ<2时取r*=max(1/2,(κ+B̄−1−δ)/(1+B̄))，有本结构类统一α(r*)<2；参数趋边界时不声称统一余量。
+- Objects / Domain / Definitions：UM-MODEL-v1；正文§1–2的H/Z、B/J_h、上下包络、d_h=(W_h−rT)_+及c_hz=b_hz d_h。
+- Assumptions / Scope：唯一home、共同资格、输入给定包络、小私有任务、宏大边承重；接收机数不固定。不是一般矩阵分解器或一般UM算法。
+- Conclusion：异端有界畸变结构的未知最优值实际近似；UM-TARGET-v1仍OPEN。
+- Dependencies：UM-MODEL-v1、标准有理LP可解性、整数流、ST有序槽；真实出口上下包络及前缀恢复由正文自证。
+- Evidence：完整自足推导、先声明后冻结独立攻击、精确逐件输入/输出与双路以上有限核验；详细范围在冻结结果。
+- Counterevidence / Objections：声明范围未发现尚成立fatal；缺少下包络无法保证LP必要性，缺少上包络/共同资格无法恢复选定前缀；一般结构提取仍未解。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。数学算法完整；软件只实现给定精确LP见证的验证/舍入，通用LP后端及未知OPT端到端未实现。
+- Related Files：`research/current/unrelated_machines/distorted_group_joint_slot_rounding.md`；`research/reviews/unrelated_machines/distorted_group_joint_slot_review.md`；`evidence/runs/unrelated_machines/distorted_group_joint_slot_audit.json`。

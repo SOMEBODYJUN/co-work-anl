@@ -422,3 +422,123 @@ root 原峰值 B 不变。多个后缀合用也只作这种向上替换，不可
 冻结运行分别为 `evidence/runs/unrelated_machines/optimal_hull_long_chain_{audit,independent}.json`，
 冻结审查见 `research/reviews/unrelated_machines/optimal_hull_long_chain_review.md`。
 一般结论来自本节证明，测试数量及未覆盖范围以运行记录为准。
+
+## 11. 真最优凸包槽初始化后的闭环容量释放与弱最大负载邻域锐界
+
+本节给出比已有长链严格 lex 障碍更强的精确局部边界：即使允许中性步骤，单次任务/机器支持有界的最大负载非增路径也不能启动。并不证明一般近似困难性，也不解决 UM-TARGET-v1。
+
+### 11.1. 精确身份
+
+新身份：`UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1`。
+
+对所有整数 `k>=3,d>=1`，下述正有理、每任务恰两个有限端点且全部有限时间至多1的实例有 `T=OPT=1`，附两个真实最优调度及其有理凸组合 x。对标准处理时间非增单位槽图，所有允许的平局次序均有以下性质：
+
+1. 全部最小总处理时间覆盖匹配诱导同一个实际机器分配 sigma。
+2. `Cmax(sigma)=B_k=2-3/k+3/(2k^2)`，故 `B_k -> 2`。
+3. 对任意合法 tau，设 `H={j:tau(j)!=sigma(j)}` 及 `V(H)={sigma(j),tau(j):j in H}`。若 tau 不同于 sigma 且 `Cmax(tau)<=B_k`，则 `|H|>=d+1` 且 `|V(H)|>=d+1`。
+4. 两个下界可由同一个重分配同时达到，并且该重分配严格降低最大负载。
+
+这里 H 按原始任务的机器变化计数，V(H) 计新旧全部端点，不按净负载变化计数。允许 tau 离开 x 支撑或槽图；本例每任务恰两个有限端，已包含全部合法迁移。
+
+因此对任意固定步预算 r、任意统一 epsilon>0，可先取足够大 k 使 `B_k>2-epsilon`，再取 `d>=r`。从 sigma 出发每步改变至多 r 个任务，或每步参与至多 r 台机器，并要求最大负载不增的过程，其第一步只能是原分配。这里同一结论覆盖中性动作，因而不是只排严格 lex 搜索。
+
+Objects/Domain：UM-MODEL-v1 的显式二进制正有理实例及具体分配；参数 k,d 可独立增长。Assumptions：上述初始化合同、真实总处理时间作为匹配成本、标准正区间交长槽支撑。Scope：固定 sigma 出发的弱最大负载邻域，非一般算法下界。Dependencies：标准槽构造与本节自足计数/不等式；不导入外部局部搜索定理。Evidence：本节自足证明及下列双路精确全标号枚举。Objections：独立 statement-first 重构和冻结攻击未发现仍成立的 fatal；闭环恰有 c 的临时超额即可逐件逃逸，范围详见11.4a。Status：声明范围内完整证明、内部独立审查及精确审计；未外审、新颖性未认证。Related Files：下列证据链；已有开链合同为本稿§10，旧身份范围不变。
+
+### 11.2. 输入对象、两个最优调度
+
+设
+
+`b=a=1-1/k, delta=(k-1)/k^2, c=1/k^2, beta=1/k, D=d+k-1`。
+
+有 root 机器 r。root 原始任务为 macro `g_k`（root 时间 b），tiny `g_0`（root 时间 `delta+c/4`）以及 `g_1,...,g_(k-1)`（root 时间 delta）。每个任务 g_t 另有一条独立的闭合链，tiny 链各 d 台 home，macro 链 D 台 home。链之间仅共享 r。
+
+一条长度 h 的链有 home `v_1,...,v_h`、自有任务 `e_1,...,e_h`。g_t 第二个端点是 v_1，处理时间1。每个 e_l 在 v_l 处理时间 a；若 l<h，第二个端点是 v_(l+1)，时间1；最后 e_h 的第二个端点是 r，时间 c，唯有 t=0 链的最后任务回 r 时间 `c/2`。其他所有条目均为 infinity。
+
+“激活一条闭环”指将 g_t 送 v_1，每个 e_l 送自己的第二端点。未激活时 g_t 留 r，各 e_l 留 home。
+
+- S0：激活全部 k 条 tiny 环，macro 环不激活。root 负载 `b+(k-1)c+c/2=1-c/2`。
+- S1：只激活 macro 环。root 负载 `k delta+c/4+c=b+5c/4<=1`。
+
+两者的其余机器负载为1或 a，所以均为 T=1 可行。若所有 root 任务都留 r，其总负载为 `b+k delta+c/4=2b+c/4>1`；任何 Cmax<1 的调度又不能将任何 root 任务移到其第二端点（时间1）。所以 OPT>=1；S0、S1 给 OPT<=1，故真实 OPT=1。
+
+取 `x=beta*S0+(1-beta)*S1`。这是完整真实最优调度的明确凸组合；每一条有限边都有正质量，因而也自动给逐机配置分布。tiny 环各 root 任务第二端质量 beta，macro 环的第二端质量 1-beta；各 e 的第二端质量随所属环相同。
+
+机器数 `m=(k+1)d+k`，任务数 `n=(k+1)d+2k=m+k`。所有有限处理时间严格正且至多1。参数 k=3 时依然有 `b>delta+c/4>delta>c>c/2>0`；一般 k>=3 相同，所以承重顺序无平局。
+
+### 11.3. 槽结构与全部最小成本输出
+
+每个 home 的 incoming 质量和 own 质量之和恰1，因此恰有一个非空单位槽，incoming 时间1在 own 时间 a之前，二者均与此槽有正交长。
+
+root 上的总任务质量为
+
+`beta + k(1-beta) + [k beta+(1-beta)] = k+1`。
+
+故 root 恰有 k+1 个槽，从0编号。按时间排序首先是 g_k（质量 beta），然后唯一较大的 tiny g_0（质量1-beta）。它们的区间为 `[0,beta]` 与 `[beta,1]`，都只触及槽0。其余 k-1 个 tiny 在任意平局次序下，分别可注入槽1,...,k-1：其第 r 个（r从1计）的区间为 `[1+(r-1)(1-beta),1+r(1-beta)]`，与槽 r 的交长为正。后面是回 root 的各 tail，其中 e_0_tail 处理时间 c/2，唯一最小，故最后一个区间为 `[k+1-beta,k+1]`，只触及槽 k。
+
+令 sigma 仅激活 g_0 环。显式匹配：g_k 配 root 槽0，其余 tiny 按上述顺序配 root 槽1,...,k-1，e_0_tail 配 root 槽 k；激活环的每个 incoming 占相应 home 唯一槽；其他环 own 占 home 唯一槽。所有任务皆覆盖，没有任何平局依赖。
+
+因为全图槽总数恰为 n，任意覆盖匹配用尽每个槽。每个 home 恰得到一个任务，故一条环或者完全激活或者完全不激活：令 z0 表示其 g 去第二端，zl 表示 e_l 去第二端，home 任务数为 `z_(l-1)+(1-z_l)=1`，即相邻 z 相等。root 槽0中 g_k 与 g_0 冲突，所以这两条环至少激活一条。
+
+以纯成本参照的全 home 合法分配 W0 为基线，一条长度 h 的环激活成本增量为 `h(1-a)+c_tail-p_root(g)`。因此
+
+`c_0 = d/k - delta + c/4 >0`,
+
+`c_t = d/k + c - delta = c_0+3c/4` （其余 tiny），
+
+`c_b = D/k + c - b = c_t+delta` （macro）。
+
+所有增量为正，且 `c_b>c_t>c_0`。上述显式 sigma 成本 W0+c_0。任意覆盖匹配必须激活 g_0 或 macro，故达到最小成本当且仅当仅激活 g_0。因此全部最小成本匹配诱导唯一实际机器分配 sigma。槽级匹配本身不要求唯一。
+
+sigma 的 root 负载为
+
+`B=b+(k-1)delta+c/2=2-3/k+3/(2k^2)>1`；
+
+激活环 home 负载1，其他 home 负载 a。因此 Cmax=B。
+
+### 11.4. 最大负载非增的任何非平凡动作均需整个新环
+
+固定任意合法 tau 满足 Cmax(tau)<=B。对一条长度 h 的环定义 z0,...,zh 如上。第 l 个 home 负载是
+
+`z_(l-1)*1+(1-z_l)*a`。
+
+因为 `1+a>B`，必有 `z0<=z1<=...<=zh`。与槽情形不同，这里允许真实部分后缀；不偷加每机器任务数约束。
+
+在 sigma 中 g_0 环所有 z 为1，其他环所有 z 为0。若 tau 没有将任何原留 root 的 g_t（t!=0）移出，则：
+
+- 若 g_0 仍移出，单调性迫整条 g_0 环保持全1；
+- 若 g_0 返回 root，则原已回 root 的 e_0_tail 或仍回 root，或退回 home。root 的净增载至少 `(delta+c/4)-c/2=delta-c/4>0`；
+- 每条原 inactive 环或者不变，或者只下传非空后缀。后者让其 tail 回 root 而 g 仍留 root，给 root 严格增加 c。
+
+故除 sigma 自身外，这些情形均令 root 负载严格超过 B。因此任何不同于 sigma 的弱最大负载非增重分配，必须新迁出一个原留 root 的 g_t。其原 inactive 环由 z0=1 及单调性迫全1，至少改变 h+1>=d+1 件任务，参与 root 与 h 个 home 共 h+1>=d+1 台机器。
+
+达到：再激活任意一条其余 tiny 环（k>=3 保证存在）。恰改变 d+1 件、参与 d+1 台；root 新负载 `B-delta+c=2-4/k+7/(2k^2)>1`，其他机器负载至多1。因为 delta>c，该动作严格降 Cmax。因此两种最小非平凡支持的精确值都为 d+1。
+
+这一步只在参数 d+1 的整体同步迁移中实现；无法拆成更小支持、每步最大负载不增的序列，因为任何这样的序列第一步就不存在。
+
+### 11.4a. 单任务路径的精确最小临时超额
+
+**独立身份 `UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1`。** 对所有本节整数参数，记路径为仅在相邻分配间改变一件原任务机器的有限合法调度序列，则从 σ 到最优调度集合的最小路径峰值精确为 `B+c`。每条路径允许任意合法中间调度，不再要求逐步最大负载非增；以下给所有路径的首步下界和实际达到。
+
+这不是对带额外 slack 修复的反例。允许单任务步骤临时超过原峰值时，从 sigma 到任意不同分配的路径峰值至少为 `B+c`，且到 OPT 的最优峰值恰为 `B+c`。因为任何合法单任务首步分以下三类：inactive 环的 tail 回 root 使负载 `B+c`；其他进入 home 的迁移（无论 inactive 向前或 active 退回）造成 `1+a>B+c`；active g_0 返回 root 造成 `B+delta+c/4>B+c`。这穷尽每任务仅两个端点的全部首步。
+
+达到且最终到 OPT：对每条 inactive tiny 环，先使 tail 回 root，再从后向前依次将其余 e 送第二端，最后将 g 送第一 home。每个新占用 home 仅负载1；该环完成前 root 负载至多当前值+c，完成后降低 delta-c。依次处理其余 k-1 条 tiny 环，共 `(k-1)(d+1)` 单任务步骤，最终正是 S0。原始 root 值在每环完成后严格降低，故全过程峰值恰 `B+c`。结合所有第一步下界，sigma 到 OPT 的单任务路径最小峰值也精确为 B+c。
+
+所以本局部隔离对暂时超额的鲁棒性只有 `c=1/k^2`，并随近似比趋2而消失。它不排除以极小临时增载换取全局下降的算法。机器图是共享 root 的闭环 cactus（d=1 容许有标号平行边），与既有 [UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1](cactus_configuration_gap_and_block_exactness.md) 的小块环秩精确算法兼容，不是算法困难性。
+
+
+### 11.5. 复杂度、独立范围与价值
+
+固定 k 时，最小参与机数 `d+1=(m+1)/(k+1)` 与 m 线性增长。因此对每个固定 ε>0，先固定足够大的 k 使 B>2−ε，再增 d，可同时排除此初始化后的任意 o(m) 支持弱最大负载单调动作；这是上述精确式的直接推论，不是全局算法困难性。
+
+稀疏构造对象数为 O(kd+k)，每个数位长 O(log k)。稠密矩阵、两个调度、x、显式坏槽匹配、一次锐达到重分配都可按实际输入及证书总位长确定性多项式构造；没有隐含一元分母展开。d 和 k 只是显式环/任务规模参数。
+
+本节扣除标准槽与循环传播后新增的准确机制，是把原先可从空 sink 逆向腾空的容量释放路径闭合回已满 root：任何正回流均须先共同释放 root，导致中性步骤也不能启动；两个真实最优分量及最小成本槽初始化同时保留。这比旧的严格 lex 长链障碍强，但仍只限制有界支持弱最大负载单调搜索。给定最优凸分解本身可直接输出 S0/S1；一般算法完全可以绕开 sigma、允许暂时增大 makespan、或原子执行无界支持动作。
+
+Truth：完整证明及内部独立冻结攻击已完成，未发现仍成立的 fatal。Value：一条精确初始化与重配置接口的边界及显式对照测试。Novelty：未认证；循环容量传播和槽基数都是基础工具，不能凭该反例推称独立论文价值。Ambition：UM-TARGET-v1 仍 OPEN，未给统一 epsilon 算法。
+
+### 11.6. 实际有限证据
+
+`tests/audits/unrelated_machines/optimal_hull_closed_cycle_gap.py` 不调用旧开链代码；生成显式 P、S0、S1、x 和真实区间槽图。对 `(k,d)=(3,1),(3,2),(4,1)` 枚举全部带标号合法二选一实际分配，分别1024、16384、8192项，并在每个分配内部另跑单位槽增广匹配，核对 OPT、全部槽支持分配的真实最小成本与唯一机器分配、弱最大负载非增最小改件/参与机数量。三个参数皆得到精确 `d+1`。实际总枚举量25600，由程序加总后可核。所有运算用 Fraction；有限枚举是审计，不替代第2–4节一般证明。
+
+
+独立第二路 `tests/audits/unrelated_machines/optimal_hull_closed_cycle_independent.py` 不导入规范构造或槽核心；以整数 `4k²` 缩放逐件重建端点、两个最优调度及槽区间，实际参数为 `(3,1),(3,2),(4,1),(4,2),(5,1)`，完整合法分配共353280项；另检查k3、k4的全部156种root等尺寸平局排序。第三路盲审的独立子集DP/最小峰值路径核验范围另见审查及冻结记录；这些有限量均非一般证明。实际输入位于 `examples/unrelated_machines/optimal_hull_closed_cycle_k3d1.json`，最优分量、x、坏匹配与锐达到见证位于 `evidence/certificates/unrelated_machines/optimal_hull_closed_cycle_k3d1.json`；运行记录为 `evidence/runs/unrelated_machines/optimal_hull_closed_cycle_audit.json`，独立冻结攻击记录为 `research/reviews/unrelated_machines/optimal_hull_closed_cycle_review.md`。

@@ -4827,16 +4827,19 @@
         "UM-BATCH-SUPPORT-REPAIR-NO-v1",
         "UM-FORK-MINCOST-ROUND-REPAIR-NO-v1",
         "UM-COORDINATE-REPAIR-ST-GAP-v1",
-        "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1"
+        "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1",
+        "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
+        "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
         "UM-MODEL-v1; actual legal schedule and pruned edges at T",
         "Optimizer T>0 and fixed rational eta in (0,1), Cmax(sigma)<=2T",
         "Counterexamples are explicitly defined families, not general complexity lower bounds",
-        "Long-chain family: integer k>=3,d>=1, true-optimal convex x, fixed tiny tie order; strict lex descent and changed-job endpoint count."
+        "Long-chain family: integer k>=3,d>=1, true-optimal convex x, fixed tiny tie order; strict lex descent and changed-job endpoint count.",
+        "Closed cycles §11: integer k>=3,d>=1, arbitrary equal-size tie orders, true-optimal convex x; weak makespan neighborhoods and single-job escape peak."
       ],
-      "produces": "Deterministic bit-polynomial robust cyclic-batch local optimizer, exact eviction-support boundary, and a unique-minimum-cost LST-output fork obstruction requiring simultaneous multi-destination repair. Direct work-conservation bridge to true-optimal convex slot outputs shows the coordinatewise optimizer can stagnate at gap tending to two even under that stronger initialization. The added true-optimal-convex chain family quantifies exact unbounded machine participation for strict lex repair, with an explicit weak-makespan-monotone path escape.",
+      "produces": "Deterministic bit-polynomial robust cyclic-batch local optimizer, exact eviction-support boundary, and a unique-minimum-cost LST-output fork obstruction requiring simultaneous multi-destination repair. Direct work-conservation bridge to true-optimal convex slot outputs shows the coordinatewise optimizer can stagnate at gap tending to two even under that stronger initialization. The added true-optimal-convex chain family quantifies exact unbounded machine participation for strict lex repair, with an explicit weak-makespan-monotone path escape. Section11 closes the tails: exact d+1 changed jobs/machines even for neutral moves, with sharp temporary escape excess 1/k².",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
@@ -4853,7 +4856,11 @@
         "tests/audits/unrelated_machines/identical_work_invariant_audit.py",
         "tests/audits/unrelated_machines/optimal_hull_long_chain_gap.py",
         "tests/audits/unrelated_machines/optimal_hull_long_chain_independent.py",
-        "tests/audits/unrelated_machines/optimal_hull_long_chain_reviewer.py"
+        "tests/audits/unrelated_machines/optimal_hull_long_chain_reviewer.py",
+        "tests/audits/unrelated_machines/optimal_hull_closed_cycle_gap.py",
+        "tests/audits/unrelated_machines/optimal_hull_closed_cycle_independent.py",
+        "tests/audits/unrelated_machines/optimal_hull_closed_cycle_reviewer.py",
+        "tests/audits/unrelated_machines/closed_cycle_escape_independent.py"
       ],
       "records": [
         "evidence/runs/unrelated_machines/cyclic_batch_repair_audit.json",
@@ -4864,22 +4871,26 @@
         "evidence/runs/unrelated_machines/identical_work_invariant_audit.json",
         "evidence/runs/unrelated_machines/optimal_hull_long_chain_audit.json",
         "evidence/runs/unrelated_machines/optimal_hull_long_chain_independent.json",
-        "evidence/runs/unrelated_machines/optimal_hull_long_chain_reviewer.json"
+        "evidence/runs/unrelated_machines/optimal_hull_long_chain_reviewer.json",
+        "evidence/runs/unrelated_machines/optimal_hull_closed_cycle_audit.json"
       ],
       "examples": [
         "examples/unrelated_machines/padded_fork_k2.json",
         "evidence/certificates/unrelated_machines/padded_fork_k2_certificate.json",
         "examples/unrelated_machines/optimal_hull_long_chain_k3d1.json",
-        "evidence/certificates/unrelated_machines/optimal_hull_long_chain_k3d1.json"
+        "evidence/certificates/unrelated_machines/optimal_hull_long_chain_k3d1.json",
+        "examples/unrelated_machines/optimal_hull_closed_cycle_k3d1.json",
+        "evidence/certificates/unrelated_machines/optimal_hull_closed_cycle_k3d1.json"
       ],
       "reviews": [
         "research/reviews/unrelated_machines/cyclic_batch_fork_review.md",
-        "research/reviews/unrelated_machines/optimal_hull_long_chain_review.md"
+        "research/reviews/unrelated_machines/optimal_hull_long_chain_review.md",
+        "research/reviews/unrelated_machines/optimal_hull_closed_cycle_review.md"
       ],
       "candidates": [
         "research/questions/unrelated_machines/barrier_escape_obligations.md"
       ],
-      "limit": "No uniform improved approximation. ST source is contextual prior art; new local contracts are proved directly. Padded fractional point is not a configuration projection or asserted basic. Standard primitives and unverified global novelty are separated. The configuration-projection caveat belongs to the separate one-destination fork contract; coordinatewise monotonicity is now refuted even on true-optimal convex initialization. Only fixed-sigma bounded-machine strict-lex descent; the family explicitly has two-machine single-job weak-makespan-monotone suffix preparation followed by improvement. Does not exclude neutral preprocessing, arbitrary long paths, alternate initialization or a general algorithm. Two supplied optimal components can be returned directly."
+      "limit": "No uniform improved approximation. ST source is contextual prior art; new local contracts are proved directly. Padded fractional point is not a configuration projection or asserted basic. Standard primitives and unverified global novelty are separated. The configuration-projection caveat belongs to the separate one-destination fork contract; coordinatewise monotonicity is now refuted even on true-optimal convex initialization. Only fixed-sigma bounded-machine strict-lex descent; the family explicitly has two-machine single-job weak-makespan-monotone suffix preparation followed by improvement. Does not exclude neutral preprocessing, arbitrary long paths, alternate initialization or a general algorithm. Two supplied optimal components can be returned directly. Scope distinction: preceding neutral-preprocessing caveat is for §10 open chains. §11 separately blocks bounded-support neutral starts; a temporary excess c unlocks a single-job path and the cactus instance remains exactly solvable."
     },
     {
       "id": "unrelated_rooted_dag_degree_token_bridge",
@@ -6363,6 +6374,46 @@
       ],
       "source_role": "ST经典舍入仅用于一般supgap≤2；下界PSD与证书由正文自足推导。另查VVW2020背景为web-only，不伪造本地原始字节。",
       "limit": "非C2+CONFIG间隙或一般算法困难性；外审和全球新颖性未认证。"
+    },
+    {
+      "id": "um_distorted_group_joint_slot",
+      "claims": [
+        "UM-DISTORTED-GROUP-JOINT-SLOT-v1",
+        "UM-DISTORTED-GROUP-PROMISE-APPROX-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "Explicit disjoint homes/sinks, unique-home private groups with common eligibility",
+        "Given rational upper profiles with common multiplicative lower envelope, W<=T, small private jobs and macro times>T/2"
+      ],
+      "produces": "Joint macro/home/sink slot rounding with home<=1+r+delta, sink<=kappa+Bbar(1-r), plus monotone grid search for promised unknown OPT.",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/distorted_group_joint_slot_rounding.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/distorted_group_joint_slot.py",
+        "tests/audits/unrelated_machines/distorted_group_independent.py",
+        "tests/audits/unrelated_machines/distorted_group_software_review.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/distorted_group_joint_slot_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/distorted_group_joint_slot_cases.json",
+        "evidence/certificates/unrelated_machines/distorted_group_joint_slot_witness.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/distorted_group_joint_slot_review.md"
+      ],
+      "candidates": [
+        "research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "source_role": "ST source supplies the standard ordered-slot tool; the envelope necessity, joint flow and threshold search are proved in current text.",
+      "limit": "No general decomposition. Fixed class parameters satisfying kappa+Bbar*delta<2 give a uniform constant only within the stated class. Software validates/rounds supplied exact LP certificates; LP solver and unknown-OPT end-to-end program not implemented."
     }
   ]
 }

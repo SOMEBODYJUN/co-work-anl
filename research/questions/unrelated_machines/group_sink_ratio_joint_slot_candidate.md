@@ -135,3 +135,8 @@ L_z≤Σ_{h→z}c_{h z}≤(1+ρ_max/2)T.
 **Novelty：** 尚未查到同一合同的先例，不能据此宣称新颖。
 **Mechanism：** 比例结构使“home 需要释放的时间”能线性换算为任一 sink 的真实成本；成本排序的有序槽将多 sink 选择一次性整数化。
 **Ambition：** 仅推进一类结构接口；不接近一般输入的统一常数突破，因分组生成和共同资格提取仍未解决。
+
+
+## 后续已核的包络扩展
+
+[异端有界畸变正文](../../current/unrelated_machines/distorted_group_joint_slot_rounding.md)另立UM-DISTORTED-GROUP-JOINT-SLOT-v1及UM-DISTORTED-GROUP-PROMISE-APPROX-v1，允许同组逐件比例在统一乘法包络内变化，并可调r；旧候选身份保持原范围与审查等级，不因新结果悄悄升级。κ1退化到精确比例时，固定B̄δ<1即可给该结构类低于2，旧B̄<2是充分子域。一般共同资格和分组生成仍未解。

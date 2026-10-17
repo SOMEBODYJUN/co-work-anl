@@ -233,3 +233,9 @@ u_t) 的一般复杂度。
 回收有限Λ公式、共同池精确界、原资源匹配以及η必要不等式；沿η→0且ηKmin→∞必有liminfη²Δ≥1。没有大需求或趋零条件不能扩大该渐近结论。重试必须构造真正源相关的一致性并证明任意低比例树可解码，同时保持YES和位规模。见[正文](../current/unrelated_machines/large_bundle_collision_square_root_floor.md)。
 
 [全局四阶负载松弛的锐利二间隙](../current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。
+
+## 弱单调小步的闭环失效及可回收临时超额
+
+尝试以中性预修普遍补足旧严格lex长链搜索：闭环族把尾边正回流到已满root，任意局部后缀先增root，任何Cmax非增非平凡动作必须完整激活一个新环。全部最小成本槽初始化来自真实最优凸包，最小改件/参与机恰d+1，可随规模线性增长。失败属于该修复合同本身错误，不是主目标困难性。回收：单任务路径到OPT的最小峰值精确B+c，c=1/k²；只需微小暂时超额，且该cactus可精确解。重试应允许可控超额或原子长环，并证明一般共同守容及总进展。见[闭环正文](../../research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§11。
+
+异端时间也不是一概阻断共同选择：上下比例包络可把真实出口转成κ预算，用b_hz d_h成本排序及同一home容量流恢复所有sink。只有上包络时LP必要性仍失效；共同资格/唯一home仍承重。见[有界畸变正面合同](../../research/current/unrelated_machines/distorted_group_joint_slot_rounding.md)。

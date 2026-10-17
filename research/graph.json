@@ -8718,6 +8718,89 @@
         "evidence/certificates/unrelated_machines/c2_unit_multislice_m3.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "真最优凸包槽初始化后的弱最大负载闭环邻域锐界",
+      "detail": "∀整数k≥3,d≥1，§11的显式正有理两选实例满足T=OPT=1、所有有限边≤1；x为两个实际最优调度的正有理凸组合。任意逐机等尺寸平局排序下，标准有序单位槽的全部最小总处理时间覆盖匹配诱导同一σ，Cmax(σ)=B_k=2−3/k+3/(2k²)。任意不同于σ且Cmax(τ)≤B_k的合法τ，改变原任务数及其新旧机器端点并集大小分别至少d+1；同一严格下降动作同时达到两界。",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "research/reviews/unrelated_machines/optimal_hull_closed_cycle_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "闭环族单任务最优逃逸路径的精确临时超额",
+      "detail": "∀上述k,d及同一σ，在所有从σ出发、终点满足Cmax=1的有限单任务合法迁移路径中，最小可能路径最大负载精确为B_k+c，其中c=1/k²；显式(k−1)(d+1)步路径达到该值。所有非平凡单任务首步峰值至少B_k+c，故下界不要求中间单调。",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "research/reviews/unrelated_machines/optimal_hull_closed_cycle_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-DISTORTED-GROUP-JOINT-SLOT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "组内异端有界畸变的共同出口槽阈值舍入",
+      "detail": "∀显式不交H∪Z、宏B与唯一home私有组J_h；组内共同E_h，home时间w_j，给有理0≤δ<1/2、κ≥1、B̄≥0、0≤b_hz≤B̄，满足(b_hz/κ)w_j≤p_zj≤b_hz w_j。∀有理T≥0、1/2≤r<1−δ，若W_h≤T、w_j≤δT且全部有限宏端>T/2，则有确定性总位多项式算法返回FAIL或实际完整σ，home≤(1+r+δ)T、sink≤[κ+B̄(1−r)]T，OPT≤T必成功。",
+      "refs": [
+        "research/current/unrelated_machines/distorted_group_joint_slot_rounding.md",
+        "research/reviews/unrelated_machines/distorted_group_joint_slot_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-DISTORTED-GROUP-PROMISE-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "异端有界畸变结构的未知最优值实际近似",
+      "detail": "∀同一显式包络结构及有理参数，不给OPT；承诺在真实OPT处W_h≤OPT、w_j≤δOPT、全部有限宏端>OPT/2，则确定性总位多项式算法输出Cmax≤α(r)OPT的实际完整调度，α=max(1+r+δ,κ+B̄(1−r))，含空任务/OPT0。固定δ,κ,B̄满足κ+B̄δ<2时取r*=max(1/2,(κ+B̄−1−δ)/(1+B̄))，有本结构类统一α(r*)<2；参数趋边界时不声称统一余量。",
+      "refs": [
+        "research/current/unrelated_machines/distorted_group_joint_slot_rounding.md",
+        "research/reviews/unrelated_machines/distorted_group_joint_slot_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-CLOSED-CYCLE-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "闭环分配、槽及最小峰值路径的有限精确审计",
+      "detail": "Finite exact computational checks; no universal proof or complexity hardness follows.",
+      "refs": [
+        "tests/audits/unrelated_machines/optimal_hull_closed_cycle_gap.py",
+        "tests/audits/unrelated_machines/optimal_hull_closed_cycle_independent.py",
+        "tests/audits/unrelated_machines/optimal_hull_closed_cycle_reviewer.py",
+        "tests/audits/unrelated_machines/closed_cycle_escape_independent.py",
+        "evidence/runs/unrelated_machines/optimal_hull_closed_cycle_audit.json",
+        "examples/unrelated_machines/optimal_hull_closed_cycle_k3d1.json",
+        "evidence/certificates/unrelated_machines/optimal_hull_closed_cycle_k3d1.json",
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
+      ],
+      "status": "finite computational evidence"
+    },
+    {
+      "id": "UM-DISTORTED-GROUP-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "异端畸变组的真实源、共同流与实际负载有限审计",
+      "detail": "Finite exact computational checks; no universal proof or complexity hardness follows.",
+      "refs": [
+        "tests/audits/unrelated_machines/distorted_group_joint_slot.py",
+        "tests/audits/unrelated_machines/distorted_group_independent.py",
+        "tests/audits/unrelated_machines/distorted_group_software_review.py",
+        "evidence/runs/unrelated_machines/distorted_group_joint_slot_audit.json",
+        "examples/unrelated_machines/distorted_group_joint_slot_cases.json",
+        "evidence/certificates/unrelated_machines/distorted_group_joint_slot_witness.json",
+        "research/current/unrelated_machines/distorted_group_joint_slot_rounding.md"
+      ],
+      "status": "finite computational evidence"
     }
   ],
   "hyperedges": [
@@ -21331,6 +21414,143 @@
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "D-UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
+      "statement": "两最优分量、全槽占满与闭环容量传播的自足构造；不导入复杂度困难性。",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
+      ],
+      "status": "proved in stated scope"
+    },
+    {
+      "id": "D-UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1"
+      ],
+      "conclusion": "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1",
+      "statement": "同一显式族的完整首步分类下界与逆序路径达到，额外临时超额精确c。",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
+      ],
+      "status": "proved in stated scope"
+    },
+    {
+      "id": "D-UM-DISTORTED-GROUP-JOINT-SLOT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-DISTORTED-GROUP-JOINT-SLOT-v1",
+      "statement": "显式给定结构及上下包络为本Claim全部共同假设，真实出口→κ预算→共同home槽流→前缀恢复。",
+      "refs": [
+        "research/current/unrelated_machines/distorted_group_joint_slot_rounding.md"
+      ],
+      "status": "proved in stated scope"
+    },
+    {
+      "id": "D-UM-DISTORTED-GROUP-PROMISE-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DISTORTED-GROUP-JOINT-SLOT-v1"
+      ],
+      "conclusion": "UM-DISTORTED-GROUP-PROMISE-APPROX-v1",
+      "statement": "在同一结构的OPT承诺下，精确分母网格与单调LP接受给t<=OPT；不需要通用最优调度oracle。",
+      "refs": [
+        "research/current/unrelated_machines/distorted_group_joint_slot_rounding.md"
+      ],
+      "status": "proved in stated scope"
+    },
+    {
+      "id": "C-UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CLOSED-CYCLE-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
+      "statement": "仅核对记录中有限参数、实际输入和实现；一般命题由正文证明。",
+      "refs": [
+        "evidence/runs/unrelated_machines/optimal_hull_closed_cycle_audit.json",
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "C-UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CLOSED-CYCLE-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1",
+      "statement": "仅核对记录中有限参数、实际输入和实现；一般命题由正文证明。",
+      "refs": [
+        "evidence/runs/unrelated_machines/optimal_hull_closed_cycle_audit.json",
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "C-UM-DISTORTED-GROUP-JOINT-SLOT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DISTORTED-GROUP-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-DISTORTED-GROUP-JOINT-SLOT-v1",
+      "statement": "仅核对记录中有限参数、实际输入和实现；一般命题由正文证明。",
+      "refs": [
+        "evidence/runs/unrelated_machines/distorted_group_joint_slot_audit.json",
+        "research/current/unrelated_machines/distorted_group_joint_slot_rounding.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "C-UM-DISTORTED-GROUP-PROMISE-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DISTORTED-GROUP-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-DISTORTED-GROUP-PROMISE-APPROX-v1",
+      "statement": "仅核对记录中有限参数、实际输入和实现；一般命题由正文证明。",
+      "refs": [
+        "evidence/runs/unrelated_machines/distorted_group_joint_slot_audit.json",
+        "research/current/unrelated_machines/distorted_group_joint_slot_rounding.md"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "L-UM-CLOSED-DISTORTED-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
+        "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1",
+        "UM-DISTORTED-GROUP-JOINT-SLOT-v1",
+        "UM-DISTORTED-GROUP-PROMISE-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "弱单调局部合同被排，微小临时增载及异端结构接口仍可回收；一般共同资格/任务身份表示和总进展界未解。",
+      "refs": [
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "research/current/unrelated_machines/distorted_group_joint_slot_rounding.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
     }
   ]
 }

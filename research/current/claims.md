@@ -923,6 +923,15 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-C2-LOAD-UNIT-GAP-v1 | 对每个整数m≥3，n=m+1个全单位同机任务的现行C2-load阈值恰为t=n/m，而整数OPT=2；兼容四阶矩y_S=∏a(t)_{c_a(S)}/(n)_{|S|}给显式有理证书，M2半正定且全部负载localizer为0。比值2m/(m+1)趋2；一般此C2松弛的supgap恰为2。 | 不含三阶逐项非负或CONFIG；后者本族阈值2。完整一般证明、独立冻结攻击和双路精确核验；非一般hardness。[正文](unrelated_machines/c2_unit_multislice_gap.md)、[审查](../reviews/unrelated_machines/c2_unit_multislice_gap_review.md)。 |
 
+## 闭环弱单调修复与组内异端畸变
+
+| ID | 适用范围及状态 | 精确结论 | 正文 |
+| --- | --- | --- | --- |
+| UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1 | 完整声明范围证明；内部独立审查；新颖性/外审未认证 | ∀整数k≥3,d≥1，§11的显式正有理两选实例满足T=OPT=1、所有有限边≤1；x为两个实际最优调度的正有理凸组合。任意逐机等尺寸平局排序下，标准有序单位槽的全部最小总处理时间覆盖匹配诱导同一σ，Cmax(σ)=B_k=2−3/k+3/(2k²)。任意不同于σ且Cmax(τ)≤B_k的合法τ，改变原任务数及其新旧机器端点并集大小分别至少d+1；同一严格下降动作同时达到两界。 | [正文](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)；准确身份/软件限制见专题账本。 |
+| UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1 | 完整声明范围证明；内部独立审查；新颖性/外审未认证 | ∀上述k,d及同一σ，在所有从σ出发、终点满足Cmax=1的有限单任务合法迁移路径中，最小可能路径最大负载精确为B_k+c，其中c=1/k²；显式(k−1)(d+1)步路径达到该值。所有非平凡单任务首步峰值至少B_k+c，故下界不要求中间单调。 | [正文](unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)；准确身份/软件限制见专题账本。 |
+| UM-DISTORTED-GROUP-JOINT-SLOT-v1 | 完整声明范围证明；内部独立审查；新颖性/外审未认证 | ∀显式不交H∪Z、宏B与唯一home私有组J_h；组内共同E_h，home时间w_j，给有理0≤δ<1/2、κ≥1、B̄≥0、0≤b_hz≤B̄，满足(b_hz/κ)w_j≤p_zj≤b_hz w_j。∀有理T≥0、1/2≤r<1−δ，若W_h≤T、w_j≤δT且全部有限宏端>T/2，则有确定性总位多项式算法返回FAIL或实际完整σ，home≤(1+r+δ)T、sink≤[κ+B̄(1−r)]T，OPT≤T必成功。 | [正文](unrelated_machines/distorted_group_joint_slot_rounding.md)；准确身份/软件限制见专题账本。 |
+| UM-DISTORTED-GROUP-PROMISE-APPROX-v1 | 完整声明范围证明；内部独立审查；新颖性/外审未认证 | ∀同一显式包络结构及有理参数，不给OPT；承诺在真实OPT处W_h≤OPT、w_j≤δOPT、全部有限宏端>OPT/2，则确定性总位多项式算法输出Cmax≤α(r)OPT的实际完整调度，α=max(1+r+δ,κ+B̄(1−r))，含空任务/OPT0。固定δ,κ,B̄满足κ+B̄δ<2时取r*=max(1/2,(κ+B̄−1−δ)/(1+B̄))，有本结构类统一α(r*)<2；参数趋边界时不声称统一余量。 | [正文](unrelated_machines/distorted_group_joint_slot_rounding.md)；准确身份/软件限制见专题账本。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
