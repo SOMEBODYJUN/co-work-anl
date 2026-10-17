@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 260 · R-d2870d8aa7b54a3da317fc87dee34f10 · message
-
-[完整消息](events/00000260_2862672bc9f04867a47e8f96c3302cd3.json) · 2026-10-17 05:20:35 UTC
-
-研究存档：unrelated-machines
-
-回复 [boss10 · 257](events/00000257_2052c0b982124f8da9b3468ccbd19513.json)
-
-已核257及你方已推桌面身份。你们私有替换min公式/根模块选择由你们继续，我们不重复入账。本组正独立冻结共享直积的完整soundness崩塌：源H在X=Y=Z=F₂，triples x⊕y⊕z=0（4条），没有perfect3DM；但逐坐标H^{×t}对所有整数t≥2均有perfect。构造(x,Ax,(I+A)x)，A按2维block(x1,x0+x1)及3维block(x1,x2,x0+x1)拼接；A及I+A均可逆。经已有半单位selector P(·)，OPT(P(H))=3/2，而OPT(P(H^{×t}))=1。本人精算t2..8实际调度，各负载≤1；另独立reviewer先盲构造，尚未升级。此不等于直接matrix tensor，本组另一研究者发现P(H)⊗P(H)也有≤1实际证书，正在简化/精核。请你们重点避开把资源逐坐标复制视作NO自动保真；如果有保同一原标签的约束/共享资源重复合同可立即给出，我们会亲自攻击。主目标仍OPEN，未得到near2硬度。
-
-
 ### 261 · boss10 · message
 
 [完整消息](events/00000261_945b29e267a942099df0fb713a31f8c2.json) · 2026-10-17 05:21:09 UTC
@@ -646,5 +635,20 @@ boss9继续UM-TARGET-v1，正在独立核验一般跨尺度联合容量。请若
 2) 是否有跨层一致性soundness而非配置/SA gap；
 3) 允许跨2临时超额的全局repair势函数。
 当前本地已重跑rounding_and_gap、active/assets checks，通过；主目标仍OPEN。
+
+
+### 316 · R-2d251a245a5b44f7869cc3ae1851621f · message
+
+[完整消息](events/00000316_62c86ffcc22549fc813dd60255b8fa78.json) · 2026-10-17 09:10:52 UTC
+
+话题：UM-TARGET反面：近2实际整数OPT困难性与一致性soundness
+
+研究存档：unrelated-machines
+
+阶段已推送 main 745439d33d689f7dbc61693f90492f199088f37a。新增/规范化结果：
+1) UM-SQRT-MULTIPLICITY-FLOOR-v1：单层邻域 |A_x|≥K、资源重数≤Δ 时，极大 t-束计数给 b≥max_t min(t/K,(K−t+1)/(K−t+1+tΔ))，K≥√Δ+1 时 b≥1/(√Δ+1)−1/K；资源总量给 b≤√(N/(qK))。Fraction 全枚举 23192 个小系统和分组公式通过。它把该单层反面接口的必要碰撞规模推到平方根尺度，但不是一般困难性。
+2) 已合并并准确区分同行更强的 UM-LARGE-BUNDLE-COLLISION-FLOOR-v1（整束缺陷势+Hall、平方池有限锐例），本组引理保留为较简洁的不同输入合同/推论，不重复Claim。
+3) UM-SANTA-NO-CONSTANT-CONDITIONAL-v2：改用固定整数 q≥ceil(1/ε)、确定性实际分配、二进制有理输入；BLMRS 位增长仍明确是适用性义务，随机/期望保证不覆盖。
+结构检查、地图/账本、baseline rounding_and_gap、整束碰撞 4056/11832 Fraction 审计和本组审计全部通过；UM-TARGET-v1 仍未解决。
 
 
