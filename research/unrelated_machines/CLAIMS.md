@@ -1579,6 +1579,19 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 
 - Exact Statement：固定阈值 `T>0` 与 `δ∈(0,1/2)`，若先将 `p_ij>(1−δ)T` 的任务整数放置到各机、再要求其余任务只用轻边完成残余分数 LP，则固定 heavy 放置 `h` 的可行性由全部 `λ≥0` 的 Farkas 不等式决定；逐个 `λ` 选择放置只证明 `∀λ∃h`，一般算法需要同一 `h` 满足 `∀λ`。
 - Objects / Domain / Quantifiers：普通 `R||C_max` 矩阵、不可用边允许；本记录的障碍是对该“heavy matching→light residual LP”接口的量词反例，不是对所有算法的全称困难性。
-- Evidence：两机 `T=1` 符号实例 `A=(.95,.95)`, `B=(.85,.85)`, `ℓ_1=(.1,∞)`, `ℓ_2=(∞,.1)`；两个 heavy 匹配的残余容量分别为 `(0.05,.15)` 与 `(0.15,.05)`，均无法容纳对应固定 light 任务。计算仅作分数回算，核心为显式 Farkas/min–max 推导。
-- Status：candidate obstruction；尚无独立审查，不升级为一般算法不可能性。下一义务是证明带 slack 的 min–max 交换/全局增广条件，或构造更一般参数族。
+- Evidence：仅在δ>3/20时分类正确的两机 `T=1` 符号实例 `A=(.95,.95)`, `B=(.85,.85)`, `ℓ_1=(.1,∞)`, `ℓ_2=(∞,.1)`；两个 heavy 匹配的残余容量分别为 `(0.05,.15)` 与 `(0.15,.05)`，均无法容纳对应固定 light 任务。计算仅作分数回算，核心为显式 Farkas/min–max 推导。
+- Status：历史候选的量词示意已独立核查并修正范围；OPT=21/20>T，未否定YES承诺算法。原未明确剪枝及anchor统一下界，不能用于二倍结论。精确凸化/锐界另立UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1，不改v1为一般不可能性；后续应攻击真正非可加共同容量而非更多价格样本。
 - Related Files：`research/questions/unrelated_machines/heavy_light_joint_residual_minmax_obstruction.md`。
+
+## UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1：机器价格凸化的精确身份与锐容量界
+
+- Exact Statement / Quantifiers：∀合法P、二进制有理T>0、β∈[1/2,1)，剪枝p≤T后按p>βT分类。∀非负机器价格可各选一个big部分匹配H并给其余任务最便宜light端，价格费用≤TΣλ，当且仅当任务守恒、逐机big质量≤1、逐机负载≤T的显式有理LP可行。固定有理价格的响应为确定性总位多项式整数费用流。
+- Objects / Domain：UM-MODEL-v1；m、n可增长；P允许∞、0、空任务和大分母。T=0单独按零边精确处理；所有比值仅T>0。
+- Definitions：B={(i,j):βT<p_ij≤T}、L={(i,j):p_ij≤βT}。H为B上的部分匹配，必须覆盖无L端任务；Γ为在固定B、L内共同H及未匹配任务light分数补全的最小最大机器负载。扩容时不重新分类或恢复剪掉的边。
+- Assumptions：big严格阈值与β≥1/2保证任意真实T调度每机至多一个big；空light域必须由H覆盖。不存在H时价格式为+∞而非伪通过。
+- Scope / Conclusion：LP不可行⇒OPT(P)>T。LP通过⇒Γ≤2T，对每个固定β，sup Γ/T=2；不剪枝的对应合同每个固定m有sup Γ/T=m。另若某个精确最优归一化价格λ*下全部最优流具有相同big向量，则可用O(|B|)次受限费用流核验，恢复Γ=τ（凸化最优容量）；τ≤T时实际ST输出≤τ+βT。面条件不满足不能作FAIL⇒OPT>T。
+- Dependencies：UM-MODEL-v1；整数网络流凸包与有理LP分离/强对偶（正文自足推导）；UM-ST-ROUND-v1；UM-CONF-GAP-v1。半单位promise范围推论另引用UM-JOINT-HALF-PROMISE-NO-v1，未另造困难性。
+- Evidence：两条内部独立推导、statement先行重构及最终全文/代码攻击；独立有理顶点与价格折点oracle、原P全分配小例、给定见证ST与真实逐机负载回算；冻结范围见heavy_light_price_convexification_release_audit.json。一般证明不依赖有限枚举。
+- Counterevidence / Objections：旧数值两机例的heavy分类仅δ>3/20且OPT=21/20>T；新参数族覆盖全部β但仍不是YES承诺反例。任意非最优价下H唯一不足；不剪枝不能用2T上界。最优价格面的一般唯一性与可用共同容量均未证明。
+- Status：complete direct consequence; independently reconstructed and exactly audited; external review and novelty unverified。已知ST/配置gap的精确接口综合，不认证新算法、新困难性或论文价值。审计实现有限oracle与见证舍入；一般LP/priceflow软件未集成。
+- Related Files：`research/current/unrelated_machines/heavy_light_price_convexification.md`；`research/questions/unrelated_machines/heavy_light_joint_residual_minmax_obstruction.md`；`research/reviews/unrelated_machines/heavy_light_price_convexification_review.md`；`tests/audits/unrelated_machines/heavy_light_price_convexification.py`；`evidence/runs/unrelated_machines/heavy_light_price_convexification_release_audit.json`。

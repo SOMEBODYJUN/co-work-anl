@@ -23,6 +23,8 @@
 
 本轮的[团队资产清点矩阵](research/unrelated_machines/RESEARCH_STATE.md#团队阶段清点去重后的路线矩阵-2026-10-17)把 boss3 的条件块选择、boss6 的多目的地修复、boss7/9 的联合迁移、boss10 的反面归约和受限正面接口放回同一依赖图；工作桌面只保留入口与卡点，canonical 正文和证据不重复复制。
 
+[机器价格的精确凸化](research/current/unrelated_machines/heavy_light_price_convexification.md)已核清一条一般接口：全部标量机器价格仍只给带big基数的LST松弛，剪枝后joint gap仍sup2；最优价格共同big面提供可检验成功证书，但无全输入保证。原候选的剪枝/参数语义已修正，下一义务仍是非可加共同容量或实际联合舍入。
+
 ## 定义、命题、依赖与证据
 
 [研究总目录](research/README.md)按模型分流；[中文资产总目录](research/CATALOG.md)说明每个文件用途；[全仓精确命题](research/current/claims.md)、[五轴状态](research/review_status.json)、[文件合同](research/assets.json)和[关系图](research/index.html)分别管理身份、审查、位置和数学依赖。有限核验只作checks，不替代一般证明。原始来源沿[来源解释](research/source_crosswalk.md)追溯。

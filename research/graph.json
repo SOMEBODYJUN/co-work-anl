@@ -9369,6 +9369,34 @@
         "evidence/runs/unrelated_machines/unit_readout_calibrated_cardinality_slots_audit.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "机器价格凸化与锐容量界",
+      "detail": "固定T角色；价格条件恰是LST+big分数基数，joint supgap2；无剪枝固定m锐界m；精确dual共同big面可恢复，但无全输入保证。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_price_convexification.md",
+        "research/reviews/unrelated_machines/heavy_light_price_convexification_review.md",
+        "tests/audits/unrelated_machines/heavy_light_price_convexification.py",
+        "evidence/runs/unrelated_machines/heavy_light_price_convexification_release_audit.json"
+      ],
+      "status": "complete direct consequence; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-HEAVY-LIGHT-PRICE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "价格凸化的独立有理原P核验",
+      "detail": "有限primal顶点/dual折点、零空/丢边/混合角色/极大分母和实际ST；小树全σ回算。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_price_convexification.md",
+        "research/reviews/unrelated_machines/heavy_light_price_convexification_review.md",
+        "tests/audits/unrelated_machines/heavy_light_price_convexification.py",
+        "evidence/runs/unrelated_machines/heavy_light_price_convexification_release_audit.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -23004,6 +23032,53 @@
       "statement": "限定结构类与固定D；输入D无界则ε退化，不能升级一般正反面。",
       "refs": [
         "research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1",
+        "UM-CONF-GAP-v1"
+      ],
+      "conclusion": "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1",
+      "statement": "模型、整数流凸包/有理分离及ST保big首槽共同给等价与上界；经典两树唯一light端给下界；强对偶给共同面恢复。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_price_convexification.md"
+      ],
+      "status": "complete direct synthesis"
+    },
+    {
+      "id": "C-UM-HEAVY-LIGHT-PRICE-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HEAVY-LIGHT-PRICE-AUDIT-v1"
+      ],
+      "conclusion": "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1",
+      "statement": "仅列明有限有理fixture和小树原P核验；不承担一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_price_convexification.md",
+        "research/reviews/unrelated_machines/heavy_light_price_convexification_review.md",
+        "tests/audits/unrelated_machines/heavy_light_price_convexification.py",
+        "evidence/runs/unrelated_machines/heavy_light_price_convexification_release_audit.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-HEAVY-LIGHT-PRICE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅标量机器价格/局部凸化不能给共同见证统一余量；最优共同面未保证存在，不排更多信息或一般算法。",
+      "refs": [
+        "research/current/unrelated_machines/heavy_light_price_convexification.md"
       ],
       "status": "open obligation"
     }

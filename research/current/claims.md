@@ -1038,6 +1038,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-UNIT-READOUT-CALIBRATED-SLOT-v1 | 同私有k叉双树unit读出模型，给1≤r≤k、有理edge/leaf下传t∈[0,1]、selector两根质量合1；每internal Σout t≥r−1+incoming且每clause Σleaf t≤A。可按P加见证总位长poly输出全σ，内部≤2−r/k、unit≤1。uniform x0=1/2,x_l=(r−1+xprev)/k使行取等，若d_c x_h≤A_c则所有wiring均可构造。 | [正文](unrelated_machines/unit_readout_calibrated_cardinality_slots.md)、[审查](../reviews/unrelated_machines/unit_readout_calibrated_cardinality_slots_review.md) |
 | UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1 | 对每个固定有理D≥2，同unit读出模型中若全部d_c≤D A_c，存在deterministic总位poly完整σ使C≤(2−1/(4D))OPT，允许k,h无界。大k校准r=1+floor((k−1)/(2D))；小k用r1容量匹配，失败证OPT2并全parent达到。空变量OPT0。 | [正文](unrelated_machines/unit_readout_calibrated_cardinality_slots.md)、[审查](../reviews/unrelated_machines/unit_readout_calibrated_cardinality_slots_review.md) |
 
+## 重轻任务机器价格的精确凸化与共同面恢复
+
+| ID | 精确结果 | 证据与限制 |
+| --- | --- | --- |
+| UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1 | ∀T>0、β∈[1/2,1)，剪枝p≤T后全部机器价格测试等价LST容量+每机big分数基数≤1；固定价格整数费用流可求，joint Γ/T的sup恰2。未剪枝固定m的sup恰m。精确dual最优价下若最优流big部分全相同，可核验并恢复Γ=τ；τ≤T时实际输出≤τ+βT。 | [正文](unrelated_machines/heavy_light_price_convexification.md)、[审查](../reviews/unrelated_machines/heavy_light_price_convexification_review.md)；已知gap直接推论，非一般算法/困难性；面失败不可靠拒绝T。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

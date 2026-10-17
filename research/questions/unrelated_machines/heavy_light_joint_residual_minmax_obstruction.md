@@ -1,9 +1,12 @@
-# Heavy–light 联合残余 LP 的 min–max 障碍候选
+# 重轻任务联合残余 LP 的 min–max 原候选与范围修正
+
+
+> **接续状态。** 保留 `UM-HEAVY-LIGHT-JOINT-RESIDUAL-MINMAX-v1` 的历史候选身份，未将其改称一般算法不可能性。后续自足定理另立 `UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1`，见 [价格凸化正文](../../current/unrelated_machines/heavy_light_price_convexification.md)。下文原数值例只有在 δ>3/20 时两任务都属于 heavy，且其真实 OPT=21/20>T，不能作 YES 承诺反例；新正文给全部 β∈[1/2,1) 的参数化展示。原接口还没有明确 `p≤T` 剪枝；价格凸化若保留全部有限边，固定 m 的锐界为 m，而非2。anchor 的 `a_i>0` 也不足以推出统一 ε，需下界 `a_i≥εT` 或另一个小支持分支。后文公式作为原候选记录读取，以本段修正和新定理的精确范围为准。
 
 ## 命题身份
 
 - **ID：** `UM-HEAVY-LIGHT-JOINT-RESIDUAL-MINMAX-v1`
-- **状态：** 候选障碍；已完成符号级两机核验，尚未独立审查为一般不可能性。
+- **状态：** 原候选的两机量词展示已核并修正范围；它从未升级为一般不可能性。新凸化定理独立登记，见上。
 - **作用：** 解释为什么“先选大任务匹配，再对小任务做残余 LP”不能直接作为 `UM-TARGET-v1` 的全输入桥。
 
 ## 精确接口
