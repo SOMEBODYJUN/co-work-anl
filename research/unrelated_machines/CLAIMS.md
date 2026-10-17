@@ -1144,6 +1144,12 @@ u) 为三维匹配数，则 (b^*(D_K(A))=\max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\}
 - **Related Files：** `research/current/unrelated_machines/three_dimensional_matching_demand_floor_obstruction.md`; `tests/audits/unrelated_machines/three_dimensional_matching_demand_floor.py`; `evidence/runs/unrelated_machines/three_dimensional_matching_demand_floor_audit.json`。
 
 
+## UM-PDM-THRESHOLD-EXACT-v1：pDM 的整数阈值调度桥梁
+
+- **Exact Statement / Quantifiers：** 对固定 d≥3、b>d 且 gcd(b,d)=1，d-dimensional matching 实例可在位多项式时间内转为整数受限 R∥Cmax：每个 incident 顶点任务在对应超边机器上耗时 b，dummy 任务在任意机器上耗时 d；存在完美匹配当且仅当 OPT≤bd，无完美匹配时 OPT≥bd+1。
+- **Scope / Limitation：** 这是精确阈值/加一间隙，不是统一低于2乘性困难性；比率 (bd+1)/(bd)→1。它只说明 pDM 路线未经放大不能关闭 UM-TARGET-v1。
+- **Related Files：** `research/current/unrelated_machines/pdm_threshold_scheduling_bridge.md`。
+
 ## UM-SANTA-NO-CONSTANT-CONDITIONAL-v1：Santa Claus 无常数近似假设下的条件反面
 
 - **Exact Statement / Quantifiers：** 若 (P\ne NP) 且一般 Santa Claus 对每个固定常数 (c) 都无确定性多项式 (c)-近似，则不存在统一 (\varepsilon\in(0,1)) 的一般 R∥Cmax (2-\varepsilon) 算法。

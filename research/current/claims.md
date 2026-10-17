@@ -1105,6 +1105,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-SUBLINEAR-CC-PROJECTION-GAP-v1 | 对任意 `r(s)=o(s)`（`s` 为机器数），存在每任务恰两端、机器图简单且围长 `>r(M)` 的长链实例，使 `OPT/T_CC_{r(M)}>2-epsilon`；这是固定 `r` 高围长构造的对角量词加强，大小参数不是总编码位长。 | [子线性联合投影间隙](unrelated_machines/sublinear_coalition_projection_high_girth_gap.md)、[Fraction/计数审计](../../tests/audits/unrelated_machines/sublinear_coalition_projection_gap.py)；直接推论，非一般困难性。 |
 | UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1 | `T=1` 的参数族（中心 light 任务成本 `beta`、每机私有任务成本 `1-beta/m`）有纯自洽重轻 saddle、残余分数值 `R(H)=T`，但 `OPT=1+beta-beta/m→2`; `T=3,beta=2/3` 是最小审计特例。森林残余 LP 不能替代整数容量补全。 | [森林残余整数边界](unrelated_machines/heavy_light_forest_integrality_boundary.md)、[Fraction审计](../../tests/audits/unrelated_machines/heavy_light_forest_integrality_boundary.py)；方法边界，非一般 hardness。 |
 
+## UM-PDM-THRESHOLD-EXACT-v1：pDM 的整数阈值调度桥梁
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-PDM-THRESHOLD-EXACT-v1 | 对固定 d≥3、b>d 且 gcd(b,d)=1 的 d-dimensional matching，构造受限整数 R∥Cmax：incident 顶点任务耗时 b，dummy 任务耗时 d。源有完美匹配当且仅当调度可达阈值 bd；无完美匹配时整数 OPT≥bd+1。 | 自足阈值证明；乘性 gap 仅 1+1/(bd)，不能推出统一 (2−ε) 反面。最新 pDM 文献只作来源背景，不把近一 gap 升级为近二硬度。 [正文](unrelated_machines/pdm_threshold_scheduling_bridge.md)。 |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
