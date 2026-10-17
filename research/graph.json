@@ -8587,7 +8587,7 @@
       "kind": "claim",
       "track": "unrelated_machines",
       "title": "k-均匀资源束分层匹配地板",
-      "detail": "b*=max_t min(nu_t/q,t/K)，必须同时控制所有j-of-k层。",
+      "detail": "b*=max_t min(nu_t/q,t/K)，必须同时控制所有j-of-k层；固定K,delta的直接YES/NO bundle接口在delta<1/(floor(K delta)+2)时可被极大匹配多项式地区分。",
       "refs": [
         "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md"
       ],
@@ -9636,6 +9636,18 @@
         "evidence/runs/unrelated_machines/fixed_work_convex_local_minimum_audit.json"
       ],
       "status": "complete stated-scope obstruction; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两状态 quota orientation 的固定方向 Hall 切分解",
+      "detail": "固定变量子集与rail方向的资源支付恰由所有标签子集Hall邻域不等式决定；资源度二时分解为私有、内部共享和边界共享，完整支付才退化为2-SAT。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md",
+        "research/current/unrelated_machines/two_state_quota_orientation_obligation.md"
+      ],
+      "status": "complete stated-scope fixed-direction Hall expansion; global orientation remains open; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -21999,7 +22011,7 @@
         "UM-SINGLE-LAYER-QUOTA-VALUE-v1"
       ],
       "conclusion": "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
-      "statement": "允许每个选择点拥有多个候选超边且每束大小至多k时，树值仍按全部t-束匹配层取最大最小值。",
+      "statement": "需求树单父约束给出逐层束匹配恒等式；固定层极大匹配给出的复杂度地板是其自足组合推论。",
       "refs": [
         "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md"
       ],
@@ -23700,6 +23712,35 @@
         "research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md"
       ],
       "status": "complete stated-scope obstruction; finite checks"
+    },
+    {
+      "id": "D-UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1"
+      ],
+      "conclusion": "UM-TWO-STATE-QUOTA-HALL-CUT-v1",
+      "statement": "固定方向的quota单射是二部匹配；Hall邻域切给出精确整数支付和规范化缺口。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "L-UM-TWO-STATE-QUOTA-HALL-TARGET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-STATE-QUOTA-HALL-CUT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "固定方向Hall失败只排除该方向；全输入桥仍缺联合rail选择、变量子集和全方向sound FAIL。",
+      "refs": [
+        "research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
     }
   ]
 }

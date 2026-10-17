@@ -368,3 +368,8 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 - `UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1`：固定总工作量的完全同机族中，二次势和排序势单任务下降均锁死，趋二修复需 `2+ceil(εm)` 件同步迁移。
 
 这些结果收紧了跨层一致性、共同容量状态和局部 repair 的 proof obligations，但没有提供一般输入的统一 epsilon 算法；主目标继续 OPEN.
+
+
+同一 bundle-floor 接口新增固定层复杂度筛选：若直接 promise 的 YES 满足 \(\nu_K=q\)、NO 满足 \(b^*\le\delta\)，令 \(t_0=\lfloor K\delta\rfloor+1\)。当 \(\delta<1/(t_0+1)\) 时，把 (t_0)-束候选编成 \((t_0+1)\)-均匀超图，极大匹配的 \(1/(t_0+1)\) 保证即可区分两侧；固定 (K,\delta) 下这在输入位长上多项式。故这类直接近二归约至少要避开约 (K\delta^2<1) 的区域并承担真正跨层一致性，不能只增加 bundle 宽度或复制资源。
+
+新增固定方向的精确接口：[两状态quota orientation的Hall切分解](../current/unrelated_machines/two_state_quota_hall_cut_decomposition.md)证明，选定变量子集、rail方向与整数标签需求后，实际资源支付恰等价所有标签子集的Hall邻域不等式；资源度至多二时邻域可分解为私有/内部共享/边界共享资源。它把局部失败证书和整数流输出明确化，但不解决联合方向选择，也不提供全方向 `FAIL⇒OPT>T`。因此主目标仍OPEN。

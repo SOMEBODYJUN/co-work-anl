@@ -909,7 +909,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | ID | Exact Statement | 范围、状态与入口 |
 | --- | --- | --- |
-| UM-K-UNIFORM-BUNDLE-FLOOR-v1 | 根—X—超边—资源需求树满足 \(b^*=\max_{1\le t\le\min(k,K)}\min(\nu_t/q,t/K)\)；\(\nu_t\) 为 t-束匹配数。 | 三维匹配地板的k-均匀推广；必须同时控制所有j-of-k层，不是一般困难性。 [正文](unrelated_machines/k_uniform_bundle_matching_floor.md)、[审计](../../tests/audits/unrelated_machines/k_uniform_bundle_matching_floor.py)、[结果](../../evidence/runs/unrelated_machines/k_uniform_bundle_matching_floor_audit.json)。 |
+| UM-K-UNIFORM-BUNDLE-FLOOR-v1 | 根—X—超边—资源需求树满足 \(b^*=\max_{1\le t\le\min(k,K)}\min(\nu_t/q,t/K)\)；\(\nu_t\) 为 t-束匹配数。进一步，固定 \(K,\delta\) 的直接 YES \(\nu_K=q\) / NO \(b^*\le\delta\) 接口若 \(\delta<1/(\lfloor K\delta\rfloor+2)\)，可由 \((t_0+1)\)-均匀超图极大匹配在位多项式时间区分。 | 三维匹配地板的 k-均匀推广及固定层最大匹配复杂度地板；必须同时控制所有 j-of-k 层，不是一般困难性。 [正文](unrelated_machines/k_uniform_bundle_matching_floor.md)、[审计](../../tests/audits/unrelated_machines/k_uniform_bundle_matching_floor.py)、[结果](../../evidence/runs/unrelated_machines/k_uniform_bundle_matching_floor_audit.json)。 |
 
 
 
@@ -1057,6 +1057,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | ID | Exact Statement | 范围、状态与入口 |
 | --- | --- | --- |
 | UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1 | 对满足状态内资源不交的两状态残余DAG和固定 \(\delta\in(0,1]\)，存在根树 \(b(H)\ge\delta\) 当且仅当存在至少 \(\lceil\delta q_r\rceil\) 个变量的rail选择，并为每个选中标签注入 \(\lceil\delta K\rceil\) 个互不重复资源。 | \(\delta=1\) 且全资源支付时退化为2-SAT禁冲突；\(\delta<1\) 是允许部分资源支付的quota packing。该等价不提供一般近二困难性。 [正文](unrelated_machines/two_state_quota_orientation_obligation.md)。 |
+| UM-TWO-STATE-QUOTA-HALL-CUT-v1 | 固定变量子集、rail方向和整数标签需求 \(t_\ell\) 后，资源支付存在当且仅当所有标签子集 \(U\) 满足 \(\sum_{\ell\in U}t_\ell\le|\bigcup_{\ell\in U}R(\ell)|\)；资源度至多二时邻域恰分解为私有、内部共享和边界共享资源，并给出显式 Hall 缺口。 | 固定方向可由整数最大流输出实际支付或由一个 Hall 子集核验失败；全输入桥仍缺同时选择方向/变量子集及对所有方向的 sound FAIL，不能把单方向缺口升级为一般困难性。 [正文](unrelated_machines/two_state_quota_hall_cut_decomposition.md)；有限审计 279,936 个固定方向实例，见 `tests/audits/unrelated_machines/two_state_quota_hall.py` 与 `evidence/runs/unrelated_machines/two_state_quota_hall_audit.json`。 |
 
 ## UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1：任意密度完整单位树的固定高度次二近似
 

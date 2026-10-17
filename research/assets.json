@@ -6253,7 +6253,7 @@
       "applies_when": [
         "根—X—超边—资源需求树，每超边资源束大小至多k，超边需求K"
       ],
-      "produces": "b*=max_{t<=min(k,K)} min(nu_t/q,t/K)",
+      "produces": "b*=max_{t<=min(k,K)} min(nu_t/q,t/K); fixed K,delta direct YES/NO promise has maximal-matching separation when delta<1/(floor(K delta)+2)",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md"
@@ -6271,7 +6271,7 @@
         "history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
       ],
       "source_role": "仅作需求树/MMDA背景；k-均匀恒等式为本仓自足推导",
-      "limit": "只推广单层共享资源地板；不提供近2困难性"
+      "limit": "只推广单层共享资源地板，并给固定K,delta直接bundle接口的复杂度地板；不提供近2困难性或跨层一致性"
     },
     {
       "id": "um_bounded_collision_label_floor",
@@ -7707,6 +7707,37 @@
       ],
       "source_role": "自足计数与势差证明；PARTITION段只作oracle复杂度义务。",
       "limit": "只排固定势/固定批量局部路线；不是一般hardness或近似算法否定。"
+    },
+    {
+      "id": "um_two_state_quota_hall_cut",
+      "claims": [
+        "UM-TWO-STATE-QUOTA-HALL-CUT-v1"
+      ],
+      "status": "complete stated-scope proof; independently blind-reviewed; finite audit recorded; external review and novelty unverified",
+      "applies_when": [
+        "fixed selected variable subset and rail orientation in an explicit two-state residual DAG",
+        "integer label demands and unit resource capacities",
+        "each resource has global label degree at most two"
+      ],
+      "produces": "exact Hall subset cuts, fixed-direction integer-flow payment, and complete-payment 2-SAT boundary",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/two_state_quota_hall.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/two_state_quota_hall_audit.json"
+      ],
+      "examples": [],
+      "reviews": [],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
+      ],
+      "source_role": "Prior需求树桥梁定义作为内部前提；Hall/matching expansion itself is self-contained and does not import an external theorem beyond standard Hall.",
+      "limit": "Does not choose rails or variable subsets, does not give a global FAIL=>OPT>T certificate, and is not a general UM approximation or hardness result."
     }
   ]
 }

@@ -1747,3 +1747,21 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - **Dependencies / Evidence：** `UM-MODEL-v1`；自足计数证明、独立审查、m=3全分配枚举及m=4,5,8,12 Fraction核验。
 - **Status：** complete stated-scope obstruction; independently reconstructed and exactly audited; external review and novelty unverified；`UM-TARGET-v1`仍OPEN。
 - **Related Files：** `research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md`、`research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md`、`tests/audits/unrelated_machines/fixed_work_convex_local_minimum.py`、`evidence/runs/unrelated_machines/fixed_work_convex_local_minimum_audit.json`。
+
+
+## UM-TWO-STATE-QUOTA-HALL-CUT-v1：固定 rail 方向的 Hall 切分解
+
+- **Exact Statement：** 固定变量子集 \(S\)、每个变量的一个 rail、选中标签集合 \(L\) 及整数需求 \(t_\ell\ge0\)。存在每个标签注入 \(t_\ell\) 个互不重复资源，当且仅当对所有 \(U\subseteq L\)，
+  \[
+  \sum_{\ell\in U}t_\ell\le\left|\bigcup_{\ell\in U}R(\ell)\right|.
+  \]
+  资源至多接两个标签时，邻域等于全局度一私有、两端都在 \(U\) 的共享和恰一端在 \(U\) 的边界资源三项之和。
+- **Objects / Domain / Definitions：** 两状态残余 DAG；状态内资源不交；跨状态资源可共享；支付是不可重复资源的整数注入。固定方向，不量化 rail 选择。
+- **Quantifiers：** 对每个满足上述条件的显式 \(L,R,t\)，Hall 条件与实际支付等价；证明不依赖有限枚举。
+- **Assumptions / Scope：** 资源容量均为1，需求为整数；不声称方向选择或最大根比例的多项式算法，不声称一般 `FAIL⇒OPT>T` 或 UM-TARGET-v1 困难性。
+- **Conclusion / Mechanism：** 二部匹配/Hall 定理给出精确切条件；固定方向可用下界流和整数最大流构造实际支付。完整支付层恢复跨变量共享资源的2-SAT禁冲突；部分支付层必须检查集合 Hall 切，不能只查成对冲突。
+- **Dependencies：** `UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1`、二部匹配 Hall 定理与整数流。
+- **Evidence：** 独立 Python 审计标签≤3、资源≤4、需求 \(0,1,2\) 的全部资源关联模式（含空标签子集）共 279,936 个固定方向实例，均与 Hall 判据一致；有限核验不替代一般证明。
+- **Counterevidence / Objections：** 尚未得到对 rail 方向/变量子集联合选择的算法或全方向失败证书；单固定方向的 Hall 缺口不能拒绝原阈值 \(T\)。
+- **Status：** complete stated-scope proof; internal blind review completed with wording repairs; external review and novelty unverified。
+- **Related Files：** `research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md`、`tests/audits/unrelated_machines/two_state_quota_hall.py`、`evidence/runs/unrelated_machines/two_state_quota_hall_audit.json`。
