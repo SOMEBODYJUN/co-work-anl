@@ -34,6 +34,26 @@ Feder Theorem3先在ordinary setting取得clauses，Theorem4最小support/三坐
 
 ## 实现与认证状态
 
-本包没有新生产代码或冻结有限计算，不以scratch小真值表替代一般证明。源原件分别为BBKO v3 73页、KKR v6 33页、Feder作者PS 12页；原字节/hash、来源和实际读取范围入manifest。没有声称BBKO PCP全证明、KKR算法全证明或Feder全篇已经重构。外审、新颖性、UM物理编译仍未认证。
+第2–3节两个一般PCSP Claim没有新生产代码或冻结有限计算，不以scratch小真值表替代一般证明。源原件分别为BBKO v3 73页、KKR v6 33页、Feder作者PS 12页；原字节/hash、来源和实际读取范围入manifest。没有声称BBKO PCP全证明、KKR算法全证明或Feder全篇已经重构。外审、新颖性、UM物理编译仍未认证。
 
 最终canonical在上述实读版本之后仅把无界essential例子明确为n≥2，并在物理范围补native多端任务的one-hot/one-cold精确状态，强调两端Boolean/DAG不是主目标限制。核心两个Claim的对象、矩阵证明及hardness依赖未改；额外scope不冒称已完成新compiler。
+
+## Native 流边界与全输入正规形的新增实际审查
+
+最终旧scope稿SHA `6a86f38827e59c84cc5e2c8c89778614e4fae61e5616e462ccc22972186821a1`后来另由一名研究者全文实读，冻结读后稿SHA `a36af57ce54dfe4cdc6b67838a1442073f61c001eef7fbb827db7d474da0eab8`。三型、native one-cold、非DAG范围及grid公式无fatal；其只建议明确unit机器A与small机器M_i互异，正文已澄清。
+
+新增 `UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1` 的仅陈述SHA `c96b39f9e8057edd1e621f6c2efa940e42a271d70ce9675982b6b541f95b17ff`；独立研究者在未读任何构造proof时重构B/F两流、unknownOPT五三、balanced strict iff，冻结SHA `2f755be886cc77e81e64468968c10099776202ee7fc0c39a6ee9ce6a4b06e843`。随后才实读root自写§6的canonical SHA `09496d273a71adf5644814100fc161602cc3a43c6d79107bfe829afd7c78d666`，读后稿SHA `40767446d0b81265199270705a2d1c3b5d0afc153d6de846d2336c4a804f9558`。新增局部rho必要形状此前Statement无，明确仅做读后核查；审者又从rho≤a+b/2独立加强one-small下界到k−2r+1，正文r2改为k−3。没有新native-flow软件实现。
+
+root原先草拟的带r→2r损失的多small消去，在陈述先行攻击中被更强exact选择器支配；旧冻结草稿保留scratch，未注册为本次canonical Claim，不把废弃路线加进证明依赖。
+
+`UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1` 与 `UM-TARGET-TERNARY-SELECTOR-EQUIVALENCE-v1` 的真正仅陈述SHA `cbebbbface83e98cbbdce49c7a7d772a5bcd876fd7c5d03ffcd1fbcf62268176`。一名研究者未读root/row/pcsp任何新证明，独立构出二叉单位树、完整两向实际映射、unknownOPT尺度搜索，冻结SHA `711143edbe0e7681e4c5e4d3fa5ddcf5f213ccfa31de6677e66162d7fa897e9f`。另一名研究者此前仅据较弱Statement独立构出线性路径容量OR构件，稿SHA `ab48b6a9149afbdea7fb6f81ba7ddbf814cb02eac642ad7e42250f583f1a4181`；不把这份旧Statement审查冒称新两个Exact ID的完整盲审。
+
+随后第一名审者实际全文读root canonical SHA `c1f95ee830f09ced1c4840f2177748e8d95e4b7bc2b403efff198ff3734a9a50`，读后稿SHA `2e27367948ab6e07c816ba959a89122778ad113f65983a175778ee0ef229f496`。§7–8无standing fatal；新(7.1)截断恒等式此前Exact无，仅记本次读后核；n0单列、p0/d1、严格C<2b、OPT=b及2b、全私有2b上界、剪枝范围、全机非负子集负载、dense/sparse编码与有理尺度数均实际核。没有从一般PCSP困难性导入物理hardness。此后正文只补规范代码/冻结审计链接，不更改这些数学对象/结论。
+
+## 正规形软件的实际范围
+
+规范 `tests/audits/unrelated_machines/ternary_unit_selector_normal_form.py` SHA `29120eaf7038fc1a79ee7e563243c986059ca32554109a242b20a92472c46bfc` 实现transform/forward/project与非空截断值的有限核验；负载按非零machine字典表示，避免稀疏API在空任务或大unused m时枚举机器数。初版稠密原型保留scratch，没有把它的冻结run覆盖后冒称新run。最终独立冻结 `ternary_unit_selector_normal_form_sparse_audit.json` SHA `959b78a30645da7f11583ec70ed871395a98cd5a29d485d31dcb58857d37985f`。
+
+root实际全文读初版、再逐项读sparse差异，独立重跑最终规范文件，输出JSON每一字段与冻结文件相同：9个关键原输入、13原σ、116新完整τ，其中29份C<2b逐件投影并核逐原机负载不增；6021位十进制/20001bit分母、m=2^80的empty及few-edge、q0、d1、b7/5、OPT跨b/2b、p>b/负值/b0/C=2b拒绝均覆盖。有限运行不承担数学一般证明。
+
+没有实现假设的normal-class次二求解器或一般UM新算法；native F/B完整流软件与一般PCSP求解器也未提供。proof/internal-review/implementation分别记录，外审与全球新颖性仍未认证。

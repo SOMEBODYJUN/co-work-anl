@@ -663,11 +663,29 @@
 
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
-| [近单位蕴含PCSP的精确minion与物理复制义务](<current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md>) | `research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md` | 读取已证明的一般源hardness、尚未保持的实际次数/类型及ordinary fanout塌陷。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同](assets.json) |
-| [近单位PCSP先陈述后证明的实际独立攻击](<reviews/unrelated_machines/near_unit_implication_pcsp_review.md>) | `research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md` | 核iff全量词、BBKO准确版本、三型任务语义、grid公式与未完成compiler。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同](assets.json) |
+| [近单位promise源、多小端流与三端任务正规形](<current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md>) | `research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md` | 区分一般source硬度/实际compiler；读取native五三边界、保全机负载的OR正规形及主目标等价，勿把表示当解法。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1`、`UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同（共 5 项）](assets.json) |
+| [近单位源与任务正规形的实际独立审查](<reviews/unrelated_machines/near_unit_implication_pcsp_review.md>) | `research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md` | 核精确minion、source适用、native双流、actualnormalform、unknownOPT及稀疏实现；proof/内审/软件状态分开。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1`、`UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同（共 5 项）](assets.json) |
 | [BBKO2019代数PCSP原始v3](<../history/source/literature/unrelated_machines/barto_bulin_krokhin_oprsal_2019_algebraic_pcsp_v3.pdf>) | `history/source/literature/unrelated_machines/barto_bulin_krokhin_oprsal_2019_algebraic_pcsp_v3.pdf` | 只按原字节读取Def5.16/Prop5.17及适用条件；不称重构全PCP证明。 | 来源或历史判断；不作为现行结论；关联 `UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同](assets.json) |
 | [KKR2018偶delta-matroid原始v6](<../history/source/literature/unrelated_machines/kazda_kolmogorov_rolinek_2018_even_delta_matroids_v6.pdf>) | `history/source/literature/unrelated_machines/kazda_kolmogorov_rolinek_2018_even_delta_matroids_v6.pdf` | 核普通edge-CSP Theorem7/8的准确条件，防止错导promise硬度。 | 来源或历史判断；不作为现行结论；关联 `UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同](assets.json) |
 | [Feder扇出限制的作者原始PostScript](<../history/source/literature/unrelated_machines/feder_fanout_limitations_author_original.ps>) | `history/source/literature/unrelated_machines/feder_fanout_limitations_author_original.ps` | 保原PS而不替换成转制PDF；读取Theorems3–4印8–11的ordinary fanout步骤。 | 来源或历史判断；不作为现行结论；关联 `UM-NEAR-UNIT-PCSP-EXACT-MINION-v1`、`UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1`，[命题合同](assets.json) |
+| [三端单位选择器的实际正规形构造与解码](<../tests/audits/unrelated_machines/ternary_unit_selector_normal_form.py>) | `tests/audits/unrelated_machines/ternary_unit_selector_normal_form.py` | 复用给正阈值b的transform/forward/project；稀疏machine负载避免按二进制m数值展开。 | 有限计算核验；不代替一般证明；关联 `UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1`，[命题合同](assets.json) |
+| [三端正规形关键原输入与实际投影冻结审计](<../evidence/runs/unrelated_machines/ternary_unit_selector_normal_form_sparse_audit.json>) | `evidence/runs/unrelated_machines/ternary_unit_selector_normal_form_sparse_audit.json` | 核9原输入、13原sigma、116新tau、29below2b投影和巨大二进制/零值边界；有限checks不作一般证明。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1`，[命题合同](assets.json) |
+
+### unit_presence_gluing
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [单位占位两见证的锐胶合与多尺度tiny推广](<current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md>) | `research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md` | 读取实际两模式可读presence的全机胶合界、逐k锐例及不可外推的scope。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1`、`UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1`，[命题合同](assets.json) |
+| [单位占位胶合的独立重构与读后攻击](<reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md>) | `research/reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md` | 核无行预算/任意arity/SU切换、unit匹配、加权舍入、sharp及tiny新对象的真实审查次序。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1`、`UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1`，[命题合同](assets.json) |
+
+### native_normal_form_and_gluing
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [多小端双流实际算法的原始团队推导](<../history/source/notes/unrelated_machines/native_small_arity_flow_source.md>) | `history/source/notes/unrelated_machines/native_small_arity_flow_source.md` | 保存B/F流与unknownOPT分支的实际原始推导；current另补rho及必要瓶颈计数。 内部原始字节，不是外部发表或新颖性认证。 | 来源或历史判断；不作为现行结论；关联 `UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1`，[命题合同](assets.json) |
+| [三端单位树正规形的独立原始推导](<../history/source/notes/unrelated_machines/ternary_unit_selector_independent_source.md>) | `history/source/notes/unrelated_machines/ternary_unit_selector_independent_source.md` | 真正只读Exact后独立构造二叉单位树及未知OPT算法转移；current自足重写并另证截断恒等式。 内部原始字节，不是外部发表或新颖性认证。 | 来源或历史判断；不作为现行结论；关联 `UM-TARGET-TERNARY-SELECTOR-EQUIVALENCE-v1`、`UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1`，[命题合同](assets.json) |
+| [统一small单位占位胶合的原始完整推导](<../history/source/notes/unrelated_machines/uniform_presence_gluing_source.md>) | `history/source/notes/unrelated_machines/uniform_presence_gluing_source.md` | 原始匹配分量/virtual任务与逐k锐族；current自足重构并加入独立费用流。 内部原始字节，不是外部发表或新颖性认证。 | 来源或历史判断；不作为现行结论；关联 `UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1`，[命题合同](assets.json) |
+| [多尺度tiny单位占位胶合的独立原始推导](<../history/source/notes/unrelated_machines/tiny_presence_gluing_independent_source.md>) | `history/source/notes/unrelated_machines/tiny_presence_gluing_independent_source.md` | 只据新Exact独立重构的pair-slot费用流；current另以matching/weighted-pair证明完整一般结论。 内部原始字节，不是外部发表或新颖性认证。 | 来源或历史判断；不作为现行结论；关联 `UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1`，[命题合同](assets.json) |
 
 <a id="weighted_congestion"></a>
 

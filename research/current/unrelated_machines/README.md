@@ -362,3 +362,7 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [统一端口与全局单位停车](uniform_port_parking_matroid_gap_and_actual_approximation.md)把每C独立仍1/D共同保留的显式余横截CONFIGgap，与BLMRS两值polymatroid算法给同结构真实2−1/(4+η)近似分开；D不统一或非单位停车未覆盖，通用算法未实现。
 
 [近单位蕴含promise与物理复制](near_unit_implication_pcsp_and_physical_copy_obligation.md)给精确minion及所有固定k,r的一般PCSP NP-hardness，ordinaryFeder三坐标步骤在weak端可塌成full cube；真实两端/类型/全机decoder仍OPEN，不升级主反面。
+
+[任务正规形与native边界](near_unit_implication_pcsp_and_physical_copy_obligation.md)新增三个独立身份：多小端双流在small行≤k/每job至少2小端时实际≤5/3；二叉单位选择器在C<2b无损恢复原机负载，且normal class（SU两端+unit-only最多3端）与UM-TARGET的统一次二算法存在等价。没有提供该核心求解器或near2hardness。
+
+[两实际见证的单位占位胶合](unit_presence_two_witness_sharp_gluing.md)则给{1,1/k}逐k锐B(k)与任意tiny[0,a]的3(1+a)/2实际mixed分配；它只限裸presence复制，不排medium时间、任务身份或共同source解码。主目标正反面仍OPEN。

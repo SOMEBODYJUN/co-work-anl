@@ -126,3 +126,5 @@
 [私有分叉树估值与支持域](research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)新增精确signed demand、全叶XOS包络损失k[1−(1−1/k)^h]及single-state紧凑minorant LP；显式叶预算最大损失阶logB/loglogB。一般源计算gap和共同资源分配未由这些oracle解决；generic LP优化未实现，外审与新颖性未认证。
 
 [近单位promise的源困难性与物理复制义务](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)区分已证明的一般PCSP NP-hardness与仍OPEN的实际UM编译，不将source hard、ordinary non-delta或LPgap当近二反面。
+
+[三端任务正规形](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)保留UM-TARGET全部算法存在内容；[单位占位两见证胶合](research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)限制tiny裸presence复制。均非已完成主目标正反面。

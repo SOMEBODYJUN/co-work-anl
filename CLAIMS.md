@@ -106,3 +106,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 [私有分叉树估值与支持域](research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)新增精确signed demand、全叶XOS包络损失k[1−(1−1/k)^h]及single-state紧凑minorant LP；显式叶预算最大损失阶logB/loglogB。一般源计算gap和共同资源分配未由这些oracle解决；generic LP优化未实现，外审与新颖性未认证。
 
 [近单位蕴含PCSP](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)另给精确minion及所有固定k,r的一般NP-hardness；变量任意出现、无物理编译承诺，不能升级UM-TARGET-v1反面。
+
+新增UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1、UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1、UM-TARGET-TERNARY-SELECTOR-EQUIVALENCE-v1、UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1、UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1；[精确专题账本](research/unrelated_machines/CLAIMS.md)分开双流实际算法、阈值正规形/条件等价与两见证锐界，不升级UM主目标。

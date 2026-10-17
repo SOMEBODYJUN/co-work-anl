@@ -8354,6 +8354,145 @@
       ],
       "source_role": "BBKO v3 Def5.16/Prop5.17为承重已有NP-hardness criterion；KKR/Feder不作为source hardness证明前提，只核迁移限制。",
       "limit": "一般源hardness不是makespan近二hardness；物理三型copy/decoder仍OPEN，外审与新颖性未认证。"
+    },
+    {
+      "id": "um_multismall_incidence_flow_approx_v1",
+      "claims": [
+        "UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1"
+      ],
+      "status": "complete stated-scope proof; statement-first and read-after internal review; target open; novelty unverified",
+      "applies_when": [
+        "{1,1/k}、k≥2；B为unit-only最小计数瓶颈，F为其余仅small最小瓶颈，rho_i=sum1/d_j。"
+      ],
+      "produces": "全部P可实际输出C≤B+F/k≤B+maxceilrho/k；small行≤k且每非unit-only job至少D≥2个small端时为unknownOPT 1+ceil(k/D)/k≤5/3；d_j≥k时strict1+1/k iff unit-only可单匹配。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/native_small_arity_flow_source.md"
+      ],
+      "source_role": "实际内部冻结原始/独立推导字节；current自足重构，非外部发表证明或新颖性。标准整数流等工具在正文明确。",
+      "limit": "实际given-witness/normal-form合同不等于主问题的算法或hardness；外审与新颖性未认证。"
+    },
+    {
+      "id": "um_ternary_unit_selector_normal_form_v1",
+      "claims": [
+        "UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1"
+      ],
+      "status": "complete stated-scope proof; statement-first and read-after internal review; target open; novelty unverified",
+      "applies_when": [
+        "任意合法P，给正有理b且每有限p≤b；允许zero/empty/单端，普通完整sigma。"
+      ],
+      "produces": "二叉私有单位树使每newjob为一q<b端加unit端或unit-only至多3端；forward≤max(b,C)，任意newC<2b反投影逐原机不增；非空OPTnew=min(2b,max(b,OPTold))，两值small关联数保留。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/ternary_unit_selector_normal_form.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/ternary_unit_selector_normal_form_sparse_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/ternary_unit_selector_independent_source.md"
+      ],
+      "source_role": "实际内部冻结原始/独立推导字节；current自足重构，非外部发表证明或新颖性。标准整数流等工具在正文明确。",
+      "limit": "实际given-witness/normal-form合同不等于主问题的算法或hardness；外审与新颖性未认证。"
+    },
+    {
+      "id": "um_target_ternary_selector_equivalence_v1",
+      "claims": [
+        "UM-TARGET-TERNARY-SELECTOR-EQUIVALENCE-v1"
+      ],
+      "status": "complete stated-scope proof; statement-first and read-after internal review; target open; novelty unverified",
+      "applies_when": [
+        "一般UM全输入含OPT0；正规类随输入给定共同b>0，全部SU端q<b或unit-only arity≤3。"
+      ],
+      "produces": "UM-TARGET成立 iff 正规类有某统一确定性位poly actual次二算法；反向先zero处理，再L=max minp,U=sum minp≤nL的常数有理比率尺度，实际C<2b才投影，余量仍固定正。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/ternary_unit_selector_independent_source.md"
+      ],
+      "source_role": "实际内部冻结原始/独立推导字节；current自足重构，非外部发表证明或新颖性。标准整数流等工具在正文明确。",
+      "limit": "实际given-witness/normal-form合同不等于主问题的算法或hardness；外审与新颖性未认证。"
+    },
+    {
+      "id": "um_two_measurement_unit_presence_sharp_gluing_v1",
+      "claims": [
+        "UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1"
+      ],
+      "status": "complete stated-scope proof; statement-first and read-after internal review; target open; novelty unverified",
+      "applies_when": [
+        "任意{1,1/k}原P，k≥2，给两完整actualσ≤1+1/k；两不同原机presence00/11，资格arity/行关联数不限。"
+      ],
+      "produces": "任意两mixed真实sigma可位poly构造C≤B(k)=1+ceil((k+2)/2)/k；四机2k+6job族两mixed真OPT=B(k)。k2/3 B2，k≥4≤9/5，B≤3T/2。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/uniform_presence_gluing_source.md"
+      ],
+      "source_role": "实际内部冻结原始/独立推导字节；current自足重构，非外部发表证明或新颖性。标准整数流等工具在正文明确。",
+      "limit": "实际given-witness/normal-form合同不等于主问题的算法或hardness；外审与新颖性未认证。"
+    },
+    {
+      "id": "um_two_measurement_tiny_presence_gluing_v1",
+      "claims": [
+        "UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1"
+      ],
+      "status": "complete stated-scope proof; statement-first and read-after internal review; target open; novelty unverified",
+      "applies_when": [
+        "有限p属于{1}∪[0,a]，给有理0≤a<1、两完整actualσ≤T1+a、两测量00/11；无arity/行数/time-consistency限制。"
+      ],
+      "produces": "任意两mixed actualσ可确定性总位poly构造≤3T/2；unit匹配+两选择加权半整化。a<1/3绝对<2；odd reciprocal a→0族恰3T/2，a1/3可恰2；不是每单独a逐参数锐。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/tiny_presence_gluing_independent_source.md"
+      ],
+      "source_role": "实际内部冻结原始/独立推导字节；current自足重构，非外部发表证明或新颖性。标准整数流等工具在正文明确。",
+      "limit": "实际given-witness/normal-form合同不等于主问题的算法或hardness；外审与新颖性未认证。"
     }
   ]
 }

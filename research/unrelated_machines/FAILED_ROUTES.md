@@ -321,3 +321,9 @@ u_t) 的一般复杂度。
 ## Ordinary non-delta扇出不能原样保近单位promise
 
 [精确源与塌陷公式](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)区分一般PCSP真NP-hard和物理编译缺口。pin一out0、量化k−3个out，strict为b⇒y=z1，weak为b⇒y+z≥max(0,r−k+3)；r≤k−3后weak完全无约束。失败是把ordinary最小support在weak端也当最小，不否定更大promise gadget、实际循环或多尺度设计。可回收精确strongfixing源与三型合法任务语义，重试必须给共同source decoder。
+
+## 仅增加small可选端或复制裸unit-presence不能免费补decoder
+
+[原生多端的双流与exact正规形](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)表明：每job至少2小端且small行≤k有实际五三；balanced k小端类strict阈值只剩unit匹配。真正全输入表达力可保在SU两端+unit-only三端，未变成可求解源。
+
+[两实际见证胶合](../current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)进一步排裸machine unit-presence的抗弱阈值复制：uniform给逐k锐B，任意tiny a<1/3给绝对<2。失败是把unit方向或局部onehot当可无损复制label；不排medium端、任务身份/外部联合状态。可回收exact normalform与actualgluing；重试要给完整低负载σ到source解码，不能只改更多原生端数。

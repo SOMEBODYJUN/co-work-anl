@@ -1991,3 +1991,58 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Evidence / Counterevidence or Objections：实际先陈述独立重构、原始定理相关页读取、后读canonical攻击；r1 purearc flow与一般hard不矛盾；ordinaryFeder投影的weak cube不能补物理编译。
 - Status：限定证明完整、内部独立攻击通过；没有新实现/有限审计，外审/新颖性未认证，physical compiler OPEN。
 - Related Files：[自足正文](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、[实际审查](../reviews/unrelated_machines/near_unit_implication_pcsp_review.md)、原始文献与manifest。
+
+## UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1：多小端关联度流的实际五三边界
+
+- Exact Statement / Conclusion：全部P可实际输出C≤B+F/k≤B+maxceilrho/k；small行≤k且每非unit-only job至少D≥2个small端时为unknownOPT 1+ceil(k/D)/k≤5/3；d_j≥k时strict1+1/k iff unit-only可单匹配。
+- Objects / Domain / Quantifiers：{1,1/k}、k≥2；B为unit-only最小计数瓶颈，F为其余仅small最小瓶颈，rho_i=sum1/d_j。 对全部满足域的显式输入，不由有限实验量化。
+- Definitions / Assumptions：全部原任务恰一个合法端，实际负载按原机回算；共同b/k及见证条件不能略去；相关符号在正文完整定义。
+- Scope：限定完整算法、阈值表示或给定两actual见证的局部接口；不解决一般UM主目标正反面。
+- Dependencies：正文自足单位容量/整数二部流与逐机计数或配对证明；不导入一般PCSP困难性。
+- Evidence / Counterevidence or Objections：真实先陈述独立重构、后读冻结全文；没有新通用生产实现；数学实际构造与实现状态分开。
+- Status：限定证明完整、内部攻击无standing fatal；implementation=none，外审/全球新颖性未认证。
+- Related Files：[自足正文](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、[实际审查](../reviews/unrelated_machines/near_unit_implication_pcsp_review.md)。
+
+## UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1：三端单位选择器的精确阈值正规形
+
+- Exact Statement / Conclusion：二叉私有单位树使每newjob为一q<b端加unit端或unit-only至多3端；forward≤max(b,C)，任意newC<2b反投影逐原机不增；非空OPTnew=min(2b,max(b,OPTold))，两值small关联数保留。
+- Objects / Domain / Quantifiers：任意合法P，给正有理b且每有限p≤b；允许zero/empty/单端，普通完整sigma。 对全部满足域的显式输入，不由有限实验量化。
+- Definitions / Assumptions：全部原任务恰一个合法端，实际负载按原机回算；共同b/k及见证条件不能略去；相关符号在正文完整定义。
+- Scope：限定完整算法、阈值表示或给定两actual见证的局部接口；不解决一般UM主目标正反面。
+- Dependencies：正文自足单位容量/整数二部流与逐机计数或配对证明；不导入一般PCSP困难性。
+- Evidence / Counterevidence or Objections：真实先陈述独立重构、后读冻结全文；规范transform/forward/project实现与9关键例13原σ/116新τ/29投影精确复跑；一般证明不依赖有限checks。
+- Status：限定证明完整、内部攻击无standing fatal；implementation=implemented，外审/全球新颖性未认证。
+- Related Files：[自足正文](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、[实际审查](../reviews/unrelated_machines/near_unit_implication_pcsp_review.md)。
+
+## UM-TARGET-TERNARY-SELECTOR-EQUIVALENCE-v1：一般UM与三端单位选择器的统一次二算法等价
+
+- Exact Statement / Conclusion：UM-TARGET成立 iff 正规类有某统一确定性位poly actual次二算法；反向先zero处理，再L=max minp,U=sum minp≤nL的常数有理比率尺度，实际C<2b才投影，余量仍固定正。
+- Objects / Domain / Quantifiers：一般UM全输入含OPT0；正规类随输入给定共同b>0，全部SU端q<b或unit-only arity≤3。 对全部满足域的显式输入，不由有限实验量化。
+- Definitions / Assumptions：全部原任务恰一个合法端，实际负载按原机回算；共同b/k及见证条件不能略去；相关符号在正文完整定义。
+- Scope：主目标的算法存在等价表示，未给任一边的求解器或hardness。
+- Dependencies：UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1与正有理尺度搜索，缺少normal-class求解器。
+- Evidence / Counterevidence or Objections：真实先陈述独立重构、后读冻结全文；没有新通用生产实现；数学实际构造与实现状态分开。
+- Status：限定证明完整、内部攻击无standing fatal；implementation=none，外审/全球新颖性未认证。
+- Related Files：[自足正文](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、[实际审查](../reviews/unrelated_machines/near_unit_implication_pcsp_review.md)。
+
+## UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1：两测量单位占位读出的逐k锐胶合界
+
+- Exact Statement / Conclusion：任意两mixed真实sigma可位poly构造C≤B(k)=1+ceil((k+2)/2)/k；四机2k+6job族两mixed真OPT=B(k)。k2/3 B2，k≥4≤9/5，B≤3T/2。
+- Objects / Domain / Quantifiers：任意{1,1/k}原P，k≥2，给两完整actualσ≤1+1/k；两不同原机presence00/11，资格arity/行关联数不限。 对全部满足域的显式输入，不由有限实验量化。
+- Definitions / Assumptions：全部原任务恰一个合法端，实际负载按原机回算；共同b/k及见证条件不能略去；相关符号在正文完整定义。
+- Scope：限定完整算法、阈值表示或给定两actual见证的局部接口；不解决一般UM主目标正反面。
+- Dependencies：正文自足单位容量/整数二部流与逐机计数或配对证明；不导入一般PCSP困难性。
+- Evidence / Counterevidence or Objections：真实先陈述独立重构、后读冻结全文；没有新通用生产实现；数学实际构造与实现状态分开。
+- Status：限定证明完整、内部攻击无standing fatal；implementation=none，外审/全球新颖性未认证。
+- Related Files：[自足正文](../current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)、[实际审查](../reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md)。
+
+## UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1：任意tiny时间单位占位的三半系数胶合
+
+- Exact Statement / Conclusion：任意两mixed actualσ可确定性总位poly构造≤3T/2；unit匹配+两选择加权半整化。a<1/3绝对<2；odd reciprocal a→0族恰3T/2，a1/3可恰2；不是每单独a逐参数锐。
+- Objects / Domain / Quantifiers：有限p属于{1}∪[0,a]，给有理0≤a<1、两完整actualσ≤T1+a、两测量00/11；无arity/行数/time-consistency限制。 对全部满足域的显式输入，不由有限实验量化。
+- Definitions / Assumptions：全部原任务恰一个合法端，实际负载按原机回算；共同b/k及见证条件不能略去；相关符号在正文完整定义。
+- Scope：限定完整算法、阈值表示或给定两actual见证的局部接口；不解决一般UM主目标正反面。
+- Dependencies：正文自足单位容量/整数二部流与逐机计数或配对证明；不导入一般PCSP困难性。
+- Evidence / Counterevidence or Objections：真实先陈述独立重构、后读冻结全文；没有新通用生产实现；数学实际构造与实现状态分开。
+- Status：限定证明完整、内部攻击无standing fatal；implementation=none，外审/全球新颖性未认证。
+- Related Files：[自足正文](../current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)、[实际审查](../reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md)。

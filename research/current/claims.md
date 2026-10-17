@@ -1130,6 +1130,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-NEAR-UNIT-PCSP-EXACT-MINION-v1 | 固定k≥2,r∈[1,k−1]；一般Boolean约束无次数/类型承诺 | 固定k≥2、1≤r≤k−1时，Pol恰为非空单调相交winning族且全部minwinner大小≤k−r；同一minwinner双侧fixing，不保证bounded essential arity。 | [正文](unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、陈述先行/读后独立审查；physical compiler OPEN。 |
 | UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1 | 固定k≥2,r∈[1,k−1]；一般Boolean约束无次数/类型承诺 | 对每个固定k,r，A_k→B_k,r加exact AMO2/ONE的unrestricted PCSP NP-hard；没有保持physical two-occurrence/端口类型的归约。 | [正文](unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、陈述先行/读后独立审查；physical compiler OPEN。 |
 
+| UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1 | {1,1/k}、k≥2；B为unit-only最小计数瓶颈，F为其余仅small最小瓶颈，rho_i=sum1/d_j。 全部P可实际输出C≤B+F/k≤B+maxceilrho/k；small行≤k且每非unit-only job至少D≥2个small端时为unknownOPT 1+ceil(k/D)/k≤5/3；d_j≥k时strict1+1/k iff unit-only可单匹配。 | [正文](unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、陈述先行及读后审查；implementation=none，主目标OPEN。 |
+| UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1 | 任意合法P，给正有理b且每有限p≤b；允许zero/empty/单端，普通完整sigma。 二叉私有单位树使每newjob为一q<b端加unit端或unit-only至多3端；forward≤max(b,C)，任意newC<2b反投影逐原机不增；非空OPTnew=min(2b,max(b,OPTold))，两值small关联数保留。 | [正文](unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、陈述先行及读后审查；implementation=implemented，主目标OPEN。 |
+| UM-TARGET-TERNARY-SELECTOR-EQUIVALENCE-v1 | 一般UM全输入含OPT0；正规类随输入给定共同b>0，全部SU端q<b或unit-only arity≤3。 UM-TARGET成立 iff 正规类有某统一确定性位poly actual次二算法；反向先zero处理，再L=max minp,U=sum minp≤nL的常数有理比率尺度，实际C<2b才投影，余量仍固定正。 | [正文](unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、陈述先行及读后审查；implementation=none，主目标OPEN。 |
+| UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1 | 任意{1,1/k}原P，k≥2，给两完整actualσ≤1+1/k；两不同原机presence00/11，资格arity/行关联数不限。 任意两mixed真实sigma可位poly构造C≤B(k)=1+ceil((k+2)/2)/k；四机2k+6job族两mixed真OPT=B(k)。k2/3 B2，k≥4≤9/5，B≤3T/2。 | [正文](unrelated_machines/unit_presence_two_witness_sharp_gluing.md)、陈述先行及读后审查；implementation=none，主目标OPEN。 |
+| UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1 | 有限p属于{1}∪[0,a]，给有理0≤a<1、两完整actualσ≤T1+a、两测量00/11；无arity/行数/time-consistency限制。 任意两mixed actualσ可确定性总位poly构造≤3T/2；unit匹配+两选择加权半整化。a<1/3绝对<2；odd reciprocal a→0族恰3T/2，a1/3可恰2；不是每单独a逐参数锐。 | [正文](unrelated_machines/unit_presence_two_witness_sharp_gluing.md)、陈述先行及读后审查；implementation=none，主目标OPEN。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

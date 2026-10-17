@@ -413,3 +413,7 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 ## 真正一般源hardness与实际compiler分开
 
 [近单位PCSP](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)已闭合unrestricted A_k→B_r+AMO/ONE的精确minion与NP-hardness；BBKO强fixing来源准确，非bounded-essential论据。物理小大/大大/小小三型分别给out-in EQ、in-in NEQ、out-out NEQ。仍缺任意weak实际σ的source decoder及每job两端/总位poly compiler。若r2可保到任意大固定k，grid ratio2−3/(k+1)足够主反面；这是未完成条件，不是已构造归约。
+
+[任务正规形与native边界](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)新增三个独立身份：多小端双流在small行≤k/每job至少2小端时实际≤5/3；二叉单位选择器在C<2b无损恢复原机负载，且normal class（SU两端+unit-only最多3端）与UM-TARGET的统一次二算法存在等价。没有提供该核心求解器或near2hardness。
+
+[两实际见证的单位占位胶合](../current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)则给{1,1/k}逐k锐B(k)与任意tiny[0,a]的3(1+a)/2实际mixed分配；它只限裸presence复制，不排medium时间、任务身份或共同source解码。主目标正反面仍OPEN。
