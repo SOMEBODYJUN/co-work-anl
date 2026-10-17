@@ -87,3 +87,7 @@ Bateni–Charikar–Guruswami，TR-848-09，[49页作者PDF](https://mhbateni.co
 ## 整束缺陷着色的标准势函数来源
 
 Fuchs–Kuhn，*List Defective Colorings: Distributed Algorithms and Applications*，[DISC2023正式PDF](https://drops.dagstuhl.de/storage/00lipics/lipics-vol281-disc2023/LIPIcs.DISC.2023.22/LIPIcs.DISC.2023.22.pdf)，PDF4/印22:4，在Definition1后明确将缺陷着色存在性和势函数机制追溯Lovász1966。只联网核这一定义/机制归属，未保存原字节或宣称分布式算法全文内化；manifest的FK2023_defective_coloring_background明确取得状态。[大需求束正文](../current/unrelated_machines/large_bundle_collision_square_root_floor.md)自行证明整数势+Cauchy+容量Hall，未把该组合公式冒充源定理或认证新颖性。
+
+## 现行裸C2接口的针对性对照
+
+Verdugo–Verschae–Wiese，[arXiv:1811.08539v3](https://arxiv.org/abs/1811.08539v3)，2020-05-16，34页；PDF/印3 Theorem1及AppendixB（33–34）已联网核读其陈述/定义。它研究CONFIG上高轮SoS的小常数间隙；本文 `UM-C2-LOAD-UNIT-GAP-v1` 的[单位伪矩证明](../current/unrelated_machines/c2_unit_multislice_gap.md)只是对仓库裸degree-four负载合同的精确自足判定，不能将后者包装成更强CONFIG层级下界。该源仅web读取，未落地原始字节或重构全文；全球新颖性未认证。

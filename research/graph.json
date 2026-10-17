@@ -8679,6 +8679,45 @@
         "evidence/runs/unrelated_machines/large_bundle_collision_square_root_audit.json"
       ],
       "status": "finite computational evidence"
+    },
+    {
+      "id": "UM-C2-LOAD-UNIT-MULTISLICE-v1",
+      "kind": "construction",
+      "track": "unrelated_machines",
+      "title": "单位同机的非整数多色slice伪矩",
+      "detail": "m≥3,n=m+1,t=n/m；下降阶乘给全部相容四阶条目，count-null递推使每行localizer为0，harmonic分解证明完整M2 PSD。",
+      "refs": [
+        "research/current/unrelated_machines/c2_unit_multislice_gap.md"
+      ],
+      "status": "self-contained construction"
+    },
+    {
+      "id": "UM-C2-LOAD-UNIT-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "全局四阶负载松弛的整数间隙上确界二",
+      "detail": "对每个整数m≥3，n=m+1个全单位同机任务的现行C2-load阈值恰为t=n/m，而整数OPT=2；兼容四阶矩y_S=∏a(t)_{c_a(S)}/(n)_{|S|}给显式有理证书，M2半正定且全部负载localizer为0。比值2m/(m+1)趋2；一般此C2松弛的supgap恰为2。 本族三阶同机矩−1/m^4，CONFIG阈值2。",
+      "refs": [
+        "research/current/unrelated_machines/c2_unit_multislice_gap.md",
+        "research/reviews/unrelated_machines/c2_unit_multislice_gap_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-C2-UNIT-GAP-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "单位四阶伪矩的双路精确消元",
+      "detail": "完整M2 Fraction核m3/4/5，独立Bareiss核m3/4及m2负边界；m3全部256矩条目与81实际调度回算。",
+      "refs": [
+        "research/current/unrelated_machines/c2_unit_multislice_gap.md",
+        "tests/audits/unrelated_machines/c2_unit_multislice_gap.py",
+        "tests/audits/unrelated_machines/c2_unit_multislice_independent.py",
+        "evidence/runs/unrelated_machines/c2_unit_multislice_gap_audit.json",
+        "examples/unrelated_machines/c2_unit_multislice_m3.json",
+        "evidence/certificates/unrelated_machines/c2_unit_multislice_m3.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -21229,6 +21268,69 @@
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"
+    },
+    {
+      "id": "D-UM-C2-LOAD-UNIT-MULTISLICE",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-C2-LOAD-UNIT-MULTISLICE-v1",
+      "statement": "自足定义与全部二次空间的初等正交分解证明显式共同PSD证书；不由有限测试推出。",
+      "refs": [
+        "research/current/unrelated_machines/c2_unit_multislice_gap.md"
+      ],
+      "status": "self-contained proof"
+    },
+    {
+      "id": "D-UM-C2-LOAD-UNIT-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-C2-LOAD-UNIT-MULTISLICE-v1",
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-C2-LOAD-UNIT-GAP-v1",
+      "statement": "显式证书及平均负载给T_C2=t，鸽巢与达到调度给OPT2，经典ST给一般supgap≤2。",
+      "refs": [
+        "research/current/unrelated_machines/c2_unit_multislice_gap.md",
+        "research/reviews/unrelated_machines/c2_unit_multislice_gap_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-C2-LOAD-UNIT-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-C2-UNIT-GAP-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-C2-LOAD-UNIT-GAP-v1",
+      "statement": "有限完整矩消元、全部约束、显式证书与实际整数OPT仅核对所列参数，不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/c2_unit_multislice_gap.md",
+        "tests/audits/unrelated_machines/c2_unit_multislice_gap.py",
+        "tests/audits/unrelated_machines/c2_unit_multislice_independent.py",
+        "evidence/runs/unrelated_machines/c2_unit_multislice_gap_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "L-UM-C2-LOAD-UNIT-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-C2-LOAD-UNIT-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅裸C2-load的阈值间隙；完整配置和三阶非负可排本证书，不能据此排一般2−ε算法。",
+      "refs": [
+        "research/current/unrelated_machines/c2_unit_multislice_gap.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }

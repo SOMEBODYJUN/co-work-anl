@@ -917,6 +917,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-LARGE-BUNDLE-COLLISION-FLOOR-v1 | ∀q≥1显式完整束B_x、K_x=|B_x|、Δ为所选束实际资源重数、∀整数1≤c≤q，确定性总位多项式输出真实根树b≥Λ_c=min{ceil(q/c)/q,min_x floor(K_x c/(c+Δ−1))/K_x}。q=Δ=K_x=t²、标签邻域恰共同t²池且无额外边时，max_cΛ_c=b*=1/t（t≥2取c=t+1，t1取c1）。若b*≤η∈(0,1)，cη=ceil(1/η)−1，则Δ≥1+cη[1/(η+1/Kmin)−1]；沿η→0且ηKmin→∞必要liminfη²Δ≥1，平方池达到。 | 给定完整选择和四层模型承重；渐近条件不能省略。[正文](unrelated_machines/large_bundle_collision_square_root_floor.md)、[冻结攻击](../reviews/unrelated_machines/large_bundle_collision_floor_review.md)。 |
 
+## 全局四阶负载松弛的精确间隙
+
+| ID | 精确结论 | 范围与证据 |
+| --- | --- | --- |
+| UM-C2-LOAD-UNIT-GAP-v1 | 对每个整数m≥3，n=m+1个全单位同机任务的现行C2-load阈值恰为t=n/m，而整数OPT=2；兼容四阶矩y_S=∏a(t)_{c_a(S)}/(n)_{|S|}给显式有理证书，M2半正定且全部负载localizer为0。比值2m/(m+1)趋2；一般此C2松弛的supgap恰为2。 | 不含三阶逐项非负或CONFIG；后者本族阈值2。完整一般证明、独立冻结攻击和双路精确核验；非一般hardness。[正文](unrelated_machines/c2_unit_multislice_gap.md)、[审查](../reviews/unrelated_machines/c2_unit_multislice_gap_review.md)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

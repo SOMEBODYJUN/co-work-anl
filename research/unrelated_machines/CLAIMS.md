@@ -1210,3 +1210,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：已明确有限锐例不得额外资源边、ε渐近必须ε→0；无尚成立fatal。singleton阻止无大需求的平方改善；高碰撞本身不证明NO，新颖性未认证。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified
 - Related Files：research/current/unrelated_machines/large_bundle_collision_square_root_floor.md；research/reviews/unrelated_machines/large_bundle_collision_floor_review.md；tests/audits/unrelated_machines/large_bundle_collision_floor.py；tests/audits/unrelated_machines/large_bundle_collision_independent.py；evidence/runs/unrelated_machines/large_bundle_collision_square_root_audit.json。
+
+## UM-C2-LOAD-UNIT-GAP-v1：单位任务全局四阶负载松弛的锐利二间隙
+
+- Exact Statement / Quantifiers：对每个整数m≥3，n=m+1个全单位同机任务的现行C2-load阈值恰为t=n/m，而整数OPT=2；兼容四阶矩y_S=∏a(t)_{c_a(S)}/(n)_{|S|}给显式有理证书，M2半正定且全部负载localizer为0。比值2m/(m+1)趋2；一般此C2松弛的supgap恰为2。
+- Objects / Domain：一般UM模型的全局one-hot四阶M2 PSD、次数一负载localizer、端剪枝合同；下界族m≥3、n=m+1、p_ij=1、T=(m+1)/m。
+- Definitions / Assumptions：不含逐条三阶非负、CONFIG或prefix-count localizer；(z)_k为下降阶乘，c_a为相容单项式中的机器a次数。证书总编码长度为输入位长多项式。
+- Scope / Conclusion：回答裸C2-load本身的全称阈值舍入义务；不是指定贪心坏例，也不是所有矩方法/一般调度算法的困难性。
+- Dependencies：UM-MODEL-v1；正文自足count-null与对称/反对称harmonic代数；supgap≤2另依赖UM-ST-ROUND-v1。
+- Evidence：自足全m证明；statement-first独立更一般slice重构与冻结攻击；规范Fraction完整M2核m=3,4,5，独立整数Bareiss核m=3,4，并独立攻击m=2。
+- Counterevidence / Objections：m=2失败，已给负平方；本族三阶同机矩为−1/m^4，另加三阶非负即排该证书；CONFIG阈值为2，不能声称C2+CONFIG间隙。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。UM-TARGET-v1保持OPEN。
+- Related Files：research/current/unrelated_machines/c2_unit_multislice_gap.md；research/reviews/unrelated_machines/c2_unit_multislice_gap_review.md；tests/audits/unrelated_machines/c2_unit_multislice_gap.py；tests/audits/unrelated_machines/c2_unit_multislice_independent.py；evidence/runs/unrelated_machines/c2_unit_multislice_gap_audit.json；examples/unrelated_machines/c2_unit_multislice_m3.json；evidence/certificates/unrelated_machines/c2_unit_multislice_m3.json。

@@ -231,3 +231,5 @@ u_t) 的一般复杂度。
 从成对冲突切换为高重数并扩大标签束，仍未完成近二soundness。整束缺陷着色的真实容量匹配给Λ_c；平方池q=Δ=K=t²精确b*=1/t，并直接可构造最优调度。失败位置是将高重数/大K当作源NO解码的充分理由；它们只可能满足必要条件。
 
 回收有限Λ公式、共同池精确界、原资源匹配以及η必要不等式；沿η→0且ηKmin→∞必有liminfη²Δ≥1。没有大需求或趋零条件不能扩大该渐近结论。重试必须构造真正源相关的一致性并证明任意低比例树可解码，同时保持YES和位规模。见[正文](../current/unrelated_machines/large_bundle_collision_square_root_floor.md)。
+
+[全局四阶负载松弛的锐利二间隙](../current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。

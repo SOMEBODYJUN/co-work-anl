@@ -48,3 +48,5 @@
 [本轮开放义务与边界](questions/unrelated_machines/barrier_escape_obligations.md)补充了一个尚待审查的乘法覆盖/可调阈值候选、LST 正支撑零质量边反例及 rank-jump-one 共同交换条件缺口；这些均按精确范围保存，不升级为一般算法。
 
 其中 rank-jump-one 对真实有限正权支持已有 Boolean 函数代数闭合证明；对一般伪矩的共同交换延伸和负载 localizer 仍开放。
+
+[全局四阶负载松弛的锐利二间隙](current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。
