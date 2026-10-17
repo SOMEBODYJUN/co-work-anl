@@ -9798,11 +9798,12 @@
       "kind": "claim",
       "track": "unrelated_machines",
       "title": "pDM的整数阈值调度桥梁与近二边界",
-      "detail": "pDM完美匹配与受限整数R∥Cmax阈值bd等价；无匹配时OPT至少bd+1，但乘性gap趋近1。",
+      "detail": "合法非退化固定参数域的阈值算术内核正确；完整源域待补，加一仅是NO下界。",
       "refs": [
-        "research/current/unrelated_machines/pdm_threshold_scheduling_bridge.md"
+        "research/current/unrelated_machines/pdm_threshold_scheduling_bridge.md",
+        "research/reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md"
       ],
-      "status": "complete stated-scope threshold lemma; unrefereed; novelty unverified"
+      "status": "conditional threshold arithmetic; full source-domain contract requires repair; no near-two hardness; novelty unverified"
     },
     {
       "id": "UM-SUBLINEAR-CC-PROJECTION-GAP-v1",
@@ -9853,6 +9854,69 @@
         "tests/audits/unrelated_machines/heavy_light_forest_integrality_boundary.py"
       ],
       "status": "finite exact checks"
+    },
+    {
+      "id": "UM-ROW-UNIFORM-CORRELATED-GUARD-INPUT",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "简单逐行均匀相关请求表",
+      "detail": "同一左标签控制全部测试，每复合行均匀到q=right degree资源。",
+      "refs": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md"
+      ],
+      "status": "explicit restricted input definition"
+    },
+    {
+      "id": "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "相关读出的逐左ceil半数共同保留",
+      "detail": "整数碰撞势局部下降再一次全局匹配，实际共同标签与读出。",
+      "refs": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md",
+        "research/reviews/unrelated_machines/row_uniform_correlated_guard_review.md",
+        "tests/audits/unrelated_machines/row_uniform_correlated_guard.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "原平层状态调度的三二界",
+      "detail": "所有状态ports及selectors实际分配，Cmax≤3/2、非空OPT≥1。",
+      "refs": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md",
+        "research/reviews/unrelated_machines/row_uniform_correlated_guard_review.md",
+        "tests/audits/unrelated_machines/row_uniform_correlated_guard.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-ROW-UNIFORM-GUARD-EXACT-AUDIT",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "相关请求的有限Fraction与Hall证据",
+      "detail": "361输入、943稳定profile全Hall、6068原任务回算；有限实现检查。",
+      "refs": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md",
+        "evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json",
+        "examples/unrelated_machines/row_uniform_correlated_guard_examples.json",
+        "tests/audits/unrelated_machines/row_uniform_correlated_guard.py"
+      ],
+      "status": "finite exact audit; not a universal proof"
+    },
+    {
+      "id": "UM-ROW-UNIFORM-GUARD-CONSTRUCTOR",
+      "kind": "artifact",
+      "track": "unrelated_machines",
+      "title": "整数势及实际sigma构造器",
+      "detail": "显式uniform表输入，整数局部下降与增广匹配输出全部原任务。",
+      "refs": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md",
+        "tests/audits/unrelated_machines/row_uniform_correlated_guard.py"
+      ],
+      "status": "implemented for the stated structured class"
     }
   ],
   "hyperedges": [
@@ -24291,6 +24355,99 @@
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"
+    },
+    {
+      "id": "um_row_uniform_guard_retention_derivation",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROW-UNIFORM-CORRELATED-GUARD-INPUT"
+      ],
+      "conclusion": "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2",
+      "statement": "simple逐行均匀给每点整数成本≤d−1，整数份额与Hall给ceil-half。",
+      "refs": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md",
+        "research/reviews/unrelated_machines/row_uniform_correlated_guard_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_row_uniform_flat_state_derivation",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2",
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1",
+      "statement": "retention全部前提与显式flat编译共同给完整原sigma的三二负载。",
+      "refs": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md",
+        "research/reviews/unrelated_machines/row_uniform_correlated_guard_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_row_uniform_guard_finite_check",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROW-UNIFORM-GUARD-EXACT-AUDIT"
+      ],
+      "conclusion": "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2",
+      "statement": "全小profile Hall与实际输出核对所列有限输入，不证明一般性。",
+      "refs": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md",
+        "evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "um_row_uniform_flat_finite_check",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROW-UNIFORM-GUARD-EXACT-AUDIT"
+      ],
+      "conclusion": "UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1",
+      "statement": "6068原任务Fraction回算与三角全调度枚举只核实现和例子。",
+      "refs": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md",
+        "evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "um_row_uniform_guard_implementation",
+      "kind": "implements",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2",
+        "UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1"
+      ],
+      "conclusion": "UM-ROW-UNIFORM-GUARD-CONSTRUCTOR",
+      "statement": "实际实现共同标签、资源匹配与全部原任务sigma。",
+      "refs": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md",
+        "research/reviews/unrelated_machines/row_uniform_correlated_guard_review.md"
+      ],
+      "status": "implemented stated-scope constructor"
+    },
+    {
+      "id": "um_row_uniform_guard_scope_limit",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2",
+        "UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅simple逐行均匀平层子类，不能升级为一般次二或近二困难性。",
+      "refs": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md",
+        "research/reviews/unrelated_machines/row_uniform_correlated_guard_review.md"
+      ],
+      "status": "method scope only; target remains open"
     }
   ]
 }

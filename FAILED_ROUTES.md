@@ -159,3 +159,7 @@
 严格unit双树源编译的新增失败范围见[专题记录](research/unrelated_machines/FAILED_ROUTES.md)：CONFIG1整轨LP可求且可五三实际输出，但近unit阈值1+1/k仍保经典趋二gap；不得把两阈值混用。
 
 [固定批量且仅给小幅临时增载](research/current/unrelated_machines/pruned_first_move_and_transient_peak.md)也可能无法启动：m=k+1的真实OPT=T环族，任意非空≤k件首批负载至少max(2T,C+T/2)。此上界同时是一般剪枝首步的锐界；不能因首步存在就宣称全程或改善。初态不声明ST来源，强初始化和无界共同批次未排除。
+
+## 逐行均匀平层读出不能仅靠跨测试相关压低支付
+
+尝试用同一源标签控制许多测试来挽回独立局部guard的soundness。对simple、逐复合行均匀、每right资源数等于其degree的准确合同，整数碰撞势加一次全局匹配总能保每点ceil-half，flat原sigma≤3/2。因此共享标签本身不够。可回收的是实际共同标签/资源算法；重试需非均匀行、有效多重请求、跨资源组耦合或多层祖先约束，并重证全部机器与源解码。删除假设的反例仅否定绝对负载延伸，不否定更大类另一三二近似。见[正文](research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md)。

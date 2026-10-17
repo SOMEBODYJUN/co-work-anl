@@ -1109,8 +1109,11 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | ID | Exact Statement | 范围、状态与入口 |
 | --- | --- | --- |
-| UM-PDM-THRESHOLD-EXACT-v1 | 对固定 d≥3、b>d 且 gcd(b,d)=1 的 d-dimensional matching，构造受限整数 R∥Cmax：incident 顶点任务耗时 b，dummy 任务耗时 d。源有完美匹配当且仅当调度可达阈值 bd；无完美匹配时整数 OPT≥bd+1。 | 自足阈值证明；乘性 gap 仅 1+1/(bd)，不能推出统一 (2−ε) 反面。最新 pDM 文献只作来源背景，不把近一 gap 升级为近二硬度。 [正文](unrelated_machines/pdm_threshold_scheduling_bridge.md)。 |
+| UM-PDM-THRESHOLD-EXACT-v1 | 对固定 d≥3、b>d 且 gcd(b,d)=1 的 d-dimensional matching，构造受限整数 R∥Cmax：incident 顶点任务耗时 b，dummy 任务耗时 d。源有完美匹配当且仅当调度可达阈值 bd；无完美匹配时整数 OPT≥bd+1。 | 条件性阈值内核；完整合法源域待补，NO≥bd+1只是下界。合法编译由已有槽定理给(1,1+1/d) promise过程，不能从加一独自推断gap上界。 [合入异议](../reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md)。 [正文](unrelated_machines/pdm_threshold_scheduling_bridge.md)。 |
 
+
+| UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2 | 简单二部关联、各复合请求行均匀到right degree个单位资源时，任意跨测试共享标签仍可确定性位poly共同选择标签并为每左点保留ceil(d/2)条真实请求。 | [精确正文](unrelated_machines/row_uniform_correlated_guard_rounding.md)、[陈述先行攻击](../reviews/unrelated_machines/row_uniform_correlated_guard_review.md)、[实际构造器](../../tests/audits/unrelated_machines/row_uniform_correlated_guard.py)；不是一般UM结论。 |
+| UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1 | 上述表的显式flat-state原编译中，每状态parent及全部ports、unit selector有完整sigma，Cmax≤3/2；非空OPT≥1、空任务OPT0，故该子类三二近似。 | [全部机器负载证明](unrelated_machines/row_uniform_correlated_guard_rounding.md)、[有限证据](../../evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json)；输入结构显式给出，不声称一般P识别或比值锐利。 |
 
 ## 逻辑使用规则
 

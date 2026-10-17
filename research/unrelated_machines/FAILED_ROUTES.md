@@ -305,3 +305,7 @@ u_t) 的一般复杂度。
 尝试：对残余轻任务求最优机器价格，再在该价格下选最便宜的 heavy matching，迭代至固定点，借此把 `∀λ∃H` 变成共同 `H`。自洽条件本身是正确的充分证书：若 `λ_H` 是固定 `H` 的残余 makespan 最优对偶且 `H` 在同一 `g(·,λ_H)` 下最小，则 `H` 全局最小化残余值；但它不是一般存在性条件。
 
 精确失效：对任意 `β∈[1/2,1)` 的两机三任务参数族，`OPT≤T` 且全局最优 placement 的自身最优对偶会严格偏好另一个次优 placement，反向亦然，纯 saddle 不存在。这里必须保留被重 placement 覆盖任务从轻基线中扣除的 `−μ_j(λ)`；忽略该项会改变接口。回收是可核验的条件证书与最佳响应边界，不能把局部迭代或逐价 oracle 当一般算法。见 [自洽对偶正文](../current/unrelated_machines/heavy_light_saddle_certificate_and_cycle.md)。
+
+## 逐行均匀平层读出不能仅靠跨测试相关压低支付
+
+尝试用同一源标签控制许多测试来挽回独立局部guard的soundness。对simple、逐复合行均匀、每right资源数等于其degree的准确合同，整数碰撞势加一次全局匹配总能保每点ceil-half，flat原sigma≤3/2。因此共享标签本身不够。可回收的是实际共同标签/资源算法；重试需非均匀行、有效多重请求、跨资源组耦合或多层祖先约束，并重证全部机器与源解码。删除假设的反例仅否定绝对负载延伸，不否定更大类另一三二近似。见[正文](../current/unrelated_machines/row_uniform_correlated_guard_rounding.md)。

@@ -395,3 +395,7 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 - `UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1`：自洽残余对偶是一个可验证的重轻联合充分证书，但两机参数化 `OPT≤T` YES 族无纯 saddle，故最佳响应固定点不是一般存在性路线。
 
 下一承重义务仍是任意处理时间矩阵上的有环核心共同容量、实际整数输出或可靠 `FAIL⇒OPT>T`，并保持统一余量与位多项式复杂度。
+
+[相关单位读出的整数势边界](../current/unrelated_machines/row_uniform_correlated_guard_rounding.md)：simple、复合行均匀时，全局真实标签局部下降给每点碰撞≤d−1，再一次共同匹配支付ceil-half；平层所有原ports和selectors负载≤3/2，已实现并精确核验。下一反面必须退出至少一个承重前提并证明实际低sigma的源解码，不能只加强跨测试标签相关。一般UM-TARGET-v1正反面仍OPEN。
+
+pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md)保留原v1完整源域及gap方向异议：非退化固定参数域的算术内核成立，但尚未写显然NO/空YES合法分支；加一是NO下界。合法编译另由已有槽定理给(1,1+1/d) promise边界。原v1暂记条件性，不以默补假设维持完整归约状态。

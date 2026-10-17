@@ -54,7 +54,7 @@
 | [经典舍入与两树配置间隙的独立重构和攻击](<reviews/unrelated_machines/classical_foundation_review.md>) | `research/reviews/unrelated_machines/classical_foundation_review.md` | 冻结正文与代码hash，重建数学链并保留独立可执行扩展审计；状态升级前读取真实覆盖。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [有序槽舍入与两树配置证书的Fraction核验](<../tests/audits/unrelated_machines/rounding_and_gap.py>) | `tests/audits/unrelated_machines/rounding_and_gap.py` | 运行给定x舍入、独立枚举、显式配置和特定树DP；只检查真实有限参数，不充当通用求解器。 | 有限计算核验；不代替一般证明；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [经典舍入与配置间隙的首轮冻结精确证据](<../evidence/runs/unrelated_machines/classical_baseline_audit.json>) | `evidence/runs/unrelated_machines/classical_baseline_audit.json` | 保留代码hash、seed、算术、枚举范围与限制；重跑另写scratch，不覆盖本记录。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
-| [LST1990的原文版本与精确出处](<../history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf>) | `history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1`、`UM-CONF-GAP-v1`、`UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1`，[命题合同（共 17 项）](assets.json) |
+| [LST1990的原文版本与精确出处](<../history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf>) | `history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1`、`UM-CONF-GAP-v1`、`UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1`，[命题合同（共 19 项）](assets.json) |
 | [ST1993的原文版本与精确出处](<../history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf>) | `history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-BATCH-SUPPORT-REPAIR-NO-v1`、`UM-BOUNDED-PROFILE-EXIT-POOL-v1`、`UM-BUNDLE-MOMENT-v1`，[命题合同（共 71 项）](assets.json) |
 | [EKS2008_2014的原文版本与精确出处](<../history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.pdf>) | `history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [图平衡作者稿的原始PostScript来源](<../history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.ps>) | `history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.ps` | 保存作者站点原始PS字节，与派生PDF分别记录哈希；还原来源或重新转换时读取。 | 来源或历史判断；不作为现行结论 |
@@ -623,6 +623,22 @@
 | [重轻自洽saddle的森林整数补全边界](<current/unrelated_machines/heavy_light_forest_integrality_boundary.md>) | `research/current/unrelated_machines/heavy_light_forest_integrality_boundary.md` | 读取残余分数LP与纯saddle即使在森林上仍可趋二整数失败的参数族和接口缺口。 | 方法障碍；否定范围以正文为准；关联 `UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1`，[命题合同](assets.json) |
 | [森林残余整数边界的Fraction审计](<../tests/audits/unrelated_machines/heavy_light_forest_integrality_boundary.py>) | `tests/audits/unrelated_machines/heavy_light_forest_integrality_boundary.py` | 用精确有理算术核对saddle分数负载、对偶值、整数负载、反馈秩及趋二参数族。 | 有限计算核验；不代替一般证明；关联 `UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1`，[命题合同](assets.json) |
 | [重轻自洽saddle森林整数边界的独立审查](<reviews/unrelated_machines/heavy_light_forest_integrality_boundary_review.md>) | `research/reviews/unrelated_machines/heavy_light_forest_integrality_boundary_review.md` | 记录参数族分数saddle、趋二整数缺口、最小例对偶函数和森林反馈秩的盲审。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1`，[命题合同](assets.json) |
+
+### correlated_readout
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [逐行均匀相关读出的半数保留与平层三二调度](<current/unrelated_machines/row_uniform_correlated_guard_rounding.md>) | `research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md` | 读取同一标签跨测试相关仍有ceil-half共同匹配的精确范围，以及所有原ports的实际三二sigma。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2`、`UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`，[命题合同](assets.json) |
+| [相关读出与原三二调度的陈述先行攻击](<reviews/unrelated_machines/row_uniform_correlated_guard_review.md>) | `research/reviews/unrelated_machines/row_uniform_correlated_guard_review.md` | 核对先陈述后证明的实际顺序、奇数度、共同matching、撤销异议及全任务负载。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2`、`UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`，[命题合同](assets.json) |
+| [逐行均匀相关读出的整数构造器与精确审计](<../tests/audits/unrelated_machines/row_uniform_correlated_guard.py>) | `tests/audits/unrelated_machines/row_uniform_correlated_guard.py` | 实现整数碰撞势、ceil配额匹配、显式flat原调度；有限枚举独立检查Hall和原OPT。 | 有限计算核验；不代替一般证明；关联 `UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2`、`UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`，[命题合同](assets.json) |
+| [逐行均匀相关读出的冻结实际调度](<../evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json>) | `evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json` | 保留361输入、全部sigma/load与独立小例全调度枚举；有限证据不替代一般证明。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2`、`UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`，[命题合同](assets.json) |
+| [共享标签及奇数度的完整原调度例子](<../examples/unrelated_machines/row_uniform_correlated_guard_examples.json>) | `examples/unrelated_machines/row_uniform_correlated_guard_examples.json` | 展示空、孤立、变右度、奇数度和挫折三角的明确输入及输出。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2`、`UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`，[命题合同](assets.json) |
+
+### hardness-bridges
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [pDM阈值桥的合法域、位长度与gap方向审查](<reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md>) | `research/reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md` | 保留完整源域异议，区分NO下界与上界，以已有槽舍入给原形状的准确promise边界。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-PDM-THRESHOLD-EXACT-v1`，[命题合同](assets.json) |
 
 <a id="weighted_congestion"></a>
 

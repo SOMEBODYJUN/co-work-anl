@@ -120,3 +120,5 @@
 [剪枝首步临时容量锐界](research/current/unrelated_machines/pruned_first_move_and_transient_peak.md)把暂时增载义务精确分成首步与全程：一般首步可确定性守住 U=max(2T,C+T/2)，固定批量环族逐参数达到，C接近2T时可需接近5T/2的常数临时峰。初态不声明ST来源，一步不保证改善；一般全程共同修复仍OPEN。
 
 本阶段另有三项经自足推导与小型有理核验的入口：关联图反馈边参数的 `2^b·poly(L)` 精确阈值算法（`research/current/unrelated_machines/incidence_cycle_rank_exact.md`）、全阶共同矩整数提取桥（`research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md`）以及重轻自洽对偶证书与 YES 固定点边界（`research/current/unrelated_machines/heavy_light_saddle_certificate_and_cycle.md`）。它们均保留准确范围，不升级为一般统一小于2算法。
+
+[逐行均匀相关读出](research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md)新增限定身份 `UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2` 与 `UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`：共享同一左标签仍有逐点ceil-half共同资源匹配；其显式平层原矩阵可完整输出三二调度。非均匀、重复自查询、多层祖先约束及一般UM正反面不在此结论内；外审和新颖性未认证。

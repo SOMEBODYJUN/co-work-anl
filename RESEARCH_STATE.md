@@ -107,3 +107,7 @@
 本阶段另有三项可复用边界：关联图反馈边参数的 `2^b·poly(L)` 精确阈值算法、全阶共同矩到真实整数调度的原子提取桥，以及重轻自洽对偶证书并在 `OPT≤T` YES 实例上的纯固定点反例。它们分别关闭低环秩子类、钉死共同矩的全阶承重义务、并否定把逐价最佳响应当作一般共同选择器；`UM-TARGET-v1` 仍 OPEN。
 
 本轮新增两条精确边界：`UM-SUBLINEAR-CC-PROJECTION-GAP-v1` 将长链高围长障碍对角化到任意机器数子线性阶 `r(M)=o(M)`，但明确不宣称总编码位长结论或一般困难性；`UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1` 给出重轻纯 saddle、森林残余与 `R(H)=T` 仍可产生趋二整数缺口的参数族。后者把“分数角色选择”和“整数容量补全”分成独立承重义务：反馈边森林算法可以可靠 `FAIL`，残余 LP 数值不能替代它。两条均有 Fraction/计数审计，`UM-TARGET-v1` 仍 OPEN。
+
+[逐行均匀相关读出](research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md)新增限定身份 `UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2` 与 `UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`：共享同一左标签仍有逐点ceil-half共同资源匹配；其显式平层原矩阵可完整输出三二调度。非均匀、重复自查询、多层祖先约束及一般UM正反面不在此结论内；外审和新颖性未认证。
+
+pDM阈值桥的[合入审查](research/reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md)保留原v1完整源域及gap方向异议：非退化固定参数域的算术内核成立，但尚未写显然NO/空YES合法分支；加一是NO下界。合法编译另由已有槽定理给(1,1+1/d) promise边界。原v1暂记条件性，不以默补假设维持完整归约状态。

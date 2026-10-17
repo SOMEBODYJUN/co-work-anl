@@ -244,3 +244,5 @@
 [配置正部阈值与严格单位五三界](../current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)：完整私有单位树的CONFIG(T<2)恰由Σ(q−t)+≤floor(k(T−1))q描述；CONFIG1等价整轨LP并有完整C≤5/3输出（偶k≤3/2，k1≤1）。闭合两树精确Tconf=1+s*/k，经典gap族仍为1+1/k，故不外推为一般次二或近二困难性。
 
 [首步分段容量与固定批量锐临时峰](../current/unrelated_machines/pruned_first_move_and_transient_peak.md)给一般首步 U=max(2T,C+T/2) 与无需目标的单步选择器，及OPT=T的逐参数环能垒。按两项精确ID读取审查/证据；MOVE不保证改善，初态不宣称ST/最优凸包来源，一般全程和主目标仍OPEN。
+
+[逐行均匀相关读出的半数保留与平层三二调度](../current/unrelated_machines/row_uniform_correlated_guard_rounding.md)给任意native标签数及跨测试相关的共同ceil-half匹配，并输出该显式平层原矩阵的全部任务、实际负载≤3/2。整数势避免有理微幅改进；simple与复合行均匀承重。它排除这一读出合同的near-zero soundness，不扩展到非均匀、多重自查询或多层树，一般目标正反面保持OPEN。

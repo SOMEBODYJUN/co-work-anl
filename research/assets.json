@@ -7912,7 +7912,7 @@
       "claims": [
         "UM-PDM-THRESHOLD-EXACT-v1"
       ],
-      "status": "complete stated-scope proof; unrefereed; novelty unverified",
+      "status": "conditional threshold arithmetic; full source-domain contract requires repair; no near-two hardness; novelty unverified",
       "applies_when": [
         "固定维数d≥3的d-dimensional matching",
         "整数b>d且gcd(b,d)=1"
@@ -7925,13 +7925,15 @@
       "tests": [],
       "records": [],
       "examples": [],
-      "reviews": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md"
+      ],
       "candidates": [],
       "sources": [
         "history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
       ],
       "source_role": "最新pDM文献作为Paper Fact背景；阈值调度桥梁为本仓自足推导",
-      "limit": "仅加一间隙，乘性比趋近1；不提供统一低于2困难性"
+      "limit": "原v1完整输入域待补；仅NO≥bd+1不推出NO上界。合法矩阵有经典LP+槽(1,1+1/d) promise过程。"
     },
     {
       "id": "um_sublinear_cc_projection_gap_v1",
@@ -7990,6 +7992,72 @@
       ],
       "source_role": "仅作为配置/舍入背景；参数族与森林整数边界为本轮自足构造。",
       "limit": "仅否定纯分数补全合同，不是一般hardness；反馈边森林算法仍精确。"
+    },
+    {
+      "id": "um_row_uniform_correlated_guard_half_retention_v2",
+      "claims": [
+        "UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "applies_when": [
+        "简单二部关联、逐行均匀复合请求、每right资源数等于其度。"
+      ],
+      "produces": "确定性位多项式共同标签及逐左ceil(d/2)实际单位读出匹配。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/row_uniform_correlated_guard.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/row_uniform_correlated_guard_examples.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/row_uniform_correlated_guard_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf"
+      ],
+      "source_role": "既有原文只作一般UM/经典二倍背景；本命题为自足整数势与匹配推导，不从该原文导出新半数结论。",
+      "limit": "仅显式simple逐行均匀相关读出及平层正有理编译类；外审、新颖性与一般UM目标正反面均未认证。"
+    },
+    {
+      "id": "um_row_uniform_flat_state_three_halves_v1",
+      "claims": [
+        "UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "applies_when": [
+        "给定显式平层编译结构并满足retention v2全部条件。"
+      ],
+      "produces": "原flat状态selector及所有ports完整sigma，Cmax≤3/2且非空OPT≥1。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/row_uniform_correlated_guard.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/row_uniform_correlated_guard_examples.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/row_uniform_correlated_guard_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf"
+      ],
+      "source_role": "既有原文只作一般UM/经典二倍背景；本命题为自足整数势与匹配推导，不从该原文导出新半数结论。",
+      "limit": "仅显式simple逐行均匀相关读出及平层正有理编译类；外审、新颖性与一般UM目标正反面均未认证。"
     }
   ]
 }

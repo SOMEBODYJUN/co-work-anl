@@ -1,6 +1,6 @@
 # pDM 的整数阈值调度桥梁与近二反面路线边界
 
-本文把 2026 年关于二值 max-min allocation 的 p-dimensional matching 构造，直接翻译成一个受限的 R∥Cmax 阈值实例。它给出一个精确的整数可行性等价，但其 NO 间隙只有加一，乘性比趋近 1，因此不能单独支撑统一低于 2 的反面证明。主目标 UM-TARGET-v1 仍开放。
+本文把 2026 年关于二值 max-min allocation 的 p-dimensional matching 构造，直接翻译成一个受限的 R∥Cmax 阈值实例。总工作量与整除给出阈值算术内核；原 v1 的完整合法源域仍有下述审查异议。当前证明只给 NO 侧加一的下界，不能把它当作 NO 上界。主目标 UM-TARGET-v1 仍开放。
 
 ## 精确对象
 
@@ -59,7 +59,7 @@ bk+d\ell=bd.
 
 ## 为什么这不能直接突破统一 2 壁垒
 
-该桥只给出
+该证明只给出下界
 
 \[
 \frac{\mathrm{OPT}_{NO}}{\mathrm{OPT}_{YES}}
@@ -67,7 +67,7 @@ bk+d\ell=bd.
 =1+\frac1{bd}.
 \]
 
-当 b 或 d 增大时，这个比率趋近 1，而不是趋近 2。缩放所有处理时间只同时缩放 bd 与加一，不能改善乘性比。独立复制若保持 makespan 最大值，也不会把加性一自动变成乘性常数。
+当 b 或 d 增大时，这条已证下界趋近 1；这不说明实际 NO 值也趋近该下界。缩放或独立复制本身没有提供更大的可靠 gap。
 
 因此这个构造可以证明受限整数 R∥Cmax 的精确阈值 NP-hard，但不能推出不存在统一 (2−ε) 近似。要把它升级为主目标反面，必须另加真正的 gap amplification，同时保持普通调度中的所有部分分配都被 soundness 控制；这正是现有 pDM/局部 bundle 路线尚未完成的义务。
 
@@ -79,5 +79,11 @@ bk+d\ell=bd.
 
 - Paper Fact：二值 max-min allocation 的 pDM 构造有完美匹配时达到 bd、无完美匹配时低于 bd。
 - Canonical Record：本文给出对应受限 R∥Cmax 的整数阈值等价和完整位多项式证明。
-- Limitation：NO 侧只有 bd+1；没有统一低于 2 的乘性 gap。
+- Limitation：目前只证明 NO 侧至少 bd+1，未给近二乘性 gap；该下界本身不限制真实 NO 上界。
 - 下一义务：寻找不破坏普通任务部分分配的 gap amplification，或证明这类 pDM 阈值构造的乘性放大必然退化。
+
+## 合入审查：原 v1 合同待补，不能误用加一方向
+
+[合法域与间隙方向审查](../../reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md)指出：主公式尚未处理 `m<n`、孤立源顶点和 `n=m=0`；若 `b` 可作二进制可变参数，dummy 的显式输出规模还须另核。专题账本按固定 `d,b` 解释时后一点没有问题，但完整非退化域仍应写明。原 v1 因而暂记条件性内核，不把补充假设默默加入后继续称全域证明完成。
+
+同一审查还给出已有槽定理的直接推论：本合法编译的 `max p=b=T/d`，assignment LP(T) 不可行可可靠拒绝；可行即实际输出 `C≤(1+1/d)T≤4T/3`。这是限制本形状近二 gap 的真实算法论证，区别于仅从 `OPT_NO≥bd+1` 推断 NO gap“只有加一”。它不是一般 UM 的新近似算法。

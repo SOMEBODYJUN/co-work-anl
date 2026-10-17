@@ -1150,6 +1150,8 @@ u) 为三维匹配数，则 (b^*(D_K(A))=\max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\}
 - **Scope / Limitation：** 这是精确阈值/加一间隙，不是统一低于2乘性困难性；比率 (bd+1)/(bd)→1。它只说明 pDM 路线未经放大不能关闭 UM-TARGET-v1。
 - **Related Files：** `research/current/unrelated_machines/pdm_threshold_scheduling_bridge.md`。
 
+- **Counterevidence / Status（合入复核）：** 原正文未补m<n、isolated顶点、空源的合法UM分支；固定b的含义需明确。仅NO≥bd+1不限制NO上界，原“仅加一”限制说明已纠正。暂记条件性阈值内核，完整域修补需新版本；已有槽推论给合法编译的(1,1+1/d) promise过程。见`research/reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md`。
+
 ## UM-SANTA-NO-CONSTANT-CONDITIONAL-v1：Santa Claus 无常数近似假设下的条件反面
 
 - **Exact Statement / Quantifiers：** 若 (P\ne NP) 且一般 Santa Claus 对每个固定常数 (c) 都无确定性多项式 (c)-近似，则不存在统一 (\varepsilon\in(0,1)) 的一般 R∥Cmax (2-\varepsilon) 算法。
@@ -1855,8 +1857,28 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 
 ## UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1：重轻自洽 saddle 的森林整数补全边界
 
-- Exact Statement：在 `T=1` 参数族中，中心任务在每台机器成本 `beta`、每机私有任务成本 `a=1-beta/m`；残余 LP 有 `R(H)=1` 及均匀价格的纯自洽 saddle，但任何整数分配的最大负载为 `a+beta=1+beta-beta/m`，可趋近 `2`。`T=3,beta=2/3,m=2` 是时间同时乘 `9/2` 的最小审计特例，且关联图为树、反馈秩为 `0`。
+- Exact Statement：在 `T=1` 参数族中，中心任务在每台机器成本 `beta`、每机私有任务成本 `a=1-beta/m`；残余 LP 有 `R(H)=1` 及均匀价格的纯自洽 saddle，但任何整数分配的最大负载为 `a+beta=1+beta-beta/m`，可趋近 `2`。`T=3,beta=2/3,m=2` 是时间同时乘 `3` 的最小审计特例，且关联图为树、反馈秩为 `0`。
 - Dependencies：`UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1` 的残余对偶定义与 `UM-INCIDENCE-FEEDBACK-EXACT-v1` 的森林叶消元。
 - Boundary：反例只否定“森林残余 + `R(H)≤T` 自动给整数补全”；森林阈值问题仍可由叶消元精确判定，不能升级为一般困难性。
 - Status：自足 exact method boundary；独立盲审待完成；外部优先权未核查；`UM-TARGET-v1` 仍 OPEN。
 - Related files：`research/current/unrelated_machines/heavy_light_forest_integrality_boundary.md`、`tests/audits/unrelated_machines/heavy_light_forest_integrality_boundary.py`。
+
+## UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2：相关单位请求的逐点半数共同匹配
+
+- Exact Statement / Objects / Domain / Quantifiers：对任意显式二部simple图，每左非空有限标签、每右q=degree互异单位资源、每edge复合行全定义且均匀，同一左标签控制全部测试；确定性总位poly输出共同标签及合法F，逐点|F∩δ(u)|≥ceil(d_u/2)，含d0、d1与空图。
+- Assumptions / Definitions：simple、资源按right分区、逐复合行均匀，详见正文；纯right标签列matching不推出uniform。
+- Scope / Conclusion：只有该单位读出合同，不是一般UM困难性。原未登记scratch v1的floor结论由陈述先行审查加强，v2量词和ceil结论独立记录。
+- Dependencies：显式合同、整数碰撞势和二部matching整数性；正文完整给出，不导入外部近似定理。
+- Evidence / Counterevidence：361输入/943稳定profile Hall，删除simple或uniform有具体反例；有限运行不证明一般性。
+- Status：完整限定证明、独立内部攻击通过、构造器已实现；外审、新颖性未认证。
+- Related Files：`research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md`、`research/reviews/unrelated_machines/row_uniform_correlated_guard_review.md`、`tests/audits/unrelated_machines/row_uniform_correlated_guard.py`、`evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json`。
+
+## UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1：原平层状态矩阵的三二实际输出
+
+- Exact Statement / Objects / Domain / Quantifiers：给定前项图表的显式flat编译，每state一parent、每左一unit selector、每state每incident edge一parent时间1/d及外端时间1的port，无其它任务。对全部这种原矩阵，确定性位poly输出全部sigma且Cmax≤3/2；非空selector给OPT≥1，空任务OPT0，故该子类三二近似。
+- Assumptions / Definitions：保留retention-v2全部条件；显式结构随输入给出，不隐含任意P结构识别；空机器集添dummy。
+- Scope / Conclusion：特殊完整原调度子类；不声称generalUM、零时间任意矩阵或该近似因子锐利。
+- Dependencies：UM-MODEL-v1与UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2，连同正文完整编译。
+- Evidence / Counterevidence：6068原任务Fraction回算、三角32768合法调度枚举；去simple/uniform的原OPT分别7/4和2，只否定绝对上界延伸。
+- Status：完整限定证明、陈述先行独立攻击通过、实际构造器实现；外审、新颖性未认证，UM-TARGET-v1正反面仍OPEN。
+- Related Files：同上正文/审查/代码及`examples/unrelated_machines/row_uniform_correlated_guard_examples.json`。

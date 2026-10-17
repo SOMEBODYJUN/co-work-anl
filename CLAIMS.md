@@ -100,3 +100,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 新增限定身份 `UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1`、`UM-UNIT-READOUT-STRICT-UNIT-GAP-v1`、`UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1`；[专题账本](research/unrelated_machines/CLAIMS.md)给精确量词。仅配置阈值/严格unit promise/经典族精确回算，不升级UM-TARGET-v1。
 
 首步与全程现分离为 [UM-PRUNED-FIRST-MOVE-BOUND-v1 / UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1](research/current/unrelated_machines/pruned_first_move_and_transient_peak.md)：一般T剪枝首步上界max(2T,C+T/2)及固定批量环的逐参数锐性；不含一般全程/次二算法。
+
+[逐行均匀相关读出](research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md)新增限定身份 `UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2` 与 `UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`：共享同一左标签仍有逐点ceil-half共同资源匹配；其显式平层原矩阵可完整输出三二调度。非均匀、重复自查询、多层祖先约束及一般UM正反面不在此结论内；外审和新颖性未认证。

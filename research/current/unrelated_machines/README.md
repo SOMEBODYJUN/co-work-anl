@@ -352,3 +352,7 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 [全阶共同矩与负载局部化器的整数提取桥](full_degree_moment_localizer_decoding_bridge.md)登记 `UM-FULL-DEGREE-MOMENT-DECODING-v1`：次数 `2n+1` 的 Boolean/one-hot 共同泛函和次数 `n` 负载 localizer 必然含真实 `T`-可行原子；证书和原子族可指数大，故这是共同矩路线的完结义务而非多项式算法。
 
 [重轻角色的自洽对偶证书与YES固定点边界](heavy_light_saddle_certificate_and_cycle.md)登记 `UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1`：残余 LP 最优对偶与同价重任务最小化共同给全局角色及 `(1+β)T` ST 输出；参数化两机 YES 族表明纯 saddle 在 `OPT≤T` 时也可能不存在。逐价格 min–max 仍不能直接替代共同角色。
+
+[逐行均匀相关读出的半数保留与平层三二调度](row_uniform_correlated_guard_rounding.md)给任意native标签数及跨测试相关的共同ceil-half匹配，并输出该显式平层原矩阵的全部任务、实际负载≤3/2。整数势避免有理微幅改进；simple与复合行均匀承重。它排除这一读出合同的near-zero soundness，不扩展到非均匀、多重自查询或多层树，一般目标正反面保持OPEN。
+
+pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md)保留原v1完整源域及gap方向异议：非退化固定参数域的算术内核成立，但尚未写显然NO/空YES合法分支；加一是NO下界。合法编译另由已有槽定理给(1,1+1/d) promise边界。原v1暂记条件性，不以默补假设维持完整归约状态。
