@@ -8849,6 +8849,56 @@
         "research/reviews/unrelated_machines/strict_sub2_batch_barrier_review.md"
       ],
       "status": "complete stated-scope obstruction; exact finite audit; external review and novelty unverified"
+    },
+    {
+      "id": "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单任务外接端口的向下投影与复制锐界",
+      "detail": "两一致态强制2^z(2^a+2^b−1)严格状态；固定T>0逐参数锐，k≥2单翻位混合。",
+      "refs": [
+        "research/current/unrelated_machines/signed_one_job_port_downset.md",
+        "research/reviews/unrelated_machines/signed_one_job_port_downset_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-SIGNED-ONE-JOB-PORT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "单任务端口双路实际分配审计",
+      "detail": "有限Fraction枚举、零权锐例、已有见证单翻位及私有外host完整σ；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/signed_one_job_port_downset.md",
+        "tests/audits/unrelated_machines/signed_one_job_port_downset.py",
+        "tests/audits/unrelated_machines/signed_one_job_port_independent.py",
+        "evidence/runs/unrelated_machines/signed_one_job_port_downset_audit.json",
+        "examples/unrelated_machines/signed_one_job_port_sharp_profiles.json"
+      ],
+      "status": "finite exact checks; not a general proof"
+    },
+    {
+      "id": "UM-SQRT-MULTIPLICITY-FLOOR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单层配额超图的平方根重数地板",
+      "detail": "单层资源总重数Δ下所有中间配额层的平方根地板；与资源总量上界同阶。",
+      "refs": [
+        "research/current/unrelated_machines/single_layer_quota_sqrt_multiplicity_floor.md"
+      ],
+      "status": "complete stated-scope lemma; exact finite audit; external review and novelty unverified"
+    },
+    {
+      "id": "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "Santa Claus条件反面的量词与位复杂度规范化",
+      "detail": "对二进制有理Santa、确定性实际分配和整数q参数的条件反面；BLMRS位增长适用性仍为obligation。",
+      "refs": [
+        "research/current/unrelated_machines/santa_conditional_reverse_barrier_v2.md",
+        "research/current/unrelated_machines/santa_conditional_reverse_barrier.md"
+      ],
+      "status": "conditional logic complete; bit-growth applicability open; unrefereed; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -21687,6 +21737,97 @@
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"
+    },
+    {
+      "id": "D-UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1",
+      "statement": "在明确内部投影定义下，删除端口的非负内部负载保同一辅助见证；互补支持主理想计数，二机辅助选择达到。",
+      "refs": [
+        "research/current/unrelated_machines/signed_one_job_port_downset.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SIGNED-ONE-JOB-PORT-AUDIT-v1"
+      ],
+      "conclusion": "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1",
+      "statement": "双路实际辅助分配及明确越界负控检查有限实现，不将有限枚举当一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/signed_one_job_port_downset.md",
+        "tests/audits/unrelated_machines/signed_one_job_port_downset.py",
+        "tests/audits/unrelated_machines/signed_one_job_port_independent.py",
+        "evidence/runs/unrelated_machines/signed_one_job_port_downset_audit.json",
+        "research/reviews/unrelated_machines/signed_one_job_port_downset_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "一般PCSP困难性仍缺双出现保真；只排单任务纯内部复制，不排多任务/外部联合容量或一般调度算法。",
+      "refs": [
+        "research/current/unrelated_machines/signed_one_job_port_downset.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "L-UM-SQRT-MULTIPLICITY-FLOOR-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SINGLE-LAYER-QUOTA-VALUE-v1"
+      ],
+      "conclusion": "UM-SQRT-MULTIPLICITY-FLOOR-v1",
+      "statement": "最大t-束的极大性与资源重数计数给所有中间层的平方根地板；资源总量给同阶上界。",
+      "refs": [
+        "research/current/unrelated_machines/single_layer_quota_sqrt_multiplicity_floor.md",
+        "tests/audits/unrelated_machines/single_layer_quota_sqrt_multiplicity_floor.py"
+      ],
+      "status": "complete stated-scope lemma"
+    },
+    {
+      "id": "L-UM-SANTA-NO-CONSTANT-CONDITIONAL-v2-a",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TARGET-v1"
+      ],
+      "conclusion": "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2",
+      "statement": "任意固定ε改善取整数q≥max(2,ceil(1/ε))，由BLMRS得到固定常数Santa算法；条件假设仍未证。",
+      "refs": [
+        "research/current/unrelated_machines/santa_conditional_reverse_barrier_v2.md"
+      ],
+      "status": "conditional implication"
+    },
+    {
+      "id": "L-UM-SANTA-NO-CONSTANT-CONDITIONAL-v2-b",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SANTA-NO-CONSTANT-CONDITIONAL-v2"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "v2仍是条件反面；二进制位增长、随机算法和估值输出不在结论内。",
+      "refs": [
+        "research/current/unrelated_machines/santa_conditional_reverse_barrier_v2.md",
+        "research/unrelated_machines/LITERATURE.md"
+      ],
+      "status": "conditional open barrier"
     }
   ]
 }

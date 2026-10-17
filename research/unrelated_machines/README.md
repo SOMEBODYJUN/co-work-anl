@@ -203,3 +203,5 @@
 [异质大宏统一残余容量与 ST 舍入](../current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md) 给 `UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1` 和承诺版 `UM-HETEROGENEOUS-MACRO-PROMISE-v1`：`|B|=|H|`、宏仅在 home 且有限宏边严格大于 `T/2`，宏时间可依身份变化；tiny 资格和边成本任意逐件、每边≤`δT`。统一 home 残余 `T/2` 配合 ST 得 `(3/2+δ)T`，未知 OPT 以保留全部 tiny 边的单调 `F(t)` 和 `Q` 网格整数二分搜索。正文还记录强 3-PARTITION 精确流障碍，限制把异质残余当普通整数流或 polymatroid；这些结构结果不关闭一般主目标。
 
 [严格次二状态图的参数化批量能垒](../current/unrelated_machines/strict_sub2_batch_barrier.md) 给 `UM-STRICT-SUB2-BATCH-BARRIER-v1`：`OPT=1` 坏态负载趋近 2，在每步至多 `k` 件、所有中间态严格 `<2` 的图中孤立，首个出口需 `k+1` 件。它只限制常数批量中性修复，不能作为一般近似困难性。
+
+[单任务外接端口的向下投影与锐计数](../current/unrelated_machines/signed_one_job_port_downset.md)给`UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1`：保留一个外部出现端点且排除外部容量时，两一致态强制至少2^z(2^a+2^b−1)个严格可行状态，固定T>0逐参数锐；不能用该纯内部接口实现等值复制。BG一般signed阈值PCSP的近二困难性不保持调度双出现限制；多任务编码及外部联合容量仍未解，UM-TARGET-v1保持OPEN。
