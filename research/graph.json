@@ -8481,9 +8481,10 @@
       "kind": "claim",
       "track": "unrelated_machines",
       "title": "四阶 C₂ 与深层真前缀容量的锐利信息边界",
-      "detail": "同一6任务/2机器矩阵的偶奇五位真实T=1可行分布全部≤4阶矩相同，但深度四前缀的下一步容量相反，需五阶矩。",
+      "detail": "修复见证为7任务3机器、四零前缀、一个单位A/B任务、一个零任务及C单位2锚；真实OPT2的偶奇来源有共同四阶表，F下完整B负载0/1；只限源信息，允许重耦合。",
       "refs": [
-        "research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md"
+        "research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md",
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
       ],
       "status": "complete stated-scope proof; internally exactly enumerated; external review and novelty unverified"
     },
@@ -9005,13 +9006,13 @@
       "kind": "claim",
       "track": "unrelated_machines",
       "title": "可调阈值共同组的实际舍入与one-sided搜索",
-      "detail": "共同资格/等端时间/唯一home结构下，min-cover FPTAS与联合槽流给出R*=((1+eta)(3+delta))/(2+eta)<2的候选；固定前缀恢复的实际出口预算尚未闭合，未知OPT搜索待修复。",
+      "detail": "旧固定前缀恢复已由同行撤回；修复FPTAS上界、截断成本DP并直接恢复同一覆盖后，实际成本等于LP槽权重，原结构R*与one-sided搜索经独立复核重新闭合；一般输入结构仍缺。",
       "refs": [
         "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md",
         "research/questions/unrelated_machines/barrier_escape_obligations.md",
         "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
       ],
-      "status": "candidate blocked by post-review recovery objection; unrefereed; novelty unverified"
+      "status": "complete stated-scope structural proof; one-sided OPT search corrected; unrefereed; novelty unverified"
     },
     {
       "id": "UM-LST-SUPPORT-RELEASE-OPTIMAL-v1",
@@ -21940,10 +21941,10 @@
       "kind": "limits",
       "track": "unrelated_machines",
       "premises": [
-        "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1"
+        "UM-STRICT-SUB2-BATCH-BARRIER-v1"
       ],
-      "conclusion": "UM-STRICT-SUB2-BATCH-BARRIER-v1",
-      "statement": "把局部修复限制为<=k批量且中间严格<2仍有OPT=1孤立坏态；不构成一般困难性。",
+      "conclusion": "UM-TARGET-v1",
+      "statement": "任意初态OPT1坏态在<=k批量、全程严格<2时孤立；没有真最优凸包/ST初始化保证，不可替代闭环合同，也不是一般困难性。",
       "refs": [
         "research/current/unrelated_machines/strict_sub2_batch_barrier.md",
         "research/reviews/unrelated_machines/strict_sub2_batch_barrier_review.md"
@@ -22220,13 +22221,13 @@
         "UM-WEIGHTED-GROUP-JOINT-SLOT-v1"
       ],
       "conclusion": "UM-THRESHOLD-COVER-JOINT-SLOT-v1",
-      "statement": "在共同组联合槽机制上加入精确覆盖成本、可调阈值和one-sided OPT搜索，得到结构类低于2的界。",
+      "statement": "原共同组联合槽机制加修复后的精确覆盖成本FPTAS与同一覆盖实际恢复，给原R和one-sided OPT搜索；固定前缀恢复论证撤回。",
       "refs": [
         "research/questions/unrelated_machines/barrier_escape_obligations.md",
         "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md",
         "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
       ],
-      "status": "candidate derivation blocked by recovery objection"
+      "status": "complete stated-scope derivation after frozen recovery repair"
     },
     {
       "id": "L-UM-THRESHOLD-COVER-JOINT-SLOT-v1",
@@ -22423,6 +22424,22 @@
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"
+    },
+    {
+      "id": "D-UM-STRICT-SUB2-BATCH-BARRIER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BATCH-SUPPORT-REPAIR-NO-v1"
+      ],
+      "conclusion": "UM-STRICT-SUB2-BATCH-BARRIER-v1",
+      "statement": "旧三机分流族作正文给定的仿射缩放、加入固定填充并重新核全程<2容量不等式，得任意初态常数批量孤立界；不是由最优凸包长链初始化推出。",
+      "refs": [
+        "research/current/unrelated_machines/strict_sub2_batch_barrier.md",
+        "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md",
+        "research/reviews/unrelated_machines/strict_sub2_batch_barrier_review.md"
+      ],
+      "status": "complete stated-scope construction"
     }
   ]
 }

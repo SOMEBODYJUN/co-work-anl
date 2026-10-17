@@ -867,7 +867,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-RATIO-GROUP-JOINT-SLOT-v1 | 唯一home共同资格组内 `p_zj=ρ_hz w_j`，给定T、W_h≤T、w_j≤δT、宏端>T/2；候选联合槽输出 home≤(3/2+δ)T、sink≤(1+ρ_max/2)T，ρ_max<2。 | [比例组联合槽候选](../questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md)；候选证明草稿，内部两路攻击无fatal报告，正式审查/新颖性未认证；主目标OPEN。 |
 | UM-RATIO-GROUP-PROMISE-APPROX-v1 | 同一比例组结构，OPT处承诺阈值，固定 δ̄<1/2、ρ̄<2 时候选 `Cmax≤max(3/2+δ̄,1+ρ̄/2)OPT`；比例分组不是一般输入免费结构。 | [比例组联合槽候选](../questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md)§1、§5；候选状态，未替代UM-TARGET-v1。 |
 
-| UM-C2-PREFIX-CONDITIONING-DEGREE-v1 | 同一7任务/3机器矩阵的偶奇五位真实OPT=T=2分布，全部≤4阶one-hot C₂数据相同；深度4前缀F下任务5的B条件负载分别0/1，差异需5阶矩。 | [四阶C₂与深层真前缀容量边界](unrelated_machines/c2_prefix_conditioning_degree_boundary.md)；完整限定范围证明及32态精确枚举；是 limits，不是一般困难性。 |
+| UM-C2-PREFIX-CONDITIONING-DEGREE-v1 | 同一7任务/3机器矩阵的偶奇五位真实OPT=T=2分布，全部≤4阶one-hot C₂数据相同；替换旧互补抵消见证后，深度4前缀F下完整B条件负载分别0/1，差异需5阶矩。 | [四阶C₂与深层真前缀容量边界](unrelated_machines/c2_prefix_conditioning_degree_boundary.md)；完整限定范围证明及32态精确枚举；是 limits，不是一般困难性。 |
 
 ## UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1：三维匹配需求树的低比例地板
 
@@ -991,7 +991,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | ID | Exact scope | Result and boundary |
 | --- | --- | --- |
-| UM-THRESHOLD-COVER-JOINT-SLOT-v1 | 共同资格、等端时间、唯一 home 的宏/私有组结构；固定 `δ,η` 满足 `δ+η+δη<1`，宏/组条件按 `barrier_escape_obligations.md`。 | 乘法最小覆盖 FPTAS 与联合 home/sink 槽流给出候选 `R*=((1+η)(3+δ))/(2+η)<2`；但恢复时固定前缀的实际出口不能由当前证明控制在 LP 覆盖成本或 `d_h` 内，故未知 `OPT` one-sided 搜索和给定阈值输出均待修复。结构提取仍未解，主目标 OPEN。 [正文](../questions/unrelated_machines/barrier_escape_obligations.md)、[独立复核及后续异议](../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)。 |
+| UM-THRESHOLD-COVER-JOINT-SLOT-v1 | 共同资格、等端时间、唯一 home 的宏/私有组结构；固定 `δ,η` 满足 `δ+η+δη<1`，宏/组条件按 `barrier_escape_obligations.md`。 | 原固定前缀恢复错误并曾撤回complete；修复后的覆盖FPTAS、联合槽流及同一覆盖恢复给原 `R*=((1+η)(3+δ))/(2+η)<2` 与one-sided搜索。原量词/假设/输出不变；一般结构提取仍未解。 [正文](../questions/unrelated_machines/barrier_escape_obligations.md)、[撤回及冻结修复审查](../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)。 |
 | UM-LST-SUPPORT-RELEASE-OPTIMAL-v1 | `r` 个独立块，每块 `m≥2` 核心机、一备用机、私有任务大小 `1−1/m` 和单位锚任务；固定 LST 点的零质量边释放预算 `k`。 | `OPT=1`；约束至多 `k` 条 `x=0` 边时，`F(k)=2−1/m` 对 `k<r`，`F(k)=1` 对 `k≥r`。令 `m` 增长得到固定不足预算时相对 OPT 趋2。只排除固定支撑释放合同，不是一般困难性。 [正文](unrelated_machines/lst_support_release_optimal_gap.md)、[审计](../../tests/audits/unrelated_machines/lst_support_release_optimal.py)。 |
 
 ## 2026-10-17：共同尺寸可重开容量流

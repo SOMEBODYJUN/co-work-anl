@@ -997,9 +997,9 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Assumptions / Scope：唯一 home、共同资格、等端时间、宏/私有分组和固定 `δ,η` 仍承重；FPTAS 只缩放覆盖目标成本并保留精确覆盖约束。不能替代一般 UM-TARGET-v1。
 - Conclusion：条件性 `R<2` 正面接口；`η` 固定时 FPTAS 为输入位长多项式，若 `η` 输入则时间显式依赖 `1/η`。
 - Dependencies：UM-WEIGHTED-GROUP-JOINT-SLOT-v1 的联合槽流；最小覆盖 FPTAS；共同资格与等端时间的真实出口计费。
-- Evidence：固定阈值证明、`OPT` promise 的 one-sided 网格不变量、乘法覆盖 FPTAS 位复杂度说明，以及 `tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py` 的 Fraction 公式核验；有限证据不替代参数化证明。
-- Counterevidence / Objections：原复核提出用固定前缀 `Y_h` 替代 FPTAS 见证 `X_h`，但尚未证明实际出口 `e'_h`≤d_h 或≤e_h。精确边界：T=1、τ=1/2、权重按顺序 (2/5,2/5,1/5)、W=1、δ=2/5 时 d_h=1/2；前缀恢复需迁出4/5，而最小覆盖成本为3/5。故当前 sink 预算和给定阈值/未知OPT恢复证明存在 fatal gap；异资格或异端时间也会破坏单一 token 恢复，一般矩阵分组提取仍是承重缺口。
-- Status：candidate; current proof blocked by a stated fatal recovery objection; exact finite formula checks do not close it; unrefereed; novelty unverified; UM-TARGET-v1 OPEN。
+- Evidence：旧公式核验只检查代数，未检查恢复；本次`threshold_cover_recovery.py`及独立脚本实现精确覆盖DP与原任务回算，冻结证明/独立审查见同一review。未知OPT重新检查one-sided整数网格不变量。
+- Counterevidence / Objections：旧前缀4/5而覆盖3/5的fatal异议由同行4300c26登记，原完成状态撤回；修复直接迁出同一覆盖X使实际成本=e，并同时比较大单件/小件前缀UB、截断精确覆盖DP。已独立攻击本次修复，无尚存fatal。异资格、异端与一般结构生成不在合同内。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified; UM-TARGET-v1 OPEN。
 - Related Files：`research/questions/unrelated_machines/barrier_escape_obligations.md`；`research/current/unrelated_machines/weighted_group_joint_slot_rounding.md`；`research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md`；`tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py`；`evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json`。
 
 ## UM-LST-SUPPORT-RELEASE-v0：锁定给定 LST 正支撑的容量释放合同（已反驳）
@@ -1032,7 +1032,7 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Conclusion：额外共同交换证书成立时，原子提取和四阶条目重构是确定性有理线性代数；rank jump 本身不被宣称足够。
 - Dependencies：布尔四阶矩恒等式、共同交换投影、二阶 localizer；经典 flat extension 只作背景，不导入 rank-jump-one 结论。
 - Evidence：目前为自足代数重构，尚无完整 C2 伪矩非交换反例，也未认证公屏 `4−2√2` 支持常数。
-- Counterevidence / Objections：`rank(M2)-rank(M1)=1` 只说明一维缺陷；抽象块例满足各端局部投影条件但 `P_1,P_2` 不交换，故 (CE) 是真实 proof obligation。没有把该抽象块例升级成完整调度伪矩反例。
+- Counterevidence / Objections：`rank(M2)-rank(M1)=1` 只说明一维缺陷；抽象块例仅满足逐端局部投影条件（旧第三端补齐任务守恒断言算术错误并已删除），但 `P_1,P_2` 不交换，故 (CE) 是真实 proof obligation。没有把该抽象块例升级成完整调度伪矩反例。
 - Status：conditional candidate; rank-jump-one extension lemma OPEN; no general UM algorithm。
 - Related Files：`research/questions/unrelated_machines/barrier_escape_obligations.md`（rank-jump 章节）；`research/current/unrelated_machines/global_assignment_moment_rounding.md`。
 
@@ -1073,13 +1073,13 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 
 ## UM-C2-PREFIX-CONDITIONING-DEGREE-v1：四阶 C₂ 与深层真前缀容量的锐利信息边界
 
-- Exact Statement / Quantifiers：存在同一一般 UM 处理时间矩阵、两份真实 `OPT=T=2` 调度分布 `μ_even,μ_odd`，使全部相容 one-hot 矩 `y_S`（`|S|≤4`）及其 C₂-load/localizer 数据完全相同，但某个相容深度四前缀 `F` 的下一步条件 B 负载分别为0与1；判别所需条目是五阶矩。
-- Objects / Domain / Definitions：one-hot 调度分布、四阶 C₂-load、条件平均负载按 [c2_prefix_conditioning_degree_boundary.md](../current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md) 定义；含7任务、3机器、零时间前缀边与两台机器上的3/2边，并有独立C机器的强制2任务。
+- Exact Statement / Quantifiers：存在同一一般 UM 处理时间矩阵、两份真实 `OPT=T=2` 调度分布 `μ_even,μ_odd`，使全部相容 one-hot 矩 `y_S`（`|S|≤4`）及其 C₂-load/localizer 数据完全相同，但某个相容深度四前缀 `F` 的完整条件 B 负载分别为0与1；判别所需条目是五阶矩。
+- Objects / Domain / Definitions：one-hot 调度分布、四阶 C₂-load、条件平均负载按 [c2_prefix_conditioning_degree_boundary.md](../current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md) 定义；修复见证含7任务、3机器、四个零时间前缀任务、一个A/B单位任务、一个固定A的零任务和独立C机器的强制2任务；原互补双3/2见证不能证明整机负载差异。
 - Assumptions / Scope：这是表示信息边界，不是复杂度下界或 C₂ 整体 integrality gap；分布显式存在且两份都是真实 OPT=T 调度。
 - Conclusion：仅给四阶矩不能免费反复条件化到深度4；深度 t 的完整条件 C₂ 通常需 t+4 阶或等价条件 oracle。
 - Dependencies：UM-MODEL-v1；标准 one-hot 矩与条件化恒等式。
 - Evidence：偶/奇五位 parity 的32态精确枚举，`y_F=1/16`，五阶续接项分别0与1/16；Python Fraction/整数核验见阶段记录。
-- Counterevidence / Objections：只否定“低阶矩自动给深层 prefix 容量”的合同；不排高阶证书、重算残余矩、自适应舍入或一般 UM 算法。
+- Counterevidence / Objections：旧见证的两件3/2任务互补使完整B负载抵消，已显式替换；只否定“低阶矩唯一恢复指定来源的深层条件负载”的合同；不排高阶证书、重算残余矩、自适应舍入或一般 UM 算法。
 - Status：complete stated-scope proof; internally exactly enumerated; external review and novelty unverified。
 - Related Files：research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md。
 

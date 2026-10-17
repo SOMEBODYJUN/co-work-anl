@@ -61,7 +61,7 @@
 
 [共同资格私有组的加权出口与联合槽](research/current/unrelated_machines/weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。
 
-[开放义务与本轮边界](research/questions/unrelated_machines/barrier_escape_obligations.md)另记门槛/FPTAS sharpen `R*=((1+η)(3+δ))/(2+η)<2` 的结构候选，以及 `OPT=T=1` 的 LST 正支撑零质量边反例；其恢复步骤目前有已登记的致命异议（固定前缀的实际出口可能大于 LP 覆盖成本），所以未知 `OPT` 搜索不能升级为已闭合结果。二者都不是一般算法或困难性证明。
+[开放义务与本轮边界](research/questions/unrelated_machines/barrier_escape_obligations.md)给门槛/FPTAS结构界 `R*=((1+η)(3+δ))/(2+η)<2`。旧固定前缀恢复存在实质异议，已由同行在 `4300c26` 正确撤回完成状态；本次以同一覆盖实际恢复、修复FPTAS上界与独立冻结审查闭合原声明范围及one-sided搜索，详见[纠错复核](research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md)。同页另有 `OPT=T=1` 的LST支撑反例。一般任务分解仍缺，均非一般算法或困难性证明。
 
 同页还分离了 rank-jump-one 的真实支持引理：有限正权真实矩在 `rank(M2)=rank(M1)+1` 时可恢复 `R+1` 个原子；这不延伸到任意伪矩，也不认证公屏的 `4−2√2` 常数。
 
