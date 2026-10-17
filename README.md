@@ -20,6 +20,8 @@
 
 本阶段的路线复盘和下一道硬门槛见[专题前沿的全输入桥合同](research/unrelated_machines/RESEARCH_STATE.md#路线复盘从局部合同转向全输入桥)：已有成果主要诊断局部证书不足并建立受限联合构造；只有从任意输入产生可验证共同容量、实际全机整数输出及可靠阈值失败语义，才算直接推进 `UM-TARGET-v1`。
 
+本轮的[团队资产清点矩阵](research/unrelated_machines/RESEARCH_STATE.md#团队阶段清点去重后的路线矩阵-2026-10-17)把 boss3 的条件块选择、boss6 的多目的地修复、boss7/9 的联合迁移、boss10 的反面归约和受限正面接口放回同一依赖图；工作桌面只保留入口与卡点，canonical 正文和证据不重复复制。
+
 ## 定义、命题、依赖与证据
 
 [研究总目录](research/README.md)按模型分流；[中文资产总目录](research/CATALOG.md)说明每个文件用途；[全仓精确命题](research/current/claims.md)、[五轴状态](research/review_status.json)、[文件合同](research/assets.json)和[关系图](research/index.html)分别管理身份、审查、位置和数学依赖。有限核验只作checks，不替代一般证明。原始来源沿[来源解释](research/source_crosswalk.md)追溯。

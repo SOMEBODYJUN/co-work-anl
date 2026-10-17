@@ -295,3 +295,22 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 新增 `UM-COMMON-SIZE-REOPEN-v1`：给定冻结核心和残余共同尺寸有理流，`q_max` 头部条件下可用一次联合槽匹配整化，允许接收机增载；支持连通分量单尺寸时普通整数槽流精确修复。一般可分容量由 Farkas 价格判定，但两机三件等端任务的分数/整数缺口和异端最小值误判已精确记录。该接口不能选择一般核心，也不能消除混尺寸装箱或统一近二余量；UM-TARGET-v1 仍 OPEN。
 
 [两状态行列池锐性修复](../current/unrelated_machines/duplication_state_majority_floor.md)：标签可只选部分资源，s=K=4的真实最优为5/8，反驳旧附属1/2断言；主多数下界仍成立。新精确整数前沿及显式达到构造已独立重构，原K≥2s数例保留；不是一般近二困难性。
+
+## 团队阶段清点：去重后的路线矩阵（2026-10-17）
+
+本节是研究状态审计，不新增主目标定理。清点依据当前 `CLAIMS.md`、`current/claims.md`、`review_status.json`、各 canonical 正文/审查/证据，以及已推送的 boss3、boss6、boss7、boss9、boss10 工作桌面。共同结论是：`UM-TARGET-v1` 仍 OPEN；资产主要推进了诊断、限域构造和反面接口边界，尚未闭合任意输入的共同容量提取。
+
+| 路线 | 当前 canonical 入口 | 已确定的价值 | 尚缺的主目标义务 | 清点决定 |
+| --- | --- | --- | --- | --- |
+| 经典地基 | `model_and_classical_barriers.md`、`classical_foundation_review.md` | LST/ST 槽舍入和配置 gap 的精确重构 | 不是新算法；不能再把配置 gap 当一般困难性 | 保留为共同前提，不重复重构 |
+| 大边/小边残余与条件块 | `heavy_matching_residual_and_escape.md`、`joint_matching_completion_and_block_cuts.md`；boss3 | 共享逃逸族击穿独立星探针；条件块切面可在专族恢复真实阈值；固定阈值选择已出现 NP 难障碍 | 任意输入的共同块分离、联合整数输出和可验证失败语义 | boss3 继续只攻击一般分离/选择；停止同类逐星探针 |
+| 批量修复与分流 | `cyclic_batch_repair_and_fork_obstruction.md`；boss6 | 固定参数局部优化可位多项式终止；单目的地/逐坐标修复被近二族击穿 | 多目的地合流、允许接收机增载且同时控制所有机器、统一进展势 | boss6 与共同容量路线合并义务，不再扩展逐坐标反例 |
+| 联合迁移与槽空间 | `optimal_convex_fixed_slot_gap.md`、`optimal_hull_marginal_rounding_barrier.md`；boss7/9 | 即使真实最优凸包和最佳固定槽 matching 也可近二；宏任务必须共同重选 | 一般跨槽/跨宏联合迁移及总位多项式进展 | 固定槽和冻结宏路线降级为边界测试 |
+| 受限共同构造 | `shared_sink_joint_macro_assignment.md`、`weighted_group_joint_slot_rounding.md`、`heterogeneous_macro_uniform_residual_st_rounding.md`；boss9 | 单 sink、唯一 home、固定需求/大宏 promise 下有真实 `3/2+δ` 或更强接口 | 从任意矩阵提取 home/sink/组结构；多 sink、跨 home、异质混合容量 | 作为可复用组件，不宣称一般桥梁 |
+| 矩与需求树 | `symmetric_moment_reset_and_single_machine_threshold.md`、`rooted_dag_degree_token_bridge.md` | 固定支撑/给定矩可重耦合；DAG token 桥梁给真实调度恒等式和参数化标尺 | 从输入可求支撑或共同矩；避免指数高点选择；共同分支/合流 | 不再研究固定阶贪心；只保留可计算支撑提取问题 |
+| 反面困难性 | `private_graft_and_resource_repetition.md`、`single_layer_quota_hypergraph_obstruction.md`、`k_uniform_bundle_matching_floor.md`、`santa_conditional_reverse_barrier.md`；boss10 | 解释私有组合、复制、逐层配额和 Santa 桥梁为何不能直接放大 | 对每固定 ε 的真实整数 OPT gap、完整 YES 保持、位多项式 soundness | 只接受完整归约；配置/SA gap 不升级为硬度 |
+| 新增复制/重数边界 | `signed_one_job_port_downset.md`、`single_layer_quota_sqrt_multiplicity_floor.md`、`duplication_state_majority_floor.md` | 收紧特定双出现、平方重数和两状态资源接口的可行地板 | 多任务一致性、外部容量耦合和一般源问题解码 | 记录为反面边界，不与一般硬度合并 |
+
+去重规则：`joint_matching_completion_and_block_cuts.md` 统一承载大边选择与条件块切面；`cyclic_batch_repair_and_fork_obstruction.md` 统一承载循环/分流/严格次二边界；`shared_sink_joint_macro_assignment.md` 统一承载单 sink 宏任务共同选择；`rooted_dag_degree_token_bridge.md` 统一承载需求树任务桥梁；`private_graft_and_resource_repetition.md` 与逐层 quota 文件统一承载反面放大障碍。工作桌面只保留入口和卡点，不复制正文、证据或 Claim。
+
+团队共同的下一门槛是：任意合法 `P`、候选 `T` 下，产生多项式可表示的共同容量状态，或者给出可验证 `FAIL⇒OPT>T`；状态必须一次性输出实际整数分配并守住所有机器，统一 ε 不得随 `K,q,r,n` 退化。boss3 的条件块选择和 boss6 的多目的地修复只有在同一状态中闭合，才算从局部路线进入主目标；否则保留为准确边界并停止同类微调。
