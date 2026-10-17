@@ -249,3 +249,11 @@ u_t) 的一般复杂度。
 [增加独立预载扇出不能消除缺一逃逸](../current/unrelated_machines/weighted_fanout_profile_boundary.md)：给only-a与all-B实际YES，则任意输出pair的两个缺一OPT和≤3T；内部图增大、多任务、任意源端时间均不能让每缺一状态接近二。只有one-output-free的星虽可2−1/q，也不满足这个NO合同。回收加权闭包与真实状态预算；重试须给跨模块共同容量或另一读出合同及完整源解码。
 
 [仅严格端正确的双轨阈值编码无法自动保留近二NO](../current/unrelated_machines/dual_rail_threshold_soundness_boundary.md)：C1确等价源严格解，但C>1可只外送真轨一部分ports。scalar整类及unit外部容量整类均有实际3/2；全cube源连弱端也NO却实际OPT趋1。否定范围仅明确归一化/单例外合同；可回收整数流、原P锐例和cube精确式。重试需不同的跨层一致性/相关选择以及对所有低负载实际σ的可靠解码。
+
+## 门槛覆盖的固定前缀恢复缺口与回收
+
+尝试：用最小覆盖FPTAS成本e构造共同sink槽，再输出另一个固定前缀。失效步骤是前缀越过需求d，可能比e更重；T1、τ1/2、权(2/5,2/5,1/5)给前缀4/5、最小覆盖3/5。5r组OPT1族还使代理总成本1/2、真实sink负载r。失败属于输出/证明耦合错误，不是主目标困难性；同行4300c26据此正确撤回完成状态。
+
+回收：本次直接恢复同一覆盖X，使真实成本=e；另修正大单件UB忽略小件覆盖的问题，同时比较两类可行UB，并明确截断精确覆盖DP。修复经独立冻结核查后保留原结构合同与one-sided搜索，不把旧review追认为正确。重试其他输出集合前必须重计真实成本或另给统一误差预算。见[纠错复核](../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)。
+
+前缀矩旧双3/2互补例只改变literal，完整B负载恒3/2，bit-only测试漏检。替换为单非零bit任务保留原存在性Claim，新增实际端、整机负载和精确PSD核验；不限制算法重耦合。rank-jump抽象toy的错误任务守恒补齐说法也已删除，不能拿未满足完整假设的toy当反例。

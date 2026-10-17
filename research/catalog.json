@@ -9960,13 +9960,22 @@
     },
     {
       "path": "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md",
-      "title": "门槛覆盖修正与 LST 支撑释放独立复核",
-      "purpose": "记录 FPTAS 输出与实际前缀的区分、未知 OPT 的 one-sided 不变量及旧支撑族 OPT 数值修正。",
+      "title": "门槛覆盖与前缀整机负载的纠错独立复核",
+      "purpose": "公开撤回旧前缀恢复和互补负载证据错误，冻结修复证明/代码、双路实际任务核验及软件范围；保留LST支撑数值修正。",
       "topic": "unrelated_machines",
       "role": "review",
       "related_paths": [
         "research/questions/unrelated_machines/barrier_escape_obligations.md",
-        "research/current/unrelated_machines/lst_support_release_optimal_gap.md"
+        "research/current/unrelated_machines/lst_support_release_optimal_gap.md",
+        "tests/audits/unrelated_machines/threshold_cover_recovery.py",
+        "tests/audits/unrelated_machines/threshold_cover_recovery_independent.py",
+        "evidence/runs/unrelated_machines/threshold_cover_recovery_audit.json",
+        "evidence/runs/unrelated_machines/threshold_cover_recovery_independent_audit.json",
+        "research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md",
+        "tests/audits/unrelated_machines/c2_prefix_conditioning_degree.py",
+        "tests/audits/unrelated_machines/c2_prefix_full_load_independent.py",
+        "evidence/runs/unrelated_machines/c2_prefix_full_load_repair_audit.json",
+        "evidence/runs/unrelated_machines/c2_prefix_full_load_independent_audit.json"
       ]
     },
     {
@@ -10263,6 +10272,106 @@
       "role": "frozen_evidence",
       "related_paths": [
         "research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/threshold_cover_recovery.py",
+      "title": "门槛覆盖成本缩放与同见证联合槽恢复",
+      "purpose": "实现可证二近似上界、精确覆盖DP及给定LP的原任务实际输出；不含通用LP求解。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/questions/unrelated_machines/barrier_escape_obligations.md",
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md",
+        "evidence/runs/unrelated_machines/threshold_cover_recovery_audit.json",
+        "evidence/runs/unrelated_machines/threshold_cover_recovery_independent_audit.json"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/threshold_cover_recovery_independent.py",
+      "title": "门槛覆盖与共同槽原任务独立审计",
+      "purpose": "独立子集oracle、非均匀有理覆盖、分数/无sink共同见证、原负载与非单调二分核验。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "tests/audits/unrelated_machines/threshold_cover_recovery.py",
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md",
+        "evidence/runs/unrelated_machines/threshold_cover_recovery_audit.json",
+        "evidence/runs/unrelated_machines/threshold_cover_recovery_independent_audit.json"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/c2_prefix_full_load_independent.py",
+      "title": "四阶前缀整机负载修复的独立端矩审计",
+      "purpose": "枚举实际端单项式、全部合法调度、精确PSD/localizer和onehot守恒；只核修复见证。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md",
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md",
+        "evidence/runs/unrelated_machines/c2_prefix_full_load_repair_audit.json",
+        "evidence/runs/unrelated_machines/c2_prefix_full_load_independent_audit.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/threshold_cover_recovery_audit.json",
+      "title": "门槛覆盖同见证恢复的规范冻结核验",
+      "purpose": "保存本次真实执行范围、参数、算术、代码哈希及限制；旧冻结证据不覆盖。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/threshold_cover_recovery_independent_audit.json",
+      "title": "门槛覆盖与原任务共同恢复的独立冻结核验",
+      "purpose": "保存本次真实执行范围、参数、算术、代码哈希及限制；旧冻结证据不覆盖。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/c2_prefix_full_load_repair_audit.json",
+      "title": "前缀整机负载替代见证的规范冻结核验",
+      "purpose": "保存本次真实执行范围、参数、算术、代码哈希及限制；旧冻结证据不覆盖。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/c2_prefix_full_load_independent_audit.json",
+      "title": "前缀整机负载替代见证的独立冻结核验",
+      "purpose": "保存本次真实执行范围、参数、算术、代码哈希及限制；旧冻结证据不覆盖。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/heterogeneous_macro_boundary_repair_audit.json",
+      "title": "异质宏数边界的合法小任务修复核验",
+      "purpose": "保存本次真实执行范围、参数、算术、代码哈希及限制；旧冻结证据不覆盖。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/c2_prefix_conditioning_degree.py",
+      "title": "前缀四阶端矩与完整负载规范审计",
+      "purpose": "替换旧bit-only检查，核实际端单项式、原处理时间完整负载，并保留旧互补抵消负控。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md",
+        "evidence/runs/unrelated_machines/c2_prefix_full_load_repair_audit.json"
       ]
     }
   ]

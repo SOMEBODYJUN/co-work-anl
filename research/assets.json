@@ -6102,25 +6102,30 @@
       "applies_when": [
         "one-hot调度分布的四阶真实矩/C2-load表；相容prefix F深度4、y_F>0"
       ],
-      "produces": "四阶C2不能决定深度4前缀条件容量的parity信息边界，深度t完整条件C2通常需t+4阶",
+      "produces": "替换互补抵消见证后的源分布条件整机负载非识别：同四阶表、真OPT2、F下完整B负载0/1",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md"
       ],
       "tests": [
-        "tests/audits/unrelated_machines/c2_prefix_conditioning_degree.py"
+        "tests/audits/unrelated_machines/c2_prefix_conditioning_degree.py",
+        "tests/audits/unrelated_machines/c2_prefix_full_load_independent.py"
       ],
       "records": [
-        "evidence/runs/unrelated_machines/c2_prefix_conditioning_degree_audit.json"
+        "evidence/runs/unrelated_machines/c2_prefix_conditioning_degree_audit.json",
+        "evidence/runs/unrelated_machines/c2_prefix_full_load_repair_audit.json",
+        "evidence/runs/unrelated_machines/c2_prefix_full_load_independent_audit.json"
       ],
       "examples": [],
-      "reviews": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md"
+      ],
       "candidates": [],
       "sources": [
         "history/source/literature/unrelated_machines/lovasz_schrijver_1989_matrix_cones_report.pdf"
       ],
       "source_role": "LS矩锥仅作C2背景；parity边界为本仓自足推导，不冒充文献定理",
-      "limit": "只限制低阶矩自动深层条件化；不排高阶oracle、重算证书、自适应舍入或一般UM算法"
+      "limit": "只限制恢复指定来源的条件负载；不排重新耦合或选择其他可行调度。旧双3/2见证及bit-only审计未验证整机结论，新证据分开冻结。"
     },
     {
       "id": "um_3dm_demand_floor_obstruction_v1",
@@ -6435,7 +6440,8 @@
         "tests/audits/unrelated_machines/heterogeneous_macro_uniform_residual.py"
       ],
       "records": [
-        "evidence/runs/unrelated_machines/heterogeneous_macro_uniform_residual_audit.json"
+        "evidence/runs/unrelated_machines/heterogeneous_macro_uniform_residual_audit.json",
+        "evidence/runs/unrelated_machines/heterogeneous_macro_boundary_repair_audit.json"
       ],
       "examples": [],
       "reviews": [
@@ -6817,7 +6823,7 @@
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
         "Explicit disjoint home/sink groups with common per-group sink eligibility and equal endpoint job sizes; macro/home/sink structure and fixed delta,eta satisfy the threshold contract in barrier_escape_obligations.md",
-        "The proof uses a min-cover multiplicative FPTAS with exact original coverage, a joint home/sink slot flow, prefix recovery, and one-sided grid search; it does not generate this structure from a general unrelated instance."
+        "修复后FPTAS有真实二近似上界与截断成本DP；直接输出同一覆盖X，实际成本等于LP槽权重；one-sided搜索不要求接受谓词单调。"
       ],
       "produces": "可调保留阈值的共同组实际舍入与未知OPT one-sided搜索",
       "implementation": [],
@@ -6825,10 +6831,14 @@
         "research/current/unrelated_machines/weighted_group_joint_slot_rounding.md"
       ],
       "tests": [
-        "tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py"
+        "tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py",
+        "tests/audits/unrelated_machines/threshold_cover_recovery.py",
+        "tests/audits/unrelated_machines/threshold_cover_recovery_independent.py"
       ],
       "records": [
-        "evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json"
+        "evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json",
+        "evidence/runs/unrelated_machines/threshold_cover_recovery_audit.json",
+        "evidence/runs/unrelated_machines/threshold_cover_recovery_independent_audit.json"
       ],
       "examples": [],
       "reviews": [
@@ -6840,7 +6850,7 @@
       "sources": [
         "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
       ],
-      "limit": "Only the stated grouped structure; FPTAS witness subsets are not output subsets, and no general decomposition or UM-TARGET algorithm follows."
+      "limit": "仅原共同组结构；旧固定前缀恢复和错误UB已撤回。代码只实现T>0给定LP见证后的验证/恢复，无通用LP或unknownOPT后端；证书拒绝不是OPT拒绝。"
     },
     {
       "id": "um_lst_support_release_optimal_v1",

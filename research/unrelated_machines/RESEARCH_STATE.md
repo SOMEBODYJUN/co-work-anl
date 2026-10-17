@@ -106,7 +106,7 @@ UM-FOREST-BOUNDARY-AUGMENT-v1现给实际单边界标量：真实根负载不高
 
 当前真正缺口：一般多边界/有环高树宽核心上，如何可计算地联合集中迁移，保持统一余量与总位多项式进展。一轮条件矩固定后不自动保留同层系统，不能免费迭代；同族小切面改进也不关闭主目标。
 
-本轮新增两条准确边界。第一，`barrier_escape_obligations.md` 的 `UM-THRESHOLD-COVER-JOINT-SLOT-v1` 在共同资格、等端时间的私有组结构中，用乘法最小覆盖 FPTAS 和可调保留阈值 `τ` 得到给定 `T` 的 `R*=((1+η)(3+δ))/(2+η)<2`；FPTAS 输出只作LP见证，实际用前缀，未知 `OPT` 以 one-sided 网格二分闭合；一般任务分解仍缺。第二，旧 `UM-LST-SUPPORT-RELEASE-v0` 的 `OPT=T=1` 标签经精确复核撤回；新增 `UM-LST-SUPPORT-RELEASE-OPTIMAL-v1` 用 `r` 独立块确保 `OPT=1`，少于 `r` 条零质量边时保留 `2−1/m`。两者都不是一般算法或困难性结论。
+本轮新增两条准确边界。第一，`barrier_escape_obligations.md` 的 `UM-THRESHOLD-COVER-JOINT-SLOT-v1` 在共同资格、等端时间的私有组结构中，用乘法最小覆盖 FPTAS 和可调保留阈值 `τ` 给出候选 `R*=((1+η)(3+δ))/(2+η)<2`；旧固定前缀恢复的实际出口超过 `d_h` 和LP成本，曾使给定 `T` 与未知 `OPT` 证明被阻断；本次修复直接输出同一覆盖、补齐UB/DP并独立冻结复核，恢复原结构域的结论。第二，旧 `UM-LST-SUPPORT-RELEASE-v0` 的 `OPT=T=1` 标签经精确复核撤回；新增 `UM-LST-SUPPORT-RELEASE-OPTIMAL-v1` 用 `r` 独立块确保 `OPT=1`，少于 `r` 条零质量边时保留 `2−1/m`。两者都不是一般算法或困难性结论。
 
 共同矩路线也有一条新的分层结论：对有限正权真实支持，`rank(M2)-rank(M1)=1` 可由 Boolean 函数代数闭合证明自动恢复 `R+1` 个共同 one-hot 原子；对仅满足 PSD/守恒的伪矩，仍需跨块交换条件和 `V2` 负载 localizer。公屏提出的 `4-2√2` 支持常数没有精确定义，暂不采用。
 
@@ -308,13 +308,21 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 | 大边/小边残余与条件块 | `heavy_matching_residual_and_escape.md`、`joint_matching_completion_and_block_cuts.md`；boss3 | 共享逃逸族击穿独立星探针；条件块切面可在专族恢复真实阈值；固定阈值选择已出现 NP 难障碍 | 任意输入的共同块分离、联合整数输出和可验证失败语义 | boss3 继续只攻击一般分离/选择；停止同类逐星探针 |
 | 批量修复与分流 | `cyclic_batch_repair_and_fork_obstruction.md`；boss6 | 固定参数局部优化可位多项式终止；单目的地/逐坐标修复被近二族击穿 | 多目的地合流、允许接收机增载且同时控制所有机器、统一进展势 | boss6 与共同容量路线合并义务，不再扩展逐坐标反例 |
 | 联合迁移与槽空间 | `optimal_convex_fixed_slot_gap.md`、`optimal_hull_marginal_rounding_barrier.md`；boss7/9 | 即使真实最优凸包和最佳固定槽 matching 也可近二；宏任务必须共同重选 | 一般跨槽/跨宏联合迁移及总位多项式进展 | 固定槽和冻结宏路线降级为边界测试 |
-| 受限共同构造 | `shared_sink_joint_macro_assignment.md`、`weighted_group_joint_slot_rounding.md`、`heterogeneous_macro_uniform_residual_st_rounding.md`；boss9 | 单 sink、唯一 home、固定需求/大宏 promise 下有真实 `3/2+δ` 或更强接口 | 从任意矩阵提取 home/sink/组结构；多 sink、跨 home、异质混合容量 | 作为可复用组件，不宣称一般桥梁 |
+| 受限共同构造 | `shared_sink_joint_macro_assignment.md`、`weighted_group_joint_slot_rounding.md`、`heterogeneous_macro_uniform_residual_st_rounding.md`；boss9 | 单 sink、唯一 home、固定需求/大宏 promise 下有真实 `3/2+δ` 或更强接口 | 从任意矩阵提取结构；任意逐件资格、跨 home 和异端混尺寸共同容量（weighted/distorted 已允许无界 sink） | 作为可复用组件，不宣称一般桥梁 |
 | 矩与需求树 | `symmetric_moment_reset_and_single_machine_threshold.md`、`rooted_dag_degree_token_bridge.md` | 固定支撑/给定矩可重耦合；DAG token 桥梁给真实调度恒等式和参数化标尺 | 从输入可求支撑或共同矩；避免指数高点选择；共同分支/合流 | 不再研究固定阶贪心；只保留可计算支撑提取问题 |
 | 反面困难性 | `private_graft_and_resource_repetition.md`、`single_layer_quota_hypergraph_obstruction.md`、`k_uniform_bundle_matching_floor.md`、`santa_conditional_reverse_barrier.md`；boss10 | 解释私有组合、复制、逐层配额和 Santa 桥梁为何不能直接放大 | 对每固定 ε 的真实整数 OPT gap、完整 YES 保持、位多项式 soundness | 只接受完整归约；配置/SA gap 不升级为硬度 |
 | 新增复制/重数边界 | `signed_one_job_port_downset.md`、`single_layer_quota_sqrt_multiplicity_floor.md`、`duplication_state_majority_floor.md` | 收紧特定双出现、平方重数和两状态资源接口的可行地板 | 多任务一致性、外部容量耦合和一般源问题解码 | 记录为反面边界，不与一般硬度合并 |
 
-去重规则：`joint_matching_completion_and_block_cuts.md` 统一承载大边选择与条件块切面；`cyclic_batch_repair_and_fork_obstruction.md` 统一承载循环/分流/严格次二边界；`shared_sink_joint_macro_assignment.md` 统一承载单 sink 宏任务共同选择；`rooted_dag_degree_token_bridge.md` 统一承载需求树任务桥梁；`private_graft_and_resource_repetition.md` 与逐层 quota 文件统一承载反面放大障碍。工作桌面只保留入口和卡点，不复制正文、证据或 Claim。
+去重规则：`joint_matching_completion_and_block_cuts.md` 统一承载大边选择与条件块切面；`cyclic_batch_repair_and_fork_obstruction.md` 承载循环/分流/真实凸包闭环边界，独立的 `strict_sub2_batch_barrier.md` 承载任意初态严格次二批量边界；两者初始化与容量上限不同，不互相替代；`shared_sink_joint_macro_assignment.md` 统一承载单 sink 宏任务共同选择；`rooted_dag_degree_token_bridge.md` 统一承载需求树任务桥梁；`private_graft_and_resource_repetition.md` 与逐层 quota 文件统一承载反面放大障碍。工作桌面只保留入口和卡点，不复制正文、证据或 Claim。
 
 团队共同的下一门槛是：任意合法 `P`、候选 `T` 下，产生多项式可表示的共同容量状态，或者给出可验证 `FAIL⇒OPT>T`；状态必须一次性输出实际整数分配并守住所有机器，统一 ε 不得随 `K,q,r,n` 退化。boss3 的条件块选择和 boss6 的多目的地修复只有在同一状态中闭合，才算从局部路线进入主目标；否则保留为准确边界并停止同类微调。
 
 [双轨阈值编码边界](../current/unrelated_machines/dual_rail_threshold_soundness_boundary.md)：归一化scalar整类总有实际3/2（ST半质量直接推论），改unit容量亦总3/2，两种绝对T1界各有完整锐例。非均匀单例外有精确匹配合同；完整signedcube的真实OPT有min_B精确式且趋1。四成本模型分开，未将NO源自动解码为NO调度，主目标正反面仍OPEN。
+
+### 清点复核：恢复成本、信息层级与下一可判别义务
+
+这次清点实质修复了两份既有资产，未得到一般统一ε。`UM-THRESHOLD-COVER-JOINT-SLOT-v1`的旧固定前缀恢复与FPTAS上界均存在漏洞；改为直接迁出同一覆盖见证、同时比较两类上界并截断成本DP后，声明范围证明重新核查。`UM-C2-PREFIX-CONDITIONING-DEGREE-v1`旧双重任务互补使全负载抵消；替换见证后保留原存在性结论，并明确只讨论指定来源条件信息，不能限制重新耦合。修复、原错误、独立审查及新证据沿[同一审查入口](../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)追溯，旧冻结结果不覆盖。
+
+正面组接口并不形成单条包含链：weighted/distorted已允许无界sink，但仍要求唯一home与共同资格；异质宏接口去掉逐组资格/比例，却要求`|B|=|H|`且全部tiny边小。两者不可互称一般化。闭环真凸包初始化只限制cap为坏态B的弱单调动作；严格次二任意初态障碍则限制cap<2但不带该初始化。地图的这些区别比继续扩菜单更影响下一步判断。
+
+下一项共同矩核查须把两个合同分开：弱H2只共享CONFIG的一阶x；强合同让全局矩和同机CONFIG共享二阶（或更高阶）条目。经典两树的真实OPT为`2−1/k`，因此“所有T<2共同证书都不存在”的说法必错：在OPT处真实调度即Dirac证书。核查应精确到哪个T与哪阶共同条目；仅切掉原gap阈值不等于全类gap改善。强二阶合同的标准对偶行pricing已经含二次目标，不能沿用线性背包oracle；精确pricing的困难性也不自动等于整个强化系统求解困难性。boss6已向boss1/boss3及seq326作者发送这些限定，未回复不视作采纳。下一真正可判别行动是给出具有误差预算的可计算共同证书机制，或找出该机制首个失败约束；不能继续把旧两树通过/失败当作全输入结论。

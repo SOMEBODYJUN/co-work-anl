@@ -105,15 +105,18 @@ def audit_random(seed=20261017, rounds=10000):
 
 def audit_less_macro_boundary():
     # With fewer macros, a uniform T/2 home cap is no longer complete.
-    # One macro can occupy h2 while a forced tiny job fills h1.
-    P = [[F(1), F(1)], [F(1), F(9, 10)]]  # columns: macro, tiny
-    # Tiny is actually only legal at h1; macro is legal at both homes.
-    P[1][1] = None
+    # Five forced tiny jobs preserve every other promise, including delta=1/5.
+    T, delta = F(1), F(1,5)
+    P = [[F(1)]+[delta]*5, [F(1)]+[None]*5]
     opt, witnesses = optimum(P)
-    assert opt == 1
-    assert any(a == (1, 0) for a, _ in witnesses)
-    tiny_home_h1 = P[0][1]
-    assert tiny_home_h1 == 1 > F(1, 2)
+    assert opt == T
+    assert witnesses == [((1,0,0,0,0,0), [F(1),F(1)])]
+    assert all(P[0][j] <= delta*T for j in range(1,6))
+    assert sum((P[0][j] for j in range(1,6)),F(0)) == 1 > T/2
+    # No general LP solver is invoked: forced endpoint masses prove infeasibility.
+    return {'OPT':str(opt), 'delta':str(delta), 'forced_tiny_load':'1',
+            'uniform_home_tiny_cap':'1/2', 'legal_schedule':list(witnesses[0][0]),
+            'solver_invoked':False}
 
 
 if __name__ == "__main__":

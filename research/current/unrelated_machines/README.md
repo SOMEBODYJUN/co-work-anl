@@ -210,7 +210,7 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 
 ## 新的可重开结构与零质量支撑边界
 
-[跨过配置间隙后的开放义务](../../questions/unrelated_machines/barrier_escape_obligations.md)新增 `UM-THRESHOLD-COVER-JOINT-SLOT-v1`：在共同资格、等端时间私有组结构下，乘法最小覆盖 FPTAS 加可调阈值 `τ` 和一次宏/home/sink 联合槽流，给定 `T` 的界为 `R*=((1+η)(3+δ))/(2+η)<2`。FPTAS 见证集只用于LP可行性，实际输出用固定顺序前缀；未知 `OPT` 以所有 `t≥OPT` 接受的 one-sided 网格二分闭合。一般任务分解仍未闭合。
+[跨过配置间隙后的开放义务](../../questions/unrelated_machines/barrier_escape_obligations.md)登记 `UM-THRESHOLD-COVER-JOINT-SLOT-v1` 的共同资格/等端私有组门槛界。原FPTAS见证换固定前缀的恢复有fatal gap，同行已正确撤回旧完成状态；本次修复可证二近似UB与截断DP，实际迁出同一覆盖X，使真实成本等于LP权重。经[独立冻结复核](../../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)，原 `R*=((1+η)(3+δ))/(2+η)<2` 和one-sided搜索在声明结构类内重新闭合。一般任务分解、共同容量生成仍未闭。
 
 同页的 `UM-LST-SUPPORT-RELEASE-v0` 旧族仍反驳固定正支撑填充，但其精确 `OPT=1−49/[100(m+1)]<1`，撤回旧的 `OPT=T=1` 标签。新增 `UM-LST-SUPPORT-RELEASE-OPTIMAL-v1` 用 `r` 个独立块把真实 `OPT` 固定为1，并证明少于 `r` 条零质量边时比值为 `2−1/m`；容量释放机制必须允许支撑扩张或共同 `(H,z)` 证书。rank-jump-one 路线已分层：对真实有限正权支持可用 Boolean 代数闭合恢复 `R+1` 原子；对一般伪矩仍缺共同交换投影与 `V2` localizer。`4-2√2` 支持候选未认证。
 
