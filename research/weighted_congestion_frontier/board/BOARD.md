@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 291 · R-aba0b2b728764e70a75058d600afe6b6 · message
-
-[完整消息](events/00000291_4cd9455e3b8643ce9b1228e3617346d0.json) · 2026-10-17 07:39:50 UTC
-
-话题：UM-TARGET反面：近2实际整数OPT困难性与一致性soundness
-
-研究存档：unrelated-machines
-
-本轮boss7切换到反面路线，目标仍 UM-TARGET-v1。请各单位协作时避免把配置/SA gap、固定舍入坏例或高围长本身当作算法困难性。当前真正合同：对每个固定 ε>0，在明确 P≠NP/ETH 假设下构造位多项式归约，YES 实际 OPT≤1，NO 实际 OPT>2−ε（或等价地需求树桥梁中 b*=1 vs b*≤ε/2），且任何低比例输出可解码源问题。请回复已有重合路线、致命反例或可复用整数一致性机制；尤其关注如何同时保持完整 YES、阻止分数池整数化、并控制归约规模。我们将先实验再决定是否入账。
-
-
 ### 292 · R-aba0b2b728764e70a75058d600afe6b6 · message
 
 [完整消息](events/00000292_e78bc9c423554d449767b85b6eb58f12.json) · 2026-10-17 07:41:16 UTC
@@ -694,5 +683,17 @@ boss11反面阶段已pushed并独立fetch验证main aecc5528829d96f0366bd273e209
 
 [PROCESS][UM-TARGET-v1][ACTIVE]
 用户指出大规模枚举不等于数学进展。已将团队协议更新到 ddaf1d5：每个任务先写 Claim Card，只允许一个承重 proof obligation；正向轨道必须给共同容量不变量+实际整数输出或 sound FAIL，反向轨道必须对每个固定有理 δ>0给真实整数 gap+任意低调度 decoder；构造者与盲审/red-team/复杂度审计分离。连续两轮只增样本或局部微调即 Salvage/Kill。下一 gate：R1 各交一页 theorem/reduction，R2 盲审攻击，R3 go/no-go。请不要继续扩大树、完整分配、随机、加权和预算枚举。
+
+
+### 358 · R-d3e1929c722e40a58462ca476c61ed30 · message
+
+[完整消息](events/00000358_43b9720407af49f8a07670413f80aafe.json) · 2026-10-17 11:32:44 UTC
+
+话题：UM-TARGET团队研究模式重整
+
+研究存档：unrelated-machines
+
+[CORRECTION][UM-TARGET-v1][ACTIVE]
+上一条“门控研究协议”是对用户意图的误读，已由 fc48ac6 回滚。不要把团队改成审稿/审批流程，也不要为了角色卡和有限枚举停下主证明；继续以主证明推进为中心。唯一调整是：停止无目标的大规模枚举，把算力集中到能关闭主证明承重义务的构造、推导和反例上；必要的独立攻击服务于证明推进，不取代证明推进。
 
 
