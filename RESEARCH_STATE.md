@@ -12,6 +12,8 @@
 | 条件矩与需求树 | [矩运输/重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)区分固定推前与同边际重求；[共同流](research/current/unrelated_machines/rooted_dag_congestion_flow.md)给定K证书可提取1/(2K−1)，固定W最小K可求；[固定阶压缩向量贪心](research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)即使真最优矩也有严格顺序无关线性坏例 | 一般重新耦合、未知支撑W的共同选择；新守恒合同已给2^h精确树（h为非单位点数），一般指数仍在；激活边际不是求解器 |
 | 反面归约 | [私有组合/资源重复](research/current/unrelated_machines/private_graft_and_resource_repetition.md)有精确公式和NO变YES反例 | 对每固定ε的近2真实OPT gap、整数一致性soundness及合法输出规模，均尚未完成 |
 
+本轮新增的正面候选与反例已集中记录在 [开放义务页](research/questions/unrelated_machines/barrier_escape_obligations.md)：共同资格/等端私有组的乘法覆盖阈值候选给定 `T` 时可达到 `R*=((1+η)(3+δ))/(2+η)<2`，但未知 `OPT` 搜索和一般任务分解未闭合；相应的 LST 正支撑族则证明真实可行调度可能使用分数证书中零质量的边，必须允许支撑扩张。rank-jump-one 只给一维缺陷，未自动产生共同交换投影。
+
 完整身份、正文、实际内部审查、代码和冻结证据沿[专题账本](research/unrelated_machines/CLAIMS.md)及数学地图读取。结构性结果、已知工具重构和新颖性判断分别记录，未认证统一算法或外部同行评审。
 
 ## 启动与保存状态

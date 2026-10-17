@@ -208,6 +208,12 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 
 本结果终止的是固定顺序max||Aeψ||²后左乘的具体充分机制。真实所有阶矩和逐行容量算子也不能免费保过去联合支撑；仍不排重新耦合、自适应顺序、好μ选择或其他提取。§8的交换算子边界可回收；真正未解仍是一般输入可求的共同容量与实际输出/总进展，UM-TARGET-v1保持OPEN。
 
+## 新的可重开候选与零质量支撑边界
+
+[跨过配置间隙后的开放义务](../../questions/unrelated_machines/barrier_escape_obligations.md)新增 `UM-THRESHOLD-COVER-JOINT-SLOT-v1`：在共同资格、等端时间私有组结构下，乘法最小覆盖 FPTAS 加可调阈值 `τ` 和一次宏/home/sink 联合槽流，给定 `T` 的候选界为 `R*=((1+η)(3+δ))/(2+η)<2`。它是既有 `3/2+δ` 组接口的 sharpen，未知 `OPT` 的单调搜索与一般任务分解仍未闭合。
+
+同页的 `UM-LST-SUPPORT-RELEASE-v0` 精确反例族表明：即使 `OPT=T=1`，给定 LST 正支撑上的大边匹配也可能让残余整型任务无解，而真实调度使用了零质量边。容量释放机制必须允许支撑扩张或共同 `(H,z)` 证书。rank-jump-one 路线已分层：对真实有限正权支持可用 Boolean 代数闭合恢复 `R+1` 原子；对一般伪矩仍缺共同交换投影与 `V2` localizer。`4-2√2` 支持候选未认证。
+
 ## 加权共同组的新增正面接口
 
 [共同资格私有组的加权出口与联合槽](weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。

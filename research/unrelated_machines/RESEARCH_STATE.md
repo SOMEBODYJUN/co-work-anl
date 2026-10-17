@@ -106,6 +106,10 @@ UM-FOREST-BOUNDARY-AUGMENT-v1现给实际单边界标量：真实根负载不高
 
 当前真正缺口：一般多边界/有环高树宽核心上，如何可计算地联合集中迁移，保持统一余量与总位多项式进展。一轮条件矩固定后不自动保留同层系统，不能免费迭代；同族小切面改进也不关闭主目标。
 
+本轮新增两条准确边界。第一，`barrier_escape_obligations.md` 的 `UM-THRESHOLD-COVER-JOINT-SLOT-v1` 候选在共同资格、等端时间的私有组结构中，用乘法最小覆盖 FPTAS 和可调保留阈值 `τ` 得到给定 `T` 的 `R*=((1+η)(3+δ))/(2+η)<2`；它尚未解决未知 `OPT` 的单调搜索，也不适用于一般矩阵。第二，`UM-LST-SUPPORT-RELEASE-v0` 被 `m=2,…,7` 的精确族反驳：真实 `OPT=T=1` 调度依赖 LST 正支撑外的零质量边，故容量释放必须允许支撑扩张或联合证书。该族不是配置 gap 或一般困难性结论。
+
+共同矩路线也有一条新的分层结论：对有限正权真实支持，`rank(M2)-rank(M1)=1` 可由 Boolean 函数代数闭合证明自动恢复 `R+1` 个共同 one-hot 原子；对仅满足 PSD/守恒的伪矩，仍需跨块交换条件和 `V2` 负载 localizer。公屏提出的 `4-2√2` 支持常数没有精确定义，暂不采用。
+
 ## 联合迁移候选的新准确边界
 
 [多拟阵容量外包](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#7-原任务地集上多拟阵容量外包的精确损失)与[最小总处理量面](../current/unrelated_machines/optimal_convex_fixed_slot_gap.md#6-最小总处理量的整个最优面也可能丢掉修复边)新增两个准确接口边界：保全部本地可行集的p拟阵交最优容量损失max(1,2−p/k)；basic且整个最小处理量面的支撑也可近2OPT，即使OPT/LST→1。两者均为已知工具的简单扩展，不能排除一般联合迁移；重新开放零质量边和允许真实工作量上升仍是下一义务。

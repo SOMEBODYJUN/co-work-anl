@@ -989,3 +989,49 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：无尚成立fatal；去掉共同资格/等端体积/home角色不交会破当前证明，未主张相应一般模型不可能。全球新颖性、外审及独立论文价值未认证。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。
 - Related Files：research/current/unrelated_machines/weighted_group_joint_slot_rounding.md；research/reviews/unrelated_machines/weighted_group_joint_slot_review.md；tests/audits/unrelated_machines/weighted_group_joint_slot.py, tests/audits/unrelated_machines/weighted_group_slot_independent.py；evidence/runs/unrelated_machines/weighted_group_joint_slot_audit.json；examples/unrelated_machines/weighted_group_joint_slot_cases.json；evidence/certificates/unrelated_machines/weighted_group_joint_slot_witness.json。
+
+## UM-THRESHOLD-COVER-JOINT-SLOT-v1：可调保留阈值与乘法覆盖的共同组候选
+
+- Exact Statement / Quantifiers：在 `UM-WEIGHTED-GROUP-JOINT-SLOT-v1` 的 home/sink、共同资格、等端时间结构中，给定 `T>0`、`τ∈[1/2,1)`、`η>0`、`W_h≤T`、`w_j≤δT`，用最小覆盖背包乘法 FPTAS 选 `e_h` 后，若联合宏/home/sink 加权槽 LP 可行，则可输出实际调度，`Cmax≤max{1+τ,(1+η)(2−τ+δ)}T`；`δ+η+δη<1` 时平衡值 `((1+η)(3+δ))/(2+η)<2`。
+- Objects / Domain / Definitions：共同资格私有组、宏端 `T/2<p≤T`、`d_h=(W_h−τT)_+`、`e_h` 为达到 `d_h` 的最小覆盖近似；完整定义和给定阈值证明见 `research/questions/unrelated_machines/barrier_escape_obligations.md` 新增章节。
+- Assumptions / Scope：这是给定 `T` 的结构候选；未知 `OPT` 的 FPTAS cover 单调搜索、通用分组提取、端到端实现和独立冻结审查尚未完成。不能替代一般 UM-TARGET-v1。
+- Conclusion：条件性 `R<2` 正面接口；`η` 固定时 FPTAS 为输入位长多项式，若 `η` 输入则时间显式依赖 `1/η`。
+- Dependencies：UM-WEIGHTED-GROUP-JOINT-SLOT-v1 的联合槽流；最小覆盖 FPTAS；共同资格与等端时间的真实出口计费。
+- Evidence：`tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py` 中的 Fraction 公式核验及 `evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json`；有限证据不替代候选的一般证明。
+- Counterevidence / Objections：异资格或异端时间会破坏单一 token 恢复，见同一问题页两组四机反例；未知 `OPT` 和一般矩阵仍是承重缺口。
+- Status：candidate; stated-scope derivation not independently frozen; novelty unverified; UM-TARGET-v1 OPEN。
+- Related Files：`research/questions/unrelated_machines/barrier_escape_obligations.md`；`research/current/unrelated_machines/weighted_group_joint_slot_rounding.md`；`tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py`；`evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json`。
+
+## UM-LST-SUPPORT-RELEASE-v0：锁定给定 LST 正支撑的容量释放合同（已反驳）
+
+- Exact Statement / Quantifiers：声称对任意 `OPT≤T` 实例和任意 LST 可行分数解 `x`，可在 `x` 的正支撑上先匹配大边，再将全部剩余任务整型放入释放容量；该声称为假。
+- Objects / Domain / Definitions：`m` 个核心机、一个扩展机；`A_i` 在核心端 `51/100`、扩展端不可用；`m+1` 个 `B_j` 在所有端 `s_m=49m/[100(m+1)]`；LST 中 `A` 和 `B` 均只在核心支撑。真实 `T=OPT=1` 调度使用扩展机上的零质量 `B` 边。
+- Conclusion：任意 `m≥2`，正支撑大边匹配后每核心释放 `49/100`，但每个 `B` 耗时 `s_m` 且 `2s_m>49/100`，所以 `m+1` 个残余任务不能整型进入核心支撑。该接口不成立。
+- Dependencies：UM-MODEL-v1；LST 负载行和；完整族及精确 Fraction 审计见问题页。
+- Evidence：`m=2,…,7` 精确核验均输出 `support_residual_feasible=false`，同时给出 `OPT=1` witness；范围见冻结 JSON。
+- Counterevidence / Objections：反驳仅针对“锁定任意给定 LST 正支撑”的合同，不是配置 gap、一般困难性或主目标反面；允许支撑扩张/联合证书后仍开放。
+- Status：refuted interface; salvage is the obligation to construct support-expanding joint `(H,z)` certificates。
+- Related Files：`research/questions/unrelated_machines/barrier_escape_obligations.md`；`tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py`；`evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json`。
+
+## UM-RANKJUMP-ONE-EXCHANGE-v0：一维矩缺陷下的共同交换提取接口
+
+- Exact Statement / Quantifiers：若给定有理四阶布尔矩满足 `rank(M2)=rank(M1)+1`，并额外验证每端补投影平方条件、每任务标量块和为1、跨块共同交换条件 (CE)，以及 `V2` 上逐机负载 localizer，则可在总输入位长多项式时间提取至多 `rank(M2)` 个正权 one-hot 原子并筛出 `T` 可行实际分配。
+- Objects / Domain / Definitions：`V1,V2` 为次数至多一/二的 PSD 商空间，`V2=V1⊕W`, `dimW=1`; `X_e=[A_e;B_e]`, `D_e=B_e*B_e`; `P_e=[[A_e,b_e*],[b_e,c_e]]`; (CE) 和共同谱投影见问题页的 rank-jump 章节。
+- Conclusion：额外共同交换证书成立时，原子提取和四阶条目重构是确定性有理线性代数；rank jump 本身不被宣称足够。
+- Dependencies：布尔四阶矩恒等式、共同交换投影、二阶 localizer；经典 flat extension 只作背景，不导入 rank-jump-one 结论。
+- Evidence：目前为自足代数重构，尚无完整 C2 伪矩非交换反例，也未认证公屏 `4−2√2` 支持常数。
+- Counterevidence / Objections：`rank(M2)-rank(M1)=1` 只说明一维缺陷；抽象块例满足各端局部投影条件但 `P_1,P_2` 不交换，故 (CE) 是真实 proof obligation。没有把该抽象块例升级成完整调度伪矩反例。
+- Status：conditional candidate; rank-jump-one extension lemma OPEN; no general UM algorithm。
+- Related Files：`research/questions/unrelated_machines/barrier_escape_obligations.md`（rank-jump 章节）；`research/current/unrelated_machines/global_assignment_moment_rounding.md`。
+
+## UM-RANKJUMP-ONE-TRUE-SUPPORT-v1：真实有限支持上一维矩跳跃的原子闭合
+
+- Exact Statement / Quantifiers：对有限正权真实分布 `S`（每个支持点为合法一任务一选调度），若完整四阶布尔矩满足 `rank(M2)=rank(M1)+1=R+1`，则 `|S|=R+1=rank(M2)`、`V2=R^S`，共同坐标投影可由有理矩条目确定性恢复至多 `R+1` 个正权原子；若所有支持调度均为 `T`-可行，任取恢复原子给出实际 `T`-可行分配。
+- Objects / Domain / Definitions：`U=V1`，选不在U中的二次单项式 `q=x_a x_b`，`A=U+span{q}`；由 `x_bx_i=ell_{bi}+c_iq`、乘 `x_a` 和 `q²=q` 得A为包含全部坐标的函数代数，坐标指示函数给 `A=R^S`。完整推导见开放义务页真实支持章节。
+- Assumptions / Scope：真实有限正权支持和完整四阶矩是额外输入；不提供从普通P生成此分布或矩的算法。结论不适用于任意PSD/守恒伪矩，后者仍需共同交换延伸和V2负载localizer。
+- Conclusion：真实支持量词下，rank-jump-one自动闭合共同交换投影并给位多项式原子提取；这不是一般UM近似算法。
+- Dependencies：布尔函数代数、正权Gram秩等于支持函数空间维数、有理线性代数；不导入公屏 `4−2√2` 常数。
+- Evidence：自足一般闭合证明；没有把有限枚举或公屏摘要当作伪矩反例/支持常数证明。
+- Counterevidence / Objections：若只给C2-load伪矩，A未必为真实函数代数，CE与V2 localizer仍是proof obligations；从普通调度输入寻找真实矩也未解决。
+- Status：complete stated-scope proof; internal independent reconstruction pending; external review and novelty unverified; UM-TARGET-v1 OPEN。
+- Related Files：`research/questions/unrelated_machines/barrier_escape_obligations.md`；`research/current/unrelated_machines/global_assignment_moment_rounding.md`。
