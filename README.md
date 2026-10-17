@@ -43,3 +43,7 @@
 [加权拥塞](research/current/weighted_congestion/README.md)、[设施选址](research/current/README.md)和[顺序客户吸引](research/current/customer_attraction/README.md)各保留原模型、身份、正文和证据。拥塞的Cd/ln d全类存在命题已有线性全状态反例；其精确门槛等后续义务见旧题地图。旧目录内tools承担共享协作功能，目录名不把新题改成拥塞。旧数学交接包只用于该模型的历史追溯。
 
 [共同资格私有组的无界sink联合流](research/current/unrelated_machines/hall_group_joint_flow.md)：实际输出比例`q(2+δ)/(q+1)`，并有未知OPT的结构承诺版本；同组资格/等端体积及组总量范围仍承重，q增长时无统一ε。一般主目标保持OPEN，下一义务是可恢复的一般分组或异资格/异端容量转换。
+
+## 全局分配矩的可提取条件
+
+[全局四阶分配矩](research/current/unrelated_machines/global_assignment_moment_rounding.md)给显式小缺陷证书的确定有理实际提取，同时证明一个来自真实最优分布的全空间HS贪心仍可输出2OPT。给定证书的提取与一般输入如何生成可用证书分开；两项精确身份及经典平坦背景见账本。UM-TARGET-v1保持OPEN。

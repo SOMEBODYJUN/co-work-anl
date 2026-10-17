@@ -63,3 +63,7 @@ Goemans, [MIT18.433拟阵讲义](https://math.mit.edu/~goemans/18433S11/matroid-
 ## 对称共同条件矩的原始定义
 
 Lovász–Schrijver, *Cones of Matrices and Setfunctions, and 0-1 Optimization*, CWI BS-R8925（1989-10），[原始38页报告](https://ir.cwi.nl/pub/5815/5815D.pdf)。实际字节已保存，hash见manifest的LS1989_matrix_cones；PDF8/印5 §1(a)(i)要求对称，PDF10/印7 (iii″)给列/补列，PDF11/印8式(3)区分非对称投影。此处印刷页码来自PDF页面底部，与公屏207曾少一页的定位不同；正文数学无冲突。只核这些定义，不宣称全文证明内化。[任务聚合与重置正文](../current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)自足证明特定运输规则的2T门槛，同时在同一边际上给T重新耦合；不是源定理或LS间隙。
+
+## 平坦矩提取的经典来源
+
+Laurent–Mourrain, *A Sparse Flat Extension Theorem for Moment Matrices* (arXiv:0812.2563v1, 2008)，实际[CWI原始PDF](../../history/source/literature/unrelated_machines/laurent_mourrain_2008_flat_extension.pdf)已取得，12页、154865字节，SHA见manifest的LM2008_flat_extension。核读Theorem1.2/Corollary1.3（页2–3）及§2 Lemma2.1（页6–7）的交换乘法构造；不宣称全部应用证明重构。[本题四阶矩正文](../current/unrelated_machines/global_assignment_moment_rounding.md)自足证明使用的布尔特例和近平坦定量接口，经典flat结论不计为原创算法，定量扩展的全球新颖性未认证。

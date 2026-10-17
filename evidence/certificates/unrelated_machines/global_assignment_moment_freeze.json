@@ -1,0 +1,89 @@
+{
+  "status": "source and original frozen evidence bytes preserved; new input/source routing package",
+  "claims": [
+    "UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1",
+    "UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1"
+  ],
+  "sources": {
+    "tests/audits/unrelated_machines/nearflat_moment_extraction.py": {
+      "sha256": "8689cf87672e859875c880143db95c4c7861fa9b2a24df99792c4e7cd8cbf440",
+      "copied_exactly_from_scratch": "psd_moment_research/nearflat_greedy_hs_v2.py"
+    },
+    "tests/audits/unrelated_machines/near_flat_hs_independent_audit.py": {
+      "sha256": "01fe0eec81d789d685e2bf264ecb2ebc896153939b27f9f216f35d4e7f866927",
+      "copied_exactly_from_scratch": "psd_moment_research/near_flat_hs_independent_audit.py"
+    },
+    "tests/audits/unrelated_machines/global_assignment_flat_moment_audit.py": {
+      "sha256": "1dfcaee91aaa6886dae201f5b796decbab9e2b667bb96ff24285a6a00c118666",
+      "copied_exactly_from_scratch": "psd_moment_research/global_assignment_flat_moment_audit.py"
+    },
+    "tests/audits/unrelated_machines/hs_effect_greedy_exact_m3.py": {
+      "sha256": "9adc3f3a95346b944b1169990c9be64b64ab4993e5f2e4fa8b67a8c9421edcda",
+      "copied_exactly_from_scratch": "hs_effect_greedy_exact_m3.py"
+    },
+    "evidence/runs/unrelated_machines/nearflat_moment_extraction_audit.json": {
+      "sha256": "30cd713444a6450ab1d981dcb83b4651d84de97d9f943d21449ee2677ea2ae74",
+      "copied_exactly_from_scratch": "psd_moment_research/nearflat_greedy_hs_v2_audit.json"
+    },
+    "evidence/runs/unrelated_machines/near_flat_hs_independent_audit.json": {
+      "sha256": "19b34324f84875faba99d3d8b80db21ad3becc1eb73b59a0952beb7bdd0312e9",
+      "copied_exactly_from_scratch": "psd_moment_research/near_flat_hs_independent_audit.json"
+    },
+    "evidence/runs/unrelated_machines/hs_effect_greedy_exact_m3_audit.json": {
+      "sha256": "07d752e9fdd5683a2f20d2c118b3cc721a41bfd6686841c9edb711e61f447e97",
+      "copied_exactly_from_scratch": "hs_effect_greedy_exact_m3_audit.json"
+    }
+  },
+  "inputs": {
+    "examples/unrelated_machines/full_hs_m3_input.json": "fc10ef86519740b9178bfc91dd22475e24fc1cf2dde373aa426ad32a0d361e62",
+    "examples/unrelated_machines/nearflat_moment_inputs.json": "f5b35bc248500d8986f7fb9b58e427c0c6cc9194ec6a9a879789eaa5f78f4b3f"
+  },
+  "checks": [
+    "v2 audit source_sha256 equals main extractor bytes",
+    "independent audit source_sha256 and helper_sha256 equal copied source bytes",
+    "full-HS exact audit has no original source hash field; this manifest records unchanged source and frozen result bytes"
+  ],
+  "limits": [
+    "No universal moment or near-flat generator",
+    "Independent fixture validator is stronger than the theorem, but main implementation validator checks only stated contract",
+    "All fixtures are genuine distributions; no claim of exhaustive pseudo-moment testing",
+    "No global novelty or external peer review certification"
+  ],
+  "canonical_path_reruns": {
+    "main": {
+      "json_semantically_equals_frozen": true,
+      "ignored_location_only_fields": [],
+      "new_run_sha256": "30cd713444a6450ab1d981dcb83b4651d84de97d9f943d21449ee2677ea2ae74",
+      "original_frozen_sha256": "30cd713444a6450ab1d981dcb83b4651d84de97d9f943d21449ee2677ea2ae74"
+    },
+    "independent": {
+      "json_semantically_equals_frozen": true,
+      "ignored_location_only_fields": [
+        "helper_source"
+      ],
+      "new_run_sha256": "89a3c403c28c58e470244f1d24b435f2cedf785432bcdba6e9ec0b88ab7f847f",
+      "original_frozen_sha256": "19b34324f84875faba99d3d8b80db21ad3becc1eb73b59a0952beb7bdd0312e9"
+    },
+    "full_HS": {
+      "json_semantically_equals_frozen": true,
+      "ignored_location_only_fields": [],
+      "new_run_sha256": "07d752e9fdd5683a2f20d2c118b3cc721a41bfd6686841c9edb711e61f447e97",
+      "original_frozen_sha256": "07d752e9fdd5683a2f20d2c118b3cc721a41bfd6686841c9edb711e61f447e97"
+    }
+  },
+  "reviewed_current_document": {
+    "path": "research/current/unrelated_machines/global_assignment_moment_rounding.md",
+    "sha256": "5ec060ea153b2044de1c45395e7eec9db8dbc59a0769f38a86d5ff70dbd538b3"
+  },
+  "integration_review": {
+    "path": "research/reviews/unrelated_machines/global_assignment_moment_rounding_review.md",
+    "sha256": "ad9af3b95c68d1f5702ee928e62ec29ce9d0430d2c2f122e9afd30af44a4c352"
+  },
+  "earlier_independent_review_sha256": "c40c43eab0a3dc890d23e19c474a807c8690498125ea99ff9ec7cb5129e9cb3e",
+  "resolved_scope_points": [
+    "Theorem strong (1+3delta) load assumes all endpoints p<=T",
+    "Core v2 T=0 remains NF-guarded; unconditional zero schedule is outer model preprocessing",
+    "LM2008_flat_extension source acquired by root; linked source path and CWI URL",
+    "Only main validator verifies minimal C2-load; independent fixtures run stronger checks"
+  ]
+}

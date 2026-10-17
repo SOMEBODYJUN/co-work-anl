@@ -5552,6 +5552,81 @@
         "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
       ],
       "limit": "不判定关于OPT的结构承诺；不提供一般矩阵分解，同组共同资格/等端体积和组负载范围保留；可变q时无统一正ε。 Listed ST1993 is inherited scheduling/matching background only; the Hall/flow/prefix proof is self-contained, not attributed to that source and not a new external theorem import."
+    },
+    {
+      "id": "um_global_moment_nearflat_extraction_v1",
+      "claims": [
+        "UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "剪枝有限分配边e=(i,j),p_e≤T上的Boolean变量；显式有理方形无重复单项式矩y_|S|≤4，y_∅=1，M₂(y)半正定，同任务one-hot理想到可表达的四阶，逐机T−Σp_ex_e的一阶局部化矩半正定。以V₁的有理Gram坐标压缩X_e得A_e，δ_e=tr(A_e−A_e²)≥0。这是一份共同全局证书，不是彼此独立的条件见证，也不预设存在真实分布。",
+        "∀合法一般P、给定有理T>0与0<η≤1，以及正文定义的显式有理四阶C₂分配矩证书y，令n为任务数、d为p_ij≤T有限边数、R=rank M₁≥1，压缩乘法算子A_e及δ=Σ_e tr(A_e−A_e²)。若n,d≥1且δ≤min{1/(64ndR),η/16}，则正文固定任务次序、最大Hilbert–Schmidt子分支且确定平局的贪心算法，在P,T,η,y总输入位长的多项式时间输出实际调度σ，∀i，L_i(σ)≤(1+3δ)T≤(1+η)T。空任务直接输出空分配；T=0用零时间边精确处理。"
+      ],
+      "produces": "全局四阶矩的小缺陷实际调度提取",
+      "proof": [
+        "research/current/unrelated_machines/global_assignment_moment_rounding.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/laurent_mourrain_2008_flat_extension.pdf"
+      ],
+      "source_scope": "Laurent–Mourrain2008 Theorem1.2/Corollary1.3 pp2–3与§2 Lemma2.1 pp6–7提供经典平坦扩展/压缩乘法背景；近平坦常数与HS反例均不归原文。",
+      "implementation": [],
+      "tests": [
+        "tests/audits/unrelated_machines/nearflat_moment_extraction.py",
+        "tests/audits/unrelated_machines/near_flat_hs_independent_audit.py",
+        "tests/audits/unrelated_machines/global_assignment_flat_moment_audit.py",
+        "tests/audits/unrelated_machines/hs_effect_greedy_exact_m3.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/nearflat_moment_extraction_audit.json",
+        "evidence/runs/unrelated_machines/near_flat_hs_independent_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/nearflat_moment_inputs.json",
+        "evidence/certificates/unrelated_machines/global_assignment_moment_freeze.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/global_assignment_moment_rounding_review.md"
+      ],
+      "candidates": [],
+      "limit": "证书y是额外输入，未给一般输入的C₂证书生成器或小δ保证；δ=0的平坦矩提取属于经典背景，近平坦定量扩展的新颖性未认证。不能把真调度Dirac矩存在当作可多项式获得。在每个OPT≤T实例免费生成本合同的小缺陷证书会要求过强的低于3/2承诺输出，P≠NP下不能作为一般算法的未付代价前提；未否定其他矩舍入或UM-TARGET-v1。"
+    },
+    {
+      "id": "um_global_moment_hs_greedy_gap_v1",
+      "claims": [
+        "UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "剪枝有限分配边e=(i,j),p_e≤T上的Boolean变量；显式有理方形无重复单项式矩y_|S|≤4，y_∅=1，M₂(y)半正定，同任务one-hot理想到可表达的四阶，逐机T−Σp_ex_e的一阶局部化矩半正定。以V₁的有理Gram坐标压缩X_e得A_e，δ_e=tr(A_e−A_e²)≥0。这是一份共同全局证书，不是彼此独立的条件见证，也不预设存在真实分布。",
+        "存在三台完全相同机器、一个处理时间1任务与八个处理时间1/4任务的实例，T=OPT=1。对全部210个真实最优调度取均匀分布，并取其完整四阶矩，rank M₁=17。对K₀=I_R、先处理单位任务再按标签处理八个小任务、机器标签最小平局规则，每步最大化∥A_eK∥²_HS并更新K←A_eK的确定算法输出负载(1,2,0)，因此Cmax=2OPT。"
+      ],
+      "produces": "真实最优矩上的全空间贪心二倍反例",
+      "proof": [
+        "research/current/unrelated_machines/global_assignment_moment_rounding.md"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/laurent_mourrain_2008_flat_extension.pdf"
+      ],
+      "source_scope": "Laurent–Mourrain2008 Theorem1.2/Corollary1.3 pp2–3与§2 Lemma2.1 pp6–7提供经典平坦扩展/压缩乘法背景；近平坦常数与HS反例均不归原文。",
+      "implementation": [],
+      "tests": [
+        "tests/audits/unrelated_machines/global_assignment_flat_moment_audit.py",
+        "tests/audits/unrelated_machines/hs_effect_greedy_exact_m3.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/hs_effect_greedy_exact_m3_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/full_hs_m3_input.json",
+        "evidence/certificates/unrelated_machines/global_assignment_moment_freeze.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/global_assignment_moment_rounding_review.md"
+      ],
+      "candidates": [],
+      "limit": "只攻击所列全空间HS初始化、任务顺序与平局规则的无小δ贪心合同。矩来自真实最优分布，故失败不是伪矩不相容；不否定近平坦提取定理、秩一初态、所有任务排序、其他联合矩算法或一般低于2近似。有限程序核对该精确实例；正文承担实例的一般定义与实际输出证明。"
     }
   ]
 }

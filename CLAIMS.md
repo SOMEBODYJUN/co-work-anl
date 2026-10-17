@@ -51,3 +51,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 新增UM-SHARED-SINK-MACRO-EXIT-v1与UM-BOUNDED-PROFILE-EXIT-POOL-v1，分别给可退出宏任务的共同匹配、无界机器数但完整有界profile池的实际恢复；[专题账本](research/unrelated_machines/CLAIMS.md)固定限域阈值合同。一般UM-TARGET-v1仍OPEN。
 
 新增UM-HALL-GROUP-JOINT-FLOW-v1与UM-HALL-GROUP-PROMISE-APPROX-v1：[共同资格组正文](research/current/unrelated_machines/hall_group_joint_flow.md)给无界sink数量的实际联合流舍入、未知OPT的有限瓶颈恢复；保留组身份/等端体积/负载范围，不改变一般UM-TARGET-v1。
+
+全局矩新增两个分离身份：UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1给定严格小缺陷C₂证书的实际位多项式提取；UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1攻击指定全空间HS初始化、顺序和平局。[准确量词](research/unrelated_machines/CLAIMS.md)保留额外证书和所有未覆盖算法；主目标仍OPEN。

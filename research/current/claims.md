@@ -811,6 +811,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-HALL-GROUP-JOINT-FLOW-v1 | ∀显式H∪Z、宏B/私有组J_h、整数q≥2、有理T≥0和δ≥0且qδ<2；macro仅homes且所有finite p>T/2；j∈J_h恰在h及同组共同E_h⊆Z可用且时间同为w_j≥0，(1/2+1/q)T≤W_h≤T、w_j≤δT。确定性总位poly返回FAIL或完整实际σ，Cmax≤q(2+δ)/(q+1)T；OPT≤T必成功。含T0、空Z/E及二进制q输入，实际机器至少一。 | 给定分组、同组共同资格、私有任务等端体积及组负载下界承重；q增长时改善趋零，不是一般UM统一ε。 [正文](unrelated_machines/hall_group_joint_flow.md)、[冻结审查](../reviews/unrelated_machines/hall_group_joint_flow_review.md)。 |
 | UM-HALL-GROUP-PROMISE-APPROX-v1 | ∀同拓扑及q≥2,δ≥0,qδ<2，不给OPT；promise在真实OPT处所有finite macro p>OPT/2、(1/2+1/q)OPT≤W_h≤OPT、w_j≤δOPT。存在统一确定性总位poly算法输出完整实际σ，Cmax≤q(2+δ)/(q+1)OPT，OPT0含在内。q/δ可输入；固定q/δ时为该承诺类统一低于2。 | 不判定关于OPT的结构承诺；不提供一般矩阵分解，同组共同资格/等端体积和组负载范围保留；可变q时无统一正ε。 [正文](unrelated_machines/hall_group_joint_flow.md)、[冻结审查](../reviews/unrelated_machines/hall_group_joint_flow_review.md)。 |
 
+## 全局分配矩的确定提取及贪心边界
+
+| ID | Exact Statement | 范围与证据 |
+| --- | --- | --- |
+| UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1 | ∀合法一般P、给定有理T>0与0<η≤1，以及正文定义的显式有理四阶C₂分配矩证书y，令n为任务数、d为p_ij≤T有限边数、R=rank M₁≥1，压缩乘法算子A_e及δ=Σ_e tr(A_e−A_e²)。若n,d≥1且δ≤min{1/(64ndR),η/16}，则正文固定任务次序、最大Hilbert–Schmidt子分支且确定平局的贪心算法，在P,T,η,y总输入位长的多项式时间输出实际调度σ，∀i，L_i(σ)≤(1+3δ)T≤(1+η)T。空任务直接输出空分配；T=0用零时间边精确处理。 | 证书y是额外输入，未给一般输入的C₂证书生成器或小δ保证；δ=0的平坦矩提取属于经典背景，近平坦定量扩展的新颖性未认证。不能把真调度Dirac矩存在当作可多项式获得。在每个OPT≤T实例免费生成本合同的小缺陷证书会要求过强的低于3/2承诺输出，P≠NP下不能作为一般算法的未付代价前提；未否定其他矩舍入或UM-TARGET-v1。 [正文](unrelated_machines/global_assignment_moment_rounding.md)、[冻结审查](../reviews/unrelated_machines/global_assignment_moment_rounding_review.md)。完整范围内部证明与双路精确核验；外审/新颖性未认证。 |
+| UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1 | 存在三台完全相同机器、一个处理时间1任务与八个处理时间1/4任务的实例，T=OPT=1。对全部210个真实最优调度取均匀分布，并取其完整四阶矩，rank M₁=17。对K₀=I_R、先处理单位任务再按标签处理八个小任务、机器标签最小平局规则，每步最大化∥A_eK∥²_HS并更新K←A_eK的确定算法输出负载(1,2,0)，因此Cmax=2OPT。 | 只攻击所列全空间HS初始化、任务顺序与平局规则的无小δ贪心合同。矩来自真实最优分布，故失败不是伪矩不相容；不否定近平坦提取定理、秩一初态、所有任务排序、其他联合矩算法或一般低于2近似。有限程序核对该精确实例；正文承担实例的一般定义与实际输出证明。 [正文](unrelated_machines/global_assignment_moment_rounding.md)、[冻结审查](../reviews/unrelated_machines/global_assignment_moment_rounding_review.md)。完整范围内部证明与双路精确核验；外审/新颖性未认证。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
