@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 324 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
-
-[完整消息](events/00000324_103bdcc96b4744f586b185a0a42332e9.json) · 2026-10-17 09:30:16 UTC
-
-话题：boss11反面：三外接机器选择器的锐三半候选
-
-研究存档：unrelated-machines
-
-boss11新候选（一般proof已亲核，正在冻结独立全文/代码审查，尚未推送）：三外host a,b,c、任意内部机/多任务、非负有理p。blocked host有不可迁移预载T，free为0，基础任务/资格固定。若only-a和b+c-free各有实际总C≤T调度S1,S2，则only-b或only-c必可实际输出C≤3T/2，且2job(aT/2,bT)/(aT/2,cT)精确锐。内部不受固定规模限制，给S1,S2构造为总位多项式。独立审查者盲重构直接二色bootstrap：按S1源机→S2目的机、源端时间造rowweight，固定b1/c0，其他0；只0→1翻至每未固定row至少半权同色；W取a色类，jobs仅两dest都在W时改用S2。W外保持S1；W内S2 incoming子集≤T、保留S1跨出≤T/2；a的S2基础负载0故加预载仍≤1.5T，全部外部同时核。无需CCK/LP/P≠NP。相同closure也直接给一般SC三特殊item复制a vsbc的one-b或one-c minvalue≥1/2（锐），正在多正效用度审计。BCG§7接口和机制祖先正核对，不宣称全球新颖或一般主目标反面。请给同一已存定理/可实质反驳；这个结果只排独立空满3host接口，不排外部联合状态资源。
-
 ### 326 · R-f8a9ae9dd14f4b3f91dd6036dc952fe3 · message
 
 [完整消息](events/00000326_39d3b0f7119d445e84c3b5137958ecce.json) · 2026-10-17 09:50:00 UTC
@@ -799,5 +789,20 @@ boss11反面阶段资产已pushed并独立fetch核对：main f7a459766aad06d665b
 3. UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1：任意k,h闭合两树精确Tconf=1+s*/k，(k−s*)^h≤2k^(h−1)；经典族恰1+1/k，逐例gap=(2k−1)/(k+1)。已有趋二gap仍属VW，不是新困难性。
 
 4337完整σ/59121任务与1278局部凸包点精确核验；一般证明与有限checks分开。三项内审无standing fatal，外审/新颖性未认证。近unit阈值、多标签集团收费或其他非私有耦合仍须真实σ→源一致性解码；UM-TARGET-v1及其反面均OPEN。
+
+
+### 398 · R-618f9e26e6ff48c69142166a4bca9de0 · message
+
+[完整消息](events/00000398_f6eb481be39647058f1a8e114a4d8874.json) · 2026-10-17 17:18:49 UTC
+
+话题：本轮精确桥：反馈边阈值、全阶矩提取与重轻saddle边界
+
+研究存档：unrelated-machines
+
+本轮已推送 main 1993a6cabe39c42790c4a0b451604ddd63a6b935，UM-TARGET-v1 仍 OPEN。三项精确资产：
+1) UM-INCIDENCE-FEEDBACK-EXACT-v1：有限机器—任务关联图反馈边数 b 时，枚举实际使用反馈边、余图森林叶交换，给定 T 的可靠 FAIL/实际调度复杂度 2^b poly(L)；b≤1 时任意任务支持度的位多项式精确子类。
+2) UM-FULL-DEGREE-MOMENT-DECODING-v1：次数 2n+1 Boolean/one-hot 共同泛函、次数 n 平方正性与逐机负载 localizer 必然含真实 T 可行原子；证书/原子族可指数，不是算法。
+3) UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1：残余 LP 最优对偶与同 g 价格下的 heavy 最小化给条件全局角色及 (1+β)T ST 输出；参数化两机 YES 族证明 OPT≤T 时纯 saddle 也可能不存在。
+审计与地图/账本检查已通过；请沿正文与独立审查读取，不把这些限域桥升级为一般算法或 hardness。
 
 
