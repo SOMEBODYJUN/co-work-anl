@@ -6363,6 +6363,137 @@
       ],
       "source_role": "ST经典舍入仅用于一般supgap≤2；下界PSD与证书由正文自足推导。另查VVW2020背景为web-only，不伪造本地原始字节。",
       "limit": "非C2+CONFIG间隙或一般算法困难性；外审和全球新颖性未认证。"
+    },
+    {
+      "id": "um_heterogeneous_macro_arbitrary_tiny_v1",
+      "claims": [
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1"
+      ],
+      "status": "complete stated-scope proof; internal blind reconstruction and exact finite audit; external review and novelty unverified",
+      "applies_when": [
+        "|B|=|H|",
+        "宏仅在home且每有限宏边T/2<p<=T",
+        "tiny资格任意且每有限tiny边<=delta*T, delta<1/2"
+      ],
+      "produces": "任意宏完美匹配+home T/2、sink T的tiny LST LP/ST输出Cmax<=(3/2+delta)T",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/heterogeneous_macro_uniform_residual.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/heterogeneous_macro_uniform_residual_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "source_role": "ST舍入为经典背景；异质宏统一残余合同为本仓自足证明，未声称文献定理",
+      "limit": "不是一般UM算法；|B|=|H|、大宏promise和tiny统一小边承重；异质接收成本精确流有3PARTITION障碍"
+    },
+    {
+      "id": "um_heterogeneous_macro_promise_v1",
+      "claims": [
+        "UM-HETEROGENEOUS-MACRO-PROMISE-v1"
+      ],
+      "status": "complete stated-scope proof; internal reconstruction; external review and novelty unverified",
+      "applies_when": [
+        "真实OPT处所有有限宏边>OPT/2",
+        "tiny边<=delta_bar*OPT, fixed delta_bar<1/2",
+        "给定宏/tiny分层"
+      ],
+      "produces": "保留全部tiny边的单调F谓词，Q网格整数二分得到t*<=OPT并输出Cmax<=(3/2+delta_bar)OPT",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/heterogeneous_macro_uniform_residual.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/heterogeneous_macro_uniform_residual_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "source_role": "LST/ST与有理LP为标准背景；promise二分和结构证明为本仓自足结果",
+      "limit": "promise分层不从一般矩阵免费识别；t*是LP最小接受点，不等于整数OPT"
+    },
+    {
+      "id": "um_hetero_tiny_3partition_flow_barrier_v1",
+      "claims": [
+        "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1"
+      ],
+      "status": "complete stated-scope obstruction; exact arithmetic checked; external review and novelty unverified",
+      "applies_when": [
+        "固定delta>0",
+        "强3-PARTITION缩放残余阈值实例"
+      ],
+      "produces": "所有tiny边<=delta*T但T整数可行性等价3-partition，均匀分数LP可行",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/heterogeneous_macro_3partition_barrier.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/heterogeneous_macro_3partition_barrier_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/karp_1972_reprinted_2010_reducibility.pdf"
+      ],
+      "source_role": "3-PARTITION来源只作NP完全背景；缩放残余构造为本仓自足障碍",
+      "limit": "只反驳精确整数流/polymatroid完成，不反驳ST加性余量或一般近2硬度"
+    },
+    {
+      "id": "um_strict_sub2_batch_barrier_v1",
+      "claims": [
+        "UM-STRICT-SUB2-BATCH-BARRIER-v1"
+      ],
+      "status": "complete stated-scope obstruction; internal proof and exact finite audit; external review and novelty unverified",
+      "applies_when": [
+        "每k>=2",
+        "每步最多k件迁移",
+        "所有中间态Cmax<2T"
+      ],
+      "produces": "OPT=1三机族，坏态孤立且首个出口需k+1件",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/strict_sub2_batch_barrier.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/strict_sub2_batch_barrier.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/strict_sub2_batch_barrier_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/strict_sub2_batch_barrier_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf"
+      ],
+      "source_role": "经典调度模型背景；严格次二批量族为本仓自足局部修复障碍",
+      "limit": "只限制常数批量严格次二局部修复；不证明一般近似困难性"
     }
   ]
 }

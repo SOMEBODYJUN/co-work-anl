@@ -193,3 +193,9 @@
 正文给UM-LARGE-BUNDLE-COLLISION-FLOOR-v1完整域及式(9)精确必要量；读取冻结审查、两份large_bundle_collision代码及独立原父点/实际调度证据后再用于归约。不能把可解的平方池近二OPT当NP困难性。
 
 [全局四阶负载松弛的锐利二间隙](../current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。
+
+## 本阶段新增入口：异质宏与严格次二批量
+
+[异质大宏统一残余容量与 ST 舍入](../current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md) 给 `UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1` 和承诺版 `UM-HETEROGENEOUS-MACRO-PROMISE-v1`：`|B|=|H|`、宏仅在 home 且有限宏边严格大于 `T/2`，宏时间可依身份变化；tiny 资格和边成本任意逐件、每边≤`δT`。统一 home 残余 `T/2` 配合 ST 得 `(3/2+δ)T`，未知 OPT 以保留全部 tiny 边的单调 `F(t)` 和 `Q` 网格整数二分搜索。正文还记录强 3-PARTITION 精确流障碍，限制把异质残余当普通整数流或 polymatroid；这些结构结果不关闭一般主目标。
+
+[严格次二状态图的参数化批量能垒](../current/unrelated_machines/strict_sub2_batch_barrier.md) 给 `UM-STRICT-SUB2-BATCH-BARRIER-v1`：`OPT=1` 坏态负载趋近 2，在每步至多 `k` 件、所有中间态严格 `<2` 的图中孤立，首个出口需 `k+1` 件。它只限制常数批量中性修复，不能作为一般近似困难性。

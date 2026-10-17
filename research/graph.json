@@ -8718,6 +8718,54 @@
         "evidence/certificates/unrelated_machines/c2_unit_multislice_m3.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "异质大宏与任意tiny资格的统一残余容量",
+      "detail": "|B|=|H|时宏身份可异质；home tiny容量T/2、sink T，ST给(3/2+δ)T。",
+      "refs": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "complete stated-scope proof; internally reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "异质大宏承诺类未知OPT",
+      "detail": "保留全部tiny边的单调F在Q网格整数二分，t*<=OPT并给(3/2+δ̄)OPT。",
+      "refs": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+        "research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md"
+      ],
+      "status": "complete stated-scope proof; internal reconstruction; external review and novelty unverified"
+    },
+    {
+      "id": "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "异质tiny精确流的3-PARTITION障碍",
+      "detail": "tiny边可统一缩放到δT以下但T整数可行性仍强NP完全；分数LP可行。",
+      "refs": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+        "research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md"
+      ],
+      "status": "complete stated-scope obstruction; exact arithmetic checked; external review and novelty unverified"
+    },
+    {
+      "id": "UM-STRICT-SUB2-BATCH-BARRIER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "严格次二状态图的参数化批量能垒",
+      "detail": "OPT=1坏态在<=k批量且中间C<2状态图孤立，首个出口k+1件。",
+      "refs": [
+        "research/current/unrelated_machines/strict_sub2_batch_barrier.md",
+        "research/reviews/unrelated_machines/strict_sub2_batch_barrier_review.md"
+      ],
+      "status": "complete stated-scope obstruction; exact finite audit; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -21331,6 +21379,94 @@
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "L-UM-K-UNIFORM-BUNDLE-FLOOR-OPEN-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-K-UNIFORM-BUNDLE-FLOOR-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仍需共享标签/高距离一致性，阻止每个低t层逃逸并保持固定epsilon下的位多项式规模。",
+      "refs": [
+        "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1",
+      "statement": "|B|=|H|与宏>T/2使OPT tiny负载在每home<T/2；任意宏匹配+残余ST给(3/2+δ)T。",
+      "refs": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md"
+      ],
+      "status": "stated-scope proof"
+    },
+    {
+      "id": "D-UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1"
+      ],
+      "conclusion": "UM-HETEROGENEOUS-MACRO-PROMISE-v1",
+      "statement": "OPT处promise令F(OPT)=true；F单调，Q网格二分取t*<=OPT，误差按δOPT计。",
+      "refs": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md"
+      ],
+      "status": "stated-scope proof"
+    },
+    {
+      "id": "L-UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1"
+      ],
+      "conclusion": "UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1",
+      "statement": "异质tiny精确整数完成不能免费替换ST加性余量；缩放3-PARTITION给强障碍。",
+      "refs": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "L-UM-STRICT-SUB2-BATCH-BARRIER-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1"
+      ],
+      "conclusion": "UM-STRICT-SUB2-BATCH-BARRIER-v1",
+      "statement": "把局部修复限制为<=k批量且中间严格<2仍有OPT=1孤立坏态；不构成一般困难性。",
+      "refs": [
+        "research/current/unrelated_machines/strict_sub2_batch_barrier.md",
+        "research/reviews/unrelated_machines/strict_sub2_batch_barrier_review.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "L-UM-HETEROGENEOUS-MACRO-OPEN-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "一般输入仍缺宏/tiny分层提取、|B|=|H|保证和跨身份共同容量；结构候选不关闭主目标。",
+      "refs": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
     }
   ]
 }

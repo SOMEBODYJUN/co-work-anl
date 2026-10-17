@@ -69,3 +69,5 @@
 进一步的[大需求束碰撞界与平方池锐性](research/current/unrelated_machines/large_bundle_collision_square_root_floor.md)给含根上取整的Λ_c真实树，q=Δ=K=t²时精确maxΛ=b*=1/t；带η→0及ηKmin→∞条件的NO侧必要量为liminfη²Δ≥1。只约束资源束接口，源问题解码和一般困难性仍缺。
 
 [全局四阶负载松弛的锐利二间隙](research/current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。
+
+本阶段不相关并行机新增两项可复用边界：[异质大宏统一残余容量与 ST 舍入](research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md) 在 `|B|=|H|` 与大宏承诺下允许宏身份异质、tiny 资格任意并得到 `(3/2+δ)` 结构类界；[严格次二批量能垒](research/current/unrelated_machines/strict_sub2_batch_barrier.md) 说明常数批量且中间严格低于二倍时的局部修复会遇到 `OPT=1` 孤立坏态。两者均保持 `UM-TARGET-v1` OPEN。

@@ -204,7 +204,8 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 [三维匹配需求树障碍](../current/unrelated_machines/three_dimensional_matching_demand_floor_obstruction.md)给出 `UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1` 的精确恒等式：标准 (D_K(A)) 编码的 (b^*) 是一资源匹配 (mu) 与三维匹配 (
 u) 两项的最大值；完美 YES 时恰为 (2/K)。因此把三元组需求放大不能保留 YES 值1，固定 (K=2) 又不能消除只选一个共享终端的地板。公共资源 Hall 族可构造 (b^*) 趋零（(q=K=20,40,80) 时分别 (1/5,3/20,1/10)），但目前没有 NP 语言编码。
 
-这轮反面路线的下一精确义务是：设计共享标签或高距离一致性资源，使完整 YES 的实际 (b^*=1)，而每个 (b\ge\varepsilon/2) 的树都能解码源问题见证，并保持每个固定 (arepsilon) 的位多项式规模。已有配置/SA gap、私有 max–min 串接、完全池复制和本节地板都不能替代该 soundness 证明。
+这轮反面路线的下一精确义务是：设计共享标签或高距离一致性资源，使完整 YES 的实际 (b^*=1)，而每个 (b\ge\varepsilon/2) 的树都能解码源问题见证，并保持每个固定 (
+arepsilon) 的位多项式规模。已有配置/SA gap、私有 max–min 串接、完全池复制和本节地板都不能替代该 soundness 证明。
 
 补充的 (K=2) 精确边界：在 (A_q=\{(x_i,y_0,z_i)\}) 上 (
 u/q\to0) 但 (mu/q=1)，故标准需求树仍 (b^*=1/2)、调度OPT=3/2；若 (mu<q/2)，则 (b^*=mu/q) 并可由二分图匹配直接精确计算。这排除了把普通3DM的低匹配比例直接升级为近2硬度的企图。
@@ -234,3 +235,11 @@ u_1=q)，总有 (b^*\ge1/K)。因此要构造 YES (b^*=1)、NO (b^*\le\varepsilo
 正文给UM-LARGE-BUNDLE-COLLISION-FLOOR-v1完整域及式(9)精确必要量；读取冻结审查、两份large_bundle_collision代码及独立原父点/实际调度证据后再用于归约。不能把可解的平方池近二OPT当NP困难性。
 
 [全局四阶负载松弛的锐利二间隙](../current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。
+
+## 本阶段新增：异质宏残余与严格次二批量边界
+
+`UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1` 放宽了同质宏候选：在 `|B|=|H|`、宏仅在 homes、每条有限宏边 `T/2<p≤T` 下，宏时长可依赖任务身份，tiny 资格和边成本可逐件任意且每边≤`δT`。把全部 home tiny 容量统一收紧到 `T/2`，保留任意 `OPT≤T` 调度的 tiny 分配作 LP 见证，ST 舍入后给 `(3/2+δ)T`。承诺未知 OPT 版本保留所有 tiny 边，用分母乘积网格上的单调谓词整数二分；只保证最小接受点 `t*≤OPT`，不把分数阈值称为整数最优。它仍缺一般输入的宏/tiny 分层提取。
+
+同一正文的 `UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1` 表明，对任意固定 `δ>0`，异质 tiny 边可以缩放到 `δT` 以下，而精确 `T` 整数可行性仍强 NP 完全，分数 LP 却可行。该障碍只关闭普通整数流或简单 polymatroid 的精确完成路线，不反驳带 ST 加性余量的结构候选。
+
+`UM-STRICT-SUB2-BATCH-BARRIER-v1` 给中性容量释放一个新边界：每个 `k≥2` 有真实 `OPT=1` 三机族，坏态负载 `2−1/(8k)`，在每步最多 `k` 件且所有中间态严格 `<2` 的状态图中孤立，首个出口需 `k+1` 件。它覆盖接收机增载和中性批量，但允许无界批量、跨过 2 或重新求解时不适用，不能升级为一般困难性。

@@ -9427,6 +9427,115 @@
         "examples/unrelated_machines/c2_unit_multislice_m3.json",
         "evidence/certificates/unrelated_machines/c2_unit_multislice_m3.json"
       ]
+    },
+    {
+      "path": "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+      "title": "异质大宏匹配下的统一残余容量与ST舍入",
+      "purpose": "证明|B|=|H|、宏边>T/2、tiny边<=δT时任意宏完美匹配可配合home T/2/sink T残余LP和ST得到(3/2+δ)T；含未知OPT承诺二分和3-PARTITION精确流障碍。",
+      "topic": "unrelated_machines",
+      "role": "account",
+      "related_paths": [
+        "research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md",
+        "tests/audits/unrelated_machines/heterogeneous_macro_uniform_residual.py",
+        "evidence/runs/unrelated_machines/heterogeneous_macro_uniform_residual_audit.json"
+      ]
+    },
+    {
+      "path": "research/current/unrelated_machines/strict_sub2_batch_barrier.md",
+      "title": "严格次二状态图的参数化批量能垒",
+      "purpose": "给出OPT=1三机族，证明每步至多k件且中间严格Cmax<2时坏态孤立、首个出口k+1件；限制局部修复合同。",
+      "topic": "unrelated_machines",
+      "role": "obstruction",
+      "related_paths": [
+        "research/reviews/unrelated_machines/strict_sub2_batch_barrier_review.md",
+        "tests/audits/unrelated_machines/strict_sub2_batch_barrier.py",
+        "evidence/runs/unrelated_machines/strict_sub2_batch_barrier_audit.json"
+      ]
+    },
+    {
+      "path": "research/reviews/unrelated_machines/heterogeneous_macro_uniform_residual_review.md",
+      "title": "异质大宏统一残余容量候选独立审查",
+      "purpose": "先盲重构宏身份、残余LP、ST界、Q网格单调二分和少宏边界；记录无fatal范围和未认证状态。",
+      "topic": "unrelated_machines",
+      "role": "review",
+      "related_paths": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+        "tests/audits/unrelated_machines/heterogeneous_macro_uniform_residual.py"
+      ]
+    },
+    {
+      "path": "research/reviews/unrelated_machines/strict_sub2_batch_barrier_review.md",
+      "title": "严格次二批量能垒独立审查",
+      "purpose": "独立重算四元组负载、OPT=1和首个k+1出口，明确只限制常数批量严格次二局部修复。",
+      "topic": "unrelated_machines",
+      "role": "review",
+      "related_paths": [
+        "research/current/unrelated_machines/strict_sub2_batch_barrier.md",
+        "tests/audits/unrelated_machines/strict_sub2_batch_barrier.py"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/heterogeneous_macro_uniform_residual.py",
+      "title": "异质宏统一残余容量Fraction审计",
+      "purpose": "独立枚举小结构实例的OPT、宏完美匹配和OPT tiny home<T/2性质；含少宏边界反例。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+        "evidence/runs/unrelated_machines/heterogeneous_macro_uniform_residual_audit.json"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/strict_sub2_batch_barrier.py",
+      "title": "严格次二批量能垒Fraction审计",
+      "purpose": "精确核验k=2,3,7,100的坏态、OPT=1、严格次二批量阈值和少宏边界。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/strict_sub2_batch_barrier.md",
+        "evidence/runs/unrelated_machines/strict_sub2_batch_barrier_audit.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/heterogeneous_macro_uniform_residual_audit.json",
+      "title": "异质宏统一残余容量审计冻结结果",
+      "purpose": "冻结10000随机结构实例的seed、范围、脚本哈希和9217个OPT<=1通过结果；有限证据不替代一般证明。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "tests/audits/unrelated_machines/heterogeneous_macro_uniform_residual.py"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/strict_sub2_batch_barrier_audit.json",
+      "title": "严格次二批量能垒审计冻结结果",
+      "purpose": "冻结k=2,3,7,100的Fraction结果、脚本哈希和范围；有限证据不替代一般困难性。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "tests/audits/unrelated_machines/strict_sub2_batch_barrier.py"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/heterogeneous_macro_3partition_barrier.py",
+      "title": "异质 tiny 3-PARTITION 障碍审计",
+      "purpose": "精确核验B=13的小型缩放实例：整数无三元分割但均匀Fraction分流可行，记录异质精确流障碍的有限证据。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+        "evidence/runs/unrelated_machines/heterogeneous_macro_3partition_barrier_audit.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/heterogeneous_macro_3partition_barrier_audit.json",
+      "title": "异质 tiny 3-PARTITION 障碍冻结结果",
+      "purpose": "冻结小型B=13、K=2、δ=1/4实例的脚本哈希与精确结果；有限审计不替代强NP完全性证明。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "tests/audits/unrelated_machines/heterogeneous_macro_3partition_barrier.py"
+      ]
     }
   ]
 }

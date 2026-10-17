@@ -923,6 +923,15 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-C2-LOAD-UNIT-GAP-v1 | 对每个整数m≥3，n=m+1个全单位同机任务的现行C2-load阈值恰为t=n/m，而整数OPT=2；兼容四阶矩y_S=∏a(t)_{c_a(S)}/(n)_{|S|}给显式有理证书，M2半正定且全部负载localizer为0。比值2m/(m+1)趋2；一般此C2松弛的supgap恰为2。 | 不含三阶逐项非负或CONFIG；后者本族阈值2。完整一般证明、独立冻结攻击和双路精确核验；非一般hardness。[正文](unrelated_machines/c2_unit_multislice_gap.md)、[审查](../reviews/unrelated_machines/c2_unit_multislice_gap_review.md)。 |
 
+## 异质大宏匹配与严格次二批量能垒
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1 | 给定 `|B|=|H|`、宏仅在 H、每条有限宏边 `T/2<p_{hb}≤T`、每条 tiny 边 `p_{ij}≤δT` 且 `δ<1/2`；若 `OPT≤T`，任取宏完美匹配后以 home 容量 `T/2`、sink 容量 `T` 求 tiny LST LP 并 ST 舍入，得到实际 `Cmax≤(3/2+δ)T`。 | tiny 资格和边成本可完全任意；宏时间依赖 `(h,b)`。正文、Fraction 审查和审计见 `research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md`；不是一般 UM 算法。 |
+| UM-HETEROGENEOUS-MACRO-PROMISE-v1 | 同拓扑不给 T，promise 在真实 OPT 处所有有限宏边 `>OPT/2`、tiny 边 `≤δ̄OPT`（固定 `δ̄<1/2`）；保留全部 tiny 边的单调 `F(t)` 在分母乘积网格上整数二分，取最小接受阈值 `t*≤OPT`，输出实际 `Cmax≤(3/2+δ̄)OPT`。 | `OPT=0` 先精确处理；不枚举数值网格，二分次数按 `log(QU)` 计。结构分层不是一般输入可免费获得。 |
+| UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1 | 对任意固定 `δ>0`，强 3-PARTITION 可缩放为 tiny 边均 `≤δT` 的残余阈值实例；T-feasible 整数调度当且仅当 3-partition，均匀分数 LP 始终可行。 | 只反驳把异质接收成本精确化为普通整数流/简单可积多面体；不反驳带 ST 加性余量的 `(3/2+δ)` 候选，也不是近 2 困难性。 |
+| UM-STRICT-SUB2-BATCH-BARRIER-v1 | 对每个 `k≥2` 存在 `OPT=1` 实例和负载 `<2` 坏态；允许每步最多 k 件迁移且所有中间态保持 `<2` 时，坏态在状态图中孤立，首个出口需 `k+1` 件。 | 只限制常数批量、严格次二局部修复；允许无界批量、跨过 2 或重新求解时不适用。正文与 Fraction 审计见 `strict_sub2_batch_barrier.md`。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

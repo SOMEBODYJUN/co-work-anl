@@ -1124,7 +1124,9 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - **Exact Statement / Quantifiers：** 对任意 (qge1)、(Kge2) 及三维匹配 (A=(X,Y,Z,E)) 的标准需求树编码 (D_K(A))，令 (mu) 为 (X)--((Y\cup Z)) 一资源匹配数、(
 u) 为三维匹配数，则 (b^*(D_K(A))=\max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\})。完美三维匹配时 (b^*=2/K)。
 - **Objects / Domain：** 根需求 (q)，(x) 点需求1，三元组点需求 (K)，(Y,Z) 为零需求终端；边 (r\to x\to e\to\{y,z\})；(b^*) 沿 `UM-DAG-DEGREE-TOKEN-IDENTITY-v1` 定义。
-- **Scope / Conclusion：** 这是直接3DM需求树接口的精确方法障碍。提高 (K) 会同时降低 YES 的 (b^*)，固定 (K=2) 仍受一终端子树地板影响；故该接口不能给任意 (arepsilon) 的 YES (b^*=1)/NO (b^*\learepsilon/2) 归约。公共资源 Hall 族给出可趋零的目标形状，但没有复杂度归约。
+- **Scope / Conclusion：** 这是直接3DM需求树接口的精确方法障碍。提高 (K) 会同时降低 YES 的 (b^*)，固定 (K=2) 仍受一终端子树地板影响；故该接口不能给任意 (
+arepsilon) 的 YES (b^*=1)/NO (b^*\le
+arepsilon/2) 归约。公共资源 Hall 族给出可趋零的目标形状，但没有复杂度归约。
 - **Dependencies：** `UM-DAG-DEGREE-TOKEN-IDENTITY-v1`；有限树单父约束；二分图/三维匹配定义。
 - **Evidence：** 自足上下界证明；Fraction 审计覆盖 (q\le2) 全边集、(q=3) 固定种子随机样本和完美匹配族；见 `three_dimensional_matching_demand_floor_audit.json`。
 - **Counterevidence / Objections：** 只排除该标准局部接口与公共资源样板；不排共享标签、高距离测试、Label-Cover 或其它跨模块一致性归约，也不证明主目标反面。
@@ -1134,7 +1136,8 @@ u) 为三维匹配数，则 (b^*(D_K(A))=\max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\}
 
 ## UM-SANTA-NO-CONSTANT-CONDITIONAL-v1：Santa Claus 无常数近似假设下的条件反面
 
-- **Exact Statement / Quantifiers：** 若 (P\ne NP) 且一般 Santa Claus 对每个固定常数 (c) 都无确定性多项式 (c)-近似，则不存在统一 (arepsilon\in(0,1)) 的一般 R∥Cmax (2-\varepsilon) 算法。
+- **Exact Statement / Quantifiers：** 若 (P\ne NP) 且一般 Santa Claus 对每个固定常数 (c) 都无确定性多项式 (c)-近似，则不存在统一 (
+arepsilon\in(0,1)) 的一般 R∥Cmax (2-\varepsilon) 算法。
 - **Dependencies：** LST 的 (<3/2) 困难性；BLMRS Theorem 1 的 (2-1/\alpha) Makespan 到 (\alpha+\eta) Santa 转换。
 - **Scope / Status：** 条件逻辑合成；SCHA 未证，不能升级为主目标无条件反面。
 - **Related Files：** `research/current/unrelated_machines/santa_conditional_reverse_barrier.md`。
@@ -1222,3 +1225,30 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：m=2失败，已给负平方；本族三阶同机矩为−1/m^4，另加三阶非负即排该证书；CONFIG阈值为2，不能声称C2+CONFIG间隙。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。UM-TARGET-v1保持OPEN。
 - Related Files：research/current/unrelated_machines/c2_unit_multislice_gap.md；research/reviews/unrelated_machines/c2_unit_multislice_gap_review.md；tests/audits/unrelated_machines/c2_unit_multislice_gap.py；tests/audits/unrelated_machines/c2_unit_multislice_independent.py；evidence/runs/unrelated_machines/c2_unit_multislice_gap_audit.json；examples/unrelated_machines/c2_unit_multislice_m3.json；evidence/certificates/unrelated_machines/c2_unit_multislice_m3.json。
+
+## UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1：异质大宏与任意 tiny 资格的统一残余容量
+
+- **Exact Statement / Quantifiers：** 给定 `|B|=|H|`、宏仅在 `H`、每条有限宏边 `T/2<p_{hb}≤T`，每条有限 tiny 边 `p_{ij}≤δT` 且固定 `δ<1/2`。若 `OPT≤T`，任取宏完美匹配；在 home 容量 `T/2`、sink 容量 `T` 的 tiny LST LP 上做 ST 舍入，得到实际 `Cmax≤(3/2+δ)T`。
+- **Scope / Conclusion：** tiny 资格和端成本完全逐件任意；宏时间可依赖 `(h,b)`。这是给定结构接口，不是一般输入算法。
+- **Dependencies / Evidence：** `UM-MODEL-v1`、`UM-ST-ROUND-v1`；正文和 Fraction 审计见 `research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md`、`tests/audits/unrelated_machines/heterogeneous_macro_uniform_residual.py`。
+- **Status：** complete stated-scope proof; internally blind-reconstructed and exactly audited; external review and novelty unverified; `UM-TARGET-v1` remains OPEN。
+
+## UM-HETEROGENEOUS-MACRO-PROMISE-v1：异质大宏承诺类未知 OPT 搜索
+
+- **Exact Statement / Quantifiers：** 同拓扑不给 `T`，promise 在真实 `OPT` 处所有有限宏边 `>OPT/2`、tiny 边 `≤δ̄OPT`（固定 `δ̄<1/2`）。保留全部 tiny 边的单调谓词 `F(t)` 用所有有限边分母乘积 `Q` 的整数区间 `[0,QU]` 二分，输出实际 `Cmax≤(3/2+δ̄)OPT`。
+- **Scope / Conclusion：** 先精确处理 `OPT=0`；二分次数按 `log(QU)` 计。分层 promise 不从一般矩阵免费识别。
+- **Dependencies / Evidence：** 依赖上一 Claim；未知 OPT 的单调性和位复杂度见同一正文第 2 节及其独立审查。
+- **Status：** complete stated-scope proof; internally reconstructed; external review and novelty unverified; `UM-TARGET-v1` remains OPEN。
+
+## UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1：异质 tiny 精确流障碍
+
+- **Exact Statement / Quantifiers：** 对任意固定 `δ>0`，强 3-PARTITION 可缩放到所有 tiny 边 `≤δT` 的残余阈值实例；`T`-可行整数调度当且仅当 3-partition，而均匀分数 LP 始终可行。
+- **Scope / Conclusion：** 只否定把异质接收成本精确化为普通整数流/简单可积多面体；不否定带 ST 加性余量的正面候选，也不是近 2 困难性。
+- **Evidence：** 缩放构造在 `heterogeneous_macro_uniform_residual_st_rounding.md` 边界段；内部 `B=13` 小例和 Fraction 核验已重算。
+- **Status：** complete stated-scope obstruction; internal attack and exact arithmetic checked; external review and novelty unverified。
+
+## UM-STRICT-SUB2-BATCH-BARRIER-v1：严格次二状态图的批量能垒
+
+- **Exact Statement / Quantifiers：** 对每个 `k≥2` 存在 `OPT=1` 实例和 `Cmax<2` 坏态；允许每步至多 `k` 件迁移且全部中间态保持严格 `<2` 时，坏态孤立，首个出口需 `k+1` 件。
+- **Scope / Conclusion：** 只限制常数批量、严格次二局部修复；允许无界批量、跨过 2 或重新求解时不适用，不是一般近似困难性。
+- **Evidence / Status：** `research/current/unrelated_machines/strict_sub2_batch_barrier.md`；`tests/audits/unrelated_machines/strict_sub2_batch_barrier.py`；Fraction 审计 `k=2,3,7,100` 通过；外审/新颖性未认证。
