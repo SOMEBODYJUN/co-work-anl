@@ -1610,7 +1610,7 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 
 ## UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1：严格次二占位的诱导边缺口恒等式
 
-- Exact Statement / Quantifiers：∀固定有理1≤α<2和固定δ>0，∃确定性算法，对每个非空显式有限simple图G，在图位长poly时间构造2N机、N个任机单位宏及同尺寸h≤δ的tiny实例，给显式OPT1调度；∀I⊆V，α容量完整调度的图机宏占位投影恰所有独立集。固定全部tiny为R、图机残余c_i(I)=α−1_I时，精确D(I)=|R|−F_R(c(I))=|E(G[I])|。
+- Exact Statement / Quantifiers：∀固定有理1≤α<2和固定有理δ>0，∃确定性算法，对每个非空显式有限simple图G，在图位长poly时间构造2N机、N个任机单位宏及同尺寸h≤δ的tiny实例，给显式OPT1调度；∀I⊆V，α容量完整调度的图机宏占位投影恰所有独立集。固定全部tiny为R、图机残余c_i(I)=α−1_I时，精确D(I)=|R|−F_R(c(I))=|E(G[I])|。
 - Objects / Domain / Definitions：α=A/B既约，Δ=maxdeg；q=2B max{1,ceil[1/(2Bδ)],ceil[Δ/(2B(2−α))]}，h=1/q，r=q(α−1)整数。每图机r件专属tiny，每图边一件双端tiny；N辅助机不接tiny，全部宏资格为所有2N机。α与δ不是原实例OPT输入承诺。
 - Assumptions / Scope：固定α、δ时才声称输出规模poly(|G|)；不声称bit(α)+bit(δ)统一poly。N≥1；宏单位和α<2使每机至多一个宏。tiny允许全部等端同尺寸、每件至多两选。
 - Conclusion / Mechanism：宏全辅助给OPT1；I专属+内部边只能用I，剩余容量恰专属任务总量，至少缺诱导边数；弃内部边、其余向未占位端定向达到。故Hall完成族可精确为任意图独立集族；星图排除固定p-extendibility，但不是调度路径能垒。
@@ -1619,3 +1619,27 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：每个生成的原实例都直接可最优解，不能把投影选择升级为UM困难性；改变宏必须进图或减少辅助机是新合同。αδ二进制极值会使显式tiny数大，未误报统一位poly。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified。只关闭免费拟阵/固定交换界的状态识别；一般主目标仍OPEN，新颖性/论文价值未认证。
 - Related Files：`research/current/unrelated_machines/residual_throughput_and_occupation_projection.md`；`research/reviews/unrelated_machines/residual_throughput_occupation_review.md`；`tests/audits/unrelated_machines/occupation_induced_edge_deficit.py`；`evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json`。
+
+## UM-MEDIUM-CONFIG-TINY-BARRIER-v1：固定阈值中任务配置分解的近二边界
+
+- Exact Statement / Quantifiers：对每个固定有理 (0<\alpha<1/5)，存在合法 (P,T) 使全部有限 (p_{ij}>\alpha T)、配置 LP 在 (T) 可行而 (\operatorname{OPT}/T=7/5>1+\alpha)。因此“仅凭配置 LP(T)可行性，再把 (p\le\alpha T) 的 tiny 末步独立支付 (\alpha T)”的合同在该范围不可能给统一小于2。
+- Objects / Domain / Definitions：取经典两树族 (k=4)，(T=5/4)，有限时间仅 (1/4,1)，整数最优值 (7/4)。
+- Assumptions / Scope：只否定固定阈值、配置 LP 与独立 tiny-ST 加性收费的接口；不排跨机器强化、直接联合舍入、改变阈值或 (\alpha\ge1/5)。
+- Conclusion / Mechanism：tiny 集合为空，接口退化为配置间隙；配置列在固定 (alpha) 下可枚举不改变 LP 到共同整数选择的积分缺口。
+- Dependencies：UM-CONF-GAP-v1 与 `model_and_classical_barriers.md` 的 (k=4) 证书；本页 Fraction 反算 (1/4>\alpha(5/4))、(7/5>1+\alpha)。
+- Evidence：参数化直接证明；独立 Python Fraction 计算覆盖 (alpha=1/6,1/10,1/100) 的严格不等式。有限算术核对不替代配置族证明。
+- Counterevidence / Objections：若外层能识别更强的共同容量状态或允许重开配置边，该反例不适用；(\alpha=1/5) 时严格 tiny 排除条件失效。
+- Status：failed-route boundary; not a hardness result; external review and novelty unverified。
+- Related Files：`research/questions/unrelated_machines/fixed_work_and_medium_config_barriers.md`；`research/current/unrelated_machines/model_and_classical_barriers.md`；`research/unrelated_machines/FAILED_ROUTES.md`。
+
+## UM-FIXED-WORK-CONVEX-POTENTIAL-BARRIER-v1：固定工作量与分离凸势锁定近二
+
+- Exact Statement / Quantifiers：对任意整数 (h\ge2,q\ge1)，令 (t=(h-1)/(hq))，用 (h) 个核心、(hq) 个私有叶、一个核心全可用的大任务 (B) 与每个 tiny 的 home/私有叶两条边 (t,1) 构造实例。则 OPT=1；给定 (T=1) 的最小总工作量分数支撑的任一 ST 槽匹配值为 (2-1/h)。对任意有限、非减、凸 (f:[0,3]\to\mathbb R)，若 (Delta=f(1)-f(0)>0)、(D=f(3)-f(2)) 且 (q>(1-1/h)D/\Delta)，则每个 (\sum_i f(L_i)) 全局最小调度仍有值至少 (2-1/h)。取 (q=h^2) 时任意固定相对工作量预算 (W\le\rho h) 的调度满足 (C_{\max}\ge2-1/h-(\rho-1)ht/(1-t))（\(\rho\ge1\)）。
+- Objects / Domain / Definitions：(P_{C_i,B}=1)、(P_{C_i,S_{i,r}}=t)、(P_{L_{i,r},S_{i,r}}=1)，其余边不可用；(m=h(1+q))、(n=1+hq)。
+- Assumptions / Scope：只排固定正支撑、固定总工作量放松和固定非减凸分离势；不排输入自适应 hinge/机器权重/非可加势/允许暂时增载的批量迁移。(f) 仅需在 ([0,3]) 有限。
+- Conclusion / Mechanism：最小工作量支撑把 tiny 叶边质量置零；迁出 (B)-核心 tiny 的叶增量 (f(1)-f(0)) 大于核心节省，故任一固定势全局最小解保留近二坏态；真正 OPT 通过重开边并非不可达。
+- Dependencies：本页 `fixed_work_and_medium_config_barriers.md` 的参数化证明；UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1 只作相邻背景，不替代本族证明。
+- Evidence：独立 Fraction 全枚举 ((h,q)=(2,1),(2,2),(3,1),(3,2)) 核验 OPT、(W_{\min}) 与槽值；((2,4), f(L)=L^2) 全状态枚举的最小势值为 (3/2)。
+- Counterevidence / Objections：昂贵叶边本身可被配置方法识别；hinge/自适应势可逐件迁移，因此不能升级为一般困难性或主目标反证。
+- Status：failed-route boundary; not a hardness result; external review and novelty unverified。
+- Related Files：`research/questions/unrelated_machines/fixed_work_and_medium_config_barriers.md`；`research/unrelated_machines/FAILED_ROUTES.md`；`research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md`。

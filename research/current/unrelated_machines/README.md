@@ -58,6 +58,8 @@
 
 下一义务已被半单位扩展修正：固定δ<1/2的(Aδ)承诺搜索在P≠NP下均不可能；应转向实际槽损失或可分离/可舍入的条件块强化，仍无统一新算法。文件入口完整路径为research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md、research/reviews/unrelated_machines/joint_matching_completion_review.md、tests/audits/unrelated_machines/{joint_matching_completion,unique_small_matching_audit,joint_matching_completion_independent}.py及evidence/runs/unrelated_machines/joint_matching_completion_audit.json；新候选必须同时攻击共享z、长链与一般多小端输入。
 
+新增失败路线见[固定工作量与中任务配置分解边界](../../questions/unrelated_machines/fixed_work_and_medium_config_barriers.md)：固定阈值的“配置 LP 加 tiny 槽损失”在 α<1/5 时退化为经典配置间隙；固定总工作量和固定非减凸分离势也会被私有昂贵叶族锁在近二。该页只排除所列合同，重开边与自适应共同势仍是开放方向。
+
 [生成树再耦合的五机反例](tree_markov_completion.md)进一步定位算法接口：即使pair来自真实全局最优分布，任意tree-Markov态冻结树任务后仍可能只可补到2T；一步迁移可修复此例，不排一般repair。状态见UM-TREE-MARKOV-COMPLETION-NO-v1及正文链接的独立审查/双路证据。
 
 ## 可恢复消元与共享容量一资源
@@ -124,8 +126,6 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 读取链：本题账本→正文§1合同/§2–5构造及位复杂度→rooted_dag_token_bridge_review.md→rooted_dag_token_bridge.py及独立审计→rooted_dag_token_bridge_audit.json。原始Bamas2025 v2字节与定义/脚注位置见manifest；一轮SA定理只核对陈述，未转成调度层级结论。
 
 新增派生UM-COORDINATE-REPAIR-ST-GAP-v1（循环批次正文cyclic_batch_repair_and_fork_obstruction.md§9）：与boss7真实最优凸包固定槽族衔接，工作量守恒使本逐坐标优化器仍0轮且gap→2。这个限制已覆盖配置来源；它不扩大fork关于one-destination、makespan非增的另一合同。下一机制必须允许低负载接收机上升并共同控制最大负载，不能把更强初始化单独当成循环算法的补丁。
-
-新增派生UM-COORDINATE-REPAIR-ST-GAP-v1（同稿§9）：与boss7真实最优凸包固定槽族衔接，工作量守恒使本逐坐标优化器仍0轮且gap→2。这个限制已覆盖配置来源；它不扩大fork关于one-destination、makespan非增的另一合同。下一机制必须允许低负载接收机上升并共同控制最大负载，不能把更强初始化单独当成循环算法的补丁。
 
 ## 固定最优边际断点与单边界批量恢复
 

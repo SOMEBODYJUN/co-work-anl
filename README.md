@@ -27,6 +27,8 @@
 
 [一般残余容量结构](research/current/unrelated_machines/residual_throughput_and_occupation_projection.md)进一步给出固定R的容量格次模与精确占位缺口D(I)=诱导边数。任务角色随大边选择变化时，联合目标不继承该性质；这明确了下一共同选择义务，不是一般近似或困难性突破。
 
+本阶段新增[固定工作量与中任务配置分解边界](research/questions/unrelated_machines/fixed_work_and_medium_config_barriers.md)：固定配置加 tiny 槽损失、固定总工作量和固定非减凸势的近二失败范围均已精确记录；它们只收窄方法路线，不改变 UM-TARGET-v1 的 OPEN 状态。
+
 ## 定义、命题、依赖与证据
 
 [研究总目录](research/README.md)按模型分流；[中文资产总目录](research/CATALOG.md)说明每个文件用途；[全仓精确命题](research/current/claims.md)、[五轴状态](research/review_status.json)、[文件合同](research/assets.json)和[关系图](research/index.html)分别管理身份、审查、位置和数学依赖。有限核验只作checks，不替代一般证明。原始来源沿[来源解释](research/source_crosswalk.md)追溯。
