@@ -62,7 +62,7 @@ u) 间隙不能排除一子终端的低需求树。
 
 规范审计 `tests/audits/unrelated_machines/three_dimensional_matching_demand_floor.py` 使用 `Fraction`：对 (q\le2) 的全部 (2^{q^3}) 个边集、(K=2,\ldots,6) 全枚举正评分根树；对 (q=3) 的空图、满图和 600 个固定种子随机边集，在 (K\in\{2,3,4,7\}) 上逐项核对 (1)；另对 (q=1,\ldots,4) 的完美匹配族核对 (b^*=2/K)。运行输出及 SHA-256 见 `evidence/runs/unrelated_machines/three_dimensional_matching_demand_floor_audit.json`。有限审计不是一般证明；(1) 的一般性来自上面的树结构论证。
 
-**Status。** 恒等式 (1) 为本稿范围内的自足引理，已做精确有限审计；新颖性、外部评审和主目标反面均未认证。保留的下一义务是：构造共享标签/一致性资源，使完整 YES 仍有 (b^*=1)，而每个 (b\ge\varepsilon/2) 的实际树都能解码源问题见证，并且对每个固定 (arepsilon) 保持位多项式规模。仅配置 gap、SA gap、固定舍入坏例或本稿恒等式都不足以完成该义务。
+**Status。** 恒等式 (1) 为本稿范围内的自足引理，已做精确有限审计；新颖性、外部评审和主目标反面均未认证。保留的下一义务是：构造共享标签/一致性资源，使完整 YES 仍有 (b^*=1)，而每个 (b\ge\varepsilon/2) 的实际树都能解码源问题见证，并且对每个固定 (\arepsilon) 保持位多项式规模。仅配置 gap、SA gap、固定舍入坏例或本稿恒等式都不足以完成该义务。
 
 相关文件：
 
