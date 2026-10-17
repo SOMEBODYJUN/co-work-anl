@@ -128,3 +128,5 @@
 [近单位promise的源困难性与物理复制义务](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)区分已证明的一般PCSP NP-hardness与仍OPEN的实际UM编译，不将source hard、ordinary non-delta或LPgap当近二反面。
 
 [三端任务正规形](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)保留UM-TARGET全部算法存在内容；[单位占位两见证胶合](research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)限制tiny裸presence复制。均非已完成主目标正反面。
+
+[列表agreement的精确源预算](research/current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)新增确定性线性地板及逐图锐全agree阈值；约束反面compiler的list accounting，非主目标结论。

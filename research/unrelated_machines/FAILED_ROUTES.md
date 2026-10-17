@@ -327,3 +327,7 @@ u_t) 的一般复杂度。
 [原生多端的双流与exact正规形](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)表明：每job至少2小端且small行≤k有实际五三；balanced k小端类strict阈值只剩unit匹配。真正全输入表达力可保在SU两端+unit-only三端，未变成可求解源。
 
 [两实际见证胶合](../current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)进一步排裸machine unit-presence的抗弱阈值复制：uniform给逐k锐B，任意tiny a<1/3给绝对<2。失败是把unit方向或局部onehot当可无损复制label；不排medium端、任务身份/外部联合状态。可回收exact normalform与actualgluing；重试要给完整低负载σ到source解码，不能只改更多原生端数。
+
+## 按component一次收费不能自动导出短list
+
+中等环/多label路径的导出补入只给总O(|B|)标签规模；每右点取两公共像原像已经能用≤2|B|标签使全部right agreement。[精确度数预算](../current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)还给确定性线性地板及每图锐的全agree阈值。失败步骤是把总预算当逐左list或逐right局部s_b；可回收参数检查，重试须给真实P中每新label多incidence费用/正确局部预算，不能只拉长cycle或增加code distance。未否定其它归约或主目标。

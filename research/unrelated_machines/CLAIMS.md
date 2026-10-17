@@ -2046,3 +2046,14 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Evidence / Counterevidence or Objections：真实先陈述独立重构、后读冻结全文；没有新通用生产实现；数学实际构造与实现状态分开。
 - Status：限定证明完整、内部攻击无standing fatal；implementation=none，外审/全球新颖性未认证。
 - Related Files：[自足正文](../current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)、[实际审查](../reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md)。
+
+## UM-LIST-AGREEMENT-DEGREE-BUDGET-v1：列表agreement的度数预算与逐图锐阈值
+
+- Exact Statement / Conclusion：确定性actual lists agr≥L(D−1)/(2d+L(D−1))；L≥ceil2d/D可整数流全agree，且此通用整数阈值在每固定图上有多项式地图锐例；低soundness须d/L≥(D−1)(1−alpha)/(2alpha)。
+- Objects / Domain / Quantifiers：显式simple (d,D)-biregular projection图，B非空、d≥1、D≥2、逐right公共像非空；binary L≥1，lists大小≤L。 对所有该输入；sharp地图一次排除全部低于阈值的L。
+- Definitions / Assumptions：agreement必须两个不同左邻居的列表像相等；局部公共像不等于全局YES；不假设原像互异，不量化平行incidence图。
+- Scope：源预算的确定性组合地板；全agreement整数阈值锐，不声称分数界锐；非LabelCover/UM困难性及非physical compiler。
+- Dependencies：显式对象、饱和ticket计数、标准整数二部流；Moshkovitz final仅为对接源定义和局部预算背景，不承重证明本结论。
+- Evidence / Counterevidence or Objections：true statement-first独立重构后全文读后攻击，无standing fatal；没有生产实现或有限实验代替证明；binary巨大L不按数值循环。
+- Status：限定证明完整、内部审查完成；implementation=none；外审与新颖性未认证，UM-TARGET仍OPEN。
+- Related Files：[自足正文](../current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)、[实际审查](../reviews/unrelated_machines/list_agreement_degree_budget_review.md)。

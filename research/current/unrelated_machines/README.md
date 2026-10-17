@@ -366,3 +366,5 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [任务正规形与native边界](near_unit_implication_pcsp_and_physical_copy_obligation.md)新增三个独立身份：多小端双流在small行≤k/每job至少2小端时实际≤5/3；二叉单位选择器在C<2b无损恢复原机负载，且normal class（SU两端+unit-only最多3端）与UM-TARGET的统一次二算法存在等价。没有提供该核心求解器或near2hardness。
 
 [两实际见证的单位占位胶合](unit_presence_two_witness_sharp_gluing.md)则给{1,1/k}逐k锐B(k)与任意tiny[0,a]的3(1+a)/2实际mixed分配；它只限裸presence复制，不排medium时间、任务身份或共同source解码。主目标正反面仍OPEN。
+
+[列表agreement度数预算](list_agreement_degree_budget_and_decoder.md)给实际agr≥L(D−1)/(2d+L(D−1))及全agree通用锐阈值ceil2d/D。总O(|B|)标签数不足以调用短list soundness；仍缺每新增label跨多incidence收费的真实任务机制，主反面OPEN。

@@ -687,6 +687,15 @@
 | [统一small单位占位胶合的原始完整推导](<../history/source/notes/unrelated_machines/uniform_presence_gluing_source.md>) | `history/source/notes/unrelated_machines/uniform_presence_gluing_source.md` | 原始匹配分量/virtual任务与逐k锐族；current自足重构并加入独立费用流。 内部原始字节，不是外部发表或新颖性认证。 | 来源或历史判断；不作为现行结论；关联 `UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1`，[命题合同](assets.json) |
 | [多尺度tiny单位占位胶合的独立原始推导](<../history/source/notes/unrelated_machines/tiny_presence_gluing_independent_source.md>) | `history/source/notes/unrelated_machines/tiny_presence_gluing_independent_source.md` | 只据新Exact独立重构的pair-slot费用流；current另以matching/weighted-pair证明完整一般结论。 内部原始字节，不是外部发表或新颖性认证。 | 来源或历史判断；不作为现行结论；关联 `UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1`，[命题合同](assets.json) |
 
+### list_degree_budget
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [列表agreement的度数预算与真实调度解码义务](<current/unrelated_machines/list_agreement_degree_budget_and_decoder.md>) | `research/current/unrelated_machines/list_agreement_degree_budget_and_decoder.md` | 读确定性线性地板、整数流全agree逐图锐阈值及soundness度数必要条件，勿把总component预算当硬度。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-LIST-AGREEMENT-DEGREE-BUDGET-v1`，[命题合同](assets.json) |
+| [列表度数预算的真实陈述先行与读后审查](<reviews/unrelated_machines/list_agreement_degree_budget_review.md>) | `research/reviews/unrelated_machines/list_agreement_degree_budget_review.md` | 核ticket/actual agr区分、不同邻居、binaryL、sharp地图及文献条件使用。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-LIST-AGREEMENT-DEGREE-BUDGET-v1`，[命题合同](assets.json) |
+| [列表度数预算的独立原始完整推导](<../history/source/notes/unrelated_machines/list_degree_budget_independent_source.md>) | `history/source/notes/unrelated_machines/list_degree_budget_independent_source.md` | 保留仅据Exact独立重构四条的实际字节；非外部论文或新颖性认证。 | 来源或历史判断；不作为现行结论；关联 `UM-LIST-AGREEMENT-DEGREE-BUDGET-v1`，[命题合同](assets.json) |
+| [Moshkovitz2015列表agreement与SetCover最终原文](<../history/source/literature/unrelated_machines/moshkovitz_2015_list_agreement_set_cover_final.pdf>) | `history/source/literature/unrelated_machines/moshkovitz_2015_list_agreement_set_cover_final.pdf` | 读印227–229定义/Cor4.8/Claim4.10，辨别polylog lists、素数幂右度及逐right预算；未宣称全文内化。 | 来源或历史判断；不作为现行结论；关联 `UM-LIST-AGREEMENT-DEGREE-BUDGET-v1`，[命题合同](assets.json) |
+
 <a id="weighted_congestion"></a>
 
 ## 加权原子拥塞博弈

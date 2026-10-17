@@ -116,3 +116,7 @@ Lok–Romero Morales–Vermeulen (2005)，[大学原PDF](https://cris.maastricht
 ## 近单位promise源的原始定理与普通扇出边界
 
 新增原件：BBKO arXiv1811.00970v3，73页，Def5.16/Prop5.17在PDF33/印33给strong C-fixing minion criterion；KKR arXiv1602.03124v6，33页，Thm7/8 PDF5/印0:5仅普通edge-CSP；Feder作者原PS12页，Theorems3–4印8–11的clauses/minimal-support/三坐标机制。root及独立审查实际读取相关范围，原字节/hash见manifest；未宣称重构所有外部证明。当前[自足PCSP正文](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)导入BBKO，另外两源只核ordinary→promise迁移不能免费成立。Feder期刊2001元数据与未注明日期的作者PS版本分开；不把转制PDF冒原件。
+
+## Moshkovitz2015最终版：短列表与逐右局部费用
+
+官方最终PDF已保真取得，SHA/bytes/pages见manifest，非会议版PGC条件稿。root及内部研究者实际核印227–229的Def4.5–4.6/Lem4.7、Cor4.8、Claim4.10。Cor给polylog左列表、固定素数幂右度的agreement源；Claim的局部s_b包含各incident左点全部已选标签，不能替换成一个组件一次收费。对应[源预算正文](../current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)独立证明线性地板及ceil2d/D全agreement锐阈值，未把文献定位当新hardness。

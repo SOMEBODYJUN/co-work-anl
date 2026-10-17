@@ -1136,6 +1136,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1 | 任意{1,1/k}原P，k≥2，给两完整actualσ≤1+1/k；两不同原机presence00/11，资格arity/行关联数不限。 任意两mixed真实sigma可位poly构造C≤B(k)=1+ceil((k+2)/2)/k；四机2k+6job族两mixed真OPT=B(k)。k2/3 B2，k≥4≤9/5，B≤3T/2。 | [正文](unrelated_machines/unit_presence_two_witness_sharp_gluing.md)、陈述先行及读后审查；implementation=none，主目标OPEN。 |
 | UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1 | 有限p属于{1}∪[0,a]，给有理0≤a<1、两完整actualσ≤T1+a、两测量00/11；无arity/行数/time-consistency限制。 任意两mixed actualσ可确定性总位poly构造≤3T/2；unit匹配+两选择加权半整化。a<1/3绝对<2；odd reciprocal a→0族恰3T/2，a1/3可恰2；不是每单独a逐参数锐。 | [正文](unrelated_machines/unit_presence_two_witness_sharp_gluing.md)、陈述先行及读后审查；implementation=none，主目标OPEN。 |
 
+| UM-LIST-AGREEMENT-DEGREE-BUDGET-v1 | 显式simple (d,D)-biregular projection图，B非空、d≥1、D≥2、逐right公共像非空；binary L≥1，lists大小≤L。 确定性actual lists agr≥L(D−1)/(2d+L(D−1))；L≥ceil2d/D可整数流全agree，且此通用整数阈值在每固定图上有多项式地图锐例；低soundness须d/L≥(D−1)(1−alpha)/(2alpha)。 | [正文](unrelated_machines/list_agreement_degree_budget_and_decoder.md)及实际独立审查；源预算非UM hardness，implementation=none。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

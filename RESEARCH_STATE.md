@@ -117,3 +117,5 @@ pDM阈值桥的[合入审查](research/reviews/unrelated_machines/pdm_threshold_
 [一般近单位promise源](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)的strong-fixing困难性已闭合，真实任务类型/全机负载/source decoder仍未闭合。两端三型与native多端one-hot/one-cold都是可研究接口；没有把two-occurrence或DAG设为主目标限制。
 
 [实际任务正规形](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)把全输入统一次二问题等价保在SU两端与三端unit onehot，并给完整<2b解码/零值未知OPT处理；[tiny两见证胶合](research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)使裸unit-presence复制在a<1/3有绝对<2逃逸。前者是表示/工具，后者是接口界，主目标及反面仍OPEN。
+
+[源列表度数预算](research/current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)经独立重构/读后攻击：agr≥L(D−1)/(2d+L(D−1))、all-agree阈值ceil2d/D逐图锐。当前反面仍缺能使每个新增label/component付多incidence费用的真实P；不以O(|B|)总list预算冒充可用source decoder。

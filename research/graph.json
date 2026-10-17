@@ -10325,6 +10325,29 @@
         "research/reviews/unrelated_machines/near_unit_implication_pcsp_review.md"
       ],
       "status": "finite audit passed; not general proof"
+    },
+    {
+      "id": "UM-EXPLICIT-LIST-AGREEMENT-DEGREE-MODEL",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "公共像简单正规源与逐左列表预算",
+      "detail": "显式simple (d,D)-biregular projection图，B非空、d≥1、D≥2、逐right公共像非空；binary L≥1，lists大小≤L。 agreement定义为两个不同左邻居映射像相等。",
+      "refs": [
+        "research/current/unrelated_machines/list_agreement_degree_budget_and_decoder.md"
+      ],
+      "status": "explicit stated-scope model"
+    },
+    {
+      "id": "UM-LIST-AGREEMENT-DEGREE-BUDGET-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "列表agreement线性地板与逐图锐全agree阈值",
+      "detail": "确定性actual lists agr≥L(D−1)/(2d+L(D−1))；L≥ceil2d/D可整数流全agree，且此通用整数阈值在每固定图上有多项式地图锐例；低soundness须d/L≥(D−1)(1−alpha)/(2alpha)。",
+      "refs": [
+        "research/current/unrelated_machines/list_agreement_degree_budget_and_decoder.md",
+        "research/reviews/unrelated_machines/list_agreement_degree_budget_review.md"
+      ],
+      "status": "complete stated-scope proof; statement-first and read-after internal review; no new implementation; target open; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -25322,6 +25345,36 @@
         "research/reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md"
       ],
       "status": "method-interface limit; no general hardness conclusion"
+    },
+    {
+      "id": "um_list_agreement_degree_budget_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-EXPLICIT-LIST-AGREEMENT-DEGREE-MODEL"
+      ],
+      "conclusion": "UM-LIST-AGREEMENT-DEGREE-BUDGET-v1",
+      "statement": "全部模型前提共同满足；ticket饱和计数和二部整数流给结论，锐地图另作显式构造。无source hardness/未知调度oracle。",
+      "refs": [
+        "research/current/unrelated_machines/list_agreement_degree_budget_and_decoder.md",
+        "research/reviews/unrelated_machines/list_agreement_degree_budget_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_list_agreement_component_decoder_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LIST-AGREEMENT-DEGREE-BUDGET-v1"
+      ],
+      "conclusion": "UM-NEAR-UNIT-PHYSICAL-COPY-OBLIGATION",
+      "statement": "每新label component只付1不能由总O(|B|)预算推出可用短list；须核d/L与soundness或逐right局部预算。此限制非一般UM困难性。",
+      "refs": [
+        "research/current/unrelated_machines/list_agreement_degree_budget_and_decoder.md",
+        "research/reviews/unrelated_machines/list_agreement_degree_budget_review.md"
+      ],
+      "status": "source-decoder accounting limit; physical compiler open"
     }
   ]
 }
