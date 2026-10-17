@@ -2,6 +2,13 @@
 
 主目标 `UM-TARGET-v1` 仍OPEN：尚无一般确定性位多项式统一(2−ε)调度算法。
 
+## 本轮方向审计：有序收敛但曾局部化（2026-10-17）
+
+独立审计结论见 [team_direction_audit.md](../reviews/unrelated_machines/team_direction_audit.md)：数学路线没有跑到无关问题，但多轮固定 `K/q/home/sink`、独立 probe、逐坐标 repair 和大规模枚举曾停留在局部合同层。它们已把共同缺口收窄为“任意 `P,T` 生成可计算共同容量状态并一次守住全机实际整数负载，或给 sound `FAIL => OPT>T`，同时保持统一余量与位多项式”；尚无路线闭合该全输入桥。
+
+最新 `UM-HEAVY-LIGHT-JOINT-RESIDUAL-MINMAX-v1` 目前只在 `research/questions/unrelated_machines/`，是候选障碍，未进入 canonical 图谱或当前正文；其 `\forall\lambda\exists h` 与 `\exists h\forall\lambda` 量词差异需先经独立攻击。后续保留自主并行，但每条路线绑定一个承重义务，由独立 blind red-team 攻击；连续两轮只增样本或同一局部机制而未减少该义务时，做 honest salvage 并换线。
+
+
 已有经典地基、原始文献和本轮[大边匹配残余及共享逃逸反例](../current/unrelated_machines/heavy_matching_residual_and_escape.md)。新限范围资产为：安全位多项式GHMR过滤器；简单机器支撑下仍有配置gap2；加入必经大边匹配虽识别原两树和路径占位瓶颈，但共享小端z使其首轮完全不删边、真实OPT/T仍趋2。详见[精确账本](CLAIMS.md)、[冻结独立审查](../reviews/unrelated_machines/heavy_matching_escape_review.md)。这些是新接口/反例，不是主目标的近似突破，全球新颖性未认证。
 
 真正瓶颈更精确为：单个星的最优撤离匹配忽略其余任务的小端负载，也没有一个同时满足所有机器残余容量的共同匹配。共享z族是新候选必须经过的攻击输入。下一高信息行动是构造跨星的条件容量切面或可求解耦合松弛，并检验其是否切掉整个逃逸族，而不只排除当前一份证书。整体选择大边整数匹配再接小边分数补全的接口也需检查其自身复杂度，不能当作免费oracle。

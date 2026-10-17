@@ -5,6 +5,7 @@
 新阶段边界见[长链替换与固定机器联合投影](long_path_coalition_gap.md)：经典gap可移到任意大围长的简单机器图；只共享单机边际的固定大小联合见证仍有sup gap2。完整多机交叠相容性不在该否定范围，且三机完整相容性已能解决这批树宽2反例。完整证明、独立攻击和有限核验分别登记，未声称原创算法或全球新颖性。
 
 先读[协作入口](../../unrelated_machines/README.md)与[精确账本](../../unrelated_machines/CLAIMS.md)，再读[模型、舍入与配置间隙的自足重构](model_and_classical_barriers.md)。[文献清单](../../unrelated_machines/literature_manifest.json)区分已取得原文、已核结果和待处理来源。[当前前沿](../../unrelated_machines/RESEARCH_STATE.md)说明下一步需要完成什么。
+本轮方向审计见[team_direction_audit.md](../../reviews/unrelated_machines/team_direction_audit.md)：已有资产主要关闭局部合同，任意输入的共同容量桥仍是唯一主轴。
 
 | 定义/Claim | 内容与真实状态 | 依赖和作用 |
 | --- | --- | --- |
