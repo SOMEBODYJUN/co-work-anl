@@ -178,8 +178,26 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 
 [新增共同退出合同](shared_sink_joint_macro_assignment.md#8-宏任务也可退出共同匹配而非冻结大小身份)：`UM-SHARED-SINK-MACRO-EXIT-v1`允许宏任务真实退出及宏数超过home数；`UM-BOUNDED-PROFILE-EXIT-POOL-v1`在显式完整pool且`a_zc_j≤p_zj≤ρa_zc_j, p_zj≤βT`时，共同选择全部宏与私有撤离，输出home≤T、pool≤`[ρ(1+η)+β]T`，OPT≤T必成功。sink数不固定。标准cover/匹配/加权总量恢复组合，已独立审查及两路Fraction核验；一般资格、跨home任务与结构提取仍未闭合，UM-TARGET-v1仍OPEN。
 
+## 反向困难性：有限覆盖不能免费提供可靠性
+
+[配置下界的有限覆盖实现](configuration_finite_cover_obstruction.md)给`UM-CONFIG-FINITE-COVER-v1`：任意置换cover保持T_CONF且整数OPT不增；某个cover甚至在任意预设高围长下恰达到T_CONF。这是标准图覆盖机制的调度重构，只限制“所有接线/仅高围长自动soundness”，不排精选接线或其他归约。读取正文→冻结审查→双路精确构造与真实证书；主目标及其反面仍未证明。下一义务是源相关YES/NO调度解码与位多项式规模，不能继续用局部gap代替。
+
 [共同资格组的联合流与未知OPT恢复](hall_group_joint_flow.md)：共同资格私有组现可在**sink数不固定**时共同选择macro/home/receiver：`UM-HALL-GROUP-JOINT-FLOW-v1`用每occupied组出口>T/q的Hall条件、一个整数流和真实前缀输出≤`q(2+δ)/(q+1)T`；`UM-HALL-GROUP-PROMISE-APPROX-v1`在同结构关于OPT的承诺下用有限瓶颈搜索直接输出相同比例OPT调度。q≥2、qδ<2，W_h∈[(1/2+1/q)T,T]、每私有件≤δT、同组共同资格与等端体积承重。q增长时改善可趋零；一般矩阵分组/跨home/异端时间转换仍未解。标准Hall/flow/prefix组合，未认证新颖性，UM-TARGET-v1保持OPEN。
 
 ## 全局分配矩的压缩算子与近平坦恢复
 
 [全局四阶矩正文](global_assignment_moment_rounding.md)给UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1与UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1：前者从给定共同证书的小全空间trace缺陷提取实际调度；后者用真实最优均匀分布攻击指定全空间HS贪心。读取链为精确CLAIMS→正文C₂/投影漏损/提取/反例→global_assignment_moment_rounding_review.md→nearflat_moment_extraction.py与独立代码→对应冻结结果及global_assignment_moment_freeze.json。通用证书生成未给出；不把初态零缺陷或Dirac矩存在误作一般算法。
+
+## 可解图结构上仍可出现配置间隙二
+
+[高围长仙人掌配置锐界与真实块算法](cactus_configuration_gap_and_block_exactness.md)分开三个身份：UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1使任意给定围长的simple cactus仍CONFIG supgap2；UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1以最大顶点块环秩b在2^b poly(L)输出精确调度；UM-PSEUDOFOREST-CONFIG-EXACT-v1仅在每连通分量≤单环时使CONFIG精确。平行任务不能合并计参。正文→冻结攻击→三份实际代码/输入/真实配置及调度证书/冻结结果可复现。AMO对称cactus与VW为已知祖先，未认证扩展新颖性。真正near2困难性不能只靠LPgap、深树或高围长；support≤2且b=O(log L)的输出族可精确解，仍须更强源相关一致性。主目标与反面均未证明。
+
+## 反面路线需要真正的整数一致性
+
+[私有需求树组合与共享重复](private_graft_and_resource_repetition.md)给UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1及UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1：私有递归只取瓶颈，完整YES保留时不能缩小固定NO比例；完全元素池等价分母受限分数匹配，parity源坐标张量所有t≥2反变YES。不是近2困难性，UM-TARGET-v1仍OPEN。
+
+读取链：专题CLAIMS→正文§1真正gap合同/§2–3恒等/§4–5反例→private_graft_repetition_review.md→三份规范/独立审计与private_graft_repetition_audit.json。不是所有共享或所有tensor归约的排除；一般低比例树到源NO矛盾的soundness仍缺。
+
+## 真实最优矩的固定阶向量贪心边界
+
+[固定阶压缩乘法向量贪心](truncated_multiplication_vector_greedy_barrier.md)证明 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1：一般真实T源上该规则合法且≤nT；对每固定r，有限域多项式真实最优源使任何任务顺序都严格选同一普通机器，近似比(n−1)/(4r+2)。故其最坏量级线性，即使给完整真实矩及容量局部化条件也如此。它不排真正条件化、重新构矩、容量反馈或其他算法；主目标仍OPEN。读取链为精确账本→正文§1–5→冻结审查→实际Gram/Fraction审计→q13输入与2197个最优源原子。有限高阶检查范围按冻结记录，全球新颖性未认证。

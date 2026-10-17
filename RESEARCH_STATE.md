@@ -9,7 +9,8 @@
 | 下界与共同容量 | 经典配置gap、长链、共享逃逸及独立条件配置见证仍有gap2；[准确范围](research/unrelated_machines/FAILED_ROUTES.md)分别记录 | 可计算的共同多机相关性或绕开这些接口的算法，不能把方法障碍当原题困难性 |
 | 实际舍入与迁移 | 真最优凸包点的固定槽和固定行包络仍可损失近2；若干显式族可跨槽或沿路径修复 | 一般输入的联合重选、允许接收机增载的共同守容，以及总位多项式进展 |
 | 可恢复消元 | 极小星有精确恢复；配置保持须外部互斥；一/双边界森林有实际任务菜单 | 多个菜单共同选择、嵌套/有环核心的可恢复兼容性 |
-| 条件矩与需求树 | [矩运输/重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)区分固定推前与同边际重求；[共同流](research/current/unrelated_machines/rooted_dag_congestion_flow.md)给定K证书可提取1/(2K−1)，固定W最小K可求 | 一般重新耦合、未知支撑W的共同选择；新守恒合同已给2^h精确树（h为非单位点数），一般指数仍在；激活边际不是求解器 |
+| 条件矩与需求树 | [矩运输/重新耦合](research/current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)区分固定推前与同边际重求；[共同流](research/current/unrelated_machines/rooted_dag_congestion_flow.md)给定K证书可提取1/(2K−1)，固定W最小K可求；[固定阶压缩向量贪心](research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)即使真最优矩也有严格顺序无关线性坏例 | 一般重新耦合、未知支撑W的共同选择；新守恒合同已给2^h精确树（h为非单位点数），一般指数仍在；激活边际不是求解器 |
+| 反面归约 | [私有组合/资源重复](research/current/unrelated_machines/private_graft_and_resource_repetition.md)有精确公式和NO变YES反例 | 对每固定ε的近2真实OPT gap、整数一致性soundness及合法输出规模，均尚未完成 |
 
 完整身份、正文、实际内部审查、代码和冻结证据沿[专题账本](research/unrelated_machines/CLAIMS.md)及数学地图读取。结构性结果、已知工具重构和新颖性判断分别记录，未认证统一算法或外部同行评审。
 
@@ -32,8 +33,12 @@
 
 新增共同退出合同：`UM-SHARED-SINK-MACRO-EXIT-v1`允许宏任务真实退出及宏数超过home数；`UM-BOUNDED-PROFILE-EXIT-POOL-v1`在显式完整pool且`a_zc_j≤p_zj≤ρa_zc_j, p_zj≤βT`时，共同选择全部宏与私有撤离，输出home≤T、pool≤`[ρ(1+η)+β]T`，OPT≤T必成功。sink数不固定。标准cover/匹配/加权总量恢复组合，已独立审查及两路Fraction核验；一般资格、跨home任务与结构提取仍未闭合，UM-TARGET-v1仍OPEN。
 
+[有限覆盖与反向困难性可靠性缺口](research/current/unrelated_machines/configuration_finite_cover_obstruction.md)已给标准机制的准确调度重构：即使高围长也存在整数OPT坍缩到配置阈值的cover；精选接线与一般困难性仍未排除，UM-TARGET-v1保持OPEN。
+
 共同资格私有组现可在**sink数不固定**时共同选择macro/home/receiver：`UM-HALL-GROUP-JOINT-FLOW-v1`用每occupied组出口>T/q的Hall条件、一个整数流和真实前缀输出≤`q(2+δ)/(q+1)T`；`UM-HALL-GROUP-PROMISE-APPROX-v1`在同结构关于OPT的承诺下用有限瓶颈搜索直接输出相同比例OPT调度。q≥2、qδ<2，W_h∈[(1/2+1/q)T,T]、每私有件≤δT、同组共同资格与等端体积承重。q增长时改善可趋零；一般矩阵分组/跨home/异端时间转换仍未解。标准Hall/flow/prefix组合，未认证新颖性，UM-TARGET-v1保持OPEN。
 
 ## 全局四阶分配矩的新增义务
 
 [共同C₂矩与近平坦提取](research/current/unrelated_machines/global_assignment_moment_rounding.md)把“有共同相关性”细化为可计算的投影缺陷δ：足够小δ时可位多项式输出实际(1+3δ)T。此证书是额外输入；真实最优均匀矩也能使无小δ保护的固定全空间HS贪心达到2OPT。下一承重义务是一般可生成的共同容量信息与大缺陷舍入，不能免费要求所有OPT≤T实例生成近乎精确证书。
+
+[高围长仙人掌的配置锐界与精确块算法](research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)表明simple cactus可同时有CONFIG supgap2和真实精确P；单环分量配置精确、最大顶点块环秩b给2^b poly算法。它们限制反面归约的结构，不证明一般目标不存在。

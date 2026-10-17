@@ -13,6 +13,8 @@
 
 [固定数量共享汇点的占位基交换与三半调度](current/unrelated_machines/fixed_sink_occupation_rounding.md)给三个分离身份：UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1允许任意K但仅界定2K个分数组；UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1在固定K的给定阈值下输出实际≤3T/2；UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1用含OPT的大宏promise及非单调one-sided整数二分给真正≤3OPT/2。唯一home/给定分组和固定K仍承重，通用LP软件未实现，新颖性未认证。一般主目标下一缺口是不受限的接收容量与跨home/跨尺寸任务身份，UM-TARGET-v1仍OPEN。
 
+[反面路线的递归与共享复制边界](current/unrelated_machines/private_graft_and_resource_repetition.md)及其冻结独立审查区分方法障碍与真正近2计算困难性；现有主目标状态不变。
+
 ## 各模型分别读取
 
 | 模型 | 权威入口 | 状态与范围 |
@@ -36,3 +38,5 @@
 ## 全局四阶矩与实际提取接口
 
 [全局分配矩正文](current/unrelated_machines/global_assignment_moment_rounding.md)连到显式证书合同、近平坦有理提取、真实最优分布HS反例、冻结审查和双路精确代码。经典平坦来源与新定量推导分开；一般生成/大缺陷舍入未解决，UM-TARGET-v1仍OPEN。
+
+[真实最优矩上的固定阶压缩向量贪心](current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)有严格、任务顺序无关的线性最坏界；它给出实际提取规则的限制，与矩是否来自真实最优分布分开。按精确身份 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1、冻结审查和双路核验读取，一般目标仍OPEN。
