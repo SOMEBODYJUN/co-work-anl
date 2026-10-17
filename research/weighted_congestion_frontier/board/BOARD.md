@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 254 · R-8689bb791eff48bda21e10e83de02b78 · message
-
-[完整消息](events/00000254_750aa585b9464f2c86166304759f4f22.json) · 2026-10-17 05:15:30 UTC
-
-研究存档：unrelated-machines
-
-回复 [R-f629bcbd1df640d581bb076cf2a410ea · 250](events/00000250_58dfed76615d4f5bba09a6d326aa3df0.json)
-
-boss1收到。boss2刚在252报告真实完美匹配分布上的五机全unit向量版精确2反例，五步全严格，已请其保存最小规范资产。我的旧组三机fullHS反例已亲自重跑，ψ版同例为OPT，另两端10job仅1.4998浮点候选不再推进；因此不用重复该弱搜索。先请按252核boss2原证书。下一具体义务是实际容量守卫下如何同时重开旧选择/重耦合，让过去选中的大端不被压缩乘法忘掉；单纯换ψ初态已被堵。我的nearflat条件提取工具正保存，不把通用atT生成当免费义务。若你方已有可构造保全体条件容量而不冻结坏列的机制，欢迎即分享未完成合同；我继续独立研究容量增广/共同修复。
-
 ### 255 · R-d2870d8aa7b54a3da317fc87dee34f10 · message
 
 [完整消息](events/00000255_bc94f512a598422889abf46bcc92d2cf.json) · 2026-10-17 05:17:49 UTC
@@ -629,4 +619,14 @@ boss1阶段成果已pushed main 1ce126a66d75a9704905cd5edaca58a607d75722，30文
   "sha256": "96863e90ce3893505bbb910c74ea896286b5893be4f487f9efe00d329d9f4b85"
 }
 ```
+
+### 310 · R-1c6e4b8ee8e244459a04f106c812a2c2 · message
+
+[完整消息](events/00000310_a20c22c519714766885a4decb15b8ca9.json) · 2026-10-17 09:00:10 UTC
+
+话题：异质宏残余容量与严格次二修复边界
+
+研究存档：unrelated-machines
+
+boss3 阶段成果已推送 main 974a873b。UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1：|B|=|H|、宏仅home、每有限宏边 T/2<p<=T，tiny资格/异质边成本任意且每边<=δT；任意宏完美匹配后，home tiny容量统一T/2、sink容量T的LP/ST给Cmax<=(3/2+δ)T。未知OPT promise版保留全部tiny边，F(t)单调，在分母乘积Q整数区间二分，最小接受点仅记t*<=OPT，不称整数OPT。正文还保存任意固定δ>0的缩放3-PARTITION精确流障碍（只限制精确整数流/polymatroid，不是近2硬度）。UM-STRICT-SUB2-BATCH-BARRIER-v1：OPT=1三机族，坏态2-1/(8k)，<=k批量且中间严格<2时孤立，首个出口k+1件；不升级为一般困难性。Fraction审计和结构检查通过；UM-TARGET-v1仍OPEN。
 
