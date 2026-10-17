@@ -1051,6 +1051,25 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-RESIDUAL-THROUGHPUT-LATTICE-v1 | 对固定有限 M,R,E 与非负有理处理时间 p，容量函数 F 在数学上对 c,d∈R_+^M 满足格次模与单调性；当 c,d 为带输入位长的有理向量时，F 可由有理 LP 在输入总位长多项式时间精确求值。固定占位扣减给 F(I) 非增次模、D(I) 超模；角色随 H 变时不继承，2×2 真实 OPT=1/2 反例给 V=2,1,1,2。 | [正文](unrelated_machines/residual_throughput_and_occupation_projection.md)、[审查](../reviews/unrelated_machines/residual_throughput_occupation_review.md)；不提供一般 joint 恢复。 |
 | UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1 | ∀固定有理1≤α<2、固定有理δ>0、任意显式非空simple图，poly(|G|)构造OPT=1、同尺寸≤δ tiny与任机unit宏，全部α可行图机占位投影恰IS(G)，且D(I)=|E(G[I])|。 | [正文](unrelated_machines/residual_throughput_and_occupation_projection.md)、[审查](../reviews/unrelated_machines/residual_throughput_occupation_review.md)；非uniform bit(α,δ)构造、非UM困难性，原调度可直接最优解。 |
 
+
+## UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1：两状态残余树的 two-rail quota orientation 表示
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1 | 对满足状态内资源不交的两状态残余DAG和固定 \(\delta\in(0,1]\)，存在根树 \(b(H)\ge\delta\) 当且仅当存在至少 \(\lceil\delta q_r\rceil\) 个变量的rail选择，并为每个选中标签注入 \(\lceil\delta K\rceil\) 个互不重复资源。 | \(\delta=1\) 且全资源支付时退化为2-SAT禁冲突；\(\delta<1\) 是允许部分资源支付的quota packing。该等价不提供一般近二困难性。 [正文](unrelated_machines/two_state_quota_orientation_obligation.md)。 |
+
+## UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1：任意密度完整单位树的固定高度次二近似
+
+| ID | Exact scope / conclusion | Proof and state |
+| --- | --- | --- |
+| UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1 | 任意clause密度的私有双k叉深h单位读出完整模型，可确定性按显式输入总位长poly输出全部原jobs的合法σ，C≤(1+2^(−1/h))OPT；h≤固定H时统一严格小于2，h1给3/2。算法不求未知OPT；b0分支证明OPT2并全parent达到；空变量先返0。 | [正文](unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)、[实际审查](../reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md)；限定完成，内审/实现通过，外审与新颖性未认证 |
+
+## UM-UNIT-READOUT-SELECTOR-MIXING-v1：完整YES支持的指定selector重组锐界
+
+| ID | Exact scope / conclusion | Proof and state |
+| --- | --- | --- |
+| UM-UNIT-READOUT-SELECTOR-MIXING-v1 | 同一P给p≥1份完整实际C≤1调度，每变量指定一个至少在一见证采用过的selector sign；非空另需N=k^h≥p。可按P加全部见证位长poly输出满足全部指定根的完整σ，C≤2−1/(2p−1)。大k取r=floor(k/p)，小k取r1；p1直接原YES。对每p该指定profile保证精确锐，而原全局OPT1。 | [正文](unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)、[实际审查](../reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md)；限定完成，内审/实现通过，外审与新颖性未认证 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

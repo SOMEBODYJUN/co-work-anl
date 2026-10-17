@@ -1598,7 +1598,7 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 
 ## UM-RESIDUAL-THROUGHPUT-LATTICE-v1：任意异端时间的容量格次模
 
-- Exact Statement / Quantifiers：∀固定有限M,R,E及非负有理p_ij，F(c)=max{Σx:任务质量≤1、机器处理量≤c、x≥0}对全部c,d≥0满足F(c)+F(d)≥F(c∨d)+F(c∧d)，且非减。F可由显式有理LP总位多项式精确求值；F(c)=|R|恰为完整共同分数路由。
+- Exact Statement / Quantifiers：对固定有限 M,R,E 与非负有理处理时间 p，F(c)=max{Σx:任务质量≤1、机器处理量≤c、x≥0} 在数学上对实容量向量 c,d∈R_+^M 满足 F(c)+F(d)≥F(c∨d)+F(c∧d)，且非减；当 c,d 为带输入位长的有理向量时，F 可由显式有理 LP 在总输入位长多项式时间精确求值。F可由显式有理LP总位多项式精确求值；F(c)=|R|恰为完整共同分数路由。
 - Objects / Domain / Definitions：未允许边无变量；R可空、可有无light端任务；零时间、零容量允许。F只计分数任务质量，不把合法输出改成可拆调度。
 - Assumptions / Scope：同一个R,E,p冻结；固定C_i≥a_i≥0时c_i(I)=C_i−a_i1_I给非增次模F(I)、非减超模D(I)=|R|−F(I)。每个有零light端任务可免费删除加回，但不保另一个物理关机模型的原子问题值。
 - Conclusion / Mechanism：dual混合格封闭(u∧v,a∨b)/(u∨v,a∧b)与逐坐标费用重排；完整通过量须精确达到任务数，近似总量不强制逐任务完成。固定状态失败证书不排除其他H。
@@ -1610,7 +1610,7 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 
 ## UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1：严格次二占位的诱导边缺口恒等式
 
-- Exact Statement / Quantifiers：∀固定有理1≤α<2和固定有理δ>0，∃确定性算法，对每个非空显式有限simple图G，在图位长poly时间构造2N机、N个任机单位宏及同尺寸h≤δ的tiny实例，给显式OPT1调度；∀I⊆V，α容量完整调度的图机宏占位投影恰所有独立集。固定全部tiny为R、图机残余c_i(I)=α−1_I时，精确D(I)=|R|−F_R(c(I))=|E(G[I])|。
+- Exact Statement / Quantifiers：∀固定有理1≤α<2和固定有理δ>0，∃确定性算法，对每个非空显式有限simple图G，在图位长poly时间构造2N机、N个任机单位宏及同尺寸h≤δ的tiny实例，给显式 OPT=1 调度；∀I⊆V，α容量完整调度的图机宏占位投影恰所有独立集。固定全部tiny为R、图机残余c_i(I)=α−1_I时，精确D(I)=|R|−F_R(c(I))=|E(G[I])|。
 - Objects / Domain / Definitions：α=A/B既约，Δ=maxdeg；q=2B max{1,ceil[1/(2Bδ)],ceil[Δ/(2B(2−α))]}，h=1/q，r=q(α−1)整数。每图机r件专属tiny，每图边一件双端tiny；N辅助机不接tiny，全部宏资格为所有2N机。α与δ不是原实例OPT输入承诺。
 - Assumptions / Scope：固定α、δ时才声称输出规模poly(|G|)；不声称bit(α)+bit(δ)统一poly。N≥1；宏单位和α<2使每机至多一个宏。tiny允许全部等端同尺寸、每件至多两选。
 - Conclusion / Mechanism：宏全辅助给OPT1；I专属+内部边只能用I，剩余容量恰专属任务总量，至少缺诱导边数；弃内部边、其余向未占位端定向达到。故Hall完成族可精确为任意图独立集族；星图排除固定p-extendibility，但不是调度路径能垒。
@@ -1619,6 +1619,44 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：每个生成的原实例都直接可最优解，不能把投影选择升级为UM困难性；改变宏必须进图或减少辅助机是新合同。αδ二进制极值会使显式tiny数大，未误报统一位poly。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified。只关闭免费拟阵/固定交换界的状态识别；一般主目标仍OPEN，新颖性/论文价值未认证。
 - Related Files：`research/current/unrelated_machines/residual_throughput_and_occupation_projection.md`；`research/reviews/unrelated_machines/residual_throughput_occupation_review.md`；`tests/audits/unrelated_machines/occupation_induced_edge_deficit.py`；`evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json`。
+
+
+## UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1：两状态残余树的 two-rail quota orientation 表示
+
+- **Exact Statement：** 固定 \(\delta\in(0,1]\) 时，状态内资源不交的两状态残余树满足 \(b(H)\ge\delta\) 当且仅当存在至少 \(\lceil\delta q_r\rceil\) 个变量的rail选择、每个标签至少 \(\lceil\delta K\rceil\) 个资源槽且所有资源像互不交。
+- **Mathematical role：** 完整支付层是2-SAT禁冲突；部分支付层是带方向约束的quota packing，正是两状态近二soundness的最小对象。
+- **Status：** complete stated-scope equivalence proof; external review and novelty unverified。
+- **Related Files：** `research/current/unrelated_machines/two_state_quota_orientation_obligation.md`。
+
+## UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1：任意密度完整单位树的固定高度次二近似
+
+- Exact Statement：任意clause密度的私有双k叉深h单位读出完整模型，可确定性按显式输入总位长poly输出全部原jobs的合法σ，C≤(1+2^(−1/h))OPT；h≤固定H时统一严格小于2，h1给3/2。算法不求未知OPT；b0分支证明OPT2并全parent达到；空变量先返0。
+- Objects / Definitions：正文§1的全部mandatory双轨原任务、私有树、unit clauses、实际不可拆分σ；第二合同的完整YES和固定根如§3。
+- Domain：全部显式单位双树、任意arity与binary A；h,k≥1；原资格无pins/额外jobs。
+- Quantifiers：∀本结构类输入；固定H时∀h≤H给统一正常数；h无界不保统一ε。
+- Assumptions：原资格恰声明成本与共同unit资格；全部叶路径显式；第二合同所有见证属于同一P/共同容量。
+- Scope：限定结构类或给定真实完整见证，不是一般UM算法或近二NP-hardness；一般目标及其反面OPEN。
+- Conclusion / Mechanism：最大共同真实叶流b→多数sign→r=k−floor((k^h−ceil(b/2))^(1/h))的真实祖先子树；只删同一flow叶保共同容量；最优r*给b≥r*^h，导数给因子。
+- Dependencies：UM-MODEL-v1；UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1；UM-UNIT-READOUT-GLOBAL-LEAF-FLOW-v1；UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1；UM-PRUNED-TREE-LEAF-HITTING-v1；经典流/Hall/ST工具明确扣除，不认证新颖性。
+- Evidence：两合同分别先陈述独立重构，冻结正文425af66全文双审与root亲核；两个规范实际构造CLI、独立p1..4完整原P/σ及有限回算见Related Files。
+- Counterevidence / Objections：h无界余量趋0；N<p有真实指定profileOPT2反例；旧64open不许免费补祖先；NO源可能无任何完整YES，不能越界应用重组；锐profile值非全局OPT。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实际构造已实现；外审、全球新颖性和独立论文价值未认证。
+- Related Files：`research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md`；`research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md`；`evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json`；`examples/unrelated_machines/unit_readout_selector_mixing_sharp_profiles.json`；`tests/audits/unrelated_machines/unit_readout_leaf_flow.py`。
+
+## UM-UNIT-READOUT-SELECTOR-MIXING-v1：完整YES支持的指定selector重组锐界
+
+- Exact Statement：同一P给p≥1份完整实际C≤1调度，每变量指定一个至少在一见证采用过的selector sign；非空另需N=k^h≥p。可按P加全部见证位长poly输出满足全部指定根的完整σ，C≤2−1/(2p−1)。大k取r=floor(k/p)，小k取r1；p1直接原YES。对每p该指定profile保证精确锐，而原全局OPT1。
+- Objects / Definitions：正文§1的全部mandatory双轨原任务、私有树、unit clauses、实际不可拆分σ；第二合同的完整YES和固定根如§3。
+- Domain：同私有单位双树原模型；给定完整YES/指定根，不含额外pins；空变量0。
+- Quantifiers：∀p及同一P的完整真实见证、∀covered坐标profile；非空需N≥p；不声称寻找见证。
+- Assumptions：原资格恰声明成本与共同unit资格；全部叶路径显式；第二合同所有见证属于同一P/共同容量。
+- Scope：限定结构类或给定真实完整见证，不是一般UM算法或近二NP-hardness；一般目标及其反面OPEN。
+- Conclusion / Mechanism：完整YES强制所选轨全外送，指定轨arity d*≤pA；只指定轨建x0=1计数槽，另一轨固定parent；共同Hall保指定根和所有机器。
+- Dependencies：UM-MODEL-v1；UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1；UM-UNIT-READOUT-COMPLETE-YES-COVER-v1；UM-UNIT-READOUT-CALIBRATED-SLOT-v1；经典流/Hall/ST工具明确扣除，不认证新颖性。
+- Evidence：两合同分别先陈述独立重构，冻结正文425af66全文双审与root亲核；两个规范实际构造CLI、独立p1..4完整原P/σ及有限回算见Related Files。
+- Counterevidence / Objections：h无界余量趋0；N<p有真实指定profileOPT2反例；旧64open不许免费补祖先；NO源可能无任何完整YES，不能越界应用重组；锐profile值非全局OPT。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实际构造已实现；外审、全球新颖性和独立论文价值未认证。
+- Related Files：`research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md`；`research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md`；`evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json`；`examples/unrelated_machines/unit_readout_selector_mixing_sharp_profiles.json`；`tests/audits/unrelated_machines/unit_readout_selector_mixing.py`；`tests/audits/unrelated_machines/unit_readout_selector_profile_independent.py`。
 
 ## UM-MEDIUM-CONFIG-TINY-BARRIER-v1：固定阈值中任务配置分解的近二边界
 
