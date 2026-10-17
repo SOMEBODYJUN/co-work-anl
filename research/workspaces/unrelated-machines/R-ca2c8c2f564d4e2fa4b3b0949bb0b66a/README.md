@@ -54,3 +54,5 @@
 [列表agreement度数预算](../../../current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)给实际agr≥L(D−1)/(2d+L(D−1))及全agree通用锐阈值ceil2d/D。总O(|B|)标签数不足以调用短list soundness；仍缺每新增label跨多incidence收费的真实任务机制，主反面OPEN。
 
 [部分MinRep源](../../../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)得到部分覆盖合同的线性degree及同阶必要性；不再以logg费用为必要前置，继续寻找实际固定F编译器，未得主目标反证。
+
+[坐标切片完整失败机制](../../../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)已核actualOPT1+1/D、source-padding和双射CONFIG证书；停止加深此坐标表示，转cross-walk/非unique局部SAT视图的真实一致性。

@@ -333,3 +333,5 @@ u_t) 的一般复杂度。
 中等环/多label路径的导出补入只给总O(|B|)标签规模；每右点取两公共像原像已经能用≤2|B|标签使全部right agreement。[精确度数预算](../current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)还给确定性线性地板及每图锐的全agree阈值。失败步骤是把总预算当逐左list或逐right局部s_b；可回收参数检查，重试须给真实P中每新label多incidence费用/正确局部预算，不能只拉长cycle或增加code distance。未否定其它归约或主目标。
 
 源预算本身的logg障碍已被[线性degree源](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)绕过：更低原cover配rare上尾，而非普通常数尾界。但把source度数改成O(g)没有实现实际首label费用；旧component一次收费、拉长cycle或code distance仍须逐job核c/F。重试条件为真实π接口、constant-fraction trigger及固定费的完整P；未否定其它归约。
+
+[坐标切片编译](../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)的fatal为每对手坐标只删一个值，全树仍D−1叉。已给完整P、NO精确OPT1+1/D、保源NO的private-output padding，以及双射/均匀纤维/CONFIG1反例。只否定该叶共享与坐标顺序，非一般q或UM；重试须改变实际跨test耦合。

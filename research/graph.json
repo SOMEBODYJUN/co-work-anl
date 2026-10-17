@@ -10384,6 +10384,42 @@
         "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
       ],
       "status": "complete stated-scope source proof; independent Exact-first and read-after internal review; fixed-parameter randomized source only; no UM compiler; novelty unverified"
+    },
+    {
+      "id": "UM-Q-COORDINATE-SLICE-EXPLICIT-COMPILATION-MODEL",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "完整坐标切片与私有树port实例",
+      "detail": "simple平衡Dregular全投影源、D≥3、共同Q≥2；明确坐标slice叶/完整树port矩阵；显式展开。padding和随机双射族各按正文附加参数。",
+      "refs": [
+        "research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md"
+      ],
+      "status": "explicit model with actual machines and all jobs"
+    },
+    {
+      "id": "UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "坐标切片的精确阈值及双射源逃逸",
+      "detail": "strictP≤1 iff fullLC；linear-degree cheap-list NO显式家却OPT=1+1/D；proper-color private-output padding保NO仍低C；随机conditioned-bijection族至少1/2概率同NO，每seed Tconfig1/实际C≤1+1/D，好NO整数OPT精确。",
+      "refs": [
+        "research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "complete stated-scope compilation counterexample and exact threshold; statement-first/read-after internal review; finite physical/config audit only; target open; novelty unverified"
+    },
+    {
+      "id": "UM-Q-COORDINATE-SLICE-SMALL-PHYSICAL-CONFIG-CHECK",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "十七小矩阵的实际分配与配置证书核验",
+      "detail": "16个D2Q3条件permutation表及1个D3Q4；全部实际sigma和CONFIG用Fraction逐job/逐机核。参数不满足概率NO常数，不核NO或OPT。",
+      "refs": [
+        "research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md",
+        "tests/audits/unrelated_machines/coordinate_slice_physical_configuration_audit.py",
+        "evidence/runs/unrelated_machines/coordinate_slice_physical_configuration_audit.json"
+      ],
+      "status": "finite physical/config index check only"
     }
   ],
   "hyperedges": [
@@ -25442,6 +25478,52 @@
         "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
       ],
       "status": "conditional decoder budget; actual compiler open"
+    },
+    {
+      "id": "um_q_coordinate_slice_compilation_counterexample_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-Q-COORDINATE-SLICE-EXPLICIT-COMPILATION-MODEL"
+      ],
+      "conclusion": "UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4",
+      "statement": "明确模型、singleton propagation、token计数/proper coloring、rare-tail并界及双射资源计数共同给所有限定结论；不导入PCP硬度。",
+      "refs": [
+        "research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "um_q_coordinate_slice_compilation_small_checks",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-Q-COORDINATE-SLICE-SMALL-PHYSICAL-CONFIG-CHECK"
+      ],
+      "conclusion": "UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4",
+      "statement": "仅核十七小参数的完整原任务实际负载、CONFIG索引与覆盖，不验证概率NO/源困难性/一般最优值。",
+      "refs": [
+        "research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md",
+        "tests/audits/unrelated_machines/coordinate_slice_physical_configuration_audit.py",
+        "evidence/runs/unrelated_machines/coordinate_slice_physical_configuration_audit.json"
+      ],
+      "status": "finite checks; not general proof"
+    },
+    {
+      "id": "um_q_coordinate_slice_compilation_source_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4"
+      ],
+      "conclusion": "UM-NEAR-UNIT-PHYSICAL-COPY-OBLIGATION",
+      "statement": "源低覆盖、公共像、双射/均匀纤维及CONFIG1不能独自修复此坐标slice的weak decoder；须改变真实共享结构/叶排列或补跨test一致性。",
+      "refs": [
+        "research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "specific compiler obstruction; general target open"
     }
   ]
 }

@@ -370,3 +370,5 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [列表agreement度数预算](list_agreement_degree_budget_and_decoder.md)给实际agr≥L(D−1)/(2d+L(D−1))及全agree通用锐阈值ceil2d/D。总O(|B|)标签数不足以调用短list soundness；仍缺每新增label跨多incidence收费的真实任务机制，主反面OPEN。
 
 [部分MinRep线性度数源](partial_minrep_linear_degree_source_and_fee_bridge.md)用更强原soundness与rare covered上尾得到Δ=O_rho(g)，同覆盖禁令必需Ω(g)度数。它把充分物理费从logg降为固定常数；实际P、constant-fraction trigger、原投影decoder和fee仍未构造，随机归约采用NP不包含BPP，主反面OPEN。
+
+[坐标切片编译反例](coordinate_slice_source_compilation_counterexample.md)给strictP1 iff完美源及NO实际OPT恰1+1/D；保promise padding仍低C，双射/均匀纤维和CONFIG1也不能修复。需真正跨test一致性/新叶共享，未得一般q或UM困难性。

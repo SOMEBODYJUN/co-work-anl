@@ -163,3 +163,5 @@
 ## 逐行均匀平层读出不能仅靠跨测试相关压低支付
 
 尝试用同一源标签控制许多测试来挽回独立局部guard的soundness。对simple、逐复合行均匀、每right资源数等于其degree的准确合同，整数碰撞势加一次全局匹配总能保每点ceil-half，flat原sigma≤3/2。因此共享标签本身不够。可回收的是实际共同标签/资源算法；重试需非均匀行、有效多重请求、跨资源组耦合或多层祖先约束，并重证全部机器与源解码。删除假设的反例仅否定绝对负载延伸，不否定更大类另一三二近似。见[正文](research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md)。
+
+[坐标切片源编译](research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)可逐对手坐标只删一个值而保D−1叉；源partial-MinRep NO甚至双射/CONFIG1不补weak decoder。保留精确阈值与padding工具，重试需真实跨test/不同共享结构。

@@ -112,3 +112,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 新增 UM-LIST-AGREEMENT-DEGREE-BUDGET-v1；[专题账本](research/unrelated_machines/CLAIMS.md)记录实际list构造、全agree逐图锐阈值和source soundness必要度数，不是调度hardness。
 
 新增 UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2；[专题账本](research/unrelated_machines/CLAIMS.md)明确rare-tail源、Ω(g)必要性及未实现的固定常数物理费，非一般UM hardness。
+
+新增 UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4，只登记整合最终版本；[专题账本](research/unrelated_machines/CLAIMS.md)给完整实际P、精确单位阈值及保source promise反例，不升级一般hardness。

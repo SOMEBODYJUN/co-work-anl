@@ -1,6 +1,6 @@
 # 私有分叉树估值、包络与支持LP的实际独立攻击
 
-审查对象：UM-PRIVATE-TREE-Q-VALUATION-v1、UM-TREE-Q-XOS-ENVELOPE-v1、UM-TREE-Q-MINORANT-LP-v1。完整精确陈述和自足证明见[现行正文](../../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)。本记录是内部审查，不是外审或新颖性认证。
+审查对象：下列分版本记录的私有 q 估值、支持 LP 各项，以及追加的坐标切片编译反例。原各项完整陈述和证明见[私有树正文](../../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)，新增完整实际 P 反例见[坐标编译正文](../../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)。本记录是内部审查，不是外审或新颖性认证。
 
 ## 冻结顺序与实际读取
 
@@ -36,3 +36,32 @@
 六项身份在各自范围内成立；不是六个一般UM结果。最深层的源gap/弱调度解码仍为未完成义务。真值、实现、外审、新颖性继续分轴记录。
 
 最终整合正文SHA256 `e26b2b805d635380bd05e1b7a45a0bea9e6e9ed681cb91b3b4680f68154cf467` 由GLOBAL-XOS/单阈值原审查者实际读取相关新增段并核旧代码及冻结证据hash不变；没有冒审其未负责的图hardness。原三项与图Claim另由前述审查者核至3a56512版本；之后仅修两处导航并追加已另审的单阈值合同，不改变其证明。
+
+## 坐标切片的精确阈值、padding及双射反例：v4追加审查
+
+本节只覆盖 `UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4`，不改变上面各项旧证明。一个候选随新增结论依次冻结v1–v4，最终仅登记v4，不将中间版本复制成独立结果树。
+
+### 实际先陈述与读后次序
+
+- v1 Exact SHA256 `2d889e2109657bffda860acbad4ce64accd06fd207d47c96fa803647fc15b6a8`，原字节见 [初始陈述](../../../history/source/notes/unrelated_machines/coordinate_slice_initial_exact_source.md)。作者先有证明并向root披露，因此root不记作零信息盲审。另一研究者只读Exact，自足重构A–D后冻结 `31b04eafa400809d69db35fa2dcad0dfde7f590895855e351bbf44e4c1733714`，见 [初始独立稿](../../../history/source/notes/unrelated_machines/coordinate_slice_initial_independent_source.md)。随后才读作者完整证明 `24dc6c82f4203b02afd02be8c8c4ffe22d23ccd9ac21ca1e0a8dd00045fbfc5a`，读后稿 `d1590ac6f0a3204cabb7cadca5a4bed55f312efbb04b6d177b5f51da5e7f7bf1`，无fatal。root亲自逐边重构、逐机核全部任务。
+- v2 Exact增补 `6f547983c9bdb112db07d17e0a246ea2ef57c3f72919f440c6f4141995623abf`，见 [原字节](../../../history/source/notes/unrelated_machines/coordinate_slice_exact_threshold_addendum_source.md)。root独立新增strict iff及网格精确OPT，未先给证明。两位研究者分别冻结重构 `b2deacd4830bdf64b7671de2ba4280936c1104ffada4f12e95ae050de32644fc`、`9b46c05a7153ed902237e96f9f5083c34a20543487d144c42259e44609c99fb5`，才读root证明 `50672b829eb28d7f0c301c9dbe1d42fc541fb1e1a7905a17e0ddc1eaed2d3fb8`。v1“固定D从而固定rho”的措辞不严已修为固定满足条件的g、rho、D，不改变数学。
+- v3 Exact增补 `8abe3bf7eb704ad41acfffae69ed0f0fd1eb1a824fb9b0216698815c455331d7`，见 [padding陈述](../../../history/source/notes/unrelated_machines/coordinate_slice_private_output_padding_exact_source.md)。root和一位已读思路的研究者不称盲审。另两位只据Exact分别冻结 `c8cda1833f77407c110dca959795e9080d6e24e2791aeb1a8a8d8ba49be896c4`（[完整独立稿](../../../history/source/notes/unrelated_machines/coordinate_slice_padding_independent_source.md)）和 `6b9bdaecfdd5e86385bcbc9bd5d7667b6c6ca16fda7f77bb597b57631ae78217`；之后才读root proof `c41120d402cf022abff01beb838f81ce974a68ea622ec29ad1a84a1873fae5e8`。读后回执 `6995df185e55ac74848b2e343c73e90ade5467cccb09dc653ac1c3c5c7d2bd72`、`b48a5ea2b56843976b77a247cc83a2824d5f995c14d5ffbb2aeaba1daaacea0e` 均无fatal。v3 canonical `835e6a15c0be10ffcf14847b071c31076aaa5a2efbb8e8e8e3723d64958943fd` 另实际全文读后确认。
+- v4独立作者先冻Exact `dfe2def5608363c3615f1d2eb7085e6b30598196f746b112e9fc28f5e52ef7f5`，见 [双射陈述](../../../history/source/notes/unrelated_machines/coordinate_slice_bijection_exact_source.md)。两位未看作者/root新证明的研究者只据Exact分别冻重构 `53aab5e16266c8b8d8b335906bb1272493025728ef4c03b2f1b4b44aa5823346`（[第一独立稿](../../../history/source/notes/unrelated_machines/coordinate_slice_bijection_independent_source.md)）和 `77d6670e58f2689b0644160e968eddc02e2cf982072ed80e87b8d346e1f0a8f5`（[第二独立稿](../../../history/source/notes/unrelated_machines/coordinate_slice_bijection_second_independent_source.md)）。后者仅读v4就自足重构共同P及strict iff，未读v1 proof。
+- v4作者proof `fe099722b7e9fe110ce471925ab9ca3a35b1d9b4d57aff5164436157dbf9fc44` 与root另冻的GF/配置proof `49eb8841c737e69ed09d804f3964a8e072553333ca2bee9cfbdcf9630fffe976` 使用不同计数常数。root见过作者思路，独立推导冻结在实际读作者全文前，不冒称Exact盲审。第一位随后实际读两稿，读后回执 `177345f2de7e679f1c3a068ac5a19023abff159d1f35a6e20110d3cebe910ec7`，无fatal。
+- 最终canonical SHA256 `c0fc1e637c6cac96c4809bfa7e27113f8383556a8301037501ddcfe8891cfacc`，由v1/v3独立审查者和v4第一位Exact-first审查者分别实际核hash并全文读后；均确认无承重誊写遗漏。第二位v4审查者随后实际读作者proof及finalcanonical的H–K/共同P/strict iff，读后回执SHA256 `0b71b6a4a23ce23756b323fde15c1bfddfcc36a0d00f9ce14ddf29d26c705a10`，无fatal；明确不冒审未负责的v3 padding或代码。root随后也全文读作者proof，复核不同列表计数/尾界和全部配置覆盖，无尚成立异议。
+
+### 承重攻击与否定范围
+
+simple、Dregular、公共字母表、完整坐标顺序和逐state单射均按定义核对。port下传当且仅当子边在所选根子树；未选节点不存在单位入边，其全部D个小任务留父恰1，不能只算active树。strict≤1的归纳不假设其他states为空；不同投影坐标的两完整切片必交，故反向确给fullLC。网格只把已经证明的OPT>1升为≥1+1/D，未用有限最优求解。
+
+padding颜色是坐标**名**，right邻居index才是坐标**值**；所有新左符号都走新投影行。proper coloring使每个新右token至多收费一边；parallel会破坏这步，未免费使用cover重接来消parallel。padding统一位poly不使后续D^Q树展开变uniformpoly。
+
+双射H的NO同时量化全部cheap lists，ordinary覆盖跨edge独立；planted0覆盖单独充右token。root生成函数与两位独立者的不同列表计数/尾界均闭合。每seed的实际C上界与CONFIG1，goodNO的精确OPT，以及H仅概率存在性三层不混。每个资源恰Q枚eligible叶port靠双射计数，并非默认每neighbor只有一枚；这正是J证书的关键。
+
+### 实际代码与有限核验
+
+独立小审计 [代码](../../../tests/audits/unrelated_machines/coordinate_slice_physical_configuration_audit.py) SHA256 `4b68ff34425627028be293ee597774d76aa30aeee3529648633f49643ece89fd`；root全文读后原字节复制、亲自复跑，stdout解析后与作者冻结输出完全一致。[新冻结输出](../../../evidence/runs/unrelated_machines/coordinate_slice_physical_configuration_audit.json) SHA256 `3d5203005914cf8f1432f48b3d9d4ba7f985d435d8b155dc33a464150d297619`。
+
+核了全部16个D2Q3 conditioned permutation arrays（各58机86任务132配置）与1个D3Q4（723机1443任务1932配置）。逐任务有限边、实际sigma全部机器、每个真实配置负载、每job覆盖恰1、每机配置权恰1均用Fraction检查。它们不满足H的NO常数；没有检验cheap-list NO、没有运行原OPT oracle，不把3/2或4/3的显式sigma值称为这些小例精确OPT。
+
+本节限定证明与实际内审完成，implementation=audit_only；没有新增随机源NO判别器或一般UM算法。外审/新颖性未认证；该编译失败不否定一般q-hardness或UM-TARGET-v1。

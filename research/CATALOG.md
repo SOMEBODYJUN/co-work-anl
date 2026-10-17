@@ -645,7 +645,7 @@
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
 | [私有分叉树估值、XOS包络与紧凑支持域](<current/unrelated_machines/private_tree_branching_valuation_and_minorants.md>) | `research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md` | 读取真实分叉的signed需求、全局锐XOS支持、单state紧凑LP与多state全支持域计算障碍；严格区分指定集合包络易解。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1`、`UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1`、`UM-PRIVATE-TREE-Q-VALUATION-v1`，[命题合同（共 6 项）](assets.json) |
-| [私有树估值三合同的陈述先行独立攻击](<reviews/unrelated_machines/private_tree_branching_valuation_review.md>) | `research/reviews/unrelated_machines/private_tree_branching_valuation_review.md` | 核先陈述后证明、signed价格、树编码、LP双向投影及实际实现范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1`、`UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1`、`UM-PRIVATE-TREE-Q-VALUATION-v1`，[命题合同（共 6 项）](assets.json) |
+| [私有树估值三合同的陈述先行独立攻击](<reviews/unrelated_machines/private_tree_branching_valuation_review.md>) | `research/reviews/unrelated_machines/private_tree_branching_valuation_review.md` | 核先陈述后证明、signed价格、树编码、LP双向投影及实际实现范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1`、`UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1`、`UM-PRIVATE-TREE-Q-VALUATION-v1`，[命题合同（共 7 项）](assets.json) |
 | [私有分叉估值的精确构造器与独立有限核验](<../tests/audits/unrelated_machines/private_tree_branching_valuation.py>) | `tests/audits/unrelated_machines/private_tree_branching_valuation.py` | 实现value/demand/分离、紧凑LP数据；枚举只审计有限例。 | 有限计算核验；不代替一般证明；关联 `UM-PRIVATE-TREE-Q-VALUATION-v1`、`UM-TREE-Q-MINORANT-LP-v1`、`UM-TREE-Q-XOS-ENVELOPE-v1`，[命题合同](assets.json) |
 | [私有分叉树需求与支持证书的冻结核验](<../evidence/runs/unrelated_machines/private_tree_branching_valuation_audit.json>) | `evidence/runs/unrelated_machines/private_tree_branching_valuation_audit.json` | 保留真实子树、最小blocking集合及单状态LP辅助证书；非generic优化运行。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-PRIVATE-TREE-Q-VALUATION-v1`、`UM-TREE-Q-MINORANT-LP-v1`、`UM-TREE-Q-XOS-ENVELOPE-v1`，[命题合同](assets.json) |
 | [私有树分叉、signed需求与blocking小例](<../examples/unrelated_machines/private_tree_branching_valuation_examples.json>) | `examples/unrelated_machines/private_tree_branching_valuation_examples.json` | 读取明确输入和实际资源/子树输出，复用生产查询格式。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-PRIVATE-TREE-Q-VALUATION-v1`、`UM-TREE-Q-MINORANT-LP-v1`、`UM-TREE-Q-XOS-ENVELOPE-v1`，[命题合同](assets.json) |
@@ -705,6 +705,14 @@
 | [Dinur–Steurer2014投影平行重复作者原文](<../history/source/literature/unrelated_machines/dinur_steurer_2014_parallel_repetition_author.pdf>) | `history/source/literature/unrelated_machines/dinur_steurer_2014_parallel_repetition_author.pdf` | 读Theorem1.1及固定常数源重复，支持poly误差字母表而不假设PGC。 | 来源或历史判断；不作为现行结论；关联 `UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2`，[命题合同](assets.json) |
 | [Manurangsi MinRep度数与gap原始arXiv字节](<../history/source/literature/unrelated_machines/manurangsi_minrep_degree_1807_00936v1.pdf>) | `history/source/literature/unrelated_machines/manurangsi_minrep_degree_1807_00936v1.pdf` | 读Lemma7和§3完整采样/trimming证明，分辨已有O(glogg)框架与新参数。 | 来源或历史判断；不作为现行结论；关联 `UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2`，[命题合同](assets.json) |
 | [Minzer–Zheng2026字母表与soundness修订原文](<../history/source/literature/unrelated_machines/minzer_zheng_2026_alphabet_soundness_eccc_revision1.pdf>) | `history/source/literature/unrelated_machines/minzer_zheng_2026_alphabet_soundness_eccc_revision1.pdf` | 读§7.4/Lem7.12/Thm7.13的近最优字母表与O(glogg)度数，核准确最近比较。 | 来源或历史判断；不作为现行结论；关联 `UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2`，[命题合同](assets.json) |
+
+### coordinate_slice_compilation
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [坐标切片的精确单位阈值与双射源反例](<current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md>) | `research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md` | 读完整P、保promise padding、双射NO存在及CONFIG1证书，定位逐坐标删值逃逸而非UM反证。 | 方法障碍；否定范围以正文为准；关联 `UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4`，[命题合同](assets.json) |
+| [坐标切片原矩阵与配置覆盖的独立小例核验](<../tests/audits/unrelated_machines/coordinate_slice_physical_configuration_audit.py>) | `tests/audits/unrelated_machines/coordinate_slice_physical_configuration_audit.py` | 复核十七小矩阵逐job实际负载/CONFIG覆盖，勿作为大参数概率NO或OPT证明。 | 有限计算核验；不代替一般证明；关联 `UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4`，[命题合同](assets.json) |
+| [坐标切片十七小矩阵的冻结结构核验](<../evidence/runs/unrelated_machines/coordinate_slice_physical_configuration_audit.json>) | `evidence/runs/unrelated_machines/coordinate_slice_physical_configuration_audit.json` | 查看root亲跑一致的actual/config计数与hash，不用于源NO或精确OPT验证。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4`，[命题合同](assets.json) |
 
 <a id="weighted_congestion"></a>
 

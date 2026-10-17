@@ -1140,6 +1140,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2 | 显式平衡D-regular全投影游戏，平行约束逐条计；binary g≥2、0<rho≤1，N≥2，Q≥2；cost为全部顶点列表总大小。 给定val≤rho³/(10^9g^8)，随机位poly删边使最大度Δ=1000ceil(1000gλ/(rho floorlog2g))；好NO非空且全部cost≤gN列表cover<rho，概率≥0.9；perfect YES每seed保留。固定参数PCP下Q=poly_rho(g)、Δ=O_rho(g)，同覆盖禁令必需Δmax>(2g−1)/rho。 | [正文](unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)及实际独立审查；源和固定费用条件，非UM hardness；implementation=none。 |
 
+| UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4 | simple平衡Dregular全投影源、D≥3、共同Q≥2；明确坐标slice叶/完整树port矩阵；显式展开。padding和随机双射族各按正文附加参数。 strictP≤1 iff fullLC；linear-degree cheap-list NO显式家却OPT=1+1/D；proper-color private-output padding保NO仍低C；随机conditioned-bijection族至少1/2概率同NO，每seed Tconfig1/实际C≤1+1/D，好NO整数OPT精确。 | [正文](unrelated_machines/coordinate_slice_source_compilation_counterexample.md)与分版本实际审查；有限I/J检查不验证NO/OPT；audit_only，非一般UM结论。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

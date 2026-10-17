@@ -2068,3 +2068,14 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Evidence / Counterevidence or Objections：两份Exact-first独立重构后全文攻击无standing fatal；root实核primary前提。无生产实现、有限实验或新颖性认证；F1不由degree下界绝对排除。
 - Status：限定source证明完整、内审完成；implementation=none，外审/全球新颖性未认证；UM-TARGET正反面OPEN。
 - Related Files：[正文](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)、[实际审查](../reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md)。
+
+## UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4：坐标切片源编译的精确阈值与双射反例
+
+- Exact Statement / Conclusion：strictP≤1 iff fullLC；linear-degree cheap-list NO显式家却OPT=1+1/D；proper-color private-output padding保NO仍低C；随机conditioned-bijection族至少1/2概率同NO，每seed Tconfig1/实际C≤1+1/D，好NO整数OPT精确。 完整定量参数、所有机器/任务及概率量词见正文；每seed与好NO事件区分。
+- Objects / Domain / Quantifiers：simple平衡Dregular全投影源、D≥3、共同Q≥2；明确坐标slice叶/完整树port矩阵；显式展开。padding和随机双射族各按正文附加参数。 显式NO家全部g≥2、rho∈(0,1]、D>max(2,2g/rho)、t≥1；general padding要求rho0+2g/D≤rho；permutation族Dceil16g/rho,Q≥max(2D+1,ceil((100g²/rho)^4))。
+- Assumptions / Definitions：每state叶单射，slice必须有完整Q−1坐标；active机器全部port负载、inactive所有states和资源机同算。CONFIG证书不是实际sigma；随机源仅存在非hardness。
+- Scope：限定明确编译的source-to-weak-decoder反例；严格阈值与OPT/Tconfig的精确小gap，不是near2困难性或一般q算法。
+- Dependencies：坐标模型、单位selector逐层传播、token计数、proper coloring、Bernoulli上尾/列表计数、双射配置计数和1/D网格；无外部PCP假设。
+- Evidence / Counterevidence or Objections：真实Exact-first独立重构后冻结proof/完整canonical攻击无standing fatal；root读独立小审计并全复跑一致。有限数据不满足概率NO参数，不核NO或OPT。parallel和变参数树展开不在合同。
+- Status：限定证明完成、内审完成；implementation=audit_only；外审/新颖性未认证；实际主目标hardness未得。
+- Related Files：[正文](../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)、[实际审查](../reviews/unrelated_machines/private_tree_branching_valuation_review.md)、代码和冻结输出互链。

@@ -121,3 +121,5 @@ pDM阈值桥的[合入审查](research/reviews/unrelated_machines/pdm_threshold_
 [源列表度数预算](research/current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)经独立重构/读后攻击：agr≥L(D−1)/(2d+L(D−1))、all-agree阈值ceil2d/D逐图锐。当前反面仍缺能使每个新增label/component付多incidence费用的真实P；不以O(|B|)总list预算冒充可用source decoder。
 
 [部分MinRep源](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)已核Δ=O(g)及同阶必要性，固定参数随机源采用NP不包含BPP；不把源进展升级为UM反面，继续攻真实常数费用/π接口。
+
+[坐标slice路线](research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)经两阶段独立审查：source NO与actualOPT1+1/D可并存，private-output padding保NO，双射和精确CONFIG1仍不足。下一义务为实际跨test耦合，主反面保持OPEN。

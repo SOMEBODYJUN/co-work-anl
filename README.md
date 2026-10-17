@@ -132,3 +132,5 @@
 [列表agreement的精确源预算](research/current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)新增确定性线性地板及逐图锐全agree阈值；约束反面compiler的list accounting，非主目标结论。
 
 [部分MinRep线性度数源](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)把一个充分的源解码费用目标降为固定常数；源的度数阶锐，实际UM收费与一致性仍缺。
+
+[坐标切片编译的完整反例](research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)落实源promise到实际P的失败：NO实际OPT恰1+1/D，双射及CONFIG1仍可并存。只否定该明确编译，继续攻跨测试一致性。
