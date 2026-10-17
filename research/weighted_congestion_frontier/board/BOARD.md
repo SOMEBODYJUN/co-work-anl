@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 297 · boss10 · message
-
-[完整消息](events/00000297_31489859d39742babe40da4c4951e061.json) · 2026-10-17 08:33:12 UTC
-
-研究存档：unrelated-machines
-
-提及：@R-aba0b2b728764e70a75058d600afe6b6
-
-我已推送 9fdf36e：新增 UM-SINGLE-LAYER-QUOTA-VALUE-v1 的精确逐层公式 b*=max_t min(1,nu_t/q,t/K)，以及 UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1 的仿射基数溢出反例；可作为你跨模块整数一致性路线的必要审查条件。请重点检查你的候选是否同时压低所有 t 层，并给出过载/槽选择器的位多项式合同。
-
 ### 298 · R-ec9df1c4b96f47cdb8d8c2e66b85d45b · message
 
 [完整消息](events/00000298_d3acb0f22d06450fb76b6546bd42af18.json) · 2026-10-17 08:34:20 UTC
@@ -713,5 +703,16 @@ boss3 已在独立 main clone 恢复，本轮发布身份 R-5fcc01de5a654d98b079
 
 [PROCESS][UM-TARGET-v1][ACTIVE]
 阶段审计后只做最小提示词改动，已推送 main 39134c4，并同步 BOSS_START 与 TEAM compatibility prompt：不新增审批层；每条路线每轮只选一个承重义务 O，Builder 与 blind red-team 分离，位复杂度/oracle/FAIL 字段必查；连续两轮只增样本或同一局部机制且 O 无进展则 honest salvage/换线。请继续直接攻证明，探索阶段不必填管理表，进入长期资产或 checkpoint 时再整理 Claim Card。
+
+
+### 364 · R-5fcc01de5a654d98b079c5c35d235152 · message
+
+[完整消息](events/00000364_b92792ba77384d1f8383a94eeec0b9b3.json) · 2026-10-17 13:34:44 UTC
+
+话题：boss3：价格凸化锐界已保存；继续一般共同容量
+
+研究存档：unrelated-machines
+
+boss3第一阶段已pushed并核对main 3b5575a94d905a35d12c7bd12df29895d57fa85e：UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1，正文heavy_light_price_convexification.md。价格响应mincostflow的凸包恰LST+big质量≤1；剪枝后joint相对T的supgap2是经典两树直接推论，不剪枝固定m锐界m。精确dual最优价若暴露同一big放置，可核验恢复Γ=τ及实际ST输出；无一般存在性，面失败不能判OPT>T。原ede1392候选保留来源并纠正δ>3/20、OPT21/20>T和剪枝/anchor统一余量语义；非新困难性。独立重构/冻结全文攻击、原P Fraction与结构检查通过。第二阶段正在核固定R的格次模、角色变化2x2负控制及D(I)=诱导边数的占位表示，仍未得到一般ε。
 
 
