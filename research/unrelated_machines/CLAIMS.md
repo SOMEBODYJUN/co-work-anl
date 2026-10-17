@@ -1035,3 +1035,86 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：若只给C2-load伪矩，A未必为真实函数代数，CE与V2 localizer仍是proof obligations；从普通调度输入寻找真实矩也未解决。
 - Status：complete stated-scope proof; internal independent reconstruction pending; external review and novelty unverified; UM-TARGET-v1 OPEN。
 - Related Files：`research/questions/unrelated_machines/barrier_escape_obligations.md`；`research/current/unrelated_machines/global_assignment_moment_rounding.md`。
+## UM-RATIO-GROUP-JOINT-SLOT-v1：组—汇点比例处理时间的联合槽候选
+
+- Exact Statement / Quantifiers：显式不交 home/sink、宏任务与唯一home私有组；组内任务只在 home 或共同资格 sink 集可用，home 时间为 w_j，且每个组—sink 对存在任务无关有理比例 ρ_hz 使 sink 时间 p_zj=ρ_hz w_j；给定 T、0≤δ<1/2，若 W_h≤T、w_j≤δT、所有有限宏端>T/2，则确定性位多项式算法返回 FAIL 或实际调度，home≤(3/2+δ)T、sink≤(1+ρ_max/2)T，且 OPT≤T 时必成功。
+- Objects / Domain / Definitions：UM-MODEL-v1；组—sink 比例、d_h=(W_h−T/2)_+、成本 c_hz=ρ_hz d_h 及联合宏/home/sink槽流按候选正文定义。
+- Assumptions / Scope：唯一home、共同资格、宏大边仍承重；比例条件需逐边核验。固定 δ≤δ̄<1/2 与 ρ_max≤ρ̄<2 时给 α=max(3/2+δ̄,1+ρ̄/2)<2；ρ_max 仅逐实例小于2不产生统一 ε。不是一般 UM 算法。
+- Conclusion：候选正面结构接口；等端处理时间的加权组是 ρ_hz=1 特例。未知OPT承诺版本另记 UM-RATIO-GROUP-PROMISE-APPROX-v1。
+- Dependencies：UM-MODEL-v1、UM-WEIGHTED-GROUP-JOINT-SLOT-v1；标准有理LP、带成本排序的有序槽和整数流。
+- Evidence：内部两路独立重构；Fraction 随机前缀与槽收费边界核验；候选正文给必要性、联合流、真实前缀、未知OPT网格和位复杂度。
+- Counterevidence / Objections：尚待正式冻结审查；去掉精确比例时必要LP可错误拒绝（仅有上界 q≤ρw 不足）；分组生成、跨home任务和一般矩阵转换仍未解决。
+- Status：candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified。
+- Related Files：research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md；对应承诺版本同文件§1；与 weighted_group_joint_slot_rounding.md 的关系见候选§6。
+
+## UM-RATIO-GROUP-PROMISE-APPROX-v1：组—汇点比例结构的未知OPT候选
+
+- Exact Statement / Quantifiers：同一比例组结构，不给 OPT；承诺在 OPT 处 W_h≤OPT、w_j≤δOPT、所有有限宏端>OPT/2，且 δ≤δ̄<1/2、ρ_max≤ρ̄<2 固定。确定性位多项式算法输出实际调度，Cmax≤max(3/2+δ̄,1+ρ̄/2)OPT，含空任务与 OPT=0。
+- Objects / Domain / Definitions：同上；阈值测试使用原处理时间分母乘积网格和单调比例成本LP。
+- Assumptions / Scope：结构承诺不是一般输入可免费识别或生成；候选状态，不替代 UM-TARGET-v1。
+- Conclusion：条件类统一低于2的承诺算法候选，固定 ε=min(1/2−δ̄,1−ρ̄/2)。
+- Dependencies：UM-RATIO-GROUP-JOINT-SLOT-v1、UM-WEIGHTED-GROUP-PROMISE-APPROX-v1。
+- Evidence：同一候选正文§1、§5；尚无独立冻结审查。
+- Counterevidence / Objections：比例核验和单调网格端点需形式化复核；ρ/δ逼近边界时统一余量消失。
+- Status：candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified。
+- Related Files：research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md。
+
+## UM-C2-PREFIX-CONDITIONING-DEGREE-v1：四阶 C₂ 与深层真前缀容量的锐利信息边界
+
+- Exact Statement / Quantifiers：存在同一一般 UM 处理时间矩阵、两份真实 `OPT=T=2` 调度分布 `μ_even,μ_odd`，使全部相容 one-hot 矩 `y_S`（`|S|≤4`）及其 C₂-load/localizer 数据完全相同，但某个相容深度四前缀 `F` 的下一步条件 B 负载分别为0与1；判别所需条目是五阶矩。
+- Objects / Domain / Definitions：one-hot 调度分布、四阶 C₂-load、条件平均负载按 [c2_prefix_conditioning_degree_boundary.md](../current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md) 定义；含7任务、3机器、零时间前缀边与两台机器上的3/2边，并有独立C机器的强制2任务。
+- Assumptions / Scope：这是表示信息边界，不是复杂度下界或 C₂ 整体 integrality gap；分布显式存在且两份都是真实 OPT=T 调度。
+- Conclusion：仅给四阶矩不能免费反复条件化到深度4；深度 t 的完整条件 C₂ 通常需 t+4 阶或等价条件 oracle。
+- Dependencies：UM-MODEL-v1；标准 one-hot 矩与条件化恒等式。
+- Evidence：偶/奇五位 parity 的32态精确枚举，`y_F=1/16`，五阶续接项分别0与1/16；Python Fraction/整数核验见阶段记录。
+- Counterevidence / Objections：只否定“低阶矩自动给深层 prefix 容量”的合同；不排高阶证书、重算残余矩、自适应舍入或一般 UM 算法。
+- Status：complete stated-scope proof; internally exactly enumerated; external review and novelty unverified。
+- Related Files：research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md。
+
+## UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1：全占用同宏下任意逐件资格的精确流候选
+
+- Exact Statement / Quantifiers：机器分成 homes H 与 sinks Z；每组私有任务 J_h 只能在其 home 或任意逐件资格集合 E_j⊆Z 上运行，所有有限端处理时间都是同一全局量子 u>0；恰 |H| 个宏任务在所有 home 上可用且处理时间相同 p>T/2。给定有理 T，令 r=floor((T−p)/u)、q=floor(T/u)、k_h=max(0,|J_h|−r)。一个带下界整数流在 h→j→z 资格网络中可行，当且仅当存在 makespan≤T 调度；流恢复实际完整分配，FAIL 等价于该结构类在 T 下不可行。
+- Objects / Domain / Definitions：UM-MODEL-v1；固定全占用宏位置、逐件 E_j、等量子 u、home/sink下界流，按候选正文定义。
+- Assumptions / Scope：全局同量子、|B|=|H|、宏 complete 且共同 p 是承重条件；允许 E_j 任意交叠、空集或完全不共同。不是一般 UM 算法。
+- Conclusion：给定阈值的确定性位多项式精确可行性/实际调度候选；相比共同资格组，去掉共同出口资格但牺牲宏占位和任务尺寸异质。
+- Dependencies：UM-MODEL-v1、标准带上下界整数流和有理 floor。
+- Evidence：独立流证明与 3000 个随机小实例的穷举资格/容量核验；未完成正式冻结审查。
+- Counterevidence / Objections：u 异质后变成加权容量/二箱选择；宏资格或宏时长异质会重新耦合占位与外送流；未知OPT只在承诺 OPT<2p 的home固定宏时长类中记录。
+- Status：candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified。
+- Related Files：research/questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md。
+
+## UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1：home固定宏时长承诺下的未知OPT精确搜索候选
+
+- Exact Statement / Quantifiers：同一全局量子/逐件资格/全占用home固定宏时长结构，不给 OPT，承诺 OPT<2p（等价 p>OPT/2）。在临界集合 `{p+ku}∪{ku}` 上测试带下界资格流，得到最小可行阈值并输出精确 OPT 调度；含 u=0、空资格和空任务边界。
+- Objects / Domain / Definitions：同上；阈值单调且 floor 断点显式多项式。
+- Assumptions / Scope：承诺识别和结构生成不属于算法；若 promise 不成立只报告域外，不作一般实例结论。
+- Conclusion：该受限类的未知OPT实际调度候选比率1。
+- Dependencies：UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1。
+- Evidence：候选正文未知OPT段；形式断点和位复杂度待冻结代码核验。
+- Counterevidence / Objections：宏时长异质、u异质或宏数不等于home数时不适用；外审/新颖性未认证。
+- Status：candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified。
+- Related Files：research/questions/unrelated_machines/equal_quantum_arbitrary_eligibility_flow_candidate.md。
+
+## UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1：同质大宏占位下任意逐件资格的 ST 候选
+
+- Exact Statement / Quantifiers：机器分为 homes H 与 sinks Z；宏集 B 满足 |B|=|H|，只在 H 可用；对每个home h所有有限宏边时间同为 P_h>T/2，宏边图有完美匹配；私有任务任意逐件资格 A_j⊆H∪Z，且每条有限私有边 p_ij≤δT。固定任意宏完美匹配，私有 LST LP 在home h容量 T−P_h、sink容量T上经ST舍入得到完整调度，所有机器≤(1+δ)T；若OPT≤T，LP必可行。
+- Objects / Domain / Definitions：UM-MODEL-v1；home固定宏时长占位、任意私有边、剪枝LST/ST按候选正文定义。
+- Assumptions / Scope：宏数等于home数、每个home宏端同一P_h>T/2及私有统一小边δT承重；不要求唯一home、共同资格或等端tiny。是标准ST机制的结构重构，不是一般算法。
+- Conclusion：候选结构类给定T的 (1+δ) 实际调度；未知OPT承诺版本另记。
+- Dependencies：UM-MODEL-v1、UM-ST-ROUND-v1、标准有理LP及二分图完美匹配。
+- Evidence：证明草稿；独立内部重构确认宏固定占位和私有LP/ST界，尚未正式冻结审查或端到端实现。
+- Counterevidence / Objections：宏时长/数量异质会重新耦合匹配与残余容量；私有边大于δT则无统一小加性项；一般输入不提供该分层。
+- Status：candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified。
+- Related Files：research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md。
+
+## UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1：home固定宏时长承诺下的未知OPT候选
+
+- Exact Statement / Quantifiers：同上结构不给OPT，承诺真实OPT处每个home P_h>OPT/2 且所有私有有限边≤δOPT，固定δ≤δ̄<1。按有理分母网格单调测试宏匹配与私有LP，得到 t*≤OPT 的实际调度，Cmax≤(1+δ̄)OPT。
+- Objects / Domain / Definitions：同上；测试删去 p_ij>t 的私有边，home容量 t−P_h 与 sink容量 t 随t单调。
+- Assumptions / Scope：承诺结构不是一般输入识别；候选不替代UM-TARGET-v1。
+- Conclusion：该结构类未知OPT实际调度候选统一比率1+δ̄。
+- Dependencies：UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1。
+- Evidence：候选正文§2给网格、加性误差δOPT和位复杂度；正式断点审查待完成。
+- Counterevidence / Objections：若δ仅逐实例<1则没有统一ε；宏占位异质时不适用。
+- Status：candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified。
+- Related Files：research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md。

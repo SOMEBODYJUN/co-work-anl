@@ -217,3 +217,11 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 ## 加权共同组的新增正面接口
 
 [共同资格私有组的加权出口与联合槽](weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。
+
+## 新候选：组—汇点比例处理时间
+
+问题账本新增 `UM-RATIO-GROUP-JOINT-SLOT-v1` 与 `UM-RATIO-GROUP-PROMISE-APPROX-v1` 候选。它把 `weighted_group_joint_slot_rounding.md` 的“组内所有有限端时间相同”放宽为：对每个组 `h` 和共同资格 sink `z`，存在任务无关比例 `ρ_hz`，使 `p_zj=ρ_hz w_j`。按 `c_hz=ρ_hz(W_h−T/2)_+` 排序造槽并与宏/home容量一次整数流，可得 home≤`(3/2+δ)T`、sink≤`(1+ρ_max/2)T`；固定 `δ<1/2, ρ_max<2` 才有结构类统一低于2。候选正文、必要性、未知OPT单调网格和待审义务见 [组—汇点比例联合槽候选](../../questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md)。分组生成、唯一home和共同资格仍未从一般矩阵中可计算提取，`UM-TARGET-v1`保持OPEN。
+
+## 更宽的固定宏占位候选
+
+`UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1` 把私有任务资格放宽到任意逐件集合 `A_j⊆H∪Z`，并允许每条私有边有不同处理时间，只要求≤`δT`；承重条件改为 `|B|=|H|`、宏只在 home、每个 home 的宏边时间固定为 `P_h>T/2` 且宏图有完美匹配。任取宏完美匹配后，私有 LST LP 的 home 容量 `T−P_h` 与匹配无关，ST 舍入给 `(1+δ)T` 候选。承诺 `P_h>OPT/2`、私有边≤`δOPT` 时，网格搜索给未知 OPT 的 `(1+δ̄)` 候选。该接口是标准 LST/ST 的结构重构，未认证新颖性；宏身份相关时长、宏数不等于 home 数或大私有边会重新产生联合容量义务。正文见 [同质大宏任意私有边候选](../../questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md)。

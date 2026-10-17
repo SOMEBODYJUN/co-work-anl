@@ -166,3 +166,14 @@
 ## 加权共同组的新增正面接口
 
 [共同资格私有组的加权出口与联合槽](../current/unrelated_machines/weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。
+
+### 新增候选与表示边界
+
+- `UM-RATIO-GROUP-JOINT-SLOT-v1` / `UM-RATIO-GROUP-PROMISE-APPROX-v1`：组内任务在 home 与共同资格 sink 之间按组—汇点恒定比例缩放；按真实比例成本 `ρ_hz d_h` 排序造槽，给出 home `≤(3/2+δ)T`、sink `≤(1+ρ_max/2)T` 的候选接口。唯一 home、共同资格、宏大边和固定比例仍是额外结构，正文在 `research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md`。
+- `UM-C2-PREFIX-CONDITIONING-DEGREE-v1`：偶奇五位真实来源的四阶矩完全相同，但深度四前缀的下一步容量相反；仅四阶 C₂ 不能自动提供深层条件 oracle。精确边界在 `research/current/unrelated_machines/c2_prefix_conditioning_degree_boundary.md`。
+
+两项均不关闭 `UM-TARGET-v1`；前者的分组提取、后者的高阶/重算证书仍是一般路线的未解义务。
+
+### 固定宏占位与任意私有资格
+
+新增候选 `UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1`：`|B|=|H|`，宏只在 homes，且每个 home 的宏端处理时间只依赖 home、满足 `P_h>T/2`；任意私有任务可在任意显式资格边上运行，只要求每条私有边≤`δT`。固定任意宏完美匹配后，LST/ST 给 `(1+δ)T`；承诺 `P_h>OPT/2` 时用网格测试得到未知OPT候选。它精确显示共同资格与唯一home可去掉，但宏占位同质性仍是额外结构，不能替代一般 `UM-TARGET-v1`。
