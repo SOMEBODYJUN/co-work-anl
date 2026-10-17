@@ -1023,6 +1023,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1 | 另一模型：port内部非负有理w_e、每轨总W≤1；selector1；外部统一scalar1/A、arity≤2A。给ρ≥1，空轨预处理，其余每轨指定exception满足W−w_e≤ρ−1。可总位poly完整C≤ρ且clause≤1。对ρ1，arity2A+1的两clause族真实OPT=1+1/A，显示arity假设锐。 | [正文](unrelated_machines/dual_rail_threshold_soundness_boundary.md)、[审查](../reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md)；仅声明范围。 |
 | UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1 | 归一化scalar的特殊族：A≥1,d=2A−1,k=2^(d−1)，含全部2^d符号clauses。R_B=Σ_s(s−B)_+ binom(d,s)、r_B=ceil(R_B/d)。真实OPT=min_{B=A..d}max(B/A,1+r_B/k)，可按显式展开P位poly构造。A≥2源弱阈值d−1仍NO，而OPT≤1+1/(2sqrt(d))+1/k→1。A3真实OPT9/8。 | [正文](unrelated_machines/dual_rail_threshold_soundness_boundary.md)、[审查](../reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md)；仅声明范围。 |
 
+## 单位读出配额森林与全深度半密度障碍
+
+| ID | 精确结果 | 范围 |
+| --- | --- | --- |
+| UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1 | 每变量两私有满k叉深h树；selector两根时间1、内部edge父1/k子1、leaf父1/k或本clause任一unit slot时间1。原资格恰此、slots跨clause互异无pins。对每有理1≤C<2，r=ceil(k(2−C))，真实C可行当且仅当每变量恰选一sign的深h恰r分叉森林可注入slots；给任方向见证可显式输入总位poly转另一方向。 | [正文](unrelated_machines/unit_readout_pruned_forest_boundary.md)、[审查](../reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md) |
+| UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1 | 同一模型另有每clause arity d_c≤2A_c。任意树深和任意wiring均可确定性总位poly输出全部原jobs实际C≤1+floor(k/2)/k≤3/2，所有外unit≤1。k1非空OPT1；k2h1复用14机15job split例真实OPT3/2，使整类绝对T1界锐，不声称近似比锐。 | [正文](unrelated_machines/unit_readout_pruned_forest_boundary.md)、[审查](../reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md) |
+| UM-PRUNED-TREE-LEAF-HITTING-v1 | 完整k叉深h树、1≤r≤k，q=k−r+1。命中每个rooted深h恰r分叉子树的最小叶集恰q^h；不含任何该子树的叶子集最大恰k^h−q^h，所有参数锐。显式树双色DP可构造蓝r子树或红q子树；真实叶少于q^h时补集有纯dummy r子树，实际逃逸仍需外部共同容量。 | [正文](unrelated_machines/unit_readout_pruned_forest_boundary.md)、[审查](../reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md) |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -9241,6 +9241,83 @@
         "evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "私有满k叉双树的完整单位slot读出",
+      "detail": "每变量一selector，两私有满树；内部父1/k子1、叶父1/k或clause私有unit；原资格恰声明边，无背景pins；A截arity。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-FULL-KARY-FIXED-DEPTH-PRUNING-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "固定原深度的恰r分叉树与叶命中",
+      "detail": "完整显式k叉深h树，叶在原深h，恰r孩子不得提前停止；q=k−r+1。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单位读出全变量必选配额森林恒等式",
+      "detail": "每变量两私有满k叉深h树；selector两根时间1、内部edge父1/k子1、leaf父1/k或本clause任一unit slot时间1。原资格恰此、slots跨clause互异无pins。对每有理1≤C<2，r=ceil(k(2−C))，真实C可行当且仅当每变量恰选一sign的深h恰r分叉森林可注入slots；给任方向见证可显式输入总位poly转另一方向。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "半密度单位读出全高度三半锐界",
+      "detail": "同一模型另有每clause arity d_c≤2A_c。任意树深和任意wiring均可确定性总位poly输出全部原jobs实际C≤1+floor(k/2)/k≤3/2，所有外unit≤1。k1非空OPT1；k2h1复用14机15job split例真实OPT3/2，使整类绝对T1界锐，不声称近似比锐。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "修剪树叶命中与虚拟叶门槛",
+      "detail": "完整k叉深h树、1≤r≤k，q=k−r+1。命中每个rooted深h恰r分叉子树的最小叶集恰q^h；不含任何该子树的叶子集最大恰k^h−q^h，所有参数锐。显式树双色DP可构造蓝r子树或红q子树；真实叶少于q^h时补集有纯dummy r子树，实际逃逸仍需外部共同容量。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-PRUNED-FOREST-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "配额森林原P、半槽与全叶染色精确核验",
+      "detail": "六完整原σ及两个同64open的真OPT对比；全变量森林提取；24/26小参数的两路穷举分开计，有限核验非一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md",
+        "tests/audits/unrelated_machines/unit_readout_two_tree_certificates.py",
+        "tests/audits/unrelated_machines/unit_readout_two_tree_independent.py",
+        "tests/audits/unrelated_machines/unit_readout_half_density_three_halves.py",
+        "tests/audits/unrelated_machines/pruned_tree_leaf_hitting.py",
+        "tests/audits/unrelated_machines/pruned_tree_leaf_hitting_independent.py",
+        "examples/unrelated_machines/unit_readout_two_tree_actual_certificates.json",
+        "evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -22692,6 +22769,113 @@
         "research/reviews/unrelated_machines/strict_sub2_batch_barrier_review.md"
       ],
       "status": "complete stated-scope construction"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-FULL-KARY-FIXED-DEPTH-PRUNING-MODEL-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "statement": "原实际incoming1→至少r条实际下传；只保子集并复用原slot，所有其余jobs父置；active负载2−r/k、inactive1。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "statement": "经典ST半质量直接推论；每内机唯一incoming半片优先，clause半片成对使用真实units，Hall一次全jobs匹配。 锐下界明确复用split h1 k2合同。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "D-UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FULL-KARY-FIXED-DEPTH-PRUNING-MODEL-v1"
+      ],
+      "conclusion": "UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "statement": "标准threshold证书递推/补集对偶；根命中 iff 至少q个children各命中。非新一般树技术。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+      "statement": "冻结全部原资格/全机负载与自足树计数；检查不代替一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+      "statement": "冻结全部原资格/全机负载与自足树计数；检查不代替一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "C-UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-AUDIT-v1"
+      ],
+      "conclusion": "UM-PRUNED-TREE-LEAF-HITTING-v1",
+      "statement": "冻结全部原资格/全机负载与自足树计数；检查不代替一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md",
+        "evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-UNIT-READOUT-PRUNED-FOREST-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅关闭半密度私有树near2复制合同，非所有归约；仍缺非此结构的全局源解码与真实近二NP gap。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md"
+      ],
+      "status": "open obligation"
     }
   ]
 }

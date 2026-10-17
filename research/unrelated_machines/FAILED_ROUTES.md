@@ -257,3 +257,5 @@ u_t) 的一般复杂度。
 回收：本次直接恢复同一覆盖X，使真实成本=e；另修正大单件UB忽略小件覆盖的问题，同时比较两类可行UB，并明确截断精确覆盖DP。修复经独立冻结核查后保留原结构合同与one-sided搜索，不把旧review追认为正确。重试其他输出集合前必须重计真实成本或另给统一误差预算。见[纠错复核](../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)。
 
 前缀矩旧双3/2互补例只改变literal，完整B负载恒3/2，bit-only测试漏检。替换为单非零bit任务保留原存在性Claim，新增实际端、整机负载和精确PSD核验；不限制算法重耦合。rank-jump抽象toy的错误任务守恒补齐说法也已删除，不能拿未满足完整假设的toy当反例。
+
+[加深私有树或重排半密度unit读出仍不能放大到近二](../current/unrelated_machines/unit_readout_pruned_forest_boundary.md)：唯一unit incoming+k枚总small负载1让半质量槽匹配给全高度三半，涵盖所有arity≤2A wiring。改d>2A若仍全正负degree平衡，非空源严格YES已空；补dummy须防纯dummy配额子树并核共同外部容量。失败范围不超出明确成本/私有结构/密度；可回收一般forest IFF、树命中门槛及同64open真OPT1对7/4，后续需真实非此域联合soundness。

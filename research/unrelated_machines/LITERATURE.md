@@ -103,3 +103,6 @@ Brakensiek–Guruswami，[ECCC TR16-183 原始PDF](https://eccc.weizmann.ac.il/r
 BCG2009 的已登记 TR-848-09 §7 Definition7.1/Lemma7.2（原作者PDF/印47–48）已经提出三特殊item a vsbc的完整分配复制合同和两完整分配剪度。本次[三host/半值正文](../current/unrelated_machines/three_host_selector_sharp_three_halves.md)不把该接口或剪度冒充原创；规范proof独立用非负二色阈值闭包，给无条件half实际allocation及含全部预载的锐3/2完整调度，未导入该文困难性或配置算法。本组初核仅web读取§7/准确范围；本次合并保留同行随后取得的原始PDF字节及manifest哈希，全球新颖性仍未认证。
 
 CCK2009，[arXiv:0901.0205v1](https://arxiv.org/abs/0901.0205v1)，35页，§6.1 PDF28–31的Claim3/Theorem6及逆向环证明已针对性核读；已给精确配置证书时可精确减半。它只出现在第二名审查者的独立K4重构中；规范二色proof不依赖该定理。近似pricing的ε不能置零；web-only取得状态及完整前提见manifest和审查，未取得原字节。
+
+
+Magniez等，[递归多数原始PDF](https://arxiv.org/pdf/1309.7565)，§2.2 PDF4–5定义完整三叉多数树。仅作为[叶命中递推](../current/unrelated_machines/unit_readout_pruned_forest_boundary.md)的经典模型背景，不将query复杂度结果当通用横截定理或调度困难性；全(k,r,h)命中式由自足递推证明，未认证新颖性。仅web实读、未落地原字节，已准确登记manifest。

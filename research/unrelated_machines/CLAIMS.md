@@ -1499,3 +1499,48 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：固定exception与自由max条件已修；绝对界不等于近似比锐性；split模式不是物理σ枚举；cube A1非NO且按显式规模计，A20最优B21排除总取B=A。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；外审/论文价值未认证；一般目标及其反面OPEN。
 - Related Files：`research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md`、`research/reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md`、`tests/audits/unrelated_machines/balanced_dual_rail_fullcube.py`, `tests/audits/unrelated_machines/balanced_dual_rail_fullcube_independent.py`, `examples/unrelated_machines/dual_rail_fullcube_A3_actual_certificate.json`, `evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json`。
+
+## UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1：单位读出全变量必选配额森林恒等式
+
+- Exact Statement：每变量两私有满k叉深h树；selector两根时间1、内部edge父1/k子1、leaf父1/k或本clause任一unit slot时间1。原资格恰此、slots跨clause互异无pins。对每有理1≤C<2，r=ceil(k(2−C))，真实C可行当且仅当每变量恰选一sign的深h恰r分叉森林可注入slots；给任方向见证可显式输入总位poly转另一方向。
+- Objects / Definitions：正文对应节的显式完整树、所有mandatory变量、实际不可拆分任务/原资格；叶命中合同是独立组合树对象，不暗含slot容量。
+- Domain：整数k,h≥1；调度仅声明的私有树与unit读出；A_c可0并截至arity；无job时dummy；完整叶深度不能提前停止。
+- Quantifiers：∀整数k,h≥1、任意arity、A_c≥0和显式wiring；∀C∈Q∩[1,2)；完整σ与mandatory森林双向可构造。
+- Assumptions：原资格恰声明边，机器组互异；半密度只在第二合同；第三合同转实际逃逸另需联合外部注入。
+- Scope：非一般UM算法或近二NP-hardness；不把private-host pins模块混入无pins IFF，不按binary(k,h)压缩展开。
+- Conclusion / Mechanism：原实际incoming1→至少r条实际下传；只保子集并复用原slot，所有其余jobs父置；active负载2−r/k、inactive1。
+- Dependencies：正文自足证明；森林用UM-MODEL-v1与完整unit读出定义，半密度另用该定义、密度和既有split锐例；命中只用完整树定义及递推。
+- Evidence：命题先行独立重构、冻结全文攻击、root全码亲读与原P/全机负载重算；六旧完整证书及两份同64open不同OPT证书，有限计数见`evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json`。
+- Counterevidence / Objections：BCG Paper Fact已限制预处理剩余子实例，回填仅floor(M/2)；无外部定理被用来证明三合同。dummy需严格小于且外部可pack；平衡源空YES需非空clauses；仅叶容量忽略祖先兼容会给OPT7/4而非三半。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；软件身份audit_only，外审/论文价值未认证，一般目标正反面OPEN。
+- Related Files：`research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md`、`research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md`、`examples/unrelated_machines/unit_readout_two_tree_actual_certificates.json`、`evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json`、`tests/audits/unrelated_machines/unit_readout_two_tree_certificates.py`, `tests/audits/unrelated_machines/unit_readout_two_tree_independent.py`, `tests/audits/unrelated_machines/unit_readout_half_density_three_halves.py`。
+
+## UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1：半密度单位读出全高度三半锐界
+
+- Exact Statement：同一模型另有每clause arity d_c≤2A_c。任意树深和任意wiring均可确定性总位poly输出全部原jobs实际C≤1+floor(k/2)/k≤3/2，所有外unit≤1。k1非空OPT1；k2h1复用14机15job split例真实OPT3/2，使整类绝对T1界锐，不声称近似比锐。
+- Objects / Definitions：正文对应节的显式完整树、所有mandatory变量、实际不可拆分任务/原资格；叶命中合同是独立组合树对象，不暗含slot容量。
+- Domain：整数k,h≥1；调度仅声明的私有树与unit读出；A_c可0并截至arity；无job时dummy；完整叶深度不能提前停止。
+- Quantifiers：∀上述显式模型、∀k,h≥1及任意wiring；∃无SAT/OPT oracle的完整构造。
+- Assumptions：原资格恰声明边，机器组互异；半密度只在第二合同；第三合同转实际逃逸另需联合外部注入。
+- Scope：非一般UM算法或近二NP-hardness；不把private-host pins模块混入无pins IFF，不按binary(k,h)压缩展开。
+- Conclusion / Mechanism：经典ST半质量直接推论；每内机唯一incoming半片优先，clause半片成对使用真实units，Hall一次全jobs匹配。
+- Dependencies：正文自足证明；森林用UM-MODEL-v1与完整unit读出定义，半密度另用该定义、密度和既有split锐例；命中只用完整树定义及递推。
+- Evidence：命题先行独立重构、冻结全文攻击、root全码亲读与原P/全机负载重算；六旧完整证书及两份同64open不同OPT证书，有限计数见`evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json`。
+- Counterevidence / Objections：BCG Paper Fact已限制预处理剩余子实例，回填仅floor(M/2)；无外部定理被用来证明三合同。dummy需严格小于且外部可pack；平衡源空YES需非空clauses；仅叶容量忽略祖先兼容会给OPT7/4而非三半。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；软件身份implemented，外审/论文价值未认证，一般目标正反面OPEN。
+- Related Files：`research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md`、`research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md`、`examples/unrelated_machines/unit_readout_two_tree_actual_certificates.json`、`evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json`、`tests/audits/unrelated_machines/unit_readout_half_density_three_halves.py`。
+
+## UM-PRUNED-TREE-LEAF-HITTING-v1：修剪树叶命中与虚拟叶门槛
+
+- Exact Statement：完整k叉深h树、1≤r≤k，q=k−r+1。命中每个rooted深h恰r分叉子树的最小叶集恰q^h；不含任何该子树的叶子集最大恰k^h−q^h，所有参数锐。显式树双色DP可构造蓝r子树或红q子树；真实叶少于q^h时补集有纯dummy r子树，实际逃逸仍需外部共同容量。
+- Objects / Definitions：正文对应节的显式完整树、所有mandatory变量、实际不可拆分任务/原资格；叶命中合同是独立组合树对象，不暗含slot容量。
+- Domain：整数k,h≥1；调度仅声明的私有树与unit读出；A_c可0并截至arity；无job时dummy；完整叶深度不能提前停止。
+- Quantifiers：∀整数k,h≥1、1≤r≤k和全部叶集；全部边界及达界例；复杂度只按显式树或完整路径输入。
+- Assumptions：原资格恰声明边，机器组互异；半密度只在第二合同；第三合同转实际逃逸另需联合外部注入。
+- Scope：非一般UM算法或近二NP-hardness；不把private-host pins模块混入无pins IFF，不按binary(k,h)压缩展开。
+- Conclusion / Mechanism：标准threshold证书递推/补集对偶；根命中 iff 至少q个children各命中。非新一般树技术。
+- Dependencies：正文自足证明；森林用UM-MODEL-v1与完整unit读出定义，半密度另用该定义、密度和既有split锐例；命中只用完整树定义及递推。
+- Evidence：命题先行独立重构、冻结全文攻击、root全码亲读与原P/全机负载重算；六旧完整证书及两份同64open不同OPT证书，有限计数见`evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json`。
+- Counterevidence / Objections：BCG Paper Fact已限制预处理剩余子实例，回填仅floor(M/2)；无外部定理被用来证明三合同。dummy需严格小于且外部可pack；平衡源空YES需非空clauses；仅叶容量忽略祖先兼容会给OPT7/4而非三半。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；软件身份audit_only，外审/论文价值未认证，一般目标正反面OPEN。
+- Related Files：`research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md`、`research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md`、`examples/unrelated_machines/unit_readout_two_tree_actual_certificates.json`、`evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json`、`tests/audits/unrelated_machines/pruned_tree_leaf_hitting.py`, `tests/audits/unrelated_machines/pruned_tree_leaf_hitting_independent.py`。
