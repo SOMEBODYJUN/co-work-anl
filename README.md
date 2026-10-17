@@ -18,6 +18,8 @@
 
 路线是搜索种子，可以改变方法。仅有配置间隙、固定槽损失、某个见证选择困难性或特殊情形算法，均不关闭主目标。所有精确身份与新增成果沿本题地图和账本维护，根入口保持稳定，不逐轮追加摘要。
 
+本阶段的路线复盘和下一道硬门槛见[专题前沿的全输入桥合同](research/unrelated_machines/RESEARCH_STATE.md#路线复盘从局部合同转向全输入桥)：已有成果主要诊断局部证书不足并建立受限联合构造；只有从任意输入产生可验证共同容量、实际全机整数输出及可靠阈值失败语义，才算直接推进 `UM-TARGET-v1`。
+
 ## 定义、命题、依赖与证据
 
 [研究总目录](research/README.md)按模型分流；[中文资产总目录](research/CATALOG.md)说明每个文件用途；[全仓精确命题](research/current/claims.md)、[五轴状态](research/review_status.json)、[文件合同](research/assets.json)和[关系图](research/index.html)分别管理身份、审查、位置和数学依赖。有限核验只作checks，不替代一般证明。原始来源沿[来源解释](research/source_crosswalk.md)追溯。
