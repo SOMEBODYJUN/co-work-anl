@@ -991,7 +991,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | ID | Exact scope | Result and boundary |
 | --- | --- | --- |
-| UM-THRESHOLD-COVER-JOINT-SLOT-v1 | 共同资格、等端时间、唯一 home 的宏/私有组结构；固定 `δ,η` 满足 `δ+η+δη<1`，宏/组条件按 `barrier_escape_obligations.md`。 | 乘法最小覆盖 FPTAS、联合 home/sink 槽流和固定顺序前缀给 `R*=((1+η)(3+δ))/(2+η)<2`。FPTAS 见证集不直接输出；未知 `OPT` 的接受谓词可能非单调，但 promise 下所有 `t≥OPT` 接受，one-sided 分母网格二分输出 `t≤OPT`。结构提取仍未解，主目标 OPEN。 [正文](../questions/unrelated_machines/barrier_escape_obligations.md)、[独立复核](../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)。 |
+| UM-THRESHOLD-COVER-JOINT-SLOT-v1 | 共同资格、等端时间、唯一 home 的宏/私有组结构；固定 `δ,η` 满足 `δ+η+δη<1`，宏/组条件按 `barrier_escape_obligations.md`。 | 乘法最小覆盖 FPTAS、联合 home/sink 槽流和固定顺序前缀给 `R*=((1+η)(3+δ))/(2+η)<2`。结构类的未知 `OPT` one-sided 分母网格二分已闭合；单个近似覆盖选择随 `t` 可跳变，但 promise 保证所有 `t≥OPT` 接受。结构提取仍未解，主目标 OPEN。 [正文](../questions/unrelated_machines/barrier_escape_obligations.md)、[独立复核](../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)。 |
 | UM-LST-SUPPORT-RELEASE-OPTIMAL-v1 | `r` 个独立块，每块 `m≥2` 核心机、一备用机、私有任务大小 `1−1/m` 和单位锚任务；固定 LST 点的零质量边释放预算 `k`。 | `OPT=1`；约束至多 `k` 条 `x=0` 边时，`F(k)=2−1/m` 对 `k<r`，`F(k)=1` 对 `k≥r`。令 `m` 增长得到固定不足预算时相对 OPT 趋2。只排除固定支撑释放合同，不是一般困难性。 [正文](unrelated_machines/lst_support_release_optimal_gap.md)、[审计](../../tests/audits/unrelated_machines/lst_support_release_optimal.py)。 |
 
 ## 2026-10-17：共同尺寸可重开容量流
@@ -1012,6 +1012,3 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
 - EXACT-KAPPA、MITM-EXACT 返回特定实例的最优因子；SC-PHI-A、HC-2-UP 返回符合普遍上界的一个因子。不能从一个短的达到证书推断它已达到实例最优。
 - 保留历史稿中的推导供追溯，但以[现行分支](README.md)的命题条件为准。修改条件时新建 ID 或明确版本，不覆写旧 ID 的含义。
-
-
-| UM-COMMON-SIZE-REOPEN-v1 | 给定冻结核心、残余任务共同尺寸资格边和有理流证书；接收机允许增载。 | 分数共同容量加 `q_max` 头部余量时可由有序槽构造整修复；支持连通分量内单一尺寸时普通整数槽流无加性损失。一般异端/混尺寸仍有整数缺口，不关闭 UM-TARGET-v1。 [正文](unrelated_machines/common_size_reopen_capacity_flow.md)、[审查](../reviews/unrelated_machines/common_size_reopen_capacity_flow_review.md)。 |
