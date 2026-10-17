@@ -839,3 +839,39 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：共同资格、体积、组下界省略会破证明；q槽不能凭strict Hall降为q−1；没有一般结构提取或一般容量转换。
 - Status：限域完整证明、独立内部已审、规范实际构造已实现；标准工具组合，未外审/未认证全球新颖性或独立论文价值。
 - Related Files：[正文](../current/unrelated_machines/hall_group_joint_flow.md)、[冻结审查](../reviews/unrelated_machines/hall_group_joint_flow_review.md)、hall_group_joint_flow三份代码/冻结报告与实际输入/任务分配。
+
+## UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1：任意给定围长的简单仙人掌配置间隙上确界二
+
+- Exact Statement / Quantifiers：∀整数g≥3，在正OPT、每任务恰2有限端且简单机器支撑为cactus、girth≥g的实例上，sup OPT/T_CONF=2。具体∀k≥2有全时间{1/k,1}、每非桥块为g环的P_(k,g)，OPT=2−1/k、CONFIG在T=1+1/k有显式稀疏有理证书。
+- Objects / Domain / Definitions：UM-MODEL-v1；显式非负二进制有理/∞矩阵，每任务一/两有限端（间隙族恰两端）；labelled多重机器图、顶点双连通块与精确配置LP按正文定义。
+- Assumptions / Scope：T只是可行配置阈值，不声称最小T_CONF=T或有限例取得2；族规模不要求对log k多项式。cactus可被真实结构精确求解，本gap不导入计算困难性或UM-TARGET反面。
+- Conclusion：任意给定围长的简单仙人掌配置间隙上确界二；原目标及反面仍OPEN。
+- Dependencies：UM-MODEL-v1, UM-CACTUS-GAP-FAMILY-v1, UM-ST-ROUND-v1；g环任务数比内部机器多1迫末端小负载；树路径整数传播及显式θ调度；循环k窗口/内部singleton/根边际thinning给配置证书；经典ST给gap上界。
+- Evidence：完整自足证明，审查者先仅看精确Claim独立重构，再攻击冻结稿；规范/独立原任务枚举、六组实际高围长族及逐任务σ校验，有限范围另见冻结记录。
+- Counterevidence / Objections：T只是可行配置阈值，不声称最小T_CONF=T或有限例取得2；族规模不要求对log k多项式。cactus可被真实结构精确求解，本gap不导入计算困难性或UM-TARGET反面。 最终冻结范围无尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；已知工具自足扩展及末端环替换，全球新颖性、独立成文价值与外审未认证。
+- Related Files：[cactus_configuration_gap_and_block_exactness.md](../current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)、[cactus_gap_and_block_exactness_review.md](../reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md)；正文互链三份代码、输入/配置与真实调度证书、两份冻结记录。
+
+## UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1：最大顶点块环秩参数的精确实际调度
+
+- Exact Statement / Quantifiers：∀support≤2合法UM输入，保留每双端任务为独立labelled机器多重边，顶点双连通块（桥独立）B的b_B=|E_B|−|V_B|+1，b=max({0}∪{b_B})，存在确定性2^b poly(总输入位长L)算法输出精确OPT及实际调度；空/零/单端/平行均含。
+- Objects / Domain / Definitions：UM-MODEL-v1；显式非负二进制有理/∞矩阵，每任务一/两有限端（间隙族恰两端）；labelled多重机器图、顶点双连通块与精确配置LP按正文定义。
+- Assumptions / Scope：b可增长；一般时指数不消失。不能合并平行任务来计b，也不是treewidth精确算法。b=O(log L)类可解只限制此范围hardness归约，不改变一般UM-TARGET。AMO已有对称cactus算法，端点非对称及参数版本优先权未认证。
+- Conclusion：最大顶点块环秩参数的精确实际调度；原目标及反面仍OPEN。
+- Dependencies：UM-MODEL-v1, UM-TWO-CHOICE-BLOCK-MODEL-v1；块割树只传最小真实单边界负载；各块独立枚举反馈边再叶交换支配，不跨块做笛卡尔积；保存任务见证；LCM整数格点二分位多项式。
+- Evidence：完整自足证明，审查者先仅看精确Claim独立重构，再攻击冻结稿；规范/独立原任务枚举、六组实际高围长族及逐任务σ校验，有限范围另见冻结记录。
+- Counterevidence / Objections：b可增长；一般时指数不消失。不能合并平行任务来计b，也不是treewidth精确算法。b=O(log L)类可解只限制此范围hardness归约，不改变一般UM-TARGET。AMO已有对称cactus算法，端点非对称及参数版本优先权未认证。 最终冻结范围无尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；已知工具自足扩展及末端环替换，全球新颖性、独立成文价值与外审未认证。
+- Related Files：[cactus_configuration_gap_and_block_exactness.md](../current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)、[cactus_gap_and_block_exactness_review.md](../reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md)；正文互链三份代码、输入/配置与真实调度证书、两份冻结记录。
+
+## UM-PSEUDOFOREST-CONFIG-EXACT-v1：每连通分量至多单环的配置可行性精确
+
+- Exact Statement / Quantifiers：∀support≤2合法UM实例P及有理T≥0，若保labelled平行任务的机器多重图每连通分量环秩≤1，则CONFIG(T)可行⇔存在真实makespan≤T调度；包含两平行边的长度2环、森林、单端、零时间和空任务。
+- Objects / Domain / Definitions：UM-MODEL-v1；显式非负二进制有理/∞矩阵，每任务一/两有限端（间隙族恰两端）；labelled多重机器图、顶点双连通块与精确配置LP按正文定义。
+- Assumptions / Scope：要求每连通分量至多一环，不能弱化为每顶点块至多一环；多环cactus已有supgap2。没有改变一般CONFIG身份，也不导入一般近似或困难性。
+- Conclusion：每连通分量至多单环的配置可行性精确；原目标及反面仍OPEN。
+- Dependencies：UM-MODEL-v1, UM-TWO-CHOICE-BLOCK-MODEL-v1；单端任务在正配置中必出现；叶边可容则固定叶并删父配置中的该任务，否则强制父并计固定负载；余单环有禁止端则破环，否则统一循环定向。
+- Evidence：完整自足证明，审查者先仅看精确Claim独立重构，再攻击冻结稿；规范/独立原任务枚举、六组实际高围长族及逐任务σ校验，有限范围另见冻结记录。
+- Counterevidence / Objections：要求每连通分量至多一环，不能弱化为每顶点块至多一环；多环cactus已有supgap2。没有改变一般CONFIG身份，也不导入一般近似或困难性。 最终冻结范围无尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；已知工具自足扩展及末端环替换，全球新颖性、独立成文价值与外审未认证。
+- Related Files：[cactus_configuration_gap_and_block_exactness.md](../current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)、[cactus_gap_and_block_exactness_review.md](../reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md)；正文互链三份代码、输入/配置与真实调度证书、两份冻结记录。

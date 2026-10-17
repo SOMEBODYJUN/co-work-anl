@@ -5588,6 +5588,120 @@
         "history/source/literature/unrelated_machines/vontobel_koetter_2005_graph_cover_decoding_v1.pdf"
       ],
       "limit": "仅原机器/任务等q复制及逐incidence置换、保原时间的覆盖；高围长存在性不保证小尺寸或随机概率。未排精选接线/扩张条件/其他归约，未证明UM-TARGET-v1反面；不提供相对原输入的位多项式配置求解或覆盖输出。"
+    },
+    {
+      "id": "um_cactus_high_girth_config_gap_v1",
+      "claims": [
+        "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "∀整数g≥3，在正OPT、每任务恰2有限端且简单机器支撑为cactus、girth≥g的实例上，sup OPT/T_CONF=2。具体∀k≥2有全时间{1/k,1}、每非桥块为g环的P_(k,g)，OPT=2−1/k、CONFIG在T=1+1/k有显式稀疏有理证书。",
+        "T只是可行配置阈值，不声称最小T_CONF=T或有限例取得2；族规模不要求对log k多项式。cactus可被真实结构精确求解，本gap不导入计算困难性或UM-TARGET反面。"
+      ],
+      "produces": "任意给定围长的简单仙人掌配置间隙上确界二",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/two_choice_block_rank_exact.py",
+        "tests/audits/unrelated_machines/two_choice_block_rank_audit.py",
+        "tests/audits/unrelated_machines/cactus_high_girth_configuration_gap.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/cactus_high_girth_configuration_gap_audit.json",
+        "evidence/runs/unrelated_machines/two_choice_block_rank_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/cactus_high_girth_k4_g7.json",
+        "evidence/certificates/unrelated_machines/cactus_high_girth_k4_g7_witness.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/asahiro_miyano_ono_2011_cactus_orientation_author.pdf",
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
+      ],
+      "limit": "T只是可行配置阈值，不声称最小T_CONF=T或有限例取得2；族规模不要求对log k多项式。cactus可被真实结构精确求解，本gap不导入计算困难性或UM-TARGET反面。 AMO/VW仅是最近机制与工具祖先，所有本文扩展自行证明，不冒充源论文的调度定理。"
+    },
+    {
+      "id": "um_two_choice_block_rank_exact_v1",
+      "claims": [
+        "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "∀support≤2合法UM输入，保留每双端任务为独立labelled机器多重边，顶点双连通块（桥独立）B的b_B=|E_B|−|V_B|+1，b=max({0}∪{b_B})，存在确定性2^b poly(总输入位长L)算法输出精确OPT及实际调度；空/零/单端/平行均含。",
+        "b可增长；一般时指数不消失。不能合并平行任务来计b，也不是treewidth精确算法。b=O(log L)类可解只限制此范围hardness归约，不改变一般UM-TARGET。AMO已有对称cactus算法，端点非对称及参数版本优先权未认证。"
+      ],
+      "produces": "最大顶点块环秩参数的精确实际调度",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/two_choice_block_rank_exact.py",
+        "tests/audits/unrelated_machines/two_choice_block_rank_audit.py",
+        "tests/audits/unrelated_machines/cactus_high_girth_configuration_gap.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/cactus_high_girth_configuration_gap_audit.json",
+        "evidence/runs/unrelated_machines/two_choice_block_rank_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/cactus_high_girth_k4_g7.json",
+        "evidence/certificates/unrelated_machines/cactus_high_girth_k4_g7_witness.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/asahiro_miyano_ono_2011_cactus_orientation_author.pdf",
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
+      ],
+      "limit": "b可增长；一般时指数不消失。不能合并平行任务来计b，也不是treewidth精确算法。b=O(log L)类可解只限制此范围hardness归约，不改变一般UM-TARGET。AMO已有对称cactus算法，端点非对称及参数版本优先权未认证。 AMO/VW仅是最近机制与工具祖先，所有本文扩展自行证明，不冒充源论文的调度定理。"
+    },
+    {
+      "id": "um_pseudoforest_config_exact_v1",
+      "claims": [
+        "UM-PSEUDOFOREST-CONFIG-EXACT-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "∀support≤2合法UM实例P及有理T≥0，若保labelled平行任务的机器多重图每连通分量环秩≤1，则CONFIG(T)可行⇔存在真实makespan≤T调度；包含两平行边的长度2环、森林、单端、零时间和空任务。",
+        "要求每连通分量至多一环，不能弱化为每顶点块至多一环；多环cactus已有supgap2。没有改变一般CONFIG身份，也不导入一般近似或困难性。"
+      ],
+      "produces": "每连通分量至多单环的配置可行性精确",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/two_choice_block_rank_exact.py",
+        "tests/audits/unrelated_machines/two_choice_block_rank_audit.py",
+        "tests/audits/unrelated_machines/cactus_high_girth_configuration_gap.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/cactus_high_girth_configuration_gap_audit.json",
+        "evidence/runs/unrelated_machines/two_choice_block_rank_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/cactus_high_girth_k4_g7.json",
+        "evidence/certificates/unrelated_machines/cactus_high_girth_k4_g7_witness.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/asahiro_miyano_ono_2011_cactus_orientation_author.pdf",
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
+      ],
+      "limit": "要求每连通分量至多一环，不能弱化为每顶点块至多一环；多环cactus已有supgap2。没有改变一般CONFIG身份，也不导入一般近似或困难性。 AMO/VW仅是最近机制与工具祖先，所有本文扩展自行证明，不冒充源论文的调度定理。"
     }
   ]
 }

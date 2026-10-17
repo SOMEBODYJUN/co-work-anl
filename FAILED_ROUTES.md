@@ -92,3 +92,5 @@
 [有限覆盖与反向困难性可靠性缺口](research/current/unrelated_machines/configuration_finite_cover_obstruction.md)已给标准机制的准确调度重构：即使高围长也存在整数OPT坍缩到配置阈值的cover；精选接线与一般困难性仍未排除，UM-TARGET-v1保持OPEN。
 
 不完整资格并非一概排除正面构造：[共同资格私有组](research/current/unrelated_machines/hall_group_joint_flow.md)由真实最低出口量给整数Hall容量，可联合选择macro与receiver；缺少组下界、共同资格或等端体积时不能免费沿用。任意残余容量的组族也不必是拟阵；准确负控制与回收见正文§6。
+
+[高围长仙人掌的配置锐界与精确块算法](research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)表明simple cactus可同时有CONFIG supgap2和真实精确P；单环分量配置精确、最大顶点块环秩b给2^b poly算法。它们限制反面归约的结构，不证明一般目标不存在。

@@ -67,3 +67,7 @@ Lovász–Schrijver, *Cones of Matrices and Setfunctions, and 0-1 Optimization*,
 ## 有限覆盖与配置点实现的标准祖先
 
 Vontobel–Koetter，[arXiv:cs/0512078v1](https://arxiv.org/pdf/cs/0512078v1)，2005-12-20，67页。Proposition10（PDF/印18）及AppendixA.1的Lemmas55–56（PDF/印50–52）给二元线性码局部多面体有理点的有限覆盖解释。原始字节/hash见manifest的VK2005_graph_cover。这里只核该机制，不声称源论文证明了调度困难性；[调度专门重构](../current/unrelated_machines/configuration_finite_cover_obstruction.md)自行证明配置阈值覆盖不变、任意高围长可实现与输出尺寸限制。不是原创性或全篇内化认证。
+
+## 仙人掌精确算法的最近祖先
+
+Asahiro–Miyano–Ono，*Graph classes and the complexity of the graph orientation minimizing the maximum weighted outdegree*，[作者稿](https://kyutech.repo.nii.ac.jp/record/2000093/files/10347755.pdf)，DAM2011。§3（PDF/印5–11）及Theorem9（PDF/印11）给对称端点边权cactus精确算法；§3.1另含顶点固定权。原始字节/hash见manifest的AMO2011_cactus_orientation。本文不能把cactus精确求解笼统称新；[块参数与配置锐界正文](../current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)自行重构非对称端点权/最大块环秩扩展及伪森林边界，不将其标为AMO的原文定理，也未认证全球优先权。

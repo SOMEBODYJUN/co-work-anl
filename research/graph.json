@@ -8127,6 +8127,82 @@
         "research/current/unrelated_machines/configuration_finite_cover_obstruction.md"
       ],
       "status": "OPEN; sufficient obligation, not a hardness theorem"
+    },
+    {
+      "id": "UM-TWO-CHOICE-BLOCK-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "双端labelled多重机器图及顶点块参数",
+      "detail": "双端任务独立作边，桥独立顶点块；b=max_B(|E_B|−|V_B|+1)，平行任务不合并。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-CACTUS-GAP-FAMILY-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "末端长环花束与稀疏循环窗口配置族",
+      "detail": "两棵k叉核心树，每末端挂k−1个长度g仅共割点的环；外端small1/k、内部unit1，循环k窗口实现半边际。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意给定围长的简单仙人掌配置间隙上确界二",
+      "detail": "∀整数g≥3，在正OPT、每任务恰2有限端且简单机器支撑为cactus、girth≥g的实例上，sup OPT/T_CONF=2。具体∀k≥2有全时间{1/k,1}、每非桥块为g环的P_(k,g)，OPT=2−1/k、CONFIG在T=1+1/k有显式稀疏有理证书。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md",
+        "research/reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "最大顶点块环秩参数的精确实际调度",
+      "detail": "∀support≤2合法UM输入，保留每双端任务为独立labelled机器多重边，顶点双连通块（桥独立）B的b_B=|E_B|−|V_B|+1，b=max({0}∪{b_B})，存在确定性2^b poly(总输入位长L)算法输出精确OPT及实际调度；空/零/单端/平行均含。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md",
+        "research/reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-PSEUDOFOREST-CONFIG-EXACT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "每连通分量至多单环的配置可行性精确",
+      "detail": "∀support≤2合法UM实例P及有理T≥0，若保labelled平行任务的机器多重图每连通分量环秩≤1，则CONFIG(T)可行⇔存在真实makespan≤T调度；包含两平行边的长度2环、森林、单端、零时间和空任务。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md",
+        "research/reviews/unrelated_machines/cactus_gap_and_block_exactness_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-CACTUS-BLOCK-EXACT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "高围长仙人掌与块环秩算法的精确证书核验",
+      "detail": "六组(k,g)逐配置与实际调度；1000随机精确OPT、4096共割点双三角及实际σ、零/空/平行/大有理数/深链；只有限范围。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md",
+        "tests/audits/unrelated_machines/two_choice_block_rank_exact.py",
+        "tests/audits/unrelated_machines/two_choice_block_rank_audit.py",
+        "tests/audits/unrelated_machines/cactus_high_girth_configuration_gap.py",
+        "evidence/runs/unrelated_machines/cactus_high_girth_configuration_gap_audit.json",
+        "evidence/runs/unrelated_machines/two_choice_block_rank_audit.json",
+        "examples/unrelated_machines/cactus_high_girth_k4_g7.json",
+        "evidence/certificates/unrelated_machines/cactus_high_girth_k4_g7_witness.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -19638,6 +19714,142 @@
         "research/current/unrelated_machines/configuration_finite_cover_obstruction.md"
       ],
       "status": "open proof obligation"
+    },
+    {
+      "id": "D-UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-CACTUS-GAP-FAMILY-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1",
+      "statement": "g环任务数比内部机器多1迫末端小负载；树路径整数传播及显式θ调度；循环k窗口/内部singleton/根边际thinning给配置证书；经典ST给gap上界。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CACTUS-BLOCK-EXACT-AUDIT-v1"
+      ],
+      "conclusion": "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1",
+      "statement": "所列小对象、真实任务σ、配置证书与oracle有限核验；不将有限测试作一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md",
+        "evidence/runs/unrelated_machines/cactus_high_girth_configuration_gap_audit.json",
+        "evidence/runs/unrelated_machines/two_choice_block_rank_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "T只是可行配置阈值，不声称最小T_CONF=T或有限例取得2；族规模不要求对log k多项式。cactus可被真实结构精确求解，本gap不导入计算困难性或UM-TARGET反面。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
+      ],
+      "status": "structural/method boundary"
+    },
+    {
+      "id": "D-UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TWO-CHOICE-BLOCK-MODEL-v1"
+      ],
+      "conclusion": "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1",
+      "statement": "块割树只传最小真实单边界负载；各块独立枚举反馈边再叶交换支配，不跨块做笛卡尔积；保存任务见证；LCM整数格点二分位多项式。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CACTUS-BLOCK-EXACT-AUDIT-v1"
+      ],
+      "conclusion": "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1",
+      "statement": "所列小对象、真实任务σ、配置证书与oracle有限核验；不将有限测试作一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md",
+        "evidence/runs/unrelated_machines/cactus_high_girth_configuration_gap_audit.json",
+        "evidence/runs/unrelated_machines/two_choice_block_rank_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "b可增长；一般时指数不消失。不能合并平行任务来计b，也不是treewidth精确算法。b=O(log L)类可解只限制此范围hardness归约，不改变一般UM-TARGET。AMO已有对称cactus算法，端点非对称及参数版本优先权未认证。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
+      ],
+      "status": "structural/method boundary"
+    },
+    {
+      "id": "D-UM-PSEUDOFOREST-CONFIG-EXACT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TWO-CHOICE-BLOCK-MODEL-v1"
+      ],
+      "conclusion": "UM-PSEUDOFOREST-CONFIG-EXACT-v1",
+      "statement": "单端任务在正配置中必出现；叶边可容则固定叶并删父配置中的该任务，否则强制父并计固定负载；余单环有禁止端则破环，否则统一循环定向。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-PSEUDOFOREST-CONFIG-EXACT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CACTUS-BLOCK-EXACT-AUDIT-v1"
+      ],
+      "conclusion": "UM-PSEUDOFOREST-CONFIG-EXACT-v1",
+      "statement": "所列小对象、真实任务σ、配置证书与oracle有限核验；不将有限测试作一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md",
+        "evidence/runs/unrelated_machines/cactus_high_girth_configuration_gap_audit.json",
+        "evidence/runs/unrelated_machines/two_choice_block_rank_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-PSEUDOFOREST-CONFIG-EXACT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PSEUDOFOREST-CONFIG-EXACT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "要求每连通分量至多一环，不能弱化为每顶点块至多一环；多环cactus已有supgap2。没有改变一般CONFIG身份，也不导入一般近似或困难性。",
+      "refs": [
+        "research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md"
+      ],
+      "status": "structural/method boundary"
     }
   ]
 }

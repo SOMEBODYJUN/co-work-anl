@@ -53,3 +53,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 [有限覆盖与反向困难性可靠性缺口](research/current/unrelated_machines/configuration_finite_cover_obstruction.md)已给标准机制的准确调度重构：即使高围长也存在整数OPT坍缩到配置阈值的cover；精选接线与一般困难性仍未排除，UM-TARGET-v1保持OPEN。
 
 新增UM-HALL-GROUP-JOINT-FLOW-v1与UM-HALL-GROUP-PROMISE-APPROX-v1：[共同资格组正文](research/current/unrelated_machines/hall_group_joint_flow.md)给无界sink数量的实际联合流舍入、未知OPT的有限瓶颈恢复；保留组身份/等端体积/负载范围，不改变一般UM-TARGET-v1。
+
+[高围长仙人掌的配置锐界与精确块算法](research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)表明simple cactus可同时有CONFIG supgap2和真实精确P；单环分量配置精确、最大顶点块环秩b给2^b poly算法。它们限制反面归约的结构，不证明一般目标不存在。
