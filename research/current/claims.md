@@ -887,11 +887,23 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-SINGLE-LAYER-QUOTA-VALUE-v1 | 对根需求q、选择点x需求1、中间点e_x需求K及资源邻域A_x的单层需求DAG，令ν_t为最多可选且各领取t个两两不交资源的x数，则 b*=max_{0≤t≤K} min(1,ν_t/q,t/K)，对应桥梁调度OPT=2−b*。完整YES b*=1要求ν_K=q；NO近2 gap则必须同时压低所有中间配额层ν_t/q，而仅控制ν_K不充分。 | 自足上下界证明；Fraction全枚举4788例+100随机边界通过。它是共享资源归约的精确必要义务，不是一般近2困难性；UM-TARGET-v1仍OPEN。 [正文](unrelated_machines/single_layer_quota_hypergraph_obstruction.md)、[审计](../../tests/audits/unrelated_machines/single_layer_quota_hypergraph.py)、[冻结结果](../../evidence/runs/unrelated_machines/single_layer_quota_hypergraph_audit.json)。 |
 
+## UM-SQRT-MULTIPLICITY-FLOOR-v1：单层配额超图的平方根重数地板
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-SQRT-MULTIPLICITY-FLOOR-v1 | 单层根—变量—K配额—资源接口中，若每个邻域至少K、每个资源总关联度至多Δ，则 (b\ge\max_t\min\{t/K,(K-t+1)/(K-t+1+tΔ)\})，从而 K≥√Δ+1 时 (b\ge1/(√Δ+1)-1/K)；资源总量 N 另给 (b\le√{N/(qK)})。 | 无复杂度假设的自足计数引理；Fraction 全枚举 23192 个小系统及分组公式通过。只适用于固定单层邻域/给定完整标签选择，不是一般困难性。 [正文](unrelated_machines/single_layer_quota_sqrt_multiplicity_floor.md)、[审查](../reviews/unrelated_machines/single_layer_quota_sqrt_multiplicity_floor_review.md)、[审计](../../tests/audits/unrelated_machines/single_layer_quota_sqrt_multiplicity_floor.py)。 |
+
 ## UM-SANTA-NO-CONSTANT-CONDITIONAL-v1：Santa Claus 无常数近似假设下的条件反面
 
 | ID | Exact Statement | 范围、状态与入口 |
 | --- | --- | --- |
 | UM-SANTA-NO-CONSTANT-CONDITIONAL-v1 | 假设 P≠NP 且一般 Santa Claus 对每个固定常数 c 都无确定性多项式 c-近似，则一般 R∥Cmax 不存在统一 (2−ε) 确定性位多项式近似。证明分 ε>1/2 的 LST 下界和 ε≤1/2 时 BLMRS 的 α=1/ε 归约。 | 条件命题，不是无条件硬度；SCHA 未证，配置/SA gap 不可替代。 [正文](unrelated_machines/santa_conditional_reverse_barrier.md)。 |
+
+## UM-SANTA-NO-CONSTANT-CONDITIONAL-v2：Santa Claus 条件反面的量词与位复杂度规范化
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-SANTA-NO-CONSTANT-CONDITIONAL-v2 | 对每个固定整数 c≥3，二进制非负有理输入的一般 Santa Claus 不存在确定性位多项式时间 c-近似（V≥OPT/c）这一条件假设若成立，则不存在统一 ε>0 的确定性位多项式 R∥Cmax 算法达到 (2−ε)OPT；取 q≥max{2,⌈1/ε⌉} 后由 BLMRS Theorem 1 得 (q+η)-Santa 算法。 | v1 的量词/输入/算法类型规范化版本；条件假设未证。排除随机或期望保证、估值输出；论文位增长适用性仍待补引理。 [正文](unrelated_machines/santa_conditional_reverse_barrier_v2.md)。 |
 
 ## UM-K-UNIFORM-BUNDLE-FLOOR-v1：k-均匀资源束的分层匹配地板
 

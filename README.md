@@ -75,3 +75,5 @@
 [异端有界畸变共同组](research/current/unrelated_machines/distorted_group_joint_slot_rounding.md)在给定上下比例包络、唯一home/共同资格结构下联合选宏与接收机，给home≤(1+r+δ)T、sink≤[κ+B̄(1−r)]T，且闭合未知OPT搜索；固定κ+B̄δ<2时只有该结构类具统一改善。 一般UM-TARGET-v1仍OPEN；下一高信息义务是允许可控临时增载的共同容量修复及总位多项式进展，或在一般矩阵中生成保统一余量的相关结构。
 
 本阶段不相关并行机新增两项可复用边界：[异质大宏统一残余容量与 ST 舍入](research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md) 在 `|B|=|H|` 与大宏承诺下允许宏身份异质、tiny 资格任意并得到 `(3/2+δ)` 结构类界；[严格次二批量能垒](research/current/unrelated_machines/strict_sub2_batch_barrier.md) 说明常数批量且中间严格低于二倍时的局部修复会遇到 `OPT=1` 孤立坏态。两者均保持 `UM-TARGET-v1` OPEN。
+
+[单层配额超图平方根重数地板](research/current/unrelated_machines/single_layer_quota_sqrt_multiplicity_floor.md)进一步证明全局资源重数 Δ 下的中间层地板为 1/(√Δ+1)−1/K（同阶上界由资源总量给出）；它把共享标签反面归约的必要碰撞规模收紧到平方级，但不是一般困难性。

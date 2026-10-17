@@ -1124,9 +1124,7 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - **Exact Statement / Quantifiers：** 对任意 (qge1)、(Kge2) 及三维匹配 (A=(X,Y,Z,E)) 的标准需求树编码 (D_K(A))，令 (mu) 为 (X)--((Y\cup Z)) 一资源匹配数、(
 u) 为三维匹配数，则 (b^*(D_K(A))=\max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\})。完美三维匹配时 (b^*=2/K)。
 - **Objects / Domain：** 根需求 (q)，(x) 点需求1，三元组点需求 (K)，(Y,Z) 为零需求终端；边 (r\to x\to e\to\{y,z\})；(b^*) 沿 `UM-DAG-DEGREE-TOKEN-IDENTITY-v1` 定义。
-- **Scope / Conclusion：** 这是直接3DM需求树接口的精确方法障碍。提高 (K) 会同时降低 YES 的 (b^*)，固定 (K=2) 仍受一终端子树地板影响；故该接口不能给任意 (
-arepsilon) 的 YES (b^*=1)/NO (b^*\le
-arepsilon/2) 归约。公共资源 Hall 族给出可趋零的目标形状，但没有复杂度归约。
+- **Scope / Conclusion：** 这是直接3DM需求树接口的精确方法障碍。提高 (K) 会同时降低 YES 的 (b^*)，固定 (K=2) 仍受一终端子树地板影响；故该接口不能给任意 (\varepsilon) 的 YES (b^*=1)/NO (b^*\le\varepsilon/2) 归约。公共资源 Hall 族给出可趋零的目标形状，但没有复杂度归约。
 - **Dependencies：** `UM-DAG-DEGREE-TOKEN-IDENTITY-v1`；有限树单父约束；二分图/三维匹配定义。
 - **Evidence：** 自足上下界证明；Fraction 审计覆盖 (q\le2) 全边集、(q=3) 固定种子随机样本和完美匹配族；见 `three_dimensional_matching_demand_floor_audit.json`。
 - **Counterevidence / Objections：** 只排除该标准局部接口与公共资源样板；不排共享标签、高距离测试、Label-Cover 或其它跨模块一致性归约，也不证明主目标反面。
@@ -1136,11 +1134,16 @@ arepsilon/2) 归约。公共资源 Hall 族给出可趋零的目标形状，但�
 
 ## UM-SANTA-NO-CONSTANT-CONDITIONAL-v1：Santa Claus 无常数近似假设下的条件反面
 
-- **Exact Statement / Quantifiers：** 若 (P\ne NP) 且一般 Santa Claus 对每个固定常数 (c) 都无确定性多项式 (c)-近似，则不存在统一 (
-arepsilon\in(0,1)) 的一般 R∥Cmax (2-\varepsilon) 算法。
+- **Exact Statement / Quantifiers：** 若 (P\ne NP) 且一般 Santa Claus 对每个固定常数 (c) 都无确定性多项式 (c)-近似，则不存在统一 (\varepsilon\in(0,1)) 的一般 R∥Cmax (2-\varepsilon) 算法。
 - **Dependencies：** LST 的 (<3/2) 困难性；BLMRS Theorem 1 的 (2-1/\alpha) Makespan 到 (\alpha+\eta) Santa 转换。
 - **Scope / Status：** 条件逻辑合成；SCHA 未证，不能升级为主目标无条件反面。
 - **Related Files：** `research/current/unrelated_machines/santa_conditional_reverse_barrier.md`。
+
+## UM-SANTA-NO-CONSTANT-CONDITIONAL-v2：Santa Claus 条件反面的量词与位复杂度规范化
+
+- **Exact Statement / Quantifiers：** 定义 SCHA_det^N：对每个固定整数 c≥3，输入价值为二进制非负有理数的一般 Santa Claus 不存在确定性位多项式时间 c-近似（最大化方向 V≥OPT/c）。若 SCHA_det^N 成立，则不存在统一 ε∈(0,1) 的确定性位多项式 R∥Cmax 算法满足 Cmax≤(2−ε)OPT。对任意 ε 取固定 q≥max{2,⌈1/ε⌉}，BLMRS Theorem 1 将 (2−1/q) 算法转为 (q+η)-Santa 算法。
+- **Scope / Status：** v1 的规范化版本；只涉及确定性、实际分配输出和二进制有理输入，不涉及随机/期望保证或仅估值算法。BLMRS 原文未完整展开位增长，固定参数下的有理缩放适用性仍列为 obligation；SCHA_det^N 未证，故不是无条件困难性。
+- **Related Files：** `research/current/unrelated_machines/santa_conditional_reverse_barrier_v2.md`；v1 原始条件页保留供追溯。
 
 ## UM-K-UNIFORM-BUNDLE-FLOOR-v1：k-均匀资源束的分层匹配地板
 

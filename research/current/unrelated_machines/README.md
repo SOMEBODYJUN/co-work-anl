@@ -274,3 +274,5 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 [闭环容量释放](../../../research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§11把严格下降障碍推进到弱最大负载单调小步：真实最优凸包的全部最小成本槽输出仍趋2，最小非平凡改件/参与机恰d+1；但单任务到OPT的最小峰值仅为B+1/k²。它不是一般困难性，且该cactus族可精确解。
 
 [异端有界畸变共同组](../../../research/current/unrelated_machines/distorted_group_joint_slot_rounding.md)在给定上下比例包络、唯一home/共同资格结构下联合选宏与接收机，给home≤(1+r+δ)T、sink≤[κ+B̄(1−r)]T，且闭合未知OPT搜索；固定κ+B̄δ<2时只有该结构类具统一改善。 一般UM-TARGET-v1仍OPEN；下一高信息义务是允许可控临时增载的共同容量修复及总位多项式进展，或在一般矩阵中生成保统一余量的相关结构。
+
+[单层配额超图平方根重数地板](single_layer_quota_sqrt_multiplicity_floor.md)：对每个邻域至少 K、资源总重数至多 Δ 的单层接口，计数得 b≥1/(√Δ+1)−1/K，并由资源总量给 b≤1/√Δ（在相应密度下）。这比有界碰撞的 1/Δ 地板更强，明确要求近二归约使用平方级碰撞或跨层一致性；不构成一般硬度。
