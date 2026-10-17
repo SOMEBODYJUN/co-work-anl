@@ -122,3 +122,5 @@
 本阶段另有三项经自足推导与小型有理核验的入口：关联图反馈边参数的 `2^b·poly(L)` 精确阈值算法（`research/current/unrelated_machines/incidence_cycle_rank_exact.md`）、全阶共同矩整数提取桥（`research/current/unrelated_machines/full_degree_moment_localizer_decoding_bridge.md`）以及重轻自洽对偶证书与 YES 固定点边界（`research/current/unrelated_machines/heavy_light_saddle_certificate_and_cycle.md`）。它们均保留准确范围，不升级为一般统一小于2算法。
 
 [逐行均匀相关读出](research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md)新增限定身份 `UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2` 与 `UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1`：共享同一左标签仍有逐点ceil-half共同资源匹配；其显式平层原矩阵可完整输出三二调度。非均匀、重复自查询、多层祖先约束及一般UM正反面不在此结论内；外审和新颖性未认证。
+
+[私有分叉树估值与支持域](research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)新增精确signed demand、全叶XOS包络损失k[1−(1−1/k)^h]及single-state紧凑minorant LP；显式叶预算最大损失阶logB/loglogB。一般源计算gap和共同资源分配未由这些oracle解决；generic LP优化未实现，外审与新颖性未认证。

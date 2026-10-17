@@ -110,3 +110,5 @@ Magniez等，[递归多数原始PDF](https://arxiv.org/pdf/1309.7565)，§2.2 PD
 ## 连续残余通过量与次模背景
 
 Lok–Romero Morales–Vermeulen (2005)，[大学原PDF](https://cris.maastrichtuniversity.nl/ws/files/1037187/guid-9485980d-bc86-4240-b008-d8fb2096cc3d-ASSET1.0.pdf)，§3.2印p5/PDF6为job-only资源消耗；§6.3 Theorem6.2/Cor6.3印pp17–18/PDF18–19为机集合次模。Kulik等ESA2019，[正式PDF](https://drops.dagstuhl.de/storage/00lipics/lipics-vol144-esa2019/LIPIcs.ESA.2019.69/LIPIcs.ESA.2019.69.pdf)，§2.1.1/Theorem1及§3为共同job大小下的item子集LP值次模。两者仅为相关祖先，不当作任意异端p容量格定理；[本阶段自足证明](../current/unrelated_machines/residual_throughput_and_occupation_projection.md)自行处理对偶格封闭。仅web定位读原PDF，未物化字节/填写hash或宣称完整内化；Topkis原件没有被本阶段读取，全球新颖性未认证。
+
+既有Karp1972再版原文新增用途：[树估值minorant域](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)的标准Independent Set源。root重新渲染PDF14/原印94核Main Theorem与item3 CLIQUE，补图保阈值；只导入标准NP完全性，不称本轮重构Karp全证明，不复制另一份扫描。该计算障碍不属于makespan近似困难性。

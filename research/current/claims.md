@@ -1115,6 +1115,18 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2 | 简单二部关联、各复合请求行均匀到right degree个单位资源时，任意跨测试共享标签仍可确定性位poly共同选择标签并为每左点保留ceil(d/2)条真实请求。 | [精确正文](unrelated_machines/row_uniform_correlated_guard_rounding.md)、[陈述先行攻击](../reviews/unrelated_machines/row_uniform_correlated_guard_review.md)、[实际构造器](../../tests/audits/unrelated_machines/row_uniform_correlated_guard.py)；不是一般UM结论。 |
 | UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1 | 上述表的显式flat-state原编译中，每状态parent及全部ports、unit selector有完整sigma，Cmax≤3/2；非空OPT≥1、空任务OPT0，故该子类三二近似。 | [全部机器负载证明](unrelated_machines/row_uniform_correlated_guard_rounding.md)、[有限证据](../../evidence/runs/unrelated_machines/row_uniform_correlated_guard_audit.json)；输入结构显式给出，不声称一般P识别或比值锐利。 |
 
+| UM-PRIVATE-TREE-Q-VALUATION-v1 | 显式k,h≥1同深单射树；多state、signed有理价格 | 显式多state单射树的f=max q为次可加，任意有理signed价格可精确位poly输出真实demand集合与子树。 | [正文](unrelated_machines/private_tree_branching_valuation_and_minorants.md)、陈述先行内审与有限精确实现；外审/新颖性未认证。 |
+| UM-TREE-Q-XOS-ENVELOPE-v1 | 显式k,h≥1同深单射树；single-state、非负minorant | 单state E_q(L)=k^h/[k^h−(k−1)^h]；损失G在min(k,h)的1/2至1倍，叶预算B的最大损失阶logB/loglogB。 | [正文](unrelated_machines/private_tree_branching_valuation_and_minorants.md)、陈述先行内审与有限精确实现；外审/新颖性未认证。 |
+| UM-TREE-Q-MINORANT-LP-v1 | 显式k,h≥1同深单射树；single-state、非负minorant | 补集最小blocking树给精确强分离；O(k|V|)紧凑LP投影恰为A(q)，指定集合可标准有理LP精确求E。 | [正文](unrelated_machines/private_tree_branching_valuation_and_minorants.md)、陈述先行内审与有限精确实现；外审/新颖性未认证。 |
+
+| UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1 | 显式k,h≥1私有state树、任意S、全域minorant | 对每个S构造全域有效w≤f，w(S)≥f(S)/G(k,h)，G=k[1−(1−1/k)^h]逐参数锐；不需精确minorant分离。 | [正文](unrelated_machines/private_tree_branching_valuation_and_minorants.md)、陈述先行内部审查；无新实现、外审与新颖性未认证。 |
+| UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1 | k2h1显式无孤立图、uniform正权W<2 | k2h1图边states，即使uniform正权且总重<2，nonminorant NP完全、membership coNP完全；但E_f(S)=f(S)及value/demand均易解。 | [正文](unrelated_machines/private_tree_branching_valuation_and_minorants.md)、陈述先行内部审查；无新实现、外审与新颖性未认证。 |
+
+| UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1 | single-state显式k,h≥1满树、非负权重、全部叶子集 | q=单位色类划分数；单blocking阈值及O(V)非零扩展LP精确刻画A(q) | [正文](unrelated_machines/private_tree_branching_valuation_and_minorants.md)、陈述先行与读后独立攻击；无新实现，外审/新颖性未认证。 |
+
+| UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1 | D≥3,m=D+1显式余横截状态族 | 显式D≥3,m=D+1族，每C独立M且uniform边际属于P(M)，但最优min保留1/D；普通UM有Tconf1、真OPT2−1/D。 | [正文](unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)、内部陈述先行/读后审查；有限证书实现。 |
+| UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1 | 共同D≥1平层ports+任意外部unit aux，固定η | 统一D、固定外资源ports、任意mandatory unit aux且parents/external分离时，由BLMRS Thm4得实际2−1/(4+η)近似；Baux≥2或U空分支精确。 | [正文](unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)、内部陈述先行/读后审查；published算法未集成。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

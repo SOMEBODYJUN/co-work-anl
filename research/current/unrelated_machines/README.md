@@ -356,3 +356,7 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 [逐行均匀相关读出的半数保留与平层三二调度](row_uniform_correlated_guard_rounding.md)给任意native标签数及跨测试相关的共同ceil-half匹配，并输出该显式平层原矩阵的全部任务、实际负载≤3/2。整数势避免有理微幅改进；simple与复合行均匀承重。它排除这一读出合同的near-zero soundness，不扩展到非均匀、多重自查询或多层树，一般目标正反面保持OPEN。
 
 pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md)保留原v1完整源域及gap方向异议：非退化固定参数域的算术内核成立，但尚未写显然NO/空YES合法分支；加一是NO下界。合法编译另由已有槽定理给(1,1+1/d) promise边界。原v1暂记条件性，不以默补假设维持完整归约状态。
+
+[私有分叉树估值与支持域](private_tree_branching_valuation_and_minorants.md)新增精确signed demand、全叶XOS包络损失k[1−(1−1/k)^h]及single-state紧凑minorant LP；显式叶预算最大损失阶logB/loglogB。一般源计算gap和共同资源分配未由这些oracle解决；generic LP优化未实现，外审与新颖性未认证。
+
+[统一端口与全局单位停车](uniform_port_parking_matroid_gap_and_actual_approximation.md)把每C独立仍1/D共同保留的显式余横截CONFIGgap，与BLMRS两值polymatroid算法给同结构真实2−1/(4+η)近似分开；D不统一或非单位停车未覆盖，通用算法未实现。

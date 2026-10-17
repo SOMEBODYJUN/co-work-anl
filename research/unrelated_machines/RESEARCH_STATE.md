@@ -399,3 +399,13 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 [相关单位读出的整数势边界](../current/unrelated_machines/row_uniform_correlated_guard_rounding.md)：simple、复合行均匀时，全局真实标签局部下降给每点碰撞≤d−1，再一次共同匹配支付ceil-half；平层所有原ports和selectors负载≤3/2，已实现并精确核验。下一反面必须退出至少一个承重前提并证明实际低sigma的源解码，不能只加强跨测试标签相关。一般UM-TARGET-v1正反面仍OPEN。
 
 pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md)保留原v1完整源域及gap方向异议：非退化固定参数域的算术内核成立，但尚未写显然NO/空YES合法分支；加一是NO下界。合法编译另由已有槽定理给(1,1+1/d) promise边界。原v1暂记条件性，不以默补假设维持完整归约状态。
+
+## 非polymatroid分叉的可计算源表示
+
+[私有树估值](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)给精确signed demand与单state支持域LP，同时量化用加性/XOS替代真实祖先分叉的最坏损失阶logB/loglogB。它区分“估值oracle可求”和“多个玩家共同资源可分配”，不提供NP-hardness。下一反面义务保持实际源gap与弱调度共同解码；single-state LP不可直接交到max-state。
+
+[树源工具](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)进一步给任意S的全域加性支持w，w(S)≥f(S)/G(k,h)，统一因子逐参数锐；同时最浅多state图类的完整minorant membership已coNP完全，但同例E_f(S)=f(S)易解。这固定了支持构造与完整支持域分离的区别，不能因后者难就阻断前者。
+
+## 统一D的全局单位停车已由published算法封闭
+
+[余横截与真实算法](../current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)证明纯fractional边际即使每个full配置独立仍可只保1/D、普通UM配置gap趋2；但相对真实OPT的统一D类通过BLMRS Theorem4已有2−1/(4+η)实际近似。继续near2反面必须改变统一D/可压缩资源机制或给真正新的source gap；更多unit parking aux不能免费提供hardness。

@@ -309,3 +309,11 @@ u_t) 的一般复杂度。
 ## 逐行均匀平层读出不能仅靠跨测试相关压低支付
 
 尝试用同一源标签控制许多测试来挽回独立局部guard的soundness。对simple、逐复合行均匀、每right资源数等于其degree的准确合同，整数碰撞势加一次全局匹配总能保每点ceil-half，flat原sigma≤3/2。因此共享标签本身不够。可回收的是实际共同标签/资源算法；重试需非均匀行、有效多重请求、跨资源组耦合或多层祖先约束，并重证全部机器与源解码。删除假设的反例仅否定绝对负载延伸，不否定更大类另一三二近似。见[正文](../current/unrelated_machines/row_uniform_correlated_guard_rounding.md)。
+
+## 私有树分叉不能无损转为XOS下包络
+
+[精确包络](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)证明single-state全叶值的加性下包络损失G=k[1−(1−1/k)^h]可达Theta(logB/loglogB)。这只否定统一常数、逐点支配的XOS下替代合同，不否定其它估值算法或一般UM次二。可回收精确demand、blocking分离与紧凑single-state LP；重试必须保留真实祖先兼容或补偿这个损失，不把oracle障碍当NP-hardness。
+
+## 统一端口数量加unit parking不能把fractional gap升级成实际hardness
+
+[同一结构的两份合同](../current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)：每C vacancy-independent且uniform边际属于P(M)仍有1/D共同保留；但真实最佳保留β*可由published two-value polymatroid算法常数近似，普通UM得到2−1/(4+η)。失败是把βLP1误当完整integer YES。可回收精确OPT=2−β*、Rado计数和显式Hall家族；重试需真正退出该合同，不把更多aux/大LPgap当新计算障碍。

@@ -9917,6 +9917,202 @@
         "tests/audits/unrelated_machines/row_uniform_correlated_guard.py"
       ],
       "status": "implemented for the stated structured class"
+    },
+    {
+      "id": "UM-PRIVATE-TREE-Q-EXPLICIT-INPUT",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "显式同深单射树分叉估值",
+      "detail": "k,h≥1，每state完整显式叶地址；q最大同深r树，f=max q。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md"
+      ],
+      "status": "explicit definition or standard tool; not a new hardness statement"
+    },
+    {
+      "id": "UM-TREE-Q-ADDITIVE-MINORANT-DEFINITION",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "非负加性minorant及逐点XOS包络",
+      "detail": "A(q)量化全部叶子集，E_q(S)=max非负有效加性权重。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md"
+      ],
+      "status": "explicit definition or standard tool; not a new hardness statement"
+    },
+    {
+      "id": "UM-TREE-Q-STANDARD-EXACT-RATIONAL-LP",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "标准有界有理LP工具",
+      "detail": "显式多项式规模有界有理LP可确定性位多项式求精确有理最优点；非新定理。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md"
+      ],
+      "status": "explicit definition or standard tool; not a new hardness statement"
+    },
+    {
+      "id": "UM-PRIVATE-TREE-Q-VALUATION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "私有分叉估值的次可加性与精确signed需求",
+      "detail": "显式多state单射树的f=max q为次可加，任意有理signed价格可精确位poly输出真实demand集合与子树。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md",
+        "tests/audits/unrelated_machines/private_tree_branching_valuation.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-TREE-Q-XOS-ENVELOPE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "全叶XOS包络与显式叶预算锐阶",
+      "detail": "单state E_q(L)=k^h/[k^h−(k−1)^h]；损失G在min(k,h)的1/2至1倍，叶预算B的最大损失阶logB/loglogB。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md",
+        "tests/audits/unrelated_machines/private_tree_branching_valuation.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-TREE-Q-MINORANT-LP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单状态加性minorant的分离与紧凑LP",
+      "detail": "补集最小blocking树给精确强分离；O(k|V|)紧凑LP投影恰为A(q)，指定集合可标准有理LP精确求E。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md",
+        "tests/audits/unrelated_machines/private_tree_branching_valuation.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-PRIVATE-TREE-Q-FINITE-AUDIT",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "树需求与支持域的有限精确证据",
+      "detail": "800子集、901实际树、52分离、24signed价格、8扩展证书；非generic LP优化。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "evidence/runs/unrelated_machines/private_tree_branching_valuation_audit.json",
+        "examples/unrelated_machines/private_tree_branching_valuation_examples.json",
+        "tests/audits/unrelated_machines/private_tree_branching_valuation.py"
+      ],
+      "status": "finite exact audit; not a general proof"
+    },
+    {
+      "id": "UM-SOURCE-KARP-INDEPENDENT-SET",
+      "kind": "source",
+      "track": "unrelated_machines",
+      "title": "Karp Clique及补图Independent Set标准源",
+      "detail": "Karp1972 MainTheorem原印94/PDF14，root实际渲染registered2010reprint并核CLIQUE；补图保阈值。只导入标准NP-completeness，不重构Karp全证明。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "history/source/literature/unrelated_machines/karp_1972_reprinted_2010_reducibility.pdf",
+        "research/unrelated_machines/literature_manifest.json"
+      ],
+      "status": "Paper Fact plus elementary complement reduction; not new hardness theorem"
+    },
+    {
+      "id": "UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意目标集合的锐XOS损失与实际加性支持",
+      "detail": "对每个S构造全域有效w≤f，w(S)≥f(S)/G(k,h)，G=k[1−(1−1/k)^h]逐参数锐；不需精确minorant分离。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "complete stated-scope proof; independent statement-first and read-after review; external review and novelty unverified"
+    },
+    {
+      "id": "UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "最浅多状态全minorant域的图计算困难性",
+      "detail": "k2h1图边states，即使uniform正权且总重<2，nonminorant NP完全、membership coNP完全；但E_f(S)=f(S)及value/demand均易解。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "complete stated-scope proof; independent statement-first and read-after review; external review and novelty unverified"
+    },
+    {
+      "id": "UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单位色类分解与线性非零支持LP",
+      "detail": "q(A)等于q≤1最少划分数，单blocking阈值与O(V)非零有界LP精确刻画single-state A(q)。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "complete stated-scope proof; independent statement-first and read-after review; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIFORM-PORT-PARKING-INPUT",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "统一D原端口加单位停车合同",
+      "detail": "state private parents与external资源分离，每stateD ports、parent1/D外1、unitselector，aux仅external。",
+      "refs": [
+        "research/current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md",
+        "history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-SOURCE-BLMRS-TWO-VALUE-RESOURCE-POLYMATROID",
+      "kind": "source",
+      "track": "unrelated_machines",
+      "title": "BLMRS资源polymatroid两值算法",
+      "detail": "v1 Def7/印7、Thm4/印3，fixedη有(4+η)two-value实际算法；本接口rank由matching算。",
+      "refs": [
+        "research/current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md",
+        "history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
+      ],
+      "status": "Paper Fact; targeted primary theorem read, full source proof not reconstructed"
+    },
+    {
+      "id": "UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "每个配置均独立的余横截共同保留锐间隙",
+      "detail": "显式D≥3,m=D+1族，每C独立M且uniform边际属于P(M)，但最优min保留1/D；普通UM有Tconf1、真OPT2−1/D。",
+      "refs": [
+        "research/current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md",
+        "research/reviews/unrelated_machines/uniform_port_parking_matroid_review.md"
+      ],
+      "status": "complete stated-scope proof; independent statement reconstruction and exact finite certificates; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "统一D端口加任意unit停车的真实次二推论",
+      "detail": "统一D、固定外资源ports、任意mandatory unit aux且parents/external分离时，由BLMRS Thm4得实际2−1/(4+η)近似；Baux≥2或U空分支精确。",
+      "refs": [
+        "research/current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md",
+        "research/reviews/unrelated_machines/uniform_port_parking_matroid_review.md"
+      ],
+      "status": "published-theorem corollary with complete exact reduction and independent review; source algorithm not implemented; novelty unverified"
+    },
+    {
+      "id": "UM-COTRANSVERSAL-UNIFORM-GAP-FINITE-CERTIFICATES",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "D3/D4全P配置匹配与Hall有限证据",
+      "detail": "63/124机，76/165job，81/7776两port模式；root全复跑一致，不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md",
+        "evidence/runs/unrelated_machines/cotransversal_uniform_configuration_gap_audit.json",
+        "tests/audits/unrelated_machines/cotransversal_uniform_configuration_gap.py"
+      ],
+      "status": "finite exact check; not universal proof"
     }
   ],
   "hyperedges": [
@@ -24448,6 +24644,282 @@
         "research/reviews/unrelated_machines/row_uniform_correlated_guard_review.md"
       ],
       "status": "method scope only; target remains open"
+    },
+    {
+      "id": "um_private_tree_q_valuation_v1_derive",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-TREE-Q-EXPLICIT-INPUT",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "conclusion": "UM-PRIVATE-TREE-Q-VALUATION-v1",
+      "statement": "显式多state单射树的f=max q为次可加，任意有理signed价格可精确位poly输出真实demand集合与子树。；全部共同假设在正文。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_private_tree_q_valuation_v1_checks",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-TREE-Q-FINITE-AUDIT"
+      ],
+      "conclusion": "UM-PRIVATE-TREE-Q-VALUATION-v1",
+      "statement": "所列明确有限输入及输出实现核对，不证明一般性、不声称generic LP已运行。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "evidence/runs/unrelated_machines/private_tree_branching_valuation_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "um_tree_q_xos_envelope_v1_derive",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-TREE-Q-EXPLICIT-INPUT",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1",
+        "UM-TREE-Q-ADDITIVE-MINORANT-DEFINITION"
+      ],
+      "conclusion": "UM-TREE-Q-XOS-ENVELOPE-v1",
+      "statement": "单state E_q(L)=k^h/[k^h−(k−1)^h]；损失G在min(k,h)的1/2至1倍，叶预算B的最大损失阶logB/loglogB。；全部共同假设在正文。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_tree_q_xos_envelope_v1_checks",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-TREE-Q-FINITE-AUDIT"
+      ],
+      "conclusion": "UM-TREE-Q-XOS-ENVELOPE-v1",
+      "statement": "所列明确有限输入及输出实现核对，不证明一般性、不声称generic LP已运行。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "evidence/runs/unrelated_machines/private_tree_branching_valuation_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "um_tree_q_minorant_lp_v1_derive",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-TREE-Q-EXPLICIT-INPUT",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1",
+        "UM-TREE-Q-ADDITIVE-MINORANT-DEFINITION",
+        "UM-TREE-Q-STANDARD-EXACT-RATIONAL-LP"
+      ],
+      "conclusion": "UM-TREE-Q-MINORANT-LP-v1",
+      "statement": "补集最小blocking树给精确强分离；O(k|V|)紧凑LP投影恰为A(q)，指定集合可标准有理LP精确求E。；全部共同假设在正文。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_tree_q_minorant_lp_v1_checks",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-TREE-Q-FINITE-AUDIT"
+      ],
+      "conclusion": "UM-TREE-Q-MINORANT-LP-v1",
+      "statement": "所列明确有限输入及输出实现核对，不证明一般性、不声称generic LP已运行。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "evidence/runs/unrelated_machines/private_tree_branching_valuation_audit.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "um_private_tree_q_target_scope",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-TREE-Q-VALUATION-v1",
+        "UM-TREE-Q-XOS-ENVELOPE-v1",
+        "UM-TREE-Q-MINORANT-LP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "精确demand与XOS损失不提供显式源计算gap或共同资源分配；正反目标不升级。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "scope restriction; main target open"
+    },
+    {
+      "id": "um_private_tree_global_xos_loss_v1_derive",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-TREE-Q-EXPLICIT-INPUT",
+        "UM-PRIVATE-TREE-Q-VALUATION-v1",
+        "UM-TREE-Q-ADDITIVE-MINORANT-DEFINITION",
+        "UM-TREE-Q-XOS-ENVELOPE-v1"
+      ],
+      "conclusion": "UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1",
+      "statement": "对每个S构造全域有效w≤f，w(S)≥f(S)/G(k,h)，G=k[1−(1−1/k)^h]逐参数锐；不需精确minorant分离。；完整共同前提及输出解码见正文。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_private_tree_global_xos_loss_v1_scope",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅源估值支持/域分离合同；不提供makespan源gap或任意弱调度source decoder。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "scope restriction; main target open"
+    },
+    {
+      "id": "um_multistate_q_minorant_graph_hardness_v1_derive",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-TREE-Q-EXPLICIT-INPUT",
+        "UM-TREE-Q-ADDITIVE-MINORANT-DEFINITION",
+        "UM-SOURCE-KARP-INDEPENDENT-SET",
+        "UM-TREE-Q-STANDARD-EXACT-RATIONAL-LP"
+      ],
+      "conclusion": "UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1",
+      "statement": "k2h1图边states，即使uniform正权且总重<2，nonminorant NP完全、membership coNP完全；但E_f(S)=f(S)及value/demand均易解。；完整共同前提及输出解码见正文。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_multistate_q_minorant_graph_hardness_v1_scope",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅源估值支持/域分离合同；不提供makespan源gap或任意弱调度source decoder。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "scope restriction; main target open"
+    },
+    {
+      "id": "um_tree_q_one_threshold_derivation",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-TREE-Q-EXPLICIT-INPUT",
+        "UM-PRIVATE-TREE-Q-VALUATION-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1",
+        "UM-TREE-Q-ADDITIVE-MINORANT-DEFINITION",
+        "UM-TREE-Q-STANDARD-EXACT-RATIONAL-LP"
+      ],
+      "conclusion": "UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1",
+      "statement": "h-index高孩子各占一色给χ=q，单位色类权DP及消Z单调归纳给线性非零LP双向投影。",
+      "refs": [
+        "research/current/unrelated_machines/private_tree_branching_valuation_and_minorants.md",
+        "research/reviews/unrelated_machines/private_tree_branching_valuation_review.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "um_cotransversal_uniform_config_sharp_gap_v1_derive",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIFORM-PORT-PARKING-INPUT",
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1",
+      "statement": "显式D≥3,m=D+1族，每C独立M且uniform边际属于P(M)，但最优min保留1/D；普通UM有Tconf1、真OPT2−1/D。；精确共同前提及所有机器负载见正文。",
+      "refs": [
+        "research/current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md",
+        "research/reviews/unrelated_machines/uniform_port_parking_matroid_review.md"
+      ],
+      "status": "complete stated-scope proof or direct paper corollary"
+    },
+    {
+      "id": "um_cotransversal_uniform_config_sharp_gap_v1_scope",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅指定LP合同/统一D特殊实际类；不为一般UM正反结论。",
+      "refs": [
+        "research/current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md",
+        "research/reviews/unrelated_machines/uniform_port_parking_matroid_review.md"
+      ],
+      "status": "scope only"
+    },
+    {
+      "id": "um_uniform_port_parking_paper_approx_v1_derive",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIFORM-PORT-PARKING-INPUT",
+        "UM-MODEL-v1",
+        "UM-SOURCE-BLMRS-TWO-VALUE-RESOURCE-POLYMATROID"
+      ],
+      "conclusion": "UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1",
+      "statement": "统一D、固定外资源ports、任意mandatory unit aux且parents/external分离时，由BLMRS Thm4得实际2−1/(4+η)近似；Baux≥2或U空分支精确。；精确共同前提及所有机器负载见正文。",
+      "refs": [
+        "research/current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md",
+        "research/reviews/unrelated_machines/uniform_port_parking_matroid_review.md"
+      ],
+      "status": "complete stated-scope proof or direct paper corollary"
+    },
+    {
+      "id": "um_uniform_port_parking_paper_approx_v1_scope",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅指定LP合同/统一D特殊实际类；不为一般UM正反结论。",
+      "refs": [
+        "research/current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md",
+        "research/reviews/unrelated_machines/uniform_port_parking_matroid_review.md"
+      ],
+      "status": "scope only"
+    },
+    {
+      "id": "um_cotransversal_uniform_gap_finite_check",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-COTRANSVERSAL-UNIFORM-GAP-FINITE-CERTIFICATES"
+      ],
+      "conclusion": "UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1",
+      "statement": "D3/D4实际P/σ/config/matching与有限Hall模式核验，不作为一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md",
+        "evidence/runs/unrelated_machines/cotransversal_uniform_configuration_gap_audit.json"
+      ],
+      "status": "finite exact checks"
     }
   ]
 }

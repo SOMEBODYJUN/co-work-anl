@@ -61,3 +61,7 @@
 本轮新增三条可复用边界：[全层核心—私有配额近二族](current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md)、[共同big选择的独立集阈值障碍](questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md)和[固定工作量势局部极小族](current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md)。它们分别收紧跨层soundness、共同容量状态和局部repair的精确义务，均不把主目标升级为已解或一般hardness。
 
 [剪枝首步与临时峰值](current/unrelated_machines/pruned_first_move_and_transient_peak.md)给全输入首步上界 U=max(2T,C+T/2)、可计算的单向NO以及固定批量的逐参数锐环族；沿正文进入冻结审查、独立状态图与完整原矩阵审计。首步不保证改善，不是一般全程或统一ε算法。
+
+[私有分叉树估值与支持域](current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)新增精确signed demand、全叶XOS包络损失k[1−(1−1/k)^h]及single-state紧凑minorant LP；显式叶预算最大损失阶logB/loglogB。一般源计算gap和共同资源分配未由这些oracle解决；generic LP优化未实现，外审与新颖性未认证。
+
+[统一端口与全局单位停车](current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)把每C独立仍1/D共同保留的显式余横截CONFIGgap，与BLMRS两值polymatroid算法给同结构真实2−1/(4+η)近似分开；D不统一或非单位停车未覆盖，通用算法未实现。

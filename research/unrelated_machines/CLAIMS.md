@@ -1882,3 +1882,90 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Evidence / Counterevidence：6068原任务Fraction回算、三角32768合法调度枚举；去simple/uniform的原OPT分别7/4和2，只否定绝对上界延伸。
 - Status：完整限定证明、陈述先行独立攻击通过、实际构造器实现；外审、新颖性未认证，UM-TARGET-v1正反面仍OPEN。
 - Related Files：同上正文/审查/代码及`examples/unrelated_machines/row_uniform_correlated_guard_examples.json`。
+
+## UM-PRIVATE-TREE-Q-VALUATION-v1：私有分叉估值的次可加性与精确signed需求
+
+- Exact Statement / Conclusion：显式多state单射树的f=max q为次可加，任意有理signed价格可精确位poly输出真实demand集合与子树。
+- Objects / Domain / Quantifiers：所有显式满k叉深h树，k,h≥1；全部有限非空state族与逐state单射叶资源像；仅第一项包括多state与任意signed有理价格，其余仅single-state；完整量词及全部约束见[正文](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)。
+- Assumptions / Definitions：同深真正r叉子树；minorant权重非负，f=max q；总位长支付显式树/全部叶地址，h0排除、k1链包括。
+- Scope / Conclusion：树源表示与加性下包络工具，不是一般UM算法、近二计算困难性或配置gap。
+- Dependencies：UM-PRUNED-TREE-LEAF-HITTING-v1与显式估值定义；第三项另用包络定义及标准精确有理LP可解性；共同前提见正文及超图。
+- Evidence / Counterevidence or Objections：一般证明、陈述先行攻击及800子集等有限独立核验分开；generic LP优化未实现，单state LP不自动延伸max-state。
+- Status：限定证明完整、内部独立重构与读后攻击通过；value/demand/分离实现，LP仅约束数据及给定支持扩展实现；外审、新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)、[实际审查](../reviews/unrelated_machines/private_tree_branching_valuation_review.md)、`tests/audits/unrelated_machines/private_tree_branching_valuation.py`、`evidence/runs/unrelated_machines/private_tree_branching_valuation_audit.json`、`examples/unrelated_machines/private_tree_branching_valuation_examples.json`。
+
+## UM-TREE-Q-XOS-ENVELOPE-v1：全叶XOS包络与显式叶预算锐阶
+
+- Exact Statement / Conclusion：单state E_q(L)=k^h/[k^h−(k−1)^h]；损失G在min(k,h)的1/2至1倍，叶预算B的最大损失阶logB/loglogB。
+- Objects / Domain / Quantifiers：所有显式满k叉深h树，k,h≥1；全部有限非空state族与逐state单射叶资源像；仅第一项包括多state与任意signed有理价格，其余仅single-state；完整量词及全部约束见[正文](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)。
+- Assumptions / Definitions：同深真正r叉子树；minorant权重非负，f=max q；总位长支付显式树/全部叶地址，h0排除、k1链包括。
+- Scope / Conclusion：树源表示与加性下包络工具，不是一般UM算法、近二计算困难性或配置gap。
+- Dependencies：UM-PRUNED-TREE-LEAF-HITTING-v1与显式估值定义；第三项另用包络定义及标准精确有理LP可解性；共同前提见正文及超图。
+- Evidence / Counterevidence or Objections：一般证明、陈述先行攻击及800子集等有限独立核验分开；generic LP优化未实现，单state LP不自动延伸max-state。
+- Status：限定证明完整、内部独立重构与读后攻击通过；value/demand/分离实现，LP仅约束数据及给定支持扩展实现；外审、新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)、[实际审查](../reviews/unrelated_machines/private_tree_branching_valuation_review.md)、`tests/audits/unrelated_machines/private_tree_branching_valuation.py`、`evidence/runs/unrelated_machines/private_tree_branching_valuation_audit.json`、`examples/unrelated_machines/private_tree_branching_valuation_examples.json`。
+
+## UM-TREE-Q-MINORANT-LP-v1：单状态加性minorant的分离与紧凑LP
+
+- Exact Statement / Conclusion：补集最小blocking树给精确强分离；O(k|V|)紧凑LP投影恰为A(q)，指定集合可标准有理LP精确求E。
+- Objects / Domain / Quantifiers：所有显式满k叉深h树，k,h≥1；全部有限非空state族与逐state单射叶资源像；仅第一项包括多state与任意signed有理价格，其余仅single-state；完整量词及全部约束见[正文](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)。
+- Assumptions / Definitions：同深真正r叉子树；minorant权重非负，f=max q；总位长支付显式树/全部叶地址，h0排除、k1链包括。
+- Scope / Conclusion：树源表示与加性下包络工具，不是一般UM算法、近二计算困难性或配置gap。
+- Dependencies：UM-PRUNED-TREE-LEAF-HITTING-v1与显式估值定义；第三项另用包络定义及标准精确有理LP可解性；共同前提见正文及超图。
+- Evidence / Counterevidence or Objections：一般证明、陈述先行攻击及800子集等有限独立核验分开；generic LP优化未实现，单state LP不自动延伸max-state。
+- Status：限定证明完整、内部独立重构与读后攻击通过；value/demand/分离实现，LP仅约束数据及给定支持扩展实现；外审、新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)、[实际审查](../reviews/unrelated_machines/private_tree_branching_valuation_review.md)、`tests/audits/unrelated_machines/private_tree_branching_valuation.py`、`evidence/runs/unrelated_machines/private_tree_branching_valuation_audit.json`、`examples/unrelated_machines/private_tree_branching_valuation_examples.json`。
+
+## UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1：任意目标集合的锐XOS损失与实际加性支持
+
+- Exact Statement / Conclusion：对每个S构造全域有效w≤f，w(S)≥f(S)/G(k,h)，G=k[1−(1−1/k)^h]逐参数锐；不需精确minorant分离。
+- Objects / Domain / Quantifiers：全部显式k,h≥1满树、多state单射叶资源、每个S⊆U，量化全部B的minorant有效性。
+- Assumptions / Definitions：f=max_a q_a；A(f)与E_f按全部资源子集定义；signed demand、强分离、指定0/1集合优化分别处理。
+- Scope：源估值到XOS下支持的锐定量桥，非资源分配算法。
+- Dependencies：UM-PRIVATE-TREE-Q-VALUATION-v1、UM-TREE-Q-XOS-ENVELOPE-v1及共同显式输入。
+- Evidence / Counterevidence or Objections：一般证明及实际陈述先行独立重构/读后攻击；没有新生产接口或有限运行。图类已explicit XOS，所以不能把分离困难性错称指定集合包络困难。
+- Status：限定证明完整与内部攻击通过；外审、新颖性未认证；主目标正反面未变。
+- Related Files：[完整正文](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)、[实际审查](../reviews/unrelated_machines/private_tree_branching_valuation_review.md)。
+
+## UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1：最浅多状态全minorant域的图计算困难性
+
+- Exact Statement / Conclusion：k2h1图边states，即使uniform正权且总重<2，nonminorant NP完全、membership coNP完全；但E_f(S)=f(S)及value/demand均易解。
+- Objects / Domain / Quantifiers：全部无孤立非空简单图G，每edge一k2h1双叶state，全部非负有理w；困难性子类w=uniformλ>0且|V|λ<2。
+- Assumptions / Definitions：f=max_a q_a；A(f)与E_f按全部资源子集定义；signed demand、强分离、指定0/1集合优化分别处理。
+- Scope：标准IS归约嵌入全minorant域；NP/coNP区别与全输入停机合同明确；不是UM近似hardness。
+- Dependencies：显式k2h1图模型、Karp1972 CLIQUE/补图Independent Set Paper Fact、标准精确有理LP。
+- Evidence / Counterevidence or Objections：一般证明及实际陈述先行独立重构/读后攻击；没有新生产接口或有限运行。图类已explicit XOS，所以不能把分离困难性错称指定集合包络困难。
+- Status：限定证明完整与内部攻击通过；外审、新颖性未认证；主目标正反面未变。
+- Related Files：[完整正文](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)、[实际审查](../reviews/unrelated_machines/private_tree_branching_valuation_review.md)。
+
+## UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1：单位色类划分与单阈值支持域
+
+- Exact Statement / Conclusion：任意A的q值等于q≤1最少划分数，输出实际色类；非负minorant只须检验最大单位色类权≤1，等价C_(k−1)≥W−1；O(V)变量/约束/非零系数扩展LP精确。
+- Objects / Domain / Quantifiers：single-state全部显式k,h≥1满树、全部叶集合及非负权重；k1单叶另列，h0排除。
+- Assumptions / Definitions / Scope：真正同深分叉、非负加性minorant；仅single-state，不延伸max-state域，不是调度hardness。
+- Dependencies：显式q定义、UM-PRIVATE-TREE-Q-VALUATION-v1、UM-PRUNED-TREE-LEAF-HITTING-v1、minorant定义与标准精确有理LP；所有共同前提见[自足正文](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)。
+- Evidence / Counterevidence or Objections：实际陈述先行独立重构和冻结证明读后攻击；消Z非负系数、F叶0及全部非零计数专核；旧代码未修改，无新generic LP运行。
+- Status：限定证明完整，内部两阶段攻击通过；新增构造未实现，外审及新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/private_tree_branching_valuation_and_minorants.md)、[审查](../reviews/unrelated_machines/private_tree_branching_valuation_review.md)。
+
+## UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1：每个配置均独立的余横截共同保留锐间隙
+
+- Exact Statement / Conclusion：显式D≥3,m=D+1族，每C独立M且uniform边际属于P(M)，但最优min保留1/D；普通UM有Tconf1、真OPT2−1/D。
+- Objects / Domain / Quantifiers：所有整数D≥3的显式g/A/B+mandatory L族，m=D+1。
+- Assumptions / Definitions：配置C、vacancy M=N*、真实β*与完整原矩阵均在[正文](../current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)精确定义；不得把fractional βLP当β*。
+- Scope：限定配置/marginal舍入gap，不是计算困难性，实例OPT闭式易算。
+- Dependencies：显式原P/集合对象、标准transversal dual/Hall；不调用未解oracle。
+- Evidence / Counterevidence or Objections：陈述先行与后读冻结证明内部攻击；D3/D4全部原P/配置/匹配和81/7776模式有限checks；pure右列完整源不由此编译。
+- Status：限定证明完整与独立攻击通过；显式家族实现与冻结有限证据。外审/新颖性未认证，主目标正反面不变。
+- Related Files：[正文](../current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)、[实际审查](../reviews/unrelated_machines/uniform_port_parking_matroid_review.md)、`tests/audits/unrelated_machines/cotransversal_uniform_configuration_gap.py`、`evidence/runs/unrelated_machines/cotransversal_uniform_configuration_gap_audit.json`。
+
+## UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1：统一D端口加任意unit停车的真实次二推论
+
+- Exact Statement / Conclusion：统一D、固定外资源ports、任意mandatory unit aux且parents/external分离时，由BLMRS Thm4得实际2−1/(4+η)近似；Baux≥2或U空分支精确。
+- Objects / Domain / Quantifiers：任意显式共同D≥1 states/ports与任意外部unit aux，固定有理η>0；全输入含U空及aux B≥2。
+- Assumptions / Definitions：配置C、vacancy M=N*、真实β*与完整原矩阵均在[正文](../current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)精确定义；不得把fractional βLP当β*。
+- Scope：published Theorem4的相对实际OPT推论，统一D和parent/external分离承重；不是一般UM算法。
+- Dependencies：显式原P/集合对象、标准transversal dual/Hall；另用Rado lifting、标准matroid intersection及BLMRS v1 Def7/Thm4。
+- Evidence / Counterevidence or Objections：陈述先行与后读冻结证明内部攻击；没有实现BLMRS通用算法；图族LPgap2不反驳相对OPT近似。
+- Status：限定证明完整与独立攻击通过；数学归约与实际σ构造可算，source算法未集成。外审/新颖性未认证，主目标正反面不变。
+- Related Files：[正文](../current/unrelated_machines/uniform_port_parking_matroid_gap_and_actual_approximation.md)、[实际审查](../reviews/unrelated_machines/uniform_port_parking_matroid_review.md)、`tests/audits/unrelated_machines/cotransversal_uniform_configuration_gap.py`、`evidence/runs/unrelated_machines/cotransversal_uniform_configuration_gap_audit.json`。
