@@ -47,4 +47,8 @@
 
 [共同资格私有组的无界sink联合流](research/current/unrelated_machines/hall_group_joint_flow.md)：实际输出比例`q(2+δ)/(q+1)`，并有未知OPT的结构承诺版本；同组资格/等端体积及组总量范围仍承重，q增长时无统一ε。一般主目标保持OPEN，下一义务是可恢复的一般分组或异资格/异端容量转换。
 
+## 全局分配矩的可提取条件
+
+[全局四阶分配矩](research/current/unrelated_machines/global_assignment_moment_rounding.md)给显式小缺陷证书的确定有理实际提取，同时证明一个来自真实最优分布的全空间HS贪心仍可输出2OPT。给定证书的提取与一般输入如何生成可用证书分开；两项精确身份及经典平坦背景见账本。UM-TARGET-v1保持OPEN。
+
 [高围长仙人掌的配置锐界与精确块算法](research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)表明simple cactus可同时有CONFIG supgap2和真实精确P；单环分量配置精确、最大顶点块环秩b给2^b poly算法。它们限制反面归约的结构，不证明一般目标不存在。

@@ -840,6 +840,30 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Status：限域完整证明、独立内部已审、规范实际构造已实现；标准工具组合，未外审/未认证全球新颖性或独立论文价值。
 - Related Files：[正文](../current/unrelated_machines/hall_group_joint_flow.md)、[冻结审查](../reviews/unrelated_machines/hall_group_joint_flow_review.md)、hall_group_joint_flow三份代码/冻结报告与实际输入/任务分配。
 
+## UM-GLOBAL-MOMENT-NEARFLAT-EXTRACTION-v1：全局四阶分配矩的近平坦实际提取
+
+- Exact Statement / Quantifiers：∀合法一般P、给定有理T>0与0<η≤1，以及正文定义的显式有理四阶C₂分配矩证书y，令n为任务数、d为p_ij≤T有限边数、R=rank M₁≥1，压缩乘法算子A_e及δ=Σ_e tr(A_e−A_e²)。若n,d≥1且δ≤min{1/(64ndR),η/16}，则正文固定任务次序、最大Hilbert–Schmidt子分支且确定平局的贪心算法，在P,T,η,y总输入位长的多项式时间输出实际调度σ，∀i，L_i(σ)≤(1+3δ)T≤(1+η)T。空任务直接输出空分配；T=0用零时间边精确处理。
+- Objects / Domain / Definitions：UM-MODEL-v1与正文C₂；M₂、one-hot理想及逐机容量局部化共用同一y。取V₁=span{1,x_e}的正定有理Gram基，A_e=G⁻¹H_e，HS范数使用Gram伴随。δ是全空间trace，不能换成初态能量。
+- Assumptions / Scope：显式证书、严格小缺陷条件和总输入位长均承重；全部可用p_e≤T，允许零时间和单可用机器。原P中p>T边只被阈值剪枝；每任务须有剩余边。
+- Conclusion / Mechanism：投影漏损D_e=A_e−A_e²=B_e*B_e同时控制幂等缺陷和交换子；固定次序的最大HS分支保持非零近幂等积，最终有理密度逐边损失≤3δ_e，再由同一个逐机算子容量界恢复实际负载。无需数值谱分解或抽样。
+- Dependencies：UM-MODEL-v1、UM-GLOBAL-ASSIGNMENT-C2-MOMENT-MODEL-v1；正文自足投影/交换子/近幂等/逐机负载及有理位复杂度证明。Laurent–Mourrain原文仅是δ=0平坦提取和压缩乘法的经典来源，非该定量结论的来源。
+- Evidence：先独立重构后冻结证明攻击；规范有理输入检查/提取、独立算子审计与真实分布贪心反例分开登记，精确范围及实际hash见冻结记录。有限核验不替代一般证明。
+- Counterevidence / Objections：证书y是额外输入，未给一般输入的C₂证书生成器或小δ保证；δ=0的平坦矩提取属于经典背景，近平坦定量扩展的新颖性未认证。不能把真调度Dirac矩存在当作可多项式获得。在每个OPT≤T实例免费生成本合同的小缺陷证书会要求过强的低于3/2承诺输出，P≠NP下不能作为一般算法的未付代价前提；未否定其他矩舍入或UM-TARGET-v1。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；通用证书生成未实现、未外审、未认证全球新颖性，UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/global_assignment_moment_rounding.md](../current/unrelated_machines/global_assignment_moment_rounding.md)、research/reviews/unrelated_machines/global_assignment_moment_rounding_review.md；tests/audits/unrelated_machines/nearflat_moment_extraction.py, tests/audits/unrelated_machines/near_flat_hs_independent_audit.py, tests/audits/unrelated_machines/global_assignment_flat_moment_audit.py, tests/audits/unrelated_machines/hs_effect_greedy_exact_m3.py；evidence/runs/unrelated_machines/nearflat_moment_extraction_audit.json, evidence/runs/unrelated_machines/near_flat_hs_independent_audit.json, evidence/runs/unrelated_machines/hs_effect_greedy_exact_m3_audit.json；examples/unrelated_machines/nearflat_moment_inputs.json, examples/unrelated_machines/full_hs_m3_input.json；evidence/certificates/unrelated_machines/global_assignment_moment_freeze.json；原始来源及定位见LITERATURE/manifest。
+
+## UM-GLOBAL-MOMENT-HS-GREEDY-GAP-v1：真实最优矩上全空间HS贪心的二倍反例
+
+- Exact Statement / Quantifiers：存在三台完全相同机器、一个处理时间1任务与八个处理时间1/4任务的实例，T=OPT=1。对全部210个真实最优调度取均匀分布，并取其完整四阶矩，rank M₁=17。对K₀=I_R、先处理单位任务再按标签处理八个小任务、机器标签最小平局规则，每步最大化∥A_eK∥²_HS并更新K←A_eK的确定算法输出负载(1,2,0)，因此Cmax=2OPT。
+- Objects / Domain / Definitions：同一正文C₂压缩算子；真实最优调度以大任务目的地及另两机各四个带标签小任务确定。K₀是全空间恒等算子，HS范数以Gram度量计算。
+- Assumptions / Scope：固定的三机正有理实例，所列任务顺序及确定平局；不假定小δ。任务标签和机器标签是算法输入顺序的一部分。
+- Conclusion / Mechanism：全空间HS分支可逐次集中全部小任务，尽管输入全部四阶矩来自真正最优分布；保留全局相容性本身未给该贪心的统一负载余量。
+- Dependencies：UM-MODEL-v1、UM-GLOBAL-ASSIGNMENT-C2-MOMENT-MODEL-v1、正文对真实分布及有理HS决策逐步重构。
+- Evidence：全部真实最优调度的精确枚举、实际Gram秩及每步有理分支得分由冻结代码复核；规范与独立近平坦程序不被当作该实例之外的舍入证明。
+- Counterevidence / Objections：只攻击所列全空间HS初始化、任务顺序与平局规则的无小δ贪心合同。矩来自真实最优分布，故失败不是伪矩不相容；不否定近平坦提取定理、秩一初态、所有任务排序、其他联合矩算法或一般低于2近似。有限程序核对该精确实例；正文承担实例的一般定义与实际输出证明。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；这是准确算法反例，全球新颖性与独立论文价值未认证，UM-TARGET-v1仍OPEN。
+- Related Files：[research/current/unrelated_machines/global_assignment_moment_rounding.md](../current/unrelated_machines/global_assignment_moment_rounding.md)、research/reviews/unrelated_machines/global_assignment_moment_rounding_review.md；tests/audits/unrelated_machines/hs_effect_greedy_exact_m3.py；evidence/runs/unrelated_machines/hs_effect_greedy_exact_m3_audit.json；examples/unrelated_machines/full_hs_m3_input.json；evidence/certificates/unrelated_machines/global_assignment_moment_freeze.json。
+
 ## UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1：任意给定围长的简单仙人掌配置间隙上确界二
 
 - Exact Statement / Quantifiers：∀整数g≥3，在正OPT、每任务恰2有限端且简单机器支撑为cactus、girth≥g的实例上，sup OPT/T_CONF=2。具体∀k≥2有全时间{1/k,1}、每非桥块为g环的P_(k,g)，OPT=2−1/k、CONFIG在T=1+1/k有显式稀疏有理证书。

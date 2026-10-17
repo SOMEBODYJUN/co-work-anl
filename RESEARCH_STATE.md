@@ -37,6 +37,10 @@
 
 共同资格私有组现可在**sink数不固定**时共同选择macro/home/receiver：`UM-HALL-GROUP-JOINT-FLOW-v1`用每occupied组出口>T/q的Hall条件、一个整数流和真实前缀输出≤`q(2+δ)/(q+1)T`；`UM-HALL-GROUP-PROMISE-APPROX-v1`在同结构关于OPT的承诺下用有限瓶颈搜索直接输出相同比例OPT调度。q≥2、qδ<2，W_h∈[(1/2+1/q)T,T]、每私有件≤δT、同组共同资格与等端体积承重。q增长时改善可趋零；一般矩阵分组/跨home/异端时间转换仍未解。标准Hall/flow/prefix组合，未认证新颖性，UM-TARGET-v1保持OPEN。
 
+## 全局四阶分配矩的新增义务
+
+[共同C₂矩与近平坦提取](research/current/unrelated_machines/global_assignment_moment_rounding.md)把“有共同相关性”细化为可计算的投影缺陷δ：足够小δ时可位多项式输出实际(1+3δ)T。此证书是额外输入；真实最优均匀矩也能使无小δ保护的固定全空间HS贪心达到2OPT。下一承重义务是一般可生成的共同容量信息与大缺陷舍入，不能免费要求所有OPT≤T实例生成近乎精确证书。
+
 [高围长仙人掌的配置锐界与精确块算法](research/current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)表明simple cactus可同时有CONFIG supgap2和真实精确P；单环分量配置精确、最大顶点块环秩b给2^b poly算法。它们限制反面归约的结构，不证明一般目标不存在。
 
 ## 固定向量提取的真实矩边界

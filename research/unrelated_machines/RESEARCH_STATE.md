@@ -160,6 +160,10 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 
 [共同资格组的联合流与未知OPT恢复](../current/unrelated_machines/hall_group_joint_flow.md)：共同资格私有组现可在**sink数不固定**时共同选择macro/home/receiver：`UM-HALL-GROUP-JOINT-FLOW-v1`用每occupied组出口>T/q的Hall条件、一个整数流和真实前缀输出≤`q(2+δ)/(q+1)T`；`UM-HALL-GROUP-PROMISE-APPROX-v1`在同结构关于OPT的承诺下用有限瓶颈搜索直接输出相同比例OPT调度。q≥2、qδ<2，W_h∈[(1/2+1/q)T,T]、每私有件≤δT、同组共同资格与等端体积承重。q增长时改善可趋零；一般矩阵分组/跨home/异端时间转换仍未解。标准Hall/flow/prefix组合，未认证新颖性，UM-TARGET-v1保持OPEN。
 
+## 全局矩投影漏损后的当前前沿
+
+[全局四阶分配矩](../current/unrelated_machines/global_assignment_moment_rounding.md)获得可检验的定量提取合同：压缩乘法的全空间漏损trace足够小，则确定有理HS分支产生真实(1+3δ)T调度。一般证书不受此条件自动保护；指定全空间HS贪心在三机真实最优矩上已精确达到2OPT。下一可判别义务是大缺陷下仍保全部机器共同容量的选择/修复，或另有可计算且不过强的证书生成。只要求近乎精确证书会撞上既有半单位承诺障碍；一般统一ε依旧未获。
+
 ## 可解图结构上仍可出现配置间隙二
 
 [高围长仙人掌配置锐界与真实块算法](../current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)分开三个身份：UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1使任意给定围长的simple cactus仍CONFIG supgap2；UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1以最大顶点块环秩b在2^b poly(L)输出精确调度；UM-PSEUDOFOREST-CONFIG-EXACT-v1仅在每连通分量≤单环时使CONFIG精确。平行任务不能合并计参。正文→冻结攻击→三份实际代码/输入/真实配置及调度证书/冻结结果可复现。AMO对称cactus与VW为已知祖先，未认证扩展新颖性。真正near2困难性不能只靠LPgap、深树或高围长；support≤2且b=O(log L)的输出族可精确解，仍须更强源相关一致性。主目标与反面均未证明。
