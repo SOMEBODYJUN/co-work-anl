@@ -9457,6 +9457,69 @@
         "research/current/unrelated_machines/duplication_state_majority_floor.md"
       ],
       "status": "complete stated-scope equivalence proof; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-GLOBAL-LEAF-FLOW-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "全变量共同真实叶容量流",
+      "detail": "每变量源容量b、每原叶容量1、原clause容量A；总流必须b|V|；保留sign与真实地址，忽略祖先仅用于下界。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-COMPLETE-YES-COVER-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "同一完整P的YES选择覆盖",
+      "detail": "p份完整实际C≤1、每变量指定covered根、非空N≥p；只有指定轨叶arity有d*≤pA，另一轨可无界。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意密度完整单位树的固定高度次二近似",
+      "detail": "任意clause密度的私有双k叉深h单位读出完整模型，可确定性按显式输入总位长poly输出全部原jobs的合法σ，C≤(1+2^(−1/h))OPT；h≤固定H时统一严格小于2，h1给3/2。算法不求未知OPT；b0分支证明OPT2并全parent达到；空变量先返0。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完整YES支持的指定selector重组锐界",
+      "detail": "同一P给p≥1份完整实际C≤1调度，每变量指定一个至少在一见证采用过的selector sign；非空另需N=k^h≥p。可按P加全部见证位长poly输出满足全部指定根的完整σ，C≤2−1/(2p−1)。大k取r=floor(k/p)，小k取r1；p1直接原YES。对每p该指定profile保证精确锐，而原全局OPT1。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-GLOBAL-CONSTRUCTIVE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "完整叶流/selector重组的实际原P与独立锐证书",
+      "detail": "7+7关键规范构造，root26完整σ/1359job/5流割；独立p1..4原矩阵3002项，不做全σ枚举。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "tests/audits/unrelated_machines/unit_readout_leaf_flow.py",
+        "tests/audits/unrelated_machines/unit_readout_selector_mixing.py",
+        "tests/audits/unrelated_machines/unit_readout_selector_profile_independent.py",
+        "examples/unrelated_machines/unit_readout_selector_mixing_sharp_profiles.json",
+        "evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -23251,6 +23314,88 @@
       "refs": [
         "research/current/unrelated_machines/two_state_quota_orientation_obligation.md",
         "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-UNIT-READOUT-GLOBAL-LEAF-FLOW-v1",
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1",
+        "UM-PRUNED-TREE-LEAF-HITTING-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "statement": "最大共同真实叶流b→多数sign→r=k−floor((k^h−ceil(b/2))^(1/h))的真实祖先子树；只删同一flow叶保共同容量；最优r*给b≥r*^h，导数给因子。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-GLOBAL-CONSTRUCTIVE-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+      "statement": "规范实际构造、真实负载/flow割与独立原矩阵仅作有限实现核验，非一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-UNIT-READOUT-COMPLETE-YES-COVER-v1",
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "statement": "完整YES强制所选轨全外送，指定轨arity d*≤pA；只指定轨建x0=1计数槽，另一轨固定parent；共同Hall保指定根和所有机器。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-GLOBAL-CONSTRUCTIVE-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-SELECTOR-MIXING-v1",
+      "statement": "规范实际构造、真实负载/flow割与独立原矩阵仅作有限实现核验，非一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md",
+        "evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-UNIT-READOUT-GLOBAL-CONSTRUCTIVE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1",
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "限定私有unit树；固定高度改善与给定YES重组不代替一般算法/近二困难性，所有低σ的源解码仍缺。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
       ],
       "status": "open obligation"
     }

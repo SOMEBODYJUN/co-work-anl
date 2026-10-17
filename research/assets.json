@@ -7447,6 +7447,75 @@
       ],
       "source_role": "需求树桥梁定义作为内部前提；quota orientation等价为本仓自足推导",
       "limit": "不证明quota orientation的近二困难性，也不提供一般UM算法；完整delta=1层退化为2-SAT仅在全资源支付/全变量承诺下"
+    },
+    {
+      "id": "um_unit_readout_fixed_height_approx_v1",
+      "claims": [
+        "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "applies_when": [
+        "全部显式单位双树、任意arity与binary A；h,k≥1；原资格无pins/额外jobs。",
+        "∀本结构类输入；固定H时∀h≤H给统一正常数；h无界不保统一ε。"
+      ],
+      "produces": "任意clause密度的私有双k叉深h单位读出完整模型，可确定性按显式输入总位长poly输出全部原jobs的合法σ，C≤(1+2^(−1/h))OPT；h≤固定H时统一严格小于2，h1给3/2。算法不求未知OPT；b0分支证明OPT2并全parent达到；空变量先返0。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/unit_readout_leaf_flow.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf",
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
+      ],
+      "source_role": "ST槽/Hall与普通整数流为经典工具；VW Thm7在本时间集仅2−1/k，扣除已有地基；未认证全球新颖性。",
+      "limit": "限定完整私有单位树；h无界或p随gap增长不排一般近二归约，完整YES可能在NO侧不存在。"
+    },
+    {
+      "id": "um_unit_readout_selector_mixing_v1",
+      "claims": [
+        "UM-UNIT-READOUT-SELECTOR-MIXING-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "applies_when": [
+        "同私有单位双树原模型；给定完整YES/指定根，不含额外pins；空变量0。",
+        "∀p及同一P的完整真实见证、∀covered坐标profile；非空需N≥p；不声称寻找见证。"
+      ],
+      "produces": "同一P给p≥1份完整实际C≤1调度，每变量指定一个至少在一见证采用过的selector sign；非空另需N=k^h≥p。可按P加全部见证位长poly输出满足全部指定根的完整σ，C≤2−1/(2p−1)。大k取r=floor(k/p)，小k取r1；p1直接原YES。对每p该指定profile保证精确锐，而原全局OPT1。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/unit_readout_selector_mixing.py",
+        "tests/audits/unrelated_machines/unit_readout_selector_profile_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/unit_readout_selector_mixing_sharp_profiles.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf",
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
+      ],
+      "source_role": "ST槽/Hall与普通整数流为经典工具；VW Thm7在本时间集仅2−1/k，扣除已有地基；未认证全球新颖性。",
+      "limit": "限定完整私有单位树；h无界或p随gap增长不排一般近二归约，完整YES可能在NO侧不存在。"
     }
   ]
 }

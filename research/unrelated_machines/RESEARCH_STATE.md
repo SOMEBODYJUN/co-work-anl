@@ -348,3 +348,5 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 
 
 本轮停止大规模Fraction循环，新增 `UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1`：两状态残余树的固定delta可行性恰等价于two-rail quota orientation。\(delta=1\)的完整支付层退化为2-SAT；\(delta<1\)的部分资源支付是带方向约束的quota packing。行列池修正说明混合标签会逃逸整束冲突；真正的反面义务是跨层整数一致性和quota gap soundness。
+
+[完整单位树的叶流与选择重组](../current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。

@@ -323,3 +323,5 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 
 
 [两状态quota orientation表示](two_state_quota_orientation_obligation.md)把固定 \(\delta\) 的真实根树存在性精确翻译成rail方向、标签quota和资源单射；完整支付才是2-SAT，部分支付是quota packing。此表示替代继续堆叠资源复制，下一义务是证明该quota对象的gap soundness或构造其不可行障碍。
+
+[完整单位树的叶流与选择重组](unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。

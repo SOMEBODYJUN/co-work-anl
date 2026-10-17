@@ -92,3 +92,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 机器价格的新精确身份 `UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1` 见[专题账本](research/unrelated_machines/CLAIMS.md)：固定原T剪枝与角色，价格LP等价、joint supgap2、无剪枝固定m锐界m及最优价格共同面成功证书；不是一般算法或新困难性，UM-TARGET-v1保持OPEN。
 
 `UM-RESIDUAL-THROUGHPUT-LATTICE-v1` 与 `UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1` 已入[专题账本](research/unrelated_machines/CLAIMS.md)：固定R的一般异端容量格次模、任务角色变动反例及严格次二占位的任意图缺口表示。原构造显式OPT1，不能当作主目标困难性。
+
+[完整单位树的叶流与选择重组](research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。
