@@ -20,6 +20,8 @@
 
 本阶段的路线复盘和下一道硬门槛见[专题前沿的全输入桥合同](research/unrelated_machines/RESEARCH_STATE.md#路线复盘从局部合同转向全输入桥)：已有成果主要诊断局部证书不足并建立受限联合构造；只有从任意输入产生可验证共同容量、实际全机整数输出及可靠阈值失败语义，才算直接推进 `UM-TARGET-v1`。
 
+本轮的[团队资产清点矩阵](research/unrelated_machines/RESEARCH_STATE.md#团队阶段清点去重后的路线矩阵-2026-10-17)把 boss3 的条件块选择、boss6 的多目的地修复、boss7/9 的联合迁移、boss10 的反面归约和受限正面接口放回同一依赖图；工作桌面只保留入口与卡点，canonical 正文和证据不重复复制。
+
 ## 定义、命题、依赖与证据
 
 [研究总目录](research/README.md)按模型分流；[中文资产总目录](research/CATALOG.md)说明每个文件用途；[全仓精确命题](research/current/claims.md)、[五轴状态](research/review_status.json)、[文件合同](research/assets.json)和[关系图](research/index.html)分别管理身份、审查、位置和数学依赖。有限核验只作checks，不替代一般证明。原始来源沿[来源解释](research/source_crosswalk.md)追溯。
@@ -59,7 +61,7 @@
 
 [共同资格私有组的加权出口与联合槽](research/current/unrelated_machines/weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。
 
-[开放义务与本轮边界](research/questions/unrelated_machines/barrier_escape_obligations.md)另记一个尚待审查的门槛/FPTAS sharpen `R*=((1+η)(3+δ))/(2+η)<2`，以及 `OPT=T=1` 的 LST 正支撑零质量边反例；二者分别是结构候选和方法边界，不是一般算法或困难性证明。
+[开放义务与本轮边界](research/questions/unrelated_machines/barrier_escape_obligations.md)另记已完成声明范围证明、独立审查的门槛/FPTAS sharpen `R*=((1+η)(3+δ))/(2+η)<2`，以及 `OPT=T=1` 的 LST 正支撑零质量边反例；前者的未知 `OPT` one-sided 搜索已闭合，但一般任务分解仍缺。二者都不是一般算法或困难性证明。
 
 同页还分离了 rank-jump-one 的真实支持引理：有限正权真实矩在 `rank(M2)=rank(M1)+1` 时可恢复 `R+1` 个原子；这不延伸到任意伪矩，也不认证公屏的 `4−2√2` 常数。
 
