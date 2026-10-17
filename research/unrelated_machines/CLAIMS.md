@@ -803,3 +803,27 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：紧凑H编码异议由显式机器合同解决；没有一般分解/资格恢复器；无尚成立范围内fatal。
 - Status：限域完整证明及内部独立审查；标准工具组合，未外审，未认证全球新颖性或独立论文价值。
 - Related Files：[正文§8–10](../current/unrelated_machines/shared_sink_joint_macro_assignment.md)、[冻结审查](../reviews/unrelated_machines/private_group_exit_pool_review.md)、private_group_exit_pool的规范/独立代码、实际输入/证书及两份冻结报告。
+
+## UM-HALL-GROUP-JOINT-FLOW-v1：共同资格私有组的宏微联合流阈值舍入
+
+- Exact Statement / Quantifiers：∀显式H∪Z、宏B/私有组J_h、整数q≥2、有理T≥0和δ≥0且qδ<2；macro仅homes且所有finite p>T/2；j∈J_h恰在h及同组共同E_h⊆Z可用且时间同为w_j≥0，(1/2+1/q)T≤W_h≤T、w_j≤δT。确定性总位poly返回FAIL或完整实际σ，Cmax≤q(2+δ)/(q+1)T；OPT≤T必成功。含T0、空Z/E及二进制q输入，实际机器至少一。
+- Objects / Domain / Definitions：UM-MODEL-v1与正文§1；显式homes/sinks及资格，全部任务必须实际安排，空max取0，T0/OPT0明确处理。
+- Assumptions / Scope：给定分组、同组共同资格、私有任务等端体积及组负载下界承重；q增长时改善趋零，不是一般UM统一ε。
+- Conclusion：实际调度及每台机器同时负载界；前者是one-sided阈值合同，后者是未知OPT的promise实际近似。
+- Dependencies：UM-MODEL-v1, UM-HALL-GROUP-MODEL-v1；正文§2–5自足Hall、整数增广、真实前缀与有限阈值搜索。
+- Evidence：真实occupied组每组出口>T/q推出共同q槽Hall；一次macro→home→receiver整数流共同选位置；τ=(q−1+qδ)/(q+1)真实前缀平衡home及sink负载，不复制q个sink。 独立statement-first重构、冻结攻击及三路原任务Fraction检查；有限范围见实际记录。
+- Counterevidence / Objections：共同资格、体积、组下界省略会破证明；q槽不能凭strict Hall降为q−1；没有一般结构提取或一般容量转换。
+- Status：限域完整证明、独立内部已审、规范实际构造已实现；标准工具组合，未外审/未认证全球新颖性或独立论文价值。
+- Related Files：[正文](../current/unrelated_machines/hall_group_joint_flow.md)、[冻结审查](../reviews/unrelated_machines/hall_group_joint_flow_review.md)、hall_group_joint_flow三份代码/冻结报告与实际输入/任务分配。
+
+## UM-HALL-GROUP-PROMISE-APPROX-v1：未知最优值下的共同资格组实际近似
+
+- Exact Statement / Quantifiers：∀同拓扑及q≥2,δ≥0,qδ<2，不给OPT；promise在真实OPT处所有finite macro p>OPT/2、(1/2+1/q)OPT≤W_h≤OPT、w_j≤δOPT。存在统一确定性总位poly算法输出完整实际σ，Cmax≤q(2+δ)/(q+1)OPT，OPT0含在内。q/δ可输入；固定q/δ时为该承诺类统一低于2。
+- Objects / Domain / Definitions：UM-MODEL-v1与正文§1；显式homes/sinks及资格，全部任务必须实际安排，空max取0，T0/OPT0明确处理。
+- Assumptions / Scope：不判定关于OPT的结构承诺；不提供一般矩阵分解，同组共同资格/等端体积和组负载范围保留；可变q时无统一正ε。
+- Conclusion：实际调度及每台机器同时负载界；前者是one-sided阈值合同，后者是未知OPT的promise实际近似。
+- Dependencies：UM-MODEL-v1, UM-HALL-GROUP-PROMISE-MODEL-v1, UM-HALL-GROUP-JOINT-FLOW-v1；正文§2–5自足Hall、整数增广、真实前缀与有限阈值搜索。
+- Evidence：有限macro边值的最小全流瓶颈B可二分求出；t=max(Wmax,wmax/δ,B)≤OPT，由promise在t仍满足阈值合同；δ0先零端检查。无需最优精度oracle或连续搜索。 独立statement-first重构、冻结攻击及三路原任务Fraction检查；有限范围见实际记录。
+- Counterevidence / Objections：共同资格、体积、组下界省略会破证明；q槽不能凭strict Hall降为q−1；没有一般结构提取或一般容量转换。
+- Status：限域完整证明、独立内部已审、规范实际构造已实现；标准工具组合，未外审/未认证全球新颖性或独立论文价值。
+- Related Files：[正文](../current/unrelated_machines/hall_group_joint_flow.md)、[冻结审查](../reviews/unrelated_machines/hall_group_joint_flow_review.md)、hall_group_joint_flow三份代码/冻结报告与实际输入/任务分配。

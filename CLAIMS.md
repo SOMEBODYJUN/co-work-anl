@@ -49,3 +49,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 守恒扩区与非单位分叉另立UM-DAG-TRANSIT-CONGESTION-v1、UM-DAG-NONUNIT-PARAMETER-EXACT-v1：[正文](research/current/unrelated_machines/rooted_dag_congestion_flow.md)§7–10和专题账本固定新2K合同及2^h精确树复杂度；未改旧Claim，主目标仍OPEN。
 
 新增UM-SHARED-SINK-MACRO-EXIT-v1与UM-BOUNDED-PROFILE-EXIT-POOL-v1，分别给可退出宏任务的共同匹配、无界机器数但完整有界profile池的实际恢复；[专题账本](research/unrelated_machines/CLAIMS.md)固定限域阈值合同。一般UM-TARGET-v1仍OPEN。
+
+新增UM-HALL-GROUP-JOINT-FLOW-v1与UM-HALL-GROUP-PROMISE-APPROX-v1：[共同资格组正文](research/current/unrelated_machines/hall_group_joint_flow.md)给无界sink数量的实际联合流舍入、未知OPT的有限瓶颈恢复；保留组身份/等端体积/负载范围，不改变一般UM-TARGET-v1。
