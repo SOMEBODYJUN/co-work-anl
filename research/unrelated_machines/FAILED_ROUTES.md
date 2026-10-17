@@ -259,3 +259,5 @@ u_t) 的一般复杂度。
 前缀矩旧双3/2互补例只改变literal，完整B负载恒3/2，bit-only测试漏检。替换为单非零bit任务保留原存在性Claim，新增实际端、整机负载和精确PSD核验；不限制算法重耦合。rank-jump抽象toy的错误任务守恒补齐说法也已删除，不能拿未满足完整假设的toy当反例。
 
 [加深私有树或重排半密度unit读出仍不能放大到近二](../current/unrelated_machines/unit_readout_pruned_forest_boundary.md)：唯一unit incoming+k枚总small负载1让半质量槽匹配给全高度三半，涵盖所有arity≤2A wiring。改d>2A若仍全正负degree平衡，非空源严格YES已空；补dummy须防纯dummy配额子树并核共同外部容量。失败范围不超出明确成本/私有结构/密度；可回收一般forest IFF、树命中门槛及同64open真OPT1对7/4，后续需真实非此域联合soundness。
+
+[仅把clause密度提高到另一个固定D仍不足作任意近二归约](../current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md)：校准计数槽给每固定D统一2−1/(4D)结构类算法，即使k,h增长。D可以随目标ε改变，未被一般排除；仍需实际YES和所有pruned森林NO解码。强基数LP一般只充分，不能用不可行偷判NO；弱激活LP又不支持舍入。回收精确见证/两反例/有界密度算法；重试须真正避开共同基数证书。

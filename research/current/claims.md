@@ -1031,6 +1031,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1 | 同一模型另有每clause arity d_c≤2A_c。任意树深和任意wiring均可确定性总位poly输出全部原jobs实际C≤1+floor(k/2)/k≤3/2，所有外unit≤1。k1非空OPT1；k2h1复用14机15job split例真实OPT3/2，使整类绝对T1界锐，不声称近似比锐。 | [正文](unrelated_machines/unit_readout_pruned_forest_boundary.md)、[审查](../reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md) |
 | UM-PRUNED-TREE-LEAF-HITTING-v1 | 完整k叉深h树、1≤r≤k，q=k−r+1。命中每个rooted深h恰r分叉子树的最小叶集恰q^h；不含任何该子树的叶子集最大恰k^h−q^h，所有参数锐。显式树双色DP可构造蓝r子树或红q子树；真实叶少于q^h时补集有纯dummy r子树，实际逃逸仍需外部共同容量。 | [正文](unrelated_machines/unit_readout_pruned_forest_boundary.md)、[审查](../reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md) |
 
+## 校准计数槽与固定密度的定量边界
+
+| ID | 精确结果 | 范围 |
+| --- | --- | --- |
+| UM-UNIT-READOUT-CALIBRATED-SLOT-v1 | 同私有k叉双树unit读出模型，给1≤r≤k、有理edge/leaf下传t∈[0,1]、selector两根质量合1；每internal Σout t≥r−1+incoming且每clause Σleaf t≤A。可按P加见证总位长poly输出全σ，内部≤2−r/k、unit≤1。uniform x0=1/2,x_l=(r−1+xprev)/k使行取等，若d_c x_h≤A_c则所有wiring均可构造。 | [正文](unrelated_machines/unit_readout_calibrated_cardinality_slots.md)、[审查](../reviews/unrelated_machines/unit_readout_calibrated_cardinality_slots_review.md) |
+| UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1 | 对每个固定有理D≥2，同unit读出模型中若全部d_c≤D A_c，存在deterministic总位poly完整σ使C≤(2−1/(4D))OPT，允许k,h无界。大k校准r=1+floor((k−1)/(2D))；小k用r1容量匹配，失败证OPT2并全parent达到。空变量OPT0。 | [正文](unrelated_machines/unit_readout_calibrated_cardinality_slots.md)、[审查](../reviews/unrelated_machines/unit_readout_calibrated_cardinality_slots_review.md) |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

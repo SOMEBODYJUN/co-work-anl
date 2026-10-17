@@ -1544,3 +1544,33 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：BCG Paper Fact已限制预处理剩余子实例，回填仅floor(M/2)；无外部定理被用来证明三合同。dummy需严格小于且外部可pack；平衡源空YES需非空clauses；仅叶容量忽略祖先兼容会给OPT7/4而非三半。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；软件身份audit_only，外审/论文价值未认证，一般目标正反面OPEN。
 - Related Files：`research/current/unrelated_machines/unit_readout_pruned_forest_boundary.md`、`research/reviews/unrelated_machines/unit_readout_pruned_forest_boundary_review.md`、`examples/unrelated_machines/unit_readout_two_tree_actual_certificates.json`、`evidence/runs/unrelated_machines/unit_readout_pruned_forest_boundary_audit.json`、`tests/audits/unrelated_machines/pruned_tree_leaf_hitting.py`, `tests/audits/unrelated_machines/pruned_tree_leaf_hitting_independent.py`。
+
+## UM-UNIT-READOUT-CALIBRATED-SLOT-v1：给定下传基数证书的校准实际槽舍入
+
+- Exact Statement：同私有k叉双树unit读出模型，给1≤r≤k、有理edge/leaf下传t∈[0,1]、selector两根质量合1；每internal Σout t≥r−1+incoming且每clause Σleaf t≤A。可按P加见证总位长poly输出全σ，内部≤2−r/k、unit≤1。uniform x0=1/2,x_l=(r−1+xprev)/k使行取等，若d_c x_h≤A_c则所有wiring均可构造。
+- Objects / Definitions：正文原P的私有满树、唯一incoming单位端、统一small1/k及clause共同unit资格；fraction为质量非处理时间。
+- Domain：k,h≥1、A_c≥0、固定原深h、显式完整树/leaf paths；没有pins或隐藏资格。无任务时dummy机器，输出空σ；A截至arity。
+- Quantifiers：∀显式P、k,h,r及满足共同条件的完整有理见证；∃确定性完整舍入；uniform自产分数按P位长poly。
+- Assumptions：所有约束由同一组有理变量共同满足；D密度只在第二合同，所有真实/dummy ports均计arity。
+- Scope：给定强证书仅充分；r>1 LP失败不一般证明OPT>1。受限C1必要性另需k>1及a d_c≤A_c。不是一般UM或近二NP-hardness。
+- Conclusion / Mechanism：原行分数任务数≤整数k−r+1，大incoming优先唯一首槽；质量Hall一次覆盖全部jobs。
+- Dependencies：UM-MODEL-v1、既有私有双树unit定义及本文基数证书；第二合同另用第一合同与mandatory r1路径必要性。ST有序槽为经典直接祖先。
+- Evidence：三位内部先陈述独立重构、两冻结全文攻击、root全码亲读和实际原P回算，冻结于`evidence/runs/unrelated_machines/unit_readout_calibrated_cardinality_slots_audit.json`。
+- Counterevidence / Objections：强LP非必要4机5job真OPT1；弱Σdown≥r*y不足4机9job真OPT7/4；matching失败5机10job真OPT2。任意外给见证位长计入输入，Python整数文本上限已解除并实际测过5000位。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；given-witness/uniform/bounded-D实际构造已实现，一般LP求解器未集成；无外审或论文价值认证，主目标正反面仍OPEN。
+- Related Files：`research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md`、`research/reviews/unrelated_machines/unit_readout_calibrated_cardinality_slots_review.md`、`examples/unrelated_machines/unit_readout_calibrated_counterexamples.json`、`evidence/runs/unrelated_machines/unit_readout_calibrated_cardinality_slots_audit.json`、`tests/audits/unrelated_machines/unit_readout_calibrated_cardinality.py`、`tests/audits/unrelated_machines/unit_readout_calibrated_independent.py`。
+
+## UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1：固定clause密度类的统一次二算法
+
+- Exact Statement：对每个固定有理D≥2，同unit读出模型中若全部d_c≤D A_c，存在deterministic总位poly完整σ使C≤(2−1/(4D))OPT，允许k,h无界。大k校准r=1+floor((k−1)/(2D))；小k用r1容量匹配，失败证OPT2并全parent达到。空变量OPT0。
+- Objects / Definitions：正文原P的私有满树、唯一incoming单位端、统一small1/k及clause共同unit资格；fraction为质量非处理时间。
+- Domain：k,h≥1、A_c≥0、固定原深h、显式完整树/leaf paths；没有pins或隐藏资格。无任务时dummy机器，输出空σ；A截至arity。
+- Quantifiers：∀固定D≥2，∀该结构类显式P；ε_D=1/(4D)与k,h、P规模无关。D无界时不算一般UM统一ε。
+- Assumptions：所有约束由同一组有理变量共同满足；D密度只在第二合同，所有真实/dummy ports均计arity。
+- Scope：给定强证书仅充分；r>1 LP失败不一般证明OPT>1。受限C1必要性另需k>1及a d_c≤A_c。不是一般UM或近二NP-hardness。
+- Conclusion / Mechanism：校准质量≤1/D；rootselector给OPT≥1；r1 mandatory path匹配的必要性使失败分支精确最优。
+- Dependencies：UM-MODEL-v1、既有私有双树unit定义及本文基数证书；第二合同另用第一合同与mandatory r1路径必要性。ST有序槽为经典直接祖先。
+- Evidence：三位内部先陈述独立重构、两冻结全文攻击、root全码亲读和实际原P回算，冻结于`evidence/runs/unrelated_machines/unit_readout_calibrated_cardinality_slots_audit.json`。
+- Counterevidence / Objections：强LP非必要4机5job真OPT1；弱Σdown≥r*y不足4机9job真OPT7/4；matching失败5机10job真OPT2。任意外给见证位长计入输入，Python整数文本上限已解除并实际测过5000位。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；given-witness/uniform/bounded-D实际构造已实现，一般LP求解器未集成；无外审或论文价值认证，主目标正反面仍OPEN。
+- Related Files：`research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md`、`research/reviews/unrelated_machines/unit_readout_calibrated_cardinality_slots_review.md`、`examples/unrelated_machines/unit_readout_calibrated_counterexamples.json`、`evidence/runs/unrelated_machines/unit_readout_calibrated_cardinality_slots_audit.json`、`tests/audits/unrelated_machines/unit_readout_calibrated_cardinality.py`、`tests/audits/unrelated_machines/unit_readout_calibrated_independent.py`。
