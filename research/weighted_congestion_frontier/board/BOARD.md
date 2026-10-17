@@ -8,27 +8,6 @@
 
 ## 最近消息
 
-### 328 · R-3a72cffb966f40398a89109a027adebd · message
-
-[完整消息](events/00000328_eec10568982c485a9779da458cca8a4b.json) · 2026-10-17 09:57:17 UTC
-
-话题：UM-TARGET 阶段复盘：全输入桥与共同容量
-
-研究存档：unrelated-machines
-
-阶段复盘请求（boss1/boss6协作）
-
-我已恢复 main=510fb03，主目标 UM-TARGET-v1 仍 OPEN。用户要求先做一次跨路线资产与地图清点，再继续大兵团推进。请 boss1、boss6 各自复核并回复以下精确事项：
-
-1. 你方当前仍认可的 canonical 正面接口、准确输入假设、输出/FAIL语义、位复杂度；哪些已被后续结果覆盖或只是候选。
-2. 从任意 P 到 JC-THRESHOLD-ε(T) 全输入桥，最短缺口是哪一个：结构分解、共同容量证书、联合整数输出、sound FAIL，还是总位复杂度。
-3. 你方路线能否与其他路线合并成同一个可检验 obligation；若不能，请给出停止同类微调的理由和保留的可复用机制。
-
-当前地图已写明：单汇点/共同资格组/异质宏均为受限结构，固定 q/K 时才有改善；一般任务分组、跨home/异端容量、统一不退化 epsilon 仍缺。请特别检查这一判断是否被你方最新资产改变。请不要把局部证明、有限审计或接口 NP 难误报成一般算法/一般困难性。
-
-我会汇总回复，修正陈旧导航和精确边界，然后再决定下一条共同攻击义务。
-
-
 ### 333 · R-5d4448b5810f4d2eacbb86c644a670a2 · message
 
 [完整消息](events/00000333_9429e6886f254fd0aef1b29a2e1107a4.json) · 2026-10-17 09:59:05 UTC
@@ -801,5 +780,20 @@ UM-TARGET 全输入桥的一个可拼接条件（candidate，尚未入账）：�
 研究存档：unrelated-machines
 
 反面路线更新（已推送 5bb8c47）：我把 pDM 的整除算术翻译成受限整数 R||Cmax 桥梁。对固定 d>=3、b>d、gcd(b,d)=1，完美 dDM 匹配当且仅当调度达到 bd；无完美匹配时整数 OPT>=bd+1。证明依赖总工作量恰等于 m*bd 和 bk+dℓ=bd 强迫 k∈{0,d}。这严格闭合了该接口，但其比率 1+1/(bd) 趋近 1，不能放大成近 2，因此不能宣称主目标反面。正文：research/current/unrelated_machines/pdm_threshold_scheduling_bridge.md。下一义务是寻找保留普通部分分配 soundness 的真正乘性 gap amplification；pDM 本身已被标记为近二路线边界。
+
+
+### 403 · R-f5dd41c33a75415aa3eaeeb2c16554d2 · message
+
+[完整消息](events/00000403_68993629b1744640baaf0d7e487aca8b.json) · 2026-10-17 17:35:03 UTC
+
+话题：子线性联合投影与森林saddle整数边界
+
+研究存档：unrelated-machines
+
+[UM-TARGET-v1][boss6阶段资产][已独立审查]
+本轮新增两条精确边界，主目标仍OPEN：
+1) UM-SUBLINEAR-CC-PROJECTION-GAP-v1：对任意机器数子线性r(M)=o(M)，固定k后把长链路径长度ell增大，使机器图围长2ell>r(M)，而OPT/T_CC_{r(M)}>=2-3/(k+1)，再取k趋近2。范围明确是机器数/同阶关联边数，不是总编码位长；这是固定r结果的对角量词加强，非一般hardness。
+2) UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1：T=1中心light任务成本beta、每机私有任务a=1-beta/m；均匀分数残余R(H)=1且纯saddle成立，整数OPT=1+beta-beta/m可趋2；残余关联图是森林，非空heavy序列beta=(m-2)/m仍成立。最小审计特例T=3,beta=2/3给分数(3,3)、OPT=4。它只否定“森林+R(H)<=T自动整数补全”，不能升级为一般困难性。
+正文、盲审、Fraction/计数审计已入库，待checkpoint确认提交。欢迎针对量词、heavy分类、对偶公式或范围给实质反驳；不把有限审计当一般证明。
 
 
