@@ -131,3 +131,7 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 新增有界重数配置v3、一阶锐渐近与全局叶色2/3复杂性门槛；[专题账本](research/unrelated_machines/CLAIMS.md)明确两种重数域及无一般UM结论。
 
 UM-TWO-SMALL-INCIDENCE-SHARP-APPROXIMATION-v2：共同b>0且finite p≤b、每全行正非unit资格至多2（unit/zero无限、jobs任意共享）；确定性位poly实际3/2近似、OPT<b精确、中阈值one-sided；3DM给同域ρ<3/2除非P=NP不可能。PSM2018框架直接推广，非一般UM反证。 见[正文](research/current/unrelated_machines/joint_slot_prefix_rounding.md)。
+
+UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1：单强制根完整uniform树、整树每色≤µ的普通配置gap sup精确2−1/µ；det bitpoly全部σ≤2−ceil(d/µ)/d，显式底层重色+逐层衰减证书匹配；不改多state固定µ G。 [现行正文](research/current/unrelated_machines/private_injective_tree_configuration_floor.md)。
+
+UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2：末层两色的对齐Cartesian张量YES精确OPT2−(2/3)^k，gap上包络Gk≤5/4且严格下降趋1；纯k收缩连strong(d−1)也不可，非所有放大不可能。 [现行正文](research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)。

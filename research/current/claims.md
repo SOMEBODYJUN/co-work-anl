@@ -1158,6 +1158,10 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-TWO-SMALL-INCIDENCE-SHARP-APPROXIMATION-v2 | 共同b>0且finite p≤b、每全行正非unit资格至多2（unit/zero无限、jobs任意共享）；确定性位poly实际3/2近似、OPT<b精确、中阈值one-sided；3DM给同域ρ<3/2除非P=NP不可能。PSM2018框架直接推广，非一般UM反证。 | [正文](unrelated_machines/joint_slot_prefix_rounding.md)、[实际审查](../reviews/unrelated_machines/joint_slot_prefix_review.md)。 |
 
+| UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1 | 单强制根完整uniform树、整树每色≤µ的普通配置gap sup精确2−1/µ；det bitpoly全部σ≤2−ceil(d/µ)/d，显式底层重色+逐层衰减证书匹配；不改多state固定µ G。 | [正文](unrelated_machines/private_injective_tree_configuration_floor.md)、[审查](../reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md)。 |
+
+| UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2 | 末层两色的对齐Cartesian张量YES精确OPT2−(2/3)^k，gap上包络Gk≤5/4且严格下降趋1；纯k收缩连strong(d−1)也不可，非所有放大不可能。 | [正文](unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)、[审查](../reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

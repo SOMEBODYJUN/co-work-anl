@@ -2177,3 +2177,19 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence/Objections：无standing fatal；原文总资格≤3非本字面域，common-b适配自证；有限测试不代一般证明。
 - Status：限定证明完成/已内审，synthesis；外审未记录，新颖性/论文价值未认证；audit_only。
 - Related Files：research/current/unrelated_machines/joint_slot_prefix_rounding.md、research/reviews/unrelated_machines/joint_slot_prefix_review.md、tests/audits/unrelated_machines/two_small_incidence_flow_audit.py、evidence/runs/unrelated_machines/two_small_incidence_flow_audit.json及manifest/六冻结源。
+
+## UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1
+
+- Exact Statement / Objects / Domain / Quantifiers：单强制根完整uniform树、整树每色≤µ的普通配置gap sup精确2−1/µ；det bitpoly全部σ≤2−ceil(d/µ)/d，显式底层重色+逐层衰减证书匹配；不改多state固定µ G。 完整量词/矩阵/域在research/current/unrelated_machines/private_injective_tree_configuration_floor.md。
+- Assumptions / Definitions / Scope / Conclusion：无复杂度假设；只显式结构类/明确操作，全部原jobs与所有机器；不解决主目标正反面。
+- Dependencies：UM-MODEL-v1、raw-q子可加/DP或旧三叉v1/v2实际构件；正文自足负载/完整LP，无finite前提。
+- Evidence / Counterevidence / Status：实际Exact-first重构后读冻结proof；root亲核。域异议和讨论勘误已在canonical明修，原源保留；无standing fatal；限定证明完成/无新软件、外审或新颖性认证。
+- Related Files：research/current/unrelated_machines/private_injective_tree_configuration_floor.md、research/reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md及source_crosswalk新冻结材料。
+
+## UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2
+
+- Exact Statement / Objects / Domain / Quantifiers：末层两色的对齐Cartesian张量YES精确OPT2−(2/3)^k，gap上包络Gk≤5/4且严格下降趋1；纯k收缩连strong(d−1)也不可，非所有放大不可能。 完整量词/矩阵/域在research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md。
+- Assumptions / Definitions / Scope / Conclusion：无复杂度假设；只显式结构类/明确操作，全部原jobs与所有机器；不解决主目标正反面。
+- Dependencies：UM-MODEL-v1、raw-q子可加/DP或旧三叉v1/v2实际构件；正文自足负载/完整LP，无finite前提。
+- Evidence / Counterevidence / Status：实际Exact-first重构后读冻结proof；root亲核。域异议和讨论勘误已在canonical明修，原源保留；无standing fatal；限定证明完成/无新软件、外审或新颖性认证。
+- Related Files：research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md、research/reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md及source_crosswalk新冻结材料。

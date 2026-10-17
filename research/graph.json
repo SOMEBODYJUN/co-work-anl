@@ -10657,6 +10657,52 @@
         "research/current/unrelated_machines/joint_slot_prefix_rounding.md"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-SINGLE-PINNED-TREE-GLOBAL-MULTIPLICITY-DOMAIN",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "单强制根完整树的全树叶重数域",
+      "detail": "d≥2,h≥1，internal/color机不交；单端pin1、每树边parent1/d/唯一down1，整树每色≤binaryµ；无menus。",
+      "refs": [
+        "research/current/unrelated_machines/private_injective_tree_configuration_floor.md"
+      ],
+      "status": "explicit single-root domain"
+    },
+    {
+      "id": "UM-TERNARY-BOTTOM-PALETTE-ALIGNED-PRODUCT-DOMAIN",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "末层两色树的对齐张量与纯等长收缩",
+      "detail": "full三叉同深h≥1、每末父≤2色；tuple子/色的对齐积；k整除h的纯收缩保叶色。",
+      "refs": [
+        "research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md"
+      ],
+      "status": "explicit operation domain"
+    },
+    {
+      "id": "UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单树µ精确配置gap",
+      "detail": "单强制根完整uniform树、整树每色≤µ的普通配置gap sup精确2−1/µ；det bitpoly全部σ≤2−ceil(d/µ)/d，显式底层重色+逐层衰减证书匹配；不改多state固定µ G。",
+      "refs": [
+        "research/current/unrelated_machines/private_injective_tree_configuration_floor.md",
+        "research/reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md"
+      ],
+      "status": "complete scoped proof and actual statement-first plus read-after independent audit; novelty unverified"
+    },
+    {
+      "id": "UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "现有三叉编译的自然放大限制",
+      "detail": "末层两色的对齐Cartesian张量YES精确OPT2−(2/3)^k，gap上包络Gk≤5/4且严格下降趋1；纯k收缩连strong(d−1)也不可，非所有放大不可能。",
+      "refs": [
+        "research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md",
+        "research/reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md"
+      ],
+      "status": "complete scoped proof and actual statement-first plus read-after independent audit; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -26009,6 +26055,59 @@
         "research/reviews/unrelated_machines/joint_slot_prefix_review.md"
       ],
       "status": "remaining actual hardness obligation"
+    },
+    {
+      "id": "um_single_pinned_tree_exact_gap_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-SINGLE-PINNED-TREE-GLOBAL-MULTIPLICITY-DOMAIN",
+        "UM-PRIVATE-TREE-Q-VALUATION-v1"
+      ],
+      "conclusion": "UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1",
+      "statement": "raw q分桶/DP实际σ，上下界完整原P与普通CONFIG逐层衰减证书；不调用Haxell构造。",
+      "refs": [
+        "research/current/unrelated_machines/private_injective_tree_configuration_floor.md",
+        "research/reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "um_ternary_palette_tensor_limits_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TERNARY-BOTTOM-PALETTE-ALIGNED-PRODUCT-DOMAIN",
+        "UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1",
+        "UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2"
+      ],
+      "conclusion": "UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2",
+      "statement": "旧实际构件底层palette归纳、完整P q恒等式、tuple见证、Gk一般代数和纯收缩；不以finite回算代证明。",
+      "refs": [
+        "research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md",
+        "research/reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "um_single_tree_and_tensor_near_two_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1",
+        "UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2"
+      ],
+      "conclusion": "UM-NEAR-UNIT-PHYSICAL-COPY-OBLIGATION",
+      "statement": "单树CONFIG近1可有近2整数值；不能以CONFIG替strong虹彩源。自然张量YES漂移/纯收缩完备性失败，仍需新实际strong/weak源及decoder；非所有放大不可能。",
+      "refs": [
+        "research/current/unrelated_machines/private_injective_tree_configuration_floor.md",
+        "research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md",
+        "research/reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md",
+        "research/reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md"
+      ],
+      "status": "remaining source and physical decoder obligation"
     }
   ]
 }

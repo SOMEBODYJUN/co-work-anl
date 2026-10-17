@@ -720,15 +720,15 @@
 
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
-| [私有树重数配置界、第一阶锐渐近与严格承诺判定](<current/unrelated_machines/private_injective_tree_configuration_floor.md>) | `research/current/unrelated_machines/private_injective_tree_configuration_floor.md` | 核共同a树、rainbow逆像阻断与G(μ)一阶系数1，区分固定参数/全局重数及σ算法范围。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1`、`UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2`、`UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3`，[命题合同](assets.json) |
-| [私有注入配置五三界的陈述先行与读后独立攻击](<reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md>) | `research/reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md` | 核两阶段来源隔离、CONFIG联合行、Haxell严格rank、原d树回填及未导入算法范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1`、`UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2`、`UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3`，[命题合同](assets.json) |
+| [私有树重数配置界、第一阶锐渐近与严格承诺判定](<current/unrelated_machines/private_injective_tree_configuration_floor.md>) | `research/current/unrelated_machines/private_injective_tree_configuration_floor.md` | 核共同a树、rainbow逆像阻断与G(μ)一阶系数1，区分固定参数/全局重数及σ算法范围。 单强制根/global整树重数µ子类的普通CONFIG gap sup精确2−1/µ，独立全job/LP证明。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1`、`UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2`、`UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3`，[命题合同（共 4 项）](assets.json) |
+| [私有注入配置五三界的陈述先行与读后独立攻击](<reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md>) | `research/reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md` | 核两阶段来源隔离、CONFIG联合行、Haxell严格rank、原d树回填及未导入算法范围。 新单根精确gap陈述先行/读后审查；分离全U下界补全与旧forest Gµ。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1`、`UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2`、`UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3`，[命题合同（共 4 项）](assets.json) |
 
 ### ternary_rainbow_subtree
 
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
-| [三叉彩虹的全局重数二三门槛与实际调度阈值](<current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md>) | `research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md` | 核全部原/辅助色≤3的低重数SAT归约、重数2总YES及原P五四比值，勿当near2。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1`、`UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2`，[命题合同](assets.json) |
-| [三叉彩虹的陈述先行独立归约与作者证明读后攻击](<reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md>) | `research/reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md` | 核Rigid/Dead/Pad及anchor-copy两来源、输入高度位长与原P提取，区分小gap与主目标。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1`、`UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2`，[命题合同](assets.json) |
+| [三叉彩虹的全局重数二三门槛与实际调度阈值](<current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md>) | `research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md` | 核全部原/辅助色≤3的低重数SAT归约、重数2总YES及原P五四比值，勿当near2。 对齐Cartesian张量YES实际漂移与保色纯收缩失败的精确限制，不外推所有放大。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1`、`UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2`、`UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2`，[命题合同](assets.json) |
+| [三叉彩虹的陈述先行独立归约与作者证明读后攻击](<reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md>) | `research/reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md` | 核Rigid/Dead/Pad及anchor-copy两来源、输入高度位长与原P提取，区分小gap与主目标。 新张量失败v1真实域异议/v2修正及复杂度方向勘误原源保留。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1`、`UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2`、`UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2`，[命题合同](assets.json) |
 
 <a id="weighted_congestion"></a>
 

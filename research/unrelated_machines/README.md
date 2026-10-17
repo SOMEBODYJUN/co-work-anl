@@ -279,3 +279,5 @@
 [配置重数与一阶锐渐近](../current/unrelated_machines/private_injective_tree_configuration_floor.md)区分每state μ；[全局叶重数2/3门槛](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)则为单tree全部辅助色统计，NP调度比值仍5/4。
 
 [共同b双small行实际sharp3/2](../current/unrelated_machines/joint_slot_prefix_rounding.md)已双陈述先行/双读后审查并root精确核验；PSM2018框架直接推广，旧row-spread域不改。near2须退出该行结构并有真实低σ解码，一般目标正反面仍OPEN。
+
+[单强制根的µ精确gap](../current/unrelated_machines/private_injective_tree_configuration_floor.md)已证明sup=2−1/µ；[三叉自然放大限制](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)已核YES实际漂移和纯收缩失效。两者均实际陈述先行/读后内审；前者不是多state Gµ，后者不排所有张量，主目标正反面仍OPEN。

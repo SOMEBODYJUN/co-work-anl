@@ -140,3 +140,5 @@ pDM阈值桥的[合入审查](research/reviews/unrelated_machines/pdm_threshold_
 [私有树重数界](research/current/unrelated_machines/private_injective_tree_configuration_floor.md)得到G(μ)=2−1/μ+O(μ^−2)；[三叉彩虹](research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)在全局每色2次总YES、3次NP完全。锐性均在限定对象，主目标正反面OPEN。
 
 [共同b双small行实际sharp3/2](research/current/unrelated_machines/joint_slot_prefix_rounding.md)已双陈述先行/双读后审查并root精确核验；PSM2018框架直接推广，旧row-spread域不改。near2须退出该行结构并有真实低σ解码，一般目标正反面仍OPEN。
+
+[单强制根的µ精确gap](research/current/unrelated_machines/private_injective_tree_configuration_floor.md)已证明sup=2−1/µ；[三叉自然放大限制](research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)已核YES实际漂移和纯收缩失效。两者均实际陈述先行/读后内审；前者不是多state Gµ，后者不排所有张量，主目标正反面仍OPEN。
