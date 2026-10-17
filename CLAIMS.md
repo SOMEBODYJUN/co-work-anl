@@ -96,3 +96,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 [完整单位树的叶流与选择重组](research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。
 
 新增精确身份：`UM-ST-ENVELOPE-CONFIG-IDENTITY-v1`、`UM-WEAK-H2-CONFIG-MOMENT-GAP-v1`、`UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1`；[完整账本](research/unrelated_machines/CLAIMS.md)记录一般表示、弱同点合取supgap2及同族强二阶精确校准，均不改变UM-TARGET-v1。
+
+新增限定身份 `UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1`、`UM-UNIT-READOUT-STRICT-UNIT-GAP-v1`、`UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1`；[专题账本](research/unrelated_machines/CLAIMS.md)给精确量词。仅配置阈值/严格unit promise/经典族精确回算，不升级UM-TARGET-v1。

@@ -155,3 +155,5 @@
 ## 固定势与局部repair的新增失败机制
 
 固定总工作量并不能保证局部势下降有效：`research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md` 的同机族使二次势、排序势和固定批量单调路线均停在趋二状态。失败原因是必要迁移批量随机器数线性增长，而不是总工作量变化；未来若允许全局或无界批量，需另给可计算势下降及位复杂度证明。
+
+严格unit双树源编译的新增失败范围见[专题记录](research/unrelated_machines/FAILED_ROUTES.md)：CONFIG1整轨LP可求且可五三实际输出，但近unit阈值1+1/k仍保经典趋二gap；不得把两阈值混用。

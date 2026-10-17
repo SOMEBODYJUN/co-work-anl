@@ -99,3 +99,5 @@
 同页UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1证明共享行二阶后该族阈值恰OPT，不只是当前伪矩失效。真正仍缺的是一般强系统的有效求解/误差预算与统一实际舍入；其对偶二次pricing问题不能偷换为旧线性背包，也不能把pricing困难性自动升级为整个系统困难性。全部三阶非负的另一强化同样仍待一般研究。
 
 [槽包络精确身份](research/current/unrelated_machines/slot_envelope_and_configuration_identity.md)又说明：完整实际槽损失的非凸联选本身恰重述原OPT；先固定容量再逐行凸化恰CONFIG，直接凸化函数上图仅LST。此处已关闭表示/退化识别，并未得到一般优化器或近二困难性。下一步只攻新增共同信息或可近似非凸进展机制，不以更多局部包络或样本替代。UM-TARGET-v1仍OPEN。
+
+[配置正部阈值与严格单位五三界](research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)：完整私有单位树的CONFIG(T<2)恰由Σ(q−t)+≤floor(k(T−1))q描述；CONFIG1等价整轨LP并有完整C≤5/3输出（偶k≤3/2，k1≤1）。闭合两树精确Tconf=1+s*/k，经典gap族仍为1+1/k，故不外推为一般次二或近二困难性。 主目标及反面仍OPEN，严格1与1+1/k的阈值区别已核清。

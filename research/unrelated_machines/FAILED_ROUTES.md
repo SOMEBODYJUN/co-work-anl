@@ -289,3 +289,7 @@ u_t) 的一般复杂度。
 回收：一般N≥m+1的degree2 multislice PSD及可显式生成的条件张量/混合；共享同机二阶后，零pair的PSD传播给任意端条件单槽容量，从而**整个同族强阈值**精确等于OPT。失败只排弱H2，不排强二阶/三阶非负/其他算法，亦非一般困难性。准确Claim、证明及审查沿[同一正文](../current/unrelated_machines/weak_h2_configuration_moment_gap.md)读取。
 
 另[完整槽包络](../current/unrelated_machines/slot_envelope_and_configuration_identity.md)精确区分两个常混淆动作：固定容量后凸化子水平集恰CONFIG；先凸化上图则只剩线性负载。非凸min max包络本身等于OPT，因此没有免费共同选择。重试必须新增跨机相关机制或给可计算近似非凸进展；只精确计费单行损失或重新调价不够。
+
+## 严格单位阈值的整轨标签编译
+
+尝试：用私有任意深双树把C1的源标签解码直接延伸到近2 NO。失效机制：CONFIG1精确消元为可求整轨LP；多数轨有activearity≤2A，再只对active轨建槽给完整五三σ。失败范围为严格(1,ρ>5/3) promise gap，不是否定所有此类实例或其他threshold。可回收：全阈值正部多面体、k1精确流、闭合两树精确Tconf。重试须改变严格单位合同或跨轨/跨机耦合，并重证低σ的源解码；单增树高/总arity无效。见[正文](../current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)。

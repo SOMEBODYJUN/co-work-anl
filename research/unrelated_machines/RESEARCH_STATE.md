@@ -375,3 +375,7 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 同一 bundle-floor 接口新增固定层复杂度筛选：若直接 promise 的 YES 满足 \(\nu_K=q\)、NO 满足 \(b^*\le\delta\)，令 \(t_0=\lfloor K\delta\rfloor+1\)。当 \(\delta<1/(t_0+1)\) 时，把 (t_0)-束候选编成 \((t_0+1)\)-均匀超图，极大匹配的 \(1/(t_0+1)\) 保证即可区分两侧；固定 (K,\delta) 下这在输入位长上多项式。故这类直接近二归约至少要避开约 (K\delta^2<1) 的区域并承担真正跨层一致性，不能只增加 bundle 宽度或复制资源。
 
 新增固定方向的精确接口：[两状态quota orientation的Hall切分解](../current/unrelated_machines/two_state_quota_hall_cut_decomposition.md)证明，选定变量子集、rail方向与整数标签需求后，实际资源支付恰等价所有标签子集的Hall邻域不等式；资源度至多二时邻域可分解为私有/内部共享/边界共享资源。它把局部失败证书和整数流输出明确化，但不解决联合方向选择，也不提供全方向 `FAIL⇒OPT>T`。因此主目标仍OPEN。
+
+[配置正部阈值与严格单位五三界](../current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)：完整私有单位树的CONFIG(T<2)恰由Σ(q−t)+≤floor(k(T−1))q描述；CONFIG1等价整轨LP并有完整C≤5/3输出（偶k≤3/2，k1≤1）。闭合两树精确Tconf=1+s*/k，经典gap族仍为1+1/k，故不外推为一般次二或近二困难性。
+
+反面方向现在必须区分严格unit阈值与允许incoming带一枚small的近unit阈值。one-hot Boolean源在保均匀literal见证的合法读出编译下不能给近二soundness；一般低σ→共同稀疏标签或完整集团支付仍缺。UM-TARGET-v1及其反面继续OPEN。

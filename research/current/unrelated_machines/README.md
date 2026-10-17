@@ -336,3 +336,5 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 
 
 [两状态quota orientation的Hall切分解](two_state_quota_hall_cut_decomposition.md)进一步给定变量子集与rail方向的精确支付判据：所有标签子集都必须通过Hall邻域不等式，资源度至多二时可拆分为私有、内部共享和边界共享三项。固定方向可由整数流输出实际支付或给出独立Hall缺口；同时选择方向和把单方向失败提升为全输入 `FAIL` 仍未解决。
+
+[配置正部阈值与严格单位五三界](unit_readout_configuration_threshold_polytope.md)：完整私有单位树的CONFIG(T<2)恰由Σ(q−t)+≤floor(k(T−1))q描述；CONFIG1等价整轨LP并有完整C≤5/3输出（偶k≤3/2，k1≤1）。闭合两树精确Tconf=1+s*/k，经典gap族仍为1+1/k，故不外推为一般次二或近二困难性。

@@ -240,3 +240,5 @@
 [完整槽包络的精确表示](../current/unrelated_machines/slot_envelope_and_configuration_identity.md)把所有尺度的真实槽上界写成E=ΣΔp·ceil(prefix x)，证明全局min max E=OPT。固定T后逐行凸化子水平集恰CONFIG；先凸化整个上图则只剩线性分数负载。可验证完整损失并未免费解决共同选择。后续要攻共享二阶及更强跨机信息的可计算性/实际提取，或绕过这些松弛的一般构造，停止把上述已排弱合取当充分接口。
 
 [本轮跨层配额障碍](../current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md)给核心—私有集合系统的全层闭式和实际 OPT=2−s/K；[独立集阈值障碍](../questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md)限制先big后残余流的精确接口；[固定工作量局部极小](../current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md)排除固定二次/排序势的单任务下降。它们均未关闭一般 UM-TARGET-v1。
+
+[配置正部阈值与严格单位五三界](../current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)：完整私有单位树的CONFIG(T<2)恰由Σ(q−t)+≤floor(k(T−1))q描述；CONFIG1等价整轨LP并有完整C≤5/3输出（偶k≤3/2，k1≤1）。闭合两树精确Tconf=1+s*/k，经典gap族仍为1+1/k，故不外推为一般次二或近二困难性。

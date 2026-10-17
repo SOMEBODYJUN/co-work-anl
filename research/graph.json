@@ -9648,6 +9648,68 @@
         "research/current/unrelated_machines/two_state_quota_orientation_obligation.md"
       ],
       "status": "complete stated-scope fixed-direction Hall expansion; global orientation remains open; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-LITERAL-LP-WITNESS-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "完整轨的共同literal LP见证",
+      "detail": "同一原P每变量y0+y1=1，所有clause Σn_cvs y_vs≤A；可求的有理全局见证，不假设真实C1存在。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "私有单位树的配置正部多面体",
+      "detail": "对完整私有单位双树，T∈[1,2)、s=floor k(T−1)，CONFIG可行恰为共同边际满足Σ(q−t)+≤sq和clause容量；显式有理分解、多项式LP及精确阈值网格。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "严格单位阈值的整轨LP五三间隙算法",
+      "detail": "CONFIG1等价整轨literal LP；可行时多数轨active-only槽输出全部原jobs C≤5/3，偶k≤3/2，k1≤1；为(1,5/3) promise gap，不是任意OPT比例。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "闭合两树的精确配置阈值",
+      "detail": "每末父k叶共一私有unit的闭合两树，OPT=2−1/k，Tconf=1+s*/k，s*=min{s:(k−s)^h≤2k^(h−1)}；经典gap高度下精确1+1/k。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNIT-READOUT-CONFIG-THRESHOLD-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "单位树配置阈值与五三实际输出的有限核验",
+      "detail": "4337完整σ/59121任务；1278单row网格分为894精确支持及384精确分离、9边界，8闭合参数。只核实现与有限实例。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "tests/audits/unrelated_machines/unit_readout_literal_gap.py",
+        "tests/audits/unrelated_machines/unit_readout_configuration_row_decomposition.py",
+        "evidence/runs/unrelated_machines/unit_readout_configuration_threshold_audit.json",
+        "examples/unrelated_machines/unit_readout_configuration_threshold_examples.json"
+      ],
+      "status": "finite exact checks"
     }
   ],
   "hyperedges": [
@@ -23738,6 +23800,120 @@
       "statement": "固定方向Hall失败只排除该方向；全输入桥仍缺联合rail选择、变量子集和全方向sound FAIL。",
       "refs": [
         "research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "statement": "对完整私有单位双树，T∈[1,2)、s=floor k(T−1)，CONFIG可行恰为共同边际满足Σ(q−t)+≤sq和clause容量；显式有理分解、多项式LP及精确阈值网格。 证明见正文，不由有限网格推出。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-CONFIG-THRESHOLD-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+      "statement": "有限精确原P/单row/参数核验仅为checks；不作为一般证明前提。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "evidence/runs/unrelated_machines/unit_readout_configuration_threshold_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-UNIT-READOUT-LITERAL-LP-WITNESS-v1",
+        "UM-UNIT-READOUT-CALIBRATED-SLOT-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "statement": "CONFIG1等价整轨literal LP；可行时多数轨active-only槽输出全部原jobs C≤5/3，偶k≤3/2，k1≤1；为(1,5/3) promise gap，不是任意OPT比例。 证明见正文，不由有限网格推出。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-CONFIG-THRESHOLD-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+      "statement": "有限精确原P/单row/参数核验仅为checks；不作为一般证明前提。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "evidence/runs/unrelated_machines/unit_readout_configuration_threshold_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "D-UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1",
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "statement": "每末父k叶共一私有unit的闭合两树，OPT=2−1/k，Tconf=1+s*/k，s*=min{s:(k−s)^h≤2k^(h−1)}；经典gap高度下精确1+1/k。 证明见正文，不由有限网格推出。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-CONFIG-THRESHOLD-AUDIT-v1"
+      ],
+      "conclusion": "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1",
+      "statement": "有限精确原P/单row/参数核验仅为checks；不作为一般证明前提。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
+        "evidence/runs/unrelated_machines/unit_readout_configuration_threshold_audit.json",
+        "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-UNIT-READOUT-STRICT-UNIT-TARGET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1",
+        "UM-UNIT-READOUT-STRICT-UNIT-GAP-v1",
+        "UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "严格1阈值可舍入不限制近单位阈值的配置gap；经典同结构Tconf1+1/k仍趋二。一般算法和真实源解码均OPEN。",
+      "refs": [
+        "research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md",
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"

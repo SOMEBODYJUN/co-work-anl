@@ -1765,3 +1765,30 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - **Counterevidence / Objections：** 尚未得到对 rail 方向/变量子集联合选择的算法或全方向失败证书；单固定方向的 Hall 缺口不能拒绝原阈值 \(T\)。
 - **Status：** complete stated-scope proof; internal blind review completed with wording repairs; external review and novelty unverified。
 - **Related Files：** `research/current/unrelated_machines/two_state_quota_hall_cut_decomposition.md`、`tests/audits/unrelated_machines/two_state_quota_hall.py`、`evidence/runs/unrelated_machines/two_state_quota_hall_audit.json`。
+
+## UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1：私有单位树的配置正部多面体
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions：对完整私有单位双树，T∈[1,2)、s=floor k(T−1)，CONFIG可行恰为共同边际满足Σ(q−t)+≤sq和clause容量；显式有理分解、多项式LP及精确阈值网格。 全部对象固定为正文§1，所有输入显式；退化、binary A和k1见正文。
+- Scope / Conclusion：只给本单位树结构的配置描述、严格单位阈值gap或闭合族精确阈值；不是一般UM改善/困难性。
+- Dependencies：UM-MODEL-v1, UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1；全部共同前提及自足证明见[正文](../current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)。
+- Evidence：一般证明、先陈述独立重构和冻结全文攻击；精确有限审计仅checks，见[审查](../reviews/unrelated_machines/unit_readout_configuration_threshold_review.md)。
+- Counterevidence/Objections：无standing内部fatal；严格1不可外推1+1/k，一般LP软件未集成，外审/新颖性未认证。
+- Status / Related Files：限定完整证明与内部独立核验；实际实现范围、原P见证和冻结输出由正文/审查互链。
+
+## UM-UNIT-READOUT-STRICT-UNIT-GAP-v1：严格单位阈值的整轨LP五三间隙算法
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions：CONFIG1等价整轨literal LP；可行时多数轨active-only槽输出全部原jobs C≤5/3，偶k≤3/2，k1≤1；为(1,5/3) promise gap，不是任意OPT比例。 全部对象固定为正文§1，所有输入显式；退化、binary A和k1见正文。
+- Scope / Conclusion：只给本单位树结构的配置描述、严格单位阈值gap或闭合族精确阈值；不是一般UM改善/困难性。
+- Dependencies：UM-MODEL-v1, UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1, UM-UNIT-READOUT-LITERAL-LP-WITNESS-v1, UM-UNIT-READOUT-CALIBRATED-SLOT-v1, UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1；全部共同前提及自足证明见[正文](../current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)。
+- Evidence：一般证明、先陈述独立重构和冻结全文攻击；精确有限审计仅checks，见[审查](../reviews/unrelated_machines/unit_readout_configuration_threshold_review.md)。
+- Counterevidence/Objections：无standing内部fatal；严格1不可外推1+1/k，一般LP软件未集成，外审/新颖性未认证。
+- Status / Related Files：限定完整证明与内部独立核验；实际实现范围、原P见证和冻结输出由正文/审查互链。
+
+## UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1：闭合两树的精确配置阈值
+
+- Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions：每末父k叶共一私有unit的闭合两树，OPT=2−1/k，Tconf=1+s*/k，s*=min{s:(k−s)^h≤2k^(h−1)}；经典gap高度下精确1+1/k。 全部对象固定为正文§1，所有输入显式；退化、binary A和k1见正文。
+- Scope / Conclusion：只给本单位树结构的配置描述、严格单位阈值gap或闭合族精确阈值；不是一般UM改善/困难性。
+- Dependencies：UM-PRIVATE-KARY-DUAL-TREE-UNIT-READOUT-MODEL-v1, UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1, UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1；全部共同前提及自足证明见[正文](../current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)。
+- Evidence：一般证明、先陈述独立重构和冻结全文攻击；精确有限审计仅checks，见[审查](../reviews/unrelated_machines/unit_readout_configuration_threshold_review.md)。
+- Counterevidence/Objections：无standing内部fatal；严格1不可外推1+1/k，一般LP软件未集成，外审/新颖性未认证。
+- Status / Related Files：限定完整证明与内部独立核验；实际实现范围、原P见证和冻结输出由正文/审查互链。
