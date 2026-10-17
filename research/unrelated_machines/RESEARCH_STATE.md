@@ -369,6 +369,8 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 
 这些结果收紧了跨层一致性、共同容量状态和局部 repair 的 proof obligations，但没有提供一般输入的统一 epsilon 算法；主目标继续 OPEN.
 
+[允许换轨的稀疏部分投影解码接口](../questions/unrelated_machines/sparse_partial_projection_coupling_decoder_obligation.md)仅保留下一反面承重义务：同一vertex边际μ、projection次耦合及β/L>γ的真实浓缩。标准有给定证书decoder不等于调度归约；统一alphabet R的基线1/R使只保直方图或恰β=θ、L=θR时无法严格分离；近似量需另核常数。调度→证书OPEN，未进入canonical图/完成Claim账本。
+
 
 同一 bundle-floor 接口新增固定层复杂度筛选：若直接 promise 的 YES 满足 \(\nu_K=q\)、NO 满足 \(b^*\le\delta\)，令 \(t_0=\lfloor K\delta\rfloor+1\)。当 \(\delta<1/(t_0+1)\) 时，把 (t_0)-束候选编成 \((t_0+1)\)-均匀超图，极大匹配的 \(1/(t_0+1)\) 保证即可区分两侧；固定 (K,\delta) 下这在输入位长上多项式。故这类直接近二归约至少要避开约 (K\delta^2<1) 的区域并承担真正跨层一致性，不能只增加 bundle 宽度或复制资源。
 

@@ -332,5 +332,7 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 
 [完整槽包络的精确表示](slot_envelope_and_configuration_identity.md)把所有尺度的真实槽上界写成E=ΣΔp·ceil(prefix x)，证明全局min max E=OPT。固定T后逐行凸化子水平集恰CONFIG；先凸化整个上图则只剩线性分数负载。可验证完整损失并未免费解决共同选择。后续要攻共享二阶及更强跨机信息的可计算性/实际提取，或绕过这些松弛的一般构造，停止把上述已排弱合取当充分接口。
 
+[允许换轨的稀疏部分投影解码接口](../../questions/unrelated_machines/sparse_partial_projection_coupling_decoder_obligation.md)仅保留下一反面承重义务：同一vertex边际μ、projection次耦合及β/L>γ的真实浓缩。标准有给定证书decoder不等于调度归约；统一alphabet R的基线1/R使只保直方图或恰β=θ、L=θR时无法严格分离；近似量需另核常数。调度→证书OPEN，未进入canonical图/完成Claim账本。
 
-[两状态quota orientation的Hall切分解](two_state_quota_hall_cut_decomposition.md)进一步给定变量子集与rail方向的精确支付判据：所有标签子集都必须通过Hall邻域不等式，资源度至多二时可拆成私有、内部共享和边界共享三项。固定方向可由整数流输出实际支付或给出独立Hall缺口；同时选择方向和把单方向失败提升为全输入 `FAIL` 仍未解决。
+
+[两状态quota orientation的Hall切分解](two_state_quota_hall_cut_decomposition.md)进一步给定变量子集与rail方向的精确支付判据：所有标签子集都必须通过Hall邻域不等式，资源度至多二时可拆分为私有、内部共享和边界共享三项。固定方向可由整数流输出实际支付或给出独立Hall缺口；同时选择方向和把单方向失败提升为全输入 `FAIL` 仍未解决。
