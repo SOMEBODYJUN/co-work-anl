@@ -998,8 +998,8 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Conclusion：条件性 `R<2` 正面接口；`η` 固定时 FPTAS 为输入位长多项式，若 `η` 输入则时间显式依赖 `1/η`。
 - Dependencies：UM-WEIGHTED-GROUP-JOINT-SLOT-v1 的联合槽流；最小覆盖 FPTAS；共同资格与等端时间的真实出口计费。
 - Evidence：固定阈值证明、`OPT` promise 的 one-sided 网格不变量、乘法覆盖 FPTAS 位复杂度说明，以及 `tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py` 的 Fraction 公式核验；有限证据不替代参数化证明。
-- Counterevidence / Objections：FPTAS 见证 `X_h` 不能直接作为输出，实际必须使用前缀 `Y_h` 以保证出口≤d_h；接受谓词不依赖 `e_h(t)` 单调，改用“所有 `t≥OPT` 接受”的 one-sided 不变量。异资格或异端时间会破坏单一 token 恢复，一般矩阵分组提取仍是承重缺口。
-- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified; UM-TARGET-v1 OPEN。
+- Counterevidence / Objections：原复核提出用固定前缀 `Y_h` 替代 FPTAS 见证 `X_h`，但尚未证明实际出口 `e'_h`≤d_h 或≤e_h。精确边界：T=1、τ=1/2、权重按顺序 (2/5,2/5,1/5)、W=1、δ=2/5 时 d_h=1/2；前缀恢复需迁出4/5，而最小覆盖成本为3/5。故当前 sink 预算和给定阈值/未知OPT恢复证明存在 fatal gap；异资格或异端时间也会破坏单一 token 恢复，一般矩阵分组提取仍是承重缺口。
+- Status：candidate; current proof blocked by a stated fatal recovery objection; exact finite formula checks do not close it; unrefereed; novelty unverified; UM-TARGET-v1 OPEN。
 - Related Files：`research/questions/unrelated_machines/barrier_escape_obligations.md`；`research/current/unrelated_machines/weighted_group_joint_slot_rounding.md`；`research/reviews/unrelated_machines/threshold_cover_and_support_release_review.md`；`tests/audits/unrelated_machines/lst_support_release_and_threshold_group.py`；`evidence/runs/unrelated_machines/lst_support_release_and_threshold_group_audit.json`。
 
 ## UM-LST-SUPPORT-RELEASE-v0：锁定给定 LST 正支撑的容量释放合同（已反驳）

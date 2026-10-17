@@ -106,7 +106,7 @@ UM-FOREST-BOUNDARY-AUGMENT-v1现给实际单边界标量：真实根负载不高
 
 当前真正缺口：一般多边界/有环高树宽核心上，如何可计算地联合集中迁移，保持统一余量与总位多项式进展。一轮条件矩固定后不自动保留同层系统，不能免费迭代；同族小切面改进也不关闭主目标。
 
-本轮新增两条准确边界。第一，`barrier_escape_obligations.md` 的 `UM-THRESHOLD-COVER-JOINT-SLOT-v1` 在共同资格、等端时间的私有组结构中，用乘法最小覆盖 FPTAS 和可调保留阈值 `τ` 得到给定 `T` 的 `R*=((1+η)(3+δ))/(2+η)<2`；FPTAS 输出只作LP见证，实际用前缀，未知 `OPT` 以 one-sided 网格二分闭合；一般任务分解仍缺。第二，旧 `UM-LST-SUPPORT-RELEASE-v0` 的 `OPT=T=1` 标签经精确复核撤回；新增 `UM-LST-SUPPORT-RELEASE-OPTIMAL-v1` 用 `r` 独立块确保 `OPT=1`，少于 `r` 条零质量边时保留 `2−1/m`。两者都不是一般算法或困难性结论。
+本轮新增两条准确边界。第一，`barrier_escape_obligations.md` 的 `UM-THRESHOLD-COVER-JOINT-SLOT-v1` 在共同资格、等端时间的私有组结构中，用乘法最小覆盖 FPTAS 和可调保留阈值 `τ` 给出候选 `R*=((1+η)(3+δ))/(2+η)<2`；但固定前缀恢复的实际出口可能超过 `d_h` 和 LP 覆盖成本，故给定 `T` 与未知 `OPT` 证明暂被阻断。第二，旧 `UM-LST-SUPPORT-RELEASE-v0` 的 `OPT=T=1` 标签经精确复核撤回；新增 `UM-LST-SUPPORT-RELEASE-OPTIMAL-v1` 用 `r` 独立块确保 `OPT=1`，少于 `r` 条零质量边时保留 `2−1/m`。两者都不是一般算法或困难性结论。
 
 共同矩路线也有一条新的分层结论：对有限正权真实支持，`rank(M2)-rank(M1)=1` 可由 Boolean 函数代数闭合证明自动恢复 `R+1` 个共同 one-hot 原子；对仅满足 PSD/守恒的伪矩，仍需跨块交换条件和 `V2` 负载 localizer。公屏提出的 `4-2√2` 支持常数没有精确定义，暂不采用。
 

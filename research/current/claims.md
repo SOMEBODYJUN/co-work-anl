@@ -991,7 +991,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | ID | Exact scope | Result and boundary |
 | --- | --- | --- |
-| UM-THRESHOLD-COVER-JOINT-SLOT-v1 | 共同资格、等端时间、唯一 home 的宏/私有组结构；固定 `δ,η` 满足 `δ+η+δη<1`，宏/组条件按 `barrier_escape_obligations.md`。 | 乘法最小覆盖 FPTAS、联合 home/sink 槽流和固定顺序前缀给 `R*=((1+η)(3+δ))/(2+η)<2`。结构类的未知 `OPT` one-sided 分母网格二分已闭合；单个近似覆盖选择随 `t` 可跳变，但 promise 保证所有 `t≥OPT` 接受。结构提取仍未解，主目标 OPEN。 [正文](../questions/unrelated_machines/barrier_escape_obligations.md)、[独立复核](../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)。 |
+| UM-THRESHOLD-COVER-JOINT-SLOT-v1 | 共同资格、等端时间、唯一 home 的宏/私有组结构；固定 `δ,η` 满足 `δ+η+δη<1`，宏/组条件按 `barrier_escape_obligations.md`。 | 乘法最小覆盖 FPTAS 与联合 home/sink 槽流给出候选 `R*=((1+η)(3+δ))/(2+η)<2`；但恢复时固定前缀的实际出口不能由当前证明控制在 LP 覆盖成本或 `d_h` 内，故未知 `OPT` one-sided 搜索和给定阈值输出均待修复。结构提取仍未解，主目标 OPEN。 [正文](../questions/unrelated_machines/barrier_escape_obligations.md)、[独立复核及后续异议](../reviews/unrelated_machines/threshold_cover_and_support_release_review.md)。 |
 | UM-LST-SUPPORT-RELEASE-OPTIMAL-v1 | `r` 个独立块，每块 `m≥2` 核心机、一备用机、私有任务大小 `1−1/m` 和单位锚任务；固定 LST 点的零质量边释放预算 `k`。 | `OPT=1`；约束至多 `k` 条 `x=0` 边时，`F(k)=2−1/m` 对 `k<r`，`F(k)=1` 对 `k≥r`。令 `m` 增长得到固定不足预算时相对 OPT 趋2。只排除固定支撑释放合同，不是一般困难性。 [正文](unrelated_machines/lst_support_release_optimal_gap.md)、[审计](../../tests/audits/unrelated_machines/lst_support_release_optimal.py)。 |
 
 ## 2026-10-17：共同尺寸可重开容量流
