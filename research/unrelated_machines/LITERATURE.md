@@ -81,7 +81,7 @@ Asahiro–Miyano–Ono，*Graph classes and the complexity of the graph orientat
 
 ## 标签一致性接口的已知困难性方法边界
 
-Bateni–Charikar–Guruswami，TR-848-09，[49页作者PDF](https://mhbateni.com/academic/pubs/maxmin-tech09.pdf)，§7 Definition7.1/Lemma7.2，PDF/印页47–48，讨论三个外部物品的duplication gadget：保留两个完整分配的并集可使物品度至多二，再由度二Santa Claus算法限制该困难性途径。本次只联网核读该定位，未落地原始字节或宣称全文内化；manifest的BCG2009_duplication_barrier明确状态。它是[低重数标签资源](../current/unrelated_machines/bounded_collision_label_resource_floor.md)的机制比较，非本页树着色证明的导入前提，也不是调度近二困难性。
+Bateni–Charikar–Guruswami，TR-848-09，[49页作者PDF](https://mhbateni.com/academic/pubs/maxmin-tech09.pdf)，Theorems 3.1/4.2 给 additive DegreeTwo/InfDegreeOne Max-Min Allocation 的因子<2困难；Definition4.3/Lemma4.6 的 M-pyramid 是含全部源点的 forest。§7 Definition7.1/Lemma7.2 只把 duplication gadget 路线限制到低于2，未给 α≥2。已下载原字节并做目标位置文本核读；当前树模型的非可导入性见 [两份完整复制地板](../current/unrelated_machines/duplication_two_copy_floor.md)。
 
 
 ## 整束缺陷着色的标准势函数来源
@@ -95,3 +95,5 @@ Verdugo–Verschae–Wiese，[arXiv:1811.08539v3](https://arxiv.org/abs/1811.085
 ## 有符号阈值 PCSP 的源困难性及出现次数缺口
 
 Brakensiek–Guruswami，[ECCC TR16-183 原始PDF](https://eccc.weizmann.ac.il/report/2016/183/download)，35页，Theorem1.3 PDF6/印4已实际核读。对arity2A−1、严格重量0..A、弱重量0..B且A≤B≤2A−2，允许否定和常量的一般PCSP为NP-hard；固定ρ<2可取A>1/(2−ρ)、B=floorρA。这只是原分类的直接代入，不是调度困难性。原定理不限制变量双出现、相反符号；每机等权的调度端口合同则可容量匹配精确解。[单任务投影正文](../current/unrelated_machines/signed_one_job_port_downset.md)定位普通复制缺口。仅web核原陈述，原字节未落地、全部源归约未重构，取得状态及限制见manifest。
+
+| BCG2009 | Bateni–Charikar–Guruswami, *New Approximation Algorithms for Degree Lower-bounded Arborescences and Max-Min Allocation*: Theorems 3.1/4.2 give factor-2 hardness for additive DegreeTwo/InfDegreeOne Max-Min Allocation; Definition 4.3/Lemma 4.6 use a forest M-pyramid containing all sources. §7's duplication gadget only records a barrier below factor 2. These statements do not yield the rooted single-tree (b^*=1) versus (b^*\le\delta) gap. | [作者PDF](https://mhbateni.com/academic/pubs/maxmin-tech09.pdf)；[本地原文](../../history/source/literature/unrelated_machines/bateni_charikar_guruswami_2009_maxmin.pdf)；Theorems 3.1/4.2, Definition 4.3/Lemma 4.6, §7 Definition 7.1/Lemma 7.2。版本：TR-848-09 author PDF; targeted theorem locations read, full proof not independently reconstructed |

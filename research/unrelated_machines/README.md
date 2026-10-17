@@ -205,3 +205,5 @@
 [严格次二状态图的参数化批量能垒](../current/unrelated_machines/strict_sub2_batch_barrier.md) 给 `UM-STRICT-SUB2-BATCH-BARRIER-v1`：`OPT=1` 坏态负载趋近 2，在每步至多 `k` 件、所有中间态严格 `<2` 的图中孤立，首个出口需 `k+1` 件。它只限制常数批量中性修复，不能作为一般近似困难性。
 
 [单任务外接端口的向下投影与锐计数](../current/unrelated_machines/signed_one_job_port_downset.md)给`UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1`：保留一个外部出现端点且排除外部容量时，两一致态强制至少2^z(2^a+2^b−1)个严格可行状态，固定T>0逐参数锐；不能用该纯内部接口实现等值复制。BG一般signed阈值PCSP的近二困难性不保持调度双出现限制；多任务编码及外部联合容量仍未解，UM-TARGET-v1保持OPEN。
+
+本轮反面路线新增：[Santa restricted边界与需求树桥梁的非保真性](../current/unrelated_machines/santa_restricted_bridge_boundary.md)核对 restricted Santa 结果不适用于 \(k_v>1\) 的 token 任务；[两份完整复制的一半一致性地板](../current/unrelated_machines/duplication_two_copy_floor.md)给简单 duplication 合同的 \(b\ge1/2\) 构造。BCG/Bamas/BLMRS 的精确 import 范围与原文哈希已登记在 `LITERATURE.md`、`literature_manifest.json`，不把 SA/LP gap升级为硬度。

@@ -8899,6 +8899,55 @@
         "research/current/unrelated_machines/santa_conditional_reverse_barrier.md"
       ],
       "status": "conditional logic complete; bit-growth applicability open; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "Santa restricted边界与token桥梁非保真",
+      "detail": "restricted Santa要求同一物品所有非零端点值相同；需求k>1的桥梁任务含1/k与1，因此不能直接导入restricted常数结果。",
+      "refs": [
+        "research/current/unrelated_machines/santa_restricted_bridge_boundary.md",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "complete stated-scope model boundary; primary source targeted read; novelty unverified"
+    },
+    {
+      "id": "UM-DUPLICATION-TWO-COPY-FLOOR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两份完整复制的一半一致性地板",
+      "detail": "每份副本内部资源束不交时，对并集资源作二着色并选较大颜色类，普适输出b≥1/2；简单duplication不能把NO压到低于1/2。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_two_copy_floor.md",
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md"
+      ],
+      "status": "complete stated-scope obstruction; independent sanity check; novelty unverified"
+    },
+    {
+      "id": "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两状态残余的多数状态地板",
+      "detail": "两状态内部不交的残余束中，较大好状态给b≥min{|G(delta)|/(2q_r),delta}；全变量有好状态时达到min(1/2,delta)。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "tests/audits/unrelated_machines/robust_consistency_state_majority.py"
+      ],
+      "status": "complete stated-scope obstruction; finite exact audit; external review and novelty unverified"
+    },
+    {
+      "id": "UM-DUPLICATION-STATE-MAJORITY-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "两状态多数地板有限审计",
+      "detail": "34389个Fraction小系统与尖锐族输出。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "tests/audits/unrelated_machines/robust_consistency_state_majority.py",
+        "evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json"
+      ],
+      "status": "finite computational evidence"
     }
   ],
   "hyperedges": [
@@ -21828,6 +21877,85 @@
         "research/unrelated_machines/LITERATURE.md"
       ],
       "status": "conditional open barrier"
+    },
+    {
+      "id": "D-UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+        "UM-SANTA-NO-CONSTANT-CONDITIONAL-v1"
+      ],
+      "conclusion": "UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1",
+      "statement": "逐边检查token任务的1/k与1异端时间，结合restricted模型定义，得到桥梁非保真边界。",
+      "refs": [
+        "research/current/unrelated_machines/santa_restricted_bridge_boundary.md",
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+      ],
+      "status": "complete stated-scope model boundary"
+    },
+    {
+      "id": "D-UM-DUPLICATION-TWO-COPY-FLOOR-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1",
+        "UM-BOUNDED-COLLISION-LABEL-FLOOR-v1"
+      ],
+      "conclusion": "UM-DUPLICATION-TWO-COPY-FLOOR-v1",
+      "statement": "资源二着色是有界碰撞地板在两份内部无冲突复制合同下的专门构造。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_two_copy_floor.md",
+        "research/current/unrelated_machines/bounded_collision_label_resource_floor.md"
+      ],
+      "status": "complete stated-scope obstruction"
+    },
+    {
+      "id": "L-UM-DUPLICATION-TARGET-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DUPLICATION-TWO-COPY-FLOOR-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "简单两份完整复制至少保留一半真实树，不能独立给近2的任意固定NO gap。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_two_copy_floor.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DUPLICATION-TWO-COPY-FLOOR-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+      ],
+      "conclusion": "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "statement": "固定多数状态并直接取其内部不交残余束，得到delta级真实树地板；完全二部冲突给锐例。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "research/reviews/unrelated_machines/bcg_mmda_hardness_import_review.md"
+      ],
+      "status": "complete stated-scope obstruction"
+    },
+    {
+      "id": "C-UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DUPLICATION-STATE-MAJORITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1",
+      "statement": "有限Fraction枚举核对小状态对、非空删点和尖锐参数；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/duplication_state_majority_floor.md",
+        "tests/audits/unrelated_machines/robust_consistency_state_majority.py",
+        "evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json"
+      ],
+      "status": "finite evidence"
     }
   ]
 }

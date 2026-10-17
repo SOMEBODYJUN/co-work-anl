@@ -278,3 +278,9 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 [单任务外接端口的向下投影与锐计数](signed_one_job_port_downset.md)给`UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1`：保留一个外部出现端点且排除外部容量时，两一致态强制至少2^z(2^a+2^b−1)个严格可行状态，固定T>0逐参数锐；不能用该纯内部接口实现等值复制。BG一般signed阈值PCSP的近二困难性不保持调度双出现限制；多任务编码及外部联合容量仍未解，UM-TARGET-v1保持OPEN。
 
 [单层配额超图平方根重数地板](single_layer_quota_sqrt_multiplicity_floor.md)：对每个邻域至少 K、资源总重数至多 Δ 的单层接口，计数得 b≥1/(√Δ+1)−1/K，并由资源总量给 b≤1/√Δ（在相应密度下）。这比有界碰撞的 1/Δ 地板更强，明确要求近二归约使用平方级碰撞或跨层一致性；不构成一般硬度。
+
+## 反面路线新增的模型与复制边界
+
+[Santa restricted边界](santa_restricted_bridge_boundary.md)核清 Haeupler–Saha–Srinivasan 的常数算法只适用于每件物品具有统一固有值的 restricted Santa；需求 \(k_v>1\) 的 token 桥梁任务在父/子端分别为 \(1/k_v\) 与 \(1\)，不保持该结构。故 restricted Santa 结果不能导入一般 UM 或当前 MMDA 反面路线。
+
+[两份完整复制地板](duplication_two_copy_floor.md)证明：若每个变量的两份完整标签束在各自副本内不交，则资源二着色给出 \(b\ge1/2\) 的实际根树；这把简单 duplication 的 soundness 上限写成精确一半，并与 BCG §7 的复制警示分开。当前仍缺跨层整数一致性，使 YES 保持 \(b^*=1\) 而 NO 的每个高比例树都能解码源见证。

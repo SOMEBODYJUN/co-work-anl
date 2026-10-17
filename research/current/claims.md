@@ -959,6 +959,26 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1 | 一个内部端点/一个固定外部端点的真实端口任务，排除外部容量的内部投影对入向位向下闭。若两全局一致态可行，正时间两符号数a,b、零时间位z，则状态数≥2^z(2^a+2^b−1)，任意T>0逐参数锐；k≥2可从已有一致见证单翻位构造混合严格见证，故任意ρ≥1不能纯等值复制。 | 不排多任务编码或外部联合容量。一般signed PCSP近二源难度没有自动保留双出现限制。[正文](unrelated_machines/signed_one_job_port_downset.md)、[冻结攻击](../reviews/unrelated_machines/signed_one_job_port_downset_review.md)。 |
 
+
+## UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1：restricted Santa 与需求树桥梁的模型边界
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1 | token桥梁中若存在正需求 \\(k_v>1\\) 且 \\(d_v>0\\)，同一外送任务在父/子端非零时间为 \\(1/k_v,1\\)，不满足 restricted Santa 的 \\(v_{ci}\\in\\{0,p_i\\}\\)；只有所有正需求为1时退化到restricted支持，此时正点只表达出度0/1层。 | Haeupler–Saha–Srinivasan 的常数结果只属restricted模型；一般桥梁与restricted不保真。 [正文](unrelated_machines/santa_restricted_bridge_boundary.md)。 |
+
+## UM-DUPLICATION-TWO-COPY-FLOOR-v1：两份完整复制的一半一致性地板
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-DUPLICATION-TWO-COPY-FLOOR-v1 | 每变量两标签、每标签完整束 \\(B_x^a\\)，且每一副本内部束两两不交、根需求为变量数时，资源二着色和较大颜色类选择给确定性真实根树 \\(b(H)\\ge1/2\\)，从而简单duplication不能给 \\(b^*\\le\\delta<1/2\\) 的NO侧。根需求改为 \\(Q\\) 时保证为 \\(|X|/(2Q)\\)。 | 两复制地板是 `UM-BOUNDED-COLLISION-LABEL-FLOOR-v1` 的专门推论；不排跨层共享或非内部不交的一致性构造。 [正文](unrelated_machines/duplication_two_copy_floor.md)。 |
+
+
+## UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1：两状态残余的多数状态地板
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1 | 两状态标签束各自内部不交；对保留变量 \\(Y\\) 和任意 \\(\\delta\\)，令 \\(G_a(\\delta)=\\{x:|R_x^a|\\ge\\delta K_x^a\\}\\)。若 \\(G_0\\cup G_1\\ne\\varnothing\\)，确定性选较大状态得到 \\(b(H)\\ge\\min\\{|G_0\\cup G_1|/(2q_r),\\delta\\}\\)；根需求为 \\(|Y|\\) 且每变量有一好状态时得 \\(\\min\\{1/2,\\delta\\}\\)。 | 允许任意删叶/删变量但保留状态内不交；完全二部冲突族达到 \\(\\min\\{1/2,s/K\\}\\)。比一般 \\(\\Delta_G\\le2\\) 的 \\(\\delta/2\\) 更强；不排跨状态外部重用导致状态内不交失效。 [正文](unrelated_machines/duplication_state_majority_floor.md)、[审计](../../tests/audits/unrelated_machines/robust_consistency_state_majority.py)、[冻结结果](../../evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

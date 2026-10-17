@@ -1320,3 +1320,21 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：双内部端点或把外部共同容量加回时2任务2机能实现等值至ρ<2；这是排除假设的必要负控，不是本Claim反例。零阈值前提、未知见证可求性与实ρ阈值定义已明确。无声明范围内尚成立fatal。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; global novelty and standalone publication value unverified。实现为已给见证的混合构造及有限审计，不是一般调度求解器。
 - Related Files：`research/current/unrelated_machines/signed_one_job_port_downset.md`；`research/reviews/unrelated_machines/signed_one_job_port_downset_review.md`；`evidence/runs/unrelated_machines/signed_one_job_port_downset_audit.json`。
+
+## UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1：restricted Santa 与需求树桥梁的模型边界
+
+- **Exact Statement / Quantifiers：** token桥梁中若存在正需求 (k_v>1) 且 (d_v>0)，同一外送任务在父/子端非零时间为 (1/k_v,1)，不满足 restricted Santa 的 (v_{ci}\in\{0,p_i\})；只有所有正需求为1时退化到restricted支持，此时正点只表达出度0/1层。
+- **Scope / Conclusion：** Haeupler–Saha–Srinivasan 的常数结果只属restricted模型；一般桥梁与restricted不保真。
+- **Related Files：** `research/current/unrelated_machines/santa_restricted_bridge_boundary.md`。
+
+## UM-DUPLICATION-TWO-COPY-FLOOR-v1：两份完整复制的一半一致性地板
+
+- **Exact Statement / Quantifiers：** 每变量两标签、每标签完整束 (B_x^a)，且每一副本内部束两两不交、根需求为变量数时，资源二着色和较大颜色类选择给确定性真实根树 (b(H)\ge1/2)，从而简单duplication不能给 (b^*\le\delta<1/2) 的NO侧。根需求改为 (Q) 时保证为 (|X|/(2Q))。
+- **Scope / Conclusion：** 两复制地板是 `UM-BOUNDED-COLLISION-LABEL-FLOOR-v1` 的专门推论；不排跨层共享或非内部不交的一致性构造。
+- **Related Files：** `research/current/unrelated_machines/duplication_two_copy_floor.md`。
+
+## UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1：两状态残余的多数状态地板
+
+- **Exact Statement / Quantifiers：** 两状态标签束各自内部不交；对保留变量Y和任意δ，令G_a(δ)={x:|R_x^a|≥δK_x^a}。若G_0∪G_1非空，选较大状态给真实根树 (b(H)\ge\min\{|G_0\cup G_1|/(2q_r),\delta\})；根需求同步为|Y|且每变量有一好状态时得 (min\{1/2,delta\})。
+- **Scope / Conclusion：** 允许任意删叶/删变量但保留状态内不交；完全二部冲突族达到 (min\{1/2,s/K\})。这是两复制地板的δ-sharpen，不是一般硬度。
+- **Evidence / Related Files：** `research/current/unrelated_machines/duplication_state_majority_floor.md`; `tests/audits/unrelated_machines/robust_consistency_state_majority.py`; `evidence/runs/unrelated_machines/robust_consistency_state_majority_audit.json`。

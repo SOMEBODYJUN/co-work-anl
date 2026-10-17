@@ -253,3 +253,11 @@ u_1=q)，总有 (b^*\ge1/K)。因此要构造 YES (b^*=1)、NO (b^*\le\varepsilo
 [单任务外接端口的向下投影与锐计数](../current/unrelated_machines/signed_one_job_port_downset.md)给`UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1`：保留一个外部出现端点且排除外部容量时，两一致态强制至少2^z(2^a+2^b−1)个严格可行状态，固定T>0逐参数锐；不能用该纯内部接口实现等值复制。BG一般signed阈值PCSP的近二困难性不保持调度双出现限制；多任务编码及外部联合容量仍未解，UM-TARGET-v1保持OPEN。
 
 [单层配额超图平方根重数地板](../current/unrelated_machines/single_layer_quota_sqrt_multiplicity_floor.md)：对每个邻域至少 K、资源总重数至多 Δ 的单层接口，计数得 b≥1/(√Δ+1)−1/K，并由资源总量给 b≤1/√Δ（在相应密度下）。这比有界碰撞的 1/Δ 地板更强，明确要求近二归约使用平方级碰撞或跨层一致性；不构成一般硬度。
+
+## 反面路线的新模型核查与复制地板（2026-10-17）
+
+Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困难性属于 additive DegreeTwo/InfDegreeOne Max-Min Allocation，M-pyramid 是含全部源点的 forest；不能直接成为本单根树 \(b^*=1\) 对 \(b^*\le\delta\) 的 gap。Bamas2025 的 SA/层级间隙不是计算硬度，并在 p.44 将 MMDA 的 ETH-hardness列为开放问题；BLMRS 只有 Makespan→Santa 的算法方向。
+
+新 `UM-DUPLICATION-TWO-COPY-FLOOR-v1` 对两份副本各自内部无冲突的完整标签束给出资源二着色 \(b\ge1/2\)；新 `UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1` 证明需求 \(k_v>1\) 时 token 桥梁不保持 restricted Santa 的固有值结构。反面路线因此仍卡在跨层整数一致性与每固定 ε 的真实 OPT gap；这些模型边界和地板已写入对应正文与账本，未升级为无条件否定。
+
+新增 `UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1`：两状态内部不交的残余束中，多数状态给 \(b\ge\min\{|G(\delta)|/(2q_r),\delta\}\)，全变量有好状态时为 \(\min\{1/2,\delta\}\)；完全二部冲突族锐。该 sharpen 已用34389个Fraction小系统审计，仍不排跨状态外部资源重用。
