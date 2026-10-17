@@ -89,6 +89,8 @@
 
 一般多接收预算不能免费标量化；新增[完整profile接收池](research/current/unrelated_machines/shared_sink_joint_macro_assignment.md#9-有界-profile-畸变的完整接收池)通过完整资格、共同work上下包络及逐边尺寸获得可回收正面范围，未消除一般资格/跨home瓶颈。
 
+[有限覆盖与反向困难性可靠性缺口](research/current/unrelated_machines/configuration_finite_cover_obstruction.md)已给标准机制的准确调度重构：即使高围长也存在整数OPT坍缩到配置阈值的cover；精选接线与一般困难性仍未排除，UM-TARGET-v1保持OPEN。
+
 不完整资格并非一概排除正面构造：[共同资格私有组](research/current/unrelated_machines/hall_group_joint_flow.md)由真实最低出口量给整数Hall容量，可联合选择macro与receiver；缺少组下界、共同资格或等端体积时不能免费沿用。任意残余容量的组族也不必是拟阵；准确负控制与回收见正文§6。
 
 [反面路线的递归与资源重复边界](research/current/unrelated_machines/private_graft_and_resource_repetition.md)记录两个不同失效：私有重复的值是max/min而非乘积；完全元素池可能把分数完美匹配整数化，导致源NO变YES。只限制明确合同，不是一般算法或所有困难性归约的不可能性。
