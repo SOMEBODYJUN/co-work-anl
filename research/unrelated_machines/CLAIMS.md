@@ -1574,3 +1574,11 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：强LP非必要4机5job真OPT1；弱Σdown≥r*y不足4机9job真OPT7/4；matching失败5机10job真OPT2。任意外给见证位长计入输入，Python整数文本上限已解除并实际测过5000位。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；given-witness/uniform/bounded-D实际构造已实现，一般LP求解器未集成；无外审或论文价值认证，主目标正反面仍OPEN。
 - Related Files：`research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md`、`research/reviews/unrelated_machines/unit_readout_calibrated_cardinality_slots_review.md`、`examples/unrelated_machines/unit_readout_calibrated_counterexamples.json`、`evidence/runs/unrelated_machines/unit_readout_calibrated_cardinality_slots_audit.json`、`tests/audits/unrelated_machines/unit_readout_calibrated_cardinality.py`、`tests/audits/unrelated_machines/unit_readout_calibrated_independent.py`。
+
+## UM-HEAVY-LIGHT-JOINT-RESIDUAL-MINMAX-v1：重轻任务联合残余 LP 的 min–max 障碍候选
+
+- Exact Statement：固定阈值 `T>0` 与 `δ∈(0,1/2)`，若先将 `p_ij>(1−δ)T` 的任务整数放置到各机、再要求其余任务只用轻边完成残余分数 LP，则固定 heavy 放置 `h` 的可行性由全部 `λ≥0` 的 Farkas 不等式决定；逐个 `λ` 选择放置只证明 `∀λ∃h`，一般算法需要同一 `h` 满足 `∀λ`。
+- Objects / Domain / Quantifiers：普通 `R||C_max` 矩阵、不可用边允许；本记录的障碍是对该“heavy matching→light residual LP”接口的量词反例，不是对所有算法的全称困难性。
+- Evidence：两机 `T=1` 符号实例 `A=(.95,.95)`, `B=(.85,.85)`, `ℓ_1=(.1,∞)`, `ℓ_2=(∞,.1)`；两个 heavy 匹配的残余容量分别为 `(0.05,.15)` 与 `(0.15,.05)`，均无法容纳对应固定 light 任务。计算仅作分数回算，核心为显式 Farkas/min–max 推导。
+- Status：candidate obstruction；尚无独立审查，不升级为一般算法不可能性。下一义务是证明带 slack 的 min–max 交换/全局增广条件，或构造更一般参数族。
+- Related Files：`research/questions/unrelated_machines/heavy_light_joint_residual_minmax_obstruction.md`。

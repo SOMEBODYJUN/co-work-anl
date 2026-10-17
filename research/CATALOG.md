@@ -500,6 +500,12 @@
 | [强LP非必要、弱LP不足与匹配失败的完整原P](<../examples/unrelated_machines/unit_readout_calibrated_counterexamples.json>) | `examples/unrelated_machines/unit_readout_calibrated_counterexamples.json` | 三实际原矩阵/全σ最优值1、7/4、2；含对应显式输入可重放。；配套 [单位读出树的校准计数槽与有界密度次二算法](<current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md>) | 反例；仅否定正文明确的命题；关联 `UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1`、`UM-UNIT-READOUT-CALIBRATED-SLOT-v1`，[命题合同](assets.json) |
 | [校准计数槽的冻结实际核验](<../evidence/runs/unrelated_machines/unit_readout_calibrated_cardinality_slots_audit.json>) | `evidence/runs/unrelated_machines/unit_readout_calibrated_cardinality_slots_audit.json` | 源hash、规范和独立实际stdout与三CLI/1698原σ检查，有限而非一般证明。；配套 [单位读出树的校准计数槽与有界密度次二算法](<current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md>) | 冻结输入、证书或结果；不原位覆盖；关联 `UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1`、`UM-UNIT-READOUT-CALIBRATED-SLOT-v1`，[命题合同](assets.json) |
 
+### joint-capacity-bridge
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [重轻任务联合残余LP的min–max障碍候选](<questions/unrelated_machines/heavy_light_joint_residual_minmax_obstruction.md>) | `research/questions/unrelated_machines/heavy_light_joint_residual_minmax_obstruction.md` | 记录两机符号反例、Farkas量词缺口与自适应残余引理；研究联合容量桥时读取，状态仍为候选障碍。 | 候选或未闭合义务；保存不升级状态 |
+
 <a id="weighted_congestion"></a>
 
 ## 加权原子拥塞博弈
