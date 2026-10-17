@@ -225,3 +225,9 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 ## 更宽的固定宏占位候选
 
 `UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1` 把私有任务资格放宽到任意逐件集合 `A_j⊆H∪Z`，并允许每条私有边有不同处理时间，只要求≤`δT`；承重条件改为 `|B|=|H|`、宏只在 home、每个 home 的宏边时间固定为 `P_h>T/2` 且宏图有完美匹配。任取宏完美匹配后，私有 LST LP 的 home 容量 `T−P_h` 与匹配无关，ST 舍入给 `(1+δ)T` 候选。承诺 `P_h>OPT/2`、私有边≤`δOPT` 时，网格搜索给未知 OPT 的 `(1+δ̄)` 候选。该接口是标准 LST/ST 的结构重构，未认证新颖性；宏身份相关时长、宏数不等于 home 数或大私有边会重新产生联合容量义务。正文见 [同质大宏任意私有边候选](../../questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md)。
+
+## 三维匹配需求树的低比例地板
+
+[三维匹配需求树障碍](three_dimensional_matching_demand_floor_obstruction.md)冻结 `UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1`：标准 (D_K(A)) 编码满足
+(b^*=max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\})，其中 (mu) 是 (X) 到 (Y\cup Z) 的一资源匹配、(
+u) 是三维匹配。故完美 YES 的值恰为 (2/K)；放大三元组需求不能把 NO 压低而保持 YES 值1，固定 (K=2) 又留下单终端地板。公共资源族 (Q_{q,K}) 的精确 Hall 值可趋零，但尚未编码 NP 一致性。该结果只限制这一直接桥梁，不是一般困难性；下一义务是共享标签/高距离一致性并控制位长。

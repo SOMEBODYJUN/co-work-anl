@@ -869,6 +869,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-C2-PREFIX-CONDITIONING-DEGREE-v1 | 同一7任务/3机器矩阵的偶奇五位真实OPT=T=2分布，全部≤4阶one-hot C₂数据相同；深度4前缀F下任务5的B条件负载分别0/1，差异需5阶矩。 | [四阶C₂与深层真前缀容量边界](unrelated_machines/c2_prefix_conditioning_degree_boundary.md)；完整限定范围证明及32态精确枚举；是 limits，不是一般困难性。 |
 
+## UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1：三维匹配需求树的低比例地板
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1 | 标准 \(D_K(A)\) 需求树满足 \(b^*=\max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\}\)；完美三维匹配时 \(b^*=2/K\)。 | 直接3DM桥梁的自足障碍；\(K\) 放大同时降低YES，固定 \(K=2\) 留下一终端地板，且 \(\mu<q/2\) 时可由普通二分图匹配精确求值。不是一般近2困难性。 [正文](unrelated_machines/three_dimensional_matching_demand_floor_obstruction.md)、[精确审计](../../tests/audits/unrelated_machines/three_dimensional_matching_demand_floor.py)、[冻结结果](../../evidence/runs/unrelated_machines/three_dimensional_matching_demand_floor_audit.json)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

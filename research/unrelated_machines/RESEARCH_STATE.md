@@ -191,3 +191,13 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 ## 加权共同组的新增正面接口
 
 [共同资格私有组的加权出口与联合槽](../current/unrelated_machines/weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。
+
+## 新反面障碍：直接三维匹配桥梁有比例地板
+
+[三维匹配需求树障碍](../current/unrelated_machines/three_dimensional_matching_demand_floor_obstruction.md)给出 `UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1` 的精确恒等式：标准 (D_K(A)) 编码的 (b^*) 是一资源匹配 (mu) 与三维匹配 (
+u) 两项的最大值；完美 YES 时恰为 (2/K)。因此把三元组需求放大不能保留 YES 值1，固定 (K=2) 又不能消除只选一个共享终端的地板。公共资源 Hall 族可构造 (b^*) 趋零（(q=K=20,40,80) 时分别 (1/5,3/20,1/10)），但目前没有 NP 语言编码。
+
+这轮反面路线的下一精确义务是：设计共享标签或高距离一致性资源，使完整 YES 的实际 (b^*=1)，而每个 (b\ge\varepsilon/2) 的树都能解码源问题见证，并保持每个固定 (arepsilon) 的位多项式规模。已有配置/SA gap、私有 max–min 串接、完全池复制和本节地板都不能替代该 soundness 证明。
+
+补充的 (K=2) 精确边界：在 (A_q=\{(x_i,y_0,z_i)\}) 上 (
+u/q\to0) 但 (mu/q=1)，故标准需求树仍 (b^*=1/2)、调度OPT=3/2；若 (mu<q/2)，则 (b^*=mu/q) 并可由二分图匹配直接精确计算。这排除了把普通3DM的低匹配比例直接升级为近2硬度的企图。

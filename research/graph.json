@@ -8534,6 +8534,18 @@
         "research/current/unrelated_machines/README.md"
       ],
       "status": "candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified"
+    },
+    {
+      "id": "UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "三维匹配需求树的低比例地板",
+      "detail": "标准D_K(A)的b*精确等于一资源匹配mu与三维匹配nu两项的最大值；完美YES为2/K。",
+      "refs": [
+        "research/current/unrelated_machines/three_dimensional_matching_demand_floor_obstruction.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "complete stated-scope obstruction; exact finite audit; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -20770,6 +20782,36 @@
         "research/current/unrelated_machines/README.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "L-UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+      ],
+      "conclusion": "UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1",
+      "statement": "需求K放大同时缩小完美YES，K=2保留一终端地板；直接3DM桥梁不足近2困难性。",
+      "refs": [
+        "research/current/unrelated_machines/three_dimensional_matching_demand_floor_obstruction.md",
+        "tests/audits/unrelated_machines/three_dimensional_matching_demand_floor.py"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "L-UM-3DM-DEMAND-FLOOR-OBSTRUCTION-OPEN-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仍需共享标签/高距离一致性，阻止一终端逃逸并保持位多项式实际OPT gap；本障碍不等于一般硬度。",
+      "refs": [
+        "research/current/unrelated_machines/three_dimensional_matching_demand_floor_obstruction.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
     }
   ]
 }

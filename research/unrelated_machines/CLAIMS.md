@@ -1118,3 +1118,15 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Counterevidence / Objections：若δ仅逐实例<1则没有统一ε；宏占位异质时不适用。
 - Status：candidate; proof draft complete at stated scope; internal attack pending formal review; external review and novelty unverified。
 - Related Files：research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md。
+
+## UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1：三维匹配需求树的低比例地板
+
+- **Exact Statement / Quantifiers：** 对任意 (qge1)、(Kge2) 及三维匹配 (A=(X,Y,Z,E)) 的标准需求树编码 (D_K(A))，令 (mu) 为 (X)--((Y\cup Z)) 一资源匹配数、(
+u) 为三维匹配数，则 (b^*(D_K(A))=\max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\})。完美三维匹配时 (b^*=2/K)。
+- **Objects / Domain：** 根需求 (q)，(x) 点需求1，三元组点需求 (K)，(Y,Z) 为零需求终端；边 (r\to x\to e\to\{y,z\})；(b^*) 沿 `UM-DAG-DEGREE-TOKEN-IDENTITY-v1` 定义。
+- **Scope / Conclusion：** 这是直接3DM需求树接口的精确方法障碍。提高 (K) 会同时降低 YES 的 (b^*)，固定 (K=2) 仍受一终端子树地板影响；故该接口不能给任意 (arepsilon) 的 YES (b^*=1)/NO (b^*\learepsilon/2) 归约。公共资源 Hall 族给出可趋零的目标形状，但没有复杂度归约。
+- **Dependencies：** `UM-DAG-DEGREE-TOKEN-IDENTITY-v1`；有限树单父约束；二分图/三维匹配定义。
+- **Evidence：** 自足上下界证明；Fraction 审计覆盖 (q\le2) 全边集、(q=3) 固定种子随机样本和完美匹配族；见 `three_dimensional_matching_demand_floor_audit.json`。
+- **Counterevidence / Objections：** 只排除该标准局部接口与公共资源样板；不排共享标签、高距离测试、Label-Cover 或其它跨模块一致性归约，也不证明主目标反面。
+- **Status：** complete stated-scope obstruction; independently exact-audited; external review and novelty unverified; `UM-TARGET-v1` remains OPEN.
+- **Related Files：** `research/current/unrelated_machines/three_dimensional_matching_demand_floor_obstruction.md`; `tests/audits/unrelated_machines/three_dimensional_matching_demand_floor.py`; `evidence/runs/unrelated_machines/three_dimensional_matching_demand_floor_audit.json`。
