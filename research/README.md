@@ -56,3 +56,5 @@
 [闭环容量释放](../research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§11把严格下降障碍推进到弱最大负载单调小步：真实最优凸包的全部最小成本槽输出仍趋2，最小非平凡改件/参与机恰d+1；但单任务到OPT的最小峰值仅为B+1/k²。它不是一般困难性，且该cactus族可精确解。
 
 [异端有界畸变共同组](../research/current/unrelated_machines/distorted_group_joint_slot_rounding.md)在给定上下比例包络、唯一home/共同资格结构下联合选宏与接收机，给home≤(1+r+δ)T、sink≤[κ+B̄(1−r)]T，且闭合未知OPT搜索；固定κ+B̄δ<2时只有该结构类具统一改善。 一般UM-TARGET-v1仍OPEN；下一高信息义务是允许可控临时增载的共同容量修复及总位多项式进展，或在一般矩阵中生成保统一余量的相关结构。
+
+本轮新增三条可复用边界：[全层核心—私有配额近二族](current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md)、[共同big选择的独立集阈值障碍](questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md)和[固定工作量势局部极小族](current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md)。它们分别收紧跨层soundness、共同容量状态和局部repair的精确义务，均不把主目标升级为已解或一般hardness。

@@ -9520,6 +9520,49 @@
         "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "核心私有资源全层配额与真实近二障碍",
+      "detail": "核心—私有四层需求DAG的全层ν_t闭式给b*=s/K，需求树桥梁给实际OPT=2−s/K；私有padding把基系统全部中间层soundness平移到实际任务。",
+      "refs": [
+        "research/current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md",
+        "research/reviews/unrelated_machines/cross_layer_quota_matching_review.md",
+        "tests/audits/unrelated_machines/cross_layer_quota_matching.py",
+        "evidence/runs/unrelated_machines/cross_layer_quota_matching_candidate.json"
+      ],
+      "status": "complete stated-scope obstruction; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共同大任务选择的独立集阈值障碍",
+      "detail": "全图unit宏任务、私有tiny和边tiny的精确阈值 Cmax≤alpha 恰等价大小k独立集，NO下界为min{2,alpha+h}；只限制先big后残余流接口。",
+      "refs": [
+        "research/questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md",
+        "research/reviews/unrelated_machines/independent_set_big_residual_review.md",
+        "tests/audits/unrelated_machines/independent_set_big_residual_audit.py",
+        "evidence/runs/unrelated_machines/independent_set_big_residual_audit.json",
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "candidate exact-threshold interface obstruction; internally reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "固定总工作量下凸势与排序势的近二局部极小",
+      "detail": "完全相同机器上的固定工作量族使二次势和排序势成为严格单任务局部极小，初始比值趋二且次二目标需无界批量迁移。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md",
+        "research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md",
+        "tests/audits/unrelated_machines/fixed_work_convex_local_minimum.py",
+        "evidence/runs/unrelated_machines/fixed_work_convex_local_minimum_audit.json"
+      ],
+      "status": "complete stated-scope obstruction; independently reconstructed and exactly audited; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -23398,6 +23441,55 @@
         "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
       ],
       "status": "open obligation"
+    },
+    {
+      "id": "um_cross_layer_core_private_identity",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SINGLE-LAYER-QUOTA-VALUE-v1",
+        "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
+      ],
+      "conclusion": "UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1",
+      "statement": "在共同核心与私有padding集合系统中闭式计算全部配额层并通过需求树桥梁得到实际近二整数族。",
+      "refs": [
+        "research/current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md",
+        "research/reviews/unrelated_machines/cross_layer_quota_matching_review.md"
+      ],
+      "status": "complete stated-scope proof; finite checks"
+    },
+    {
+      "id": "um_independent_set_big_residual_limit",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-RESIDUAL-THROUGHPUT-LATTICE-v1"
+      ],
+      "conclusion": "UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1",
+      "statement": "固定big占位后再调用残余流的精确可行性可编码最大度图独立集；这不是一般近二hardness。",
+      "refs": [
+        "research/questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md",
+        "research/reviews/unrelated_machines/independent_set_big_residual_review.md",
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "candidate exact-threshold obstruction"
+    },
+    {
+      "id": "um_fixed_work_convex_local_limit",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1"
+      ],
+      "conclusion": "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1",
+      "statement": "固定总工作量不救固定二次/排序势的单任务局部下降；趋二族要求无界同步迁移。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md",
+        "research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md"
+      ],
+      "status": "complete stated-scope obstruction; finite checks"
     }
   ]
 }

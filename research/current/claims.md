@@ -1070,6 +1070,11 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-UNIT-READOUT-SELECTOR-MIXING-v1 | 同一P给p≥1份完整实际C≤1调度，每变量指定一个至少在一见证采用过的selector sign；非空另需N=k^h≥p。可按P加全部见证位长poly输出满足全部指定根的完整σ，C≤2−1/(2p−1)。大k取r=floor(k/p)，小k取r1；p1直接原YES。对每p该指定profile保证精确锐，而原全局OPT1。 | [正文](unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)、[实际审查](../reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md)；限定完成，内审/实现通过，外审与新颖性未认证 |
 
+
+| UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1 | 核心—私有资源四层需求DAG：K>s≥1、q≥ceil((K−s)K/s)。全层配额值 b*=s/K，桥梁矩阵真实 OPT=2−s/K；私有 padding 可把任意基系统的全部中间层 matching soundness 平移到实际不可拆调度。 | [正文](unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md)、[独立审查](../reviews/unrelated_machines/cross_layer_quota_matching_review.md)、[Fraction审计](../../tests/audits/unrelated_machines/cross_layer_quota_matching.py)；限定接口障碍，不是一般近二困难性，UM-TARGET-v1仍OPEN。 |
+| UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1 | 最大度图上的全图 unit 宏任务、私有 tiny 与边 tiny：rh=α−1、Δh≤1、α<2 时，存在 Cmax≤α 当且仅当存在大小k独立集；NO下界为 min{2,α+h}。 | [候选正文](../questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md)、[独立审查](../reviews/unrelated_machines/independent_set_big_residual_review.md)、[1080实例Fraction审计](../../evidence/runs/unrelated_machines/independent_set_big_residual_audit.json)；只限制先选big再残余流接口，不是UM-TARGET-v1反面。 |
+| UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1 | m≥3完全相同机器上的两件unit与m²−1件1/m tiny：总工作量固定，初始Cmax=2、OPT=1+2/m，二次势和排序势均为严格单任务局部极小，达到2−ε需迁移至少2+ceil(εm)件任务。 | [正文](unrelated_machines/fixed_work_convex_local_minimum_near_two.md)、[独立审查](../reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md)、[Fraction审计](../../tests/audits/unrelated_machines/fixed_work_convex_local_minimum.py)；只关闭固定势/固定批量局部合同，不是一般困难性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

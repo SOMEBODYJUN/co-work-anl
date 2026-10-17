@@ -41,7 +41,7 @@
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
 | [不相关并行机的目标与经典障碍地图](<current/unrelated_machines/README.md>) | `research/current/unrelated_machines/README.md` | 导航主目标、精确模型、已知重构、文献与有限证据；新研究先从此选择承重义务。 | 阅读导航；真值查精确正文及账本；关联 `UM-CONF-GAP-v1`、`UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1`、`UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1`，[命题合同（共 9 项）](assets.json) |
-| [不相关并行机的精确目标、经典舍入与配置间隙](<current/unrelated_machines/model_and_classical_barriers.md>) | `research/current/unrelated_machines/model_and_classical_barriers.md` | 自足给模型、零值边界、Hall槽匹配与重索引两树gap；引用算法保证和方法限制前核对全量词。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
+| [不相关并行机的精确目标、经典舍入与配置间隙](<current/unrelated_machines/model_and_classical_barriers.md>) | `research/current/unrelated_machines/model_and_classical_barriers.md` | 自足给模型、零值边界、Hall槽匹配与重索引两树gap；引用算法保证和方法限制前核对全量词。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-CONF-GAP-v1`、`UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1`、`UM-ST-ROUND-v1`，[命题合同（共 4 项）](assets.json) |
 | [不相关并行机研究存档与协作入口](<unrelated_machines/README.md>) | `research/unrelated_machines/README.md` | 固定unrelated-machines存档，连接数学地图、原文、启动提示词及隔离范围；新对话首次读取。 | 阅读导航；真值查精确正文及账本 |
 | [不相关并行机主目标与已知工具的精确身份账本](<unrelated_machines/CLAIMS.md>) | `research/unrelated_machines/CLAIMS.md` | 保留对象、输入域、统一量词、依赖、反驳与真实状态；修改候选或引用结果时核对。 | 精确命题登记；摘要不替代原陈述 |
 | [不相关并行机的真实前沿与承重义务](<unrelated_machines/RESEARCH_STATE.md>) | `research/unrelated_machines/RESEARCH_STATE.md` | 说明未形成新算法、配置障碍以外仍缺什么，以及最有信息价值的下一步；实质进展时更新。 | 阅读导航；真值查精确正文及账本 |
@@ -54,7 +54,7 @@
 | [经典舍入与两树配置间隙的独立重构和攻击](<reviews/unrelated_machines/classical_foundation_review.md>) | `research/reviews/unrelated_machines/classical_foundation_review.md` | 冻结正文与代码hash，重建数学链并保留独立可执行扩展审计；状态升级前读取真实覆盖。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [有序槽舍入与两树配置证书的Fraction核验](<../tests/audits/unrelated_machines/rounding_and_gap.py>) | `tests/audits/unrelated_machines/rounding_and_gap.py` | 运行给定x舍入、独立枚举、显式配置和特定树DP；只检查真实有限参数，不充当通用求解器。 | 有限计算核验；不代替一般证明；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [经典舍入与配置间隙的首轮冻结精确证据](<../evidence/runs/unrelated_machines/classical_baseline_audit.json>) | `evidence/runs/unrelated_machines/classical_baseline_audit.json` | 保留代码hash、seed、算术、枚举范围与限制；重跑另写scratch，不覆盖本记录。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
-| [LST1990的原文版本与精确出处](<../history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf>) | `history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-FANOUT-MISSING-ONE-THREE-HALVES-v1`、`UM-LST-SUPPORT-RELEASE-OPTIMAL-v1`，[命题合同（共 12 项）](assets.json) |
+| [LST1990的原文版本与精确出处](<../history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf>) | `history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1`、`UM-FANOUT-MISSING-ONE-THREE-HALVES-v1`，[命题合同（共 15 项）](assets.json) |
 | [ST1993的原文版本与精确出处](<../history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf>) | `history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-BATCH-SUPPORT-REPAIR-NO-v1`、`UM-BOUNDED-PROFILE-EXIT-POOL-v1`、`UM-BUNDLE-MOMENT-v1`，[命题合同（共 65 项）](assets.json) |
 | [EKS2008_2014的原文版本与精确出处](<../history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.pdf>) | `history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.pdf` | 保留该来源实际取得的PDF版本；具体定理位置、假设、哈希与审查范围见本题literature_manifest。 | 来源或历史判断；不作为现行结论；关联 `UM-CONF-GAP-v1`、`UM-ST-ROUND-v1`、`UM-TARGET-v1`，[命题合同](assets.json) |
 | [图平衡作者稿的原始PostScript来源](<../history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.ps>) | `history/source/literature/unrelated_machines/ebenlendr_krcal_sgall_2014_graph_balancing_author.ps` | 保存作者站点原始PS字节，与派生PDF分别记录哈希；还原来源或重新转换时读取。 | 来源或历史判断；不作为现行结论 |
@@ -524,6 +524,28 @@
 | [占位诱导边缺口的实际任务与流审计](<../tests/audits/unrelated_machines/occupation_induced_edge_deficit.py>) | `tests/audits/unrelated_machines/occupation_induced_edge_deficit.py` | 显式生成原P/OPT1调度，定向oracle和整数流核占位及D=e(I)。 | 有限计算核验；不代替一般证明；关联 `UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1`、`UM-RESIDUAL-THROUGHPUT-LATTICE-v1`，[命题合同](assets.json) |
 | [容量格次模与角色变动有限冻结证据](<../evidence/runs/unrelated_machines/residual_throughput_lattice_release.json>) | `evidence/runs/unrelated_machines/residual_throughput_lattice_release.json` | 记录原有理LP、primal/dual证书与实际原P调度，含源hash及范围。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1`、`UM-RESIDUAL-THROUGHPUT-LATTICE-v1`，[命题合同](assets.json) |
 | [占位诱导边公式有限冻结证据](<../evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json>) | `evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json` | 记录固定图/αδ、实际P哈希、整数流与原任务回算；重跑输出scratch。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1`、`UM-RESIDUAL-THROUGHPUT-LATTICE-v1`，[命题合同](assets.json) |
+
+### cross-layer-soundness
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [核心私有资源的全层配额与真实近二障碍](<current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md>) | `research/current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md` | 读取闭式全层匹配值、实际桥梁负载和私有padding位移，攻击只检查完整层的近二归约。 | 方法障碍；否定范围以正文为准；关联 `UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1`，[命题合同](assets.json) |
+| [共同大任务选择的独立集阈值障碍](<questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md>) | `research/questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md` | 读取先选big位置再用残余流补齐的精确阈值障碍、NO下界及其不构成近二hardness的范围。 | 候选或未闭合义务；保存不升级状态；关联 `UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1`，[命题合同](assets.json) |
+| [全层配额近二障碍的独立审查](<reviews/unrelated_machines/cross_layer_quota_matching_review.md>) | `research/reviews/unrelated_machines/cross_layer_quota_matching_review.md` | 核对核心私有闭式、桥梁OPT恒等式、审计范围和不能升级为一般困难性的异议。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1`，[命题合同](assets.json) |
+| [共同大任务独立集障碍的独立审查](<reviews/unrelated_machines/independent_set_big_residual_review.md>) | `research/reviews/unrelated_machines/independent_set_big_residual_review.md` | 核对阈值双向证明、min{2,alpha+h}下界和1080实例有限证据的准确范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1`，[命题合同](assets.json) |
+| [全层核心私有配额的Fraction审计](<../tests/audits/unrelated_machines/cross_layer_quota_matching.py>) | `tests/audits/unrelated_machines/cross_layer_quota_matching.py` | 小集合全枚举闭式nu_t、4950组参数和三组桥梁负载样本；不承担一般hardness。 | 有限计算核验；不代替一般证明；关联 `UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1`，[命题合同](assets.json) |
+| [共同大任务独立集阈值的Fraction审计](<../tests/audits/unrelated_machines/independent_set_big_residual_audit.py>) | `tests/audits/unrelated_machines/independent_set_big_residual_audit.py` | 枚举最大度三小图、全部k和r=0,1,2，核对独立数阈值与实际最优负载。 | 有限计算核验；不代替一般证明；关联 `UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1`，[命题合同](assets.json) |
+| [全层配额近二障碍的冻结审计记录](<../evidence/runs/unrelated_machines/cross_layer_quota_matching_candidate.json>) | `evidence/runs/unrelated_machines/cross_layer_quota_matching_candidate.json` | 保存全层闭式、Fraction样本、代码哈希和未检查的一般hardness范围。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1`，[命题合同](assets.json) |
+| [共同大任务独立集障碍的冻结审计记录](<../evidence/runs/unrelated_machines/independent_set_big_residual_audit.json>) | `evidence/runs/unrelated_machines/independent_set_big_residual_audit.json` | 保存1080个小图Fraction运行、脚本哈希和不承担近二hardness的限制。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1`，[命题合同](assets.json) |
+
+### local-repair-barriers
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [固定总工作量下凸势与排序势的近二局部极小](<current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md>) | `research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md` | 读取固定工作量、单任务局部势停滞和批量支持下界，审计全局修复路线的真实承重点。 | 方法障碍；否定范围以正文为准；关联 `UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1`，[命题合同](assets.json) |
+| [固定工作量局部极小族的独立审查](<reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md>) | `research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md` | 核对OPT计数、三类单任务势差、批量支持下界及全局势oracle限制。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1`，[命题合同](assets.json) |
+| [固定工作量局部极小的Fraction审计](<../tests/audits/unrelated_machines/fixed_work_convex_local_minimum.py>) | `tests/audits/unrelated_machines/fixed_work_convex_local_minimum.py` | 核验m=3全分配及m=4,5,8,12的负载、势差、排序和支持下界。 | 有限计算核验；不代替一般证明；关联 `UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1`，[命题合同](assets.json) |
+| [固定工作量局部极小的冻结审计记录](<../evidence/runs/unrelated_machines/fixed_work_convex_local_minimum_audit.json>) | `evidence/runs/unrelated_machines/fixed_work_convex_local_minimum_audit.json` | 保存m=3全枚举与m=4,5,8,12精确核验、脚本哈希和有限范围。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1`，[命题合同](assets.json) |
 
 <a id="weighted_congestion"></a>
 

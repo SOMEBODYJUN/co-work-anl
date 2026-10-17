@@ -350,3 +350,11 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 本轮停止大规模Fraction循环，新增 `UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1`：两状态残余树的固定delta可行性恰等价于two-rail quota orientation。\(delta=1\)的完整支付层退化为2-SAT；\(delta<1\)的部分资源支付是带方向约束的quota packing。行列池修正说明混合标签会逃逸整束冲突；真正的反面义务是跨层整数一致性和quota gap soundness。
 
 [完整单位树的叶流与选择重组](../current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。
+
+## 本轮新增的可复用承重边界
+
+- `UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1`：共同核心加私有 padding 的全层配额值恰 `s/K`，需求树桥梁实际 `OPT=2−s/K`；只检查完整层的归约会在 `s→s+1` 核心容量处失效。
+- `UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1`：固定 unit big 占位后、同尺寸 tiny 残余补齐的精确阈值等价最大度图独立集；它只否定免费共同选择器，不给近二 hardness。
+- `UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1`：固定总工作量的完全同机族中，二次势和排序势单任务下降均锁死，趋二修复需 `2+ceil(εm)` 件同步迁移。
+
+这些结果收紧了跨层一致性、共同容量状态和局部 repair 的 proof obligations，但没有提供一般输入的统一 epsilon 算法；主目标继续 OPEN.

@@ -143,3 +143,7 @@
 尝试用残余throughput的次模性选择大任务占位。正确部分是任意异端p的固定R容量格次模；失效步骤有两处：占位损失D本为超模，且H同时移除任务与扣容量后V根本不继承次模（2×2原OPT1/2、四值2/1/1/2）。即使宏身份固定、tiny同尺寸，任意固定严格次二α的可行占位族仍能精确为任意图独立集，D=诱导边数，故不是免费拟阵或固定p交换系统。回收一般F性质、primal/dual求值证书与精确图表示；原实例都有显式OPT1，不是调度困难性。重试需同时保留R(H)、h(H)的共同恢复与实际联合舍入余量，不能以近似总通过量代替全任务完成。见[完整范围](research/current/unrelated_machines/residual_throughput_and_occupation_projection.md)。
 
 [完整单位树的叶流与选择重组](research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。
+
+## 固定势与局部repair的新增失败机制
+
+固定总工作量并不能保证局部势下降有效：`research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md` 的同机族使二次势、排序势和固定批量单调路线均停在趋二状态。失败原因是必要迁移批量随机器数线性增长，而不是总工作量变化；未来若允许全局或无界批量，需另给可计算势下降及位复杂度证明。

@@ -1657,3 +1657,31 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：h无界余量趋0；N<p有真实指定profileOPT2反例；旧64open不许免费补祖先；NO源可能无任何完整YES，不能越界应用重组；锐profile值非全局OPT。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实际构造已实现；外审、全球新颖性和独立论文价值未认证。
 - Related Files：`research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md`；`research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md`；`evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json`；`examples/unrelated_machines/unit_readout_selector_mixing_sharp_profiles.json`；`tests/audits/unrelated_machines/unit_readout_selector_mixing.py`；`tests/audits/unrelated_machines/unit_readout_selector_profile_independent.py`。
+
+## UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1：核心—私有资源的全层配额与真实近二整数障碍
+
+- **Exact Statement：** 取 K>s≥1、c=K−s、q≥ceil(cK/s)。共同核心 C 大小 c，每变量私有 P_i 大小 s，A_i=C∪P_i。全层 t-matching 值为 ν_t=q（t≤s），ν_t=min(q,floor(c/(t−s)))（t>s），故 b*=s/K。需求树桥梁的实际不可拆矩阵满足 OPT=2−s/K；每个固定 δ>0 可取 s=1、K=ceil(2/δ) 得 OPT>2−δ 的显式族。
+- **Objects / Domain：** 根需求 q、变量需求1、标签需求K、资源零需求；实际任务为根/变量/标签/资源边的二值有限处理矩阵，任务数1+2q+qK，机器数1+2q+c+qs。
+- **Quantifiers / Scope：** 对所有上述整数参数和显式资源系统成立；只证明该接口的全层障碍，不声称源问题困难性、一般UM近二下界或新颖性。
+- **Dependencies / Evidence：** `UM-SINGLE-LAYER-QUOTA-VALUE-v1`、`UM-DAG-DEGREE-TOKEN-IDENTITY-v1`；正文、独立审查、Fraction全枚举与4950组闭式检查见 Related Files。
+- **Counterevidence / Objections：** 资源族显式可识别，YES对照显式可解；缺源相关接线和任意低调度 decoder，不能升级为P≠NP结论。
+- **Status：** complete stated-scope obstruction; independently reconstructed and exactly audited; external review and novelty unverified；`UM-TARGET-v1`仍OPEN。
+- **Related Files：** `research/current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md`、`research/reviews/unrelated_machines/cross_layer_quota_matching_review.md`、`tests/audits/unrelated_machines/cross_layer_quota_matching.py`、`evidence/runs/unrelated_machines/cross_layer_quota_matching_candidate.json`。
+
+## UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1：共同大任务选择的独立集阈值障碍
+
+- **Exact Statement：** 给最大度 Δ 图、k 件全图宏任务时间1、每顶点 r 件私有任务时间 h、每边一件两端任务时间 h，满足 rh=α−1、Δh≤1、1<α<2。则 Cmax≤α 当且仅当图有大小k独立集；NO下界为 min{2,α+h}。固定 Δ=3、h=1/3、r=0 给1对4/3，r=1给4/3对5/3。
+- **Objects / Domain：** 一般不相关机矩阵，边外不可用；k≥1，r=0端点 α=1 单列；任务数与图显式规模多项式。
+- **Scope / Conclusion：** 这是“先固定big位置、再残余流补齐”接口的精确NP障碍候选；不排同时重选、配置割或其他全局算法，不给统一(2−ε)硬度。
+- **Dependencies / Evidence：** `UM-MODEL-v1`；双向负载证明、独立审查和1080个小图 Fraction实际枚举。
+- **Status：** candidate exact-threshold interface obstruction; internally reconstructed and exactly audited; external review and novelty unverified；`UM-TARGET-v1`仍OPEN。
+- **Related Files：** `research/questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md`、`research/reviews/unrelated_machines/independent_set_big_residual_review.md`、`tests/audits/unrelated_machines/independent_set_big_residual_audit.py`、`evidence/runs/unrelated_machines/independent_set_big_residual_audit.json`。
+
+## UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1：固定总工作量下凸势与排序势的近二局部极小
+
+- **Exact Statement：** 对每个 m≥3 的完全相同机器族，两件unit和m²−1件1/m tiny使总工作量固定；给定初始分配的Cmax=2、OPT=1+2/m，二次负载势与非增排序负载词典序均对每一件单任务换机严格变差；任意Cmax≤2−ε需改变至少2+ceil(εm)件任务。
+- **Objects / Domain：** 全有限正处理时间、无资格限制的R||Cmax子族；只声明单任务邻域和固定势合同。
+- **Scope / Conclusion：** 关闭固定总工作量、固定二次/排序势、固定批量单调下降路线；不排无界批量、非单调过渡、输入自适应势或全局重求解。两机精确全局二次势含PARTITION只是额外oracle义务。
+- **Dependencies / Evidence：** `UM-MODEL-v1`；自足计数证明、独立审查、m=3全分配枚举及m=4,5,8,12 Fraction核验。
+- **Status：** complete stated-scope obstruction; independently reconstructed and exactly audited; external review and novelty unverified；`UM-TARGET-v1`仍OPEN。
+- **Related Files：** `research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md`、`research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md`、`tests/audits/unrelated_machines/fixed_work_convex_local_minimum.py`、`evidence/runs/unrelated_machines/fixed_work_convex_local_minimum_audit.json`。
