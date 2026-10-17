@@ -15,6 +15,8 @@
 
 [反面路线的递归与共享复制边界](current/unrelated_machines/private_graft_and_resource_repetition.md)及其冻结独立审查区分方法障碍与真正近2计算困难性；现有主目标状态不变。
 
+[机器价格凸化](current/unrelated_machines/heavy_light_price_convexification.md)精确定位标量最优响应仍为带big基数的LST松弛；[残余容量格与占位图表示](current/unrelated_machines/residual_throughput_and_occupation_projection.md)给固定R的一般格次模和D(I)=诱导边数。身份随H变化时的共同恢复仍未闭合，最优面成功证书没有全输入存在保证。这些是通用状态理论及准确限制，不是主目标突破。
+
 ## 各模型分别读取
 
 | 模型 | 权威入口 | 状态与范围 |
@@ -45,7 +47,7 @@
 
 [共同资格私有组的加权出口与联合槽](current/unrelated_machines/weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。
 
-[本轮开放义务与边界](questions/unrelated_machines/barrier_escape_obligations.md)补充了一个尚待审查的乘法覆盖/可调阈值候选、LST 正支撑零质量边反例及 rank-jump-one 共同交换条件缺口；这些均按精确范围保存，不升级为一般算法。
+[开放义务与边界](questions/unrelated_machines/barrier_escape_obligations.md)中的乘法覆盖/可调阈值结构界，已按同一覆盖实际恢复与修复FPTAS上界重新核查（旧撤回记录保留）；LST支撑扩张及真实支持rank-jump-one与一般伪矩义务分别登记。准确状态沿[纠错审查](reviews/unrelated_machines/threshold_cover_and_support_release_review.md)读取，不升级为一般算法。
 
 其中 rank-jump-one 对真实有限正权支持已有 Boolean 函数代数闭合证明；对一般伪矩的共同交换延伸和负载 localizer 仍开放。
 

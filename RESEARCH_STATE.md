@@ -85,3 +85,7 @@
 ## 机器价格联合残余：本轮核实的范围
 
 [精确凸化正文](research/current/unrelated_machines/heavy_light_price_convexification.md)证明逐价格重选H恰等价LST+big分数基数，剪枝后相对共同见证仍supgap2；漏剪枝时固定m的锐界m。旧两机候选只演示量词差别，OPT>T；新正文补全部β的参数族、可检验的最优价格共同big面成功分支。这个分支失败没有sound FAIL语义，且一般存在性未证。提高β后再付粗ST加性slack仍受已存半单位promise障碍。主目标继续OPEN；后续只推进非可加共同容量或直接联合舍入，停止仅机器价格/逐机anchor凸化的微调。
+
+## 一般残余容量性质与共同选择的第一缺口
+
+[固定R容量格次模/占位图表示](research/current/unrelated_machines/residual_throughput_and_occupation_projection.md)已自足证明并独立攻击：异端资格无结构要求的F(c)格次模、固定占位缺口D超模；2×2原矩阵证明H改变任务身份后联合目标并不继承。严格次二α下还能精确实现D(I)=诱导边数，原OPT1仍显式可解。这次增加了可复用的状态理论，尚未闭合全输入桥中的共同选择。下一高信息命题必须同时处理R(H)与h(H)并分析实际联合损失；不继续以更多固定R/独立集样本替代它。

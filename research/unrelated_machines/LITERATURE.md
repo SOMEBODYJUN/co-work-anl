@@ -106,3 +106,7 @@ CCK2009，[arXiv:0901.0205v1](https://arxiv.org/abs/0901.0205v1)，35页，§6.1
 
 
 Magniez等，[递归多数原始PDF](https://arxiv.org/pdf/1309.7565)，§2.2 PDF4–5定义完整三叉多数树。仅作为[叶命中递推](../current/unrelated_machines/unit_readout_pruned_forest_boundary.md)的经典模型背景，不将query复杂度结果当通用横截定理或调度困难性；全(k,r,h)命中式由自足递推证明，未认证新颖性。仅web实读、未落地原字节，已准确登记manifest。
+
+## 连续残余通过量与次模背景
+
+Lok–Romero Morales–Vermeulen (2005)，[大学原PDF](https://cris.maastrichtuniversity.nl/ws/files/1037187/guid-9485980d-bc86-4240-b008-d8fb2096cc3d-ASSET1.0.pdf)，§3.2印p5/PDF6为job-only资源消耗；§6.3 Theorem6.2/Cor6.3印pp17–18/PDF18–19为机集合次模。Kulik等ESA2019，[正式PDF](https://drops.dagstuhl.de/storage/00lipics/lipics-vol144-esa2019/LIPIcs.ESA.2019.69/LIPIcs.ESA.2019.69.pdf)，§2.1.1/Theorem1及§3为共同job大小下的item子集LP值次模。两者仅为相关祖先，不当作任意异端p容量格定理；[本阶段自足证明](../current/unrelated_machines/residual_throughput_and_occupation_projection.md)自行处理对偶格封闭。仅web定位读原PDF，未物化字节/填写hash或宣称完整内化；Topkis原件没有被本阶段读取，全球新颖性未认证。

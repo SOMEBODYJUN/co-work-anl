@@ -1595,3 +1595,27 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：旧数值两机例的heavy分类仅δ>3/20且OPT=21/20>T；新参数族覆盖全部β但仍不是YES承诺反例。任意非最优价下H唯一不足；不剪枝不能用2T上界。最优价格面的一般唯一性与可用共同容量均未证明。
 - Status：complete direct consequence; independently reconstructed and exactly audited; external review and novelty unverified。已知ST/配置gap的精确接口综合，不认证新算法、新困难性或论文价值。审计实现有限oracle与见证舍入；一般LP/priceflow软件未集成。
 - Related Files：`research/current/unrelated_machines/heavy_light_price_convexification.md`；`research/questions/unrelated_machines/heavy_light_joint_residual_minmax_obstruction.md`；`research/reviews/unrelated_machines/heavy_light_price_convexification_review.md`；`tests/audits/unrelated_machines/heavy_light_price_convexification.py`；`evidence/runs/unrelated_machines/heavy_light_price_convexification_release_audit.json`。
+
+## UM-RESIDUAL-THROUGHPUT-LATTICE-v1：任意异端时间的容量格次模
+
+- Exact Statement / Quantifiers：∀固定有限M,R,E及非负有理p_ij，F(c)=max{Σx:任务质量≤1、机器处理量≤c、x≥0}对全部c,d≥0满足F(c)+F(d)≥F(c∨d)+F(c∧d)，且非减。F可由显式有理LP总位多项式精确求值；F(c)=|R|恰为完整共同分数路由。
+- Objects / Domain / Definitions：未允许边无变量；R可空、可有无light端任务；零时间、零容量允许。F只计分数任务质量，不把合法输出改成可拆调度。
+- Assumptions / Scope：同一个R,E,p冻结；固定C_i≥a_i≥0时c_i(I)=C_i−a_i1_I给非增次模F(I)、非减超模D(I)=|R|−F(I)。每个有零light端任务可免费删除加回，但不保另一个物理关机模型的原子问题值。
+- Conclusion / Mechanism：dual混合格封闭(u∧v,a∨b)/(u∨v,a∧b)与逐坐标费用重排；完整通过量须精确达到任务数，近似总量不强制逐任务完成。固定状态失败证书不排除其他H。
+- Dependencies：UM-MODEL-v1；显式有理LP强对偶（正文自足证明）。相关continuous assignment/submodular GAP文献只作背景，未将共同job资源模型导入任意p_ij。
+- Evidence：构造者与statement先行独立重构；冻结全文/代码攻击；不调用仓库核的独立primal/dual有理顶点、dual混合/重排及实际2x2原调度/4份残余LP核验。见本节Related Files。
+- Counterevidence / Objections：H同时改变R和机器扣减、F只用固定交叉light资格时不继承次模：p=[[1,1/2],[1/2,1]],T1，四H的V为2,1,1,2，原OPT1/2；它只是继承推理反例。无joint恢复、统一ε或sound FAIL保证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified。一般容量性质可复用，不认证新颖性或一般算法。一般LP软件未集成，审计为有限指数oracle。
+- Related Files：`research/current/unrelated_machines/residual_throughput_and_occupation_projection.md`；`research/reviews/unrelated_machines/residual_throughput_occupation_review.md`；`tests/audits/unrelated_machines/residual_throughput_lattice.py`；`evidence/runs/unrelated_machines/residual_throughput_lattice_release.json`；LITERATURE及manifest中的LRMV2005/KSSS2019准确取得记录。
+
+## UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1：严格次二占位的诱导边缺口恒等式
+
+- Exact Statement / Quantifiers：∀固定有理1≤α<2和固定δ>0，∃确定性算法，对每个非空显式有限simple图G，在图位长poly时间构造2N机、N个任机单位宏及同尺寸h≤δ的tiny实例，给显式OPT1调度；∀I⊆V，α容量完整调度的图机宏占位投影恰所有独立集。固定全部tiny为R、图机残余c_i(I)=α−1_I时，精确D(I)=|R|−F_R(c(I))=|E(G[I])|。
+- Objects / Domain / Definitions：α=A/B既约，Δ=maxdeg；q=2B max{1,ceil[1/(2Bδ)],ceil[Δ/(2B(2−α))]}，h=1/q，r=q(α−1)整数。每图机r件专属tiny，每图边一件双端tiny；N辅助机不接tiny，全部宏资格为所有2N机。α与δ不是原实例OPT输入承诺。
+- Assumptions / Scope：固定α、δ时才声称输出规模poly(|G|)；不声称bit(α)+bit(δ)统一poly。N≥1；宏单位和α<2使每机至多一个宏。tiny允许全部等端同尺寸、每件至多两选。
+- Conclusion / Mechanism：宏全辅助给OPT1；I专属+内部边只能用I，剩余容量恰专属任务总量，至少缺诱导边数；弃内部边、其余向未占位端定向达到。故Hall完成族可精确为任意图独立集族；星图排除固定p-extendibility，但不是调度路径能垒。
+- Dependencies：UM-MODEL-v1；本页F定义/流容量计数；构造与完整原任务恢复。一般F格次模提供共同接口语境，不是该表示下界的计算证据。
+- Evidence：构造与独立statement先行重构；显式P/全部任务实际σ/原OPT下上界回算；普通整数maxflow与独立边定向oracle核D=e(I)，冻结参数与输入hash见Related Files。有限图核验不承担一般证明。
+- Counterevidence / Objections：每个生成的原实例都直接可最优解，不能把投影选择升级为UM困难性；改变宏必须进图或减少辅助机是新合同。αδ二进制极值会使显式tiny数大，未误报统一位poly。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified。只关闭免费拟阵/固定交换界的状态识别；一般主目标仍OPEN，新颖性/论文价值未认证。
+- Related Files：`research/current/unrelated_machines/residual_throughput_and_occupation_projection.md`；`research/reviews/unrelated_machines/residual_throughput_occupation_review.md`；`tests/audits/unrelated_machines/occupation_induced_edge_deficit.py`；`evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json`。

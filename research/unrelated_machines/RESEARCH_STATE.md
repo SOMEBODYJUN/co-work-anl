@@ -6,7 +6,7 @@
 
 独立审计结论见 [team_direction_audit.md](../reviews/unrelated_machines/team_direction_audit.md)：数学路线没有跑到无关问题，但多轮固定 `K/q/home/sink`、独立 probe、逐坐标 repair 和大规模枚举曾停留在局部合同层。它们已把共同缺口收窄为“任意 `P,T` 生成可计算共同容量状态并一次守住全机实际整数负载，或给 sound `FAIL => OPT>T`，同时保持统一余量与位多项式”；尚无路线闭合该全输入桥。
 
-最新 `UM-HEAVY-LIGHT-JOINT-RESIDUAL-MINMAX-v1` 目前只在 `research/questions/unrelated_machines/`，是候选障碍，未进入 canonical 图谱或当前正文；其 `\forall\lambda\exists h` 与 `\exists h\forall\lambda` 量词差异需先经独立攻击。后续保留自主并行，但每条路线绑定一个承重义务，由独立 blind red-team 攻击；连续两轮只增样本或同一局部机制而未减少该义务时，做 honest salvage 并换线。
+原 `UM-HEAVY-LIGHT-JOINT-RESIDUAL-MINMAX-v1` 保留在 `research/questions/unrelated_machines/` 的历史候选身份；其量词展示已独立核查并纠正参数/剪枝范围。完整显式凸化和锐界另以 `UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1` 入账，不将旧候选升级成一般算法不可能性。后续保留自主并行，但每条路线绑定一个承重义务，由独立 blind red-team 攻击；连续两轮只增样本或同一局部机制而未减少该义务时，做 honest salvage 并换线。
 
 
 已有经典地基、原始文献和本轮[大边匹配残余及共享逃逸反例](../current/unrelated_machines/heavy_matching_residual_and_escape.md)。新限范围资产为：安全位多项式GHMR过滤器；简单机器支撑下仍有配置gap2；加入必经大边匹配虽识别原两树和路径占位瓶颈，但共享小端z使其首轮完全不删边、真实OPT/T仍趋2。详见[精确账本](CLAIMS.md)、[冻结独立审查](../reviews/unrelated_machines/heavy_matching_escape_review.md)。这些是新接口/反例，不是主目标的近似突破，全球新颖性未认证。
@@ -341,3 +341,7 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 ## 机器价格联合残余：本轮核实的范围
 
 [精确凸化正文](../current/unrelated_machines/heavy_light_price_convexification.md)证明逐价格重选H恰等价LST+big分数基数，剪枝后相对共同见证仍supgap2；漏剪枝时固定m的锐界m。旧两机候选只演示量词差别，OPT>T；新正文补全部β的参数族、可检验的最优价格共同big面成功分支。这个分支失败没有sound FAIL语义，且一般存在性未证。提高β后再付粗ST加性slack仍受已存半单位promise障碍。主目标继续OPEN；后续只推进非可加共同容量或直接联合舍入，停止仅机器价格/逐机anchor凸化的微调。
+
+## 一般残余容量性质与共同选择的第一缺口
+
+[固定R容量格次模/占位图表示](../current/unrelated_machines/residual_throughput_and_occupation_projection.md)已自足证明并独立攻击：异端资格无结构要求的F(c)格次模、固定占位缺口D超模；2×2原矩阵证明H改变任务身份后联合目标并不继承。严格次二α下还能精确实现D(I)=诱导边数，原OPT1仍显式可解。这次增加了可复用的状态理论，尚未闭合全输入桥中的共同选择。下一高信息命题必须同时处理R(H)与h(H)并分析实际联合损失；不继续以更多固定R/独立集样本替代它。

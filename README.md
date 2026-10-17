@@ -25,6 +25,8 @@
 
 [机器价格的精确凸化](research/current/unrelated_machines/heavy_light_price_convexification.md)已核清一条一般接口：全部标量机器价格仍只给带big基数的LST松弛，剪枝后joint gap仍sup2；最优价格共同big面提供可检验成功证书，但无全输入保证。原候选的剪枝/参数语义已修正，下一义务仍是非可加共同容量或实际联合舍入。
 
+[一般残余容量结构](research/current/unrelated_machines/residual_throughput_and_occupation_projection.md)进一步给出固定R的容量格次模与精确占位缺口D(I)=诱导边数。任务角色随大边选择变化时，联合目标不继承该性质；这明确了下一共同选择义务，不是一般近似或困难性突破。
+
 ## 定义、命题、依赖与证据
 
 [研究总目录](research/README.md)按模型分流；[中文资产总目录](research/CATALOG.md)说明每个文件用途；[全仓精确命题](research/current/claims.md)、[五轴状态](research/review_status.json)、[文件合同](research/assets.json)和[关系图](research/index.html)分别管理身份、审查、位置和数学依赖。有限核验只作checks，不替代一般证明。原始来源沿[来源解释](research/source_crosswalk.md)追溯。

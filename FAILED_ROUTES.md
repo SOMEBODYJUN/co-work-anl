@@ -137,3 +137,7 @@
 ## 逐机器价格与局部 anchor 不能免费交换全局选择
 
 尝试对每个非负机器价格优化big匹配，再用残余light流，希望由所有价格各自通过推出同一个匹配。失效在凸化：这些测试精确等价任务守恒+big分数基数+LST容量，仍包含经典CONFIG趋二族；不是价格oracle不可算。原两机数值例还遗漏δ>3/20分类范围，且OPT>T，只能说明量词交换。漏掉p≤T剪枝时甚至固定m损失m。回收显式最小费用流oracle、精确min–max身份及最优价格共同big面的可检验成功证书；普通扰动价唯一不足，面失败不能作OPT>T证据。逐机anchor凸化也含CONFIG，a_i>0不能给统一ε。重试须新的跨机器状态/实际联合舍入损失，不是更多价格或专族样本。详见[自足正文](research/current/unrelated_machines/heavy_light_price_convexification.md)；此为已知工具的接口综合，非一般不可能性。
+
+## 不能从固定残余次模免费推出共同角色选择
+
+尝试用残余throughput的次模性选择大任务占位。正确部分是任意异端p的固定R容量格次模；失效步骤有两处：占位损失D本为超模，且H同时移除任务与扣容量后V根本不继承次模（2×2原OPT1/2、四值2/1/1/2）。即使宏身份固定、tiny同尺寸，任意固定严格次二α的可行占位族仍能精确为任意图独立集，D=诱导边数，故不是免费拟阵或固定p交换系统。回收一般F性质、primal/dual求值证书与精确图表示；原实例都有显式OPT1，不是调度困难性。重试需同时保留R(H)、h(H)的共同恢复与实际联合舍入余量，不能以近似总通过量代替全任务完成。见[完整范围](research/current/unrelated_machines/residual_throughput_and_occupation_projection.md)。

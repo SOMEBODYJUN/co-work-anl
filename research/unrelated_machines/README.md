@@ -226,3 +226,7 @@
 ## 机器价格路线的精确退出条件
 
 [价格凸化与锐容量界](../current/unrelated_machines/heavy_light_price_convexification.md)将原min–max候选修正为显式LP：剪枝后全部标量机器价格仅给LST+big基数，joint gap仍sup2；不剪枝固定m锐界m。精确dual最优价若暴露同一big放置，可检验并恢复共同light见证和实际ST输出；一般输入没有这种面保证，面失败也不能可靠拒绝T。下界复用经典两树，不宣称新困难性。下一义务是可计算的非可加跨机器状态或实际联合损失，而非调价/anchor局部凸化。
+
+## 固定残余函数与任务身份耦合
+
+[容量格次模与占位图表示](../current/unrelated_machines/residual_throughput_and_occupation_projection.md)给任意异端p、固定R的可求throughput格次模性质；固定占位时缺口D是超模。任务身份随H改变则不继承（2×2实际OPT1/2负控制）。更精确地，对每固定α<2及tiny上界，严格次二完成族可实现任意图独立集，D(I)恰为诱导边数；这些实例原OPT1可直接构造，故不是一般困难性。下一步仍是同时处理容量扣减、任务角色变化及实际舍入损失，不能从固定R次模或免费拟阵识别补上。

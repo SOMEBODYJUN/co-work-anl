@@ -1044,6 +1044,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1 | ∀T>0、β∈[1/2,1)，剪枝p≤T后全部机器价格测试等价LST容量+每机big分数基数≤1；固定价格整数费用流可求，joint Γ/T的sup恰2。未剪枝固定m的sup恰m。精确dual最优价下若最优流big部分全相同，可核验并恢复Γ=τ；τ≤T时实际输出≤τ+βT。 | [正文](unrelated_machines/heavy_light_price_convexification.md)、[审查](../reviews/unrelated_machines/heavy_light_price_convexification_review.md)；已知gap直接推论，非一般算法/困难性；面失败不可靠拒绝T。 |
 
+## 固定残余容量结构与严格次二占位的准确表示
+
+| ID | 精确结果 | 范围 |
+| --- | --- | --- |
+| UM-RESIDUAL-THROUGHPUT-LATTICE-v1 | ∀非负异端p及固定R，fractional通过量F(c)容量格次模且可有理LP求值；固定占位扣减给F(I)非增次模、D(I)超模。角色随H变时不继承，2×2真实OPT1/2反例给V=2,1,1,2。 | [正文](unrelated_machines/residual_throughput_and_occupation_projection.md)、[审查](../reviews/unrelated_machines/residual_throughput_occupation_review.md)；不提供一般joint恢复。 |
+| UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1 | ∀固定1≤α<2、δ>0、任意显式非空simple图，poly(|G|)构造OPT1、同尺寸≤δ tiny与任机unit宏，全部α可行图机占位投影恰IS(G)，且D(I)=|E(G[I])|。 | [正文](unrelated_machines/residual_throughput_and_occupation_projection.md)、[审查](../reviews/unrelated_machines/residual_throughput_occupation_review.md)；非uniform bit(α,δ)构造、非UM困难性，原调度可直接最优解。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -9397,6 +9397,54 @@
         "evidence/runs/unrelated_machines/heavy_light_price_convexification_release_audit.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "固定残余容量格次模与角色变化缺口",
+      "detail": "任意异端p固定R有F格次模；占位D超模；H同时改变R不继承。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md",
+        "research/reviews/unrelated_machines/residual_throughput_occupation_review.md",
+        "tests/audits/unrelated_machines/residual_throughput_lattice.py",
+        "tests/audits/unrelated_machines/occupation_induced_edge_deficit.py",
+        "evidence/runs/unrelated_machines/residual_throughput_lattice_release.json",
+        "evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "严格次二占位的诱导边缺口表示",
+      "detail": "固定αδ、任意图可实现D=e(I)与全部IS，原P有显式OPT1；非hardness。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md",
+        "research/reviews/unrelated_machines/residual_throughput_occupation_review.md",
+        "tests/audits/unrelated_machines/residual_throughput_lattice.py",
+        "tests/audits/unrelated_machines/occupation_induced_edge_deficit.py",
+        "evidence/runs/unrelated_machines/residual_throughput_lattice_release.json",
+        "evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-RESIDUAL-THROUGHPUT-OCCUPATION-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "残余格与占位公式的独立精确审计",
+      "detail": "小LP双oracle与角色原矩阵；实际图P/全σ及flow/定向交叉核对。有限证据不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md",
+        "research/reviews/unrelated_machines/residual_throughput_occupation_review.md",
+        "tests/audits/unrelated_machines/residual_throughput_lattice.py",
+        "tests/audits/unrelated_machines/occupation_induced_edge_deficit.py",
+        "evidence/runs/unrelated_machines/residual_throughput_lattice_release.json",
+        "evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -23079,6 +23127,88 @@
       "statement": "仅标量机器价格/局部凸化不能给共同见证统一余量；最优共同面未保证存在，不排更多信息或一般算法。",
       "refs": [
         "research/current/unrelated_machines/heavy_light_price_convexification.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+      "statement": "非负处理时间、显式有理LP强对偶与混合格重排给固定R性质。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RESIDUAL-THROUGHPUT-OCCUPATION-AUDIT-v1"
+      ],
+      "conclusion": "UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+      "statement": "只列明有限有理参数与实际任务输出；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md",
+        "research/reviews/unrelated_machines/residual_throughput_occupation_review.md",
+        "tests/audits/unrelated_machines/residual_throughput_lattice.py",
+        "tests/audits/unrelated_machines/occupation_induced_edge_deficit.py",
+        "evidence/runs/unrelated_machines/residual_throughput_lattice_release.json",
+        "evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "D-UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-RESIDUAL-THROUGHPUT-LATTICE-v1"
+      ],
+      "conclusion": "UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1",
+      "statement": "固定参数完整宏/tiny构造、容量计数与实际定向达到给D=e(I)；使用F的定义，非借有限审计推导。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md"
+      ],
+      "status": "complete stated-scope proof"
+    },
+    {
+      "id": "C-UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RESIDUAL-THROUGHPUT-OCCUPATION-AUDIT-v1"
+      ],
+      "conclusion": "UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1",
+      "statement": "只列明有限有理参数与实际任务输出；不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md",
+        "research/reviews/unrelated_machines/residual_throughput_occupation_review.md",
+        "tests/audits/unrelated_machines/residual_throughput_lattice.py",
+        "tests/audits/unrelated_machines/occupation_induced_edge_deficit.py",
+        "evidence/runs/unrelated_machines/residual_throughput_lattice_release.json",
+        "evidence/runs/unrelated_machines/occupation_induced_edge_deficit_release.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "L-UM-RESIDUAL-THROUGHPUT-OCCUPATION-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RESIDUAL-THROUGHPUT-LATTICE-v1",
+        "UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "未给R(H)/h(H)共同选择或实际统一余量；原图族可最优解，不排一般算法。",
+      "refs": [
+        "research/current/unrelated_machines/residual_throughput_and_occupation_projection.md"
       ],
       "status": "open obligation"
     }

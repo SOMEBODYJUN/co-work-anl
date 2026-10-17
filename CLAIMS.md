@@ -90,3 +90,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 [校准计数槽](research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md)将单位读出树的半质量推广为有理下传证书：行分数任务数≤整数k−r+1给实际2−r/k。uniform x_h闭式提供所有wiring密度界；任意固定D≥2、arity≤D A的同结构类有确定性位poly统一2−1/(4D)算法，k,h可无界。已扣VW既有2−1/k及经典ST；D无界或一般P仍无统一ε，反面目标保持OPEN。
 
 机器价格的新精确身份 `UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1` 见[专题账本](research/unrelated_machines/CLAIMS.md)：固定原T剪枝与角色，价格LP等价、joint supgap2、无剪枝固定m锐界m及最优价格共同面成功证书；不是一般算法或新困难性，UM-TARGET-v1保持OPEN。
+
+`UM-RESIDUAL-THROUGHPUT-LATTICE-v1` 与 `UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1` 已入[专题账本](research/unrelated_machines/CLAIMS.md)：固定R的一般异端容量格次模、任务角色变动反例及严格次二占位的任意图缺口表示。原构造显式OPT1，不能当作主目标困难性。
