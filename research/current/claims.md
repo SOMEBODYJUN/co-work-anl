@@ -875,6 +875,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1 | 标准 \(D_K(A)\) 需求树满足 \(b^*=\max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\}\)；完美三维匹配时 \(b^*=2/K\)。 | 直接3DM桥梁的自足障碍；\(K\) 放大同时降低YES，固定 \(K=2\) 留下一终端地板，且 \(\mu<q/2\) 时可由普通二分图匹配精确求值。不是一般近2困难性。 [正文](unrelated_machines/three_dimensional_matching_demand_floor_obstruction.md)、[精确审计](../../tests/audits/unrelated_machines/three_dimensional_matching_demand_floor.py)、[冻结结果](../../evidence/runs/unrelated_machines/three_dimensional_matching_demand_floor_audit.json)。 |
 
+## UM-SANTA-NO-CONSTANT-CONDITIONAL-v1：Santa Claus 无常数近似假设下的条件反面
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-SANTA-NO-CONSTANT-CONDITIONAL-v1 | 假设 P≠NP 且一般 Santa Claus 对每个固定常数 c 都无确定性多项式 c-近似，则一般 R∥Cmax 不存在统一 (2−ε) 确定性位多项式近似。证明分 ε>1/2 的 LST 下界和 ε≤1/2 时 BLMRS 的 α=1/ε 归约。 | 条件命题，不是无条件硬度；SCHA 未证，配置/SA gap 不可替代。 [正文](unrelated_machines/santa_conditional_reverse_barrier.md)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

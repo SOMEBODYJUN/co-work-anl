@@ -231,3 +231,7 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 [三维匹配需求树障碍](three_dimensional_matching_demand_floor_obstruction.md)冻结 `UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1`：标准 (D_K(A)) 编码满足
 (b^*=max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\})，其中 (mu) 是 (X) 到 (Y\cup Z) 的一资源匹配、(
 u) 是三维匹配。故完美 YES 的值恰为 (2/K)；放大三元组需求不能把 NO 压低而保持 YES 值1，固定 (K=2) 又留下单终端地板。公共资源族 (Q_{q,K}) 的精确 Hall 值可趋零，但尚未编码 NP 一致性。该结果只限制这一直接桥梁，不是一般困难性；下一义务是共享标签/高距离一致性并控制位长。
+
+## 条件反面路线的最短缺口
+
+[Santa Claus 无常数近似假设下的条件反面界](santa_conditional_reverse_barrier.md)冻结 `UM-SANTA-NO-CONSTANT-CONDITIONAL-v1`：若假设一般 Santa Claus 对每个固定常数都无多项式近似，则结合 LST 的 (<3/2) 困难性和 BLMRS 的 (2-1/\\alpha\to\\alpha+\\eta) 转换，可条件排除所有统一 (2-\\varepsilon) 调度算法。该假设尚未证明，故这是条件技术路线和精确缺口，不是主目标无条件反面。

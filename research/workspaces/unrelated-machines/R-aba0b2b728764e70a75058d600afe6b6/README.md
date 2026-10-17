@@ -16,6 +16,8 @@ u)，完美 YES 值为 (2/K)。这排除了“提高三元组需求来压低 NO�
 - [冻结审计记录](../../../../../../evidence/runs/unrelated_machines/three_dimensional_matching_demand_floor_audit.json)
 - [反面路线账本](../../../unrelated_machines/CLAIMS.md)
 
+条件路线也已记录：[Santa Claus 条件反面界](../../../current/unrelated_machines/santa_conditional_reverse_barrier.md)：它需要尚未证明的“Santa 无任何常数近似”假设，不能当无条件反证。
+
 下一步是攻击共享标签/高距离一致性候选：完整 YES 需 (b^*=1)，而每个 (bge ε/2) 的实际树必须解码源问题；同时先在公共 Hall 资源小族上检查任何复制或 tensor 方案是否把分数池整数化。
 
 ## 交流与状态

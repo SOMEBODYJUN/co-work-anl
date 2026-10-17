@@ -201,3 +201,7 @@ u) 两项的最大值；完美 YES 时恰为 (2/K)。因此把三元组需求放
 
 补充的 (K=2) 精确边界：在 (A_q=\{(x_i,y_0,z_i)\}) 上 (
 u/q\to0) 但 (mu/q=1)，故标准需求树仍 (b^*=1/2)、调度OPT=3/2；若 (mu<q/2)，则 (b^*=mu/q) 并可由二分图匹配直接精确计算。这排除了把普通3DM的低匹配比例直接升级为近2硬度的企图。
+
+## 条件反面路线
+
+新稿 [santa_conditional_reverse_barrier.md](../current/unrelated_machines/santa_conditional_reverse_barrier.md) 记录 `UM-SANTA-NO-CONSTANT-CONDITIONAL-v1`：假设一般 Santa Claus 对每个固定常数都无多项式近似时，LST 与 BLMRS 两分支逻辑排除任意统一 (2-\\varepsilon) 调度算法。SCHA 未被证明；Santa 的已知固定因子困难性和 SA/配置间隙不足以替代它。因而当前真正的无条件义务仍是每个固定 ε 的实际整数 OPT gap 归约，或先证明该 Santa 强假设。

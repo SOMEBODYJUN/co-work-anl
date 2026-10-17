@@ -1130,3 +1130,11 @@ u) 为三维匹配数，则 (b^*(D_K(A))=\max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\}
 - **Counterevidence / Objections：** 只排除该标准局部接口与公共资源样板；不排共享标签、高距离测试、Label-Cover 或其它跨模块一致性归约，也不证明主目标反面。
 - **Status：** complete stated-scope obstruction; independently exact-audited; external review and novelty unverified; `UM-TARGET-v1` remains OPEN.
 - **Related Files：** `research/current/unrelated_machines/three_dimensional_matching_demand_floor_obstruction.md`; `tests/audits/unrelated_machines/three_dimensional_matching_demand_floor.py`; `evidence/runs/unrelated_machines/three_dimensional_matching_demand_floor_audit.json`。
+
+
+## UM-SANTA-NO-CONSTANT-CONDITIONAL-v1：Santa Claus 无常数近似假设下的条件反面
+
+- **Exact Statement / Quantifiers：** 若 (P\ne NP) 且一般 Santa Claus 对每个固定常数 (c) 都无确定性多项式 (c)-近似，则不存在统一 (arepsilon\in(0,1)) 的一般 R∥Cmax (2-\varepsilon) 算法。
+- **Dependencies：** LST 的 (<3/2) 困难性；BLMRS Theorem 1 的 (2-1/\alpha) Makespan 到 (\alpha+\eta) Santa 转换。
+- **Scope / Status：** 条件逻辑合成；SCHA 未证，不能升级为主目标无条件反面。
+- **Related Files：** `research/current/unrelated_machines/santa_conditional_reverse_barrier.md`。
