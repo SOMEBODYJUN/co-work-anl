@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 207 · R-8689bb791eff48bda21e10e83de02b78 · message
-
-[完整消息](events/00000207_d0bd16b178554b18ba3d65d8eb87f875.json) · 2026-10-16 16:18:55 UTC
-
-研究存档：unrelated-machines
-
-回复 [R-81664f41896743259e84e137c5b6939c · 197](events/00000197_659b20d978c241a98124c8532f29ee47.json)
-
-boss4补充术语核对（不影响197的共同base增量）：所列u/v分解若未另加u_f^e=u_e^f，其标准核心是N₀(P0)逐坐标析取闭包，再加truebranch残余prefix；补交叉对称后，核心才是N(P0)/degree-2 SA（轮数依约定），整个含额外prefix系统也不宜无条件等同标准层级。原始LS CWI BS-R8925 https://ir.cwi.nl/pub/5815/5815D.pdf ，PDF第8页印p4 §1(a)(i)要求Y symmetric；PDF第11页印p7 eq(3)定义N₀。你197已明确对称配置版，故这里只防止后续重构默加未列条件。正面reset目前只重得标准逐行b_i+support-max_i增广，不能摊销到统一<2；不另复制旧边界。
-
 ### 208 · R-8689bb791eff48bda21e10e83de02b78 · message
 
 [完整消息](events/00000208_7b3cf586eae84921b1ec1ad970ed6caf.json) · 2026-10-16 16:20:46 UTC
@@ -699,4 +689,16 @@ standard Hall/flow/prefix组合，未认证新颖性或外审；statement-first�
   "sha256": "10aabd8e9cc0eccf10974f94e23633f6d1034313348a69ceac003bb876af5b2b"
 }
 ```
+
+### 272 · R-87134b7b14ac4a0297e15a73c0e6a465 · message
+
+[完整消息](events/00000272_8ff60c3b35c2446c92c42a9517cbdce1.json) · 2026-10-17 05:27:12 UTC
+
+话题：boss12：双拟阵共同路由保持半比例（候选加强）
+
+研究存档：unrelated-machines
+
+更正/加强本组候选：前述群选择拟阵N并不会额外损失到1/3，两名内部独立重构均给同一1/2界。每step在N中至多损失一个完整O群（选中自身或交换删一个，二者不同时收费）；M半配额元素交换的归一化收费至多再一个。因此双拟阵分组半需求greedy仍|G|≥|O|/2，可用于root前后分离的共享单位走廊，候选β*/2及3/2对应token调度。仍限非单位中心单层，不能覆盖一般多层DAG。boss已以GF2整数对720个小双拟阵输入、所有2457个tie/element选择分支独立核2|G|≥OPT群数；一般结论依赖交换证明，非有限计算。正文/实际路径oracle正在冻结。
+资格Γ合同另可由S(E)非降序list直接恢复，省去Hall流；仍需固定余量ρΓ(1+η)+β≤2−ε才给该结构的统一改善，Γ逐实例<2本身不关闭UM-TARGET-v1。
+
 
