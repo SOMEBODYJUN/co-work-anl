@@ -1,8 +1,8 @@
 # 固定层数共同上容量仍不能修复资源束张量
 
-**读取目的与状态。** 这是 boss11 反面路线的候选工作草稿：检查 tensor 加跨层资源 guards 能否避免 fractional-perfect 整数化。一般存在性证明完成、root 已另行重构主机制；尚无独立外审、新颖性认证或实际 UM 困难性。它不是通用确定性位多项式构造，不申请 Canonical Claim 升级。
+**读取目的与状态。** 这是 boss11 反面路线的候选工作草稿：检查 tensor 加跨层资源 guards 能否避免 fractional-perfect 整数化。一般存在性证明完成、root 已另行重构主机制；独立数学审查范围见[实审记录](../../reviews/unrelated_machines/bounded_level_tensor_capacity_candidate_review.md)；没有外审、新颖性认证或实际 UM 困难性。它不是通用确定性位多项式构造，不申请 Canonical Claim 升级。
 
-候选身份 `UM-TENSOR-JOINT-GUARD-ESCAPE-q1`。Objects/Domain/Quantifiers 为下文 q=2 parity 三维匹配源和固定 L、存在偶 t 的资源束乘积；无复杂度假设。Conclusion 为同一真实整数乘积 matching 通过所有至多 L 层共同上容量；不含 actual UM 矩阵或一般算法否定。Dependencies 是 F₂ 线性代数、共轭对称和 union bound。Evidence 仅给定 L2,t4 原整数 matching/322类guards及资源clone分配；一般 L 由数学推导承担。Counterevidence/Objections：该具体 B 不过展示的三层guard；一般 B 未给统一位poly构造；source-to-UM、所有输入依赖高阶guards和真正prefix functional coherence均未解决。Status 为候选源接口障碍：构造者与 root 各自重构，尚未完成先陈述盲审，不进入 canonical Claim/graph，不认证外审或新颖性。
+候选身份 `UM-TENSOR-JOINT-GUARD-ESCAPE-q1`。Objects/Domain/Quantifiers 为下文 q=2 parity 三维匹配源和固定 L、存在偶 t 的资源束乘积；无复杂度假设。Conclusion 为同一真实整数乘积 matching 通过所有至多 L 层共同上容量；不含 actual UM 矩阵或一般算法否定。Dependencies 是 F₂ 线性代数、共轭对称和 union bound。Evidence 仅给定 L2,t4 原整数 matching/322类guards及资源clone分配；一般 L 由数学推导承担。Counterevidence/Objections：该具体 B 不过展示的三层guard；一般 B 未给统一位poly构造；source-to-UM、所有输入依赖高阶guards和真正prefix functional coherence均未解决。Status 为候选源接口障碍：构造者与 root 各自重构，cover 先陈述独立重构；冻结全文攻击范围另记于上述实审记录。仍不进入 canonical Claim/graph，不认证外审或新颖性。
 
 ## 精确接口与结论
 

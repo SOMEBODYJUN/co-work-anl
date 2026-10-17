@@ -35,4 +35,4 @@
 
 [允许换轨的稀疏部分投影解码接口](../../../questions/unrelated_machines/sparse_partial_projection_coupling_decoder_obligation.md)仅保留下一反面承重义务：同一vertex边际μ、projection次耦合及β/L>γ的真实浓缩。标准有给定证书decoder不等于调度归约；统一alphabet R的基线1/R使只保直方图或恰β=θ、L=θR时无法严格分离；近似量需另核常数。调度→证书OPEN，未进入canonical图/完成Claim账本。
 
-[固定层joint上容量的强化tensor逃逸候选](../../../questions/unrelated_machines/bounded_level_tensor_capacity_escape.md)：parity源ν1而乘积可有完美整数matching并过每固定L层所有共同计数guard。root已独立重构，尚未盲审，未登记canonical；一般B不承诺位poly可求，实际UM转移仍缺。
+[固定层joint上容量的强化tensor逃逸候选](../../../questions/unrelated_machines/bounded_level_tensor_capacity_escape.md)：parity源ν1而乘积可有完美整数matching并过每固定L层所有共同计数guard。root与cover分别重构，数学审查另记，仍未登记canonical；一般B不承诺位poly可求，实际UM转移仍缺。
