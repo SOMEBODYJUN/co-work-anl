@@ -16,3 +16,19 @@ canonical入库时仅补显式先选有理可行点和读取范围措辞，不�
 
 
 最终canonical字节另经literal实际全文核读，SHA `002990f2d65a83424f601c43dcef8322dc86d69c699a3f3c5adce6555bf41372`；其scratch回执SHA `f0203e0105d7fb78d099726be6e740df3eaa792ee002e8266754c0bf12146eee`。未引入新数学量词/错误scope/fatal；这次是已知proof后的最终文件核读，不倒改成盲审。
+
+
+## 有界重数v3与一阶锐渐近的实际审查
+
+v3作者literal先自行从root的μ问题推出rainbow occurrence分组，向root报告；root看过摘要后独立加全CONFIG(T)桥，双方不称作者盲审。v3 Exact `8fd533805efaf7ab6168d0512dea327e70360065d05b4df2d52a178a49279142`、作者proof `30d7ede62e830bca8f27285b0aa64c19de6327dd4d9716bc5a2623927944027e` 分别冻结。cover已有v2背景但只收到新Exact，独立重构新增L/A/B，冻结 `fa214dbb0df02518b989d78f37f23326dbad870648e0c807ae8d4843d3b52932`；未读作者proof/其它v3摘要。其后才全文读作者proof，另冻 `32d671ef77f306815e8b6f467ce5d10484509971037ec7dcf101578d233fff00`，旧独立字节未动。
+
+实际核q raw叶子可加、≤μrainbow分组、打中所有rainbow候选⇒剩余raw q≤μ(r−1)、逆像阻断[a−μ(r−1)]^h；加权按multiplicity与共同CONFIG资源行恰对齐，无额外除μ。Haxell候选仅rainbow且rank r^h，严格差2r^h−1；a树分布本身不需注入且继承μ、按期望叶数而非使用概率计capacity；回填所有原d分枝及未选/零权state，数值αμ/bit域均核。正式Exact无fatal。
+
+读后指出冻结proof退化句“d1实际C1”须附共同λ或CONFIG(T<2)可行前提。无前提反例：d=h1、两roots各单state、两叶同外机，OPT=Tconf=2。canonical已显式收紧该句，正式条件合同未改；旧proof原字节保留。primary沿已核v2准确范围，未冒新读Haxell1995全文。
+
+一阶sharp另冻Exact `fb1283d4bd3346be0dedae6e19acbef50876d68643fafdccbe537d7051156adf`。cover仍只见陈述，自行给出完整平星CONFIG1及OPT2−1/μ、同Cμ sup和limit量词，冻结 `4464041c06febb6107f118735098cf996ca315f96cd8eb71dfb3995a73588ed5`。然后才给作者proof `0f3852e0b2326518316769cbd433502e79590f7b6ea0cddfd0515af628412397`，其实际全文读后另冻 `0db5855b688d6f7592fd5618c7f63f196f0174e98e093cbcaec3afb6af0b828e`，无fatal、无需公式修正。root实际全文读上述作者/独立/读后文本，亲核分数覆盖/实际全部jobs/上下差2/[μ(μ+2)]与整数极限。不声称每个μ sup达到或固定μ精确G。
+
+本次原Exact、proof、两阶段review共八份原字节全部登记。无新代码或有限运行，不把可直接精确求解的平星配置gap当近二算法困难性；μ²+1原jobs的显式输出不冒称poly(logμ)。各五轴状态分开，主目标正反面OPEN。
+
+
+整合v2/v3/G后，cover实际全文核至SHA `7956ea77d1ee0a45bc9fbf90a5153f7e893d1e8442445c8a4327c82f68c921b1`，冻结回执SHA `1752b1c35bafd9721b5cbfec81cd079a8ac3e357b05805549893e2ac5c83a830`，无fatal；建议δ措辞避免被读作每个state都必须高重数、局部编号带标题。root落实为允许的最大重数上界μ≥1/δ−2及显式v3局部编号说明，亲核此只收紧表达、全部Exact/证明量词不变；此后canonical SHA `fc0f27a9202170b42c159a2b7d08b05eaff2bfd355c69e411df58154ee08f5f2`。不把前一SHA回执冒作改后字节已由他人重读。

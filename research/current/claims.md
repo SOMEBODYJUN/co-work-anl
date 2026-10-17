@@ -1148,6 +1148,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2 | 显式均匀d叉高h私有state树，任意非空有限菜单，selector与下端unit1、父端1/d；每leaf唯一外机；B要求每完整state叶map单射，C允许非注入。 共同CONFIG(T)导出a=d−floor(d(T−1))叉树分布；若(a−r+1)^h≥2r^h−1则actualC≤2−r/d，故注入类配置gap≤5/3；一般原菜单过滤给严格(OPT≤1,OPT>5/3)确定性位poly判定，不输出σ。 | [正文](unrelated_machines/private_injective_tree_configuration_floor.md)、[审查](../reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md)；存在性与decision分开，implementation none。 |
 
+| UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1 | 显式完整三叉rooted树，h≥1随输入增长，所有叶深h、重复颜色允许；full binary rooted同深子树要求全部选中叶颜色单射。 判定binary rainbow NP完全；确定性3SAT归约hO(logs)/完整sizepoly；原small1/3-unit1私有树加单端rootpin给YES actual≤4/3、NO OPT=5/3，任意<5/3σ可poly解码；比值仅5/4。 | [正文](unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)、[审查](../reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md)；小gap锚点，主目标未解。 |
+
+| UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3 | 完整私有uniform1/d-unit1树，每完整state每resource实际重数≤binaryμ≥1，任意d,h/menus显式。 所有CONFIG(T)整数gap≤2−1/(μ+2)；更精确r条件[a−μ(r−1)]^h≥2r^h−1给actual2−r/d。局部rainbow ceil(a/μ)与逆像blocker桥均证明；只σ存在，不是变参poly输出。 | [正文](unrelated_machines/private_injective_tree_configuration_floor.md)、[审查](../reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md)；无一般UM升级。 |
+
+| UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1 | 同boundedμ完整结构类Cμ，μ≥2；G(μ)对全部d,h/menus/输入长的OPT/Tconf取sup。 2−1/μ≤G(μ)≤2−1/(μ+2)，误差≤2/[μ(μ+2)]，lim整数μ→∞ μ(2−G)=1；一层μ-state平星精确Tconf1/OPT2−1/μ。不是固定μ精确G或算法困难性。 | [正文](unrelated_machines/private_injective_tree_configuration_floor.md)、[审查](../reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md)；无一般UM升级。 |
+
+| UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2 | 显式完整同深三叉树，整棵tree每叶色全局出现次数≤2或≤3；所有原/辅助色均计入。 重数≤2全部存在binary rainbow；重数≤3仍NP完全，3SAT归约hO(logs)/全输出poly，原P资源资格≤3、YES≤4/3/NO5/3。精确门槛非near2。 | [正文](unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)、[审查](../reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md)；无一般UM升级。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

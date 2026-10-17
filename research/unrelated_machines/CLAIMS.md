@@ -2116,3 +2116,52 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Evidence / Counterevidence：两个陈述先行独立重构后读作者proof无standingfatal；root亲核primary准确rank及所有原jobs。粗Σt≥aq不足，非注入叶打断阻断计数；共享internals/nonuniform等结构不在域。无有限测试代证明。
 - Status：proof complete；internal review multiple audits；implementation none；external review/novelty unverified；UM-TARGET-v1OPEN。
 - Related Files：[正文](../current/unrelated_machines/private_injective_tree_configuration_floor.md)、[实际审查](../reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md)、assets中的冻结原字节及文献manifest。
+
+
+## UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1：完整三叉树二叉彩虹的精确困难性
+
+- Exact Statement / Conclusion：判定binary rainbow NP完全；确定性3SAT归约hO(logs)/完整sizepoly；原small1/3-unit1私有树加单端rootpin给YES actual≤4/3、NO OPT=5/3，任意<5/3σ可poly解码；比值仅5/4。 不是任意δ或near2困难性。
+- Objects / Domain：显式完整三叉rooted树，h≥1随输入增长，所有叶深h、重复颜色允许；full binary rooted同深子树要求全部选中叶颜色单射。 颜色binaryID，输入含全部tree/leaf字节，q至少1。
+- Quantifiers：∀显式3SAT输入Φ，∃确定性many-one输出完整tree，统一绝对C满足h≤Clog₂(s+2)、size≤(s+2)^C；SAT iff有rainbow2。∀原P低负载σ，完整提取真实binary子树。
+- Assumptions / Definitions：导入Karp标准3SAT NP-completeness；树/颜色源结论无复杂度假设，NP-hardness排算法另用P≠NP。原P内部私有，重复color仅合外机，pin单端，其余job恰父small/唯一unit下端。
+- Scope：noninjective且height变参的锚点，NP难可行性与小比值调度gap；非主目标、非固定height困难性、非5/3配置gap反例。
+- Dependencies：Karp1972 MainTheorem/item11 PaperFact；自足coloredAND/OR、Rigid/Dead/Pad完整构造；原P逐机回填与<5/3提取。
+- Evidence / Objections：作者Exact先冻，cover仅陈述重构另一完整归约后读作者proof无fatal，root亲核全部gate/位复杂度/原jobs；pin资格文字已在canonical修正、旧字节保留。leaf比例递减不推出分叉gap。
+- Status：proof complete；internal review actual independent reconstruction/read-after；implementation none；external review/novelty unverified。
+- Related Files：[正文](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)、[实际审查](../reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md)、assets/crosswalk冻结来源。
+
+
+## UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3：有界重数的全配置离二界
+
+- Exact Statement / Conclusion：所有CONFIG(T)整数gap≤2−1/(μ+2)；更精确r条件[a−μ(r−1)]^h≥2r^h−1给actual2−r/d。局部rainbow ceil(a/μ)与逆像blocker桥均证明；只σ存在，不是变参poly输出。
+- Objects / Domain：完整私有uniform1/d-unit1树，每完整state每resource实际重数≤binaryμ≥1，任意d,h/menus显式。 所有原jobs和资格不删；空任务另0，不套selector下界。
+- Quantifiers / Assumptions：完整数学量词、零/边界和外部依赖见[同专题正文](../current/unrelated_machines/private_injective_tree_configuration_floor.md)；复杂性仅调用准确标准3SAT PaperFact，配置存在性用既核Haxell，不能互换结论。
+- Definitions / Scope：按actual multiplicity计共同预算；sharp G取同一完整类sup且未必达到；NP2是全局颜色重数，不偷换成逐state重数。结构类结果非UM一般正反面，implementation none。
+- Dependencies：完整boundedμ模型、raw q子可加和叶blocker、共同CONFIG(T)非注入a树支配、准确Haxell资源侧rank。
+- Evidence / Counterevidence：新Exact先冻结、仅陈述独立重构后全文读proof；root亲核实际记录。v3退化d1措辞已附可行前提；NP旧高重模板不能自动导入；G平星可直接解故非hardness。
+- Status：proof complete；actual two-stage internal review；external review/novelty unverified；implementation none。
+- Related Files：[正文](../current/unrelated_machines/private_injective_tree_configuration_floor.md)、[审查](../reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md)、assets/crosswalk冻结原字节。
+
+
+## UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1：重数参数的一阶锐渐近
+
+- Exact Statement / Conclusion：2−1/μ≤G(μ)≤2−1/(μ+2)，误差≤2/[μ(μ+2)]，lim整数μ→∞ μ(2−G)=1；一层μ-state平星精确Tconf1/OPT2−1/μ。不是固定μ精确G或算法困难性。
+- Objects / Domain：同boundedμ完整结构类Cμ，μ≥2；G(μ)对全部d,h/menus/输入长的OPT/Tconf取sup。 所有原jobs和资格不删；空任务另0，不套selector下界。
+- Quantifiers / Assumptions：完整数学量词、零/边界和外部依赖见[同专题正文](../current/unrelated_machines/private_injective_tree_configuration_floor.md)；复杂性仅调用准确标准3SAT PaperFact，配置存在性用既核Haxell，不能互换结论。
+- Definitions / Scope：按actual multiplicity计共同预算；sharp G取同一完整类sup且未必达到；NP2是全局颜色重数，不偷换成逐state重数。结构类结果非UM一般正反面，implementation none。
+- Dependencies：同域G定义、v3全阈值上界、显式平星族的自足精确分析。
+- Evidence / Counterevidence：新Exact先冻结、仅陈述独立重构后全文读proof；root亲核实际记录。v3退化d1措辞已附可行前提；NP旧高重模板不能自动导入；G平星可直接解故非hardness。
+- Status：proof complete；actual two-stage internal review；external review/novelty unverified；implementation none。
+- Related Files：[正文](../current/unrelated_machines/private_injective_tree_configuration_floor.md)、[审查](../reviews/unrelated_machines/private_injective_tree_configuration_floor_review.md)、assets/crosswalk冻结原字节。
+
+
+## UM-PRIVATE-TERNARY-RAINBOW-MULTIPLICITY-THRESHOLD-v2：全局叶重数二三复杂性门槛
+
+- Exact Statement / Conclusion：重数≤2全部存在binary rainbow；重数≤3仍NP完全，3SAT归约hO(logs)/全输出poly，原P资源资格≤3、YES≤4/3/NO5/3。精确门槛非near2。
+- Objects / Domain：显式完整同深三叉树，整棵tree每叶色全局出现次数≤2或≤3；所有原/辅助色均计入。 所有原jobs和资格不删；空任务另0，不套selector下界。
+- Quantifiers / Assumptions：完整数学量词、零/边界和外部依赖见[同专题正文](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)；复杂性仅调用准确标准3SAT PaperFact，配置存在性用既核Haxell，不能互换结论。
+- Definitions / Scope：按actual multiplicity计共同预算；sharp G取同一完整类sup且未必达到；NP2是全局颜色重数，不偷换成逐state重数。结构类结果非UM一般正反面，implementation none。
+- Dependencies：raw树q子可加、Karp3SAT源、低重数新Dead/Rigid/protected或独立Must/Fresh、原P阈值提取。
+- Evidence / Counterevidence：新Exact先冻结、仅陈述独立重构后全文读proof；root亲核实际记录。v3退化d1措辞已附可行前提；NP旧高重模板不能自动导入；G平星可直接解故非hardness。
+- Status：proof complete；actual two-stage internal review；external review/novelty unverified；implementation none。
+- Related Files：[正文](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)、[审查](../reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md)、assets/crosswalk冻结原字节。

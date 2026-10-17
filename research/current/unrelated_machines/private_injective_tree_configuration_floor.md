@@ -1,8 +1,8 @@
-# 私有注入树的全配置阈值五三界与严格承诺判定
+# 私有树的重数配置界、锐渐近与严格承诺判定
 
 读取目的：确定均匀小端私有树何时必有实际低负载调度，从而核对任意菜单、任意端口重编号的近二困难性编译是否可能。本文是限定结构类的配置整数间隙上界及判定结论，不是一般UM算法，也不是一般UM不存在统一改进的证明。
 
-现行身份仅 `UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2`。v1先给共同full-state分数点的hitting/Haxell界，v2另加全CONFIG(T)与非注入菜单过滤判定；旧Exact/证明/独立重构原字节保留为来源，不另复制成一套现行资产。证明完成、陈述先行独立重构及全文读后攻击已发生；无standing fatal。外审、新颖性、独立成文价值及任意变参下输出σ的多项式算法均未认证。
+本页保留 `UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2`，并另立下文有界重数v3与间隙一阶锐渐近身份。v1先给共同full-state分数点的hitting/Haxell界，v2另加全CONFIG(T)与非注入菜单过滤判定；旧Exact/证明/独立重构原字节保留为来源，不另复制成一套现行资产。证明完成、陈述先行独立重构及全文读后攻击已发生；无standing fatal。外审、新颖性、独立成文价值及任意变参下输出σ的多项式算法均未认证。
 
 ## 精确合同
 
@@ -121,3 +121,369 @@ Haxell的transversal匹配定理是外部已有技术；AFS2008 Theorem3已经�
 5/3仅为已证上界，未证明锐利。没有将Haxell的有限存在/指数局部搜索称作确定性位多项式输出σ。Annamalai2016 Theorem1.3的算法另外要求固定超边rank及固定正slack；本文辅助r^h可随输入变动、超边族可指数大，故未把该算法直接导入。配置LP小型系统与C判定器的位多项式性有各自自足证明，与σ构造状态分开登记。
 
 没有新增生产实现或有限运行证书；有限树枚举不作为一般证明。UM-TARGET-v1正反面仍OPEN。
+
+
+## UM-Q-PRIVATE-TREE-BOUNDED-MULTIPLICITY-CONFIGURATION-FLOOR-v3：有界完整状态叶重数
+
+此为新对象/量词，旧v2注入合同未倒改；固定μ时才有与其它输入无关的离二常数。证明及真实两阶段内审完成，无生产实现、外审或新颖性认证。 本附节的证明编号1–7均只指v3局部段落；下文渐近证明另编号，不与旧v2的编号混用。
+
+### Objects / Domain / Quantifiers / Assumptions
+
+任意整数 d,h,μ≥1。μ 允许作为二进制输入，不预设固定；“统一常数离二”仅在 μ 固定时解释为与其它输入无关的常数。有限非空 root 集 U，每 u 有非空有限显式状态菜单 S_u；共享有限外机集合 Z。
+
+每 (u,s) 是完全私有的满 d 叉高 h 树，深 0,…,h−1 为内部机器，叶地址为 [d]^h；不同状态内部机器也不共享。完整普通调度输入 P：每 u 一枚 unit selector，其全部合法端恰为各状态根；每内部 edge job 父端时间 1/d、子端时间 1；每 leaf job 父端时间 1/d、唯一外机端时间 1，其外机由显式 f_us:[d]^h→Z 给出。其它端∞，没有额外 jobs、预载或其它有限时间。
+
+全部状态、机器、jobs 和 leaf 资格都显式列出。**不要求 f_us 单射**，而要求每个完整状态的每个资源实际重数均有同一个上界：
+
+\[
+ |f_{us}^{-1}(z)|\le\mu\qquad(\forall u,s,z).
+\]
+
+不同状态／root 间可任意共享资源；μ 不限制跨状态总重数。
+
+CONFIG(T) 是完整原 P 的通常配置 LP，配置负载≤T，每机器权重和 1，每原 job 覆盖恰 1；向下封闭下与至少覆盖版等价。非空 U 的 selector 保证 OPT,T_conf≥1。空 U 仅作单独空任务情形，不套该下界。
+
+## Definitions
+
+一个真实 state 中的满 r 叉高 h 子树称为 **rainbow**，当且仅当其 r^h 个叶映到 r^h 个互不相同的实际外机。选出子树必须包含该 state 的原根并在每一活跃内部节点恰选 r 个原 children，不能逐路径更换 state。
+
+对任意满 a 叉高 h 抽象树的叶子集 A，q(A) 为 A 中所含满 r 叉高 h 根子树的最大整数 r∈[1,a]；若不存在则 q(A)=0。这个辅助定义仅用于精确解释下列局部陈述。
+
+## Exact Statements
+
+### L. 局部有界重数 rainbow 与资源 blocker 下界
+
+任意整数 a,h,μ≥1，给满 a 叉高 h 树任意叶资源映射 f，每资源在该整树出现至多 μ 次。
+
+1. 存在满 `ceil(a/μ)` 叉高 h 的 rainbow 子树。特别地，μ=2、a=3 时，对任意 h≥1 均存在 binary rainbow 子树。
+2. 对任何整数 r∈[1,a] 且 μ(r−1)<a，任意资源集合 X 若命中该树中**所有 rainbow 满 r 叉高 h 子树**的资源像，则
+
+\[
+ |f^{-1}(X)|\ge [a-\mu(r-1)]^h.
+\]
+
+第二项仅声称下界，不声称对所有 a,r,h,μ 都达到等号。计数对象是原叶逆像的 multiplicity，不是把一个资源直接当作一个叶。
+
+### A. 共同 full-state 分数点的实际离二存在性
+
+给共同非负有理 λ_us，满足
+
+\[
+ \sum_{s\in S_u}\lambda_{us}=1\quad(\forall u),
+ \qquad
+ \sum_{u,s}\lambda_{us}|f_{us}^{-1}(z)|\le1\quad(\forall z).
+\]
+
+所有资源行必须来自同一份 λ，按实际 multiplicity 计。则对每个整数 r∈[1,d]，若
+
+\[
+ \mu(r-1)<d,
+ \qquad[d-\mu(r-1)]^h\ge2r^h-1,
+\]
+
+存在对每 root 选一个真实状态及其中一个 rainbow 满 r 叉高 h 子树，使全部选中叶资源在所有 root 间也互不相交。完整原 P 存在实际合法 σ，满足
+
+\[
+ C_{\max}(\sigma)\le2-r/d.
+\]
+
+所有未选 state、未选分枝和零 λ state 的原 jobs 均在该 σ 内。
+
+### B. 全部 CONFIG(T) 阈值与配置整数间隙
+
+对任意有理 T∈[1,2)，若完整原 P 的 CONFIG(T) 可行，设
+
+\[
+ s=\lfloor d(T-1)\rfloor,\qquad a=d-s\in[1,d].
+\]
+
+对任何整数 r∈[1,a]，若
+
+\[
+ \mu(r-1)<a,
+ \qquad[a-\mu(r-1)]^h\ge2r^h-1,
+\]
+
+则完整原 P 存在真实状态／rainbow 满 r 子树的全 root 不交选择，及实际合法 σ 满足 Cmax≤2−r/d。
+
+特别取
+
+\[
+ r=\left\lceil\frac{a}{\mu+2}\right\rceil,
+ \qquad\alpha_\mu=2-\frac1{\mu+2},
+\]
+
+对所有这些参数均满足上述数值前提，且
+
+\[
+ \operatorname{OPT}(P)
+ \le2-r/d
+ \le\alpha_\mu(1+s/d)
+ \le\alpha_\mu T.
+\]
+
+T≥2 时有完整实际 C≤2 的直接调度，补齐全部配置阈值。因此此有界**每完整 state 叶资源重数**结构类的配置整数间隙至多 α_μ；μ=1 恢复 v2 的五三上界，μ=2 给七四上界。α_μ 是已证候选上界，不声称锐利。
+
+
+### 证明：raw q、rainbow blocker与全CONFIG桥
+
+ raw 叶估值 q 的子可加性
+
+对满 a 叉高 h 树，q(A) 是叶集 A 所含的最大同深完整分叉数。需要的是 raw 叶集合估值，不是对带重复色资源直接套一个已假定单射的 resource-demand theorem。
+
+对任意有限叶集族 A_1,…,A_m，有
+
+\[
+ q\left(\bigcup_i A_i\right)\le\sum_iq(A_i).
+\tag{1}
+\]
+
+独立归纳证明如下。h=1 时 q(A)=|A|，结论是普通并集计数。设 h≥2 且已知孩子树上的结论。令 Q=q(∪A_i)，b_i=q(A_i)。若 Q=0 或 Σb_i≥Q，无需证明。否则存在 Q 个孩子，每个孩子下面 ∪A_i 都含 Q 叉高 h−1 子树。对每 i，根的 q(A_i)=b_i 表明“孩子树 q(A_i∩L_child)>b_i”的孩子至多 b_i 个，否则可在至少 b_i+1 个孩子下各取 b_i+1 叉子树，组合出更大根子树。因为 Σb_i<Q，在上述 Q 个孩子中至少有一个孩子对所有 i 都满足 q_i(child)≤b_i。孩子归纳结论给该处的 union value≤Σb_i<Q，与其含 Q 叉子树矛盾。
+
+此归纳也覆盖 a=1、空 A_i、重复 A_i；h=0 不在主域，不需要给 q 的叶辅助值另设约定。该结论与既存 `UM-PRIVATE-TREE-Q-VALUATION-v1` 的 raw 单树部分一致；没有新增 demand/oracle 合同。
+
+## 2. bounded multiplicity 的 rainbow 与 blocker
+
+令 f 为满 a 叉高 h 树的叶资源映射，每个资源出现至多 μ 次。按每个资源的 occurrence 固定顺序，把它的第 j 次出现放入第 j 个叶类，j=1,…,μ；不足的类留空。于是每个叶类本身 rainbow。这只是有限证明划分，μ 为 binary 大整数也不把 μ 的显式展开当作运行时间结论；实际非空类数不超过显式叶数。
+
+全叶的 q 值为 a。由 (1)，某个类 q≥ceil(a/μ)，其对应子树为 rainbow。这立即给 μ2、a3 的任意高度 binary rainbow 子树，故不存在该参数的局部反例。
+
+现固定 r∈[1,a] 且 t=μ(r−1)<a。设资源 X 命中所有 rainbow 满 r 子树。去掉 X 的全部叶逆像，留下 A=f^{-1}(Z\X)。A 中不含 rainbow 满 r 子树。再按相同 occurrence 方法把 A 划为至多 μ 个 rainbow 叶类 A_j；每个类 q(A_j)≤r−1，否则类内的 r 子树就是避开 X 的 rainbow 候选。由 (1)，q(A)≤μ(r−1)=t。
+
+因此删除集 f^{-1}(X) 命中原满 a 树中的**所有 raw 满 t+1 子树**。满 a 叉高 h 树的这类叶 blocker 最少有
+
+\[
+ (a-(t+1)+1)^h=(a-t)^h
+\]
+
+个叶：若根处仍有至少 t+1 个孩子各自保留 t+1 子树，则根也保留；故至少 a−t 个孩子必须各自被阻断，按高度递归给下界并可递归达到。于是
+
+\[
+ |f^{-1}(X)|\ge[a-\mu(r-1)]^h.
+\tag{2}
+\]
+
+这里没有把 raw 子树误当 rainbow 超边；(1) 和 occurrence 划分正是两者之间的额外桥。(2) 计数 raw 叶逆像，后续要与原共同 λ 的 multiplicity 容量相接，不应先除以 μ。
+
+## 3. 共同 full-state λ 的 rainbow Haxell 匹配
+
+先证明 Exact A 的纯选择部分，令树分叉数为 d。对每 root u、每真实 state s，枚举全部 rainbow 满 r 叉高 h 子树，取其真实资源集。每集恰 k=r^h 个不同外机。加上 root tag u，得到有限二部超图，总超边大小 k+1。重复超边可去重但保留一个真实 state／子树 witness。
+
+对任意非空 I⊆U，设资源集合 X 命中所有 I-root 的候选边。按 (2)，每个 (u∈I,s) 都满足
+
+\[
+ |f_{us}^{-1}(X)|\ge B,
+ \qquad B=[d-\mu(r-1)]^h.
+\]
+
+使用同一共同 λ 及其 multiplicity 容量，交换有限求和：
+
+\[
+\begin{aligned}
+ B|I|
+ &\le\sum_{u\in I,s}\lambda_{us}|f_{us}^{-1}(X)|\\
+ &=\sum_{z\in X}\sum_{u\in I,s}
+      \lambda_{us}|f_{us}^{-1}(z)|\\
+ &\le|X|.
+\end{aligned}
+\tag{3}
+\]
+
+所以资源 transversal number 至少 B|I|。若 B≥2k−1，则它严格大于 `(2k−1)(|I|−1)`。对总超边大小 k+1，Haxell 条件恰为该常数 2(k+1)−3；因此有覆盖所有 root 的匹配。每条匹配边带一个真实状态和 rainbow r 子树，全部 root 的所有末资源互不相同。μ(r−1)<d 还保证每 state 至少有一个 rainbow r 候选，亦可直接由第 2 节局部结论看出。空 I 的严格条件自动满足。
+
+本次外部定理实际亲核来源沿用已审 v1/v2：Annamalai, *Finding Perfect Matchings in Bipartite Hypergraphs*, arXiv:1509.07007v2，PDF 第2页／印第1页 Theorem1.1 及定义。该文 r-uniform 的 r 是**总边大小**，资源 hitting set 限于 B 侧；本次所有边恰 k+1，完全符合。原 PDF SHA256 `f6294a3b497e98d870ab47ceecb4a94a7e80457e9777114f59d88f321bc7dcce`。未取得／冒称重证 Haxell1995 原全文。
+
+## 4. CONFIG(T) 的 a-tree 支配桥不要求单射
+
+给 1≤T<2 的完整 CONFIG，写 s=⌊d(T−1)⌋、a=d−s。取一份有理可行边际点；v2 小型系统是有理系数，故可无损这样选择。
+
+每内部机器有唯一 incoming unit job，边际 q_v；每 outgoing job 的 unit 下端边际为 t_e。含 incoming 的配置至多 s 枚父置 small，所以边际行满足
+
+\[
+ \sum_e(q_v-t_e)_+\le s q_v
+ \quad\Longleftrightarrow\quad
+ \sum_e\min(q_v,t_e)\ge a q_v.
+\tag{4}
+\]
+
+外机至多放一枚 unit，故 Σ_leaf e:f(e)=z t_e≤1。这两个条件不需要 f 单射；同一 state 的不同 leaf jobs 若同外机，也逐 job 计入和。
+
+每 root 按各状态根 selector 边际 y_us（和为1）选真实 state。按 v2 递归令根活跃质量 b=y_us。对已定义的 0<b≤q_v，逐项有 `min(b,t_e)≥(b/q_v)min(q_v,t_e)`，故总容量≥ab。可取有理 b_e≤min(b,t_e)、Σb_e=ab，分解 b_e/b 这一 uniform-matroid base vector 成恰 a 个孩子的随机子集；b=0 时后继全零。递归后，每 root 形成一个真实状态内满 a 叉高 h 子树的有限分布，每原叶活跃概率≤t_leaf。
+
+各生成 a-tree 的叶资源映射可能重复，但仍每色≤μ，因为只是原完整 state 的叶子集。将每个正权生成树作为辅助 state，保留其原真实 state witness，取其每 root 分布权重为共同 λ_aux。每外机的期望请求按 multiplicity 为
+
+\[
+ \sum_{u,\mathrm{aux}}\lambda_{u,\mathrm{aux}}
+  |f_{u,\mathrm{aux}}^{-1}(z)|
+ \le\sum_{\mathrm{all\ original\ leaf\ }e:f(e)=z}t_e\le1.
+\tag{5}
+\]
+
+辅助 state 的支持可为指数大小，但有限。不同 root 尚未互斥；这里只建立 (5)，没有把 LP 自身当整数调度联合分布。
+
+将第 3 节纯组合选择论证应用于分叉数 a 的这些辅助树：候选只取其中的 rainbow r 子树，blocker 为 `[a−μ(r−1)]^h`。若满足 Exact B 的数值条件，Haxell 给出全 root 不交选择。该选择返回原真实 state 内的一棵 r 子树。辅助 a-tree 不是新物理输入，最终负载仍按原 d 个 outgoing jobs 及原时间 1/d 计算。
+
+## 5. 完整原 P 的实际调度
+
+selector 放在匹配选出的原状态根；选中 r 子树内的原 jobs 全下送到 unit 端，所有其它原 jobs 全父置，包括所有未选／零权 states 和同一原 d 树中未选分枝。
+
+活跃内部机器恰一枚 incoming unit（根为 selector，非根为父 job）及 d−r 枚 small，负载 2−r/d。非活跃内部机器没有 incoming unit，其 d 枚 outgoing jobs 父置，总负载1。匹配边为 rainbow，且跨 root 不交，故每外机至多一枚选中 unit leaf。每原 job 恰排一次，所有端是原 P 合法端，完整 Cmax≤2−r/d。
+
+这一步既不要求未选 state 注入，也不对辅助树之外的原 jobs 作删除；私有内部机器是承重条件。
+
+## 6. 默认 r 与全配置整数间隙
+
+令 `r=ceil[a/(μ+2)]`，则 `a≥(μ+2)(r−1)+1`，所以
+
+\[
+ a-\mu(r-1)\ge2r-1\ge1.
+\]
+
+对 h≥1、r≥1，凸性给 `(2r−1)^h+1≥2r^h`，于是 B≥2r^h−1，且 μ(r−1)<a。默认参数始终合法。
+
+记 β=1/(μ+2)、α_μ=2−β、x=a/d∈(0,1]，T0=1+s/d=2−x。因为 r≥βa，
+
+\[
+ C\le2-\beta x\le(2-\beta)(2-x)=\alpha_\mu T_0
+ \le\alpha_\mu T.
+\]
+
+中间差为 `2(1−β)(1−x)≥0`。T≥2 时原 P 的全部 port 父置且每 selector 任选状态根给实际 C≤2，亦符合 α_μT。非空 selector 排除 T<1。因而对配置阈值取下确界可得 OPT/T_conf≤α_μ；不要求无限阈值或概率极限操作。
+
+μ1 恢复状态注入和 v2 的同一数值条件，α1=5/3；μ2 给 α2=7/4。这里不声称这两个界锐利。
+
+## 7. 退化、复杂度与准确否定范围
+
+- a1、r1 时超图总大小2，条件退化为 Hall；在A共同λ或B的CONFIG(T<2)可行前提下，d1得到实际C1；否则全父置仍给C2，允许任意给定 μ 上界只使 stated α_μ 松一些。
+- h1 的 q 是叶数、blocker 为 a−μ(r−1)，全部推导成立。h0 不在模型。
+- μ≥1 可以 binary 输入且远大于实际重数；无需按 μ 构造生产算法。资源实际重数从显式 leaf list 可数清；选择较松的 μ 只弱化数值保证。
+- 空 U 是单独空任务情况，最优0；主链用非空 selector 下界1。
+- Haxell 候选边族及辅助 a-tree 分布可能指数多，本 proof 只给有限实际见证的存在。没有把外部 fixed-rank、fixed-slack 算法套为变参位多项式 σ 构造。
+- 均匀 private 结构的 CONFIG 小型系统与可行性算法不受本次 multiplicity 改动影响，但它们只计算分数阈值／作承诺判定，不替代实际 σ 输出。
+- 固定 μ 得到常数 α_μ<2；一般 UM 的任意输入、共享内部机器、非均匀时间或 μ 随输入无界不被统一常数结论覆盖。
+- 全部已用的 q 子可加、raw blocker、Haxell 与分数求和都明确扣除已有技术。本次新范围是 rainbow 候选与 bounded multiplicity 之间的桥及其全 CONFIG(T) 应用；全球新颖性和独立成文价值未认证。
+
+
+
+## UM-PRIVATE-TREE-MULTIPLICITY-GAP-ASYMPTOTIC-v1：重数参数的一阶锐配置间隙
+
+仅给配置gap的参数渐近，平星族本身可直接精确解；不作算法困难性或UM反面。
+
+### Objects / Domain / Definitions
+
+对整数 μ≥2，令 C_μ 为下列所有有限显式调度输入 P 的类：
+
+- 整数 d,h≥1，非空有限 root 集 U，每 u 有非空有限显式 state 菜单 S_u。
+- 每 state 为完全私有的满 d 叉高 h 树，内部机器深 0,…,h−1；不同 states 内部机器也互异。共享有限外机集合 Z。
+- 每 u 一枚 unit selector，合法端恰为该 u 的全部 state 根；每内部 edge job 父端时间1/d、子端时间1；每 leaf job 父端时间1/d、唯一外机端时间1，外机由显式 f_us:[d]^h→Z 指定；其它端∞。没有其它 jobs、预载或时间。
+- 每个**完整 state** 的每个资源实际重数不超过 μ：`|f_us^{-1}(z)|≤μ`。不同 states／roots 间可任意共享外资源。
+- 全部状态、机器、jobs 和叶资格显式给出，不能用 binary d,h 代替巨大树展开。
+
+CONFIG(T) 为完整原 P 的普通配置 LP（每机器权重和1，每 job 恰覆盖1，配置负载≤T），T_conf(P) 为其最小可行阈值／可行阈值下确界。非空 selector 使 T_conf(P)≥1，故下面比值良定义。
+
+定义参数类的最坏配置整数间隙上确界
+
+\[
+ G(\mu)=\sup_{P\in C_\mu}
+ \frac{\operatorname{OPT}(P)}{T_{\mathrm{conf}}(P)}.
+\]
+
+上确界同时遍历 d,h、root 数、菜单、外机集合、全部映射及所有有限显式输入长度；μ 仅约束每个完整 state 内的重数，不要求其它参数固定。不声称上确界对每个 μ 都达到。
+
+## Exact Statement / Quantifiers / Conclusion
+
+对每个整数 μ≥2，
+
+\[
+ 2-\frac1\mu\ \le\ G(\mu)\ \le\ 2-\frac1{\mu+2}.
+\]
+
+因而，沿整数 μ→∞，
+
+\[
+ \lim_{\mu\to\infty}\mu\,[2-G(\mu)]=1.
+\]
+
+等价的误差界为
+
+\[
+ 0\le G(\mu)-\left(2-\frac1\mu\right)
+ \le\frac{2}{\mu(\mu+2)}.
+\]
+
+这是叶资源重数参数的一阶锐渐近，不给每个固定 μ 的精确 G(μ)，也不声称各固定 μ 上界 `2−1/(μ+2)` 锐利。
+
+## 显式下界族的对象参数
+
+对每个 μ≥2，取 d=μ、h=1、U={u}，该 root 恰有 μ 个 states s=1,…,μ。外机为 μ 个不同资源 z_1,…,z_μ。state s 的全部 μ 个 leaf jobs 都映到 z_s。内部机器仅为 μ 个 state 根，selector 一枚；每枚叶在其 state 根时间1/μ、在 z_s 时间1。没有其它 jobs 或端。
+
+该族在 C_μ 中，具有精确比值 `OPT/T_conf=2−1/μ`，给上面的下界。这里只陈述该族和准确结论，不附分数证书或实际最优调度证明。
+
+
+### 证明：平星族与上确界夹逼
+
+1. 下界族的精确配置阈值
+
+取 Exact 的 d=μ、h=1、单 root、μ states，state s 的 μ 个叶 jobs 全映到其私有 z_s。记 state 根为 v_s。所有内部机器仅 v_s；每叶 job 在 v_s 用时 1/μ，在 z_s 用时1；selector 在全部 v_s 用时1。
+
+selector 保证 T_conf≥1。给 T=1 的具体配置点：
+
+- 每根 v_s：selector singleton 权重 1/μ；全部 μ 个本 state small 叶 jobs 的配置权重 1−1/μ。后一配置总负载 μ·(1/μ)=1。
+- 每外机 z_s：给其 μ 枚叶 jobs 各自 singleton 配置权重 1/μ，权重和为1。
+
+每根权重和1；每 selector 覆盖 μ·(1/μ)=1；每叶 job 覆盖为 `(1−1/μ)+(1/μ)=1`。所有配置负载均≤1，故 T_conf=1。其共同 λ_s=1/μ，外容量按 μ 次 multiplicity 计，恰为1；此处没有把 μ 片同色叶偷合并成一枚 job。
+
+## 2. 下界族的精确实际最优值
+
+任何实际调度都把 selector 放在某个 v_s。若其 makespan C≥2，则当然 C≥2−1/μ。若 C<2，每个外机 z_s 只能接至多一枚 unit 叶 job；于是 selector 所在 v_s 的 μ 枚叶 jobs 中至少 μ−1 枚必须在 v_s 以 small 端执行。该根负载至少
+
+\[
+ 1+\frac{\mu-1}{\mu}=2-\frac1\mu.
+\]
+
+反向取任一 s，selector 放 v_s，该 state 任取一枚叶外送 z_s，其余 μ−1 枚父置；全部其它 states 的原叶 jobs 全父置。选中根负载2−1/μ，其余根负载1，唯一使用外机负载1。全部原 jobs 恰安排一次，故
+
+\[
+ \operatorname{OPT}=2-\frac1\mu,
+ \qquad \operatorname{OPT}/T_{\mathrm{conf}}=2-\frac1\mu.
+\]
+
+状态内实际重数恰为 μ，该族属于 C_μ。它有 μ 个根机、μ 个外机、μ² 枚叶 jobs 和一枚 selector，所有端、处理时间与∞可显式列出。这是一个参数化显式实例族，不声称仅按 log μ 生成全部 μ² jobs。
+
+## 3. 上确界夹逼与整数参数极限
+
+v3 的一般全 CONFIG(T) 结论对每 P∈C_μ 给出
+
+\[
+ \frac{\operatorname{OPT}(P)}{T_{\mathrm{conf}}(P)}
+ \le 2-\frac1{\mu+2}.
+\]
+
+所以对所有输入取上确界，结合第2节显式族，
+
+\[
+ 2-\frac1\mu\le G(\mu)\le2-\frac1{\mu+2}.
+\]
+
+这些界本身已保证 G 有限，无需主张上确界达到。两边的差为
+
+\[
+ \frac1\mu-\frac1{\mu+2}=\frac2{\mu(\mu+2)},
+\]
+
+即 Exact 所述精确误差界。等价地，
+
+\[
+ \frac\mu{\mu+2}\le\mu[2-G(\mu)]\le1.
+\]
+
+沿整数 μ→∞ 两端同趋1，得到 limit=1。因此正确的锐性表述为参数 μ 的一阶渐近，而非每个固定 μ 的 exact G 或 α_μ 锐利。
+
+## 4. 准确身份
+
+本项下界是能显式求解的一层平星实例的配置整数间隙，不能作为 NP-hardness、TFNP 搜索困难性或一般 UM 反面。它仅说明 bounded-multiplicity 上界中距2的 Θ(1/μ) 阶、乃至第一阶系数1不可改善；未消除 O(μ^−2) 范围。
+
+一般上界依赖 v3 的 rainbow blocker/Haxell/全阈值证明；其真假和审查状态应共同登记。下界族和极限不引入额外外部定理。没有新软件实现、有限运行证书、全球新颖性或一般 σ 多项式算法认证。
+
+
+固定μ的精确G仍未知；本文只证G(μ)=2−1/μ+O(μ^−2)，不能称每个固定μ的上界sharp。要用本类构造YES≤T、NO≥(2−δ)T且全部NO也有CONFIG(T)，允许的最大完整state重数上界μ必须至少1/δ−2：若δ<1/(μ+2)，上界直接排除该NO。μ可随所选固定δ增大，故这条设计限制不排除全部一般近二困难性归约。所有新匹配仅作存在性，没有一般参数polyσ。

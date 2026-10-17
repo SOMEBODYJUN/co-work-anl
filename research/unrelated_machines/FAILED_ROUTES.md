@@ -341,3 +341,6 @@ u_t) 的一般复杂度。
 
 
 均匀私有完整状态树若叶map各自单射且对所有源都保CONFIG1，则无论任意菜单/端口编号，actualOPT≤5/3；因此它不可能提供近2的NO源soundness。失效环节是把源不一致自动变成叶资源不可pack，Haxell给出反向存在。参见[完整边界](../current/unrelated_machines/private_injective_tree_configuration_floor.md)。重试需超出该精确域，不能仅独立重编号；这不否定一般UM或非注入近二CONFIG族。
+
+
+私有uniform树仅靠有界每state叶重数的CONFIG证书不能免费给任意near2 NO：上界2−1/(μ+2)，所需μ至少约1/δ。平星可精确解却有G一阶趋2，所以参数gap也不是算法困难性。见[重数界](../current/unrelated_machines/private_injective_tree_configuration_floor.md)。单tree源虽在全局重数3已NP完全，仍只k3小比值；低重数SAT逻辑门不自动放大分叉gap。

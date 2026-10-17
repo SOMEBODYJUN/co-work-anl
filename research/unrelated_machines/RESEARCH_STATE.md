@@ -432,3 +432,9 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 
 
 [私有注入树五三界](../current/unrelated_machines/private_injective_tree_configuration_floor.md)已由CONFIG(T)共同a树支配、精确叶阻断和Haxell闭合；配置判定与实际σ复杂度分开。一般非注入、共享内部、非均匀等仍OPEN。
+
+
+[重复叶色锚点](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)已核hO(logs)/显式poly；大k近全强分叉对δk弱分叉的源gap仍缺，叶密度不是分叉比例。
+
+
+[重数CFG边界](../current/unrelated_machines/private_injective_tree_configuration_floor.md)一阶渐近已锐，但固定μ精确G未知；[全局2/3复杂性门槛](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)已核低重数控制色与全部P。仍缺near2全局放大/weak解码。

@@ -132,3 +132,9 @@ pDM阈值桥的[合入审查](research/reviews/unrelated_machines/pdm_threshold_
 
 
 [私有注入树五三界](research/current/unrelated_machines/private_injective_tree_configuration_floor.md)用共同a树分布和Haxell限制任意端口重编号；反面继续在重复叶色/增长height或共享内部等域外机制，主目标OPEN。
+
+
+[重复叶色三叉锚点](research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)确有SAT归约与完整P阈值，height随输入增长；放大到near2尚未给出。
+
+
+[私有树重数界](research/current/unrelated_machines/private_injective_tree_configuration_floor.md)得到G(μ)=2−1/μ+O(μ^−2)；[三叉彩虹](research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)在全局每色2次总YES、3次NP完全。锐性均在限定对象，主目标正反面OPEN。

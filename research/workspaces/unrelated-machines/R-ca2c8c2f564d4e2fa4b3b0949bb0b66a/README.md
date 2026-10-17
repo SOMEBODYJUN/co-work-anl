@@ -65,3 +65,9 @@
 
 
 [私有注入五三边界](../../../current/unrelated_machines/private_injective_tree_configuration_floor.md)已经闭合任意端口重编号路线；当前反面继续攻重复叶色且height增长、共享内部及真实job身份。原源v5仍只供源，不当UMdecoder。
+
+
+[noninjective增长height锚点](../../../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)已确立NP完全，仅5/4调度比值；继续主攻全局分叉gap，未给near2反证。
+
+
+[重数CFG一阶锐渐近](../../../current/unrelated_machines/private_injective_tree_configuration_floor.md)和[全局2/3 NP门槛](../../../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)已完成数学与实际独立内审；继续主目标的near2 global decoder，不把这些限定锐性当UM反证。

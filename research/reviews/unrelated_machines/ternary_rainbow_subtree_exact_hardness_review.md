@@ -1,0 +1,31 @@
+# 三叉彩虹子树的陈述先行独立归约与读后攻击
+
+对象 [现行正文](../../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)，ID `UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1`。这是实际内部数学审查，不是外审、新颖性或实现认证。
+
+作者pcsp先冻只有陈述的Exact SHA `3264ae3c3a2100fe0ef50aff1a729f9282346dba45059e20f9dcdc28d739563d`；作者已有推导，不能自称盲审。其完整proof SHA `7609ddc76e434c4e3d7ee5171753ef71dcbf1909d2349e63a15a717cfd6c2510` 在收到本次审查反馈前另冻。
+
+root在读Exact之前已见作者AND/OR/Rigid的简述，随后据Exact自行核原P阈值与SAT逻辑，但不称零信息盲审；root将完整Exact给cover时没有转发作者构造提示/proof/其它review。cover实际仅陈述自行完成另一份归约，冻结 SHA `e0d8a963d389ac578b799ac30717ca59a25e31bbabd010b9c3e128c96f41bdba`，其AND采用公共anchor的(A,B,A-copy)，先把variable/clause模块统一高度再balanced合并。作者方案AND采用Dead作第三child，Pad达任意共同max高度，故两份来源和承重条件不同，不能相互倒称独立发现。
+
+cover独立稿冻结后，root才发送作者proof；cover全文读后另冻SHA `473561d27fc536a391ebfc6e682a93e2367a3d074729956da03f4cb68edca2e4`，旧独立字节未动。三份完整推导及Exact均按原字节保存，assets/crosswalk指明实际来源。
+
+审查实际核出：每occurrence唯一颜色只在variable-false branch与clause选中literal间碰撞；emptyfalsebundle用fresh neutral atom。Rigid的任一rainbow2恰固定palette；Dead仅height≥1，Atom高1保证所有调用合法。Pad升到max时内部AND两输入同高，不形成递归不终止；OR增2、AND增1、逻辑balancedheightO(logs)，所有tree展开3^h为poly。全局fresh辅助色避免父级误冲突，Rigid内部重复ID不被重命名。变量ID按出现排序，不按最大binaryID展开。
+
+实际P包含每个未选原edge/leaf job，全部父置回填。C<5/3使有unit的每active内机至少两出job实际down，外机不容两unit，递归提取同深binary rainbow；binaryrainbow给4/3，任意单path给5/3，故NO真实OPT恰5/3。作者末尾“各job两资格”一处措辞不精确，root pin仅一端；canonical已改“每job至多两资格，pin单端”。原完整定义/证明始终按单端pin，此非standingfatal，不倒改作者冻结字节。
+
+root全文读作者proof、cover完整独立稿和读后稿，并亲核全部原P负载、gate/高度/大小。root还实际渲染已登记Karp2010reprint PDF14–15核MainTheorem与item11，导入标准至多3literalSAT NP-completeness，非空短clause重复literal补齐、空常量另处理；未重复下载或重构Karp全文证明。
+
+当前限定证明完整，无standingfatal。没有软件实现、有限运行、新颖性、独立成文价值或一般UM反面认证；小gap并不接近2，未把(2/3)^h叶密度当uniform分叉soundness。
+
+
+## 全局重数2/3门槛v2：新域的独立重构
+
+root在已读v1与有界重数机制后，独立发现低重数Dead/Rigid/protected构造；root不是盲审。只给pcsp新Exact `8e47cc088a50d6f8609c9dcbd11f142407229e7ef5c6171fdd6b3dc5a8b2c6a9`，未给新proof/机制；pcsp披露自己是原v1作者，但旧高重数Rigid/Dead不自动覆盖新域。其仅陈述独立构造Must/Fresh/Dead方案并冻 `affeee5ccbc9f1bc193f97e9476c4b69faa7da0d8f4f0501f3a5033524741b6b`。root证明 `042250b0fcb40f0fdb2e5998f6854bb71e05efa49778925d4c0953a01562f785` 在收到该新推导前已冻结；之后才给pcsp读后攻击，另冻 `b5ea7d10d94f5b63cbf60602fdd69289ec908ae1e0250a823b914b03d08dc43c`，无standingfatal。
+
+两份实际证明不同：root以低重数Rigid、底层(a,b,a)和protected单出现实现精确palette；pcsp不固定palette，以Must_H(g)单条递归强制g、配Fresh与Dead实现guard。双方分别核全局每个原/辅助色计数，原occurrence在variable-false/clause atom各单出现总2、guard两option各1总2、dead底层triplet3，其余fresh/palette≤2或3。Pad不复制source T、OR/AND都只用每逻辑子式一次，Dead0不调用；旧复制palette不用于新重数结论。
+
+重数2的两桶q子可加证明与三叉majority自底向上提取都成立；重数3源SATiff和原P全jobs阈值、shortclauses/binaryID/空常量/完整heightO(logs)及显式poly均亲核。root实际全文读pcsp独立稿和读后稿；没有因来源一致倒称双方看过同一proof后独立。四新冻结来源与原v1来源同时保留，不将新域quiet升级旧Exact。
+
+门槛sharp仅指2时全部YES、3时NP完全；仍只给5/4调度比值。原leaf全局重数≤3使resource资格≤3，不代表一般UM目标已解。没有实现/有限测试、外审或全球新颖性认证。
+
+
+pcsp实际全文核最终v1/v2 canonical，读前/后SHA均 `9314ea1777df138b047587a391bba7ddf487ab5a3ecc94ef928425ed23e654c0`，新scratch回执SHA `1308ae14c9ca40b750bf3ab3c1d1f7d8afa3d9dbf77dcb5b03940303e47b0e96`。无新增Claim/范围漂移/fatal；pin单端、protected/低重数模板和global/perstate区分正确。未冒新增代码或重读root的Karp定位。

@@ -381,3 +381,9 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 
 
 [私有注入树配置五三界](private_injective_tree_configuration_floor.md)：均匀small/私有内部/状态注入的精确结构边界，任意重新编号端口仍适用。
+
+
+[三叉二叉彩虹的精确困难性](ternary_rainbow_subtree_exact_hardness.md)：完整等高树自足SAT归约、原P全任务回填与小gap，非near2。
+
+
+[私有树重数界](private_injective_tree_configuration_floor.md)全CONFIG≤2−1/(μ+2)且G一阶系数1；[三叉彩虹](ternary_rainbow_subtree_exact_hardness.md)全局重数2/3为精确NP门槛。

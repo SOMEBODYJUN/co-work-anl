@@ -123,3 +123,9 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 
 
 新增UM-Q-PRIVATE-INJECTIVE-TREE-CONFIGURATION-FLOOR-v2；[专题账本](research/unrelated_machines/CLAIMS.md)区分私有注入类CONFIGgap≤5/3与原非注入严格promise判定，未给一般σ算法。
+
+
+新增UM-PRIVATE-TERNARY-RAINBOW-BINARY-SUBTREE-NP-COMPLETE-v1；[专题账本](research/unrelated_machines/CLAIMS.md)严格区分三叉二叉rainbow NP完全与仅5/4比值的实际调度gap。
+
+
+新增有界重数配置v3、一阶锐渐近与全局叶色2/3复杂性门槛；[专题账本](research/unrelated_machines/CLAIMS.md)明确两种重数域及无一般UM结论。

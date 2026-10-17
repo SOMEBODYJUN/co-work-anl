@@ -271,3 +271,9 @@
 
 
 [私有注入树配置五三界](../current/unrelated_machines/private_injective_tree_configuration_floor.md)：任意菜单、全阈值配置界与严格过滤判定；存在性不冒算法。
+
+
+[完整三叉二叉彩虹困难性](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)：重复色/变height的真实NP锚点，原P仅4/3对5/3。
+
+
+[配置重数与一阶锐渐近](../current/unrelated_machines/private_injective_tree_configuration_floor.md)区分每state μ；[全局叶重数2/3门槛](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)则为单tree全部辅助色统计，NP调度比值仍5/4。
