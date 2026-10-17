@@ -112,7 +112,7 @@
 
 进一步的[大需求束碰撞界与平方池锐性](research/current/unrelated_machines/large_bundle_collision_square_root_floor.md)给含根上取整的Λ_c真实树，q=Δ=K=t²时精确maxΛ=b*=1/t；带η→0及ηKmin→∞条件的NO侧必要量为liminfη²Δ≥1。只约束资源束接口，源问题解码和一般困难性仍缺。
 
-[全局四阶负载松弛的锐利二间隙](research/current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。
+[全局四阶负载松弛的锐利二间隙](research/current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。该裸C2命题的范围不变；后续[弱H2合取的新二间隙](research/current/unrelated_machines/weak_h2_configuration_moment_gap.md)另行关闭只共享一阶CONFIG的合同。共享行二阶在该新族上阈值精确，一般强合同与UM-TARGET-v1仍OPEN。
 
 ## 弱单调小步的闭环失效及可回收临时超额
 
@@ -143,6 +143,14 @@
 尝试用残余throughput的次模性选择大任务占位。正确部分是任意异端p的固定R容量格次模；失效步骤有两处：占位损失D本为超模，且H同时移除任务与扣容量后V根本不继承次模（2×2原OPT1/2、四值2/1/1/2）。即使宏身份固定、tiny同尺寸，任意固定严格次二α的可行占位族仍能精确为任意图独立集，D=诱导边数，故不是免费拟阵或固定p交换系统。回收一般F性质、primal/dual求值证书与精确图表示；原实例都有显式OPT1，不是调度困难性。重试需同时保留R(H)、h(H)的共同恢复与实际联合舍入余量，不能以近似总通过量代替全任务完成。见[完整范围](research/current/unrelated_machines/residual_throughput_and_occupation_projection.md)。
 
 [完整单位树的叶流与选择重组](research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。
+
+## 同一一阶CONFIG合取与槽损失凸化的失败机制
+
+尝试：把C2-load共同四阶矩与完整CONFIG共享同一一阶点，或将完整实际槽损失逐机凸化，期望统一跨过相对T的二倍壁垒。失效：稀释星族中，条件激活块的单位multislice伪矩容纳b+k任务于b+1资源，但激活仅1/k，使同一一阶资源占用恰1，CONFIG1完全看不到该条件超额；实际整数OPT仍2−1/k。参数化PSD/所有localizer和同x配置均已证明，不是有限搜索反例。
+
+回收：一般N≥m+1的degree2 multislice PSD及可显式生成的条件张量/混合；共享同机二阶后，零pair的PSD传播给任意端条件单槽容量，从而**整个同族强阈值**精确等于OPT。失败只排弱H2，不排强二阶/三阶非负/其他算法，亦非一般困难性。准确Claim、证明及审查沿[同一正文](research/current/unrelated_machines/weak_h2_configuration_moment_gap.md)读取。
+
+另[完整槽包络](research/current/unrelated_machines/slot_envelope_and_configuration_identity.md)精确区分两个常混淆动作：固定容量后凸化子水平集恰CONFIG；先凸化上图则只剩线性负载。非凸min max包络本身等于OPT，因此没有免费共同选择。重试必须新增跨机相关机制或给可计算近似非凸进展；只精确计费单行损失或重新调价不够。
 
 ## 固定势与局部repair的新增失败机制
 

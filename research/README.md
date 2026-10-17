@@ -10,6 +10,7 @@
 
 
 本题最新结构接口还包括[单汇点宏退出与完整profile池共同选择](current/unrelated_machines/shared_sink_joint_macro_assignment.md)，及[循环修复正文](current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§10的严格lex长链边界。按[共同容量路线整合审查](reviews/unrelated_machines/joint_capacity_route_feasibility_review.md)区分局部构造、核心共同选择与总进展；特定族[条件矩新构造](current/unrelated_machines/symmetric_moment_reset_and_single_machine_threshold.md)§9不能直接提升为一般算法。
+本阶段新增[固定工作量与中任务配置分解边界](questions/unrelated_machines/fixed_work_and_medium_config_barriers.md)：固定配置加 tiny 槽损失、固定总工作量和固定非减凸势均有精确近二失败范围；它们只收窄方法路线，不改变一般主目标仍OPEN的状态。
 
 [固定数量共享汇点的占位基交换与三半调度](current/unrelated_machines/fixed_sink_occupation_rounding.md)给三个分离身份：UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1允许任意K但仅界定2K个分数组；UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1在固定K的给定阈值下输出实际≤3T/2；UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1用含OPT的大宏promise及非单调one-sided整数二分给真正≤3OPT/2。唯一home/给定分组和固定K仍承重，通用LP软件未实现，新颖性未认证。一般主目标下一缺口是不受限的接收容量与跨home/跨尺寸任务身份，UM-TARGET-v1仍OPEN。
 

@@ -1048,8 +1048,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | ID | 精确结果 | 范围 |
 | --- | --- | --- |
-| UM-RESIDUAL-THROUGHPUT-LATTICE-v1 | ∀非负异端p及固定R，fractional通过量F(c)容量格次模且可有理LP求值；固定占位扣减给F(I)非增次模、D(I)超模。角色随H变时不继承，2×2真实OPT1/2反例给V=2,1,1,2。 | [正文](unrelated_machines/residual_throughput_and_occupation_projection.md)、[审查](../reviews/unrelated_machines/residual_throughput_occupation_review.md)；不提供一般joint恢复。 |
-| UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1 | ∀固定1≤α<2、δ>0、任意显式非空simple图，poly(|G|)构造OPT1、同尺寸≤δ tiny与任机unit宏，全部α可行图机占位投影恰IS(G)，且D(I)=|E(G[I])|。 | [正文](unrelated_machines/residual_throughput_and_occupation_projection.md)、[审查](../reviews/unrelated_machines/residual_throughput_occupation_review.md)；非uniform bit(α,δ)构造、非UM困难性，原调度可直接最优解。 |
+| UM-RESIDUAL-THROUGHPUT-LATTICE-v1 | 对固定有限 M,R,E 与非负有理处理时间 p，容量函数 F 在数学上对 c,d∈R_+^M 满足格次模与单调性；当 c,d 为带输入位长的有理向量时，F 可由有理 LP 在输入总位长多项式时间精确求值。固定占位扣减给 F(I) 非增次模、D(I) 超模；角色随 H 变时不继承，2×2 真实 OPT=1/2 反例给 V=2,1,1,2。 | [正文](unrelated_machines/residual_throughput_and_occupation_projection.md)、[审查](../reviews/unrelated_machines/residual_throughput_occupation_review.md)；不提供一般 joint 恢复。 |
+| UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1 | ∀固定有理1≤α<2、固定有理δ>0、任意显式非空simple图，poly(|G|)构造OPT=1、同尺寸≤δ tiny与任机unit宏，全部α可行图机占位投影恰IS(G)，且D(I)=|E(G[I])|。 | [正文](unrelated_machines/residual_throughput_and_occupation_projection.md)、[审查](../reviews/unrelated_machines/residual_throughput_occupation_review.md)；非uniform bit(α,δ)构造、非UM困难性，原调度可直接最优解。 |
 
 
 ## UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1：两状态残余树的 two-rail quota orientation 表示
@@ -1069,6 +1069,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | ID | Exact scope / conclusion | Proof and state |
 | --- | --- | --- |
 | UM-UNIT-READOUT-SELECTOR-MIXING-v1 | 同一P给p≥1份完整实际C≤1调度，每变量指定一个至少在一见证采用过的selector sign；非空另需N=k^h≥p。可按P加全部见证位长poly输出满足全部指定根的完整σ，C≤2−1/(2p−1)。大k取r=floor(k/p)，小k取r1；p1直接原YES。对每p该指定profile保证精确锐，而原全局OPT1。 | [正文](unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)、[实际审查](../reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md)；限定完成，内审/实现通过，外审与新颖性未认证 |
+
+## 槽包络与共同矩配置的精确接口
+
+| ID | 精确结果 | 范围与入口 |
+| --- | --- | --- |
+| UM-ST-ENVELOPE-CONFIG-IDENTITY-v1 | 任意非负有理行的E=ΣΔp ceil(prefix x)；固定B子水平凸包恰配置多面体、至多d+1有理原子。全局min max E=OPT，可ST实际恢复；先固定B逐行凸化恰CONFIG，先凸化上图仅线性负载。 | [正文](unrelated_machines/slot_envelope_and_configuration_identity.md)、[审查](../reviews/unrelated_machines/slot_envelope_identity_review.md)；精确表示不等于可求非凸选择；CONFIG的二倍gap为既有结论复用；未给主目标近似算法。 |
+| UM-WEAK-H2-CONFIG-MOMENT-GAP-v1 | 弱H2=C2-load(T)+共享一阶x的完整CONFIG(T)，一般正值sup OPT/T=2。k≥3,b=k²稀释资源星在T=1+(k−1)/(k²+1)有显式有理全局PSD/全localizer与同x CONFIG1，真实OPT=2−1/k。 | [正文](unrelated_machines/weak_h2_configuration_moment_gap.md)、[审查](../reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md)；不共享行二阶且三阶仍可负；不含强二阶H2、完整SoS(CONFIG)或一般计算困难性；本族可直接最优解。 |
+| UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1 | 若容量一行CONFIG同机pair与全局M2共享，则任意端f有Σ_row y_fe≤x_f；在同一k≥3,b=k²无z星族，共享每行二阶CONFIG的强H2阈值恰2−1/k=OPT，所有T<OPT均不可行，真实Dirac达到。 | [正文](unrelated_machines/weak_h2_configuration_moment_gap.md)、[审查](../reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md)；仅此族的强合同精确校准，不含一般强H2间隙改善或求解复杂度；该条件容量证明不需要负载localizer。 |
 
 
 | UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1 | 核心—私有资源四层需求DAG：K>s≥1、q≥ceil((K−s)K/s)。全层配额值 b*=s/K，桥梁矩阵真实 OPT=2−s/K；私有 padding 可把任意基系统的全部中间层 matching soundness 平移到实际不可拆调度。 | [正文](unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md)、[独立审查](../reviews/unrelated_machines/cross_layer_quota_matching_review.md)、[Fraction审计](../../tests/audits/unrelated_machines/cross_layer_quota_matching.py)；限定接口障碍，不是一般近二困难性，UM-TARGET-v1仍OPEN。 |

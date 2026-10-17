@@ -27,6 +27,8 @@
 
 [一般残余容量结构](research/current/unrelated_machines/residual_throughput_and_occupation_projection.md)进一步给出固定R的容量格次模与精确占位缺口D(I)=诱导边数。任务角色随大边选择变化时，联合目标不继承该性质；这明确了下一共同选择义务，不是一般近似或困难性突破。
 
+本阶段新增[固定工作量与中任务配置分解边界](research/questions/unrelated_machines/fixed_work_and_medium_config_barriers.md)：固定配置加 tiny 槽损失、固定总工作量和固定非减凸势的近二失败范围均已精确记录；它们只收窄方法路线，不改变 UM-TARGET-v1 的 OPEN 状态。
+
 ## 定义、命题、依赖与证据
 
 [研究总目录](research/README.md)按模型分流；[中文资产总目录](research/CATALOG.md)说明每个文件用途；[全仓精确命题](research/current/claims.md)、[五轴状态](research/review_status.json)、[文件合同](research/assets.json)和[关系图](research/index.html)分别管理身份、审查、位置和数学依赖。有限核验只作checks，不替代一般证明。原始来源沿[来源解释](research/source_crosswalk.md)追溯。
@@ -77,7 +79,7 @@
 
 进一步的[大需求束碰撞界与平方池锐性](research/current/unrelated_machines/large_bundle_collision_square_root_floor.md)给含根上取整的Λ_c真实树，q=Δ=K=t²时精确maxΛ=b*=1/t；带η→0及ηKmin→∞条件的NO侧必要量为liminfη²Δ≥1。只约束资源束接口，源问题解码和一般困难性仍缺。
 
-[全局四阶负载松弛的锐利二间隙](research/current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。
+[全局四阶负载松弛的锐利二间隙](research/current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。该裸C2命题的范围不变；后续[弱H2合取的新二间隙](research/current/unrelated_machines/weak_h2_configuration_moment_gap.md)另行关闭只共享一阶CONFIG的合同。共享行二阶在该新族上阈值精确，一般强合同与UM-TARGET-v1仍OPEN。
 
 [闭环容量释放](research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§11把严格下降障碍推进到弱最大负载单调小步：真实最优凸包的全部最小成本槽输出仍趋2，最小非平凡改件/参与机恰d+1；但单任务到OPT的最小峰值仅为B+1/k²。它不是一般困难性，且该cactus族可精确解。
 
@@ -102,5 +104,11 @@
 [校准计数槽](research/current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md)将单位读出树的半质量推广为有理下传证书：行分数任务数≤整数k−r+1给实际2−r/k。uniform x_h闭式提供所有wiring密度界；任意固定D≥2、arity≤D A的同结构类有确定性位poly统一2−1/(4D)算法，k,h可无界。已扣VW既有2−1/k及经典ST；D无界或一般P仍无统一ε，反面目标保持OPEN。
 
 [完整单位树的叶流与选择重组](research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。
+
+## 同点合取的新增理论边界
+
+[弱H2与强二阶配置的分离](research/current/unrelated_machines/weak_h2_configuration_moment_gap.md)给参数化一般证明：全局C2-load与完整CONFIG仅共享同一一阶x时，正值整数间隙上确界仍为2。k≥3的多项式规模稀释星族在T=1+(k−1)/(k²+1)有显式有理共同证书，而真实OPT=2−1/k；关键是条件激活中的伪矩超额在一阶配置投影中被稀释。全局PSD、所有负载localizer、相同x配置及位复杂度均分别证明。共享行二阶的强合同则在**同一族所有T**上阈值恰等于OPT；零pair经PSD传输成全局条件单槽容量。二者是不同Claim，不能外推成一般强H2定理或计算困难性。
+
+[完整槽包络的精确表示](research/current/unrelated_machines/slot_envelope_and_configuration_identity.md)把所有尺度的真实槽上界写成E=ΣΔp·ceil(prefix x)，证明全局min max E=OPT。固定T后逐行凸化子水平集恰CONFIG；先凸化整个上图则只剩线性分数负载。可验证完整损失并未免费解决共同选择。后续要攻共享二阶及更强跨机信息的可计算性/实际提取，或绕过这些松弛的一般构造，停止把上述已排弱合取当充分接口。
 
 本轮研究又固定了三个承重边界：核心—私有资源的全层 matching 近二族、共同 big 选择的独立集阈值障碍、以及固定工作量下二次/排序势的单任务局部极小。它们的精确证明、独立审查和 Fraction 证据已沿本题地图登记；一般统一 (2−ε) 算法仍未得到。

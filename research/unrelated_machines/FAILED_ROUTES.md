@@ -66,6 +66,12 @@ GHMR版的失败：占位任务都新增共同z上的1/2小边，故不再属于
 
 半单位接口的honest salvage见[逐行前缀联合舍入](../current/unrelated_machines/joint_slot_prefix_rounding.md)：直接联合所有任务、不先固定H，可以在行宽≤2子类得3/2。已知工具推论不升级为一般新算法；真正未修复的是任意跨尺度容量，不是H精确接口本身。
 
+## 固定阈值中任务配置与固定势均不能替代共同动作
+
+新失败边界 `UM-MEDIUM-CONFIG-TINY-BARRIER-v1`：对任意固定有理 \(0<\alpha<1/5\)，经典两树族的 \(k=4,T=5/4\) 已使全部有限边 \(1/4>\alpha T\)，配置 LP 在 \(T\) 可行而 \(\operatorname{OPT}/T=7/5>1+\alpha\)。因此“配置 LP 加一次独立 tiny-ST 收费 \(\alpha T\)”在此阈值下完全退化为配置间隙；列数可枚举不等于 LP 到共同整数选择已有积分提升。它不排更强跨机器约束、改变分类或直接联合舍入。
+
+`UM-FIXED-WORK-CONVEX-POTENTIAL-BARRIER-v1` 进一步给出固定松弛的参数化边界：\(h\) 个核心、每核心 \(q\) 个 home/tiny 私有叶、一个全核心时间1的大任务，\(t=(h-1)/(hq)\)，OPT=1。最小总工作量支撑及其标准槽匹配值为 \(2-1/h\)；取 \(q=h^2\) 时任何固定 \(W\le\rho h\) 仍有 \(C_{\max}\ge2-1/h-(\rho-1)ht/(1-t)\)。对固定有限非减凸 \(f\)，若 \(q>(1-1/h)(f(3)-f(2))/(f(1)-f(0))\)，\(\sum_i f(L_i)\) 的每个全局最小解也保留近二坏态。失败只针对固定正支撑/工作量/分离势；重开昂贵叶边、自适应 hinge、机器加权、非可加势与临时增载仍可重试。完整定义和 Fraction 小参数核验见[问题正文](../questions/unrelated_machines/fixed_work_and_medium_config_barriers.md)。
+
 ## 独立单边条件配置仍未保存共同相关性
 
 尝试机制：把逐边LST探针加强为每次强制边内完整配置可行性，保住全部单机容量形状和大任务槽。新稀疏深树族仍接受：单次扰动沿α→rα衰减，仅有限深度的底簇须撤离；微小γ容纳这些簇的全部占位任务。但实际调度沿至少二叉分支扩散到深树全部底部，逼出γ2^(H−1)=2的负载。失败在不同查询没有共同相关性，不在单机配置或精确计算错误。
@@ -232,7 +238,7 @@ u_t) 的一般复杂度。
 
 回收有限Λ公式、共同池精确界、原资源匹配以及η必要不等式；沿η→0且ηKmin→∞必有liminfη²Δ≥1。没有大需求或趋零条件不能扩大该渐近结论。重试必须构造真正源相关的一致性并证明任意低比例树可解码，同时保持YES和位规模。见[正文](../current/unrelated_machines/large_bundle_collision_square_root_floor.md)。
 
-[全局四阶负载松弛的锐利二间隙](../current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。
+[全局四阶负载松弛的锐利二间隙](../current/unrelated_machines/c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。该裸C2命题的范围不变；后续[弱H2合取的新二间隙](../current/unrelated_machines/weak_h2_configuration_moment_gap.md)另行关闭只共享一阶CONFIG的合同。共享行二阶在该新族上阈值精确，一般强合同与UM-TARGET-v1仍OPEN。
 
 ## 弱单调小步的闭环失效及可回收临时超额
 
@@ -275,3 +281,11 @@ u_t) 的一般复杂度。
 尝试忽略祖先而把叶流直接当配额森林会失效；回收为只删除同一flow叶、用锐hitting阈值真正提取祖先，任意密度固定h得到1+2^(−1/h)实际近似。尝试让少数完整YES模式覆盖的坐标混合在近2被拒绝，也被给定见证的锐2−1/(2p−1)重组界限制；另一轨必须固定parent，不能误用全轨强LP。具体失效、全局原任务计费、每p锐profile及N<p反例见[正文](../current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)。
 
 否定范围仅本完整私有单位树和同一P的给定完整见证；NO输出可能没有这些见证，固定h与p也可随目标gap增长。下一需真正跨层一致性与任意低实际σ的源解码，不能把这里的条件边界写成一般近二困难性。重试应给出脱离这些合同的完整P，而非新增同一参数样本。
+
+## 同一一阶CONFIG合取与槽损失凸化的失败机制
+
+尝试：把C2-load共同四阶矩与完整CONFIG共享同一一阶点，或将完整实际槽损失逐机凸化，期望统一跨过相对T的二倍壁垒。失效：稀释星族中，条件激活块的单位multislice伪矩容纳b+k任务于b+1资源，但激活仅1/k，使同一一阶资源占用恰1，CONFIG1完全看不到该条件超额；实际整数OPT仍2−1/k。参数化PSD/所有localizer和同x配置均已证明，不是有限搜索反例。
+
+回收：一般N≥m+1的degree2 multislice PSD及可显式生成的条件张量/混合；共享同机二阶后，零pair的PSD传播给任意端条件单槽容量，从而**整个同族强阈值**精确等于OPT。失败只排弱H2，不排强二阶/三阶非负/其他算法，亦非一般困难性。准确Claim、证明及审查沿[同一正文](../current/unrelated_machines/weak_h2_configuration_moment_gap.md)读取。
+
+另[完整槽包络](../current/unrelated_machines/slot_envelope_and_configuration_identity.md)精确区分两个常混淆动作：固定容量后凸化子水平集恰CONFIG；先凸化上图则只剩线性负载。非凸min max包络本身等于OPT，因此没有免费共同选择。重试必须新增跨机相关机制或给可计算近似非凸进展；只精确计费单行损失或重新调价不够。

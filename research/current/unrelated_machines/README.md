@@ -58,6 +58,8 @@
 
 下一义务已被半单位扩展修正：固定δ<1/2的(Aδ)承诺搜索在P≠NP下均不可能；应转向实际槽损失或可分离/可舍入的条件块强化，仍无统一新算法。文件入口完整路径为research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md、research/reviews/unrelated_machines/joint_matching_completion_review.md、tests/audits/unrelated_machines/{joint_matching_completion,unique_small_matching_audit,joint_matching_completion_independent}.py及evidence/runs/unrelated_machines/joint_matching_completion_audit.json；新候选必须同时攻击共享z、长链与一般多小端输入。
 
+新增失败路线见[固定工作量与中任务配置分解边界](../../questions/unrelated_machines/fixed_work_and_medium_config_barriers.md)：固定阈值的“配置 LP 加 tiny 槽损失”在 α<1/5 时退化为经典配置间隙；固定总工作量和固定非减凸分离势也会被私有昂贵叶族锁在近二。该页只排除所列合同，重开边与自适应共同势仍是开放方向。
+
 [生成树再耦合的五机反例](tree_markov_completion.md)进一步定位算法接口：即使pair来自真实全局最优分布，任意tree-Markov态冻结树任务后仍可能只可补到2T；一步迁移可修复此例，不排一般repair。状态见UM-TREE-MARKOV-COMPLETION-NO-v1及正文链接的独立审查/双路证据。
 
 ## 可恢复消元与共享容量一资源
@@ -124,8 +126,6 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 读取链：本题账本→正文§1合同/§2–5构造及位复杂度→rooted_dag_token_bridge_review.md→rooted_dag_token_bridge.py及独立审计→rooted_dag_token_bridge_audit.json。原始Bamas2025 v2字节与定义/脚注位置见manifest；一轮SA定理只核对陈述，未转成调度层级结论。
 
 新增派生UM-COORDINATE-REPAIR-ST-GAP-v1（循环批次正文cyclic_batch_repair_and_fork_obstruction.md§9）：与boss7真实最优凸包固定槽族衔接，工作量守恒使本逐坐标优化器仍0轮且gap→2。这个限制已覆盖配置来源；它不扩大fork关于one-destination、makespan非增的另一合同。下一机制必须允许低负载接收机上升并共同控制最大负载，不能把更强初始化单独当成循环算法的补丁。
-
-新增派生UM-COORDINATE-REPAIR-ST-GAP-v1（同稿§9）：与boss7真实最优凸包固定槽族衔接，工作量守恒使本逐坐标优化器仍0轮且gap→2。这个限制已覆盖配置来源；它不扩大fork关于one-destination、makespan非增的另一合同。下一机制必须允许低负载接收机上升并共同控制最大负载，不能把更强初始化单独当成循环算法的补丁。
 
 ## 固定最优边际断点与单边界批量恢复
 
@@ -270,7 +270,7 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 
 正文给UM-LARGE-BUNDLE-COLLISION-FLOOR-v1完整域及式(9)精确必要量；读取冻结审查、两份large_bundle_collision代码及独立原父点/实际调度证据后再用于归约。不能把可解的平方池近二OPT当NP困难性。
 
-[全局四阶负载松弛的锐利二间隙](c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。一般主目标仍OPEN，下一可判别义务是含完整本地配置信息的共同矩/实际联合舍入。
+[全局四阶负载松弛的锐利二间隙](c2_unit_multislice_gap.md)（`UM-C2-LOAD-UNIT-GAP-v1`）已闭合裸C2-load本身的义务：m≥3,n=m+1单位同机上T_C2=n/m、OPT2，显式有理PSD证书给supgap2。这不同于固定贪心坏例；其三阶同机矩为负、CONFIG阈值2，故不含C2+CONFIG或一般算法困难性。该裸C2命题的范围不变；后续[弱H2合取的新二间隙](weak_h2_configuration_moment_gap.md)另行关闭只共享一阶CONFIG的合同。共享行二阶在该新族上阈值精确，一般强合同与UM-TARGET-v1仍OPEN。
 
 [闭环容量释放](../../../research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md)§11把严格下降障碍推进到弱最大负载单调小步：真实最优凸包的全部最小成本槽输出仍趋2，最小非平凡改件/参与机恰d+1；但单任务到OPT的最小峰值仅为B+1/k²。它不是一般困难性，且该cactus族可精确解。
 
@@ -325,3 +325,9 @@ u_t) 是每个超边取 (t) 个互不冲突资源的束匹配数。三维匹配�
 [两状态quota orientation表示](two_state_quota_orientation_obligation.md)把固定 \(\delta\) 的真实根树存在性精确翻译成rail方向、标签quota和资源单射；完整支付才是2-SAT，部分支付是quota packing。此表示替代继续堆叠资源复制，下一义务是证明该quota对象的gap soundness或构造其不可行障碍。
 
 [完整单位树的叶流与选择重组](unit_readout_global_leaf_flow_and_selector_mixing.md)：任意clause密度下固定h有实际(1+2^(−1/h))近似；给p份同一P完整C1见证时，N≥p的任意covered selector坐标重组有锐2−1/(2p−1)实际负载。h、p增长及NO无完整YES均承重，一般主目标及其反面OPEN，外审与新颖性未认证。
+
+## 同点合取的新增理论边界
+
+[弱H2与强二阶配置的分离](weak_h2_configuration_moment_gap.md)给参数化一般证明：全局C2-load与完整CONFIG仅共享同一一阶x时，正值整数间隙上确界仍为2。k≥3的多项式规模稀释星族在T=1+(k−1)/(k²+1)有显式有理共同证书，而真实OPT=2−1/k；关键是条件激活中的伪矩超额在一阶配置投影中被稀释。全局PSD、所有负载localizer、相同x配置及位复杂度均分别证明。共享行二阶的强合同则在**同一族所有T**上阈值恰等于OPT；零pair经PSD传输成全局条件单槽容量。二者是不同Claim，不能外推成一般强H2定理或计算困难性。
+
+[完整槽包络的精确表示](slot_envelope_and_configuration_identity.md)把所有尺度的真实槽上界写成E=ΣΔp·ceil(prefix x)，证明全局min max E=OPT。固定T后逐行凸化子水平集恰CONFIG；先凸化整个上图则只剩线性分数负载。可验证完整损失并未免费解决共同选择。后续要攻共享二阶及更强跨机信息的可计算性/实际提取，或绕过这些松弛的一般构造，停止把上述已排弱合取当充分接口。

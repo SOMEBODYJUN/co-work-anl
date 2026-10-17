@@ -1598,7 +1598,7 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 
 ## UM-RESIDUAL-THROUGHPUT-LATTICE-v1：任意异端时间的容量格次模
 
-- Exact Statement / Quantifiers：∀固定有限M,R,E及非负有理p_ij，F(c)=max{Σx:任务质量≤1、机器处理量≤c、x≥0}对全部c,d≥0满足F(c)+F(d)≥F(c∨d)+F(c∧d)，且非减。F可由显式有理LP总位多项式精确求值；F(c)=|R|恰为完整共同分数路由。
+- Exact Statement / Quantifiers：对固定有限 M,R,E 与非负有理处理时间 p，F(c)=max{Σx:任务质量≤1、机器处理量≤c、x≥0} 在数学上对实容量向量 c,d∈R_+^M 满足 F(c)+F(d)≥F(c∨d)+F(c∧d)，且非减；当 c,d 为带输入位长的有理向量时，F 可由显式有理 LP 在总输入位长多项式时间精确求值。F可由显式有理LP总位多项式精确求值；F(c)=|R|恰为完整共同分数路由。
 - Objects / Domain / Definitions：未允许边无变量；R可空、可有无light端任务；零时间、零容量允许。F只计分数任务质量，不把合法输出改成可拆调度。
 - Assumptions / Scope：同一个R,E,p冻结；固定C_i≥a_i≥0时c_i(I)=C_i−a_i1_I给非增次模F(I)、非减超模D(I)=|R|−F(I)。每个有零light端任务可免费删除加回，但不保另一个物理关机模型的原子问题值。
 - Conclusion / Mechanism：dual混合格封闭(u∧v,a∨b)/(u∨v,a∧b)与逐坐标费用重排；完整通过量须精确达到任务数，近似总量不强制逐任务完成。固定状态失败证书不排除其他H。
@@ -1610,7 +1610,7 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 
 ## UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1：严格次二占位的诱导边缺口恒等式
 
-- Exact Statement / Quantifiers：∀固定有理1≤α<2和固定δ>0，∃确定性算法，对每个非空显式有限simple图G，在图位长poly时间构造2N机、N个任机单位宏及同尺寸h≤δ的tiny实例，给显式OPT1调度；∀I⊆V，α容量完整调度的图机宏占位投影恰所有独立集。固定全部tiny为R、图机残余c_i(I)=α−1_I时，精确D(I)=|R|−F_R(c(I))=|E(G[I])|。
+- Exact Statement / Quantifiers：∀固定有理1≤α<2和固定有理δ>0，∃确定性算法，对每个非空显式有限simple图G，在图位长poly时间构造2N机、N个任机单位宏及同尺寸h≤δ的tiny实例，给显式 OPT=1 调度；∀I⊆V，α容量完整调度的图机宏占位投影恰所有独立集。固定全部tiny为R、图机残余c_i(I)=α−1_I时，精确D(I)=|R|−F_R(c(I))=|E(G[I])|。
 - Objects / Domain / Definitions：α=A/B既约，Δ=maxdeg；q=2B max{1,ceil[1/(2Bδ)],ceil[Δ/(2B(2−α))]}，h=1/q，r=q(α−1)整数。每图机r件专属tiny，每图边一件双端tiny；N辅助机不接tiny，全部宏资格为所有2N机。α与δ不是原实例OPT输入承诺。
 - Assumptions / Scope：固定α、δ时才声称输出规模poly(|G|)；不声称bit(α)+bit(δ)统一poly。N≥1；宏单位和α<2使每机至多一个宏。tiny允许全部等端同尺寸、每件至多两选。
 - Conclusion / Mechanism：宏全辅助给OPT1；I专属+内部边只能用I，剩余容量恰专属任务总量，至少缺诱导边数；弃内部边、其余向未占位端定向达到。故Hall完成族可精确为任意图独立集族；星图排除固定p-extendibility，但不是调度路径能垒。
@@ -1657,6 +1657,68 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：h无界余量趋0；N<p有真实指定profileOPT2反例；旧64open不许免费补祖先；NO源可能无任何完整YES，不能越界应用重组；锐profile值非全局OPT。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实际构造已实现；外审、全球新颖性和独立论文价值未认证。
 - Related Files：`research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md`；`research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md`；`evidence/runs/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_audit.json`；`examples/unrelated_machines/unit_readout_selector_mixing_sharp_profiles.json`；`tests/audits/unrelated_machines/unit_readout_selector_mixing.py`；`tests/audits/unrelated_machines/unit_readout_selector_profile_independent.py`。
+
+## UM-MEDIUM-CONFIG-TINY-BARRIER-v1：固定阈值中任务配置分解的近二边界
+
+- Exact Statement / Quantifiers：对每个固定有理 (0<\alpha<1/5)，存在合法 (P,T) 使全部有限 (p_{ij}>\alpha T)、配置 LP 在 (T) 可行而 (\operatorname{OPT}/T=7/5>1+\alpha)。因此“仅凭配置 LP(T)可行性，再把 (p\le\alpha T) 的 tiny 末步独立支付 (\alpha T)”的合同在该范围不可能给统一小于2。
+- Objects / Domain / Definitions：取经典两树族 (k=4)，(T=5/4)，有限时间仅 (1/4,1)，整数最优值 (7/4)。
+- Assumptions / Scope：只否定固定阈值、配置 LP 与独立 tiny-ST 加性收费的接口；不排跨机器强化、直接联合舍入、改变阈值或 (\alpha\ge1/5)。
+- Conclusion / Mechanism：tiny 集合为空，接口退化为配置间隙；配置列在固定 (alpha) 下可枚举不改变 LP 到共同整数选择的积分缺口。
+- Dependencies：UM-CONF-GAP-v1 与 `model_and_classical_barriers.md` 的 (k=4) 证书；本页 Fraction 反算 (1/4>\alpha(5/4))、(7/5>1+\alpha)。
+- Evidence：参数化直接证明；独立 Python Fraction 计算覆盖 (alpha=1/6,1/10,1/100) 的严格不等式。有限算术核对不替代配置族证明。
+- Counterevidence / Objections：若外层能识别更强的共同容量状态或允许重开配置边，该反例不适用；(\alpha=1/5) 时严格 tiny 排除条件失效。
+- Status：failed-route boundary; not a hardness result; external review and novelty unverified。
+- Related Files：`research/questions/unrelated_machines/fixed_work_and_medium_config_barriers.md`；`research/current/unrelated_machines/model_and_classical_barriers.md`；`research/unrelated_machines/FAILED_ROUTES.md`。
+
+## UM-FIXED-WORK-CONVEX-POTENTIAL-BARRIER-v1：固定工作量与分离凸势锁定近二
+
+- Exact Statement / Quantifiers：对任意整数 (h\ge2,q\ge1)，令 (t=(h-1)/(hq))，用 (h) 个核心、(hq) 个私有叶、一个核心全可用的大任务 (B) 与每个 tiny 的 home/私有叶两条边 (t,1) 构造实例。则 OPT=1；给定 (T=1) 的最小总工作量分数支撑的任一 ST 槽匹配值为 (2-1/h)。对任意有限、非减、凸 (f:[0,3]\to\mathbb R)，若 (Delta=f(1)-f(0)>0)、(D=f(3)-f(2)) 且 (q>(1-1/h)D/\Delta)，则每个 (\sum_i f(L_i)) 全局最小调度仍有值至少 (2-1/h)。取 (q=h^2) 时任意固定相对工作量预算 (W\le\rho h) 的调度满足 (C_{\max}\ge2-1/h-(\rho-1)ht/(1-t))（\(\rho\ge1\)）。
+- Objects / Domain / Definitions：(P_{C_i,B}=1)、(P_{C_i,S_{i,r}}=t)、(P_{L_{i,r},S_{i,r}}=1)，其余边不可用；(m=h(1+q))、(n=1+hq)。
+- Assumptions / Scope：只排固定正支撑、固定总工作量放松和固定非减凸分离势；不排输入自适应 hinge/机器权重/非可加势/允许暂时增载的批量迁移。(f) 仅需在 ([0,3]) 有限。
+- Conclusion / Mechanism：最小工作量支撑把 tiny 叶边质量置零；迁出 (B)-核心 tiny 的叶增量 (f(1)-f(0)) 大于核心节省，故任一固定势全局最小解保留近二坏态；真正 OPT 通过重开边并非不可达。
+- Dependencies：本页 `fixed_work_and_medium_config_barriers.md` 的参数化证明；UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1 只作相邻背景，不替代本族证明。
+- Evidence：独立 Fraction 全枚举 ((h,q)=(2,1),(2,2),(3,1),(3,2)) 核验 OPT、(W_{\min}) 与槽值；((2,4), f(L)=L^2) 全状态枚举的最小势值为 (3/2)。
+- Counterevidence / Objections：昂贵叶边本身可被配置方法识别；hinge/自适应势可逐件迁移，因此不能升级为一般困难性或主目标反证。
+- Status：failed-route boundary; not a hardness result; external review and novelty unverified。
+- Related Files：`research/questions/unrelated_machines/fixed_work_and_medium_config_barriers.md`；`research/unrelated_machines/FAILED_ROUTES.md`；`research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md`。
+
+## 槽包络、弱H2及强二阶合同的精确分离
+
+### UM-ST-ENVELOPE-CONFIG-IDENTITY-v1：完整槽包络的精确调度表示与两种凸化身份
+
+- Exact Statement / Quantifiers：任意非负有理行的E=ΣΔp ceil(prefix x)；固定B子水平凸包恰配置多面体、至多d+1有理原子。全局min max E=OPT，可ST实际恢复；先固定B逐行凸化恰CONFIG，先凸化上图仅线性负载。
+- Objects / Domain / Definitions：UM-MODEL-v1；全部非负二进制有理/不可用输入，具体子域与合同见正文。槽包络量化所有合法P及x；H2下界只取正OPT/T>0，强校准为同一k≥3参数族。
+- Assumptions / Scope：精确表示不等于可求非凸选择；CONFIG的二倍gap为既有结论复用；未给主目标近似算法。
+- Conclusion：完整槽包络的精确调度表示与两种凸化身份，不改UM-TARGET-v1的OPEN状态。
+- Dependencies：UM-MODEL-v1, UM-ST-ROUND-v1, UM-CONF-GAP-v1；正文自足推导所列各共同前提。
+- Evidence：先陈述独立重构、冻结全文攻击、root亲自复核；最小精确运行见evidence/runs/unrelated_machines/slot_envelope_identity_audit.json。
+- Counterevidence / Objections：精确表示不等于可求非凸选择；CONFIG的二倍gap为既有结论复用；未给主目标近似算法。 共享二阶的强系统与仅共享一阶的弱系统身份绝不互换。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。无一般求解器，未认证全球新颖性或外部评审。
+- Related Files：`research/current/unrelated_machines/slot_envelope_and_configuration_identity.md`；`research/reviews/unrelated_machines/slot_envelope_identity_review.md`；`tests/audits/unrelated_machines/slot_envelope_identity.py`；`evidence/runs/unrelated_machines/slot_envelope_identity_audit.json`。
+
+### UM-WEAK-H2-CONFIG-MOMENT-GAP-v1：同一一阶配置与全局四阶矩合取的锐利二间隙
+
+- Exact Statement / Quantifiers：弱H2=C2-load(T)+共享一阶x的完整CONFIG(T)，一般正值sup OPT/T=2。k≥3,b=k²稀释资源星在T=1+(k−1)/(k²+1)有显式有理全局PSD/全localizer与同x CONFIG1，真实OPT=2−1/k。
+- Objects / Domain / Definitions：UM-MODEL-v1；全部非负二进制有理/不可用输入，具体子域与合同见正文。槽包络量化所有合法P及x；H2下界只取正OPT/T>0，强校准为同一k≥3参数族。
+- Assumptions / Scope：不共享行二阶且三阶仍可负；不含强二阶H2、完整SoS(CONFIG)或一般计算困难性；本族可直接最优解。
+- Conclusion：同一一阶配置与全局四阶矩合取的锐利二间隙，不改UM-TARGET-v1的OPEN状态。
+- Dependencies：UM-MODEL-v1, UM-C2-GENERAL-MULTISLICE-CONSTRUCTION-v1, UM-ST-ROUND-v1；正文自足推导所列各共同前提。
+- Evidence：先陈述独立重构、冻结全文攻击、root亲自复核；最小精确运行见evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json。
+- Counterevidence / Objections：不共享行二阶且三阶仍可负；不含强二阶H2、完整SoS(CONFIG)或一般计算困难性；本族可直接最优解。 共享二阶的强系统与仅共享一阶的弱系统身份绝不互换。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。无一般求解器，未认证全球新颖性或外部评审。
+- Related Files：`research/current/unrelated_machines/weak_h2_configuration_moment_gap.md`；`research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md`；`tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py`；`evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json`。
+
+### UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1：共享行二阶矩的条件单槽容量与资源星精确阈值
+
+- Exact Statement / Quantifiers：若容量一行CONFIG同机pair与全局M2共享，则任意端f有Σ_row y_fe≤x_f；在同一k≥3,b=k²无z星族，共享每行二阶CONFIG的强H2阈值恰2−1/k=OPT，所有T<OPT均不可行，真实Dirac达到。
+- Objects / Domain / Definitions：UM-MODEL-v1；全部非负二进制有理/不可用输入，具体子域与合同见正文。槽包络量化所有合法P及x；H2下界只取正OPT/T>0，强校准为同一k≥3参数族。
+- Assumptions / Scope：仅此族的强合同精确校准，不含一般强H2间隙改善或求解复杂度；该条件容量证明不需要负载localizer。
+- Conclusion：共享行二阶矩的条件单槽容量与资源星精确阈值，不改UM-TARGET-v1的OPEN状态。
+- Dependencies：UM-MODEL-v1；正文自足推导所列各共同前提。
+- Evidence：先陈述独立重构、冻结全文攻击、root亲自复核；最小精确运行见evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json。
+- Counterevidence / Objections：仅此族的强合同精确校准，不含一般强H2间隙改善或求解复杂度；该条件容量证明不需要负载localizer。 共享二阶的强系统与仅共享一阶的弱系统身份绝不互换。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。无一般求解器，未认证全球新颖性或外部评审。
+- Related Files：`research/current/unrelated_machines/weak_h2_configuration_moment_gap.md`；`research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md`；`tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py`；`evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json`。
 
 ## UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1：核心—私有资源的全层配额与真实近二整数障碍
 
