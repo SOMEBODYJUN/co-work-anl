@@ -1014,6 +1014,15 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1 | 每局部K和显式β可构造某i的C≤(2−β_i)T；真实状态OPT之和≤(2|K|−1)T，加权星全等号。 | 给两实际YES，未知OPT只用于存在证明。[正文](unrelated_machines/weighted_fanout_profile_boundary.md)、[审查](../reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md)。 |
 | UM-FANOUT-MISSING-ONE-THREE-HALVES-v1 | 任意两缺一OPT之和≤3T，至多一个>1.5T，全部和≤1.5qT；每q满二叉树同时取等。 | 可实际输出给定pair某一缺一状态三半σ；不排联合外部容量或不同读出合同。 |
 
+## 双轨阈值编码的实际负载边界
+
+| ID | 精确结果 | 身份 |
+| --- | --- | --- |
+| UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1 | 每变量两私有轨、selector两端时间1；每真实occurrence内部1/K(v,s)、外部单clause时间1/A_c，A_c≥1且arity≤2A_c−1。无额外jobs/预载/资格。任意源公式均可总位poly输出全σ且C≤3/2；存在selector时给本类3/2近似。10机15job重复occurrence例真实OPT=3/2，锐性仅为绝对T1界。 | [正文](unrelated_machines/dual_rail_threshold_soundness_boundary.md)、[审查](../reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md)；仅声明范围。 |
+| UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1 | 与scalar不同的真实P：外部每clause有min(A_c,m_c)台互异unit机器、port可至其任一台且时间1；arity≤2A_c。其余归一化轨不变。任意源均可总位poly输出全σ，轨≤3/2、unit≤1；14机15job重复例真实OPT=3/2，绝对T1界锐。 | [正文](unrelated_machines/dual_rail_threshold_soundness_boundary.md)、[审查](../reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md)；仅声明范围。 |
+| UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1 | 另一模型：port内部非负有理w_e、每轨总W≤1；selector1；外部统一scalar1/A、arity≤2A。给ρ≥1，空轨预处理，其余每轨指定exception满足W−w_e≤ρ−1。可总位poly完整C≤ρ且clause≤1。对ρ1，arity2A+1的两clause族真实OPT=1+1/A，显示arity假设锐。 | [正文](unrelated_machines/dual_rail_threshold_soundness_boundary.md)、[审查](../reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md)；仅声明范围。 |
+| UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1 | 归一化scalar的特殊族：A≥1,d=2A−1,k=2^(d−1)，含全部2^d符号clauses。R_B=Σ_s(s−B)_+ binom(d,s)、r_B=ceil(R_B/d)。真实OPT=min_{B=A..d}max(B/A,1+r_B/k)，可按显式展开P位poly构造。A≥2源弱阈值d−1仍NO，而OPT≤1+1/(2sqrt(d))+1/k→1。A3真实OPT9/8。 | [正文](unrelated_machines/dual_rail_threshold_soundness_boundary.md)、[审查](../reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md)；仅声明范围。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -316,3 +316,5 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 去重规则：`joint_matching_completion_and_block_cuts.md` 统一承载大边选择与条件块切面；`cyclic_batch_repair_and_fork_obstruction.md` 统一承载循环/分流/严格次二边界；`shared_sink_joint_macro_assignment.md` 统一承载单 sink 宏任务共同选择；`rooted_dag_degree_token_bridge.md` 统一承载需求树任务桥梁；`private_graft_and_resource_repetition.md` 与逐层 quota 文件统一承载反面放大障碍。工作桌面只保留入口和卡点，不复制正文、证据或 Claim。
 
 团队共同的下一门槛是：任意合法 `P`、候选 `T` 下，产生多项式可表示的共同容量状态，或者给出可验证 `FAIL⇒OPT>T`；状态必须一次性输出实际整数分配并守住所有机器，统一 ε 不得随 `K,q,r,n` 退化。boss3 的条件块选择和 boss6 的多目的地修复只有在同一状态中闭合，才算从局部路线进入主目标；否则保留为准确边界并停止同类微调。
+
+[双轨阈值编码边界](../current/unrelated_machines/dual_rail_threshold_soundness_boundary.md)：归一化scalar整类总有实际3/2（ST半质量直接推论），改unit容量亦总3/2，两种绝对T1界各有完整锐例。非均匀单例外有精确匹配合同；完整signedcube的真实OPT有min_B精确式且趋1。四成本模型分开，未将NO源自动解码为NO调度，主目标正反面仍OPEN。

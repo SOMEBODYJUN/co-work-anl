@@ -127,3 +127,5 @@
 [整束冲突偷换的具体失败](research/current/unrelated_machines/duplication_state_majority_floor.md)：残余label只需选择部分孩子，行/列全束交叠不能禁止二者同时出现在真实树。sK4可选5组各3格得5/8；旧所有K≥s的1/2锐性撤回，正确的多数下界和K≥2s锐例保留。重试需按每标签整数配额的真实Hall容量解码，不能用全束交叠图代替。
 
 [增加独立预载扇出不能消除缺一逃逸](research/current/unrelated_machines/weighted_fanout_profile_boundary.md)：给only-a与all-B实际YES，则任意输出pair的两个缺一OPT和≤3T；内部图增大、多任务、任意源端时间均不能让每缺一状态接近二。只有one-output-free的星虽可2−1/q，也不满足这个NO合同。回收加权闭包与真实状态预算；重试须给跨模块共同容量或另一读出合同及完整源解码。
+
+[仅严格端正确的双轨阈值编码无法自动保留近二NO](research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md)：C1确等价源严格解，但C>1可只外送真轨一部分ports。scalar整类及unit外部容量整类均有实际3/2；全cube源连弱端也NO却实际OPT趋1。否定范围仅明确归一化/单例外合同；可回收整数流、原P锐例和cube精确式。重试需不同的跨层一致性/相关选择以及对所有低负载实际σ的可靠解码。

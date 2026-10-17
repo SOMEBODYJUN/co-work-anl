@@ -1439,3 +1439,63 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：不能将至多一个缺一大于三半升级为全部≤三半；正文5/4,7/4,1反例。β零权、T0逻辑状态、原两端不同时间及unknownμ不作oracle均已核。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；给两YES实际构造已实现；外审/独立论文价值未认证，UM-TARGET-v1及一般反面仍OPEN。
 - Related Files：`research/current/unrelated_machines/weighted_fanout_profile_boundary.md`、`research/reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md`、`evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json`、`examples/unrelated_machines/weighted_fanout_profile_star.json`。
+
+## UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1：归一化双轨全类的实际三半界
+
+- Exact Statement：每变量两私有轨、selector两端时间1；每真实occurrence内部1/K(v,s)、外部单clause时间1/A_c，A_c≥1且arity≤2A_c−1。无额外jobs/预载/资格。任意源公式均可总位poly输出全σ且C≤3/2；存在selector时给本类3/2近似。10机15job重复occurrence例真实OPT=3/2，锐性仅为绝对T1界。
+- Objects / Definitions：正文该ID自己的真实成本模型，所有port为不可拆分occurrence，所有机器共同实际负载，非抽象token目标。
+- Domain：明确显式输入、二进制整数/有理时间；没有声明之外资格/背景job；空任务添dummy，K0不除零；重复occurrence合法。
+- Quantifiers：∀显式变量/occurrence、各binary A_c；K可0且不平衡。无需SAT/OPT证书；∃确定性位poly实际构造。
+- Assumptions：必须使用该段成本、arity与指定证书，四合同不互换。
+- Scope：仅上述具体编码、构造及sharp实例；未证明一般UM-TARGET-v1正反面，也未给一般近二NP困难性。
+- Conclusion / Mechanism：ST半质量有序槽直接推论；联合quarter流为另一实现，不主张新算法。
+- Dependencies：UM-MODEL-v1及正文独立定义；scalar用经典ST半质量直接推论，其他采用自足整数匹配/流和计数；cube另依归一化模型定义与全符号对称，不由三半界推出精确OPT。
+- Evidence：两内部数学审查与root全文/代码亲核、原矩阵/全负载回算；具体有限范围冻结于`evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json`。
+- Counterevidence / Objections：固定exception与自由max条件已修；绝对界不等于近似比锐性；split模式不是物理σ枚举；cube A1非NO且按显式规模计，A20最优B21排除总取B=A。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；外审/论文价值未认证；一般目标及其反面OPEN。
+- Related Files：`research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md`、`research/reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md`、`tests/audits/unrelated_machines/normalized_dual_rail_three_halves.py`, `tests/audits/unrelated_machines/normalized_dual_rail_half_slot_independent.py`, `examples/unrelated_machines/dual_rail_scalar_and_unit_sharp_input.json`, `evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json`。
+
+## UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1：split unit外部容量的全类三半界
+
+- Exact Statement：与scalar不同的真实P：外部每clause有min(A_c,m_c)台互异unit机器、port可至其任一台且时间1；arity≤2A_c。其余归一化轨不变。任意源均可总位poly输出全σ，轨≤3/2、unit≤1；14机15job重复例真实OPT=3/2，绝对T1界锐。
+- Objects / Definitions：正文该ID自己的真实成本模型，所有port为不可拆分occurrence，所有机器共同实际负载，非抽象token目标。
+- Domain：明确显式输入、二进制整数/有理时间；没有声明之外资格/背景job；空任务添dummy，K0不除零；重复occurrence合法。
+- Quantifiers：∀显式输入、非负/空轨及巨大binary A_c；∃无SAT/OPT oracle的实际构造。
+- Assumptions：必须使用该段成本、arity与指定证书，四合同不互换。
+- Scope：仅上述具体编码、构造及sharp实例；未证明一般UM-TARGET-v1正反面，也未给一般近二NP困难性。
+- Conclusion / Mechanism：变量供给floor((K++K−)/2)的共享整数流，再挑达到ceil(K_s/2)的一sign，只保留该sign外送。
+- Dependencies：UM-MODEL-v1及正文独立定义；scalar用经典ST半质量直接推论，其他采用自足整数匹配/流和计数；cube另依归一化模型定义与全符号对称，不由三半界推出精确OPT。
+- Evidence：两内部数学审查与root全文/代码亲核、原矩阵/全负载回算；具体有限范围冻结于`evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json`。
+- Counterevidence / Objections：固定exception与自由max条件已修；绝对界不等于近似比锐性；split模式不是物理σ枚举；cube A1非NO且按显式规模计，A20最优B21排除总取B=A。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；外审/论文价值未认证；一般目标及其反面OPEN。
+- Related Files：`research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md`、`research/reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md`、`tests/audits/unrelated_machines/split_capacity_dual_rail_three_halves.py`, `examples/unrelated_machines/dual_rail_scalar_and_unit_sharp_input.json`, `evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json`。
+
+## UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1：非均匀内端的单例外匹配合同
+
+- Exact Statement：另一模型：port内部非负有理w_e、每轨总W≤1；selector1；外部统一scalar1/A、arity≤2A。给ρ≥1，空轨预处理，其余每轨指定exception满足W−w_e≤ρ−1。可总位poly完整C≤ρ且clause≤1。对ρ1，arity2A+1的两clause族真实OPT=1+1/A，显示arity假设锐。
+- Objects / Definitions：正文该ID自己的真实成本模型，所有port为不可拆分occurrence，所有机器共同实际负载，非抽象token目标。
+- Domain：明确显式输入、二进制整数/有理时间；没有声明之外资格/背景job；空任务添dummy，K0不除零；重复occurrence合法。
+- Quantifiers：∀上述显式P、ρ、指定exceptions；∃实际完整构造；∀A≥1存在越界锐例。
+- Assumptions：必须使用该段成本、arity与指定证书，四合同不互换。
+- Scope：仅上述具体编码、构造及sharp实例；未证明一般UM-TARGET-v1正反面，也未给一般近二NP困难性。
+- Conclusion / Mechanism：两exception候选各半质量与clause容量A的整数匹配；不能用自由max替换固定指定端口。
+- Dependencies：UM-MODEL-v1及正文独立定义；scalar用经典ST半质量直接推论，其他采用自足整数匹配/流和计数；cube另依归一化模型定义与全符号对称，不由三半界推出精确OPT。
+- Evidence：两内部数学审查与root全文/代码亲核、原矩阵/全负载回算；具体有限范围冻结于`evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json`。
+- Counterevidence / Objections：固定exception与自由max条件已修；绝对界不等于近似比锐性；split模式不是物理σ枚举；cube A1非NO且按显式规模计，A20最优B21排除总取B=A。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；外审/论文价值未认证；一般目标及其反面OPEN。
+- Related Files：`research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md`、`research/reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md`、`tests/audits/unrelated_machines/dual_rail_one_exception_independent.py`, `examples/unrelated_machines/dual_rail_exception_arity_sharp_certificates.json`, `evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json`。
+
+## UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1：完整符号cube的真实OPT精确前沿与近一逃逸
+
+- Exact Statement：归一化scalar的特殊族：A≥1,d=2A−1,k=2^(d−1)，含全部2^d符号clauses。R_B=Σ_s(s−B)_+ binom(d,s)、r_B=ceil(R_B/d)。真实OPT=min_{B=A..d}max(B/A,1+r_B/k)，可按显式展开P位poly构造。A≥2源弱阈值d−1仍NO，而OPT≤1+1/(2sqrt(d))+1/k→1。A3真实OPT9/8。
+- Objects / Definitions：正文该ID自己的真实成本模型，所有port为不可拆分occurrence，所有机器共同实际负载，非抽象token目标。
+- Domain：明确显式输入、二进制整数/有理时间；没有声明之外资格/背景job；空任务添dummy，K0不除零；重复occurrence合法。
+- Quantifiers：∀整数A≥1；输入/输出已显式展开，非按log A多项式。近一NO及弱解码失败仅A≥2，不声称该族本身NP-hard。
+- Assumptions：必须使用该段成本、arity与指定证书，四合同不互换。
+- Scope：仅上述具体编码、构造及sharp实例；未证明一般UM-TARGET-v1正反面，也未给一般近二NP困难性。
+- Conclusion / Mechanism：完整cube符号同构、整数内留计数下界、变量置换对称分数flow与整数化精确上界；必须min_B，不能总取B=A。
+- Dependencies：UM-MODEL-v1及正文独立定义；scalar用经典ST半质量直接推论，其他采用自足整数匹配/流和计数；cube另依归一化模型定义与全符号对称，不由三半界推出精确OPT。
+- Evidence：两内部数学审查与root全文/代码亲核、原矩阵/全负载回算；具体有限范围冻结于`evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json`。
+- Counterevidence / Objections：固定exception与自由max条件已修；绝对界不等于近似比锐性；split模式不是物理σ枚举；cube A1非NO且按显式规模计，A20最优B21排除总取B=A。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；外审/论文价值未认证；一般目标及其反面OPEN。
+- Related Files：`research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md`、`research/reviews/unrelated_machines/dual_rail_threshold_soundness_boundary_review.md`、`tests/audits/unrelated_machines/balanced_dual_rail_fullcube.py`, `tests/audits/unrelated_machines/balanced_dual_rail_fullcube_independent.py`, `examples/unrelated_machines/dual_rail_fullcube_A3_actual_certificate.json`, `evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json`。
