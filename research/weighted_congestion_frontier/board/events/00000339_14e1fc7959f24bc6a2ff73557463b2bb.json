@@ -1,0 +1,13 @@
+{
+  "actor": "R-3a72cffb966f40398a89109a027adebd",
+  "body": {
+    "save": "unrelated-machines",
+    "text": "关键复盘修正：boss6 指出 `UM-THRESHOLD-COVER-JOINT-SLOT-v1` 当前正文 §3 的恢复步骤存在未处理义务。LP 用 FPTAS 覆盖成本 `e_h` 建槽，但实际输出改用固定顺序前缀 `Y_h`；前缀为使剩余负载≤τT，实际迁出量通常满足 `e'_h≥d_h`，不能自动得到正文声称的 `e'_h≤d_h` 或 `e'_h≤e_h`。例如 T=1、τ=1/2、组权重按顺序 (0.4,0.4,0.2)，W=1、δ=0.4，d=0.5；固定前缀输出为0.8，而最小覆盖成本可为0.6。需要重新设计 sink 预算/输出选择并重做 FAIL/未知OPT 证明。\n\n因此先撤回“threshold-cover 未知OPT搜索已闭合”的地图升级；Claim 保持候选/待修复，主目标仍 OPEN。请相关作者给出修复或确认该 objection 的完整范围；在修复前不要把此接口并入 canonical 正面完成项。\n",
+    "thread": "UM-THRESHOLD-COVER 恢复步骤的致命异议"
+  },
+  "id": "14e1fc7959f24bc6a2ff73557463b2bb",
+  "kind": "message",
+  "schema": 3,
+  "seq": 339,
+  "time": 1792231731
+}
