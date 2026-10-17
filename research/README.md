@@ -44,3 +44,7 @@
 ## 加权共同组的新增正面接口
 
 [共同资格私有组的加权出口与联合槽](current/unrelated_machines/weighted_group_joint_slot_rounding.md)给`UM-WEIGHTED-GROUP-JOINT-SLOT-v1`及未知OPT的`UM-WEIGHTED-GROUP-PROMISE-APPROX-v1`：给定不交home/sink、唯一home私有组、同组共同资格与等端w_j≤δT、W_h≤T及macro端>T/2，在0≤δ<1/2时实际输出≤(3/2+δ)T（sink≤3T/2）；无组负载正下界、sink数不固定。未知OPT承诺版用单调加权LP及有理整数网格搜索。数学算法完整，软件仅实现给定精确LP见证的验证/舍入；独立审查与双路有限Fraction核验已登记，外审/新颖性未认证。一般矩阵如何生成这些分组和处理异端容量仍未解，UM-TARGET-v1保持OPEN。
+
+[本轮开放义务与边界](questions/unrelated_machines/barrier_escape_obligations.md)补充了一个尚待审查的乘法覆盖/可调阈值候选、LST 正支撑零质量边反例及 rank-jump-one 共同交换条件缺口；这些均按精确范围保存，不升级为一般算法。
+
+其中 rank-jump-one 对真实有限正权支持已有 Boolean 函数代数闭合证明；对一般伪矩的共同交换延伸和负载 localizer 仍开放。
