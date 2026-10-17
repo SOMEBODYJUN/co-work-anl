@@ -6167,15 +6167,77 @@
       "limit": "SCHA is unproved and stronger than known hardness; this is not an unconditional UM-TARGET refutation"
     },
     {
+      "id": "um_single_layer_quota_value_v1",
+      "claims": [
+        "UM-SINGLE-LAYER-QUOTA-VALUE-v1"
+      ],
+      "status": "complete stated-scope proof; exact audit; external review and novelty unverified",
+      "applies_when": [
+        "单层需求DAG：根q、x需求1、e_x需求K、资源邻域A_x及零需求终端"
+      ],
+      "produces": "b*=max_t min(1,nu_t/q,t/K)，并给逐层配额soundness义务",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/single_layer_quota_hypergraph.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/single_layer_quota_hypergraph_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/reverse_method_boundaries_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
+      ],
+      "source_role": "仅作MMDA/Santa桥梁背景；单层恒等式为本仓自足推导，不冒充文献定理",
+      "limit": "只限制单层共享资源接口；不证明nu_t一般复杂度或UM近2困难性"
+    },
+    {
+      "id": "um_affine_complement_cardinality_boundary_v1",
+      "claims": [
+        "UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1"
+      ],
+      "status": "complete stated-scope obstruction; exact audit; external review and novelty unverified",
+      "applies_when": [
+        "Santa最大最小分配仿射编码p_ij=B−lambda u_ij、dummy补足及按数量裁剪解码"
+      ],
+      "produces": "等基数时互补恒等式；ρ>1允许q+1件溢出，具体ρ=1.9裁剪可丢失全部源效用",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/affine_complement_cardinality_boundary.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/affine_complement_cardinality_boundary.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/affine_complement_cardinality_boundary_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/reverse_method_boundaries_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/bamas_et_al_2023_santa_claus_makespan_matroids_v1.pdf"
+      ],
+      "source_role": "仅作Santa—Makespan问题背景；仿射反例为本仓自足推导，不冒充来源结论",
+      "limit": "只排除仿射互补加黑盒基数裁剪；不排过载gadget或其它困难性归约"
+    },
+    {
       "id": "um_k_uniform_bundle_floor_v1",
       "claims": [
         "UM-K-UNIFORM-BUNDLE-FLOOR-v1"
       ],
-      "status": "complete stated-scope obstruction; exact finite audit; external review and novelty unverified",
+      "status": "complete stated-scope obstruction; exact audit; external review and novelty unverified",
       "applies_when": [
-        "根q→X demand1→超边demandK→资源零需求的k-均匀资源束DAG"
+        "根—X—超边—资源需求树，每超边资源束大小至多k，超边需求K"
       ],
-      "produces": "b*=max_t min(nu_t/q,t/K)的分层束匹配恒等式和近2归约的所有低层soundness义务",
+      "produces": "b*=max_{t<=min(k,K)} min(nu_t/q,t/K)",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md"
@@ -6192,8 +6254,8 @@
       "sources": [
         "history/source/literature/unrelated_machines/bamas_2025_lift_project_santa_claus_v2.pdf"
       ],
-      "source_role": "需求树桥梁为依赖；分层恒等式为本仓自足推导",
-      "limit": "只限制层状局部资源束接口；不排共享标签/高距离一致性归约，不关闭UM-TARGET-v1"
+      "source_role": "仅作需求树/MMDA背景；k-均匀恒等式为本仓自足推导",
+      "limit": "只推广单层共享资源地板；不提供近2困难性"
     }
   ]
 }

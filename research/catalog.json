@@ -9088,19 +9088,92 @@
       ]
     },
     {
-      "path": "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
-      "title": "k-均匀资源束的分层匹配地板",
-      "purpose": "精确刻画根—X—超边—资源需求树中的所有j-of-k束匹配逃逸，推广三维匹配的1/2地板并固定近2归约义务。",
+      "path": "research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md",
+      "title": "单层配额超图的精确值与逐层一致性义务",
+      "purpose": "给共享资源需求树接口一个完整b*恒等式，并把近2归约需要同时压低的所有配额层写成可核验条件。",
       "topic": "unrelated_machines",
       "role": "obstruction",
       "related_paths": [
-        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md"
+        "research/current/unrelated_machines/rooted_dag_degree_token_bridge.md",
+        "tests/audits/unrelated_machines/single_layer_quota_hypergraph.py"
+      ]
+    },
+    {
+      "path": "research/current/unrelated_machines/affine_complement_cardinality_boundary.md",
+      "title": "仿射互补负载的基数解码边界",
+      "purpose": "记录Santa仿射互补编码在等基数时的恒等式、ρ近似允许溢出的计数反例和按数量裁剪失效的精确矩阵。",
+      "topic": "unrelated_machines",
+      "role": "obstruction",
+      "related_paths": [
+        "research/reviews/unrelated_machines/reverse_method_boundaries_review.md",
+        "tests/audits/unrelated_machines/affine_complement_cardinality_boundary.py"
+      ]
+    },
+    {
+      "path": "research/reviews/unrelated_machines/reverse_method_boundaries_review.md",
+      "title": "反面路线两项方法边界的独立复核",
+      "purpose": "独立检查单层配额恒等式和仿射互补基数反例的量词、边界、精确算术与不能推出的范围。",
+      "topic": "unrelated_machines",
+      "role": "review",
+      "related_paths": [
+        "research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md",
+        "research/current/unrelated_machines/affine_complement_cardinality_boundary.md"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/single_layer_quota_hypergraph.py",
+      "title": "单层配额超图恒等式的精确枚举审计",
+      "purpose": "独立枚举小资源邻域的根树与不交配额族，用Fraction核对b*恒等式及零值边界。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/affine_complement_cardinality_boundary.py",
+      "title": "仿射互补基数边界的精确算术审计",
+      "purpose": "用Fraction复核ρ=1.9溢出矩阵、等基数负载恒等式和统一效用计数条件。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/affine_complement_cardinality_boundary.md"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/single_layer_quota_hypergraph_audit.json",
+      "title": "单层配额超图恒等式审计冻结结果",
+      "purpose": "冻结全枚举4788例、随机100例、脚本哈希和有限核验边界，明确不替代一般证明。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "tests/audits/unrelated_machines/single_layer_quota_hypergraph.py"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/affine_complement_cardinality_boundary_audit.json",
+      "title": "仿射互补基数边界审计冻结结果",
+      "purpose": "冻结ρ=1.9具体反例和统一效用计数核验的命令、版本、哈希与范围。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "tests/audits/unrelated_machines/affine_complement_cardinality_boundary.py"
+      ]
+    },
+    {
+      "path": "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
+      "title": "k-均匀资源束的分层匹配地板",
+      "purpose": "把单层配额恒等式推广到可选超边和大小至多k的资源束，明确所有j-of-k匹配层的反面义务。",
+      "topic": "unrelated_machines",
+      "role": "obstruction",
+      "related_paths": [
+        "tests/audits/unrelated_machines/k_uniform_bundle_matching_floor.py"
       ]
     },
     {
       "path": "tests/audits/unrelated_machines/k_uniform_bundle_matching_floor.py",
-      "title": "k-均匀资源束地板的精确枚举审计",
-      "purpose": "用Fraction穷举小规模资源束需求树，核对分层束匹配恒等式和单资源地板。",
+      "title": "k-均匀资源束地板的精确审计",
+      "purpose": "用Fraction和小规模枚举核验可选超边的逐层匹配恒等式。",
       "topic": "unrelated_machines",
       "role": "audit_code",
       "related_paths": [
@@ -9109,8 +9182,8 @@
     },
     {
       "path": "evidence/runs/unrelated_machines/k_uniform_bundle_matching_floor_audit.json",
-      "title": "k-均匀资源束地板审计冻结结果",
-      "purpose": "记录资源束地板审计脚本哈希、枚举范围和固定种子结果；有限运行不替代一般证明。",
+      "title": "k-均匀资源束地板审计结果",
+      "purpose": "冻结k-均匀资源束精确核验的命令、范围和结果，明确有限审计不替代一般证明。",
       "topic": "unrelated_machines",
       "role": "frozen_evidence",
       "related_paths": [

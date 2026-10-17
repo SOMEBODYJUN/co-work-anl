@@ -228,6 +228,10 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1复用紧凑N=2k²族，T1时每机器每个合法
 
 ## 三维匹配需求树的低比例地板
 
+[仿射互补负载的基数解码边界](affine_complement_cardinality_boundary.md)记录 `UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1`：p=B−λu 在等基数时反转Santa目标，但任何ρ>1的makespan界都允许q+1件溢出；ρ=1.9的精确矩阵显示按数量裁剪可把源最小效用从1变0。它只否定该黑盒解码接口。
+
+[单层配额超图的精确值](single_layer_quota_hypergraph_obstruction.md)冻结 `UM-SINGLE-LAYER-QUOTA-VALUE-v1`：共享资源邻域的根树值恰为 `max_t min(1,ν_t/q,t/K)`；因此近2归约必须同时压低所有中间配额层，而不只是完整K层。该恒等式与4788个Fraction全枚举/100个随机边界已核验，不是一般困难性。
+
 [三维匹配需求树障碍](three_dimensional_matching_demand_floor_obstruction.md)冻结 `UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1`：标准 (D_K(A)) 编码满足
 (b^*=max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\})，其中 (mu) 是 (X) 到 (Y\cup Z) 的一资源匹配、(
 u) 是三维匹配。故完美 YES 的值恰为 (2/K)；放大三元组需求不能把 NO 压低而保持 YES 值1，固定 (K=2) 又留下单终端地板。公共资源族 (Q_{q,K}) 的精确 Hall 值可趋零，但尚未编码 NP 一致性。该结果只限制这一直接桥梁，不是一般困难性；下一义务是共享标签/高距离一致性并控制位长。

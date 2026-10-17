@@ -172,6 +172,13 @@ UM-FROZEN-MACRO-TINY-REOPT-GAP-v1允许微任务全部有限边和真实全局�
 
 [高围长仙人掌配置锐界与真实块算法](../current/unrelated_machines/cactus_configuration_gap_and_block_exactness.md)分开三个身份：UM-CACTUS-HIGH-GIRTH-CONFIG-GAP-v1使任意给定围长的simple cactus仍CONFIG supgap2；UM-TWO-CHOICE-BLOCK-RANK-EXACT-v1以最大顶点块环秩b在2^b poly(L)输出精确调度；UM-PSEUDOFOREST-CONFIG-EXACT-v1仅在每连通分量≤单环时使CONFIG精确。平行任务不能合并计参。正文→冻结攻击→三份实际代码/输入/真实配置及调度证书/冻结结果可复现。AMO对称cactus与VW为已知祖先，未认证扩展新颖性。真正near2困难性不能只靠LPgap、深树或高围长；support≤2且b=O(log L)的输出族可精确解，仍须更强源相关一致性。主目标与反面均未证明。
 
+## 单层共享资源的逐层 soundness
+
+[仿射互补基数边界](../current/unrelated_machines/affine_complement_cardinality_boundary.md)另排除一个反向尝试：`p=B−λu` 只有在每机恰取q件时才等价于Santa；对任意ρ>1，q足够大时q+1件溢出仍在ρ界内，按数量裁剪可摧毁源效用。故需要额外过载/槽选择器，不能把仿射互补当作近2整数gap。
+
+
+[单层配额超图的精确值](../current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md)给 `UM-SINGLE-LAYER-QUOTA-VALUE-v1`：根—选择点—配额中间点—共享资源接口的真实值为 `max_{t≤K} min(1,ν_t/q,t/K)`。这把反面归约的必要条件写成所有配额层的逐层整数一致性；完整匹配层 `ν_K` 的 gap 单独不足。精确证明和4788个全枚举/100个随机Fraction审计已保存。该结果是方法边界，不是近2困难性；下一步是寻找可位多项式编码的跨层一致性或记录其不可行性。
+
 ## 反面路线的精确放大断点
 
 [私有需求树组合与共享重复](../current/unrelated_machines/private_graft_and_resource_repetition.md)给UM-PRIVATE-GRAFT-NO-AMPLIFICATION-v1及UM-RESOURCE-REPETITION-SOUNDNESS-NO-v1：私有递归只取瓶颈，完整YES保留时不能缩小固定NO比例；完全元素池等价分母受限分数匹配，parity源坐标张量所有t≥2反变YES。不是近2困难性，UM-TARGET-v1仍OPEN。

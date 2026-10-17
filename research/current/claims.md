@@ -875,6 +875,18 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-3DM-DEMAND-FLOOR-OBSTRUCTION-v1 | 标准 \(D_K(A)\) 需求树满足 \(b^*=\max\{\min(\mu/q,1/K),\min(\nu/q,2/K)\}\)；完美三维匹配时 \(b^*=2/K\)。 | 直接3DM桥梁的自足障碍；\(K\) 放大同时降低YES，固定 \(K=2\) 留下一终端地板，且 \(\mu<q/2\) 时可由普通二分图匹配精确求值。不是一般近2困难性。 [正文](unrelated_machines/three_dimensional_matching_demand_floor_obstruction.md)、[精确审计](../../tests/audits/unrelated_machines/three_dimensional_matching_demand_floor.py)、[冻结结果](../../evidence/runs/unrelated_machines/three_dimensional_matching_demand_floor_audit.json)。 |
 
+## UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1：仿射互补负载的基数解码边界
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1 | 在源最大最小分配的仿射编码 p_ij=B−λu_ij 中，等基数q时有 L_i=qB−λu_i；但对任意1<ρ<2，取整数q≥1/(ρ−1)的全同效用实例，ρ-近似makespan允许一台机器取q+1件，故乘性界不恢复等基数。具体ρ=1.9的2机4资源矩阵中，1.5-近似溢出解截断后源最小效用可由2降到0。 | 精确计数反例与Fraction证书；只限制“仿射互补+dummies+近似后按数量裁剪”解码，不是一般困难性或所有归约否定。 [正文](unrelated_machines/affine_complement_cardinality_boundary.md)、[审查](../reviews/unrelated_machines/reverse_method_boundaries_review.md)、[审计](../../tests/audits/unrelated_machines/affine_complement_cardinality_boundary.py)、[冻结结果](../../evidence/runs/unrelated_machines/affine_complement_cardinality_boundary_audit.json)。 |
+
+## UM-SINGLE-LAYER-QUOTA-VALUE-v1：单层配额超图的精确值与逐层 soundness
+
+| ID | Exact Statement | 范围、状态与入口 |
+| --- | --- | --- |
+| UM-SINGLE-LAYER-QUOTA-VALUE-v1 | 对根需求q、选择点x需求1、中间点e_x需求K及资源邻域A_x的单层需求DAG，令ν_t为最多可选且各领取t个两两不交资源的x数，则 b*=max_{0≤t≤K} min(1,ν_t/q,t/K)，对应桥梁调度OPT=2−b*。完整YES b*=1要求ν_K=q；NO近2 gap则必须同时压低所有中间配额层ν_t/q，而仅控制ν_K不充分。 | 自足上下界证明；Fraction全枚举4788例+100随机边界通过。它是共享资源归约的精确必要义务，不是一般近2困难性；UM-TARGET-v1仍OPEN。 [正文](unrelated_machines/single_layer_quota_hypergraph_obstruction.md)、[审计](../../tests/audits/unrelated_machines/single_layer_quota_hypergraph.py)、[冻结结果](../../evidence/runs/unrelated_machines/single_layer_quota_hypergraph_audit.json)。 |
+
 ## UM-SANTA-NO-CONSTANT-CONDITIONAL-v1：Santa Claus 无常数近似假设下的条件反面
 
 | ID | Exact Statement | 范围、状态与入口 |

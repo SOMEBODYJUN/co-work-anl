@@ -8560,14 +8560,35 @@
       "status": "conditional proof under SCHA; assumption unproved; external review and novelty unverified"
     },
     {
+      "id": "UM-SINGLE-LAYER-QUOTA-VALUE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单层配额超图精确值",
+      "detail": "b*=max_t min(1,nu_t/q,t/K)，完整YES需nu_K=q，NO需逐层soundness。",
+      "refs": [
+        "research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md"
+      ],
+      "status": "complete stated-scope proof; exact finite audit; external review and novelty unverified"
+    },
+    {
+      "id": "UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "仿射互补基数解码边界",
+      "detail": "p=B−lambda u只有在恰q件时反转目标；近似makespan允许q+1件溢出。",
+      "refs": [
+        "research/current/unrelated_machines/affine_complement_cardinality_boundary.md"
+      ],
+      "status": "complete stated-scope obstruction; exact finite audit; external review and novelty unverified"
+    },
+    {
       "id": "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
       "kind": "claim",
       "track": "unrelated_machines",
-      "title": "k-均匀资源束的分层匹配地板",
-      "detail": "根—X—超边—资源DAG的b*精确由所有t-束匹配层给出；三维匹配1/2逃逸是特例。",
+      "title": "k-均匀资源束分层匹配地板",
+      "detail": "b*=max_t min(nu_t/q,t/K)，必须同时控制所有j-of-k层。",
       "refs": [
-        "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
-        "research/current/unrelated_machines/README.md"
+        "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md"
       ],
       "status": "complete stated-scope obstruction; exact finite audit; external review and novelty unverified"
     }
@@ -20867,29 +20888,87 @@
       "status": "conditional open barrier"
     },
     {
-      "id": "L-UM-K-UNIFORM-BUNDLE-FLOOR-v1",
-      "kind": "limits",
+      "id": "D-UM-SINGLE-LAYER-QUOTA-VALUE-v1",
+      "kind": "derives",
       "track": "unrelated_machines",
       "premises": [
         "UM-DAG-DEGREE-TOKEN-IDENTITY-v1"
       ],
-      "conclusion": "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
-      "statement": "所有j-of-k匹配层共同决定b*；只压低完整超边匹配不能得到近2 soundness。",
+      "conclusion": "UM-SINGLE-LAYER-QUOTA-VALUE-v1",
+      "statement": "单层需求树的根、选择点和配额中间点的任意正评分树等价于不交t-资源族，故b*为逐层max-min恒等式。",
       "refs": [
-        "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
-        "tests/audits/unrelated_machines/k_uniform_bundle_matching_floor.py"
+        "research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md"
+      ],
+      "status": "self-contained proof"
+    },
+    {
+      "id": "L-UM-SINGLE-LAYER-QUOTA-VALUE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SINGLE-LAYER-QUOTA-VALUE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "共享资源近2归约必须控制所有中间配额层；完整K层匹配gap单独不足，仍不构成一般困难性。",
+      "refs": [
+        "research/current/unrelated_machines/single_layer_quota_hypergraph_obstruction.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
+    },
+    {
+      "id": "D-UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1",
+      "statement": "等基数时仿射互补负载有精确恒等式，但统一处理时间的q+1溢出和ρ=1.9矩阵给出黑盒基数解码反例。",
+      "refs": [
+        "research/current/unrelated_machines/affine_complement_cardinality_boundary.md",
+        "tests/audits/unrelated_machines/affine_complement_cardinality_boundary.py"
+      ],
+      "status": "self-contained obstruction"
+    },
+    {
+      "id": "L-UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-AFFINE-COMPLEMENT-CARDINALITY-BOUNDARY-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "近2仿射互补归约需要额外过载或槽选择器，不能依赖近似输出自动恢复等基数；一般反面仍开放。",
+      "refs": [
+        "research/current/unrelated_machines/affine_complement_cardinality_boundary.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "method boundary"
     },
     {
-      "id": "L-UM-K-UNIFORM-BUNDLE-FLOOR-OPEN-v1",
+      "id": "D-UM-K-UNIFORM-BUNDLE-FLOOR-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SINGLE-LAYER-QUOTA-VALUE-v1"
+      ],
+      "conclusion": "UM-K-UNIFORM-BUNDLE-FLOOR-v1",
+      "statement": "允许每个选择点拥有多个候选超边且每束大小至多k时，树值仍按全部t-束匹配层取最大最小值。",
+      "refs": [
+        "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md"
+      ],
+      "status": "self-contained extension"
+    },
+    {
+      "id": "L-UM-K-UNIFORM-BUNDLE-FLOOR-v1",
       "kind": "limits",
       "track": "unrelated_machines",
       "premises": [
         "UM-K-UNIFORM-BUNDLE-FLOOR-v1"
       ],
       "conclusion": "UM-TARGET-v1",
-      "statement": "仍需共享标签/高距离一致性，阻止每个低t层逃逸并保持固定epsilon下的位多项式规模。",
+      "statement": "k-均匀共享束仍需所有j-of-k层的整数soundness，不是一般近2困难性。",
       "refs": [
         "research/current/unrelated_machines/k_uniform_bundle_matching_floor.md",
         "research/unrelated_machines/RESEARCH_STATE.md"
