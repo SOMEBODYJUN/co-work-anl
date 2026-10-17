@@ -110,3 +110,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 新增UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1、UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1、UM-TARGET-TERNARY-SELECTOR-EQUIVALENCE-v1、UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1、UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1；[精确专题账本](research/unrelated_machines/CLAIMS.md)分开双流实际算法、阈值正规形/条件等价与两见证锐界，不升级UM主目标。
 
 新增 UM-LIST-AGREEMENT-DEGREE-BUDGET-v1；[专题账本](research/unrelated_machines/CLAIMS.md)记录实际list构造、全agree逐图锐阈值和source soundness必要度数，不是调度hardness。
+
+新增 UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2；[专题账本](research/unrelated_machines/CLAIMS.md)明确rare-tail源、Ω(g)必要性及未实现的固定常数物理费，非一般UM hardness。

@@ -10348,6 +10348,42 @@
         "research/reviews/unrelated_machines/list_agreement_degree_budget_review.md"
       ],
       "status": "complete stated-scope proof; statement-first and read-after internal review; no new implementation; target open; novelty unverified"
+    },
+    {
+      "id": "UM-PARTIAL-MINREP-EXPLICIT-REGULAR-MODEL",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "平衡全投影源与部分覆盖总列表预算",
+      "detail": "显式平衡D-regular全投影游戏，平行约束逐条计；binary g≥2、0<rho≤1，N≥2，Q≥2；cost为全部顶点列表总大小。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md"
+      ],
+      "status": "explicit stated-scope model"
+    },
+    {
+      "id": "UM-PERFECT-COMPLETE-PCP-REPETITION-SOURCE",
+      "kind": "source",
+      "track": "unrelated_machines",
+      "title": "完美完备双正规PCP及投影重复",
+      "detail": "Moshkovitz final Thm2.1/2.3及Dinur–Steurer Thm1.1；固定g,rho才组合SAT归约，重复字母表poly(1/gamma)。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "history/source/literature/unrelated_machines/dinur_steurer_2014_parallel_repetition_author.pdf",
+        "history/source/literature/unrelated_machines/moshkovitz_2015_list_agreement_set_cover_final.pdf"
+      ],
+      "status": "Paper Facts; targeted primary theorem reading by root and author"
+    },
+    {
+      "id": "UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "部分MinRep线性度数源与同阶必要性",
+      "detail": "给定val≤rho³/(10^9g^8)，随机位poly删边使最大度Δ=1000ceil(1000gλ/(rho floorlog2g))；好NO非空且全部cost≤gN列表cover<rho，概率≥0.9；perfect YES每seed保留。固定参数PCP下Q=poly_rho(g)、Δ=O_rho(g)，同覆盖禁令必需Δmax>(2g−1)/rho。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
+      ],
+      "status": "complete stated-scope source proof; independent Exact-first and read-after internal review; fixed-parameter randomized source only; no UM compiler; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -25375,6 +25411,37 @@
         "research/reviews/unrelated_machines/list_agreement_degree_budget_review.md"
       ],
       "status": "source-decoder accounting limit; physical compiler open"
+    },
+    {
+      "id": "um_partial_minrep_linear_degree_source_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PARTIAL-MINREP-EXPLICIT-REGULAR-MODEL",
+        "UM-PERFECT-COMPLETE-PCP-REPETITION-SOURCE"
+      ],
+      "conclusion": "UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2",
+      "statement": "自足heavy列表截断、rare covered上尾及一次总边数事件证明显式删边；外部PCP共同用于固定参数O(g)源。无物理费用前提被暗中提供。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
+      ],
+      "status": "complete stated-scope source proof"
+    },
+    {
+      "id": "um_partial_minrep_linear_degree_physical_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2"
+      ],
+      "conclusion": "UM-NEAR-UNIT-PHYSICAL-COPY-OBLIGATION",
+      "statement": "只有实际sigma可提取cover≥rhoM、cost≤N+B/F、B≤cM且F≥cΔ/[2(g−1)]才可矛盾；源只把充分F降为固定常数，不实现任何实际费用/π接口。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md"
+      ],
+      "status": "conditional decoder budget; actual compiler open"
     }
   ]
 }

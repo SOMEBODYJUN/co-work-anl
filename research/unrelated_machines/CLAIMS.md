@@ -2057,3 +2057,14 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Evidence / Counterevidence or Objections：true statement-first独立重构后全文读后攻击，无standing fatal；没有生产实现或有限实验代替证明；binary巨大L不按数值循环。
 - Status：限定证明完整、内部审查完成；implementation=none；外审与新颖性未认证，UM-TARGET仍OPEN。
 - Related Files：[自足正文](../current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)、[实际审查](../reviews/unrelated_machines/list_agreement_degree_budget_review.md)。
+
+## UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2：部分MinRep线性度数源与真实费用桥
+
+- Exact Statement / Conclusion：给定val≤rho³/(10^9g^8)，随机位poly删边使最大度Δ=1000ceil(1000gλ/(rho floorlog2g))；好NO非空且全部cost≤gN列表cover<rho，概率≥0.9；perfect YES每seed保留。固定参数PCP下Q=poly_rho(g)、Δ=O_rho(g)，同覆盖禁令必需Δmax>(2g−1)/rho。 同覆盖禁令必须M>(g−1/2)N/rho。固定rho、c下，若真实decoder另给cover≥rhoM、cost≤N+B/F、B≤cM，F≥cΔ/[2(g−1)]为一个充分固定费用。
+- Objects / Domain / Quantifiers：显式平衡D-regular全投影游戏，平行约束逐条计；binary g≥2、0<rho≤1，N≥2，Q≥2；cost为全部顶点列表总大小。 对每个显式合法游戏及参数；NO同时量化全部廉价lists。PCP结论先固定g,rho再归约SAT，输出图不必regular。
+- Definitions / Assumptions：YES val1每seed保留；NO val≤gamma按源值量化、成功概率至少0.9且非空。投影全映射、平衡、列表可空及独立采样不能略。
+- Scope：源定理、度数阶必要性、条件物理费用代数；非实际UM归约或主目标反证。随机源判别器矛盾采用NP不包含BPP，未用仅P≠NP。
+- Dependencies：自足heavy截长、列表生成函数、rare covered上尾和一次总边数事件、条件Markov删边；固定参数源另用Mosh final Thm2.1/2.3和DS Thm1.1、精确保value正规化。实际fee前提未提供。
+- Evidence / Counterevidence or Objections：两份Exact-first独立重构后全文攻击无standing fatal；root实核primary前提。无生产实现、有限实验或新颖性认证；F1不由degree下界绝对排除。
+- Status：限定source证明完整、内审完成；implementation=none，外审/全球新颖性未认证；UM-TARGET正反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)、[实际审查](../reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md)。

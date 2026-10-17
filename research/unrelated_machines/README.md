@@ -258,3 +258,5 @@
 [两实际见证的单位占位胶合](../current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)则给{1,1/k}逐k锐B(k)与任意tiny[0,a]的3(1+a)/2实际mixed分配；它只限裸presence复制，不排medium时间、任务身份或共同source解码。主目标正反面仍OPEN。
 
 [列表agreement度数预算](../current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)给实际agr≥L(D−1)/(2d+L(D−1))及全agree通用锐阈值ceil2d/D。总O(|B|)标签数不足以调用短list soundness；仍缺每新增label跨多incidence收费的真实任务机制，主反面OPEN。
+
+[部分MinRep线性度数源](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)用更强原soundness与rare covered上尾得到Δ=O_rho(g)，同覆盖禁令必需Ω(g)度数。它把充分物理费从logg降为固定常数；实际P、constant-fraction trigger、原投影decoder和fee仍未构造，随机归约采用NP不包含BPP，主反面OPEN。

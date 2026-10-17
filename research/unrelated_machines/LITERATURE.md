@@ -120,3 +120,9 @@ Lok–Romero Morales–Vermeulen (2005)，[大学原PDF](https://cris.maastricht
 ## Moshkovitz2015最终版：短列表与逐右局部费用
 
 官方最终PDF已保真取得，SHA/bytes/pages见manifest，非会议版PGC条件稿。root及内部研究者实际核印227–229的Def4.5–4.6/Lem4.7、Cor4.8、Claim4.10。Cor给polylog左列表、固定素数幂右度的agreement源；Claim的局部s_b包含各incident左点全部已选标签，不能替换成一个组件一次收费。对应[源预算正文](../current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)独立证明线性地板及ceil2d/D全agreement锐阈值，未把文献定位当新hardness。
+
+## 部分MinRep度数取舍的primary核查
+
+新增DS作者2014 PDF及Manurangsi arXiv原字节，SHA/版本/bytes与实际读取范围见manifest。Mosh final另实际读印223–224的完美完备PCP定义与Thm2.1/2.3，固定误差重复即可，不用PGC。Manurangsi Lem7已有采样/trimming、O(glogg) degree框架；[现行源证明](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)以更低原soundness与rare covered上尾、一次共同总边数事件给较粗polynomial alphabet下O(g) degree，并未宣称同时最佳字母表或全球首创。
+
+Minzer–Zheng ECCC TR24-027的2026 revision1 §7.4/Lem7.12/Thm7.13显示定理仍给O(glogg) degree和O(g^{2+epsilon}) alphabet。root及作者实际读相关primary段；初web-only比较冻结后实际取得2026原字节并核hash/106页，manifest记录获取顺序，原比较不倒改。此处不认证其整个应用证明、新颖性或连通性应用改进，实际UM compiler仍缺。

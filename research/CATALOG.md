@@ -694,7 +694,17 @@
 | [列表agreement的度数预算与真实调度解码义务](<current/unrelated_machines/list_agreement_degree_budget_and_decoder.md>) | `research/current/unrelated_machines/list_agreement_degree_budget_and_decoder.md` | 读确定性线性地板、整数流全agree逐图锐阈值及soundness度数必要条件，勿把总component预算当硬度。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-LIST-AGREEMENT-DEGREE-BUDGET-v1`，[命题合同](assets.json) |
 | [列表度数预算的真实陈述先行与读后审查](<reviews/unrelated_machines/list_agreement_degree_budget_review.md>) | `research/reviews/unrelated_machines/list_agreement_degree_budget_review.md` | 核ticket/actual agr区分、不同邻居、binaryL、sharp地图及文献条件使用。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-LIST-AGREEMENT-DEGREE-BUDGET-v1`，[命题合同](assets.json) |
 | [列表度数预算的独立原始完整推导](<../history/source/notes/unrelated_machines/list_degree_budget_independent_source.md>) | `history/source/notes/unrelated_machines/list_degree_budget_independent_source.md` | 保留仅据Exact独立重构四条的实际字节；非外部论文或新颖性认证。 | 来源或历史判断；不作为现行结论；关联 `UM-LIST-AGREEMENT-DEGREE-BUDGET-v1`，[命题合同](assets.json) |
-| [Moshkovitz2015列表agreement与SetCover最终原文](<../history/source/literature/unrelated_machines/moshkovitz_2015_list_agreement_set_cover_final.pdf>) | `history/source/literature/unrelated_machines/moshkovitz_2015_list_agreement_set_cover_final.pdf` | 读印227–229定义/Cor4.8/Claim4.10，辨别polylog lists、素数幂右度及逐right预算；未宣称全文内化。 | 来源或历史判断；不作为现行结论；关联 `UM-LIST-AGREEMENT-DEGREE-BUDGET-v1`，[命题合同](assets.json) |
+| [Moshkovitz2015列表agreement与SetCover最终原文](<../history/source/literature/unrelated_machines/moshkovitz_2015_list_agreement_set_cover_final.pdf>) | `history/source/literature/unrelated_machines/moshkovitz_2015_list_agreement_set_cover_final.pdf` | 读印227–229定义/Cor4.8/Claim4.10，辨别polylog lists、素数幂右度及逐right预算；未宣称全文内化。 | 来源或历史判断；不作为现行结论；关联 `UM-LIST-AGREEMENT-DEGREE-BUDGET-v1`、`UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2`，[命题合同](assets.json) |
+
+### partial_minrep_linear_degree
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [部分MinRep线性度数源与真实调度费用桥](<current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md>) | `research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md` | 读rare covered上尾如何抵消logg、同阶degree必要性及随机复杂度假设；固定费未实现。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2`，[命题合同](assets.json) |
+| [部分MinRep源的两路陈述先行与全文攻击](<reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md>) | `research/reviews/unrelated_machines/partial_minrep_linear_degree_source_review.md` | 核实际独立次序、rare上尾/单次总边数事件、primary前提及费用范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2`，[命题合同](assets.json) |
+| [Dinur–Steurer2014投影平行重复作者原文](<../history/source/literature/unrelated_machines/dinur_steurer_2014_parallel_repetition_author.pdf>) | `history/source/literature/unrelated_machines/dinur_steurer_2014_parallel_repetition_author.pdf` | 读Theorem1.1及固定常数源重复，支持poly误差字母表而不假设PGC。 | 来源或历史判断；不作为现行结论；关联 `UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2`，[命题合同](assets.json) |
+| [Manurangsi MinRep度数与gap原始arXiv字节](<../history/source/literature/unrelated_machines/manurangsi_minrep_degree_1807_00936v1.pdf>) | `history/source/literature/unrelated_machines/manurangsi_minrep_degree_1807_00936v1.pdf` | 读Lemma7和§3完整采样/trimming证明，分辨已有O(glogg)框架与新参数。 | 来源或历史判断；不作为现行结论；关联 `UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2`，[命题合同](assets.json) |
+| [Minzer–Zheng2026字母表与soundness修订原文](<../history/source/literature/unrelated_machines/minzer_zheng_2026_alphabet_soundness_eccc_revision1.pdf>) | `history/source/literature/unrelated_machines/minzer_zheng_2026_alphabet_soundness_eccc_revision1.pdf` | 读§7.4/Lem7.12/Thm7.13的近最优字母表与O(glogg)度数，核准确最近比较。 | 来源或历史判断；不作为现行结论；关联 `UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2`，[命题合同](assets.json) |
 
 <a id="weighted_congestion"></a>
 

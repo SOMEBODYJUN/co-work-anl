@@ -1138,6 +1138,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-LIST-AGREEMENT-DEGREE-BUDGET-v1 | 显式simple (d,D)-biregular projection图，B非空、d≥1、D≥2、逐right公共像非空；binary L≥1，lists大小≤L。 确定性actual lists agr≥L(D−1)/(2d+L(D−1))；L≥ceil2d/D可整数流全agree，且此通用整数阈值在每固定图上有多项式地图锐例；低soundness须d/L≥(D−1)(1−alpha)/(2alpha)。 | [正文](unrelated_machines/list_agreement_degree_budget_and_decoder.md)及实际独立审查；源预算非UM hardness，implementation=none。 |
 
+| UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2 | 显式平衡D-regular全投影游戏，平行约束逐条计；binary g≥2、0<rho≤1，N≥2，Q≥2；cost为全部顶点列表总大小。 给定val≤rho³/(10^9g^8)，随机位poly删边使最大度Δ=1000ceil(1000gλ/(rho floorlog2g))；好NO非空且全部cost≤gN列表cover<rho，概率≥0.9；perfect YES每seed保留。固定参数PCP下Q=poly_rho(g)、Δ=O_rho(g)，同覆盖禁令必需Δmax>(2g−1)/rho。 | [正文](unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)及实际独立审查；源和固定费用条件，非UM hardness；implementation=none。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

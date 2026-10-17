@@ -130,3 +130,5 @@
 [三端任务正规形](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)保留UM-TARGET全部算法存在内容；[单位占位两见证胶合](research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)限制tiny裸presence复制。均非已完成主目标正反面。
 
 [列表agreement的精确源预算](research/current/unrelated_machines/list_agreement_degree_budget_and_decoder.md)新增确定性线性地板及逐图锐全agree阈值；约束反面compiler的list accounting，非主目标结论。
+
+[部分MinRep线性度数源](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)把一个充分的源解码费用目标降为固定常数；源的度数阶锐，实际UM收费与一致性仍缺。
