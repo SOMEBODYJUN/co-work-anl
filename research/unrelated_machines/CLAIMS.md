@@ -1409,3 +1409,33 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：整束不能共选推理错误，实际孩子可拆分资源选择；s1时h_2=0仍收正标签需求；不展开数值K；均在规范正文与审查处理。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；求值/实际循环构造有实现，指数matching仅审计，不冒称通用tree solver或一般UM困难性。
 - Related Files：`research/current/unrelated_machines/duplication_state_majority_floor.md`、`research/reviews/unrelated_machines/two_state_pool_partial_resource_review.md`、`examples/unrelated_machines/two_state_pool_partial_tree_counterexample.json`、`evidence/runs/unrelated_machines/two_state_pool_exact_frontier_audit.json`。
+
+## UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1：多输出两YES接口的加权构造与真实OPT总预算
+
+- Exact Statement：q≥2个输出B、输入a及任意内部机器，基础时间/资格固定、非负二进制有理数；关闭host加不可迁移T，原有限边仍可用。给only-a与all-B-free两实际C≤T调度，对每K⊆B,k≥2和每显式有理β≥0,sum1，实际输出某i∈K状态blocked=a∪(K\{i})的完整σ，C≤(2−β_i)T。真实最优μ_{K,i}之和≤(2k−1)T，加权星整个面精确取等。
+- Objects：真实不可拆分任务、原有限资格、独立空/满预载、两已给实际YES；所有机器共同最终负载。
+- Domain：有限显式非负有理处理矩阵与T≥0；任意额外资格、空任务、零时间、单可用任务、任意内部规模；q+1个互异hosts为定义前提。
+- Quantifiers：∀上述输入/两实际YES，∀K/β；∃deterministic总位poly完整输出。∀k≥2,T>0有加权星等号。
+- Assumptions / Definitions：正文P_{K,i}、μ与ν均为同一固定基础实例的实际整数状态；预载是不可迁移真实任务；关闭不删边，状态不改变基础工作。
+- Scope：仅上述给实际见证的独立预载接口；不搜索未知YES，不排跨模块联合外部容量或不同编码。
+- Conclusion / Mechanism：非负行权顺序加权闭包；原S1源时间与S2接收时间分开计费；μ仅在存在性反证使用，非算法oracle。
+- Dependencies：UM-MODEL-v1与明确多输出两YES模型；正文自足加权行权分割/实际拼接；缺一结论另用加权预算，不依赖外部近似或困难性。
+- Evidence：uniform先陈述独立重构、weighted独立提出/重构、最终全文hash攻击、两份互不import规范的实际程序和原矩阵所有状态oracle；一般证明与有限检查分开。
+- Counterevidence / Objections：不能将至多一个缺一大于三半升级为全部≤三半；正文5/4,7/4,1反例。β零权、T0逻辑状态、原两端不同时间及unknownμ不作oracle均已核。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；给两YES实际构造已实现；外审/独立论文价值未认证，UM-TARGET-v1及一般反面仍OPEN。
+- Related Files：`research/current/unrelated_machines/weighted_fanout_profile_boundary.md`、`research/reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md`、`evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json`、`examples/unrelated_machines/weighted_fanout_profile_star.json`。
+
+## UM-FANOUT-MISSING-ONE-THREE-HALVES-v1：任意扇出缺一状态的两两三半锐预算
+
+- Exact Statement：同一接口下，ν_i为关闭a及b_i、其余输出free的真实OPT。任意u≠v有ν_u+ν_v≤3T，给u/v可实际构造其中之一C≤1.5T，至多一个ν_i>1.5T，且Σν_i≤1.5qT。每q≥2,T>0有degree2满二叉树使全部ν_i=1.5T，同时精确锐。
+- Objects：真实不可拆分任务、原有限资格、独立空/满预载、两已给实际YES；所有机器共同最终负载。
+- Domain：有限显式非负有理处理矩阵与T≥0；任意额外资格、空任务、零时间、单可用任务、任意内部规模；q+1个互异hosts为定义前提。
+- Quantifiers：∀同一输入，∀输出对u≠v；∃该对中具体三半σ。∀q≥2,T>0有全部缺一状态同时锐例。
+- Assumptions / Definitions：正文P_{K,i}、μ与ν均为同一固定基础实例的实际整数状态；预载是不可迁移真实任务；关闭不删边，状态不改变基础工作。
+- Scope：仅上述给实际见证的独立预载接口；不搜索未知YES，不排跨模块联合外部容量或不同编码。
+- Conclusion / Mechanism：把K外输出撤预载视内部，K2预算；满二叉树根=a的严格强制传播下界及单边上移达到。
+- Dependencies：UM-MODEL-v1与明确多输出两YES模型；正文自足加权行权分割/实际拼接；缺一结论另用加权预算，不依赖外部近似或困难性。
+- Evidence：uniform先陈述独立重构、weighted独立提出/重构、最终全文hash攻击、两份互不import规范的实际程序和原矩阵所有状态oracle；一般证明与有限检查分开。
+- Counterevidence / Objections：不能将至多一个缺一大于三半升级为全部≤三半；正文5/4,7/4,1反例。β零权、T0逻辑状态、原两端不同时间及unknownμ不作oracle均已核。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；给两YES实际构造已实现；外审/独立论文价值未认证，UM-TARGET-v1及一般反面仍OPEN。
+- Related Files：`research/current/unrelated_machines/weighted_fanout_profile_boundary.md`、`research/reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md`、`evidence/runs/unrelated_machines/weighted_fanout_profile_boundary_audit.json`、`examples/unrelated_machines/weighted_fanout_profile_star.json`。

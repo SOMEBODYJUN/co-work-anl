@@ -73,3 +73,5 @@
 本轮反面路线补充两项精确边界：BCG 的 Santa/Max-Min 困难性是 additive forest/all-sources 模型，Bamas 的 MMDA SA gap仍非计算硬度；两份内部无冲突的完整复制在当前需求树中有资源二着色的一半地板。需求 \(k_v>1\) 的 token 桥梁也不保持 restricted Santa 固有值结构。UM-TARGET-v1 仍 OPEN，真正缺口仍是跨层整数一致性与每固定 ε 的实际 OPT gap。
 
 [两状态行列池锐性修复](research/current/unrelated_machines/duplication_state_majority_floor.md)：标签可只选部分资源，s=K=4的真实最优为5/8，反驳旧附属1/2断言；主多数下界仍成立。新精确整数前沿及显式达到构造已独立重构，原K≥2s数例保留；不是一般近二困难性。
+
+[多输出加权状态预算](research/current/unrelated_machines/weighted_fanout_profile_boundary.md)扩展三host接口：给两实际YES，对任意候选输出集K和有理β构造实际C≤(2−β_i)T；真实OPT总和≤(2|K|−1)T，加权星取等。任意两个缺一OPT之和≤3T，至多一个可严格超三半，任意扇出二叉树同时锐；不能用仅单输出近二星代替全局复制soundness。主目标保持OPEN。

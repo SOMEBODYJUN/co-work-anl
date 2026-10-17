@@ -1007,6 +1007,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-TWO-STATE-POOL-EXACT-FRONTIER-v1 | K≥s≥1时b*=max_k min(k/(2s),min(s,floor(s²/k))/K)，有总位多项式求值与实际树构造；sK4精确5/8。 | 修复附属锐性，主多数下界不变；部分束可混选。[正文](unrelated_machines/duplication_state_majority_floor.md)、[实际反例审查](../reviews/unrelated_machines/two_state_pool_partial_resource_review.md)。 |
 
+## 多输出可用性复制的加权预算
+
+| ID | 精确结果 | 范围与证据 |
+| --- | --- | --- |
+| UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1 | 每局部K和显式β可构造某i的C≤(2−β_i)T；真实状态OPT之和≤(2|K|−1)T，加权星全等号。 | 给两实际YES，未知OPT只用于存在证明。[正文](unrelated_machines/weighted_fanout_profile_boundary.md)、[审查](../reviews/unrelated_machines/weighted_fanout_profile_boundary_review.md)。 |
+| UM-FANOUT-MISSING-ONE-THREE-HALVES-v1 | 任意两缺一OPT之和≤3T，至多一个>1.5T，全部和≤1.5qT；每q满二叉树同时取等。 | 可实际输出给定pair某一缺一状态三半σ；不排联合外部容量或不同读出合同。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

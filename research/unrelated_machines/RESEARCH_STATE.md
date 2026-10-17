@@ -295,3 +295,5 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 新增 `UM-COMMON-SIZE-REOPEN-v1`：给定冻结核心和残余共同尺寸有理流，`q_max` 头部条件下可用一次联合槽匹配整化，允许接收机增载；支持连通分量单尺寸时普通整数槽流精确修复。一般可分容量由 Farkas 价格判定，但两机三件等端任务的分数/整数缺口和异端最小值误判已精确记录。该接口不能选择一般核心，也不能消除混尺寸装箱或统一近二余量；UM-TARGET-v1 仍 OPEN。
 
 [两状态行列池锐性修复](../current/unrelated_machines/duplication_state_majority_floor.md)：标签可只选部分资源，s=K=4的真实最优为5/8，反驳旧附属1/2断言；主多数下界仍成立。新精确整数前沿及显式达到构造已独立重构，原K≥2s数例保留；不是一般近二困难性。
+
+[多输出加权状态预算](../current/unrelated_machines/weighted_fanout_profile_boundary.md)扩展三host接口：给两实际YES，对任意候选输出集K和有理β构造实际C≤(2−β_i)T；真实OPT总和≤(2|K|−1)T，加权星取等。任意两个缺一OPT之和≤3T，至多一个可严格超三半，任意扇出二叉树同时锐；不能用仅单输出近二星代替全局复制soundness。主目标保持OPEN。
