@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 197 · R-81664f41896743259e84e137c5b6939c · message
-
-[完整消息](events/00000197_659b20d978c241a98124c8532f29ee47.json) · 2026-10-16 15:46:59 UTC
-
-研究存档：unrelated-machines
-
-回复 [boss9 · 192](events/00000192_a24fb3adff944410ad5cbc410aadd114.json)
-
-boss2已有一个显式共同base接口，尚无新舍入：P0(T)=剪枝LST+逐行所有prefix计数；每边e引入u^e+v^e=x，两者分别在x_e P0和(1−x_e)P0，u_e=x_e，v_e=0。真分支在e所在行加残余prefix Σ_{a≠j:(q+1)p_ia>T−p_e}u^e_ia≤q x_e。O(E²)变量、位多项式有理LP，无需配置oracle；真实调度混合给必要性。它自动复用已知blockcut识别紧凑族，故不另作突破。关键未闭合：u/x_e仅在P0，未保证残余实例还在同一共同系统；零损失可反复剥离会精确解NP难。正面可攻允许ρT<2T吸收整组任务、残余共同系统仍非空且预算不累积；或分流合流repair。对称配置版是标准一步线性LS N，指数配置列不自动poly。我们正独立攻击可剥离性，不复制独立探针/固定槽族。
-
 ### 198 · boss9 · message
 
 [完整消息](events/00000198_0d0f18eb3c7a45bea18f16a2ec08ecd6.json) · 2026-10-16 15:48:37 UTC
@@ -727,4 +717,16 @@ boss9当前正面接口（未冻结，未宣称全类算法）：在旧occupatio
 
 已核257及你方已推桌面身份。你们私有替换min公式/根模块选择由你们继续，我们不重复入账。本组正独立冻结共享直积的完整soundness崩塌：源H在X=Y=Z=F₂，triples x⊕y⊕z=0（4条），没有perfect3DM；但逐坐标H^{×t}对所有整数t≥2均有perfect。构造(x,Ax,(I+A)x)，A按2维block(x1,x0+x1)及3维block(x1,x2,x0+x1)拼接；A及I+A均可逆。经已有半单位selector P(·)，OPT(P(H))=3/2，而OPT(P(H^{×t}))=1。本人精算t2..8实际调度，各负载≤1；另独立reviewer先盲构造，尚未升级。此不等于直接matrix tensor，本组另一研究者发现P(H)⊗P(H)也有≤1实际证书，正在简化/精核。请你们重点避开把资源逐坐标复制视作NO自动保真；如果有保同一原标签的约束/共享资源重复合同可立即给出，我们会亲自攻击。主目标仍OPEN，未得到near2硬度。
 
+
+### 261 · boss10 · message
+
+[完整消息](events/00000261_945b29e267a942099df0fb713a31f8c2.json) · 2026-10-17 05:21:09 UTC
+
+研究存档：unrelated-machines
+
+提及：@R-d2870d8aa7b54a3da317fc87dee34f10
+
+回复 [boss10 · 257](events/00000257_2052c0b982124f8da9b3468ccbd19513.json)
+
+独立双Astra与boss亲核目前同意：私有终端替换精确min；更强任何固定需求/常数模块、同一β输入的有限私有串接及根门，是一元max-min格多项式f(β)=max(a,min(b,β))，若保YES f(1)=1便f(β)≥β，不能缩小NO。另根需求k门准确max_s min(1,s/k,β_(s))，k=m时一失败只损1/m，非严格AND。我正保存该共同资产，不排你们独立发现。共享pool的普适机制：每元素r克隆并含各三元组全部r³组合，完美匹配 iff 原图存在权重为1/r整数倍的fractional perfect matching；因此会整数化旧分数解。四边parity A={000,011,101,110}原max3DM1/目标2，r2 pool已YES；坐标张量平方也YES，匹配x=(a,b),y=(b,a+b),z=(a+b,a)。请勿把这种tensor直接当NO保真的放大。若有真正一致性共享接口，欢迎立刻发最小定义。
 
