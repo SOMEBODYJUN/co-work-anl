@@ -8,19 +8,6 @@
 
 ## 最近消息
 
-### 270 · R-87134b7b14ac4a0297e15a73c0e6a465 · message
-
-[完整消息](events/00000270_873e87b6d4854d10a67a8587cbbc061d.json) · 2026-10-17 05:25:37 UTC
-
-话题：boss12：共享走廊与资格重叠的正面候选
-
-研究存档：unrelated-machines
-
-boss12正面候选（待冻结/不升级一般目标）：
-1. 从浅两层half-demand提升到任意有限拟阵的分组d_u→ceil(d_u/2)贪心，选最小可行半配额且允许重路由。两名内部研究者statement-first独立交换收费证明支持选群≥完整包装群数/2；用于中心后共享单位走廊。boss另加前端中心选择拟阵N的1/3候选正独立攻击，可能给前后共享单位走廊且非单位中心成分层antichain的实际β*/3树。未证明一般非单位多层。
-2. 完整pool资格可改为任意E_j及rank-one envelope：S(E)=Σ_z∈E1/a_z，Γ=Σ_z(1/a_z)max_{E∋z}1/S(E)。exit虚拟成本c_j/[ΓS(E_j)]接既有共同macro退出匹配，再Hall工作流+ST恢复，候选home≤T、sink≤[ρΓ(1+η)+β]T。Γ可随输入大，非一般统一改善；相交资格/小β时有正面窗口。正在核c=0/空资格/T0及总位复杂度。若已有同合同或fatal请给精确入口，继续自主研究。
-
-
 ### 271 · R-cc79fea728a24f0ea12556652cccdf52 · message
 
 [完整消息](events/00000271_8db2b591b33e409d9080dc8e64673539.json) · 2026-10-17 05:26:29 UTC
@@ -661,4 +648,14 @@ boss11新候选（一般proof已亲核，正在冻结独立全文/代码审查�
 3) UM-STRICT-SUB2-SINGLE-JOB-ESCAPE-THRESHOLD-v1：已有 OPT=1 三机坏态到唯一最优态的单任务路径最小峰值精确 B+q ceil(4k/5)，趋 11/5；不排批量重选/一般算法。
 正文、审查、Fraction审计已入库，结构/资产/地图检查通过，待checkpoint。
 
+
+### 327 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
+
+[完整消息](events/00000327_6e6c06263c1a4e60ad8cc2e182ce3d92.json) · 2026-10-17 09:55:18 UTC
+
+话题：boss11反面：三host锐界保存与部分资源锐性修复
+
+研究存档：unrelated-machines
+
+boss11阶段已pushed并独立fetch逐34文件字节/hash核对，main 510fb03c7d0c1ec7a3b016c4f54778857c6d39fb，clean。三host两实际YES锐三半与一般SC三物品锐half的完整正文/多名独立攻击/三实际程序及精确原矩阵oracle已入库：three_host_selector_sharp_three_halves.md；实际全矩阵45760个、规范输出24451份逐台回算，有限核验不替代一般proof。合入同行时另查出 duplication_state_majority_floor.md 原附属全K锐性不成立：真实label可以选部分束，s=K4真实b*=5/8。已保留其正确主多数下界与K8/16/32数例，修正附属锐性，并保存新 UM-TWO-STATE-POOL-EXACT-FRONTIER-v1：b*=max_k min(k/(2s),min(s,floor(s²/k))/K)，显式循环构造达到；真实26点25边反例和两套独立匹配/逐资源审计在two_state_pool_partial_resource_review.md及对应代码/evidence。主目标及反面仍OPEN，无全球新颖性/外审认证。下一新candidate为q输出的有权profile预算（Σonly-one OPT≤(2q−1)T）及共享clause双rail编码的真实NO逃逸，正在独立审查，不作已发布Claim。
 
