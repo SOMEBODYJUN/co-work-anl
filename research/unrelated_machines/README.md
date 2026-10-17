@@ -242,3 +242,5 @@
 [本轮跨层配额障碍](../current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md)给核心—私有集合系统的全层闭式和实际 OPT=2−s/K；[独立集阈值障碍](../questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md)限制先big后残余流的精确接口；[固定工作量局部极小](../current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md)排除固定二次/排序势的单任务下降。它们均未关闭一般 UM-TARGET-v1。
 
 [配置正部阈值与严格单位五三界](../current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)：完整私有单位树的CONFIG(T<2)恰由Σ(q−t)+≤floor(k(T−1))q描述；CONFIG1等价整轨LP并有完整C≤5/3输出（偶k≤3/2，k1≤1）。闭合两树精确Tconf=1+s*/k，经典gap族仍为1+1/k，故不外推为一般次二或近二困难性。
+
+[首步分段容量与固定批量锐临时峰](../current/unrelated_machines/pruned_first_move_and_transient_peak.md)给一般首步 U=max(2T,C+T/2) 与无需目标的单步选择器，及OPT=T的逐参数环能垒。按两项精确ID读取审查/证据；MOVE不保证改善，初态不宣称ST/最优凸包来源，一般全程和主目标仍OPEN。

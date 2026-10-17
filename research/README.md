@@ -59,3 +59,5 @@
 [异端有界畸变共同组](../research/current/unrelated_machines/distorted_group_joint_slot_rounding.md)在给定上下比例包络、唯一home/共同资格结构下联合选宏与接收机，给home≤(1+r+δ)T、sink≤[κ+B̄(1−r)]T，且闭合未知OPT搜索；固定κ+B̄δ<2时只有该结构类具统一改善。 一般UM-TARGET-v1仍OPEN；下一高信息义务是允许可控临时增载的共同容量修复及总位多项式进展，或在一般矩阵中生成保统一余量的相关结构。
 
 本轮新增三条可复用边界：[全层核心—私有配额近二族](current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md)、[共同big选择的独立集阈值障碍](questions/unrelated_machines/independent_set_big_residual_interface_obstruction.md)和[固定工作量势局部极小族](current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md)。它们分别收紧跨层soundness、共同容量状态和局部repair的精确义务，均不把主目标升级为已解或一般hardness。
+
+[剪枝首步与临时峰值](current/unrelated_machines/pruned_first_move_and_transient_peak.md)给全输入首步上界 U=max(2T,C+T/2)、可计算的单向NO以及固定批量的逐参数锐环族；沿正文进入冻结审查、独立状态图与完整原矩阵审计。首步不保证改善，不是一般全程或统一ε算法。

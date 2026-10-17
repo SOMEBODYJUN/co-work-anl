@@ -11077,6 +11077,99 @@
         "research/reviews/unrelated_machines/unit_readout_configuration_threshold_review.md",
         "evidence/runs/unrelated_machines/unit_readout_configuration_threshold_audit.json"
       ]
+    },
+    {
+      "path": "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+      "title": "剪枝调度首步临时容量的分段锐界与有界批量环能垒",
+      "purpose": "读取全输入首步证明、逐参数环族、实际算法及不能迭代成全程修复的准确范围。",
+      "topic": "unrelated_machines",
+      "role": "account",
+      "related_paths": [
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ]
+    },
+    {
+      "path": "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+      "title": "剪枝首步分段锐界的独立重构与冻结攻击",
+      "purpose": "核两项Claim的statement-first审查、C=T/孤立区间修复、原矩阵FAIL及冻结hash。",
+      "topic": "unrelated_machines",
+      "role": "review",
+      "related_paths": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/pruned_first_move_transient_peak.py",
+      "title": "剪枝首步实际选择器与锐环规范审计",
+      "purpose": "运行确定性DONE/MOVE/NO选择器；重跑首步网格及锐环全状态minimax核验。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/pruned_first_move_independent.py",
+      "title": "剪枝首步与批量路径的独立原分配审计",
+      "purpose": "不导入规范核心，以完整原矩阵/全状态XOR图分别检查单件和批量minimax。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/pruned_first_move_full_input.py",
+      "title": "首步选择器的完整原矩阵拒绝语义审计",
+      "purpose": "导入被测选择器、独立枚举含p>T边的原OPT，检查全部NO可靠性。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json",
+      "title": "剪枝首步与临时峰值的精确核验冻结记录",
+      "purpose": "保存实际参数、Python版本、源hash、三路结果、命令及明确未验证范围。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md"
+      ]
+    },
+    {
+      "path": "examples/unrelated_machines/transient_peak_two_job_cycle.json",
+      "title": "三机双任务环的临时峰值实际输入",
+      "purpose": "提供T=1、C=7/4、batch预算2的全部处理时间与初态，复核非空首批至少9/4。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ]
+    },
+    {
+      "path": "evidence/certificates/unrelated_machines/transient_peak_two_job_cycle.json",
+      "title": "三机双任务环的实际最优与达到路径证书",
+      "purpose": "逐件列出后移调度、全部机器负载和9/4路径峰，绑定实际输入hash。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md",
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md",
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ]
     }
   ]
 }

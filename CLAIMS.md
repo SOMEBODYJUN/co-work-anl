@@ -98,3 +98,5 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 新增精确身份：`UM-ST-ENVELOPE-CONFIG-IDENTITY-v1`、`UM-WEAK-H2-CONFIG-MOMENT-GAP-v1`、`UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1`；[完整账本](research/unrelated_machines/CLAIMS.md)记录一般表示、弱同点合取supgap2及同族强二阶精确校准，均不改变UM-TARGET-v1。
 
 新增限定身份 `UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1`、`UM-UNIT-READOUT-STRICT-UNIT-GAP-v1`、`UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1`；[专题账本](research/unrelated_machines/CLAIMS.md)给精确量词。仅配置阈值/严格unit promise/经典族精确回算，不升级UM-TARGET-v1。
+
+首步与全程现分离为 [UM-PRUNED-FIRST-MOVE-BOUND-v1 / UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1](research/current/unrelated_machines/pruned_first_move_and_transient_peak.md)：一般T剪枝首步上界max(2T,C+T/2)及固定批量环的逐参数锐性；不含一般全程/次二算法。

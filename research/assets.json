@@ -7780,6 +7780,45 @@
       ],
       "source_role": "有序槽和经典gap为已知地基；正部消元/局部分解与本结构精确阈值自足推导；未认证全球新颖性。",
       "limit": "非一般UM算法/新困难性，未集成通用精确LP；CONFIG1五三不能外推至1+1/k或任意OPT。"
+    },
+    {
+      "id": "um_pruned_first_move_transient_peak",
+      "claims": [
+        "UM-PRUNED-FIRST-MOVE-BOUND-v1",
+        "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "applies_when": [
+        "UM-MODEL-v1 with explicit finite machines/jobs, nonnegative binary rational times and unavailable edges",
+        "T>=0, T<=C<=2T, actual sigma with load<=C and every used edge<=T",
+        "sharpness: each integer k>=1, positive rational T, explicit m=k+1 cycle; path target is a specified distinct optimum"
+      ],
+      "produces": "deterministic bit-polynomial first MOVE or sound NO_T_SCHEDULE; sharp U=max(2T,C+T/2) first-step and bounded-batch initial-state transient barriers",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/pruned_first_move_and_transient_peak.md"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/pruned_first_move_transient_peak_review.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/pruned_first_move_transient_peak.py",
+        "tests/audits/unrelated_machines/pruned_first_move_independent.py",
+        "tests/audits/unrelated_machines/pruned_first_move_full_input.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/transient_peak_two_job_cycle.json",
+        "evidence/certificates/unrelated_machines/transient_peak_two_job_cycle.json"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf"
+      ],
+      "limit": "No general full-path U bound, no target finder or convergence, no ST/optimal-hull initialization guarantee, and no sub-2 scheduling approximation or hardness. C=T allows zero steps to the optimum set.",
+      "source_role": "Only the previously registered classical unrelated-machine model is background; neither new proof imports a theorem from this source. The first-step counting and cycle sharpness are self-contained.",
+      "implementation_detail": "Actual first_step selector is in tests/audits/unrelated_machines/pruned_first_move_transient_peak.py; repository implementation-package field is reserved for the separate canonical software packages."
     }
   ]
 }

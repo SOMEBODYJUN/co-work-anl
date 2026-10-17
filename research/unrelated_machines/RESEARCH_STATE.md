@@ -379,3 +379,9 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 [配置正部阈值与严格单位五三界](../current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)：完整私有单位树的CONFIG(T<2)恰由Σ(q−t)+≤floor(k(T−1))q描述；CONFIG1等价整轨LP并有完整C≤5/3输出（偶k≤3/2，k1≤1）。闭合两树精确Tconf=1+s*/k，经典gap族仍为1+1/k，故不外推为一般次二或近二困难性。
 
 反面方向现在必须区分严格unit阈值与允许incoming带一枚small的近unit阈值。one-hot Boolean源在保均匀literal见证的合法读出编译下不能给近二soundness；一般低σ→共同稀疏标签或完整集团支付仍缺。UM-TARGET-v1及其反面继续OPEN。
+
+## 首步临时容量已闭合，全程共同容量仍缺
+
+[剪枝首步分段锐界](../current/unrelated_machines/pruned_first_move_and_transient_peak.md)证明 U=max(2T,C+T/2) 是首次非平凡单步的最小统一上界；枚举全部T剪枝步可计算MOVE或可靠NO。两支m=k+1环对每固定批量k、每C/T∈[1,2]达到首批下界与指定目标路径峰，区别于旧闭环的趋零超额。声明不含ST/最优凸包初态，亦非一般困难性。
+
+唯一未闭承重义务仍是任意P的共同容量及实际次二输出。尤其一步后可能超2T、MOVE可恶化，不能迭代原引理；简单单缓冲链也会分叉。下一高信息动作应给可计算的缓冲集合/多目的地守容及总进展，或真正强初始化的不变量，不能仅增加环样本。强H2一般求解/舍入依旧未解；本次不把小常数SoS(CONFIG)文献或按size聚合映射当作其趋二间隙。

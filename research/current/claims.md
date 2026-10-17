@@ -1092,6 +1092,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-UNIT-READOUT-STRICT-UNIT-GAP-v1 | CONFIG1等价整轨literal LP；可行时多数轨active-only槽输出全部原jobs C≤5/3，偶k≤3/2，k1≤1；为(1,5/3) promise gap，不是任意OPT比例。 | [正文](unrelated_machines/unit_readout_configuration_threshold_polytope.md)、[审查](../reviews/unrelated_machines/unit_readout_configuration_threshold_review.md)；一般LP未集成，外审/新颖性未认证。 |
 | UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1 | 每末父k叶共一私有unit的闭合两树，OPT=2−1/k，Tconf=1+s*/k，s*=min{s:(k−s)^h≤2k^(h−1)}；经典gap高度下精确1+1/k。 | [正文](unrelated_machines/unit_readout_configuration_threshold_polytope.md)、[审查](../reviews/unrelated_machines/unit_readout_configuration_threshold_review.md)；一般LP未集成，外审/新颖性未认证。 |
 
+## 剪枝首步容量与固定批量临时峰值
+
+| ID | 精确结果 | 范围与入口 |
+| --- | --- | --- |
+| UM-PRUNED-FIRST-MOVE-BOUND-v1 | 对任意合法P、有理T≥0与T≤C≤2T、使用p≤T端且Cmaxσ≤C的实际σ，若存在不同τ且Cmaxτ≤T，则某一件直接σ→τ迁移后的最大负载≤U=max(2T,C+T/2)。不给τ时可位多项式返回DONE、此类MOVE或可靠NO_T_SCHEDULE⇒OPT>T；MOVE不保证改善。 | [正文](unrelated_machines/pruned_first_move_and_transient_peak.md)、[冻结审查](../reviews/unrelated_machines/pruned_first_move_transient_peak_review.md)、[实际证据](../../evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json)；首步不推出全程或统一ε。 |
+| UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1 | 对每k≥1、每有理T>0及T≤C≤2T，显式m=k+1环族全部有限边≤T、每任务≤2端、OPT=T、初值C；任意非空≤k件同步变化新值≥U=max(2T,C+T/2)，到指定不同最优τ的最小路径峰恰U（单件路径达到）。孤立图范围C≤B<U；C=T不排零步到OPT集合。 | [正文](unrelated_machines/pruned_first_move_and_transient_peak.md)、[冻结审查](../reviews/unrelated_machines/pruned_first_move_transient_peak_review.md)、[实际证据](../../evidence/runs/unrelated_machines/pruned_first_move_transient_peak_audit.json)；首步不推出全程或统一ε。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -114,3 +114,5 @@
 [完整槽包络的精确表示](research/current/unrelated_machines/slot_envelope_and_configuration_identity.md)把所有尺度的真实槽上界写成E=ΣΔp·ceil(prefix x)，证明全局min max E=OPT。固定T后逐行凸化子水平集恰CONFIG；先凸化整个上图则只剩线性分数负载。可验证完整损失并未免费解决共同选择。后续要攻共享二阶及更强跨机信息的可计算性/实际提取，或绕过这些松弛的一般构造，停止把上述已排弱合取当充分接口。
 
 本轮研究又固定了三个承重边界：核心—私有资源的全层 matching 近二族、共同 big 选择的独立集阈值障碍、以及固定工作量下二次/排序势的单任务局部极小。它们的精确证明、独立审查和 Fraction 证据已沿本题地图登记；一般统一 (2−ε) 算法仍未得到。
+
+[剪枝首步临时容量锐界](research/current/unrelated_machines/pruned_first_move_and_transient_peak.md)把暂时增载义务精确分成首步与全程：一般首步可确定性守住 U=max(2T,C+T/2)，固定批量环族逐参数达到，C接近2T时可需接近5T/2的常数临时峰。初态不声明ST来源，一步不保证改善；一般全程共同修复仍OPEN。

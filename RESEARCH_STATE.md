@@ -101,3 +101,5 @@
 [槽包络精确身份](research/current/unrelated_machines/slot_envelope_and_configuration_identity.md)又说明：完整实际槽损失的非凸联选本身恰重述原OPT；先固定容量再逐行凸化恰CONFIG，直接凸化函数上图仅LST。此处已关闭表示/退化识别，并未得到一般优化器或近二困难性。下一步只攻新增共同信息或可近似非凸进展机制，不以更多局部包络或样本替代。UM-TARGET-v1仍OPEN。
 
 [配置正部阈值与严格单位五三界](research/current/unrelated_machines/unit_readout_configuration_threshold_polytope.md)：完整私有单位树的CONFIG(T<2)恰由Σ(q−t)+≤floor(k(T−1))q描述；CONFIG1等价整轨LP并有完整C≤5/3输出（偶k≤3/2，k1≤1）。闭合两树精确Tconf=1+s*/k，经典gap族仍为1+1/k，故不外推为一般次二或近二困难性。 主目标及反面仍OPEN，严格1与1+1/k的阈值区别已核清。
+
+首步暂时容量已有[分段锐界](research/current/unrelated_machines/pruned_first_move_and_transient_peak.md)：T剪枝二倍初态可计算地找到≤max(2T,C+T/2)的一步，或在当前值>T且无此步时可靠拒绝T；固定批量环族达到这一首步阈值。剩余关键义务是维持全程共同容量并保证终态改善/位多项式进展；目前既无一般5T/2路径定理，也无从未知目标生成次二输出。
