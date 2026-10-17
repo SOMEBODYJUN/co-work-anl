@@ -198,4 +198,4 @@ UM-ROBUST-CYCLIC-BATCH-OPT-v1已闭合局部优化器的总位复杂度，但没
 
 ## 裸四阶负载矩的充分性义务已被精确关闭
 
-`UM-C2-LOAD-UNIT-GAP-v1` 的[自足证明](../../current/unrelated_machines/c2_unit_multislice_gap.md)给普通C2-load真实supgap2；不再把“仅凭此共同四阶负载可行性就相对T统一改进”列为OPEN。显式证书三阶条目为负且CONFIG在同一T不可行，故**共同C2与完整本地配置/计数合取**仍是另一开放义务。不能把此不同合同的反例外推，也不能把给定真矩上的坏贪心当作新系统的gap。
+`UM-C2-LOAD-UNIT-GAP-v1` 的[自足证明](../../current/unrelated_machines/c2_unit_multislice_gap.md)给普通C2-load真实supgap2；不再把“仅凭此共同四阶负载可行性就相对T统一改进”列为OPEN。显式证书三阶条目为负且CONFIG在同一T不可行，其后[UM-WEAK-H2-CONFIG-MOMENT-GAP-v1](../../current/unrelated_machines/weak_h2_configuration_moment_gap.md)已另证：若完整CONFIG只共享同一一阶x，该合取仍supgap2；不再列该弱合同为开放。共享行二阶后同一新族的阈值精确等于OPT，但一般强合同仍OPEN。不能把此不同合同的反例外推，也不能把给定真矩上的坏贪心当作新系统的gap。

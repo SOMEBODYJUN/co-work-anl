@@ -1681,3 +1681,41 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：昂贵叶边本身可被配置方法识别；hinge/自适应势可逐件迁移，因此不能升级为一般困难性或主目标反证。
 - Status：failed-route boundary; not a hardness result; external review and novelty unverified。
 - Related Files：`research/questions/unrelated_machines/fixed_work_and_medium_config_barriers.md`；`research/unrelated_machines/FAILED_ROUTES.md`；`research/current/unrelated_machines/optimal_convex_fixed_slot_gap.md`。
+
+## 槽包络、弱H2及强二阶合同的精确分离
+
+### UM-ST-ENVELOPE-CONFIG-IDENTITY-v1：完整槽包络的精确调度表示与两种凸化身份
+
+- Exact Statement / Quantifiers：任意非负有理行的E=ΣΔp ceil(prefix x)；固定B子水平凸包恰配置多面体、至多d+1有理原子。全局min max E=OPT，可ST实际恢复；先固定B逐行凸化恰CONFIG，先凸化上图仅线性负载。
+- Objects / Domain / Definitions：UM-MODEL-v1；全部非负二进制有理/不可用输入，具体子域与合同见正文。槽包络量化所有合法P及x；H2下界只取正OPT/T>0，强校准为同一k≥3参数族。
+- Assumptions / Scope：精确表示不等于可求非凸选择；CONFIG的二倍gap为既有结论复用；未给主目标近似算法。
+- Conclusion：完整槽包络的精确调度表示与两种凸化身份，不改UM-TARGET-v1的OPEN状态。
+- Dependencies：UM-MODEL-v1, UM-ST-ROUND-v1, UM-CONF-GAP-v1；正文自足推导所列各共同前提。
+- Evidence：先陈述独立重构、冻结全文攻击、root亲自复核；最小精确运行见evidence/runs/unrelated_machines/slot_envelope_identity_audit.json。
+- Counterevidence / Objections：精确表示不等于可求非凸选择；CONFIG的二倍gap为既有结论复用；未给主目标近似算法。 共享二阶的强系统与仅共享一阶的弱系统身份绝不互换。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。无一般求解器，未认证全球新颖性或外部评审。
+- Related Files：`research/current/unrelated_machines/slot_envelope_and_configuration_identity.md`；`research/reviews/unrelated_machines/slot_envelope_identity_review.md`；`tests/audits/unrelated_machines/slot_envelope_identity.py`；`evidence/runs/unrelated_machines/slot_envelope_identity_audit.json`。
+
+### UM-WEAK-H2-CONFIG-MOMENT-GAP-v1：同一一阶配置与全局四阶矩合取的锐利二间隙
+
+- Exact Statement / Quantifiers：弱H2=C2-load(T)+共享一阶x的完整CONFIG(T)，一般正值sup OPT/T=2。k≥3,b=k²稀释资源星在T=1+(k−1)/(k²+1)有显式有理全局PSD/全localizer与同x CONFIG1，真实OPT=2−1/k。
+- Objects / Domain / Definitions：UM-MODEL-v1；全部非负二进制有理/不可用输入，具体子域与合同见正文。槽包络量化所有合法P及x；H2下界只取正OPT/T>0，强校准为同一k≥3参数族。
+- Assumptions / Scope：不共享行二阶且三阶仍可负；不含强二阶H2、完整SoS(CONFIG)或一般计算困难性；本族可直接最优解。
+- Conclusion：同一一阶配置与全局四阶矩合取的锐利二间隙，不改UM-TARGET-v1的OPEN状态。
+- Dependencies：UM-MODEL-v1, UM-C2-GENERAL-MULTISLICE-CONSTRUCTION-v1, UM-ST-ROUND-v1；正文自足推导所列各共同前提。
+- Evidence：先陈述独立重构、冻结全文攻击、root亲自复核；最小精确运行见evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json。
+- Counterevidence / Objections：不共享行二阶且三阶仍可负；不含强二阶H2、完整SoS(CONFIG)或一般计算困难性；本族可直接最优解。 共享二阶的强系统与仅共享一阶的弱系统身份绝不互换。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。无一般求解器，未认证全球新颖性或外部评审。
+- Related Files：`research/current/unrelated_machines/weak_h2_configuration_moment_gap.md`；`research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md`；`tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py`；`evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json`。
+
+### UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1：共享行二阶矩的条件单槽容量与资源星精确阈值
+
+- Exact Statement / Quantifiers：若容量一行CONFIG同机pair与全局M2共享，则任意端f有Σ_row y_fe≤x_f；在同一k≥3,b=k²无z星族，共享每行二阶CONFIG的强H2阈值恰2−1/k=OPT，所有T<OPT均不可行，真实Dirac达到。
+- Objects / Domain / Definitions：UM-MODEL-v1；全部非负二进制有理/不可用输入，具体子域与合同见正文。槽包络量化所有合法P及x；H2下界只取正OPT/T>0，强校准为同一k≥3参数族。
+- Assumptions / Scope：仅此族的强合同精确校准，不含一般强H2间隙改善或求解复杂度；该条件容量证明不需要负载localizer。
+- Conclusion：共享行二阶矩的条件单槽容量与资源星精确阈值，不改UM-TARGET-v1的OPEN状态。
+- Dependencies：UM-MODEL-v1；正文自足推导所列各共同前提。
+- Evidence：先陈述独立重构、冻结全文攻击、root亲自复核；最小精确运行见evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json。
+- Counterevidence / Objections：仅此族的强合同精确校准，不含一般强H2间隙改善或求解复杂度；该条件容量证明不需要负载localizer。 共享二阶的强系统与仅共享一阶的弱系统身份绝不互换。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。无一般求解器，未认证全球新颖性或外部评审。
+- Related Files：`research/current/unrelated_machines/weak_h2_configuration_moment_gap.md`；`research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md`；`tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py`；`evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json`。

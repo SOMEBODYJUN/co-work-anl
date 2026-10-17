@@ -9520,6 +9520,79 @@
         "research/reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完整槽包络的精确调度表示与两种凸化身份",
+      "detail": "任意非负有理行的E=ΣΔp ceil(prefix x)；固定B子水平凸包恰配置多面体、至多d+1有理原子。全局min max E=OPT，可ST实际恢复；先固定B逐行凸化恰CONFIG，先凸化上图仅线性负载。",
+      "refs": [
+        "research/current/unrelated_machines/slot_envelope_and_configuration_identity.md",
+        "research/reviews/unrelated_machines/slot_envelope_identity_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "同一一阶配置与全局四阶矩合取的锐利二间隙",
+      "detail": "弱H2=C2-load(T)+共享一阶x的完整CONFIG(T)，一般正值sup OPT/T=2。k≥3,b=k²稀释资源星在T=1+(k−1)/(k²+1)有显式有理全局PSD/全localizer与同x CONFIG1，真实OPT=2−1/k。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共享行二阶矩的条件单槽容量与资源星精确阈值",
+      "detail": "若容量一行CONFIG同机pair与全局M2共享，则任意端f有Σ_row y_fe≤x_f；在同一k≥3,b=k²无z星族，共享每行二阶CONFIG的强H2阈值恰2−1/k=OPT，所有T<OPT均不可行，真实Dirac达到。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-C2-GENERAL-MULTISLICE-CONSTRUCTION-v1",
+      "kind": "construction",
+      "track": "unrelated_machines",
+      "title": "一般任务数的四阶多色slice半正定证书",
+      "detail": "整数m≥3,N≥m+1，t=N/m；μ_S=∏a(t)_{c_a}/(N)_{|S|}到四阶满足M2 PSD、one-hot与所有degree3行计数恒等式。自足radical与四块harmonic证明；不当作真实分布。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md"
+      ],
+      "status": "self-contained general construction"
+    },
+    {
+      "id": "UM-SLOT-ENVELOPE-MINIMAL-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "槽包络最小精确核对",
+      "detail": "明确有限fixture；不承担参数化普遍结论，强H2精确阈值只由证明给出。",
+      "refs": [
+        "research/current/unrelated_machines/slot_envelope_and_configuration_identity.md",
+        "tests/audits/unrelated_machines/slot_envelope_identity.py",
+        "evidence/runs/unrelated_machines/slot_envelope_identity_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "UM-WEAK-H2-MINIMAL-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "弱H2最小矩与同点配置核对",
+      "detail": "明确有限fixture；不承担参数化普遍结论，强H2精确阈值只由证明给出。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py",
+        "evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json"
+      ],
+      "status": "finite evidence"
     }
   ],
   "hyperedges": [
@@ -23398,6 +23471,143 @@
         "research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md"
       ],
       "status": "open obligation"
+    },
+    {
+      "id": "D-UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1",
+        "UM-CONF-GAP-v1"
+      ],
+      "conclusion": "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "statement": "任意非负有理行的E=ΣΔp ceil(prefix x)；固定B子水平凸包恰配置多面体、至多d+1有理原子。全局min max E=OPT，可ST实际恢复；先固定B逐行凸化恰CONFIG，先凸化上图仅线性负载。 由正文一般证明，不由有限运行推出。",
+      "refs": [
+        "research/current/unrelated_machines/slot_envelope_and_configuration_identity.md",
+        "research/reviews/unrelated_machines/slot_envelope_identity_review.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "L-UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "精确表示不等于可求非凸选择；CONFIG的二倍gap为既有结论复用；未给主目标近似算法。",
+      "refs": [
+        "research/current/unrelated_machines/slot_envelope_and_configuration_identity.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-C2-GENERAL-MULTISLICE-CONSTRUCTION-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "statement": "弱H2=C2-load(T)+共享一阶x的完整CONFIG(T)，一般正值sup OPT/T=2。k≥3,b=k²稀释资源星在T=1+(k−1)/(k²+1)有显式有理全局PSD/全localizer与同x CONFIG1，真实OPT=2−1/k。 由正文一般证明，不由有限运行推出。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "L-UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "不共享行二阶且三阶仍可负；不含强二阶H2、完整SoS(CONFIG)或一般计算困难性；本族可直接最优解。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1",
+      "statement": "若容量一行CONFIG同机pair与全局M2共享，则任意端f有Σ_row y_fe≤x_f；在同一k≥3,b=k²无z星族，共享每行二阶CONFIG的强H2阈值恰2−1/k=OPT，所有T<OPT均不可行，真实Dirac达到。 由正文一般证明，不由有限运行推出。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "research/reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "L-UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅此族的强合同精确校准，不含一般强H2间隙改善或求解复杂度；该条件容量证明不需要负载localizer。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "D-UM-C2-GENERAL-MULTISLICE",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-C2-GENERAL-MULTISLICE-CONSTRUCTION-v1",
+      "statement": "正文§3在一般N≥m+1下自足重构张成/Gram并用N−2≥m−1证PSD；旧n=m+1命题未被静默扩域。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md"
+      ],
+      "status": "self-contained proof"
+    },
+    {
+      "id": "C-UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SLOT-ENVELOPE-MINIMAL-AUDIT-v1"
+      ],
+      "conclusion": "UM-ST-ENVELOPE-CONFIG-IDENTITY-v1",
+      "statement": "只核冻结记录列明的参数/公式与实际小证书；不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/slot_envelope_and_configuration_identity.md",
+        "tests/audits/unrelated_machines/slot_envelope_identity.py",
+        "evidence/runs/unrelated_machines/slot_envelope_identity_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "C-UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEAK-H2-MINIMAL-AUDIT-v1"
+      ],
+      "conclusion": "UM-WEAK-H2-CONFIG-MOMENT-GAP-v1",
+      "statement": "只核冻结记录列明的参数/公式与实际小证书；不是一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
+        "tests/audits/unrelated_machines/weak_h2_configuration_moment_gap.py",
+        "evidence/runs/unrelated_machines/weak_h2_configuration_moment_gap_audit.json"
+      ],
+      "status": "finite evidence"
     }
   ]
 }

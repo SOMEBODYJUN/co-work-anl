@@ -1070,6 +1070,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- |
 | UM-UNIT-READOUT-SELECTOR-MIXING-v1 | 同一P给p≥1份完整实际C≤1调度，每变量指定一个至少在一见证采用过的selector sign；非空另需N=k^h≥p。可按P加全部见证位长poly输出满足全部指定根的完整σ，C≤2−1/(2p−1)。大k取r=floor(k/p)，小k取r1；p1直接原YES。对每p该指定profile保证精确锐，而原全局OPT1。 | [正文](unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md)、[实际审查](../reviews/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing_review.md)；限定完成，内审/实现通过，外审与新颖性未认证 |
 
+## 槽包络与共同矩配置的精确接口
+
+| ID | 精确结果 | 范围与入口 |
+| --- | --- | --- |
+| UM-ST-ENVELOPE-CONFIG-IDENTITY-v1 | 任意非负有理行的E=ΣΔp ceil(prefix x)；固定B子水平凸包恰配置多面体、至多d+1有理原子。全局min max E=OPT，可ST实际恢复；先固定B逐行凸化恰CONFIG，先凸化上图仅线性负载。 | [正文](unrelated_machines/slot_envelope_and_configuration_identity.md)、[审查](../reviews/unrelated_machines/slot_envelope_identity_review.md)；精确表示不等于可求非凸选择；CONFIG的二倍gap为既有结论复用；未给主目标近似算法。 |
+| UM-WEAK-H2-CONFIG-MOMENT-GAP-v1 | 弱H2=C2-load(T)+共享一阶x的完整CONFIG(T)，一般正值sup OPT/T=2。k≥3,b=k²稀释资源星在T=1+(k−1)/(k²+1)有显式有理全局PSD/全localizer与同x CONFIG1，真实OPT=2−1/k。 | [正文](unrelated_machines/weak_h2_configuration_moment_gap.md)、[审查](../reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md)；不共享行二阶且三阶仍可负；不含强二阶H2、完整SoS(CONFIG)或一般计算困难性；本族可直接最优解。 |
+| UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1 | 若容量一行CONFIG同机pair与全局M2共享，则任意端f有Σ_row y_fe≤x_f；在同一k≥3,b=k²无z星族，共享每行二阶CONFIG的强H2阈值恰2−1/k=OPT，所有T<OPT均不可行，真实Dirac达到。 | [正文](unrelated_machines/weak_h2_configuration_moment_gap.md)、[审查](../reviews/unrelated_machines/weak_h2_configuration_moment_gap_review.md)；仅此族的强合同精确校准，不含一般强H2间隙改善或求解复杂度；该条件容量证明不需要负载localizer。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
