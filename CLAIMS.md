@@ -50,6 +50,8 @@ UM-MACHINE-CONFIG-PROBE-GAP-v1新增“∀机器∀合法完整配置∃各自�
 
 新增UM-SHARED-SINK-MACRO-EXIT-v1与UM-BOUNDED-PROFILE-EXIT-POOL-v1，分别给可退出宏任务的共同匹配、无界机器数但完整有界profile池的实际恢复；[专题账本](research/unrelated_machines/CLAIMS.md)固定限域阈值合同。一般UM-TARGET-v1仍OPEN。
 
+[有限覆盖与反向困难性可靠性缺口](research/current/unrelated_machines/configuration_finite_cover_obstruction.md)已给标准机制的准确调度重构：即使高围长也存在整数OPT坍缩到配置阈值的cover；精选接线与一般困难性仍未排除，UM-TARGET-v1保持OPEN。
+
 新增UM-HALL-GROUP-JOINT-FLOW-v1与UM-HALL-GROUP-PROMISE-APPROX-v1：[共同资格组正文](research/current/unrelated_machines/hall_group_joint_flow.md)给无界sink数量的实际联合流舍入、未知OPT的有限瓶颈恢复；保留组身份/等端体积/负载范围，不改变一般UM-TARGET-v1。
 
 固定阶真实矩提取的精确身份 UM-TRUE-MOMENT-VECTOR-GREEDY-LINEAR-GAP-v1 见[专题账本](research/unrelated_machines/CLAIMS.md)及[自足证明](research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md)：一般nT上界、任意固定r的线性下界；不关闭UM-TARGET-v1。

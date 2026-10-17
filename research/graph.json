@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "共同研究：不相关并行机、加权拥塞、设施与客户吸引的数学关系",
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -8106,6 +8106,57 @@
         "evidence/certificates/unrelated_machines/polynomial_vector_greedy_q13.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-PERMUTATION-COVER-MODEL-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "保原处理时间的机器任务等倍置换覆盖",
+      "detail": "机器和任务各q份；每有限incidence用q阶置换接线，保处理时间，无其他边或辅助任务。",
+      "refs": [
+        "research/current/unrelated_machines/configuration_finite_cover_obstruction.md"
+      ],
+      "status": "explicit definition"
+    },
+    {
+      "id": "UM-CONFIG-FINITE-COVER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "配置下界的有限覆盖实现及任意高围长坍缩",
+      "detail": "∀合法UM实例P，∀有限置换incidence覆盖Q，T_CONF(Q)=T_CONF(P)且T_CONF(P)≤OPT(Q)≤OPT(P)。∀整数g≥1，min_{有限cover Q,incidence girth>g}OPT(Q)=T_CONF(P)，最小值取得；不加g时可取q≤r^(r/2)，r≤m+n为配置等式系统rank。给定有理配置证书可输出敏感地精确实现为某cover的真实调度。",
+      "refs": [
+        "research/current/unrelated_machines/configuration_finite_cover_obstruction.md",
+        "research/reviews/unrelated_machines/configuration_finite_cover_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-FINITE-COVER-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "配置覆盖实现的双路精确有限核验",
+      "detail": "种子128全调度、6-cover真实证书及无损提升；160真实混合/边界/非法输入；独立570自由字。",
+      "refs": [
+        "research/current/unrelated_machines/configuration_finite_cover_obstruction.md",
+        "tests/audits/unrelated_machines/configuration_finite_cover.py",
+        "tests/audits/unrelated_machines/configuration_finite_cover_independent.py",
+        "evidence/runs/unrelated_machines/configuration_finite_cover_audit.json",
+        "evidence/runs/unrelated_machines/configuration_finite_cover_independent.json",
+        "examples/unrelated_machines/configuration_finite_cover_seed.json",
+        "evidence/certificates/unrelated_machines/configuration_finite_cover_witness.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-NEAR-TWO-GAP-REDUCTION-OBLIGATION-v1",
+      "kind": "obligation",
+      "track": "unrelated_machines",
+      "title": "排除全部固定改善所需的源相关真实OPT gap归约",
+      "detail": "一条足够而未完成的合同：每固定有理δ>0，位多项式源归约保YES OPT≤T及NO OPT≥(2−δ)T；不得用配置gap或有限cover存在性替代可靠性。",
+      "refs": [
+        "research/current/unrelated_machines/configuration_finite_cover_obstruction.md"
+      ],
+      "status": "OPEN; sufficient obligation, not a hardness theorem"
     }
   ],
   "hyperedges": [
@@ -19587,6 +19638,65 @@
         "research/current/unrelated_machines/truncated_multiplication_vector_greedy_barrier.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "D-UM-CONFIG-FINITE-COVER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PERMUTATION-COVER-MODEL-v1"
+      ],
+      "conclusion": "UM-CONFIG-FINITE-COVER-v1",
+      "statement": "配置双向投影/提升、共同分母socket配对、0/1基行列式与自由字有限群正规覆盖自足给出全部结论。",
+      "refs": [
+        "research/current/unrelated_machines/configuration_finite_cover_obstruction.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "C-UM-CONFIG-FINITE-COVER-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FINITE-COVER-AUDIT-v1"
+      ],
+      "conclusion": "UM-CONFIG-FINITE-COVER-v1",
+      "statement": "只核冻结实例、真实调度及有限自由字，不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/configuration_finite_cover_obstruction.md",
+        "evidence/runs/unrelated_machines/configuration_finite_cover_audit.json",
+        "evidence/runs/unrelated_machines/configuration_finite_cover_independent.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "L-UM-CONFIG-FINITE-COVER-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CONFIG-FINITE-COVER-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅原机器/任务等q复制及逐incidence置换、保原时间的覆盖；高围长存在性不保证小尺寸或随机概率。未排精选接线/扩张条件/其他归约，未证明UM-TARGET-v1反面；不提供相对原输入的位多项式配置求解或覆盖输出。",
+      "refs": [
+        "research/current/unrelated_machines/configuration_finite_cover_obstruction.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "L-UM-NEAR-TWO-GAP-REDUCTION-OBLIGATION-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NEAR-TWO-GAP-REDUCTION-OBLIGATION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "充分困难性合同尚未构造；不借归约目标的表述升级反面真值。",
+      "refs": [
+        "research/current/unrelated_machines/configuration_finite_cover_obstruction.md"
+      ],
+      "status": "open proof obligation"
     }
   ]
 }
