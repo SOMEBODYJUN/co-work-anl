@@ -110,3 +110,7 @@
 [正support与配置证书保持](../../../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)已经真实statement-first/作者读后/final全文核：row3/item度3仍CONFIG gap无界，但actualYES常数finder必须另攻；不把证书障碍当主反面。继续攻击共享guard或真实source partial soundness。
 
 [并行sum关系任意状态权半保留](../../../current/unrelated_machines/weighted_affine_parallel_relation_reweighting_obstruction.md)显示只改权不能对整个包含本族low-value NO域强制tiny V；singleton能V0，所以尚不排真正hard image。继续实际partial decoder和批量guard一致选择。
+
+[bulk OR两actual模式插值](../../../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)已真实三版statement-first/作者读后/final全文核；任意异权I与重C(.5,1]不能挡全False1.5读出。真实出口须改变J的共同资格/容量或没有两strict模式的全局源，而非单加内部collector。
+
+当前按[真实NO联合decoder路线卡](ROUTE_CARD.md)继续：主O仍OPEN，bulk结果仅salvage；保留同行新导航，并以本会话明确自主并行授权处理人数/停工设置，不排他认领。

@@ -11784,6 +11784,29 @@
         "research/reviews/unrelated_machines/weighted_affine_parallel_relation_reweighting_review.md"
       ],
       "status": "complete scoped exact compilation obstruction; actual statement-first and final review; novelty unverified"
+    },
+    {
+      "id": "UM-BULK-OR-COMMIT-TWO-ACTUAL-WITNESS-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "完整双池环与两实际一真见证域",
+      "detail": "r≥2/偶k≥2/ρ∈(.5,1)完整block-ring双池；J只接任意unrelated非负I或正C，全部J在C端∈(.5,1]；给同P两份不同一真完整实际strict≤1调度。",
+      "refs": [
+        "research/current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-UNRELATED-AUX-HEAVY-READOUT-BULK-OR-COMMIT-SPLIT-v3",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意异权辅助与重读口的批量OR三半逃逸",
+      "detail": "det-bit-poly构造全部原jobs全False实际≤1.5，J各仅取自身两witness原端，I≤1.5/C,M≤1/正pool≤1.5；只承诺witness存在则仅存在结论，原OPT1非sourceNO。",
+      "refs": [
+        "research/current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md",
+        "research/reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md"
+      ],
+      "status": "complete scoped two-witness readout obstruction; actual statement-first and final review; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -28712,6 +28735,37 @@
       "refs": [
         "research/current/unrelated_machines/weighted_affine_parallel_relation_reweighting_obstruction.md",
         "research/reviews/unrelated_machines/weighted_affine_parallel_relation_reweighting_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_unrelated_aux_heavy_readout_bulk_or_commit_split_v3_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-BULK-OR-COMMIT-TWO-ACTUAL-WITNESS-DOMAIN-v1"
+      ],
+      "conclusion": "UM-UNRELATED-AUX-HEAVY-READOUT-BULK-OR-COMMIT-SPLIT-v3",
+      "statement": "strict False正C占用≤1；两actual J半项按真实I成本配对，一次整数流同时保slot/C/branch gate；固定J扣额给I≤1.5，任意F真实回填全原q/b/f并保pool≤1.5。两global strict见证承重，非sourceNO。",
+      "refs": [
+        "research/current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md",
+        "research/reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "um_unrelated_aux_heavy_readout_bulk_or_commit_split_v3_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNRELATED-AUX-HEAVY-READOUT-BULK-OR-COMMIT-SPLIT-v3"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只排该独立committer已有两完整strict模式的weak抗split；不排缺两全局strict见证的跨子句NO，不覆盖J到ring/pool/负C或C≤.5小端/其它backbone；不提供一般算法/near2困难性。",
+      "refs": [
+        "research/current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md",
+        "research/reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md"
       ],
       "status": "scope limitation"
     }

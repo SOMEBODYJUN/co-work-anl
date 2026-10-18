@@ -2735,3 +2735,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：k1/singleton关系给V0/actual2，主k≥2完整关系承重；不误套hard image，无standing fatal。
 - Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
 - Related Files：[正文](../current/unrelated_machines/weighted_affine_parallel_relation_reweighting_obstruction.md)、[审查](../reviews/unrelated_machines/weighted_affine_parallel_relation_reweighting_review.md)及逐SHA原件。
+
+
+## UM-UNRELATED-AUX-HEAVY-READOUT-BULK-OR-COMMIT-SPLIT-v3：任意异权辅助与重读口的批量OR三半逃逸
+
+- Objects / Domain / Quantifiers / Definitions：r≥2/偶k≥2/ρ∈(.5,1)完整block-ring双池；J只接任意unrelated非负I或正C，全部J在C端∈(.5,1]；给同P两份不同一真完整实际strict≤1调度。
+- Exact Statement / Conclusion：det-bit-poly构造全部原jobs全False实际≤1.5，J各仅取自身两witness原端，I≤1.5/C,M≤1/正pool≤1.5；只承诺witness存在则仅存在结论，原OPT1非sourceNO。
+- Assumptions / Dependencies：无复杂度假设；UM-MODEL-v1与明示完整backbone/J资格/两actual strict模式，自足排序配对与整数流；不调用未知见证finder。
+- Scope：只排该独立committer已有两完整strict模式的weak抗split；不排缺两全局strict见证的跨子句NO，不覆盖J到ring/pool/负C或C≤.5小端/其它backbone；不提供一般算法/near2困难性。
+- Evidence：root与fee共同推导，不记root盲审；general分别仅v1/v2/v3 statement独立重构并冻结b26…/ab4…/698…，root全文实读后才统一放三版作者Proof；general实际全文读后9de…，再正式canonical header+§1–5全文审，root每份实际读。固定同端/重复occurrence两路线与maxF/分段回填均合法，全部aux共用同一流，无standing fatal。
+- Counterevidence / Objections：重C边界严格>.5，C输出≤1非恰1；I仅≤1.5，fixed C扣gate，原OPT1/conditionalFalse与sourceNO分开，无standing fatal。
+- Status：限定证明完整，真实独立先行/作者读后/最终全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)、[审查](../reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md)及逐SHA原件。
