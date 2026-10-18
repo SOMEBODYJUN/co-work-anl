@@ -358,3 +358,6 @@ u_t) 的一般复杂度。
 单件函数图没有安全断口不再是给定目标路径的真实障碍：保留坏环边时，所有其它入流统一受S+Q−β<U保护，源补集再激活坏环。旧证书仍准确失败，不能据此否定路径。真正剩下的是无单eligible且不满足实际最大件初态promise的共同动作，以及未知τ的全输入选择；见[新正文](../current/unrelated_machines/held_cycle_release_and_assigned_max_path.md)。
 
 2026-10-18：[一般双见证查询分离的锐3/2费用合同](../current/unrelated_machines/two_witness_query_separation.md)；[单正小端级联的完整查询立方体](../current/unrelated_machines/single_home_cascade_query_separation.md)；[超立方分组菜单的Hall保留与锐3/2实际界](../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)。一般双见证tiny query的单次改派费不能复用为near2固定激活费，准确分离阈值3/2且sharp；单home全留初态另有完整query cube；超立方分组菜单全类actual≤3/2（DGR特例19/15）。失败范围仅精确合同；非OPT困难性，UM-TARGET-v1正反面仍OPEN。重试须改变读取初态聚合量/费用/源相关接口或slice真实结构，并给完整实际decoder。
+
+
+[单件query计数与近单位读取必要条件](../current/unrelated_machines/two_witness_query_separation.md)另立QUERY-COUNT-FEE-v3：即使聚合大，tiny单件仍有大批合格低费query；一次费用W≤F迫至少d−2枚query初态>(β−1)T。原η0严格错误实际修复并保留；仅双strict改派收费合同，非主反证。

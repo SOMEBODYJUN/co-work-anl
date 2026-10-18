@@ -173,3 +173,6 @@
 [永久缓冲激活与共同解锁路径](research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md)给锐分数窗口[1/3,1/2]和静态/优先级反例；[保留坏环与实际最大件全程锐界](research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md)用共同保护来流及源补集证明：每个正阈值源有一件eligible时，给定目标的完整路径可构造；并覆盖标准有序槽实际输出。局部promise类峰U逐参数锐，不冒充实际ST输出锐性。具体τ仍是承重输入，未知目标、任意剪枝初态与一般统一次二输出仍OPEN。
 
 UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐3/2费用合同](research/current/unrelated_machines/two_witness_query_separation.md)、[单home完整查询模式](research/current/unrelated_machines/single_home_cascade_query_separation.md)、[超立方菜单的Hall与锐3/2](research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)。均已实际独立内审；是给定见证/结构类的边界，不构成主命题正反面证明。精确身份、输入域、实现和未覆盖义务以本题账本为准。
+
+
+[QUERY-COUNT-FEE-v3](research/current/unrelated_machines/two_witness_query_separation.md)进一步排除单件tiny聚合读取的固定费逃逸：正T两strict模式、β≥3/2，W≤κF迫至少d−2floorκ枚query旧端>(β−1)T。条件性改派费必要界，不是UM困难性；零质量原异议已修复。

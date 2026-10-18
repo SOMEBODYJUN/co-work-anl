@@ -1200,6 +1200,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-GROUPED-HYPERCUBE-SLICE-SCHEDULING-v2 | d,Q≥1，显式带变量tag的[d]^Q；每variable至多d个groups，incidence索引单射，每state每变量一slice；非空菜单/组变量集。selector1、private incidence1/Lg、resource1。 所有state选择/组子族union≥cdΣLg；整数Hall给ceil(Lg/2)资源，所有实际P≤3/2且有限例达OPT3/2；d1或Q1 OPT1；d5Q2三变量组每组11/15，实际≤19/15。非hardness。 | [正文](unrelated_machines/coordinate_slice_source_compilation_counterexample.md)、[审查](../reviews/unrelated_machines/grouped_hypercube_slice_scheduling_review.md)；主目标未解。 |
 
+| UM-TWO-WITNESS-QUERY-COUNT-FEE-v3 | 任意P同一两actualσ≤有理T>0；D改变jobs、非空Q、d=Q数；使用分离v2同一I>T/2着色族，β∈[3/2,2)、cβ−1、Rβ为query旧端总量>cT的机器数；非负改派权W。 同族good数≥d−Rβ，实际≤βT并有fee≤W/(d−Rβ)；单件≤ηT时有严格mass界（η0单列）和s=floor(c/η)+1整数分组界。若每singleton必费F且W≤κF，至少d−2floorκ枚query旧端>cT；非主反证。 | [正文§5](unrelated_machines/two_witness_query_separation.md)、[审查](../reviews/unrelated_machines/two_witness_query_count_fee_review.md)；无新增实现/有限证据，主目标未解。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

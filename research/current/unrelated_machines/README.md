@@ -413,3 +413,6 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 
 [未知目标下的共同尺寸精确重开](unknown_target_common_size_exact_repair.md)闭合了冻结核心、公共微任务尺寸接口：未知 B 可由有限候选阈值与整数流精确搜索；异尺寸共享机器立即遇到 Partition/装箱耦合。[未知目标 Partition 障碍](unknown_target_partition_search_obstruction.md)说明给定目标的全程路径合同不能把 τ 量词免费删除；这只是目标选择复杂度边界，UM-TARGET-v1 仍 OPEN。
 2026-10-18 新增实际读取/费用合同与cube桥边界：[一般双见证查询分离的锐3/2费用合同](two_witness_query_separation.md)；[单正小端级联的完整查询立方体](single_home_cascade_query_separation.md)；[超立方分组菜单的Hall保留与锐3/2实际界](coordinate_slice_source_compilation_counterexample.md)。前两者需同一P两实际见证，cube3/2为限定结构；均不升级UM主目标。
+
+
+[单件query计数与近单位读取必要条件](two_witness_query_separation.md)另立QUERY-COUNT-FEE-v3：即使聚合大，tiny单件仍有大批合格低费query；一次费用W≤F迫至少d−2枚query初态>(β−1)T。原η0严格错误实际修复并保留；仅双strict改派收费合同，非主反证。

@@ -11094,6 +11094,29 @@
         "tests/audits/unrelated_machines/unknown_target_partition_search_obstruction.py"
       ],
       "status": "complete stated-scope complexity obstruction; external review and novelty unverified"
+    },
+    {
+      "id": "UM-TWO-WITNESS-QUERY-COUNT-FEE-DOMAIN-v3",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "正T的query重源机/单件heavy与费用域",
+      "detail": "任意P同一两actualσ≤有理T>0；D改变jobs、非空Q、d=Q数；使用分离v2同一I>T/2着色族，β∈[3/2,2)、cβ−1、Rβ为query旧端总量>cT的机器数；非负改派权W。 heavy是old>cT，F/κ为额外明确收费前提；η0单列。",
+      "refs": [
+        "research/current/unrelated_machines/two_witness_query_separation.md"
+      ],
+      "status": "explicit stated-scope model"
+    },
+    {
+      "id": "UM-TWO-WITNESS-QUERY-COUNT-FEE-v3",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单件查询数与近单位固定费必要条件",
+      "detail": "同族good数≥d−Rβ，实际≤βT并有fee≤W/(d−Rβ)；单件≤ηT时有严格mass界（η0单列）和s=floor(c/η)+1整数分组界。若每singleton必费F且W≤κF，至少d−2floorκ枚query旧端>cT；非主反证。",
+      "refs": [
+        "research/current/unrelated_machines/two_witness_query_separation.md",
+        "research/reviews/unrelated_machines/two_witness_query_count_fee_review.md"
+      ],
+      "status": "complete scoped proof and actual statement-first plus read-after independent audit; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -27090,6 +27113,37 @@
         "research/current/unrelated_machines/README.md"
       ],
       "status": "current reconstruction internally audited; unrefereed"
+    },
+    {
+      "id": "um_two_witness_query_count_fee_v3_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-WITNESS-QUERY-SEPARATION-v2",
+        "UM-TWO-WITNESS-QUERY-COUNT-FEE-DOMAIN-v3"
+      ],
+      "conclusion": "UM-TWO-WITNESS-QUERY-COUNT-FEE-v3",
+      "statement": "采用该已证同一染色的唯一owner/局部负荷不变量；坏色注入重机、质量及group计数给good/fee，额外F和κ假设共同给heavy必要式。",
+      "refs": [
+        "research/current/unrelated_machines/two_witness_query_separation.md",
+        "research/reviews/unrelated_machines/two_witness_query_count_fee_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "um_two_witness_query_count_fee_v3_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-WITNESS-QUERY-COUNT-FEE-v3"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只给两actual模式和指定费用下的必要形状；无源NO decoder或一般UM复杂度结论。",
+      "refs": [
+        "research/current/unrelated_machines/two_witness_query_separation.md",
+        "research/reviews/unrelated_machines/two_witness_query_count_fee_review.md"
+      ],
+      "status": "scope limitation"
     }
   ]
 }

@@ -99,3 +99,70 @@ Q 是查询任务。对每个 q∈Q 定义其他查询在初态的聚合负荷
 **Evidence / Counterevidence / Status。** 自足证明与锐例完成；两个审查者先仅据 Exact 独立重构，再读冻结证明与最终正文，实际记录见[审查](../../reviews/unrelated_machines/two_witness_query_separation_review.md)。精确构造和32个混合分配的有限核验不能替代全量词证明。外审、新颖性未认证；这是可复用的归约合同边界，不升级 `UM-TARGET-v1` 的正反面状态。
 
 **Related Files。** 本页、上述审查、`tests/audits/unrelated_machines/two_witness_query_separation.py`、`examples/unrelated_machines/two_witness_query_separation_cases.json`、对应冻结运行及 `history/source/notes/unrelated_machines/two_witness_query_separation_v2_*`。
+
+
+## 5. 仅单件 tiny 时的合格查询计数与费用
+
+这里放宽前述“每机查询聚合小”的使用条件，另立 **`UM-TWO-WITNESS-QUERY-COUNT-FEE-v3`**。这是同一染色族的进一步筛选，不改变分离v2的原结论。内部计数候选v1在η=0时误写“严格超过d个”；独立审查给出一枚零旧端query的反例，v2单列零质量；本v3另加入近单位读取的必要条件，原异议及两个先前冻结版本均保留。
+
+**Objects / Domain / Definitions / Quantifiers。** 使用第1–2节的一般P、两实际σ₀/σ₁≤T、非空Q⊆D及**同一固定阈值染色族**，但本计数身份要求T>0。令d=|Q|，给有理β∈[3/2,2)，c=β−1，定义
+
+\[
+ L_i^Q=\sum_{q\in Q:\sigma_0(q)=i}p_{i,q},\qquad
+ R_\beta=|\{i:L_i^Q>cT\}|.
+\tag{6}
+\]
+
+**Exact Statement / Conclusion。** 可确定性总位多项式识别集合G⊆Q，使所有q∈G的原实际τ_q≤βT，且
+
+\[
+ |G|\ge d-R_\beta.
+\]
+
+若Rβ<d，则某个**同一合格query**同时满足
+
+\[
+ C_{\max}(\tau_q)\le\beta T,
+ \qquad\operatorname{fee}(\tau_q)\le W/(d-R_\beta).          \tag{7}
+\]
+
+若另有每枚query的初态时间p_{σ₀(q),q}≤ηT，其中有理0≤η<c，不要求逐机聚合小，则：
+
+- η=0时全部d个query合格，至少一费≤W/d；不声称严格多于d。
+- 0<η<c时合格数严格大于(1−η/c)d，整数至少⌊(1−η/c)d⌋+1；至少一合格query费≤W/[(1−η/c)d]。
+- η>0时令s=⌊c/η⌋+1≥2，还可保证
+
+\[
+ |G|\ge d-\lfloor d/s\rfloor\ge\lceil d/2\rceil,
+ \qquad
+ \min_{q\in G}\operatorname{fee}(\tau_q)
+ \le\frac W{d-\lfloor d/s\rfloor}.                        \tag{8}
+\]
+
+所有费用权仍任意非负，W=0时均为非严格≤0。构造、染色及支持不依赖β和权；G可取所有实际满足βT的查询，逐机有理回算即可得到。
+
+**证明。** 若q不合格，某超载机i必标q，因为未标q机器≤3T/2≤βT。标q机负载≤T加其他queries的原端负荷，故超载迫使L_i^Q>cT。每个坏q选择最小编号超载机；每机只标一色，此为坏query到重query机器的单射，故坏数≤Rβ。全族支持不交，G的费用总和≤W，给(7)，没有把可行query与低费query分开选成两枚。
+
+令M=Σ_q p_{σ₀(q),q}≤ηTd。η=0直接给Rβ=0。η>0且Rβ>0时，重机严格阈值给Rβ cT<M≤ηTd；Rβ=0时ηd/c>0，同样Rβ<ηd/c。故|G|≥d−Rβ>(1−η/c)d，得到整数界和平均费用。更强地，每台重机若含k枚queries，其质量≤kηT，故k>c/η，k≥s。不同源机的query组不交，Rβ s≤d，给(8)。这里c/η恰为整数时也必须再加1，不能换成错误的ceil。
+
+**Fee consequence / Scope。** 若具体物理合同要求**每个**合法单query模式在峰≤βT时都必须付指定非query改派费至少F>0，则
+
+\[
+ W\ge|G|F\ge(d-R_\beta)F,
+ \quad\text{且在(8)域内 }W\ge[d-\lfloor d/s\rfloor]F.       \tag{9}
+\]
+
+所以仅把许多tiny queries堆到同一初态机器，不足以让一次固定费供任意多次查询复用；当每单件初态低于(β−1)T时，至少一半查询在该弱阈值内可分摊总费。背景费、退款、非改派收费、源相关边界或并非同一P两strict见证仍需另核，不能由本计数命题宣称已经排除一般归约。
+
+**Dependencies / Complexity。** 分离v2的完整一般输入与特定染色的逐机唯一颜色/局部负荷不变量，加上T>0、β域和明确费用。只是机器源query组计数、有限有理比较和整数除法；s可很大，但不按其数值迭代，字长仍多项式。T=0由原分离身份原生处理，不用于本正T比值。没有新生产实现或新增有限枚举证明。
+
+**Evidence / Counterevidence / Status / Related Files。** 一般计数证明完成，两个审查者先独立重构后读证明及最终组合，见[计数实际审查](../../reviews/unrelated_machines/two_witness_query_count_fee_review.md)。旧η0错误及其反例作为原审查来源保留。外审、新颖性未认证；只改变给定见证读取/收费的必要条件，`UM-TARGET-v1`正反面仍未完成。
+
+
+**v3新增：固定费要求近单位初态读数。** 不需统一η，令H=#{q∈Q:p_{σ₀(q),q}>(β−1)T}、S=d−H。含heavy query的重源机至多H台；无heavy的重源机因严格总量>(β−1)T，至少需两枚非heavy query，至多⌊S/2⌋台。因此Rβ≤H+⌊S/2⌋，同族合格数至少⌈S/2⌉，若每单query在βT内都必付F，则W≥⌈S/2⌉F。若W≤κF、F>0、有理κ≥0，则⌈S/2⌉≤⌊κ⌋，所以
+
+\[
+ \boxed{H\ge d-2\lfloor\kappa\rfloor.}                 \tag{10}
+\]
+
+特别地，一次费W≤F要求至少d−2枚查询在初态时间严格大于(β−1)T；对β=2−ε，这就是严格大于(1−ε)T。此加强由独立审查者typed首先提出，root复核后以v3另冻。它进一步排除“单件tiny但聚合大”的简单逃逸，仍只约束同一P两strict模式及明确改派/新增unit费；不保证任意heavy形状可实现，也不建立一般UM反证。

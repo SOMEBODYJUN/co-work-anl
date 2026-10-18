@@ -2393,3 +2393,18 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：无standing fatal；费用/背景退款、任意子集、显式输入和sharp非OPT gap限制见正文；cube组合措辞异议已实际修复并留记录。
 - Status：证明完成，内部独立审查完成；外审、新颖性未认证，UM-TARGET-v1保持OPEN。
 - Related Files：[正文](../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)；[实际审查](../reviews/unrelated_machines/grouped_hypercube_slice_scheduling_review.md)；关联代码/证书和保真来源在审查互链。
+
+
+## UM-TWO-WITNESS-QUERY-COUNT-FEE-v3：单件查询计数与近单位固定费必要条件
+
+- ID / Version：`UM-TWO-WITNESS-QUERY-COUNT-FEE-v3`；v1零η严格错误和v2修复保留，v3新增heavy必要条件。
+- Exact Statement：同族good数≥d−Rβ，实际≤βT并有fee≤W/(d−Rβ)；单件≤ηT时有严格mass界（η0单列）和s=floor(c/η)+1整数分组界。若每singleton必费F且W≤κF，至少d−2floorκ枚query旧端>cT；非主反证。
+- Objects / Domain / Quantifiers：任意P同一两actualσ≤有理T>0；D改变jobs、非空Q、d=Q数；使用分离v2同一I>T/2着色族，β∈[3/2,2)、cβ−1、Rβ为query旧端总量>cT的机器数；非负改派权W。 对所有满足共同域的完整输入成立。
+- Assumptions：两个实际strict见证与指定非负费用；F>0和W≤κF只用于条件性heavy推论，不默认成立。
+- Definitions：LQ_i、Rβ、同染色good族、η、s、heavy H和κ按[正文§5](../current/unrelated_machines/two_witness_query_separation.md)；T>0。
+- Scope / Conclusion：给定见证读取费用的必要条件，非一般算法/困难性或任意子集族。
+- Dependencies：UM-TWO-WITNESS-QUERY-SEPARATION-v2的同一阈值染色逐机唯一owner/局部负荷不变量，加全部本域与源query组不交计数。
+- Evidence：两个真实Exact-first独立重构、原η0反例、修复与读后最终组合；implementation=none，无新有限核验代proof。
+- Counterevidence / Objections：η0严格多于d原错已单列修复；old=cT非heavy、rich严格>、κ取floor、W0非严格费均核过；无standing fatal。
+- Status：证明与内部审查完成；外审、新颖性未认证，UM-TARGET-v1正反面仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/two_witness_query_separation.md)、[审查](../reviews/unrelated_machines/two_witness_query_count_fee_review.md)及其十个原字节来源。
