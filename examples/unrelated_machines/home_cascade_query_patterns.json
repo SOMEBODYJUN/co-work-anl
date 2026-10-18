@@ -1,0 +1,54 @@
+{
+  "title": "三查询分叉级联、单位迁移链、无根费用环与零端的精确例子",
+  "machines": ["H1", "H2", "A", "B", "C", "D", "E", "W0", "W1", "K", "L", "R0", "R1", "Z0"],
+  "unit_jobs": [
+    {"id": "U", "processing": {"W0": "1", "W1": "1"}}
+  ],
+  "home_jobs": [
+    {"id": "q1", "home": "H1", "processing": {"H1": "1/8", "A": "1"}},
+    {"id": "q2", "home": "H2", "processing": {"H2": "1/8", "B": "1"}},
+    {"id": "q3", "home": "H2", "processing": {"H2": "1/16", "C": "1"}},
+    {"id": "f1", "home": "A", "processing": {"A": "2/5", "D": "1"}},
+    {"id": "f2", "home": "A", "processing": {"A": "2/5", "E": "1"}},
+    {"id": "f3", "home": "D", "processing": {"D": "1/2", "H2": "1"}},
+    {"id": "f4", "home": "B", "processing": {"B": "3/4", "H1": "1"}},
+    {"id": "f5", "home": "E", "processing": {"E": "1/3", "W0": "1"}},
+    {"id": "f6", "home": "W1", "processing": {"W1": "2/3", "K": "1"}},
+    {"id": "g", "home": "C", "processing": {"C": "5/8", "L": "1"}},
+    {"id": "r0", "home": "R0", "processing": {"R0": "3/7", "R1": "1"}},
+    {"id": "r1", "home": "R1", "processing": {"R1": "4/7", "R0": "1"}},
+    {"id": "z", "home": "A", "processing": {"A": "1/5", "Z0": "0"}}
+  ],
+  "queries": ["q1", "q2", "q3"],
+  "sigma0": {
+    "U": "W0", "q1": "H1", "q2": "H2", "q3": "H2",
+    "f1": "A", "f2": "A", "f3": "D", "f4": "B",
+    "f5": "E", "f6": "W1", "g": "C", "r0": "R0", "r1": "R1", "z": "A"
+  },
+  "sigma1": {
+    "U": "W1", "q1": "A", "q2": "B", "q3": "C",
+    "f1": "D", "f2": "E", "f3": "H2", "f4": "H1",
+    "f5": "W0", "f6": "K", "g": "L", "r0": "R1", "r1": "R0", "z": "Z0"
+  },
+  "nonquery_unit_weights": {
+    "f1": "2", "f2": "3", "f3": "5", "f4": "7", "f5": "11",
+    "f6": "13", "g": "17", "r0": "19", "r1": "23"
+  },
+  "expected_A_q": {
+    "q1": ["f1", "f2", "f3", "f5", "f6"],
+    "q2": ["f4"],
+    "q3": ["g"]
+  },
+  "expected_dropped_D": ["r0", "r1"],
+  "expected_endpoints": {"f5": "W1"},
+  "audit_patterns": [
+    {"subset": [], "expected_peak": "1", "expected_delta": "3/16", "expected_fee": "0"},
+    {"subset": ["q1"], "expected_peak": "19/16", "expected_delta": "3/16", "expected_fee": "34"},
+    {"subset": ["q2"], "expected_peak": "9/8", "expected_delta": "1/8", "expected_fee": "7"},
+    {"subset": ["q3"], "expected_peak": "1", "expected_delta": "1/8", "expected_fee": "17"},
+    {"subset": ["q1", "q2"], "expected_peak": "17/16", "expected_delta": "1/16", "expected_fee": "41"},
+    {"subset": ["q1", "q3"], "expected_peak": "9/8", "expected_delta": "1/8", "expected_fee": "51"},
+    {"subset": ["q2", "q3"], "expected_peak": "9/8", "expected_delta": "1/8", "expected_fee": "24"},
+    {"subset": ["q1", "q2", "q3"], "expected_peak": "1", "expected_delta": "0", "expected_fee": "58"}
+  ]
+}

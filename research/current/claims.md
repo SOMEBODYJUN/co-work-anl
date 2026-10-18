@@ -1194,6 +1194,11 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1 | 冻结核心负载 f_i 后，所有重开微任务在每个有限端均有同一公共有理尺寸 q>0、资格任意时，未知最优峰值 B* 可在候选集 {f_i+qt} 上用 O(log(m|U|+1)) 次整数最大流精确求出并输出实际分配；机器侧不交且各分量单一尺寸时可分量合并。 | [正文](unrelated_machines/unknown_target_common_size_exact_repair.md)、[精确审计](../../tests/audits/unrelated_machines/unknown_target_common_size_exact_repair.py)；仅冻结核心/公共尺寸接口，异尺寸共享机器退化为装箱/Partition，非一般UM算法。 |
 | UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1 | 从给定初态 σ、T 和矩阵中删除具体目标 τ 后，要求在承诺存在 τ 且 Cmax(τ)≤T 时位多项式构造 τ，已包含两机 Partition：p_1j=p_2j=w_j、Σw_j=2B、T=B；目标存在当且仅当等和Partition存在。 | [正文](unrelated_machines/unknown_target_partition_search_obstruction.md)、[审查](../reviews/unrelated_machines/held_cycle_unknown_target_obstruction.md)、[审计](../../tests/audits/unrelated_machines/unknown_target_partition_search_obstruction.py)；仅证明给定目标路径定理不能免费删去 τ 量词，不构成一般近似困难性。 |
+| UM-TWO-WITNESS-QUERY-SEPARATION-v2 | 任意一般P，同一P实际σ0/σ1均≤有理T≥0；非空Q⊆owner改变集D；δq为其它Q在σ0每机最大总负荷；任意非负非query改派权。 det bitpoly两两不交Aq⊆D\Q，单q实际τq≤max(3T/2,T+δq)，Σfee≤W；tiny聚合Q时3T/2，且任意tinyη下3/2合同阈值sharp。不是OPT gap或UM算法。 | [正文](unrelated_machines/two_witness_query_separation.md)、[审查](../reviews/unrelated_machines/two_witness_query_separation_review.md)；主目标未解。 |
+
+| UM-SINGLE-HOME-CASCADE-QUERY-SEPARATION-v2 | 每J唯一正小home其它端0/1，U任意unit资格；同一P两actualσ≤1，σ0全J留home，σ1全Q走unit；D/Z按σ1定义。 同一批不交Aq对全部S⊆Q同时给完整实际τS，J-unit恰S加并Aq；C≤1+δ(S)，非query unit费精确模加；零端Z保持原零端。仅此normal form。 | [正文](unrelated_machines/single_home_cascade_query_separation.md)、[审查](../reviews/unrelated_machines/single_home_cascade_query_separation_review.md)；主目标未解。 |
+
+| UM-GROUPED-HYPERCUBE-SLICE-SCHEDULING-v2 | d,Q≥1，显式带变量tag的[d]^Q；每variable至多d个groups，incidence索引单射，每state每变量一slice；非空菜单/组变量集。selector1、private incidence1/Lg、resource1。 所有state选择/组子族union≥cdΣLg；整数Hall给ceil(Lg/2)资源，所有实际P≤3/2且有限例达OPT3/2；d1或Q1 OPT1；d5Q2三变量组每组11/15，实际≤19/15。非hardness。 | [正文](unrelated_machines/coordinate_slice_source_compilation_counterexample.md)、[审查](../reviews/unrelated_machines/grouped_hypercube_slice_scheduling_review.md)；主目标未解。 |
 
 ## 逻辑使用规则
 

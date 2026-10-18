@@ -171,3 +171,5 @@
 尝试用本行CONFIG全部同阶矩+全局固定阶PSD直接抽取保给定二阶的重匹配分布。失败是接口本身错误：[奇数切片K22编译](research/current/unrelated_machines/strong_configuration_matching_moment_obstruction.md)的所有短事件非负、全部负载恒1，却使整数选块数形式方差为0而均值半整数。回收自足harmonic PSD、精确位长和锐修复半径1/[4N(N−1)]；该半径趋零，所有实例显然OPT1。只排精确保矩接口，重试应允许定量改矩/直接共同实际选择；不据此否定强松弛的实际舍入。
 
 [永久缓冲激活与共同解锁路径](research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md)给锐分数窗口[1/3,1/2]和静态/优先级反例；[保留坏环与实际最大件全程锐界](research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md)用共同保护来流及源补集证明：每个正阈值源有一件eligible时，给定目标的完整路径可构造；并覆盖标准有序槽实际输出。局部promise类峰U逐参数锐，不冒充实际ST输出锐性。具体τ仍是承重输入，未知目标、任意剪枝初态与一般统一次二输出仍OPEN。
+
+UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐3/2费用合同](research/current/unrelated_machines/two_witness_query_separation.md)、[单home完整查询模式](research/current/unrelated_machines/single_home_cascade_query_separation.md)、[超立方菜单的Hall与锐3/2](research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)。均已实际独立内审；是给定见证/结构类的边界，不构成主命题正反面证明。精确身份、输入域、实现和未覆盖义务以本题账本为准。

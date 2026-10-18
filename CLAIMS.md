@@ -143,3 +143,5 @@ UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2：末层两色的对齐Ca
 [强配置匹配矩边界](research/current/unrelated_machines/strong_configuration_matching_moment_obstruction.md)证明任意固定阶、所有短事件非负且本行CONFIG同阶相容，仍可没有保给定二阶的真实共同匹配law；保一阶的锐二阶修复距离为`1/[4N(N−1)]`。实际OPT1且距离趋零，非调度gap。一般输入的混合身份、无界阻塞集和允许改矩后的全机统一余量仍缺；UM-TARGET-v1保持OPEN。
 
 [永久缓冲激活与共同解锁路径](research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md)给锐分数窗口[1/3,1/2]和静态/优先级反例；[保留坏环与实际最大件全程锐界](research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md)用共同保护来流及源补集证明：每个正阈值源有一件eligible时，给定目标的完整路径可构造；并覆盖标准有序槽实际输出。局部promise类峰U逐参数锐，不冒充实际ST输出锐性。具体τ仍是承重输入，未知目标、任意剪枝初态与一般统一次二输出仍OPEN。
+
+UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐3/2费用合同](research/current/unrelated_machines/two_witness_query_separation.md)、[单home完整查询模式](research/current/unrelated_machines/single_home_cascade_query_separation.md)、[超立方菜单的Hall与锐3/2](research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)。均已实际独立内审；是给定见证/结构类的边界，不构成主命题正反面证明。精确身份、输入域、实现和未覆盖义务以本题账本为准。

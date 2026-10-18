@@ -1,0 +1,112 @@
+{
+  "claim": {
+    "id": "UM-TWO-WITNESS-QUERY-SEPARATION-v2",
+    "exact_sha256": "7db463223261bbaee605beb4e3689e57a84b268df2a0024f7fda1fde332a3c28",
+    "proof_sha256": "73e650ca7607977e251d7d5f229cafa9e6424ede40b8f24f92006da988acfc7a"
+  },
+  "cases": [
+    {
+      "id": "sharp_six_machine_five_job",
+      "purpose": "Exact 32-state sharpness audit at eta=gamma=1/8; this finite test is not a general theorem proof.",
+      "T": "1",
+      "machines": ["H1", "H2", "A", "Bm", "R", "S"],
+      "jobs": [
+        {"id": "q1", "processing": {"H1": "1/8", "A": "1"}},
+        {"id": "q2", "processing": {"H2": "1/8", "Bm": "1"}},
+        {"id": "x1", "processing": {"A": "1", "R": "1/2"}},
+        {"id": "x2", "processing": {"Bm": "1", "R": "1/2"}},
+        {"id": "f", "processing": {"R": "7/8", "S": "1"}}
+      ],
+      "sigma0": {"q1": "H1", "q2": "H2", "x1": "A", "x2": "Bm", "f": "R"},
+      "sigma1": {"q1": "A", "q2": "Bm", "x1": "R", "x2": "R", "f": "S"},
+      "queries": ["q1", "q2"],
+      "nonquery_move_weights": {"x1": "0", "x2": "0", "f": "1"},
+      "requested_queries": ["q1", "q2"],
+      "expected": {
+        "A_q": {"q1": ["x1"], "q2": ["x2"]},
+        "trigger_order": [{"machine": "A", "color": "q1"}, {"machine": "Bm", "color": "q2"}],
+        "uncolored_nonquery": ["f"],
+        "tau": {
+          "q1": {"peak": "11/8", "delta": "1/8", "bound": "3/2", "fee": "0"},
+          "q2": {"peak": "11/8", "delta": "1/8", "bound": "3/2", "fee": "0"}
+        }
+      },
+      "enumeration": {
+        "state_limit": 32,
+        "expected_state_count": 32,
+        "require_all_finite_endpoint_schedules_covered": true,
+        "threshold_checks": [
+          {"query_subset": ["q1"], "cap": "4/3", "expected_min_fee": "1", "mandatory_nonquery_contains": ["f"]},
+          {"query_subset": ["q2"], "cap": "4/3", "expected_min_fee": "1", "mandatory_nonquery_contains": ["f"]},
+          {"query_subset": ["q1"], "cap": "11/8", "expected_min_fee": "0"},
+          {"query_subset": ["q2"], "cap": "11/8", "expected_min_fee": "0"}
+        ],
+        "minimum_peak_checks": [
+          {"query_subset": ["q1"], "fee_at_most": "0", "expected_min_peak": "11/8"},
+          {"query_subset": ["q2"], "fee_at_most": "0", "expected_min_peak": "11/8"},
+          {"query_subset": ["q1"], "fee_at_most": "1", "expected_min_peak": "1"},
+          {"query_subset": ["q2"], "fee_at_most": "1", "expected_min_peak": "1"}
+        ]
+      }
+    },
+    {
+      "id": "zero_threshold_two_queries",
+      "purpose": "T=0, two queries move between distinct original/new zero endpoints; no machine can trigger.",
+      "T": "0",
+      "machines": ["Za0", "Za1", "Zb0", "Zb1"],
+      "jobs": [
+        {"id": "za", "processing": {"Za0": "0", "Za1": "0"}},
+        {"id": "zb", "processing": {"Zb0": "0", "Zb1": "0"}}
+      ],
+      "sigma0": {"za": "Za0", "zb": "Zb0"},
+      "sigma1": {"za": "Za1", "zb": "Zb1"},
+      "queries": ["za", "zb"],
+      "nonquery_move_weights": {},
+      "requested_queries": ["za", "zb"],
+      "expected": {
+        "A_q": {"za": [], "zb": []},
+        "trigger_order": [],
+        "uncolored_nonquery": [],
+        "tau": {
+          "za": {"peak": "0", "delta": "0", "bound": "0", "fee": "0"},
+          "zb": {"peak": "0", "delta": "0", "bound": "0", "fee": "0"}
+        }
+      }
+    },
+    {
+      "id": "arbitrary_times_shared_query_source",
+      "purpose": "Arbitrary endpoint times, stationary jobs, shared query source, a multi-step cascade and extra unused finite endpoints.",
+      "T": "2",
+      "machines": ["H", "A", "B", "C", "D", "E", "F", "X"],
+      "jobs": [
+        {"id": "qa", "processing": {"H": "2/5", "A": "3/2", "F": "7/5"}},
+        {"id": "qb", "processing": {"H": "3/5", "B": "5/4"}},
+        {"id": "xa", "processing": {"A": "7/4", "C": "5/4", "X": "5/6"}},
+        {"id": "xb", "processing": {"B": "4/3", "C": "1/4"}},
+        {"id": "y", "processing": {"C": "3/2", "D": "3/2"}},
+        {"id": "z", "processing": {"D": "1", "E": "2/3"}},
+        {"id": "v", "processing": {"D": "1", "H": "3/2"}},
+        {"id": "s", "processing": {"C": "1/2"}},
+        {"id": "w", "processing": {"E": "4/3", "F": "2/5"}}
+      ],
+      "sigma0": {"qa": "H", "qb": "H", "xa": "A", "xb": "B", "y": "C", "z": "D", "v": "D", "s": "C", "w": "E"},
+      "sigma1": {"qa": "A", "qb": "B", "xa": "C", "xb": "C", "y": "D", "z": "E", "v": "H", "s": "C", "w": "E"},
+      "queries": ["qa", "qb"],
+      "nonquery_move_weights": {"xa": "3", "xb": "11", "y": "5", "z": "7", "v": "13"},
+      "requested_queries": ["qa", "qb"],
+      "expected": {
+        "A_q": {"qa": ["xa", "y", "z", "v"], "qb": ["xb"]},
+        "trigger_order": [
+          {"machine": "A", "color": "qa"}, {"machine": "B", "color": "qb"},
+          {"machine": "C", "color": "qa"}, {"machine": "D", "color": "qa"},
+          {"machine": "H", "color": "qa"}
+        ],
+        "uncolored_nonquery": [],
+        "tau": {
+          "qa": {"peak": "21/10", "delta": "3/5", "bound": "3", "fee": "28"},
+          "qb": {"peak": "9/4", "delta": "2/5", "bound": "3", "fee": "11"}
+        }
+      }
+    }
+  ]
+}

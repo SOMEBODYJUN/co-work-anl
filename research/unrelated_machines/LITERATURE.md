@@ -141,3 +141,5 @@ PSM2018作者稿§6/Fig5/Thm2已实际核读，总资格≤2/3/4及big-buffer框
 ## 非整数背包伪矩的经典机制边界
 
 Potechin, *Sum of Squares Lower Bounds from Symmetry and a Good Story*, ITCS2019，[正式页面](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2019.61)摘要已核：明确恢复Grigoriev的knapsack下界。已保存20页正式原始PDF，hash/字节见manifest；实际核摘要与§1.1 Theorem1（PDF3/印61:3），未独立内化全篇。[匹配矩正文](../current/unrelated_machines/strong_configuration_matching_moment_obstruction.md)自行给出所需harmonic PSD和K22编译，不认领背包伪矩的新颖性；精确调度接口与锐修复距离亦无全球优先权认证。
+
+DGR2025/2026 constrained rejections全arXiv v1原PDF已取得并parse（18页，SHA/bytes见manifest），实际核§5印13–14的degree5/binary/7states/15sets参数，§3由内部构造者定位。其Theorem4是固定常数的高保留率ungrouped硬度；不提供near-zero grouped源。本文另定义的cube普通UM桥有[Hall与全类锐3/2，DGR19/15](../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)；这些是独立结构推论，不归给原论文或认证新颖性。
