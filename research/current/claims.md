@@ -1294,7 +1294,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-FRACTIONAL-BENCHMARK-REMATCHING-v1 | 不输入benchmark、不验证全局前提，仅真最大product匹配det-bit-poly给GM(Vi+singleton)>=每个正fractional benchmark/(c+1)。 | [正文](unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际全文审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)；implementation none，scope按原域。 |
 | UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1 | 从任意显式原XOS表det-bit-poly输出真实不交allocation，对全部正finite fractional log-CONFIG benchmark同时NSW>=benchmark/1125000；无正singleton matching时actual optimum零。 | [正文](unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际全文审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)；implementation none，scope按原域。 |
-| UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1 | 原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；不覆盖gamma<=delta_q。 | [正文](unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际全文审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)；implementation none，scope按原域。 |
+| UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1 | 原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；§F旧高/低gamma比较已撤回；新高端互补推论另ID登记。 | [正文](unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际全文审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)；implementation none，scope按原域。 |
 | UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1 | 对每个前缀弱Hhat_j恰等于CONFIG_j(K)完整负载直方图投影；显式LP规模O(m(j+1)(K+1)+|E_[j]|(K+1))、目标另计位长。固定delta downround提供bit-poly可靠NO，非实际finder。 | [正文](unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md)、[实际全文审查](../reviews/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection_review.md)；implementation none，scope按原域。 |
 
 ## 稠密正小整数正规形与反面全常数量词
@@ -1302,6 +1302,10 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | ID | Exact scope | Result and boundary | Proof and status |
 | --- | --- | --- | --- |
 | UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1 | ∀固定整数k≥2；原模型含0/∞与任意有理数，对比全有限正整数1..n²域，n为实际任务数 | 后域(2−1/k)确定性位多项式实际算法⇒原域(2−1/(2k))算法；存在性双向等价。不是NP源gap归约或近二不存在定理。 | [完整证明§6](unrelated_machines/model_and_classical_barriers.md)、独立陈述重构/最终全文攻击/Fraction全输出核验；标准缩放接口，外审与新颖性未认证。 |
+
+| UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1 | 全实际epsilon解必给R_cons必要有理LP；同一旧lambda,z的R_cons/R_leaf D_+投影都恰basic；每t>=2 diffuse Q_t在unit阈值两合同及FSLP可行而V=1/t、完整ordinary OPT=2-1/t。弱单matching与MC混合区分，转换确定性总位poly。 | [正文§8–11](unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[新实际审查](../reviews/unrelated_machines/threshold_leaf_hall_consistent_marginals_path_projection_review.md)；audit only，非main困难性。 |
+
+| UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1 | 原norm1显式菜单unit-FSLP可行；固定eta，q_eta=(2^24)^(-ceil(1/eta))，0<delta_q<=q_eta及0<=gamma_hi<=1−eta时，C的同一实际allocation有计数 #{g:quality_g>=delta_q}>gamma_hi*n。因此all-allocation高端robust NO不可能；其互补低端比例是1−gamma_hi。 | [§F纠错](unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际定向审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)；旧未覆盖解释撤回。 |
 
 ## 逻辑使用规则
 

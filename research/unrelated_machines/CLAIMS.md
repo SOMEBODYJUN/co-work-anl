@@ -3056,9 +3056,9 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Exact Statement / Conclusion：不输入benchmark、不验证全局前提，仅真最大product匹配det-bit-poly给GM(Vi+singleton)>=每个正fractional benchmark/(c+1)。
 - Assumptions：无复杂度假设；C的P=NP仅条件于另有明确promise-gap Karp reduction；E方法限制另用既有CONFIG gap。
 - Dependencies：UM-FRACTIONAL-REMATCHING-SEMANTIC-DOMAIN-v1；页内完整定义、标准有理LP/匹配/路径分解。具体范围见正文。
-- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。
+- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized高端NO需以1−gamma_hi比较低质量计数；旧未覆盖判断撤回；未构造NP-hard源，算法数学规格未实现。
 - Evidence：实际独立Exact-first、完整或明确模块作者读后及最终canonical全文审查；root实际读完相关记录，完整顺序/哈希见review。
-- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D不覆盖gamma<=delta_q；无standing fatal对当前合同。
+- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D精确低端定理保留；旧§F把gamma_hi/gamma_lo混用的解读已撤回，互补推论另ID；不把旧审查追认为已发现。
 - Status：complete scoped deterministic fractional-XOS proof; actual Exact-first, author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
 - Related Files：[正文](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)与冻结原件。
 
@@ -3069,9 +3069,9 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Exact Statement / Conclusion：从任意显式原XOS表det-bit-poly输出真实不交allocation，对全部正finite fractional log-CONFIG benchmark同时NSW>=benchmark/1125000；无正singleton matching时actual optimum零。
 - Assumptions：无复杂度假设；C的P=NP仅条件于另有明确promise-gap Karp reduction；E方法限制另用既有CONFIG gap。
 - Dependencies：UM-FRACTIONAL-BENCHMARK-REMATCHING-v1, UM-EXPLICIT-BINARY-RATIONAL-XOS-DOMAIN-v1；页内完整定义、标准有理LP/匹配/路径分解。具体范围见正文。
-- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。
+- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized高端NO需以1−gamma_hi比较低质量计数；旧未覆盖判断撤回；未构造NP-hard源，算法数学规格未实现。
 - Evidence：实际独立Exact-first、完整或明确模块作者读后及最终canonical全文审查；root实际读完相关记录，完整顺序/哈希见review。
-- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D不覆盖gamma<=delta_q；无standing fatal对当前合同。
+- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D精确低端定理保留；旧§F把gamma_hi/gamma_lo混用的解读已撤回，互补推论另ID；不把旧审查追认为已发现。
 - Status：complete scoped deterministic fractional-XOS proof; actual Exact-first, author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
 - Related Files：[正文](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)与冻结原件。
 
@@ -3079,12 +3079,12 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 ## UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1：归一化菜单几乎所有组与同组修复LP边界
 
 - Objects / Domain / Definitions / Quantifiers：原每state总量1、positive-support FSLP及明确同组singleton REPAIR；fixed eta/gamma/a/delta_q量词同正文。
-- Exact Statement / Conclusion：原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；不覆盖gamma<=delta_q。
+- Exact Statement / Conclusion：原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；§F旧高/低gamma比较已撤回；新高端互补推论另ID登记。
 - Assumptions：无复杂度假设；C的P=NP仅条件于另有明确promise-gap Karp reduction；E方法限制另用既有CONFIG gap。
 - Dependencies：UM-FRACTIONAL-BENCHMARK-REMATCHING-v1, UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1, UM-NORMALIZED-MENU-POSITIVE-SUPPORT-CERTIFICATE-DOMAIN-v1, UM-FLAT-MENU-EXACT-STATE-MASS-ONE；页内完整定义、标准有理LP/匹配/路径分解。具体范围见正文。
-- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。
+- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized高端NO需以1−gamma_hi比较低质量计数；旧未覆盖判断撤回；未构造NP-hard源，算法数学规格未实现。
 - Evidence：实际独立Exact-first、完整或明确模块作者读后及最终canonical全文审查；root实际读完相关记录，完整顺序/哈希见review。
-- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D不覆盖gamma<=delta_q；无standing fatal对当前合同。
+- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D精确低端定理保留；旧§F把gamma_hi/gamma_lo混用的解读已撤回，互补推论另ID；不把旧审查追认为已发现。
 - Status：complete scoped deterministic fractional-XOS proof; actual Exact-first, author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
 - Related Files：[正文](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)与冻结原件。
 
@@ -3100,3 +3100,29 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：旧full作者Proof将previous weak误写true-H，原字节与勘误保留；v2/当前修复。有限4机例不作一般证明；无standing fatal对当前合同。
 - Status：complete scoped weak-histogram equals CONFIG projection; actual Exact-first, corrected author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
 - Related Files：[正文](../current/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md)、[实际审查](../reviews/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection_review.md)与冻结原件。
+
+
+## UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1：阈值叶、共同边际与精确路径投影
+
+- Objects / Domain / Quantifiers / Definitions：显式normalized-flat，非空group/menu、非负binary rational每state质量1，可含零/重复/unused；0<epsilon<=1。投影指定全部旧组为C、仅新增D_+路径组为L；自动版另要求原组皆非threshold-UD；D_+只列positive邻居、保全部zero jobs。 对所有该域Q/epsilon、全部supplied basic点及每个整数t>=2。
+- Exact Statement / Conclusion：全实际epsilon解必给R_cons必要有理LP；同一旧lambda,z的R_cons/R_leaf D_+投影都恰basic；每t>=2 diffuse Q_t在unit阈值两合同及FSLP可行而V=1/t、完整ordinary OPT=2-1/t。弱单matching与MC混合区分，转换确定性总位poly。
+- Assumptions：无复杂度假设；标准有理LP/二部matching/有限运输，不用exact SDP或未知oracle。
+- Dependencies：UM-MODEL-v1, UM-THRESHOLD-LEAF-HALL-DESIGNATED-PARTITION-DOMAIN-v1, UM-NORMALIZED-MENU-POSITIVE-SUPPORT-CERTIFICATE-DOMAIN-v1, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1, UM-NORMALIZED-MENU-FULL-SUPPORT-LP-PRESERVATION-v3；BCG2009相邻路径思想，页内自足运输/完整gap证明。
+- Scope：仅排所定义叶流relaxation相对unit证书的统一正质量提取，不排actual-OPT近似、actual-YES finder、joint-core/PSD、共同完整law或一般hardness；不是所有core系数微小，不认证global novelty。
+- Evidence：新Exact-first、实际作者读后、最终338行独立实读；root实际读取记录与两套完整code并重放。
+- Counterevidence / Objections：自动partition前提不可省；MC不保共同完整law；弱单matching不能升级；positive degree不含zero eligibility。无standing fatal对当前域。
+- Status：complete scoped projection and sharp unit-threshold gap; independent reconstruction and actual final whole-text review; audit only; novelty unverified；UM-TARGET-v1及反面均OPEN。
+- Related Files：[正文](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[新审查](../reviews/unrelated_machines/threshold_leaf_hall_consistent_marginals_path_projection_review.md)、所列代码/冻结原件。
+
+
+## UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1：鲁棒高低比例互补纠错
+
+- Objects / Domain / Quantifiers / Definitions：同一个非空原group集合、原norm1显式非负binary-rational indexed菜单、positive-support unit-FSLP；eta固定在(0,1]，delta_q/高端计数严格号按正文。不是一般非归一化或隐式菜单。
+- Exact Statement / Conclusion：原norm1显式菜单unit-FSLP可行；固定eta，q_eta=(2^24)^(-ceil(1/eta))，0<delta_q<=q_eta及0<=gamma_hi<=1−eta时，C的同一实际allocation有计数 #{g:quality_g>=delta_q}>gamma_hi*n。因此all-allocation高端robust NO不可能；其互补低端比例是1−gamma_hi。
+- Assumptions：无复杂度假设；依赖原C的实际输出和精确集合互补。
+- Dependencies：UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1 与原norm1/positive-support域；不重证A/B。
+- Scope：只修旧§F解释并给C直接推论；A/B与C–D原精确低端定理未被此反驳。无全组maxmin、一般UM次二算法/困难性或未来gated构造认证。
+- Evidence：旧2365正文/header/F与新bfd9 header/C–F/全diff实际读后，冻结fc0f04记录，root实际全文读取。
+- Counterevidence / Objections：旧§F未覆盖判断有实质错误，已撤回；严格/弱边界不能无条件互换；旧审查漏检事实保留。
+- Status：complete elementary complement corollary; actual targeted correction review; old erroneous interpretation explicitly withdrawn; novelty not claimed；主目标OPEN。
+- Related Files：[正文F](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际纠错审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)。

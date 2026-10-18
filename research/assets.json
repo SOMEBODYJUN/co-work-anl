@@ -10667,7 +10667,8 @@
       "claims": [
         "UM-FRACTIONAL-BENCHMARK-REMATCHING-v1",
         "UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1",
-        "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1"
+        "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1",
+        "UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1"
       ],
       "status": "complete scoped deterministic fractional-XOS proof; actual Exact-first, author-read-after and whole canonical review; implementation none; novelty unverified",
       "applies_when": [
@@ -10675,7 +10676,7 @@
         "n>=1、m>=0，非空有限显式indexed XOS clauses，全部非负binary rational，允许zero/重复/未用，无global grid或normalization/utility floor，仅unweighted。",
         "C–F另限原total-one菜单与same-n REPAIR"
       ],
-      "produces": "不输入benchmark、不验证全局前提，仅真最大product匹配det-bit-poly给GM(Vi+singleton)>=每个正fractional benchmark/(c+1)。 从任意显式原XOS表det-bit-poly输出真实不交allocation，对全部正finite fractional log-CONFIG benchmark同时NSW>=benchmark/1125000；无正singleton matching时actual optimum零。 原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；不覆盖gamma<=delta_q。",
+      "produces": "不输入benchmark、不验证全局前提，仅真最大product匹配det-bit-poly给GM(Vi+singleton)>=每个正fractional benchmark/(c+1)。 从任意显式原XOS表det-bit-poly输出真实不交allocation，对全部正finite fractional log-CONFIG benchmark同时NSW>=benchmark/1125000；无正singleton matching时actual optimum零。 原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；§F旧高/低gamma比较已撤回；新高端互补推论另ID登记。",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md"
@@ -10712,10 +10713,12 @@
         "history/source/notes/unrelated_machines/finite_grid_label_mask_log_potential_derandomization_v1_author_proof_read_after.md",
         "history/source/notes/unrelated_machines/explicit_xos_deterministic_nsw_primary_scope_audit_rainbow_v1.md",
         "history/source/literature/unrelated_machines/dobzinski_li_rubinstein_vondrak_2023_subadditive_nsw_v1.pdf",
-        "history/source/literature/unrelated_machines/dobzinski_li_rubinstein_vondrak_2023_subadditive_nsw_v1_text.txt.gz"
+        "history/source/literature/unrelated_machines/dobzinski_li_rubinstein_vondrak_2023_subadditive_nsw_v1_text.txt.gz",
+        "history/source/notes/unrelated_machines/explicit_xos_fractional_nsw_original_canonical_before_gamma_correction.md",
+        "history/source/notes/unrelated_machines/nsw_gamma_complement_correction_actual_read_after_review.md"
       ],
-      "source_role": "Actual read sequence, inherited templates, preserved old objections and corrected proof roles are explicit in the review; sources do not automatically certify unused modules.",
-      "limit": "不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。"
+      "source_role": "Actual read sequence, inherited templates, preserved old objections and corrected proof roles are explicit in the review; sources do not automatically certify unused modules. 2026-10-18 old §F high/low interpretation withdrawn; targeted correction review does not re-sign old A/B or retroactively catch the missed error.",
+      "limit": "不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized高端NO需以1−gamma_hi比较低质量计数；旧未覆盖判断撤回；未构造NP-hard源，算法数学规格未实现。"
     },
     {
       "id": "um_shared_load_histogram_configuration_projection",
@@ -10783,6 +10786,48 @@
       ],
       "source_role": "构造者在规范§6之前形成的实际精确源稿，原字节冻结；其旧同目录审计名在规范层对应tests/audits/unrelated_machines/dense_small_integer_equivalence.py。非外部文献或新颖性证明。",
       "limit": "没有构造未知B，没有NP源near2 gap或一般否定证明；仅算法存在性双向等价，非固定参数均匀族。"
+    },
+    {
+      "id": "um_threshold_leaf_hall_consistent_marginals_path_projection_gap",
+      "claims": [
+        "UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1"
+      ],
+      "status": "complete scoped projection and sharp unit-threshold gap; independent reconstruction and actual final whole-text review; audit only; novelty unverified",
+      "applies_when": [
+        "显式normalized-flat，非空group/menu、非负binary rational每state质量1，可含零/重复/unused；0<epsilon<=1。投影指定全部旧组为C、仅新增D_+路径组为L；自动版另要求原组皆非threshold-UD；D_+只列positive邻居、保全部zero jobs。"
+      ],
+      "produces": "全实际epsilon解必给R_cons必要有理LP；同一旧lambda,z的R_cons/R_leaf D_+投影都恰basic；每t>=2 diffuse Q_t在unit阈值两合同及FSLP可行而V=1/t、完整ordinary OPT=2-1/t。弱单matching与MC混合区分，转换确定性总位poly。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/conditional_leaf_hall_path_projection_independent.py",
+        "tests/audits/unrelated_machines/conditional_leaf_consistent_marginals_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/conditional_leaf_hall_path_projection_independent.json",
+        "evidence/runs/unrelated_machines/conditional_leaf_consistent_marginals_independent.json",
+        "evidence/runs/unrelated_machines/conditional_leaf_hall_root_replay_scope.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/threshold_leaf_hall_consistent_marginals_path_projection_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_general_repair_conditional_hall_exact_v2.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_conditional_hall_proof.md",
+        "history/source/notes/unrelated_machines/sol_conditional_leaf_hall_exact_first_review.md",
+        "history/source/notes/unrelated_machines/sol_conditional_leaf_hall_author_read_after.md",
+        "history/source/notes/unrelated_machines/conditional_leaf_hall_consistent_marginals_exact_v3.md",
+        "history/source/notes/unrelated_machines/conditional_leaf_hall_consistent_marginals_author_proof_v3.md",
+        "history/source/notes/unrelated_machines/sol_conditional_leaf_hall_consistent_marginals_exact_first_review.md",
+        "history/source/notes/unrelated_machines/sol_conditional_leaf_hall_consistent_marginals_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_conditional_leaf_hall_final_canonical_review.md"
+      ],
+      "source_role": "Actual Exact-first/author-read-after/final complete reading; old prefix and records unchanged. Audit only the named finite fixtures, not author statistics.",
+      "limit": "仅排所定义叶流relaxation相对unit证书的统一正质量提取，不排actual-OPT近似、actual-YES finder、joint-core/PSD、共同完整law或一般hardness；不是所有core系数微小，不认证global novelty。"
     }
   ]
 }

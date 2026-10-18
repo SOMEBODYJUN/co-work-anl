@@ -488,6 +488,8 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 
 精确身份、实际审查与有限证据分别沿本题账本读取；外审和新颖性均未认证。
 
-[显式XOS分数NSW与修复边界](explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)：任意binary-rational显式XOS给det真实allocation相对每个fractional benchmark的常数NSW；normalized total-one FSLP给几乎所有组质量及same-n singleton repair LP promise decider。仅小threshold域，明确不排gamma<=delta_q，普通UM仍只全机二。
+[显式XOS分数NSW与修复边界](explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)：任意binary-rational显式XOS给det真实allocation相对每个fractional benchmark的常数NSW；normalized total-one FSLP给几乎所有组质量及same-n singleton repair LP promise decider。高/低比例互补已纠错：delta_q<=q_eta且gamma_hi<=1−eta的高端robust NO被C排除；普通UM仍只全机二。
 
 [弱共享直方图的准确边界](shared_load_histogram_recursion_equals_configuration_projection.md)：previous弱aggregate-only递推恰CONFIG负载直方图投影；完整流LP/可靠NO，四机CONFIG3实际4。逐branch真共同law没有被这一共享写法保住；不否relative OPT一般算法。
+
+[共同叶边际的精确边界](normalized_menu_configuration_certificate_preservation.md)（新增§8–11）：精确消去阈值unit-demand叶后，global/全部perspective匹配流即使共享同一叶边际，D_+仍逐点退回basic；diffuse Q_t的完整ordinary OPT=2-1/t。指定partition与自动前提严格分开；非actual-OPT算法下界或hardness。

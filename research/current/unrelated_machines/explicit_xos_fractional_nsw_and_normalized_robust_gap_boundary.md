@@ -1,6 +1,6 @@
 # 显式 XOS 的分数 NSW、几乎所有组质量与共享修复 LP 边界
 
-数学证明完整；实际独立重构、作者读后与最终正文审查的次序和范围见[审查记录](../../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)。算法为数学规格，未实现；外审与全球新颖性未认证。正文对应冻结 Exact v5 `3160d7f7dc3265c7753ba558bb6cd21fe58fc5e2ea84562d2558ee852701154e`、作者 Proof v5 `2989351ca6ab45779fecb3c4a4ccefbae2044cdcce7ad3f3fab0d0e2ce55a1af`。
+下文 §F 原高/低比例解读有实质错误，已明确撤回并更正；A、B及C–D原精确结论保留。数学证明及实际独立重构、作者读后与最终正文审查的次序和范围见[审查记录](../../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)。算法为数学规格，未实现；外审与全球新颖性未认证。正文对应冻结 Exact v5 `3160d7f7dc3265c7753ba558bb6cd21fe58fc5e2ea84562d2558ee852701154e`、作者 Proof v5 `2989351ca6ab45779fecb3c4a4ccefbae2044cdcce7ad3f3fab0d0e2ce55a1af`。
 
 本页证明：一般单调次可加的分数 benchmark 匹配；任意有限显式非负二进制有理 XOS 的确定性无权 NSW；原归一化菜单的几乎所有组常数质量、同组 singleton REPAIR 的 LP promise decider，以及保留全部原 jobs 的普通 flat-UM 排程。后者只保证全矩阵 makespan 至多二和接近二的 selected-root 计数。
 
@@ -623,22 +623,19 @@ unit-FSLP 可行，若每个 allocation 至少 \(\gamma n\) 组质量 \(\le\delt
 
 **与需求树主线的条件参数对照。** 设树目标值为 \(b\)、最优值为 \(b^*\)、\(0<\delta_{\mathrm q}<1\)。若某解码在阈值 \(x\ge\delta_{\mathrm q}\) 下从 \(b\ge x\) 抽出至少 \(xn\) 个已达 NO 质量门槛的变量束，而 NO 仅禁至少 \(\gamma n\) 个部分束，则直接取 \(x=\delta_{\mathrm q}\) 调用 NO 需 \(\gamma\le\delta_{\mathrm q}\)；一般取 \(x=\max\{\gamma,\delta_{\mathrm q}\}\) 仅得 \(b^*<\max\{\gamma,\delta_{\mathrm q}\}\)，不能省去 fraction 参数而写成 \(b^*<\delta_{\mathrm q}\)。这是条件解码的量词对照，不将未核验的旧 source/matching 条款当作 theorem 或本页依赖。
 
-本页 C–D 排除的却是
+**2026-10-18 实质勘误：高组上限与低组下限必须取互补。** 旧 §F 从“本页 C–D 排除的却是”开始的两段误把这里的高质量组上限 \(\gamma_{\rm hi}\) 与 C–D 的低质量组下限 \(\gamma_{\rm lo}\) 当成同一比例；“不覆盖 \(\gamma\le\delta_{\mathrm q}\)”的结论撤回。旧作者 Proof、旧 Exact 与旧审查原件保持原字节；原来 C–D 的低质量定理和 (F.1) 本身不因此被反驳，新适用结论另有精确身份。
 
+若 robust NO 对每个 allocation 要求
 \[
-\delta_{\mathrm q}\le c_\eta<\eta<\gamma
-\quad\bigl(c_\eta<1/K\le\eta\bigr),
+\#\{g:r_g\ge\delta_{\mathrm q}\}<\gamma_{\rm hi}n,
 \]
-
-因此**不覆盖上述 \(\gamma\le\delta_{\mathrm q}\) 的典型 near-two robust-bundle 源 regime**。而在 \(\gamma\le\delta_{\mathrm q}\) 时，
-
+则其准确互补为
 \[
-\gamma\ln(1/\delta_{\mathrm q})
-\le\delta_{\mathrm q}\ln(1/\delta_{\mathrm q})
-\le1/e<\ln\rho,
+\#\{g:r_g<\delta_{\mathrm q}\}>(1-\gamma_{\rm hi})n.
 \]
+因此应以低质量比例 \(1-\gamma_{\rm hi}\) 对照 C，不是以 \(\gamma_{\rm hi}\) 本身。尤其当 \(\delta_{\mathrm q}\le q_\eta\)、\(\gamma_{\rm hi}\le1-\eta\) 时，C.4 的同一输出已直接违反该 robust NO；等号也被严格计数覆盖。高端若用 \(>\delta_{\mathrm q}\)，低端须相应用 \(\le\delta_{\mathrm q}\)，不能无条件交换两种边界。
 
-(F.1) 自动满足，也完全不能用此 bound 排除该区域。不能把本页有用的分数 NSW/LP 结果包装成“已经挡住实际主源”。要推进主 UM 结论，仍须另行建立有效 source、fraction/quality 联合量词、需求树/束的解码、全部对象的证书保持及对应实际 schedule 关系；本页未替代这些义务。
+所以对于本页明确的 norm1 显式菜单，典型 \(\gamma_{\rm hi}\le\delta_{\mathrm q}\) 的充分小常数域恰被排除。这里仅修正集合互补及 C 的直接适用范围，不采用尚未在本页完成审查的门控构造或新算法。原 flat 全组 selector 仍不因此获得统一低于二负载。一般 UM、共享内部、多层或不保正 support LP 的源仍须独立解决，不能把这次范围纠错当作 UM-TARGET-v1 的正反面证明。
 
 ## 来源分工、复用范围与版本边界
 
