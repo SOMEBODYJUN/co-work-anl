@@ -4,6 +4,8 @@
 
 **当前主攻 `UM-TARGET-v1`，研究存档 `unrelated-machines`：一般不相关并行机R∥C_max的统一常数(2−ε)确定性位多项式构造之存在命题，当前直接主攻其否定。原命题及一般反面仍OPEN。** 新对话使用[完整BOSS提示词](unrelated_machines/BOSS_START.md)、[最新版work.py](weighted_congestion_frontier/tools/work.py)和[本题手册](unrelated_machines/RUNBOOK.md)。程序所在旧目录承载共享工具，当前题目按save和精确目标确定。
 
+反面研究的模型简化见[全常数量词与稠密小整数正规形](current/unrelated_machines/model_and_classical_barriers.md)§6：只含1..n²正整数、全部边可用的输入已经足以判定是否存在统一改善。正文给完整实际输出转换、零值分支及总位复杂度；它不提供新的近二困难性。
+
 ## 新题的阅读与研究链
 
 [本题数学地图](current/unrelated_machines/README.md) → [精确账本](unrelated_machines/CLAIMS.md) → 当前义务的正文 → 已发生的独立审查 → 实际代码、输入、证书与冻结证据。[模型与经典地基](current/unrelated_machines/model_and_classical_barriers.md)固定全量词、零值边界、槽舍入和配置gap；[专题前沿](unrelated_machines/RESEARCH_STATE.md)与[失败及回收](unrelated_machines/FAILED_ROUTES.md)定位真正未解接口。[原始文献](unrelated_machines/LITERATURE.md)另列取得、阅读与重构状态。

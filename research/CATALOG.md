@@ -41,7 +41,7 @@
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
 | [不相关并行机的目标与经典障碍地图](<current/unrelated_machines/README.md>) | `research/current/unrelated_machines/README.md` | 导航主目标、精确模型、已知重构、文献与有限证据；新研究先从此选择承重义务。 | 阅读导航；真值查精确正文及账本；关联 `UM-CONF-GAP-v1`、`UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-PROMISE-v1`、`UM-EQUAL-QUANTUM-ARBITRARY-ELIGIBILITY-v1`，[命题合同（共 9 项）](assets.json) |
-| [不相关并行机的精确目标、经典舍入与配置间隙](<current/unrelated_machines/model_and_classical_barriers.md>) | `research/current/unrelated_machines/model_and_classical_barriers.md` | 自足给模型、零值边界、Hall槽匹配与重索引两树gap；引用算法保证和方法限制前核对全量词。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-CONF-GAP-v1`、`UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1`、`UM-ST-ROUND-v1`，[命题合同（共 4 项）](assets.json) |
+| [不相关并行机的精确目标、经典舍入与配置间隙](<current/unrelated_machines/model_and_classical_barriers.md>) | `research/current/unrelated_machines/model_and_classical_barriers.md` | 自足给模型、零值边界、Hall槽匹配与重索引两树gap；引用算法保证和方法限制前核对全量词。；新增§6固定全常数反面量词并自足证明稠密1..n²正整数域的算法存在性等价，含实际输出与总位复杂度。 | 数学正文；按关联命题分别核对证明及审查；关联 `UM-CONF-GAP-v1`、`UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1`、`UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1`，[命题合同（共 5 项）](assets.json) |
 | [不相关并行机研究存档与协作入口](<unrelated_machines/README.md>) | `research/unrelated_machines/README.md` | 固定unrelated-machines存档，连接数学地图、原文、启动提示词及隔离范围；新对话首次读取。 | 阅读导航；真值查精确正文及账本 |
 | [不相关并行机主目标与已知工具的精确身份账本](<unrelated_machines/CLAIMS.md>) | `research/unrelated_machines/CLAIMS.md` | 保留对象、输入域、统一量词、依赖、反驳与真实状态；修改候选或引用结果时核对。 | 精确命题登记；摘要不替代原陈述 |
 | [不相关并行机的真实前沿与承重义务](<unrelated_machines/RESEARCH_STATE.md>) | `research/unrelated_machines/RESEARCH_STATE.md` | 说明未形成新算法、配置障碍以外仍缺什么，以及最有信息价值的下一步；实质进展时更新。 | 阅读导航；真值查精确正文及账本 |
@@ -1293,6 +1293,15 @@
 | [弱共享直方图原件：sol_shared_hull_v2_actual_read_after.md](<../history/source/notes/unrelated_machines/sol_shared_hull_v2_actual_read_after.md>) | `history/source/notes/unrelated_machines/sol_shared_hull_v2_actual_read_after.md` | 保真原字节与真实版本/审查范围；gzip可无损解出，旧错误不被追认。；配套 [弱共享负载递推恰为配置投影](<current/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md>)；配套 [共享直方图配置投影的纠错和全文实审](<reviews/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection_review.md>) | 来源或历史判断；不作为现行结论；关联 `UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1`，[命题合同](assets.json) |
 | [弱共享直方图原件：sol_shared_hull_canonical_full_review.md](<../history/source/notes/unrelated_machines/sol_shared_hull_canonical_full_review.md>) | `history/source/notes/unrelated_machines/sol_shared_hull_canonical_full_review.md` | 保真原字节与真实版本/审查范围；gzip可无损解出，旧错误不被追认。；配套 [弱共享负载递推恰为配置投影](<current/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md>)；配套 [共享直方图配置投影的纠错和全文实审](<reviews/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection_review.md>) | 来源或历史判断；不作为现行结论；关联 `UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1`，[命题合同](assets.json) |
 | [共享直方图正文去行尾空格的实际等价复核](<../history/source/notes/unrelated_machines/sol_shared_hull_canonical_whitespace_read_after.md>) | `history/source/notes/unrelated_machines/sol_shared_hull_canonical_whitespace_read_after.md` | 核三处ASCII空格唯差和旧SHA可重构，保原全文审查不改、不新增blind票。；配套 [弱共享负载递推恰为配置投影](<current/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md>)；配套 [共享直方图配置投影的纠错和全文实审](<reviews/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection_review.md>) | 来源或历史判断；不作为现行结论；关联 `UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1`，[命题合同](assets.json) |
+
+### classical_foundation_and_normal_forms
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [稠密正小整数正规形的独立冻结审查](<reviews/unrelated_machines/dense_small_integer_equivalence_review.md>) | `research/reviews/unrelated_machines/dense_small_integer_equivalence_review.md` | 记录Exact先行重构、最终新增§6与实际代码读后攻击、冻结哈希、有限范围及未提升义务。 | 实际审查记录；只覆盖所列版本与义务；关联 `UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1`，[命题合同](assets.json) |
+| [稠密正小整数正规形的冻结核验](<../evidence/runs/unrelated_machines/dense_small_integer_equivalence.json>) | `evidence/runs/unrelated_machines/dense_small_integer_equivalence.json` | 记录实际参数、代码哈希、Python版本与有限全分配结果，未实现未知近似算法或困难性。 | 冻结输入、证书或结果；不原位覆盖；关联 `UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1`，[命题合同](assets.json) |
+| [稠密正小整数转换的全输出精确审计](<../tests/audits/unrelated_machines/dense_small_integer_equivalence.py>) | `tests/audits/unrelated_machines/dense_small_integer_equivalence.py` | 用整数/Fraction枚举固定输入的所有满足假设比率输出，核逐机回译、严格替代边排除、零值与常数身份。 | 有限计算核验；不代替一般证明；关联 `UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1`，[命题合同](assets.json) |
+| [稠密正小整数等价的原始精确推导](<../history/source/notes/unrelated_machines/dense_small_integer_equivalence_exact_draft.md>) | `history/source/notes/unrelated_machines/dense_small_integer_equivalence_exact_draft.md` | 保存独立构造者先于规范§6形成的实际陈述和完整位复杂度推导，用于追溯加强来源及审查顺序；原字节不修改。 | 来源或历史判断；不作为现行结论；关联 `UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1`，[命题合同](assets.json) |
 
 <a id="weighted_congestion"></a>
 

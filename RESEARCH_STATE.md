@@ -1,8 +1,16 @@
 # 当前研究前沿：不相关并行机
 
-用户已明确决定全体主攻 `UM-TARGET-v1` 的否定：对每个固定 ε>0 攻击真实近二整数 gap 与可计算绝对阈值下的调度 decoder，准确声明复杂度假设。原目标身份保持不变，正面资产用于检验归约；一般反面尚未证明。当前操作入口与全仓方向见[活跃路线](research/unrelated_machines/ACTIVE_ROUTES.md)。
+## 2026-10-18：反面主攻与全常数覆盖
 
-当前主攻 `UM-TARGET-v1`，存档 `unrelated-machines`：一般R∥C_max上，统一常数(2−ε)的确定性位多项式实际调度。目标仍 **OPEN**；尚无一般新近似算法。新会话用[完整提示词](research/unrelated_machines/BOSS_START.md)，从[本题地图](research/current/unrelated_machines/README.md)和[专题前沿](research/unrelated_machines/RESEARCH_STATE.md)恢复实际状态。
+用户已决定主攻UM-TARGET-v1的否定。尚未证明不存在ε；无条件否定至少蕴含P≠NP，条件困难性须明列假设。主线是每个固定ε的真实gap和所有低负载调度的源解码，已有正面资产及其精确身份保留供攻击归约使用。
+
+本阶段完成[稠密正小整数正规形](research/current/unrelated_machines/model_and_classical_barriers.md)§6及独立审查：任何全有限1..n²整数域的固定(2−1/k)算法可转成原完整模型的(2−1/(2k))算法。极大分母、零值、∞与不可计算的正实常数都不能单独充当否定机制。此为标准离散化的自足接口重构，非新hardness。当前其他复制/张量/占位探索仍未闭合近二NO decoder；未把它们升级或复制为新资产。
+
+下一承重仍是共享内部一致性、全输出解码与固定参数规模，不再用增加同族有限样本替代这道义务。
+
+固定待判定命题 `UM-TARGET-v1`，存档 `unrelated-machines`：一般R∥C_max上，统一常数(2−ε)的确定性位多项式实际调度。目标仍 **OPEN**；尚无一般新近似算法。新会话用[完整提示词](research/unrelated_machines/BOSS_START.md)，从[本题地图](research/current/unrelated_machines/README.md)和[专题前沿](research/unrelated_machines/RESEARCH_STATE.md)恢复实际状态。
+
+当前操作入口与全体反面方向见[活跃路线](research/unrelated_machines/ACTIVE_ROUTES.md)；无需路线登记或开工审批。
 
 ## 当前承重义务
 
