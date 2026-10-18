@@ -294,3 +294,9 @@
 
 
 [单件query计数与近单位读取必要条件](../current/unrelated_machines/two_witness_query_separation.md)另立QUERY-COUNT-FEE-v3：即使聚合大，tiny单件仍有大批合格低费query；一次费用W≤F迫至少d−2枚query初态>(β−1)T。原η0严格错误实际修复并保留；仅双strict改派收费合同，非主反证。
+
+
+[严格重中端gap占位胶合](../current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)新增HEAVY-MEDIUM-STRICT-WITNESS-v1：两actual≤T，只用过端有heavy/medium间隔κ，则两mixed实际≤(2−κ/2)T，允许跨角色；仍不读具体job身份。同期修复公共尺寸满流遗漏冻结baseline guard及孤立机，不升级tiny审计为通用后端。
+
+
+[保护环公共子句OR的身份错配](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)新增CLAUSE-OR-FAILURE-v2：此明确Ci+Rc+unit-clause接线对任意公式都actual≤1，源NO全部丢失；共同匹配证书可回收，重试须阻止返回blocker与导出query索引交换，不能免费加同编号约束。空源idle已修，非所有identity-copy不可能。

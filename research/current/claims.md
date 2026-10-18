@@ -1202,6 +1202,10 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-TWO-WITNESS-QUERY-COUNT-FEE-v3 | 任意P同一两actualσ≤有理T>0；D改变jobs、非空Q、d=Q数；使用分离v2同一I>T/2着色族，β∈[3/2,2)、cβ−1、Rβ为query旧端总量>cT的机器数；非负改派权W。 同族good数≥d−Rβ，实际≤βT并有fee≤W/(d−Rβ)；单件≤ηT时有严格mass界（η0单列）和s=floor(c/η)+1整数分组界。若每singleton必费F且W≤κF，至少d−2floorκ枚query旧端>cT；非主反证。 | [正文§5](unrelated_machines/two_witness_query_separation.md)、[审查](../reviews/unrelated_machines/two_witness_query_count_fee_review.md)；无新增实现/有限证据，主目标未解。 |
 
+| UM-HEAVY-MEDIUM-STRICT-WITNESS-PRESENCE-GLUING-v1 | 任意P、给T>0及两实际σ0/σ1≤T；只用过端在[0,aT]或[(1−ε)T,T]，0≤ε<1/2、0≤a<1−ε，未用资格任意；两测量heavy-presence00/11。 四模式完整actual≤[3/2+(ε+a)/2]T<2T；固定端点gapκ给2−κ/2；允许job跨heavy/medium角色和异端成本，仅测presence，不保指定任务身份或源标签。 | [正文§8](unrelated_machines/unit_presence_two_witness_sharp_gluing.md)、[审查](../reviews/unrelated_machines/heavy_medium_strict_witness_presence_gluing_review.md)；无新实现，主目标未解。 |
+
+| UM-PROTECTED-CYCLE-CIRCUIT-CLAUSE-OR-FAILURE-v2 | 显式CNF每clause≥2独立文字occurrences、允许重复；变量环/dummy/polarity按正文，q_i内部a/1、私有Ci1及clauseRc1，b_i私有Ci1/pin a，clause u_c可Ci1；a∈(0,1)，空Φ加idle。 此确切OR接线对所有公式均有det bitpoly完整actual≤1，每非idle机恰一原job，每Rc真由clause qi占据；导出query与返回blocker索引可错配，不能保源NO。 | [正文§9](unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、[审查](../reviews/unrelated_machines/protected_cycle_shared_clause_or_failure_review.md)；无新通用实现，主目标未解。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

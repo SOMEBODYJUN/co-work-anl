@@ -25,3 +25,12 @@
 以上三条均未证明 `UM-TARGET-v1` 的算法或困难性。私有恒等式不覆盖跨模块共享；presence 胶合不覆盖未知 witness、额外外部模式或被锁定的任务身份；前缀证书障碍不排除别的近二机制。真正未决的是：构造位多项式、可验证的跨模块整数一致性/全局 source decoder，同时避免私有 `max/min` 无放大、完全共享导致分数整数化，以及裸 presence 的 `3/2` 胶合逃逸。
 
 Evidence：三份正文与对应内部审查；本稿没有新增实验或外部 theorem import。Status：声明范围内无 standing fatal；外审、新颖性、一般复杂度结论均未认证。
+
+
+## boss11：公共尺寸判定的冻结核心遗漏（2026-10-18）
+
+原实现和正文未先拒绝 `B<max f_i`，其“满流 iff 全机峰≤B”陈述在此处错误。root实际运行原程序确认：`f=(2,0), q=1, E_j={machine2}, B=1` 返回True，而完整矩阵枚举最优值为2。该原fatal属于判定证明/代码，非定理输入域或最优值定义的变更。
+
+内部审查者fee_cascade_review先仅据修复Exact独立证明：guard必要；通过后各`floor((B-f_i)/q)`非负，容量满流与每台原机完整负荷约束双向等价；候选集的`t=0`保留孤立冻结机器，空新任务应返回`max f`。随后实际阅读现有正文/代码，作者修复后再核读另记。root加guard与两条反例/空任务回归，并逐候选检查判定值等于真实最优阈值比较；没有改写原有来源字节，也不将这项精确接口当一般近似算法。
+
+最终独立审查原字节见`history/source/notes/unrelated_machines/unknown_target_common_size_guard_independent_review.md`：修复/孤立机通过；当前脚本仅tiny feasible+brute审计，无二分/分配后端，1200长链实际RecursionError已记录。独立scratch扩大核验不冒称root运行或一般证明。

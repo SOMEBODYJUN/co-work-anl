@@ -176,3 +176,9 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 
 
 [QUERY-COUNT-FEE-v3](research/current/unrelated_machines/two_witness_query_separation.md)进一步排除单件tiny聚合读取的固定费逃逸：正T两strict模式、β≥3/2，W≤κF迫至少d−2floorκ枚query旧端>(β−1)T。条件性改派费必要界，不是UM困难性；零质量原异议已修复。
+
+
+[严格重中端占位gap胶合](research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)允许cross-role且两strict见证下给2−gap/2的完整mixed，但不锁job身份。共同尺寸精确重开已修复冻结baseline guard与孤立机遗漏；仅tiny审计，主目标仍OPEN。
+
+
+[保护环共享子句OR错配](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)记录一个完整物理接线失败：同一共同匹配让所有SAT/UNSAT公式都strict≤1。只排该接法，重试必须防实际身份交换；主目标未升级。

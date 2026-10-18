@@ -2408,3 +2408,31 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：η0严格多于d原错已单列修复；old=cT非heavy、rich严格>、κ取floor、W0非严格费均核过；无standing fatal。
 - Status：证明与内部审查完成；外审、新颖性未认证，UM-TARGET-v1正反面仍OPEN。
 - Related Files：[正文](../current/unrelated_machines/two_witness_query_separation.md)、[审查](../reviews/unrelated_machines/two_witness_query_count_fee_review.md)及其十个原字节来源。
+
+
+## UM-HEAVY-MEDIUM-STRICT-WITNESS-PRESENCE-GLUING-v1：严格见证下有gap的重中端占位
+
+- ID / Version：`UM-HEAVY-MEDIUM-STRICT-WITNESS-PRESENCE-GLUING-v1`；与旧T=1+a、精确unit的域分开。
+- Exact Statement / Conclusion：四模式完整actual≤[3/2+(ε+a)/2]T<2T；固定端点gapκ给2−κ/2；允许job跨heavy/medium角色和异端成本，仅测presence，不保指定任务身份或源标签。
+- Objects / Domain / Quantifiers：任意P、给T>0及两实际σ0/σ1≤T；只用过端在[0,aT]或[(1−ε)T,T]，0≤ε<1/2、0≤a<1−ε，未用资格任意；两测量heavy-presence00/11。 对所有满足共同域的输入、两个mixed同时成立。
+- Assumptions / Definitions：见证已给；仅用这两份实际用过端、heavy按下界分类，gap严格正。
+- Scope：不保指定job身份或其它锁定边界，非源decoder/一般算法。
+- Dependencies：两heavy匹配分量、非负两选择加权半整化（自足证明）、本严格T和gap共同域。
+- Evidence：作者Exact、独立完整重构、Proof读后及canonical最终审查五来源；无新软件/有限核验。
+- Counterevidence / Objections：flip需ε+a已真实计入；式(6)控制字符和T0旁称在推送前修正；无standing fatal，不声明全参数锐性。
+- Status：证明/实际内审完成，外审、新颖性及主目标未解。
+- Related Files：[正文](../current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)、[审查](../reviews/unrelated_machines/heavy_medium_strict_witness_presence_gluing_review.md)及五个保留原字节来源。
+
+
+## UM-PROTECTED-CYCLE-CIRCUIT-CLAUSE-OR-FAILURE-v2：私有身份读口接公共子句的具体失败
+
+- ID / Version：`UM-PROTECTED-CYCLE-CIRCUIT-CLAUSE-OR-FAILURE-v2`；v1零机器退化另立v2补idle，原字节保留。
+- Exact Statement / Conclusion：此确切OR接线对所有公式均有det bitpoly完整actual≤1，每非idle机恰一原job，每Rc真由clause qi占据；导出query与返回blocker索引可错配，不能保源NO。
+- Objects / Domain / Quantifiers：显式CNF每clause≥2独立文字occurrences、允许重复；变量环/dummy/polarity按正文，q_i内部a/1、私有Ci1及clauseRc1，b_i私有Ci1/pin a，clause u_c可Ci1；a∈(0,1)，空Φ加idle。 对所有公式及其所列真实矩阵成立。
+- Assumptions / Definitions：k_c≥2；每occurrence独立物理索引，pin/后继/全部合法端见正文；不假设免费OR或返回与读出同编号。
+- Scope：只否定此OR接线，不否定private身份组件或其它medium/共享decoder。
+- Dependencies：完整显式矩阵定义、共同job/machine分数匹配证书（x_i1/k_c≤1/2）和二部整数匹配；没有源hardness假设。
+- Evidence：root与rank独立Exact-first构证、Proof读后及canonical最终审查；root十job实际端回算是有限校准，非一般证明。
+- Counterevidence / Objections：v1空公式不合法已由v2修复；实际q@Rc与返回b可错配，正是失效步骤；无standing fatal。
+- Status：限定失败机制证明/内审完成，外审/新颖性未认证，UM-TARGET-v1未解。
+- Related Files：[正文§9](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、[审查](../reviews/unrelated_machines/protected_cycle_shared_clause_or_failure_review.md)及七个保留来源。

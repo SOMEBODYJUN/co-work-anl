@@ -297,3 +297,49 @@ L、U可精确计算，位长受原有理输入长度多项式控制。η、g是
 正规类因此保留了主目标的重要全部内容：可以把一般研究聚焦到**一任意小端加一unit端的两端任务、及最多三端的unit-only one-hot任务**。这不是证明该类hard，也不是把它任意退化为只有两端unit任务的旧arc模型。任何足以否定所有统一次二算法的困难性仍需真实YES/NO归约与全局源解码；第2–3节一般PCSP NP-hard没有自动完成这一步。
 
 Evidence / Counterevidence / Status / Related Files：statement-first独立重构已分别核正规形和未知OPT算法等价；后读正文的实际记录见[审查](../../reviews/unrelated_machines/near_unit_implication_pcsp_review.md)。数学条件推论完整，无已提供的正规类近似求解器，外审/全球新颖性未认证。UM-TARGET-v1及其一般反面仍OPEN。
+
+
+## 9. 保护式环接私有端与公共子句端后的真实 OR 失效
+
+**ID / Version：`UM-PROTECTED-CYCLE-CIRCUIT-CLAUSE-OR-FAILURE-v2`。** v1只对非空源给合法UM；空公式会产生零台机器。本v2安全补空实例的一台idle机器，保留原来源及异议，不把域修复原位覆盖。这是一个完整物理接线的反例机制，不是一般copy或UM目标的困难性结论。
+
+**Objects / Domain / Definitions。** 任意有限显式CNF Φ，每clause c有k_c≥2枚文字occurrences，允许重复变量/文字。每occurrence是独立物理索引；变量只保留出现者。对每变量将其occurrences排成环，必要时补dummy到至少3个；dummy不属clause，polarity任取。记N为含dummy的occurrences总数、h为clause数。每索引i有内部机器M_i、私有机器C_i，变量环后继i⁺，正文字s_i=0、负文字s_i=1，pin(i)=M_i或M_i⁺。另每clause有一机器R_c，全部机器互异。若N=h=0则只设一台idle原机、零jobs。给有理a∈(0,1)，否则jobs及所有有限端如下，未列为∞：
+
+| 原job | 有限端与真实时间 |
+| --- | --- |
+| q_i | M_i:a，M_i⁺:1，C_i:1；真实occurrence i∈c另有R_c:1 |
+| b_i | C_i:1，pin(i):a |
+| u_c | 每个i∈c的C_i:1，无R_c资格 |
+
+非空时原jobs与机器数都恰2N+h。每job只执行一次，资格不附带抽象OR或身份相等约束。可选a>B/2以连接任意固定B<2的nearunit环；下面结论不需要此额外限制。
+
+**Exact Statement / Quantifiers / Conclusion。** 对所有上述Φ、任意变量环顺序及dummy polarity、任意a∈(0,1)，存在并可确定性总位多项式构造完整实际σ≤1。非idle机器各恰一枚原job；每R_c真的接到该clause某枚q_i。特别对源UNSAT仍如此，故这份接线完全丢失NO soundness，不可沿用外接前的变量identity decoder。
+
+**自足共同匹配证书。** 对真实i∈c令x_i=1/k_c≤1/2，dummy令x_i=0。先只构造job–machine关联图的分数匹配，不能将其当执行方案：
+
+\[
+ b_i\to\operatorname{pin}(i):x_i,\qquad b_i\to C_i:1-x_i;
+ \qquad u_c\to C_i:x_i\ (i\in c).
+\]
+
+真实q_i给R_c质量x_i；dummy无此项。每q_i在M_i、M_i⁺各先给1/2，再从其pin(i)方向减x_i；不给C_i分数。每q总量1，每b总量1，每u总量Σ_{i∈c}1/k_c=1。所有分数非负，k_c=2出现零项无碍。
+
+每C_i收到(1−x_i)+x_i=1；dummy只收b_i的1。每R_c收到Σx_i=1。每M_i从环的两邻q基数各1/2；每个q被扣的pin项，恰由同索引b的pin项逐项补回，所以该机总量恰1。这是**同一个全局分数完美匹配**，覆盖全部jobs与机器，不依赖源赋值、polarity或处理时间a。
+
+由二部匹配整数性取实际完美匹配；也可由上述满单位分数证书对任意job子集推出Hall再用确定性增广路。每个原job取一个原合法端，非idle机器恰一job，该端真实时间≤1，故全部原机实际峰≤1。R_c只有该clause的q邻居，实际匹配保证真实q身份读出。空Φ返回一idle机的空调度，OPT0且合法。
+
+**最小UNSAT身份错配例（有限证书，非一般证明）。** Φ=(x∨x)∧(¬x∨¬x)，顺序i=1,2为正、3,4为负，无dummy。记R₊、R₋及u₊、u₋。完整合法分配为
+
+\[
+ q_1\to R_+,\ q_3\to R_-,\ q_2\to M_3,\ q_4\to M_4;
+\]
+\[
+ b_1\to C_1,\ b_2\to M_2,\ b_3\to C_3,\ b_4\to M_1;
+ \qquad u_+\to C_2,\ u_-\to C_4.
+\]
+
+十机十job各一次、所有时间a或1，峰≤1。两clause分别读q₁、q₃，释放的私有位却是C₂、C₄，相应返回b₂、b₄；读出和返回索引错配，变量内部phase可改变。不能把原私有Ci下的q_i导出⇔b_i返回强行加回新矩阵。
+
+**Assumptions / Dependencies / Complexity。** 只依赖本显式矩阵、k_c≥2带来的x_i≤1/2，以及普通二部整数匹配；没有NP/ETH/UGC假设、PCSP源oracle或配置LP舍入前提。N为原occurrences的线性量，有限资格数线性；若按主模型稠密矩阵输出，规模O((2N+h)²)而非偷用稀疏输入线性。a与1/k_c位长多项式，增广匹配与全机负载回算皆按总位长多项式。
+
+**Scope / Evidence / Counterevidence / Status / Related Files。** 只否定这里Ci+R_c+unit-clause-job的具体OR编译；不否定其它共享资源、medium共居保护或一般nearunit身份机制。root与rank仅据Exact分别独立构造同一共同证书；随后实际读作者Proof，空Φ的v1合法性遗漏另立v2修复。10job分配由root按原端逐项回算，有限例不承担全公式证明。实际审查见[OR失效审查](../../reviews/unrelated_machines/protected_cycle_shared_clause_or_failure_review.md)，来源保留v1/v2及真实独立读后次序。数学失败机制证明完成；无新通用软件，外审与新颖性未认证，`UM-TARGET-v1`仍OPEN。

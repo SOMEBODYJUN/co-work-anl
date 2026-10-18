@@ -143,3 +143,41 @@ Evidence / Counterevidence / Status / Related Files：精确陈述先行独立�
 两见证都unit-present的机器，tiny均值≤a；最终至多一件unit，所以总负载≤1+3a/2≤3T/2。presence不同的机器，tiny均值≤[(1+a)+a]/2=1/2+a；最终总负载≤1+(1/2+a)+a/2=3T/2。两见证都unit-vacant的机器不会新增unit，tiny总负载≤1+a+a/2≤3T/2。全部原机器同时受控，测量位不受virtual方向影响。a0时所有tiny成本0，同一构造合法，无除a或按1/a枚举。
 
 Evidence / Counterevidence / Status / Related Files：这是输入域与时间规则改变后的新ID，未悄悄改写前述uniform锐B(k)；uniform版偶k的格整化仍更强。精确陈述先行与后读审查的实际对象见[审查](../../reviews/unrelated_machines/unit_presence_two_witness_gluing_review.md)。没有新通用胶合实现或外审；新颖性未认证。它只排除tiny时间下的裸unit-presence复制合同，保留medium时间、任务身份/共同外部约束与一般主目标的开放性。
+
+
+## 8. 严格双见证中有间隔的重端与中端
+
+**ID / Version：`UM-HEAVY-MEDIUM-STRICT-WITNESS-PRESENCE-GLUING-v1`。** 本身份改变旧§7的时间规则和见证容量，另立陈述，不改旧结论或锐性。它把重端与中端交叉角色也纳入占位读出限制；没有声称新上界的全参数锐性。
+
+**Objects / Domain / Quantifiers / Definitions。** 任意显式合法UM矩阵P及正有理T；给同一P两完整实际σ₀、σ₁均峰≤T，有理0≤ε<1/2、0≤a<1−ε。只要求每job在这两见证实际使用的端时间属于medium区间[0,aT]或heavy区间[(1−ε)T,T]；未使用的有限端任意。允许同job的heavy↔medium切换、不同medium端成本、零值、静止job及任意资格数。限定输出只用每job的这两个原见证端，H_i为原机器i实际接到heavy任务的指示。指定不同v,w，两见证的(H_v,H_w)分别00、11。
+
+**Exact Statement / Conclusion。** 确定性总位多项式可对四个两位向量分别输出完整实际τ，所有原任务各执行一次，τ(j)∈{σ₀(j),σ₁(j)}，测量heavy-presence精确匹配，且
+
+\[
+ C_{\max}(\tau)\le\left[\frac32+\frac{\varepsilon+a}{2}\right]T
+ =\left[2-\frac{(1-\varepsilon)-a}{2}\right]T<2T. \tag{6}
+\]
+
+00与11直接使用原见证。若端点gap (1−ε)−a≥κ>0，则两种mixed都可在(2−κ/2)T实现。所需时间按输入总编码长度，不按参数倒数枚举。
+
+**证明：重匹配与全部原任务。** 因2(1−ε)T>T，两见证的heavy job–machine边各是一份匹配。共同边固定，其余按§2分为machine–machine、job–job、job–machine交替路径和偶环。这里只复用匹配的组合分解，不把heavy成本假设成相等。v,w是颜色1的machine端点，处于不同分量。设要v0、w1。
+
+若v在job–machine路径，从σ₁把该分量翻为inactive。内部机器仍恰一枚heavy，真实heavy成本至多增加εT；路径仅有一枚端点job改走其σ₀ medium端，成本≤aT，可能与heavy增加落在同机。因此完整负载≤(1+ε+a)T≤式(6)，因为ε+a<1。w在别的分量保持1。这里不能沿用精确unit的“内部成本不变”。
+
+否则v在machine–machine路径，将它取0方向；w的另一分量取1方向或active方向，其它machine–machine/环任取，所有job–machine路径取active。剩余选择包含两见证都medium的真实jobs，以及每条job–job路径的一个virtual item：两选项分别是两方向唯一留下的两个端点原job的真实medium端及成本。选一个选项便恢复整条路径的heavy方向，另一个端点job走heavy，内部原jobs不遗漏。virtual只是选择编码，不是新增执行任务；不改变任何机器是否接heavy。
+
+设两见证在i的medium负荷为ℓ_i⁰、ℓ_i¹。每item两个选项各半的真实成本μ_i≤(ℓ_i⁰+ℓ_i¹)/2，因所有job–machine取active只删除非负medium半项。应用§7已经证明的两选择加权半整化：同机选项取较便宜端，其余逐机按成本降序相邻配对，与每item选项对组成路径/交替偶环二着色，得到一次共同整数选择，使全部机器的medium负荷≤μ_i+aT/2。其证明是每机偏差≤(c₁−c₂+c₃−c₄+⋯)/2≤c₁/2≤aT/2，允许不等成本和零成本。
+
+恢复全部原任务后逐机核重轻相加：
+
+| i在两见证的heavy-presence | medium均值上界 | 完整负载上界（单位T） |
+| --- | --- | --- |
+| 11 | εT | 1+ε+a/2 |
+| 01或10 | (1+ε)T/2 | 3/2+(ε+a)/2 |
+| 00 | T | 1+a/2；不会新增heavy |
+
+三行均不超过式(6)，第一行使用ε≤1；全部原机器同时成立。另一mixed交换v,w。静止任务在items/共同边中保持原端，所有选择均来自输入的合法执行端。
+
+**Assumptions / Dependencies / Complexity。** 两个严格完整见证是输入；只复用§2的匹配分量事实、§7自足加权半整化及本节的gap/严格负载域。扫描有限边、分量、排序和二着色均多项式；中间数是输入有理数部分和，分母位长按输入分母位长总和界定。a=0、ε=0、同机virtual选项等均无需除以参数；T=0不在本ID域。
+
+**Scope / Counterevidence / Evidence / Status。** 只保两个机器是否执行heavy，未保产生占位的某枚具体job身份、其它锁定边界或源标签；只约束两见证所用端，不能反向声称整个P只有两档。该构造不计算未知见证，不给主目标算法或NO decoder。root独立核上面逐机界；内部审查者先只读Exact重构完整证明，后读作者冻结Proof，未发现standing fatal，实际记录与原字节来源见[审查](../../reviews/unrelated_machines/heavy_medium_strict_witness_presence_gluing_review.md)。没有对应新软件/有限实验，外审与新颖性未认证。一般`UM-TARGET-v1`正反面未完成。

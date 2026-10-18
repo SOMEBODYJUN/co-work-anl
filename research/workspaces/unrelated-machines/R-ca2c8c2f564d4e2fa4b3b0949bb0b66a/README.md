@@ -81,3 +81,9 @@
 
 
 [QUERY-COUNT-FEE-v3](../../../current/unrelated_machines/two_witness_query_separation.md)把同机聚合逃逸进一步压到nearunit初态读数：一次费用只容至多两枚非heavy查询。下一实际负面义务是用这些近unit任务身份构造可物理读取的一致性，并核全部原机负载/源NO decoder；不是把已证必要条件当充分hard gadget。
+
+
+[严格重中端gap胶合](../../../current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md)进一步压缩裸presence路线：固定used端gap便有严格次二mixed，cross-role本身不足；继续实际任务身份共享clause后的decoder。另已修共同尺寸flow的baseline guard并保留原fatal/递归audit规模限制。
+
+
+[共享clause OR身份错配](../../../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)已给全公式strict匹配，单个私有身份保护不能直接接OR；新接线需在实际medium共居上锁同编号，不能靠完美匹配计数保decoder。

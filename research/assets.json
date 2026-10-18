@@ -9145,7 +9145,7 @@
       "applies_when": [
         "Frozen core loads f_i and all reopen tasks have one common positive rational endpoint size q; arbitrary eligibility; disconnected machine components may have separate sizes."
       ],
-      "produces": "Exact unknown-threshold integer flow repair with no +q head loss.",
+      "produces": "先检查B≥max frozen f，再用整数满流精确判定/候选二分；孤立冻结机保留。数学修复完成，脚本仅tiny predicate audit，非未知B/分配通用后端。",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/unknown_target_common_size_exact_repair.md"
@@ -9155,10 +9155,13 @@
       ],
       "records": [],
       "examples": [],
-      "reviews": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/composition_decoder_obstruction_review.md"
+      ],
       "candidates": [],
       "sources": [
-        "history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf"
+        "history/source/literature/unrelated_machines/jansen_rohwedder_2017_configuration_lp_v2.pdf",
+        "history/source/notes/unrelated_machines/unknown_target_common_size_guard_independent_review.md"
       ],
       "limit": "Does not choose the frozen core or handle mixed sizes sharing machines; not a general UM algorithm."
     },
@@ -9225,6 +9228,70 @@
       ],
       "source_role": "内部原陈述/证明与真实独立审查；v1零质量反例和v2修复均保留，v3另立。",
       "limit": "同一实际双见证及明确收费合同的必要条件；非源NO解码、全子集族、一般UM算法或困难性。"
+    },
+    {
+      "id": "um_heavy_medium_strict_witness_presence_gluing_v1",
+      "claims": [
+        "UM-HEAVY-MEDIUM-STRICT-WITNESS-PRESENCE-GLUING-v1"
+      ],
+      "status": "complete scoped proof; actual statement-first, read-after and final composition review; novelty unverified",
+      "applies_when": [
+        "任意P、给T>0及两实际σ0/σ1≤T；只用过端在[0,aT]或[(1−ε)T,T]，0≤ε<1/2、0≤a<1−ε，未用资格任意；两测量heavy-presence00/11。"
+      ],
+      "produces": "四模式完整actual≤[3/2+(ε+a)/2]T<2T；固定端点gapκ给2−κ/2；允许job跨heavy/medium角色和异端成本，仅测presence，不保指定任务身份或源标签。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/unit_presence_two_witness_sharp_gluing.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/heavy_medium_strict_witness_presence_gluing_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/heavy_medium_presence_strict_witness_gluing_exact_v1.md",
+        "history/source/notes/unrelated_machines/heavy_medium_presence_strict_witness_gluing_proof_v1.md",
+        "history/source/notes/unrelated_machines/heavy_medium_presence_strict_witness_gluing_independent_review_v1.md",
+        "history/source/notes/unrelated_machines/heavy_medium_presence_strict_witness_gluing_author_read_after_v1.md",
+        "history/source/notes/unrelated_machines/heavy_medium_presence_strict_witness_gluing_canonical_read_after_v1.md"
+      ],
+      "source_role": "实际内部Exact、作者证明、独立重构、作者读后和canonical最终审查原字节；非外部发表。",
+      "limit": "两actual给定见证的heavy-presence接口边界；非未知见证求解、指定job身份复制、源NO decoder或一般UM结论。"
+    },
+    {
+      "id": "um_protected_cycle_clause_or_failure_v2",
+      "claims": [
+        "UM-PROTECTED-CYCLE-CIRCUIT-CLAUSE-OR-FAILURE-v2"
+      ],
+      "status": "complete scoped failure proof; actual statement-first, read-after and canonical review; novelty unverified",
+      "applies_when": [
+        "显式CNF每clause≥2独立文字occurrences、允许重复；变量环/dummy/polarity按正文，q_i内部a/1、私有Ci1及clauseRc1，b_i私有Ci1/pin a，clause u_c可Ci1；a∈(0,1)，空Φ加idle。"
+      ],
+      "produces": "此确切OR接线对所有公式均有det bitpoly完整actual≤1，每非idle机恰一原job，每Rc真由clause qi占据；导出query与返回blocker索引可错配，不能保源NO。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/protected_cycle_shared_clause_or_failure_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/protected_cycle_shared_clause_or_failure_exact_v1.md",
+        "history/source/notes/unrelated_machines/protected_cycle_shared_clause_or_failure_proof_v1.md",
+        "history/source/notes/unrelated_machines/protected_cycle_shared_clause_or_independent_exact_first_review.md",
+        "history/source/notes/unrelated_machines/protected_cycle_shared_clause_or_failure_exact_v2.md",
+        "history/source/notes/unrelated_machines/protected_cycle_shared_clause_or_failure_proof_v2.md",
+        "history/source/notes/unrelated_machines/protected_cycle_shared_clause_or_v2_read_after_review.md",
+        "history/source/notes/unrelated_machines/protected_cycle_clause_or_canonical_section9_read_after.md"
+      ],
+      "source_role": "内部Exact-first、作者Proof、原空Φ异议/v2修复及实际最终组合来源；v1保留不升级。",
+      "limit": "只否定此完整clause接线；不否定所有identity/medium/共享机制，不给一般UM算法或hardness。"
     }
   ]
 }
