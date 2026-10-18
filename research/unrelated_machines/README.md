@@ -359,3 +359,5 @@
 [显式XOS分数NSW与修复边界](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)：任意binary-rational显式XOS给det真实allocation相对每个fractional benchmark的常数NSW；normalized total-one FSLP给几乎所有组质量及same-n singleton repair LP promise decider。仅小threshold域，明确不排gamma<=delta_q，普通UM仍只全机二。
 
 [弱共享直方图的准确边界](../current/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md)：previous弱aggregate-only递推恰CONFIG负载直方图投影；完整流LP/可靠NO，四机CONFIG3实际4。逐branch真共同law没有被这一共享写法保住；不否relative OPT一般算法。
+
+[前缀证书的有限精度纠偏](../current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)（`UM-PREFIX-ATOMIC-FINITE-PRECISION-v1`）：同一精确守恒law下，带噪max-mass的锐界配合有理网格，在poly位精度恢复精确阈值；绝对原子误差有N倍稀释，relative/full-Gram版本须保完整原子空间。生成、全称验证与一般统一ε仍未解决。

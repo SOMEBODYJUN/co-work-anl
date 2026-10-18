@@ -138,7 +138,7 @@
 [坐标切片编译的完整反例](research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)仍需实际源NO解码；[加权菜单表示与正规形](research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)可把任意normalized flat菜单精确保OPT/partialV变为K3、资源度3再入零权三坐标，标准path明确按BCG归属。[有限交互界](research/current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md)给固定M/Δ的实际次二比；[归一化源值与状态数](research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md)精确SC值桥与同U菜单数锐界共同定位仍缺的normalized tiny gap，均非一般UM反面证明。
 
 
-[前缀原子解码桥](research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)进一步把全阶矩路线的解码义务压缩为可查询部分分配权：若生成器能保持one-hot守恒与完整逐机局部化，O(|E|)次查询即可得到T可行调度；因此真正未解的是succinct证书生成或sound FAIL，而非终端原子搜索。该接口不改变UM-TARGET-v1的OPEN状态。
+[前缀原子解码桥](research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)进一步把全阶矩路线的解码义务压缩为可查询部分分配权：若生成器能保持one-hot守恒与完整逐机局部化，O(|E|)次查询即可得到T可行调度；因此真正未解的是succinct证书生成或sound FAIL，而非终端原子搜索。该接口不改变UM-TARGET-v1的OPEN状态。 同页新增 `UM-PREFIX-ATOMIC-FINITE-PRECISION-v1`：带噪最大质量选择有锐质量界，结合有理负载格点可用poly位精度恢复精确阈值；需指数小数值不等于需指数位数。共同law、真实全叶局部化及一般生成器仍承重。
 
 ## 锚点亏缺共同选择与精确保矩的边界
 

@@ -200,3 +200,5 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 ## 本阶段的可复用桥梁与仍开放的主目标
 
 [单home消环及有向需求桥](research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)去掉环境DAG限制但仍输入实际调度或根树；[SC类型配置与真实匹配后端](research/current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)补齐显式多项式列表生成并精确定位全局选择义务；[整比双尺寸中性修复](research/current/unrelated_machines/divisible_two_size_neutral_repair.md)给防循环正面控制组。均不构成一般UM统一次二算法或近二困难性，UM-TARGET-v1保持OPEN。
+
+[前缀证书的有限精度纠偏](research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)（`UM-PREFIX-ATOMIC-FINITE-PRECISION-v1`）：同一精确守恒law下，带噪max-mass的锐界配合有理网格，在poly位精度恢复精确阈值；绝对原子误差有N倍稀释，relative/full-Gram版本须保完整原子空间。生成、全称验证与一般统一ε仍未解决。

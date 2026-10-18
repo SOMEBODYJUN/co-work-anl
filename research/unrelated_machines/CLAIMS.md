@@ -2203,6 +2203,19 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - **Status：** complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；`UM-TARGET-v1`仍OPEN。
 - **Related Files：** `research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md`、`research/reviews/unrelated_machines/succinct_prefix_atomic_decoding_review.md`、`tests/audits/unrelated_machines/succinct_prefix_atomic_decoding.py`、`evidence/runs/unrelated_machines/succinct_prefix_atomic_decoding_audit.json`。
 
+## UM-PREFIX-ATOMIC-FINITE-PRECISION-v1：前缀原子解码的锐有限精度与有理格点恢复
+
+- ID / Version：`UM-PREFIX-ATOMIC-FINITE-PRECISION-v1`；新有限精度合同，不改精确查询 `UM-PREFIX-ATOMIC-DECODING-v1`。
+- Exact Statement / Quantifiers：对每个合法P、T≥0、固定任务顺序及同一个非负归一化精确守恒前缀law π，令d_j为各任务有限端数，N=∏d_j。若每次前缀查询绝对误差≤a，则逐任务选最大近似值的det解码输出真实叶质量≥max(0,[1−2a(N−1)]/N)，该全参数最坏界锐。若全部完整叶逐机满足(T−L_i)π≥−τ_i且2a(N−1)<1，则输出逐机L_i≤T+Nτ_i/[1−2a(N−1)]。令Q为全部有限p及T的约分分母之积，a=1/(4N)、τ_i≤1/(4QN)时输出精确T可行调度。
+- Objects / Domain：UM-MODEL-v1全部非负有理/∞输入、m≥1、n≥0；N数全部合法分配而非支撑数，Q为共同有理网格；只查询固定顺序的前缀。
+- Assumptions / Definitions：π守恒和根归一化精确；localizer是真实全叶全机不等式的承诺。查询时间和输出位长按原输入及精度编码位数多项式，非按1/a多项式。近似查询值本身可以为负。
+- Scope / Conclusion：至多|E|次查询的det-bit-poly条件解码；logN和logQ均受输入位长控制，指数小数值不构成指数位数障碍。绝对残差存在零选择任务稀释的锐N损失；相对残差−Δ_iπ直接给T+Δ_i且不随N损失。满行秩完整函数评价F时K_i≽−Δ_iM恰等价全部支撑原子容量界，低阶/缺秩F不可外推。
+- Dependencies：UM-MODEL-v1；同一前缀law的守恒、全叶真实localizer、查询位复杂度合同；自足兄弟比较与望远镜、共同分母整数格点及满行秩线性代数。原精确桥和全阶矩只作相关表示，不是自动提供新承诺的生成器。
+- Evidence：先只收精确陈述的独立重构，再实际读a17bde448cd58ab9b637a6050837153006423cf8097b078621bcb302031ff02b完整正文新增§1–6及原定义依赖；root复核证明并实际重跑三套Fraction审计。有限范围和SHA见冻结记录。
+- Counterevidence / Objections：无尚成立的声明范围fatal。root/守恒误差未纳入；没有一般证书生成、全称承诺验证、低阶Gram提取或可靠FAIL程序。相对阈值(2−ε)T的promise-gap生成不能由精确阈值困难性直接否定。
+- Status：complete scoped proof; independently reconstructed and exactly audited; external review and novelty unverified；软件为audit_only；UM-TARGET-v1仍OPEN。
+- Related Files：`research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md`；`research/reviews/unrelated_machines/prefix_atomic_finite_precision_review.md`；`tests/audits/unrelated_machines/prefix_atomic_finite_precision.py`及两份独立审计；`evidence/runs/unrelated_machines/prefix_atomic_finite_precision_audit.json`及两份独立冻结记录。
+
 ## 近单位锚任务的缺额阈值与共同实际舍入
 
 ### UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1

@@ -458,6 +458,8 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 
 `UM-PREFIX-ATOMIC-DECODING-v1` 已闭合一个精确条件接口：给定可查询前缀权 `π(S)`、one-hot守恒和完整逐机局部化器，逐任务选择正延伸即可在 `O(|E|)` 次查询中输出真实 `T`-可行整数调度；证书存在当且仅当 `OPT≤T`。这严格增补全阶矩原子桥的表示层，但把一般主桥收窄为：从任意 `P,T` 生成这种succinct证书，或给出可靠 `FAIL⇒OPT>T`。半单位共同选择NP障碍说明该生成不能作为免费oracle；`UM-TARGET-v1` 仍OPEN。详见 `research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md`。
 
+`UM-PREFIX-ATOMIC-FINITE-PRECISION-v1` 进一步闭合数值访问义务：带加性查询误差a的最大质量选择满足锐界max(0,[1−2a(N−1)]/N)；a=1/(4N)、全叶残差≤1/(4QN)时有理网格恢复精确阈值。N和共同分母Q可能数值指数大，但其位数均多项式。不能把绝对误差的1/N需求误读成指数位复杂度下界；若求解器按误差倒数计时仍不满足合同。下一承重仍是一般共同law/局部化promise-gap证书的生成及可靠FAIL，非更高精度本身。
+
 ## 锚点亏缺共同选择与精确保矩的边界
 
 [锚点缺额联合舍入](../current/unrelated_machines/anchor_deficiency_joint_rounding.md)从同一个LP共同选择anchor位置，并让任意跨分量/异端tiny仅做一次ST；分量缺额≤d0时，实际界为`[2−(1−α)/(d0+1)+β]T`。弱OPT所用边尺度承诺下，仅上截的单调整数二分给同系数OPT保证，无额外网格损失。余秩筛选门槛`1/(d+1)`锐；未声称调度系数最优。固定身份/有界亏缺仍承重。

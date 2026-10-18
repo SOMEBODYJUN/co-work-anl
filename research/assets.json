@@ -8781,33 +8781,42 @@
     {
       "id": "um_prefix_atomic_decoding_v1",
       "claims": [
-        "UM-PREFIX-ATOMIC-DECODING-v1"
+        "UM-PREFIX-ATOMIC-DECODING-v1",
+        "UM-PREFIX-ATOMIC-FINITE-PRECISION-v1"
       ],
       "status": "complete scoped proof; independently reconstructed and exactly audited; external review and novelty unverified",
       "applies_when": [
-        "显式有理前缀oracle对任意相容部分分配返回π(S)，每次查询按输入位长多项式；空前缀归一化、前缀one-hot守恒、非负前缀权和完整原子逐机localizer。"
+        "显式有理前缀oracle对任意相容部分分配返回π(S)，每次查询按输入位长多项式；空前缀归一化、前缀one-hot守恒、非负前缀权和完整原子逐机localizer。",
+        "有限精度扩展：固定任务顺序、同一个非负精确守恒law；真实全叶逐机残差承诺；查询按精度编码位数多项式。"
       ],
-      "produces": "至多O(|E|)次精确有理查询的确定性正延伸贪心，输出所有机器负载≤T的完整调度；证书存在当且仅当OPT≤T。",
+      "produces": "至多O(|E|)次精确有理查询的确定性正延伸贪心，输出所有机器负载≤T的完整调度；证书存在当且仅当OPT≤T。 新有限精度身份给锐质量界、全机容量容错与有理网格精确恢复，额外精度位数poly。",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md"
       ],
       "tests": [
-        "tests/audits/unrelated_machines/succinct_prefix_atomic_decoding.py"
+        "tests/audits/unrelated_machines/succinct_prefix_atomic_decoding.py",
+        "tests/audits/unrelated_machines/prefix_atomic_finite_precision.py",
+        "tests/audits/unrelated_machines/prefix_atomic_finite_precision_independent.py",
+        "tests/audits/unrelated_machines/prefix_atomic_relative_gram_independent.py"
       ],
       "records": [
-        "evidence/runs/unrelated_machines/succinct_prefix_atomic_decoding_audit.json"
+        "evidence/runs/unrelated_machines/succinct_prefix_atomic_decoding_audit.json",
+        "evidence/runs/unrelated_machines/prefix_atomic_finite_precision_audit.json",
+        "evidence/runs/unrelated_machines/prefix_atomic_finite_precision_independent_audit.json",
+        "evidence/runs/unrelated_machines/prefix_atomic_relative_gram_independent_audit.json"
       ],
       "examples": [],
       "reviews": [
-        "research/reviews/unrelated_machines/succinct_prefix_atomic_decoding_review.md"
+        "research/reviews/unrelated_machines/succinct_prefix_atomic_decoding_review.md",
+        "research/reviews/unrelated_machines/prefix_atomic_finite_precision_review.md"
       ],
       "candidates": [],
       "sources": [
         "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
       ],
       "source_role": "VW配置LP文献仅作相关背景；前缀解码命题为本轮自足推导，未导入外部定理。",
-      "limit": "前缀oracle及其localizer从一般P,T的生成仍未解决；若生成器同时给sound FAIL则可判定T可行性，受UM-JOINT-HALF-CHOICE-v1的P≠NP边界限制；不是UM-TARGET统一(2−ε)算法。"
+      "limit": "前缀oracle及其localizer从一般P,T的生成仍未解决；若生成器同时给sound FAIL则可判定T可行性，受UM-JOINT-HALF-CHOICE-v1的P≠NP边界限制；不是UM-TARGET统一(2−ε)算法。 有限精度不自动给证书生成或全称验证；full-Gram相对容差必须保满行秩，不由低阶投影替代。"
     },
     {
       "id": "um_anchor_deficiency_joint_rounding_v1",

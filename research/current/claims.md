@@ -1163,6 +1163,7 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2 | 末层两色的对齐Cartesian张量YES精确OPT2−(2/3)^k，gap上包络Gk≤5/4且严格下降趋1；纯k收缩连strong(d−1)也不可，非所有放大不可能。 | [正文](unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)、[审查](../reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md)。 |
 
 | UM-PREFIX-ATOMIC-DECODING-v1 | 给定可查询前缀原子权、one-hot守恒和完整逐机局部化器时，确定性至多O(|E|)查询输出负载≤T的整数调度；证书存在当且仅当OPT≤T。 | [正文](unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)、[审查](../reviews/unrelated_machines/succinct_prefix_atomic_decoding_review.md)、[精确核验](../../tests/audits/unrelated_machines/succinct_prefix_atomic_decoding.py)；只闭合表示/解码接口，生成器与一般UM仍开放。 |
+| UM-PREFIX-ATOMIC-FINITE-PRECISION-v1 | 同一个精确守恒law、加性误差查询的max-mass解码有锐质量界max(0,[1−2a(N−1)]/N)；a≤1/(4N)、全叶残差≤1/(4QN)结合有理网格输出精确T可行调度；精度只需poly位。 | [同页有限精度扩展](unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)、[冻结独立审查](../reviews/unrelated_machines/prefix_atomic_finite_precision_review.md)、[Fraction核验](../../tests/audits/unrelated_machines/prefix_atomic_finite_precision.py)；给定promise oracle，生成/全称验证/一般统一次二仍OPEN。 |
 
 ## 锚点缺额共同舍入与强配置二阶law
 

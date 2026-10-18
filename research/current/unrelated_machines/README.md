@@ -393,7 +393,7 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [单强制根的µ精确gap](private_injective_tree_configuration_floor.md)已证明sup=2−1/µ；[三叉自然放大限制](ternary_rainbow_subtree_exact_hardness.md)已核YES实际漂移和纯收缩失效。两者均实际陈述先行/读后内审；前者不是多state Gµ，后者不排所有张量，主目标正反面仍OPEN。
 
 
-[前缀原子证书的确定性解码桥](succinct_prefix_atomic_decoding_bridge.md)登记 `UM-PREFIX-ATOMIC-DECODING-v1`：若能按位多项式查询部分分配原子权、保持 one-hot 守恒并对完整原子给出逐机局部化，则O(|E|)次正延伸查询即可输出T可行调度；证书存在恰等价于OPT≤T。它把全阶矩路线的未解部分收窄为succinct证书生成或sound FAIL，不是一般算法。
+[前缀原子证书的确定性解码桥](succinct_prefix_atomic_decoding_bridge.md)登记 `UM-PREFIX-ATOMIC-DECODING-v1`：若能按位多项式查询部分分配原子权、保持 one-hot 守恒并对完整原子给出逐机局部化，则O(|E|)次正延伸查询即可输出T可行调度；证书存在恰等价于OPT≤T。它把全阶矩路线的未解部分收窄为succinct证书生成或sound FAIL，不是一般算法。 同页新增 `UM-PREFIX-ATOMIC-FINITE-PRECISION-v1`：带噪最大质量选择有锐质量界，结合有理负载格点可用poly位精度恢复精确阈值；需指数小数值不等于需指数位数。共同law、真实全叶局部化及一般生成器仍承重。
 
 ## 锚点亏缺共同选择与精确保矩的边界
 
