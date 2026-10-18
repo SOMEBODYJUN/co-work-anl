@@ -451,6 +451,10 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [仿射线两两独立的结构边界](tagged_affine_line_pairwise_independence_boundary.md)：单primary/onehot helpers在指定pairwise边际下可按条件化Hall全部actual1；多primary公共4D simplex陪集族则所有local pairs uniform仍V=2/(R+1)/实际OPT=2−2/(R+1)，common q/partite/全部zero jobs保留。后者只删唯一main即unit，不是robust或hard image/主反面。
 
 
+## 任意剪枝初态的共同入流剥离
+
+[任务包屏蔽与全输入锐路径](bundle_inflow_peeling_and_pruned_transient_sharpness.md)：先选源包及补集均足够释放的二分，再剥低内部入流顶点，保留核心、逆序激活、补集封口。全部剪枝σ≤C到给定τ≤T的路径峰≤max(2T,C+T/2)，旧两机族给全输入逐参数锐性。含逐机可计算profile、规范代码、独立攻击及冻结核验。具体τ仍承重；UM-TARGET-v1保持OPEN。
+
 [原地拟阵外包的指数数量界](minimal_star_contraction_and_capacity_gap.md#9-固定次二容量外包需要超多项式数量的原地拟阵)另立UM-KNAPSACK-MATROID-EXPONENTIAL-v1：把大件改为1−r/k后，完整保留全部容量1可行集且所有共同独立集固定次二，需超多项式原输入位长的静态拟阵数；精确最少数为C(k,k−r−1,r)。只限本地完整外包，不推出一般调度困难性。
 
 [出现位置异权文字池的三半逃逸](occurrence_weighted_direct_literal_pool_budget_escape.md)：允许同变量同侧逐occurrence异权，full eligible每侧b和≤1时仍能det构造全部原jobs actual≤1.5；合两侧首项/余项排序配对，含f池query≤.5，另一池≤1。只否该编译合同，未排额外guards或更大预算。

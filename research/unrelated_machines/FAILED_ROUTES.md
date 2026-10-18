@@ -396,6 +396,10 @@ u_t) 的一般复杂度。
 [仿射线两两独立的结构边界](../current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)：单primary/onehot helpers在指定pairwise边际下可按条件化Hall全部actual1；多primary公共4D simplex陪集族则所有local pairs uniform仍V=2/(R+1)/实际OPT=2−2/(R+1)，common q/partite/全部zero jobs保留。后者只删唯一main即unit，不是robust或hard image/主反面。
 
 
+## 全小件不再阻断给定目标的完整路径
+
+尝试以单件触发永久激活时，全小件a<h使旧算法返回充分条件失败。新[任务包剥离](../current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)取h≤a(P)≤T、补集≥h，用内部选入流不足h的顶点剥离，并共同屏蔽剩余核心全部非保留来流，关闭该技术缺口。旧任意安全步贪心死锁仍成立；源端未剪枝反例仍排除删掉a≤T的泛化。可回收逐机二分profile。重试主目标必须从未知输入产生共同目标或实际进展，不能免费使用τ。
+
 [原地拟阵外包的指数数量界](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#9-固定次二容量外包需要超多项式数量的原地拟阵)另立UM-KNAPSACK-MATROID-EXPONENTIAL-v1：把大件改为1−r/k后，完整保留全部容量1可行集且所有共同独立集固定次二，需超多项式原输入位长的静态拟阵数；精确最少数为C(k,k−r−1,r)。只限本地完整外包，不推出一般调度困难性。
 失败机制：每个完整外包拟阵因全部tiny集独立而只能提供一个含大件回路；把数量扩到多项式仍覆盖不了所有近二坏集。可回收覆盖数身份；重试须改变原地/完整保留/全部接受集安全合同，而不是仅增加静态拟阵数。
 

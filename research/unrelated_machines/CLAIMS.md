@@ -2809,6 +2809,28 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Related Files：[合并正文](../current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)、[分域审查](../reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md)及逐SHA原件。
 
 
+## UM-LOCAL-BUNDLE-SHIELD-PATH-v1：二分任务包的逐机屏蔽与入流剥离
+
+- ID/version / Exact Statement / Quantifiers：任意有限m≥1的非负二进制有理迁移弧、固定底载f，逐机U_i≥S_i，h_i=(S_i+Q_i−U_i)_+。若每h_i>0源给出出弧包P_i，满足h_i≤U_i−S_i及包、补集源量均≥h_i，则确定性总位poly构造每弧一次的完整直接目标路径，全部前缀逐机≤U_i。任意源二分另给U_i=max(S_i+Q_i/2,F_i+max(a(P_i),A_i−a(P_i)))，自动满足这些前提；两箱LPT可有效生成二分，M_i≤max(a_i^max,2A_i/3)。
+- Objects / Domain / Definitions：源/目标为不同机器；a,b,f≥0有理；S=f+A,F=f+Q。完整迁移弧及包是输入，等价给定具体目标，不从分数边际免费产生它们；空源包只使相关h=0。
+- Assumptions / Scope / Conclusion：五阶段共同入流剥离、逆删除激活、补集释放核心；逐机预算profile不声称最优，没有一般调度近似或阈值不可行判据。
+- Dependencies：UM-MODEL-v1；正文§2自足永久安全与加权入度剥离，§5自足两箱贪心估计。旧单件路径不是本上界的承重前提。
+- Evidence：精确陈述先行独立重构，最终正文/代码后读攻击；证明及实际审查、有限回放由Related Files进入。逐机profile是数学构造，尚未提供软件接口。
+- Counterevidence / Objections：零值LPT证明的“末件至少第三”措辞已改为不依赖编号的X≤(A+x)/2、x≤X/2证明。未发现声明范围内尚成立fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified。软件仅实现下项统一预算合同。
+- Related Files：research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md；research/reviews/unrelated_machines/bundle_inflow_peeling_review.md。
+
+## UM-PRUNED-BUNDLE-PEELING-PATH-v1：任意剪枝初态的完整直接目标路径与分段锐界
+
+- ID/version / Exact Statement / Quantifiers：任意UM-MODEL-v1的有理0≤T≤C≤2T、实际σ≤C、给定具体实际τ≤T，σ所用端均≤T，则det-bit-poly输出每件改变任务仅一次直迁τ的完整顺序，所有前缀≤U=max(2T,C+T/2)。对每有理T>0、T≤C≤2T，整个剪枝输入类到指定不同τ的最坏最小路径峰恰U；不是逐实例最优，也不声称ST输出达到下界。
+- Objects / Domain / Definitions：m≥1,n≥0，非负二进制有理/∞、零端、单可用机器、大分母皆包括。f为不变任务负载，A/Q为源/目标改变负载；h=(S+Q−U)_+。h>0源取h≤a(P)≤T的包，补集≥h。
+- Assumptions / Scope / Conclusion：去掉旧eligible单件与assigned-max前提；直接实际全程构造，不产生未知目标。无τ或剪枝合同失败不提供FAIL⇒OPT>T。
+- Dependencies：UM-MODEL-v1；UM-LOCAL-BUNDLE-SHIELD-PATH-v1；锐下界沿UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1的两机k=1族。本次没有新下界机制。
+- Evidence：正文§1–4完整证明、陈述先行与最终稿后置攻击；Fraction独立前缀重算、小minimax及OPT oracle、全小件核心/剥离/出口分支、退化与长分母、锐族均有实际代码及冻结结果。
+- Counterevidence / Objections：实现初稿漏所选核心出口，现补phase0并由三机全小件fixture回归；原proof有该步骤。旧贪心安全步死锁仍成立，与全局次序定理不冲突。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified。规范完整路径构造implemented；UM-TARGET-v1仍OPEN。
+- Related Files：同上正文/审查；tests/audits/unrelated_machines/bundle_peeling_buffer_path.py；tests/audits/unrelated_machines/bundle_peeling_path_audit.py；evidence/runs/unrelated_machines/bundle_peeling_path_audit.json；history/source/notes/unrelated_machines/bundle_inflow_peeling_frozen_proof.md。
+
 ## UM-KNAPSACK-MATROID-EXPONENTIAL-v1：固定次二原地拟阵外包的超多项式数量
 
 - Exact Statement / Objects / Domain / Quantifiers：对所有整数k≥3及1≤r≤floor((k−1)/2)，k件tiny各1/k、一件b大小1−r/k。任意q个同一原地基集的拟阵各包含全部重量≤1集合；若共同独立集重量均严格小于w0=2−2r/k，则q≥ceil[binom(k,r)/binom(k−r−1,r)]≥exp(r(r+1)/k)。最少数精确为C(k,k−r−1,r)。

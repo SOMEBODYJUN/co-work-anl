@@ -181,3 +181,8 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 [两完整actual插值与实际used池端义务](research/current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)新增同页§6–10 v4：任意P的两actual与指定F原端改派，剩余job双出现配对得逐机件数与负载同τ；bulk J可接全部非pool仍全False≤1.5，任意pool得≤1.5+d/2，真正排near2须已用近unit J_pool身份改变。旧v3前缀/强输出范围保留；未知两witness不免费，不是sourceNO。
 
 [仿射线两两独立的结构边界](research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)：单primary/onehot helpers在指定pairwise边际下可按条件化Hall全部actual1；多primary公共4D simplex陪集族则所有local pairs uniform仍V=2/(R+1)/实际OPT=2−2/(R+1)，common q/partite/全部zero jobs保留。后者只删唯一main即unit，不是robust或hard image/主反面。
+
+
+## 任意剪枝初态的给定目标锐路径
+
+新增UM-LOCAL-BUNDLE-SHIELD-PATH-v1（逐机包屏蔽/profile）与UM-PRUNED-BUNDLE-PEELING-PATH-v1（全剪枝初态、给定τ、峰U=max(2T,C+T/2)且worst-uniform锐）。完整身份在[专题账本](research/unrelated_machines/CLAIMS.md)，证明及边界见[正文](research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)。一般UM-TARGET-v1仍OPEN。
