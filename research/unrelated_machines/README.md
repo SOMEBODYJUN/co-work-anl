@@ -6,7 +6,7 @@
 
 ## 先读什么
 
-根四入口及AGENTS → [数学地图](../current/unrelated_machines/README.md) → [精确身份](CLAIMS.md) → [当前前沿](RESEARCH_STATE.md) → [基线与障碍](../current/unrelated_machines/model_and_classical_barriers.md) → [独立审查](../reviews/unrelated_machines/classical_foundation_review.md)。按当前义务查[文献](LITERATURE.md)和[真实失败范围](FAILED_ROUTES.md)，不要求通读旧题或所有历史。
+[BOSS研究总览与路线分诊](BOSS_RESEARCH_BRIEF.md) → 根四入口及AGENTS → [数学地图](../current/unrelated_machines/README.md) → [精确身份](CLAIMS.md) → [当前前沿](RESEARCH_STATE.md) → [基线与障碍](../current/unrelated_machines/model_and_classical_barriers.md) → [独立审查](../reviews/unrelated_machines/classical_foundation_review.md)。按当前义务查[文献](LITERATURE.md)和[真实失败范围](FAILED_ROUTES.md)，不要求通读旧题或所有历史。
 
 团队阶段复盘与去重入口见 [RESEARCH_STATE.md 的路线矩阵](RESEARCH_STATE.md#团队阶段清点去重后的路线矩阵-2026-10-17)：优先按 canonical 正文/审查/证据读取，工作桌面只看入口、当前卡点和待协作问题。
 方向与工作模式审计见 [team_direction_audit.md](../reviews/unrelated_machines/team_direction_audit.md)：反例/边界在有序收敛，但一般全输入桥仍未闭合；最新 min–max 候选暂留 questions，不是 canonical。

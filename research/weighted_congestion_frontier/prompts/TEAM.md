@@ -90,7 +90,7 @@ research/unrelated_machines/RUNBOOK.md
 research/GROWTH.md
 research/REPOSITORY_GUIDE.md
 
-之后沿当前 proof obligation 按需读原文、推导、候选、审查、代码与证据；具体中文资产名和用途查 research/CATALOG.md。不默认通读旧拥塞、设施或全部历史，旧路径prompts/TEAM.md现为本提示词的兼容副本，不另立数学目标；旧拥塞冻结交接包不作为本题材料。
+之后先读 research/unrelated_machines/BOSS_RESEARCH_BRIEF.md，选择一条路线和一个承重义务，再沿当前 proof obligation 按需读原文、推导、候选、审查、代码与证据；具体中文资产名和用途查 research/CATALOG.md。不默认通读旧拥塞、设施或全部历史，旧路径prompts/TEAM.md现为本提示词的兼容副本，不另立数学目标；旧拥塞冻结交接包不作为本题材料。
 
 状态以实际 main 正文、精确账本及 Git 历史为准。公屏出现尚未入账的实质反驳仍须核查；不能因为它未入账就忽略。原文下载、阅读、证明重构、实现、内审、外审和新颖性分别记录。
 
