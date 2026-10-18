@@ -3350,3 +3350,59 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：一般multistate/home overlap仍缺共同profile；有限校准非全称证明；v3不同k1量词保留不倒改。当前精确域无standing fatal。
 - Status：complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; new Exact-first, actual author and final reading; exchange lemma audit only; novelty unverified；一般UM及反面OPEN。
 - Related Files：[正文§12–20](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[新实际审查](../reviews/unrelated_machines/shared_ud_tiny_home_potential_rounding_review.md)及保真来源/finite records。
+
+
+## UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5
+
+- ID/version / Objects / Definitions / Domain：UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5；显式normalized-flat单state outers、全局互异homes/own-unit helpers、任意shared B fallback及epsilon15/16 whole-menu threshold-UD B-only leaves；k1无tiny，k>=2 maxw<=1/(1024k)，完整原indexed/zero/inactive jobs。
+- Exact Statement / Quantifiers / Conclusion：对该域全部显式输入和所指共同点逐个成立；仅Q输入，维护actual独立原incidence集，ordinary matching/weighted-rank局部候选及全有理分段倒数势，worst-case总位poly输出全部原jobs σ且Cmax<=19/10 OPT；可靠FAIL actualV<=18/19，k1无ν。
+- Assumptions / Dependencies：UM-MULTI-OUTER-SHARED-UD-TINY-HOME-DOMAIN-v5, UM-MODEL-v1, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1；正文自足证明及明确标准工具，无复杂度假设；仅v5的source排除另假设P≠NP。
+- Scope：仅此typed域，非多state outer/重home/nonUD extras/任意UM；无软件。只排全部输出本域且YESOPT1/NO>=2−γ fixedγ<.1的NP归约(P!=NP)，一般主目标正反面OPEN。
+- Evidence：对应Exact先行独立重构、root实读后释放作者Proof、实际作者读后与最终规范稿实读，各票保原字节，详实际审查。
+- Counterevidence / Objections：必须保single-state/互异homes/UD叶及新O1k tiny；实际OPT属于[1,2]，不是所有实例OPT1。两种算法、FAIL阈值、软件身份不混；一般profile/source decoder仍未解。
+- Status：complete scoped O(1/k)-home Q-alone deterministic bit-polynomial 19/10 algorithm; independent Exact-first and actual author/final reading; software none; novelty unverified；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[实际审查](../reviews/unrelated_machines/shared_ud_relative_curvature_rounding_review.md)及所列保真来源/有限记录。
+
+## UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1
+
+- ID/version / Objects / Definitions / Domain：UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1；每显式d>=1及0<=h<=d，h-subsets的常数/singleton/异pair 0/1特征，D1+d+C(d,2)；按poly(d)而非poly(log d)。
+- Exact Statement / Quantifiers / Conclusion：对该域全部显式输入和所指共同点逐个成立；det-poly(d)输出<=D个实际h-subsets及非负有理权，精确保uniform first h/d、异pair h(h−1)/(d(d−1))；显式列压缩不需quadratic oracle。 d=1无异pair。
+- Assumptions / Dependencies：UM-CARDINALITY-FIRST-PAIR-FEATURE-DOMAIN-v1；正文自足证明及明确标准工具，无复杂度假设；仅v5的source排除另假设P≠NP。
+- Scope：仅显式定基数first/pair的抽象证书算法；d=1没有异pair。稀疏row law不保更高矩或替换共同L，无quadratic oracle，无UM gap/hardness/一般调度结论；软件none。
+- Evidence：对应Exact先行独立重构、root实读后释放作者Proof、实际作者读后与最终规范稿实读，各票保原字节，详实际审查。
+- Counterevidence / Objections：只精确保first/pair，不保slice三阶以上矩；poly(d)包含显式d标签，非poly(logd)。没有把稀疏rowlaw替原共同L，当前范围无standingfatal。
+- Status：complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[实际审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)及所列保真来源/有限记录。
+
+## UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2
+
+- ID/version / Objects / Definitions / Domain：UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2；全部正偶d,s且2<=s<=d/2；明确d+2机器/d+1jobs原星及七态真实完整law P，eta=s/d,h=s/2,T1+eta,p=eta³/1000；扩展保同一指定base矩/Boolean/onehot/M3和指定Gram等式。
+- Exact Statement / Quantifiers / Conclusion：对该域全部显式输入和所指共同点逐个成立；生成同一degree6原端M3/Boolean-onehot、全部global q<=2物理localizers及每行显式poly-support legal CONFIG firstpair；P坏峰2质量eta³/1000独立d，actualOPT1。
+- Assumptions / Dependencies：UM-SEVEN-STATE-STAR-ORIGINAL-ENDPOINT-LAW-DOMAIN-v1, UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1, UM-MODEL-v1；正文自足证明及明确标准工具，无复杂度假设；仅v5的source排除另假设P≠NP。
+- Scope：原星actualOPT1，只有局部共同M3/globalq2及显式rowCFG证书；不是SH3 integrality gap、递归共同law、hardness或一般调度算法。有限12例不作全称证明。
+- Evidence：对应Exact先行独立重构、root实读后释放作者Proof、实际作者读后与最终规范稿实读，各票保原字节，详实际审查。
+- Counterevidence / Objections：原输入OPT1不能当gap；父/子/共享head新增负载仍需单付，rowCFG替代不改高阶L，当前范围无standingfatal。
+- Status：complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[实际审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)及所列保真来源/有限记录。
+
+## UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1
+
+- ID/version / Objects / Definitions / Domain：UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1；全部正偶d,s且2<=s<=d/2；明确d+2机器/d+1jobs原星及七态真实完整law P，eta=s/d,h=s/2,T1+eta,p=eta³/1000；扩展保同一指定base矩/Boolean/onehot/M3和指定Gram等式。
+- Exact Statement / Quantifiers / Conclusion：对该域全部显式输入和所指共同点逐个成立；实仿射Boolean分类仅constant/primitive literal；base4+commonM3的线性Gram端点版本成立，同行unitpair0使covered正owners<=2且互补；随机背景N-owner反例阻止无条件degree界。
+- Assumptions / Dependencies：UM-SEVEN-STATE-STAR-ORIGINAL-ENDPOINT-LAW-DOMAIN-v1, UM-MODEL-v1；正文自足证明及明确标准工具，无复杂度假设；仅v5的source排除另假设P≠NP。
+- Scope：只保base4、同一M3、covered端点线性Gram及固定全支持背景；不能扩为无条件物理入度<=2，也不限制所有非仿射依赖，无软件或一般hardness。
+- Evidence：对应Exact先行独立重构、root实读后释放作者Proof、实际作者读后与最终规范稿实读，各票保原字节，详实际审查。
+- Counterevidence / Objections：条件点须另有全支持及M3；A之外端点不受分类，跨背景N个正owner例子排无条件degree界，当前范围无standingfatal。
+- Status：complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[实际审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)及所列保真来源/有限记录。
+
+## UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1
+
+- ID/version / Objects / Definitions / Domain：UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1；全部正偶d,s且2<=s<=d/2；明确d+2机器/d+1jobs原星及七态真实完整law P，eta=s/d,h=s/2,T1+eta,p=eta³/1000；扩展保同一指定base矩/Boolean/onehot/M3和指定Gram等式。
+- Exact Statement / Quantifiers / Conclusion：对该域全部显式输入和所指共同点逐个成立；base<=5共同M3/Boolean及原v负载不变、原degree-one Z忠实Gram CY_i时，q=Z(H−h)给L(gq²)=−p(1−eta)(d−h)²<0，故该点不能同时通过globalq2。
+- Assumptions / Dependencies：UM-SEVEN-STATE-STAR-ORIGINAL-ENDPOINT-LAW-DOMAIN-v1, UM-MODEL-v1；正文自足证明及明确标准工具，无复杂度假设；仅v5的source排除另假设P≠NP。
+- Scope：只排保base5/忠实AND二次Gram/原v负载的给定点延拓；不排一般非线性依赖，不向普通UM加逻辑侧约束；无软件/源decoder/hardness。
+- Evidence：对应Exact先行独立重构、root实读后释放作者Proof、实际作者读后与最终规范稿实读，各票保原字节，详实际审查。
+- Counterevidence / Objections：base5不能改base4，新增Z不能仅给CY改名；只排忠实Gram点延拓，不排其他基础矩或非忠实非线性依赖，当前范围无standingfatal。
+- Status：complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[实际审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)及所列保真来源/有限记录。

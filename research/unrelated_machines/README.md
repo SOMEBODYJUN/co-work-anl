@@ -385,3 +385,7 @@
 [原端SH3条件子树流与包含切](../current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md)：原unit-pair零范数与二次负载条件给任意正原入口的新parent-bounded firstflow；包含族δd1(δd2−M)<=H，固定polylog型q损失不能免费导入SH3。完整原jobs、整数网格/单位走廊/删除与bit已付；非原全局点或hardness。
 
 [共享UD叶与k²-home十分之十九算法](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)：另立v4：可变k单state outer/互异homes/共享任意fallback加B-only threshold-UD叶，k1无tiny、k>=2 maxw<=1/(16384k²)，仅Q输入det-bit-poly19/10全原jobs；primal/FW与实际allocation两种证明独立攻击。仅限域近2 source排除，主目标正反面仍OPEN。
+
+[O1k-home全有理实际算法](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)：另立v5：k>=2 maxw<=1/(1024k)，k1无限制，额外共享UD叶；全程实际I/全有理分段倒数势给det-bit-poly19/10全jobs，无给定点/LPprofile/FW/log oracle；仍限single-state/独占homes。
+
+[七态局部核及延拓边界](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)：局部actualOPT1七态原job law通过全部globalq2负载检验，显式poly-support rowCFG；另精确分类affine Boolean owners并给忠实AND的degree5负式。不是SH3gap/递归共同law/hardness。

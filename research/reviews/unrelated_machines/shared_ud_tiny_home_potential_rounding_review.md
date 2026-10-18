@@ -56,3 +56,5 @@ root实际完整读126行原程序SHA82313266，在fresh路径执行原CLI，std
 | history/source/notes/unrelated_machines/sol_true_hardness_shared_ud_tiny_home_v4_canonical_actual_read.md | c0168657da6cee7ea8b42a5be96fb19a5e41d40f52258b2078fdff67d625df9d | c0168657da6cee7ea8b42a5be96fb19a5e41d40f52258b2078fdff67d625df9d | original bytes |
 
 canonical最终382行41518bytes SHA256 9ddf2305f65389409b7f4955a58a72256c98113d52e782cf108588d6819bde99；前175行17086bytes原封不动，新增176–382为24432bytes。独立性/实读/软件范围各按冻结票，外审及全球新颖性未认证。
+
+后续§21–27另立v5 O1k域及actual-I算法，见[新审查](shared_ud_relative_curvature_rounding_review.md)；本v4只签原382行/旧k²域及其软件，不因追加升级。

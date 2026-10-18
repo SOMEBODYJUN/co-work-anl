@@ -1336,6 +1336,16 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4 | 只输入Q，用固定确定性worst-case total-bit-poly算法输出全部ordinary原jobs合法σ，Cmax<=19/10 OPT；k1固定顺序submodular greedy，k>=2匹配profile势/有理FW/共同prefix-flow；另有独立全程actual-allocation局部势后端；无OPT/点/SDP或joint-profile oracle。 | [正文§12–20](unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[新审查](../reviews/unrelated_machines/shared_ud_tiny_home_potential_rounding_review.md)；特殊typed域；不覆盖multistate outer/重home/一般nonUD extras/任意P。新域k²不与旧v1 k⁴算法软件混；只有exchange finite audit、无完整实现。仅排全部输出该域且YESactualOPT1/NO>=2−gamma fixed0<gamma<.1的NP归约(P!=NP)，非UM正面或反面突破。 |
 
+| UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5 | 仅Q输入，维护actual独立原incidence集，ordinary matching/weighted-rank局部候选及全有理分段倒数势，worst-case总位poly输出全部原jobs σ且Cmax<=19/10 OPT；可靠FAIL actualV<=18/19，k1无ν。 | [正文](unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[审查](../reviews/unrelated_machines/shared_ud_relative_curvature_rounding_review.md)；仅此typed域，非多state outer/重home/nonUD extras/任意UM；无软件。只排全部输出本域且YESOPT1/NO>=2−γ fixedγ<.1的NP归约(P!=NP)，一般主目标正反面OPEN。 |
+
+| UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1 | det-poly(d)输出<=D个实际h-subsets及非负有理权，精确保uniform first h/d、异pair h(h−1)/(d(d−1))；显式列压缩不需quadratic oracle。 | [正文](unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)；仅显式定基数first/pair的抽象证书算法；d=1没有异pair。稀疏row law不保更高矩或替换共同L，无quadratic oracle，无UM gap/hardness/一般调度结论；软件none。 |
+
+| UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2 | 生成同一degree6原端M3/Boolean-onehot、全部global q<=2物理localizers及每行显式poly-support legal CONFIG firstpair；P坏峰2质量eta³/1000独立d，actualOPT1。 | [正文](unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)；原星actualOPT1，只有局部共同M3/globalq2及显式rowCFG证书；不是SH3 integrality gap、递归共同law、hardness或一般调度算法。有限12例不作全称证明。 |
+
+| UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1 | 实仿射Boolean分类仅constant/primitive literal；base4+commonM3的线性Gram端点版本成立，同行unitpair0使covered正owners<=2且互补；随机背景N-owner反例阻止无条件degree界。 | [正文](unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)；只保base4、同一M3、covered端点线性Gram及固定全支持背景；不能扩为无条件物理入度<=2，也不限制所有非仿射依赖，无软件或一般hardness。 |
+
+| UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1 | base<=5共同M3/Boolean及原v负载不变、原degree-one Z忠实Gram CY_i时，q=Z(H−h)给L(gq²)=−p(1−eta)(d−h)²<0，故该点不能同时通过globalq2。 | [正文](unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)；只排保base5/忠实AND二次Gram/原v负载的给定点延拓；不排一般非线性依赖，不向普通UM加逻辑侧约束；无软件/源decoder/hardness。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

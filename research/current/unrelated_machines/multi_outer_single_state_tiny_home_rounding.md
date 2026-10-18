@@ -380,3 +380,107 @@ v4新Exact：`boss11_shared_ud_tiny_home_k2_refinement_exact_v4.md`，SHA256 `89
 本新域仍不解决一般共享state或nonUD结构；一般UM-TARGET-v1 OPEN。
 
 另一条独立证明保存在[149行Exact-first原件](../../../history/source/notes/unrelated_machines/sol_true_hardness_shared_ud_tiny_home_k2_v4_exact_first_attack.md)：维护真实matroid-independent原incidence allocation，以weighted-rank的“两倍当前福利加单helper增益”不等式和平方缺口势直接作局部改进。它不用本稿FW、最优点stable coupling或最后fractional prefix；其自身后续攻击状态单独记于新审查。标准matroid/greedy/光滑势工具不认领新颖性；当前可复用内容是共享叶和任意fallback下，一个共同actual target强制可计算进展并恢复全部原jobs的组合。没有源问题低负载解码，不能把此限域算法称为UM反证。
+
+## 21. 另立v5：O(1/k)-home与全有理实际分配算法
+
+**ID/version：UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5。** 定义身份 UM-MULTI-OUTER-SHARED-UD-TINY-HOME-DOMAIN-v5。本节起为另一量词域及另一算法；不改前382行v1/v4、其审查或软件身份。
+
+- **Objects / Definitions / Domain：** 完整显式Q及§13的全部原P(Q)。single-state outers、跨全体互异homes、各home一个own-unit helper、任意normalized B-only fallback、任意B-only threshold-UD叶，叶阈值固定ε=15/16，全部indexed/zero/inactive jobs均保留。唯一改动是k≥2放宽为ν=max w_j≤1/(1024k)；k=1仍无额外tiny。每outer的正home权重和一，全部菜单非空。
+- **Exact Statement / Quantifiers / Conclusion：** 对该域每个完整Q，一个固定确定性worst-case总位多项式算法输出所有原jobs合法σ，Cmax(σ)≤(19/10)OPT(P(Q))。只输入Q，无OPT、point、joint law、profile、精度或调度oracle。所有k、states、helpers、leaves、支持宽度与二进制分母均为输入参数，次数为绝对常数。
+- **Assumptions / Dependencies：** 无复杂度假设；§13实际值桥OPT=2−V；原资源vacancy matroid及普通matching实现；weighted matroid rank次模性；本节自足相对余项与有理局部势。后端不用FW、log、非线性优化或精确SDP。标准工具不认领新颖性。
+- **Scope：** 只本typed域；不覆盖多state outer、重home、home上extra groups、一般nonUD叶或任意UM矩阵。新ν不是一般大小处理时间的限制，原fallback系数可大。实际OPT≥1，未把一般OPT0模型删掉，而是另立特殊Claim。
+- **Evidence / Status：** 作者先冻29行Exact504e与173行不同profile/log/FW Proof0f5e。NSW只获新Exact，保披露旧v4实际I算法背景，独立冻182行074556全有理实际算法。root实际全文读后才释放作者Proof；NSW实际全文读作者Proof另冻115行437c；原作者又实际全文读本新182行算法另冻77行d93d，均未发现精确域内fatal。root实际全文核两套证明与票；最终规范新增部分的实际阅读以新审查记录为准。完整数学规格；无算法软件、外审或全球新颖性认证。
+- **Counterevidence / Objections：** 没有从旧v4 PASS自动扩域。下面同outer损失、跨分段余项、可靠FAIL与所有原jobs均另付；尚无general profile选择或近二source decoder。一般UM-TARGET-v1及反面OPEN。
+- **Related Files：** 前述v1/v4；[新审查](../../reviews/unrelated_machines/shared_ud_relative_curvature_rounding_review.md)；保真Exact/两个不同算法及真实读后记录在该审查中。
+
+## 22. 共同叶matching、真实候选和参考比较
+
+沿§13，完整实际OPT=2−V∈[1,2]。取r=18/19、A=r²=324/361、q=19/100、t=1/10、N=helpers数≥1。只需构造全组质量≥t，或可靠证明V≤r后用全原jobs C≤2基线；因为(19/10)(2−18/19)=2，FAIL允许等号。
+
+先检查覆盖全部叶的E_l matching。若无，则实际V<ε<r，直接基线。否则令M为叶侧饱和transversal matroid的dual：D⊆B独立 iff B\D仍匹配全部叶。空叶为free matroid，rank0/loops/unused资源均允许。把全部positive fallback incidence(j,s,u)作为原资源u的平行带标签copies，得到matroid；independence用一次普通matching加资源不重复检查实现。
+
+维护实际independent incidence集I，每helper至多用一个原fallback state。各有fallback者初始化首state，I空；无fallback者空记账，不新增原state。令v_j=Σ_(e∈I_j)p_e∈[0,1]，L_i=Σ_(j∈J_i)w_jv_j∈[0,1]。
+
+给当前任意正权h_i，对每helper j和每个原fallback state s，只在ground I_(−j)并该state所有positive原copies上，用精确有理降序matroid greedy求最大权independent集I'_(j,s)，权为h_i(j)w_jp_jsu。其他helpers只保留/丢旧项；j可换整state。每state固定tie规则只取一个线性最优候选，不调用最大非线性势子问题。旧state候选含I，故δ_j=max_s h·(L'−L)≥0；无fallback时δ_j=0。
+
+完整标签上的weighted matroid rank F是单调次模，I独立给F(I)=h·L。任意参考I*每helper至多一个state：
+
+    F(I∪I*_j)≤F(I_(−j)∪I*_j)+W(I_j)
+              ≤W(I)+δ_j+W(I_j)。
+
+次模边际求和及Σ_jW(I_j)=W(I)给
+
+    h·L*≤2h·L+Σ_jδ_j。                                      (22.1)
+
+这里不假设当前I为全ground线性最优。若仅作反证假设V>r，从同一次全组实际allocation保留被outer拿home的helpers的fallback bundles，叶各保留一枚E_l代表，得到同一个M-independent I*，同时每outer L_i*≥V²>A。参考不作算法输入，不按i复制B容量。
+
+## 23. 包含同outer挤出的weighted步长
+
+候选替换j∈J_i时，旧/新j的weighted贡献B_old,B_new均≤h_iw_j。按其他helper所属outer记weighted损失T_l≥0，T=ΣT_l。I_(−j)是候选ground内可行解，故线性最优性给T≤B_new。设s_l=h_l(L_l'−L_l)。非owner坐标为−T_l；owner为B_new−B_old−T_i∈[−B_old,B_new]。因此每一个固定tie最优候选都满足
+
+    max_l|s_l|≤h_iw_j， Σ_l|s_l|≤2h_iw_j，
+    Σ_l s_l²≤2(h_iw_j)²。                                  (23.1)
+
+同outer的其他helpers损失T_i已计入。该付款不要求新state线性gain正，也不要求额外optimal-face coupling。
+
+## 24. 全有理分段倒数势及所有跨段余项
+
+以下k≥2。取整数m=ceil√k（整数平方比较求），a=1/(8m)、τ=1/100。k≤m²≤2k，a≤1/16。定义
+
+    φ(x)=(x−q)/a²                        (0≤x≤q)，
+    φ(x)=1/a−1/(a+x−q)                   (q≤x≤1)，
+    Φ(L)=Σ_iφ(L_i)， h_i=φ'(L_i)=1/d_i²，
+    d_i=a+max(L_i−q,0)。
+
+φ在q处C1，凹且单调；值与梯度全为有理式。令D0=349/400，K=D0/(1−D0/8)=2792/2851，则
+
+    h_max=64m²≤128k， d_i≤1−q+a≤D0， νh_max≤1/8。
+
+对任意x,y∈[0,1]，h=φ'(x)、s=h(y−x)，若|s|≤1/8，精确有
+
+    φ(y)≥φ(x)+h(y−x)−K s²。                               (24.1)
+
+两点在倒数段时，置d=a+x−q、Δ=y−x，linear term减实际增量恰为Δ²/[d²(d+Δ)]=s²d/(1+sd)，≤Ks²。由d+Δ=d(1+sd)>0，该倒数式可延至y<q；凹图像不高于q处tangent，而实际φ在q以下恰为tangent，故倒数→线性跨段余项更小。两点在线性段余项零。线性→倒数跨段时整段|φ''|≤2/a³，积分余项≤Δ²/a³=a s²≤K s²。边界x=q由连续性包括；没有冻结沿程gradient的假设。
+
+由(23.1)保证每坐标|s_l|≤νh_max≤1/8，故候选真实势增
+
+    Φ(L')−Φ(L)≥h·(L'−L)−2K h_i²w_j²。                      (24.2)
+
+## 25. 确定性局部算法、进展和可靠FAIL
+
+从I空开始，每轮由真实L算h；枚举上述所有原state候选，直接从各I'重算Φ。若有真实增量>τ/N的候选，按固定输入顺序选一个更新；否则停止。只检查有限线性最优候选，不作指数profile枚举。
+
+停止时对每helper实现δ_j的state候选用(24.2)，得（S=Σh_i）
+
+    Σδ_j≤2KΣ_i h_i²Σ_(j∈J_i)w_j²+τ
+          ≤2Kν h_max S+τ≤(K/4)S+τ。                         (25.1)
+
+反证V>r且终点某L_i<q。这个坐标h_i=h_max，故S≥64k≥128。逐坐标Lh≤(q−a)h+√h；倒数段为等式，线性段右侧恰qh。Cauchy给Σ√h_i≤√(kS)≤S/8。由同一个L_i*>A参考，
+
+    h·(L*−2L)≥(A−2q+2a−1/4)S
+               ≥(9657/36100)S。
+
+但(22.1)、(25.1)使该量≤(K/4)S+τ。净系数
+
+    9657/36100−698/2851=2334307/102921100>0，
+    128·2334307/102921100−1/100=59552417/20584220>0，
+
+矛盾。因此终点任一L_i<q确推出actual V≤18/19；输出同一全jobs基线。L_i=q走成功，包含等号。接受前后势范围[−kq/a²,k/a]宽度≤(808/25)k²，每接受增>1/(100N)，故接受次数<3232k²N；actual V低的输入同样停止。
+
+## 26. k1分支及全部原jobs恢复
+
+k=1用同一实际I候选，直接Φ=L_1、h_1=1，仍接受增>1/(100N)。停止后Σδ_j≤τ；若V>r，(22.1)给L_1≥(A−τ)/2=32039/72200>q。moves<100N；没有ν、a、prefix或二次误差，允许w_j=1。
+
+两分支停止后若全部L_i≥q，令Good={j:v_j≥t=1/10}。其home权重z_i满足L_i≤z_i+t(1−z_i)，故z_i≥1/10。Good保留实际I_j的B bundle并把home给outer，其余helper丢弃B bundle回own。Good union为I子集，仍M-independent，在其补中做完整叶matching并各选一个原attaining state。于是所有groups值≥t，全部homes不同且与B不交。
+
+完整编译和输出同§13：每selector去所选原private，只导出真bundle对应的所选state正incidence，其余全部原jobs留原private，包含所有inactive/zero/duplicate payload。每job恰一次、原finite endpoint合法；resource至多一unit job、selected private≤19/10、inactive private≤1。无额外ordinary job/machine/资格；counts仍S+U、G+I、S+2I。成功C≤19/10≤(19/10)OPT；FAIL V≤r使基线C≤2≤(19/10)OPT。
+
+## 27. 总位复杂度、来源与主目标范围
+
+每轮候选至多原fallback states数，ground≤|I|加该state正支持，|I|≤|B|；每候选为polynomially many matching independence queries。m用整数平方比较取得。所有L每轮从当前原incidence bitset直接重算，系数w_jp_jsu有输入多项式位长的共同分母；a、d_i倒数平方、φ线性/倒数式和Φ的k项求和均poly-bit。下一轮不把旧势分母递归嵌入新原系数；原分母数值不作循环次数。结合显式moves界、矩阵构造和逐job输出，worst-case总位次数是绝对多项式。
+
+本后端没有算法代码或有限实例运行；原v1/v4有限软件不升级。root另用Fraction反算固定常数，有限算术不替代上述全称证明。另一不同的作者profile/log/FW算法，及其完整LP分支/atanh误差和位长证明，原字节保存于新审查链接；本实际后端不靠它补步骤，也不把它冒作已实现软件。新颖性与独立论文价值均未认证。
+
+一个已核的直接保值桥说明删除tiny并不免费：给任意m-group normalized菜单Q，每group添独占unit home和own-state，再添仅要该home的unit outer；旧菜单正是helper fallback。新V恰等于旧V（正值迫所有outer拿home），完整ordinary OPT也精确保留。任意新C<2调度迫outer incidence占home、own incidence留ownprivate、helper selector回旧fallback；限制旧jobs得不增成本调度。C≥2则用旧基线。反向保旧σ并让新机器各负载一。Q新counts为groups2m、statesS+2m、incidencesI+2m、resourcesU+m，finite ends S+2I+6m；ν=1。这是既有值桥的直接构造，不认领一般UM归约或新困难性。
+
+因此当前进展仍是O(1/k)限域算法与精确source边界。固定γ∈(0,.1)，若一NP归约全部输出本域、YES actual OPT≤1、NO actual OPT≥2−γ，则本算法区分，P≠NP下排除此特定源；不排一般normalized菜单或一般UM。真正欠缺的仍是一般输入的共同profile选择/实际低负载解码，或一个可证近二的真实整数困难性归约。UM-TARGET-v1正反面均OPEN。
