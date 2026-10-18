@@ -102,3 +102,5 @@
 [笛卡尔一致性与缺项尺度](../../../current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)作为完整结构回收保存，不再扩局部数值主线。当前唯一负向承重：真实普通P中的联合索引一致性/源NO解码；正攻击任意单容量query-return网络的索引交换，并直接核真正CSP→setpacking源的partial导出失效，均未宣称近二hardness。
 
 实际身份接口阶段：[局部统一时间](../../../current/unrelated_machines/machine_uniform_query_return_index_exchange.md)、[异权direct共居与三半锐界](../../../current/unrelated_machines/direct_cohabiting_query_return_strict_sat_and_sharp_escape.md)、[真实source与AND规则](../../../current/unrelated_machines/line_set_packing_and_take_continue_compilation_obstructions.md)。五项按真实scope保存，E路由纠正及全部原证书不隐藏。当前继续任意异权内部交换与共享外部容量的严格界，未取得near2源NO联合decoder。
+
+[任意异权私有子句三半障碍](../../../current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)把shared ring负载真正闭合；小query多return containment仅为未保全局源的正接口。当前继续攻击可随全局选择改变归属的shared guard/medium共同容量，以及自然tuple-group+globaldummy真实source桥；不给这些候选已完成的身份。

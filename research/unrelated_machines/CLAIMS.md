@@ -2663,3 +2663,39 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：旧误Exact-only审查已另冻scope correction，不能作blind；fee真正statement-first闭合。 无standing fatal。
 - Status：限定数学证明完整、实际独立重构及final范围审查；implementation none/audit_only分开，外审与全球新颖性未认证；主目标OPEN。
 - Related Files：[正文](../current/unrelated_machines/line_set_packing_and_take_continue_compilation_obstructions.md)、[实际审查](../reviews/unrelated_machines/partial_sum_take_continue_actual_escape_review.md)及逐SHA原件；证书/代码仅按登记的finite身份。
+
+
+## UM-GENERAL-WEIGHTED-QUERY-RETURN-THREE-HALVES-EXCHANGE-v1：任意异权内部查询返回的三半二选一交换
+
+- Objects / Domain / Definitions / Quantifiers：固定辅助A、k≥2不同q/b，任意非负异权内部H，边界各有自身私有outside:T，T>0；给同一完整P的两aligned实际T见证。
+- Exact Statement / Conclusion：det-bit-poly输出inactive或指定cross(j,i)完整实际≤3T/2，所有A保内部、每原job一次、内部端仅取两见证已用端；inactive在1.5T被禁则每指定cross已可行。
+- Assumptions / Dependencies：UM-MODEL-v1, UM-TWO-WITNESS-QUERY-SEPARATION-v2, UM-GENERAL-WEIGHTED-PRIVATE-OUTSIDE-INTERFACE-DOMAIN-v1；[正文](../current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)的完整原资格/原jobs和给定见证为承重，不跨域借用。
+- Scope：外部私有封装不可免费替共享变量环；不给未知strict见证finder，多个boundary bundles或A外送未覆盖；不是一般UM算法/源hardness。
+- Evidence：general仅据Exact及实际旧query-separation全文独立构证先冻，再读作者Proof，最后实读6074…全文正式仅§1。独立P0保全部jobs后移出q_i，与作者P*先删q_i再恢复是等价路线；都没有零端遗留或漏原任务。root实际读全部来源并亲核。该结论是旧v2不交支持合同的直接推论，标准分离算法新颖性明确扣除。
+- Counterevidence / Objections：shared outside反例界定local外接边界；pool good最优不等于任意rho；所有zero/empty/unknown见证与实际环负载已单列，无standing fatal。
+- Status：限定数学完整、真实独立重构/作者读后/final指定范围；implementation none，外审/全球新颖性未认证，主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)、[实际审查](../reviews/unrelated_machines/general_weighted_query_return_exchange_review.md)及逐SHA原件。
+
+
+## UM-PRIVATE-CLAUSE-QUERY-RETURN-UNIVERSAL-THREE-HALVES-v1：任意私有异权子句网络与真实变量环的全公式三半上界
+
+- Objects / Domain / Definitions / Quantifiers：显式CNF每clause≥2occ、变量环padding≥3；clause内部Hc/Ac私有，q外部恰两ring端、b恰polarity pin，外部time∈[0,T]；dummy固定，给每索引singleq/singleb局部strict证书。
+- Exact Statement / Conclusion：任意SAT/UNSAT全原P实际≤3T/2，每原ring机恰一真实q/b负载≤T，所有Ac/dummy/边界原jobs一次；给全部局部见证det-bit-poly，没有见证只承诺存在OPT上界。
+- Assumptions / Dependencies：UM-MODEL-v1, UM-GENERAL-WEIGHTED-QUERY-RETURN-THREE-HALVES-EXCHANGE-v1, UM-PRIVATE-CLAUSE-REAL-RING-INTERFACE-DOMAIN-v1；[正文](../current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)的完整原资格/原jobs和给定见证为承重，不跨域借用。
+- Scope：不同clause共享真实机/jobs、Ac外送、非全索引strict可选、多q/b bundle或其它外部资格未覆盖；标准matching/分离组合不作为near2主反面。
+- Evidence：fee先只读主Exact、local新Exact及旧分离正文，未把未审local当黑箱，而从染色机制独立重证，再用N+h实际ring matching给全模板。其原wrapper中δ=T未谎称0：query旧outside无入流不触发、H无旧query的更细位置不变量足够。冻结独立全证后才实读两个作者Proof：分析零端δ0及2N+h图是等价新路线，旧记录保留；最后实际读canonical正式§2–3。root实际亲核全部原jobs与共同负载。
+- Counterevidence / Objections：shared outside反例界定local外接边界；pool good最优不等于任意rho；所有zero/empty/unknown见证与实际环负载已单列，无standing fatal。
+- Status：限定数学完整、真实独立重构/作者读后/final指定范围；implementation none，外审/全球新颖性未认证，主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)、[实际审查](../reviews/unrelated_machines/private_clause_query_return_universal_review.md)及逐SHA原件。
+
+
+## UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1：共享外端小查询返回池的全部模式精确关系
+
+- Objects / Domain / Definitions / Quantifiers：k≥2、正有理a_i总≤1，q_i仅H:a_i/E_i:1，b_i仅任一k−1池P_r:1/E_i:1，2k机/2k原jobs；任意query内部集S/return外部集T，池分配自由优化。
+- Exact Statement / Conclusion：pattern OPT恰1 iff 非空T⊆S，否则恰2；任意actual C<2本已≤1且解码非空containment；明确容许多queries/returns。§4标准4×4共享环说明internal交换不能免费外接。
+- Assumptions / Dependencies：UM-MODEL-v1, UM-SHARED-OUTSIDE-SMALL-POOL-DOMAIN-v1；[正文](../current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)的完整原资格/原jobs和给定见证为承重，不跨域借用。
+- Scope：孤立模块恒OPT1无sourceNO，新增q outside端/E同一化/实际额外jobs须重证；不保证S=T、singleton或变量一致性，不升级新颖性/困难性。
+- Evidence：bicriteria分别仅据两Exact独立重构：四环全部16模式及任意k pool所有S/T/rho，冻结后才各读作者Proof，最终实际读canonical正式§4/§5。四环不新立Claim；pool当前新ID只是精确关系身份。其k2..4辅助4328分配检查仅归reviewer，未登记软件或root运行，一般证明为任意k计数。root实际读全部来源并独核数学。
+- Counterevidence / Objections：shared outside反例界定local外接边界；pool good最优不等于任意rho；所有zero/empty/unknown见证与实际环负载已单列，无standing fatal。
+- Status：限定数学完整、真实独立重构/作者读后/final指定范围；implementation none，外审/全球新颖性未认证，主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)、[实际审查](../reviews/unrelated_machines/shared_outside_small_query_pool_review.md)及逐SHA原件。
