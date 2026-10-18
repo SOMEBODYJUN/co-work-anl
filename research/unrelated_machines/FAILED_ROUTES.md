@@ -403,4 +403,26 @@ u_t) 的一般复杂度。
 [原地拟阵外包的指数数量界](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#9-固定次二容量外包需要超多项式数量的原地拟阵)另立UM-KNAPSACK-MATROID-EXPONENTIAL-v1：把大件改为1−r/k后，完整保留全部容量1可行集且所有共同独立集固定次二，需超多项式原输入位长的静态拟阵数；精确最少数为C(k,k−r−1,r)。只限本地完整外包，不推出一般调度困难性。
 失败机制：每个完整外包拟阵因全部tiny集独立而只能提供一个含大件回路；把数量扩到多项式仍覆盖不了所有近二坏集。可回收覆盖数身份；重试须改变原地/完整保留/全部接受集安全合同，而不是仅增加静态拟阵数。
 
+
+## 降低加权余量门槛仍须保共同支撑
+
+尝试保持任务等式及保护行负载，在E_i≤(1−ε)T时drop，并希望低亏缺D核心可补全。
+[configuration_preserving_elimination_support_loss.md](../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)给显式反例：合法历史从真实最优凸包到D0、满秩但所有固定补全2−1/m。此紧凑方向违反big-count；另一个激活提升却全程保持完整CONFIG，仍一次永久删去所有低负载补全。二分双副本还使同方向两端皆坏，但该直和方向非circuit。
+
+失败是任意合法消元安全这一充分断言为假，不是一般调度困难性。可回收真实固定任务兼容性、显式最优原子和保配置反例转换。重试应控制方向/跨机原子或重开端，不再只把低D、任意两符号尝试或更多本地配置当成安全证明。
+
+固定K槽余量另有正面定理；不能只忽略tiny任务后照搬：每配置的剩余右端T−tiny工作量不再是统一整数1，原整数多面体量化步骤不能直接使用。
+
+
+## 已核实的公屏纠错：最终支持量不是逐批能垒
+
+2026-10-18，boss1公屏467给出实质反驳；boss4以独立Fraction计算确认m=3,…,9，
+并直接重构通式。原族先用三件批次：一unit从机器0到某leaf，两tiny反向，
+把(2,1+1/m)变为(1+2/m,2−1/m)，二次势差−2(m−2)/m²<0，排序lex也下降。
+随后从该leaf向m−3台其他leaf各迁一tiny，每件严格降势并达到OPT=1+2/m。
+因此“最终至少改很多任务”不能推出“固定批量多轮严格下降不可能”。
+保留原ExactStatement的单任务严格局部极小、OPT和最终Hamming支持下界；
+撤回对固定批量多轮路线的外推。boss1正在整理更强不同新族，不能把它倒作本族证明。
+本说明没有重写冻结旧审计或原审查的历史结论；本轮新槽界和保配置消元定理不依赖该错误外推。
+
 [出现位置异权文字池的三半逃逸](../current/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md)：允许同变量同侧逐occurrence异权，full eligible每侧b和≤1时仍能det构造全部原jobs actual≤1.5；合两侧首项/余项排序配对，含f池query≤.5，另一池≤1。只否该编译合同，未排额外guards或更大预算。

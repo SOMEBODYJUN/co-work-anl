@@ -462,3 +462,11 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [出现位置异权文字池的三半逃逸](occurrence_weighted_direct_literal_pool_budget_escape.md)：允许同变量同侧逐occurrence异权，full eligible每侧b和≤1时仍能det构造全部原jobs actual≤1.5；合两侧首项/余项排序配对，含f池query≤.5，另一池≤1。只否该编译合同，未排额外guards或更大预算。
 
 [多件共同激活、保留目标边与复制反放大](multi_activation_cover_and_replication_barriers.md)给定 `sigma,tau` 的静态共同激活充分桥，并精确记录静态证书非必要的动态例、复制和不交块的反放大边界。[高维匹配来源与需求树部分配额障碍](kdm_high_dimensional_quota_obstruction.md)则核对 LST 的高维匹配 gap，并证明直接超边需求树必须同时控制所有部分配额层；完整 KDM gap 不足以生成近二 UM hardness。两页均不改变 `UM-TARGET-v1` 的 OPEN 状态。
+
+
+
+## 有界配置的正面余量与永久消元的新断点
+
+[bounded_configuration_cardinality_slot_margin.md](bounded_configuration_cardinality_slot_margin.md)给固定配置任务数K的全行槽包络界：K≥2时(2−K^{−(K−1)})T，K1为T；K2、K3的3T/2、11T/6锐。行总资格数和时间跨度均无固定限制，但K增长时余量消失。另有固定K最优任务数承诺的未知OPT算法，不适用于无承诺全输入。
+
+[configuration_preserving_elimination_support_loss.md](configuration_preserving_elimination_support_loss.md)给三个分离身份：真实OPT1初态经合法枢轴可达D0且所有固定补全近二；一般激活提升可在完整CONFIG路径中一次删掉所有好补全；二分两副本使同一方向两个符号端点均坏。双副本方向不是circuit方向，三个结果均不排具体选向、真实共同分解或重开端。完整CONFIG可行性、零缺陷和保负载不能免费替代共同支撑安全。

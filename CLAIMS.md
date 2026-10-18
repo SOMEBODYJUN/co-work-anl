@@ -186,3 +186,6 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 ## 任意剪枝初态的给定目标锐路径
 
 新增UM-LOCAL-BUNDLE-SHIELD-PATH-v1（逐机包屏蔽/profile）与UM-PRUNED-BUNDLE-PEELING-PATH-v1（全剪枝初态、给定τ、峰U=max(2T,C+T/2)且worst-uniform锐）。完整身份在[专题账本](research/unrelated_machines/CLAIMS.md)，证明及边界见[正文](research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)。一般UM-TARGET-v1仍OPEN。
+
+[有界配置任务数的统一槽余量](research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md)给固定K的确定性结构承诺算法与自足整数类型证明；[永久消元的支撑丢失](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)则把新的共同义务说清：真实OPT凸包初态、完整单机CONFIG路径甚至双符号端点检查，都不自动保证永久删端后仍有好补全。固定K不替代一般统一ε，双符号反例也不排circuit方向；主目标保持OPEN。
+精确新身份为UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1、UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1、UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1、UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1、UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1；量词及例外沿专题账本读取。
