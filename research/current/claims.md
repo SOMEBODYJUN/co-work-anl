@@ -1330,6 +1330,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1 | 每固定d及所有k>=d，显式L2k²/M1+120Lk4+4kZAmax族真实OPT2−floor√k/k，T1+(d−1)/k有det-bit-poly指定证书；缩放target1实际值趋2，故此合同gap supremum2；指数可依固定d。 | [正文§13](unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)、[实际审查](../reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md)；非uniform variable-d algorithm、非高阶负载/完整SoS(CONFIG)/canonical C2/jointCONFIG-M2 gap，非hardness或一般算法不存在；原degree3跨行条件切给定点；d+1>D仅自然延伸下一阶失败。 |
 
+| UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1 | 只输入完整typed Q，可det total-bit-poly输出全部ordinary P(Q)原jobs合法σ，Cmax<=19/10 OPT；内部plain共同SA1 LP infeas给actualOPT>17/16并用baseline，feasible用CDF/MW+globalvariance精确CE+q.1回填；无SDP/给定点oracle。 | [正文](unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[实际审查](../reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md)；仅此typed profile，非任意Q/多state outer/重home/一般UM，k²或高阶moment后续不混入；只有有限pair backend，无端到端软件。排近二hardness源仅所有输出本域、YESOPT1/NO>=2−γ fixedγ<.1且P≠NP。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

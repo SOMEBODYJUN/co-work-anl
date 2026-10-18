@@ -12868,6 +12868,43 @@
         "evidence/runs/unrelated_machines/diluted_row_degree_trade_root_replay_scope.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "多个单state极小home与共享fallback的typed域",
+      "detail": "任意输入k>=1个单indexed-state outers，所有positive homes跨outer互异，每home一个own-unit helper，shared B disjoint homes且任意显式normalized fallback，无其它groups；每outer Σw1,wmax<=1/(4096k⁴)，所有zero/duplicate/inactive原jobs保留。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "可变多个outer的十分之十九实际调度算法",
+      "detail": "只输入完整typed Q，可det total-bit-poly输出全部ordinary P(Q)原jobs合法σ，Cmax<=19/10 OPT；内部plain共同SA1 LP infeas给actualOPT>17/16并用baseline，feasible用CDF/MW+globalvariance精确CE+q.1回填；无SDP/给定点oracle。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md"
+      ],
+      "status": "complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; independent Exact-first and actual author/final read; backend audit only; novelty unverified"
+    },
+    {
+      "id": "AUDIT-MULTI-OUTER-REQUEST-WINNER-PAIR-BACKEND-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "请求winner双资源矩及CE的有限精确核",
+      "detail": "2cases2048/2916outcomes each11CE steps; not tinyprofile or wholealgorithm.",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "tests/audits/unrelated_machines/multi_outer_request_winner_pair_backend.py",
+        "evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_audit.json",
+        "evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -31565,6 +31602,55 @@
       "refs": [
         "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
         "research/reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-DOMAIN-v1",
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1"
+      ],
+      "conclusion": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "statement": "只输入完整typed Q，可det total-bit-poly输出全部ordinary P(Q)原jobs合法σ，Cmax<=19/10 OPT；内部plain共同SA1 LP infeas给actualOPT>17/16并用baseline，feasible用CDF/MW+globalvariance精确CE+q.1回填；无SDP/给定点oracle。全部共同前提加正文自足普通LP/概率/条件期望算法证明；有限数据不是一般前提。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md"
+      ],
+      "status": "complete scoped algorithm proof"
+    },
+    {
+      "id": "CHECK-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-MULTI-OUTER-REQUEST-WINNER-PAIR-BACKEND-v1"
+      ],
+      "conclusion": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "statement": "只核two-resource finite backend moments/CE，不认证全输入算法软件。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "tests/audits/unrelated_machines/multi_outer_request_winner_pair_backend.py",
+        "evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_audit.json",
+        "evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅此typed profile，非任意Q/多state outer/重home/一般UM，k²或高阶moment后续不混入；只有有限pair backend，无端到端软件。排近二hardness源仅所有输出本域、YESOPT1/NO>=2−γ fixedγ<.1且P≠NP。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md"
       ],
       "status": "scope limitation"
     }

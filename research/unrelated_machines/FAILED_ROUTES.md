@@ -458,3 +458,5 @@ u_t) 的一般复杂度。
 [raw K2真实锐二倍间隙](../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)：全部同机CONFIG first/pair+globalM2+所有affine physical-load localizers仍有真实gap上确界2；OPT精确2−floor√k/k，rare-H/background-Q定量支配付清全global contexts。更强条件可切，不是hardness；一般反面OPEN。
 
 [固定阶整行一致性的真实gap](../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)：新§13：每固定d，整行全部<=d矩与globalM2及全部affine-load仍有真实gap上确界2；subset finite-difference trade与明确poly背景吸收，非higher-load/共同CONFIG-M2或hardness。
+
+[多outer极小home的实际算法](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)：可变k个single-state outers、互异home及wmax<=1/(4096k⁴)，任意shared fallback，有仅输入Q的det-bit-poly19/10全jobs算法；LP不可行有actualOPT下界，feasible用共同均值/全局variance/精确CE。仅typed限域，不是一般突破。

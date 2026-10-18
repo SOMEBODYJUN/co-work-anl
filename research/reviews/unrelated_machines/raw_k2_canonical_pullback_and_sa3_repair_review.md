@@ -24,7 +24,7 @@ Fixeddegree rational LP及vertex/Cramer/Hadamard付总位复杂度；zero/inacti
 
 ## 代码实读与精确重放
 
-root实际完整读249行自足Fraction代码，原字节SHA7c2dd6…复制为规范audit；在全新scratch目录跑default c3/4，stdout与冻结d1fe9e…逐字相同。随后c1/1000,1/2,999/1000各一次CLI，全断言通过。额外原文件只是summary，初次把它与完整records比较不等，改按其全部既有字段投影比较后逐项一致；没有改冻结证据或数学条件。原summary SHAa1803f…保持原字节。
+root实际完整读234行自足Fraction代码，原字节SHA7c2dd6…复制为规范audit；在全新scratch目录跑default c3/4，stdout与冻结d1fe9e…逐字相同。随后c1/1000,1/2,999/1000各一次CLI，全断言通过。额外原文件只是summary，初次把它与完整records比较不等，改按其全部既有字段投影比较后逐项一致；没有改冻结证据或数学条件。原summary SHAa1803f…保持原字节。
 
 每个有限c实际核18个4维raw localizers、72本地monomials与72完整membership patterns、负式及全部17原jobs C1见证。完整global M2、所有原四次等式和全参数正确性用解析pullback/SOS；程序未枚举所有assignment或所有有理c。没有general SDP/LP backend。§14的软件/checker/run均none，不借反例audit补签。
 
@@ -51,3 +51,6 @@ root实际完整读249行自足Fraction代码，原字节SHA7c2dd6…复制为�
 | history/source/notes/unrelated_machines/sol_general_repair_k2_canonical_pullback_author_read_after.md | 6b2c85920c6fcfc10240dfc8322991fb6487141c8011c6c4ad199dc95d0678dd | 6b2c85920c6fcfc10240dfc8322991fb6487141c8011c6c4ad199dc95d0678dd | original bytes |
 
 规范代码：tests/audits/unrelated_machines/raw_k2_full_local_law_canonical_pullback.py。冻结证据：evidence/runs/unrelated_machines/raw_k2_full_local_law_canonical_pullback_audit.json, evidence/runs/unrelated_machines/raw_k2_full_local_law_canonical_pullback_parameters.json, evidence/runs/unrelated_machines/raw_k2_full_local_law_root_replay_scope.json。
+
+
+代码行数校正：原审查误写249行，规范原字节实际为234行；代码SHA、全文实读、四次CLI与数学/软件范围不变。

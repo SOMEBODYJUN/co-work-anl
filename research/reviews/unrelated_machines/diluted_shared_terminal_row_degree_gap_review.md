@@ -22,7 +22,7 @@ fixed d下Z<=d k^(d−1)、M多项式、O(E^D)表和subset CONFIG list可detbitp
 
 ## 实际有限软件
 
-root实际完整读新的140行独立作者trade程序，原字节SHA acee8c…复制规范路径。规范CLI --output指定全新scratch文件，四例passed，JSON与作者原输出逐字相同416d76…。argv/cwd、真实返回与范围在root replay scope。用Fraction及整数共同分母，无seed。
+root实际完整读新的122行独立作者trade程序，原字节SHA acee8c…复制规范路径。规范CLI --output指定全新scratch文件，四例passed，JSON与作者原输出逐字相同416d76…。argv/cwd、真实返回与范围在root replay scope。用Fraction及整数共同分母，无seed。
 
 仅(d,k)=(2,2),(3,3),(4,4),(4,7)，全≤d squarefree row monomials分别11/42/163/1471，全行矩相等、配置质量非负/合法/总1、purehome完整边际及自然下一阶witness均核。没有实际展开globalM2/localizers、没有general-d证书生成器，也没有把旧50dim审计升级。全部无穷参数与allcontexts由解析证明承担。审者没有打开程序，不替root签执行；无外审/新颖性认证。
 
@@ -40,3 +40,6 @@ root实际完整读新的140行独立作者trade程序，原字节SHA acee8c…�
 | history/source/notes/unrelated_machines/sol_general_repair_diluted_row_degree_d_final_section13_post_read_v2.md | d4dcc198d7e8777d54fe0c74657998fb943f6fa235f2f5bc8e5aeb4641050c28 | d4dcc198d7e8777d54fe0c74657998fb943f6fa235f2f5bc8e5aeb4641050c28 | original bytes |
 
 代码：tests/audits/unrelated_machines/diluted_shared_terminal_row_degree_trade_audit.py。冻结证据：evidence/runs/unrelated_machines/diluted_row_degree_trade_four_cases_audit.json, evidence/runs/unrelated_machines/diluted_row_degree_trade_root_replay_scope.json。
+
+
+代码行数校正：原审查误写140行，实际原字节代码为122行；SHA、完整实读及一次规范CLI的记录不变。

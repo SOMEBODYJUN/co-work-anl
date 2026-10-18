@@ -3312,3 +3312,16 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：degree3跨行条件始终负，下一阶仅自然extension；来源策略作者合作不计盲审，旧k2 audit不升级。当前精确合同无standing fatal。
 - Status：complete fixed-d raw row-consistency gap proof; independent Exact-first, author read-after and actual new-section final read; finite four-case audit only; novelty unverified，主目标及一般反面OPEN。
 - Related Files：[正文§13](../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)、[实际审查](../reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md)及所列完整来源/有限记录。
+
+
+## UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1
+
+- ID/version / Objects / Domain / Definitions：UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1；任意输入k>=1个单indexed-state outers，所有positive homes跨outer互异，每home一个own-unit helper，shared B disjoint homes且任意显式normalized fallback，无其它groups；每outer Σw1,wmax<=1/(4096k⁴)，所有zero/duplicate/inactive原jobs保留。
+- Quantifiers / Exact Statement / Conclusion：只输入完整typed Q，可det total-bit-poly输出全部ordinary P(Q)原jobs合法σ，Cmax<=19/10 OPT；内部plain共同SA1 LP infeas给actualOPT>17/16并用baseline，feasible用CDF/MW+globalvariance精确CE+q.1回填；无SDP/给定点oracle。
+- Assumptions：algorithm无复杂度假设，标准rationalLP/有理算术/MW/ES/CE；source排除推论另假设P≠NP。
+- Scope：仅此typed profile，非任意Q/多state outer/重home/一般UM，k²或高阶moment后续不混入；只有有限pair backend，无端到端软件。排近二hardness源仅所有输出本域、YESOPT1/NO>=2−γ fixedγ<.1且P≠NP。
+- Dependencies：UM-MODEL-v1, UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-DOMAIN-v1, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1及正文§3–9完整自足算法/概率/bit证明。
+- Evidence：独立Exact-first用不同强凸势算法，后实际全文读作者MW算法，最终175行实读；root已实际全读source/code及一次新目录exact replay。
+- Counterevidence / Objections：多state或large home不能免费归一；CE不能丢requestcoins；后续vector/moment候选不自动扩大此合同。当前精确范围无standing fatal。
+- Status：complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; independent Exact-first and actual author/final read; backend audit only; novelty unverified，一般主目标及反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[实际审查](../reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md)及sources/finiteaudit。
