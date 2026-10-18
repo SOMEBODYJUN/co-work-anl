@@ -2202,3 +2202,46 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - **Evidence / Objections：** Fraction核验覆盖Dirac/均匀可行证书、`T=0`、两机三件单位任务的全原子排除及异质Dirac例。一般 `P,T` 如何生成oracle或可靠 `FAIL` 未闭合；已有半单位选择NP障碍限制把它当免费oracle。
 - **Status：** complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；`UM-TARGET-v1`仍OPEN。
 - **Related Files：** `research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md`、`research/reviews/unrelated_machines/succinct_prefix_atomic_decoding_review.md`、`tests/audits/unrelated_machines/succinct_prefix_atomic_decoding.py`、`evidence/runs/unrelated_machines/succinct_prefix_atomic_decoding_audit.json`。
+
+## 近单位锚任务的缺额阈值与共同实际舍入
+
+### UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1
+
+- 中文数学名称：锚点分量缺额的全局联合舍入。
+- Exact Statement / Quantifiers：对每个显式合法P、T>0、固定划分J=B⊔S、α∈[0,1/2)、β≥0、整数d0≥0，若anchor所有有限时间∈[(1−α)T,T]、tiny所有有限时间≤βT，且anchor资格图每个含anchor分量0≤m_c−k_c≤d0，则存在一个统一确定性位多项式阈值算法，输出全任务实际σ或FAIL，成功时Cmax≤[2−(1−α)/(d0+1)+β]T，FAIL⇒OPT>T。
+- Objects / Domain：原UM非负有理/∞模型；机器/任务/分量数不固定，tiny可以跨全部分量、任意资格与异端时间；d0可随输入给出但改善可能退化。
+- Assumptions / Definitions：固定任务身份；联合LP q满anchor分数匹配、q_i≤1、ℓ_i+(1−α)Tq_i≤T；结构前提失败只记OUT-OF-CLASS。
+- Scope / Conclusion：同一LP后共同选anchor机器、一次全局tiny ST；β<(1−α)/(d0+1)时该结构类严格次二。抽象余秩d基点阈值1/(d+1)可同时删除其下全部坐标，且U_(1,d+1)均匀基点证明该阈值锐；不声称调度比例最优。
+- Dependencies：UM-MODEL-v1、标准有理LP、Hall、UM-ST-ROUND-v1；完整证明见正文§1–9/11。
+- Evidence：两条独立符号推导、实际全文攻击、root三个Fraction见证舍入及边界核对。
+- Counterevidence / Objections：无standing fatal；一般混合身份与无界阻塞集未解决；不能把LP失败移用于域外。
+- Status：限定类完整数学算法/位复杂度；软件仅给定LP见证舍入审计；外审/新颖性未认证。
+- Related Files：current/unrelated_machines/anchor_deficiency_joint_rounding.md、reviews/unrelated_machines/anchor_deficiency_joint_rounding_review.md、tests/audits/unrelated_machines/anchor_deficiency_joint_rounding_audit.py、evidence/runs/unrelated_machines/anchor_deficiency_witness_audit.json（路径均从仓库根沿登记可达）。
+
+### UM-ANCHOR-DEFICIENCY-PROMISE-APPROX-v1
+
+- 中文数学名称：弱最优尺度承诺下的无损阈值搜索。
+- Exact Statement / Quantifiers：对每个合法P与给定固定B/S、α∈[0,1/2)、β≥0、d0≥0，完整anchor资格图各含anchor分量亏缺≤d0；若OPT>0时存在一份最优σ*，anchor所用边≥(1−α)OPT且tiny所用边≤βOPT，则一个确定性总位多项式算法实际输出Cmax≤[2−(1−α)/(d0+1)+β]OPT。OPT0/空任务精确处理。
+- Objects / Domain / Assumptions：固定身份但其他有限边可有任意尺度；仅要求一份最优见证具有所述性质，不要求输入能识别promise。
+- Definitions / Scope：候选T只保anchor p≤T、tiny p≤βT；联合LP取c=1−α，不加anchor下截；完整图亏缺在保全顶点的可行删边分支中保持上界。
+- Conclusion：接受性单调、原processing分母积Q的整数网格精确二分，最小接受T≤OPT，无η损失。固定αβd0且β<(1−α)/(d0+1)时整个承诺类统一次二；参数变化不保证统一epsilon。
+- Dependencies：正文阈值舍入成功分支（其不需要anchor下界）、标准有理LP/整数二分、UM-ST-ROUND-v1；不把阈值定理的全边前提偷换成弱promise。
+- Evidence：独立重构单调性、全部顶点亏缺求和、Q/QU位长及实际最终稿攻击；通用LP/端到端后端未实现。
+- Counterevidence / Objections：没有一般输入的身份提取/亏缺控制；standing fatal无。
+- Status：限定承诺类数学算法完整；外审/新颖性未认证。
+- Related Files：与前一身份同正文/审查；正文§10。
+
+## 任意固定阶强配置矩的共同匹配边界
+
+### UM-FIXED-DEGREE-STRONG-CONFIG-MATCHING-LAW-OBSTRUCTION-v1
+
+- 中文数学名称：强配置伪矩的共同匹配不可实现及锐修复距离。
+- Exact Statement / Quantifiers：对每整数r≥2、每奇整数N≥4r−1，存在2N机2N任务、全有限时间1的N个K2,2块实例和显式有理degree2r证书：M_r PSD、one-hot到2r−1、逐机degree r−1负载localizer PSD（实际为0）、与每行完整CONFIG1的全部本行≤2r阶矩相容、全部≤2r原端literal事件非负；但无真实完整匹配分布保其一阶与二阶。实际OPT=T=1。
+- Objects / Domain：SH(r)如自足正文定义；矩来自formal half-slice L(b_A)=(N/2)_|A|/(N)_|A|，不是声称真实分布。
+- Assumptions / Definitions：每块两完美匹配由一个bit表示；代入bit后相容的短圆柱严格正，其余零。
+- Scope / Conclusion：精确保给定二阶的law接口被否定；保持一阶的真实law对跨块pair的最小L∞改动精确1/[4N(N−1)]，floor/ceil均匀slice各半混合取等；不要求高阶同时修复。
+- Dependencies：UM-MODEL-v1、Boolean商代数、自足up/down harmonic Gram证明及整数方差下界；经典knapsack伪矩机制不认领新颖性。
+- Evidence：陈述先行独立重构、最终全文攻击、root三个小矩阵精确Schur/Gram/cylinder/variance/repair核验。
+- Counterevidence / Objections：真实完美匹配很容易，改动二阶即可最优；修复半径趋零，不是常数鲁棒间隙。无standing fatal。
+- Status：限定接口定理与锐二阶距离证明完整；固定r生成N^{O(r)}，不称r变参时联合多项式；外审/全球新颖性未认证。
+- Related Files：current/unrelated_machines/strong_configuration_matching_moment_obstruction.md、reviews/unrelated_machines/strong_configuration_matching_moment_review.md、tests/audits/unrelated_machines/strong_configuration_matching_moment_audit.py、evidence/runs/unrelated_machines/strong_configuration_matching_moment_audit.json。

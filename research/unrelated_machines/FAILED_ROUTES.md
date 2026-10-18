@@ -348,3 +348,7 @@ u_t) 的一般复杂度。
 共同b且每行≤2正非unit资格的近二承载已由[实际sharp3/2算法](../current/unrelated_machines/joint_slot_prefix_rounding.md)排除；不是只相对CONFIG障碍。重试需退出此域并核全原job身份和共享负载；不推广至三small/不同big时间，更不否定主命题。
 
 [现有三叉底层palette的对齐张量/纯收缩](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)已严格失败：张量YES的实际OPT=2−(2/3)^k，gap≤5/4且趋1；纯k≥2收缩连strong(d−1)也无。重试须改变上述具体操作/着色，而不是只允许QP展开。另[单树µ精确gap](../current/unrelated_machines/private_injective_tree_configuration_floor.md)有CONFIG(1+1/d)却q=d/µ，故近全strong分叉不能换为CONFIG promise；仍非所有方法/算法困难性。
+
+## 强配置相容不等于真实共同二阶law
+
+尝试用本行CONFIG全部同阶矩+全局固定阶PSD直接抽取保给定二阶的重匹配分布。失败是接口本身错误：[奇数切片K22编译](../current/unrelated_machines/strong_configuration_matching_moment_obstruction.md)的所有短事件非负、全部负载恒1，却使整数选块数形式方差为0而均值半整数。回收自足harmonic PSD、精确位长和锐修复半径1/[4N(N−1)]；该半径趋零，所有实例显然OPT1。只排精确保矩接口，重试应允许定量改矩/直接共同实际选择；不据此否定强松弛的实际舍入。

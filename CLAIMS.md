@@ -135,3 +135,9 @@ UM-TWO-SMALL-INCIDENCE-SHARP-APPROXIMATION-v2：共同b>0且finite p≤b、每�
 UM-SINGLE-PINNED-TREE-MULTIPLICITY-EXACT-CONFIGURATION-GAP-v1：单强制根完整uniform树、整树每色≤µ的普通配置gap sup精确2−1/µ；det bitpoly全部σ≤2−ceil(d/µ)/d，显式底层重色+逐层衰减证书匹配；不改多state固定µ G。 [现行正文](research/current/unrelated_machines/private_injective_tree_configuration_floor.md)。
 
 UM-TERNARY-PALETTE-TENSOR-AMPLIFICATION-OBSTRUCTION-v2：末层两色的对齐Cartesian张量YES精确OPT2−(2/3)^k，gap上包络Gk≤5/4且严格下降趋1；纯k收缩连strong(d−1)也不可，非所有放大不可能。 [现行正文](research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)。
+
+## 锚点亏缺共同选择与精确保矩的边界
+
+[锚点缺额联合舍入](research/current/unrelated_machines/anchor_deficiency_joint_rounding.md)从同一个LP共同选择anchor位置，并让任意跨分量/异端tiny仅做一次ST；分量缺额≤d0时，实际界为`[2−(1−α)/(d0+1)+β]T`。弱OPT所用边尺度承诺下，仅上截的单调整数二分给同系数OPT保证，无额外网格损失。余秩筛选门槛`1/(d+1)`锐；未声称调度系数最优。固定身份/有界亏缺仍承重。
+
+[强配置匹配矩边界](research/current/unrelated_machines/strong_configuration_matching_moment_obstruction.md)证明任意固定阶、所有短事件非负且本行CONFIG同阶相容，仍可没有保给定二阶的真实共同匹配law；保一阶的锐二阶修复距离为`1/[4N(N−1)]`。实际OPT1且距离趋零，非调度gap。一般输入的混合身份、无界阻塞集和允许改矩后的全机统一余量仍缺；UM-TARGET-v1保持OPEN。

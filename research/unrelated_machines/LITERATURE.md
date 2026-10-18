@@ -137,3 +137,7 @@ FMW TR26-179 Revision2的Definition1.1/Theorem1.6及AppendixB已实际核读，1
 AFS2008作者稿Thm2/3与Annamalai2016v2 Thm1.1/1.3已实际核读并存原PDF，manifest区分经典匹配框架与本文[私有树配置桥](../current/unrelated_machines/private_injective_tree_configuration_floor.md)，未导入不适用的变rank构造算法。
 
 PSM2018作者稿§6/Fig5/Thm2已实际核读，总资格≤2/3/4及big-buffer框架；原PDF版本/hash见manifest。common-b双small合同见[正文](../current/unrelated_machines/joint_slot_prefix_rounding.md)，明确直接框架推广，非原文字面无限unit域。
+
+## 非整数背包伪矩的经典机制边界
+
+Potechin, *Sum of Squares Lower Bounds from Symmetry and a Good Story*, ITCS2019，[正式页面](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2019.61)摘要已核：明确恢复Grigoriev的knapsack下界。已保存20页正式原始PDF，hash/字节见manifest；实际核摘要与§1.1 Theorem1（PDF3/印61:3），未独立内化全篇。[匹配矩正文](../current/unrelated_machines/strong_configuration_matching_moment_obstruction.md)自行给出所需harmonic PSD和K22编译，不认领背包伪矩的新颖性；精确调度接口与锐修复距离亦无全球优先权认证。

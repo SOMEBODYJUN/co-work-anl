@@ -10716,6 +10716,96 @@
         "tests/audits/unrelated_machines/succinct_prefix_atomic_decoding.py"
       ],
       "status": "complete scoped proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "锚点分量缺额的全局联合舍入",
+      "detail": "一次联合LP、避低q满匹配、tiny全局ST；同系数精确整数二分；1/(d+1)基阈值锐",
+      "refs": [
+        "research/current/unrelated_machines/anchor_deficiency_joint_rounding.md",
+        "research/reviews/unrelated_machines/anchor_deficiency_joint_rounding_review.md",
+        "tests/audits/unrelated_machines/anchor_deficiency_joint_rounding_audit.py",
+        "evidence/runs/unrelated_machines/anchor_deficiency_witness_audit.json"
+      ],
+      "status": "complete scoped proof; independent reconstruction and read-after attack; external review and novelty unverified"
+    },
+    {
+      "id": "UM-ANCHOR-DEFICIENCY-PROMISE-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "弱最优尺度承诺下的精确搜索",
+      "detail": "一次联合LP、避低q满匹配、tiny全局ST；同系数精确整数二分；1/(d+1)基阈值锐",
+      "refs": [
+        "research/current/unrelated_machines/anchor_deficiency_joint_rounding.md",
+        "research/reviews/unrelated_machines/anchor_deficiency_joint_rounding_review.md",
+        "tests/audits/unrelated_machines/anchor_deficiency_joint_rounding_audit.py",
+        "evidence/runs/unrelated_machines/anchor_deficiency_witness_audit.json"
+      ],
+      "status": "complete scoped proof; independent reconstruction and read-after attack; external review and novelty unverified"
+    },
+    {
+      "id": "UM-FIXED-DEGREE-STRONG-CONFIG-MATCHING-LAW-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "强配置共同匹配不可实现与锐修复半径",
+      "detail": "不可保二阶真实law；锐L∞修复距离1/[4N(N−1)]",
+      "refs": [
+        "research/current/unrelated_machines/strong_configuration_matching_moment_obstruction.md",
+        "research/reviews/unrelated_machines/strong_configuration_matching_moment_review.md",
+        "tests/audits/unrelated_machines/strong_configuration_matching_moment_audit.py",
+        "evidence/runs/unrelated_machines/strong_configuration_matching_moment_audit.json"
+      ],
+      "status": "complete scoped proof; independent reconstruction and read-after attack; external review and novelty unverified"
+    },
+    {
+      "id": "UM-ANCHOR-DEFICIENCY-DOMAIN",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "固定身份与有界anchor分量亏缺",
+      "detail": "全部量词与输入合同见所引自足正文",
+      "refs": [
+        "research/current/unrelated_machines/anchor_deficiency_joint_rounding.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "UM-ODD-SLICE-MATCHING-DOMAIN",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "奇数formal half-slice的K22编译",
+      "detail": "全部量词与输入合同见所引自足正文",
+      "refs": [
+        "research/current/unrelated_machines/strong_configuration_matching_moment_obstruction.md"
+      ],
+      "status": "definition"
+    },
+    {
+      "id": "UM-ANCHOR-DEFICIENCY-FINITE-CHECKS",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "精确少量参数实现核对",
+      "detail": "有限checks，不作一般证明",
+      "refs": [
+        "research/current/unrelated_machines/anchor_deficiency_joint_rounding.md",
+        "tests/audits/unrelated_machines/anchor_deficiency_joint_rounding_audit.py",
+        "evidence/runs/unrelated_machines/anchor_deficiency_witness_audit.json"
+      ],
+      "status": "finite audit only"
+    },
+    {
+      "id": "UM-MATCHING-LAW-FINITE-CHECKS",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "精确少量参数实现核对",
+      "detail": "有限checks，不作一般证明",
+      "refs": [
+        "research/current/unrelated_machines/strong_configuration_matching_moment_obstruction.md",
+        "tests/audits/unrelated_machines/strong_configuration_matching_moment_audit.py",
+        "evidence/runs/unrelated_machines/strong_configuration_matching_moment_audit.json"
+      ],
+      "status": "finite audit only"
     }
   ],
   "hyperedges": [
@@ -26137,6 +26227,120 @@
         "research/reviews/unrelated_machines/succinct_prefix_atomic_decoding_review.md"
       ],
       "status": "complete scoped proof"
+    },
+    {
+      "id": "um_anchor_deficiency_joint_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ANCHOR-DEFICIENCY-DOMAIN",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1",
+      "statement": "同一显式LP、余秩质量<1的Hall证明及全局ST；不逐分量选择tiny解。",
+      "refs": [
+        "research/current/unrelated_machines/anchor_deficiency_joint_rounding.md",
+        "research/reviews/unrelated_machines/anchor_deficiency_joint_rounding_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "um_anchor_deficiency_promise_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1",
+        "UM-ANCHOR-DEFICIENCY-DOMAIN"
+      ],
+      "conclusion": "UM-ANCHOR-DEFICIENCY-PROMISE-APPROX-v1",
+      "statement": "仅上截不下截，成功舍入不需anchor下界；weakOPT见证在OPT可行，单调整数网格无损搜索。",
+      "refs": [
+        "research/current/unrelated_machines/anchor_deficiency_joint_rounding.md",
+        "research/reviews/unrelated_machines/anchor_deficiency_joint_rounding_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "um_fixed_degree_matching_law_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ODD-SLICE-MATCHING-DOMAIN"
+      ],
+      "conclusion": "UM-FIXED-DEGREE-STRONG-CONFIG-MATCHING-LAW-OBSTRUCTION-v1",
+      "statement": "自足harmonic Gram PSD与cylinder公式，奇数方差分离，floor/ceil真实law取锐修复距离。",
+      "refs": [
+        "research/current/unrelated_machines/strong_configuration_matching_moment_obstruction.md",
+        "research/reviews/unrelated_machines/strong_configuration_matching_moment_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "um_anchor_deficiency_general_limit",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1",
+        "UM-ANCHOR-DEFICIENCY-PROMISE-APPROX-v1",
+        "UM-FIXED-DEGREE-STRONG-CONFIG-MATCHING-LAW-OBSTRUCTION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "固定身份/无界阻塞集的共同选择仍缺；精确保伪二阶非必要，反例非gap且可小扰动修复。",
+      "refs": [
+        "research/current/unrelated_machines/anchor_deficiency_joint_rounding.md",
+        "research/current/unrelated_machines/strong_configuration_matching_moment_obstruction.md"
+      ],
+      "status": "general target remains open"
+    },
+    {
+      "id": "um-anchor-deficiency-finite-checks_0",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ANCHOR-DEFICIENCY-FINITE-CHECKS"
+      ],
+      "conclusion": "UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1",
+      "statement": "仅有限精确代数/见证实现核对；不以枚举承担普遍量词。",
+      "refs": [
+        "research/current/unrelated_machines/anchor_deficiency_joint_rounding.md",
+        "tests/audits/unrelated_machines/anchor_deficiency_joint_rounding_audit.py",
+        "evidence/runs/unrelated_machines/anchor_deficiency_witness_audit.json"
+      ],
+      "status": "finite audit only"
+    },
+    {
+      "id": "um-anchor-deficiency-finite-checks_1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ANCHOR-DEFICIENCY-FINITE-CHECKS"
+      ],
+      "conclusion": "UM-ANCHOR-DEFICIENCY-PROMISE-APPROX-v1",
+      "statement": "仅有限精确代数/见证实现核对；不以枚举承担普遍量词。",
+      "refs": [
+        "research/current/unrelated_machines/anchor_deficiency_joint_rounding.md",
+        "tests/audits/unrelated_machines/anchor_deficiency_joint_rounding_audit.py",
+        "evidence/runs/unrelated_machines/anchor_deficiency_witness_audit.json"
+      ],
+      "status": "finite audit only"
+    },
+    {
+      "id": "um-matching-law-finite-checks_0",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MATCHING-LAW-FINITE-CHECKS"
+      ],
+      "conclusion": "UM-FIXED-DEGREE-STRONG-CONFIG-MATCHING-LAW-OBSTRUCTION-v1",
+      "statement": "仅有限精确代数/见证实现核对；不以枚举承担普遍量词。",
+      "refs": [
+        "research/current/unrelated_machines/strong_configuration_matching_moment_obstruction.md",
+        "tests/audits/unrelated_machines/strong_configuration_matching_moment_audit.py",
+        "evidence/runs/unrelated_machines/strong_configuration_matching_moment_audit.json"
+      ],
+      "status": "finite audit only"
     }
   ]
 }

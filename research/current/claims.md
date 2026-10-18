@@ -1164,6 +1164,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-PREFIX-ATOMIC-DECODING-v1 | 给定可查询前缀原子权、one-hot守恒和完整逐机局部化器时，确定性至多O(|E|)查询输出负载≤T的整数调度；证书存在当且仅当OPT≤T。 | [正文](unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)、[审查](../reviews/unrelated_machines/succinct_prefix_atomic_decoding_review.md)、[精确核验](../../tests/audits/unrelated_machines/succinct_prefix_atomic_decoding.py)；只闭合表示/解码接口，生成器与一般UM仍开放。 |
 
+## 锚点缺额共同舍入与强配置二阶law
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| UM-ANCHOR-DEFICIENCY-JOINT-ROUNDING-v1 | 固定身份near-unit/tiny；anchor分量缺额≤d0，tiny任意跨分量 | 实际[2−(1−α)/(d0+1)+β]T或sound FAIL；余秩筛选阈值锐，非比例最优 | [正文](unrelated_machines/anchor_deficiency_joint_rounding.md)，独立重构/读后攻击，LP后端未集成 |
+| UM-ANCHOR-DEFICIENCY-PROMISE-APPROX-v1 | full anchor图同缺额；只某份OPT满足所用边尺度promise | 仅上截边+单调整数二分，同系数OPT保证，无η；非一般输入识别 | 同正文§10，数学算法完整，外审/新颖性未认证 |
+| UM-FIXED-DEGREE-STRONG-CONFIG-MATCHING-LAW-OBSTRUCTION-v1 | r≥2,奇N≥4r−1；强本行CONFIG同阶相容+所有短事件非负 | 无保二阶真实匹配law；锐修复半径1/[4N(N−1)]；实际OPT1，非gap | [自足证明](unrelated_machines/strong_configuration_matching_moment_obstruction.md)，独立攻击/精确小核验；经典knapsack机制 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -137,3 +137,9 @@
 
 
 [前缀原子解码桥](research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)进一步把全阶矩路线的解码义务压缩为可查询部分分配权：若生成器能保持one-hot守恒与完整逐机局部化，O(|E|)次查询即可得到T可行调度；因此真正未解的是succinct证书生成或sound FAIL，而非终端原子搜索。该接口不改变UM-TARGET-v1的OPEN状态。
+
+## 锚点亏缺共同选择与精确保矩的边界
+
+[锚点缺额联合舍入](research/current/unrelated_machines/anchor_deficiency_joint_rounding.md)从同一个LP共同选择anchor位置，并让任意跨分量/异端tiny仅做一次ST；分量缺额≤d0时，实际界为`[2−(1−α)/(d0+1)+β]T`。弱OPT所用边尺度承诺下，仅上截的单调整数二分给同系数OPT保证，无额外网格损失。余秩筛选门槛`1/(d+1)`锐；未声称调度系数最优。固定身份/有界亏缺仍承重。
+
+[强配置匹配矩边界](research/current/unrelated_machines/strong_configuration_matching_moment_obstruction.md)证明任意固定阶、所有短事件非负且本行CONFIG同阶相容，仍可没有保给定二阶的真实共同匹配law；保一阶的锐二阶修复距离为`1/[4N(N−1)]`。实际OPT1且距离趋零，非调度gap。一般输入的混合身份、无界阻塞集和允许改矩后的全机统一余量仍缺；UM-TARGET-v1保持OPEN。

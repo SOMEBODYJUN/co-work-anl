@@ -165,3 +165,7 @@
 尝试用同一源标签控制许多测试来挽回独立局部guard的soundness。对simple、逐复合行均匀、每right资源数等于其degree的准确合同，整数碰撞势加一次全局匹配总能保每点ceil-half，flat原sigma≤3/2。因此共享标签本身不够。可回收的是实际共同标签/资源算法；重试需非均匀行、有效多重请求、跨资源组耦合或多层祖先约束，并重证全部机器与源解码。删除假设的反例仅否定绝对负载延伸，不否定更大类另一三二近似。见[正文](research/current/unrelated_machines/row_uniform_correlated_guard_rounding.md)。
 
 [坐标切片源编译](research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)可逐对手坐标只删一个值而保D−1叉；源partial-MinRep NO甚至双射/CONFIG1不补weak decoder。保留精确阈值与padding工具，重试需真实跨test/不同共享结构。
+
+## 强配置相容不等于真实共同二阶law
+
+尝试用本行CONFIG全部同阶矩+全局固定阶PSD直接抽取保给定二阶的重匹配分布。失败是接口本身错误：[奇数切片K22编译](research/current/unrelated_machines/strong_configuration_matching_moment_obstruction.md)的所有短事件非负、全部负载恒1，却使整数选块数形式方差为0而均值半整数。回收自足harmonic PSD、精确位长和锐修复半径1/[4N(N−1)]；该半径趋零，所有实例显然OPT1。只排精确保矩接口，重试应允许定量改矩/直接共同实际选择；不据此否定强松弛的实际舍入。
