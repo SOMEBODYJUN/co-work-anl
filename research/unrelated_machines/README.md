@@ -334,3 +334,5 @@
 ## 任务包剥离闭合任意剪枝初态
 
 [完整证明](../current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)给UM-LOCAL-BUNDLE-SHIELD-PATH-v1与UM-PRUNED-BUNDLE-PEELING-PATH-v1：给定τ时，全部剪枝初态有det-bit-poly全程U路径，worst-uniform逐参数锐；全小件不再要求单件可激活。未知目标与一般ε未得。
+
+[原地拟阵外包的指数数量界](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#9-固定次二容量外包需要超多项式数量的原地拟阵)另立UM-KNAPSACK-MATROID-EXPONENTIAL-v1：把大件改为1−r/k后，完整保留全部容量1可行集且所有共同独立集固定次二，需超多项式原输入位长的静态拟阵数；精确最少数为C(k,k−r−1,r)。只限本地完整外包，不推出一般调度困难性。

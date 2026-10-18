@@ -454,3 +454,5 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 ## 任意剪枝初态的共同入流剥离
 
 [任务包屏蔽与全输入锐路径](bundle_inflow_peeling_and_pruned_transient_sharpness.md)：先选源包及补集均足够释放的二分，再剥低内部入流顶点，保留核心、逆序激活、补集封口。全部剪枝σ≤C到给定τ≤T的路径峰≤max(2T,C+T/2)，旧两机族给全输入逐参数锐性。含逐机可计算profile、规范代码、独立攻击及冻结核验。具体τ仍承重；UM-TARGET-v1保持OPEN。
+
+[原地拟阵外包的指数数量界](minimal_star_contraction_and_capacity_gap.md#9-固定次二容量外包需要超多项式数量的原地拟阵)另立UM-KNAPSACK-MATROID-EXPONENTIAL-v1：把大件改为1−r/k后，完整保留全部容量1可行集且所有共同独立集固定次二，需超多项式原输入位长的静态拟阵数；精确最少数为C(k,k−r−1,r)。只限本地完整外包，不推出一般调度困难性。

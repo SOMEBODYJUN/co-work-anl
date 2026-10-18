@@ -515,3 +515,5 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 ## 更新：全剪枝给定目标路径不再开放
 
 前文任意pruned初态全小件共同激活的OPEN已由[二分任务包入流剥离](../current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)闭合：无eligible/assigned-max前提，全程U=max(2T,C+T/2)且全输入类worst-uniform锐。UM-LOCAL-BUNDLE-SHIELD-PATH-v1另给任意二分的逐机profile。具体τ及其Q/f仍是输入；未知目标共同选择、可靠FAIL与实际统一次二输出仍是主前沿。
+
+[原地拟阵外包的指数数量界](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#9-固定次二容量外包需要超多项式数量的原地拟阵)另立UM-KNAPSACK-MATROID-EXPONENTIAL-v1：把大件改为1−r/k后，完整保留全部容量1可行集且所有共同独立集固定次二，需超多项式原输入位长的静态拟阵数；精确最少数为C(k,k−r−1,r)。只限本地完整外包，不推出一般调度困难性。

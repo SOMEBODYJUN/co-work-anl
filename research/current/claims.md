@@ -1257,6 +1257,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-LOCAL-BUNDLE-SHIELD-PATH-v1 | 给定任意非负有理实际迁移弧、逐机U_i≥S_i及h=(S+Q−U)_+；各h>0源给包/补集源量均≥h、且h≤U−S。共同入流剥离给全部弧一次的逐机U路径；任意二分自动给U_i=max(S_i+Q_i/2,F_i+M_i)，LPT有M_i≤max(a_max,2A_i/3)。 | [正文](unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)、[审查](../reviews/unrelated_machines/bundle_inflow_peeling_review.md)；给定具体目标，profile数学算法完整但无软件接口；外审/新颖性未认证。 |
 | UM-PRUNED-BUNDLE-PEELING-PATH-v1 | 所有0≤T≤C≤2T、实际剪枝σ≤C、给定实际τ≤T，det-bit-poly输出每件一次直迁的完整路径，全程≤U=max(2T,C+T/2)。每固定有理T>0,C∈[T,2T]，全剪枝输入类的最坏指定目标minimax恰U。 | [正文](unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)、[审查](../reviews/unrelated_machines/bundle_inflow_peeling_review.md)；不需eligible/assigned-max/ST来源；不是逐实例最优或未知目标算法，规范构造与有限精确回放已实现。 |
 
+| UM-KNAPSACK-MATROID-EXPONENTIAL-v1 | k≥3,1≤r≤floor((k−1)/2)，tiny各1/k、大件1−r/k；同一原地基集静态拟阵交完整保所有容量1可行集。共同独立集严格低于2−2r/k迫q≥ceil[binom(k,r)/binom(k−r−1,r)]≥exp(r(r+1)/k)；精确最少数C(k,k−r−1,r)。固定次二阈值需超多项式原输入位长数量。 | [正文§9](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[独立实际审查](../reviews/unrelated_machines/knapsack_matroid_exponential_review.md)；只限完整本地外包，不推共同基/全局输出/一般UM困难性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
