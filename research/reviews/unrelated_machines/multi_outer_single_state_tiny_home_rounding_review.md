@@ -45,3 +45,5 @@ root实际完整读195行自足程序（SHA460679…），在全新scratch目录
 | history/source/notes/unrelated_machines/sol_multi_outer_tiny_home_final_canonical_actual_read.md | 299a27d33a68522b78ee70e8779752df6961b90b0dd5a7c8b4ef8396cadb2d90 | 299a27d33a68522b78ee70e8779752df6961b90b0dd5a7c8b4ef8396cadb2d90 | original bytes |
 
 代码：tests/audits/unrelated_machines/multi_outer_request_winner_pair_backend.py。冻结证据：evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_audit.json, evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_root_replay_scope.json。
+
+后续§12–20是另立v4的共享UD叶/k²量词域，见[新审查](shared_ud_tiny_home_potential_rounding_review.md)。本v1审查只签原175行及旧k⁴域，不因同页追加升级。

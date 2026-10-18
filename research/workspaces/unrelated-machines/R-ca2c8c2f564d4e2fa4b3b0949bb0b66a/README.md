@@ -146,3 +146,5 @@
 [多outer极小home](../../../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)：可变k个single-state outers、互异home及wmax<=1/(4096k⁴)，任意shared fallback，有仅输入Q的det-bit-poly19/10全jobs算法；LP不可行有actualOPT下界，feasible用共同均值/全局variance/精确CE。仅typed限域，不是一般突破。
 
 [条件原矩流与soundFAIL](../../../current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md)：原unit-pair零范数与二次负载条件给任意正原入口的新parent-bounded firstflow；包含族δd1(δd2−M)<=H，固定polylog型q损失不能免费导入SH3。完整原jobs、整数网格/单位走廊/删除与bit已付；非原全局点或hardness。
+
+[共享UD叶与k²-home](../../../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)：另立v4：可变k单state outer/互异homes/共享任意fallback加B-only threshold-UD叶，k1无tiny、k>=2 maxw<=1/(16384k²)，仅Q输入det-bit-poly19/10全原jobs；primal/FW与实际allocation两种证明独立攻击。仅限域近2 source排除，主目标正反面仍OPEN。

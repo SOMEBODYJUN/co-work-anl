@@ -3337,3 +3337,16 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：归一化记号歧义已统一a/p与f/a；rawpoint restriction保所有6次矩及bit增长已补。多层owner机制未解；无standingfatal于本精确范围。
 - Status：complete scoped conditional-firstflow and inclusion sound-FAIL proof; independent statement-first and actual read-after/final diff; finite arithmetic audit only; novelty unverified；一般UM正反面OPEN。
 - Related Files：[正文](../current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md)、[实际审查](../reviews/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity_review.md)及所列原件/有限证据。
+
+
+## UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4
+
+- ID/version / Objects / Domain / Definitions：UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4；完整显式normalized-flat typed Q；变量k>=1个single-state outers，跨全体互异positive homes，各一个own-unit helper，任意normalized B-only fallback；任意B-only extra leaves在epsilon15/16满足whole-menu threshold-UD iff；k1无额外tiny，k>=2 maxw<=1/(16384k²)；所有zero/indexed/inactive原jobs保留。
+- Quantifiers / Exact Statement / Conclusion：只输入Q，用固定确定性worst-case total-bit-poly算法输出全部ordinary原jobs合法σ，Cmax<=19/10 OPT；k1固定顺序submodular greedy，k>=2匹配profile势/有理FW/共同prefix-flow；另有独立全程actual-allocation局部势后端；无OPT/点/SDP或joint-profile oracle。
+- Assumptions：算法无复杂度假设；标准有理matching/flow/LP及matroid工具自足使用；source排除推论另假设P≠NP。
+- Dependencies：UM-MODEL-v1, UM-MULTI-OUTER-SHARED-UD-TINY-HOME-DOMAIN-v4, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1；新§12–20自足全部共同资源、actual benchmark、进展、bit与原jobs证明。
+- Scope：特殊typed域；不覆盖multistate outer/重home/一般nonUD extras/任意P。新域k²不与旧v1 k⁴算法软件混；只有exchange finite audit、无完整实现。仅排全部输出该域且YESactualOPT1/NO>=2−gamma fixed0<gamma<.1的NP归约(P!=NP)，非UM正面或反面突破。
+- Evidence：新v4 Exact-first149行69036ac6、实际作者204行读后80行4d2d、NSW知情新域89行d262和新实际算法攻击123行d555；最终207新增行实读c016；root实际全读这些来源/code及fresh replay。
+- Counterevidence / Objections：一般multistate/home overlap仍缺共同profile；有限校准非全称证明；v3不同k1量词保留不倒改。当前精确域无standing fatal。
+- Status：complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; new Exact-first, actual author and final reading; exchange lemma audit only; novelty unverified；一般UM及反面OPEN。
+- Related Files：[正文§12–20](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[新实际审查](../reviews/unrelated_machines/shared_ud_tiny_home_potential_rounding_review.md)及保真来源/finite records。

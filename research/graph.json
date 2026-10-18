@@ -12942,6 +12942,43 @@
         "evidence/runs/unrelated_machines/raw_sh3_inclusion_entry_cut_root_replay_scope.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-MULTI-OUTER-SHARED-UD-TINY-HOME-DOMAIN-v4",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "单state外层、共享UD叶和k²-home的原输入域",
+      "detail": "完整显式normalized-flat typed Q；变量k>=1个single-state outers，跨全体互异positive homes，各一个own-unit helper，任意normalized B-only fallback；任意B-only extra leaves在epsilon15/16满足whole-menu threshold-UD iff；k1无额外tiny，k>=2 maxw<=1/(16384k²)；所有zero/indexed/inactive原jobs保留。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共享UD叶和k²-home的十分之十九实际算法",
+      "detail": "只输入Q，用固定确定性worst-case total-bit-poly算法输出全部ordinary原jobs合法σ，Cmax<=19/10 OPT；k1固定顺序submodular greedy，k>=2匹配profile势/有理FW/共同prefix-flow；另有独立全程actual-allocation局部势后端；无OPT/点/SDP或joint-profile oracle。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/shared_ud_tiny_home_potential_rounding_review.md"
+      ],
+      "status": "complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; new Exact-first, actual author and final reading; exchange lemma audit only; novelty unverified"
+    },
+    {
+      "id": "AUDIT-SHARED-UD-OPTIMAL-EXCHANGE-SMALL-NETWORK-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "共享叶最优face交换的有限精确核",
+      "detail": "240cases26674ownerships242all-old optimal vectors; outside tiny domain, no end-to-end implementation.",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "tests/audits/unrelated_machines/shared_ud_optimal_exchange_small_network_audit.py",
+        "evidence/runs/unrelated_machines/shared_ud_optimal_exchange_small_network_audit.json",
+        "evidence/runs/unrelated_machines/shared_ud_optimal_exchange_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -31736,6 +31773,55 @@
       "refs": [
         "research/current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md",
         "research/reviews/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-MULTI-OUTER-SHARED-UD-TINY-HOME-DOMAIN-v4",
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1"
+      ],
+      "conclusion": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "statement": "只输入Q，用固定确定性worst-case total-bit-poly算法输出全部ordinary原jobs合法σ，Cmax<=19/10 OPT；k1固定顺序submodular greedy，k>=2匹配profile势/有理FW/共同prefix-flow；另有独立全程actual-allocation局部势后端；无OPT/点/SDP或joint-profile oracle。共同前提加正文自足matroid/交换/曲率/FW/bit/实际FAIL及全jobs证明；有限数据不作全称前提。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/shared_ud_tiny_home_potential_rounding_review.md"
+      ],
+      "status": "complete scoped algorithm proof"
+    },
+    {
+      "id": "CHECK-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-SHARED-UD-OPTIMAL-EXCHANGE-SMALL-NETWORK-v1"
+      ],
+      "conclusion": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "statement": "仅核最优face交换lemma小例；不认证tiny/整体profile算法及全jobs实现。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "tests/audits/unrelated_machines/shared_ud_optimal_exchange_small_network_audit.py",
+        "evidence/runs/unrelated_machines/shared_ud_optimal_exchange_small_network_audit.json",
+        "evidence/runs/unrelated_machines/shared_ud_optimal_exchange_root_replay_scope.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "LIMIT-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "特殊typed域；不覆盖multistate outer/重home/一般nonUD extras/任意P。新域k²不与旧v1 k⁴算法软件混；只有exchange finite audit、无完整实现。仅排全部输出该域且YESactualOPT1/NO>=2−gamma fixed0<gamma<.1的NP归约(P!=NP)，非UM正面或反面突破。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/shared_ud_tiny_home_potential_rounding_review.md"
       ],
       "status": "scope limitation"
     }
