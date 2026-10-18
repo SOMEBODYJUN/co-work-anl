@@ -11985,6 +11985,69 @@
         "evidence/runs/unrelated_machines/knapsack_matroid_exponential_audit.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "UM-MULTI-ACTIVATION-STATIC-COVER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "多件共同激活的静态 cover/packing 桥",
+      "detail": "给定初态与目标的源 cover和目标 packing足以产生全程U安全路径；未知目标与证书生成仍开放。",
+      "refs": [
+        "research/current/unrelated_machines/multi_activation_cover_and_replication_barriers.md",
+        "research/reviews/unrelated_machines/multi_activation_cover_replication_review.md",
+        "tests/audits/unrelated_machines/multi_activation_cover_replication.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-MULTI-ACTIVATION-HOLD-EDGE-RESTATEMENT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "保留目标边的静态证书重排",
+      "detail": "保留集合条件等价于R\\B本身满足静态cover，只提供延迟执行顺序。",
+      "refs": [
+        "research/current/unrelated_machines/multi_activation_cover_and_replication_barriers.md",
+        "research/reviews/unrelated_machines/multi_activation_cover_replication_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-DISJOINT-BLOCK-NO-AMPLIFICATION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "不交机器块的近似gap不放大",
+      "detail": "不交缩放并的OPT是组件最优值最大值。",
+      "refs": [
+        "research/current/unrelated_machines/multi_activation_cover_and_replication_barriers.md",
+        "research/reviews/unrelated_machines/multi_activation_cover_replication_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-SHARED-CLONE-REPLICATION-COLLAPSE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共享同机复制渐近回到assignment-LP",
+      "detail": "k-copy实例满足kF≤O_k≤kF+S。",
+      "refs": [
+        "research/current/unrelated_machines/multi_activation_cover_and_replication_barriers.md",
+        "research/reviews/unrelated_machines/multi_activation_cover_replication_review.md",
+        "tests/audits/unrelated_machines/multi_activation_cover_replication.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-KDM-HIGH-DIMENSIONAL-QUOTA-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "高维匹配来源与需求树部分配额障碍",
+      "detail": "LST高维匹配Paper Fact不直接给UM hardness；直接需求树值由全部部分配额层决定，并留下robust bundle matching义务。",
+      "refs": [
+        "research/current/unrelated_machines/kdm_high_dimensional_quota_obstruction.md",
+        "research/reviews/unrelated_machines/kdm_high_dimensional_quota_review.md",
+        "tests/audits/unrelated_machines/kdm_high_dimensional_quota.py"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -29207,6 +29270,76 @@
         "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "D-UM-MULTI-ACTIVATION-STATIC-COVER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-MULTI-ACTIVATION-STATIC-COVER-v1",
+      "statement": "本页自足证明或来源边界；只承担声明范围，不升级UM-TARGET-v1。",
+      "refs": [
+        "research/current/unrelated_machines/multi_activation_cover_and_replication_barriers.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "D-UM-MULTI-ACTIVATION-HOLD-EDGE-RESTATEMENT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-MULTI-ACTIVATION-HOLD-EDGE-RESTATEMENT-v1",
+      "statement": "本页自足证明或来源边界；只承担声明范围，不升级UM-TARGET-v1。",
+      "refs": [
+        "research/current/unrelated_machines/multi_activation_cover_and_replication_barriers.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "D-UM-DISJOINT-BLOCK-NO-AMPLIFICATION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-DISJOINT-BLOCK-NO-AMPLIFICATION-v1",
+      "statement": "本页自足证明或来源边界；只承担声明范围，不升级UM-TARGET-v1。",
+      "refs": [
+        "research/current/unrelated_machines/multi_activation_cover_and_replication_barriers.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "D-UM-SHARED-CLONE-REPLICATION-COLLAPSE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-SHARED-CLONE-REPLICATION-COLLAPSE-v1",
+      "statement": "本页自足证明或来源边界；只承担声明范围，不升级UM-TARGET-v1。",
+      "refs": [
+        "research/current/unrelated_machines/multi_activation_cover_and_replication_barriers.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "D-UM-KDM-HIGH-DIMENSIONAL-QUOTA-OBSTRUCTION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-KDM-HIGH-DIMENSIONAL-QUOTA-OBSTRUCTION-v1",
+      "statement": "本页自足证明或来源边界；只承担声明范围，不升级UM-TARGET-v1。",
+      "refs": [
+        "research/current/unrelated_machines/kdm_high_dimensional_quota_obstruction.md"
+      ],
+      "status": "self-contained stated-scope proof"
     }
   ]
 }
