@@ -1,5 +1,7 @@
 # 当前研究前沿：不相关并行机
 
+用户已明确决定全体主攻 `UM-TARGET-v1` 的否定：对每个固定 ε>0 攻击真实近二整数 gap 与可计算绝对阈值下的调度 decoder，准确声明复杂度假设。原目标身份保持不变，正面资产用于检验归约；一般反面尚未证明。当前操作入口与全仓方向见[活跃路线](research/unrelated_machines/ACTIVE_ROUTES.md)。
+
 当前主攻 `UM-TARGET-v1`，存档 `unrelated-machines`：一般R∥C_max上，统一常数(2−ε)的确定性位多项式实际调度。目标仍 **OPEN**；尚无一般新近似算法。新会话用[完整提示词](research/unrelated_machines/BOSS_START.md)，从[本题地图](research/current/unrelated_machines/README.md)和[专题前沿](research/unrelated_machines/RESEARCH_STATE.md)恢复实际状态。
 
 ## 当前承重义务

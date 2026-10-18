@@ -1,6 +1,8 @@
 # 研究总目录：新题入口与独立模型
 
-**当前主攻 `UM-TARGET-v1`，研究存档 `unrelated-machines`：一般不相关并行机R∥C_max的统一常数(2−ε)确定性位多项式构造。目标仍OPEN。** 新对话使用[完整BOSS提示词](unrelated_machines/BOSS_START.md)、[最新版work.py](weighted_congestion_frontier/tools/work.py)和[本题手册](unrelated_machines/RUNBOOK.md)。程序所在旧目录承载共享工具，当前题目按save和精确目标确定。
+`unrelated-machines` 的当前用户决定是全体主攻 `UM-TARGET-v1` 的否定：真实近二困难性、全 ε 量词和实际调度解码；复杂度假设须明确。原目标与已有资产保留，研究方向不升级数学真值。直接入口见[活跃路线](unrelated_machines/ACTIVE_ROUTES.md)。
+
+**当前主攻 `UM-TARGET-v1`，研究存档 `unrelated-machines`：一般不相关并行机R∥C_max的统一常数(2−ε)确定性位多项式构造之存在命题，当前直接主攻其否定。原命题及一般反面仍OPEN。** 新对话使用[完整BOSS提示词](unrelated_machines/BOSS_START.md)、[最新版work.py](weighted_congestion_frontier/tools/work.py)和[本题手册](unrelated_machines/RUNBOOK.md)。程序所在旧目录承载共享工具，当前题目按save和精确目标确定。
 
 ## 新题的阅读与研究链
 

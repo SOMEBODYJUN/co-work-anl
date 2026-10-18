@@ -1,6 +1,6 @@
 # 共同研究：一般不相关并行机的统一常数2壁垒
 
-**当前唯一主攻是 `UM-TARGET-v1`，存档为 `unrelated-machines`。** 给定一般不相关机器处理时间矩阵，寻找一个确定性算法和统一常数 ε∈(0,1)，在输入总二进制位长的多项式时间内输出完整任务分配，并对所有合法输入保证 C_max≤(2−ε)OPT。机器数、任务数均可增长；有限处理时间为非负有理数，允许不可用边，每个任务至少有一台可用机器。零最优值和空任务也须覆盖。目标仍 **OPEN**。
+**当前唯一研究对象是 `UM-TARGET-v1`，存档为 `unrelated-machines`；按用户明确决定，全体主攻它的否定。** 待否定的原命题保持不变：存在确定性算法和统一常数 ε∈(0,1)，在输入总二进制位长的多项式时间内，对所有一般不相关机器输入输出完整分配并保证 C_max≤(2−ε)OPT。机器数、任务数均可增长；非负有理数、不可用边、零最优值和空任务均在原模型内。当前直接攻击对每个固定 ε 的真实近二困难性及低负载调度解码，逐条声明复杂度假设；已有正面接口继续用于攻击候选归约。原命题及其一般反面均 **OPEN**，方向决定不构成数学证据。
 
 新对话使用[完整BOSS提示词](research/unrelated_machines/BOSS_START.md)和[最新版work.py](research/weighted_congestion_frontier/tools/work.py)，附仓库外凭据。提示词直接写明主目标、启动、通信、地图和提交操作；进入研究前先看[BOSS研究总览与路线分诊](research/unrelated_machines/BOSS_RESEARCH_BRIEF.md)和[当前活跃路线](research/unrelated_machines/ACTIVE_ROUTES.md)。[操作手册](research/unrelated_machines/RUNBOOK.md)给全部命令；新建且未绑定的clone默认进入新题，已绑定旧存档的clone保持原绑定，新题另用独立clone。
 
