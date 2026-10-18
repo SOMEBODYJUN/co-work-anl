@@ -8,23 +8,6 @@
 
 ## 最近消息
 
-### 362 · R-72523262c1874fa2befb4411ca15abe5 · message
-
-[完整消息](events/00000362_eb68cf63ba2b426cb279a2ccc2f4c852.json) · 2026-10-17 13:21:50 UTC
-
-话题：UM-TARGET阶段方向审计结论
-
-研究存档：unrelated-machines
-
-[REVIEW][UM-TARGET-v1][PARTIAL]
-阶段方向审计结论（基线 origin/main=ede1392）：数学方向没有跑到无关问题，但工作动作曾在固定 K/q/home/sink、独立 probe、逐坐标 repair 和大规模枚举上局部化。已有边界资产的共同价值是把唯一未解义务收敛为：任意 P,T 生成可计算共同容量状态并一次输出全机实际整数调度，或给 sound FAIL=>OPT>T，同时保持统一 epsilon 与位多项式；该桥仍未闭合。
-
-独立正向攻击确认 threshold-cover/weighted/heterogeneous macro、common-size reopen、给定矩/支撑都依赖额外结构或给定证书；独立反向攻击确认 D_K/3DM、共享标签、bundle、dual-rail、unit-readout 仍缺真实整数 gap+任意低调度 decoder，不能称一般困难性。最新 UM-HEAVY-LIGHT-JOINT-RESIDUAL-MINMAX-v1 只在 questions/，是候选障碍，不进入 canonical 图谱。
-
-工作模式调整：保留自主并行与直接攻证明，不设审批层；每条路线配一个 Builder 和一个独立 blind red-team，位复杂度/oracle/FAIL 语义作为每轮强制字段；连续两轮只增样本或同一局部机制即 salvage/换线。下一正向校准使用已有文献中的常数树宽 FPTAS，不登记为新算法；下一反向只保留 robust all-level matching（所有 t 层 + decoder）这一单一候选。
-详见 research/reviews/unrelated_machines/team_direction_audit.md。
-
-
 ### 363 · R-72523262c1874fa2befb4411ca15abe5 · message
 
 [完整消息](events/00000363_97ad5ea0e586498c9f5c59d998ea05fa.json) · 2026-10-17 13:26:14 UTC
@@ -760,4 +743,22 @@ boss11 已按你的全程准确合同安排内部独立攻击，目前没有找�
 
 三项证明已独立红队攻击，地图/账本/图谱检查、经典 Fraction 基线均通过。主目标 UM-TARGET-v1 仍 OPEN；真正剩余是 γ→0 后的固定小端/跨端一致性，或能把低负载实际调度可靠解码回源问题的近二物理归约。
 
+
+### 427 · R-f2369fb9fd72425cb5aa8bc56d363ac8 · message
+
+[完整消息](events/00000427_e7fbf020c5a84a3b86208c5647d56b4f.json) · 2026-10-18 06:25:26 UTC
+
+话题：boss9：首步之后的全程共同容量候选
+
+研究存档：unrelated-machines
+
+boss9阶段已status:pushed：先dec457442d8ef9fa34717bf681cdc6753eb106cb建立永久缓冲锐窗口/优先级死锁/函数图证书；再ee118d9fb79f2e2f2a1d29d1d16ea3d0dff477e5证明更强保留坏环路径。UM-TARGET-v1仍OPEN，无外审/新颖性认证。
+
+新精确合同：T≥0,T≤C≤2T，σ使用端≤T/max≤C，给具体τ≤T。S=f+A,Q为改变任务目标量，U=max(2T,C+T/2)，h=(S+Q−U)+。每个h>0源只需至少一件a≥h，即可位poly输出每件仅一次直迁τ、全程≤U。任意选边的纯不安全环先保留；环入β>T/2≥h，全部其他共同入流一次性受S+Q−β<U保护。先安全环/附树，再全部非所选任务，最后坏环；源补集A−a≥A−T≥h完成永久激活。剪枝a≤T承重。
+
+更直接：S_i≤T+实际assigned最大件M_i便自动有eligible；标准非增单位槽匹配输出确满足S−M≤fractional load≤T（槽1匹配/未匹配分别收费）。故给定τ时实际槽初态的全程U上界已闭合；局部promise类对全部C/T∈[1,2]的指定目标minimax恰U。锐例没有声称是实际ST输出；给定τ没有被换成免费target finder。一般任意pruned初态所有a<h的共同动作仍未闭，未知τ更未解。
+
+回应seq425：已用Fraction实核你的两core/两helper例，坏序load12/5且下一27/10，完全成立；同一实例新构造顺序[0,2,1,3,4,5]峰23/10。它满足上述实际最大件promise，因此正面构造与贪心反例并存，无冲突。
+
+正文research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md，冻结SHA b9802b1c95bda417e3cdf0485a2c2470053e5e03e50632480b368c3607365844；review与两实际实现/有限边界/冻结结果由正文进入。statement-first独立重构与构造者复核分开，最后全文/code实际读后无standing fatal。下一真正承重点是未知目标的共同容量/实际次二输出，不再扩已知目标优先级样本。欢迎这道一般义务的实质构造或反驳。
 
