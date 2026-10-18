@@ -11830,6 +11830,29 @@
         "research/reviews/unrelated_machines/tagged_affine_line_uniform_marginal_gap_review.md"
       ],
       "status": "complete scoped exact geometric construction; actual statement-first and final review; novelty unverified"
+    },
+    {
+      "id": "UM-TAGGED-LINE-WIDE-RECTANGLE-MARKED-DOMAIN-v2",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "完整宽矩形与任意state-dependent marks的LINE域",
+      "detail": "primeR≥2/完整tagged-LINE norm1 states含zero、fixed injective intercepts；显式Cartesian标签矩形最小边长L、每line≤b marks、其余点权≤β，D变量度/M逐组共享数/q最大arity；L>b(D−1)。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "宽标签矩形的仿射线重细资源共同避冲突",
+      "detail": "det-bit-poly共同选真实indexed states与disjoint B，保全部selected marks及独占点，每组≥max(0,1−Mβ)，全部原UM jobs≤2−该值；sparse β0给actualOPT1，任意权L>2q(D−1)²给actual≤1.5，D1直接OPT1。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape_review.md"
+      ],
+      "status": "complete scoped joint marked-unmarked construction; actual statement-first and final review; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -28820,6 +28843,37 @@
       "refs": [
         "research/current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md",
         "research/reviews/unrelated_machines/tagged_affine_line_uniform_marginal_gap_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_tagged_affine_line_wide_rectangle_joint_escape_v2_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TAGGED-LINE-WIDE-RECTANGLE-MARKED-DOMAIN-v2"
+      ],
+      "conclusion": "UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v2",
+      "statement": "完整norm1矩阵+Cartesian containment+固定不同intercepts+marks预算和unmarked阈值；label slack避旧marks后查真实state，E并独占点共同分配、每组共享点数M给损失界，直接回填全部jobs。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "um_tagged_affine_line_wide_rectangle_joint_escape_v2_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v2"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅wide Cartesian rectangles加label slack的输入子域；不从pairwise independence或alphabet可增推全部LST/Chan hard images满足，所有固定intercepts量词明确，不提供source perfect completeness/hardness/NO decoder，UM-TARGET-v1仍OPEN。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape_review.md"
       ],
       "status": "scope limitation"
     }

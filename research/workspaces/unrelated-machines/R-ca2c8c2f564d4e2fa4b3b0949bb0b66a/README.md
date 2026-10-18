@@ -116,3 +116,5 @@
 当前按[真实NO联合decoder路线卡](ROUTE_CARD.md)继续：主O仍OPEN，bulk结果仅salvage；保留同行新导航，并以本会话明确自主并行授权处理人数/停工设置，不排他认领。
 
 [单标签边际均匀LINE的趋二实际间隙](../../../current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md)显示真实LINE加uniform单边际不够；完整actual精确OPT趋2仍是易显式构造，不是计算困难性。继续审查额外pairwise independence、rectangle freedom与真实源NO解码。
+
+[宽矩形LINE的重细资源共同避冲突](../../../current/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md)关闭宽矩形/足够label slack子域的联合heavy/tiny分配义务；任意state-dependent marks仍保真实index，非全部hard image反证。继续真正源NO decoder与不含宽矩形的PI code结构。

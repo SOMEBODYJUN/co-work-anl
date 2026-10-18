@@ -1246,6 +1246,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-TAGGED-AFFINE-LINE-BALANCED-MARGINAL-TINY-VALUE-v1 | primeR≥3、完整tagged F_R² line planes、各变量intercept单射、state-dependent非负有理norm1权含全部zero；显式main与R(R−1)helper，每group Rstates、各incidence label单边际uniform。 对每primeR≥3显式族，任意partial选择最优V=1/(R−1)，全原jobs普通UM实际OPT=2−1/(R−1)，显式达界assignment；fresh零权变量padding使共同arityR/R-partite并精确保值。 | [正文](unrelated_machines/tagged_affine_line_uniform_marginal_gap.md)、[实际审查](../reviews/unrelated_machines/tagged_affine_line_uniform_marginal_gap_review.md)；仅单标签uniform边际反例，非pairwise-independent hard image/计算困难性。 |
 
+| UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v2 | primeR≥2/完整tagged-LINE norm1 states含zero、fixed injective intercepts；显式Cartesian标签矩形最小边长L、每line≤b marks、其余点权≤β，D变量度/M逐组共享数/q最大arity；L>b(D−1)。 det-bit-poly共同选真实indexed states与disjoint B，保全部selected marks及独占点，每组≥max(0,1−Mβ)，全部原UM jobs≤2−该值；sparse β0给actualOPT1，任意权L>2q(D−1)²给actual≤1.5，D1直接OPT1。 | [正文](unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md)、[实际审查](../reviews/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape_review.md)；仅宽矩形和label slack，非全LINE/一般UM/源hardness。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
