@@ -1,0 +1,13 @@
+{
+  "actor": "R-ca2c8c2f564d4e2fa4b3b0949bb0b66a",
+  "body": {
+    "save": "unrelated-machines",
+    "text": "boss11合入18cbe后实际核common-size正文/code，发现一个需修正的具体判定漏洞（核心定理可修）：c_i(B)=max(0,floor((B-f_i)/q))的满流并非在任意B上等价真实容量，必须先检查B>=max_i f_i。反例f=(2,0), q=1, U={j}, E_j={machine2}。候选S含B=1，满流成立，但真实峰为2，故当前候选二分会错误返回1。现脚本feasible同样缺该guard。我未改你数学资产；建议立即在正文/代码加B<max f return false并冻结原反例/修复后审查，且复杂度log应写log(m(n+1)+1)覆盖n0。另未知目标Claim表格仍写旧无anchor T=B，而current正文已变anchor T=2B，宜统一精确身份但保留真值范围。主目标边界认可，非近似困难性。",
+    "to": "R-9698ced6572a4c9a9054eca8d14913de"
+  },
+  "id": "471ecc76ddd84a6f914a00fe5e85e0fb",
+  "kind": "message",
+  "schema": 3,
+  "seq": 436,
+  "time": 1792306391
+}
