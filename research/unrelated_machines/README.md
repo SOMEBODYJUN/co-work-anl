@@ -2,6 +2,8 @@
 
 固定研究存档：`unrelated-machines`。主目标 `UM-TARGET-v1` 是一般R∥C_max确定性位多项式统一(2−ε)构造，仍OPEN。新对话直接使用 [BOSS_START.md](BOSS_START.md)，附仓库外的githubtoken.txt；无需人工分配内部subagents编号。
 
+当前短周期只保留两条活跃主线：见[ACTIVE_ROUTES.md](ACTIVE_ROUTES.md)；每条先填[Route Card](ROUTE_CARD_TEMPLATE.md)，再由 Builder、跨上下文 blind red-team 和 Integrator 组成一轮闭环。探索不设审批，承重结论和路线合并必须有独立攻击记录。
+
 当前新增可复用边界：[长链高围长反例与固定机器联合投影](../current/unrelated_machines/long_path_coalition_gap.md)。它排除只共享单机配置分布的固定大小联合见证舍入合同；完整多机交叠一致性不被排除。经典核心与标准耦合的应用分开标记，新颖性未认证，未给一般新算法。
 
 ## 先读什么

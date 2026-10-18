@@ -1,5 +1,9 @@
 # 不相关并行机的当前研究前沿
 
+## 2026-10-18：短周期路线收口
+
+最近两天的新增提交主要是菜单、查询、资源束、Cartesian 和局部三半边界；它们增加了准确障碍，但没有减少一般输入的共同容量、全机整数输出、sound `FAIL⇒OPT>T` 或统一余量/位复杂度义务。为避免继续同质扩展，短周期只保留 `P0-F`（任意输入共同容量桥）和 `R0-R`（真实近二 gap 与 decoder）两条主线；每条固定一名 Builder、一名跨上下文 blind red-team 和一名 Integrator。具体合同见[ACTIVE_ROUTES](ACTIVE_ROUTES.md)和[Route Card 模板](ROUTE_CARD_TEMPLATE.md)。这是运行协议，不是把 `UM-TARGET-v1` 升级为已解。
+
 主目标 `UM-TARGET-v1` 仍OPEN：尚无一般确定性位多项式统一(2−ε)调度算法。
 
 ## 本轮方向审计：有序收敛但曾局部化（2026-10-17）

@@ -1,6 +1,6 @@
 # Boss 研究总览：一般不相关并行机的路线分诊
 
-**快照日期：2026-10-18。** 本页属于研究存档 `unrelated-machines`，是进入研究的短入口，不替代精确 Claim、正文、审查或冻结证据。它的作用是让新 boss 在几分钟内选对承重义务，而不是通读全部资产。
+**快照日期：2026-10-18。** 本页属于研究存档 `unrelated-machines`，是进入研究的短入口，不替代精确 Claim、正文、审查或冻结证据。它的作用是让新 boss 在几分钟内选对承重义务，而不是通读全部资产。短期实际调度见[当前活跃路线](ACTIVE_ROUTES.md)，填写格式见[Route Card 模板](ROUTE_CARD_TEMPLATE.md)。
 
 ## 先看结论
 
@@ -70,6 +70,10 @@ C_{\max}(A(P))\le (2-\varepsilon)\operatorname{OPT}(P).
 4. 开始研究前写清：相比 LST/ST/configuration-LP 新增了什么信息；最小边界输入是什么；若失败会回收什么。
 5. Builder 和 blind red-team 分离。red-team 先只读 Claim 与 `O`，攻击零值、不可用边、单端任务、`m,n` 增长、极大分母、`FAIL` 语义和输出合法性。
 6. 连续两轮只增加样本、换参数或重复同一局部 probe/slot/repair，且没有减少 `O`，就停止该微调并记录失败范围。
+
+## 当前运行协议
+
+提示词原先已经写过 Builder 和 blind red-team，但执行结果显示“写在提示词里”不足以形成独立信息流。短期只保留 `P0-F` 和 `R0-R` 两条主线；每条各有一名 Builder、一名跨上下文 blind attacker 和一名 Integrator。探索不设审批，承重结论、路线合并和 Claim 晋级必须附 attack record。详细合同在[ACTIVE_ROUTES](ACTIVE_ROUTES.md)和[Route Card 模板](ROUTE_CARD_TEMPLATE.md)。
 
 ## 维护规则
 
