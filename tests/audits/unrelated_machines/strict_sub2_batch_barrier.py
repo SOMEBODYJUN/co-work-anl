@@ -27,5 +27,24 @@ def audit_parameters():
     print("PASS k=2,3,7,100; OPT=1 witness; strict-sub-2 batch threshold k+1")
 
 
+def audit_fixed_epsilon():
+    # For any target epsilon, choose k > 1/(8*epsilon).  Then the
+    # existing family starts above 2-epsilon while retaining the k+1 exit barrier.
+    for eps in (F(1, 100), F(1, 50), F(1, 20), F(1, 19)):
+        k = max(2, (1 // (8 * eps)) + 1)
+        a = F(8 * k - 1, 8 * k)
+        # Bad state and optimal witness loads.
+        assert max(loads(k, 0, 0, 0, 0)) == 1 + a > 2 - eps
+        assert loads(k, 1, 1, 2 * k, 2 * k) == (F(1), F(1), F(1))
+        # A first small move, or a big move with fewer than k escorts,
+        # crosses the strict 2 barrier.
+        assert k > 1 / (8 * eps)
+        assert 1 + a + a / k > 2
+        assert max(loads(k, 1, 0, k, 0)) < 2
+        assert max(loads(k, 1, 0, k - 1, 0)) > 2
+    print("PASS fixed-epsilon support corollary for eps=1/100,1/50,1/20,1/19")
+
+
 if __name__ == "__main__":
     audit_parameters()
+    audit_fixed_epsilon()

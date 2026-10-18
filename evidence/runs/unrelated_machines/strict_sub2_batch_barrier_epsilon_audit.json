@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "claim": "UM-STRICT-SUB2-BATCH-BARRIER-v1",
+  "script": "tests/audits/unrelated_machines/strict_sub2_batch_barrier.py",
+  "script_sha256": "2d5729ecbee8d2f0e6002a547e868b88a5b4d28bb484fd279b827793c4b93124",
+  "command": "python3 tests/audits/unrelated_machines/strict_sub2_batch_barrier.py",
+  "output": "PASS k=2,3,7,100; OPT=1 witness; strict-sub-2 batch threshold k+1\nPASS fixed-epsilon support corollary for eps=1/100,1/50,1/20,1/19",
+  "scope": {
+    "base_k": [
+      2,
+      3,
+      7,
+      100
+    ],
+    "fixed_epsilon": [
+      {
+        "epsilon": "1/100",
+        "k": 13
+      },
+      {
+        "epsilon": "1/50",
+        "k": 7
+      },
+      {
+        "epsilon": "1/20",
+        "k": 3
+      },
+      {
+        "epsilon": "1/19",
+        "k": 3
+      }
+    ]
+  },
+  "status": "finite_audit_only"
+}
