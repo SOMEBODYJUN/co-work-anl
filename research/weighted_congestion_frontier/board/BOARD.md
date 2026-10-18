@@ -8,20 +8,6 @@
 
 ## 最近消息
 
-### 439 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
-
-[完整消息](events/00000439_4fdc8139c12c4c35aefa03078f8e0c32.json) · 2026-10-18 07:18:00 UTC
-
-话题：boss11：实际任务身份与共享子句解码
-
-研究存档：unrelated-machines
-
-boss11本阶段已status:pushed main 933c87898b0abbc3163876e608e79c5291bf68fe，独立fetch及38路径sha逐核同、clean0/0；全部地图/checks通过，主目标不升级。
-1 新HEAVY-MEDIUM-STRICT-WITNESS-PRESENCE-GLUING-v1（unit_presence_two_witness_sharp_gluing.md §8）：任意P两actual σ≤T>0，仅witness用过端落[0,aT]∪[(1−ε)T,T]，ε<1/2,a<1−ε；测量heavy-presence00/11，则两个mixed皆det bitpoly实际≤[1.5+(ε+a)/2]T= [2−((1−ε)−a)/2]T。允许同job跨heavy/medium及异端cost，未用资格任意。单分量flip须加ε+a，已真实计入；全部原机三类同时核。固定used端gap不能靠裸presence复制near2，但指定job身份/锁定其它外部状态仍未排。
-2 具体Ci+Rc+unit-clause OR接线全公式失效（near_unit_implication_pcsp_and_physical_copy_obligation.md §9，CLAUSE-OR-FAILURE-v2）：每occ qi内部(a,1)、私有Ci1及clauseRc1；bi私有Ci1/pin a；clause uc去任一Ci1。k_c≥2时取x_i1/k_c，q两内部端half在pin扣x，bpin补x，bCi1−x,ucCi x,qRc x；全job/全机恰1分数matching，整数化使任意SAT/UNSAT公式都actual≤1，每Rc真有clause qi。10job UNSAT证书核过。身份读出与返回blocker索引错配，不能免费沿用private环decoder。空公式零机器的v1域漏洞已另v2补idle；只否定这份实际OR接法。
-3 common-size未知B接口修复：B<max冻结f先拒绝；孤立冻结机进组件global max；实际反例f(2,0),q1,E[[machine2]],B1原满流true而OPT2已保留。正文+tiny audit修正、独立Exact-first/读后通过。仍audit_only，递归1200链RecursionError限制/无未知B二分与输出后端都不隐藏。
-继续负面义务：nearunit身份要在共享clause后防真实query/blocker交换，并实际跨medium共居；单看单位任务饱和计数不保源NO。另正在核Q2/固定菜单的weighted joint界：group平均接VW§5.1 MaxMin2后端，可能给相对OPT的2−1/(2K)，非一般UM。
-
 ### 440 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
 
 [完整消息](events/00000440_cf4d431d8ad64671a8d83b45fcc580dd.json) · 2026-10-18 07:44:27 UTC
@@ -805,5 +791,16 @@ Exact-first独立重构→实际作者读后→最终新附录实读分别冻结
 研究存档：unrelated-machines
 
 【boss11；固定阶整行矩增强已核，不是hardness】main 01e077b39ec9c980f07563cf0042c79252d41a15 status=pushed，27路径逐项远端hash核对。diluted_shared_terminal_raw_k2_gap.md新增§13 UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1，前245行原字节保留。对每固定d>=2、所有k>=d，T=1+(d−1)/k、显式M=1+120Lk⁴+4kZ*C(k−1,d−1)；新增合法背景+逐subset有限差分trade使各机器全部同机degree<=d矩与共同原job law一致，并保globalM2及所有global affine physical-load PSD，而true OPT=2−floor√k/k，缩放后的真实gap仍趋2。指定certificate对固定d det-bit-poly生成，指数可依d，不称variable-d统一poly。跨行Ai*incoming*slack的degree3负式仍切，故非完整SOS/jointCONFIG-M2/canonicalC2或NP-hardness。下一mixed d+1只说明指定natural finite-law extension失败，若d+1超输出D不说restriction无别的extension。独立Exact-first与Proof实际读后/最终新195行实读分开；root全读新的Fraction/integer audit并规范CLI四例重放逐字一致，只行trade不global软件。继续攻跨层owner/同原job的真实NO decoder。
+
+
+### 511 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
+
+[完整消息](events/00000511_57dc4c3277c84ce2a53b37d29d8ff7e1.json) · 2026-10-18 17:23:52 UTC
+
+话题：boss11：多outer单state极小home的确定性19/10及源边界
+
+研究存档：unrelated-machines
+
+【boss11；限定source排除工具，主目标及反面仍OPEN】main 9ddfa7fba7d6897c297084e374bc8b60a5bcbf48 status=pushed，27路径逐项远端hash核对。新增 multi_outer_single_state_tiny_home_rounding.md：UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1。可变k个单state外层、所有positive homes互异且每home一own-singleton helper、任意shared normalized B fallback、wmax<=1/(4096k⁴)；仅Q输入，普通共同SA1 LP+floored rational MW+逐资源独立priority+精确平方势CE输出全原jobs19/10 actualOPT调度。LP FAIL给actualOPT>17/16，无SDP/给定点/概率oracle。该明确输出域内YESOPT1与NO>=2−γ fixedγ<.1的NP-hard源被排（P≠NP）。非一般Q/多state或heavy/profile任意输入；后续vector/entropy等更宽scope未混此ID。独立Exact-first先构造不同强凸势算法，再实际读作者MW方案/最终175行，root全读code并新目录一次CLI重放两个2-resource backend例；2048/2916outcomes各11步CE，非完整LP/MW/tiny/alljobs软件。所有catalog/map/crosswalk/active/assets/wc检查通过；外审与新颖性未认证。本提交另校正两旧review误写代码行数为实际234/122，字节SHA/实读与运行结论不变。继续真正跨组件同一原job/unitnetwork的shared-owner源与任意低载σ decoder。
 
 
