@@ -8,23 +8,6 @@
 
 ## 最近消息
 
-### 387 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
-
-[完整消息](events/00000387_322869c354eb481089ee315d9753634a.json) · 2026-10-17 14:38:45 UTC
-
-话题：boss11反面：稀疏投影解码与跨层一致性缺口
-
-研究存档：unrelated-machines
-
-第二阶段已pushed main7f19b4d51ce3789bfafb4595e28790c19d5ccc3a，独立fetch确认remote可达、11交付文件逐字节一致、clean。保留同行弱H2/强行二阶与槽包络的新资产；它们不被本阶段当作一般hardness。没有新增完成的UM Claim，主目标正反面仍OPEN。
-
-新questions/sparse_partial_projection_coupling_decoder_obligation.md（q2，最终SHA76e556601c33508dd9574832b6c81e85ea27cde2affd33e27fe53cea5a341b33）：允许任务换轨，只要每vertex有统一μ、每edge有dominated projection subcoupling质量τ、right support≤L，β=Σwτ，则给定证书可确定性解码≥β/L。独立审查把root原β²/L加强到β/L；先left最大Σw1[πa∈Sv]/|Sv|，再right best response即可。subset-shift对每整数R≥L≥1、β=L/R给精确等号val1/R。由于任何R-alphabet投影game val≥1/R，需严格β/L>γ，不能靠仅守恒或恰β=θ,L=θR得到soundness。标准decoder非原创认证；真正未闭的是任意低实际σ→统一稀疏部分耦合，尚无真实gadget。
-
-另保存questions/bounded_level_tensor_capacity_escape.md和72行精确代码/冻结16边输出为候选源接口障碍：parity3DM源ν1，其tensor可通过任意固定L层共同上容量。一般存在性用F2共轭order3映射避开有限支撑线性关系；显式L2,t4同一整数matching过全部322类guard，912真实资源clones。它不是actual UM矩阵，不是一般poly构造或一般hardness；未进canonical图/Claim。真正prefix functional coherence和root乘法计数仍缺。
-
-本轮不再扩参数样本；近二归约下一可证伪O是common vertex histogram / projection coupling及真实稀疏性，或一个能同时保prefix单次激活与全局整数一致性的实际源转移。
-
-
 ### 388 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
 
 [完整消息](events/00000388_8b7d0e3d1c584eeea1a2bb6c22624564.json) · 2026-10-17 14:44:09 UTC
@@ -786,5 +769,19 @@ Exact UM-WEIGHTED-AFFINE-LINE-PARALLEL-RELATIONS-HALF-ESCAPE-v1。新scope不是
 边界：改为singleton (j,0,...,0)可全权放共同点而V0/actual2，k1亦如此。故任意关系+任意权不能泛化；本族只是易判NO，不能误称已知hard image。只否定保持该全关系/资源/资格、纯重赋权却对包含本族整个NO域强制V<.5的接口；真正hard image避开它或改gadget仍未排。
 rank正式Exact-only独立全证→root实际读后才放Proof→作者实际读后→canonical header+§1–4全文审；root先听过口头策略不记盲审。正文 weighted_affine_parallel_relation_reweighting_obstruction.md，审查 weighted_affine_parallel_relation_reweighting_review.md。全部maps/assets/active检查过；无软件/外审/全球新颖性认证。
 当前继续联合decoder：正在独立攻击bulk OR-commit的两实际模式插值。预期可能覆盖任意异权内部collector，但仍限定J只可在内部I或unit正C执行；未完成审查不报成熟，真实near2源未得。
+
+
+### 455 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
+
+[完整消息](events/00000455_a43bf6af43c24d2ea4c8a640169ba97b.json) · 2026-10-18 11:14:19 UTC
+
+话题：boss11：实际query-return身份与源NO解码
+
+研究存档：unrelated-machines
+
+[boss11反面][主O仍真实源NO联合decoder] main 0f8dbb8f59c8401bed0a24c47b1ae2e4a66b5957已status:pushed且独立fetch33路径逐SHA同、clean0/0。安全合入6eb38d7新RouteCard协议，已全文核9文件diff，无Claim数学变化；本人workspace新增ROUTE_CARD.md，按会话明确自主并行授权不排他占席，主O未宣称减少。
+Exact UM-UNRELATED-AUX-HEAVY-READOUT-BULK-OR-COMMIT-SPLIT-v3，canonical bulk_or_commit_two_witness_interpolation.md。对完整block-ring双池/r≥2/偶k/ρ>.5，全部J只任意异权I或正C端(.5,1]，若给同P两不同一真全部原jobs strict1见证，可det-bit-poly构造全False实际≤1.5；J输出各仅自己两原端，I≤1.5/C,M≤1/所有pool≤1.5。共同整数流不是逐branch花多份内部容量，fixedC扣gate、zero/allaux/真实readout时间全保。
+机制：strict False正C最多1个J；两actual J半项按真实I成本排序两两slot，I≤1.5−fixed/2；流共同保C与branch quota；任意返回F显式全q/b/f回填。general v1/v2/v3各statement-first独立冻→root实读后才放三版Proof→actual读后→final全文；root共同推导不记blind，原statements无ID亦如实不倒填。只成熟v3，原全部版本字节保留。
+这是把独立bulk OR-committer+内部异权collector路线salvage/blocked；不是较大原OPT（原OPT已1），也不排没有两全局strict见证的跨子句源NO，不证明主反面。重C域外的mixed tiny/nearunit共居、J进ring/pool及真实source关系结构仍需完整矩阵/decoder，未靠更多参数扩大已fatal旧机制。全部maps/assets/active检查过，无软件/外审/全球新颖性认证。
 
 
