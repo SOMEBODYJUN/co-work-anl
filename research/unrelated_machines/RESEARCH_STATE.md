@@ -506,3 +506,5 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 [单标签边际均匀LINE的趋二实际间隙](../current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md)给真LINE反例：每incidence label均匀、各state norm1，但V=1/(R−1)/实际OPT=2−1/(R−1)；共同arityR与R-partite可zero padding保值。此非pairwise-independent原hard image，未给源value/CONFIG新结论/计算困难性。
 
 [宽矩形LINE的重细资源共同避冲突](../current/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md)给出明确额外状态自由度：L>b(D−1)逐组避开旧marks，再以同一B保marks/独占点、每组损失≤Mβ；sparse正点给actual1，L>2q(D−1)²任意权给actual≤1.5。所有固定截距/原jobs保留，不把PI或alphabet可增当rectangle前提。
+
+[两完整actual插值与实际used池端义务](../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)新增同页§6–10 v4：任意P的两actual与指定F原端改派，剩余job双出现配对得逐机件数与负载同τ；bulk J可接全部非pool仍全False≤1.5，任意pool得≤1.5+d/2，真正排near2须已用近unit J_pool身份改变。旧v3前缀/强输出范围保留；未知两witness不免费，不是sourceNO。

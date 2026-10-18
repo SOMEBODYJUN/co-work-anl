@@ -2771,3 +2771,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：state-dependent marks查真实index后才用；不主张所有supports不交；R2等号有V0/actual2，所以严格slack承重；hard-image域未认证，无standing fatal。
 - Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
 - Related Files：[正文](../current/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md)、[审查](../reviews/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape_review.md)及逐SHA原件。
+
+
+## UM-TWO-ACTUAL-INTERPOLATION-BULK-FALSE-ESCAPE-v4：一般两完整见证插值与批量全False的实际池端义务
+
+- Objects / Domain / Quantifiers / Definitions：一般显式P/T≥0/两完整actual≤T/F原任务指定legalν，含zero与空任务；bulk完整原ring双pool/r≥2/偶k/ρ>.5/两不同一真全actual1，任意非负unrelated J接全部非pool或全部原机。
+- Exact Statement / Conclusion：det-bit-poly同一τ：非F仅自身两actual端，逐机件数≤ceil(N_i/2)、负载≤t_i+(L_i0+L_i1+d_i)/2；bulk nonpool J全False≤1.5，任意pool J≤1.5+d/2，near2排除要求两新正pool实际used近unit J且同job实际改派。
+- Assumptions / Dependencies：UM-MODEL-v1与完整两actual/F合法ν/全部非F实际端数据；bulk原backbone定义及两一真witness；标准配对整数流自足，不依旧v3 quota强输出、hardness或有限实验。
+- Scope：给定两完整actual witnesses，未知时只推出存在；不提供普通UM新ratio或源NO。只新§6–10，旧v3前缀8153bytes/限定强输出保原值；新M/C仅≤1.5。pool必要事件不是充分decoder，UM-TARGET-v1仍OPEN。
+- Evidence：typed先冻非pool特化v1，root独立闭合/建议一般域，共同参与不记blind；rank仅v4 Exact独立全证81bd…，root实际读后才放作者Proof d5e…，actual读后2f3b…再正式§6 header+全部§6–10实审abe199…（实际读§1定义依赖，不冒旧v3全文重审）；root各记录实际全文读。原v3前缀SHA df8d61b09dcdce43f7b76d50c8c981e80d91cdcce5a3a28b063e4cd317004a48保持。
+- Counterevidence / Objections：same-dest两occurrence不提前合并，zero任务保留，pool d计q/J已用边非unused；严格/非严格threshold分开；原OPT1/指定False不同，unknownwitness非免费finder，无standing fatal。
+- Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)、[审查](../reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md)及逐SHA原件。

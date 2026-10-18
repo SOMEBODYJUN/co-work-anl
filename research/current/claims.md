@@ -1248,6 +1248,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v2 | primeR≥2/完整tagged-LINE norm1 states含zero、fixed injective intercepts；显式Cartesian标签矩形最小边长L、每line≤b marks、其余点权≤β，D变量度/M逐组共享数/q最大arity；L>b(D−1)。 det-bit-poly共同选真实indexed states与disjoint B，保全部selected marks及独占点，每组≥max(0,1−Mβ)，全部原UM jobs≤2−该值；sparse β0给actualOPT1，任意权L>2q(D−1)²给actual≤1.5，D1直接OPT1。 | [正文](unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md)、[实际审查](../reviews/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape_review.md)；仅宽矩形和label slack，非全LINE/一般UM/源hardness。 |
 
+| UM-TWO-ACTUAL-INTERPOLATION-BULK-FALSE-ESCAPE-v4 | 一般显式P/T≥0/两完整actual≤T/F原任务指定legalν，含zero与空任务；bulk完整原ring双pool/r≥2/偶k/ρ>.5/两不同一真全actual1，任意非负unrelated J接全部非pool或全部原机。 det-bit-poly同一τ：非F仅自身两actual端，逐机件数≤ceil(N_i/2)、负载≤t_i+(L_i0+L_i1+d_i)/2；bulk nonpool J全False≤1.5，任意pool J≤1.5+d/2，near2排除要求两新正pool实际used近unit J且同job实际改派。 | [正文](unrelated_machines/bulk_or_commit_two_witness_interpolation.md)、[实际审查](../reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md)；新§6–10仅两actual插值/指定False逃逸，非源NO/普通UM新ratio。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -118,3 +118,5 @@
 [单标签边际均匀LINE的趋二实际间隙](../../../current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md)显示真实LINE加uniform单边际不够；完整actual精确OPT趋2仍是易显式构造，不是计算困难性。继续审查额外pairwise independence、rectangle freedom与真实源NO解码。
 
 [宽矩形LINE的重细资源共同避冲突](../../../current/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md)关闭宽矩形/足够label slack子域的联合heavy/tiny分配义务；任意state-dependent marks仍保真实index，非全部hard image反证。继续真正源NO decoder与不含宽矩形的PI code结构。
+
+[两完整actual插值与实际used池端义务](../../../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)同页v4关闭全部nonpool J出口（tiny正C/负C/ring/任意I），任意pool域锁定两见证真正用过的近unit J端及同job改派。标准排序舍入非原创/原OPT1，继续跨角色pool高复用与真实源联合decoder。
