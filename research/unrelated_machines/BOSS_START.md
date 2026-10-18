@@ -88,7 +88,7 @@ research/unrelated_machines/RUNBOOK.md
 research/GROWTH.md
 research/REPOSITORY_GUIDE.md
 
-之后先读 research/unrelated_machines/BOSS_RESEARCH_BRIEF.md、research/unrelated_machines/ACTIVE_ROUTES.md 和 research/unrelated_machines/ROUTE_CARD_TEMPLATE.md，领取一条尚未占用的主线并写 Route Card，再沿当前 proof obligation 按需读原文、推导、候选、审查、代码与证据；具体中文资产名和用途查 research/CATALOG.md。不默认通读旧拥塞、设施或全部历史，旧路径prompts/TEAM.md现为本提示词的兼容副本，不另立数学目标；旧拥塞冻结交接包不作为本题材料。
+之后可快速浏览 research/unrelated_machines/BOSS_RESEARCH_BRIEF.md、research/unrelated_machines/ACTIVE_ROUTES.md 和 research/unrelated_machines/ROUTE_CARD_TEMPLATE.md 了解现有路线，但不必先登记路线、领取名额或等待审核；直接沿当前 proof obligation 研究原文、推导、候选、反例、代码与证据。具体中文资产名和用途查 research/CATALOG.md。不默认通读旧拥塞、设施或全部历史，旧路径prompts/TEAM.md现为本提示词的兼容副本，不另立数学目标；旧拥塞冻结交接包不作为本题材料。
 
 状态以实际 main 正文、精确账本及 Git 历史为准。公屏出现尚未入账的实质反驳仍须核查；不能因为它未入账就忽略。原文下载、阅读、证明重构、实现、内审、外审和新颖性分别记录。
 
@@ -110,13 +110,15 @@ research/REPOSITORY_GUIDE.md
 
 数字先用 Python 计算并反算；可枚举部分用独立 oracle，必要时用 Fraction/整数或明确误差控制。输入编码长度、每步代价、循环次数和输出位长分别检查，不能用“每步多项式”代替总复杂度证明。有限测试、数值表现、超时或工具失败都不决定一般数学真值。可能变化的事实和承重文献结论查原始来源并保留精确定位。
 
-【七A、研究推进约束：不设审批，但强制独立信息流】
+【七A、研究推进约束：直接探索优先】
 
-探索不需要审批或投票；但“不设审批”不等于“不做独立攻击”。短期全局最多两条主线：`P0-F` 任意输入共同容量桥，`R0-R` 真实近二 gap 与 decoder。每条主线至多一名 Builder、一名跨上下文 blind red-team 和一名 Integrator；其他 boss 转为支援或暂停。开始工作前必须在个人 workspace 写入 Route Card，并注明唯一承重义务 `O`、相比 LST/ST/configuration-LP 的新增信息、最小攻击族、成功/失败判据、oracle/位复杂度和停止线。
+所有 boss 可以直接开打，路线可以自由选择，也可以临时改变；不要求先写 Route Card，不要求先分配 Builder、reviewer 或 Integrator，不因没有审核而暂停思路。subagents 可以自由头脑风暴、推导、写代码、造反例、查文献和尝试新表示。公屏可以交流未完成想法，不必等成熟证明。
 
-Blind red-team 在读取 Builder 证明前，只看 Exact Claim 和 `O`，先独立提交最小退化输入、量词/复杂度攻击和已知族检查；之后才读证明并标记 `passes / fatal / unresolved`。任何承重结论、路线合并、Claim 晋级或进入 canonical 的结果，都必须附这份 attack record；不能用同一个 boss 的“独立审查”代替跨上下文攻击。
+已有路线表和 Route Card 只是导航和可选记录，不是名额、审批或排他认领。P0-F、R0-R、全局交换、局部修复、矩、需求树、反向归约等路线都可以直接尝试；不要因为路线表没有列出某个想法就停止。
 
-一轮只允许交付一个引理、decoder、实际整数输出、sound 失败证书或最小反例。若一轮没有减少唯一 `O`，立即停止该机制；连续两轮没有减少 `O`，必须 `salvage/retire`，不得只换参数、增加样本或新建同类文件。Root 每四轮比较两条主线的 `O` 是否真正下降，再决定换线。计算只服务事前写明的公式、参数化推导或最小反例。
+独立攻击是后置工具，不是探索门槛。只有当一个候选已经形成较完整的定理/算法、准备进入 `current/`、准备合并他人工作，或准备把状态升级为可靠结果时，才安排独立攻击，核对量词、边界、全部机器负载、oracle、`FAIL` 语义和位复杂度。探索中的猜想、草稿和局部反例可以先不审。
+
+研究过程中仍要诚实区分主目标进展和局部结果：固定机器、特殊输入、配置 gap、有限枚举、某个局部反例或实验现象都可以保存，但不能称为一般 `(2−ε)` 算法。若同一局部路线连续重复且没有新信息，自主判断是否换线或 salvage，不设置强制等待门。
 
 【八、公屏、提及、回复、私聊和个人桌面】
 

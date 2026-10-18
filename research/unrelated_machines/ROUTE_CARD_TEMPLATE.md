@@ -1,6 +1,6 @@
 # Route Card 模板：`UM-TARGET-v1`
 
-这是研究存档 `unrelated-machines` 的短期运行模板。它不是审批表；探索可以先做，但任何路线进入 canonical、跨线合并或声称减少主目标义务前，必须有一张 Route Card 和一份跨上下文 blind attack。
+这是研究存档 `unrelated-machines` 的可选整理模板。探索可以完全不填；当一个想法已经形成较完整候选、准备进入 canonical、跨线合并或升级状态时，再用它整理精确身份和攻击范围。
 
 ## 必填字段
 
@@ -32,7 +32,7 @@ oracle、阈值搜索和位复杂度假设:
 
 固定一个严格小于 `2` 的目标比例，构造真实调度的 YES/NO 族。NO 侧必须同时压低所有中间 quota 层，不能只压最低或最高层；YES 侧必须保持完整整数可行性。还必须给出：任意低于目标比例的真实调度都能在位多项式时间解码为源问题的 YES 解。若中间层逃逸、复制使 NO 变 YES，或低负载调度不能解码，立即登记为障碍并停止扩大参数。
 
-## Blind attack 顺序
+## 成熟候选的可选 Blind attack 顺序
 
 在读取 Builder 的证明前，blind attacker 必须独立提交三项：
 

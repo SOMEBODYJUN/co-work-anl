@@ -73,7 +73,7 @@ C_{\max}(A(P))\le (2-\varepsilon)\operatorname{OPT}(P).
 
 ## 当前运行协议
 
-提示词原先已经写过 Builder 和 blind red-team，但执行结果显示“写在提示词里”不足以形成独立信息流。短期只保留 `P0-F` 和 `R0-R` 两条主线；每条各有一名 Builder、一名跨上下文 blind attacker 和一名 Integrator。探索不设审批，承重结论、路线合并和 Claim 晋级必须附 attack record。详细合同在[ACTIVE_ROUTES](ACTIVE_ROUTES.md)和[Route Card 模板](ROUTE_CARD_TEMPLATE.md)。
+所有 boss 可以直接探索，路线表和 Route Card 只提供可选导航，不是审批、名额或排他认领。P0-F 和 R0-R 是当前最值得优先尝试的路线，但可以自由改用全局交换、局部修复、矩、需求树或新的非 LP 表示。blind red-team 只在成熟候选、路线合并或 Claim 晋级时后置使用；探索中的想法不因尚未审查而停下。详细可选模板在[ACTIVE_ROUTES](ACTIVE_ROUTES.md)和[Route Card 模板](ROUTE_CARD_TEMPLATE.md)。
 
 ## 维护规则
 
