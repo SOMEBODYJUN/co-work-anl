@@ -1,6 +1,6 @@
 # 单外层完整 flat 的两种输入合同与实际审查
 
-2026-10-18，boss11。当前374行正文SHA256 `8c5fcf273f9cd99a7b31b6b082a0880fc7ce186a0771cf600241eb07cc86e221`；只有两个正式结果：给定 primitive-SA1 点的 epsilon²/4 舍入，以及只输入 typed Q 的11次普通LP查询13/8算法。软件实现均为 none，标准有理LP只作已付费的数学算法规格。
+2026-10-18，boss11。该次冻结374行正文SHA256 `8c5fcf273f9cd99a7b31b6b082a0880fc7ce186a0771cf600241eb07cc86e221`；只有两个正式结果：给定 primitive-SA1 点的 epsilon²/4 舍入，以及只输入 typed Q 的11次普通LP查询13/8算法。软件实现均为 none，标准有理LP只作已付费的数学算法规格。
 
 ## 实际顺序与独立性
 
@@ -37,3 +37,8 @@ FAIL仅为普通有理LP的精确不可行，故V<epsilon；feasible下端l可�
 | history/source/notes/unrelated_machines/sol_one_outer_13_8_exact_first_reconstruction.md | 399c6b29f54b1c0f49ee21e3ef64552edc1fec21fe09579a4dd91eecb5fe710f | 399c6b29f54b1c0f49ee21e3ef64552edc1fec21fe09579a4dd91eecb5fe710f | original bytes |
 | history/source/notes/unrelated_machines/sol_one_outer_13_8_author_read_after.md | 2064056e2cbd657f45238b0249516558472a3567568074b4aedba3e5c3bf88d9 | 2064056e2cbd657f45238b0249516558472a3567568074b4aedba3e5c3bf88d9 | original bytes |
 | history/source/notes/unrelated_machines/sol_single_outer_canonical_final_post_read_v2.md | 81491b420b5054782a48e085109ddc510b03780d473cbbc84aa6e783acdb6eb9 | 81491b420b5054782a48e085109ddc510b03780d473cbbc84aa6e783acdb6eb9 | original bytes |
+
+
+## 新增接口的范围分开登记
+
+当前702行正文SHA256 d2b004973e1d263d661623458c6d5c28f7b1e3fa129a8a38b8aa5ebb12a45de4，原374行/25741bytes前缀8c5fcf…逐字不变。新增§13全local-law raw K2同点反例及§14 raw S3充分提取由[新审查](raw_k2_canonical_pullback_and_sa3_repair_review.md)单独覆盖；本旧审查不追认为审过新合同，旧两个算法身份及软件none不升级。

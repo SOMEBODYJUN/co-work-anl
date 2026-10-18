@@ -136,3 +136,5 @@
 [单外层完整flat算法](../../../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)与[K2路径证书](../../../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)：单outer且每正home有私有singleton helper的完整flat有11次普通LP查询的13/8算法；多个outer未覆盖。相邻D_+路径另在给定raw K2的degree4/M2/逐机CONFIG first-pair/global affine load localizer合同下双向保全旧矩；仅证书转换，无finder或强gap。
 
 [匿名token与原身份矩](../../../current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)：匿名同菜单token形式lift一般保M1，却有aggregate M2完全无原身份M2扩展；原任务SOS强迫整个head×affine-context容量块。13机context actualOPT1，非原任务gap/near2 hardness或所有points不可行。
+
+[rawK2边界与S3修复](../../../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)：18m17j族每机full-local-law/globalM2/全raw-affine容量仍不保direct canonical SA1，同点负值跨三机而actualOPT1；另rawS3的显式global literal-row LP必要于真实T且足以给canonical点。两接口严格分开，非实际gap/一般算法或hardness。

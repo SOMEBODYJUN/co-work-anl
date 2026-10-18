@@ -3259,3 +3259,29 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：M1不能升M2；异context块不可单独PSD；原input OPT1且可换point。当前范围无standing fatal。
 - Status：complete scoped algebraic proof; Exact-first reconstruction and actual final appendix reading; finite exact audit only; novelty unverified；主目标/反面OPEN。
 - Related Files：[正文§7](../current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)、[新审查](../reviews/unrelated_machines/anonymous_token_label_lift_and_nonextension_review.md)及其原件/代码/证据。
+
+
+## UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1
+
+- ID/version / Objects / Domain / Definitions：UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1；固定18m17j34端normalized-flat族Qc，0<c<1有理、T1+c、epsilon1−c；完整共同Boolean/onehot degree4/M2、全部raw-affine物理localizers及每行完整legal CONFIG law共享全部本地矩；每行≤3端。
+- Quantifiers / Exact Statement / Conclusion：对每个c可detbitpoly生成指定强物理证书，所有每机full-row laws仍不能保证direct A=a,Z=aE的同点plainSA1：负claim-state=-1/160、quality-state=-c/160；实际OPT1。
+- Assumptions：所有共同表/全部原jobs按正文定义；无复杂度假设、真实global law或未知oracle。
+- Dependencies：UM-MODEL-v1, UM-FLAT-RAW-K2-FULL-LOCAL-LAW-PULLBACK-DOMAIN-v1, UM-FLAT-RAW-K2-FINITE-RATIONAL-CERTIFICATE-DOMAIN-v1；页内自足PSD/SOS/有限矩或literal分解与标准rationalLP。
+- Scope：只反对给定点指定map，非actualOPTgap/改点不可能/一般算法或hardness；全globaltriple positivity会切该点。
+- Evidence：先独立Exact重构、root实际全文读后释放Proof、实际读后与最终新增两节实读；只一量词句后作定向核对。
+- Counterevidence / Objections：原实例OPT1且有别的R点，旧14m同机triple缺口已透明保留。 当前精确范围无standing fatal。
+- Status：complete scoped parametric counterexample; independent Exact-first and actual final reading; finite audit only; novelty unverified；主目标及反面OPEN。
+- Related Files：[正文§13–14](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)、[实际审查](../reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md)及其来源/证据。
+
+
+## UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1
+
+- ID/version / Objects / Domain / Definitions：UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1；任意显式normalized-flat Q，全部zero/inactive/indexed/unused finite endpoints；1<=T<2；共同完整有理degree4 L，全部原boxes/raw slack/unit resource cap1×≤3 raw literals及Boolean/onehot允许乘子。目标plain共同primitive-SA1精确定义。
+- Quantifiers / Exact Statement / Conclusion：每真实T-schedule给S3 Dirac点；显式rationalLP infeasible=>OPT>T；每给定S3点的指定product pullback满足完整R_(2−T) plainSA1，若另给同点rawM2则另保canonicalM1；构建/求解/提取均totalbitpoly，无PSDfinder。
+- Assumptions：所有共同表/全部原jobs按正文定义；无复杂度假设、真实global law或未知oracle。
+- Dependencies：UM-MODEL-v1, UM-FLAT-RAW-SA3-POINT-DOMAIN-v1；页内自足PSD/SOS/有限矩或literal分解与标准rationalLP。
+- Scope：仅necessary LP与充分point接口，非反向actual可行性/全部group rounding/一般UM；S3与K2无自动包含关系，optionalPSD不带exact SDPfinder；不称层数最小。
+- Evidence：先独立Exact重构、root实际全文读后释放Proof、实际读后与最终新增两节实读；只一量词句后作定向核对。
+- Counterevidence / Objections：Source cap1、所有三literal乘子、normalization与共同点不可省；未宣称S3已含PSD。 当前精确范围无standing fatal。
+- Status：complete scoped same-point transfer proof; independent Exact-first and actual final reading; software none; novelty unverified；主目标及反面OPEN。
+- Related Files：[正文§13–14](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)、[实际审查](../reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md)及其来源/证据。
