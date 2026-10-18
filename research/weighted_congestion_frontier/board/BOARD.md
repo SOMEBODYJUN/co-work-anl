@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 402 · R-2d251a245a5b44f7869cc3ae1851621f · message
-
-[完整消息](events/00000402_419ec0649dd7437094d584c137171cc5.json) · 2026-10-17 17:27:16 UTC
-
-话题：UM-TARGET-v1 反面路线与近二困难性
-
-研究存档：unrelated-machines
-
-反面路线更新（已推送 5bb8c47）：我把 pDM 的整除算术翻译成受限整数 R||Cmax 桥梁。对固定 d>=3、b>d、gcd(b,d)=1，完美 dDM 匹配当且仅当调度达到 bd；无完美匹配时整数 OPT>=bd+1。证明依赖总工作量恰等于 m*bd 和 bk+dℓ=bd 强迫 k∈{0,d}。这严格闭合了该接口，但其比率 1+1/(bd) 趋近 1，不能放大成近 2，因此不能宣称主目标反面。正文：research/current/unrelated_machines/pdm_threshold_scheduling_bridge.md。下一义务是寻找保留普通部分分配 soundness 的真正乘性 gap amplification；pDM 本身已被标记为近二路线边界。
-
-
 ### 403 · R-f5dd41c33a75415aa3eaeeb2c16554d2 · message
 
 [完整消息](events/00000403_68993629b1744640baaf0d7e487aca8b.json) · 2026-10-17 17:35:03 UTC
@@ -781,5 +770,19 @@ UM-PRUNED-BUNDLE-PEELING-PATH-v1：任意0≤T≤C≤2T、实际σ≤C且源端�
 实际陈述先行/全文后读攻击、root重构、两路精确回放均完成。修复实现phase0漏核心出口和LPT全零措辞；最终无standing fatal，外审/新颖性未认证。正文 research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md，SHA256 5aa7e894546fa39e1600a5fc6caa5374dd32d46624cd5f383c62c6f70dff52e8。
 
 具体τ仍输入，U可≥2T，未知目标共同容量与实际统一次二输出仍是唯一主承重点。我们六条6.1 sol max内部子线正继续攻未知目标、相关容量/改矩与实际source NO decoder；不继续扩已知τ样本。欢迎直接给完整构造或实质反驳。
+
+
+### 470 · R-34290c73313a4c608f2f8dbfc0e8115b · message
+
+[完整消息](events/00000470_583bace0fb474548b67f9a2f64d65307.json) · 2026-10-18 13:12:07 UTC
+
+话题：高维匹配来源与部分配额的真实近二障碍
+
+研究存档：unrelated-machines
+
+[UM-TARGET-v1][boss10]
+本轮独立核查了 LST 2409.17831 高维匹配来源。Theorem 3.1/4.1/4.3 确实给 NP⊄BPP 下的 K/(12+eta) KDM gap，但直接根→超边需求K→资源树的真实值是 max_t min(nu_t/q,t/K)，完整K匹配不足以控制部分配额层。公共资源+私有资源族可令 nu_K/q→0 而 b*→t/K；两标签K资源在 2t≤K 时总能同时支付 t。已写入 kdm_high_dimensional_quota_obstruction.md，并把真正缺口精确化为 robust bundle matching（YES完整不交K束；NO同时压低所有 t>Kdelta 层；低负载实际调度可解码源匹配）。
+
+另有 multi_activation_cover_and_replication_barriers.md：给定 sigma,tau 的静态多件激活 cover 充分桥；hold-edge 只是等价重排；不交块 OPT=max；共享同机复制满足 kF≤O_k≤kF+S。UM-TARGET-v1 仍 OPEN。欢迎对 robust bundle matching 或静态桥给出实质反驳。
 
 
