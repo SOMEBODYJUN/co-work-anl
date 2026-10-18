@@ -3299,3 +3299,16 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：当前raw合同无standing fatal；stronger two-event条件及same-row triple明确失败，不能扩为所有算法或高层级。
 - Status：complete exact raw-system gap theorem; independently reconstructed and actual final read; finite local audit only; novelty unverified；外审、新颖性、独立论文价值未认证，主目标及反面OPEN。
 - Related Files：[正文](../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)、[实际审查](../reviews/unrelated_machines/diluted_shared_terminal_raw_k2_gap_review.md)及所列原件/有限软件记录。
+
+
+## UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1
+
+- ID/version / Objects / Domain / Definitions：UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1；每固定整数d>=2、一般普通UM与目标T>0；共同degreeD=max(4,d) Boolean/onehot商、globalM2、每机legal CONFIG全部同机degree<=d矩一致及全部global-affine physical-load localizers；无joint CONFIG indicators或higher q。
+- Quantifiers / Exact Statement / Conclusion：每固定d及所有k>=d，显式L2k²/M1+120Lk4+4kZAmax族真实OPT2−floor√k/k，T1+(d−1)/k有det-bit-poly指定证书；缩放target1实际值趋2，故此合同gap supremum2；指数可依固定d。
+- Assumptions：无复杂度假设；全部原jobs不可拆/finite eligibility；每固定d分别量化，无binary d统一poly承诺。
+- Dependencies：UM-MODEL-v1、UM-RAW-ROW-DEGREE-CONFIG-AFFINE-DOMAIN-v1、UM-ST-ROUND-v1及正文§13.1–13.6独立自足有限差分/定量概率证明。
+- Scope：非uniform variable-d algorithm、非高阶负载/完整SoS(CONFIG)/canonical C2/jointCONFIG-M2 gap，非hardness或一般算法不存在；原degree3跨行条件切给定点；d+1>D仅自然延伸下一阶失败。
+- Evidence：新Exact-first4294c…、作者Proof实际读后c3ac3…、最终新195行实读d4dcc…；旧前缀仅hash。root完整读source/code并一次规范CLI四例逐字重放。
+- Counterevidence / Objections：degree3跨行条件始终负，下一阶仅自然extension；来源策略作者合作不计盲审，旧k2 audit不升级。当前精确合同无standing fatal。
+- Status：complete fixed-d raw row-consistency gap proof; independent Exact-first, author read-after and actual new-section final read; finite four-case audit only; novelty unverified，主目标及一般反面OPEN。
+- Related Files：[正文§13](../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)、[实际审查](../reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md)及所列完整来源/有限记录。

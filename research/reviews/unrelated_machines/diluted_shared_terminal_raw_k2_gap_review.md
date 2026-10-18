@@ -1,6 +1,6 @@
 # 稀释共享终端 raw K2 真实锐 gap：实际审查及软件范围
 
-2026-10-18，boss11。正式身份 UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1；最终正文245行/19100bytes，SHA256 7128241668e8f7b5abe014775f9d0d3b4f59a5bfecbb2f1aef8e357272bb01b4。该系统的一般 gap 上确界为2，不是一般UM的计算困难性。
+2026-10-18，boss11。正式身份 UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1；该次冻结最终正文245行/19100bytes，SHA256 7128241668e8f7b5abe014775f9d0d3b4f59a5bfecbb2f1aef8e357272bb01b4。该系统的一般 gap 上确界为2，不是一般UM的计算困难性。
 
 ## 独立重构、作者证明及最终文本
 
@@ -41,3 +41,8 @@ root实际完整读代码，SHA4da7af…原字节复制到规范路径。先用�
 | history/source/notes/unrelated_machines/sol_identity_coupling_diluted_shared_terminal_raw_k2_final_actual_read.md.gz | 372fbef7e8313285a5b10ebb44ff40af4a8782916fe9ca3bf4e9cd91dcb7909f | 1ffa72b0838dac59855ddf39a90b4da540329b3f973cf67c5b7a031fc8011836 | lossless gzip |
 
 代码：tests/audits/unrelated_machines/diluted_shared_terminal_raw_k2_finite_audit.py。冻结运行：evidence/runs/unrelated_machines/diluted_shared_terminal_raw_k2_local_frame_audit.json, evidence/runs/unrelated_machines/diluted_shared_terminal_raw_k2_root_replay_scope.json。
+
+
+## 后续追加的审查范围
+
+当前440行正文SHA fb705e62ae3344a24c95ca962d4fa2cfd83dbc57422eb59fd6285713e29a121b；本次原245行/19100bytes前缀712824…逐字不变。新增§13的固定d整行一致性gap由[另一审查](diluted_shared_terminal_row_degree_gap_review.md)覆盖；本旧v1审查不追认已审新M/T/D或新软件。

@@ -12831,6 +12831,43 @@
         "evidence/runs/unrelated_machines/diluted_shared_terminal_raw_k2_root_replay_scope.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-RAW-ROW-DEGREE-CONFIG-AFFINE-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "固定整行阶数与全局仿射负载证书域",
+      "detail": "每固定整数d>=2、一般普通UM与目标T>0；共同degreeD=max(4,d) Boolean/onehot商、globalM2、每机legal CONFIG全部同机degree<=d矩一致及全部global-affine physical-load localizers；无joint CONFIG indicators或higher q。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md"
+      ],
+      "status": "explicit fixed-d domain"
+    },
+    {
+      "id": "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意固定整行矩阶数仍有真实锐二间隙",
+      "detail": "每固定d及所有k>=d，显式L2k²/M1+120Lk4+4kZAmax族真实OPT2−floor√k/k，T1+(d−1)/k有det-bit-poly指定证书；缩放target1实际值趋2，故此合同gap supremum2；指数可依固定d。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "research/reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md"
+      ],
+      "status": "complete fixed-d raw row-consistency gap proof; independent Exact-first, author read-after and actual new-section final read; finite four-case audit only; novelty unverified"
+    },
+    {
+      "id": "AUDIT-DILUTED-ROW-DEGREE-TRADE-FOUR-CASES-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "固定行阶数trade的四例精确核验",
+      "detail": "Four explicit (d,k), all row monomials <=d only, not global/general proof.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "tests/audits/unrelated_machines/diluted_shared_terminal_row_degree_trade_audit.py",
+        "evidence/runs/unrelated_machines/diluted_row_degree_trade_four_cases_audit.json",
+        "evidence/runs/unrelated_machines/diluted_row_degree_trade_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -31479,6 +31516,55 @@
       "refs": [
         "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
         "research/reviews/unrelated_machines/diluted_shared_terminal_raw_k2_gap_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-RAW-ROW-DEGREE-CONFIG-AFFINE-DOMAIN-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "statement": "每固定d及所有k>=d，显式L2k²/M1+120Lk4+4kZAmax族真实OPT2−floor√k/k，T1+(d−1)/k有det-bit-poly指定证书；缩放target1实际值趋2，故此合同gap supremum2；指数可依固定d。页内完整原矩计数/OPT、subset插值非负trade及所有global contexts定量证明，有限run不作一般前提。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "research/reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "CHECK-UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-DILUTED-ROW-DEGREE-TRADE-FOUR-CASES-v1"
+      ],
+      "conclusion": "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "statement": "仅四例整行矩等式/非负legalCFG/purehome/自然nextdegree；非allcontexts。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "tests/audits/unrelated_machines/diluted_shared_terminal_row_degree_trade_audit.py",
+        "evidence/runs/unrelated_machines/diluted_row_degree_trade_four_cases_audit.json",
+        "evidence/runs/unrelated_machines/diluted_row_degree_trade_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "非uniform variable-d algorithm、非高阶负载/完整SoS(CONFIG)/canonical C2/jointCONFIG-M2 gap，非hardness或一般算法不存在；原degree3跨行条件切给定点；d+1>D仅自然延伸下一阶失败。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "research/reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md"
       ],
       "status": "scope limitation"
     }

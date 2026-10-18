@@ -503,3 +503,5 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [物理矩到canonical的准确边界](single_outer_shared_selector_rounding_and_hardness_source_boundary.md)（§13–14）：18m17j族每机full-local-law/globalM2/全raw-affine容量仍不保direct canonical SA1，同点负值跨三机而actualOPT1；另rawS3的显式global literal-row LP必要于真实T且足以给canonical点。两接口严格分开，非实际gap/一般算法或hardness。
 
 [raw K2真实锐二倍间隙](diluted_shared_terminal_raw_k2_gap.md)：全部同机CONFIG first/pair+globalM2+所有affine physical-load localizers仍有真实gap上确界2；OPT精确2−floor√k/k，rare-H/background-Q定量支配付清全global contexts。更强条件可切，不是hardness；一般反面OPEN。
+
+[固定阶整行一致性的真实gap](diluted_shared_terminal_raw_k2_gap.md)：新§13：每固定d，整行全部<=d矩与globalM2及全部affine-load仍有真实gap上确界2；subset finite-difference trade与明确poly背景吸收，非higher-load/共同CONFIG-M2或hardness。

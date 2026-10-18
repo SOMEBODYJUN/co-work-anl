@@ -243,3 +243,198 @@ E 个 finite endpoints 的次数至多4单项式有 O(E^4) 个。home 指示可�
 该局部 audit 代码为 `sol_diluted_shared_terminal_raw_k2_finite_audit.py`，SHA256 `4da7af092c02ff53ff41b041d78099f23f23fea28f6021222f140e48911f362c`；输出 JSON SHA256 `0b2b750dbce6a49f2b027731b868eb2f709f93b1e573d3948edf07bf0eb392e6`。代码通过 --output 指定唯一输出文件，可以在新的目录重放；它是有限作者核，不是一般证书生成器或新算法软件的实现。本文不以 hash 替代实际全文审读，也不代签尚未读过的历史来源。
 
 root 的实际重放命令为 `python3 tests/audits/unrelated_machines/diluted_shared_terminal_raw_k2_finite_audit.py --output <全新scratch文件>`；运行结果与作者原 JSON 逐字相同。具体 argv、目录、代码及输出 hash 保留在 root replay scope。此 k=2 例本身的 OPT/T0=1，不能把它包装成有限实例已经数值显示近二；任意大 k 的锐界由前文解析证明。
+
+## 13. 固定阶整行 CONFIG 矩一致性仍有锐二倍间隙
+
+正式 Claim ID：`UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1`。
+
+本节以新 Claim 增强整行一致性，前245行 v1 字节原样保留。旧 Claim 的参数、证书与审查记录均不改。新结论保持 global affine load localizers，增强的是每台机器的整行矩一致性；它没有增强跨行事件容量或共同配置选择变量的合同。以下全部算法与位复杂度针对每个固定 d，指数可依赖 d，不主张 d 作为二进制输入时的统一多项式界。
+
+### 13.1 精确量词、原矩阵与结论
+
+固定任意整数 d>=2。对每个整数 k>=d 定义
+
+    s=d-1,
+    Z=sum_(u=0)^s binom(k,u),
+    Amax=binom(k-1,s),
+    L=2k^2,
+    M=1+120Lk^4+4k Z Amax,
+    a=1/M,
+    T=1+s/k,
+    D=max(4,d).
+
+这里 1<=s<=k-1，所以1<T<2。新普通 UM 输入记为 P_d,k；它的组件数 M 与旧 v1 不同。
+
+有 M 个组件。每个 i∈[M] 有 U_i、B_i,b（b∈[L]）及 Z_i,t（t∈[k]），所有类型与不同下标表示物理不同的原机器。全部原 jobs 和全部有限处理时间为：
+
+| 原 job | 全部有限端点与时间 |
+|---|---|
+| 单个 h | 每个 U_i，时间1 |
+| f_i,j，i∈[M],j∈[k] | U_i 上时间1/k；每个 B_i,b 上时间1 |
+| e_i,b,ell，i∈[M],b∈[L],ell∈[k] | B_i,b 上时间1/k；每个 Z_i,t 上时间1 |
+
+未列端点为 infinity。每个原 job 独立、不可分割且须恰好执行一次，没有丢弃未选中组件的 jobs、拆分 job 或引入 good-state/source oracle。机器数、job数、finite endpoint数分别为
+
+    M(1+L+k),
+    1+Mk(1+L),
+    E=M+Mk(1+L)+MLk(1+k).
+
+结论如下。
+
+- 真实最优值恰为 OPT(P_d,k)=2-floor(sqrt(k))/k。
+- 第13.2节的增强 raw 系统在目标 T 有第13.3—13.4节的显式有理证书。
+- 对每个固定 d，全部 degree-D 矩、机器 CONFIG 列表与 global affine-localizer 矩阵可在显式展开输入的总位多项式时间和总输出位长内生成。
+- 乘以 k/(k+s) 后得到目标一的证书，真实最优为 (2-floor(sqrt(k))/k)/(1+s/k)，固定 d、k趋于无穷时趋近2。因此本节精确合同在普通 UM 上的 gap 上确界仍为2。
+
+这不构成近二计算困难性结论，也没有精确求解一般 SDP/CONFIG 可行性的算法断言。
+
+### 13.2 增强 raw 合同
+
+对每个原 finite endpoint 使用 Boolean 变量 x_j,v。F 是次数至多 D 的共同线性泛函，F(1)=1。Boolean关系 x^2=x 与同 job 不同端点的 xx'=0 各乘任意次数至多 D-2 的单项式；原 job 的 sum_v x_j,v=1 乘任意次数至多 D-1 的单项式。所有等式均在次数 D 内。
+
+要求共同 M2 PSD，即以次数至多2单项式索引、条目为 F(pq) 的矩阵 PSD。每台原机器有完整 CONFIG(T) 分布，其每个同机 endpoint 单项式、总次数至多 d 的矩都与 F 一致。这包括全部 mixed incoming-unit/home、全部 pure-home、重复因子及多 unit 的零矩；不是只匹配 first/pair。
+
+每台原机器 v 还要求
+
+    F[(T-load_v)q^2]>=0
+
+对涉及整个输入全部 endpoint 变量的任意 affine q 成立。只要求 affine q；没有更高次 q 或乘积事件 load localizer。也没有 export<=activation、inactive-all-home，或共同 Boolean 配置变量 Lambda_C 及其全次数 links。更强的这些合同不在本 Claim 内。
+
+### 13.3 完整有限法则
+
+均匀选择 I∈[M]，将 h 放到 U_I。条件于 I，各组件独立；组件 I 使用 H，其余组件使用 Qnew。
+
+H：均匀选 injection sigma:[k]->[L]，把每个 f_i,j 放在 B_i,sigma(j)，全部 e jobs 留 home。
+
+先定义 Qold：概率1/2全 f/e 留 home；概率1/4均匀选(j,b)，仅把 f_i,j 放到 B_i,b，并把该 B 的全部 k 个 e jobs 用均匀 bijection 放到 k 台终端，其余 jobs home；概率1/4均匀选(b,ell,t)，仅把 e_i,b,ell 放到 Z_i,t，其余 jobs home。
+
+再定义 Rfill：均匀选 b∈[L]；从全部 Z 个大小至多 s 的具体子集 S⊆[k]中均匀选 S；公平选择 unit/no-unit。unit 情形再均匀选 j 并把 f_i,j 放到 B_i,b，其余 f home；no-unit 情形全部 f home。该 B 恰保留 ell∈S 的 e jobs，其余 k-|S| 个原 e jobs 以均匀 injection 放到不同终端；其他 B 的 e jobs 全 home。
+
+令 Qnew=(Qold+Rfill)/2，令 F(p)=E[p] 并限制到次数 D。每个样本都是全部原 jobs 的完整赋值。Qold 的负载至多1，Rfill 的负载至多 T；H 在 U/终端的负载至多1，B 负载为1或2。所有原 job 商关系逐点成立，M2 PSD 直接来自平方的期望。完整有限法则也定义了更高次数的自然矩延伸，但本文没有据此声称更强 load/SOS 合同。
+
+真实最优独立于这个法则。实际目标 t<2 时，h所在U至少送出 r=k-floor(k(t-1)) 个原 f jobs，占用不同 B；每个被占用 B 又至少送出 r 个 e-unit，原终端容量给 r^2<=k。因此 t>=2-floor(sqrt(k))/k。反向完整 schedule 选 u=floor(sqrt(k)) 个 f 送往 u 个 B，再由各 B 送出 u 个 e，使用 u^2 个互异终端，其余所有组件所有原 jobs home，达到同一负载。这证明精确 OPT。
+
+### 13.4 逐具体 subset 的合法 CONFIG trade
+
+对每个 |S|<=s 的具体子集定义
+
+    b_S=(-1)^(s-|S|)binom(k-|S|-1,s-|S|).
+
+任意次数至多 s 的 multilinear f 满足
+
+    f(1,...,1)=sum_(|S|<=s) b_S f(1_S).                  (13.1)
+
+证明：有限差分给 f(1)=sum_(|A|<=s)Delta_A f(0)，而 Delta_A f(0)=sum_(S⊆A)(-1)^(|A|-|S|)f(1_S)。合并每个 S 的系数得到
+
+    sum_(u=0)^(s-|S|)(-1)^u binom(k-|S|,u)
+      =(-1)^(s-|S|)binom(k-|S|-1,s-|S|).
+
+尤其 sum_S b_S=1。若 |S|=t，则
+
+    |b_S|/Amax=(s)_t/(k-1)_t<=1,                       (13.2)
+
+t=0时空比值为1。
+
+固定一台 B。记 R_j 为原 incoming f-unit 指示，Y_ell 为原 e-home 指示。在 at-most-one-unit 的行状态空间内，任意次数至多 d 的 endpoint 多项式可逐点化为
+
+    p(R,Y)=p0(Y)+sum_j R_j p_j(Y),  deg p_j<=d-1=s.
+
+令 Cj,S 表示 incoming原 f label j 及 home子集S，C0,S表示无unit及home子集S。由(13.1)，
+
+    p(Cj,all)=p(C0,all)
+              +sum_(|S|<=s)b_S[p(Cj,S)-p(C0,S)].        (13.3)
+
+pure-home部分在方括号中完全相消，不需对 p0 的 d 次部分插值。Boolean重复因子及两个不同unit的乘积也由同一逐点化简覆盖。
+
+令 rho_Q 为该 B 在 Qnew 下的实际合法行分布。拟用 CONFIG 分布为
+
+    rho_CFG=(1-a)rho_Q+a delta_(C0,all)
+              +(a/L)sum_(j,S)b_S delta_(Cj,S)
+              -(ak/L)sum_S b_S delta_(C0,S).            (13.4)
+
+这是从 background (1-a)rho_Q 起写；a delta_(C0,all)是完整重写后的 foreground，不再额外保留一份 raw H 行边际。事实上 H 行边际为 (1-k/L)delta_(C0,all)+(1/L)sum_j delta_(Cj,all)，将(13.3)代入即得到(13.4)，故全部次数至多 d 的整行矩相同。忽略 incoming-unit 后，两项 subset 修正完全相消，pure-home 边际甚至在所有次数相同。
+
+所有列出的配置均合法：Cj,S负载1+|S|/k<=T，C0,S及C0,all负载至多1。Rfill 的一半在 rho_Q 中为每个 Cj,S 提供概率至少1/(4LkZ)，为每个 C0,S 提供至少1/(4LZ)。由(13.2)，unit负修正至多 a Amax/L，无unit负修正至多 ak Amax/L；条件
+
+    M-1>=4k Z Amax
+
+同时支付两种负项。因此合并同一配置后的全部质量非负。修正的总质量为零，background和baseline总和为1，得到真正完整 CONFIG 分布。
+
+U及终端使用实际行边际即可：它们在所有法则样本中负载至多1。例如 U 的 h-alone质量为a，恰缺一个 f-home 的总质量为3(1-a)/8且缺失label均匀，其余 f全部home。各终端始终空或恰一个原 e-unit。所有原机器均已覆盖。
+
+### 13.5 不依全局维数的 load-localizer 支配
+
+固定一台 B，令 g=T-load_B。把单组件任意 affine 表达式写成
+
+    q=beta+sum c_jb F_jb+sum d_b,ell,t G_b,ell,t,
+
+其中 F、G是原 f/e 的 nonhome heads，原 home 用原 job one-hot 线性消去；||c||^2=sum c_jb^2。
+
+Qold 满足对任意 beta,d 一致的系数界
+
+    E_Qold q^2>=||c||^2/(30Lk^3).                       (13.5)
+
+简证：令q0为all-home值，qN为各单e-export值，qF_jb,pi为单f-export加该B全部e-export的值。恒等式
+
+    c_jb=qF_jb,pi-sum_ell qN_b,ell,pi(ell)+(k-1)q0
+
+经三项平方界、(sum qN)^2<=k sum qN^2及平均bijection给
+
+    ||c||^2<=3sum E_pi qF^2+3k sum qN^2+3kL(k-1)^2q0^2
+             <=(12kL+12Lk^3+6kL(k-1)^2)E_Qold q^2
+             <=30Lk^3 E_Qold q^2.
+
+Qold下g>=s/k>=1/k，Rfill下g>=0。因此即使 filler 部分在目标上取等号，old-half仍给
+
+    E_Qnew[gq^2]>=(1/(2k))E_Qold q^2
+                   >=||c||^2/(60Lk^4).                 (13.6)
+
+H下g=s/k-1{B被选中}，故 |g|<=1，mu=E_Hg=(s-1/2)/k>=1/(2k)>0。所有G为0。令 S=sum_j c_j,sigma(j)，则 E_H S^2<=(k/L)||c||^2。对任意不同的offset beta配方得
+
+    E_H[g(beta+S)^2]
+      >=-(1+1/mu)E_H S^2
+      >=-(1+2k)(k/L)||c||^2>=-2||c||^2.                (13.7)
+
+现在令 q 涉及整个输入全部原端点。条件于 I=h，把其他组件表达式减去其条件均值，将这些均值与selector系数吸收到任意数 beta_h。组件 i 的 head 系数 c,d 对所有 h 相同，只有 offset 可以改变。条件独立给精确等式
+
+    E[gq^2|I=h]
+      =E[g(beta_h+q_i)^2|I=h]
+        +E[g|I=h]sum_(j!=i)Var(q_j|I=h).               (13.8)
+
+Qnew的平均g为正（old-half至少1/(2k)，filler非负），H平均为mu>0，所以方差项始终非负。对每个h!=i分别用(13.6)，h=i用(13.7)，平均得到
+
+    F[gq^2]>=((1-a)/(60Lk^4)-2a)||c||^2>=0,
+
+因为 M-1>=120Lk^4。没有随 M 增长的维数因子、隐含最小特征值或循环的“概率充分小”条件。U与终端的g>=s/k逐点成立，故它们的全部全局 affine localizers 也成立。
+
+### 13.6 固定 d 的有限输出及总位成本
+
+Z<=d k^s、Amax<=k^s，故对固定d，M及所有原输入计数为k的多项式。每个B的subset修正至多(k+1)Z项；rho_Q只增加Qold的有限行列表、Rfill的这些low-home状态及all-home。U列表至多k+2项，终端至多Lk个singleton及empty。所有配置概率是显式有理数，合并后的非负性已证，位长为显式输入长度的多项式。
+
+degree-D矩表有O(E^D)个条目，D固定。展开home为one-hot complement，条件化selector，再按组件分解。H、Qold的head矩由至多D个指定heads的partial injection/permutation概率计算。
+
+Rfill若在同一B指定r个相容e-head，它们的原e labels全不在S的概率为 sum_(u<=s)binom(k-r,u)/Z，指定互异终端heads的条件概率为1/(k)_r。有一个指定f-head时再乘1/(2kL)，没有f-head且至少一个e-head时乘1/L；多个不同f-head、不同B的e-head或不相容heads为零，空单项式为1。不可容纳的r先判零，不形成零分母。Qnew取与Qold的平均。这些规则或直接枚举多项式个S均可计算所有所需矩。
+
+falling factorial的阶至多固定D；binomial和及各有理运算的总位长均多项式。无需列举全injection、permutation或全局独立支持。共同M2与各机器global affine-localizer矩阵由同一矩表计算，输出条目数亦多项式。这证明固定d的确定性总位多项式生成；不等同一般精确SDP/CONFIG solver。
+
+缩放k/(k+s)保持矩与配置、将每个load-localizer乘正因子、目标变为1。普通CONFIG first point已满足job cover及每行fractional work<=T、支持时间<=T；按时间降序填unit slots并做二部匹配舍入，第一slot至多T，后续每slot的job时间可由前一完整slot的fractional work支付，总负载至多2T。因此本增强raw系统的gap至多2，本族逼近2，得到锐上确界。
+
+### 13.7 跨行条件、下一阶及来源的准确限制
+
+令 A_i 为原selector endpoint，C_i,b为该B的unit incoming原端点之和。此法则仍有
+
+    F[A_i C_i,b(T-load_B)]=a(k/L)(T-2)<0.
+
+逐原 incoming endpoint R_j，值为 a(T-2)/L<0。这已经是现有次数至多3的矩，故没有通过更强跨行两事件容量条件，也没有声称存在带完整Boolean配置变量和links的共同CONFIG-M2延伸。
+
+所指定的真实有限法则的自然degree-(d+1)延伸还满足：对d个不同home labels，
+
+    E[R_j product_(u=1)^d Y_ell_u]=a/L>0.
+
+合法CONFIG(T)在R_j=1时至多保留s=d-1个homes，故给该单项式为零。这只陈述给定finite-law自然延伸在下一mixed阶的失败；当d+1>D时，不得据此宣称已有degree-D restriction没有其他矩延伸。也不宣称所有更强系统点都不可行。global PSD高阶自然延伸本身不补上更高次load或跨行条件。
+
+本增强不是新盲审：subset策略与identity共同讨论。作者Exact为 `sol_diluted_shared_terminal_row_degree_d_exact_only.md`，SHA256 `e23ae495b4a997f081e0de06323e5dd9563c98d3828b78804ddc7670b16c9f6a`；另冻作者Proof为 `sol_diluted_shared_terminal_row_degree_d_author_proof.md`，SHA256 `7fb8ae7e6635853417963a5ff379406cbc3a0abf347a73015ebc79c1a207c407`。作者与 identity 的 subset 策略交流不计独立审查。另一个审者先只读新 Exact 独立重构，root 实际全文读后才释放作者 Proof；作者读后与最终本节的实际阅读分别冻结，详见[新审查](../../reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md)。root 已实际全文读新 Exact、Proof、两独立记录、本节及审计代码。
+
+软件只记录作者四例行trade有限核：(d,k)=(2,2),(3,3),(4,4),(4,7)，分别穷尽11、42、163、1471个次数至多d的squarefree行单项式，用整数共分母核全部相等、CONFIG非负且合法总质量1、pure-home完整边际相同，并核自然下一阶witness。它没有枚举全局M2或global localizers，不是一般d软件证明，也不把旧k=2的50维audit升级为本Claim核验。
+
+四例代码 `sol_diluted_row_degree_d_finite_trade_audit.py` 的SHA256为 `acee8c713dc7886dd03405031f8dd1d71c7ac67c7274a1fadc5fa715e36f8cc8`；输出JSON的SHA256为 `416d764ad20172efde6e845efab8c33f176bd45f34ba50d29acb88dfb0bf9841`。main仅写--output指定文件。root 已实际完整读代码，并用规范路径在全新 scratch 文件一次 CLI 重放，输出与作者 JSON 逐字相同；argv/cwd/hash 与准确范围另存 root replay scope。有限四例不替代一般参数证明，独立数学审者未读跑程序，不代签执行。
