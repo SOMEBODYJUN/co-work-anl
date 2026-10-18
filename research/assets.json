@@ -8871,6 +8871,45 @@
       ],
       "source_role": "Potechin2019摘要和§1.1 Theorem1定位经典Grigoriev非整数背包障碍；本稿独立给全部PSD证明及实际UM编译，未内化全论文。",
       "limit": "所有实例OPT1，非gap/困难性；经典knapsack机制；r变参显式矩可能指数"
+    },
+    {
+      "id": "um_permanent_buffer_activation",
+      "claims": [
+        "UM-PERMANENT-BUFFER-ACTIVATION-v1",
+        "UM-STATIC-ACTIVATION-COVER-OBSTRUCTION-v1",
+        "UM-TRANSIENT-PRIORITY-DEADLOCK-v1",
+        "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "applies_when": [
+        "UM-MODEL-v1; T>=0,T<=C<=2T; actual pruned sigma<=C and concrete tau<=T",
+        "Each claim keeps its additional explicit parameter or graph-certificate hypotheses"
+      ],
+      "produces": "sharp fractional activation window, static/priority counterexamples and a conditional actual full-path constructor with given target",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/permanent_buffer_activation_review.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/permanent_buffer_activation.py",
+        "tests/audits/unrelated_machines/permanent_buffer_activation_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/permanent_buffer_priority_deadlock.json",
+        "evidence/certificates/unrelated_machines/permanent_buffer_priority_deadlock.json"
+      ],
+      "sources": [
+        "history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf"
+      ],
+      "source_role": "Previously registered classical scheduling-model background only. None of the four new claims or proofs is attributed to this source; all are self-contained current work.",
+      "limit": "No unconditional U path theorem, no target finder, no sound NO from certificate failure, no sub-2 scheduling algorithm or hardness.",
+      "implementation_detail": "single_unlock_path in the first audit file is deterministic bit-polynomial; exhaustive checks are separate audit routines."
     }
   ]
 }

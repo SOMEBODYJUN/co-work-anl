@@ -1172,6 +1172,15 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-ANCHOR-DEFICIENCY-PROMISE-APPROX-v1 | full anchor图同缺额；只某份OPT满足所用边尺度promise | 仅上截边+单调整数二分，同系数OPT保证，无η；非一般输入识别 | 同正文§10，数学算法完整，外审/新颖性未认证 |
 | UM-FIXED-DEGREE-STRONG-CONFIG-MATCHING-LAW-OBSTRUCTION-v1 | r≥2,奇N≥4r−1；强本行CONFIG同阶相容+所有短事件非负 | 无保二阶真实匹配law；锐修复半径1/[4N(N−1)]；实际OPT1，非gap | [自足证明](unrelated_machines/strong_configuration_matching_moment_obstruction.md)，独立攻击/精确小核验；经典knapsack机制 |
 
+## 永久缓冲窗口与共同解锁路径
+
+| ID | 精确陈述 | 证据与范围 |
+| --- | --- | --- |
+| UM-PERMANENT-BUFFER-ACTIVATION-v1 | 对任意合法P、T≥0、T≤C≤2T、剪枝实际σ≤C和给定实际τ≤T，令S=f+A、Q为改变任务目标量、U=max(2T,C+T/2)、h=(S+Q−U)+。任意已迁子集R满足L=S+Q−D−B；D_i≥h_i当且仅当i在所有后续排列的全部前缀（含零步）局部负载≤U；h≤T/2且3h≤A。统一x_j=λ对全部此类输入满足源cover及原预算target packing的λ∈[0,1]恰[1/3,1/2]。 | [正文](unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md)、[审查](../reviews/unrelated_machines/permanent_buffer_activation_review.md)、[证据](../../evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json)；使用具体τ及改变任务；局部安全不以全局守容排列预筛。锐性T>0；T=0直接处理。 |
+| UM-STATIC-ACTIVATION-COVER-OBSTRUCTION-v1 | 存在T=1,C=2、四机七任务且OPT=1的剪枝实际σ及具体τ≤1：统一分数窗口可行，但无子集同时移出每机至少h_i并使每目的接收量≤U−S_i。显式逐件目标路径峰23/10<5/2。 | [正文](unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md)、[审查](../reviews/unrelated_machines/permanent_buffer_activation_review.md)、[证据](../../evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json)；仅否定原始接收预算不变的一次性cover/packing；不是全程路径反例或一般困难性。 |
+| UM-TRANSIENT-PRIORITY-DEADLOCK-v1 | 对每有理T>0、3/2<c<2、0<d<1/3、1/2<q≤1，四机八任务两端族OPT=T且初态全cT；在U=(c+1/2)T下从安全直接τ迁移选最大a或a/b，不论平局均停在未完成真死锁。仅未激活源规则亦失败但须区分允许动作耗尽。到指定τ的全部单件路径minimax恰(c+(1−d)/2)T<U，允许回退重复也不降低。 | [正文](unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md)、[审查](../reviews/unrelated_machines/permanent_buffer_activation_review.md)、[证据](../../evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json)；全部族端时间≤T且b>0；a/b实现仅该正端族。τ给定，初态不声明ST来源。只否定两种具体选序。 |
+| UM-PERMANENT-BUFFER-UNLOCK-PATH-v1 | 在激活身份的全部输入下，H={h>0}、eligible为源在H且a≥h_source、G={有eligible到非H或b≤U−S_target}。每H点经H内eligible边可达G，等价每H源选一条eligible且每所选有向环含初态安全边。该条件下确定性位poly输出每件至多直迁一次的完整τ路径且峰≤U；每H源有至少两件不同eligible时条件自动成立。 | [正文](unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md)、[审查](../reviews/unrelated_machines/permanent_buffer_activation_review.md)、[证据](../../evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json)；具体τ给定；条件失败只表示该证书失败，不表示OPT>T或无路径。所有负载逐台保证，n步位poly仅指selector，不指审计枚举。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

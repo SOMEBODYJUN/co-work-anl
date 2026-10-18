@@ -352,3 +352,5 @@ u_t) 的一般复杂度。
 ## 强配置相容不等于真实共同二阶law
 
 尝试用本行CONFIG全部同阶矩+全局固定阶PSD直接抽取保给定二阶的重匹配分布。失败是接口本身错误：[奇数切片K22编译](../current/unrelated_machines/strong_configuration_matching_moment_obstruction.md)的所有短事件非负、全部负载恒1，却使整数选块数形式方差为0而均值半整数。回收自足harmonic PSD、精确位长和锐修复半径1/[4N(N−1)]；该半径趋零，所有实例显然OPT1。只排精确保矩接口，重试应允许定量改矩/直接共同实际选择；不据此否定强松弛的实际舍入。
+
+[永久缓冲激活与共同解锁路径](../current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md)给锐分数窗口[1/3,1/2]、一次性整数激活与两种优先级的真实失败，以及给定具体目标的函数图全程U路径证书。证书失败不排多件合力；未知目标、无条件全程路径与UM-TARGET-v1仍OPEN。

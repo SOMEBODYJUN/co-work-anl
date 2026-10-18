@@ -10806,6 +10806,74 @@
         "evidence/runs/unrelated_machines/strong_configuration_matching_moment_audit.json"
       ],
       "status": "finite audit only"
+    },
+    {
+      "id": "UM-PERMANENT-BUFFER-ACTIVATION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "永久缓冲激活与统一分数选择的锐窗口",
+      "detail": "对任意合法P、T≥0、T≤C≤2T、剪枝实际σ≤C和给定实际τ≤T，令S=f+A、Q为改变任务目标量、U=max(2T,C+T/2)、h=(S+Q−U)+。任意已迁子集R满足L=S+Q−D−B；D_i≥h_i当且仅当i在所有后续排列的全部前缀（含零步）局部负载≤U；h≤T/2且3h≤A。统一x_j=λ对全部此类输入满足源cover及原预算target packing的λ∈[0,1]恰[1/3,1/2]。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md",
+        "research/reviews/unrelated_machines/permanent_buffer_activation_review.md",
+        "evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-STATIC-ACTIVATION-COVER-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "原始接收预算的一次性整数激活障碍",
+      "detail": "存在T=1,C=2、四机七任务且OPT=1的剪枝实际σ及具体τ≤1：统一分数窗口可行，但无子集同时移出每机至少h_i并使每目的接收量≤U−S_i。显式逐件目标路径峰23/10<5/2。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md",
+        "research/reviews/unrelated_machines/permanent_buffer_activation_review.md",
+        "evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-TRANSIENT-PRIORITY-DEADLOCK-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "最大源端与源目标比率的无平局依赖死锁",
+      "detail": "对每有理T>0、3/2<c<2、0<d<1/3、1/2<q≤1，四机八任务两端族OPT=T且初态全cT；在U=(c+1/2)T下从安全直接τ迁移选最大a或a/b，不论平局均停在未完成真死锁。仅未激活源规则亦失败但须区分允许动作耗尽。到指定τ的全部单件路径minimax恰(c+(1−d)/2)T<U，允许回退重复也不降低。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md",
+        "research/reviews/unrelated_machines/permanent_buffer_activation_review.md",
+        "evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单件解锁函数图的可检验全程路径",
+      "detail": "在激活身份的全部输入下，H={h>0}、eligible为源在H且a≥h_source、G={有eligible到非H或b≤U−S_target}。每H点经H内eligible边可达G，等价每H源选一条eligible且每所选有向环含初态安全边。该条件下确定性位poly输出每件至多直迁一次的完整τ路径且峰≤U；每H源有至少两件不同eligible时条件自动成立。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md",
+        "research/reviews/unrelated_machines/permanent_buffer_activation_review.md",
+        "evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-PERMANENT-BUFFER-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "永久缓冲、优先级与共同函数图路径的有限精确核验",
+      "detail": "规范四组有理参数、独立27组、静态子集与窗口、函数图路径及失败负控制；全部范围有限。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md",
+        "evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json",
+        "tests/audits/unrelated_machines/permanent_buffer_activation.py",
+        "tests/audits/unrelated_machines/permanent_buffer_activation_independent.py",
+        "examples/unrelated_machines/permanent_buffer_priority_deadlock.json",
+        "evidence/certificates/unrelated_machines/permanent_buffer_priority_deadlock.json"
+      ],
+      "status": "exact finite audits; not a universal proof"
     }
   ],
   "hyperedges": [
@@ -26341,6 +26409,151 @@
         "evidence/runs/unrelated_machines/strong_configuration_matching_moment_audit.json"
       ],
       "status": "finite audit only"
+    },
+    {
+      "id": "D-UM-PERMANENT-BUFFER-ACTIVATION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-PERMANENT-BUFFER-ACTIVATION-v1",
+      "statement": "在正文明确的全部输入与附加假设下自足证明；具体τ、参数范围或可达证书不得省略。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-PERMANENT-BUFFER-ACTIVATION-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PERMANENT-BUFFER-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-PERMANENT-BUFFER-ACTIVATION-v1",
+      "statement": "冻结参数、原始两端OPT、全部平局分支与实际路径有限核验，不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md",
+        "evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json",
+        "tests/audits/unrelated_machines/permanent_buffer_activation.py",
+        "tests/audits/unrelated_machines/permanent_buffer_activation_independent.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "D-UM-STATIC-ACTIVATION-COVER-OBSTRUCTION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PERMANENT-BUFFER-ACTIVATION-v1"
+      ],
+      "conclusion": "UM-STATIC-ACTIVATION-COVER-OBSTRUCTION-v1",
+      "statement": "在正文明确的全部输入与附加假设下自足证明；具体τ、参数范围或可达证书不得省略。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-STATIC-ACTIVATION-COVER-OBSTRUCTION-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PERMANENT-BUFFER-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-STATIC-ACTIVATION-COVER-OBSTRUCTION-v1",
+      "statement": "冻结参数、原始两端OPT、全部平局分支与实际路径有限核验，不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md",
+        "evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json",
+        "tests/audits/unrelated_machines/permanent_buffer_activation.py",
+        "tests/audits/unrelated_machines/permanent_buffer_activation_independent.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "D-UM-TRANSIENT-PRIORITY-DEADLOCK-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PERMANENT-BUFFER-ACTIVATION-v1"
+      ],
+      "conclusion": "UM-TRANSIENT-PRIORITY-DEADLOCK-v1",
+      "statement": "在正文明确的全部输入与附加假设下自足证明；具体τ、参数范围或可达证书不得省略。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-TRANSIENT-PRIORITY-DEADLOCK-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PERMANENT-BUFFER-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-TRANSIENT-PRIORITY-DEADLOCK-v1",
+      "statement": "冻结参数、原始两端OPT、全部平局分支与实际路径有限核验，不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md",
+        "evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json",
+        "tests/audits/unrelated_machines/permanent_buffer_activation.py",
+        "tests/audits/unrelated_machines/permanent_buffer_activation_independent.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "D-UM-PERMANENT-BUFFER-UNLOCK-PATH-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PERMANENT-BUFFER-ACTIVATION-v1"
+      ],
+      "conclusion": "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1",
+      "statement": "在正文明确的全部输入与附加假设下自足证明；具体τ、参数范围或可达证书不得省略。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-PERMANENT-BUFFER-UNLOCK-PATH-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PERMANENT-BUFFER-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1",
+      "statement": "冻结参数、原始两端OPT、全部平局分支与实际路径有限核验，不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md",
+        "evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json",
+        "tests/audits/unrelated_machines/permanent_buffer_activation.py",
+        "tests/audits/unrelated_machines/permanent_buffer_activation_independent.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "L-UM-PERMANENT-BUFFER-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PERMANENT-BUFFER-ACTIVATION-v1",
+        "UM-STATIC-ACTIVATION-COVER-OBSTRUCTION-v1",
+        "UM-TRANSIENT-PRIORITY-DEADLOCK-v1",
+        "UM-PERMANENT-BUFFER-UNLOCK-PATH-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "给定目标的可检验路径证书不能生成未知目标；静态分数可行不保整数共同选择，证书失败不排多件路径。无条件全程路径与一般统一epsilon仍OPEN。",
+      "refs": [
+        "research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
     }
   ]
 }

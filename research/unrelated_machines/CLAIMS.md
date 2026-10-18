@@ -2245,3 +2245,51 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：真实完美匹配很容易，改动二阶即可最优；修复半径趋零，不是常数鲁棒间隙。无standing fatal。
 - Status：限定接口定理与锐二阶距离证明完整；固定r生成N^{O(r)}，不称r变参时联合多项式；外审/全球新颖性未认证。
 - Related Files：current/unrelated_machines/strong_configuration_matching_moment_obstruction.md、reviews/unrelated_machines/strong_configuration_matching_moment_review.md、tests/audits/unrelated_machines/strong_configuration_matching_moment_audit.py、evidence/runs/unrelated_machines/strong_configuration_matching_moment_audit.json。
+
+## UM-PERMANENT-BUFFER-ACTIVATION-v1：永久缓冲激活与统一分数选择的锐窗口
+
+- Exact Statement / Quantifiers：对任意合法P、T≥0、T≤C≤2T、剪枝实际σ≤C和给定实际τ≤T，令S=f+A、Q为改变任务目标量、U=max(2T,C+T/2)、h=(S+Q−U)+。任意已迁子集R满足L=S+Q−D−B；D_i≥h_i当且仅当i在所有后续排列的全部前缀（含零步）局部负载≤U；h≤T/2且3h≤A。统一x_j=λ对全部此类输入满足源cover及原预算target packing的λ∈[0,1]恰[1/3,1/2]。
+- Objects / Domain / Definitions：UM-MODEL-v1，二进制非负有理与不可用端；第1节定义S,f,A,Q,D,B,U,h及具体实际σ、τ；后续路径只直接迁往τ，每件至多一次，minimax下界另允许所有单件绕路。
+- Assumptions / Scope：使用具体τ及改变任务；局部安全不以全局守容排列预筛。锐性T>0；T=0直接处理。
+- Conclusion：以上准确范围的公式、反例或实际路径证书；UM-TARGET-v1及无条件全程路径保持OPEN。
+- Dependencies：UM-MODEL-v1；正文自足非负负载、共同目标容量、端点/函数图计数及有理运算，不导入外部定理。
+- Evidence：先陈述独立重构、实际冻结全文攻击及主研究者亲核；规范与不导入规范的独立有理核验仅作checks。
+- Counterevidence / Objections：局部排列量词、零步、不可达集合闭合性、策略死锁与全局死锁及整数入口均已修正；无standing内部fatal。新颖性和外审未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实现轴为audit_only。
+- Related Files：research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md；research/reviews/unrelated_machines/permanent_buffer_activation_review.md；evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json；实际代码和输入/证书从上述文件进入。
+
+## UM-STATIC-ACTIVATION-COVER-OBSTRUCTION-v1：原始接收预算的一次性整数激活障碍
+
+- Exact Statement / Quantifiers：存在T=1,C=2、四机七任务且OPT=1的剪枝实际σ及具体τ≤1：统一分数窗口可行，但无子集同时移出每机至少h_i并使每目的接收量≤U−S_i。显式逐件目标路径峰23/10<5/2。
+- Objects / Domain / Definitions：UM-MODEL-v1，二进制非负有理与不可用端；第1节定义S,f,A,Q,D,B,U,h及具体实际σ、τ；后续路径只直接迁往τ，每件至多一次，minimax下界另允许所有单件绕路。
+- Assumptions / Scope：仅否定原始接收预算不变的一次性cover/packing；不是全程路径反例或一般困难性。
+- Conclusion：以上准确范围的公式、反例或实际路径证书；UM-TARGET-v1及无条件全程路径保持OPEN。
+- Dependencies：UM-MODEL-v1, UM-PERMANENT-BUFFER-ACTIVATION-v1；正文自足非负负载、共同目标容量、端点/函数图计数及有理运算，不导入外部定理。
+- Evidence：先陈述独立重构、实际冻结全文攻击及主研究者亲核；规范与不导入规范的独立有理核验仅作checks。
+- Counterevidence / Objections：局部排列量词、零步、不可达集合闭合性、策略死锁与全局死锁及整数入口均已修正；无standing内部fatal。新颖性和外审未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实现轴为audit_only。
+- Related Files：research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md；research/reviews/unrelated_machines/permanent_buffer_activation_review.md；evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json；实际代码和输入/证书从上述文件进入。
+
+## UM-TRANSIENT-PRIORITY-DEADLOCK-v1：最大源端与源目标比率的无平局依赖死锁
+
+- Exact Statement / Quantifiers：对每有理T>0、3/2<c<2、0<d<1/3、1/2<q≤1，四机八任务两端族OPT=T且初态全cT；在U=(c+1/2)T下从安全直接τ迁移选最大a或a/b，不论平局均停在未完成真死锁。仅未激活源规则亦失败但须区分允许动作耗尽。到指定τ的全部单件路径minimax恰(c+(1−d)/2)T<U，允许回退重复也不降低。
+- Objects / Domain / Definitions：UM-MODEL-v1，二进制非负有理与不可用端；第1节定义S,f,A,Q,D,B,U,h及具体实际σ、τ；后续路径只直接迁往τ，每件至多一次，minimax下界另允许所有单件绕路。
+- Assumptions / Scope：全部族端时间≤T且b>0；a/b实现仅该正端族。τ给定，初态不声明ST来源。只否定两种具体选序。
+- Conclusion：以上准确范围的公式、反例或实际路径证书；UM-TARGET-v1及无条件全程路径保持OPEN。
+- Dependencies：UM-MODEL-v1, UM-PERMANENT-BUFFER-ACTIVATION-v1；正文自足非负负载、共同目标容量、端点/函数图计数及有理运算，不导入外部定理。
+- Evidence：先陈述独立重构、实际冻结全文攻击及主研究者亲核；规范与不导入规范的独立有理核验仅作checks。
+- Counterevidence / Objections：局部排列量词、零步、不可达集合闭合性、策略死锁与全局死锁及整数入口均已修正；无standing内部fatal。新颖性和外审未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实现轴为audit_only。
+- Related Files：research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md；research/reviews/unrelated_machines/permanent_buffer_activation_review.md；evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json；实际代码和输入/证书从上述文件进入。
+
+## UM-PERMANENT-BUFFER-UNLOCK-PATH-v1：单件解锁函数图的可检验全程路径
+
+- Exact Statement / Quantifiers：在激活身份的全部输入下，H={h>0}、eligible为源在H且a≥h_source、G={有eligible到非H或b≤U−S_target}。每H点经H内eligible边可达G，等价每H源选一条eligible且每所选有向环含初态安全边。该条件下确定性位poly输出每件至多直迁一次的完整τ路径且峰≤U；每H源有至少两件不同eligible时条件自动成立。
+- Objects / Domain / Definitions：UM-MODEL-v1，二进制非负有理与不可用端；第1节定义S,f,A,Q,D,B,U,h及具体实际σ、τ；后续路径只直接迁往τ，每件至多一次，minimax下界另允许所有单件绕路。
+- Assumptions / Scope：具体τ给定；条件失败只表示该证书失败，不表示OPT>T或无路径。所有负载逐台保证，n步位poly仅指selector，不指审计枚举。
+- Conclusion：以上准确范围的公式、反例或实际路径证书；UM-TARGET-v1及无条件全程路径保持OPEN。
+- Dependencies：UM-MODEL-v1, UM-PERMANENT-BUFFER-ACTIVATION-v1；正文自足非负负载、共同目标容量、端点/函数图计数及有理运算，不导入外部定理。
+- Evidence：先陈述独立重构、实际冻结全文攻击及主研究者亲核；规范与不导入规范的独立有理核验仅作checks。
+- Counterevidence / Objections：局部排列量词、零步、不可达集合闭合性、策略死锁与全局死锁及整数入口均已修正；无standing内部fatal。新颖性和外审未认证。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实现轴为implemented。
+- Related Files：research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md；research/reviews/unrelated_machines/permanent_buffer_activation_review.md；evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json；实际代码和输入/证书从上述文件进入。
