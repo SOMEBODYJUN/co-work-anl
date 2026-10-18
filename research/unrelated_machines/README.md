@@ -367,3 +367,5 @@
 [前缀证书的有限精度纠偏](../current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)（`UM-PREFIX-ATOMIC-FINITE-PRECISION-v1`）：同一精确守恒law下，带噪max-mass的锐界配合有理网格，在poly位精度恢复精确阈值；绝对原子误差有N倍稀释，relative/full-Gram版本须保完整原子空间。生成、全称验证与一般统一ε仍未解决。
 
 [共同叶边际的精确边界](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)（新增§8–11）：精确消去阈值unit-demand叶后，global/全部perspective匹配流即使共享同一叶边际，D_+仍逐点退回basic；diffuse Q_t的完整ordinary OPT=2-1/t。指定partition与自动前提严格分开；非actual-OPT算法下界或hardness。
+
+[归一化门控菜单与源判别](../current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权显式norm1四层门控类有完整未知OPT的13/8算法；高低组比例纠错及near-perfect partial-NO由福利LP判别，原flat/共享内部/多层未覆盖。实际矩阵完整平方可把8机10job的OPT3/2降至1（private_graft页§7）；多见证互斥收费阈值可达2但不能同时多测试（two_witness页§6）。均不是一般反面证明。

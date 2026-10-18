@@ -1307,6 +1307,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1 | 原norm1显式菜单unit-FSLP可行；固定eta，q_eta=(2^24)^(-ceil(1/eta))，0<delta_q<=q_eta及0<=gamma_hi<=1−eta时，C的同一实际allocation有计数 #{g:quality_g>=delta_q}>gamma_hi*n。因此all-allocation高端robust NO不可能；其互补低端比例是1−gamma_hi。 | [§F纠错](unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际定向审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)；旧未覆盖解释撤回。 |
 
+| UM-NORMALIZED-GATED-MENU-VALUE-v1 | 所有上述输入OPT(P_gate)=2−beta*；任意完整C<2解码不交原bundles，反向保全部jobs含零/未选states；双向det-bit-poly。 | [正文](unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)、[实际审查](../reviews/unrelated_machines/normalized_gated_menu_welfare_review.md)；仅audit软件。 |
+| UM-NORMALIZED-GATED-MENU-WELFARE-APPROX-v1 | 整个明确norm1 gated类有det-bit-poly真实13/8近似，无FSLP前提/未知OPT输入。联合使用明确福利LP x<=z、标准最大系数舍入的精确CDF确定性化、真实排序平衡与所有jobs映射；不是generalUM。 | [正文](unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)、[实际审查](../reviews/unrelated_machines/normalized_gated_menu_welfare_review.md)；仅audit软件。 |
+| UM-NORMALIZED-ROBUST-PARTIAL-SOURCE-LP-BARRIER-v1 | high>=delta少于gamma_hi*n对应low<delta多于(1−gamma_hi)n；完整YES由positive-support FSLP在gamma_hi<=(5/8−delta)/(1−delta)判；近完美YES由福利LP在(5/8)(1−eta)>=gamma_hi+(1−gamma_hi)delta判，分别同样覆盖high>delta版本及等号；含gamma_hi<=delta<=3/8,eta<=1/40。 | [正文](unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)、[实际审查](../reviews/unrelated_machines/normalized_gated_menu_welfare_review.md)；仅audit软件。 |
+| UM-ACTUAL-KRONECKER-NO-TO-YES-v1 | 显式8机10job seed真实OPT3/2，完整square64机100job400有限边可全机load1；所有完整偶次幂OPT1。含全部mixed jobs，关闭该通用平方保NO合同；不宣称首次发现现象或hard source。 | [正文](unrelated_machines/private_graft_and_resource_repetition.md)、[实际审查](../reviews/unrelated_machines/actual_kronecker_product_review.md)；仅audit软件。 |
+| UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1 | 对所有合法非负有理矩阵含n0/zero/∞，未剪枝assignmentLP F(P⊗Q)=F(P)F(Q)，非负原初/对偶相乘；不是剪枝LST或CONFIG。 | [正文](unrelated_machines/private_graft_and_resource_repetition.md)、[实际审查](../reviews/unrelated_machines/actual_kronecker_product_review.md)；仅audit软件。 |
+| UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2 | OPT(P)=1；每pattern OPT_K=min(2,max(1,B_K))，闭beta<2最小fee按B_K>beta/ c+B_K<=beta/其余为∞/0/1。单queries各strict且阈值2共享同一f；无全开strict。非空K共同strict且每single收费迫|K|(beta−c)<B_K<=1，beta>=3/2时至多1；empty另0。 | [正文](unrelated_machines/two_witness_query_separation.md)、[实际审查](../reviews/unrelated_machines/multiwitness_shared_job_fee_review.md)；仅audit软件。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

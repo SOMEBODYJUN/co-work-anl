@@ -185,3 +185,6 @@
 ## 本阶段的可复用桥梁与仍开放的主目标
 
 [单home消环及有向需求桥](research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)去掉环境DAG限制但仍输入实际调度或根树；[SC类型配置与真实匹配后端](research/current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)补齐显式多项式列表生成并精确定位全局选择义务；[整比双尺寸中性修复](research/current/unrelated_machines/divisible_two_size_neutral_repair.md)给防循环正面控制组。均不构成一般UM统一次二算法或近二困难性，UM-TARGET-v1保持OPEN。
+
+
+[反面归约的新增精确边界](research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权归一化门控类13/8与近完美部分束源LP判别，旧NSW高低比例混用已明确撤回；完整实际矩阵平方的NO→YES和多替代见证收费阈值二已分别核实。共享内部/多层的真实近二源解码仍未解决，不升级UM-TARGET-v1。

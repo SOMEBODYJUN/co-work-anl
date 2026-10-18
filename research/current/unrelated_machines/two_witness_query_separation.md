@@ -166,3 +166,111 @@ Q 是查询任务。对每个 q∈Q 定义其他查询在初态的聚合负荷
 \]
 
 特别地，一次费W≤F要求至少d−2枚查询在初态时间严格大于(β−1)T；对β=2−ε，这就是严格大于(1−ε)T。此加强由独立审查者typed首先提出，root复核后以v3另冻。它进一步排除“单件tiny但聚合大”的简单逃逸，仍只约束同一P两strict模式及明确改派/新增unit费；不保证任意heavy形状可实现，也不建立一般UM反证。
+
+
+## 6. 多见证互斥查询的共享任务收费与实际容量
+
+**ID / Version：`UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2`。**
+本节改变“两份共同实际见证”的前提：每个查询各有一份完整 actual，但不提供共同全开 actual。
+它给同一固定普通P的精确任务身份接口，不是源 decoder 或一般调度困难性。
+v1的非空子集推论遗漏了K非空，空集产生0<0错误；v2显式修复，原v1冻结记录保留。
+
+**Objects / Domain / Quantifiers / Definitions。**
+任意整数p≥1，二进制正有理0<a_r≤1、0<b_r≤1（r∈[p]）、0<c≤1，要求c+Σ_r b_r≥1。
+原机器H_1,…,H_p、A_1,…,A_p、R、S全部互异；原任务q_1,…,q_p、x_1,…,x_p、f全部互异。
+全部且仅以下原端有限，其余∞；没有预载、额外任务或状态相关资格：
+
+| 原任务 | σ₀原端及时间 | 另一原端及时间 |
+| --- | --- | --- |
+| q_r | H_r:a_r | A_r:1 |
+| x_r | A_r:1 | R:b_r |
+| f | R:c | S:1 |
+
+σ₀为全部任务使用表中初始端。
+对每个K⊆[p]，pattern K仅规定q_r在A_r iff r∈K，其余q_r固定在H_r；全部x_r、f仍可任意选合法端。
+记B_K=Σ_(r∈K)b_r，OPT_K为满足pattern的完整实际分配最小峰。
+非query改派权只有w_f=1，全部w_(x_r)=0；fee(τ)=1 iff原f实际从R移到S，否则0。
+这是指定owner改派费；c=1时不是新增unit费，c<1时才是该原f从非unit端到unit端的费。
+对任意有理1≤β<2，F_β(K)为满足pattern且C_max≤β的完整actual的最小费用；不存在时记∞。
+∞只表示这个指定pattern不可行，原P始终有σ₀。
+
+**Exact Statement / Conclusion。** 对上述全部输入、全部K及β，同时有
+
+\[
+\operatorname{OPT}(P)=1,
+\qquad
+\boxed{\operatorname{OPT}_K=\min\{2,\max\{1,B_K\}\}},
+\tag{6.1}
+\]
+
+\[
+\boxed{F_\beta(K)=
+\begin{cases}
+\infty,&B_K>\beta,\\
+0,&c+B_K\le\beta,\\
+1,&B_K\le\beta<c+B_K.
+\end{cases}}
+\tag{6.2}
+\]
+
+每个singleton都有一份完整strict1 actual σ_r，且只有query q_r改owner。
+一般K在strict1可行 iff B_K≤1。K=∅给OPT_∅=1、F_β(∅)=0，包含在(6.1)–(6.2)。
+全部最优值、可行模式和费用最优模式都有确定性总位多项式的完整原任务输出。
+
+**证明：全部原任务与准确下界。**
+σ₀中各A_r负载1，H_r负载a_r≤1，R负载c≤1，故峰1。
+σ_r只移动{q_r,x_r,f}到表中另一端：A_r、S负载1，R负载b_r≤1，其余不变，故也是完整actual峰1。
+若原P有峰<1，则全部q只能在H、全部x只能在R、f也只能在R；R负载c+Σb≥1，矛盾。
+这证明无约束OPT1，没有从一个未必使用的unit资格推下界。
+
+固定K。构造I把激活x_r移R、其余x留A，f移S，q按pattern；各A恰一枚unit，完整峰max{1,B_K}。
+构造II把全部x留A、f留R，q按pattern；各A至多q+x两枚unit，完整峰≤2。
+反向，任何pattern actual峰C<2时，r∈K的q_r已在A_r贡献1，同编号x_r不能同住，只能全部去R。
+于是C≥B_K；结合全局OPT1，得到(6.1)的准确下界及等号。
+同一个强制方向在C≤β<2成立，故B_K>β不可能可行。
+若f留R，还必须c+B_K≤β；反之这个条件下让激活x进R、其它x留A、f留R即给完整fee0 actual。
+若B_K≤β<c+B_K，f必须移S，而构造I达到该闭阈值并恰费1，证明(6.2)。
+因此B_K=β仍可行，c+B_K=β归fee0；K为空时直接σ₀，无空集严格求和。
+
+**多替代见证的收费阈值2。**
+取p≥2、全部b_r=c=1。任一singleton在strict1可行；但其全部C_max<2实际调度都必须移同一原f。
+p个单查询各费1，合计p，而非query费用宇宙W=Σw=1。
+任意|K|≥2的pattern却精确OPT_K=2；不存在全部queries同时到指定新端的strict1 actual。
+C_max≤2时构造II对全部K费0，故此多替代见证接口的收费阈值精确2。
+a_r可以全部任意tiny；对固定β<2另取b_r=1、β−1<c<1，可保β内单查询必费1，且f真正非unit→unit。
+这依靠f旧端nearunit，不能把该端称为tiny。
+
+**容量s与共同激活的限制。**
+令整数1≤s≤p、全部b_r=1/s，则域条件自动成立，strict1可行 iff |K|≤s；(6.2)精确变为
+
+\[
+F_\beta(K)=
+\begin{cases}
+\infty,&|K|>s\beta,\\
+0,&|K|\le s(\beta-c),\\
+1,&s(\beta-c)<|K|\le s\beta.
+\end{cases}
+\tag{6.3}
+\]
+
+这里直接比较整数|K|与有理阈值，不省略边界。
+s≥2时c+1/s≤3/2，所以β≥3/2时每个singleton都有fee0 actual；s=1,c=1恢复阈值2。
+异权时，若**非空**K strict1可行，且其中每个singleton在同一β阈值都必收费，则b_r>β−c，故
+
+\[
+|K|(\beta-c)<B_K\le1.
+\tag{6.4}
+\]
+
+β≥3/2、c≤1时给|K|<2，即至多一个可共同strict激活的查询。K空不在(6.4)域内。
+因此这些互斥单查询不能免费解释成同一label同时服务多个测试的fanout。
+
+**算法、依赖、范围与旧合同区别。**
+原P有2p+2机器、2p+1任务、4p+2条finite资格，dense为(2p+2)(2p+1)项。
+计算B_K后，按上述两构造选最优峰；费用分支直接输出相应完整actual或该pattern的不可行结论。
+每枚原任务恰执行一次，全部未激活x和所有q均已计入；有理求和位长受输入总位长控制，不按分母或s数值展开。
+依赖只有完整原矩阵、非负负载、指定pattern、共享R及原f的改派权，自足证明不用未知调度oracle。
+本节的p+1个strict actual缺少共同全开strict actual，故不满足双见证查询分离的输入；取单个σ₀、σ_r时只有一个query，费用1不违背其不交界。
+旧多输出星读取不同零/满预载状态且给两份完整全端模式；这里固定同一P、读具体q/f身份及共享R的真实任务竞争，量词不同。
+给定P本身OPT1且显式可解，尚未构造外接、源标签复用、源NO任意actual的共同decoder或无重复预算，非OPT gap或主目标反证。
+Status：限定自足证明；Exact-first攻击发现v1空K错误并由v2修复；独立全文攻击与有限审计分列，外审和新颖性未认证。

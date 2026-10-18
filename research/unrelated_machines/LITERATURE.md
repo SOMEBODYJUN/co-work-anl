@@ -161,3 +161,8 @@ DGR2025/2026 constrained rejections全arXiv v1原PDF已取得并parse（18页，
 ## DLRV2023v1：NSW框架与本次显式分数替换
 
 [arXiv:2309.04656v1](https://arxiv.org/abs/2309.04656v1)原23页PDF保真存储，SHA/bytes及版本边界见manifest。root针对性实际读§2.1–§2.5、AppendixB及相关solver/Thm17/19/20，渲染阅读PDF12/13；不是root整篇全文认证。新作者读所供v1完整提取文本，审者只读指定相关段，具体范围见[实际来源审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)。原作matching/splitting/iteration/rematching是继承模板；[当前自足证明](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)的任意显式有理XOS确定性fractional NSW、local-grid及同组修复后果不能当原文逐字结论。未认证全球新颖性，非2024正式排版，源字节不改。
+
+
+## DNS作者稿：本次福利机制的明确既有来源
+
+[作者PDF](https://www.cs.yale.edu/homes/schapira/cfjournal.pdf)15页版，metadata 2009-10-30且刊头有placeholder，不称2010正式排版。§3.2 PDF8–9 Theorem3.2/Lemma3.3已给独立配置、attaining clause与逐资源最大系数舍入，有限n因子更强；Prop2.1 PDF5给显式XOS查询。原字节/哈希在manifest，内部源审者实际文本与四页渲染、root primary相关文本的范围见[新审查](../reviews/unrelated_machines/normalized_gated_menu_welfare_review.md)。本文使用该既有机制，不认领新福利算法；门控桥与特定源后果另证。
