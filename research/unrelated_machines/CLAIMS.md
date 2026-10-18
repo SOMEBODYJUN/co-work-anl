@@ -2603,3 +2603,63 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：共用空选择域措辞补非空，三位实际逆替换核字节；binary generic字母typing明确；旧v1/首写/final来源均保留，无standing fatal。
 - Status：限定结构证明完整，多份实际内审；implementation none、外审/全球新颖性未认证。非近二源，UM-TARGET-v1仍OPEN。
 - Related Files：[正文](../current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)、[指定scope审查](../reviews/unrelated_machines/qary_affine_menu_near_full_deficit_review.md)及逐SHA原件。
+
+
+## UM-MACHINE-UNIFORM-QUERY-RETURN-INDEX-EXCHANGE-v2：逐机统一时间的查询返回严格索引交换
+
+- Objects / Domain / Definitions / Quantifiers：任意固定辅助集A、k≥2不同q/b、内部每机finite时间统一s_h≥0或∞、T>0，任意资格；给两aligned strict见证。
+- Exact Statement / Conclusion：inactive在T不可行则两方向mismatch均在T可行；给两实际见证可总位多项式输出inactive或指定mismatch，全辅助保留；容量截N处理0及tiny。
+- Assumptions / Dependencies：完整原P与[正文](../current/unrelated_machines/machine_uniform_query_return_index_exchange.md)指定域，所有原jobs须执行；固定辅助/正权/半权ρ或tag-degree-intercept等分别承重，不跨ID相互借用。标准matching、容量计数或Hall在正文自足重构，外部hardness与finite checks非推导前提。
+- Scope：仅内部/私有outside封装；不保证真实共享外部负载。单容量v1只模式matching化约，不称原矩阵包含；无端辅助使前件失败、不冒称非法UM合法。
+- Evidence：rank分别仅读v1/v2 Exact独立重构，冻结后才实际读v2作者Proof；随后实际全文读current b930…认证完整v2。Root亲读所有原件、独核容量截断/增广，并明确封装合法性的aligned前件；旧原记录不回改，无单独v1作者Proof。标准matching技术已扣除。
+- Counterevidence / Objections：实际审查所提边界精确化已在current闭合；全部源保原字节。 无standing fatal。
+- Status：限定数学证明完整、实际独立重构及final范围审查；implementation none/audit_only分开，外审与全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/machine_uniform_query_return_index_exchange.md)、[实际审查](../reviews/unrelated_machines/machine_uniform_query_return_index_exchange_review.md)及逐SHA原件；证书/代码仅按登记的finite身份。
+
+
+## UM-WEIGHTED-DIRECT-COHABITING-QUERY-RETURN-ALL-FORMULA-FAILURE-v1：异权直接共居严格SAT与全公式三半逃逸
+
+- Objects / Domain / Definitions / Quantifiers：每clause≥2实际occ的显式CNF，环padding≥3；ρ∈(1/2,1)，逐occ正异权x+y≤1；全部q/b/u原jobs、dummy与空式idle单列。
+- Exact Statement / Conclusion：strict≤1 iff SAT且同编号返回由实际容量推出；任意公式/异权均可不用源解输出全部原jobs实际≤3/2，baseline与active在一个共同匹配内恢复。
+- Assumptions / Dependencies：完整原P与[正文](../current/unrelated_machines/direct_cohabiting_query_return_strict_sat_and_sharp_escape.md)指定域，所有原jobs须执行；固定辅助/正权/半权ρ或tag-degree-intercept等分别承重，不跨ID相互借用。标准matching、容量计数或Hall在正文自足重构，外部hardness与finite checks非推导前提。
+- Scope：只排此改动后的direct co-location矩阵；不同旧D/h及公共Rc输入不回改，不否一般medium复制或所有source-to-UM桥。
+- Evidence：typed仅据Exact独立重构先冻6d853…，作者rainbow的策略摘要其后才到达；再授权实际读Proof、最终全文读3e6ac…但正式只B§1–3。root实际通读所有来源并独核fractional perfect matching、所有原任务恢复和每机异权负载。§4 C仅context，不由typed代审。
+- Counterevidence / Objections：实际审查所提边界精确化已在current闭合；全部源保原字节。 无standing fatal。
+- Status：限定数学证明完整、实际独立重构及final范围审查；implementation none/audit_only分开，外审与全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/direct_cohabiting_query_return_strict_sat_and_sharp_escape.md)、[实际审查](../reviews/unrelated_machines/weighted_direct_cohabiting_query_return_review.md)及逐SHA原件；证书/代码仅按登记的finite身份。
+
+
+## UM-DIRECT-COHABITING-SAT-COMPILER-SHARP-THREE-HALVES-v1：半权直接共居SAT编译的精确三半阈值
+
+- Objects / Domain / Definitions / Quantifiers：同明示全原矩阵但固定真实x=y=1/2、dummy x1、3/4<ρ<1；所有域内CNF，空式idle0。
+- Exact Statement / Conclusion：非空SAT真实OPT1，非空UNSAT真实OPT3/2；任意完整C<3/2实际调度可det-bit-poly解码SAT，等号不能扩。
+- Assumptions / Dependencies：完整原P与[正文](../current/unrelated_machines/direct_cohabiting_query_return_strict_sat_and_sharp_escape.md)指定域，所有原jobs须执行；固定辅助/正权/半权ρ或tag-degree-intercept等分别承重，不跨ID相互借用。标准matching、容量计数或Hall在正文自足重构，外部hardness与finite checks非推导前提。
+- Scope：固定3/2的锐界不是near2反面，不排所有统一小ε；可选unit端本身不是OPT下界，非空下界单独证明。
+- Evidence：root新陈述先交general，仅给原P定义/既有结论，不交root Proof；general先冻独立初稿/final并自枚举5184分配，root实读后才解封作者statement/Proof，再最终通读3e6ac…正式只C§1/4。原初稿/final字节保留。C独立重证容量/环方向，不借B异权active匹配。root另自建固定审计比两份原矩阵并全枚举同hist；finite checks不是一般proof。
+- Counterevidence / Objections：实际审查所提边界精确化已在current闭合；全部源保原字节。 无standing fatal。
+- Status：限定数学证明完整、实际独立重构及final范围审查；implementation none/audit_only分开，外审与全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/direct_cohabiting_query_return_strict_sat_and_sharp_escape.md)、[实际审查](../reviews/unrelated_machines/direct_cohabiting_sharp_three_halves_review.md)及逐SHA原件；证书/代码仅按登记的finite身份。
+
+
+## UM-LST2025-AFFINE-LINE-SOURCE-UNIFORM-COMPILATION-OBSTRUCTION-v1：仿射线集合打包源的均匀菜单编译障碍
+
+- Objects / Domain / Definitions / Quantifiers：prime R≥2、k≥1，每constraint k个不同变量，每变量indexed constraint-degree≤R、注入intercept、tag分离、所有显式allowed tuple菜单非空；uniform 1/(kR)。
+- Exact Statement / Conclusion：任意local state选择都可对全部Hall子集分配每group ceil(kR/2)项，输出全部原jobs峰≤2−ceil(kR/2)/(kR)≤3/2；不求源assignment。
+- Assumptions / Dependencies：完整原P与[正文](../current/unrelated_machines/line_set_packing_and_take_continue_compilation_obstructions.md)指定域，所有原jobs须执行；固定辅助/正权/半权ρ或tag-degree-intercept等分别承重，不跨ID相互借用。标准matching、容量计数或Hall在正文自足重构，外部hardness与finite checks非推导前提。
+- Scope：constraint-as-group/tuple-as-state特定编译；不排tuple-as-group+dummy；空relation不合法且须另证promise。源仅near-perfect YES且NP⊆BPP例外，不能改成perfect或P≠NP。
+- Evidence：fee仅据Exact独立完成所有Hall子集，实际核在线arxiv v1 §2–4，然后才实际读作者Proof。root另下载原14页PDF并亲读同位置，不冒认fee下载了root字节。fee实读c50…后提出tuple句过强，最终f740…改为不再自动保证，逆替换核旧hash；主数学未变。标准pair-overlap/Hall直接应用已从新颖性扣除。
+- Counterevidence / Objections：实际审查所提边界精确化已在current闭合；全部源保原字节。 无standing fatal。
+- Status：限定数学证明完整、实际独立重构及final范围审查；implementation none/audit_only分开，外审与全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/line_set_packing_and_take_continue_compilation_obstructions.md)、[实际审查](../reviews/unrelated_machines/lst2025_affine_line_uniform_compilation_review.md)及逐SHA原件；证书/代码仅按登记的finite身份。
+
+
+## UM-PARTIAL-SUM-TAKE-CONTINUE-FLAT-MENU-ACTUAL-ESCAPE-v1：累计take继续路径的实际八五逃逸反例
+
+- Objects / Domain / Definitions / Quantifiers：明示3源agents/2不可拆items值3/5；目标每a为take1/off-take2/off-accept三组、五state，全26机30job57finite。
+- Exact Statement / Conclusion：source SC OPT0，目标partial V2/5、完整ordinary UM OPT8/5；此明示additive take/continue规则不存在任意正常数全agents正值decoder，即使重排全部源items。
+- Assumptions / Dependencies：完整原P与[正文](../current/unrelated_machines/line_set_packing_and_take_continue_compilation_obstructions.md)指定域，所有原jobs须执行；固定辅助/正权/半权ρ或tag-degree-intercept等分别承重，不跨ID相互借用。标准matching、容量计数或Hall在正文自足重构，外部hardness与finite checks非推导前提。
+- Scope：只否所列AND拆分规则，不否所有DAG compiler/既有normalized leaf selector-tree；不认证最小性或一般sourcehardness。
+- Evidence：必须保留路由纠正：原misnamed Exact本身含完整Proof，general先读后的原Exact-only标签不能充盲审，另冻scope correction撤回该身份；其实际Fraction证书保留。root另造真正statement-only，此前未读原Proof的fee独立给完整30-job证书/任意调度lower后才读作者源，满足真实陈述先行。fee随后实读canonical及E固定checker/output，未冒称自己运行或亲核其未读raw cert。root独建矩阵逐57条资格相等，全部30任务/26loads/9bundles Fraction核验；无E优化枚举。
+- Counterevidence / Objections：旧误Exact-only审查已另冻scope correction，不能作blind；fee真正statement-first闭合。 无standing fatal。
+- Status：限定数学证明完整、实际独立重构及final范围审查；implementation none/audit_only分开，外审与全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/line_set_packing_and_take_continue_compilation_obstructions.md)、[实际审查](../reviews/unrelated_machines/partial_sum_take_continue_actual_escape_review.md)及逐SHA原件；证书/代码仅按登记的finite身份。

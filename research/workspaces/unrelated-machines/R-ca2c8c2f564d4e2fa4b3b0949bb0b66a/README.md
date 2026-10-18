@@ -100,3 +100,5 @@
 [裸Cartesian菜单与一致性差距](../../../current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)精确定位NO反向放大：跨坐标state重选使actualOPT趋1，额外fiber一致才使导出值趋0；源decoder不能免费加入该条件。全原job审计有限t1..4只作checks。继续攻实际全局一致性而非把逻辑side constraint冒充physical gadget。
 
 [笛卡尔一致性与缺项尺度](../../../current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)作为完整结构回收保存，不再扩局部数值主线。当前唯一负向承重：真实普通P中的联合索引一致性/源NO解码；正攻击任意单容量query-return网络的索引交换，并直接核真正CSP→setpacking源的partial导出失效，均未宣称近二hardness。
+
+实际身份接口阶段：[局部统一时间](../../../current/unrelated_machines/machine_uniform_query_return_index_exchange.md)、[异权direct共居与三半锐界](../../../current/unrelated_machines/direct_cohabiting_query_return_strict_sat_and_sharp_escape.md)、[真实source与AND规则](../../../current/unrelated_machines/line_set_packing_and_take_continue_compilation_obstructions.md)。五项按真实scope保存，E路由纠正及全部原证书不隐藏。当前继续任意异权内部交换与共享外部容量的严格界，未取得near2源NO联合decoder。
