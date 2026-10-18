@@ -2476,3 +2476,29 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：越域与非fatal措辞意见已在审查保留并关闭；无standing fatal。
 - Status：证明完成/多份内部实际审查；外审、新颖性未认证；implementation none，UM-TARGET-v1仍OPEN。
 - Related Files：[正文](../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)、[审查](../reviews/unrelated_machines/degree_three_weighted_menu_cube_embedding_review.md)及其逐SHA原来源。
+
+
+## UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1：归一化菜单与加性Santa Claus的精确实际值桥
+
+- Objects / Domain / Definitions / Quantifiers：显式非空flat weighted-menu UM、每state非负private总量恰1、distinct资源、selector1及resource端1、全部原jobs，无degree或K限制。 对全部所列显式对象/参数成立，完整定义及边界见[自足正文](../current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md)。
+- Exact Statement / Conclusion：每state一SC agent、每组K_g−1不可拆unitdummy，exact OPT_SC=V与actualOPT_UM=2−V；给定SC allocation与完整UM schedule双向poly解码含C2/t0/K1/V0端点，非优化算法。
+- Assumptions：恰所列归一化/不可拆/全部subset量词；没有未述sourcegap、隐式小state表或OPT输入。
+- Scope / Limits：只供normalized image源合同，非外部generalSC自动归约；W≤1先bonus再重定义V，full SC row总K_g，resource group degree非agent degree；不制造near2hardness。
+- Dependencies：正文明确的完整flat norm1域或same-U norm1 XOS域；自足pigeonhole/原jobs转换或support覆盖计数，无有限审计/外部hardness前提。
+- Evidence：作者证明、Exact-first独立重构、实际作者读后及限定章节最终稿审查；root亲读并独核。
+- Counterevidence / Objections：§5“任意d项等号”措辞已修≤与support内达到，旧原件保留；无standing fatal，不能扩大为一般归约不可能。
+- Status：完整精确结构证明；多份内部实际审查；implementation none、外审/全球新颖性未认证，UM-TARGET-v1仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md)、[实际范围审查](../reviews/unrelated_machines/normalized_weighted_menu_santa_value_bridge_review.md)及逐SHA原件。
+
+
+## UM-NORMALIZED-XOS-THRESHOLD-MENU-SIZE-OBSTRUCTION-v2：同宇宙归一化菜单的最小状态数与达到锐界
+
+- Objects / Domain / Definitions / Quantifiers：固定有理η∈(0,1)，t≥1、同U有2t资源，显式非负norm1 indexed XOS clauses；全部t-subsets值1、全部≤floorηt-subsets值≤η；无辅助资源/玩家。 对全部所列显式对象/参数成立，完整定义及边界见[自足正文](../current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md)。
+- Exact Statement / Conclusion：k=max(1,ceil(floorηt/η))；K_min精确等于每t集含一个k集的最小family Θ；K≥C(2t,t)/C(2t−k,t−k)。d0精确t+1，ηt正整数精确中央二项式达到；固定η一般K≥4^t/[(2t+1)(2t)^(ceil(1/η)−1)]（d≥1）。
+- Assumptions：恰所列归一化/不可拆/全部subset量词；没有未述sourcegap、隐式小state表或OPT输入。
+- Scope / Limits：只否定同U逐玩家/全部unit-tiny保真/explicit norm1 shortcut；不排辅助全局归约或隐式表示，不供sourcegap；不是2^Ω(源总位长)或poly求Θ。
+- Dependencies：正文明确的完整flat norm1域或same-U norm1 XOS域；自足pigeonhole/原jobs转换或support覆盖计数，无有限审计/外部hardness前提。
+- Evidence：作者证明、Exact-first独立重构、实际作者读后及限定章节最终稿审查；root亲读并独核。
+- Counterevidence / Objections：§5“任意d项等号”措辞已修≤与support内达到，旧原件保留；无standing fatal，不能扩大为一般归约不可能。
+- Status：完整精确结构证明；多份内部实际审查；implementation none、外审/全球新颖性未认证，UM-TARGET-v1仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md)、[实际范围审查](../reviews/unrelated_machines/normalized_xos_menu_threshold_size_review.md)及逐SHA原件。

@@ -11323,6 +11323,52 @@
         "research/reviews/unrelated_machines/degree_three_weighted_menu_cube_embedding_review.md"
       ],
       "status": "complete scoped exact instance-and-schedule embedding; statement-first and actual read-after review; novelty unverified"
+    },
+    {
+      "id": "UM-FLAT-MENU-EXACT-STATE-MASS-ONE",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "完整菜单每indexed state质量恰1",
+      "detail": "在既有完整flat菜单真实矩阵域内额外要求Σp=1；无resource degree/K限制，非subnormalized旧V。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-SAME-UNIVERSE-NORMALIZED-XOS-ALL-SUBSET-THRESHOLDS",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "同资源宇宙的全部unit/tiny归一化菜单合同",
+      "detail": "固定有理η∈(0,1)，t≥1、同U有2t资源，显式非负norm1 indexed XOS clauses；全部t-subsets值1、全部≤floorηt-subsets值≤η；无辅助资源/玩家。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "归一化菜单与加性Santa Claus的精确实际值桥",
+      "detail": "每state一SC agent、每组K_g−1不可拆unitdummy，exact OPT_SC=V与actualOPT_UM=2−V；给定SC allocation与完整UM schedule双向poly解码含C2/t0/K1/V0端点，非优化算法。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md",
+        "research/reviews/unrelated_machines/normalized_weighted_menu_santa_value_bridge_review.md"
+      ],
+      "status": "complete scoped exact value-and-assignment bridge; actual statement-first and read-after review; novelty unverified"
+    },
+    {
+      "id": "UM-NORMALIZED-XOS-THRESHOLD-MENU-SIZE-OBSTRUCTION-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "同宇宙归一化菜单的最小状态数与达到锐界",
+      "detail": "k=max(1,ceil(floorηt/η))；K_min精确等于每t集含一个k集的最小family Θ；K≥C(2t,t)/C(2t−k,t−k)。d0精确t+1，ηt正整数精确中央二项式达到；固定η一般K≥4^t/[(2t+1)(2t)^(ceil(1/η)−1)]（d≥1）。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md",
+        "research/reviews/unrelated_machines/normalized_xos_menu_threshold_size_review.md"
+      ],
+      "status": "complete scoped exact representation-size theorem with attained endpoints; independent statement-first and actual read-after review; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -27560,6 +27606,68 @@
       "refs": [
         "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
         "research/reviews/unrelated_machines/degree_three_weighted_menu_cube_embedding_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_weighted_menu_state_dummy_sc_value_bridge_v1_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-EXPLICIT-FLAT-WEIGHTED-MENU-DOMAIN-v1",
+        "UM-FLAT-MENU-EXACT-STATE-MASS-ONE"
+      ],
+      "conclusion": "UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1",
+      "statement": "每state一SC agent、每组K_g−1不可拆unitdummy，exact OPT_SC=V与actualOPT_UM=2−V；给定SC allocation与完整UM schedule双向poly解码含C2/t0/K1/V0端点，非优化算法。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md",
+        "research/reviews/unrelated_machines/normalized_weighted_menu_santa_value_bridge_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "um_weighted_menu_state_dummy_sc_value_bridge_v1_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只供normalized image源合同，非外部generalSC自动归约；W≤1先bonus再重定义V，full SC row总K_g，resource group degree非agent degree；不制造near2hardness。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md",
+        "research/reviews/unrelated_machines/normalized_weighted_menu_santa_value_bridge_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_normalized_xos_threshold_menu_size_obstruction_v2_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SAME-UNIVERSE-NORMALIZED-XOS-ALL-SUBSET-THRESHOLDS"
+      ],
+      "conclusion": "UM-NORMALIZED-XOS-THRESHOLD-MENU-SIZE-OBSTRUCTION-v2",
+      "statement": "k=max(1,ceil(floorηt/η))；K_min精确等于每t集含一个k集的最小family Θ；K≥C(2t,t)/C(2t−k,t−k)。d0精确t+1，ηt正整数精确中央二项式达到；固定η一般K≥4^t/[(2t+1)(2t)^(ceil(1/η)−1)]（d≥1）。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md",
+        "research/reviews/unrelated_machines/normalized_xos_menu_threshold_size_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "um_normalized_xos_threshold_menu_size_obstruction_v2_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-XOS-THRESHOLD-MENU-SIZE-OBSTRUCTION-v2"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只否定同U逐玩家/全部unit-tiny保真/explicit norm1 shortcut；不排辅助全局归约或隐式表示，不供sourcegap；不是2^Ω(源总位长)或poly求Θ。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md",
+        "research/reviews/unrelated_machines/normalized_xos_menu_threshold_size_review.md"
       ],
       "status": "scope limitation"
     }
