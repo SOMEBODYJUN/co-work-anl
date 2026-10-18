@@ -138,3 +138,5 @@
 [匿名token与原身份矩](../../../current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)：匿名同菜单token形式lift一般保M1，却有aggregate M2完全无原身份M2扩展；原任务SOS强迫整个head×affine-context容量块。13机context actualOPT1，非原任务gap/near2 hardness或所有points不可行。
 
 [rawK2边界与S3修复](../../../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)：18m17j族每机full-local-law/globalM2/全raw-affine容量仍不保direct canonical SA1，同点负值跨三机而actualOPT1；另rawS3的显式global literal-row LP必要于真实T且足以给canonical点。两接口严格分开，非实际gap/一般算法或hardness。
+
+[共享终端raw K2实际gap](../../../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)：全部同机CONFIG first/pair+globalM2+所有affine physical-load localizers仍有真实gap上确界2；OPT精确2−floor√k/k，rare-H/background-Q定量支配付清全global contexts。更强条件可切，不是hardness；一般反面OPEN。

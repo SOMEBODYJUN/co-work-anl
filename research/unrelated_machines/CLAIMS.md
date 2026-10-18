@@ -3285,3 +3285,17 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：Source cap1、所有三literal乘子、normalization与共同点不可省；未宣称S3已含PSD。 当前精确范围无standing fatal。
 - Status：complete scoped same-point transfer proof; independent Exact-first and actual final reading; software none; novelty unverified；主目标及反面OPEN。
 - Related Files：[正文§13–14](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)、[实际审查](../reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md)及其来源/证据。
+
+
+## UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1
+
+- ID/version：UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1。
+- Objects / Domain / Definitions：全部普通UM的positive binary-rational T与有限有理raw K2证书：全部finite端、共同degree4 Boolean/onehot商及M2、逐机完整legal CONFIG first/pair、全部global affine physical-load localizers；无共同CONFIG指标四次links、无canonical gates。
+- Quantifiers / Exact Statement / Conclusion：所有k>=2，L2k²,M1+60Lk4的显式共享终端族实际OPT2−floor√k/k，raw K2在T1+1/k有det-bit-poly生成指定有理证书；缩放到T1实际OPT趋2，结合slot上界得此raw合同全类gap supremum2。
+- Assumptions：无复杂度假设，全部原jobs不可分且每样本onehot；证书含全机CONFIG distribution但只共享first/pair。
+- Scope：仅所列raw relaxation gap，非hardness/一般算法非存在性；row triple和跨行selector×incoming条件可切给定点，不声称canonical C2、joint-CONFIG M2、高阶load或全SoS(CONFIG)gap；一般输入证书finder未提供。
+- Dependencies：UM-MODEL-v1、UM-RAW-K2-FINITE-RATIONAL-CERTIFICATE-DOMAIN-v1、UM-ST-ROUND-v1及正文§4–10自足定量证明。
+- Evidence：独立Exact-first完整重构先冻，root实读后释放Proof；作者Proof读后和最终正文实际全文读；root实际读代码并两新目录精确重放。
+- Counterevidence / Objections：当前raw合同无standing fatal；stronger two-event条件及same-row triple明确失败，不能扩为所有算法或高层级。
+- Status：complete exact raw-system gap theorem; independently reconstructed and actual final read; finite local audit only; novelty unverified；外审、新颖性、独立论文价值未认证，主目标及反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)、[实际审查](../reviews/unrelated_machines/diluted_shared_terminal_raw_k2_gap_review.md)及所列原件/有限软件记录。
