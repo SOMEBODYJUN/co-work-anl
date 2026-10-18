@@ -2747,3 +2747,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：重C边界严格>.5，C输出≤1非恰1；I仅≤1.5，fixed C扣gate，原OPT1/conditionalFalse与sourceNO分开，无standing fatal。
 - Status：限定证明完整，真实独立先行/作者读后/最终全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
 - Related Files：[正文](../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)、[审查](../reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md)及逐SHA原件。
+
+
+## UM-TAGGED-AFFINE-LINE-BALANCED-MARGINAL-TINY-VALUE-v1：单标签边际均匀的仿射线菜单仍有趋二实际间隙
+
+- Objects / Domain / Quantifiers / Definitions：primeR≥3、完整tagged F_R² line planes、各变量intercept单射、state-dependent非负有理norm1权含全部zero；显式main与R(R−1)helper，每group Rstates、各incidence label单边际uniform。
+- Exact Statement / Conclusion：对每primeR≥3显式族，任意partial选择最优V=1/(R−1)，全原jobs普通UM实际OPT=2−1/(R−1)，显式达界assignment；fresh零权变量padding使共同arityR/R-partite并精确保值。
+- Assumptions / Dependencies：UM-MODEL-v1与primeR≥3/完整norm1 tagged-LINE矩阵/main-helper显式族；资源挤占/完整调度/零权padding与有限域代数自足，不调用CONFIG、hardness或有限实验。
+- Scope：仅反驳真tagged-LINE几何加uniform单标签边际足以保证任意state-dependent权正常数partial值；main/helper关系并非pairwise independent，不认证Chan/LST hard image、源value、CONFIG新值或near2计算困难性；UM-TARGET-v1仍OPEN。
+- Evidence：root先听作者口头策略，核对不记盲审；rank仅Exact独立全证冻0d8a…，root实际全文读后才放作者Proof c502…；rank实际作者读后df172…再审canonical header+§1–4全文b661…，root全部实际读，任意helper选态、完整actual含zero/padding/counts/显式位poly均闭合，无standing fatal。
+- Counterevidence / Objections：不是局部pairwise-independent关系；任意helper/全部未选和zero jobs均包含，R2不在域；source hard image未认证，无standing fatal。
+- Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md)、[审查](../reviews/unrelated_machines/tagged_affine_line_uniform_marginal_gap_review.md)及逐SHA原件。

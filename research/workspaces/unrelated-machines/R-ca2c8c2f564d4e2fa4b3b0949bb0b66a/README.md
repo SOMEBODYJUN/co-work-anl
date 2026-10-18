@@ -114,3 +114,5 @@
 [bulk OR两actual模式插值](../../../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)已真实三版statement-first/作者读后/final全文核；任意异权I与重C(.5,1]不能挡全False1.5读出。真实出口须改变J的共同资格/容量或没有两strict模式的全局源，而非单加内部collector。
 
 当前按[真实NO联合decoder路线卡](ROUTE_CARD.md)继续：主O仍OPEN，bulk结果仅salvage；保留同行新导航，并以本会话明确自主并行授权处理人数/停工设置，不排他认领。
+
+[单标签边际均匀LINE的趋二实际间隙](../../../current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md)显示真实LINE加uniform单边际不够；完整actual精确OPT趋2仍是易显式构造，不是计算困难性。继续审查额外pairwise independence、rectangle freedom与真实源NO解码。

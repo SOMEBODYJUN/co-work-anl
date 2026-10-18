@@ -11807,6 +11807,29 @@
         "research/reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md"
       ],
       "status": "complete scoped two-witness readout obstruction; actual statement-first and final review; novelty unverified"
+    },
+    {
+      "id": "UM-TAGGED-LINE-UNIFORM-MARGINAL-EXPLICIT-FAMILY-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "显式单边际均匀tagged-LINE main/helper域",
+      "detail": "primeR≥3、完整tagged F_R² line planes、各变量intercept单射、state-dependent非负有理norm1权含全部zero；显式main与R(R−1)helper，每group Rstates、各incidence label单边际uniform。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-TAGGED-AFFINE-LINE-BALANCED-MARGINAL-TINY-VALUE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单标签边际均匀的仿射线菜单仍有趋二实际间隙",
+      "detail": "对每primeR≥3显式族，任意partial选择最优V=1/(R−1)，全原jobs普通UM实际OPT=2−1/(R−1)，显式达界assignment；fresh零权变量padding使共同arityR/R-partite并精确保值。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_uniform_marginal_gap_review.md"
+      ],
+      "status": "complete scoped exact geometric construction; actual statement-first and final review; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -28766,6 +28789,37 @@
       "refs": [
         "research/current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md",
         "research/reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_tagged_affine_line_balanced_marginal_tiny_value_v1_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TAGGED-LINE-UNIFORM-MARGINAL-EXPLICIT-FAMILY-DOMAIN-v1"
+      ],
+      "conclusion": "UM-TAGGED-AFFINE-LINE-BALANCED-MARGINAL-TINY-VALUE-v1",
+      "statement": "完整显式norm1 line矩阵加main/helper定义；任意helper正选择是B_a或fallback，block挤占计数给V精确值及任意actual下界，显式全job达界与零权fresh padding；不依赖CONFIG、hardness或有限计算。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_uniform_marginal_gap_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "um_tagged_affine_line_balanced_marginal_tiny_value_v1_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TAGGED-AFFINE-LINE-BALANCED-MARGINAL-TINY-VALUE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅反驳真tagged-LINE几何加uniform单标签边际足以保证任意state-dependent权正常数partial值；main/helper关系并非pairwise independent，不认证Chan/LST hard image、源value、CONFIG新值或near2计算困难性；UM-TARGET-v1仍OPEN。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_uniform_marginal_gap_review.md"
       ],
       "status": "scope limitation"
     }

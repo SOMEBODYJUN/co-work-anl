@@ -1244,6 +1244,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-UNRELATED-AUX-HEAVY-READOUT-BULK-OR-COMMIT-SPLIT-v3 | r≥2/偶k≥2/ρ∈(.5,1)完整block-ring双池；J只接任意unrelated非负I或正C，全部J在C端∈(.5,1]；给同P两份不同一真完整实际strict≤1调度。 det-bit-poly构造全部原jobs全False实际≤1.5，J各仅取自身两witness原端，I≤1.5/C,M≤1/正pool≤1.5；只承诺witness存在则仅存在结论，原OPT1非sourceNO。 | [正文](unrelated_machines/bulk_or_commit_two_witness_interpolation.md)、[实际审查](../reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md)；仅指定读出反例，不给sourceNO/一般UM。 |
 
+| UM-TAGGED-AFFINE-LINE-BALANCED-MARGINAL-TINY-VALUE-v1 | primeR≥3、完整tagged F_R² line planes、各变量intercept单射、state-dependent非负有理norm1权含全部zero；显式main与R(R−1)helper，每group Rstates、各incidence label单边际uniform。 对每primeR≥3显式族，任意partial选择最优V=1/(R−1)，全原jobs普通UM实际OPT=2−1/(R−1)，显式达界assignment；fresh零权变量padding使共同arityR/R-partite并精确保值。 | [正文](unrelated_machines/tagged_affine_line_uniform_marginal_gap.md)、[实际审查](../reviews/unrelated_machines/tagged_affine_line_uniform_marginal_gap_review.md)；仅单标签uniform边际反例，非pairwise-independent hard image/计算困难性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

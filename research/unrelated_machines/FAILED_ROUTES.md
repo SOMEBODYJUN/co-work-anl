@@ -386,3 +386,5 @@ u_t) 的一般复杂度。
 [并行sum关系任意状态重赋权的半保留](../current/unrelated_machines/weighted_affine_parallel_relation_reweighting_obstruction.md)补上不同范围：source value1/R的完整并行sum关系，即使任意state-dependent非负norm1权，仍可实际半保留/全部job≤1.5。条件于整个state保持c均匀，再把共点交唯一例外；singleton关系能V0，故不推广任意关系，不排避开本族的hard image。
 
 [异权内部与重读口的bulk OR实际三半逃逸](../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)给完整block-ring双池下任意异权I/正C时间(.5,1]的committer：两个不同一真全原strict见证经半项配对/共同流，仍有全False全部原job实际≤1.5。内部异权collector与重C都不能单独挡split；缺两全局strict见证的跨子句NO不在范围，不是near2源。
+
+[单标签边际均匀LINE的趋二实际间隙](../current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md)给真LINE反例：每incidence label均匀、各state norm1，但V=1/(R−1)/实际OPT=2−1/(R−1)；共同arityR与R-partite可zero padding保值。此非pairwise-independent原hard image，未给源value/CONFIG新结论/计算困难性。
