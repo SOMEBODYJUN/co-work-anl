@@ -17,3 +17,7 @@ general的composition审查只核本target满足已命名有限交互定理条�
 | `history/source/notes/unrelated_machines/degree_three_weighted_menu_cube_embedding_independent_review.md` | `b0cc7db624d4543d268df4bf2b7225686124e363d90c32ca98a0aafa6f6b54b4` |
 | `history/source/notes/unrelated_machines/degree_three_weighted_menu_cube_embedding_author_read_after_review.md` | `0d3f54680d00c3a19ea75f9896b6066e2e6a09e9914c8180a0a2bb2a3675ad59` |
 | `history/source/notes/unrelated_machines/degree_three_weighted_menu_cube_embedding_canonical_read_after_review.md` | `bfe987aac0d3c02548d7db27a5756ce39d4c4d34e22240b86f2b9c3322f48be7` |
+
+## 追加后的旧Claim范围
+
+current后续新增不同ID的§6–7路径与§8–9正规形。原§1–5完整7915-byte前缀仍精确hash def740ba49bb83b495f034ecd80efdb88d7a291fa6c048a6209db19dd5d6869e；旧原始审查不覆盖或认证后追加Claims。新增章节各有另立scope审查，原冻结来源不改。

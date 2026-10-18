@@ -2502,3 +2502,29 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：§5“任意d项等号”措辞已修≤与support内达到，旧原件保留；无standing fatal，不能扩大为一般归约不可能。
 - Status：完整精确结构证明；多份内部实际审查；implementation none、外审/全球新颖性未认证，UM-TARGET-v1仍OPEN。
 - Related Files：[正文](../current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md)、[实际范围审查](../reviews/unrelated_machines/normalized_xos_menu_threshold_size_review.md)及逐SHA原件。
+
+
+## UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1：完整加权菜单的资源度三物理路径归约
+
+- Objects / Domain / Definitions / Quantifiers：完整显式flat weighted-menu UM，非空groups/menus、state distinct资源、private非负质量≤1、selector1/resource1；资源跨组度与K/M不限制，zero/empty/unused均保留。 对全部所列输入，完整对象及精确计数见[正文](../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)。
+- Exact Statement / Conclusion：每旧资源按group分ports，d−1真实两态heavy-only helpers；target资源跨组≤3、K≤max(Kold,2)，任意actual C<2全旧jobs双向不增映射，actualOPT精确保含2；norm1 partial V含0精确保。
+- Assumptions：全部辅助group/selector/incidence为真实jobs，完整矩阵无隐含资格，未选states也执行；没有源hardness或OPT输入。
+- Scope / Limits：不是general UM到flat的转换；不保group数/M，不提供tiny-gap源；标准BCG2009路径装置非原创，无软件声明。
+- Dependencies：完整flat域、ordinary UM；三态另需norm1及前述path实际合同，cube组合另调用原嵌入ID；正文自足，不以有限测试导一般结论。
+- Evidence：作者Proof、Exact-first独立重构、作者读后、最终指定章节实读；root亲读并独核全原job和端点。BCG标准路径由root与rainbow实际核原件。
+- Counterevidence / Objections：K1正向无singleton已明确特判；原§1–5字节保持，新增不同ID不替旧域；无standing fatal。
+- Status：完整限定表示重构/多份实际内审；实现none、未外审、不主张既有装置原创，UM-TARGET-v1仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)、[真实scope审查](../reviews/unrelated_machines/flat_menu_resource_degree_three_path_reduction_review.md)及逐SHA原始来源。
+
+
+## UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1：归一化完整菜单的三态与资源度三精确正规形
+
+- Objects / Domain / Definitions / Quantifiers：完整显式flat菜单且每state非负private质量恰1，非空groups/menus、distinct资源、全部原jobs；K/资源跨组度/M任意，原selector在target改为root资格是明示构造。 对全部所列输入，完整对象及精确计数见[正文](../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)。
+- Exact Statement / Conclusion：先满binary selector树（原states在leaf、真实own资源与unit singletons），后按真实中间memberships路径降度；actualOPT与one-state partial V精确保含2/0，最终K≤3/Δ≤3，任意C<2全原jobs双向poly不增；K1单叶原位。
+- Assumptions：全部辅助group/selector/incidence为真实jobs，完整矩阵无隐含资格，未选states也执行；没有源hardness或OPT输入。
+- Scope / Limits：source必须norm1 explicit flat，不能免费纳入SCΣp>1行或一般UM；M/原group数不保，不变成one-heavy/two-diffuse；不制造近2NO。
+- Dependencies：完整flat域、ordinary UM；三态另需norm1及前述path实际合同，cube组合另调用原嵌入ID；正文自足，不以有限测试导一般结论。
+- Evidence：作者Proof、Exact-first独立重构、作者读后、最终指定章节实读；root亲读并独核全原job和端点。BCG标准路径由root与rainbow实际核原件。
+- Counterevidence / Objections：K1正向无singleton已明确特判；原§1–5字节保持，新增不同ID不替旧域；无standing fatal。
+- Status：完整限定表示重构/多份实际内审；实现none、未外审、不主张既有装置原创，UM-TARGET-v1仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)、[真实scope审查](../reviews/unrelated_machines/normalized_flat_menu_three_state_degree_three_normal_form_review.md)及逐SHA原始来源。

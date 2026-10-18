@@ -148,3 +148,5 @@ DGR2025/2026 constrained rejections全arXiv v1原PDF已取得并parse（18页，
 ## VW2010v1 的degree2 additive后端：本次实际读取
 
 沿用既有VW2014登记的arXiv v1原PDF（不替换字节）。root及两内部独立审查实际读§5.1、Lemma11、Theorem12，PDF10–11/印9–10，含preassignment和两匹配二着色；原件按binary input给纯组合2approx，允许item两端异值、degree1及省去zero edges。仅用于[两组资源加权菜单](../current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md)：每group一aux agent，item正支撑≤2，条件真实满足。新部分是group平均、原UM/XOS恒等式和保OPT bonus的直接结构推论；不把此旧SC算法或原论文CONFIG2gap当新增成果。
+
+已登记BCG2009原件本次另核§2.2 Theorem2.4/Fig2（PDF/印8–9）：d copies、d−1相邻dummy玩家的item路径降度是已知机制，MinMax脚注亦有提及。[flat菜单路径重构](../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)§6不主张装置原创，只给具体ordinary UM helper矩阵、全部原jobs/partial导出、OPT2/V0与位复杂度的可复用自足合同；后续三态selector树也不因此成为新hardness源。原PDF字节与既有理论身份保留。

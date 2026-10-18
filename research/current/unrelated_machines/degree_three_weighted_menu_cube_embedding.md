@@ -73,3 +73,86 @@ K_gq_g不一定与原incidence数线性，因为原state可能缺该group并集�
 一个真正的近二反面源仍须先在本flat菜单域证明YES OPT≤1、NO OPT≥2−δ，NO覆盖所有选态及部分导出。式(1)只负责传递这个已证明的源gap，不提供它。若对所有格加正扰动，原本可留private的零jobs在unit阈值下会被迫导出，几何交集可能立刻破坏YES；本结果不支持这种替换。若label vector唯一决定cost/原state，本构造亦未证明可嵌入。
 
 **Evidence / Counterevidence / Objections / Status / Related Files。** 自足构造及两向全部原job证明完成；Exact-only独立重构、实际作者Proof读后及最终正文核对另见[审查](../../reviews/unrelated_machines/degree_three_weighted_menu_cube_embedding_review.md)。无standing fatal；外审、新颖性未认证。没有软件实现或有限实验声明。与已有uniform cube的绝对三半界不矛盾：这里允许任意state权表及零格。一般UM-TARGET-v1的存在或反面仍未解决。
+
+## 6. 任意资源跨组度的真实路径降度
+
+**ID / Version：`UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1`。**
+
+**Objects / Domain / Definitions / Quantifiers / Assumptions。** 源P是§1同一完整显式flat weighted-menu ordinary UM，但**去掉资源跨组≤3的条件**；其余非空groups/menus、state distinct资源、private质量≤1、selector1/resource1、全部原jobs、0时间/空state/unused资源等完全保留。令Γ(u)为全部菜单中使用u的旧groups（零private项仍计），d_u=|Γ(u)|，L为原incidence数，K为原最大菜单数。group与resource均显式，不是一般UM的免费flat分解。
+
+**Exact Statement / Conclusion。** 有确定性位多项式构造D(P)，仍为同一flat域，resource跨全部菜单至多3组、每组state数≤max{K,2}，所有旧state质量原样保持。对任意源完整实际σ且峰C<2，可构造目标完整σ'≤C，所有旧job身份及private/外送决定保留；对任意目标完整实际τ'且峰C<2，可按全部旧jobs投影成源实际τ≤C，含任意partial exports及未选state jobs。并有
+
+\[
+ \mathrm{OPT}(D(P))=\mathrm{OPT}(P). \tag{3}
+\]
+
+当所有原states归一化W=1时，目标亦归一化，§1–4所用one-state partial resource allocation的最大共同导出值V同样精确保持，包括V0。归约不输入OPT、目标阈值或源assignment；给定assignment的转换才读取它。**不声称保group interaction M**，也不把helpers换成其它未述mixed角色。
+
+**完整构造。** 对d=d_u≥1，列Γ(u)为g_1,…,g_d，用d个ports z_{u,1},…,z_{u,d}替换u；旧group g_j的所有state incidences在u上的外端统一改到z_{u,j}，仍time1，旧private机、job身份、p及selector的全部资格不变。对j=1,…,d−1加一个helper group H_{u,j}，恰两个states：singleton z_{u,j}权1，singleton z_{u,j+1}权1。按真实flat规则各自生成两台private机、一枚unit selector、两枚private1/resource1 incidence jobs，其余∞。d1无helper；d0旧resource明确保留为unused机器。
+
+每port只属于一个旧group及至多两个相邻helpers，资源跨组度≤3；旧K_g不变，helpers K2/质量1。因此W≤1或W1均保持，未引入抽象matroid边或免费容量。
+
+**正向全jobs证明。** 源C<2且C≥1，每旧R_u至多一枚unit外送job，连未选state及private0原jobs也计。若这枚job来自g_a，取port a为空位；否则任取a。让helper H_j选左port j（j<a），选右port j+1（j≥a），这匹配恰所有ports除a。每helper所选state的incidence导出，selector留选根，另一state incidence留自己的private机，三件真实helper jobs全部恰一次，各新机负载≤1≤C。旧private选择不动，唯一旧外送到本group的空port，所有旧/新jobs实际峰≤C。
+
+**任意目标的逆向证明。** 给目标C<2，每helper实际selector所在state的private1 incidence必导出，否则两unit共根负载2。d−1枚被迫外送的helper jobs必占d−1个不同ports；任意未选helper incidence若也导出，只会多占，不能释放这些已占端。故路径至多一枚**旧**job可外送。删全部helper jobs/private机，将每旧外送port合回R_u，private端旧jobs不动；每R_u至多一unit，其余旧负载不增，给合法完整源调度≤C。没有假设helper使用预设matching、每helper只导出一job或旧state全量导出。
+
+**OPT2边界。** 两边全private基线都≤2，selector使OPT≥1；最优完整assignments有限，达到。若源OPT<2，正向再逆向给相等；若源OPT2而目标<2，逆向矛盾。由此式(3)包括2端点。对任意给定C≥2的单份调度，也可直接输出另一边全private≤2，不声称保持这份调度的private/外送决定。
+
+**归一化partial value。** 对每v∈(0,1]，给源一个state/组及不交导出子集质量≥v。每u按其旧领取group留下port空位（未领取任留一个），helpers按上述路径各领取自己的singleton、质量1≥v，旧state及领取子集权不变。反向任意目标正值allocation中每helper都必须领取完整singleton资源，所以d−1ports被占；旧groups至多领取一个port，合回u仍不交，旧group仍同一个原state的同一partial subset。两向对每正v成立，有限最大值及0≤V≤1给V0也保持；这不是只对full-state YES的decoder。
+
+**总位复杂度。** Σ_u d_u≤L，helper数h=Σ(d_u−1)_+≤L；有用port≤L，再加至多|U|个保留unused旧resource。每helper恰增2 private机、3 jobs、6 finite资格。若旧private数a、group数n，目标机器≤a+|U|+3L，jobs≤n+4L，dense条目乘积仍多项式。所有新时间为1，原p逐job复制，其余未列资格仍为∞；membership去重、孔位与路径匹配、全job投影按显式L扫描，不按分母或阈值倒数展开。
+
+**最接近结果与准确扣除。** 已存[BCG2009原作者PDF](../../../history/source/literature/unrelated_machines/bateni_charikar_guruswami_2009_maxmin.pdf)（SHA7f7b21ff08b37e8489e9f60527e9aa9458dc5cf4cd6cc6804869665c24d51f7f）§2.2 Theorem2.4/Fig2、PDF及印8–9，已明确使用d个item copies与d−1个相邻dummy players的同一路径装置，dummy取值∞；其脚注也提及MinMax版本。root本次实际读这些原文位置，不把装置或degree-three思想当原创。本页保留的是该标准技巧在明示flat ordinary UM矩阵中的物理helper实现、全原jobs/任意partial exports/OPT2与V0端点及位复杂度的自足合同，视作直接重构；没有新的SC降度或近二hardness声明。
+
+**Dependencies / Evidence / Counterevidence / Objections / Status / Related Files。** 自足单位路径匹配与完整矩阵域；typed先冻Exact，rainbow只据Exact独立重构先冻，root亦只据陈述独立核，再分别实际读作者Proof及最终稿范围，详见[路径归约审查](../../reviews/unrelated_machines/flat_menu_resource_degree_three_path_reduction_review.md)。无standing fatal；标准matching路径技巧不主张全球新颖，未实现软件、未外审。原§1–5的三坐标嵌入及其原冻结审查保留，不能把本追加当旧Claim换域。
+
+## 7. 组成后真正剩余的源条件
+
+先用§6降度，再用§1–5的zero-cell cube表示，**任意**显式flat weighted-menu源都可位多项式嵌入d=Q3，精确保实际OPT、保归一化，目标最大菜单数≤max{K,2}。它允许增加真实helper groups/jobs；不保原组数或M，也不要求全cell正权、label唯一定价或one-heavy/two-diffuse型。
+
+因此本路线的源无需先做到资源跨组≤3；近二hardness仍缺norm1、显式小表示、所有partial exports都可解码的实际gap。仅证明一个已有源的资源度很大不再是致命缺口，直接把general additive行归一化则仍受[同宇宙菜单数障碍](normalized_weighted_menu_santa_value_and_size.md)的严格接口限制。整个组成不是一般UM到flat的归约，更不是已有的近二反面证明。
+
+## 8. 任意归一化菜单的三态、资源度三正规形
+
+**ID / Version：`UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1`。**
+
+**Objects / Domain / Definitions / Quantifiers / Assumptions。** 源P为§6任意K/任意资源跨组度的完整flat域，另要求每原state的非负private质量**恰1**；原group非空、menus显式非空、state内资源互异，全部原incidence及selector仍是实际不可拆jobs。可有零项、重复states和unused资源，无其它jobs。令n=|G|、S=ΣK_g、I为原incidence数。V为每group选一个state及该state的partial子集、跨groups不交的最大共同private质量。
+
+**Exact Statement / Conclusion。** 有确定性总位多项式映射P↦P*，输出同一normalized flat ordinary UM类，且每group至多3states、每resource跨全部states至多3groups。任意实际C<2调度在两向均可转为另一边全部原jobs完整调度、峰不增，任意正阈值v的one-state partial allocation也两向可转；于是
+
+\[
+ \mathrm{OPT}(P^*)=\mathrm{OPT}(P),\qquad V(P^*)=V(P), \tag{4}
+\]
+
+包括OPT2、V0端点。不输入OPT/源YES证书，不制造源gap；允许增加真实group/selector/单例job，不保原group数、M或one-heavy/two-diffuse型。
+
+**第一步：真实binary selector树。** 对每原g，取叶恰为它K_g个indexed states的显式满二叉树，K1即单叶。每树顶点v建一个新group Q_v，每group**恰一枚**selector；每state独立private机与其全部incidence jobs。每非root v有一个fresh own-resource a_v，树/旧资源namespace不交。菜单如下：
+
+| 树顶点 | 完整state菜单，singleton权均1 |
+| --- | --- |
+| internal root | 两个states，分别用左child的own-resource、右child的own-resource |
+| 非root internal | own singleton，以及左child、右child的own singletons，共3states |
+| 非root leaf，对应原s | own singleton，以及原S_gs/原p state，共2states |
+| root即单叶 | 只有原state，无own state/resource |
+
+原state private机及全部incidence jobs在对应leaf沿用原身份、时间与两个有限端；原selector J_g用作root selector，其资格改到root states。每非root新group另增一枚unit selector。所有新singleton incidences是独立真实jobs，不免费当OR约束。每state质量1。
+
+**partial allocation正向。** 给每原group一个state及导出子集质量≥v>0，在树中选到该leaf的路径。root及路径上internal选下一个child的singleton并领取它；路径终leaf选原state并领取原子集。其余树顶点一律选own singleton并领取它。每own-resource恰由parent路径job或自身off-path job使用，互不冲突，质量均1≥v；原资源子集仍跨groups不交。K1直接保原state/subset。
+
+**任意partial allocation逆向。** root所选singleton要正值必须领取child own-resource，故该child不能以own singleton取得正值，必须选child分支或在leaf选原state。沿实际所选singleton逐层到某个实际选择原state的leaf，取得原同一state的原partial子集质量≥v。未选分支可以自行激活，不影响从root取出这一条路径；只取一leaf/原group，原资源互不相交从全目标allocation继承。K1的root本来就是原state。故正阈值两向等价，有限最大值与非负性给V0也保持。
+
+**实际完整调度正向。** 给原σ峰C<2，取J_g实际所在的原state s，选到它的路径如上。K_g=1时该树所有旧jobs原位不动；以下root移动只用于K_g>1。将原J_g移到树root的相应singleton private机；每非root路径internal的selector选child state，路径leaf的selector选原M_gs；off-path顶点selector选own state。所有已选singleton incidences外送其own-resource，未选singleton incidences留自己private，全部新机负载≤1≤C。所有原incidence jobs保留σ的原private/外送目的地，不只保selected state；原M_gs处新leaf selector替代移走的原J_g，负载相同。其它原private没有新增selector，仍≤1≤C，旧resource负载不变。全部原/新增jobs各一次，峰≤C。
+
+**任意实际目标调度逆向。** 对树中实际selector选择，所选singleton job若留private会与unit selector成负载2，故C<2强迫外送。root占child own-resource后，child若选own state，其singleton也被迫外送同一resource，负载2矛盾。因此沿真实singleton选择到一个实际选原state的leaf。将原root-selector J_g移回该leaf的原M_gs，替代其将被删除的leaf selector；保留全部原incidence的实际目的地，删其它新增selectors/singleton jobs/own-resources。被选原M_gs的selector负载相同，其余原private只减负载，旧resource仅删除aux后不增，输出全部源原jobs的合法σ≤C。未预设一条正规路径、未忽略未选原state的实际exports。K1无需移动。
+
+**第二步及端点。** 在以上三态中间实例的**全部资源**上执行§6真实port-path归约；先三态、后降度，因为拆旧states成leaf可能先增资源跨组度。path helpers仅2states，所以最终仍≤3；其actual C<2和partial正值双向接上前一步，资源度≤3。两边all-private≤2及C<2两向排矛盾，得actualOPT2也相等；V0由正阈值同理。每原job最终都经实际中间矩阵还原，不用式OPT=2−V替代全任务证明。
+
+**规模 / Dependencies。** 第一部恰2S−n groups、5S−4n states、2S−2n个fresh own-resources；保全部I原incidences，再加4S−4n枚singleton incidences。公式含K1（单组贡献1group/1state/0新资源）。每组一selector，第一部jobs恰I+6S−5n。之后path helper数≤第一部incidence数，总机器/jobs及dense乘积均多项式；每个时间为原有理或1，∞未述端禁止，不按数值/分母复制。数学依赖完整normalized flat域及§6路径降度，不借SC行归一化或配置LP。
+
+**Evidence / Counterevidence / Objections / Status / Related Files。** typed先冻新Exact，general仅据该Exact及明确path Exact依赖独立构证先冻，然后才实际读作者Proof与本追加正文；root亦仅读Exact独立核partial链与逐原job替换，后亲读源与审查，见[三态正规形审查](../../reviews/unrelated_machines/normalized_flat_menu_three_state_degree_three_normal_form_review.md)。证明完整，无standing fatal；selector/matching树直接重构，全球新颖性未认证、实现none、未外审。这里没有把任意未归一化Santa Claus行Σp>1偷偷转入域。
+
+## 9. 对反面源搜索的准确更新
+
+任意显式normalized flat菜单的真实near2 gap，若另行证明，均可先变成(K≤3、Δ≤3)，再嵌入d=Q3零格cube；因此K或resource度无界不是本源域固有的归约缺口。full cell权表/zero许可、归一化和所有partial exports的源NO依旧承重。新normal form的internal可以三heavy singletons，mixed leaf可own-heavy/原state二选一，不得擅自等同更窄的one-heavy/two-diffuse或固定角色类。
+
+本表示不解决主目标：尚无本文提供的normalized YES V1/NO任意小V的复杂度源，也没有从一般UM到flat的免费转换。它把后续源工作集中到可实际解码的全局一致性，未用新对象替换UM-TARGET-v1。

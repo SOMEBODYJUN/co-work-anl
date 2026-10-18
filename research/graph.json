@@ -11369,6 +11369,31 @@
         "research/reviews/unrelated_machines/normalized_xos_menu_threshold_size_review.md"
       ],
       "status": "complete scoped exact representation-size theorem with attained endpoints; independent statement-first and actual read-after review; novelty unverified"
+    },
+    {
+      "id": "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完整加权菜单的资源度三物理路径归约",
+      "detail": "每旧资源按group分ports，d−1真实两态heavy-only helpers；target资源跨组≤3、K≤max(Kold,2)，任意actual C<2全旧jobs双向不增映射，actualOPT精确保含2；norm1 partial V含0精确保。",
+      "refs": [
+        "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "research/reviews/unrelated_machines/flat_menu_resource_degree_three_path_reduction_review.md",
+        "history/source/literature/unrelated_machines/bateni_charikar_guruswami_2009_maxmin.pdf"
+      ],
+      "status": "complete scoped actual-job reconstruction of known path degree reduction; independent actual reviews and primary attribution checked"
+    },
+    {
+      "id": "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "归一化完整菜单的三态与资源度三精确正规形",
+      "detail": "先满binary selector树（原states在leaf、真实own资源与unit singletons），后按真实中间memberships路径降度；actualOPT与one-state partial V精确保含2/0，最终K≤3/Δ≤3，任意C<2全原jobs双向poly不增；K1单叶原位。",
+      "refs": [
+        "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "research/reviews/unrelated_machines/normalized_flat_menu_three_state_degree_three_normal_form_review.md"
+      ],
+      "status": "complete scoped selector-tree normal form with actual-job and partial-allocation decoders; independent statement-first and actual read-after review; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -27668,6 +27693,70 @@
       "refs": [
         "research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md",
         "research/reviews/unrelated_machines/normalized_xos_menu_threshold_size_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_flat_menu_resource_degree_three_path_reduction_v1_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-EXPLICIT-FLAT-WEIGHTED-MENU-DOMAIN-v1"
+      ],
+      "conclusion": "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1",
+      "statement": "每旧资源按group分ports，d−1真实两态heavy-only helpers；target资源跨组≤3、K≤max(Kold,2)，任意actual C<2全旧jobs双向不增映射，actualOPT精确保含2；norm1 partial V含0精确保。 自足证明；既有路径装置来源不作为额外未核后端。",
+      "refs": [
+        "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "research/reviews/unrelated_machines/flat_menu_resource_degree_three_path_reduction_review.md"
+      ],
+      "status": "complete scoped direct reconstruction"
+    },
+    {
+      "id": "um_flat_menu_resource_degree_three_path_reduction_v1_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "不是general UM到flat的转换；不保group数/M，不提供tiny-gap源；标准BCG2009路径装置非原创，无软件声明。",
+      "refs": [
+        "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "research/reviews/unrelated_machines/flat_menu_resource_degree_three_path_reduction_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_normalized_flat_menu_three_state_degree_three_normal_form_v1_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-EXPLICIT-FLAT-WEIGHTED-MENU-DOMAIN-v1",
+        "UM-FLAT-MENU-EXACT-STATE-MASS-ONE",
+        "UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1"
+      ],
+      "conclusion": "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1",
+      "statement": "先满binary selector树（原states在leaf、真实own资源与unit singletons），后按真实中间memberships路径降度；actualOPT与one-state partial V精确保含2/0，最终K≤3/Δ≤3，任意C<2全原jobs双向poly不增；K1单叶原位。 自足证明；既有路径装置来源不作为额外未核后端。",
+      "refs": [
+        "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "research/reviews/unrelated_machines/normalized_flat_menu_three_state_degree_three_normal_form_review.md"
+      ],
+      "status": "complete scoped direct reconstruction"
+    },
+    {
+      "id": "um_normalized_flat_menu_three_state_degree_three_normal_form_v1_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "source必须norm1 explicit flat，不能免费纳入SCΣp>1行或一般UM；M/原group数不保，不变成one-heavy/two-diffuse；不制造近2NO。",
+      "refs": [
+        "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "research/reviews/unrelated_machines/normalized_flat_menu_three_state_degree_three_normal_form_review.md"
       ],
       "status": "scope limitation"
     }

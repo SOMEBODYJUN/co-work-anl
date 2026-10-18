@@ -94,3 +94,5 @@
 [有限组交互的实际匹配界](../../../current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md)与[零权三坐标的精确OPT表示](../../../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)共同收窄源：任意K但M/Δ固定有统一改善，d=Q3却保留资源度三且M任意的全部flat菜单。继续攻击normalized YES严格1/NO导出值任意小，不能把固定维或负载配置gap代源decoder。
 
 [归一化SC值桥与显式菜单数量锐界](../../../current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md)把负面source义务定量为normalized SC value1对任意小δ；同U逐玩家保unit/tiny的显式转换需超多项式states，不能把generalSC行直接截成norm1菜单。下一步必须另建全局辅助一致性或直接源，当前未得near2NO decoder。
+
+[同页§6–9的资源路径与三态正规形](../../../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)去掉normalized flat源的原K/Δ限制，任意partialV与实际OPT精确保再入zero cube。路径装置已核为BCG2009既有机制，按完整普通UM接口重构保存。下一源无需先限K/Δ，但归一化与tiny NO全局decoder仍未得到；不再用routine等价替代源攻击。

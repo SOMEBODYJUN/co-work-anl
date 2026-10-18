@@ -135,7 +135,7 @@
 
 [部分MinRep线性度数源](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)把一个充分的源解码费用目标降为固定常数；源的度数阶锐，实际UM收费与一致性仍缺。
 
-[坐标切片编译的完整反例](research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)落实源promise到实际P的失败：NO实际OPT恰1+1/D，双射及CONFIG1仍可并存。只否定该明确编译，继续攻跨测试一致性。 [有限交互菜单](research/current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md)另给任意K的2−1/(M+2Δ−1)实际比；[三坐标零权表示](research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)精确保资源度三菜单的OPT与M，说明固定几何维数不等于交互有界。尚缺无界M的实际近二源与全部低负载解码。 [归一化源值与状态数](research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md)另给standard state-dummy SC精确OPT值桥；同U逐玩家保全部unit/tiny需近中央二项式个states，ηt整齐时精确达到。只排显式归一化shortcut，不排全局辅助归约或给主困难性。
+[坐标切片编译的完整反例](research/current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)仍需实际源NO解码；[加权菜单表示与正规形](research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)可把任意normalized flat菜单精确保OPT/partialV变为K3、资源度3再入零权三坐标，标准path明确按BCG归属。[有限交互界](research/current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md)给固定M/Δ的实际次二比；[归一化源值与状态数](research/current/unrelated_machines/normalized_weighted_menu_santa_value_and_size.md)精确SC值桥与同U菜单数锐界共同定位仍缺的normalized tiny gap，均非一般UM反面证明。
 
 
 [前缀原子解码桥](research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)进一步把全阶矩路线的解码义务压缩为可查询部分分配权：若生成器能保持one-hot守恒与完整逐机局部化，O(|E|)次查询即可得到T可行调度；因此真正未解的是succinct证书生成或sound FAIL，而非终端原子搜索。该接口不改变UM-TARGET-v1的OPEN状态。
