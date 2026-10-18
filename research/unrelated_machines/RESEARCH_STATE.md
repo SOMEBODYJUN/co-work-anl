@@ -532,3 +532,6 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 [configuration_preserving_elimination_support_loss.md](../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)给三个分离身份：真实OPT1初态经合法枢轴可达D0且所有固定补全近二；一般激活提升可在完整CONFIG路径中一次删掉所有好补全；二分两副本使同一方向两个符号端点均坏。双副本方向不是circuit方向，三个结果均不排具体选向、真实共同分解或重开端。完整CONFIG可行性、零缺陷和保负载不能免费替代共同支撑安全。
 
 [出现位置异权文字池的三半逃逸](../current/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md)：允许同变量同侧逐occurrence异权，full eligible每侧b和≤1时仍能det构造全部原jobs actual≤1.5；合两侧首项/余项排序配对，含f池query≤.5，另一池≤1。只否该编译合同，未排额外guards或更大预算。
+
+[有限配置数正文§4.1](../current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md)新增K5完整下例287/144，
+反驳未经证明的阶乘余量候选；不声称K5锐或择优槽匹配困难性，主目标仍OPEN。

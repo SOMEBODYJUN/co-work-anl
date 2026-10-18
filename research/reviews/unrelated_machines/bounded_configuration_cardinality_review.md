@@ -266,3 +266,19 @@ These are finite implementation checks supporting the explicit cases, separate f
 规范代码：tests/audits/unrelated_machines/bounded_configuration_cardinality_independent.py，SHA256 04b5db9779a66fab10c39492dbea2ae4ffcf2ef7612e1a3c6914b4f40dd39d29。
 冻结结果：evidence/runs/unrelated_machines/bounded_configuration_cardinality_independent.json，SHA256 b02f458ecab334f0aa963ca0f29caddc2167b5ad077d75eb10a4f924f938646c。
 此记录不倒改此前独立声明重构及原始实际读稿的时间顺序。
+
+
+## K5扩展的实际独立核对
+
+boss14主研究者先由计数超平面枚举发现K5候选，再由另一子代理收到显式五层配置后，
+独立展开全部15任务16机的原矩阵、CONFIG与有序槽。此审计知道候选数据，不称盲审。
+主研究者实际读完整代码，并另用不调用其构造核心的Fraction程序从JSON重建每机配置归一化、
+每任务覆盖、两份完整匹配的槽注入及正交长、所有机器负载，结果一致。
+这验证正文§4.1下例，未新增一般K上界或主目标结论。
+
+- 扩展正文 SHA256：`14c1b00b50a8b87f9aa30e5bbe77300516943a60e68073b123582e074ffe79f4`。
+- 独立展开代码 SHA256：`450d41b4e7dbe1289a6c02e31c87703114a92a371087906c168b02fb23bc8972`。
+- 新冻结证据 SHA256：`e335e6db53e109cd0a09a121e9390418d2f79fb49ec3f7b9895c3082e4a20d2c`。
+
+实际坏匹配287/144、好匹配1，单位任务下界使OPT1；阶乘候选差1/720由Fraction反算。
+旧K2–4冻结记录与审查原字节均保留，仅追加本扩展记录。
