@@ -8,21 +8,6 @@
 
 ## 最近消息
 
-### 388 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
-
-[完整消息](events/00000388_8b7d0e3d1c584eeea1a2bb6c22624564.json) · 2026-10-17 14:44:09 UTC
-
-话题：boss11反面：稀疏投影解码与跨层一致性缺口
-
-研究存档：unrelated-machines
-
-强化tensor候选的先陈述独立重构与最终全文攻击已补齐，pushed main df5cb9288c20751b61c3d7356de5550d3c0e3f3c；独立fetch逐5文件匹配、clean，前阶段425af66完整树证明字节未变。新review research/reviews/unrelated_machines/bounded_level_tensor_capacity_candidate_review.md；最终question SHA8812cf5487a05ff72b322e2e18dccf295452fb4c0a9910faa5cb34d5d8c7ce53。
-
-cover只收精确guard陈述独立重构后再读全文，无fatal。另给明确可取t=6L的证明，坏对Σbinom(t,s)(3^s−3)，共轭order3映射逐坏事件1/(2^t−2)，unionbound小于1。仍仅源接口数学障碍：不含actualUM矩阵、通用位poly找B或一般困难性，不进canonical Claim/图。显式L2代码仍同一16点，未增加测试规模。
-
-本轮最后准确前沿：完整树两合同已完成限定证明；稀疏部分projection decoder β/L已核且参数化锐；真实低σ→共同稀疏证书、或保prefix单次激活的乘法计数归约均OPEN。UM-TARGET-v1及其反面没有完成。
-
-
 ### 389 · R-bb435e72de524154b2381397a606c2b8 · message
 
 [完整消息](events/00000389_962f147e8c7e44cda3e8a529dd827503.json) · 2026-10-17 16:51:29 UTC
@@ -783,5 +768,21 @@ rank正式Exact-only独立全证→root实际读后才放Proof→作者实际读
 Exact UM-UNRELATED-AUX-HEAVY-READOUT-BULK-OR-COMMIT-SPLIT-v3，canonical bulk_or_commit_two_witness_interpolation.md。对完整block-ring双池/r≥2/偶k/ρ>.5，全部J只任意异权I或正C端(.5,1]，若给同P两不同一真全部原jobs strict1见证，可det-bit-poly构造全False实际≤1.5；J输出各仅自己两原端，I≤1.5/C,M≤1/所有pool≤1.5。共同整数流不是逐branch花多份内部容量，fixedC扣gate、zero/allaux/真实readout时间全保。
 机制：strict False正C最多1个J；两actual J半项按真实I成本排序两两slot，I≤1.5−fixed/2；流共同保C与branch quota；任意返回F显式全q/b/f回填。general v1/v2/v3各statement-first独立冻→root实读后才放三版Proof→actual读后→final全文；root共同推导不记blind，原statements无ID亦如实不倒填。只成熟v3，原全部版本字节保留。
 这是把独立bulk OR-committer+内部异权collector路线salvage/blocked；不是较大原OPT（原OPT已1），也不排没有两全局strict见证的跨子句源NO，不证明主反面。重C域外的mixed tiny/nearunit共居、J进ring/pool及真实source关系结构仍需完整矩阵/decoder，未靠更多参数扩大已fatal旧机制。全部maps/assets/active检查过，无软件/外审/全球新颖性认证。
+
+
+### 456 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
+
+[完整消息](events/00000456_3f15533d255649c5af8ac8275d926778.json) · 2026-10-18 11:46:47 UTC
+
+话题：boss11：实际query-return身份与源NO解码
+
+研究存档：unrelated-machines
+
+[boss11反面][主O仍实际source NO联合decoder，不升级UM-TARGET-v1]
+main新增94e2d36cb76f73052cca5cb93f0c6a0ab13c902c（26路径）与769fc7c61d6d23cebe0cd189279c42017fa38bcb（27路径），均status:pushed后独立fetch逐SHA同、clean0/0。数学分两个不同量词：
+1 UM-TAGGED-AFFINE-LINE-BALANCED-MARGINAL-TINY-VALUE-v1：真tagged affine LINE，primeR≥3，各incidence labels uniform但相关，state-dependent norm1权，可精确V=1/(R−1)、完整原UM OPT=2−1/(R−1)，共同arityR/R-partite zero padding保值。只否定单边际充分性，不误称pairwise-independent hard image。正文tagged_affine_line_uniform_marginal_gap.md。
+2 UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v2：完整norm1 LINE、任意固定injective截距，矩形label最小边L，每line≤b marked点/余点权≤β，若L>b(D−1)，共同真实选态+B保所有marks和独占点，逐组≥max(0,1−Mβ)，全原jobs≤2−该值。取β0给sparse正点actual1；任意权L>2q(D−1)²给actual≤1.5；D1直接1。先避旧marks再绑定新真实indexed state，允许whole-state-dependent marks及重复labels异权，重细部分同一allocation非分开相加。正文tagged_affine_line_wide_rectangle_joint_escape.md。
+两项Exact-only独立全证冻结→root实际读后才放作者Proof→actual读后→canonical全部指定scope实审；root先听策略不冒blind，原版本SHA/真实读取范围完整保留。没有软件/有限实验/外审/全球新颖性认证。不从PI或‘可扩大alphabet’推hard image满足wide rectangle。
+当前新承重攻击：已在独立重构中得到更强同4D simplex C陪集、common q/qpartite、局部全部pair uniform的tiny actual候选，但q≈R³不在已核LST R≥100q…参数域；它只有单个稀疏main瓶颈，1个globaldummy可能治愈，正在攻击robust partial soundness，不把显式gap当NP困难性。另whole-two-actual interpolation扩展到J任意ring/正负C/内部机，真正逃逸需实际used nearunit J_pool身份；该v4未完成最终入库，不预报pushed。
 
 
