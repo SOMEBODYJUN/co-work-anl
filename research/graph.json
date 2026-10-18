@@ -11876,6 +11876,52 @@
         "research/reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md"
       ],
       "status": "complete scoped two-actual interpolation and used-pool obstruction; actual statement-first and final review; novelty unverified"
+    },
+    {
+      "id": "UM-TAGGED-LINE-ONE-PRIMARY-PI-UNIT-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "单primary与PI onehot共享辅助的完整unit逃逸的完整对象域",
+      "detail": "primeR≥2/完整norm1 tagged-LINE菜单；main只含全部primary，各helper恰一primary+任意共享aux，所有helper states onehot；fixed injective截距；primary uniform与primary-aux pair uniform；任意指定main state。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-TAGGED-AFFINE-LINE-ONE-PRIMARY-PI-ONEHOT-HELPER-UNIT-ESCAPE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单primary与PI onehot共享辅助的完整unit逃逸",
+      "detail": "det-bit-poly从原states直接建conditioned-state matching图，不需取出存在的λ；完整真实helper选态/每组质量1/V1/全部原UM jobs实际OPT1。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md"
+      ],
+      "status": "complete scoped PI-line structural result; actual statement-first and separately scoped final review; novelty unverified"
+    },
+    {
+      "id": "UM-TAGGED-LINE-COMMON-SIMPLEX-PI-EXPLICIT-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "公共simplex陪集且全部标签两两独立的精确趋二族的完整对象域",
+      "detail": "oddprimeR≥3、K=F_R² extension、q=(R²+1)(R+1)个parts/同4D full-projective simplex C；每组全部R⁴ states，main与B(R−1) onehot helpers，完整freshzero padding/common q/common cosets/variable degree≤R。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-TAGGED-AFFINE-LINE-PI-SIMPLEX-TINY-VALUE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "公共simplex陪集且全部标签两两独立的精确趋二族",
+      "detail": "uniform local全部pair独立，精确V=2/(R+1)、完整actual UM OPT=2−2/(R+1)、CSP value B/[1+B(R−1)]；显式达界对象，finite表O(R11 polylogR)/dense O(R19 polylogR)。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md"
+      ],
+      "status": "complete scoped PI-line structural result; actual statement-first and separately scoped final review; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -28928,6 +28974,68 @@
       "refs": [
         "research/current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md",
         "research/reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_tagged_affine_line_one_primary_pi_onehot_helper_unit_escape_v1_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TAGGED-LINE-ONE-PRIMARY-PI-UNIT-DOMAIN-v1"
+      ],
+      "conclusion": "UM-TAGGED-AFFINE-LINE-ONE-PRIMARY-PI-ONEHOT-HELPER-UNIT-ESCAPE-v1",
+      "statement": "唯一primary条件化使aux各自uniform；primary平行/aux非零z的1/R与零z截距唯一给资源列cap1，Hall直接图恢复完整原state；所有未选/zero jobs回private。 所有共同对象前提已列；非依另一Claim定理或有限计算。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "um_tagged_affine_line_one_primary_pi_onehot_helper_unit_escape_v1_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TAGGED-AFFINE-LINE-ONE-PRIMARY-PI-ONEHOT-HELPER-UNIT-ESCAPE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只单primary/all-state onehot/main不接aux及指定条件边际；不覆盖多primary/diffuse/额外groups/预载，不输出source全局赋值，不是general PI或主hardness结论。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_tagged_affine_line_pi_simplex_tiny_value_v1_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-TAGGED-LINE-COMMON-SIMPLEX-PI-EXPLICIT-DOMAIN-v1"
+      ],
+      "conclusion": "UM-TAGGED-AFFINE-LINE-PI-SIMPLEX-TINY-VALUE-v1",
+      "statement": "K²的2-spread/projective trace forms给每pair uniform；main state必零block，helpers各可onehot取该block任一点；R−1占R+1点给全partial及任意actual下界，公共cosets不含非零constant给CSP精确值。 所有共同对象前提已列；非依另一Claim定理或有限计算。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "um_tagged_affine_line_pi_simplex_tiny_value_v1_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TAGGED-AFFINE-LINE-PI-SIMPLEX-TINY-VALUE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "易显式计算族，不给NP-hard promise/source任意NO decoder；q约R³/C随R非既有LST固定arity大R参数域；仅删唯一diffuse main即其余全部unit，不提供robust删除/dummy-budget困难性。",
+      "refs": [
+        "research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md",
+        "research/reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md"
       ],
       "status": "scope limitation"
     }

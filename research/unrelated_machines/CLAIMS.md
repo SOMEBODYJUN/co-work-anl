@@ -2783,3 +2783,27 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：same-dest两occurrence不提前合并，zero任务保留，pool d计q/J已用边非unused；严格/非严格threshold分开；原OPT1/指定False不同，unknownwitness非免费finder，无standing fatal。
 - Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
 - Related Files：[正文](../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)、[审查](../reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md)及逐SHA原件。
+
+
+## UM-TAGGED-AFFINE-LINE-ONE-PRIMARY-PI-ONEHOT-HELPER-UNIT-ESCAPE-v1：单primary与PI onehot共享辅助的完整unit逃逸
+
+- Objects / Domain / Definitions / Quantifiers：primeR≥2/完整norm1 tagged-LINE菜单；main只含全部primary，各helper恰一primary+任意共享aux，所有helper states onehot；fixed injective截距；primary uniform与primary-aux pair uniform；任意指定main state。
+- Exact Statement / Conclusion：det-bit-poly从原states直接建conditioned-state matching图，不需取出存在的λ；完整真实helper选态/每组质量1/V1/全部原UM jobs实际OPT1。
+- Assumptions / Dependencies：无复杂度假设；UM-MODEL-v1与本ID完整对象域，几何/有限域/匹配或计数自足；不以前另一ID定理、CONFIG或有限实验为前提。
+- Scope：只单primary/all-state onehot/main不接aux及指定条件边际；不覆盖多primary/diffuse/额外groups/预载，不输出source全局赋值，不是general PI或主hardness结论。
+- Evidence：general仅Exact独立全证f535…；root实际全文读后才放作者Proof2b4…，actual读后30a…；final shared one-primary header+§1–2 d7bb…实审；root全部实际读。realλ只证Hall、直接状态图可含λ0 states，无standing fatal。
+- Counterevidence / Objections：多primary会改变条件化分布；同页simplex不在此域，所有zero与λ0 indexed states仍保留，realλ前提非未知实际witness，无standing fatal。
+- Status：限定证明完整，真实独立重构/作者读后/最终指定scope审；无软件/外审/全球新颖性认证；主目标OPEN。
+- Related Files：[合并正文](../current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)、[分域审查](../reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md)及逐SHA原件。
+
+
+## UM-TAGGED-AFFINE-LINE-PI-SIMPLEX-TINY-VALUE-v1：公共simplex陪集且全部标签两两独立的精确趋二族
+
+- Objects / Domain / Definitions / Quantifiers：oddprimeR≥3、K=F_R² extension、q=(R²+1)(R+1)个parts/同4D full-projective simplex C；每组全部R⁴ states，main与B(R−1) onehot helpers，完整freshzero padding/common q/common cosets/variable degree≤R。
+- Exact Statement / Conclusion：uniform local全部pair独立，精确V=2/(R+1)、完整actual UM OPT=2−2/(R+1)、CSP value B/[1+B(R−1)]；显式达界对象，finite表O(R11 polylogR)/dense O(R19 polylogR)。
+- Assumptions / Dependencies：无复杂度假设；UM-MODEL-v1与本ID完整对象域，几何/有限域/匹配或计数自足；不以前另一ID定理、CONFIG或有限实验为前提。
+- Scope：易显式计算族，不给NP-hard promise/source任意NO decoder；q约R³/C随R非既有LST固定arity大R参数域；仅删唯一diffuse main即其余全部unit，不提供robust删除/dummy-budget困难性。
+- Evidence：bicriteria仅Exact独立全证db3…；root全文实际读后才放作者Proof4278…，actual读后1add…；final simplex shared-header+§3–8 a06…实审，§1.3定义依赖实际读，不冒one-primary全审；root各记录全部实际读，无standing fatal。
+- Counterevidence / Objections：所有states含ζ0均norm1；未选state额外exports不能减lower bound；fresh权0但labels真PI不能删后冒同C；R2不在域，单main脆弱且非hard image，无standing fatal。
+- Status：限定证明完整，真实独立重构/作者读后/最终指定scope审；无软件/外审/全球新颖性认证；主目标OPEN。
+- Related Files：[合并正文](../current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)、[分域审查](../reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md)及逐SHA原件。
