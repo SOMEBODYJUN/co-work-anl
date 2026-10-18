@@ -1290,6 +1290,11 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-DIVISIBLE-TWO-SIZE-NEUTRAL-REPAIR-v1 | 只限整比、完全同机和全资格；批次支持可随tiny数增长；不保证批内逐件同峰值，不解决一般UM。 | 全资格同机m≥1、k件Qδ宏及N件δ tiny，Q≥1二进制整数、δ>0有理。任意初态可确定性位poly用≤floor(k²/2)宏批次及≤N单tiny步达OPT=δmax(Qceil(k/m),ceil((kQ+N)/m))；各批次新负载被旧majorize，组成势Σu_i²控制中性步不循环。 | [整比双尺寸任意初态的防循环中性精确修复](unrelated_machines/divisible_two_size_neutral_repair.md)；实际独立攻击、精确审计；无外审/新颖性认证，主目标OPEN。 |
 
+| UM-FRACTIONAL-BENCHMARK-REMATCHING-v1 | 不输入benchmark、不验证全局前提，仅真最大product匹配det-bit-poly给GM(Vi+singleton)>=每个正fractional benchmark/(c+1)。 | [正文](unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际全文审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)；implementation none，scope按原域。 |
+| UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1 | 从任意显式原XOS表det-bit-poly输出真实不交allocation，对全部正finite fractional log-CONFIG benchmark同时NSW>=benchmark/1125000；无正singleton matching时actual optimum零。 | [正文](unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际全文审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)；implementation none，scope按原域。 |
+| UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1 | 原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；不覆盖gamma<=delta_q。 | [正文](unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际全文审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)；implementation none，scope按原域。 |
+| UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1 | 对每个前缀弱Hhat_j恰等于CONFIG_j(K)完整负载直方图投影；显式LP规模O(m(j+1)(K+1)+|E_[j]|(K+1))、目标另计位长。固定delta downround提供bit-poly可靠NO，非实际finder。 | [正文](unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md)、[实际全文审查](../reviews/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection_review.md)；implementation none，scope按原域。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

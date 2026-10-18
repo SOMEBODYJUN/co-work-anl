@@ -156,3 +156,8 @@ DGR2025/2026 constrained rejections全arXiv v1原PDF已取得并parse（18页，
 ## BLMRS 单阈值配置合同的完整替代重构
 
 [分块计数与真实匹配后端](../current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)完整给出Lemma11同一单阈值列表合同的自足替代证明及总位复杂度，不宣称逐字复现AppendixB的原record机制。v1 AppendixB印20–21的tiny cutoff与乘法删除断言有精确反例，正文记录原字样、Fraction反例和局部修复；原PDF字节不改，不以此否定原主定理。Lemmas12–14机制另提取为normalized type matching的真实OPT=2−V接口；全局选择仍OPEN。
+
+
+## DLRV2023v1：NSW框架与本次显式分数替换
+
+[arXiv:2309.04656v1](https://arxiv.org/abs/2309.04656v1)原23页PDF保真存储，SHA/bytes及版本边界见manifest。root针对性实际读§2.1–§2.5、AppendixB及相关solver/Thm17/19/20，渲染阅读PDF12/13；不是root整篇全文认证。新作者读所供v1完整提取文本，审者只读指定相关段，具体范围见[实际来源审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)。原作matching/splitting/iteration/rematching是继承模板；[当前自足证明](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)的任意显式有理XOS确定性fractional NSW、local-grid及同组修复后果不能当原文逐字结论。未认证全球新颖性，非2024正式排版，源字节不改。

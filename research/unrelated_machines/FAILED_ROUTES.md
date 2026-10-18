@@ -434,3 +434,7 @@ u_t) 的一般复杂度。
 [类型配置正文](../current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)发现BLMRS v1 tiny cutoff的特定乘法删除断言字面失败，现以正确小阈值和独立分块证明补齐同一已知合同；不否定其主定理。max-profile的四资源反例阻止免费套次模算法；需要共同profile选择或有真实partial匹配soundness的源。
 
 [整比双尺寸正文](../current/unrelated_machines/divisible_two_size_neutral_repair.md)表明strict启动屏障保留中性逃逸。组成势防循环给本结构类精确算法；它未消除异端时间、一般资格和批内临时峰值缺口。
+
+[显式XOS分数NSW与修复边界](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)：任意binary-rational显式XOS给det真实allocation相对每个fractional benchmark的常数NSW；normalized total-one FSLP给几乎所有组质量及same-n singleton repair LP promise decider。仅小threshold域，明确不排gamma<=delta_q，普通UM仍只全机二。
+
+[弱共享直方图的准确边界](../current/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md)：previous弱aggregate-only递推恰CONFIG负载直方图投影；完整流LP/可靠NO，四机CONFIG3实际4。逐branch真共同law没有被这一共享写法保住；不否relative OPT一般算法。

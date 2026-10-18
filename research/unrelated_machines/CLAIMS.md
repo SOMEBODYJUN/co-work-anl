@@ -3011,3 +3011,55 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：已排除的越界推广及其反例见正文；无standing fatal限于当前版本。有限搜索不提升一般真值。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。Truth、实现、外审、新颖性与主目标分别管理。
 - Related Files：正文、实际审查、tests/audits/unrelated_machines/divisible_two_size_neutral_repair.py, tests/audits/unrelated_machines/divisible_two_size_neutral_independent.py、evidence/runs/unrelated_machines/divisible_two_size_neutral_repair_audit.json。
+
+
+## UM-FRACTIONAL-BENCHMARK-REMATCHING-v1：分数benchmark的真实H匹配
+
+- Objects / Domain / Definitions / Quantifiers：n>=1有限单调次可加有理valuations；n个不同真实H、B=U\H、Vi>=0、inactive vi(B)=0、c>=1；对每个feasible fractional residual family总normalized utility<=cn，正finite配置benchmark行一列<=一。
+- Exact Statement / Conclusion：不输入benchmark、不验证全局前提，仅真最大product匹配det-bit-poly给GM(Vi+singleton)>=每个正fractional benchmark/(c+1)。
+- Assumptions：无复杂度假设；C的P=NP仅条件于另有明确promise-gap Karp reduction；E方法限制另用既有CONFIG gap。
+- Dependencies：UM-FRACTIONAL-REMATCHING-SEMANTIC-DOMAIN-v1；页内完整定义、标准有理LP/匹配/路径分解。具体范围见正文。
+- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。
+- Evidence：实际独立Exact-first、完整或明确模块作者读后及最终canonical全文审查；root实际读完相关记录，完整顺序/哈希见review。
+- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D不覆盖gamma<=delta_q；无standing fatal对当前合同。
+- Status：complete scoped deterministic fractional-XOS proof; actual Exact-first, author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
+- Related Files：[正文](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)与冻结原件。
+
+
+## UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1：显式XOS的确定性分数NSW
+
+- Objects / Domain / Definitions / Quantifiers：n>=1、m>=0，非空有限显式indexed XOS clauses，全部非负binary rational，允许zero/重复/未用，无global grid或normalization/utility floor，仅unweighted。
+- Exact Statement / Conclusion：从任意显式原XOS表det-bit-poly输出真实不交allocation，对全部正finite fractional log-CONFIG benchmark同时NSW>=benchmark/1125000；无正singleton matching时actual optimum零。
+- Assumptions：无复杂度假设；C的P=NP仅条件于另有明确promise-gap Karp reduction；E方法限制另用既有CONFIG gap。
+- Dependencies：UM-FRACTIONAL-BENCHMARK-REMATCHING-v1, UM-EXPLICIT-BINARY-RATIONAL-XOS-DOMAIN-v1；页内完整定义、标准有理LP/匹配/路径分解。具体范围见正文。
+- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。
+- Evidence：实际独立Exact-first、完整或明确模块作者读后及最终canonical全文审查；root实际读完相关记录，完整顺序/哈希见review。
+- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D不覆盖gamma<=delta_q；无standing fatal对当前合同。
+- Status：complete scoped deterministic fractional-XOS proof; actual Exact-first, author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
+- Related Files：[正文](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)与冻结原件。
+
+
+## UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1：归一化菜单几乎所有组与同组修复LP边界
+
+- Objects / Domain / Definitions / Quantifiers：原每state总量1、positive-support FSLP及明确同组singleton REPAIR；fixed eta/gamma/a/delta_q量词同正文。
+- Exact Statement / Conclusion：原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；不覆盖gamma<=delta_q。
+- Assumptions：无复杂度假设；C的P=NP仅条件于另有明确promise-gap Karp reduction；E方法限制另用既有CONFIG gap。
+- Dependencies：UM-FRACTIONAL-BENCHMARK-REMATCHING-v1, UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1, UM-NORMALIZED-MENU-POSITIVE-SUPPORT-CERTIFICATE-DOMAIN-v1, UM-FLAT-MENU-EXACT-STATE-MASS-ONE；页内完整定义、标准有理LP/匹配/路径分解。具体范围见正文。
+- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。
+- Evidence：实际独立Exact-first、完整或明确模块作者读后及最终canonical全文审查；root实际读完相关记录，完整顺序/哈希见review。
+- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D不覆盖gamma<=delta_q；无standing fatal对当前合同。
+- Status：complete scoped deterministic fractional-XOS proof; actual Exact-first, author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
+- Related Files：[正文](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)与冻结原件。
+
+
+## UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1：弱共享负载递推等于配置投影
+
+- Objects / Domain / Definitions / Quantifiers：m>=1,n>=0,K>=0整数；a_ij在0..K或infinity，可含无有限端任务；每步非负branch各行同质量theta、和一、aggregate在previous弱Hhat、own bad-load mass零；不要求branch perspective membership。
+- Exact Statement / Conclusion：对每个前缀弱Hhat_j恰等于CONFIG_j(K)完整负载直方图投影；显式LP规模O(m(j+1)(K+1)+|E_[j]|(K+1))、目标另计位长。固定delta downround提供bit-poly可靠NO，非实际finder。
+- Assumptions：无复杂度假设；C的P=NP仅条件于另有明确promise-gap Karp reduction；E方法限制另用既有CONFIG gap。
+- Dependencies：UM-INTEGER-WEAK-SHARED-HISTOGRAM-RECURSION-DOMAIN-v1；页内完整定义、标准有理LP/匹配/路径分解。具体范围见正文。
+- Scope：只否aggregate-only弱递推相对原CONFIG阈值的合同；不是相对OPT的算法下界。数值K伪多项式，downround可行不解码actual；不采用PHP/rank或假设真共同hull有poly oracle。
+- Evidence：实际独立Exact-first、完整或明确模块作者读后及最终canonical全文审查；root实际读完相关记录，完整顺序/哈希见review。
+- Counterevidence / Objections：旧full作者Proof将previous weak误写true-H，原字节与勘误保留；v2/当前修复。有限4机例不作一般证明；无standing fatal对当前合同。
+- Status：complete scoped weak-histogram equals CONFIG projection; actual Exact-first, corrected author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
+- Related Files：[正文](../current/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md)、[实际审查](../reviews/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection_review.md)与冻结原件。

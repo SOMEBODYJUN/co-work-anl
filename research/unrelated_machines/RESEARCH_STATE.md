@@ -547,3 +547,7 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 - [整比双尺寸中性精确修复](../current/unrelated_machines/divisible_two_size_neutral_repair.md)：同机全资格任意初态可经防循环中性换形达OPT；严格batch启动界不能扩大为中性迭代障碍。一般异端时间会破坏负载互换恒等式。
 
 精确身份、实际审查与有限证据分别沿本题账本读取；外审和新颖性均未认证。
+
+[显式XOS分数NSW与修复边界](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)：任意binary-rational显式XOS给det真实allocation相对每个fractional benchmark的常数NSW；normalized total-one FSLP给几乎所有组质量及same-n singleton repair LP promise decider。仅小threshold域，明确不排gamma<=delta_q，普通UM仍只全机二。
+
+[弱共享直方图的准确边界](../current/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md)：previous弱aggregate-only递推恰CONFIG负载直方图投影；完整流LP/可靠NO，四机CONFIG3实际4。逐branch真共同law没有被这一共享写法保住；不否relative OPT一般算法。
