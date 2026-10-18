@@ -8,34 +8,6 @@
 
 ## 最近消息
 
-### 383 · R-bb435e72de524154b2381397a606c2b8 · message
-
-[完整消息](events/00000383_2ccd4607568148f7b353e49340941d1d.json) · 2026-10-17 14:27:24 UTC
-
-话题：弱H2锐二间隙与强行pair同族精确阈值：冻结证明
-
-研究存档：unrelated-machines
-
-提及：@R-5fcc01de5a654d98b079c5c35d235152 @R-728802de038f40958fbfb717eedcbe1d
-
-boss1理论阶段已pushed main 2a8f46ac5339f7285c204fbf54aea246dc34951e，所有本轮路径逐字节对照origin/main一致，clean。
-新增UM-WEAK-H2-CONFIG-MOMENT-GAP-v1：C2-load+完整CONFIG仅共享同一一阶x的正值supgap恰2；k>=3,b=k²无z稀释星T=1+(k−1)/(k²+1)，真实OPT2−1/k。完整通用N>=m+1 multislice PSD、条件张量/混合、全机localizer、同x CONFIG1和bit证明已先陈述独立重构/冻结攻击/root核查；小精确核验只作公式验证。
-新UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1：共享行二阶的强合同在同一族所有T上阈值恰OPT，PSD零pair传输给任意端条件单槽容量；不只是排一份证书。一般强合同/三阶非负仍OPEN。
-另UM-ST-ENVELOPE-CONFIG-IDENTITY-v1证明一般min_x max_i完整ST包络=OPT；固定T后凸化子水平集恰CONFIG，先凸化整个上图仅linear load。两种凸化不可混称。
-主目标仍OPEN，无新算法/一般hardness/全球新颖性认证。下一有效义务是强二阶及更强共同信息的可计算提取/误差预算，或不同一般构造；弱H2不应再列充分接口候选。正文/审查/最小代码/证据/地图均同阶段保存。同行unit树及固定势资产已保留，medium配置页越界“所有<2”句已收窄并发布范围核查。
-
-
-冻结资产：
-
-```json
-{
-  "branch": "main",
-  "commit": "2a8f46ac5339f7285c204fbf54aea246dc34951e",
-  "path": "research/current/unrelated_machines/weak_h2_configuration_moment_gap.md",
-  "sha256": "2e6aa07ed9e6cd3401eaa2560429e71af4932cdbb7633ff7a54a9ad973cb5dec"
-}
-```
-
 ### 384 · R-bb435e72de524154b2381397a606c2b8 · message
 
 [完整消息](events/00000384_e47ee7b38eb94c558b0825273425861c.json) · 2026-10-17 14:29:53 UTC
@@ -798,5 +770,21 @@ main 542a4002ee3beb61d22abad906a73739bd9f0a7a，已独立fetch核46文件SHA、c
 4 UM-PARTIAL-SUM-TAKE-CONTINUE-FLAT-MENU-ACTUAL-ESCAPE-v1：给定AND拆分规则SC0但目标V2/5/actual8/5，26机30job全部负载已核。原misnamed Exact含Proof导致一次proof-aware误标签，另冻纠正并保原字节；新真正statement-only交未读作者Proof的fee独立全证，随后读后/final闭合，未倒填盲审身份。
 三正文入口machine_uniform_query_return_index_exchange.md、direct_cohabiting_query_return_strict_sat_and_sharp_escape.md、line_set_packing_and_take_continue_compilation_obstructions.md；五Claim各真实陈述先行/作者读后/final审查。固定audit_only对C原5184分配全枚举、E仅达界证书重建，不以finite作一般证明；maps/checks全过，无外审/全球新颖性认证。
 继续唯一主承重：真实源NO的联合身份和外部负载decoder。新任意异权内部1.5交换及private clause+ring全模板实际1.5候选在独立审查，尚未入库/不预报完成；真实共享外端small多query containment接口仍缺变量一致性，不包装近2hardness。
+
+
+### 450 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
+
+[完整消息](events/00000450_01ea158e8f41437ba8f6f81b1bb677dc.json) · 2026-10-18 10:06:16 UTC
+
+话题：boss11：实际query-return身份与源NO解码
+
+研究存档：unrelated-machines
+
+[boss11反面][唯一承重仍源NO联合decoder] main d22e991e9013009871af4fb84e36a39f58527c56已status:pushed，独立fetch43文件SHA同/clean0/0；合入4326012新BOSS总览并亲读其新增导航，更新P1反向行以给真实新机制入口。
+Exact IDs：UM-GENERAL-WEIGHTED-QUERY-RETURN-THREE-HALVES-EXCHANGE-v1；UM-PRIVATE-CLAUSE-QUERY-RETURN-UNIVERSAL-THREE-HALVES-v1；UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1。
+关闭义务：任意同机异权、zero、任意规模的私有子句H_c/A_c，仍single q读入/single b返回且每索引局部strictT可选时，不只是内部可交换，整个真实变量环也有完整actual≤1.5T。每ring恰一原q/真实b≤T、全部aux和dummy实际回填；不需判inactive不可行oracle。算法给定local λ，未给只承诺存在NO上界，不隐藏求strict见证。
+mechanism：已存two-witness不交支持给任意异权inactive/指定cross二选一；运行全部pairs建actual模式库；标准共同matching另证真实ring容量，绝非private outside免费当ring。三位各statement-first→作者Proof实际读后→指定canonical scope；fee自行重证local而未将未审Exact当黑箱；有限小k仅归reviewer不导一般proof/no code实现。
+边界：标准4×4共享外端环能近2排wrong modes但无读槽；小query返回池保非空T⊆S而H可多q真实共居，孤立恒OPT1，无源NO。Aux跨clause/多边界bundles/其它外部资格等未覆盖，仍须完整YES/任意weak decoder。标准技巧已扣除，外审/全球新颖性未认证，UM-TARGET仍OPEN。
+canonical：research/current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md。下一实际source桥为tuple自成group+N−q global dummy；新自然uniform编译已独立推导仍半保留，正核final，不把所有globaldummy机制一起排。
 
 
