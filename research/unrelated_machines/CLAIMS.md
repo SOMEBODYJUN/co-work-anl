@@ -2807,3 +2807,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：所有states含ζ0均norm1；未选state额外exports不能减lower bound；fresh权0但labels真PI不能删后冒同C；R2不在域，单main脆弱且非hard image，无standing fatal。
 - Status：限定证明完整，真实独立重构/作者读后/最终指定scope审；无软件/外审/全球新颖性认证；主目标OPEN。
 - Related Files：[合并正文](../current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)、[分域审查](../reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md)及逐SHA原件。
+
+
+## UM-KNAPSACK-MATROID-EXPONENTIAL-v1：固定次二原地拟阵外包的超多项式数量
+
+- Exact Statement / Objects / Domain / Quantifiers：对所有整数k≥3及1≤r≤floor((k−1)/2)，k件tiny各1/k、一件b大小1−r/k。任意q个同一原地基集的拟阵各包含全部重量≤1集合；若共同独立集重量均严格小于w0=2−2r/k，则q≥ceil[binom(k,r)/binom(k−r−1,r)]≥exp(r(r+1)/k)。最少数精确为C(k,k−r−1,r)。
+- Assumptions / Definitions / Scope：逐拟阵完整保留本地可行集；所有共同独立集均安全；静态交，原输入显式权重表。覆盖数定义见正文§9。
+- Conclusion：每个固定1≤B<2的全类外包需要超多项式于原始位长L=Θ(k log k)的拟阵数；不是exp(Ω(L))声明，也不是调度困难性。
+- Dependencies：UM-MODEL-v1的本地非负容量定义；自足唯一回路分类、坏集覆盖与对数估计。UM-KNAPSACK-MATROID-ENVELOPE-v1仅作旧线性数量边界的对照，不改其身份。
+- Evidence：完整一般证明；声明先行独立重构、作者稿及canonical§9实际读后审查；精确回路/端点审计及冻结记录。
+- Counterevidence / Objections：严格阈值不能删；不保证坏集延伸为共同基或全局调度。共享辅助/存在性投影/多元素块/只保选定profile/自适应或一般有符号电路均不由本定理排除。
+- Status：限定范围证明完成；实际内部独立攻击，未外审；全球新颖性与论文价值未认证。UM-TARGET-v1仍OPEN。
+- Related Files：research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md §9；research/reviews/unrelated_machines/knapsack_matroid_exponential_review.md；tests/audits/unrelated_machines/knapsack_matroid_exponential.py；evidence/runs/unrelated_machines/knapsack_matroid_exponential_audit.json。

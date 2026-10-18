@@ -1254,6 +1254,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-TAGGED-AFFINE-LINE-PI-SIMPLEX-TINY-VALUE-v1 | oddprimeR≥3、K=F_R² extension、q=(R²+1)(R+1)个parts/同4D full-projective simplex C；每组全部R⁴ states，main与B(R−1) onehot helpers，完整freshzero padding/common q/common cosets/variable degree≤R。 uniform local全部pair独立，精确V=2/(R+1)、完整actual UM OPT=2−2/(R+1)、CSP value B/[1+B(R−1)]；显式达界对象，finite表O(R11 polylogR)/dense O(R19 polylogR)。 | [正文](unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)、[分域实审](../reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md)；simplex shared-header与全部§3–8；§1.3为V/full-P定义依赖，不认证one-primary定理。 非主hardness。 |
 
+| UM-KNAPSACK-MATROID-EXPONENTIAL-v1 | k≥3,1≤r≤floor((k−1)/2)，tiny各1/k、大件1−r/k；同一原地基集静态拟阵交完整保所有容量1可行集。共同独立集严格低于2−2r/k迫q≥ceil[binom(k,r)/binom(k−r−1,r)]≥exp(r(r+1)/k)；精确最少数C(k,k−r−1,r)。固定次二阈值需超多项式原输入位长数量。 | [正文§9](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[独立实际审查](../reviews/unrelated_machines/knapsack_matroid_exponential_review.md)；只限完整本地外包，不推共同基/全局输出/一般UM困难性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

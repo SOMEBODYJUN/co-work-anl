@@ -11922,6 +11922,31 @@
         "research/reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md"
       ],
       "status": "complete scoped PI-line structural result; actual statement-first and separately scoped final review; novelty unverified"
+    },
+    {
+      "id": "UM-KNAPSACK-MATROID-EXPONENTIAL-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "固定次二原地拟阵外包的超多项式数量",
+      "detail": "Unique circuits yield exact C(k,k-r-1,r) covering identity and q>=ceil(binomial(k,r)/binomial(k-r-1,r))>=exp(r(r+1)/k). Fixed target below2 requires superpolynomial count in the original explicit input length.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "research/reviews/unrelated_machines/knapsack_matroid_exponential_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-KNAPSACK-MATROID-EXPONENTIAL-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "指数拟阵数量下界的有限精确审计",
+      "detail": "Finite exact exclusions, product identity and explicit endpoint matroids; not a universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "tests/audits/unrelated_machines/knapsack_matroid_exponential.py",
+        "evidence/runs/unrelated_machines/knapsack_matroid_exponential_audit.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -29038,6 +29063,50 @@
         "research/reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md"
       ],
       "status": "scope limitation"
+    },
+    {
+      "id": "DERIVES-UM-KNAPSACK-MATROID-EXPONENTIAL-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-KNAPSACK-MATROID-EXPONENTIAL-v1",
+      "statement": "Self-contained local-capacity and arbitrary-matroid circuit/counting proof; all assumptions in the claim.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "CHECKS-UM-KNAPSACK-MATROID-EXPONENTIAL-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-KNAPSACK-MATROID-EXPONENTIAL-AUDIT-v1"
+      ],
+      "conclusion": "UM-KNAPSACK-MATROID-EXPONENTIAL-v1",
+      "statement": "Finite exact implementation checks only.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md",
+        "tests/audits/unrelated_machines/knapsack_matroid_exponential.py",
+        "evidence/runs/unrelated_machines/knapsack_matroid_exponential_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "LIMITS-UM-KNAPSACK-MATROID-EXPONENTIAL-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-KNAPSACK-MATROID-EXPONENTIAL-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Rules out polynomially many static same-ground-set complete local matroid envelopes with every accepted set safe; does not imply a bad set extends to a global assignment or exclude arbitrary global algorithms.",
+      "refs": [
+        "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }
