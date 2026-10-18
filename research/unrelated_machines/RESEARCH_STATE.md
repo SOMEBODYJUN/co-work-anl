@@ -479,6 +479,8 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 ## 本阶段新增：未知目标的精确边界
 
 冻结核心且所有待重开任务共享同一端时间 q 时，未知最终峰值可在候选集合上通过整数最大流精确搜索（UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1）；这给出一个允许接收机增载的正面接口。不同尺寸共享机器时，两机实例已包含 Partition，因此该流合同不能直接推广。独立审查还把给定目标路径定理的 τ 量词分离为 UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1：存在 T-可行目标与能在多项式时间找到目标是不同义务。两项均不改变 UM-TARGET-v1 OPEN 状态。
+
+本轮新增 `UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1`：若每个机器侧不交资格分量满足 `p_ij=a_i q_C`，机器倍率固定而任务尺寸在分量内公共，则未知峰值仍由有限候选和整数最大流精确求出；Fraction 审计覆盖400个随机实例、冻结核心 guard和不同 `q` 的断开分量。该接口的结构验证失败不能充当一般 `FAIL`，混合尺寸共享机器仍是不可分割装箱边界，主目标保持 OPEN。
 2026-10-18：[一般双见证查询分离的锐3/2费用合同](../current/unrelated_machines/two_witness_query_separation.md)；[单正小端级联的完整查询立方体](../current/unrelated_machines/single_home_cascade_query_separation.md)；[超立方分组菜单的Hall保留与锐3/2实际界](../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)。一般双见证tiny query的单次改派费不能复用为near2固定激活费，准确分离阈值3/2且sharp；单home全留初态另有完整query cube；超立方分组菜单全类actual≤3/2（DGR特例19/15）。失败范围仅精确合同；非OPT困难性，UM-TARGET-v1正反面仍OPEN。重试须改变读取初态聚合量/费用/源相关接口或slice真实结构，并给完整实际decoder。
 
 
