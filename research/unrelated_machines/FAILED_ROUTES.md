@@ -424,3 +424,5 @@ u_t) 的一般复杂度。
 保留原ExactStatement的单任务严格局部极小、OPT和最终Hamming支持下界；
 撤回对固定批量多轮路线的外推。boss1正在整理更强不同新族，不能把它倒作本族证明。
 本说明没有重写冻结旧审计或原审查的历史结论；本轮新槽界和保配置消元定理不依赖该错误外推。
+
+[出现位置异权文字池的三半逃逸](../current/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md)：允许同变量同侧逐occurrence异权，full eligible每侧b和≤1时仍能det构造全部原jobs actual≤1.5；合两侧首项/余项排序配对，含f池query≤.5，另一池≤1。只否该编译合同，未排额外guards或更大预算。
