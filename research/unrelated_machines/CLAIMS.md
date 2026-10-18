@@ -2564,3 +2564,42 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Scope：只排同族、受限输出的统一正乘法保值修复，不排改变实际任务/资源/状态的新归约；不提供物理一致性或hardness源。
 - Evidence / Counterevidence / Status：正文§7证明；general实际canonical §6–7审查明确重证该比值矛盾；root独核，无standing fatal。是完整直接推论、非另一个发现过程；implementation none、外审/全球新颖性未认证。
 - Related Files：同上两Claim的[正文](../current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)及[一致性实际审查](../reviews/unrelated_machines/coordinate_oblivious_cartesian_menu_quota_review.md)。
+
+
+## UM-QARY-AFFINE-MENU-RECOUPLING-CONSISTENCY-v1：q元菜单线性重选与逐坐标一致性的精确差异
+
+- Objects / Domain / Definitions / Quantifiers：primepower q>=2、t>=1的完整affine-line菜单；cyclic、全部affine A,c、任意coordinatewise f三域分别优化，partial subsets完全自由。 全部所列参数与具体原矩阵见[正文](../current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)。
+- Exact Statement / Conclusion：V_cyc=V_aff=1−ceil((q−1)^t/q)/q^t，V_sep=floor((q−1+1/q)^t)/q^t；每域完整受限实际峰2−V，固定q分别趋1/0；固定A的quota由Σ_a q^rank(A−diag a)精确给出。
+- Assumptions：显式有限域表示与完整ordinary P、不可拆资源、所有原jobs；额外选择语义只在相应受限ID中使用，非免费机器约束。
+- Scope / Limits：q>2不将affine上界升级全nonlinear；C_sep不是原无约束OPT，一致性未物理实现，无near2源。
+- Dependencies：完整q元菜单定义与ordinary任务规则；binary另需q2及block-fiber条件；正文直接给线性代数/网格计数/Hall或并发投影/遗漏双计数，有限计算不是推导前提。
+- Evidence：作者完整Proof、独立Exact-first重构、实际作者读后、final指定章节重读；root亲核并实读来源，非投票认证。
+- Counterevidence / Objections：共用空选择域措辞补非空，三位实际逆替换核字节；binary generic字母typing明确；旧v1/首写/final来源均保留，无standing fatal。
+- Status：限定结构证明完整，多份实际内审；implementation none、外审/全球新颖性未认证。非近二源，UM-TARGET-v1仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)、[指定scope审查](../reviews/unrelated_machines/qary_affine_menu_recoupling_consistency_review.md)及逐SHA原件。
+
+
+## UM-BINARY-CARTESIAN-BLOCK-FIBER-QUOTA-v1：二元分块一致性精确配额与无环链逃逸
+
+- Objects / Domain / Definitions / Quantifiers：q2、t>=1完整菜单，固定非空blocks partition，只限制每block的标签看同block输入，F任意非线性；全部任意partial仍全局不交。 全部所列参数与具体原矩阵见[正文](../current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)。
+- Exact Statement / Conclusion：H=prod_j(2^b_j−1/2)，精确Q=floorH/2^t、union≤2^t H且达到；固定maxblock L指数衰减。另固定无环单输入链ell1=0,elli=g_(i−1)精确quota1/2，union N(N+1)/2。
+- Assumptions：显式有限域表示与完整ordinary P、不可拆资源、所有原jobs；额外选择语义只在相应受限ID中使用，非免费机器约束。
+- Scope / Limits：binary逻辑条件非physical guard；不称优化全部无环函数值恰1/2，不将2−Q冒称原OPT，不排其它compiler。
+- Dependencies：完整q元菜单定义与ordinary任务规则；binary另需q2及block-fiber条件；正文直接给线性代数/网格计数/Hall或并发投影/遗漏双计数，有限计算不是推导前提。
+- Evidence：作者完整Proof、独立Exact-first重构、实际作者读后、final指定章节重读；root亲核并实读来源，非投票认证。
+- Counterevidence / Objections：共用空选择域措辞补非空，三位实际逆替换核字节；binary generic字母typing明确；旧v1/首写/final来源均保留，无standing fatal。
+- Status：限定结构证明完整，多份实际内审；implementation none、外审/全球新颖性未认证。非近二源，UM-TARGET-v1仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)、[指定scope审查](../reviews/unrelated_machines/binary_cartesian_block_fiber_quota_review.md)及逐SHA原件。
+
+
+## UM-QARY-AFFINE-MENU-NEAR-FULL-DEFICIT-v2：任意非线性选态的并发投影与全局缺项界
+
+- Objects / Domain / Definitions / Quantifiers：全部q>=2 primepower、t>=1完整菜单，任意nonlinear ell/任意partial，整数每组缺d∈[0,N]；projection恒等式仅对真实concurrent fiber非空子family。 全部所列参数与具体原矩阵见[正文](../current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)。
+- Exact Statement / Conclusion：并发union精确Σ_J(q−1)^|J| |π_JF|，遗漏预算推出h(k)≤kd，K(d)为合法最大k；全局必dK(d)≥(q−1)^t，仅必要非充分。q3t2无约束V7/9/actual11/9，新增q3t3精确V8/9/actual10/9。
+- Assumptions：显式有限域表示与完整ordinary P、不可拆资源、所有原jobs；额外选择语义只在相应受限ID中使用，非免费机器约束。
+- Scope / Limits：粗projection非全参数sharp，不闭合一般nonlinear最优；旧strict2d<q不加等号，无free coherence/no hardness。
+- Dependencies：完整q元菜单定义与ordinary任务规则；binary另需q2及block-fiber条件；正文直接给线性代数/网格计数/Hall或并发投影/遗漏双计数，有限计算不是推导前提。
+- Evidence：作者完整Proof、独立Exact-first重构、实际作者读后、final指定章节重读；root亲核并实读来源，非投票认证。
+- Counterevidence / Objections：共用空选择域措辞补非空，三位实际逆替换核字节；binary generic字母typing明确；旧v1/首写/final来源均保留，无standing fatal。
+- Status：限定结构证明完整，多份实际内审；implementation none、外审/全球新颖性未认证。非近二源，UM-TARGET-v1仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)、[指定scope审查](../reviews/unrelated_machines/qary_affine_menu_near_full_deficit_review.md)及逐SHA原件。

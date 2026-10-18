@@ -98,3 +98,5 @@
 [同页§6–9的资源路径与三态正规形](../../../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)去掉normalized flat源的原K/Δ限制，任意partialV与实际OPT精确保再入zero cube。路径装置已核为BCG2009既有机制，按完整普通UM接口重构保存。下一源无需先限K/Δ，但归一化与tiny NO全局decoder仍未得到；不再用routine等价替代源攻击。
 
 [裸Cartesian菜单与一致性差距](../../../current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)精确定位NO反向放大：跨坐标state重选使actualOPT趋1，额外fiber一致才使导出值趋0；源decoder不能免费加入该条件。全原job审计有限t1..4只作checks。继续攻实际全局一致性而非把逻辑side constraint冒充physical gadget。
+
+[笛卡尔一致性与缺项尺度](../../../current/unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)作为完整结构回收保存，不再扩局部数值主线。当前唯一负向承重：真实普通P中的联合索引一致性/源NO解码；正攻击任意单容量query-return网络的索引交换，并直接核真正CSP→setpacking源的partial导出失效，均未宣称近二hardness。

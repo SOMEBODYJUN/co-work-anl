@@ -1222,6 +1222,10 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-CARTESIAN-COORDINATE-CONSTANT-REPAIR-OBSTRUCTION-v1 | 同一binary族bare达界值趋1而coordinate-oblivious最优趋0，故同族输出修复无统一正乘法保值c；两个主Claim共同前提。 | [正文§7](unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)、实际一致性审查；只为直接推论，非物理gadget。 |
 
+| UM-QARY-AFFINE-MENU-RECOUPLING-CONSISTENCY-v1 | primepower q>=2、t>=1的完整affine-line菜单；cyclic、全部affine A,c、任意coordinatewise f三域分别优化，partial subsets完全自由。 V_cyc=V_aff=1−ceil((q−1)^t/q)/q^t，V_sep=floor((q−1+1/q)^t)/q^t；每域完整受限实际峰2−V，固定q分别趋1/0；固定A的quota由Σ_a q^rank(A−diag a)精确给出。 | [正文](unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)、[实际scope审查](../reviews/unrelated_machines/qary_affine_menu_recoupling_consistency_review.md)；完整限定结构回收，非主hardness。 |
+| UM-BINARY-CARTESIAN-BLOCK-FIBER-QUOTA-v1 | q2、t>=1完整菜单，固定非空blocks partition，只限制每block的标签看同block输入，F任意非线性；全部任意partial仍全局不交。 H=prod_j(2^b_j−1/2)，精确Q=floorH/2^t、union≤2^t H且达到；固定maxblock L指数衰减。另固定无环单输入链ell1=0,elli=g_(i−1)精确quota1/2，union N(N+1)/2。 | [正文](unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)、[实际scope审查](../reviews/unrelated_machines/binary_cartesian_block_fiber_quota_review.md)；完整限定结构回收，非主hardness。 |
+| UM-QARY-AFFINE-MENU-NEAR-FULL-DEFICIT-v2 | 全部q>=2 primepower、t>=1完整菜单，任意nonlinear ell/任意partial，整数每组缺d∈[0,N]；projection恒等式仅对真实concurrent fiber非空子family。 并发union精确Σ_J(q−1)^|J| |π_JF|，遗漏预算推出h(k)≤kd，K(d)为合法最大k；全局必dK(d)≥(q−1)^t，仅必要非充分。q3t2无约束V7/9/actual11/9，新增q3t3精确V8/9/actual10/9。 | [正文](unrelated_machines/cartesian_menu_block_coherence_rank_and_deficit.md)、[实际scope审查](../reviews/unrelated_machines/qary_affine_menu_near_full_deficit_review.md)；完整限定结构回收，非主hardness。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
