@@ -1297,6 +1297,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1 | 原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；不覆盖gamma<=delta_q。 | [正文](unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际全文审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)；implementation none，scope按原域。 |
 | UM-SHARED-LOAD-HISTOGRAM-CONFIG-PROJECTION-v1 | 对每个前缀弱Hhat_j恰等于CONFIG_j(K)完整负载直方图投影；显式LP规模O(m(j+1)(K+1)+|E_[j]|(K+1))、目标另计位长。固定delta downround提供bit-poly可靠NO，非实际finder。 | [正文](unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md)、[实际全文审查](../reviews/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection_review.md)；implementation none，scope按原域。 |
 
+## 稠密正小整数正规形与反面全常数量词
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1 | ∀固定整数k≥2；原模型含0/∞与任意有理数，对比全有限正整数1..n²域，n为实际任务数 | 后域(2−1/k)确定性位多项式实际算法⇒原域(2−1/(2k))算法；存在性双向等价。不是NP源gap归约或近二不存在定理。 | [完整证明§6](unrelated_machines/model_and_classical_barriers.md)、独立陈述重构/最终全文攻击/Fraction全输出核验；标准缩放接口，外审与新颖性未认证。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

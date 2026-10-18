@@ -1,11 +1,15 @@
 # 不相关并行机：突破统一常数2壁垒的研究地图
 
-当前存档为 `unrelated-machines`。本轮新主攻是 `UM-TARGET-v1`：一般二进制有理输入R∥C_max上，构造确定性位多项式时间、统一常数(2−ε)近似。目标仍OPEN；未形成新算法。新 boss 先读[BOSS研究总览与路线分诊](../../unrelated_machines/BOSS_RESEARCH_BRIEF.md)，再按选定承重义务进入本地图。旧拥塞/设施研究保留原身份，不作为本题数学依赖。
+**当前主攻方向已转为反面：争取排除每一个统一ε>0。** 这是研究方向决定，非已完成结论；UM-TARGET-v1的原身份与OPEN状态保持。成熟反向成果须给出明确复杂度假设、每个固定ε的真实整数OPT gap、从任意低负载完整调度到源问题的可靠解码及总位复杂度。固定比率硬度和配置间隙均不替代这一义务。
+
+反面研究的模型简化见[全常数量词与稠密小整数正规形](model_and_classical_barriers.md)§6：只含1..n²正整数、全部边可用的输入已经足以判定是否存在统一改善。正文给完整实际输出转换、零值分支及总位复杂度；它不提供新的近二困难性。
+
+当前存档为 `unrelated-machines`。固定待判定命题是 `UM-TARGET-v1`：一般二进制有理输入R∥C_max上，构造确定性位多项式时间、统一常数(2−ε)近似。目标仍OPEN；未形成新算法。新 boss 先读[BOSS研究总览与路线分诊](../../unrelated_machines/BOSS_RESEARCH_BRIEF.md)，再按选定承重义务进入本地图。旧拥塞/设施研究保留原身份，不作为本题数学依赖。
 
 新阶段边界见[长链替换与固定机器联合投影](long_path_coalition_gap.md)：经典gap可移到任意大围长的简单机器图；只共享单机边际的固定大小联合见证仍有sup gap2。完整多机交叠相容性不在该否定范围，且三机完整相容性已能解决这批树宽2反例。完整证明、独立攻击和有限核验分别登记，未声称原创算法或全球新颖性。
 
 先读[协作入口](../../unrelated_machines/README.md)与[精确账本](../../unrelated_machines/CLAIMS.md)，再读[模型、舍入与配置间隙的自足重构](model_and_classical_barriers.md)。[文献清单](../../unrelated_machines/literature_manifest.json)区分已取得原文、已核结果和待处理来源。[当前前沿](../../unrelated_machines/RESEARCH_STATE.md)说明下一步需要完成什么。
-本轮方向审计见[team_direction_audit.md](../../reviews/unrelated_machines/team_direction_audit.md)：已有资产主要关闭局部合同，任意输入的共同容量桥仍是唯一主轴。
+本轮方向审计见[team_direction_audit.md](../../reviews/unrelated_machines/team_direction_audit.md)：已有资产主要关闭局部合同，一般输入的共同容量桥与真实近二反向解码分别是正反两侧未闭合义务，当前主攻后者。
 
 | 定义/Claim | 内容与真实状态 | 依赖和作用 |
 | --- | --- | --- |

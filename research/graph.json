@@ -12411,6 +12411,33 @@
         "research/reviews/unrelated_machines/private_sink_higher_order_nc_review.md"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-DENSE-SMALL-INTEGER-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "稠密整数转换的有限全输出Fraction审计",
+      "detail": "固定四份双机16任务输入，枚举所有分配并挑战每个满足假设比率的输出；另核常数与零边界。",
+      "refs": [
+        "tests/audits/unrelated_machines/dense_small_integer_equivalence.py",
+        "evidence/runs/unrelated_machines/dense_small_integer_equivalence.json",
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "finite exact checks only; not a universal proof"
+    },
+    {
+      "id": "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "稠密正小整数与原目标的算法存在性等价",
+      "detail": "固定k的1..n²全有限正整数(2−1/k)算法转原完整模型(2−1/(2k))算法；标准缩放重构，不是困难性。",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md",
+        "research/reviews/unrelated_machines/dense_small_integer_equivalence_review.md",
+        "tests/audits/unrelated_machines/dense_small_integer_equivalence.py",
+        "evidence/runs/unrelated_machines/dense_small_integer_equivalence.json"
+      ],
+      "status": "complete scoped scaling equivalence; independent reconstruction and frozen review; no hardness or novelty claim"
     }
   ],
   "hyperedges": [
@@ -30378,6 +30405,51 @@
         "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "um_dense_small_integer_equivalence_from_model",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1",
+      "statement": "完整§6由模型非负性、固定n精确搜索、几何阈值与正整数向上取整严格排除n²替代边，给算法存在性等价；无免费oracle或复杂度假设。",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md",
+        "research/reviews/unrelated_machines/dense_small_integer_equivalence_review.md"
+      ],
+      "status": "complete scoped scaling reconstruction"
+    },
+    {
+      "id": "um_dense_small_integer_equivalence_checks",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DENSE-SMALL-INTEGER-AUDIT-v1"
+      ],
+      "conclusion": "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1",
+      "statement": "有限输入的精确逐机回译和全合格输出核验；不代替一般推导。",
+      "refs": [
+        "tests/audits/unrelated_machines/dense_small_integer_equivalence.py",
+        "evidence/runs/unrelated_machines/dense_small_integer_equivalence.json",
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "finite exact checks only"
+    },
+    {
+      "id": "um_dense_small_integer_equivalence_target_boundary",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "原目标可限制在无零/无∞/无大分母的普通整数域研究；等价本身没有给任一侧的近似算法或near2困难性。",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "target and its full-constant negation remain open"
     }
   ]
 }

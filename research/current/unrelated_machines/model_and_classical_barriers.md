@@ -65,3 +65,66 @@ L_i≤Σ_j p_ij x_ij + max{p_ij:x_ij>0}≤2T，空支撑的max定义为0。
 [Fraction核验程序](../../../tests/audits/unrelated_machines/rounding_and_gap.py)实现有序槽匹配、独立指数枚举、显式配置证书和仅对本对称树族的压缩动态规划。它拒绝浮点、负时间、不可用边上的正质量和不守恒x；含T=0和空任务检查。[冻结结果](../../../evidence/runs/unrelated_machines/classical_baseline_audit.json)明确枚举范围、seed、版本和代码哈希。程序中的三机器示例只验证OPT=3和一个值5的合法调度，不声称已复现教材指定分数解与匹配。
 
 2005的2−1/m、一般问题3/2以下困难性、固定m近似方案及受限指派局部搜索暂以Paper Fact记录，尚未在本专题逐步独立重建它们的完整证明。不得以“下载全文”升级为“所有证明已内化”。后续优先把与新候选承重相关的定理逐条重构，而不是把书目扩张当原创研究进度。
+
+## 6. 全常数否定与稠密小整数正规形
+
+**研究方向与逻辑身份。** 当前主攻转为否定 `UM-TARGET-v1`，该命题的原量词与 OPEN 状态不改。任何实数常数 ε>0 都有某个整数 k≥2 满足 1/k≤ε；同一个算法随即满足较弱的 `(2−1/k)` 保证，无须计算或编码 ε。因此原目标等价于“∃整数 k≥2，∃一个确定性位多项式程序，∀合法输入，输出合法 `(2−1/k)` 调度”。精确否定量化所有这样的 k 和程序；仅排除一个固定比率、一个松弛或一种舍入器都不够。这里的阿基米德化是基础逻辑，不认领其新颖性。
+
+**UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1。** 定义 D 为所有显式 m×n 矩阵，m,n≥1，全部有限且每项都是 `{1,…,n²}` 中的整数。则原目标成立，当且仅当在 D 上存在统一常数改善的确定性位多项式实际调度算法。具体地，对每个固定整数 k≥2，给定一个在 D 上保证 `α=2−1/k` 的算法 B，可构造覆盖原完整模型、保证 `2−1/(2k)` 的算法。反向直接限制输入域。此为标准缩放、向上取整与大成本替代的自足接口重构；全球新颖性和独立论文价值未认证，不是新的近二困难性定理。
+
+**完整构造。** 空任务直接返回空分配。若每个任务各有零边，就把它分配到任一零边；非负性保证此分支恰覆盖 OPT=0。其余输入满足
+
+\[
+0<L:=\max_j\min_i p_{ij}\le\operatorname{OPT}(P)
+\le U:=\sum_j\min_i p_{ij}\le nL.
+\]
+
+若 n<8k，精确枚举每个任务的有限端组合并保留最小负载；枚举次数至多 m^{8k}，其中指数 8k 固定，不随输入增长。否则令 `g=1+1/(4k)`，实际生成 `T_h=Lg^h`，直到首个 `T_H≥U`，包含首末两项。对每个候选 T 构造**保留同一 n 个任务和 m 台机器**的矩阵
+
+\[
+q_{ij}(T)=
+\begin{cases}
+\max\{1,\lceil 4knp_{ij}/T\rceil\},&p_{ij}\le T,\\
+n^2,&p_{ij}>T\text{ 或 }p_{ij}=\infty.
+\end{cases} \tag{6.1}
+\]
+
+在 B 的实际输出中，若有任务使用原来 `p_ij>T` 或不可用的边，就舍弃这个候选；其他输出按原有理矩阵计算全部机器负载，保留最好者。不把 B 的失败或任何单个候选的舍弃解释为 OPT>T。
+
+**D 域与至少一次成功。** 保留边上 `1≤q_ij≤4kn≤n²`，其他边为 n²，故每份 Q 都在 D 内，包括原来的零边和不可用边。取首个 T≥OPT；它满足 `T≤g OPT`。原最优调度的全部边在该 T 下保留，且在每台机器上取整最多增加其任务件数，故同时有
+
+\[
+\operatorname{OPT}(Q)\le (4kn/T)\operatorname{OPT}(P)+n
+\le(4k+1)n. \tag{6.2}
+\]
+
+因此 B 在这个候选上的 makespan 至多
+
+\[
+\alpha(4k+1)n=(8k-2-1/k)n<n^2. \tag{6.3}
+\]
+
+任一大成本替代边单件就用时 n²，故此输出不会用到替代边，也一定不会被舍弃。这里必须保留严格不等式；不能只说有限大成本“等同不可用”。
+
+**逐机回译与比率。** 在所有保留边上 `p_ij≤Tq_ij/(4kn)`，包括 p_ij=0。用 (6.2) 的**较强第一项**而非只用粗界 `(4k+1)n`，得到
+
+\[
+\begin{aligned}
+C_P(B(Q))
+&\le \frac{T}{4kn}\alpha\operatorname{OPT}(Q)\\
+&\le \alpha\left[\operatorname{OPT}(P)+\frac{T}{4k}\right]\\
+&\le \left(2-\frac1k\right)
+ \left(1+\frac1{4k}+\frac1{16k^2}\right)\operatorname{OPT}(P)\\
+&=\left(2-\frac1{2k}-\frac1{8k^2}-\frac1{16k^3}\right)
+ \operatorname{OPT}(P)
+\le\left(2-\frac1{2k}\right)\operatorname{OPT}(P).
+\end{aligned} \tag{6.4}
+\]
+
+逐候选取原负载最小值只会改善此界。输出是原任务的一次合法完整分配，而非一个阈值估计。
+
+**总位复杂度。** `g^{4k}≥2`，所以 H≤4k⌈log₂n⌉；可用有理乘法与比较实际生成候选，不调用实数对数。L,U 的编码长度受原输入总位长的多项式控制，每次乘 g 只增加 O(log k) 位。式 (6.1) 用整数交叉相乘及整除算 ceil，每份 Q 的总位长 O(mn log(n+1))，B 调用次数为固定 k 下 O(log n)。枚举分支的指数依固定 k，不随输入增长。超大有理分母不会引入按其数值或倒数循环。全部判断和逐机负载比较都可精确进行。
+
+**范围与反面义务。** 这是一条**算法存在性的双向等价**，不是从某个 NP 完全源直接产生 gap 的归约。它不声称 D 已经有近二 NP-hardness，也不声称原目标为假；不存在统一改善若获证明，将同时适用于这份常规整数输入类。无条件反证至少蕴含 P≠NP，既有完整说明见[反向合同](private_graft_and_resource_repetition.md)§1。当前仍缺对每个固定 ε 的真实 YES/NO gap 与所有低负载调度的源解码。
+
+**Evidence / Objections / Status / Related Files。** 先对精确陈述独立重构，再对最终正文和精确程序冻结攻击；实际覆盖与哈希见[专门审查](../../reviews/unrelated_machines/dense_small_integer_equivalence_review.md)。[审计程序](../../../tests/audits/unrelated_machines/dense_small_integer_equivalence.py)及[冻结运行](../../../evidence/runs/unrelated_machines/dense_small_integer_equivalence.json)仅验证声明范围内的边界、算术及有限全调度，不能代替本节一般证明。没有实现假设中的未知 B，没有一般新近似算法或困难性状态升级。

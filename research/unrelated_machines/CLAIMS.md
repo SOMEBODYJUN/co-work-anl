@@ -14,6 +14,18 @@
 - Status：OPEN，用户选定主攻；不是“已证猜想”，未作可完成时间或录用承诺。
 - Related Files：[数学地图](../current/unrelated_machines/README.md)、[前沿](RESEARCH_STATE.md)、[启动提示词](BOSS_START.md)。
 
+## UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1：稠密正小整数与原目标的等价
+
+- Exact Statement / Quantifiers：UM-TARGET-v1成立，当且仅当在所有显式m×n、m,n≥1、每项为1..n²正整数的全有限矩阵上存在统一严格次二的确定性位多项式实际调度算法。具体∀固定整数k≥2，该域上一个(2−1/k)算法可转为原完整模型上的(2−1/(2k))算法；不宣称输入k时的统一复杂度。
+- Objects / Domain / Definitions：原UM-MODEL-v1与上述稠密域D；n为实际任务数，转换不添加任务。任意实数ε>0可由更小的1/k替代，算法保持同一个有限程序。
+- Assumptions / Scope：无复杂度假设；假设的稠密算法确为总位多项式并输出实际分配。算法存在性的等价，不是NP源的gap归约或近二困难性。
+- Conclusion：极大分母、零时间及不可用边不是主目标存在性与否的独立分界；反面主攻可集中普通整数域，仍须证明所有算法的下界。
+- Dependencies：非负性下OPT0刻画、固定任务数枚举、精确几何阈值列表、向上取整及严格大成本排除；完整证明见模型正文§6，不调用未知可行性oracle。
+- Evidence：精确陈述先行独立重构，冻结§6全文攻击与独立Fraction审计；审计挑战每个满足所假设比率的有限输出，而非仅最优输出。
+- Counterevidence / Objections：必须使用OPT_Q≤(4kn/T)OPT+n的强式回译，粗界仅用于排除n²边；p=0的取整误差是≤1不是<1。仅给n²的逐实例改善仍不提供统一ε。
+- Status：标准缩放机制的完整限范围接口重构，经独立内审；无外审、全球新颖性或独立论文价值认证；UM-TARGET-v1及其全常数反面均OPEN。
+- Related Files：[模型正文§6](../current/unrelated_machines/model_and_classical_barriers.md)、[独立审查](../reviews/unrelated_machines/dense_small_integer_equivalence_review.md)、tests/audits/unrelated_machines/dense_small_integer_equivalence.py、evidence/runs/unrelated_machines/dense_small_integer_equivalence.json。
+
 ## UM-ST-ROUND-v1：给定剪枝可行解的加性负载舍入
 
 - Exact Statement：∀合法P、∀有理T≥0、∀剪枝LST的有理可行x，存在可由确定性位多项式程序构造的合法σ，∀i，L_i(σ)≤Σ_j p_ijx_ij+max{p_ij:x_ij>0}≤2T；空max为0。
