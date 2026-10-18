@@ -107,3 +107,198 @@ q_v=k_v 时末项按0计。原调度在可达点无外来第二unit，全部非�
 C=2时，即使只要求存在某个同容量根森林也不能无条件推广：两机r,s，一件U仅能在r耗1，三件J的home均r且a=2/3、另一唯一端s耗1。留一件J在r、两件送s，负载(5/3,2)，b_r=2≤C。任何两点arborescence forest至多保一条r→s外送弧，r将至少承载1+4/3=7/3>2。任意负载去环定理仍成立，原图本来无环；失效仅是入度一森林合同。
 
 [实际审查](../../reviews/unrelated_machines/home_unit_cycle_and_directed_token_review.md)、[规范构造与精确审计](../../../tests/audits/unrelated_machines/home_unit_cycle_and_directed_token.py)、[不导入核心的独立回放](../../../tests/audits/unrelated_machines/home_unit_cycle_independent.py)、[冻结证据](../../../evidence/runs/unrelated_machines/home_unit_cycle_and_directed_token_audit.json)分别记录证明攻击、实现和实际有限范围，未认证外审及全球优先权。
+
+
+## 7. 匿名 token 的一阶提升、四次非扩展与共同容量块
+
+**身份 `UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1`。** 本节研究删去同菜单原任务身份后的共同矩表示。结论是一般 M1 提升、一个精确 M2 非扩展点以及原任务 M2 必须满足的完整 head×context PSD 矩阵。非扩展量词固定为“这个给定的聚合 functional 无原身份扩展”，不等同于原调度实例不可行；它也不是一般 UM 的近二间隙、计算困难性或近似算法。
+
+本节的证明、有限审计及最终实际读取范围分别见[本次审查记录](../../reviews/unrelated_machines/anonymous_token_label_lift_and_nonextension_review.md)。既有正文和冻结旧作者 Proof 的字节均保留；下面明确修正多 context 的矩阵解释，不将已有歧义原件改写为已经通过。标准不放回抽样及置换分解本身不作新颖性主张。
+
+### 7.1 一共同 functional、原身份与形式提升
+
+给有限多个组 g。每组有整数 k_g>=1、0<=r_g<=k_g、h_g=k_g-r_g，一个 Boolean 活跃指标 A_g，以及有限多个 Boolean 匿名 head 占用 X_g,w；另有不参与这些标签置换的 Boolean context 变量。只有一个次数至多四的线性 functional L，满足 L(1)=1 与以次数至多二单项式为指标的共同 M2 PSD。Boolean 方程乘到总次数四，并要求
+
+\[
+ X_{g,w}A_g=X_{g,w},\qquad
+ \sum_wX_{g,w}=r_gA_g                                      \tag{7.1}
+\]
+
+乘到总次数四。所有组、所有 context 与所有机器量共用这个 L；不能换成分别可行的逐行 projection。
+
+为每组恢复 k_g 枚不同原任务标签 a，每枚有 home 指标 t_g,a 和 head 指标 x_g,a,w。先 Boolean 化请求；同一原任务要求两个不同端，或不同原任务同时要求同一匿名 head 时，将该单项式置零。其余在一组中指定 t>=1 个不同 head/标签和 s 个另行保留 home 的标签，使用形式替换
+
+\[
+ \frac{(h_g)_s}{(k_g)_{s+t}}
+       \prod_{w\text{ 被指定}}X_{g,w}.                    \tag{7.2}
+\]
+
+只有 s>=1 个 home 请求而无 head 请求时，替换为
+
+\[
+ 1-\left(1-\frac{(h_g)_s}{(k_g)_s}\right)A_g.              \tag{7.3}
+\]
+
+空请求取一；不同组的替换相乘，context 原样保留，再作用 L，得到 L'。下降阶乘 (a)_j=a(a-1)...(a-j+1)。非零请求最多涉及本组 k_g 个不同标签，分母不会为零；分子可为零。这个定义对次数至多四单项式不升次数。
+
+若输入来自一个真实全局 Boolean law，(7.2)–(7.3) 就是在所选出口上均匀注入原标签的真实抽样。对伪矩不能由此直接推出 PSD；下面分开证明其准确层次。
+
+### 7.2 一般 M1 提升，包括 inactive/home 混合
+
+**命题。** 在7.1节假设下，L' 在常数、全部原标签单变量及未动 context 单变量上的 M1 Gram 是 PSD。它包含任意有限多组、r=0、r=k 与 k=1 边界，不声称 M2 同样可提升。
+
+固定一组并省略 g，写 k,r,h,A,X。k>=2 时非平凡系数为
+
+\[
+\begin{aligned}
+ L'x_{a,w}&=LX_w/k,&L't_a&=1-rLA/k,\\
+ L'x_{a,w}x_{b,v}&=LX_wX_v/[k(k-1)]&&(a\ne b,w\ne v),\\
+ L'x_{a,w}x_{b,w}&=0&&(a\ne b),\\
+ L'x_{a,w}x_{a,v}&=0&&(w\ne v),\\
+ L't_ax_{a,w}&=0,\\
+ L't_ax_{b,w}&=hLX_w/[k(k-1)]&&(a\ne b),\\
+ L't_at_b&=1-LA+h(h-1)LA/[k(k-1)]&&(a\ne b).
+\end{aligned}                                             \tag{7.4}
+\]
+
+每个对角等于其一阶矩。k=1 时是线性替换 t=1-rA、x_w=X_w，没有 k-1 分母。
+
+证明取类别计数 n_0=k-rA（home）及 n_w=X_w（head），于是 sum_c n_c=k。任一原单变量线性多项式分解为标签平均与 contrasts：系数均值外的 d_a,c 满足对每个 c 有 sum_a d_a,c=0。标签平均是聚合变量的线性式，平方期望由共同 M1 非负。不同组的 contrast 交叉项以及 contrast 与平均/context 的交叉项均为零，直接由(7.4)的标签均匀系数可核。单组 contrast 的平方期望恰为
+
+\[
+ \frac1{k(k-1)}\sum_a
+  \left[k\sum_cd_{a,c}^2Ln_c
+         -L(\sum_cd_{a,c}n_c)^2\right]
+ =\frac1{k(k-1)}\sum_a\sum_{c<e}
+       (d_{a,c}-d_{a,e})^2L(n_cn_e).                       \tag{7.5}
+\]
+
+等式使用 sum n_c=k 乘一次线性式。两个不同 head 给 LX_wX_v=L((X_wX_v)^2)>=0，由 Boolean ideal 和共同 M2 PSD；home/head 给 L(n_0X_w)=hLX_w>=0，由(7.1)。故(7.5)非负。此证明仅用明确共同矩恒等式，没有假定一个未知的全局真实抽样 law。
+
+若另加 native 行的 A 等于 incoming-unit 总和及 head 单位容量零对矩，则相应原行的一阶/同行二阶矩还有合法完整配置 law：inactive 全 home；active 按 incoming 原任务边缘选一枚 unit，独立均匀选择 h 个 home 标签。这个附加说明依赖所述 native 恒等式；7.1节抽象组方程单独并不定义所有原机器行。均匀 h-subset law 的存在也不是指数配置表的免费多项式输出算法。
+
+### 7.3 精确 k=4 四次 functional 与配置范围
+
+取十个 Boolean 变量 X_1,...,X_10 与一个 Boolean Y，sum_iX_i=4。令 nu 是[10]全部210个四元子集的真实均匀 law。令 beta 是同一有限集合上的**有符号权重**：落在前五点或后五点之一的每个四元子集权1/8，共10个；前后各取两点的每个子集权-1/400，共100个；其余权零。权重总和为一，但 beta 不是概率 law，也不称为真实 conditional distribution。
+
+置 delta=1/100，对总次数至多四的 Boolean 化单项式完整定义
+
+\[
+ Lf(X)=\mathbb E_\nu f(X),\qquad
+ L(Yf(X))=\delta\mathbb E_\beta f(X)
+       \quad(\deg f\le3),                                \tag{7.6}
+\]
+
+并线性延拓。Boolean 方程和 sum X=4 的全部总次数至多四倍乘都成立，因为(7.6)两侧的底层子集均有大小四。
+
+本例的完整配置范围准确限定为两条**抽象**行：X 行允许全部四元子集，其一阶/同行二阶由 nu 实现；Y 行允许0或1，由 Bernoulli(delta)实现。此处没有声称 X、Y 有共同真实 law，没有将该聚合 point 称为完整原作业 CONFIG+M2 点。
+
+其共同 M2 确实 PSD。设 M_beta=[E_beta X_iX_j]：对角2/5，同行半内非对角7/20，跨半非对角-1/25。在常数方向、前后半符号方向、两个半内和零空间上，三个特征值分别为
+
+\[
+ 8/5,\quad 2,\quad 1/20.                                 \tag{7.7}
+\]
+
+任意二次多项式 Boolean 化后写 q_0(X)+Yq_1(X)，其中 q_0 至多二次、q_1 至多线性。在四元子集上，q_1 的常数可由 sum X=4 吸入线性项。为证明正性，可把 q_0 扩大为210个子集上的任意函数。令 B 为子集—点 incidence 矩阵、W=diag(beta(S))；扩大后的平方 Gram 为
+
+\[
+ \begin{pmatrix}I_{210}/210&\delta WB\\
+                 \delta B^TW&\delta M_\beta\end{pmatrix}. \tag{7.8}
+\]
+
+其 Schur 补是 delta(M_beta-delta D)，D=210B^TW^2B。在与(7.7)相同的三个空间上，D 的特征值为
+
+\[
+ 5271/100,\quad105/2,\quad5313/1600.
+\]
+
+所以 M_beta-delta D 的对应特征值是
+
+\[
+ 10729/10000,\quad59/40,\quad2687/160000,
+\]
+
+全严格正。(7.8) PSD 从而原67×67共同 M2 PSD。直接分数消元另给秩55；原标签 M1 的46×46矩阵（含四个恒零 home）PSD、秩38。这里的 M2 正性有解析 Schur 证明，不借用浮点 solver。
+
+### 7.4 形式提升失败与任意原身份扩展均不存在
+
+在7.3节 point 上取一组 k=r=4、h=0、A=1，十个 head X_i，Y不动。记 s_i 在前半为1、后半为-1，则 E_beta(sum_i s_iX_i)^2=20。对两枚不同原标签，二次多项式
+
+\[
+ Q=Y\sum_i s_i(x_{1,i}-x_{2,i})
+\]
+
+的形式提升平方期望被(7.2)强制为
+
+\[
+ L'(Q^2)=\frac2{4\cdot3}
+ L\left[Y\left(4\sum_iX_i-(\sum_i s_iX_i)^2\right)\right]
+ =\frac{2\delta}{12}(16-20)=-1/150.                       \tag{7.9}
+\]
+
+因此7.2节 M1 正面不能升级为同样 M2 的完全正提升。
+
+更强量词固定为如下原身份扩展问题：四枚不同原 token，每枚有十个 head 变量 x_a,i，原任务 Boolean/one-hot ideal 乘到总次数四；每个 head 的完整原配置只能为空或一枚原 token，匹配一阶/同行二阶；保留 Boolean Y；一个共同原 M2 PSD；要求 X_i=sum_a x_a,i 的全部总次数至多四投影矩恰等于(7.6)。这样的扩展不存在。
+
+证明可用7.6节的直接 SOS 容量块：令 t_i=s_iY，其必需非负二次型正好是 delta(16-20)=-1/25。它等于四枚原 token 的显式二次平方和乘4，不可能负。因此拒绝的是一个给定聚合 functional 的全部原身份扩展，而非仅拒绝人为选定的均匀 kernel。
+
+另一个与冻结旧 Proof 一致的证明是把任何假设的原扩展对四标签置换平均。平均保持原约束与 M2 PSD。展开 X 的乘积，重复标签的不同 head 由原 one-hot 为零；同一 head 的不同原标签由完整 row CONFIG 的零对矩及 M2 null 性在总次数四内为零。故平均后的不同标签/不同 head 矩必为聚合矩除以下降阶乘，恢复(7.9)的负平方。这保留旧证明的逻辑，不覆盖其原字节。
+
+### 7.5 十三机 native context 只是映射说明
+
+这里可将匿名组和 context Y 放入本页 native 模型的一个真实普通输入。十三台机器为 r、z_1,...,z_10、y_0、y_1；原任务恰六件：
+
+| 原任务 | home 或固定端 | 其他全部有限端 |
+|---|---|---|
+| g | 仅r，时间1 | 无 |
+| f_1,...,f_4 | 每件r，时间1/8 | 每个z_i，时间1 |
+| y | r，时间1/2 | y_0、y_1，时间1 |
+
+其余端为 infinity。共有48个有限端，r 的 home 总量为一。g留r、f_a各送不同的z_a、y送y_0，是全部六件原任务的完整峰一调度；g又给OPT>=1，故实际OPT=1。
+
+匿名化后 X_i 记 z_i 占用，Y记 y是否去y_1，另一端为1-Y；目标一时所有 home 指标为零。(7.6)给的是匿名表示的坏 point，它通过所述匿名行容量和聚合 M2，但无保持其全矩的原身份扩展。这个普通输入本身有其他完全正确的原 M2 点，甚至上述 Dirac 点。故本例不声称原 CONFIG+M2 的间隙，不声称该实例 FAIL，也不冒用原 K2/strong-C2 见证。
+
+### 7.6 必要的是整个 head×context PSD 矩阵
+
+这一部分不局限同菜单、固定 r 或 Boolean 匿名 X。给任意显式 k>=1 枚原任务组和 head 类别 i；每个 x_a,i 是一原端指标，或该任务一组互不交端类别的指标和。不可用端置零，类别不必覆盖全部端。原 one-hot/Boolean ideal 在总次数四内给
+
+\[
+ x_{a,i}^2=x_{a,i},\qquad x_{a,i}x_{a,j}=0\quad(i\ne j).
+\]
+
+令 X_i=sum_a x_a,i；X_i 本身不要求 Boolean。任取一个固定的**全局 affine context 基** z_0=1,z_1,...,z_s，每个 z_l 是所有原 assignment 变量的 affine 组合，可包含本组的个别原标签。任何共同原 M2 必须满足单一整体矩阵
+
+\[
+ \boxed{\quad
+ K_{(i,\ell),(j,t)}
+   =k\,\mathbf1_{i=j}L(X_i z_\ell z_t)
+       -L(X_iX_j z_\ell z_t),\qquad K\succeq0.
+ \quad}                                                   \tag{7.10}
+\]
+
+指标同时是 head 与 context。不能把这里误写为“对任意不同 Z、Z'，单独的交叉块 [k delta_ij L(X_iZZ')-L(X_iX_jZZ')] PSD”；非对角 context 交叉块不必单独 PSD，甚至其语境下不是完整 Gram。正确断言始终是(7.10)整个矩阵，以及其对角 principal submatrices。
+
+自足证明取任意实系数 c_i,l，置 t_i=sum_l c_i,l z_l、B=sum_iX_it_i，再置 q_a=sum_i x_a,it_i-B/k。它们是原变量的至多二次多项式。原 ideal 乘以 affine 的二次乘积，给
+
+\[
+\begin{aligned}
+ c^TKc
+ &=k\sum_iL(X_it_i^2)-L(B^2)\\
+ &=k\sum_{a=1}^k
+      L\left[(\sum_i x_{a,i}t_i-B/k)^2\right]\ge0.         \tag{7.11}
+\end{aligned}
+\]
+
+所以即使 contexts 含个别原标签，也无需标签平均、无需真实条件 law、无需新增 degree 六矩。若 contexts 对该组标签置换不变，这与 standard-label contrast Gram 相同至正归一化；含个别标签时仍合法，但不能只称为 standard 表示块。k=1 时整个矩阵由原 ideal 恒为零。
+
+在7.3节反例中取 context 基含1与Y、方向 t_i=s_iY，便有 c^TKc=-1/25；对应四个 q_a 平方期望之和为-1/100。这正是7.4节任意扩展不存在的直接证书。单独这个必要块未被证明足以重构所有原 M2；高阶标签相等型的其余共同 PSD 块仍需保留。
+
+### 7.7 位复杂度、证据与当前未解义务
+
+本节是矩表示/给定点的非扩展证书，不是任意 SDP exact feasibility 的总位多项式 finder。k 枚原任务若作为显式输入给出，M1 输出规模与分数计算均按实际变量数多项式；若 k 仅为二进制需求而尚无这些原任务，不免费展开它，需回到本页第4节 q=min(k,d)+filler 的实际构造。式(7.2)只用至多四阶下降阶乘，编码位长为输入及原矩编码的多项式。
+
+对给定多项式列表的任务组、head 类别及 affine context 基，(7.10)是次数至多四矩的有理线性矩阵表达，规模 |I|(s+1)，(7.11)是可精确核的原 M2 SOS 组合。在完整原 M2 中它是冗余的；投影掉原身份后不一定冗余。验证一个坏 point 不是对所有匿名点求分离，更不推出实际 OPT>T，除非整个用于比较的必要系统已被正确判不可行。此处没有假定通用 exact SDP oracle，也没有把弱不可行或数值精度免费处理。
+
+冻结作者来源为 `sol_token_label_lift_exact_v1.md`（SHA256 5a953ed6365e2be029ef31d3ee0184447d626971ad8af7369ee5190eac69a86d）、`sol_token_label_lift_author_proof_v1.md`（88904ae073464b199a928516af9918422f684c606ff5efe67e075ba2e70a06a8）。自足 Fraction 审计 `sol_token_label_hypergeometric_lift_audit.py` 的SHA256为8cfc38e64116c8ebfcd41f62d5b08c34d83d23645d0c3bd788bfb78afd1c7670，固定JSON为a1140d82f3f1b7cf94dd33611fb66ee290f1cfeccc1d00e51328e1f213c42c0b。它直接核67×67输入M2、46×46原M1、全部所列cardinality ideal、Schur数据、负平方及六件真实任务完整σ；重放只比较冻结输出，不覆盖旧字节。这些是作者有限分数证据，不替代独立数学 final-read 或外部审查。
+
+本节只补原任务身份在共同矩中的承重信息。标准对称块/Young分解可以保留标签相等型以缩小表示，但它不是主目标算法；真正 growing-depth 共同状态的可计算构造、保全全部原任务的 near2 源间隙、以及从任意弱实际解到源一致性的解码仍未完成。

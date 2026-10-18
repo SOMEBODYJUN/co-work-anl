@@ -3246,3 +3246,16 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：弱R_cons点不证明强K2 gap；不能把canonical额外限制或任意quartic literal非负当raw合同。 当前精确域无standing fatal。
 - Status：complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified；主目标及其反面OPEN。
 - Related Files：[正文](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[实际审查](../reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md)及其保真来源。
+
+
+## UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1：匿名原任务身份的矩障碍
+
+- ID/version / Objects / Domain / Definitions：UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1；共同degree4 Boolean functional/global M2；有限同菜单组k>=1,0<=r<=k，A/X满足XA=X、ΣX=rA的全允许乘子；原identity端onehot/Boolean至4；固定k4 d10 delta1/100点。全局affine-context容量块另允许任意显式原任务类别及非Boolean X。
+- Quantifiers / Exact Statement / Conclusion：形式标签lift一般保共同M1含inactive/home与k1/r0/rk；给定67维aggregate M2(rank55)点有形式Q²=-1/150且无任何保全部<=4矩的原token M2 extension；必要整个head×context矩阵由原quadratic SOS给出，坏方向-1/25。 一般M1/必要块对所有该域共同functional成立；非扩展针对固定点。
+- Assumptions：无复杂度假设；原onehot/Boolean/M2准确使用，signed beta非true law。
+- Dependencies：UM-MODEL-v1, UM-ANONYMOUS-TOKEN-COMMON-MOMENT-DOMAIN-v1；页内Laplacian/Schur与原SOS。
+- Scope：仅给定point非扩展，不是所有points不可行；13机context actualOPT1，非原任务K2 gap/hardness/一般算法或SDP finder；必要块未证充分，显式任务与binary需求不混。
+- Evidence：Exact-first、实际作者读后及最终附录实读；root完整读两code、三个新目录重放。
+- Counterevidence / Objections：M1不能升M2；异context块不可单独PSD；原input OPT1且可换point。当前范围无standing fatal。
+- Status：complete scoped algebraic proof; Exact-first reconstruction and actual final appendix reading; finite exact audit only; novelty unverified；主目标/反面OPEN。
+- Related Files：[正文§7](../current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)、[新审查](../reviews/unrelated_machines/anonymous_token_label_lift_and_nonextension_review.md)及其原件/代码/证据。

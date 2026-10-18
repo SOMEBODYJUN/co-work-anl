@@ -1320,6 +1320,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1 | 对每个Q及有理1<=T<2，raw K2(P(Q),T)可行 iff raw K2(P(D_+Q),T)可行；给定两方向任一有限有理证书可det-bit-poly转换，保原moments<=4与private CONFIG；同时省localizers版本亦同。 | [正文](unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[实际审查](../reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md)；software none。 |
 
+| UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1 | 形式标签lift一般保共同M1含inactive/home与k1/r0/rk；给定67维aggregate M2(rank55)点有形式Q²=-1/150且无任何保全部<=4矩的原token M2 extension；必要整个head×context矩阵由原quadratic SOS给出，坏方向-1/25。 | [正文§7](unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)、[实际审查](../reviews/unrelated_machines/anonymous_token_label_lift_and_nonextension_review.md)；audit only，非原问题gap。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
