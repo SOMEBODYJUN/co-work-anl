@@ -394,3 +394,8 @@ u_t) 的一般复杂度。
 [两完整actual插值与实际used池端义务](../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)新增同页§6–10 v4：任意P的两actual与指定F原端改派，剩余job双出现配对得逐机件数与负载同τ；bulk J可接全部非pool仍全False≤1.5，任意pool得≤1.5+d/2，真正排near2须已用近unit J_pool身份改变。旧v3前缀/强输出范围保留；未知两witness不免费，不是sourceNO。
 
 [仿射线两两独立的结构边界](../current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)：单primary/onehot helpers在指定pairwise边际下可按条件化Hall全部actual1；多primary公共4D simplex陪集族则所有local pairs uniform仍V=2/(R+1)/实际OPT=2−2/(R+1)，common q/partite/全部zero jobs保留。后者只删唯一main即unit，不是robust或hard image/主反面。
+
+
+## 全小件不再阻断给定目标的完整路径
+
+尝试以单件触发永久激活时，全小件a<h使旧算法返回充分条件失败。新[任务包剥离](../current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)取h≤a(P)≤T、补集≥h，用内部选入流不足h的顶点剥离，并共同屏蔽剩余核心全部非保留来流，关闭该技术缺口。旧任意安全步贪心死锁仍成立；源端未剪枝反例仍排除删掉a≤T的泛化。可回收逐机二分profile。重试主目标必须从未知输入产生共同目标或实际进展，不能免费使用τ。

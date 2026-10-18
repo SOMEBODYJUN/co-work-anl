@@ -329,3 +329,8 @@
 [两完整actual插值与实际used池端义务](../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)新增同页§6–10 v4：任意P的两actual与指定F原端改派，剩余job双出现配对得逐机件数与负载同τ；bulk J可接全部非pool仍全False≤1.5，任意pool得≤1.5+d/2，真正排near2须已用近unit J_pool身份改变。旧v3前缀/强输出范围保留；未知两witness不免费，不是sourceNO。
 
 [仿射线两两独立的结构边界](../current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)：单primary/onehot helpers在指定pairwise边际下可按条件化Hall全部actual1；多primary公共4D simplex陪集族则所有local pairs uniform仍V=2/(R+1)/实际OPT=2−2/(R+1)，common q/partite/全部zero jobs保留。后者只删唯一main即unit，不是robust或hard image/主反面。
+
+
+## 任务包剥离闭合任意剪枝初态
+
+[完整证明](../current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)给UM-LOCAL-BUNDLE-SHIELD-PATH-v1与UM-PRUNED-BUNDLE-PEELING-PATH-v1：给定τ时，全部剪枝初态有det-bit-poly全程U路径，worst-uniform逐参数锐；全小件不再要求单件可激活。未知目标与一般ε未得。

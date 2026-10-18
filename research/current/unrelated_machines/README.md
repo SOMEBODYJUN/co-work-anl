@@ -449,3 +449,8 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [两完整actual插值与实际used池端义务](bulk_or_commit_two_witness_interpolation.md)新增同页§6–10 v4：任意P的两actual与指定F原端改派，剩余job双出现配对得逐机件数与负载同τ；bulk J可接全部非pool仍全False≤1.5，任意pool得≤1.5+d/2，真正排near2须已用近unit J_pool身份改变。旧v3前缀/强输出范围保留；未知两witness不免费，不是sourceNO。
 
 [仿射线两两独立的结构边界](tagged_affine_line_pairwise_independence_boundary.md)：单primary/onehot helpers在指定pairwise边际下可按条件化Hall全部actual1；多primary公共4D simplex陪集族则所有local pairs uniform仍V=2/(R+1)/实际OPT=2−2/(R+1)，common q/partite/全部zero jobs保留。后者只删唯一main即unit，不是robust或hard image/主反面。
+
+
+## 任意剪枝初态的共同入流剥离
+
+[任务包屏蔽与全输入锐路径](bundle_inflow_peeling_and_pruned_transient_sharpness.md)：先选源包及补集均足够释放的二分，再剥低内部入流顶点，保留核心、逆序激活、补集封口。全部剪枝σ≤C到给定τ≤T的路径峰≤max(2T,C+T/2)，旧两机族给全输入逐参数锐性。含逐机可计算profile、规范代码、独立攻击及冻结核验。具体τ仍承重；UM-TARGET-v1保持OPEN。

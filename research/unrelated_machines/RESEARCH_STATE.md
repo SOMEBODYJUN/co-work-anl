@@ -510,3 +510,8 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 [两完整actual插值与实际used池端义务](../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)新增同页§6–10 v4：任意P的两actual与指定F原端改派，剩余job双出现配对得逐机件数与负载同τ；bulk J可接全部非pool仍全False≤1.5，任意pool得≤1.5+d/2，真正排near2须已用近unit J_pool身份改变。旧v3前缀/强输出范围保留；未知两witness不免费，不是sourceNO。
 
 [仿射线两两独立的结构边界](../current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)：单primary/onehot helpers在指定pairwise边际下可按条件化Hall全部actual1；多primary公共4D simplex陪集族则所有local pairs uniform仍V=2/(R+1)/实际OPT=2−2/(R+1)，common q/partite/全部zero jobs保留。后者只删唯一main即unit，不是robust或hard image/主反面。
+
+
+## 更新：全剪枝给定目标路径不再开放
+
+前文任意pruned初态全小件共同激活的OPEN已由[二分任务包入流剥离](../current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)闭合：无eligible/assigned-max前提，全程U=max(2T,C+T/2)且全输入类worst-uniform锐。UM-LOCAL-BUNDLE-SHIELD-PATH-v1另给任意二分的逐机profile。具体τ及其Q/f仍是输入；未知目标共同选择、可靠FAIL与实际统一次二输出仍是主前沿。

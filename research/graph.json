@@ -11922,6 +11922,44 @@
         "research/reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md"
       ],
       "status": "complete scoped PI-line structural result; actual statement-first and separately scoped final review; novelty unverified"
+    },
+    {
+      "id": "UM-LOCAL-BUNDLE-SHIELD-PATH-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "二分源任务包的逐机屏蔽与入流剥离",
+      "detail": "包与补集皆可激活且初态余量≥h时，全局剥离给完整逐机U路径；任意二分生成显式profile。",
+      "refs": [
+        "research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md",
+        "research/reviews/unrelated_machines/bundle_inflow_peeling_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-PRUNED-BUNDLE-PEELING-PATH-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意剪枝初态的给定目标完整锐路径",
+      "detail": "无需单件eligible或ST来源；所有剪枝初态到给定τ全程≤max(2T,C+T/2)，旧两机族给worst-uniform逐参数锐性。",
+      "refs": [
+        "research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md",
+        "research/reviews/unrelated_machines/bundle_inflow_peeling_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-BUNDLE-PEELING-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "任务包剥离的有限精确前缀与小极小峰值核验",
+      "detail": "全小件核心/剥离/出口、退化、长有理及两机锐族；独立重算实际前缀，不承担一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md",
+        "evidence/runs/unrelated_machines/bundle_peeling_path_audit.json",
+        "tests/audits/unrelated_machines/bundle_peeling_buffer_path.py",
+        "tests/audits/unrelated_machines/bundle_peeling_path_audit.py"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -29036,6 +29074,68 @@
       "refs": [
         "research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md",
         "research/reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "D-UM-LOCAL-BUNDLE-SHIELD-PATH-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-LOCAL-BUNDLE-SHIELD-PATH-v1",
+      "statement": "在正文全部共同预算及给定包条件下，五阶段源/来流证明；任意二分profile自足满足这些条件。",
+      "refs": [
+        "research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md"
+      ],
+      "status": "self-contained scoped proof"
+    },
+    {
+      "id": "D-UM-PRUNED-BUNDLE-PEELING-PATH-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-LOCAL-BUNDLE-SHIELD-PATH-v1",
+        "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1"
+      ],
+      "conclusion": "UM-PRUNED-BUNDLE-PEELING-PATH-v1",
+      "statement": "剪枝及目标容量给h≤T/2、A−T≥h，包生成满足屏蔽引理；既有k=1两机族给匹配的全输入下界。",
+      "refs": [
+        "research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md"
+      ],
+      "status": "self-contained scoped proof"
+    },
+    {
+      "id": "C-UM-PRUNED-BUNDLE-PEELING-PATH-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BUNDLE-PEELING-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-PRUNED-BUNDLE-PEELING-PATH-v1",
+      "statement": "有限独立前缀重算与小minimax/OPT oracle，仅核实现和参数边界。",
+      "refs": [
+        "research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md",
+        "evidence/runs/unrelated_machines/bundle_peeling_path_audit.json",
+        "tests/audits/unrelated_machines/bundle_peeling_buffer_path.py",
+        "tests/audits/unrelated_machines/bundle_peeling_path_audit.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "L-UM-BUNDLE-PEELING-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-LOCAL-BUNDLE-SHIELD-PATH-v1",
+        "UM-PRUNED-BUNDLE-PEELING-PATH-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "路径以具体实际τ为输入，U可≥2T；未知目标共同选择和统一实际次二保证未解决。",
+      "refs": [
+        "research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md"
       ],
       "status": "scope limitation"
     }

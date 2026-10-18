@@ -209,3 +209,8 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 [两完整actual插值与实际used池端义务](research/current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)新增同页§6–10 v4：任意P的两actual与指定F原端改派，剩余job双出现配对得逐机件数与负载同τ；bulk J可接全部非pool仍全False≤1.5，任意pool得≤1.5+d/2，真正排near2须已用近unit J_pool身份改变。旧v3前缀/强输出范围保留；未知两witness不免费，不是sourceNO。
 
 [仿射线两两独立的结构边界](research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)：单primary/onehot helpers在指定pairwise边际下可按条件化Hall全部actual1；多primary公共4D simplex陪集族则所有local pairs uniform仍V=2/(R+1)/实际OPT=2−2/(R+1)，common q/partite/全部zero jobs保留。后者只删唯一main即unit，不是robust或hard image/主反面。
+
+
+## 单件释放缺口与共同任务包的回收
+
+旧单件eligible失效仅否定旧充分条件，不再是全剪枝给定τ路径的开放障碍。[任务包剥离](research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)用包及补集均可激活、保留核心全部内部入流共同屏蔽修复。任意安全步可能死锁的失败记录保持；新构造依赖全局次序和给定τ，不把它升级为未知目标或一般次二算法。
