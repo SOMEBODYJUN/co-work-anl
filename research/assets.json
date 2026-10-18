@@ -8991,6 +8991,40 @@
       ],
       "source_role": "Current self-contained weighted ST proof; ordered-slot baseline is recorded in the canonical model.",
       "limit": "逐机条件不可用全局平均替代；Q为空只给绝对界；不排除γ→0、大small边或跨机联合结构。"
+    },
+    {
+      "id": "um_held_cycle_assigned_max_path",
+      "claims": [
+        "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+        "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified",
+      "applies_when": [
+        "UM-MODEL-v1; T>=0,T<=C<=2T; source edges of sigma<=T, actual sigma<=C and given actual tau<=T",
+        "One eligible source task per h>0 machine; alternatively S<=T+actual assigned maximum, automatic for ordered-slot output"
+      ],
+      "produces": "actual full single-job target path under U, and matching worst-case minimax bound on the explicit assigned-max promise class",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/held_cycle_buffer_path.py",
+        "tests/audits/unrelated_machines/held_cycle_buffer_path_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json"
+      ],
+      "examples": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "source_role": "Classical ordered-slot construction background, whose assigned-max consequence is proved directly here; new held-cycle release is not attributed to the source.",
+      "limit": "Actual tau is supplied. No arbitrary-pruned-initial-state path theorem, no target solver, no sub-2 scheduling algorithm; sharpness is not claimed for actual ST outputs.",
+      "implementation_detail": "held_cycle_path is the bit-polynomial constructor; finite audit functions and independent implementation are recorded separately."
     }
   ]
 }

@@ -11903,6 +11903,63 @@
       "purpose": "核对mixed small时间下等分支撑、逐机工作质量、ST加性误差和Q匹配分支。",
       "topic": "unrelated_machines",
       "role": "review"
+    },
+    {
+      "path": "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md",
+      "title": "保留不安全环的共同缓冲释放与实际最大件初态的全程锐界",
+      "purpose": "读取单eligible的三阶段全程证明、实际ST输出上界及局部promise锐性，核给定τ限制。",
+      "topic": "unrelated_machines",
+      "role": "account",
+      "related_paths": [
+        "research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md",
+        "evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json"
+      ]
+    },
+    {
+      "path": "research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md",
+      "title": "保留坏环三阶段路径与实际最大件锐界的独立审查",
+      "purpose": "核先陈述重构、构造者复核和最终读后审查，检查剪枝/固定padding/锐性范围。",
+      "topic": "unrelated_machines",
+      "role": "review",
+      "related_paths": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md",
+        "evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/held_cycle_buffer_path.py",
+      "title": "保留坏环的实际路径构造与精确边界审计",
+      "purpose": "运行给定τ的held_cycle_path并逐台验峰，区分函数构造与有限审计。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md",
+        "research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md",
+        "evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json"
+      ]
+    },
+    {
+      "path": "tests/audits/unrelated_machines/held_cycle_buffer_path_independent.py",
+      "title": "保留坏环三阶段路径的独立实现",
+      "purpose": "不导入规范程序地核坏环、共享保护根和零固定任务，有限证据不代证明。",
+      "topic": "unrelated_machines",
+      "role": "audit_code",
+      "related_paths": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md",
+        "research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md",
+        "evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json"
+      ]
+    },
+    {
+      "path": "evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json",
+      "title": "保留坏环与实际最大件全程锐界的冻结核验",
+      "purpose": "核规范/独立代码hash、精确路径、实际峰与输入参数及证据范围。",
+      "topic": "unrelated_machines",
+      "role": "frozen_evidence",
+      "related_paths": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md",
+        "research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md"
+      ]
     }
   ]
 }

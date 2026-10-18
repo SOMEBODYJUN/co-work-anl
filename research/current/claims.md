@@ -1185,6 +1185,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-FIXED-SA-ASSIGNMENT-GAP-v1 | 固定 `r` 轮（乘子至多 `r−1` 个 literal）的 assignment/LST SA，在 `m` 台相同机、`m+1` 个 unit 任务上阈值 `T=1+1/(m−r+1)` 可行，而 `OPT=2`，比值 `2−2/(m−r+2)` 趋 2。 | [正文](unrelated_machines/fixed_sa_assignment_gap.md)；完整 literal 伪分布，限制固定层局部舍入，不含 configuration、SOS/Lasserre 或一般算法硬度。 |
 | UM-WEIGHTED-SMALL-ST-BARRIER-v1 | 固定 `β<1,γ≤1` 下，若 unit-only 任务全为时间1且可容量1匹配，其他任务有 small 支持、逐机 small 总工作 `s_i≤1`、多端 small 工作 `u_i≥γs_i`，则显式等分支撑+ST 给 `C≤2−γ/2+β`；unit 匹配失败则 `OPT≥2`。 | [正文](unrelated_machines/weighted_small_st_barrier.md)、[独立攻击](../reviews/unrelated_machines/weighted_small_st_barrier_review.md)；mixed small 结构障碍，非一般算法/硬度。 |
 
+## 保留坏环与实际最大件全程锐界
+
+| ID | 精确陈述 | 证据和范围 |
+| --- | --- | --- |
+| UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1 | 对任意UM-MODEL-v1的T≥0,T≤C≤2T、剪枝实际σ≤C和给定实际τ≤T，定义S=f+A,Q,U=max(2T,C+T/2),h=(S+Q−U)+。若每个h_i>0的源至少有一件改变任务a_j≥h_i，则确定性位poly输出每件至多一次直迁τ的完整路径，全程≤U。任意选一件eligible形成的坏环可保留，其他来流统一受S+Q−β<U控制，源补集A−a≥h后释放。 | [正文](unrelated_machines/held_cycle_release_and_assigned_max_path.md)、[审查](../reviews/unrelated_machines/held_cycle_assigned_max_path_review.md)；具体τ给定；源端a≤T承重。没有eligible只是否定该充分条件，不是OPT>T或无路径。 |
+| UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1 | 在前项同一剪枝/具体τ输入上，若逐机S_i≤T+M_i，其中M_i为σ实际分配最大件（空0），则确定性位poly输出每件至多一次直迁τ的完整路径且峰≤U。对每有理T>0,C∈[T,2T]，这个局部promise类到指定不同τ的单件路径最坏minimax恰U。标准非增单位槽匹配从同一剪枝分数负载≤T产生的任何实际输出满足S−M≤T，故上界覆盖实际槽输出。 | [正文](unrelated_machines/held_cycle_release_and_assigned_max_path.md)、[审查](../reviews/unrelated_machines/held_cycle_assigned_max_path_review.md)；锐性针对完整局部promise类，允许m=2，不声称每固定m,n或实际ST输出锐性；C=T仍为另一指定目标的非空路径。不给未知目标。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

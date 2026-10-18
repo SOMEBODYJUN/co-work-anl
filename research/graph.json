@@ -10910,6 +10910,46 @@
         "research/reviews/unrelated_machines/weighted_small_st_barrier_review.md"
       ],
       "status": "complete scoped proof; novelty unverified"
+    },
+    {
+      "id": "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "保留坏环与源补集的共同全程路径",
+      "detail": "对任意UM-MODEL-v1的T≥0,T≤C≤2T、剪枝实际σ≤C和给定实际τ≤T，定义S=f+A,Q,U=max(2T,C+T/2),h=(S+Q−U)+。若每个h_i>0的源至少有一件改变任务a_j≥h_i，则确定性位poly输出每件至多一次直迁τ的完整路径，全程≤U。任意选一件eligible形成的坏环可保留，其他来流统一受S+Q−β<U控制，源补集A−a≥h后释放。",
+      "refs": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md",
+        "research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md",
+        "evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "实际最大件初态的全程容量锐界与槽输出推论",
+      "detail": "在前项同一剪枝/具体τ输入上，若逐机S_i≤T+M_i，其中M_i为σ实际分配最大件（空0），则确定性位poly输出每件至多一次直迁τ的完整路径且峰≤U。对每有理T>0,C∈[T,2T]，这个局部promise类到指定不同τ的单件路径最坏minimax恰U。标准非增单位槽匹配从同一剪枝分数负载≤T产生的任何实际输出满足S−M≤T，故上界覆盖实际槽输出。",
+      "refs": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md",
+        "research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md",
+        "evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-HELD-CYCLE-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "保留坏环与实际最大件锐界的有限精确审计",
+      "detail": "规范和独立函数图构造、共同保护根、源补集、退化与五个锐参数；有限检查。",
+      "refs": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md",
+        "evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json",
+        "tests/audits/unrelated_machines/held_cycle_buffer_path.py",
+        "tests/audits/unrelated_machines/held_cycle_buffer_path_independent.py"
+      ],
+      "status": "exact finite audits; not a universal proof"
     }
   ],
   "hyperedges": [
@@ -26638,6 +26678,89 @@
         "research/reviews/unrelated_machines/weighted_small_st_barrier_review.md"
       ],
       "status": "complete scoped proof"
+    },
+    {
+      "id": "D-UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PERMANENT-BUFFER-ACTIVATION-v1"
+      ],
+      "conclusion": "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+      "statement": "在全部共同剪枝、具体实际目标和本Claim附加假设下，以源补集/保留坏环、实际槽收费及既有锐环证明。",
+      "refs": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HELD-CYCLE-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+      "statement": "命名坏环/树/退化/长有理/锐例和独立实际路径有限核验，不承担一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md",
+        "evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json",
+        "tests/audits/unrelated_machines/held_cycle_buffer_path.py",
+        "tests/audits/unrelated_machines/held_cycle_buffer_path_independent.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "D-UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PERMANENT-BUFFER-ACTIVATION-v1",
+        "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+        "UM-ST-ROUND-v1",
+        "UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1"
+      ],
+      "conclusion": "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1",
+      "statement": "在全部共同剪枝、具体实际目标和本Claim附加假设下，以源补集/保留坏环、实际槽收费及既有锐环证明。",
+      "refs": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md"
+      ],
+      "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "C-UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-HELD-CYCLE-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1",
+      "statement": "命名坏环/树/退化/长有理/锐例和独立实际路径有限核验，不承担一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md",
+        "evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json",
+        "tests/audits/unrelated_machines/held_cycle_buffer_path.py",
+        "tests/audits/unrelated_machines/held_cycle_buffer_path_independent.py"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "L-UM-HELD-CYCLE-TARGET",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1",
+        "UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "强初态给定目标的完整路径已闭合，但τ仍给定且临时峰≥2T；未知目标的共同选择/实际统一次二输出未得。全小源的任意初态也未闭合。",
+      "refs": [
+        "research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md",
+        "research/unrelated_machines/RESEARCH_STATE.md"
+      ],
+      "status": "open obligation"
     }
   ]
 }

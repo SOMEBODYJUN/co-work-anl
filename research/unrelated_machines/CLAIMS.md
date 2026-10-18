@@ -2322,3 +2322,27 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - **Dependencies：** UM-ST-ROUND-v1、均匀 small 支撑的逐机工作不等式、容量1匹配。
 - **Status：** 限定多尺度结构证明完成，独立攻击无尚成立的致命异议；外审/新颖性未认证；`UM-TARGET-v1` 仍 OPEN。
 - **Related Files：** [加权正文](../current/unrelated_machines/weighted_small_st_barrier.md)、[独立攻击](../reviews/unrelated_machines/weighted_small_st_barrier_review.md)。
+
+## UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1：保留坏环与源补集的共同全程路径
+
+- Exact Statement / Quantifiers：对任意UM-MODEL-v1的T≥0,T≤C≤2T、剪枝实际σ≤C和给定实际τ≤T，定义S=f+A,Q,U=max(2T,C+T/2),h=(S+Q−U)+。若每个h_i>0的源至少有一件改变任务a_j≥h_i，则确定性位poly输出每件至多一次直迁τ的完整路径，全程≤U。任意选一件eligible形成的坏环可保留，其他来流统一受S+Q−β<U控制，源补集A−a≥h后释放。
+- Objects / Domain / Definitions：二进制非负有理/不可用边、实际完整σ与τ；不动任务f，改变源A/目标Q，正阈值H，所选坏环Z和暂留入边β按正文定义。
+- Assumptions / Scope：具体τ给定；源端a≤T承重。没有eligible只是否定该充分条件，不是OPT>T或无路径。
+- Conclusion：给定目标的全程实际路径与明确范围锐界；非一般近似/困难性。
+- Dependencies：UM-MODEL-v1, UM-PERMANENT-BUFFER-ACTIVATION-v1；全部共同输入前提仍须满足。
+- Evidence：先陈述独立重构、构造者复核、冻结全文/实现攻击、主研究者亲核；两独立有理实现仅作有限checks。
+- Counterevidence / Objections：删除剪枝的两机反例明确保留；padding only-original条件已补；条件保护不冒充永久安全；无standing内部fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；规范给定目标构造implemented，外审与新颖性未认证，UM-TARGET-v1仍OPEN。
+- Related Files：research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md；research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md；evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json；两审计实现沿上述文件进入。
+
+## UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1：实际最大件初态的全程容量锐界与槽输出推论
+
+- Exact Statement / Quantifiers：在前项同一剪枝/具体τ输入上，若逐机S_i≤T+M_i，其中M_i为σ实际分配最大件（空0），则确定性位poly输出每件至多一次直迁τ的完整路径且峰≤U。对每有理T>0,C∈[T,2T]，这个局部promise类到指定不同τ的单件路径最坏minimax恰U。标准非增单位槽匹配从同一剪枝分数负载≤T产生的任何实际输出满足S−M≤T，故上界覆盖实际槽输出。
+- Objects / Domain / Definitions：二进制非负有理/不可用边、实际完整σ与τ；不动任务f，改变源A/目标Q，正阈值H，所选坏环Z和暂留入边β按正文定义。
+- Assumptions / Scope：锐性针对完整局部promise类，允许m=2，不声称每固定m,n或实际ST输出锐性；C=T仍为另一指定目标的非空路径。不给未知目标。
+- Conclusion：给定目标的全程实际路径与明确范围锐界；非一般近似/困难性。
+- Dependencies：UM-MODEL-v1, UM-PERMANENT-BUFFER-ACTIVATION-v1, UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1, UM-ST-ROUND-v1, UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1；全部共同输入前提仍须满足。
+- Evidence：先陈述独立重构、构造者复核、冻结全文/实现攻击、主研究者亲核；两独立有理实现仅作有限checks。
+- Counterevidence / Objections：删除剪枝的两机反例明确保留；padding only-original条件已补；条件保护不冒充永久安全；无standing内部fatal。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；规范给定目标构造implemented，外审与新颖性未认证，UM-TARGET-v1仍OPEN。
+- Related Files：research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md；research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md；evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json；两审计实现沿上述文件进入。
