@@ -2335,6 +2335,33 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；规范给定目标构造implemented，外审与新颖性未认证，UM-TARGET-v1仍OPEN。
 - Related Files：research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md；research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md；evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json；两审计实现沿上述文件进入。
 
+## UM-MULTI-ACTIVATION-STATIC-COVER-v1：多件共同激活的静态 cover/packing 桥
+
+- **Exact Statement / Quantifiers：** 给定任意合法 UM、`T≤C≤2T`、初态完整分配 `sigma` 且 `Cmax(sigma)≤C`、目标完整分配 `tau` 且 `Cmax(tau)≤T`。按正文定义不动负载 `f_i`、源量 `A_i`、目标量 `Q_i`、`S_i=f_i+A_i`、`U=max(2T,C+T/2)`、`h_i=(S_i+Q_i-U)_+`。若存在改变任务子集 `R` 同时满足 `D_i(R)≥h_i` 和 `P_k(R)≤U−S_k`，则先迁 `R` 后迁其余任务的确定性位多项式路径全程 `Cmax≤U`，最后到达 `tau`。
+- **Objects / Domain / Scope：** 二进制非负有理/不可用边；所有机器和任务同时计入；`R` 是额外证书而非输入自动可得的 oracle。等源端/等目标端时间时，证书存在性可化为带上下界整数 circulation。
+- **Conclusion / Boundary：** 这是给定 `sigma,tau` 的充分桥，不是必要条件；三机六任务例有路径峰 `23/10` 但无静态 `R`。失败不推出 `OPT>T`，未知目标和任意输入证书生成仍 OPEN。
+- **Dependencies：** UM-MODEL-v1、负载恒等式、带下界整数流。
+- **Evidence / Status：** 自足证明；Fraction 审计通过；独立审查无尚成立 fatal；外审/新颖性未认证，`UM-TARGET-v1` 仍 OPEN。
+- **Related Files：** [正文](../current/unrelated_machines/multi_activation_cover_and_replication_barriers.md)、[审查](../reviews/unrelated_machines/multi_activation_cover_replication_review.md)、[审计](../../tests/audits/unrelated_machines/multi_activation_cover_replication.py)。
+
+## UM-MULTI-ACTIVATION-HOLD-EDGE-RESTATEMENT-v1：保留目标边的静态证书重排
+
+- **Exact Statement / Quantifiers：** 在同一给定 `sigma,tau` 输入中，若 `B⊆R` 满足正文的源 cover、无保留目标的原预算以及保留目标 `beta_k>h_k` 条件，则按 `R\\B`、其余任务、`B` 的顺序全程不超过 `U`。
+- **Scope / Objection：** 令 `A=R\\B` 后，条件推出 `A` 本身满足静态 cover；因此该身份只是延迟执行的等价重写，不扩大可行证书集合，也不绕过静态 cover 失败。等号 `beta=h>0` 可放宽到非严格峰值，但正文采用严格版本。
+- **Status / Related Files：** 限定证明及独立审查通过；不构成一般算法；正文、审查和审计同前一命题。
+
+## UM-DISJOINT-BLOCK-NO-AMPLIFICATION-v1：不交机器块的近似 gap 不放大
+
+- **Exact Statement / Quantifiers：** 对任意有限族不交机器/任务实例 `I_t` 及正缩放 `alpha_t`，不交并的最优值满足 `OPT(⊔_t alpha_t I_t)=max_t alpha_t OPT(I_t)`；分别求解各块时整体近似比不超过组件比值最大值。
+- **Scope / Conclusion：** 只否定不交复制/块并的 gap 放大；不外推到共享机器、跨副本任务身份或 Kronecker gadget。
+- **Status / Related Files：** 自足两边不等式；见 [多件激活与复制正文](../current/unrelated_machines/multi_activation_cover_and_replication_barriers.md) 与其审查；`UM-TARGET-v1` 仍 OPEN。
+
+## UM-SHARED-CLONE-REPLICATION-COLLAPSE-v1：共享同机复制渐近回到 assignment-LP
+
+- **Exact Statement / Quantifiers：** 对任意合法实例 `I`，令 `F` 为未删边 assignment-LP 的最优 makespan；令 `I^(k)` 把每个任务复制 `k` 次到同一机器集，`O_k=OPT(I^(k))`。则对每个整数 `k≥1`，`kF≤O_k≤kF+S`，其中 `S=max_i Σ_{j:p_ij<∞}p_ij`，故 `O_k/k→F`。
+- **Proof Mechanism / Scope：** 下界由复制计数除以 `k`；上界由 LP 最优解逐任务 floor/ceil 取整，每个有限端至多增加一份。`k` 的显式展开有 `nk` 个任务，不能把二进制超大复制直接当作位多项式归约；不讨论阈值删边 configuration-LP，也不外推任意跨副本 gadget。
+- **Status / Related Files：** 自足证明、Fraction 审计和独立审查通过；这是复制接口边界而非一般 hardness；见同一正文/审查/审计，`UM-TARGET-v1` 仍 OPEN。
+
 ## UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1：实际最大件初态的全程容量锐界与槽输出推论
 
 - Exact Statement / Quantifiers：在前项同一剪枝/具体τ输入上，若逐机S_i≤T+M_i，其中M_i为σ实际分配最大件（空0），则确定性位poly输出每件至多一次直迁τ的完整路径且峰≤U。对每有理T>0,C∈[T,2T]，这个局部promise类到指定不同τ的单件路径最坏minimax恰U。标准非增单位槽匹配从同一剪枝分数负载≤T产生的任何实际输出满足S−M≤T，故上界覆盖实际槽输出。

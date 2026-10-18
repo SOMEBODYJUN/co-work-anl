@@ -1261,6 +1261,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-OCCURRENCE-WEIGHTED-DIRECT-LITERAL-POOL-BUDGET-ESCAPE-v1 | 显式CNF每clause至少2个不同身份occurrences，允许重复literal/variable；per-occurrence b≥0为binary rational，每变量每polarity全部eligible b和≤1；仅完整private-root/query/clause-selector/两pool unit-f原矩阵，含zero/unused/empty-idle。 det-bit-poly无SAT/witness输入地为所有原jobs构造actual≤3/2；每clause恰一个原query导出，其余原root；含f池query-only≤1/2、另一池≤1、全部roots≤1。 | [正文](unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md)、[全文实审](../reviews/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape_review.md)；仅新fullbudget域，不冒主hardness或旧sharpness。 |
 
+| UM-MULTI-ACTIVATION-STATIC-COVER-v1 | 给定 `sigma,tau,T,C`，定义 `U=max(2T,C+T/2)` 与源缺额 `h_i`；若改变任务子集 `R` 同时满足源 cover `D_i(R)≥h_i` 和目标 packing `P_k(R)≤U−S_k`，则先迁 `R` 后迁余项的实际路径全程≤U。等端源/目标时间时证书存在性化为带下界整数流。 | [正文](unrelated_machines/multi_activation_cover_and_replication_barriers.md)、[独立审查](../reviews/unrelated_machines/multi_activation_cover_replication_review.md)、[Fraction审计](../../tests/audits/unrelated_machines/multi_activation_cover_replication.py)；给定目标的充分桥，失败不推出 `OPT>T`，一般输入和未知目标仍OPEN。 |
+| UM-MULTI-ACTIVATION-HOLD-EDGE-RESTATEMENT-v1 | 保留集合 `B` 的源 cover/目标预算条件给出 `R\\B`→余项→`B` 的安全重排；令 `A=R\\B` 后 `A` 已满足静态 cover，因此不扩大证书集合。 | 同一正文/审查/审计；限定重排身份，不是一般算法。 |
+| UM-DISJOINT-BLOCK-NO-AMPLIFICATION-v1 | 不交机器/任务块的最优值恰为各块缩放最优值的最大值，逐块组合不能放大最大近似比。 | 同一正文/审查；仅否定形式化的不交复制接口，不外推跨副本 gadget。 |
+| UM-SHARED-CLONE-REPLICATION-COLLAPSE-v1 | 共享同机 `k`-copy 的整数最优值满足 `kF≤O_k≤kF+S`，其中 `F` 为未删边 assignment-LP 最优值、`S=max_iΣ_{j:p_ij<∞}p_ij`，故固定实例 `O_k/k→F`。 | 同一正文/审查/审计；`k` 显式展开有 `nk` 任务，不能把超大二进制复制直接当作位多项式归约。 |
+| UM-KDM-HIGH-DIMENSIONAL-QUOTA-OBSTRUCTION-v1 | LST 高维匹配 Paper Fact（`NP⊄BPP`）不直接给 UM hardness；直接根→超边需求点→K资源树的精确值为 `max_t min(ν_t/q,t/K)`，完整 K 匹配不足以控制所有部分层。公共/私有资源族可使 `ν_K/q→0` 而 `b*` 任意接近指定 `t/K`；双标签低配额 `2t≤K` 时总能同时支付。 | [正文](unrelated_machines/kdm_high_dimensional_quota_obstruction.md)、[审查](../reviews/unrelated_machines/kdm_high_dimensional_quota_review.md)、[Fraction审计](../../tests/audits/unrelated_machines/kdm_high_dimensional_quota.py)、[原始PDF](../../history/source/literature/unrelated_machines/lee_svensson_thiery_2409_17831.pdf)。条件反面缺 robust bundle matching source 与真实 decoder；`UM-TARGET-v1`仍OPEN。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -342,6 +342,12 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 
 [单位读出配额森林边界](../current/unrelated_machines/unit_readout_pruned_forest_boundary.md)：一般arity下实际C<2等价全部变量mandatory r=ceil(k(2−C))森林可注入slots；但arity≤2A时，任意深度和任意wiring均有实际≤1+floor(k/2)/k≤3/2（经典ST半质量推论），14机15job绝对界锐。叶命中精确门槛(k−r+1)^h说明dummy补齐义务；相同64open的两模块真实OPT为1与7/4，叶容量不能代替祖先兼容。一般目标正反面仍OPEN。
 
+## 本阶段新增：共同激活证书与高维匹配来源的真实边界
+
+[多件共同激活、保留目标边与复制反放大](../current/unrelated_machines/multi_activation_cover_and_replication_barriers.md)给出给定 `sigma,tau` 的静态 cover/packing 充分桥：源端缺额 `h_i` 由一次性源 cover 支付、目标接收量由同一批任务预算控制，等端时间时可化为带下界整数流。独立审查确认 hold-edge 只是该静态证书的延迟重排而非更宽接口；三机动态例证明静态 cover 不是必要条件，二机三任务例证明任意给定目标也不总有统一峰值路径。该页同时证明不交机器块的 `OPT=max` 恒等式和共享同机 `k`-copy 的 `kF≤OPT_k≤kF+S` 复制塌缩。未知目标、任意输入证书生成和 sound `FAIL` 仍未闭合。
+
+[高维匹配来源与需求树部分配额障碍](../current/unrelated_machines/kdm_high_dimensional_quota_obstruction.md)核对 Lee–Svensson–Thiery 的 `NP⊄BPP` 高维匹配来源：直接根→超边→资源需求树的真实值是所有 `t`-部分匹配层的 `max_t min(ν_t/q,t/K)`，不是完整 `K`-匹配比例。公共资源加私有资源族可使 `ν_K/q` 趋零而 `b*` 任意接近指定 `t/K`；两标签大小为 `K` 时，`2t≤K` 总能同时支付 `t` 个资源。由此把真正反面义务收紧为 robust bundle matching：YES 要有完整不交 `K`-束，NO 要同时压低所有 `t>Kδ` 层，并且任何低负载实际调度都能解码源匹配。LST 论文没有提供 KDM→UM/Santa 归约，`UM-TARGET-v1` 仍 OPEN。
+
 [校准计数槽](../current/unrelated_machines/unit_readout_calibrated_cardinality_slots.md)将单位读出树的半质量推广为有理下传证书：行分数任务数≤整数k−r+1给实际2−r/k。uniform x_h闭式提供所有wiring密度界；任意固定D≥2、arity≤D A的同结构类有确定性位poly统一2−1/(4D)算法，k,h可无界。已扣VW既有2−1/k及经典ST；D无界或一般P仍无统一ε，反面目标保持OPEN。
 
 ## 机器价格联合残余：本轮核实的范围
