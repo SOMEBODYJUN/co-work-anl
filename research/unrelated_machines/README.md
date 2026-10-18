@@ -381,3 +381,5 @@
 [固定阶整行一致性的真实gap](../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)：新§13：每固定d，整行全部<=d矩与globalM2及全部affine-load仍有真实gap上确界2；subset finite-difference trade与明确poly背景吸收，非higher-load/共同CONFIG-M2或hardness。
 
 [多outer极小home的实际算法](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)：可变k个single-state outers、互异home及wmax<=1/(4096k⁴)，任意shared fallback，有仅输入Q的det-bit-poly19/10全jobs算法；LP不可行有actualOPT下界，feasible用共同均值/全局variance/精确CE。仅typed限域，不是一般突破。
+
+[原端SH3条件子树流与包含切](../current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md)：原unit-pair零范数与二次负载条件给任意正原入口的新parent-bounded firstflow；包含族δd1(δd2−M)<=H，固定polylog型q损失不能免费导入SH3。完整原jobs、整数网格/单位走廊/删除与bit已付；非原全局点或hardness。

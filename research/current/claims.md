@@ -1332,6 +1332,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1 | 只输入完整typed Q，可det total-bit-poly输出全部ordinary P(Q)原jobs合法σ，Cmax<=19/10 OPT；内部plain共同SA1 LP infeas给actualOPT>17/16并用baseline，feasible用CDF/MW+globalvariance精确CE+q.1回填；无SDP/给定点oracle。 | [正文](unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[实际审查](../reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md)；仅此typed profile，非任意Q/多state outer/重home/一般UM，k²或高阶moment后续不混入；只有有限pair backend，无端到端软件。排近二hardness源仅所有输出本域、YESOPT1/NO>=2−γ fixedγ<.1且P≠NP。 |
 
+| UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2 | 每个正质量非home unit入口推出新的parent-bounded单根firstflow，real r=k(2−T)、k1可选不衰减；仅整数网格恢复辅助CFG first。集合包含原矩强制δd1(δd2−M)<=H，每固定多项式q缩放最终每固定T<2均sound FAIL，虽CFGopt1与actualOPT趋2。 | [正文](unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md)、[审查](../reviews/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity_review.md)；不是保原点矩的canonical扩展/原全实例新点/完整调度器/SH3gap/复杂性困难性；不ceil realquota、不将单entry失败等同整个OPT>T；多层同owner路径预算未免费继承。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

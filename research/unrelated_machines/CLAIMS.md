@@ -3325,3 +3325,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：多state或large home不能免费归一；CE不能丢requestcoins；后续vector/moment候选不自动扩大此合同。当前精确范围无standing fatal。
 - Status：complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; independent Exact-first and actual author/final read; backend audit only; novelty unverified，一般主目标及反面OPEN。
 - Related Files：[正文](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[实际审查](../reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md)及sources/finiteaudit。
+
+
+## UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2
+
+- ID/version / Objects / Domain / Definitions：UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2；完整显式native unique-home/unit-forward DAG加unit-only entry jobs；有理1<=T<2；同一个degree6原端Boolean/onehot/M3、各行合法CFG first/pair、全部global degq<=2物理负载平方；sink无自有jobs。
+- Exact Statement / Quantifiers / Conclusion：每个正质量非home unit入口推出新的parent-bounded单根firstflow，real r=k(2−T)、k1可选不衰减；仅整数网格恢复辅助CFG first。集合包含原矩强制δd1(δd2−M)<=H，每固定多项式q缩放最终每固定T<2均sound FAIL，虽CFGopt1与actualOPT趋2。 逐点forall共同L及其positive入口；asymptotic先固定a,b,δ再forall允许整数scales。
+- Assumptions / Dependencies：无复杂度假设；UM-MODEL-v1、UM-NATIVE-RAW-SH3-COMMON-ORIGINAL-ENDPOINT-DOMAIN-v1及正文自足PSD-null/条件流/普通LP/子集分解/原jobs计数。原paper包含机制扣除，不导入其hierarchy点。
+- Scope：不是保原点矩的canonical扩展/原全实例新点/完整调度器/SH3gap/复杂性困难性；不ceil realquota、不将单entry失败等同整个OPT>T；多层同owner路径预算未免费继承。
+- Evidence：inclusion Exact-first00c51…→实际Proof读后704bd…；general先行f7587…→作者v2实读0d2c4…；最终全文1e513…加唯一归一化差分d36fa…实读859cc…。root全部材料/code实际读并两fresh-output重放116d69…。
+- Counterevidence / Objections：归一化记号歧义已统一a/p与f/a；rawpoint restriction保所有6次矩及bit增长已补。多层owner机制未解；无standingfatal于本精确范围。
+- Status：complete scoped conditional-firstflow and inclusion sound-FAIL proof; independent statement-first and actual read-after/final diff; finite arithmetic audit only; novelty unverified；一般UM正反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md)、[实际审查](../reviews/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity_review.md)及所列原件/有限证据。
