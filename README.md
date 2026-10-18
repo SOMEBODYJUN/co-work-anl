@@ -176,3 +176,4 @@
 ## 任意剪枝初态的已知目标路径
 
 [任务包共同入流剥离](research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)现给所有剪枝实际初态到给定实际τ≤T的完整det-bit-poly单件路径，峰U=max(2T,C+T/2)，并沿旧两机族证明全输入类逐参数锐性；不再需要eligible单件、assigned-max或ST来源。逐机二分profile同页。未知τ的共同选择与一般统一次二输出仍缺，UM-TARGET-v1保持OPEN。
+[机器固定倍率公共尺寸精确重开](research/current/unrelated_machines/unknown_target_common_multiplier_exact_repair.md)把冻结核心公共尺寸接口扩展到机器固定倍率 `a_i q_C`，但混合尺寸共享机器与一般核心生成仍未解决。

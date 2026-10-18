@@ -12071,6 +12071,19 @@
         "tests/audits/unrelated_machines/kdm_high_dimensional_quota.py"
       ],
       "status": "complete scoped quota obstruction; conditional hardness Sections 4–5 have standing quantifier objections"
+    },
+    {
+      "id": "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "机器固定倍率公共尺寸下的未知容量精确重开",
+      "detail": "冻结核心后，每个机器侧不交资格分量若满足 p_ij=a_i q_C，则候选阈值整数流精确给出未知最优峰值与实际分配；混合尺寸共享机器退出范围。",
+      "refs": [
+        "research/current/unrelated_machines/unknown_target_common_multiplier_exact_repair.md",
+        "tests/audits/unrelated_machines/unknown_target_common_multiplier_exact_repair.py",
+        "research/reviews/unrelated_machines/unknown_target_common_multiplier_review.md"
+      ],
+      "status": "complete stated-scope proof; independently audited; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -29394,6 +29407,22 @@
         "research/current/unrelated_machines/kdm_high_dimensional_quota_obstruction.md"
       ],
       "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "um_common_multiplier_unknown_b_exact_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-COMMON-SIZE-FROZEN-CORE-DOMAIN"
+      ],
+      "conclusion": "UM-COMMON-MULTIPLIER-UNKNOWN-B-EXACT-v1",
+      "statement": "机器固定倍率与公共分量尺寸把不可拆任务数转为整数容量流；有限候选与冻结核心下界保证未知峰值的精确搜索和实际输出。",
+      "refs": [
+        "research/current/unrelated_machines/unknown_target_common_multiplier_exact_repair.md",
+        "research/reviews/unrelated_machines/unknown_target_common_multiplier_review.md"
+      ],
+      "status": "complete corrected scoped proof"
     }
   ]
 }
