@@ -106,3 +106,5 @@
 [任意异权私有子句三半障碍](../../../current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)把shared ring负载真正闭合；小query多return containment仅为未保全局源的正接口。当前继续攻击可随全局选择改变归属的shared guard/medium共同容量，以及自然tuple-group+globaldummy真实source桥；不给这些候选已完成的身份。
 
 自然[tuple-group/globaldummy桥](../../../current/unrelated_machines/affine_line_tuple_groups_global_dummy_compilation_escape.md)也有actual半保留，即使strict保持full-set packing。当前主源必须改变partial soundness的真实共同机制；另在核有限行总价值/有限item度的SC结构，CONFIG证书与actual promise算法继续分开，尚未解主目标。
+
+[正support与配置证书保持](../../../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)已经真实statement-first/作者读后/final全文核：row3/item度3仍CONFIG gap无界，但actualYES常数finder必须另攻；不把证书障碍当主反面。继续攻击共享guard或真实source partial soundness。

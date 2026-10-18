@@ -2711,3 +2711,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：dense公式逗号排版改显式乘号，final逆替换核old hash；source empty关系与q=n分开，无standing fatal。
 - Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
 - Related Files：[正文](../current/unrelated_machines/affine_line_tuple_groups_global_dummy_compilation_escape.md)、[审查](../reviews/unrelated_machines/affine_line_tuple_groups_global_dummy_review.md)及逐SHA原件。
+
+
+## UM-NORMALIZED-MENU-FULL-SUPPORT-LP-PRESERVATION-v3：完整归一化菜单的配置证书保持与三行三度SC间隙
+
+- Objects / Domain / Quantifiers / Definitions：非空显式normalized-flat、非空indexed menus、state非负有理总质量1、可有零incidence/unused/重复state；machine CONFIG阈值恰1；SC路径任意非空old agents/有限非负估值，前向正阈值≤1、逆向任意正阈值。
+- Exact Statement / Conclusion：完整flat machine CONFIG(1) iff positive-support FSLP iff state-dummy SC CONFIG(1)；tree/menu-path双向保unit证书；SC path在old actual/CFG最高≤1时各精确保并降item度3，最终row3/degree3族CFG1而actual1/D。
+- Assumptions / Dependencies：无复杂度假设；UM-MODEL-v1、明确有限证书域，实际V与state-dummy/normalform两旧Claim共同前提；fractional保持在正文自足重证。
+- Scope：限定finite证书而非未知CONFIG oracle；不保一般UM或arbitrary machine阈值/全边际；SC路径不自动归一一般row。自足D族为actualNO，不排actualOPT≥1常数finder，不提供near2源hardness。
+- Evidence：general先冻结独立pre-Exact，再仅v1 Exact独立全证；仅v3 Exact另重构新增machine CFG桥/SC层path，不读v2或作者Proof；root实读两份独立记录后才放v1/v3 Proof。general实际全文读后另冻记录，再实际全文审最终canonical header与§1–7；root全部实读，zero/empty/helper双copy/位长无standing fatal。
+- Counterevidence / Objections：先前all-membership与最终positive LP分开；SC path forward仅≤1/reverse任意positive，helper可取双copy；actualNO不作YES反例，当前无standing fatal。
+- Status：限定证明完整，真实独立先行/作者读后/最终全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[审查](../reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md)及逐SHA原件。

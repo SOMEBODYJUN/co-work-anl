@@ -380,3 +380,5 @@ u_t) 的一般复杂度。
 [任意异权私有子句的三半上界与共享外端边界](../current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)：固定辅助内部single-query/single-return接口的3T/2交换可与真实变量环共同匹配，所有局部索引strict可选时整公式实际≤1.5T；不是私有outside免费替ring。标准四任务环与小query返回池允许共享外部身份，但孤立OPT1且未保变量一致性。重试须改变精确模板的共同容量/边界，不能仅在私有Hc增加异权aux；主源NO联合decoder仍未闭合。
 
 [仿射线逐tuple加globaldummy的完整编译](../current/unrelated_machines/affine_line_tuple_groups_global_dummy_compilation_escape.md)另行关闭一种此前未分析的自然桥：n个tuple groups配n−q个共享dummy、q≤非空relations数，strict unit iff原full-set packing≥q，但无需源解仍actual≤1.5。选择q个不同relations恢复Hall不变量，所有未选state任务保留；不把这个新精确范围倒改成旧D已排，也不外推其它全局守卫/权重/阈值。
+
+[完整归一化菜单的配置证书保持](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)补足normalform的分数合同：flat machine CONFIG(1) iff positive-support FSLP iff state-dummy SC CONFIG(1)，zero原jobs仍全覆盖；再接SC路径得到rowtotal≤3/item正度≤3而CONFIG1/actual1/D。只排此LP充分性，未排actualOPT≥1的promise常数算法；标准路径/旧gap非新源，主目标OPEN。

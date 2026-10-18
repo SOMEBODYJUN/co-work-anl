@@ -1238,6 +1238,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-AFFINE-LINE-TUPLE-GROUP-GLOBAL-DUMMY-ESCAPE-v1 | primeR≥2/k≥1/tagged affine lines，relation-degree≤R/intercept注入，A_g可空；n为tuples总数/m0非空表数，1≤q≤m0，d=n−q；每tuple group为原D=kR均匀state或任一globaldummy singleton，所有原jobs。 不求源解可det-bit-poly输出全部原jobs实际≤2−ceil(kR/2)/(kR)≤3/2；完整unit可行iff原full-set packing≥q。 | [正文](unrelated_machines/affine_line_tuple_groups_global_dummy_compilation_escape.md)、[实际审查](../reviews/unrelated_machines/affine_line_tuple_groups_global_dummy_review.md)；只排精确dummy计数编译，非主反面。 |
 
+| UM-NORMALIZED-MENU-FULL-SUPPORT-LP-PRESERVATION-v3 | 非空显式normalized-flat、非空indexed menus、state非负有理总质量1、可有零incidence/unused/重复state；machine CONFIG阈值恰1；SC路径任意非空old agents/有限非负估值，前向正阈值≤1、逆向任意正阈值。 完整flat machine CONFIG(1) iff positive-support FSLP iff state-dummy SC CONFIG(1)；tree/menu-path双向保unit证书；SC path在old actual/CFG最高≤1时各精确保并降item度3，最终row3/degree3族CFG1而actual1/D。 | [正文](unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[实际审查](../reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md)；不排actualYES finder/一般UM。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
