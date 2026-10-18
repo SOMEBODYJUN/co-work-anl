@@ -2293,3 +2293,32 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：局部排列量词、零步、不可达集合闭合性、策略死锁与全局死锁及整数入口均已修正；无standing内部fatal。新颖性和外审未认证。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；实现轴为implemented。
 - Related Files：research/current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md；research/reviews/unrelated_machines/permanent_buffer_activation_review.md；evidence/runs/unrelated_machines/permanent_buffer_activation_audit.json；实际代码和输入/证书从上述文件进入。
+
+## UM-SMALL-DENSITY-FLOW-BARRIER-v1：多小端柔性密度的整数流障碍
+
+- **Exact Statement / Quantifiers：** 固定整数 `k≥2`，每条有限时间属于 `{1,1/k}`。令 `Q` 为无 `1/k` 端任务，`R` 为其余任务；`S_j` 为任务 `j∈R` 的 small 端集，`d_j=|S_j|`。若每机 small incidence 数 `t_i≤k`，且至少 `γ` 比例的 incidence 来自 `d_j≥2` 的任务（逐机 `b_i≥γt_i`），则均匀 small 分流的行质量 `ρ_i=Σ_{i∈S_j}1/d_j` 满足 `ρ_i≤(1−γ/2)k`。容量 `ceilρ_i` 的整数流给每个 `R` 任务一个 small 端。若 `Q` 有容量1匹配，则有实际调度 `C_max≤2−floor(γk/2)/k`；若 `Q=∅` 则删去前导1；若 `Q` 无容量1匹配，则 `OPT≥2`。若柔性端均满足 `d_j≥D`，把 `γ/2` 换成 `γ(1−1/D)`。
+- **Objects / Domain / Assumptions：** 显式合法 UM，时间只取 `{1,1/k}`；`Q` 的所有有限端均为 unit 端；`d_j=1` 只约束 small 端，不排除同一任务另有 unit 端。柔性密度必须逐机成立，不能只用全局平均。
+- **Conclusion / Scope：** 这是一个确定性位多项式的结构类算法和近二归约必要形状；它直接击穿每机多端小任务占固定比例的 `{1,1/k}` 物理编译。它不是一般 `UM-TARGET-v1` 算法，也不是一般不可近似性证明；`Q=∅` 分支给绝对负载界，不自动给相对 `OPT` 比率。
+- **Dependencies：** 二部容量流积分性、容量1二分匹配、`ρ_i` 的逐机计数不等式、`ceil` 的整数恒等式。
+- **Evidence / Counterevidence：** 一般证明已独立重构并经红队核对；无大规模枚举。仍未覆盖多尺度时间、跨机器 unit/medium 联合编码或 `γ→0` 的近二候选。
+- **Status：** 限定结构类证明完成，内部攻击无尚成立的致命异议；外审/新颖性未认证；`UM-TARGET-v1` 仍 OPEN。
+- **Related Files：** [多小端柔性密度正文](../current/unrelated_machines/mixed_small_endpoint_density_flow_barrier.md)、[近单位物理编译总页](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)。
+
+## UM-FIXED-SA-ASSIGNMENT-GAP-v1：固定轮 assignment Sherali--Adams 趋二间隙
+
+- **Exact Statement / Quantifiers：** 固定 `r≥1`，对每个 `m≥r` 取 `m` 台相同机器、`n=m+1` 个 unit 任务，令 `T_{m,r}=1+1/(m−r+1)`。按“至多 `r−1` 个 literal 乘子”的标准 SA 轮次约定，`SA_r(T_{m,r})` 可行；而真实 `OPT=2`，故 `OPT/T=2−2/(m−r+2)`，固定 `r` 时随 `m` 趋近2。
+- **Objects / Domain / Definitions：** assignment/LST feasibility LP 的完整 literal SA 乘式（含 `1−x` 事件），伪点由至多 `r` 个任务的均匀局部注入分布定义；局部注入只是伪分布，不把原调度误改成每机至多一任务。
+- **Conclusion / Scope：** 任何固定轮 SA assignment/load 证书的统一 `(2−ε)T` 舍入合同均失败。命题不限制 configuration-LP、随规模增长的层数、Lasserre/SOS 或直接利用原矩阵的算法；本族本身易解，故不是 `P≠NP` 困难性。
+- **Dependencies：** 局部注入的扩展计数、assignment 等式、条件容量期望 `1+1/(m−q)`、鸽巢原理。
+- **Evidence / Counterevidence：** 伪分布与 signed-literal 容量乘式已独立重构并红队核对；固定 `r` 的事件/证书位长为多项式级，未用枚举。标准 SA 的轮次编号可整体平移1，不能把此结果扩大到配置或所有算法。
+- **Status：** 固定层松弛障碍证明完成，内部攻击无尚成立的致命异议；外审/新颖性未认证；`UM-TARGET-v1` 仍 OPEN。
+- **Related Files：** [固定轮 SA 正文](../current/unrelated_machines/fixed_sa_assignment_gap.md)、[经典 LST/配置地基](../current/unrelated_machines/model_and_classical_barriers.md)。
+
+## UM-WEIGHTED-SMALL-ST-BARRIER-v1：加权小端柔性密度与 ST 的次二障碍
+
+- **Exact Statement / Quantifiers：** 固定 `β<1,γ≤1`，unit-only 任务所有有限边时间为1；其余任务至少有一条 `p≤β` 的 small 端。若逐机 small 总工作 `s_i≤1`，且多端任务 `d_j≥2` 的 small 工作 `u_i≥γs_i`，则等分支撑加 ST 给 `C≤2−γ/2+β`；unit-only 匹配失败则 `OPT≥2`。
+- **Objects / Domain / Scope：** 任意有理 mixed small 时间和任意支持图；逐机条件不可替换成全局平均。`Q=∅` 只有绝对界，`Q≠∅` 且匹配成功时才有 `OPT≥1` 的相对解释。
+- **Conclusion：** 若 `2−γ/2+β<ρ<2`，YES≤1/NO>ρ 的此类物理归约被 matching+ST 位多项式 decoder 直接击穿；不构成一般算法或 hardness。
+- **Dependencies：** UM-ST-ROUND-v1、均匀 small 支撑的逐机工作不等式、容量1匹配。
+- **Status：** 限定多尺度结构证明完成，独立攻击无尚成立的致命异议；外审/新颖性未认证；`UM-TARGET-v1` 仍 OPEN。
+- **Related Files：** [加权正文](../current/unrelated_machines/weighted_small_st_barrier.md)、[独立攻击](../reviews/unrelated_machines/weighted_small_st_barrier_review.md)。

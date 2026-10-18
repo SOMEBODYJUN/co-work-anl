@@ -402,3 +402,11 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [强配置匹配矩边界](strong_configuration_matching_moment_obstruction.md)证明任意固定阶、所有短事件非负且本行CONFIG同阶相容，仍可没有保给定二阶的真实共同匹配law；保一阶的锐二阶修复距离为`1/[4N(N−1)]`。实际OPT1且距离趋零，非调度gap。一般输入的混合身份、无界阻塞集和允许改矩后的全机统一余量仍缺；UM-TARGET-v1保持OPEN。
 
 [永久缓冲激活与共同解锁路径](permanent_buffer_activation_and_priority_deadlocks.md)给锐分数窗口[1/3,1/2]、一次性整数激活与两种优先级的真实失败，以及给定具体目标的函数图全程U路径证书。证书失败不排多件合力；未知目标、无条件全程路径与UM-TARGET-v1仍OPEN。
+
+## 本轮从枚举转向的一般性数学边界
+
+[多小端柔性密度的整数流障碍](mixed_small_endpoint_density_flow_barrier.md)登记 `UM-SMALL-DENSITY-FLOW-BARRIER-v1`：在 `{1,1/k}` 物理编译中，若每台机器 small incidence 不超过 `k` 且至少 `γ` 比例来自 `d_j≥2` 的多端任务，则均匀分流加整数容量流给出 `C≤2−floor(γk/2)/k`（`Q` unit-only 任务先做容量1匹配；匹配失败则 `OPT≥2`）。柔性端下界 `D` 时系数改为 `γ(1−1/D)`；三端 clause 结构约为 `4/3`。因此近二编译必须令柔性密度逐机趋零、离开单尺度，或把一致性转移到 unit/medium 端。`Q=∅` 分支只给绝对负载界，不冒充相对 `OPT` 近似。
+
+[固定轮 assignment Sherali--Adams 的趋二间隙](fixed_sa_assignment_gap.md)登记 `UM-FIXED-SA-ASSIGNMENT-GAP-v1`：`m` 台相同机、`m+1` 个 unit 任务的均匀局部注入伪分布在 `T=1+1/(m-r+1)` 通过固定 `r` 轮完整 literal SA，而真实 `OPT=2`；固定 `r` 时比值趋 2。它证明固定层 assignment/LST 局部舍入不能提供统一改善，但不限制 configuration-LP、增长层数、SOS/Lasserre 或直接算法。该证明不依赖大规模枚举；`UM-TARGET-v1` 仍 OPEN。
+
+[加权小端柔性密度与 ST 的次二障碍](weighted_small_st_barrier.md)把流障碍推广到 mixed small 时间：若逐机 small 总工作 `s_i≤1`，其中至少 `γ` 比例的工作来自多端任务，且每条 small 边 `≤β`，则显式等分支撑加 ST 舍入、再叠加 unit-only 匹配，给出 `C≤2−γ/2+β`。这排除了更一般的多尺度/任意支持图编译；仍允许 `γ→0`、较大 small 边和跨机器联合结构。
