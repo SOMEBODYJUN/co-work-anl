@@ -152,3 +152,7 @@ DGR2025/2026 constrained rejections全arXiv v1原PDF已取得并parse（18页，
 已登记BCG2009原件本次另核§2.2 Theorem2.4/Fig2（PDF/印8–9）：d copies、d−1相邻dummy玩家的item路径降度是已知机制，MinMax脚注亦有提及。[flat菜单路径重构](../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)§6不主张装置原创，只给具体ordinary UM helper矩阵、全部原jobs/partial导出、OPT2/V0与位复杂度的可复用自足合同；后续三态selector树也不因此成为新hardness源。原PDF字节与既有理论身份保留。
 
 [Lee–Svensson–Thiery arXiv2409.17831v1](https://arxiv.org/abs/2409.17831v1)的[14页原PDF](../../history/source/literature/unrelated_machines/lee_svensson_thiery_2024_affine_line_set_packing_v1.pdf)已实际定位§2/3/4：prime R、变量degree≤R、slope/intercept整set一致性；stated YES≥1−ε/NO≤k(1+ε)/((k−3)R)、k≥4、NP⊆BPP例外。不是perfect YES或tiny partial-set hardness。constraint作group、allowedtuple作state的uniform普通UM桥对所有local choices都有Hall半保留/actual≤3/2，见[自足桥审计](../current/unrelated_machines/line_set_packing_and_take_continue_compilation_obstructions.md)；tuple作独立group+dummy未排。原论文数学、target桥分析与新颖性分开；未核DOI排版不冒作本地版本。
+
+## BLMRS 单阈值配置合同的完整替代重构
+
+[分块计数与真实匹配后端](../current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)完整给出Lemma11同一单阈值列表合同的自足替代证明及总位复杂度，不宣称逐字复现AppendixB的原record机制。v1 AppendixB印20–21的tiny cutoff与乘法删除断言有精确反例，正文记录原字样、Fraction反例和局部修复；原PDF字节不改，不以此否定原主定理。Lemmas12–14机制另提取为normalized type matching的真实OPT=2−V接口；全局选择仍OPEN。

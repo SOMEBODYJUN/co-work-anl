@@ -229,3 +229,11 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 保留原ExactStatement的单任务严格局部极小、OPT和最终Hamming支持下界；
 撤回对固定批量多轮路线的外推。boss1正在整理更强不同新族，不能把它倒作本族证明。
 本说明没有重写冻结旧审计或原审查的历史结论；本轮新槽界和保配置消元定理不依赖该错误外推。
+
+## 消环、次模导入与严格批次的三项边界
+
+[单home正文](research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)只允许逐简单环取消；一般负载下同时撤回所有环上弧可逐机增载，根森林更依赖C<2及非达预算。可回收有向需求图真实桥，不能从给定实际调度变换免费生成未知好树。
+
+[类型配置正文](research/current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)发现BLMRS v1 tiny cutoff的特定乘法删除断言字面失败，现以正确小阈值和独立分块证明补齐同一已知合同；不否定其主定理。max-profile的四资源反例阻止免费套次模算法；需要共同profile选择或有真实partial匹配soundness的源。
+
+[整比双尺寸正文](research/current/unrelated_machines/divisible_two_size_neutral_repair.md)表明strict启动屏障保留中性逃逸。组成势防循环给本结构类精确算法；它未消除异端时间、一般资格和批内临时峰值缺口。

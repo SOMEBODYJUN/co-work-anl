@@ -473,3 +473,13 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 
 [有限配置数正文§4.1](bounded_configuration_cardinality_slot_margin.md)新增K5完整下例287/144，
 反驳未经证明的阶乘余量候选；不声称K5锐或择优槽匹配困难性，主目标仍OPEN。
+
+## 单home森林、类型匹配桥与中性修复的准确接口
+
+本阶段完成三个限定接口，`UM-TARGET-v1`仍OPEN。它们不合并成一般算法：
+
+- [单home消环及一般有向token桥](home_unit_cycle_elimination_and_directed_token_bridge.md)：给定实际调度可逐机去环；小于2且非达home预算合法时保unit身份归根森林。旧DAG输入不被静默扩域，新ID给任意简单有向支持的真实OPT=2−b*。未知好根树/调度仍缺。
+- [分块类型配置与真实rank后端](type_profile_compression_and_matching_rank_bridge.md)：补齐已知SC单阈值列表的可生成性，用替代证明修复原文cutoff字面问题；后端真实值OPT=2−V，全部jobs与空菜单分支闭合。每profile次模不能推出max-profile次模；共同配置选择和近二source仍缺。
+- [整比双尺寸中性精确修复](divisible_two_size_neutral_repair.md)：同机全资格任意初态可经防循环中性换形达OPT；严格batch启动界不能扩大为中性迭代障碍。一般异端时间会破坏负载互换恒等式。
+
+精确身份、实际审查与有限证据分别沿本题账本读取；外审和新颖性均未认证。
