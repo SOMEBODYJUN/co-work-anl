@@ -1,6 +1,16 @@
 # 不相关并行机的当前研究前沿
 
-## 2026-10-18：短周期路线收口
+## 2026-10-18：反面主攻与当前承重
+
+**当前研究方向：反面主攻。** 用户已决定优先争取在明确标准复杂度假设下否定 `UM-TARGET-v1`：排除每一个固定 ε>0 的确定性位多项式实际调度算法，包括任意极小常数。原命题身份和 OPEN 状态保持；这是研究方向，不是已证不存在。反面以每个固定参数的真实整数 OPT gap、全部低负载调度的源解码及总位复杂度为承重；正面资产用于攻击归约和寻找逃逸，不预设结论。
+
+优先对接 [近单位一般 PCSP 与物理复制缺口](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)；一般源的 NP-hardness 已成立，真实任务复制与所有低调度的 decoder 尚未闭合。当前 [活跃路线](ACTIVE_ROUTES.md) 写明每固定参数归约与极小常数的量词。不得把方向决定写为反面定理。
+
+## 新源筛选：先排可多项式分离的部分高组合同
+
+[部分激活菜单的福利计数](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)新增标准工具的直接筛选：显式 norm1 菜单的部分正支撑 LP 总质量 q，可实际输出质量至少 3/8 的组数 H>2q/5。仅最大化福利不足，须共同计费实际 active 数。由此“至少 q 个 unit 组 YES / 不足 βq 个 3/8 高组 NO”（β≤3/8）的源已可用 LP 区分；不排全组最小质量、共享内部或多层源，不关闭主反面。
+
+## 短周期路线收口（方向切换前的诊断）
 
 最近两天的新增提交主要是菜单、查询、资源束、Cartesian 和局部三半边界；它们增加了准确障碍，但没有减少一般输入的共同容量、全机整数输出、sound `FAIL⇒OPT>T` 或统一余量/位复杂度义务。`P0-F`（任意输入共同容量桥）和 `R0-R`（真实近二 gap 与 decoder）是当前优先路线，但不构成强制配额；所有 boss 可以直接探索新机制。具体整理工具见[ACTIVE_ROUTES](ACTIVE_ROUTES.md)和[Route Card 模板](ROUTE_CARD_TEMPLATE.md)，审核只在成熟候选或状态升级时后置使用。这是运行协议，不是把 `UM-TARGET-v1` 升级为已解。
 

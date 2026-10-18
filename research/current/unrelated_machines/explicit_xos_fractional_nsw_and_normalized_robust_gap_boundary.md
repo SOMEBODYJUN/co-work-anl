@@ -1,6 +1,6 @@
 # 显式 XOS 的分数 NSW、几乎所有组质量与共享修复 LP 边界
 
-数学证明完整；实际独立重构、作者读后与最终正文审查的次序和范围见[审查记录](../../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)。算法为数学规格，未实现；外审与全球新颖性未认证。正文对应冻结 Exact v5 `3160d7f7dc3265c7753ba558bb6cd21fe58fc5e2ea84562d2558ee852701154e`、作者 Proof v5 `2989351ca6ab45779fecb3c4a4ccefbae2044cdcce7ad3f3fab0d0e2ce55a1af`。
+数学证明完整；实际独立重构、作者读后与最终正文审查的次序和范围见[审查记录](../../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)。原 A–F 的算法为数学规格，未实现；新增 F2 的给定见证构造另有软件及单独审查。外审与全球新颖性未认证。正文对应冻结 Exact v5 `3160d7f7dc3265c7753ba558bb6cd21fe58fc5e2ea84562d2558ee852701154e`、作者 Proof v5 `2989351ca6ab45779fecb3c4a4ccefbae2044cdcce7ad3f3fab0d0e2ce55a1af`。
 
 本页证明：一般单调次可加的分数 benchmark 匹配；任意有限显式非负二进制有理 XOS 的确定性无权 NSW；原归一化菜单的几乎所有组常数质量、同组 singleton REPAIR 的 LP promise decider，以及保留全部原 jobs 的普通 flat-UM 排程。后者只保证全矩阵 makespan 至多二和接近二的 selected-root 计数。
 
@@ -640,6 +640,123 @@ unit-FSLP 可行，若每个 allocation 至少 \(\gamma n\) 组质量 \(\le\delt
 
 (F.1) 自动满足，也完全不能用此 bound 排除该区域。不能把本页有用的分数 NSW/LP 结果包装成“已经挡住实际主源”。要推进主 UM 结论，仍须另行建立有效 source、fraction/quality 联合量词、需求树/束的解码、全部对象的证书保持及对应实际 schedule 关系；本页未替代这些义务。
 
+## F2. 部分激活菜单的福利计分与高质量组数地板
+
+**ID / Version：`UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1`。**
+本节是标准 XOS 福利舍入在当前源合同上的直接推论，不是新的舍入机制或近二困难性。
+它允许候选组数大于根的选择需求，补的是“部分激活”的共同计数，不是全组 max-min。
+原 A–F 的 v5 冻结审查只覆盖其当时字节；本新增身份单独沿下方审查读取。
+
+**Objects / Domain / Definitions。** 有 n≥1 个原 groups、有限显式资源 U；每组有非空有限 indexed states，
+非负二进制有理 p_gsu 满足每个 state 的全 U 总量恰一。允许零项、重复 state、未用资源及整行零激活。
+原质量仍为 f_g(B)=max_s Σ_{u∈B}p_gsu∈[0,1]，实际 B_g 跨组两两不交。
+给二进制有理 0<q≤n，部分正支撑 LP 为
+
+\[
+\lambda_{gs}\ge0,\quad a_g:=\sum_s\lambda_{gs}\le1,\quad
+\sum_g a_g=q,\quad
+\sum_{g,s:p_{gsu}>0}\lambda_{gs}\le1\quad(u\in U). \tag{F2.1}
+\]
+
+正支撑列约束不是加权列负载，也不数零系数；所有原 state 和资源保留。
+
+**Quantifiers / Exact Statement / Conclusion。** 给任意 (F2.1) 的显式有理可行 λ，
+可确定性总位多项式输出原资源的不交 bundles 和每组的原 attaining state，使
+
+\[
+H:=\#\{g:f_g(B_g)\ge3/8\}>2q/5. \tag{F2.2}
+\]
+
+同一机制对任意给定有理 0<δ<1−1/e 给
+
+\[
+H_\delta\ge\frac{1-1/e-\delta}{1-\delta}\,q. \tag{F2.3}
+\]
+
+算法不用计算 e。q=0 可另返回空 bundles，但不声称 (F2.2) 的严格式。
+这是给定 LP 见证的实际构造；通用有理 LP 可先决定见证是否存在，其软件后端未在本页实现。
+
+**独立抽态与福利。** 每组以概率 λ_gs 选择原 state s，以概率 1−a_g 选择 inactive，各组独立。
+active 组对 u 出价 p_gsu，inactive 出价零。令 W=Σ_u max_g bid_gu，A 为 active 组数。
+对每个 u 和正阈值 t，令 r_g(t)=Pr[bid_gu≥t]、z(t)=Σ_g r_g(t)。由 (F2.1)，0≤z(t)≤1，故
+
+\[
+\Pr[\max_g bid_{gu}\ge t]
+=1-\prod_g(1-r_g(t))
+\ge1-e^{-z(t)}\ge(1-1/e)z(t).
+\]
+
+末式为凹函数 1−e^(−z) 在 [0,1] 上的端点弦界。对有限出价层积分或求和，
+Σ_u EΣ_g bid_gu=Σ_gs λ_gs Σ_u p_gsu=q，于是 EW≥(1−1/e)q，EA=q。
+
+**必须同时计费激活数。** 对给定 δ 去随机化的目标是
+
+\[
+\Phi=W-\delta A,\qquad E\Phi\ge(1-1/e-\delta)q. \tag{F2.4}
+\]
+
+不能只最大化 W 再把实际 active 数擅自当作 q。逐组枚举其正概率的 states 和 inactive 选择，
+取条件期望 Φ 最大者。父期望是这些子期望的概率平均，所以最终 Φ 不小于 (F2.4)。
+把每个正出价资源交给一个最高出价 active 组（固定 tie rule），零出价资源闲置。
+每组收到的 chosen-state 质量 w_g≤1；inactive 为零，W=Σ_active w_g。
+再遍历原菜单重新选 attaining state，得到 f_g(B_g)≥w_g，且不改变 B 或物品容量。
+质量小于 δ 的 active 组对 w_g−δ 贡献非正，其余至多 1−δ，因此
+
+\[
+\Phi=\sum_{g\ {\rm active}}(w_g-\delta)
+\le(1-\delta)H_\delta.
+\]
+
+这同时控制所有高组的不交性，证明 (F2.3)，并未假设实际 A≤q。
+取 δ=3/8。级数 e>1+1+1/2+1/6+1/24=65/24>8/3 给 1−1/e>5/8，
+故 Φ>q/4、H>(q/4)/(5/8)=2q/5，得到严格 (F2.2)。
+
+**精确条件期望与位复杂度。** 对每个 u，把全部可能正 bids 排成 0=t_0<⋯<t_K。
+在任何已固定前缀，
+
+\[
+E\max_g bid_{gu}
+=\sum_{\ell=1}^K(t_\ell-t_{\ell-1})
+\left[1-\prod_g\Pr(bid_{gu}<t_\ell)\right]. \tag{F2.5}
+\]
+
+固定组的 CDF 为 0/1；未定组的 CDF 为 inactive 质量加若干原 λ 的和。
+EA 为已固定 active 数加未定 a_g 的和。式 (F2.5) 全为精确有理运算，
+没有超越数比较，也不按 1/q、1/λ、δ 的倒数或原分母数值枚举。
+决策次数 n、每次候选数和 bid levels 均受显式表大小多项式控制；
+所有概率乘积至多用每组一次输入分母，直接有限和/积的位长多项式。
+前缀固定不对 tiny 事件概率反复做 Bayes 除法，避免隐藏的精度增长。
+输出 attaining states、全部 B_g 和原系数质量回算也都是总位多项式。
+
+**准确的源筛选。** 对任意固定 0<β≤3/8，下列 promise 可只用 (F2.1) 的有理 LP 可行性分离：
+
+- YES：存在不交 allocation，使至少 q 个原 groups 质量一；
+- NO：每个不交 allocation 中，质量至少 3/8 的 groups 数严格小于 βq。
+
+YES 中每个 unit group 选 attaining norm1 state，其全部正支撑必须在该 bundle 内。
+若有 r≥q 个这样的 groups，给这些 states 各质量 q/r，其余零，得到 (F2.1)。
+NO 若 LP 可行，则 (F2.2) 给 H>2q/5≥βq，矛盾。故 promise 下 LP 可行为 YES、否则 NO。
+一般 δ,β 满足 δ+(1−δ)β<1−1/e 时同理；这里只使用有理参数的充分条件，
+不把超越常数比较当作程序步骤，也不声称边界锐。
+
+**Scope / Counterevidence / Dependencies。** 本结论封闭的是显式 norm1 菜单的“选择足够多高组”源合同，
+包括候选组数大于 q 的情形。q 是组数基准，不能换成 state/机器/任务数；
+β 是 NO 禁止的高组比例，不是本页 C–F 使用的低组比例 γ。
+因此它不证明原 γ≤δ 的低组禁区全部不可能，也不推出所有 groups 都有正常数质量。
+LP 不可行仅排除该源 YES，不是一般 UM 的可靠 FAIL 或一般 Santa 的新困难性。
+共享内部节点、多层依赖、非 norm1 或隐式菜单没有被排除。
+证明依赖 norm1、显式表、正支撑共同列容量及上述福利/激活计分，不依赖本页 NSW 的完整 B 定理。
+
+**来源扣除 / Status / Evidence / Related Files。** 福利 (1−1/e) 机制已有：Feige，
+[On Maximizing Welfare When Utility Functions Are Subadditive](https://epubs.siam.org/doi/10.1137/070680977)，
+原刊摘要明确记录 fractionally subadditive 的此保证；本次只核原刊摘要，不声称读完原证明。
+本节给本接口的自足证明及实际确定化，属于标准工具直接推论，未认证新颖性或外审。
+[实际审查](../../reviews/unrelated_machines/normalized_menu_partial_quota_welfare_review.md)、
+[给定见证的规范构造及独立穷举审计](../../../tests/audits/unrelated_machines/normalized_menu_partial_quota_welfare.py)
+和[冻结运行](../../../evidence/runs/unrelated_machines/normalized_menu_partial_quota_welfare.json)
+分别记录证明攻击、实现及有限范围；不把计算升格成全称证明。
+一般 `UM-TARGET-v1` 和全部 ε 的反面都仍 OPEN。
+
 ## 来源分工、复用范围与版本边界
 
 继承框架来自 DLRV，arXiv:2309.04656v1，§2.1–§2.5、Appendix B；[v1 原始 PDF](../../../history/source/literature/unrelated_machines/dobzinski_li_rubinstein_vondrak_2023_subadditive_nsw_v1.pdf)。英文作者稿编写者实际全文读所供 v1 文本，未读 PDF 或额外 paper/source audits；boss11 的原文阅读与选页渲染范围另记于审查记录，不把下载当作全文实读。原作提供 matching/splitting/iteration/rematching 模板；本页不把其 actual-integral-OPT theorem 直接换成分数结论，A 和本页 deterministic fractional guarantee 由上述推导支撑。LP/matching 为标准工具；分数 lift、位长、CDF、局部 floor、inverse moment 与误差一 DP 在页内另证，不由 standalone 引理跳认 NSW 常数。
@@ -648,4 +765,4 @@ unit-FSLP 可行，若每个 allocation 至少 \(\gamma n\) 组质量 \(\le\delt
 
 v1–v4 原件及旧 generic-SA 数值 objections 保留；旧版没有本次完整 NSW 作者 Proof，不得以新 v5 回填“旧 Proof 早已存在”或转旧数值路线为 PASS。v4 的 global-grid statement 范围亦不追溯改写。v5 以 residual exact normalization 和固定候选 local relative grid 去掉 B 的全局数值-grid 输入限制，这是本次另证的域。
 
-复用范围止于三个精确 ID 的对象与量词：A 的一般 SA 语义匹配、B 的显式无权 XOS 分数 NSW、C–F 的原 normalized 同组后果；不扩展至 weighted/general-SA 后端、all-group max-min、general UM、source hardness、主 near-two 命题或全球新颖性，也无已实现软件可 audit。Evidence、Counterevidence、Status 与 Related Files 由本节、各 ID 的定义/限制及所链审查记录共同给出；main/push 不升级数学真值。
+原 v5 的复用范围止于三个精确 ID 的对象与量词；新增 F2 单独按其第四 ID 的范围读取。原 v5：A 的一般 SA 语义匹配、B 的显式无权 XOS 分数 NSW、C–F 的原 normalized 同组后果；不扩展至 weighted/general-SA 后端、all-group max-min、general UM、source hardness、主 near-two 命题或全球新颖性，原 v5 也无已实现软件可 audit；F2 的给定见证软件以本节所链独立审查和冻结运行为准。Evidence、Counterevidence、Status 与 Related Files 由本节、各 ID 的定义/限制及所链审查记录共同给出；main/push 不升级数学真值。

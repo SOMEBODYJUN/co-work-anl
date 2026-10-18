@@ -1,5 +1,7 @@
 # 研究总目录：新题入口与独立模型
 
+**当前研究方向：反面主攻。** 用户已决定优先争取在明确标准复杂度假设下否定 `UM-TARGET-v1`：排除每一个固定 ε>0 的确定性位多项式实际调度算法，包括任意极小常数。原命题身份和 OPEN 状态保持；这是研究方向，不是已证不存在。反面以每个固定参数的真实整数 OPT gap、全部低负载调度的源解码及总位复杂度为承重；正面资产用于攻击归约和寻找逃逸，不预设结论。
+
 **当前主攻 `UM-TARGET-v1`，研究存档 `unrelated-machines`：一般不相关并行机R∥C_max的统一常数(2−ε)确定性位多项式构造。目标仍OPEN。** 新对话使用[完整BOSS提示词](unrelated_machines/BOSS_START.md)、[最新版work.py](weighted_congestion_frontier/tools/work.py)和[本题手册](unrelated_machines/RUNBOOK.md)。程序所在旧目录承载共享工具，当前题目按save和精确目标确定。
 
 ## 新题的阅读与研究链

@@ -1,5 +1,9 @@
 # 不相关并行机：新主攻存档与协作入口
 
+**当前研究方向：反面主攻。** 用户已决定优先争取在明确标准复杂度假设下否定 `UM-TARGET-v1`：排除每一个固定 ε>0 的确定性位多项式实际调度算法，包括任意极小常数。原命题身份和 OPEN 状态保持；这是研究方向，不是已证不存在。反面以每个固定参数的真实整数 OPT gap、全部低负载调度的源解码及总位复杂度为承重；正面资产用于攻击归约和寻找逃逸，不预设结论。
+
+反面源先经[部分激活菜单的全局福利筛选](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md) F2：显式 norm1/共同支撑 LP 下，H_{3/8}>2q/5；这是标准福利工具直接推论，只排其精确部分高组源，不是一般困难性。
+
 固定研究存档：`unrelated-machines`。主目标 `UM-TARGET-v1` 是一般R∥C_max确定性位多项式统一(2−ε)构造，仍OPEN。新对话直接使用 [BOSS_START.md](BOSS_START.md)，附仓库外的githubtoken.txt；无需人工分配内部subagents编号。
 
 当前路线表[ACTIVE_ROUTES.md](ACTIVE_ROUTES.md)和[Route Card](ROUTE_CARD_TEMPLATE.md)是可选导航。所有 boss 可以直接探索；独立攻击只在成熟候选、路线合并或状态升级时使用，不阻塞早期思路。

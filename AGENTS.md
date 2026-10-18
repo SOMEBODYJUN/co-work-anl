@@ -1,5 +1,7 @@
 # Working rules for future research contributors
 
+Current user priority: pursue the negative side of UM-TARGET-v1 for every fixed epsilon > 0 under an explicit standard complexity assumption; preserve the exact original target and its OPEN truth status. Positive constructions are useful as attacks on proposed hardness gadgets. Do not infer nonexistence from failed searches, tiny constants, CONFIG/SA gaps, or one restricted rounding rule. Read research/unrelated_machines/ACTIVE_ROUTES.md for this direction.
+
 This repository is a growing mathematical research program. The active research goal is UM-TARGET-v1: a deterministic polynomial-bit-time algorithm with a universal constant (2−ε) approximation for general unrelated-machine makespan scheduling R∥C_max. Use save unrelated-machines. Start with the four root entry files, research/current/unrelated_machines/README.md, research/unrelated_machines/CLAIMS.md, research/current/unrelated_machines/model_and_classical_barriers.md and research/GROWTH.md. research/current/model.md defines the separate facility model and is not the scheduling model. The active routing contract is research/active_research.json; history/ preserves source drafts and superseded arguments.
 
 - Write a new, self-contained Markdown account from the underlying mathematical material. Do not promote a moved or lightly reworded historical file into the current layer. Show hypotheses, quantifiers, actual inequalities or reduction, boundary cases, and the proof's remaining obligations.

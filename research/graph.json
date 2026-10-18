@@ -12411,6 +12411,33 @@
         "research/reviews/unrelated_machines/private_sink_higher_order_nc_review.md"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "部分激活菜单的全局高质量组数地板",
+      "detail": "显式norm1部分FSLP总mass q，经福利减激活费的确定化给H_{3/8}>2q/5；标准工具直接推论，只筛该源合同。",
+      "refs": [
+        "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+        "research/reviews/unrelated_machines/normalized_menu_partial_quota_welfare_review.md",
+        "tests/audits/unrelated_machines/normalized_menu_partial_quota_welfare.py",
+        "evidence/runs/unrelated_machines/normalized_menu_partial_quota_welfare.json"
+      ],
+      "status": "complete scoped direct corollary of standard welfare rounding; independent reconstruction and exact audit; external review and novelty unverified"
+    },
+    {
+      "id": "AUDIT-UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "部分菜单福利计分的独立联合动作有限核验",
+      "detail": "全部限定小菜单CDF与joint-action oracle、零行/微小q/大分母及非法输入；范围见冻结记录。",
+      "refs": [
+        "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+        "tests/audits/unrelated_machines/normalized_menu_partial_quota_welfare.py",
+        "evidence/runs/unrelated_machines/normalized_menu_partial_quota_welfare.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -30378,6 +30405,36 @@
         "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "um_partial_menu_welfare_finite_checks",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-v1"
+      ],
+      "conclusion": "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1",
+      "statement": "有限joint-action枚举核规范CDF/实际不交/attaining-state与组数，不替代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+        "tests/audits/unrelated_machines/normalized_menu_partial_quota_welfare.py",
+        "evidence/runs/unrelated_machines/normalized_menu_partial_quota_welfare.json"
+      ],
+      "status": "finite exact check"
+    },
+    {
+      "id": "um_partial_menu_welfare_reverse_scope_limit",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅排显式normalized部分高组源；未给全组最小质量，也未实现共享内部/多层NO decoder，不关闭一般正反目标。",
+      "refs": [
+        "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md"
+      ],
+      "status": "method boundary; target remains open"
     }
   ]
 }

@@ -1,5 +1,9 @@
 # 共同研究：一般不相关并行机的统一常数2壁垒
 
+**当前研究方向：反面主攻。** 用户已决定优先争取在明确标准复杂度假设下否定 `UM-TARGET-v1`：排除每一个固定 ε>0 的确定性位多项式实际调度算法，包括任意极小常数。原命题身份和 OPEN 状态保持；这是研究方向，不是已证不存在。反面以每个固定参数的真实整数 OPT gap、全部低负载调度的源解码及总位复杂度为承重；正面资产用于攻击归约和寻找逃逸，不预设结论。
+
+反面源先经[部分激活菜单的全局福利筛选](research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md) F2：显式 norm1/共同支撑 LP 下，H_{3/8}>2q/5；这是标准福利工具直接推论，只排其精确部分高组源，不是一般困难性。
+
 **当前唯一主攻是 `UM-TARGET-v1`，存档为 `unrelated-machines`。** 给定一般不相关机器处理时间矩阵，寻找一个确定性算法和统一常数 ε∈(0,1)，在输入总二进制位长的多项式时间内输出完整任务分配，并对所有合法输入保证 C_max≤(2−ε)OPT。机器数、任务数均可增长；有限处理时间为非负有理数，允许不可用边，每个任务至少有一台可用机器。零最优值和空任务也须覆盖。目标仍 **OPEN**。
 
 新对话使用[完整BOSS提示词](research/unrelated_machines/BOSS_START.md)和[最新版work.py](research/weighted_congestion_frontier/tools/work.py)，附仓库外凭据。提示词直接写明主目标、启动、通信、地图和提交操作；进入研究前先看[BOSS研究总览与路线分诊](research/unrelated_machines/BOSS_RESEARCH_BRIEF.md)和[当前活跃路线](research/unrelated_machines/ACTIVE_ROUTES.md)。[操作手册](research/unrelated_machines/RUNBOOK.md)给全部命令；新建且未绑定的clone默认进入新题，已绑定旧存档的clone保持原绑定，新题另用独立clone。

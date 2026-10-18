@@ -1,5 +1,7 @@
 # 跨过配置间隙后仍须闭合的算法义务
 
+当前优先反面义务见[活跃路线](../../unrelated_machines/ACTIVE_ROUTES.md)：对每个固定改善量给真实整数 OPT gap、全部低负载实际调度的源解码及位多项式规模。本页已有正面接口继续作为反面归约的独立攻击材料；不以它们失败推出一般不可能性。
+
 唯一主目标为UM-TARGET-v1；精确模型与量词在[账本](../../unrelated_machines/CLAIMS.md)。此页是OPEN proof obligations，不是候选定理。
 
 | 义务 | 需要给出的可检验内容 | 最便宜的反驳测试 |

@@ -11,7 +11,7 @@
 - Dependencies：模型定义；任何未来证明须显式列所需全部引理和算法复杂度。
 - Evidence：经典方法与障碍已重构；有日期的文献检索未找到解决该身份的结果。
 - Counterevidence / Objections：配置LP间隙排除一种相对LP值的舍入合同；没有据此证明本主目标为假。尚无候选算法或一般证明。
-- Status：OPEN，用户选定主攻；不是“已证猜想”，未作可完成时间或录用承诺。
+- Status：OPEN；用户已将研究方向切为优先否定本命题，覆盖所有固定 ε>0，尚未得到一般反面证明。方向改变不改变 Exact Statement，也不是数学状态升级。
 - Related Files：[数学地图](../current/unrelated_machines/README.md)、[前沿](RESEARCH_STATE.md)、[启动提示词](BOSS_START.md)。
 
 ## UM-ST-ROUND-v1：给定剪枝可行解的加性负载舍入
@@ -3088,3 +3088,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：旧full作者Proof将previous weak误写true-H，原字节与勘误保留；v2/当前修复。有限4机例不作一般证明；无standing fatal对当前合同。
 - Status：complete scoped weak-histogram equals CONFIG projection; actual Exact-first, corrected author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
 - Related Files：[正文](../current/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md)、[实际审查](../reviews/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection_review.md)与冻结原件。
+
+## UM-NORMALIZED-MENU-PARTIAL-QUOTA-WELFARE-FLOOR-v1：部分激活菜单的高质量组数地板
+
+- Exact Statement：对显式非负norm1菜单、n≥1组及二进制有理0<q≤n，若λ≥0、每组行和≤1、总和q、每原资源正支撑列和≤1，则给定λ可det bit-poly输出原资源不交bundles及原attaining states，质量≥3/8的组数H>2q/5。一般有理0<δ<1−1/e时Hδ≥[(1−1/e−δ)/(1−δ)]q。
+- Objects / Domain / Definitions / Quantifiers：任意有限显式原state表，每state全资源总量恰1，f_g(B)=max_sΣ_B p_gsu；允许零系数、重复indexed states、unused资源、零激活行和任意正有理q。q0另返回空，不声称严格式。
+- Assumptions / Dependencies：非负norm1、正支撑共同列容量及标准福利CDF舍入；部分激活须去随机化W−δA，不假设实际A≤q。不依赖原NSW完整定理。
+- Conclusion：YES至少q组可全价值1，NO任意allocation质量≥3/8的组数<βq（固定0<β≤3/8）之promise由显式部分FSLP可行性区分；覆盖候选组数大于q。
+- Scope：只筛选此显式normalized、部分高组源；不是全组max-min保证、一般UM可靠FAIL或近二困难性。NO高组比例β不能与旧NSW低组比例γ混用。
+- Evidence：自足证明、Exact-first独立重构后冻结F2实读、给定见证软件与独立joint-action oracle；有限范围见冻结运行。
+- Counterevidence / Objections：仅最大化福利未控制active数的潜在漏洞由δA罚项处理；inactive组返回原empty-bundle attaining state；不调用免费LP/XOS优化oracle。标准福利工具直接推论，不认证原创性。
+- Status：complete scoped direct corollary of standard welfare rounding; independent reconstruction and exact audit; external review and novelty unverified。UM-TARGET-v1及其一般反面仍OPEN。
+- Related Files：[正文F2](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际审查](../reviews/unrelated_machines/normalized_menu_partial_quota_welfare_review.md)、tests/audits/unrelated_machines/normalized_menu_partial_quota_welfare.py、evidence/runs/unrelated_machines/normalized_menu_partial_quota_welfare.json。
