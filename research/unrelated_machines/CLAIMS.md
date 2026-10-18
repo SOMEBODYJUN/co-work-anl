@@ -1322,9 +1322,9 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 
 ## UM-STRICT-SUB2-BATCH-BARRIER-v1：严格次二状态图的批量能垒
 
-- **Exact Statement / Quantifiers：** 对每个 `k≥2` 存在 `OPT=1` 实例和 `Cmax<2` 坏态；允许每步至多 `k` 件迁移且全部中间态保持严格 `<2` 时，坏态孤立，首个出口需 `k+1` 件。
-- **Scope / Conclusion：** 只限制常数批量、严格次二局部修复；允许无界批量、跨过 2 或重新求解时不适用，不是一般近似困难性。
-- **Evidence / Status：** `research/current/unrelated_machines/strict_sub2_batch_barrier.md`；`tests/audits/unrelated_machines/strict_sub2_batch_barrier.py`；Fraction 审计 `k=2,3,7,100` 通过；外审/新颖性未认证。
+- **Exact Statement / Quantifiers：** 对每个 `k≥2` 存在 `OPT=1` 实例和 `Cmax<2` 坏态；允许每步至多 `k` 件迁移且全部中间态保持严格 `<2` 时，坏态孤立，首个出口需 `k+1` 件。进一步，对每个 `ε∈(0,1)` 和每个固定支持预算 `r≥1`，取整数 `k>max{r,1/(8ε)}`，同一族坏态负载 `2−1/(8k)>2−ε`，任何每步至多 `r` 件且全程严格 `<2` 的局部合同都不能达到目标 `2−ε`。
+- **Scope / Conclusion：** 只限制常数批量、严格次二局部修复；它给出对任意固定 `ε` 的 `Ω(1/ε)` 同步动作需求。允许无界批量、跨过 2 或重新求解时不适用，不是一般近似困难性。
+- **Evidence / Status：** `research/current/unrelated_machines/strict_sub2_batch_barrier.md`；`tests/audits/unrelated_machines/strict_sub2_batch_barrier.py`；基础 Fraction 审计 `k=2,3,7,100` 及固定 ε 参数化审计 `ε∈{1/100,1/50,1/20,1/19}` 通过；有限审计不替代一般证明，外审/新颖性未认证。
 
 
 ## UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1：单任务外接端口投影的锐计数与复制障碍
