@@ -89,6 +89,8 @@
 
 本阶段不相关并行机新增两项可复用边界：[异质大宏统一残余容量与 ST 舍入](research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md) 在 `|B|=|H|` 与大宏承诺下允许宏身份异质、tiny 资格任意并得到 `(3/2+δ)` 结构类界；[严格次二批量能垒](research/current/unrelated_machines/strict_sub2_batch_barrier.md) 说明常数批量且中间严格低于二倍时的局部修复会遇到 `OPT=1` 孤立坏态。两者均保持 `UM-TARGET-v1` OPEN。
 
+本轮反面研究新增两项参数化边界：[多小端柔性密度的整数流障碍](research/current/unrelated_machines/mixed_small_endpoint_density_flow_barrier.md) 证明逐机多端 small 密度固定时可由容量流直接得到严格次二调度；[固定轮 assignment Sherali--Adams 的趋二间隙](research/current/unrelated_machines/fixed_sa_assignment_gap.md) 证明固定 literal 层的局部松弛仍保留趋二 gap。它们限制具体编译和固定层舍入方法，不改变一般目标的 OPEN 状态。
+
 [单任务外接端口的向下投影与锐计数](research/current/unrelated_machines/signed_one_job_port_downset.md)给`UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1`：保留一个外部出现端点且排除外部容量时，两一致态强制至少2^z(2^a+2^b−1)个严格可行状态，固定T>0逐参数锐；不能用该纯内部接口实现等值复制。BG一般signed阈值PCSP的近二困难性不保持调度双出现限制；多任务编码及外部联合容量仍未解，UM-TARGET-v1保持OPEN。
 
 [单层配额超图平方根重数地板](research/current/unrelated_machines/single_layer_quota_sqrt_multiplicity_floor.md)进一步证明全局资源重数 Δ 下的中间层地板为 1/(√Δ+1)−1/K（同阶上界由资源总量给出）；它把共享标签反面归约的必要碰撞规模收紧到平方级，但不是一般困难性。

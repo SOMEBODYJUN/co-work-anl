@@ -1172,6 +1172,10 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-ANCHOR-DEFICIENCY-PROMISE-APPROX-v1 | full anchor图同缺额；只某份OPT满足所用边尺度promise | 仅上截边+单调整数二分，同系数OPT保证，无η；非一般输入识别 | 同正文§10，数学算法完整，外审/新颖性未认证 |
 | UM-FIXED-DEGREE-STRONG-CONFIG-MATCHING-LAW-OBSTRUCTION-v1 | r≥2,奇N≥4r−1；强本行CONFIG同阶相容+所有短事件非负 | 无保二阶真实匹配law；锐修复半径1/[4N(N−1)]；实际OPT1，非gap | [自足证明](unrelated_machines/strong_configuration_matching_moment_obstruction.md)，独立攻击/精确小核验；经典knapsack机制 |
 
+| UM-SMALL-DENSITY-FLOW-BARRIER-v1 | `{1,1/k}` 输入中，若逐机 small incidence 数 `t_i≤k` 且至少 `γ` 比例来自 `d_j≥2` 的多端任务，则均匀 small 分流的整数容量流给出 `C≤2−floor(γk/2)/k`；unit-only 任务容量1匹配失败则 `OPT≥2`。若柔性端均有 `d_j≥D`，系数改为 `γ(1−1/D)`。 | [正文](unrelated_machines/mixed_small_endpoint_density_flow_barrier.md)、[总页](unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)；限定物理编译的结构性流障碍，非一般算法/硬度。 |
+| UM-FIXED-SA-ASSIGNMENT-GAP-v1 | 固定 `r` 轮（乘子至多 `r−1` 个 literal）的 assignment/LST SA，在 `m` 台相同机、`m+1` 个 unit 任务上阈值 `T=1+1/(m−r+1)` 可行，而 `OPT=2`，比值 `2−2/(m−r+2)` 趋 2。 | [正文](unrelated_machines/fixed_sa_assignment_gap.md)；完整 literal 伪分布，限制固定层局部舍入，不含 configuration、SOS/Lasserre 或一般算法硬度。 |
+| UM-WEIGHTED-SMALL-ST-BARRIER-v1 | 固定 `β<1,γ≤1` 下，若 unit-only 任务全为时间1且可容量1匹配，其他任务有 small 支持、逐机 small 总工作 `s_i≤1`、多端 small 工作 `u_i≥γs_i`，则显式等分支撑+ST 给 `C≤2−γ/2+β`；unit 匹配失败则 `OPT≥2`。 | [正文](unrelated_machines/weighted_small_st_barrier.md)、[独立攻击](../reviews/unrelated_machines/weighted_small_st_barrier_review.md)；mixed small 结构障碍，非一般算法/硬度。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "共同研究：不相关并行机、加权拥塞、设施与客户吸引的数学关系",
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -10806,6 +10806,42 @@
         "evidence/runs/unrelated_machines/strong_configuration_matching_moment_audit.json"
       ],
       "status": "finite audit only"
+    },
+    {
+      "id": "UM-SMALL-DENSITY-FLOW-BARRIER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "多小端柔性密度流障碍",
+      "detail": "{1,1/k}物理编译中逐机small incidence≤k且柔性比例γ时，容量流给绝对C≤2−floor(γk/2)/k；Q匹配失败则OPT≥2。",
+      "refs": [
+        "research/current/unrelated_machines/mixed_small_endpoint_density_flow_barrier.md",
+        "research/reviews/unrelated_machines/mixed_small_endpoint_density_flow_review.md"
+      ],
+      "status": "complete scoped proof; novelty unverified"
+    },
+    {
+      "id": "UM-FIXED-SA-ASSIGNMENT-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "固定轮assignment-SA趋二间隙",
+      "detail": "m台相同机、m+1个unit任务在固定r轮literal SA阈值1+1/(m−r+1)可行而OPT2，固定r间隙趋2。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sa_assignment_gap.md",
+        "research/reviews/unrelated_machines/fixed_sa_assignment_gap_review.md"
+      ],
+      "status": "complete scoped proof; novelty unverified"
+    },
+    {
+      "id": "UM-WEIGHTED-SMALL-ST-BARRIER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "加权small柔性密度ST障碍",
+      "detail": "逐机small工作≤1且多端工作占比γ、small最大边β时，等分支撑+ST给C≤2−γ/2+β；Q匹配失败则OPT≥2。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_small_st_barrier.md",
+        "research/reviews/unrelated_machines/weighted_small_st_barrier_review.md"
+      ],
+      "status": "complete scoped proof; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -26341,6 +26377,54 @@
         "evidence/runs/unrelated_machines/strong_configuration_matching_moment_audit.json"
       ],
       "status": "finite audit only"
+    },
+    {
+      "id": "um_small_density_flow_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1"
+      ],
+      "conclusion": "UM-SMALL-DENSITY-FLOW-BARRIER-v1",
+      "statement": "均匀small支撑、逐机柔性计数与整数容量流给出任意支持图的实际解码；Q容量1匹配失败给出OPT≥2。",
+      "refs": [
+        "research/current/unrelated_machines/mixed_small_endpoint_density_flow_barrier.md",
+        "research/reviews/unrelated_machines/mixed_small_endpoint_density_flow_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "um_fixed_sa_assignment_gap_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-FIXED-SA-ASSIGNMENT-GAP-v1",
+      "statement": "局部均匀注入伪分布逐条满足固定literal-SA容量乘式；真实unit任务鸽巢值为2，ST给松弛上界2。",
+      "refs": [
+        "research/current/unrelated_machines/fixed_sa_assignment_gap.md",
+        "research/reviews/unrelated_machines/fixed_sa_assignment_gap_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "um_weighted_small_st_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-WEIGHTED-SMALL-ST-BARRIER-v1",
+      "statement": "逐机small工作与多端比例给均匀支撑行余量；最大small边付ST加性误差，unit-only匹配叠加。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_small_st_barrier.md",
+        "research/reviews/unrelated_machines/weighted_small_st_barrier_review.md"
+      ],
+      "status": "complete scoped proof"
     }
   ]
 }

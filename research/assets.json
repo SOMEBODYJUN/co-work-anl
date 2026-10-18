@@ -8871,6 +8871,87 @@
       ],
       "source_role": "Potechin2019摘要和§1.1 Theorem1定位经典Grigoriev非整数背包障碍；本稿独立给全部PSD证明及实际UM编译，未内化全论文。",
       "limit": "所有实例OPT1，非gap/困难性；经典knapsack机制；r变参显式矩可能指数"
+    },
+    {
+      "id": "um_small_density_flow_barrier_v1",
+      "claims": [
+        "UM-SMALL-DENSITY-FLOW-BARRIER-v1"
+      ],
+      "status": "complete scoped proof; independent red-team attack; target open; novelty unverified",
+      "applies_when": [
+        "显式{1,1/k}输入，逐机small incidence t_i≤k，柔性d_j≥2比例逐机至少γ；Q为unit-only任务。"
+      ],
+      "produces": "等分small支撑与整数容量流给出C≤2−floor(γk/2)/k；Q匹配失败蕴含OPT≥2；D版本替换系数。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/mixed_small_endpoint_density_flow_barrier.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/mixed_small_endpoint_density_flow_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/native_small_arity_flow_source.md"
+      ],
+      "source_role": "Current self-contained proof and predecessor flow interface; no external theorem imported beyond standard integrality.",
+      "limit": "只限制明确{1,1/k}物理编译；Q为空只给绝对界；不构成一般算法或hardness。"
+    },
+    {
+      "id": "um_fixed_sa_assignment_gap_v1",
+      "claims": [
+        "UM-FIXED-SA-ASSIGNMENT-GAP-v1"
+      ],
+      "status": "complete scoped proof; independent red-team attack; target open; novelty unverified",
+      "applies_when": [
+        "固定r≥1的literal SA assignment/load松弛，乘子至多r−1；m≥r台相同机、m+1个unit任务。"
+      ],
+      "produces": "局部均匀注入伪分布在T=1+1/(m−r+1)可行，OPT=2，固定r时间隙趋2；结合ST上界固定层supgap恰2。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/fixed_sa_assignment_gap.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/fixed_sa_assignment_gap_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "source_role": "Current self-contained local-distribution proof; ST upper bound is the canonical baseline.",
+      "limit": "只限制固定literal-SA舍入；不限制CONFIG、SOS/Lasserre、跨机cuts或任意原输入算法。"
+    },
+    {
+      "id": "um_weighted_small_st_barrier_v1",
+      "claims": [
+        "UM-WEIGHTED-SMALL-ST-BARRIER-v1"
+      ],
+      "status": "complete scoped proof; independent red-team attack; target open; novelty unverified",
+      "applies_when": [
+        "固定β<1、γ≤1；Q任务所有有限边时间1；其余任务有small端且逐机small总工作≤1、多端small工作占比≥γ。"
+      ],
+      "produces": "等分small支撑行工作≤1−γ/2，ST输出≤1−γ/2+β；叠加Q匹配得绝对C≤2−γ/2+β，给近二物理编译必要形状。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/weighted_small_st_barrier.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/weighted_small_st_barrier_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf"
+      ],
+      "source_role": "Current self-contained weighted ST proof; ordered-slot baseline is recorded in the canonical model.",
+      "limit": "逐机条件不可用全局平均替代；Q为空只给绝对界；不排除γ→0、大small边或跨机联合结构。"
     }
   ]
 }

@@ -453,3 +453,12 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 [锚点缺额联合舍入](../current/unrelated_machines/anchor_deficiency_joint_rounding.md)从同一个LP共同选择anchor位置，并让任意跨分量/异端tiny仅做一次ST；分量缺额≤d0时，实际界为`[2−(1−α)/(d0+1)+β]T`。弱OPT所用边尺度承诺下，仅上截的单调整数二分给同系数OPT保证，无额外网格损失。余秩筛选门槛`1/(d+1)`锐；未声称调度系数最优。固定身份/有界亏缺仍承重。
 
 [强配置匹配矩边界](../current/unrelated_machines/strong_configuration_matching_moment_obstruction.md)证明任意固定阶、所有短事件非负且本行CONFIG同阶相容，仍可没有保给定二阶的真实共同匹配law；保一阶的锐二阶修复距离为`1/[4N(N−1)]`。实际OPT1且距离趋零，非调度gap。一般输入的混合身份、无界阻塞集和允许改矩后的全机统一余量仍缺；UM-TARGET-v1保持OPEN。
+## 本轮新的数学判断：固定局部信息和多端密度都不足以跨过 2
+
+本轮停止以大规模 Fraction 枚举作为主要动作，形成三项可复用的参数化边界。
+
+1. `UM-SMALL-DENSITY-FLOW-BARRIER-v1`（见 [正文](../current/unrelated_machines/mixed_small_endpoint_density_flow_barrier.md)）：对 `{1,1/k}` 物理编译，逐机 small incidence ≤`k` 且多端小任务比例至少 `γ` 时，均匀 small 分流的行质量满足 `ρ_i≤(1−γ/2)k`，整数容量流加 unit-only 容量1匹配给出绝对上界 `2−floor(γk/2)/k`；无 unit matching 则 `OPT≥2`。因此所有多端 clause 占主导的近二候选都被多项式流解码器击穿；要维持近二，必须使 `γ→0` 或引入多尺度/跨端联合机制。
+2. `UM-FIXED-SA-ASSIGNMENT-GAP-v1`（见 [正文](../current/unrelated_machines/fixed_sa_assignment_gap.md)）：固定 `r` 轮完整 literal SA 的 assignment/load 松弛，在 `m` 台相同机、`m+1` 个 unit 任务上有均匀局部注入伪分布，阈值 `T=1+1/(m-r+1)`，真实 `OPT=2`，比值趋 2。它排除固定层 assignment-SA 的统一舍入合同，但不排 configuration、增长层级或任意算法。
+3. `UM-WEIGHTED-SMALL-ST-BARRIER-v1`（见 [正文](../current/unrelated_machines/weighted_small_st_barrier.md)）：把等值小端推广到任意有理 `p_{ij}≤β`。若每机 small 总工作 `s_i≤1`，多端任务贡献至少 `γs_i`，则等分支撑的行工作 `≤1−γ/2`，ST 负载 `≤1−γ/2+β`；叠加 unit-only 匹配得到 `2−γ/2+β`。这把反面必要条件推进到 mixed multi-scale，但仍不是一般硬度。
+
+这三项共同改变了反面路线的搜索边界：继续加局部 literal 层或增加多端小任务不会自动产生主目标困难性；真正承重的仍是跨机器全局一致性、`γ→0` 后的固定小端结构，以及能把低负载实际调度可靠解码回源问题的物理归约。`UM-TARGET-v1` 仍 OPEN。
