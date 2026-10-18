@@ -1192,6 +1192,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1 | 对任意UM-MODEL-v1的T≥0,T≤C≤2T、剪枝实际σ≤C和给定实际τ≤T，定义S=f+A,Q,U=max(2T,C+T/2),h=(S+Q−U)+。若每个h_i>0的源至少有一件改变任务a_j≥h_i，则确定性位poly输出每件至多一次直迁τ的完整路径，全程≤U。任意选一件eligible形成的坏环可保留，其他来流统一受S+Q−β<U控制，源补集A−a≥h后释放。 | [正文](unrelated_machines/held_cycle_release_and_assigned_max_path.md)、[审查](../reviews/unrelated_machines/held_cycle_assigned_max_path_review.md)；具体τ给定；源端a≤T承重。没有eligible只是否定该充分条件，不是OPT>T或无路径。 |
 | UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1 | 在前项同一剪枝/具体τ输入上，若逐机S_i≤T+M_i，其中M_i为σ实际分配最大件（空0），则确定性位poly输出每件至多一次直迁τ的完整路径且峰≤U。对每有理T>0,C∈[T,2T]，这个局部promise类到指定不同τ的单件路径最坏minimax恰U。标准非增单位槽匹配从同一剪枝分数负载≤T产生的任何实际输出满足S−M≤T，故上界覆盖实际槽输出。 | [正文](unrelated_machines/held_cycle_release_and_assigned_max_path.md)、[审查](../reviews/unrelated_machines/held_cycle_assigned_max_path_review.md)；锐性针对完整局部promise类，允许m=2，不声称每固定m,n或实际ST输出锐性；C=T仍为另一指定目标的非空路径。不给未知目标。 |
 
+| UM-TWO-WITNESS-QUERY-SEPARATION-v2 | 任意一般P，同一P实际σ0/σ1均≤有理T≥0；非空Q⊆owner改变集D；δq为其它Q在σ0每机最大总负荷；任意非负非query改派权。 det bitpoly两两不交Aq⊆D\Q，单q实际τq≤max(3T/2,T+δq)，Σfee≤W；tiny聚合Q时3T/2，且任意tinyη下3/2合同阈值sharp。不是OPT gap或UM算法。 | [正文](unrelated_machines/two_witness_query_separation.md)、[审查](../reviews/unrelated_machines/two_witness_query_separation_review.md)；主目标未解。 |
+
+| UM-SINGLE-HOME-CASCADE-QUERY-SEPARATION-v2 | 每J唯一正小home其它端0/1，U任意unit资格；同一P两actualσ≤1，σ0全J留home，σ1全Q走unit；D/Z按σ1定义。 同一批不交Aq对全部S⊆Q同时给完整实际τS，J-unit恰S加并Aq；C≤1+δ(S)，非query unit费精确模加；零端Z保持原零端。仅此normal form。 | [正文](unrelated_machines/single_home_cascade_query_separation.md)、[审查](../reviews/unrelated_machines/single_home_cascade_query_separation_review.md)；主目标未解。 |
+
+| UM-GROUPED-HYPERCUBE-SLICE-SCHEDULING-v2 | d,Q≥1，显式带变量tag的[d]^Q；每variable至多d个groups，incidence索引单射，每state每变量一slice；非空菜单/组变量集。selector1、private incidence1/Lg、resource1。 所有state选择/组子族union≥cdΣLg；整数Hall给ceil(Lg/2)资源，所有实际P≤3/2且有限例达OPT3/2；d1或Q1 OPT1；d5Q2三变量组每组11/15，实际≤19/15。非hardness。 | [正文](unrelated_machines/coordinate_slice_source_compilation_counterexample.md)、[审查](../reviews/unrelated_machines/grouped_hypercube_slice_scheduling_review.md)；主目标未解。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

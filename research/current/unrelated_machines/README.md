@@ -410,3 +410,5 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [固定轮 assignment Sherali--Adams 的趋二间隙](fixed_sa_assignment_gap.md)登记 `UM-FIXED-SA-ASSIGNMENT-GAP-v1`：`m` 台相同机、`m+1` 个 unit 任务的均匀局部注入伪分布在 `T=1+1/(m-r+1)` 通过固定 `r` 轮完整 literal SA，而真实 `OPT=2`；固定 `r` 时比值趋 2。它证明固定层 assignment/LST 局部舍入不能提供统一改善，但不限制 configuration-LP、增长层数、SOS/Lasserre 或直接算法。该证明不依赖大规模枚举；`UM-TARGET-v1` 仍 OPEN。
 
 [加权小端柔性密度与 ST 的次二障碍](weighted_small_st_barrier.md)把流障碍推广到 mixed small 时间：若逐机 small 总工作 `s_i≤1`，其中至少 `γ` 比例的工作来自多端任务，且每条 small 边 `≤β`，则显式等分支撑加 ST 舍入、再叠加 unit-only 匹配，给出 `C≤2−γ/2+β`。这排除了更一般的多尺度/任意支持图编译；仍允许 `γ→0`、较大 small 边和跨机器联合结构。
+
+2026-10-18 新增实际读取/费用合同与cube桥边界：[一般双见证查询分离的锐3/2费用合同](two_witness_query_separation.md)；[单正小端级联的完整查询立方体](single_home_cascade_query_separation.md)；[超立方分组菜单的Hall保留与锐3/2实际界](coordinate_slice_source_compilation_counterexample.md)。前两者需同一P两实际见证，cube3/2为限定结构；均不升级UM主目标。

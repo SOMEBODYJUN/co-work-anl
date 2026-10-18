@@ -289,3 +289,5 @@
 [强配置匹配矩边界](../current/unrelated_machines/strong_configuration_matching_moment_obstruction.md)证明任意固定阶、所有短事件非负且本行CONFIG同阶相容，仍可没有保给定二阶的真实共同匹配law；保一阶的锐二阶修复距离为`1/[4N(N−1)]`。实际OPT1且距离趋零，非调度gap。一般输入的混合身份、无界阻塞集和允许改矩后的全机统一余量仍缺；UM-TARGET-v1保持OPEN。
 
 [永久缓冲激活与共同解锁路径](../current/unrelated_machines/permanent_buffer_activation_and_priority_deadlocks.md)给锐分数窗口[1/3,1/2]和静态/优先级反例；[保留坏环与实际最大件全程锐界](../current/unrelated_machines/held_cycle_release_and_assigned_max_path.md)用共同保护来流及源补集证明：每个正阈值源有一件eligible时，给定目标的完整路径可构造；并覆盖标准有序槽实际输出。局部promise类峰U逐参数锐，不冒充实际ST输出锐性。具体τ仍是承重输入，未知目标、任意剪枝初态与一般统一次二输出仍OPEN。
+
+2026-10-18：[一般双见证查询分离的锐3/2费用合同](../current/unrelated_machines/two_witness_query_separation.md)；[单正小端级联的完整查询立方体](../current/unrelated_machines/single_home_cascade_query_separation.md)；[超立方分组菜单的Hall保留与锐3/2实际界](../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)。一般双见证tiny query的单次改派费不能复用为near2固定激活费，准确分离阈值3/2且sharp；单home全留初态另有完整query cube；超立方分组菜单全类actual≤3/2（DGR特例19/15）。失败范围仅精确合同；非OPT困难性，UM-TARGET-v1正反面仍OPEN。重试须改变读取初态聚合量/费用/源相关接口或slice真实结构，并给完整实际decoder。

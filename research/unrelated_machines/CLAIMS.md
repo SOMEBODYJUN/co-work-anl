@@ -2346,3 +2346,44 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：删除剪枝的两机反例明确保留；padding only-original条件已补；条件保护不冒充永久安全；无standing内部fatal。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；规范给定目标构造implemented，外审与新颖性未认证，UM-TARGET-v1仍OPEN。
 - Related Files：research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md；research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md；evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json；两审计实现沿上述文件进入。
+
+## UM-TWO-WITNESS-QUERY-SEPARATION-v2：一般双见证查询分离的锐3/2费用合同
+
+- ID / Version：`UM-TWO-WITNESS-QUERY-SEPARATION-v2`；新域/锐结论按v2冻结，不改旧Claim。
+- Exact Statement：det bitpoly两两不交Aq⊆D\Q，单q实际τq≤max(3T/2,T+δq)，Σfee≤W；tiny聚合Q时3T/2，且任意tinyη下3/2合同阈值sharp。不是OPT gap或UM算法。
+- Objects / Domain / Quantifiers：任意一般P，同一P实际σ0/σ1均≤有理T≥0；非空Q⊆owner改变集D；δq为其它Q在σ0每机最大总负荷；任意非负非query改派权。 对每个完整输入成立；全部共同前提见[正文](../current/unrelated_machines/two_witness_query_separation.md)。
+- Assumptions / Definitions / Scope：无复杂度假设；原对象显式，实际给定见证或准确slice结构不可略；不是一般UM正反面结论。
+- Conclusion：上述构造/锐界按精确定义全量词成立，不以有限测试证明。
+- Dependencies：正文列出的全部共同域及自足证明步骤，图derives同时列入；DGR源只作准确Paper Fact。
+- Evidence：完整证明、实际陈述先行/读后审查及root核对；实现=audit_only。
+- Counterevidence / Objections：无standing fatal；费用/背景退款、任意子集、显式输入和sharp非OPT gap限制见正文；cube组合措辞异议已实际修复并留记录。
+- Status：证明完成，内部独立审查完成；外审、新颖性未认证，UM-TARGET-v1保持OPEN。
+- Related Files：[正文](../current/unrelated_machines/two_witness_query_separation.md)；[实际审查](../reviews/unrelated_machines/two_witness_query_separation_review.md)；关联代码/证书和保真来源在审查互链。
+
+
+## UM-SINGLE-HOME-CASCADE-QUERY-SEPARATION-v2：单正小端级联的完整查询立方体
+
+- ID / Version：`UM-SINGLE-HOME-CASCADE-QUERY-SEPARATION-v2`；新域/锐结论按v2冻结，不改旧Claim。
+- Exact Statement：同一批不交Aq对全部S⊆Q同时给完整实际τS，J-unit恰S加并Aq；C≤1+δ(S)，非query unit费精确模加；零端Z保持原零端。仅此normal form。
+- Objects / Domain / Quantifiers：每J唯一正小home其它端0/1，U任意unit资格；同一P两actualσ≤1，σ0全J留home，σ1全Q走unit；D/Z按σ1定义。 对每个完整输入成立；全部共同前提见[正文](../current/unrelated_machines/single_home_cascade_query_separation.md)。
+- Assumptions / Definitions / Scope：无复杂度假设；原对象显式，实际给定见证或准确slice结构不可略；不是一般UM正反面结论。
+- Conclusion：上述构造/锐界按精确定义全量词成立，不以有限测试证明。
+- Dependencies：正文列出的全部共同域及自足证明步骤，图derives同时列入；DGR源只作准确Paper Fact。
+- Evidence：完整证明、实际陈述先行/读后审查及root核对；实现=audit_only。
+- Counterevidence / Objections：无standing fatal；费用/背景退款、任意子集、显式输入和sharp非OPT gap限制见正文；cube组合措辞异议已实际修复并留记录。
+- Status：证明完成，内部独立审查完成；外审、新颖性未认证，UM-TARGET-v1保持OPEN。
+- Related Files：[正文](../current/unrelated_machines/single_home_cascade_query_separation.md)；[实际审查](../reviews/unrelated_machines/single_home_cascade_query_separation_review.md)；关联代码/证书和保真来源在审查互链。
+
+
+## UM-GROUPED-HYPERCUBE-SLICE-SCHEDULING-v2：超立方分组菜单的Hall保留与锐3/2实际界
+
+- ID / Version：`UM-GROUPED-HYPERCUBE-SLICE-SCHEDULING-v2`；新域/锐结论按v2冻结，不改旧Claim。
+- Exact Statement：所有state选择/组子族union≥cdΣLg；整数Hall给ceil(Lg/2)资源，所有实际P≤3/2且有限例达OPT3/2；d1或Q1 OPT1；d5Q2三变量组每组11/15，实际≤19/15。非hardness。
+- Objects / Domain / Quantifiers：d,Q≥1，显式带变量tag的[d]^Q；每variable至多d个groups，incidence索引单射，每state每变量一slice；非空菜单/组变量集。selector1、private incidence1/Lg、resource1。 对每个完整输入成立；全部共同前提见[正文](../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)。
+- Assumptions / Definitions / Scope：无复杂度假设；原对象显式，实际给定见证或准确slice结构不可略；不是一般UM正反面结论。
+- Conclusion：上述构造/锐界按精确定义全量词成立，不以有限测试证明。
+- Dependencies：正文列出的全部共同域及自足证明步骤，图derives同时列入；DGR源只作准确Paper Fact。
+- Evidence：完整证明、实际陈述先行/读后审查及root核对；实现=none。
+- Counterevidence / Objections：无standing fatal；费用/背景退款、任意子集、显式输入和sharp非OPT gap限制见正文；cube组合措辞异议已实际修复并留记录。
+- Status：证明完成，内部独立审查完成；外审、新颖性未认证，UM-TARGET-v1保持OPEN。
+- Related Files：[正文](../current/unrelated_machines/coordinate_slice_source_compilation_counterexample.md)；[实际审查](../reviews/unrelated_machines/grouped_hypercube_slice_scheduling_review.md)；关联代码/证书和保真来源在审查互链。
