@@ -165,3 +165,5 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 [逐机统一内部索引交换](research/current/unrelated_machines/machine_uniform_query_return_index_exchange.md)、[direct共居严格SAT及三半锐逃逸](research/current/unrelated_machines/direct_cohabiting_query_return_strict_sat_and_sharp_escape.md)与[真实直线源/累计路径编译障碍](research/current/unrelated_machines/line_set_packing_and_take_continue_compilation_obstructions.md)关闭各自精确接口；全部原jobs和全机负载已核，未关闭近二源NO的全局decoder。标准matching/Hall扣除新颖性，E曾误标签的proof-aware审查已另冻纠正，并由真正statement-first重构补齐。只有明确改变外部共同容量/partial AND机制时才重试这些具体桥。
 
 [任意异权私有子句的三半上界与共享外端边界](research/current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)：固定辅助内部single-query/single-return接口的3T/2交换可与真实变量环共同匹配，所有局部索引strict可选时整公式实际≤1.5T；不是私有outside免费替ring。标准四任务环与小query返回池允许共享外部身份，但孤立OPT1且未保变量一致性。重试须改变精确模板的共同容量/边界，不能仅在私有Hc增加异权aux；主源NO联合decoder仍未闭合。
+
+[仿射线逐tuple加globaldummy的完整编译](research/current/unrelated_machines/affine_line_tuple_groups_global_dummy_compilation_escape.md)另行关闭一种此前未分析的自然桥：n个tuple groups配n−q个共享dummy、q≤非空relations数，strict unit iff原full-set packing≥q，但无需源解仍actual≤1.5。选择q个不同relations恢复Hall不变量，所有未选state任务保留；不把这个新精确范围倒改成旧D已排，也不外推其它全局守卫/权重/阈值。

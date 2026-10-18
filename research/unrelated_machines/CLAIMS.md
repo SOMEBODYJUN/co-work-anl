@@ -2699,3 +2699,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：shared outside反例界定local外接边界；pool good最优不等于任意rho；所有zero/empty/unknown见证与实际环负载已单列，无standing fatal。
 - Status：限定数学完整、真实独立重构/作者读后/final指定范围；implementation none，外审/全球新颖性未认证，主目标OPEN。
 - Related Files：[正文](../current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)、[实际审查](../reviews/unrelated_machines/shared_outside_small_query_pool_review.md)及逐SHA原件。
+
+
+## UM-AFFINE-LINE-TUPLE-GROUP-GLOBAL-DUMMY-ESCAPE-v1：仿射线逐tuple分组加全局dummy的完整三半逃逸
+
+- Objects / Domain / Quantifiers / Definitions：primeR≥2/k≥1/tagged affine lines，relation-degree≤R/intercept注入，A_g可空；n为tuples总数/m0非空表数，1≤q≤m0，d=n−q；每tuple group为原D=kR均匀state或任一globaldummy singleton，所有原jobs。
+- Exact Statement / Conclusion：不求源解可det-bit-poly输出全部原jobs实际≤2−ceil(kR/2)/(kR)≤3/2；完整unit可行iff原full-set packing≥q。
+- Assumptions / Dependencies：UM-MODEL-v1与明示完整矩阵，degree/intercept/tag/uniform及dummy计数承重；line几何与Hall自足重构，不调用primary hardness或有限实验。
+- Scope：只排uniform原权/d=n−q个globaldummy及q≤m0的具体桥，空relation不偷换原sourcepromise；不排其它grouping、权重/guard/阈值或一般source-to-UM归约。
+- Evidence：rank先仅据root精确消息及旧current前27行明示source定义独立全证，未读旧Hall证明或新作者Proof；root实际读e8eed…后才冻结正式statement与Proof，rank随后实际读后，不倒填当时已读正式文件。最终canonical初稿22c…的dense逗号排版错误经指出改为显式乘号，rank实读edc…后逆替换精确核回旧hash，原statement/Proof/独立记录均保原字节。root亲核全部Hall子族、全部states原任务及任意unit分配提取，当前无standing fatal。
+- Counterevidence / Objections：dense公式逗号排版改显式乘号，final逆替换核old hash；source empty关系与q=n分开，无standing fatal。
+- Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/affine_line_tuple_groups_global_dummy_compilation_escape.md)、[审查](../reviews/unrelated_machines/affine_line_tuple_groups_global_dummy_review.md)及逐SHA原件。

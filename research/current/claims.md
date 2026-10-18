@@ -1236,6 +1236,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-PRIVATE-CLAUSE-QUERY-RETURN-UNIVERSAL-THREE-HALVES-v1 | 显式CNF每clause≥2occ、变量环padding≥3；clause内部Hc/Ac私有，q外部恰两ring端、b恰polarity pin，外部time∈[0,T]；dummy固定，给每索引singleq/singleb局部strict证书。 任意SAT/UNSAT全原P实际≤3T/2，每原ring机恰一真实q/b负载≤T，所有Ac/dummy/边界原jobs一次；给全部局部见证det-bit-poly，没有见证只承诺存在OPT上界。 | [正文](unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)、[限定审查](../reviews/unrelated_machines/private_clause_query_return_universal_review.md)；数学完整，非主反面。 |
 | UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1 | k≥2、正有理a_i总≤1，q_i仅H:a_i/E_i:1，b_i仅任一k−1池P_r:1/E_i:1，2k机/2k原jobs；任意query内部集S/return外部集T，池分配自由优化。 pattern OPT恰1 iff 非空T⊆S，否则恰2；任意actual C<2本已≤1且解码非空containment；明确容许多queries/returns。§4标准4×4共享环说明internal交换不能免费外接。 | [正文](unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)、[限定审查](../reviews/unrelated_machines/shared_outside_small_query_pool_review.md)；数学完整，非主反面。 |
 
+| UM-AFFINE-LINE-TUPLE-GROUP-GLOBAL-DUMMY-ESCAPE-v1 | primeR≥2/k≥1/tagged affine lines，relation-degree≤R/intercept注入，A_g可空；n为tuples总数/m0非空表数，1≤q≤m0，d=n−q；每tuple group为原D=kR均匀state或任一globaldummy singleton，所有原jobs。 不求源解可det-bit-poly输出全部原jobs实际≤2−ceil(kR/2)/(kR)≤3/2；完整unit可行iff原full-set packing≥q。 | [正文](unrelated_machines/affine_line_tuple_groups_global_dummy_compilation_escape.md)、[实际审查](../reviews/unrelated_machines/affine_line_tuple_groups_global_dummy_review.md)；只排精确dummy计数编译，非主反面。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

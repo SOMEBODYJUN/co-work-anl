@@ -104,3 +104,5 @@
 实际身份接口阶段：[局部统一时间](../../../current/unrelated_machines/machine_uniform_query_return_index_exchange.md)、[异权direct共居与三半锐界](../../../current/unrelated_machines/direct_cohabiting_query_return_strict_sat_and_sharp_escape.md)、[真实source与AND规则](../../../current/unrelated_machines/line_set_packing_and_take_continue_compilation_obstructions.md)。五项按真实scope保存，E路由纠正及全部原证书不隐藏。当前继续任意异权内部交换与共享外部容量的严格界，未取得near2源NO联合decoder。
 
 [任意异权私有子句三半障碍](../../../current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md)把shared ring负载真正闭合；小query多return containment仅为未保全局源的正接口。当前继续攻击可随全局选择改变归属的shared guard/medium共同容量，以及自然tuple-group+globaldummy真实source桥；不给这些候选已完成的身份。
+
+自然[tuple-group/globaldummy桥](../../../current/unrelated_machines/affine_line_tuple_groups_global_dummy_compilation_escape.md)也有actual半保留，即使strict保持full-set packing。当前主源必须改变partial soundness的真实共同机制；另在核有限行总价值/有限item度的SC结构，CONFIG证书与actual promise算法继续分开，尚未解主目标。
