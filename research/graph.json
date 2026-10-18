@@ -11394,6 +11394,78 @@
         "research/reviews/unrelated_machines/normalized_flat_menu_three_state_degree_three_normal_form_review.md"
       ],
       "status": "complete scoped selector-tree normal form with actual-job and partial-allocation decoders; independent statement-first and actual read-after review; novelty unverified"
+    },
+    {
+      "id": "UM-BINARY-AFFINE-LINE-CARTESIAN-MENU-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "完整二元affine-line笛卡尔菜单域",
+      "detail": "t>=1，D=2^t，全部二元affine-line Cartesian groups/states/resources，private 1/D及unit selector/resource，全部原state jobs。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-COORDINATE-OBLIVIOUS-SELECTOR-SEMANTIC-CONDITION-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "额外逐坐标选择一致性语义",
+      "detail": "同二元t>=1族，额外强制全体group状态ell_i(g)=f_i(g_i)，各固定f_i任意；partial资源子集仍完全自由且全局不交。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md"
+      ],
+      "status": "semantic condition; no physical gadget"
+    },
+    {
+      "id": "UM-CARTESIAN-MENU-FINITE-ACTUAL-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "有限完整原矩阵整数核验",
+      "detail": "t1..4全4710jobs/finite资格/峰；只有t1全部1024 actual assignments；root独立重算并实际复现。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md",
+        "tests/audits/unrelated_machines/audit_normalized_flat_cartesian_tensor_reverse_amplification.py",
+        "evidence/runs/unrelated_machines/cartesian_menu_reverse_v1/summary.json",
+        "evidence/runs/unrelated_machines/cartesian_menu_reverse_v1/root_original_matrix_verification.json"
+      ],
+      "status": "finite checks only"
+    },
+    {
+      "id": "UM-CARTESIAN-COORDINATE-CONSTANT-REPAIR-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "同族事后逐坐标修复无统一正保值系数",
+      "detail": "bare值趋1、逐坐标值趋0，故同groups/resources/states统一正乘法修复输出根本不存在；允许新物理结构不受此结论排除。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md",
+        "research/reviews/unrelated_machines/coordinate_oblivious_cartesian_menu_quota_review.md"
+      ],
+      "status": "complete scoped corollary"
+    },
+    {
+      "id": "UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "裸笛卡尔菜单的精确反向放大",
+      "detail": "任意partial与任意group state重选的精确V_t=1−2^-t，完整actualOPT(P_t)=1+2^-t；cyclic跨坐标labels构造达界，任意补组交一点给全调度下界。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md",
+        "research/reviews/unrelated_machines/cartesian_menu_reverse_amplification_review.md"
+      ],
+      "status": "complete scoped exact Cartesian counterexample with actual-job optimum; independent statement-first and actual canonical reviews; novelty unverified"
+    },
+    {
+      "id": "UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "逐坐标状态一致性下的精确整数资源配额",
+      "detail": "每一固定f族及优化f后的值均精确floor((3/2)^t)/2^t；全子集Hall给显式位多项式整数配额构造。与bare值共同排除同族统一常数保值的事后一致性修复。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md",
+        "research/reviews/unrelated_machines/coordinate_oblivious_cartesian_menu_quota_review.md"
+      ],
+      "status": "complete scoped exact quota under explicit semantic coordinate consistency; statement-first and actual canonical review; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -27759,6 +27831,100 @@
         "research/reviews/unrelated_machines/normalized_flat_menu_three_state_degree_three_normal_form_review.md"
       ],
       "status": "scope limitation"
+    },
+    {
+      "id": "um_normalized_flat_cartesian_tensor_reverse_amplification_v1_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BINARY-AFFINE-LINE-CARTESIAN-MENU-DOMAIN-v1",
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1",
+      "statement": "任意partial与任意group state重选的精确V_t=1−2^-t，完整actualOPT(P_t)=1+2^-t；cyclic跨坐标labels构造达界，任意补组交一点给全调度下界。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md",
+        "research/reviews/unrelated_machines/cartesian_menu_reverse_amplification_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "um_normalized_flat_cartesian_tensor_reverse_amplification_v1_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只否定明示裸Cartesian菜单NO乘幂；不排其它产品/物理一致性/source image，不供hardness；degree随D增长，后接精确正规形不恢复NO。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md",
+        "research/reviews/unrelated_machines/cartesian_menu_reverse_amplification_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_coordinate_oblivious_cartesian_menu_quota_v1_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BINARY-AFFINE-LINE-CARTESIAN-MENU-DOMAIN-v1",
+        "UM-COORDINATE-OBLIVIOUS-SELECTOR-SEMANTIC-CONDITION-v1"
+      ],
+      "conclusion": "UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1",
+      "statement": "每一固定f族及优化f后的值均精确floor((3/2)^t)/2^t；全子集Hall给显式位多项式整数配额构造。与bare值共同排除同族统一常数保值的事后一致性修复。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md",
+        "research/reviews/unrelated_machines/coordinate_oblivious_cartesian_menu_quota_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "um_coordinate_oblivious_cartesian_menu_quota_v1_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "一致性仅为额外语义，未用实际普通P实现，不能作为NO解码免费约束；无hardness源或一般UM反面。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md",
+        "research/reviews/unrelated_machines/coordinate_oblivious_cartesian_menu_quota_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_cartesian_menu_finite_actual_checks",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CARTESIAN-MENU-FINITE-ACTUAL-AUDIT-v1"
+      ],
+      "conclusion": "UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1",
+      "statement": "仅有限t1..4原矩阵与实际见证；t1另完整最优枚举，不导一般t证明。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md",
+        "tests/audits/unrelated_machines/audit_normalized_flat_cartesian_tensor_reverse_amplification.py",
+        "evidence/runs/unrelated_machines/cartesian_menu_reverse_v1/summary.json"
+      ],
+      "status": "finite verification"
+    },
+    {
+      "id": "um_cartesian_coordinate_constant_repair_joint",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1",
+        "UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1"
+      ],
+      "conclusion": "UM-CARTESIAN-COORDINATE-CONSTANT-REPAIR-OBSTRUCTION-v1",
+      "statement": "两种精确值之比趋零，统一常数输出保值不存在；两个共同前提都列出。",
+      "refs": [
+        "research/current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md",
+        "research/reviews/unrelated_machines/coordinate_oblivious_cartesian_menu_quota_review.md"
+      ],
+      "status": "complete scoped corollary"
     }
   ]
 }

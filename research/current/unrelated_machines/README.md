@@ -425,3 +425,5 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 
 
 [两组资源加权菜单的联合近似](degree_two_group_bounded_menu_joint_rounding.md)新增DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2：每resource跨≤2groups、每组≤K显式states、private总量≤1，group平均接已有VW2近似给完整实际C≤2−(2−OPT)/(2K)≤(2−1/(2K))OPT，bonus精确保OPT；Q2/K7任意cell权也在27/14结构界内。不是先big匹配再diffuse补全，非generalUM；menus2的unit阈值另可2SAT。 [有限组交互](weighted_menu_bounded_group_interaction_rounding.md)另给任意K、固定M/Δ的实际改善；[三坐标与三态正规形](degree_three_weighted_menu_cube_embedding.md)精确保OPT/V把任意normalized flat源降K3/资源度3再入zero cube，标准path已核BCG归属。[SC值桥/菜单数锐界](normalized_weighted_menu_santa_value_and_size.md)只排同U逐玩家shortcut。原source无须先限K/Δ，剩余承重仍是norm1与全partial导出的tiny-gap NO decoder，主目标未解。
+
+[笛卡尔菜单的反向放大与一致性差距](cartesian_menu_recoupling_and_coordinate_consistency.md)：一个明确裸product实际OPT=1+2^-t趋1；额外逐坐标语义的配额却为floor((3/2)^t)/2^t趋0。两精确值排同族常数保值事后修复，尚缺真实负载实现的一致性；只否定该放大合同，非一般困难性。

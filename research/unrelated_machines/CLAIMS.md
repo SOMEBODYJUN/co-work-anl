@@ -2528,3 +2528,39 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：K1正向无singleton已明确特判；原§1–5字节保持，新增不同ID不替旧域；无standing fatal。
 - Status：完整限定表示重构/多份实际内审；实现none、未外审、不主张既有装置原创，UM-TARGET-v1仍OPEN。
 - Related Files：[正文](../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)、[真实scope审查](../reviews/unrelated_machines/normalized_flat_menu_three_state_degree_three_normal_form_review.md)及逐SHA原始来源。
+
+
+## UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1：裸笛卡尔菜单的精确反向放大
+
+- Objects / Domain / Quantifiers / Definitions：t>=1，D=2^t，全部二元affine-line Cartesian groups/states/resources，private 1/D及unit selector/resource，全部原state jobs。 对全部所列参数成立；完整矩阵/额外语义及所用符号见[正文](../current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)。
+- Exact Statement / Conclusion：任意partial与任意group state重选的精确V_t=1−2^-t，完整actualOPT(P_t)=1+2^-t；cyclic跨坐标labels构造达界，任意补组交一点给全调度下界。
+- Assumptions：非空t>=1显式族、不可拆资源、全部原jobs；额外一致性仅第二ID，ordinary P未免费实现。
+- Scope / Limits：只否定明示裸Cartesian菜单NO乘幂；不排其它产品/物理一致性/source image，不供hardness；degree随D增长，后接精确正规形不恢复NO。
+- Dependencies：完整二元Cartesian菜单定义；第一ID用普通UM与cyclic方程，第二用额外f一致性和全子集Hall整数matching；常数修复后果共同用两ID。
+- Evidence：完整作者Proof、Exact-first独立重构、实际作者读后/最终限定章节审查；root实际亲读。第一ID有限t1..4全原矩阵核验及t1完整1024枚举另列checks，非一般证明前提。
+- Counterevidence / Objections：t0明确排除；C>=2不套unit独占；跨资源度D非3；无standing fatal。
+- Status：完整限定结构结果；实际内部审查；第一ID仅audit_only、第二none；未外审或认证全球新颖性，UM-TARGET-v1仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)、[实际审查](../reviews/unrelated_machines/cartesian_menu_reverse_amplification_review.md)及原字节来源。
+
+
+## UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1：逐坐标状态一致性下的精确整数资源配额
+
+- Objects / Domain / Quantifiers / Definitions：同二元t>=1族，额外强制全体group状态ell_i(g)=f_i(g_i)，各固定f_i任意；partial资源子集仍完全自由且全局不交。 对全部所列参数成立；完整矩阵/额外语义及所用符号见[正文](../current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)。
+- Exact Statement / Conclusion：每一固定f族及优化f后的值均精确floor((3/2)^t)/2^t；全子集Hall给显式位多项式整数配额构造。与bare值共同排除同族统一常数保值的事后一致性修复。
+- Assumptions：非空t>=1显式族、不可拆资源、全部原jobs；额外一致性仅第二ID，ordinary P未免费实现。
+- Scope / Limits：一致性仅为额外语义，未用实际普通P实现，不能作为NO解码免费约束；无hardness源或一般UM反面。
+- Dependencies：完整二元Cartesian菜单定义；第一ID用普通UM与cyclic方程，第二用额外f一致性和全子集Hall整数matching；常数修复后果共同用两ID。
+- Evidence：完整作者Proof、Exact-first独立重构、实际作者读后/最终限定章节审查；root实际亲读。第一ID有限t1..4全原矩阵核验及t1完整1024枚举另列checks，非一般证明前提。
+- Counterevidence / Objections：t0明确排除；C>=2不套unit独占；跨资源度D非3；无standing fatal。
+- Status：完整限定结构结果；实际内部审查；第一ID仅audit_only、第二none；未外审或认证全球新颖性，UM-TARGET-v1仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)、[实际审查](../reviews/unrelated_machines/coordinate_oblivious_cartesian_menu_quota_review.md)及原字节来源。
+
+
+## UM-CARTESIAN-COORDINATE-CONSTANT-REPAIR-OBSTRUCTION-v1：两种精确值共同推出的修复限制
+
+- Objects / Domain / Quantifiers / Definitions：上述同一二元完整Cartesian族所有t>=1，输入任意高值bare allocation，输出同groups/resources/states的coordinate-oblivious allocation；统一c>0不依赖t。
+- Exact Statement / Conclusion：不存在此输出保证minvalue至少c乘输入minvalue的合同，即使不要求可计算。将其用于bare达界witness即迫c<=floor((3/2)^t)/(2^t−1)，右侧趋0。
+- Assumptions / Dependencies：共同使用UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1与UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1的两种精确值，graph两前提均列。
+- Scope：只排同族、受限输出的统一正乘法保值修复，不排改变实际任务/资源/状态的新归约；不提供物理一致性或hardness源。
+- Evidence / Counterevidence / Status：正文§7证明；general实际canonical §6–7审查明确重证该比值矛盾；root独核，无standing fatal。是完整直接推论、非另一个发现过程；implementation none、外审/全球新颖性未认证。
+- Related Files：同上两Claim的[正文](../current/unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)及[一致性实际审查](../reviews/unrelated_machines/coordinate_oblivious_cartesian_menu_quota_review.md)。

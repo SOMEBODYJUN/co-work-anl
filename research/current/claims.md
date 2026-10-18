@@ -1217,6 +1217,11 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-FLAT-MENU-RESOURCE-DEGREE-THREE-PATH-REDUCTION-v1 | 完整显式flat weighted-menu UM，非空groups/menus、state distinct资源、private非负质量≤1、selector1/resource1；资源跨组度与K/M不限制，zero/empty/unused均保留。 每旧资源按group分ports，d−1真实两态heavy-only helpers；target资源跨组≤3、K≤max(Kold,2)，任意actual C<2全旧jobs双向不增映射，actualOPT精确保含2；norm1 partial V含0精确保。 | [正文](unrelated_machines/degree_three_weighted_menu_cube_embedding.md)、[实际scope审查](../reviews/unrelated_machines/flat_menu_resource_degree_three_path_reduction_review.md)；known技巧的精确接口，非主hardness。 |
 | UM-NORMALIZED-FLAT-MENU-THREE-STATE-DEGREE-THREE-NORMAL-FORM-v1 | 完整显式flat菜单且每state非负private质量恰1，非空groups/menus、distinct资源、全部原jobs；K/资源跨组度/M任意，原selector在target改为root资格是明示构造。 先满binary selector树（原states在leaf、真实own资源与unit singletons），后按真实中间memberships路径降度；actualOPT与one-state partial V精确保含2/0，最终K≤3/Δ≤3，任意C<2全原jobs双向poly不增；K1单叶原位。 | [正文](unrelated_machines/degree_three_weighted_menu_cube_embedding.md)、[实际scope审查](../reviews/unrelated_machines/normalized_flat_menu_three_state_degree_three_normal_form_review.md)；known技巧的精确接口，非主hardness。 |
 
+| UM-NORMALIZED-FLAT-CARTESIAN-TENSOR-REVERSE-AMPLIFICATION-v1 | t>=1，D=2^t，全部二元affine-line Cartesian groups/states/resources，private 1/D及unit selector/resource，全部原state jobs。 任意partial与任意group state重选的精确V_t=1−2^-t，完整actualOPT(P_t)=1+2^-t；cyclic跨坐标labels构造达界，任意补组交一点给全调度下界。 | [正文](unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)、[实际scope审查](../reviews/unrelated_machines/cartesian_menu_reverse_amplification_review.md)；不是近2源。 |
+| UM-COORDINATE-OBLIVIOUS-CARTESIAN-MENU-QUOTA-v1 | 同二元t>=1族，额外强制全体group状态ell_i(g)=f_i(g_i)，各固定f_i任意；partial资源子集仍完全自由且全局不交。 每一固定f族及优化f后的值均精确floor((3/2)^t)/2^t；全子集Hall给显式位多项式整数配额构造。与bare值共同排除同族统一常数保值的事后一致性修复。 | [正文](unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)、[实际scope审查](../reviews/unrelated_machines/coordinate_oblivious_cartesian_menu_quota_review.md)；不是近2源。 |
+
+| UM-CARTESIAN-COORDINATE-CONSTANT-REPAIR-OBSTRUCTION-v1 | 同一binary族bare达界值趋1而coordinate-oblivious最优趋0，故同族输出修复无统一正乘法保值c；两个主Claim共同前提。 | [正文§7](unrelated_machines/cartesian_menu_recoupling_and_coordinate_consistency.md)、实际一致性审查；只为直接推论，非物理gadget。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

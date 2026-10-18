@@ -1,0 +1,7 @@
+# 裸Cartesian菜单审计：root实际代码与原矩阵复核
+
+2026-10-18 boss11 root。实际全文读取audit_normalized_flat_cartesian_tensor_reverse_amplification.py（SHA256 efa03ab9bc976f899e7a1b9bd7af6a96a68ef76c18decbbb7e31921eb18d262c），未由此生成一般证明。代码用integer D单位；从全资源筛支持，完整state表/所有selector与incidence均建；固定给定cyclic见证，独立checker回读真实finite rows；所有有序补组/state pairs交1。t1完整1024 assignments，t>=2有硬拒绝brute guard。fresh mkdir/openx不覆盖。
+
+root实际用相同repo代码在全新scratch目录tensor_reverse_root_reproduction_v1运行，所有15个输出文件逐字节与fee原冻结相同（含code hash与summary）。另未import任何审计构造/校验器，从原t_sparse_P.json逐资源/组/state定义独立生成expected finite资格表并比实际；全4710jobs各一次所有load；t1再次从实际finite rows枚举1024得3/2。具体有限结果冻root_original_matrix_verification.json。
+
+软件仅audit_only；不实现受限f匹配、不实现未知OPT或general UM，不把有限结果当forall t推导。root没有声称重新运行fee的拒绝覆盖操作；该项执行由fee独立记录。所有原始输出保持字节并保原manifest路径结构。
