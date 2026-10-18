@@ -1278,6 +1278,18 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1 | For the explicit bipartite <=2-core-end CONFIG source domain, half-color activation has polynomially many genuine OPT1 atoms. Two disjoint lifts admit one allowed nullspace direction with exact maximal steps +/-1/2, full CONFIG1 throughout, and both endpoint frozen-support optima max(1,OPT(P positive marginal support)). Initial rank J+P and nullity twice-the-positive-support-size plus2m−P are exact. | [正文](unrelated_machines/configuration_preserving_elimination_support_loss.md)、[实际审查](../reviews/unrelated_machines/configuration_elimination_support_loss_review.md)；The direction is a direct sum, not support-minimal/circuit. Refutes arbitrary direction plus both-sign endpoint checking only; different directions, circuit rules, preserved common atoms or reopened edges remain open. |
 
+| UM-HOME-UNIT-CYCLE-ELIMINATION-v1 | 无home行预算限制；不要求原支持DAG；完整批次比较，不声明单件安全迁移。 | 每H任务有指定home a∈[0,1]、其余有限端均1；U全unit；任意给定实际σ。反复取消简单有向转移环，至多|H|轮得完整σ′，保U位置、每H保原端或回home、外送DAG且∀i L_i(σ′)≤L_i(σ)。C<2时所得外送图为森林。 | [任意负载下单home单位外端的逐机消环](unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)；实际独立攻击、精确审计；无外审/新颖性认证，主目标OPEN。 |
+
+| UM-HOME-UNIT-ROOTED-FOREST-v1 | 只使用给定实际调度；外部逐机不增不成立；阈值C=2的同容量森林推广有反例。 | 同一home/unit模型，给实际σ、Cmax(σ)≤C<2。W为从U实际占位机沿实际外送弧可达集。保W发出弧，其他H回home，得完整τ：W上负载精确保原σ，外部负载精确home预算b_i；W上恰|U|棵互不交根树。若∀i∉W,b_i≤C，则Cmax(τ)≤C。 | [小于二调度的保unit占位根森林](unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)；实际独立攻击、精确审计；无外审/新颖性认证，主目标OPEN。 |
+
+| UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1 | 允许环境环、输入根入边、不可达环和巨大需求；不把旧DAG v1静默扩域；无未知树选择算法。 | 任意显式有限非空简单无自环有向图D、根r及二进制需求k≥0，k_v=0⇒outdegree0。b*为真实向外根树的截断最小度需比最优值。原token/filler构造P(D,k)仍满足OPT=2−b*；实际C<2调度可位poly解码b≥2−C根树，给树可位poly构全部任务≤2−b调度。 | [任意简单有向需求图的压缩任务值恒等式](unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)；实际独立攻击、精确审计；无外审/新颖性认证，主目标OPEN。 |
+
+| UM-SC-BLOCK-TYPE-PROFILE-RECONSTRUCTION-v1 | 只生成类型列表，不求共同选择；ε固定；n0输出空菜单；替代自足证明已知BLMRS单阈值合同，非原文逐字机制。 | 固定任意有理ε>0，对任意显式非负有理m×n估值、m≥1,n≥0，可确定性位poly生成舍下v′≤v、Oε(log(n+1))正类型与每player显式poly count profiles。对每个原值≥1实际子集A都有A′⊆A完整match某profile且v′(A′)≥1/(1+ε)；因此不交YES见证仍保留。 | [单阈值Santa Claus的分块计数多项式配置](unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)；实际独立攻击、精确审计；无外审/新颖性认证，主目标OPEN。 |
+
+| UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1 | 含V0、重复profile、全部未选jobs及空菜单另外固定OPT2分支；max-profile一般非次模有四资源反例；不提供全局常数finder或新困难性源。 | 任意显式非空player/resource集合、非空indexed正总值类型profiles、每profile≤n件，f_ic(B)=Σ_v(v/Wc)min(c(v),|B∩E_iv|)，F_i=max_c f_ic，V=max不交B_i min_iF_i。selector/token普通UM构造满足OPT=2−V；给bundles输出全部任务峰恰2−minF，给任意调度C输出每F_i≥max(0,2−C)的实际不交bundles。 | [归一化partition-rank菜单的精确调度值](unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)；实际独立攻击、精确审计；无外审/新颖性认证，主目标OPEN。 |
+
+| UM-DIVISIBLE-TWO-SIZE-NEUTRAL-REPAIR-v1 | 只限整比、完全同机和全资格；批次支持可随tiny数增长；不保证批内逐件同峰值，不解决一般UM。 | 全资格同机m≥1、k件Qδ宏及N件δ tiny，Q≥1二进制整数、δ>0有理。任意初态可确定性位poly用≤floor(k²/2)宏批次及≤N单tiny步达OPT=δmax(Qceil(k/m),ceil((kQ+N)/m))；各批次新负载被旧majorize，组成势Σu_i²控制中性步不循环。 | [整比双尺寸任意初态的防循环中性精确修复](unrelated_machines/divisible_two_size_neutral_repair.md)；实际独立攻击、精确审计；无外审/新颖性认证，主目标OPEN。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

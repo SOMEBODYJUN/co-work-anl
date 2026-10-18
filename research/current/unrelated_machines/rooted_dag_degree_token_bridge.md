@@ -140,3 +140,7 @@ C_max≤2−b(H)≤2−b*/2。
 ## 8. 共同拥塞流的可构造接续
 
 [共同拥塞证书正文](rooted_dag_congestion_flow.md)给任意深度下的一次整数流提取、固定W最小K搜索与精确锐比例1/(2K−1)，并明确激活边际LP的单位汇流走廊失效。与第7节浅层半比例构造输入合同不同；两者都未给一般输入上的好支撑搜索。真实树输出可直接交给本页树→调度构造，未建立一般UM输入到这些合同的逆归约。
+
+## 环境有向环的接续范围
+
+旧DAG v1及其原审计不变。[一般有向需求桥](home_unit_cycle_elimination_and_directed_token_bridge.md)以新身份UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1去掉输入无环及根输入入度零假设；输出始终为真实无环根树，未知树选择义务不变。

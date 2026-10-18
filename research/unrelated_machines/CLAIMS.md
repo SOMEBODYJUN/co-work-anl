@@ -2945,3 +2945,69 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：预算是full eligible而非selected；unit/empty clause不在域；zero原job仍执行，未选root保留，旧cohabiting域认证/锐性不转移，无standing fatal。
 - Status：证明完整，实际独立重构/读后/最终全文审；implementation none、外审与全球新颖性未认证；UM-TARGET-v1 OPEN。
 - Related Files：[正文](../current/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md)、[审查](../reviews/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape_review.md)与原件。
+
+## UM-HOME-UNIT-CYCLE-ELIMINATION-v1：任意负载下单home单位外端的逐机消环
+
+- Exact Statement / Objects / Domain / Quantifiers：每H任务有指定home a∈[0,1]、其余有限端均1；U全unit；任意给定实际σ。反复取消简单有向转移环，至多|H|轮得完整σ′，保U位置、每H保原端或回home、外送DAG且∀i L_i(σ′)≤L_i(σ)。C<2时所得外送图为森林。
+- Assumptions / Definitions / Scope：无home行预算限制；不要求原支持DAG；完整批次比较，不声明单件安全迁移。 全部对象、阈值及退化分支见[自足正文](../current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)。
+- Conclusion：严格限于上述合同；UM-TARGET-v1保持OPEN。
+- Dependencies：UM-MODEL-v1；标准有限组合、有理数精确运算及正文逐条推导。不调用未知最优分配或免费共同选择oracle。
+- Evidence：自足一般证明；已发生的陈述先行/读后攻击及两路精确回放见[实际审查](../reviews/unrelated_machines/home_unit_cycle_and_directed_token_review.md)；有限输出单独冻结。
+- Counterevidence / Objections：已排除的越界推广及其反例见正文；无standing fatal限于当前版本。有限搜索不提升一般真值。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。Truth、实现、外审、新颖性与主目标分别管理。
+- Related Files：正文、实际审查、tests/audits/unrelated_machines/home_unit_cycle_and_directed_token.py, tests/audits/unrelated_machines/home_unit_cycle_independent.py、evidence/runs/unrelated_machines/home_unit_cycle_and_directed_token_audit.json。
+
+## UM-HOME-UNIT-ROOTED-FOREST-v1：小于二调度的保unit占位根森林
+
+- Exact Statement / Objects / Domain / Quantifiers：同一home/unit模型，给实际σ、Cmax(σ)≤C<2。W为从U实际占位机沿实际外送弧可达集。保W发出弧，其他H回home，得完整τ：W上负载精确保原σ，外部负载精确home预算b_i；W上恰|U|棵互不交根树。若∀i∉W,b_i≤C，则Cmax(τ)≤C。
+- Assumptions / Definitions / Scope：只使用给定实际调度；外部逐机不增不成立；阈值C=2的同容量森林推广有反例。 全部对象、阈值及退化分支见[自足正文](../current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)。
+- Conclusion：严格限于上述合同；UM-TARGET-v1保持OPEN。
+- Dependencies：UM-MODEL-v1；标准有限组合、有理数精确运算及正文逐条推导。不调用未知最优分配或免费共同选择oracle。
+- Evidence：自足一般证明；已发生的陈述先行/读后攻击及两路精确回放见[实际审查](../reviews/unrelated_machines/home_unit_cycle_and_directed_token_review.md)；有限输出单独冻结。
+- Counterevidence / Objections：已排除的越界推广及其反例见正文；无standing fatal限于当前版本。有限搜索不提升一般真值。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。Truth、实现、外审、新颖性与主目标分别管理。
+- Related Files：正文、实际审查、tests/audits/unrelated_machines/home_unit_cycle_and_directed_token.py, tests/audits/unrelated_machines/home_unit_cycle_independent.py、evidence/runs/unrelated_machines/home_unit_cycle_and_directed_token_audit.json。
+
+## UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1：任意简单有向需求图的压缩任务值恒等式
+
+- Exact Statement / Objects / Domain / Quantifiers：任意显式有限非空简单无自环有向图D、根r及二进制需求k≥0，k_v=0⇒outdegree0。b*为真实向外根树的截断最小度需比最优值。原token/filler构造P(D,k)仍满足OPT=2−b*；实际C<2调度可位poly解码b≥2−C根树，给树可位poly构全部任务≤2−b调度。
+- Assumptions / Definitions / Scope：允许环境环、输入根入边、不可达环和巨大需求；不把旧DAG v1静默扩域；无未知树选择算法。 全部对象、阈值及退化分支见[自足正文](../current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)。
+- Conclusion：严格限于上述合同；UM-TARGET-v1保持OPEN。
+- Dependencies：UM-MODEL-v1, UM-HOME-UNIT-ROOTED-FOREST-v1；标准有限组合、有理数精确运算及正文逐条推导。不调用未知最优分配或免费共同选择oracle。
+- Evidence：自足一般证明；已发生的陈述先行/读后攻击及两路精确回放见[实际审查](../reviews/unrelated_machines/home_unit_cycle_and_directed_token_review.md)；有限输出单独冻结。
+- Counterevidence / Objections：已排除的越界推广及其反例见正文；无standing fatal限于当前版本。有限搜索不提升一般真值。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。Truth、实现、外审、新颖性与主目标分别管理。
+- Related Files：正文、实际审查、tests/audits/unrelated_machines/home_unit_cycle_and_directed_token.py, tests/audits/unrelated_machines/home_unit_cycle_independent.py、evidence/runs/unrelated_machines/home_unit_cycle_and_directed_token_audit.json。
+
+## UM-SC-BLOCK-TYPE-PROFILE-RECONSTRUCTION-v1：单阈值Santa Claus的分块计数多项式配置
+
+- Exact Statement / Objects / Domain / Quantifiers：固定任意有理ε>0，对任意显式非负有理m×n估值、m≥1,n≥0，可确定性位poly生成舍下v′≤v、Oε(log(n+1))正类型与每player显式poly count profiles。对每个原值≥1实际子集A都有A′⊆A完整match某profile且v′(A′)≥1/(1+ε)；因此不交YES见证仍保留。
+- Assumptions / Definitions / Scope：只生成类型列表，不求共同选择；ε固定；n0输出空菜单；替代自足证明已知BLMRS单阈值合同，非原文逐字机制。 全部对象、阈值及退化分支见[自足正文](../current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)。
+- Conclusion：严格限于上述合同；UM-TARGET-v1保持OPEN。
+- Dependencies：UM-MODEL-v1；标准有限组合、有理数精确运算及正文逐条推导。不调用未知最优分配或免费共同选择oracle。
+- Evidence：自足一般证明；已发生的陈述先行/读后攻击及两路精确回放见[实际审查](../reviews/unrelated_machines/type_profile_compression_and_rank_bridge_review.md)；有限输出单独冻结。
+- Counterevidence / Objections：已排除的越界推广及其反例见正文；无standing fatal限于当前版本。有限搜索不提升一般真值。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。Truth、实现、外审、新颖性与主目标分别管理。
+- Related Files：正文、实际审查、tests/audits/unrelated_machines/santa_block_type_profiles.py, tests/audits/unrelated_machines/type_matching_rank_bridge.py、evidence/runs/unrelated_machines/type_profile_compression_and_rank_bridge_audit.json。
+
+## UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1：归一化partition-rank菜单的精确调度值
+
+- Exact Statement / Objects / Domain / Quantifiers：任意显式非空player/resource集合、非空indexed正总值类型profiles、每profile≤n件，f_ic(B)=Σ_v(v/Wc)min(c(v),|B∩E_iv|)，F_i=max_c f_ic，V=max不交B_i min_iF_i。selector/token普通UM构造满足OPT=2−V；给bundles输出全部任务峰恰2−minF，给任意调度C输出每F_i≥max(0,2−C)的实际不交bundles。
+- Assumptions / Definitions / Scope：含V0、重复profile、全部未选jobs及空菜单另外固定OPT2分支；max-profile一般非次模有四资源反例；不提供全局常数finder或新困难性源。 全部对象、阈值及退化分支见[自足正文](../current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)。
+- Conclusion：严格限于上述合同；UM-TARGET-v1保持OPEN。
+- Dependencies：UM-MODEL-v1；标准有限组合、有理数精确运算及正文逐条推导。不调用未知最优分配或免费共同选择oracle。
+- Evidence：自足一般证明；已发生的陈述先行/读后攻击及两路精确回放见[实际审查](../reviews/unrelated_machines/type_profile_compression_and_rank_bridge_review.md)；有限输出单独冻结。
+- Counterevidence / Objections：已排除的越界推广及其反例见正文；无standing fatal限于当前版本。有限搜索不提升一般真值。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。Truth、实现、外审、新颖性与主目标分别管理。
+- Related Files：正文、实际审查、tests/audits/unrelated_machines/santa_block_type_profiles.py, tests/audits/unrelated_machines/type_matching_rank_bridge.py、evidence/runs/unrelated_machines/type_profile_compression_and_rank_bridge_audit.json。
+
+## UM-DIVISIBLE-TWO-SIZE-NEUTRAL-REPAIR-v1：整比双尺寸任意初态的防循环中性精确修复
+
+- Exact Statement / Objects / Domain / Quantifiers：全资格同机m≥1、k件Qδ宏及N件δ tiny，Q≥1二进制整数、δ>0有理。任意初态可确定性位poly用≤floor(k²/2)宏批次及≤N单tiny步达OPT=δmax(Qceil(k/m),ceil((kQ+N)/m))；各批次新负载被旧majorize，组成势Σu_i²控制中性步不循环。
+- Assumptions / Definitions / Scope：只限整比、完全同机和全资格；批次支持可随tiny数增长；不保证批内逐件同峰值，不解决一般UM。 全部对象、阈值及退化分支见[自足正文](../current/unrelated_machines/divisible_two_size_neutral_repair.md)。
+- Conclusion：严格限于上述合同；UM-TARGET-v1保持OPEN。
+- Dependencies：UM-MODEL-v1；标准有限组合、有理数精确运算及正文逐条推导。不调用未知最优分配或免费共同选择oracle。
+- Evidence：自足一般证明；已发生的陈述先行/读后攻击及两路精确回放见[实际审查](../reviews/unrelated_machines/divisible_two_size_neutral_repair_review.md)；有限输出单独冻结。
+- Counterevidence / Objections：已排除的越界推广及其反例见正文；无standing fatal限于当前版本。有限搜索不提升一般真值。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。Truth、实现、外审、新颖性与主目标分别管理。
+- Related Files：正文、实际审查、tests/audits/unrelated_machines/divisible_two_size_neutral_repair.py, tests/audits/unrelated_machines/divisible_two_size_neutral_independent.py、evidence/runs/unrelated_machines/divisible_two_size_neutral_repair_audit.json。

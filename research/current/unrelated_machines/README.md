@@ -470,3 +470,13 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [bounded_configuration_cardinality_slot_margin.md](bounded_configuration_cardinality_slot_margin.md)给固定配置任务数K的全行槽包络界：K≥2时(2−K^{−(K−1)})T，K1为T；K2、K3的3T/2、11T/6锐。行总资格数和时间跨度均无固定限制，但K增长时余量消失。另有固定K最优任务数承诺的未知OPT算法，不适用于无承诺全输入。
 
 [configuration_preserving_elimination_support_loss.md](configuration_preserving_elimination_support_loss.md)给三个分离身份：真实OPT1初态经合法枢轴可达D0且所有固定补全近二；一般激活提升可在完整CONFIG路径中一次删掉所有好补全；二分两副本使同一方向两个符号端点均坏。双副本方向不是circuit方向，三个结果均不排具体选向、真实共同分解或重开端。完整CONFIG可行性、零缺陷和保负载不能免费替代共同支撑安全。
+
+## 单home森林、类型匹配桥与中性修复的准确接口
+
+本阶段完成三个限定接口，`UM-TARGET-v1`仍OPEN。它们不合并成一般算法：
+
+- [单home消环及一般有向token桥](home_unit_cycle_elimination_and_directed_token_bridge.md)：给定实际调度可逐机去环；小于2且非达home预算合法时保unit身份归根森林。旧DAG输入不被静默扩域，新ID给任意简单有向支持的真实OPT=2−b*。未知好根树/调度仍缺。
+- [分块类型配置与真实rank后端](type_profile_compression_and_matching_rank_bridge.md)：补齐已知SC单阈值列表的可生成性，用替代证明修复原文cutoff字面问题；后端真实值OPT=2−V，全部jobs与空菜单分支闭合。每profile次模不能推出max-profile次模；共同配置选择和近二source仍缺。
+- [整比双尺寸中性精确修复](divisible_two_size_neutral_repair.md)：同机全资格任意初态可经防循环中性换形达OPT；严格batch启动界不能扩大为中性迭代障碍。一般异端时间会破坏负载互换恒等式。
+
+精确身份、实际审查与有限证据分别沿本题账本读取；外审和新颖性均未认证。

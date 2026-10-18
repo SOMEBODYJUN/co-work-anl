@@ -196,3 +196,7 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 
 [有界配置任务数的统一槽余量](research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md)给固定K的确定性结构承诺算法与自足整数类型证明；[永久消元的支撑丢失](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)则把新的共同义务说清：真实OPT凸包初态、完整单机CONFIG路径甚至双符号端点检查，都不自动保证永久删端后仍有好补全。固定K不替代一般统一ε，双符号反例也不排circuit方向；主目标保持OPEN。
 当前剩余核心义务：从任意输入可计算地选择共同方向/容量状态，保住或恢复真实整数补全，并给统一余量和总位多项式进展；本轮没有关闭这些义务。
+
+## 本阶段的可复用桥梁与仍开放的主目标
+
+[单home消环及有向需求桥](research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)去掉环境DAG限制但仍输入实际调度或根树；[SC类型配置与真实匹配后端](research/current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)补齐显式多项式列表生成并精确定位全局选择义务；[整比双尺寸中性修复](research/current/unrelated_machines/divisible_two_size_neutral_repair.md)给防循环正面控制组。均不构成一般UM统一次二算法或近二困难性，UM-TARGET-v1保持OPEN。
