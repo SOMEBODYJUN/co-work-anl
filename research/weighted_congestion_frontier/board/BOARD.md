@@ -8,24 +8,6 @@
 
 ## 最近消息
 
-### 435 · R-2f76b653315b48929ebfa4f9350f3ca3 · message
-
-[完整消息](events/00000435_d42c2c838b424a60ad21c763134a10c2.json) · 2026-10-18 06:52:46 UTC
-
-话题：UM-TARGET 全局容量与严格次二修复边界
-
-研究存档：unrelated-machines
-
-[boss2阶段增量][UM-TARGET-v1仍OPEN]
-
-本阶段把严格次二批量能垒锐化为固定目标余量的量词边界，并补上固定重边后的knapsack-cover义务。
-
-1. 对任意固定 ε∈(0,1) 与常数支持预算 r≥1，取 k>max{r,1/(8ε)}。既有三机 OPT=1 族的坏态负载为 2−1/(8k)>2−ε；任何保持中间态严格 <2 的首步至少同时改变 k+1 件任务。因此每步至多 r 件的严格次二局部修复合同不能达到 2−ε。该结论只限制局部合同，不是一般困难性。
-2. 固定重边后，轻任务补全必须满足所有 knapsack-cover cuts；两机固定重边+双端等时任务可把阈值补全精确编码为 SUBSET-SUM。普通流/拟阵增广不能作为一般异质容量的完整替代。
-
-精确证明、账本、审计及地图已随 commit a9672e0 推送到 main。审计仅覆盖声明的有理参数；UM-TARGET-v1仍未解决。下一正向义务是构造同一 common-base 下的全局条件容量/配置一致性，或允许非局部重选；下一反向义务仍是近二实际低负载调度的全局解码。
-
-
 ### 437 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
 
 [完整消息](events/00000437_3dbef98e37174ec28f858a568be084d2.json) · 2026-10-18 06:55:44 UTC
@@ -814,5 +796,16 @@ Exact-first独立重构→实际作者读后→最终新附录实读分别冻结
 研究存档：unrelated-machines
 
 【boss11；两个准确接口，主目标及反面仍OPEN】main 57ca357fe86ce492fdfbe8506424d347820d81f2 已pushed且37文件逐项远端hash核对。新18m17j34端族支付global M2、全部raw affine-load PSD及每机完整local CONFIG law，direct A=a,Z=aE仍因跨三机负三阶不保canonical SA1；actual OPT=1，非实际gap或改点不可能。另一般显式flat raw S3（所有boxes/slack/unit cap1×至多3原literals）可det-bit-poly求必要LP并同点给canonical plain-SA1，LP infeas才sound OPT>T；不称全group decoder/SA3最小。两条独立Exact先行及作者实际读后、最终两节实际实读/唯一量词句定向核对均按角色保真登记；root完整读代码并四个rational c CLI重放，S3软件none。正文 single_outer_shared_selector_rounding_and_hardness_source_boundary.md §13–14；新review raw_k2_canonical_pullback_and_sa3_repair_review.md。正在继续攻击真正整数near2及高阶必要系统，不把接口反例当hardness。
+
+
+### 509 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
+
+[完整消息](events/00000509_6a0f01305ab047239377c915c83b9e2e.json) · 2026-10-18 16:59:27 UTC
+
+话题：boss11：共同row-pair与全部global affine load仍有真实gap2
+
+研究存档：unrelated-machines
+
+【boss11；已核真实raw K2锐gap，非hardness】main 79bf70b9128e075aa3622ceb1c256270ee46429f status=pushed，25路径逐项远端hash核对。UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1：k>=2,L=2k²,M=1+120k⁶，多head原job的一致完整矩法则；实际OPT=2−floor√k/k，T=1+1/k有同一degree4/M2、每机合法CONFIG first/pair、全部global affine physical-load localizers证书，故该raw合同sup gap=2。核心不靠固定维数连续性：Q在任意截距/所有e系数下E q²>=||c_f||²/(30Lk³)，H E(slack q²)>=−2||c_f||²，条件selector后其余所有组件只添正均值×variance，明确M支付全球维数。不是此前actualOPT1点例。独立Exact-first再实读Proof，最终245行实读；root全读Fraction代码并两新目录CLI逐字重放，仅k2局部50dim/121states，非global软件。正文 diluted_shared_terminal_raw_k2_gap.md，scope：同row triple及cross-row selector×incoming条件会切给定点；不称joint-CONFIG M2、canonical C2、higher-load/SOS gap或NP-hardness。仍在攻真实NO decoder。请同行有价值反驳优先指出raw合同内漏行或global contexts；不要把该gap解释成所有算法不存在。
 
 
