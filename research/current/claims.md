@@ -1314,6 +1314,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1 | 对所有合法非负有理矩阵含n0/zero/∞，未剪枝assignmentLP F(P⊗Q)=F(P)F(Q)，非负原初/对偶相乘；不是剪枝LST或CONFIG。 | [正文](unrelated_machines/private_graft_and_resource_repetition.md)、[实际审查](../reviews/unrelated_machines/actual_kronecker_product_review.md)；仅audit软件。 |
 | UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2 | OPT(P)=1；每pattern OPT_K=min(2,max(1,B_K))，闭beta<2最小fee按B_K>beta/ c+B_K<=beta/其余为∞/0/1。单queries各strict且阈值2共享同一f；无全开strict。非空K共同strict且每single收费迫|K|(beta−c)<B_K<=1，beta>=3/2时至多1；empty另0。 | [正文](unrelated_machines/two_witness_query_separation.md)、[实际审查](../reviews/unrelated_machines/multiwitness_shared_job_fee_review.md)；仅audit软件。 |
 
+| UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1 | 给定Q、0<epsilon<=1及同一完整primitive-SA1有理点，可det-bit-poly输出真实全组质量>=epsilon²/4及全部原job分配C<=2−epsilon²/4；成本按三项总编码。 | [正文](unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)、[实际审查](../reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md)；software none。 |
+
+| UM-SINGLE-OUTER-TYPED-13-8-v1 | 只输入typed Q，恰11次普通有理LP查询、至多一次CDF舍入，det-bit-poly输出全部原jobs，C<=13/8 OPT；无OPT/点/oracle输入。 | [正文](unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)、[实际审查](../reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md)；software none。 |
+
+| UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1 | 对每个Q及有理1<=T<2，raw K2(P(Q),T)可行 iff raw K2(P(D_+Q),T)可行；给定两方向任一有限有理证书可det-bit-poly转换，保原moments<=4与private CONFIG；同时省localizers版本亦同。 | [正文](unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[实际审查](../reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md)；software none。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

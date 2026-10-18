@@ -3204,3 +3204,45 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：v1空K严格和式错误保留；v2明确非空K，empty另费0。
 - Status：complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded；外审及全球新颖性未认证；UM-TARGET-v1与其反面OPEN。
 - Related Files：[正文](../current/unrelated_machines/two_witness_query_separation.md)、[实际审查](../reviews/unrelated_machines/multiwitness_shared_job_fee_review.md)及其来源/输入/代码/冻结结果。
+
+
+## UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1
+
+- ID/version：UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1。
+- Objects / Domain / Definitions：显式normalized-flat的typed单outer；跨全部outer-state索引的正homes互异、每home恰一own-singleton helper；fallback states normalized且只用与homes分离的任意共享B，可无fallback；无其他groups；全部selector/incidence/zero/unselected jobs保留。
+- Quantifiers / Exact Statement / Conclusion：给定Q、0<epsilon<=1及同一完整primitive-SA1有理点，可det-bit-poly输出真实全组质量>=epsilon²/4及全部原job分配C<=2−epsilon²/4；成本按三项总编码。
+- Assumptions：无复杂度假设；NP-source排除仅作为结构算法在P!=NP下的直接推论。
+- Dependencies：UM-MODEL-v1, UM-SINGLE-OUTER-TYPED-PRIMITIVE-SA1-DOMAIN-v1, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1；页内精确证明及已明确扣除的标准工具。
+- Scope：特殊typed结构，不覆盖多个outer、无own-home辅助groups、一般UM；软件none、福利工具既有、全局新颖性未认证。
+- Evidence：Exact-first独立重构、实际作者读后及最后规范正文的实读；root逐项实际读取；不登记未运行软件。
+- Counterevidence / Objections：多个outer条件点不能免费合并；标准福利后端非本次原创；同名13/8门控矩阵是另一对象。 当前精确域无standing fatal。
+- Status：complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified；主目标及其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)、[实际审查](../reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md)及其保真来源。
+
+
+## UM-SINGLE-OUTER-TYPED-13-8-v1
+
+- ID/version：UM-SINGLE-OUTER-TYPED-13-8-v1。
+- Objects / Domain / Definitions：显式normalized-flat的typed单outer；跨全部outer-state索引的正homes互异、每home恰一own-singleton helper；fallback states normalized且只用与homes分离的任意共享B，可无fallback；无其他groups；全部selector/incidence/zero/unselected jobs保留。
+- Quantifiers / Exact Statement / Conclusion：只输入typed Q，恰11次普通有理LP查询、至多一次CDF舍入，det-bit-poly输出全部原jobs，C<=13/8 OPT；无OPT/点/oracle输入。
+- Assumptions：无复杂度假设；NP-source排除仅作为结构算法在P!=NP下的直接推论。
+- Dependencies：UM-MODEL-v1, UM-SINGLE-OUTER-TYPED-PRIMITIVE-SA1-DOMAIN-v1, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1；页内精确证明及已明确扣除的标准工具。
+- Scope：特殊typed结构，不覆盖多个outer、无own-home辅助groups、一般UM；软件none、福利工具既有、全局新颖性未认证。
+- Evidence：Exact-first独立重构、实际作者读后及最后规范正文的实读；root逐项实际读取；不登记未运行软件。
+- Counterevidence / Objections：多个outer条件点不能免费合并；标准福利后端非本次原创；同名13/8门控矩阵是另一对象。 当前精确域无standing fatal。
+- Status：complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified；主目标及其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)、[实际审查](../reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md)及其保真来源。
+
+
+## UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1
+
+- ID/version：UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1。
+- Objects / Domain / Definitions：显式normalized-flat的全部finite-endpoint Boolean degree4共同functional，M2 PSD、job onehot所有允许乘子、每机器有限有理真实CONFIG的first/pair及全部global affine physical-load localizers；1<=T<2；证书完整提供而非免费finder。
+- Quantifiers / Exact Statement / Conclusion：对每个Q及有理1<=T<2，raw K2(P(Q),T)可行 iff raw K2(P(D_+Q),T)可行；给定两方向任一有限有理证书可det-bit-poly转换，保原moments<=4与private CONFIG；同时省localizers版本亦同。
+- Assumptions：无复杂度假设；NP-source排除仅作为结构算法在P!=NP下的直接推论。
+- Dependencies：UM-MODEL-v1, UM-FLAT-RAW-K2-FINITE-RATIONAL-CERTIFICATE-DOMAIN-v1；页内精确证明及已明确扣除的标准工具。
+- Scope：仅给定raw K2有限有理证书的双向转换；非exact SDP可行性后端、非canonical native C2、非弱R_cons的强gap升级，非一般算法或hardness。
+- Evidence：Exact-first独立重构、实际作者读后及最后规范正文的实读；root逐项实际读取；不登记未运行软件。
+- Counterevidence / Objections：弱R_cons点不证明强K2 gap；不能把canonical额外限制或任意quartic literal非负当raw合同。 当前精确域无standing fatal。
+- Status：complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified；主目标及其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[实际审查](../reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md)及其保真来源。

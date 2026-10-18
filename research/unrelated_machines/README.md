@@ -369,3 +369,5 @@
 [共同叶边际的精确边界](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)（新增§8–11）：精确消去阈值unit-demand叶后，global/全部perspective匹配流即使共享同一叶边际，D_+仍逐点退回basic；diffuse Q_t的完整ordinary OPT=2-1/t。指定partition与自动前提严格分开；非actual-OPT算法下界或hardness。
 
 [归一化门控菜单与源判别](../current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权显式norm1四层门控类有完整未知OPT的13/8算法；高低组比例纠错及near-perfect partial-NO由福利LP判别，原flat/共享内部/多层未覆盖。实际矩阵完整平方可把8机10job的OPT3/2降至1（private_graft页§7）；多见证互斥收费阈值可达2但不能同时多测试（two_witness页§6）。均不是一般反面证明。
+
+[单外层算法](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)与[完整K2路径保持](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md#12-完整-unit-resource-路径对共同四次矩证书的双向保持)：单outer且每正home有私有singleton helper的完整flat有11次普通LP查询的13/8算法；多个outer未覆盖。相邻D_+路径另在给定raw K2的degree4/M2/逐机CONFIG first-pair/global affine load localizer合同下双向保全旧矩；仅证书转换，无finder或强gap。

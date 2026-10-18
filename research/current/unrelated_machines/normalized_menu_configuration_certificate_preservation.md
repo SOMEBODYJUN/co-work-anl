@@ -336,3 +336,201 @@ P_0=D^2(t+2),\quad L_0=D^2+Dt(D-1).
 软件证据只按新审查及冻结运行的实际范围登记。root 已实际读、独立重跑两套独立 checker；弱合同与强 (MC) 合同的实际覆盖须逐套列明，旧弱程序输出不自动成为强化审计。原作者脚本及有限统计仅保留其历史来源身份，不在本 Claim 中转记为 root 验证，也不把停车约化核称作完整矩阵 assignments 的独立优化 oracle。新 Exact v3、运输作者 Proof、新增章及两套独立 checker 的冻结、读取和重放记录均独立于前七节旧记录；尚未实际完成的 v3 (MC) 重放或最终正文实读步骤不得提前记为通过。
 
 新 gap 只否定从所定义必要 relaxation 的可行性本身作统一正质量提取。它不是实际 YES 的反例，不给 NP-hardness，不否定相对 actual OPT 的一般近似，也不排除对多个 cores 同时条件化价值与容量、共有完整 matching law、更高阶信息或其他输入下界。缺口是多个 core 选择与叶资源的共同可实现性，不能用每个 core 菜单平均到同一叶边边际来替代。主目标 `UM-TARGET-v1` 仍 OPEN。
+
+## 12. 完整 unit-resource 路径对共同四次矩证书的双向保持
+
+- **ID / version**：`UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1`。本 ID 独立于§1–7的 unit CONFIG 身份及§8–11的条件叶匹配身份，不追溯改变它们的范围。
+- **Objects / Domain**：任意完整显式 normalized-flat 菜单 \(Q\) 及其普通 UM 矩阵 \(P(Q)\)；非空有限 groups，每组非空有限 indexed states，非负二进制有理系数，每 state 总质量一。完整原矩阵保留每个 selector、每个列出的 incidence job、所有未选 states、显式零 incidence、重复 indexed states 及 unused resources。本文以下定义的正邻居 group-port 路径操作为 \(D_+\)。
+- **Quantifiers / Exact Statement**：对每个上述 \(Q\) 和每个二进制有理 \(1\le T<2\)，下述 raw \(K_2(P(Q),T)\) 可行，当且仅当 \(K_2(P(D_+(Q)),T)\) 可行。给定任一方向的完整有限有理证书，可确定性地在显式输入及所给证书总位长的多项式时间和输出位长内构造另一方向证书。
+- **Assumptions / Definitions**：共同 Boolean degree-four functional、全局 \(M_2\succeq0\)、每原 job 的精确 one-hot 恒等式、每机器真实 CONFIG 的 first 及 same-machine pair 边际一致，以及每机器对任意全局 affine-linear \(q\) 的线性 load localizer，均按§12.1同时要求。没有复杂度假设，没有把 CONFIG 权重另当全局随机变量。
+- **Conclusion**：正向逐项保持全部原 assignment moments 及旧 private-root CONFIG lists；反向保持全部原变量的 principal functional 及旧 private-root lists。旧 resource CONFIG 可由 singleton 边际重建。全部 global affine load localizers 双向保持。若两边同时省略 load localizers，同一等价和构造仍成立。
+- **Dependencies**：以下有限次数的 PSD/null-vector 推导、原 job 恒等式及显式有理运算；无需取得未知 CONFIG 或 SDP 证书的 oracle。路径本身复用既有相邻 helper 机制，不主张路径思想的新颖性。
+- **Scope / Limits**：这是有限有理证书转换，不是任意强度的 C2 约定、SDP 可行性算法、一般 UM 近似、hardness 或全局完整调度 law 的保持。raw 合同不要求 inactive states 留 jobs 在 home，也不要求 original exports\(\le\)activation；不同于另加此约束的 canonical native C2，也不同于只列线性 load 的系统。§10的 \(R_{\rm cons}\) 证书不因此升级为本 \(K_2\) 的趋二 gap。本文不纳入更高 SOS 层数或其他新 learning 的结论。
+- **Status / Software / Related Files**：数学证明如下；本次正文的最终实读、独立重构次序及实际来源范围另记于[审查记录](../../reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md)。本 ID 没有软件实现、checker 或有限实验认证；不以旧程序补签新合同。主目标 `UM-TARGET-v1` 仍 OPEN。
+
+### 12.1. 全部 finite 端变量与确切 \(K_2\) 合同
+
+state \((g,s)\) 的 private root 不同于所有其他 states 的 root。原 group 的一枚 unit selector 在该组全部 indexed roots 上可执行。每个列出的 incidence \(e=(g,s,u)\) 是不同原 job：在该 private root 上时间 \(p_e\)，在原 resource \(u\) 上时间一，其他端为 \(\infty\)。即使 \(p_e=0\)，其 unit 资源端仍保留。
+
+对每个原 job \(j\) 和它的每个 finite endpoint \(i\)，保留变量 \(x_{j,i}\)。令 \(L\) 为全局次数至多四的线性泛函，完整有限表中的 monomial 值均为有理数。要求 \(L(1)=1\)，并对所有相应 monomial multipliers 要求
+
+\[
+L((x_{j,i}^2-x_{j,i})m)=0\ (\deg m\le2),\qquad
+L((\sum_i x_{j,i}-1)m)=0\ (\deg m\le3).
+\tag{12.1}
+\]
+
+同 job 不同端的 \(L(x_{j,i}x_{j,i'}m)=0\)、\(\deg m\le2\)，也可显式列入。它们由(12.1)和以下 \(M_2\) 冗余推出：乘 one-hot 式以一个端变量，各交叉项的期望和为零；每项由 Boolean reduction 与 PSD 非负，故逐项为零，再用 null 引理升到全部允许 multipliers。
+
+全局 \(M_2\succeq0\) 指对每个次数至多二的实系数多项式 \(p\)，\(L(p^2)\ge0\)。每个实际机器 \(i\) 另给有限有理 CONFIG list：每条为该机器的有限原 job 子集 \(C\)，真实负载至多 \(T\)，权 \(w_{i,C}\ge0\)、\(\sum_Cw_{i,C}=1\)，且
+
+\[
+L(x_{j,i})=\sum_{C\ni j}w_{i,C},\qquad
+L(x_{j,i}x_{j',i})=\sum_{C\ni j,j'}w_{i,C}\quad(j\ne j').
+\tag{12.2}
+\]
+
+故每原 job 的这些 CONFIG marginals 总和恰一。令 \(\ell_i=\sum_jp_{i,j}x_{j,i}\)，还要求
+
+\[
+L((T-\ell_i)q^2)\ge0
+\quad\text{对每个使用全部 finite 端变量的 affine-linear }q.
+\tag{12.3}
+\]
+
+没有任意全局 quartic literal 的额外非负约束，没有共同实际调度分布，也没有对 CONFIG-list weights 建立额外矩。断言只针对完整提供的有限有理证书，不从任意实 SDP 可行性免费推出有理证书存在。
+
+对旧资源 \(u\)，按固定次序列出有正系数 incidence 的不同原 groups，数量为 \(d\)。\(d\ge1\) 时用 \(d\) 个 ports 取代它：每个正 incidence 的原 unit 端改接其原 group 的 own port；零 incidence 若该组在 \(u\) 有正邻居，亦接 own port，否则接固定 fallback port。每个原 private 端和时间不变。相邻 ports \(j,j+1\) 之间新增一个 leaf group，恰有两个 singleton unit states；完整 flat 矩阵为两个不同 private roots、一枚在二 roots 上均为 unit 的 selector、两枚分别从对应 root 以 unit 时间到对应 port 的 incidence jobs。\(d=1\) 不加叶，\(d=0\) 保留旧资源及其全部原零 incidence unit 端。所有 tags 互异。该构造只使用正邻居划分，不删除零 job。
+
+### 12.2. Degree-four null 引理与 unit 资源
+
+以下用 incidence 的资源端指标 \(E_e\) 简记，其 private 指标为 \(1-E_e\)；二态叶 selector 两端亦互为补量。这只是(12.1)允许的线性代换，不删除任何 finite 变量。若次数至多二的 \(q\) 满足 \(L(q^2)=0\)，\(M_2\) 的 Cauchy–Schwarz 给
+
+\[
+L(qr)=0\qquad(\deg r\le2).
+\tag{12.4}
+\]
+
+称之为 quadratic null。Boolean 指标的 \(xy\) 或 \(x(1-y)\) 若期望为零，其平方由(12.1)约成自身，故是 null。
+
+在全部 eligible jobs 时间一的资源机器上，\(T<2\) 的 CONFIG 只能为空或 singleton。(12.2)迫使不同 job 指标 \(E_eE_f\) 期望零，故该 pair 是 null。令 \(K=\sum_eE_e\)，则
+
+\[
+L((K^2-K)r)=0\ (\deg r\le2),\qquad 0\le LK\le1.
+\tag{12.5}
+\]
+
+后一个上界由 \(L((1-K)^2)=1-LK\ge0\)，下界由逐项 \(LE_e=LE_e^2\ge0\)。对任意全局 affine \(q\)，还得
+
+\[
+L((T-K)q^2)
+=(T-1)L(q^2)+L(((1-K)q)^2)\ge0.
+\tag{12.6}
+\]
+
+这里以(12.5)乘 \(q^2\) 约掉差值，最高次数四。因此 unit 资源的 load localizer 可由 pair-null 与 \(M_2\) 重建，不是假设所有 quartic literals 非负。
+
+### 12.3. 正向：仿射 hole 与新增矩
+
+固定 \(d\ge1\) 的旧资源。将其**全部原 incidence jobs，包括零 incidence**按已规定的 routed port 分组，令
+
+\[
+O_i=\sum_{e\text{ routed to }i}E_e,
+\quad K=\sum_iO_i,\quad Q_0=1-K.
+\]
+
+任选固定 port \(f\)，例如 \(d\)，定义
+
+\[
+H_i=O_i+\mathbf1[i=f]Q_0.
+\tag{12.7}
+\]
+
+由旧 unit 资源的 pair-null，\(O_i^2-O_i\)、\(O_iO_j\ (i\ne j)\)、\(O_iQ_0\) 都在 degree-four 意义下 null。因此 \(\sum_iH_i=1\) 恒成立，每个 \(H_i^2-H_i\) 及不同 \(H_iH_j\) 也是相同旧 null relations 的线性组合，可乘任意次数至多二的多项式。
+
+对相邻叶 \(j\)，其左、右 selector 指标以及各自 incidence head 指标分别取
+
+\[
+L_j=\sum_{i>j}H_i,\qquad R_j=\sum_{i\le j}H_i=1-L_j.
+\tag{12.8}
+\]
+
+其 private incidence 指标取相应补量。每个新指标是旧变量的 affine form，Boolean defect 由旧 null relations 消去，全部新 job one-hot 恒等成立。把每个新次数至多四 monomial 按此仿射代换，再用旧 \(L\) 求值，便定义新 \(L'\)。任意新二次 \(p\) 代换后仍次数至多二，故 \(L'(p^2)\ge0\)。Boolean 式乘允许 multiplier 后最高次数四，亦由同一 null relations 消去。所有原变量及其四次以内 joint moments 保持，只有原资源端的物理名称改变。
+
+\(d=1\) 时 \(H_1=1\)，没有新叶，唯一 port 的原占用仍为 \(K\)；\(d=0\) 不作此代换，保原资源及原证书。
+
+### 12.4. 正向：所有机器的 CONFIG 与 global localizers
+
+旧 private-root lists 完全照抄，原 membership、时间、first/pair moments 都未变。每个新叶 private root 用“仅 selector”和“仅本 incidence job”两条 unit 配置，权为相应 selector 一阶矩及其补量；二者非负、和一，pair moment 零。该 root 的 load 仿射代换后恒为一。
+
+port \(i\) 取 \(R_0=L_d=0\)，其 load 代换后为
+
+\[
+O_i+R_{i-1}+L_i=O_i+1-H_i
+=\begin{cases}1&i\ne f,\\K&i=f.\end{cases}
+\tag{12.9}
+\]
+
+该 port 不同 job 的 pair moments 均为零：旧 jobs 之间由旧 unit resource pair-null；两个相邻叶 head 是不相交的 \(H\)-sums；某旧 \(E_e\) routed 到 \(i\)，与所有 \(H_t,t\ne i\) 正交。最后一项对 \(t\ne f\) 直接是旧 pairs，对 \(t=f\ne i\) 另用 \(E_e(1-K)\) 的旧 pair-null 与 Boolean 式。于是每个 port 可按各 job 的 first moment 列 singleton CONFIG，再列空配置补足一。权非负，和由(12.9)及(12.5)至多一；全部实际 load 至多一，并有正确 first/pair moments。
+
+对(12.3)，任意新全局 affine \(q\) 代换后仍是旧全局 affine form。旧 private roots 的 load 不变，其 localizers 继承；新叶 roots 及非固定 ports 的 load 恒一，用 \((T-1)L(q^2)\ge0\)；固定 port 的 load 为旧 resource 的 \(K\)，继承旧 global localizer（也可由(12.6)）。\(d=0\) 机器全证书继承。故正向覆盖全部原 jobs、所有新 jobs 及全部机器。
+
+### 12.5. 反向：路径迫使所有旧同资源 jobs 成对互斥
+
+取任意 lifted raw 证书；不对原 inactive exports 作限制。对 \(d\ge2\) 的一路径，用 \(L_j,R_j=1-L_j\) 表示叶 selector，\(F_j^L,F_j^R\) 表示各自 incidence head。叶 private root 上 unit selector 不能与 unit private incidence 共居，故
+
+\[
+L_j(1-F_j^L),\qquad R_j(1-F_j^R)
+\tag{12.10}
+\]
+
+都是 quadratic null。若某原 job head \(E\) 与叶 state 的 selector \(X\) 所对应 head \(F\) 使用同一 port，则 \(EF\) null，且
+
+\[
+L(EX)=L(EXF)=0.
+\tag{12.11}
+\]
+
+前式用 \(X(1-F)\) 乘 \(E\)，后式用 \(EF\) 乘 \(X\)；故 Boolean product \(EX\) null。若两个相邻叶 states 的 selectors \(X,Y\)、heads \(F,G\) 共用 port，同理
+
+\[
+L(XY)=L(XYF)=L(XYFG)=0.
+\tag{12.12}
+\]
+
+这里分别用 \(X(1-F)\) 乘 \(Y\)，\(Y(1-G)\) 乘 \(XF\)，\(FG\) 乘 \(XY\)，全在次数四以内。
+
+令 \(L_0=1,L_d=0\)，\(N_i=L_i(1-L_{i-1})\)；内点由(12.12)为 null，边界恒为零。定义
+
+\[
+H_i=L_{i-1}-L_i,\qquad
+\sum_iH_i=1,\qquad H_i^2-H_i=2N_i
+\tag{12.13}
+\]
+
+（最后一式用 Boolean reduction）。每个 defect 可乘次数至多二的 multiplier 消去。不同 \(i,j\) 满足
+
+\[
+L((H_iH_j)^2)=L(H_iH_j)\ge0.
+\tag{12.14}
+\]
+
+等号先以 \(H_j^2\) 乘 \(H_i\) 的 defect，再以 \(H_i\) 乘 \(H_j\) 的 defect；不等号来自 \(M_2\)。另一方面，将 \(\sum H_i=1\) 平方求矩，并用 \(LH_i^2=LH_i\)，得 \(\sum_{i<j}L(H_iH_j)=0\)。故(12.14)每项为零，\(H_iH_j\) 本身 quadratic null。
+
+原 head \(E\) routed 到 port \(i\)，由(12.11)得 \(L(EL_i)=L(E(1-L_{i-1}))=0\)，边界缺失项恒零。因此 \(L(EH_i)=LE\)。设 \(q=E(1-H_i)\)，则 \(Lq=0\)，且
+
+\[
+L(q^2-q)=L(E(H_i^2-H_i))=0,
+\]
+
+故 \(q\) null。若原 heads \(E,F\) routed 到不同 \(i,j\)，则
+
+\[
+L(EF)=L(EFH_i)=L(EFH_iH_j)=0.
+\tag{12.15}
+\]
+
+两等号分别用 \(E(1-H_i)\) 乘 \(F\)、\(F(1-H_j)\) 乘 \(EH_i\)，最后用 \(H_iH_j\) 乘 \(EF\)。同 port 的原 pair 直接由 unit CONFIG 为零。因此所有旧同 resource 的不同原 jobs 成对互斥，包括 private 时间零的 jobs。\(d=1\) 直接由唯一 unit port 得此结论；\(d=0\) 原资源全证书未变。
+
+### 12.6. 反向证书、全部原 jobs 及 localizers
+
+限制到全部原 job 的 finite 变量，把各 routed head 指标重新命名为其旧 resource 端。Principal restriction 保 \(M_2\)、Boolean 与精确 job 恒等式，也逐项保留原四次以内 moments。每个旧 private root 没有新增 job，其 CONFIG list 直接照抄。
+
+每个旧资源令 \(K\) 为其全部原 heads 之和。§12.5给所有 distinct pair 零；(12.5)得 \(0\le LK\le1\)。用各 \(LE_e\) 给相应 unit singleton 配置权，另以 \(1-LK\) 给空配置权，便得到合法且 first/pair 一致的旧 resource CONFIG。全部原 selector/incidence 的 job cover 仍恰一；旧未选 states 的 jobs 和所有零 jobs 均未删。\(d=0\) 亦可直接照抄其原 list。
+
+旧 private roots 的 global affine localizers 由 lifted 合同限制而来；旧 unit 资源以(12.6)重建全部此类 localizers。至此两个方向完整。证书不要求保留某份事先指定的旧 resource 配置分解，更不要求共享一个完整调度 law。
+
+### 12.7. 数量、位复杂度及严格范围
+
+设原 indexed states 数 \(S\)、显式 incidences 数 \(I\)、其中正 incidences 数 \(I_+\)、原 groups 数 \(n\)，令
+
+\[
+L_+=\sum_u\max\{d_u-1,0\},\qquad
+m_+=\sum_{u:d_u\ge1}d_u+\#\{u:d_u=0\}.
+\]
+
+有 \(\sum_ud_u\le I_+\)、\(L_+\le I_+\)。Lifted 完整矩阵有 \(S+2L_++m_+\) 台机器、\(n+I+3L_+\) 枚 jobs 及 \(S+2I+6L_+\) 个 finite endpoints。每新增叶的两 roots、一 selector、两 incidence jobs 都已计入，原 selector identities 不变。Dense 矩阵规模亦为显式输入的多项式。
+
+提供的全局 moment table 至多四次，变量数 \(N\) 下只有 \(O((N+1)^4)\) 个 monomials。正向每个新指标为至多线性多个旧指标的整数系数 affine sum；展开四次 monomial 只产生多项式个旧矩条目。系数和有理加减、求和的分子分母总位长由输入及所给证书长度多项式控制。反向是 restriction 与 first-moment 求和。旧 private lists 仅复制；新 port/leaf-root lists 只有多项式多个 singleton/empty 条目。没有按概率、系数或 \(\lambda\) 的倒数展开，没有搜索未知配置，也没有数值 PSD 求解步骤。按固定排序和固定 slack port 可作全部确定性选择。
+
+\(T<2\) 用于 unit jobs 的 pair exclusion，\(T\ge1\) 用于 singleton 合法和(12.6)的非负系数。\(T<1\) 时两边都保一枚原 unit selector，故无合法 CONFIG cover；\(T\ge2\) 不在保持断言内。这个独立 ID 只增加所述 raw 四次矩证书保持，不把§1–11的弱证书、有限软件证据或实际 gap 升级为更强共同矩结论，也不替代多个 cores 的共同可实现性问题。
