@@ -510,6 +510,18 @@ UM-PAIR-SUBDIVISION-GAP-v1的pair-LP核心是UM-COALITION-PROJECTION-GAP-v1的r=
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；未外审，Truth/Value/Novelty/Mechanism/Ambition分列正文。
 - Related Files：research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md；research/reviews/unrelated_machines/optimal_hull_marginal_review.md；代码/输入/证据精确路径见正文。
 
+## UM-OPT-HULL-HIGHER-NC-SUCCESS-v1：高阶负相关的精确成功概率及采样择优边界
+
+- Exact Statement / Quantifiers：任意整数k≥2,r≥k,1≤d,q≤k，在私有sink族固定最优平均x上，全部合法随机Σ保x；每同sink的2..d件不同small全送sink概率≤r^(−s)。令t=min(d,q)，则Pr[Cmax≤2−q/k]的最大值恰1(t=1)，否则min(1,binom(k,t)/(r^(t−1)binom(q,t)))；有限有理分布达到。固定ε∈(0,1)、r=k²、q=ceil(εk)、d(k)→∞时任意固定输入位长多项式次采样择优成功趋零；自适应乘积界要求每个历史的条件law守同x及同相关性合同，无条件逐轮合同只给union bound。
+- Objects / Domain / Definitions：正文§2全部原任务，OPT=1、m=2r,n=rk+1，small尺寸1/k；q为成功所需集中撤离件数，d是全送sink事件的上负相关阶数。
+- Assumptions / Scope：不要求补事件负相关、组外相关性或机器件数保持；精确达到只属于此明确的较宽分布类。固定d的界不足以排任意多项式次择优。输出限采到的调度之一，不排采后重排/更改边际/直接构造好态。
+- Conclusion / Mechanism：阶乘矩计数给各阶上界，r≥k使最高适用阶最强；对称的q件/单件混合law同时保全部边际并达到。高阶上负相关会压制低边际sink必须承担的集中撤离。
+- Dependencies：UM-MODEL-v1, UM-PRIVATE-SINK-OPT-HULL-v1；参数族/一阶身份来自既有正文，阶乘计数为自足标准机制；不是借pair结论直接升级高阶。
+- Evidence：正文§11一般证明、独立Exact先行重构及作者冻结全文读后攻击、两份不互相导入的Fraction实际分配law审计、点态count-state证书及精确反算；有限范围另冻JSON。
+- Counterevidence / Objections：本族可直接最优求解；真实最优平均有强正相关。稀有采样不蕴含确定性找原子困难，也不是一般随机近似困难性。补事件NC不能偷偷加入精确达到合同。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified。
+- Related Files：research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md §11；research/reviews/unrelated_machines/private_sink_higher_order_nc_review.md；tests/audits/unrelated_machines/private_sink_higher_order_nc{,_independent}.py；evidence/runs/unrelated_machines/private_sink_higher_order_nc{,_independent}_audit.json。
+
 ## UM-FOREST-BOUNDARY-AUGMENT-v1：单边界森林批量消元的根负载支配
 
 - Exact Statement / Quantifiers：∀给定单边界森林gadget(V,r,K)、有理T≥0和0<η≤1，存在确定性poly(总位长,1/η)算法，返回FAIL（蕴含内部≤T无解）或实际τ,b≥0，根负载b、内部负载≤(1+η)T；对每个内部≤T的原分配ρ均b≤L_r(ρ)。用单端根任务b替换，保全局T可行性正向，任意约化调度B恢复≤max(B,(1+η)T)。同T,η每次删至少一机器的≤m次嵌套消元保持同界。

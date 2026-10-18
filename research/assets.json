@@ -4954,15 +4954,17 @@
         "UM-OPT-HULL-ROW-DISCREPANCY-GAP-v1",
         "UM-OPT-HULL-PAIR-NC-GAP-v1",
         "UM-FROZEN-MACRO-TINY-REOPT-GAP-v1",
-        "UM-MACRO-MIGRATION-FRONTIER-v1"
+        "UM-MACRO-MIGRATION-FRONTIER-v1",
+        "UM-OPT-HULL-HIGHER-NC-SUCCESS-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
         "true optimal-hull fixed marginals, OPT>0",
         "specified row/count or same-sink pair-NC output contract",
-        "Shared-sink family with fixed or bounded macro machine changes; tiny assignments unrestricted"
+        "Shared-sink family with fixed or bounded macro machine changes; tiny assignments unrestricted",
+        "Same-sink positive-cylinder upper NC through degree d, with exact fixed marginals"
       ],
-      "produces": "Exact sup2 for row/count envelopes; sharp expected/tail NC bounds and explicit true-optimal distributions; exact frozen-macro tiny reoptimization optimum and discrete macro migration frontier",
+      "produces": "Exact sup2 for row/count envelopes; sharp expected/tail NC bounds and explicit true-optimal distributions; exact frozen-macro tiny reoptimization optimum and discrete macro migration frontier; sharp all-degree success probability and conditional-history polynomial-resampling obstruction",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
@@ -4975,14 +4977,18 @@
         "tests/audits/unrelated_machines/independent_marginal_row_oracle.py",
         "tests/audits/unrelated_machines/independent_marginal_pairwise_oracle.py",
         "tests/audits/unrelated_machines/frozen_macro_tiny_reoptimization.py",
-        "tests/audits/unrelated_machines/frozen_macro_tiny_independent.py"
+        "tests/audits/unrelated_machines/frozen_macro_tiny_independent.py",
+        "tests/audits/unrelated_machines/private_sink_higher_order_nc.py",
+        "tests/audits/unrelated_machines/private_sink_higher_order_nc_independent.py"
       ],
       "records": [
         "evidence/runs/unrelated_machines/private_sink_marginal_audit.json",
         "evidence/runs/unrelated_machines/marginal_row_independent.json",
         "evidence/runs/unrelated_machines/marginal_pairwise_independent.json",
         "evidence/runs/unrelated_machines/frozen_macro_tiny_audit.json",
-        "evidence/runs/unrelated_machines/frozen_macro_tiny_independent.json"
+        "evidence/runs/unrelated_machines/frozen_macro_tiny_independent.json",
+        "evidence/runs/unrelated_machines/private_sink_higher_order_nc_audit.json",
+        "evidence/runs/unrelated_machines/private_sink_higher_order_nc_independent_audit.json"
       ],
       "examples": [
         "examples/unrelated_machines/private_sink_k2_r4.json",
@@ -4990,7 +4996,8 @@
       ],
       "reviews": [
         "research/reviews/unrelated_machines/optimal_hull_marginal_review.md",
-        "research/reviews/unrelated_machines/frozen_macro_tiny_review.md"
+        "research/reviews/unrelated_machines/frozen_macro_tiny_review.md",
+        "research/reviews/unrelated_machines/private_sink_higher_order_nc_review.md"
       ],
       "candidates": [],
       "limit": "Family directly optimally solvable. No general algorithm impossibility; adaptive points and positively correlated migration remain possible."

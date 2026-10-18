@@ -12399,6 +12399,18 @@
         "tests/audits/unrelated_machines/prefix_atomic_relative_gram_independent.py"
       ],
       "status": "complete scoped proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-OPT-HULL-HIGHER-NC-SUCCESS-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "高阶负相关精确成功概率及采样择优边界",
+      "detail": "∀k≥2,r≥k,1≤d,q≤k，固定最优边际及同sink的2..d阶全送事件上负相关，t=min(d,q)；最大成功概率恰1(t1)，否则min(1,C(k,t)/(r^(t−1)C(q,t)))，显式达到。r=k²、固定ε及d(k)→∞时poly次择优成功趋零；适应乘积界需每历史条件合同。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md",
+        "research/reviews/unrelated_machines/private_sink_higher_order_nc_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -30337,6 +30349,35 @@
         "research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md"
       ],
       "status": "method boundary; target remains open"
+    },
+    {
+      "id": "D-UM-OPT-HULL-HIGHER-NC-SUCCESS-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-PRIVATE-SINK-OPT-HULL-v1"
+      ],
+      "conclusion": "UM-OPT-HULL-HIGHER-NC-SUCCESS-v1",
+      "statement": "阶乘矩计数、最高适用阶最强、对称混合实际law达到及逐历史失败概率递推；pair结论不是免费高阶前提。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "L-UM-OPT-HULL-HIGHER-NC-SUCCESS-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OPT-HULL-HIGHER-NC-SUCCESS-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只限制固定边际、正事件上负相关及输出采到样本；改边际/采后实际修复/直接找好态仍可行。本族易解，非一般算法下界。",
+      "refs": [
+        "research/current/unrelated_machines/optimal_hull_marginal_rounding_barrier.md"
+      ],
+      "status": "method boundary"
     }
   ]
 }

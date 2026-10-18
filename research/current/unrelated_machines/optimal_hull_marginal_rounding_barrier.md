@@ -385,3 +385,135 @@ ID：`UM-OPT-HULL-PAIR-NC-GAP-v1`。这不是前一个 Claim 的改名；前一�
 
 
 审计链：主实现 `tests/audits/unrelated_machines/frozen_macro_tiny_reoptimization.py`；独立不导入核心的 `tests/audits/unrelated_machines/frozen_macro_tiny_independent.py`；冻结结果位于 `evidence/runs/unrelated_machines/frozen_macro_tiny_{audit,independent}.json`；独立审查 `research/reviews/unrelated_machines/frozen_macro_tiny_review.md`。来源为本轮内部 tiny_reopening 构造、joint_repair 先行独立重构，boss9 逐式复核；与前文私有sink的固定边际合同分开。
+
+## 11. 高阶负相关的精确成功概率与多项式次择优边界
+
+本节沿用§2的**同一**私有汇点实例、全部实际任务及固定最优凸包点x。
+新增身份为 `UM-OPT-HULL-HIGHER-NC-SUCCESS-v1`；§8的两两负相关身份不变。
+这里研究的输出分布只要求下述全送汇点事件的上负相关，不要求补事件负相关、
+机器任务数保持、不同组相关性或其他特定舍入程序性质。
+因此精确达到只属于本文明确的分布类；上界也适用于满足更多约束的分布类。
+
+### 11.1. 精确命题、边界与量词
+
+任取整数 `k≥2,r≥k,1≤d≤k,1≤q≤k`。令随机完整合法调度Σ精确保留§2的全部
+边际：B去每个home的概率1/r，每个small去自己的sink的概率1/r。
+对每个组i及每个不同任务集合 `S⊆J_i,2≤|S|≤d`，要求
+
+\[
+ \Pr[\forall j\in S,\ \Sigma(j)=Z_i]\le r^{-|S|}. \tag{11.1}
+\]
+
+当d=1时没有额外相关性约束。令 `t=min(d,q)`，在上述全部分布中，成功概率的
+**最大值**恰为
+
+\[
+ p^*(k,r,d,q)=
+ \begin{cases}
+  1,&t=1,\\
+  \min\!\left\{1,\dfrac{\binom{k}{t}}
+    {r^{t-1}\binom{q}{t}}\right\},&t\ge2,
+ \end{cases}
+ \quad
+ \text{成功指 }C_{\max}(\Sigma)\le 2-q/k. \tag{11.2}
+\]
+
+这同时包含q=1、d=1和概率上界被1截断的情况；不能把t=1时的无效阶乘矩界
+k/q误称为精确概率。r≥k用于达到分布中选择k−1个不同的其他组，也用于简化
+最强阶数。未声称r<k时仍有相同精确值。
+
+对象是固定输入分数点的随机舍入，不是所有随机算法，更不是一般调度困难性。
+OPT=1由§2的显式最优调度证明；不存在假设OPT已知而调用未知oracle的步骤。
+
+### 11.2. 阶乘矩上界
+
+令h为B实际所在home，`D_i=|{j∈J_i:Σ(j)=Z_i}|`。逐台核算可得
+`Cmax=2−D_h/k`：其他home和全部sink的负载均≤1，而B所在home负载≥1。
+成功等价于D_h≥q。
+
+对任意 `2≤s≤min(d,q)`，逐状态有
+
+\[
+ \mathbf1_{D_h\ge q}\binom qs
+   \le \sum_{i=1}^r\binom{D_i}s.
+\]
+
+由(11.1)，右端期望≤`r·binom(k,s)/r^s`，故成功概率≤
+`A_s=binom(k,s)/(r^(s−1)binom(q,s))`。
+对s<min(d,q)，
+
+\[
+ \frac{A_{s+1}}{A_s}=\frac{k-s}{r(q-s)}\le1.
+\]
+
+因此最强上界是s=t，与概率≤1合并即得(11.2)。证明未假设B独立，也未把
+各次采样误当独立。
+
+### 11.3. 完整达到分布
+
+取p为(11.2)的值，均匀选h并把B放到H_h。
+
+* 以概率p，均匀选择J_h中的q个任务送Z_h；在另外r−1组中均匀选择k−q个
+  不同组，每个选中组再独立均匀选一件送自己的sink。
+* 以概率1−p，用同样方式令h中恰一件去sink，并在另外k−1个不同组各送一件。
+* 所有未选small留在自己的home；因此所有原任务始终完整分配。
+
+每个状态恰有k件small送sink。无条件分布对组、组内任务分别对称，因此每件small
+的sink边际恰为 `k/(rk)=1/r`；home边际为其补，B边际亦正确。
+对固定组i、大小s≥2的固定任务集合，其全送sink概率为
+
+\[
+ \frac p r\frac{\binom qs}{\binom ks}\quad(s\le q),
+ \qquad 0\quad(s>q).
+\]
+
+当s≤min(d,q)时，由p≤A_s可知它≤r^(−s)。q>1时仅第一类型成功，成功概率
+恰p；q=1时两类型相同且始终成功。特别地d=1,q>1时使用q类型概率1，
+不能误用一件类型。全部权重有理，支持有限，故这里是实际达到而非极限上确界。
+
+### 11.4. 全阶负相关下重复采样择优仍不足
+
+固定任意ε∈(0,1)，令r=k²，d=k，q=ceil(εk)。对充分大的k有q≥2，精确公式给
+
+\[
+ p^*=\frac{\binom kq}{k^{2q-2}}
+ \le\frac{2^k}{k^{2\varepsilon k-2}}.
+ \tag{11.3}
+\]
+
+显式完整矩阵具有 `m=2k²,n=k³+1`，二进制位长为 `O(k⁵ log(k+1))`。
+因此任意固定输入位长多项式B(L)都满足 `B(L)p*→0`。
+若每轮在给定此前全部历史后，仍保同一x且满足(11.1)，运行至多B轮、输出其中
+最好样本，则
+
+\[
+ \Pr[\text{至少一次成功}]\le1-(1-p^*)^B\le Bp^*\longrightarrow0.
+\]
+
+第一界由逐轮条件失败概率≥1−p*递推，不需要独立采样。它也允许早停；可把
+未用轮补为虚拟失败。若只假设每轮的**无条件**边际与相关性，则联合界Bp*仍成立，
+但不另外声称乘积界。
+
+更一般，当d=d(k)→∞时同样是超多项式小成功概率：取
+`s=min(d,floor(q/2))→∞`，有
+`p*≤r[k/(r(q−s+1))]^s≤k²[2/(εk²)]^s`。
+固定d只给多项式级稀有概率，**不能**由此排除任意多项式次择优。
+
+输出必须是所采样本之一。改变边际、条件化后放弃原边际、加入集中相关迁移、
+采样后重新调度或直接构造好态均不在此下界内。本族本来就有直接最优算法，
+更不能从稀有概率推出确定性寻找支持原子困难。
+
+### 11.5. 机制、证据与剩余义务
+
+这是§8开放逃生口“重复采样后择优”的一个准确分界：两两负相关只给多项式尾界；
+不断增长阶数的固定边际上负相关，反而会压制低边际sink所必需的集中撤离。
+因此负相关不应被当作跨机器共同容量的通用替代品。
+阶乘矩/Markov计数属于标准方法；该参数族的精确极值和算法合同范围单独记录，
+不认证全球新颖性、外审或独立论文价值。一般UM-TARGET-v1保持OPEN。
+
+主审计为 `tests/audits/unrelated_machines/private_sink_higher_order_nc.py`，
+独立审计为 `tests/audits/unrelated_machines/private_sink_higher_order_nc_independent.py`。
+前者完全展开小参数实际分配law、检查所有所需不同任务集合、实际全机负载和边际；
+另逐count-state核验一般上界的点态证书及较大精确有理公式反算。二者均不以浮点
+近似替代概率，seed不适用；参数、Python版本、代码hash及未检查范围在冻结JSON中。
+这些有限运行不承担全称证明。独立先陈述重构与作者稿读后攻击另见本节审查记录。
