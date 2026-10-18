@@ -2450,3 +2450,29 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：OPT2单独处理，未在2上假设资源独占；未先冻结heavy matching；phase success不是精确T可行；零权/empty states/不同Kg已核，无standing fatal。不声明factor锐性。
 - Status：数学证明/内部审查完成；直接结构推论，不冒称新SC算法；外审/新颖性未认证，UM-TARGET-v1未解。
 - Related Files：[正文](../current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md)、[审查](../reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md)、原VW PDF及七份原字节数学来源。
+
+
+## UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2：有限组交互的加权菜单实际次二匹配算法
+
+- Objects / Domain / Definitions / Quantifiers：显式非空flat weighted-menu UM；state资源互异、selector1、private p≥0/resource1、state质量≤1；完整菜单资源跨组≤Δ、组交互≤M，Δ≥1/M≥0，无菜单大小界或其它jobs。 对每个所列完整输入成立，定义与退化见[自足正文](../current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md)。
+- Exact Statement / Conclusion：不输入OPT/witness，det bitpoly输出全原jobs C≤[2−1/(M+2Δ−1)]OPT；成功绝对≤R，失败OPT≥1+β且输出≤2。所有state bonus精确保OPT；两次matching与精确full-block尾损失。
+- Assumptions：恰上述真实原矩阵和结构标签，不输入OPT/未知见证，不隐藏其它资格或原jobs。
+- Scope / Limits：固定M/Δ才统一ε；交互按全部菜单并集，state内resource不能重复。非general UM或近2hardness；未实现软件。
+- Dependencies：一般ordinary UM模型、完整flat菜单域及本条相应度数假设；正文自足matching/构造证明，不借有限核验或未证源gap。
+- Evidence：作者证明、先陈述独立重构、实际作者读后和最终稿全文读后；root亲读原件及独立核。
+- Counterevidence / Objections：越域与非fatal措辞意见已在审查保留并关闭；无standing fatal。
+- Status：证明完成/多份内部实际审查；外审、新颖性未认证；implementation none，UM-TARGET-v1仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md)、[审查](../reviews/unrelated_machines/weighted_menu_bounded_group_interaction_rounding_review.md)及其逐SHA原来源。
+
+
+## UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1：资源跨组三的加权菜单精确嵌入零权三坐标
+
+- Objects / Domain / Definitions / Quantifiers：显式非空flat weighted-menu UM，state资源互异、质量≤1、资源跨全部menus至多3groups，K/q/M任意；target d=Q=3允许零cell及相同labelvector异state cost。 对每个所列完整输入成立，定义与退化见[自足正文](../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)。
+- Exact Statement / Conclusion：原jobs含p0/所有selector资格逐身份保留；任意原σ精确同峰扩展、任意targetσ不增投影，actualOPT/K/state mass/group interaction graph精确保持；empty union独占dummy、unused资源仍保。
+- Assumptions：恰上述真实原矩阵和结构标签，不输入OPT/未知见证，不隐藏其它资格或原jobs。
+- Scope / Limits：仅允许zero与indexed state异cost的target；不保全cell正权或label唯一定价域，不制造源YES/NO gap；固定cube维数不界M。
+- Dependencies：一般ordinary UM模型、完整flat菜单域及本条相应度数假设；正文自足matching/构造证明，不借有限核验或未证源gap。
+- Evidence：作者证明、先陈述独立重构、实际作者读后和最终稿全文读后；root亲读原件及独立核。
+- Counterevidence / Objections：越域与非fatal措辞意见已在审查保留并关闭；无standing fatal。
+- Status：证明完成/多份内部实际审查；外审、新颖性未认证；implementation none，UM-TARGET-v1仍OPEN。
+- Related Files：[正文](../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)、[审查](../reviews/unrelated_machines/degree_three_weighted_menu_cube_embedding_review.md)及其逐SHA原来源。

@@ -11265,6 +11265,64 @@
         "research/reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md"
       ],
       "status": "finite checks only"
+    },
+    {
+      "id": "UM-EXPLICIT-FLAT-WEIGHTED-MENU-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "完整显式加权菜单普通调度域",
+      "detail": "非空groups/menus、state内distinct资源、selector1、p≥0/resource1、W≤1、全部原jobs/所有∞，无其它约束。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md",
+        "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-WEIGHTED-MENU-ALL-MENU-INTERACTION-BOUNDS",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "全部菜单的M与Δ度界",
+      "detail": "显式非空flat weighted-menu UM；state资源互异、selector1、private p≥0/resource1、state质量≤1；完整菜单资源跨组≤Δ、组交互≤M，Δ≥1/M≥0，无菜单大小界或其它jobs。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-WEIGHTED-MENU-RESOURCE-GROUP-DEGREE-THREE",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "资源跨全部菜单至多三组",
+      "detail": "显式非空flat weighted-menu UM，state资源互异、质量≤1、资源跨全部menus至多3groups，K/q/M任意；target d=Q=3允许零cell及相同labelvector异state cost。",
+      "refs": [
+        "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "有限组交互的加权菜单实际次二匹配算法",
+      "detail": "不输入OPT/witness，det bitpoly输出全原jobs C≤[2−1/(M+2Δ−1)]OPT；成功绝对≤R，失败OPT≥1+β且输出≤2。所有state bonus精确保OPT；两次matching与精确full-block尾损失。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md",
+        "research/reviews/unrelated_machines/weighted_menu_bounded_group_interaction_rounding_review.md"
+      ],
+      "status": "complete scoped matching algorithm; statement-first, author-proof and canonical actual review; novelty unverified"
+    },
+    {
+      "id": "UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "资源跨组三的加权菜单精确嵌入零权三坐标",
+      "detail": "原jobs含p0/所有selector资格逐身份保留；任意原σ精确同峰扩展、任意targetσ不增投影，actualOPT/K/state mass/group interaction graph精确保持；empty union独占dummy、unused资源仍保。",
+      "refs": [
+        "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "research/reviews/unrelated_machines/degree_three_weighted_menu_cube_embedding_review.md"
+      ],
+      "status": "complete scoped exact instance-and-schedule embedding; statement-first and actual read-after review; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -27440,6 +27498,70 @@
         "research/reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md"
       ],
       "status": "finite checks only"
+    },
+    {
+      "id": "um_bounded_group_interaction_weighted_menu_v2_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-EXPLICIT-FLAT-WEIGHTED-MENU-DOMAIN-v1",
+        "UM-WEIGHTED-MENU-ALL-MENU-INTERACTION-BOUNDS"
+      ],
+      "conclusion": "UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2",
+      "statement": "不输入OPT/witness，det bitpoly输出全原jobs C≤[2−1/(M+2Δ−1)]OPT；成功绝对≤R，失败OPT≥1+β且输出≤2。所有state bonus精确保OPT；两次matching与精确full-block尾损失。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md",
+        "research/reviews/unrelated_machines/weighted_menu_bounded_group_interaction_rounding_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "um_bounded_group_interaction_weighted_menu_v2_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "固定M/Δ才统一ε；交互按全部菜单并集，state内resource不能重复。非general UM或近2hardness；未实现软件。",
+      "refs": [
+        "research/current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md",
+        "research/reviews/unrelated_machines/weighted_menu_bounded_group_interaction_rounding_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_degree_three_weighted_menu_cube_embedding_v1_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-EXPLICIT-FLAT-WEIGHTED-MENU-DOMAIN-v1",
+        "UM-WEIGHTED-MENU-RESOURCE-GROUP-DEGREE-THREE"
+      ],
+      "conclusion": "UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1",
+      "statement": "原jobs含p0/所有selector资格逐身份保留；任意原σ精确同峰扩展、任意targetσ不增投影，actualOPT/K/state mass/group interaction graph精确保持；empty union独占dummy、unused资源仍保。",
+      "refs": [
+        "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "research/reviews/unrelated_machines/degree_three_weighted_menu_cube_embedding_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "um_degree_three_weighted_menu_cube_embedding_v1_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅允许zero与indexed state异cost的target；不保全cell正权或label唯一定价域，不制造源YES/NO gap；固定cube维数不界M。",
+      "refs": [
+        "research/current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md",
+        "research/reviews/unrelated_machines/degree_three_weighted_menu_cube_embedding_review.md"
+      ],
+      "status": "scope limitation"
     }
   ]
 }

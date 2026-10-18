@@ -90,3 +90,5 @@
 
 
 [加权菜单joint算法](../../../current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md)闭合heavy/diffuse共同选择：group层平均而非state拆玩家，已知degree2 MaxMin后端→one state→全部原jobs，保OPT归一化后ratio2−1/(2K)。当前negative候选须越过Q2固定菜单与menus2 unit可判两界，不能再把任意坏heavy匹配当NO源。
+
+[有限组交互的实际匹配界](../../../current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md)与[零权三坐标的精确OPT表示](../../../current/unrelated_machines/degree_three_weighted_menu_cube_embedding.md)共同收窄源：任意K但M/Δ固定有统一改善，d=Q3却保留资源度三且M任意的全部flat菜单。继续攻击normalized YES严格1/NO导出值任意小，不能把固定维或负载配置gap代源decoder。

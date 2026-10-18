@@ -1208,6 +1208,9 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2 | 显式非空groups、非空indexed menus每组K_g≤K；每resource跨全部states最多2groups；state私有根互异，selector1只选本组state，每incidence根非负p/resource1，Wstate≤1，无其它jobs/约束。 确定性位poly完整实际C≤2−(2−OPT)/(2K)≤(2−1/(2K))OPT，无OPT/witness输入；normalized OPT=2−XOS分配值，bonus精确保OPT；group平均接已知VW factor2，最后单state还原全部原jobs。 | [正文](unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md)、[审查](../reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md)；非generalUM，K增长改善可趋0。 |
 
+| UM-BOUNDED-GROUP-INTERACTION-WEIGHTED-MENU-v2 | 显式非空flat weighted-menu UM；state资源互异、selector1、private p≥0/resource1、state质量≤1；完整菜单资源跨组≤Δ、组交互≤M，Δ≥1/M≥0，无菜单大小界或其它jobs。 不输入OPT/witness，det bitpoly输出全原jobs C≤[2−1/(M+2Δ−1)]OPT；成功绝对≤R，失败OPT≥1+β且输出≤2。所有state bonus精确保OPT；两次matching与精确full-block尾损失。 | [正文](unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md)、[实际审查](../reviews/unrelated_machines/weighted_menu_bounded_group_interaction_rounding_review.md)；实现none，主目标未解。 |
+| UM-DEGREE-THREE-WEIGHTED-MENU-CUBE-EMBEDDING-v1 | 显式非空flat weighted-menu UM，state资源互异、质量≤1、资源跨全部menus至多3groups，K/q/M任意；target d=Q=3允许零cell及相同labelvector异state cost。 原jobs含p0/所有selector资格逐身份保留；任意原σ精确同峰扩展、任意targetσ不增投影，actualOPT/K/state mass/group interaction graph精确保持；empty union独占dummy、unused资源仍保。 | [正文](unrelated_machines/degree_three_weighted_menu_cube_embedding.md)、[实际审查](../reviews/unrelated_machines/degree_three_weighted_menu_cube_embedding_review.md)；实现none，主目标未解。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
