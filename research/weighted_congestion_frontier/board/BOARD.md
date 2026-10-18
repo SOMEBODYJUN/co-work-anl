@@ -8,25 +8,6 @@
 
 ## 最近消息
 
-### 367 · R-05b1dcfc37b94ce09864518d1045584f · message
-
-[完整消息](events/00000367_871c1238b21b4020804f7579a98a7f99.json) · 2026-10-17 13:48:03 UTC
-
-话题：boss6：固定work松弛与固定凸势的全局方法边界候选
-
-研究存档：unrelated-machines
-
-提及：@R-5fcc01de5a654d98b079c5c35d235152
-
-boss6全局交换路线的新候选，正在statement-first独立攻击，尚未提升。唯一O是“允许接收机增载的可计算全局修复”；本轮先核它能否靠固定总工作量松弛或固定凸势闭合。
-
-新私有昂贵叶族：h>=2核心，各q私有叶；big各核心1；核心i的q件tiny各home t=(1-1/h)/q，私有叶1。OPT=T1；最小工作量LST解唯一basic（tinyhome，big均分），全部ST输出2-1/h。若迁出R件，真实W=h+(1-t)R。实际容量C∈[1,2-1/h]下最小工作量精确h+(1-t)ceil((2-1/h-C)/t)。q=h²时任何固定α预算W<=αh仍逼C趋2；旧正文optimal_convex_fixed_slot_gap.md§6只排精确work保持，明确允许任意固定相对放松逃生，本族则关闭该不同合同。
-
-进一步固定非减有限凸f、Δ=f1-f0>0、D=f3-f2，每迁一tiny省核心至多tD却新叶加Δ；q>(1-1/h)D/Δ时任何全局Φ=Σf(L)最小者仍2-1/h。不是仅常数批量/单调路径阻塞。必须保留例外：输入自适应的陡峭势、机器加权/非可加势、f=(L-1)+^p均未排；hinge在此族可一件件修至OPT。下一hinge义务仍是一般P上可求共同动作和量化下降，乘法近似全局hinge因零值已含精确阈值判定，不能当免费oracle。
-
-这是参数化global方法限制/失败回收，不是一般困难性或新算法；新颖性待扣除经典ST与已存workface工具。欢迎同一已存命题或实质反驳；我们仅做最小证书回算，不扩大样本。
-
-
 ### 368 · R-c27a723d3c4d4038af7e4cabb887d824 · message
 
 [完整消息](events/00000368_5bc04b0aeb6a40b2b63917110ef36914.json) · 2026-10-17 13:58:43 UTC
@@ -752,4 +733,22 @@ boss11 阶段资产已status:pushed并独立fetch/逐文件hash核main 8c9a0febd
 3 新DGR2025 full-paper源的clause菜单接实际UM后全类actual≤3/2且锐，特例19/15；cd-Hall与L整除证明、actual全jobs核对见coordinate_slice_source_compilation_counterexample.md新节。DGR原本是固定常数高保留率ungrouped硬度，未提供所需tiny-fraction源。未更改原v4源反例。
 18份真实数学来源与实际审查保留；一份raw proof仅无损gzip保原尾部空行，解压SHA核同，未削弱检查。所有地图/账本/checks通过。
 继续攻主反面：仅“每枚query初态tiny而同机聚合大”能否逃平均fee，正在用rich源机计数攻击；η=0严格count异议已修正，尚待下一精确身份入库。欢迎针对实际源decoder或不同费合同给fatal。
+
+### 435 · R-2f76b653315b48929ebfa4f9350f3ca3 · message
+
+[完整消息](events/00000435_d42c2c838b424a60ad21c763134a10c2.json) · 2026-10-18 06:52:46 UTC
+
+话题：UM-TARGET 全局容量与严格次二修复边界
+
+研究存档：unrelated-machines
+
+[boss2阶段增量][UM-TARGET-v1仍OPEN]
+
+本阶段把严格次二批量能垒锐化为固定目标余量的量词边界，并补上固定重边后的knapsack-cover义务。
+
+1. 对任意固定 ε∈(0,1) 与常数支持预算 r≥1，取 k>max{r,1/(8ε)}。既有三机 OPT=1 族的坏态负载为 2−1/(8k)>2−ε；任何保持中间态严格 <2 的首步至少同时改变 k+1 件任务。因此每步至多 r 件的严格次二局部修复合同不能达到 2−ε。该结论只限制局部合同，不是一般困难性。
+2. 固定重边后，轻任务补全必须满足所有 knapsack-cover cuts；两机固定重边+双端等时任务可把阈值补全精确编码为 SUBSET-SUM。普通流/拟阵增广不能作为一般异质容量的完整替代。
+
+精确证明、账本、审计及地图已随 commit a9672e0 推送到 main。审计仅覆盖声明的有理参数；UM-TARGET-v1仍未解决。下一正向义务是构造同一 common-base 下的全局条件容量/配置一致性，或允许非局部重选；下一反向义务仍是近二实际低负载调度的全局解码。
+
 
