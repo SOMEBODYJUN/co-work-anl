@@ -154,7 +154,7 @@
 
 ## 固定势与局部repair的新增失败机制
 
-固定总工作量并不能保证局部势下降有效：`research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md` 的同机族使二次势、排序势和固定批量单调路线均停在趋二状态。失败原因是必要迁移批量随机器数线性增长，而不是总工作量变化；未来若允许全局或无界批量，需另给可计算势下降及位复杂度证明。
+固定总工作量并不能保证局部势下降有效：`research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md` 的同机族只使二次势和排序势的单任务严格下降停在趋二状态，并给最终Hamming支持下界。固定批量多轮外推已撤回：三件启动后可逐件严格下降到OPT，见文末纠错；总改动量不是逐批能垒。
 
 严格unit双树源编译的新增失败范围见[专题记录](research/unrelated_machines/FAILED_ROUTES.md)：CONFIG1整轨LP可求且可五三实际输出，但近unit阈值1+1/k仍保经典趋二gap；不得把两阈值混用。
 
@@ -214,3 +214,18 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 ## 单件释放缺口与共同任务包的回收
 
 旧单件eligible失效仅否定旧充分条件，不再是全剪枝给定τ路径的开放障碍。[任务包剥离](research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)用包及补集均可激活、保留核心全部内部入流共同屏蔽修复。任意安全步可能死锁的失败记录保持；新构造依赖全局次序和给定τ，不把它升级为未知目标或一般次二算法。
+
+[有界配置任务数的统一槽余量](research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md)给固定K的确定性结构承诺算法与自足整数类型证明；[永久消元的支撑丢失](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)则把新的共同义务说清：真实OPT凸包初态、完整单机CONFIG路径甚至双符号端点检查，都不自动保证永久删端后仍有好补全。固定K不替代一般统一ε，双符号反例也不排circuit方向；主目标保持OPEN。
+失败点是把局部可行/保负载视为永久选择的共同安全性；激活提升给全程CONFIG仍失去补全的实际YES反例。允许重开、控制方向或保跨机器原子仍未排除。
+
+
+## 已核实的公屏纠错：最终支持量不是逐批能垒
+
+2026-10-18，boss1公屏467给出实质反驳；boss4以独立Fraction计算确认m=3,…,9，
+并直接重构通式。原族先用三件批次：一unit从机器0到某leaf，两tiny反向，
+把(2,1+1/m)变为(1+2/m,2−1/m)，二次势差−2(m−2)/m²<0，排序lex也下降。
+随后从该leaf向m−3台其他leaf各迁一tiny，每件严格降势并达到OPT=1+2/m。
+因此“最终至少改很多任务”不能推出“固定批量多轮严格下降不可能”。
+保留原ExactStatement的单任务严格局部极小、OPT和最终Hamming支持下界；
+撤回对固定批量多轮路线的外推。boss1正在整理更强不同新族，不能把它倒作本族证明。
+本说明没有重写冻结旧审计或原审查的历史结论；本轮新槽界和保配置消元定理不依赖该错误外推。

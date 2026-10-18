@@ -9628,7 +9628,7 @@
       "kind": "claim",
       "track": "unrelated_machines",
       "title": "固定总工作量下凸势与排序势的近二局部极小",
-      "detail": "完全相同机器上的固定工作量族使二次势和排序势成为严格单任务局部极小，初始比值趋二且次二目标需无界批量迁移。",
+      "detail": "完全相同机器上的固定工作量族使二次势和排序势成为严格单任务局部极小，初始比值趋二且最终次二分配需无界总Hamming改动；三件启动反驳固定批量多轮外推。",
       "refs": [
         "research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md",
         "research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md",
@@ -12048,6 +12048,98 @@
         "tests/audits/unrelated_machines/kdm_high_dimensional_quota.py"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "有界配置任务数的统一槽包络余量",
+      "detail": "For every integer K>=1 and explicit rational equal-coverage CONFIG(T) point whose positive-weight configurations have at most K positive jobs after zero-edge preprocessing, every standard ST slot envelope and covering matching has load <=(2-K^{-(K-1)})T for K>=2, <=T for K1. K2/K3 sharp envelope bounds are3T/2,11T/6.",
+      "refs": [
+        "research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md",
+        "research/reviews/unrelated_machines/bounded_configuration_cardinality_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "有界最优任务数承诺的未知阈值构造",
+      "detail": "For each fixed K, on ordinary UM instances promised to have some OPT schedule with at most K no-zero-edge jobs per machine, explicit <=K subset enumeration, rational CONFIG LP and threshold-sum search give a deterministic bit-polynomial actual assignment at the stated K-dependent ratio.",
+      "refs": [
+        "research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md",
+        "research/reviews/unrelated_machines/bounded_configuration_cardinality_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "加权余量消元的零缺陷满秩坏核心",
+      "detail": "For every fixed rational eps in(0,1), integer m>=3,m>1/eps, an explicit 2m-machine,2m+1-job instance has OPT1 and a true-optimal-hull initial x. Exactly m legal maximal weighted-excess nullspace pivots preserve all protected row loads and reach a full-column-rank core with D0 but every frozen-assignment completion2-1/m>2-eps.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完整配置路径的一步激活支撑丢失",
+      "detail": "Given explicit rational CONFIG1 witness on m>=2,n>=1, a polynomial-size activation lift has OPT1 and explicit true-optimal-hull initial x. One maximal legal row-load nullspace pivot preserves full CONFIG1 along the whole segment but deletes all original private alternatives; endpoint frozen-support optimum equals max(1,OPT(P positive marginal support)). The known CONFIG gap family gives any fixed sub-two bad history.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "保配置同一方向的双符号坏端点",
+      "detail": "For the explicit bipartite <=2-core-end CONFIG source domain, half-color activation has polynomially many genuine OPT1 atoms. Two disjoint lifts admit one allowed nullspace direction with exact maximal steps +/-1/2, full CONFIG1 throughout, and both endpoint frozen-support optima max(1,OPT(P positive marginal support)). Initial rank J+P and nullity2|E+|+2m-P are exact.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "UM-BOUNDED-CONFIG-CARDINALITY-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "有界配置槽包络的独立有限核验",
+      "detail": "Actual finite Fraction audits and explicit witnesses only; not a universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md",
+        "tests/audits/unrelated_machines/bounded_configuration_cardinality_slots.py",
+        "tests/audits/unrelated_machines/bounded_configuration_cardinality_independent.py",
+        "evidence/runs/unrelated_machines/bounded_configuration_cardinality_audit.json",
+        "evidence/runs/unrelated_machines/bounded_configuration_cardinality_independent.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "UM-CONFIG-ELIMINATION-SUPPORT-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "保配置消元支撑丢失的有限精确核验",
+      "detail": "Actual finite Fraction audits and explicit witnesses only; not a universal proof.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "tests/audits/unrelated_machines/weighted_excess_zero_defect_trap.py",
+        "tests/audits/unrelated_machines/configuration_activation_support_loss.py",
+        "tests/audits/unrelated_machines/configuration_activation_two_sign.py",
+        "evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
+        "evidence/runs/unrelated_machines/configuration_activation_support_loss_audit.json",
+        "evidence/runs/unrelated_machines/configuration_activation_two_sign_audit.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -26106,7 +26198,7 @@
         "UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1"
       ],
       "conclusion": "UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1",
-      "statement": "固定总工作量不救固定二次/排序势的单任务局部下降；趋二族要求无界同步迁移。",
+      "statement": "固定总工作量不救固定二次/排序势的单任务局部下降；最终总Hamming下界不推出同步批量或多轮能垒，后者已由三件启动反驳撤回。",
       "refs": [
         "research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md",
         "research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md"
@@ -29340,6 +29432,234 @@
         "research/current/unrelated_machines/kdm_high_dimensional_quota_obstruction.md"
       ],
       "status": "self-contained stated-scope proof"
+    },
+    {
+      "id": "DERIVES-UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1",
+      "statement": "All declared joint prerequisites; self-contained scoped proof. Configuration-gap premise is used only for the arbitrary-epsilon bad-history application, not for proving lifted OPT1.",
+      "refs": [
+        "research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "LIMITS-UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "K is fixed only for the algorithmic enumeration; the supplied-point theorem holds for each K. Full source configuration cardinality, not total eligible row degree or just large-job count. No generic CONFIG oracle or uniform epsilon for growing K.",
+      "refs": [
+        "research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "DERIVES-UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1"
+      ],
+      "conclusion": "UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1",
+      "statement": "All declared joint prerequisites; self-contained scoped proof. Configuration-gap premise is used only for the arbitrary-epsilon bad-history application, not for proving lifted OPT1.",
+      "refs": [
+        "research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "LIMITS-UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Polynomial degree depends on fixed K. Infeasibility only excludes schedules with the K-cardinality promise and is not unrestricted OPT>T. General LP solver not integrated in audit software.",
+      "refs": [
+        "research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "DERIVES-UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1",
+      "statement": "All declared joint prerequisites; self-contained scoped proof. Configuration-gap premise is used only for the arbitrary-epsilon bad-history application, not for proving lifted OPT1.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "LIMITS-UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "One specified harmful direction history only. It violates the row big-count inequality immediately; no claim under maintaining full CONFIG, no failure of all direction choices or general approximation lower bound.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "DERIVES-UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-CONF-GAP-v1"
+      ],
+      "conclusion": "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
+      "statement": "All declared joint prerequisites; self-contained scoped proof. Configuration-gap premise is used only for the arbitrary-epsilon bad-history application, not for proving lifted OPT1.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "LIMITS-UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "Explicit y is part of input, not a free CONFIG oracle. No endpoint-rank or zero-D claim. Reverse or another direction and support reopening are not excluded; the full constructed instance is easy via its supplied optimal atoms.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "DERIVES-UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
+        "UM-CONF-GAP-v1"
+      ],
+      "conclusion": "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1",
+      "statement": "All declared joint prerequisites; self-contained scoped proof. Configuration-gap premise is used only for the arbitrary-epsilon bad-history application, not for proving lifted OPT1.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified"
+    },
+    {
+      "id": "LIMITS-UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "The direction is a direct sum, not support-minimal/circuit. Refutes arbitrary direction plus both-sign endpoint checking only; different directions, circuit rules, preserved common atoms or reopened edges remain open.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "CHECKS-UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BOUNDED-CONFIG-CARDINALITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1",
+      "statement": "Finite exact implementation/certificate checks; general claim rests on proof.",
+      "refs": [
+        "research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md",
+        "evidence/runs/unrelated_machines/bounded_configuration_cardinality_audit.json",
+        "evidence/runs/unrelated_machines/bounded_configuration_cardinality_independent.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "CHECKS-UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-BOUNDED-CONFIG-CARDINALITY-AUDIT-v1"
+      ],
+      "conclusion": "UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1",
+      "statement": "Finite exact implementation/certificate checks; general claim rests on proof.",
+      "refs": [
+        "research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md",
+        "evidence/runs/unrelated_machines/bounded_configuration_cardinality_audit.json",
+        "evidence/runs/unrelated_machines/bounded_configuration_cardinality_independent.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "CHECKS-UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CONFIG-ELIMINATION-SUPPORT-AUDIT-v1"
+      ],
+      "conclusion": "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1",
+      "statement": "Finite exact implementation/certificate checks; general claim rests on proof.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
+        "evidence/runs/unrelated_machines/configuration_activation_support_loss_audit.json",
+        "evidence/runs/unrelated_machines/configuration_activation_two_sign_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "CHECKS-UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CONFIG-ELIMINATION-SUPPORT-AUDIT-v1"
+      ],
+      "conclusion": "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
+      "statement": "Finite exact implementation/certificate checks; general claim rests on proof.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
+        "evidence/runs/unrelated_machines/configuration_activation_support_loss_audit.json",
+        "evidence/runs/unrelated_machines/configuration_activation_two_sign_audit.json"
+      ],
+      "status": "finite evidence"
+    },
+    {
+      "id": "CHECKS-UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CONFIG-ELIMINATION-SUPPORT-AUDIT-v1"
+      ],
+      "conclusion": "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1",
+      "statement": "Finite exact implementation/certificate checks; general claim rests on proof.",
+      "refs": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md",
+        "evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
+        "evidence/runs/unrelated_machines/configuration_activation_support_loss_audit.json",
+        "evidence/runs/unrelated_machines/configuration_activation_two_sign_audit.json"
+      ],
+      "status": "finite evidence"
     }
   ]
 }

@@ -1751,7 +1751,7 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 
 - **Exact Statement：** 对每个 m≥3 的完全相同机器族，两件unit和m²−1件1/m tiny使总工作量固定；给定初始分配的Cmax=2、OPT=1+2/m，二次负载势与非增排序负载词典序均对每一件单任务换机严格变差；任意Cmax≤2−ε需改变至少2+ceil(εm)件任务。
 - **Objects / Domain：** 全有限正处理时间、无资格限制的R||Cmax子族；只声明单任务邻域和固定势合同。
-- **Scope / Conclusion：** 关闭固定总工作量、固定二次/排序势、固定批量单调下降路线；不排无界批量、非单调过渡、输入自适应势或全局重求解。两机精确全局二次势含PARTITION只是额外oracle义务。
+- **Scope / Conclusion：** 只关闭该初态的单任务严格下降及证明最终总支持下界；固定批量多轮外推已由公屏467三件启动反驳撤回。保留非单调过渡、输入自适应势或全局重求解。两机精确全局二次势含PARTITION只是额外oracle义务。
 - **Dependencies / Evidence：** `UM-MODEL-v1`；自足计数证明、独立审查、m=3全分配枚举及m=4,5,8,12 Fraction核验。
 - **Status：** complete stated-scope obstruction; independently reconstructed and exactly audited; external review and novelty unverified；`UM-TARGET-v1`仍OPEN。
 - **Related Files：** `research/current/unrelated_machines/fixed_work_convex_local_minimum_near_two.md`、`research/reviews/unrelated_machines/fixed_work_convex_local_minimum_review.md`、`tests/audits/unrelated_machines/fixed_work_convex_local_minimum.py`、`evidence/runs/unrelated_machines/fixed_work_convex_local_minimum_audit.json`。
@@ -2868,3 +2868,68 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：严格阈值不能删；不保证坏集延伸为共同基或全局调度。共享辅助/存在性投影/多元素块/只保选定profile/自适应或一般有符号电路均不由本定理排除。
 - Status：限定范围证明完成；实际内部独立攻击，未外审；全球新颖性与论文价值未认证。UM-TARGET-v1仍OPEN。
 - Related Files：research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md §9；research/reviews/unrelated_machines/knapsack_matroid_exponential_review.md；tests/audits/unrelated_machines/knapsack_matroid_exponential.py；evidence/runs/unrelated_machines/knapsack_matroid_exponential_audit.json。
+
+
+## UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1：有界配置任务数的统一槽包络余量
+
+- Exact Statement / Quantifiers：For every integer K>=1 and explicit rational equal-coverage CONFIG(T) point whose positive-weight configurations have at most K positive jobs after zero-edge preprocessing, every standard ST slot envelope and covering matching has load <=(2-K^{-(K-1)})T for K>=2, <=T for K1. K2/K3 sharp envelope bounds are3T/2,11T/6.
+- Objects / Domain / Definitions：UM-MODEL-v1；精确定义、零值预处理、输入证书和输出合同见对应正文，不把目录或推送视作数学升级。
+- Assumptions / Scope：K is fixed only for the algorithmic enumeration; the supplied-point theorem holds for each K. Full source configuration cardinality, not total eligible row degree or just large-job count. No generic CONFIG oracle or uniform epsilon for growing K.
+- Conclusion：有界配置任务数的统一槽包络余量，仅在上述量词和条件内；UM-TARGET-v1仍OPEN。
+- Dependencies：UM-MODEL-v1, UM-ST-ROUND-v1；正文中自足的类型/计数/构造步骤。
+- Evidence：一般证明；实际声明先行独立重构及证明知情最终读稿分别记录；有限Fraction核验仅为checks。
+- Counterevidence / Objections：K is fixed only for the algorithmic enumeration; the supplied-point theorem holds for each K. Full source configuration cardinality, not total eligible row degree or just large-job count. No generic CONFIG oracle or uniform epsilon for growing K.
+- Status：限定范围证明完成、内部独立攻击、未外审；全球新颖性和独立论文价值未认证。
+- Related Files：research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md；research/reviews/unrelated_machines/bounded_configuration_cardinality_review.md；对应assets与catalog登记给出实际代码/冻结结果。
+
+
+## UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1：有界最优任务数承诺的未知阈值构造
+
+- Exact Statement / Quantifiers：For each fixed K, on ordinary UM instances promised to have some OPT schedule with at most K no-zero-edge jobs per machine, explicit <=K subset enumeration, rational CONFIG LP and threshold-sum search give a deterministic bit-polynomial actual assignment at the stated K-dependent ratio.
+- Objects / Domain / Definitions：UM-MODEL-v1；精确定义、零值预处理、输入证书和输出合同见对应正文，不把目录或推送视作数学升级。
+- Assumptions / Scope：Polynomial degree depends on fixed K. Infeasibility only excludes schedules with the K-cardinality promise and is not unrestricted OPT>T. General LP solver not integrated in audit software.
+- Conclusion：有界最优任务数承诺的未知阈值构造，仅在上述量词和条件内；UM-TARGET-v1仍OPEN。
+- Dependencies：UM-MODEL-v1, UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1；正文中自足的类型/计数/构造步骤。
+- Evidence：一般证明；实际声明先行独立重构及证明知情最终读稿分别记录；有限Fraction核验仅为checks。
+- Counterevidence / Objections：Polynomial degree depends on fixed K. Infeasibility only excludes schedules with the K-cardinality promise and is not unrestricted OPT>T. General LP solver not integrated in audit software.
+- Status：限定范围证明完成、内部独立攻击、未外审；全球新颖性和独立论文价值未认证。
+- Related Files：research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md；research/reviews/unrelated_machines/bounded_configuration_cardinality_review.md；对应assets与catalog登记给出实际代码/冻结结果。
+
+
+## UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1：加权余量消元的零缺陷满秩坏核心
+
+- Exact Statement / Quantifiers：For every fixed rational eps in(0,1), integer m>=3,m>1/eps, an explicit 2m-machine,2m+1-job instance has OPT1 and a true-optimal-hull initial x. Exactly m legal maximal weighted-excess nullspace pivots preserve all protected row loads and reach a full-column-rank core with D0 but every frozen-assignment completion2-1/m>2-eps.
+- Objects / Domain / Definitions：UM-MODEL-v1；精确定义、零值预处理、输入证书和输出合同见对应正文，不把目录或推送视作数学升级。
+- Assumptions / Scope：One specified harmful direction history only. It violates the row big-count inequality immediately; no claim under maintaining full CONFIG, no failure of all direction choices or general approximation lower bound.
+- Conclusion：加权余量消元的零缺陷满秩坏核心，仅在上述量词和条件内；UM-TARGET-v1仍OPEN。
+- Dependencies：UM-MODEL-v1；正文中自足的类型/计数/构造步骤。
+- Evidence：一般证明；实际声明先行独立重构及证明知情最终读稿分别记录；有限Fraction核验仅为checks。
+- Counterevidence / Objections：One specified harmful direction history only. It violates the row big-count inequality immediately; no claim under maintaining full CONFIG, no failure of all direction choices or general approximation lower bound.
+- Status：限定范围证明完成、内部独立攻击、未外审；全球新颖性和独立论文价值未认证。
+- Related Files：research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md；research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md；对应assets与catalog登记给出实际代码/冻结结果。
+
+
+## UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1：完整配置路径的一步激活支撑丢失
+
+- Exact Statement / Quantifiers：Given explicit rational CONFIG1 witness on m>=2,n>=1, a polynomial-size activation lift has OPT1 and explicit true-optimal-hull initial x. One maximal legal row-load nullspace pivot preserves full CONFIG1 along the whole segment but deletes all original private alternatives; endpoint frozen-support optimum equals max(1,OPT(P positive marginal support)). The known CONFIG gap family gives any fixed sub-two bad history.
+- Objects / Domain / Definitions：UM-MODEL-v1；精确定义、零值预处理、输入证书和输出合同见对应正文，不把目录或推送视作数学升级。
+- Assumptions / Scope：Explicit y is part of input, not a free CONFIG oracle. No endpoint-rank or zero-D claim. Reverse or another direction and support reopening are not excluded; the full constructed instance is easy via its supplied optimal atoms.
+- Conclusion：完整配置路径的一步激活支撑丢失，仅在上述量词和条件内；UM-TARGET-v1仍OPEN。
+- Dependencies：UM-MODEL-v1, UM-CONF-GAP-v1；正文中自足的类型/计数/构造步骤。
+- Evidence：一般证明；实际声明先行独立重构及证明知情最终读稿分别记录；有限Fraction核验仅为checks。
+- Counterevidence / Objections：Explicit y is part of input, not a free CONFIG oracle. No endpoint-rank or zero-D claim. Reverse or another direction and support reopening are not excluded; the full constructed instance is easy via its supplied optimal atoms.
+- Status：限定范围证明完成、内部独立攻击、未外审；全球新颖性和独立论文价值未认证。
+- Related Files：research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md；research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md；对应assets与catalog登记给出实际代码/冻结结果。
+
+
+## UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1：保配置同一方向的双符号坏端点
+
+- Exact Statement / Quantifiers：For the explicit bipartite <=2-core-end CONFIG source domain, half-color activation has polynomially many genuine OPT1 atoms. Two disjoint lifts admit one allowed nullspace direction with exact maximal steps +/-1/2, full CONFIG1 throughout, and both endpoint frozen-support optima max(1,OPT(P positive marginal support)). Initial rank J+P and nullity2|E+|+2m-P are exact.
+- Objects / Domain / Definitions：UM-MODEL-v1；精确定义、零值预处理、输入证书和输出合同见对应正文，不把目录或推送视作数学升级。
+- Assumptions / Scope：The direction is a direct sum, not support-minimal/circuit. Refutes arbitrary direction plus both-sign endpoint checking only; different directions, circuit rules, preserved common atoms or reopened edges remain open.
+- Conclusion：保配置同一方向的双符号坏端点，仅在上述量词和条件内；UM-TARGET-v1仍OPEN。
+- Dependencies：UM-MODEL-v1, UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1, UM-CONF-GAP-v1；正文中自足的类型/计数/构造步骤。
+- Evidence：一般证明；实际声明先行独立重构及证明知情最终读稿分别记录；有限Fraction核验仅为checks。
+- Counterevidence / Objections：The direction is a direct sum, not support-minimal/circuit. Refutes arbitrary direction plus both-sign endpoint checking only; different directions, circuit rules, preserved common atoms or reopened edges remain open.
+- Status：限定范围证明完成、内部独立攻击、未外审；全球新颖性和独立论文价值未认证。
+- Related Files：research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md；research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md；对应assets与catalog登记给出实际代码/冻结结果。

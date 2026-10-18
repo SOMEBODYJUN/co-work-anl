@@ -7724,7 +7724,7 @@
         "history/source/literature/unrelated_machines/lenstra_shmoys_tardos_1987_unrelated_scheduling_report.pdf"
       ],
       "source_role": "自足计数与势差证明；PARTITION段只作oracle复杂度义务。",
-      "limit": "只排固定势/固定批量局部路线；不是一般hardness或近似算法否定。"
+      "limit": "只排该初态的单任务严格势下降，并证明最终Hamming支持界；旧固定批量多轮外推已由三件启动反驳撤回。不是一般hardness或近似算法否定。"
     },
     {
       "id": "um_two_state_quota_hall_cut",
@@ -10415,6 +10415,78 @@
         "history/source/literature/unrelated_machines/lee_svensson_thiery_2409_17831.pdf"
       ],
       "limit": "LST provides KDM hardness under NP not subset BPP but no KDM-to-UM reduction; the all-layer quota formula is not a polynomial-time evaluator; UM-TARGET-v1 remains OPEN."
+    },
+    {
+      "id": "um_bounded_configuration_cardinality",
+      "claims": [
+        "UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1",
+        "UM-BOUNDED-CARDINALITY-PROMISE-APPROX-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "Explicit equal-coverage CONFIG(T) point; positive-weight configs contain<=K positive jobs after globally removing zero-edge jobs",
+        "For unknown OPT approximation only: fixed K and promise some OPT schedule obeys that K-cardinality bound"
+      ],
+      "produces": "Uniform-in-instance slot-envelope margin for fixed K, actual covering matching, and a separate exact rational threshold-search promise algorithm.",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/bounded_configuration_cardinality_slots.py",
+        "tests/audits/unrelated_machines/bounded_configuration_cardinality_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/bounded_configuration_cardinality_audit.json",
+        "evidence/runs/unrelated_machines/bounded_configuration_cardinality_independent.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/bounded_configuration_cardinality_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf",
+        "history/source/literature/unrelated_machines/page_solis_oba_maack_2018_bounded_job_assignments_author.pdf"
+      ],
+      "limit": "K grows => margin vanishes and enumeration exponent grows. Source ST is background; Page is a different total-eligibility hypothesis, not attribution of the new bound. No generic LP implementation or novelty certification."
+    },
+    {
+      "id": "um_configuration_preserving_elimination_support_loss",
+      "claims": [
+        "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1",
+        "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
+        "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "Permanent support deletion and integer fixing; row-load nullspace endpoint motion; excess row-drop rule",
+        "Compact trap: fixed rational eps,m>=3,m>1/eps. Activation: explicit CONFIG witness,m>=2,n>=1. Two-sign: bipartite <=2-end positive support"
+      ],
+      "produces": "True-optimal-hull harmful histories: exact zero-D full-rank trap; full-CONFIG-preserving lift; both signs of a specified direct-sum direction can lose all desired frozen-support completions.",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/weighted_excess_zero_defect_trap.py",
+        "tests/audits/unrelated_machines/configuration_activation_support_loss.py",
+        "tests/audits/unrelated_machines/configuration_activation_two_sign.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
+        "evidence/runs/unrelated_machines/configuration_activation_support_loss_audit.json",
+        "evidence/runs/unrelated_machines/configuration_activation_two_sign_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
+      ],
+      "limit": "Known CONFIG gap supplies only the base witness, not the new full instance OPT (which is proved1). Does not rule out all directions, circuit choices, reopened edges or general algorithms; generic lift has no zero-D/rank conclusion."
     }
   ]
 }

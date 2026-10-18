@@ -193,3 +193,6 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 ## 已知目标的任意多件共同释放已闭合
 
 新UM-LOCAL-BUNDLE-SHIELD-PATH-v1/UM-PRUNED-BUNDLE-PEELING-PATH-v1由任务包、内部入流剥离、逆序激活和补集释放闭合全部剪枝初态的给定τ全程U路径。旧all-small activation OPEN已由[新正文](research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)关闭；下一主目标承重点是未知目标的共同容量与可靠失败语义，不继续增加已知τ样本。U可≥2T，不能误作最终次二算法。
+
+[有界配置任务数的统一槽余量](research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md)给固定K的确定性结构承诺算法与自足整数类型证明；[永久消元的支撑丢失](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)则把新的共同义务说清：真实OPT凸包初态、完整单机CONFIG路径甚至双符号端点检查，都不自动保证永久删端后仍有好补全。固定K不替代一般统一ε，双符号反例也不排circuit方向；主目标保持OPEN。
+当前剩余核心义务：从任意输入可计算地选择共同方向/容量状态，保住或恢复真实整数补全，并给统一余量和总位多项式进展；本轮没有关闭这些义务。

@@ -336,3 +336,10 @@
 [完整证明](../current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)给UM-LOCAL-BUNDLE-SHIELD-PATH-v1与UM-PRUNED-BUNDLE-PEELING-PATH-v1：给定τ时，全部剪枝初态有det-bit-poly全程U路径，worst-uniform逐参数锐；全小件不再要求单件可激活。未知目标与一般ε未得。
 
 [原地拟阵外包的指数数量界](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#9-固定次二容量外包需要超多项式数量的原地拟阵)另立UM-KNAPSACK-MATROID-EXPONENTIAL-v1：把大件改为1−r/k后，完整保留全部容量1可行集且所有共同独立集固定次二，需超多项式原输入位长的静态拟阵数；精确最少数为C(k,k−r−1,r)。只限本地完整外包，不推出一般调度困难性。
+
+
+## 有界配置的正面余量与永久消元的新断点
+
+[bounded_configuration_cardinality_slot_margin.md](../current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md)给固定配置任务数K的全行槽包络界：K≥2时(2−K^{−(K−1)})T，K1为T；K2、K3的3T/2、11T/6锐。行总资格数和时间跨度均无固定限制，但K增长时余量消失。另有固定K最优任务数承诺的未知OPT算法，不适用于无承诺全输入。
+
+[configuration_preserving_elimination_support_loss.md](../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)给三个分离身份：真实OPT1初态经合法枢轴可达D0且所有固定补全近二；一般激活提升可在完整CONFIG路径中一次删掉所有好补全；二分两副本使同一方向两个符号端点均坏。双副本方向不是circuit方向，三个结果均不排具体选向、真实共同分解或重开端。完整CONFIG可行性、零缺陷和保负载不能免费替代共同支撑安全。

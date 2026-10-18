@@ -176,3 +176,5 @@
 ## 任意剪枝初态的已知目标路径
 
 [任务包共同入流剥离](research/current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)现给所有剪枝实际初态到给定实际τ≤T的完整det-bit-poly单件路径，峰U=max(2T,C+T/2)，并沿旧两机族证明全输入类逐参数锐性；不再需要eligible单件、assigned-max或ST来源。逐机二分profile同页。未知τ的共同选择与一般统一次二输出仍缺，UM-TARGET-v1保持OPEN。
+
+[有界配置任务数的统一槽余量](research/current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md)给固定K的确定性结构承诺算法与自足整数类型证明；[永久消元的支撑丢失](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)则把新的共同义务说清：真实OPT凸包初态、完整单机CONFIG路径甚至双符号端点检查，都不自动保证永久删端后仍有好补全。固定K不替代一般统一ε，双符号反例也不排circuit方向；主目标保持OPEN。

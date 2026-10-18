@@ -375,7 +375,7 @@ Astra 独立重构 BCG TR-848-09、BLMRS2024 和 Bamas2025：BCG 的因子<2困�
 
 - `UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1`：共同核心加私有 padding 的全层配额值恰 `s/K`，需求树桥梁实际 `OPT=2−s/K`；只检查完整层的归约会在 `s→s+1` 核心容量处失效。
 - `UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1`：固定 unit big 占位后、同尺寸 tiny 残余补齐的精确阈值等价最大度图独立集；它只否定免费共同选择器，不给近二 hardness。
-- `UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1`：固定总工作量的完全同机族中，二次势和排序势单任务下降均锁死，趋二修复需 `2+ceil(εm)` 件同步迁移。
+- `UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1`：固定总工作量的完全同机族中，二次势和排序势单任务下降均锁死，次二目标与初态的最终Hamming距离至少 `2+ceil(εm)`；不要求同步，三件启动后逐件可到OPT。
 
 这些结果收紧了跨层一致性、共同容量状态和局部 repair 的 proof obligations，但没有提供一般输入的统一 epsilon 算法；主目标继续 OPEN.
 
@@ -523,3 +523,10 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 前文任意pruned初态全小件共同激活的OPEN已由[二分任务包入流剥离](../current/unrelated_machines/bundle_inflow_peeling_and_pruned_transient_sharpness.md)闭合：无eligible/assigned-max前提，全程U=max(2T,C+T/2)且全输入类worst-uniform锐。UM-LOCAL-BUNDLE-SHIELD-PATH-v1另给任意二分的逐机profile。具体τ及其Q/f仍是输入；未知目标共同选择、可靠FAIL与实际统一次二输出仍是主前沿。
 
 [原地拟阵外包的指数数量界](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#9-固定次二容量外包需要超多项式数量的原地拟阵)另立UM-KNAPSACK-MATROID-EXPONENTIAL-v1：把大件改为1−r/k后，完整保留全部容量1可行集且所有共同独立集固定次二，需超多项式原输入位长的静态拟阵数；精确最少数为C(k,k−r−1,r)。只限本地完整外包，不推出一般调度困难性。
+
+
+## 有界配置的正面余量与永久消元的新断点
+
+[bounded_configuration_cardinality_slot_margin.md](../current/unrelated_machines/bounded_configuration_cardinality_slot_margin.md)给固定配置任务数K的全行槽包络界：K≥2时(2−K^{−(K−1)})T，K1为T；K2、K3的3T/2、11T/6锐。行总资格数和时间跨度均无固定限制，但K增长时余量消失。另有固定K最优任务数承诺的未知OPT算法，不适用于无承诺全输入。
+
+[configuration_preserving_elimination_support_loss.md](../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)给三个分离身份：真实OPT1初态经合法枢轴可达D0且所有固定补全近二；一般激活提升可在完整CONFIG路径中一次删掉所有好补全；二分两副本使同一方向两个符号端点均坏。双副本方向不是circuit方向，三个结果均不排具体选向、真实共同分解或重开端。完整CONFIG可行性、零缺陷和保负载不能免费替代共同支撑安全。
