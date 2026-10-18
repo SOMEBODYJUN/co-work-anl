@@ -513,3 +513,5 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 
 
 [原地拟阵外包的指数数量界](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#9-固定次二容量外包需要超多项式数量的原地拟阵)另立UM-KNAPSACK-MATROID-EXPONENTIAL-v1：把大件改为1−r/k后，完整保留全部容量1可行集且所有共同独立集固定次二，需超多项式原输入位长的静态拟阵数；精确最少数为C(k,k−r−1,r)。只限本地完整外包，不推出一般调度困难性。
+
+[出现位置异权文字池的三半逃逸](../current/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md)：允许同变量同侧逐occurrence异权，full eligible每侧b和≤1时仍能det构造全部原jobs actual≤1.5；合两侧首项/余项排序配对，含f池query≤.5，另一池≤1。只否该编译合同，未排额外guards或更大预算。

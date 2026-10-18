@@ -1256,6 +1256,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-KNAPSACK-MATROID-EXPONENTIAL-v1 | k≥3,1≤r≤floor((k−1)/2)，tiny各1/k、大件1−r/k；同一原地基集静态拟阵交完整保所有容量1可行集。共同独立集严格低于2−2r/k迫q≥ceil[binom(k,r)/binom(k−r−1,r)]≥exp(r(r+1)/k)；精确最少数C(k,k−r−1,r)。固定次二阈值需超多项式原输入位长数量。 | [正文§9](unrelated_machines/minimal_star_contraction_and_capacity_gap.md)、[独立实际审查](../reviews/unrelated_machines/knapsack_matroid_exponential_review.md)；只限完整本地外包，不推共同基/全局输出/一般UM困难性。 |
 
+| UM-OCCURRENCE-WEIGHTED-DIRECT-LITERAL-POOL-BUDGET-ESCAPE-v1 | 显式CNF每clause至少2个不同身份occurrences，允许重复literal/variable；per-occurrence b≥0为binary rational，每变量每polarity全部eligible b和≤1；仅完整private-root/query/clause-selector/两pool unit-f原矩阵，含zero/unused/empty-idle。 det-bit-poly无SAT/witness输入地为所有原jobs构造actual≤3/2；每clause恰一个原query导出，其余原root；含f池query-only≤1/2、另一池≤1、全部roots≤1。 | [正文](unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md)、[全文实审](../reviews/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape_review.md)；仅新fullbudget域，不冒主hardness或旧sharpness。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

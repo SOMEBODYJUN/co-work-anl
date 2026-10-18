@@ -11947,6 +11947,29 @@
         "evidence/runs/unrelated_machines/knapsack_matroid_exponential_audit.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "UM-OCCURRENCE-WEIGHTED-LITERAL-POOL-FULL-BUDGET-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "出现位置异权文字池的完整预算域",
+      "detail": "显式CNF每clause至少2个不同身份occurrences，允许重复literal/variable；per-occurrence b≥0为binary rational，每变量每polarity全部eligible b和≤1；仅完整private-root/query/clause-selector/两pool unit-f原矩阵，含zero/unused/empty-idle。",
+      "refs": [
+        "research/current/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-OCCURRENCE-WEIGHTED-DIRECT-LITERAL-POOL-BUDGET-ESCAPE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "文字池全资格预算下的完整三半调度",
+      "detail": "det-bit-poly无SAT/witness输入地为所有原jobs构造actual≤3/2；每clause恰一个原query导出，其余原root；含f池query-only≤1/2、另一池≤1、全部roots≤1。",
+      "refs": [
+        "research/current/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md",
+        "research/reviews/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape_review.md"
+      ],
+      "status": "complete scoped full-budget direct-pool escape; actual independent Exact-first, author-read-after and whole canonical review; novelty unverified"
     }
   ],
   "hyperedges": [
@@ -29107,6 +29130,37 @@
         "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md"
       ],
       "status": "method boundary"
+    },
+    {
+      "id": "um_occurrence_weighted_direct_literal_pool_budget_escape_v1_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-OCCURRENCE-WEIGHTED-LITERAL-POOL-FULL-BUDGET-DOMAIN-v1"
+      ],
+      "conclusion": "UM-OCCURRENCE-WEIGHTED-DIRECT-LITERAL-POOL-BUDGET-ESCAPE-v1",
+      "statement": "同变量两pol首项合槽，其余排序成对；各clause occurrence质量≤1/2给共同整数匹配，放f于未选首项侧，偶数位和≤全预算一半并回填所有原jobs。全部共同域前提已列，无有限实验或旧矩阵sharpness前提。",
+      "refs": [
+        "research/current/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md",
+        "research/reviews/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "um_occurrence_weighted_direct_literal_pool_budget_escape_v1_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-OCCURRENCE-WEIGHTED-DIRECT-LITERAL-POOL-BUDGET-ESCAPE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅独立private-root/full-sign预算≤1编译；不排更大预算、额外资格或shared guards，不给主UM新ratio/near2hardness，不承诺sharpness。",
+      "refs": [
+        "research/current/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md",
+        "research/reviews/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape_review.md"
+      ],
+      "status": "scope limitation"
     }
   ]
 }

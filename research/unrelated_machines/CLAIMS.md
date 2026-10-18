@@ -2819,3 +2819,14 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：严格阈值不能删；不保证坏集延伸为共同基或全局调度。共享辅助/存在性投影/多元素块/只保选定profile/自适应或一般有符号电路均不由本定理排除。
 - Status：限定范围证明完成；实际内部独立攻击，未外审；全球新颖性与论文价值未认证。UM-TARGET-v1仍OPEN。
 - Related Files：research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md §9；research/reviews/unrelated_machines/knapsack_matroid_exponential_review.md；tests/audits/unrelated_machines/knapsack_matroid_exponential.py；evidence/runs/unrelated_machines/knapsack_matroid_exponential_audit.json。
+
+## UM-OCCURRENCE-WEIGHTED-DIRECT-LITERAL-POOL-BUDGET-ESCAPE-v1：出现位置异权文字池的完整三半逃逸
+
+- Objects / Domain / Definitions / Quantifiers：显式CNF每clause至少2个不同身份occurrences，允许重复literal/variable；per-occurrence b≥0为binary rational，每变量每polarity全部eligible b和≤1；仅完整private-root/query/clause-selector/两pool unit-f原矩阵，含zero/unused/empty-idle。
+- Exact Statement / Conclusion：det-bit-poly无SAT/witness输入地为所有原jobs构造actual≤3/2；每clause恰一个原query导出，其余原root；含f池query-only≤1/2、另一池≤1、全部roots≤1。
+- Assumptions / Dependencies：无复杂度假设；UM-MODEL-v1及本页完整域，标准整数匹配/排序自足。
+- Scope：仅独立private-root/full-sign预算≤1编译；不排更大预算、额外资格或shared guards，不给主UM新ratio/near2hardness，不承诺sharpness。
+- Evidence：typed作为candidate作者/熟悉标准工具者仅新Exact独立重构5aa…后root实际全文读才放作者Proof d882…，actual读后24cd…；新6.1sol reviewer另仅Exact独立全证c759…，root全文实读后解封同一已冻Proof，actual读后778…，最终header+全部§1–5实审601…；root全部实际读，不记blind。
+- Counterevidence / Objections：预算是full eligible而非selected；unit/empty clause不在域；zero原job仍执行，未选root保留，旧cohabiting域认证/锐性不转移，无standing fatal。
+- Status：证明完整，实际独立重构/读后/最终全文审；implementation none、外审与全球新颖性未认证；UM-TARGET-v1 OPEN。
+- Related Files：[正文](../current/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md)、[审查](../reviews/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape_review.md)与原件。

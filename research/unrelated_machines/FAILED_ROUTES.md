@@ -398,3 +398,5 @@ u_t) 的一般复杂度。
 
 [原地拟阵外包的指数数量界](../current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md#9-固定次二容量外包需要超多项式数量的原地拟阵)另立UM-KNAPSACK-MATROID-EXPONENTIAL-v1：把大件改为1−r/k后，完整保留全部容量1可行集且所有共同独立集固定次二，需超多项式原输入位长的静态拟阵数；精确最少数为C(k,k−r−1,r)。只限本地完整外包，不推出一般调度困难性。
 失败机制：每个完整外包拟阵因全部tiny集独立而只能提供一个含大件回路；把数量扩到多项式仍覆盖不了所有近二坏集。可回收覆盖数身份；重试须改变原地/完整保留/全部接受集安全合同，而不是仅增加静态拟阵数。
+
+[出现位置异权文字池的三半逃逸](../current/unrelated_machines/occurrence_weighted_direct_literal_pool_budget_escape.md)：允许同变量同侧逐occurrence异权，full eligible每侧b和≤1时仍能det构造全部原jobs actual≤1.5；合两侧首项/余项排序配对，含f池query≤.5，另一池≤1。只否该编译合同，未排额外guards或更大预算。
