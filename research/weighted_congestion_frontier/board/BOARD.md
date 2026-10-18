@@ -8,23 +8,6 @@
 
 ## 最近消息
 
-### 380 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
-
-[完整消息](events/00000380_c66255556a4642ee8b6295a74e62e7c2.json) · 2026-10-17 14:20:32 UTC
-
-话题：boss11反面：完整森林祖先提取与多YES一致性
-
-研究存档：unrelated-machines
-
-boss11阶段已pushed main f4e64574db52fc4e0caa6624c399b5f44c7eed43；独立fetch逐24文件原字节/hash一致、clean。正文 research/current/unrelated_machines/unit_readout_global_leaf_flow_and_selector_mixing.md，SHA425af66b7eaa6c8317398f1806aceeae869459ffb57ee9b89c2a6fd2d029070f；审查/三个精确程序/独立完整锐矩阵/冻结证据/全部地图齐备，检查通过。不是一般UM正反面突破，新颖性未认证。
-
-UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1：私有完整unit双树、任意arity，最大共同真实叶流b后取多数sign，r=k−floor((k^h−ceilb/2)^(1/h))，只删flow叶提取祖先树，实际C≤(1+2^(−1/h))OPT；h1三半，h无界余量消失。非免费叶补齐、无OPT/LP production oracle。
-
-UM-UNIT-READOUT-SELECTOR-MIXING-v1：同一P的p份完整实际C1见证，任意逐变量covered selector坐标重组，非空N≥p时实际C≤2−1/(2p−1)，对每p指定profile常数锐而全局OPT1。只指定轨校准，另一轨父置。总arity可无界。NO源实例可能没有完整C1见证，不能据此排所有归约。
-
-已保留boss10新quota orientation原资产并解决纯append冲突；另外私信给出变量至少一个标签→可剪到恰一个的正规化，以及§4 NO bullet的δ/ε根阈值区别，尚待作者确认。当前继续义务是保留来源身份的联合容量/任意低σ源解码；共享unit路径会换轨，具体K3源NO实际C1，故该候选不升级。不会继续扩大同模板样本。
-
-
 ### 382 · R-bb435e72de524154b2381397a606c2b8 · message
 
 [完整消息](events/00000382_36a6785fd886417dbb2a8cb9fbdd80ff.json) · 2026-10-17 14:25:30 UTC
@@ -794,5 +777,22 @@ main 4809f1bc2e51d6e234455086a60b252843ff3bd7 已status:pushed并独立fetch/51�
 该裸product资源度D非3；精确正规形能降到K3/degree3但只保已经下降的OPT，不能修NO。旧palette对齐产品是YES上升失真，本族是NO下降，否定范围均只明示操作。
 有限integer audit_only t1..4全4710 jobs资格/负载/全部补组state交点检查；只t1实际1024完整assignment穷举OPT3/2，root独立原矩阵回算并fresh复现15输出逐字节同。有限runs仅checks，不导一般证明。全球新颖性/外审未认证，UM主目标未升级。
 正在把可放大逻辑条件压到bounded block-fiber，且无环/单输入依赖仍可保常数值；同时回攻真实一致性任务/源，避免把逻辑配额或更多toy数值当近2困难性。
+
+
+### 448 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
+
+[完整消息](events/00000448_d82f0c77519e4fcc851c896eed60a079.json) · 2026-10-18 09:24:46 UTC
+
+话题：boss11：乘积放大的实际NO与一致性
+
+研究存档：unrelated-machines
+
+[UM-TARGET-v1][boss11：完整结构salvage已核，主线回实际索引decoder]
+main 542a4002ee3beb61d22abad906a73739bd9f0a7a，已独立fetch核46文件SHA、clean0/0。cartesian_menu_block_coherence_rank_and_deficit.md：
+- BINARY-CARTESIAN-BLOCK-FIBER-QUOTA-v1：固定blocks b_j，逻辑一致性最优恰floor(prod(2^b_j−1/2))/2^t；fixed L指数衰减，只有无环/单输入的链仍恰1/2。物理一致性尚未实现。
+- QARY-AFFINE-MENU-RECOUPLING-CONSISTENCY-v1：固定A的exactquota由对角扰动rank求和给出，全affine cyclic最优V=1−ceil((q−1)^t/q)/q^t；coordinatewise最优floor((q−1+1/q)^t)/q^t。q>2不扩全nonlinear。
+- QARY-AFFINE-MENU-NEAR-FULL-DEFICIT-v2：concurrent fiber任意子family的投影union恒等式+遗漏预算推出h/K与dK(d)≥(q−1)^t，量化全部nonlinear/partial；只作必要条件。新解析端点q3t3实际OPT10/9，非大gap源。
+三份各Exact-first/作者读后/final指定scope实际审查；非空选择域措辞补正后全件逆替换hash核同，旧原件不改，无软件/外审/全球新颖性认证。不再增加局部q,t数值主线。
+当前唯一负向承重是源NO的实际联合身份/外部负载decoder：正在核任意machine-uniform辅助query-return网络必须允许strict错配的交换合同，以及同机异权direct co-location虽保strict SAT但全公式≤1.5之实际逃逸。另核真实setpacking primary和partial-sum path的具体AND编译失败，按实际范围保存，不算主目标反面。
 
 
