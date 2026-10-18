@@ -154,3 +154,6 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 
 
 [保护环共享子句OR错配](research/current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)记录一个完整物理接线失败：同一共同匹配让所有SAT/UNSAT公式都strict≤1。只排该接法，重试必须防实际身份交换；主目标未升级。
+
+
+[有界菜单两组资源联合近似](research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md)给特定weighted menu类相对OPT的2−1/(2K)；结合旧VW MaxMin算法的直接结构推论，非generalUM。Q2、固定K的加权重试仍不能承载近2严格unit源；重试需真实突破跨组degree/菜单或原矩阵结构，主目标未解。

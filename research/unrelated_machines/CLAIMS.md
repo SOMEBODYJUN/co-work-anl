@@ -2436,3 +2436,17 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：v1空公式不合法已由v2修复；实际q@Rc与返回b可错配，正是失效步骤；无standing fatal。
 - Status：限定失败机制证明/内审完成，外审/新颖性未认证，UM-TARGET-v1未解。
 - Related Files：[正文§9](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、[审查](../reviews/unrelated_machines/protected_cycle_shared_clause_or_failure_review.md)及七个保留来源。
+
+
+## UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2：加权菜单的共同资源与相对OPT
+
+- ID / Version：`UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2`；保留promise-only v1来源，不改旧域。
+- Exact Statement / Conclusion：确定性位poly完整实际C≤2−(2−OPT)/(2K)≤(2−1/(2K))OPT，无OPT/witness输入；normalized OPT=2−XOS分配值，bonus精确保OPT；group平均接已知VW factor2，最后单state还原全部原jobs。
+- Objects / Domain / Quantifiers：显式非空groups、非空indexed menus每组K_g≤K；每resource跨全部states最多2groups；state私有根互异，selector1只选本组state，每incidence根非负p/resource1，Wstate≤1，无其它jobs/约束。 对每个完整合法结构输入输出具体原σ。
+- Assumptions / Definitions：K是显式最大菜单数；resource外端恰1，所有private总量≤1，group标签是输入；V、average、bonus按正文。
+- Scope：固定K给该结构类统一改善；非一般UM、degree3、任意外端或succinct菜单。
+- Dependencies：完整结构域、已发表VW2010v1 §5.1 Theorem12 degree2 additive factor2，加自足OPT2−V/平均/归一化/原jobs还原共同前提。
+- Evidence：实际primary读取、root独立加强/核、general Exact-first完整重构、作者Proof读后及canonical最终审查；软件另记。
+- Counterevidence / Objections：OPT2单独处理，未在2上假设资源独占；未先冻结heavy matching；phase success不是精确T可行；零权/empty states/不同Kg已核，无standing fatal。不声明factor锐性。
+- Status：数学证明/内部审查完成；直接结构推论，不冒称新SC算法；外审/新颖性未认证，UM-TARGET-v1未解。
+- Related Files：[正文](../current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md)、[审查](../reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md)、原VW PDF及七份原字节数学来源。

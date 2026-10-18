@@ -87,3 +87,6 @@
 
 
 [共享clause OR身份错配](../../../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)已给全公式strict匹配，单个私有身份保护不能直接接OR；新接线需在实际medium共居上锁同编号，不能靠完美匹配计数保decoder。
+
+
+[加权菜单joint算法](../../../current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md)闭合heavy/diffuse共同选择：group层平均而非state拆玩家，已知degree2 MaxMin后端→one state→全部原jobs，保OPT归一化后ratio2−1/(2K)。当前negative候选须越过Q2固定菜单与menus2 unit可判两界，不能再把任意坏heavy匹配当NO源。

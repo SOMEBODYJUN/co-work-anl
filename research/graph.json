@@ -11198,6 +11198,73 @@
         "research/reviews/unrelated_machines/protected_cycle_shared_clause_or_failure_review.md"
       ],
       "status": "complete scoped failure proof; actual statement-first, read-after and canonical review; novelty unverified"
+    },
+    {
+      "id": "UM-DEGREE-TWO-EXPLICIT-WEIGHTED-MENU-DOMAIN",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "显式weighted菜单/两组资源真实矩阵域",
+      "detail": "显式非空groups、非空indexed menus每组K_g≤K；每resource跨全部states最多2groups；state私有根互异，selector1只选本组state，每incidence根非负p/resource1，Wstate≤1，无其它jobs/约束。 G非空→OPT≥1，fullprivate→OPT≤2；非免费generalP分解。",
+      "refs": [
+        "research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md"
+      ],
+      "status": "explicit structured scheduling domain"
+    },
+    {
+      "id": "UM-VW2010-DEGREE-TWO-MAXMIN-PAPER-FACT",
+      "kind": "lemma",
+      "track": "unrelated_machines",
+      "title": "VW2010 Theorem12：degree2加性MaxMin二近似",
+      "detail": "Paper Fact：每item≤2positive agents，非负异值/degree1允许；确定性组合factor2，binary bitpoly。原算法成功仅给T/2，失败证OPT<T。primary§5.1/PDF10–11实际核读；非本仓新算法。",
+      "refs": [
+        "research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md",
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf",
+        "research/reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md"
+      ],
+      "status": "published Paper Fact; primary statement and applicable mechanism checked"
+    },
+    {
+      "id": "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "有界菜单两组资源的联合实际次二算法",
+      "detail": "确定性位poly完整实际C≤2−(2−OPT)/(2K)≤(2−1/(2K))OPT，无OPT/witness输入；normalized OPT=2−XOS分配值，bonus精确保OPT；group平均接已知VW factor2，最后单state还原全部原jobs。",
+      "refs": [
+        "research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md",
+        "research/reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md"
+      ],
+      "status": "complete scoped structural corollary; actual statement-first, primary-source, read-after and canonical review; novelty unverified"
+    },
+    {
+      "id": "UM-DEGREE-TWO-MENU-STRUCTURED-BACKEND",
+      "kind": "artifact",
+      "track": "unrelated_machines",
+      "title": "两组资源显式菜单端到端审计后端",
+      "detail": "精确归一化/group平均、迭代VW force/pair BFS/单向二分、单state与全部原jobs实际时刻输出；核心不调OPT/brute。audit_only分类，非generalUM。",
+      "refs": [
+        "research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md",
+        "tests/audits/unrelated_machines/degree_two_weighted_menu_backend.py",
+        "tests/audits/unrelated_machines/audit_degree_two_weighted_menu_backend.py",
+        "examples/unrelated_machines/weighted_menu_joint_fixtures.json",
+        "research/reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md"
+      ],
+      "status": "structured implementation in audit directory; actual finite verification"
+    },
+    {
+      "id": "UM-DEGREE-TWO-MENU-LISTED-AUDITS",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "五结构例与root原矩阵独立回算",
+      "detail": "5例29原jobs、原完整832 assignments、归一化24820 assignments（audit），VW弱success/1200迭代环；root另按原input构矩阵枚举832并核全输出。大decimal读写及冻结覆盖拒绝已核。",
+      "refs": [
+        "research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md",
+        "examples/unrelated_machines/weighted_menu_joint_fixtures.json",
+        "evidence/runs/unrelated_machines/degree_two_menu_joint_v2/audit_results.json",
+        "evidence/runs/unrelated_machines/degree_two_menu_joint_v2/fixture_outputs.json",
+        "evidence/runs/unrelated_machines/degree_two_menu_joint_v2/root_independent_original_matrix_verification.json",
+        "research/reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md"
+      ],
+      "status": "finite checks only"
     }
   ],
   "hyperedges": [
@@ -27305,6 +27372,74 @@
         "research/reviews/unrelated_machines/protected_cycle_shared_clause_or_failure_review.md"
       ],
       "status": "method-interface limitation"
+    },
+    {
+      "id": "um_degree_two_group_bounded_menu_joint_rounding_v2_derives",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-DEGREE-TWO-EXPLICIT-WEIGHTED-MENU-DOMAIN",
+        "UM-VW2010-DEGREE-TWO-MAXMIN-PAPER-FACT"
+      ],
+      "conclusion": "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2",
+      "statement": "归一化实际OPT=2−V与group平均A≥V/K，published2approx共同分资源，再取每group单state还原全部原jobs；所有state bonus导出保OPT给W≤1，relative算式用OPT≥1。",
+      "refs": [
+        "research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md",
+        "research/reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md"
+      ],
+      "status": "complete scoped structural corollary"
+    },
+    {
+      "id": "um_degree_two_group_bounded_menu_joint_rounding_v2_limits",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只给明确结构类；K可增长但改善趋0，资源跨组degree3/一般角色混合无后端，不升级主目标。",
+      "refs": [
+        "research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md",
+        "research/reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "um_degree_two_menu_backend_implements",
+      "kind": "implements",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DEGREE-TWO-MENU-STRUCTURED-BACKEND"
+      ],
+      "conclusion": "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2",
+      "statement": "仅显式结构类后端：用迭代VW算法计算共同allocation，再还原全部原jobs；不接受generic UM或succinct菜单。",
+      "refs": [
+        "research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md",
+        "tests/audits/unrelated_machines/degree_two_weighted_menu_backend.py",
+        "research/reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md"
+      ],
+      "status": "structured audit implementation; general proof separate"
+    },
+    {
+      "id": "um_degree_two_menu_evidence_checks",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DEGREE-TWO-MENU-STRUCTURED-BACKEND",
+        "UM-DEGREE-TWO-MENU-LISTED-AUDITS"
+      ],
+      "conclusion": "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2",
+      "statement": "只验证所列原/归一化实例、actual输出与代码逻辑边界，不能将832/24820有限枚举作一般式(1)证明。",
+      "refs": [
+        "research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md",
+        "tests/audits/unrelated_machines/audit_degree_two_weighted_menu_backend.py",
+        "evidence/runs/unrelated_machines/degree_two_menu_joint_v2/audit_results.json",
+        "evidence/runs/unrelated_machines/degree_two_menu_joint_v2/fixture_outputs.json",
+        "evidence/runs/unrelated_machines/degree_two_menu_joint_v2/root_independent_original_matrix_verification.json",
+        "research/reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md"
+      ],
+      "status": "finite checks only"
     }
   ]
 }

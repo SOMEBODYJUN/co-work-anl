@@ -1206,6 +1206,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-PROTECTED-CYCLE-CIRCUIT-CLAUSE-OR-FAILURE-v2 | 显式CNF每clause≥2独立文字occurrences、允许重复；变量环/dummy/polarity按正文，q_i内部a/1、私有Ci1及clauseRc1，b_i私有Ci1/pin a，clause u_c可Ci1；a∈(0,1)，空Φ加idle。 此确切OR接线对所有公式均有det bitpoly完整actual≤1，每非idle机恰一原job，每Rc真由clause qi占据；导出query与返回blocker索引可错配，不能保源NO。 | [正文§9](unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)、[审查](../reviews/unrelated_machines/protected_cycle_shared_clause_or_failure_review.md)；无新通用实现，主目标未解。 |
 
+| UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2 | 显式非空groups、非空indexed menus每组K_g≤K；每resource跨全部states最多2groups；state私有根互异，selector1只选本组state，每incidence根非负p/resource1，Wstate≤1，无其它jobs/约束。 确定性位poly完整实际C≤2−(2−OPT)/(2K)≤(2−1/(2K))OPT，无OPT/witness输入；normalized OPT=2−XOS分配值，bonus精确保OPT；group平均接已知VW factor2，最后单state还原全部原jobs。 | [正文](unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md)、[审查](../reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md)；非generalUM，K增长改善可趋0。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
