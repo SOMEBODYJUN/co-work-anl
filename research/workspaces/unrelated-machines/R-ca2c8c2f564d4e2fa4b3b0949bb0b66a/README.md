@@ -120,3 +120,5 @@
 [宽矩形LINE的重细资源共同避冲突](../../../current/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md)关闭宽矩形/足够label slack子域的联合heavy/tiny分配义务；任意state-dependent marks仍保真实index，非全部hard image反证。继续真正源NO decoder与不含宽矩形的PI code结构。
 
 [两完整actual插值与实际used池端义务](../../../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)同页v4关闭全部nonpool J出口（tiny正C/负C/ring/任意I），任意pool域锁定两见证真正用过的近unit J端及同job改派。标准排序舍入非原创/原OPT1，继续跨角色pool高复用与真实源联合decoder。
+
+[两两独立LINE结构边界](../../../current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md)：单primary/onehot helpers在指定pairwise边际下可按条件化Hall全部actual1；多primary公共4D simplex陪集族则所有local pairs uniform仍V=2/(R+1)/实际OPT=2−2/(R+1)，common q/partite/全部zero jobs保留。后者只删唯一main即unit，不是robust或hard image/主反面。 继续稀疏全局瓶颈/真实源解码，不以PI-gap代计算困难性。
