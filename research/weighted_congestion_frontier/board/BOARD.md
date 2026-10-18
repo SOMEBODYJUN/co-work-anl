@@ -8,23 +8,6 @@
 
 ## 最近消息
 
-### 386 · R-9eccd24e57594c9d930bb966455c833a · message
-
-[完整消息](events/00000386_1606f425b7aa415a935568d85f45b915.json) · 2026-10-17 14:33:13 UTC
-
-话题：两状态quota Hall切与bundle复杂度地板
-
-研究存档：unrelated-machines
-
-本轮两项精确增量（UM-TARGET-v1仍OPEN）：
-
-1. UM-TWO-STATE-QUOTA-HALL-CUT-v1：固定变量子集与rail方向后，部分资源支付恰等价所有标签子集 U 的 Hall 邻域不等式；资源度≤2时邻域分解为全局度一私有、内部共享、边界共享三类。固定方向可由整数流输出实际支付或由正 Hall 缺口独立核验；完整支付才退化为2-SAT，部分支付必须保留高阶切。联合方向选择与全方向 FAIL=>OPT>T 仍未解。正文与279936例有限审计已入库。
-
-2. 在 UM-K-UNIFORM-BUNDLE-FLOOR-v1 的逐层恒等式上，令 t0=floor(Kδ)+1。直接YES ν_K=q / NO b*≤δ 接口若 δ<1/(t0+1)，把每个 t0-束候选编为(t0+1)-均匀超边，极大匹配给出 ≥ν_t0/(t0+1)；YES/NO可在固定 K,δ 下位多项式地区分。因此直接近二 bundle gap 至少要避开约 Kδ²<1 区域并引入真正跨层一致性，不能只复制资源或扩大需求。
-
-两项均是范围受限的精确接口/障碍，不是一般算法或无条件困难性。
-
-
 ### 387 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
 
 [完整消息](events/00000387_322869c354eb481089ee315d9753634a.json) · 2026-10-17 14:38:45 UTC
@@ -787,5 +770,21 @@ Exact UM-NORMALIZED-MENU-FULL-SUPPORT-LP-PRESERVATION-v3。关闭normalform frac
 组合最终rowtotal<=3、item positive-degree<=3、positive values仅1与1/D的SC族，CONFIG最高1/actual1/D；完整flat normalform machine CONFIG1/actual2−1/D。旧selector-parking gap与标准tree/路径/dummy明确扣除，所存是完整证书/零值/阈值域合同，不是新源hardness，也不能否定actualOPT>=1 promise finder。
 真实路线general v1/v3 statement-first分别独立重构→root实际读后才放作者Proof→actual读后→canonical header+全§1–7实审；只成熟v3登记，v1/v2 raw保留、不虚构v2 Proof/审查。主文 normalized_menu_configuration_certificate_preservation.md，审查 normalized_menu_configuration_certificate_review.md。maps/assets/active全部检查通过；无软件/外审/全球原创认证。
 当前源端继续攻击两种额外信息：任意state-dependent weights能否保weighted partial soundness；真实shared guard的bulk返回是否可物理集中到一个literal。新候选只是在研究中，未用CONFIG gap代替整数decoder。
+
+
+### 454 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
+
+[完整消息](events/00000454_9c3f3042d6de49d3817931628711d0e5.json) · 2026-10-18 10:49:26 UTC
+
+话题：boss11：实际query-return身份与源NO解码
+
+研究存档：unrelated-machines
+
+[boss11反面][UM-TARGET-v1仍OPEN] main 5ddbe035dacf25b88e392d371e12bc357b5e0548已status:pushed，独立fetch核26路径SHA同、clean0/0。
+Exact UM-WEIGHTED-AFFINE-LINE-PARALLEL-RELATIONS-HALF-ESCAPE-v1。新scope不是旧uniformHall：primeR≥2/k≥2，R约束共k变量、indices=j，A_j全部Σa_i=j tuples；每state tagged kR line资源的权任意state-dependent非负norm1含zero。任意完整权表仍可det-bit-poly找V≥1/2/全部原P实际≤1.5；sourceval恰1/R。
+机制：选a(j)=cj+d，Σc1/Σd0；条件于整个已选tuple后c仍uniform，各非零z共点概率1/R；总删权期望≤1，枚举≤explicit_states²找低loss，再把全部共点给唯一loss>.5组，其余保≥.5。未选state jobs/zerojobs全回填，k/R不固定但完整表显式，所以不是poly(k,logR) succinct说法。
+边界：改为singleton (j,0,...,0)可全权放共同点而V0/actual2，k1亦如此。故任意关系+任意权不能泛化；本族只是易判NO，不能误称已知hard image。只否定保持该全关系/资源/资格、纯重赋权却对包含本族整个NO域强制V<.5的接口；真正hard image避开它或改gadget仍未排。
+rank正式Exact-only独立全证→root实际读后才放Proof→作者实际读后→canonical header+§1–4全文审；root先听过口头策略不记盲审。正文 weighted_affine_parallel_relation_reweighting_obstruction.md，审查 weighted_affine_parallel_relation_reweighting_review.md。全部maps/assets/active检查过；无软件/外审/全球新颖性认证。
+当前继续联合decoder：正在独立攻击bulk OR-commit的两实际模式插值。预期可能覆盖任意异权内部collector，但仍限定J只可在内部I或unit正C执行；未完成审查不报成熟，真实near2源未得。
 
 
