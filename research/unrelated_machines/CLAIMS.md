@@ -2735,3 +2735,51 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：k1/singleton关系给V0/actual2，主k≥2完整关系承重；不误套hard image，无standing fatal。
 - Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
 - Related Files：[正文](../current/unrelated_machines/weighted_affine_parallel_relation_reweighting_obstruction.md)、[审查](../reviews/unrelated_machines/weighted_affine_parallel_relation_reweighting_review.md)及逐SHA原件。
+
+
+## UM-UNRELATED-AUX-HEAVY-READOUT-BULK-OR-COMMIT-SPLIT-v3：任意异权辅助与重读口的批量OR三半逃逸
+
+- Objects / Domain / Quantifiers / Definitions：r≥2/偶k≥2/ρ∈(.5,1)完整block-ring双池；J只接任意unrelated非负I或正C，全部J在C端∈(.5,1]；给同P两份不同一真完整实际strict≤1调度。
+- Exact Statement / Conclusion：det-bit-poly构造全部原jobs全False实际≤1.5，J各仅取自身两witness原端，I≤1.5/C,M≤1/正pool≤1.5；只承诺witness存在则仅存在结论，原OPT1非sourceNO。
+- Assumptions / Dependencies：无复杂度假设；UM-MODEL-v1与明示完整backbone/J资格/两actual strict模式，自足排序配对与整数流；不调用未知见证finder。
+- Scope：只排该独立committer已有两完整strict模式的weak抗split；不排缺两全局strict见证的跨子句NO，不覆盖J到ring/pool/负C或C≤.5小端/其它backbone；不提供一般算法/near2困难性。
+- Evidence：root与fee共同推导，不记root盲审；general分别仅v1/v2/v3 statement独立重构并冻结b26…/ab4…/698…，root全文实读后才统一放三版作者Proof；general实际全文读后9de…，再正式canonical header+§1–5全文审，root每份实际读。固定同端/重复occurrence两路线与maxF/分段回填均合法，全部aux共用同一流，无standing fatal。
+- Counterevidence / Objections：重C边界严格>.5，C输出≤1非恰1；I仅≤1.5，fixed C扣gate，原OPT1/conditionalFalse与sourceNO分开，无standing fatal。
+- Status：限定证明完整，真实独立先行/作者读后/最终全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)、[审查](../reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md)及逐SHA原件。
+
+
+## UM-TAGGED-AFFINE-LINE-BALANCED-MARGINAL-TINY-VALUE-v1：单标签边际均匀的仿射线菜单仍有趋二实际间隙
+
+- Objects / Domain / Quantifiers / Definitions：primeR≥3、完整tagged F_R² line planes、各变量intercept单射、state-dependent非负有理norm1权含全部zero；显式main与R(R−1)helper，每group Rstates、各incidence label单边际uniform。
+- Exact Statement / Conclusion：对每primeR≥3显式族，任意partial选择最优V=1/(R−1)，全原jobs普通UM实际OPT=2−1/(R−1)，显式达界assignment；fresh零权变量padding使共同arityR/R-partite并精确保值。
+- Assumptions / Dependencies：UM-MODEL-v1与primeR≥3/完整norm1 tagged-LINE矩阵/main-helper显式族；资源挤占/完整调度/零权padding与有限域代数自足，不调用CONFIG、hardness或有限实验。
+- Scope：仅反驳真tagged-LINE几何加uniform单标签边际足以保证任意state-dependent权正常数partial值；main/helper关系并非pairwise independent，不认证Chan/LST hard image、源value、CONFIG新值或near2计算困难性；UM-TARGET-v1仍OPEN。
+- Evidence：root先听作者口头策略，核对不记盲审；rank仅Exact独立全证冻0d8a…，root实际全文读后才放作者Proof c502…；rank实际作者读后df172…再审canonical header+§1–4全文b661…，root全部实际读，任意helper选态、完整actual含zero/padding/counts/显式位poly均闭合，无standing fatal。
+- Counterevidence / Objections：不是局部pairwise-independent关系；任意helper/全部未选和zero jobs均包含，R2不在域；source hard image未认证，无standing fatal。
+- Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md)、[审查](../reviews/unrelated_machines/tagged_affine_line_uniform_marginal_gap_review.md)及逐SHA原件。
+
+
+## UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v2：宽标签矩形的仿射线重细资源共同避冲突
+
+- Objects / Domain / Quantifiers / Definitions：primeR≥2/完整tagged-LINE norm1 states含zero、fixed injective intercepts；显式Cartesian标签矩形最小边长L、每line≤b marks、其余点权≤β，D变量度/M逐组共享数/q最大arity；L>b(D−1)。
+- Exact Statement / Conclusion：det-bit-poly共同选真实indexed states与disjoint B，保全部selected marks及独占点，每组≥max(0,1−Mβ)，全部原UM jobs≤2−该值；sparse β0给actualOPT1，任意权L>2q(D−1)²给actual≤1.5，D1直接OPT1。
+- Assumptions / Dependencies：UM-MODEL-v1与完整norm1 tagged-LINE域/宽Cartesian labels/固定截距/marked-unmarked界及严格slack；几何与共同分配自足，不调用CONFIG、hardness或有限实验。
+- Scope：仅wide Cartesian rectangles加label slack的输入子域；不从pairwise independence或alphabet可增推全部LST/Chan hard images满足，所有固定intercepts量词明确，不提供source perfect completeness/hardness/NO decoder，UM-TARGET-v1仍OPEN。
+- Evidence：bicriteria只据v2 Exact独立全证冻f2786…，root实际全文读后才放作者Proof e725…，再actual读后2c8a…，最终canonical header+全部§1–5实审b1cb…；root所有记录实际读，root先听口头策略不记盲审。v1仅历史Exact，root实际读，不冒reviewer读v1/无v1 Proof。
+- Counterevidence / Objections：state-dependent marks查真实index后才用；不主张所有supports不交；R2等号有V0/actual2，所以严格slack承重；hard-image域未认证，无standing fatal。
+- Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape.md)、[审查](../reviews/unrelated_machines/tagged_affine_line_wide_rectangle_joint_escape_review.md)及逐SHA原件。
+
+
+## UM-TWO-ACTUAL-INTERPOLATION-BULK-FALSE-ESCAPE-v4：一般两完整见证插值与批量全False的实际池端义务
+
+- Objects / Domain / Quantifiers / Definitions：一般显式P/T≥0/两完整actual≤T/F原任务指定legalν，含zero与空任务；bulk完整原ring双pool/r≥2/偶k/ρ>.5/两不同一真全actual1，任意非负unrelated J接全部非pool或全部原机。
+- Exact Statement / Conclusion：det-bit-poly同一τ：非F仅自身两actual端，逐机件数≤ceil(N_i/2)、负载≤t_i+(L_i0+L_i1+d_i)/2；bulk nonpool J全False≤1.5，任意pool J≤1.5+d/2，near2排除要求两新正pool实际used近unit J且同job实际改派。
+- Assumptions / Dependencies：UM-MODEL-v1与完整两actual/F合法ν/全部非F实际端数据；bulk原backbone定义及两一真witness；标准配对整数流自足，不依旧v3 quota强输出、hardness或有限实验。
+- Scope：给定两完整actual witnesses，未知时只推出存在；不提供普通UM新ratio或源NO。只新§6–10，旧v3前缀8153bytes/限定强输出保原值；新M/C仅≤1.5。pool必要事件不是充分decoder，UM-TARGET-v1仍OPEN。
+- Evidence：typed先冻非pool特化v1，root独立闭合/建议一般域，共同参与不记blind；rank仅v4 Exact独立全证81bd…，root实际读后才放作者Proof d5e…，actual读后2f3b…再正式§6 header+全部§6–10实审abe199…（实际读§1定义依赖，不冒旧v3全文重审）；root各记录实际全文读。原v3前缀SHA df8d61b09dcdce43f7b76d50c8c981e80d91cdcce5a3a28b063e4cd317004a48保持。
+- Counterevidence / Objections：same-dest两occurrence不提前合并，zero任务保留，pool d计q/J已用边非unused；严格/非严格threshold分开；原OPT1/指定False不同，unknownwitness非免费finder，无standing fatal。
+- Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/bulk_or_commit_two_witness_interpolation.md)、[审查](../reviews/unrelated_machines/bulk_or_commit_two_witness_interpolation_review.md)及逐SHA原件。
