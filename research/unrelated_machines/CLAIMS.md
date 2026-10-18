@@ -2346,3 +2346,10 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：删除剪枝的两机反例明确保留；padding only-original条件已补；条件保护不冒充永久安全；无standing内部fatal。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；规范给定目标构造implemented，外审与新颖性未认证，UM-TARGET-v1仍OPEN。
 - Related Files：research/current/unrelated_machines/held_cycle_release_and_assigned_max_path.md；research/reviews/unrelated_machines/held_cycle_assigned_max_path_review.md；evidence/runs/unrelated_machines/held_cycle_assigned_max_path_audit.json；两审计实现沿上述文件进入。
+
+## 未知目标与冻结核心接口
+
+| ID | 精确陈述 | 证据与范围 |
+| --- | --- | --- |
+| UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1 | 冻结核心后公共尺寸 q 的重开任务可在候选阈值上用整数最大流精确搜索未知 B，并输出实际最优分配；机器侧不交的单尺寸分量可独立合并。 | [正文](../current/unrelated_machines/unknown_target_common_size_exact_repair.md)、[审计](../../tests/audits/unrelated_machines/unknown_target_common_size_exact_repair.py)；异尺寸共享机器为装箱/Partition边界，非一般算法。 |
+| UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1 | 去除给定目标 τ 后，承诺存在 T-可行目标的多项式目标生成已包含两机 Partition；p_1j=p_2j=w_j、Σw_j=2B、T=B 时存在目标 iff Partition。 | [正文](../current/unrelated_machines/unknown_target_partition_search_obstruction.md)、[审查](../reviews/unrelated_machines/held_cycle_unknown_target_obstruction.md)；只限制“免费删去 τ”，不推出一般UM不可近似性。 |

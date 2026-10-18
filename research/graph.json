@@ -10950,6 +10950,31 @@
         "tests/audits/unrelated_machines/held_cycle_buffer_path_independent.py"
       ],
       "status": "exact finite audits; not a universal proof"
+    },
+    {
+      "id": "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "冻结核心公共尺寸下的未知目标精确重开",
+      "detail": "冻结核心负载与公共尺寸微任务时，候选阈值整数流精确求最优峰值；异尺寸共享机器不在范围。",
+      "refs": [
+        "research/current/unrelated_machines/unknown_target_common_size_exact_repair.md",
+        "tests/audits/unrelated_machines/unknown_target_common_size_exact_repair.py"
+      ],
+      "status": "complete stated-scope proof; independently audited; external review and novelty unverified"
+    },
+    {
+      "id": "UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "未知目标选择包含Partition的精确障碍",
+      "detail": "删除给定目标后，即使承诺局部目标存在，目标搜索也包含两机Partition；只限制免费删除目标量词。",
+      "refs": [
+        "research/current/unrelated_machines/unknown_target_partition_search_obstruction.md",
+        "research/reviews/unrelated_machines/held_cycle_unknown_target_obstruction.md",
+        "tests/audits/unrelated_machines/unknown_target_partition_search_obstruction.py"
+      ],
+      "status": "complete stated-scope complexity obstruction; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -26761,6 +26786,38 @@
         "research/unrelated_machines/RESEARCH_STATE.md"
       ],
       "status": "open obligation"
+    },
+    {
+      "id": "E-UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TARGET-v1"
+      ],
+      "conclusion": "UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1",
+      "detail": "本阶段精确接口/障碍登记；不升级主目标。",
+      "statement": "本阶段精确接口或障碍，明确不升级UM-TARGET-v1。",
+      "refs": [
+        "research/current/claims.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "current reconstruction internally audited; unrefereed"
+    },
+    {
+      "id": "E-UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TARGET-v1"
+      ],
+      "conclusion": "UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1",
+      "detail": "本阶段精确接口/障碍登记；不升级主目标。",
+      "statement": "本阶段精确接口或障碍，明确不升级UM-TARGET-v1。",
+      "refs": [
+        "research/current/claims.md",
+        "research/current/unrelated_machines/README.md"
+      ],
+      "status": "current reconstruction internally audited; unrefereed"
     }
   ]
 }

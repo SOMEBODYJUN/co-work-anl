@@ -465,3 +465,7 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 3. `UM-WEIGHTED-SMALL-ST-BARRIER-v1`（见 [正文](../current/unrelated_machines/weighted_small_st_barrier.md)）：把等值小端推广到任意有理 `p_{ij}≤β`。若每机 small 总工作 `s_i≤1`，多端任务贡献至少 `γs_i`，则等分支撑的行工作 `≤1−γ/2`，ST 负载 `≤1−γ/2+β`；叠加 unit-only 匹配得到 `2−γ/2+β`。这把反面必要条件推进到 mixed multi-scale，但仍不是一般硬度。
 
 这三项共同改变了反面路线的搜索边界：继续加局部 literal 层或增加多端小任务不会自动产生主目标困难性；真正承重的仍是跨机器全局一致性、`γ→0` 后的固定小端结构，以及能把低负载实际调度可靠解码回源问题的物理归约。`UM-TARGET-v1` 仍 OPEN。
+
+## 本阶段新增：未知目标的精确边界
+
+冻结核心且所有待重开任务共享同一端时间 q 时，未知最终峰值可在候选集合上通过整数最大流精确搜索（UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1）；这给出一个允许接收机增载的正面接口。不同尺寸共享机器时，两机实例已包含 Partition，因此该流合同不能直接推广。独立审查还把给定目标路径定理的 τ 量词分离为 UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1：存在 T-可行目标与能在多项式时间找到目标是不同义务。两项均不改变 UM-TARGET-v1 OPEN 状态。

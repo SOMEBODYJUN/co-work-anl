@@ -1192,6 +1192,9 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-PERMANENT-BUFFER-HELD-CYCLE-PATH-v1 | 对任意UM-MODEL-v1的T≥0,T≤C≤2T、剪枝实际σ≤C和给定实际τ≤T，定义S=f+A,Q,U=max(2T,C+T/2),h=(S+Q−U)+。若每个h_i>0的源至少有一件改变任务a_j≥h_i，则确定性位poly输出每件至多一次直迁τ的完整路径，全程≤U。任意选一件eligible形成的坏环可保留，其他来流统一受S+Q−β<U控制，源补集A−a≥h后释放。 | [正文](unrelated_machines/held_cycle_release_and_assigned_max_path.md)、[审查](../reviews/unrelated_machines/held_cycle_assigned_max_path_review.md)；具体τ给定；源端a≤T承重。没有eligible只是否定该充分条件，不是OPT>T或无路径。 |
 | UM-ASSIGNED-MAX-TRANSIENT-PATH-SHARP-v1 | 在前项同一剪枝/具体τ输入上，若逐机S_i≤T+M_i，其中M_i为σ实际分配最大件（空0），则确定性位poly输出每件至多一次直迁τ的完整路径且峰≤U。对每有理T>0,C∈[T,2T]，这个局部promise类到指定不同τ的单件路径最坏minimax恰U。标准非增单位槽匹配从同一剪枝分数负载≤T产生的任何实际输出满足S−M≤T，故上界覆盖实际槽输出。 | [正文](unrelated_machines/held_cycle_release_and_assigned_max_path.md)、[审查](../reviews/unrelated_machines/held_cycle_assigned_max_path_review.md)；锐性针对完整局部promise类，允许m=2，不声称每固定m,n或实际ST输出锐性；C=T仍为另一指定目标的非空路径。不给未知目标。 |
 
+| UM-COMMON-SIZE-UNKNOWN-B-EXACT-v1 | 冻结核心负载 f_i 后，所有重开微任务在每个有限端均有同一公共有理尺寸 q>0、资格任意时，未知最优峰值 B* 可在候选集 {f_i+qt} 上用 O(log(m|U|+1)) 次整数最大流精确求出并输出实际分配；机器侧不交且各分量单一尺寸时可分量合并。 | [正文](unrelated_machines/unknown_target_common_size_exact_repair.md)、[精确审计](../../tests/audits/unrelated_machines/unknown_target_common_size_exact_repair.py)；仅冻结核心/公共尺寸接口，异尺寸共享机器退化为装箱/Partition，非一般UM算法。 |
+| UM-UNKNOWN-TARGET-PARTITION-SEARCH-OBSTRUCTION-v1 | 从给定初态 σ、T 和矩阵中删除具体目标 τ 后，要求在承诺存在 τ 且 Cmax(τ)≤T 时位多项式构造 τ，已包含两机 Partition：p_1j=p_2j=w_j、Σw_j=2B、T=B；目标存在当且仅当等和Partition存在。 | [正文](unrelated_machines/unknown_target_partition_search_obstruction.md)、[审查](../reviews/unrelated_machines/held_cycle_unknown_target_obstruction.md)、[审计](../../tests/audits/unrelated_machines/unknown_target_partition_search_obstruction.py)；仅证明给定目标路径定理不能免费删去 τ 量词，不构成一般近似困难性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
