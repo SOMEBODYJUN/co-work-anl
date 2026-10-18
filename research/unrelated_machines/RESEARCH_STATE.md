@@ -442,3 +442,8 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 [共同b双small行实际sharp3/2](../current/unrelated_machines/joint_slot_prefix_rounding.md)已双陈述先行/双读后审查并root精确核验；PSM2018框架直接推广，旧row-spread域不改。near2须退出该行结构并有真实低σ解码，一般目标正反面仍OPEN。
 
 [单强制根的µ精确gap](../current/unrelated_machines/private_injective_tree_configuration_floor.md)已证明sup=2−1/µ；[三叉自然放大限制](../current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md)已核YES实际漂移和纯收缩失效。两者均实际陈述先行/读后内审；前者不是多state Gµ，后者不排所有张量，主目标正反面仍OPEN。
+
+
+## 新增：前缀原子证书的表示边界
+
+`UM-PREFIX-ATOMIC-DECODING-v1` 已闭合一个精确条件接口：给定可查询前缀权 `π(S)`、one-hot守恒和完整逐机局部化器，逐任务选择正延伸即可在 `O(|E|)` 次查询中输出真实 `T`-可行整数调度；证书存在当且仅当 `OPT≤T`。这严格增补全阶矩原子桥的表示层，但把一般主桥收窄为：从任意 `P,T` 生成这种succinct证书，或给出可靠 `FAIL⇒OPT>T`。半单位共同选择NP障碍说明该生成不能作为免费oracle；`UM-TARGET-v1` 仍OPEN。详见 `research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md`。

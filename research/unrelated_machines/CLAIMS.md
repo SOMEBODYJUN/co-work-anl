@@ -2193,3 +2193,12 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Dependencies：UM-MODEL-v1、raw-q子可加/DP或旧三叉v1/v2实际构件；正文自足负载/完整LP，无finite前提。
 - Evidence / Counterevidence / Status：实际Exact-first重构后读冻结proof；root亲核。域异议和讨论勘误已在canonical明修，原源保留；无standing fatal；限定证明完成/无新软件、外审或新颖性认证。
 - Related Files：research/current/unrelated_machines/ternary_rainbow_subtree_exact_hardness.md、research/reviews/unrelated_machines/ternary_rainbow_subtree_exact_hardness_review.md及source_crosswalk新冻结材料。
+
+
+## UM-PREFIX-ATOMIC-DECODING-v1：前缀原子证书的确定性解码桥
+
+- **Exact Statement / Quantifiers：** 对任意合法有理 `P,T`，若显式前缀oracle `π(S)` 对所有相容部分分配满足 `π(∅)=1`、非负性、未赋值任务的 one-hot 守恒，并对每个完整 `σ` 满足 `(T-load_i(σ))π(σ)≥0`，则逐任务正延伸贪心在至多 `O(|E|)` 次位多项式精确查询中输出 `load_i(σ)≤T` 的完整调度。该证书存在当且仅当 `OPT≤T`。
+- **Scope / Value：** 全阶矩 `L(m_S)` 是一种指数表示；本Claim新增的是可查询压缩表示和确定性解码，不是一般算法。
+- **Evidence / Objections：** Fraction核验覆盖Dirac/均匀可行证书、`T=0`、两机三件单位任务的全原子排除及异质Dirac例。一般 `P,T` 如何生成oracle或可靠 `FAIL` 未闭合；已有半单位选择NP障碍限制把它当免费oracle。
+- **Status：** complete stated-scope proof; independently reconstructed and exactly audited; external review and novelty unverified；`UM-TARGET-v1`仍OPEN。
+- **Related Files：** `research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md`、`research/reviews/unrelated_machines/succinct_prefix_atomic_decoding_review.md`、`tests/audits/unrelated_machines/succinct_prefix_atomic_decoding.py`、`evidence/runs/unrelated_machines/succinct_prefix_atomic_decoding_audit.json`。
