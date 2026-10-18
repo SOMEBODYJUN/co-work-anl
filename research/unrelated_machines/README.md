@@ -1,10 +1,10 @@
 # 不相关并行机：新主攻存档与协作入口
 
-**当前主攻方向已转为反面：争取排除每一个统一ε>0。** 这是研究方向决定，非已完成结论；UM-TARGET-v1的原身份与OPEN状态保持。成熟反向成果须给出明确复杂度假设、每个固定ε的真实整数OPT gap、从任意低负载完整调度到源问题的可靠解码及总位复杂度。固定比率硬度和配置间隙均不替代这一义务。
+**当前用户决定：全仓主攻 `UM-TARGET-v1` 的否定，所有参与者直接研究反面证明。** 固定原命题身份，不将方向决定视为证据；每个固定 ε 的真实 OPT gap、完整 YES/NO、绝对阈值 decoder 与总位复杂度是承重义务。复杂度假设逐条声明，既有正面结果作为反驳归约的工具保留；无需先登记路线或等待探索审核。一般反面仍 OPEN。
+
+固定研究存档：`unrelated-machines`。主目标 `UM-TARGET-v1` 是一般R∥C_max确定性位多项式统一(2−ε)构造，仍OPEN。新对话直接使用 [BOSS_START.md](BOSS_START.md)，附仓库外的githubtoken.txt；无需人工分配内部subagents编号。
 
 反面研究的模型简化见[全常数量词与稠密小整数正规形](../current/unrelated_machines/model_and_classical_barriers.md)§6：只含1..n²正整数、全部边可用的输入已经足以判定是否存在统一改善。正文给完整实际输出转换、零值分支及总位复杂度；它不提供新的近二困难性。
-
-固定研究存档：`unrelated-machines`。固定待判定命题 `UM-TARGET-v1` 是一般R∥C_max确定性位多项式统一(2−ε)构造，仍OPEN。新对话直接使用 [BOSS_START.md](BOSS_START.md)，附仓库外的githubtoken.txt；无需人工分配内部subagents编号。
 
 当前路线表[ACTIVE_ROUTES.md](ACTIVE_ROUTES.md)和[Route Card](ROUTE_CARD_TEMPLATE.md)是可选导航。所有 boss 可以直接探索；独立攻击只在成熟候选、路线合并或状态升级时使用，不阻塞早期思路。
 

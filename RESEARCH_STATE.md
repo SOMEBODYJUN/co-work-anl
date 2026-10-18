@@ -10,6 +10,8 @@
 
 固定待判定命题 `UM-TARGET-v1`，存档 `unrelated-machines`：一般R∥C_max上，统一常数(2−ε)的确定性位多项式实际调度。目标仍 **OPEN**；尚无一般新近似算法。新会话用[完整提示词](research/unrelated_machines/BOSS_START.md)，从[本题地图](research/current/unrelated_machines/README.md)和[专题前沿](research/unrelated_machines/RESEARCH_STATE.md)恢复实际状态。
 
+当前操作入口与全体反面方向见[活跃路线](research/unrelated_machines/ACTIVE_ROUTES.md)；无需路线登记或开工审批。
+
 ## 当前承重义务
 
 | 方向 | 已有认识 | 真正尚缺 |

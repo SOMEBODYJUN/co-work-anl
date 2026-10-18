@@ -1,10 +1,10 @@
 # 研究总目录：新题入口与独立模型
 
-**当前主攻方向已转为反面：争取排除每一个统一ε>0。** 这是研究方向决定，非已完成结论；UM-TARGET-v1的原身份与OPEN状态保持。成熟反向成果须给出明确复杂度假设、每个固定ε的真实整数OPT gap、从任意低负载完整调度到源问题的可靠解码及总位复杂度。固定比率硬度和配置间隙均不替代这一义务。
+`unrelated-machines` 的当前用户决定是全体主攻 `UM-TARGET-v1` 的否定：真实近二困难性、全 ε 量词和实际调度解码；复杂度假设须明确。原目标与已有资产保留，研究方向不升级数学真值。直接入口见[活跃路线](unrelated_machines/ACTIVE_ROUTES.md)。
+
+**当前主攻 `UM-TARGET-v1`，研究存档 `unrelated-machines`：一般不相关并行机R∥C_max的统一常数(2−ε)确定性位多项式构造之存在命题，当前直接主攻其否定。原命题及一般反面仍OPEN。** 新对话使用[完整BOSS提示词](unrelated_machines/BOSS_START.md)、[最新版work.py](weighted_congestion_frontier/tools/work.py)和[本题手册](unrelated_machines/RUNBOOK.md)。程序所在旧目录承载共享工具，当前题目按save和精确目标确定。
 
 反面研究的模型简化见[全常数量词与稠密小整数正规形](current/unrelated_machines/model_and_classical_barriers.md)§6：只含1..n²正整数、全部边可用的输入已经足以判定是否存在统一改善。正文给完整实际输出转换、零值分支及总位复杂度；它不提供新的近二困难性。
-
-**当前主攻 `UM-TARGET-v1`，研究存档 `unrelated-machines`：固定待判定命题为一般不相关并行机R∥C_max的统一常数(2−ε)确定性位多项式构造。命题及其反面仍OPEN。** 新对话使用[完整BOSS提示词](unrelated_machines/BOSS_START.md)、[最新版work.py](weighted_congestion_frontier/tools/work.py)和[本题手册](unrelated_machines/RUNBOOK.md)。程序所在旧目录承载共享工具，当前题目按save和精确目标确定。
 
 ## 新题的阅读与研究链
 
