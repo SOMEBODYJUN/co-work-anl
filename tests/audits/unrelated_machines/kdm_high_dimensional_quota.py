@@ -41,6 +41,31 @@ def main():
                 assert len(A1) == len(B1) == t
                 assert A1.isdisjoint(B1)
 
+    # Degree-2 tournament family: full K-bundle matching is one per group,
+    # while a regular orientation gives every label almost all K resources.
+    for s in (2, 4, 6):
+        assert s % 2 == 0
+        K = s * s
+        labels = list(range(s + 1))
+        shared = {(i, j): f"c{i},{j}" for i in labels for j in labels if i < j}
+        private = {i: {f"p{i},{u}" for u in range(K - s)} for i in labels}
+        bundles = {}
+        for i in labels:
+            bundles[i] = set(private[i]) | {
+                shared[tuple(sorted((i, j)))]
+                for j in labels if j != i
+            }
+            assert len(bundles[i]) == K
+        # Orient i -> j when (j-i) mod (s+1) is in 1,...,s/2.
+        chosen = {}
+        for i in labels:
+            out = {shared[tuple(sorted((i, j)))] for j in labels if j != i
+                   and (j - i) % (s + 1) in range(1, s // 2 + 1)}
+            chosen[i] = private[i] | out
+            assert len(chosen[i]) == K - s // 2
+        assert all(chosen[i].isdisjoint(chosen[j]) for i in labels for j in labels if i < j)
+        assert max(len(x) for x in chosen.values()) == K - s // 2
+
     print("kdm_high_dimensional_quota: PASS")
 
 
