@@ -2723,3 +2723,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：先前all-membership与最终positive LP分开；SC path forward仅≤1/reverse任意positive，helper可取双copy；actualNO不作YES反例，当前无standing fatal。
 - Status：限定证明完整，真实独立先行/作者读后/最终全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
 - Related Files：[正文](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[审查](../reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md)及逐SHA原件。
+
+
+## UM-WEIGHTED-AFFINE-LINE-PARALLEL-RELATIONS-HALF-ESCAPE-v1：并行线性关系的任意状态重赋权仍可半保留
+
+- Objects / Domain / Quantifiers / Definitions：primeR≥2/k≥2，R个groups共k变量且indices=j，完整A_j={a:Σa=j}、taggedR² lines；各state任意非负有理norm1权，允许zero，全表显式。
+- Exact Statement / Conclusion：任意state-dependent norm1重赋权均有affine-in-j选态/真实partial≥1/2及全原jobs actual≤3/2；source value1/R，另singleton关系可V0/OPT2。
+- Assumptions / Dependencies：UM-MODEL-v1与完整矩阵/prime/k≥2/全部sum关系/任意norm1权；有限域双射/条件平均/资源回填自足，不调用hardness或有限实验。
+- Scope：只排保持该完整sum关系/groups/states/resources/eligibilities且仅改权、对整个包含本族NO域一概V<1/2的接口；不排避开本族的hard image、额外结构/预处理/其它gadget；非near2困难性。
+- Evidence：root先听作者口头策略，核对不记盲审；rank仅Exact独立全证冻865ed…，root实读后才放Proof17bf…；rank实际读后6ac…再正式最终canonical header+§1–4全文审，root所有记录均实际读，conditional均匀/唯一例外回填/全部原job与可变k显式位poly闭合，无standing fatal。
+- Counterevidence / Objections：k1/singleton关系给V0/actual2，主k≥2完整关系承重；不误套hard image，无standing fatal。
+- Status：限定证明完整，真实独立重构/作者读后/final全文审查；implementation none，外审/全球新颖性未认证；主目标OPEN。
+- Related Files：[正文](../current/unrelated_machines/weighted_affine_parallel_relation_reweighting_obstruction.md)、[审查](../reviews/unrelated_machines/weighted_affine_parallel_relation_reweighting_review.md)及逐SHA原件。

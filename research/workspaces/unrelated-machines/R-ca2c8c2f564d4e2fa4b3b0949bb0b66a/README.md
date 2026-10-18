@@ -108,3 +108,5 @@
 自然[tuple-group/globaldummy桥](../../../current/unrelated_machines/affine_line_tuple_groups_global_dummy_compilation_escape.md)也有actual半保留，即使strict保持full-set packing。当前主源必须改变partial soundness的真实共同机制；另在核有限行总价值/有限item度的SC结构，CONFIG证书与actual promise算法继续分开，尚未解主目标。
 
 [正support与配置证书保持](../../../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)已经真实statement-first/作者读后/final全文核：row3/item度3仍CONFIG gap无界，但actualYES常数finder必须另攻；不把证书障碍当主反面。继续攻击共享guard或真实source partial soundness。
+
+[并行sum关系任意状态权半保留](../../../current/unrelated_machines/weighted_affine_parallel_relation_reweighting_obstruction.md)显示只改权不能对整个包含本族low-value NO域强制tiny V；singleton能V0，所以尚不排真正hard image。继续实际partial decoder和批量guard一致选择。

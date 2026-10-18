@@ -1240,6 +1240,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-NORMALIZED-MENU-FULL-SUPPORT-LP-PRESERVATION-v3 | 非空显式normalized-flat、非空indexed menus、state非负有理总质量1、可有零incidence/unused/重复state；machine CONFIG阈值恰1；SC路径任意非空old agents/有限非负估值，前向正阈值≤1、逆向任意正阈值。 完整flat machine CONFIG(1) iff positive-support FSLP iff state-dummy SC CONFIG(1)；tree/menu-path双向保unit证书；SC path在old actual/CFG最高≤1时各精确保并降item度3，最终row3/degree3族CFG1而actual1/D。 | [正文](unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[实际审查](../reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md)；不排actualYES finder/一般UM。 |
 
+| UM-WEIGHTED-AFFINE-LINE-PARALLEL-RELATIONS-HALF-ESCAPE-v1 | primeR≥2/k≥2，R个groups共k变量且indices=j，完整A_j={a:Σa=j}、taggedR² lines；各state任意非负有理norm1权，允许zero，全表显式。 任意state-dependent norm1重赋权均有affine-in-j选态/真实partial≥1/2及全原jobs actual≤3/2；source value1/R，另singleton关系可V0/OPT2。 | [正文](unrelated_machines/weighted_affine_parallel_relation_reweighting_obstruction.md)、[实际审查](../reviews/unrelated_machines/weighted_affine_parallel_relation_reweighting_review.md)；只排完整NO域纯重赋权，不排hard image，非主反面。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
