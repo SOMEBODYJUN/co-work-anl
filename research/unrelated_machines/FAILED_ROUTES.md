@@ -1,5 +1,7 @@
 # 不相关并行机的已知方法障碍与回收接口
 
+随机完美完备源不能直接替代实际调度反证：缺失的仍是compiler/全低负载decoder。[拒绝种子证书](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)显示，已有硬poly位源一旦接上总判别器，仅一拒绝seed就给NP=coNP；继续放大成功概率不能替代物理桥。[几何整数表](../current/unrelated_machines/model_and_classical_barriers.md)则进一步排除必须靠大量不同数值或输入精度才能否定目标的解释。两项均不证明目标为假。
+
 # 固定处理时间字母表不能承担近二反面
 
 尝试把有限处理时间限制在固定集合（包括固定正整数集合）并据此构造统一 `2-epsilon` 的 hardness，失败于一个算术正面障碍，而不是归约细节：对每个输入取正处理时间的有理 gcd `g(P)` 与最大值 `B(P)`，LST 网格舍入给真实分配比 `2-g(P)/B(P)`。Verschae--Wiese Theorem 7 已给出整数版本；本轮把它扩展到二进制有理输入并显式检查 LP 支撑中慢边未出现时的两情形不等式、零边、禁边和分母位复杂度。

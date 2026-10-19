@@ -26,6 +26,18 @@
 - Status：标准缩放机制的完整限范围接口重构，经独立内审；无外审、全球新颖性或独立论文价值认证；UM-TARGET-v1及其全常数反面均OPEN。
 - Related Files：[模型正文§6](../current/unrelated_machines/model_and_classical_barriers.md)、[独立审查](../reviews/unrelated_machines/dense_small_integer_equivalence_review.md)、tests/audits/unrelated_machines/dense_small_integer_equivalence.py、evidence/runs/unrelated_machines/dense_small_integer_equivalence.json。
 
+## UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1：单一对数平方整数表的等价
+
+- Exact Statement / Quantifiers：n≥16，h=bitlength(n)，b=1+1/h，R=min{非负整数r:b^r≥hn}，A_n={ceil(b^r):0≤r≤R}∪{n²}。原目标成立当且仅当在所有m≥1、n≥16、每项属于A_n的全有限矩阵上存在统一次二det-bit-poly实际算法；∀先固定k≥2，该域(2−1/k)算法可转原全模型(2−1/(2k))算法。
+- Objects / Domain / Definitions：n为实际任务数，A_n只依赖n，与ε、原处理时间和隐藏阈值无关；A_n⊆1..n²，大小≤h ceil(log₂(hn))+2=O(log²n)。与先固定实际有限alphabet不同。
+- Assumptions / Scope：无复杂度假设。未知域内算法B只作存在性前提，未实施；k先固定，复杂度次数可依k，不声明可变binary k的一致多项式。
+- Conclusion：主目标可进一步集中到只有O(log²n)种正整数处理时间、所有边可用的单一输入族；不是NP源gap归约，不给任一侧算法或不存在证明。
+- Dependencies：UM模型的非负性/OPT0分支、固定小n枚举、精确几何阈值及幂、逐机取整z≤q≤bz+1、严格n²哨兵排除；自足证明在模型§7。
+- Evidence：先陈述独立重构；最终§7和稳定实际代码读后攻击；冻结审计区分小h变换测试、巨大n仅网格、真正h≥8k完整负载类型枚举。
+- Counterevidence / Objections：h<8k的n界可极大但对固定k为常数；保留OPT_Q≤bhn OPT/T+n强式，不能只用(h+2)n回译；NO候选舍弃没有sound FAIL语义。固定实际alphabet定理不排依ε变化的alphabet，已明确。
+- Status：标准几何取整推论的完整限范围证明，经独立内审；有限程序未实现未知B，无外审/全球新颖性认证；UM-TARGET-v1及其反面均OPEN。
+- Related Files：[模型§7](../current/unrelated_machines/model_and_classical_barriers.md)、[独立审查](../reviews/unrelated_machines/geometric_alphabet_equivalence_review.md)、tests/audits/unrelated_machines/geometric_alphabet_equivalence.py、evidence/runs/unrelated_machines/geometric_alphabet_equivalence.json。
+
 ## UM-ST-ROUND-v1：给定剪枝可行解的加性负载舍入
 
 - Exact Statement：∀合法P、∀有理T≥0、∀剪枝LST的有理可行x，存在可由确定性位多项式程序构造的合法σ，∀i，L_i(σ)≤Σ_j p_ijx_ij+max{p_ij:x_ij>0}≤2T；空max为0。
@@ -3528,3 +3540,15 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：G空不能保中间不等式链；W<1的V必须含baseline；旧DRZ4+η撤回，α>4从CM另一原定理导入；额外网格误差已付费说明。κ无界改善可趋0，不代表hardness。
 - Status：限定结构推论证明完整/实际内审；外审/全球新颖性未认证，软件audit-only，无完整restricted后端。UM-TARGET-v1及一般反面仍OPEN。
 - Related Files：[research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md](../current/unrelated_machines/resource_distortion_flat_menu_rounding.md)、[审查](../reviews/unrelated_machines/resource_distortion_flat_menu_review.md)、两路tests与evidence沿正文§7。
+
+## UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1：全种子完备源的拒绝证书
+
+- Exact Statement / Quantifiers：固定确定性R(Φ,r)具有关于公式长度的硬多项式种子/时间/输出界，返回FAIL或合法显式source；固定总多项式D在YES答1、NO答0，promise外任意但停机，FAIL按1。若SAT的每个seed均答1、每UNSAT至少一个seed答0，则UNSAT∈NP且NP=coNP；若均匀公平位下拒绝概率另有同一个逆多项式下界，则SAT∈coRP且NP=RP=coRP=coNP。
+- Objects / Domain / Definitions：明确合法SAT编码；固定参数source域及全种子完备合同；source D是待假设的真实程序，不是可用oracle。现有部分MinRep v2/v3/v5在各自PCP起点前提下满足相应source合同。
+- Assumptions / Scope：无条件的是上述蕴含。条件UM应用另需每固定k的全种子YES实际OPT≤T、正有理T、每UNSAT有非FAIL seed的全低负载decoder，从而实际OPT≥(2−1/k)T。概率升级必须覆盖编译后NO/decoder事件；source好事件概率单独不足。
+- Conclusion：原记录NP⊆BPP的更强后果；仅一个poly长度拒绝seed就足以作UNSAT证书。有完整物理合同后，可在NP≠coNP下否定UM目标；概率版亦可采用NP⊄coRP。不是P≠NP下已得hardness或已证一般不存在。
+- Dependencies：标准SAT many-one完全性、NP/RP/coRP定义、全seed YES及硬位复杂度；实际UM编译器/一致性/费用F和全输出decoder仍未提供。
+- Evidence：先给精确陈述的独立重构，再逐行读最终正文及v2/v3/v5源合同；第二实际审读指出期望时间可先截断，正文已保留这一转换余地。Python穷尽四seed抽象表和精确阈值边界，只核有限逻辑/算术，不代一般证明。
+- Counterevidence / Objections：不能把存在好seed当可多项式找到；不能把高概率YES或advice换成全seed/统一程序；不能把sourceNO概率换成compiledNO概率。NO等号用拒绝比较≥，非严格>；所有实质限定已保正文。
+- Status：标准证书机制的完整限范围推论，经独立实际内审；无外审或全球新颖性认证；UM-TARGET-v1与一般反面仍OPEN。
+- Related Files：[源正文末节](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)、[独立审查](../reviews/unrelated_machines/perfect_complete_seed_certificate_review.md)。

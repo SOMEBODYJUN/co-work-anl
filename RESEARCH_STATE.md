@@ -1,5 +1,11 @@
 # 当前研究前沿：不相关并行机
 
+## 2026-10-19：全种子复杂度后果与单一几何整数表
+
+[拒绝种子证书](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)说明：全YES种子完备且每UNSAT至少存在一个poly位拒绝seed，若有总poly source判别器则NP=coNP；常数/逆poly拒绝再给coRP。与UM连接仍缺实际compiler/所有低阈值完整分配decoder；不得将source好事件概率代替编译后NO事件。
+
+[模型§7](research/current/unrelated_machines/model_and_classical_barriers.md)把主目标存在性进一步归约到只依n的O(log²n)种1..n²正整数全可用族；这是一项标准取整推论，没有构造域内未知B或hardness。独立先陈述、最终正文/代码审查和精确负载类型核验分别登记。一般目标与其反面仍OPEN；本轮直接gap/一致性尝试未跨过已有物理扇出义务，不复制同一失败样本为新资产。
+
 
 [逐资源正权畸变的完整菜单边界](research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md)：任意显式菜单数/资源度、W≤1及κ=max同资源正权比时，每固定α>4实际输出C≤2−(2−OPT)/(ακ)；固定κ不能承载任意近二真实源。源于已知restricted Santa算法的结构推论，无完整后端实现，一般主目标仍OPEN。
 ## 2026-10-18：反面主攻与全常数覆盖

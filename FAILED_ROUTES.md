@@ -1,5 +1,7 @@
 # 失败路线与准确否定范围
 
+随机完美完备源不能直接替代实际调度反证：缺失的仍是compiler/全低负载decoder。[拒绝种子证书](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)显示，已有硬poly位源一旦接上总判别器，仅一拒绝seed就给NP=coNP；继续放大成功概率不能替代物理桥。[几何整数表](research/current/unrelated_machines/model_and_classical_barriers.md)则进一步排除必须靠大量不同数值或输入精度才能否定目标的解释。两项均不证明目标为假。
+
 当前主攻 `UM-TARGET-v1`，存档 `unrelated-machines`。新题的[配置LP障碍、模型迁移和复杂度误用](research/unrelated_machines/FAILED_ROUTES.md)单独维护；新增长链反例精确限制仅共享单机边际的固定机器联合投影，未限制完整多机overlap相容性；逐星匹配另被共享小端容量击穿，保留安全过滤接口；五机反例另限制任意树再耦合态冻结任务后的低于2补全合同；这些方法边界与配置gap都不证明一般算法目标为假。下列旧题记录保持原范围。
 此前拥塞题已有[线性次数的全状态严格反例](research/current/weighted_congestion/linear_degree_allstate_lower_bound.md)，准确否定普遍Cd/ln d保证。旧同类clock路线缺失的全前沿覆盖已由新专用健康输入另证；全局极差预算及通用strict-sweep反例仍有效。
 

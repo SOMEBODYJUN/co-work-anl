@@ -2,11 +2,13 @@
 
 
 [逐资源正权畸变的完整菜单边界](resource_distortion_flat_menu_rounding.md)：任意显式菜单数/资源度、W≤1及κ=max同资源正权比时，每固定α>4实际输出C≤2−(2−OPT)/(ακ)；固定κ不能承载任意近二真实源。源于已知restricted Santa算法的结构推论，无完整后端实现，一般主目标仍OPEN。
+[全种子完备源的拒绝证书](partial_minrep_linear_degree_source_and_fee_bridge.md)证明：若已有随机源有总多项式判别器，则NP=coNP；逆多项式拒绝概率再给NP=RP=coRP=coNP。条件调度推论仍缺真实compiler与全输出decoder，不是已得一般反面。
+
 **当前用户决定：全体主攻 `UM-TARGET-v1` 的否定。** 下文原命题的模型、量词与身份保持不变。现在直接研究对每个固定 ε 的近二真实整数 gap、共享内部一致性与绝对阈值下的低负载调度解码；明确复杂度假设。正面接口作为归约的攻击工具保留，一般反面尚未证明。见[当前路线](../../unrelated_machines/ACTIVE_ROUTES.md)。
 
 当前存档为 `unrelated-machines`。原命题 `UM-TARGET-v1` 是一般二进制有理输入R∥C_max上存在确定性位多项式时间、统一常数(2−ε)近似；当前主攻其否定。目标仍OPEN；未形成新算法。新 boss 先读[BOSS研究总览与路线分诊](../../unrelated_machines/BOSS_RESEARCH_BRIEF.md)，再按选定承重义务进入本地图。旧拥塞/设施研究保留原身份，不作为本题数学依赖。
 
-反面研究的模型简化见[全常数量词与稠密小整数正规形](model_and_classical_barriers.md)§6：只含1..n²正整数、全部边可用的输入已经足以判定是否存在统一改善。正文给完整实际输出转换、零值分支及总位复杂度；它不提供新的近二困难性。
+反面研究的模型简化见[全常数量词与整数正规形](model_and_classical_barriers.md)§6–7：原目标的算法存在性已等价于只用O(log²n)种1..n²正整数、所有边有限的单一输入族。字母表只依实际任务数n，完整处理零值/空任务、禁边回译及总位复杂度；它不提供近二困难性。
 
 反面源先经[部分激活菜单的全局福利筛选](explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md) F2：显式 norm1/共同支撑 LP 下，H_{3/8}>2q/5；这是标准福利工具直接推论，只排其精确部分高组源，不是一般困难性。
 

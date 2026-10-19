@@ -1374,6 +1374,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1 | 每固定α>4，det总位poly全部原jobs C≤2−(2−OPT)/(ακ)≤(2−1/(ακ))OPT；任意菜单/degree、κ可变；固定κ的真实源筛选。 | [正文](unrelated_machines/resource_distortion_flat_menu_rounding.md)、[审查](../reviews/unrelated_machines/resource_distortion_flat_menu_review.md)；已知restrictedSC工具的结构推论；全部原job接口有限审计，无完整后端，非主目标正反面。 |
 
+## 全种子复杂度后果与单一几何整数表
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1 | 全seed YES、每UNSAT存在poly长度拒绝seed、总poly D及R；FAIL按YES | 推出NP=coNP；逆poly拒绝再给NP=RP=coRP=coNP。UM应用仍需真实compiler/全输出decoder，非已得反面。 | [源正文末节](unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)、先陈述及最终正文实际内审；标准机制，外审/新颖性未认证。 |
+| UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1 | n≥16、A_n按实际n的几何ceil整数表，大小O(log²n)、每项1..n²、全边有限 | 域内固定(2−1/k)实际算法⇒原全模型(2−1/(2k))算法；存在性双向等价，非hardness。 | [模型§7](unrelated_machines/model_and_classical_barriers.md)、独立重构/最终正文及代码攻击/Fraction全负载类型核验。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -13354,6 +13354,56 @@
         "evidence/runs/unrelated_machines/resource_distortion_independent_audit.json"
       ],
       "status": "finite exact checks passed"
+    },
+    {
+      "id": "UM-POLY-SEED-PERFECT-COMPLETE-CONTRACT",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "全种子完备与拒绝种子的硬位合同",
+      "detail": "固定总poly R和D，FAIL按YES；SAT每seed答YES，每UNSAT存在拒绝seed。概率版另用统一逆poly拒绝率。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md"
+      ],
+      "status": "specified"
+    },
+    {
+      "id": "UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "全种子完备源的拒绝证书与复杂度后果",
+      "detail": "全seed完备+存在poly拒绝seed给NP=coNP；逆poly概率给NP=RP=coRP=coNP。物理UM合同仍缺。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "research/reviews/unrelated_machines/perfect_complete_seed_certificate_review.md"
+      ],
+      "status": "complete elementary seed-certificate implication; independent statement-first and final-text review; physical compiler absent; novelty unverified"
+    },
+    {
+      "id": "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单一对数平方整数表与原目标的算法存在性等价",
+      "detail": "A_n只依实际n，O(log²n)种1..n²正整数，全边有限；固定k域内算法转原模型2−1/(2k)。",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md",
+        "research/reviews/unrelated_machines/geometric_alphabet_equivalence_review.md",
+        "tests/audits/unrelated_machines/geometric_alphabet_equivalence.py",
+        "evidence/runs/unrelated_machines/geometric_alphabet_equivalence.json"
+      ],
+      "status": "complete scoped geometric-alphabet equivalence; independent reconstruction and final-text/code review; no hardness or novelty claim"
+    },
+    {
+      "id": "UM-GEOMETRIC-ALPHABET-EXACT-AUDIT",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "几何整数表的精确变换与完整负载类型核验",
+      "detail": "区分小h变换、大n仅网格及真正大分支的全部负载类型；不实现未知B。",
+      "refs": [
+        "tests/audits/unrelated_machines/geometric_alphabet_equivalence.py",
+        "evidence/runs/unrelated_machines/geometric_alphabet_equivalence.json",
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "finite exact audit only"
     }
   ],
   "hyperedges": [
@@ -32644,6 +32694,83 @@
         "evidence/runs/unrelated_machines/resource_distortion_independent_audit.json"
       ],
       "status": "finite checks only"
+    },
+    {
+      "id": "um_seed_certificate_from_contract",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-POLY-SEED-PERFECT-COMPLETE-CONTRACT"
+      ],
+      "conclusion": "UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1",
+      "statement": "标准SAT完全性、NP证书与单侧错误定义的自足推论；概率升级保留另列统一概率前提。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md",
+        "research/reviews/unrelated_machines/perfect_complete_seed_certificate_review.md"
+      ],
+      "status": "complete conditional implication"
+    },
+    {
+      "id": "um_seed_certificate_physical_limit",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1",
+        "UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2",
+        "UM-PARTIAL-MINREP-REGULAR-HIGH-GIRTH-SOURCE-v3",
+        "UM-PARTIAL-MINREP-DEGREE-MASS-REGULARIZATION-v5"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "源判别器若存在导致复杂度坍缩；应用到调度仍须实际compiler和所有低负载完整σ decoder，不能由源定理直接否定UM。",
+      "refs": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md"
+      ],
+      "status": "physical bridge open"
+    },
+    {
+      "id": "um_geometric_alphabet_equivalence_from_model",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1",
+      "statement": "非负预处理、固定小n精确枚举、同n几何ceil整数化、严格n²哨兵排除和逐机强式回译给存在性等价。",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md",
+        "research/reviews/unrelated_machines/geometric_alphabet_equivalence_review.md"
+      ],
+      "status": "complete scoped scaling proof"
+    },
+    {
+      "id": "um_geometric_alphabet_finite_checks",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-GEOMETRIC-ALPHABET-EXACT-AUDIT"
+      ],
+      "conclusion": "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1",
+      "statement": "有限Fraction与全部负载类型核验，不代一般证明。",
+      "refs": [
+        "tests/audits/unrelated_machines/geometric_alphabet_equivalence.py",
+        "evidence/runs/unrelated_machines/geometric_alphabet_equivalence.json",
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "finite exact audit only"
+    },
+    {
+      "id": "um_geometric_alphabet_target_boundary",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "更窄的普通整数输入域已足研究原目标；没有给出该域的次二算法或近二困难性。",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "target and negation remain open"
     }
   ]
 }

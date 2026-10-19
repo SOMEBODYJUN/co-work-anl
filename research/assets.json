@@ -8575,7 +8575,7 @@
         "history/source/literature/unrelated_machines/minzer_zheng_2026_alphabet_soundness_eccc_revision1.pdf"
       ],
       "source_role": "实际Exact及两份独立重构保真字节；Mosh/DS用于perfect-complete PCP及重复，Man用于最接近采样框架；比较稿不认证新颖。",
-      "limit": "随机源判别器反证采用NP不包含BPP；不是确定性P≠NP hard归约；固定大F仅条件费用代数，实际P、trigger、原投影decoder、独立budget均缺。"
+      "limit": "原NP⊆BPP后果仍真；另见UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1的全seed证书/coRP加强。不是P≠NP下确定性hardness；实际P、trigger、原投影decoder、独立budget及费用F仍缺。"
     },
     {
       "id": "um_q_coordinate_slice_compilation_counterexample_v4",
@@ -11653,36 +11653,92 @@
       "source_role": "statement-first独立重构/外部后端位复杂度原记录及两份原PDF；CM用于α>4，DRZv4仅核更正与弱后端。",
       "limit": "只排κ统一有界的完整flat源；非一般UM算法或hardness；新颖性未认证，restrictedSC后端未实现。"
     },
-  {
-    "id": "unrelated_machines_finite_palette_gcd_barrier",
-    "claims": [
-      "UM-FINITE-PALETTE-GCD-BARRIER-v1"
-    ],
-    "status": "complete scoped arithmetic/algorithm proof; finite exact audit; unrefereed; novelty and general target status unchanged",
-    "applies_when": [
-      "UM-MODEL-v1 with binary rational nonnegative processing times, forbidden edges and mandatory assignment",
-      "For positive optimum, g(P) is the largest positive rational gcd of positive finite times and B(P) is their maximum; zero-optimum branch is exact",
-      "LST assignment LP is solved exactly over the g(P) target grid and standard ordered-slot rounding outputs the actual assignment"
-    ],
-    "produces": "A bit-polynomial schedule with Cmax <= (2-g(P)/B(P))*OPT; fixed finite processing alphabets therefore have a uniform strict sub-2 guarantee, so near-two hardness must have g(P)/B(P) -> 0.",
-    "implementation": [],
-    "proof": [
-      "research/current/unrelated_machines/finite_processing_palette_gcd_barrier.md"
-    ],
-    "tests": [
-      "tests/audits/unrelated_machines/finite_palette_gcd_barrier.py"
-    ],
-    "records": [
-      "evidence/runs/unrelated_machines/finite_palette_gcd_barrier_audit.json"
-    ],
-    "examples": [],
-    "reviews": [],
-    "candidates": [],
-    "sources": [
-      "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
-    ],
-    "source_role": "Verschae-Wiese Theorem 7 is recorded as Paper Fact; this asset supplies the rational scaling and boundary audit without claiming source novelty.",
-    "limit": "This does not prove that UM-TARGET-v1 has no uniform epsilon. Families with g(P)/B(P) -> 0, true integer OPT gaps, global decoders and explicit complexity assumptions remain open; finite Fraction checks are not a universal LP proof."
-  }
+    {
+      "id": "unrelated_machines_finite_palette_gcd_barrier",
+      "claims": [
+        "UM-FINITE-PALETTE-GCD-BARRIER-v1"
+      ],
+      "status": "complete scoped arithmetic/algorithm proof; finite exact audit; unrefereed; novelty and general target status unchanged",
+      "applies_when": [
+        "UM-MODEL-v1 with binary rational nonnegative processing times, forbidden edges and mandatory assignment",
+        "For positive optimum, g(P) is the largest positive rational gcd of positive finite times and B(P) is their maximum; zero-optimum branch is exact",
+        "LST assignment LP is solved exactly over the g(P) target grid and standard ordered-slot rounding outputs the actual assignment"
+      ],
+      "produces": "A bit-polynomial schedule with Cmax <= (2-g(P)/B(P))*OPT; fixed finite processing alphabets therefore have a uniform strict sub-2 guarantee, so near-two hardness must have g(P)/B(P) -> 0.",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/finite_processing_palette_gcd_barrier.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/finite_palette_gcd_barrier.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/finite_palette_gcd_barrier_audit.json"
+      ],
+      "examples": [],
+      "reviews": [],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
+      ],
+      "source_role": "Verschae-Wiese Theorem 7 is recorded as Paper Fact; this asset supplies the rational scaling and boundary audit without claiming source novelty.",
+      "limit": "This does not prove that UM-TARGET-v1 has no uniform epsilon. Families with g(P)/B(P) -> 0, true integer OPT gaps, global decoders and explicit complexity assumptions remain open; finite Fraction checks are not a universal LP proof."
+    },
+    {
+      "id": "um_perfect_complete_seed_certificate",
+      "claims": [
+        "UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1"
+      ],
+      "status": "complete elementary seed-certificate implication; independent statement-first and final-text review; physical compiler absent; novelty unverified",
+      "applies_when": [
+        "全seed YES与poly硬位/时间界；每UNSAT至少一拒绝seed；概率结论另有统一逆poly拒绝界"
+      ],
+      "produces": "UNSAT的seed证书与NP=coNP；概率版给NP=RP=coRP=coNP；仅条件UM桥，物理compiler缺失。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/perfect_complete_seed_certificate_review.md"
+      ],
+      "sources": [
+        "history/source/notes/unrelated_machines/perfect_complete_seed_certificate_author_draft.md"
+      ],
+      "limit": "标准定义推论，无新PCP/hardness；不能改为P≠NP下已证不存在，不能将sourceNO概率替代compiledNO概率。",
+      "source_role": "原作者在规范正文前形成的实际精确源稿；规范末节另经独立先陈述与实际读后审查。原稿尚待审措辞不表示当前状态。 源稿SHA256 7be68ed99b9bb723f5d0c7534c7223ee746666852a09c3049f932c84ea463710。"
+    },
+    {
+      "id": "um_dense_geometric_alphabet_equivalence",
+      "claims": [
+        "UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1"
+      ],
+      "status": "complete scoped geometric-alphabet equivalence; independent reconstruction and final-text/code review; no hardness or novelty claim",
+      "applies_when": [
+        "原完整UM模型与m≥1,n≥16的A_n全有限正整数域；k先固定"
+      ],
+      "produces": "单一O(log²n)种数值的正整数域与原目标存在性等价，固定k实际比例回译2−1/(2k)。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/geometric_alphabet_equivalence.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/geometric_alphabet_equivalence.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/geometric_alphabet_equivalence_review.md"
+      ],
+      "sources": [
+        "history/source/notes/unrelated_machines/geometric_alphabet_equivalence_author_draft.md"
+      ],
+      "limit": "标准取整推论；未实现假设中的B，无NP源gap或一般否定；小h有限测试不冒充实际大n分支。",
+      "source_role": "实际单一几何整数表作者推导源稿；规范§7是收束后的自足表述。原稿小h审计说明由最终实际大分支审计补充，非未知B实现。 源稿SHA256 cf5cfcb2cf3581f4414145cf21474fd722cf61883f664e3b056c91c67dd8a783。"
+    }
   ]
 }

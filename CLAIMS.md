@@ -1,5 +1,7 @@
 # 精确命题入口
 
+新精确身份[UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1与UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1](research/unrelated_machines/CLAIMS.md)分别记录全种子证书的coNP/coRP推论与单一O(log²n)整数表的算法存在性等价；均不关闭一般主目标。
+
 
 [逐资源正权畸变的完整菜单边界](research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md)：任意显式菜单数/资源度、W≤1及κ=max同资源正权比时，每固定α>4实际输出C≤2−(2−OPT)/(ακ)；固定κ不能承载任意近二真实源。源于已知restricted Santa算法的结构推论，无完整后端实现，一般主目标仍OPEN。
 新主攻存档 `unrelated-machines`，精确目标 `UM-TARGET-v1` 及经典工具、长链/联合投影、树再耦合、匹配残余/共享逃逸等阶段边界见[不相关并行机精确账本](research/unrelated_machines/CLAIMS.md)。主目标仍OPEN；既有工具重构与限范围方法反例不升级为新近似算法。

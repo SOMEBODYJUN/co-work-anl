@@ -128,3 +128,73 @@ C_P(B(Q))
 **范围与反面义务。** 这是一条**算法存在性的双向等价**，不是从某个 NP 完全源直接产生 gap 的归约。它不声称 D 已经有近二 NP-hardness，也不声称原目标为假；不存在统一改善若获证明，将同时适用于这份常规整数输入类。无条件反证至少蕴含 P≠NP，既有完整说明见[反向合同](private_graft_and_resource_repetition.md)§1。当前仍缺对每个固定 ε 的真实 YES/NO gap 与所有低负载调度的源解码。
 
 **Evidence / Objections / Status / Related Files。** 先对精确陈述独立重构，再对最终正文和精确程序冻结攻击；实际覆盖与哈希见[专门审查](../../reviews/unrelated_machines/dense_small_integer_equivalence_review.md)。[审计程序](../../../tests/audits/unrelated_machines/dense_small_integer_equivalence.py)及[冻结运行](../../../evidence/runs/unrelated_machines/dense_small_integer_equivalence.json)仅验证声明范围内的边界、算术及有限全调度，不能代替本节一般证明。没有实现假设中的未知 B，没有一般新近似算法或困难性状态升级。
+
+## 7. 单一对数平方字母表的稠密整数正规形
+
+**UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1。** 本节进一步限制§6的整数输入域。它是标准缩放/几何取整的自足推论，不认领全球新颖性或新的困难性。对每个实际任务数n≥16定义
+
+\[
+h=h_n=\operatorname{bitlength}(n)=\lceil\log_2(n+1)\rceil,
+\quad b=b_n=1+1/h,
+\quad R_n=\min\{r\in\mathbb Z_{\ge0}:b^r\ge hn\},
+\]
+\[
+\mathcal A_n=\{\lceil b^r\rceil:0\le r\le R_n\}\cup\{n^2\}. \tag{7.1}
+\]
+
+重复整数去重。令D_geo为所有m≥1、n≥16、每项均在A_n的显式m×n矩阵；所有边有限、所有处理时间为正整数。字母表只依赖n，不依赖原处理时间、隐藏阈值、分母或所求ε。原UM-TARGET-v1成立，当且仅当D_geo上存在统一改善的确定性位多项式实际调度算法。定量地，任一先固定整数k≥2的D_geo算法B若保证α=2−1/k，则可构造原完整模型上保证2−1/(2k)的算法。固定k下复杂度次数有限；不声明关于可变二进制k的一致多项式。
+
+**字母表与位长。** 二项式定理给b^h≥2，所以
+
+\[
+R_n\le h\lceil\log_2(hn)\rceil,\qquad
+|\mathcal A_n|\le h\lceil\log_2(hn)\rceil+2=O(\log^2 n). \tag{7.2}
+\]
+
+h≥5、n≥2^(h−1)>2(h+2)；最后一个不等式由h=5的16>14起归纳。R_n的最小性给b^(R_n)<(h+1)n，从而ceil(b^(R_n))<(h+1)n+1<n²。因此A_n⊆{1,…,n²}，且保留边的全部数值严格小于哨兵n²。实际按确切有理数b逐次生成幂，分子分母位长O(log²n loglog n)，再用整数整除取ceil；不使用近似实对数。最终每个条目仅O(log n)位。
+
+**全模型转换。** n=0返回空分配；每任务有零边时逐任务选零边，精确处理OPT=0。其余情形沿用§6的0<L≤OPT≤U≤nL。若h=bitlength(n)<8k，枚举原有限端组合求精确最优。此时n<2^(8k)，枚举次数至多m^(2^(8k))，对先固定k是固定多项式次数；这不是实用效率主张。该分支覆盖n<16。
+
+现设h≥8k≥16。实际生成候选T=L b^t，直到首个T_H≥U，包含首末项；由b^h≥2，H≤h ceil(log₂n)=O(log²n)。对每个候选保持原m和n，在p_ij≤T的保留端上定义
+
+\[
+z_{ij}=hnp_{ij}/T,\quad
+r_{ij}=\min\{r\in\mathbb Z_{\ge0}:b^r\ge\max(1,z_{ij})\},\quad
+q_{ij}=\lceil b^{r_{ij}}\rceil. \tag{7.3}
+\]
+
+p_ij>T或p_ij=∞时令q_ij=n²。因为0≤z_ij≤hn，r_ij≤R_n，所以每份Q(T)均在同一个D_geo类。零边映成1，p_ij=T仍是保留边。对全部z≥0，取整满足
+
+\[
+z\le q(z)\le bz+1. \tag{7.4}
+\]
+
+z≤1时q=1；z>1时最小性给b^(r−1)<z≤b^r，故q<bz+1。运行B(Q(T))，检查其真实完整输出。若使用原p_ij>T或∞端，舍弃该候选；否则按原P精确回算全部负载，保留最好者。舍弃候选不提供FAIL⇒OPT>T语义。
+
+**严格哨兵排除与逐机回译。** 取网格中首个T≥OPT，便有T≤b OPT。原最优分配的全部端均保留。逐机相加(7.4)，最多n项，得较强第一式
+
+\[
+\operatorname{OPT}(Q(T))
+\le b\frac{hn}{T}\operatorname{OPT}(P)+n
+\le(h+2)n. \tag{7.5}
+\]
+
+B在此候选上有C_Q≤α(h+2)n<2(h+2)n<n²，故不可能使用单件即耗n²的哨兵端，此候选一定保留。对所有保留端p_ij≤Tq_ij/(hn)，结合(7.5)第一式可得
+
+\[
+\begin{aligned}
+C_P(B(Q(T)))
+&\le\alpha\left[b\operatorname{OPT}(P)+T/h\right]
+\le\alpha b^2\operatorname{OPT}(P),\\
+\alpha b^2
+&\le\left(2-\frac1k\right)\left(1+\frac1{8k}\right)^2
+=2-\frac1{2k}-\frac7{32k^2}-\frac1{64k^3}
+<2-\frac1{2k}. \tag{7.6}
+\end{aligned}
+\]
+
+取原负载最小的候选仍满足此界，输出原任务的合法完整分配。h、全部候选和幂可精确计算；T位长至多原输入位长加O(log²n loglog n)，逐端比较/查找/ceil、原负载求和均为总位多项式。每份Q有O(mn log(n+1))位，B调用次数多项式。未知B没有被当作已实现求解器。任意正实改善支配某个1/k，无须编码该实数；反向限制输入域直接成立，完成存在性等价。
+
+**反面研究范围。** [固定有限字母表的gcd界](finite_processing_palette_gcd_barrier.md)固定的是实际数值集合或统一g/B余量；A_n随n变化，b_n→1，不与其冲突。即使一个近二困难性族对每个固定ε只用依赖ε的有限字母表，也没有被该固定集合结果统一排除。这里进一步说明，大量独特数值、巨大分母、零边或不可用边都不是否定原目标所必需的：单一O(log²n)种正整数、每项≤n²的全可用域已足够。它没有提供NP源gap或低负载调度decoder，主目标及其反面仍OPEN。
+
+先陈述独立重构与最终正文/代码读后攻击见[专门审查](../../reviews/unrelated_machines/geometric_alphabet_equivalence_review.md)。[Fraction程序](../../../tests/audits/unrelated_machines/geometric_alphabet_equivalence.py)及[冻结运行](../../../evidence/runs/unrelated_machines/geometric_alphabet_equivalence.json)分别标明小h变换测试、大n仅网格测试，以及真正h≥8k分支的完整负载类型枚举；有限核验不代替一般证明。

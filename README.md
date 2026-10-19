@@ -2,9 +2,11 @@
 
 
 [逐资源正权畸变的完整菜单边界](research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md)：任意显式菜单数/资源度、W≤1及κ=max同资源正权比时，每固定α>4实际输出C≤2−(2−OPT)/(ακ)；固定κ不能承载任意近二真实源。源于已知restricted Santa算法的结构推论，无完整后端实现，一般主目标仍OPEN。
+[全种子完备源的拒绝证书](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)证明：若已有随机源有总多项式判别器，则NP=coNP；逆多项式拒绝概率再给NP=RP=coRP=coNP。条件调度推论仍缺真实compiler与全输出decoder，不是已得一般反面。
+
 **当前唯一研究对象是 `UM-TARGET-v1`，存档为 `unrelated-machines`；按用户明确决定，全体主攻它的否定。** 待否定的原命题保持不变：存在确定性算法和统一常数 ε∈(0,1)，在输入总二进制位长的多项式时间内，对所有一般不相关机器输入输出完整分配并保证 C_max≤(2−ε)OPT。机器数、任务数均可增长；非负有理数、不可用边、零最优值和空任务均在原模型内。当前直接攻击对每个固定 ε 的真实近二困难性及低负载调度解码，逐条声明复杂度假设；已有正面接口继续用于攻击候选归约。原命题及其一般反面均 **OPEN**，方向决定不构成数学证据。
 
-反面研究的模型简化见[全常数量词与稠密小整数正规形](research/current/unrelated_machines/model_and_classical_barriers.md)§6：只含1..n²正整数、全部边可用的输入已经足以判定是否存在统一改善。正文给完整实际输出转换、零值分支及总位复杂度；它不提供新的近二困难性。
+反面研究的模型简化见[全常数量词与整数正规形](research/current/unrelated_machines/model_and_classical_barriers.md)§6–7：原目标的算法存在性已等价于只用O(log²n)种1..n²正整数、所有边有限的单一输入族。字母表只依实际任务数n，完整处理零值/空任务、禁边回译及总位复杂度；它不提供近二困难性。
 新增边界见 [有限处理时间字母表的 gcd 余量](research/current/unrelated_machines/finite_processing_palette_gcd_barrier.md)：固定 `g/B > 0` 的处理时间族已有真实严格小于2的 LST 网格算法；近二反面若存在必须让 `g/B -> 0`，但 `UM-TARGET-v1` 仍 OPEN。
 
 反面源先经[部分激活菜单的全局福利筛选](research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md) F2：显式 norm1/共同支撑 LP 下，H_{3/8}>2q/5；这是标准福利工具直接推论，只排其精确部分高组源，不是一般困难性。
