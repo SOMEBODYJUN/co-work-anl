@@ -3417,3 +3417,45 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：base5不能改base4，新增Z不能仅给CY改名；只排忠实Gram点延拓，不排其他基础矩或非忠实非线性依赖，当前范围无standingfatal。
 - Status：complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified；外审及全球新颖性未认证。
 - Related Files：[正文](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[实际审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)及所列保真来源/有限记录。
+
+## UM-UPPER-COLUMN-BUDGET-BASE-ROUNDING-v1：非负列总量的平行扩张基单侧舍入
+
+- ID / version：`UM-UPPER-COLUMN-BUDGET-BASE-ROUNDING-v1`，首次精确身份。
+- Exact Statement / Quantifiers：给显式宏/home二分图及有限occupied模式类Q_h（可空），非空类homes仍覆盖全部B；模式独立当且仅当每home至多一个且其homes可匹配。给非负有理A、列和≤b≥0及满秩分数基x满足Ax≤c，可确定性总位多项式输出真实基和全宏匹配，逐row≤c_z+b。资源维数不固定；仅upper bound。秩一单位列给加性b的渐近锐性。
+- Objects / Domain：显式二进制非负有理数据、合法不可用边、实际任务/模式；全部对象按正文§1固定，机器/资源数可增长。
+- Assumptions：正文§1该ID的全部合同共同成立；不能免费生成私有分组、价格证书或目标调度。
+- Definitions / Scope：标准2019 upper-only multiplicities工具的有理加权重构，不认领新舍入；不保lower/cost；模式显式且满rank必须成立。
+- Conclusion：上述逐行/逐机实际输出与总位复杂度；一般主目标未被替换。
+- Dependencies：显式home横截拟阵的平行扩张、紧秩链、非负列预算、精确有理LP/匹配；2019v2 Theorem2为已知祖先。
+- Evidence：正文自足推导；最终SHA6c23677a全文独立读后审；列预算187例、独立菜单/MW的112静态矩阵及原任务枚举分域记录，有限检查不是证明。
+- Counterevidence / Objections：首稿允许空Q_h却未保全rank的域错误已显式补H_Q覆盖B；不能直接复制邻接丢homecap；本ID最终无standing实质异议，生产LP/新颖性/外审仍未认证。
+- Status：complete standard upper-only tool reconstruction; actual independent and final author-text attacks; exact audit only; novelty not claimed。
+- Related Files：[research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md](../current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)、[research/reviews/unrelated_machines/price_cover_joint_rounding_review.md](../reviews/unrelated_machines/price_cover_joint_rounding_review.md)；代码、冻结输入/结果及独立原件沿该审查进入。
+
+## UM-ARBITRARY-SINK-PRIVATE-GROUP-PRICE-COVER-v1：任意汇点逐件资格的价格覆盖阈值构造
+
+- ID / version：`UM-ARBITRARY-SINK-PRIVATE-GROUP-PRICE-COVER-v1`，首次精确身份。
+- Exact Statement / Quantifiers：给显式不交H/Z、home-only宏（全部有限端>T/2，先剪>T）与唯一有限home私有组；W_h≤T、a_j≤δT、任意逐job sink资格且p_zj≤ρa_j。ρ≥1、δ≥0、τ∈[1/2,1)、η∈(0,1]、b0=ρ(1−τ+δ)≤1。有统一det poly(L,1/η)算法返回FAIL或全部实际分配，home≤(1+τ)T、sink≤(1+η+b0)T；OPT≤T必成功，故FAIL⇒OPT>T。T0先查零边。
+- Objects / Domain：显式二进制非负有理数据、合法不可用边、实际任务/模式；全部对象按正文§1固定，机器/资源数可增长。
+- Assumptions：正文§1该ID的全部合同共同成立；不能免费生成私有分组、价格证书或目标调度。
+- Definitions / Scope：去固定sink数/共同资格/下包络；仍需唯一home、W_h、δ与ρ上界。实际数学算法完整，生产有理LP未集成；η可变时只poly(1/η)，不是poly(log1/η)。
+- Conclusion：上述逐行/逐机实际输出与总位复杂度；一般主目标未被替换。
+- Dependencies：UM-UPPER-COLUMN-BUDGET-BASE-ROUNDING-v1；真实极小覆盖、保零成本FPTAS、同一价格宏匹配、有理MW及实际回溯。
+- Evidence：正文自足推导；最终SHA6c23677a全文独立读后审；列预算187例、独立菜单/MW的112静态矩阵及原任务枚举分域记录，有限检查不是证明。
+- Counterevidence / Objections：首稿允许空Q_h却未保全rank的域错误已显式补H_Q覆盖B；不能直接复制邻接丢homecap；本ID最终无standing实质异议，生产LP/新颖性/外审仍未认证。
+- Status：complete scoped structural algorithm; independently reconstructed and final author text attacked; production LP absent; external review and novelty unverified。
+- Related Files：[research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md](../current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)、[research/reviews/unrelated_machines/price_cover_joint_rounding_review.md](../reviews/unrelated_machines/price_cover_joint_rounding_review.md)；代码、冻结输入/结果及独立原件沿该审查进入。
+
+## UM-ARBITRARY-SINK-PRIVATE-GROUP-PROMISE-APPROX-v1：未知最优值的任意汇点私有组承诺近似
+
+- ID / version：`UM-ARBITRARY-SINK-PRIVATE-GROUP-PROMISE-APPROX-v1`，首次精确身份。
+- Exact Statement / Quantifiers：固定ρ≥1、δ≥0、η∈(0,1]且ρδ+η<1，τ=[ρ(1+δ)+η]/(1+ρ)。给同一静态H/Z/唯一home角色、p_zj≤ρa_j，但不输入T；承诺W_h≤OPT、a_j≤δOPT、所有有限宏边>OPT/2。存在det总位多项式实际算法，Cmax≤αOPT，α=2−[1−ρδ−η]/(1+ρ)<2。查询不检查当前宏下界，靠OPT处单宏见证给one-sided完整性；不要求接受集合单调。
+- Objects / Domain：显式二进制非负有理数据、合法不可用边、实际任务/模式；全部对象按正文§1固定，机器/资源数可增长。
+- Assumptions：正文§1该ID的全部合同共同成立；不能免费生成私有分组、价格证书或目标调度。
+- Definitions / Scope：额外含OPT结构promise，不自动验证/提取；固定ρδ与η才有统一结构类余量。一般UM-TARGET-v1及其反面仍OPEN。
+- Conclusion：上述逐行/逐机实际输出与总位复杂度；一般主目标未被替换。
+- Dependencies：UM-ARBITRARY-SINK-PRIVATE-GROUP-PRICE-COVER-v1的实际程序；OPT处单宏见证、有理整数网格与非单调one-sided搜索不变式。
+- Evidence：正文自足推导；最终SHA6c23677a全文独立读后审；列预算187例、独立菜单/MW的112静态矩阵及原任务枚举分域记录，有限检查不是证明。
+- Counterevidence / Objections：首稿允许空Q_h却未保全rank的域错误已显式补H_Q覆盖B；不能直接复制邻接丢homecap；本ID最终无standing实质异议，生产LP/新颖性/外审仍未认证。
+- Status：complete scoped structural promise approximation; actual final author-text attack; production solver absent; external review and novelty unverified。
+- Related Files：[research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md](../current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)、[research/reviews/unrelated_machines/price_cover_joint_rounding_review.md](../reviews/unrelated_machines/price_cover_joint_rounding_review.md)；代码、冻结输入/结果及独立原件沿该审查进入。

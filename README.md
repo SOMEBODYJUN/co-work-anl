@@ -190,3 +190,7 @@
 
 
 [反面归约的新增精确边界](research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权归一化门控类13/8与近完美部分束源LP判别，旧NSW高低比例混用已明确撤回；完整实际矩阵平方的NO→YES和多替代见证收费阈值二已分别核实。共享内部/多层的真实近二源解码仍未解决，不升级UM-TARGET-v1。
+
+## 可生成模式的任意汇点接口
+
+[任意资格价格覆盖与共同占位](research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)取消固定sink数和同组共同资格，在唯一home、home总量/尺寸和出口上包络承诺下给真实未知OPT的统一次二算法。它用实际价格查询产生多项式模式，逐机恢复全部原任务；可作为候选近二归约的结构筛选工具。一般输入结构生成、一般算法及一般反面均未闭合；精确范围/审查/代码由本题账本导航。

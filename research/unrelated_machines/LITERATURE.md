@@ -172,3 +172,9 @@ Feige, [On Maximizing Welfare When Utility Functions Are Subadditive](https://ep
 
 
 [原端SH3条件子树流与包含容量切](../current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md)的本次定位：root核既有Bamas v2原PDF字节SHA e1120098…并实际读本地文本560–716、908–990、1815–1868，区分原assignment-LP/polylog-congestion/包含计数与新原job共同SH3合同。原图、rare-terminal机制不认领新颖；rho1/100是新自足数值范围而非原paper所有估计的认证。未重审全文SA证明，也不把新soundFAIL误作paper定理反例或复杂性困难性。
+
+## 任意资格价格覆盖的单侧舍入祖先
+
+`BBMV2019_degree_multiplicities_v2`：[Bérczi–Berger–Mnich–Vincze arXiv1911.09890v2](https://arxiv.org/pdf/1911.09890v2)，Theorem2印2/PDF3及upper-only证明印11/PDF12，给整数multiplicities的单侧Delta−1，Delta是最大列总量。按二进制有理共同分母缩放直接得到本文+b界；因此[任意汇点正文](../current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)的舍入引理是旧工具重构，不认领新一般方法。root实际读取primary PDF/HTML，未落地PDF、未假填SHA。
+
+`BLRT2026_weighted_equitability_v1`：[Bérczi–Liu–Reis–Tarnawski arXiv2608.13983v1](https://arxiv.org/html/2608.13983v1) §5 Theorem10给相关双侧weighted-discrepancy背景。本轮仅针对性读primary HTML，不把该结果倒记为本结构算法或全部论文内化。覆盖背包、匹配、MW同样是标准工具；新结构组合的全球新颖性/独立论文价值仍未认证。

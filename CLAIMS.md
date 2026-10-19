@@ -196,3 +196,7 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 
 
 [反面归约的新增精确边界](research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权归一化门控类13/8与近完美部分束源LP判别，旧NSW高低比例混用已明确撤回；完整实际矩阵平方的NO→YES和多替代见证收费阈值二已分别核实。共享内部/多层的真实近二源解码仍未解决，不升级UM-TARGET-v1。
+
+## 任意汇点价格覆盖的三项精确身份
+
+`UM-UPPER-COLUMN-BUDGET-BASE-ROUNDING-v1`是标准单侧列总量舍入的重构；`UM-ARBITRARY-SINK-PRIVATE-GROUP-PRICE-COVER-v1`给唯一home/出口包络下的实际阈值算法；`UM-ARBITRARY-SINK-PRIVATE-GROUP-PROMISE-APPROX-v1`在OPT处结构promise下给未知OPT统一改善。见[专题精确账本](research/unrelated_machines/CLAIMS.md)与[正文](research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)。不改变UM-TARGET-v1及其一般反面的OPEN状态。

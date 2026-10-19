@@ -1352,6 +1352,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1 | base<=5共同M3/Boolean及原v负载不变、原degree-one Z忠实Gram CY_i时，q=Z(H−h)给L(gq²)=−p(1−eta)(d−h)²<0，故该点不能同时通过globalq2。 | [正文](unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)；只排保base5/忠实AND二次Gram/原v负载的给定点延拓；不排一般非线性依赖，不向普通UM加逻辑侧约束；无软件/源decoder/hardness。 |
 
+## 任意汇点逐件资格的实际共同选择
+
+| ID | 精确陈述 | 范围与状态 |
+| --- | --- | --- |
+| UM-UPPER-COLUMN-BUDGET-BASE-ROUNDING-v1 | 给显式宏/home二分图及有限occupied模式类Q_h（可空），非空类homes仍覆盖全部B；模式独立当且仅当每home至多一个且其homes可匹配。给非负有理A、列和≤b≥0及满秩分数基x满足Ax≤c，可确定性总位多项式输出真实基和全宏匹配，逐row≤c_z+b。资源维数不固定；仅upper bound。秩一单位列给加性b的渐近锐性。 | 标准2019 upper-only multiplicities工具的有理加权重构，不认领新舍入；不保lower/cost；模式显式且满rank必须成立。 [正文](unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)、[实际审查](../reviews/unrelated_machines/price_cover_joint_rounding_review.md)。 |
+| UM-ARBITRARY-SINK-PRIVATE-GROUP-PRICE-COVER-v1 | 给显式不交H/Z、home-only宏（全部有限端>T/2，先剪>T）与唯一有限home私有组；W_h≤T、a_j≤δT、任意逐job sink资格且p_zj≤ρa_j。ρ≥1、δ≥0、τ∈[1/2,1)、η∈(0,1]、b0=ρ(1−τ+δ)≤1。有统一det poly(L,1/η)算法返回FAIL或全部实际分配，home≤(1+τ)T、sink≤(1+η+b0)T；OPT≤T必成功，故FAIL⇒OPT>T。T0先查零边。 | 去固定sink数/共同资格/下包络；仍需唯一home、W_h、δ与ρ上界。实际数学算法完整，生产有理LP未集成；η可变时只poly(1/η)，不是poly(log1/η)。 [正文](unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)、[实际审查](../reviews/unrelated_machines/price_cover_joint_rounding_review.md)。 |
+| UM-ARBITRARY-SINK-PRIVATE-GROUP-PROMISE-APPROX-v1 | 固定ρ≥1、δ≥0、η∈(0,1]且ρδ+η<1，τ=[ρ(1+δ)+η]/(1+ρ)。给同一静态H/Z/唯一home角色、p_zj≤ρa_j，但不输入T；承诺W_h≤OPT、a_j≤δOPT、所有有限宏边>OPT/2。存在det总位多项式实际算法，Cmax≤αOPT，α=2−[1−ρδ−η]/(1+ρ)<2。查询不检查当前宏下界，靠OPT处单宏见证给one-sided完整性；不要求接受集合单调。 | 额外含OPT结构promise，不自动验证/提取；固定ρδ与η才有统一结构类余量。一般UM-TARGET-v1及其反面仍OPEN。 [正文](unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)、[实际审查](../reviews/unrelated_machines/price_cover_joint_rounding_review.md)。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

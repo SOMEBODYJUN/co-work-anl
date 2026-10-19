@@ -392,3 +392,9 @@
 [O1k-home全有理实际算法](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)：另立v5：k>=2 maxw<=1/(1024k)，k1无限制，额外共享UD叶；全程实际I/全有理分段倒数势给det-bit-poly19/10全jobs，无给定点/LPprofile/FW/log oracle；仍限single-state/独占homes。
 
 [七态局部核及延拓边界](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)：局部actualOPT1七态原job law通过全部globalq2负载检验，显式poly-support rowCFG；另精确分类affine Boolean owners并给忠实AND的degree5负式。不是SH3gap/递归共同law/hardness。
+
+## 任意汇点逐件资格的原输入生成桥
+
+[价格覆盖与共同占位舍入](../current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)给三项分离身份：标准列总量单侧+b工具；给定T、唯一home/W_h≤T/a_j≤δT/出口p_zj≤ρa_j的实际价格覆盖算法；以及OPT处结构promise的未知OPT算法。sink数、逐件资格和有理分母均可增长，不需共同资格或下包络；ρδ+η<1时实际α=2−(1−ρδ−η)/(1+ρ)。显式poly模式由保零cover+同价宏匹配+有理MW生成，非免费菜单oracle。独立审查关闭空模式降rank漏洞；生产LP未集成、新颖性/外审未认证。
+
+这项正面接口可攻击输出全落在该promise类的近二归约；一般矩阵的角色/home/统一余量生成及真实源NO decoder仍未解决，UM-TARGET-v1与一般反面保持OPEN。全文、实际审查、独立代码和冻结证据沿[精确账本](CLAIMS.md)读取。

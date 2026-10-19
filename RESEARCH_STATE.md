@@ -217,3 +217,9 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 
 
 [反面归约的新增精确边界](research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权归一化门控类13/8与近完美部分束源LP判别，旧NSW高低比例混用已明确撤回；完整实际矩阵平方的NO→YES和多替代见证收费阈值二已分别核实。共享内部/多层的真实近二源解码仍未解决，不升级UM-TARGET-v1。
+
+## 2026-10-19：任意接收资格的可生成覆盖接口
+
+新增[价格覆盖与共同占位算法](research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)已经从给定结构的原矩阵生成poly实际菜单，取消固定sink数及同组共同资格；上界p_zj≤ρa_j、唯一home、W_h≤T和a_j≤δT仍承重。固定ρδ+η<1得未知OPT结构promise类α=2−(1−ρδ−η)/(1+ρ)。此范围资产不是一般算法；在当前反面研究中，它排除所有输出满足同一promise且绝对YES/NO阈值跨过α的候选归约（对应复杂度假设另给）。
+
+承重链为保零真覆盖→同价宏共同匹配→有理MW多项式支撑→标准单侧+b基舍入→全部jobs逐机恢复。首独立攻击发现空模式类不保全rank，已补H_Q满匹配；最终全文实读与分域Fraction审计完成，生产LP和新颖性均未认证。下一义务仍是一般角色共同选择或退出这类可解promise的共享多层NO decoder，不继续把固定菜单/价格或有限实验当全输入桥。

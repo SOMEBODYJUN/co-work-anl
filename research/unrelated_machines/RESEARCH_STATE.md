@@ -593,3 +593,9 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 [O1k-home全有理实际算法](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)：另立v5：k>=2 maxw<=1/(1024k)，k1无限制，额外共享UD叶；全程实际I/全有理分段倒数势给det-bit-poly19/10全jobs，无给定点/LPprofile/FW/log oracle；仍限single-state/独占homes。
 
 [七态局部核及延拓边界](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)：局部actualOPT1七态原job law通过全部globalq2负载检验，显式poly-support rowCFG；另精确分类affine Boolean owners并给忠实AND的degree5负式。不是SH3gap/递归共同law/hardness。
+
+## 2026-10-19：任意接收资格的可生成覆盖接口
+
+新增[价格覆盖与共同占位算法](../current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)已经从给定结构的原矩阵生成poly实际菜单，取消固定sink数及同组共同资格；上界p_zj≤ρa_j、唯一home、W_h≤T和a_j≤δT仍承重。固定ρδ+η<1得未知OPT结构promise类α=2−(1−ρδ−η)/(1+ρ)。此范围资产不是一般算法；在当前反面研究中，它排除所有输出满足同一promise且绝对YES/NO阈值跨过α的候选归约（对应复杂度假设另给）。
+
+承重链为保零真覆盖→同价宏共同匹配→有理MW多项式支撑→标准单侧+b基舍入→全部jobs逐机恢复。首独立攻击发现空模式类不保全rank，已补H_Q满匹配；最终全文实读与分域Fraction审计完成，生产LP和新颖性均未认证。下一义务仍是一般角色共同选择或退出这类可解promise的共享多层NO decoder，不继续把固定菜单/价格或有限实验当全输入桥。

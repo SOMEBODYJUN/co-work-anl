@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "共同研究：不相关并行机、加权拥塞、设施与客户吸引的数学关系",
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -13113,6 +13113,107 @@
         "evidence/runs/unrelated_machines/seven_state_star_global_quadratic_root_replay_scope.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-ARBITRARY-SINK-PRIVATE-GROUP-CONTRACT-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "唯一home逐件资格与出口上包络合同",
+      "detail": "给显式不交H/Z、home-only宏（全部有限端>T/2，先剪>T）与唯一有限home私有组；W_h≤T、a_j≤δT、任意逐job sink资格且p_zj≤ρa_j。ρ≥1、δ≥0、τ∈[1/2,1)、η∈(0,1]、b0=ρ(1−τ+δ)≤1。有统一det poly(L,1/η)算法返回FAIL或全部实际分配，home≤(1+τ)T、sink≤(1+η+b0)T；OPT≤T必成功，故FAIL⇒OPT>T。T0先查零边。 未知OPT版另用正文的OPT处promise。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md"
+      ],
+      "status": "explicit scoped input contract"
+    },
+    {
+      "id": "UM-UPPER-COLUMN-BASE-INPUT-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "满秩平行扩张基与非负列预算输入",
+      "detail": "模式非空类仍覆盖全部宏；每home容量1；给定显式分数基、Ax≤c、列总量≤b。空类不自动保原rank。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md"
+      ],
+      "status": "explicit input and rank contract"
+    },
+    {
+      "id": "SOURCE-UPPER-ONLY-MULTIPLICITY-AND-COVER-TOOLS",
+      "kind": "source",
+      "track": "unrelated_machines",
+      "title": "单侧multiplicities与保零覆盖的标准工具",
+      "detail": "2019v2 Thm2 upper-only Delta−1清分母给+b；共享sink正文§3已有保零最小覆盖FPTAS。价格匹配/MW自足重构，均不认证新颖性。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "research/current/unrelated_machines/shared_sink_joint_macro_assignment.md",
+        "research/unrelated_machines/LITERATURE.md",
+        "history/source/notes/unrelated_machines/upper_column_budget_base_statement_first_reconstruction.md"
+      ],
+      "status": "targeted primary reading and self-contained reconstruction; known tools"
+    },
+    {
+      "id": "EVIDENCE-UM-UPPER-COLUMN-BASE-FINITE",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "列预算基舍入的精确有限审计",
+      "detail": "187例、紧秩子集/面维数/实际宏匹配/96删行；指数枚举仅审计。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "tests/audits/unrelated_machines/occupation_vertex_audit_core.py",
+        "tests/audits/unrelated_machines/upper_column_budget_base_audit.py",
+        "evidence/runs/unrelated_machines/upper_column_budget_base_audit.json",
+        "evidence/runs/unrelated_machines/upper_column_budget_base_clean_source_audit.json"
+      ],
+      "status": "finite exact checks; not a universal proof"
+    },
+    {
+      "id": "EVIDENCE-UM-ARBITRARY-SINK-PRICE-MW-FINITE",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "原输入价格覆盖和有理MW的独立审计",
+      "detail": "独立cover/宏注入及完整原矩阵oracle；104920份实际分配；四例fullN及一例32轮前缀，T0三分支。最终IR/生产LP另核。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "tests/audits/unrelated_machines/arbitrary_sink_price_cover_mw_audit.py",
+        "evidence/runs/unrelated_machines/arbitrary_sink_price_cover_mw_audit.json",
+        "examples/unrelated_machines/arbitrary_sink_price_cover_mw_cases.json"
+      ],
+      "status": "finite exact generation and MW checks; not an integrated solver"
+    },
+    {
+      "id": "UM-UPPER-COLUMN-BUDGET-BASE-ROUNDING-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "非负列总量的平行扩张基单侧舍入",
+      "detail": "给显式宏/home二分图及有限occupied模式类Q_h（可空），非空类homes仍覆盖全部B；模式独立当且仅当每home至多一个且其homes可匹配。给非负有理A、列和≤b≥0及满秩分数基x满足Ax≤c，可确定性总位多项式输出真实基和全宏匹配，逐row≤c_z+b。资源维数不固定；仅upper bound。秩一单位列给加性b的渐近锐性。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "research/reviews/unrelated_machines/price_cover_joint_rounding_review.md"
+      ],
+      "status": "complete standard upper-only tool reconstruction; actual independent and final author-text attacks; exact audit only; novelty not claimed"
+    },
+    {
+      "id": "UM-ARBITRARY-SINK-PRIVATE-GROUP-PRICE-COVER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意汇点逐件资格的价格覆盖阈值构造",
+      "detail": "给显式不交H/Z、home-only宏（全部有限端>T/2，先剪>T）与唯一有限home私有组；W_h≤T、a_j≤δT、任意逐job sink资格且p_zj≤ρa_j。ρ≥1、δ≥0、τ∈[1/2,1)、η∈(0,1]、b0=ρ(1−τ+δ)≤1。有统一det poly(L,1/η)算法返回FAIL或全部实际分配，home≤(1+τ)T、sink≤(1+η+b0)T；OPT≤T必成功，故FAIL⇒OPT>T。T0先查零边。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "research/reviews/unrelated_machines/price_cover_joint_rounding_review.md"
+      ],
+      "status": "complete scoped structural algorithm; independently reconstructed and final author text attacked; production LP absent; external review and novelty unverified"
+    },
+    {
+      "id": "UM-ARBITRARY-SINK-PRIVATE-GROUP-PROMISE-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "未知最优值的任意汇点私有组承诺近似",
+      "detail": "固定ρ≥1、δ≥0、η∈(0,1]且ρδ+η<1，τ=[ρ(1+δ)+η]/(1+ρ)。给同一静态H/Z/唯一home角色、p_zj≤ρa_j，但不输入T；承诺W_h≤OPT、a_j≤δOPT、所有有限宏边>OPT/2。存在det总位多项式实际算法，Cmax≤αOPT，α=2−[1−ρδ−η]/(1+ρ)<2。查询不检查当前宏下界，靠OPT处单宏见证给one-sided完整性；不要求接受集合单调。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "research/reviews/unrelated_machines/price_cover_joint_rounding_review.md"
+      ],
+      "status": "complete scoped structural promise approximation; actual final author-text attack; production solver absent; external review and novelty unverified"
     }
   ],
   "hyperedges": [
@@ -32161,6 +32262,102 @@
         "evidence/runs/unrelated_machines/seven_state_star_global_quadratic_root_replay_scope.json"
       ],
       "status": "finite exact checks"
+    },
+    {
+      "id": "DERIVE-UM-UPPER-COLUMN-BASE",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UPPER-COLUMN-BASE-INPUT-v1",
+        "SOURCE-UPPER-ONLY-MULTIPLICITY-AND-COVER-TOOLS"
+      ],
+      "conclusion": "UM-UPPER-COLUMN-BUDGET-BASE-ROUNDING-v1",
+      "statement": "满rank、非负列预算、显式匹配扩展与标准upper-only紧链计数共同推出+b；不承诺lower或cost。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "research/reviews/unrelated_machines/price_cover_joint_rounding_review.md"
+      ],
+      "status": "scope and all joint premises explicit"
+    },
+    {
+      "id": "DERIVE-UM-ARBITRARY-SINK-PRICE-COVER",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ARBITRARY-SINK-PRIVATE-GROUP-CONTRACT-v1",
+        "UM-UPPER-COLUMN-BUDGET-BASE-ROUNDING-v1",
+        "SOURCE-UPPER-ONLY-MULTIPLICITY-AND-COVER-TOOLS"
+      ],
+      "conclusion": "UM-ARBITRARY-SINK-PRIVATE-GROUP-PRICE-COVER-v1",
+      "statement": "给定合同保真实T见证；实际极小覆盖+价格匹配+poly有理MW支撑与同一平行基舍入，逐机恢复全部任务。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "research/reviews/unrelated_machines/price_cover_joint_rounding_review.md"
+      ],
+      "status": "scope and all joint premises explicit"
+    },
+    {
+      "id": "DERIVE-UM-ARBITRARY-SINK-PROMISE-OPT",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ARBITRARY-SINK-PRIVATE-GROUP-CONTRACT-v1",
+        "UM-ARBITRARY-SINK-PRIVATE-GROUP-PRICE-COVER-v1"
+      ],
+      "conclusion": "UM-ARBITRARY-SINK-PRIVATE-GROUP-PROMISE-APPROX-v1",
+      "statement": "额外OPT处W/size/大宏承诺给全部T≥OPT的单宏见证；成功只需剪后宏≤T，整数one-sided搜索不需接受单调。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "research/reviews/unrelated_machines/price_cover_joint_rounding_review.md"
+      ],
+      "status": "scope and all joint premises explicit"
+    },
+    {
+      "id": "CHECK-UM-UPPER-COLUMN-BASE",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "EVIDENCE-UM-UPPER-COLUMN-BASE-FINITE"
+      ],
+      "conclusion": "UM-UPPER-COLUMN-BUDGET-BASE-ROUNDING-v1",
+      "statement": "只核冻结参数下实际整数基与维数、误差和负控制；一般定理由正文承担。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "research/reviews/unrelated_machines/price_cover_joint_rounding_review.md"
+      ],
+      "status": "finite audit only"
+    },
+    {
+      "id": "CHECK-UM-ARBITRARY-SINK-PRICE-MW",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "EVIDENCE-UM-ARBITRARY-SINK-PRICE-MW-FINITE"
+      ],
+      "conclusion": "UM-ARBITRARY-SINK-PRIVATE-GROUP-PRICE-COVER-v1",
+      "statement": "只核原输入菜单、价格、MW与零阈值分支；不把有限枚举或MW前缀当一般证明/完整软件。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "research/reviews/unrelated_machines/price_cover_joint_rounding_review.md"
+      ],
+      "status": "finite audit only"
+    },
+    {
+      "id": "LIMIT-UM-ARBITRARY-SINK-TO-GENERAL",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ARBITRARY-SINK-PRIVATE-GROUP-PROMISE-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只限唯一home/W/size/出口包络promise；没有一般矩阵的共同角色生成器，也不证明一般目标或其否定。",
+      "refs": [
+        "research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md",
+        "research/reviews/unrelated_machines/price_cover_joint_rounding_review.md"
+      ],
+      "status": "structural promise limitation"
     }
   ]
 }
