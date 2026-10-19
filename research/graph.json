@@ -6413,6 +6413,18 @@
       "status": "known supremum gap, reindexed reconstruction independently attacked; not algorithmic hardness"
     },
     {
+      "id": "UM-FINITE-PALETTE-GCD-BARRIER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "有限处理时间字母表的gcd余量边界",
+      "detail": "For binary rational unrelated-machine inputs, exact g-grid target search plus ordered-slot rounding outputs a real assignment with Cmax <= (2-g(P)/B(P))*OPT. Fixed finite alphabets or any uniform g/B lower bound therefore cannot carry near-two hardness; g/B -> 0 remains open.",
+      "refs": [
+        "research/current/unrelated_machines/finite_processing_palette_gcd_barrier.md",
+        "research/unrelated_machines/CLAIMS.md"
+      ],
+      "status": "complete scoped rational extension and arithmetic audit; not a general hardness result"
+    },
+    {
       "id": "UM-TREE-CERTIFICATE-v1",
       "kind": "construction",
       "track": "unrelated_machines",
@@ -13217,6 +13229,21 @@
     }
   ],
   "hyperedges": [
+    {
+      "id": "UM-E-FINITE-PALETTE-GCD",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-FINITE-PALETTE-GCD-BARRIER-v1",
+      "statement": "The LST support bound, rational common-grid scaling and integral load quantization give a real schedule at 2-g(P)/B(P); the two OPT versus B cases handle whether the largest processing time can appear in LP support.",
+      "refs": [
+        "research/current/unrelated_machines/finite_processing_palette_gcd_barrier.md"
+      ],
+      "status": "complete scoped proof; source theorem is Paper Fact and finite audit is separate"
+    },
     {
       "id": "e01",
       "kind": "derives",

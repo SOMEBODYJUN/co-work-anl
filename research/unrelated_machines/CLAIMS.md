@@ -50,6 +50,18 @@
 - Status：已知障碍的当前重构；非新不可近似性结果；审查范围见reviews。
 - Related Files：正文第4节、FAILED_ROUTES.md、原始VW2014版本、精确核验代码与冻结结果。
 
+## UM-FINITE-PALETTE-GCD-BARRIER-v1：有限处理时间字母表的可计算余量
+
+- **Exact Statement / Quantifiers：** 对每个合法二进制有理输入 \(P\) 且 \(\operatorname{OPT}(P)>0\)，令 \(g(P)\) 为所有正有限处理时间的最大有理公因子，\(B(P)\) 为最大有限处理时间。存在确定性位多项式 LST 网格算法输出完整合法分配 \(\sigma\)，满足 \(C_{\max}(\sigma)\le(2-g(P)/B(P))\operatorname{OPT}(P)\)。
+- **Objects / Definitions：** `UM-MODEL-v1`；不可用边不进入 \(g\)，零边进入零格点；以全部分母最小公倍数 \(D\) 缩放后，\(g=G/D\)、\(B=Q/D\)，其中 \(G=\gcd(Dp_{ij})\)、\(Q=\max Dp_{ij}\)。
+- **Assumptions / Scope：** 只讨论 \(\operatorname{OPT}>0\)；\(\operatorname{OPT}=0\)、空任务和全零可行输入逐任务输出零边。LST assignment LP、精确有理可行性和有序槽舍入均按输入总位长计；不限制机器图或任务数。
+- **Conclusion：** 若所有有限处理时间来自固定有限 \(S\subset\mathbb Q_{>0}\)，则全域有统一 \(2-\gcd(S)/\max S<2\) 真实调度。任何固定 \(\varepsilon\) 的近二 hardness 归约若始终保持 \(g(P)/B(P)\ge\varepsilon\)，会被该算法击穿；近二反面必须让 \(g(P)/B(P)\to0\)。
+- **Dependencies：** `UM-MODEL-v1`、`UM-ST-ROUND-v1`；整数版本的 Paper Fact 为 Verschae–Wiese Theorem 7，本页补有理缩放、慢边未入 LP 支撑时的两情形不等式与位复杂度。
+- **Evidence：** 自足正文 [finite_processing_palette_gcd_barrier.md](../current/unrelated_machines/finite_processing_palette_gcd_barrier.md)；独立 Fraction/整数审计 `tests/audits/unrelated_machines/finite_palette_gcd_barrier.py` 及冻结记录 `evidence/runs/unrelated_machines/finite_palette_gcd_barrier_audit.json`。
+- **Counterevidence / Objections：** 该结论不处理 \(g/B\to0\) 的变字母表族；不证明一般不存在统一 \(\varepsilon\)，不提供 NP-hard gap、UGC/P\(\ne\)NP 下界或从低负载完整调度到源问题的 decoder。审计不求解一般 LP，只核算格点与最终不等式。
+- **Status：** 限定范围自足证明；整数来源为已核 Paper Fact；内部 Fraction 审计通过；外审、新颖性和主目标反面均未完成，`UM-TARGET-v1` 保持 OPEN。
+- **Related Files：** 上述正文、审计、[VW 文献行](LITERATURE.md#经典舍入与配置-lp)、`model_and_classical_barriers.md` §6。
+
 ## UM-LONG-PATH-GAP-v1：高围长简单图的配置间隙
 
 - Exact Statement / Quantifiers：∀整数g≥3，在OPT(P)>0、每任务恰两条有限边、机器图简单且围长≥g的UM-MODEL-v1输入上，sup_P OPT(P)/T_CONF(P)=2。

@@ -8,6 +8,12 @@
 
 本阶段完成[稠密正小整数正规形](../current/unrelated_machines/model_and_classical_barriers.md)§6及独立审查：任何全有限1..n²整数域的固定(2−1/k)算法可转成原完整模型的(2−1/(2k))算法。极大分母、零值、∞与不可计算的正实常数都不能单独充当否定机制。此为标准离散化的自足接口重构，非新hardness。当前其他复制/张量/占位探索仍未闭合近二NO decoder；未把它们升级或复制为新资产。
 
+## 有限处理时间字母表的近二反面障碍（2026-10-19）
+
+新增长期 Claim `UM-FINITE-PALETTE-GCD-BARRIER-v1`：对任意二进制有理输入，令 `g(P)` 为正有限处理时间的最大有理公因子、`B(P)` 为最大有限处理时间。LST 目标限制在 `g(P)` 网格，并结合实际支撑最大边 `b_i <= min(B(P), T*)`，给出真实完整分配 `C_max <= (2-g(P)/B(P))*OPT`。这把 Verschae--Wiese Theorem 7 的整数 Paper Fact 写成有理缩放、零边/禁边和位复杂度均明确的版本。
+
+因此，固定有限正处理时间集合 `S`，或更一般地始终满足 `g(P)/B(P) >= beta > 0` 的族，不能承载排除固定 `2-epsilon` 的近二 hardness；任何有效的近二反面归约必须让 `g(P)/B(P) -> 0`。独立 Fraction 审计核对了十个含零边、禁边、互素有理数和百位分母的矩阵，但它只审计算术端点，不是一般 LP 或主目标的证明。`UM-TARGET-v1` 仍 OPEN；尚缺 `g/B -> 0` 族的真实整数 OPT gap、所有低负载完整调度的 sound decoder、位多项式规模和明确复杂度假设。
+
 ## 2026-10-18：短周期路线收口
 
 优先对接 [近单位一般 PCSP 与物理复制缺口](../current/unrelated_machines/near_unit_implication_pcsp_and_physical_copy_obligation.md)；一般源的 NP-hardness 已成立，真实任务复制与所有低调度的 decoder 尚未闭合。当前 [活跃路线](ACTIVE_ROUTES.md) 写明每固定参数归约与极小常数的量词。不得把方向决定写为反面定理。

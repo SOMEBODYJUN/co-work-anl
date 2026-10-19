@@ -19,6 +19,7 @@
 | UM-TARGET-v1 | ∃统一ε>0，∃确定性位多项式算法，∀输入输出≤(2−ε)OPT | 开放研究目标；m不能固定，不能用估值代替调度 |
 | UM-ST-ROUND-v1 | 给定剪枝LP可行x，槽匹配输出L_i≤fractional load+support max≤2T | 已知结果自足重构；Hall与非增排序；程序仅实现此舍入接口 |
 | UM-CONF-GAP-v1 | 配置LP的sup gap=2，甚至每任务两台可选机器 | 两树构造、递推配置证书＋整数下界＋舍入上界；阻止纯粹相对配置值的统一改进 |
+| UM-FINITE-PALETTE-GCD-BARRIER-v1 | 有理处理时间的可计算格点余量：\(2-g(P)/B(P)\)；固定有限字母表不能承载近二 hardness | VW Theorem 7 的整数 Paper Fact 加有理缩放、慢边支撑两情形和总位复杂度；只收窄反面归约，不关闭 UM-TARGET-v1 |
 | UM-LONG-PATH-GAP-v1 | 任意给定围长下，简单机器图配置gap仍sup2 | 经典两树＋长链阈值保真；[正文](long_path_coalition_gap.md)、[独立审查](../../reviews/unrelated_machines/long_path_coalition_review.md) |
 | UM-COALITION-PROJECTION-GAP-v1 | 任意固定r的单机边际相容联合投影仍sup gap2 | 高围长族＋森林耦合；不含全交叠一致性；完整三机相容性在本族精确 |
 
@@ -29,11 +30,13 @@
 | 文件 | 数学资产及何时读取/修改 |
 | --- | --- |
 | research/current/unrelated_machines/model_and_classical_barriers.md | 精确模型、全量词目标、零值边界、槽舍入完整证明、重索引gap构造与障碍准确范围；引入新工具或算法前核对合同 |
+| research/current/unrelated_machines/finite_processing_palette_gcd_barrier.md | `UM-FINITE-PALETTE-GCD-BARRIER-v1` 的自足有理格点证明、固定字母表反面排除和未解决 \(g/B\to0\) 义务；设计近二 source 或整理文献边界时读取 |
 | research/unrelated_machines/CLAIMS.md | 逐命题身份与认知层；改假设或结论须新版本 |
 | research/unrelated_machines/LITERATURE.md、literature_manifest.json | 文献结果、版本、取得状态、定理位置与PDF哈希；使用外部定理时查原文 |
 | research/unrelated_machines/RESEARCH_STATE.md、FAILED_ROUTES.md | 当前未闭合义务和已知障碍；新候选出现时更新，不记录普通流水账 |
 | tests/audits/unrelated_machines/rounding_and_gap.py | Fraction舍入、枚举oracle、显式配置证书、特定树族DP；算法或构造变更时运行 |
 | evidence/runs/unrelated_machines/classical_baseline_audit.json | 初始有限核验冻结记录；重跑输出到scratch，不覆盖原记录 |
+| tests/audits/unrelated_machines/finite_palette_gcd_barrier.py / evidence/runs/unrelated_machines/finite_palette_gcd_barrier_audit.json | Fraction/整数枚举、gcd/lcm、负载格点与两情形端点不等式的独立有限审计；不是一般 LP 求解或普适证明 |
 | research/questions/unrelated_machines/barrier_escape_obligations.md | 新算法必须跨过的下界/构造/复杂度义务；具体路线产生后细化 |
 | research/unrelated_machines/BOSS_START.md | 可复制到新对话的完整启动提示词；恢复、存档路由、研究与保存要求 |
 | research/current/unrelated_machines/long_path_coalition_gap.md | 高围长gap运输、CC_r精确定义及全交叠相容性逃生口；提出局部强化前先核对范围，沿正文进入双路代码/输入/证书/冻结证据 |
