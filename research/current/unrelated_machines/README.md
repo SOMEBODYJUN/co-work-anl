@@ -543,3 +543,7 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 
 
 [真单环circuit双坏端点](configuration_preserving_elimination_support_loss.md)§4：真实OPT1初态有显式全局最优原子，完整CONFIG1沿线保持；一个支撑极小单环的两个最大符号端点完整支撑OPT都为2−1/D。它关闭“任意circuit+试两符号”的安全合同，不否定方向选择或一般算法。
+
+## 固定见证与稀疏复制的新反面边界
+
+[固定arity过滤](top_two_pair_witness_boundary.md#7-固定超载见证件数的严格次二承诺判别)用显式big配置LP和同一真实槽匹配，对每固定r输出B_r≤(2−c_r)T或可靠FAIL；c3=1/6、c_r=6^{−(r−1)!/2}。这不控制整行Cmax，r随epsilon增长的归约仍可能。[有界重数接线](private_graft_and_resource_repetition.md#9-有界重数接线的配置包络与共同循环二接线坍缩)给min接线OPT=t_c，common id+shift已足以让2−1/m seed变为1；不是每接线均失败。[对数表padding](model_and_classical_barriers.md#8-多项式私有填充与单一对数字母表正规形)给单一O(logN)整数表存在性等价，保留旧same-n O(log²n)身份。实际审查、完整Claim与有限证据沿各正文；UM-TARGET-v1及一般反面仍OPEN。

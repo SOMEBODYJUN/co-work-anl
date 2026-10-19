@@ -260,3 +260,7 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 ## 把方向限制成真circuit再试两个符号仍不足
 
 尝试修复旧直和反例：要求所选方向支撑极小且连通，完整CONFIG1沿箱段保持，再试两个最大符号。新的[单环族§4](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)仍使两端完整支撑OPT=2−1/D，而初态真实OPT1且有显式多项式最优原子。坏处不是冻结背景或直和，也没有行可按excess删去；两个端点均因删零端失去近二补全。否定范围仅此“任意指定circuit+两符号+永久删端”充分合同；重试须控制方向本身、维护跨机器共同原子或重开支撑，不能把它宣称为所有circuit均坏或一般困难性。
+
+## 固定arity冲突与稀疏clone接线不能自动给趋二反面
+
+[固定件数过滤](research/current/unrelated_machines/top_two_pair_witness_boundary.md#7-固定超载见证件数的严格次二承诺判别)排除统一固定r且rho足够近2的纯超载见证NO；失败原因是big有限配置和共同槽可实际避开全部该类冲突。r随epsilon增长未排。[共同id/shift接线](research/current/unrelated_machines/private_graft_and_resource_repetition.md#9-有界重数接线的配置包络与共同循环二接线坍缩)保留全部原job且每incidence为connected degree2，却将2−1/m seed变为1；新增第二个类型副本的同机共居是机制。回收精确cap配置包络与显式全机调度。只有source相关全输出解码或改变该真实容量机制时才值得重试，不外推所有精选接线。

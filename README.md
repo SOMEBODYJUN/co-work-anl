@@ -1,5 +1,7 @@
 # 共同研究：一般不相关并行机的统一常数2壁垒
 
+[固定件数超载见证](research/current/unrelated_machines/top_two_pair_witness_boundary.md#7-固定超载见证件数的严格次二承诺判别)对每固定r给B_r≤(2−c_r)T的实际过滤器；[有界重数接线](research/current/unrelated_machines/private_graft_and_resource_repetition.md#9-有界重数接线的配置包络与共同循环二接线坍缩)识别精确cap配置包络，且共同id/shift可将趋二seed降至1；[私有填充的对数表](research/current/unrelated_machines/model_and_classical_barriers.md#8-多项式私有填充与单一对数字母表正规形)把目标存在性等价域收至O(logN)个1..N²正整数。前两项限定反面接口，后一项是允许padding的新等价，不是一般不存在证明。
+
 
 [逐资源正权畸变的完整菜单边界](research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md)：任意显式菜单数/资源度、W≤1及κ=max同资源正权比时，每固定α>4实际输出C≤2−(2−OPT)/(ακ)；固定κ不能承载任意近二真实源。源于已知restricted Santa算法的结构推论，无完整后端实现，一般主目标仍OPEN。
 [全种子完备源的拒绝证书](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)证明：若已有随机源有总多项式判别器，则NP=coNP；逆多项式拒绝概率再给NP=RP=coRP=coNP。条件调度推论仍缺真实compiler与全输出decoder，不是已得一般反面。

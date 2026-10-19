@@ -215,3 +215,7 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 
 
 [真单环circuit双坏端点](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)§4：真实OPT1初态有显式全局最优原子，完整CONFIG1沿线保持；一个支撑极小单环的两个最大符号端点完整支撑OPT都为2−1/D。它关闭“任意circuit+试两符号”的安全合同，不否定方向选择或一般算法。
+
+## 固定超载件数与克隆接线的新增限定身份
+
+新增UM-FIXED-ARITY-WITNESS-FILTER-v1 / UM-FIXED-ARITY-OVERLOAD-HARDNESS-BARRIER-v1、UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1 / UM-COMMON-CYCLIC-TWO-WIRING-NEAR-TWO-COLLAPSE-v1及UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1。精确全ID、量词、证据与限制见[本题账本](research/unrelated_machines/CLAIMS.md#固定件数见证稀疏接线与对数字母表本轮精确增量)。它们没有否定一般UM-TARGET-v1。

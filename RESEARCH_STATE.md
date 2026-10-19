@@ -247,3 +247,7 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 ## 真单环circuit仍不能免费保留次二补全
 
 [完整正文§4](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)把旧直和方向反例推进为一个真正支撑极小单环：任意奇D>=3有真实OPT1、显式N个最优原子初态、整段完整CONFIG1与全负载等式，但两个最大符号端点的完整支撑OPT均精确2−1/D。全程无整数化任务、所有excess行都保持保护；损失来自永久删零端。一般证明含任意完整实际调度下界，有限运行只是检查。当前仍须选择安全方向、保持更强共同结构或允许恢复删端；该显式族本身容易解，不给一般NP困难性。
+
+## 2026-10-19：反面接口的固定arity与共同循环接线边界
+
+已完整证明并实际独立审读：[固定超载见证件数的过滤](research/current/unrelated_machines/top_two_pair_witness_boundary.md#7-固定超载见证件数的严格次二承诺判别)、[cap配置与共同循环二接线坍缩](research/current/unrelated_machines/private_graft_and_resource_repetition.md#9-有界重数接线的配置包络与共同循环二接线坍缩)、[允许padding的O(logN)整数表等价](research/current/unrelated_machines/model_and_classical_barriers.md#8-多项式私有填充与单一对数字母表正规形)。规范精确审计均通过；一般LP/未知backend没有被冒称实现。当前仍缺每固定epsilon的真实近二整数源gap、全输出decoder与位多项式compiler；UM-TARGET-v1正反面仍OPEN。优先寻找随epsilon增长的共同超载/物理一致性，或保留hard-image NO的精选接线；不再把固定小冲突或connected degree2外观作为soundness。

@@ -3603,3 +3603,65 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：仅否定任意指定circuit试两个最大符号端点并永久删零端的充分合同，不否定另选方向、另选初态、维持真实共同原子、恢复删端或一般算法；本实例任一已给原子就是最优解，没有新NP困难性。 作者初稿漏计任意有理theta的权重位长已在最终§4.7修正；旧冻结输出保留原字节，新输出记录修正后正文hash，运行数学结果不变。有限核验没有枚举全部端点完整调度。
 - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；仅显式反例生成/有限审计，不是一般调度算法。
 - Related Files：[完整正文§4](../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)、research/reviews/unrelated_machines/configuration_preserving_single_cycle_endpoint_review.md、tests/audits/unrelated_machines/configuration_preserving_single_cycle_endpoints.py、evidence/runs/unrelated_machines/configuration_preserving_single_cycle_endpoints_audit.json、evidence/runs/unrelated_machines/configuration_preserving_single_cycle_endpoints_rational_parameter_audit.json。
+
+## 固定件数见证、稀疏接线与对数字母表：本轮精确增量
+
+### UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1
+
+- Exact Statement / Quantifiers：∀合法P及整数c≥1，min_{q≥1,允许重复的c置换接线Q}OPT(Q)=t_c(P)，最小值取得；任意有理MC_c证书可恢复同分母q的全带标签调度，任意原调度可提升到每份接线。t1=CONFIG，逐cap不增且每相邻层均可严格；logq位多项式不代表显式q多项式。
+- Objects / Domain / Definitions：全部UM输入；每原机器/job各q份，每有限incidence是允许重复的c个置换之并，c≥1；显式共同循环反例另限m≥2的指定seed。
+- Assumptions / Scope：数学结论无需复杂度假设；NP-hard compiler的条件排除仅在P≠NP下。只限指定复制接口；不存在每个wiring均坍缩或一般困难性结论。分母只有多项式位长，显式q可指数大。
+- Conclusion：只关闭或缩小上述精确接口，UM-TARGET-v1及其一般反面仍OPEN。
+- Dependencies：UM-MODEL-v1；完整额外定义和参数见正文。
+- Evidence：m2..17全部21776实际job；81个两标签接线/2448分配；22阵列8种law；zero/empty/q1<c边界。 实际先陈述重构与最终全文/代码攻击分开；有限计算不代一般证明。
+- Counterevidence / Objections：未见尚成立fatal；外审/全球新颖性未认证。只限指定复制接口；不存在每个wiring均坍缩或一般困难性结论。分母只有多项式位长，显式q可指数大。
+- Status：complete scoped proof; statement-first reconstruction and actual final read-after; finite audit only; external review and novelty unverified。
+- Related Files：[正文](../current/unrelated_machines/private_graft_and_resource_repetition.md)、[独立审查](../reviews/unrelated_machines/bounded_multiplicity_clone_wiring_review.md)、[审计](../../tests/audits/unrelated_machines/bounded_multiplicity_clone_audit.py)、[冻结结果](../../evidence/runs/unrelated_machines/bounded_multiplicity_clone_audit.json)。
+
+### UM-COMMON-CYCLIC-TWO-WIRING-NEAR-TWO-COLLAPSE-v1
+
+- Exact Statement / Quantifiers：∀m≥2，指定m机/一枚全资格unit及每机m−1枚private1/m的P_m有OPT=t1=2−1/m；每incidence共同id+一次shift、q=m的Q_m有全部原机副本负载恰1，故真实OPT(Q_m)=t2=1；每c1接线仍OPT2−1/m。
+- Objects / Domain / Definitions：全部UM输入；每原机器/job各q份，每有限incidence是允许重复的c个置换之并，c≥1；显式共同循环反例另限m≥2的指定seed。
+- Assumptions / Scope：数学结论无需复杂度假设；NP-hard compiler的条件排除仅在P≠NP下。只限指定复制接口；不存在每个wiring均坍缩或一般困难性结论。分母只有多项式位长，显式q可指数大。
+- Conclusion：只关闭或缩小上述精确接口，UM-TARGET-v1及其一般反面仍OPEN。
+- Dependencies：UM-MODEL-v1, UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1；完整额外定义和参数见正文。
+- Evidence：m2..17全部21776实际job；81个两标签接线/2448分配；22阵列8种law；zero/empty/q1<c边界。 实际先陈述重构与最终全文/代码攻击分开；有限计算不代一般证明。
+- Counterevidence / Objections：未见尚成立fatal；外审/全球新颖性未认证。只限指定复制接口；不存在每个wiring均坍缩或一般困难性结论。分母只有多项式位长，显式q可指数大。
+- Status：complete scoped proof; statement-first reconstruction and actual final read-after; finite audit only; external review and novelty unverified。
+- Related Files：[正文](../current/unrelated_machines/private_graft_and_resource_repetition.md)、[独立审查](../reviews/unrelated_machines/bounded_multiplicity_clone_wiring_review.md)、[审计](../../tests/audits/unrelated_machines/bounded_multiplicity_clone_audit.py)、[冻结结果](../../evidence/runs/unrelated_machines/bounded_multiplicity_clone_audit.json)。
+
+### UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1
+
+- Exact Statement / Quantifiers：一个只依实际N的A_N⊆{1,...,N²}、|A_N|≤2+floor(bitlength(N)/2)的全finite正整数域，与原UM-TARGET-v1算法存在性等价；每固定k的域内2−1/k算法，经固定k次数的私有padding给原全模型2−1/(2k)。
+- Objects / Domain / Definitions：每实际N≥2，H=bitlengthN，A_N={1,N²}加各j≥2/2^j≤H的ceil((1+1/(8j))^r),r≤floor(H/2^j)；全部显式dense正整数矩阵。
+- Assumptions / Scope：数学结论无需复杂度假设；NP-hard compiler的条件排除仅在P≠NP下。允许实际job数增加，次数依先固定k；非same-n或uniform-in-k保证。没有backend、源gap或hardness。
+- Conclusion：只关闭或缩小上述精确接口，UM-TARGET-v1及其一般反面仍OPEN。
+- Dependencies：UM-MODEL-v1；完整额外定义和参数见正文。
+- Evidence：1574 matrix/k输入，10890 active分配型及2993合格输出型；padding全部低载情形精确分类，不物化天文矩阵。 实际先陈述重构与最终全文/代码攻击分开；有限计算不代一般证明。
+- Counterevidence / Objections：未见尚成立fatal；外审/全球新颖性未认证。允许实际job数增加，次数依先固定k；非same-n或uniform-in-k保证。没有backend、源gap或hardness。
+- Status：complete scoped proof; statement-first reconstruction and actual final read-after; finite audit only; external review and novelty unverified。
+- Related Files：[正文](../current/unrelated_machines/model_and_classical_barriers.md)、[独立审查](../reviews/unrelated_machines/logarithmic_palette_padding_equivalence_review.md)、[审计](../../tests/audits/unrelated_machines/logarithmic_palette_padding_equivalence.py)、[冻结结果](../../evidence/runs/unrelated_machines/logarithmic_palette_padding_equivalence.json)。
+
+### UM-FIXED-ARITY-WITNESS-FILTER-v1
+
+- Exact Statement / Quantifiers：∀先固定r≥1，存在det总位poly程序，∀合法P及有理T≥0，或FAIL且普通OPT>T，或输出同一全原job的p≤T保留端实际分配且B_r≤(2−c_r)T；c1=1,c2=1/2,c_r=6^{−(r−1)!/2}(r≥3)。成功不保证全行Cmax或相对O_r比率。
+- Objects / Domain / Definitions：每先固定r≥1、任意合法UM P及有理T≥0；B_r为逐机最大至多r件之和；NO量化全部p≤T端完整分配。
+- Assumptions / Scope：数学结论无需复杂度假设；NP-hard compiler的条件排除仅在P≠NP下。成功不控制全行总负载或相对O_r比率；一般LP后端未集成。r增长无统一次数；不能排r随epsilon增长或其它全局decoder。
+- Conclusion：只关闭或缩小上述精确接口，UM-TARGET-v1及其一般反面仍OPEN。
+- Dependencies：UM-MODEL-v1, UM-ST-ROUND-v1；完整额外定义和参数见正文。
+- Evidence：14424矩阵/65640真实分配；5440行law/484完整给定证书；4092 tuple核验/8非法拒绝；一般LP未实现。 实际先陈述重构与最终全文/代码攻击分开；有限计算不代一般证明。
+- Counterevidence / Objections：未见尚成立fatal；外审/全球新颖性未认证。成功不控制全行总负载或相对O_r比率；一般LP后端未集成。r增长无统一次数；不能排r随epsilon增长或其它全局decoder。
+- Status：complete scoped proof; statement-first reconstruction and actual final read-after; finite audit only; external review and novelty unverified。
+- Related Files：[正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)、[独立审查](../reviews/unrelated_machines/fixed_arity_overload_witness_review.md)、[审计](../../tests/audits/unrelated_machines/fixed_arity_overload_witness_audit.py)、[冻结结果](../../evidence/runs/unrelated_machines/fixed_arity_overload_witness_audit.json)。
+
+### UM-FIXED-ARITY-OVERLOAD-HARDNESS-BARRIER-v1
+
+- Exact Statement / Quantifiers：∀先固定r≥1及有理rho≥2−c_r，YES普通OPT≤T / NO全部p≤T保留端完整分配均有同机至多r件之和>rhoT的promise在det位poly时间可判别；P≠NP下排除此精确合同的det多项式NP-hard compiler。
+- Objects / Domain / Definitions：每先固定r≥1、任意合法UM P及有理T≥0；B_r为逐机最大至多r件之和；NO量化全部p≤T端完整分配。
+- Assumptions / Scope：数学结论无需复杂度假设；NP-hard compiler的条件排除仅在P≠NP下。成功不控制全行总负载或相对O_r比率；一般LP后端未集成。r增长无统一次数；不能排r随epsilon增长或其它全局decoder。
+- Conclusion：只关闭或缩小上述精确接口，UM-TARGET-v1及其一般反面仍OPEN。
+- Dependencies：UM-FIXED-ARITY-WITNESS-FILTER-v1；完整额外定义和参数见正文。
+- Evidence：14424矩阵/65640真实分配；5440行law/484完整给定证书；4092 tuple核验/8非法拒绝；一般LP未实现。 实际先陈述重构与最终全文/代码攻击分开；有限计算不代一般证明。
+- Counterevidence / Objections：未见尚成立fatal；外审/全球新颖性未认证。成功不控制全行总负载或相对O_r比率；一般LP后端未集成。r增长无统一次数；不能排r随epsilon增长或其它全局decoder。
+- Status：complete scoped proof; statement-first reconstruction and actual final read-after; finite audit only; external review and novelty unverified。
+- Related Files：[正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)、[独立审查](../reviews/unrelated_machines/fixed_arity_overload_witness_review.md)、[审计](../../tests/audits/unrelated_machines/fixed_arity_overload_witness_audit.py)、[冻结结果](../../evidence/runs/unrelated_machines/fixed_arity_overload_witness_audit.json)。

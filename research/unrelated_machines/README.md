@@ -415,3 +415,5 @@
 
 
 [真单环circuit双坏端点](../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)§4：真实OPT1初态有显式全局最优原子，完整CONFIG1沿线保持；一个支撑极小单环的两个最大符号端点完整支撑OPT都为2−1/D。它关闭“任意circuit+试两符号”的安全合同，不否定方向选择或一般算法。
+
+[固定超载件数过滤](../current/unrelated_machines/top_two_pair_witness_boundary.md#7-固定超载见证件数的严格次二承诺判别)、[有界重数与共同循环接线](../current/unrelated_machines/private_graft_and_resource_repetition.md#9-有界重数接线的配置包络与共同循环二接线坍缩)、[允许padding的单一对数表](../current/unrelated_machines/model_and_classical_barriers.md#8-多项式私有填充与单一对数字母表正规形)是三项不同的限定增量。下一困难性义务仍是每固定epsilon的真实整数NO及任意低载完整调度decoder，不能用固定arity冲突或稀疏复制外观替代。

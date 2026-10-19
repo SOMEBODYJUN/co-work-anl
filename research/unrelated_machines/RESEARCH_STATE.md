@@ -632,3 +632,9 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 ## 真单环circuit仍不能免费保留次二补全
 
 [完整正文§4](../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)把旧直和方向反例推进为一个真正支撑极小单环：任意奇D>=3有真实OPT1、显式N个最优原子初态、整段完整CONFIG1与全负载等式，但两个最大符号端点的完整支撑OPT均精确2−1/D。全程无整数化任务、所有excess行都保持保护；损失来自永久删零端。一般证明含任意完整实际调度下界，有限运行只是检查。当前仍须选择安全方向、保持更强共同结构或允许恢复删端；该显式族本身容易解，不给一般NP困难性。
+
+## 2026-10-19：固定见证过滤与稀疏接线真实坍缩
+
+本阶段三个自足增量均已实际内审：固定r的ordinary-YES / r-tuple-NO promise在rho≥2−c_r时可判别（不保证全行负载）；min有界c置换接线OPT精确为cap-c配置阈值，且相同id/shift将指定趋二seed降至1；允许固定k次数的私有padding后，单一O(logN)整数表已与原目标存在性等价。详见[固定件数正文](../current/unrelated_machines/top_two_pair_witness_boundary.md#7-固定超载见证件数的严格次二承诺判别)、[接线正文](../current/unrelated_machines/private_graft_and_resource_repetition.md#9-有界重数接线的配置包络与共同循环二接线坍缩)、[正规形§8](../current/unrelated_machines/model_and_classical_barriers.md#8-多项式私有填充与单一对数字母表正规形)。
+
+下一proof obligation：固定epsilon允许r增长，仍须从每份低总负载完整分配重构源见证；source专用接线须另外证明NO不能发生cap配置整数化。单纯cycle连接、低接线度和固定超载arity都不提供该decoder。数学主目标及一般否定保持OPEN；truth/value与新颖性分开。

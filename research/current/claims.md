@@ -1396,6 +1396,17 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1 | ∀奇整数D≥3，L=D+2、N=DL，存在仅用时间1与1/D的显式UM实例，m=3N+3L,n=4N+2,有限端10N+2L，真实OPT1且指定严格分数初态x有恰N个等权真实最优调度原子。全部机器保护下有支撑极小circuit d，物理支撑为单个4N简单交替环、rank(A_C)=4N−1。最大箱段为±γ，γ=(L−1)/(2L)，整段保持全机负载与完整CONFIG1；两最大端点永久删零端后的完整正支撑真实OPT均精确2−1/D，无任务整数化。∀固定ε∈(0,1)，选奇D>1/ε，则全程每机活端excess>1−ε且两端OPT>2−ε。实例、真实原子、给定有理参数的路径证书和端点上界均为显式实例位长多项式构造。 | 仅否定任意指定circuit试两个最大符号端点并永久删零端的充分合同，不否定另选方向、另选初态、维持真实共同原子、恢复删端或一般算法；本实例任一已给原子就是最优解，没有新NP困难性。 | [完整正文§4](unrelated_machines/configuration_preserving_elimination_support_loss.md)、[实际审查](../reviews/unrelated_machines/configuration_preserving_single_cycle_endpoint_review.md)；完整范围内审，外审/新颖性未认证。 |
 
 
+
+## 固定见证过滤、稀疏接线与对数整数表
+
+| ID | Exact scope / result | Proof and limits |
+|---|---|---|
+| UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1 | ∀合法P及整数c≥1，min_{q≥1,允许重复的c置换接线Q}OPT(Q)=t_c(P)，最小值取得；任意有理MC_c证书可恢复同分母q的全带标签调度，任意原调度可提升到每份接线。t1=CONFIG，逐cap不增且每相邻层均可严格；logq位多项式不代表显式q多项式。 | [正文](unrelated_machines/private_graft_and_resource_repetition.md)；只限指定复制接口；不存在每个wiring均坍缩或一般困难性结论。分母只有多项式位长，显式q可指数大。 实际内审，外审/新颖性未认证。 |
+| UM-COMMON-CYCLIC-TWO-WIRING-NEAR-TWO-COLLAPSE-v1 | ∀m≥2，指定m机/一枚全资格unit及每机m−1枚private1/m的P_m有OPT=t1=2−1/m；每incidence共同id+一次shift、q=m的Q_m有全部原机副本负载恰1，故真实OPT(Q_m)=t2=1；每c1接线仍OPT2−1/m。 | [正文](unrelated_machines/private_graft_and_resource_repetition.md)；只限指定复制接口；不存在每个wiring均坍缩或一般困难性结论。分母只有多项式位长，显式q可指数大。 实际内审，外审/新颖性未认证。 |
+| UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1 | 一个只依实际N的A_N⊆{1,...,N²}、|A_N|≤2+floor(bitlength(N)/2)的全finite正整数域，与原UM-TARGET-v1算法存在性等价；每固定k的域内2−1/k算法，经固定k次数的私有padding给原全模型2−1/(2k)。 | [正文](unrelated_machines/model_and_classical_barriers.md)；允许实际job数增加，次数依先固定k；非same-n或uniform-in-k保证。没有backend、源gap或hardness。 实际内审，外审/新颖性未认证。 |
+| UM-FIXED-ARITY-WITNESS-FILTER-v1 | ∀先固定r≥1，存在det总位poly程序，∀合法P及有理T≥0，或FAIL且普通OPT>T，或输出同一全原job的p≤T保留端实际分配且B_r≤(2−c_r)T；c1=1,c2=1/2,c_r=6^{−(r−1)!/2}(r≥3)。成功不保证全行Cmax或相对O_r比率。 | [正文](unrelated_machines/top_two_pair_witness_boundary.md)；成功不控制全行总负载或相对O_r比率；一般LP后端未集成。r增长无统一次数；不能排r随epsilon增长或其它全局decoder。 实际内审，外审/新颖性未认证。 |
+| UM-FIXED-ARITY-OVERLOAD-HARDNESS-BARRIER-v1 | ∀先固定r≥1及有理rho≥2−c_r，YES普通OPT≤T / NO全部p≤T保留端完整分配均有同机至多r件之和>rhoT的promise在det位poly时间可判别；P≠NP下排除此精确合同的det多项式NP-hard compiler。 | [正文](unrelated_machines/top_two_pair_witness_boundary.md)；成功不控制全行总负载或相对O_r比率；一般LP后端未集成。r增长无统一次数；不能排r随epsilon增长或其它全局decoder。 实际内审，外审/新颖性未认证。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
