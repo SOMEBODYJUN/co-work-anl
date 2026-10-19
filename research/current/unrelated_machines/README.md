@@ -547,3 +547,8 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 ## 固定见证与稀疏复制的新反面边界
 
 [固定arity过滤](top_two_pair_witness_boundary.md#7-固定超载见证件数的严格次二承诺判别)用显式big配置LP和同一真实槽匹配，对每固定r输出B_r≤(2−c_r)T或可靠FAIL；c3=1/6、c_r=6^{−(r−1)!/2}。这不控制整行Cmax，r随epsilon增长的归约仍可能。[有界重数接线](private_graft_and_resource_repetition.md#9-有界重数接线的配置包络与共同循环二接线坍缩)给min接线OPT=t_c，common id+shift已足以让2−1/m seed变为1；不是每接线均失败。[对数表padding](model_and_classical_barriers.md#8-多项式私有填充与单一对数字母表正规形)给单一O(logN)整数表存在性等价，保留旧same-n O(log²n)身份。实际审查、完整Claim与有限证据沿各正文；UM-TARGET-v1及一般反面仍OPEN。
+
+
+## 共享背景与两层收费的真实负载边界
+
+[鲁棒环](robust_cycle_shared_context_phase_boundary.md)给固定全context原端的任意相位峰<3T−B，三半阈值与包络sup锐；[标签收费](two_level_label_fee_escape.md)给全源三半恢复及actual OPT=1+μ/D，强列表NO族仍实际趋1。读取目的为避免将可读copy或first-use固定费免费接到source；均未证明一般no-ε。各有实际独立审查、精确代码和冻结证据。

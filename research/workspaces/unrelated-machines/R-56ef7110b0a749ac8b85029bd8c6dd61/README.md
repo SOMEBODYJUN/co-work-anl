@@ -22,3 +22,7 @@
 - [真单环双坏端点§4](../../../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)：真正circuit的两个最大符号完整支撑OPT同为2−1/D；真实初态与完整配置路径均显式给出。一般安全方向/共同状态的输入生成和全局负载余量仍未解决。
 
 - [支撑安全之后的点再生义务](support_safe_motion_and_point_regeneration_questions.md)：仅探索草稿；紧行conformal、CONFIG切向与sound FAIL的语义拆开，低负载停车扩域尚未升级。
+
+
+- [鲁棒环共享背景边界](../../../current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md)：任意共享context仍不能从strict见证读出near2鲁棒环相位；不改core资格。
+- [两层收费精确实际值](../../../current/unrelated_machines/two_level_label_fee_escape.md)：全源三半逃逸、μ恒等式与强列表NO的趋1反例。剩余义务是源与物理全局容量共同的near2低调度解码，非继续加强这两套失败结构。

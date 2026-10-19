@@ -212,3 +212,6 @@
 
 
 [真单环circuit双坏端点](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)§4：真实OPT1初态有显式全局最优原子，完整CONFIG1沿线保持；一个支撑极小单环的两个最大符号端点完整支撑OPT都为2−1/D。它关闭“任意circuit+试两符号”的安全合同，不否定方向选择或一般算法。
+
+
+反面compiler的新精确边界：[鲁棒环的共享背景相位切换](research/current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md)与[两层标签收费的真实最优值](research/current/unrelated_machines/two_level_label_fee_escape.md)。均为限范围解析资产，完整任务/内审/有限核验已分层；一般反面仍OPEN。

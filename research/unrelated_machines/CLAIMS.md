@@ -3665,3 +3665,38 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：未见尚成立fatal；外审/全球新颖性未认证。成功不控制全行总负载或相对O_r比率；一般LP后端未集成。r增长无统一次数；不能排r随epsilon增长或其它全局decoder。
 - Status：complete scoped proof; statement-first reconstruction and actual final read-after; finite audit only; external review and novelty unverified。
 - Related Files：[正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)、[独立审查](../reviews/unrelated_machines/fixed_arity_overload_witness_review.md)、[审计](../../tests/audits/unrelated_machines/fixed_arity_overload_witness_audit.py)、[冻结结果](../../evidence/runs/unrelated_machines/fixed_arity_overload_witness_audit.json)。
+
+
+## UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1：鲁棒环在任意共享背景中的相位不可读界
+
+- ID/version / Exact Statement / Quantifiers：UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1；T>0，T≤B<2T；core机器/任务彼此不交，任务恰两端且时间≤T；任意共享context；给定全部原任务的实际σ≤T；鲁棒iff所有碰撞和>B；任意指定相位保持全部context原端可构造峰<3T−B，B≥3T/2时全相位weak可行；三半阈值与包络上确界锐。
+- Objects / Domain / Definitions：全部机器资格、原任务、实际负载及局部参数严格采用[正文](../current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md)定义；无隐藏预载、任务删除或分数执行。
+- Assumptions / Scope：无复杂度假设；只排保留该鲁棒双端core资格、仅追加共享背景来限制phase的接口；不排改资格、非环码、其他全局decoder或一般反面。
+- Conclusion：上述完整限范围解析结论；主目标及一般反面仍OPEN。
+- Dependencies：UM-MODEL-v1；本文自足逐机计数与构造，所有共同前提在正文明确；不以原配置T或有限实验作为一般证明。
+- Evidence：真实Exact-first独立重构、作者全文攻击及最终canonical实际读取见[审查](../reviews/unrelated_machines/robust_cycle_shared_context_phase_review.md)；精确审计与冻结输出见assets路线。
+- Counterevidence / Objections：审查保留初稿的具体边界问题并在现行稿修复；没有尚成立的域内fatal。有限核验不代表枚举一般输入；无外审/全球新颖性认证。
+- Status：complete scoped proof; independent statement-first reconstruction and actual final-text review; finite exact audits; unrefereed, novelty unverified；实现状态仅独立研究脚本/有限核验。
+- Related Files：research/current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md、research/reviews/unrelated_machines/robust_cycle_shared_context_phase_review.md、tests/audits/unrelated_machines/robust_cycle_shared_context_phase.py、evidence/runs/unrelated_machines/robust_cycle_shared_context_phase_audit.json。
+
+
+## UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1：两层标签收费的实际最优值与全源三半逃逸
+
+- ID/version / Exact Statement / Quantifiers：UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1；显式二部全定义投影源，D≥2且degree≤D；完整展开本文R/H/A/B/C原机器和全部原任务；任意给定边状态；任意状态可bit-poly完整排到1+floor(D/2)/D≤3/2；非空顶点集actual OPT=1+μ/D，μ为状态选择的最大逐顶点第二标签次数的最小值；空顶点OPT0。C<1+1/D可反解singleton全满足；奇q强列表NO actual OPT=1+1/q。
+- Objects / Domain / Definitions：全部机器资格、原任务、实际负载及局部参数严格采用[正文](../current/unrelated_machines/two_level_label_fee_escape.md)定义；无隐藏预载、任务删除或分数执行。
+- Assumptions / Scope：无复杂度假设；仅此明确compiler；μ恒等式不提供其多项式优化oracle；不声称raw模板识别、一般三半算法或一般近二hardness。
+- Conclusion：上述完整限范围解析结论；主目标及一般反面仍OPEN。
+- Dependencies：UM-MODEL-v1；本文自足逐机计数与构造，所有共同前提在正文明确；不以原配置T或有限实验作为一般证明。
+- Evidence：真实Exact-first独立重构、作者全文攻击及最终canonical实际读取见[审查](../reviews/unrelated_machines/two_level_label_fee_escape_review.md)；精确审计与冻结输出见assets路线。
+- Counterevidence / Objections：审查保留初稿的具体边界问题并在现行稿修复；没有尚成立的域内fatal。有限核验不代表枚举一般输入；无外审/全球新颖性认证。
+- Status：complete scoped proof; independent statement-first reconstruction and actual final-text review; finite exact audits; unrefereed, novelty unverified；实现状态仅独立研究脚本/有限核验。
+- Related Files：research/current/unrelated_machines/two_level_label_fee_escape.md、research/reviews/unrelated_machines/two_level_label_fee_escape_review.md、tests/audits/unrelated_machines/two_level_label_fee_escape.py、tests/audits/unrelated_machines/two_level_label_fee_independent_search.py、evidence/runs/unrelated_machines/two_level_label_fee_escape_audit.json、evidence/runs/unrelated_machines/two_level_label_fee_independent_search.json。
+
+
+## 反面compiler的两项实际边界
+
+[鲁棒环在任意共享背景中的相位不可读界](../current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md)：鲁棒iff所有碰撞和>B；任意指定相位保持全部context原端可构造峰<3T−B，B≥3T/2时全相位weak可行；三半阈值与包络上确界锐。 只排保留该鲁棒双端core资格、仅追加共享背景来限制phase的接口；不排改资格、非环码、其他全局decoder或一般反面。
+
+[两层标签收费的实际最优值与全源三半逃逸](../current/unrelated_machines/two_level_label_fee_escape.md)：任意状态可bit-poly完整排到1+floor(D/2)/D≤3/2；非空顶点集actual OPT=1+μ/D，μ为状态选择的最大逐顶点第二标签次数的最小值；空顶点OPT0。C<1+1/D可反解singleton全满足；奇q强列表NO actual OPT=1+1/q。 仅此明确compiler；μ恒等式不提供其多项式优化oracle；不声称raw模板识别、一般三半算法或一般近二hardness。
+
+一般否定仍缺对每个固定 ε 的真实近二NO及任意低负载完整调度解码；本两项资产没有补出这个桥。

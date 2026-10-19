@@ -219,3 +219,12 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 ## 固定超载件数与克隆接线的新增限定身份
 
 新增UM-FIXED-ARITY-WITNESS-FILTER-v1 / UM-FIXED-ARITY-OVERLOAD-HARDNESS-BARRIER-v1、UM-BOUNDED-MULTIPLICITY-CLONE-ENVELOPE-v1 / UM-COMMON-CYCLIC-TWO-WIRING-NEAR-TWO-COLLAPSE-v1及UM-DENSE-LOGARITHMIC-ALPHABET-PADDED-EQUIVALENCE-v1。精确全ID、量词、证据与限制见[本题账本](research/unrelated_machines/CLAIMS.md#固定件数见证稀疏接线与对数字母表本轮精确增量)。它们没有否定一般UM-TARGET-v1。
+
+
+## 反面compiler的两项实际边界
+
+[鲁棒环在任意共享背景中的相位不可读界](research/current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md)：鲁棒iff所有碰撞和>B；任意指定相位保持全部context原端可构造峰<3T−B，B≥3T/2时全相位weak可行；三半阈值与包络上确界锐。 只排保留该鲁棒双端core资格、仅追加共享背景来限制phase的接口；不排改资格、非环码、其他全局decoder或一般反面。
+
+[两层标签收费的实际最优值与全源三半逃逸](research/current/unrelated_machines/two_level_label_fee_escape.md)：任意状态可bit-poly完整排到1+floor(D/2)/D≤3/2；非空顶点集actual OPT=1+μ/D，μ为状态选择的最大逐顶点第二标签次数的最小值；空顶点OPT0。C<1+1/D可反解singleton全满足；奇q强列表NO actual OPT=1+1/q。 仅此明确compiler；μ恒等式不提供其多项式优化oracle；不声称raw模板识别、一般三半算法或一般近二hardness。
+
+一般否定仍缺对每个固定 ε 的真实近二NO及任意低负载完整调度解码；本两项资产没有补出这个桥。

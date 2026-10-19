@@ -1407,6 +1407,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-FIXED-ARITY-WITNESS-FILTER-v1 | ∀先固定r≥1，存在det总位poly程序，∀合法P及有理T≥0，或FAIL且普通OPT>T，或输出同一全原job的p≤T保留端实际分配且B_r≤(2−c_r)T；c1=1,c2=1/2,c_r=6^{−(r−1)!/2}(r≥3)。成功不保证全行Cmax或相对O_r比率。 | [正文](unrelated_machines/top_two_pair_witness_boundary.md)；成功不控制全行总负载或相对O_r比率；一般LP后端未集成。r增长无统一次数；不能排r随epsilon增长或其它全局decoder。 实际内审，外审/新颖性未认证。 |
 | UM-FIXED-ARITY-OVERLOAD-HARDNESS-BARRIER-v1 | ∀先固定r≥1及有理rho≥2−c_r，YES普通OPT≤T / NO全部p≤T保留端完整分配均有同机至多r件之和>rhoT的promise在det位poly时间可判别；P≠NP下排除此精确合同的det多项式NP-hard compiler。 | [正文](unrelated_machines/top_two_pair_witness_boundary.md)；成功不控制全行总负载或相对O_r比率；一般LP后端未集成。r增长无统一次数；不能排r随epsilon增长或其它全局decoder。 实际内审，外审/新颖性未认证。 |
 
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1 | T>0，T≤B<2T；core机器/任务彼此不交，任务恰两端且时间≤T；任意共享context；给定全部原任务的实际σ≤T；鲁棒iff所有碰撞和>B；任意指定相位保持全部context原端可构造峰<3T−B，B≥3T/2时全相位weak可行；三半阈值与包络上确界锐。 | 只排保留该鲁棒双端core资格、仅追加共享背景来限制phase的接口；不排改资格、非环码、其他全局decoder或一般反面。 | [完整正文](unrelated_machines/robust_cycle_shared_context_phase_boundary.md)、[实际内审](../reviews/unrelated_machines/robust_cycle_shared_context_phase_review.md)；证明完整、内审及有限核验；外审/新颖性未核。 |
+| UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1 | 显式二部全定义投影源，D≥2且degree≤D；完整展开本文R/H/A/B/C原机器和全部原任务；任意给定边状态；任意状态可bit-poly完整排到1+floor(D/2)/D≤3/2；非空顶点集actual OPT=1+μ/D，μ为状态选择的最大逐顶点第二标签次数的最小值；空顶点OPT0。C<1+1/D可反解singleton全满足；奇q强列表NO actual OPT=1+1/q。 | 仅此明确compiler；μ恒等式不提供其多项式优化oracle；不声称raw模板识别、一般三半算法或一般近二hardness。 | [完整正文](unrelated_machines/two_level_label_fee_escape.md)、[实际内审](../reviews/unrelated_machines/two_level_label_fee_escape_review.md)；证明完整、内审及有限核验；外审/新颖性未核。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

@@ -13583,6 +13583,58 @@
         "research/reviews/unrelated_machines/fixed_arity_overload_witness_review.md"
       ],
       "status": "complete scoped proof; statement-first reconstruction and actual final read-after; finite audit only; external review and novelty unverified"
+    },
+    {
+      "id": "UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "鲁棒环在任意共享背景中的相位不可读界",
+      "detail": "T>0，T≤B<2T；core机器/任务彼此不交，任务恰两端且时间≤T；任意共享context；给定全部原任务的实际σ≤T；鲁棒iff所有碰撞和>B；任意指定相位保持全部context原端可构造峰<3T−B，B≥3T/2时全相位weak可行；三半阈值与包络上确界锐。",
+      "refs": [
+        "research/current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md",
+        "research/reviews/unrelated_machines/robust_cycle_shared_context_phase_review.md"
+      ],
+      "status": "complete scoped proof; independent statement-first reconstruction and actual final-text review; finite exact audits; unrefereed, novelty unverified"
+    },
+    {
+      "id": "UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "鲁棒环在任意共享背景中的相位不可读界的有限精确核验",
+      "detail": "Only the explicit cases and assignment families in registered code and frozen output; universal results use the separate proof.",
+      "refs": [
+        "research/current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md",
+        "tests/audits/unrelated_machines/robust_cycle_shared_context_phase.py",
+        "evidence/runs/unrelated_machines/robust_cycle_shared_context_phase_audit.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "两层标签收费的实际最优值与全源三半逃逸",
+      "detail": "显式二部全定义投影源，D≥2且degree≤D；完整展开本文R/H/A/B/C原机器和全部原任务；任意给定边状态；任意状态可bit-poly完整排到1+floor(D/2)/D≤3/2；非空顶点集actual OPT=1+μ/D，μ为状态选择的最大逐顶点第二标签次数的最小值；空顶点OPT0。C<1+1/D可反解singleton全满足；奇q强列表NO actual OPT=1+1/q。",
+      "refs": [
+        "research/current/unrelated_machines/two_level_label_fee_escape.md",
+        "research/reviews/unrelated_machines/two_level_label_fee_escape_review.md"
+      ],
+      "status": "complete scoped proof; independent statement-first reconstruction and actual final-text review; finite exact audits; unrefereed, novelty unverified"
+    },
+    {
+      "id": "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-FINITE-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "两层标签收费的实际最优值与全源三半逃逸的有限精确核验",
+      "detail": "Only the explicit cases and assignment families in registered code and frozen output; universal results use the separate proof.",
+      "refs": [
+        "research/current/unrelated_machines/two_level_label_fee_escape.md",
+        "tests/audits/unrelated_machines/two_level_label_fee_escape.py",
+        "tests/audits/unrelated_machines/two_level_label_fee_independent_search.py",
+        "evidence/runs/unrelated_machines/two_level_label_fee_escape_audit.json",
+        "evidence/runs/unrelated_machines/two_level_label_fee_independent_search.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -33278,6 +33330,96 @@
         "evidence/runs/unrelated_machines/fixed_arity_overload_witness_audit.json"
       ],
       "status": "finite exact checks"
+    },
+    {
+      "id": "DERIVES-UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1",
+      "statement": "Self-contained explicit objects and all joint assumptions are in the account; only ordinary nonnegative UM loads are imported as a mathematical premise. No configuration-gap or external hardness premise is used.",
+      "refs": [
+        "research/current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md"
+      ],
+      "status": "complete scoped proof; independent statement-first reconstruction and actual final-text review; finite exact audits; unrefereed, novelty unverified"
+    },
+    {
+      "id": "LIMITS-UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只排保留该鲁棒双端core资格、仅追加共享背景来限制phase的接口；不排改资格、非环码、其他全局decoder或一般反面。",
+      "refs": [
+        "research/current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "CHECKS-UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1",
+      "statement": "Finite declared inputs and physical original-job assignments only; no inference from experiments to all inputs.",
+      "refs": [
+        "research/current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md",
+        "tests/audits/unrelated_machines/robust_cycle_shared_context_phase.py",
+        "evidence/runs/unrelated_machines/robust_cycle_shared_context_phase_audit.json"
+      ],
+      "status": "finite exact audit"
+    },
+    {
+      "id": "DERIVES-UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1",
+      "statement": "Self-contained explicit objects and all joint assumptions are in the account; only ordinary nonnegative UM loads are imported as a mathematical premise. No configuration-gap or external hardness premise is used.",
+      "refs": [
+        "research/current/unrelated_machines/two_level_label_fee_escape.md"
+      ],
+      "status": "complete scoped proof; independent statement-first reconstruction and actual final-text review; finite exact audits; unrefereed, novelty unverified"
+    },
+    {
+      "id": "LIMITS-UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅此明确compiler；μ恒等式不提供其多项式优化oracle；不声称raw模板识别、一般三半算法或一般近二hardness。",
+      "refs": [
+        "research/current/unrelated_machines/two_level_label_fee_escape.md"
+      ],
+      "status": "method boundary"
+    },
+    {
+      "id": "CHECKS-UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-FINITE-AUDIT-v1"
+      ],
+      "conclusion": "UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1",
+      "statement": "Finite declared inputs and physical original-job assignments only; no inference from experiments to all inputs.",
+      "refs": [
+        "research/current/unrelated_machines/two_level_label_fee_escape.md",
+        "tests/audits/unrelated_machines/two_level_label_fee_escape.py",
+        "tests/audits/unrelated_machines/two_level_label_fee_independent_search.py",
+        "evidence/runs/unrelated_machines/two_level_label_fee_escape_audit.json",
+        "evidence/runs/unrelated_machines/two_level_label_fee_independent_search.json"
+      ],
+      "status": "finite exact audit"
     }
   ]
 }

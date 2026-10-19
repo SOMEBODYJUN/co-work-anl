@@ -522,3 +522,10 @@ u_t) 的一般复杂度。
 ## 固定超载arity与稀疏共同循环接线：准确失败范围
 
 尝试用有限小冲突解释所有近二NO，或以低度/connected clone接线保留真实gap。前者被[固定r过滤器](../current/unrelated_machines/top_two_pair_witness_boundary.md#7-固定超载见证件数的严格次二承诺判别)排除其rho≥2−c_r合同：不是命题搜索失败，而是完整实际构造的反向边界；仍留r随epsilon增长。后者的[共同id+shift反例](../current/unrelated_machines/private_graft_and_resource_repetition.md#9-有界重数接线的配置包络与共同循环二接线坍缩)逐任务/逐机恰load1，cap2共居已足够，不能把complete pool的失败错误缩为仅高接线度问题。回收cap-c配置等式、严格层级和全部带标签见证。未排hard-image专用接线；重试须给实际NO下界及任意低载调度decoder，不能只换更稀疏或高girth外观。
+
+
+## 仅强化源soundness或追加背景仍不能修复这两套compiler
+
+[鲁棒双端环](../current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md)保留原core资格时，全部共享context逐件原端保持仍能在峰<3T−B任意切phase；故B≥3T/2时这种相位读出失败。须改core资格、编码或全局解码，不能把域外扩展说成已否定。
+
+[两层标签收费](../current/unrelated_machines/two_level_label_fee_escape.md)的strict decoder成立，但任意源实际可完整排到≤3/2；失败步骤为把一次1/D查询误计成近unit fixed fee。真实OPT恒等式及强列表NO的OPT=1+1/q反例可回收；重试必须改物理收费或联合源解码，不能只强化同一列表soundness。

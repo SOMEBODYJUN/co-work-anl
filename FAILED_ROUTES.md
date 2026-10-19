@@ -264,3 +264,10 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 ## 固定arity冲突与稀疏clone接线不能自动给趋二反面
 
 [固定件数过滤](research/current/unrelated_machines/top_two_pair_witness_boundary.md#7-固定超载见证件数的严格次二承诺判别)排除统一固定r且rho足够近2的纯超载见证NO；失败原因是big有限配置和共同槽可实际避开全部该类冲突。r随epsilon增长未排。[共同id/shift接线](research/current/unrelated_machines/private_graft_and_resource_repetition.md#9-有界重数接线的配置包络与共同循环二接线坍缩)保留全部原job且每incidence为connected degree2，却将2−1/m seed变为1；新增第二个类型副本的同机共居是机制。回收精确cap配置包络与显式全机调度。只有source相关全输出解码或改变该真实容量机制时才值得重试，不外推所有精选接线。
+
+
+## 仅强化源soundness或追加背景仍不能修复这两套compiler
+
+[鲁棒双端环](research/current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md)保留原core资格时，全部共享context逐件原端保持仍能在峰<3T−B任意切phase；故B≥3T/2时这种相位读出失败。须改core资格、编码或全局解码，不能把域外扩展说成已否定。
+
+[两层标签收费](research/current/unrelated_machines/two_level_label_fee_escape.md)的strict decoder成立，但任意源实际可完整排到≤3/2；失败步骤为把一次1/D查询误计成近unit fixed fee。真实OPT恒等式及强列表NO的OPT=1+1/q反例可回收；重试必须改物理收费或联合源解码，不能只强化同一列表soundness。
