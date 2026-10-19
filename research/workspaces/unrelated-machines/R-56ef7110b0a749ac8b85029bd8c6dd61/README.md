@@ -30,3 +30,5 @@
 - [多输入缺一计数候选](multiple_input_missing_one_count_candidate.md)：两真实见证下最多r个缺一状态超过三半；已独立重构，暂不进current/可靠Claim，不把r1旧推论认新。
 
 - [异权两查询收费逃逸草稿](weighted_two_query_label_fee_escape_draft.md)：任意逐标签预算下，半长两查询根仍可只真实读一侧，完整≤3/2；对象已变化且尚未完成独立fullattack，不进current。
+
+- [真实单位请求容量核草稿](weighted_requested_pin_kernel_exact_closure_draft.md)：给定真实pins后有全阈值精确条件和近饱和列表界，饱和实例actual OPT=2−1/q；仅认证该显式输入的值，仍缺source强制请求桥，未独立fullattack。
