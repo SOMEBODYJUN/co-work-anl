@@ -3517,3 +3517,14 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：没有尚成立fatal；指数复制数只作为真实规模障碍，不当位多项式归约。没有实现通用MC solver或period finder；不声称O_q相邻单调或普通极限恒存在。具体hard-image、精选接线和添加一致性均未排除。
 - Status：complete scoped proof; independent Exact-first reconstruction and actual read-after; audit-only implementation; external review and novelty unverified。UM-TARGET-v1及其一般否定仍OPEN。
 - Related Files：[正文§8](../current/unrelated_machines/private_graft_and_resource_repetition.md)、[独立后审](../reviews/unrelated_machines/complete_clone_multiset_periodicity_review.md)、[审计](../../tests/audits/unrelated_machines/complete_clone_multiset_periodicity.py)、[冻结运行](../../evidence/runs/unrelated_machines/complete_clone_multiset_periodicity.json)。
+
+## UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1：逐资源正权畸变的完整菜单次二界
+
+- Exact Statement / Quantifiers：∀固定实常数α>4，∃det总位poly算法，∀下述P，输出全原jobs合法σ，C≤2−(2−OPT)/(ακ(P))≤(2−1/(ακ(P)))OPT。κ可随输入增长，程序不按κ数值循环。
+- Objects / Domain / Definitions：非空groups与非空显式states；state私有机器、resource机器全部互异；selector本组端1，每distinct incidence两端为private非负有理p/resource1；W≤1，所有未选/零jobs保留；κ按各resource全体正p max/min取最大，空正集贡献1。
+- Assumptions / Dependencies：无P≠NP前提的算法；Cheng–Mao arxiv1905.06084v1 Thm1实际restrictedSC 4+δ算法，baseline版值桥、q=min positive及dummy-free解码。原文全算法未独立重证。
+- Conclusion / Scope：任意菜单数和degree的结构类真实近似；固定κ的near2源筛选在P≠NP下排指定归约；非一般UM。
+- Evidence：statement-only冻结重构、强弱后端原文核查、root全文推导及两路独立有限算术，全部机器及原job回算。
+- Counterevidence / Objections：G空不能保中间不等式链；W<1的V必须含baseline；旧DRZ4+η撤回，α>4从CM另一原定理导入；额外网格误差已付费说明。κ无界改善可趋0，不代表hardness。
+- Status：限定结构推论证明完整/实际内审；外审/全球新颖性未认证，软件audit-only，无完整restricted后端。UM-TARGET-v1及一般反面仍OPEN。
+- Related Files：[research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md](../current/unrelated_machines/resource_distortion_flat_menu_rounding.md)、[审查](../reviews/unrelated_machines/resource_distortion_flat_menu_review.md)、两路tests与evidence沿正文§7。

@@ -1372,6 +1372,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1 | 完整机器/任务各q克隆且每原端扩q²边：min_q OPT等于多重集CONFIG阈值；最小最终周期为最优阈值可行q的gcd；实际首个最优q可指数大，任意周期及趋二seed坍缩均有完整构造。 | [正文§8](unrelated_machines/private_graft_and_resource_repetition.md)、[独立后审](../reviews/unrelated_machines/complete_clone_multiset_periodicity_review.md)；只有指定复制接口，不是NP-hardness/一般算法；有限审计不代一般证明，MC/period solver未实现。 |
 
+| UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1 | 每固定α>4，det总位poly全部原jobs C≤2−(2−OPT)/(ακ)≤(2−1/(ακ))OPT；任意菜单/degree、κ可变；固定κ的真实源筛选。 | [正文](unrelated_machines/resource_distortion_flat_menu_rounding.md)、[审查](../reviews/unrelated_machines/resource_distortion_flat_menu_review.md)；已知restrictedSC工具的结构推论；全部原job接口有限审计，无完整后端，非主目标正反面。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

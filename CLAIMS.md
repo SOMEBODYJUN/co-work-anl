@@ -1,5 +1,7 @@
 # 精确命题入口
 
+
+[逐资源正权畸变的完整菜单边界](research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md)：任意显式菜单数/资源度、W≤1及κ=max同资源正权比时，每固定α>4实际输出C≤2−(2−OPT)/(ακ)；固定κ不能承载任意近二真实源。源于已知restricted Santa算法的结构推论，无完整后端实现，一般主目标仍OPEN。
 新主攻存档 `unrelated-machines`，精确目标 `UM-TARGET-v1` 及经典工具、长链/联合投影、树再耦合、匹配残余/共享逃逸等阶段边界见[不相关并行机精确账本](research/unrelated_machines/CLAIMS.md)。主目标仍OPEN；既有工具重构与限范围方法反例不升级为新近似算法。
 另有[共同大边选择与条件块容量](research/current/unrelated_machines/joint_matching_completion_and_block_cuts.md)的条件舍入、限域精确选择NP完全和专用族强化身份，均不关闭主目标。
 本页是目录，不以摘要替代量词。每项现行命题的精确范围、依赖和五轴审查状态分别在 [research/current/claims.md](research/current/claims.md) 与 [research/review_status.json](research/review_status.json)。改变对象、假设、量词、成本或结论必须创建新版本。

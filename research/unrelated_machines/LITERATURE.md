@@ -183,3 +183,9 @@ Feige, [On Maximizing Welfare When Utility Functions Are Subadditive](https://ep
 ## 双件目标的范围核查
 
 2026-10-19实际联网核读 Deng–Li–Rabani [arXiv:2202.06292v1](https://arxiv.org/html/2202.06292v1) §1 的inner norm/outer norm定义、Top_k定义与§1.1一般top-k上界陈述；只作[双件边界正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)的术语与模型背景。本页自足三半匹配/出现副本SAT不冒称该论文定理，也不以有限检索认证新颖性。未下载新原始PDF或核全证明。
+
+## 完整flat资源畸变接口的restricted Santa后端
+
+Cheng–Mao [arXiv1905.06084v1](https://arxiv.org/pdf/1905.06084v1) Theorem1（PDF/印2）是实际4+δ restricted max-min算法，固定δ时poly(m,n)n^{poly(1/δ)}；原定义及目标搜索、Build/Collapse和AppendixA作针对性读取。它支持[逐资源正权畸变推论](../current/unrelated_machines/resource_distortion_flat_menu_rounding.md)，不提供general Santa常数或UM hardness。原PDF字节/hash已存manifest，全文证明未独立重证。
+
+Davies–Rothvoss–Zhang [arXiv1807.07189v4](https://arxiv.org/pdf/1807.07189v4)，2026-01-04，Thm3（PDF/印3）当前6+η；§4（PDF/印15）明确更正旧4+η分析。不可沿旧摘要导入4；上段强后端是CM另一篇原定理。原件已保存，targeted算法/确定性位接口已核，不记完整实现或全文重证。

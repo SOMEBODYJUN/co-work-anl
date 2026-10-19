@@ -495,3 +495,7 @@ u_t) 的一般复杂度。
 ## 完整同型克隆的精确反面边界
 
 [复制正文§8](../current/unrelated_machines/private_graft_and_resource_repetition.md)给UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1：完整机器/任务各q份、每原端全部q²克隆边，min_q真实OPT恰为多重集配置阈值；最小最终周期由该最优层可行q的gcd给出，首个最优q可指数大。任意周期m的实际族能将原2−1/m种子降至1。失败机制是同原类型多份可在同一机器副本共居，并非原0/1 CONFIG或既有置换cover。这只排通用完整复制保NO/放大，不排精选接线和source专属归约；一般近二NO解码仍缺。独立实际后审、位复杂度与Fraction冻结核验从正文进入。
+
+## 同资源正权畸变有界的flat源不能靠增加菜单数放大
+
+试图只增加完整flat菜单数、degree或共同uniform束宽而逼近二，失效于[UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1](../current/unrelated_machines/resource_distortion_flat_menu_rounding.md)：取各资源最小正权，state-dummy restrictedSC与baseline给真实2−1/(ακ)近似。排除仅限κ统一有界的完整像类，未排其它物理compiler。回收值桥与源筛选；重试须改变承重域或提供随ε增长的真实异权/共同容量及全输出decoder。κ增长本身不是hardness证据。
