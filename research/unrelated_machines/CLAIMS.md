@@ -3471,3 +3471,49 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：首稿允许空Q_h却未保全rank的域错误已显式补H_Q覆盖B；不能直接复制邻接丢homecap；本ID最终无standing实质异议，生产LP/新颖性/外审仍未认证。
 - Status：complete scoped structural promise approximation; actual final author-text attack; production solver absent; external review and novelty unverified。
 - Related Files：[research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md](../current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)、[research/reviews/unrelated_machines/price_cover_joint_rounding_review.md](../reviews/unrelated_machines/price_cover_joint_rounding_review.md)；代码、冻结输入/结果及独立原件沿该审查进入。
+
+
+## UM-TOP-TWO-MATCHING-APPROX-v1：最大两件目标的三半匹配近似
+
+- Exact Statement / Objects / Domain / Quantifiers：一般非负有理UM矩阵，精确断点匹配输出全jobs且B2<=3O2/2；FAIL=>O2>T；仅不同目标。
+- Definitions / Assumptions / Scope：B₂为每机至多两件最大处理时间之和，含singleton/空行；O₂为其最小值；一般UM原模型不改。具体source/promise限制依正文§1–4，不免费加入外部逻辑约束。
+- Conclusion / Dependencies：见[自足正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)的完整匹配、断点搜索或3SAT实际矩阵；pair障碍仅依top2阈值接口。
+- Evidence：精确有限审计及独立实际分配枚举，见正文§5；独立先重构后读proof，再实际核最终中文全文。
+- Counterevidence / Objections：top2不能控制总负载；普通near2 NO不必有双件超载；无站立fatal，不把有限核验升级为证明。
+- Status：完整限定范围自足推导、内部独立审查；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)、[审查](../reviews/unrelated_machines/top_two_pair_witness_review.md)、tests/audits/unrelated_machines/top_two_pair_witness_audit.py、top_two_pair_witness_independent.py；一般UM目标及反面仍OPEN。
+
+
+## UM-PAIR-WITNESS-HARDNESS-BARRIER-v1：双件NO证据的近二归约障碍
+
+- Exact Statement / Objects / Domain / Quantifiers：rho>=3/2，YES普通OPT<=T与NO所有保留端分配必有双件和>rhoT的promise在P；P!=NP排此特定归约合同。
+- Definitions / Assumptions / Scope：B₂为每机至多两件最大处理时间之和，含singleton/空行；O₂为其最小值；一般UM原模型不改。具体source/promise限制依正文§1–4，不免费加入外部逻辑约束。
+- Conclusion / Dependencies：见[自足正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)的完整匹配、断点搜索或3SAT实际矩阵；pair障碍仅依top2阈值接口。
+- Evidence：精确有限审计及独立实际分配枚举，见正文§5；独立先重构后读proof，再实际核最终中文全文。
+- Counterevidence / Objections：top2不能控制总负载；普通near2 NO不必有双件超载；无站立fatal，不把有限核验升级为证明。
+- Status：完整限定范围自足推导、内部独立审查；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)、[审查](../reviews/unrelated_machines/top_two_pair_witness_review.md)、tests/audits/unrelated_machines/top_two_pair_witness_audit.py、top_two_pair_witness_independent.py；一般UM目标及反面仍OPEN。
+
+
+## UM-TOP-TWO-THREE-HALVES-HARDNESS-v1：最大两件目标的三半锐困难性
+
+- Exact Statement / Objects / Domain / Quantifiers：每固定1<=rho<3/2，出现副本环3SAT编译给YES实际OPT=O2=1与NO O2=3/2；时间{1/2,1}及job/machine资格度<=3。
+- Definitions / Assumptions / Scope：B₂为每机至多两件最大处理时间之和，含singleton/空行；O₂为其最小值；一般UM原模型不改。具体source/promise限制依正文§1–4，不免费加入外部逻辑约束。
+- Conclusion / Dependencies：见[自足正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)的完整匹配、断点搜索或3SAT实际矩阵；pair障碍仅依top2阈值接口。
+- Evidence：精确有限审计及独立实际分配枚举，见正文§5；独立先重构后读proof，再实际核最终中文全文。
+- Counterevidence / Objections：top2不能控制总负载；普通near2 NO不必有双件超载；无站立fatal，不把有限核验升级为证明。
+- Status：完整限定范围自足推导、内部独立审查；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)、[审查](../reviews/unrelated_machines/top_two_pair_witness_review.md)、tests/audits/unrelated_machines/top_two_pair_witness_audit.py、top_two_pair_witness_independent.py；一般UM目标及反面仍OPEN。
+
+
+## UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1：完整机器任务克隆的多重集阈值与最小最终周期
+
+- ID/version / Objects / Domain：UM-MODEL-v1 全部合法非负二进制有理/∞输入，m≥1,n≥0；每原机器和任务各q份，原有限边扩为全部q²克隆边、处理时间不变。存在零端的整个类型删除后可完整零负载回填。
+- Exact Statement / Quantifiers：∀P，O_q=OPT(B_q(P)) 的全q最小值取得，等于允许同原类型多份共居的多重集配置LP最小阈值t₊，且等于liminf O_q。每固定实T的正可行q若非空，最终恰gcd d_T的倍数。O_q最小正最终周期恰d*=gcd S_(t₊)；limsup=min{t∈有限Λ:d_t=1}，收敛iff d*=1。
+- Assumptions / Definitions：无复杂度假设；全部资格显式。MC(T)归一化每原机器配置质量为1，每原类型期望总数为1，允许整数配置计数a_j>1；不是原0/1 CONFIG或置换cover。
+- Scope / Conclusion：给定有限有理MC证书可按共同分母恢复全部带标签任务的真实分配；存在达到t₊的d≤(sqrt(r)K)^r、r=m+n₊、K=floor(U/pmin)，故log d位多项式，但首个d可达2^{Θ(输入位长)}。明确m机族seedOPT2−1/m、Tmulti1、S_1=mN，给任意最小最终周期与真实gap坍缩。两机三任务另给O_q奇3偶2、Tconf3/Tmulti2。
+- Dependencies：UM-MODEL-v1；有限有理配置计数双向恢复、基本可行解/Cramer/Hadamard、N中加法半群的初等余数论证。原CONFIG比较另用向下封闭零任务回填与配置边际投影；不导入未强化LP gap作为困难性。
+- Evidence：正文§8一般自足证明；Exact-first独立重构与最终正文/代码实际后审分开记录。规范Fraction审计86输入×q1/2双oracle172次，奇偶q1..5双oracle、q1..24实际带标签构造；m1..9/q1..40的360组实际构造；Sylvester5族500个容量核与前3族实际最优复制构造。有限核不证明全称定理。
+- Counterevidence / Objections：没有尚成立fatal；指数复制数只作为真实规模障碍，不当位多项式归约。没有实现通用MC solver或period finder；不声称O_q相邻单调或普通极限恒存在。具体hard-image、精选接线和添加一致性均未排除。
+- Status：complete scoped proof; independent Exact-first reconstruction and actual read-after; audit-only implementation; external review and novelty unverified。UM-TARGET-v1及其一般否定仍OPEN。
+- Related Files：[正文§8](../current/unrelated_machines/private_graft_and_resource_repetition.md)、[独立后审](../reviews/unrelated_machines/complete_clone_multiset_periodicity_review.md)、[审计](../../tests/audits/unrelated_machines/complete_clone_multiset_periodicity.py)、[冻结运行](../../evidence/runs/unrelated_machines/complete_clone_multiset_periodicity.json)。

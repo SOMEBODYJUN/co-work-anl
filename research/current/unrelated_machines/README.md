@@ -526,3 +526,11 @@ pDM阈值桥的[合入审查](../../reviews/unrelated_machines/pdm_threshold_dom
 [价格覆盖与共同占位舍入](arbitrary_sink_private_group_price_cover_rounding.md)给三项分离身份：标准列总量单侧+b工具；给定T、唯一home/W_h≤T/a_j≤δT/出口p_zj≤ρa_j的实际价格覆盖算法；以及OPT处结构promise的未知OPT算法。sink数、逐件资格和有理分母均可增长，不需共同资格或下包络；ρδ+η<1时实际α=2−(1−ρδ−η)/(1+ρ)。显式poly模式由保零cover+同价宏匹配+有理MW生成，非免费菜单oracle。独立审查关闭空模式降rank漏洞；生产LP未集成、新颖性/外审未认证。
 
 这项正面接口可攻击输出全落在该promise类的近二归约；一般矩阵的角色/home/统一余量生成及真实源NO decoder仍未解决，UM-TARGET-v1与一般反面保持OPEN。全文、实际审查、独立代码和冻结证据沿[精确账本](../../unrelated_machines/CLAIMS.md)读取。
+
+
+[双件超载证据的三半锐界](top_two_pair_witness_boundary.md)：一般UM的不同目标O₂可det-bit-poly三半近似，故rho>=3/2时，YES普通OPT<=T / NO所有完整保留端分配必有双件和>rhoT的promise在P；低于三半的出现副本SAT编译给锐界。它只排pair-only归约，不排多件共同总容量/全局身份；UM-TARGET-v1正反面仍OPEN。精确账本→正文§1–4→实际审查→两路审计/冻结结果。
+
+
+## 完整同型克隆的精确反面边界
+
+[复制正文§8](private_graft_and_resource_repetition.md)给UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1：完整机器/任务各q份、每原端全部q²克隆边，min_q真实OPT恰为多重集配置阈值；最小最终周期由该最优层可行q的gcd给出，首个最优q可指数大。任意周期m的实际族能将原2−1/m种子降至1。失败机制是同原类型多份可在同一机器副本共居，并非原0/1 CONFIG或既有置换cover。这只排通用完整复制保NO/放大，不排精选接线和source专属归约；一般近二NO解码仍缺。独立实际后审、位复杂度与Fraction冻结核验从正文进入。

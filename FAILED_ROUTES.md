@@ -240,3 +240,8 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 
 
 [反面归约的新增精确边界](research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权归一化门控类13/8与近完美部分束源LP判别，旧NSW高低比例混用已明确撤回；完整实际矩阵平方的NO→YES和多替代见证收费阈值二已分别核实。共享内部/多层的真实近二源解码仍未解决，不升级UM-TARGET-v1。
+
+
+2026-10-19，反面归约新增[双件证据过滤器](research/current/unrelated_machines/top_two_pair_witness_boundary.md)：top2三半匹配近似排rho>=3/2的不可避免双件NO合同；不控制普通总负载。一般UM正反面仍OPEN，多件共同容量与任意实际调度decoder仍承重。
+
+完整机器与任务同时克隆的新增边界见[复制正文§8](research/current/unrelated_machines/private_graft_and_resource_repetition.md)：全部q²交叉端恰对应多重集配置，最优值最小最终周期由最优阈值可行q的gcd决定；首次达到最低值可需指数多份。原趋二seed亦能坍至1，仅排这一明确操作的通用保NO合同，主目标及其否定仍OPEN。

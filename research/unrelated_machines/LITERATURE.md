@@ -178,3 +178,8 @@ Feige, [On Maximizing Welfare When Utility Functions Are Subadditive](https://ep
 `BBMV2019_degree_multiplicities_v2`：[Bérczi–Berger–Mnich–Vincze arXiv1911.09890v2](https://arxiv.org/pdf/1911.09890v2)，Theorem2印2/PDF3及upper-only证明印11/PDF12，给整数multiplicities的单侧Delta−1，Delta是最大列总量。按二进制有理共同分母缩放直接得到本文+b界；因此[任意汇点正文](../current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)的舍入引理是旧工具重构，不认领新一般方法。root实际读取primary PDF/HTML，未落地PDF、未假填SHA。
 
 `BLRT2026_weighted_equitability_v1`：[Bérczi–Liu–Reis–Tarnawski arXiv2608.13983v1](https://arxiv.org/html/2608.13983v1) §5 Theorem10给相关双侧weighted-discrepancy背景。本轮仅针对性读primary HTML，不把该结果倒记为本结构算法或全部论文内化。覆盖背包、匹配、MW同样是标准工具；新结构组合的全球新颖性/独立论文价值仍未认证。
+
+
+## 双件目标的范围核查
+
+2026-10-19实际联网核读 Deng–Li–Rabani [arXiv:2202.06292v1](https://arxiv.org/html/2202.06292v1) §1 的inner norm/outer norm定义、Top_k定义与§1.1一般top-k上界陈述；只作[双件边界正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)的术语与模型背景。本页自足三半匹配/出现副本SAT不冒称该论文定理，也不以有限检索认证新颖性。未下载新原始PDF或核全证明。
