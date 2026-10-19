@@ -197,3 +197,6 @@
 
 
 2026-10-19，反面归约新增[双件证据过滤器](research/current/unrelated_machines/top_two_pair_witness_boundary.md)：top2三半匹配近似排rho>=3/2的不可避免双件NO合同；不控制普通总负载。一般UM正反面仍OPEN，多件共同容量与任意实际调度decoder仍承重。
+
+
+完整机器与任务同时克隆的新增边界见[复制正文§8](research/current/unrelated_machines/private_graft_and_resource_repetition.md)：全部q²交叉端恰对应多重集配置，最优值最小最终周期由最优阈值可行q的gcd决定；首次达到最低值可需指数多份。原趋二seed亦能坍至1，仅排这一明确操作的通用保NO合同，主目标及其否定仍OPEN。

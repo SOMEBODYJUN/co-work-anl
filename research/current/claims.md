@@ -1369,6 +1369,8 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-PAIR-WITNESS-HARDNESS-BARRIER-v1 | rho>=3/2，YES普通OPT<=T与NO所有保留端分配必有双件和>rhoT的promise在P；P!=NP排此特定归约合同。 | [正文](unrelated_machines/top_two_pair_witness_boundary.md)、[实际审查](../reviews/unrelated_machines/top_two_pair_witness_review.md)；完整限域推导，外审/新颖性未认证；UM-TARGET-v1正反面OPEN。 |
 | UM-TOP-TWO-THREE-HALVES-HARDNESS-v1 | 每固定1<=rho<3/2，出现副本环3SAT编译给YES实际OPT=O2=1与NO O2=3/2；时间{1/2,1}及job/machine资格度<=3。 | [正文](unrelated_machines/top_two_pair_witness_boundary.md)、[实际审查](../reviews/unrelated_machines/top_two_pair_witness_review.md)；完整限域推导，外审/新颖性未认证；UM-TARGET-v1正反面OPEN。 |
 
+| UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1 | 完整机器/任务各q克隆且每原端扩q²边：min_q OPT等于多重集CONFIG阈值；最小最终周期为最优阈值可行q的gcd；实际首个最优q可指数大，任意周期及趋二seed坍缩均有完整构造。 | [正文§8](unrelated_machines/private_graft_and_resource_repetition.md)、[独立后审](../reviews/unrelated_machines/complete_clone_multiset_periodicity_review.md)；只有指定复制接口，不是NP-hardness/一般算法；有限审计不代一般证明，MC/period solver未实现。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

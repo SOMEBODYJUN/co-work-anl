@@ -13265,6 +13265,31 @@
         "evidence/runs/unrelated_machines/top_two_pair_witness_independent.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完整同型克隆的多重集阈值、最小最终周期与指数首次达到",
+      "detail": "∀合法P，完整q²交叉端blowup的min_q OPT=Tmulti=liminf；最小最终周期gcd S_opt；首个达最优q有poly位长但可exp数值；真实趋二seed可坍至1。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "research/reviews/unrelated_machines/complete_clone_multiset_periodicity_review.md"
+      ],
+      "status": "complete scoped proof; independent Exact-first reconstruction and actual read-after; finite audit only; external review and novelty unverified"
+    },
+    {
+      "id": "AUDIT-COMPLETE-CLONE-MULTISET-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "完整同型克隆的双oracle与带标签实际分配有限核验",
+      "detail": "86 seeds q1/2双oracle172；奇偶q1..5；360任意周期构造；500 Sylvester容量核及3实际展开。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "tests/audits/unrelated_machines/complete_clone_multiset_periodicity.py",
+        "evidence/runs/unrelated_machines/complete_clone_multiset_periodicity.json"
+      ],
+      "status": "finite exact evidence"
     }
   ],
   "hyperedges": [
@@ -32457,6 +32482,36 @@
         "tests/audits/unrelated_machines/top_two_pair_witness_independent.py",
         "evidence/runs/unrelated_machines/top_two_pair_witness_audit.json",
         "evidence/runs/unrelated_machines/top_two_pair_witness_independent.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "DERIVE-UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1",
+      "statement": "完整q²交叉端定义、计数双向恢复、有理基本解、有限阈值及加法半群余数论证共同承担；不是由旧CONFIGgap推出。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md"
+      ],
+      "status": "complete scoped proof; independent Exact-first reconstruction and actual read-after; finite audit only; external review and novelty unverified"
+    },
+    {
+      "id": "CHECK-UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-COMPLETE-CLONE-MULTISET-v1"
+      ],
+      "conclusion": "UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1",
+      "statement": "仅所列有限Fraction与实际分配核验，不代一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "tests/audits/unrelated_machines/complete_clone_multiset_periodicity.py",
+        "evidence/runs/unrelated_machines/complete_clone_multiset_periodicity.json"
       ],
       "status": "finite exact checks"
     }
