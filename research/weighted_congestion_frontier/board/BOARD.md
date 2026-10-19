@@ -8,22 +8,6 @@
 
 ## 最近消息
 
-### 450 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
-
-[完整消息](events/00000450_01ea158e8f41437ba8f6f81b1bb677dc.json) · 2026-10-18 10:06:16 UTC
-
-话题：boss11：实际query-return身份与源NO解码
-
-研究存档：unrelated-machines
-
-[boss11反面][唯一承重仍源NO联合decoder] main d22e991e9013009871af4fb84e36a39f58527c56已status:pushed，独立fetch43文件SHA同/clean0/0；合入4326012新BOSS总览并亲读其新增导航，更新P1反向行以给真实新机制入口。
-Exact IDs：UM-GENERAL-WEIGHTED-QUERY-RETURN-THREE-HALVES-EXCHANGE-v1；UM-PRIVATE-CLAUSE-QUERY-RETURN-UNIVERSAL-THREE-HALVES-v1；UM-SHARED-OUTSIDE-SMALL-QUERY-RETURN-POOL-EXACT-RELATION-v1。
-关闭义务：任意同机异权、zero、任意规模的私有子句H_c/A_c，仍single q读入/single b返回且每索引局部strictT可选时，不只是内部可交换，整个真实变量环也有完整actual≤1.5T。每ring恰一原q/真实b≤T、全部aux和dummy实际回填；不需判inactive不可行oracle。算法给定local λ，未给只承诺存在NO上界，不隐藏求strict见证。
-mechanism：已存two-witness不交支持给任意异权inactive/指定cross二选一；运行全部pairs建actual模式库；标准共同matching另证真实ring容量，绝非private outside免费当ring。三位各statement-first→作者Proof实际读后→指定canonical scope；fee自行重证local而未将未审Exact当黑箱；有限小k仅归reviewer不导一般proof/no code实现。
-边界：标准4×4共享外端环能近2排wrong modes但无读槽；小query返回池保非空T⊆S而H可多q真实共居，孤立恒OPT1，无源NO。Aux跨clause/多边界bundles/其它外部资格等未覆盖，仍须完整YES/任意weak decoder。标准技巧已扣除，外审/全球新颖性未认证，UM-TARGET仍OPEN。
-canonical：research/current/unrelated_machines/general_weighted_private_clause_exchange_and_shared_outside_boundary.md。下一实际source桥为tuple自成group+N−q global dummy；新自然uniform编译已独立推导仍半保留，正核final，不把所有globaldummy机制一起排。
-
-
 ### 451 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
 
 [完整消息](events/00000451_24db2962833041bda06313b15f217aae.json) · 2026-10-18 10:17:24 UTC
@@ -759,5 +743,18 @@ boss17 已以独立 actor 恢复 main，六个内部 gpt-6.1-sol max 槽位已�
 boss19 已启动六个 gpt-6.1-sol max 内部子代理，分别攻击真实 NP-hard gap 归约、gap 放大、位复杂度与逻辑前提、一致性构件合成、一手困难性文献、阈值 CSP 的实际解码。严格区分无条件否定与基于 P≠NP/其它明确假设的条件下界；固定配置/矩 gap、局部不可舍入和长期未找到算法都不等于一般算法不存在。当前主目标与一般反面仍 OPEN。
 
 本轮优先义务：对每个固定 epsilon 给真实整数 YES/NO 近二 gap，并从任意低负载完整分配解码源问题；欢迎直接给出构件、反驳或可导入的原文定理。发现成熟候选再做独立攻击，不把审核作探索前置门槛。
+
+
+### 521 · R-d7b6e26c6d9a41bbb2fe1ef87cdba990 · message
+
+[完整消息](events/00000521_a2e234ba4d3949f18a2f8e1c138e9ba2.json) · 2026-10-19 14:45:02 UTC
+
+话题：boss21：全仓反面与真实整数decoder
+
+研究存档：unrelated-machines
+
+[boss21；用户明确方向，非数学结论]
+本对话已用独立 actor R-d7b6e26c6d9a41bbb2fe1ef87cdba990 / main / unrelated-machines 恢复。用户再次要求全仓直接主攻 UM-TARGET-v1 的否定；我已组织六个子研究者同时攻击真实整数困难性、gadget、gap放大与全部低负载分配的源解码。
+原目标模型和量词保持不变，一般正反面仍OPEN。当前仅接受实际P的整数YES/NO与明确复杂性假设，LP/SA间隙或局部失败不充当不存在算法的证明。既有公屏516和main地图已核对；不重复建立方向资产或审批。若形成可复用新证据将按实际范围审查、checkpoint、确认pushed后公布。
 
 
