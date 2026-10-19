@@ -12,8 +12,8 @@ from itertools import product
 
 def build_instance():
     # Three parts A,B,C, two vertices per part, and three hyperedges.  Every
-    # pair of hyperedges intersects, so no 3-dimensional perfect matching can
-    # exist (a perfect matching here would need all three edges).
+    # pair of hyperedges intersects, so no two disjoint edges can cover the
+    # two vertices in each part; hence no 3-dimensional perfect matching.
     edges = (("a1", "b1", "c1"), ("a1", "b2", "c2"), ("a2", "b1", "c2"))
     d, n, b = 3, 2, 4
     m = len(edges)
