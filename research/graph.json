@@ -13214,6 +13214,57 @@
         "research/reviews/unrelated_machines/price_cover_joint_rounding_review.md"
       ],
       "status": "complete scoped structural promise approximation; actual final author-text attack; production solver absent; external review and novelty unverified"
+    },
+    {
+      "id": "UM-TOP-TWO-MATCHING-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "最大两件目标的三半匹配近似",
+      "detail": "一般非负有理UM矩阵，精确断点匹配输出全jobs且B2<=3O2/2；FAIL=>O2>T；仅不同目标。",
+      "refs": [
+        "research/current/unrelated_machines/top_two_pair_witness_boundary.md",
+        "research/reviews/unrelated_machines/top_two_pair_witness_review.md"
+      ],
+      "status": "complete scoped proof; independent statement-first reconstruction and actual final reading; finite audit only; unrefereed, novelty unverified"
+    },
+    {
+      "id": "UM-PAIR-WITNESS-HARDNESS-BARRIER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "双件NO证据的近二归约障碍",
+      "detail": "rho>=3/2，YES普通OPT<=T与NO所有保留端分配必有双件和>rhoT的promise在P；P!=NP排此特定归约合同。",
+      "refs": [
+        "research/current/unrelated_machines/top_two_pair_witness_boundary.md",
+        "research/reviews/unrelated_machines/top_two_pair_witness_review.md"
+      ],
+      "status": "complete scoped proof; independent statement-first reconstruction and actual final reading; finite audit only; unrefereed, novelty unverified"
+    },
+    {
+      "id": "UM-TOP-TWO-THREE-HALVES-HARDNESS-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "最大两件目标的三半锐困难性",
+      "detail": "每固定1<=rho<3/2，出现副本环3SAT编译给YES实际OPT=O2=1与NO O2=3/2；时间{1/2,1}及job/machine资格度<=3。",
+      "refs": [
+        "research/current/unrelated_machines/top_two_pair_witness_boundary.md",
+        "research/reviews/unrelated_machines/top_two_pair_witness_review.md"
+      ],
+      "status": "complete scoped proof; independent statement-first reconstruction and actual final reading; finite audit only; unrefereed, novelty unverified"
+    },
+    {
+      "id": "AUDIT-TOP-TWO-PAIR-WITNESS-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "双件匹配与出现位置SAT的有限精确核验",
+      "detail": "有限处理矩阵全分配oracle、256公式模板unit放置，以及另一出现位置环的完整实际分配；非一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/top_two_pair_witness_boundary.md",
+        "tests/audits/unrelated_machines/top_two_pair_witness_audit.py",
+        "tests/audits/unrelated_machines/top_two_pair_witness_independent.py",
+        "evidence/runs/unrelated_machines/top_two_pair_witness_audit.json",
+        "evidence/runs/unrelated_machines/top_two_pair_witness_independent.json"
+      ],
+      "status": "finite exact audit"
     }
   ],
   "hyperedges": [
@@ -32358,6 +32409,56 @@
         "research/reviews/unrelated_machines/price_cover_joint_rounding_review.md"
       ],
       "status": "structural promise limitation"
+    },
+    {
+      "id": "DERIVE-UM-PAIR-WITNESS-HARDNESS-BARRIER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-TOP-TWO-MATCHING-APPROX-v1"
+      ],
+      "conclusion": "UM-PAIR-WITNESS-HARDNESS-BARRIER-v1",
+      "statement": "仅YES普通OPT<=T/NO全部保留端assignment必有pair>rhoT且rho>=3/2的promise；条件NP-hard编译排除另声明P!=NP。",
+      "refs": [
+        "research/current/unrelated_machines/top_two_pair_witness_boundary.md"
+      ],
+      "status": "scoped complete proof"
+    },
+    {
+      "id": "CHECK-UM-TOP-TWO-MATCHING-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-TOP-TWO-PAIR-WITNESS-v1"
+      ],
+      "conclusion": "UM-TOP-TWO-MATCHING-APPROX-v1",
+      "statement": "有限实例仅核验具体算法、矩阵及decoder，不替代一般匹配证明或全公式归约。",
+      "refs": [
+        "research/current/unrelated_machines/top_two_pair_witness_boundary.md",
+        "tests/audits/unrelated_machines/top_two_pair_witness_audit.py",
+        "tests/audits/unrelated_machines/top_two_pair_witness_independent.py",
+        "evidence/runs/unrelated_machines/top_two_pair_witness_audit.json",
+        "evidence/runs/unrelated_machines/top_two_pair_witness_independent.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "CHECK-UM-TOP-TWO-THREE-HALVES-HARDNESS-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-TOP-TWO-PAIR-WITNESS-v1"
+      ],
+      "conclusion": "UM-TOP-TWO-THREE-HALVES-HARDNESS-v1",
+      "statement": "有限实例仅核验具体算法、矩阵及decoder，不替代一般匹配证明或全公式归约。",
+      "refs": [
+        "research/current/unrelated_machines/top_two_pair_witness_boundary.md",
+        "tests/audits/unrelated_machines/top_two_pair_witness_audit.py",
+        "tests/audits/unrelated_machines/top_two_pair_witness_independent.py",
+        "evidence/runs/unrelated_machines/top_two_pair_witness_audit.json",
+        "evidence/runs/unrelated_machines/top_two_pair_witness_independent.json"
+      ],
+      "status": "finite exact checks"
     }
   ]
 }

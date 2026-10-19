@@ -1360,6 +1360,15 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-ARBITRARY-SINK-PRIVATE-GROUP-PRICE-COVER-v1 | 给显式不交H/Z、home-only宏（全部有限端>T/2，先剪>T）与唯一有限home私有组；W_h≤T、a_j≤δT、任意逐job sink资格且p_zj≤ρa_j。ρ≥1、δ≥0、τ∈[1/2,1)、η∈(0,1]、b0=ρ(1−τ+δ)≤1。有统一det poly(L,1/η)算法返回FAIL或全部实际分配，home≤(1+τ)T、sink≤(1+η+b0)T；OPT≤T必成功，故FAIL⇒OPT>T。T0先查零边。 | 去固定sink数/共同资格/下包络；仍需唯一home、W_h、δ与ρ上界。实际数学算法完整，生产有理LP未集成；η可变时只poly(1/η)，不是poly(log1/η)。 [正文](unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)、[实际审查](../reviews/unrelated_machines/price_cover_joint_rounding_review.md)。 |
 | UM-ARBITRARY-SINK-PRIVATE-GROUP-PROMISE-APPROX-v1 | 固定ρ≥1、δ≥0、η∈(0,1]且ρδ+η<1，τ=[ρ(1+δ)+η]/(1+ρ)。给同一静态H/Z/唯一home角色、p_zj≤ρa_j，但不输入T；承诺W_h≤OPT、a_j≤δOPT、所有有限宏边>OPT/2。存在det总位多项式实际算法，Cmax≤αOPT，α=2−[1−ρδ−η]/(1+ρ)<2。查询不检查当前宏下界，靠OPT处单宏见证给one-sided完整性；不要求接受集合单调。 | 额外含OPT结构promise，不自动验证/提取；固定ρδ与η才有统一结构类余量。一般UM-TARGET-v1及其反面仍OPEN。 [正文](unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)、[实际审查](../reviews/unrelated_machines/price_cover_joint_rounding_review.md)。 |
 
+
+## 双件超载证据的三半锐界
+
+| ID | 精确范围与结论 | 状态及边界 |
+| --- | --- | --- |
+| UM-TOP-TWO-MATCHING-APPROX-v1 | 一般非负有理UM矩阵，精确断点匹配输出全jobs且B2<=3O2/2；FAIL=>O2>T；仅不同目标。 | [正文](unrelated_machines/top_two_pair_witness_boundary.md)、[实际审查](../reviews/unrelated_machines/top_two_pair_witness_review.md)；完整限域推导，外审/新颖性未认证；UM-TARGET-v1正反面OPEN。 |
+| UM-PAIR-WITNESS-HARDNESS-BARRIER-v1 | rho>=3/2，YES普通OPT<=T与NO所有保留端分配必有双件和>rhoT的promise在P；P!=NP排此特定归约合同。 | [正文](unrelated_machines/top_two_pair_witness_boundary.md)、[实际审查](../reviews/unrelated_machines/top_two_pair_witness_review.md)；完整限域推导，外审/新颖性未认证；UM-TARGET-v1正反面OPEN。 |
+| UM-TOP-TWO-THREE-HALVES-HARDNESS-v1 | 每固定1<=rho<3/2，出现副本环3SAT编译给YES实际OPT=O2=1与NO O2=3/2；时间{1/2,1}及job/machine资格度<=3。 | [正文](unrelated_machines/top_two_pair_witness_boundary.md)、[实际审查](../reviews/unrelated_machines/top_two_pair_witness_review.md)；完整限域推导，外审/新颖性未认证；UM-TARGET-v1正反面OPEN。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

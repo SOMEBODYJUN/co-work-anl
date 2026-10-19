@@ -3459,3 +3459,36 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：首稿允许空Q_h却未保全rank的域错误已显式补H_Q覆盖B；不能直接复制邻接丢homecap；本ID最终无standing实质异议，生产LP/新颖性/外审仍未认证。
 - Status：complete scoped structural promise approximation; actual final author-text attack; production solver absent; external review and novelty unverified。
 - Related Files：[research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md](../current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)、[research/reviews/unrelated_machines/price_cover_joint_rounding_review.md](../reviews/unrelated_machines/price_cover_joint_rounding_review.md)；代码、冻结输入/结果及独立原件沿该审查进入。
+
+
+## UM-TOP-TWO-MATCHING-APPROX-v1：最大两件目标的三半匹配近似
+
+- Exact Statement / Objects / Domain / Quantifiers：一般非负有理UM矩阵，精确断点匹配输出全jobs且B2<=3O2/2；FAIL=>O2>T；仅不同目标。
+- Definitions / Assumptions / Scope：B₂为每机至多两件最大处理时间之和，含singleton/空行；O₂为其最小值；一般UM原模型不改。具体source/promise限制依正文§1–4，不免费加入外部逻辑约束。
+- Conclusion / Dependencies：见[自足正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)的完整匹配、断点搜索或3SAT实际矩阵；pair障碍仅依top2阈值接口。
+- Evidence：精确有限审计及独立实际分配枚举，见正文§5；独立先重构后读proof，再实际核最终中文全文。
+- Counterevidence / Objections：top2不能控制总负载；普通near2 NO不必有双件超载；无站立fatal，不把有限核验升级为证明。
+- Status：完整限定范围自足推导、内部独立审查；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)、[审查](../reviews/unrelated_machines/top_two_pair_witness_review.md)、tests/audits/unrelated_machines/top_two_pair_witness_audit.py、top_two_pair_witness_independent.py；一般UM目标及反面仍OPEN。
+
+
+## UM-PAIR-WITNESS-HARDNESS-BARRIER-v1：双件NO证据的近二归约障碍
+
+- Exact Statement / Objects / Domain / Quantifiers：rho>=3/2，YES普通OPT<=T与NO所有保留端分配必有双件和>rhoT的promise在P；P!=NP排此特定归约合同。
+- Definitions / Assumptions / Scope：B₂为每机至多两件最大处理时间之和，含singleton/空行；O₂为其最小值；一般UM原模型不改。具体source/promise限制依正文§1–4，不免费加入外部逻辑约束。
+- Conclusion / Dependencies：见[自足正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)的完整匹配、断点搜索或3SAT实际矩阵；pair障碍仅依top2阈值接口。
+- Evidence：精确有限审计及独立实际分配枚举，见正文§5；独立先重构后读proof，再实际核最终中文全文。
+- Counterevidence / Objections：top2不能控制总负载；普通near2 NO不必有双件超载；无站立fatal，不把有限核验升级为证明。
+- Status：完整限定范围自足推导、内部独立审查；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)、[审查](../reviews/unrelated_machines/top_two_pair_witness_review.md)、tests/audits/unrelated_machines/top_two_pair_witness_audit.py、top_two_pair_witness_independent.py；一般UM目标及反面仍OPEN。
+
+
+## UM-TOP-TWO-THREE-HALVES-HARDNESS-v1：最大两件目标的三半锐困难性
+
+- Exact Statement / Objects / Domain / Quantifiers：每固定1<=rho<3/2，出现副本环3SAT编译给YES实际OPT=O2=1与NO O2=3/2；时间{1/2,1}及job/machine资格度<=3。
+- Definitions / Assumptions / Scope：B₂为每机至多两件最大处理时间之和，含singleton/空行；O₂为其最小值；一般UM原模型不改。具体source/promise限制依正文§1–4，不免费加入外部逻辑约束。
+- Conclusion / Dependencies：见[自足正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)的完整匹配、断点搜索或3SAT实际矩阵；pair障碍仅依top2阈值接口。
+- Evidence：精确有限审计及独立实际分配枚举，见正文§5；独立先重构后读proof，再实际核最终中文全文。
+- Counterevidence / Objections：top2不能控制总负载；普通near2 NO不必有双件超载；无站立fatal，不把有限核验升级为证明。
+- Status：完整限定范围自足推导、内部独立审查；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/top_two_pair_witness_boundary.md)、[审查](../reviews/unrelated_machines/top_two_pair_witness_review.md)、tests/audits/unrelated_machines/top_two_pair_witness_audit.py、top_two_pair_witness_independent.py；一般UM目标及反面仍OPEN。

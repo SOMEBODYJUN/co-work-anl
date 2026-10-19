@@ -478,3 +478,6 @@ u_t) 的一般复杂度。
 ## 空模式不保全rank与模式邻接不能免费复制
 
 [价格覆盖稿的首轮审查](../reviews/unrelated_machines/price_cover_joint_rounding_review.md)发现：原宏图覆盖B不保证删空模式类后的平行扩张仍rank|B|；一宏一home且Q_h空已经反驳。实际声明已补非空类H_Q覆盖全部B，主算法成功生成的共同匹配证明该条件。另把模式直接复制成普通宏邻居会丢每home容量1，两个宏可假占同一home，得到假零成本；规范基/LP保homecap并最后共同重匹配。失败是呈现/陈述域不满足，不是一般调度困难性。可回收的是显式满rank见证和真实平行扩张；除非改变对象及合同，不能复用错误邻接。
+
+
+2026-10-19，反面归约新增[双件证据过滤器](../current/unrelated_machines/top_two_pair_witness_boundary.md)：top2三半匹配近似排rho>=3/2的不可避免双件NO合同；不控制普通总负载。一般UM正反面仍OPEN，多件共同容量与任意实际调度decoder仍承重。

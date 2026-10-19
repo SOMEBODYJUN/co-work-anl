@@ -398,3 +398,6 @@
 [价格覆盖与共同占位舍入](../current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)给三项分离身份：标准列总量单侧+b工具；给定T、唯一home/W_h≤T/a_j≤δT/出口p_zj≤ρa_j的实际价格覆盖算法；以及OPT处结构promise的未知OPT算法。sink数、逐件资格和有理分母均可增长，不需共同资格或下包络；ρδ+η<1时实际α=2−(1−ρδ−η)/(1+ρ)。显式poly模式由保零cover+同价宏匹配+有理MW生成，非免费菜单oracle。独立审查关闭空模式降rank漏洞；生产LP未集成、新颖性/外审未认证。
 
 这项正面接口可攻击输出全落在该promise类的近二归约；一般矩阵的角色/home/统一余量生成及真实源NO decoder仍未解决，UM-TARGET-v1与一般反面保持OPEN。全文、实际审查、独立代码和冻结证据沿[精确账本](CLAIMS.md)读取。
+
+
+[双件超载证据的三半锐界](../current/unrelated_machines/top_two_pair_witness_boundary.md)：一般UM的不同目标O₂可det-bit-poly三半近似，故rho>=3/2时，YES普通OPT<=T / NO所有完整保留端分配必有双件和>rhoT的promise在P；低于三半的出现副本SAT编译给锐界。它只排pair-only归约，不排多件共同总容量/全局身份；UM-TARGET-v1正反面仍OPEN。精确账本→正文§1–4→实际审查→两路审计/冻结结果。

@@ -200,3 +200,6 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 ## 任意汇点价格覆盖的三项精确身份
 
 `UM-UPPER-COLUMN-BUDGET-BASE-ROUNDING-v1`是标准单侧列总量舍入的重构；`UM-ARBITRARY-SINK-PRIVATE-GROUP-PRICE-COVER-v1`给唯一home/出口包络下的实际阈值算法；`UM-ARBITRARY-SINK-PRIVATE-GROUP-PROMISE-APPROX-v1`在OPT处结构promise下给未知OPT统一改善。见[专题精确账本](research/unrelated_machines/CLAIMS.md)与[正文](research/current/unrelated_machines/arbitrary_sink_private_group_price_cover_rounding.md)。不改变UM-TARGET-v1及其一般反面的OPEN状态。
+
+
+2026-10-19，反面归约新增[双件证据过滤器](research/current/unrelated_machines/top_two_pair_witness_boundary.md)：top2三半匹配近似排rho>=3/2的不可避免双件NO合同；不控制普通总负载。一般UM正反面仍OPEN，多件共同容量与任意实际调度decoder仍承重。
