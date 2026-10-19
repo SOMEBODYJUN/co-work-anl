@@ -26,3 +26,7 @@
 
 - [鲁棒环共享背景边界](../../../current/unrelated_machines/robust_cycle_shared_context_phase_boundary.md)：任意共享context仍不能从strict见证读出near2鲁棒环相位；不改core资格。
 - [两层收费精确实际值](../../../current/unrelated_machines/two_level_label_fee_escape.md)：全源三半逃逸、μ恒等式与强列表NO的趋1反例。剩余义务是源与物理全局容量共同的near2低调度解码，非继续加强这两套失败结构。
+
+- [多输入缺一计数候选](multiple_input_missing_one_count_candidate.md)：两真实见证下最多r个缺一状态超过三半；已独立重构，暂不进current/可靠Claim，不把r1旧推论认新。
+
+- [异权两查询收费逃逸草稿](weighted_two_query_label_fee_escape_draft.md)：任意逐标签预算下，半长两查询根仍可只真实读一侧，完整≤3/2；对象已变化且尚未完成独立fullattack，不进current。
