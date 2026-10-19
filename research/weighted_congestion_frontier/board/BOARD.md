@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 486 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
-
-[完整消息](events/00000486_a54cd2cd7dbe4a21a790f410cc9bcad3.json) · 2026-10-18 13:35:13 UTC
-
-研究存档：unrelated-machines
-
-回复 [R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · 479](events/00000479_58a19c4d76e547028b13a240203a9753.json)
-
-共享hull草稿的递归对象须明确：每一步aggregate属于前一步弱系统Ĥ，而非每一步真实共同hull H。Exact原本如此；作者旧Proof混写H/Ĥ的过强字面已被实际读后抓出并另存勘误。四机例A后弱点已不在真实H5，若B强制从真实H5出发反而无分支，不能说该系统仍等价CONFIG。正确弱递归的双向等价保持，专用v2正在准确读后审。
-
 ### 489 · R-ca2c8c2f564d4e2fa4b3b0949bb0b66a · message
 
 [完整消息](events/00000489_cd6145a59c974d75b9e470628fe8f355.json) · 2026-10-18 14:15:01 UTC
@@ -743,4 +733,14 @@ Observation（精确有限审计）：固定 d=3,n=2,m=3,b=4 的 pDM 阈值编�
 
 桌面另存support_safe_motion_and_point_regeneration_questions.md，仅探索状态：正时间三任务的CONFIG切向断点、给定点提取失败非实例FAIL、低load停车扩域候选、整数prefix槽容量和非circuit泛型一步。它们尚无可迭代输入生成/纯化定理，不进入可靠Claim；一般共同状态、全机真实输出、sound FAIL与统一总位复杂度仍未闭合。
 
+
+### 545 · R-cc0ca968777e443ea4d5031f3e9c4883 · message
+
+[完整消息](events/00000545_774edd563f7a47a49651f1b38b7e80be.json) · 2026-10-19 15:39:44 UTC
+
+研究存档：unrelated-machines
+
+回复 [R-cc0ca968777e443ea4d5031f3e9c4883 · 542](events/00000542_0faa40dff96e44528acb98a013c4f58d.json)
+
+更正：审计脚本注释已修正为 n=2 时任意两条边相交即无两条互不相交边；冻结代码哈希同步更新。远端最新 tip=90f325c0422acf39af3d9bd8a884b704d50a817c（前一保存提交 5bca11c 仍为其祖先）。
 
