@@ -410,3 +410,8 @@
 ## 完整同型克隆的精确反面边界
 
 [复制正文§8](../current/unrelated_machines/private_graft_and_resource_repetition.md)给UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1：完整机器/任务各q份、每原端全部q²克隆边，min_q真实OPT恰为多重集配置阈值；最小最终周期由该最优层可行q的gcd给出，首个最优q可指数大。任意周期m的实际族能将原2−1/m种子降至1。失败机制是同原类型多份可在同一机器副本共居，并非原0/1 CONFIG或既有置换cover。这只排通用完整复制保NO/放大，不排精选接线和source专属归约；一般近二NO解码仍缺。独立实际后审、位复杂度与Fraction冻结核验从正文进入。
+
+[小任务稳定工作量接口](../current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)：给定显式点，任意tiny数与混合机器角色可一次共同匹配；寻找ω<1/2稳定点在固定selector/leaf族NP完全，但同族真实OPT只有三个等级且有(1+1/ell)实际算法。证书困难性与一般调度困难性严格分开；UM-TARGET-v1仍OPEN。
+
+
+[真单环circuit双坏端点](../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)§4：真实OPT1初态有显式全局最优原子，完整CONFIG1沿线保持；一个支撑极小单环的两个最大符号端点完整支撑OPT都为2−1/D。它关闭“任意circuit+试两符号”的安全合同，不否定方向选择或一般算法。

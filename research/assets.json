@@ -10478,14 +10478,16 @@
       "claims": [
         "UM-WEIGHTED-EXCESS-ZERO-DEFECT-TRAP-v1",
         "UM-CONFIG-PRESERVING-ACTIVATION-SUPPORT-LOSS-v1",
-        "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1"
+        "UM-CONFIG-PRESERVING-TWO-SIGN-SUPPORT-LOSS-v1",
+        "UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1"
       ],
       "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
       "applies_when": [
         "Permanent support deletion and integer fixing; row-load nullspace endpoint motion; excess row-drop rule",
-        "Compact trap: fixed rational eps,m>=3,m>1/eps. Activation: explicit CONFIG witness,m>=2,n>=1. Two-sign: bipartite <=2-end positive support"
+        "Compact trap: fixed rational eps,m>=3,m>1/eps. Activation: explicit CONFIG witness,m>=2,n>=1. Two-sign: bipartite <=2-end positive support",
+        "Single-cycle family: every odd D>=3; all machine rows protected, no task integerized, genuine optimal-hull initial point and both full positive-support endpoints."
       ],
-      "produces": "True-optimal-hull harmful histories: exact zero-D full-rank trap; full-CONFIG-preserving lift; both signs of a specified direct-sum direction can lose all desired frozen-support completions.",
+      "produces": "True-optimal-hull harmful histories: exact zero-D full-rank trap; full-CONFIG-preserving lift; both signs of a specified direct-sum direction can lose all desired frozen-support completions. A separate explicit true single-cycle circuit has both full-support endpoint optima exactly2-1/D, with genuine OPT1 starting atoms and full CONFIG1 throughout.",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md"
@@ -10493,22 +10495,26 @@
       "tests": [
         "tests/audits/unrelated_machines/weighted_excess_zero_defect_trap.py",
         "tests/audits/unrelated_machines/configuration_activation_support_loss.py",
-        "tests/audits/unrelated_machines/configuration_activation_two_sign.py"
+        "tests/audits/unrelated_machines/configuration_activation_two_sign.py",
+        "tests/audits/unrelated_machines/configuration_preserving_single_cycle_endpoints.py"
       ],
       "records": [
         "evidence/runs/unrelated_machines/weighted_excess_zero_defect_trap_audit.json",
         "evidence/runs/unrelated_machines/configuration_activation_support_loss_audit.json",
-        "evidence/runs/unrelated_machines/configuration_activation_two_sign_audit.json"
+        "evidence/runs/unrelated_machines/configuration_activation_two_sign_audit.json",
+        "evidence/runs/unrelated_machines/configuration_preserving_single_cycle_endpoints_audit.json",
+        "evidence/runs/unrelated_machines/configuration_preserving_single_cycle_endpoints_rational_parameter_audit.json"
       ],
       "examples": [],
       "reviews": [
-        "research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md"
+        "research/reviews/unrelated_machines/configuration_elimination_support_loss_review.md",
+        "research/reviews/unrelated_machines/configuration_preserving_single_cycle_endpoint_review.md"
       ],
       "candidates": [],
       "sources": [
         "history/source/literature/unrelated_machines/verschae_wiese_2010_configuration_lp_v1.pdf"
       ],
-      "limit": "Known CONFIG gap supplies only the base witness, not the new full instance OPT (which is proved1). Does not rule out all directions, circuit choices, reopened edges or general algorithms; generic lift has no zero-D/rank conclusion."
+      "limit": "Known CONFIG gap supplies only the base witness, not the new full instance OPT (which is proved1). Does not rule out all directions, circuit choices, reopened edges or general algorithms; generic lift has no zero-D/rank conclusion. New single-cycle result refutes arbitrary circuit plus two-sign checking, but not choosing another circuit or reopening support."
     },
     {
       "id": "um_occurrence_weighted_direct_literal_pool_budget_escape_v1",
@@ -11743,6 +11749,45 @@
       ],
       "limit": "标准取整推论；未实现假设中的B，无NP源gap或一般否定；小h有限测试不冒充实际大n分支。",
       "source_role": "The listed configuration-LP literature is contextual only; the upstream author-draft path is absent from this clone, so the current account, audit and review are the available self-contained record and no draft provenance is claimed."
+    },
+    {
+      "id": "um_tiny_work_stability_joint_rounding_selection",
+      "claims": [
+        "UM-TINY-WORK-STABILITY-JOINT-ROUND-v1",
+        "UM-TINY-WORK-STABILITY-SELECTION-NP-v1",
+        "UM-SELECTOR-TINY-ROOT-THREE-VALUES-v1"
+      ],
+      "status": "complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified",
+      "applies_when": [
+        "Explicit rational equal-coverage CONFIG(T); each positive source config has <=K big jobs and arbitrary tiny jobs after removing zero-edge jobs",
+        "Selection/trichotomy only: explicitly presented selector/root/ell-leaf source matrices, fixed ell>=2; stability omega<1/2"
+      ],
+      "produces": "One common actual matching under stable tiny work; exact NP certificate-selection barrier; separate three-value true OPT identity and easy actual approximation on the source family.",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/tiny_work_stability_joint_rounding.py",
+        "tests/audits/unrelated_machines/tiny_work_stability_selection_audit.py",
+        "tests/audits/unrelated_machines/selector_tiny_root_three_values_audit.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/tiny_work_stability_joint_rounding_exact_encoding_audit.json",
+        "evidence/runs/unrelated_machines/tiny_work_stability_exact_encoding_cli.json",
+        "evidence/runs/unrelated_machines/tiny_work_stability_selection_audit.json",
+        "evidence/runs/unrelated_machines/selector_tiny_root_three_values_audit.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/tiny_work_stability_and_selection_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/literature/unrelated_machines/shmoys_tardos_1993_generalized_assignment.pdf",
+        "history/source/literature/unrelated_machines/karp_1972_reprinted_2010_reducibility.pdf"
+      ],
+      "limit": "Explicit y is not a free finder; stability NP-hardness is not scheduling approximation hardness. Three-value actual algorithm takes the source presentation. Finite audits do not prove universal results; no external review or novelty certification. The actual supplied-point constructor lives under tests/audits as a standalone research script, not one of the registered production packages; review_status records its actual implemented scope."
     }
   ]
 }

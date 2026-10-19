@@ -1381,6 +1381,21 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1 | 全seed YES、每UNSAT存在poly长度拒绝seed、总poly D及R；FAIL按YES | 推出NP=coNP；逆poly拒绝再给NP=RP=coRP=coNP。UM应用仍需真实compiler/全输出decoder，非已得反面。 | [源正文末节](unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)、先陈述及最终正文实际内审；标准机制，外审/新颖性未认证。 |
 | UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1 | n≥16、A_n按实际n的几何ceil整数表，大小O(log²n)、每项1..n²、全边有限 | 域内固定(2−1/k)实际算法⇒原全模型(2−1/(2k))算法；存在性双向等价，非hardness。 | [模型§7](unrelated_machines/model_and_classical_barriers.md)、独立重构/最终正文及代码攻击/Fraction全负载类型核验。 |
 
+## 小任务稳定接口与真单环消元边界
+
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| UM-TINY-WORK-STABILITY-JOINT-ROUND-v1 | ∀合法P、显式有理等式覆盖CONFIG(T)点y、δ∈[0,1]、二进制整数K≥1，先删除所有有零端job；若每个正权源配置至多K个big(p>δT)且tiny数量不限，则可在显式证书总位长的统一确定性多项式时间输出同一完整实际σ，∀i L_i≤α_K(T−r_i)+s_i+b_i。r为正权tiny工作最小值、s为均值、b为正边际tiny最大时间；α1=1,α2=3/2,α3=11/6,K≥4时α=2−K^{−(K−1)}。若s−r≤ωT，则L_i≤(α_K+ω+δ)T。 | 显式稳定证书是输入，不含任意P的证书生成器；K与δ必须相容，不能把K固定再把δ任意缩小。给定点舍入支持混合机器角色和无限tiny；不构成一般统一次二算法。 | [自足正文](unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)、[实际独立审查](../reviews/unrelated_machines/tiny_work_stability_and_selection_review.md)；完整限范围内审，未外审/未认证新颖性。 |
+| UM-TINY-WORK-STABILITY-SELECTION-NP-v1 | ∀固定整数ell≥2、固定有理ω∈[0,1/2)，正文显式selector/root/ell-leaf矩阵族的CONFIG1单侧稳定点(s_i−r_i≤ω)存在性是NP完全，且iff源perfect3DM且iff实际OPT≤1。P≠NP下无总确定性位多项式OPT≤1承诺的此稳定证书生成器；ell2/3等固定参数各自成立。 | 只否定此过强稳定证书的总多项式生成；ω=1/2不在等价内，parity源在该端有稳定点而实际OPT=1+1/ell。它不是一般调度近二困难性。 | [自足正文](unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)、[实际独立审查](../reviews/unrelated_machines/tiny_work_stability_and_selection_review.md)；完整限范围内审，未外审/未认证新颖性。 |
+| UM-SELECTOR-TINY-ROOT-THREE-VALUES-v1 | ∀固定ell≥2、q>0且每x至少一tuple的已呈现selector/root/ell-leaf主构造，令ν为源最大3DM数、μ为X—(Y∪Z)最大二部匹配数，则真实OPT分别为1(ν=q)、1+1/ell(ν<q,μ=q)、1+2/ell(μ<q)。给定源呈现可位多项式输出全族(1+1/ell)实际近似；CONFIG1可行时直接输出≤1+1/ell。 | 算法输入含源构造呈现，不含未标记raw矩阵模板识别；不求NP困难的ν。实际NO值随ell变大趋1，不能当趋2的整数gap。 | [自足正文](unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)、[实际独立审查](../reviews/unrelated_machines/tiny_work_stability_and_selection_review.md)；完整限范围内审，未外审/未认证新颖性。 |
+
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1 | ∀奇整数D≥3，L=D+2、N=DL，存在仅用时间1与1/D的显式UM实例，m=3N+3L,n=4N+2,有限端10N+2L，真实OPT1且指定严格分数初态x有恰N个等权真实最优调度原子。全部机器保护下有支撑极小circuit d，物理支撑为单个4N简单交替环、rank(A_C)=4N−1。最大箱段为±γ，γ=(L−1)/(2L)，整段保持全机负载与完整CONFIG1；两最大端点永久删零端后的完整正支撑真实OPT均精确2−1/D，无任务整数化。∀固定ε∈(0,1)，选奇D>1/ε，则全程每机活端excess>1−ε且两端OPT>2−ε。实例、真实原子、给定有理参数的路径证书和端点上界均为显式实例位长多项式构造。 | 仅否定任意指定circuit试两个最大符号端点并永久删零端的充分合同，不否定另选方向、另选初态、维持真实共同原子、恢复删端或一般算法；本实例任一已给原子就是最优解，没有新NP困难性。 | [完整正文§4](unrelated_machines/configuration_preserving_elimination_support_loss.md)、[实际审查](../reviews/unrelated_machines/configuration_preserving_single_cycle_endpoint_review.md)；完整范围内审，外审/新颖性未认证。 |
+
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

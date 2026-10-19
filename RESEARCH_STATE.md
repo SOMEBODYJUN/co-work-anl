@@ -238,3 +238,12 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 
 
 完整机器与任务同时克隆的新增边界见[复制正文§8](research/current/unrelated_machines/private_graft_and_resource_repetition.md)：全部q²交叉端恰对应多重集配置，最优值最小最终周期由最优阈值可行q的gcd决定；首次达到最低值可需指数多份。原趋二seed亦能坍至1，仅排这一明确操作的通用保NO合同，主目标及其否定仍OPEN。
+
+## 小任务稳定工作量：接口闭合与证书过强边界
+
+[联合槽接口与三值分类](research/current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)将big/tiny虚拟行放进同一匹配，给∀i L_i≤α_K(T−r_i)+s_i+b_i；不限tiny数，也不让混合角色job复制。固定ell>=2、omega<1/2的稳定证书选择等价perfect3DM，但同一实际矩阵的OPT只有1、1+1/ell、1+2/ell，已呈现源上可多项式输出(1+1/ell)实际近似。此NP边界不能充当一般近二困难性。给定点构造器已实现、最终全文独立核查及精确编码修复已重跑；一般输入如何生成更弱而足够的共同状态仍OPEN。
+
+
+## 真单环circuit仍不能免费保留次二补全
+
+[完整正文§4](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)把旧直和方向反例推进为一个真正支撑极小单环：任意奇D>=3有真实OPT1、显式N个最优原子初态、整段完整CONFIG1与全负载等式，但两个最大符号端点的完整支撑OPT均精确2−1/D。全程无整数化任务、所有excess行都保持保护；损失来自永久删零端。一般证明含任意完整实际调度下界，有限运行只是检查。当前仍须选择安全方向、保持更强共同结构或允许恢复删端；该显式族本身容易解，不给一般NP困难性。
