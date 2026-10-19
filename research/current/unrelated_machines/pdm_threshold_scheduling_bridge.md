@@ -87,3 +87,32 @@ bk+d\ell=bd.
 [合法域与间隙方向审查](../../reviews/unrelated_machines/pdm_threshold_domain_and_gap_review.md)指出：主公式尚未处理 `m<n`、孤立源顶点和 `n=m=0`；若 `b` 可作二进制可变参数，dummy 的显式输出规模还须另核。专题账本按固定 `d,b` 解释时后一点没有问题，但完整非退化域仍应写明。原 v1 因而暂记条件性内核，不把补充假设默默加入后继续称全域证明完成。
 
 同一审查还给出已有槽定理的直接推论：本合法编译的 `max p=b=T/d`，assignment LP(T) 不可行可可靠拒绝；可行即实际输出 `C≤(1+1/d)T≤4T/3`。这是限制本形状近二 gap 的真实算法论证，区别于仅从 `OPT_NO≥bd+1` 推断 NO gap“只有加一”。它不是一般 UM 的新近似算法。
+
+## 精确低负载逃逸实例（有限观察）
+
+为检验“没有完美匹配就会自动产生近二 NO 值”的更强直觉，取 `d=3,n=2,m=3,b=4`，三条超边为
+
+\[
+e_0=(a_1,b_1,c_1),\qquad e_1=(a_1,b_2,c_2),\qquad e_2=(a_2,b_1,c_2).
+\]
+
+任意两条边相交，所以三维实例没有完美匹配。按上面的编译，阈值是 `T=bd=12`，有 6 个顶点任务和 `b(m-n)=4` 个 dummy，所有任务总工作量为 `36=mT`。对这 10 个任务的全部 `2·1·2·1·1·2·3^4=648` 个合法分配用 `Fraction` 穷举，得到
+
+\[
+  \operatorname{OPT}=13,
+  \qquad (L_0,L_1,L_2)=(12,11,13),
+  \qquad \operatorname{OPT}/T=13/12.
+\]
+
+因此这里确实没有 `C_max≤T` 的调度，但仍有一个只比阈值高 `1/12` 的调度。这个实例不否定阈值定理；它只反驳把阈值 NO 条件直接当作近二乘性 NO gap 的推断。可复现代码和冻结输出见 [`pdm_escape_counterexample.py`](../../../tests/audits/unrelated_machines/pdm_escape_counterexample.py) 与 [`pdm_escape_counterexample_audit.json`](../../../evidence/runs/unrelated_machines/pdm_escape_counterexample_audit.json)。
+
+## 两值 max-min 硬度传递的常数边界
+
+Vu–Nguyen–Elbassioni–Rothe (arXiv:2610.05237, 2026-10-04) 的 Theorem 2 对互素整数 `q>p≥3` 的二值估值 `{p,q}` 给出：任意 `ρ<pq/(pq-1)` 的 max-min allocation 近似是 NP-hard。BLMRS 的两值等价把 Santa 因子 `α` 与 makespan 因子 `2−1/α` 对接。因此这条预印传递链至多给相应二值调度像的阈值
+
+\[
+  2-\frac{1}{pq/(pq-1)}
+  = 1+\frac1{pq}.
+\]
+
+最小允许的 `pq` 已是 `12`，所以该方向只到 `13/12`，随 `pq` 增大反而趋近 `1`；它既不接近 `2`，也不能替代 UM-TARGET-v1 的一般反面。这里保存的是常数传递边界，不是把外部 max-min 困难性升级为一般 R∥Cmax 困难性。

@@ -34,6 +34,8 @@
 
 主目标 `UM-TARGET-v1` 仍OPEN：尚无一般确定性位多项式统一(2−ε)调度算法。
 
+本轮新增一条可复现的反面路线边界：固定 `d=3,n=2,m=3,b=4` 的 pDM 阈值编译在无完美匹配时仍有精确 `OPT/T=13/12` 的低负载调度（648 个合法分配全枚举）。因此 `OPT≥bd+1` 不能直接升级成近二 NO gap。另将 Vu–Nguyen–Elbassioni–Rothe 2026 的二值 max-min 硬度经 BLMRS two-value 因子关系化简，得到的对应 makespan 常数仅为 `1+1/(pq)`；这同样不接近 2。两项均是方法障碍与证据，不改变主命题的 OPEN 状态。
+
 ## 本轮方向审计：有序收敛但曾局部化（2026-10-17）
 
 独立审计结论见 [team_direction_audit.md](../reviews/unrelated_machines/team_direction_audit.md)：数学路线没有跑到无关问题，但多轮固定 `K/q/home/sink`、独立 probe、逐坐标 repair 和大规模枚举曾停留在局部合同层。它们已把共同缺口收窄为“任意 `P,T` 生成可计算共同容量状态并一次守住全机实际整数负载，或给 sound `FAIL => OPT>T`，同时保持统一余量与位多项式”；尚无路线闭合该全输入桥。
