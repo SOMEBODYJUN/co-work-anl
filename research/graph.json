@@ -13290,6 +13290,58 @@
         "evidence/runs/unrelated_machines/complete_clone_multiset_periodicity.json"
       ],
       "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-RESOURCE-DISTORTION-FLAT-MENU-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "完整flat矩阵与逐资源正权畸变",
+      "detail": "非空显式groups/states，W≤1，selector1、resource1及private p，所有原jobs；同一resource正p的比值κ。",
+      "refs": [
+        "research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md",
+        "research/reviews/unrelated_machines/resource_distortion_flat_menu_review.md"
+      ],
+      "status": "exact domain"
+    },
+    {
+      "id": "CM2019-RESTRICTED-SANTA-ACTUAL-FOUR-PLUS",
+      "kind": "source",
+      "track": "unrelated_machines",
+      "title": "Cheng–Mao 2019 restricted Santa 实际4+δ算法",
+      "detail": "每个固定δ>0，固有物品值/零资格的restrictedSC实际poly分配；非纯CONFIG gap；原定理1及未知目标说明。",
+      "refs": [
+        "research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md",
+        "research/reviews/unrelated_machines/resource_distortion_flat_menu_review.md"
+      ],
+      "status": "published theorem imported with targeted primary reading"
+    },
+    {
+      "id": "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "逐资源正权畸变完整菜单的实际次二界",
+      "detail": "每固定α>4，det总位poly全部原jobs C≤2−(2−OPT)/(ακ)≤(2−1/(ακ))OPT；任意菜单/degree、κ可变；固定κ的真实源筛选。",
+      "refs": [
+        "research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md",
+        "research/reviews/unrelated_machines/resource_distortion_flat_menu_review.md"
+      ],
+      "status": "complete scoped structural corollary; published restricted-Santa backend; actual independent review and finite interface audits; no full backend implementation"
+    },
+    {
+      "id": "UM-RESOURCE-DISTORTION-FLAT-MENU-FINITE-AUDIT",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "逐资源畸变两路有限实际分配核验",
+      "detail": "945份与独立1301份输入；有限精确检查不证明一般定理，未实现外部后端。",
+      "refs": [
+        "research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md",
+        "research/reviews/unrelated_machines/resource_distortion_flat_menu_review.md",
+        "tests/audits/unrelated_machines/resource_distortion_flat_menu.py",
+        "tests/audits/unrelated_machines/resource_distortion_independent_audit.py",
+        "evidence/runs/unrelated_machines/resource_distortion_flat_menu_audit.json",
+        "evidence/runs/unrelated_machines/resource_distortion_independent_audit.json"
+      ],
+      "status": "finite exact checks passed"
     }
   ],
   "hyperedges": [
@@ -32514,6 +32566,57 @@
         "evidence/runs/unrelated_machines/complete_clone_multiset_periodicity.json"
       ],
       "status": "finite exact checks"
+    },
+    {
+      "id": "DERIVE-UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-RESOURCE-DISTORTION-FLAT-MENU-DOMAIN-v1",
+        "CM2019-RESTRICTED-SANTA-ACTUAL-FOUR-PLUS"
+      ],
+      "conclusion": "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1",
+      "statement": "所有共同域前提与已发表restrictedSC算法；baseline值桥、q=min positive比较及dummy-free全原job恢复。",
+      "refs": [
+        "research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md",
+        "research/reviews/unrelated_machines/resource_distortion_flat_menu_review.md"
+      ],
+      "status": "complete scoped derivation"
+    },
+    {
+      "id": "LIMIT-UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只排κ统一有界的完整flat源；非一般UM算法或hardness；新颖性未认证，restrictedSC后端未实现。",
+      "refs": [
+        "research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md",
+        "research/reviews/unrelated_machines/resource_distortion_flat_menu_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "CHECK-UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RESOURCE-DISTORTION-FLAT-MENU-FINITE-AUDIT"
+      ],
+      "conclusion": "UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1",
+      "statement": "核对小完整矩阵、SC实际allocation、zero/baseline/分母、原job还原和实际比率；不是一般proof前提。",
+      "refs": [
+        "research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md",
+        "research/reviews/unrelated_machines/resource_distortion_flat_menu_review.md",
+        "tests/audits/unrelated_machines/resource_distortion_flat_menu.py",
+        "tests/audits/unrelated_machines/resource_distortion_independent_audit.py",
+        "evidence/runs/unrelated_machines/resource_distortion_flat_menu_audit.json",
+        "evidence/runs/unrelated_machines/resource_distortion_independent_audit.json"
+      ],
+      "status": "finite checks only"
     }
   ]
 }

@@ -1,5 +1,7 @@
 # 不相关并行机：新主攻存档与协作入口
 
+
+[逐资源正权畸变的完整菜单边界](../current/unrelated_machines/resource_distortion_flat_menu_rounding.md)：任意显式菜单数/资源度、W≤1及κ=max同资源正权比时，每固定α>4实际输出C≤2−(2−OPT)/(ακ)；固定κ不能承载任意近二真实源。源于已知restricted Santa算法的结构推论，无完整后端实现，一般主目标仍OPEN。
 **当前用户决定：全仓主攻 `UM-TARGET-v1` 的否定，所有参与者直接研究反面证明。** 固定原命题身份，不将方向决定视为证据；每个固定 ε 的真实 OPT gap、完整 YES/NO、绝对阈值 decoder 与总位复杂度是承重义务。复杂度假设逐条声明，既有正面结果作为反驳归约的工具保留；无需先登记路线或等待探索审核。一般反面仍 OPEN。
 
 反面源先经[部分激活菜单的全局福利筛选](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md) F2：显式 norm1/共同支撑 LP 下，H_{3/8}>2q/5；这是标准福利工具直接推论，只排其精确部分高组源，不是一般困难性。

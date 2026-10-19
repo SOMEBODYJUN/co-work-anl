@@ -245,3 +245,7 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 2026-10-19，反面归约新增[双件证据过滤器](research/current/unrelated_machines/top_two_pair_witness_boundary.md)：top2三半匹配近似排rho>=3/2的不可避免双件NO合同；不控制普通总负载。一般UM正反面仍OPEN，多件共同容量与任意实际调度decoder仍承重。
 
 完整机器与任务同时克隆的新增边界见[复制正文§8](research/current/unrelated_machines/private_graft_and_resource_repetition.md)：全部q²交叉端恰对应多重集配置，最优值最小最终周期由最优阈值可行q的gcd决定；首次达到最低值可需指数多份。原趋二seed亦能坍至1，仅排这一明确操作的通用保NO合同，主目标及其否定仍OPEN。
+
+## 同资源正权畸变有界的flat源不能靠增加菜单数放大
+
+试图只增加完整flat菜单数、degree或共同uniform束宽而逼近二，失效于[UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1](research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md)：取各资源最小正权，state-dummy restrictedSC与baseline给真实2−1/(ακ)近似。排除仅限κ统一有界的完整像类，未排其它物理compiler。回收值桥与源筛选；重试须改变承重域或提供随ε增长的真实异权/共同容量及全输出decoder。κ增长本身不是hardness证据。

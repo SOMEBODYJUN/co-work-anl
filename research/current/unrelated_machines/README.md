@@ -1,5 +1,7 @@
 # 不相关并行机：突破统一常数2壁垒的研究地图
 
+
+[逐资源正权畸变的完整菜单边界](resource_distortion_flat_menu_rounding.md)：任意显式菜单数/资源度、W≤1及κ=max同资源正权比时，每固定α>4实际输出C≤2−(2−OPT)/(ακ)；固定κ不能承载任意近二真实源。源于已知restricted Santa算法的结构推论，无完整后端实现，一般主目标仍OPEN。
 **当前用户决定：全体主攻 `UM-TARGET-v1` 的否定。** 下文原命题的模型、量词与身份保持不变。现在直接研究对每个固定 ε 的近二真实整数 gap、共享内部一致性与绝对阈值下的低负载调度解码；明确复杂度假设。正面接口作为归约的攻击工具保留，一般反面尚未证明。见[当前路线](../../unrelated_machines/ACTIVE_ROUTES.md)。
 
 当前存档为 `unrelated-machines`。原命题 `UM-TARGET-v1` 是一般二进制有理输入R∥C_max上存在确定性位多项式时间、统一常数(2−ε)近似；当前主攻其否定。目标仍OPEN；未形成新算法。新 boss 先读[BOSS研究总览与路线分诊](../../unrelated_machines/BOSS_RESEARCH_BRIEF.md)，再按选定承重义务进入本地图。旧拥塞/设施研究保留原身份，不作为本题数学依赖。
