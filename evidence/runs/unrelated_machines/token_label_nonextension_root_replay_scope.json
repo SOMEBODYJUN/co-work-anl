@@ -1,0 +1,31 @@
+{
+  "claim": "UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1",
+  "canonical_sha256": "dd3a012c9e24eb64a6ddc4f8e953ccc787aa27cc8a6945a454af2357d5689fb8",
+  "old_prefix_sha256": "d8eeff7d6763b03172f57770021a250782ad796a10a44d1bb4ac62777e7556e9",
+  "root_actual_read": "Both complete scripts, all mathematical records and new appendix; not human line-by-line reading of all large output entries",
+  "replays": [
+    {
+      "code": "tests/audits/unrelated_machines/token_label_hypergeometric_lift.py",
+      "code_sha256": "f9b1a149ce49fc34d5a86ae3e018c08027081978ea6144efcb31b1cf9a21fd2f",
+      "output": "evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+      "output_sha256": "a1140d82f3f1b7cf94dd33611fb66ee290f1cfeccc1d00e51328e1f213c42c0b"
+    },
+    {
+      "code": "tests/audits/unrelated_machines/token_label_nonextension_independent.py",
+      "code_sha256": "01de46cee0e87f0cd19edb2b6bc2cab25501ee106c8d9100c5a631f6dc651497",
+      "output": "evidence/runs/unrelated_machines/token_label_nonextension_independent_audit.json",
+      "output_sha256": "b3496538d7bf399ea6000838919dca9cfe855c3c3064eb3f2ba3870c053c068a"
+    }
+  ],
+  "arithmetic": "stdlib Fraction; no seed",
+  "author_code_change": "Only ROOT=Path(__file__).resolve().parent replaced by ROOT=Path.cwd(); original preserved as source; mathematics/output bytes unchanged",
+  "commands": "First code in a fresh empty cwd creates sol_token_label_hypergeometric_lift_audit.json; second prints JSON to stdout, capture to new path",
+  "actual_runs": [
+    "Original author byte-identical copy in fresh directory",
+    "Independent original code in another fresh directory",
+    "Cwd-only adapter in third fresh directory"
+  ],
+  "comparison": "all frozen output bytes identical",
+  "finite_scope": "210 subsets; 67x67 aggregate M2 rank55; 46x46 labelled M1 rank38; 232 cardinality tests; two analytic Schur routes; -1/150 norm and -1/25 block; 13-machine6-job48-endpoint complete OPT1 context",
+  "limits": "No generic SDP, all-group separation, growing-depth gap or all-input solver; general results use proofs."
+}

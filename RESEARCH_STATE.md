@@ -1,10 +1,18 @@
 # 当前研究前沿：不相关并行机
 
-**当前研究方向：反面主攻。** 用户已决定优先争取在明确标准复杂度假设下否定 `UM-TARGET-v1`：排除每一个固定 ε>0 的确定性位多项式实际调度算法，包括任意极小常数。原命题身份和 OPEN 状态保持；这是研究方向，不是已证不存在。反面以每个固定参数的真实整数 OPT gap、全部低负载调度的源解码及总位复杂度为承重；正面资产用于攻击归约和寻找逃逸，不预设结论。
+## 2026-10-18：反面主攻与全常数覆盖
+
+用户已决定主攻UM-TARGET-v1的否定。尚未证明不存在ε；无条件否定至少蕴含P≠NP，条件困难性须明列假设。主线是每个固定ε的真实gap和所有低负载调度的源解码，已有正面资产及其精确身份保留供攻击归约使用。
+
+本阶段完成[稠密正小整数正规形](research/current/unrelated_machines/model_and_classical_barriers.md)§6及独立审查：任何全有限1..n²整数域的固定(2−1/k)算法可转成原完整模型的(2−1/(2k))算法。极大分母、零值、∞与不可计算的正实常数都不能单独充当否定机制。此为标准离散化的自足接口重构，非新hardness。当前其他复制/张量/占位探索仍未闭合近二NO decoder；未把它们升级或复制为新资产。
+
+下一承重仍是共享内部一致性、全输出解码与固定参数规模，不再用增加同族有限样本替代这道义务。
+
+固定待判定命题 `UM-TARGET-v1`，存档 `unrelated-machines`：一般R∥C_max上，统一常数(2−ε)的确定性位多项式实际调度。目标仍 **OPEN**；尚无一般新近似算法。新会话用[完整提示词](research/unrelated_machines/BOSS_START.md)，从[本题地图](research/current/unrelated_machines/README.md)和[专题前沿](research/unrelated_machines/RESEARCH_STATE.md)恢复实际状态。
+
+当前操作入口与全体反面方向见[活跃路线](research/unrelated_machines/ACTIVE_ROUTES.md)；无需路线登记或开工审批。
 
 反面源先经[部分激活菜单的全局福利筛选](research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md) F2：显式 norm1/共同支撑 LP 下，H_{3/8}>2q/5；这是标准福利工具直接推论，只排其精确部分高组源，不是一般困难性。
-
-当前主攻 `UM-TARGET-v1`，存档 `unrelated-machines`：一般R∥C_max上，统一常数(2−ε)的确定性位多项式实际调度。目标仍 **OPEN**；尚无一般新近似算法。新会话用[完整提示词](research/unrelated_machines/BOSS_START.md)，从[本题地图](research/current/unrelated_machines/README.md)和[专题前沿](research/unrelated_machines/RESEARCH_STATE.md)恢复实际状态。
 
 ## 当前承重义务
 
@@ -206,3 +214,6 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 [单home消环及有向需求桥](research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)去掉环境DAG限制但仍输入实际调度或根树；[SC类型配置与真实匹配后端](research/current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)补齐显式多项式列表生成并精确定位全局选择义务；[整比双尺寸中性修复](research/current/unrelated_machines/divisible_two_size_neutral_repair.md)给防循环正面控制组。均不构成一般UM统一次二算法或近二困难性，UM-TARGET-v1保持OPEN。
 
 [前缀证书的有限精度纠偏](research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)（`UM-PREFIX-ATOMIC-FINITE-PRECISION-v1`）：同一精确守恒law下，带噪max-mass的锐界配合有理网格，在poly位精度恢复精确阈值；绝对原子误差有N倍稀释，relative/full-Gram版本须保完整原子空间。生成、全称验证与一般统一ε仍未解决。
+
+
+[反面归约的新增精确边界](research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权归一化门控类13/8与近完美部分束源LP判别，旧NSW高低比例混用已明确撤回；完整实际矩阵平方的NO→YES和多替代见证收费阈值二已分别核实。共享内部/多层的真实近二源解码仍未解决，不升级UM-TARGET-v1。

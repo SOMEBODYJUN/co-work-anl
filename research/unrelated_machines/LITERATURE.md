@@ -165,3 +165,10 @@ DGR2025/2026 constrained rejections全arXiv v1原PDF已取得并parse（18页，
 ## 显式菜单福利舍入的既有机制归属
 
 Feige, [On Maximizing Welfare When Utility Functions Are Subadditive](https://epubs.siam.org/doi/10.1137/070680977)，SIAM J. Comput. 39(1), 122–142：原刊摘要明确记录 fractionally subadditive 的 1−1/e 福利舍入。此轮只实读原刊摘要，未下载原PDF或重构全文。新增 [F2部分激活计数](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md) 给自足证明及 W−δA 确定化；是标准工具在精确源合同上的直接推论，不认领该福利机制新颖性。
+
+## DNS作者稿：本次福利机制的明确既有来源
+
+[作者PDF](https://www.cs.yale.edu/homes/schapira/cfjournal.pdf)15页版，metadata 2009-10-30且刊头有placeholder，不称2010正式排版。§3.2 PDF8–9 Theorem3.2/Lemma3.3已给独立配置、attaining clause与逐资源最大系数舍入，有限n因子更强；Prop2.1 PDF5给显式XOS查询。原字节/哈希在manifest，内部源审者实际文本与四页渲染、root primary相关文本的范围见[新审查](../reviews/unrelated_machines/normalized_gated_menu_welfare_review.md)。本文使用该既有机制，不认领新福利算法；门控桥与特定源后果另证。
+
+
+[原端SH3条件子树流与包含容量切](../current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md)的本次定位：root核既有Bamas v2原PDF字节SHA e1120098…并实际读本地文本560–716、908–990、1815–1868，区分原assignment-LP/polylog-congestion/包含计数与新原job共同SH3合同。原图、rare-terminal机制不认领新颖；rho1/100是新自足数值范围而非原paper所有估计的认证。未重审全文SA证明，也不把新soundFAIL误作paper定理反例或复杂性困难性。

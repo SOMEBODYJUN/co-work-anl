@@ -193,3 +193,6 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 本阶段限定身份：UM-HOME-UNIT-CYCLE-ELIMINATION-v1, UM-HOME-UNIT-ROOTED-FOREST-v1, UM-DIRECTED-DEGREE-TOKEN-IDENTITY-v1, UM-SC-BLOCK-TYPE-PROFILE-RECONSTRUCTION-v1, UM-NORMALIZED-TYPE-MATCHING-RANK-VALUE-IDENTITY-v1, UM-DIVISIBLE-TWO-SIZE-NEUTRAL-REPAIR-v1。精确量词、依赖、实际审查与有限证据只沿[不相关机账本](research/unrelated_machines/CLAIMS.md)及相应正文使用；主目标仍OPEN。
 
 `UM-PREFIX-ATOMIC-FINITE-PRECISION-v1`：给定共同law与真实全叶残差承诺，带噪前缀解码有全参数锐质量界；poly位精度加有理格点可精确恢复T可行性。不是一般生成/验证算法；详见[原子桥同页扩展](research/current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)及专题精确账本，UM-TARGET-v1仍OPEN。
+
+
+[反面归约的新增精确边界](research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权归一化门控类13/8与近完美部分束源LP判别，旧NSW高低比例混用已明确撤回；完整实际矩阵平方的NO→YES和多替代见证收费阈值二已分别核实。共享内部/多层的真实近二源解码仍未解决，不升级UM-TARGET-v1。

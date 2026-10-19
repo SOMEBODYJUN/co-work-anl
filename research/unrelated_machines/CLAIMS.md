@@ -14,6 +14,18 @@
 - Status：OPEN；用户已将研究方向切为优先否定本命题，覆盖所有固定 ε>0，尚未得到一般反面证明。方向改变不改变 Exact Statement，也不是数学状态升级。
 - Related Files：[数学地图](../current/unrelated_machines/README.md)、[前沿](RESEARCH_STATE.md)、[启动提示词](BOSS_START.md)。
 
+## UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1：稠密正小整数与原目标的等价
+
+- Exact Statement / Quantifiers：UM-TARGET-v1成立，当且仅当在所有显式m×n、m,n≥1、每项为1..n²正整数的全有限矩阵上存在统一严格次二的确定性位多项式实际调度算法。具体∀固定整数k≥2，该域上一个(2−1/k)算法可转为原完整模型上的(2−1/(2k))算法；不宣称输入k时的统一复杂度。
+- Objects / Domain / Definitions：原UM-MODEL-v1与上述稠密域D；n为实际任务数，转换不添加任务。任意实数ε>0可由更小的1/k替代，算法保持同一个有限程序。
+- Assumptions / Scope：无复杂度假设；假设的稠密算法确为总位多项式并输出实际分配。算法存在性的等价，不是NP源的gap归约或近二困难性。
+- Conclusion：极大分母、零时间及不可用边不是主目标存在性与否的独立分界；反面主攻可集中普通整数域，仍须证明所有算法的下界。
+- Dependencies：非负性下OPT0刻画、固定任务数枚举、精确几何阈值列表、向上取整及严格大成本排除；完整证明见模型正文§6，不调用未知可行性oracle。
+- Evidence：精确陈述先行独立重构，冻结§6全文攻击与独立Fraction审计；审计挑战每个满足所假设比率的有限输出，而非仅最优输出。
+- Counterevidence / Objections：必须使用OPT_Q≤(4kn/T)OPT+n的强式回译，粗界仅用于排除n²边；p=0的取整误差是≤1不是<1。仅给n²的逐实例改善仍不提供统一ε。
+- Status：标准缩放机制的完整限范围接口重构，经独立内审；无外审、全球新颖性或独立论文价值认证；UM-TARGET-v1及其全常数反面均OPEN。
+- Related Files：[模型正文§6](../current/unrelated_machines/model_and_classical_barriers.md)、[独立审查](../reviews/unrelated_machines/dense_small_integer_equivalence_review.md)、tests/audits/unrelated_machines/dense_small_integer_equivalence.py、evidence/runs/unrelated_machines/dense_small_integer_equivalence.json。
+
 ## UM-ST-ROUND-v1：给定剪枝可行解的加性负载舍入
 
 - Exact Statement：∀合法P、∀有理T≥0、∀剪枝LST的有理可行x，存在可由确定性位多项式程序构造的合法σ，∀i，L_i(σ)≤Σ_j p_ijx_ij+max{p_ij:x_ij>0}≤2T；空max为0。
@@ -3044,9 +3056,9 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Exact Statement / Conclusion：不输入benchmark、不验证全局前提，仅真最大product匹配det-bit-poly给GM(Vi+singleton)>=每个正fractional benchmark/(c+1)。
 - Assumptions：无复杂度假设；C的P=NP仅条件于另有明确promise-gap Karp reduction；E方法限制另用既有CONFIG gap。
 - Dependencies：UM-FRACTIONAL-REMATCHING-SEMANTIC-DOMAIN-v1；页内完整定义、标准有理LP/匹配/路径分解。具体范围见正文。
-- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。
+- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized高端NO需以1−gamma_hi比较低质量计数；旧未覆盖判断撤回；未构造NP-hard源，算法数学规格未实现。
 - Evidence：实际独立Exact-first、完整或明确模块作者读后及最终canonical全文审查；root实际读完相关记录，完整顺序/哈希见review。
-- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D不覆盖gamma<=delta_q；无standing fatal对当前合同。
+- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D精确低端定理保留；旧§F把gamma_hi/gamma_lo混用的解读已撤回，互补推论另ID；不把旧审查追认为已发现。
 - Status：complete scoped deterministic fractional-XOS proof; actual Exact-first, author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
 - Related Files：[正文](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)与冻结原件。
 
@@ -3057,9 +3069,9 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Exact Statement / Conclusion：从任意显式原XOS表det-bit-poly输出真实不交allocation，对全部正finite fractional log-CONFIG benchmark同时NSW>=benchmark/1125000；无正singleton matching时actual optimum零。
 - Assumptions：无复杂度假设；C的P=NP仅条件于另有明确promise-gap Karp reduction；E方法限制另用既有CONFIG gap。
 - Dependencies：UM-FRACTIONAL-BENCHMARK-REMATCHING-v1, UM-EXPLICIT-BINARY-RATIONAL-XOS-DOMAIN-v1；页内完整定义、标准有理LP/匹配/路径分解。具体范围见正文。
-- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。
+- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized高端NO需以1−gamma_hi比较低质量计数；旧未覆盖判断撤回；未构造NP-hard源，算法数学规格未实现。
 - Evidence：实际独立Exact-first、完整或明确模块作者读后及最终canonical全文审查；root实际读完相关记录，完整顺序/哈希见review。
-- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D不覆盖gamma<=delta_q；无standing fatal对当前合同。
+- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D精确低端定理保留；旧§F把gamma_hi/gamma_lo混用的解读已撤回，互补推论另ID；不把旧审查追认为已发现。
 - Status：complete scoped deterministic fractional-XOS proof; actual Exact-first, author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
 - Related Files：[正文](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)与冻结原件。
 
@@ -3067,12 +3079,12 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 ## UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1：归一化菜单几乎所有组与同组修复LP边界
 
 - Objects / Domain / Definitions / Quantifiers：原每state总量1、positive-support FSLP及明确同组singleton REPAIR；fixed eta/gamma/a/delta_q量词同正文。
-- Exact Statement / Conclusion：原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；不覆盖gamma<=delta_q。
+- Exact Statement / Conclusion：原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；§F旧高/低gamma比较已撤回；新高端互补推论另ID登记。
 - Assumptions：无复杂度假设；C的P=NP仅条件于另有明确promise-gap Karp reduction；E方法限制另用既有CONFIG gap。
 - Dependencies：UM-FRACTIONAL-BENCHMARK-REMATCHING-v1, UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1, UM-NORMALIZED-MENU-POSITIVE-SUPPORT-CERTIFICATE-DOMAIN-v1, UM-FLAT-MENU-EXACT-STATE-MASS-ONE；页内完整定义、标准有理LP/匹配/路径分解。具体范围见正文。
-- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。
+- Scope：不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized高端NO需以1−gamma_hi比较低质量计数；旧未覆盖判断撤回；未构造NP-hard源，算法数学规格未实现。
 - Evidence：实际独立Exact-first、完整或明确模块作者读后及最终canonical全文审查；root实际读完相关记录，完整顺序/哈希见review。
-- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D不覆盖gamma<=delta_q；无standing fatal对当前合同。
+- Counterevidence / Objections：旧generic-SA数值反驳保留，不回填旧v4完整作者Proof；当前v5任意显式XOS域另审。C–D精确低端定理保留；旧§F把gamma_hi/gamma_lo混用的解读已撤回，互补推论另ID；不把旧审查追认为已发现。
 - Status：complete scoped deterministic fractional-XOS proof; actual Exact-first, author-read-after and whole canonical review; implementation none; novelty unverified；外审未记录；UM-TARGET-v1 OPEN。
 - Related Files：[正文](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)与冻结原件。
 
@@ -3100,3 +3112,308 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：仅最大化福利未控制active数的潜在漏洞由δA罚项处理；inactive组返回原empty-bundle attaining state；不调用免费LP/XOS优化oracle。标准福利工具直接推论，不认证原创性。
 - Status：complete scoped direct corollary of standard welfare rounding; independent reconstruction and exact audit; external review and novelty unverified。UM-TARGET-v1及其一般反面仍OPEN。
 - Related Files：[正文F2](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际审查](../reviews/unrelated_machines/normalized_menu_partial_quota_welfare_review.md)、tests/audits/unrelated_machines/normalized_menu_partial_quota_welfare.py、evidence/runs/unrelated_machines/normalized_menu_partial_quota_welfare.json。
+
+## UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1：阈值叶、共同边际与精确路径投影
+
+- Objects / Domain / Quantifiers / Definitions：显式normalized-flat，非空group/menu、非负binary rational每state质量1，可含零/重复/unused；0<epsilon<=1。投影指定全部旧组为C、仅新增D_+路径组为L；自动版另要求原组皆非threshold-UD；D_+只列positive邻居、保全部zero jobs。 对所有该域Q/epsilon、全部supplied basic点及每个整数t>=2。
+- Exact Statement / Conclusion：全实际epsilon解必给R_cons必要有理LP；同一旧lambda,z的R_cons/R_leaf D_+投影都恰basic；每t>=2 diffuse Q_t在unit阈值两合同及FSLP可行而V=1/t、完整ordinary OPT=2-1/t。弱单matching与MC混合区分，转换确定性总位poly。
+- Assumptions：无复杂度假设；标准有理LP/二部matching/有限运输，不用exact SDP或未知oracle。
+- Dependencies：UM-MODEL-v1, UM-THRESHOLD-LEAF-HALL-DESIGNATED-PARTITION-DOMAIN-v1, UM-NORMALIZED-MENU-POSITIVE-SUPPORT-CERTIFICATE-DOMAIN-v1, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1, UM-NORMALIZED-MENU-FULL-SUPPORT-LP-PRESERVATION-v3；BCG2009相邻路径思想，页内自足运输/完整gap证明。
+- Scope：仅排所定义叶流relaxation相对unit证书的统一正质量提取，不排actual-OPT近似、actual-YES finder、joint-core/PSD、共同完整law或一般hardness；不是所有core系数微小，不认证global novelty。
+- Evidence：新Exact-first、实际作者读后、最终338行独立实读；root实际读取记录与两套完整code并重放。
+- Counterevidence / Objections：自动partition前提不可省；MC不保共同完整law；弱单matching不能升级；positive degree不含zero eligibility。无standing fatal对当前域。
+- Status：complete scoped projection and sharp unit-threshold gap; independent reconstruction and actual final whole-text review; audit only; novelty unverified；UM-TARGET-v1及反面均OPEN。
+- Related Files：[正文](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[新审查](../reviews/unrelated_machines/threshold_leaf_hall_consistent_marginals_path_projection_review.md)、所列代码/冻结原件。
+
+
+## UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1：鲁棒高低比例互补纠错
+
+- Objects / Domain / Quantifiers / Definitions：同一个非空原group集合、原norm1显式非负binary-rational indexed菜单、positive-support unit-FSLP；eta固定在(0,1]，delta_q/高端计数严格号按正文。不是一般非归一化或隐式菜单。
+- Exact Statement / Conclusion：原norm1显式菜单unit-FSLP可行；固定eta，q_eta=(2^24)^(-ceil(1/eta))，0<delta_q<=q_eta及0<=gamma_hi<=1−eta时，C的同一实际allocation有计数 #{g:quality_g>=delta_q}>gamma_hi*n。因此all-allocation高端robust NO不可能；其互补低端比例是1−gamma_hi。
+- Assumptions：无复杂度假设；依赖原C的实际输出和精确集合互补。
+- Dependencies：UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1 与原norm1/positive-support域；不重证A/B。
+- Scope：只修旧§F解释并给C直接推论；A/B与C–D原精确低端定理未被此反驳。无全组maxmin、一般UM次二算法/困难性或未来gated构造认证。
+- Evidence：旧2365正文/header/F与新bfd9 header/C–F/全diff实际读后，冻结fc0f04记录，root实际全文读取。
+- Counterevidence / Objections：旧§F未覆盖判断有实质错误，已撤回；严格/弱边界不能无条件互换；旧审查漏检事实保留。
+- Status：complete elementary complement corollary; actual targeted correction review; old erroneous interpretation explicitly withdrawn; novelty not claimed；主目标OPEN。
+- Related Files：[正文F](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)、[实际纠错审查](../reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md)。
+
+
+## UM-NORMALIZED-GATED-MENU-VALUE-v1：归一化门控菜单与真实平衡值
+
+- Objects / Domain / Definitions / Quantifiers：n>=1,m>=1；非空indexed states，distinct资源、非负binary rational系数每state总量1；pin/connector/gate/selector/全部incidence与零job恰按正文§1。 全部输入与所有参数按正文精确量词。
+- Exact Statement / Conclusion：所有上述输入OPT(P_gate)=2−beta*；任意完整C<2解码不交原bundles，反向保全部jobs含零/未选states；双向det-bit-poly。
+- Assumptions：结构结果无复杂度假设；排NP归约的结论以其实际P≠NP或随机归约假设为条件。
+- Dependencies：UM-NORMALIZED-GATED-MENU-EXPLICIT-DOMAIN-v1, UM-MODEL-v1；正文自足内部推导及明确标准工具。
+- Scope：仅完整显式norm1菜单和新gated普通矩阵；旧flat全组selector、多层/共享内部/非归一化/隐式表未覆盖。福利机制为DNS既有工具，13/8不称锐或新颖；generic rational LP仅数学规格，软件finite audit only。
+- Evidence：Exact-first独立重构、实际完整作者读后和最终正文实读；源与新颖性分开。有限审计见review，不作一般证明。
+- Counterevidence / Objections：旧NSW高低gamma解释错误已撤回，原A/B和C–D定理保留；近完美作者与独立审者身份互换并如实记录。
+- Status：complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded；外审及全球新颖性未认证；UM-TARGET-v1与其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)、[实际审查](../reviews/unrelated_machines/normalized_gated_menu_welfare_review.md)及其来源/输入/代码/冻结结果。
+
+
+## UM-NORMALIZED-GATED-MENU-WELFARE-APPROX-v1：归一化加权门控类的未知最优值十三八近似
+
+- Objects / Domain / Definitions / Quantifiers：n>=1,m>=1；非空indexed states，distinct资源、非负binary rational系数每state总量1；pin/connector/gate/selector/全部incidence与零job恰按正文§1。 全部输入与所有参数按正文精确量词。
+- Exact Statement / Conclusion：整个明确norm1 gated类有det-bit-poly真实13/8近似，无FSLP前提/未知OPT输入。联合使用明确福利LP x<=z、标准最大系数舍入的精确CDF确定性化、真实排序平衡与所有jobs映射；不是generalUM。
+- Assumptions：结构结果无复杂度假设；排NP归约的结论以其实际P≠NP或随机归约假设为条件。
+- Dependencies：UM-NORMALIZED-GATED-MENU-EXPLICIT-DOMAIN-v1, UM-NORMALIZED-GATED-MENU-VALUE-v1；正文自足内部推导及明确标准工具。
+- Scope：仅完整显式norm1菜单和新gated普通矩阵；旧flat全组selector、多层/共享内部/非归一化/隐式表未覆盖。福利机制为DNS既有工具，13/8不称锐或新颖；generic rational LP仅数学规格，软件finite audit only。
+- Evidence：Exact-first独立重构、实际完整作者读后和最终正文实读；源与新颖性分开。有限审计见review，不作一般证明。
+- Counterevidence / Objections：旧NSW高低gamma解释错误已撤回，原A/B和C–D定理保留；近完美作者与独立审者身份互换并如实记录。
+- Status：complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded；外审及全球新颖性未认证；UM-TARGET-v1与其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)、[实际审查](../reviews/unrelated_machines/normalized_gated_menu_welfare_review.md)及其来源/输入/代码/冻结结果。
+
+
+## UM-NORMALIZED-ROBUST-PARTIAL-SOURCE-LP-BARRIER-v1：归一化部分束源的互补纠错与近完美LP判别
+
+- Objects / Domain / Definitions / Quantifiers：n>=1,m>=1；非空indexed states，distinct资源、非负binary rational系数每state总量1；pin/connector/gate/selector/全部incidence与零job恰按正文§1。 全部输入与所有参数按正文精确量词。
+- Exact Statement / Conclusion：high>=delta少于gamma_hi*n对应low<delta多于(1−gamma_hi)n；完整YES由positive-support FSLP在gamma_hi<=(5/8−delta)/(1−delta)判；近完美YES由福利LP在(5/8)(1−eta)>=gamma_hi+(1−gamma_hi)delta判，分别同样覆盖high>delta版本及等号；含gamma_hi<=delta<=3/8,eta<=1/40。
+- Assumptions：结构结果无复杂度假设；排NP归约的结论以其实际P≠NP或随机归约假设为条件。
+- Dependencies：UM-NORMALIZED-GATED-MENU-EXPLICIT-DOMAIN-v1；正文自足内部推导及明确标准工具。
+- Scope：仅完整显式norm1菜单和新gated普通矩阵；旧flat全组selector、多层/共享内部/非归一化/隐式表未覆盖。福利机制为DNS既有工具，13/8不称锐或新颖；generic rational LP仅数学规格，软件finite audit only。
+- Evidence：Exact-first独立重构、实际完整作者读后和最终正文实读；源与新颖性分开。有限审计见review，不作一般证明。
+- Counterevidence / Objections：旧NSW高低gamma解释错误已撤回，原A/B和C–D定理保留；近完美作者与独立审者身份互换并如实记录。
+- Status：complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded；外审及全球新颖性未认证；UM-TARGET-v1与其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)、[实际审查](../reviews/unrelated_machines/normalized_gated_menu_welfare_review.md)及其来源/输入/代码/冻结结果。
+
+
+## UM-ACTUAL-KRONECKER-NO-TO-YES-v1：完整实际矩阵平方与全偶次幂的反放大
+
+- Objects / Domain / Definitions / Quantifiers：m>=1,n>=0，合法非负有理有限边/∞；全部机器对/任务对保留，有限资格笛卡尔积，时间非负乘积；不剪枝。 全部输入与所有参数按正文精确量词。
+- Exact Statement / Conclusion：显式8机10job seed真实OPT3/2，完整square64机100job400有限边可全机load1；所有完整偶次幂OPT1。含全部mixed jobs，关闭该通用平方保NO合同；不宣称首次发现现象或hard source。
+- Assumptions：结构结果无复杂度假设；排NP归约的结论以其实际P≠NP或随机归约假设为条件。
+- Dependencies：UM-ACTUAL-NONNEGATIVE-KRONECKER-DOMAIN-v1；正文自足内部推导及明确标准工具。
+- Scope：只给本seed全矩阵反例与指定未剪枝LP恒等式；无NP源，不排特定hard image或物理一致性产品，不是UM主反证。
+- Evidence：Exact-first独立重构、实际完整作者读后和最终正文实读；源与新颖性分开。有限审计见review，不作一般证明。
+- Counterevidence / Objections：旧checker负编号/额外row语义缺口已修；v3严格finite记录另审，不把旧版本追认为已拒。先前boss7同现象报告保归属。
+- Status：complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded；外审及全球新颖性未认证；UM-TARGET-v1与其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/private_graft_and_resource_repetition.md)、[实际审查](../reviews/unrelated_machines/actual_kronecker_product_review.md)及其来源/输入/代码/冻结结果。
+
+
+## UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1：未剪枝指派LP的精确可乘恒等式
+
+- Objects / Domain / Definitions / Quantifiers：m>=1,n>=0，合法非负有理有限边/∞；全部机器对/任务对保留，有限资格笛卡尔积，时间非负乘积；不剪枝。 全部输入与所有参数按正文精确量词。
+- Exact Statement / Conclusion：对所有合法非负有理矩阵含n0/zero/∞，未剪枝assignmentLP F(P⊗Q)=F(P)F(Q)，非负原初/对偶相乘；不是剪枝LST或CONFIG。
+- Assumptions：结构结果无复杂度假设；排NP归约的结论以其实际P≠NP或随机归约假设为条件。
+- Dependencies：UM-ACTUAL-NONNEGATIVE-KRONECKER-DOMAIN-v1；正文自足内部推导及明确标准工具。
+- Scope：只给本seed全矩阵反例与指定未剪枝LP恒等式；无NP源，不排特定hard image或物理一致性产品，不是UM主反证。
+- Evidence：Exact-first独立重构、实际完整作者读后和最终正文实读；源与新颖性分开。有限审计见review，不作一般证明。
+- Counterevidence / Objections：旧checker负编号/额外row语义缺口已修；v3严格finite记录另审，不把旧版本追认为已拒。先前boss7同现象报告保归属。
+- Status：complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded；外审及全球新颖性未认证；UM-TARGET-v1与其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/private_graft_and_resource_repetition.md)、[实际审查](../reviews/unrelated_machines/actual_kronecker_product_review.md)及其来源/输入/代码/冻结结果。
+
+
+## UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2：互斥查询多见证的阈值二收费与容量
+
+- Objects / Domain / Definitions / Quantifiers：p>=1、0<a_r,b_r,c<=1有理，c+Σb>=1；q:H→A、x:A→R、f:R→S全部原任务，指定pattern、原f owner改派费。 全部输入与所有参数按正文精确量词。
+- Exact Statement / Conclusion：OPT(P)=1；每pattern OPT_K=min(2,max(1,B_K))，闭beta<2最小fee按B_K>beta/ c+B_K<=beta/其余为∞/0/1。单queries各strict且阈值2共享同一f；无全开strict。非空K共同strict且每single收费迫|K|(beta−c)<B_K<=1，beta>=3/2时至多1；empty另0。
+- Assumptions：结构结果无复杂度假设；排NP归约的结论以其实际P≠NP或随机归约假设为条件。
+- Dependencies：UM-MULTIWITNESS-FEE-FIXED-MATRIX-DOMAIN-v2, UM-MODEL-v1；正文自足内部推导及明确标准工具。
+- Scope：同一OPT1显式易解P的精确读取/费用合同；无共同全开strict、无源NO decoder或可复用fanout，不是OPT gap或UM主反证。
+- Evidence：Exact-first独立重构、实际完整作者读后和最终正文实读；源与新颖性分开。有限审计见review，不作一般证明。
+- Counterevidence / Objections：v1空K严格和式错误保留；v2明确非空K，empty另费0。
+- Status：complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded；外审及全球新颖性未认证；UM-TARGET-v1与其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/two_witness_query_separation.md)、[实际审查](../reviews/unrelated_machines/multiwitness_shared_job_fee_review.md)及其来源/输入/代码/冻结结果。
+
+
+## UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1
+
+- ID/version：UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1。
+- Objects / Domain / Definitions：显式normalized-flat的typed单outer；跨全部outer-state索引的正homes互异、每home恰一own-singleton helper；fallback states normalized且只用与homes分离的任意共享B，可无fallback；无其他groups；全部selector/incidence/zero/unselected jobs保留。
+- Quantifiers / Exact Statement / Conclusion：给定Q、0<epsilon<=1及同一完整primitive-SA1有理点，可det-bit-poly输出真实全组质量>=epsilon²/4及全部原job分配C<=2−epsilon²/4；成本按三项总编码。
+- Assumptions：无复杂度假设；NP-source排除仅作为结构算法在P!=NP下的直接推论。
+- Dependencies：UM-MODEL-v1, UM-SINGLE-OUTER-TYPED-PRIMITIVE-SA1-DOMAIN-v1, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1；页内精确证明及已明确扣除的标准工具。
+- Scope：特殊typed结构，不覆盖多个outer、无own-home辅助groups、一般UM；软件none、福利工具既有、全局新颖性未认证。
+- Evidence：Exact-first独立重构、实际作者读后及最后规范正文的实读；root逐项实际读取；不登记未运行软件。
+- Counterevidence / Objections：多个outer条件点不能免费合并；标准福利后端非本次原创；同名13/8门控矩阵是另一对象。 当前精确域无standing fatal。
+- Status：complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified；主目标及其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)、[实际审查](../reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md)及其保真来源。
+
+
+## UM-SINGLE-OUTER-TYPED-13-8-v1
+
+- ID/version：UM-SINGLE-OUTER-TYPED-13-8-v1。
+- Objects / Domain / Definitions：显式normalized-flat的typed单outer；跨全部outer-state索引的正homes互异、每home恰一own-singleton helper；fallback states normalized且只用与homes分离的任意共享B，可无fallback；无其他groups；全部selector/incidence/zero/unselected jobs保留。
+- Quantifiers / Exact Statement / Conclusion：只输入typed Q，恰11次普通有理LP查询、至多一次CDF舍入，det-bit-poly输出全部原jobs，C<=13/8 OPT；无OPT/点/oracle输入。
+- Assumptions：无复杂度假设；NP-source排除仅作为结构算法在P!=NP下的直接推论。
+- Dependencies：UM-MODEL-v1, UM-SINGLE-OUTER-TYPED-PRIMITIVE-SA1-DOMAIN-v1, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1；页内精确证明及已明确扣除的标准工具。
+- Scope：特殊typed结构，不覆盖多个outer、无own-home辅助groups、一般UM；软件none、福利工具既有、全局新颖性未认证。
+- Evidence：Exact-first独立重构、实际作者读后及最后规范正文的实读；root逐项实际读取；不登记未运行软件。
+- Counterevidence / Objections：多个outer条件点不能免费合并；标准福利后端非本次原创；同名13/8门控矩阵是另一对象。 当前精确域无standing fatal。
+- Status：complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified；主目标及其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)、[实际审查](../reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md)及其保真来源。
+
+
+## UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1
+
+- ID/version：UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1。
+- Objects / Domain / Definitions：显式normalized-flat的全部finite-endpoint Boolean degree4共同functional，M2 PSD、job onehot所有允许乘子、每机器有限有理真实CONFIG的first/pair及全部global affine physical-load localizers；1<=T<2；证书完整提供而非免费finder。
+- Quantifiers / Exact Statement / Conclusion：对每个Q及有理1<=T<2，raw K2(P(Q),T)可行 iff raw K2(P(D_+Q),T)可行；给定两方向任一有限有理证书可det-bit-poly转换，保原moments<=4与private CONFIG；同时省localizers版本亦同。
+- Assumptions：无复杂度假设；NP-source排除仅作为结构算法在P!=NP下的直接推论。
+- Dependencies：UM-MODEL-v1, UM-FLAT-RAW-K2-FINITE-RATIONAL-CERTIFICATE-DOMAIN-v1；页内精确证明及已明确扣除的标准工具。
+- Scope：仅给定raw K2有限有理证书的双向转换；非exact SDP可行性后端、非canonical native C2、非弱R_cons的强gap升级，非一般算法或hardness。
+- Evidence：Exact-first独立重构、实际作者读后及最后规范正文的实读；root逐项实际读取；不登记未运行软件。
+- Counterevidence / Objections：弱R_cons点不证明强K2 gap；不能把canonical额外限制或任意quartic literal非负当raw合同。 当前精确域无standing fatal。
+- Status：complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified；主目标及其反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)、[实际审查](../reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md)及其保真来源。
+
+
+## UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1：匿名原任务身份的矩障碍
+
+- ID/version / Objects / Domain / Definitions：UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1；共同degree4 Boolean functional/global M2；有限同菜单组k>=1,0<=r<=k，A/X满足XA=X、ΣX=rA的全允许乘子；原identity端onehot/Boolean至4；固定k4 d10 delta1/100点。全局affine-context容量块另允许任意显式原任务类别及非Boolean X。
+- Quantifiers / Exact Statement / Conclusion：形式标签lift一般保共同M1含inactive/home与k1/r0/rk；给定67维aggregate M2(rank55)点有形式Q²=-1/150且无任何保全部<=4矩的原token M2 extension；必要整个head×context矩阵由原quadratic SOS给出，坏方向-1/25。 一般M1/必要块对所有该域共同functional成立；非扩展针对固定点。
+- Assumptions：无复杂度假设；原onehot/Boolean/M2准确使用，signed beta非true law。
+- Dependencies：UM-MODEL-v1, UM-ANONYMOUS-TOKEN-COMMON-MOMENT-DOMAIN-v1；页内Laplacian/Schur与原SOS。
+- Scope：仅给定point非扩展，不是所有points不可行；13机context actualOPT1，非原任务K2 gap/hardness/一般算法或SDP finder；必要块未证充分，显式任务与binary需求不混。
+- Evidence：Exact-first、实际作者读后及最终附录实读；root完整读两code、三个新目录重放。
+- Counterevidence / Objections：M1不能升M2；异context块不可单独PSD；原input OPT1且可换point。当前范围无standing fatal。
+- Status：complete scoped algebraic proof; Exact-first reconstruction and actual final appendix reading; finite exact audit only; novelty unverified；主目标/反面OPEN。
+- Related Files：[正文§7](../current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)、[新审查](../reviews/unrelated_machines/anonymous_token_label_lift_and_nonextension_review.md)及其原件/代码/证据。
+
+
+## UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1
+
+- ID/version / Objects / Domain / Definitions：UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1；固定18m17j34端normalized-flat族Qc，0<c<1有理、T1+c、epsilon1−c；完整共同Boolean/onehot degree4/M2、全部raw-affine物理localizers及每行完整legal CONFIG law共享全部本地矩；每行≤3端。
+- Quantifiers / Exact Statement / Conclusion：对每个c可detbitpoly生成指定强物理证书，所有每机full-row laws仍不能保证direct A=a,Z=aE的同点plainSA1：负claim-state=-1/160、quality-state=-c/160；实际OPT1。
+- Assumptions：所有共同表/全部原jobs按正文定义；无复杂度假设、真实global law或未知oracle。
+- Dependencies：UM-MODEL-v1, UM-FLAT-RAW-K2-FULL-LOCAL-LAW-PULLBACK-DOMAIN-v1, UM-FLAT-RAW-K2-FINITE-RATIONAL-CERTIFICATE-DOMAIN-v1；页内自足PSD/SOS/有限矩或literal分解与标准rationalLP。
+- Scope：只反对给定点指定map，非actualOPTgap/改点不可能/一般算法或hardness；全globaltriple positivity会切该点。
+- Evidence：先独立Exact重构、root实际全文读后释放Proof、实际读后与最终新增两节实读；只一量词句后作定向核对。
+- Counterevidence / Objections：原实例OPT1且有别的R点，旧14m同机triple缺口已透明保留。 当前精确范围无standing fatal。
+- Status：complete scoped parametric counterexample; independent Exact-first and actual final reading; finite audit only; novelty unverified；主目标及反面OPEN。
+- Related Files：[正文§13–14](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)、[实际审查](../reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md)及其来源/证据。
+
+
+## UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1
+
+- ID/version / Objects / Domain / Definitions：UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1；任意显式normalized-flat Q，全部zero/inactive/indexed/unused finite endpoints；1<=T<2；共同完整有理degree4 L，全部原boxes/raw slack/unit resource cap1×≤3 raw literals及Boolean/onehot允许乘子。目标plain共同primitive-SA1精确定义。
+- Quantifiers / Exact Statement / Conclusion：每真实T-schedule给S3 Dirac点；显式rationalLP infeasible=>OPT>T；每给定S3点的指定product pullback满足完整R_(2−T) plainSA1，若另给同点rawM2则另保canonicalM1；构建/求解/提取均totalbitpoly，无PSDfinder。
+- Assumptions：所有共同表/全部原jobs按正文定义；无复杂度假设、真实global law或未知oracle。
+- Dependencies：UM-MODEL-v1, UM-FLAT-RAW-SA3-POINT-DOMAIN-v1；页内自足PSD/SOS/有限矩或literal分解与标准rationalLP。
+- Scope：仅necessary LP与充分point接口，非反向actual可行性/全部group rounding/一般UM；S3与K2无自动包含关系，optionalPSD不带exact SDPfinder；不称层数最小。
+- Evidence：先独立Exact重构、root实际全文读后释放Proof、实际读后与最终新增两节实读；只一量词句后作定向核对。
+- Counterevidence / Objections：Source cap1、所有三literal乘子、normalization与共同点不可省；未宣称S3已含PSD。 当前精确范围无standing fatal。
+- Status：complete scoped same-point transfer proof; independent Exact-first and actual final reading; software none; novelty unverified；主目标及反面OPEN。
+- Related Files：[正文§13–14](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)、[实际审查](../reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md)及其来源/证据。
+
+
+## UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1
+
+- ID/version：UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1。
+- Objects / Domain / Definitions：全部普通UM的positive binary-rational T与有限有理raw K2证书：全部finite端、共同degree4 Boolean/onehot商及M2、逐机完整legal CONFIG first/pair、全部global affine physical-load localizers；无共同CONFIG指标四次links、无canonical gates。
+- Quantifiers / Exact Statement / Conclusion：所有k>=2，L2k²,M1+60Lk4的显式共享终端族实际OPT2−floor√k/k，raw K2在T1+1/k有det-bit-poly生成指定有理证书；缩放到T1实际OPT趋2，结合slot上界得此raw合同全类gap supremum2。
+- Assumptions：无复杂度假设，全部原jobs不可分且每样本onehot；证书含全机CONFIG distribution但只共享first/pair。
+- Scope：仅所列raw relaxation gap，非hardness/一般算法非存在性；row triple和跨行selector×incoming条件可切给定点，不声称canonical C2、joint-CONFIG M2、高阶load或全SoS(CONFIG)gap；一般输入证书finder未提供。
+- Dependencies：UM-MODEL-v1、UM-RAW-K2-FINITE-RATIONAL-CERTIFICATE-DOMAIN-v1、UM-ST-ROUND-v1及正文§4–10自足定量证明。
+- Evidence：独立Exact-first完整重构先冻，root实读后释放Proof；作者Proof读后和最终正文实际全文读；root实际读代码并两新目录精确重放。
+- Counterevidence / Objections：当前raw合同无standing fatal；stronger two-event条件及same-row triple明确失败，不能扩为所有算法或高层级。
+- Status：complete exact raw-system gap theorem; independently reconstructed and actual final read; finite local audit only; novelty unverified；外审、新颖性、独立论文价值未认证，主目标及反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)、[实际审查](../reviews/unrelated_machines/diluted_shared_terminal_raw_k2_gap_review.md)及所列原件/有限软件记录。
+
+
+## UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1
+
+- ID/version / Objects / Domain / Definitions：UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1；每固定整数d>=2、一般普通UM与目标T>0；共同degreeD=max(4,d) Boolean/onehot商、globalM2、每机legal CONFIG全部同机degree<=d矩一致及全部global-affine physical-load localizers；无joint CONFIG indicators或higher q。
+- Quantifiers / Exact Statement / Conclusion：每固定d及所有k>=d，显式L2k²/M1+120Lk4+4kZAmax族真实OPT2−floor√k/k，T1+(d−1)/k有det-bit-poly指定证书；缩放target1实际值趋2，故此合同gap supremum2；指数可依固定d。
+- Assumptions：无复杂度假设；全部原jobs不可拆/finite eligibility；每固定d分别量化，无binary d统一poly承诺。
+- Dependencies：UM-MODEL-v1、UM-RAW-ROW-DEGREE-CONFIG-AFFINE-DOMAIN-v1、UM-ST-ROUND-v1及正文§13.1–13.6独立自足有限差分/定量概率证明。
+- Scope：非uniform variable-d algorithm、非高阶负载/完整SoS(CONFIG)/canonical C2/jointCONFIG-M2 gap，非hardness或一般算法不存在；原degree3跨行条件切给定点；d+1>D仅自然延伸下一阶失败。
+- Evidence：新Exact-first4294c…、作者Proof实际读后c3ac3…、最终新195行实读d4dcc…；旧前缀仅hash。root完整读source/code并一次规范CLI四例逐字重放。
+- Counterevidence / Objections：degree3跨行条件始终负，下一阶仅自然extension；来源策略作者合作不计盲审，旧k2 audit不升级。当前精确合同无standing fatal。
+- Status：complete fixed-d raw row-consistency gap proof; independent Exact-first, author read-after and actual new-section final read; finite four-case audit only; novelty unverified，主目标及一般反面OPEN。
+- Related Files：[正文§13](../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)、[实际审查](../reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md)及所列完整来源/有限记录。
+
+
+## UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1
+
+- ID/version / Objects / Domain / Definitions：UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1；任意输入k>=1个单indexed-state outers，所有positive homes跨outer互异，每home一个own-unit helper，shared B disjoint homes且任意显式normalized fallback，无其它groups；每outer Σw1,wmax<=1/(4096k⁴)，所有zero/duplicate/inactive原jobs保留。
+- Quantifiers / Exact Statement / Conclusion：只输入完整typed Q，可det total-bit-poly输出全部ordinary P(Q)原jobs合法σ，Cmax<=19/10 OPT；内部plain共同SA1 LP infeas给actualOPT>17/16并用baseline，feasible用CDF/MW+globalvariance精确CE+q.1回填；无SDP/给定点oracle。
+- Assumptions：algorithm无复杂度假设，标准rationalLP/有理算术/MW/ES/CE；source排除推论另假设P≠NP。
+- Scope：仅此typed profile，非任意Q/多state outer/重home/一般UM，k²或高阶moment后续不混入；只有有限pair backend，无端到端软件。排近二hardness源仅所有输出本域、YESOPT1/NO>=2−γ fixedγ<.1且P≠NP。
+- Dependencies：UM-MODEL-v1, UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-DOMAIN-v1, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1及正文§3–9完整自足算法/概率/bit证明。
+- Evidence：独立Exact-first用不同强凸势算法，后实际全文读作者MW算法，最终175行实读；root已实际全读source/code及一次新目录exact replay。
+- Counterevidence / Objections：多state或large home不能免费归一；CE不能丢requestcoins；后续vector/moment候选不自动扩大此合同。当前精确范围无standing fatal。
+- Status：complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; independent Exact-first and actual author/final read; backend audit only; novelty unverified，一般主目标及反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[实际审查](../reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md)及sources/finiteaudit。
+
+
+## UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2
+
+- ID/version / Objects / Domain / Definitions：UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2；完整显式native unique-home/unit-forward DAG加unit-only entry jobs；有理1<=T<2；同一个degree6原端Boolean/onehot/M3、各行合法CFG first/pair、全部global degq<=2物理负载平方；sink无自有jobs。
+- Exact Statement / Quantifiers / Conclusion：每个正质量非home unit入口推出新的parent-bounded单根firstflow，real r=k(2−T)、k1可选不衰减；仅整数网格恢复辅助CFG first。集合包含原矩强制δd1(δd2−M)<=H，每固定多项式q缩放最终每固定T<2均sound FAIL，虽CFGopt1与actualOPT趋2。 逐点forall共同L及其positive入口；asymptotic先固定a,b,δ再forall允许整数scales。
+- Assumptions / Dependencies：无复杂度假设；UM-MODEL-v1、UM-NATIVE-RAW-SH3-COMMON-ORIGINAL-ENDPOINT-DOMAIN-v1及正文自足PSD-null/条件流/普通LP/子集分解/原jobs计数。原paper包含机制扣除，不导入其hierarchy点。
+- Scope：不是保原点矩的canonical扩展/原全实例新点/完整调度器/SH3gap/复杂性困难性；不ceil realquota、不将单entry失败等同整个OPT>T；多层同owner路径预算未免费继承。
+- Evidence：inclusion Exact-first00c51…→实际Proof读后704bd…；general先行f7587…→作者v2实读0d2c4…；最终全文1e513…加唯一归一化差分d36fa…实读859cc…。root全部材料/code实际读并两fresh-output重放116d69…。
+- Counterevidence / Objections：归一化记号歧义已统一a/p与f/a；rawpoint restriction保所有6次矩及bit增长已补。多层owner机制未解；无standingfatal于本精确范围。
+- Status：complete scoped conditional-firstflow and inclusion sound-FAIL proof; independent statement-first and actual read-after/final diff; finite arithmetic audit only; novelty unverified；一般UM正反面OPEN。
+- Related Files：[正文](../current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md)、[实际审查](../reviews/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity_review.md)及所列原件/有限证据。
+
+
+## UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4
+
+- ID/version / Objects / Domain / Definitions：UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4；完整显式normalized-flat typed Q；变量k>=1个single-state outers，跨全体互异positive homes，各一个own-unit helper，任意normalized B-only fallback；任意B-only extra leaves在epsilon15/16满足whole-menu threshold-UD iff；k1无额外tiny，k>=2 maxw<=1/(16384k²)；所有zero/indexed/inactive原jobs保留。
+- Quantifiers / Exact Statement / Conclusion：只输入Q，用固定确定性worst-case total-bit-poly算法输出全部ordinary原jobs合法σ，Cmax<=19/10 OPT；k1固定顺序submodular greedy，k>=2匹配profile势/有理FW/共同prefix-flow；另有独立全程actual-allocation局部势后端；无OPT/点/SDP或joint-profile oracle。
+- Assumptions：算法无复杂度假设；标准有理matching/flow/LP及matroid工具自足使用；source排除推论另假设P≠NP。
+- Dependencies：UM-MODEL-v1, UM-MULTI-OUTER-SHARED-UD-TINY-HOME-DOMAIN-v4, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1；新§12–20自足全部共同资源、actual benchmark、进展、bit与原jobs证明。
+- Scope：特殊typed域；不覆盖multistate outer/重home/一般nonUD extras/任意P。新域k²不与旧v1 k⁴算法软件混；只有exchange finite audit、无完整实现。仅排全部输出该域且YESactualOPT1/NO>=2−gamma fixed0<gamma<.1的NP归约(P!=NP)，非UM正面或反面突破。
+- Evidence：新v4 Exact-first149行69036ac6、实际作者204行读后80行4d2d、NSW知情新域89行d262和新实际算法攻击123行d555；最终207新增行实读c016；root实际全读这些来源/code及fresh replay。
+- Counterevidence / Objections：一般multistate/home overlap仍缺共同profile；有限校准非全称证明；v3不同k1量词保留不倒改。当前精确域无standing fatal。
+- Status：complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; new Exact-first, actual author and final reading; exchange lemma audit only; novelty unverified；一般UM及反面OPEN。
+- Related Files：[正文§12–20](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[新实际审查](../reviews/unrelated_machines/shared_ud_tiny_home_potential_rounding_review.md)及保真来源/finite records。
+
+
+## UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5
+
+- ID/version / Objects / Definitions / Domain：UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5；显式normalized-flat单state outers、全局互异homes/own-unit helpers、任意shared B fallback及epsilon15/16 whole-menu threshold-UD B-only leaves；k1无tiny，k>=2 maxw<=1/(1024k)，完整原indexed/zero/inactive jobs。
+- Exact Statement / Quantifiers / Conclusion：对该域全部显式输入和所指共同点逐个成立；仅Q输入，维护actual独立原incidence集，ordinary matching/weighted-rank局部候选及全有理分段倒数势，worst-case总位poly输出全部原jobs σ且Cmax<=19/10 OPT；可靠FAIL actualV<=18/19，k1无ν。
+- Assumptions / Dependencies：UM-MULTI-OUTER-SHARED-UD-TINY-HOME-DOMAIN-v5, UM-MODEL-v1, UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1；正文自足证明及明确标准工具，无复杂度假设；仅v5的source排除另假设P≠NP。
+- Scope：仅此typed域，非多state outer/重home/nonUD extras/任意UM；无软件。只排全部输出本域且YESOPT1/NO>=2−γ fixedγ<.1的NP归约(P!=NP)，一般主目标正反面OPEN。
+- Evidence：对应Exact先行独立重构、root实读后释放作者Proof、实际作者读后与最终规范稿实读，各票保原字节，详实际审查。
+- Counterevidence / Objections：必须保single-state/互异homes/UD叶及新O1k tiny；实际OPT属于[1,2]，不是所有实例OPT1。两种算法、FAIL阈值、软件身份不混；一般profile/source decoder仍未解。
+- Status：complete scoped O(1/k)-home Q-alone deterministic bit-polynomial 19/10 algorithm; independent Exact-first and actual author/final reading; software none; novelty unverified；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)、[实际审查](../reviews/unrelated_machines/shared_ud_relative_curvature_rounding_review.md)及所列保真来源/有限记录。
+
+## UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1
+
+- ID/version / Objects / Definitions / Domain：UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1；每显式d>=1及0<=h<=d，h-subsets的常数/singleton/异pair 0/1特征，D1+d+C(d,2)；按poly(d)而非poly(log d)。
+- Exact Statement / Quantifiers / Conclusion：对该域全部显式输入和所指共同点逐个成立；det-poly(d)输出<=D个实际h-subsets及非负有理权，精确保uniform first h/d、异pair h(h−1)/(d(d−1))；显式列压缩不需quadratic oracle。 d=1无异pair。
+- Assumptions / Dependencies：UM-CARDINALITY-FIRST-PAIR-FEATURE-DOMAIN-v1；正文自足证明及明确标准工具，无复杂度假设；仅v5的source排除另假设P≠NP。
+- Scope：仅显式定基数first/pair的抽象证书算法；d=1没有异pair。稀疏row law不保更高矩或替换共同L，无quadratic oracle，无UM gap/hardness/一般调度结论；软件none。
+- Evidence：对应Exact先行独立重构、root实读后释放作者Proof、实际作者读后与最终规范稿实读，各票保原字节，详实际审查。
+- Counterevidence / Objections：只精确保first/pair，不保slice三阶以上矩；poly(d)包含显式d标签，非poly(logd)。没有把稀疏rowlaw替原共同L，当前范围无standingfatal。
+- Status：complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[实际审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)及所列保真来源/有限记录。
+
+## UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2
+
+- ID/version / Objects / Definitions / Domain：UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2；全部正偶d,s且2<=s<=d/2；明确d+2机器/d+1jobs原星及七态真实完整law P，eta=s/d,h=s/2,T1+eta,p=eta³/1000；扩展保同一指定base矩/Boolean/onehot/M3和指定Gram等式。
+- Exact Statement / Quantifiers / Conclusion：对该域全部显式输入和所指共同点逐个成立；生成同一degree6原端M3/Boolean-onehot、全部global q<=2物理localizers及每行显式poly-support legal CONFIG firstpair；P坏峰2质量eta³/1000独立d，actualOPT1。
+- Assumptions / Dependencies：UM-SEVEN-STATE-STAR-ORIGINAL-ENDPOINT-LAW-DOMAIN-v1, UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1, UM-MODEL-v1；正文自足证明及明确标准工具，无复杂度假设；仅v5的source排除另假设P≠NP。
+- Scope：原星actualOPT1，只有局部共同M3/globalq2及显式rowCFG证书；不是SH3 integrality gap、递归共同law、hardness或一般调度算法。有限12例不作全称证明。
+- Evidence：对应Exact先行独立重构、root实读后释放作者Proof、实际作者读后与最终规范稿实读，各票保原字节，详实际审查。
+- Counterevidence / Objections：原输入OPT1不能当gap；父/子/共享head新增负载仍需单付，rowCFG替代不改高阶L，当前范围无standingfatal。
+- Status：complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[实际审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)及所列保真来源/有限记录。
+
+## UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1
+
+- ID/version / Objects / Definitions / Domain：UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1；全部正偶d,s且2<=s<=d/2；明确d+2机器/d+1jobs原星及七态真实完整law P，eta=s/d,h=s/2,T1+eta,p=eta³/1000；扩展保同一指定base矩/Boolean/onehot/M3和指定Gram等式。
+- Exact Statement / Quantifiers / Conclusion：对该域全部显式输入和所指共同点逐个成立；实仿射Boolean分类仅constant/primitive literal；base4+commonM3的线性Gram端点版本成立，同行unitpair0使covered正owners<=2且互补；随机背景N-owner反例阻止无条件degree界。
+- Assumptions / Dependencies：UM-SEVEN-STATE-STAR-ORIGINAL-ENDPOINT-LAW-DOMAIN-v1, UM-MODEL-v1；正文自足证明及明确标准工具，无复杂度假设；仅v5的source排除另假设P≠NP。
+- Scope：只保base4、同一M3、covered端点线性Gram及固定全支持背景；不能扩为无条件物理入度<=2，也不限制所有非仿射依赖，无软件或一般hardness。
+- Evidence：对应Exact先行独立重构、root实读后释放作者Proof、实际作者读后与最终规范稿实读，各票保原字节，详实际审查。
+- Counterevidence / Objections：条件点须另有全支持及M3；A之外端点不受分类，跨背景N个正owner例子排无条件degree界，当前范围无standingfatal。
+- Status：complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[实际审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)及所列保真来源/有限记录。
+
+## UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1
+
+- ID/version / Objects / Definitions / Domain：UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1；全部正偶d,s且2<=s<=d/2；明确d+2机器/d+1jobs原星及七态真实完整law P，eta=s/d,h=s/2,T1+eta,p=eta³/1000；扩展保同一指定base矩/Boolean/onehot/M3和指定Gram等式。
+- Exact Statement / Quantifiers / Conclusion：对该域全部显式输入和所指共同点逐个成立；base<=5共同M3/Boolean及原v负载不变、原degree-one Z忠实Gram CY_i时，q=Z(H−h)给L(gq²)=−p(1−eta)(d−h)²<0，故该点不能同时通过globalq2。
+- Assumptions / Dependencies：UM-SEVEN-STATE-STAR-ORIGINAL-ENDPOINT-LAW-DOMAIN-v1, UM-MODEL-v1；正文自足证明及明确标准工具，无复杂度假设；仅v5的source排除另假设P≠NP。
+- Scope：只排保base5/忠实AND二次Gram/原v负载的给定点延拓；不排一般非线性依赖，不向普通UM加逻辑侧约束；无软件/源decoder/hardness。
+- Evidence：对应Exact先行独立重构、root实读后释放作者Proof、实际作者读后与最终规范稿实读，各票保原字节，详实际审查。
+- Counterevidence / Objections：base5不能改base4，新增Z不能仅给CY改名；只排忠实Gram点延拓，不排其他基础矩或非忠实非线性依赖，当前范围无standingfatal。
+- Status：complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified；外审及全球新颖性未认证。
+- Related Files：[正文](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)、[实际审查](../reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md)及所列保真来源/有限记录。

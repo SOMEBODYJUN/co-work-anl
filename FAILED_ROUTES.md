@@ -237,3 +237,6 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 [类型配置正文](research/current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)发现BLMRS v1 tiny cutoff的特定乘法删除断言字面失败，现以正确小阈值和独立分块证明补齐同一已知合同；不否定其主定理。max-profile的四资源反例阻止免费套次模算法；需要共同profile选择或有真实partial匹配soundness的源。
 
 [整比双尺寸正文](research/current/unrelated_machines/divisible_two_size_neutral_repair.md)表明strict启动屏障保留中性逃逸。组成势防循环给本结构类精确算法；它未消除异端时间、一般资格和批内临时峰值缺口。
+
+
+[反面归约的新增精确边界](research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权归一化门控类13/8与近完美部分束源LP判别，旧NSW高低比例混用已明确撤回；完整实际矩阵平方的NO→YES和多替代见证收费阈值二已分别核实。共享内部/多层的真实近二源解码仍未解决，不升级UM-TARGET-v1。

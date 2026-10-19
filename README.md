@@ -1,10 +1,10 @@
 # 共同研究：一般不相关并行机的统一常数2壁垒
 
-**当前研究方向：反面主攻。** 用户已决定优先争取在明确标准复杂度假设下否定 `UM-TARGET-v1`：排除每一个固定 ε>0 的确定性位多项式实际调度算法，包括任意极小常数。原命题身份和 OPEN 状态保持；这是研究方向，不是已证不存在。反面以每个固定参数的真实整数 OPT gap、全部低负载调度的源解码及总位复杂度为承重；正面资产用于攻击归约和寻找逃逸，不预设结论。
+**当前唯一研究对象是 `UM-TARGET-v1`，存档为 `unrelated-machines`；按用户明确决定，全体主攻它的否定。** 待否定的原命题保持不变：存在确定性算法和统一常数 ε∈(0,1)，在输入总二进制位长的多项式时间内，对所有一般不相关机器输入输出完整分配并保证 C_max≤(2−ε)OPT。机器数、任务数均可增长；非负有理数、不可用边、零最优值和空任务均在原模型内。当前直接攻击对每个固定 ε 的真实近二困难性及低负载调度解码，逐条声明复杂度假设；已有正面接口继续用于攻击候选归约。原命题及其一般反面均 **OPEN**，方向决定不构成数学证据。
+
+反面研究的模型简化见[全常数量词与稠密小整数正规形](research/current/unrelated_machines/model_and_classical_barriers.md)§6：只含1..n²正整数、全部边可用的输入已经足以判定是否存在统一改善。正文给完整实际输出转换、零值分支及总位复杂度；它不提供新的近二困难性。
 
 反面源先经[部分激活菜单的全局福利筛选](research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md) F2：显式 norm1/共同支撑 LP 下，H_{3/8}>2q/5；这是标准福利工具直接推论，只排其精确部分高组源，不是一般困难性。
-
-**当前唯一主攻是 `UM-TARGET-v1`，存档为 `unrelated-machines`。** 给定一般不相关机器处理时间矩阵，寻找一个确定性算法和统一常数 ε∈(0,1)，在输入总二进制位长的多项式时间内输出完整任务分配，并对所有合法输入保证 C_max≤(2−ε)OPT。机器数、任务数均可增长；有限处理时间为非负有理数，允许不可用边，每个任务至少有一台可用机器。零最优值和空任务也须覆盖。目标仍 **OPEN**。
 
 新对话使用[完整BOSS提示词](research/unrelated_machines/BOSS_START.md)和[最新版work.py](research/weighted_congestion_frontier/tools/work.py)，附仓库外凭据。提示词直接写明主目标、启动、通信、地图和提交操作；进入研究前先看[BOSS研究总览与路线分诊](research/unrelated_machines/BOSS_RESEARCH_BRIEF.md)和[当前活跃路线](research/unrelated_machines/ACTIVE_ROUTES.md)。[操作手册](research/unrelated_machines/RUNBOOK.md)给全部命令；新建且未绑定的clone默认进入新题，已绑定旧存档的clone保持原绑定，新题另用独立clone。
 
@@ -187,3 +187,6 @@
 ## 本阶段的可复用桥梁与仍开放的主目标
 
 [单home消环及有向需求桥](research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)去掉环境DAG限制但仍输入实际调度或根树；[SC类型配置与真实匹配后端](research/current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)补齐显式多项式列表生成并精确定位全局选择义务；[整比双尺寸中性修复](research/current/unrelated_machines/divisible_two_size_neutral_repair.md)给防循环正面控制组。均不构成一般UM统一次二算法或近二困难性，UM-TARGET-v1保持OPEN。
+
+
+[反面归约的新增精确边界](research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权归一化门控类13/8与近完美部分束源LP判别，旧NSW高低比例混用已明确撤回；完整实际矩阵平方的NO→YES和多替代见证收费阈值二已分别核实。共享内部/多层的真实近二源解码仍未解决，不升级UM-TARGET-v1。

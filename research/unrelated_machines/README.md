@@ -1,10 +1,13 @@
 # 不相关并行机：新主攻存档与协作入口
 
-**当前研究方向：反面主攻。** 用户已决定优先争取在明确标准复杂度假设下否定 `UM-TARGET-v1`：排除每一个固定 ε>0 的确定性位多项式实际调度算法，包括任意极小常数。原命题身份和 OPEN 状态保持；这是研究方向，不是已证不存在。反面以每个固定参数的真实整数 OPT gap、全部低负载调度的源解码及总位复杂度为承重；正面资产用于攻击归约和寻找逃逸，不预设结论。
+**当前用户决定：全仓主攻 `UM-TARGET-v1` 的否定，所有参与者直接研究反面证明。** 固定原命题身份，不将方向决定视为证据；每个固定 ε 的真实 OPT gap、完整 YES/NO、绝对阈值 decoder 与总位复杂度是承重义务。复杂度假设逐条声明，既有正面结果作为反驳归约的工具保留；无需先登记路线或等待探索审核。一般反面仍 OPEN。
 
 反面源先经[部分激活菜单的全局福利筛选](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md) F2：显式 norm1/共同支撑 LP 下，H_{3/8}>2q/5；这是标准福利工具直接推论，只排其精确部分高组源，不是一般困难性。
 
+
 固定研究存档：`unrelated-machines`。主目标 `UM-TARGET-v1` 是一般R∥C_max确定性位多项式统一(2−ε)构造，仍OPEN。新对话直接使用 [BOSS_START.md](BOSS_START.md)，附仓库外的githubtoken.txt；无需人工分配内部subagents编号。
+
+反面研究的模型简化见[全常数量词与稠密小整数正规形](../current/unrelated_machines/model_and_classical_barriers.md)§6：只含1..n²正整数、全部边可用的输入已经足以判定是否存在统一改善。正文给完整实际输出转换、零值分支及总位复杂度；它不提供新的近二困难性。
 
 当前路线表[ACTIVE_ROUTES.md](ACTIVE_ROUTES.md)和[Route Card](ROUTE_CARD_TEMPLATE.md)是可选导航。所有 boss 可以直接探索；独立攻击只在成熟候选、路线合并或状态升级时使用，不阻塞早期思路。
 
@@ -360,8 +363,32 @@
 
 精确身份、实际审查与有限证据分别沿本题账本读取；外审和新颖性均未认证。
 
-[显式XOS分数NSW与修复边界](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)：任意binary-rational显式XOS给det真实allocation相对每个fractional benchmark的常数NSW；normalized total-one FSLP给几乎所有组质量及same-n singleton repair LP promise decider。仅小threshold域，明确不排gamma<=delta_q，普通UM仍只全机二。
+[显式XOS分数NSW与修复边界](../current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md)：任意binary-rational显式XOS给det真实allocation相对每个fractional benchmark的常数NSW；normalized total-one FSLP给几乎所有组质量及same-n singleton repair LP promise decider。高/低比例互补已纠错：delta_q<=q_eta且gamma_hi<=1−eta的高端robust NO被C排除；普通UM仍只全机二。
 
 [弱共享直方图的准确边界](../current/unrelated_machines/shared_load_histogram_recursion_equals_configuration_projection.md)：previous弱aggregate-only递推恰CONFIG负载直方图投影；完整流LP/可靠NO，四机CONFIG3实际4。逐branch真共同law没有被这一共享写法保住；不否relative OPT一般算法。
 
 [前缀证书的有限精度纠偏](../current/unrelated_machines/succinct_prefix_atomic_decoding_bridge.md)（`UM-PREFIX-ATOMIC-FINITE-PRECISION-v1`）：同一精确守恒law下，带噪max-mass的锐界配合有理网格，在poly位精度恢复精确阈值；绝对原子误差有N倍稀释，relative/full-Gram版本须保完整原子空间。生成、全称验证与一般统一ε仍未解决。
+
+[共同叶边际的精确边界](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md)（新增§8–11）：精确消去阈值unit-demand叶后，global/全部perspective匹配流即使共享同一叶边际，D_+仍逐点退回basic；diffuse Q_t的完整ordinary OPT=2-1/t。指定partition与自动前提严格分开；非actual-OPT算法下界或hardness。
+
+[归一化门控菜单与源判别](../current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md)：任意权显式norm1四层门控类有完整未知OPT的13/8算法；高低组比例纠错及near-perfect partial-NO由福利LP判别，原flat/共享内部/多层未覆盖。实际矩阵完整平方可把8机10job的OPT3/2降至1（private_graft页§7）；多见证互斥收费阈值可达2但不能同时多测试（two_witness页§6）。均不是一般反面证明。
+
+[单外层算法](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)与[完整K2路径保持](../current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md#12-完整-unit-resource-路径对共同四次矩证书的双向保持)：单outer且每正home有私有singleton helper的完整flat有11次普通LP查询的13/8算法；多个outer未覆盖。相邻D_+路径另在给定raw K2的degree4/M2/逐机CONFIG first-pair/global affine load localizer合同下双向保全旧矩；仅证书转换，无finder或强gap。
+
+[原任务身份的共同矩边界](../current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)（§7）：匿名同菜单token形式lift一般保M1，却有aggregate M2完全无原身份M2扩展；原任务SOS强迫整个head×affine-context容量块。13机context actualOPT1，非原任务gap/near2 hardness或所有points不可行。
+
+[物理矩到canonical的准确边界](../current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md)（§13–14）：18m17j族每机full-local-law/globalM2/全raw-affine容量仍不保direct canonical SA1，同点负值跨三机而actualOPT1；另rawS3的显式global literal-row LP必要于真实T且足以给canonical点。两接口严格分开，非实际gap/一般算法或hardness。
+
+[raw K2真实锐二倍间隙](../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)：全部同机CONFIG first/pair+globalM2+所有affine physical-load localizers仍有真实gap上确界2；OPT精确2−floor√k/k，rare-H/background-Q定量支配付清全global contexts。更强条件可切，不是hardness；一般反面OPEN。
+
+[固定阶整行一致性的真实gap](../current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md)：新§13：每固定d，整行全部<=d矩与globalM2及全部affine-load仍有真实gap上确界2；subset finite-difference trade与明确poly背景吸收，非higher-load/共同CONFIG-M2或hardness。
+
+[多outer极小home的实际算法](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)：可变k个single-state outers、互异home及wmax<=1/(4096k⁴)，任意shared fallback，有仅输入Q的det-bit-poly19/10全jobs算法；LP不可行有actualOPT下界，feasible用共同均值/全局variance/精确CE。仅typed限域，不是一般突破。
+
+[原端SH3条件子树流与包含切](../current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md)：原unit-pair零范数与二次负载条件给任意正原入口的新parent-bounded firstflow；包含族δd1(δd2−M)<=H，固定polylog型q损失不能免费导入SH3。完整原jobs、整数网格/单位走廊/删除与bit已付；非原全局点或hardness。
+
+[共享UD叶与k²-home十分之十九算法](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)：另立v4：可变k单state outer/互异homes/共享任意fallback加B-only threshold-UD叶，k1无tiny、k>=2 maxw<=1/(16384k²)，仅Q输入det-bit-poly19/10全原jobs；primal/FW与实际allocation两种证明独立攻击。仅限域近2 source排除，主目标正反面仍OPEN。
+
+[O1k-home全有理实际算法](../current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md)：另立v5：k>=2 maxw<=1/(1024k)，k1无限制，额外共享UD叶；全程实际I/全有理分段倒数势给det-bit-poly19/10全jobs，无给定点/LPprofile/FW/log oracle；仍限single-state/独占homes。
+
+[七态局部核及延拓边界](../current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md)：局部actualOPT1七态原job law通过全部globalq2负载检验，显式poly-support rowCFG；另精确分类affine Boolean owners并给忠实AND的degree5负式。不是SH3gap/递归共同law/hardness。

@@ -10667,7 +10667,8 @@
       "claims": [
         "UM-FRACTIONAL-BENCHMARK-REMATCHING-v1",
         "UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1",
-        "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1"
+        "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1",
+        "UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1"
       ],
       "status": "complete scoped deterministic fractional-XOS proof; actual Exact-first, author-read-after and whole canonical review; implementation none; novelty unverified",
       "applies_when": [
@@ -10675,7 +10676,7 @@
         "n>=1、m>=0，非空有限显式indexed XOS clauses，全部非负binary rational，允许zero/重复/未用，无global grid或normalization/utility floor，仅unweighted。",
         "C–F另限原total-one菜单与same-n REPAIR"
       ],
-      "produces": "不输入benchmark、不验证全局前提，仅真最大product匹配det-bit-poly给GM(Vi+singleton)>=每个正fractional benchmark/(c+1)。 从任意显式原XOS表det-bit-poly输出真实不交allocation，对全部正finite fractional log-CONFIG benchmark同时NSW>=benchmark/1125000；无正singleton matching时actual optimum零。 原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；不覆盖gamma<=delta_q。",
+      "produces": "不输入benchmark、不验证全局前提，仅真最大product匹配det-bit-poly给GM(Vi+singleton)>=每个正fractional benchmark/(c+1)。 从任意显式原XOS表det-bit-poly输出真实不交allocation，对全部正finite fractional log-CONFIG benchmark同时NSW>=benchmark/1125000；无正singleton matching时actual optimum零。 原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；§F旧高/低gamma比较已撤回；新高端互补推论另ID登记。 新门控福利及近完美源判别另有独立身份，不扩原flat结论。",
       "implementation": [],
       "proof": [
         "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md"
@@ -10712,10 +10713,12 @@
         "history/source/notes/unrelated_machines/finite_grid_label_mask_log_potential_derandomization_v1_author_proof_read_after.md",
         "history/source/notes/unrelated_machines/explicit_xos_deterministic_nsw_primary_scope_audit_rainbow_v1.md",
         "history/source/literature/unrelated_machines/dobzinski_li_rubinstein_vondrak_2023_subadditive_nsw_v1.pdf",
-        "history/source/literature/unrelated_machines/dobzinski_li_rubinstein_vondrak_2023_subadditive_nsw_v1_text.txt.gz"
+        "history/source/literature/unrelated_machines/dobzinski_li_rubinstein_vondrak_2023_subadditive_nsw_v1_text.txt.gz",
+        "history/source/notes/unrelated_machines/explicit_xos_fractional_nsw_original_canonical_before_gamma_correction.md",
+        "history/source/notes/unrelated_machines/nsw_gamma_complement_correction_actual_read_after_review.md"
       ],
-      "source_role": "Actual read sequence, inherited templates, preserved old objections and corrected proof roles are explicit in the review; sources do not automatically certify unused modules.",
-      "limit": "不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。"
+      "source_role": "Actual read sequence, inherited templates, preserved old objections and corrected proof roles are explicit in the review; sources do not automatically certify unused modules. 2026-10-18 old §F high/low interpretation withdrawn; targeted correction review does not re-sign old A/B or retroactively catch the missed error.",
+      "limit": "不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized高端NO需以1−gamma_hi比较低质量计数；旧未覆盖判断撤回；未构造NP-hard源，算法数学规格未实现。 新门控福利及近完美源判别另有独立身份，不扩原flat结论。"
     },
     {
       "id": "um_shared_load_histogram_configuration_projection",
@@ -10783,6 +10786,723 @@
       ],
       "source_role": "Original-journal abstract reading note records standard welfare attribution only, not original PDF bytes or the current F2 theorem. Given-lambda solver lives in audit code; generic LP not implemented.",
       "limit": "Only the exact normalized explicit partial-quota source; active penalty is essential; generic LP backend not implemented; novelty unverified."
+    },
+    {
+      "id": "um_dense_small_integer_equivalence",
+      "claims": [
+        "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1"
+      ],
+      "status": "complete scoped scaling equivalence; independent reconstruction and frozen review; no hardness or novelty claim",
+      "applies_when": [
+        "原显式二进制非负有理/∞模型与全有限正整数1..n²域；m≥1；稠密域n≥1；固定k≥2，非输入参数"
+      ],
+      "produces": "原目标与稠密正小整数域的统一改善存在性等价；后域(2−1/k)算法可回译原域(2−1/(2k))实际算法，包含空/零分支与总位复杂度。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/dense_small_integer_equivalence.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/dense_small_integer_equivalence.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/dense_small_integer_equivalence_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/dense_small_integer_equivalence_exact_draft.md"
+      ],
+      "source_role": "构造者在规范§6之前形成的实际精确源稿，原字节冻结；其旧同目录审计名在规范层对应tests/audits/unrelated_machines/dense_small_integer_equivalence.py。非外部文献或新颖性证明。",
+      "limit": "没有构造未知B，没有NP源near2 gap或一般否定证明；仅算法存在性双向等价，非固定参数均匀族。"
+    },
+    {
+      "id": "um_threshold_leaf_hall_consistent_marginals_path_projection_gap",
+      "claims": [
+        "UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1"
+      ],
+      "status": "complete scoped projection and sharp unit-threshold gap; independent reconstruction and actual final whole-text review; audit only; novelty unverified",
+      "applies_when": [
+        "显式normalized-flat，非空group/menu、非负binary rational每state质量1，可含零/重复/unused；0<epsilon<=1。投影指定全部旧组为C、仅新增D_+路径组为L；自动版另要求原组皆非threshold-UD；D_+只列positive邻居、保全部zero jobs。"
+      ],
+      "produces": "全实际epsilon解必给R_cons必要有理LP；同一旧lambda,z的R_cons/R_leaf D_+投影都恰basic；每t>=2 diffuse Q_t在unit阈值两合同及FSLP可行而V=1/t、完整ordinary OPT=2-1/t。弱单matching与MC混合区分，转换确定性总位poly。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/conditional_leaf_hall_path_projection_independent.py",
+        "tests/audits/unrelated_machines/conditional_leaf_consistent_marginals_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/conditional_leaf_hall_path_projection_independent.json",
+        "evidence/runs/unrelated_machines/conditional_leaf_consistent_marginals_independent.json",
+        "evidence/runs/unrelated_machines/conditional_leaf_hall_root_replay_scope.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/threshold_leaf_hall_consistent_marginals_path_projection_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_general_repair_conditional_hall_exact_v2.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_conditional_hall_proof.md",
+        "history/source/notes/unrelated_machines/sol_conditional_leaf_hall_exact_first_review.md",
+        "history/source/notes/unrelated_machines/sol_conditional_leaf_hall_author_read_after.md",
+        "history/source/notes/unrelated_machines/conditional_leaf_hall_consistent_marginals_exact_v3.md",
+        "history/source/notes/unrelated_machines/conditional_leaf_hall_consistent_marginals_author_proof_v3.md",
+        "history/source/notes/unrelated_machines/sol_conditional_leaf_hall_consistent_marginals_exact_first_review.md",
+        "history/source/notes/unrelated_machines/sol_conditional_leaf_hall_consistent_marginals_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_conditional_leaf_hall_final_canonical_review.md"
+      ],
+      "source_role": "Actual Exact-first/author-read-after/final complete reading; old prefix and records unchanged. Audit only the named finite fixtures, not author statistics.",
+      "limit": "仅排所定义叶流relaxation相对unit证书的统一正质量提取，不排actual-OPT近似、actual-YES finder、joint-core/PSD、共同完整law或一般hardness；不是所有core系数微小，不认证global novelty。"
+    },
+    {
+      "id": "um_normalized_gated_menu_welfare_and_robust_source_boundary",
+      "claims": [
+        "UM-NORMALIZED-GATED-MENU-VALUE-v1",
+        "UM-NORMALIZED-GATED-MENU-WELFARE-APPROX-v1",
+        "UM-NORMALIZED-ROBUST-PARTIAL-SOURCE-LP-BARRIER-v1"
+      ],
+      "status": "complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded",
+      "applies_when": [
+        "n>=1,m>=1；非空indexed states，distinct资源、非负binary rational系数每state总量1；pin/connector/gate/selector/全部incidence与零job恰按正文§1。"
+      ],
+      "produces": "所有上述输入OPT(P_gate)=2−beta*；任意完整C<2解码不交原bundles，反向保全部jobs含零/未选states；双向det-bit-poly。 整个明确norm1 gated类有det-bit-poly真实13/8近似，无FSLP前提/未知OPT输入。联合使用明确福利LP x<=z、标准最大系数舍入的精确CDF确定性化、真实排序平衡与所有jobs映射；不是generalUM。 high>=delta少于gamma_hi*n对应low<delta多于(1−gamma_hi)n；完整YES由positive-support FSLP在gamma_hi<=(5/8−delta)/(1−delta)判；近完美YES由福利LP在(5/8)(1−eta)>=gamma_hi+(1−gamma_hi)delta判，分别同样覆盖high>delta版本及等号；含gamma_hi<=delta<=3/8,eta<=1/40。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/normalized_gated_menu_welfare.py",
+        "tests/audits/unrelated_machines/normalized_gated_menu_welfare_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/normalized_gated_menu_welfare_audit.json",
+        "evidence/runs/unrelated_machines/normalized_gated_menu_welfare_independent_audit.json",
+        "evidence/runs/unrelated_machines/negative_interface_reproduction_scope.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/normalized_gated_menu_edge_cases.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/normalized_gated_menu_welfare_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/gated_menu_fslp_exact_v1.md",
+        "history/source/notes/unrelated_machines/gated_menu_fslp_author_proof_v1.md",
+        "history/source/notes/unrelated_machines/gated_menu_general_ratio_exact_v2.md",
+        "history/source/notes/unrelated_machines/gated_menu_general_ratio_author_proof_v2.md",
+        "history/source/notes/unrelated_machines/gated_menu_fslp_independent_reconstruction.md",
+        "history/source/notes/unrelated_machines/gated_menu_fslp_exact_read_attack.md",
+        "history/source/notes/unrelated_machines/gated_menu_dns_source_and_fslp_read_after.md",
+        "history/source/notes/unrelated_machines/gated_menu_general_lp_independent_reconstruction.md",
+        "history/source/notes/unrelated_machines/gated_menu_general_lp_exact_read_attack.md",
+        "history/source/notes/unrelated_machines/gated_menu_general_lp_author_read_after.md",
+        "history/source/notes/unrelated_machines/gated_menu_final_canonical_and_gamma_correction_review.md",
+        "history/source/notes/unrelated_machines/near_perfect_normalized_robust_source_exact.md",
+        "history/source/notes/unrelated_machines/near_perfect_normalized_robust_source_author_proof.md",
+        "history/source/notes/unrelated_machines/near_perfect_normalized_robust_source_exact_first_attack.md",
+        "history/source/notes/unrelated_machines/near_perfect_normalized_robust_source_read_after.md",
+        "history/source/literature/unrelated_machines/dobzinski_nisan_schapira_cfjournal_author.pdf",
+        "history/source/notes/unrelated_machines/explicit_xos_fractional_nsw_original_canonical_before_gamma_correction.md",
+        "history/source/notes/unrelated_machines/gated_menu_welfare_actual_code_review.md",
+        "history/source/notes/unrelated_machines/gated_menu_welfare_independent_semantic_audit_original.py",
+        "history/source/notes/unrelated_machines/nsw_parallel_gamma_correction_exact_comparison.diff.gz"
+      ],
+      "limit": "仅完整显式norm1菜单和新gated普通矩阵；旧flat全组selector、多层/共享内部/非归一化/隐式表未覆盖。福利机制为DNS既有工具，13/8不称锐或新颖；generic rational LP仅数学规格，软件finite audit only。"
+    },
+    {
+      "id": "um_actual_kronecker_product_counterexample",
+      "claims": [
+        "UM-ACTUAL-KRONECKER-NO-TO-YES-v1",
+        "UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1"
+      ],
+      "status": "complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded",
+      "applies_when": [
+        "m>=1,n>=0，合法非负有理有限边/∞；全部机器对/任务对保留，有限资格笛卡尔积，时间非负乘积；不剪枝。"
+      ],
+      "produces": "显式8机10job seed真实OPT3/2，完整square64机100job400有限边可全机load1；所有完整偶次幂OPT1。含全部mixed jobs，关闭该通用平方保NO合同；不宣称首次发现现象或hard source。 对所有合法非负有理矩阵含n0/zero/∞，未剪枝assignmentLP F(P⊗Q)=F(P)F(Q)，非负原初/对偶相乘；不是剪枝LST或CONFIG。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/actual_kronecker_product.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/actual_kronecker_product_audit.json",
+        "evidence/runs/unrelated_machines/actual_kronecker_checker_mutations_v2.json",
+        "evidence/runs/unrelated_machines/actual_kronecker_checker_sparse_guard_v3.json",
+        "evidence/runs/unrelated_machines/negative_interface_reproduction_scope.json"
+      ],
+      "examples": [
+        "examples/unrelated_machines/actual_kronecker_square_input.json",
+        "evidence/certificates/unrelated_machines/actual_kronecker_square_assignment.json",
+        "evidence/certificates/unrelated_machines/actual_kronecker_square_independent_assignment.json"
+      ],
+      "reviews": [
+        "research/reviews/unrelated_machines/actual_kronecker_product_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/actual_kronecker_square_exact.md",
+        "history/source/notes/unrelated_machines/actual_kronecker_square_author_proof.md",
+        "history/source/notes/unrelated_machines/actual_kronecker_square_structural_exchange_proof.md",
+        "history/source/notes/unrelated_machines/actual_kronecker_square_independent_reconstruction.md",
+        "history/source/notes/unrelated_machines/actual_kronecker_square_author_read_after.md",
+        "history/source/notes/unrelated_machines/actual_kronecker_square_structural_read_after.md",
+        "history/source/notes/unrelated_machines/actual_kronecker_square_final_section_review.md",
+        "history/source/notes/unrelated_machines/actual_kronecker_checker_original_objections.md",
+        "history/source/notes/unrelated_machines/actual_kronecker_checker_code_read_after_v2.md",
+        "history/source/notes/unrelated_machines/actual_kronecker_checker_sparse_guard_addendum_v3.md"
+      ],
+      "limit": "只给本seed全矩阵反例与指定未剪枝LP恒等式；无NP源，不排特定hard image或物理一致性产品，不是UM主反证。"
+    },
+    {
+      "id": "um_multiwitness_shared_job_fee_capacity_v2",
+      "claims": [
+        "UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2"
+      ],
+      "status": "complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded",
+      "applies_when": [
+        "p>=1、0<a_r,b_r,c<=1有理，c+Σb>=1；q:H→A、x:A→R、f:R→S全部原任务，指定pattern、原f owner改派费。"
+      ],
+      "produces": "OPT(P)=1；每pattern OPT_K=min(2,max(1,B_K))，闭beta<2最小fee按B_K>beta/ c+B_K<=beta/其余为∞/0/1。单queries各strict且阈值2共享同一f；无全开strict。非空K共同strict且每single收费迫|K|(beta−c)<B_K<=1，beta>=3/2时至多1；empty另0。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/two_witness_query_separation.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/multiwitness_shared_job_fee.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/multiwitness_shared_job_fee_audit.json",
+        "evidence/runs/unrelated_machines/multiwitness_shared_job_fee_independent_audit.json",
+        "evidence/runs/unrelated_machines/negative_interface_reproduction_scope.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/multiwitness_shared_job_fee_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/multiwitness_shared_job_fee_exact_v1_with_empty_gap.md",
+        "history/source/notes/unrelated_machines/multiwitness_shared_job_fee_exact_v2.md",
+        "history/source/notes/unrelated_machines/multiwitness_shared_job_fee_author_proof_v2.md",
+        "history/source/notes/unrelated_machines/multiwitness_shared_job_fee_exact_first_review.md",
+        "history/source/notes/unrelated_machines/multiwitness_shared_job_fee_proof_read_after_review.md",
+        "history/source/notes/unrelated_machines/multiwitness_shared_job_fee_final_section_review.md",
+        "history/source/notes/unrelated_machines/multiwitness_shared_job_fee_code_review.md"
+      ],
+      "limit": "同一OPT1显式易解P的精确读取/费用合同；无共同全开strict、无源NO decoder或可复用fanout，不是OPT gap或UM主反证。"
+    },
+    {
+      "id": "um_single_outer_primitive_sa1_threshold_rounding",
+      "claims": [
+        "UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1"
+      ],
+      "status": "complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified",
+      "applies_when": [
+        "显式normalized-flat的typed单outer；跨全部outer-state索引的正homes互异、每home恰一own-singleton helper；fallback states normalized且只用与homes分离的任意共享B，可无fallback；无其他groups；全部selector/incidence/zero/unselected jobs保留。"
+      ],
+      "produces": "给定Q、0<epsilon<=1及同一完整primitive-SA1有理点，可det-bit-poly输出真实全组质量>=epsilon²/4及全部原job分配C<=2−epsilon²/4；成本按三项总编码。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/one_outer_full_primitive_sa1_rounding_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_single_outer_sa1_threshold_floor_v2.md",
+        "history/source/notes/unrelated_machines/sol_one_outer_primitive_sa1_exact_first_reconstruction.md",
+        "history/source/notes/unrelated_machines/sol_one_outer_primitive_sa1_author_read_after.md",
+        "history/source/notes/unrelated_machines/one_outer_normalized_flat_13_8_approximation_exact_v2.md",
+        "history/source/notes/unrelated_machines/one_outer_normalized_flat_13_8_author_proof_v2.md",
+        "history/source/notes/unrelated_machines/sol_one_outer_13_8_exact_first_reconstruction.md",
+        "history/source/notes/unrelated_machines/sol_one_outer_13_8_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_single_outer_canonical_final_post_read_v2.md"
+      ],
+      "source_role": "True Exact-first then author-read-after then final canonical reading; no software claim and no retrospective upgrade.",
+      "limit": "特殊typed结构，不覆盖多个outer、无own-home辅助groups、一般UM；软件none、福利工具既有、全局新颖性未认证。"
+    },
+    {
+      "id": "um_single_outer_typed_13_8_algorithm",
+      "claims": [
+        "UM-SINGLE-OUTER-TYPED-13-8-v1"
+      ],
+      "status": "complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified",
+      "applies_when": [
+        "显式normalized-flat的typed单outer；跨全部outer-state索引的正homes互异、每home恰一own-singleton helper；fallback states normalized且只用与homes分离的任意共享B，可无fallback；无其他groups；全部selector/incidence/zero/unselected jobs保留。"
+      ],
+      "produces": "只输入typed Q，恰11次普通有理LP查询、至多一次CDF舍入，det-bit-poly输出全部原jobs，C<=13/8 OPT；无OPT/点/oracle输入。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/one_outer_full_primitive_sa1_rounding_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_single_outer_sa1_threshold_floor_v2.md",
+        "history/source/notes/unrelated_machines/sol_one_outer_primitive_sa1_exact_first_reconstruction.md",
+        "history/source/notes/unrelated_machines/sol_one_outer_primitive_sa1_author_read_after.md",
+        "history/source/notes/unrelated_machines/one_outer_normalized_flat_13_8_approximation_exact_v2.md",
+        "history/source/notes/unrelated_machines/one_outer_normalized_flat_13_8_author_proof_v2.md",
+        "history/source/notes/unrelated_machines/sol_one_outer_13_8_exact_first_reconstruction.md",
+        "history/source/notes/unrelated_machines/sol_one_outer_13_8_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_single_outer_canonical_final_post_read_v2.md"
+      ],
+      "source_role": "True Exact-first then author-read-after then final canonical reading; no software claim and no retrospective upgrade.",
+      "limit": "特殊typed结构，不覆盖多个outer、无own-home辅助groups、一般UM；软件none、福利工具既有、全局新颖性未认证。"
+    },
+    {
+      "id": "um_flat_unit_resource_path_raw_k2_preservation",
+      "claims": [
+        "UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1"
+      ],
+      "status": "complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified",
+      "applies_when": [
+        "显式normalized-flat的全部finite-endpoint Boolean degree4共同functional，M2 PSD、job onehot所有允许乘子、每机器有限有理真实CONFIG的first/pair及全部global affine physical-load localizers；1<=T<2；证书完整提供而非免费finder。"
+      ],
+      "produces": "对每个Q及有理1<=T<2，raw K2(P(Q),T)可行 iff raw K2(P(D_+Q),T)可行；给定两方向任一有限有理证书可det-bit-poly转换，保原moments<=4与private CONFIG；同时省localizers版本亦同。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_flat_unit_resource_path_c2_exact.md",
+        "history/source/notes/unrelated_machines/sol_flat_unit_resource_path_c2_proof.md",
+        "history/source/notes/unrelated_machines/sol_flat_unit_resource_path_c2_independent_exact_first.md",
+        "history/source/notes/unrelated_machines/sol_flat_unit_resource_path_c2_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_flat_unit_resource_path_k2_canonical_append_review.md",
+        "history/source/notes/unrelated_machines/sol_bcg2009_degree_path_primary_target_read.md"
+      ],
+      "source_role": "True Exact-first then author-read-after then final canonical reading; no software claim and no retrospective upgrade.",
+      "limit": "仅给定raw K2有限有理证书的双向转换；非exact SDP可行性后端、非canonical native C2、非弱R_cons的强gap升级，非一般算法或hardness。"
+    },
+    {
+      "id": "um_anonymous_token_m1_lift_m2_nonextension",
+      "claims": [
+        "UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1"
+      ],
+      "status": "complete scoped algebraic proof; Exact-first reconstruction and actual final appendix reading; finite exact audit only; novelty unverified",
+      "applies_when": [
+        "共同degree4 Boolean functional/global M2；有限同菜单组k>=1,0<=r<=k，A/X满足XA=X、ΣX=rA的全允许乘子；原identity端onehot/Boolean至4；固定k4 d10 delta1/100点。全局affine-context容量块另允许任意显式原任务类别及非Boolean X。"
+      ],
+      "produces": "形式标签lift一般保共同M1含inactive/home与k1/r0/rk；给定67维aggregate M2(rank55)点有形式Q²=-1/150且无任何保全部<=4矩的原token M2 extension；必要整个head×context矩阵由原quadratic SOS给出，坏方向-1/25。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/token_label_hypergeometric_lift.py",
+        "tests/audits/unrelated_machines/token_label_nonextension_independent.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+        "evidence/runs/unrelated_machines/token_label_nonextension_independent_audit.json",
+        "evidence/runs/unrelated_machines/token_label_nonextension_root_replay_scope.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/anonymous_token_label_lift_and_nonextension_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_token_label_lift_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_token_label_lift_author_proof_v1.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_token_label_lift_exact_first_attack.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_token_label_lift_author_read_after_v1.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_token_label_bridge_canonical_actual_read_v2.md",
+        "history/source/notes/unrelated_machines/sol_token_label_full_affine_context_psd_learning.md",
+        "history/source/notes/unrelated_machines/sol_token_label_hypergeometric_lift_audit.py"
+      ],
+      "source_role": "True Exact-first/author-read-after/final appendix reading; root full code reads and three fresh-dir replays; old cross-block ambiguity preserved and clarified.",
+      "limit": "仅给定point非扩展，不是所有points不可行；13机context actualOPT1，非原任务K2 gap/hardness/一般算法或SDP finder；必要块未证充分，显式任务与binary需求不混。"
+    },
+    {
+      "id": "um_raw_k2_local_law_canonical_pullback",
+      "claims": [
+        "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1"
+      ],
+      "status": "complete scoped parametric counterexample; independent Exact-first and actual final reading; finite audit only; novelty unverified",
+      "applies_when": [
+        "固定18m17j34端normalized-flat族Qc，0<c<1有理、T1+c、epsilon1−c；完整共同Boolean/onehot degree4/M2、全部raw-affine物理localizers及每行完整legal CONFIG law共享全部本地矩；每行≤3端。"
+      ],
+      "produces": "对每个c可detbitpoly生成指定强物理证书，所有每机full-row laws仍不能保证direct A=a,Z=aE的同点plainSA1：负claim-state=-1/160、quality-state=-c/160；实际OPT1。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/raw_k2_full_local_law_canonical_pullback.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/raw_k2_full_local_law_canonical_pullback_audit.json",
+        "evidence/runs/unrelated_machines/raw_k2_full_local_law_canonical_pullback_parameters.json",
+        "evidence/runs/unrelated_machines/raw_k2_full_local_law_root_replay_scope.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_general_repair_k2_local_law_canonical_pullback_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_k2_local_law_canonical_pullback_author_proof_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_k2_local_law_independent_exact_first.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_k2_local_law_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_raw_k2_sa3_combined_final_actual_read.md",
+        "history/source/notes/unrelated_machines/sol_raw_k2_sa3_combined_final_actual_read.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_raw_k2_sa3_final_v2_targeted_addendum.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_k2_canonical_pullback_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_k2_canonical_pullback_author_proof_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_k2_canonical_pullback_independent_exact_first.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_k2_canonical_pullback_author_read_after.md"
+      ],
+      "source_role": "Per-claim independent Exact-first, author-read-after and actual final readings; final one-sentence scope clarification targeted only; old algorithms not upgraded.",
+      "limit": "只反对给定点指定map，非actualOPTgap/改点不可能/一般算法或hardness；全globaltriple positivity会切该点。"
+    },
+    {
+      "id": "um_raw_sa3_canonical_sa1_point_transfer",
+      "claims": [
+        "UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1"
+      ],
+      "status": "complete scoped same-point transfer proof; independent Exact-first and actual final reading; software none; novelty unverified",
+      "applies_when": [
+        "任意显式normalized-flat Q，全部zero/inactive/indexed/unused finite endpoints；1<=T<2；共同完整有理degree4 L，全部原boxes/raw slack/unit resource cap1×≤3 raw literals及Boolean/onehot允许乘子。目标plain共同primitive-SA1精确定义。"
+      ],
+      "produces": "每真实T-schedule给S3 Dirac点；显式rationalLP infeasible=>OPT>T；每给定S3点的指定product pullback满足完整R_(2−T) plainSA1，若另给同点rawM2则另保canonicalM1；构建/求解/提取均totalbitpoly，无PSDfinder。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_raw_sa3_to_canonical_sa1_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_raw_sa3_to_canonical_sa1_author_proof_v1.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_raw_sa3_canonical_sa1_exact_reconstruction.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_raw_sa3_canonical_sa1_author_proof_read_after.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_raw_k2_sa3_combined_final_actual_read.md",
+        "history/source/notes/unrelated_machines/sol_raw_k2_sa3_combined_final_actual_read.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_raw_k2_sa3_final_v2_targeted_addendum.md"
+      ],
+      "source_role": "Per-claim independent Exact-first, author-read-after and actual final readings; final one-sentence scope clarification targeted only; old algorithms not upgraded.",
+      "limit": "仅necessary LP与充分point接口，非反向actual可行性/全部group rounding/一般UM；S3与K2无自动包含关系，optionalPSD不带exact SDPfinder；不称层数最小。"
+    },
+    {
+      "id": "um_diluted_shared_terminal_raw_k2_true_gap",
+      "claims": [
+        "UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1"
+      ],
+      "status": "complete exact raw-system gap theorem; independently reconstructed and actual final read; finite local audit only; novelty unverified",
+      "applies_when": [
+        "全部普通UM的positive binary-rational T与有限有理raw K2证书：全部finite端、共同degree4 Boolean/onehot商及M2、逐机完整legal CONFIG first/pair、全部global affine physical-load localizers；无共同CONFIG指标四次links、无canonical gates。",
+        "family integer k>=2, explicit dense or finite-endpoint UM encoding"
+      ],
+      "produces": "所有k>=2，L2k²,M1+60Lk4的显式共享终端族实际OPT2−floor√k/k，raw K2在T1+1/k有det-bit-poly生成指定有理证书；缩放到T1实际OPT趋2，结合slot上界得此raw合同全类gap supremum2。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/diluted_shared_terminal_raw_k2_finite_audit.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/diluted_shared_terminal_raw_k2_local_frame_audit.json",
+        "evidence/runs/unrelated_machines/diluted_shared_terminal_raw_k2_root_replay_scope.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/diluted_shared_terminal_raw_k2_gap_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_diluted_shared_terminal_raw_k2_exact_only.md",
+        "history/source/notes/unrelated_machines/sol_diluted_shared_terminal_raw_k2_author_proof.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_diluted_shared_terminal_raw_k2_exact_reconstruction.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_diluted_shared_terminal_raw_k2_author_proof_read_after.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_diluted_shared_terminal_raw_k2_final_actual_read.md.gz"
+      ],
+      "source_role": "Author Exact/Proof separate; independent Exact-first then actual author-proof read-after; final canonical actual read; root full code read and two fresh exact replays.",
+      "limit": "仅所列raw relaxation gap，非hardness/一般算法非存在性；row triple和跨行selector×incoming条件可切给定点，不声称canonical C2、joint-CONFIG M2、高阶load或全SoS(CONFIG)gap；一般输入证书finder未提供。"
+    },
+    {
+      "id": "um_diluted_shared_terminal_row_degree_gap",
+      "claims": [
+        "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1"
+      ],
+      "status": "complete fixed-d raw row-consistency gap proof; independent Exact-first, author read-after and actual new-section final read; finite four-case audit only; novelty unverified",
+      "applies_when": [
+        "每固定整数d>=2、一般普通UM与目标T>0；共同degreeD=max(4,d) Boolean/onehot商、globalM2、每机legal CONFIG全部同机degree<=d矩一致及全部global-affine physical-load localizers；无joint CONFIG indicators或higher q。"
+      ],
+      "produces": "每固定d及所有k>=d，显式L2k²/M1+120Lk4+4kZAmax族真实OPT2−floor√k/k，T1+(d−1)/k有det-bit-poly指定证书；缩放target1实际值趋2，故此合同gap supremum2；指数可依固定d。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/diluted_shared_terminal_row_degree_trade_audit.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/diluted_row_degree_trade_four_cases_audit.json",
+        "evidence/runs/unrelated_machines/diluted_row_degree_trade_root_replay_scope.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_diluted_shared_terminal_row_degree_d_exact_only.md",
+        "history/source/notes/unrelated_machines/sol_diluted_shared_terminal_row_degree_d_author_proof.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_diluted_row_degree_d_exact_first_reconstruction_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_diluted_row_degree_d_author_read_after_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_diluted_row_degree_d_final_section13_post_read_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_diluted_row_degree_d_final_section13_post_read_v2.md"
+      ],
+      "source_role": "Separate new Exact/Proof; independent reconstruction before release; actual author read-after and final new195lines only; original review v1/v2 execution-timing clarification both preserved.",
+      "limit": "非uniform variable-d algorithm、非高阶负载/完整SoS(CONFIG)/canonical C2/jointCONFIG-M2 gap，非hardness或一般算法不存在；原degree3跨行条件切给定点；d+1>D仅自然延伸下一阶失败。"
+    },
+    {
+      "id": "um_multi_outer_single_state_tiny_home_rounding",
+      "claims": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1"
+      ],
+      "status": "complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; independent Exact-first and actual author/final read; backend audit only; novelty unverified",
+      "applies_when": [
+        "任意输入k>=1个单indexed-state outers，所有positive homes跨outer互异，每home一个own-unit helper，shared B disjoint homes且任意显式normalized fallback，无其它groups；每outer Σw1,wmax<=1/(4096k⁴)，所有zero/duplicate/inactive原jobs保留。"
+      ],
+      "produces": "只输入完整typed Q，可det total-bit-poly输出全部ordinary P(Q)原jobs合法σ，Cmax<=19/10 OPT；内部plain共同SA1 LP infeas给actualOPT>17/16并用baseline，feasible用CDF/MW+globalvariance精确CE+q.1回填；无SDP/给定点oracle。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/multi_outer_request_winner_pair_backend.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_audit.json",
+        "evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_root_replay_scope.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_general_repair_multiouter_single_state_tiny_home_19_10_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_multiouter_single_state_tiny_home_19_10_author_proof_v1.md",
+        "history/source/notes/unrelated_machines/sol_multiouter_single_state_tiny_home_19_10_independent_exact_first.md",
+        "history/source/notes/unrelated_machines/sol_multiouter_single_state_tiny_home_19_10_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_multi_outer_tiny_home_final_canonical_actual_read.md"
+      ],
+      "source_role": "Two different algorithms: independent Exact-first then actual author Proof read-after; final actual reading; root code read/CLI finite backend only.",
+      "limit": "仅此typed profile，非任意Q/多state outer/重home/一般UM，k²或高阶moment后续不混入；只有有限pair backend，无端到端软件。排近二hardness源仅所有输出本域、YESOPT1/NO>=2−γ fixedγ<.1且P≠NP。"
+    },
+    {
+      "id": "um_raw_sh3_conditional_flow_inclusion_capacity",
+      "claims": [
+        "UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2"
+      ],
+      "status": "complete scoped conditional-firstflow and inclusion sound-FAIL proof; independent statement-first and actual read-after/final diff; finite arithmetic audit only; novelty unverified",
+      "applies_when": [
+        "完整显式native unique-home/unit-forward DAG加unit-only entry jobs；有理1<=T<2；同一个degree6原端Boolean/onehot/M3、各行合法CFG first/pair、全部global degq<=2物理负载平方；sink无自有jobs。"
+      ],
+      "produces": "每个正质量非home unit入口推出新的parent-bounded单根firstflow，real r=k(2−T)、k1可选不衰减；仅整数网格恢复辅助CFG first。集合包含原矩强制δd1(δd2−M)<=H，每固定多项式q缩放最终每固定T<2均sound FAIL，虽CFGopt1与actualOPT趋2。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/raw_sh3_inclusion_entry_cut_binomial_audit.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/raw_sh3_inclusion_entry_cut_binomial_audit.json",
+        "evidence/runs/unrelated_machines/raw_sh3_inclusion_entry_cut_root_replay_scope.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_raw_sh3_root_conditioned_layer_flow_boundary_v1.md",
+        "history/source/notes/unrelated_machines/sol_raw_sh3_canonical_subtree_flow_addendum_v1.md",
+        "history/source/notes/unrelated_machines/sol_raw_sh3_subtree_flow_threshold_precision_v1.md",
+        "history/source/notes/unrelated_machines/sol_raw_sh3_inclusion_entry_cut_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_raw_sh3_inclusion_entry_cut_author_proof_v1.md",
+        "history/source/notes/unrelated_machines/sol_raw_sh3_conditional_flow_and_inclusion_capacity_canonical_draft_v2.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_raw_sh3_inclusion_entry_cut_exact_first_attack.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_raw_sh3_inclusion_entry_cut_author_read_after_v1.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_raw_sh3_general_firstflow_statement_first_reconstruction.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_raw_sh3_flow_inclusion_v2_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_raw_sh3_flow_inclusion_final_actual_read_v2.md",
+        "history/source/notes/unrelated_machines/sol_raw_sh3_inclusion_entry_cut_binomial_audit_v1.py"
+      ],
+      "source_role": "Original-boundary/addendum/precision, separate inclusion Exact/Proof, two statement-first reconstructions with known-background boundary, actual author/final-diff reviews; raw original software retained.",
+      "limit": "不是保原点矩的canonical扩展/原全实例新点/完整调度器/SH3gap/复杂性困难性；不ceil realquota、不将单entry失败等同整个OPT>T；多层同owner路径预算未免费继承。"
+    },
+    {
+      "id": "um_shared_ud_tiny_home_potential_rounding_v4",
+      "claims": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4"
+      ],
+      "status": "complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; new Exact-first, actual author and final reading; exchange lemma audit only; novelty unverified",
+      "applies_when": [
+        "完整显式normalized-flat typed Q；变量k>=1个single-state outers，跨全体互异positive homes，各一个own-unit helper，任意normalized B-only fallback；任意B-only extra leaves在epsilon15/16满足whole-menu threshold-UD iff；k1无额外tiny，k>=2 maxw<=1/(16384k²)；所有zero/indexed/inactive原jobs保留。"
+      ],
+      "produces": "只输入Q，用固定确定性worst-case total-bit-poly算法输出全部ordinary原jobs合法σ，Cmax<=19/10 OPT；k1固定顺序submodular greedy，k>=2匹配profile势/有理FW/共同prefix-flow；另有独立全程actual-allocation局部势后端；无OPT/点/SDP或joint-profile oracle。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/shared_ud_optimal_exchange_small_network_audit.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/shared_ud_optimal_exchange_small_network_audit.json",
+        "evidence/runs/unrelated_machines/shared_ud_optimal_exchange_root_replay_scope.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/shared_ud_tiny_home_potential_rounding_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_general_repair_shared_ud_tiny_state_potential_19_10_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_shared_ud_tiny_state_potential_19_10_author_proof_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_shared_ud_tiny_state_potential_author_self_audit_v1.md",
+        "history/source/notes/unrelated_machines/sol_shared_ud_tiny_state_potential_19_10_independent_exact_first.md",
+        "history/source/notes/unrelated_machines/sol_shared_ud_tiny_state_potential_19_10_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_shared_ud_tiny_state_potential_v4_append_actual_read.md",
+        "history/source/notes/unrelated_machines/boss11_shared_ud_tiny_home_k2_refinement_exact_v3.md",
+        "history/source/notes/unrelated_machines/boss11_shared_ud_tiny_home_k2_refinement_proof_v3.md",
+        "history/source/notes/unrelated_machines/boss11_shared_ud_tiny_home_k2_refinement_exact_v4.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_shared_ud_k2_refinement_informed_audit_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_shared_ud_tiny_state_potential_canonical_append_v4b.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_shared_ud_tiny_home_k2_v4_exact_first_attack.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_shared_ud_tiny_home_k2_v4b_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_actual_allocation_v4_author_read_after_by_nsw.md",
+        "history/source/notes/unrelated_machines/sol_true_hardness_shared_ud_tiny_home_v4_canonical_actual_read.md"
+      ],
+      "source_role": "k4 exact-first and author read-after retained; new v4 exact-first actual-allocation algorithm, distinct author-FW read-after, actual final new sections and separate informed algorithm attack; root source/code read and fresh finite replay.",
+      "limit": "特殊typed域；不覆盖multistate outer/重home/一般nonUD extras/任意P。新域k²不与旧v1 k⁴算法软件混；只有exchange finite audit、无完整实现。仅排全部输出该域且YESactualOPT1/NO>=2−gamma fixed0<gamma<.1的NP归约(P!=NP)，非UM正面或反面突破。"
+    },
+    {
+      "id": "um_shared_ud_relative_curvature_rounding_v5",
+      "claims": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5"
+      ],
+      "status": "complete scoped O(1/k)-home Q-alone deterministic bit-polynomial 19/10 algorithm; independent Exact-first and actual author/final reading; software none; novelty unverified",
+      "applies_when": [
+        "显式normalized-flat单state outers、全局互异homes/own-unit helpers、任意shared B fallback及epsilon15/16 whole-menu threshold-UD B-only leaves；k1无tiny，k>=2 maxw<=1/(1024k)，完整原indexed/zero/inactive jobs。"
+      ],
+      "produces": "仅Q输入，维护actual独立原incidence集，ordinary matching/weighted-rank局部候选及全有理分段倒数势，worst-case总位poly输出全部原jobs σ且Cmax<=19/10 OPT；可靠FAIL actualV<=18/19，k1无ν。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md"
+      ],
+      "tests": [],
+      "records": [],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/shared_ud_relative_curvature_rounding_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_general_repair_relative_curvature_O1k_working_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_relative_curvature_O1k_working_author_proof_v1.md",
+        "history/source/notes/unrelated_machines/sol_relative_curvature_O1k_independent_exact_first.md",
+        "history/source/notes/unrelated_machines/sol_relative_curvature_O1k_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_relative_curvature_nsw_actual_allocation_informed_read_after_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_unit_home_identity_learning_v1.md",
+        "history/source/notes/unrelated_machines/sol_general_repair_shared_ud_O1k_v5_final_actual_read_v1.md"
+      ],
+      "source_role": "New O1k Exact; independent rational actual-allocation construction; distinct log/FW author read-after; informed attack and actual final104lines; no software.",
+      "limit": "仅此typed域，非多state outer/重home/nonUD extras/任意UM；无软件。只排全部输出本域且YESOPT1/NO>=2−γ fixedγ<.1的NP归约(P!=NP)，一般主目标正反面OPEN。"
+    },
+    {
+      "id": "um_seven_state_star_global_quadratic_and_boundaries",
+      "claims": [
+        "UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1",
+        "UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2",
+        "UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1",
+        "UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1"
+      ],
+      "status": "complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified",
+      "applies_when": [
+        "全部正偶d,s且2<=s<=d/2；明确d+2机器/d+1jobs原星及七态真实完整law P，eta=s/d,h=s/2,T1+eta,p=eta³/1000；扩展保同一指定base矩/Boolean/onehot/M3和指定Gram等式。",
+        "每显式d>=1及0<=h<=d，h-subsets的常数/singleton/异pair 0/1特征，D1+d+C(d,2)；按poly(d)而非poly(log d)。"
+      ],
+      "produces": "det-poly(d)输出<=D个实际h-subsets及非负有理权，精确保uniform first h/d、异pair h(h−1)/(d(d−1))；显式列压缩不需quadratic oracle。；生成同一degree6原端M3/Boolean-onehot、全部global q<=2物理localizers及每行显式poly-support legal CONFIG firstpair；P坏峰2质量eta³/1000独立d，actualOPT1。；实仿射Boolean分类仅constant/primitive literal；base4+commonM3的线性Gram端点版本成立，同行unitpair0使covered正owners<=2且互补；随机背景N-owner反例阻止无条件degree界。；base<=5共同M3/Boolean及原v负载不变、原degree-one Z忠实Gram CY_i时，q=Z(H−h)给L(gq²)=−p(1−eta)(d−h)²<0，故该点不能同时通过globalq2。",
+      "implementation": [],
+      "proof": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md"
+      ],
+      "tests": [
+        "tests/audits/unrelated_machines/seven_state_star_global_quadratic_audit.py"
+      ],
+      "records": [
+        "evidence/runs/unrelated_machines/seven_state_star_global_quadratic_audit.json",
+        "evidence/runs/unrelated_machines/seven_state_star_global_quadratic_root_replay_scope.json"
+      ],
+      "examples": [],
+      "reviews": [
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "candidates": [],
+      "sources": [
+        "history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_coercivity_learning.md",
+        "history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_canonical_v1.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_seven_state_star_exact_first_reconstruction.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_seven_state_star_author_read_after.md",
+        "history/source/notes/unrelated_machines/boss11_uniform_cardinality_pair_sparse_support_exact_v1.md",
+        "history/source/notes/unrelated_machines/boss11_uniform_cardinality_pair_sparse_support_proof_v1.md",
+        "history/source/notes/unrelated_machines/sol_uniform_cardinality_pair_design_independent_reconstruction_v1.md",
+        "history/source/notes/unrelated_machines/sol_uniform_pair_sparse_root_proof_read_after_v1.md",
+        "history/source/notes/unrelated_machines/sol_seven_state_affine_boolean_owner_boundary_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_seven_state_affine_boolean_owner_boundary_author_proof_v1.md",
+        "history/source/notes/unrelated_machines/sol_seven_state_affine_boolean_owner_boundary_exact_first_review.md",
+        "history/source/notes/unrelated_machines/sol_seven_state_affine_boolean_owner_boundary_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_seven_state_and_gate_localizer_obstruction_exact_v1.md",
+        "history/source/notes/unrelated_machines/sol_seven_state_and_gate_localizer_obstruction_author_proof_v1.md",
+        "history/source/notes/unrelated_machines/sol_seven_state_and_gate_localizer_obstruction_exact_first_review.md",
+        "history/source/notes/unrelated_machines/sol_seven_state_and_gate_localizer_obstruction_author_read_after.md",
+        "history/source/notes/unrelated_machines/sol_identity_coupling_seven_state_star_canonical_v2_final_actual_read.md"
+      ],
+      "source_role": "Four distinct statement-first scopes with actual read-after; final combined text; root exact129line software read and one fresh12case replay only.",
+      "limit": "kernel原输入actualOPT1；不是rawSH3 gap/hardness/general算法/递归共同law。Affine只fixed背景及covered endpoints；AND只base5忠实Gram延拓；稀疏rowpair不改L高阶，未读软件不代签。"
     }
   ]
 }

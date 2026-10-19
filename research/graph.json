@@ -12320,7 +12320,7 @@
       "kind": "claim",
       "track": "unrelated_machines",
       "title": "归一化菜单几乎所有组与同组修复LP边界",
-      "detail": "原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；不覆盖gamma<=delta_q。",
+      "detail": "原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；§F旧高/低gamma比较已撤回；新高端互补推论另ID登记。 新门控福利及近完美源判别另有独立身份，不扩原flat结论。",
       "refs": [
         "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
         "research/reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md"
@@ -12436,6 +12436,681 @@
         "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
         "tests/audits/unrelated_machines/normalized_menu_partial_quota_welfare.py",
         "evidence/runs/unrelated_machines/normalized_menu_partial_quota_welfare.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-DENSE-SMALL-INTEGER-AUDIT-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "稠密整数转换的有限全输出Fraction审计",
+      "detail": "固定四份双机16任务输入，枚举所有分配并挑战每个满足假设比率的输出；另核常数与零边界。",
+      "refs": [
+        "tests/audits/unrelated_machines/dense_small_integer_equivalence.py",
+        "evidence/runs/unrelated_machines/dense_small_integer_equivalence.json",
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "finite exact checks only; not a universal proof"
+    },
+    {
+      "id": "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "稠密正小整数与原目标的算法存在性等价",
+      "detail": "固定k的1..n²全有限正整数(2−1/k)算法转原完整模型(2−1/(2k))算法；标准缩放重构，不是困难性。",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md",
+        "research/reviews/unrelated_machines/dense_small_integer_equivalence_review.md",
+        "tests/audits/unrelated_machines/dense_small_integer_equivalence.py",
+        "evidence/runs/unrelated_machines/dense_small_integer_equivalence.json"
+      ],
+      "status": "complete scoped scaling equivalence; independent reconstruction and frozen review; no hardness or novelty claim"
+    },
+    {
+      "id": "UM-THRESHOLD-LEAF-HALL-DESIGNATED-PARTITION-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "阈值叶与指定正邻居路径域",
+      "detail": "显式normalized-flat，非空group/menu、非负binary rational每state质量1，可含零/重复/unused；0<epsilon<=1。投影指定全部旧组为C、仅新增D_+路径组为L；自动版另要求原组皆非threshold-UD；D_+只列positive邻居、保全部zero jobs。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共同叶边际路径投影与趋二锐间隙",
+      "detail": "全实际epsilon解必给R_cons必要有理LP；同一旧lambda,z的R_cons/R_leaf D_+投影都恰basic；每t>=2 diffuse Q_t在unit阈值两合同及FSLP可行而V=1/t、完整ordinary OPT=2-1/t。弱单matching与MC混合区分，转换确定性总位poly。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md",
+        "research/reviews/unrelated_machines/threshold_leaf_hall_consistent_marginals_path_projection_review.md"
+      ],
+      "status": "complete scoped projection and sharp unit-threshold gap; independent reconstruction and actual final whole-text review; audit only; novelty unverified"
+    },
+    {
+      "id": "AUDIT-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "条件叶流与共同边际的独立精确核验",
+      "detail": "Finite t2/partial-z/zero-lambda/beta1 witnesses and complete-job back-calculation; no optimization oracle.",
+      "refs": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md",
+        "tests/audits/unrelated_machines/conditional_leaf_hall_path_projection_independent.py",
+        "tests/audits/unrelated_machines/conditional_leaf_consistent_marginals_independent.py",
+        "evidence/runs/unrelated_machines/conditional_leaf_hall_path_projection_independent.json",
+        "evidence/runs/unrelated_machines/conditional_leaf_consistent_marginals_independent.json",
+        "evidence/runs/unrelated_machines/conditional_leaf_hall_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "归一化鲁棒高低比例的集合互补纠错",
+      "detail": "原norm1显式菜单unit-FSLP可行；固定eta，q_eta=(2^24)^(-ceil(1/eta))，0<delta_q<=q_eta及0<=gamma_hi<=1−eta时，C的同一实际allocation有计数 #{g:quality_g>=delta_q}>gamma_hi*n。因此all-allocation高端robust NO不可能；其互补低端比例是1−gamma_hi。",
+      "refs": [
+        "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+        "research/reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md"
+      ],
+      "status": "complete elementary complement corollary; actual targeted correction review; old erroneous interpretation explicitly withdrawn; novelty not claimed"
+    },
+    {
+      "id": "UM-NORMALIZED-GATED-MENU-EXPLICIT-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "归一化门控菜单的完整显式域",
+      "detail": "n>=1,m>=1；非空indexed states，distinct资源、非负binary rational系数每state总量1；pin/connector/gate/selector/全部incidence与零job恰按正文§1。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-ACTUAL-NONNEGATIVE-KRONECKER-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "实际非负处理矩阵的完整Kronecker积",
+      "detail": "m>=1,n>=0，合法非负有理有限边/∞；全部机器对/任务对保留，有限资格笛卡尔积，时间非负乘积；不剪枝。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-MULTIWITNESS-FEE-FIXED-MATRIX-DOMAIN-v2",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "同一普通P的多见证共享收费域",
+      "detail": "p>=1、0<a_r,b_r,c<=1有理，c+Σb>=1；q:H→A、x:A→R、f:R→S全部原任务，指定pattern、原f owner改派费。",
+      "refs": [
+        "research/current/unrelated_machines/two_witness_query_separation.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-NORMALIZED-GATED-MENU-VALUE-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "归一化门控菜单与真实平衡值",
+      "detail": "所有上述输入OPT(P_gate)=2−beta*；任意完整C<2解码不交原bundles，反向保全部jobs含零/未选states；双向det-bit-poly。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md",
+        "research/reviews/unrelated_machines/normalized_gated_menu_welfare_review.md"
+      ],
+      "status": "complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded"
+    },
+    {
+      "id": "UM-NORMALIZED-GATED-MENU-WELFARE-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "归一化加权门控类的未知最优值十三八近似",
+      "detail": "整个明确norm1 gated类有det-bit-poly真实13/8近似，无FSLP前提/未知OPT输入。联合使用明确福利LP x<=z、标准最大系数舍入的精确CDF确定性化、真实排序平衡与所有jobs映射；不是generalUM。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md",
+        "research/reviews/unrelated_machines/normalized_gated_menu_welfare_review.md"
+      ],
+      "status": "complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded"
+    },
+    {
+      "id": "UM-NORMALIZED-ROBUST-PARTIAL-SOURCE-LP-BARRIER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "归一化部分束源的互补纠错与近完美LP判别",
+      "detail": "high>=delta少于gamma_hi*n对应low<delta多于(1−gamma_hi)n；完整YES由positive-support FSLP在gamma_hi<=(5/8−delta)/(1−delta)判；近完美YES由福利LP在(5/8)(1−eta)>=gamma_hi+(1−gamma_hi)delta判，分别同样覆盖high>delta版本及等号；含gamma_hi<=delta<=3/8,eta<=1/40。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md",
+        "research/reviews/unrelated_machines/normalized_gated_menu_welfare_review.md"
+      ],
+      "status": "complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded"
+    },
+    {
+      "id": "UM-ACTUAL-KRONECKER-NO-TO-YES-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完整实际矩阵平方与全偶次幂的反放大",
+      "detail": "显式8机10job seed真实OPT3/2，完整square64机100job400有限边可全机load1；所有完整偶次幂OPT1。含全部mixed jobs，关闭该通用平方保NO合同；不宣称首次发现现象或hard source。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "research/reviews/unrelated_machines/actual_kronecker_product_review.md"
+      ],
+      "status": "complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded"
+    },
+    {
+      "id": "UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "未剪枝指派LP的精确可乘恒等式",
+      "detail": "对所有合法非负有理矩阵含n0/zero/∞，未剪枝assignmentLP F(P⊗Q)=F(P)F(Q)，非负原初/对偶相乘；不是剪枝LST或CONFIG。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "research/reviews/unrelated_machines/actual_kronecker_product_review.md"
+      ],
+      "status": "complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded"
+    },
+    {
+      "id": "UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "互斥查询多见证的阈值二收费与容量",
+      "detail": "OPT(P)=1；每pattern OPT_K=min(2,max(1,B_K))，闭beta<2最小fee按B_K>beta/ c+B_K<=beta/其余为∞/0/1。单queries各strict且阈值2共享同一f；无全开strict。非空K共同strict且每single收费迫|K|(beta−c)<B_K<=1，beta>=3/2时至多1；empty另0。",
+      "refs": [
+        "research/current/unrelated_machines/two_witness_query_separation.md",
+        "research/reviews/unrelated_machines/multiwitness_shared_job_fee_review.md"
+      ],
+      "status": "complete scoped proof; independently reconstructed and actually reviewed; external review unrecorded"
+    },
+    {
+      "id": "EVIDENCE-um_normalized_gated_menu_welfare_and_robust_source_boundary",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "有限精确核验：gate",
+      "detail": "Only the listed explicit cases and certificate/code checks.",
+      "refs": [
+        "tests/audits/unrelated_machines/normalized_gated_menu_welfare.py",
+        "evidence/runs/unrelated_machines/normalized_gated_menu_welfare_audit.json",
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "EVIDENCE-um_actual_kronecker_product_counterexample",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "有限精确核验：tensor",
+      "detail": "Only the listed explicit cases and certificate/code checks.",
+      "refs": [
+        "tests/audits/unrelated_machines/actual_kronecker_product.py",
+        "evidence/runs/unrelated_machines/actual_kronecker_product_audit.json",
+        "evidence/runs/unrelated_machines/actual_kronecker_checker_mutations_v2.json",
+        "evidence/runs/unrelated_machines/actual_kronecker_checker_sparse_guard_v3.json",
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "EVIDENCE-um_multiwitness_shared_job_fee_capacity_v2",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "有限精确核验：fee",
+      "detail": "Only the listed explicit cases and certificate/code checks.",
+      "refs": [
+        "tests/audits/unrelated_machines/multiwitness_shared_job_fee.py",
+        "evidence/runs/unrelated_machines/multiwitness_shared_job_fee_audit.json",
+        "evidence/runs/unrelated_machines/multiwitness_shared_job_fee_independent_audit.json",
+        "research/current/unrelated_machines/two_witness_query_separation.md"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-SINGLE-OUTER-TYPED-PRIMITIVE-SA1-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "单外层私有home与共同primitive-SA1输入域",
+      "detail": "显式normalized-flat的typed单outer；跨全部outer-state索引的正homes互异、每home恰一own-singleton helper；fallback states normalized且只用与homes分离的任意共享B，可无fallback；无其他groups；全部selector/incidence/zero/unselected jobs保留。 给定点合同明确共用原primitive与补的全部degree2行。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-FLAT-RAW-K2-FINITE-RATIONAL-CERTIFICATE-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "完整raw K2有限有理证书域",
+      "detail": "显式normalized-flat的全部finite-endpoint Boolean degree4共同functional，M2 PSD、job onehot所有允许乘子、每机器有限有理真实CONFIG的first/pair及全部global affine physical-load localizers；1<=T<2；证书完整提供而非免费finder。 D_+按每资源不同positive邻居group列port、相邻加完整两态unit leaf；zero按own或固定port路由，d0保资源；没有阈值UD或指定core/leaf partition前提。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单外层给定共同点的四分之一平方地板",
+      "detail": "给定Q、0<epsilon<=1及同一完整primitive-SA1有理点，可det-bit-poly输出真实全组质量>=epsilon²/4及全部原job分配C<=2−epsilon²/4；成本按三项总编码。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md"
+      ],
+      "status": "complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified"
+    },
+    {
+      "id": "UM-SINGLE-OUTER-TYPED-13-8-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "单外层完整flat的十三八算法",
+      "detail": "只输入typed Q，恰11次普通有理LP查询、至多一次CDF舍入，det-bit-poly输出全部原jobs，C<=13/8 OPT；无OPT/点/oracle输入。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md"
+      ],
+      "status": "complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified"
+    },
+    {
+      "id": "UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完整raw K2的正邻居路径双向保持",
+      "detail": "对每个Q及有理1<=T<2，raw K2(P(Q),T)可行 iff raw K2(P(D_+Q),T)可行；给定两方向任一有限有理证书可det-bit-poly转换，保原moments<=4与private CONFIG；同时省localizers版本亦同。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md",
+        "research/reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md"
+      ],
+      "status": "complete scoped proof; independent Exact-first reconstruction and actual final reading; software none; novelty unverified"
+    },
+    {
+      "id": "UM-ANONYMOUS-TOKEN-COMMON-MOMENT-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "匿名token与原任务共同四次矩域",
+      "detail": "共同degree4 Boolean functional/global M2；有限同菜单组k>=1,0<=r<=k，A/X满足XA=X、ΣX=rA的全允许乘子；原identity端onehot/Boolean至4；固定k4 d10 delta1/100点。全局affine-context容量块另允许任意显式原任务类别及非Boolean X。",
+      "refs": [
+        "research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "匿名token的M1提升与M2不可延拓",
+      "detail": "形式标签lift一般保共同M1含inactive/home与k1/r0/rk；给定67维aggregate M2(rank55)点有形式Q²=-1/150且无任何保全部<=4矩的原token M2 extension；必要整个head×context矩阵由原quadratic SOS给出，坏方向-1/25。",
+      "refs": [
+        "research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md",
+        "research/reviews/unrelated_machines/anonymous_token_label_lift_and_nonextension_review.md"
+      ],
+      "status": "complete scoped algebraic proof; Exact-first reconstruction and actual final appendix reading; finite exact audit only; novelty unverified"
+    },
+    {
+      "id": "AUDIT-ANONYMOUS-TOKEN-LABEL-NONEXTENSION-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "标签非扩展的双重Fraction核验",
+      "detail": "Fixed 210-world67M2/46M1/rank/232eqs/negativeSOS/6job OPT1 context; finite only.",
+      "refs": [
+        "research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md",
+        "tests/audits/unrelated_machines/token_label_hypergeometric_lift.py",
+        "tests/audits/unrelated_machines/token_label_nonextension_independent.py",
+        "evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+        "evidence/runs/unrelated_machines/token_label_nonextension_independent_audit.json",
+        "evidence/runs/unrelated_machines/token_label_nonextension_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-FLAT-RAW-K2-FULL-LOCAL-LAW-PULLBACK-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "原物理共同矩到canonical的限定域",
+      "detail": "固定18m17j34端normalized-flat族Qc，0<c<1有理、T1+c、epsilon1−c；完整共同Boolean/onehot degree4/M2、全部raw-affine物理localizers及每行完整legal CONFIG law共享全部本地矩；每行≤3端。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "完整局部law仍不保canonical同点SA1",
+      "detail": "对每个c可detbitpoly生成指定强物理证书，所有每机full-row laws仍不能保证direct A=a,Z=aE的同点plainSA1：负claim-state=-1/160、quality-state=-c/160；实际OPT1。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md"
+      ],
+      "status": "complete scoped parametric counterexample; independent Exact-first and actual final reading; finite audit only; novelty unverified"
+    },
+    {
+      "id": "UM-FLAT-RAW-SA3-POINT-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "原物理共同矩到canonical的限定域",
+      "detail": "任意显式normalized-flat Q，全部zero/inactive/indexed/unused finite endpoints；1<=T<2；共同完整有理degree4 L，全部原boxes/raw slack/unit resource cap1×≤3 raw literals及Boolean/onehot允许乘子。目标plain共同primitive-SA1精确定义。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "raw S3付清canonical同点SA1接口",
+      "detail": "每真实T-schedule给S3 Dirac点；显式rationalLP infeasible=>OPT>T；每给定S3点的指定product pullback满足完整R_(2−T) plainSA1，若另给同点rawM2则另保canonicalM1；构建/求解/提取均totalbitpoly，无PSDfinder。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md"
+      ],
+      "status": "complete scoped same-point transfer proof; independent Exact-first and actual final reading; software none; novelty unverified"
+    },
+    {
+      "id": "AUDIT-RAW-K2-FULL-LOCAL-LAW-PULLBACK-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "完整局部law反例的有限精确核验",
+      "detail": "Four rational c cases, 18 machines17jobs34ends, 72local moments/72patterns; no general solver.",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "tests/audits/unrelated_machines/raw_k2_full_local_law_canonical_pullback.py",
+        "evidence/runs/unrelated_machines/raw_k2_full_local_law_canonical_pullback_audit.json",
+        "evidence/runs/unrelated_machines/raw_k2_full_local_law_canonical_pullback_parameters.json",
+        "evidence/runs/unrelated_machines/raw_k2_full_local_law_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-RAW-K2-FINITE-RATIONAL-CERTIFICATE-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "一般原矩阵的raw K2有限有理证书合同",
+      "detail": "全部普通UM的positive binary-rational T与有限有理raw K2证书：全部finite端、共同degree4 Boolean/onehot商及M2、逐机完整legal CONFIG first/pair、全部global affine physical-load localizers；无共同CONFIG指标四次links、无canonical gates。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共享终端raw K2的真实锐二倍间隙",
+      "detail": "所有k>=2，L2k²,M1+60Lk4的显式共享终端族实际OPT2−floor√k/k，raw K2在T1+1/k有det-bit-poly生成指定有理证书；缩放到T1实际OPT趋2，结合slot上界得此raw合同全类gap supremum2。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "research/reviews/unrelated_machines/diluted_shared_terminal_raw_k2_gap_review.md"
+      ],
+      "status": "complete exact raw-system gap theorem; independently reconstructed and actual final read; finite local audit only; novelty unverified"
+    },
+    {
+      "id": "AUDIT-DILUTED-SHARED-TERMINAL-RAW-K2-LOCAL-FRAME-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "稀释raw K2的k2局部精确frame",
+      "detail": "121component states; 50dim affine Gram/first-pair CONFIG; two root fresh exact replays, no global/general-k enumeration.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "tests/audits/unrelated_machines/diluted_shared_terminal_raw_k2_finite_audit.py",
+        "evidence/runs/unrelated_machines/diluted_shared_terminal_raw_k2_local_frame_audit.json",
+        "evidence/runs/unrelated_machines/diluted_shared_terminal_raw_k2_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-RAW-ROW-DEGREE-CONFIG-AFFINE-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "固定整行阶数与全局仿射负载证书域",
+      "detail": "每固定整数d>=2、一般普通UM与目标T>0；共同degreeD=max(4,d) Boolean/onehot商、globalM2、每机legal CONFIG全部同机degree<=d矩一致及全部global-affine physical-load localizers；无joint CONFIG indicators或higher q。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md"
+      ],
+      "status": "explicit fixed-d domain"
+    },
+    {
+      "id": "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "任意固定整行矩阶数仍有真实锐二间隙",
+      "detail": "每固定d及所有k>=d，显式L2k²/M1+120Lk4+4kZAmax族真实OPT2−floor√k/k，T1+(d−1)/k有det-bit-poly指定证书；缩放target1实际值趋2，故此合同gap supremum2；指数可依固定d。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "research/reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md"
+      ],
+      "status": "complete fixed-d raw row-consistency gap proof; independent Exact-first, author read-after and actual new-section final read; finite four-case audit only; novelty unverified"
+    },
+    {
+      "id": "AUDIT-DILUTED-ROW-DEGREE-TRADE-FOUR-CASES-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "固定行阶数trade的四例精确核验",
+      "detail": "Four explicit (d,k), all row monomials <=d only, not global/general proof.",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "tests/audits/unrelated_machines/diluted_shared_terminal_row_degree_trade_audit.py",
+        "evidence/runs/unrelated_machines/diluted_row_degree_trade_four_cases_audit.json",
+        "evidence/runs/unrelated_machines/diluted_row_degree_trade_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "多个单state极小home与共享fallback的typed域",
+      "detail": "任意输入k>=1个单indexed-state outers，所有positive homes跨outer互异，每home一个own-unit helper，shared B disjoint homes且任意显式normalized fallback，无其它groups；每outer Σw1,wmax<=1/(4096k⁴)，所有zero/duplicate/inactive原jobs保留。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "可变多个outer的十分之十九实际调度算法",
+      "detail": "只输入完整typed Q，可det total-bit-poly输出全部ordinary P(Q)原jobs合法σ，Cmax<=19/10 OPT；内部plain共同SA1 LP infeas给actualOPT>17/16并用baseline，feasible用CDF/MW+globalvariance精确CE+q.1回填；无SDP/给定点oracle。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md"
+      ],
+      "status": "complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; independent Exact-first and actual author/final read; backend audit only; novelty unverified"
+    },
+    {
+      "id": "AUDIT-MULTI-OUTER-REQUEST-WINNER-PAIR-BACKEND-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "请求winner双资源矩及CE的有限精确核",
+      "detail": "2cases2048/2916outcomes each11CE steps; not tinyprofile or wholealgorithm.",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "tests/audits/unrelated_machines/multi_outer_request_winner_pair_backend.py",
+        "evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_audit.json",
+        "evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-NATIVE-RAW-SH3-COMMON-ORIGINAL-ENDPOINT-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "原任务SH3共同容量必要系统",
+      "detail": "完整显式native unique-home/unit-forward DAG加unit-only entry jobs；有理1<=T<2；同一个degree6原端Boolean/onehot/M3、各行合法CFG first/pair、全部global degq<=2物理负载平方；sink无自有jobs。",
+      "refs": [
+        "research/current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md"
+      ],
+      "status": "explicit scoped necessary domain"
+    },
+    {
+      "id": "UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "三阶原矩条件子树流与包含容量反证",
+      "detail": "每个正质量非home unit入口推出新的parent-bounded单根firstflow，real r=k(2−T)、k1可选不衰减；仅整数网格恢复辅助CFG first。集合包含原矩强制δd1(δd2−M)<=H，每固定多项式q缩放最终每固定T<2均sound FAIL，虽CFGopt1与actualOPT趋2。",
+      "refs": [
+        "research/current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md",
+        "research/reviews/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity_review.md"
+      ],
+      "status": "complete scoped conditional-firstflow and inclusion sound-FAIL proof; independent statement-first and actual read-after/final diff; finite arithmetic audit only; novelty unverified"
+    },
+    {
+      "id": "AUDIT-RAW-SH3-INCLUSION-CUT-BINOMIAL-AND-SMALL-MATRIX-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "包含切120例及小完整原矩精确审计",
+      "detail": "120binomial cases85FAIL; separate45m106j750endpoints toy outside asymptotic domain; noSDP.",
+      "refs": [
+        "research/current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md",
+        "tests/audits/unrelated_machines/raw_sh3_inclusion_entry_cut_binomial_audit.py",
+        "evidence/runs/unrelated_machines/raw_sh3_inclusion_entry_cut_binomial_audit.json",
+        "evidence/runs/unrelated_machines/raw_sh3_inclusion_entry_cut_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-MULTI-OUTER-SHARED-UD-TINY-HOME-DOMAIN-v4",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "单state外层、共享UD叶和k²-home的原输入域",
+      "detail": "完整显式normalized-flat typed Q；变量k>=1个single-state outers，跨全体互异positive homes，各一个own-unit helper，任意normalized B-only fallback；任意B-only extra leaves在epsilon15/16满足whole-menu threshold-UD iff；k1无额外tiny，k>=2 maxw<=1/(16384k²)；所有zero/indexed/inactive原jobs保留。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "共享UD叶和k²-home的十分之十九实际算法",
+      "detail": "只输入Q，用固定确定性worst-case total-bit-poly算法输出全部ordinary原jobs合法σ，Cmax<=19/10 OPT；k1固定顺序submodular greedy，k>=2匹配profile势/有理FW/共同prefix-flow；另有独立全程actual-allocation局部势后端；无OPT/点/SDP或joint-profile oracle。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/shared_ud_tiny_home_potential_rounding_review.md"
+      ],
+      "status": "complete scoped Q-alone deterministic bit-polynomial 19/10 algorithm specification; new Exact-first, actual author and final reading; exchange lemma audit only; novelty unverified"
+    },
+    {
+      "id": "AUDIT-SHARED-UD-OPTIMAL-EXCHANGE-SMALL-NETWORK-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "共享叶最优face交换的有限精确核",
+      "detail": "240cases26674ownerships242all-old optimal vectors; outside tiny domain, no end-to-end implementation.",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "tests/audits/unrelated_machines/shared_ud_optimal_exchange_small_network_audit.py",
+        "evidence/runs/unrelated_machines/shared_ud_optimal_exchange_small_network_audit.json",
+        "evidence/runs/unrelated_machines/shared_ud_optimal_exchange_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "UM-MULTI-OUTER-SHARED-UD-TINY-HOME-DOMAIN-v5",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "共享UD叶与O1k-home的原输入域",
+      "detail": "显式normalized-flat单state outers、全局互异homes/own-unit helpers、任意shared B fallback及epsilon15/16 whole-menu threshold-UD B-only leaves；k1无tiny，k>=2 maxw<=1/(1024k)，完整原indexed/zero/inactive jobs。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-SEVEN-STATE-STAR-ORIGINAL-ENDPOINT-LAW-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "七态完整原星及共同矩点域",
+      "detail": "全部正偶d,s且2<=s<=d/2；明确d+2机器/d+1jobs原星及七态真实完整law P，eta=s/d,h=s/2,T1+eta,p=eta³/1000；扩展保同一指定base矩/Boolean/onehot/M3和指定Gram等式。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-CARDINALITY-FIRST-PAIR-FEATURE-DOMAIN-v1",
+      "kind": "definition",
+      "track": "unrelated_machines",
+      "title": "定基数firstpair显式特征域",
+      "detail": "每显式d>=1及0<=h<=d，h-subsets的常数/singleton/异pair 0/1特征，D1+d+C(d,2)；按poly(d)而非poly(log d)。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md"
+      ],
+      "status": "explicit scoped domain"
+    },
+    {
+      "id": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "O1k-home的全有理实际十分之十九算法",
+      "detail": "仅Q输入，维护actual独立原incidence集，ordinary matching/weighted-rank局部候选及全有理分段倒数势，worst-case总位poly输出全部原jobs σ且Cmax<=19/10 OPT；可靠FAIL actualV<=18/19，k1无ν。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/shared_ud_relative_curvature_rounding_review.md"
+      ],
+      "status": "complete scoped O(1/k)-home Q-alone deterministic bit-polynomial 19/10 algorithm; independent Exact-first and actual author/final reading; software none; novelty unverified"
+    },
+    {
+      "id": "UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "定基数firstpair显式稀疏支持",
+      "detail": "det-poly(d)输出<=D个实际h-subsets及非负有理权，精确保uniform first h/d、异pair h(h−1)/(d(d−1))；显式列压缩不需quadratic oracle。 d=1无异pair条件。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified"
+    },
+    {
+      "id": "UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "七态原星的所有全局二次检验",
+      "detail": "生成同一degree6原端M3/Boolean-onehot、全部global q<=2物理localizers及每行显式poly-support legal CONFIG firstpair；P坏峰2质量eta³/1000独立d，actualOPT1。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified"
+    },
+    {
+      "id": "UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "仿射Boolean原端点与unit owner边界",
+      "detail": "实仿射Boolean分类仅constant/primitive literal；base4+commonM3的线性Gram端点版本成立，同行unitpair0使covered正owners<=2且互补；随机背景N-owner反例阻止无条件degree界。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified"
+    },
+    {
+      "id": "UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1",
+      "kind": "claim",
+      "track": "unrelated_machines",
+      "title": "忠实AND原端点的二次检验不延拓",
+      "detail": "base<=5共同M3/Boolean及原v负载不变、原degree-one Z忠实Gram CY_i时，q=Z(H−h)给L(gq²)=−p(1−eta)(d−h)²<0，故该点不能同时通过globalq2。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "complete scoped original-job local law and extension-boundary proofs; independent Exact-first and actual author/final reading; finite kernel audit only; novelty unverified"
+    },
+    {
+      "id": "AUDIT-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-v1",
+      "kind": "evidence",
+      "track": "unrelated_machines",
+      "title": "七态局部核12参数及3small全矩精确核",
+      "detail": "12 firstpair/symmetric5dim checks; full small M3 26/130/130 and q2 16/46/46, no growing-law software.",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "tests/audits/unrelated_machines/seven_state_star_global_quadratic_audit.py",
+        "evidence/runs/unrelated_machines/seven_state_star_global_quadratic_audit.json",
+        "evidence/runs/unrelated_machines/seven_state_star_global_quadratic_root_replay_scope.json"
       ],
       "status": "finite exact evidence"
     }
@@ -30216,7 +30891,7 @@
         "UM-FRACTIONAL-BENCHMARK-REMATCHING-v1"
       ],
       "conclusion": "UM-TARGET-v1",
-      "statement": "不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。",
+      "statement": "不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized高端NO需以1−gamma_hi比较低质量计数；旧未覆盖判断撤回；未构造NP-hard源，算法数学规格未实现。 新门控福利及近完美源判别另有独立身份，不扩原flat结论。",
       "refs": [
         "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
         "research/reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md"
@@ -30247,7 +30922,7 @@
         "UM-EXPLICIT-XOS-DETERMINISTIC-FRACTIONAL-NSW-v1"
       ],
       "conclusion": "UM-TARGET-v1",
-      "statement": "不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。",
+      "statement": "不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized高端NO需以1−gamma_hi比较低质量计数；旧未覆盖判断撤回；未构造NP-hard源，算法数学规格未实现。 新门控福利及近完美源判别另有独立身份，不扩原flat结论。",
       "refs": [
         "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
         "research/reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md"
@@ -30265,7 +30940,7 @@
         "UM-FLAT-MENU-EXACT-STATE-MASS-ONE"
       ],
       "conclusion": "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1",
-      "statement": "原每state总量1、positive-support FSLP及明确同组singleton REPAIR；fixed eta/gamma/a/delta_q量词同正文。 原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；不覆盖gamma<=delta_q。 全部共同前提均列；页内一般证明而非有限实验。",
+      "statement": "原每state总量1、positive-support FSLP及明确同组singleton REPAIR；fixed eta/gamma/a/delta_q量词同正文。 原total-one FSLP可行给det实际NSW>=1/3000000；rho2^24、Kceil1/eta、q=rho^-K、c=q/2，少于eta*n组quality<q或<=c。同组D singleton REPAIR、D<=a*n、eta<gamma-a且delta_q<=c的promise由显式LP分离。原ordinary全jobs load<=2仅selected-root例外计数；§F旧高/低gamma比较已撤回；新高端互补推论另ID登记。 全部共同前提均列；页内一般证明而非有限实验。 新门控福利及近完美源判别另有独立身份，不扩原flat结论。",
       "refs": [
         "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
         "research/reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md"
@@ -30280,7 +30955,7 @@
         "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1"
       ],
       "conclusion": "UM-TARGET-v1",
-      "statement": "不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized小阈值禁区不覆盖gamma<=delta_q主相关条件域；未构造NP-hard源，算法数学规格未实现。",
+      "statement": "不适用weighted或oracle-only/general-SA后端；不提供all-group maxmin或general UM算法/困难性。normalized高端NO需以1−gamma_hi比较低质量计数；旧未覆盖判断撤回；未构造NP-hard源，算法数学规格未实现。 新门控福利及近完美源判别另有独立身份，不扩原flat结论。",
       "refs": [
         "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
         "research/reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md"
@@ -30435,6 +31110,1057 @@
         "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md"
       ],
       "status": "method boundary; target remains open"
+    },
+    {
+      "id": "um_dense_small_integer_equivalence_from_model",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1",
+      "statement": "完整§6由模型非负性、固定n精确搜索、几何阈值与正整数向上取整严格排除n²替代边，给算法存在性等价；无免费oracle或复杂度假设。",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md",
+        "research/reviews/unrelated_machines/dense_small_integer_equivalence_review.md"
+      ],
+      "status": "complete scoped scaling reconstruction"
+    },
+    {
+      "id": "um_dense_small_integer_equivalence_checks",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DENSE-SMALL-INTEGER-AUDIT-v1"
+      ],
+      "conclusion": "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1",
+      "statement": "有限输入的精确逐机回译和全合格输出核验；不代替一般推导。",
+      "refs": [
+        "tests/audits/unrelated_machines/dense_small_integer_equivalence.py",
+        "evidence/runs/unrelated_machines/dense_small_integer_equivalence.json",
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "finite exact checks only"
+    },
+    {
+      "id": "um_dense_small_integer_equivalence_target_boundary",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DENSE-SMALL-INTEGER-EQUIVALENCE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "原目标可限制在无零/无∞/无大分母的普通整数域研究；等价本身没有给任一侧的近似算法或near2困难性。",
+      "refs": [
+        "research/current/unrelated_machines/model_and_classical_barriers.md"
+      ],
+      "status": "target and its full-constant negation remain open"
+    },
+    {
+      "id": "DERIVE-UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-THRESHOLD-LEAF-HALL-DESIGNATED-PARTITION-DOMAIN-v1",
+        "UM-NORMALIZED-MENU-POSITIVE-SUPPORT-CERTIFICATE-DOMAIN-v1",
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1",
+        "UM-NORMALIZED-MENU-FULL-SUPPORT-LP-PRESERVATION-v3"
+      ],
+      "conclusion": "UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1",
+      "statement": "显式normalized-flat，非空group/menu、非负binary rational每state质量1，可含零/重复/unused；0<epsilon<=1。投影指定全部旧组为C、仅新增D_+路径组为L；自动版另要求原组皆非threshold-UD；D_+只列positive邻居、保全部zero jobs。 全实际epsilon解必给R_cons必要有理LP；同一旧lambda,z的R_cons/R_leaf D_+投影都恰basic；每t>=2 diffuse Q_t在unit阈值两合同及FSLP可行而V=1/t、完整ordinary OPT=2-1/t。弱单matching与MC混合区分，转换确定性总位poly。 一般证明用运输与路径列相加，有限audit不作前提。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md",
+        "research/reviews/unrelated_machines/threshold_leaf_hall_consistent_marginals_path_projection_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅排所定义叶流relaxation相对unit证书的统一正质量提取，不排actual-OPT近似、actual-YES finder、joint-core/PSD、共同完整law或一般hardness；不是所有core系数微小，不认证global novelty。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md",
+        "research/reviews/unrelated_machines/threshold_leaf_hall_consistent_marginals_path_projection_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "CHECK-UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-v1"
+      ],
+      "conclusion": "UM-THRESHOLD-LEAF-HALL-CONSISTENT-MARGINALS-PATH-PROJECTION-GAP-v1",
+      "statement": "只核明确有限fixtures的实现/证书，不作一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md",
+        "tests/audits/unrelated_machines/conditional_leaf_hall_path_projection_independent.py",
+        "tests/audits/unrelated_machines/conditional_leaf_consistent_marginals_independent.py",
+        "evidence/runs/unrelated_machines/conditional_leaf_hall_path_projection_independent.json",
+        "evidence/runs/unrelated_machines/conditional_leaf_consistent_marginals_independent.json",
+        "evidence/runs/unrelated_machines/conditional_leaf_hall_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "DERIVE-UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-MENU-ALMOST-ALL-AND-REPAIR-LP-BARRIER-v1",
+        "UM-NORMALIZED-MENU-POSITIVE-SUPPORT-CERTIFICATE-DOMAIN-v1"
+      ],
+      "conclusion": "UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1",
+      "statement": "同一个非空原group集合、原norm1显式非负binary-rational indexed菜单、positive-support unit-FSLP；eta固定在(0,1]，delta_q/高端计数严格号按正文。不是一般非归一化或隐式菜单。 原norm1显式菜单unit-FSLP可行；固定eta，q_eta=(2^24)^(-ceil(1/eta))，0<delta_q<=q_eta及0<=gamma_hi<=1−eta时，C的同一实际allocation有计数 #{g:quality_g>=delta_q}>gamma_hi*n。因此all-allocation高端robust NO不可能；其互补低端比例是1−gamma_hi。 用#low<delta=n−#high>=delta精确互补；不是新NSW证明。",
+      "refs": [
+        "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+        "research/reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md"
+      ],
+      "status": "complete direct corollary"
+    },
+    {
+      "id": "LIMIT-UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-ROBUST-HIGH-LOW-COMPLEMENT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只修旧§F解释并给C直接推论；A/B与C–D原精确低端定理未被此反驳。无全组maxmin、一般UM次二算法/困难性或未来gated构造认证。",
+      "refs": [
+        "research/current/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary.md",
+        "research/reviews/unrelated_machines/explicit_xos_fractional_nsw_and_normalized_robust_gap_boundary_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-NORMALIZED-GATED-MENU-VALUE-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-GATED-MENU-EXPLICIT-DOMAIN-v1",
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-NORMALIZED-GATED-MENU-VALUE-v1",
+      "statement": "所有上述输入OPT(P_gate)=2−beta*；任意完整C<2解码不交原bundles，反向保全部jobs含零/未选states；双向det-bit-poly。 共同前提、内部引理与所有逐机负载在正文；没有用有限试验推一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md",
+        "research/reviews/unrelated_machines/normalized_gated_menu_welfare_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-NORMALIZED-GATED-MENU-VALUE-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-GATED-MENU-VALUE-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅完整显式norm1菜单和新gated普通矩阵；旧flat全组selector、多层/共享内部/非归一化/隐式表未覆盖。福利机制为DNS既有工具，13/8不称锐或新颖；generic rational LP仅数学规格，软件finite audit only。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md",
+        "research/reviews/unrelated_machines/normalized_gated_menu_welfare_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-NORMALIZED-GATED-MENU-WELFARE-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-GATED-MENU-EXPLICIT-DOMAIN-v1",
+        "UM-NORMALIZED-GATED-MENU-VALUE-v1"
+      ],
+      "conclusion": "UM-NORMALIZED-GATED-MENU-WELFARE-APPROX-v1",
+      "statement": "整个明确norm1 gated类有det-bit-poly真实13/8近似，无FSLP前提/未知OPT输入。联合使用明确福利LP x<=z、标准最大系数舍入的精确CDF确定性化、真实排序平衡与所有jobs映射；不是generalUM。 共同前提、内部引理与所有逐机负载在正文；没有用有限试验推一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md",
+        "research/reviews/unrelated_machines/normalized_gated_menu_welfare_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-NORMALIZED-GATED-MENU-WELFARE-APPROX-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-GATED-MENU-WELFARE-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅完整显式norm1菜单和新gated普通矩阵；旧flat全组selector、多层/共享内部/非归一化/隐式表未覆盖。福利机制为DNS既有工具，13/8不称锐或新颖；generic rational LP仅数学规格，软件finite audit only。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md",
+        "research/reviews/unrelated_machines/normalized_gated_menu_welfare_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-NORMALIZED-ROBUST-PARTIAL-SOURCE-LP-BARRIER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-GATED-MENU-EXPLICIT-DOMAIN-v1"
+      ],
+      "conclusion": "UM-NORMALIZED-ROBUST-PARTIAL-SOURCE-LP-BARRIER-v1",
+      "statement": "high>=delta少于gamma_hi*n对应low<delta多于(1−gamma_hi)n；完整YES由positive-support FSLP在gamma_hi<=(5/8−delta)/(1−delta)判；近完美YES由福利LP在(5/8)(1−eta)>=gamma_hi+(1−gamma_hi)delta判，分别同样覆盖high>delta版本及等号；含gamma_hi<=delta<=3/8,eta<=1/40。 共同前提、内部引理与所有逐机负载在正文；没有用有限试验推一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md",
+        "research/reviews/unrelated_machines/normalized_gated_menu_welfare_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-NORMALIZED-ROBUST-PARTIAL-SOURCE-LP-BARRIER-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-NORMALIZED-ROBUST-PARTIAL-SOURCE-LP-BARRIER-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅完整显式norm1菜单和新gated普通矩阵；旧flat全组selector、多层/共享内部/非归一化/隐式表未覆盖。福利机制为DNS既有工具，13/8不称锐或新颖；generic rational LP仅数学规格，软件finite audit only。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md",
+        "research/reviews/unrelated_machines/normalized_gated_menu_welfare_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-ACTUAL-KRONECKER-NO-TO-YES-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ACTUAL-NONNEGATIVE-KRONECKER-DOMAIN-v1"
+      ],
+      "conclusion": "UM-ACTUAL-KRONECKER-NO-TO-YES-v1",
+      "statement": "显式8机10job seed真实OPT3/2，完整square64机100job400有限边可全机load1；所有完整偶次幂OPT1。含全部mixed jobs，关闭该通用平方保NO合同；不宣称首次发现现象或hard source。 共同前提、内部引理与所有逐机负载在正文；没有用有限试验推一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "research/reviews/unrelated_machines/actual_kronecker_product_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-ACTUAL-KRONECKER-NO-TO-YES-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ACTUAL-KRONECKER-NO-TO-YES-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只给本seed全矩阵反例与指定未剪枝LP恒等式；无NP源，不排特定hard image或物理一致性产品，不是UM主反证。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "research/reviews/unrelated_machines/actual_kronecker_product_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ACTUAL-NONNEGATIVE-KRONECKER-DOMAIN-v1"
+      ],
+      "conclusion": "UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1",
+      "statement": "对所有合法非负有理矩阵含n0/zero/∞，未剪枝assignmentLP F(P⊗Q)=F(P)F(Q)，非负原初/对偶相乘；不是剪枝LST或CONFIG。 共同前提、内部引理与所有逐机负载在正文；没有用有限试验推一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "research/reviews/unrelated_machines/actual_kronecker_product_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只给本seed全矩阵反例与指定未剪枝LP恒等式；无NP源，不排特定hard image或物理一致性产品，不是UM主反证。",
+      "refs": [
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md",
+        "research/reviews/unrelated_machines/actual_kronecker_product_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MULTIWITNESS-FEE-FIXED-MATRIX-DOMAIN-v2",
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2",
+      "statement": "OPT(P)=1；每pattern OPT_K=min(2,max(1,B_K))，闭beta<2最小fee按B_K>beta/ c+B_K<=beta/其余为∞/0/1。单queries各strict且阈值2共享同一f；无全开strict。非空K共同strict且每single收费迫|K|(beta−c)<B_K<=1，beta>=3/2时至多1；empty另0。 共同前提、内部引理与所有逐机负载在正文；没有用有限试验推一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/two_witness_query_separation.md",
+        "research/reviews/unrelated_machines/multiwitness_shared_job_fee_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "同一OPT1显式易解P的精确读取/费用合同；无共同全开strict、无源NO decoder或可复用fanout，不是OPT gap或UM主反证。",
+      "refs": [
+        "research/current/unrelated_machines/two_witness_query_separation.md",
+        "research/reviews/unrelated_machines/multiwitness_shared_job_fee_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "CHECK-UM-NORMALIZED-GATED-MENU-VALUE-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "EVIDENCE-um_normalized_gated_menu_welfare_and_robust_source_boundary"
+      ],
+      "conclusion": "UM-NORMALIZED-GATED-MENU-VALUE-v1",
+      "statement": "有限Fraction实现/证书核验；不是一般数学证明。",
+      "refs": [
+        "tests/audits/unrelated_machines/normalized_gated_menu_welfare.py",
+        "evidence/runs/unrelated_machines/normalized_gated_menu_welfare_audit.json",
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md"
+      ],
+      "status": "finite evidence only"
+    },
+    {
+      "id": "CHECK-UM-NORMALIZED-GATED-MENU-WELFARE-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "EVIDENCE-um_normalized_gated_menu_welfare_and_robust_source_boundary"
+      ],
+      "conclusion": "UM-NORMALIZED-GATED-MENU-WELFARE-APPROX-v1",
+      "statement": "有限Fraction实现/证书核验；不是一般数学证明。",
+      "refs": [
+        "tests/audits/unrelated_machines/normalized_gated_menu_welfare.py",
+        "evidence/runs/unrelated_machines/normalized_gated_menu_welfare_audit.json",
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md"
+      ],
+      "status": "finite evidence only"
+    },
+    {
+      "id": "CHECK-UM-NORMALIZED-ROBUST-PARTIAL-SOURCE-LP-BARRIER-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "EVIDENCE-um_normalized_gated_menu_welfare_and_robust_source_boundary"
+      ],
+      "conclusion": "UM-NORMALIZED-ROBUST-PARTIAL-SOURCE-LP-BARRIER-v1",
+      "statement": "有限Fraction实现/证书核验；不是一般数学证明。",
+      "refs": [
+        "tests/audits/unrelated_machines/normalized_gated_menu_welfare.py",
+        "evidence/runs/unrelated_machines/normalized_gated_menu_welfare_audit.json",
+        "research/current/unrelated_machines/normalized_gated_menu_welfare_and_robust_source_boundary.md"
+      ],
+      "status": "finite evidence only"
+    },
+    {
+      "id": "CHECK-UM-ACTUAL-KRONECKER-NO-TO-YES-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "EVIDENCE-um_actual_kronecker_product_counterexample"
+      ],
+      "conclusion": "UM-ACTUAL-KRONECKER-NO-TO-YES-v1",
+      "statement": "有限Fraction实现/证书核验；不是一般数学证明。",
+      "refs": [
+        "tests/audits/unrelated_machines/actual_kronecker_product.py",
+        "evidence/runs/unrelated_machines/actual_kronecker_product_audit.json",
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md"
+      ],
+      "status": "finite evidence only"
+    },
+    {
+      "id": "CHECK-UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "EVIDENCE-um_actual_kronecker_product_counterexample"
+      ],
+      "conclusion": "UM-UNPRUNED-ASSIGNMENT-LP-KRONECKER-v1",
+      "statement": "有限Fraction实现/证书核验；不是一般数学证明。",
+      "refs": [
+        "tests/audits/unrelated_machines/actual_kronecker_product.py",
+        "evidence/runs/unrelated_machines/actual_kronecker_product_audit.json",
+        "research/current/unrelated_machines/private_graft_and_resource_repetition.md"
+      ],
+      "status": "finite evidence only"
+    },
+    {
+      "id": "CHECK-UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "EVIDENCE-um_multiwitness_shared_job_fee_capacity_v2"
+      ],
+      "conclusion": "UM-MULTIWITNESS-SHARED-JOB-FEE-CAPACITY-v2",
+      "statement": "有限Fraction实现/证书核验；不是一般数学证明。",
+      "refs": [
+        "tests/audits/unrelated_machines/multiwitness_shared_job_fee.py",
+        "evidence/runs/unrelated_machines/multiwitness_shared_job_fee_audit.json",
+        "research/current/unrelated_machines/two_witness_query_separation.md"
+      ],
+      "status": "finite evidence only"
+    },
+    {
+      "id": "DERIVE-UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-SINGLE-OUTER-TYPED-PRIMITIVE-SA1-DOMAIN-v1",
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1"
+      ],
+      "conclusion": "UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1",
+      "statement": "显式normalized-flat的typed单outer；跨全部outer-state索引的正homes互异、每home恰一own-singleton helper；fallback states normalized且只用与homes分离的任意共享B，可无fallback；无其他groups；全部selector/incidence/zero/unselected jobs保留。 给定Q、0<epsilon<=1及同一完整primitive-SA1有理点，可det-bit-poly输出真实全组质量>=epsilon²/4及全部原job分配C<=2−epsilon²/4；成本按三项总编码。 正文完整证明使用所有共同前提，不以有限实验作一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SINGLE-OUTER-PRIMITIVE-SA1-EPS2-4-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "特殊typed结构，不覆盖多个outer、无own-home辅助groups、一般UM；软件none、福利工具既有、全局新颖性未认证。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-SINGLE-OUTER-TYPED-13-8-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-SINGLE-OUTER-TYPED-PRIMITIVE-SA1-DOMAIN-v1",
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1"
+      ],
+      "conclusion": "UM-SINGLE-OUTER-TYPED-13-8-v1",
+      "statement": "显式normalized-flat的typed单outer；跨全部outer-state索引的正homes互异、每home恰一own-singleton helper；fallback states normalized且只用与homes分离的任意共享B，可无fallback；无其他groups；全部selector/incidence/zero/unselected jobs保留。 只输入typed Q，恰11次普通有理LP查询、至多一次CDF舍入，det-bit-poly输出全部原jobs，C<=13/8 OPT；无OPT/点/oracle输入。 正文完整证明使用所有共同前提，不以有限实验作一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-SINGLE-OUTER-TYPED-13-8-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SINGLE-OUTER-TYPED-13-8-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "特殊typed结构，不覆盖多个outer、无own-home辅助groups、一般UM；软件none、福利工具既有、全局新颖性未认证。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-FLAT-RAW-K2-FINITE-RATIONAL-CERTIFICATE-DOMAIN-v1"
+      ],
+      "conclusion": "UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1",
+      "statement": "显式normalized-flat的全部finite-endpoint Boolean degree4共同functional，M2 PSD、job onehot所有允许乘子、每机器有限有理真实CONFIG的first/pair及全部global affine physical-load localizers；1<=T<2；证书完整提供而非免费finder。 对每个Q及有理1<=T<2，raw K2(P(Q),T)可行 iff raw K2(P(D_+Q),T)可行；给定两方向任一有限有理证书可det-bit-poly转换，保原moments<=4与private CONFIG；同时省localizers版本亦同。 正文完整证明使用所有共同前提，不以有限实验作一般证明。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md",
+        "research/reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-FLAT-UNIT-RESOURCE-PATH-K2-PRESERVATION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅给定raw K2有限有理证书的双向转换；非exact SDP可行性后端、非canonical native C2、非弱R_cons的强gap升级，非一般算法或hardness。",
+      "refs": [
+        "research/current/unrelated_machines/normalized_menu_configuration_certificate_preservation.md",
+        "research/reviews/unrelated_machines/normalized_menu_configuration_certificate_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-ANONYMOUS-TOKEN-COMMON-MOMENT-DOMAIN-v1"
+      ],
+      "conclusion": "UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1",
+      "statement": "共同degree4 Boolean functional/global M2；有限同菜单组k>=1,0<=r<=k，A/X满足XA=X、ΣX=rA的全允许乘子；原identity端onehot/Boolean至4；固定k4 d10 delta1/100点。全局affine-context容量块另允许任意显式原任务类别及非Boolean X。 形式标签lift一般保共同M1含inactive/home与k1/r0/rk；给定67维aggregate M2(rank55)点有形式Q²=-1/150且无任何保全部<=4矩的原token M2 extension；必要整个head×context矩阵由原quadratic SOS给出，坏方向-1/25。 解析Laplacian/Schur与原任务SOS承担一般结论，有限audit不作前提。",
+      "refs": [
+        "research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md",
+        "research/reviews/unrelated_machines/anonymous_token_label_lift_and_nonextension_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅给定point非扩展，不是所有points不可行；13机context actualOPT1，非原任务K2 gap/hardness/一般算法或SDP finder；必要块未证充分，显式任务与binary需求不混。",
+      "refs": [
+        "research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md",
+        "research/reviews/unrelated_machines/anonymous_token_label_lift_and_nonextension_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "CHECK-UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-ANONYMOUS-TOKEN-LABEL-NONEXTENSION-v1"
+      ],
+      "conclusion": "UM-ANONYMOUS-TOKEN-M1-LIFT-M2-NONEXTENSION-v1",
+      "statement": "只核固定有理点、两种Schur/负范数和完整context，非所有输入或finder。",
+      "refs": [
+        "research/current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md",
+        "tests/audits/unrelated_machines/token_label_hypergeometric_lift.py",
+        "tests/audits/unrelated_machines/token_label_nonextension_independent.py",
+        "evidence/runs/unrelated_machines/token_label_hypergeometric_lift_audit.json",
+        "evidence/runs/unrelated_machines/token_label_nonextension_independent_audit.json",
+        "evidence/runs/unrelated_machines/token_label_nonextension_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "DERIVE-UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-FLAT-RAW-K2-FULL-LOCAL-LAW-PULLBACK-DOMAIN-v1",
+        "UM-FLAT-RAW-K2-FINITE-RATIONAL-CERTIFICATE-DOMAIN-v1"
+      ],
+      "conclusion": "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1",
+      "statement": "固定18m17j34端normalized-flat族Qc，0<c<1有理、T1+c、epsilon1−c；完整共同Boolean/onehot degree4/M2、全部raw-affine物理localizers及每行完整legal CONFIG law共享全部本地矩；每行≤3端。 对每个c可detbitpoly生成指定强物理证书，所有每机full-row laws仍不能保证direct A=a,Z=aE的同点plainSA1：负claim-state=-1/160、quality-state=-c/160；实际OPT1。 页内符号证明承担全称命题，有限run不作前提。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只反对给定点指定map，非actualOPTgap/改点不可能/一般算法或hardness；全globaltriple positivity会切该点。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-FLAT-RAW-SA3-POINT-DOMAIN-v1"
+      ],
+      "conclusion": "UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1",
+      "statement": "任意显式normalized-flat Q，全部zero/inactive/indexed/unused finite endpoints；1<=T<2；共同完整有理degree4 L，全部原boxes/raw slack/unit resource cap1×≤3 raw literals及Boolean/onehot允许乘子。目标plain共同primitive-SA1精确定义。 每真实T-schedule给S3 Dirac点；显式rationalLP infeasible=>OPT>T；每给定S3点的指定product pullback满足完整R_(2−T) plainSA1，若另给同点rawM2则另保canonicalM1；构建/求解/提取均totalbitpoly，无PSDfinder。 页内符号证明承担全称命题，有限run不作前提。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "LIMIT-UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RAW-SA3-CANONICAL-SA1-POINT-PULLBACK-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅necessary LP与充分point接口，非反向actual可行性/全部group rounding/一般UM；S3与K2无自动包含关系，optionalPSD不带exact SDPfinder；不称层数最小。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "research/reviews/unrelated_machines/raw_k2_canonical_pullback_and_sa3_repair_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "CHECK-UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-RAW-K2-FULL-LOCAL-LAW-PULLBACK-v1"
+      ],
+      "conclusion": "UM-RAW-K2-LOCAL-LAW-DIRECT-CANONICAL-PULLBACK-OBSTRUCTION-v1",
+      "statement": "只核明确有限c下指定证书/全部jobs，非参数一般证明或S3软件认证。",
+      "refs": [
+        "research/current/unrelated_machines/single_outer_shared_selector_rounding_and_hardness_source_boundary.md",
+        "tests/audits/unrelated_machines/raw_k2_full_local_law_canonical_pullback.py",
+        "evidence/runs/unrelated_machines/raw_k2_full_local_law_canonical_pullback_audit.json",
+        "evidence/runs/unrelated_machines/raw_k2_full_local_law_canonical_pullback_parameters.json",
+        "evidence/runs/unrelated_machines/raw_k2_full_local_law_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "DERIVE-UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-RAW-K2-FINITE-RATIONAL-CERTIFICATE-DOMAIN-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1",
+      "statement": "所有k>=2，L2k²,M1+60Lk4的显式共享终端族实际OPT2−floor√k/k，raw K2在T1+1/k有det-bit-poly生成指定有理证书；缩放到T1实际OPT趋2，结合slot上界得此raw合同全类gap supremum2。全部共同前提及页内rare-H/Q和条件方差证明，不用有限audit承担一般结论。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "research/reviews/unrelated_machines/diluted_shared_terminal_raw_k2_gap_review.md"
+      ],
+      "status": "complete exact scoped proof"
+    },
+    {
+      "id": "CHECK-UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-DILUTED-SHARED-TERMINAL-RAW-K2-LOCAL-FRAME-v1"
+      ],
+      "conclusion": "UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1",
+      "statement": "只k2一组件local frame/CFG，不认证所有k或全global contexts；定理由解析证明。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "tests/audits/unrelated_machines/diluted_shared_terminal_raw_k2_finite_audit.py",
+        "evidence/runs/unrelated_machines/diluted_shared_terminal_raw_k2_local_frame_audit.json",
+        "evidence/runs/unrelated_machines/diluted_shared_terminal_raw_k2_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DILUTED-SHARED-TERMINAL-RAW-K2-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅所列raw relaxation gap，非hardness/一般算法非存在性；row triple和跨行selector×incoming条件可切给定点，不声称canonical C2、joint-CONFIG M2、高阶load或全SoS(CONFIG)gap；一般输入证书finder未提供。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "research/reviews/unrelated_machines/diluted_shared_terminal_raw_k2_gap_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-RAW-ROW-DEGREE-CONFIG-AFFINE-DOMAIN-v1",
+        "UM-ST-ROUND-v1"
+      ],
+      "conclusion": "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "statement": "每固定d及所有k>=d，显式L2k²/M1+120Lk4+4kZAmax族真实OPT2−floor√k/k，T1+(d−1)/k有det-bit-poly指定证书；缩放target1实际值趋2，故此合同gap supremum2；指数可依固定d。页内完整原矩计数/OPT、subset插值非负trade及所有global contexts定量证明，有限run不作一般前提。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "research/reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md"
+      ],
+      "status": "complete scoped exact proof"
+    },
+    {
+      "id": "CHECK-UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-DILUTED-ROW-DEGREE-TRADE-FOUR-CASES-v1"
+      ],
+      "conclusion": "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "statement": "仅四例整行矩等式/非负legalCFG/purehome/自然nextdegree；非allcontexts。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "tests/audits/unrelated_machines/diluted_shared_terminal_row_degree_trade_audit.py",
+        "evidence/runs/unrelated_machines/diluted_row_degree_trade_four_cases_audit.json",
+        "evidence/runs/unrelated_machines/diluted_row_degree_trade_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-DILUTED-SHARED-TERMINAL-ROW-DEGREE-GAP-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "非uniform variable-d algorithm、非高阶负载/完整SoS(CONFIG)/canonical C2/jointCONFIG-M2 gap，非hardness或一般算法不存在；原degree3跨行条件切给定点；d+1>D仅自然延伸下一阶失败。",
+      "refs": [
+        "research/current/unrelated_machines/diluted_shared_terminal_raw_k2_gap.md",
+        "research/reviews/unrelated_machines/diluted_shared_terminal_row_degree_gap_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-DOMAIN-v1",
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1"
+      ],
+      "conclusion": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "statement": "只输入完整typed Q，可det total-bit-poly输出全部ordinary P(Q)原jobs合法σ，Cmax<=19/10 OPT；内部plain共同SA1 LP infeas给actualOPT>17/16并用baseline，feasible用CDF/MW+globalvariance精确CE+q.1回填；无SDP/给定点oracle。全部共同前提加正文自足普通LP/概率/条件期望算法证明；有限数据不是一般前提。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md"
+      ],
+      "status": "complete scoped algorithm proof"
+    },
+    {
+      "id": "CHECK-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-MULTI-OUTER-REQUEST-WINNER-PAIR-BACKEND-v1"
+      ],
+      "conclusion": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "statement": "只核two-resource finite backend moments/CE，不认证全输入算法软件。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "tests/audits/unrelated_machines/multi_outer_request_winner_pair_backend.py",
+        "evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_audit.json",
+        "evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_root_replay_scope.json"
+      ],
+      "status": "finite exact evidence"
+    },
+    {
+      "id": "LIMIT-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅此typed profile，非任意Q/多state outer/重home/一般UM，k²或高阶moment后续不混入；只有有限pair backend，无端到端软件。排近二hardness源仅所有输出本域、YESOPT1/NO>=2−γ fixedγ<.1且P≠NP。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/multi_outer_single_state_tiny_home_rounding_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-NATIVE-RAW-SH3-COMMON-ORIGINAL-ENDPOINT-DOMAIN-v1"
+      ],
+      "conclusion": "UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2",
+      "statement": "每个正质量非home unit入口推出新的parent-bounded单根firstflow，real r=k(2−T)、k1可选不衰减；仅整数网格恢复辅助CFG first。集合包含原矩强制δd1(δd2−M)<=H，每固定多项式q缩放最终每固定T<2均sound FAIL，虽CFGopt1与actualOPT趋2。页内完整zero-null/条件flux/DAG/bit/CFG/binomial与floors付款，标准工具与源图计数扣除。",
+      "refs": [
+        "research/current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md",
+        "research/reviews/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "CHECK-UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-RAW-SH3-INCLUSION-CUT-BINOMIAL-AND-SMALL-MATRIX-v1"
+      ],
+      "conclusion": "UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2",
+      "statement": "Only120exact arithmetic cases and one small complete CFG/path matrix; no general moment proof by enumeration.",
+      "refs": [
+        "research/current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md",
+        "tests/audits/unrelated_machines/raw_sh3_inclusion_entry_cut_binomial_audit.py",
+        "evidence/runs/unrelated_machines/raw_sh3_inclusion_entry_cut_binomial_audit.json",
+        "evidence/runs/unrelated_machines/raw_sh3_inclusion_entry_cut_root_replay_scope.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "LIMIT-UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-RAW-SH3-CONDITIONAL-SUBTREE-FLOW-AND-INCLUSION-CUT-v2"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "不是保原点矩的canonical扩展/原全实例新点/完整调度器/SH3gap/复杂性困难性；不ceil realquota、不将单entry失败等同整个OPT>T；多层同owner路径预算未免费继承。",
+      "refs": [
+        "research/current/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity.md",
+        "research/reviews/unrelated_machines/raw_sh3_conditional_subtree_flow_and_inclusion_capacity_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MODEL-v1",
+        "UM-MULTI-OUTER-SHARED-UD-TINY-HOME-DOMAIN-v4",
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1"
+      ],
+      "conclusion": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "statement": "只输入Q，用固定确定性worst-case total-bit-poly算法输出全部ordinary原jobs合法σ，Cmax<=19/10 OPT；k1固定顺序submodular greedy，k>=2匹配profile势/有理FW/共同prefix-flow；另有独立全程actual-allocation局部势后端；无OPT/点/SDP或joint-profile oracle。共同前提加正文自足matroid/交换/曲率/FW/bit/实际FAIL及全jobs证明；有限数据不作全称前提。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/shared_ud_tiny_home_potential_rounding_review.md"
+      ],
+      "status": "complete scoped algorithm proof"
+    },
+    {
+      "id": "CHECK-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-SHARED-UD-OPTIMAL-EXCHANGE-SMALL-NETWORK-v1"
+      ],
+      "conclusion": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "statement": "仅核最优face交换lemma小例；不认证tiny/整体profile算法及全jobs实现。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "tests/audits/unrelated_machines/shared_ud_optimal_exchange_small_network_audit.py",
+        "evidence/runs/unrelated_machines/shared_ud_optimal_exchange_small_network_audit.json",
+        "evidence/runs/unrelated_machines/shared_ud_optimal_exchange_root_replay_scope.json"
+      ],
+      "status": "finite exact checks"
+    },
+    {
+      "id": "LIMIT-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v4"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "特殊typed域；不覆盖multistate outer/重home/一般nonUD extras/任意P。新域k²不与旧v1 k⁴算法软件混；只有exchange finite audit、无完整实现。仅排全部输出该域且YESactualOPT1/NO>=2−gamma fixed0<gamma<.1的NP归约(P!=NP)，非UM正面或反面突破。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/shared_ud_tiny_home_potential_rounding_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MULTI-OUTER-SHARED-UD-TINY-HOME-DOMAIN-v5",
+        "UM-MODEL-v1",
+        "UM-WEIGHTED-MENU-STATE-DUMMY-SC-VALUE-BRIDGE-v1"
+      ],
+      "conclusion": "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5",
+      "statement": "仅Q输入，维护actual独立原incidence集，ordinary matching/weighted-rank局部候选及全有理分段倒数势，worst-case总位poly输出全部原jobs σ且Cmax<=19/10 OPT；可靠FAIL actualV<=18/19，k1无ν。全部共同前提加正文自足构造/代数/bit与原job证明，不将有限审计当全称前提。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/shared_ud_relative_curvature_rounding_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "LIMIT-UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v5"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅此typed域，非多state outer/重home/nonUD extras/任意UM；无软件。只排全部输出本域且YESOPT1/NO>=2−γ fixedγ<.1的NP归约(P!=NP)，一般主目标正反面OPEN。",
+      "refs": [
+        "research/current/unrelated_machines/multi_outer_single_state_tiny_home_rounding.md",
+        "research/reviews/unrelated_machines/shared_ud_relative_curvature_rounding_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-CARDINALITY-FIRST-PAIR-FEATURE-DOMAIN-v1"
+      ],
+      "conclusion": "UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1",
+      "statement": "det-poly(d)输出<=D个实际h-subsets及非负有理权，精确保uniform first h/d、异pair h(h−1)/(d(d−1))；显式列压缩不需quadratic oracle。全部共同前提加正文自足构造/代数/bit与原job证明，不将有限审计当全称前提。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "LIMIT-UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "仅显式定基数first/pair的抽象证书算法；d=1没有异pair。稀疏row law不保更高矩或替换共同L，无quadratic oracle，无UM gap/hardness/一般调度结论；软件none。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SEVEN-STATE-STAR-ORIGINAL-ENDPOINT-LAW-DOMAIN-v1",
+        "UM-UNIFORM-CARDINALITY-PAIR-SPARSE-SUPPORT-v1",
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2",
+      "statement": "生成同一degree6原端M3/Boolean-onehot、全部global q<=2物理localizers及每行显式poly-support legal CONFIG firstpair；P坏峰2质量eta³/1000独立d，actualOPT1。全部共同前提加正文自足构造/代数/bit与原job证明，不将有限审计当全称前提。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "LIMIT-UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "原星actualOPT1，只有局部共同M3/globalq2及显式rowCFG证书；不是SH3 integrality gap、递归共同law、hardness或一般调度算法。有限12例不作全称证明。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SEVEN-STATE-STAR-ORIGINAL-ENDPOINT-LAW-DOMAIN-v1",
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1",
+      "statement": "实仿射Boolean分类仅constant/primitive literal；base4+commonM3的线性Gram端点版本成立，同行unitpair0使covered正owners<=2且互补；随机背景N-owner反例阻止无条件degree界。全部共同前提加正文自足构造/代数/bit与原job证明，不将有限审计当全称前提。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "LIMIT-UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SEVEN-STATE-STAR-AFFINE-BOOLEAN-BOUNDARY-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只保base4、同一M3、covered端点线性Gram及固定全支持背景；不能扩为无条件物理入度<=2，也不限制所有非仿射依赖，无软件或一般hardness。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "DERIVE-UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1",
+      "kind": "derives",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SEVEN-STATE-STAR-ORIGINAL-ENDPOINT-LAW-DOMAIN-v1",
+        "UM-MODEL-v1"
+      ],
+      "conclusion": "UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1",
+      "statement": "base<=5共同M3/Boolean及原v负载不变、原degree-one Z忠实Gram CY_i时，q=Z(H−h)给L(gq²)=−p(1−eta)(d−h)²<0，故该点不能同时通过globalq2。全部共同前提加正文自足构造/代数/bit与原job证明，不将有限审计当全称前提。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "complete scoped proof"
+    },
+    {
+      "id": "LIMIT-UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1",
+      "kind": "limits",
+      "track": "unrelated_machines",
+      "premises": [
+        "UM-SEVEN-STATE-STAR-AND-GATE-LOCALIZER-OBSTRUCTION-v1"
+      ],
+      "conclusion": "UM-TARGET-v1",
+      "statement": "只排保base5/忠实AND二次Gram/原v负载的给定点延拓；不排一般非线性依赖，不向普通UM加逻辑侧约束；无软件/源decoder/hardness。",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "research/reviews/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundary_review.md"
+      ],
+      "status": "scope limitation"
+    },
+    {
+      "id": "CHECK-UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2",
+      "kind": "checks",
+      "track": "unrelated_machines",
+      "premises": [
+        "AUDIT-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-v1"
+      ],
+      "conclusion": "UM-SEVEN-STATE-STAR-GLOBAL-QUADRATIC-LOCAL-v2",
+      "statement": "Only12finite cases and3fullsmall Boolean matrices; not general proof or sparse-support/growing software.",
+      "refs": [
+        "research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md",
+        "tests/audits/unrelated_machines/seven_state_star_global_quadratic_audit.py",
+        "evidence/runs/unrelated_machines/seven_state_star_global_quadratic_audit.json",
+        "evidence/runs/unrelated_machines/seven_state_star_global_quadratic_root_replay_scope.json"
+      ],
+      "status": "finite exact checks"
     }
   ]
 }
