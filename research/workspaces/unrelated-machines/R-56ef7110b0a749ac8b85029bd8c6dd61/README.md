@@ -16,3 +16,9 @@
 - [永久消元的共同支撑断点](../../../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)：零缺陷、全CONFIG路径和两符号方向分别有实际YES坏历史；下一义务是选方向或保可重开共同状态。
 
 主目标仍OPEN。本桌面不保存被否定尝试的重复资产树。
+
+
+- [小任务稳定接口及实际三值](../../../current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)：共同匹配给定点算法、过强稳定证书NP选择与同源实际易近似的范围分层。
+- [真单环双坏端点§4](../../../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)：真正circuit的两个最大符号完整支撑OPT同为2−1/D；真实初态与完整配置路径均显式给出。一般安全方向/共同状态的输入生成和全局负载余量仍未解决。
+
+- [支撑安全之后的点再生义务](support_safe_motion_and_point_regeneration_questions.md)：仅探索草稿；紧行conformal、CONFIG切向与sound FAIL的语义拆开，低负载停车扩域尚未升级。

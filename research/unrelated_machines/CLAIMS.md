@@ -3552,3 +3552,54 @@ u_1=q) 地板；见 `k_uniform_bundle_matching_floor_audit.json`。
 - Counterevidence / Objections：不能把存在好seed当可多项式找到；不能把高概率YES或advice换成全seed/统一程序；不能把sourceNO概率换成compiledNO概率。NO等号用拒绝比较≥，非严格>；所有实质限定已保正文。
 - Status：标准证书机制的完整限范围推论，经独立实际内审；无外审或全球新颖性认证；UM-TARGET-v1与一般反面仍OPEN。
 - Related Files：[源正文末节](../current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)、[独立审查](../reviews/unrelated_machines/perfect_complete_seed_certificate_review.md)。
+
+## 小任务稳定工作量：联合舍入、证书选择与实际值分层
+
+### UM-TINY-WORK-STABILITY-JOINT-ROUND-v1：小任务单侧稳定的全机联合槽舍入
+
+- ID/version / Exact Statement / Quantifiers：UM-TINY-WORK-STABILITY-JOINT-ROUND-v1；∀合法P、显式有理等式覆盖CONFIG(T)点y、δ∈[0,1]、二进制整数K≥1，先删除所有有零端job；若每个正权源配置至多K个big(p>δT)且tiny数量不限，则可在显式证书总位长的统一确定性多项式时间输出同一完整实际σ，∀i L_i≤α_K(T−r_i)+s_i+b_i。r为正权tiny工作最小值、s为均值、b为正边际tiny最大时间；α1=1,α2=3/2,α3=11/6,K≥4时α=2−K^{−(K−1)}。若s−r≤ωT，则L_i≤(α_K+ω+δ)T。
+- Objects / Domain / Definitions：UM-MODEL-v1，显式CONFIG(T)及本文§1的big/tiny、r/s/b；零端jobs先全局删除，T0和空任务直接输出零调度。
+- Assumptions / Scope：无复杂度假设；给定点构造，K作为二进制输入也不参与指数枚举。
+- Conclusion：小任务单侧稳定的全机联合槽舍入；显式稳定证书是输入，不含任意P的证书生成器；K与δ必须相容，不能把K固定再把δ任意缩小。给定点舍入支持混合机器角色和无限tiny；不构成一般统一次二算法。
+- Dependencies：UM-MODEL-v1, UM-ST-ROUND-v1, UM-BOUNDED-CONFIG-CARDINALITY-SLOT-v1；完整自足推导在[正文](../current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)。A仅调用既有基数证明的逐行引理，不要求big投影单独覆盖全部jobs。
+- Evidence：一般证明、实际独立重构/作者稿读后及最终canonical实读见[审查](../reviews/unrelated_machines/tiny_work_stability_and_selection_review.md)；有限精确代码及冻结输出按正文和资产登记链接。
+- Counterevidence / Objections：显式稳定证书是输入，不含任意P的证书生成器；K与δ必须相容，不能把K固定再把δ任意缩小。给定点舍入支持混合机器角色和无限tiny；不构成一般统一次二算法。 Python默认数字解析cap导致的实现域缺口已在CLI/API入口修复并独立重跑；有限运行不充当一般证明。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；给定点实际构造已实现；无一般稳定点finder。
+- Related Files：research/current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md、research/reviews/unrelated_machines/tiny_work_stability_and_selection_review.md，以及tests/audits/unrelated_machines与evidence/runs/unrelated_machines中对应描述性文件。
+
+### UM-TINY-WORK-STABILITY-SELECTION-NP-v1：小任务稳定配置证书的精确选择障碍
+
+- ID/version / Exact Statement / Quantifiers：UM-TINY-WORK-STABILITY-SELECTION-NP-v1；∀固定整数ell≥2、固定有理ω∈[0,1/2)，正文显式selector/root/ell-leaf矩阵族的CONFIG1单侧稳定点(s_i−r_i≤ω)存在性是NP完全，且iff源perfect3DM且iff实际OPT≤1。P≠NP下无总确定性位多项式OPT≤1承诺的此稳定证书生成器；ell2/3等固定参数各自成立。
+- Objects / Domain / Definitions：正文§3–5实际矩阵；X/Y/Z大小q、每tuple一个root、每x的ell−2个D资源共享；空源与孤立坐标单独合法映射；每任务完整保留。
+- Assumptions / Scope：NP完全性导入Karp完美3DM源事实；排总多项式生成器须P≠NP。固定ell及omega，不声称omega端点复杂度。
+- Conclusion：小任务稳定配置证书的精确选择障碍；只否定此过强稳定证书的总多项式生成；ω=1/2不在等价内，parity源在该端有稳定点而实际OPT=1+1/ell。它不是一般调度近二困难性。
+- Dependencies：UM-MODEL-v1, UM-SOURCE-KARP-3DM；对应完整自足推导在[正文](../current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)。
+- Evidence：一般证明、实际独立重构/作者稿读后及最终canonical实读见[审查](../reviews/unrelated_machines/tiny_work_stability_and_selection_review.md)；有限精确代码及冻结输出按正文和资产登记链接。
+- Counterevidence / Objections：只否定此过强稳定证书的总多项式生成；ω=1/2不在等价内，parity源在该端有稳定点而实际OPT=1+1/ell。它不是一般调度近二困难性。 有限运行不充当一般证明。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；仅独立审计，无稳定证书选择finder。
+- Related Files：research/current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md、research/reviews/unrelated_machines/tiny_work_stability_and_selection_review.md，以及tests/audits/unrelated_machines与evidence/runs/unrelated_machines中对应描述性文件。
+
+### UM-SELECTOR-TINY-ROOT-THREE-VALUES-v1：selector小叶矩阵的真实最优三值分类
+
+- ID/version / Exact Statement / Quantifiers：UM-SELECTOR-TINY-ROOT-THREE-VALUES-v1；∀固定ell≥2、q>0且每x至少一tuple的已呈现selector/root/ell-leaf主构造，令ν为源最大3DM数、μ为X—(Y∪Z)最大二部匹配数，则真实OPT分别为1(ν=q)、1+1/ell(ν<q,μ=q)、1+2/ell(μ<q)。给定源呈现可位多项式输出全族(1+1/ell)实际近似；CONFIG1可行时直接输出≤1+1/ell。
+- Objects / Domain / Definitions：正文§6主构造；ν/μ定义不同，原tuple索引及匹配边见证随输入提供；固定NO与空源按原分支处理。
+- Assumptions / Scope：无复杂度假设；全局二部matching后回填全部原jobs，ell=2时D集合为空。
+- Conclusion：selector小叶矩阵的真实最优三值分类；算法输入含源构造呈现，不含未标记raw矩阵模板识别；不求NP困难的ν。实际NO值随ell变大趋1，不能当趋2的整数gap。
+- Dependencies：UM-MODEL-v1；对应完整自足推导在[正文](../current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)。
+- Evidence：一般证明、实际独立重构/作者稿读后及最终canonical实读见[审查](../reviews/unrelated_machines/tiny_work_stability_and_selection_review.md)；有限精确代码及冻结输出按正文和资产登记链接。
+- Counterevidence / Objections：算法输入含源构造呈现，不含未标记raw矩阵模板识别；不求NP困难的ν。实际NO值随ell变大趋1，不能当趋2的整数gap。 有限运行不充当一般证明。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；数学算法与6个矩阵全分配审计；未实现任意源的专用公开CLI。
+- Related Files：research/current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md、research/reviews/unrelated_machines/tiny_work_stability_and_selection_review.md，以及tests/audits/unrelated_machines与evidence/runs/unrelated_machines中对应描述性文件。
+
+
+## UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1：完整配置路径内真单环circuit的双坏端点
+
+- ID/version / Exact Statement / Quantifiers：UM-CONFIG-PRESERVING-CIRCUIT-TWO-SIGN-SUPPORT-LOSS-v1；∀奇整数D≥3，L=D+2、N=DL，存在仅用时间1与1/D的显式UM实例，m=3N+3L,n=4N+2,有限端10N+2L，真实OPT1且指定严格分数初态x有恰N个等权真实最优调度原子。全部机器保护下有支撑极小circuit d，物理支撑为单个4N简单交替环、rank(A_C)=4N−1。最大箱段为±γ，γ=(L−1)/(2L)，整段保持全机负载与完整CONFIG1；两最大端点永久删零端后的完整正支撑真实OPT均精确2−1/D，无任务整数化。∀固定ε∈(0,1)，选奇D>1/ε，则全程每机活端excess>1−ε且两端OPT>2−ε。实例、真实原子、给定有理参数的路径证书和端点上界均为显式实例位长多项式构造。
+- Objects / Domain / Definitions：正文§4的U/F/H/E原任务与K/G/Q/Z互异机器；t∈Z_N与(a,j)经CRT双射；rho=(L−1)/L、gamma=rho/2。A含全部任务列和行及全部机器原处理负载行，C为d的非零端。只对当前严格正边际求excess。
+- Assumptions / Scope：无复杂度假设；D为显式族参数，不把poly(D)输出称为poly(logD)。任意实参数只陈述配置存在性；有理theta的算法位长另计enc(theta)。
+- Conclusion：一个真正最小支撑单环仍可让两个最大符号的完整补全同时趋2；不同于既有直和方向身份。
+- Dependencies：UM-MODEL-v1；本文§4的完整基态、同步旋转、单位环核传播、逐行配置公式、任意调度下界和全部原jobs上界；不依赖旧配置gap或旧直和claim作为数学前提。
+- Evidence：两份仅看精确陈述的独立重构均构造真实全局OPT1原子；root另以独立BFS停车重构，再实际全文读作者与canonical。最终实读与精确有限审计见[专门审查](../reviews/unrelated_machines/configuration_preserving_single_cycle_endpoint_review.md)。
+- Counterevidence / Objections：仅否定任意指定circuit试两个最大符号端点并永久删零端的充分合同，不否定另选方向、另选初态、维持真实共同原子、恢复删端或一般算法；本实例任一已给原子就是最优解，没有新NP困难性。 作者初稿漏计任意有理theta的权重位长已在最终§4.7修正；旧冻结输出保留原字节，新输出记录修正后正文hash，运行数学结果不变。有限核验没有枚举全部端点完整调度。
+- Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed; novelty unverified；仅显式反例生成/有限审计，不是一般调度算法。
+- Related Files：[完整正文§4](../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)、research/reviews/unrelated_machines/configuration_preserving_single_cycle_endpoint_review.md、tests/audits/unrelated_machines/configuration_preserving_single_cycle_endpoints.py、evidence/runs/unrelated_machines/configuration_preserving_single_cycle_endpoints_audit.json、evidence/runs/unrelated_machines/configuration_preserving_single_cycle_endpoints_rational_parameter_audit.json。

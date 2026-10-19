@@ -621,3 +621,12 @@ pDM阈值桥的[合入审查](../reviews/unrelated_machines/pdm_threshold_domain
 ## 完整同型克隆的精确反面边界
 
 [复制正文§8](../current/unrelated_machines/private_graft_and_resource_repetition.md)给UM-COMPLETE-CLONE-MULTISET-PERIODICITY-v1：完整机器/任务各q份、每原端全部q²克隆边，min_q真实OPT恰为多重集配置阈值；最小最终周期由该最优层可行q的gcd给出，首个最优q可指数大。任意周期m的实际族能将原2−1/m种子降至1。失败机制是同原类型多份可在同一机器副本共居，并非原0/1 CONFIG或既有置换cover。这只排通用完整复制保NO/放大，不排精选接线和source专属归约；一般近二NO解码仍缺。独立实际后审、位复杂度与Fraction冻结核验从正文进入。
+
+## 小任务稳定工作量：接口闭合与证书过强边界
+
+[联合槽接口与三值分类](../current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)将big/tiny虚拟行放进同一匹配，给∀i L_i≤α_K(T−r_i)+s_i+b_i；不限tiny数，也不让混合角色job复制。固定ell>=2、omega<1/2的稳定证书选择等价perfect3DM，但同一实际矩阵的OPT只有1、1+1/ell、1+2/ell，已呈现源上可多项式输出(1+1/ell)实际近似。此NP边界不能充当一般近二困难性。给定点构造器已实现、最终全文独立核查及精确编码修复已重跑；一般输入如何生成更弱而足够的共同状态仍OPEN。
+
+
+## 真单环circuit仍不能免费保留次二补全
+
+[完整正文§4](../current/unrelated_machines/configuration_preserving_elimination_support_loss.md)把旧直和方向反例推进为一个真正支撑极小单环：任意奇D>=3有真实OPT1、显式N个最优原子初态、整段完整CONFIG1与全负载等式，但两个最大符号端点的完整支撑OPT均精确2−1/D。全程无整数化任务、所有excess行都保持保护；损失来自永久删零端。一般证明含任意完整实际调度下界，有限运行只是检查。当前仍须选择安全方向、保持更强共同结构或允许恢复删端；该显式族本身容易解，不给一般NP困难性。

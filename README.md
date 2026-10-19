@@ -205,3 +205,8 @@
 
 
 完整机器与任务同时克隆的新增边界见[复制正文§8](research/current/unrelated_machines/private_graft_and_resource_repetition.md)：全部q²交叉端恰对应多重集配置，最优值最小最终周期由最优阈值可行q的gcd决定；首次达到最低值可需指数多份。原趋二seed亦能坍至1，仅排这一明确操作的通用保NO合同，主目标及其否定仍OPEN。
+
+[小任务稳定工作量接口](research/current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)：给定显式点，任意tiny数与混合机器角色可一次共同匹配；寻找ω<1/2稳定点在固定selector/leaf族NP完全，但同族真实OPT只有三个等级且有(1+1/ell)实际算法。证书困难性与一般调度困难性严格分开；UM-TARGET-v1仍OPEN。
+
+
+[真单环circuit双坏端点](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)§4：真实OPT1初态有显式全局最优原子，完整CONFIG1沿线保持；一个支撑极小单环的两个最大符号端点完整支撑OPT都为2−1/D。它关闭“任意circuit+试两符号”的安全合同，不否定方向选择或一般算法。

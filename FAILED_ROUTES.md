@@ -251,3 +251,12 @@ UM-TARGET-v1限定新资产（2026-10-18）：[一般双见证查询分离与锐
 ## 同资源正权畸变有界的flat源不能靠增加菜单数放大
 
 试图只增加完整flat菜单数、degree或共同uniform束宽而逼近二，失效于[UM-RESOURCE-DISTORTION-FLAT-MENU-APPROX-v1](research/current/unrelated_machines/resource_distortion_flat_menu_rounding.md)：取各资源最小正权，state-dummy restrictedSC与baseline给真实2−1/(ακ)近似。排除仅限κ统一有界的完整像类，未排其它物理compiler。回收值桥与源筛选；重试须改变承重域或提供随ε增长的真实异权/共同容量及全输出decoder。κ增长本身不是hardness证据。
+
+## 把小任务单侧稳定当免费生成步骤
+
+尝试把tiny工作最小值r与均值s控制为s−r<=omega，再使用big基数槽余量；[给定点联合舍入](research/current/unrelated_machines/tiny_work_stability_joint_rounding_and_selection_barrier.md)确实成立。失败的是从输入免费求此证书：任意固定ell>=2、omega<1/2的实际selector/leaf族使存在性等价perfect3DM及OPT<=1，P≠NP下无总多项式YES保证生成器。半端点omega=1/2不能套该等价，且完整源矩阵有容易的(1+1/ell)实际近似；证书选择困难不是实际近二gap。回收真正的给定点桥、精确三值分类；重试须换弱证书、利用实际共同槽损失或给出独立输入到状态机制，不能免费调用稳定finder。
+
+
+## 把方向限制成真circuit再试两个符号仍不足
+
+尝试修复旧直和反例：要求所选方向支撑极小且连通，完整CONFIG1沿箱段保持，再试两个最大符号。新的[单环族§4](research/current/unrelated_machines/configuration_preserving_elimination_support_loss.md)仍使两端完整支撑OPT=2−1/D，而初态真实OPT1且有显式多项式最优原子。坏处不是冻结背景或直和，也没有行可按excess删去；两个端点均因删零端失去近二补全。否定范围仅此“任意指定circuit+两符号+永久删端”充分合同；重试须控制方向本身、维护跨机器共同原子或重开支撑，不能把它宣称为所有circuit均坏或一般困难性。
