@@ -452,6 +452,14 @@ u_t) 的一般复杂度。
 
 ## 消环、次模导入与严格批次的三项边界
 
+## pDM 阈值编译的低负载 NO 逃逸
+
+尝试机制：用固定维数 pDM 的整除阈值编译，把完美匹配映射到 `OPT≤bd`，再希望无完美匹配的实例自动有接近 `2bd` 的最优负载。精确有限审计取 `d=3,n=2,m=3,b=4`，三条超边两两相交，因而没有完美匹配；但编译后的 10 任务有 `648` 个合法分配，精确得到 `OPT=13`、阈值 `T=12`、比例 `13/12`，最佳负载为 `(12,11,13)`。
+
+失败点：阈值可靠性只排除 `C_max≤T`，而普通调度允许顶点任务和 dummy 在不同机器上形成部分填充；总工作量等于 `mT` 也只说明平均负载为 `T`，不能强迫每台机器保持全局 bundle 形状。于是 `bd+1` 的整数下界不能被当作乘性近二 gap。
+
+回收：保留 `UM-PDM-THRESHOLD-EXACT-v1` 的 YES/阈值等价和 NO 侧 `OPT≥bd+1`；新增精确反例和复现审计，排除这一条未经额外全局守卫的 gap amplification。最新二值 max-min 硬度经 BLMRS 因子传递也只到 `1+1/(pq)`，不能填补该缺口。详见 [阈值桥](../current/unrelated_machines/pdm_threshold_scheduling_bridge.md) 和 [精确审计](../../tests/audits/unrelated_machines/pdm_escape_counterexample.py)。
+
 [单home正文](../current/unrelated_machines/home_unit_cycle_elimination_and_directed_token_bridge.md)只允许逐简单环取消；一般负载下同时撤回所有环上弧可逐机增载，根森林更依赖C<2及非达预算。可回收有向需求图真实桥，不能从给定实际调度变换免费生成未知好树。
 
 [类型配置正文](../current/unrelated_machines/type_profile_compression_and_matching_rank_bridge.md)发现BLMRS v1 tiny cutoff的特定乘法删除断言字面失败，现以正确小阈值和独立分块证明补齐同一已知合同；不否定其主定理。max-profile的四资源反例阻止免费套次模算法；需要共同profile选择或有真实partial匹配soundness的源。
