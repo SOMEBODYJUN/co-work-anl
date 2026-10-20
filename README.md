@@ -33,6 +33,8 @@
 
 本轮[题源与价值审计](research/topic_selection/notes/source_authority_audit.md)区分具体出题人、母工具和团队子题，并与另一分支的资深作者来源候选比较；此前排序不能当作所有候选都是“大佬原题”的依据。
 
+[完整主问题与完成价值](research/topic_selection/notes/main_problem_scope_and_value.md)补充用户准备投入几十个team后的评价尺度：BMKP与旧NE关系、直接题源、作者明确开口、完整结果的数学收益和子题放大接口；不以小引理数量代替主目标。
+
 ## Next Actions
 
 广搜后精读前列论文、重构机制并直接试攻。成熟结果才安排后置独立攻击；探索不需要Route Card、reviewer、路线配额或审批。失败时保留真实边界与可复用机制，避免只有换参数和增加样本。

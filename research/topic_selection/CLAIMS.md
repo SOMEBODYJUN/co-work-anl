@@ -62,3 +62,7 @@ C类强方法合同反例；精确参数族、量词、证明、独立Fraction�
 ## 题源修正，数学身份不变
 
 [来源审计](notes/source_authority_audit.md)将FA09直接题源修正为Jin–Tao WINE2025 §5，He–Tao2026为后续转述。A是一般EFX+普通PO问题，少人数/少件/两ratio仍为C；未改量词或结论。其余题源评价不构成数学Claim状态提升。
+
+## 完整研究目标合同：未解决、未晋级
+
+[主问题范围与完成价值](notes/main_problem_scope_and_value.md)提出SEL-BMKP-CONST-K-v1与SEL-MATROID-PERFECT-ASYM-v1的精确研究合同，分别对应作者的常数容量种类和去对称方向。身份为proposed/open research target；不表示已核完整全球开放性，不改变现有证明候选状态。完整四人laminar、全人数copies及Group GAP跨阈值与其子题的范围同时澄清。旧WC内部结果只按原账本引用，本轮不重新认证。

@@ -41,7 +41,7 @@ A/B/C的意义保持不变：A是作者明确原题，B是作者建议方向，C
 
 ### 原子/Nash精炼
 
-- [母文v2](https://arxiv.org/html/2511.03968v2)：Theorems4.4/4.5、Appendix E.1/E.2、§6去对称建议。另一分支稿中出现的E.4/E.5定位不对应此v2，不应沿用。
+- [母文v2](https://arxiv.org/html/2511.03968v2)：Theorems4.4/4.5、Appendix E.1/E.2、§6去对称建议。另一分支稿的E.4/E.5应明确指附录E中的Theorems E.4/E.5，它们确实存在；节标题则是E.1/E.2。本轮续核更正了此前把这种简写一概视为错号的判断。
 - [EC2026官方接收名单](https://ec26.sigecom.org/program/accepted-papers/)：确认六作者及篇名；不声称已经读到正式会议最终全文。
 - [Sandholm CMU官方主页](https://www.cs.cmu.edu/~sandholm/)：IJCAI John McCarthy Award、ACM/AAAI/INFORMS Fellow等；[Balcan CMU官方主页](https://www.cs.cmu.edu/~ninamf/)和[CMU Hopper奖新闻](https://www.cs.cmu.edu/news/2020/balcan-receives-acm-grace-murray-hopper-award)。奖项属于作者，不属于本候选。
 
@@ -71,3 +71,5 @@ A/B/C的意义保持不变：A是作者明确原题，B是作者建议方向，C
 对A题要问“我们完成的版本是否真正推进作者问题”；对C题要问“去掉作者名字后，这个定理自身是否仍有自然性、机制和算法后果”。名作者提出能提高问题受到重视的先验依据，不能保证子题新颖、足量、可解或录用。新近全文关键词检索没有找到解决，不等于认证仍开放；本轮没有任何候选升为可靠新一般定理。
 
 本次事实修正：FA09改引直接原始文献；主池59条与非exclude52条的来源统计；各母文作者与子题身份澄清；强来源前排与现有排序的差异。以上值得保存，重复随机实验和新建候选不属于本轮动作。
+
+用户扩大投入尺度后的[主问题范围与完成价值](main_problem_scope_and_value.md)进一步区分完整作者开口、自然人数/容量子例和中间工具；上一表来源优先级不等于推荐只围绕affine或两容量子题组织全部团队。
