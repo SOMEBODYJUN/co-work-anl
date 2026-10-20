@@ -49,3 +49,5 @@
 - [公平与分数效率的兼容边界](notes/fair_fpo_compatibility_boundary.md)：已知两代理反例的两种精确oracle复现，先排除一般兼容目标，再检查分类题的实质差额；不是原创新定理。
 
 选题价值的类型化判据见[按论文贡献类型评价选题价值与可完成性](VALUE_CRITERIA.md)。本轮接续分支为 `research/or-topic-battle-20261020`，从已保存的 `1c3c22a9` 恢复；独立公屏继续使用 `topics/or-optimization-board`。
+
+- [三类chores反例的精确复现与邻域边界](notes/chores_trivalued_exact_boundary.md)：排除过时的一般肯定存在目标，显示固定反例的近似障碍与参数非单调性；仅有限精确观察。

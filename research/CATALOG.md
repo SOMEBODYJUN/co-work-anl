@@ -49,6 +49,9 @@
 | [两代理两类物品公平与分数效率的独立精确核验](<topic_selection/probes/fair_fpo_independent.py>) | `research/topic_selection/probes/fair_fpo_independent.py` | 以支持权区间与支配多边形两种Fraction oracle重构已知反例，覆盖空物品和有理估值边界。 | 有限计算核验；不代替一般证明 |
 | [公平—效率兼容探针的冻结输入和精确结果](<topic_selection/probes/results/fair_fpo_independent.json>) | `research/topic_selection/probes/results/fair_fpo_independent.json` | 保存实际参数、两种oracle比较、最优有限实例因子、Python版本及源码哈希；不证明一般界。 | 冻结输入、证书或结果；不原位覆盖 |
 | [按论文贡献类型评价选题价值与可完成性](<topic_selection/VALUE_CRITERIA.md>) | `research/topic_selection/VALUE_CRITERIA.md` | 针对公开题、工具、视角、组合、分类、算法和反例分别制定差额核查与判别动作，不以模型投票或伪精确评分选择主目标。 | 阅读导航；真值查精确正文及账本 |
+| [三类chores反例的精确复现与邻域公平边界](<topic_selection/notes/chores_trivalued_exact_boundary.md>) | `research/topic_selection/notes/chores_trivalued_exact_boundary.md` | 复现He–Tao已知反例并计算固定例最优近似公平因子，区分原文事实与有限邻域观察。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
+| [三类chores公平存在性的双接口精确探针](<topic_selection/probes/chores_trivalued_type_audit.py>) | `research/topic_selection/probes/chores_trivalued_type_audit.py` | 完整类型计数枚举与独立逐标签逐项移除oracle交叉核查，处理零空边界及非法输入。 | 有限计算核验；不代替一般证明 |
+| [三类chores反例与邻域的冻结精确输出](<topic_selection/probes/results/chores_trivalued_type_audit_20261020.json>) | `research/topic_selection/probes/results/chores_trivalued_type_audit_20261020.json` | 保存实际参数、计数、达到分配、代码hash、seed和有限证据范围。 | 冻结输入、证书或结果；不原位覆盖 |
 
 <a id="unrelated_machines"></a>
 

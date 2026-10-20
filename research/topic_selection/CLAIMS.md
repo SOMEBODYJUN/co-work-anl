@@ -13,3 +13,7 @@
 ## SEL-FAIR-FPO-PROBE-v1
 
 精确对象、WEFX和fPO定义、量词范围、两份原文的关系、独立oracle、边界输入、证据及未决新颖性见[兼容边界探针](notes/fair_fpo_compatibility_boundary.md)。Status=已知反例复现/有限Observation，非新定理；新分类题尚未锁定。无条件personalized bivalued WEFX+fPO存在版本受已知反例阻断。
+
+## SEL-CHORES-TRIVALUED-AUDIT-v1
+
+[三类chores反例与有限近似边界](notes/chores_trivalued_exact_boundary.md)固定四代理/三类型/完全分配/同权/可加成本及α-EFX定义。Status=已知反例复现与有限精确Observation；完整枚举不升级一般定理。原参数的固定例最优α为23/22，±1邻域并非单调；代码、输入、独立小例oracle和反算见正文。
