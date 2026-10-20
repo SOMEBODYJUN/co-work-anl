@@ -1,5 +1,11 @@
 # 选题前沿
 
+## boss6本轮接续（2026-10-20）
+
+已从既有research/or-topic-battle-20261020恢复，未创建远端分支；save与topics/or-optimization-board保持不变。发布身份R-933d363a9e0e431aab148ceeef444958。六路已通知重新选题：原子结构、Nash算法、goods、chores、GAP、跨界反方。实际配置为三个新建gpt-6.1-sol ultra及三个复用gpt-6.1-sol max线程；后者的推理档位工具不支持在followup修改，不将它们冒记为ultra。全部收到当前指导，并要求全文读取含用户完整原话的BOSS_START。
+
+首先保存的[原始来源排雷](notes/source_frontier_checks.md)给出覆盖层级与四代理laminar有限核的精确身份。候选池尚未收齐，当前不指定唯一主定理。chores线出现同密度budget-EFX的降序贪心证明候选，已交goods线盲攻；需完成自足正文、精确核验与查新，不能把简单地基当完整选题。
+
 状态：六线广搜与首轮精读正在进行，尚未选定最终数学主目标。
 
 当前优先方向为原子博弈、Nash均衡、近似公平分配、广义指派近似算法。本次恢复自2ff22b9；六个gpt-6.1-sol / ultra已实际启动，并完整读取含用户全部本轮原话的共同指导。当前六线为：

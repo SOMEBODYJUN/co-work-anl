@@ -43,6 +43,8 @@
 
 ## 首轮可接续数学资产
 
+- [原子博弈、公平分配与GAP的近期文献排雷及四代理有限核](notes/source_frontier_checks.md)：区分原文明确问题、摘要覆盖警报与既有反例；查新后才进入候选比较。
+
 - [等长theta图相关间隙的有限公式与证明候选](notes/combinatorial_equal_theta_correlation.md)：论文建议方向派生，含支持约化纠错、双水平最坏边缘结构、完整草案及查新义务。
 - [独立逐子集与联合分布LP探针](probes/equal_theta_independent.py)及[冻结输出](probes/results/equal_theta_independent_20261020.json)：用于交叉核查公式与边界，不认证一般证明或新颖性。
 
