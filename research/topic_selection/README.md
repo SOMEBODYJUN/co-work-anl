@@ -34,6 +34,9 @@
 | [RUNBOOK.md](RUNBOOK.md) | 新分支/新公屏的现有统一程序操作，保留默认main兼容 |
 | [TOPIC_BATTLE.md](TOPIC_BATTLE.md) | 六线候选battle后的短名单、淘汰理由、承重义务；证据变化时更新 |
 | [RESEARCH_STATE.md](RESEARCH_STATE.md) | 当前已核事实、待核重复与下一项数学验证，不写模拟进度 |
+| [CLAIMS.md](CLAIMS.md) | 本轮重要候选与小引理的精确身份、依赖和证据等级 |
+| [FAILED_ROUTES.md](FAILED_ROUTES.md) | 真实淘汰机制与可回收部分，避免重走旧路 |
+| [VERIFICATION.md](VERIFICATION.md) | 脚本、冻结证据、重放与工程检查的实际范围 |
 | [USER_GUIDANCE.md](USER_GUIDANCE.md) | 本轮原始用户选题指导及六线共用规则；固定不改写其含义 |
 
 所有选题与观察仍需原文核查、数学攻击和新颖性查重。保存到Git不构成数学状态提升。

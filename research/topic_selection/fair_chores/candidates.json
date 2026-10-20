@@ -1,0 +1,452 @@
+{
+  "date": "2026-10-20",
+  "subline": "fair_chores",
+  "instructions_read": [
+    "../USER_GUIDANCE.md",
+    "../../co-work-anl-boss4/AGENTS.md"
+  ],
+  "recommendation": [
+    "FC-01",
+    "FC-02"
+  ],
+  "local_progress": [
+    {
+      "id": "FC-LEMMA-R2-2C-v1",
+      "status": "complete_local_proof_internal_attack_no_external_review",
+      "statement": "loopless two parallel class rank costs: complete EF if m≥n; EFX if m<n",
+      "proof_file": "rank2_two_classes_lemma.md",
+      "code_file": "construct_rank2.py",
+      "novelty_certified": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "FC-01",
+      "title": "秩至多二 matroid chores 的 EFX 分类",
+      "priority": 1,
+      "status": "OPEN_DEEP_DIVE",
+      "precise_question": "每人c_i=r_i为rank≤2 matroid rank；是否总有完整EFX？先无loops三平行类，再有loops。EFX删除own任意item，含零边际。",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "input_domain": {
+        "agents": "arbitrary n",
+        "items": "arbitrary m",
+        "costs": "matroid rank ≤2, heterogeneous; rational data not needed",
+        "requirements": [
+          "complete",
+          "EFX"
+        ],
+        "excluded_requirement": "PO"
+      },
+      "mother_papers": [
+        {
+          "authors": "Biaoshuai Tao, Xiaowei Wu, Ziqi Yu, Shengwei Zhou",
+          "year": 2025,
+          "title": "On the Existence of EFX (and Pareto-Optimal) Allocations for Binary Chores",
+          "url": "https://arxiv.org/abs/2308.12177",
+          "venue": "Theoretical Computer Science 1042, 115248",
+          "location": "abstract; binary-submodular approximation section",
+          "web_refs": [
+            "turn107academia33",
+            "turn131search2"
+          ]
+        },
+        {
+          "authors": "Zehan Lin, Shengxin Liu, Biaoshuai Tao, Shengwei Zhou",
+          "year": 2026,
+          "title": "Non-Existence of EFX Chore Allocations for Monotone Cost Functions with Binary Marginals",
+          "url": "https://arxiv.org/html/2608.10572v1",
+          "location": "§1.1, §3.3, §4 Conclusion and Open Problem",
+          "web_refs": [
+            "turn107view0",
+            "turn111view2"
+          ]
+        }
+      ],
+      "entry_kind": "explicit_public_problem",
+      "article_type": "classification + combinatorial tool",
+      "core_mechanism": "用颜色word把cost class转成Hall缺陷和可增广结构；不要把nullity反例误作rank反例。",
+      "paper_facts": [
+        "binary cancelable exact EFX已解；binary submodular一般只有2-EFX。",
+        "2026 binary-XOS和binary-supermodular无EFX；§4明确binary-submodular余留开放。"
+      ],
+      "our_new_idea": "从一般matroid问题压到rank≤2；本轮两平行类无loops已构造EF(m≥n)/EFX(m<n)局部引理。",
+      "value_basis": "直接推进公开余留类；自然扩大首个非cancelable子类，若失败可刻画最小平行类/loops边界。",
+      "tractability_basis": "局部引理有完整Hall翻转证明和O(n³m)算法；内部独立攻击已修正增广item须全局未匹配。",
+      "most_dangerous_obstacle": "三类使邻接不再意味着owner单类；loops使他人非空bundle成本可0；可能已有组合定理等价。",
+      "toy_model": "rank2二平行类无loops；下一模型rank cap2三平行类。",
+      "falsification_test": "rank_toys.py与rank2_cap_toys.py精确遍历每profile全部分配；真正三类rank cap2无loops/有loops共2250profiles无反例；construct_rank2.py的3507构造实例检查EF/EFX。",
+      "first_proof_obligation": "找到三平行类中取代缺字/互补pair的cover-or-common-rainbow二分，或最小反例。",
+      "natural_extension": "bounded rank, partition/laminar matroids；不直接许诺一般matroid。",
+      "latest_overlap_check": "2026-10-20 system1/system2检索rank-two/rank-2/partition matroid chores EFX未发现相同正面结论；这不是新颖性认证。",
+      "novelty_certified": false,
+      "twenty_day_solution_claim": false
+    },
+    {
+      "id": "FC-02",
+      "title": "混合图单圈与仙人掌的 EFX 定向",
+      "priority": 2,
+      "status": "OPEN_DEEP_DIVE",
+      "precise_question": "simple graphical signed additive utility；pseudoforest是否总有EFX^+_0 endpoint orientation？仙人掌图上存在性是否可多项式判定？",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "input_domain": {
+        "graph": "simple pseudoforest then cactus",
+        "utility": "arbitrary signed rational endpoint-additive; 0 outside incidence",
+        "notion": "EFX^+_0; remove own nonpositive or other strictly positive item"
+      },
+      "mother_papers": [
+        {
+          "authors": "Yu Zhou, Tianze Wei, Minming Li, Bo Li",
+          "year": 2024,
+          "title": "A Complete Landscape of EFX Allocations on Graphs: Goods, Chores and Mixed Manna",
+          "url": "https://arxiv.org/html/2409.03594v2",
+          "venue": "IJCAI 2024",
+          "location": "Theorem 3; §4; §6",
+          "web_refs": [
+            "turn34view1",
+            "turn40view2",
+            "turn45view0",
+            "turn45view1"
+          ]
+        }
+      ],
+      "entry_kind": "new_idea_from_paper",
+      "article_type": "classification + viewpoint",
+      "core_mechanism": "树BFS方向避免带chore agent对外暴露good；将挂树压成块边界状态，再闭合cycle。",
+      "paper_facts": [
+        "树上的EFX^+_0存在且多项式。",
+        "一般mixed图四种EFX定向存在性均NP-hard。",
+        "§6作者明确建议multigraph/hypergraph扩张；本单圈切口是我们提出。"
+      ],
+      "our_new_idea": "先处理cycle及附着树，再block-cut tree组合cactus；cactus只问decision，不能许诺普遍存在。",
+      "value_basis": "从acyclic到第一个孔洞是分类自然边界；可检查拓扑究竟怎样破坏BFS工具。",
+      "tractability_basis": "有限C3/C4/C5±1全profile和C5带权随机profile无反例；树算法给局部不变量。",
+      "most_dangerous_obstacle": "单圈可能初等即解；cactus可能被generic bounded-treewidth DP覆盖；rational数值状态可能爆炸。",
+      "toy_model": "C3/C4/C5及cycle上附着trees；所有边可sign不同。",
+      "falsification_test": "toy_search.py与mixed_extension_toys.py；枚举全部2^m orientations，包含零值测试。",
+      "first_proof_obligation": "证明挂树可由常数/多项式大小边界状态完整消去，cycle约束与EFX双向等价。",
+      "natural_extension": "cactus最优福利/最少删边，以及multi-edge；每一步先查近邻。",
+      "latest_overlap_check": "2026-10-20检索mixed manna unicyclic/cactus未发现同题；2025/26 multigraph goods结果不覆盖mixed orientations。",
+      "novelty_certified": false,
+      "twenty_day_solution_claim": false
+    },
+    {
+      "id": "FC-03",
+      "title": "精确三件配额与三值 chores MMS",
+      "priority": 3,
+      "status": "OPEN_RESERVE",
+      "precise_question": "m=3n, each |X_i|=3, costs {0,1,2}; μ_i在所有n个triples的partition上minmax；是否总有exact constrained MMS？",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "input_domain": {
+        "quota": "exactly3 each",
+        "costs": "{0,1,2}; {1,2,3} only affine-equivalent",
+        "n": "arbitrary"
+      },
+      "mother_papers": [
+        {
+          "authors": "Hirota Kinoshita, Ayumi Igarashi",
+          "year": 2026,
+          "title": "Maximin Shares with Lower Quotas",
+          "url": "https://arxiv.org/html/2602.08966v1",
+          "venue": "AAMAS 2026",
+          "location": "§3–5; Appendix D fixed-dimension MBLP and open issue",
+          "web_refs": [
+            "turn31view1",
+            "turn40view0",
+            "turn45view4"
+          ]
+        }
+      ],
+      "entry_kind": "new_idea_from_paper",
+      "article_type": "combination + rounding boundary",
+      "core_mechanism": "从quota-aware bag filling和fixed-dimension MBLP学习；二值流积分性在三值下首次失效。",
+      "paper_facts": [
+        "一般单类别chores保证(3n−1)/(2n)-MMS。",
+        "Appendix D问quota是否改变近似边界，提供MBLP。"
+      ],
+      "our_new_idea": "找exact-quota有限三值的首次非积分边界；不是作者明确命名三值题。",
+      "value_basis": "若exact则得到配额自然类；若否则给最小counterexample/紧gap。",
+      "tractability_basis": "二值exact quota可flow exact；q3枚举bundle类型有限。",
+      "most_dangerous_obstacle": "可能被已有ternary goods算法的balanced变体覆盖，或小反例立即否定。",
+      "toy_model": "n3,m9,280无标号triple partitions,1680 labelled allocations。",
+      "falsification_test": "toy_search.py三组cost alphabets各10,000 profiles，无反例；固定seed，整数。",
+      "first_proof_obligation": "检查已有ternary证明是否保持cardinality，并用MBLP刻画n3m9极点或找反例。",
+      "natural_extension": "q fixed; categories; arbitrary personalized ternary levels。",
+      "latest_overlap_check": "2026 exact personalized-bivalued MMS已排除；精确配额双值虽可解但太轻。三值约束版本尚无认证。",
+      "novelty_certified": false,
+      "twenty_day_solution_claim": false
+    },
+    {
+      "id": "FC-04",
+      "title": "五人公共双值 chores EFX",
+      "priority": 5,
+      "status": "OPEN_FRONTIER_NOT_PRIMARY",
+      "precise_question": "n=5, c_ie∈{1,r}, arbitrary rational r>1；是否完整EFX总存在？",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "input_domain": {
+        "n": 5,
+        "costs": "common bivalued {1,r}",
+        "items": "arbitrary"
+      },
+      "mother_papers": [
+        {
+          "authors": "Wentao He, Biaoshuai Tao",
+          "year": 2026,
+          "title": "EFX for Additive Chores: Nonexistence, Pareto Incompatibility, and Bi-Valued Existence",
+          "url": "https://arxiv.org/html/2606.08872v2",
+          "location": "Theorems 1–3; §5; §6 Open Problems",
+          "web_refs": [
+            "turn31view0",
+            "turn34view3",
+            "turn126view2"
+          ]
+        },
+        {
+          "authors": "Zehan Lin, Xiaowei Wu, Shengwei Zhou",
+          "year": 2025,
+          "title": "Approximately EFX and PO Allocations for Bivalued Chores",
+          "url": "https://arxiv.org/html/2501.04550v1",
+          "location": "§4, Theorem 4.13",
+          "web_refs": [
+            "turn126view1",
+            "turn142view2"
+          ]
+        }
+      ],
+      "entry_kind": "explicit_public_problem",
+      "article_type": "problem breakthrough + classification",
+      "core_mechanism": "四人按large-agent subsets分组，以deficient-set multigraph和拼接。",
+      "paper_facts": [
+        "四人公共二值EFX已解。",
+        "§6明确询问超过四人。",
+        "某些r时EFX+PO已被Thm2否定。"
+      ],
+      "our_new_idea": "先r=3或稀疏large-agent hypergraph；不能选已解{1,2}。",
+      "value_basis": "明确推进作者公开问题。",
+      "tractability_basis": "四人结构可作工具，但没有五人可解性证据。",
+      "most_dangerous_obstacle": "四人长拼接在五人变成三/四元hypergraph；容易重蹈大猜想。",
+      "toy_model": "n5,m11/12,少量large-subset types。",
+      "falsification_test": "exact enumeration/SMT寻找EFX counterexample。",
+      "first_proof_obligation": "证明三元素deficient sets的分解或给不可分解障碍。",
+      "natural_extension": "更多agent公共二值；不加PO。",
+      "latest_overlap_check": "He–Tao2026§6仍开；2025{1,2}exact EFX+PO已直接核到Theorem4.13，故不将r2当新。",
+      "novelty_certified": false,
+      "twenty_day_solution_claim": false
+    },
+    {
+      "id": "FC-05",
+      "title": "常数 EFX 的多项式初始化",
+      "priority": 6,
+      "status": "OPEN_TOO_LARGE_UNLESS_RESTRICTED",
+      "precise_question": "一般positive rational additive chores能否polynomial-bit-time计算固定universal α-EFX；先每agent三levels构造friendly initializer。",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "input_domain": {
+        "costs": "additive rational; restricted first to ≤3 cost levels per agent",
+        "goal": "constant EFX polynomial algorithm"
+      },
+      "mother_papers": [
+        {
+          "authors": "Jugal Garg, Aniket Murhekar",
+          "year": 2026,
+          "preprint_year": 2025,
+          "title": "Existence of 2-EFX Allocations of Chores",
+          "url": "https://arxiv.org/html/2507.19461v1",
+          "venue": "AAAI 2026",
+          "location": "Theorem 4; §1; §5 Discussion",
+          "web_refs": [
+            "turn31view2",
+            "turn34view6"
+          ]
+        }
+      ],
+      "entry_kind": "explicit_public_problem",
+      "article_type": "unifying tool",
+      "core_mechanism": "local swaps有效率，瓶颈是price-EF1+PO或ER equilibrium初始化。",
+      "paper_facts": [
+        "2-EFX存在已解。",
+        "常数EFX多项式计算§5仍公开；初始化用非构造固定点/未解ER计算。"
+      ],
+      "our_new_idea": "限制有限level初始化，不重证swap框架。",
+      "value_basis": "若有效可直接迁移框架，多于一个孤立近似常数。",
+      "tractability_basis": "框架已有；目前没有受限initializer证明。",
+      "most_dangerous_obstacle": "初始化可能含固定点/PPAD难度，泛化域过大。",
+      "toy_model": "三值small additive profiles与price invariants。",
+      "falsification_test": "整数LP寻找friendly初始化不变量失败。",
+      "first_proof_obligation": "给输入bit长度多项式initializer，不能只证明其存在。",
+      "natural_extension": "改善α或其他估值域。",
+      "latest_overlap_check": "一般EF1+PO存在Mahara已解，但计算不应混淆；有限levels需进一步查正式市场算法。",
+      "novelty_certified": false,
+      "twenty_day_solution_claim": false
+    },
+    {
+      "id": "FC-06",
+      "title": "三人九件 additive chores EFX",
+      "priority": 4,
+      "status": "OPEN_RESERVE_FRONTIER",
+      "precise_question": "n=3,m=9, arbitrary nonnegative rational additive cost；是否完整EFX总存在？",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "input_domain": {
+        "n": 3,
+        "m": 9,
+        "costs": "nonnegative additive"
+      },
+      "mother_papers": [
+        {
+          "authors": "Xinkai Zhang",
+          "title": "EFX Allocations for Three Agents and Seven or Eight Chores",
+          "year": 2026,
+          "url": "https://arxiv.org/html/2609.10585v2",
+          "location": "Theorems 1.1–1.2; §1.2; Appendix A",
+          "web_refs": [
+            "turn34view2",
+            "turn40view3",
+            "turn139view0"
+          ]
+        }
+      ],
+      "entry_kind": "new_idea_from_paper",
+      "article_type": "computer-assisted viewpoint + problem breakthrough",
+      "core_mechanism": "QF_LRA把每个allocation的EFX失败写clause；共享cheapest item insertion先简化。",
+      "paper_facts": [
+        "7件和8件2026-10已给SMT辅助证明。",
+        "只能看balanced sizes会漏EFX，母文给实例。"
+      ],
+      "our_new_idea": "先pairwise-disjoint cheapest sets，找9→8的可插入结构。",
+      "value_basis": "真推进三人公开问题，但可能规模小增量。",
+      "tractability_basis": "有限维连续问题有可核SMT证书入口。",
+      "most_dangerous_obstacle": "3^9 clauses直接算力延伸无机制价值；母文作者可能正推进。",
+      "toy_model": "3x9 cost matrix，normalize每行sum1且column symmetry。",
+      "falsification_test": "SMT UNSAT/反例rationalization；不得用有限整数grid替代任意rational。",
+      "first_proof_obligation": "减少bundle-size patterns或给可删物lemma的完整证明。",
+      "natural_extension": "手工证明或任意m三人；不承诺。",
+      "latest_overlap_check": "7/8已解，不再列其为候选；9件未搜到相同结果。",
+      "novelty_certified": false,
+      "twenty_day_solution_claim": false
+    },
+    {
+      "id": "FC-07",
+      "title": "restricted成本最优社会成本下的Δ-EFX",
+      "priority": 99,
+      "status": "ELIMINATED_TRIVIAL_SHARP_COROLLARY",
+      "precise_question": "c_ie∈{0,c_e};固定最小social cost，最小α-EFX最坏界是否Δ=maxc/minc。",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "input_domain": {
+        "costs": "restricted additive {0,c_e}, c_e>0",
+        "efficiency": "minimum social cost"
+      },
+      "mother_papers": [
+        {
+          "authors": "Zehan Lin, Xiaowei Wu, Shengwei Zhou",
+          "year": 2026,
+          "title": "Allocating Chores with Restricted Additive Costs: Achieving EFX, MMS, and Efficiency Simultaneously",
+          "url": "https://arxiv.org/html/2603.17270v1",
+          "venue": "WWW 2026",
+          "location": "Table 1; Observation 1.2; Theorems 3.1 and 4.1; §3.3; Corollary 4.5",
+          "web_refs": [
+            "turn34view0",
+            "turn54view2",
+            "turn45view3"
+          ]
+        },
+        {
+          "authors": "Biaoshuai Tao, Xiaowei Wu, Ziqi Yu, Shengwei Zhou",
+          "year": 2025,
+          "title": "On the Existence of EFX (and Pareto-Optimal) Allocations for Binary Chores",
+          "url": "https://arxiv.org/abs/2308.12177",
+          "venue": "Theoretical Computer Science 1042, 115248",
+          "location": "abstract; binary-submodular approximation section",
+          "web_refs": [
+            "turn107academia33",
+            "turn131search2"
+          ]
+        }
+      ],
+      "entry_kind": "new_idea_from_paper",
+      "article_type": "combination/optimization",
+      "core_mechanism": "二值exact EFX+PO配置迁移到weightbounded成本。",
+      "paper_facts": [
+        "restricted exact EFX与PO可不兼容；2OPT price已紧。"
+      ],
+      "our_new_idea": "参数化Δ；本轮已证明sharpΔ，因此淘汰主选题。",
+      "value_basis": "五行推论不足独立论文，只作失败idea保留。",
+      "tractability_basis": "binary allocation保持OPT；计数不等式乘Δ。",
+      "most_dangerous_obstacle": "不存在研究障碍，恰因太简单淘汰。",
+      "toy_model": "costs [[Δ,1,0],[Δ,0,1]]。",
+      "falsification_test": "toy_search.py Δ5枚举全部8allocations；两个OPT allocations均α5。",
+      "first_proof_obligation": "已完成local proof，仍未认证新颖性。",
+      "natural_extension": "不建议继续参数换皮。",
+      "latest_overlap_check": "是已知binary工具+母文Table1的直接推论。",
+      "novelty_certified": false,
+      "twenty_day_solution_claim": false
+    },
+    {
+      "id": "FC-08",
+      "title": "weighted binary WEFX+fPO / personalized bivalued MMS旧题",
+      "priority": 100,
+      "status": "ELIMINATED_ALREADY_SOLVED_2026",
+      "precise_question": "weighted binary WEFX+fPO存在/算法，或个性化双值exact MMS。",
+      "quantifiers": "对所列输入域中的每个有限实例；若问算法则要求输入bit长度的多项式时间",
+      "input_domain": {
+        "costs": "binary weighted or personalized bivalued",
+        "note": "two known resolved targets retained as audit item"
+      },
+      "mother_papers": [
+        {
+          "authors": "Zehan Lin, Xiaowei Wu, Shengwei Zhou",
+          "year": 2026,
+          "title": "Revisiting EFX and fPO Allocations for Binary Chores",
+          "url": "https://arxiv.org/html/2609.13970v1",
+          "location": "Abstract; §1",
+          "web_refs": [
+            "turn107view2"
+          ]
+        },
+        {
+          "authors": "Yuhao Zhang",
+          "year": 2026,
+          "title": "Exact MMS Allocations under Personalized Bivalued Valuations: Goods and Chores",
+          "url": "https://arxiv.org/abs/2608.15822",
+          "location": "Abstract",
+          "web_refs": [
+            "turn93view0"
+          ]
+        }
+      ],
+      "entry_kind": "new_idea_from_paper",
+      "article_type": "potential tool + quota/flow combination",
+      "core_mechanism": "lexicographic potential；quota/envelope/sparse extreme-point/flow。",
+      "paper_facts": [
+        "2026-09 WEFX+fPO已有原文结果。",
+        "2026-08 personalized bivalued MMS已有原文同题声明。"
+      ],
+      "our_new_idea": "不再把它们当开放题。",
+      "value_basis": "仅能学工具，原题已过时。",
+      "tractability_basis": "无需做旧题。",
+      "most_dangerous_obstacle": "忽略时效会产生假创新。",
+      "toy_model": "无需。",
+      "falsification_test": "阅读最新原文而非2023 survey。",
+      "first_proof_obligation": "任何后续扩展先写原定理排除的准确域。",
+      "natural_extension": "由新域决定，当前不编造。",
+      "latest_overlap_check": "精确同题已找到，淘汰。",
+      "novelty_certified": false,
+      "twenty_day_solution_claim": false
+    }
+  ],
+  "evidence_files": [
+    "toy_search.py",
+    "toy_results.json",
+    "rank_toys.py",
+    "rank_toy_results.json",
+    "mixed_extension_toys.py",
+    "mixed_extension_results.json",
+    "construct_rank2.py",
+    "construct_rank2_results.json",
+    "rank2_cap_toys.py",
+    "rank2_cap_results.json"
+  ],
+  "limitations": [
+    "未认证新颖性",
+    "计算不是证明",
+    "未承诺20天解决",
+    "三类rank cap2与有loops主问题保持OPEN"
+  ]
+}

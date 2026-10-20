@@ -35,6 +35,26 @@
 | [本轮选题的用户完整指导](<topic_selection/USER_GUIDANCE.md>) | `research/topic_selection/USER_GUIDANCE.md` | 六条子线共同读取的原始目标与研究方法，核对选题是否偏离时读。 | 阅读导航；真值查精确正文及账本 |
 | [公开问题与工具迁移的选题比较](<topic_selection/TOPIC_BATTLE.md>) | `research/topic_selection/TOPIC_BATTLE.md` | 存放短名单、反方意见和未解义务，不把排名当数学真值。 | 问题记录；开放/已闭合部分见用途及正文 |
 | [运筹优化候选问题的当前筛选前沿](<topic_selection/RESEARCH_STATE.md>) | `research/topic_selection/RESEARCH_STATE.md` | 记录已核事实、排重与下一项高信息量验证。 | 阅读导航；真值查精确正文及账本 |
+| [选题阶段的精确数学身份](<topic_selection/CLAIMS.md>) | `research/topic_selection/CLAIMS.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [选题筛选中的失败与回收](<topic_selection/FAILED_ROUTES.md>) | `research/topic_selection/FAILED_ROUTES.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [本轮选题资产的核验与复现](<topic_selection/VERIFICATION.md>) | `research/topic_selection/VERIFICATION.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [原子拥塞博弈重新选题：小策略局部优化与有限权重势函数的边界](<topic_selection/atomic_games/candidate_report.md>) | `research/topic_selection/atomic_games/candidate_report.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [原子博弈的结构化候选账本](<topic_selection/atomic_games/candidates.json>) | `research/topic_selection/atomic_games/candidates.json` | 逐候选记录精确范围、母论文、机制、价值与首个证明义务，保留已淘汰和待核状态。 | 精确命题登记；摘要不替代原陈述 |
+| [跨域工具迁移与独立反方：本轮重新选题报告](<topic_selection/cross_field_battle/candidate_report.md>) | `research/topic_selection/cross_field_battle/candidate_report.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [跨领域反方的结构化候选账本](<topic_selection/cross_field_battle/candidates.json>) | `research/topic_selection/cross_field_battle/candidates.json` | 逐候选记录精确范围、母论文、机制、价值与首个证明义务，保留已淘汰和待核状态。 | 精确命题登记；摘要不替代原陈述 |
+| [chores、混合物品与约束公平分配：重新选题报告](<topic_selection/fair_chores/candidate_report.md>) | `research/topic_selection/fair_chores/candidate_report.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [任务公平分配的结构化候选账本](<topic_selection/fair_chores/candidates.json>) | `research/topic_selection/fair_chores/candidates.json` | 逐候选记录精确范围、母论文、机制、价值与首个证明义务，保留已淘汰和待核状态。 | 精确命题登记；摘要不替代原陈述 |
+| [两平行类无圈秩成本的无嫉妒构造](<topic_selection/fair_chores/rank2_two_classes_lemma.md>) | `research/topic_selection/fair_chores/rank2_two_classes_lemma.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [不可分 goods：从固定瓶颈与前缀交换中筛选公平分配题目](<topic_selection/fair_goods/candidate_report.md>) | `research/topic_selection/fair_goods/candidate_report.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [物品公平分配的结构化候选账本](<topic_selection/fair_goods/candidates.json>) | `research/topic_selection/fair_goods/candidates.json` | 逐候选记录精确范围、母论文、机制、价值与首个证明义务，保留已淘汰和待核状态。 | 精确命题登记；摘要不替代原陈述 |
+| [NASH-04 独立审查：局部三次势的精度障碍与图宽](<topic_selection/fair_goods/nash_sparse_potential_review.md>) | `research/topic_selection/fair_goods/nash_sparse_potential_review.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 实际审查记录；只覆盖所列版本与义务 |
+| [成本保留Chernoff舍入：2026框架的直接推论核查](<topic_selection/generalized_assignment/COST_CHERNOFF_COROLLARY_CHECK.md>) | `research/topic_selection/generalized_assignment/COST_CHERNOFF_COROLLARY_CHECK.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 候选或未闭合义务；保存不升级状态 |
+| [两种背包容量的联合类型恢复与近似算法草稿](<topic_selection/generalized_assignment/TWO_CAPACITY_LEMMA.md>) | `research/topic_selection/generalized_assignment/TWO_CAPACITY_LEMMA.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 候选或未闭合义务；保存不升级状态 |
+| [广义指派与结构化瓶颈分配：八题广筛及两条深入路线](<topic_selection/generalized_assignment/candidate_report.md>) | `research/topic_selection/generalized_assignment/candidate_report.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [广义指派的结构化候选账本](<topic_selection/generalized_assignment/candidates.json>) | `research/topic_selection/generalized_assignment/candidates.json` | 逐候选记录精确范围、母论文、机制、价值与首个证明义务，保留已淘汰和待核状态。 | 精确命题登记；摘要不替代原陈述 |
+| [Nash 计算与优化理论：六类候选、近期排雷与三个可核查切口](<topic_selection/nash_equilibria/candidate_report.md>) | `research/topic_selection/nash_equilibria/candidate_report.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [均衡与优化的结构化候选账本](<topic_selection/nash_equilibria/candidates.json>) | `research/topic_selection/nash_equilibria/candidates.json` | 逐候选记录精确范围、母论文、机制、价值与首个证明义务，保留已淘汰和待核状态。 | 精确命题登记；摘要不替代原陈述 |
+| [两容量瓶颈多背包候选算法的独立反方与版本对齐](<topic_selection/cross_field_battle/bmkp_algorithm_review.md>) | `research/topic_selection/cross_field_battle/bmkp_algorithm_review.md` | 核对联合profile、critical恢复、短包匹配与独立discard舍入的准确范围，保留旧异议和最终修复后的未闭合义务。 | 实际审查记录；只覆盖所列版本与义务 |
 
 <a id="unrelated_machines"></a>
 

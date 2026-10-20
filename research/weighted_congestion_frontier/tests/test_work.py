@@ -512,5 +512,20 @@ class WorkTests(unittest.TestCase):
         self.assertEqual((self.repo / "untracked.txt").read_text(), "preserve this local draft\n")
 
 
+    def test_start_clones_an_explicit_published_topic_branch(self):
+        git(self.seed, "push", "origin", "main:refs/heads/research/topic-selection")
+        result = self.work("start", "--remote", str(self.remote),
+                           "--save", "topic-selection", "--research-branch", "research/topic-selection",
+                           "--board-branch", "wcg/board-topic-selection", "--actor", "R-topic")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        receipt = json.loads(result.stdout.splitlines()[0])
+        self.assertEqual(receipt["branch"], "research/topic-selection")
+        self.assertEqual(receipt["save"], "topic-selection")
+        self.assertEqual(receipt["research_entry"], "research/topic_selection/README.md")
+        self.assertEqual(receipt["research_prompt"], "research/topic_selection/BOSS_START.md")
+        self.assertEqual(value(self.repo, "config", "wcg.boardBranch"), "wcg/board-topic-selection")
+        self.assertEqual(value(self.repo, "remote", "get-url", "origin"), str(self.remote))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
