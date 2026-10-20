@@ -43,6 +43,8 @@
 
 ## 首轮可接续数学资产
 
+- [原子博弈、公平分配与GAP的近期文献排雷及四代理有限核](notes/source_frontier_checks.md)：区分原文明确问题、摘要覆盖警报与既有反例；查新后才进入候选比较。
+
 - [等长theta图相关间隙的有限公式与证明候选](notes/combinatorial_equal_theta_correlation.md)：论文建议方向派生，含支持约化纠错、双水平最坏边缘结构、完整草案及查新义务。
 - [独立逐子集与联合分布LP探针](probes/equal_theta_independent.py)及[冻结输出](probes/results/equal_theta_independent_20261020.json)：用于交叉核查公式与边界，不认证一般证明或新颖性。
 
@@ -51,3 +53,9 @@
 选题价值的类型化判据见[按论文贡献类型评价选题价值与可完成性](VALUE_CRITERIA.md)。本轮接续分支为 `research/or-topic-battle-20261020`，从已保存的 `1c3c22a9` 恢复；独立公屏继续使用 `topics/or-optimization-board`。
 
 - [三类chores反例的精确复现与邻域边界](notes/chores_trivalued_exact_boundary.md)：排除过时的一般肯定存在目标，显示固定反例的近似障碍与参数非单调性；仅有限精确观察。
+
+- [公共基交换图围长距离与原子博弈接口](notes/matroid_exchange_distance_and_girth.md)：原文明确猜想驱动的证明候选，含独立抽象拟阵穷举；还缺全球查新与应用价值核验。
+
+- [四代理laminar关键核：精确枚举与顺序贪心障碍](notes/boss0_laminar_key_probe.md)：沿用作者A类问题，新增真实可行分配oracle、独立标签枚举和边界输入；保存有限证据与补偿交换义务，不宣称一般定理。
+
+- [个性化双值EFX的单调补全障碍](notes/personalized_bivalued_monotone_completion_obstruction.md)：连续参数族否定任意公平起点的效用单调补全；含独立全分配核查，保留普通PO存在题的准确边界。
