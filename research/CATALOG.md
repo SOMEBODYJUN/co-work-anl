@@ -55,6 +55,9 @@
 | [四代理层状拟阵关键核的有限枚举与顺序贪心障碍](<topic_selection/notes/boss0_laminar_key_probe.md>) | `research/topic_selection/notes/boss0_laminar_key_probe.md` | 读取原作者有序EF1有限核的精确身份、真实枚举范围和需要补偿交换的障碍；不能由随机成功推出存在。 | 候选或未闭合义务；保存不升级状态 |
 | [四代理关键核的精确整数枚举与独立移除核验程序](<topic_selection/probes/boss0_laminar_keys.py>) | `research/topic_selection/probes/boss0_laminar_keys.py` | 重现两个关键核的可行分配枚举、有限估值检测、顺序贪心反例和非法输入边界。 | 有限计算核验；不代替一般证明 |
 | [四代理关键核的固定种子有限证据与贪心反例](<topic_selection/probes/results/boss0_laminar_keys_20261020.json>) | `research/topic_selection/probes/results/boss0_laminar_keys_20261020.json` | 恢复本轮固定整数估值的有限观测、精确反例见证、输入边界检查、运行环境与代码哈希。 | 冻结输入、证书或结果；不原位覆盖 |
+| [个性化双值物品的公平单调补全障碍](<topic_selection/notes/personalized_bivalued_monotone_completion_obstruction.md>) | `research/topic_selection/notes/personalized_bivalued_monotone_completion_obstruction.md` | 固定三代理五物品参数族与全部支配者，排除强路线而不否定普通PO兼容存在问题。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
+| [公平单调补全障碍的独立精确枚举](<topic_selection/probes/personalized_efx_completion_independent.py>) | `research/topic_selection/probes/personalized_efx_completion_independent.py` | 不导入原作者核心，以Fraction重算全部完整分配及参数、边界、退化输入。 | 有限计算核验；不代替一般证明 |
+| [公平单调补全独立枚举的冻结证据](<topic_selection/probes/results/personalized_efx_completion_independent_20261020.json>) | `research/topic_selection/probes/results/personalized_efx_completion_independent_20261020.json` | 保存基例全部支配者与EFX违反式、参数边界和退化核查，有限观察不升级一般定理。 | 冻结输入、证书或结果；不原位覆盖 |
 
 <a id="unrelated_machines"></a>
 

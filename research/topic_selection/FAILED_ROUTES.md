@@ -11,3 +11,7 @@
 ## 一般additive chores EFX肯定存在，以及直接由旧例推出强近似障碍
 
 He–Tao 2606.08872v2 §3给出反例；[本轮精确复现](notes/chores_trivalued_exact_boundary.md)确认固定例无EFX，但最优α仅23/22，且大项成本向两侧改变均可恢复EFX。一般肯定存在失败属于命题错误；将该固定例称强近似下界属于证据范围扩大。保留类型压缩与逐项移除oracle；新近似/结构题必须另立精确范围并补新机制。
+
+## 任意EFX起点的逐效用单调Pareto补全
+
+[三代理五物品参数族](notes/personalized_bivalued_monotone_completion_obstruction.md)否定了这个强桥。失败类型为路线合同本身为假：起点EFX、非PO，但全部严格Pareto支配者都非EFX。一般EFX+普通PO存在问题未被否定；基例仍有13个EFX+PO。保留小参数反例及独立oracle；限制起点/允许暂时效用下降/另建全局势时可重开。全球新颖性未确认，不单独当主选题。
