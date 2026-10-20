@@ -7,6 +7,7 @@
 
 | 数学专题 | 首读入口 | 逐文件目录 |
 | --- | --- | --- |
+| 运筹学与优化理论选题 | [研究说明](topic_selection/README.md) | [中文资产名与用途](#topic_selection) |
 | 不相关并行机与统一常数2壁垒 | [研究说明](current/unrelated_machines/README.md) | [中文资产名与用途](#unrelated_machines) |
 | 加权原子拥塞博弈 | [研究说明](current/weighted_congestion/README.md) | [中文资产名与用途](#weighted_congestion) |
 | 正占用核、交互阶数与非负表示 | [研究说明](current/positive_kernels/README.md) | [中文资产名与用途](#positive_kernels) |
@@ -21,6 +22,20 @@
 | 历史投稿判断与旧方向选择 | [研究说明](../history/README.md) | [中文资产名与用途](#publication) |
 
 维护方法：先在 `catalog.json` 写具体名称和用途，再运行 `python3 research/build_catalog.py`；`--check` 同时拒绝漏登记、缺文件、无中文名称和过时生成稿。新增候选按原等级保存，不能为通过目录检查而升级结论。
+
+<a id="topic_selection"></a>
+
+## 运筹学与优化理论选题
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [运筹优化新选题的研究地图](<topic_selection/README.md>) | `research/topic_selection/README.md` | 固定本分支目标、A/B/C来源约定、论文机制内化历程与逐文件使用路径。 | 阅读导航；真值查精确正文及账本 |
+| [运筹优化选题的当前前沿](<topic_selection/RESEARCH_STATE.md>) | `research/topic_selection/RESEARCH_STATE.md` | 记录候选筛选阶段、需要判别的不确定性和下一次实际研究行动。 | 阅读导航；真值查精确正文及账本 |
+| [运筹优化候选的精确身份入口](<topic_selection/CLAIMS.md>) | `research/topic_selection/CLAIMS.md` | 区分文献事实、作者开放题、派生题、有限观察与尚未晋级的新结论。 | 精确命题登记；摘要不替代原陈述 |
+| [运筹优化选题的已解与低价值路线](<topic_selection/FAILED_ROUTES.md>) | `research/topic_selection/FAILED_ROUTES.md` | 记录旧问题已解、直接覆盖、失败机制和可回收信息，避免重复选题。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
+| [运筹优化选题与直接试攻的完整提示词](<topic_selection/BOSS_START.md>) | `research/topic_selection/BOSS_START.md` | 保留用户完整指导，规定论文内化、六路广搜、battle、直接探索及分支恢复保存。 | 阅读导航；真值查精确正文及账本 |
+| [运筹优化独立分支与公屏的操作合同](<topic_selection/RUNBOOK.md>) | `research/topic_selection/RUNBOOK.md` | 给出新版统一程序的独立研究/公屏绑定、通信、同步和checkpoint准确命令。 | 阅读导航；真值查精确正文及账本 |
+| [运筹优化分支的可检查路由](<topic_selection/branch_manifest.json>) | `research/topic_selection/branch_manifest.json` | 机器可读记录研究分支、公屏、存档、入口、基线与明确的资源请求。 | 阅读导航；真值查精确正文及账本 |
 
 <a id="unrelated_machines"></a>
 

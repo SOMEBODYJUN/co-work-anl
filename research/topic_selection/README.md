@@ -1,0 +1,38 @@
+# 运筹学与优化理论：从论文机制到可完成的研究选题
+
+本分支的任务是重新选题并做判别性试攻。优先级：扎实可完成的数学贡献、清楚的论文叙事、研究生方向匹配；作者名气和问题年龄只是背景。原 UM-TARGET-v1 与其反面仍 OPEN，本分支不继续默认主攻。
+
+## Research Goal
+
+从高质量原始论文出发，广搜多个问题、提取工具与视角、形成精确候选、通过交叉 battle 和玩具模型选择值得投入的研究目标。用户预算为连续20天、每天12小时的 gpt-6.1-sol ultra 使用意愿；预算不构成可解性或发表保证。
+
+## Mathematical Objects / Definition Map
+
+尚未统一数学模型；每个候选独立固定对象、定义域、量词、假设及输出。A=作者明确开放问题，B=作者建议方向，C=本团队从论文机制派生的问题；C不能改称作者原题。论文类型分别记录问题、工具、视角、组合、分类，可多选。
+
+论文原命题 → 工具接口与关键假设 → 最小toy → 候选精确版本 → 实验/证明义务 → 可完成成果包。任何跨箭头都要说明新增假设，实验不是证明。
+
+## Claim Map / Dependency / Known Results
+
+本分支的文献命题与新候选见 [CLAIMS](CLAIMS.md)。已有研究不因重新选题被否定，也不因小样本成功得到升级。候选池、交叉批评和最终试攻建议将在首轮广搜结束后在本目录登记。
+
+## Research Frontier / Open Problems
+
+当前障碍是选题校准：旧文open可能已解决；小切口可能仅为已知定理直接推论；过度扩类可能重新变成巨大开放题。只有同时说明切入口与完整成果形态，才列前排。
+
+## Next Actions
+
+六线独立广搜 → 对前列原文和后续工作核查 → 跨线battle → 实际toy/有限枚举 → 选择试攻目标与备选。探索立即开始；battle是选题比较，不是开工审批。
+
+## File Map
+
+| 完整仓库路径 | 数学/操作资产与何时使用 |
+| --- | --- |
+| research/topic_selection/BOSS_START.md | 可复制完整研究提示词，含用户完整指导、论文内化历程、选题与直接研究、分支公屏及checkpoint命令；新对话首先读取 |
+| research/topic_selection/RUNBOOK.md | 分支、身份、公屏、同步、恢复和保存的准确操作合同；启动或共享失败时读 |
+| research/topic_selection/RESEARCH_STATE.md | 本分支当前前沿、候选试攻状态、尚未闭合义务与下一行动 |
+| research/topic_selection/CLAIMS.md | 区分文献事实/派生问题/观察/可靠新结果的精确身份入口 |
+| research/topic_selection/FAILED_ROUTES.md | 已解旧问题、被覆盖变体、不值得投入路线及原因；选题前去重 |
+| research/topic_selection/branch_manifest.json | 独立研究分支、公屏、save、入口及基线SHA |
+
+旧研究地图保留在父分支快照及原目录；本分支不复制旧正文。根 research/active_research.json 仍是旧main工具默认兼容合同，本分支显式参数和 branch_manifest.json 优先。

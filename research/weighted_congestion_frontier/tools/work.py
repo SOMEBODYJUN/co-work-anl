@@ -22,6 +22,10 @@ WORKSPACES = "research/workspaces"
 # checkpoint.py fallback in sync; bound clones always retain their own save.
 DEFAULT_SAVE = "unrelated-machines"
 RESEARCH_ENTRIES = {
+    "or-optimization-selection": {
+        "research_entry": "research/topic_selection/README.md",
+        "research_prompt": "research/topic_selection/BOSS_START.md",
+    },
     "unrelated-machines": {
         "research_entry": "research/current/unrelated_machines/README.md",
         "research_prompt": "research/unrelated_machines/BOSS_START.md",
@@ -89,6 +93,36 @@ def value(repo, *args, env=None):
     return run(repo, *args, env=env).stdout.decode().strip()
 
 
+def research_branch(repo):
+    return run(repo, "config", "--local", "--get", "wcg.researchBranch",
+               check=False).stdout.decode().strip() or "main"
+
+
+def board_branch(repo):
+    return run(repo, "config", "--local", "--get", "wcg.boardBranch",
+               check=False).stdout.decode().strip() or "wcg/board"
+
+
+def bind_branches(repo, requested=None, requested_board=None):
+    """Explicit new-topic bindings; never silently rebind an existing clone."""
+    choices = []
+    for key, requested_value, fallback in (
+        ("wcg.researchBranch", requested, "main"),
+        ("wcg.boardBranch", requested_board, "wcg/board"),
+    ):
+        saved = run(repo, "config", "--local", "--get", key,
+                    check=False).stdout.decode().strip()
+        if saved and requested_value and saved != requested_value:
+            raise Stop("这个 clone 已绑定 " + key + "=" + saved + "；新主题使用独立 clone。")
+        chosen = requested_value or saved or fallback
+        run(repo, "check-ref-format", "refs/heads/" + chosen)
+        choices.append((key, chosen))
+    if choices[0][1] == choices[1][1]:
+        raise Stop("研究分支与公屏分支必须分离。")
+    for key, chosen in choices:
+        run(repo, "config", "--local", key, chosen)
+
+
 def default_repo():
     # The exact same file works both inside a clone and as an uploaded program.
     p = Path(__file__).resolve()
@@ -154,9 +188,10 @@ def write_lock(repo):
 
 def sync(repo, env, allow_legacy=False):
     with write_lock(repo):
+        target = research_branch(repo)
         branch = value(repo, "branch", "--show-current")
-        if branch != "main" and not (allow_legacy and branch.startswith("wcg/work/")):
-            raise Stop("日常同步只允许 main；保留当前分支，旧工作分支请用 start 安全迁移。")
+        if branch != target and not (allow_legacy and target == "main" and branch.startswith("wcg/work/")):
+            raise Stop("日常同步只允许绑定的研究分支 " + target + "；本地工作已保留。")
         for item in ("MERGE_HEAD", "CHERRY_PICK_HEAD", "REVERT_HEAD", "rebase-merge", "rebase-apply"):
             p = Path(value(repo, "rev-parse", "--git-path", item))
             if ((repo / p).resolve()).exists():
@@ -164,10 +199,11 @@ def sync(repo, env, allow_legacy=False):
         if run(repo, "ls-files", "-u").stdout:
             raise Stop("请先处理现有文件冲突；本地内容和同步备份仍保留。")
         run(repo, "fetch", "--quiet", "--no-tags", "origin",
-            "+refs/heads/main:refs/remotes/origin/main", env=env)
-        tip = value(repo, "rev-parse", "origin/main")
+            "+refs/heads/" + target + ":refs/remotes/origin/" + target, env=env)
+        tip = value(repo, "rev-parse", "refs/remotes/origin/" + target)
         if run(repo, "merge-base", "--is-ancestor", tip, "HEAD", check=False).returncode == 0:
-            return {"status": "synced", "main": tip, "preserved_work": True}
+            return {"status": "synced", ("main" if target == "main" else "research_tip"): tip,
+                    "research_branch": target, "preserved_work": True}
         stash = None
         if run(repo, "status", "--porcelain").stdout:
             run(repo, "stash", "push", "--quiet", "--include-untracked", "-m", "work sync " + uuid.uuid4().hex)
@@ -186,8 +222,9 @@ def sync(repo, env, allow_legacy=False):
             else:
                 raise Stop("同步后恢复遇到文件冲突；本地内容和完整备份 " + stash + " 均保留。")
         if merged.returncode:
-            raise Stop("main 有真实文件冲突；合并已撤回，本地成果已恢复。")
-        return {"status": "synced", "main": tip, "preserved_work": True}
+            raise Stop(target + " 有真实文件冲突；合并已撤回，本地成果已恢复。")
+        return {"status": "synced", ("main" if target == "main" else "research_tip"): tip,
+                "research_branch": target, "preserved_work": True}
 
 
 def save_id(repo, requested=None):
@@ -216,8 +253,9 @@ def workspace_path(repo, save, who):
 
 def workspace_init(repo, save, who, resume=False):
     with write_lock(repo):
-        if value(repo, "branch", "--show-current") != "main":
-            raise Stop("个人工作区只能在 main 准备；不切换或创建研究分支。")
+        target = research_branch(repo)
+        if value(repo, "branch", "--show-current") != target:
+            raise Stop("个人工作区只能在绑定研究分支 " + target + " 准备。")
         relative = workspace_path(repo, save, who)
         root = repo / relative
         profile = root / "workspace.json"
@@ -257,7 +295,7 @@ def workspace_init(repo, save, who, resume=False):
                              "## 交流与状态\n\n可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。"
                              "本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。\n")
         run(repo, "config", "--local", "wcg.instance", instance)
-        remote = run(repo, "ls-tree", "origin/main", "--", relative.as_posix(), check=False)
+        remote = run(repo, "ls-tree", "refs/remotes/origin/" + target, "--", relative.as_posix(), check=False)
         return {"path": relative.as_posix(), "created": created,
                 "remote_directory_exists": bool(remote.returncode == 0 and remote.stdout),
                 "note": "local preparation; checkpoint and remote confirmation publish new changes"}
@@ -271,9 +309,10 @@ def visit(repo, env, save, who, path="README.md"):
         raise Stop("访问路径必须是工作区内的普通相对文件路径。")
     target = (relative / tail).as_posix()
     with write_lock(repo):
+        target_branch = research_branch(repo)
         run(repo, "fetch", "--quiet", "--no-tags", "origin",
-            "+refs/heads/main:refs/remotes/origin/main", env=env)
-        tip = value(repo, "rev-parse", "origin/main")
+            "+refs/heads/" + target_branch + ":refs/remotes/origin/" + target_branch, env=env)
+        tip = value(repo, "rev-parse", "refs/remotes/origin/" + target_branch)
         entry = run(repo, "ls-tree", tip, "--", ":(literal)" + target).stdout
         if not entry.startswith((b"100644 blob ", b"100755 blob ")):
             raise Stop("远端尚无这个普通文件；本地未推送材料不可被访问。")
@@ -294,26 +333,29 @@ def start(args):
         remote = args.remote
         if SECRET.search(remote.encode()) or re.search(r"https?://[^/]*@", remote):
             raise Stop("仓库地址请使用普通 Git URL。")
-        run(repo.parent, "clone", "--quiet", "--single-branch", "--branch", "main", remote, str(repo), env=env)
+        run(repo.parent, "clone", "--quiet", "--single-branch", "--branch",
+            getattr(args, "research_branch", None) or "main", remote, str(repo), env=env)
     repo = checked_repo(repo)
     origin = value(repo, "remote", "get-url", "--all", "origin")
     push_origin = value(repo, "remote", "get-url", "--push", "--all", "origin")
     if origin != args.remote or push_origin != origin:
         raise Stop("目标目录的 origin 与本研究仓库不一致；请使用本研究的独立目录。")
     env = auth(repo, args)
+    bind_branches(repo, getattr(args, "research_branch", None), getattr(args, "board_branch", None))
+    target = research_branch(repo)
     who = actor(repo, args.actor)
     if not run(repo, "config", "--local", "--get", "user.name", check=False).stdout:
         run(repo, "config", "--local", "user.name", "WCG " + who)
     if not run(repo, "config", "--local", "--get", "user.email", check=False).stdout:
         run(repo, "config", "--local", "user.email", "wcg@users.noreply.github.com")
     branch = value(repo, "symbolic-ref", "--quiet", "--short", "HEAD")
-    if branch == "wcg/board":
+    if branch == board_branch(repo):
         raise Stop("请在研究工作目录中执行 start。")
-    if branch != "main" and not branch.startswith("wcg/work/"):
-        raise Stop("当前分支不是 main 或旧研究工作分支；请先保存并处理这个独立主题。")
+    if branch != target and not (target == "main" and branch.startswith("wcg/work/")):
+        raise Stop("当前分支不是绑定研究分支 " + target + "；请先保存并处理这个独立主题。")
     save = save_id(repo, getattr(args, "save", None))
     result = sync(repo, env, allow_legacy=branch.startswith("wcg/work/"))
-    if branch != "main":
+    if branch != target:
         # sync has already preserved staged/unstaged/untracked work and stopped
         # on any real conflict. Keep any existing local main under a local ref
         # before renaming the old work branch. No remote branch is created.
@@ -325,7 +367,8 @@ def start(args):
             run(repo, "branch", "-M", "main")
     workspace = workspace_init(repo, save, who, getattr(args, "resume", False))
     result.update(actor=who, save=save, workspace=workspace,
-                  repo=str(repo), branch=value(repo, "branch", "--show-current"))
+                  repo=str(repo), branch=value(repo, "branch", "--show-current"),
+                  board_branch=board_branch(repo))
     result.update(RESEARCH_ENTRIES.get(save, {
         "research_entry": None, "research_prompt": None,
         "research_note": "Unregistered archive: select its research entry explicitly; no topic is inherited.",
@@ -338,7 +381,8 @@ def board(repo, env, command, extra):
     path = repo / TOOLS / "board.py"
     if not path.is_file():
         raise Stop("仓库缺少公屏程序；请运行 sync 更新程序。")
-    return subprocess.call([sys.executable, str(path), "--repo", str(repo), command, *extra], env=env)
+    return subprocess.call([sys.executable, str(path), "--repo", str(repo),
+                            "--branch", board_branch(repo), command, *extra], env=env)
 
 
 def main():
@@ -358,6 +402,8 @@ def main():
     s.add_argument("--actor", help="可选；省略时为本对话生成并记住唯一发布标识")
     s.add_argument("--token-file", default=argparse.SUPPRESS)
     s.add_argument("--remote", default=REMOTE)
+    s.add_argument("--research-branch", help="显式绑定新主题研究分支；省略时保留已有绑定或 main")
+    s.add_argument("--board-branch", help="显式绑定独立公屏分支；省略时保留已有绑定或 wcg/board")
     s.add_argument("--save", default=argparse.SUPPRESS)
     s.add_argument("--resume", action="store_true", help="明确接续已存在的同号工作区")
     sub.add_parser("sync", help="同步 main 并保留本地工作")

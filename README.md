@@ -1,3 +1,6 @@
+<!-- Branch-specific user decision, 2026-10-20 -->
+**本分支覆盖说明：`research/or-optimization-selection-20261020` 按用户最新决定重新选择运筹学/优化理论题目，入口为 [选题地图](research/topic_selection/README.md)，save=`or-optimization-selection`，独立公屏`topics/or-optimization-board`。后文UM-TARGET-v1/main默认指保留的旧研究快照，不是本分支的当前任务。用户明确授权本次独立分支及六路teamwork；探索不设前置审核。旧数学身份及OPEN状态不变。**
+
 # 共同研究：一般不相关并行机的统一常数2壁垒
 
 [固定件数超载见证](research/current/unrelated_machines/top_two_pair_witness_boundary.md#7-固定超载见证件数的严格次二承诺判别)对每固定r给B_r≤(2−c_r)T的实际过滤器；[有界重数接线](research/current/unrelated_machines/private_graft_and_resource_repetition.md#9-有界重数接线的配置包络与共同循环二接线坍缩)识别精确cap配置包络，且共同id/shift可将趋二seed降至1；[私有填充的对数表](research/current/unrelated_machines/model_and_classical_barriers.md#8-多项式私有填充与单一对数字母表正规形)把目标存在性等价域收至O(logN)个1..N²正整数。前两项限定反面接口，后一项是允许padding的新等价，不是一般不存在证明。

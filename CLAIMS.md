@@ -1,3 +1,6 @@
+<!-- Branch-specific user decision, 2026-10-20 -->
+**本分支覆盖说明：`research/or-optimization-selection-20261020` 按用户最新决定重新选择运筹学/优化理论题目，入口为 [选题地图](research/topic_selection/README.md)，save=`or-optimization-selection`，独立公屏`topics/or-optimization-board`。后文UM-TARGET-v1/main默认指保留的旧研究快照，不是本分支的当前任务。用户明确授权本次独立分支及六路teamwork；探索不设前置审核。旧数学身份及OPEN状态不变。**
+
 # 精确命题入口
 
 新精确身份[UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1与UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1](research/unrelated_machines/CLAIMS.md)分别记录全种子证书的coNP/coRP推论与单一O(log²n)整数表的算法存在性等价；均不关闭一般主目标。

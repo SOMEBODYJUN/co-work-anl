@@ -1,3 +1,6 @@
+<!-- Branch-specific user decision, 2026-10-20 -->
+**本分支覆盖说明：`research/or-optimization-selection-20261020` 按用户最新决定重新选择运筹学/优化理论题目，入口为 [选题地图](research/topic_selection/README.md)，save=`or-optimization-selection`，独立公屏`topics/or-optimization-board`。后文UM-TARGET-v1/main默认指保留的旧研究快照，不是本分支的当前任务。用户明确授权本次独立分支及六路teamwork；探索不设前置审核。旧数学身份及OPEN状态不变。**
+
 # 当前研究前沿：不相关并行机
 
 ## 2026-10-19：全种子复杂度后果与单一几何整数表

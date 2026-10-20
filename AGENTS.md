@@ -1,3 +1,6 @@
+<!-- Branch-specific user decision, 2026-10-20 -->
+**本分支覆盖说明：`research/or-optimization-selection-20261020` 按用户最新决定重新选择运筹学/优化理论题目，入口为 [选题地图](research/topic_selection/README.md)，save=`or-optimization-selection`，独立公屏`topics/or-optimization-board`。后文UM-TARGET-v1/main默认指保留的旧研究快照，不是本分支的当前任务。用户明确授权本次独立分支及六路teamwork；探索不设前置审核。旧数学身份及OPEN状态不变。**
+
 # Working rules for future research contributors
 
 Current user decision (2026-10-18): all active unrelated-machines researchers directly attack the negation of UM-TARGET-v1. Keep that original target's statement unchanged. Seek real integer makespan gaps approaching 2 for every fixed improvement, with explicit complexity assumptions and sound decoders from absolute load thresholds. Existing positive results remain tools and attacks on reductions. This direction choice does not change mathematical status; neither the general algorithm nor its nonexistence is proved. No route-card or early-review approval is required for exploration. Do not infer nonexistence from failed searches, tiny constants, CONFIG/SA gaps, or restricted rounding failures; see research/unrelated_machines/ACTIVE_ROUTES.md.

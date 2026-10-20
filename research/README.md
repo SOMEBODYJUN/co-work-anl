@@ -1,3 +1,6 @@
+<!-- Branch-specific user decision, 2026-10-20 -->
+**本分支覆盖说明：`research/or-optimization-selection-20261020` 按用户最新决定重新选择运筹学/优化理论题目，入口为 [选题地图](topic_selection/README.md)，save=`or-optimization-selection`，独立公屏`topics/or-optimization-board`。后文UM-TARGET-v1/main默认指保留的旧研究快照，不是本分支的当前任务。用户明确授权本次独立分支及六路teamwork；探索不设前置审核。旧数学身份及OPEN状态不变。**
+
 # 研究总目录：新题入口与独立模型
 
 `unrelated-machines` 的当前用户决定是全体主攻 `UM-TARGET-v1` 的否定：真实近二困难性、全 ε 量词和实际调度解码；复杂度假设须明确。原目标与已有资产保留，研究方向不升级数学真值。直接入口见[活跃路线](unrelated_machines/ACTIVE_ROUTES.md)。

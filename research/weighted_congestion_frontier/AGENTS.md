@@ -1,3 +1,6 @@
+<!-- Branch-specific user decision, 2026-10-20 -->
+**本分支覆盖说明：`research/or-optimization-selection-20261020` 按用户最新决定重新选择运筹学/优化理论题目，入口为 [选题地图](../topic_selection/README.md)，save=`or-optimization-selection`，独立公屏`topics/or-optimization-board`。后文UM-TARGET-v1/main默认指保留的旧研究快照，不是本分支的当前任务。用户明确授权本次独立分支及六路teamwork；探索不设前置审核。旧数学身份及OPEN状态不变。**
+
 # 共享协作工具与独立拥塞资产的工作规则
 
 当前主攻是 UM-TARGET-v1，save=unrelated-machines：一般R∥C_max的统一常数(2−ε)确定性位多项式实际构造。完整目标和操作在[新题BOSS提示词](../unrelated_machines/BOSS_START.md)、[新题手册](../unrelated_machines/RUNBOOK.md)，数学以[本题模型](../current/unrelated_machines/model_and_classical_barriers.md)和[精确账本](../unrelated_machines/CLAIMS.md)为准。本目录名保留历史，不把所有调用tools的对话变成拥塞研究。

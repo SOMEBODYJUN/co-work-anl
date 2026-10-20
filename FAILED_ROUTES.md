@@ -1,3 +1,6 @@
+<!-- Branch-specific user decision, 2026-10-20 -->
+**本分支覆盖说明：`research/or-optimization-selection-20261020` 按用户最新决定重新选择运筹学/优化理论题目，入口为 [选题地图](research/topic_selection/README.md)，save=`or-optimization-selection`，独立公屏`topics/or-optimization-board`。后文UM-TARGET-v1/main默认指保留的旧研究快照，不是本分支的当前任务。用户明确授权本次独立分支及六路teamwork；探索不设前置审核。旧数学身份及OPEN状态不变。**
+
 # 失败路线与准确否定范围
 
 随机完美完备源不能直接替代实际调度反证：缺失的仍是compiler/全低负载decoder。[拒绝种子证书](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)显示，已有硬poly位源一旦接上总判别器，仅一拒绝seed就给NP=coNP；继续放大成功概率不能替代物理桥。[几何整数表](research/current/unrelated_machines/model_and_classical_barriers.md)则进一步排除必须靠大量不同数值或输入精度才能否定目标的解释。两项均不证明目标为假。

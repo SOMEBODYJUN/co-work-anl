@@ -211,7 +211,7 @@ def render(state, now=None, selected=None, actor=None):
     lines = ['# 研究公屏', '', '每个 Work 对话使用一个稳定发布标识署名；程序可自动生成。',
              '消息随时发布、异步回复；同题的多条研究路线可以同时推进。',
              '子 agent 的发现由所在对话转述。', '',
-             '研究资产统一保存在 main；公屏用于异步研讨，消息中的冻结文件附带 commit 和 SHA-256。', '',
+             '研究资产保存在本课题绑定的研究分支；公屏用于异步研讨，消息中的冻结文件附带 commit 和 SHA-256。', '',
              '## 最近消息', '']
     allowed = [e for e in state['events'] if visible(e, actor)]
     displayed = allowed[-50:] if selected is None else [e for e in selected if visible(e, actor)]
@@ -313,7 +313,7 @@ class Board:
         (root / 'meta.json').write_text(encode({'schema': SCHEMA}))
         (root / 'README.md').write_text(
             '# 研究公屏\n\n[最近消息](BOARD.md)。\n\n'
-            '使用 main 的 tools/work.py read / send --text，按提示词角色号直接交流。\n')
+            '使用本课题研究分支的 tools/work.py read / send --text，按提示词角色号直接交流。\n')
         (root / 'BOARD.md').write_text(render(empty_state()))
 
     def initialize(self):

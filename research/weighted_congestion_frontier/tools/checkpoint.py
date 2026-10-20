@@ -21,6 +21,7 @@ COMMON_PATHS = ["README.md", "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md
                 "research/graph.json", "research/index.html", "research/source_crosswalk.json",
                 "research/source_crosswalk.md", "research/catalog.json", "research/CATALOG.md"]
 SAVE_PATHS = {
+    "or-optimization-selection": ["research/topic_selection", "tests/test_topic_branches.py"],
     # Explicit or previously bound shared archives retain their legacy scope.
     # Unbound clones use DEFAULT_SAVE, never inherit this historical topic.
     "shared": [SCOPE, "research/current/weighted_congestion",
@@ -136,7 +137,7 @@ def describe_assets(repo, directory, commit, files):
     for name in files:
         blob = git(repo, "cat-file", "blob", commit + ":" + name, check=False)
         if not blob.returncode:
-            asset = {"branch": "main", "commit": commit, "path": name,
+            asset = {"branch": value(repo, "branch", "--show-current"), "commit": commit, "path": name,
                      "sha256": hashlib.sha256(blob.stdout).hexdigest()}
             descriptor = directory / (hashlib.sha256(name.encode()).hexdigest()[:16] + ".json")
             descriptor.write_text(json.dumps(asset, ensure_ascii=False, indent=2) + "\n")
@@ -182,10 +183,13 @@ def locked_save(repo, common, cache, args):
     if branch_result.returncode:
         raise Stop("Detached HEAD: switch to a dedicated work branch first.")
     branch = branch_result.stdout.decode().strip()
-    if branch == "wcg/board":
+    target = git(repo, "config", "--local", "--get", "wcg.researchBranch", check=False).stdout.decode().strip() or "main"
+    board = git(repo, "config", "--local", "--get", "wcg.boardBranch", check=False).stdout.decode().strip() or "wcg/board"
+    git(repo, "check-ref-format", "refs/heads/" + target)
+    if branch == board:
         raise Stop("Board messages must use board.py.")
-    if branch != "main":
-        raise Stop("Run work.py start to preserve and migrate this old work branch to main before checkpointing.")
+    if branch != target:
+        raise Stop("Checkpoint requires the bound research branch " + target + "; preserve this clone and use work.py start.")
     for item in ("MERGE_HEAD", "CHERRY_PICK_HEAD", "REVERT_HEAD", "rebase-merge", "rebase-apply"):
         if Path(value(repo, "rev-parse", "--git-path", item)).is_absolute():
             p = Path(value(repo, "rev-parse", "--git-path", item))
