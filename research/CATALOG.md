@@ -7,6 +7,7 @@
 
 | 数学专题 | 首读入口 | 逐文件目录 |
 | --- | --- | --- |
+| 运筹与优化重新选题 | [研究说明](topic_selection/README.md) | [中文资产名与用途](#topic-selection) |
 | 不相关并行机与统一常数2壁垒 | [研究说明](current/unrelated_machines/README.md) | [中文资产名与用途](#unrelated_machines) |
 | 加权原子拥塞博弈 | [研究说明](current/weighted_congestion/README.md) | [中文资产名与用途](#weighted_congestion) |
 | 正占用核、交互阶数与非负表示 | [研究说明](current/positive_kernels/README.md) | [中文资产名与用途](#positive_kernels) |
@@ -21,6 +22,19 @@
 | 历史投稿判断与旧方向选择 | [研究说明](../history/README.md) | [中文资产名与用途](#publication) |
 
 维护方法：先在 `catalog.json` 写具体名称和用途，再运行 `python3 research/build_catalog.py`；`--check` 同时拒绝漏登记、缺文件、无中文名称和过时生成稿。新增候选按原等级保存，不能为通过目录检查而升级结论。
+
+<a id="topic-selection"></a>
+
+## 运筹与优化重新选题
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [运筹与优化重新选题的研究地图](<topic_selection/README.md>) | `research/topic_selection/README.md` | 固定新分支目标、候选类型及价值判断，按精确入口继续选题。 | 阅读导航；真值查精确正文及账本 |
+| [运筹与优化重新选题的完整启动提示词](<topic_selection/BOSS_START.md>) | `research/topic_selection/BOSS_START.md` | 供新会话恢复六线广搜、反方比较、精确问题与保存合同。 | 阅读导航；真值查精确正文及账本 |
+| [独立选题分支和公屏的恢复保存操作](<topic_selection/RUNBOOK.md>) | `research/topic_selection/RUNBOOK.md` | 沿现有统一程序使用显式研究/公屏分支绑定，不改旧clone默认。 | 阅读导航；真值查精确正文及账本 |
+| [本轮选题的用户完整指导](<topic_selection/USER_GUIDANCE.md>) | `research/topic_selection/USER_GUIDANCE.md` | 六条子线共同读取的原始目标与研究方法，核对选题是否偏离时读。 | 阅读导航；真值查精确正文及账本 |
+| [公开问题与工具迁移的选题比较](<topic_selection/TOPIC_BATTLE.md>) | `research/topic_selection/TOPIC_BATTLE.md` | 存放短名单、反方意见和未解义务，不把排名当数学真值。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [运筹优化候选问题的当前筛选前沿](<topic_selection/RESEARCH_STATE.md>) | `research/topic_selection/RESEARCH_STATE.md` | 记录已核事实、排重与下一项高信息量验证。 | 阅读导航；真值查精确正文及账本 |
 
 <a id="unrelated_machines"></a>
 

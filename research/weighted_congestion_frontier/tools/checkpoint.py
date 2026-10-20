@@ -21,6 +21,8 @@ COMMON_PATHS = ["README.md", "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md
                 "research/graph.json", "research/index.html", "research/source_crosswalk.json",
                 "research/source_crosswalk.md", "research/catalog.json", "research/CATALOG.md"]
 SAVE_PATHS = {
+    "topic-selection": ["research/topic_selection", "tests/audits/topic_selection",
+                        "evidence/runs/topic_selection"],
     # Explicit or previously bound shared archives retain their legacy scope.
     # Unbound clones use DEFAULT_SAVE, never inherit this historical topic.
     "shared": [SCOPE, "research/current/weighted_congestion",
@@ -136,7 +138,7 @@ def describe_assets(repo, directory, commit, files):
     for name in files:
         blob = git(repo, "cat-file", "blob", commit + ":" + name, check=False)
         if not blob.returncode:
-            asset = {"branch": "main", "commit": commit, "path": name,
+            asset = {"branch": value(repo, "branch", "--show-current"), "commit": commit, "path": name,
                      "sha256": hashlib.sha256(blob.stdout).hexdigest()}
             descriptor = directory / (hashlib.sha256(name.encode()).hexdigest()[:16] + ".json")
             descriptor.write_text(json.dumps(asset, ensure_ascii=False, indent=2) + "\n")
@@ -182,10 +184,12 @@ def locked_save(repo, common, cache, args):
     if branch_result.returncode:
         raise Stop("Detached HEAD: switch to a dedicated work branch first.")
     branch = branch_result.stdout.decode().strip()
-    if branch == "wcg/board":
+    expected = git(repo, "config", "--local", "--get", "wcg.researchBranch", check=False).stdout.decode().strip() or "main"
+    git(repo, "check-ref-format", "refs/heads/" + expected)
+    if branch.startswith("wcg/board"):
         raise Stop("Board messages must use board.py.")
-    if branch != "main":
-        raise Stop("Run work.py start to preserve and migrate this old work branch to main before checkpointing.")
+    if branch != expected:
+        raise Stop("Current branch differs from the explicitly configured research branch.")
     for item in ("MERGE_HEAD", "CHERRY_PICK_HEAD", "REVERT_HEAD", "rebase-merge", "rebase-apply"):
         if Path(value(repo, "rev-parse", "--git-path", item)).is_absolute():
             p = Path(value(repo, "rev-parse", "--git-path", item))
@@ -280,8 +284,20 @@ def locked_save(repo, common, cache, args):
             raise Stop("HEAD changed outside the checkpoint lock. Local snapshot: " + snapshot)
         # A fetch must succeed before every push. Never infer the outgoing
         # range from a stale tracking ref or upload unexamined local history.
+        probe = git(repo, "ls-remote", "--exit-code", "--heads", "origin", ref, check=False)
+        if probe.returncode not in (0, 2):
+            detail = "Cannot establish remote branch existence."
+            break
+        if probe.returncode == 2:
+            if branch == "main":
+                detail = "Remote main is missing; refusing to infer a baseline."
+                break
+            # First publication is audited against the existing remote main.
+            source_ref = "refs/heads/main"
+        else:
+            source_ref = ref
         before = git(repo, "fetch", "--quiet", "--no-tags", "--no-write-fetch-head",
-                     "origin", "+" + ref + ":" + private, check=False)
+                     "origin", "+" + source_ref + ":" + private, check=False)
         if before.returncode:
             detail = SECRET.sub(b"[REDACTED]", before.stderr).decode(errors="replace").strip()[:500]
             break

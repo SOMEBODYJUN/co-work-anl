@@ -608,5 +608,38 @@ class CheckpointTests(unittest.TestCase):
         self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
 
 
+    def test_explicit_new_branch_first_publish_keeps_main_and_correct_descriptors(self):
+        run(self.repo, "switch", "-c", "research/topic-selection")
+        run(self.repo, "config", "--local", "wcg.researchBranch", "research/topic-selection")
+        self.note.write_text("new topic selected questions\n")
+        result = self.save()
+        self.assertEqual(result["status"], "pushed")
+        self.assertEqual(result["branch"], "research/topic-selection")
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+        self.assertEqual(run(self.remote, "rev-parse", "research/topic-selection"), result["commit"])
+        self.assertTrue(all(a["asset"]["branch"] == "research/topic-selection" for a in result["assets"]))
+        self.assertEqual(self.save()["commit"], result["commit"])
+
+    def test_unbound_side_branch_is_rejected(self):
+        run(self.repo, "switch", "-c", "research/topic-selection")
+        self.note.write_text("preserved draft\n")
+        with self.assertRaisesRegex(c.Stop, "explicitly configured research branch"):
+            self.save()
+        self.assertEqual(run(self.repo, "rev-parse", "HEAD"), self.before)
+        self.assertEqual(self.note.read_text(), "preserved draft\n")
+
+    def test_new_branch_initial_publish_still_audits_prior_out_of_scope_commit(self):
+        run(self.repo, "switch", "-c", "research/topic-selection")
+        run(self.repo, "config", "--local", "wcg.researchBranch", "research/topic-selection")
+        (self.repo / "outside.md").write_text("earlier outside-scope asset\n")
+        run(self.repo, "add", "outside.md")
+        run(self.repo, "commit", "-m", "earlier asset")
+        self.note.write_text("topic asset\n")
+        with self.assertRaisesRegex(c.Stop, "outside checkpoint scope"):
+            self.save()
+        self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)
+        self.assertEqual(run(self.remote, "for-each-ref", "--format=%(refname)", "refs/heads/research"), "")
+
+
 if __name__ == "__main__":
     unittest.main()

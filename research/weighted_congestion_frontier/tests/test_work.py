@@ -492,5 +492,25 @@ class WorkTests(unittest.TestCase):
         self.assertEqual(len(self.read()["events"]), 1)
 
 
+    def test_explicit_topic_branch_and_board_are_isolated_from_main(self):
+        self.start()
+        git(self.repo, "switch", "-c", "research/topic-selection")
+        git(self.repo, "config", "--local", "wcg.researchBranch", "research/topic-selection")
+        git(self.repo, "config", "--local", "wcg.boardBranch", "wcg/board-topic-selection")
+        synced = self.work("sync")
+        self.assertEqual(synced.returncode, 0, synced.stderr)
+        self.assertEqual(json.loads(synced.stdout)["status"], "new-branch")
+        (self.repo / "untracked.txt").write_text("preserve this local draft\n")
+        started = self.work("start", "--remote", str(self.remote))
+        self.assertEqual(started.returncode, 0, started.stderr)
+        self.assertEqual(json.loads(started.stdout.splitlines()[0])["branch"], "research/topic-selection")
+        sent = self.work("send", "--text", "new topic only")
+        self.assertEqual(sent.returncode, 0, sent.stderr)
+        self.assertEqual(len(self.read()["events"]), 1)
+        git(self.repo, "config", "--local", "--unset", "wcg.boardBranch")
+        self.assertEqual(self.read()["events"], [])
+        self.assertEqual((self.repo / "untracked.txt").read_text(), "preserve this local draft\n")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

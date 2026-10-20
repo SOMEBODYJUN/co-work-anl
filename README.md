@@ -1,3 +1,5 @@
+> 本分支用户新指令：`research/topic-selection` / `topic-selection` / `wcg/board-topic-selection` 用于重新选题。入口 [运筹与优化选题](research/topic_selection/README.md)；当前用户指令覆盖下述继承自main的旧题与禁止新分支约定。原调度资产与其OPEN状态保留。
+
 # 共同研究：一般不相关并行机的统一常数2壁垒
 
 [固定件数超载见证](research/current/unrelated_machines/top_two_pair_witness_boundary.md#7-固定超载见证件数的严格次二承诺判别)对每固定r给B_r≤(2−c_r)T的实际过滤器；[有界重数接线](research/current/unrelated_machines/private_graft_and_resource_repetition.md#9-有界重数接线的配置包络与共同循环二接线坍缩)识别精确cap配置包络，且共同id/shift可将趋二seed降至1；[私有填充的对数表](research/current/unrelated_machines/model_and_classical_barriers.md#8-多项式私有填充与单一对数字母表正规形)把目标存在性等价域收至O(logN)个1..N²正整数。前两项限定反面接口，后一项是允许padding的新等价，不是一般不存在证明。

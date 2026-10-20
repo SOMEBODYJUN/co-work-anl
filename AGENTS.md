@@ -1,3 +1,5 @@
+> 本分支用户新指令：`research/topic-selection` / `topic-selection` / `wcg/board-topic-selection` 用于重新选题。入口 [运筹与优化选题](research/topic_selection/README.md)；当前用户指令覆盖下述继承自main的旧题与禁止新分支约定。原调度资产与其OPEN状态保留。
+
 # Working rules for future research contributors
 
 Current user decision (2026-10-18): all active unrelated-machines researchers directly attack the negation of UM-TARGET-v1. Keep that original target's statement unchanged. Seek real integer makespan gaps approaching 2 for every fixed improvement, with explicit complexity assumptions and sound decoders from absolute load thresholds. Existing positive results remain tools and attacks on reductions. This direction choice does not change mathematical status; neither the general algorithm nor its nonexistence is proved. No route-card or early-review approval is required for exploration. Do not infer nonexistence from failed searches, tiny constants, CONFIG/SA gaps, or restricted rounding failures; see research/unrelated_machines/ACTIVE_ROUTES.md.
