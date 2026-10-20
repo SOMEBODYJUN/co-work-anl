@@ -114,6 +114,7 @@
 | [背包与资源轮廓：两射线启用集LP探索冻结输入输出](<topic_selection/probes/gap_tools/two_ray_search.json>) | `research/topic_selection/probes/gap_tools/two_ray_search.json` | 选题试攻证据；精确输入、seed、算术与未检查范围见对应正文和结果，有限计算不认证一般命题。 | 冻结输入、证书或结果；不原位覆盖 |
 | [背包与资源轮廓：固定概率类内均匀化反例冻结输入输出](<topic_selection/probes/gap_tools/exact_uniformization_counterexample.json>) | `research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.json` | 选题试攻证据；精确输入、seed、算术与未检查范围见对应正文和结果，有限计算不认证一般命题。 | 冻结输入、证书或结果；不原位覆盖 |
 | [背包与资源轮廓：两尺寸极值LP探索程序](<topic_selection/probes/gap_tools/two_class_attack.py>) | `research/topic_selection/probes/gap_tools/two_class_attack.py` | 选题试攻证据；精确输入、seed、算术与未检查范围见对应正文和结果，有限计算不认证一般命题。 | 有限计算核验；不代替一般证明 |
+| [选题来源与价值审计：作者原题、母工具和团队子题的证据边界](<topic_selection/notes/source_authority_audit.md>) | `research/topic_selection/notes/source_authority_audit.md` | 核对主池前排与另一选题分支的具体题源、官方作者认可和A/C差距；修正FA09原始出处，记录强来源候选与短推论风险。用于定题和导师沟通，不认证新颖性、仍开放或发表。 | 实际审查记录；只覆盖所列版本与义务 |
 
 <a id="unrelated_machines"></a>
 

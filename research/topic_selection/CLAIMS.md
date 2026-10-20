@@ -58,3 +58,7 @@
 ## SEL-PB-EFX-MONOTONE-COMPLETION-OBSTRUCTION-v1
 
 C类强方法合同反例；精确参数族、量词、证明、独立Fraction核查、适用范围及新颖性限制见[个性化双值的单调补全障碍](notes/personalized_bivalued_monotone_completion_obstruction.md)。它不否定EFX+普通PO存在性；未进入可靠新一般定理层。
+
+## 题源修正，数学身份不变
+
+[来源审计](notes/source_authority_audit.md)将FA09直接题源修正为Jin–Tao WINE2025 §5，He–Tao2026为后续转述。A是一般EFX+普通PO问题，少人数/少件/两ratio仍为C；未改量词或结论。其余题源评价不构成数学Claim状态提升。

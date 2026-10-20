@@ -1,5 +1,10 @@
 # 重新选题：boss37本轮完成的实际前沿
 
+## 题源与价值复核：用户本轮评价要求
+
+[题源审计](notes/source_authority_audit.md)保留六路只读核验：主池59条的A/B/C为12/2/45，非exclude为10/2/40；这不是全部当前开放题的认证。当前重边母文确有A原题，但作者团主要处于博士生/博士后阶段；其配套charity/cactus为C。另一分支AP-02、FG01、FG02、两容量BMKP有更直接的资深/核心领域来源，应共同比较，原分支判断不覆盖。FA09已改引Jin–Tao WINE2025 §5，保留He–Tao作为后续转述。来源强度、贡献规模、可完成性与新颖性仍分别未决；本轮没有新数学Claim晋级。
+
+
 更新时间2026-10-20。沿用research/or-topic-battle-20261020、topics/or-optimization-board及or-optimization-selection，未创建分支。actor固定R-cc0ca968777e443ea4d5031f3e9c4883。旧UM-TARGET-v1正反面仍OPEN，退出本轮默认主攻。
 
 ## 广度、实际团队与保存内容

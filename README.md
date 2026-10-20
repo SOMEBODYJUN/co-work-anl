@@ -31,6 +31,8 @@
 
 当前承重不确定性是：是否被已有定理覆盖、切口是否只是直接推论、玩具模型能否扩成有内容的定理、一般化后是否重新变成巨大开放问题。具体候选、异议和核验从[本分支前沿](research/topic_selection/RESEARCH_STATE.md)读取。后续已解或覆盖的种子见[排除与回收](research/topic_selection/FAILED_ROUTES.md)。本轮没有把新候选升级为可靠新定理。
 
+本轮[题源与价值审计](research/topic_selection/notes/source_authority_audit.md)区分具体出题人、母工具和团队子题，并与另一分支的资深作者来源候选比较；此前排序不能当作所有候选都是“大佬原题”的依据。
+
 ## Next Actions
 
 广搜后精读前列论文、重构机制并直接试攻。成熟结果才安排后置独立攻击；探索不需要Route Card、reviewer、路线配额或审批。失败时保留真实边界与可复用机制，避免只有换参数和增加样本。

@@ -65,3 +65,7 @@
 [逐条候选索引](CANDIDATE_INDEX.md)和[BATTLE](BATTLE.md)给当前排序；[重边公平](notes/heavy_edge_residual_and_charity.md)、[LP二维分类](notes/two_resource_lp_submodularity.md)、[全维两轮廓](notes/two_profile_lp_in_arbitrary_dimension.md)、[cloning几何](notes/budget_cloning_and_concave_geometry.md)、[cloning证书复杂性](notes/budget_cloning_complexity_certificate.md)均有完整自足证明，具体新颖性未确认。
 
 [Leontief–Fisher已知接口](notes/leontief_fisher_known_interface.md)记录作者原题的覆盖淘汰；[背包障碍](notes/two_size_knapsack_obstructions.md)和[原子64/59](notes/finite_weight_scaled_potential.md)记录其他重要判断变化。[独立复核](notes/round2_independent_root_review.md)、[实验manifest](probes/round2_manifest.json)给核验范围。完整用户指导仍在[BOSS_START](BOSS_START.md)，不新建另一套提示词。
+
+## 题源与潜在价值复核
+
+[作者原题、母工具与团队子题分别评价](notes/source_authority_audit.md)：核对当前前排的具体原文位置、作者身份与官方领域认可，区分强母文和子题价值；跨分支比较AP-02、四人laminar、copies、两容量BMKP，记录重边作者团的实际资历、FA09原始题源修正及各工具题短推论风险。选定主目标或向导师说明题源前读取；本报告不认证仍开放或可发表。
