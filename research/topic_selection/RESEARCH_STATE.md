@@ -42,3 +42,9 @@
 ## 本轮实际接续（2026-10-20）
 
 从远端1c3c22a9保留全部已有资产，在用户授权的新分支research/or-topic-battle-20261020继续。新启动六个gpt-6.1-sol / ultra：atomic_pne、nash_structure、fair_goods、fair_chores、gap_rounding、gap_structure，均须全文读取含用户指导的BOSS_START。旧会话的running文字不是本轮运行证据。新增VALUE_CRITERIA将idea类型与价值判据对应；候选仍在核验，不提升定理状态。
+
+## boss41第一批可接续试攻
+
+已接入既有research/or-topic-battle-20261020，不创建新远端分支；发布身份R-6632b20bf45d4fa6ba30666e1ca8c1df。本轮实际运行六个gpt-6.1-sol ultra子研究员，全部逐字收到用户当前完整指导。六路为原子拥塞、Nash结构动态、goods、chores约束、GAP、优化结构桥梁。
+
+首份稳定资产[个性化双值单调补全障碍](notes/personalized_bivalued_monotone_completion_obstruction.md)否定一条强证明路线；root未调用scout核心，独立Fraction枚举基例全243分配、参数与退化边界。它不否定EFX+普通PO存在性，也未认证新颖性或独立论文价值。六路候选池与跨线battle正在落盘；不靠运行状态替代下一批实体卡片。

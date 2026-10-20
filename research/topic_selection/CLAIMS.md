@@ -17,3 +17,7 @@
 ## SEL-CHORES-TRIVALUED-AUDIT-v1
 
 [三类chores反例与有限近似边界](notes/chores_trivalued_exact_boundary.md)固定四代理/三类型/完全分配/同权/可加成本及α-EFX定义。Status=已知反例复现与有限精确Observation；完整枚举不升级一般定理。原参数的固定例最优α为23/22，±1邻域并非单调；代码、输入、独立小例oracle和反算见正文。
+
+## SEL-PB-EFX-MONOTONE-COMPLETION-OBSTRUCTION-v1
+
+C类强方法合同反例；精确参数族、量词、证明、独立Fraction核查、适用范围及新颖性限制见[个性化双值的单调补全障碍](notes/personalized_bivalued_monotone_completion_obstruction.md)。它不否定EFX+普通PO存在性；未进入可靠新一般定理层。

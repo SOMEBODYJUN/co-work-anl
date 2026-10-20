@@ -52,6 +52,9 @@
 | [三类chores反例的精确复现与邻域公平边界](<topic_selection/notes/chores_trivalued_exact_boundary.md>) | `research/topic_selection/notes/chores_trivalued_exact_boundary.md` | 复现He–Tao已知反例并计算固定例最优近似公平因子，区分原文事实与有限邻域观察。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
 | [三类chores公平存在性的双接口精确探针](<topic_selection/probes/chores_trivalued_type_audit.py>) | `research/topic_selection/probes/chores_trivalued_type_audit.py` | 完整类型计数枚举与独立逐标签逐项移除oracle交叉核查，处理零空边界及非法输入。 | 有限计算核验；不代替一般证明 |
 | [三类chores反例与邻域的冻结精确输出](<topic_selection/probes/results/chores_trivalued_type_audit_20261020.json>) | `research/topic_selection/probes/results/chores_trivalued_type_audit_20261020.json` | 保存实际参数、计数、达到分配、代码hash、seed和有限证据范围。 | 冻结输入、证书或结果；不原位覆盖 |
+| [个性化双值物品的公平单调补全障碍](<topic_selection/notes/personalized_bivalued_monotone_completion_obstruction.md>) | `research/topic_selection/notes/personalized_bivalued_monotone_completion_obstruction.md` | 固定三代理五物品参数族与全部支配者，排除强路线而不否定普通PO兼容存在问题。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
+| [公平单调补全障碍的独立精确枚举](<topic_selection/probes/personalized_efx_completion_independent.py>) | `research/topic_selection/probes/personalized_efx_completion_independent.py` | 不导入原作者核心，以Fraction重算全部完整分配及参数、边界、退化输入。 | 有限计算核验；不代替一般证明 |
+| [公平单调补全独立枚举的冻结证据](<topic_selection/probes/results/personalized_efx_completion_independent_20261020.json>) | `research/topic_selection/probes/results/personalized_efx_completion_independent_20261020.json` | 保存基例全部支配者与EFX违反式、参数边界和退化核查，有限观察不升级一般定理。 | 冻结输入、证书或结果；不原位覆盖 |
 
 <a id="unrelated_machines"></a>
 
