@@ -7,3 +7,11 @@
 需要减少的不确定性：原文是否明确提出；最新是否已解；候选是否只是直接推论；最小toy能否暴露核心机制；小结果能否扩成完整而不虚构价值的成果包。
 
 下一行动：收齐独立卡片，交叉battle，核验前排来源与实际实验。不要把paper count、打分或通过软件检查称为数学进展。
+
+## 首个实质试攻：CS-THETA-EXACT-v1
+
+[等长多路theta图相关间隙](notes/combinatorial_equal_theta_correlation.md)已有覆盖所有整数路径数和共同长度的有限有理公式及证明草案。核心是原文Thm4.3的支持紧性、删除桥、路径内AM–GM及两坐标平方差凸性；全base约化曾遗漏restrictions，已由交叉攻击修正。状态是证明候选，新颖性和后置全面审查未完成。
+
+[root独立探针](probes/equal_theta_independent.py)使用union-find逐子集秩、Fraction精确期望、所有rank不等式及全联合分布LP，与路径公式分开重构；[冻结输出](probes/results/equal_theta_independent_20261020.json)保存正常/零/自由拟阵/非法图边界与环境。有限核查不证明全公式。
+
+六路仍在扩充不同论文族并写候选卡；不要将该首个可推导细胞直接变成唯一主目标。下一义务是跨线比较完整成果包，核验更一般series-extension覆盖，再决定投入。

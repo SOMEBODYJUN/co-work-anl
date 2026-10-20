@@ -39,6 +39,11 @@
 | [新选题分支、来源字段与导航核验](<topic_selection/check_selection.py>) | `research/topic_selection/check_selection.py` | 检查独立分支、公屏、完整提示词、候选字段及本地链接，不验证开放性/新颖性/数学真值。 | 有限计算核验；不代替一般证明 |
 | [置换顶点仿射投影的独立精确核验](<topic_selection/probes/centered_face_independent.py>) | `research/topic_selection/probes/centered_face_independent.py` | 不调用QP优化器，以全部完美匹配顶点的仿射正交条件复核奇数细分小反例与边界。 | 有限计算核验；不代替一般证明 |
 | [奇数细分支持面的独立Fraction证据](<topic_selection/probes/results/centered_face_independent.json>) | `research/topic_selection/probes/results/centered_face_independent.json` | 冻结单点、四阶星面与五阶奇路细分面的精确投影结果；不作为一般分类或新颖性证明。 | 冻结输入、证书或结果；不原位覆盖 |
+| [等长theta图相关间隙的支持约化与双水平公式](<topic_selection/notes/combinatorial_equal_theta_correlation.md>) | `research/topic_selection/notes/combinatorial_equal_theta_correlation.md` | 保存CS-THETA-EXACT-v1的精确候选、完整推导、全base约化纠错和查新义务；继续组合方向前读取。 | 候选或未闭合义务；保存不升级状态 |
+| [等长theta图逐子集秩与联合分布LP独立核验](<topic_selection/probes/equal_theta_independent.py>) | `research/topic_selection/probes/equal_theta_independent.py` | 用union-find而非路径公式计算秩，精确核验达点并以联合分布LP核查随机边缘和退化输入。 | 有限计算核验；不代替一般证明 |
+| [等长theta图独立探针的冻结输入范围与误差](<topic_selection/probes/results/equal_theta_independent_20261020.json>) | `research/topic_selection/probes/results/equal_theta_independent_20261020.json` | 保存种子、库版本、精确有理达值、LP残差及边界范围；只作为有限计算证据。 | 冻结输入、证书或结果；不原位覆盖 |
+| [两边路径图相关间隙的多起点探索程序](<topic_selection/probes/combinatorial_submodular_k2k.py>) | `research/topic_selection/probes/combinatorial_submodular_k2k.py` | 保存K2k多起点优化与rank恒等式核查，记录从对称猜测到双水平结构的发现过程。 | 有限计算核验；不代替一般证明 |
+| [两边路径图相关间隙的冻结探索结果](<topic_selection/probes/combinatorial_submodular_k2k_results.json>) | `research/topic_selection/probes/combinatorial_submodular_k2k_results.json` | 保留数值优化参数、对称与边界比较及观察范围；不代替一般公式证明。 | 冻结输入、证书或结果；不原位覆盖 |
 
 <a id="unrelated_machines"></a>
 

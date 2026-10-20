@@ -36,3 +36,8 @@
 | research/topic_selection/branch_manifest.json | 独立研究分支、公屏、save、入口及基线SHA |
 
 旧研究地图保留在父分支快照及原目录；本分支不复制旧正文。根 research/active_research.json 仍是旧main工具默认兼容合同，本分支显式参数和 branch_manifest.json 优先。
+
+## 首轮可接续数学资产
+
+- [等长theta图相关间隙的有限公式与证明候选](notes/combinatorial_equal_theta_correlation.md)：论文建议方向派生，含支持约化纠错、双水平最坏边缘结构、完整草案及查新义务。
+- [独立逐子集与联合分布LP探针](probes/equal_theta_independent.py)及[冻结输出](probes/results/equal_theta_independent_20261020.json)：用于交叉核查公式与边界，不认证一般证明或新颖性。

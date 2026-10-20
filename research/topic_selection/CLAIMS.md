@@ -5,3 +5,7 @@
 每个进入试攻的候选须记录：ID/version、Exact Statement、Objects、Domain、Quantifiers、Assumptions、Definitions、Scope、Conclusion、Dependencies、Evidence、Counterevidence/Objections、Status、Related Files。
 
 文献本身证明的结果为Paper Fact；工具含义为Interpretation；新问题/猜想为Hypothesis；有限实验为Observation/Evidence；状态提升需自足证明并核查实质异议。探索和准确标级的候选保存无需等待审查。
+
+## CS-THETA-EXACT-v1
+
+身份：B作者建议自然类细化 → C团队等长theta派生题。精确对象、全量词、公式、定义、依赖、证据、异议与结果文件均在[自足证明候选](notes/combinatorial_equal_theta_correlation.md)。Status=proof candidate；不是可靠新定理，新颖性未确认。原文Thm4.3的support-tight结论与全图base结论严格区分。
