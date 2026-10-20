@@ -1,3 +1,5 @@
+> 本分支当前状态：2026-10-20重新选题，入口[选题研究地图](research/topic_selection/README.md)。下面保留旧main研究记录，旧目标仍OPEN，不作为本分支唯一任务。
+
 # 失败路线与准确否定范围
 
 随机完美完备源不能直接替代实际调度反证：缺失的仍是compiler/全低负载decoder。[拒绝种子证书](research/current/unrelated_machines/partial_minrep_linear_degree_source_and_fee_bridge.md)显示，已有硬poly位源一旦接上总判别器，仅一拒绝seed就给NP=coNP；继续放大成功概率不能替代物理桥。[几何整数表](research/current/unrelated_machines/model_and_classical_barriers.md)则进一步排除必须靠大量不同数值或输入精度才能否定目标的解释。两项均不证明目标为假。

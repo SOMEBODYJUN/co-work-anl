@@ -32,9 +32,52 @@ def prompt_body(path: str) -> str:
     return matches[0]
 
 
+def check_topic_selection(manifest: dict) -> dict:
+    target, save = manifest["target_id"], manifest["default_save"]
+    require(target == "TOPIC-SELECTION-OR-OPT-v1" and save == "topic-selection",
+            "topic selection identity mismatch")
+    contract = json.loads((ROOT / "research/topic_selection/active_research.json").read_text())
+    require(contract["target_id"] == target and contract["save"] == save
+            and contract["branch"] == manifest["branch"]
+            and re.fullmatch(r"research/topic-selection-[A-Za-z0-9_.-]+", manifest["branch"]),
+            "topic branch contract mismatch")
+    legacy = manifest["legacy_default_save"]
+    require(literal_assignment(manifest["program"], "DEFAULT_SAVE") == legacy,
+            "standalone legacy default changed without an explicit route")
+    require(literal_assignment(manifest["submitter"], "DEFAULT_SAVE") == legacy,
+            "checkpoint legacy default changed without an explicit route")
+    entries = literal_assignment(manifest["program"], "RESEARCH_ENTRIES")
+    require(entries[save] == {"research_entry": manifest["mathematical_entry"],
+                             "research_prompt": manifest["prompt"]},
+            "topic start receipt points outside current entry/prompt")
+    require(entries["shared"]["research_prompt"] is None, "legacy shared acquired a new task")
+    links = 0
+    for path in manifest["active_entrypoints"]:
+        file = (ROOT/path).resolve()
+        require(file.is_relative_to(ROOT) and file.is_file(), ("missing active entry", path))
+        text = file.read_text()
+        require(target in text and save in text, ("active entry lacks topic/scope", path))
+        for match in re.finditer(r"(?<!\\)\[[^\]\n]+\]\(([^)\s]+)\)", text):
+            ref = match.group(1)
+            if re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", ref) or ref.startswith("#"):
+                continue
+            dest = (file.parent/ref.split("#",1)[0]).resolve()
+            require(dest.is_relative_to(ROOT) and dest.exists(), ("broken active navigation",path,ref))
+            links += 1
+    prompt = (ROOT/manifest["prompt"]).read_text()
+    for marker in ("原子博弈", "Nash", "公平分配", "广义指派", "gpt-6.1-sol", "ultra",
+                   "20天", "12小时", "工具", "分类", "玩具模型", "停止条件", "--branch"):
+        require(marker in prompt, ("incomplete topic selection prompt", marker))
+    return {"target": target, "save": save, "branch": manifest["branch"],
+            "checked_entrypoints": len(manifest["active_entrypoints"]),
+            "checked_local_links": links, "legacy_defaults_retained": True}
+
+
 def check() -> dict:
     manifest = json.loads((ROOT / "research/active_research.json").read_text())
     require(manifest["schema_version"] == 1, "unsupported active routing contract")
+    if manifest.get("mode") == "topic-selection":
+        return check_topic_selection(manifest)
     save, target = manifest["default_save"], manifest["target_id"]
     program, submitter = manifest["program"], manifest["submitter"]
     require(literal_assignment(program, "DEFAULT_SAVE") == save,

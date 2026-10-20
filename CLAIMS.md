@@ -1,3 +1,5 @@
+> 本分支当前状态：2026-10-20重新选题，入口[选题研究地图](research/topic_selection/README.md)。下面保留旧main研究记录，旧目标仍OPEN，不作为本分支唯一任务。
+
 # 精确命题入口
 
 新精确身份[UM-PERFECT-COMPLETE-SEED-CERTIFICATE-v1与UM-DENSE-GEOMETRIC-ALPHABET-EQUIVALENCE-v1](research/unrelated_machines/CLAIMS.md)分别记录全种子证书的coNP/coRP推论与单一O(log²n)整数表的算法存在性等价；均不关闭一般主目标。

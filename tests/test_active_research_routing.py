@@ -24,6 +24,8 @@ class ActiveResearchRoutingTests(unittest.TestCase):
         paths = set(self.manifest["active_entrypoints"] + self.manifest["role_prompts"] +
                     [self.manifest[k] for k in ("prompt", "runbook", "program", "submitter")])
         paths.add("research/active_research.json")
+        if self.manifest.get("mode") == "topic-selection":
+            paths.add("research/topic_selection/active_research.json")
         for path in paths:
             dest = self.root / path
             dest.parent.mkdir(parents=True, exist_ok=True)
@@ -58,8 +60,8 @@ class ActiveResearchRoutingTests(unittest.TestCase):
 
     def test_current_routes_pass(self):
         result = CHECKER.check()
-        self.assertEqual(result["target"], "UM-TARGET-v1")
-        self.assertGreater(result["checked_local_links"], 100)
+        self.assertEqual(result["target"], self.manifest["target_id"])
+        self.assertGreater(result["checked_local_links"], 10)
 
     def test_standalone_default_cannot_return_to_old_topic(self):
         self.alter(self.manifest["program"], 'DEFAULT_SAVE = "unrelated-machines"', 'DEFAULT_SAVE = "shared"')
@@ -77,16 +79,26 @@ class ActiveResearchRoutingTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "legacy shared"):
             CHECKER.check()
 
-    def test_compatibility_team_must_remain_the_complete_task(self):
-        self.alter(self.manifest["team_compatibility_prompt"], "持续推进", "偶尔推进")
-        with self.assertRaisesRegex(ValueError, "drifted"):
-            CHECKER.check()
+    def test_current_prompt_must_remain_complete(self):
+        if self.manifest.get("mode") == "topic-selection":
+            self.alter(self.manifest["prompt"], "停止条件", "省略门槛")
+            with self.assertRaisesRegex(ValueError, "incomplete topic selection"):
+                CHECKER.check()
+        else:
+            self.alter(self.manifest["team_compatibility_prompt"], "持续推进", "偶尔推进")
+            with self.assertRaisesRegex(ValueError, "drifted"):
+                CHECKER.check()
 
-    def test_stale_root_instruction_is_rejected_even_with_new_topic_header(self):
-        file = self.root / "README.md"
-        file.write_text(file.read_text() + "\n当前主攻是加权拥塞。\n")
-        with self.assertRaisesRegex(ValueError, "stale unconditional"):
-            CHECKER.check()
+    def test_current_identity_cannot_be_removed(self):
+        if self.manifest.get("mode") == "topic-selection":
+            self.alter("README.md", self.manifest["target_id"], "UNKNOWN-TARGET")
+            with self.assertRaisesRegex(ValueError, "active entry lacks"):
+                CHECKER.check()
+        else:
+            file = self.root / "README.md"
+            file.write_text(file.read_text() + "\n当前主攻是加权拥塞。\n")
+            with self.assertRaisesRegex(ValueError, "stale unconditional"):
+                CHECKER.check()
 
     def test_broken_active_link_is_rejected(self):
         file = self.root / "README.md"

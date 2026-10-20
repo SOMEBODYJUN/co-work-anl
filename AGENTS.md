@@ -1,3 +1,9 @@
+# 本分支当前授权：重新选题
+
+用户2026-10-20最新明确要求建立`research/topic-selection-boss6-20261020`，boss6组织六名gpt-6.1-sol ultra研究者广泛重选运筹学/优化理论题。当前入口research/topic_selection/README.md及BOSS_START.md。此分支允许新研究分支及显式分支checkpoint，旧main-only和UM唯一目标规则只适用于下面保留的旧研究状态。严谨性、凭据保护、状态分层、无强推和历史审计继续适用。用户最新指令优先。
+
+---
+
 # Working rules for future research contributors
 
 Current user decision (2026-10-18): all active unrelated-machines researchers directly attack the negation of UM-TARGET-v1. Keep that original target's statement unchanged. Seek real integer makespan gaps approaching 2 for every fixed improvement, with explicit complexity assumptions and sound decoders from absolute load thresholds. Existing positive results remain tools and attacks on reductions. This direction choice does not change mathematical status; neither the general algorithm nor its nonexistence is proved. No route-card or early-review approval is required for exploration. Do not infer nonexistence from failed searches, tiny constants, CONFIG/SA gaps, or restricted rounding failures; see research/unrelated_machines/ACTIVE_ROUTES.md.
@@ -16,3 +22,5 @@ This repository is a growing mathematical research program. The active research 
 The user’s current instructions take precedence over this file. Historical manuscript wording or an earlier AI summary cannot silently override the new claim's explicit scope.
 
 For repository-wide reading and production states, follow research/REPOSITORY_GUIDE.md together with research/GROWTH.md. The complete active startup prompt is research/unrelated_machines/BOSS_START.md and operations are in research/unrelated_machines/RUNBOOK.md. The shared program remains research/weighted_congestion_frontier/tools/work.py; its historical directory name does not select the mathematical topic. Weighted congestion, facilities and customer attraction retain separate models and ledgers, and are entered only when explicitly selected. Existing clone bindings are preserved; an old shared clone must not be rebound for the new topic. Use an independent clone on main; do not create research branches or keep assets only on the board. Peer discussion may share useful unfinished ideas, conjectures and questions without prior review or a file submission. Reusable candidates may be saved at their actual evidence level; important mathematical status upgrades still require the applicable proof and independent attack. New material objections must be checked and recorded. Run research/check_active_research.py for active routing and research/check_wc_assets.py --check for the retained WC inventory. Archived original commits and exact hashes remain recoverable; a current-tree cleanup must not delete unique mathematical content.
+
+本分支精确路由：`TOPIC-SELECTION-OR-OPT-v1`，save=`topic-selection`。

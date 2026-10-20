@@ -22,6 +22,8 @@ WORKSPACES = "research/workspaces"
 # checkpoint.py fallback in sync; bound clones always retain their own save.
 DEFAULT_SAVE = "unrelated-machines"
 RESEARCH_ENTRIES = {
+    "topic-selection": {"research_entry": "research/topic_selection/README.md",
+                        "research_prompt": "research/topic_selection/BOSS_START.md"},
     "unrelated-machines": {
         "research_entry": "research/current/unrelated_machines/README.md",
         "research_prompt": "research/unrelated_machines/BOSS_START.md",
@@ -396,6 +398,7 @@ def main():
     c = sub.add_parser("checkpoint", help="立即保存阶段资产并推送")
     c.add_argument("paths", nargs="*")
     c.add_argument("-m", "--message")
+    c.add_argument("--branch", help="Explicit research/topic-selection-* checkpoint branch")
     sub.add_parser("pending", help="查看待发送消息")
     r = sub.add_parser("retry", help="以原消息 ID 重试发送")
     r.add_argument("event_id")
@@ -468,6 +471,8 @@ def main():
         command = [sys.executable, str(repo / TOOLS / "checkpoint.py"), "--repo", str(repo), *a.paths]
         if a.message:
             command += ["-m", a.message]
+        if a.branch:
+            command += ["--branch", a.branch]
         return subprocess.call(command, env=env)
     return 0
 

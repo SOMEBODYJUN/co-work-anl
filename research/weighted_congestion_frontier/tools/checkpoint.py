@@ -136,7 +136,7 @@ def describe_assets(repo, directory, commit, files):
     for name in files:
         blob = git(repo, "cat-file", "blob", commit + ":" + name, check=False)
         if not blob.returncode:
-            asset = {"branch": "main", "commit": commit, "path": name,
+            asset = {"branch": value(repo, "branch", "--show-current"), "commit": commit, "path": name,
                      "sha256": hashlib.sha256(blob.stdout).hexdigest()}
             descriptor = directory / (hashlib.sha256(name.encode()).hexdigest()[:16] + ".json")
             descriptor.write_text(json.dumps(asset, ensure_ascii=False, indent=2) + "\n")
@@ -184,8 +184,13 @@ def locked_save(repo, common, cache, args):
     branch = branch_result.stdout.decode().strip()
     if branch == "wcg/board":
         raise Stop("Board messages must use board.py.")
-    if branch != "main":
-        raise Stop("Run work.py start to preserve and migrate this old work branch to main before checkpointing.")
+    expected_branch = getattr(args, "branch", None) or "main"
+    if expected_branch != "main" and not expected_branch.startswith("research/topic-selection-"):
+        raise Stop("Explicit branch checkpoints are limited to research/topic-selection-*.")
+    if git(repo, "check-ref-format", "--branch", expected_branch, check=False).returncode:
+        raise Stop("Invalid explicit checkpoint branch.")
+    if branch != expected_branch:
+        raise Stop("Checkpoint branch mismatch; pass --branch only for the explicitly selected topic branch.")
     for item in ("MERGE_HEAD", "CHERRY_PICK_HEAD", "REVERT_HEAD", "rebase-merge", "rebase-apply"):
         if Path(value(repo, "rev-parse", "--git-path", item)).is_absolute():
             p = Path(value(repo, "rev-parse", "--git-path", item))
@@ -338,6 +343,7 @@ def main():
     parser.add_argument("paths", nargs="*", help="Repository-root paths; default: this research directory")
     parser.add_argument("--repo", default=str(Path(__file__).resolve().parents[3]))
     parser.add_argument("-m", "--message")
+    parser.add_argument("--branch", help="Explicit research/topic-selection-* branch; default remains main")
     parser.add_argument("--token-file", help="Optional external token file; remembers only its path locally")
     args = parser.parse_args()
     print(json.dumps(save(args), ensure_ascii=False, indent=2))
