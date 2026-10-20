@@ -53,3 +53,5 @@
 选题价值的类型化判据见[按论文贡献类型评价选题价值与可完成性](VALUE_CRITERIA.md)。本轮接续分支为 `research/or-topic-battle-20261020`，从已保存的 `1c3c22a9` 恢复；独立公屏继续使用 `topics/or-optimization-board`。
 
 - [三类chores反例的精确复现与邻域边界](notes/chores_trivalued_exact_boundary.md)：排除过时的一般肯定存在目标，显示固定反例的近似障碍与参数非单调性；仅有限精确观察。
+
+- [四代理laminar关键核：精确枚举与顺序贪心障碍](notes/boss0_laminar_key_probe.md)：沿用作者A类问题，新增真实可行分配oracle、独立标签枚举和边界输入；保存有限证据与补偿交换义务，不宣称一般定理。

@@ -1,5 +1,11 @@
 # 选题前沿
 
+## boss0本轮实际接续（2026-10-20）
+
+从既有2f5cf533恢复，沿用research/or-topic-battle-20261020与topics/or-optimization-board；未创建远端分支。发布身份R-889894680a2d4194b47020bdb5c477bf。六个全新gpt-6.1-sol / ultra研究员均实际启动，逐字指导已放进BOSS_START单一可复制块，且六人确认全文读取。六线为atomic PNE、Nash结构/动态、goods、chores/约束、GAP舍入、GAP结构。已在公屏告知重新选题；以下旧running文字仅是历史快照，不表示旧线程本轮仍运行。
+
+第一批已形成[四代理laminar关键核探针](notes/boss0_laminar_key_probe.md)：独立枚举可行分配并逐项反算；有限输入都找到ordered EF1见证，同时排除顺序最大化效用的朴素算法。仍是原A类问题的有限Observation，不升级存在性。六线正在按类型化价值标准广搜、去重并交叉battle；未确定唯一主定理。下一义务是收到全部实物候选卡后形成规范候选池与比较，避免只有运行状态。
+
 ## boss6本轮接续（2026-10-20）
 
 已从既有research/or-topic-battle-20261020恢复，未创建远端分支；save与topics/or-optimization-board保持不变。发布身份R-933d363a9e0e431aab148ceeef444958。六路已通知重新选题：原子结构、Nash算法、goods、chores、GAP、跨界反方。实际配置为三个新建gpt-6.1-sol ultra及三个复用gpt-6.1-sol max线程；后者的推理档位工具不支持在followup修改，不将它们冒记为ultra。全部收到当前指导，并要求全文读取含用户完整原话的BOSS_START。

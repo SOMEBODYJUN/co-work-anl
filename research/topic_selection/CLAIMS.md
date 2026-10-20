@@ -17,3 +17,7 @@
 ## SEL-CHORES-TRIVALUED-AUDIT-v1
 
 [三类chores反例与有限近似边界](notes/chores_trivalued_exact_boundary.md)固定四代理/三类型/完全分配/同权/可加成本及α-EFX定义。Status=已知反例复现与有限精确Observation；完整枚举不升级一般定理。原参数的固定例最优α为23/22，±1邻域并非单调；代码、输入、独立小例oracle和反算见正文。
+
+## SEL-LAMINAR4-KEY-v1：boss0有限核探针
+
+沿用[已有精确A类问题](notes/source_frontier_checks.md)，新增[有限枚举与顺序贪心障碍](notes/boss0_laminar_key_probe.md)。Domain/quantifiers不变：全部非负可加实估值、四代理预指定顺序、两个key同时要求EF1及ordered no-envy。代码仅检验指定整数输入；所有见证的核验与一个朴素算法反例均不解决一般存在命题。Status=probe/finite Observation；下一义务是全估值证书或新构造。

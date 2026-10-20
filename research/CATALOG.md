@@ -52,6 +52,9 @@
 | [三类chores反例的精确复现与邻域公平边界](<topic_selection/notes/chores_trivalued_exact_boundary.md>) | `research/topic_selection/notes/chores_trivalued_exact_boundary.md` | 复现He–Tao已知反例并计算固定例最优近似公平因子，区分原文事实与有限邻域观察。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
 | [三类chores公平存在性的双接口精确探针](<topic_selection/probes/chores_trivalued_type_audit.py>) | `research/topic_selection/probes/chores_trivalued_type_audit.py` | 完整类型计数枚举与独立逐标签逐项移除oracle交叉核查，处理零空边界及非法输入。 | 有限计算核验；不代替一般证明 |
 | [三类chores反例与邻域的冻结精确输出](<topic_selection/probes/results/chores_trivalued_type_audit_20261020.json>) | `research/topic_selection/probes/results/chores_trivalued_type_audit_20261020.json` | 保存实际参数、计数、达到分配、代码hash、seed和有限证据范围。 | 冻结输入、证书或结果；不原位覆盖 |
+| [四代理层状拟阵关键核的有限枚举与顺序贪心障碍](<topic_selection/notes/boss0_laminar_key_probe.md>) | `research/topic_selection/notes/boss0_laminar_key_probe.md` | 读取原作者有序EF1有限核的精确身份、真实枚举范围和需要补偿交换的障碍；不能由随机成功推出存在。 | 候选或未闭合义务；保存不升级状态 |
+| [四代理关键核的精确整数枚举与独立移除核验程序](<topic_selection/probes/boss0_laminar_keys.py>) | `research/topic_selection/probes/boss0_laminar_keys.py` | 重现两个关键核的可行分配枚举、有限估值检测、顺序贪心反例和非法输入边界。 | 有限计算核验；不代替一般证明 |
+| [四代理关键核的固定种子有限证据与贪心反例](<topic_selection/probes/results/boss0_laminar_keys_20261020.json>) | `research/topic_selection/probes/results/boss0_laminar_keys_20261020.json` | 恢复本轮固定整数估值的有限观测、精确反例见证、输入边界检查、运行环境与代码哈希。 | 冻结输入、证书或结果；不原位覆盖 |
 
 <a id="unrelated_machines"></a>
 
