@@ -44,6 +44,7 @@
 | [等长theta图独立探针的冻结输入范围与误差](<topic_selection/probes/results/equal_theta_independent_20261020.json>) | `research/topic_selection/probes/results/equal_theta_independent_20261020.json` | 保存种子、库版本、精确有理达值、LP残差及边界范围；只作为有限计算证据。 | 冻结输入、证书或结果；不原位覆盖 |
 | [两边路径图相关间隙的多起点探索程序](<topic_selection/probes/combinatorial_submodular_k2k.py>) | `research/topic_selection/probes/combinatorial_submodular_k2k.py` | 保存K2k多起点优化与rank恒等式核查，记录从对称猜测到双水平结构的发现过程。 | 有限计算核验；不代替一般证明 |
 | [两边路径图相关间隙的冻结探索结果](<topic_selection/probes/combinatorial_submodular_k2k_results.json>) | `research/topic_selection/probes/combinatorial_submodular_k2k_results.json` | 保留数值优化参数、对称与边界比较及观察范围；不代替一般公式证明。 | 冻结输入、证书或结果；不原位覆盖 |
+| [凸序极值与分布鲁棒优化的候选原文核验](<topic_selection/lanes/robust.md>) | `research/topic_selection/lanes/robust.md` | 核查固定均值Wasserstein球共同最坏分布的已知覆盖，记录不同距离的身份及下一运输LP攻击；随机鲁棒线接续时读。 | 问题记录；开放/已闭合部分见用途及正文 |
 
 <a id="unrelated_machines"></a>
 
