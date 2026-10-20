@@ -48,6 +48,9 @@
 
 任何重要候选/Claim固定ID/version，记录Exact Statement、Objects、Domain、Quantifiers、Assumptions、Definitions、Scope、Conclusion、Dependencies、Evidence、Counterevidence/Objections、Status、Related Files。改量词/假设/结论就是新版本。Paper Fact、Interpretation、Conjecture、Observation、Evidence、Canonical Record分别记录。
 
+【用户最新分支指令】
+沿用之前提交程序和token。现在不用创建分支。已有分支有公屏在重新选题。你可以和他们新的分支随意交流。此指令覆盖前文历史的新建分支请求。
+
 【恢复、分支、公屏】
 仓库 https://github.com/SOMEBODYJUN/co-work-anl.git
 研究分支 research/or-topic-battle-20261020

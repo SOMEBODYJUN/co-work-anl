@@ -52,6 +52,23 @@
 | [三类chores反例的精确复现与邻域公平边界](<topic_selection/notes/chores_trivalued_exact_boundary.md>) | `research/topic_selection/notes/chores_trivalued_exact_boundary.md` | 复现He–Tao已知反例并计算固定例最优近似公平因子，区分原文事实与有限邻域观察。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
 | [三类chores公平存在性的双接口精确探针](<topic_selection/probes/chores_trivalued_type_audit.py>) | `research/topic_selection/probes/chores_trivalued_type_audit.py` | 完整类型计数枚举与独立逐标签逐项移除oracle交叉核查，处理零空边界及非法输入。 | 有限计算核验；不代替一般证明 |
 | [三类chores反例与邻域的冻结精确输出](<topic_selection/probes/results/chores_trivalued_type_audit_20261020.json>) | `research/topic_selection/probes/results/chores_trivalued_type_audit_20261020.json` | 保存实际参数、计数、达到分配、代码hash、seed和有限证据范围。 | 冻结输入、证书或结果；不原位覆盖 |
+| [四十五个原子博弈、公平和指派候选的精确来源池](<topic_selection/candidate_pool.json>) | `research/topic_selection/candidate_pool.json` | 按统一A/B/C记录精确问题、原文位置、最小成果、覆盖与致死异议。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [原子博弈、公平与指派候选的证据比较](<topic_selection/BATTLE.md>) | `research/topic_selection/BATTLE.md` | 保存原文覆盖、独立反击和选择变化；不以投票或伪精确概率排名。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [原子拥塞博弈的十四个原文卡与离散势试攻](<topic_selection/lanes/atomic.md>) | `research/topic_selection/lanes/atomic.md` | 记录十三篇一手论文的类型、工具、玩具模型与候选；37/33仅窄模板。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [公平分配的十六个原文卡与结构边界](<topic_selection/lanes/fair.md>) | `research/topic_selection/lanes/fair.md` | 区分作者原题和团队扩类，记录2026后续、极大部分分配与预算公平。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [广义指派的十五个原文卡与舍入工具比较](<topic_selection/lanes/gap.md>) | `research/topic_selection/lanes/gap.md` | 记录原文工具、配置归约覆盖、向量容量反例和受限主目标。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [配置覆盖归约与非均匀预算的真实算法边界](<topic_selection/notes/configuration_reduction_boundary.md>) | `research/topic_selection/notes/configuration_reduction_boundary.md` | 重构已知配置次模归约，显式记录指数地集、pricing、稀疏支持与预算约束。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
+| [finite_weight试攻的可重现程序：type_count_potential_lp](<topic_selection/probes/finite_weight/type_count_potential_lp.py>) | `research/topic_selection/probes/finite_weight/type_count_potential_lp.py` | 选题试攻证据；准确范围见对应原文卡和程序，不认证一般数学结论。 | 有限计算核验；不代替一般证明 |
+| [finite_weight试攻的可重现程序：exact_certificate](<topic_selection/probes/finite_weight/exact_certificate.py>) | `research/topic_selection/probes/finite_weight/exact_certificate.py` | 选题试攻证据；准确范围见对应原文卡和程序，不认证一般数学结论。 | 有限计算核验；不代替一般证明 |
+| [finite_weight试攻的冻结输入输出：exact_certificate](<topic_selection/probes/finite_weight/exact_certificate.json>) | `research/topic_selection/probes/finite_weight/exact_certificate.json` | 选题试攻证据；准确范围见对应原文卡和程序，不认证一般数学结论。 | 冻结输入、证书或结果；不原位覆盖 |
+| [finite_weight试攻的冻结输入输出：type_count_results](<topic_selection/probes/finite_weight/type_count_results.json>) | `research/topic_selection/probes/finite_weight/type_count_results.json` | 选题试攻证据；准确范围见对应原文卡和程序，不认证一般数学结论。 | 冻结输入、证书或结果；不原位覆盖 |
+| [fair_selection试攻的冻结输入输出：trivalued_grid](<topic_selection/probes/fair_selection/trivalued_grid.json>) | `research/topic_selection/probes/fair_selection/trivalued_grid.json` | 选题试攻证据；准确范围见对应原文卡和程序，不认证一般数学结论。 | 冻结输入、证书或结果；不原位覆盖 |
+| [fair_selection试攻的冻结输入输出：deletion_subinstances](<topic_selection/probes/fair_selection/deletion_subinstances.json>) | `research/topic_selection/probes/fair_selection/deletion_subinstances.json` | 选题试攻证据；准确范围见对应原文卡和程序，不认证一般数学结论。 | 冻结输入、证书或结果；不原位覆盖 |
+| [fair_selection试攻的冻结输入输出：probe_results](<topic_selection/probes/fair_selection/probe_results.json>) | `research/topic_selection/probes/fair_selection/probe_results.json` | 选题试攻证据；准确范围见对应原文卡和程序，不认证一般数学结论。 | 冻结输入、证书或结果；不原位覆盖 |
+| [fair_selection试攻的可重现程序：exact_probe](<topic_selection/probes/fair_selection/exact_probe.py>) | `research/topic_selection/probes/fair_selection/exact_probe.py` | 选题试攻证据；准确范围见对应原文卡和程序，不认证一般数学结论。 | 有限计算核验；不代替一般证明 |
+| [vector_capacity试攻的可重现程序：exact_vector_lp](<topic_selection/probes/vector_capacity/exact_vector_lp.py>) | `research/topic_selection/probes/vector_capacity/exact_vector_lp.py` | 选题试攻证据；准确范围见对应原文卡和程序，不认证一般数学结论。 | 有限计算核验；不代替一般证明 |
+| [vector_capacity试攻的冻结输入输出：exact_vector_lp_results](<topic_selection/probes/vector_capacity/exact_vector_lp_results.json>) | `research/topic_selection/probes/vector_capacity/exact_vector_lp_results.json` | 选题试攻证据；准确范围见对应原文卡和程序，不认证一般数学结论。 | 冻结输入、证书或结果；不原位覆盖 |
+| [vector_capacity试攻的可重现程序：search_lp_submodularity](<topic_selection/probes/vector_capacity/search_lp_submodularity.py>) | `research/topic_selection/probes/vector_capacity/search_lp_submodularity.py` | 选题试攻证据；准确范围见对应原文卡和程序，不认证一般数学结论。 | 有限计算核验；不代替一般证明 |
 
 <a id="unrelated_machines"></a>
 

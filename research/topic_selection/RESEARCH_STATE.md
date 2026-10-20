@@ -1,38 +1,29 @@
-# 选题前沿
+# 重新选题：当前实际前沿
 
-状态：六线广搜与首轮精读正在进行，尚未选定最终数学主目标。
+更新时间：2026-10-20；boss37。研究分支 `research/or-topic-battle-20261020`，公屏 `topics/or-optimization-board`，save `or-optimization-selection`。从已有分支恢复，没有创建新远端分支。旧UM-TARGET-v1及其否定均仍OPEN，退出默认主攻。
 
-当前优先方向为原子博弈、Nash均衡、近似公平分配、广义指派近似算法。本次恢复自2ff22b9；六个gpt-6.1-sol / ultra已实际启动，并完整读取含用户全部本轮原话的共同指导。当前六线为：
+## 已经可以恢复的实物
 
-- atomic_pne：近似纯均衡、势函数和结构扩类；
-- nash_dynamics：player-specific singleton均衡选择、随机动态和结构化Nash比较；
-- fair_goods：goods侧WEFX/MMS与公平—效率边界；
-- fair_chores：chores/mixed及冲突/类别约束；
-- gap_rounding：MaxGAP、成本保持依赖舍入与hard-budget公平；
-- gap_structure：多资源MinGAP、结构参数和容量扩张。
+[45张统一候选卡](candidate_pool.json)包含原子14、公平16、GAP15，A/B/C已统一；第一轮稿内部优先级字母不能当来源。[实际交叉比较](BATTLE.md)记录类型缩放击穿37/33、固定权重curl被旧文覆盖、平分多重边反例、配置次模通用覆盖等判断变化。原文机制链见[原子](lanes/atomic.md)、[公平](lanes/fair.md)、[GAP](lanes/gap.md)，各含论文定性、工具、玩具模型、精确位置和致死异议。[配置归约边界](notes/configuration_reduction_boundary.md)是已知工具重构，不是新算法。
 
-前一轮六线名称只作当时分工，不视为已保存候选。当前跨线battle已启动；以实际卡片、原文和精确实验为准，不用公屏口头计数替代资产。此前连续优化候选保留，暂不主攻。
+## 当前实际数学证据
 
-首个新范围内可恢复试攻是[公平—分数效率兼容探针](notes/fair_fpo_compatibility_boundary.md)：已知两代理两物品类型反例由两种独立Fraction oracle复现。不是新反例或新定理；作用是排除未经核实的一般兼容目标，检验参数分类是否还有值得研究的差额。
+原子：有限人口37/33边际证书经过Fraction核验，但第二轮已推得全人数64/59证明草案，原常数不再有新最好界叙事。需核新颖性、类型缩放范围和算法步数。HKM2011 Prop.3.4直接覆盖固定{1,3}的curl充分性，单q递推通解降级。
 
-需要减少的不确定性：原文是否明确提出；最新是否已解；候选是否只是直接推论；最小toy能否暴露核心机制；小结果能否扩成完整而不虚构价值的成果包。
+公平：FA01多重图EF定向重边FPT仍为作者明确原题；普通内部平行边全平分已有反例。第二轮给树支撑残差阈值DP、简单图minimum-charity的3^k算法草案，待boss独立核查与查新。FA03仙人掌极大均衡部分着色和FA11两大小预算chores仍未闭合。三值chores的142个非空真删除子实例皆有EFX，只说明固定例删除极小，复用[原正文](notes/chores_trivalued_exact_boundary.md)。
 
-下一行动：收齐独立卡片，交叉battle，核验前排来源与实际实验。不要把paper count、打分或通过软件检查称为数学进展。
+GAP：等openingcost配置覆盖被CCPV2011直接包含，GS-Poisson2026已有快plainSAP。向量容量三列精确反例是方法边界；整数正类需先排拟阵秩直接覆盖。两大小相关间隙与非均匀预算支持舍入正在独立攻击，不能把未搜到当仍公开的证明。
 
-## 首个实质试攻：CS-THETA-EXACT-v1
+## 真实团队和接续
 
-[等长多路theta图相关间隙](notes/combinatorial_equal_theta_correlation.md)已有覆盖所有整数路径数和共同长度的有限有理公式及证明草案。核心是原文Thm4.3的支持紧性、删除桥、路径内AM–GM及两坐标平方差凸性；全base约化曾遗漏restrictions，已由交叉攻击修正。状态是证明候选，新颖性和后置全面审查未完成。
+环境总并发4（含boss），本轮两批共六名gpt-6.1-sol ultra，均完整注入用户指导。第一轮reselect_atomic/reselect_fair/reselect_gap已经结束并交稿；第二轮battle_atomic_nash/battle_fair_parameter/battle_gap_tools正在交付推导、查重及补充题卡。历史其他six-running文字不表示本轮状态。
 
-[root独立探针](probes/equal_theta_independent.py)使用union-find逐子集秩、Fraction精确期望、所有rank不等式及全联合分布LP，与路径公式分开重构；[冻结输出](probes/results/equal_theta_independent_20261020.json)保存正常/零/自由拟阵/非法图边界与环境。有限核查不证明全公式。
+接续先读候选池和BATTLE，检查会改变判断的具体异议；不要重扫旧UM全部档案。探索稿可直接保存，成熟一般定理再做独立攻击和长期Claim登记。
 
-六路仍在扩充不同论文族并写候选卡；不要将该首个可推导细胞直接变成唯一主目标。下一义务是跨线比较完整成果包，核验更一般series-extension覆盖，再决定投入。
+## 保留的旧资产
 
-## 本轮恢复后已核实的保存缺口
+[等长theta图相关间隙](notes/combinatorial_equal_theta_correlation.md)仍是证明候选，新颖性未确认；[公平—fPO边界](notes/fair_fpo_compatibility_boundary.md)仍是已知反例复现；[随机鲁棒卡](lanes/robust.md)保留但不占当前四方向前排。它们不因重新选题被删除或升级。
 
-远端基线528c8d6含theta候选和探针，尚无完整候选池与六线比较正文。历史口头的“共同最坏分布”“幂网络误差界”不足以恢复精确身份，须重查原文，不能臆补。此前轮的六个研究员状态不随会话恢复；本轮六个gpt-6.1-sol ultra研究员已重新实际启动，分别完整读取用户指导，正在及时写lanes/。先行随机鲁棒卡已发现固定均值W∞球凸序极值被Gerhold–Gülüm Prop.3.2覆盖；W1及历史标签仍待独立核验。
+## 保存合同
 
-即时动作：逐批保存稳定候选卡；对前排做原文与后续核查，收到具体跨线异议后更新排序。旧题、旧口头候选数和模型赞同不作为本轮已保存成果。
-
-## 本轮实际接续（2026-10-20）
-
-从远端1c3c22a9保留全部已有资产，在用户授权的新分支research/or-topic-battle-20261020继续。新启动六个gpt-6.1-sol / ultra：atomic_pne、nash_structure、fair_goods、fair_chores、gap_rounding、gap_structure，均须全文读取含用户指导的BOSS_START。旧会话的running文字不是本轮运行证据。新增VALUE_CRITERIA将idea类型与价值判据对应；候选仍在核验，不提升定理状态。
+用本分支work.py checkpoint；只有status=pushed才报远端保存。结构检查验证路由、文件和字段，不认证新颖性或定理。远端commit以checkpoint回执和Git历史为准，不预填尚未发生的提交。

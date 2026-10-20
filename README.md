@@ -25,6 +25,8 @@
 
 从[身份账本](research/topic_selection/CLAIMS.md)进入候选原文、精确问题和实验。文献事实、新猜想、有限观察、完整证明和新颖性分别记录；检索到open字样不代表今天仍开放。比较中的优先级是研究判断，不是成功概率或数学推论。
 
+本轮已保存[45张统一来源候选卡](research/topic_selection/candidate_pool.json)与[实际交叉比较](research/topic_selection/BATTLE.md)；原文机制链分别为[原子博弈](research/topic_selection/lanes/atomic.md)、[公平分配](research/topic_selection/lanes/fair.md)、[广义指派](research/topic_selection/lanes/gap.md)。第二轮的具体反击直接改变候选状态，不按论文数量或投票决定主攻。
+
 ## Research Frontier / Known Results / Open Problems
 
 当前承重不确定性是：是否被已有定理覆盖、切口是否只是直接推论、玩具模型能否扩成有内容的定理、一般化后是否重新变成巨大开放问题。具体候选、异议和核验从[本分支前沿](research/topic_selection/RESEARCH_STATE.md)读取。后续已解或覆盖的种子见[排除与回收](research/topic_selection/FAILED_ROUTES.md)。本轮没有把新候选升级为可靠新定理。

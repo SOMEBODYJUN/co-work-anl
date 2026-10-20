@@ -18,7 +18,7 @@
 
 ## Claim Map / Dependency / Known Results
 
-本分支的文献命题与新候选见 [CLAIMS](CLAIMS.md)。已有研究不因重新选题被否定，也不因小样本成功得到升级。候选池、交叉批评和最终试攻建议将在首轮广搜结束后在本目录登记。
+本分支的文献命题与新候选见 [CLAIMS](CLAIMS.md)。已有研究不因重新选题被否定，也不因小样本成功得到升级。现有[统一候选池](candidate_pool.json)保存45张原子/公平/GAP卡；[BATTLE](BATTLE.md)记录具体覆盖、反击与优先级变化。完整论文机制见[原子](lanes/atomic.md)、[公平](lanes/fair.md)、[GAP](lanes/gap.md)。
 
 ## Research Frontier / Open Problems
 
