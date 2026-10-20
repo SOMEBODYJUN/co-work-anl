@@ -42,3 +42,9 @@
 ## 本轮实际接续（2026-10-20）
 
 从远端1c3c22a9保留全部已有资产，在用户授权的新分支research/or-topic-battle-20261020继续。新启动六个gpt-6.1-sol / ultra：atomic_pne、nash_structure、fair_goods、fair_chores、gap_rounding、gap_structure，均须全文读取含用户指导的BOSS_START。旧会话的running文字不是本轮运行证据。新增VALUE_CRITERIA将idea类型与价值判据对应；候选仍在核验，不提升定理状态。
+
+## boss32本轮阶段：从公开问题到具体交换引理
+
+六个新gpt-6.1-sol ultra已实际启动，逐条读取完整用户选题指导；接入既有research/or-topic-battle-20261020及topics/or-optimization-board，未创建远端分支。首个可接续增量是[rank-girth交换距离证明候选](notes/matroid_exchange_distance_and_girth.md)：前向距离层秩下降、另一研究者statement-first反向BFS独立重构，以及root全抽象n≤5审计分别支持同一合同。尚不认证新颖性或已完成PoA新结果，继续广搜与battle，不因先得到小引理就自动锁唯一主目标。
+
+查重已实际改变排序：ICAPL2025建议的strongly base-orderable hard-cost+Chernoff扩展，须先核SOSA2026 face-preserving框架及swap rounding的组合覆盖；不能忽略新工具而重复造定理。四代理laminar两key核继续攻击，但所有连续估值量词仍未闭合。

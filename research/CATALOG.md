@@ -52,6 +52,8 @@
 | [三类chores反例的精确复现与邻域公平边界](<topic_selection/notes/chores_trivalued_exact_boundary.md>) | `research/topic_selection/notes/chores_trivalued_exact_boundary.md` | 复现He–Tao已知反例并计算固定例最优近似公平因子，区分原文事实与有限邻域观察。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
 | [三类chores公平存在性的双接口精确探针](<topic_selection/probes/chores_trivalued_type_audit.py>) | `research/topic_selection/probes/chores_trivalued_type_audit.py` | 完整类型计数枚举与独立逐标签逐项移除oracle交叉核查，处理零空边界及非法输入。 | 有限计算核验；不代替一般证明 |
 | [三类chores反例与邻域的冻结精确输出](<topic_selection/probes/results/chores_trivalued_type_audit_20261020.json>) | `research/topic_selection/probes/results/chores_trivalued_type_audit_20261020.json` | 保存实际参数、计数、达到分配、代码hash、seed和有限证据范围。 | 冻结输入、证书或结果；不原位覆盖 |
+| [公共基交换有向图的围长距离界与原子博弈接口](<topic_selection/notes/matroid_exchange_distance_and_girth.md>) | `research/topic_selection/notes/matroid_exchange_distance_and_girth.md` | 固定rank-girth交换距离证明候选、原文猜想接口、独立全小拟阵审计与尚缺新颖性检查。 | 候选或未闭合义务；保存不升级状态 |
+| [公共基交换围长距离界的独立反向闭包证明](<topic_selection/notes/matroid_exchange_distance_independent_review.md>) | `research/topic_selection/notes/matroid_exchange_distance_independent_review.md` | 记录未读作者前向证明的statement-first重构，检查全部抽象拟阵与退化边界；不认证新颖性。 | 实际审查记录；只覆盖所列版本与义务 |
 
 <a id="unrelated_machines"></a>
 

@@ -17,3 +17,7 @@
 ## SEL-CHORES-TRIVALUED-AUDIT-v1
 
 [三类chores反例与有限近似边界](notes/chores_trivalued_exact_boundary.md)固定四代理/三类型/完全分配/同权/可加成本及α-EFX定义。Status=已知反例复现与有限精确Observation；完整枚举不升级一般定理。原参数的固定例最优α为23/22，±1邻域并非单调；代码、输入、独立小例oracle和反算见正文。
+
+## SEL-MATROID-EXCHANGE-DISTANCE-v1
+
+[公共基交换图围长距离界](notes/matroid_exchange_distance_and_girth.md)固定全部有限拟阵、公共基profile与完整可行单交换图，候选结论dist≤rank−girth+3。已有完整证明草案、statement-first独立重构及全小抽象拟阵审计；Status=proof candidate，新颖性及全部PoA应用合同未闭合。对应Hao–Michini明确猜想的端点指数候选由2δ+2改善到δ+2；不是UM算法或一般已认证新定理。

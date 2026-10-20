@@ -53,3 +53,5 @@
 选题价值的类型化判据见[按论文贡献类型评价选题价值与可完成性](VALUE_CRITERIA.md)。本轮接续分支为 `research/or-topic-battle-20261020`，从已保存的 `1c3c22a9` 恢复；独立公屏继续使用 `topics/or-optimization-board`。
 
 - [三类chores反例的精确复现与邻域边界](notes/chores_trivalued_exact_boundary.md)：排除过时的一般肯定存在目标，显示固定反例的近似障碍与参数非单调性；仅有限精确观察。
+
+- [公共基交换图围长距离与原子博弈接口](notes/matroid_exchange_distance_and_girth.md)：原文明确猜想驱动的证明候选，含独立抽象拟阵穷举；还缺全球查新与应用价值核验。
