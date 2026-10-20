@@ -35,6 +35,7 @@
 | [本轮选题的用户完整指导](<topic_selection/USER_GUIDANCE.md>) | `research/topic_selection/USER_GUIDANCE.md` | 六条子线共同读取的原始目标与研究方法，核对选题是否偏离时读。 | 阅读导航；真值查精确正文及账本 |
 | [公开问题与工具迁移的选题比较](<topic_selection/TOPIC_BATTLE.md>) | `research/topic_selection/TOPIC_BATTLE.md` | 存放短名单、反方意见和未解义务，不把排名当数学真值。 | 问题记录；开放/已闭合部分见用途及正文 |
 | [运筹优化候选问题的当前筛选前沿](<topic_selection/RESEARCH_STATE.md>) | `research/topic_selection/RESEARCH_STATE.md` | 记录已核事实、排重与下一项高信息量验证。 | 阅读导航；真值查精确正文及账本 |
+| [资源边际替代策略计数的纯精炼均衡算法候选](<topic_selection/candidates/atomic_potential.md>) | `research/topic_selection/candidates/atomic_potential.md` | 记录十项原子博弈候选及非对称affine/common-ri的证明草稿、原文、边界和未解审查义务。 | 问题记录；开放/已闭合部分见用途及正文 |
 
 <a id="unrelated_machines"></a>
 
