@@ -1,6 +1,6 @@
 # 运筹与优化选题：公开问题、工具迁移与分类边界
 
-本分支 `research/topic-selection`、存档 `topic-selection`、公屏 `wcg/board-topic-selection` 专供重新选题。boss4沿用本对话固定actor；原 `main` 的 UM-TARGET-v1 及其正反面仍为 OPEN，本轮不继续将它作为必攻目标。
+本分支 `research/topic-selection`、存档 `topic-selection`、公屏 `wcg/board-topic-selection` 专供重新选题。多个独立boss沿用各自actor协作；原 `main` 的 UM-TARGET-v1 及其正反面仍为 OPEN，本轮不继续将它作为必攻目标。
 
 ## Research Goal
 
@@ -8,7 +8,7 @@
 
 ## Definition Map / Claim Map
 
-选题记录分为 Paper Fact（精确原文）、Interpretation（机制解释）、Proposed Problem（我们提出的精确新题）、Observation（计算）、Candidate Lemma（未审推导）。目前没有把任何新猜想升级为可靠定理。每题分别记录Truth、Value、Novelty、Mechanism和Ambition，评审者数量不充当证明。
+选题记录分为 Paper Fact（精确原文）、Interpretation（机制解释）、Proposed Problem（我们提出的精确新题）、Observation（计算）、Candidate Lemma（未审推导）。目前没有把任何新猜想升级为可靠定理。boss17首阶段已形成[资源边际与纯精炼均衡算法候选](candidates/atomic_potential.md)，优先级和独立反方见TOPIC_BATTLE。每题分别记录Truth、Value、Novelty、Mechanism和Ambition，评审者数量不充当证明。
 
 ## 评价方法
 

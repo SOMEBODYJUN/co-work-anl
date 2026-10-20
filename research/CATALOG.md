@@ -55,6 +55,8 @@
 | [Nash 计算与优化理论：六类候选、近期排雷与三个可核查切口](<topic_selection/nash_equilibria/candidate_report.md>) | `research/topic_selection/nash_equilibria/candidate_report.md` | 记录本题的准确对象、原文位置、推导或反方义务；在比较是否主攻以及接续该候选时读取。 | 问题记录；开放/已闭合部分见用途及正文 |
 | [均衡与优化的结构化候选账本](<topic_selection/nash_equilibria/candidates.json>) | `research/topic_selection/nash_equilibria/candidates.json` | 逐候选记录精确范围、母论文、机制、价值与首个证明义务，保留已淘汰和待核状态。 | 精确命题登记；摘要不替代原陈述 |
 | [两容量瓶颈多背包候选算法的独立反方与版本对齐](<topic_selection/cross_field_battle/bmkp_algorithm_review.md>) | `research/topic_selection/cross_field_battle/bmkp_algorithm_review.md` | 核对联合profile、critical恢复、短包匹配与独立discard舍入的准确范围，保留旧异议和最终修复后的未闭合义务。 | 实际审查记录；只覆盖所列版本与义务 |
+| [资源边际替代策略计数的纯精炼均衡算法候选](<topic_selection/candidates/atomic_potential.md>) | `research/topic_selection/candidates/atomic_potential.md` | 记录十项原子博弈候选及非对称affine/common-ri的证明草稿、原文、边界和未解审查义务。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [同行原子精炼与系统最优方向的选题比较](<topic_selection/peer_topic_comparison.md>) | `research/topic_selection/peer_topic_comparison.md` | 保留boss17来源commit的独立短名单和未闭合义务，比较双方优先级而不把其新稿误作boss4已审结果。 | 问题记录；开放/已闭合部分见用途及正文 |
 
 <a id="unrelated_machines"></a>
 

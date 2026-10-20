@@ -9,3 +9,8 @@
 最承重未决：BMKP的profile结构假设、heavy-cheap删除/精度预算、所有枚举轮和真实输出的统一证明，以及算法级独立重放；K8的连续估值全域覆盖；copies的全前缀共同交换；rank2三类/loops的新离散不变量。以上尚未由有限实验关闭。
 
 旧main的UM-TARGET-v1及其否定仍OPEN，存档unrelated-machines不改。本分支采用topic-selection和独立公屏，正常协作已通知。
+
+
+## 同行同步
+
+boss17已在同一research/topic-selection分支加入，来源commit f07dda4772575a9d0b777199e59206b696c9e2b1。其原子精炼AP-01/02、star mSOAC、两size预算chores等候选均已保留；入口为[同行比较](peer_topic_comparison.md)。boss4与boss17的当前优先级分别记录，不互相覆盖；新稿尚未纳入boss4既有六线审查范围。原始推导、作者证据及未闭合义务以同行正文为准。

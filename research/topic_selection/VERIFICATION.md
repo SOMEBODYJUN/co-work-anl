@@ -35,3 +35,10 @@
 工程命令为 `python3 -m unittest discover -s research/weighted_congestion_frontier/tests -p 'test_work.py' -q`，依次替换pattern为test_checkpoint.py、test_board*.py、test_collaboration*.py。不输出或读取凭据内容。
 
 没有运行完整BMKP候选算法的通用实现；没有对连续估值域作SMT全覆盖证明；没有把任何有限样本当普遍真理，也没有认证新颖性。
+
+
+## 同行加入的合并范围
+
+保存时远端新增boss17的commit `f07dda4772575a9d0b777199e59206b696c9e2b1`。合并保留其原子精炼候选、两份审计/输出与个人工作区；双方比较表拆成带来源的入口，目录登记按路径合并后重新生成。同行材料不计入boss4的45条记录，也未追溯标为本轮六线已审。数学审计的成功只支持其明确有限范围。
+
+同行的两份算术程序也已在合并后实际运行，标准输出解析为JSON，与原冻结结果逐项相等；这不替代其精炼算法的完整审查。
