@@ -2,7 +2,26 @@
 
 本轮尚无一般性新定理被提升为可靠结果。候选精确陈述保留在候选池和各线原始卡片；A/B/C标记只说明问题来源，不代表数学真值或难度。
 
-当前[统一候选池](candidate_pool.json)含AT01–AT14、FA01–FA16、GA01–GA15，来源和状态由[BATTLE](BATTLE.md)共同解释。第一轮稿的内部字母不是统一来源标记。
+当前[统一候选池](candidate_pool.json)含AT01–AT14、NA01–NA06、FA01–FA20、GA01–GA19，共59条记录，含被覆盖、合并和已闭合子题。来源和状态由[BATTLE](BATTLE.md)共同解释。第一轮稿的内部字母不是统一来源标记。
+
+## 第二轮新增的精确数学身份
+
+以下均有自足正文，并经[root独立复核](notes/round2_independent_root_review.md)；除明确标为已有覆盖者外，新颖性尚未认证。内部正确性证据与能否独立成稿分开记录。
+
+| ID/version | Exact Statement / Domain / Quantifiers | Dependencies / Evidence / Scope / Status |
+| --- | --- | --- |
+| SEL-RESOURCE-LP-SUBMODULAR-v2 | 固定非负2×n矩阵A；对所有b,w≥0，启用集LP值子模 iff 非零列≤2正比例射线 | [二维完整证明](notes/two_resource_lp_submodularity.md)；LP dual、min/max与三列反例。全容量/全利润分类，不是固定b刻画；内部证明完成/新颖性未知 |
+| SEL-RESOURCE-LP-SUBMODULAR-v3 | 任意d×n非负A，非零列≤2射线时，对所有b,w≥0启用LP归一单调子模 | [全维充分性](notes/two_profile_lp_in_arbitrary_dimension.md)；互补系数分裂原对偶保持和。v2充分方向推广，**不声称高维必要性**；内部证明完成/新颖性未知 |
+| FP-COUNTER-BALANCE-v1 | 5顶点、k=1的整数对称多重图有EF方向，但强制普通内部平行包全平分后不可行 | [重边正文§1](notes/heavy_edge_residual_and_charity.md)；全部可见价值精确反算。仅否定指定压缩，不否定一般FPT；完整反例 |
+| FP-FOREST-THRESHOLD-v1 | 任意非负整数s,h与二进制单位包重数；unit简单支持forest时，完整EF残差可在poly(bits)内判定并输出计数方向 | [重边正文§2](notes/heavy_edge_residual_and_charity.md)；向上阈值消息、4200整数oracle核程序。推出受限2^k，非一般multigraph；内部证明完成/新颖性未知 |
+| FP-CHARITY-SIMPLE-v1 | 任意simple loopless endpoint整数估值图，k-heavy、非负二进制删除cost；最优EF partial orientation可3^k poly(bits)构造 | [重边正文§3](notes/heavy_edge_residual_and_charity.md)；补全lemma、无锚点树、quota flow，1200完整oracle。simple承重；成本版本靠证明而非实验；内部证明完成/新颖性未知 |
+| BN-CLONE-v1 | 对u=min_R a_r·δ及非负有理A，所有D/等预算clones/外部环境/每个NE的合并保持性可2^R poly(m,R,bits)识别 | [几何与算法§5](notes/budget_cloning_and_concave_geometry.md)；shared supergradient、active-cell LP、严格margin、压缩等预算反例；内部证明完成/新颖性未知 |
+| BN-CLONE-v2 | 同一矩阵语言的补语言有polybit有理/超梯度/Farkas证书，因此CLONE-INVARIANT在coNP | [证书正文](notes/budget_cloning_complexity_certificate.md)；rational LP与Hadamard；未给hardness/complete；内部证明完成/新颖性未知 |
+| SEL-FINITE-WEIGHT-ENVELOPE-v2 | 任意有限人数和策略、weights={1,2}、非负二次多项式延迟；type-scaled资源势可达64/59 | [全人数证明](notes/finite_weight_scaled_potential.md)；共享类型缩放、61206条Fraction核验。改变v1缩放/人口范围，另立v2；不保证poly步数/最佳比；旧工具来源明确 |
+| SEL-KNAPSACK-FIXED-X-OBSTRUCTION-v1 | 指定两尺寸5物品、固定独立激活概率x，非均类权重ratio严格低于所有类内统一权重，允许零权sub-support | [连续权比断点与Fraction证书](notes/two_size_knapsack_obstructions.md)；不否定可改变x的全局归约，不否定一般CRS猜想；完整方法反例/新颖性未知 |
+| NE-FISHER-TRANSFER-v1 | 同一非负有理v与预算b，public Leontief的NE支出矩阵等于private linear Fisher的均衡spending矩阵 | [自足两向归约与来源](notes/leontief_fisher_known_interface.md)；Brandt、Tao–Zheng、Orlin已覆盖；**已知工具重构，NA02新算法题淘汰** |
+
+一般heavy-multigraph FPT、cloning一般R的tight complexity、GA01到实际GAP新近似的桥仍未解决。共同光滑凹偏好的log-gradient规划只是标准KKT地基，详见同一几何正文；不另包装主成果。
 
 ## SEL-FINITE-WEIGHT-ENVELOPE-v1
 

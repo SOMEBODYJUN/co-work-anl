@@ -37,3 +37,9 @@ Paper Fact：He–Tao, *EFX for Additive Chores: Nonexistence, Pareto Incompatib
 代码：[chores_trivalued_type_audit.py](../probes/chores_trivalued_type_audit.py)。冻结结果：[chores_trivalued_type_audit_20261020.json](../probes/results/chores_trivalued_type_audit_20261020.json)，保存完整输入、达到分配、seed、算术合同、Python 版本及代码 SHA-256。命令：`python research/topic_selection/probes/chores_trivalued_type_audit.py --output /tmp/chores_audit_new.json`。输出拒绝覆盖既有文件。
 
 依赖：EFX 定义、有限类型表示、完整枚举。Evidence：上述输入；Objection：一般化、价值及新颖性均未由实验解决。下一行动是把此工具用于攻击精确候选，只有出现新的自然结构机制才建立新 Claim 版本。
+
+## 第二轮沿用同一实例的扩展审计
+
+保持原成本(R,q)=(20,7)及类型重数上界(3,5,5)，本轮另一个类型枚举实现检查了全部142个非空真删除子实例，均存在EFX。它只证明这个固定成本、固定类型反例在删除偏序下极小；不证明一般反例至少需要13件，不证明其他估值上不存在更小反例。证据见[删除子实例冻结记录](../probes/fair_selection/deletion_subinstances.json)及[实现](../probes/fair_selection/exact_probe.py)。
+
+固定重数(3,5,5)，有限扫描q=2,…,12、R=q+1,…,50，共473个整数参数点，其中21个没有EFX；这次网格的失败点满足2q+6≤R≤3q−1。该区间形状尚无全参数证明，不能升级为刻画。完整输入与EFX计数见[参数网格](../probes/fair_selection/trivalued_grid.json)。这些是本已有反例资产的邻域观察，未创建重复的“新反例”身份。

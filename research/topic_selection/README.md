@@ -18,7 +18,7 @@
 
 ## Claim Map / Dependency / Known Results
 
-本分支的文献命题与新候选见 [CLAIMS](CLAIMS.md)。已有研究不因重新选题被否定，也不因小样本成功得到升级。现有[统一候选池](candidate_pool.json)保存45张原子/公平/GAP卡；[BATTLE](BATTLE.md)记录具体覆盖、反击与优先级变化。完整论文机制见[原子](lanes/atomic.md)、[公平](lanes/fair.md)、[GAP](lanes/gap.md)。
+本分支的文献命题与新候选见 [CLAIMS](CLAIMS.md)。已有研究不因重新选题被否定，也不因小样本成功得到升级。现有[统一候选池](candidate_pool.json)保存59条原子/Nash/公平/GAP记录；[BATTLE](BATTLE.md)记录具体覆盖、反击与优先级变化。完整论文机制见[原子](lanes/atomic.md)、[公平](lanes/fair.md)、[GAP](lanes/gap.md)。
 
 ## Research Frontier / Open Problems
 
@@ -59,3 +59,9 @@
 - [四代理laminar关键核：精确枚举与顺序贪心障碍](notes/boss0_laminar_key_probe.md)：沿用作者A类问题，新增真实可行分配oracle、独立标签枚举和边界输入；保存有限证据与补偿交换义务，不宣称一般定理。
 
 - [个性化双值EFX的单调补全障碍](notes/personalized_bivalued_monotone_completion_obstruction.md)：连续参数族否定任意公平起点的效用单调补全；含独立全分配核查，保留普通PO存在题的准确边界。
+
+## 本轮最终59记录与三个证明包
+
+[逐条候选索引](CANDIDATE_INDEX.md)和[BATTLE](BATTLE.md)给当前排序；[重边公平](notes/heavy_edge_residual_and_charity.md)、[LP二维分类](notes/two_resource_lp_submodularity.md)、[全维两轮廓](notes/two_profile_lp_in_arbitrary_dimension.md)、[cloning几何](notes/budget_cloning_and_concave_geometry.md)、[cloning证书复杂性](notes/budget_cloning_complexity_certificate.md)均有完整自足证明，具体新颖性未确认。
+
+[Leontief–Fisher已知接口](notes/leontief_fisher_known_interface.md)记录作者原题的覆盖淘汰；[背包障碍](notes/two_size_knapsack_obstructions.md)和[原子64/59](notes/finite_weight_scaled_potential.md)记录其他重要判断变化。[独立复核](notes/round2_independent_root_review.md)、[实验manifest](probes/round2_manifest.json)给核验范围。完整用户指导仍在[BOSS_START](BOSS_START.md)，不新建另一套提示词。

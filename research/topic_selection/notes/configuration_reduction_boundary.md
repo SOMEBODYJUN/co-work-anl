@@ -60,3 +60,53 @@ Ganz Rozenman–Kulik–Schwartz–Singh 2026, arXiv2605.03071 Theorem1.5：SAP�
 - 若允许approximatepricing或样本oracle，哪一层损失应是α(1−1/e)，哪一层能变成1−e^(−α)？不能混用两种分析。
 
 若这些问题都由现成通用定理覆盖，就把C06淘汰；该归约应保留作选题去重案例。
+
+## 第二轮：稀疏支持的确定性预算基线
+
+# C06-v2：给定稀疏配置LP时的简单0.316基线
+
+日期2026-10-20。状态：自足证明草稿，基于旧配置覆盖归约与旧pipage原理的直接组合；不宣称新颖。用于淘汰“把GBAP特定算法1/8提高成某普通常数”这类伪新题。
+
+## 假设、对象、输出
+
+每bin l有下闭配置族 I_l，每物品在bin利润v_li≥0，openingcost 0≤c_l≤B。输入给定有限稀疏配置支持E={(l,S)}及有理数x_e≥0，满足
+
+∑_{e:bin(e)=l}x_e≤1；∑_{e:i∈S_e}x_e≤1；∑_e c_{bin(e)}x_e≤B。
+
+定义LP值L=∑_e x_e ∑_{i∈S_e}v_{li}。目标是每次满足budget和局部packing的可行指派，保证利润≥(1−1/e)L/2。仅用输入配置支持，不需要重新pricing，也不需要假装指数地集已显式列出。若存在c_l>B的bin，必须事前移除；否则LP可给不可打开bin正分数，任何正比例舍入都不成立。
+
+## 配置覆盖与初始值
+
+g(A)=∑_i max({v_li:e=(l,S)∈A,i∈S}∪{0})，是非负归一单调子模函数。记G其标准独立采样multilinear extension。
+
+对item i及阈值t，q_it=∑_{e:i∈S_e,v_li≥t}x_e≤1，覆盖阈值概率1−∏_e(1−x_e)≥1−e^{−q_it}≥(1−1/e)q_it。对t积分并求和即得G(x)≥(1−1/e)L。
+
+## 阶段一：同bin配置交换
+
+若bin有两个正坐标x_e,x_f，则沿d=1_e−1_f保持该bin总和及成本不变。取保持坐标非负的最大可行线段；因该bin总和≤1，坐标上界1自动保持。子模性给∂²_{ef}G≤0，因此G(x+td)沿t为凸函数；至少一个端点不减G。选择该端点。每一步至少一个正坐标归零，O(|E|)步后每bin只剩至多一个配置。
+
+此时可以删除已归零配置，每bin剩一个variable q_l∈[0,1]。不需要继续保持每item LP边际约束：这些约束只用于初始G(x)下界，最终冲突由max-coverage/delete处理。
+
+## 阶段二：保持openingcost交换
+
+先把零成本bin剩余变量提高到1，G不减。若有两个分数变量q_l,q_k，成本均正，沿d=(1/c_l)1_l−(1/c_k)1_k交换。总成本保持，变量区间[0,1]保持，G沿此异号方向仍凸。选不减值的端点，每步至少一个fractional变量变成0或1。
+
+至多O(|E|)步后，有整数配置集A及至多一件fractional配置e，参数q∈(0,1)。A本身budget可行；{e}因c_e≤B也budget可行。此时
+
+G(z)=(1−q)g(A)+qg(A∪{e})≤g(A)+qg({e})≤g(A)+g({e})。
+
+返回A与{e}中g较大者，值≥G(z)/2≥G(x)/2≥(1−1/e)L/2≈0.3160602794L。无fractional配置则直接返回A，无1/2损失。
+
+每个被多个配置覆盖的item只保留在利润最大的bin，其余配置中删除。下闭性保证局部可行；目标恰为g，openingcost不增加，且每bin至多一个配置。
+
+## 可实现性
+
+G可精确有理计算：逐item按正利润阈值排序，积分各层1−∏(1−x_e)，输入支持为K时多项式时间，朴素O(nK logK)每次目标评估足够。O(K)次交换，每次算两端点。没有MonteCarlo误差、exponential pricing或未说明的oracle。
+
+有理数交换端点通过比值及线性运算得到。阶段一端点只是合并/清零；阶段二保持成本后端点为0/1或有理残余成本除c。位长可按有限K次有理运算的多项式上界控制。
+
+## 对候选的影响
+
+这不证明GBAP最优比值是0.316，也不证明新算法无人写过；恰好相反，目标是把现成可推出基线写透。原C06若只是“任意非均匀openingcost上从1/8改进”即不足立题。要留下，必须超越这个基线并比较1−1/e−ε的通用matroid+knapsack方法，或者用明确复杂度/数据访问模型提出新差额。
+
+Primary去重：CGST2011《Maximizing a Monotone Submodular Function Subject to a Matroid Constraint》§4.2已给配置覆盖SAP归约；Sarpatwar–Schieber–Shachnai《Constrained Submodular Maximization via Greedy Local Search》arXiv:1705.06319v3（2018）给matroid+knapsack的(1−e^{-2})/2近似，且引言说明1−1/e−ε通用方法早已存在但有大枚举指数。后者对**显式支持上的整数最优**适用，不能不经额外gap论证冒充对配置LP值L的0.432保证。
