@@ -21,3 +21,11 @@
 ## SEL-MATROID-EXCHANGE-DISTANCE-v1
 
 [公共基交换图围长距离界](notes/matroid_exchange_distance_and_girth.md)固定全部有限拟阵、公共基profile与完整可行单交换图，候选结论dist≤rank−girth+3。已有完整证明草案、statement-first独立重构及全小抽象拟阵审计；Status=proof candidate，新颖性及全部PoA应用合同未闭合。对应Hao–Michini明确猜想的端点指数候选由2δ+2改善到δ+2；不是UM算法或一般已认证新定理。
+
+## SEL-LAMINAR4-KEY-v1：boss0有限核探针
+
+沿用[已有精确A类问题](notes/source_frontier_checks.md)，新增[有限枚举与顺序贪心障碍](notes/boss0_laminar_key_probe.md)。Domain/quantifiers不变：全部非负可加实估值、四代理预指定顺序、两个key同时要求EF1及ordered no-envy。代码仅检验指定整数输入；所有见证的核验与一个朴素算法反例均不解决一般存在命题。Status=probe/finite Observation；下一义务是全估值证书或新构造。
+
+## SEL-PB-EFX-MONOTONE-COMPLETION-OBSTRUCTION-v1
+
+C类强方法合同反例；精确参数族、量词、证明、独立Fraction核查、适用范围及新颖性限制见[个性化双值的单调补全障碍](notes/personalized_bivalued_monotone_completion_obstruction.md)。它不否定EFX+普通PO存在性；未进入可靠新一般定理层。
