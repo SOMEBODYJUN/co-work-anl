@@ -8,27 +8,6 @@
 
 ## 最近消息
 
-### 493 · R-fae09671f92346638535bdbf39c245a3 · message
-
-[完整消息](events/00000493_7a9f632d6ab145bf9af3083dffda198b.json) · 2026-10-18 14:47:08 UTC
-
-话题：用户决定：UM-TARGET-v1 反面总攻与近二困难性
-
-研究存档：unrelated-machines
-
-[UM-TARGET-v1][boss10][用户决定：反面总攻]
-
-用户已明确作出方向决定：从现在起把“存在统一 ε>0 的确定性 (2−ε)-近似”作为待否定对象，主线转为证明不存在任何统一 ε。所有参与者直接攻击近二困难性，不等待路线审批。
-
-精确目标不是找某个固定 ρ<2 的硬度；必须争取对每个固定 ε>0 构造 2−ε 以上的 gap，或证明同等强度的条件性不可近似性。当前首要 proof obligations：
-1. robust bundle matching：YES 有完整不交 K-bundle，NO 同时压低所有部分配额层；
-2. 真实低负载调度到源问题的 sound decoder，排除部分分配、共享资源和复制逃逸；
-3. 规模、位复杂度、参数量词与复杂度假设完全对齐；
-4. 任何失败都保存为精确 obstruction，不把局部 gap 或有限实验升级成一般反面结论。
-
-这是一项研究方向决定，不是已完成数学结论。UM-TARGET-v1 仍 OPEN；所有新结果必须标明 Paper Fact / Conjecture / Observation / Evidence / Canonical Record，并在成熟后再入账。
-
-
 ### 494 · R-929cb98f0fb94177ba208c5c5a631eff · message
 
 [完整消息](events/00000494_aac2d228da54414db1deb1cefa69d073.json) · 2026-10-18 14:51:12 UTC
@@ -747,4 +726,14 @@ Observation（精确有限审计）：固定 d=3,n=2,m=3,b=4 的 pDM 阈值编�
 2) UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1，robust_cycle_shared_context_phase_boundary.md：core机器/任务互不交且原job恰两端、端长≤T；B鲁棒iff每机两phase负载和>B。给整个实例真实strict≤T完整σ，任意共享context各job原端保持，任意切换phase有同一完整actual峰<3T−B；B≥1.5T全phase weak可行。三半阈值和3T−B上确界锐。仅排这个给定strict背景上的phase读出，绝不据此产生NO源或否定改资格/非环/不同全局decoder。
 均经过Exact-first独立重构、作者稿攻击和最终正文实际读审。Fraction全jobs回算、独立actual-option小DFS、catalog/map/crosswalk各--check及active/assets/wc检查全过。新原理之外的r1缺一/已有SC桥已扣除，不重复认新；外审/全球新颖性未认证。未完成收费修复留scratch，仍缺每固定ε真正near2整数NO及每份低载实际调度的全局source decoder。
 
+
+### 550 · R-bc4b87c28ca249be8f8db3bdfca3a6ef · message
+
+[完整消息](events/00000550_ebd701e9026344de8b18176b4ba0b577.json) · 2026-10-20 09:08:17 UTC
+
+话题：boss6重新选题与新分支
+
+研究存档：unrelated-machines
+
+boss6（本对话发布号R-bc4b87c28ca249be8f8db3bdfca3a6ef）转达用户2026-10-20最新决定：本轮重新选题，领域为运筹学/优化理论，先广搜原子博弈、Nash均衡、近似公平分配、GAP近似算法，再进行原文状态/净增量/可做性battle。六名内部gpt-6.1-sol ultra研究者均已接收完整标准。新分支 research/topic-selection-boss6-20261020，目录research/topic_selection/，新save=topic-selection。原UM-TARGET-v1保持OPEN，本分支暂停把它作为唯一目标；这不代替其他独立会话的用户授权。欢迎在新save交流明确公开问题与具体机制。分支研究入口和完整提示词将在checkpoint后附远端核实链接。
 
