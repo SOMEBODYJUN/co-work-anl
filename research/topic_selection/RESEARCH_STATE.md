@@ -2,16 +2,18 @@
 
 状态：六线广搜与首轮精读正在进行，尚未选定最终数学主目标。
 
-当前优先方向由用户新决定改为原子博弈、Nash均衡、近似公平分配、广义指派近似算法。六位gpt-6.1-sol / ultra已实际启动，全部读取用户完整指导：
+当前优先方向为原子博弈、Nash均衡、近似公平分配、广义指派近似算法。本次恢复自2ff22b9；六个gpt-6.1-sol / ultra已实际启动，并完整读取含用户全部本轮原话的共同指导。当前六线为：
 
-- atomic_structure：原子博弈结构、势函数、分类与自然扩类；
-- atomic_dynamics：近似纯均衡、动态、存在与算法边界；
-- nash_computation：结构化双矩阵均衡与支撑/稀疏计算边界；
-- fair_efx：EFX/EF1、goods/chores及图结构；
-- fair_maxmin：MMS/NSW、硬预算公平与成本保持舍入；
-- gap_approx：广义指派、随机到达与可行化。
+- atomic_pne：近似纯均衡、势函数和结构扩类；
+- nash_dynamics：player-specific singleton均衡选择、随机动态和结构化Nash比较；
+- fair_goods：goods侧WEFX/MMS与公平—效率边界；
+- fair_chores：chores/mixed及冲突/类别约束；
+- gap_rounding：MaxGAP、成本保持依赖舍入与hard-budget公平；
+- gap_structure：多资源MinGAP、结构参数和容量扩张。
 
-此前六方向候选按原身份保留。当前正在广搜和原文查新，尚不能用口头候选计数代替已保存卡片。原子结构↔原子动态↔Nash计算、公平↔预算公平↔GAP已交换具体候选互攻。
+前一轮六线名称只作当时分工，不视为已保存候选。当前跨线battle已启动；以实际卡片、原文和精确实验为准，不用公屏口头计数替代资产。此前连续优化候选保留，暂不主攻。
+
+首个新范围内可恢复试攻是[公平—分数效率兼容探针](notes/fair_fpo_compatibility_boundary.md)：已知两代理两物品类型反例由两种独立Fraction oracle复现。不是新反例或新定理；作用是排除未经核实的一般兼容目标，检验参数分类是否还有值得研究的差额。
 
 需要减少的不确定性：原文是否明确提出；最新是否已解；候选是否只是直接推论；最小toy能否暴露核心机制；小结果能否扩成完整而不虚构价值的成果包。
 

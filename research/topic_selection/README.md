@@ -45,3 +45,5 @@
 
 - [等长theta图相关间隙的有限公式与证明候选](notes/combinatorial_equal_theta_correlation.md)：论文建议方向派生，含支持约化纠错、双水平最坏边缘结构、完整草案及查新义务。
 - [独立逐子集与联合分布LP探针](probes/equal_theta_independent.py)及[冻结输出](probes/results/equal_theta_independent_20261020.json)：用于交叉核查公式与边界，不认证一般证明或新颖性。
+
+- [公平与分数效率的兼容边界](notes/fair_fpo_compatibility_boundary.md)：已知两代理反例的两种精确oracle复现，先排除一般兼容目标，再检查分类题的实质差额；不是原创新定理。

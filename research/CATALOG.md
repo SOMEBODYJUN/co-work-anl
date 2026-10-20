@@ -45,6 +45,9 @@
 | [两边路径图相关间隙的多起点探索程序](<topic_selection/probes/combinatorial_submodular_k2k.py>) | `research/topic_selection/probes/combinatorial_submodular_k2k.py` | 保存K2k多起点优化与rank恒等式核查，记录从对称猜测到双水平结构的发现过程。 | 有限计算核验；不代替一般证明 |
 | [两边路径图相关间隙的冻结探索结果](<topic_selection/probes/combinatorial_submodular_k2k_results.json>) | `research/topic_selection/probes/combinatorial_submodular_k2k_results.json` | 保留数值优化参数、对称与边界比较及观察范围；不代替一般公式证明。 | 冻结输入、证书或结果；不原位覆盖 |
 | [凸序极值与分布鲁棒优化的候选原文核验](<topic_selection/lanes/robust.md>) | `research/topic_selection/lanes/robust.md` | 核查固定均值Wasserstein球共同最坏分布的已知覆盖，记录不同距离的身份及下一运输LP攻击；随机鲁棒线接续时读。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [公平与分数效率兼容性的原文反例和新问题边界](<topic_selection/notes/fair_fpo_compatibility_boundary.md>) | `research/topic_selection/notes/fair_fpo_compatibility_boundary.md` | 精确区分两份2026原文的未来方向与已知反例，记录独立oracle及参数分类仍需查新的差额。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [两代理两类物品公平与分数效率的独立精确核验](<topic_selection/probes/fair_fpo_independent.py>) | `research/topic_selection/probes/fair_fpo_independent.py` | 以支持权区间与支配多边形两种Fraction oracle重构已知反例，覆盖空物品和有理估值边界。 | 有限计算核验；不代替一般证明 |
+| [公平—效率兼容探针的冻结输入和精确结果](<topic_selection/probes/results/fair_fpo_independent.json>) | `research/topic_selection/probes/results/fair_fpo_independent.json` | 保存实际参数、两种oracle比较、最优有限实例因子、Python版本及源码哈希；不证明一般界。 | 冻结输入、证书或结果；不原位覆盖 |
 
 <a id="unrelated_machines"></a>
 
