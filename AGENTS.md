@@ -1,6 +1,6 @@
 # 运筹学与优化理论选题分支工作规则
 
-本分支依用户明确授权使用research/or-optimization-selection-20261020，save=or-optimization-selection，公屏topics/or-optimization-board。读取根四入口后进入research/topic_selection/README.md和BOSS_START.md。当前任务是广搜、精读、比较并直接试攻新题，不自动主攻旧UM-TARGET-v1或其反面。
+本分支依用户明确授权使用research/or-topic-battle-20261020，save=or-optimization-selection，公屏topics/or-optimization-board。读取根四入口后进入research/topic_selection/README.md和BOSS_START.md。当前任务是广搜、精读、比较并直接试攻新题，不自动主攻旧UM-TARGET-v1或其反面。
 
 每个Work使用独立clone；本分支的work.py start必须显式指定research-branch、board-branch和save，后续程序复用绑定。禁止向main或旧wcg/board提交本轮材料。已有clone不得强行改绑，不丢弃未提交成果，不force push。凭据留在clone外，不打印、不进URL或提交。用户授权本轮协作和阶段保存。
 

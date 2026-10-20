@@ -1,6 +1,6 @@
 # 运筹学与优化理论选题：当前研究状态
 
-入口是[选题地图](research/topic_selection/README.md)，当前前沿见[专题状态](research/topic_selection/RESEARCH_STATE.md)。研究分支research/or-optimization-selection-20261020，save=or-optimization-selection，公屏topics/or-optimization-board。
+入口是[选题地图](research/topic_selection/README.md)，当前前沿见[专题状态](research/topic_selection/RESEARCH_STATE.md)。研究分支research/or-topic-battle-20261020，save=or-optimization-selection，公屏topics/or-optimization-board。
 
 当前任务是广搜、精读、比较并实际试攻新题；尚未确定唯一主定理。用户最新指定四方向；六路已实际启动：原子近似PNE与势函数；Nash选择/动态；goods公平；chores及约束公平；GAP成本保持舍入；多资源GAP结构。此前连续优化等候选保留，暂不主攻。探索不设前置审核。
 

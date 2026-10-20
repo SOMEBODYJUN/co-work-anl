@@ -11,6 +11,9 @@
 【用户本轮补充，继续执行】
 继续刚才的选题和研究。而且由于经常中断。你还是要及时更新仓库。这样我们选题会好很多。我甚至打算就选题而言进行大兵团作战来做选题。
 
+【本轮用户补充的idea价值要求】
+有些可以是你发现的新的idea，一定要判断价值，价值判断要根据发现idea不同，制定不同的判断策略，和我上述指导类似，一些是有些明确大佬文章里的问题。
+
 【用户最新指定的研究范围，优先于此前六线分工】
 继续刚才的选题和研究。你还是先研究原子博弈。nash均衡，近似公平分配问题，广义指派近似算法的研究。先看这些方向
 
@@ -47,7 +50,7 @@
 
 【恢复、分支、公屏】
 仓库 https://github.com/SOMEBODYJUN/co-work-anl.git
-研究分支 research/or-optimization-selection-20261020
+研究分支 research/or-topic-battle-20261020
 独立公屏 topics/or-optimization-board
 存档 or-optimization-selection
 统一程序 research/weighted_congestion_frontier/tools/work.py
@@ -57,7 +60,7 @@
 先检查cwd、git status、branch、remote、log。已有工作全部保留；使用本对话独立clone；新身份R-加Python uuid.uuid4().hex，同clone复用wcg.actor。凭据在仓库外，禁止打印/日志/remote嵌入/提交。不要将旧main clone改绑本分支。
 
 附有新版work.py时执行（路径自行按环境替换）：
-python3 <附件work.py> --repo <独立clone目录> start --save or-optimization-selection --research-branch research/or-optimization-selection-20261020 --board-branch topics/or-optimization-board --actor <R-uuid> --token-file <仓库外凭据>
+python3 <附件work.py> --repo <独立clone目录> start --save or-optimization-selection --research-branch research/or-topic-battle-20261020 --board-branch topics/or-optimization-board --actor <R-uuid> --token-file <仓库外凭据>
 
 无程序附件时先安全clone上述研究分支，再执行仓库内同命令。回执须核对branch、board_branch、save、workspace、research_entry、research_prompt。随后始终使用仓库内最新程序。
 
@@ -77,7 +80,7 @@ python3 research/weighted_congestion_frontier/tools/work.py checkpoint -m '具�
 用户已授权本研究内的协作、公屏、正常文件编辑与checkpoint，无需反复请求确认。subagents由boss汇集，不独立伪装Work身份或自行推送。研究文件只到本研究分支、公屏只到本公屏分支，禁止推入main或旧wcg/board。程序记住分支绑定，sync不自动合入旧main。
 
 【大规模选题协作与中断恢复】
-多Work继续共用既有研究分支、公屏、save和程序，不按对话另建主题分支。每个Work独立clone、稳定actor；内部六个subagents由boss汇集。可以自由换线、交叉合作，研究分工不是排他认领或审批。候选以精确问题及来源身份去重，同一问题优先修订现有卡，不能按agent复制多份。
+本轮依用户新建分支请求从1c3c22a9接续到research/or-topic-battle-20261020；保留既有独立公屏和save。后续多Work共用本轮研究分支、公屏、save和程序，不按对话继续增殖主题分支。每个Work独立clone、稳定actor；内部六个subagents由boss汇集。可以自由换线、交叉合作，研究分工不是排他认领或审批。候选以精确问题及来源身份去重，同一问题优先修订现有卡，不能按agent复制多份。
 
 先看candidate_pool.json、BATTLE.md和各lane的原文卡；它们若尚不存在，按README查当前实际资产。候选卡至少写原文位置、已知覆盖、最小完整成果、致命风险和下一判别动作；重要数学进展另写自足正文。别把论文数量或汇总排名当研究贡献。跨线battle要写对方具体哪个定理/假设/覆盖风险改变了判断，不靠赞成数。
 

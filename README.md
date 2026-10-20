@@ -4,7 +4,7 @@
 
 | 当前操作身份 | 固定值 |
 | --- | --- |
-| 研究分支 | `research/or-optimization-selection-20261020` |
+| 研究分支 | `research/or-topic-battle-20261020` |
 | 独立公屏 | `topics/or-optimization-board` |
 | 存档 | `or-optimization-selection` |
 | 研究地图 | [research/topic_selection/README.md](research/topic_selection/README.md) |

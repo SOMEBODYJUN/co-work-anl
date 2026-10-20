@@ -48,6 +48,7 @@
 | [公平与分数效率兼容性的原文反例和新问题边界](<topic_selection/notes/fair_fpo_compatibility_boundary.md>) | `research/topic_selection/notes/fair_fpo_compatibility_boundary.md` | 精确区分两份2026原文的未来方向与已知反例，记录独立oracle及参数分类仍需查新的差额。 | 问题记录；开放/已闭合部分见用途及正文 |
 | [两代理两类物品公平与分数效率的独立精确核验](<topic_selection/probes/fair_fpo_independent.py>) | `research/topic_selection/probes/fair_fpo_independent.py` | 以支持权区间与支配多边形两种Fraction oracle重构已知反例，覆盖空物品和有理估值边界。 | 有限计算核验；不代替一般证明 |
 | [公平—效率兼容探针的冻结输入和精确结果](<topic_selection/probes/results/fair_fpo_independent.json>) | `research/topic_selection/probes/results/fair_fpo_independent.json` | 保存实际参数、两种oracle比较、最优有限实例因子、Python版本及源码哈希；不证明一般界。 | 冻结输入、证书或结果；不原位覆盖 |
+| [按论文贡献类型评价选题价值与可完成性](<topic_selection/VALUE_CRITERIA.md>) | `research/topic_selection/VALUE_CRITERIA.md` | 针对公开题、工具、视角、组合、分类、算法和反例分别制定差额核查与判别动作，不以模型投票或伪精确评分选择主目标。 | 阅读导航；真值查精确正文及账本 |
 
 <a id="unrelated_machines"></a>
 

@@ -1,13 +1,13 @@
 # 新选题分支与独立公屏操作
 
-研究分支：`research/or-optimization-selection-20261020`；公屏分支：`topics/or-optimization-board`；存档：`or-optimization-selection`。使用独立clone，不改绑其他对话。凭据保持仓库外，不打印，不写入remote URL。
+研究分支：`research/or-topic-battle-20261020`；公屏分支：`topics/or-optimization-board`；存档：`or-optimization-selection`。使用独立clone，不改绑其他对话。凭据保持仓库外，不打印，不写入remote URL。
 
 ## 新对话恢复
 
 若附上本分支最新版work.py，可从空目录直接执行；否则先clone本分支，再使用仓库内程序。实际路径由boss自行替换，actor为R-加uuid.uuid4().hex。
 
 ```bash
-python3 work.py --repo <独立clone目录> start --save or-optimization-selection --research-branch research/or-optimization-selection-20261020 --board-branch topics/or-optimization-board --actor <R-uuid> --token-file <仓库外凭据路径>
+python3 work.py --repo <独立clone目录> start --save or-optimization-selection --research-branch research/or-topic-battle-20261020 --board-branch topics/or-optimization-board --actor <R-uuid> --token-file <仓库外凭据路径>
 ```
 
 首次已存在clone必须就在该研究分支；程序不会替你覆盖/切换有工作的分支。此命令恢复的是已发布分支，不创建远端新主题。回执必须显示正确branch、board_branch、save、research_entry与research_prompt。
