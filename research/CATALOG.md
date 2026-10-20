@@ -36,6 +36,9 @@
 | [运筹优化选题与直接试攻的完整提示词](<topic_selection/BOSS_START.md>) | `research/topic_selection/BOSS_START.md` | 保留用户完整指导，规定论文内化、六路广搜、battle、直接探索及分支恢复保存。 | 阅读导航；真值查精确正文及账本 |
 | [运筹优化独立分支与公屏的操作合同](<topic_selection/RUNBOOK.md>) | `research/topic_selection/RUNBOOK.md` | 给出新版统一程序的独立研究/公屏绑定、通信、同步和checkpoint准确命令。 | 阅读导航；真值查精确正文及账本 |
 | [运筹优化分支的可检查路由](<topic_selection/branch_manifest.json>) | `research/topic_selection/branch_manifest.json` | 机器可读记录研究分支、公屏、存档、入口、基线与明确的资源请求。 | 阅读导航；真值查精确正文及账本 |
+| [新选题分支、来源字段与导航核验](<topic_selection/check_selection.py>) | `research/topic_selection/check_selection.py` | 检查独立分支、公屏、完整提示词、候选字段及本地链接，不验证开放性/新颖性/数学真值。 | 有限计算核验；不代替一般证明 |
+| [置换顶点仿射投影的独立精确核验](<topic_selection/probes/centered_face_independent.py>) | `research/topic_selection/probes/centered_face_independent.py` | 不调用QP优化器，以全部完美匹配顶点的仿射正交条件复核奇数细分小反例与边界。 | 有限计算核验；不代替一般证明 |
+| [奇数细分支持面的独立Fraction证据](<topic_selection/probes/results/centered_face_independent.json>) | `research/topic_selection/probes/results/centered_face_independent.json` | 冻结单点、四阶星面与五阶奇路细分面的精确投影结果；不作为一般分类或新颖性证明。 | 冻结输入、证书或结果；不原位覆盖 |
 
 <a id="unrelated_machines"></a>
 
