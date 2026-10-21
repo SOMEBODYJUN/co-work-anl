@@ -67,9 +67,24 @@ class Game:
         target = int(rng.choice(targets))
         return values, welfare, outcomes, floors, target
 
-    def cone(self, weights, rng):
+    def cone(self, weights, rng, target_mode='worst', forced_target=None, forced_path=None):
         values, welfare, outcomes, floors, target = self.solve(weights, rng)
         root = (0,) * self.k
+        if target_mode == 'random':
+            target = int(rng.choice(outcomes[root]))
+        elif target_mode == 'second':
+            outs = outcomes[root]
+            minimum = min(welfare[outs])
+            candidates = outs[welfare[outs] > minimum + 2e-8]
+            if len(candidates):
+                target = int(rng.choice(candidates))
+        if forced_target is not None:
+            target = forced_target
+        planned = {}
+        q_plan = root
+        for a in forced_path or ():
+            planned[q_plan] = a
+            q_plan = self.children[q_plan][a]
         rows = []
         choices = {}
 
@@ -80,7 +95,8 @@ class Game:
             kids = self.children[q]
             admissible = [a for a, c in enumerate(kids)
                           if desired in outcomes[c] and values[desired, a] >= floors[q] - 2e-8]
-            action = int(rng.choice(admissible))
+            action = planned[q] if desired == target and q in planned else int(rng.choice(admissible))
+            assert action in admissible
             next_targets = []
             for a, c in enumerate(kids):
                 if a == action:
@@ -103,10 +119,13 @@ class Game:
         matrix = np.unique(np.array(rows, dtype=np.int16), axis=0)
         return matrix, target, choices, float(welfare[target]), float(max(self.opt_rows @ weights))
 
-    def optimize(self, matrix, target, objective):
+    def optimize(self, matrix, target, objective, private_floor=0.):
+        bounds = [(0, None)] * len(self.types)
+        for a in range(self.k):
+            bounds[(1 << a) - 1] = (private_floor, None)
         return linprog(-objective.astype(float), A_ub=-matrix.astype(float),
                        b_ub=np.zeros(len(matrix)), A_eq=[self.cov[target]], b_eq=[1.],
-                       bounds=(0, None), method='highs')
+                       bounds=bounds, method='highs')
 
 
 def main():
@@ -116,6 +135,8 @@ def main():
     ap.add_argument('--starts', type=int, default=10)
     ap.add_argument('--steps', type=int, default=8)
     ap.add_argument('--seed', type=int, default=41236)
+    ap.add_argument('--target-mode', choices=['worst', 'random', 'second'], default='worst')
+    ap.add_argument('--private-floor', type=float, default=0.)
     ap.add_argument('--output', type=Path, required=True)
     args = ap.parse_args()
     game = Game(args.topics, args.players)
@@ -137,7 +158,7 @@ def main():
         seen = set()
         for step in range(args.steps):
             tic = time.time()
-            matrix, target, choices, w, opt = game.cone(weights, rng)
+            matrix, target, choices, w, opt = game.cone(weights, rng, args.target_mode if step == 0 else 'worst')
             true_ratio = opt / w if w else 1.
             # Pick current best optimum; try two other supports to escape ties.
             support_values = game.opt_rows @ weights
@@ -145,11 +166,13 @@ def main():
             indices += list(map(int, rng.choice(len(game.opt_rows), min(2, len(game.opt_rows)), replace=False)))
             candidates = []
             for idx in indices:
-                result = game.optimize(matrix, target, game.opt_rows[idx])
+                result = game.optimize(matrix, target, game.opt_rows[idx], args.private_floor)
                 if result.success:
-                    candidates.append((-result.fun, result, idx))
+                    new_values = game.opt_rows @ result.x
+                    candidates.append((max(new_values), result, int(np.argmax(new_values))))
             if not candidates:
-                raise RuntimeError('all LPs failed')
+                print(json.dumps({'start': start, 'step': step, 'status': 'no feasible LP with private floor'}), flush=True)
+                break
             ratio, result, idx = max(candidates, key=lambda t: t[0])
             record = {'start': start, 'step': step, 'incoming_ratio': true_ratio,
                       'ratio': ratio, 'target': game.terminals[target],

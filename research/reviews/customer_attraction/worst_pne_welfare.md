@@ -1,0 +1,31 @@
+# 静态PNE福利支配桥的独立定义级审查
+
+数学身份：有限辅助桥反例复核；不改变 Q-CAG-HALF 的 OPEN 状态。
+
+审查输入为 boss 提供的相邻 `../boss/pne_bridge_certificate.json`。独立脚本
+`tests/audits/customer_attraction_worst_pne_welfare.py` 不导入规范实例、SPE集合递推、证书验证器或 boss 的计算逻辑，
+将六个兴趣类型展开为16名不同单位客户，每一份终局收益直接按客户重算。
+
+1. 策略恰覆盖长度0、1、2的全部21个有序历史。逐历史沿同一给定策略重放
+   每个备选行动的全部真实后继，共84项含自身行动比较，全部满足SPE不等式。
+2. 实际路径为 `(0,3,3)`，收益为 `(17/3,14/3,14/3)`，福利15。
+3. 穷尽4主题3玩家的全部20个终局计数，对每一份玩家检查全部4种静态改选。
+   恰有两组静态PNE计数：`(0,1,1,1)`、`(0,1,0,2)`，福利均为16。
+4. 同一20计数枚举的最优覆盖为16，故这是真正同实例的
+   `W(SPE)=15 < min_PNE W=16=OPT_3`。
+
+因此“每个SPE福利至少为同实例最差静态PNE福利”被严格否定。
+终局允许静态改善本来已知；这里新增的是不存在另一组更低福利静态PNE可供比较。
+它没有反驳半覆盖，也没有反驳聚合安全值桥。
+
+可复核命令（仓库根运行）：
+
+```sh
+python3 tests/audits/customer_attraction_worst_pne_welfare.py
+```
+
+默认只打印摘要；显式 `--output 新路径` 保存完整比较记录，并拒绝覆盖已有文件。
+首次审查的完整84项SPE比较与20组静态记录保存于 `pne_bridge_independent_audit.json`。
+这是一次独立内部定义级审查，未声称外部同行评审或全球新颖性。
+
+规范共享审计已整理为 `tests/audits/customer_attraction_worst_pne_welfare.py`；实例、策略和冻结输出分别存入 examples、evidence/certificates 和 evidence/runs/2026-10-20。
