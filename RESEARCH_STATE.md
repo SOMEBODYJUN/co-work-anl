@@ -38,3 +38,5 @@ Boss直接带团队攻一般命题。清洗者处理数学检查、自足改写�
 用户补充参考后，已明确[旧结构主线仍缺失的内容](research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)。上轮未按完整旧证明复原，新方法专题不代表旧工作已恢复；当前拥塞接续应优先补齐原主结果和结构论文。
 
 更小独立静态桥见证：[八客户四主题计数SPE](research/current/customer_attraction/eight_customer_cce_welfare_gap.md)福利6，最低静态CCE福利恰544/87；它不改变原十三客户版本身份，不否定真正聚合安全值。
+
+新的条件性正面机制：[真实末两人菜单](research/current/customer_attraction/common_penultimate_theme_half.md)及[少量早期遗漏](research/current/customer_attraction/penultimate_few_exceptions.md)在无界人数/目录下证明指定实际路径半覆盖；r个遗漏的充分阈值为m≥(r+1)²+1。已独立解析内审，一般路径大量遗漏仍缺跨真实分支支付，Q-CAG-HALF仍OPEN。

@@ -1445,6 +1445,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-EXPLICIT-STABILITY-COST-FRONTIER-v1 | 每个有理有限显式WC游戏，非空策略族允许空动作，固定有理α≥1；状态空间Ω完整枚举。 | 逐态逐真实偏离得到扩展有理A(s)，并精确返回α-PNE集合、分别最小化ΣC_i与Σw_iC_i的状态及完整稳定成本阶梯。无α-PNE时每态一条严格偏离构成完整否证；加预算后每态可给超预算或严格偏离排除项。 状态数可能指数；程序规模上限超出时报告未完成，绝不报告无解。最佳反应单条循环不当作全局NO。 | [有限显式游戏的稳定成本前沿与证书](weighted_congestion/decision_methods/decision_quality.md)；独立内部重构与精确审计，范围见正式账本。 |
 | WC-CALIBRATION-EXISTENCE-SEPARATION-v1 | 两玩家权(1,2)，每人菜单∅/{e}/{f}/{e,f}，c_e=x、c_f=x²；另有明确循环加空动作例。 | 两资源各自有精确局部尺度势，但没有共同正玩家尺度的α=1全状态成本差校准；原游戏严格改善图却无环且唯一精确PNE为空空。另有精确PNE仍保留严格改善循环的WC实例。 明确实例反例，不是全类无均衡或一般搜索困难性。 | [共同尺度校准与稳定存在的严格分界](weighted_congestion/decision_methods/calibration.md)；独立内部重构与精确审计，范围见正式账本。 |
 
+## 真实末两人菜单的条件性半覆盖
+
+| ID | 精确陈述 | 范围、依赖与状态 |
+| --- | --- | --- |
+| CA-COMMON-PENULTIMATE-HALF-v1 | 原模型任意完整历史纯SPE、m≥3；若实际倒二主题A包含于全部m−2个早期实际主题，则2W≥OPT_m，末位主题任意。 | [完整证明](customer_attraction/common_penultimate_theme_half.md)、[独立审查](../reviews/customer_attraction/penultimate_menu_half.md)；仅模型与真实偏离，目录无界；外审/新颖性/锐性未认证。 |
+| CA-PENULTIMATE-FEW-EXCEPTIONS-HALF-v1 | 原模型任意完整历史纯SPE；若整数r≥1、m≥(r+1)²+1，且至多r个早期实际主题不包含实际倒二主题A，则2W≥OPT_m。 | [完整证明](customer_attraction/penultimate_few_exceptions.md)、[独立审查](../reviews/customer_attraction/penultimate_menu_half.md)；包含条件指整个集合而非平均负载；平方阈值仅充分，一般目标仍OPEN。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

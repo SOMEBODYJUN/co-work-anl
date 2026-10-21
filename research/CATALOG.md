@@ -111,6 +111,8 @@
 | [分数覆盖的真实路径前缀利润预算与乘积福利界](<current/customer_attraction/fractional_cover_path_budget.md>) | `research/current/customer_attraction/fractional_cover_path_budget.md` | 任意比较客户集的分数覆盖给跨位置预算；覆盖数至多7/2时任意人数半覆盖，一般无界覆盖数仍OPEN。 | 数学正文；按关联命题分别核对证明及审查；关联 `CA-ACTUAL-ROOT-TAIL-MENU-NO`、`CA-ADAPTIVE-DECORRELATION-NO`、`CA-ADAPTIVE-TYPE-SPARSIFICATION`，[命题合同（共 76 项）](assets.json) |
 | [八客户静态CCE福利间隙的独立逐客户复核](<reviews/customer_attraction/eight_customer_cce_welfare_gap.md>) | `research/reviews/customer_attraction/eight_customer_cce_welfare_gap.md` | 不调用发现者求解器，核验所有历史、静态有序终局和匹配原始对偶，另检查计数策略强化。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-ACTUAL-ROOT-TAIL-MENU-NO`、`CA-ADAPTIVE-DECORRELATION-NO`、`CA-ADAPTIVE-TYPE-SPARSIFICATION`，[命题合同（共 76 项）](assets.json) |
 | [分数覆盖真实前缀利润预算的独立审查](<reviews/customer_attraction/fractional_cover_path_budget.md>) | `research/reviews/customer_attraction/fractional_cover_path_budget.md` | 重构真实旧玩家最终份额、真实偏离负载上界与非负递推，明确适用范围和未闭合一般义务。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-ACTUAL-ROOT-TAIL-MENU-NO`、`CA-ADAPTIVE-DECORRELATION-NO`、`CA-ADAPTIVE-TYPE-SPARSIFICATION`，[命题合同（共 76 项）](assets.json) |
+| [共同倒数第二主题的完整历史半覆盖](<current/customer_attraction/common_penultimate_theme_half.md>) | `research/current/customer_attraction/common_penultimate_theme_half.md` | 在任意人数和无界目录下读取真实末两人回复菜单的交集消去机制；前提是实际倒二主题包含于全部早期主题。 | 数学正文；按关联命题分别核对证明及审查；关联 `CA-COMMON-PENULTIMATE-HALF-v1`、`CA-PENULTIMATE-FEW-EXCEPTIONS-HALF-v1`，[命题合同](assets.json) |
+| [倒数第二主题少量早期遗漏的平方阈值半覆盖](<current/customer_attraction/penultimate_few_exceptions.md>) | `research/current/customer_attraction/penultimate_few_exceptions.md` | 读取早期改A保底与实际末位改例外主题的联合预算；r个早期遗漏和m≥(r+1)²+1条件承重。 | 数学正文；按关联命题分别核对证明及审查；关联 `CA-COMMON-PENULTIMATE-HALF-v1`、`CA-PENULTIMATE-FEW-EXCEPTIONS-HALF-v1`，[命题合同](assets.json) |
 
 <a id="unrelated_machines"></a>
 
@@ -2642,6 +2644,7 @@
 | [覆盖矩行空间与非负实现的独立审查](<reviews/customer_attraction/coverage_moment_geometry.md>) | `research/reviews/customer_attraction/coverage_moment_geometry.md` | 独立重构CR-1至CR-5、关闭形式类型/不同覆盖/m1p1/锥边界异议。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-ACTUAL-ROOT-TAIL-MENU-NO`、`CA-ADAPTIVE-DECORRELATION-NO`、`CA-ADAPTIVE-TYPE-SPARSIFICATION`，[命题合同（共 76 项）](assets.json) |
 | [五客户无拥挤纯负载支付障碍的独立审查](<reviews/customer_attraction/collision_free_occupancy.md>) | `research/reviews/customer_attraction/collision_free_occupancy.md` | 不读发现稿先重构全部历史、函数类与精确最优值，区分half与辅助桥。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-ACTUAL-ROOT-TAIL-MENU-NO`、`CA-ADAPTIVE-DECORRELATION-NO`、`CA-ADAPTIVE-TYPE-SPARSIFICATION`，[命题合同（共 76 项）](assets.json) |
 | [无拥挤均衡趋三分之二覆盖族的独立归纳审查](<reviews/customer_attraction/collision_free_three_halves_family.md>) | `research/reviews/customer_attraction/collision_free_three_halves_family.md` | 独立检查多旧A归纳域、fresh B偏离、末节点最佳反应及全部有序子树粘合，区分存在与每个SPE。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-ACTUAL-ROOT-TAIL-MENU-NO`、`CA-ADAPTIVE-DECORRELATION-NO`、`CA-ADAPTIVE-TYPE-SPARSIFICATION`，[命题合同（共 76 项）](assets.json) |
+| [真实末两人菜单及少量早期遗漏定理的独立审查](<reviews/customer_attraction/penultimate_menu_half.md>) | `research/reviews/customer_attraction/penultimate_menu_half.md` | 核对两项条件性half的真实分支比较、零分母约定、全部参数正性和平方阈值，不把有限回归作为一般证明。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-COMMON-PENULTIMATE-HALF-v1`、`CA-PENULTIMATE-FEW-EXCEPTIONS-HALF-v1`，[命题合同](assets.json) |
 
 <a id="publication"></a>
 
