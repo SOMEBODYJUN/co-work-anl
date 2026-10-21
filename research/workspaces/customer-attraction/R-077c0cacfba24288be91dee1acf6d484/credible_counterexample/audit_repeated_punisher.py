@@ -8,7 +8,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[5]
 sys.path.insert(0, str(ROOT))
 
-from customer_attraction.model import Instance
+from customer_attraction.model import CustomerType, Instance
+from customer_attraction.exact import ExactSPESolver
+from customer_attraction.certificate import verify_certificate
 
 
 def repeated(r: int) -> dict:
@@ -55,8 +57,68 @@ def old_group() -> dict:
             "strictly_invalid": dev > intended}
 
 
+def mixed_tail_full_spe() -> dict:
+    # The obstruction concerns repeated B_i only. A mixed B_i/D response
+    # really can work, so independently verify a complete countercheck.
+    xs = [{f"x{i}_{j}" for j in range(2)} for i in range(3)]
+    aa = [{f"a{i}"} for i in range(3)]
+    b, d = {"b0", "b1"}, {"d0", "d1"}
+    covers, labels = [], []
+    for i in range(3):
+        covers.extend((xs[i], xs[i] | aa[i], xs[i] | b))
+        labels.extend((f"C{i}", f"A{i}", f"B{i}"))
+    covers.append(b | d)
+    labels.append("D")
+    inst = Instance.from_topic_sets(covers, 5, labels)
+    solver = ExactSPESolver(inst)
+    path = (0, 3, 6, 9, 9)
+    certificate = solver.certificate(on_path=path)
+    check = verify_certificate(inst, certificate)
+    assert check.valid
+    assert inst.welfare(check.terminal_counts) == 10
+    assert inst.optimal_welfare() == 13
+    return {"identity": "complete SPE showing the obstruction is specific",
+            "path": [inst.topics[a] for a in path],
+            "welfare": inst.welfare(check.terminal_counts),
+            "optimum": inst.optimal_welfare(),
+            "checked_histories": check.checked_histories,
+            "checked_deviations": check.checked_deviations,
+            "valid": check.valid}
+
+
+def directed_scan() -> dict:
+    found, checked = [], 0
+    pref = (1, 0, 0, 1, 0, 0, 0, 0, 0, 0)
+    target = (1, 0, 0, 1, 0, 0, 1, 0, 0, 2)
+    for x in (2, 4):
+        for a in range(1, 2 * x + 1):
+            for b in range(4 * x + 1):
+                for d in range(x, 4 * x + 1):
+                    if b + d < x + 2 * a:
+                        continue
+                    types = []
+                    for i in range(3):
+                        types.append(CustomerType(frozenset((3 * i, 3 * i + 1,
+                                                             3 * i + 2)), x))
+                        types.append(CustomerType(frozenset((3 * i + 1,)), a))
+                    if b:
+                        types.append(CustomerType(frozenset((2, 5, 8, 9)), b))
+                    types.append(CustomerType(frozenset((9,)), d))
+                    instance = Instance(tuple(str(i) for i in range(10)),
+                                        tuple(types), 5)
+                    checked += 1
+                    if target in ExactSPESolver(instance).outcomes(pref):
+                        found.append([x, a, b, d])
+    return {"identity": "finite partial-subgame scan; not a general theorem",
+            "checked": checked, "feasible_parameters": found,
+            "coordinate_order": ["x", "a", "b", "d"]}
+
+
 if __name__ == "__main__":
-    print(json.dumps({"identity": "targeted terminal-menu mechanism audit",
-                      "repeated_punisher": [repeated(r) for r in range(1, 7)],
-                      "replicated_residual_old_group": old_group()},
-                     ensure_ascii=False, indent=2))
+    result = {"identity": "targeted terminal-menu mechanism audit",
+              "repeated_punisher": [repeated(r) for r in range(1, 7)],
+              "replicated_residual_old_group": old_group(),
+              "mixed_tail_full_spe": mixed_tail_full_spe()}
+    if "--scan" in sys.argv:
+        result["directed_scan"] = directed_scan()
+    print(json.dumps(result, ensure_ascii=False, indent=2))

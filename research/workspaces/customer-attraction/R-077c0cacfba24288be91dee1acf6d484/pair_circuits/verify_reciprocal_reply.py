@@ -31,6 +31,11 @@ def audit_coefficients():
         assert kab == kba
         assert kab == fa + fb - F(r * ina * inb, (h + 1) * (h + r + 1))
         if r >= 2:
+            # Consume one pivot b into H and lower its active clone count.
+            hnew = h + inb
+            knew = F(inb, hnew + 1) + coeff_a(hnew, 1, r - 1, ina, inb)
+            assert kab - knew == F(inb, (h + 1) * (h + 2))
+        if r >= 2:
             pab = r * (coeff_a(h, r, 1, ina, inb)
                        + coeff_a(h, r, 1, inb, ina))
             assert pab == kab + error_coeff(h, r, ina, inb)
@@ -41,6 +46,9 @@ def audit_coefficients():
             assert ec <= F(4, 15)
             if ina + inb == 1:
                 assert ec <= F(1, 6)
+            for z in range(4):
+                incumbent = F(h, h + z) if h else F(0)
+                assert ec <= incumbent
         checked += 1
     assert error_coeff(2, 2, 1, 1) == F(4, 15)
     assert error_coeff(1, 2, 1, 0) == F(1, 6)
@@ -134,11 +142,58 @@ def main():
         chains += nc
         cycles += ny
         instances += 1
+    stairs = 0
+    for _ in range(240):
+        n = rng.randrange(1, 8)
+        nclients = rng.randrange(1, 9)
+        topics = [frozenset(x for x in range(nclients) if rng.randrange(2))
+                  for _ in range(n)]
+        prefix = tuple(rng.randrange(n) for _ in range(rng.randrange(4)))
+        h = [sum(x in topics[a] for a in prefix) for x in range(nclients)]
+        h0 = h.copy()
+        r = rng.randrange(2, 10)
+        a, b = rng.randrange(n), rng.randrange(n)
+        reply_cache = {}
+
+        def kernel(a, b, hh, rr):
+            return sum((F(x in topics[b], hh[x] + 1)
+                        + (F(1, hh[x] + 1 + rr * (x in topics[b]))
+                           if x in topics[a] else F(0))
+                        for x in range(nclients)), F(0))
+
+        initial = kernel(a, b, h, r)
+        gap = F(0)
+        delta = F(0)
+        while r >= 2:
+            choices = [kernel(c, b, h, r) for c in range(n)]
+            best = max(choices)
+            history = prefix + (b,) * r
+            if history not in reply_cache:
+                reply_cache[history] = rng.choice([c for c in range(n) if choices[c] == best])
+            c = reply_cache[history]
+            assert choices[c] == best
+            gap += best - kernel(a, b, h, r)
+            assert kernel(c, b, h, r) == kernel(b, c, h, r)
+            delta += sum((F(1, (h[x] + 1) * (h[x] + 2))
+                          for x in topics[c]), F(0))
+            h = [h[x] + (x in topics[c]) for x in range(nclients)]
+            prefix += (c,)
+            a, b = b, c
+            r -= 1
+            stairs += 1
+        rent = sum((F(1, h0[x] + 1) - F(1, h[x] + 1)
+                    for x in range(nclients)), F(0))
+        assert delta == rent
+        assert kernel(a, b, h, r) - initial == gap - rent
+        assert initial <= kernel(a, b, h, r) + rent
+
     report = {"status": "passed", "identity_membership_checks": checks,
               "random_fixed_prefix_instances": instances,
               "exact_reply_chain_steps": chains, "exact_reply_cycle_checks": cycles,
               "r2_single_hit_max": "1/6", "r2_double_hit_max": "4/15",
-              "scope": "Fixed ordered prefix and fixed r only; no general half proof."}
+              "r2_error_paid_by_any_actual_prefix_cohort_profit": True,
+              "exact_reply_staircase_steps": stairs,
+              "scope": "Reciprocal chains and one-prefix-pivot staircases only; no general half proof."}
     if args.output:
         if args.output.exists():
             raise FileExistsError(args.output)
