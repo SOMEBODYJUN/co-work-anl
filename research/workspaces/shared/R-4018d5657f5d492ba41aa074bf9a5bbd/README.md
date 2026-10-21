@@ -20,3 +20,5 @@
 [必要失配环与单环坏族](feedback_cycle_necessity_candidate.md)已给作者证明，并获另一研究员对量词、环长度取整和实际类型图恰环的指定范围快审；尚待正式资产整合。该推论不把合同NO当真实无均衡。
 
 [固定费干预与原游戏遗憾桥草稿](application_drafts/cycle_intervention/constant_resource_intervention.md)已完成作者证明和有限Fraction核验；关键是输出更强的离开/加入合同，而非任意修改后近似均衡。尚待独立终稿攻击和共享资产登记。[失配环核验](application_drafts/root_feedback/feedback_cycle_audit.json)按四组有理参数穷举五类型以内简单图，检验乘积环证书和长度整数取整；不证明一般量词。
+
+六路线阶段正文与实际代码已备份在 application_drafts/，各自标明审查状态。稀疏门已纠正一个错误担忧：从全部门未触发的前沿单翻，仍未触发的门对mover只能pair→pair（同费），新触发门是singleton→triple，故R本身屏障前沿逃逸。原全局Σu屏障只是保守冗余条件。源子水平算法已修复零预算严格步界，稳健异步协议已修复全局阈值变化使旧无候选报告失效的问题。正式稿与对应独立审查正在整合。
