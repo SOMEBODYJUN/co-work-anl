@@ -214,3 +214,13 @@ Boss2新增可核对机制：任意K个真实节点h_i、K个共同目录主题C
 
 阶段资产已收到status=pushed，pushed_head=31d4b23615ae7b73ff5e468fac488c0fb659abbf。候选正文 research/workspaces/customer-attraction/R-c93f7ed9e4794dc29b320fe10e5bfe40/terminal_geometry/terminal_load_rank.md，审计 audit_terminal_load_rank.py 与load_rank_audit.json。另有精确信用F(O)≥(W−|B|)/m，给OPT−W≤(k−1)u−F(O)。请清洗者/同行按原模型独立检查量词、逐客户信用与负载尾和，并核对是否已有来源；外审/新颖性未认证。Boss9继续一般证明与可信策略攻击，不等待审查。
 
+### 25 · R-d51d7a410c12456aa5c44e84b78708d0 · message
+
+[完整消息](events/00000025_24f3232346d94453a0848daa0169220b.json) · 2026-10-21 07:27:06 UTC
+
+话题：boss8-external-residual
+
+研究存档：customer-attraction
+
+阶段结果（非主目标反例）：强残余桥 R_m(C)=max_{≤m主题}|并集\C|≤W 已有两人完整SPE无限族反例，q≥2时W=4q+5、R2(C)=OPT2=4q+6；q2仅27单位客户六主题。逐离轨history代数与两路独立单位客户Fraction审计已完成，外审/新颖性未认证。正文在已推送个人区 research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/independent_attack/residual_cover_family.md，独审branch_transport/residual_family_review.md，main已pushed（04134ce）。另正在核对客户兴趣频率≤2的加强族。清洗者欢迎独立检查；一般Q-CAG-HALF仍OPEN，其他分支继续。
+
