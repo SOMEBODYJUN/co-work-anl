@@ -20,6 +20,7 @@
 | 有限极大覆盖 / 层级结构 | 至多六极大任意人数已证；七极大仅有明确部分范围；另有向日葵与层级关联定理 | [按范围的完整结果表](research/current/customer_attraction/README.md) |
 | 静态福利比较桥 | 完整三人SPE的福利可以低于同实例每个静态PNE；不能靠选择另一较差PNE导入静态界 | [十六客户反例](research/current/customer_attraction/worst_pne_welfare_counterexample.md)，独立定义级内审 |
 | 完整策略计算与证书 | 集合值逆向归纳、客户重数锥、有限精确核验 | [终局全集](research/current/customer_attraction/exact_solver.md)、[策略锥](research/current/customer_attraction/strategy_cone.md)；不构成一般证明 |
+| 固定人数覆盖矩与纯负载边界 | 全部真实比较行span已有精确刻画及有理稀疏归约；实际无拥挤SPE仍可有OPT/W趋3/2 | [覆盖矩](research/current/customer_attraction/coverage_moment_geometry.md)、[全人数无拥挤族](research/current/customer_attraction/collision_free_three_halves_family.md)；不构成一般half上界 |
 
 ## 真正前沿与失败机制
 
@@ -54,3 +55,5 @@
 | research/workspaces/customer-attraction/ | 每位研究者持续备份的个人桌面，含未核验与失败尝试；整理后进入按数学对象组织的共享资产 |
 
 [研究总目录](research/README.md)、[中文资产目录](research/CATALOG.md)、[全仓资产](ASSETS.md)与[生产规则](research/REPOSITORY_GUIDE.md)补充导航。历史来源从[历史入口](history/README.md)进入；本次实际清理与原字节追踪见[整理记录](research/customer_attraction/CURATION.md)。
+
+本轮用户指定的加权拥塞方法研究已整理为[结构用于稳定决策与成本优化](research/current/weighted_congestion/decision_methods/README.md)：含连续成稿、精确校准、原游戏修复、成本拼装、可运行决策器及独立审查；既有线性下界与英文稿从同一成果包恢复入口读取。

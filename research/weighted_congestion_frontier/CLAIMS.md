@@ -1101,3 +1101,105 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Status：complete general proof; independently reconstructed and attacked; exact audits passed; unrefereed；外审/新颖性/最优常数未认证。
 - 连续成稿：[自足英文主稿](../current/weighted_congestion/linear_threshold_article.tex)、[PDF](../current/weighted_congestion/linear_threshold_article.pdf)及[审读记录](../reviews/weighted_congestion/linear_threshold_article_review.md)；不新增数学状态。
 - Related Files：research/current/weighted_congestion/linear_degree_allstate_lower_bound.md；配套审查、实际输入、代码与冻结证据见第10节。
+
+## 结构用于原游戏决策：本轮精确身份
+
+完整成稿与读取地图见[决策方法成果包](../current/weighted_congestion/decision_methods/README.md)。下列身份不改变既有线性全状态下界。
+
+### WC-FINITE-COMMON-SCALE-CALIBRATION-v1 — 显式有限游戏的共同尺度校准
+
+- **Exact Statement：** 任意资源集合势、给定有限资源势字典的非负混合、完整状态共同尺度差分势三种接口，固定α时均为有理线性可行性问题；h_i>0可齐次规范为h_i≥1。每个可行有理解使全部严格α改善下降，有限改善终止且终点α-PNE。
+- **Objects / Domain / Quantifiers：** 每个WC-MODEL有限游戏，权与系数有理；固定有理α≥1；显式局部插入表或完整真实偏离图。
+- **Assumptions：** 全部真实偏离、非负费用；背景吸收保留background。字典混合是非负锥而非固定系数和。
+- **Definitions：** 局部边际[h_i c_e,αh_i c_e]；图行P(t)−P(s)≤h_i(αC_i(t)−C_i(s))，同一玩家尺度跨全部资源。
+- **Scope：** NO只否定当前校准接口；不等价于均衡非存在。下确界端点不预设取得；固定有理α才保证有理证书。状态/局部表可指数大。
+- **Conclusion：** 给精确YES原始证书或精确NO Farkas证书；实现达pivot/cycle上限返回UNKNOWN。固定h可用负预算圈判别。
+- **Dependencies：** WC-MODEL、WC-R2-LOCAL-MARGINAL-MODEL
+- **Evidence：** 自足证明、独立重构及正式路径有理审计；详见下列文件。
+- **Counterevidence / Objections：** NO只否定当前校准接口；不等价于均衡非存在。下确界端点不预设取得；固定有理α才保证有理证书。状态/局部表可指数大。 固定背景社会包络风险已经恢复常数并重证；没有记录中仍成立的阻断异议。
+- **Status：** complete stated-scope proof; independent internal reconstruction; finite exact audits; unrefereed
+- **Related Files：** research/current/weighted_congestion/decision_methods/calibration.md；tests/audits/weighted_congestion/decision_methods/calibration_audit.py；evidence/runs/weighted_congestion/decision_methods/calibration_audit.json；research/reviews/weighted_congestion/decision_methods_review.md
+
+### WC-STRUCTURE-WELFARE-REGULARIZATION-v1 — 结构势与社会成本的正则化决策
+
+- **Exact Statement：** 给定共同h_i>0、α≥1的资源势边际夹逼和0<m≤M的mW≤Φ≤MW，W=Σw_iC_i。Ψη=Φ+ηW的每个全局最小点为βη-PNE，βη=max_i(αh_i+η(d+1)w_i)/(h_i+ηw_i)，且W≤(M+η)/(m+η)OPT。
+- **Objects / Domain / Quantifiers：** 每个WC-MODEL有限游戏，d≥0，正实权和非负多项式；任意有限η≥0。
+- **Assumptions：** 局部势在全用户归零，或固定背景恢复后对所有实际可变边与完整W重证；福利要求全局最小性。
+- **Definitions：** OPT=min W；零最优值使用乘法不等式。h、Φ、η与包络同尺度。
+- **Scope：** 局部最小点只给稳定性；加性目标gap不自动给乘性稳定性。原压缩零势不能直接用于含必用成本的社会包络。
+- **Conclusion：** 可按目标a∈[α,d+1)选η≤min_i((a−α)h_i)/((d+1−a)w_i)，并有种子预算充分条件、切平面社会下界和势DAG最小峰值接口。
+- **Dependencies：** WC-MODEL、WC-R2-LOCAL-MARGINAL-MODEL
+- **Evidence：** 自足证明、独立重构及正式路径有理审计；详见下列文件。
+- **Counterevidence / Objections：** 局部最小点只给稳定性；加性目标gap不自动给乘性稳定性。原压缩零势不能直接用于含必用成本的社会包络。 固定背景社会包络风险已经恢复常数并重证；没有记录中仍成立的阻断异议。
+- **Status：** complete stated-scope proof; independent internal reconstruction; finite exact audits; unrefereed
+- **Related Files：** research/current/weighted_congestion/decision_methods/decision_quality.md；research/current/weighted_congestion/decision_methods/structure_to_decision.md；tests/audits/weighted_congestion/decision_methods/decision_quality_audit.py；tests/audits/weighted_congestion/decision_methods/independent_attack_check.py；evidence/runs/weighted_congestion/decision_methods/decision_quality_audit.json；evidence/runs/weighted_congestion/decision_methods/independent_attack.json；research/reviews/weighted_congestion/decision_methods_review.md
+
+### WC-POTENTIAL-QUALITY-SEPARATION-v1 — 最小势与稳定成本选择的精确分离
+
+- **Exact Statement：** 单位权两玩家四资源例中00唯一全局最小势且W=6，11亦精确PNE且唯一W最优11/2；Φ+ηW在η>1唯一选11。另权(2,1)二状态例的精确稳定W=9、社会最优15/2所需倍率恰7/6。
+- **Objects / Domain / Quantifiers：** 明确给出的两个有限仿射WC实例；全部纯状态及真实偏离。
+- **Assumptions：** 所有费用按原动作真实负载计算，W=Σw_iC_i。
+- **Definitions：** 四状态菜单{X,Y}/{Z,K}与{X,Z}/{Y,K}，X/Y/Z费用x、K=7/4；二状态重玩家固定A，轻玩家A/B，c_A=x、c_B=7/2。
+- **Scope：** 只是这些精确实例，不证明一般性能或速度全面支配；最小性限定二状态例的人数/状态数/资源数。
+- **Conclusion：** 同倍率内可以改善选择质量；也可存在稳定与预算无法兼得的锐边界。
+- **Dependencies：** WC-MODEL
+- **Evidence：** 自足证明、独立重构及正式路径有理审计；详见下列文件。
+- **Counterevidence / Objections：** 只是这些精确实例，不证明一般性能或速度全面支配；最小性限定二状态例的人数/状态数/资源数。 固定背景社会包络风险已经恢复常数并重证；没有记录中仍成立的阻断异议。
+- **Status：** complete stated-scope proof; independent internal reconstruction; finite exact audits; unrefereed
+- **Related Files：** research/current/weighted_congestion/decision_methods/decision_quality.md；tests/audits/weighted_congestion/decision_methods/decision_quality_audit.py；evidence/runs/weighted_congestion/decision_methods/decision_quality_audit.json；research/reviews/weighted_congestion/decision_methods_review.md
+
+### WC-EXISTING-CLOCK-FRONT-DECISION-v1 — 已有支配时钟的原游戏前沿精确决策
+
+- **Exact Statement：** 原游戏具有正文指定的完整anchor三元同费时钟，且每n_a≥3满足c_a(3w_a)>α(B_a+binom(n_a−1,2)c_a(2w_a))时，原α-PNE恰是全部product-front的端点sink。每非法态有指定原游戏严格α改善，front离域偏离不α改善。
+- **Objects / Domain / Quantifiers：** 每个有限二动作WC游戏，给定同权有序类A_a，大小n_a≥1；α≥1。
+- **Assumptions：** 原资源而非新增资源；同类等权、两侧同费、完整互异三元资源、非负基体；输入动作不变。
+- **Definitions：** front为至多一次相邻变化的位串，类有2n_a个；B_a为有效基体单人成本上界；三元侧使用bit xor(0,1,0)。
+- **Scope：** 前沿可循环且可无解；固定类数、有理稠密/一元次数显式输入才给位多项式决策。条件失败不表示游戏无解。
+- **Conclusion：** 枚举Π2n_a前沿、每态每类至多2个端点，返回原α-PNE或前沿严格出口表+非法修复规则；修复≤Σmax(n_a−2,0)步。
+- **Dependencies：** WC-MODEL
+- **Evidence：** 自足证明、独立重构及正式路径有理审计；详见下列文件。
+- **Counterevidence / Objections：** 前沿可循环且可无解；固定类数、有理稠密/一元次数显式输入才给位多项式决策。条件失败不表示游戏无解。 固定背景社会包络风险已经恢复常数并重证；没有记录中仍成立的阻断异议。
+- **Status：** complete stated-scope proof; independent internal reconstruction; finite exact audits; unrefereed
+- **Related Files：** research/current/weighted_congestion/decision_methods/repair.md；tests/audits/weighted_congestion/decision_methods/repair_audit.py；evidence/runs/weighted_congestion/decision_methods/repair_audit.json；research/reviews/weighted_congestion/decision_methods_review.md
+
+### WC-ONE-ROOT-FROZEN-PRICE-LIFT-v1 — 单根模块冻结报价的固定提升
+
+- **Exact Statement：** 给每模块每根动作a的内部β稳定延续y^a，当前根价q(a)≥0，且冻结y^a后改b的费用D(a,b)≥q(b)。用根私有动作价替代模块后，任意核心α-PNE固定提升为原max(α,β)-PNE。
+- **Objects / Domain / Quantifiers：** 有限WC游戏，非空保留玩家、仅保留玩家使用的核心资源，互不交附属模块各只接一个保留根；任意α,β≥1。
+- **Assumptions：** 模块只共享根、不共享其他玩家/资源；删除玩家全部原策略限于本模块；非负费用。
+- **Definitions：** 保留全部原根动作及私有动作标签；lift按当前根动作选已存延续，评估偏离时不重选。
+- **Scope：** 单向而非双向；核心NO不否定原游戏。寻找一般有环模块报价可指数大，树有既有递归构造。
+- **Conclusion：** 核心求解与模块核验分离，β=1时对所有α原倍率提升；非负常数替代保原多项式次数上限。
+- **Dependencies：** WC-MODEL
+- **Evidence：** 自足证明、独立重构及正式路径有理审计；详见下列文件。
+- **Counterevidence / Objections：** 单向而非双向；核心NO不否定原游戏。寻找一般有环模块报价可指数大，树有既有递归构造。 固定背景社会包络风险已经恢复常数并重证；没有记录中仍成立的阻断异议。
+- **Status：** complete stated-scope proof; independent internal reconstruction; finite exact audits; unrefereed
+- **Related Files：** research/current/weighted_congestion/decision_methods/repair.md；tests/audits/weighted_congestion/decision_methods/repair_audit.py；evidence/runs/weighted_congestion/decision_methods/repair_audit.json；research/reviews/weighted_congestion/decision_methods_review.md
+
+### WC-EXPLICIT-STABILITY-COST-FRONTIER-v1 — 有限显式游戏的稳定成本前沿与证书
+
+- **Exact Statement：** 逐态逐真实偏离得到扩展有理A(s)，并精确返回α-PNE集合、分别最小化ΣC_i与Σw_iC_i的状态及完整稳定成本阶梯。无α-PNE时每态一条严格偏离构成完整否证；加预算后每态可给超预算或严格偏离排除项。
+- **Objects / Domain / Quantifiers：** 每个有理有限显式WC游戏，非空策略族允许空动作，固定有理α≥1；状态空间Ω完整枚举。
+- **Assumptions：** 必须完整覆盖Ω及全部合法偏离；两种社会成本分别优化、分别比较。
+- **Definitions：** 正当前费用偏离到零置A=∞，双零不除法；A至少1，端点含等号。
+- **Scope：** 状态数可能指数；程序规模上限超出时报告未完成，绝不报告无解。最佳反应单条循环不当作全局NO。
+- **Conclusion：** 决策器返回完整原始表、两目标前沿和基线轨迹；给定表可独立核验选择与完整NO。
+- **Dependencies：** WC-MODEL
+- **Evidence：** 自足证明、独立重构及正式路径有理审计；详见下列文件。
+- **Counterevidence / Objections：** 状态数可能指数；程序规模上限超出时报告未完成，绝不报告无解。最佳反应单条循环不当作全局NO。 固定背景社会包络风险已经恢复常数并重证；没有记录中仍成立的阻断异议。
+- **Status：** complete stated-scope proof; independent internal reconstruction; finite exact audits; unrefereed
+- **Related Files：** research/current/weighted_congestion/decision_methods/decision_quality.md；research/current/weighted_congestion/decision_methods/runner.md；tests/audits/weighted_congestion/decision_methods/decision_runner.py；tests/audits/weighted_congestion/decision_methods/decision_runner_audit.py；tests/audits/weighted_congestion/decision_methods/independent_attack_check.py；evidence/runs/weighted_congestion/decision_methods/decision_runner_audit.json；evidence/runs/weighted_congestion/decision_methods/independent_attack.json；research/reviews/weighted_congestion/decision_methods_review.md
+
+### WC-CALIBRATION-EXISTENCE-SEPARATION-v1 — 共同尺度校准与稳定存在的严格分界
+
+- **Exact Statement：** 两资源各自有精确局部尺度势，但没有共同正玩家尺度的α=1全状态成本差校准；原游戏严格改善图却无环且唯一精确PNE为空空。另有精确PNE仍保留严格改善循环的WC实例。
+- **Objects / Domain / Quantifiers：** 两玩家权(1,2)，每人菜单∅/{e}/{f}/{e,f}，c_e=x、c_f=x²；另有明确循环加空动作例。
+- **Assumptions：** 原始资源费用、正尺度、全偏离，不能只看某条改善路径。
+- **Definitions：** 完整双向偏离图α=1迫势差等号；e方形要求2h1=h2，f方形要求8h1=5h2。
+- **Scope：** 明确实例反例，不是全类无均衡或一般搜索困难性。
+- **Conclusion：** LP NO只排指定接口；改善无环、校准可行与稳定态存在是不同性质。
+- **Dependencies：** WC-MODEL、WC-FINITE-COMMON-SCALE-CALIBRATION-v1
+- **Evidence：** 自足证明、独立重构及正式路径有理审计；详见下列文件。
+- **Counterevidence / Objections：** 明确实例反例，不是全类无均衡或一般搜索困难性。 固定背景社会包络风险已经恢复常数并重证；没有记录中仍成立的阻断异议。
+- **Status：** complete stated-scope proof; independent internal reconstruction; finite exact audits; unrefereed
+- **Related Files：** research/current/weighted_congestion/decision_methods/calibration.md；tests/audits/weighted_congestion/decision_methods/calibration_audit.py；tests/audits/weighted_congestion/decision_methods/independent_attack_check.py；evidence/runs/weighted_congestion/decision_methods/calibration_audit.json；evidence/runs/weighted_congestion/decision_methods/independent_attack.json；research/reviews/weighted_congestion/decision_methods_review.md

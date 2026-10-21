@@ -4,6 +4,7 @@
 
 | 机制 | 为什么失败、留下什么 | 自足入口 |
 | --- | --- | --- |
+| 只按实际客户负载校正并要求Σf(c)≥OPT、f0=0/f1=1 | 完整无拥挤SPE已有W<OPT；任意人数族迫使统一支付f1≥3/2，高负载系数无助于这些路径 | [无拥挤全人数族](research/current/customer_attraction/collision_free_three_halves_family.md)，不反驳half |
 | 进一步换成同实例最低静态CCE福利：十三客户完整SPE覆盖9，所有静态CCE期望福利≥137/15 | [完整反例](research/current/customer_attraction/worst_cce_welfare_counterexample.md)证明这种更弱静态福利支配也失败；精确最低2785/297 | 保留真正不观察查询的安全值或直接跨真实分支预算；本例不反驳半覆盖 |
 | 把SPE终局当作静态Nash | 后继会响应早期偏离；终局可以有静态改善。保留真实全历史偏离比较 | [续局失败桥](research/current/customer_attraction/continuation_lemmas.md) |
 | 比较到同实例的另一最差静态PNE | 完整SPE覆盖十五，全部静态PNE覆盖十六，替换静态均衡仍不能支付 | [静态福利比较反例](research/current/customer_attraction/worst_pne_welfare_counterexample.md) |
@@ -15,3 +16,5 @@
 完整分类、触发重试条件与原始证据见[本题失败地图](research/customer_attraction/FAILED_ROUTES.md)和[全部资产索引](research/current/customer_attraction/README.md)。数学路线可以自由改变；已有失败不是方法白名单。
 
 其他模型保留其独立失败账本：[调度](research/unrelated_machines/FAILED_ROUTES.md)、[拥塞](research/weighted_congestion_frontier/FAILED_ROUTES.md)。旧角色与旧主攻入口的历史字节见[本次清理记录](research/customer_attraction/CURATION.md)，不作为当前指令。
+
+加权拥塞结构应用的背景成本遗漏、校准NO误用、最小势福利误推和原游戏修复混淆，已分别记录失效机制与修补条件，见[专题失败账本](research/weighted_congestion_frontier/FAILED_ROUTES.md)及[独立审查](research/reviews/weighted_congestion/decision_methods_review.md)。

@@ -1416,6 +1416,32 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | UM-ROBUST-CYCLE-SHARED-CONTEXT-PHASE-v1 | T>0，T≤B<2T；core机器/任务彼此不交，任务恰两端且时间≤T；任意共享context；给定全部原任务的实际σ≤T；鲁棒iff所有碰撞和>B；任意指定相位保持全部context原端可构造峰<3T−B，B≥3T/2时全相位weak可行；三半阈值与包络上确界锐。 | 只排保留该鲁棒双端core资格、仅追加共享背景来限制phase的接口；不排改资格、非环码、其他全局decoder或一般反面。 | [完整正文](unrelated_machines/robust_cycle_shared_context_phase_boundary.md)、[实际内审](../reviews/unrelated_machines/robust_cycle_shared_context_phase_review.md)；证明完整、内审及有限核验；外审/新颖性未核。 |
 | UM-TWO-LEVEL-LABEL-FEE-ESCAPE-v1 | 显式二部全定义投影源，D≥2且degree≤D；完整展开本文R/H/A/B/C原机器和全部原任务；任意给定边状态；任意状态可bit-poly完整排到1+floor(D/2)/D≤3/2；非空顶点集actual OPT=1+μ/D，μ为状态选择的最大逐顶点第二标签次数的最小值；空顶点OPT0。C<1+1/D可反解singleton全满足；奇q强列表NO actual OPT=1+1/q。 | 仅此明确compiler；μ恒等式不提供其多项式优化oracle；不声称raw模板识别、一般三半算法或一般近二hardness。 | [完整正文](unrelated_machines/two_level_label_fee_escape.md)、[实际内审](../reviews/unrelated_machines/two_level_label_fee_escape_review.md)；证明完整、内审及有限核验；外审/新颖性未核。 |
 
+## 固定人数覆盖矩与纯负载支付边界
+
+| ID | 精确输入与量词 | 结论及不覆盖范围 | 证明与证据 |
+| --- | --- | --- | --- |
+| CA-FIXED-M-PAYOFF-SPAN | m,p≥1；全部非空形式兴趣类型；总数m的全部终局收益行。 | 全部终局收益span恰为V_m=span{k_T:1≤|T|≤min(m,p)}，维数d=Σ_r binom(p,r)。 | [自足正文](customer_attraction/coverage_moment_geometry.md)；独立定义级内审通过，外审/新颖性未认证。 |
+| CA-TERMINAL-COMPARISON-SPAN | m,p≥1；任意完整有序历史形式纯策略，不需先为SPE；行向量在全部形式类型上。 | 仅末层真实比较span=全部真实比较span={v∈V_m:v([p])=0}；加任意根W恢复V_m。绝非非负行锥等同。 | [自足正文](customer_attraction/coverage_moment_geometry.md)；独立定义级内审通过，外审/新颖性未认证。 |
+| CA-COVERAGE-MOMENT-EXTREME-RAYS | m≥2；全部非空形式类型的非负矩锥；p≥2为proper暴露，p=1唯一极射线。 | 每个非空兴趣类型列为不同极射线，共2^p−1；同结论适用于(Γw,W)精确资料，不能外推SPE可行子锥。 | [自足正文](customer_attraction/coverage_moment_geometry.md)；独立定义级内审通过，外审/新颖性未认证。 |
+| CA-EXACT-OPT-EXTERNAL-FOLD-NO | 每个m≥2,p≥m+1；p个不同不交单位主题的合法完整SPE；替换资料非负。 | 任一保持同一策略全部Γ行数值及W的新非负资料仍保留每个单点类型，不能消除任何选定OPT外客户；不限制仅保持不等式真值的归约。 | [自足正文](customer_attraction/coverage_moment_geometry.md)；独立定义级内审通过，外审/新颖性未认证。 |
+| CA-ADAPTIVE-TYPE-SPARSIFICATION | 任意m,p≥1及非负有理类型资料，含零客户/空主题；原目录不同覆盖保留。 | 可自适应消元至≤d种非空类型，精确保留全部m人终局收益/覆盖；清分母保持全部SPE和half真值，非固定非负类型基。 | [自足正文](customer_attraction/coverage_moment_geometry.md)；独立定义级内审通过，外审/新颖性未认证。 |
+| CA-COLLISION-FREE-LOAD-PAYMENT-NO | 存在五单位客户、四不同共同主题、两人完整纯SPE；同时量化所有f:Z≥0→R，f0=0,f1=1。 | 完整SPE实际(C,D)无拥挤，u=(2,2)，W4、OPT2=5；任意所述f均给Σf(c)=4<5。否定整类辅助桥，不否定half。 | [自足正文](customer_attraction/collision_free_occupancy_obstruction.md)；独立定义级内审通过，外审/新颖性未认证。 |
+
+| CA-COLLISION-FREE-FAMILY-3-2 | 对每个k≥1，存在k+1单位玩家、3k+1不同共同主题、3k+2单位客户的完整历史纯SPE；是存在量词，不是所有SPE。 | 实际C1,…,Ck,D两两不交，人人得2，W=2k+2、OPT=3k+2，比率=3/2−1/(2k+2)→3/2；任何普遍纯负载支付且f0=0必须f1≥3/2。不是half反例，不声称无拥挤子类上界。 | [Q/B完整归纳](customer_attraction/collision_free_three_halves_family.md)、独立多旧A闭包/全部历史粘合审查及k1..3单位客户全树重放；外审、新颖性未认证。 |
+
+
+## 加权拥塞结构用于稳定决策与成本优化
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| WC-FINITE-COMMON-SCALE-CALIBRATION-v1 | 每个WC-MODEL有限游戏，权与系数有理；固定有理α≥1；显式局部插入表或完整真实偏离图。 | 任意资源集合势、给定有限资源势字典的非负混合、完整状态共同尺度差分势三种接口，固定α时均为有理线性可行性问题；h_i>0可齐次规范为h_i≥1。每个可行有理解使全部严格α改善下降，有限改善终止且终点α-PNE。 NO只否定当前校准接口；不等价于均衡非存在。下确界端点不预设取得；固定有理α才保证有理证书。状态/局部表可指数大。 | [显式有限游戏的共同尺度校准](weighted_congestion/decision_methods/calibration.md)；独立内部重构与精确审计，范围见正式账本。 |
+| WC-STRUCTURE-WELFARE-REGULARIZATION-v1 | 每个WC-MODEL有限游戏，d≥0，正实权和非负多项式；任意有限η≥0。 | 给定共同h_i>0、α≥1的资源势边际夹逼和0<m≤M的mW≤Φ≤MW，W=Σw_iC_i。Ψη=Φ+ηW的每个全局最小点为βη-PNE，βη=max_i(αh_i+η(d+1)w_i)/(h_i+ηw_i)，且W≤(M+η)/(m+η)OPT。 局部最小点只给稳定性；加性目标gap不自动给乘性稳定性。原压缩零势不能直接用于含必用成本的社会包络。 | [结构势与社会成本的正则化决策](weighted_congestion/decision_methods/decision_quality.md)；独立内部重构与精确审计，范围见正式账本。 |
+| WC-POTENTIAL-QUALITY-SEPARATION-v1 | 明确给出的两个有限仿射WC实例；全部纯状态及真实偏离。 | 单位权两玩家四资源例中00唯一全局最小势且W=6，11亦精确PNE且唯一W最优11/2；Φ+ηW在η>1唯一选11。另权(2,1)二状态例的精确稳定W=9、社会最优15/2所需倍率恰7/6。 只是这些精确实例，不证明一般性能或速度全面支配；最小性限定二状态例的人数/状态数/资源数。 | [最小势与稳定成本选择的精确分离](weighted_congestion/decision_methods/decision_quality.md)；独立内部重构与精确审计，范围见正式账本。 |
+| WC-EXISTING-CLOCK-FRONT-DECISION-v1 | 每个有限二动作WC游戏，给定同权有序类A_a，大小n_a≥1；α≥1。 | 原游戏具有正文指定的完整anchor三元同费时钟，且每n_a≥3满足c_a(3w_a)>α(B_a+binom(n_a−1,2)c_a(2w_a))时，原α-PNE恰是全部product-front的端点sink。每非法态有指定原游戏严格α改善，front离域偏离不α改善。 前沿可循环且可无解；固定类数、有理稠密/一元次数显式输入才给位多项式决策。条件失败不表示游戏无解。 | [已有支配时钟的原游戏前沿精确决策](weighted_congestion/decision_methods/repair.md)；独立内部重构与精确审计，范围见正式账本。 |
+| WC-ONE-ROOT-FROZEN-PRICE-LIFT-v1 | 有限WC游戏，非空保留玩家、仅保留玩家使用的核心资源，互不交附属模块各只接一个保留根；任意α,β≥1。 | 给每模块每根动作a的内部β稳定延续y^a，当前根价q(a)≥0，且冻结y^a后改b的费用D(a,b)≥q(b)。用根私有动作价替代模块后，任意核心α-PNE固定提升为原max(α,β)-PNE。 单向而非双向；核心NO不否定原游戏。寻找一般有环模块报价可指数大，树有既有递归构造。 | [单根模块冻结报价的固定提升](weighted_congestion/decision_methods/repair.md)；独立内部重构与精确审计，范围见正式账本。 |
+| WC-EXPLICIT-STABILITY-COST-FRONTIER-v1 | 每个有理有限显式WC游戏，非空策略族允许空动作，固定有理α≥1；状态空间Ω完整枚举。 | 逐态逐真实偏离得到扩展有理A(s)，并精确返回α-PNE集合、分别最小化ΣC_i与Σw_iC_i的状态及完整稳定成本阶梯。无α-PNE时每态一条严格偏离构成完整否证；加预算后每态可给超预算或严格偏离排除项。 状态数可能指数；程序规模上限超出时报告未完成，绝不报告无解。最佳反应单条循环不当作全局NO。 | [有限显式游戏的稳定成本前沿与证书](weighted_congestion/decision_methods/decision_quality.md)；独立内部重构与精确审计，范围见正式账本。 |
+| WC-CALIBRATION-EXISTENCE-SEPARATION-v1 | 两玩家权(1,2)，每人菜单∅/{e}/{f}/{e,f}，c_e=x、c_f=x²；另有明确循环加空动作例。 | 两资源各自有精确局部尺度势，但没有共同正玩家尺度的α=1全状态成本差校准；原游戏严格改善图却无环且唯一精确PNE为空空。另有精确PNE仍保留严格改善循环的WC实例。 明确实例反例，不是全类无均衡或一般搜索困难性。 | [共同尺度校准与稳定存在的严格分界](weighted_congestion/decision_methods/calibration.md)；独立内部重构与精确审计，范围见正式账本。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
