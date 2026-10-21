@@ -24,6 +24,15 @@
 当前继续一般全局预算、真实完整策略构造及共同客户正性。原PROTECTED-k路线已经失败，
 应保留实际已覆盖信用或允许选择最优组合，而不能仅补二人菜单的同一无覆盖支付。
 
+第二项边界：[实际四人SPE前缀的GLOBAL反例](background/global_actual_prefix_counterexample.md)。
+52客户/六主题，完整路径A,B,A,B；在真实到达的A,B后尾P17、Δ0、freshOPT2=18。
+root另用单位客户全树重放全部1554个比较通过，见[parent独审](parent/actual_prefix_independent_review.md)。
+任何固定λ的P+λΔ修补仍失败。根W34、OPT4=52，主目标没有被反驳。
+
+新的正面条件与表示边界分别见 `security/extra_one_response_debt.md`、
+`early_price/symmetric_singleton_price.md`、`coupling/parity_symmetric_difference.md`；
+按各文件的独立审查状态读取，不能当作一般half已解。
+
 ## 交流与状态
 
 可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。
