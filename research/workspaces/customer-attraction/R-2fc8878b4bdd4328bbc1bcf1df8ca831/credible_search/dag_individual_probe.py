@@ -23,6 +23,7 @@ def main():
     ap.add_argument('--root', required=True)
     ap.add_argument('--target', type=int, required=True)
     ap.add_argument('--portfolio', required=True)
+    ap.add_argument('--path', help='optional realized ordered path; forces only its DAG realization indicators')
     ap.add_argument('--seconds', type=float, default=15)
     ap.add_argument('--output', type=Path, required=True)
     args = ap.parse_args()
@@ -30,6 +31,20 @@ def main():
     p, m = len(q), sum(q)
     J = tuple(map(int, args.portfolio.split(',')))
     assert q[args.target] > 0 and len(J) <= m
+    if args.path:
+        path = tuple(map(int,args.path.split(',')))
+        assert tuple(path.count(a) for a in range(p)) == q
+        source = SOURCE.read_text()
+        marker = '    if fixed_clones is not None:\n'
+        insertion = '''    if FORCED_PATH is not None:
+        k = (0,) * p
+        for a in FORCED_PATH:
+            lo[z[k,q,a]] = hi[z[k,q,a]] = 1
+            k = inc(k,a)
+'''
+        assert source.count(marker)==1
+        dag.FORCED_PATH = path
+        exec(compile(source.replace(marker,insertion+marker),str(SOURCE),'exec'),dag.__dict__)
     u = dag.payoff_row(p, q, args.target)
     v = dag.coverage_row(p, J)
     objective = tuple(vv-(2*m-1)*uu for vv,uu in zip(v,u))

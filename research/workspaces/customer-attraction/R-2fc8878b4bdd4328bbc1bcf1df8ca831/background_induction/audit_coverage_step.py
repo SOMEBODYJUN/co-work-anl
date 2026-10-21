@@ -7,6 +7,7 @@ from fractions import Fraction
 from itertools import combinations, product
 from pathlib import Path
 import json
+import argparse
 
 HERE = Path(__file__).parent
 Q = 6
@@ -76,7 +77,7 @@ def new_opt(k, excluded=()):
     return max(vals)
 
 
-def main():
+def main(check_only=False):
     comparisons = []
     for depth in range(R):
         for h in product(range(Q), repeat=depth):
@@ -115,9 +116,13 @@ def main():
         first_step_gap=str(local_gap), whole_candidate_gap=str(global_gap),
         node_audit=comparisons,
     )
-    (HERE / "coverage_step_exact_audit.json").write_text(json.dumps(data, indent=2) + "\n")
+    if not check_only:
+        (HERE / "coverage_step_exact_audit.json").write_text(json.dumps(data, indent=2) + "\n")
     print(json.dumps({k: v for k, v in data.items() if k not in {"policy", "node_audit"}}, indent=2))
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--check-only', action='store_true', help='Replay without writing frozen evidence')
+    args = parser.parse_args()
+    main(check_only=args.check_only)

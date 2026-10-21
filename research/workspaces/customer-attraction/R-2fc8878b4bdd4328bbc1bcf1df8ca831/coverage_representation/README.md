@@ -1,8 +1,8 @@
 # 覆盖矩表示、真实行的线性空间及正性边界
 
-Boss7研究备份，2026-10-21。一般 Q-CAG-HALF 仍 **OPEN**。本目录不修改共享数学身份；下列命题均为候选内部证明，独立检查正在进行。
+Boss7研究备份，2026-10-21。一般 Q-CAG-HALF 仍 **OPEN**。本目录不修改共享数学身份；下列命题为内部研究证明。CR-2/CR-3已有从定义重构的[独立审查](../independent_mechanism/coverage_representation_independent_review.md)，并已按其边界意见修订；无外审或全球新颖性认证。
 
-- `coverage_moment_geometry.md`：固定人数终局收益的覆盖矩表示；任意完整策略的全部真实比较行具有同一个余维一线性空间；全数值资料的非负生成器障碍；合法SPE上的OPT外客户消除障碍；允许依实例稀疏化的一般归约。
+- `coverage_moment_geometry.md`：固定人数终局收益的覆盖矩表示；任意完整策略的全部真实比较行具有同一个余维一线性空间；全数值资料的非负生成器障碍；合法SPE上的OPT外客户消除障碍；允许依实例稀疏化的一般归约；末层不等式虽span充分却无法代替全树激励的精确方向例。
 - `audit_coverage_geometry.py`：标准库 Fraction 从定义核验收益、势、覆盖空间的精确秩、正系数积分、暴露函数、完整策略行和合法不交主题实例。
 - `coverage_geometry_audit.json`：上述脚本的冻结输出。
 

@@ -197,6 +197,23 @@ def audit_disjoint_spe(m, p):
                 collapse_creates_duplicate_coverage_labels=True)
 
 
+def audit_last_only_obstruction(m):
+    p = m+1
+    sigma = {h: (0 if k < m-1 else next(a for a in range(1, p) if a not in h))
+             for k in range(m) for h in product(range(p), repeat=k)}
+    rows, last, c, root = strategy_rows(m, p, sigma)
+    w = tuple(Q(B.bit_count() == 1 and B != 1) for B in range(1, 1 << p))
+    evaluate = lambda row: sum((x*y for x, y in zip(row, w)), Q(0))
+    assert all(evaluate(row) >= 0 for row in last)
+    assert min(evaluate(row) for row in rows) < 0
+    assert evaluate(c) == 1
+    assert root == (0,)*(m-1)+(1,)
+    return dict(m=m, p=p, full_ordered_histories=len(sigma),
+                last_action_comparisons=len(last), all_last_comparisons_nonnegative=True,
+                minimum_full_tree_comparison=str(min(evaluate(row) for row in rows)),
+                welfare=1, optimum=m, half_violated=m >= 3, is_SPE=False)
+
+
 def kernel_relation(rows):
     """One exact rational relation among columns of a wide matrix."""
     a = [list(map(Q, r)) for r in rows]
@@ -223,10 +240,10 @@ def kernel_relation(rows):
     return z
 
 
-def audit_sparse_reduction(m=2, p=5):
+def audit_sparse_reduction(m=2, p=5, rational=False):
     masks = coverage_masks(m, p)
     types = list(range(1, 1 << p))
-    w = {B: Q(1+B % 5) for B in types}
+    w = {B: Q(1+B % 5, 1+B % 3 if rational else 1) for B in types}
     original = tuple(sum(w[B] for B in types if B & T) for T in masks)
     rounds = 0
     while len(w) > len(masks):
@@ -240,7 +257,8 @@ def audit_sparse_reduction(m=2, p=5):
     assert original == tuple(sum(w[B] for B in w if B & T) for T in masks)
     scale = lcm(*(x.denominator for x in w.values()))
     assert all((x*scale).denominator == 1 for x in w.values())
-    return dict(m=m, p=p, original_positive_types=len(types), final_positive_types=len(w),
+    return dict(m=m, p=p, rational_input=rational,
+                original_positive_types=len(types), final_positive_types=len(w),
                 dimension=len(masks), elimination_rounds=rounds, integer_scale=scale,
                 all_union_moments_preserved=True,
                 sparse_rational_types={str(B): str(x) for B, x in sorted(w.items())})
@@ -255,7 +273,10 @@ def main():
         full_ordered_history_strategies=audit_strategies(),
         exposed_rays=audit_exposures(),
         disjoint_complete_SPE=[audit_disjoint_spe(m, m+1) for m in range(1, 5)],
-        adaptive_sparse_reduction=audit_sparse_reduction(),
+        last_only_direction_obstruction=[audit_last_only_obstruction(m) for m in range(2, 5)],
+        adaptive_sparse_reduction=[audit_sparse_reduction(m, p, rational)
+                                   for m, p, rational in [(1, 4, True), (2, 5, False),
+                                                          (2, 5, True), (3, 5, True), (5, 3, True)]],
         boundaries="m=1: only singleton extreme rays; p=1: one ray, no nonzero proper exposure; empty type invisible",
     )
     target = HERE / 'coverage_geometry_audit.json'
@@ -263,7 +284,7 @@ def main():
     print(json.dumps(dict(output=str(target), all_checks_passed=True,
                           space_cases=len(report['spaces']), full_strategy_cases=56,
                           exposure_type_pairs=sum(r['ordered_nonempty_type_pairs'] for r in report['exposed_rays']),
-                          sparse_support=report['adaptive_sparse_reduction']['final_positive_types'])))
+                          sparse_supports=[r['final_positive_types'] for r in report['adaptive_sparse_reduction']])))
 
 
 if __name__ == '__main__':
