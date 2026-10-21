@@ -8,6 +8,8 @@
 
 本次新增可接续工作见 [next_boss/README.md](next_boss/README.md)：自由终局、逐人归一的完整树 MILP 与精确固定策略锥复验。它是既有联合策略/重数工具的目标变体，当前只提供有限候选与运行边界，未得到新的一般数学结论。各研究分支在 `next_global/`、`next_security/`、`next_counterexample/`、`next_tree/`、`next_representation/` 留存本次推导；未完成者保持候选身份。
 
+**已核验的新失败机制：** [三人七客户末位克隆反例](next_boss/terminal_clone_counterexample.md)否定逐人2u_i≥u_m，实际收益(3/2,2,7/2)，W=OPT=7。发现器完整树MILP、精确固定锥LP、独立展开单位客户逐有序历史审查均已完成。聚合2W≥(m+1)u_m及一般半覆盖仍OPEN。下一步转向全部在轨节点的联合真实菜单；其抽象精确势外推正在遭受独立反例攻击，不能先当定理。
+
 2026-10-21，环境重置后从 main 找回本 actor 并 `start --resume`；当前独立 clone 为 `co-work-anl-boss5`。六名指定研究子代理在辅助临时 clone 推导，Boss统一将实质稿件与核验转入本身份；辅助身份不发布成果。一般目标与背景半利润候选都仍 OPEN。
 
 本轮新工具与边界（个人备份，不自动成为 canonical）：
