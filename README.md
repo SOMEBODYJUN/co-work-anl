@@ -57,3 +57,5 @@
 [研究总目录](research/README.md)、[中文资产目录](research/CATALOG.md)、[全仓资产](ASSETS.md)与[生产规则](research/REPOSITORY_GUIDE.md)补充导航。历史来源从[历史入口](history/README.md)进入；本次实际清理与原字节追踪见[整理记录](research/customer_attraction/CURATION.md)。
 
 本轮用户指定的加权拥塞方法研究已整理为[结构用于稳定决策与成本优化](research/current/weighted_congestion/decision_methods/README.md)：含连续成稿、精确校准、原游戏修复、成本拼装、可运行决策器及独立审查；既有线性下界与英文稿从同一成果包恢复入口读取。
+
+加权拥塞旧稿的恢复范围已[纠正并逐项对照](research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)：现有决策专题没有恢复用户残存概述中的近一主结果与统一结构论文；原始参考已单独存档推送。

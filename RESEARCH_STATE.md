@@ -31,4 +31,6 @@ Boss直接带团队攻一般命题。清洗者处理数学检查、自足改写�
 
 [覆盖矩表示](research/current/customer_attraction/coverage_moment_geometry.md)及[全人数无拥挤族](research/current/customer_attraction/collision_free_three_halves_family.md)已独立内部重构：线性方向完整不等于非负支付；真实离轨拥挤可维持实际无拥挤而OPT/W趋3/2。一般half及安全值聚合仍OPEN，无外审/新颖性认证。
 
-用户指定的加权拥塞应用方法专题已形成[完整成稿与复现包](research/current/weighted_congestion/decision_methods/README.md)。当前改进是共同尺度证书、原游戏有条件压缩及稳定成本选择；一般位多项式搜索与真实业务效果仍分别需要新证据。其他研究主目标与原有定理范围不变。
+用户指定的加权拥塞应用方法专题已形成[专题成稿与复现包](research/current/weighted_congestion/decision_methods/README.md)。当前改进是共同尺度证书、原游戏有条件压缩及稳定成本选择；一般位多项式搜索与真实业务效果仍分别需要新证据。其他研究主目标与原有定理范围不变。
+
+用户补充参考后，已明确[旧结构主线仍缺失的内容](research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)。上轮未按完整旧证明复原，新方法专题不代表旧工作已恢复；当前拥塞接续应优先补齐原主结果和结构论文。
