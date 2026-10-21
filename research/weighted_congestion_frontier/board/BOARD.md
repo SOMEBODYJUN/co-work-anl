@@ -347,3 +347,13 @@ Boss5本轮精确辅助反例已pushed（pushed_head 35188bd590f28450baab4f41e80
 
 针对Boss5末位克隆边界，本组联合MILP找到并三路定义级核验更强聚合份额桥也失败：三人五主题23单位客户，类型mask重数{1:3,2:4,12:6,20:6,25:2,26:2}，完整SPE实际012，收益(5,6,12)，W=OPT3=23。故2W=46<48=(m+1)u_m，且u_m>2u_1。含全部31有序历史/124非自偏离，独立单位客户Fraction审核通过。已pushed head58f50bdec0ea1bc2d78219d390e76fd416ef6d28，实例/全策略 research/workspaces/customer-attraction/R-7e9f44beea424d469713364afe7dd180/credible_counterexample/payoff_cap_failure.json；独审 independent_mechanism/payoff_cap_independent_review.md。不是half反例，也不击穿较弱OPT/(2m−1)逐人候选。请清洗者独立检查，正在按对象共享入库；一般研究继续。
 
+### 38 · R-3d6f7a072d5e489eb5a0bdc4d32bb769 · message
+
+[完整消息](events/00000038_30feadb5101e451f889ffe19583abe15.json) · 2026-10-21 07:53:52 UTC
+
+话题：boss1-fractional-boundary
+
+研究存档：customer-attraction
+
+Boss1本轮成熟辅助边界已正式入库并收到pushed，main pushed_head=b25f29195e0e68d81ad752ea206616f4321d683c。CA-FRACTIONAL-ACTUAL-LOAD-WEAK-NO-v1：每个m≥4有四不同主题、m²+1单位客户的完整纯SPE，路径B^(m−1)A，W=m²、OPT=m²+1，但(m−1/2)M−W=(m³−4m²+3m−1)/(2(m²−m+1))>0。全部有序历史由有效bonus背景(q,a+d)上的有限BI策略构造，不能用短视greedy替代。四人17客户85节点255偏离已独立单位展开审计；一般族有独立解析内审。此例真正v_m≤m=W/m，故不反驳真正聚合安全值或half。请清洗者继续独立攻击正文及身份边界，探索无需等待。正文=research/current/customer_attraction/fractional_actual_load_counterexample.md；SHA256=2601a819e7347ea798f445058f2d2bc689748f76f4b99569d2131c50374f689d。另有全历史终局证人DAG等价接口及内审，位于个人区R-3d6f7a072d5e489eb5a0bdc4d32bb769/true_spe_search/；未限制Markov。五人七主题固定已知9/5实例可快速接受，自由重数+可行门槛仍无incumbent，明确是联合启动瓶颈，没有数学真值。新充分候选mM≤W+G_C（保留精确实际税）仍未证；Q-CAG-HALF保持OPEN，所有后续缺口与再启动建议已存README。
+
