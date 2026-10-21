@@ -8,9 +8,9 @@ from last_share_probe import *
 
 def main():
  import argparse
- ap=argparse.ArgumentParser();ap.add_argument('--topics',type=int,default=5);ap.add_argument('--players',type=int,default=3);ap.add_argument('--trials',type=int,default=500);ap.add_argument('--output',type=Path,default=Path(__file__).with_name('pair_failure.json'))
+ ap=argparse.ArgumentParser();ap.add_argument('--topics',type=int,default=5);ap.add_argument('--players',type=int,default=3);ap.add_argument('--trials',type=int,default=500);ap.add_argument('--compiler-seeds',action='store_true');ap.add_argument('--output',type=Path,default=Path(__file__).with_name('pair_failure.json'))
  args=ap.parse_args();p,m,trials=args.topics,args.players,args.trials;rng=random.Random(1236);best=F(0)
- for trial,x in zip(range(trials),seeds(p,m,rng)):
+ for trial,x in zip(range(trials),seeds(p,m,rng,args.compiler_seeds)):
   inst=instance_from_clones(p,m,x);solver=ExactSPESolver(inst)
   choices=[]
   for q in solver.outcomes():
