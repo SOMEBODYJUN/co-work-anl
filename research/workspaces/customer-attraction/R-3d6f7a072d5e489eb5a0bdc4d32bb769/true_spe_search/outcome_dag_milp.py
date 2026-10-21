@@ -49,7 +49,7 @@ def query_row(p, q, a):
                  for mask in range(1, 1 << p))
 
 
-def build(p, q, objective, seconds=30, fixed_clones=None):
+def build(p, q, objective, seconds=30, fixed_clones=None, objective_floor=None):
     m = sum(q)
     n = (1 << p) - 1
     states = tuple(k for d in range(m + 1) for k in counts(p, d))
@@ -90,6 +90,8 @@ def build(p, q, objective, seconds=30, fixed_clones=None):
         lb.append(lower); ub.append(upper)
     w = coverage_row(p, [a for a,v in enumerate(q) if v])
     add({j:v for j,v in enumerate(w) if v}, 1, 1)
+    if objective_floor is not None:
+        add({j:v for j,v in enumerate(objective) if v}, lower=objective_floor)
     # Every on-path player can guarantee |T|/m by choosing T, so summing
     # the m actual utilities gives |T| <= W(root)=1 for every topic T.
     # Thus all subgame payoffs and thresholds are at most one; big-M=1.
@@ -162,7 +164,18 @@ def exact_optimize(cone, objective):
     clones = integer_clones(v)
     if not independently_verify(cone,clones): raise AssertionError('exact full-history failure')
     inst = instance_from_clones(cone.topics,cone.players,clones)
+    beta = Fraction(float(-r.eqlin.marginals[0])).limit_denominator(10**7)
+    mu = tuple(Fraction(float(-x)).limit_denominator(10**7)
+               for x in r.ineqlin.marginals)
+    dual_ok = beta >= 0 and all(x >= 0 for x in mu) and all(
+        beta*w - sum(vv*row[j] for vv,row in zip(mu,cone.rows)) >= objective[j]
+        for j,w in enumerate(cone.welfare))
+    value = dot(objective,v)
+    if dual_ok and value > beta: raise AssertionError('exact primal exceeds dual')
     return {'certified':True,'value':dot(objective,v), 'integer_clones':clones,
+            'exact_dual_bound':beta if dual_ok else None,
+            'dual_optimal':dual_ok and beta == value,
+            'dual_support':[(i,xx) for i,xx in enumerate(mu) if xx] if dual_ok else [],
             'welfare':inst.welfare(cone.root),'optimal_welfare':inst.optimal_welfare(),
             'nodes':len(cone.actions),'deviation_checks':len(cone.actions)*(cone.topics-1),
             'strategy':StrategyCertificate(cone.actions,cone.root).to_dict()}
@@ -175,6 +188,7 @@ def main():
     ap.add_argument('--budget',action='store_true',help='optimize m*g(query)+R')
     ap.add_argument('--portfolio')
     ap.add_argument('--seconds',type=float,default=30)
+    ap.add_argument('--objective-floor',type=float)
     ap.add_argument('--output',type=Path,required=True)
     args = ap.parse_args()
     q = tuple(map(int,args.root.split(','))); p=len(q)
@@ -191,7 +205,8 @@ def main():
     else:
         J = tuple(map(int,args.portfolio.split(',')))
         objective = coverage_row(p,J); mode={'portfolio':J}
-    cone,meta = build(p,q,objective,args.seconds)
+    cone,meta = build(p,q,objective,args.seconds,objective_floor=args.objective_floor)
+    meta['objective_floor'] = args.objective_floor
     report = {'scope':'unrestricted outcome-witness DAG candidate generation',
               'universal_bound_proved':False,'mode':mode,'milp':meta,
               'exact_candidate':exact_optimize(cone,objective) if cone else None}
@@ -199,7 +214,7 @@ def main():
     summary = dict(report)
     if summary['exact_candidate']:
         summary['exact_candidate'] = {k:v for k,v in summary['exact_candidate'].items()
-            if k not in ('strategy','integer_clones')}
+            if k not in ('strategy','integer_clones','dual_support')}
     print(json.dumps(serializable(summary)),flush=True)
 
 
