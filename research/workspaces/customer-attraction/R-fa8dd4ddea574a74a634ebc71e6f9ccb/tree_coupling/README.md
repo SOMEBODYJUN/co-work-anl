@@ -7,6 +7,8 @@
 * `verify_support_conservation.py`：无LP依赖的定义级Fraction复核器。
 * `pair_circuit_repair.md`：任意人数双支持正项回路，以及两条三人回路+3条真实激励+5条稀释精确修复本图9/4到2。
 * `verify_pair_repair.py`：该稀疏行证书的独立定义级Fraction核验。
+* `three_support_background_circuit.md`：m=3s+k的七收益正项回路，正确补偿一个第三主题的k个固定占位；附原二支持系数不能直接提升的精确原因。
+* `verify_background_circuit.py`：对全部s,k的形式多项式恒等式核验，不以有限样本代一般证明。
 * `probe_common_coverage.py` 与 `probe_*.json`：探索性浮点LP，不作一般数学结论。
 
 下一步：加入完整共同有符号表示身份，寻找其他真实SPE策略图的二以上放松；或提取少量跨标签身份修复本图的精确Farkas证书。全部有序历史、允许任意历史平局；不把span当cone，不把必要放松当SPE。
