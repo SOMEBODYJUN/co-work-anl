@@ -18,6 +18,10 @@ Boss5继续Q-CAG-HALF：CAG-MODEL下任意共同目录、任意人数、全部�
 - `credible/`：完整可信构造与机制障碍。
 - `terminal/`：更早真实菜单和价格。
 - [完整图对齐盲重构](parent/clique_alignment_review.md)：root从二元会员与真实末位行独立推导计数预算；根福利支付仍缺。
+- [本轮精确Claim](CLAIMS.md)：每项对象、量词、假设、证据、异议、状态与文件；个人内部审查不等于共享canonical。
+- [同查询支配边界](coupling/same_query_redundancy_and_2396.md)：新完整图行不能切旧相同T_i菜单坏点，说明需要哪些真正新回复字段。
+- [共同终局交换](credible/common_terminal_exchange.md)及[root拥挤推广审查](parent/common_terminal_exchange_review.md)：条件性(2−α)匹配证书与多惩罚模板的真实失败机制。
+- [完整终局净债务](security/full_terminal_debt.md)：H信用恒等式、锐静态比较与尚开放的全分布聚合。
 
 下一义务是把共同客户的强必要约束与早期真实收益连在一起；仅末位菜单或最坏分母无法直接支付根W。每个文件单独注明证据和审查状态。
 
