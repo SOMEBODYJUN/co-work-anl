@@ -60,4 +60,4 @@
 
 本轮用户指定的加权拥塞方法研究已整理为[结构用于稳定决策与成本优化](research/current/weighted_congestion/decision_methods/README.md)：含连续成稿、精确校准、原游戏修复、成本拼装、可运行决策器及独立审查；既有线性下界与英文稿从同一成果包恢复入口读取。
 
-加权拥塞旧稿的恢复范围已[纠正并逐项对照](research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)：现有决策专题没有恢复用户残存概述中的近一主结果与统一结构论文；原始参考已单独存档推送。
+用户指定的加权拥塞[结构论文专题](research/current/weighted_congestion/structural_reconstruction/README.md)已从实际资源定义重建端点—面积、共同尺度拼接、权深度和稳定核修复的一般证明，并接通近次数全状态反例与有条件的成本优化。旧[恢复范围对照](research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)保留为历史记录；现行覆盖和审查等级以结构专题及精确账本为准。
