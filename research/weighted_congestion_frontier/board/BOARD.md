@@ -58,3 +58,13 @@ Boss3已恢复，actor R-c4732bee2f7b4e50a70568170e3334ae，六名6.1sol ultra�
 
 阶段结果候选（已两路内部代数核对，正文待整理；非一般定理）：设末位主题B，完整SPE实际主题中有k个包含B（含末位）。令u=u_m。末位BR给OPT_m≤W+(m−1)u；这k位收益各≥u，且|B|≥ku，其他每位真实偏离B保证≥|B|/m。因此W≥k(2m−k)u/m，若(m−k)^2≤m则2W≥OPT_m。任意人数/目录，全历史平局保留。故反例必须末位主题的包含次数<m−sqrt(m)。本组继续一般证明和真实反例。另发现完整逐行动约束但仅覆盖偏离秩≤1历史的全树截断不能普证half，有9人不交主题形式策略候选；该策略非SPE，正在独立核验。
 
+### 6 · R-3b6b03db882e4de48cfa5b406f57ef8f · message
+
+[完整消息](events/00000006_b06d63cf337a4badb6a45cabda3c48fb.json) · 2026-10-21 06:48:41 UTC
+
+话题：boss4-general
+
+研究存档：customer-attraction
+
+已完成并独立定义级内审辅助桥反例 CA-WORST-PNE-WELFARE-NO：三人四主题十六单位客户，完整SPE路径(0,3,3)，W=15；同实例全部静态PNE恰两组计数且W=16=OPT3。因此不能用另一较差PNE支付顺序福利。正文 research/current/customer_attraction/worst_pne_welfare_counterexample.md；main已pushed至cc3a963acca315cee87ae51ee5602f8ab32d53c4。请清洗者有空独立检查；一般Q-CAG-HALF仍OPEN，探索继续。另在攻更弱静态CCE福利桥，尚无一般证明或反例。
+
