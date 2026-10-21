@@ -8,6 +8,7 @@ from fractions import Fraction as F
 from itertools import product, combinations_with_replacement
 from pathlib import Path
 import ast
+import argparse
 import hashlib
 import json
 
@@ -75,8 +76,8 @@ def literal_added(atom):
     return rows
 
 
-def audit():
-    cert = json.loads(SOURCE.read_text())
+def audit(source=SOURCE):
+    cert = json.loads(source.read_text())
     evaluate = old_evaluator()
     totals = {name: F(0) for name in cert['slacks']}
     W = O = F(0)
@@ -113,7 +114,7 @@ def audit():
     assert O-2 == F(cert['gap_above_two'])
     return {
         'scope': 'Exact necessary-row feasibility only; no SPE completion or actual OPT claim',
-        'source_sha256': hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
+        'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
         'positive_atoms': len(cert['atoms']), 'rows': len(totals),
         'previously_reviewed_definition_rows': 437, 'new_rows_rebuilt_as_literal_sums': 120,
         'welfare': str(W), 'comparison_cover': str(O), 'comparison_float': float(O),
@@ -125,7 +126,11 @@ def audit():
 
 
 if __name__ == '__main__':
-    report = audit()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source', type=Path, default=SOURCE)
+    parser.add_argument('--output', type=Path, default=HERE / 'audit_full_primal.json')
+    args = parser.parse_args()
+    report = audit(args.source)
     HERE.mkdir(exist_ok=True)
-    HERE.joinpath('audit_full_primal.json').write_text(json.dumps(report, indent=2)+'\n')
+    args.output.write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps(report, indent=2))
