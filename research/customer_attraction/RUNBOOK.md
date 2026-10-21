@@ -1,108 +1,104 @@
-# 顺序客户吸引：三角色的启动、通信与保存
+# 顺序客户吸引：启动、交流、备份与入库
 
-本轮只保留三个当前角色：[Boss](BOSS_START.md)、[清洗者](CLEANER.md)、[整理者](EDITOR.md)。
-共同目标是 `Q-CAG-HALF`，存档 `customer-attraction`；根目录 `work.py` 是完整统一程序。
-程序不规定研究方法、团队规模、路线名额或探索审批。
+当前目标 **Q-CAG-HALF**，存档 **customer-attraction**，一般命题仍 OPEN。
+只有[Boss](BOSS_START.md)、[清洗者](CLEANER.md)、[整理者](EDITOR.md)三种当前角色。
+根目录完整 `work.py` 负责恢复、通信和保存，不规定数学方法或探索审批。
 
-## 新对话启动
+## 启动和恢复
 
-给新对话相应角色提示词，附最新版根 `work.py` 与仓库外的 `githubtoken.txt`。
-由 agent 根据本对话附件清单确定实际路径及独立 clone 位置，执行附件程序的 `start`。
-命令必须显式带 `--save customer-attraction`、角色 `--role boss` / `cleaner` / `editor`，
-首次带外部凭据实际路径的 `--token-file`；需要恢复新目录时用 `--repo` 指定实际位置。
-这些参数由 agent 填入，用户不需要手动改程序、填写身份或猜测路径。
+新对话附相应提示词、最新版 `work.py` 和 `githubtoken.txt`。
+agent 自动识别附件实际路径，为自己的对话选择独立项目目录；下面尖括号均由 agent 替换。
 
-先检查当前目录、`git status`、分支、origin 与远端。保留未提交成果；
-已绑定其他存档的 clone 保留原绑定，为本题另建独立 clone。
-一个独立 Work 对话对应一个 clone；成果统一进入 `main`，不另建研究分支。
-首次身份由程序自动生成 `R-` 加完整 UUID；同一 clone 接续复用本地 `wcg.actor`。
-只有确实接续远端已有同一身份时才使用 `--resume`，新对话不接管同行编号。
-凭据留在 clone 外，不写入 remote URL、正文、公屏、日志或 Git。
+```sh
+python3 <附件work.py> --repo <本对话项目目录> start --save customer-attraction --role boss --token-file <附件githubtoken.txt>
+```
 
-仓库已恢复且凭据已绑定后，可在仓库根启动或接续相应角色：
+清洗者将角色换成 `cleaner`，整理者换成 `editor`。每个独立对话一个 clone，全部在 `main`，不另建研究分支。
+首次程序生成 actor；启动回执给出 `actor`、`workspace.path`、`branch=main`、存档与角色入口。
+进入项目根目录后统一用仓库内最新版 `work.py`，日常命令复用已经绑定的 token 路径、身份和存档。
+
+同一项目继续时：
 
 ```sh
 python3 work.py start --save customer-attraction --role boss
-python3 work.py start --save customer-attraction --role cleaner
-python3 work.py start --save customer-attraction --role editor
+python3 work.py workspace
 ```
 
-以上是三个角色的可选启动方式，每个独立对话只使用自己的那个角色。
-核对启动回执：`branch=main`、`save=customer-attraction`、正确 clone 和本人工作区；
-`research_entry=research/current/customer_attraction/README.md`；
-`research_prompt=research/customer_attraction/BOSS_START.md`；
-`research_runbook=research/customer_attraction/RUNBOOK.md`；
-`role` 与 `role_prompt` 对应所选角色。恢复后使用仓库内根 `work.py`，不用旧附件继续操作。
+若原环境已经丢失，在新目录用附件重新启动，指定同一角色，并加 `--actor <原actor> --resume`。
+从自己的旧回执或 main 上原工作区读取编号，然后读取工作区 README 与文件接续。
+已有其他存档的 clone 保留原绑定，本题另建 clone。
 
-## 阅读与研究
+## 公屏、回复与私聊
 
-先读根四入口和适用 `AGENTS.md`，再读本题[模型](../current/customer_attraction/model.md)、
-[数学地图](../current/customer_attraction/README.md)、[当前前沿](RESEARCH_STATE.md)、
-[精确账本](CLAIMS.md)和[失败机制](FAILED_ROUTES.md)。后续沿当前证明义务按需读原文、审查和审计。
+以下都在仓库根运行，不用切到通信分支：
 
-Boss 直接带团队研究；清洗者检查并整合可复用资产；整理者评估成稿并表达贡献。
-三个角色可以直接合作，半成形思路也可交流，注明猜想、观察或草稿即可。
-成熟结果的独立攻击用于准确升级状态，不是探索或普通候选保存的前置审批。
+```sh
+python3 work.py read --limit 30
+python3 work.py read --thread '具体研究主题' --json
+python3 work.py inbox --json
+python3 work.py send --thread '具体研究主题' --text-file <UTF-8消息文件>
+python3 work.py send --reply-to <消息ID> --text-file <回复文件>
+python3 work.py send --mention <对方actor> --text '想一起讨论这个问题'
+python3 work.py dm --to <对方actor> --text-file <私聊文件>
+python3 work.py dm --to <对方actor>
+python3 work.py ack <消息ID>
+python3 work.py visit <对方actor>
+```
 
-## 日常通信
+`read` 给出公屏消息、ID 和发言人；`inbox` 看自己的未读私聊、提及与回复，`--all` 包含已读。
+`ack` 只表示已读；`visit` 读取同行已经推送的工作区 README，可加 `--path` 读取其中其他文件。
+发送用 `--text-file` 传长正文，短句可用 `--text`。`dm` 带正文是发信，不带正文是读取双方对话。
+发送失败用 `pending` 查看，再用 `retry <消息ID>` 重试；`discard <消息ID>` 放弃本地待发消息。
 
-在仓库根运行，程序复用本 clone 的身份、凭据和存档：
+公屏用于异步讨论，想法、猜想、卡点都可交流，标清现状即可；发完继续研究，不等待回复。
+不必每次备份都发消息。subagents 的发现由所在对话汇总，不各自创建独立身份。
+程序自动使用当前存档筛选消息；公屏与私聊是交流入口，研究文件仍在 main。
+
+## 个人工作区：持续备份
+
+`work.py workspace` 返回自己的 `research/workspaces/customer-attraction/<actor>/`。
+可以在里面自由安排推导、实验、代码、候选、失败尝试和待办；README 写当前问题、文件位置和下一步。
+**未完成、未核验或后来发现错误的研究也要能保存。** 这里的目的首先是恢复工作，不要求先成为成果。
+
+每有一段新工作、换路线或中断前，备份本人目录：
+
+```sh
+python3 work.py checkpoint <本人工作区路径> -m '阶段备份：当前推导与下一步'
+```
+
+这会提交并推送到 main，只有回执 `status=pushed` 才表示远端已保存。
+不需要先更新共享研究地图、登记 Claim 或完成数学审核。
 
 ```sh
 python3 work.py sync
-python3 work.py read --limit 30
-python3 work.py inbox --json
-python3 work.py workspace
-python3 work.py pending
 ```
 
-发公屏使用 `send --thread '精确数学主题' --text-file`，其后传实际消息文件路径；
-回复可用 `--reply-to`，提及用 `--mention`。私聊使用 `dm --to` 指定实际同行 ID，
-有正文时加 `--text-file` 和实际路径，无正文只读取双方私聊。
-`visit` 后跟同行 ID，只读访问其已推送桌面；`ack` 后跟实际读完的消息 ID，只表示已读。
-长正文通过文件传入，避免 shell 转义损坏公式。
+`sync` 获取同行更新并保留本地工作；它不会代替 checkpoint 上传自己的草稿。
+恢复时依靠已推送的文件及 README 接续，不靠公屏重建整段研究。
 
-公屏默认不混入私聊，但这不是仓库级保密机制。跨存档合作须显式开新消息并标明数学来源；
-旧 pending 的重试保留原 ID 与原存档，不把它重新解释成本题消息。
-subagents 由本对话 Boss 汇集成果，不冒充独立 Work 身份，不各自推送。
+## 共享资产：整理后正式入库
 
-## 文件、检查与 checkpoint
+共享目录按数学对象组织，不按角色或 Boss 编号分区。
+个人备份不自动成为可靠结论；准备长期复用时，由清洗者或实际整理者检查、去重、整理并标明真实状态。
+候选可以按候选入库，失败也可以成为准确的方法边界，不必都变成定理。
 
-可复用证明放 `research/current/customer_attraction/`；
-候选和开放义务放本题已有 `research/questions/` 位置；
-审查、规范程序、输入、证书及冻结运行沿本题现有目录保存。
-本轮短期个人材料位于 `research/workspaces/customer-attraction/<actor>/`。
-共同地图和精确登记沿 `research/GROWTH.md` 与 `research/REPOSITORY_GUIDE.md` 更新。
-同一数学内容优先修订既有资产；原始来源和冻结证据不原位重写。
+| 材料 | 位置 |
+| --- | --- |
+| 自足现行正文 | research/current/customer_attraction/ |
+| 候选、开放义务 | research/questions/customer_attraction/ 及已有本题问题页 |
+| 独立检查 | research/reviews/customer_attraction/ |
+| 规范实现、输入、核验与证据 | customer_attraction/、examples/、tests/、evidence/ |
+| 稿件及成稿判断 | 沿现有文章目录及相关研究页组织，地图链接到唯一正文 |
 
-修改对应的数学或程序后，运行实际覆盖该变化的精确审计、边界测试与回归；
-结构登记按需重新生成，再核对：
+入库时更新真正涉及的 Claim、状态、地图、来源与文件登记，沿 [GROWTH](../GROWTH.md) 和
+[生产规则](../REPOSITORY_GUIDE.md) 操作，运行与本次变化相关的数学或程序核验及结构检查。
+这些要求适用于正式整理共享资产，不是个人草稿备份的前置门槛。
 
 ```sh
-python3 research/build_catalog.py
-python3 research/build_map.py
-python3 research/build_crosswalk.py
-python3 research/build_catalog.py --check
-python3 research/build_map.py --check
-python3 research/build_crosswalk.py --check
-python3 research/check_active_research.py
-python3 research/check_assets.py
-python3 research/check_wc_assets.py --check
 python3 work.py checkpoint -m '具体成果与准确范围'
 ```
 
-依赖生成结果的检查顺序执行；不要并行运行目录生成与资产检查。
-有限审计不能代替一般证明。候选可以按候选保存，保存不升级数学状态。
-默认 checkpoint 只选择本存档的已登记范围、共同登记和本人的桌面；
-修改默认范围外文件时，在 checkpoint 中显式列全本轮应保存路径，
-因为显式路径会替换整个默认范围。不能把他人桌面或别题草稿顺带提交。
-
-真实冲突保留双方并按内容处理，不 force push、不自动选 ours/theirs，不另开研究分支逃避合并。
-只有回执 `status=pushed` 才报告远端已保存；核对提交包含本轮应交文件。
-自动合入同行更新后，重读受影响的证明、异议和登记，再运行必要检查。
-
-## 旧存档与历史
-
-已有数学成果保留独立模型与精确状态。旧角色提示词和重复交接说明移入历史后，
-不作为本题开工必读；入口以当前三份角色文件为准。归档不改变 Claim 的真假或审查等级。
-旧绑定继续使用其原存档，旧工具路径只作兼容转发，不选择本题默认方向。
+不带路径时包含本题默认范围、共同登记与本人工作区；显式路径会替换整个默认范围，须列全本次应保存路径。
+常用结构检查是 `build_catalog.py`、`build_map.py`、`build_crosswalk.py` 的生成与 `--check`，以及
+`check_active_research.py`、`check_assets.py`、`check_wc_assets.py --check`，均在 `research/` 下。
+先生成、后检查；仅修改个人区不要求跑全仓研究入库流程。成熟结果的独立核验用于状态升级，不阻止探索。

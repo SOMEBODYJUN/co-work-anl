@@ -15,10 +15,10 @@
 | 可接续候选 | research/questions/customer_attraction/，准确标级，不为通过检查而升级 |
 | 已发生的独立检查 | research/reviews/customer_attraction/，记录版本及真正覆盖 |
 | 规范实现与验证 | customer_attraction/、tests/、examples/和evidence/；有限验证不替代一般证明 |
-| 个人可复用草稿 | research/workspaces/customer-attraction/<actor>/；成熟内容按数学对象入库 |
+| 个人研究与恢复备份 | research/workspaces/customer-attraction/<actor>/；未完成、未核验和错误尝试也可提交，整理后再入共享资产 |
 | 过期指挥文本与原始来源 | history/，保留来源位置和hash；重复无增量输出不入库 |
 
-每个有价值阶段：自足正文及真实证据 → 精确身份/状态/相关文件和依赖 → 对应核验 → work.py checkpoint普通提交推送。保存候选不自动提升状态。只有status=pushed才报告远端保存。生成目录只维护文件身份，不制造数学结论。
+个人目录每有一段新工作、换路线或中断前及时checkpoint，不以数学入库标准阻止备份；README记录当前问题、材料和下一步。共享资产正式入库时：整理正文及证据 → 明确实际身份/状态/依赖 → 对应核验 → checkpoint普通提交推送。共享目录不按角色分区，保存不自动提升数学状态。只有status=pushed才报告远端保存。
 
 ## 大规模并行与隔离
 

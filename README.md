@@ -48,6 +48,6 @@
 | research/questions/customer_attraction_general_handoff.md | 未闭合的数学义务及已失败桥的范围；不再重复存放长角色提示词 |
 | research/reviews/customer_attraction/、customer_attraction/、tests/ | 已发生的审查、规范实现及独立验证；以每条合同为准 |
 | examples/customer_attraction/、evidence/ | 实际输入、完整策略证书及冻结运行；冻结记录不原位覆盖 |
-| research/workspaces/customer-attraction/ | 每位研究者的可接续桌面；成熟资产进入相应正文/候选，不按人重复复制 |
+| research/workspaces/customer-attraction/ | 每位研究者持续备份的个人桌面，含未核验与失败尝试；整理后进入按数学对象组织的共享资产 |
 
 [研究总目录](research/README.md)、[中文资产目录](research/CATALOG.md)、[全仓资产](ASSETS.md)与[生产规则](research/REPOSITORY_GUIDE.md)补充导航。历史来源从[历史入口](history/README.md)进入；本次实际清理与原字节追踪见[整理记录](research/customer_attraction/CURATION.md)。

@@ -273,9 +273,11 @@ def workspace_init(repo, save, who, resume=False):
         if not readme.exists():
             with readme.open("x") as stream:
                 stream.write(f"# {who} 的个人研究工作区\n\n研究存档：`{save}`；发布身份：`{who}`。\n\n"
-                             "## 当前研究\n\n在这里写准确问题、采用的定义/命题版本、当前表示与卡点。\n\n"
-                             "## 可访问材料\n\n按需要在 notes/、experiments/、candidates/ 中保存有接续价值的材料，并在此链接。"
-                             "成熟资产沿既有规范入库，此处链接正文，不重复复制。\n\n"
+                             "## 当前研究与恢复\n\n写下正在做什么、文件位置、当前卡点与下一步，恢复时从这里接续。\n\n"
+                             "## 个人材料与备份\n\n在此自由建立目录，保存推导、代码、实验和失败尝试。"
+                             "未完成、未核验或后来发现错误的研究也可以提交，标明现状即可；不要等结果成熟才备份。\n\n"
+                             f"保存本人目录：python3 work.py checkpoint {relative.as_posix()} -m '阶段备份：当前推导与下一步'\n\n"
+                             "共享正文与研究地图按数学对象组织，不按角色分区；材料检查整理后再正式入库，此处链接正文。\n\n"
                              "## 交流与状态\n\n可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。"
                              "本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。\n")
         run(repo, "config", "--local", "wcg.instance", instance)
