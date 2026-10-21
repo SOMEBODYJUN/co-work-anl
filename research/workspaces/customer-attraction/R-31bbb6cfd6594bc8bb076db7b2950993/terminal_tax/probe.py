@@ -125,6 +125,8 @@ def main():
     if args.named:
         for path in sorted((ROOT/'evidence/certificates/customer_attraction').glob('*.json')):
             data = json.loads(path.read_text())
+            if not isinstance(data, dict):
+                continue
             policy = data.get('strategy', data.get('certificate', data))
             if not isinstance(policy, dict) or 'actions' not in policy:
                 continue

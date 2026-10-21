@@ -11,7 +11,7 @@ from actual_ap_projection import build
 
 HERE = Path(__file__).resolve().parent
 M = 5
-MAXIMA = [[2,3,5], [4], [4], [5]]
+MAXIMA = [[2,3,5], [4,5], [4,5], [5]]
 
 
 def get_witness():
