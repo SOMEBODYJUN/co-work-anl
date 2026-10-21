@@ -180,6 +180,86 @@ W^{G_+}(s)=K+W^B(s)
 
 注意稳定集合内最优只给 \(\min_{\mathcal T_\alpha}W^B\)，不能省去它与 \(\min_{\mathcal F}W^B\) 的比较，就自动宣称任何有限 \(\lambda\) 福利界。SD 失败时 S6 的完整 OPT 结论也不能仅凭前沿恒移调用；可改用真实完整社会成本下界证书。
 
+### 5.1 正则化核心的稳定性与社会质量联合保证
+
+S6 的质量输入可由[共同尺度成本正则化](../decision_methods/decision_quality.md#3-把已有局部势变成稳定性福利曲线)提供。以下把所需合同和两个修复预算放在同一命题中；它不是从 SD 单独推出稳定性或成本近似。
+
+**推论 S7（正则化核心的联合转移）。** 基体次数至多 \(p\)。给定资源集合函数 \(F_e\)，\(F_e(\varnothing)=0\)，跨全部基体资源共同的玩家尺度 \(h_i>0\)，以及 \(\alpha_0\ge1\)。对每个潜在用户插入边 \(T\to T+i\)，令 \(Y=\sum_{j\in T}w_j+w_i\)，假设
+
+\[
+h_i c_e(Y)\le F_e(T+i)-F_e(T)\le\alpha_0h_i c_e(Y).
+\tag{SR1}
+\]
+
+记 \(\Phi_B(s)=\sum_eF_e(S_e(s))\)。再给出 \(0<m\le M<\infty\)，只须在全部前沿状态上满足
+
+\[
+mW^B(s)\le\Phi_B(s)\le MW^B(s),\qquad s\in\mathcal F.
+\tag{SR2}
+\]
+
+对任意有限 \(\eta\ge0\)，定义
+
+\[
+\Psi_\eta(s)=\Phi_B(s)+\eta W^B(s),\qquad
+\beta_\eta=\max_i
+\frac{\alpha_0h_i+\eta(p+1)w_i}{h_i+\eta w_i},\qquad
+\lambda_\eta=\frac{M+\eta}{m+\eta}.
+\tag{SR3}
+\]
+
+选取 \(s_\eta\in\arg\min_{s\in\mathcal F}\Psi_\eta(s)\)。若每个非平凡类的门同时满足
+
+\[
+v_a>\beta_\eta(B_a+L_au_a),\qquad
+3v_a-2u_a-z_a>(p+1)B_a,
+\tag{SR4}
+\]
+
+则该状态是完整游戏的 \(\beta_\eta\)-PNE，且
+
+\[
+W^{G_+}(s_\eta)
+\le K+\lambda_\eta\min_{t\in\mathcal F}W^B(t)
+\le\lambda_\eta\,\mathrm{OPT}(G_+).
+\tag{SR5}
+\]
+
+若 \(3\beta_\eta\ge p+1\)，SR4 的第二式由第一式自动蕴含。这里 \(p\) 是**基体次数**；输出游戏的门次数不进入 SR3，而须单独报告。
+
+**证明。** 对资源的社会费用 \(G_e(T)=x_e(T)c_e(x_e(T))\)，S3 的单项式展开同时给出插入边际的双边界
+
+\[
+w_i c_e(Y)\le G_e(T+i)-G_e(T)
+\le(p+1)w_i c_e(Y).
+\]
+
+因此 \(F_e+\eta G_e\) 的插入边际介于
+\((h_i+\eta w_i)c_e(Y)\) 和
+\(\beta_\eta(h_i+\eta w_i)c_e(Y)\) 之间。对一次两端都在前沿的真实单玩家偏离，将基体的退出、进入、保留资源费用分别记为 \(A,B,H\)。保留资源负载不变，故
+
+\[
+\Psi_\eta(t)-\Psi_\eta(s)
+\le(h_i+\eta w_i)(\beta_\eta B-A).
+\]
+
+若偏离是严格 \(\beta_\eta\)-改善，则
+\(A+H>\beta_\eta(B+H)\) 且 \(H\ge0\)，从而 \(A>\beta_\eta B\)，与 \(s_\eta\) 在前沿上的全局最小性矛盾。前沿虽未必是策略笛卡尔积，这一论证只用两端在前沿的真实偏离，所以仍成立。故 \(s_\eta\) 是受限核心的 \(\beta_\eta\)-稳定点，由 R-T 和 SR4 第一式提升为完整游戏均衡。
+
+取前沿社会最优 \(o\)，SR2 和全局最小性给
+
+\[
+(m+\eta)W^B(s_\eta)
+\le\Psi_\eta(s_\eta)\le\Psi_\eta(o)
+\le(M+\eta)W^B(o).
+\]
+
+最后由 S4 和 S6 得 SR5。证明未除以社会最优值，零成本边界也包含。证毕。
+
+必用用户若已被吸收为背景，SR1 可只检查真实可选插入边，但必须使用已经恢复社会成本基线的 \(\Phi_B\)，并重新认证 SR2。不能将 \(F_e^{\rm opt}(\varnothing)=0\) 的归零压缩势直接同包括必用用户成本的 \(W^B\) 作正下包络；例如只有必用用户的正费用资源会给零压缩势、正社会费用。一个充分恢复式是逐资源加入 \(q_{\min}b_ec_e(b_e)\)，其中 \(q_{\min}=\min_i h_i/w_i>0\)；其具体包络证明见所引正则化稿第3.2节。完整 \(W^B\) 和门基线 \(K\) 始终计入交付成本。
+
+这是有限选择定理，不提供紧凑输入下的高效全局最小化。前沿单边局部最小点只获受限稳定性，不能据此使用 SR5 的社会成本界；近似全局目标 gap 只给加性成本误差，稳定性仍须另核。即使只枚举前沿，状态数 \(\prod_a2n_a\) 也可能是指数级。原实例已含这些门且通过 SR4 时可直接使用此压缩；由设计者新增门时，保证属于扩充游戏。
+
 ## 6. 完整有理数边界例：RD 成立而社会最优在前沿外
 
 本例不反驳 S4，因为 SD 不成立。它说明必须保留额外社会外部性预算。
@@ -217,7 +297,7 @@ c(x)=\frac65(x/3)^6,
 
 前者严格大于后者，所以全部前沿成本严格大于010。一次指定修复为010→000，mover 费用从 \(6/5\) 降至 \(1+2/1215\)，但完整加权社会成本严格上升。即使每步都是精确个体改善，也不能在一般高次基体中声称社会改善。
 
-精确枚举、具体最优值与源码哈希见同目录 `independent_audit.json`。该例同时保留“每个前沿门社会成本恒为 \(2u+z\)”；所以恒移与完整社会最优在前沿外完全相容。
+精确枚举、具体最优值与源码哈希见[冻结审计](../../../../evidence/runs/weighted_congestion/structural_reconstruction/repair_cost_audit.json)的 `global_optimum_boundary` 项及[审计源码](../../../../tests/audits/weighted_congestion/structural_reconstruction/repair_cost_audit.py)。该例同时保留“每个前沿门社会成本恒为 \(2u+z\)”；所以恒移与完整社会最优在前沿外完全相容。
 
 ## 7. 正文可直接采用的短段落
 

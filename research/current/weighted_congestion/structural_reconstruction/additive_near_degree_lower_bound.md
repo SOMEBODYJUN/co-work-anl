@@ -3,8 +3,10 @@
 **ID/version:** `WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1`.
 
 **Status:** complete author proof, personally reconstructed by the lead;
-final independent attack is pending. Finite audits verify the stated identities,
-not the universal tail. The source construction is the
+an [independent mathematical attack](../../../reviews/weighted_congestion/structural_reconstruction/additive_near_degree_review.md)
+is complete with no fatal objection found. This is internal verification,
+not external review or a novelty determination. Finite audits verify the stated
+identities, not the universal tail. The source construction is the
 [fixed-c parameterized account](parameterized_allstate_family.md).
 
 ## 1. Exact target and the bottleneck before reading the family
@@ -501,10 +503,12 @@ the original (n^2) threshold by the actual conditions (A). Sections 2–6
 also reproduce the construction and its all-state proof so that this note
 can be reviewed without accepting an old theorem on trust.
 
-The companion `audit.py` independently checks finite endpoint identities,
+The companion [near_degree_audit.py](../../../../tests/audits/weighted_congestion/structural_reconstruction/near_degree_audit.py)
+independently checks finite endpoint identities,
 the wrap symmetry, the parity defect counts, and the earliest-error clock
 repair from actual resource sides. It also checks integer rounding on large
-example degrees. Those checks can catch transcription errors but do not
+example degrees; its [frozen output](../../../../evidence/runs/weighted_congestion/structural_reconstruction/near_degree_audit.json)
+records 3402 exact cases. Those checks can catch transcription errors but do not
 prove this infinite tail. The proof of the tail is (Y)–(Z), and the proof of
 the all-state conclusion is the classification in Sections 5–6.
 
