@@ -4,6 +4,16 @@
 
 ## 当前接续与状态
 
+本次继续已从远端恢复原 actor，独立 clone 为 `co-work-anl-boss5`；六名用户指定 `gpt-6.1-sol ultra` 子代理正在直接攻一般命题。一般 **Q-CAG-HALF 仍 OPEN**。下列是本次可接续资产；个人备份不是共享 canonical 状态升级。
+
+- [静态总正遗憾的完整 SPE 副本放大](round3_counterexample/regret_replication.md)：任意 k≥1，2k 人、3k 主题、4k 单位客户，完整纯 SPE 有 W=OPT=4k、R=k/2。因此不存在固定有限 C 使所有 SPE 均满足 R≤C W/m。一般结论来自五态协议与永久 BI 接管的全历史归纳，已有两名研究员独立攻击与 Boss 重构；[零导入独审](round3_independent/regret_replication_review.md)及代码对小副本完整树核验。此族没有漏覆盖，不反驳 half。
+- [本次主线程与全终局税探针](round3_boss/README.md)：`OPT_m≤W+Σ c/(c+1)` 的 c 计全部实际玩家；指定固定锥及联合全树有限运行目前没有反例，也没有一般证明。不能把数值 MILP 上界当证书。
+- `round3_global/`、`round3_security/`、`round3_tree/`、`round3_dynamic/`：分别推进聚合真实菜单、真正安全最优查询、CAG 克隆高阶差分/精确秩、背景副本表示；工作未完，状态以各正文为准。
+
+更新旧候选状态：Boss7 的已推送 23 客户完整 SPE 已否定下文曾列 OPEN 的 `2W≥(m+1)u_m` 聚合末位桥，见 `../R-7e9f44beea424d469713364afe7dd180/credible_counterexample/payoff_cap_failure.json` 及其独审。该失败不否定真正静态安全值聚合桥、弱逐人缺口桥或一般 half。
+
+以下保留前阶段的研究记录与来源；涉及候选的最新状态以上文及共享账本为准。
+
 本次在新的临时目录从 main 恢复本身份并成功 `start --resume`，保留原研究资产。六名用户指定 gpt-6.1-sol ultra 研究员并行推进（直属五名及安全值分支一名）。唯一主目标仍 OPEN；不把一般聚合安全、逐人缺口或末位克隆候选当定理。
 
 本次新增可接续工作见 [next_boss/README.md](next_boss/README.md)：自由终局、逐人归一的完整树 MILP 与精确固定策略锥复验。它是既有联合策略/重数工具的目标变体，当前只提供有限候选与运行边界，未得到新的一般数学结论。各研究分支在 `next_global/`、`next_security/`、`next_counterexample/`、`next_tree/`、`next_representation/` 留存本次推导；未完成者保持候选身份。
