@@ -8,7 +8,7 @@ ROOT=Path(__file__).parent
 MASKS=[sum((1<<(2+i)) for i in range(4) if mask>>i&1) for mask in range(1,16)]
 def make(w,k=1,x=3,a=2):
  names=tuple(z+str(i) for i in range(k) for z in ['C','A','B1','B2'])+('D1','D2')
- c=[CustomerType(frozenset(range(4*i,4*i+4)),x) for i in range(k)]+[CustomerType(frozenset({4*i+1}),a) for i in range(k)]
+ c=[CustomerType(frozenset(range(4*i,4*i+4)),x) for i in range(k) if x]+[CustomerType(frozenset({4*i+1}),a) for i in range(k) if a]
  for mask,n in zip(MASKS,w):
   if not n:continue
   topics=set()
