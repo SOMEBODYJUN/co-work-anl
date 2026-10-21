@@ -39,11 +39,15 @@
 
 进一步加入异索引菜单、跨菜单、全积及同/异索引两人税、背景三人利润后，共2396行仍有38原子的精确正质量坏点，W=1、O≈2.03010659458>2；见 `next_credible/enhanced_2396_exact_obstruction.json` 与该目录README第6节。原64支撑上的小于2数值被一个全型新列推翻；不得把受限LP误报一般上界。新点是投影必要条件障碍，没有完整SPE或真实OPT证书，独立审查在next_global进行。
 
+`next_global/review_2396.md` 及定义级展开审计现已完成：38质量严格正、全部2396行非负、44等号；1959新增行在74442个原子/行位置与独立索引展开一致。旧坏点不因加很多可信局部行而自动成为SPE；真正根回复的跨索引相互最佳回复仍在研究。
+
 `next_terminal/prefix_absence_repeated_last.md` 给新Claim `B2-REPEATED-LAST-ABSENCE-v1`：末主题重复k次、d=m−k时，由逐客户前缀缺席得到精确调和系数gamma；gamma≥m−1即半覆盖。新判据严格包含旧判据，并在d/√m趋lambda<sqrt(2+sqrt3)时最终成立。作者完整证明与主代理独立重构均已写出，有限回归另列；尚未正式shared、无外审/新颖性认证。
 
 `next_tree/fixed_rank_proof.md` 补齐任意固定离轨秩k无统一福利常数的自足证明：形式策略根福利为LΣ_(r=1)^m 1/ceil(r/2^k)，OPT=mL；受约束行全部成立，明确省略行却违反SPE。它是截断方法边界，非目标反例。
 
 抽象匿名自拥挤收益类的两人五循环已经被两位研究员独立否定聚合安全桥；加入势后的更宽有限人口DR势类也出现待独审候选。后者仍不满足CAG必要的锋利同主题稀释，不能将其解释为客户吸引反例；当前继续保留真正非负harmonic客户核约束。
+
+主代理新增 `B2-PARTITIONED-OPTIMAL-FROZEN-PAYMENT-NO-v1` 已作者及另一研究员各自定义级审查：`next_boss/partition_attack/optimal_partition_counterexample.md` 的二人六主题14客户完整SPE有W8，唯一最优组合{2,3}覆盖10，全部去重冻结替换查询匹配恰9>8。它否定PFR-OPT-v1存在性支付桥，仍满足half；不否定添加查询、全终局税或真正静态安全值。
 
 ### 上轮恢复记录
 
