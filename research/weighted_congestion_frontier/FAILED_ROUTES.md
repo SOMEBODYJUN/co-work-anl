@@ -139,3 +139,15 @@
 | 单靠位串规范化或新增惩罚资源便声称原游戏修复 | 无条件earliest翻位能把原精确PNE任意增费并破坏稳定；增加资源改变问题 | [已有时钟强支配](../current/weighted_congestion/decision_methods/repair.md)才认证原游戏改善；即使支配成立仍可能前沿循环，须完整核心求解 |
 
 这些失败不反驳各自保留了条件的正向方法。正式范围与已修补风险见[独立审查](../reviews/weighted_congestion/decision_methods_review.md)。
+
+## 结构重建保留的量词与社会预算边界
+
+| 容易误用的步骤 | 具体失效与正确接口 |
+| --- | --- |
+| 将局部d−2 log d传播包络当全状态坏游戏 | [端点工具](../current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md)只给收缩；必须另证振幅闭合、全部前沿出口、非法状态和实际次数。新的[加性近次数证明](../current/weighted_congestion/structural_reconstruction/additive_near_degree_lower_bound.md)逐项支付这些预算。 |
+| 在固定n的d₀(n)定理中直接代入n(d) | 原(600n)²起点不支持目标替换；新证明先改用统一端点/修复条件，再核对每个整数d及ceil跳跃，保留独立Claim版本。 |
+| 将环失配或精确字典NO当无均衡 | [统一包络](../current/weighted_congestion/structural_reconstruction/shared_scale_gluing.md)与[实际区间](../current/weighted_congestion/structural_reconstruction/instance_interval_calibration.md)优化域不同；两者NO都只否定各自证书合同，可与exactPNE并存。 |
+| 将强支配RD当完整社会下降 | [六玩家有理边界](../current/weighted_congestion/structural_reconstruction/socially_descending_repair.md)在RD成立时仍有社会OPT位于前沿外；额外3v−2u−z>(p+1)B才支付基体外部性，或用3α≥p+1的充分推论。 |
+| 将固定c的Θ_c(log d)深度当近一一致界 | [精确反演](../current/weighted_congestion/structural_reconstruction/weight_depth_threshold.md)在α=d−1已迫h,k≥d；高深度本身也不排除exactPNE。 |
+
+这些是真实方法边界，既不撤销各自满足条件的正向定理，也不由有限搜索失败推出一般不可能。
