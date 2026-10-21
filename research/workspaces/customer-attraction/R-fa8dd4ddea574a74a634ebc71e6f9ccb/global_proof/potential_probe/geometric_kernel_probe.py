@@ -16,10 +16,16 @@ ap.add_argument('--topics',type=int,default=6)
 ap.add_argument('--iterations',type=int,default=300)
 ap.add_argument('--seed',type=int,default=791)
 ap.add_argument('--resource-specific',action='store_true')
+ap.add_argument('--random-policy',action='store_true')
+ap.add_argument('--mixture',action='store_true')
 args=ap.parse_args()
 m,p=args.players,args.topics
 rng=np.random.default_rng(args.seed)
 masks=np.arange(1,1<<p)
+mix_rates=[0.0,.125,.25,.5,.75,.9,1.0]
+if args.mixture:
+    masks=np.repeat(masks,len(mix_rates))
+    fixed_rates=np.tile(mix_rates,(1<<p)-1)
 inc=np.array([[int(b>>a&1) for a in range(p)]for b in masks])
 
 def states(total,left=p):
@@ -32,8 +38,10 @@ layers=[list(states(k))for k in range(m+1)]
 eye=np.eye(p,dtype=int)
 best=-1e9
 for it in range(args.iterations):
-    tv=(rng.choice([.05,.125,.25,.5,.75,.9,1.0],size=len(masks))
-        if args.resource_specific else [.125,.25,.5,.75,.9][it%5])
+    trials=[0.0,.01,.125,.25,.5,.75,.9]
+    tv=(fixed_rates if args.mixture else
+        rng.choice(trials+[1.0],size=len(masks))if args.resource_specific else
+        trials[it%len(trials)])
     # Optional unstructured weight vector, still common geometric kernel.
     weights=rng.exponential(size=len(masks))*(rng.random(len(masks))<.35)
     F={}
@@ -50,7 +58,8 @@ for it in range(args.iterations):
         for q in layers[depth]:
             children=[final[tuple(np.array(q)+eye[a])]for a in range(p)]
             vals=np.array([F[z,a]@weights for a,z in enumerate(children)])
-            action=int(rng.choice(np.flatnonzero(vals>=vals.max()-1e-9)))
+            action=(int(rng.integers(p))if args.random_policy else
+                    int(rng.choice(np.flatnonzero(vals>=vals.max()-1e-9))))
             sigma[q]=action
             final[q]=children[action]
     root=(0,)*p
@@ -73,12 +82,12 @@ for it in range(args.iterations):
             value=float(coeff@res.x)
             if value>best+1e-8:
                 best=value
-                print('best',it,'resource-specific'if args.resource_specific else tv,value,actual,query,flush=True)
+                print('best',it,'mixture'if args.mixture else'resource-specific'if args.resource_specific else tv,value,actual,query,flush=True)
             if value>1e-6:
                 out=dict(scope='wider completely monotone geometric kernel, NOT CAG',
-                         players=m,topics=p,t=(list(map(float,tv))if args.resource_specific else str(tv)),seed=args.seed,iteration=it,
+                         players=m,topics=p,t=(list(map(float,tv))if args.resource_specific or args.mixture else str(tv)),seed=args.seed,iteration=it,
                          query=query,actual=actual,value=value,
-                         weights=[dict(mask=int(b),value=float(w))for b,w in zip(masks,res.x)if w>1e-9],
+                         weights=[dict(mask=int(b),value=float(w),t=float(tt))for b,w,tt in zip(masks,res.x,np.broadcast_to(tv,len(masks)))if w>1e-9],
                          sigma=[dict(counts=q,action=a)for q,a in sigma.items()])
                 path=Path(__file__).with_name('geometric_kernel_candidate.json')
                 path.write_text(json.dumps(out,indent=2)+'\n')

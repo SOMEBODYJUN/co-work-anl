@@ -3,6 +3,7 @@
 Does not import or run the author's checker or finite parameter scan.
 """
 from collections import defaultdict
+from fractions import Fraction as F
 from pathlib import Path
 import hashlib
 import json
@@ -74,6 +75,19 @@ same((4*k*k-11*k+4).substitute(0,t+12),4*t*t+85*t+448)
 # F=(k)/(k-5), 2(k-2)K=(k-2)/(k-3), 4theta=4/(k-5).
 same((k-4)*(k-3)-(k-2)*(k-5),Poly.constant(2))
 
+# New signed-error extension: direct rational reconstruction of its strict
+# heterogeneous-background example, independently of the author's audit.
+def error(kval,bval,dval,tval):
+    if not dval:return F(0)
+    abase=F(2*(kval-2),kval)
+    return (F(dval,bval+dval)-abase*F(dval,bval+kval)
+            -min(tval*dval/(kval*(bval+1)),
+                 (tval*dval/kval+4-tval)/(bval+kval)))
+low=error(12,0,1,F(68,19));high=error(12,10,1,F(68,19))
+assert low==F(137,171) and high==F(-5,418)
+assert low+110*high==F(-88,171)
+assert F(10,11)>F(25,33) and F(1)>F(25,33)
+
 source=Path(__file__).resolve().parents[1]/'background_induction/joint_baseline_half_profit.md'
 report={
     'review_status':'Independent analytic review: no fatal objection found',
@@ -91,6 +105,8 @@ report={
       'interpolation':'N=((k-1-h)*N0+h*N1)/(k-1)'},
     'theta_obligation':'valid: each last-two competition tuple contains exactly k-1 legal themes added after the base history',
     'lower_background_obligation':'valid bridge counterexample at b=k-6; not a half-profit or half-coverage counterexample',
+    'signed_error_extension':'valid for k>=4: derivative has constant sign in h; each t gives a bound, so minimizing total error over t preserves it',
+    'signed_example_exact':{'low_error':str(low),'high_error':str(high),'total_error':str(low+110*high)},
     'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
     'reviewer_script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
     'limitations':'No claim for k<12 or b<k-5; root half coverage remains open.'}

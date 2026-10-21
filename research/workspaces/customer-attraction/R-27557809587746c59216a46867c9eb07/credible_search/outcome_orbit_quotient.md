@@ -1,6 +1,9 @@
 # 固定输入对称性下的完整历史终局见证商
 
-这是可审查候选引理与算法说明，不是半覆盖证明。采用CAG-MODEL。
+这是终局见证表示引理与算法说明，不是半覆盖证明。采用CAG-MODEL。
+background_exchange 已独立重建数学部分且未发现致命异议，见
+`../background_exchange/outcome_orbit_quotient_review.md`；该审查不认证
+实现和有限搜索完备性，外审与新颖性未认证。
 
 ## 命题及范围
 

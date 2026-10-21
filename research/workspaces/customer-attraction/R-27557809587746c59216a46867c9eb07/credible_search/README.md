@@ -71,3 +71,19 @@ python3 research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb
 
 下一步可以使用更多外部主题轨道，解除单个全对称块的输入限制；也可把此商接到
 真正聚合安全值等其他客观函数。现阶段没有主猜想反例、一般结构障碍或新福利界。
+
+## 随后的独立数学审查
+
+按root要求停止新采样，独立重构两条有一般意义的候选引理：
+
+- `acyclic_replacement_independent_review.md`：有条件的无环替换支付引理通过；
+  明确处理重复标签、同一实际历史复用、所有真实有序后继及冻结分母≤m。
+  `review_acyclic_sources.py`和`acyclic_independent_source_review.json`独立重放
+  四行来源策略的259历史/1295偏离，并核对二人非普遍存在反例的全部四种选择。
+- `submodular_dilution_independent_review.md`：指数时钟联合构造、锐常数及截断
+  单调次模域的推论通过。逐一核对各过程自身的kill/activation独立性；用标记
+  提供者的随机优先时钟独立推导重复主题的Shapley公式；只扩展g而不要求扩展C。
+
+未发现致命异议。建议补写r_a>0、冻结分母≤m的理由及零延拓g的具体方式；
+这些属于澄清，未改变原命题。审查不声称一般半覆盖、不重新认证全部有限LP表，
+也不作外部审查或新颖性声明。

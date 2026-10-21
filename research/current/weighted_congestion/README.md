@@ -1,5 +1,7 @@
 # 加权原子拥塞博弈：成果目录与研究入口
 
+**旧主线恢复范围更正：** 用户补充的概述记载了更强的近一主结果、全局类型森林与临界深度。当前可读证明和新决策专题尚未恢复这些完整内容；见[差距与成文定位](decision_methods/previous_structure_scope_comparison.md)。不能把当前 main 文件全集当作历史成果全集。
+
 本次全类`Cd/ln d`存在命题已有**严格否定证明**。`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`：每整数d≥2^20都有有限正有理权、正有理纯d次资源费用、每人两个非空不交动作的MODEL游戏；每个纯状态有合法偏离C_i(s)>(d/10)C_i(t_i,s_−i)。由`WC-MATCHING-LOG-UPPER-NEGATIVE-v1`的量词选择，原题绝对C,d0不存在。本文入口、精确账本和配套审查均与该范围一致；外部评审/新颖性未认证。
 
 采用[MODEL](../../weighted_congestion_frontier/MODEL.md)：有限正权玩家、有限资源子集策略、非负系数次数至多d的费用；玩家成本为资源费用之和，偏离后按真实负载计费。允许空策略和零费用不妨碍反例位于正费用两动作子类。

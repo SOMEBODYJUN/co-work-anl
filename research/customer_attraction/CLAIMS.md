@@ -31,6 +31,7 @@
 | `CA-SIX-MAXIMA-HALF` | [六极大联合预算](../current/customer_attraction/six_maxima_joint_bound.md)：任意人数半覆盖 | 至多六个不同包含极大覆盖；内部子主题与关联可以任意 |
 | `CA-SEVEN-MAXIMA-N7-PLUS` | [七极大来源证明](../current/customer_attraction/seven_maxima_checkpoint.md)：七人以上 \(U=\operatorname{OPT}_m\le2W\) | 恰七个极大覆盖、\(m\ge7\)；来源证明完整且已内审，现行页只是依赖概述；\(m=5,6\) 仍缺分支 |
 | `CA-LAMINAR-INCIDENCE-MAXIMA-2M1` | [层级关联锐界](../current/customer_attraction/laminar_incidence_bound.md)：带共同核心的 \(2-1/m\) 界 | 客户的极大主题关联为层级族；不等于一般目录 |
+| `CA-FRACTIONAL-COVER-PATH-BUDGET` / `CA-FRACTIONAL-COVER-7-2-HALF` | [真实前缀利润递推](../current/customer_attraction/fractional_cover_path_budget.md)及乘积界；某个最优并集τ≤7/2时全人数半覆盖 | 分数覆盖数条件承重，任意目录无条件half仍OPEN；P必须为旧玩家最终收益和 |
 | `CA-EXACT-PURE-SPE-ALL` / `CA-STRATEGY-CONE` | [全集逆归纳](../current/customer_attraction/exact_solver.md)与[完整策略重数锥](../current/customer_attraction/strategy_cone.md) | 精确有限工具；完整树证书可能指数大，有限运行不是一般证明 |
 | `CA-OBLIVIOUS-MIXED-SECURITY-2N1` | [静态安全值](../current/customer_attraction/oblivious_security.md)：\(v_m(0)\ge\operatorname{OPT}_m/(2m-1)\) | 对手不观察查询抽样；从安全值到真实顺序福利仍缺聚合桥 |
 
@@ -41,3 +42,5 @@
 新增机制边界：[`CA-WORST-CCE-WELFARE-NO`](../current/customer_attraction/worst_cce_welfare_counterexample.md)给十三客户完整SPE覆盖9，低于同实例每个静态CCE的期望福利；精确最低2785/297。独立内部精确核验通过，不改变一般半覆盖或真正聚合静态安全值的开放状态。
 
 新增机制边界：[`CA-FRACTIONAL-ACTUAL-LOAD-WEAK-NO-v1`](../current/customer_attraction/fractional_actual_load_counterexample.md)对每个m≥4给出四主题完整SPE无限族，否定原正桥`CA-FRACTIONAL-ACTUAL-LOAD-WEAK-v1`；并不否定半覆盖、真正聚合静态安全值，或另立的精确实际税充分候选。全历史解析证明及独立内部精确核验通过；外审与新颖性未认证。
+
+独立简化版本：[`CA-WORST-CCE-WELFARE-8`](../current/customer_attraction/eight_customer_cce_welfare_gap.md)使用八单位客户、四主题和计数依赖完整策略给W6<min_CCE E[W]=544/87，OPT3=8。它保留原十三客户身份，外审、新颖性和最小性未认证。
