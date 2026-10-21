@@ -60,6 +60,21 @@ def basis(T,M):
     return out
 
 
+def background_rows(v,M,aggregate):
+    p=len(v)+2;out=[]
+    for j in range(M+1):
+        counts=[j,M-j]+list(v)
+        for a in ([None] if aggregate else range(2,p)):
+            row=[]
+            for mask in range(1,1<<p):
+                den=sum(c for t,c in enumerate(counts) if mask>>t&1)
+                numerator=(sum(v[t-2] for t in range(2,p) if mask>>t&1)
+                           if a is None else int(bool(mask>>a&1)))
+                row.append(F(numerator,den) if numerator else F(0))
+            out.append(row)
+    return out
+
+
 def main():
     backgrounds=[()]+[(i,) for i in range(1,5)]
     backgrounds += list(product(range(1,4),repeat=2))
@@ -83,8 +98,20 @@ def main():
                     selected=[matrix[r-1],matrix[M+(M-s)-1],matrix[s-1],matrix[2*M-1]]
                     assert rank(selected)==4,(v,r,s)
                     fours+=1
+    aggregate_cases=all_unit_cases=0
+    for v in backgrounds[1:]:
+        T={sum(c for j,c in enumerate(v) if mask>>j&1) for mask in range(1<<len(v))}
+        for M in range(2,7):
+            matrix=rows(v,M)+background_rows(v,M,True)
+            assert rank(matrix)==min(2*len(T)+2,2*M+3),(v,M)
+            aggregate_cases+=1
+    for k,M in [(2,2),(3,2),(3,3),(4,2),(4,3),(4,4),(5,3),(5,5)]:
+        v=(1,)*k;matrix=rows(v,M)+background_rows(v,M,False)
+        assert rank(matrix)==len(matrix)-(M-2),(k,M)
+        all_unit_cases+=1
     result={'status':'passed','independent_of_author_code':True,'background_M_cases':cases,
             'nullspace_basis_vectors':circuits,'four_slot_cases':fours,
+            'aggregate_background_rank_cases':aggregate_cases,'all_unit_background_cases':all_unit_cases,
             'universal_proof':'Cauchy rank plus polynomial root count and rational partial fractions, checked separately in review',
             'Q_CAG_HALF':'OPEN'}
     path=Path(__file__).with_name('fixed_background_rank_review.json')
