@@ -7,7 +7,7 @@
 1. Christodoulou, Gairing, Giannakopoulos, Poças, Waldmann，*Existence and Complexity of Approximate Equilibria in Weighted Congestion Games*：[arXiv:2002.07466v3](https://arxiv.org/html/2002.07466v3)，[ICALP 2020](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2020.32)。§2 精确模型与成本约定；§3 Theorem 1、式(3)非存在族及 Ω(√d/log d)；§6 Theorem 4 为 n-PNE 存在；§7 公开要求缩小缺口。§7 对势函数方法的讨论是研究动机，不是已证明的工具不可能性。
 2. Caragiannis–Fanelli，*On approximate pure Nash equilibria in weighted congestion games with polynomial latencies*：[arXiv:1902.07173](https://arxiv.org/abs/1902.07173)，[JCSS 版本](https://www.sciencedirect.com/science/article/pii/S0022000020301008)。摘要的 (d+δ) 存在保证取 δ=0 得 d。会议与扩展稿社会成本常数有版本差异，本分支不使用其未逐项核对的效率常数。
 
-3. Ren–Wu–Xu–Yang，*$\rho/(1-\varepsilon)$-approximate pure Nash equilibria algorithms for weighted congestion games and their runtimes*：[arXiv:2208.11309](https://arxiv.org/abs/2208.11309)，2025 年期刊版。摘要给出 $\rho=2W(d+1)/(2W+d+1)\le d+1$ 的算法保证，但其定理要求玩家权重归一化在 $[1,W]$（$W$ 为固定常数），并在正文另有正系数/系数比的有界条件。因而当 $W$ 无界、允许零系数和任意正实权重时，它不是 MODEL 的全类上界；这里只记录为受限子类边界，不能替代 WC-TARGET。
+3. Ren–Wu–Xu–Yang，*$\rho/(1-\varepsilon)$-approximate pure Nash equilibria algorithms for weighted congestion games and their runtimes*：[arXiv:2208.11309](https://arxiv.org/abs/2208.11309)，2025 年期刊版。摘要给出 $\rho=2W(d+1)/(2W+d+1)\le d+1$ 的算法保证，但其定理要求玩家权重归一化在 $[1,W]$（$W$ 为固定常数），并在正文另有正系数间比值 $A$ 的常数条件；允许零系数，零费用资源可删除。因而当 $W$、$A$ 无界时，该算法不是 MODEL 的全类位多项式结论；允许零系数本身不是排除理由。这里只记录为受限算法边界，不能替代 WC-TARGET。
 
 当前基线保持粗粒度安全陈述；更细 finite-d 上界、后续存在/计算结果的假设由执行天团按相关 idea 核对。精细界优于 d 时，不能把只优于 d 的旧结果叫新突破。
 
@@ -49,3 +49,7 @@
 **Paper Fact：** Igal Milchtaich, *Congestion Games with Player-Specific Payoff Functions*, Games and Economic Behavior 13 (1996), 111–124，[一手扫描PDF](https://www.cs.cornell.edu/courses/cs684/2005fa/milchtaich.pdf)。§4 Theorem1印刷p114证明共同策略数为2的player-specific singleton拥塞博弈具有FIP；§8 p121将拥塞改为任意正玩家权和并说明Theorem1证明仍适用；p123表格明确weighted/two strategies为FIP。已直接核对这些位置，不把无权一般多策略定理外推为有权一般存在。
 
 **精确应用与重构：** [固定hub阈值响应](../current/weighted_congestion/fixed_hub_light_threshold_response.md)在每side仅一light时，将每source两副本的玩家成本写成F(a+z)+q_i0与F(z)+q_i1，负号满足文献非增payoff、z为含自己的light权和。因此存在/FIP是已知特例；当前资产价值是显式阈值势、有序删除及对hub冻结偏离的准确范围，不称新存在定理。自足重构和两路有理审计独立于文献真值层，显式公式的新颖性未认证。
+
+## 结构到决策的方法比较补充
+
+本轮按使用需求核对的七份一手来源、准确版本和定理位置见[方法比较正文](../current/weighted_congestion/decision_methods/baselines.md)。Caragiannis–Fanelli v5 Theorem 7 的加权社会成本界为 `(d+1)/(d+δ)`，这里使用扩展稿而非会议摘要的 `2/(1+δ)`。低次数比较须纳入 HKS/CF 的细界；小权比还须比较 Faulhaber 势的存在/PoS保证，不能将其任意有限权比范围与 Ren 的算法常数条件混为一谈。本次核对服务方法选择，不改变已登记结构的数学身份。

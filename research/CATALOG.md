@@ -2459,6 +2459,8 @@
 
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
+| [结构决策方法的使用合同与七类原文基线](<current/weighted_congestion/decision_methods/baselines.md>) | `research/current/weighted_congestion/decision_methods/baselines.md` | 按稳定性、计算时间和社会成本比较适用方法，核对低次数、权比、策略结构与版本边界。 | 文献核对；与团队新结果分别引用 |
+| [结构决策比较的原文位置及数值反代记录](<../evidence/runs/weighted_congestion/decision_methods/baselines_evidence.json>) | `evidence/runs/weighted_congestion/decision_methods/baselines_evidence.json` | 复核七份一手来源的版本、定理位置及两权界比较的实际Python计算结果。 | 冻结输入、证书或结果；不原位覆盖 |
 | [加权拥塞成果恢复范围与决策用途](<current/weighted_congestion/decision_methods/source_recovery.md>) | `research/current/weighted_congestion/decision_methods/source_recovery.md` | 恢复本轮可读取的既有证明、英文主稿与来源缺口；接续方法研究前核对地基。 | 来源与恢复指针；不代替缺失证明 |
 | [结构到决策的逐文件来源哈希](<current/weighted_congestion/decision_methods/source_recovery.json>) | `research/current/weighted_congestion/decision_methods/source_recovery.json` | 记录恢复基准提交、原文件hash和缺失历史对象的实际检查范围。 | 来源与恢复指针；不代替缺失证明 |
 
