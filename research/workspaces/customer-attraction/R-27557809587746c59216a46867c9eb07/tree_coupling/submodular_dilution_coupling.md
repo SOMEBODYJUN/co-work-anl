@@ -1,9 +1,10 @@
 # Sharp same-topic dilution for every decreasing Shapley marginal
 
 Research proof, 2026-10-21. Identity **TC-DIL-1**: exact statement below.
-Root independently reconstructed and accepted the clock-coupling mechanism
-in this session; final full-text review is pending. No external review or
-global novelty claim. This is a representation comparison, not Q-CAG-HALF.
+Root and credible_search independently reconstructed the full clock coupling
+and found no fatal objection; the latter's review is
+`../credible_search/submodular_dilution_independent_review.md`. No external
+review or global novelty claim. This is a representation comparison, not Q-CAG-HALF.
 
 ## TC-DIL-1: exact statement
 
