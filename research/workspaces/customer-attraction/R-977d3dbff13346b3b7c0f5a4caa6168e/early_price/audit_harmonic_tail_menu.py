@@ -61,6 +61,10 @@ def main():
         g = slack + tau * cyclic + eta * actual_comparison
         d = sum(z[i] * members[i] for i in range(3))
         coverage = q * min(F(1), d)
+        mean_reciprocal = sum((pi[i] * F(1, p + 1 + tails[i]) for i in range(3)), F(0))
+        assert slack + tau * cyclic == tau * u - d * mean_reciprocal
+        assert coverage - d * mean_reciprocal <= positive(q - mean_reciprocal)
+        assert coverage - tau * u == coverage - d * mean_reciprocal - slack - tau * cyclic
         residual = sum((pi[i] * (coverage - F(d, p + 1 + tails[i])
                                 - eta * potential(p, a, tails[i])) for i in range(3)), F(0))
         assert coverage - tau * u == eta * psi + residual - g
