@@ -15,8 +15,8 @@ from customer_attraction_strategy_lp import *
 def inc(k,a):return tuple(x+(i==a) for i,x in enumerate(k))
 def states(p,m):
  return tuple(tuple(h.count(a) for a in range(p)) for d in range(m) for h in combinations_with_replacement(range(p),d))
-def run(p,path,seconds):
- m=len(path);n=2**p-1;ks=states(p,m);idx=n
+def run(p,path,seconds,mult=None):
+ m=len(path);mult=m if mult is None else mult;n=2**p-1;ks=states(p,m);idx=n
  ui={};zi={}
  for k in ks:
   for a in range(p):ui[k,a]=idx;idx+=1
@@ -54,11 +54,11 @@ def run(p,path,seconds):
     if a==b:continue
     row=diff(k,a,inc(k,b),b);row[z]=-m;add(row,lb=-m)
  target=coverage_row(p,range(min(m,p)))
- obj=tuple(v-ww-m*u for v,ww,u in zip(target,w,payoff_row(p,rootq,rootact)))
+ obj=tuple(v-ww-mult*u for v,ww,u in zip(target,w,payoff_row(p,rootq,rootact)))
  c=np.zeros(idx);c[:n]=-np.array(obj,float)
  A=coo_matrix((rx,(ri,rj)),shape=(len(lbs),idx)).tocsc()
  t=time.time();rr=milp(c,integrality=integ,bounds=Bounds(lo,hi),constraints=LinearConstraint(A,np.array(lbs),np.array(ubs)),options={'time_limit':seconds,'mip_rel_gap':0.0,'presolve':True,'random_seed':37381021,'threads':1})
- meta={'p':p,'m':m,'path':path,'seconds':time.time()-t,'status':int(rr.status),'objective':None if rr.fun is None else float(-rr.fun),'floating_only':True,'message':rr.message,'count_nodes':len(ks),'binaries':len(zi)}
+ meta={'p':p,'m':m,'mult':mult,'path':path,'seconds':time.time()-t,'status':int(rr.status),'objective':None if rr.fun is None else float(-rr.fun),'floating_only':True,'message':rr.message,'count_nodes':len(ks),'binaries':len(zi)}
  if rr.x is None:return meta
  policy={k:max(range(p),key=lambda a:rr.x[zi[k,a]]) for k in ks}
  actions={h:policy[tuple(h.count(a) for a in range(p))] for d in range(m) for h in product(range(p),repeat=d)}
@@ -72,5 +72,5 @@ def run(p,path,seconds):
  meta['exact_objective']=str(dot(obj,vals));meta['welfare']=ins.welfare(cone.root);meta['optimum']=ins.optimal_welfare();meta['utilities']=list(map(str,ins.player_payoffs(v.terminal_history)));meta['integer_clones']=cs;meta['strategy']=cert.to_dict();meta['verified_histories']=v.checked_histories
  return meta
 if __name__=='__main__':
- ap=argparse.ArgumentParser();ap.add_argument('--seconds',type=float,default=20);ap.add_argument('--p',type=int,default=4);ap.add_argument('--path',default='0,0,0,1,1');a=ap.parse_args()
- out=run(a.p,tuple(map(int,a.path.split(','))),a.seconds);label='-'.join(map(str,out['path']));(Path(__file__).parent/f'count_milp_{a.p}_{label}.json').write_text(json.dumps(out));print(json.dumps({k:v for k,v in out.items() if k not in ('strategy','integer_clones')}))
+ ap=argparse.ArgumentParser();ap.add_argument('--seconds',type=float,default=20);ap.add_argument('--p',type=int,default=4);ap.add_argument('--path',default='0,0,0,1,1');ap.add_argument('--mult',type=int);a=ap.parse_args()
+ out=run(a.p,tuple(map(int,a.path.split(','))),a.seconds,a.mult);label='-'.join(map(str,out['path']));(Path(__file__).parent/f'count_milp_{a.p}_{label}_mult{out["mult"]}.json').write_text(json.dumps(out));print(json.dumps({k:v for k,v in out.items() if k not in ('strategy','integer_clones')}))
