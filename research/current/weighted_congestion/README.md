@@ -94,3 +94,7 @@ WC-TARGET v1的原长期身份保留。新下界a_*(d)≥d/10与[单列Paper Fac
 第三路[全相位独立攻击](../../reviews/weighted_congestion/ordinal_potentials/linear_degree_full_phase_attack.md)另记录完整小参数phase对与类位串审计；其实际接收种子顺序、最终hash、独立代码及冻结结果从该审查进入。
 
 [既有Pro简报](../../weighted_congestion_frontier/PRO_BRIEF.md)、[精确攻题任务](../../weighted_congestion_frontier/prompts/PRO_ATTACK.md)及[冻结来源映射](../../weighted_congestion_frontier/PRO_BRIEF_SOURCES.json)保留解题前2c49228及其前序快照的模型与工具整理；其中旧OPEN判断不再代表现行状态。独立复查当前结果应先读本页新自足证明及审查，冻结旧来源不原位修改。
+
+## 结构用于决策：本轮恢复入口
+
+[成果恢复与用途](decision_methods/source_recovery.md)固定可读地基、既有英文稿和无法从当前 main 恢复的来源。后续方法以原游戏的真实偏离、稳定性与社会成本分别核验；本轮按用户指定接续，不改变其他模型的主攻或原有结果身份。

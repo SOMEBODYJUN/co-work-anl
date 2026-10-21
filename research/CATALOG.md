@@ -2455,6 +2455,13 @@
 | [线性门槛主稿的实际编译与十页版面冻结记录](<../evidence/runs/weighted_congestion/linear_threshold_article_build.json>) | `evidence/runs/weighted_congestion/linear_threshold_article_build.json` | 冻结实际编译/渲染命令、运行环境、全部稿件hash、页数、视觉和边界检查、参考文献核对范围及Crossref限流；用于独立复现交付产物。；配套 [线性次数的全状态无均衡族与匹配对数上界的严格否定](<current/weighted_congestion/linear_degree_allstate_lower_bound.md>)；配套 [加权拥塞近似纯均衡线性非存在界的自足LaTeX主稿](<current/weighted_congestion/linear_threshold_article.tex>)；配套 [加权拥塞近似纯均衡线性非存在界的连续阅读PDF](<current/weighted_congestion/linear_threshold_article.pdf>)；配套 [线性非存在界主稿的一手核对参考文献](<current/weighted_congestion/linear_threshold_references.bib>)；配套 [线性门槛主稿的贡献定位、证明重构与版面核查](<reviews/weighted_congestion/linear_threshold_article_review.md>)；配套 [非负多项式拆项与私有常数资源的费用保真审计](<../tests/audits/weighted_congestion/linear_threshold_article_cost_split.py>)；配套 [多项式拆项与私有常数资源的费用保真冻结结果](<../evidence/runs/weighted_congestion/linear_threshold_article_cost_split.json>) | 冻结输入、证书或结果；不原位覆盖；关联 `WC-CLASS-FRONT-ALLSTATE-COMPILER-v1`、`WC-HEALTHY-FRONT-COVERAGE-v1`、`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`，[命题合同（共 4 项）](assets.json) |
 | [多项式拆项与私有常数资源的费用保真冻结结果](<../evidence/runs/weighted_congestion/linear_threshold_article_cost_split.json>) | `evidence/runs/weighted_congestion/linear_threshold_article_cost_split.json` | 冻结全零、常数专用和混合实例的参数、Fraction费用比较、代码及当时工作稿hash；只支持拆项恒等式的有限核验，不覆盖恒零策略预处理或一般存在定理。；配套 [线性次数的全状态无均衡族与匹配对数上界的严格否定](<current/weighted_congestion/linear_degree_allstate_lower_bound.md>)；配套 [加权拥塞近似纯均衡线性非存在界的自足LaTeX主稿](<current/weighted_congestion/linear_threshold_article.tex>)；配套 [加权拥塞近似纯均衡线性非存在界的连续阅读PDF](<current/weighted_congestion/linear_threshold_article.pdf>)；配套 [线性非存在界主稿的一手核对参考文献](<current/weighted_congestion/linear_threshold_references.bib>)；配套 [线性门槛主稿的贡献定位、证明重构与版面核查](<reviews/weighted_congestion/linear_threshold_article_review.md>)；配套 [线性门槛主稿的实际编译与十页版面冻结记录](<../evidence/runs/weighted_congestion/linear_threshold_article_build.json>)；配套 [非负多项式拆项与私有常数资源的费用保真审计](<../tests/audits/weighted_congestion/linear_threshold_article_cost_split.py>) | 冻结输入、证书或结果；不原位覆盖；关联 `WC-CLASS-FRONT-ALLSTATE-COMPILER-v1`、`WC-HEALTHY-FRONT-COVERAGE-v1`、`WC-LINEAR-DEGREE-ALLSTATE-NONEXISTENCE-v1`，[命题合同（共 4 项）](assets.json) |
 
+### decision_methods
+
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [加权拥塞成果恢复范围与决策用途](<current/weighted_congestion/decision_methods/source_recovery.md>) | `research/current/weighted_congestion/decision_methods/source_recovery.md` | 恢复本轮可读取的既有证明、英文主稿与来源缺口；接续方法研究前核对地基。 | 来源与恢复指针；不代替缺失证明 |
+| [结构到决策的逐文件来源哈希](<current/weighted_congestion/decision_methods/source_recovery.json>) | `research/current/weighted_congestion/decision_methods/source_recovery.json` | 记录恢复基准提交、原文件hash和缺失历史对象的实际检查范围。 | 来源与恢复指针；不代替缺失证明 |
+
 <a id="positive_kernels"></a>
 
 ## 正占用核、交互阶数与非负表示
