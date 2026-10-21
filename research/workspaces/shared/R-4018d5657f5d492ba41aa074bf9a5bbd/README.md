@@ -18,3 +18,5 @@
 此文件为真实研究前沿和边界备份，不将未完成候选升级成正式定理。各路线可复用正文、实际代码与审查完成后进入专题目录，再在这里链接。
 
 [必要失配环与单环坏族](feedback_cycle_necessity_candidate.md)已给作者证明，并获另一研究员对量词、环长度取整和实际类型图恰环的指定范围快审；尚待正式资产整合。该推论不把合同NO当真实无均衡。
+
+[固定费干预与原游戏遗憾桥草稿](application_drafts/cycle_intervention/constant_resource_intervention.md)已完成作者证明和有限Fraction核验；关键是输出更强的离开/加入合同，而非任意修改后近似均衡。尚待独立终稿攻击和共享资产登记。[失配环核验](application_drafts/root_feedback/feedback_cycle_audit.json)按四组有理参数穷举五类型以内简单图，检验乘积环证书和长度整数取整；不证明一般量词。
