@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | 只按实际客户负载校正并要求Σf(c)≥OPT、f0=0/f1=1 | 完整无拥挤SPE已有W<OPT；任意人数族迫使统一支付f1≥3/2，高负载系数无助于这些路径 | [无拥挤全人数族](research/current/customer_attraction/collision_free_three_halves_family.md)，不反驳half |
 | 进一步换成同实例最低静态CCE福利：十三客户完整SPE覆盖9，所有静态CCE期望福利≥137/15 | [完整反例](research/current/customer_attraction/worst_cce_welfare_counterexample.md)证明这种更弱静态福利支配也失败；精确最低2785/297 | 保留真正不观察查询的安全值或直接跨真实分支预算；本例不反驳半覆盖 |
+| 八客户简化的静态CCE福利比较 | 四主题计数依赖完整SPE福利6，而最低静态CCE福利544/87；此失败不要求历史非匿名平局 | [较小独立见证](research/current/customer_attraction/eight_customer_cce_welfare_gap.md)，保留十三客户原版本及聚合安全值开放 |
 | 把SPE终局当作静态Nash | 后继会响应早期偏离；终局可以有静态改善。保留真实全历史偏离比较 | [续局失败桥](research/current/customer_attraction/continuation_lemmas.md) |
 | 比较到同实例的另一最差静态PNE | 完整SPE覆盖十五，全部静态PNE覆盖十六，替换静态均衡仍不能支付 | [静态福利比较反例](research/current/customer_attraction/worst_pne_welfare_counterexample.md) |
 | 逐人安全值/末位保底推广到所有人 | 有完整SPE违反逐人保证；聚合桥须单独证明 | [逐人安全值反例](research/current/customer_attraction/individual_security_counterexample.md)、[末位聚合反例](research/current/customer_attraction/aggregate_theta_counterexample.md) |
