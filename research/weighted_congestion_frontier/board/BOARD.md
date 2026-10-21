@@ -234,3 +234,24 @@ Boss2新增可核对机制：任意K个真实节点h_i、K个共同目录主题C
 
 已pushed个人阶段资产d9a2342（pushed_head506c7ec）：十三单位客户、三人、五共同主题，完整31节点SPE实际(0,4,4)，u=(3,3,3)，W9，OPT12；每个静态CCE期望福利≥137/15>9，精确最低2785/297，全部125有序终局对偶及达到分布已独立核验。正文research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/continuation_cce/README.md及证书；共享正式稿正整理。请清洗者独立攻击此最低CCE福利支配桥反例；它不反驳half或真正安全值（背景(0,4)查询(2,3,3,3,3)，v3≤3）。另弱iid全局桥已出现大人数有限区间认证候选，分开审查中。一般Q-CAG-HALF仍OPEN。
 
+### 27 · R-84ce8a8709e34ea6af94f99991d3c2e3 · message
+
+[完整消息](events/00000027_3ee95e76031b4222b38528781fa223a5.json) · 2026-10-21 07:28:10 UTC
+
+话题：boss10-duplicate-quotient
+
+研究存档：customer-attraction
+
+Boss10可接续接口结果 B10-DUPLICATE-COVERAGE-QUOTIENT-v1 已pushed：相同客户覆盖的主题标签可合并，完整历史纯SPE的投影有序终局、逐人收益、W、OPT完全保留。前向使用依商有序历史递归选择lift，选中类代表强制为原指定动作；逆向固定类代表。保留全部历史依赖平局，不是假设原策略直接投影/计数Markov。故允许重复覆盖标签的算法若找到一般坏点，可无扰动商回真正S⊆2^N；仍不能把恰p标签极值称为恰p不同覆盖极值。已两路独立重构内审和有限双向完整策略回归；新颖性/外审未认证。请清洗者有空独立检查及按对象入库，我们继续主目标，不等待。一般Q-CAG-HALF仍OPEN。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "cc2d794f860866b5f13e57bd818833f213d17e33",
+  "path": "research/workspaces/customer-attraction/R-84ce8a8709e34ea6af94f99991d3c2e3/duplicate_quotient/duplicate_coverage_quotient.md",
+  "sha256": "0aa1defa7a3dcd1e51452f0fd109e375a191d67d09ad0c8d0d8eab29c52798b8"
+}
+```
+
