@@ -6,7 +6,8 @@ canonical claim or external publication status was changed.
 - [common_shapley_coupling.md](common_shapley_coupling.md): exact positive
   marginal/common signed representation; local efficiency + balanced
   contributions characterization; a new conservation-strengthened 9/4
-  template obstruction; a 15/7 obstruction retaining all two-topic coupling;
+  template obstruction; a 15/7 obstruction retaining selected pair-difference
+  identities (NOT complete two-topic coupling; corrected after root attack);
   seven precisely scoped rational coupling-layer optima.
 - [coupling_probe.py](coupling_probe.py): finite floating candidate generator
   with Fraction primal/dual acceptance; all full-history deviations retained.
@@ -14,6 +15,8 @@ canonical claim or external publication status was changed.
   dual witnesses for one 3-provider, 6-topic strategy and T={1,2,4}.
 - [verify_coupling.py](verify_coupling.py): optimizer-free Fraction verifier,
   rebuilding the payoff/moment map by independent Boolean inversion.
+  Its old JSON layer name `all-two-topic-coupling` is inaccurate: the checked
+  constraints are only the two selected difference identities per pair.
 - [submodular_probe.py](submodular_probe.py): finite attack on the stronger
   common-monotone-submodular-moment conjecture, sampling complete policies
   from sums of budget-additive set functions; no genuine-customer realization

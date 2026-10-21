@@ -151,14 +151,21 @@ of the common-customer identities
 \tag{6}
 \]
 
-Together with same-support conservation these completely restore the signed
-customer payoff map on each two-topic subsystem. The exact optimum is still
-15/7>2. The saved 15/7 vector in fact admits a nonnegative customer realization
-on each such subsystem: its derived pair coverages satisfy
-max(C(a),C(b))<=C(ab)<=C(a)+C(b), checked for all 15 pairs. These pairwise
-realizations are not one common customer realization. The 3-topic Shapley
-relations are essential for this source strategy; even complete consistency
-on every pair does not pay half.
+The exact optimum with these selected difference identities is 15/7>2.
+**Correction after root's independent attack:** these are not complete
+two-topic coupling. The conservation equation is dependent on the two
+difference identities, leaving a spurious extra degree of freedom per pair.
+For pair variables a=U_a(3e_a), b=U_b(3e_b), x=U_a(2e_a+e_b),
+y=U_b(2e_a+e_b), z=U_a(e_a+2e_b), w=U_b(e_a+2e_b), a third independent
+necessary equation is 2x+2w=z+3b. The saved vector's derived pair coverage
+range max(C(a),C(b))<=C(ab)<=C(a)+C(b) does not make its specified utilities
+compatible with those coverages. The original JSON field containing
+`all-two-topic-coupling` is a preserved incorrect layer name, not the scope
+of its certified constraints. No conclusion that complete two-topic
+coupling fails is supported by the 15/7 vector. The corrected complete-pair
+version in `round2/complete_pair_v2.json` has exact optimum 2, with independent
+optimizer-free verification and direct pair-payoff reconstruction; see
+`round2/pair_scope_correction.md`.
 
 ## 4. Exact finite hierarchy on that fixed strategy and comparison
 
@@ -169,7 +176,8 @@ sharp same-topic dilution comparisons. The extra conditions differ as follows.
 | Feasible description | Exact maximum of C({1,2,4}) |
 | --- | ---: |
 | Independent nonnegative terminal payoffs, dilution, same-support totals | 9/4 |
-| Previous row plus common customer identities on every two-topic subsystem | 15/7 |
+| Previous row plus two selected payoff-difference identities per topic pair | 15/7 |
+| First row plus complete common signed payoff coupling on all topic pairs (v2 correction) | 2 |
 | Common signed moment representation, all terminal payoffs nonnegative | 8/5 |
 | Common moment representation, monotone C on the truncated domain | 198/127 |
 | Common moment representation, monotone and submodular C on that domain | 3/2 |

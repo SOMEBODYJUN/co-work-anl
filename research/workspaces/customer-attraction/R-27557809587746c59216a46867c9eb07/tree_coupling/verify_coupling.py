@@ -123,8 +123,9 @@ def main():
     pair_y, summary = check(obj['layers'][1], edge+dilution, peq, prhs, total(opt), vertices)
     summaries.append(summary)
     pair_lookup = dict(zip(vertices, pair_y))
-    # The 15/7 witness has a genuine nonnegative restriction on every pair,
-    # though it has no common signed realization across all six topics.
+    # Coverage-range inequalities alone do NOT show the specified payoff
+    # vector has a genuine nonnegative restriction on every pair. The two
+    # difference identities above miss one independent pair relation.
     for a in range(p):
         for b in range(a+1, p):
             pure_a = tuple(n*(j == a) for j in range(p))
