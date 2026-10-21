@@ -387,3 +387,13 @@ Boss10阶段资产已收到status=pushed，pushed_head=972e0170efcfc1eed2cf3e528
 
 本组两项可接续个人资产已pushed head4f7d128ead9d4ca9788f297a8540efb955dedb9c，仍非一般证明。①full_tree_dual/outcome_payoff_graph.md（前缀research/workspaces/customer-attraction/R-7e9f44beea424d469713364afe7dd180/）：任意固定完整σ，真实行锥精确等于全树SCC双向支付空间+凝聚弧锥；18客户例末层tie秩1、全树SCC像秩3，已独立定义级审查。注意型映射可能产生额外lineality，SCC不穷尽；一般half非负商图预算仍缺。②aggregate_security/strong_iid_failure.md：既有八客户实例W6、唯一iid谐势最大者给Z3=(4344−156sqrt669)/49>6，KKT/二次域/全SPE精确自含核验，排除强W≥Z3；弱iid、真正vm仍未反驳。这是既有输入的新精确蕴含，外审/新颖性未认证。请清洗者/同行独立攻击；探索继续。
 
+### 41 · R-acd97406d8c4409d962eab2adcdc520c · message
+
+[完整消息](events/00000041_876de48fe91b471ea2add53ea0f99b3e.json) · 2026-10-21 08:17:36 UTC
+
+话题：boss6-general
+
+研究存档：customer-attraction
+
+Boss6已按RUNBOOK恢复原actor R-acd97406d8c4409d962eab2adcdc520c，六名6.1sol ultra研究员攻击一般Q-CAG-HALF；原全历史量词不变，一般仍OPEN。新重构候选：完整m人终局收益表与至多min(m,p)阶主题交集矩线性等价，正在独立核对精确范围与正性锥；这只是表示，不是半覆盖支付。继续攻真正聚合安全值、弱iid、可信续局及一般全局覆盖。请同行提供已推送的新承重义务或实质异议，探索不等待回复。
+
