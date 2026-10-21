@@ -20,6 +20,11 @@ def main():
     ap.add_argument('--no-dr',action='store_true')
     ap.add_argument('--policy',choices=['random','monotone','plateau','cag','groups'],default='random')
     ap.add_argument('--first',type=int,default=0,help='0 means all players; otherwise test this prefix budget')
+    ap.add_argument('--query',help='comma-separated rational query weights')
+    ap.add_argument('--iterations',type=int,default=5)
+    ap.add_argument('--harmonic-diagonals',action='store_true')
+    ap.add_argument('--harmonic-repeats',action='store_true')
+    ap.add_argument('--third-positive',action='store_true')
     ap.add_argument('--output',type=Path,required=True)
     args=ap.parse_args(); k,n=args.k,args.n
     rng=np.random.default_rng(args.seed)
@@ -44,9 +49,31 @@ def main():
                 for b in range(k):
                     dr.append(e(inc(q,a))+e(inc(q,b))-e(q)-e(inc(inc(q,a),b)))
     dr=np.array(dr)
+    if args.third_positive:
+        third=[]
+        for actions in itertools.combinations_with_replacement(range(k),3):
+            row=z.copy()
+            for bits in itertools.product((0,1),repeat=3):
+                q=list(zero)
+                for a,yes in zip(actions,bits):q[a]+=yes
+                row+=(-1)**(3-sum(bits))*e(q)
+            third.append(row)
+        dr=np.vstack((dr,third))
     backgrounds=[q for q in states if sum(q)==n-1]
     static=np.array([[e(inc(q,a))-e(q) for a in range(k)] for q in backgrounds])
     norm=sum((e(q) for q in states if sum(q)==n),z.copy())
+    extra=[]
+    if args.harmonic_diagonals or args.harmonic_repeats:
+        for a in range(k):
+            for j in range(2,n+1):
+                q=[0]*k;q[a]=j
+                extra.append(e(q)-sum(1/i for i in range(1,j+1))*e(inc(zero,a)))
+    if args.harmonic_repeats:
+        assert n==3
+        for a in range(k):
+            for b in range(k):
+                if a!=b:
+                    extra.append(6*e(inc(inc(inc(zero,a),a),b))-e(inc(zero,a))+2*e(inc(zero,b))-8*e(inc(inc(zero,a),b)))
     best=0.;summary={'status':'floating diagnostic in an enlarged model, not CAG evidence','args':vars(args).copy(),'best_objective':0.}
     summary['args']['output']=str(args.output)
     for trial in range(args.trials):
@@ -91,11 +118,14 @@ def main():
         factor=len(budget)
         total=sum((utility(q,a) for a in budget),z.copy())
         pstarts=[np.ones(k)/k,rng.dirichlet(np.ones(k)),rng.dirichlet(np.ones(k)*.15)]
+        if args.query:
+            from fractions import Fraction
+            pstarts=[np.array([float(Fraction(t)) for t in args.query.split(',')])]
         for p in pstarts:
-            for iteration in range(5):
+            for iteration in range(args.iterations):
                 beta=np.einsum('a,bat->bt',p,static)
                 aub=np.vstack((np.c_[-dr,np.zeros(len(dr))],np.c_[-gamma,np.zeros(len(gamma))],np.c_[-beta,np.ones(len(beta))]))
-                res=linprog(np.r_[total,-factor],A_ub=aub,b_ub=np.zeros(len(aub)),A_eq=[np.r_[norm,0]],b_eq=[1],bounds=[(None,None)]*len(states)+[(None,None)],method='highs')
+                res=linprog(np.r_[total,-factor],A_ub=aub,b_ub=np.zeros(len(aub)),A_eq=[np.r_[norm,0]]+[np.r_[row,0] for row in extra],b_eq=[1]+[0]*len(extra),bounds=[(None,None)]*len(states)+[(None,None)],method='highs')
                 if not res.success:raise RuntimeError(res.message)
                 if res.fun<best-1e-9:
                     best=float(res.fun)

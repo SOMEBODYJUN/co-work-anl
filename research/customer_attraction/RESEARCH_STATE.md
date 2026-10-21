@@ -21,6 +21,12 @@
 
 [实际分数负载弱桥无限族](../current/customer_attraction/fractional_actual_load_counterexample.md)进一步排除了固定选择实际缩放背景αc、再要求W≥(m−1/2)M的支付方式：每个m≥4均有四主题完整SPE严格违反。原来的OPT≤(2m−1)M代数仍成立；保留精确实际税得到OPT≤mM+W−G_C，而新的充分桥mM≤W+G_C尚未在此证明。该族满足真正强安全预算W≥m v_m，不影响一般目标或真正聚合安全值的开放状态。
 
+## 新表示与支付边界
+
+[覆盖矩行空间](../current/customer_attraction/coverage_moment_geometry.md)已完成独立内部重构：固定人数下，任意完整策略末层真实比较的span已含所有非公共方向，但不产生所需非负乘子。可自适应稀疏到d种类型，不能预选固定非负类型基。
+
+[五客户无拥挤例](../current/customer_attraction/collision_free_occupancy_obstruction.md)实际W4、OPT5；它排除所有f(0)=0、f(1)=1的可加纯负载支付。进一步的[任意人数无拥挤族](../current/customer_attraction/collision_free_three_halves_family.md)已有完整独立归纳，W=2m、OPT=3m−1，比率趋3/2。任何普遍纯负载上界且f0=0都必须f1≥3/2。一般half的失败机制不能只由实际终局拥挤校正解释，必须继续追真实离轨回复。这些结果均无外审/新颖性认证，不改变Q-CAG-HALF的OPEN状态。
+
 ## 真正缺什么
 
 一般目录的早期玩家偏离一个主题后，所有后继都可以沿原完整策略改变行动。需要控制这些**真实分支之间的总福利损失**，同时保留所有历史依赖平局。现有静态 NE 桥、逐人保底、逐步非负预算、根总税及若干固定运输核均已失败。
