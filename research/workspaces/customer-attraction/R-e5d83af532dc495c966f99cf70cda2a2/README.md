@@ -14,7 +14,12 @@
 
 | 路径 | 内容、状态与读取条件 |
 |---|---|
-| [parent_tail/penultimate_price_defect.md](parent_tail/penultimate_price_defect.md) | 父分支的完整解析加强：倒二B(u_A)<=W−u_A+E<=W−u_A/2。E只位于末两主题共同覆盖且早期负载至少二的客户。另一研究员已独立逐客户重建，独立脚本/审查正在写；尚未正式共享入库，外审/新颖性未认证。读它可见此前预算缺口如何由末位克隆A修正，以及剩余精确交叠代价。 |
+| [parent_tail/penultimate_price_defect.md](parent_tail/penultimate_price_defect.md) | 父分支的完整解析加强：倒二B(u_A)<=W−u_A+E<=W−u_A/2。E只位于末两主题共同覆盖且早期负载至少二的客户。另一研究员已独立逐客户重建，[审查](uncovered_profit/endpoint_strengthening_review.md)与15552角点Fraction审计通过；固定m>=3更强系数为(m+1)/(2(m−1))。尚未正式共享入库，外审/新颖性未认证。读它可见此前预算缺口如何由末位克隆A修正，以及剩余精确交叠代价。 |
+
+| [customer_coupling/cycle_alignment_budget.md](customer_coupling/cycle_alignment_budget.md) | 共同客户的多真实末位菜单环必要支付：任意K、任意非负边权下，独立pair包络相对共同索引排列的精确损失omega*kappa；奇/偶O环均分类。父已独立解析重构及精确穷尽核验，见[parent_tail审查](parent_tail/cycle_alignment_independent_review.md)。它不建立全局策略可实现或根W支付。 |
+| [parent_tail/audit_cycle_alignment_independent.py](parent_tail/audit_cycle_alignment_independent.py)与[输出](parent_tail/cycle_alignment_independent_audit.json) | 不导入作者，135168个会员赋值、13384个精确边缘极值与29007条贪心路径核对。有限审计不是一般证明，任意参数依据奇偶性及显式集中损失构造。 |
+| [uncovered_profit/README.md](uncovered_profit/README.md) | 逐人机会缺口与价格全Γ攻击的参数、有限结果、独立端点审计；一般候选未升级。 |
+| [direct_global/README.md](direct_global/README.md) | 实际红覆盖/蓝漏覆盖分解与候选；已证的蓝私有块委托是既有单资源路由机制的重构，一般交叠仍未支付。 |
 
 ## 正在进行的六个研究任务
 
