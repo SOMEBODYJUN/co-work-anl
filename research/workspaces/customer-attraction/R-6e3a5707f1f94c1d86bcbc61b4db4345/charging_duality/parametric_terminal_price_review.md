@@ -152,6 +152,33 @@ actual old-player profits, but must not be advertised as a strengthening of
 (T). The no-clone parameter theorem is the primary result. Previously known
 unweighted tax-type corollaries can be retained as weaker organized forms.
 
+One can retain the slack explicitly when using the previous tax organization.
+Let P be the actual total final profit of the fixed-prefix players, let
+W=P+v+w, and put
+
+    E=sum_(x in A cap B, p_x>=2)
+           (p_x-1)/[2(p_x+1)(p_x+2)].
+
+At eta=1/2,q=1, the raw RHS R is
+
+    R=w/2+sum_(p_x>=1)p_x/(p_x+1)+|{x:p_x=0,x in A}|/4.
+
+The old customer-by-customer comparison is
+
+    sum_(p_x>=1)p_x/(p_x+1)+|{p_x=0,x in A}|/4-C_A/2 <= P+E.
+
+For p=0 the fresh-A term cancels a/[2(p+2)]. For p>=1,a=0,
+p/(p+1)<=p/(p+b); for a=1,b=0, subtracting 1/[2(p+2)] only helps;
+for a=b=1, the difference from p/(p+2) is exactly
+(p-1)/[2(p+1)(p+2)]. These exhaust the binary cases. It follows that
+
+    B_1(v)<=R<=W-v+E-L/2,  L=w-C_A>=0.                         (S)
+
+Thus the earlier organized endpoint bound W-v+E can be improved by retaining
+the half clone slack that its organization discarded. Equation (S) remains
+weaker than or equal to the exact raw customer-sum bound R, and neither is a
+general early-player result.
+
 ## Scope and remaining obstruction
 
 Every incentive row used above belongs to the given complete original SPE.
