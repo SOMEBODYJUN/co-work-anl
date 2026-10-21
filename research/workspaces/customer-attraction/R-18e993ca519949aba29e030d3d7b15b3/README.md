@@ -4,6 +4,10 @@
 
 ## 当前接续与状态
 
+本次在新的临时目录从 main 恢复本身份并成功 `start --resume`，保留原研究资产。六名用户指定 gpt-6.1-sol ultra 研究员并行推进（直属五名及安全值分支一名）。唯一主目标仍 OPEN；不把一般聚合安全、逐人缺口或末位克隆候选当定理。
+
+本次新增可接续工作见 [next_boss/README.md](next_boss/README.md)：自由终局、逐人归一的完整树 MILP 与精确固定策略锥复验。它是既有联合策略/重数工具的目标变体，当前只提供有限候选与运行边界，未得到新的一般数学结论。各研究分支在 `next_global/`、`next_security/`、`next_counterexample/`、`next_tree/`、`next_representation/` 留存本次推导；未完成者保持候选身份。
+
 2026-10-21，环境重置后从 main 找回本 actor 并 `start --resume`；当前独立 clone 为 `co-work-anl-boss5`。六名指定研究子代理在辅助临时 clone 推导，Boss统一将实质稿件与核验转入本身份；辅助身份不发布成果。一般目标与背景半利润候选都仍 OPEN。
 
 本轮新工具与边界（个人备份，不自动成为 canonical）：
