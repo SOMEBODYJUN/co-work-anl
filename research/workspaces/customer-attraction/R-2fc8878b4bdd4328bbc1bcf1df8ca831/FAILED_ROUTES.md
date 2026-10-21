@@ -6,3 +6,7 @@
 - 旧largest_incumbent_n3p6_best.json的verified:true不能当完整SPE：生成器删掉全部根约束，定义级审计发现五个根盈利偏离；源SHA及审计见[纠错报告](credible_search/old_largest_incumbent_audit.json)。不改旧冻结字节，不据其642/125比率否定弱逐人桥。
 
 求解超时、无incumbent和有限无反例没有数学真值含义。
+
+- 纯负载代理障碍已由五客户例提升为任意人数完整无拥挤族：所有f0=0的普遍支付必须f1≥3/2。实际未拥挤不代表最优；离轨拥挤负责维持低效。当前规范全文及独审见current三份新稿。
+- 全局正矩不能由所有真子目录的合法性推出：positive_moment_locality给明确无界假矩族；假矩不是合法CAG。
+- 扩大DR边际势模型可违反强安全聚合，但它不满足CAG支持不变总收益预算；不能把此反例跨模型使用。

@@ -10,9 +10,22 @@ from pathlib import Path
 def audit(source):
     raw = source.read_bytes()
     report = json.loads(raw)
-    point = report['exact_candidate']
+    if 'instance' in report and 'strategy' in report:
+        inst = report['instance']
+        m,p = inst['players'],len(inst['topics'])
+        clones = [0]*((1<<p)-1)
+        for row in inst['customers']:
+            mask = sum(1<<a for a in row['topics'])
+            if mask:clones[mask-1]+=row['multiplicity']
+        point = {'certified':report['full_strategy_verified'],
+                 'integer_clones':clones,'strategy':report['strategy'],
+                 'welfare':report['W'],'optimal_welfare':report['OPT']}
+        expected_counts = point['strategy']['terminal_counts']
+    else:
+        point = report['exact_candidate']
+        m,p = report['milp']['players'],report['milp']['topics']
+        expected_counts = report['milp']['root_counts']
     assert point and point['certified']
-    m,p = report['milp']['players'],report['milp']['topics']
     clones = tuple(point['integer_clones'])
     assert len(clones)==(1<<p)-1 and all(isinstance(v,int) and v>=0 for v in clones)
     policy = {tuple(x['history']):x['action'] for x in point['strategy']['actions']}
@@ -46,7 +59,7 @@ def audit(source):
             if slack<0:violations.append((h,a,b,str(actual),str(deviation)))
     path = terminal(())
     q = tuple(path.count(a) for a in range(p))
-    assert q == tuple(point['strategy']['terminal_counts']) == tuple(report['milp']['root_counts'])
+    assert q == tuple(point['strategy']['terminal_counts']) == tuple(expected_counts)
     W = welfare(path)
     O = max(welfare(J) for J in combinations(range(p),min(p,m)))
     assert W==point['welfare'] and O==point['optimal_welfare']
