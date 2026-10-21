@@ -4,9 +4,11 @@ No canonical solver, model, strategy cone, or author's audit is imported.
 from fractions import Fraction
 from itertools import product
 from pathlib import Path
-import hashlib,json
+import hashlib,json,sys
 HERE=Path(__file__).resolve().parent
-SOURCE=HERE.parent/'credible_counterexample/payoff_cap_failure.json'
+SOURCE=Path(sys.argv[1]) if len(sys.argv)>1 else HERE.parent/'credible_counterexample/payoff_cap_failure.json'
+SOURCE=SOURCE.resolve()
+TAG='_markov' if SOURCE.stem.endswith('_markov') else ''
 raw=SOURCE.read_bytes();record=json.loads(raw);ins=record['instance'];p=len(ins['topics']);m=ins['players']
 assert (p,m)==(5,3)
 units=[]
@@ -55,6 +57,12 @@ assert record['welfare']==W and record['optimum']==O
 share=pay[2]/W;assert share==Fraction(record['value'])==Fraction(12,23)>Fraction(1,2)
 pairratio=pay[2]/pay[0];assert pairratio==Fraction(12,5)>2
 assert min(pay)>=Fraction(O,2*m-1)
-report={'source':str(SOURCE.relative_to(HERE.parents[4])),'source_sha256':hashlib.sha256(raw).hexdigest(),'implementation':'independent expanded unit customers, standard-library Fraction, direct full ordered histories','units':len(units),'topics':p,'players':m,'decision_histories':len(checks),'proper_deviations':strict+tied,'strict_proper_deviations':strict,'tied_proper_deviations':tied,'including_self_comparisons':sum(len(x['all_action_branches']) for x in checks),'terminal_profiles':len(all_profiles),'all_deviations_nonprofitable':True,'root':root,'payoffs':list(map(str,pay)),'welfare':W,'optimum':O,'largest_share':str(share),'share_above_half':str(share-Fraction(1,2)),'largest_to_smallest_payoff_ratio':str(pairratio),'pairwise_cap_violation':str(pay[2]-2*pay[0]),'weak_individual_floor':str(Fraction(O,2*m-1)),'weak_individual_floor_min_slack':str(min(pay)-Fraction(O,2*m-1)),'claim_scope':'refutes every-player u_i<=W/2 and pairwise u_i<=2u_j; does not refute Q-CAG-HALF or u_i>=OPT/(2m-1)','node_checks':checks}
-HERE.joinpath('payoff_cap_independent_audit.json').write_text(json.dumps(report,indent=2)+'\n')
+seen_counts={}
+for h,a in actions.items():
+ k=tuple(h.count(x) for x in range(p))
+ seen_counts.setdefault(k,set()).add(a)
+is_markov=all(len(v)==1 for v in seen_counts.values())
+if TAG:assert is_markov
+report={'same_count_histories_same_action':is_markov,'source':str(SOURCE.relative_to(HERE.parents[4])),'source_sha256':hashlib.sha256(raw).hexdigest(),'implementation':'independent expanded unit customers, standard-library Fraction, direct full ordered histories','units':len(units),'topics':p,'players':m,'decision_histories':len(checks),'proper_deviations':strict+tied,'strict_proper_deviations':strict,'tied_proper_deviations':tied,'including_self_comparisons':sum(len(x['all_action_branches']) for x in checks),'terminal_profiles':len(all_profiles),'all_deviations_nonprofitable':True,'root':root,'payoffs':list(map(str,pay)),'welfare':W,'optimum':O,'largest_share':str(share),'share_above_half':str(share-Fraction(1,2)),'largest_to_smallest_payoff_ratio':str(pairratio),'pairwise_cap_violation':str(pay[2]-2*pay[0]),'weak_individual_floor':str(Fraction(O,2*m-1)),'weak_individual_floor_min_slack':str(min(pay)-Fraction(O,2*m-1)),'claim_scope':'refutes every-player u_i<=W/2 and pairwise u_i<=2u_j; does not refute Q-CAG-HALF or u_i>=OPT/(2m-1)','node_checks':checks}
+HERE.joinpath('payoff_cap_independent_audit'+TAG+'.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps({k:v for k,v in report.items() if k!='node_checks'},indent=2))

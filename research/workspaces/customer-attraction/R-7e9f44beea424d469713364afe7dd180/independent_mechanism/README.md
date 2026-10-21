@@ -55,3 +55,7 @@
 ## 母代理追加的独立审查
 
 已完成23客户新反例的独立单位客户展开审查，见 `payoff_cap_independent_review.md`、`payoff_cap_independent_audit.py` 与 `payoff_cap_independent_audit.json`。31个有序历史、124个真正偏离全部通过；根收益 `(5,6,12)`，`W=OPT=23`。严格否定 `u_i<=W/2` 和 `u_i<=2u_j`，但不否定弱逐人桥 `u_i>=OPT/(2m-1)`。没有验证作者的优化上界或主张全类极值。
+
+## 任意历史的最大主题近饱和必要式
+
+新增 `max_topic_saturation.md`：纯终局代数 `u_B <= (m-1)^2 u_A -(m-2)|A|`（假设|A|>=|B|）给任意合法历史当前玩家t的必要式 `OPT/(2m-1) <= t+(m-2)(mt-M)`；末位单独满足更强t>=L。没有闭合m>=3。附逐客户非负分解与Fraction系数审计，以及21客户非SPE松弛构造，明确说明“所有后继收益>=L”的标量压缩仍不够，必须使用真实逐主题最佳性。root机制有既有工作，不主张新颖性。
