@@ -18,6 +18,7 @@
 | 三人、四人一般目录 | 三人锐5/3；四人1499/750<2；内部证明与审查 | [三人证明](research/current/customer_attraction/three_player_sharp.md)、[四人证明](research/current/customer_attraction/four_player_bound.md) |
 | 五人一般目录 | 当前上界约2.061695>2，未达半覆盖 | [精确有理界](research/current/customer_attraction/five_player_indexed_bound.md)；模板最优点不是SPE反例 |
 | 有限极大覆盖 / 层级结构 | 至多六极大任意人数已证；七极大仅有明确部分范围；另有向日葵与层级关联定理 | [按范围的完整结果表](research/current/customer_attraction/README.md) |
+| 静态福利比较桥 | 完整三人SPE的福利可以低于同实例每个静态PNE；不能靠选择另一较差PNE导入静态界 | [十六客户反例](research/current/customer_attraction/worst_pne_welfare_counterexample.md)，独立定义级内审 |
 | 完整策略计算与证书 | 集合值逆向归纳、客户重数锥、有限精确核验 | [终局全集](research/current/customer_attraction/exact_solver.md)、[策略锥](research/current/customer_attraction/strategy_cone.md)；不构成一般证明 |
 
 ## 真正前沿与失败机制

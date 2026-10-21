@@ -7,6 +7,7 @@
 | 尝试与失败点 | 仍可回收什么 | 改变什么才值得重试 |
 | --- | --- | --- |
 | 把顺序 SPE 终局当成静态 NE，套静态次模福利界：[完整反例](../current/customer_attraction/literature.md)中 SPE 终局仍有静态盈利偏离 | 覆盖的次模性、均分收益与静态有效效用结构仍成立 | 比较偏离后**原策略的真实后继**，或另证所用类的 SPE→NE 桥 |
+| 用同实例最差静态PNE福利替代SPE终局：[十六客户完整反例](../current/customer_attraction/worst_pne_welfare_counterexample.md)给W(SPE)=15，而全部静态PNE福利16 | 比“SPE终局可以非PNE”更强：不存在另一低福利PNE可供比较；静态福利分析本身保留 | 另造跨分支相关对象并证明其福利支付，不能仅更换一个静态PNE；CCE候选仍未证 |
 | 假定同主题计数历史必须同回复、或早晚收益单调：[续局边界](../current/customer_attraction/continuation_lemmas.md)均有完整 SPE 反例 | 子博弈可实现终局**集合**可按计数缓存 | 集合压缩后仍对各有序历史独立重构；限制平局规则须另立模型 |
 | 逐人或聚合支付最大残余主题、把最优主题匹配到在轨玩家：[残余反例](../current/customer_attraction/continuation_lemmas.md)、[匹配反例](../current/customer_attraction/portfolio_matching_counterexample.md) | SPE 仍给每次真实偏离的收益上界；保留最优主题的非重计并集 | 改用允许跨玩家、跨节点的共同支付，而非重试同一匹配 |
 | 首步机会成本税、任意背景总税、空背景根总税：[首步](../current/customer_attraction/tax_bridge_counterexample.md)、[背景](../current/customer_attraction/general_tax_counterexample.md)、[根](../current/customer_attraction/root_tax_counterexample.md)均已否定 | 恰两人税恒等式和固定背景的三/四人**剩余利润**定理仍成立 | 改变全局收费方式；修分母不能修复空背景已失败的桥 |

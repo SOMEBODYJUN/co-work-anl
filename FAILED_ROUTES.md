@@ -5,6 +5,7 @@
 | 机制 | 为什么失败、留下什么 | 自足入口 |
 | --- | --- | --- |
 | 把SPE终局当作静态Nash | 后继会响应早期偏离；终局可以有静态改善。保留真实全历史偏离比较 | [续局失败桥](research/current/customer_attraction/continuation_lemmas.md) |
+| 比较到同实例的另一最差静态PNE | 完整SPE覆盖十五，全部静态PNE覆盖十六，替换静态均衡仍不能支付 | [静态福利比较反例](research/current/customer_attraction/worst_pne_welfare_counterexample.md) |
 | 逐人安全值/末位保底推广到所有人 | 有完整SPE违反逐人保证；聚合桥须单独证明 | [逐人安全值反例](research/current/customer_attraction/individual_security_counterexample.md)、[末位聚合反例](research/current/customer_attraction/aggregate_theta_counterexample.md) |
 | 每一步或每个前缀余额非负 | 合法SPE可以先亏后补；局部失败不否定全局补偿 | [全局债务与局部反例](research/current/customer_attraction/security_chain_and_local_boundary.md) |
 | 根总税、最优主题匹配收费 | 真实完整策略已经击穿具体收费；更弱全局覆盖未被反驳 | [根总税反例](research/current/customer_attraction/root_tax_counterexample.md)、[匹配收费反例](research/current/customer_attraction/portfolio_matching_counterexample.md) |
