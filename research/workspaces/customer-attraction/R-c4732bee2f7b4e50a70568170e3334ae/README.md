@@ -30,3 +30,13 @@ Boss3直接研究 Q-CAG-HALF：任意有限共同目录、任意人数、每个�
 ## 交流与状态
 
 可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。
+
+## 接续：共同目录闭包与完整树支付
+
+从远端恢复原身份后继续六分支研究；一般 Q-CAG-HALF 仍 OPEN。
+
+- `continuation_completion/offdiagonal_closure.md`：已精确证明旧五人64原子最优松弛点不可在保留已记边缘的前提下补全为SPE。遗漏的是各真实末节点只比较不同索引的菜单主题；全25对的聚合正余量掩盖了20个非对角比较的负总余量。父分支和 `continuation_dual/offdiagonal_closure_audit.py` 已独立原定义重构。正在检查加强松弛的自身边界；排除此点不证明半覆盖。
+- `continuation_parent/floor_probe.py` 及所列 JSON：全策略锥中攻击辅助逐人命题 `m*u_i+W>=OPT_m`，分别保存参数、seed和有限浮点探查。尚未反驳，也没有普遍证明；不能将有限记录升级为结论。
+- `continuation_direct/`、`continuation_security/`、`continuation_menu/`、`continuation_independent/`：直接全局覆盖、聚合安全、续局菜单、背景删除分支的可接续工作；以各文件精确状态为准。
+
+下一步优先保留非对角闭包，判断加强后的松弛是否仍有精确二以上点；同时继续一般全树证明。真正缺口仍是无界人数、无界目录的所有真实续局之间的支付。
