@@ -16,3 +16,5 @@
 完整分类、触发重试条件与原始证据见[本题失败地图](research/customer_attraction/FAILED_ROUTES.md)和[全部资产索引](research/current/customer_attraction/README.md)。数学路线可以自由改变；已有失败不是方法白名单。
 
 其他模型保留其独立失败账本：[调度](research/unrelated_machines/FAILED_ROUTES.md)、[拥塞](research/weighted_congestion_frontier/FAILED_ROUTES.md)。旧角色与旧主攻入口的历史字节见[本次清理记录](research/customer_attraction/CURATION.md)，不作为当前指令。
+
+加权拥塞结构应用的背景成本遗漏、校准NO误用、最小势福利误推和原游戏修复混淆，已分别记录失效机制与修补条件，见[专题失败账本](research/weighted_congestion_frontier/FAILED_ROUTES.md)及[独立审查](research/reviews/weighted_congestion/decision_methods_review.md)。

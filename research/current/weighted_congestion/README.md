@@ -95,8 +95,8 @@ WC-TARGET v1的原长期身份保留。新下界a_*(d)≥d/10与[单列Paper Fac
 
 [既有Pro简报](../../weighted_congestion_frontier/PRO_BRIEF.md)、[精确攻题任务](../../weighted_congestion_frontier/prompts/PRO_ATTACK.md)及[冻结来源映射](../../weighted_congestion_frontier/PRO_BRIEF_SOURCES.json)保留解题前2c49228及其前序快照的模型与工具整理；其中旧OPEN判断不再代表现行状态。独立复查当前结果应先读本页新自足证明及审查，冻结旧来源不原位修改。
 
-## 结构用于决策：本轮恢复入口
+## 结构用于决策与成本优化的成稿
 
-[成果恢复与用途](decision_methods/source_recovery.md)固定可读地基、既有英文稿和无法从当前 main 恢复的来源。后续方法以原游戏的真实偏离、稳定性与社会成本分别核验；本轮按用户指定接续，不改变其他模型的主攻或原有结果身份。
+[完整成果包](decision_methods/README.md)将已有局部势、共同玩家尺度和修复结构接到原游戏决策。先读[连续成稿](decision_methods/structure_to_decision.md)，再按任务进入[精确校准](decision_methods/calibration.md)、[稳定与成本正则化](decision_methods/decision_quality.md)、[原游戏前沿与模块lift](decision_methods/repair.md)、[决策器用法](decision_methods/runner.md)或[原文基线与应用合同](decision_methods/baselines.md)。[恢复范围](decision_methods/source_recovery.md)保留已有英文论文和缺失旧稿的边界。
 
-[方法对照与应用输入合同](decision_methods/baselines.md)比较稳定倍率、完成时间和加权社会成本；包含低次数细界、权比敏感界及森林/拟阵范围，不以通用 d 基线代替全部适用方法。
+新接口分别登记为精确Claim，并有独立重构、第二实现攻击和正式路径精确运行。固定背景势曾不能直接接完整社会成本包络；已恢复资源基线并重证。小实例给出同为精确均衡时W由6降至11/2的选择改进；通用结构界、原游戏无解、校准接口NO和计算超限严格区分。该包不改变已有全状态线性下界。

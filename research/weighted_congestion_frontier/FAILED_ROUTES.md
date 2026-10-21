@@ -128,3 +128,14 @@
 ## 把固定hub的精确轻响应当成整个游戏的提升
 
 [阈值响应接口](../current/weighted_congestion/fixed_hub_light_threshold_response.md)给unique-light、无UF的真实稳定light选态，但其势随hub向量改变，不能累计为同一全局势。原共享侧正文9.17两玩家例在每个固定hub都有精确light响应，重选后hub成本由补位对称相同，仍有真实冻结light的hub改善。因此失败是偏离合同和响应预算缺失，不是light响应不存在。多light共享side另由旧三玩家例直接阻止该exact响应推广；回收显式阈值势/单遍选择，下一步须支付冻结与重置成本差。存在/FIP为已知Milchtaich特例，新颖性不因重构升级。
+
+## 结构转为决策时的四种失败与修补
+
+| 尝试及关键机制 | 具体失效 | 回收与下一触发条件 |
+| --- | --- | --- |
+| 将必用负载吸为背景、归零势后直接用mW≤Φ | 只有必用正费资源时Φ=0、W>0，根本没有m>0 | [恢复基线并重证](../current/weighted_congestion/decision_methods/decision_quality.md)后可拼装成本项；压缩原势只保稳定 |
+| 把校准LP的精确NO当作原游戏无均衡 | 权(1,2)、x/x²资源的完整16态游戏改善无环且有唯一空空PNE，但共同尺度图校准在α1仍NO | [方形兼容性反例](../current/weighted_congestion/decision_methods/calibration.md)保留精确Farkas用途；改接口或直接求状态，不扩大NO范围 |
+| 最小势或普通最佳反应等同于成本最优 | [四状态例](../current/weighted_congestion/decision_methods/decision_quality.md)最小势精确均衡W6，另一精确均衡W11/2 | 正则化或在稳定集合内优化；预算约束停点仍须检查全部原偏离 |
+| 单靠位串规范化或新增惩罚资源便声称原游戏修复 | 无条件earliest翻位能把原精确PNE任意增费并破坏稳定；增加资源改变问题 | [已有时钟强支配](../current/weighted_congestion/decision_methods/repair.md)才认证原游戏改善；即使支配成立仍可能前沿循环，须完整核心求解 |
+
+这些失败不反驳各自保留了条件的正向方法。正式范围与已修补风险见[独立审查](../reviews/weighted_congestion/decision_methods_review.md)。
