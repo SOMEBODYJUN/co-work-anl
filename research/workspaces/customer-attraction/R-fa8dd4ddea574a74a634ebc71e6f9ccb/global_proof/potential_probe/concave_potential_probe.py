@@ -16,6 +16,7 @@ ap.add_argument('--topics',type=int,default=3)
 ap.add_argument('--iterations',type=int,default=100)
 ap.add_argument('--seed',type=int,default=911)
 ap.add_argument('--dr-only',action='store_true')
+ap.add_argument('--random-policy',action='store_true')
 args=ap.parse_args();m,p=args.players,args.topics
 rng=np.random.default_rng(args.seed)
 def states(k,left=p):
@@ -69,7 +70,8 @@ for it in range(args.iterations):
   for q in layers[d]:
    children=[final[add(q,a)]for a in range(p)]
    vals=np.array([fv[z]-fv[sub(z,a)]for a,z in enumerate(children)])
-   a=int(rng.choice(np.flatnonzero(vals>=vals.max()-1e-9)))
+   a=(int(rng.integers(p)) if args.random_policy else
+      int(rng.choice(np.flatnonzero(vals>=vals.max()-1e-9))))
    sigma[q]=a;final[q]=children[a]
  rows=[]
  for q,a in sigma.items():
