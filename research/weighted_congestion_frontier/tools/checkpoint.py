@@ -15,12 +15,26 @@ import time
 
 SCOPE = "research/weighted_congestion_frontier"
 # Match the standalone work.py bootstrap; an existing wcg.save takes priority.
-DEFAULT_SAVE = "unrelated-machines"
+DEFAULT_SAVE = "customer-attraction"
 COMMON_PATHS = ["README.md", "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md",
                 "research/current/claims.md", "research/assets.json", "research/review_status.json",
                 "research/graph.json", "research/index.html", "research/source_crosswalk.json",
                 "research/source_crosswalk.md", "research/catalog.json", "research/CATALOG.md"]
 SAVE_PATHS = {
+    "customer-attraction": ["research/current/customer_attraction",
+                            "research/questions/customer_attraction",
+                            "research/questions/customer_attraction_half_coverage.md",
+                            "research/questions/customer_attraction_general_handoff.md",
+                            "research/reviews/customer_attraction", "research/customer_attraction",
+                            "customer_attraction", "tests/test_customer_attraction.py",
+                            "tests/audits/customer_attraction", "examples/customer_attraction",
+                            "evidence/runs/customer_attraction", "evidence/certificates/customer_attraction",
+                            "history/source/notes/customer_attraction",
+                            "history/source/literature/customer_attraction",
+                            "AGENTS.md", "ASSETS.md", "USAGE.md", "research/README.md",
+                            "research/ROADMAP.md", "research/current/README.md",
+                            "research/questions/README.md", "research/reviews/README.md",
+                            "research/REPOSITORY_GUIDE.md", "research/active_research.json"],
     # Explicit or previously bound shared archives retain their legacy scope.
     # Unbound clones use DEFAULT_SAVE, never inherit this historical topic.
     "shared": [SCOPE, "research/current/weighted_congestion",
@@ -35,6 +49,10 @@ SAVE_PATHS = {
                            "examples/unrelated_machines", "evidence/runs/unrelated_machines",
                            "evidence/certificates/unrelated_machines",
                            "history/source/literature/unrelated_machines"],
+}
+SAVE_PATTERNS = {
+    "customer-attraction": ["tests/audits/customer_attraction*.py",
+                            "evidence/runs/*/customer_attraction*"],
 }
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}|-----BEGIN [A-Z ]*PRIVATE KEY-----")
 ROUTING = ("GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE",
@@ -153,6 +171,14 @@ def default_paths(repo):
     # Unknown archives may save shared registers and their own workspace, but
     # must select new mathematical directories explicitly until registered here.
     paths = list(SAVE_PATHS.get(save, [])) + COMMON_PATHS
+    # Legacy CAG audits are flat files. Include new and tracked-deleted matches
+    # without treating glob strings as broad checkpoint pathspecs.
+    for pattern in SAVE_PATTERNS.get(save, []):
+        matches = {p.relative_to(repo).as_posix() for p in repo.glob(pattern)}
+        matches.update(name for name in names(git(repo, "ls-files", "-z", "--", pattern))
+                       if Path(name).match(pattern))
+        paths.extend(sorted(matches))
+    paths = list(dict.fromkeys(paths))
     if actor:
         paths.append("research/workspaces/" + save + "/" + actor)
     paths = [p for p in paths if (repo / p).exists()

@@ -1,18 +1,31 @@
-# Working rules for future research contributors
+# 当前研究者工作规则
 
-Current user decision (2026-10-18): all active unrelated-machines researchers directly attack the negation of UM-TARGET-v1. Keep that original target's statement unchanged. Seek real integer makespan gaps approaching 2 for every fixed improvement, with explicit complexity assumptions and sound decoders from absolute load thresholds. Existing positive results remain tools and attacks on reductions. This direction choice does not change mathematical status; neither the general algorithm nor its nonexistence is proved. No route-card or early-review approval is required for exploration. Do not infer nonexistence from failed searches, tiny constants, CONFIG/SA gaps, or restricted rounding failures; see research/unrelated_machines/ACTIVE_ROUTES.md.
+当前唯一主攻 **Q-CAG-HALF**，存档 **customer-attraction**：一般共同目录、任意人数、每个完整历史依赖纯SPE的最终福利W≥OPT/2。主目标仍OPEN。先读根四入口，再读 research/customer_attraction/README.md、research/current/customer_attraction/model.md 和相关数学义务。两阶段设施的客户NE、不相关机调度与拥塞均有不同模型，不得混用。
 
-This repository is a growing mathematical research program. The active research goal is UM-TARGET-v1: a deterministic polynomial-bit-time algorithm with a universal constant (2−ε) approximation for general unrelated-machine makespan scheduling R∥C_max. Use save unrelated-machines. Start with the four root entry files, research/current/unrelated_machines/README.md, research/unrelated_machines/CLAIMS.md, research/current/unrelated_machines/model_and_classical_barriers.md and research/GROWTH.md. research/current/model.md defines the separate facility model and is not the scheduling model. The active routing contract is research/active_research.json; history/ preserves source drafts and superseded arguments.
+## 直接研究与三个角色
 
-- Write a new, self-contained Markdown account from the underlying mathematical material. Do not promote a moved or lightly reworded historical file into the current layer. Show hypotheses, quantifiers, actual inequalities or reduction, boundary cases, and the proof's remaining obligations.
-- Give each claim a stable ID and exact input class. Keep shared catalogs, heterogeneous catalogs, restricted one-overlap games, local questions, universal bounds, and instance-optimal solvers separate. A changed cost rule, equilibrium concept, or continuation quantifier requires explicit versioning.
-- Keep universal proof, a finite test, an attaining certificate, and an optimality certificate distinct. Record separately whether a complete proof exists in the manuscript, whether the current Markdown reconstructs all its branches, and whether external peer review has occurred. A successful run does not close a mathematical proof, and an abridged rewrite does not erase a complete source proof.
-- Keep the existing canonical packages: facility_spe/ for two-facility algorithms and multi_facility_spe/ for the arbitrary-facility finite constructor. A genuinely different future model may use a sibling package. Put tests in tests/, inputs in examples/, frozen outputs in evidence/, and raw/superseded sources in history/. Do not restore the old astra_* or asym_research top-level directories.
-- Human teaching material belongs in learning/, with its files, canonical readings and claim IDs registered in learning/manifest.json. Tutorials explain current claims; they do not replace proofs or upgrade review status. An educational reorganization alone does not require inventing graph claims. Keep root README as a stable research map and dated progress in RESEARCH_STATE.md.
-- For a new or changed result, update research/current/claims.md, research/review_status.json, research/assets.json, research/graph.json, and the relevant branch README. Record source proof, current reconstruction, internal review, external review and implementation separately; graph claim status must agree with the ledger. If new source files enter, interpret each in research/source_crosswalk.json and regenerate its Markdown. Mathematical derives hyperedges must list all joint premises; use checks or limits for tests and open obligations.
-- Run the relevant exact-arithmetic regressions plus research/build_map.py --check, research/build_crosswalk.py --check, and research/check_assets.py. Do not overwrite frozen evidence runs by default. Explain what was verified and what remains unverified.
-- Give each reusable research file a concrete Chinese mathematical title and a purpose in research/catalog.json; use a descriptive object-and-role filename rather than an actor, bare proof.md or RESULT.md. Run research/build_catalog.py and --check, and regenerate the WC FILES.md with research/check_wc_assets.py when affected. Keep catalog navigation separate from claim truth/review ledgers; update live links and the recorded rename map when moving a file. Do not rewrite frozen evidence or original-source bytes to make paths look current.
+- Boss带自己的团队直接研究，方法、路线和合作自由，不设前置Route Card、reviewer、名额、认领或审批。使用会话实际可用的模型和工具，不虚报人数、模型配置或无限算力。
+- 清洗者检查对象、量词、推导、算法与证据，处理真实异议，写成自足资产并入库；不以目录检查代替数学检查，不让探索排队等审核。
+- 整理者判断哪些成果能独立成文、如何拆合和定位，突出新增机制、解决的缺口和优势；文献归属、条件、局限和外审状态必须真实，不以包装填补数学缺口。
+- 当前只维护 research/customer_attraction/BOSS_START.md、CLEANER.md、EDITOR.md 三份角色提示词。其他题目与旧角色是明确隔离的保留或历史材料。
 
-The user’s current instructions take precedence over this file. Historical manuscript wording or an earlier AI summary cannot silently override the new claim's explicit scope.
+## 数学资产
 
-For repository-wide reading and production states, follow research/REPOSITORY_GUIDE.md together with research/GROWTH.md. The complete active startup prompt is research/unrelated_machines/BOSS_START.md and operations are in research/unrelated_machines/RUNBOOK.md. The shared program remains research/weighted_congestion_frontier/tools/work.py; its historical directory name does not select the mathematical topic. Weighted congestion, facilities and customer attraction retain separate models and ledgers, and are entered only when explicitly selected. Existing clone bindings are preserved; an old shared clone must not be rebound for the new topic. Use an independent clone on main; do not create research branches or keep assets only on the board. Peer discussion may share useful unfinished ideas, conjectures and questions without prior review or a file submission. Reusable candidates may be saved at their actual evidence level; important mathematical status upgrades still require the applicable proof and independent attack. New material objections must be checked and recorded. Run research/check_active_research.py for active routing and research/check_wc_assets.py --check for the retained WC inventory. Archived original commits and exact hashes remain recoverable; a current-tree cleanup must not delete unique mathematical content.
+- 精确目标固定在 research/questions/customer_attraction_half_coverage.md；改变对象、范围、量词、假设或结论需另立Claim/version。
+- Paper Fact、解释、猜想、观察、证据和canonical记录分开。有限计算不证明一般结论；一条成立的致命异议阻止相关Claim提升。
+- 成熟结果在报告完成或提升为内部可靠结论前做独立攻击；草稿、讨论和准确标级的可接续候选可以直接推进并保存。
+- current表示现行稿，不表示外审通过。更新相关精确账本、review_status、assets和真实依赖图；仅导航整理不制造新数学命题。
+- 保留每个有价值失败的具体机制与范围。已被替代的结论仍可有独立工具价值，不能仅因常数旧就删除其证明。
+- 复用 customer_attraction/ 规范实现；tests/放测试，examples/放输入，evidence/放证书与冻结运行，候选进research/questions/customer_attraction/，自足正文进research/current/customer_attraction/，审查进research/reviews/customer_attraction/。
+
+## 恢复、交流与保存
+
+统一入口是根work.py；附件同一完整文件可恢复独立clone。研究与提交在main，每个独立对话使用自己的clone和R-UUID；接续本clone复用绑定。新对话默认customer-attraction，已有其他save不得自动改绑。内部subagents由boss汇总提交。
+
+凭据保留仓库外，不打印、不写正文、公屏、remote URL或提交。公屏/提及/私聊/本人桌面均用work.py，消息标注猜想或结果实际身份。无需逐次请示已授权的研究、核验、入库与普通推送。
+
+有价值阶段及时checkpoint，推送前安全同步，保留未提交工作和双方冲突，不强推。只有status=pushed才报告远端保存。显式paths替换整个默认范围，必须列全本次成果，不能用根目录“.”夹带别人的桌面或凭据。
+
+新建/移动资产维护catalog中文名称及用途、实际链接和必要来源指针。按改动运行研究目录生成检查、check_active_research.py、check_assets.py及相应精确回归；不原位改冻结证据去迁就新路径。旧模型独有数学保留，过期操作文本进入history。详见research/REPOSITORY_GUIDE.md和research/customer_attraction/RUNBOOK.md。
+
+当前用户指令优先；历史提示词不得覆盖本次目标。路由与三个角色的可检查合同是research/active_research.json。

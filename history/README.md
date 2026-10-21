@@ -1,3 +1,5 @@
+> 本次一般半覆盖的旧指挥文本见[操作归档](research_operations/customer_attraction_transition/README.md)，原路径与hash可核；当前研究入口见[Q-CAG-HALF](../research/customer_attraction/README.md)。
+
 # 历史与可追溯来源
 
 这里存放**可查的旧材料**，不充当现行定理的唯一入口。新的数学论证从[现行研究](../research/current/README.md)进入，旧路径的完整对照在[迁移表](../research/path_migration.json)。

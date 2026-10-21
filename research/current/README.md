@@ -1,17 +1,19 @@
-# 当前数学正文：按模型和证明链阅读
+# 现行数学正文：当前半覆盖与独立模型
 
-本目录保留可接续研究的定义、证明、反例和方法。**current 表示现行数学稿，不表示其中每项命题都已通过独立审查或外部同行评审。**精确范围在各正文与[命题登记](claims.md)，分轴状态在[审查账本](../review_status.json)。全部文件都有[中文资产名和阅读用途](../CATALOG.md)。
+当前主攻 **Q-CAG-HALF**，存档 **customer-attraction**。从[顺序客户吸引数学地图](customer_attraction/README.md)进入一般目录、任意人数的全历史纯SPE半覆盖问题；主目标仍OPEN。
 
-| 模型与专题 | 先读什么 | 然后进入什么 |
+current表示现行自足数学稿，不表示整份文件已外审。精确命题在[claims](claims.md)，五轴状态在[审查账本](../review_status.json)。按义务读取正文、已发生的攻击和证据，不通读所有历史。
+
+| 独立模型 | 首读入口 | 当前边界 |
 | --- | --- | --- |
-| **当前主攻：不相关并行机，UM-TARGET-v1，save=unrelated-machines** | [精确模型、经典地基与当前义务](unrelated_machines/README.md) | [精确账本](../unrelated_machines/CLAIMS.md) → 实际证明/审查/证据；统一ε目标仍OPEN；[完整启动词](../unrelated_machines/BOSS_START.md) |
-| 保留：加权原子拥塞 | [数学目标、已知下界和未解缺口](weighted_congestion/README.md) | 奇环全状态构造与包络 → 结构势/非对称有限机制 → 准确方法障碍；待审稿在 questions |
-| 独立工具：正占用核 | [交互秩暴露面、锐坏项预算与闭包](positive_kernels/README.md) | 非负共享负载响应 → 所有表示的次数/支持联合过滤 → 定量删除 → unanimity补全；来自拥塞正展开，均衡桥另列 |
-| **两阶段设施选址：公共基础** | [输入、成本、精确独立 NE 与完整续局量词](model.md) | 再根据共同/异构目录和设施数选择以下专题；不能直接换成本或续局量词 |
-| 共同目录双设施 | [黄金比主链及复杂度地图](shared/README.md) | 主定理 → 完整证明与承重引理 → 构造算法 → 尖锐下界和小目录复杂度 |
-| 异构目录双设施 | [一般候选、单交叠锐界与长环](heterogeneous/README.md) | 分开核对一般目录、短目录、任意长单交叠的范围与状态 |
-| 双设施局部与精确方法 | [支持几何、强弦、精确算法和费用扩展](local_and_exact/README.md) | 用于固定布局的 oracle、证书及算法分析，不能独自替代全局存在证明 |
-| 任意设施数 | [因子二、完整盒与算法前沿](multi_facility/README.md) | 一般存在 → 有限构造 → 结构类高效算法 → 一般位多项式义务 |
-| **顺序客户吸引** | [完整纯 SPE、福利界与失败桥地图](customer_attraction/README.md) | 小人数和结构目录结果 → 完整策略/证书工具 → 尚未支付的一般全局桥 |
+| 顺序客户吸引 | [模型](customer_attraction/model.md)、[成果地图](customer_attraction/README.md) | 客户按覆盖者均分；一般半覆盖未闭合 |
+| 两阶段设施公共基础 | [model](model.md) | 客户另作精确负载均衡，不是顺序客户吸引 |
+| 共同目录双设施 | [黄金比链](shared/README.md) | 上界、算法、下界归属与实例复杂度分开 |
+| 异构目录双设施 | [异构地图](heterogeneous/README.md) | 一般候选与单交叠锐值分开 |
+| 任意设施数 | [全k因子二与算法前沿](multi_facility/README.md) | 存在与有限构造已有，一般位多项式仍缺 |
+| 双设施局部/精确方法 | [局部接口](local_and_exact/README.md) | 给定布局的oracle不自动解决全局存在 |
+| 加权拥塞 | [线性门槛与结构工具](weighted_congestion/README.md) | 全状态非存在、文献上界和精确常数分别记录 |
+| 正占用核 | [表示与闭包](positive_kernels/README.md) | 工具与均衡桥分开 |
+| 暂停：不相关机 | [统一二壁垒](unrelated_machines/README.md) | 一般正反目标均OPEN，方法边界不冒充困难性 |
 
-需要引用某条结果时，沿“精确命题 → 正文 → 实际独立审查 → 代码与冻结证据”核对。需要恢复原件时才进入[历史区](../../history/README.md)。[问题库](../questions/README.md)承接未闭合义务，[增长规则](../GROWTH.md)规定新数学如何入库。
+当前角色与协作从[本题短入口](../customer_attraction/README.md)进入。历史原稿只在追溯时从[history](../../history/README.md)读取。

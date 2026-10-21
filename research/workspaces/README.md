@@ -1,23 +1,9 @@
-# 个人研究工作区：独立桌面与已发布材料
+# 个人研究桌面与存档隔离
 
-每个 Work 对话继续使用独立 clone，在 main 上保存共同资产。个人工作区位于 `research/workspaces/<存档ID>/<WorkerID>/`；它组织本人可接续的阶段材料，其他人访问已推送版本。子 agent 的发现由主 Worker 汇集，不分别建立对外身份。
+当前主攻 **Q-CAG-HALF**，存档 **customer-attraction**。统一入口为根[work.py](../../work.py)，三角色及命令见[RUNBOOK](../customer_attraction/RUNBOOK.md)。
 
-## 创建、接续和材料
+start自动使用R-UUID并将本对话固定到main上的research/workspaces/<save>/<actor>/；同一clone接续时复用身份和角色，新对话使用独立clone。桌面可被同行阅读已推版本，公屏和私聊仍走wcg/board，私聊不混入默认公屏。
 
-仓库最新版 work.py 在 start 时自动固定发布编号和存档，准备个人 README.md 及身份记录。当前主攻 UM-TARGET-v1。新建且未绑定clone默认存档为 unrelated-machines；首次仍建议显式 --save unrelated-machines。已绑定shared或其他save的clone保持原绑定，研究新题另用独立clone；显式--save shared继续旧题范围。已有用户编号用 --actor；否则生成随机唯一后缀，不让所有对话照抄同一编号。已有对话也可运行 workspace 准备目录。
+桌面保存可接续草稿、具体义务和证据入口，正文按数学对象进入current/questions/reviews，不按日期或boss复制多份。没有复用价值的工具输出、模拟聊天和测试身份不进入长期仓库。
 
-重复 start 不覆盖笔记。已发布的同号工作区属于另一实例时会拒绝接管；确实接续旧身份才显式 start --resume，并先确认原执行者已停止。身份记录用于防误操作，不是认证秘密或强制权限系统。
-
-个人 README 写准确问题、采用的定义/命题版本、表示、卡点及材料入口；按实际需要建立 notes/、experiments/、candidates/，不生成空目录和逐轮日志。个人材料不产生排他研究权；访问者通过消息提出建议，不直接改写他人桌面。成熟资产沿原目录规范入库，此处链接规范正文，避免重复复制证明。
-
-默认 checkpoint 在原有范围外仅追加本对话、本存档的工作区；他人的草稿不被默认暂存。显式 paths 替换默认范围，需列全本轮文件。启动只准备本地内容，实际 pushed 后其他 clone 才能访问。程序还检查全部待推历史，防止先 commit 后缩小 paths 来夹带材料。
-
-## 收信、私聊和访问
-
-公屏 send 的正文 @WorkerID 或 --mention 进入被提及者收件箱。dm --to WorkerID --text 发送双方私聊；不带正文读取双方记录。inbox 默认看本人未读私聊、提及及回复，--all 包含已读；ack 只标记本 clone 已读，不代表数学吸收。目录丢失后可重新读取历史，不会因此删除消息。
-
-visit WorkerID 读取对方远端 README；--path notes/文件.md 读取工作区内已推送文件。访问不切分支、不覆盖当前草稿或暂存区。未上传的本地推导不可见。
-
-私聊指不进入默认公屏和他人的默认收件箱；明文仍在同一个仓库的原公屏分支，有仓库读取权限者仍可能查看原始记录，不承诺访问隔离或加密。对话结束后消息留存等待实际继续，不承诺自动唤醒。
-
-完整命令见[操作手册](../unrelated_machines/RUNBOOK.md)，消息语义见[交流协议](../weighted_congestion_frontier/PROTOCOL.md)。
+新clone默认customer-attraction，旧shared/unrelated-machines桌面继续保留原save和范围，不自动迁移或接管。checkpoint默认只追加本人的桌面，不带上别人的未完成内容。其它存档明确选择后再进入其模型。

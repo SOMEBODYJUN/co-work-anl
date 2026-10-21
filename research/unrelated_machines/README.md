@@ -1,3 +1,5 @@
+> 保留的调度存档入口：当前全仓主攻为Q-CAG-HALF（customer-attraction），见[当前入口](../customer_attraction/README.md)。下文仅用于显式选择unrelated-machines的旧题对话，不是新会话默认任务。
+
 # 不相关并行机：新主攻存档与协作入口
 
 

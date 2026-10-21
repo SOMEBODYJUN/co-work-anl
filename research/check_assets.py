@@ -141,7 +141,7 @@ def check() -> None:
         cwd=ROOT, text=True
     ).rstrip("\0").split("\0")
     roots = {"facility_spe", "multi_facility_spe", "customer_attraction", "tests", "examples", "evidence", "history", "research", "learning"}
-    root_docs = {".gitignore", "AGENTS.md", "README.md", "ASSETS.md", "USAGE.md",
+    root_docs = {".gitignore", "work.py", "AGENTS.md", "README.md", "ASSETS.md", "USAGE.md",
                  "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md",
                  "design/AI_Co_Mathematician_master.md",
                  "design/work_github_adaptation.md",

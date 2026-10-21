@@ -14,7 +14,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[3]
 SCOPE = "research/weighted_congestion_frontier"
 TOOLS = ROOT / SCOPE / "tools"
-WORK = TOOLS / "work.py"
+WORK = ROOT / "work.py"
 ROUTING = {"GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR", "GIT_INDEX_FILE",
            "GIT_OBJECT_DIRECTORY", "GIT_ALTERNATE_OBJECT_DIRECTORIES",
            "GIT_IMPLICIT_WORK_TREE", "GIT_GRAFT_FILE", "GIT_SHALLOW_FILE",
@@ -45,11 +45,11 @@ class WorkTests(unittest.TestCase):
                            "--remote", str(self.remote))
         self.assertEqual(result.returncode, 0, result.stderr)
         first = json.loads(result.stdout.splitlines()[0])
-        self.assertRegex(first["actor"], r"^W[0-9a-f]{12}$")
+        self.assertRegex(first["actor"], r"^R-[0-9a-f]{32}$")
         self.assertEqual(first["branch"], "main")
-        self.assertEqual(first["save"], "unrelated-machines")
-        self.assertEqual(first["research_entry"], "research/current/unrelated_machines/README.md")
-        self.assertEqual(first["research_prompt"], "research/unrelated_machines/BOSS_START.md")
+        self.assertEqual(first["save"], "customer-attraction")
+        self.assertEqual(first["research_entry"], "research/current/customer_attraction/README.md")
+        self.assertEqual(first["research_prompt"], "research/customer_attraction/BOSS_START.md")
         self.assertNotIn("MODEL.md", result.stdout)
         result = self.work("start", "--remote", str(self.remote))
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -101,6 +101,7 @@ class WorkTests(unittest.TestCase):
         (scope / "tools").mkdir(parents=True)
         for name in ("work.py", "board.py", "checkpoint.py"):
             shutil.copy2(TOOLS / name, scope / "tools" / name)
+        shutil.copy2(WORK, self.seed / "work.py")
         (scope / "note.md").write_text("baseline\n")
         (self.seed / "outside.md").write_text("outside baseline\n")
         git(self.seed, "add", ".")
@@ -315,13 +316,13 @@ class WorkTests(unittest.TestCase):
         started = self.work("start", "--actor", "001",
                             "--token-file", str(self.credential), "--remote", str(self.remote))
         self.assertEqual(started.returncode, 0, started.stderr)
-        self.assertEqual(json.loads(started.stdout.splitlines()[0])["save"], "unrelated-machines")
-        note = self.repo / "research/current/unrelated_machines/boundary.md"
+        self.assertEqual(json.loads(started.stdout.splitlines()[0])["save"], "customer-attraction")
+        note = self.repo / "research/current/customer_attraction/boundary.md"
         note.parent.mkdir(parents=True)
         note.write_text("new archive boundary\n")
         old_note = self.repo / SCOPE / "note.md"
         old_note.write_text("old archive draft remains local\n")
-        peer = self.repo / "research/workspaces/unrelated-machines/peer/note.md"
+        peer = self.repo / "research/workspaces/customer-attraction/peer/note.md"
         peer.parent.mkdir(parents=True)
         peer.write_text("peer draft remains local\n")
         result = self.work("checkpoint", "-m", "new archive checkpoint")
@@ -329,7 +330,7 @@ class WorkTests(unittest.TestCase):
         receipt = json.loads(result.stdout)
         self.assertEqual(receipt["status"], "pushed")
         self.assertIn(note.relative_to(self.repo).as_posix(), receipt["files"])
-        self.assertIn("research/workspaces/unrelated-machines/001/README.md", receipt["files"])
+        self.assertIn("research/workspaces/customer-attraction/001/README.md", receipt["files"])
         self.assertNotIn(SCOPE + "/note.md", receipt["files"])
         self.assertEqual(value(self.remote, "show", "main:" + SCOPE + "/note.md"), "baseline")
         self.assertEqual(value(self.remote, "show", "main:" + note.relative_to(self.repo).as_posix()),
@@ -353,14 +354,14 @@ class WorkTests(unittest.TestCase):
         self.assertEqual(value(self.repo, "config", "--local", "wcg.save"), "shared")
         note = self.repo / SCOPE / "note.md"
         note.write_text("legacy scoped result\n")
-        current = self.repo / "research/current/unrelated_machines/unpublished.md"
+        current = self.repo / "research/current/customer_attraction/unpublished.md"
         current.parent.mkdir(parents=True)
         current.write_text("current topic stays local in legacy clone\n")
         saved = self.work("checkpoint", "-m", "legacy explicit scope")
         self.assertEqual(saved.returncode, 0, saved.stderr)
         self.assertEqual(value(self.remote, "show", "main:" + SCOPE + "/note.md"), "legacy scoped result")
         self.assertEqual(value(self.remote, "ls-tree", "-r", "main", "--", current.relative_to(self.repo).as_posix()), "")
-        refused = self.work("start", "--save", "unrelated-machines", "--remote", str(self.remote))
+        refused = self.work("start", "--save", "customer-attraction", "--remote", str(self.remote))
         self.assertEqual(refused.returncode, 2)
         self.assertEqual(value(self.repo, "config", "--local", "wcg.save"), "shared")
         self.assertEqual(current.read_text(), "current topic stays local in legacy clone\n")
@@ -386,9 +387,9 @@ class WorkTests(unittest.TestCase):
                                 cwd=self.root, env=clean_env(), capture_output=True, text=True, timeout=45)
         self.assertEqual(result.returncode, 0, result.stderr)
         first = json.loads(result.stdout.splitlines()[0])
-        self.assertEqual(first["save"], "unrelated-machines")
-        self.assertEqual(first["research_entry"], "research/current/unrelated_machines/README.md")
-        self.assertEqual(value(self.repo, "config", "--local", "wcg.save"), "unrelated-machines")
+        self.assertEqual(first["save"], "customer-attraction")
+        self.assertEqual(first["research_entry"], "research/current/customer_attraction/README.md")
+        self.assertEqual(value(self.repo, "config", "--local", "wcg.save"), "customer-attraction")
         self.assertTrue((self.repo / first["workspace"]["path"] / "workspace.json").is_file())
         self.assertEqual(value(self.repo, "branch", "--show-current"), "main")
         self.assertNotIn(self.token, result.stdout + result.stderr)
@@ -396,17 +397,19 @@ class WorkTests(unittest.TestCase):
     def test_bootstrap_checkpoint_default_and_known_research_entries_cannot_drift(self):
         modules = []
         for filename in ("work.py", "checkpoint.py"):
-            spec = importlib.util.spec_from_file_location("default_" + filename[:-3], TOOLS / filename)
+            path = WORK if filename == "work.py" else TOOLS / filename
+            spec = importlib.util.spec_from_file_location("default_" + filename[:-3], path)
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
             modules.append(module)
         work, checkpoint = modules
-        self.assertEqual(work.DEFAULT_SAVE, "unrelated-machines")
+        self.assertEqual(work.DEFAULT_SAVE, "customer-attraction")
         self.assertEqual(work.DEFAULT_SAVE, checkpoint.DEFAULT_SAVE)
         self.assertIn(work.DEFAULT_SAVE, checkpoint.SAVE_PATHS)
-        self.assertEqual(work.RESEARCH_ENTRIES["unrelated-machines"], {
-            "research_entry": "research/current/unrelated_machines/README.md",
-            "research_prompt": "research/unrelated_machines/BOSS_START.md",
+        self.assertEqual(work.RESEARCH_ENTRIES["customer-attraction"], {
+            "research_entry": "research/current/customer_attraction/README.md",
+            "research_prompt": "research/customer_attraction/BOSS_START.md",
+            "research_runbook": "research/customer_attraction/RUNBOOK.md",
         })
         self.assertEqual(work.RESEARCH_ENTRIES["shared"], {
             "research_entry": "research/weighted_congestion_frontier/README.md",
@@ -416,6 +419,55 @@ class WorkTests(unittest.TestCase):
             for path in entry.values():
                 if path is not None:
                     self.assertTrue((ROOT / path).is_file(), path)
+
+    def test_all_three_roles_are_bound_and_return_their_exact_prompt(self):
+        for role, filename in (("boss", "BOSS_START.md"), ("cleaner", "CLEANER.md"), ("editor", "EDITOR.md")):
+            repo = self.root / ("role-" + role)
+            result = self.work("start", "--role", role, "--remote", str(self.remote), repo=repo)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            receipt = json.loads(result.stdout.splitlines()[0])
+            self.assertEqual(receipt["role"], role)
+            self.assertEqual(receipt["role_prompt"], "research/customer_attraction/" + filename)
+            self.assertEqual(receipt["research_runbook"], "research/customer_attraction/RUNBOOK.md")
+            repeated = self.work("start", "--remote", str(self.remote), repo=repo)
+            self.assertEqual(repeated.returncode, 0, repeated.stderr)
+            self.assertEqual(json.loads(repeated.stdout.splitlines()[0])["role"], role)
+            other = "cleaner" if role == "boss" else "boss"
+            refused = self.work("start", "--role", other, "--remote", str(self.remote), repo=repo)
+            self.assertEqual(refused.returncode, 2)
+            self.assertEqual(value(repo, "config", "--local", "wcg.role"), role)
+
+    def test_old_um_binding_retains_topic_scope_and_entry(self):
+        result = self.work("start", "--save", "unrelated-machines", "--remote", str(self.remote))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        first = json.loads(result.stdout.splitlines()[0])
+        self.assertEqual(first["research_entry"], "research/current/unrelated_machines/README.md")
+        self.assertIsNone(first["role_prompt"])
+        repeat = self.work("start", "--remote", str(self.remote))
+        self.assertEqual(repeat.returncode, 0, repeat.stderr)
+        self.assertEqual(json.loads(repeat.stdout.splitlines()[0])["save"], "unrelated-machines")
+        note = self.repo / "research/current/unrelated_machines/old.md"
+        note.parent.mkdir(parents=True)
+        note.write_text("old UM asset\n")
+        current = self.repo / "research/current/customer_attraction/current.md"
+        current.parent.mkdir(parents=True)
+        current.write_text("new CAG draft stays local\n")
+        saved = self.work("checkpoint", "-m", "retain old archive")
+        self.assertEqual(saved.returncode, 0, saved.stderr)
+        receipt = json.loads(saved.stdout)
+        self.assertIn(note.relative_to(self.repo).as_posix(), receipt["files"])
+        self.assertNotIn(current.relative_to(self.repo).as_posix(), receipt["files"])
+        refused = self.work("start", "--save", "customer-attraction", "--remote", str(self.remote))
+        self.assertEqual(refused.returncode, 2)
+        self.assertEqual(current.read_text(), "new CAG draft stays local\n")
+
+    def test_legacy_work_path_forwards_to_the_single_root_implementation(self):
+        self.start()
+        legacy = self.repo / SCOPE / "tools/work.py"
+        result = subprocess.run([sys.executable, str(legacy), "read", "--json"], cwd=self.root,
+                                env=clean_env(), capture_output=True, text=True, timeout=45)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(json.loads(result.stdout)["events"], [])
 
     def test_missing_repo_and_nonempty_destination_report_actionable_errors(self):
         result = self.work("read")

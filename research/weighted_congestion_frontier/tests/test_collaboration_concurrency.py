@@ -28,8 +28,8 @@ class CollaborationConcurrencyTests(unittest.TestCase):
         for actor, repo in peers:
             started = f.work("start", "--actor", actor, "--remote", str(f.remote), repo=repo)
             self.assertEqual(started.returncode, 0, started.stderr)
-            self.assertEqual(json.loads(started.stdout.splitlines()[0])["save"], "unrelated-machines")
-            desk = repo / "research/workspaces/unrelated-machines" / actor
+            self.assertEqual(json.loads(started.stdout.splitlines()[0])["save"], "customer-attraction")
+            desk = repo / "research/workspaces/customer-attraction" / actor
             (desk / "notes").mkdir()
             (desk / "notes/boundary.md").write_text("exact fixture for " + actor + "\n")
             (repo / "unpublished-local.txt").write_text("preserve " + actor + "\n")
@@ -86,7 +86,7 @@ class CollaborationConcurrencyTests(unittest.TestCase):
                 data = fixtures.git(f.remote, "show", asset["asset"]["commit"] + ":" + asset["asset"]["path"]).stdout
                 self.assertEqual(hashlib.sha256(data.encode()).hexdigest(), asset["asset"]["sha256"])
         for actor, _ in peers:
-            path = "research/workspaces/unrelated-machines/" + actor + "/notes/boundary.md"
+            path = "research/workspaces/customer-attraction/" + actor + "/notes/boundary.md"
             self.assertEqual(fixtures.value(f.remote, "show", "main:" + path), "exact fixture for " + actor)
         self.assertEqual(set(fixtures.value(f.remote, "for-each-ref", "--format=%(refname)",
                                             "refs/heads").splitlines()),
@@ -96,7 +96,7 @@ class CollaborationConcurrencyTests(unittest.TestCase):
         f = self.fixture
         f.start()
         client = board.Board(f.repo, retries=1)
-        intent = board.make_intent("001", "message", {"text": "private exact boundary", "to": "002", "save": "unrelated-machines"})
+        intent = board.make_intent("001", "message", {"text": "private exact boundary", "to": "002", "save": "customer-attraction"})
         original = board.git
 
         def offline(cwd, *args, **kwargs):

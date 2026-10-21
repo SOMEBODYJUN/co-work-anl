@@ -1,39 +1,14 @@
-# 当前研究路线：一般不相关并行机
+# 当前研究路线：一般目录、任意人数半覆盖
 
-当前唯一主攻UM-TARGET-v1，save=unrelated-machines：一般R∥C_max的统一常数(2−ε)确定性位多项式实际构造，仍OPEN。读[本题地图](current/unrelated_machines/README.md)、[精确账本](unrelated_machines/CLAIMS.md)、[当前前沿](unrelated_machines/RESEARCH_STATE.md)和[完整BOSS提示词](unrelated_machines/BOSS_START.md)。下列是种子，不限制新方法。
+当前主攻 **Q-CAG-HALF**，存档 **customer-attraction**，目标仍OPEN：对一般共同目录和每个完整历史纯SPE证明2W≥OPT。读[短地图](customer_attraction/README.md)、[模型](current/customer_attraction/model.md)、[前沿](customer_attraction/RESEARCH_STATE.md)，然后直接研究。
 
-| 承重义务 | 已有接口及下一问题 |
-| --- | --- |
-| 共同相关性与真实容量 | 独立单边/单机/有限投影见证仍可gap2；研究共同多机条件容量、可分离强化，或绕开当前松弛的组合机制 |
-| 联合舍入与可终止修复 | 固定槽、固定包络、冻结宏任务有准确障碍；需要同时重选、接收机可增载的共同守容与总位多项式进展 |
-| 可恢复的结构分解 | 星消元、配置保持及一/双边界森林菜单已有精确合同；缺一般共同菜单选择、嵌套或有环核心 |
-| 新表示的可计算桥梁 | 条件矩给定推前与重新耦合不同；共同流给定支撑可提取，未知W仍承重。每一步须落回实际任务分配及总编码复杂度 |
+## 真正未闭合的数学义务
 
-每条路线先明确额外信息、精确输入与输出、已知gap下的行为、零值边界、统一ε和总位复杂度。不以特殊结构、估值、困难接口或实验表现代替主目标。完整结果与失败范围沿专题地图更新，根路线不逐轮堆摘要。
+- 利用同一完整策略的真实早期偏离与后继最优性，控制根遗漏覆盖；不能冻结后继。
+- 若沿安全值、策略锥或运输接口，需给跨节点的全局补偿；已有逐步非负、逐人保底和根总税反例仍须避开。
+- 若另选表示、组合机制、势或反例族，保持一般目录、任意人数和全部历史量词，不必沿现有接口。
+- 对计算中出现的坏点，需要实际单位客户和完整SPE证书，才能作为原目标反例；必要条件模板点只排除模板。
 
-## 独立保留的旧题路线
+路线是搜索种子，不设名额、认领、前置评审或固定方法。已有三四人定理和结构目录证明作为工具；局部常数或有限无反例不替代主目标。
 
-以下只在明确选择该模型时进入，不作为本次默认任务。
-
-## 加权拥塞：本题否定后的精确义务
-
-[完整全状态线性下界](current/weighted_congestion/linear_degree_allstate_lower_bound.md)已严格否定本次全类Cd/ln d存在命题；每整数d≥2^20都有无(d/10)-PNE族。精确范围、独立冻结攻击和有限核验从[专题地图](current/weighted_congestion/README.md)进入。WC-TARGET v1原长期身份仍是刻画a_*(d)；增长阶Θ(d)不等于精确常数。
-
-| 后续义务 | 已有资产 | 准确边界 |
-| --- | --- | --- |
-| 核对/简化线性全状态反例 | 自足证明、两份先重构后攻击、四份精确审计及最终hash | 新实质反驳必须处理；外部评审未记录 |
-| 最优常数与有限d阈值 | d≥2^20下界d/10及单列Paper Fact上界d，旧奇环准确T_d阈值 | 不声称1/10锐、sup被有限游戏取得或已有高效构造 |
-| 文献优先权与发表 | 已核基线来源、完整正文和独立审查 | 有限检索不认证世界首次；写作/外审与数学证明分开 |
-| 结构工具与其他候选复用 | [精确账本](weighted_congestion_frontier/CLAIMS.md)、[资产目录](CATALOG.md) | 子类结果、方法障碍和未闭合候选保持各自等级 |
-
-## 保留的独立研究线
-
-| 问题 | 当前认识与最有信息价值的下一步 | 读取入口 |
-| --- | --- | --- |
-| 一般顺序客户吸引半覆盖 | 小人数、有限极大覆盖和多个失效辅助桥已有资产；真正缺一般完整纯 SPE 的全局支付/分支转移，不再重复要求逐人或逐步非负 | [研究地图](current/customer_attraction/README.md)、[精确开放问题](questions/customer_attraction_half_coverage.md) |
-| 多设施一般输入的位多项式构造 | 因子二存在与完整盒有限构造已内部闭合；需要多项式总时间或直接构造，不能把终止当复杂度证明 | [完整盒算法前沿](questions/greedy_box_polytime.md)、[专题资产](current/multi_facility/README.md) |
-| 共同目录双设施实例最优倍率 EPTAS | 无 FPTAS 的输入/输出合同与近带精确补全已有资产；仍缺整个 EPTAS 的全局误差和位复杂度证明 | [候选义务](questions/shared_alpha_eptas.md)、[共同目录地图](current/shared/README.md) |
-| 多设施最佳统一常数与恰三设施锐值 | 已有统一因子二；最优常数与特殊布局形式须另给精确量词，不能沿用已闭合的“有无统一常数”任务 | [原问题及仍开放部分](questions/three_facilities.md) |
-| 立方客户费用下的双设施阈值 | 纯选择单调迁移仍可用，线性混合均衡等价已失败；须先重建真实立方局部 oracle，再讨论全局配额 | [独立模型问题](questions/cubic_costs.md) |
-
-单交叠异构任意长目录的锐阈值、共同目录固定倍率全局弱 NP 完全性等已获内部证明的任务，保留为[结果及审查入口](questions/README.md)，不再假装是尚待从零攻克的问题。外部同行评审、优先权、独立实现和论文组稿分别报告，不能与新数学义务混为一项。
+[保留问题表](customer_attraction/RETAINED_QUESTIONS.md)列暂停旧线及其真实缺口。[失败地图](customer_attraction/FAILED_ROUTES.md)说明具体失败机制，防止重复踩坑。当前三角色及操作见[RUNBOOK](customer_attraction/RUNBOOK.md)。

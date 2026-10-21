@@ -1,3 +1,5 @@
+> 保留的调度存档入口：当前全仓主攻为Q-CAG-HALF（customer-attraction），见[当前入口](../customer_attraction/README.md)。下文仅用于显式选择unrelated-machines的旧题对话，不是新会话默认任务。
+
 # 当前活跃路线：`UM-TARGET-v1`
 
 研究存档：`unrelated-machines`。本页是短期调度合同，不是数学结论。

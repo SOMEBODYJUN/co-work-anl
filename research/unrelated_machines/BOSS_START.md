@@ -1,3 +1,5 @@
+> 保留的调度存档入口：当前全仓主攻为Q-CAG-HALF（customer-attraction），见[当前入口](../customer_attraction/README.md)。下文仅用于显式选择unrelated-machines的旧题对话，不是新会话默认任务。
+
 # 不相关并行机主研究者的完整启动提示词
 
 新对话附上 `githubtoken.txt` 和仓库当前 `research/weighted_congestion_frontier/tools/work.py`，复制下列全文。主目标、程序入口、通信、地图、核验和保存要求均直接写在提示词内；无需另附 checkpoint.py/board.py。附件路径由 agent 识别。

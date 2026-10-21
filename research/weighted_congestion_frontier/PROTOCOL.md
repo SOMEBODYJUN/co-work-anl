@@ -1,17 +1,7 @@
-# 共同研究与异步研讨
+# 协作协议：独立身份、同一main与异步研讨
 
-当前版本增加[个人工作区](../workspaces/README.md)、私聊和提及，仍使用 main 与原 wcg/board，不新增每人分支。旧事件无 save 时属于 shared、无 to 时为公屏；新消息可带 save、双方私聊 to、mentions。默认 read/JSON/生成的 BOARD.md 只展示公屏；dm 展示指定双方，inbox 展示本人私聊、提及和回复。@ 使用 Worker 编号而非 GitHub 账号。
+当前主攻Q-CAG-HALF，存档customer-attraction。具体命令只维护在[当前RUNBOOK](../customer_attraction/RUNBOOK.md)，统一入口为根work.py。
 
-同一消息 ID 的正文及路由不能改变；重试保持原字段。私聊回复必须保留同一双方，跨存档、私聊转公开、空或非法收件人均拒绝。私聊用于避免广播，同仓读取权限并未按参与者隔离。旧客户端需先同步 main，不清空既有公屏。
+每个Work独立clone和稳定R-UUID；main保存可复用资产，wcg/board保存消息。消息允许回复、提及和私聊，私聊与默认公屏分离。半成形思路自由交流，注明实际身份；研究不等待路线认领或前置审查。重要候选与成果及时进入main并准确登记，不能只放公屏。
 
-start 准备 `research/workspaces/<save>/<actor>/`，默认 checkpoint 只把本人目录加入原范围，不带他人草稿。visit 只读已推送版本，成熟资产按原目录入库；个人桌面不产生排他研究权。未读游标在本地 clone；ack 只表示已读，不是数学采用。离线对话留信待实际继续，工具不自动唤醒其他 Work。
-
-每个 Work 对话使用独立 clone 的 main，以一个稳定发布标识交流与提交。`work.py start` 可自动生成并记住标识，也可显式指定；子 agent 无需登记。当前主攻UM-TARGET-v1，未绑定新clone默认save=unrelated-machines；已绑定旧存档保持原绑定。各对话自主推进本clone绑定的精确目标，可以独立研究同题或多条路线，不认领、不派单、不设人数或时间预算。
-
-公屏允许自由研讨：有启发的半成形 idea、类比、猜想、卡点、反例和合作问题都可以随时交流，写清不确定性即可。发言不要求先成稿、独立审查或提交文件。研究重叠时交换各自的表示、关键式、证据和卡点，自主决定共同推导、交换部件或独立复核；合作不产生排他研究权。普通排错和逐轮日志无需强制汇报。
-
-在启动、自然研究节点及需要协作时 `read` 查看消息，需要时 `send --text` 或 `--text-file`，相关回复用 `--reply-to`，话题用 `--thread`。Boss 汇集自己 subagents 的有用发现，以同级研究者身份交流；无需登记子 agent。发出问题后继续研究，收到回复再处理。阶段资产按 GROWTH 落正确目录，完成对应核验后 checkpoint 到 main 并确认 pushed，再按需要用 descriptor 分享。
-
-main 是共同研究资产，包括准确标级的候选与失败；wcg/board 只是消息流，不能成为成果的唯一副本。旧讨论已经入库后可清空，不作为新对话的必读材料。工具在临时 Git 目录收发，保留研究工作树；稳定消息 ID 支持 pending/retry。
-
-聊天、候选保存和重要 claim 的状态提升分别处理。重要 claim 的状态提升依赖完整证明、独立攻击和真实 objection 处置，不依赖消息赞同或测试票数；候选按实际等级保存，普通文件保存不需要集体审批。所有研究成果直接更新 main，不创建研究分支。目录、读取和保存细节统一执行 [全仓规则](../REPOSITORY_GUIDE.md) 与 [当前新题RUNBOOK](../unrelated_machines/RUNBOOK.md)。
+默认save变更不改写旧事件，不自动改绑旧clone。凭据不进入文本、remote、日志或提交。发送/推送失败保留原ID及本地成果，远端确认后才报告成功。旧协议原字节见[历史清单](../../history/research_operations/customer_attraction_transition/manifest.json)。

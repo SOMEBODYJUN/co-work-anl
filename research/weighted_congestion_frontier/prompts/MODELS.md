@@ -1,11 +1,5 @@
-# 研究模型配置
+# 旧角色入口：已归并
 
-本项目可按用户指定使用 `gpt-6-astra / ultra` 与 `gpt-6.1-sol / ultra`。工具支持显式配置时，使用 `fork_turns="none"` 并传入 model、reasoning_effort，提供自足的精确问题与必要资料。
+当前主攻Q-CAG-HALF，存档customer-attraction。此路径仅为兼容链接，不再维护独立角色或可复制指令。
 
-两个模型都可提出 idea、证明、计算、检索和攻击。按实际研究需要使用 subagent，并行数量根据有价值的独立义务和当前工具能力安排。成员完成一个义务后可以接续新的问题。
-
-主对话在内部掌握工具实际返回的模型、配置和上下文范围，将成果用本对话的角色号交流。实际数学文件注明有贡献的来源。模型未知时准确标注；工具可用配置与请求配置分别判断。
-
-干净上下文审查仅提供精确模型、目标和必要文献，让成员先自行重构关键瓶颈，再读候选证明。已经读过路线的成员进行知情复核。
-
-一手配置说明：[OpenAI subagents 文档](https://learn.chatgpt.com/docs/agent-configuration/subagents)。使用当前 Work 工具实际提供的能力。
+请使用[当前角色](../../customer_attraction/BOSS_START.md)。当前只有Boss、清洗者和整理者；完整操作用根work.py。旧全文按原路径与hash保存在[历史清理清单](../../../history/research_operations/customer_attraction_transition/manifest.json)。

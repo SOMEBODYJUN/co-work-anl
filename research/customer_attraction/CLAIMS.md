@@ -1,0 +1,37 @@
+# 顺序客户吸引：一般半覆盖的精确身份与命题索引
+
+研究存档：customer-attraction；目标身份：Q-CAG-HALF。
+
+本页固定已有 `Q-CAG-HALF` 身份，整理不创建更强的新版本。其他 CA 命题的逐项范围、依赖与证据仍以[全仓现行账本](../current/claims.md)、[五轴审查状态](../review_status.json)和所链接自足正文为准。
+
+## Q-CAG-HALF
+
+| 项目 | 精确内容 |
+| --- | --- |
+| Exact Statement | 对下述每个实例、每个完整历史依赖纯 SPE \(\sigma\)，有 \(2W(\alpha(\sigma))\ge\operatorname{OPT}_m\) |
+| Objects / Definitions | [CAG-MODEL](../current/customer_attraction/model.md)：有限客户集 \(N\)、有限非空共同目录 \(\mathcal S\subseteq2^N\)、终局客户覆盖重数 \(c_x\)、均分收益 \(u_i\)、覆盖福利 \(W=\sum_i u_i\)、最优 \(m\) 主题覆盖 \(\operatorname{OPT}_m\) |
+| Domain / Assumptions | \(m\ge1\)；所有提供者单位权，所有客户单位价值；依次观察全部有序历史各选一次主题；所有人可选同一目录 |
+| Quantifiers | \(\forall N\;\forall\mathcal S\;\forall m\ge1\;\forall\sigma\in\mathrm{PureSPE}(N,\mathcal S,m)\) |
+| Scope / Boundary | 允许空主题、重复选择、零客户、全部历史依赖平局；类型整数重数表示不同单位客户；不涵盖异目录、带权提供者或混合行为 SPE |
+| Conclusion | 一般目录、任意人数的覆盖福利至少为最优的一半；零最优值使用乘法不等式，不定义 \(0/0\) |
+| Dependencies | 模型、完整有序历史上的 SPE 定义及最优覆盖定义；一般证明尚缺，不把任何候选安全值桥设为必要前提 |
+| Paper Fact | [Deng 等 arXiv:2307.07174v2](https://arxiv.org/html/2307.07174v2) §6 提出超过两人时 sPoA 上界二的猜想；[文献范围复核](../current/customer_attraction/literature.md)区分原文措辞与本页共同目录输入类 |
+| Evidence | 三人、四人、有限极大主题数及层级关联类已有内部完整证明；它们各有自己的精确身份，均不覆盖本页全部量词 |
+| Counterevidence / Objections | 尚无本目标反例；已有反例击穿逐人安全值、根总税、局部非负预算、静态 NE 导入等指定辅助桥 |
+| Status | **OPEN**；完整一般证明与目标反例均未取得；没有外部同行评审或全球新颖性认证 |
+| Related Files | [原目标页](../questions/customer_attraction_half_coverage.md)、[数学地图](../current/customer_attraction/README.md)、[前沿](RESEARCH_STATE.md)、[失败记录](FAILED_ROUTES.md)、[精确计算合同](../current/customer_attraction/exact_solver.md) |
+
+## 已有承重资产：引用时回到原陈述
+
+| 身份 | 可使用的结果 | 必须保留的范围 |
+| --- | --- | --- |
+| `CA-THREE-SHARP-5-3` | [三人锐界](../current/customer_attraction/three_player_sharp.md)：\(\operatorname{OPT}_3\le(5/3)W\)，有匹配下界 | 恰三人；不是任意人数定理 |
+| `CA-FOUR-UPPER-1499-750` | [四人一般目录上界](../current/customer_attraction/four_player_bound.md)：\(\operatorname{OPT}_4\le(1499/750)W\)，其中 \(1499/750<2\) | 恰四人；未证常数尖锐 |
+| `CA-FIVE-INDEXED-UPPER` | [五人索引偏离上界](../current/customer_attraction/five_player_indexed_bound.md)：\(\operatorname{OPT}_5\le\beta W\)，\(\beta\approx2.06169478572>2\) | 未达到半覆盖；`\beta` 的精确有理数以原文为准 |
+| `CA-SIX-MAXIMA-HALF` | [六极大联合预算](../current/customer_attraction/six_maxima_joint_bound.md)：任意人数半覆盖 | 至多六个不同包含极大覆盖；内部子主题与关联可以任意 |
+| `CA-SEVEN-MAXIMA-N7-PLUS` | [七极大来源证明](../current/customer_attraction/seven_maxima_checkpoint.md)：七人以上 \(U=\operatorname{OPT}_m\le2W\) | 恰七个极大覆盖、\(m\ge7\)；来源证明完整且已内审，现行页只是依赖概述；\(m=5,6\) 仍缺分支 |
+| `CA-LAMINAR-INCIDENCE-MAXIMA-2M1` | [层级关联锐界](../current/customer_attraction/laminar_incidence_bound.md)：带共同核心的 \(2-1/m\) 界 | 客户的极大主题关联为层级族；不等于一般目录 |
+| `CA-EXACT-PURE-SPE-ALL` / `CA-STRATEGY-CONE` | [全集逆归纳](../current/customer_attraction/exact_solver.md)与[完整策略重数锥](../current/customer_attraction/strategy_cone.md) | 精确有限工具；完整树证书可能指数大，有限运行不是一般证明 |
+| `CA-OBLIVIOUS-MIXED-SECURITY-2N1` | [静态安全值](../current/customer_attraction/oblivious_security.md)：\(v_m(0)\ge\operatorname{OPT}_m/(2m-1)\) | 对手不观察查询抽样；从安全值到真实顺序福利仍缺聚合桥 |
+
+这里的“完整”指所列范围内的数学证明及相应内部审查；外审、优先权、实现和一般适用性分别报告。改变量词、输入域、均衡概念、价值或权重约定时另立身份，不沿用 `Q-CAG-HALF`。

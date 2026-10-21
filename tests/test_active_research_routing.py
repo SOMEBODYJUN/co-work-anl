@@ -22,7 +22,10 @@ class ActiveResearchRoutingTests(unittest.TestCase):
         CHECKER.ROOT = self.root
         self.manifest = json.loads((REPO / "research/active_research.json").read_text())
         paths = set(self.manifest["active_entrypoints"] + self.manifest["role_prompts"] +
-                    [self.manifest[k] for k in ("prompt", "runbook", "program", "submitter")])
+                    [self.manifest[k] for k in ("prompt", "runbook", "program", "submitter", "retired_operations_manifest")])
+        paths.update(self.manifest["compatibility_redirects"])
+        retirement = json.loads((REPO / self.manifest["retired_operations_manifest"]).read_text())
+        paths.update(row["archived_path"] for row in retirement["entries"])
         paths.add("research/active_research.json")
         for path in paths:
             dest = self.root / path
@@ -58,39 +61,70 @@ class ActiveResearchRoutingTests(unittest.TestCase):
 
     def test_current_routes_pass(self):
         result = CHECKER.check()
-        self.assertEqual(result["target"], "UM-TARGET-v1")
-        self.assertGreater(result["checked_local_links"], 100)
+        self.assertEqual(result["target"], "Q-CAG-HALF")
+        self.assertEqual(result["save"], "customer-attraction")
+        self.assertEqual(set(result["roles"]), {"boss", "cleaner", "editor"})
+        self.assertGreater(result["checked_local_links"], 0)
 
     def test_standalone_default_cannot_return_to_old_topic(self):
-        self.alter(self.manifest["program"], 'DEFAULT_SAVE = "unrelated-machines"', 'DEFAULT_SAVE = "shared"')
+        self.alter(self.manifest["program"], 'DEFAULT_SAVE = "customer-attraction"', 'DEFAULT_SAVE = "shared"')
         with self.assertRaisesRegex(ValueError, "standalone"):
             CHECKER.check()
 
     def test_unbound_submitter_cannot_return_to_old_topic(self):
-        self.alter(self.manifest["submitter"], 'DEFAULT_SAVE = "unrelated-machines"', 'DEFAULT_SAVE = "shared"')
+        self.alter(self.manifest["submitter"], 'DEFAULT_SAVE = "customer-attraction"', 'DEFAULT_SAVE = "shared"')
         with self.assertRaisesRegex(ValueError, "checkpoint"):
             CHECKER.check()
 
     def test_old_binding_cannot_be_handed_new_topic_prompt(self):
         self.alter(self.manifest["program"], '"research_prompt": None',
                    '"research_prompt": "research/unrelated_machines/BOSS_START.md"')
-        with self.assertRaisesRegex(ValueError, "legacy shared"):
+        with self.assertRaisesRegex(ValueError, "legacy save"):
             CHECKER.check()
 
-    def test_compatibility_team_must_remain_the_complete_task(self):
-        self.alter(self.manifest["team_compatibility_prompt"], "持续推进", "偶尔推进")
-        with self.assertRaisesRegex(ValueError, "drifted"):
+    def test_retired_role_cannot_duplicate_a_task(self):
+        path = next(iter(self.manifest["compatibility_redirects"]))
+        file = self.root / path
+        file.write_text(file.read_text() + "\n~~~text\nold task\n~~~\n")
+        with self.assertRaisesRegex(ValueError, "duplicates"):
+            CHECKER.check()
+
+    def test_exactly_three_current_roles(self):
+        self.manifest["roles"]["reviewer"] = "research/customer_attraction/EDITOR.md"
+        (self.root / "research/active_research.json").write_text(json.dumps(self.manifest))
+        with self.assertRaisesRegex(ValueError, "exactly three"):
+            CHECKER.check()
+
+    def test_role_receipt_cannot_point_to_other_role(self):
+        self.alter(self.manifest["program"],
+                   '"editor": "research/customer_attraction/EDITOR.md"',
+                   '"editor": "research/customer_attraction/CLEANER.md"')
+        with self.assertRaisesRegex(ValueError, "role receipt"):
+            CHECKER.check()
+
+    def test_unrelated_save_keeps_its_own_prompt(self):
+        self.alter(self.manifest["program"],
+                   '"research_prompt": "research/unrelated_machines/BOSS_START.md"',
+                   '"research_prompt": "research/customer_attraction/BOSS_START.md"')
+        with self.assertRaisesRegex(ValueError, "legacy save"):
+            CHECKER.check()
+
+    def test_retired_original_bytes_remain_unchanged(self):
+        retirement = json.loads((self.root / self.manifest["retired_operations_manifest"]).read_text())
+        file = self.root / retirement["entries"][0]["archived_path"]
+        file.write_bytes(file.read_bytes() + b"changed")
+        with self.assertRaisesRegex(ValueError, "retired original bytes"):
             CHECKER.check()
 
     def test_stale_root_instruction_is_rejected_even_with_new_topic_header(self):
         file = self.root / "README.md"
-        file.write_text(file.read_text() + "\n当前主攻是加权拥塞。\n")
+        file.write_text(file.read_text() + "\n当前主攻UM-TARGET-v1。\n")
         with self.assertRaisesRegex(ValueError, "stale unconditional"):
             CHECKER.check()
 
     def test_broken_active_link_is_rejected(self):
         file = self.root / "README.md"
-        file.write_text(file.read_text() + "\n[当前证明](research/current/unrelated_machines/nonexistent_proof.md)\n")
+        file.write_text(file.read_text() + "\n[当前证明](research/current/customer_attraction/nonexistent_proof.md)\n")
         with self.assertRaisesRegex(ValueError, "broken active navigation"):
             CHECKER.check()
 

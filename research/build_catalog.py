@@ -15,14 +15,14 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "research/catalog.json"
 TOPICS = [
-    ("unrelated_machines", "不相关并行机与统一常数2壁垒", "current/unrelated_machines/README.md"),
+    ("customer_attraction", "当前：顺序客户吸引与一般半覆盖", "customer_attraction/README.md"),
+    ("unrelated_machines", "保留：不相关并行机与统一常数2壁垒", "current/unrelated_machines/README.md"),
     ("weighted_congestion", "加权原子拥塞博弈", "current/weighted_congestion/README.md"),
     ("positive_kernels", "正占用核、交互阶数与非负表示", "current/positive_kernels/README.md"),
     ("shared", "共同目录双设施", "current/shared/README.md"),
     ("heterogeneous", "异构目录双设施", "current/heterogeneous/README.md"),
     ("local_and_exact", "双设施局部均衡与精确算法", "current/local_and_exact/README.md"),
     ("multi_facility", "任意设施数与完整盒构造", "current/multi_facility/README.md"),
-    ("customer_attraction", "顺序客户吸引与半覆盖", "current/customer_attraction/README.md"),
     ("foundation", "公共定义与精确命题登记", "current/README.md"),
     ("facility_review", "设施模型的独立审查", "reviews/README.md"),
     ("customer_attraction_review", "客户吸引的独立审查", "reviews/README.md"),
@@ -111,6 +111,7 @@ def validate(data: dict, root: Path = ROOT) -> None:
     }
     required.update(p.relative_to(root).as_posix() for p in (root / "research").glob("*.md")
                     if p.name not in {"CATALOG.md", "source_crosswalk.md"})
+    required.update(p.relative_to(root).as_posix() for p in (root / "research/customer_attraction").rglob("*.md"))
     frontier = root / "research/weighted_congestion_frontier"
     required.update(p.relative_to(root).as_posix() for p in frontier.rglob("*.md")
                     if "upstream" not in p.relative_to(frontier).parts)

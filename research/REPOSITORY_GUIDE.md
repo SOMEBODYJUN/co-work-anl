@@ -1,57 +1,35 @@
 # 仓库生产、读取与保存规则
 
-个人研究桌面见 [workspaces/README.md](workspaces/README.md)：每个 Work 的本人目录保存在 main，其他人可以访问已推送版本并私聊。默认保存只追加本人的桌面；私聊仍走原公屏分支，默认公屏过滤私聊，二者不产生新研究分支。保存程序审查全部待推本地历史，避免范围外旧提交夹带；实际操作见 [RUNBOOK](unrelated_machines/RUNBOOK.md)。
+当前主攻 **Q-CAG-HALF**，存档 **customer-attraction**。数学入口是[本题短地图](customer_attraction/README.md)，协作命令集中在[RUNBOOK](customer_attraction/RUNBOOK.md)，统一程序为根[work.py](../work.py)。
 
-沿用 [GROWTH.md](GROWTH.md) 的目录合同及根 [AGENTS.md](../AGENTS.md) 的数学资产规范。当前主攻 UM-TARGET-v1，存档 unrelated-machines。这里补齐分支到共同状态的环节，不另立一套数学身份规则。
+## 读取与角色
 
-按问题阅读先用[研究总目录](README.md)，查具体文件名字与用途用[中文资产总目录](CATALOG.md)。`catalog.json` 维护逐文件名称和读取目的，`assets.json` 维护逐命题文件合同，`review_status.json` 维护分轴状态，三者职责不同。当前数学稿与审查从各专题 README 沿证明链进入；投稿旧评估只在历史来源中追溯。
+先保留本地工作、安全同步main，读根四入口和本题模型，再按当前数学义务选正文、实际审查及证据。Boss不必通读工具源码、全部历史或每份登记JSON。三个角色只有[Boss](customer_attraction/BOSS_START.md)、[清洗者](customer_attraction/CLEANER.md)、[整理者](customer_attraction/EDITOR.md)，研究探索不等待审核或写作批准。
 
-## 文件位置与生产状态
+## 真实数学如何保存
 
-| 文件类别 | 去处 | 状态、何时读取和更新 |
-| --- | --- | --- |
-| 当前目标、定义与账本 | 根四入口；主题 MODEL/CLAIMS；current/claims 与 review_status | 新会话先根四入口，再选模型；引用或改变命题时查精确身份 |
-| 有证明正文的现行数学稿 | research/current/<数学主题>/ | 独立记录证明完成度、内部审查、外审、实现；current 不代表外部认证 |
-| 开放问题、待审候选 | research/questions/<数学主题>/ | 明确缺哪个 obligation；待审稿可以提交 main，保持候选状态 |
-| 已发生的独立攻击与审查 | research/reviews/<数学主题>/ | 写所审冻结版本和确实覆盖的 claim；赞同票数不是审查 |
-| 规范实现 | 各模型现有程序包 | 合同有变更才建新包；避免重复求解核心 |
-| 有复用价值的独立审计代码 | tests/audits/<主题>/ | 同时标明算术、参数、seed、边界和证据限度 |
-| 实际输入、证书、运行结果 | examples/、evidence/certificates/、evidence/runs/ | 冻结后不原位覆盖；新跑输出进临时目录或显式新文件 |
-| 学习正文与成稿 | learning/，登记 manifest | 当前一份成稿；过时构建在 Git 可恢复后退出文件树 |
-| 原始来源 | history/source/；不可变 commit/hash | 只在追溯时读；已被替代的复制整理稿不再长期堆放 |
-| 短期探索与日志 | clone 外或 Git 本地缓存 | 不入库无用输出、模拟群聊、测试身份、临时 ZIP 和逐轮交接 |
+| 内容 | 位置与合同 |
+| --- | --- |
+| 精确目标与当前义务 | 本题README/CLAIMS/RESEARCH_STATE/FAILED_ROUTES；完整CA身份仍在current/claims与review_status |
+| 自足证明、反例和工具 | research/current/customer_attraction/，明确所有假设、量词、推导与边界 |
+| 可接续候选 | research/questions/customer_attraction/，准确标级，不为通过检查而升级 |
+| 已发生的独立检查 | research/reviews/customer_attraction/，记录版本及真正覆盖 |
+| 规范实现与验证 | customer_attraction/、tests/、examples/和evidence/；有限验证不替代一般证明 |
+| 个人可复用草稿 | research/workspaces/customer-attraction/<actor>/；成熟内容按数学对象入库 |
+| 过期指挥文本与原始来源 | history/，保留来源位置和hash；重复无增量输出不入库 |
 
-候选 → 完整证明 → 独立攻击 → 内部可用，只能在实际义务闭合时变更。遇到 fatal objection 停止提升并记录；计算通过不等于一般证明。Paper Fact 和团队证明分别标识。Truth、Value、Novelty、Mechanism、Ambition 分开。
+每个有价值阶段：自足正文及真实证据 → 精确身份/状态/相关文件和依赖 → 对应核验 → work.py checkpoint普通提交推送。保存候选不自动提升状态。只有status=pushed才报告远端保存。生成目录只维护文件身份，不制造数学结论。
 
-## 按任务读取
+## 大规模并行与隔离
 
-1. 检查本地状态、origin、远端并安全同步；保存已有未提交成果，冲突不覆盖。
-2. 根 README、RESEARCH_STATE、CLAIMS、FAILED_ROUTES 提供全仓地图，随后只进入所研究模型。
-3. 当前新题先读current/unrelated_machines/README.md、unrelated_machines/CLAIMS.md与RESEARCH_STATE.md、current/unrelated_machines/model_and_classical_barriers.md，再按具体义务选正文、审查或证据。只有明确研究旧模型时才读它的MODEL和账本。
-4. 做研究不必先通读工具源码、全部上游提示词、全部原始历史和逐文件 JSON。修改协作程序才读其协议和测试；写论文才完整读 PAPER_WRITER 指定的写作原文。
-5. 引用结果时沿 claim → 正文 → 独立审查 → 计算证据核对范围；需要原件时再查 INTEGRATION。
+每个独立Work对话使用独立clone、main和稳定R-UUID；subagents由该boss汇总，不接管别人的身份。公屏用于公开研讨，私聊由显式收件人隔离，桌面按save和actor分开。半成形思路可以直接交流，注明身份；公屏不是成果唯一副本。
 
-## 施工和上传
+新未绑定clone默认customer-attraction。已有shared、unrelated-machines等绑定保持；旧clone不自动改绑。默认checkpoint保存当前存档数学目录、共同登记和本人的桌面；显式paths会替换整个范围，必须列全本次成果，不能用“.”粗放包揽。
 
-先把自己的常规推导、核验和排错做完，再保存可独立使用的引理、反例、障碍、表示、候选证明或复现实验。不是每个尝试都值得创建资产。
+推送前安全同步；冲突保留双方后按内容解决，不强推、不自动ours/theirs、不另开研究分支躲冲突。凭据始终在仓库外，完整待推历史也须排除敏感信息。正常研究、核验、入库与普通推送已获授权。
 
-每个有价值阶段：正确目录写自足正文 → 精确身份与审查登记 → 更新相关资产/超图/地图 → 对应核验 → `checkpoint` 提交、普通推送并确认远端可达。主目标尚未解决不妨碍保存阶段成果；保存不触发状态升级。
+## 整理与成稿
 
-一键程序不指定路径时按本clone绑定的存档选范围：未绑定默认unrelated-machines；已绑定或显式shared兼容原加权拥塞范围；unrelated-machines选不相关并行机八类专题目录及本题原文目录；其他未登记存档只选共同登记和本人工作区，不默用旧题。所有存档均只追加本人的桌面。显式路径会替换默认范围，涉及额外文件时须列全本次应提交的正文、登记及额外文件。真实文件冲突时停住保留双方，不能自动选 ours/theirs 解决数学冲突。工具只在远端确认后报告 pushed。
+清洗者实质检查并入库；整理者扣除前人贡献后判断独立文章、合理拆合、读者与意义，准确突出优势。README是研究地图，不是证明来源。独有数学不按“旧题”批量删除，过时角色和重复指挥文本退出当前读取链。
 
-## 分支与交流
-
-| 分支 | 唯一用途 | 结束条件 |
-| --- | --- | --- |
-| main | 全部可复用研究状态，包含准确标级的候选、失败与已审成果 | 持续维护 |
-| wcg/board | 简短异步研讨，保存重要发现、义务、异议和已推送入口 | 不是研究资产的唯一副本；旧讨论入库后可以清空 |
-
-每个 Work 对话用独立 clone，研究与提交统一 main，不创建研究分支；发布标识可自动生成并本地记住，不要求人工登记子 agent。不同对话可以研究同题或多条路线，无认领、租约、排他 owner，也不设固定人数或时间预算。Boss 组织自己的 subagents，并与其他同级 boss 自主合作。
-
-有启发的半成形 idea、猜想、类比、卡点和反例可以随时交流，注明不确定性即可；聊天不要求先成稿、先提交或先独立审查。无需强制汇报常规排错和逐轮日志。候选达到可接续程度即可按候选保存；独立攻击用于承重 claim 的提升，不是每次文件保存的审批。公屏新出现的致命反驳须及时核查登记，不能因尚未写入账本而忽略。
-
-第一份可复用候选、证明、反例、审查、致命异议或实质修复形成，以及范围和状态实质改变时，完成相应核验就及时 checkpoint。提交前安全同步 main；他人更新后复核受影响的 claim、objection 和登记并重跑相关检查。只有远端确认才报告 pushed，发布不提升数学状态。当前树保留实际使用的数学资产；无价值过程输出和重复整理稿无需另建历史归档。
-
-本轮分支逐项处置与来源见 [INTEGRATION](weighted_congestion_frontier/INTEGRATION.json)。旧会话和公屏退出当前读取流程；新对话能只凭 main 接续。
-
-本轮所有分支的实际处置见 [BRANCHES](BRANCHES.md)，本轮核验命令、代码哈希与证据限度见 [冻结核验记录](../evidence/runs/weighted_congestion/repository_curation.json)。
+新增/移动文件维护catalog中文名、用途和实际链接。修改Claim时再同步精确账本、review_status、assets和graph。按需运行build_catalog、build_map、build_crosswalk、check_active_research、check_assets及对应回归；不改冻结证据原字节去适配新路径。详见[GROWTH](GROWTH.md)及[本次清理记录](customer_attraction/CURATION.md)。

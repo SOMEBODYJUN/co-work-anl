@@ -462,9 +462,9 @@ class CheckpointTests(unittest.TestCase):
     def test_unbound_checkpoint_uses_current_topic_and_only_own_current_workspace(self):
         run(self.repo, "config", "--local", "--unset", "wcg.save")
         run(self.repo, "config", "--local", "wcg.actor", "R-self")
-        current = self.repo / "research/current/unrelated_machines/boundary.md"
-        own = self.repo / "research/workspaces/unrelated-machines/R-self/note.md"
-        excluded = [self.repo / "research/workspaces/unrelated-machines/R-peer/note.md",
+        current = self.repo / "research/current/customer_attraction/boundary.md"
+        own = self.repo / "research/workspaces/customer-attraction/R-self/note.md"
+        excluded = [self.repo / "research/workspaces/customer-attraction/R-peer/note.md",
                     self.repo / "research/workspaces/shared/R-self/note.md"]
         for path in [current, own] + excluded:
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -481,10 +481,47 @@ class CheckpointTests(unittest.TestCase):
             self.assertEqual(path.read_text(), "local exact asset\n")
         self.assertEqual(self.note.read_text(), "legacy draft stays local\n")
 
+    def test_cag_scope_includes_flat_audits_deleted_audits_and_paper_assets_only(self):
+        run(self.repo, "config", "--local", "wcg.save", "customer-attraction")
+        run(self.repo, "config", "--local", "wcg.actor", "R-self")
+        paths = ["research/customer_attraction/EDITOR.md", "research/current/customer_attraction/new.md",
+                 "research/questions/customer_attraction_half_coverage.md",
+                 "research/reviews/customer_attraction/new.md", "customer_attraction/algorithm.py",
+                 "tests/test_customer_attraction.py", "tests/audits/customer_attraction_new.py",
+                 "examples/customer_attraction/new.json", "evidence/runs/customer_attraction/new.json",
+                 "evidence/runs/2026-10-20/customer_attraction_new_review.md",
+                 "evidence/certificates/customer_attraction/new.json",
+                 "history/source/literature/customer_attraction/new.md",
+                 "research/workspaces/customer-attraction/R-self/new.md"]
+        old_audit = self.repo / "tests/audits/customer_attraction_obsolete.py"
+        old_audit.parent.mkdir(parents=True)
+        old_audit.write_text("old audit\n")
+        run(self.repo, "add", old_audit.relative_to(self.repo).as_posix())
+        run(self.repo, "commit", "-m", "old audit fixture")
+        run(self.repo, "push", "origin", "main")
+        old_audit.unlink()
+        for name in paths:
+            path = self.repo / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("new CAG asset\n")
+        excluded = ["tests/audits/customer_attractions/unrelated.py",
+                    "tests/audits/unrelated_machines/unpublished.py",
+                    "research/workspaces/customer-attraction/R-peer/new.md"]
+        for name in excluded:
+            path = self.repo / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("unpublished other draft\n")
+        receipt = self.save()
+        self.assertEqual(receipt["status"], "pushed")
+        self.assertEqual(set(receipt["files"]), set(paths) | {old_audit.relative_to(self.repo).as_posix()})
+        for name in excluded:
+            self.assertEqual(run(self.remote, "ls-tree", "-r", "main", "--", name), "")
+            self.assertEqual((self.repo / name).read_text(), "unpublished other draft\n")
+
     def test_unbound_checkpoint_with_only_legacy_paths_requires_explicit_scope(self):
         run(self.repo, "config", "--local", "--unset", "wcg.save")
         self.note.write_text("legacy draft stays local\n")
-        with self.assertRaisesRegex(c.Stop, "No default checkpoint paths for archive unrelated-machines"):
+        with self.assertRaisesRegex(c.Stop, "No default checkpoint paths for archive customer-attraction"):
             self.save()
         self.assertEqual(run(self.repo, "rev-parse", "HEAD"), self.before)
         self.assertEqual(run(self.remote, "rev-parse", "main"), self.before)

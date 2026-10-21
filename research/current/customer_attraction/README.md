@@ -1,30 +1,31 @@
-# 顺序客户吸引：成果、反例与半覆盖研究地图
+# 顺序客户吸引：成果、反例与一般半覆盖数学地图
 
-**一般半覆盖仍开放（OPEN）。** 固定有限单位客户、有限非空共同主题目录与任意人数的单位提供者，每人依次观察完整有序历史并选一个主题；客户在最终覆盖者之间均分价值。目标是对**每个完整历史依赖的纯 SPE**证明 `OPTₙ≤2W`。现有研究没有给出一般证明，也没有给出该目标的反例；目录允许重复选择、空主题和历史依赖平局，精确定义见[模型](model.md)。
+研究存档：customer-attraction；目标身份：Q-CAG-HALF。
 
-本分支的客户不进行第二阶段优化。它与[两阶段设施选址模型](../model.md)分别立项，静态 Nash、原子客户 NE 和顺序纯 SPE 之间均须检查桥梁。以下按数学问题组织；每份正文保留自己的 claim 身份、量词与审查范围，[命题账本](../claims.md)、[五轴审查登记](../../review_status.json)负责精确状态，中文名字不改变数学等级。
+**当前主攻 Q-CAG-HALF：一般目录、任意人数、每个完整历史纯 SPE 的半覆盖；仍 OPEN。** 模型为有限单位客户、有限非空共同主题目录、单位权提供者依次观察全部有序历史选主题，最终客户价值在覆盖者间均分。全部历史依赖平局、重复选择、空主题和零客户均保留。
 
-## 当前结论与真正缺口
+从[当前研究入口](../../customer_attraction/README.md)进入[精确目标](../../customer_attraction/CLAIMS.md)、[前沿](../../customer_attraction/RESEARCH_STATE.md)、[失败机制](../../customer_attraction/FAILED_ROUTES.md)和[保留问题分诊](../../customer_attraction/RETAINED_QUESTIONS.md)。Boss 先固定[模型](model.md)，随后沿正在研究的机制按需读取下表；无需通读本页所有正文。
 
-| 输入范围 | 当前可用结果与首读正文 | 仍需区分的边界 |
+## 已有地基与未闭合范围
+
+| 范围 | 已有答案 | 精确边界 |
 | --- | --- | --- |
-| 任意目录，恰三人 | [锐界 `OPT₃≤(5/3)W`](three_player_sharp.md)，有匹配下界 | 旧 `142/81` 稿保留另一种税机制，不再作最佳界 |
-| 任意目录，恰四人 | [`OPT₄≤(1499/750)W`](four_player_bound.md) | 不声称该常数尖锐；非零背景另有利润定理 |
-| 任意目录，恰五人 | [索引真实偏离界](five_player_indexed_bound.md)给 `OPT₅≤βW`，`β≈2.061695>2` | 当前五人结果尚未达到半覆盖；必要条件模板的最优值不是原游戏锐值 |
-| 至多六个不同包含极大覆盖，任意人数 | [联合预算半覆盖](six_maxima_joint_bound.md)；五人起还给并集 `U≤2W` | 五人、六极大时不假定 `OPT₅=U`，亦不普遍减去共同核心 |
-| 恰七个不同包含极大覆盖，人数不少于七 | [来源证明与依赖说明](seven_maxima_checkpoint.md)连接完整来源证明和独立审查，给 `U=OPTₙ≤2W` | 现行页未展开来源全部系数分支；恰七极大的五人、六人缺口仍在 |
-| 向日葵或层级客户极大关联目录，任意人数 | [向日葵界](sunflower_maxima_bound.md)、[层级关联界](laminar_incidence_bound.md)给锐因子 `2−1/n` 及带核心强化 | 层级关联类与“极大覆盖数有界”的类不可比较，内部子主题仍允许存在 |
-| 一般目录与一般人数 | [末两人保底](last_two_floor.md)、[末四人提升](tail_profit_lift.md)给较弱通用界 | 未被上列结果覆盖的主目标范围需要人数至少五、极大覆盖至少七 |
+| 任意目录、恰三人 | [锐 \(5/3\) 界](three_player_sharp.md)，有匹配下界 | 旧 \(142/81\) 保留不同税机制，不再作最佳界 |
+| 任意目录、恰四人 | [\(1499/750<2\) 界](four_player_bound.md) | 未证锐性；背景利润另有对象 |
+| 任意目录、恰五人 | [索引偏离界](five_player_indexed_bound.md)给 \(\beta\approx2.06169478572>2\) | 未达半覆盖；模板精确最优不是原游戏最坏值 |
+| 至多六个不同包含极大覆盖、任意人数 | [联合预算半覆盖](six_maxima_joint_bound.md) | 内部子主题与关联任意，但极大覆盖数受限 |
+| 恰七极大、七人以上 | [完整来源证明与审查](seven_maxima_checkpoint.md)给 \(U=\operatorname{OPT}_m\le2W\) | 五人和六人仍缺分支；现行页仅依赖概述，完整源可追溯 |
+| 向日葵或客户极大关联层级族、任意人数 | [向日葵](sunflower_maxima_bound.md)、[层级关联](laminar_incidence_bound.md)给带核心锐界 | 不是一般交叠目录 |
+| 一般目录、任意人数 | **尚无完整证明或目标反例** | 剩余范围至少五人、至少七极大；不能把局部桥反例当主目标答案 |
 
-这里的证明与审查均按正文及登记的实际范围使用；没有把内部审查称为外部同行评审，没有认证全球优先权。`W=0` 时直接使用乘法不等式，不定义商。
+全部 CA 精确身份在[现行账本](../claims.md)，来源证明、当前重构、内审、外审与实现分别在[五轴状态](../../review_status.json)。本次整理不改变这些状态。
 
-## 从哪里开始读
+## 按当前问题选择资产
 
-1. **先固定模型。** 读[主题、收益与完整历史纯 SPE](model.md)，再读[文献导入边界](literature.md)与[量词复核](literature_followup.md)。特别检查“全部有序历史”及静态结论的限制。
-2. **学会一条完整证明。** 先读[三人锐界](three_player_sharp.md)，接[四人根福利界](four_player_bound.md)。研究任意背景时再读[三人](three_remaining_profit_bound.md)、[四人](four_remaining_profit_bound.md)利润界，不能把剩余利润替换成全局覆盖。
-3. **进入结构机制。** 从[不交花瓣](disjoint_maxima_bound.md)读到[向日葵](sunflower_maxima_bound.md)、[层级关联](laminar_incidence_bound.md)；另一条读[三极大静态席位](three_maxima_bound.md)→[动态路由与五极大](dynamic_maxima_bound.md)→[六极大联合预算](six_maxima_joint_bound.md)。这两组是不同结构路线。
-4. **继续攻一般目录。** 先读[一般目标](../../questions/customer_attraction_half_coverage.md)和[两条一般研究任务](../../questions/customer_attraction_general_handoff.md)。选安全值路线时依次读[静态安全值](oblivious_security.md)、[策略锥对偶](security_cone_duality.md)、[全局债务](security_chain_and_local_boundary.md)，再查本页对应失败边界。
-5. **需要构造或反例时。** 读[全集逆向归纳](exact_solver.md)与[完整策略重数锥](strategy_cone.md)；若要超出默认重构的策略采样，读[可信续局](credible_continuations.md)。[Möbius 编译](mobius_compiler.md)是可复用表示工具，其正偏置限制须同时读取。
+- 重构正面机制：读[三人锐界](three_player_sharp.md)、[四人真实偏离界](four_player_bound.md)，需要任意背景时再读[三人利润](three_remaining_profit_bound.md)、[四人利润](four_remaining_profit_bound.md)。
+- 研究一般全局机制：读[短数学义务](../../questions/customer_attraction_general_handoff.md)；直接覆盖与聚合安全值两种接口均可换方法。
+- 需要精确发现或反例：读[全集逆向归纳](exact_solver.md)、[完整策略锥](strategy_cone.md)与[可信续局](credible_continuations.md)；核对实际返回的是终局、完整策略还是松弛点。
+- 引用外部工具：先核对[文献导入](literature.md)、[量词复核](literature_followup.md)。静态 NE、相关设施客户均衡与本题顺序 SPE 分属不同合同。
 
 ## 全部数学资产：按用途选择
 
