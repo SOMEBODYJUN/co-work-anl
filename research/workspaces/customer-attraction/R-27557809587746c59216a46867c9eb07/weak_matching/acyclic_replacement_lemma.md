@@ -2,7 +2,10 @@
 
 Status: a general conditional lemma and an exact four-row witness for an
 existing full SPE policy. The existence condition is not asserted for arbitrary
-SPE. Q-CAG-HALF remains OPEN. Independent review is pending.
+SPE. Q-CAG-HALF remains OPEN. Independent reconstruction and source replay by
+credible_search found no fatal objection; see
+`../credible_search/acyclic_replacement_independent_review.md`. External review
+and novelty are not certified.
 
 ## Precise condition
 
@@ -65,7 +68,8 @@ This proves the payment inequality without freezing any real successor.
 
 Every missed comparison client contributes one to R_first. Every actually
 covered comparison client contributes at least 1/m, because its frozen
-denominator is at most m. Thus the comparison union is at most
+denominator is at most m: if a_j contains x the denominator is c_x<=m; if it
+omits x, that actual slot does not cover x, so c_x<=m-1. Thus the comparison union is at most
 R_first+(1-1/m)W, giving the first welfare bound. Alternatively its frozen
 share is at least 1/(c_x+1), so the unpaid part of that client is at most
 c_x/(c_x+1); summing gives the second bound. QED.
