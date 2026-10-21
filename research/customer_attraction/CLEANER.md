@@ -37,7 +37,7 @@ python3 work.py workspace
 python3 work.py checkpoint <本人工作区路径> -m '阶段备份：当前推导与下一步'
 只有回执 status=pushed 才算远端已保存。sync 取回同行更新；checkpoint 将本地文件提交并推送 main，两者不是一回事。
 
-共享数学正文、Claim、研究地图和稿件按数学内容组织，不按 Boss、清洗者或整理者分区。个人区的备份不自动成为可靠结论；需要长期复用时再整理、检查并进入已有 current/questions/reviews 等目录，同时更新真正涉及的账本与地图。具体格式按 research/GROWTH.md，不给日常个人备份加数学入库门槛。
+共享数学正文、Claim、研究地图和稿件按数学内容组织，不按 Boss、清洗者或整理者分区。个人区的备份不自动成为可靠结论；需要长期复用时再整理、检查并进入已有 current/questions/reviews 等目录，在正式入库的同一次提交更新本题数学 README、中文名称用途及实际受影响的账本与状态；根 README 只随主要结论或方向变化更新。具体格式按 research/GROWTH.md，不给日常个人备份加数学入库门槛。
 正式更新本题共享资产可用：python3 work.py checkpoint -m '具体成果与准确范围'
 不带路径时保存本题默认范围及本人工作区；显式路径会替换默认范围，需列全本次要提交的路径。完整操作需要时查 research/customer_attraction/RUNBOOK.md。
 ~~~
