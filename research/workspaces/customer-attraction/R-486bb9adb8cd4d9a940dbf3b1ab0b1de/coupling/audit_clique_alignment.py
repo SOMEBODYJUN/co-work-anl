@@ -177,6 +177,29 @@ def k5_separation():
             "clique_separation_value": str(clique_value)}
 
 
+def all_proper_subgraph_separation():
+    results = []
+    for q in range(2, 9):
+        length = q + 1
+        assert chi(q, (1,) * length) == 1
+        edges = list(itertools.combinations(range(length), 2))
+        for missing in edges:
+            colors = {}
+            colors[missing[0]] = colors[missing[1]] = 0
+            for color, r in enumerate((r for r in range(length) if r not in missing), 1):
+                colors[r] = color
+            assert max(colors.values()) < q
+            for edge in edges:
+                assert (colors[edge[0]] == colors[edge[1]]) == (edge == missing)
+        A = F(1, q - 1) * F(1, 2) + F(q - 2, q - 1)
+        E = (q - 1) * A - (q - 1) + F(1, 2)
+        assert E == 0
+        results.append({"q": q, "families": length, "full_graph_deficiency": 1,
+                        "each_deleted_edge_checked": len(edges),
+                        "local_histogram_E": str(E), "clique_value": "-1/2"})
+    return results
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output")
@@ -188,6 +211,7 @@ def main():
         "clique_exhaustions": [enumerate_cliques(*p) for p in [(1, 6), (2, 7), (3, 5), (4, 4)]],
         "weighted_graph_and_type_checks": weighted_and_type_representation(),
         "K5": k5_separation(),
+        "q_plus_one_irreducible_family": all_proper_subgraph_separation(),
     }
     rendered = json.dumps(result, indent=2, ensure_ascii=False) + "\n"
     if args.output:

@@ -14,6 +14,7 @@ from customer_attraction_strategy_lp import integer_clones,instance_from_clones,
 from customer_attraction import StrategyCertificate,verify_certificate
 src=inspect.getsource(joint.joint_candidate)
 src=src.replace('hi[:n]=m','hi[:n]=m\n    rootmask=sum(1<<a for a in set(path))\n    for j in range(n):\n        if ((j+1)&rootmask).bit_count()>1:hi[j]=0')
+src=src.replace("float(result.mip_gap) if hasattr(result,'mip_gap') else None","float(result.mip_gap) if getattr(result,'mip_gap',None) is not None else None")
 exec(src,joint.__dict__)
 
 def main():

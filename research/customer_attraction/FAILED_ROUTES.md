@@ -6,6 +6,7 @@
 
 | 尝试与失败点 | 仍可回收什么 | 改变什么才值得重试 |
 | --- | --- | --- |
+| 将对称iid混合Nash的唯一期望覆盖Z_m直接由SPE福利支付 | 既有[八客户CCE反例](../current/customer_attraction/eight_customer_cce_welfare_gap.md)有W6而所有静态CCE福利至少544/87；iid混合Nash也是CCE，故W≥Z_m已被否定。静态定理m v_m≤Z_m≤OPT_m仍成立 | 回到真正不观察查询安全值或跨真实分支预算；不得把旧iid桥继续列OPEN，也不能据此否定真安全聚合或half |
 | 将[真实末两人菜单证书](../current/customer_attraction/penultimate_few_exceptions.md)无条件外推到大量早期遗漏 | 少量遗漏可由早期/末位联合K支付；一般A低负载要求乘子下界，A外共覆盖给上界，两者可能不相容 | 共同重选非均匀例外权重、调用更早真实回复或换全局不变量；模板负余项不等于合法SPE反例 |
 | 仅依实际终局负载校正，要求Σf(c)≥OPT且f0=0、f1=1：[五客户无拥挤完整SPE](../current/customer_attraction/collision_free_occupancy_obstruction.md)给Σf(c)=W4<OPT5；[任意人数族](../current/customer_attraction/collision_free_three_halves_family.md)进一步迫使一般f0=0的普遍支付至少f1≥3/2 | 调和势仍能表示收益差；覆盖矩行空间与SPE真实比较仍可用 | 调整f(2),f(3),…无法影响本例；必须改变单次覆盖信用或使用主题/真实分支信息，不能把这当half反例 |
 | 从终局收益低维span推固定非负兴趣类型基：[覆盖矩极射线](../current/customer_attraction/coverage_moment_geometry.md)表明每非空类型在m≥2均承重 | 可依实例有理消元到d种类型，保留全部收益、覆盖、SPE及效率真值 | 允许自适应选支持，或放松精确保留全部数值；span与非负行锥不得混同 |
