@@ -3,7 +3,7 @@
   "python": "3.12.14",
   "scipy": "1.17.0",
   "numpy": "2.3.5",
-  "script_sha256": "4e87b281cfe81c7acaa394eead906b34477fea9fb28773bafc845393dcc95c7e",
+  "script_sha256": "c7d5507591d395be7353cea1e2f07cd5f4390f5bc15e3120fa51607f094cba4f",
   "records": [
     {
       "scratch_source": "dag_frac_m3p4.json",
@@ -38,7 +38,13 @@
         "optimal_welfare": 10,
         "nodes": 21,
         "deviation_checks": 63
-      }
+      },
+      "model_bounds": {
+        "normalized_topic_size_cap": "m",
+        "big_M": "m",
+        "note": "preliminary looser valid model; current default uses cap=1 and bigM=1"
+      },
+      "multiplicity_coordinates": 15
     },
     {
       "scratch_source": "dag_frac_m4p5.json",
@@ -74,7 +80,13 @@
         "optimal_welfare": 1,
         "nodes": 156,
         "deviation_checks": 624
-      }
+      },
+      "model_bounds": {
+        "normalized_topic_size_cap": "m",
+        "big_M": "m",
+        "note": "preliminary looser valid model; current default uses cap=1 and bigM=1"
+      },
+      "multiplicity_coordinates": 31
     },
     {
       "scratch_source": "dag_frac_m5p5.json",
@@ -110,7 +122,13 @@
         "optimal_welfare": 1,
         "nodes": 781,
         "deviation_checks": 3124
-      }
+      },
+      "model_bounds": {
+        "normalized_topic_size_cap": "m",
+        "big_M": "m",
+        "note": "preliminary looser valid model; current default uses cap=1 and bigM=1"
+      },
+      "multiplicity_coordinates": 31
     },
     {
       "scratch_source": "dag_main_m5p7.json",
@@ -153,7 +171,13 @@
         "optimal_welfare": 1,
         "nodes": 2801,
         "deviation_checks": 16806
-      }
+      },
+      "model_bounds": {
+        "normalized_topic_size_cap": "1",
+        "big_M": "1",
+        "note": "current model"
+      },
+      "multiplicity_coordinates": 127
     },
     {
       "scratch_source": "dag_budget_m3p4_12.json",
@@ -188,7 +212,13 @@
         "optimal_welfare": 10,
         "nodes": 21,
         "deviation_checks": 63
-      }
+      },
+      "model_bounds": {
+        "normalized_topic_size_cap": "1",
+        "big_M": "1",
+        "note": "current model"
+      },
+      "multiplicity_coordinates": 15
     },
     {
       "scratch_source": "dag_budget_m3p4_111.json",
@@ -223,7 +253,13 @@
         "optimal_welfare": 31,
         "nodes": 21,
         "deviation_checks": 63
-      }
+      },
+      "model_bounds": {
+        "normalized_topic_size_cap": "1",
+        "big_M": "1",
+        "note": "current model"
+      },
+      "multiplicity_coordinates": 15
     },
     {
       "scratch_source": "dag_budget_m4p4_22.json",
@@ -258,7 +294,230 @@
         "optimal_welfare": 1,
         "nodes": 85,
         "deviation_checks": 255
-      }
+      },
+      "model_bounds": {
+        "normalized_topic_size_cap": "1",
+        "big_M": "1",
+        "note": "current model"
+      },
+      "multiplicity_coordinates": 15
     }
-  ]
+  ],
+  "baseline_control": {
+    "fixed_instance": {
+      "scope": "known feasible instance; fixed multiplicities only",
+      "customers_nonzero_types": 7,
+      "customers_available_types": 127,
+      "integer_clones": [
+        5,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "total_unit_customers": 11,
+      "milp": {
+        "topics": 7,
+        "players": 5,
+        "root_counts": [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "variables": 42345,
+        "binary": 41888,
+        "rows": 77064,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 8.096889003999877,
+        "floating_value": 1.8,
+        "floating_bound_not_a_certificate": true
+      },
+      "exact_full_history_verified": true,
+      "ordered_history_nodes": 2801,
+      "exact_deviation_checks": 16806,
+      "welfare": 5,
+      "optimal_welfare": 9,
+      "ratio": "9/5"
+    },
+    "free_multiplicity_objective_floor": {
+      "scope": "unrestricted outcome-witness DAG candidate generation",
+      "universal_bound_proved": false,
+      "mode": {
+        "portfolio": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "milp": {
+        "topics": 7,
+        "players": 5,
+        "root_counts": [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "variables": 42345,
+        "binary": 41888,
+        "rows": 77065,
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+        "seconds": 59.116260065999995,
+        "floating_value": null,
+        "floating_bound_not_a_certificate": true,
+        "objective_floor": 1.8
+      },
+      "exact_candidate": null
+    },
+    "interpretation": "The same-size fixed instance is known feasible and verified. Free multiplicities plus a known feasible objective floor produced no incumbent within the recorded time. This diagnoses joint-search startup difficulty, not a mathematical obstruction or bound.",
+    "first_fixed_solve_seconds": 2.5650845019999906,
+    "next_actions": [
+      "warm start from a known full witness with a solver interface supporting MIP starts",
+      "decompose multiplicity optimization from outcome-witness choices",
+      "restrict to a sparse customer-type support before searching new strategies"
+    ],
+    "do_not_infer": "No incumbent or a timeout has no truth implication for Q-CAG-HALF or any proposed bridge."
+  },
+  "current_script_sha256": "c7d5507591d395be7353cea1e2f07cd5f4390f5bc15e3120fa51607f094cba4f",
+  "audit_script_sha256": "80399d24357b3e210e67a07c95d4aab80659117941473a81bf023b3d8591cadb",
+  "version_note": "Current code adds optional coefficientwise exact fixed-cone dual replay and an objective-floor option. Core DAG constraints are unchanged for the cap=1 runs. Preliminary cap=m results are explicitly distinguished; no preliminary numerical optimality is certified.",
+  "fixed_m4_budget_duals": {
+    "certificate": "m4_new_budget_fixed_cone.json",
+    "audit": "audit_outcome_dag.py",
+    "number_exactly_verified": 4,
+    "scope": "only the saved complete m4 strategy cone; no universal bridge bound"
+  }
 }

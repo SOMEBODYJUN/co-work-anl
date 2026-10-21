@@ -19,6 +19,8 @@
 
 [静态福利比较反例](../current/customer_attraction/worst_pne_welfare_counterexample.md)已经完整构造并独立核验：三人、四主题、十六单位客户的SPE覆盖十五，同实例全部静态PNE覆盖十六。即使不要求实际终局本身为PNE，也不能用同实例另一最差PNE直接支付顺序福利。该辅助桥失败没有改变一般目标的OPEN状态。 更弱的[最低静态CCE福利桥](../current/customer_attraction/worst_cce_welfare_counterexample.md)也已被十三客户完整SPE反例否定：W9而每个静态CCE期望福利≥137/15，精确最低2785/297。真正不观察查询的聚合安全值桥仍开放；本例的固定背景(0,4)使v3≤3。
 
+[实际分数负载弱桥无限族](../current/customer_attraction/fractional_actual_load_counterexample.md)进一步排除了固定选择实际缩放背景αc、再要求W≥(m−1/2)M的支付方式：每个m≥4均有四主题完整SPE严格违反。原来的OPT≤(2m−1)M代数仍成立；保留精确实际税得到OPT≤mM+W−G_C，而新的充分桥mM≤W+G_C尚未在此证明。该族满足真正强安全预算W≥m v_m，不影响一般目标或真正聚合安全值的开放状态。
+
 ## 真正缺什么
 
 一般目录的早期玩家偏离一个主题后，所有后继都可以沿原完整策略改变行动。需要控制这些**真实分支之间的总福利损失**，同时保留所有历史依赖平局。现有静态 NE 桥、逐人保底、逐步非负预算、根总税及若干固定运输核均已失败。
