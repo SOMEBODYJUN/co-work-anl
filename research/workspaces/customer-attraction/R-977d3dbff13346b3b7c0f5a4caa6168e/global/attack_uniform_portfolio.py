@@ -20,7 +20,7 @@ from cone_attack_credible_variants import credible_cone
 def objective_row(cone,portfolio):
     """m O - (m-1) W - sum_{i,j} actual-prefix true deviations."""
     p,m=cone.topics,cone.players
-    row=[m*v-(m-1)*w for v,w in zip(coverage_row(p,portfolio),cone.welfare)]
+    row=[m*v-(m-1)*w for v,w in zip(coverage_row(p,set(portfolio)),cone.welfare)]
     h=()
     for i in range(m):
         for a in portfolio:
@@ -48,7 +48,7 @@ def attack(cone,portfolio):
     return {'witness':True,'gap':dot(objective,clones),'clones':clones,
         'players':cone.players,'topics':cone.topics,'portfolio':portfolio,
         'strategy':StrategyCertificate(cone.actions,cone.root).to_dict(),
-        'W':dot(cone.welfare,clones),'comparison':dot(coverage_row(cone.topics,portfolio),clones),
+        'W':dot(cone.welfare,clones),'comparison':dot(coverage_row(cone.topics,set(portfolio)),clones),
         'OPT':instance.optimal_welfare()}
 
 def main():
