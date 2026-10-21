@@ -213,7 +213,14 @@ def small_test():
                 report=verify_certificate(instance,StrategyCertificate(actions,q))
                 assert report.valid,str(report)
             cases.append({'m':m,'p':p,'q':q,'realizable':actual})
-    return {'scope':'implementation equivalence checks only; no universal efficiency claim','cases':cases}
+    # An independent last-mover calculation gives OPT/W=5/3 for an all-A
+    # root with three topics and three movers (attained by disjoint 3,1,1).
+    model=FullHistoryMILP(3,3,(3,0,0),(0,1,2),first_action=0)
+    out,meta=model.solve(20)
+    proof=certify(model,out)
+    assert proof and proof['certified'] and proof['ratio']=='5/3',(meta,proof)
+    return {'scope':'implementation equivalence checks only; no universal efficiency claim','cases':cases,
+        'exact_extraction_regression':{k:v for k,v in proof.items() if k not in ('strategy','integer_clones')}}
 
 
 def main():
