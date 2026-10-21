@@ -13647,6 +13647,18 @@
         "research/reviews/customer_attraction/worst_pne_welfare.md"
       ],
       "status": "complete finite counterexample with independent internal definition-level audit; unrefereed"
+    },
+    {
+      "id": "CA-WORST-CCE-WELFARE-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "顺序均衡福利低于同实例全部静态粗相关均衡",
+      "detail": "A13-unit three-provider five-theme complete-history pure SPE has path(0,4,4), payoffs(3,3,3), W9 and OPT3=12. Every static CCE has expected welfare>=137/15; exact minimum2785/297. Genuine static security is not refuted.",
+      "refs": [
+        "research/current/customer_attraction/worst_cce_welfare_counterexample.md",
+        "research/reviews/customer_attraction/worst_cce_welfare.md"
+      ],
+      "status": "complete finite counterexample with independent internal definition-level audit; unrefereed"
     }
   ],
   "hyperedges": [
@@ -33460,6 +33472,36 @@
       "statement": "The failed same-instance static-PNE welfare bridge is stronger than half coverage; the example satisfies half coverage and supplies no target counterexample.",
       "refs": [
         "research/current/customer_attraction/worst_pne_welfare_counterexample.md"
+      ],
+      "status": "target remains open"
+    },
+    {
+      "id": "E-CA-WORST-CCE-WELFARE-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-WORST-CCE-WELFARE-NO",
+      "statement": "The explicit unit-client full-history SPE and exact static CCE dual/primal give strict failure of same-instance lowest-CCE welfare domination.",
+      "refs": [
+        "research/current/customer_attraction/worst_cce_welfare_counterexample.md",
+        "tests/audits/customer_attraction_worst_cce_welfare.py",
+        "evidence/runs/2026-10-21/customer_attraction_worst_cce_welfare.json"
+      ],
+      "status": "complete finite counterexample with independent internal definition-level audit; unrefereed"
+    },
+    {
+      "id": "E-CA-WORST-CCE-TARGET-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-WORST-CCE-WELFARE-NO"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "Only the static-CCE welfare bridge fails; the example has2W18>=OPT12 and static opponent background(0,4) caps all queries at3, preserving aggregate-security possibility.",
+      "refs": [
+        "research/current/customer_attraction/worst_cce_welfare_counterexample.md"
       ],
       "status": "target remains open"
     }

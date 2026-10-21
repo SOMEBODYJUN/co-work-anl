@@ -27,4 +27,4 @@ Boss直接带团队攻一般命题。清洗者处理数学检查、自足改写�
 
 本次删除的是当前入口里的重复逐轮摘要，旧操作角色原文移入历史；旧模型的独有数学资产未作为垃圾删除。详见[清理记录](research/customer_attraction/CURATION.md)。
 
-本轮已审机制边界：[三人十六客户反例](research/current/customer_attraction/worst_pne_welfare_counterexample.md)使SPE福利低于同实例全部静态PNE福利，排除最差静态PNE福利支配桥；不是一般半覆盖反例。
+本轮已审机制边界：[三人十六客户反例](research/current/customer_attraction/worst_pne_welfare_counterexample.md)使SPE福利低于同实例全部静态PNE福利，排除最差静态PNE福利支配桥；另有[十三客户完整反例](research/current/customer_attraction/worst_cce_welfare_counterexample.md)排除最低静态CCE福利支配（W9<137/15≤min_CCE E[W]=2785/297）。两者均不是一般半覆盖反例，真正聚合安全值桥仍开放。

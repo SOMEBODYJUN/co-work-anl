@@ -4,6 +4,7 @@
 
 | 机制 | 为什么失败、留下什么 | 自足入口 |
 | --- | --- | --- |
+| 进一步换成同实例最低静态CCE福利：十三客户完整SPE覆盖9，所有静态CCE期望福利≥137/15 | [完整反例](research/current/customer_attraction/worst_cce_welfare_counterexample.md)证明这种更弱静态福利支配也失败；精确最低2785/297 | 保留真正不观察查询的安全值或直接跨真实分支预算；本例不反驳半覆盖 |
 | 把SPE终局当作静态Nash | 后继会响应早期偏离；终局可以有静态改善。保留真实全历史偏离比较 | [续局失败桥](research/current/customer_attraction/continuation_lemmas.md) |
 | 比较到同实例的另一最差静态PNE | 完整SPE覆盖十五，全部静态PNE覆盖十六，替换静态均衡仍不能支付 | [静态福利比较反例](research/current/customer_attraction/worst_pne_welfare_counterexample.md) |
 | 逐人安全值/末位保底推广到所有人 | 有完整SPE违反逐人保证；聚合桥须单独证明 | [逐人安全值反例](research/current/customer_attraction/individual_security_counterexample.md)、[末位聚合反例](research/current/customer_attraction/aggregate_theta_counterexample.md) |

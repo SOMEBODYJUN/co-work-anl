@@ -17,7 +17,7 @@
 
 ## 本轮新增的机制边界
 
-[静态福利比较反例](../current/customer_attraction/worst_pne_welfare_counterexample.md)已经完整构造并独立核验：三人、四主题、十六单位客户的SPE覆盖十五，同实例全部静态PNE覆盖十六。即使不要求实际终局本身为PNE，也不能用同实例另一最差PNE直接支付顺序福利。该辅助桥失败没有改变一般目标的OPEN状态。
+[静态福利比较反例](../current/customer_attraction/worst_pne_welfare_counterexample.md)已经完整构造并独立核验：三人、四主题、十六单位客户的SPE覆盖十五，同实例全部静态PNE覆盖十六。即使不要求实际终局本身为PNE，也不能用同实例另一最差PNE直接支付顺序福利。该辅助桥失败没有改变一般目标的OPEN状态。 更弱的[最低静态CCE福利桥](../current/customer_attraction/worst_cce_welfare_counterexample.md)也已被十三客户完整SPE反例否定：W9而每个静态CCE期望福利≥137/15，精确最低2785/297。真正不观察查询的聚合安全值桥仍开放；本例的固定背景(0,4)使v3≤3。
 
 ## 真正缺什么
 

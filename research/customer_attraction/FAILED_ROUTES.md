@@ -6,6 +6,7 @@
 
 | 尝试与失败点 | 仍可回收什么 | 改变什么才值得重试 |
 | --- | --- | --- |
+| 用任意最低静态CCE替代PNE作福利比较：[十三客户完整反例](../current/customer_attraction/worst_cce_welfare_counterexample.md)中W9，全部静态CCE期望福利至少137/15，精确最低2785/297 | 比最差PNE失败更强；完整SPE及静态原始/对偶可复核，真正静态安全值v3≤3 | 需要新的跨真实分支预算或真正安全值桥，不能只把PNE换成CCE；不反驳半覆盖 |
 | 把顺序 SPE 终局当成静态 NE，套静态次模福利界：[完整反例](../current/customer_attraction/literature.md)中 SPE 终局仍有静态盈利偏离 | 覆盖的次模性、均分收益与静态有效效用结构仍成立 | 比较偏离后**原策略的真实后继**，或另证所用类的 SPE→NE 桥 |
 | 用同实例最差静态PNE福利替代SPE终局：[十六客户完整反例](../current/customer_attraction/worst_pne_welfare_counterexample.md)给W(SPE)=15，而全部静态PNE福利16 | 比“SPE终局可以非PNE”更强：不存在另一低福利PNE可供比较；静态福利分析本身保留 | 另造跨分支相关对象并证明其福利支付，不能仅更换一个静态PNE；CCE候选仍未证 |
 | 假定同主题计数历史必须同回复、或早晚收益单调：[续局边界](../current/customer_attraction/continuation_lemmas.md)均有完整 SPE 反例 | 子博弈可实现终局**集合**可按计数缓存 | 集合压缩后仍对各有序历史独立重构；限制平局规则须另立模型 |

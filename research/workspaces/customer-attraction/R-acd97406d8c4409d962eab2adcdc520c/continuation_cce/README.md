@@ -36,6 +36,6 @@ H_p(q)=Σ_T p_T Σ_{x∈T}[3·1_{c_x=0}+4/(c_x+1)·1_{c_x>0}]
 - `cce_failure_candidate.json`：七十客户中间证书。
 - `cce_failure_small.json`：最终十三客户、完整31节点策略和简单有限列约束证书。
 - `cce_failure_small_benchmark.json`：精确最低CCE值、原始分布、对偶与同实例模型。
-- `../continuation_transport/cce_independent_small.py`及对应报告：完全独立按十三名单位客户和全部有序终局验证，未导入上述实现。
+- `../continuation_transport/cce_independent.py`及对应报告：完全独立按十三名单位客户和全部有序终局验证，未导入上述实现。
 
 后续优先方向：一般覆盖仍可完全绕开静态比较；真正v_m比较未被本例击穿。不要重复把最低PNE换成最低CCE以导入静态PoA。

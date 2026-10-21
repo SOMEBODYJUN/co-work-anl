@@ -37,3 +37,5 @@
 这里的“完整”指所列范围内的数学证明及相应内部审查；外审、优先权、实现和一般适用性分别报告。改变量词、输入域、均衡概念、价值或权重约定时另立身份，不沿用 `Q-CAG-HALF`。
 
 新增机制边界：[`CA-WORST-PNE-WELFARE-NO`](../current/customer_attraction/worst_pne_welfare_counterexample.md)否定同实例最差静态PNE福利支配桥；完整有限证书及独立内审，不影响 Q-CAG-HALF 的OPEN状态。
+
+新增机制边界：[`CA-WORST-CCE-WELFARE-NO`](../current/customer_attraction/worst_cce_welfare_counterexample.md)给十三客户完整SPE覆盖9，低于同实例每个静态CCE的期望福利；精确最低2785/297。独立内部精确核验通过，不改变一般半覆盖或真正聚合静态安全值的开放状态。
