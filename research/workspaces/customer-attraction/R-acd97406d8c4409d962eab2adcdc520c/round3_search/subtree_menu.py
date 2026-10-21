@@ -110,9 +110,11 @@ def sample_subtree(solver,branch,target,rng,mode):
 
 def generate_menus(p,m,q,root_action,rng,variants,extra_sources=()):
     menus=[[] for _ in range(p)]; seen=[set() for _ in range(p)]
+    known=[]
     sources=list(source_seeds(p,m,q))+list(extra_sources)
     for label,r in sources:
         solver=ExactSPESolver(instance_from_clones(p,m,r))
+        source_options=[[] for _ in range(p)]
         for b in range(p):
             child=inc((0,)*p,b); candidates=sorted(solver.outcomes(child))
             if b==root_action:
@@ -128,13 +130,30 @@ def generate_menus(p,m,q,root_action,rng,variants,extra_sources=()):
                 for mode in ('min','max','uniform')[:variants]:
                     actions=sample_subtree(solver,b,target,rng,mode)
                     option=Option(p,m,b,actions,label+':'+mode)
+                    source_options[b].append(option)
                     if option.digest not in seen[b]:
                         seen[b].add(option.digest);menus[b].append(option)
+        # The common source is a known incumbent whenever q belongs to its
+        # complete root outcome set. Its mover-minimum off-root targets are
+        # explicitly in the menu, so recover that complete action map now.
+        if q in solver.outcomes():
+            actions={():root_action}
+            for b,opts in enumerate(source_options):
+                if b==root_action:
+                    option=opts[0]
+                else:
+                    option=min(opts,key=lambda opt:solver._utility(opt.target,b))
+                actions.update(option.actions)
+            seed_cone=StrategyCone(p,m,actions)
+            if seed_cone.root==q and seed_cone.verify(tuple(map(F,r))):
+                independent_check(p,m,r,StrategyCertificate(actions,q).to_dict())
+                known.append((label,r,seed_cone))
     assert all(menus)
-    return menus
+    assert known
+    return menus,known
 
 
-def choose_menu(p,m,q,root_action,menus,objective,seconds):
+def choose_menu(p,m,q,root_action,menus,objective,seconds,objective_floor=None):
     n=(1<<p)-1
     z={};idx=n
     for b,opts in enumerate(menus):
@@ -147,6 +166,9 @@ def choose_menu(p,m,q,root_action,menus,objective,seconds):
     w=coverage_row(p,[a for a,c in enumerate(q) if c])
     actual=payoff_row(p,q,root_action)
     add({j:v for j,v in enumerate(w) if v},1,1)
+    if objective_floor is not None:
+        # This is a verified exact feasible value, not a supplied MIP start.
+        add({j:v for j,v in enumerate(objective) if v},lo=float(objective_floor)-1e-9)
     # At a genuine SPE every actual player guarantees |T|/m; summing yields
     # |T| <= W=1. Thus any utility and any payoff difference lies in [0,1]
     # and [-1,1], respectively. Conditional constant one is rigorous.
@@ -185,7 +207,9 @@ def choose_menu(p,m,q,root_action,menus,objective,seconds):
           'status':int(result.status),'message':result.message,
           'floating_value':None if result.fun is None else -float(result.fun),
           'floating_bound_not_a_mathematical_certificate':True,
-          'all_root_constraints_retained':True}
+          'all_root_constraints_retained':True,
+          'known_exact_feasible_objective':objective_floor,
+          'MIP_start_not_available':True}
     if result.x is None: return None,meta
     actions={():root_action};selected=[]
     for b,opts in enumerate(menus):
@@ -304,9 +328,15 @@ def main():
         clones=tuple(endpoint['integer_clones']); assert len(clones)==(1<<p)-1
         independent_check(p,m,clones,endpoint['strategy'])
         extra_sources.append((source.stem,clones))
-    menus=generate_menus(p,m,q,args.root_action,random.Random(args.seed),args.variants,extra_sources)
+    menus,known=generate_menus(p,m,q,args.root_action,random.Random(args.seed),args.variants,extra_sources)
     construction=time.monotonic()-began
-    cone,meta=choose_menu(p,m,q,args.root_action,menus,objective,args.seconds)
+    known_label,known_r,known_cone=max(known,key=lambda item:
+        dot(objective,item[1])/dot(w,item[1]))
+    known_value=dot(objective,known_r)/dot(w,known_r)
+    cone,meta=choose_menu(p,m,q,args.root_action,menus,objective,args.seconds,known_value)
+    meta['known_incumbent_source']=known_label
+    if cone is None:
+        cone=known_cone;meta['returned_known_complete_strategy_after_MIP_no_incumbent']=True
     if cone is not None and args.all_portfolios:
         best=None
         for candidate_J in combinations(range(p),min(p,m)):
@@ -324,6 +354,10 @@ def main():
         meta['fixed_cone_all_portfolio_float_scan']=True
         meta['fixed_cone_selected_portfolio']=J
     exact=exact_optimize(cone,objective,J,args.target) if cone is not None else None
+    known_exact=exact_optimize(known_cone,objective,J,args.target)
+    if known_exact['certified'] and (exact is None or not exact['certified'] or
+        known_exact['objective_value']>exact['objective_value']):
+        exact=known_exact;meta['returned_better_known_complete_strategy_after_exact_replay']=True
     report={'scope':'finite whole-subtree joint neighbourhood; complete SPE witnesses only',
         'universal_claim_proved':False,'parameters':dict(vars(args)),
         'menu_construction_seconds':construction,'milp':meta,'exact':exact}

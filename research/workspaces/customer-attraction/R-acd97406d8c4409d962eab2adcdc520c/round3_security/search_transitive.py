@@ -33,13 +33,19 @@ def evaluate(s,w):
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--n',type=int,default=5);ap.add_argument('--group',type=int,default=3)
+    ap.add_argument('--cyclic',action='store_true')
     ap.add_argument('--trials',type=int,default=30000);ap.add_argument('--seconds',type=int,default=240)
     ap.add_argument('--seed',type=int,default=76347);ap.add_argument('--output',type=Path,required=True)
     a=ap.parse_args();rng=random.Random(a.seed);s=Search(a.n,2*a.group)
-    classes=sorted({tuple(sorted((int(mask[:a.group].sum()),int(mask[a.group:].sum())))) for mask in s.masks})
-    classes.remove((a.group,a.group))
+    if a.cyclic:
+        def label(mask):
+            return min(tuple(np.roll(mask,r).tolist()) for r in range(s.k))
+        classes=sorted({label(mask) for mask in s.masks});classes.remove((1,)*s.k)
+    else:
+        def label(mask):return tuple(sorted((int(mask[:a.group].sum()),int(mask[a.group:].sum()))))
+        classes=sorted({label(mask) for mask in s.masks});classes.remove((a.group,a.group))
     ci={p:j for j,p in enumerate(classes)}
-    orbits=[ci.get(tuple(sorted((int(mask[:a.group].sum()),int(mask[a.group:].sum())))),-1) for mask in s.masks]
+    orbits=[ci.get(label(mask),-1) for mask in s.masks]
     best=None;bank=[];start=time.monotonic();i=0
     while i<a.trials and time.monotonic()-start<a.seconds:
         if bank and rng.random()<.8:
