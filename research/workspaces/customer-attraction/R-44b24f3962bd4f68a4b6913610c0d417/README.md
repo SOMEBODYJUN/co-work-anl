@@ -19,13 +19,19 @@
 - `direct_global/majority_with_early_exception.md`：m>=4、实际m−1个A及一位早期B，
   末两位A时的扩展候选；额外利用B玩家改A的真实粗保底，待独审。
   `audit_early_exception.py` 仅核验代数实现，无限m证明在正文。
+- `direct_global/penultimate_few_exceptions.md`：新的更强一般r候选：倒二主题A
+  至多被r个早期主题遗漏，m>=(r+1)^2+1时half。修正早期保底的联合K在
+  全覆盖A客户上恰消失；上下预算在平方阈值内相容。125424项Fraction角检已过，
+  任意m,r依据正文解析推导，正独立攻击，不因有限回归升级。
 - `continuation_order/population_paradox.md`：12单位客户、三个共同主题，
   三人全部SPE覆盖12，四人全部覆盖11；全部可达有序路径及完整证书逐历史核验。
   增加人数连最优SPE福利也可下降，禁止未经证明的人口单调归纳；非half反例。
 - `independent_review/`：独立从定义重构的审查与冻结核验；独立攻击不是投票。
 - `full_tree/truncated_intersection_moments.md`：全部m人终局收益恰位于≤m阶
   Boolean多线性空间；低阶交集矩完全决定全部完整SPE，及有理非负客户稀疏化。
-  这是表示工具，合法矩锥和一般支付仍缺，正独立审查。
+  已独审，但最新同步发现共享 `research/current/customer_attraction/coverage_moment_geometry.md`
+  已有同一主空间与稀疏化结论及更强结果；本稿为独立重构，不再重复正式入库或认领新增。
+  `full_tree/count_lattice_circulation.md` 另给真实全树行的势端点零循环，独审见个人审查目录。
 - `true_counterexample/`：从真实完整SPE恢复DAG全部变量的可行热启动；
   自由客户重数模型已实际接纳已知9/5点，继续多支持终局搜索。日志不是一般排除。
 - `global_security/`：真正安全值及首对桥探索、笛卡尔积目录的跨分量机制。
@@ -35,8 +41,9 @@
 
 ## 真正剩余义务
 
-条件性末两人证书在实际倒二主题的客户负载不足时产生负余项；须利用更早真实分支
-支付这些余项或换不变量。早期单例扩展尚不覆盖单例位于倒数第二位及多个例外。
+条件性末两人证书在实际倒二主题的客户负载不足时产生负余项；新的例外联合比较K
+尝试支付少量遗漏。r版候选超平方阈值时单一乘子的上下预算可能冲突，
+尚须其他真实分支支付或换不变量，不能把模板冲突作主目标反例。
 热启动解决了原有已知可行实例的启动问题，但自由全局MILP的根松弛仍慢，
 不能据超时排除任何真实反例。继续一般目标，不把阶段整理作为研究终点。
 
