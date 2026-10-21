@@ -2506,6 +2506,14 @@
 | [稳定核心的修复转移与恒定辅助成本](<current/weighted_congestion/structural_reconstruction/repair_and_core_transfer.md>) | `research/current/weighted_congestion/structural_reconstruction/repair_and_core_transfer.md` | 检查全状态修复、近似稳定加性容差和扩充游戏中的正向成本选择。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
 | [解耦窗口的近一全状态反例族](<current/weighted_congestion/structural_reconstruction/parameterized_allstate_family.md>) | `research/current/weighted_congestion/structural_reconstruction/parameterized_allstate_family.md` | 从实际资源验证全部状态出口、有理参数、每固定c与实际次数预算。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
 | [线性失稳所需权层与降权高度](<current/weighted_congestion/structural_reconstruction/weight_depth_threshold.md>) | `research/current/weighted_congestion/structural_reconstruction/weight_depth_threshold.md` | 反演旧高度势并核对最小结构复杂度的必要性、构造充分性及其不同量词。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [接近次数的全状态下界与平方对数余量](<current/weighted_congestion/structural_reconstruction/additive_near_degree_lower_bound.md>) | `research/current/weighted_congestion/structural_reconstruction/additive_near_degree_lower_bound.md` | 核验随d选n的统一条件、每个整数次数的真实全状态出口和同次修复预算。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [真实有限边际的双排序区间校准](<current/weighted_congestion/structural_reconstruction/instance_interval_calibration.md>) | `research/current/weighted_congestion/structural_reconstruction/instance_interval_calibration.md` | 从实际人数和费用计算所选局部势字典的精确类型尺度区间及森林最佳合同倍率。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [社会成本下降的修复与全局最优压缩](<current/weighted_congestion/structural_reconstruction/socially_descending_repair.md>) | `research/current/weighted_congestion/structural_reconstruction/socially_descending_repair.md` | 检验修复何时同时降低总加权成本、把完整社会最优压缩到前沿并转移稳定解质量。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [端点预算与细化误差的独立审查](<reviews/weighted_congestion/structural_reconstruction/endpoint_review.md>) | `research/reviews/weighted_congestion/structural_reconstruction/endpoint_review.md` | 逐式核查端点面积、小原子份额、局部有限证书并记录非减假设的修补。 | 实际审查记录；只覆盖所列版本与义务 |
+| [随次数变化近一参数的独立逐式攻击](<reviews/weighted_congestion/structural_reconstruction/near_unit_review.md>) | `research/reviews/weighted_congestion/structural_reconstruction/near_unit_review.md` | 先独立重构后核查n随d变化、二幂边界取整、全部相位及同次修复预算。 | 实际审查记录；只覆盖所列版本与义务 |
+| [共同尺度与决策正向接口的独立审查](<reviews/weighted_congestion/structural_reconstruction/shared_scale_review.md>) | `research/reviews/weighted_congestion/structural_reconstruction/shared_scale_review.md` | 核对森林和环阈值的假设、实际校准的证书语义及新方法的适用范围。 | 实际审查记录；只覆盖所列版本与义务 |
+| [环失配合同的独立复构](<reviews/weighted_congestion/structural_reconstruction/cycle_independent.md>) | `research/reviews/weighted_congestion/structural_reconstruction/cycle_independent.md` | 独立建立环谱、差分约束可行性、代数阈值和长链返回的尺度冲突。 | 实际审查记录；只覆盖所列版本与义务 |
+| [权深度反演与固定线性倍率的独立审查](<reviews/weighted_congestion/structural_reconstruction/depth_independent.md>) | `research/reviews/weighted_congestion/structural_reconstruction/depth_independent.md` | 检查玩家图而非类型图的高度定义、严格反演、固定c量词与层数充分方向。 | 实际审查记录；只覆盖所列版本与义务 |
 
 <a id="positive_kernels"></a>
 

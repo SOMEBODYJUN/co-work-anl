@@ -13,3 +13,11 @@
 | [weight_depth_threshold.md](weight_depth_threshold.md) | 旧高度势的精确反演、log d尺度过渡及最小权类/潜在玩家降权高度的正反桥；两个高度定义不能混用。 |
 
 连续主文、有限参数证书与精确审计将在本专题整合，不复制另一棵按agent或轮次分割的资产树。原有[决策方法专题](../decision_methods/README.md)贡献独立的成本正则化和有限求解接口，后续成稿按真实依赖引用。
+
+## 新的定量结论与正向工具
+
+- [加性平方对数余量](additive_near_degree_lower_bound.md)：对每个整数d≥2²⁰，无[d−1200⌈log₂d⌉²]-PNE的有理同次数游戏；统一参数证明及独立逐式攻击已完成。
+- [真实有限边际区间校准](instance_interval_calibration.md)：在给定非负双排序字典内优化共同尺度；森林给精确合同最小倍率，不宣称全类均衡阈值。
+- [社会成本下降修复](socially_descending_repair.md)：额外社会预算成立时，将完整社会OPT与稳定解的质量压缩到核心；强支配本身只保证个体改善，社会下降须另核外部性。
+
+完整英文连续论文与总审查正在整合。有限精确审计位于 tests/audits/weighted_congestion/structural_reconstruction/，冻结输出位于 evidence/runs/weighted_congestion/structural_reconstruction/；这些运行不替代一般证明。
