@@ -45,3 +45,9 @@
 ## 交流与状态
 
 可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。
+
+## 共享入库位置与本轮承接
+
+- [八客户CCE福利间隙](../../../current/customer_attraction/eight_customer_cce_welfare_gap.md)：独立双审、计数策略、最低CCE锐值；与同行十三客户版本分别登记。
+- [分数覆盖真实前缀预算](../../../current/customer_attraction/fractional_cover_path_budget.md)：两路解析独审、精确回归，主目标仍OPEN。
+- global_proof继续最优组合替换平均约束；tree_duality研究全收益图缩点后的净流；counterexample研究异质私有核；安全值聚合仍未闭合。

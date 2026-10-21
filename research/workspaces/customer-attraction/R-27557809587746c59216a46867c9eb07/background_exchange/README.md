@@ -5,6 +5,7 @@
 
 | 文件 | 内容及当前范围 |
 |---|---|
+| outcome_orbit_quotient_review.md | 对credible_search固定输入对称性终局见证商的独立数学审查：阈值系统、同时轨道对齐、稳定子群纤维与非等变选择器；未发现致命异议，不认证实现或搜索。 |
 | penultimate_floor_exchange.md | root-v1：中间倒数第二位的真实保底将旧根系数(m−1)^2改为c_m；给该保底/末位系统的精确整数锐投影与非SPE警告。root已独立重构核心证明未发现致命异议。 |
 | any_player_exchange_v2.md | v2范围：同一c_m适用每个实际玩家，逐一处理固定过去、当前就是倒数第二或末位；给OPT≤(2−1/m)K+c_m(W−K)。待完整独立审查；不闭合half。 |
 | tax_projection_barrier.md、audit_tax_projection_polynomials.py/.json | 六组锐投影对全部m>=3也通过所有末两人保留重叠税行；不定元整数多项式逐系数证明，非有限外推。 |
