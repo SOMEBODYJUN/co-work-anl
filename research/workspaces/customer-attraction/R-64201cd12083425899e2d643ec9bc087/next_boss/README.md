@@ -6,5 +6,6 @@ Q-CAG-HALF 仍 OPEN；本目录记录本轮可复用检查，不作为共享状�
 - `audit_menu_exclusion.py`：不导入发现代码或规范行的独立展开审计；检查系数恒等式及原坏点AE末节点负余项。运行 `python <本目录>/audit_menu_exclusion.py`，只输出JSON。
 - `menu_exclusion_audit.json`：上述实际运行的冻结输出。它支持代数实现和特定松弛点证据；普遍引理由正文逐行证明支持。
 - `review_prefix_absence.md`：主代理对末主题重复的前缀缺席判据、多项式充分条件与渐近阈值的独立代数重构。保留其结构子类范围，不升级一般目标。
+- `partition_attack/optimal_partition_counterexample.md`：14单位客户、二人完整SPE，W8、唯一OPT10，全部去重冻结替换匹配的最小收费9。精确否定存在最优组合/匹配/分派使R≤W的强桥；不否定主猜想、全终局税或真正安全值。
 
 下一步是全型新增约束定价或新的全树支付。受限支撑LP即使小于2，也不是任意客户类型上界。团队其他目录的候选不因本目录的核对自动提升。
