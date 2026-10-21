@@ -27,6 +27,7 @@ def fractional(p,prefix):
     base=bits@np.array(prefix);alpha=bits@p
     cuts=[alpha/(1+base+2*(bits@q)) for q in np.r_[np.eye(6),[np.ones(6)/6]]]
     q0=np.ones(6)/6
+    converged=False
     for it in range(75):
         cutsmat=np.array(cuts)
         res=linprog(np.r_[cover,-1],
@@ -35,10 +36,14 @@ def fractional(p,prefix):
           bounds=[(0,None)]*len(masks)+[(None,None)],method='highs')
         if not res.success:return None
         w=res.x[:-1]; q0,lower=oracle(p,w,bits,base,q0)
-        if res.x[-1]-lower<2e-9:break
+        if res.x[-1]-lower<2e-9:
+            converged=True
+            break
         cuts.append(alpha/(1+base+2*(bits@q0)))
-    return dict(prefix=prefix,gap=float(lower-cover@w),safe_lower=lower,leader=float(cover@w),
-      p=p.tolist(),q=q0.tolist(),weights=[(int(t),float(x))for t,x in zip(masks,w)if x>1e-9],cuts=len(cuts))
+    return dict(prefix=prefix,gap=float(lower-cover@w),oracle_value=lower,leader=float(cover@w),
+      p=p.tolist(),q=q0.tolist(),weights=[(int(t),float(x))for t,x in zip(masks,w)if x>1e-9],
+      cuts=len(cuts),cutting_plane_converged=converged,
+      finite_cut_upper_gap=float(res.x[-1]-cover@w),oracle_cut_gap=float(res.x[-1]-lower))
 
 def main():
     rng=np.random.default_rng(374)
