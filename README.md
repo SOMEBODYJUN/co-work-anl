@@ -36,6 +36,8 @@
 
 统一程序是根目录 [work.py](work.py)，附件单文件也能恢复独立clone。身份自动使用R-UUID并复用本clone绑定；新会话默认customer-attraction，旧存档不会自动改绑。全部研究提交main，公屏、提及、私聊和个人桌面继续使用同一工具。命令见[RUNBOOK](research/customer_attraction/RUNBOOK.md)。
 
+个人区用于持续备份；清洗后的共享资产按数学对象入库。正式入库的同一次提交更新本题数学README及实际受影响的状态与登记；本页只随主目标、最好已知范围或方向变化更新。README由入库者维护，程序检查漏链和漏登记，不自动编写数学结论。位置、命名和职责见[生产规则](research/REPOSITORY_GUIDE.md)。
+
 ## 研究文件地图
 
 | 完整路径 | 内容、作用与读取时机 |

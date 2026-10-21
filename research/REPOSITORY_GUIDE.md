@@ -20,6 +20,22 @@
 
 个人目录每有一段新工作、换路线或中断前及时checkpoint，不以数学入库标准阻止备份；README记录当前问题、材料和下一步。共享资产正式入库时：整理正文及证据 → 明确实际身份/状态/依赖 → 对应核验 → checkpoint普通提交推送。共享目录不按角色分区，保存不自动提升数学状态。只有status=pushed才报告远端保存。
 
+## 文件怎么命名，README谁来更新
+
+个人区内部命名自由，自己的README负责恢复线索。共享文件使用能辨认数学对象与用途的名字，例如`three_player_sharp.md`、`prefix_balance_counterexample.md`；首标题和catalog同时给出中文数学名称、适用范围和读取用途。新文件不用日期、actor、`proof2.md`或`result_final.md`充当名称；已有稳定路径不为美观反复改名。
+
+正式入库的人在同一次提交维护相关入口，清洗者负责检查整合是否到位：
+
+| 变化 | 必须同步的入口 |
+| --- | --- |
+| 个人推导、实验与卡点 | 本人工作区README；不要求改共享地图 |
+| 新增、替换、改名或移走共享正文 | research/current/customer_attraction/README.md中的对应数学资产及用途；同步catalog登记和实际引用 |
+| 新定理、反例、范围改变或未解决义务变化 | 相应精确Claim及状态；本题RESEARCH_STATE/FAILED_ROUTES中实际受影响的摘要 |
+| 一般目标、最好已知范围或主攻方向变化 | 根README/RESEARCH_STATE和本题短入口中实际受影响的结论 |
+| 稿件判断或文章结构变化 | 相应稿件入口；研究状态只记录真实数学变化 |
+
+根README是短总览，本题短入口是读取路线，数学README是逐文件地图，catalog是全仓检索登记；不重复复制整套证明。README不是程序自动撰写的数学结论，更新依赖实际入库者。`check_active_research.py`会拒绝当前正文漏出数学地图及失效链接，`build_catalog.py --check`会拒绝名称用途漏登记；这些检查不能判断摘要是否忠实反映新证明。
+
 ## 大规模并行与隔离
 
 每个独立Work对话使用独立clone、main和稳定R-UUID；subagents由该boss汇总，不接管别人的身份。公屏用于公开研讨，私聊由显式收件人隔离，桌面按save和actor分开。半成形思路可以直接交流，注明身份；公屏不是成果唯一副本。

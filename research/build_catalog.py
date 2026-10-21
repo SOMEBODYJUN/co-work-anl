@@ -194,7 +194,7 @@ def render(data: dict) -> str:
     lines = ["# 研究资产总目录：按数学问题找名字、正文与证据", "",
              "这里登记当前数学稿、问题、审查和已整合的拥塞核验资产。每个名称和用途经过逐文件整理；文件名、提交者代号与目录位置都不代替数学身份。",
              "先从下表选择问题，再进入专题的阅读路线。历史原稿按需从 [历史入口](../history/README.md) 与 [来源对应](source_crosswalk.md) 查询；规范程序和人类讲义从 [全仓资产入口](../ASSETS.md) 进入。", "",
-             "证明、内部审查、外部审查和实现的真实状态分别保存在 [五轴账本](review_status.json)；精确量词在 [命题登记](current/claims.md) 和 [拥塞命题账本](weighted_congestion_frontier/CLAIMS.md)。下表只说明文件角色，不为整份文件授予统一的‘已证明’标签。", "",
+             "证明、内部审查、外部审查和实现的真实状态分别保存在 [五轴账本](review_status.json)；精确量词在 [命题登记](current/claims.md) 和 [拥塞命题账本](weighted_congestion_frontier/CLAIMS.md)。下表只说明文件角色，不为整份文件授予统一的‘已证明’标签。关联命题由所在资产包汇总，不能解释为该文件逐一证明全部所列命题；逐命题依据回到精确账本和正文。", "",
              "| 数学专题 | 首读入口 | 逐文件目录 |", "| --- | --- | --- |"]
     for key, title, entry in TOPICS:
         if any(r["topic"] == key for r in data["entries"]):
