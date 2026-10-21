@@ -37,3 +37,15 @@
 - continuation_search/：任意背景近饱和行与完整策略锥攻击，材料按各文件状态读取。
 - continuation_security/：弱iid参数族及全历史拼接可信性研究；仅数值Poisson极限不能升级成有限反例，真正安全值桥分别保留。
 - continuation_transport/：势格全树运输及十三客户CCE桥反例的独立审查。
+
+## 本轮恢复与实际材料核对
+
+本轮重新从 main 恢复原身份。上文提到的 `continuation_global/`、
+`continuation_saturation/`、`continuation_security/` 在恢复的实际 Git 树中不存在；
+不能仅凭旧摘要把其中候选当作已保存结论。`continuation_cce/` 和
+`continuation_transport/` 确实存在；十三客户 CCE 反例现已进入共享自足正文。
+
+本轮六个研究分支分别写入 `resume_global/`、`resume_security/`、`resume_iid/`、
+`resume_saturation/`、`resume_search/`、`resume_transport/`；内容按各自正文状态读取。
+主代理的 [真实均匀偏离探针](resume_uniform/README.md) 保留一个可复用的完整策略
+接口计算器及有限攻击范围，没有一般证明或目标反例。主目标仍 OPEN。

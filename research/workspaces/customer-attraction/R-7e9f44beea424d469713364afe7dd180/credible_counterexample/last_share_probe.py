@@ -96,11 +96,31 @@ def optimize(cone,action):
        'path':path,'payoffs':payoffs,'welfare':w,'optimum':inst.optimal_welfare(),'objective_action':action,
        'exact_dual_bound':beta if dual_ok else None,'checked_histories':checked.checked_histories,'checked_deviations':checked.checked_deviations}
 
-def seeds(p,m,rng):
+def compiler_seed(p,m,rng):
+    # Arbitrary Boolean potentials compile to signed CAG incidences.  A large
+    # common positive bias only supplies legal, continuation-rich seeds; every
+    # eventual reported point comes from the nonnegative full-strategy cone.
+    table=[rng.randrange(4) if 1<=b.bit_count()<=m else 0 for b in range(1<<p)]
+    c=table[:]
+    for a in range(p):
+        for b in range(1<<p):
+            if b>>a&1:c[b]-=c[b^(1<<a)]
+    z=[0]+[(-1)**(b.bit_count()+1)*b.bit_count()*c[b] for b in range(1,1<<p)]
+    x=z[:]
+    for a in range(p):
+        for b in range(1<<p):
+            if not b>>a&1:x[b]-=x[b|(1<<a)]
+    k=4*sum(abs(v) for v in x[1:])+1
+    return [x[b]+k for b in range(1,1<<p)]
+
+def seeds(p,m,rng,compiler=False):
     # Sharp disjoint family: m-1 customers in A, two in B.
     x=[0]*((1<<p)-1);x[0]=m-1;x[1]=2;yield x
     # Customer incidences with sparse, low integer weights preserve credible ties.
     while True:
+        if compiler:
+            yield compiler_seed(p,m,rng)
+            continue
         x=[0]*((1<<p)-1)
         count=rng.randint(p,4*p)
         for _ in range(count):
@@ -111,9 +131,10 @@ def seeds(p,m,rng):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--players',type=int,default=3);ap.add_argument('--topics',type=int,default=5)
     ap.add_argument('--trials',type=int,default=100);ap.add_argument('--cones',type=int,default=1);ap.add_argument('--seed',type=int,default=71021)
+    ap.add_argument('--compiler-seeds',action='store_true')
     ap.add_argument('--output',type=Path,required=True);args=ap.parse_args()
     rng=random.Random(args.seed);best=bestlast=F(0);records=[];start=time.time();cone_count=0
-    for trial,x in zip(range(args.trials),seeds(args.topics,args.players,rng)):
+    for trial,x in zip(range(args.trials),seeds(args.topics,args.players,rng,args.compiler_seeds)):
         inst=instance_from_clones(args.topics,args.players,x);solver=ExactSPESolver(inst)
         choices=[]
         for q in sorted(solver.outcomes()):

@@ -12,6 +12,7 @@
 | --- | --- |
 | [删除最优覆盖外客户的单调归约障碍](global_proof/deleting_opt_external_customers_obstruction.md) | 两人三主题解析无限族：仅添两个唯一最优覆盖外客户，OPT 不变，最差 SPE 福利下降无界。另有 9q 客户、末位无平局族。否定指定删客户归约，不反驳半覆盖。作者按单位客户独立枚举，Boss 另用规范全集求解器与证书核验 Q=4,5,13,100 及 q=1,2,7。 |
 | [定义级核验代码](global_proof/deletion_obstruction_audit.py)、[实际报告](global_proof/deletion_obstruction_audit.json) | 无求解器依赖，Fraction 展开单位客户，枚举每个末位 selector 与根 maximizer；报告给精确范围和完整离轨表。任意参数证明在正文。 |
+| [末位份额及两倍逐人收益桥反例](credible_counterexample/payoff_cap_failure.json)、[独立审查](independent_mechanism/payoff_cap_independent_review.md) | 三人五主题、23 单位客户，完整 SPE 路径012，收益(5,6,12)，W=OPT=23。故 `2W >= (m+1)u_m` 及 `max u <= 2 min u` 均为假；独立展开单位客户核验全部31历史与124非自偏离，Boss另独验。不是half反例。 |
 
 ## 活跃探索与未闭合义务
 
