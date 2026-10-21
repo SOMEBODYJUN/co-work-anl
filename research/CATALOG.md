@@ -2487,6 +2487,7 @@
 | [零费用的决策器边界输入](<../examples/weighted_congestion/decision_methods/zero_cost.json>) | `examples/weighted_congestion/decision_methods/zero_cost.json` | 检查双零比较、所有状态稳定、零最优成本和无除零证书。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-CALIBRATION-EXISTENCE-SEPARATION-v1`、`WC-EXISTING-CLOCK-FRONT-DECISION-v1`、`WC-EXPLICIT-STABILITY-COST-FRONTIER-v1`，[命题合同（共 7 项）](assets.json) |
 | [加权拥塞成果恢复范围与决策用途](<current/weighted_congestion/decision_methods/source_recovery.md>) | `research/current/weighted_congestion/decision_methods/source_recovery.md` | 恢复本轮可读取的既有证明、英文主稿与来源缺口；接续方法研究前核对地基。 | 来源与恢复指针；不代替缺失证明 |
 | [结构到决策的逐文件来源哈希](<current/weighted_congestion/decision_methods/source_recovery.json>) | `research/current/weighted_congestion/decision_methods/source_recovery.json` | 记录恢复基准提交、原文件hash和缺失历史对象的实际检查范围。 | 来源与恢复指针；不代替缺失证明 |
+| [用户残存的近一主线与正反结构研究概述](<../history/source/notes/weighted_congestion/structural_view_and_positive_results_reference.md>) | `history/source/notes/weighted_congestion/structural_view_and_positive_results_reference.md` | 原字节保存旧工作内容、精确身份、原证明路径和结构主导写作要求；恢复丢失主线时读取，不当作完整证明。 | 来源与恢复指针；不代替缺失证明 |
 
 <a id="positive_kernels"></a>
 
