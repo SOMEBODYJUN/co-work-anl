@@ -2,7 +2,7 @@
 
 No floating-point decision occurs in vertex enumeration. The finite set suffices
 for B(v) when customer multiplicities and v are nonnegative, including v=0.
-Enumeration is exponential; p=5 already examines 170068 row subsets.
+Enumeration is exponential; p=5 examines 171315 row subsets over all support sizes.
 """
 from __future__ import annotations
 from fractions import Fraction as F

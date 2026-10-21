@@ -19,25 +19,10 @@ SRC=ROOT/'research/workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e33
 spec=importlib.util.spec_from_file_location('arr_prior',SRC);prior=importlib.util.module_from_spec(spec);spec.loader.exec_module(prior)
 
 def queries(p):
-    """All vertices of the subset-sum arrangement in [0,1]^p.
-
-    On each cell C(z)-t sum z is linear. Its maximum is at a vertex.
-    Positive support s has s independent active subset sums =1; upper box
-    constraints are singleton subset sums. Enumerate those exactly, with
-    permutation symmetry used solely for generating the query set.
-    """
-    patterns={(F(0),)*p}
-    for s in range(1,p+1):
-        I=np.array([[int(mask>>a&1) for a in range(s)] for mask in range(1,1<<s)])
-        for rows in combinations(range(len(I)),s):
-            A=I[list(rows)]
-            try:flt=np.linalg.solve(A,np.ones(s))
-            except np.linalg.LinAlgError:continue
-            if min(flt)>1e-8 and max(flt)<=1+1e-8:
-                z=tuple(F(float(x)).limit_denominator(100000) for x in flt)
-                if all(sum(F(int(c))*x for c,x in zip(row,z))==1 for row in A):
-                    patterns.add(tuple(sorted(z,reverse=True))+(F(0),)*(p-s))
-    return sorted({z for pat in patterns for z in permutations(pat)}),sorted(patterns)
+    """Use only the exhaustive integer/Fraction subset-arrangement generator."""
+    from fractional_query_vertices import enumerate_vertices
+    vertices,patterns,_=enumerate_vertices(p)
+    return vertices,patterns
 
 def exact_export(cone,r,topic,Z):
     vals=tuple(F(float(x)).limit_denominator(10**7) for x in r)
