@@ -18,3 +18,11 @@
 - background_induction/：自然逐步归纳反例和合法整体候选的差别；credible_search/：完整证人DAG实际限时输出及旧误标证书纠正。
 
 原共享地图尚不提升一般目标状态，正式共享入库/外审与个人备份不同。
+
+## 已正式整理及最终承重缺口
+
+共享规范稿：../../../current/customer_attraction/coverage_moment_geometry.md、collision_free_occupancy_obstruction.md、collision_free_three_halves_family.md。前者的CR-1..5与后两者已登记精确Claim、独审、规范审计和冻结证据。
+
+无拥挤族对任意m≥2有W2m、OPT3m−1，是新的可信全历史构造；不是一般half反例或上界。当前一般证明依然缺真实分支的非负组合；弱逐人floor、真正聚合安全值、背景P+新增覆盖整体式仍OPEN。其自然首步归纳已有23客户v2反例，不能再裸归纳。
+
+其他可复用个人资产：coverage_representation/positive_moment_locality.md（所有真子目录合法不保证全局正矩）；aggregate_security/dr_boundary.md（扩大模型反例及CAG support预算条件）；credible_search/symmetric_root_extension.md（循环对称后缀扩根接口）。它们未作为一般half结果升级。

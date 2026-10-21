@@ -73,6 +73,7 @@ def main():
         result = cone.optimize(J)
         if result['certified']:
             point = old.exact_export(cone,result)
+            point['strategy'] = old.StrategyCertificate(cone.actions,cone.root).to_dict()
     out = {'scope':'count-Markov discovery subclass; complete ordered-history SPE exact verification',
            'universal_claim_proved':False,'source':str(SOURCE.relative_to(ROOT)),
            'source_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
