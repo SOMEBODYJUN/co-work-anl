@@ -8,6 +8,8 @@
 * `verify_integer_quadratic_gluing.py`：独立 Fraction 有限复核器。
 * `integer_quadratic_gluing_audit.json`：实际验证输出。
 
-状态：工作草稿，待独立审核；没有新颖性或外审认证。
+状态：Boolean 行、局部粘合构造及新增的 SPE/稀释段已由本轮
+`new_mechanism/local_gluing_review.md` 独立重构，未发现数学异议。
+没有新颖性或外审认证。
 下一步：研究这些全目录非负行能否与真实分支激励形成一般支付，不能只
 以其在一个固定图上修复某个 LP 点作为一般进展。

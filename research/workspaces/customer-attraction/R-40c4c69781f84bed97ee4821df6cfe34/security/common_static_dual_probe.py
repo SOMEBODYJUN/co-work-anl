@@ -29,9 +29,9 @@ def matrices(n, k, policy):
     return gamma,static,coverage,backgrounds,terminal[()]
 
 
-def run(n,k,policy,out):
-    gamma,static,c,backgrounds,root=matrices(n,k,policy)
-    nr,nt=gamma.shape;nb=len(backgrounds)
+def common_q(gamma,static,c,factor):
+    k=static.shape[0]
+    nr,nt=gamma.shape;nb=static.shape[1]
     # For each query a: c/n-static_a^T Q = gamma^T lambda_a + slack_a.
     blocks=[]
     for a in range(k):
@@ -42,8 +42,15 @@ def run(n,k,policy,out):
             for b in range(k)])
     aeq=bmat(blocks,format='csr')
     aeq=vstack([aeq,csr_matrix(([1.]*nb,(np.zeros(nb,dtype=int),np.arange(nb))),shape=(1,nb+k*nr+k*nt))])
-    beq=np.r_[np.tile(c/n,k),1.]
+    beq=np.r_[np.tile(c/factor,k),1.]
     res=linprog(np.zeros(nb+k*nr+k*nt),A_eq=aeq,b_eq=beq,bounds=(0,None),method='highs')
+    return res,aeq,beq
+
+
+def run(n,k,policy,out):
+    gamma,static,c,backgrounds,root=matrices(n,k,policy)
+    nr,nt=gamma.shape;nb=len(backgrounds)
+    res,aeq,beq=common_q(gamma,static,c,n)
     report={'scope':'floating diagnostic only; fixed full-history strategy cone; common Q is stronger than security bridge',
             'n':n,'k':k,'root':root,'histories':sum(k**d for d in range(n)),
             'gamma_rows':nr,'types':nt,'status':res.message,'success':res.success}
