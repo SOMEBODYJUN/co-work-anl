@@ -1,6 +1,6 @@
 # 加权拥塞结构用于决策：成稿、方法与复现
 
-**定位更正：本包是基于 main 现有资产重建的决策方法专题，尚未恢复旧工作记载的近一主结果与统一结构论文。** [逐项差距与恢复目标](previous_structure_scope_comparison.md)依据用户补充参考明确范围。
+**定位：本包是基于 main 现有资产重建的决策方法专题。** [上一轮范围对照](previous_structure_scope_comparison.md)保留原交付缺口；随后新增的[自足结构重建](../structural_reconstruction/README.md)另含近次数主结果、类型森林、稳定集合及权深度桥，按自己的证明和审查登记。
 
 本成果包把既有局部势、共同尺度和修复结构用于原游戏的稳定决策与成本优化。专题正文见[决策方法成稿](structure_to_decision.md)，再按当前任务进入详细证明或可运行工具。已有全状态线性下界和英文主论文独立保留，见[来源恢复](source_recovery.md)。
 

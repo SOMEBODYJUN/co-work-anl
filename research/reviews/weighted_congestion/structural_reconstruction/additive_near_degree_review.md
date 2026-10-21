@@ -118,3 +118,61 @@ backward 是重类相位减一处 forward 边的反向。归零该前驱相位�
 运行 `python tests/audits/weighted_congestion/structural_reconstruction/near_degree_audit.py` 得 PASS：重/轻端点 332 项、return 225 项、twist 560 项、时钟 2040 项、舍入 245 项，共 3402 个 Fraction/整数精确案例。没有新增重复测试。它们检查转录及实现方向；一般前沿、一般非前沿和统一无限尾部的证明是前述逐指标推导与解析不等式。
 
 **非阻断性文档小项及已做修正。** 数学审查结束后，将正文原先不存在的“companion audit.py”改为实际 `near_degree_audit.py` 和冻结输出链接，并将顶部状态改为有链接的已完成内部独立攻击；上表最终 source hash 绑定该修订后版本。初读正文 hash 为 `833773293b3171bbb050a7f28ae1dbdad96bfc0194e02b0b456df81b3df0cf8d`，本轮没有改变其承重数学。该 audit 的 docstring 仍指称旧 `proof.md`，不影响运行或上述数学判断；本轮没有改动冻结 audit 代码或证据字节。
+
+## 8. 固定 n 原定理的阈值及固定 c 推论
+
+为精确界定同一个全状态接口的另一个已审范围，本轮也独立核验了参数族所给 `d_0(n)=max{2^20,(600n)^2}` 对 (A) 的充分性，而不是只接受其阈值声明。
+
+固定整数 n≥2。若 d≥d_0(n)，则 d≥8n、d≥512n²。d≥4 时 `(d−1)(d−2)≥d²/4`，因而
+
+\[
+T\ge {d\choose3}(8n)^{-3}
+\ge\frac{d^3}{12288n^3}\ge16nd.
+\]
+
+最后一步只需 `d²≥196608n⁴`，由 d≥512n² 保证。对 d≥2^20，`log d≤d^(1/4)`：在起点 `log d=20log2<20<32=d^(1/4)`，其差的导数在 d≥256 上非负。再由 `sqrt d≥600n`，
+
+\[
+200n(\log d)^2\le200n\sqrt d\le d/3<d\log(3/2).
+\]
+
+所以全部 (A) 成立，前面独立重建的合法实现、所有前沿、所有非前沿及实际同次证明原封适用。给任意固定 c∈(0,1)，先取整数 `n>1/(1−c)`，则 α=(1−1/n)d>cd；若将 `cd`-PNE 限于标准 α≥1 定义，只须再令 d≥ceil(1/c)。全部目标新成本非负，所以严格 α 改善蕴含严格 cd 改善。
+
+据此，`WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1` 的完整固定 c 量词及给定粗阈值均属于本轮已做的内部独立数学核验，不必为未核验的阈值片段保留 pending。这里不把固定 c 的结论反过来用作可变 n 尾部证明。
+
+## 9. 冻结连续论文的近次数应用与附录审查
+
+**冻结稿。** `research/current/weighted_congestion/structural_reconstruction/structural_methods_article.tex`，SHA-256：
+
+`ecb6f33ed1ee394b9e6b12694ea342e81a4840786f155e645a0e641dee22155c`。
+
+本节在收到作者冻结消息并亲自核对该 hash 后完成。实际读取范围为模型、主文的近次数定理与 universal-threshold/固定 c 高度桥接、附录 `app:construction` 全部，以及其所调用的主文锚定门/同次预算的实际证明。这里检验从已核正文压缩为连续论文后是否遗失承重前提；不是只核对定理文字。没有编辑冻结 `.tex` 或原已审正文。
+
+**结论。** 在这个实际范围内未发现致命数学异议或压缩导致的证明缺口。下表列明已核验的承重对应；范围不包括外部文献结论的独立重证或其新颖性归属。
+
+| 论文标签/部分 | 实际核验与原正文对应 |
+| --- | --- |
+| `thm:near`、`eq:nearlower` | 保留每个整数 d≥2^20、有限有理数据、正纯 d 次 monomial、每人两个非空不交策略及 ∀s∃真实单人偏离；没有弱化为一个改善环或某子序列 |
+| `thm:uniformfamily`、`eq:uniformconditions` | 完整保留 (A) 三项实际条件，以及 n≥2、d≥16；未导入旧固定 n 起点来处理可变 n |
+| `eq:appfirstparams` 至 `eq:appreturn` | 参数与已审正文一致；将 W 改记 W_0、二进制对数改记 ell 是消歧，未改变数值或费用 |
+| `lem:appestimates` | (B)—(I) 的右和误差、S/R≤b、J/H>K/8、incoming 余量、g 上界、return 增益和 gK<N 均有完整推导；没有把固定 n 极限代替统一界 |
+| `app:resources`、`eq:appincidence` | 全部真实 pair 用户、全局位置 xor、两侧共同延迟、权重及两个动作的资源集合均明确；相邻窗口 K<N、return 窗口 N 均合法 |
+| `lem:appendpoints`、`eq:applight` | 重端点的两段 h(r)、反向必须读取 r+1、轻端点当前 K−k 与新侧 k+1（包括自身）均保留，并解释绕末端窗口；两端面积上界仍是 A_aX |
+| `app:frontcoverage` | 共同扭转平移从资源置换证明，未同时归零不同相位；根和中间失配出口的全部其他测试成本均扣除 |
+| `eq:appshortdifferences` 至 `eq:appfinalfrontmargin` | 累计短差 t≤gK<N 和 parity、return 的 σ_0/其余 σ_j、偶数 forward/奇数 backward 的 r+1 缺陷数均完整；所得正余量 η覆盖全部前沿向量 |
+| `app:samedegree`、`eq:appbasecap` | B_* 对任意基体状态而非仅前沿成立；邻接、return 贡献以及 B_*/η 的系数 64n 均正确 |
+| `eq:appclocks`、`eq:apprepairtarget` | 使用主文已经合法实现的完整锚定门，以 D=d 实施；两类状态的直接余量估计再次列出，保留当前最早异位单人翻转与自身真实新费用 |
+| `eq:appGamma`、`eq:appGammalog` | N²、R^(2g)、振幅和余量的全部泄漏因子进入 Γ_*；195+5 到 200 的 log 预算与 (A) 的严格号正确 |
+| `app:tail` | 幂右侧 ceil 跳跃、d=2^20、n 向上舍入、端点指数下界及修复 log 条件均逐式保留，因子 α≥目标的最后转换方向正确 |
+| `cor:fixedn` | d_0(n) 对 (A) 的二项式端点和平方根预算与本审查 §8 完全一致；明确 gates 不添玩家及权类 |
+
+两个容易在压缩时漏掉的细节已另外检查：
+
+1. 附录用安全预算 `eq:safebudget` 时需要 η≤B_*。该条件直接由 η=θH/4、θ≤1/16、0<H<T 和 B_*≥T 得到，且附录在非前沿余量最后一步明确使用 B_*≥η；不存在另取更高门次数的自由参数。
+2. `eq:appGammalog` 后文字写 `log(256n)+5log d≤8log d`。这是合法的合并：`2log d+log(g+1)≤5log d`，并且 `256n≤32d≤d³` 由 n≤d/8、d≥16 得到。所以压缩后的常数说明没有丢一个 log n 因子。
+
+主文固定 c 高度桥接也已独立检查。对固定 c 先固定 n>1/(1−c)，由 `cor:fixedn` 得所有充分大 d 的合法无 cd-PNE 游戏，g+1≤13n log d+1；两动作不交非空，故全部这些玩家都可动。R>1 给恰 g+1 个不同权值。同一列具体玩家 `P_(0,0),…,P_(g,0)` 在每个相邻真实 pair 上具有潜在共占，因此玩家高度下界确为 g+1，而不只是聚合类型图的路径；不同权层数同时给上界，时钟等权且不添玩家。结合主文高度势的必要下界，固定 c 的两个最小量为 Θ_c(log d)。这个推论没有把可变近一 n(d) 的 g 错写成统一 O(log d)。
+
+最后，主文定义 universal threshold 为所有游戏存在因子的 infimum。一个没有目标因子 PNE 的合法游戏排除所有更小因子，因此下界写 `目标≤a_*(d)` 正确；不必声称 infimum 被某个有限游戏取到。再结合明确引用的外部 d 上界才有 squeeze 极限 a_*(d)/d→1。本节核验该推论的逻辑和本文负向输入，未把对外部上界的引用写成已由本审查重证。
+
+冻结论文在本负向/固定 c 集成范围内可以据此标记为完成内部独立数学核验。若后续修改 `.tex`，本 hash 只约束此冻结版本；无数学变化的排版/文字 delta 可另记，承重变化须重新逐项核验。

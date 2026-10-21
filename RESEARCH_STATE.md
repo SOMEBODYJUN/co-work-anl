@@ -23,7 +23,7 @@ Boss直接带团队攻一般命题。清洗者处理数学检查、自足改写�
 | 模型 | 状态与接续入口 |
 | --- | --- |
 | 一般不相关机 | UM-TARGET-v1及一般反面均OPEN；[旧题地图](research/current/unrelated_machines/README.md)保留条件结果和方法障碍，暂停默认主攻 |
-| 加权拥塞 | 线性全状态下界及Theta(d)推论已有内部完整稿；精确常数、优先权与外审独立开放，见[旧题地图](research/current/weighted_congestion/README.md) |
+| 加权拥塞 | 用户指定的[结构论文专题](research/current/weighted_congestion/structural_reconstruction/README.md)连接端点—面积、共同尺度、深度、稳定核与近次数全状态应用；各自量词及审查等级见专题账本，有限次数精确门槛与外审仍独立开放 |
 | 两阶段设施 | 双设施黄金比、实例复杂度、多设施因子二存在等分别保存；一般高效构造与最佳常数仍有缺口，见[设施入口](research/current/README.md) |
 | 正占用核 | 表示、交互秩与闭包工具；一般均衡桥未给出，见[专题](research/current/positive_kernels/README.md) |
 
@@ -35,7 +35,7 @@ Boss直接带团队攻一般命题。清洗者处理数学检查、自足改写�
 
 用户指定的加权拥塞应用方法专题已形成[专题成稿与复现包](research/current/weighted_congestion/decision_methods/README.md)。当前改进是共同尺度证书、原游戏有条件压缩及稳定成本选择；一般位多项式搜索与真实业务效果仍分别需要新证据。其他研究主目标与原有定理范围不变。
 
-用户补充参考后，已明确[旧结构主线仍缺失的内容](research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)。上轮未按完整旧证明复原，新方法专题不代表旧工作已恢复；当前拥塞接续应优先补齐原主结果和结构论文。
+旧[恢复范围对照](research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)记录了此前方法专题不覆盖原结构主线的事实。后续已从实际模型自足重建结构证明，当前拥塞接续是完成[结构工具、正向选择与近次数应用的连续论文](research/current/weighted_congestion/structural_reconstruction/README.md)，而不是以历史概述代替证明；现行实际覆盖与未决义务以该专题为准。
 
 更小独立静态桥见证：[八客户四主题计数SPE](research/current/customer_attraction/eight_customer_cce_welfare_gap.md)福利6，最低静态CCE福利恰544/87；它不改变原十三客户版本身份，不否定真正聚合安全值。
 

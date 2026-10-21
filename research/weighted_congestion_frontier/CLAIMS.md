@@ -1203,3 +1203,123 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - **Counterevidence / Objections：** 明确实例反例，不是全类无均衡或一般搜索困难性。 固定背景社会包络风险已经恢复常数并重证；没有记录中仍成立的阻断异议。
 - **Status：** complete stated-scope proof; independent internal reconstruction; finite exact audits; unrefereed
 - **Related Files：** research/current/weighted_congestion/decision_methods/calibration.md；tests/audits/weighted_congestion/decision_methods/calibration_audit.py；tests/audits/weighted_congestion/decision_methods/independent_attack_check.py；evidence/runs/weighted_congestion/decision_methods/calibration_audit.json；evidence/runs/weighted_congestion/decision_methods/independent_attack.json；research/reviews/weighted_congestion/decision_methods_review.md
+
+## 结构重建的精确身份（2026-10-21）
+
+以下身份均有当前自足证明及真实独立内部审查；各记录固定实际读取版本和覆盖。旧d/10身份与冻结证据保持原范围，不把历史概述或审查意见当作证明前提。
+
+### WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1 — 端点面积误差与同权窗口的有限收缩证书
+
+- Objects / Domain / Quantifiers / Assumptions：整数d≥1、任意有限正网格和非负背景；同权短窗参数q>0、α≥1，成本包含自身负载。
+- Exact Statement：右端和误差介于0与h(T^d−b^d)；同权窗口满足D=P+B_d(q)−α[1+A_d(q)]>0及R>α(P−1)/D、qR为整数时，H,L>0且Γ<1，附显式正余量。d>1时α<d^((d−1)/(d+1))可取得有限有理局部收缩参数。
+- Dependencies：WC-MODEL, WC-STRUCTURAL-RECONSTRUCTION-DEFINITIONS。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/endpoint_integration_review.md)。外审与新颖性未认证。
+- Limits：局部收缩不等于改善环或全状态非存在；非均匀最优采样只压缩数值求和，未实现相同玩家关联。
+
+### WC-ACTUAL-SMALL-SHARE-INTEGRAL-POTENTIAL-v1 — 真实小原子份额的积分势存在保证
+
+- Objects / Domain / Quantifiers / Assumptions：每个有限MODEL游戏，非负系数degree≤d；所有有关可动玩家的每个可行占用状态都有w_i/L_e(s)≤η≤1，L含固定背景及自身。
+- Exact Statement：存在ρ_d(η)-PNE且全部严格该倍率改善有限终止，ρ_d(η)=(d+1)η/[1−(1−η)^(d+1)]；dη→0时保证趋1。
+- Dependencies：WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1, WC-MODEL。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/endpoint_integration_review.md)。外审与新颖性未认证。
+- Limits：要求所有相关真实删除边的小份额，潜在可选用户填充或单一状态的小份额不足；不宣称一般最优存在界。
+
+### WC-TYPE-SCALE-COMPATIBLE-POTENTIAL-v1 — 两类型资源的共同尺度拼接与森林平方根保证
+
+- Objects / Domain / Quantifiers / Assumptions：每整数d≥2的有限MODEL游戏；吸收固定玩家背景后每资源至多两种可动权值；共同正类型尺度。
+- Exact Statement：固定局部尺度可由资源正倍数拼接当且仅当沿每个闭游走的类型比例乘积为1。非负双排序统一包络下，边a>b若(d−1)/(β−1)≤t_b/t_a≤β，即给β-PNE和全部严格β改善终止；类型森林可取A_d=(1+√(4d−3))/2。
+- Dependencies：WC-TWO-WEIGHT-ORDER-BLEND-v1, WC-STRUCTURAL-RECONSTRUCTION-DEFINITIONS。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/shared_scale_gluing.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/scale_depth_integration_review.md)。外审与新颖性未认证。
+- Limits：优化的是明示局部势/共同尺度合同；类型森林区别于玩家资源二部关联森林；森林充分而非必要，图有环不等于无均衡。
+
+### WC-TYPE-CYCLE-IMBALANCE-CONTRACT-v1 — 类型环失配谱的精确统一包络门槛
+
+- Objects / Domain / Quantifiers / Assumptions：每整数d≥2、严格权值定向的有限有边类型图；只优化明示统一包络合同(8)。
+- Exact Statement：ρ_G为简单环两向步数比的最大值且至少1；合同可行当且仅当β≥β_G，β_G(β_G−1)^ρ_G=(d−1)^ρ_G，端点取得。有限差分约束给尺度或冲突圈，ρ_G可经有理候选及最短路精确求得；长降链加返回边的固定g阈值∼d^(g/(g+1))，g/log d→a时β_G/d→exp(−1/a)。
+- Dependencies：WC-TYPE-SCALE-COMPATIBLE-POTENTIAL-v1, WC-STRUCTURAL-RECONSTRUCTION-DEFINITIONS。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/shared_scale_gluing.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/scale_depth_integration_review.md)。外审与新颖性未认证。
+- Limits：这是统一边际包络的准确门槛，不是给定实例双排序字典最优值，也不是真实均衡阈值；合同NO可与exactPNE并存。
+
+### WC-FINITE-INSTANCE-INTERVAL-CALIBRATION-v1 — 真实有限边际的双排序区间与森林合同最优值
+
+- Objects / Domain / Quantifiers / Assumptions：有理有限显式MODEL游戏、目标有理β≥1；逐资源吸收必用负载后每资源至多两种可选权重；非负D/U双排序字典及类型共同尺度。
+- Exact Statement：实际人数插入极值A∈(0,1]、B∈[1,d]使局部可行性恰为Ax+y≥1、x+y≤β、r≤x+y、x+By≤βr的非负系统；非空投影为取得端点的有理闭区间[l_e,β]。乘积差分约束给精确尺度或冲突圈；森林字典合同最小倍率为max q_e，局部q_e由(1−A)q²+(AB−1)q−(B−1)=0决定，A=1或B=1时为1。
+- Dependencies：WC-TWO-WEIGHT-ORDER-BLEND-v1, WC-FINITE-COMMON-SCALE-CALIBRATION-v1, WC-STRUCTURAL-RECONSTRUCTION-DEFINITIONS。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/instance_interval_calibration.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/scale_depth_integration_review.md)、[实际审查](../reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md)。外审与新颖性未认证。
+- Limits：NO仅否定所选非负双排序/共同类型尺度/全部局部插入合同。局部校准的精确位复杂度不等于紧凑输入均衡搜索或改善路径的多项式界。
+
+### WC-FRONT-CORE-STABLE-SET-TRANSFER-v1 — 锚定门的完整近似稳定集合与核心转移
+
+- Objects / Domain / Quantifiers / Assumptions：有限二动作MODEL基体；玩家分有序同权类，完整首位锚定010/101同费非减三元门；α≥1、B_a为全状态个体成本上界，v_a>α(B_a+L_au_a)。
+- Exact Statement：扩充游戏的全部α-PNE恰为前沿显式容差集T_α：每条保前沿翻位的基体α-margin≤(α−1)r_i u_a；非法态有指定严格改善，离前沿偏离不能改善。α=1与受限核心精确稳定集相等，α>1可新增近似稳定点。
+- Dependencies：WC-MODEL, WC-STRUCTURAL-RECONSTRUCTION-DEFINITIONS。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/repair_and_core_transfer.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md)。外审与新颖性未认证。
+- Limits：扩充游戏区别于原基体；不保证核心稳定点存在、一般修复动态收敛或前沿无环。无均衡编译须另有全部前沿超过容差的真实出口。
+
+### WC-FRONT-SOCIAL-COST-SHIFT-v1 — 前沿社会成本恒移与稳定集合内精确选择
+
+- Objects / Domain / Quantifiers / Assumptions：同一完整锚定门；社会目标J_γ=Σ_aγ_aΣ_{i∈A_a}C_i，γ_a>0在每同权类内一致。
+- Exact Statement：每个前沿状态满足J_γ^+=J_γ^B+K_γ，K_γ=Σ_aγ_a L_a(2u_a+z_a)。满足强支配且稳定集非空时，全部α-PNE中的最优成本恰为K_γ+min_{T_α}J_γ^B。
+- Dependencies：WC-FRONT-CORE-STABLE-SET-TRANSFER-v1, WC-STRUCTURAL-RECONSTRUCTION-DEFINITIONS。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/repair_and_core_transfer.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md)。外审与新颖性未认证。
+- Limits：恒移只在前沿，不把前沿OPT当完整社会OPT；任意逐玩家公平权重和最大个体成本未获此恒移。
+
+### WC-SOCIALLY-DESCENDING-REPAIR-v1 — 支付社会外部性后的修复下降与完整最优压缩
+
+- Objects / Domain / Quantifiers / Assumptions：同一完整门、基体degree≤p，W=Σ_iw_iC_i；每非法类d_a=3v_a−2u_a−z_a>(p+1)B_a。稳定性转移另需强支配RD。
+- Exact Statement：指定修复不新增触发并严格降低完整W，至多Σ_a max(n_a−2,0)步进入前沿；每个完整社会最优点在前沿，OPT_+=K+min_F W_B。RD与3α≥p+1蕴含此社会预算。若另有s∈T_α及W_B(s)≤λ min_F W_B，则其为完整α-PNE且W_+(s)≤λOPT_+。
+- Dependencies：WC-FRONT-CORE-STABLE-SET-TRANSFER-v1, WC-FRONT-SOCIAL-COST-SHIFT-v1, WC-STRUCTURAL-RECONSTRUCTION-DEFINITIONS。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/socially_descending_repair.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md)。外审与新颖性未认证。
+- Limits：单靠RD不保证高次基体社会下降；正文六玩家有理反边界保留。稳定点存在和λ质量证据是独立输入，不保证稳定最优交集非空。
+
+### WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1 — 每固定近一次数倍率的同次全状态反例
+
+- Objects / Domain / Quantifiers / Assumptions：每固定实c∈(0,1)，先选整数n>1/(1−c)；每整数d≥max{2^20,(600n)^2}。
+- Exact Statement：有有限MODEL游戏，正有理权、正有理系数纯d次费用、每人恰两非空不交动作，每个纯状态有真实严格(1−1/n)d改善，故无cd-PNE。最终权类数与潜在降权玩家高度均恰为g+1≤13n log d+1。
+- Dependencies：WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1, WC-FRONT-CORE-STABLE-SET-TRANSFER-v1, WC-DECOUPLED-WINDOW-ALLSTATE-CONSTRUCTION。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/parameterized_allstate_family.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/additive_near_degree_review.md)。外审与新颖性未认证。
+- Limits：允许巨大规模/权比/系数；不声称c=1、有限d最优常数或位多项式构造。固定n阈值不能直接用于n(d)。
+
+### WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1 — 接近次数的全状态下界与显式平方对数余量
+
+- Objects / Domain / Quantifiers / Assumptions：每整数d≥2^20，L=ceil(log_2d)，n=ceil(d/(1200L²))；重新统一证明n≥2、d≥8n、T≥16nd及d log(3/2)>200n(log d)^2。
+- Exact Statement：有有限MODEL游戏，正有理权、正有理系数纯d次费用、每人恰两非空不交动作，每个纯状态都有真实偏离C_i(s)>(d−1200L²)C_i(t_i,s_−i)。这是新的加强身份，未改写旧d/10 Claim。
+- Dependencies：WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1, WC-FRONT-CORE-STABLE-SET-TRANSFER-v1, WC-DECOUPLED-WINDOW-ALLSTATE-CONSTRUCTION。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/additive_near_degree_lower_bound.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/additive_near_degree_review.md)。外审与新颖性未认证。
+- Limits：证明通过统一条件重建全部前沿和同次修复，不把固定c定理非法代入c(d)；不宣称有限d最佳常数、外审、新颖性或规模效率。
+
+### WC-WEIGHT-HEIGHT-EXACT-INVERSION-v1 — 高度势的精确反演与实际改善闭词长链
+
+- Objects / Domain / Quantifiers / Assumptions：每degree≤d、d≥2有限MODEL游戏；h是潜在可动玩家严格降权共占图最长路径顶点数，k是可动权值数。
+- Exact Statement：无α-PNE、1≤α<d时h,k>H_d(α)，H_d(α)=log(d−α)/log((d−1)/α)，α=d−1时连续值为d−1；固定c<1给Ω_c(log d)。高度势根A=Σ_{j<h}((d−1)/A)^j在h/log d→a时A/d→exp(−1/a)；严格α改善闭词的移动者端点实际图也有超过H_d(α)顶点的降权路径。
+- Dependencies：WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1, WC-STRUCTURAL-RECONSTRUCTION-DEFINITIONS。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/weight_depth_threshold.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/scale_depth_integration_review.md)。外审与新颖性未认证。
+- Limits：必要深度不是失稳充分条件；玩家图高度不可换聚合类型图或单资源类别数，动态重排高度不能望远镜；c趋1时常数不一致。
+
+### WC-LINEAR-INSTABILITY-CRITICAL-WEIGHT-DEPTH-v1 — 固定线性失稳的最少权类和潜在高度均为对数阶
+
+- Objects / Domain / Quantifiers / Assumptions：每固定实c∈(0,1)，最小值在全部无cd-PNE、degree≤d有限MODEL游戏上取；d为充分大整数。
+- Exact Statement：采用参数化全状态族，最少可动权类K_c(d)与最少潜在玩家降权高度H_c(d)均为Θ_c(log d)；同一构造恰h=k=g+1≤13n log d+1，必要下界为floor(H_d(cd))+1。
+- Dependencies：WC-WEIGHT-HEIGHT-EXACT-INVERSION-v1, WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/weight_depth_threshold.md)。
+- Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/scale_depth_integration_review.md)、[实际审查](../reviews/weighted_congestion/structural_reconstruction/additive_near_degree_review.md)。固定c充分方向联合依赖另审全状态族，不由尺度审查单独再认证。外审与新颖性未认证。
+- Limits：依赖完整近一族的全部状态/同次数证明；两个最小值不必由同一游戏取得；不对任意c_d→1统一O(log d)。
+
+### WC-REGULARIZED-CORE-REPAIR-QUALITY-v1 — 正则化核心与社会下降修复的联合稳定质量保证
+
+- Objects / Domain / Quantifiers / Assumptions：有限二动作基体degree≤p；资源插入边际满足共同玩家h_i>0的[1,α₀]夹逼，前沿上0<m≤M的完整基体加权社会成本包络；η≥0有限。
+- Exact Statement：令β_η=max_i(α₀h_i+η(p+1)w_i)/(h_i+ηw_i)、λ_η=(M+η)/(m+η)，取前沿上Φ_B+ηW_B的全局最小点。若门同时满足倍率β_η的强支配RD及社会预算SD，则该点是完整β_η-PNE，且完整W≤λ_ηOPT。
+- Dependencies：WC-STRUCTURE-WELFARE-REGULARIZATION-v1（含背景基线）、WC-FRONT-CORE-STABLE-SET-TRANSFER-v1、WC-SOCIALLY-DESCENDING-REPAIR-v1联合成立；[完整正文S7](../current/weighted_congestion/structural_reconstruction/socially_descending_repair.md#51-正则化核心的稳定性与社会质量联合保证)。
+- Evidence / Status：完整一般证明，S7作者与该审查者相同；实际记录披露另有root独立检查，详见[真实审查记录](../reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md)及有限第二实现审计；外审与新颖性未认证。
+- Limits：全局核心最小化、共同尺度、背景基线包络、RD及SD为联合前提；SD单独不证明稳定或质量。不承诺有效全局求解或多项式时间。
