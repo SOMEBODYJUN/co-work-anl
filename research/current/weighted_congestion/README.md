@@ -6,7 +6,9 @@
 
 采用[MODEL](../../weighted_congestion_frontier/MODEL.md)：有限正权玩家、有限资源子集策略、非负系数次数至多d的费用；玩家成本为资源费用之和，偏离后按真实负载计费。允许空策略和零费用不妨碍反例位于正费用两动作子类。
 
-## 第一次接手：按这个顺序读
+## 本轮接续：先读结构主稿
+
+先读[25页结构论文](structural_reconstruction/structural_methods_article.pdf)及[逐文件数学地图](structural_reconstruction/README.md)：正文从一般机制进入正向方法，附录完成近次数全状态应用。审查对应[最终全文记录](../../reviews/weighted_congestion/structural_reconstruction/structural_methods_article_review.md)，精确身份与真实依赖查本题账本。只有需要核对原d/10构造及其历史证据时，再按下列顺序读取。
 
 1. [MODEL](../../weighted_congestion_frontier/MODEL.md)和[唯一验收标准](../../weighted_congestion_frontier/ACCEPTANCE.md)，明确全状态与全部量词。
 2. [线性次数的全状态无均衡族与匹配对数上界的严格否定](linear_degree_allstate_lower_bound.md)：第2—3节完整基体/健康预算，第4—5节全部错位前沿，第6节非法状态修复，第7节同次数，第8节否定量词。
@@ -14,7 +16,7 @@
 4. 正文第10节给原有精确审计；[独立审查补节](../../reviews/weighted_congestion/ordinal_potentials/linear_degree_allstate_review.md#补充复核整数次数预算与完整多类拼装)另给免对数的整数预算证明、[完整多类拼装审计](../../../tests/audits/weighted_congestion/cyclic_clone/independent_multiclass_assembly.py)与[冻结结果](../../../evidence/runs/weighted_congestion/cyclic_clone/linear_degree_multiclass_assembly.json)。有限计算不是一般证明。
 5. [精确Claim](../../weighted_congestion_frontier/CLAIMS.md)、[五轴状态](../../review_status.json)、[当前义务](../../weighted_congestion_frontier/RESEARCH_STATE.md)与[目录](../../weighted_congestion_frontier/FILES.md)，再按下表选择结构工具。
 
-## 面向评审读者的连续主稿
+## 保留的原线性下界连续稿
 
 [完整英文PDF](linear_threshold_article.pdf)与[LaTeX源稿](linear_threshold_article.tex)将已审线性下界重构为自足文章：主定理及模型 → 同权类前沿编译 → 完整循环窗口与预算 → 全部错位前沿 → 同次数拼装 → 对数保证否定及Theta(d)推论。没有把旧方法障碍或小反例并入主线凑篇幅。稿件[审读与产物核查](../../reviews/weighted_congestion/linear_threshold_article_review.md)绑定源/PDF hash，说明已处理问题、引用边界及实际十页视觉检查；[BibTeX](linear_threshold_references.bib)与源稿同目录。原规范数学正文和Claim身份不变，成稿不等于外审、优先权或录用认证。
 
@@ -22,7 +24,7 @@
 
 健康邻接反向短窗口与正向全返回给α=p/10双扫环、B*/η=exp(O(log²p))；单个环不是非存在。任意类前沿相位差若离两个短区间，heavy端点给出口；否则短差累计，末类返回端点按parity选择方向，有限缺陷低于余量，从而全部product-front有统一η0=H/4出口。同类010/101锚定时钟再以最早异位单人修复覆盖其余状态；p≥2^20时实际新增degree直接取p，得到全状态无(p/10)-PNE。完整正文从资源定义重建每一环节，不导入外部存在定理。
 
-WC-TARGET v1的原长期身份保留。新下界a_*(d)≥d/10与[单列Paper Fact一般上界d](../../weighted_congestion_frontier/CLAIMS.md#wc-lit-upper-d-v1--paper-fact)合用确定增长阶Θ(d)；精确常数与有限d最优阈值仍未知。已核文献d-PNE证明未在本包重新认证，且不是否定证明前提。
+WC-TARGET v1的原长期身份保留。[新加性近次数下界](structural_reconstruction/additive_near_degree_lower_bound.md)给a_*(d)≥d−1200⌈log₂d⌉²；联合[单列Paper Fact一般上界d](../../weighted_congestion_frontier/CLAIMS.md#wc-lit-upper-d-v1--paper-fact)可得a_*(d)/d→1。有限d的精确阈值与最佳加性缺口仍未知。文献d-PNE是此双边渐近比较的独立上界前提，不是新反例非存在证明的前提。
 
 旧[奇环同次数总证明](odd_ring/cohort_lower_bound_and_envelope.md)仍给每α<T_d的有理反例，T_d∼d/ln d；[线性重置实现](odd_ring_linear.md)属于同一奇环机制。其第10节另以稳定区间/双取向证明一般同权cohort、同费副本奇环的实际阈值恰T_d，无UF假设。这是准确的子类阈值，无法排除新循环窗口结构。
 
@@ -83,7 +85,7 @@ WC-TARGET v1的原长期身份保留。新下界a_*(d)≥d/10与[单列Paper Fac
 ## 后续可独立接续的义务
 
 - 核查/简化近次数下界和结构接口的一般证明，改进显式加性余量、次数起点及表示规模；任何成立的fatal objection仍须立即登记并阻止相关Claim升级。
-- 刻画a_*(d)的精确首项常数与有限d值；增长阶Θ(d)不等于最优常数或某有限游戏达到sup。
+- 刻画a_*(d)的有限d精确值与最佳加性缺口；首项比值趋1不等于阈值恰d，也不保证某有限游戏取得全类sup。
 - 文献优先权、外部同行评审及发表另行进行；不把内部审查当外部认证。
 - 结构子类存在界、反例规范形和表示接口继续各按原范围复用；全类o(d)存在命题已被线性全状态族否定，不能继续当未解目标。
 
@@ -105,4 +107,4 @@ WC-TARGET v1的原长期身份保留。新下界a_*(d)≥d/10与[单列Paper Fac
 
 ## 用户指定的结构主导论文
 
-[端点、共同尺度与稳定核实现](structural_reconstruction/README.md)按数学对象组织八份完整作者正文，连接局部端点、类型尺度/环谱、实际字典校准、稳定集合及社会成本转移，再实例化近次数坏族和固定c的最少对数深度。实际最终审查及连续主文由专题入口读取；精确账本区分作者证明、真实内审和外审。原决策方法专题保留独立用途。
+[端点、共同尺度与稳定核实现](structural_reconstruction/README.md)按数学对象组织八份完整作者正文，连接局部端点、类型尺度/环谱、实际字典校准、稳定集合及社会成本转移，再实例化近次数坏族和固定c的最少对数深度。[完整结构论文PDF](structural_reconstruction/structural_methods_article.pdf)与[全文产物核查](../../reviews/weighted_congestion/structural_reconstruction/structural_methods_article_review.md)已交付，实际独立审查由专题入口读取；精确账本区分作者证明、真实内审和外审。原决策方法专题保留独立用途。

@@ -1250,7 +1250,7 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Exact Statement：实际人数插入极值A∈(0,1]、B∈[1,d]使局部可行性恰为Ax+y≥1、x+y≤β、r≤x+y、x+By≤βr的非负系统；非空投影为取得端点的有理闭区间[l_e,β]。乘积差分约束给精确尺度或冲突圈；森林字典合同最小倍率为max q_e，局部q_e由(1−A)q²+(AB−1)q−(B−1)=0决定，A=1或B=1时为1。
 - Dependencies：WC-TWO-WEIGHT-ORDER-BLEND-v1, WC-FINITE-COMMON-SCALE-CALIBRATION-v1, WC-STRUCTURAL-RECONSTRUCTION-DEFINITIONS。具体对象与全部推导见[当前正文](../current/weighted_congestion/structural_reconstruction/instance_interval_calibration.md)。
 - Evidence：自足一般作者证明；有限运行只检查所列有限输入、公式和资源关联，不证明全部量词。
-- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/scale_depth_integration_review.md)、[实际审查](../reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md)。外审与新颖性未认证。
+- Status：完整一般证明；独立内部重推/攻击，[实际审查](../reviews/weighted_congestion/structural_reconstruction/scale_depth_integration_review.md)。外审与新颖性未认证。
 - Limits：NO仅否定所选非负双排序/共同类型尺度/全部局部插入合同。局部校准的精确位复杂度不等于紧凑输入均衡搜索或改善路径的多项式界。
 
 ### WC-FRONT-CORE-STABLE-SET-TRANSFER-v1 — 锚定门的完整近似稳定集合与核心转移
@@ -1321,5 +1321,5 @@ Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status
 - Objects / Domain / Quantifiers / Assumptions：有限二动作基体degree≤p；资源插入边际满足共同玩家h_i>0的[1,α₀]夹逼，前沿上0<m≤M的完整基体加权社会成本包络；η≥0有限。
 - Exact Statement：令β_η=max_i(α₀h_i+η(p+1)w_i)/(h_i+ηw_i)、λ_η=(M+η)/(m+η)，取前沿上Φ_B+ηW_B的全局最小点。若门同时满足倍率β_η的强支配RD及社会预算SD，则该点是完整β_η-PNE，且完整W≤λ_ηOPT。
 - Dependencies：WC-STRUCTURE-WELFARE-REGULARIZATION-v1（含背景基线）、WC-FRONT-CORE-STABLE-SET-TRANSFER-v1、WC-SOCIALLY-DESCENDING-REPAIR-v1联合成立；[完整正文S7](../current/weighted_congestion/structural_reconstruction/socially_descending_repair.md#51-正则化核心的稳定性与社会质量联合保证)。
-- Evidence / Status：完整一般证明，S7作者与该审查者相同；实际记录披露另有root独立检查，详见[真实审查记录](../reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md)及有限第二实现审计；外审与新颖性未认证。
+- Evidence / Status：完整一般证明，S7作者与该审查者相同；[单独root检查](../reviews/weighted_congestion/structural_reconstruction/structural_methods_article_review.md)已实际记录，详见[真实审查记录](../reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md)及有限第二实现审计；外审与新颖性未认证。
 - Limits：全局核心最小化、共同尺度、背景基线包络、RD及SD为联合前提；SD单独不证明稳定或质量。不承诺有效全局求解或多项式时间。

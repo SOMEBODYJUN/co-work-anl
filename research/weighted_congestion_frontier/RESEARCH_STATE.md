@@ -10,7 +10,7 @@
 
 ## 长期目标与剩余义务
 
-WC-TARGET v1原身份保持刻画a_*(d)。新下界d/10与另列Paper Fact的一般d上界给增长阶Θ(d)，但没有求出精确常数或有限d最优值。优先后续可核查/简化新证明、优化参数、检索优先权并组织外审。全类o(d)存在性已经被新全状态族否定，不再作为开放义务。
+WC-TARGET v1原身份保持刻画a_*(d)。当前[加性近次数族](../current/weighted_congestion/structural_reconstruction/additive_near_degree_lower_bound.md)给a_*(d)≥d−1200⌈log₂d⌉²；联合另列Paper Fact的一般d上界得到a_*(d)/d→1。未知的是有限d精确值和最优加性缺口，不再是首项系数。后续可核查/简化一般证明、改进余量与编码规模、检索优先权并组织外审。全类o(d)存在性已经被全状态族否定，不再作为开放义务。
 
 旧奇环T_d下界及一般cohort奇环实际阈值恰T_d、有限权类/height势、共享side的UFτ预算、森林lift、完整selector表示与方法障碍均按原合同保留；新结果不升级其他候选。详细范围从[专题数学地图](../current/weighted_congestion/README.md)、[精确账本](CLAIMS.md)与[资产目录](../CATALOG.md)进入。
 
@@ -30,6 +30,6 @@ WC-TARGET v1原身份保持刻画a_*(d)。新下界d/10与另列Paper Fact的一
 
 用户补充的[旧结构参考](../../history/source/notes/weighted_congestion/structural_view_and_positive_results_reference.md)说明了上一轮恢复的内容缺口。当前[结构专题](../current/weighted_congestion/structural_reconstruction/README.md)已经重新写出端点、共同类型尺度、类型森林、环失配谱、完整稳定集合实现、社会外部性预算与权深度正反桥的自足作者证明，并给出独立的新加性近次数身份WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1。旧d/10 Claim未被改写。
 
-最终独立整合审查逐份核对当前源稿，状态以[精确账本](CLAIMS.md)和五轴登记为准；连续论文另作全文核查。有限有理审计只核验明确输入和恒等式，不证明全部量词。旧[范围对照](../current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)是上一轮交付的历史判断，不再说明当前缺少上述新证明。
+最终独立整合审查逐份核对当前源稿，状态以[精确账本](CLAIMS.md)和五轴登记为准；连续[结构论文PDF](../current/weighted_congestion/structural_reconstruction/structural_methods_article.pdf)及其[全文与产物核查](../reviews/weighted_congestion/structural_reconstruction/structural_methods_article_review.md)另记录最终源稿、PDF和真实阅读覆盖。有限有理审计只核验明确输入和恒等式，不证明全部量词。旧[范围对照](../current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)是上一轮交付的历史判断，不再说明当前缺少上述新证明。
 
 剩余义务是处理真实审查异议、核对统一成稿及实际依赖、改进显式加性余量和编码规模、检索优先权并组织外审。实际字典最优值不等于真实均衡阈值；社会下降必须支付外部性；所有固定c的对数深度结论不对c(d)→1一致。原决策方法独立接口仍可复用，不能把有限终止直接改称位多项式求解。
