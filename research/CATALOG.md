@@ -2562,7 +2562,7 @@
 | [新研究入库规范：对象、命题、程序与证据的生产合同](<GROWTH.md>) | `research/GROWTH.md` | 创建或修改可复用资产之前核对放置目录、精确身份、共同前提、状态分轴和同步登记要求。 | 阅读导航；真值查精确正文及账本 |
 | [仓库生产、读取与保存规则](<REPOSITORY_GUIDE.md>) | `research/REPOSITORY_GUIDE.md` | 当前Q-CAG-HALF与customer-attraction的研究导航，按本文职责连接精确范围和独立保留模型。 | 阅读导航；真值查精确正文及账本 |
 | [当前研究路线：一般目录、任意人数半覆盖](<ROADMAP.md>) | `research/ROADMAP.md` | 当前Q-CAG-HALF与customer-attraction的研究导航，按本文职责连接精确范围和独立保留模型。 | 阅读导航；真值查精确正文及账本 |
-| [旧研究分支收口与来源恢复记录](<BRANCHES.md>) | `research/BRANCHES.md` | 仅在追溯分支处置、原提交可达性或旧会话迁移时读取；不作为当前数学结论的证据。 | 来源与恢复指针；不代替缺失证明 |
+| [Git分支的来源保留与精确删除记录](<BRANCHES.md>) | `research/BRANCHES.md` | 记录保留main和现用通信分支、退役六个选题分支及安全删除前的来源保存，避免旧状态误导。 | 阅读导航；真值查精确正文及账本 |
 | [设施选址与顺序吸引的失败机制及回收边界](<FAILED_ROUTES_FACILITY.md>) | `research/FAILED_ROUTES_FACILITY.md` | 研究局部菜单、算法复杂度、续局量词或安全值桥前，核对已经被否定的准确断言和可保留信息。 | 方法障碍；否定范围以正文为准；精确范围见本页正文 |
 | [现行数学正文：当前半覆盖与独立模型](<current/README.md>) | `research/current/README.md` | 当前Q-CAG-HALF与customer-attraction的研究导航，按本文职责连接精确范围和独立保留模型。 | 阅读导航；真值查精确正文及账本 |
 | [两阶段设施选址公共模型：精确独立 NE 与完整续局](<current/model.md>) | `research/current/model.md` | 引用共同、异构或多设施结果前核对输入、实际负载成本、独立随机化与完整续局的量词。 | 定义与模型；不隐含跨模型定理；关联 `HC-2-LOW`、`HC-2-SHARP`、`HC-2-UP`，[命题合同（共 7 项）](assets.json) |
@@ -2605,3 +2605,7 @@
 | [一般半覆盖切换前的旧操作原件说明](<../history/research_operations/customer_attraction_transition/README.md>) | `history/research_operations/customer_attraction_transition/README.md` | 说明旧指挥文本的来源提交、原相对链接基准和原字节清单；仅用于历史恢复。 | 来源与恢复指针；不代替缺失证明 |
 | [旧入口与角色原字节的退役清单](<../history/research_operations/customer_attraction_transition/manifest.json>) | `history/research_operations/customer_attraction_transition/manifest.json` | 逐文件保存原路径、归档去处、SHA256及来源提交，供路由检查核验无损归档。 | 来源与恢复指针；不代替缺失证明 |
 | [旧双攻坚长提示词的原字节来源](<../history/research_operations/customer_attraction_general_handoff_2026_10_10.md>) | `history/research_operations/customer_attraction_general_handoff_2026_10_10.md` | 保存被短数学义务页替代的两份旧提示词，按原research/questions链接基准追溯，不作当前角色。 | 来源或历史判断；不作为现行结论 |
+| [退役选题分支的逐文件hash与删除清单](<branch_cleanup.json>) | `research/branch_cleanup.json` | 记录全部来源tip、141份候选与核验的原路径和SHA256、完整历史保留及精确比较删除状态。 | 来源与恢复指针；不代替缺失证明 |
+| [退役选题分支的候选与复现实物入口](<../history/retired_topic_selection/README.md>) | `history/retired_topic_selection/README.md` | 按来源分开独有数学与核验，说明原证据等级、主目标不变及未复制的旧操作材料。 | 来源与恢复指针；不代替缺失证明 |
+| [多线选题来源的证明候选失败机制与核验索引](<../history/retired_topic_selection/multi_lane/research/topic_selection/README.md>) | `history/retired_topic_selection/multi_lane/research/topic_selection/README.md` | 连接拟阵交换、图公平、资源LP、cloning等原稿和冻结计算；保持未认证新颖性与候选范围。 | 来源与恢复指针；不代替缺失证明 |
+| [独立选题复核的算法候选与反方来源索引](<../history/retired_topic_selection/independent_review/research/topic_selection/README.md>) | `history/retired_topic_selection/independent_review/research/topic_selection/README.md` | 保留BMKP、laminar、副本和低秩chores等精确局部资产及有限证据，不当成一般结果已完成。 | 来源与恢复指针；不代替缺失证明 |

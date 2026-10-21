@@ -16,6 +16,8 @@
 | 保留：两阶段设施 | [共同/异构目录与任意设施数](current/README.md)分别核对；黄金比双设施与全k因子二不得混同 |
 | 保留：正占用核 | [表示、阶数与闭包](current/positive_kernels/README.md)为独立工具，未给一般均衡桥 |
 
+已退出当前工作的选题分支候选见[历史资产](../history/retired_topic_selection/README.md)；实际Git分支处置见[分支收口](BRANCHES.md)。这些候选保持原始证据等级，不改变本题主攻。
+
 ## 文件与状态
 
 [CATALOG](CATALOG.md)登记中文名称和用途；[精确账本](current/claims.md)、[五轴审查](review_status.json)、[资产合同](assets.json)和[关系图](index.html)分别管理数学身份、审查、文件和依赖。当前地图不是数学真理来源。

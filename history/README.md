@@ -1,3 +1,5 @@
+> 本轮退役选题分支的独有候选与核验已整理到[历史资产入口](retired_topic_selection/README.md)；真实分支删除情况见[收口记录](../research/BRANCHES.md)。
+
 > 本次一般半覆盖的旧指挥文本见[操作归档](research_operations/customer_attraction_transition/README.md)，原路径与hash可核；当前研究入口见[Q-CAG-HALF](../research/customer_attraction/README.md)。
 
 # 历史与可追溯来源
