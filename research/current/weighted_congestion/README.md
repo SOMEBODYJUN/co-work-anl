@@ -102,3 +102,7 @@ WC-TARGET v1的原长期身份保留。新下界a_*(d)≥d/10与[单列Paper Fac
 [完整成果包](decision_methods/README.md)将已有局部势、共同玩家尺度和修复结构接到原游戏决策。先读[连续成稿](decision_methods/structure_to_decision.md)，再按任务进入[精确校准](decision_methods/calibration.md)、[稳定与成本正则化](decision_methods/decision_quality.md)、[原游戏前沿与模块lift](decision_methods/repair.md)、[决策器用法](decision_methods/runner.md)或[原文基线与应用合同](decision_methods/baselines.md)。[恢复范围](decision_methods/source_recovery.md)保留已有英文论文和缺失旧稿的边界。
 
 新接口分别登记为精确Claim，并有独立重构、第二实现攻击和正式路径精确运行。固定背景势曾不能直接接完整社会成本包络；已恢复资源基线并重证。小实例给出同为精确均衡时W由6降至11/2的选择改进；通用结构界、原游戏无解、校准接口NO和计算超限严格区分。该包不改变已有全状态线性下界。
+
+## 用户指定的结构主导论文
+
+[端点、共同尺度与稳定核实现](structural_reconstruction/README.md)集中重建五个可复用接口；本次阶段稿正在独立攻击，最终状态以实际审查和精确账本为准。反例作为接口应用，原决策方法专题保留独立用途。
