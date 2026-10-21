@@ -14,12 +14,19 @@ from exact_cross_primal import evaluator
 from exact_primal import verify_atom
 from frozen_pair_reoptimization import fraction_solve
 
-def run(terminal=False):
-    t0=time.time();src=(HERE/'cg_terminal_cross_final.json') if terminal else (OLD/'cg_cross_pair_final.json');cg=json.loads(src.read_text());names=cg['row_names'];atoms=cg['atoms'];U=evaluator();cols=[];w=[];o=[]
-    suffix='terminal_cross' if terminal else 'cross_pair'
+def run(mode="cross_pair"):
+    terminal=mode!="cross_pair"
+    t0=time.time();src=(HERE/f'cg_{mode}_final.json') if terminal else (OLD/'cg_cross_pair_final.json');cg=json.loads(src.read_text());names=cg['row_names'];atoms=cg['atoms'];U=evaluator();cols=[];w=[];o=[]
+    suffix=mode
     if terminal:
         from terminal_cross_pricing import TerminalUniverse
         U.__class__=TerminalUniverse;U.single=[(f'crossfinal:AB:{target}:{pos}{kind}',target,pos,kind) for target in ('AE','Sbranch') for pos in range(1,4 if target=='Sbranch' else 3) for kind in ('D','O')]
+        if mode=='joint_terminal':
+            from joint_terminal_pricing import JointTerminalUniverse
+            U.__class__=JointTerminalUniverse;U.single.append(('jointfinal:AB:Sbranch:2O+3O','Sbranch',23,'OO'))
+        elif mode=='dual_terminal':
+            from dual_terminal_pricing import DualTerminalUniverse
+            U.__class__=DualTerminalUniverse;U.single=[(f'crossfinal:{source}:{target}:{pos}{kind}',source,target,pos,kind) for source in ('AB','AE') for target in ('AB','AE','Sbranch') if source!=target for pos in range(1,4 if target=='Sbranch' else 3) for kind in ('D','O')]
     for atom in atoms:
         bits,hs,d=verify_atom(atom);rr=U.atom_rows(atom);cols.append([rr[n] for n in names]);w.append(int(any(bits[:5])));o.append(int(d>0))
     mat=np.asarray(cols,dtype=float).T;out=linprog(-np.asarray(o,dtype=float),A_ub=-mat,b_ub=np.zeros(len(names)),A_eq=[w],b_eq=[1.],bounds=(0,None),method='highs');assert out.success
@@ -37,7 +44,7 @@ def run(terminal=False):
     D=lcm(beta.denominator,*(v.denominator for v in lam));B=int(beta*D);ints=[0]*len(names)
     for r,v in zip(pos,lam):ints[r]=int(v*D)
     print(json.dumps({'beta':str(beta),'float':float(beta),'atoms':len(support),'multipliers':len(pos),'D_digits':len(str(D)),'recovery_seconds':time.time()-t0}),flush=True)
-    U=TerminalUniverse() if terminal else CrossUniverse();minimum,negative,ncache=U.price(ints,B,batch=100,integer='object',objective_scale=D)
+    U=JointTerminalUniverse() if mode=='joint_terminal' else DualTerminalUniverse() if mode=='dual_terminal' else TerminalUniverse() if terminal else CrossUniverse();minimum,negative,ncache=U.price(ints,B,batch=100,integer='object',objective_scale=D)
     report={'scope':'Exact full-universe dual of stated necessary-condition template; no full SPE or general-player theorem','row_count':len(names),'dual_beta':str(beta),'beta_float':float(beta),'common_denominator':str(D),'beta_numerator':str(B),'integer_multipliers':{names[r]:str(ints[r]) for r in pos},'multipliers':{names[r]:str(v) for r,v in zip(pos,lam)},'minimum_scaled_integer_residual':str(minimum),'full_pricing_nonnegative':minimum>=0,'fixed_masks':1024,'optimal_multiplicities':6,'third_histograms_per_family':792,'second_histograms':15504,'menu_overlap_corners_per_family':4,'score_contexts':ncache,'negative_columns':[dict(a,scaled_integer_residual=str(v)) for v,a in negative],'source_sha256':hashlib.sha256(src.read_bytes()).hexdigest(),'seconds':time.time()-t0}
     (HERE/f'exact_dual_{suffix}.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k not in ('integer_multipliers','multipliers','negative_columns')},indent=2),flush=True)
-if __name__=='__main__':run('--terminal' in sys.argv)
+if __name__=='__main__':run('joint_terminal' if '--joint' in sys.argv else 'dual_terminal' if '--dual-terminal' in sys.argv else 'terminal_cross' if '--terminal' in sys.argv else 'cross_pair')
