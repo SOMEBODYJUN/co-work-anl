@@ -2498,6 +2498,15 @@
 | [用户残存的近一主线与正反结构研究概述](<../history/source/notes/weighted_congestion/structural_view_and_positive_results_reference.md>) | `history/source/notes/weighted_congestion/structural_view_and_positive_results_reference.md` | 原字节保存旧工作内容、精确身份、原证明路径和结构主导写作要求；恢复丢失主线时读取，不当作完整证明。 | 来源与恢复指针；不代替缺失证明 |
 | [旧结构主线与新方法稿的恢复和成文差距](<current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md>) | `research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md` | 逐项比较用户残存概述与上一轮实际交付，纠正完整恢复误解并固定近一、类型森林、临界深度与稳定实现缺口。 | 来源与恢复指针；不代替缺失证明 |
 
+| 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
+| --- | --- | --- | --- |
+| [加权拥塞结构方法的论文与证明地图](<current/weighted_congestion/structural_reconstruction/README.md>) | `research/current/weighted_congestion/structural_reconstruction/README.md` | 按端点、共同尺度、核心实现、近一实例化与权深度读取，精确区分局部合同与全状态结论。 | 阅读导航；真值查精确正文及账本 |
+| [高次端点与离散面积的解析设计原理](<current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md>) | `research/current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md` | 核查网格误差、局部传播阈值、小原子正向势及不可直接实现的非均匀采样。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [共同尺度拼接与类型图环失配谱](<current/weighted_congestion/structural_reconstruction/shared_scale_gluing.md>) | `research/current/weighted_congestion/structural_reconstruction/shared_scale_gluing.md` | 选择类型图上的势证书、读取平方根森林推论与指定包络的最优图合同。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [稳定核心的修复转移与恒定辅助成本](<current/weighted_congestion/structural_reconstruction/repair_and_core_transfer.md>) | `research/current/weighted_congestion/structural_reconstruction/repair_and_core_transfer.md` | 检查全状态修复、近似稳定加性容差和扩充游戏中的正向成本选择。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [解耦窗口的近一全状态反例族](<current/weighted_congestion/structural_reconstruction/parameterized_allstate_family.md>) | `research/current/weighted_congestion/structural_reconstruction/parameterized_allstate_family.md` | 从实际资源验证全部状态出口、有理参数、每固定c与实际次数预算。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [线性失稳所需权层与降权高度](<current/weighted_congestion/structural_reconstruction/weight_depth_threshold.md>) | `research/current/weighted_congestion/structural_reconstruction/weight_depth_threshold.md` | 反演旧高度势并核对最小结构复杂度的必要性、构造充分性及其不同量词。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+
 <a id="positive_kernels"></a>
 
 ## 正占用核、交互阶数与非负表示
