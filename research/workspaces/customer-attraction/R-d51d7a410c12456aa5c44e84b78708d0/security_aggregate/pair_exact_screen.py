@@ -49,10 +49,11 @@ def screen(k,r,weights,prefix=()):
     if t in feasible and pay[t,b]>=floors[qa]:
      key=tuple(sorted((a,b)));z=(int(pay[t,a])+int(pay[t,b]))/scale
      if key not in pairmin or z<pairmin[key]:pairmin[key]=z;pairtarget[key]=(t,a,b)
+ first_pair=min(pairmin.values()); first_labels=min(pairmin,key=pairmin.__getitem__)
  best=None;tailLP=0
  for pair,total in sorted(pairmin.items(),key=lambda z:z[1]):
   # Static background embedding proves tail security >= root security.
-  if total>=2*v+1e-8:continue
+  if total>=2*v-1e-8:continue
   vp,_=security(inc,w,k,r-2,bg+inc[:,pair].sum(axis=1));tailLP+=1;gap=total+(r-2)*vp-r*v
   if best is None or gap<best['gap']:
    t,a,b=pairtarget[pair];q=zero;path=[a,b]
@@ -60,17 +61,19 @@ def screen(k,r,weights,prefix=()):
    while len(path)<r:
     a0=next(a0 for a0 in range(k) if t in outcomes(q[:a0]+(q[a0]+1,)+q[a0+1:]) and pay[t,a0]>=floors[q]);path.append(a0);q=q[:a0]+(q[a0]+1,)+q[a0+1:]
    best=dict(gap=float(gap),first_pair_total=total,tail_security=float(vp),terminal=terminals[t],ordered_path=path,path_payoffs=[int(pay[t,a0])/scale for a0 in path])
- return dict(k=k,r=r,prefix=prefix,weights=weights,root_outcomes=len(root),static_security=float(v),query=p.tolist(),minimum_tail_total=bestW,aggregate_ratio=bestW/(r*v) if v else 1,pairs=len(pairmin),tailLP=tailLP,best_pair=best)
+ return dict(k=k,r=r,prefix=prefix,weights=weights,root_outcomes=len(root),static_security=float(v),query=p.tolist(),minimum_tail_total=bestW,aggregate_ratio=bestW/(r*v) if v else 1,first_pair_total=first_pair,first_pair_labels=first_labels,first_pair_ratio=first_pair/(2*v) if v else 1,pairs=len(pairmin),tailLP=tailLP,best_pair=best)
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--k',type=int,default=8);ap.add_argument('--r',type=int,default=6);ap.add_argument('--samples',type=int,default=500);ap.add_argument('--seconds',type=float,default=180);ap.add_argument('--background',type=int,default=0);ap.add_argument('--seed',type=int,default=26102166);ap.add_argument('--output',type=Path,required=True);args=ap.parse_args();rng=random.Random(args.seed);start=time.perf_counter();best=None;bestagg=None;tailLP=0;checked=0
+ ap=argparse.ArgumentParser();ap.add_argument('--k',type=int,default=8);ap.add_argument('--r',type=int,default=6);ap.add_argument('--samples',type=int,default=500);ap.add_argument('--seconds',type=float,default=180);ap.add_argument('--background',type=int,default=0);ap.add_argument('--seed',type=int,default=26102166);ap.add_argument('--output',type=Path,required=True);args=ap.parse_args();rng=random.Random(args.seed);start=time.perf_counter();best=None;bestagg=None;bestfirst=None;tailLP=0;checked=0
  for sample in range(args.samples):
   density=rng.choice((.01,.03,.1));mode=rng.randrange(3)
   weights=[rng.randint(1,20) if rng.random()<density and (mode==0 or (mask.bit_count()<=3 if mode==1 else mask.bit_count()>=args.k-3)) else 0 for mask in range(1,1<<args.k)]
   prefix=tuple(rng.randrange(args.k) for _ in range(args.background));z=screen(args.k,args.r,weights,prefix);checked+=1;tailLP+=z['tailLP']
   if bestagg is None or z['aggregate_ratio']<bestagg['aggregate_ratio']-1e-10:bestagg=z
+  if bestfirst is None or z['first_pair_ratio']<bestfirst['first_pair_ratio']-1e-10:
+   bestfirst=z;print(json.dumps(dict(sample=sample,first_pair_ratio=z['first_pair_ratio'],first_pair_total=z['first_pair_total'],security=z['static_security'])),flush=True)
   if z['best_pair'] is not None and (best is None or z['best_pair']['gap']<best['best_pair']['gap']-1e-9):best=z;print(json.dumps(dict(sample=sample,gap=z['best_pair']['gap'],aggregate_ratio=z['aggregate_ratio'],path=z['best_pair']['ordered_path'])),flush=True)
-  packet=dict(status='exact SPE outcome sets; floating security screening; no general proof',seed=args.seed,k=args.k,r=args.r,background=args.background,samples_requested=args.samples,samples_completed=checked,seconds_requested=args.seconds,elapsed=time.perf_counter()-start,tail_LPs=tailLP,best_pair=best,best_aggregate=bestagg)
+  packet=dict(status='exact SPE outcome sets; floating security screening; no general proof',seed=args.seed,k=args.k,r=args.r,background=args.background,samples_requested=args.samples,samples_completed=checked,seconds_requested=args.seconds,elapsed=time.perf_counter()-start,tail_LPs=tailLP,best_pair=best,best_aggregate=bestagg,best_first_pair=bestfirst)
   args.output.write_text(json.dumps(packet,indent=2)+'\n')
   if (best is not None and best['best_pair']['gap']<-1e-7) or z['aggregate_ratio']<1-1e-8 or time.perf_counter()-start>args.seconds:break
  print(json.dumps(dict(done=True,samples=checked,tail_LPs=tailLP,elapsed=time.perf_counter()-start,best_pair=best['best_pair']['gap'] if best else None,best_aggregate=bestagg['aggregate_ratio'])),flush=True)
