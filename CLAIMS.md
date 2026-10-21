@@ -23,3 +23,5 @@
 新增内部已审表示/构造：[固定人数覆盖矩与真实行span](research/current/customer_attraction/coverage_moment_geometry.md)、[任意人数无拥挤SPE比率趋3/2族](research/current/customer_attraction/collision_free_three_halves_family.md)。各有独立精确身份、证明、审查及证据登记；均不解决一般half，外审及新颖性未认证。
 
 加权拥塞新增的七项结构决策接口/反例，精确身份、量词和证据在[专题账本末节](research/weighted_congestion_frontier/CLAIMS.md)，成稿及复现见[方法包](research/current/weighted_congestion/decision_methods/README.md)。
+
+后续[结构重构专题](research/current/weighted_congestion/structural_reconstruction/README.md)按独立身份登记端点—面积规律、共同尺度与环合同、权深度、稳定核实现及近次数全状态非存在；既有 d/10 命题不改量词，较强结论另立身份。正向方法、所选势字典的最优证书与全类均衡阈值分别记录。

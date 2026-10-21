@@ -26,8 +26,10 @@ WC-TARGET v1原身份保持刻画a_*(d)。新下界d/10与另列Paper Fact的一
 
 真正的新接口义务是可计算性与质量：在适用输入上生成有效共同尺度和成本包络，控制核心规模/真实求解开销，并将已核验的状态与社会下界一同交付。一般势的有限终止未闭合紧凑输入位多项式步数；强支配时钟不满足时的前沿搜索只是一部分候选域。没有真实部署性能数据。下一步应在相同输入、社会目标、稳定预算与运行预算下比较已有强基线，不再重复把结构存在性直接称为优化算法。
 
-## 旧稿接续的范围纠正与优先义务
+## 当前结构重建与准确剩余义务
 
-用户补充了[旧结构主线概述的原字节存档](../../history/source/notes/weighted_congestion/structural_view_and_positive_results_reference.md)。[逐项对照](../current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)确认：上一轮恢复main并新增方法专题，没有完整恢复原近一全状态族、全局类型尺度兼容/森林界、最小权深度正反匹配和一般稳定集合实现。专题的证明/审查仍只覆盖它实际写出的接口；不能用它代替旧统一主论文。
+用户补充的[旧结构参考](../../history/source/notes/weighted_congestion/structural_view_and_positive_results_reference.md)说明了上一轮恢复的内容缺口。当前[结构专题](../current/weighted_congestion/structural_reconstruction/README.md)已经重新写出端点、共同类型尺度、类型森林、环失配谱、完整稳定集合实现、社会外部性预算与权深度正反桥的自足作者证明，并给出独立的新加性近次数身份WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1。旧d/10 Claim未被改写。
 
-接续优先恢复这些旧结果的精确身份、证明、依赖与统一结构写法；原概述记载的内部完成状态作为来源保留，尚未取得的证明不伪装成已恢复。新增决策方法可作为独立资产或后续文章组成部分。恢复每段可接续内容立即checkpoint并推送，包括准确标级的未完成证明与失败路线，不再等整篇结束才保存。
+最终独立整合审查逐份核对当前源稿，状态以[精确账本](CLAIMS.md)和五轴登记为准；连续论文另作全文核查。有限有理审计只核验明确输入和恒等式，不证明全部量词。旧[范围对照](../current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)是上一轮交付的历史判断，不再说明当前缺少上述新证明。
+
+剩余义务是处理真实审查异议、核对统一成稿及实际依赖、改进显式加性余量和编码规模、检索优先权并组织外审。实际字典最优值不等于真实均衡阈值；社会下降必须支付外部性；所有固定c的对数深度结论不对c(d)→1一致。原决策方法独立接口仍可复用，不能把有限终止直接改称位多项式求解。
