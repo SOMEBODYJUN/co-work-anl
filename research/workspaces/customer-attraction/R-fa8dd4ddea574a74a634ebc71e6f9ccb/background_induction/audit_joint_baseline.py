@@ -115,7 +115,7 @@ def signed_error(k, t, b, d):
 
 
 signed_checks = 0
-for k in range(4, 25):
+for k in range(2, 25):
     aa = F(2*(k-2), k)
     for b in [0, 1, k//2, k, 3*k]:
         for d in range(k+1):
