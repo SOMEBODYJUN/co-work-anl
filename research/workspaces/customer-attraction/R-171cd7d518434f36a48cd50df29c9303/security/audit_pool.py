@@ -42,7 +42,20 @@ def main():
     assert unpooled-pooled==J
     assert 3*unpooled>W
     assert 3*pooled<W
-    report=dict(customers=len(customers),nodes=43,comparisons=comparisons,path=z,W=W,p={str(a):str(pa) for a,pa in p.items()},unpooled_total=str(3*unpooled),pooled_total=str(3*pooled),jensen_credit_total=str(3*J),old_balance=str(W-3*unpooled),pooled_balance=str(W-3*pooled))
+    # A genuine old-SPE customer still has a negative individual pooled balance.
+    T=frozenset([0,5]);individual={}
+    for a in [1,5]:
+        hs=[]
+        for i in range(3):
+            leaf=finish(z[:i]+(a,));B=leaf[:i]+leaf[i+1:]
+            hs.append(sum(b in T for b in B))
+        individual[a]=hs
+    assert individual=={1:[0,1,1],5:[1,1,1]}
+    Dx=F(1,2)*sum((1/F(1+h) for h in individual[5]),F(0))/3
+    Hx=sum((F(h,6) for hs in individual.values() for h in hs),F(0))
+    Px=F(1,2)/(1+Hx)
+    assert Dx==F(1,4) and Px==F(3,11) and Dx-Px==-F(1,44)
+    report=dict(customers=len(customers),nodes=43,comparisons=comparisons,path=z,W=W,p={str(a):str(pa) for a,pa in p.items()},unpooled_total=str(3*unpooled),pooled_total=str(3*pooled),jensen_credit_total=str(3*J),old_balance=str(W-3*unpooled),pooled_balance=str(W-3*pooled),individual_type=[0,5],individual_query={'1':'1/2','5':'1/2'},individual_loads=individual,individual_D=str(Dx),individual_P=str(Px),individual_balance=str(Dx-Px))
     print(json.dumps(report,indent=2))
     out=Path(__file__).with_name('pool_audit.json');out.write_text(json.dumps(report,indent=2)+'\n')
 

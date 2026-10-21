@@ -114,7 +114,7 @@ c=1 时和为空且右端零。对客户求和得到 (3) 的第一步；第二�
 
 一个自然但错误的强化是声称 rank2 只能被一个非零背景窗口收费。单客户实际 membership (1,0,1,0)、m=4，宽2、θ_j=1/j 时，两个窗口的费用分别为 1/6 和 1/12，总计 1/4。这排除了候选信用 5/6−2/(c+1) 在 c=2 的 1/6 值；首hit为零不代表次hit只有一次收费。
 
-`audit_path_interval_rent.py` 用标准库 Fraction 从定义独立重建 (1)、(6)、(8)，枚举有限二元路径、窗口长度、整数 reserve、多个非均匀行权并检查边界。实际输出保存于 `path_interval_rent_audit.json`。有限审计不替代上面的任意规模证明，也不构成 SPE 或 Q-CAG-HALF 的证明。
+`audit_path_interval_rent.py` 用标准库 Fraction 从定义独立重建 (1)、(6)、(8)，枚举有限二元路径、窗口长度、正有理 reserve、多个非均匀行权并检查边界。实际输出保存于 `path_interval_rent_audit.json`。有限审计不替代上面的任意规模证明，也不构成 SPE 或 Q-CAG-HALF 的证明。
 
 ## 6. 下一步
 

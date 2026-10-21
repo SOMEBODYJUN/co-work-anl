@@ -14,7 +14,7 @@
   OPT-W=U-G=k，原half余量为12k-4>0。它只否定可选择最优组合的遗漏支付桥。
 - **Dependencies / evidence:** 两人精确均分公式；全部六个末位节点及根真实比较；
   全部21个允许重复主题对的覆盖。作者展开单位客户Fraction审计及一般线性公式。
-- **Objections / status / files:** 独立研究员正在从输入和策略重构；不宣称最小性、
+- **Objections / status / files:** 另一研究员已从输入和策略独立重构全部历史及一般族；不宣称最小性、
   外审或新颖性。[正文](global/optimal_omission_exchange_counterexample.md)及其audit。
 
 ## B5-EARLY-MENU-LOAD-DEFECT-v1
@@ -30,7 +30,11 @@
   全部偏离中继负载不变，或满足正文有方向的零缺陷条件(10)，则原half成立。
 - **Dependencies / evidence:** 当前真实偏离、实际末位比较和偏离后的末位真实比较；
   不冻结中继，不把多个后继当一名玩家。父方独立展开G0=G-tau*epsilon；
-  全参数双线性角点及范围上界解析证明，作者Fraction审计，独立审查进行中。
+  全参数双线性角点及范围上界解析证明，作者Fraction审计，另一研究员独立解析审查通过。
+- **Stronger form:** delta(mu)=E_{T,Q iid mu}U_d(T,R_Q)-E_T U_{d+Delta_T}(T,R_T)
+  =epsilon(mu)-Vbar_true(mu)，所以0<=delta_*<=epsilon_*。
+  上述全部价格和根福利上界中的epsilon_*可替成delta_*；真实末位激励松弛先支付
+  这部分缺陷，仍无一般delta总量预算。独立审查已包含该加强。
 - **Objection / status / files:** 一般中继缺陷没有全局支付，不能删去该项或零缺陷假设。
   [正文](prices/early_menu_load_defect.md)、[独审](independent/early_price_review.md)。
 
@@ -50,6 +54,17 @@
   代数，不调用非法主题SPE；固定人数使用ghost终局时另查总人数。内部独立检查通过；
   [正文](coupling/path_interval_rent_budget.md)、[父审](parent/interval_rent_independent_review.md)。
 
+### B5-FIXED-POPULATION-PAIR-ERROR-v1
+
+- **Statement / quantifiers:** 任意合法前缀H及r>s>=1，任意合法主题A/B，已有pair-circuit
+  的非负误差满足E_H^{r,s}(A,B)<=(r-s)(r-1) E_H^{2,1}(A,B)。
+  逐客户四会员系数证明，统一全背景系数在仅B客户、h趋无穷时锐。
+- **Root budget / scope:** 任意实际路径，对每j<=m-3选r_j>s_j>=1且r_j+s_j=m-j，
+  A/B取实际相邻S_{j+1}/S_{j+2}，则sum_j E^{r_j,s_j}/[j(r_j-s_j)(r_j-1)]<=W。
+  主要pair终局恰m玩家；短f_H(B)不是任意真实续局，未得到全树激励运输。
+- **Evidence / status:** 作者四会员及固定人数路径Fraction核验；父方已独立核对三种
+  非零会员的比率上界，未作外审/新颖性认证。[正文](coupling/fixed_population_pair_error_budget.md)。
+
 ## B5-POOLED-RESPONSE-LOAD-INTERFACE-v1
 
 - **Objects / definitions:** 原任意m完整SPE，在实际第i节点改b后的真实终局删去偏离者
@@ -59,3 +74,8 @@
   OPT_m<=(2-1/m)W。旧36客户实例指定p上信用严格修复旧去相关坏点。
 - **Open / scope:** POOL预算本身未证，有限锥无分离不提升它；没有证明W>=m v_m。
   [正文](security/pooled_response_loads.md)及audit；尚待独立审查。
+- **Additional exact criterion:** 对一个客户，d(a)=mean_i 1/(1+h_i(a))，ell(a)=mean_i h_i(a)。
+  逐客户平均真实偏离收益>=池化查询收益对所有p成立，等价于
+  min_{a覆盖}d(a)>=1/(1+min_{a不覆盖}ell(a))；全覆盖或全不覆盖类型自动成立。
+  若各客户满足则条件性OPT<=(2-1/m)W；该条件非一般SPE自动性质，旧36客户例有
+  逐客户-1/44的精确负值。作者解析及Fraction核验，未独立升级。

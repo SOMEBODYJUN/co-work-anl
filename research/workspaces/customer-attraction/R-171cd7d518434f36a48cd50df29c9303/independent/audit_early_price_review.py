@@ -12,7 +12,9 @@ import json
 ROOT = Path(__file__).resolve().parents[5]
 COUNTS = {"scalar_identities": 0, "range_bounds": 0,
           "remainder_bounds": 0, "scalings": 0,
-          "spe_rows": 0, "real_menus": 0, "real_inequalities": 0}
+          "spe_rows": 0, "real_menus": 0, "real_inequalities": 0,
+          "relay_payment_bounds": 0, "root_envelope_points": 0,
+          "zero_defect_menus": 0}
 
 
 def inv(n):
@@ -72,6 +74,11 @@ def scalar_audit():
                             * inv(d + 1 + ss[j])
                             for j, k in product(range(3), repeat=2))
                         assert s_ref - s_real + (v_ref - v_real) / tau == -tau * eps
+                        defect_delta = sum(mu[j] * mu[k] * ss[j] * inv(d + 1 + rr[k])
+                                           for j, k in product(range(3), repeat=2))
+                        defect_delta -= sum(mu[j] * ss[j] * inv(d + delta[j] + 1 + rr[j])
+                                            for j in range(3))
+                        assert eps - defect_delta == v_real / tau ** 2
                         # Z cancels in G_ref-G_real for every eta.
                         COUNTS["scalar_identities"] += 1
 
@@ -100,6 +107,42 @@ def scalar_audit():
             assert qq * min(F(1), tau * uu_prime) - cc * tau == (
                 tau * (qq * min(F(1), uu_prime) - cc))
             COUNTS["scalings"] += 1
+
+    # New claims (6), (7), and (10), independently from their stated proofs.
+    for p, ell, a, b in product(range(8), range(8), (0, 1), (0, 1)):
+        loss = inv(p + 1) - inv(p + ell + 1)
+        profit = share(ell, p + ell + a + b)
+        assert loss / 4 <= F(3, 8) * profit
+        if p >= 1:
+            assert loss <= profit
+        COUNTS["relay_payment_bounds"] += 1
+    for d, a, b in product(range(15), (0, 1), (0, 1)):
+        t_eta = min(inv(d + 1), inv(d + 2) + inv(2 * (d + a + 1)))
+        lhs = 1 - t_eta + share(b, 2 * (d + a + b))
+        rhs = int(d + a + b > 0) - share(a, 2 * (d + a + b))
+        assert lhs <= rhs
+        COUNTS["root_envelope_points"] += 1
+    for ell in range(3):
+        for loads in product(range(3), repeat=2):
+            all_loads = (ell,) + loads
+            for ss in product((0, 1), repeat=3):
+                if any(s and load > ell for s, load in zip(ss, all_loads)):
+                    continue
+                for rr in product((0, 1), repeat=3):
+                    if any(rr[j] and not rr[k] and all_loads[j] < all_loads[k]
+                           for j, k in product(range(3), repeat=2)):
+                        continue
+                    xis = [inv(ell + 1) - inv(load + 1) for load in all_loads]
+                    phis = [inv(ell + 2) - inv(load + 2) for load in all_loads]
+                    for mu in mus:
+                        ee = sum(mm * r for mm, r in zip(mu, rr))
+                        covariance = sum(mm * r * xx for mm, r, xx in zip(mu, rr, xis))
+                        covariance -= ee * sum(mm * xx for mm, xx in zip(mu, xis))
+                        first = sum(mm * s * ((1 - ee) * xx + ee * pp)
+                                    for mm, s, xx, pp in zip(mu, ss, xis, phis))
+                        assert first <= 0 and covariance >= 0
+                        assert first - covariance <= 0
+                        COUNTS["zero_defect_menus"] += 1
 
 
 def real_audit(instance_path, strategy_path):
@@ -175,6 +218,11 @@ def real_audit(instance_path, strategy_path):
             vv = sum(zz[t] * zz[j] * (menu_pay(replies[t], t, t)
                      - menu_pay(replies[j], t, t)) for t, j in product(range(m), repeat=2))
             assert ss >= 0 and zslack >= 0 and vv >= 0
+            defect_delta = sum(mu[t] * mu[j] * ref_pay(t, replies[j])
+                               for t, j in product(range(m), repeat=2))
+            defect_delta -= sum(mu[t] * menu_pay(t, replies[t], t) for t in range(m))
+            assert eps - defect_delta == vv / tau ** 2
+            assert defect_delta <= eps
             for eta in (F(0), F(1, 4), F(1), F(3)):
                 for qmode in (0, 1, 2):
                     qs = [F(0) if qmode == 0 else F(1) if qmode == 1
@@ -188,6 +236,7 @@ def real_audit(instance_path, strategy_path):
                         envelope += mult * max(F(0), qq - threshold)
                     if tau >= 1:
                         assert cover - tau * v <= envelope + tau * eps
+                        assert cover - tau * v <= envelope + tau * defect_delta
                     # An independently computable upper price v+sum Gamma.
                     assert cover - tau * (v + upper) <= envelope
                     COUNTS["real_inequalities"] += 1

@@ -35,6 +35,14 @@ def check_identity(p, loads, ss, rr, z, eta):
     eps = sum((t*s*x-t*r*x+ell*t*x-ell*t*s*y
                for t, s, r, x, y in zip(mu, ss, rr, xi, ze)), F())
     assert G0 == G-tau*eps
+    reference_decoupled = sum((mt*mq*U(base, st, rq)
+                               for mt, st in zip(mu, ss)
+                               for mq, rq in zip(mu, rr)), F())
+    true_diagonal = sum((mt*U(p+lt, st, rt)
+                         for mt, lt, st, rt in zip(mu, loads, ss, rr)), F())
+    delta = reference_decoupled-true_diagonal
+    assert delta == eps-V/tau**2
+    assert G0 == S+eta*Z/tau-tau*delta
     d = sum((t*s for t, s in zip(z, ss)), F())
     L = sum((t*r for t, r in zip(z, rr)), F())
     H = sum((t*s*r for t, s, r in zip(z, ss, rr)), F())

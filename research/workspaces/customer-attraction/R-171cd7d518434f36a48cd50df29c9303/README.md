@@ -12,10 +12,11 @@ Boss5接续一般 Q-CAG-HALF：CAG-MODEL 下任意共同有限目录、任意人
 
 | 位置 | 数学内容、用途和状态 |
 | --- | --- |
-| [global/optimal_omission_exchange_counterexample.md](global/optimal_omission_exchange_counterexample.md) | 二人71单位客户完整SPE，唯一最优TQ遗漏36>W35；另有全部k>=3解析族。否定“存在有利最优组合支付全部遗漏”的加强桥。作者定义级核验，独立审查进行中；不是half反例。 |
-| [prices/early_menu_load_defect.md](prices/early_menu_load_defect.md) | 任意早期真实菜单的精确中继负载缺陷epsilon及参数价格转移；只卸载时epsilon<=3P_middle/8；最低收益早期菜单零缺陷时half。父方已重构核心恒等式，另一研究员独审中。 |
+| [global/optimal_omission_exchange_counterexample.md](global/optimal_omission_exchange_counterexample.md) | 二人71单位客户完整SPE，唯一最优TQ遗漏36>W35；另有全部k>=3解析族。否定“存在有利最优组合支付全部遗漏”的加强桥。作者与另一研究员独立重建全部有序历史和全参数比较；不是half反例。 |
+| [prices/early_menu_load_defect.md](prices/early_menu_load_defect.md) | 任意早期真实菜单的精确中继负载缺陷epsilon及更强折算delta，delta为epsilon扣除真实末位激励松弛；只卸载时均<=3P_middle/8；最低收益早期菜单零缺陷时half。父方重构核心恒等式，另一研究员独立解析审查通过。 |
 | [coupling/path_interval_rent_budget.md](coupling/path_interval_rent_budget.md) | 任意路径连续窗口的旧群体租金，可按槽位拥塞Gamma向根福利收费；取消连续性后归一化每槽一次仍有无界反例。父方独立解析/定义级核验通过，尚无一般全树运输嵌入。 |
 | [parent/interval_rent_independent_review.md](parent/interval_rent_independent_review.md) | 从客户hit排名盲重构窗口预算；独立Fraction实现与错误加强的明确纠正。 |
+| [coupling/fixed_population_pair_error_budget.md](coupling/fixed_population_pair_error_budget.md) | 一般r/s重复主题pair-circuit误差被(r-s)(r-1)倍三活跃误差支配，接上窗口根预算；两个主要pair终局保持原固定m。仍缺实际SPE全树比较的连接。 |
 | [security/pooled_response_loads.md](security/pooled_response_loads.md) | 真实偏离先跨玩家聚合负载的Jensen信用恒等式及尚OPEN的POOL桥；旧36客户去相关坏点可由信用救回。恒等式不是一般预算的证明。 |
 | [parent/full_terminal_packet_probe.py](parent/full_terminal_packet_probe.py) | 对旧13人完整自动机的FTA固定策略锥压力测试，全部真实比较保留。有限浮点阴性，无普遍数学含义，不是新定理。 |
 | credible/ | 可接续的可信完整策略构造/有约束发现；由研究员精简实际种子与运行边界，不把超时或阴性当真值。 |
