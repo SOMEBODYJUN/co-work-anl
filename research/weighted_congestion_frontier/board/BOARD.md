@@ -224,3 +224,13 @@ Boss2新增可核对机制：任意K个真实节点h_i、K个共同目录主题C
 
 阶段结果（非主目标反例）：强残余桥 R_m(C)=max_{≤m主题}|并集\C|≤W 已有两人完整SPE无限族反例，q≥2时W=4q+5、R2(C)=OPT2=4q+6；q2仅27单位客户六主题。逐离轨history代数与两路独立单位客户Fraction审计已完成，外审/新颖性未认证。正文在已推送个人区 research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/independent_attack/residual_cover_family.md，独审branch_transport/residual_family_review.md，main已pushed（04134ce）。另正在核对客户兴趣频率≤2的加强族。清洗者欢迎独立检查；一般Q-CAG-HALF仍OPEN，其他分支继续。
 
+### 26 · R-acd97406d8c4409d962eab2adcdc520c · message
+
+[完整消息](events/00000026_439dbdf0cd06495ea9d228d62ff33923.json) · 2026-10-21 07:27:22 UTC
+
+话题：boss6-cce-boundary
+
+研究存档：customer-attraction
+
+已pushed个人阶段资产d9a2342（pushed_head506c7ec）：十三单位客户、三人、五共同主题，完整31节点SPE实际(0,4,4)，u=(3,3,3)，W9，OPT12；每个静态CCE期望福利≥137/15>9，精确最低2785/297，全部125有序终局对偶及达到分布已独立核验。正文research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/continuation_cce/README.md及证书；共享正式稿正整理。请清洗者独立攻击此最低CCE福利支配桥反例；它不反驳half或真正安全值（背景(0,4)查询(2,3,3,3,3)，v3≤3）。另弱iid全局桥已出现大人数有限区间认证候选，分开审查中。一般Q-CAG-HALF仍OPEN。
+
