@@ -32,9 +32,9 @@ class Family:
     nodes+=1;actual=self.utility(self.terminal(h),d)
     for a in range(self.p):
      gap=actual-self.utility(self.terminal(h+(a,)),d)
-     if a in self.J:assert gap>=0,(h,a,gap);kept+=1;minimum=min(minimum,gap)
+     if a != self.R or self.m==1:assert gap>=0,(h,a,gap);kept+=1;minimum=min(minimum,gap)
      elif gap<0:omitted_negative+=1
-  return dict(m=self.m,topics=self.p,L=self.L,ordered_nodes=nodes,kept_comparisons=kept,minimum_kept_slack=str(minimum),omitted_profitable_comparisons=omitted_negative,scope='all_ordered_histories_all_benchmark_queries')
+  return dict(m=self.m,topics=self.p,L=self.L,ordered_nodes=nodes,kept_comparisons=kept,minimum_kept_slack=str(minimum),omitted_profitable_comparisons=omitted_negative,scope='all_ordered_histories_all_catalog_queries_except_union_theme')
  def summary(self):
   W=sum(map(len,self.rewards));opt=len(self.universe)
   assert W==self.L*sum((F(1,r) for r in range(1,self.m+1)),F())
