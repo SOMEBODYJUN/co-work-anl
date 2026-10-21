@@ -20,6 +20,7 @@
 | 把末位最坏回复值或真正静态安全值作为每个人保底：[聚合末位值](../current/customer_attraction/aggregate_theta_counterexample.md)、[逐人安全值](../current/customer_attraction/individual_security_counterexample.md)失败 | 末两人保底及静态 \(v_m\ge\operatorname{OPT}_m/(2m-1)\) 仍可用 | 证明真实 SPE 的聚合支付，保留静态对手不观察抽样的量词 |
 | 对全部查询分布要求去相关补偿：[全分布预算](../current/customer_attraction/global_security_budget_boundaries.md)失败 | 指定完整策略锥中仍有精确共同 (Q) 证书 | 允许依实例选择安全最优查询与共同静态竞争分布；固定策略锥已闭合时换策略 |
 | 所有 (D_ige0)、弱局部 iid 漂移：[安全值链](../current/customer_attraction/security_chain_and_local_boundary.md)、[动态 iid](../current/customer_attraction/dynamic_iid_debt_boundary.md)失败 | 全路径债务恒等式、真实背景安全值单调嵌入仍成立 | 控制总债务，不逐步加强；两种候选全局桥均仍需证明 |
+| 强 iid 福利桥 `W≥Z_m`：[静态基准 §1.1](../current/customer_attraction/iid_security_and_flow_barriers.md)与既有八/十三客户 CCE 反例共同给出真正完整 SPE 反例，因为 iid 对称混合 Nash 本身是 CCE | 静态 `mv_m≤Z_m≤OPT_m`、凹势及动态债务恒等式全部保留；该推论不是新实例 | 改攻较弱 `(1−1/(2m))Z_m` 或真正安全值聚合，不能继续将强 iid 桥称开放；不否定一般half |
 | 每节点先平均全部偏离、固定深度权或规定静态运输核：[流模板](../current/customer_attraction/iid_security_and_flow_barriers.md)、[规定核](../current/customer_attraction/stationary_pair_transport.md)失败 | 未压缩的逐历史偏离矩阵、末两人循环运输证书 | 允许每个 ((h,a)) 单独乘子或新的跨节点机制；模板分离向量未必是 SPE |
 | 五人的既定有限必要条件模板只调乘子：[索引松弛精确障碍](../current/customer_attraction/five_player_indexed_obstruction.md)仍最优于二以上 | 真实分支下的现有五人上界、可重用原始/对偶精确证书 | 增加本质不同的真实回复关系、策略一致性或换表示；LP 点不能冒充完整 SPE |
 | 末回复规范化后固定早期乘子直接提升：[固定提升反例](../current/customer_attraction/terminal_tie_lift_obstruction.md) | 末行拆分和商空间提升接口；同实例可重选乘子成功 | 共同选择早期乘子与误差支付，不把一个固定证书失败扩大成一般不可能 |
