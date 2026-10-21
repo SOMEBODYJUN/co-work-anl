@@ -25,6 +25,25 @@ def run(a):
     for case in range(a.cases):
         policy={h:rng.choice([t for t in range(core) if t not in h]) for d in range(n) for h in product(range(k),repeat=d)}
         G,R,I,c,z,bs=m.menu_geometry(n,k,policy)
+        if a.fresh_only:
+            def end(h):
+                while len(h)<n:h=h+(policy[h],)
+                return h
+            actual=end(())
+            needed=set()
+            for i in range(n):
+                for t in actual[:i]:
+                    h=actual[:i]+(t,)
+                    while len(h)<n:
+                        needed.add(h);h=h+(policy[h],)
+            def u(t,h):
+                z1=end(h); d=I@np.bincount(z1,minlength=k)
+                return I[:,t]/np.maximum(1,d)
+            rows=[]
+            for h,t in policy.items():
+                if len(set(h))==len(h) or h in needed:
+                    rows.extend(u(t,h)-u(s,h+(s,)) for s in range(k) if s not in h)
+            G=np.array(rows)
         base=G@np.ones(len(c))
         assert min(base)>-1e-7
         # Positive base rows can be made feasible by a finite uniform bias.
@@ -51,4 +70,5 @@ def run(a):
 if __name__=='__main__':
     ap=argparse.ArgumentParser();ap.add_argument('--players',type=int,default=3);ap.add_argument('--core',type=int,default=3);ap.add_argument('--queries',type=int,default=2)
     ap.add_argument('--cases',type=int,default=200);ap.add_argument('--seed',type=int,default=2026102109);ap.add_argument('--output',type=Path,required=True)
+    ap.add_argument('--fresh-only',action='store_true')
     a=ap.parse_args();a.output.write_text(json.dumps(run(a),indent=2)+'\n')
