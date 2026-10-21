@@ -101,7 +101,8 @@ class Engine:
         objective=self.v[Jid].astype(float)+noise*np.array([self.rng.uniform(-1,1) for _ in self.masks])
         res=linprog(-objective,A_ub=-G.astype(float),b_ub=np.zeros(len(G)),A_eq=[welfare.astype(float)],b_eq=[1.],bounds=(0,None),method='highs')
         if not res.success:return None
-        return res.x,float(self.v[Jid]@res.x)
+        # A query portfolio need not be optimum for the returned vertex.
+        return res.x,float(np.max(self.v@res.x))
 
     def exact_recover(self,G,target,x):
         supp=np.flatnonzero(x>1e-8).tolist()

@@ -61,13 +61,22 @@ def main():
         assert delta>=2*q-1
         rec.update({'players':n,'F_after_first':str(f),'delta':str(delta),'argmax_counts':args})
         records.append(rec)
+    prefixes=[]
+    for n in range(2,31):
+        for t in range(1,n):
+            direct=max(Q(n*k,t+k)+n-t-k for k in range(n-t+1))
+            formula=2*n-min(Q(j)+Q(n*t,j) for j in range(t,n+1))
+            assert direct==formula
+            if t==n-1:assert direct==1
+            if n==4*t:assert 2*t+direct-(2*n-1)==1-2*t
+            prefixes.append({'m':n,'t':t,'F':str(direct),'balance':str(2*t+direct-(2*n-1))})
     I=json.loads((P/'background_step_instance.json').read_text())
     C=json.loads((P/'background_step_certificate.json').read_text())
     actions={tuple(row['history']):row['action'] for row in C['actions']}
     rec=replay(I,lambda h:actions[h]);f4,a4=F(I,(0,0,1));f3,a3=F(I,(1,0,1))
     assert f4==11 and f3==Q(41,6) and f4-f3==Q(25,6)>4
     rec.update({'F4_C':str(f4),'F3_CA':str(f3),'gap':str(f4-f3),'F4_argmax':a4,'F3_argmax':a3})
-    out={'status':'PASS','family_full_tree_checks':records,'background_certificate':rec,
+    out={'status':'PASS','family_full_tree_checks':records,'background_certificate':rec,'prefix_formula_checks':len(prefixes),
          'scope':'Finite replay and formula implementation audit; general boundary is proved analytically in profit_opportunity_boundary.md.'}
     (P/'profit_opportunity_audit.json').write_text(json.dumps(out,indent=2)+'\n')
     print(json.dumps({'status':'PASS','family_histories':sum(r['histories'] for r in records),'background':rec},indent=2))

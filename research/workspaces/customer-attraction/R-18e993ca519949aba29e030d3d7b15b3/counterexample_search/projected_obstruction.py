@@ -5,7 +5,7 @@ randomly aligns the five T memberships. Does not claim to realize indexed replie
 Every queried equilibrium/LP is for the actual resulting 15-theme catalog.
 """
 from __future__ import annotations
-import argparse,json,random,time,sys
+import argparse,json,random,time,sys,itertools,math
 from pathlib import Path
 from fractions import Fraction as F
 import numpy as np
@@ -46,22 +46,26 @@ def expand(eng,policy,target):
     rec((),0,target);return actions
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--steps',type=int,default=6);ap.add_argument('--seed',type=int,default=18202677);args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--steps',type=int,default=6);ap.add_argument('--seed',type=int,default=18202677);ap.add_argument('--symmetric',action='store_true');args=ap.parse_args()
     rng=random.Random(args.seed);start=time.monotonic();records=[];best=F(0)
     frozen=json.loads((ROOT/'evidence/certificates/customer_attraction/five_player_indexed_bound.json').read_text())['primal']
     for iteration in range(args.steps):
         masses={}
         for atom in frozen['atoms']:
             j=sum(n for k,n in enumerate(atom['AB_hist']) if k>=4)
-            selected=rng.sample(range(5),j)
-            mask=sum((int(b)<<a) for a,b in enumerate(atom['bits']))+sum(1<<(10+a) for a in selected)
-            masses[mask]=masses.get(mask,0)+atom['mass_numerator']
+            selections=list(itertools.combinations(range(5),j)) if args.symmetric else [rng.sample(range(5),j)]
+            for selected in selections:
+                mask=sum((int(b)<<a) for a,b in enumerate(atom['bits']))+sum(1<<(10+a) for a in selected)
+                mass=atom['mass_numerator']*(10//math.comb(5,j) if args.symmetric else 1)
+                masses[mask]=masses.get(mask,0)+mass
         masks=sorted(masses);raw=[masses[k] for k in masks]
         # Normalize for floating proposal utility arithmetic only.
-        r=np.array(raw,dtype=float)/float(frozen['denominator'])
+        r=np.array(raw,dtype=float)/float(frozen['denominator'])/(10 if args.symmetric else 1)
         eng=Engine(5,15,rng,masks=masks)
         target,ratio=eng.solve(r)
-        print(json.dumps({'iteration':iteration,'stage':'actual_all_SPE_proposal','ratio':ratio,'types':len(masks),'root':eng.terminal[target].tolist(),'elapsed':round(time.monotonic()-start,2)}),flush=True)
+        desired=eng.index[5][(1,1,1,1,1)+(0,)*10]
+        desired_ok=bool(desired in eng.R[0][0])
+        print(json.dumps({'iteration':iteration,'stage':'actual_all_SPE_proposal','ratio':ratio,'types':len(masks),'original_ABCDE_feasible_proposal':desired_ok,'root':eng.terminal[target].tolist(),'elapsed':round(time.monotonic()-start,2)}),flush=True)
         policy,G=dag_cone(eng,target)
         actualids=np.argsort(eng.v@r)[-2:].tolist()
         actualids+=[eng.portfolios.index((10,11,12,13,14))]
@@ -80,10 +84,10 @@ def main():
                     if actual>best:
                         best=actual
                         proof={'seed':args.seed,'iteration':iteration,'ratio':str(best),'instance':instance.to_dict(),'strategy':cert.to_dict(),'verified_histories':check.checked_histories,'verified_deviations':check.checked_deviations,'source':'64-atom indexed relaxation projected to fixed10+opt5 themes; replies recomputed in actual catalog'}
-                        (HERE/'projection_m5p15_best.json').write_text(json.dumps(proof,indent=2)+'\n')
+                        (HERE/('projection_symmetric_m5p15_best.json' if args.symmetric else 'projection_m5p15_best.json')).write_text(json.dumps(proof,indent=2)+'\n')
                         print(json.dumps({'iteration':iteration,'new_exact_best':str(best),'rows':len(G),'dag_nodes':len(policy),'elapsed':round(time.monotonic()-start,2)}),flush=True)
         report={'parameters':vars(args),'best_exact_ratio':str(best),'records':records,'elapsed':round(time.monotonic()-start,2),'limitation':'Finite sparse-support and randomly aligned projections only; obstruction replies are not preserved; no universal conclusion.'}
-        (HERE/'projection_m5p15_run.json').write_text(json.dumps(report,indent=2)+'\n')
+        (HERE/('projection_symmetric_m5p15_run.json' if args.symmetric else 'projection_m5p15_run.json')).write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({'best':str(best),'elapsed':round(time.monotonic()-start,2)}),flush=True)
 
 if __name__=='__main__':main()
