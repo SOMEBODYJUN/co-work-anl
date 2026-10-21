@@ -19,3 +19,5 @@
 - [共同目录双设施](research/current/shared/theorems.md)、[任意设施数](research/current/multi_facility/claims.md)：存在性、有限构造与位多项式算法分别记录。
 
 暂停旧题不会使其命题变成已解决或被否定；按[保留问题表](research/customer_attraction/RETAINED_QUESTIONS.md)接续。
+
+新增内部已审表示/构造：[固定人数覆盖矩与真实行span](research/current/customer_attraction/coverage_moment_geometry.md)、[任意人数无拥挤SPE比率趋3/2族](research/current/customer_attraction/collision_free_three_halves_family.md)。各有独立精确身份、证明、审查及证据登记；均不解决一般half，外审及新颖性未认证。
