@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "共同研究：不相关并行机、加权拥塞、设施与客户吸引的数学关系",
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -13635,6 +13635,18 @@
         "evidence/runs/unrelated_machines/two_level_label_fee_independent_search.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "CA-WORST-PNE-WELFARE-NO",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "顺序均衡福利低于同实例全部静态Nash福利",
+      "detail": "A16-unit three-provider four-theme complete-history pure SPE has path(0,3,3), payoffs(17/3,14/3,14/3), W15; both static PNE count vectors have W16=OPT3. This strictly strengthens the earlier non-PNE terminal obstruction.",
+      "refs": [
+        "research/current/customer_attraction/worst_pne_welfare_counterexample.md",
+        "research/reviews/customer_attraction/worst_pne_welfare.md"
+      ],
+      "status": "complete finite counterexample with independent internal definition-level audit; unrefereed"
     }
   ],
   "hyperedges": [
@@ -33420,6 +33432,36 @@
         "evidence/runs/unrelated_machines/two_level_label_fee_independent_search.json"
       ],
       "status": "finite exact audit"
+    },
+    {
+      "id": "E-CA-WORST-PNE-WELFARE-NO",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-WORST-PNE-WELFARE-NO",
+      "statement": "The explicit sixteen-unit instance and all ordered-history comparisons provide a strict counterexample to worst-static-PNE welfare domination.",
+      "refs": [
+        "research/current/customer_attraction/worst_pne_welfare_counterexample.md",
+        "tests/audits/customer_attraction_worst_pne_welfare.py",
+        "evidence/runs/2026-10-20/customer_attraction_worst_pne_welfare.json"
+      ],
+      "status": "complete finite counterexample with independent internal definition-level audit; unrefereed"
+    },
+    {
+      "id": "E-CA-WORST-PNE-TARGET-LIMIT",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-WORST-PNE-WELFARE-NO"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "The failed same-instance static-PNE welfare bridge is stronger than half coverage; the example satisfies half coverage and supplies no target counterexample.",
+      "refs": [
+        "research/current/customer_attraction/worst_pne_welfare_counterexample.md"
+      ],
+      "status": "target remains open"
     }
   ]
 }

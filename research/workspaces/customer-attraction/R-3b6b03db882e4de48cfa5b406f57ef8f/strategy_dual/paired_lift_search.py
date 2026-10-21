@@ -126,6 +126,7 @@ def main():
     parser.add_argument("--players", type=int, default=3)
     parser.add_argument("--trials", type=int, default=1000)
     parser.add_argument("--seed", type=int, default=387511)
+    parser.add_argument("--root-single", action="store_true")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     rng = random.Random(args.seed)
@@ -133,6 +134,9 @@ def main():
     best, record = F(0), None
     for t in range(args.trials):
         actions = {h: rng.randrange(args.topics) for h in histories}
+        if args.root_single:
+            for d in range(args.players):
+                actions[(0,)*d] = 0
         result, normalized, root = optimize(actions, args.topics, args.players)
         if result and result[0] > best:
             best = result[0]

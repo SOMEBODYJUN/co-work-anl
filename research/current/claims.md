@@ -6,6 +6,7 @@
 | --- | --- | --- | --- |
 | CA-EXACT-PURE-SPE-ALL | 有限共同主题目录、单位权提供者依次观察完整历史、单位客户均分；整数重数代表单位 clones，全部历史依赖纯 SPE。 | 集合值逆归纳精确返回每个 prefix 的全部可实现终局计数，并为每个终局重构完整有序历史策略；不涵盖混合行为 SPE，不声称位多项式。 | [完整必要/充分归纳](customer_attraction/exact_solver.md)、独立完整策略枚举及规范实现；外审未记录。 |
 | CA-SPE-NON-PNE | 同一 CAG-MODEL；存在两人四客户共同目录或另一个三人三客户实例。 | 完整纯 SPE 的终局可有盈利的静态单方行动偏离。反驳 SPE→PNE 桥梁；不反驳半覆盖。 | [两人证书与导入边界](customer_attraction/literature.md)、[三人证书](customer_attraction/continuation_lemmas.md)；直接证明及独立精确审计，外审未记录。 |
+| CA-WORST-PNE-WELFARE-NO | CAG-MODEL；存在三人、四不同共同主题、16单位客户及完整有序历史纯SPE。 | W(SPE)=15<16=min_{PNE}W=OPT3，静态PNE恰两组计数；否定同实例最差静态Nash福利支配桥，不否定一般半覆盖。 | [完整反例](customer_attraction/worst_pne_welfare_counterexample.md)，独立逐客户21历史/84比较/20计数审计；外审和新颖性未认证。 |
 | CA-HISTORY-TIES | 同一 CAG-MODEL；三人、两个不交 unit singleton 主题。 | 存在完整纯 SPE 在同计数历史 AB/BA 选不同回复，且收益 (1/2,1,1/2)；两个收益次序单调方向都不普遍成立。 | [完整策略与逐节点证明](customer_attraction/continuation_lemmas.md)；直接证明及独立精确审计，外审未记录。 |
 | CA-RESIDUAL-NO | 同一 CAG-MODEL；两人、五共同主题、十四名单位客户。 | 完整纯 SPE 收益 (4,5)、W=9、OPT=10，最大未覆盖主题大小 5；逐人 u_i≥M(C) 和聚合 W≥mM(C) 均错误；2W≥OPT 未被否定。 | [完整收益表、失败机制和证书](customer_attraction/continuation_lemmas.md)；独立展开客户审计及规范 verifier 均通过，外审未记录。 |
 | CA-TWO-REMAINING-TAX | CAG-MODEL 的任意合法固定有序前缀，恰两位剩余单位提供者，任意完整历史依赖纯 SPE 和任意两个比较主题。 | R_b(T,S)≤R_b(A,B)+Σ_{x∈A}1/((b_x+1)(b_x+2))；只算剩余两人收益，非零背景时不等于完整覆盖。b=0重构文献3/2；首步桥和一般背景总税已否定；一般根总税亦由CA-ROOT-TAX-NO否定。 | [非负恒等式完整证明和条件性归纳](customer_attraction/two_remaining_tax.md)，独立逐客户精确审计；不声称新颖或外审。 |
