@@ -10,6 +10,11 @@
 * `reply_staircase.md`：一类跨前缀扩展：真实最后回复、核对称，再把一份枢轴
   移入前缀并减少复制数。所有步的损耗精确望远镜成调和租金差；末端前缀
   通常离轨，仍未支付实际根福利。
+* `parity_moment_gluing.md`：任意m>=3、2m标签的全局signed奇偶构造。全部<=m
+  标签边际非负、所有<m阶全局矩与真uniform客户相同，却违反一个明确m阶
+  全目录逐客户非负行。signed形式完整BI图与true-uniform同图SPE来源分开
+  证明；不是合法客户或half反例。
+* `verify_parity_moment_gluing.py`：显式有限类型、覆盖基行与完整BI图独立审计。
 * `reciprocal_reply_audit.json`：首版运行输出；
   `reciprocal_reply_audit_v2.json` 为另加实际前缀cohort收益支付检验后的完整输出。
 

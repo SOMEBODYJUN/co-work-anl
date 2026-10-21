@@ -94,3 +94,8 @@ python3 research/workspaces/customer-attraction/R-077c0cacfba24288be91dee1acf6d4
 ## 其他发现脚本
 
 `abstract_tax_attack.py`、`abstract_clone_attack.py`、`abstract_full_milp.py` 是一般匿名删除势 U_a(H)=F(H+a)-G(H) 加克隆支配／四项税的抽象发现器；没有产生可登记反例或一般结论。`check_uniform_fractional.py` 发现了上面的uniform失败点；可靠结论只依赖Fraction审计。
+
+
+## 后续静态接口独立审查
+
+`fractional_interface_review.md` 逐项审查上级 `free_fractional_security.md`。发现的零福利严格号已由作者修正、LP预算也已明写；修正后的静态接口通过内部独立核对。未证明FF-LEADER，主目标仍OPEN。
