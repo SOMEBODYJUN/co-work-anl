@@ -57,11 +57,13 @@ def check() -> dict:
     require(literal_assignment(program, "ROLE_PROMPTS") == roles,
             "role receipt disagrees with the three current prompts")
     require(roles["boss"] == manifest["prompt"], "boss prompt is not the current target")
-    all_paths = list(dict.fromkeys(manifest["active_entrypoints"] + manifest["role_prompts"] + [manifest["runbook"]]))
+    all_paths = list(dict.fromkeys(manifest["active_entrypoints"] + manifest["role_prompts"] +
+                                   [manifest["runbook"], manifest["mathematical_entry"]]))
     stale = (r"当前(?:唯一)?主攻(?:是|：|:)?\s*(?:\*\*)?\[?(?:加权|UM-TARGET|一般不相关)",
              r"默认存档(?:为|是)?\s*`?(?:shared|unrelated-machines)",
              r"所有(?:研究)?对话(?:共同解决|自主推进)\s*WC-TARGET")
     links = 0
+    mathematical_targets = set()
     for path in all_paths:
         file = local(path)
         text = file.read_text(encoding="utf-8")
@@ -70,12 +72,19 @@ def check() -> dict:
             require(not re.search(pattern, text), ("stale unconditional topic instruction", path, pattern))
         prose = re.sub(r"(?ms)^(```|~~~).*?^\1\s*$", "", text)
         for match in re.finditer(r"(?<!\\)\[[^\]\n]+\]\(([^)\s]+)\)", prose):
-            ref = match.group(1)
+            ref = match.group(1).strip("<>")
             if re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", ref) or ref.startswith("#"):
                 continue
             dest = (file.parent / ref.split("#", 1)[0]).resolve()
             require(dest.is_relative_to(ROOT) and dest.exists(), ("broken active navigation", path, ref))
             links += 1
+            if path == manifest["mathematical_entry"]:
+                mathematical_targets.add(dest)
+    mathematical_entry = local(manifest["mathematical_entry"])
+    mathematical_files = {p.resolve() for p in mathematical_entry.parent.rglob("*.md")}
+    missing = mathematical_files - {mathematical_entry} - mathematical_targets
+    require(not missing, ("active mathematical map omits files",
+                          sorted(p.relative_to(ROOT).as_posix() for p in missing)))
     for path in roles.values():
         body = prompt_body(path)
         for marker in (target, save, "完整历史", "纯", "OPEN", "work.py", "checkpoint"):
@@ -91,6 +100,7 @@ def check() -> dict:
                 ("retired original bytes changed", row["original_path"]))
     return {"target": target, "save": save, "roles": list(roles),
             "checked_entrypoints": len(all_paths), "checked_local_links": links,
+            "indexed_mathematical_files": len(mathematical_files),
             "retired_originals_verified": len(retirement["entries"]),
             "legacy_saves_preserved": list(manifest["legacy_entries"])}
 

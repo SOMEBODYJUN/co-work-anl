@@ -22,7 +22,7 @@ class ActiveResearchRoutingTests(unittest.TestCase):
         CHECKER.ROOT = self.root
         self.manifest = json.loads((REPO / "research/active_research.json").read_text())
         paths = set(self.manifest["active_entrypoints"] + self.manifest["role_prompts"] +
-                    [self.manifest[k] for k in ("prompt", "runbook", "program", "submitter", "retired_operations_manifest")])
+                    [self.manifest[k] for k in ("prompt", "runbook", "program", "submitter", "retired_operations_manifest", "mathematical_entry")])
         paths.update(self.manifest["compatibility_redirects"])
         retirement = json.loads((REPO / self.manifest["retired_operations_manifest"]).read_text())
         paths.update(row["archived_path"] for row in retirement["entries"])
@@ -125,6 +125,28 @@ class ActiveResearchRoutingTests(unittest.TestCase):
     def test_broken_active_link_is_rejected(self):
         file = self.root / "README.md"
         file.write_text(file.read_text() + "\n[当前证明](research/current/customer_attraction/nonexistent_proof.md)\n")
+        with self.assertRaisesRegex(ValueError, "broken active navigation"):
+            CHECKER.check()
+
+    def test_new_shared_proof_requires_a_mathematical_map_entry(self):
+        entry = self.root / self.manifest["mathematical_entry"]
+        proof = entry.parent / "new_global_coverage_lemma.md"
+        proof.write_text("# 待检查的全局覆盖引理\n")
+        with self.assertRaisesRegex(ValueError, "mathematical map omits"):
+            CHECKER.check()
+        entry.write_text(entry.read_text() + "\n[新覆盖引理](new_global_coverage_lemma.md)\n")
+        result = CHECKER.check()
+        self.assertGreater(result["indexed_mathematical_files"], 1)
+
+    def test_private_drafts_do_not_require_a_shared_map_entry(self):
+        draft = self.root / "research/workspaces/customer-attraction/fixture/unfinished.md"
+        draft.parent.mkdir(parents=True)
+        draft.write_text("# 尚未核验的个人推导\n")
+        CHECKER.check()
+
+    def test_removed_proof_cannot_leave_a_broken_mathematical_link(self):
+        entry = self.root / self.manifest["mathematical_entry"]
+        (entry.parent / "three_player_sharp.md").unlink()
         with self.assertRaisesRegex(ValueError, "broken active navigation"):
             CHECKER.check()
 

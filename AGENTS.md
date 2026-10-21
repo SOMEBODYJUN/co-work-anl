@@ -28,6 +28,8 @@
 
 共享正文、Claim和研究地图按数学对象组织，不按角色分区。个人备份不自动成为可靠结果；正式入库时再检查整理并维护实际涉及的登记。推送前同步并保留本地工作；只有status=pushed才报告远端保存。显式paths替换整个默认范围，必须列全本次应保存文件。
 
+正式入库者在同一次提交更新本题数学README的文件、用途和范围；新结论或缺口改变时同步相关状态和实际受影响的根摘要。清洗者检查整合到位，个人备份只维护自己的README。共享文件使用明确数学对象与用途的名称，并在catalog给出中文名和读取条件；路由检查会拒绝当前正文漏出数学地图，但不自动判断摘要的数学准确性。
+
 新建/移动资产维护catalog中文名称及用途、实际链接和必要来源指针。按改动运行研究目录生成检查、check_active_research.py、check_assets.py及相应精确回归；不原位改冻结证据去迁就新路径。旧模型独有数学保留，过期操作文本进入history。详见research/REPOSITORY_GUIDE.md和research/customer_attraction/RUNBOOK.md。
 
 当前用户指令优先；历史提示词不得覆盖本次目标。路由与三个角色的可检查合同是research/active_research.json。

@@ -40,3 +40,9 @@ W(s)=\left|\bigcup_iS_i\right|=\sum_i u_i(s).
 | [数学全文地图](../current/customer_attraction/README.md) | 按对象找自足证明、辅助接口、审查和冻结证据 |
 
 原始出处和导入条件分别见[文献记录](../current/customer_attraction/literature.md)与[目录、量词复核](../current/customer_attraction/literature_followup.md)。[全仓精确账本](../current/claims.md)、[审查状态](../review_status.json)、[资产合同](../assets.json)和[依赖图](../graph.json)继续保留原身份；本目录不另复制一套数学真值。
+
+## 资产去向与入口维护
+
+个人推导、未核验尝试和恢复笔记持续保存在`research/workspaces/customer-attraction/<actor>/`。检查整理后，自足正文进入`research/current/customer_attraction/`，候选进入本题`research/questions/`位置，独立检查进入`research/reviews/customer_attraction/`；规范程序、测试和证据沿现有目录保存。共享资产按数学对象组织，不按角色分区。
+
+每次正式入库，同步[数学全文地图](../current/customer_attraction/README.md)的文件、用途和范围；结论或缺口改变时再同步[当前前沿](RESEARCH_STATE.md)、精确账本及实际受影响的根摘要。私人备份只需维护自己的README。名称、中文用途和更新责任见[生产规则](../REPOSITORY_GUIDE.md)；当前正文漏进数学地图会被现有路由检查拒绝，摘要的数学准确性仍由实际整理者核对。
