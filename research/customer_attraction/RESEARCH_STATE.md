@@ -27,6 +27,22 @@
 
 [五客户无拥挤例](../current/customer_attraction/collision_free_occupancy_obstruction.md)实际W4、OPT5；它排除所有f(0)=0、f(1)=1的可加纯负载支付。进一步的[任意人数无拥挤族](../current/customer_attraction/collision_free_three_halves_family.md)已有完整独立归纳，W=2m、OPT=3m−1，比率趋3/2。任何普遍纯负载上界且f0=0都必须f1≥3/2。一般half的失败机制不能只由实际终局拥挤校正解释，必须继续追真实离轨回复。这些结果均无外审/新颖性认证，不改变Q-CAG-HALF的OPEN状态。
 
+## 新的真实路径预算与仍开放范围
+
+[分数覆盖前缀预算](../current/customer_attraction/fractional_cover_path_budget.md)对任意比较客户集C、任意覆盖总重τ证明客户数≤P_(i−1)+(m−i+1)τu_i，P是过去玩家的最终收益和；迭代得乘积福利界。某个最优并集分数覆盖数≤7/2时，全人数半覆盖成立。一般真反例必须每个最优并集的覆盖数>H_m/log2，但覆盖数可增长，主目标仍OPEN。该机制不需要把离轨旧玩家收益与根路径混用。
+
+[八客户CCE见证](../current/customer_attraction/eight_customer_cce_welfare_gap.md)独立简化静态福利失败：四主题计数策略SPE福利6，最低静态CCE福利恰544/87；保留十三客户原版本，真正聚合安全值仍未否定。
+
+## 新的真实菜单正面机制
+
+[共同倒二主题](../current/customer_attraction/common_penultimate_theme_half.md)及
+[少量早期遗漏平方阈值](../current/customer_attraction/penultimate_few_exceptions.md)已获完整解析证明与独立内审：
+实际倒二A包含于全部早期主题时，任意m≥3半覆盖；若至多r个早期主题不包含A，
+r≥1且m≥(r+1)²+1，同样半覆盖。目录、末位主题、离轨历史和平局均无限制。
+新机制用同一真实末两人菜单两两比较消去联合会员，再把早期改A保底与实际末位改例外主题联合收费。
+平方阈值仅为充分条件；大量遗漏时这组乘子的上下预算可能冲突，不能只增大一个系数。
+外审、新颖性和阈值锐性未认证，一般Q-CAG-HALF保持OPEN。
+
 ## 真正缺什么
 
 一般目录的早期玩家偏离一个主题后，所有后继都可以沿原完整策略改变行动。需要控制这些**真实分支之间的总福利损失**，同时保留所有历史依赖平局。现有静态 NE 桥、逐人保底、逐步非负预算、根总税及若干固定运输核均已失败。

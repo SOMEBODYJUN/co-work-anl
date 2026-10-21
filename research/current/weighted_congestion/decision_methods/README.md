@@ -1,6 +1,8 @@
 # 加权拥塞结构用于决策：成稿、方法与复现
 
-本成果包把既有局部势、共同尺度和修复结构用于原游戏的稳定决策与成本优化。首读[连续成稿](structure_to_decision.md)，再按当前任务进入详细证明或可运行工具。已有全状态线性下界和英文主论文独立保留，见[来源恢复](source_recovery.md)。
+**定位更正：本包是基于 main 现有资产重建的决策方法专题，尚未恢复旧工作记载的近一主结果与统一结构论文。** [逐项差距与恢复目标](previous_structure_scope_comparison.md)依据用户补充参考明确范围。
+
+本成果包把既有局部势、共同尺度和修复结构用于原游戏的稳定决策与成本优化。专题正文见[决策方法成稿](structure_to_decision.md)，再按当前任务进入详细证明或可运行工具。已有全状态线性下界和英文主论文独立保留，见[来源恢复](source_recovery.md)。
 
 ## 结果与适用范围
 
@@ -20,6 +22,7 @@
 
 | 仓库完整路径 | 内容、为何存在与读取时机 |
 | --- | --- |
+| research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md | 旧主线与新专题的逐项差别、两种森林定义及接续目标；判断是否已恢复旧工作时先读 |
 | research/current/weighted_congestion/decision_methods/structure_to_decision.md | 连续成稿：需求→校准→稳定与成本拼装→原游戏修复→实例比较；向新读者说明方法价值时首先读取 |
 | research/current/weighted_congestion/decision_methods/calibration.md | 共同正尺度、三类LP、精确Farkas与负圈、端点及局部资源包解析例；实现校准器前读 |
 | research/current/weighted_congestion/decision_methods/decision_quality.md | 正则化定理、背景恢复、η选择、路径峰值、稳定集合下界及社会切线证书；制定质量/预算目标时读 |

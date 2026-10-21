@@ -13834,6 +13834,66 @@
         "research/current/weighted_congestion/decision_methods/calibration.md"
       ],
       "status": "complete stated-scope proof; independent internal reconstruction; finite exact audits; unrefereed"
+    },
+    {
+      "id": "CA-WORST-CCE-WELFARE-8",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "八客户完整SPE福利低于最低静态CCE福利",
+      "detail": "Three unit providers, four themes, eight unit clients: a full count-policy SPE has W6 and OPT8, whereas min static CCE expected welfare is exactly544/87; aggregate static security remains possible.",
+      "refs": [
+        "research/current/customer_attraction/eight_customer_cce_welfare_gap.md",
+        "research/reviews/customer_attraction/eight_customer_cce_welfare_gap.md"
+      ],
+      "status": "complete scoped proof with independent internal review; unrefereed"
+    },
+    {
+      "id": "CA-FRACTIONAL-COVER-PATH-BUDGET",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "分数覆盖的真实前缀最终利润预算",
+      "detail": "For every full-history pure SPE, every coverable nonempty client set C and fractional cover total tau>=1, |C|<=P_(i-1)+(m-i+1)tau u_i; W>=|C|[1-product_r(1-1/(r tau))].",
+      "refs": [
+        "research/current/customer_attraction/fractional_cover_path_budget.md",
+        "research/reviews/customer_attraction/fractional_cover_path_budget.md"
+      ],
+      "status": "complete scoped proof with independent internal review; unrefereed"
+    },
+    {
+      "id": "CA-FRACTIONAL-COVER-7-2-HALF",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "最优并集分数覆盖数至多七半的任意人数半覆盖",
+      "detail": "If some OPT_m union C has fractional set-cover number<=7/2, every full-history pure SPE has2W>=OPT_m, with arbitrary finite catalog size and players.",
+      "refs": [
+        "research/current/customer_attraction/fractional_cover_path_budget.md",
+        "research/reviews/customer_attraction/fractional_cover_path_budget.md"
+      ],
+      "status": "complete scoped proof with independent internal review; unrefereed"
+    },
+    {
+      "id": "CA-COMMON-PENULTIMATE-HALF-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "共同倒数第二主题的完整历史半覆盖",
+      "detail": "For every finite common catalog and every full-history pure SPE with m>=3, if its actual penultimate theme A is contained in each of the first m-2 actual themes, then 2W>=OPT_m. Arbitrary last theme, off-path histories, ties, empty themes and zero clients are retained.",
+      "refs": [
+        "research/current/customer_attraction/common_penultimate_theme_half.md",
+        "research/reviews/customer_attraction/penultimate_menu_half.md"
+      ],
+      "status": "complete conditional half-coverage proof with independent internal analytic and exact audits; unrefereed"
+    },
+    {
+      "id": "CA-PENULTIMATE-FEW-EXCEPTIONS-HALF-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "倒数第二主题少量早期遗漏的平方阈值半覆盖",
+      "detail": "For every original-model full-history pure SPE, any integer r>=1 with m>=(r+1)^2+1 and at most r of its first m-2 actual themes failing to contain its penultimate theme A implies 2W>=OPT_m. The final theme and full common catalog are unrestricted. The square threshold is sufficient, not claimed sharp.",
+      "refs": [
+        "research/current/customer_attraction/penultimate_few_exceptions.md",
+        "research/reviews/customer_attraction/penultimate_menu_half.md"
+      ],
+      "status": "complete conditional half-coverage proof with independent internal analytic and exact audits; unrefereed"
     }
   ],
   "hyperedges": [
@@ -33907,6 +33967,111 @@
         "research/current/weighted_congestion/decision_methods/calibration.md"
       ],
       "status": "complete stated-scope proof; independent internal reconstruction; finite exact audits; unrefereed"
+    },
+    {
+      "id": "E-CA-WORST-CCE-WELFARE-8",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-WORST-CCE-WELFARE-8",
+      "statement": "Explicit eight-unit full-history SPE and exact matching static CCE dual/primal provide a smaller independent welfare-bridge counterexample.",
+      "refs": [
+        "research/current/customer_attraction/eight_customer_cce_welfare_gap.md",
+        "research/reviews/customer_attraction/eight_customer_cce_welfare_gap.md"
+      ],
+      "status": "complete scoped proof; unrefereed"
+    },
+    {
+      "id": "E-CA-FRACTIONAL-COVER-PATH-BUDGET",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-FRACTIONAL-COVER-PATH-BUDGET",
+      "statement": "Each genuine on-path deviation has load at most b+r; actual old-player final rents pay the prefix term, giving the nonnegative affine product recursion.",
+      "refs": [
+        "research/current/customer_attraction/fractional_cover_path_budget.md",
+        "research/reviews/customer_attraction/fractional_cover_path_budget.md"
+      ],
+      "status": "complete scoped proof; unrefereed"
+    },
+    {
+      "id": "E-CA-FRACTIONAL-COVER-7-2-HALF",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CA-FRACTIONAL-COVER-PATH-BUDGET",
+        "CA-TWO-REMAINING-TAX",
+        "CA-THREE-SHARP-5-3",
+        "CA-FOUR-UPPER-1499-750"
+      ],
+      "conclusion": "CA-FRACTIONAL-COVER-7-2-HALF",
+      "statement": "For m>=5 use F5(7/2)>1/2 and monotonicity; for m<=4 import only the existing exact-player results.",
+      "refs": [
+        "research/current/customer_attraction/fractional_cover_path_budget.md"
+      ],
+      "status": "complete scoped proof; unrefereed"
+    },
+    {
+      "id": "L-CA-WORST-CCE-WELFARE-8-TARGET",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-WORST-CCE-WELFARE-8"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "This scoped result does not settle arbitrary-player arbitrary-catalog half coverage; original target stays open.",
+      "refs": [
+        "research/current/customer_attraction/eight_customer_cce_welfare_gap.md"
+      ],
+      "status": "target remains open"
+    },
+    {
+      "id": "L-CA-FRACTIONAL-COVER-PATH-BUDGET-TARGET",
+      "kind": "limits",
+      "track": "extensions",
+      "premises": [
+        "CA-FRACTIONAL-COVER-PATH-BUDGET"
+      ],
+      "conclusion": "Q-CAG-HALF",
+      "statement": "This scoped result does not settle arbitrary-player arbitrary-catalog half coverage; original target stays open.",
+      "refs": [
+        "research/current/customer_attraction/fractional_cover_path_budget.md"
+      ],
+      "status": "target remains open"
+    },
+    {
+      "id": "E-CA-COMMON-PENULTIMATE-HALF-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-COMMON-PENULTIMATE-HALF-v1",
+      "statement": "For every finite common catalog and every full-history pure SPE with m>=3, if its actual penultimate theme A is contained in each of the first m-2 actual themes, then 2W>=OPT_m. Arbitrary last theme, off-path histories, ties, empty themes and zero clients are retained. The proof is an explicit nonnegative combination of deviations in the same original complete strategy, plus per-customer nonnegative residuals.",
+      "refs": [
+        "research/current/customer_attraction/common_penultimate_theme_half.md",
+        "research/reviews/customer_attraction/penultimate_menu_half.md"
+      ],
+      "status": "complete conditional half-coverage proof with independent internal analytic and exact audits; unrefereed"
+    },
+    {
+      "id": "E-CA-PENULTIMATE-FEW-EXCEPTIONS-HALF-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-PENULTIMATE-FEW-EXCEPTIONS-HALF-v1",
+      "statement": "For every original-model full-history pure SPE, any integer r>=1 with m>=(r+1)^2+1 and at most r of its first m-2 actual themes failing to contain its penultimate theme A implies 2W>=OPT_m. The final theme and full common catalog are unrestricted. The square threshold is sufficient, not claimed sharp. The proof is an explicit nonnegative combination of deviations in the same original complete strategy, plus per-customer nonnegative residuals.",
+      "refs": [
+        "research/current/customer_attraction/penultimate_few_exceptions.md",
+        "research/reviews/customer_attraction/penultimate_menu_half.md"
+      ],
+      "status": "complete conditional half-coverage proof with independent internal analytic and exact audits; unrefereed"
     }
   ]
 }

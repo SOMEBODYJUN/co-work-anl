@@ -9,6 +9,9 @@
 | CA-WORST-PNE-WELFARE-NO | CAG-MODEL；存在三人、四不同共同主题、16单位客户及完整有序历史纯SPE。 | W(SPE)=15<16=min_{PNE}W=OPT3，静态PNE恰两组计数；否定同实例最差静态Nash福利支配桥，不否定一般半覆盖。 | [完整反例](customer_attraction/worst_pne_welfare_counterexample.md)，独立逐客户21历史/84比较/20计数审计；外审和新颖性未认证。 |
 | CA-WORST-CCE-WELFARE-NO | CAG-MODEL；存在三人、五不同共同主题、13单位客户及完整有序历史纯SPE；静态CCE允许任意不对称相关分布。 | W(SPE)=9<137/15≤min_CCE E[W]=2785/297，OPT3=12；否定同实例最低静态CCE福利支配桥，不否定半覆盖或真正聚合静态安全值。 | [完整反例及十格逆负载证明](customer_attraction/worst_cce_welfare_counterexample.md)，独立31历史/155比较/125有序终局与原始对偶核验；外审、新颖性及最小性未认证。 |
 | CA-FRACTIONAL-ACTUAL-LOAD-WEAK-NO-v1 | CAG-MODEL；对每个整数m≥4，存在四个不同共同主题、m²+1单位客户及完整有序历史纯SPE；策略构造对m≥2成立。 | 令α=(m−1)/m、M=max_T Σ_(x∈T)1/(1+αc_x)。实际W=m²、OPT_m=m²+1，而(m−1/2)M−W=(m³−4m²+3m−1)/(2(m²−m+1))>0；精确否定正桥CA-FRACTIONAL-ACTUAL-LOAD-WEAK-v1，不否定半覆盖、真正聚合安全值或另立的精确税候选。 | [完整无限族及全历史BI证明](customer_attraction/fractional_actual_load_counterexample.md)、[独立解析审查](../reviews/customer_attraction/fractional_actual_load.md)；四人85节点/255非自身比较及m2..6全树单位展开审计；外审、新颖性和最小性未认证。 |
+| CA-WORST-CCE-WELFARE-8 | CAG-MODEL；存在三人、四不同共同主题、8单位客户及完整计数依赖纯SPE；静态CCE允许任意不对称相关分布。 | W=6<min_CCE E[W]=544/87，OPT3=8；更小独立见证，不重定义既有十三客户Claim，不否定一般半覆盖或聚合安全值。 | [八客户正文](customer_attraction/eight_customer_cce_welfare_gap.md)，两路定义级精确审计与原始/对偶匹配；外审、新颖性、最小性未认证。 |
+| CA-FRACTIONAL-COVER-PATH-BUDGET | CAG-MODEL；任意m、每个完整历史纯SPE、任意非空可覆盖客户集C及任意分数覆盖z≥0，总重τ≥1。 | 对每个真实位置i，客户数≤P_(i−1)+(m−i+1)τu_i，P为早期玩家最终收益之和；W≥客户数[1−∏_(r=1)^m(1−1/(rτ))]。空C单独为零。 | [逐客户证明](customer_attraction/fractional_cover_path_budget.md)，两路解析独审及有限精确回归；τ无界时不推出half。 |
+| CA-FRACTIONAL-COVER-7-2-HALF | 同模型任意人数、无界目录；某个OPT_m最优并集C的分数覆盖数τ_C≤7/2。 | 每个完整历史纯SPE满足2W≥OPT_m；更一般产品≤1/2即充分，真反例必须每个最优并集τ_C>H_m/log2。 | [乘积判据与依赖](customer_attraction/fractional_cover_path_budget.md)；m≥5用精确产品，m≤4依赖已有小人数定理；不声称一般命题已解。 |
 | CA-HISTORY-TIES | 同一 CAG-MODEL；三人、两个不交 unit singleton 主题。 | 存在完整纯 SPE 在同计数历史 AB/BA 选不同回复，且收益 (1/2,1,1/2)；两个收益次序单调方向都不普遍成立。 | [完整策略与逐节点证明](customer_attraction/continuation_lemmas.md)；直接证明及独立精确审计，外审未记录。 |
 | CA-RESIDUAL-NO | 同一 CAG-MODEL；两人、五共同主题、十四名单位客户。 | 完整纯 SPE 收益 (4,5)、W=9、OPT=10，最大未覆盖主题大小 5；逐人 u_i≥M(C) 和聚合 W≥mM(C) 均错误；2W≥OPT 未被否定。 | [完整收益表、失败机制和证书](customer_attraction/continuation_lemmas.md)；独立展开客户审计及规范 verifier 均通过，外审未记录。 |
 | CA-TWO-REMAINING-TAX | CAG-MODEL 的任意合法固定有序前缀，恰两位剩余单位提供者，任意完整历史依赖纯 SPE 和任意两个比较主题。 | R_b(T,S)≤R_b(A,B)+Σ_{x∈A}1/((b_x+1)(b_x+2))；只算剩余两人收益，非零背景时不等于完整覆盖。b=0重构文献3/2；首步桥和一般背景总税已否定；一般根总税亦由CA-ROOT-TAX-NO否定。 | [非负恒等式完整证明和条件性归纳](customer_attraction/two_remaining_tax.md)，独立逐客户精确审计；不声称新颖或外审。 |
@@ -1441,6 +1444,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | WC-ONE-ROOT-FROZEN-PRICE-LIFT-v1 | 有限WC游戏，非空保留玩家、仅保留玩家使用的核心资源，互不交附属模块各只接一个保留根；任意α,β≥1。 | 给每模块每根动作a的内部β稳定延续y^a，当前根价q(a)≥0，且冻结y^a后改b的费用D(a,b)≥q(b)。用根私有动作价替代模块后，任意核心α-PNE固定提升为原max(α,β)-PNE。 单向而非双向；核心NO不否定原游戏。寻找一般有环模块报价可指数大，树有既有递归构造。 | [单根模块冻结报价的固定提升](weighted_congestion/decision_methods/repair.md)；独立内部重构与精确审计，范围见正式账本。 |
 | WC-EXPLICIT-STABILITY-COST-FRONTIER-v1 | 每个有理有限显式WC游戏，非空策略族允许空动作，固定有理α≥1；状态空间Ω完整枚举。 | 逐态逐真实偏离得到扩展有理A(s)，并精确返回α-PNE集合、分别最小化ΣC_i与Σw_iC_i的状态及完整稳定成本阶梯。无α-PNE时每态一条严格偏离构成完整否证；加预算后每态可给超预算或严格偏离排除项。 状态数可能指数；程序规模上限超出时报告未完成，绝不报告无解。最佳反应单条循环不当作全局NO。 | [有限显式游戏的稳定成本前沿与证书](weighted_congestion/decision_methods/decision_quality.md)；独立内部重构与精确审计，范围见正式账本。 |
 | WC-CALIBRATION-EXISTENCE-SEPARATION-v1 | 两玩家权(1,2)，每人菜单∅/{e}/{f}/{e,f}，c_e=x、c_f=x²；另有明确循环加空动作例。 | 两资源各自有精确局部尺度势，但没有共同正玩家尺度的α=1全状态成本差校准；原游戏严格改善图却无环且唯一精确PNE为空空。另有精确PNE仍保留严格改善循环的WC实例。 明确实例反例，不是全类无均衡或一般搜索困难性。 | [共同尺度校准与稳定存在的严格分界](weighted_congestion/decision_methods/calibration.md)；独立内部重构与精确审计，范围见正式账本。 |
+
+## 真实末两人菜单的条件性半覆盖
+
+| ID | 精确陈述 | 范围、依赖与状态 |
+| --- | --- | --- |
+| CA-COMMON-PENULTIMATE-HALF-v1 | 原模型任意完整历史纯SPE、m≥3；若实际倒二主题A包含于全部m−2个早期实际主题，则2W≥OPT_m，末位主题任意。 | [完整证明](customer_attraction/common_penultimate_theme_half.md)、[独立审查](../reviews/customer_attraction/penultimate_menu_half.md)；仅模型与真实偏离，目录无界；外审/新颖性/锐性未认证。 |
+| CA-PENULTIMATE-FEW-EXCEPTIONS-HALF-v1 | 原模型任意完整历史纯SPE；若整数r≥1、m≥(r+1)²+1，且至多r个早期实际主题不包含实际倒二主题A，则2W≥OPT_m。 | [完整证明](customer_attraction/penultimate_few_exceptions.md)、[独立审查](../reviews/customer_attraction/penultimate_menu_half.md)；包含条件指整个集合而非平均负载；平方阈值仅充分，一般目标仍OPEN。 |
 
 ## 逻辑使用规则
 

@@ -6,6 +6,8 @@
 
 三人一般目录有锐5/3福利界，四人一般目录有1499/750<2界；五人当前约2.061695仍高于2。至多六个不同包含极大覆盖的任意人数半覆盖已证；七极大只有已登记的部分范围。详见[逐范围地图](research/current/customer_attraction/README.md)，不要把它们表述为一般猜想已解。
 
+新增[分数覆盖前缀利润预算](research/current/customer_attraction/fractional_cover_path_budget.md)对任意比较集给乘积福利保证；某个最优并集分数覆盖数至多7/2时，任意人数与无界目录半覆盖成立。覆盖数无界的原目标仍OPEN。
+
 ## 当前瓶颈
 
 在同一完整纯SPE中，早期偏离改变后继整条路径。需要利用所有真实分支的最优性控制最终福利；逐人保底、逐步非负、冻结后继和根总税已有反例。全局补偿、真实分支转移及直接全局证明均可自由探索，现有接口不是必选路线。
@@ -31,4 +33,10 @@ Boss直接带团队攻一般命题。清洗者处理数学检查、自足改写�
 
 [覆盖矩表示](research/current/customer_attraction/coverage_moment_geometry.md)及[全人数无拥挤族](research/current/customer_attraction/collision_free_three_halves_family.md)已独立内部重构：线性方向完整不等于非负支付；真实离轨拥挤可维持实际无拥挤而OPT/W趋3/2。一般half及安全值聚合仍OPEN，无外审/新颖性认证。
 
-用户指定的加权拥塞应用方法专题已形成[完整成稿与复现包](research/current/weighted_congestion/decision_methods/README.md)。当前改进是共同尺度证书、原游戏有条件压缩及稳定成本选择；一般位多项式搜索与真实业务效果仍分别需要新证据。其他研究主目标与原有定理范围不变。
+用户指定的加权拥塞应用方法专题已形成[专题成稿与复现包](research/current/weighted_congestion/decision_methods/README.md)。当前改进是共同尺度证书、原游戏有条件压缩及稳定成本选择；一般位多项式搜索与真实业务效果仍分别需要新证据。其他研究主目标与原有定理范围不变。
+
+用户补充参考后，已明确[旧结构主线仍缺失的内容](research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)。上轮未按完整旧证明复原，新方法专题不代表旧工作已恢复；当前拥塞接续应优先补齐原主结果和结构论文。
+
+更小独立静态桥见证：[八客户四主题计数SPE](research/current/customer_attraction/eight_customer_cce_welfare_gap.md)福利6，最低静态CCE福利恰544/87；它不改变原十三客户版本身份，不否定真正聚合安全值。
+
+新的条件性正面机制：[真实末两人菜单](research/current/customer_attraction/common_penultimate_theme_half.md)及[少量早期遗漏](research/current/customer_attraction/penultimate_few_exceptions.md)在无界人数/目录下证明指定实际路径半覆盖；r个遗漏的充分阈值为m≥(r+1)²+1。已独立解析内审，一般路径大量遗漏仍缺跨真实分支支付，Q-CAG-HALF仍OPEN。

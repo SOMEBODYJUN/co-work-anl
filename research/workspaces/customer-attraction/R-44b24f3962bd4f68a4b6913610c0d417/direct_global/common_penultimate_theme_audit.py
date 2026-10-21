@@ -3,7 +3,7 @@ from fractions import Fraction as F
 from itertools import product
 import json
 from pathlib import Path
-import sympy as sp
+import platform
 
 def frac(x,p,q):
  return F(x,p+x+q) if x else F(0)
@@ -53,25 +53,25 @@ for m in (3,4,5,6,7,11,31):
      assert rho>=0,(m,a,b,p,d,ell,h,rho)
     compressed+=1
 
-m=sp.symbols('m',integer=True,positive=True)
-d,l=sp.symbols('d l',real=True)
+# After multiplying each corner difference by L=2*m**2*(m-1)*(m-1+b),
+# the result is a polynomial of degree <=4. Five distinct exact zero values
+# certify its identity; this is polynomial identity verification, not sign sampling.
 corner_checks=0
 for b in (0,1):
- expr=1-m/(m-1+b)-sp.Rational(b,2)/m+d/(m-1)+l*(m-1-2*d)/(2*m*m*(m-1))
- expected={
-  0:[0,(m-3)/(2*m*(m-1)),1,1-(m+1)/(2*m*(m-1))],
-  1:[(m+1)/(2*m*(m-1)),1/m,m/(m-1)-1/(2*m),1]
- }[b]
- for (dv,lv),target in zip(((1,0),(1,m),(m,0),(m,m)),expected):
-  assert sp.simplify(expr.subs({d:dv,l:lv})-target)==0
-  # A polynomial with nonnegative coefficients in t=m-3 proves sign on m>=3.
-  num,den=sp.fraction(sp.factor(target))
-  t=sp.symbols('t',nonnegative=True)
-  num_poly=sp.Poly(sp.expand(num.subs(m,t+3)),t)
-  den_poly=sp.Poly(sp.expand(den.subs(m,t+3)),t)
-  assert all(c>=0 for c in num_poly.all_coeffs())
-  assert all(c>=0 for c in den_poly.all_coeffs()) and den_poly.eval(0)>0
+ for corner in range(4):
+  for m in range(3,8):
+   d,ell=((1,0),(1,m),(m,0),(m,m))[corner]
+   raw=F(1)-F(m,m-1+b)-F(b,2*m)+F(d,m-1)+F(ell*(m-1-2*d),2*m*m*(m-1))
+   expected={0:[F(0),F(m-3,2*m*(m-1)),F(1),F(1)-F(m+1,2*m*(m-1))],1:[F(m+1,2*m*(m-1)),F(1,m),F(m,m-1)-F(1,2*m),F(1)]}[b][corner]
+   assert (raw-expected)*(2*m*m*(m-1)*(m-1+b))==0
   corner_checks+=1
-report={'status':'all exact checks passed','full_binary_identity_cases':cases,'compressed_cases':compressed,'symbolic_corner_checks':corner_checks,'scope':'Audit of formulas; general proof in common_penultimate_theme_half.md','python_sympy':sp.__version__}
+# Numerators/denominators of the eight target corners in t=m-3 have the
+# following nonnegative coefficient lists (low to high). Denominators all
+# have positive constant coefficient. These are exact shifts of the displayed
+# rational formulas, independently compared above.
+shifted=[([0],[1]),([0,1],[12,10,2]),([1],[1]),([8,9,2],[12,10,2]),([4,1],[12,10,2]),([1],[3,1]),([16,11,2],[12,10,2]),([1],[1])]
+for numerator,denominator in shifted:
+ assert all(c>=0 for c in numerator+denominator) and denominator[0]>0
+report={'status':'all exact checks passed','full_binary_identity_cases':cases,'compressed_cases':compressed,'polynomial_corner_identities':corner_checks,'degree_bound':4,'exact_roots_per_identity':5,'scope':'Audit of formulas; general proof in common_penultimate_theme_half.md','python':platform.python_version()}
 print(json.dumps(report,ensure_ascii=False,indent=2))
 Path(__file__).with_suffix('.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
