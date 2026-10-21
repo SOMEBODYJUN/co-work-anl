@@ -89,3 +89,24 @@
 - [Boss 独立攻击与审计](round3_boss/README.md)：定量 product 竞争分布差额的独立核验及抽象承重类有限判别；无一般证明。
 
 个人备份不自动进入共享 canonical 状态；每份正文分别标明证明、内审、外审和新颖性。
+
+## 第四轮继续：遗漏集、静态人数序列与真实续局
+
+本轮从 main 恢复本 actor，六名指定 gpt-6.1-sol ultra 研究员实际并行，
+各自目录为 `round4_global/`、`round4_security/`、`round4_moments/`、
+`round4_credible/`、`round4_menus/`、`round4_independent/`；
+主代理独立攻击记录在 [round4_boss/README.md](round4_boss/README.md)。
+一般 Q-CAG-HALF 仍 OPEN，没有因新增充分条件或有限阴性搜索而升级。
+
+- [实际遗漏集的调和预算](round4_credible/missed_cover_budget.md)：
+  W≥H_m max_T|T∩M|≥H_m |M|/τ_M；对 M=O\A，τ_M≤H_m 足以 half，
+  另有保留最优交集的加强和 p-d≤H_m 的搜索筛选。主稿、独立重构按目录记录；
+  它只控制低复杂度遗漏，不能外推为一般 |M|≤W。
+- `round4_security/`：真正不观察查询的静态安全值序列 n v_n 的单调性及
+  趋全目录覆盖数的解析工具正在整理，尚不提供动态 SPE 聚合桥。
+- `round4_independent/` 与 `round4_credible/`：弱逐人候选的全策略锥攻击及
+  有种子完整子树菜单端点，所有有限证据按准确范围读取。
+
+本轮已核对并避开最新 SA/实际 entrant 信用失败、仅鲁棒前缀保底的无界模板、
+粗 exact-potential 强聚合桥失败，以及已经存在的两实际主题不同末两条件。
+继续攻一般真实分支支付，不把去重或阶段备份当作研究终点。
