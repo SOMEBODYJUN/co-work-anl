@@ -193,3 +193,26 @@ same topic, a singleton kernel needs lambda_j>=1+P_(j,j). Same-topic history
 reuse can remove some self-crowding; otherwise weighted off-path budgets or a
 different query routing must pay it. Merely applying a maximum dilution to
 every row would lose the relevant W/m allowance.
+
+## Separating query slots from payoff nodes
+
+The harmonic proof itself does not require the selected node to choose the
+assigned frozen topic a_j. More generally select any genuine decision node g_j
+of the complete sigma, on or off the actual path, and let L_j be its prescribed
+current-player payoff. Query T_j at that node and call the resulting real
+terminal profile b^j. If the same customerwise condition (C), still expressed
+using the assigned actual slot a_j, holds, then the identical proof yields
+
+    alpha R <= sum_j lambda_j V_j <= sum_j lambda_j L_j.
+
+Now the required global budget is sum_j lambda_j L_j <=(1+1/m)W. An on-path
+node supplies an actual player's payoff, but may be reused across different
+frozen slots. An off-path node supplies a genuine continuation payoff whose
+charge to actual W must be independently proved. This is an enlarged payment
+interface, not an assertion that arbitrary off-path budgets are affordable.
+
+The [padded boundary family](padding_kernel_boundary.md) makes this distinction
+concrete for every m: requiring the node to choose its assigned actual topic
+forces kernel budget exactly (1+1/m)W, while cross-topic reuse of the last node
+already proves R<=W. Its complete SPE construction also demonstrates why the
+strong same-topic interface should not be imposed on the global problem.

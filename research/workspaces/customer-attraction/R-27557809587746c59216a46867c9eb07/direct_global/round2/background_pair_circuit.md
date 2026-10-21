@@ -66,6 +66,24 @@ For any sequence of inserted profiles q^0<=...<=q^t,
 
 This exact telescope keeps the original cohort H fixed. It does not justify telescoping E_{H+q^j} as if the numerator were still h: newly inserted providers have their own rent and would need a separate payment.
 
+## Positivity of the three-active error for common submodular Shapley games
+
+The rent identity (3), and its positivity for r=2,s=1, extend beyond nonnegative coverage-customer representations. Let C(empty)=0 be one common monotone submodular set function, with common Shapley payoffs on repeated topic labels. A truncated C on supports of size at most m is sufficient when every profile below has at most m providers.
+
+Add an auxiliary label Omega and set C(S union {Omega})=K for all retained S, where K is at least every retained C-value. Leave C unchanged on sets omitting Omega. This extension is monotone and submodular. If only one of the two sets in a submodularity inequality contains Omega, that inequality reduces to C(Y)>=C(X intersection Y), which follows from monotonicity. If both contain Omega it is equality; if neither does, it is the original inequality.
+
+Let U_j denote the extended common Shapley payoff of each fixed H-provider j. Then the exact identity is
+
+\[
+E_H(a,b)=\sum_{j\in H}\left[U_j(H+\Omega)-U_j(H+\Omega+a+b)\right].\tag{6}
+\]
+
+Here each repeated H-provider is counted separately. To establish (6), take any signed customer representation of the common set function, put Omega into every customer interest set, and if necessary add an Omega-only signed mass to change C(P) to K. The latter mass never affects an H-provider. For each signed customer, (6) is precisely (3); linearity proves it for the common set function. This signed calculation establishes the identity only, not positivity.
+
+Positivity now has a separate argument. Under nonnegative decreasing Shapley marginals, increasing the counts of other topic labels decreases an incumbent's payoff by the clock coupling. Increasing the count of its own label also decreases the payoff, by the larger own kill rate. Thus adding a and b weakly reduces each fixed H-provider's extended payoff. Every summand in (6) is nonnegative, proving E_H(a,b)>=0 for common monotone submodular Shapley games.
+
+This construction is entirely algebraic: Omega is not asserted to be an available action, and no SPE comparison uses it. Both extended profiles have at most |H|+3 providers, so the argument stays within the truncated domain. The parent and tree_coupling researchers independently reconstructed the extension and positivity argument. It still does not preserve original SPE incentives under the client filter below.
+
 ## Shared-pivot transport and the incentive filter
 
 For a third topic c, subtract the errors for a,b and c,b. The table yields the exact identity

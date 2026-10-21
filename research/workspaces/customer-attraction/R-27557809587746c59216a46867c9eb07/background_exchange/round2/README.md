@@ -5,6 +5,8 @@
 
 | 文件 | 内容、证据和局限 |
 |---|---|
+| true_reply_overlap_family.md | 同一个真实Q的加权布尔重叠推出β=0,1,2端点行；root独立核对；不声称新颖性。旧BNS施于 penultimate 也能排除六组锐投影。 |
+| overlap_consistency_projection.py/.json | 全membership上加β1及β2，仍约2.08459>2；遵root要求停止扩增负面模板。 |
 | true_reply_cap.md | 任意两剩余人节点的全配对真实回复上限f(T)+f(S)−g(T,S)<=u+max_Qf(Q)；准确归属旧末两人差值机制；普遍排除前轮m>=4锐投影；F仍未获全局支付。 |
 | audit_reply_cap.py/.json | 独立单位客户重放两个旧完整SPE，各258比较；各126条回复上限；精确势最大值及两个不成立普遍提升。默认打印、可--output排他新建。 |
 | fresh_maxima_projection.py/.json | 真正完整membership投影：actual5+OPT5+freshFmax+freshKmax，4095变量、798行；数值上界约2.08459>2，无策略树、无精确最优证书。 |
