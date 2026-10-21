@@ -6,6 +6,8 @@
 
 | 尝试与失败点 | 仍可回收什么 | 改变什么才值得重试 |
 | --- | --- | --- |
+| 仅依实际终局负载校正，要求Σf(c)≥OPT且f0=0、f1=1：[五客户无拥挤完整SPE](../current/customer_attraction/collision_free_occupancy_obstruction.md)给Σf(c)=W4<OPT5；[任意人数族](../current/customer_attraction/collision_free_three_halves_family.md)进一步迫使一般f0=0的普遍支付至少f1≥3/2 | 调和势仍能表示收益差；覆盖矩行空间与SPE真实比较仍可用 | 调整f(2),f(3),…无法影响本例；必须改变单次覆盖信用或使用主题/真实分支信息，不能把这当half反例 |
+| 从终局收益低维span推固定非负兴趣类型基：[覆盖矩极射线](../current/customer_attraction/coverage_moment_geometry.md)表明每非空类型在m≥2均承重 | 可依实例有理消元到d种类型，保留全部收益、覆盖、SPE及效率真值 | 允许自适应选支持，或放松精确保留全部数值；span与非负行锥不得混同 |
 | 用实际均匀缩放背景αc支付弱安全预算：[完整SPE无限族](../current/customer_attraction/fractional_actual_load_counterexample.md)对每个m≥4满足(m−1/2)M>W | OPT≤(2m−1)M的逐客户代数保留，四人17客户差11/26；完整离轨策略以有限BI奖金续局证明，不用错误的固定tie贪心 | 可改选其他静态背景、保留精确税G_C或直接跨分支支付；真正聚合安全值及mM≤W+G_C另行研究，本族均未否定 |
 | 用任意最低静态CCE替代PNE作福利比较：[十三客户完整反例](../current/customer_attraction/worst_cce_welfare_counterexample.md)中W9，全部静态CCE期望福利至少137/15，精确最低2785/297 | 比最差PNE失败更强；完整SPE及静态原始/对偶可复核，真正静态安全值v3≤3 | 需要新的跨真实分支预算或真正安全值桥，不能只把PNE换成CCE；不反驳半覆盖 |
 | 把顺序 SPE 终局当成静态 NE，套静态次模福利界：[完整反例](../current/customer_attraction/literature.md)中 SPE 终局仍有静态盈利偏离 | 覆盖的次模性、均分收益与静态有效效用结构仍成立 | 比较偏离后**原策略的真实后继**，或另证所用类的 SPE→NE 桥 |
