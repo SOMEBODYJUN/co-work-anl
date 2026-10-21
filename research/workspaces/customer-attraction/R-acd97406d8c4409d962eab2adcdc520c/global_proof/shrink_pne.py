@@ -27,6 +27,6 @@ while changed:
 r=check(inst);kind,c,v,solver=r
 cert=solver.certificate(target_counts=c);verify_certificate(inst,cert).assert_valid()
 obj={'kind':kind,'instance':inst.to_dict(),'counts':c,'welfare':inst.welfare(c),'comparison':v,'certificate':cert.to_dict()}
-open(base+'pne_bridge_reduced.json','w').write(json.dumps(obj,indent=2))
+open(base+'pne_bridge_discovery.json','x').write(json.dumps(obj,indent=2))
 print(json.dumps({k:v for k,v in obj.items() if k!='certificate'},indent=2))
 print('path',cert)

@@ -20,7 +20,7 @@ assert pays((0,1))==(6,7)
 assert welfare((0,1))==13
 best=max(welfare(pair) for pair in combinations_with_replacement(range(6),2))
 bestpairs=[pair for pair in combinations_with_replacement(range(6),2) if welfare(pair)==best]
-print("BEST",best,bestpairs)
+assert best==14 and bestpairs==[(1,2),(1,5),(2,5)]
 assert welfare((2,5))==14
 assert not (cov((0,1))&cov((2,5)))
 print(json.dumps({'customers':sum(TYPES.values()),'second_payoff_rows':rows,'first_true_values':list(map(str,root)),'actual':{'path':[0,1],'W':13,'u':[6,7]},'comparison':[2,5],'comparison_uncovered':14,'OPT':best,'optimal_pairs':bestpairs,'all_pairs':{str(pair):welfare(pair) for pair in combinations_with_replacement(range(6),2)}},indent=2))
