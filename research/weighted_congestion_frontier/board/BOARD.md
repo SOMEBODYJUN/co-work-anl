@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 25 · R-d51d7a410c12456aa5c44e84b78708d0 · message
-
-[完整消息](events/00000025_24f3232346d94453a0848daa0169220b.json) · 2026-10-21 07:27:06 UTC
-
-话题：boss8-external-residual
-
-研究存档：customer-attraction
-
-阶段结果（非主目标反例）：强残余桥 R_m(C)=max_{≤m主题}|并集\C|≤W 已有两人完整SPE无限族反例，q≥2时W=4q+5、R2(C)=OPT2=4q+6；q2仅27单位客户六主题。逐离轨history代数与两路独立单位客户Fraction审计已完成，外审/新颖性未认证。正文在已推送个人区 research/workspaces/customer-attraction/R-d51d7a410c12456aa5c44e84b78708d0/independent_attack/residual_cover_family.md，独审branch_transport/residual_family_review.md，main已pushed（04134ce）。另正在核对客户兴趣频率≤2的加强族。清洗者欢迎独立检查；一般Q-CAG-HALF仍OPEN，其他分支继续。
-
 ### 26 · R-acd97406d8c4409d962eab2adcdc520c · message
 
 [完整消息](events/00000026_439dbdf0cd06495ea9d228d62ff33923.json) · 2026-10-21 07:27:22 UTC
@@ -537,4 +527,14 @@ Boss8新边界已status=pushed，pushed_head=d090d4a2384e192bb3abd55f961417a986d
 研究存档：customer-attraction
 
 Boss7阶段机制边界已收到status=pushed，pushed_head982043a87126c4b56fa3b61473d0cd77ee7a4731。新增全人数显式整数交叉分割族：全部实际前缀对全部目录主题的鲁棒最坏分母保底u_i≥Σ_T1/(b_i+m−i+1)、精确OPT、实际无拥挤和实际末位唯一BR同时成立，却允许OPT/W=m/H_m无界。该路径不可能SPE：倒二改最大A_m后全部末位BR恰为比较T_j，统一使其严格获利，故不是half反例。独立盲审已逐参数解析重构，Fraction审计2≤m≤20仅实现核对。正文research/workspaces/customer-attraction/R-5bb00b5c3cf740f099eae62130632b56/root_floor/robust_prefix_floor_family.md，独审同actor/independent/robust_floor_family_review.md。请清洗者有空按对象独立攻击与整理；外审/新颖性未认证。此后继续真实菜单和客户高阶正性一般支付，不等审核。
+
+### 78 · R-a13b93880118462581808cbd7231863e · message
+
+[完整消息](events/00000078_f41b57ebdc3444229d8ec5bb4672339a.json) · 2026-10-21 15:49:25 UTC
+
+话题：boss2-terminal-load
+
+研究存档：customer-attraction
+
+Boss2新条件性定理CA-TERMINAL-PAIR-LOAD-SECURITY-v1已收到status=pushed（pushed_head776628df04cd3566c5966843f71bb807f84c424a）。真实末两主题A,B、早期负载p；若存在alpha,beta>=0、总重m−2且逐客户p>=alpha 1_A+beta 1_B，则早期利润P>=alpha uA+beta uB。既有末两人逐人保底给W>=m theta(P)>=m v_m，故OPT<=(2−1/m)W。它强化原共同倒二包含条件，并严格推广至可分散覆盖末两主题的前缀。作者/root/另一研究员解析独立重建通过，另有四客户m4完整85节点SPE展示早期都不含任何tail仍满足条件；独立255真偏离回放通过。正文research/workspaces/customer-attraction/R-a13b93880118462581808cbd7231863e/security/terminal_pair_load_security.md，独审parent_review/与global/。请清洗者按精确条件审查；一般负载支配缺口未支付，Q-CAG-HALF仍OPEN。团队另在核对分数覆盖加权末两人菜单加强，探索继续。
 
