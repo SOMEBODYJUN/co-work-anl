@@ -37,7 +37,7 @@ def prepare(k,m,mass,rng):
  return masks,member,pay,actions,term,root,np.array(rows)
 
 
-def attack(k,m,trial,rng):
+def attack(k,m,trial,rng,coefficient=None):
  n=(1<<k)-1
  # Diverse sparse, dense and almost-exchangeable starts.
  if trial%3==0:
@@ -53,7 +53,7 @@ def attack(k,m,trial,rng):
  for comp in itertools.combinations(range(k),min(m,k)):
   o=(member[list(comp)].sum(axis=0)>0).astype(float)
   for a in support:
-   target=o-w-m*pay(root,a)
+   target=o-w-(m if coefficient is None else coefficient)*pay(root,a)
    ans=linprog(-target,A_ub=rows,b_ub=np.zeros(len(rows)),A_eq=np.ones((1,n)),b_eq=[1],bounds=(0,None),method='highs')
    if ans.success and -ans.fun>best['value']+1e-10:
     best={'value':float(-ans.fun),'comparison':comp,'target_action':a,'root':root,'weights':{str(mask):float(v) for mask,v in zip(masks,ans.x) if v>1e-9},'actions':[{'counts':q,'action':a} for q,a in actions.items()]}
@@ -61,10 +61,10 @@ def attack(k,m,trial,rng):
 
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--topics',type=int,default=6);p.add_argument('--players',type=int,default=5);p.add_argument('--trials',type=int,default=40);p.add_argument('--seed',type=int,default=20261021);p.add_argument('--output',required=True);args=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--topics',type=int,default=6);p.add_argument('--players',type=int,default=5);p.add_argument('--trials',type=int,default=40);p.add_argument('--seed',type=int,default=20261021);p.add_argument('--coefficient',type=float);p.add_argument('--output',required=True);args=p.parse_args()
  rng=random.Random(args.seed);records=[];start=time.time()
  for trial in range(args.trials):
-  rec=attack(args.topics,args.players,trial,rng);rec['trial']=trial;records.append(rec)
+  rec=attack(args.topics,args.players,trial,rng,args.coefficient);rec['trial']=trial;records.append(rec)
   print(json.dumps({k:v for k,v in rec.items() if k not in ['weights','actions']}),flush=True)
   Path(args.output).write_text(json.dumps({'scope':'floating LP, legal complete count policies only','parameters':vars(args),'elapsed':time.time()-start,'records':records},indent=2)+'\n')
   if rec['value']>1e-8: break
