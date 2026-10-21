@@ -15,7 +15,7 @@
 | [additive_near_degree_lower_bound.md](additive_near_degree_lower_bound.md) | 新身份WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1：每整数d≥2²⁰都有无[d−1200⌈log₂d⌉²]-PNE的纯d次游戏。重新统一证明n(d)条件，不把固定c阈值非法代入可变c。 |
 | [weight_depth_threshold.md](weight_depth_threshold.md) | 旧高度势的精确反演、实际改善闭词的长链见证及最少权类/潜在玩家高度的Θ_c(log d)正反桥。高深度不是失稳充分条件；固定c不可换任意c(d)→1。 |
 
-连续英文[LaTeX主文](structural_methods_article.tex)和[BibTeX](structural_methods_article.bib)正在与最终审查整合。全状态近次数结果沿用单独新Claim；[旧d/10证明](../linear_degree_allstate_lower_bound.md)及其冻结审查仍有独立工具价值，原身份不改。
+连续英文[完整PDF](structural_methods_article.pdf)、[LaTeX主文](structural_methods_article.tex)及[BibTeX](structural_methods_article.bib)已经整合；[全文与PDF产物核查](../../../reviews/weighted_congestion/structural_reconstruction/structural_methods_article_review.md)记录实际最终版本、引用、真实审查覆盖与逐页检查。全状态近次数结果沿用单独新Claim；[旧d/10证明](../linear_degree_allstate_lower_bound.md)及其冻结审查仍有独立工具价值，原身份不改。
 
 ## 已发生的独立审查
 
