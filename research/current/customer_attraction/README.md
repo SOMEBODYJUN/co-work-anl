@@ -21,6 +21,8 @@
 
 全部 CA 精确身份在[现行账本](../claims.md)，来源证明、当前重构、内审、外审与实现分别在[五轴状态](../../review_status.json)。本次整理不改变这些状态。
 
+既有[八客户静态CCE反例](eight_customer_cce_welfare_gap.md)还直接否定 `W≥Z_m` 的iid对称混合Nash覆盖支付桥：任何该Nash乘积分布都是CCE。静态基准 `m v_m≤Z_m≤OPT_m` 保留，真正安全值聚合及一般半覆盖仍OPEN。
+
 ## 按当前问题选择资产
 
 - 重构正面机制：读[三人锐界](three_player_sharp.md)、[四人真实偏离界](four_player_bound.md)，需要任意背景时再读[三人利润](three_remaining_profit_bound.md)、[四人利润](four_remaining_profit_bound.md)。

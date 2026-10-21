@@ -13,3 +13,5 @@
 原有树平均分离向量不是SPE，其模板范围未扩大；这次真实SPE反例来自既有CCE正文。动态iid的五人特定实例强桥数值仍可未判定，一般强桥已被另一个三人实例否定，两句话并不冲突。
 
 实际来源：[iid静态定理及推论](../../current/customer_attraction/iid_security_and_flow_barriers.md)、[八客户原证明](../../current/customer_attraction/eight_customer_cce_welfare_gap.md)、[十三客户原证明](../../current/customer_attraction/worst_cce_welfare_counterexample.md)。发现分支原稿在research/workspaces/customer-attraction/R-fc3359276dfd40798e003ae879bde525/security_game/independent/iid_strong_bridge_status_correction.md。
+
+并发来源记录：远端ab8dc9fd也独立修正同一强iid开放状态；合并时保留其相同数学结论，与本页较完整显式计算及独立审查合并，未将此简单推论宣称为新实例或新颖结果。
