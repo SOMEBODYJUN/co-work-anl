@@ -10,6 +10,10 @@ Boss5接续一般 Q-CAG-HALF：CAG-MODEL 下任意共同有限目录、任意人
 
 本轮没有一般证明或真正主目标反例。阶段资产按实际身份分别保留：
 
+同一clone的后续工作见[接续地图](continuation/README.md)与[接续精确账本](continuation/CLAIMS.md)：
+稀疏租金无界已升级为两个客户上的完整SPE；有符号总delta任意查询及任意最优组合
+预算已有精确失败；clock与skip-premium分解则保留一条更宽的正面root预算接口。
+
 | 位置 | 数学内容、用途和状态 |
 | --- | --- |
 | [global/optimal_omission_exchange_counterexample.md](global/optimal_omission_exchange_counterexample.md) | 二人71单位客户完整SPE，唯一最优TQ遗漏36>W35；另有全部k>=3解析族。否定“存在有利最优组合支付全部遗漏”的加强桥。作者与另一研究员独立重建全部有序历史和全参数比较；不是half反例。 |
