@@ -11,10 +11,23 @@
 | [exchange/audit_unique_optimum_omission.py](exchange/audit_unique_optimum_omission.py)、[发现者冻结审计](exchange/unique_optimum_omission_audit.json) | 从单位客户定义核验七节点、42含自身比较、全部21主题对及唯一最优；有限完整证书用于反驳明确的全称辅助桥。 |
 | [parent/audit_optimal_omission.py](parent/audit_optimal_omission.py)、[独立冻结审计](parent/optimal_omission_independent_audit.json) | root 仅见原始类型与策略陈述、未读发现代码的独立单位客户重构，全部精确核验通过。外审/新颖性未认证。 |
 
+## 可扩展机制、精确局部正面式与反例
+
+| 文件 | 数学资产、准确范围与接续 |
+| --- | --- |
+| [induction/two_player_full_terminal_pushforward.md](induction/two_player_full_terminal_pushforward.md) | **解析局部定理。** 任意合法背景、恰两人、任意根查询分布p，真实完整终局作为静态竞争分布时，原首人平均收益D与独立额外查询C满足 D−C≥Σp_x²/((b_x+2)(b_x+3))。仅末位BR足够；单客户空/非空目录取等。root及另一研究员独立重构。 |
+| [independent_pushforward/two_player_pushforward_review.md](independent_pushforward/two_player_pushforward_review.md) | 未读发现稿的独立重建、加权BR余量和sharpness；局部正面式不能直接外推多后继。 |
+| [representation/terminal_pushforward_D_lt_C.md](representation/terminal_pushforward_D_lt_C.md) | **强一般推送桥的真实反例。** 既有34客户三人例加空主题，完整57节点策略，D=29/30<C=41/40。实际根收益29/3，故弱C≤u仍未被否定。 |
+| [parent/audit_integer_push_34.py](parent/audit_integer_push_34.py)、[独立冻结结果](parent/integer_push_34_independent_audit.json) | root只据原始客户类型与策略规则，独立展开34单位客户核验399含自身/342真正比较及D、C、W32/OPT34，不导入发现代码。 |
+| [representation/weak_pushforward_individual_reduction.md](representation/weak_pushforward_individual_reduction.md) | **条件归约，非一般定理。** 若任意人数/背景/查询分布的弱C≤u成立，静态m槽安全值与共同目录预算给每人u_i≥OPT_m/(2m)，从而half。待支付真实后继的查询适应性。 |
+| [counterexample/reciprocal_isolation_barrier.md](counterexample/reciprocal_isolation_barrier.md) | **任意k的架构锐障碍。** 双向隔离末位惩罚，实际C₁…C_k,D时，OPT/W≤(3k+2)/(2k+2)，旧3/2族逐k取等。只改组大小/公共池不能放大至half反例。 |
+| [independent_no_go/reciprocal_isolation_review.md](independent_no_go/reciprocal_isolation_review.md) | 未读发现路线独立得到x_i≥v_i≥d≥x_i/2+y_i，核k=1、零实例、额外目录与非均匀等号。 |
+| [counterexample/breaking_isolation_notes.md](counterexample/breaking_isolation_notes.md) | 撤销隔离后的跨分支逃逸缺额E给精确支付式及half反例必要阈值E>(k+2)d/3；多个相同追随者的简单方案也有参数冲突。此接口未被一般SPE自动支付。 |
+
 ## 当前真正缺口
 
 早期偏离可以改变所有后继行动。一般跨真实分支福利支付尚未闭合；上述遗漏反例不反驳 OPT_m−W≤m u_i、均值价格桥、真正安全值聚合或主目标。
-正在独立攻击：更早价格/弱机会缺口、全树客户共同表示、可信完整策略构造、合法背景不变量。
+正在独立攻击：自由选择静态竞争分布的extra-one门槛、更早价格/弱机会缺口、全树客户共同表示、可信完整策略构造、合法背景不变量。强D≥C已失败，弱C≤u仍OPEN；两块复制的暂报阳性因混淆实际收益与额外插入分母被root否决，不能升级。
 新推导会先标明 exact statement 和承重义务，成熟结果经独立攻击后再升级。
 
 [精确账本](CLAIMS.md)、[当前义务](RESEARCH_STATE.md)、[失败机制](FAILED_ROUTES.md) 维护本桌面状态；共享 canonical 账本的状态没有因个人备份自动改变。
