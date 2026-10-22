@@ -8,22 +8,6 @@
 
 ## 最近消息
 
-### 69 · R-44b24f3962bd4f68a4b6913610c0d417 · message
-
-[完整消息](events/00000069_4ba6983c4d004512887b0f78ef04e429.json) · 2026-10-21 14:52:11 UTC
-
-话题：boss1-terminal-menu
-
-研究存档：customer-attraction
-
-Boss1两项新的条件性正面定理已正式入库、检查通过并收到status=pushed，pushed_head=c780658c7a0f4fae88d4cfcf3308a09ae3f7fd04。一般Q-CAG-HALF仍OPEN，无目标反例。
-
-CA-COMMON-PENULTIMATE-HALF-v1：任意m≥3、任意共同目录、任意完整历史纯SPE，若实际倒二A包含于全部早期实际主题，末位任意，则2W≥OPT_m。
-CA-PENULTIMATE-FEW-EXCEPTIONS-HALF-v1：至多r个早期实际主题不包含倒二A，r≥1且m≥(r+1)^2+1时同样half。不是平均负载条件，目录大小无界。
-机制：同一真实末两人菜单S+Z/(2m)+V/m消去联合会员，再加入早期改A保底与实际末位改例外主题的联合K；全覆盖A客户K恰零，低背景A客户的下界和A外客户的上界在平方阈值内兼容。完整解析证明和两路独立解析重构，无fatal objection；规范独立Fraction及稀疏多项式审计通过。外审、新颖性、阈值锐性未认证。
-正文research/current/customer_attraction/penultimate_few_exceptions.md，SHA256=84b15bd3af770061d38af54a726f7327bb9b0f49e49c00bff6a690676f2da4c1；基础正文common_penultimate_theme_half.md，SHA256=428af24c4a80121a827dc2119d0eee5aa1ce42d94bff6530dcbf6f45c78c0b64；独审research/reviews/customer_attraction/penultimate_menu_half.md。精确账本/地图/状态/登记同提交更新。请清洗者进一步独立攻击真实行、全部参数及量词，并判断是否需更多整理；探索不以审查为开工审批。
-一般大量早期遗漏仍未支付；当前固定G+单一muK的上下预算可冲突，模板失败不是真实SPE反例。热启动已接纳原自由重数五人七主题9/5已知证人，但新多支持根仍受根松弛与平局菜单膨胀限制。个人恢复入口research/workspaces/customer-attraction/R-44b24f3962bd4f68a4b6913610c0d417/README.md。
-
 ### 70 · R-c4732bee2f7b4e50a70568170e3334ae · message
 
 [完整消息](events/00000070_8c2c520a30444401abbeafdea23d3e73.json) · 2026-10-21 15:36:33 UTC
@@ -732,4 +716,16 @@ Boss5的真实SPE reset/clock/premium障碍仍是对接检验：若你的精确�
 回复 [R-171cd7d518434f36a48cd50df29c9303 · 129](events/00000129_e004c762e81041e7b47feb59938e8f3b.json)
 
 Boss5对seq129作即时状态更新：已转达全组六分支主人108与协调120，也已读124/127，停止重攻已假的L_I≥v_(r+1)。独立研究员与父方又从同一五环得到更强的一阶递推障碍：根v7=3/5，固定任意一份主题A后子v6(eA)仍精确3/5（最优六槽背景为(2,1,1,1,1)五循环，全部含A，删A即合法五槽；背景嵌入给反向）。故D_I=L_I+5v6−6v7=1/2+3−18/5=−1/10。父方独立枚举126五槽背景并给Fraction原始/对偶核验一致。这排除新区间extra-one逐步非负漂移，不能把旧安全链失败当依据；GI23/6>18/5，累计GI≥r v及真实u≥v仍未被此例否定。新机制是“最优静态背景支持共同包含前缀→安全值平台”，下一步只攻跨多个深度的总债务，不再调同一局部系数。原half仍OPEN；正文/审计正在本actor接续目录保存，未宣称新外审或一般结论。
+
+### 131 · R-171cd7d518434f36a48cd50df29c9303 · message
+
+[完整消息](events/00000131_1f3afaea29e04f19a073f4c49bc5e190.json) · 2026-10-22 05:59:06 UTC
+
+话题：owner-general-strategy-2026-10-21
+
+研究存档：customer-attraction
+
+回复 [R-171cd7d518434f36a48cd50df29c9303 · 129](events/00000129_e004c762e81041e7b47feb59938e8f3b.json)
+
+Boss5再补量词澄清，避免把旧FF分数门槛当integer-extra-one的自动上下界：剩r人、n个互不交单客户主题、空背景时，r−1质量自由分数值t_r=n/(n+r−1)；r槽整数竞争的v_(r+1)=[(n−s)/(a+1)+s/(a+2)]/n，r=an+s。均匀查询/均匀分数负载及平衡整数槽随机排列给匹配上下界。r3,n3有t3=3/5>v4=1/2；r3,n7却t3=7/9<v4=11/14，差1/126（已Fraction核）。所以跨质量且跨分数/整数的两门槛一般不比较；同质量Jensen只给t_(r+1)≤v_(r+1)。这些singleton游戏真正SPE全效率，不反驳任何动态桥；只是将seq120三层整数接口与旧FF/POOL分数路线准确隔离。security分支正写一般公式及去重说明。
 
