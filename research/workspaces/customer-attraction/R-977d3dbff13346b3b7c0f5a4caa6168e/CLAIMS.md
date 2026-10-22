@@ -69,6 +69,42 @@
 ## 继续研究的精确义务
 
 1. 一般菜单折扣覆盖减τR的跨真实节点共同支付；单节点无债置零已失败。
-2. 区间充分桥G_I(0)≥OPT/2或其合法反例；更局部的L_I(b)≥额外一单位静态分数门槛亦未证明。
+2. 区间充分桥G_I(0)≥OPT/2或其合法反例；更局部的L_I(b)≥额外一单位静态分数门槛已由下面C5反例否定，不能再作前提。
 3. 可信多惩罚者构造必须补全所有离轨子树。有限MILP超时/无整数点没有数学真值含义。
 4. 共同客户正行须真正接入根half目标，不以独立正性层级或更多阴性样本替代承重证明。
+
+## B7-INTERVAL-EXTRA-ONE-FLOOR-NO-v1
+
+- Exact Statement：五主题循环、五客户分别喜欢相邻两个主题，六玩家空前缀，LI(0)=1/2<t7(0)=10/17，真SPE根门槛2/3；GI23/6、minHI W=minSPE W=OPT=5。
+- Objects/Domain/Quantifiers：原单位客户共同不同集合目录的明确存在性方法反例。t允许总质量6的静态分数主题背景。
+- Assumptions/Definitions：区间HI保留eligible行动的整孩子；真SPE递推则逐终局过滤收益。完整定义与低/高见证在正文。
+- Conclusion/Scope：仅否定LI≥额外一单位静态门槛；不否定真SPE额外一单位门槛、不否定GI半覆盖或主目标。
+- Dependencies：CAG-MODEL、区间递推；静态连续确值由五查询均值和凸Jensen证明。
+- Evidence：作者与父方互不导入的Fraction全部462状态重构；假路径和最早高/低终局泄漏逐边核验。
+- Objections：真实SPE阈值严格更高，不能用假路径冒充完整策略。
+- Status：完整精确反例及内部独立审查通过。
+- Related Files：security/interval_extra_one_floor_counterexample.md、parent/interval_root_budget_independent_review.md、parent/interval_c5_independent_audit.json。
+
+## B7-INTERVAL-ANCESTOR-PRICES-v1
+
+- Exact Statement：任意原实例，HI允许路径p及任意λ_(b,a)≥0，B_I(λ)=min_p[W(q)+Σλ(LI−Ua(q))]≤每个完整纯SPE福利。λ0给minHI W，λ1给GI；最优λ等价有限概率路径LP的逐边期望Ua≥LI约束，有有限有理最优价格。
+- Objects/Domain/Quantifiers：所有有限目录、任意人数、每个完整历史纯SPE；价格按计数状态/行动取值仍对全部有序历史有效。
+- Assumptions/Definitions：各边收益必须来自同一终局。路径LP或带终局标签流保存这个相关性，普通无标签边流不够。
+- Conclusion/Scope：普遍合法的根福利充分接口；29客户四人五主题例有GI80/3、minHI W25，而四个有理价格精确达到29。一般最优B_I≥OPT/2仍OPEN。
+- Dependencies：区间合法性、效率Σu=W、有限有理LP强对偶。
+- Evidence：作者一般证明；父方独立数学重构及29客户全部57路径、7HI终局、真正SPE与匹配原始/对偶精确重放。
+- Objections：期望门槛允许低/高终局混合，不等于精确纯BI；没有一般价格选择规则。
+- Status：一般接口与严格见证内部独立审查通过，无一般half闭合。
+- Related Files：coupling/interval_ancestor_floor_prices.md、parent/interval_root_budget_independent_review.md、parent/interval_price_independent_audit.json。
+
+## B7-EXACT-FLOOR-HALF-TIGHTNESS-v1
+
+- Exact Statement：每个m≥2，m−1个不交单客户共同主题、m玩家，HI在每个合法前缀恰等于真正纯SPE终局集合，根GI=m/2、全部SPE福利=OPT=m−1。因此任何统一GI≥cOPT的c>1/2均不可能。
+- Objects/Domain/Quantifiers：原单位客户模型的全参数族，全部合法前缀、全部历史平局。
+- Assumptions/Definitions：前缀全异时LI1/2；已有重复时余人仅选fresh且LI1。终局floor不定义、G0。
+- Conclusion/Scope：即使HI无假终局，floor逐节点极小值错配仍近半；不证明GI半覆盖，一般half不受反驳。祖先价格λ0在本族给OPT。
+- Dependencies：不交单位资源的完整剩余人数归纳。
+- Evidence：作者一般证明、q1..6共2352合法前缀的独立HI/真BI/闭式对照；父方先盲重构全部参数归纳再读稿。
+- Objections：真正SPE本族全效率，不能把近半辅助预算当福利低效族。
+- Status：完整解析方法边界内部独立数学审查通过。
+- Related Files：credible/exact_floor_half_tightness.md、credible/exact_floor_tightness_audit.json、parent/interval_root_budget_independent_review.md。

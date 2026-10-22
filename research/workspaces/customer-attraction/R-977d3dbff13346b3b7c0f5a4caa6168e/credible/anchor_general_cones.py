@@ -16,9 +16,13 @@ spec=importlib.util.spec_from_file_location('old_cone',OLD)
 module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 
 class AnchorSearch:
-    def __init__(self,k,r):
+    def __init__(self,k,r,individual=False):
         self.k,self.r=k,r;self.p=k*(r+2)+r;self.m=k+r;self.scale=math.lcm(*range(1,self.m+1))
         self.supports=[[(1<<(r+2)*i)*((1<<(r+2))-1) for i in range(k)], [1<<((r+2)*i+1) for i in range(k)]]
+        if individual:
+            self.supports=[]
+            for i in range(k):
+                self.supports.extend([[(1<<(r+2)*i)*((1<<(r+2))-1)],[1<<((r+2)*i+1)]])
         for core in range(1,1<<(2*r)):
             mask=0
             for b in range(r):

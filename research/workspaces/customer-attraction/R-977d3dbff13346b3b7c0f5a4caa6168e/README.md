@@ -32,3 +32,16 @@
 | [压缩独审](parent/minvector_independent_review.md) | 证明min/集合并、G与相关性边界；后续区间加强尚按分支正文状态读取。 |
 
 当前一般义务仍未闭合。菜单公式指出需支付组合债与点态余量；区间递归可能保留不兼容假终局；表示障碍没有提供根目标分离。下一步直接攻击这些真实义务，不能以更多有限阴性样本作为证明。
+
+## 根预算的接续入口
+
+| 文件 | 精确新增认识与用途 |
+| --- | --- |
+| [区间局部门槛反例](security/interval_extra_one_floor_counterexample.md) | 五环五客户、六玩家，LI=1/2<t7=10/17；真正SPE门槛2/3且全覆盖。仅否定LI的局部静态门槛桥，不能误称EXTRA-ONE-LEADER或half反例。 |
+| [祖先门槛价格](coupling/interval_ancestor_floor_prices.md) | 任意非负边价格给普遍根下界，λ0=minHI W、λ1=GI；最优价格有精确有限路径LP/终局标签流。29客户例四个价格将下界从80/3提高至29，父方独立逐路径核验。 |
+| [floor半常数锐性](credible/exact_floor_half_tightness.md) | m−1个不交单客户主题、m玩家，HI恰真SPE，GI=m/2、OPT=m−1；任何普遍大于1/2的floor支付常数不可能。它不证明half。 |
+| [根预算独审](parent/interval_root_budget_independent_review.md) | 上述三项的一般推导、两份父方独立标准库审计与精确状态数/原始对偶核验。 |
+| [三人真实转移](global/terminal_three_transfer.md) | 任意合法背景3R(Ttuple)≤7P/3+ΣV，只用末位比较；不改善已有5/3常数。 |
+| [复制失败机制](credible/two_tail_replication_obstruction.md) | 单组2/3参数扩成k≥2组时，old A的严格偏离收益7>6，任何真实末两人续局均无法惩罚。父方已逐类重构，按正文状态使用。 |
+
+当前优先开放义务是：一般GI(0)≥OPT/2，或更强的存在祖先价格λ使B_I(λ)≥OPT/2；真实菜单组合债如何与共同终局信用补偿仍缺一般构造。LI≥额外一单位静态门槛已经失败，不能再把它作为归纳前提。
