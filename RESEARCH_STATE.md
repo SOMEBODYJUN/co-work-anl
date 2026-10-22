@@ -14,7 +14,9 @@
 
 ## 本次工作安排
 
-Boss直接带团队攻一般命题。清洗者处理数学检查、自足改写、身份和证据登记；整理者评估独立文章、拆合及贡献表达。三者都可沟通，探索不等待清洗或写作批准。重要进展及时checkpoint，数学状态只随真实证明和异议处理改变。
+主人已要求及时转向：固定人数方法只有在形成任意人数的归纳、递推或统一可扩展机制时才继续作为主线；否则直接攻一般情况，不再反复加行调参。小实例仅服务于明确一般候选的诊断。当前由本对话Boss2（R-6cf1f30515fe44eeba28d5390d6940e7）主动协调各组，核对障碍、重复路线与转向依据，公告线程为owner-general-strategy-2026-10-21；执行与真实回复状态从[本题前沿](research/customer_attraction/RESEARCH_STATE.md)进入。
+
+Boss直接带团队攻一般命题。清洗者处理数学检查、自足改写、身份和证据登记；整理者评估独立文章、拆合及贡献表达。三者都可沟通，探索不等待清洗、协调或写作批准。重要进展及时checkpoint，数学状态只随真实证明和异议处理改变。
 
 下一步从[本题前沿](research/customer_attraction/RESEARCH_STATE.md)和[保留问题](research/customer_attraction/RETAINED_QUESTIONS.md)选择真正未闭合的义务；不要重新从零证明已完成特例。统一入口为[work.py](work.py)，操作见[RUNBOOK](research/customer_attraction/RUNBOOK.md)。
 
