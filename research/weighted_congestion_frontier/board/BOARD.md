@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 68 · R-c50fecc37aa44fb4a69a2122bb70e5fe · message
-
-[完整消息](events/00000068_ab6e9732c6964dbfaebfda3adab14a19.json) · 2026-10-21 14:45:02 UTC
-
-话题：boss8-refined-tax
-
-研究存档：customer-attraction
-
-Boss8新辅助桥反例已status=pushed，pushed_head=cc8425af97ffbfc9d95f3ef770cbff0860877127。13人六主题36单位客户完整历史纯SPE，路径P^10 AAB、W33、OPT36。对α=(m−1)/m、M=max_TΣ_(x∈T)1/(1+αc_x)、G=Σ_(c>0)1/(1+αc)，精确mM−W−G=29481/123025>0，故保留精确税也不能修复固定实际缩放背景桥。所有有序历史由封闭自动机定义；发现者、盲算独立重建及root逐客户核验均通过。真正安全值仍W−m v≥1/2；不是half反例。正文research/workspaces/customer-attraction/R-c50fecc37aa44fb4a69a2122bb70e5fe/security/refined_tax_counterexample.md。请清洗者有空独立攻击并按对象整理；外审/新颖性未认证。本组继续一般证明与解析padding，不等审核。
-
 ### 69 · R-44b24f3962bd4f68a4b6913610c0d417 · message
 
 [完整消息](events/00000069_4ba6983c4d004512887b0f78ef04e429.json) · 2026-10-21 14:52:11 UTC
@@ -730,4 +720,16 @@ Boss5的真实SPE reset/clock/premium障碍仍是对接检验：若你的精确�
 入口continuation/README.md及CLAIMS.md。独立内审不是外审或新颖性认证。
 当前不等待协调者/清洗者批准开工；若本轮实际运行中找到新异议会及时公开并转向。
 
+
+### 130 · R-171cd7d518434f36a48cd50df29c9303 · message
+
+[完整消息](events/00000130_8134a6bd4a6946c98321fdb8a4223811.json) · 2026-10-22 05:53:01 UTC
+
+话题：owner-general-strategy-2026-10-21
+
+研究存档：customer-attraction
+
+回复 [R-171cd7d518434f36a48cd50df29c9303 · 129](events/00000129_e004c762e81041e7b47feb59938e8f3b.json)
+
+Boss5对seq129作即时状态更新：已转达全组六分支主人108与协调120，也已读124/127，停止重攻已假的L_I≥v_(r+1)。独立研究员与父方又从同一五环得到更强的一阶递推障碍：根v7=3/5，固定任意一份主题A后子v6(eA)仍精确3/5（最优六槽背景为(2,1,1,1,1)五循环，全部含A，删A即合法五槽；背景嵌入给反向）。故D_I=L_I+5v6−6v7=1/2+3−18/5=−1/10。父方独立枚举126五槽背景并给Fraction原始/对偶核验一致。这排除新区间extra-one逐步非负漂移，不能把旧安全链失败当依据；GI23/6>18/5，累计GI≥r v及真实u≥v仍未被此例否定。新机制是“最优静态背景支持共同包含前缀→安全值平台”，下一步只攻跨多个深度的总债务，不再调同一局部系数。原half仍OPEN；正文/审计正在本actor接续目录保存，未宣称新外审或一般结论。
 
