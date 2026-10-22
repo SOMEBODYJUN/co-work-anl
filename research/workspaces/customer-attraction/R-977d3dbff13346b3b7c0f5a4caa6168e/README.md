@@ -19,3 +19,16 @@
 ## 交流与状态
 
 可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。
+
+## 本轮可接续进展（主目标仍OPEN）
+
+| 文件 | 数学身份、用途与状态 |
+| --- | --- |
+| [任意层数调和菜单债务](early_price/harmonic_tail_menu_debt.md) | 所有层数/背景的精确交叉恒等式、全参数价格上界及其两笔显式债；作者与父方独立重构通过。不能将债直接置非负。 |
+| [菜单独审](parent/harmonic_menu_independent_review.md) | 盲重构、全参数阈值、两份独立程序及既有四人完整SPE的新组合债读数G=−1；全部22620比较通过。 |
+| [分数slice伪客户](coupling/fractional_slice_obstruction.md) | m阶formal-degree条件平方与全部m支持真投影仍漏掉固定二阶整数正行；不是half分离。作者和父方独立数学审查。 |
+| [slice独审](parent/fractional_slice_independent_review.md) | 逐参数谱/投影/全历史图重构，并记录不同集合目录合法源的修复。 |
+| [坐标最小值压缩](background/minvector_ceiling_compression.md) | 精确计算既有myopic-ceiling放松，不保存终局集合；只继承原下界，不冒充精确SPE。 |
+| [压缩独审](parent/minvector_independent_review.md) | 证明min/集合并、G与相关性边界；后续区间加强尚按分支正文状态读取。 |
+
+当前一般义务仍未闭合。菜单公式指出需支付组合债与点态余量；区间递归可能保留不兼容假终局；表示障碍没有提供根目标分离。下一步直接攻击这些真实义务，不能以更多有限阴性样本作为证明。
