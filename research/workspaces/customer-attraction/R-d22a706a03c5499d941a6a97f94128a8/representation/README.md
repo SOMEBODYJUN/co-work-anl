@@ -1,0 +1,17 @@
+# 表示分支：低单人收益与完整末端推送
+
+2026-10-21。本目录为未正式入库的研究备份。一般 `Q-CAG-HALF` 仍 OPEN。
+
+## 可复用精确事项
+
+1. [34客户末端推送反例](terminal_pushforward_D_lt_C.md)：三人完整SPE中，任意强制根分布的平均原玩家收益 `D` 未必支付独立新进入者对完整根末端推送分布的收益 `C`。精确 `D−C=−7/120`。弱式 `C≤实际根最优收益u` 不由该例否定。
+2. [34客户独立输入及完整证书](terminal_pushforward_34_D_lt_C_exact.json)。发现时先得到 [381客户证书](terminal_pushforward_D_lt_C_exact.json)，后由 root 指出的空主题机制缩小；381例只保留发现轨迹，不作为主要反例。
+3. [弱末端推送与逐人半覆盖的归约](weak_pushforward_individual_reduction.md)：若全背景弱式 `C≤u` 成立，就能推出每个真实位置 `u_i≥OPT_m/(2m)`，从而一般半覆盖。这是条件性归约，不是弱式的证明。
+
+## 探索代码与当前边界
+
+- `search_individual_floor.py`：合法全SPE实现路径→固定全策略锥的浮点LP交替，寻找 `u_first<某m主题并集/(2m)`。首批 `p=7,m=5`、8seed×10轮最低比1/9，未到1/10。有限无反例不证明逐人floor。
+- `search_terminal_pushforward.py`：固定真实后继策略锥、全部有序历史激励，攻击强式 `D≥C` 或 `--weak` 的 `u≥C`。强式反例已作独立有理化；浮点候选JSON本身不是证明。
+- `pushforward_candidate_*` / `individual_candidate_*` 仅是探索候选，成熟输入只使用明确标为 `exact` 的证书及其解析说明。
+
+下一步：继续攻 `C≤u`，并区分根背景为零与任意合法前缀背景；不要因强式失败放弃弱式，也不要把无反例数值扫描升格为证明。
