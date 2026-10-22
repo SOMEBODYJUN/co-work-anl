@@ -5,9 +5,11 @@
 ## 本轮状态与文件地图
 
 - [clock/README.md](clock/README.md)与[signed_history_exchange.md](clock/signed_history_exchange.md)：一般真实历史交换的两分支clock恒等式、标记incidence净流以及终局层合法合并。三人五客户完整SPE严格排除无残差交换与根单路径clock支付。全树审计和[父方独审](parent/clock_exchange_review.md)支持这些精确范围；未得到一般非负真实行构造。
-- relay/：正在保留同一比较组合及真实S/Z/F信用，研究中继变量被消元后的信息与完整回放树；草稿不是可靠一般支付。
-- interval/：仅将小实例用于累计G_I一般候选的诊断；已假的L_I逐点安全桥和extra-one逐步非负漂移不再列为目标。
-- kernel/：从公屏122定义独立重构单一多源核K_L，直接研究累计signed预算。旧首截面单位容量障碍不套用新单核；尚未宣称新方案支付成立。
+- [relay/README.md](relay/README.md)与[精确Claim状态](relay/CLAIMS.md)：保留同一比较组合及真实S/Z/E/F，得到净债务投影恒等式、非负包络差及3人8客户完整SPE不可辨识见证；真实克隆链提供全深度slack，但两客户任意人数族证明未配对跨角色差与clone slack分别可调和发散。均非一般half支付，未付义务为保留二者抵销后构造共同真实节点运输。
+- interval/：仅将小实例用于累计G_I一般候选的诊断；已假的L_I逐点安全桥和extra-one逐步非负漂移不再列为目标。新累计安全桥候选反例正在独立审查，尚不提升状态。
+- [kernel/README.md](kernel/README.md)与[单核正文](kernel/single_kernel_chronological_budget.md)：任意人数的删除identity和joint真实clock容量χ≤W；强D≤A净额精确退化到已失败的冻结partition桥。14客户例排除存在有利排列，71客户例排除添加查询无条件支付；真正signed预算仍等价half，未取得额外不等式。
+- [extra-one精确鉴别](relay/algebra/extra_one_pairwise_counterexample_and_values.md)：旧13人完整SPE反驳两查询pairwise max-root加强；同例WP、菜单minimax和自由整数背景仍满足根收益上界。附完整有理矩阵/上下证书，不把强桥失败传给弱桥。
+- [父方relay/kernel独审](parent/relay_kernel_review.md)：独立重构投影、全参数克隆抵销、单核容量和强桥失败接口；外审与新颖性未认证。
 
 六名按用户指定配置的内部研究员实际运行（四名分支负责人、两名继承同配置的内部独立研究员）；不把公屏异步通知当作在线合作。已读主人公告108及协调120/124/125/127/128，停止固定人数加行调参作为主线。
 
