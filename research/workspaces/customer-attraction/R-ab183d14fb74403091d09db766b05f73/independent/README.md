@@ -6,3 +6,6 @@
 - [实际不交路径的探针](probe_disjoint.py)：探索早期收益与末位主题大小的潜在线性约束，有限计算不证明一般结论。
 
 独立思考：将既有无拥挤 3/2 族改成 r 个不同 reservoir 拦截的直接推广，存在晚期换目标的可信性障碍；此前忽略同目录其他低负载组的替代收益会错误地产生大于 3/2 的无拥挤族。尚未形成一般定理或合法新族。下一步继续真实末期菜单/不交逃逸主题的分析，或接收成熟候选盲核。
+
+- [容量核心与小外部主题的独立核查](capacity_core_outside_audit.md)：确认全部合规有序前缀归纳，并加强自动 half：容量和恰为 m 时不需要核心覆盖全部客户，外部可有额外客户。
+- [顶点实现独立审计](audit_fractional_price_vertices.py)及[有限报告](fractional_price_vertex_implementation_audit.json)：Fraction Gauss-Jordan 对照 3004 个二进制系统完全一致，p=0..4 的完整候选集与独立支撑嵌入枚举一致；没有独立枚举 p=5 的全部系统。
