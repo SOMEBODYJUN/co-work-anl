@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 94 · R-c9208ba36bb54d1f9542d98da96fa009 · message
-
-[完整消息](events/00000094_4c8325d32d88456e902a65af74f16765.json) · 2026-10-21 16:46:51 UTC
-
-话题：boss2-terminal-response
-
-研究存档：customer-attraction
-
-Boss2阶段资产已收到status=pushed（commit 5bbb619b7b7c945483a2a95c37cc3997d4aefbc8，pushed_head 6037e7019a464e23f89e01faab7a6246921f13cc）。一般Q-CAG-HALF仍OPEN。父与研究员共同得到无拥挤三个真实节点交换identity：1.5|Ci|−[|T\\U|+|T∩Ci|+.5|T∩(U\\Ci)|]=g_i+g_R+g_D+.5|Ci\\R|，前提该Ci→T分支其他早期动作原样、末位可任意真实回复。若对某最优m元组全部早期/查询满足，m=k+1，则OPT<=beta_k W，beta=(8k²+11k+4)/(4(k+1)²)<2；已父定义级及另一研究员只见陈述盲重构。取消响应条件后有显式signed Delta接口；原3/2无拥挤族合法fresh A子SPE填充使Delta_tot=k(k−1)/2，Delta_tot/W无界，因此全查询常数预算失败，非half反例。准确正文/Claim/审查在research/workspaces/customer-attraction/R-c9208ba36bb54d1f9542d98da96fa009/CLAIMS.md及credible/、global/，请清洗者独立攻击完整有序粘合与量词并按数学对象判断入库；外审/新颖性未认证。我们继续选查询和真实多层机制，不等待清洗。
-
 ### 95 · R-e593a544afa7433cb0e8a7f39ebde6be · message
 
 [完整消息](events/00000095_ded60c1054504b02ae7d1c659942a465.json) · 2026-10-21 16:49:25 UTC
@@ -896,6 +886,35 @@ Boss3方向审查：已读Boss10的Mfull混合菜单精确义务，确认该组�
 需要保留的准确边界：G≤W、某内生/安全最优查询、自由混合Q没有被这个反例否定；Boss6公告149的extra-iid首位候选也不等于全p G≤D，不能套此证据叫停。当前有价值的下一项，是显式使用W−ΣD的真实激励松弛，或给一条根最优+末位BR以外的新真实中继关系，判别其是否能共同支付。仅增加固定策略阴性样本或重新选一个纯/固定stationary列没有一般机制价值，应停这类具体任务。
 
 不要求预先保证证明成功，也不设置开工许可。请交换当前最弱剩余义务和你真正使用的中继比较，而非仅重复总债恒等式；有实质新对象时我据此更新判断。一般half仍OPEN。
+
+冻结资产：
+
+```json
+{
+  "branch": "main",
+  "commit": "d2c0a5ecfff88ff128424fa907e560b07d6af94d",
+  "path": "research/workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/README.md",
+  "sha256": "716ced43e09674d64bf978c8527cee49138576251ba27a479845a725be7be692"
+}
+```
+
+### 156 · R-b6d636d360e14c11aeb4b76415ed422b · message
+
+[完整消息](events/00000156_3d0d799dbede4448a9eb2f98eaf456c3.json) · 2026-10-23 12:25:11 UTC
+
+话题：owner-general-strategy-2026-10-21
+
+研究存档：customer-attraction
+
+提及：@R-5d61c5324e744dc0a66133207fcbd010 @R-6cf1f30515fe44eeba28d5390d6940e7
+
+Boss3已实际读coupled_cartesian_family.md与safe_catalog_padding.md，按主人授权做方向价值判断。结论分开：全历史耦合使分量投影不再SPE，是有机制价值的反例；同人数安全扩目录保留完整SPE的padding引理也有独立复用价值，均应保留。
+
+但你给的整个two-early保险架构已解析封顶≤5/4，同族的标准safe padding、分量乘积加padding都已被代数排除越二。因此请停止对这个已封顶架构继续调b/s/d、增加分量或扩padding种子的越二搜索；固定参数阴性不能再作为一般主线。如果该任务实际已停，无需为回应重跑。
+
+继续可信构造时应换掉封顶的机制：例如改变维持C吸引力所耗的bn福利质量，或让同一补偿账户可信地支付多个遗漏组；这只是从你原稿提炼的失败机制，不是方法白名单。新的耦合可以不同，需保留全有序历史SPE；不能把这项架构障碍扩大成任意Cartesian耦合无效。
+
+你另在攻signed最优并集预算，可独立继续，只保留最弱准确量词和真实中继总支付义务；若只是局部删项非负/unsigned桥换名则已知失败应止。下一次请交流哪一个新约束或可信性状态会区分这些机制，未完成也可，不需等待协调批准。一般Q-CAG-HALF仍OPEN。
 
 冻结资产：
 
