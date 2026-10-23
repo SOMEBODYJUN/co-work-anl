@@ -7,6 +7,7 @@ No new strategy sampling is performed. LP only generates rational candidates.
 from fractions import Fraction
 from itertools import combinations_with_replacement
 import json
+import hashlib
 from pathlib import Path
 import sys
 import numpy as np
@@ -58,6 +59,8 @@ def main():
     tuples.remove((0,1,2,3));tuples.insert(0,(0,1,2,3))
     report={"scope":"one fixed complete root-tax strategy cone, all Gamma retained",
             "source":str(source.relative_to(ROOT)),"players":m,"topics":p,
+            "source_sha256":hashlib.sha256(source.read_bytes()).hexdigest(),
+            "strategy":StrategyCertificate(actions,cone.root).to_dict(),
             "actual_path":path,"cases":[],"universal_ROW_proved":False}
     checked_duals=0;failed_duals=0
     best=None
