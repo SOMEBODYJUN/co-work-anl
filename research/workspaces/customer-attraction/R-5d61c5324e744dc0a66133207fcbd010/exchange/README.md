@@ -21,3 +21,12 @@ also being conducted; it will be saved here if useful.
 all-k audit: no fatal objection; the fresh-fill primitive extends to arbitrary
 repeated touched-prefix actions. The exact sensitive re-designation step in the
 attainment proof was checked explicitly.
+
+`strict_population_family_audit.py` / `.json` symbolically verify an all-q>=22
+family with unique strict full SPE, loss q-10 and asymptotic W3/W2=12/13. The
+family statement is in Section 5 of the population note.
+
+A live new signed-query proof route is under attack in
+`signed_matching_net_probe.py`: a permutation of optimal topics would need its
+true continuation payoffs to pay Q_full_actual-|C_actual\O|. Its output is a
+finite candidate attack, not a general theorem.

@@ -35,15 +35,15 @@ ordered prefix separately; equal counts need not share selected continuations.
 The second primitive is also sound. If exactly one old B_i and no old A_i is
 present in its group, all other touched groups have a single A_j, and there are
 g untouched groups and g+1 players left, every SPE fills fresh groups with A's
-and finally chooses A_i. For g=0, A_i yields2 while every other action yields
-at most3/2. For g>0 a fresh A_j guarantees3 by the induction hypothesis, while
+and finally chooses A_i. For g=0, A_i yields 2 while every other action yields
+at most 3/2. For g>0 a fresh A_j guarantees 3 by the induction hypothesis, while
 fresh B is at most5/2, old actions at most2, and D at most2. Hence only fresh A
 is selected. This reasoning uses current players' actual child SPEs, never a
 frozen suffix.
 
 From a b-uncovered prefix of distinct A's, with g untouched groups and g+1
 players left, deviation D enters the first primitive and yields exactly2.
-An old A repeat yields at most3/2 and is excluded. The remaining current
+An old A repeat yields at most 3/2 and is excluded. The remaining current
 choices are fresh A (same state with g-1), fresh B (second primitive), old B
 (first primitive), or D (first primitive). They exhaust the common menu.
 Induction thus gives precisely the claimed list of terminal multisets as an
@@ -53,15 +53,15 @@ upper bound on possible outcomes.
 
 The complete-SPE attainment construction is valid. At a b-uncovered prefix
 containing an old A_i, one can designate old B_i as the next action, give it
-payoff2 using fresh-fill suffixes, and punish every **fresh A_j deviation** by
+payoff 2 using fresh-fill suffixes, and punish every **fresh A_j deviation** by
 re-designating that newly inserted A_j and selecting old B_j next. This makes
-the deviant A_j player's terminal payoff2. The induction decreases g, and all
+the deviant A_j player's terminal payoff 2. The induction decreases g, and all
 nonfresh-A deviation subtrees are either covered by the two primitives or may
 be completed by any finite-game SPE when their immediate upper bound is at
 most3/2. Crucially, the designated group must change from i to j on this
 branch; the source explicitly does so.
 
-At the root, B_1 followed by the one-extra suffix gives payoff2. Root D gives2.
+At the root, B_1 followed by the one-extra suffix gives payoff 2. Root D gives2.
 Each root A_i can be followed by the designated-B_i construction and also gives
 2 to the root player. Hence root B_1 is optimal with every off-path subtree
 SPE. Relabeling attains every all-A-plus-B_i multiset. The same root deviations
@@ -72,7 +72,7 @@ outcome set, not just its welfare bound.
 
 The source uses the correct refuted orientation
 L(full,m)>=L(maximal-only,m). For k>=2 its known full-catalog SPE W=2k+2 is
-strictly below the maximal-only minimum3k+1, while OPT remains3k+2. The ratio
+strictly below the maximal-only minimum 3k+1, while OPT remains3k+2. The ratio
 necessary condition tends to2/3. The proof does not identify the full catalog's
 minimum and does not refute the opposite monotonicity inequality. Keeping
 maximal topics as accounting objects while retaining the original menu and
