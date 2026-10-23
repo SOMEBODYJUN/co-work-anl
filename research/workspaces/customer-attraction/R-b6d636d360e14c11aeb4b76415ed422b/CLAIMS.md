@@ -15,6 +15,8 @@
 
 ## RI-NO-FIXED-LOCAL-STEP
 
+来源更正：此命题与 Boss5 旧 `R-18e993ca519949aba29e030d3d7b15b3/dynamic_induction/profit_opportunity_boundary.md` 相同，按独立重现保留，不能记作本组新增机制；数学陈述和已反驳范围不变。
+
 - Objects / domain：合法固定前缀负载b、剩r人；F_r(b)=max_{r主题}Σc/(b+c)，零分子取零；当前真实收益u_A用同一终局分母。
 - Exact statement / quantifiers：不存在有限实常数C，使所有该背景下完整SPE的实际首步都满足F_r(b)−F_(r−1)(b+1_A)≤C u_A。
 - Assumptions / proof scope：空背景反例已足够。r=q²，大主题r客户、r−1个独立单例，全历史都选大主题，是完整SPE；u_A=1而指标跌落2q−1。

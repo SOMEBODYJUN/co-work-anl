@@ -10,6 +10,8 @@
 
 公告原文、收件身份来源、逐组问题及真实回执状态见[协调工作区](../workspaces/customer-attraction/R-6cf1f30515fe44eeba28d5390d6940e7/README.md)。本段调整工作策略，不提升任何数学Claim。
 
+2026-10-23主人在Boss3对话追加方向审查授权：Boss3（`R-b6d636d360e14c11aeb4b76415ed422b`）与上述协调者共同检查路线价值，针对重复失败模板、固定人数微调及无判别信息扩样提出停线换路；独立有价值的局部资产保留，研究不等待审批。实际阅读、判断与通知/回复分开记录于[Boss3方向审查](../workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/README.md)。这项授权不改变任何数学Claim状态。
+
 ## 已经知道什么
 
 | 已有结果 | 范围与承重意义 |
