@@ -48,3 +48,25 @@
 - **Counterevidence / Objections：** 不排除多个后继覆盖同局部池、跨组惩罚或D被中间覆盖等逃逸结构。
 - **Status：** 解析证明和独立内部审查通过；外审/新颖性未认证。
 - **Related Files：** [正文](counterexample/reciprocal_isolation_barrier.md)、[独审](independent_no_go/reciprocal_isolation_review.md)、[逃逸义务](counterexample/breaking_isolation_notes.md)。
+
+## B10-PURE-FULL-ROOT-MENU-NO-v1
+
+- **Exact Statement / Quantifiers：** 存在八人、八主题、32名单位客户的共同目录游戏和完整有序历史纯SPE，实际根u=13/4；每个强制根行动B的完整八槽终局Z(B)均有合法额外查询A满足sum_(x in A)1/(1+c_x(Z(B)))=37/10>u。
+- **Objects / Domain / Assumptions / Definitions：** CAG-MODEL；额外查询不删除原根，分母加一。DAG在每步覆盖所有合法动作，不限制原问题历史量词。
+- **Scope / Conclusion：** 否定纯完整根菜单阻断；W=OPT8=32，同一菜单的独立混合值851/280<u。
+- **Dependencies：** 显式两块客户、完整DAG、有限精确比较及深度归纳；不调用一般直和。
+- **Evidence：** 发现者、root及另一研究员分别核验/重构；root审计13872节点、6435叶、59496含自身比较，混合原始/对偶有理匹配。
+- **Counterevidence / Objections：** 暂无成立异议；不能据此反驳混合菜单、自由整数背景extra-one或half；旧插入分母误判已撤销。
+- **Status：** 精确有限证书，独立内部重构；个人资产，未外审，未认证新颖性。
+- **Related Files：** [正文](counterexample/pure_full_root_menu_obstruction.md)、[root核验](parent/verify_two_block_dag.py)、[独立结果](parent/two_block_dag_independent_audit.json)。
+
+## B10-MIXED-FULL-ROOT-MENU-v1
+
+- **Exact Statement：** 对每个合法有序前缀b、每个剩r≥1、每份完整纯SPE，令Z(B)为强制当前根B后同一策略的完整r槽终局，u=max_B sum_(x in B)1/(b_x+c_x(Z(B)))。存在独立列分布Q，使对每个合法查询A，E_Q sum_(x in A)1/(b_x+c_x(Z(B))+1)≤u。
+- **Objects / Domain / Quantifiers：** 所有有限单位客户共同目录、任意总人数、全部历史和平局；Q依节点、实例、策略，但不观察查询抽样。
+- **Definitions / Scope / Conclusion：** 列含根，恰r竞争槽；强于自由r槽背景extra-one，弱于纯列。逐实际节点成立足以推出half。
+- **Dependencies：** 有限minmax、静态OPT_m≤2m v_(m+1)(0)；真实多后继比较仍未证明。
+- **Evidence：** r≤2解析成立；八人纯列反例混合值低于u仅是实例核对。
+- **Counterevidence / Objections：** r≥3有D(p)<C(p)、势排序失败与高插入二环，均不自动否定本候选。
+- **Status：** OPEN。
+- **Related Files：** [混合义务](induction/full_root_menu_mixed_obligations.md)、[接口](tree/full_terminal_menu_interface.md)、[联合势身份](tree/full_terminal_reply_column_identity.md)。
