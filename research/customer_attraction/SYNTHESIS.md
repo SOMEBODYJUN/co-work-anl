@@ -38,11 +38,25 @@ W\ge O F_m(\tau),\quad F_m(\tau)=1-\prod_{r=1}^{m}\left(1-\frac1{r\tau}\right),
 
 表示与辅助变换为一般问题保留了可检查的对象，但不应与福利证明混计。[集合值逆向归纳](../current/customer_attraction/exact_solver.md)按计数缓存可实现终局集合，同时为各有序历史独立重构续局；它没有把策略限制成 Markov 规则。[完整策略锥](../current/customer_attraction/strategy_cone.md)保留每条真实偏离，覆盖矩表示则精确区分线性资料、非负实现与激励方向；[覆盖矩正文](../current/customer_attraction/coverage_moment_geometry.md)明确说明末层行空间足够恢复数值，不等于末层不等式足够证明 SPE 或 half。[分数尾部水位化](../current/customer_attraction/fractional_tail_waterfill.md)对全部查询提供同一客户信用池，并精确保留根、背景和尾利润守恒，却不使降权后的对象继承原 SPE。最近的静态拥挤槽[充分排除接口](../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/shared_omission/static_crowding_cover_slack.md)同样是一般有效的条件引理；所有真实菜单未被证明满足其条件。它们可进入后续证明，当前没有已成立的通用连接把它们的信用支付给 $2W-\operatorname{OPT}_m$。
 
+同步补入的[对数势变分规范化](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/shared/variational_common_credit.md)进一步给出**任意给定单位终局的通用正向代数定理**。阈值 $t>0$ 时，盒约束最大元保持覆盖支撑，满足包括零权重入的完整 KKT；规范客户负载和总尾质量 $M$ 唯一，权分解可以不唯一。共同查询池仍有 $H\le D$，并有利润守恒、负载伸缩预算与联合势账
+
+\[
+\max\{H,\Gamma+\Delta B\}+F^*+tM\le tn.
+\]
+
+这里 $n$ 为尾玩家数，$\Gamma+\Delta B$ 是根与背景总返还，$F^*$ 是变分最优目标值。最大值不能换成两项之和，$H$ 与 $F^*$ 也不能各领一次缺口 $D$ 后相加；仅在另有真实尾利润 $V(1)\ge nt$ 时，右侧才可进一步由该 $V(1)$ 支付。这补全了单遍构造没有保证的终点互补性与规范状态，仍不产生分数 SPE；总质量随阈值非增，也不推出根信用单调。
+
+[统一缩尾全树税账](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/uniform_shrink_full_tree_tax.md)则从一份真实完整单位 SPE 出发，把同一固定质量 $\lambda$ 用于全部尾玩家、历史和动作。其一般结论是：原收益与新质量利润的差为非负税 $k_i^\lambda$，终局总税等于背景返还 $B_\lambda$；每个真实节点的新单步 regret 满足 $R_\lambda(h)\le k_i^\lambda(z_h)$，从任意历史起沿**原规定续局**的累计 regret 至多为同一终局的 $B_\lambda$。这是已证的带预算 IC，不是无转移 SPE 保持。反复改枝会改变 $z_h$，不能沿偏离边免费递推同一税余额。
+
+因此变分状态与原树激励的连接已有精确对象，但没有闭合。[变分根交换稿](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/shared/variational_spe_switch_debt.md)证明同一单位终局多重集内，低规范根与权一尾换标记会严格增势；真实孩子改变后只保留恒等式 $J_b-J_a=\mathrm{Gain}_{a\to b}-\mathrm{Debt}_{a\to b}$。这项严格交换引理与债务身份均有效，跨真实孩子的 Debt 尚无总支付。[零池实例](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/zero_pool_switch_debt.md)复用既有三人完整 SPE，在真正 $t=v_3$ 下所有真实根分支的 $H=F^*=\Gamma=0$，却有正的虚拟交换 Debt，明确否定“只运输真实返还池 $H$ 就能支付该债务”的桥。该实例仍有 $W>3v_3$，并未否定聚合安全值、额外一槽接口或 half。这里需要的是高尾剩余利润或其他真实激励的联合支付，不能把规范化、税账和严格交换首尾拼成已完成的证明。
+
+此次同步补读范围为上述四份正文，以及变分稿的[盲重构](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/review_variational_blind.md)、[最终对稿](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/review_variational_final.md)和税账的[独立解析审查](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/global/uniform_tax_independent_review.md)。VAR 与同多重集交换按其已有内部审查范围记录，税账另按自己的审查记录，零池应用按正文注明的 root 独立核对记录；本综述的阅读与分类不为它们新增统一审查等级。
+
 最近[常数三根修复](../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/compiler/padded_insurer_repair.md)给一个与原目标精确相容的反例接口。对所有正深度子局已为完整 SPE、仅根有最大获利偏离 $\Delta$ 的计划，利用共同目录 Cartesian 保险修复全部历史；在共同缩放前的记账单位中，保险实际覆盖增加 $(m+1)\Delta$，最优覆盖增加 $(2m-1)\Delta$，所以坏差额减少 $3\Delta$。有理缺陷须共同复制客户清分母，输出全部数值同比例缩放；不是只加两个总主题。因而每个固定 $m\ge2$ 的原 half 等价于所有此类计划的 $\operatorname{OPT}_m-2W\le3\Delta$。该编译及[独立不交保险的锐三稀释界](../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/compiler/disjoint_insurer_three_sharp.md)已有独立内部重构；后者的共同核心必须包含于所有合法主题，且根以下分量独立。等价重述提供了另一种攻击原问题的方式，尚未给出越过门槛的计划，也没有把半覆盖归纳自动闭合。
 
 既有成果按能够自足回答的问题归并，不按研究轮次、作者或算法数量拆分。以下记录存量资产的整理位置；特殊范围部分只保全来源，不重新启动局部成稿或局部研究任务。
 
-1. **真实路径的覆盖与利润预算。** 以分数覆盖前缀递推为主定理，合并实际遗漏席位谱，统一模型、比较并集、实际最终利润与真实偏离的记账。两个机制及其条件性锐结论分别证明，明确它们尚未共同支付一般共享遗漏；末四人提升作为已有一般弱界的比较。水位化若没有新增连接，放辅助附录或独立短札，不把信用池存在性写成主定理的最后一步。这组已有自足的全范围不等式和明确覆盖推论，适合形成部分结果稿；外部优先性仍须另核。
+1. **真实路径的覆盖与利润预算。** 以分数覆盖前缀递推为主定理，合并实际遗漏席位谱，统一模型、比较并集、实际最终利润与真实偏离的记账。两个机制及其条件性锐结论分别证明，明确它们尚未共同支付一般共享遗漏；末四人提升作为已有一般弱界的比较。单遍水位化、变分规范化、统一缩尾税账及严格换根可另合为一份“辅助负载与真实激励的共同记账”方法稿，以规范状态、联合势账、规定路径 regret 预算为正向命题，以零池实例准确限定其组合接口；不把该稿视为覆盖预算主定理的最后一步。这些结果已有自足的全范围不等式和明确适用推论，适合形成部分结果稿；外部优先性仍须另核。
 2. **极大关联结构中的真实中继。** 在统一“客户对极大主题的归属集合”语言下，合并不交、向日葵、层级保护与极端归属驻留证明，写清包含关系与不可比性；扣除 singleton 与最大交叠的文献地基。六、七极大的联合系数证明作为另一种有限结构方法独立归档，不用其病例数充当一般机制。既有小人数最佳界及旧常数作为独立地基归档，不继续逐人数调优。
 3. **可信性、静态比较与完整资料。** 将 SPE 不等于 PNE、最低静态 CCE 仍不能代表 SPE、无拥挤 $3/2$ 族、负前缀无限族等，围绕“真实后继为何不能由静态终局替代”组织成一份有主命题的分离稿；完整策略证书作为可核验附录。覆盖矩、非负实现及全树锥可另成表示方法稿，避免把标准求解器实现与新的表示定理混写。
 4. **可信编译与稳健根缺陷。** 常数三根修复、精确缩放、全历史拼合、相同人数的等价重述，以及所述独立保险架构的匹配下界，自然组成一篇方法短稿。应与普通有限负例诊断分开；固定锥未越门槛、算法数量和阴性试验不列为数学贡献。该稿的准确结论是可复用编译和架构锐性，不是原猜想已解决。

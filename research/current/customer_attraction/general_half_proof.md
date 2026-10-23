@@ -400,6 +400,89 @@ R_{\mathrm{pruned}}(\mathrm{actual})-\Delta_R^{\mathrm{actual}}
 
 同一池在多分支间如何共同分配、如何保留全部原树激励，尚无一般支付。不能在水位对象上直接调用单位玩家归纳，再免费恢复原收益。原唯一正文及独立审查见[分数尾水位化](fractional_tail_waterfill.md)。
 
+### 6.4 对数变分规范化：零权重入、唯一负载与联合势账
+
+同一终局输入下，另取 t>0，令 `L_x(w)=b_x+a_x+c_x(w)`、`K_sup={x:L_x(1)>0}`。在盒 `[0,1]^n` 最大化
+
+\[
+F_t(w)=\sum_{x\in K_{\rm sup}}\log\frac{L_x(w)}{L_x(1)}
++t\left(n-\sum_jw_j\right),
+\tag{VAR}
+\]
+
+支撑客户负载为零时目标取 −∞。F_t(1)=0，而目标非负的点满足每个原支撑客户 `L_x(w)≥exp(−tn)L_x(1)>0`；限制到这个紧集便得最大元 w* 存在并保持原支撑。其盒 KKT 为
+
+\[
+w_j^*=0\Rightarrow U_j(w^*)\le t,\quad
+0<w_j^*<1\Rightarrow U_j(w^*)=t,\quad
+w_j^*=1\Rightarrow U_j(w^*)\ge t.
+\tag{KKT}
+\]
+
+特别是零权主题也不能通过单坐标重入改善目标。原 u_j≥t 者保留权一；这份 VAR 最大元不能与任意单遍水位化终点混同。两个最大元若客户负载不同，log 的严格凹性使其中点目标更大；故所有最大元负载相同。目标值再以 t>0 迫使总质量 M 相同，权分解可不唯一；总质量唯一性限 t>0。
+
+每个负载变化客户至少属于一个降权主题，故终点互补性直接给
+
+\[
+H\le\sum_{j:w_j^*<1}[U_j(w^*)-u_j]\le D.
+\]
+
+因此(22)的共同查询界与(23)的 CONS 均保留。令 `F*=F_t(w*)`、`ΔB=B(w*)−B(1)`，还有
+
+\[
+0\le F^*\le D,\qquad
+\boxed{\max\{H,\Delta_R+\Delta B\}+F^*+tM\le tn.}
+\tag{JOINT}
+\]
+
+其要点是 `L_log=Σ_(K_sup) log[L_x(1)/L_x(w*)]` 同时控制 H 和 `Δ_R+ΔB`，而 `F*=t(n−M)−L_log`。查询项的积分比较使用分母 `L_x+(1−a_x)≥1`，不对可能小于1的 L_x 直接套用同一界。
+
+JOINT 中的 max 不能改成两项之和；H≤D 与 F*≤D 也不能相加后仍只支付一份 D。CONS 始终用原尾利润 V(1)；JOINT 右端 tn 则只有在**另证** V(1)≥tn 后才能再由该利润支付。规范化本身不证明这个条件，不是 SPE，也未支付跨真实子树的切换债务。
+
+此段整理[变分共同信用原文](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/shared/variational_common_credit.md)及已有[tail 盲重构](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/review_variational_blind.md)、[最终对稿审查](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/review_variational_final.md)，不宣称本轮重新完成这些材料的全部独立审查。
+
+### 6.5 统一缩尾的条件可信接口：保留完整孩子，不自动保留全树
+
+有一项已证的有条件关系，可在特殊满足条件的**任意人数孩子**中补回可信性。固定旧背景 b、保留单位根 A，记 `β_x=b_x+1_A(x)`、`K_core=∩_(T∈S)T`。根后有 n≥1 位单位尾部，σ 是该固定孩子的完整 SPE。假设对其**全部有序尾历史** h 都有
+
+\[
+(\sigma(h)\setminus K_{\rm core})\cap\{x:\beta_x>0\}=\varnothing.
+\tag{AVOID}
+\]
+
+β 只含这个孩子开始时的固定背景，不含 h 内已行动的尾部。AVOID 只限制规定动作；偏离主题和过去离轨动作可以触及非核心正背景。
+
+给全部 n 位尾部统一固定质量 `0<λ≤1`，旧背景与根保持不变，同一 σ 是辅助加权孩子游戏的完整 SPE。证明逐真实比较进行：规定动作的非核心客户有 β_x=0，其实际质量利润 `λ/(λk_x)=1/k_x` 保持；偏离非核心客户则有
+
+\[
+\frac{\lambda}{\beta_x+\lambda k_x}
+\le\frac1{\beta_x+k_x}.
+\]
+
+每个合法主题都含共同核心，其新旧核心利润分别在两枝相消。故每条新加权 IC 差至少为原差，包含所有离轨历史；不是冻结实际后继的比较。
+
+再固定原孩子的一条实际叶。令 k_x 为其尾负载，
+
+\[
+a_j=\sum_{x\in S_j\setminus K_{\rm core}}\frac1{k_x},\quad
+a_* =\min_j a_j,\quad
+S_{\rm load}=\sum_{x\notin K_{\rm core}:k_x>0}\frac{k_x}{(k_x+1)^2},\quad
+K(\lambda)=\sum_{x\in K_{\rm core}}\frac1{\beta_x+n\lambda}.
+\]
+
+原 u_j=a_j+K(1)。若 a*>0 且 `S_load≤a*`，对 t>min_j u_j 有唯一正 λ<1 满足 `a*/λ+K(λ)=t`。该叶全部尾部单位密度过线，且同一查询池满足
+
+\[
+H(\lambda)\le S_{\rm load}(1/\lambda-1)+K(\lambda)-K(1)
+\le(t-\min_j u_j)_+\le D.
+\]
+
+t≤min u 时直接取 λ=1，H=0，不需谱条件。利润仍按质量计算，(23)以 M=nλ 成立。a*=0 的纯核心退化及正质量阈值端点另见原文，不能用 λ=0 免费补一个正质量解。
+
+这个接口放弃“原高尾保持质量1”，以全部尾共同缩权换取孩子可信性。AVOID 与谱条件不是一般 SPE 的自动性质；水位和查询界只针对定义该谱的固定叶，不保证所有离轨叶达到同一阈值。它也不保证更早根或其他孩子仍最优，各分支重新选 λ 不会自动成为一份固定质量游戏。因而本段不能撤去第6.3节的全树接入断点。
+
+本段引用[统一缩尾原文](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/credible/waterfill_credibility_uniform_contraction.md)及已有[relay 独立解析审查](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/relay/review_uniform_credible_contraction.md)的明示范围；这里整理其通用有条件关系，不另称一次全量新复审，也不把其中固定客户族的应用当作一般福利引理。
+
 ## 7. 直接覆盖证明还差哪一个全范围关系
 
 回到(Q)，对客户兴趣类型 B 记单位客户重数 w_B≥0。固定完整形式策略 σ 后，每条(2)都有逐类型系数 Γ_{h,A;B}；实际覆盖和比较覆盖系数记 c_B、o_B。于是
@@ -489,7 +572,7 @@ M_{\mathrm{path}}\le W/m\tag{27?}
 
 ## 10. 当前真正能落到纸面的结论
 
-对任意一般输入，目前本稿已完成从真实(2)到(10)的路径利润产品界，以及独立的静态比较(14)—(15)。同背景末两人信用、全部历史的承诺重置和终局水位守恒均可在满足各自条件时使用。它们还没有共同推出(Q)。
+对任意一般输入，目前本稿已完成从真实(2)到(10)的路径利润产品界，以及独立的静态比较(14)—(15)。同背景末两人信用、全部历史的承诺重置、终局水位与变分守恒，以及明示条件下的统一缩尾孩子可信性，均可在各自范围内使用。它们还没有共同推出(Q)。
 
 继续写这份证明时，新增承重关系应明确作用于哪个真实历史或哪些静态背景，使用哪一份已经支付的利润，以及是否保留全部后继最优性。直接目标始终是本实例的 `2W−O≥0`；安全值、菜单和 root-only 表示中的问号均是可更换的接续位置，不是已经成立的前提。
 

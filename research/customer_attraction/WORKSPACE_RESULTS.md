@@ -4,6 +4,8 @@
 
 用户现已要求此后只研究一般人数和一般目录。已有条件类、固定人数及失败资产保留用于复用和查重，不继续特例扩张；本轮不移动、改名或删除原文件。
 
+> **明确截止增补：** 下文原4095文件基线原样保留；截止`5b183a1a03b5adda9748280fe8ef4a95d67d6ed3`的最终个人区为4130文件，新增35、修订14、无删除，详见文末增量与JSON `delta_snapshots` / `final_snapshot`。
+
 ## 盘点范围与实际阅读
 
 仅以 `git ls-files research/workspaces/customer-attraction/**` 固定已跟踪集合：**74个actor、4095个文件**。未以477cb649截断，后续独立区以及cd789 round2、d398等阶段均在清单中；不纳入未跟踪临时文件。逐文件原路径、类型、字节数、工作树SHA-256、Git对象及恢复路由见[完整机器清单](workspace_results_inventory.json)。
@@ -135,3 +137,24 @@
 `exact_byte_duplicate_groups`仅识别字节相同，不判数学同义、不建议删除来源；`navigation_links`标记已读入口中的现存/失效目标，避免把历史方向当可恢复文件。
 
 本轮未运行个人区数学solver或新增参数扫描，未逐草稿自动升级。后续只攻一般目录、任意人数的真实跨分支共同支付或完整SPE目标反例。
+
+## 明确截止增补：5b183a1a
+
+本节只接收提交`5b183a1a03b5adda9748280fe8ef4a95d67d6ed3`，以该Git树及blob字节为准；不追逐其后的变化。原4095条基线及原阅读统计均保留，不用新版本覆盖原哈希。
+
+- 全部截止个人区：**74个actor、4130文件**；相对原清单新增35（cd789新增33，本组curation新增2）、修订14、无删除。b8a09126→5b的cd789共47路径；该次全仓50路径中的另3共享文件不在个人区清单内。
+- 本组新增的两份跟踪记录是`curation/direction_consistency_review.md`与`curation/verification.json`，均为本轮整理核验记录，不作新增数学成果。
+- 全文重新读取cd789根README、CLAIMS、RESEARCH_STATE、FAILED及6份受影响round2子README，共10份版本阅读（其中README合计7份）。3份是原根入口版本重读、7条为新读路径。
+- 原122份根导航＋3份定点源阅读不冒升；累计唯一全文读路径132，版本阅读事件135。截止集合仍有3998文件仅元数据、291子README未读；没有逐正文数学新审。
+
+| 增量机制 | 按本次实际读入口恢复的状态 | 来源入口 |
+|---|---|---|
+| PI势最优增量 | 完整SPE辅助桥反例已独立盲审，PI不再OPEN；u_first>=P_(r+1)(b)-P_r(b)被430客户、3人完整SPE反驳：u=91，P4-P3=215/2；W265，OPT324。WP插入矩阵最大90<91，本例不反驳WP/extra-one/half。 | [global/README.md](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/global/README.md) |
+| 变分水位规范化 | 任意人数辅助终局解析状态有独立重构；实际跨树切换债未支付；KKT/互补、唯一客户负载与总质量、H<=D；虚拟同多重集换根不能直接替代原策略真实孩子。 | [shared/README.md](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/shared/README.md) |
+| 统一缩尾可信性 | 带全历史避背景条件的充分接口已独审；非无条件继承；全有序历史规定行动避非共同核心背景时，同一统一正质量保持整孩子SPE；额外谱条件只给固定实际叶的水位/信用。 | [credible/README.md](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/credible/README.md) |
+| 原规定路径全树税账 | 全称账本有独立重构；反复改枝缺额仍OPEN；从固定h一直跟原sigma，单步regret之和由同一终局背景返还支付；偏离换终局后不可免费望远镜。 | [tail/README.md](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/README.md) |
+| 停界与未闭义务 | H-only Debt、53私有遗漏支架停止；WP2尚未证；零水位池仍可有真实子树债；53架构由后两人私有谱封顶；两查询跨child留下删除势差，不能声称失败支持至少3。 | [mixed/README.md](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/mixed/README.md) |
+
+JSON的`delta_snapshots[].records`逐个保存49条新增/修订的截止Git blob、SHA-256、字节数、原哈希及恢复入口；`final_snapshot.all_tracked_paths_and_blobs_at_cutoff`列出4130个截止路径和blob。独立复核可对照`git ls-tree -r 5b183a1a -- research/workspaces/customer-attraction`，并用`git show 5b183a1a:<path>`重算每条变动哈希。原`actors`数据不改写。
+
+这些增补包括有独审来源的一般辅助状态与精确停界，均不闭合Q-CAG-HALF。此后只整理本轮导航本身；5b之后的导航输出不纳入既有数学资产数。
