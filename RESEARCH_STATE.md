@@ -42,3 +42,6 @@ Boss直接带团队攻一般命题。清洗者处理数学检查、自足改写�
 更小独立静态桥见证：[八客户四主题计数SPE](research/current/customer_attraction/eight_customer_cce_welfare_gap.md)福利6，最低静态CCE福利恰544/87；它不改变原十三客户版本身份，不否定真正聚合安全值。
 
 新的条件性正面机制：[真实末两人菜单](research/current/customer_attraction/common_penultimate_theme_half.md)及[少量早期遗漏](research/current/customer_attraction/penultimate_few_exceptions.md)在无界人数/目录下证明指定实际路径半覆盖；r个遗漏的充分阈值为m≥(r+1)²+1。已独立解析内审，一般路径大量遗漏仍缺跨真实分支支付，Q-CAG-HALF仍OPEN。
+
+
+[极端极大关联结构](research/current/customer_attraction/extreme_maximal_membership_floor.md)新增无界人数/极大主题数的正面机制：客户仅属1、k−1或k个极大覆盖时，全部完整SPE全员theta保底、任意合法背景利润界及带核心锐2−1/m界成立，内部子主题任意。已独立内部解析重构，未外审或认证新颖性；一般中间关联与Q-CAG-HALF仍OPEN。

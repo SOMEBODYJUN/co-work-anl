@@ -45,3 +45,6 @@
 新增机制边界：[`CA-FRACTIONAL-ACTUAL-LOAD-WEAK-NO-v1`](../current/customer_attraction/fractional_actual_load_counterexample.md)对每个m≥4给出四主题完整SPE无限族，否定原正桥`CA-FRACTIONAL-ACTUAL-LOAD-WEAK-v1`；并不否定半覆盖、真正聚合静态安全值，或另立的精确实际税充分候选。全历史解析证明及独立内部精确核验通过；外审与新颖性未认证。
 
 独立简化版本：[`CA-WORST-CCE-WELFARE-8`](../current/customer_attraction/eight_customer_cce_welfare_gap.md)使用八单位客户、四主题和计数依赖完整策略给W6<min_CCE E[W]=544/87，OPT3=8。它保留原十三客户身份，外审、新颖性和最小性未认证。
+
+
+新的无界结构子类：`CA-EXTREME-MAXIMAL-THETA-v1` / `CA-EXTREME-MAXIMAL-WELFARE-v1`。若每个客户在k个极大主题中属于1、k−1或k个，则任意合法背景与剩余人数的完整SPE全员有theta保底，并有背景利润界与空背景带核心锐2−1/m界；内部子主题任意。精确身份见[账本](../current/claims.md)，完整证明与独立内审见[正文](../current/customer_attraction/extreme_maximal_membership_floor.md)。这不改变一般目标的OPEN状态。

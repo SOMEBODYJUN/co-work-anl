@@ -19,6 +19,7 @@
 | 五人一般目录 | 当前上界约2.061695>2，未达半覆盖 | [精确有理界](research/current/customer_attraction/five_player_indexed_bound.md)；模板最优点不是SPE反例 |
 | 有限极大覆盖 / 层级结构 | 至多六极大任意人数已证；七极大仅有明确部分范围；另有向日葵与层级关联定理 | [按范围的完整结果表](research/current/customer_attraction/README.md) |
 | 分数覆盖受控、无界目录 | 某个最优并集分数覆盖数至多7/2时全人数半覆盖；一般有真实前缀产品预算 | [完整递推与范围](research/current/customer_attraction/fractional_cover_path_budget.md)，无界覆盖数仍未闭合 |
+| 极大关联数仅1/k−1/k、无界k与人数 | 全员θ保底及带共同核心锐2−1/m福利界；内部子主题任意 | [真实中继和平稳逐客户支付](research/current/customer_attraction/extreme_maximal_membership_floor.md)，独立内审；一般中间关联仍OPEN |
 | 实际路径的真实末两人菜单 | 倒二主题被全部早期主题包含，或至多r个遗漏且m≥(r+1)²+1时half；人数与目录均不固定 | [正面证明与范围](research/current/customer_attraction/penultimate_few_exceptions.md)，独立内审；一般路径仍OPEN |
 | 静态福利比较桥 | 完整三人SPE福利可以低于同实例每个静态CCE的期望福利；更换静态比较对象也失败 | [十三客户CCE反例](research/current/customer_attraction/worst_cce_welfare_counterexample.md)、[八客户简化](research/current/customer_attraction/eight_customer_cce_welfare_gap.md)，均有独立内审 |
 | 完整策略计算与证书 | 集合值逆向归纳、客户重数锥、有限精确核验 | [终局全集](research/current/customer_attraction/exact_solver.md)、[策略锥](research/current/customer_attraction/strategy_cone.md)；不构成一般证明 |
