@@ -78,6 +78,8 @@ def unit_check(instance, certificate):
 def scan(cone, origin):
     best = Fraction(-10**9)
     checks = 0
+    duals = []
+    failed_duals = 0
     for support in combinations(range(cone.topics), min(cone.players, cone.topics)):
         covered = coverage_row(cone.topics, support)
         for a, count in enumerate(cone.root):
@@ -91,7 +93,18 @@ def scan(cone, origin):
                           bounds=(0, None), method="highs")
             checks += 1
             if not res.success:
+                failed_duals += 1
                 continue
+            beta = Fraction(float(-res.eqlin.marginals[0])).limit_denominator(10**7)
+            mu = tuple(Fraction(float(-x)).limit_denominator(10**7) for x in res.ineqlin.marginals)
+            residual = tuple(beta*w-sum(z*row[j] for z,row in zip(mu,cone.rows))-v
+                             for j,(w,v) in enumerate(zip(cone.welfare,objective)))
+            dual_ok = all(x >= 0 for x in mu) and all(x >= 0 for x in residual)
+            if dual_ok:
+                duals.append({"support":support,"topic":a,"upper_bound":beta,
+                              "nonzero_multipliers":[(i,x) for i,x in enumerate(mu) if x]})
+            else:
+                failed_duals += 1
             r = tuple(Fraction(float(x)).limit_denominator(10**7) for x in res.x)
             if not cone.verify(r) or dot(cone.welfare, r) != 1:
                 r = cone.recover_vertex(res.x)
@@ -115,8 +128,11 @@ def scan(cone, origin):
                     "unit_audit": independent, "normalized_violation": value,
                     "lp_calls": checks,
                 }
-    return {"status": "no_counterexample_in_cone", "origin": origin,
-            "best_normalized_violation": best, "lp_calls": checks}
+    return {"status": "no_counterexample_found", "origin": origin,
+            "best_normalized_violation": best, "lp_calls": checks,
+            "all_objectives_have_exact_duals": failed_duals == 0,
+            "exact_dual_upper_bound": max((x["upper_bound"] for x in duals),default=None),
+            "failed_duals": failed_duals, "duals":duals}
 
 
 def main():
@@ -141,6 +157,17 @@ def main():
         if report["status"] == "exact_counterexample":
             (HERE / "minimum_gap_counterexample.json").write_text(json.dumps(serial(report), ensure_ascii=False, indent=2) + "\n")
             break
+    if all(r["status"] != "exact_counterexample" for r in reports):
+        path = ROOT / "evidence/runs/2026-10-09/customer_attraction_strategy_lp_m4p5_certified.json"
+        obj = json.loads(path.read_text())
+        for i, proof in enumerate(obj["cone_proofs"]):
+            actions = {tuple(item["history"]): item["action"] for item in proof["actions"]}
+            report = scan(StrategyCone(5, 4, actions), str(path.relative_to(ROOT)) + f":cone={i}")
+            reports.append(report)
+            print(serial({k:v for k,v in report.items() if k not in ("instance", "strategy")}), flush=True)
+            if report["status"] == "exact_counterexample":
+                (HERE / "minimum_gap_counterexample.json").write_text(json.dumps(serial(report), ensure_ascii=False, indent=2) + "\n")
+                break
     (HERE / "minimum_gap_scan.json").write_text(json.dumps(serial(reports), ensure_ascii=False, indent=2) + "\n")
 
 
