@@ -2,7 +2,15 @@
 
 **Q-CAG-HALF 仍 OPEN。** 原模型、无界人数/目录、全部有序历史与任意历史依赖平局不变。这里只保存准确研究资产，不把非SPE菜单、有限阴性计算或内部审查升级为一般证明。外审与新颖性均未认证。
 
-本轮环境没有旧clone；附件程序恢复main并生成本clone身份。旧Boss10接续入口为[R-75bfd工作区](../R-75bfd8f0f91740408bf08f0c9f5e2aa1/README.md)。实际启动六名指定研究员；发现、独立重构和root复核分别留痕。凭据保留仓库外，研究均由root统一checkpoint。
+首次恢复时环境没有旧clone；附件程序恢复main并生成本clone身份。当前接续复用同一clone与身份。旧Boss10接续入口为[R-75bfd工作区](../R-75bfd8f0f91740408bf08f0c9f5e2aa1/README.md)。实际启动六名指定研究员；发现、独立重构和root复核分别留痕。凭据保留仓库外，研究均由root统一checkpoint。
+
+## 当前接续轮：只攻一般输入的真实总支付
+
+已按本轮用户要求复用原clone/actor，读取最新根AGENTS与共享[一般工作稿](../../../current/customer_attraction/general_half_proof.md)，保留未提交文件后安全同步。六个原研究分支接续工作，root维护[本轮一般证明工作稿](round3/GENERAL_PROOF_WORKING.md)。所有新研究仅面向任意m、任意有限共同目录、全部有序历史纯SPE；没有重启特殊人数、结构类扩张、局部常数或逐规模专项。
+
+本轮并列工作是一般捕获流/自由匹配、完整孩子IC的非均匀全树支付、真正安全值接口与signed信用重置；这些表示可随时替换，非方法白名单。最优主题组合的Bernoulli替槽、Beta核及锚定查询槽关系已作一般推导并通过内部独立解析审查；其作用是约束O外真实分支利润，尚不能自动支付共享遗漏。精确Claim/审查等级以本轮正文为准，不将恒等式、有限阴性或辅助失败当一般进展。
+
+本轮子目录： [root一般稿](round3/GENERAL_PROOF_WORKING.md)、[global](round3/global/README.md)、[mixed](round3/mixed/README.md)、[tail](round3/tail/README.md)、[shared](round3/shared/README.md)、[credible](round3/credible/README.md)、[relay](round3/relay/README.md)。尚未完成的文件也按草稿保存；成熟后另请独立核查，不等待审批准。
 
 ## 本轮改变了什么认识
 
