@@ -25,3 +25,9 @@
 - `insurer_blind_audit.py` / `.json`：独立Fraction定义级全树核验；保险m2..6共120552项、m4完整Cartesian22620项通过。
 - `block_probe.py`：B2对800组样本全部可实现有序前两步未命中，范围有限。
 - `block_cone_probe.py`、`block_cone_*.json`：三棵新完整树固定p/Q的攻击未命中。该发现目标在真实B2余额之上，故非负结果不证明策略锥B2成立，更不证明一般候选。
+
+- `insurer_three_sharp_review.md`：动态删除、singleton终局PNE、同根占用差、k≥2和k=1两分支、共同核心及空花瓣边界均独立重构；现稿精确范围内常数3下界及锐性通过独立内部攻击。K须为全部合法主题共同核心，不能扩大为只在极大主题中共同且内部根可遗漏的核心。
+- `insurer_three_sharp_audit.py` / `.json`：34个有限实例、750对同根终局、90对正差的Fraction回归通过。
+
+- `strict_tail_review.md`：复核旧两core/稀有私有叶族的来源及参数重标；全SPE全根尾列严格静态距离m/[4(m+1)]、M_tail下界、fresh-leaf/copy全深度玩家地板和OPT_m=3m²通过独立内部攻击。量词仅存在这个指定安全最优p*，不扩到全部安全最优p或Mfull。
+- `strict_tail_scalar_audit.py` / `.json`：m2..12的Fraction标量回归通过；一般证明为代数和全历史归纳，不复扫大树。

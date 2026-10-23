@@ -1,6 +1,6 @@
 # 安全最优查询在全部真实根尾列上仍可有严格静态余量
 
-2026-10-23。个人研究资产，待独立审查。原 Q-CAG-HALF、真正 `W>=m v_m`、自由完整根菜单 Mfull 仍 OPEN。
+2026-10-23。个人研究资产，已获 ../independent/strict_tail_review.md 独立内部解析审查；无外审或新颖性认证。原 Q-CAG-HALF、真正 `W>=m v_m`、自由完整根菜单 Mfull 仍 OPEN。
 
 这里没有新造静态族。静态输入与安全值证明复用
 `R-7c3db62487a34730a704a4f2eb401556/security/occupied_static_minimizer_counterexample.md`
