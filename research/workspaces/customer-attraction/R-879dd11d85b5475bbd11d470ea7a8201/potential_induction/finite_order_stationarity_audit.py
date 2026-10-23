@@ -34,6 +34,20 @@ def verify(m, d, b):
     return root, tail, expected
 
 
+def verify_debt_identity(m, b, i, q):
+    c = i + q
+    assert c > 0
+    expanded = F(0)
+    for j in range(1, m):
+        h = i * F(fall(q, j - 1), fall(m - 1, j - 1))
+        g = F(fall(q, j), fall(m - 1, j))
+        coefficient = F((-1) ** (j - 1) * factorial(j - 1) * comb(m - 2, j - 1),
+                        prod(range(b + 1, b + j + 1)))
+        expanded += coefficient * (h - g)
+    direct = F(m * i - c, (m - 1) * (b + c))
+    assert expanded == direct
+
+
 def concrete_menu():
     # Three (C=1,I=0), three (C=2,I=1), one (C=3,I=0).
     bits = [0, 0, 0, 1, 1, 1, 0]
@@ -65,7 +79,16 @@ if __name__ == "__main__":
             for b in (0, 1, 3, 17):
                 verify(m, d, b)
                 checks += 1
+    debt_checks = 0
+    for m in range(2, 10):
+        for b in (0, 1, 3, 17):
+            for i in (0, 1):
+                for q in range(m):
+                    if i + q:
+                        verify_debt_identity(m, b, i, q)
+                        debt_checks += 1
     print(f"Exact parameter checks: {checks}")
+    print(f"Point-mass debt identity checks: {debt_checks}")
     print("m=4,d=2,b=0:", verify(4, 2, 0))
     print("Concrete stationary menu:", concrete_menu())
     print("No SPE claim; general proof uses finite differences, not finite checks.")
