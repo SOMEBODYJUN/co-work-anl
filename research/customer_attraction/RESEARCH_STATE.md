@@ -1,5 +1,7 @@
 # 顺序客户吸引：一般半覆盖的当前前沿
 
+全范围论证现统一到[一般证明工作稿](../current/customer_attraction/general_half_proof.md)。全部共享正文的范围见[成果总账](RESULTS_LEDGER.md)，全部既存个人区恢复见[总索引](WORKSPACE_RESULTS.md)；[本轮审查](../reviews/customer_attraction/general_research_curation.md)明确检查了哪些推导、哪些证书未重放。
+
 当前主攻 **`Q-CAG-HALF`**，存档 `customer-attraction`。用户决定从已有地基继续攻击一般共同目录、任意人数的正面半覆盖定理；原目标仍 **OPEN**，没有因为切换主攻而改变数学状态。
 
 ## 主人最新策略与协调
@@ -51,7 +53,7 @@ r≥1且m≥(r+1)²+1，同样半覆盖。目录、末位主题、离轨历史�
 平方阈值仅为充分条件；大量遗漏时这组乘子的上下预算可能冲突，不能只增大一个系数。
 外审、新颖性和阈值锐性未认证，一般Q-CAG-HALF保持OPEN。
 
-强 iid 福利桥 `W≥Z_m` 已由既有 CCE 反例逻辑否定：静态对称混合 Nash 的 iid 分布属于 CCE，故八客户例有 `Z_3≥544/87>W6`。见 [静态基准 §1.1](../current/customer_attraction/iid_security_and_flow_barriers.md)。这是状态修正，不是新实例；较弱 iid 桥、真正 `W≥mv_m` 及主目标仍 OPEN。
+强 iid 福利桥 `W≥Z_m` 已由既有 CCE 反例逻辑否定：静态对称混合 Nash 的 iid 分布属于 CCE，故八客户例有 `Z_3≥544/87>W6`。见 [静态基准 §1.1](../current/customer_attraction/iid_security_and_flow_barriers.md)。这是状态修正，不是新实例。2026-10-23全盘点又核准既存弱iid反族：[§1.2](../current/customer_attraction/iid_security_and_flow_barriers.md)已否定 `W≥(1−1/(2m))Z_m`；真正 `W≥mv_m` 及主目标仍OPEN。
 
 ## 真正缺什么
 

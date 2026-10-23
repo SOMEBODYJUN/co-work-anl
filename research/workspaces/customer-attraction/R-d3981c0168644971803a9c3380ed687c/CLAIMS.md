@@ -13,7 +13,7 @@
 
 原Q-CAG-HALF（对所有共同目录，固定任意m>=2）等价于：每个上述root-only计划均满足OPT_old<=2W_old+3Delta。正向对Delta>0应用ROOT-ONLY-REPAIR-3-v1、取s=Delta并清分母；Delta=0直接用原命题。反向在完整SPE取Delta=0。该等价不证明任一边；当前状态OPEN等价重述，不冒充新half机制。
 
-## 其他待独立审查对象
+## 其他资产的实际审查状态（以下历史待审文字以对应审查记录为准）
 
 compiler/disjoint_insurer_three_sharp.md（准确架构三系数锐下界）、shared_omission/credible_degree_two_negative_flux.md（真实完整SPE无条件驻留负flux）各以正文量词为准，审查未完成时保持作者结果身份。
 
@@ -44,3 +44,6 @@ compiler/disjoint_insurer_three_sharp.md（准确架构三系数锐下界）、s
 ## 仍开放/仅观察
 
 B2两步安全债务非负仍OPEN；有限诊断及固定p,Q策略锥未命中不作一般证据。祖先cap reset递推是精确集合值BI的带条件重述，不能自动形成福利机制。所有Finite JSON范围见各正文，均非计算证明原half。
+
+
+2026-10-23清洗同步：常数三锐性和负flux的独立内部审查已经完成，分别见`independent/insurer_three_sharp_review.md`、`full_depth/degree_two_review.md`。本轮一般关系稿另见共享`research/reviews/customer_attraction/general_research_curation.md`；无新增外审或一般half证明。

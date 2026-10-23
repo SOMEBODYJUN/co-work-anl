@@ -1,3 +1,5 @@
+> 2026-10-23当前任务已转为全成果清洗、整理及一般论证衔接。当前共享入口为[一般证明工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区恢复索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。下文是前轮资产交接，不恢复任何特殊人数、目录或局部常数任务。公屏方向通知已发送，seq198；尚不能据发送声称所有远端团队已执行。
+
 # 一般半覆盖：常数三可信根修复与真实全深度障碍
 
 发布身份 `R-d3981c0168644971803a9c3380ed687c`；customer-attraction / boss；本clone首次程序生成身份。研究目标始终为原 `Q-CAG-HALF`，一般目录、任意人数、每个完整历史依赖纯SPE；仍 **OPEN**。本目录是个人研究备份，未代替共享canonical账本。六名指定gpt-6.1-sol ultra实际分支的结果由root统一汇总。
@@ -16,9 +18,9 @@
 - [祖先承诺重置义务](full_depth/ancestor_promises_and_reset.md)：已知小SPE的新cap诊断与无界继承违例；作者精确核验，未外审。
 - [新编译门槛实际判别](parent/root_regret_handoff.md)：230项固定tail锥精确证书未过新门槛；另对有效保险幅度h−M做固定输入诊断。有限范围与停止理由完整记录；不称一般安全或half证据。
 
-## 本轮真正下一步
+## 前轮留下的可选一般候选（不限制现行工作稿）
 
-继续寻找旧root-only计划使 `OPT_old−2W_old>3Delta`，或证明相反的普遍robust不等式。常数三修复本身并非一般half证明或反例。全深度祖先门槛、聚合安全值、共享遗漏及删除闭包分别由各分支保存，成熟状态按具体独立攻击记录，不按人数投票。六分支已完成本轮交接，无后台常驻承诺。
+原交接提出寻找旧root-only计划使 `OPT_old−2W_old>3Delta`，或证明相反的普遍robust不等式。常数三修复本身并非一般half证明或反例。全深度祖先门槛、聚合安全值、共享遗漏及删除闭包分别由各分支保存，成熟状态按具体独立攻击记录，不按人数投票。六分支已完成本轮交接，无后台常驻承诺。
 
 ## 可复现材料
 

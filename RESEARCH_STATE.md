@@ -1,5 +1,7 @@
 # 当前研究状态：只攻一般人数与一般目录
 
+本轮已形成共享[一般证明工作稿](research/current/customer_attraction/general_half_proof.md)、[逐项成果总账](research/customer_attraction/RESULTS_LEDGER.md)、[衔接说明](research/customer_attraction/SYNTHESIS.md)、[个人区总索引](research/customer_attraction/WORKSPACE_RESULTS.md)及[内部清洗审查](research/reviews/customer_attraction/general_research_curation.md)。它们整合既有认识；一般目标没有升级为已证。
+
 当前唯一主目标 **Q-CAG-HALF**，存档 **customer-attraction**，状态 **OPEN**。原模型、全部历史和任意平局量词不变。本轮清洗整理不提升任何数学真值。
 
 ## 主人最新决定

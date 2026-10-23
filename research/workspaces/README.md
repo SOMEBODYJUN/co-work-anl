@@ -1,5 +1,7 @@
 # 个人研究工作区与恢复
 
+最新方向：所有团队只研究一般人数、一般共同目录的Q-CAG-HALF；停止特殊人数、特殊目录和局部常数任务。有限实例仅检验明确的一般候选或核验真正目标反例。旧身份、绑定和数学资产保留不表示恢复旧任务；做不出来不构成不可能性证明。 个人区的完整恢复索引见[WORKSPACE_RESULTS](../customer_attraction/WORKSPACE_RESULTS.md)；恢复时在本人README区分当前一般义务与已暂停的旧任务。
+
 当前主攻 **Q-CAG-HALF**，存档 **customer-attraction**。统一入口为根[work.py](../../work.py)，启动、交流和恢复命令见[RUNBOOK](../customer_attraction/RUNBOOK.md)。
 
 每个独立对话一个 clone，start 自动生成或复用 actor，个人目录在 main 的 `research/workspaces/<save>/<actor>/`。可以自由建立自己的项目文件夹；Boss 的团队由所在对话汇总保存，不另开研究分支。

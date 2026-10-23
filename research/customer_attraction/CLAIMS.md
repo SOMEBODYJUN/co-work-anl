@@ -49,3 +49,6 @@
 
 
 新的无界结构子类：`CA-EXTREME-MAXIMAL-THETA-v1` / `CA-EXTREME-MAXIMAL-WELFARE-v1`。若每个客户在k个极大主题中属于1、k−1或k个，则任意合法背景与剩余人数的完整SPE全员有theta保底，并有背景利润界与空背景带核心锐2−1/m界；内部子主题任意。精确身份见[账本](../current/claims.md)，完整证明与独立内审见[正文](../current/customer_attraction/extreme_maximal_membership_floor.md)。这不改变一般目标的OPEN状态。
+
+
+2026-10-23全成果清洗补入 `CA-IID-WEAK-WELFARE-NO-v1`：[完整SPE反族](../current/customer_attraction/iid_security_and_flow_barriers.md) §1.2否定同定义弱iid桥 `W≥(1−1/(2m))Z_m`；原成果早存个人区，本轮重构并补共享状态，非新发现。真正安全值强/弱聚合及Q-CAG-HALF仍OPEN。

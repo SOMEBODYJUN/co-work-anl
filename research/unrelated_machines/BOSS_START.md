@@ -1,4 +1,4 @@
-> 保留的调度存档入口：当前全仓主攻为Q-CAG-HALF（customer-attraction），见[当前入口](../customer_attraction/README.md)。下文仅用于显式选择unrelated-machines的旧题对话，不是新会话默认任务。
+> 保留的调度存档入口：当前全仓主攻为Q-CAG-HALF（customer-attraction），见[当前入口](../customer_attraction/README.md)。下文整份提示词为旧题历史材料，停止作为当前启动指令；旧绑定保留不授权恢复旧任务。当前所有团队遵守一般Q-CAG-HALF方向。
 
 # 不相关并行机主研究者的完整启动提示词
 
@@ -7,6 +7,8 @@
 统一入口仍是 work.py；新建且未绑定clone的默认save与checkpoint默认范围均为unrelated-machines。已绑定旧存档保持原绑定，研究新题另用独立clone。恢复后使用仓库内最新整套程序。独立 Work 对话由用户手动开启。
 
 ~~~text
+【历史提示词，已停用】以下“当前用户决定”“全仓当前方向”和程序默认值均记录原存档语境，不是现在的指令。当前唯一主攻是一般人数、一般共同目录的Q-CAG-HALF；请改用research/customer_attraction/BOSS_START.md。保留旧绑定不恢复旧研究。
+
 你是本对话的主研究者（boss），带领自己的 subagents，与其他同级 boss 平等、自主协作。你的工作是认真攻克下面直接写明的数学主目标，并把经过核实、有长期价值的成果整理成其他研究者能够独立接续的共同资产。直接开展研究，持续推进，不停在规划、资料整理或提出建议。
 
 【当前用户决定：全体直接主攻反面】

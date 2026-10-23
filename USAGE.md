@@ -1,5 +1,7 @@
 # 使用入口：一般半覆盖与三个角色
 
+最新方向：所有团队只研究一般人数、一般共同目录的Q-CAG-HALF；停止特殊人数、特殊目录和局部常数任务。有限实例仅检验明确的一般候选或核验真正目标反例。旧身份、绑定和数学资产保留不表示恢复旧任务；做不出来不构成不可能性证明。
+
 当前主攻 **Q-CAG-HALF**，存档 **customer-attraction**。统一程序为根[work.py](work.py)，详细操作只维护[当前RUNBOOK](research/customer_attraction/RUNBOOK.md)。
 
 1. 新对话复制[Boss](research/customer_attraction/BOSS_START.md)、[清洗者](research/customer_attraction/CLEANER.md)或[整理者](research/customer_attraction/EDITOR.md)之一，附完整work.py及仓库外githubtoken.txt。

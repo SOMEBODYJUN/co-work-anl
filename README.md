@@ -1,5 +1,7 @@
 # 共同研究：顺序客户吸引的一般半覆盖
 
+成果现已统一到[一般证明工作稿](research/current/customer_attraction/general_half_proof.md)、[全成果总账](research/customer_attraction/RESULTS_LEDGER.md)和[全部个人区恢复索引](research/customer_attraction/WORKSPACE_RESULTS.md)。工作稿逐项标明已证关系和未证步骤，不能据其文件名认定一般证明完成。
+
 当前唯一主攻 **Q-CAG-HALF**，存档 **customer-attraction**：一般共同目录、任意人数、每个完整历史依赖纯子博弈精炼均衡的福利是否至少达到最优的一半。主目标仍 **OPEN**。新对话从本文和[本题短地图](research/customer_attraction/README.md)恢复；不相关机、拥塞和两阶段设施是分别保留的研究线。
 
 ## 研究目标与数学对象
@@ -62,6 +64,6 @@ Boss自己承担一般推导，清洗者整理全部已有资产，整理者按�
 
 [研究总目录](research/README.md)、[中文资产目录](research/CATALOG.md)、[全仓资产](ASSETS.md)与[生产规则](research/REPOSITORY_GUIDE.md)补充导航。历史来源从[历史入口](history/README.md)进入；本次实际清理与原字节追踪见[整理记录](research/customer_attraction/CURATION.md)。
 
-本轮用户指定的加权拥塞方法研究已整理为[结构用于稳定决策与成本优化](research/current/weighted_congestion/decision_methods/README.md)：含连续成稿、精确校准、原游戏修复、成本拼装、可运行决策器及独立审查；既有线性下界与英文稿从同一成果包恢复入口读取。
+另行保留的加权拥塞方法研究已整理为[结构用于稳定决策与成本优化](research/current/weighted_congestion/decision_methods/README.md)：含连续成稿、精确校准、原游戏修复、成本拼装、可运行决策器及独立审查；既有线性下界与英文稿从同一成果包恢复入口读取。
 
-用户指定的加权拥塞[结构论文专题](research/current/weighted_congestion/structural_reconstruction/README.md)已从实际资源定义重建端点—面积、共同尺度拼接、权深度和稳定核修复的一般证明，并接通近次数全状态反例与有条件的成本优化。旧[恢复范围对照](research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)保留为历史记录；现行覆盖和审查等级以结构专题及精确账本为准。
+另行保留的加权拥塞[结构论文专题](research/current/weighted_congestion/structural_reconstruction/README.md)已从实际资源定义重建端点—面积、共同尺度拼接、权深度和稳定核修复的一般证明，并接通近次数全状态反例与有条件的成本优化。旧[恢复范围对照](research/current/weighted_congestion/decision_methods/previous_structure_scope_comparison.md)保留为历史记录；现行覆盖和审查等级以结构专题及精确账本为准。

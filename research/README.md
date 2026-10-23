@@ -1,5 +1,7 @@
 # 研究总目录：当前半覆盖与保留研究线
 
+最新决定：当前团队只做任意人数、一般共同目录，不继续特殊范围与局部常数。统一阅读[一般证明工作稿](current/customer_attraction/general_half_proof.md)、[成果总账](customer_attraction/RESULTS_LEDGER.md)、[衔接说明](customer_attraction/SYNTHESIS.md)及[全部个人区恢复索引](customer_attraction/WORKSPACE_RESULTS.md)。
+
 当前唯一主攻 **Q-CAG-HALF**，存档 **customer-attraction**：一般共同目录、任意人数的完整历史纯SPE福利至少为最优一半，仍OPEN。先读[本题短地图](customer_attraction/README.md)，角色仅有[Boss](customer_attraction/BOSS_START.md)、[清洗者](customer_attraction/CLEANER.md)、[整理者](customer_attraction/EDITOR.md)，程序统一为根[work.py](../work.py)。
 
 ## 当前研究链
