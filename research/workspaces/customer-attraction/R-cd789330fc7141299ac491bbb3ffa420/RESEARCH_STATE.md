@@ -34,3 +34,8 @@ PI路线现已真正失败，不再是OPEN候选：430客户完整三人SPE有P4
 ## 一般-only接续轮
 
 已实际读取最新AGENTS和共享连续一般工作稿，六支复用，root直接维护round3/GENERAL_PROOF_WORKING.md。没有新特殊人数、受限catalogue或局部系数任务。当前精确终点是对最优m槽组合的真实偏离自由匹配收益至少OPT−W，或直接支付等价捕获流；这仅是尚待证明的充分接口。新通用OPT Bernoulli替槽/Beta积分/随机配对与锚定槽预算约束各分支N\O的势，不能把其支持一律认作实际G。原IC不能任意乘参数核，仍须整条真实行的合法非负合成。一般half仍OPEN。
+
+
+本轮续进已形成全输入owner势与全J库存流：见README新增地图。root/relay/shared分别重构通用代数，A/B有独立解析对稿和精确cut/实际maxflow回归。静态anchor容量与可购买原IC的动态范围已拆开，后者目前只在完整OPT前缀的真实未来角色合法。实际G取消γ可同时支付全部初始owner source，剩余明确为捕获重置到达费用。根及source首轮正关系成立，不推出后续row预算；固定势代回原调和势仍回到原总去槽债。
+
+接续入口：round3/GENERAL_PROOF_WORKING.md §4的TREE-F与NET?，同时读取credible的owner_hybrid_transport和tail的ρ版COV。下一有信息价值的一般动作是从全部真实IC为共同剩余η容量构造兼容flow或其全价格割证明；不要继续变换同一ghost恒等式、扩固定样本或把独立叶maxflow当跨树可行性。Q-CAG-HALF仍OPEN。

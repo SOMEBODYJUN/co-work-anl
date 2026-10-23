@@ -97,6 +97,67 @@ relay分支补充如下可直接作用于Y_ij的版本，root另作重构。若B
 
 ## 4. 怎样接一般论证，哪里还不能接
 
+### 一个固定全局势，以及可合法薄化的最优基线
+
+shared与relay分别从第3节得到同一固定势，再由shared提出owner薄化，root逐客户独立重构如下。取一次固定的最优主题顺序，选互不交Q_i⊆T_i并为O；Q_i只作分析基线，不要求是目录行动。每个Q/B替槽实现，把所有未替槽Q_i扩为T_i后都是合法m槽，覆盖只增，故原实现也不超过OPT。这使第3节可对Q基线使用，所有客户a_Q=1。
+
+对x∈O记其唯一owner槽o(x)，定义同一全局函数
+
+    Φ_Q(B)=Σ_(x∉O)H_c_x −Σ_(x∈O:x∉B_o(x))1/(c_x+1)，
+    F_Q(B)=|O|+Φ_Q(B)。
+
+允许formal空槽，因为任何不足m个合法行动的覆盖可重复填满。随机替槽证明Φ_Q≤0；与全空B的同一基线比较给F_Q≥0，故0≤F_Q≤OPT。槽动作的单调次模扩展由积分中的覆盖函数给出，最优上界只用于每槽至多一个合法行动或formal空的profile。
+
+对一个完整B，将第i槽formal置空所得B^(−i)，置ℓ_i(B)=F_Q(B)−F_Q(B^(−i))，e_i=u_i−ℓ_i。对x∈B_i，逐客户闭式为：
+
+| 客户状态 | ℓ_i(B;x) | e_i(B;x) |
+| --- | --- | --- |
+| x∉O | 1/c_x | 0 |
+| i=o(x) | 1/c_x | 0 |
+| i≠o(x)，owner槽覆盖x | 0 | 1/c_x |
+| i≠o(x)，owner槽未覆盖x | 1/[c_x(c_x+1)] | 1/(c_x+1) |
+
+不在B_i的客户两项均零。于是0≤ℓ_i≤u_i，O外是原收益的精确边际。在同一实际叶C上有精确预算
+
+    Σ_i e_i = |I|−κ，
+    κ=Σ_(x∈I:owner覆盖)1/c_x
+       +Σ_(x∈I:owner未覆盖)1/(c_x+1)。             (OWNER-ERR)
+
+这比仅Σe_i≤|I|保留了正余量κ；仍只是一份实际叶预算。它不自动控制其余真实rollout的e。
+
+若将owner取作固定最优顺序中第一次覆盖x的槽，依次强制最优前缀T_1,...,T_i后沿原σ的真实终局记Z^i，Z^0为实际终局，Z^m=T。对x的第一次query，owner正是当前槽，e_i(Z^i;x)=0；第s次query有较早owner锚，当前误差等于1/c≤1/s。因此
+
+    Σ_i e_i(Z^i;x) <= H_(a_x)−1 <= a_x−1。        (QUERY-ERR)
+
+原完整T基线而不薄化时，类似式为H_(a_x−1)，由relay先得到。owner版本更小，且F_Q的统一上界直接为OPT；原真实query始终是合法T_i，不是非法Q_i。一般证明与独立重构见shared/relay本轮稿，root精确回归见parent。这里的形式删槽只计算函数值，绝不调用较小游戏SPE。
+
+对原实际前缀的任意matching查询叶Y_i，owner查询行仍有e=0；每个非owner查询行，若owner在该枝覆盖x则c≥2、e=1/c≤1/2，若owner未覆盖则e=1/(c+1)≤1/2。因此另有直接适用于原FLOW分支的界Σ_i e_i(Y_i;x)≤(a_x−1)/2。R与I上的和须分开：FLOW免费重复预算只属于R，不能把I折扣也塞进去。
+
+误差还有一份精确插入势。令k_x为非owner覆盖者数，则对非owner i覆盖x，e_i(B;x)=1/(1+k_x)，不依owner是否覆盖；owner本人的误差为零。因此Ψ_Q(B)=Σ_(x∈O)[H_(1+k_x)−1]满足e_i=Δ_iΨ_Q，原调和势恰为F_Q+Ψ_Q。这个恒等式使error口径明确，却不能单凭代入把下一项跨叶债务消掉。
+
+### 用完整原IC展开以后，真正缺失的跨叶项
+
+对上述同一最优前缀链，第i步真实当前比较给
+
+    γ_i=u_i(Z^(i−1))−u_i(Z^i)>=0。
+
+一次固定owner和配对后，定义
+
+    D_i^F=F_Q((Z^i)^(−i))−F_Q((Z^(i−1))^(−i))。
+
+用u_i=ℓ_i+e_i代入整条原IC，精确得到
+
+    F_Q(Z^i)−F_Q(Z^(i−1))
+      =D_i^F+e_i(Z^(i−1))−e_i(Z^i)−γ_i。
+
+望远镜至全部最优槽，F_Q(Z^m)=OPT，所以
+
+    OPT−F_Q(Z^0)
+      =Σ_i D_i^F +Σ_i e_i(Z^(i−1))
+         −Σ_i e_i(Z^i)−Σ_iγ_i。                 (TREE-F)
+
+(TREE-F)保留全部原真实后继的差，证明只用原树IC；它是精确展开，不是新福利下界。OWNER-ERR只控制同一个Z^0上的误差，QUERY-ERR只控制强制query侧，二者不提供Σ_i e_i(Z^(i−1))或D_i^F正部的免费上界。尤其不能把负号QUERY-ERR用其上界替成有利方向，不能因F_Q有统一有限基线就默认D_i^F相消。还需由真实全树激励构造共同支付，才能得到2W≥OPT。
+
 每条原IC可写成
 
     ∫_0^1 Σ_x [1_(x∈规定主题)t^(c_x(规定真叶)-1)
@@ -110,8 +171,31 @@ relay分支补充如下可直接作用于Y_ij的版本，root另作重构。若B
 
 本轮继续以(FLOW?)或更弱的直接half支付为终点，不将终局核、signed恒等式、无法闭合或有限阴性升级为一般定理。
 
+### 全角色运输、同叶联合钱包和准确的动态余项
+
+[owner全角色运输](credible/owner_hybrid_transport.md)已给两项普遍存在性证明，由[shared独立解析对稿](shared/review_owner_hybrid_transport.md)核对通过。A图将B的全部O外原利润，沿O客户的真实份额1/c容量，运至B真正遗漏的O库存；B图将O外H_c份额，沿owner未覆盖客户的error容量1/(c+1)，运至missing-owner价格库存。两图都是同一叶的可选证书，不是两份可相加的钱，也不保证角色方向递增。
+
+对A图取实际叶，得到R上的取消量γ_x∈[0,1]、Σγ=|G|和一份I份额流f。写g_i=u_i(G)，γ_i为owner i的取消量，则γ_i+out_f(i)−in_f(i)=g_i，且in_f(i)≤u_i(I)。若任意先指定δ_x≤1、每owner总δ_i≤g_i，可先送本地δ到自有R终点，残余每个割的source与sink同时减少δ(J)，所以仍可扩充完整γ。特别可以同时预取δ_i=min(g_i,|Q_i∩R|)，不必独立给各role重新领取G。
+
+对一个完整元组同时锚定任意若干OPT主题槽，A图还可完全避开这些主题的并集A，只用O\A资源；由固定锚的全角色hybrid割证明，全部锚定角色孤立。于是每个角色在A上的预留利润与这份transport的outgoing之和，不超过该叶该角色的完整利润。这是同叶财务容量；要购买原整条IC，该角色从自身节点以后的B必须确实沿原σ，不能把受未来强制anchor改变的过去角色收益当作原IC左端。若anchors是完整OPT前缀，所有剩余运输角色都在严格未来，B由此前缀后沿σ完成，才可合法用同一whole-IC系数支付预留利润与运输。这比两图各自有界更强；它仍没有证明各叶的这份钱包恰好等于下面的实际前缀捕获权重。
+
+把残源ρ_x=1−γ_x注入[递增角色吸收流](credible/increasing_role_capture_flow.md)，每次在实际前缀合法query、按该真实叶均分，所捕获R份额送至更晚角色，全部ρ最终吸收。对节点s=(i,a)，设吸收总量A_s、完整真实query收益D_s，取唯一整行IC权w_s=A_s/D_s（零量取零），总实际收益费用为K_i=u_iΣ_(s at i)w_s。不能对每个客户另选IC系数。
+
+一份足够但尚未证明可行的共享容量为
+
+    K_i(ρ) <= η_i := u_i−g_i+γ_i = u_i(I)+γ_i，
+    Σ_iη_i=W。                                    (NET?)
+
+若同一matching、owner、γ/f及query流满足NET，原IC给R−G≤ΣK_i≤W，闭half。NET是本轮末端明确义务，不是已证普遍关系；也可能强于half。
+
+**已付的首轮与未付的到达须分开。** 使用上述δ_i=min(g_i,|Q_i∩R|)的一份完整γ，对每个role同时有初始owner-source费用K_i^src≤η_i：若g_i≤|Q_i∩R|，则γ_i≥g_i、η_i≥u_i且源query权≤1；否则本owner的R全取消、源费用零。根无更早角色到达，所以根行NET已付。其余行还要支付捕获后重置到达的K_i^in，不能再领一份u_i。
+
+[命中容量](mixed/capture_hitting_capacity.md)使任何非owner单行对每客户的总到达≤ρ_x/2；多行集合只控制曾命中概率，不能当总访问次数。[同一节点协方差](tail/signed_tax_surplus_working.md)将formal边际标量化的正债限定为低权节点；但多行动合流后的K_i^in≤η_i−K_i^src还无普遍证明。[真实I路由](mixed/owner_credit_routing.md)保留旧覆盖者返还，提供一次error/κ分流，也没有自动给同一个w_s。当前最有信息价值的下一步是为这些对象选择一份兼容的全树流，或直接从全部真实IC构造更弱的总费用界；不是扩充固定样本或把静态maxflow当作动态SPE。
+
 ## 5. 实际验证与来源
 
 [独立精确审计](parent/audit_optimal_exchange_kernels.py)不导入SPE求解器或作者程序；它对零客户/空主题/重复槽及小catalogue穷举，直接枚举替槽实现核(BER)的恒等式，并核调和、随机匹配与正参数核。输出采用Fraction，拒绝覆盖已有结果。初次冻结报告为[审计结果](parent/optimal_exchange_kernel_audit.json)，加入锚定项后的独立冻结报告为[锚定结果](parent/optimal_exchange_anchor_audit.json)，其中检查93908个锚定配对。有限回归只核公式实现，普遍性由第3节证明承担。
 
 shared的[原始一般交换稿](shared/optimal_exchange_harmonic_budget.md)与relay的[独立解析审查](relay/review_optimal_exchange_kernels.md)均已落盘。后者逐项重构BER/HARM/MATCH/KERNEL并给锚定版、单槽私有块注入及IC积分限制；本节核心交换关系通过内部独立审查，动态支付未通过或完成。本文root对一般公式的重构不冒充额外外审或新颖性认证。其余旧工具均沿[共享一般工作稿](../../../../current/customer_attraction/general_half_proof.md)调用，不重新给特殊范围派任务。
+
+root对新owner势及其完整原IC展开的重构见第4节；[独立系数审计](parent/audit_beta_slot_potential.py)先冻结[Beta结果](parent/beta_slot_potential_audit.json)，再加入owner和精确error身份另冻[owner结果](parent/owner_slot_potential_audit.json)，不改旧记录。普遍性由解析证明承担，有限计数仅作公式回归。Hall-A/B另有shared的独立全cut/Fraction审计及实际最大流回归，核查范围与非盲审过程在其review中明示。签名税、吸收流、HIT及所有仍开项各自保留真实审查和适用条件，未升为Q-CAG-HALF证明。

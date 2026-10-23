@@ -60,3 +60,8 @@ PI已被下述完整SPE反例否定；混合弱推送、全树水位信用仍为
 
 - **B10-OPTIMAL-REPLACEMENT-KERNELS-v1（全输入交换代数；独立内部解析审查通过）**：任意m≥1、任意最优m槽元组T和任意合法m槽profile B，独立Bernoulli逐槽替换给(BER)；对dp/p积分给O外H_c与O内无同槽交叠客户的Beta(a,c+1)预算。均匀配对系数C(m−a,c)/C(m,c)；固定一个相同T_j槽后可用m−1槽锚定版本。普遍性由随机替槽及最优性证明；有限Fraction审计只核实现。未给真实跨子树总支付、half或新颖性认证。
 - **B10-REAL-DEVIATION-GAP-MATCH（旧弱匹配义务的本轮展开，OPEN）**：对实际路径和某个OPT元组，期望存在排列使Σ_i d_i(Tπi)≥OPT−W；CAP恒等式将其化为一次捕获流/已覆盖收益/重复比较与G共同预算。未证明此全称候选；不是对已失败遗漏匹配的修复证明。
+
+
+- **B10-OWNER-EXCHANGE-POTENTIAL-v1（全部输入解析；独立重构通过）**：任意OPT元组T及分析分割Q_i⊆T_i并O，Φ_Q=ΣoutsideH_c−Σowner未cover 1/(c+1)≤0，F_Q=OPT+Φ_Q单调次模且0≤F_Q≤OPT。原单位收益精确拆成formal F边际ℓ和非负error e；同叶Σℓ=G+κ、Σe=I−κ，e是非owner插入势边际。实际-prefix matching查询每客户Σe≤(a−1)/2；最优前缀首次owner选择给≤H_a−1。分析Q不作为行动，无SPE继承或half结论。见round3/shared与relay。
+- **B10-OWNER-HYBRID-TRANSPORT-v1（全部输入解析；独立对稿核查通过）**：任意合法B，全部角色子集hybrid割给A/B两份可选有理maxflow：outside原利润经O真实份额到真遗漏，outside调和份额经owner-error到missing-owner价格。actual A给G单位合法γ取消；可预先在每owner取消至多其actual G利润的R库存再补足。固定合法OPT前缀anchors可避开其全部覆盖，并为真实未来角色的联合捕获/transport提供同一whole-IC钱包。一般散布anchors仅给静态财务容量，不自动购买过去IC。不同叶兼容及动态NET未证明。
+- **B10-CAPTURE-HIT-AND-SOURCE-NET-v1（全部输入一般组件；独立重构核对）**：actual-prefix递增角色均分吸收对单个遗漏客户守恒，非owner单行到达≤ρ/2；多角色集只控制曾命中。上述同一γ可使所有owner初始source费用同时≤η_i=u_i(I)+γ_i，总η=W；之后的捕获重置到达费用仍未付。HIT、源预算或协方差界均不升级为NET可行性或half定理。

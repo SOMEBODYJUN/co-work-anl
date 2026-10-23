@@ -12,6 +12,15 @@
 
 本轮子目录： [root一般稿](round3/GENERAL_PROOF_WORKING.md)、[global](round3/global/README.md)、[mixed](round3/mixed/README.md)、[tail](round3/tail/README.md)、[shared](round3/shared/README.md)、[credible](round3/credible/README.md)、[relay](round3/relay/README.md)。尚未完成的文件也按草稿保存；成熟后另请独立核查，不等待审批准。
 
+## 本次新增的一般组件与最后缺口
+
+- [固定owner交换势](round3/shared/owner_exchange_potential.md)：分析分块可合法薄化OPT基线，原真实客户和行动不变；同叶精确分解Σℓ=G+κ、Σe=I−κ。root与relay独立重构通过；[独立系数回归](round3/parent/owner_slot_potential_audit.json)只核公式。
+- [查询折扣与完整IC展开](round3/relay/optimal_exchange_potential_and_query_credit.md)：实际前缀matching查询的每客户折扣≤(a−1)/2；最优前缀更紧为H_a−1。误差是非owner插入势的精确边际，不因代回原调和势就消除去槽债。
+- [owner全角色运输](round3/credible/owner_hybrid_transport.md)及[独立审查](round3/shared/review_owner_hybrid_transport.md)：全J割保证O外真实利润/调和份额可由O真实份额/error容量运输，给一份受实际I角色容量约束的G取消量；锚定OPT前缀后能避开其全部客户、只在未来角色共同支付。任意散布anchors的财务容量不自动给过去角色原IC。
+- [递增捕获](round3/credible/increasing_role_capture_flow.md)、[HIT](round3/mixed/capture_hitting_capacity.md)、[真实I路由](round3/mixed/owner_credit_routing.md)与[同一权重协方差](round3/tail/signed_tax_surplus_working.md)：保留旧背景返还、唯一整行IC系数及一次实际信用。source首轮可以同时放入η_i=u_i(I)+γ_i；捕获后重置到达的费用仍缺共同剩余容量证明。
+
+当前最具体未闭义务是同一owner/matching、G取消γ和真实query流下，能否共同保证K_i^in≤η_i−K_i^src，或证明更弱总费用≤W。已证静态运输、单行命中概率、原IC积分和势恒等式均不能直接替代它。一般half仍OPEN；本轮没有真正反例、外审或新颖性认证。
+
 ## 本轮改变了什么认识
 
 1. **真实早期激励不能被收益排序或末位最佳回复替代。** 环形菜单可使所有后继严格高于根，并高于所需额外槽安全值；即使末位真正最佳也仍可失败。但同一两参数圆环的全部完整SPE均通过extra-one，恰由第二人的真实可选偏离排除全部危险参数。
