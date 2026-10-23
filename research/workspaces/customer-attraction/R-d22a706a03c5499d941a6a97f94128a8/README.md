@@ -70,3 +70,34 @@ F_(n−1)(1_A)=2(n−1)(n−2)+(7n−13)/6。故系数二Bellman台阶对每个n
 的单实现整数BI显示三块指定菜单已不能实现。通用last-low截断引理有解析证明，
 [mixed独立局部审查](round5_mixed/three_block_last_low_witness.md)只核一个三剩余人代表，
 不提升为全部截面独立核验。原mixed接口仍OPEN，条件矩阵不能当SPE反例。
+
+## 本轮主认识：任何固定局部Bellman系数均不成立
+
+更简单的已知all-big完整SPE族已将上述17/6障碍加强为**无界**，不应再把17/6当作尚待调整的候选常数。
+[round5_induction/unbounded_profit_bellman_obstruction.md](round5_induction/unbounded_profit_bellman_obstruction.md)
+与
+[root独立证明](parent/profit_bellman_unbounded_independent_review.md)给：n玩家、
+一个n客户主题A、n−1个不交singleton，每个历史全选A是完整SPE，u=1、W=n、OPT=2n−1。
+背景一名A后，最佳剩余利润Ftail=2n−h_n，h_n=min_(j=1..n)(j+n/j)。
+根台阶OPT−Ftail=h_n−1≥2√n−1，故任何固定局部系数均失败。
+实际尾部额外half信用h_n−2恰好补偿根债h_n−3并留下全局余量1。
+[独立回归代码](parent/audit_profit_bellman_unbounded.py)与[冻结结果](parent/profit_bellman_unbounded_independent_audit.json)
+只核n2..8实现；全n结论来自两份独立解析重构。
+
+[round5_coupling/common_customer_covariance_and_stationary_obstruction.md](round5_coupling/common_customer_covariance_and_stationary_obstruction.md)
+记录另一指定核边界：三人6286客户完整SPE的唯一source→uniform终局槽stationary分布，
+仍被一个transient查询超根u达123/4；[独立单位审查](round5_audit/stationary_column_candidate_review.md)
+核验全部258含自身比较。多个纯列安全，故只否定该stationary选择，不反mixed。
+
+[round5_global/monochrome_dominance_and_va_localization.md](round5_global/monochrome_dominance_and_va_localization.md)
+给静态单色弱支配、动态势最大反例、VA真实剩余税，以及M=u_A−q(B)=0时
+所有查询q(T)≤u_A的解析端点；root已独立重构。福利推论不声称新已知范围；M>0一般仍OPEN。
+
+当前下一步必须提供非循环的跨深度信用状态，或直接支付真实跨分支损失；
+既有局部常数、stationary固定核、块复制表均不能承担该义务。无一般证明或half反例。
+
+[round5_induction/credit_state_obligations.md](round5_induction/credit_state_obligations.md)
+再定位一个受限信用模板障碍：若C=sum f_r(b_x,c_x)为实例无关的逐客户可加式，
+并只计背景与tail共同覆盖客户（f(0,c)=f(b,0)=0），两个完整SPE无限族
+对同一f_(n−1)(1,n−1)强制冲突上下界，n≥16即矛盾。root已独立推导。
+此结果不能扩张到有独占项、主题/实例信息或非可加信用。
