@@ -116,6 +116,8 @@
 | [强 iid 福利桥的既有反例推论：独立审查](<reviews/customer_attraction/iid_strong_welfare_bridge.md>) | `research/reviews/customer_attraction/iid_strong_welfare_bridge.md` | 核对静态iid Nash属于CCE的包含关系、八客户量词及显式混合概率；区分强iid失败与真正安全聚合开放。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-ACTUAL-ROOT-TAIL-MENU-NO`、`CA-ADAPTIVE-DECORRELATION-NO`、`CA-ADAPTIVE-TYPE-SPARSIFICATION`，[命题合同（共 77 项）](assets.json) |
 | [单例、缺一及全体极大归属的真实中继保底与锐福利界](<current/customer_attraction/extreme_maximal_membership_floor.md>) | `research/current/customer_attraction/extreme_maximal_membership_floor.md` | 研究无界人数与极大主题数时读取：保留任意内部子主题，用真实后继归纳与平稳逐客户支付；中间关联仍缺信用。 | 数学正文；按关联命题分别核对证明及审查；关联 `CA-EXTREME-MAXIMAL-THETA-v1`、`CA-EXTREME-MAXIMAL-WELFARE-v1`，[命题合同](assets.json) |
 | [极端极大归属首位θ保底的独立平稳支付审查](<reviews/customer_attraction/extreme_maximal_membership_floor.md>) | `research/reviews/customer_attraction/extreme_maximal_membership_floor.md` | 核对独立重构、任意背景利润、零分母和共同核心边界；内部审查不等于外审。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-EXTREME-MAXIMAL-THETA-v1`、`CA-EXTREME-MAXIMAL-WELFARE-v1`，[命题合同](assets.json) |
+| [实际未覆盖私有客户的席位谱与最优私有遗漏锐界](<current/customer_attraction/uncovered_private_seat_spectrum.md>) | `research/current/customer_attraction/uncovered_private_seat_spectrum.md` | 任意目录逐位置残余私有席位谱预算；某最优并集全部遗漏为极大全局私有客户时给锐2−1/m界，共享遗漏仍未闭合。 | 数学正文；按关联命题分别核对证明及审查；关联 `CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1`、`CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1`，[命题合同](assets.json) |
+| [实际遗漏私有席位谱的盲独立审查](<reviews/customer_attraction/uncovered_private_seat_spectrum.md>) | `research/reviews/customer_attraction/uncovered_private_seat_spectrum.md` | 从精确陈述独立重构触块容量归纳，攻击所有离轨计数、空块、最优元组扩张和锐性，分清旧路由状态与新重置状态。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1`、`CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1`，[命题合同](assets.json) |
 
 <a id="unrelated_machines"></a>
 
