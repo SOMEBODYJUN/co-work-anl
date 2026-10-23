@@ -10,3 +10,9 @@
 | B9-NONEMPTY-AGG-EXTRASLOT-NO-v1 | 存在七非空不同共同主题、2279单位客户、三人完整SPE、p，使sumD-sumG=-7/384；同构造K,J参数存在负差iffK>66J | 父逐单位审计与作者盲独审；仅强桥反例，无外审/新颖性认证；W2144、OPT2278 | parent/nonempty_padding_transfer.md及两份独立脚本 |
 
 G_i^+包含完整m槽强制终局，再增加一槽独立查询；D_i是原游戏第i位真实强制收益。sumG<=W和存在自由聚合背景Q均仍OPEN，本账本没有因强桥失败而否定它们。其他研究分支只按其已写正文的实际范围接续，阴性有限扫描不提升Claim。
+
+## 新增中继边界与一般静态工具
+
+- B9-ACTUAL-PREFIX-INCUMBENT-RELAY-NO-v1：原模型61客户四人完整SPE，实际BAAF。f_r(b,T)定义为强制T后的所有纯SPE续局中入场收益最小值。沿真实根动作B，有f4(empty,A)=9<(3/4)f3(B,A)=39/4；同sigma的V及节点max亦失败。依赖既有root_tax客户输入、新完整证书、全末BR条件表；父与作者两路定义级内审通过。只否定该比例递推，无half反例；详见parent/actual_incumbent_independent_review.md与direct_cover/正文。
+- B9-OPT-RANDOM-SLOT-EXCHANGE-v1：任意有限实例、任意m槽实际元组和最优m槽比较元组（可重复），所有r均有outside新增概率和≤opt丢失概率和，逐客户系数P_r(d)Q_r(c)；调和加权核为C(m,c+d)/(d C(m,c)C(m,d))。无SPE假设；父独立Vandermonde重构通过，无外审/新颖性认证；详见signed_harmonic/optimal_exchange_moments.md与parent/独审。仅静态最优性非负组合，不含half结论。
+- B9-REPEATED-TAIL-TEMPLATE-NO-v1：给定作者C_i/A_i/B_i/D目录与指定actual C_1…C_k D^r、fresh-A_i deviation后B_i^r两条真实路径，r>=2不能同时属于一完整SPE，因d>=rc/2且d<=c/(r+1)。c>0，r正整数，其他参数按正文；父独立重算两条末位收益通过。只反驳这条路径模板，不排除所有多尾或森林构造；详见credible_attack/repeated_tail_obstruction.md。

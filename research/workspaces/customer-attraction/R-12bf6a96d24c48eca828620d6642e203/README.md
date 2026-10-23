@@ -25,3 +25,10 @@
 
 - [全非空主题转移与精确阈值](parent/nonempty_padding_transfer.md)：一般SPE私人填充保持引理，将强聚合反例转为七非空主题；K>66J为该族准确阈值。原half仍OPEN。
 - [本轮精确Claim](CLAIMS.md)、[失败机制](FAILED_ROUTES.md)区分强桥、弱桥和主目标。
+
+- [本轮前沿与接续](RESEARCH_STATE.md)：精确区分已否定的强桥、开放弱桥以及缺失的较早真实中继。
+- [同一实际前缀比例递推反例独审](parent/actual_incumbent_independent_review.md)：完整BAAF策略及可信最小值两路重构。
+- [最优随机交换矩](signed_harmonic/optimal_exchange_moments.md)及[父独审](parent/exchange_moments_independent_review.md)：全人数静态输入，尚未接成SPE支付。
+- credible_attack/repeated_tail_obstruction.md记录指定多尾重复模板的准确失败边界；dynamic_credit/只按代数定位、摘要闭合障碍和未闭义务接续，不将静态恒等式当SPE新约束。
+
+- [森林阈值与UTP候选](credible_attack/forest_threshold_candidate.md)：仅未证候选；有限阴性诊断不提升状态。它明确需要跨坏终局的叶消息拼接，而非新的已证结构界。
