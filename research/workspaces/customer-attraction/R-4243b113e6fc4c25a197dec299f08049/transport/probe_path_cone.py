@@ -1,32 +1,34 @@
 """Attack the precise path-only certificate candidate using true count-policy SPEs.
 No finite run proves the candidate. Every generated policy is backward induction.
 """
-import argparse, functools, json
+import argparse, functools, json, math
 from fractions import Fraction
 from pathlib import Path
 import numpy as np
 from scipy.optimize import linprog
 
 def probe(seed, m, k):
- rng=np.random.default_rng(seed); masks=np.arange(1,2**k); incidence=((masks[:,None]>>np.arange(k))&1).astype(float)
+ rng=np.random.default_rng(seed); masks=np.arange(1,2**k); incidence=((masks[:,None]>>np.arange(k))&1).astype(np.int64)
  # Keep every type positive; favor a sparse selection of the original types.
  weights=np.ones(2**k-1,dtype=np.int64)
  selected=rng.choice(len(weights),size=min(len(weights),2*k),replace=False)
  weights[selected]+=rng.integers(1,500,size=len(selected))
- action={}
+ action={}; scale=math.lcm(*range(1,m+1))
+ assert int(weights.sum())*scale < 2**62
  @functools.lru_cache(None)
  def outcome(prefix):
   if sum(prefix)==m:return prefix
   cand=[]; vals=[]
   for t in range(k):
    p=list(prefix);p[t]+=1;q=outcome(tuple(p));cand.append(q)
-   loads=incidence@q; vals.append(np.sum(weights*incidence[:,t]/np.maximum(loads,1)))
-  vmax=max(vals);ts=[t for t,v in enumerate(vals) if v>=vmax-1e-8]
+   loads=incidence@q; reciprocal=np.array([scale//max(int(d),1) for d in loads],dtype=np.int64)
+   vals.append(int((weights*reciprocal)@incidence[:,t]))
+  vmax=max(vals);ts=[t for t,v in enumerate(vals) if v==vmax]
   chosen=int(rng.choice(ts));action[prefix]=chosen;return cand[chosen]
  c=outcome((0,)*k);actual=[];counts=[0]*k
  for i in range(m):
   t=action[tuple(counts)];actual.append(t);counts[t]+=1
- C=incidence@c; W=(C>0).astype(float);G=[];prefix=[0]*k
+ C=incidence@c; W=(C>0).astype(np.int64);G=[];prefix=[0]*k
  for i,a in enumerate(actual):
   for t in range(k):
    p=prefix.copy();p[t]+=1;d=incidence@outcome(tuple(p))

@@ -2,6 +2,8 @@
 
 主目标 Q-CAG-HALF 仍 OPEN。当前研究完整历史行的全局支付；没有完整一般证明或 SPE 反例。
 
+`bank_budget_independent_review.md` 核验联合偏离 d/ρ 预算，并给无需 ρ 的当前银行动作稀释容量：实际主盈利之和不超过 Σ_{x∈Cbank}[1−Σ_t1/(m−i_t+t)]。每客户容量≤1−c_x/m；root 提出并本分支核验的精确零条件是实际银行主题嵌套。另独立重构完整投影保留条件：在递归映射的每个主历史处，当前银行主题包含于其全部 σ 规定未来银行主题，则诱导主策略是完整 SPE。一般容量仍只控制一个真实实现路径，未支付互斥离轨子树，不是一般half证明。统一正文由同组 `global_induction/` 分支整合。
+
 本轮曾独立重构仅保留在轨全部真实行的调和无界族：互不交 A_i 大小 K/(m-i+1)、O_j 大小 K，首偏离后始终重复首偏离主题；W=KH_m、OPT=mK。此形式策略不是 SPE。查重发现已有更强结果，故不另建重复证明或代码，不列为本轮新数学资产。
 
 查重：已有更强结果在 `R-64201cd12083425899e2d643ec9bc087/branch_transport/rank_one_obstruction.md`，同目录 `fixed_rank_obstruction.py` 实现固定偏离秩一般版本。另 `R-5bb00b5c3cf740f099eae62130632b56/root_floor/robust_prefix_floor_family.md` 给鲁棒前缀保底无界族。此处仅保存本轮独立重构和应用边界。
