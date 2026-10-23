@@ -70,3 +70,14 @@
 - **Counterevidence / Objections：** r≥3有D(p)<C(p)、势排序失败与高插入二环，均不自动否定本候选。
 - **Status：** OPEN。
 - **Related Files：** [混合义务](induction/full_root_menu_mixed_obligations.md)、[接口](tree/full_terminal_menu_interface.md)、[联合势身份](tree/full_terminal_reply_column_identity.md)。
+
+## B10-PROFIT-BELLMAN-LOCAL-NO-v1
+
+- **Exact Statement：** 对每个整数n≥4，采用CA-PREFIX-BALANCE-NO的同一原始单位客户族与完整SPE，定义F_r(b)=max_(r主题Z) sum_x c_x(Z)/(b_x+c_x(Z))，零分子项为0。则F_(n−1)(1_A)=2(n−1)(n−2)+(7n−13)/6，而实际首位u1=n−1/n，F_n(0)=OPT_n=2n²−2n−2。
+- **Objects / Domain / Quantifiers：** 该显式共同目录无限族；所有n≥4。一般拟议台阶欲量化所有合法背景与SPE，反例取空根实际首行动。
+- **Assumptions / Definitions / Dependencies：** CAG-MODEL、既有完整全历史SPE族合法性；新F是背景剩余利润，非总覆盖补全。精确优化由整数槽消元证明。
+- **Scope / Conclusion：** 2u1+Ftail−OPT=(23−5n)/6−2/n<0对每个n≥5；任何固定α<17/6最终也违反αu1+Ftail≥OPT。只反驳该局部充分归纳，不反驳F_r≤2P或Q-CAG-HALF。
+- **Evidence：** 发现者与root各自从原始客户类型解析求最优值；独立实现各枚举n4..8共15501计数候选。原SPE全历史证明沿既有资产引用。
+- **Counterevidence / Objections：** 暂无成立异议；全局2W−OPT=2(n−1)>0，尾部额外裕量能支付首步债，不可忽略。
+- **Status：** 个人完整证明、独立内部解析复核；未外审、未认证新颖性、未提升共享canonical。
+- **Related Files：** [自足正文](round5_induction/profit_bellman_counterfamily.md)、[root审查](parent/profit_bellman_family_independent_review.md)、[独立回归](parent/profit_bellman_family_independent_audit.json)。
