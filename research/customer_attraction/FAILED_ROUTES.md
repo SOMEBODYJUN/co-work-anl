@@ -27,3 +27,6 @@
 | 用均匀大正偏置 Möbius 编译直接产生坏福利：[编译边界](../current/customer_attraction/compiler_security_barrier.md) | 完整历史的有符号表示与合法大偏置嵌入 | 正偏置会改善福利；较小合法偏置或另一真实构造须重新证明 |
 
 重试前只需核对与你当前机制有关的一行及原反例，无需把全表当作探索前审批。新的想法可以直接尝试。工具失败、超时、数值未找到反例和多人赞同都不改变数学状态。
+
+
+新增精确停界：[极端关联平稳支付§6](../current/customer_attraction/extreme_maximal_membership_floor.md)对private/co-singleton/global类型成立，但四极大2of4类型的无自环、平稳均匀示意菜单已有−1/8逐客户余项。该菜单没有完整SPE认证，不能否定一般theta或half；重试须增加真实后继选择、跨类型或更早中继信用，不能原样逐客户外推。

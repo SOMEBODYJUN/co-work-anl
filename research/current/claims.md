@@ -1476,6 +1476,13 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 
 | WC-REGULARIZED-CORE-REPAIR-QUALITY-v1 | 有限二动作基体degree≤p；资源插入边际满足共同玩家h_i>0的[1,α₀]夹逼，前沿上0<m≤M的完整基体加权社会成本包络；η≥0有限。 令β_η=max_i(α₀h_i+η(p+1)w_i)/(h_i+ηw_i)、λ_η=(M+η)/(m+η)，取前沿上Φ_B+ηW_B的全局最小点。若门同时满足倍率β_η的强支配RD及社会预算SD，则该点是完整β_η-PNE，且完整W≤λ_ηOPT。 | 全局核心最小化、共同尺度、背景基线包络、RD及SD为联合前提；SD单独不证明稳定或质量。不承诺有效全局求解或多项式时间。 [自足证明](weighted_congestion/structural_reconstruction/socially_descending_repair.md#51-正则化核心的稳定性与社会质量联合保证)、[实际独立审查](../reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md)、[单独root检查](../reviews/weighted_congestion/structural_reconstruction/structural_methods_article_review.md)；S7作者推导，另有实际独立root检查；外审、新颖性未认证。 |
 
+## 极端极大归属的真实中继与平稳支付
+
+| ID | Exact Statement / Scope / Quantifiers | Dependencies / Evidence / Status |
+| --- | --- | --- |
+| CA-EXTREME-MAXIMAL-THETA-v1 | 原CAG-MODEL；不同包含极大主题为A_1,...,A_k，每个可覆盖客户属于其中1、k−1或k个。对每个合法前缀背景b、任意剩余r≥1、每个完整有序历史纯SPE，每名剩余玩家最终收益≥theta_r(b)=min_(B∈S^(r−1)) max_(A∈S) Σ_(x∈A)1/(b_x+1+load_B(x))。k、r无上界，内部子主题、空主题及历史平局任意。 | [自足证明](customer_attraction/extreme_maximal_membership_floor.md)、[独立内部重构](../reviews/customer_attraction/extreme_maximal_membership_floor.md)。依赖原模型、全部真实中继最优性、包含支配与平稳逐客户支付；完整解析证明、独立内审及精确审计，未外审/认证新颖性。 |
+| CA-EXTREME-MAXIMAL-WELFARE-v1 | 同一结构域内每个合法背景b的r人完整SPE有P_r≥r F_r(b)/(2r−1)，F_r(b)=max_qΣ c_q/(b+c_q)。空背景m人时，c=|∩A_j|，每个完整SPE均OPT_m≤c+(2−1/m)(W−c)。系数由已知all-big向日葵族逐人数锐；零客户用乘法式。 | 依赖CA-EXTREME-MAXIMAL-THETA-v1及整数负载逐客户静态代数；[正文与来源](customer_attraction/extreme_maximal_membership_floor.md)。一般目录Q-CAG-HALF仍OPEN，2of4中间关联负余项只是本支付机制障碍。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
