@@ -33,3 +33,15 @@
 当前结构证明通过“所有后继同门槛”排除包含根主题的后继，并以平稳权重支付private/co-singleton/global客户。任意目录已有逐人theta/v反例，不能要求该加强在一般目录为真。下一步应保留聚合子局信用，允许低收益后继存在，精确支付其对根的稀释；或选择非均匀真实后继的跨根循环。一般中间关联、完整Mfull、extra-iid、signed与PRICE-HALF均没有闭合。
 
 各子目录README及原始参数、代码、Fraction证据为接续入口；不将任何无反例扫描当作正面真值。共享地图、Claim、graph/assets/review_status已按新结构定理同步，其余候选留在个人区。
+
+
+## 本轮接续状态
+
+六名直属研究员已完成本轮工作和交接，没有后台常驻承诺。主定理与研究地图已收到status=pushed（阶段checked/pushed head `7dbd0052fe776104faa0f2743c0d71520bfee879`）。远端同时新增的私有遗漏席位谱已按数学身份并存合并；未覆盖同行成果。公屏消息171已请求清洗者独立攻击本定理，尚未把请求当作审查完成。
+
+进一步的一般目标推进：
+
+- [双向包含人数中继](positivity/replicated_block_cycle.md)允许在根菜单中非均匀选真实后继，以a_i+c_j≥r支付环；父方[独立复核](parent/containment_relay_independent_review.md)覆盖充分性和最小extra-one坏例应用。没有证明一般菜单必含这样的环。
+- [聚合删除精确恒等式](global/aggregate_tail_deletion_identity.md)保留低tail删除成本C和分母相关R：P_r−rt=epsilon_*+kappa+eta+R−C。完整小SPE说明删除成本不能裸丢；已有34客户实例说明不能强求R+eta≥0。最关键OPEN义务为共同选择真实高tail权重并从全树激励证明C−R≤epsilon_*+kappa+eta。这个恒等式不是支付不等式的证明。
+
+最有信息价值的下一行动：围绕上述精确余项构造真实跨根中继比较，或在完整策略锥中产生精确全局分离。不要再回到均匀逐客户无中间类型支付、私有储备越二、固定Bellman或同种阴性扩样。
