@@ -2,7 +2,7 @@
 
 研究存档：customer-attraction；目标身份：Q-CAG-HALF。
 
-本页只整理问题去向，不新建数学命题、不按旧提示词继续派发已结束任务。当前唯一主攻是 `Q-CAG-HALF`；Boss 可自由选择方法。
+本页只整理问题去向，不新建数学命题、不按旧提示词继续派发已结束任务。当前唯一主攻是 `Q-CAG-HALF`；Boss可自由选择任何数学领域与方法，但所有新研究必须处理一般人数和一般目录，特例任务暂停。
 
 ## 当前主目标与仍开的接口
 
@@ -12,7 +12,7 @@
 | [真实分支的直接共同支付](../questions/customer_attraction_general_handoff.md) | 一般非负证书、不变量或其他全局证明机制尚缺 | 研究直接覆盖关系时；不用先假设安全值桥成立 |
 | [全局静态安全值支付](../current/customer_attraction/security_chain_and_local_boundary.md) | \(W\ge(m-\tfrac12)v_m(0)\) 是开放的**充分加强桥**，可能为假 | 选择安全值方法时；局部非负版本已否定 |
 | [末回复误差的共同运输](../current/customer_attraction/terminal_reply_transport.md)、[商空间提升](../current/customer_attraction/terminal_tie_quotient.md) | 给定证书的提升成立，普遍乘子与净误差支付未构造 | 需要跨节点组合时；允许换乘子和表示 |
-| [七极大、五人和六人缺项](../current/customer_attraction/seven_maxima_checkpoint.md) | 仍缺来源未覆盖的系数分支；七人以上已有来源证明 | 只在能帮助一般机制或形成独立结构理解时读取，不把补齐当主目标完成 |
+| [七极大、五人和六人缺项](../current/customer_attraction/seven_maxima_checkpoint.md) | 原数学缺项保持未解，但**当前不派发、不继续补齐**；七人以上已有来源证明 | 仅作旧资料引用；不得以可能泛化为由重开特殊规模项目 |
 
 ## 已经完成的子题不再从零派发
 
