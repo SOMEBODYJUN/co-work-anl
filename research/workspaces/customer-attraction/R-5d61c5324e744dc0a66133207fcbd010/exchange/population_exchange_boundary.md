@@ -86,3 +86,25 @@ python3 research/workspaces/customer-attraction/R-5d61c5324e744dc0a66133207fcbd0
 The parent independently reconstructed both examples from only the incidence
 tables using a separate Fraction oracle and confirmed the claims. This is an
 internal mathematical check, with no external review or novelty certification.
+
+## 5. Unique strict scalable family
+
+A stronger tie-free family has integer parameter q>=22 and multiplicities
+
+| Customer type | AB | C | BC | AD | ABD | CD |
+|---|---:|---:|---:|---:|---:|---:|
+| Multiplicity | 3q+1 | q-10 | 2q-12 | q-11 | 3q-7 | 3q-11 |
+
+All customers are positive in this range. Its unique two-player full SPE has
+path AC and welfare 13q-50. Its unique three-player full SPE has path DBB and
+welfare 12q-40. Both optima are 13q-50. The loss q-10 is unbounded, and
+W3/W2 tends to12/13.
+
+`strict_population_family_audit.py` gives complete fixed policies and computes
+all 15+63 nonself ordered-history comparison slacks as affine functions
+alpha*q+beta. Every alpha is nonnegative. The zero-alpha rows have positive
+beta. All positive-alpha rows become strict for q>18 in the two-player policy
+and q>21 in the three-player policy. Therefore the audit is a symbolic all-q
+proof: it does not infer the family from a finite parameter scan. Strict
+backward induction makes each complete strategy unique. The JSON saves every
+affine slack and its positive q=22 value; no project solver is imported.

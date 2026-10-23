@@ -31,5 +31,6 @@ I found no fatal objection in these arguments, including k=1, old-B versus
 fresh-B counts, or full ordered-history completion. The imported full-catalog
 SPE is the existing collision-free family, and is not a new construction.
 The all-k maximal-only welfare theorem is the new part. A second internal
-cleaner review has been requested from the exchange agent and is recorded
-separately when delivered.
+cleaner independently reconstructed the statement before reading the route;
+its completed review is `../exchange/maximal_catalog_independent_cleaner.md`.
+No fatal objection was found. This is internal review only.
