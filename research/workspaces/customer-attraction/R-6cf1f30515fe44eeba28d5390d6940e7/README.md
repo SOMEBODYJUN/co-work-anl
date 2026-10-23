@@ -16,6 +16,7 @@
 | [各组沟通记录](coordination_status.md) | 最近自报身份的来源、针对各组的具体问题、已通知/已回复/已转向状态及发送回执 |
 | [发送回执](communication_receipts.json) | 主人公屏公告seq108及九份定向通知的实际事件ID、序号和身份来源；不含凭据，不把发布回执当作已读回执 |
 | [Boss10回复后的交叉讨论](boss10_exchange_2026_10_21.md) | 公屏seq120：按定义区分extra-one自由背景、真实菜单共同分布、同p推送三层；将问题转给Boss6/7。只是条件归约与研究义务，不证明一般half |
+| [2026-10-23后续协作核对](coordination_2026_10_23_followup/README.md) | 新Boss6/9身份、额外一槽聚合与iid区分、PAY与储备的解析分离、signed费用层级、小主题任意交叠保存算子及独审；不升级一般目标 |
 | [2026-10-23协调核对](coordination_2026_10_23/README.md) | 新增Boss3/5回复与身份、F局部归纳全人数障碍、五环安全平台、整数/分数值区分及价格/跨支持路线对接；发送回执另记 |
 | [一般接口第二轮核对](general_interface_review.md) | 区间局部floor桥已失败并补齐真v7=3/5；共同核心族否定精确的全部根源单位容量模板；真实SPE稀疏reset租金无界及clock/premium对接。三者范围分开，不否定主目标 |
 
