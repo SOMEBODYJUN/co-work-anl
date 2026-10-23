@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "共同研究：不相关并行机、加权拥塞、设施与客户吸引的数学关系",
-  "updated": "2026-10-21",
+  "updated": "2026-10-23",
   "legend": {
     "derives": "Every listed premise is jointly required for the stated inference, within the cited source.",
     "attacks": "The premises furnish a counterexample or limitation of the target assertion.",
@@ -14225,6 +14225,30 @@
         "research/reviews/weighted_congestion/structural_reconstruction/structural_methods_article_review.md"
       ],
       "status": "continuous manuscript and compiled PDF; actual root final-text/production review recorded; per-claim independent review scope retained, unrefereed"
+    },
+    {
+      "id": "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "实际遗漏私有客户的逐位置席位谱预算",
+      "detail": "For every full-history pure SPE with actual union C, use maximal-private Q_j=P_j minus C and seats |Q_j|/k+|B_j minus Q_j|/m. If lambda_r is their r-th largest value, u_i>=lambda_(m-i+1), hence W>=sum_(r<=m)lambda_r.",
+      "refs": [
+        "research/current/customer_attraction/uncovered_private_seat_spectrum.md",
+        "research/reviews/customer_attraction/uncovered_private_seat_spectrum.md"
+      ],
+      "status": "complete scoped analytic proof with blind independent internal reconstruction and exact finite replay; unrefereed"
+    },
+    {
+      "id": "CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1",
+      "kind": "claim",
+      "track": "extensions",
+      "title": "某最优并集全部遗漏私有时的锐二减一人数界",
+      "detail": "For every complete pure SPE, if some optimal m-theme union O has O minus C contained in globally maximal-private client blocks, OPT_m<=(2-1/m)W. Sharp for every m via the all-big plus private-singleton catalog.",
+      "refs": [
+        "research/current/customer_attraction/uncovered_private_seat_spectrum.md",
+        "research/reviews/customer_attraction/uncovered_private_seat_spectrum.md"
+      ],
+      "status": "complete scoped analytic proof with blind independent internal reconstruction and exact finite replay; unrefereed"
     }
   ],
   "hyperedges": [
@@ -35131,6 +35155,35 @@
         "research/reviews/weighted_congestion/structural_reconstruction/structural_methods_article_review.md"
       ],
       "status": "actual separately documented root check and authorship boundary"
+    },
+    {
+      "id": "E-CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CAG-MODEL"
+      ],
+      "conclusion": "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1",
+      "statement": "Touching a fixed maximal-private block forces the action inside its maximal theme; the threshold capacity falls by at most one per move, and every actual prefix avoids the fixed actual-omission blocks.",
+      "refs": [
+        "research/current/customer_attraction/uncovered_private_seat_spectrum.md",
+        "research/reviews/customer_attraction/uncovered_private_seat_spectrum.md"
+      ],
+      "status": "complete scoped analytic proof with blind independent internal reconstruction and exact finite replay; unrefereed"
+    },
+    {
+      "id": "E-CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1",
+      "kind": "derives",
+      "track": "extensions",
+      "premises": [
+        "CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1"
+      ],
+      "conclusion": "CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1",
+      "statement": "Under the additional stated private-omission condition, expand an optimal portfolio to at most m distinct maximal themes and sum their first seats to obtain W>=|O minus C|+|O intersect C|/m.",
+      "refs": [
+        "research/current/customer_attraction/uncovered_private_seat_spectrum.md"
+      ],
+      "status": "complete scoped analytic proof with blind independent internal reconstruction and exact finite replay; unrefereed"
     }
   ]
 }

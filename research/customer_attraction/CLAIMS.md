@@ -32,6 +32,7 @@
 | `CA-SEVEN-MAXIMA-N7-PLUS` | [七极大来源证明](../current/customer_attraction/seven_maxima_checkpoint.md)：七人以上 \(U=\operatorname{OPT}_m\le2W\) | 恰七个极大覆盖、\(m\ge7\)；来源证明完整且已内审，现行页只是依赖概述；\(m=5,6\) 仍缺分支 |
 | `CA-LAMINAR-INCIDENCE-MAXIMA-2M1` | [层级关联锐界](../current/customer_attraction/laminar_incidence_bound.md)：带共同核心的 \(2-1/m\) 界 | 客户的极大主题关联为层级族；不等于一般目录 |
 | `CA-FRACTIONAL-COVER-PATH-BUDGET` / `CA-FRACTIONAL-COVER-7-2-HALF` | [真实前缀利润递推](../current/customer_attraction/fractional_cover_path_budget.md)及乘积界；某个最优并集τ≤7/2时全人数半覆盖 | 分数覆盖数条件承重，任意目录无条件half仍OPEN；P必须为旧玩家最终收益和 |
+| `CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1` / `CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1` | [实际遗漏席位谱](../current/customer_attraction/uncovered_private_seat_spectrum.md)：一般逐位置谱预算；某个最优并集的实际遗漏全为极大全局私有客户时锐OPT≤(2−1/m)W | 任意人数、目录与已覆盖客户共享；私有遗漏条件承重。触块计数不等于旧路由计数；独立内部解析审查，无外审/新颖性认证 |
 | `CA-COMMON-PENULTIMATE-HALF-v1` / `CA-PENULTIMATE-FEW-EXCEPTIONS-HALF-v1` | [末两人菜单](../current/customer_attraction/common_penultimate_theme_half.md)及[少量遗漏平方阈值](../current/customer_attraction/penultimate_few_exceptions.md)给无界人数/目录的实际路径条件性half | 倒二A被全部早期主题包含；或至多r个不包含且m≥(r+1)²+1。一般路径仍OPEN，外审与新颖性未认证 |
 | `CA-EXACT-PURE-SPE-ALL` / `CA-STRATEGY-CONE` | [全集逆归纳](../current/customer_attraction/exact_solver.md)与[完整策略重数锥](../current/customer_attraction/strategy_cone.md) | 精确有限工具；完整树证书可能指数大，有限运行不是一般证明 |
 | `CA-OBLIVIOUS-MIXED-SECURITY-2N1` | [静态安全值](../current/customer_attraction/oblivious_security.md)：\(v_m(0)\ge\operatorname{OPT}_m/(2m-1)\) | 对手不观察查询抽样；从安全值到真实顺序福利仍缺聚合桥 |

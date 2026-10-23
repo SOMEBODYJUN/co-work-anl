@@ -5,6 +5,8 @@
 | ID | Exact scope | Result and boundary | Proof and status |
 | --- | --- | --- | --- |
 | CA-EXACT-PURE-SPE-ALL | 有限共同主题目录、单位权提供者依次观察完整历史、单位客户均分；整数重数代表单位 clones，全部历史依赖纯 SPE。 | 集合值逆归纳精确返回每个 prefix 的全部可实现终局计数，并为每个终局重构完整有序历史策略；不涵盖混合行为 SPE，不声称位多项式。 | [完整必要/充分归纳](customer_attraction/exact_solver.md)、独立完整策略枚举及规范实现；外审未记录。 |
+| CA-ACTUAL-PRIVATE-SEAT-SPECTRUM-v1 | CAG-MODEL；任意m≥1、任意目录及每个完整历史纯SPE。B_j为不同极大覆盖，P_j为其全局私有块，C为固定实际并集，Q_j=P_j\C，席位f_j(k)=其大小/k+其余B_j客户数/m。 | 带重数席位的第r大值λ_r满足u_i≥λ_(m−i+1)，故W≥前m大席位之和。一般阈值引理使用真实触Q次数，每步容量至多降一；非旧路由计数直接重置。 | [自足证明](customer_attraction/uncovered_private_seat_spectrum.md)、[盲独立重构](../reviews/customer_attraction/uncovered_private_seat_spectrum.md)及精确有限回放；无外审/新颖性认证。 |
+| CA-OPTIMAL-PRIVATE-OMISSIONS-2M1-v1 | 同模型任意m及每个完整纯SPE；存在一个最优m题并集O，使O\C全部属于极大全局私有块。 | OPT_m≤(2−1/m)W，每个m有all-big加m−1私有singleton完整SPE取等。只需最优遗漏私有，不要求已覆盖客户关联受限；一般共享遗漏仍OPEN。 | [完整席位谱推论及锐性](customer_attraction/uncovered_private_seat_spectrum.md)；独立内部解析审查通过，外审与新颖性未认证。 |
 | CA-SPE-NON-PNE | 同一 CAG-MODEL；存在两人四客户共同目录或另一个三人三客户实例。 | 完整纯 SPE 的终局可有盈利的静态单方行动偏离。反驳 SPE→PNE 桥梁；不反驳半覆盖。 | [两人证书与导入边界](customer_attraction/literature.md)、[三人证书](customer_attraction/continuation_lemmas.md)；直接证明及独立精确审计，外审未记录。 |
 | CA-WORST-PNE-WELFARE-NO | CAG-MODEL；存在三人、四不同共同主题、16单位客户及完整有序历史纯SPE。 | W(SPE)=15<16=min_{PNE}W=OPT3，静态PNE恰两组计数；否定同实例最差静态Nash福利支配桥，不否定一般半覆盖。 | [完整反例](customer_attraction/worst_pne_welfare_counterexample.md)，独立逐客户21历史/84比较/20计数审计；外审和新颖性未认证。 |
 | CA-WORST-CCE-WELFARE-NO | CAG-MODEL；存在三人、五不同共同主题、13单位客户及完整有序历史纯SPE；静态CCE允许任意不对称相关分布。 | W(SPE)=9<137/15≤min_CCE E[W]=2785/297，OPT3=12；否定同实例最低静态CCE福利支配桥，不否定半覆盖或真正聚合静态安全值。 | [完整反例及十格逆负载证明](customer_attraction/worst_cce_welfare_counterexample.md)，独立31历史/155比较/125有序终局与原始对偶核验；外审、新颖性及最小性未认证。 |
