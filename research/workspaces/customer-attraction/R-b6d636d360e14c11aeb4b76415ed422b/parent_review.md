@@ -24,6 +24,8 @@
 
 ## 2. 背景利润指标的单步跌落没有固定收益系数
 
+来源重核：以下一般障碍已由 Boss5 旧 `R-18e993ca519949aba29e030d3d7b15b3/dynamic_induction/profit_opportunity_boundary.md` 完整记录，本页仅作独立重构。不能将多组重现计作多项新增进展。
+
 来源为 `recursive_invariant/`；另一研究员先未读作者证明，从单位客户定义独立重建，见 `independent_frontier/background_step_independent_review.md`。
 
 令 r 人、A 有 r 名单位客户，另有 r−1 个互不相交单客户主题。在每个有序历史都规定后续选 A。在深度 d、之前 A 计数 a 的节点，当前选 A 后的最终收益是 r/(a+r−d)≥1；改单例的最终收益不超过 1。因此这是一份完整纯 SPE；实际每人收益 1、W=r。
