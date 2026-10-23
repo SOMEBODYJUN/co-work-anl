@@ -19,6 +19,8 @@
 - [owner全角色运输](round3/credible/owner_hybrid_transport.md)及[独立审查](round3/shared/review_owner_hybrid_transport.md)：全J割保证O外真实利润/调和份额可由O真实份额/error容量运输，给一份受实际I角色容量约束的G取消量；锚定OPT前缀后能避开其全部客户、只在未来角色共同支付。任意散布anchors的财务容量不自动给过去角色原IC。
 - [递增捕获](round3/credible/increasing_role_capture_flow.md)、[HIT](round3/mixed/capture_hitting_capacity.md)、[真实I路由](round3/mixed/owner_credit_routing.md)与[同一权重协方差](round3/tail/signed_tax_surplus_working.md)：保留旧背景返还、唯一整行IC系数及一次实际信用。source首轮可以同时放入η_i=u_i(I)+γ_i；捕获后重置到达的费用仍缺共同剩余容量证明。
 
+最后的[共用Exp角色钟表示](round3/relay/common_world_exponential_representation.md)只是同一势的等价表示；钟依赖的中继查询尚缺合法解耦，不能条件化原IC。
+
 当前最具体未闭义务是同一owner/matching、G取消γ和真实query流下，能否共同保证K_i^in≤η_i−K_i^src，或证明更弱总费用≤W。已证静态运输、单行命中概率、原IC积分和势恒等式均不能直接替代它。一般half仍OPEN；本轮没有真正反例、外审或新颖性认证。
 
 ## 本轮改变了什么认识

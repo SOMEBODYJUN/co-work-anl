@@ -139,9 +139,15 @@ owner Q 取这个固定最优查询顺序中首次覆盖 x 的槽。第一次查
 
 ## 4. 完整原 IC 在新势下留下的精确跨 rollout 项
 
-固定同一 pi、Q。令 B^0 为原实际叶；B^(i-1) 是原 sigma 在 h_i 后的真实 rollout，B^i=Y_i。最后 B^m=T_pi。
+固定同一 pi、Q，在本节**重新定义完整最优前缀**
 
-在节点 h_i，当前规定收益 u_i^h，强制 T_(pi(i)) 的收益 d_i，原 SPE 给
+    h_i^*=(T_(pi(1)),...,T_(pi(i-1))),
+    B^0=原实际叶，
+    B^i=原 sigma 在 (T_(pi(1)),...,T_(pi(i))) 后的真实 rollout。
+
+于是 B^(i-1) 是 h_i^* 后的规定完成叶，B^i 是在同一 h_i^* 强制 T_(pi(i)) 后的完成叶，最后 B^m=T_pi。这里的 B^i **不是**上一节 DIRECT-REPEAT 中以原实际前缀定义的 Y_i；那些 Y_i 不构成此 telescoping 链，最后一个 Y_m 也未必等于 T_pi。
+
+在节点 h_i^*，当前规定收益 u_i^h，强制 T_(pi(i)) 的收益 d_i，原 SPE 给
 
     g_i=u_i^h-d_i>=0.
 

@@ -192,6 +192,8 @@ shared与relay分别从第3节得到同一固定势，再由shared提出owner薄
 
 [命中容量](mixed/capture_hitting_capacity.md)使任何非owner单行对每客户的总到达≤ρ_x/2；多行集合只控制曾命中概率，不能当总访问次数。[同一节点协方差](tail/signed_tax_surplus_working.md)将formal边际标量化的正债限定为低权节点；但多行动合流后的K_i^in≤η_i−K_i^src还无普遍证明。[真实I路由](mixed/owner_credit_routing.md)保留旧覆盖者返还，提供一次error/κ分流，也没有自动给同一个w_s。当前最有信息价值的下一步是为这些对象选择一份兼容的全树流，或直接从全部真实IC构造更弱的总费用界；不是扩充固定样本或把静态maxflow当作动态SPE。
 
+最后保留一个不同的接续表示：[所有叶共用同一组Exp角色钟](relay/common_world_exponential_representation.md)。HYB逐层积分给确定性F_z≤Σ_Oz_owner，期望恢复F_Q，原收益恢复max势边际。root与relay重构了一条样本级cap递增角色中继；但选择后续查询会依赖同一随机钟，原IC只在无条件期待上成立。重新抽ghost钟需要新的解耦上界，当前没有，不能用它逃过NET?或TREE-F的缺口。这只是可接续想法，不新增已付费用或一般福利结论。
+
 ## 5. 实际验证与来源
 
 [独立精确审计](parent/audit_optimal_exchange_kernels.py)不导入SPE求解器或作者程序；它对零客户/空主题/重复槽及小catalogue穷举，直接枚举替槽实现核(BER)的恒等式，并核调和、随机匹配与正参数核。输出采用Fraction，拒绝覆盖已有结果。初次冻结报告为[审计结果](parent/optimal_exchange_kernel_audit.json)，加入锚定项后的独立冻结报告为[锚定结果](parent/optimal_exchange_anchor_audit.json)，其中检查93908个锚定配对。有限回归只核公式实现，普遍性由第3节证明承担。

@@ -19,7 +19,7 @@
 - `review_optimal_exchange_kernels.md`：独立重构 root 一般工作稿 §3，BER/HARM/MATCH/KERNEL 及 alpha↓0、J 同槽条件、随机配对、零客户边界均通过。另推适用于原真实查询枝的锚定核、p0 一阶私有块注入，准确保留与原完整 IC 同核连接的限制。
 - `audit_optimal_exchange_review.py` / `optimal_exchange_review_audit.json`：不导入 root/shared 程序，精确核5460个单客户替槽事件、91个随机位置概率、45个非整数正 alpha 公式；有限核验不扩大数学范围。
 
-正在把最优主题随机前缀作为全深度路径，使每一步真实 σ rollout 具有逐步增加的锚；期望用锚定核余量与完整原 IC 的常系数合成支付捕获流。尚未得到需要的单调/超鞅关系。独审通过不作为研究终点。
+曾把最优主题随机前缀作为全深度路径，使每一步真实 σ rollout 具有逐步增加的锚；尚未得到让锚定核余量与完整原 IC 常系数共同付款的单调/超鞅关系。以下组件保留实际推进与准确停界。
 
 ## 新的一般正组件（尚未闭合跨树）
 
@@ -28,10 +28,15 @@
 - 主稿现追加直接作用于原实际-prefix matching 的 **DIRECT-REPEAT**：任意 x 的所有查询折扣至多 (a_x-1)/2，不需最优前缀；R、I 分别计账。root/shared 均独立重构通过。
 - `audit_owner_insertion_identity.py` / `owner_insertion_identity_audit.json`：新增 INSERT 和 DIRECT-REPEAT 的计数级边界核数。附加信用正是非owner覆盖背景1的插入支付，其势 Psi_Q=Σ_O(H_(1+k)-1)，原调和势精确等于 F_Q+Psi_Q；没有由此宣称辅助 SPE。
 
-当前新承重是该正文 ROLL 中联合项 sum_i(e_i^-+D_i)：前项来自不同真实 rollout，后项是同节点两个真实叶的形式去槽势差，必须共同处理。不能把同叶 I 预算跨枝重复用，也不能把形式去槽 profile 当作删人 SPE。
+该正文 ROLL 中联合项 sum_i(e_i^-+D_i)仍未付：前项来自不同真实 rollout，后项是同节点两个真实叶的形式去槽势差，必须共同处理。不能把同叶 I 预算跨枝重复用，也不能把形式去槽 profile 当作删人 SPE。§4现独立定义完整最优前缀 B^i 链，显式区别§3 DIRECT-REPEAT 的原实际-prefix Y_i，避免混用 telescoping。
 
 原实际-prefix 版本必须保留 excess E=Σ_iF_Q(Y_i)-OPT；删掉它再要求总 ghost 势一次预算是过强接口，不继续此假桥。保留 E 后只是 matching 原余额，实际新增正关系仍是 owner 势、插入分解及 DIRECT-REPEAT。
 
 - `hall_owner_anchor_connection.md`：连接 credible 的全角色 Hall-B 与 owner 势。owner-complete 角色由最优性自动没有 outside 源，在 Hall-B 的任意可行流中零入零出；强制最优前缀的回流严格避开全部已锚定角色。当前 owned 捕获边与 Hall-B missing-owner 边客户容量不交；将外部源降为真实利润时明确预留同叶 modified 边际 kappa。credible 收到陈述/证明后独立重构通过，非严格盲审。仍无跨叶容量闭合。
+
+- `common_world_exponential_representation.md`：HYB 的全部子集割 layer-cake 给确定性角色优先级 cap；全客户和全部真实叶共用 Exp(1) 角色钟，期望精确恢复 F_Q、Psi_Q 和真实效用。root 独立重构通过。这是同一势的等价表示，不能按钟选择原 IC 或改用依钟权重；root 的 cap 递增中继想法仅作为未证解耦接续保留。
+- `handoff_second_checkpoint.md`：第二次本人区保存/同行交接入口。当前最具体未付是 credible 的 K_i^in<=eta_i-K_i^src 或更弱总费用<=W；同一实际 Hall-A 路由和局部取消已支付全部 SOURCE-NET，不能再给传播重新领取 u_i。主目标仍 OPEN。
+
+本轮按 root 决定停止扩样与恒等式重排；没有新的 whole-IC 兼容付款则保留上述缺口，不宣称 half 或一般桥已闭合。
 
 所有新写仅本目录；没有改旧冻结、共享或执行 git。
