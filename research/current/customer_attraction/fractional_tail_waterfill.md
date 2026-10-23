@@ -109,6 +109,8 @@ H<=D的常数1在自由阈值的本引理范围内不能改小：一位客户、
 
 更强的内生阈值锐性族及真实SPE中的同树/同叶保留障碍，见[发现稿](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/waterfill_common_credit.md)及[可信性障碍](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/credible/waterfill_credibility_obstruction.md)。它们按各自身份和审查范围记录，不作为本核心引理的证明前提。
 
+进一步可接续的独立研究见[对数势变分规范化](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/shared/variational_common_credit.md)及[统一缩尾全树税账](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/uniform_shrink_full_tree_tax.md)：前者补全零权重重入条件与规范负载，后者定量控制单条原规定路径的累计IC失真。[条件可信接口](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/credible/waterfill_credibility_uniform_contraction.md)已另获独立内部审查；它要求全历史规定行动避非核心正背景，查询信用还需固定实际叶的额外谱条件。这些接续各按其范围记录，均未支付互斥偏离子树的共同债务。它们不是本核心身份新增的无条件SPE结论。
+
 ## 7. 来源与复现
 
 发现分支、盲重构与root整理均留在[本轮工作区](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/README.md)；[共享独立审查](../../reviews/customer_attraction/fractional_tail_waterfill.md)记录真正覆盖。无外部文献定理导入或新颖性声明。

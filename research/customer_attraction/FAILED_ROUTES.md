@@ -30,3 +30,13 @@
 
 
 新增精确停界：[极端关联平稳支付§6](../current/customer_attraction/extreme_maximal_membership_floor.md)对private/co-singleton/global类型成立，但四极大2of4类型的无自环、平稳均匀示意菜单已有−1/8逐客户余项。该菜单没有完整SPE认证，不能否定一般theta或half；重试须增加真实后继选择、跨类型或更早中继信用，不能原样逐客户外推。
+
+## 软水位不等于可信续局
+
+[分数尾共同信用](../current/customer_attraction/fractional_tail_waterfill.md)已避开硬删除的纯deficit障碍，不能继续把硬删除反例当成软降权不可能。不过即使阈值取原实例真正安全值，原高尾保1的窄水位合同仍可能翻转原IC，甚至无法保留原实际叶为任何重选加权续局；[真实53客户族及独审](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/relay/review_waterfill_credibility.md)明确了范围。同一族允许高尾一起缩权则有全共同核心大小的正修复，故该失败不否定宽合同。
+
+统一缩尾可以把单条原规定路径的累计IC失真合账到同终局背景返还，但不同改枝会重置终局；规范变分水位换根亦会重置支撑和对数基线。两份局部账均不能不经新不等式跨子树望远镜。一般half仍OPEN。
+
+## 最优势增量不能直接给首位保底
+
+新PI候选u_first≥P_(r+1)(b)−P_r(b)已被[完整三人SPE精确反例及独立盲审](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/mixed/review_pi_counterexample.md)否定：430单位客户，首位91，P3=329、P4=873/2。实际及全部真实根终局都达全局P3，故问题甚至不必来自尾部势效率；P_k最优值序列本身不凹。该例W265、OPT3=324，且全部根插入核项≤90<91，WP仍严格成立。此反例不否定half或更弱真正安全值接口。

@@ -14,3 +14,13 @@ parent随后安排waterfill独立盲审，已完成核心一般引理审查：
 - `waterfill_independent_audit.json`：精确输出，全部通过。
 
 waterfill是辅助终局代数；不得称分数profile为删后SPE，或对其调用单位玩家归纳。其共同信用一次支付所有查询，背景和根返还必须从同一原tail利润中扣除。
+
+## 后续新增：变分规范化与真实孩子势债务
+
+`variational_common_credit.md`给全局对数负载势最大化的辅助规范状态：最优客户负载与有效质量唯一，零权不可由单坐标重入改善，所有降权tail的最终单位收益≤t。由最终互补性直接获得同一个全目录查询信用H≤D，无需累计求解路径返还。另有伸缩预算、质量阈值单调性及不重复支付的联合势账；没有把各个D上界直接相加。tail分支先从陈述盲重构并保存证明，再读作者稿对照；最终独审`../tail/review_variational_final.md`已通过全部明示解析范围。独立代码及14份exact证书在`../tail/audit_variational_blind.py`与`../tail/variational_blind_exact.json`；无外审或新颖性认证。
+
+`audit_variational_common_credit.py`/`variational_common_credit_audit.json`保存14个Fraction KKT证书（不调用数值优化或SPE求解器），包含208单位客户的根信用随阈值局部下降例；规范总质量单调不推出每个客户或root信用单调。每个证书另用80项artanh对数级数及严格有理余项界核验free-energy与联合势账，不用浮点代替对数不等式。
+
+`variational_spe_switch_debt.md`给同一原单位终局多重集上的严格root交换增益，并明确区分虚拟交换叶与强制新root后σ的真实孩子。两者差额定义为有符号Debt；循环中ΣDebt=Σ严格Gain>0。同多重集ASCENT及Debt恒等式也已通过上述最终独审；尚无全树支付定理，不能把虚拟叶粘成真实SPE。
+
+root建议过的连续调和延拓替换仅作失败记录，不扩工具：φ(L)=ψ(L+1)+γ有φ(L+1)−φ(L)=1/(L+1)，但φ(0)有限且φ'(L)<1/L。单客户、root和tail均覆盖它、t=1/2时，原单位tail收益已=t且D=0，而max_w[φ(1+w)−tw]的导数在w0大于0、w1小于0，唯一最优w∈(0,1)产生正root返还，故不能保留原D信用或原高tail权1。此替换是不同辅助效用Claim，未继续推进。
