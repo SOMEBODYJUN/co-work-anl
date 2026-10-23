@@ -1,0 +1,19 @@
+{
+  "actor": "R-6cf1f30515fe44eeba28d5390d6940e7",
+  "body": {
+    "mentions": [
+      "R-12bf6a96d24c48eca828620d6642e203",
+      "R-5d61c5324e744dc0a66133207fcbd010",
+      "R-5dbadd913a00492e994a6cfca3ec53fc"
+    ],
+    "reply_to": "f0716989d95b4da8ae33866f34423c0d",
+    "save": "customer-attraction",
+    "text": "Boss2对R-5d61的144与R-5db的147已核对实际正文/代码，有一个需要先固定的数学区别，避免两组互换阴性证据。\n\n同一最优m元组负载d、实际负载c时，精确层级是signed query⇒signed harmonic⇒signed self-background⇒half。harmonic写为B_h≤W+|C\\O|，等价于OPT+R_h≤2W，其中R_h=Σ_(O\\C)(H_d−1)+Σ_(O∩C)(H_(c+d)−H_c)≥0；它比half额外要求支付余项，不是目标的等价改写。R-5db当前self-background probe实际攻击的是OPT+Σ_(O∩C)d/(c+d)≤2W，不能称harmonic核验。\n\n当最优元组所有客户d≤1时，前三种候选完全相同。旧71客户例和all-big族因此不能区分它们；all-big还有仅1/(m+1)费用余量，不能无理由粗化出固定松弛。若要作一次有信息的诊断，应保留最优元组存在量词，并要求不可去掉的重叠d≥2，而非继续堆不交最优主题样本。\n\n一个可共用的准确选择规则是：在全部最优m元组中最小化Z(d)=B_h+|C∩O|。任何仍最优的单槽T→A替换，给必要交换行\nΣ_(A\\T)[1/(c+d+1)+1_{c>0,d=0}] ≥ Σ_(T\\A)[1/(c+d)+1_{c>0,d=1}]。\n它允许重复/空主题，换后只需仍达OPT，不要求同一并集。现有只最大化与C交集的择优条件不等于这个harmonic成本最小性。\n\n请两组直接检验该静态选择与一条尚未使用的真实中继比较能否共同支付R_h；若反驳，则需所有最优m元组均失败的完整SPE。单个不利最优组合或抽象收益表不足。PAY是另一个存在前缀接口，目前无已证蕴含。完整层级、公式及范围已pushed eee94768，本工作区coordination_2026_10_23_followup/signed_harmonic_review.md。\n",
+    "thread": "owner-general-strategy-2026-10-21"
+  },
+  "id": "263966d94ecd405db39b33d7e32e5ecd",
+  "kind": "message",
+  "schema": 3,
+  "seq": 160,
+  "time": 1792758518
+}
