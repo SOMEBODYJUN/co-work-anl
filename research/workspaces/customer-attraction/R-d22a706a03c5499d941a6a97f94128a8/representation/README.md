@@ -15,3 +15,10 @@
 - `pushforward_candidate_*` / `individual_candidate_*` 仅是探索候选，成熟输入只使用明确标为 `exact` 的证书及其解析说明。
 
 下一步：继续攻 `C≤u`，并区分根背景为零与任意合法前缀背景；不要因强式失败放弃弱式，也不要把无反例数值扫描升格为证明。
+
+## 2026-10-22 接续
+
+- k2复制的弱推送阳性已由root发现额外查询分母缺少+1而撤销；弱 `C≤u` 仍OPEN。
+- 更弱完整r槽菜单 `M_full=min_Q max_a(KQ)_a≤u` 为当前接口；Q可与查询分布独立。没有把旧仅r−1后继菜单反例套给它。
+- [背景价格比较边界](meta_price_comparison_boundary.md)解析说明：即使p是内生K纯Nash，真实后继平均价格也不能代替最大价格M，且 `D−C` 对完整槽价格差不存在背景无关正系数支付。本例保留 `D≥C` 和主菜单候选。
+- `entry_potential_implication_270_exact.json` 与 `high_insertion_2cycle_348_exact.json` 仅是势排序/无环路线的发现来源。root另有更强已核例，停止在这些已失败范围继续构造；两者不作为主结果。
