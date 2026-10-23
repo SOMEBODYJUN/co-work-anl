@@ -50,6 +50,6 @@
 ## 仍开的桥与未升级材料
 
 - MG：OPT_m−W≤m min_i u_i。仍OPEN。有限指定策略锥未得反例不提升一般真值。
-- ROW：固定实际位置i、最优m元组，OPT_m−W≤Σ_jV_ij，V是同节点真实偏离收益。比MG更强，正在一次明确固定锥攻击；见`general_payment/net_gap_handoff.md`。
+- ROW：固定实际位置i、最优m元组，OPT_m−W≤Σ_jV_ij，V是同节点真实偏离收益。比MG更强；一次明确固定锥攻击已完成，同一根税完整策略锥的全部最优四元组/实际位置经精确对偶未得反例，该指定锥的最大标准化违反量为−1/4。此范围不外推一般ROW。见`general_payment/net_gap_handoff.md`、`credible_construction/row_attack.json`。
 - 真正W≥m v_m与较弱足够桥：仍OPEN。`security_aggregate/uniform_background_quadratic_interface.md`是不同外生高背景的辅助展开，不是空根模型支付证明；二次桥与提升条件均未解决。
 - RI-SLACK-IDENTITY：E_r=E_child+2u_A−Δ为已证记账恒等式，不能独自支付总余额。全背景F_r≤2R_r仍比原根目标更强且未证。
