@@ -35,3 +35,20 @@
 ## 当前接续
 
 优先问题是：如何把真实孩子内部可选偏离带入可变人数的共同支付，并同时支付根稀释；不能用任意菜单排序、固定深度末尾、单个孩子gap或低尾deficit取代它。没有已知一般信用，也没有真正越二反例。无新中继关系时停止同模板扩样，保留准确义务和失败原因。
+
+## 接续阶段：软水位、真实阈值锐性与可信性
+
+本clone同一身份复用；一般Q-CAG-HALF仍OPEN。当前主要增量是任意人数的[分数尾水位共同信用](../../../current/customer_attraction/fractional_tail_waterfill.md)，已整理为共享自足正文，另有[共享审查](../../../reviews/customer_attraction/fractional_tail_waterfill.md)。同一H≤低尾总亏空同时控制全部客户子集的替根Q与保根插入J；支撑、背景/根/质量尾利润精确守恒。它是终局代数，不自动继承SPE。
+
+| 文件 | 精确作用与当前状态 |
+| --- | --- |
+| [round2/tail/waterfill_common_credit.md](round2/tail/waterfill_common_credit.md) | 任意人数水位原稿；53客户完整SPE及其共同核心扩展证明内生v4阈值下根返还/亏空比可趋1。原树400历史2800比较，静态值有显式双证。锐性不处于根低于阈值的最小反例类。 |
+| [round2/shared/review_waterfill.md](round2/shared/review_waterfill.md) | 核心定理先盲重构后对稿；零端点、共同池、密度/利润区别、支撑与守恒。 |
+| [round2/mixed/review_waterfill_sharpness.md](round2/mixed/review_waterfill_sharpness.md) | 53客户完整SPE、真实安全值、共同核心不改变全部比较及锐性极限的独立审查。 |
+| [round2/credible/waterfill_credibility_obstruction.md](round2/credible/waterfill_credibility_obstruction.md) | 同一真实阈值族中，原高尾保1的窄水位合同既不保持原树，也不能保留原实际叶为任何重选续局的加权SPE。没有反驳允许原高尾一起降权的宽桥。 |
+| [round2/relay/review_waterfill_credibility.md](round2/relay/review_waterfill_credibility.md) | 独立审查上述两个窄阻断，并确认全部共同核心大小的统一缩尾正修复；准确记录ρ端点平局。 |
+| [round2/credible/waterfill_credibility_uniform_contraction.md](round2/credible/waterfill_credibility_uniform_contraction.md) | 新的一般充分接口：全历史规定行动避开非共同核心背景时，统一缩全部尾可保同一完整孩子SPE；另加明确负载条件时给H≤D。独立审查进行中，不假设条件普遍。 |
+| [round2/tail/README.md](round2/tail/README.md)、[round2/shared/README.md](round2/shared/README.md)、[round2/mixed/README.md](round2/mixed/README.md) | 后续凹优化规范水位、单终局近似SPE返还和混合弱推送义务；各自候选状态以文件为准。 |
+| [round2/global/README.md](round2/global/README.md) | 调和最优值增量PI候选及两背景势缺陷必须抵销的准确承重点；没有一般证明。 |
+
+下一步需要把真实树中可以改变的后继偏离与共同查询信用配合。保持每个节点真实比较的补偿项，不能给不同改枝路径免费复用同一终局返还。本文不把新辅助引理、内生阈值锐性或可保可信性的附加条件升级成一般half。

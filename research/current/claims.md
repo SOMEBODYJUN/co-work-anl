@@ -1483,6 +1483,12 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | CA-EXTREME-MAXIMAL-THETA-v1 | 原CAG-MODEL；不同包含极大主题为A_1,...,A_k，每个可覆盖客户属于其中1、k−1或k个。对每个合法前缀背景b、任意剩余r≥1、每个完整有序历史纯SPE，每名剩余玩家最终收益≥theta_r(b)=min_(B∈S^(r−1)) max_(A∈S) Σ_(x∈A)1/(b_x+1+load_B(x))。k、r无上界，内部子主题、空主题及历史平局任意。 | [自足证明](customer_attraction/extreme_maximal_membership_floor.md)、[独立内部重构](../reviews/customer_attraction/extreme_maximal_membership_floor.md)。依赖原模型、全部真实中继最优性、包含支配与平稳逐客户支付；完整解析证明、独立内审及精确审计，未外审/认证新颖性。 |
 | CA-EXTREME-MAXIMAL-WELFARE-v1 | 同一结构域内每个合法背景b的r人完整SPE有P_r≥r F_r(b)/(2r−1)，F_r(b)=max_qΣ c_q/(b+c_q)。空背景m人时，c=|∩A_j|，每个完整SPE均OPT_m≤c+(2−1/m)(W−c)。系数由已知all-big向日葵族逐人数锐；零客户用乘法式。 | 依赖CA-EXTREME-MAXIMAL-THETA-v1及整数负载逐客户静态代数；[正文与来源](customer_attraction/extreme_maximal_membership_floor.md)。一般目录Q-CAG-HALF仍OPEN，2of4中间关联负余项只是本支付机制障碍。 |
 
+## 分数尾水位化的共同信用
+
+| ID | Exact scope | Result and boundary | Proof and status |
+| --- | --- | --- | --- |
+| CA-FRACTIONAL-TAIL-WATERFILL-v1 | 任意有限单位客户、任意非负整数背景b、一个保留单位根主题A、任意有限个单位尾部主题及有限t≥0；所有集合可空可重复。辅助终局权重，不是加权SPE结论。 | 存在同一w∈[0,1]^n，原高尾保1、覆盖支撑不变、正权尾unit密度≥t；同一全客户池H≤Σ(t−u_j)_+同时控制全部T⊆N的替根Q和保根插入J增量，并有根/背景/质量尾利润精确守恒。 | [自足证明](customer_attraction/fractional_tail_waterfill.md)、[盲独立内审](../reviews/customer_attraction/fractional_tail_waterfill.md)与Fraction边界审计；无理权允许，SPE继承及跨树总支付未证；一般half仍OPEN，未外审/认证新颖性。 |
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
