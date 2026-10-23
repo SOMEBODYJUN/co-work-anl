@@ -52,3 +52,21 @@
 | [tree/virtual_adjacency_handoff.md](tree/virtual_adjacency_handoff.md) | 单色后缀虚拟相邻税VA(r)仍OPEN；r=1可证，静态单色势上包络可证，但跨背景真实后继比较未闭合。 |
 
 本轮六路探索写入round5_mixed/、round5_induction/、round5_credible/、round5_coupling/、round5_audit/、round5_global/；未自动成为已审结果。
+
+## 本轮任意人数归纳障碍
+
+[round5_induction/profit_bellman_counterfamily.md](round5_induction/profit_bellman_counterfamily.md)
+精确计算既有完整SPE族的背景最优剩余利润：n≥4，
+F_(n−1)(1_A)=2(n−1)(n−2)+(7n−13)/6。故系数二Bellman台阶对每个n≥5失败；
+任何固定α<17/6也最终失败。此处F是剩余玩家总利润，不是旧总覆盖补全。
+[root独立解析复核](parent/profit_bellman_family_independent_review.md)未读发现者消元证明，
+从原始类型得到同一精确最优值；[独立有理回归](parent/profit_bellman_family_independent_audit.json)
+枚举n4..8共15501个候选只核实现。原族全历史SPE引用已审现行正文。
+新缺口是如何跨深度搬运真实尾部half裕量，不是简单逐步非负式。
+
+[round5_mixed/replicated_menu_minimax.md](round5_mixed/replicated_menu_minimax.md)
+给条件n块菜单的精确minmax；四块静态值会超过u，但
+[round5_credible/last_low_cut_and_three_block_failure.md](round5_credible/last_low_cut_and_three_block_failure.md)
+的单实现整数BI显示三块指定菜单已不能实现。通用last-low截断引理有解析证明，
+[mixed独立局部审查](round5_mixed/three_block_last_low_witness.md)只核一个三剩余人代表，
+不提升为全部截面独立核验。原mixed接口仍OPEN，条件矩阵不能当SPE反例。
