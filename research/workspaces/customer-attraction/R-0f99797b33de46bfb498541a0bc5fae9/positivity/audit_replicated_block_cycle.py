@@ -22,6 +22,18 @@ def robust_row(r, sizes, bits, beta):
     return total
 
 
+def containment_row(r, below, above, bits, beta):
+    total=F(0)
+    ell=len(below)
+    for i in range(ell):
+        a,b=bits[i],bits[(i+1)%ell]
+        if a and not b:
+            total+=F(1,beta+r-below[i])
+        elif b and not a:
+            total-=F(1,beta+above[i])
+    return total
+
+
 def payoff(q, a, interest, beta):
     if a not in interest:
         return F(0)
@@ -89,12 +101,37 @@ def main():
             expected=F(1,2*N)*(F(1,beta+N)-F(1,beta+1))
             assert actual==expected<0
             negative_flux_checks+=1
+    containment_profiles=0
+    containment_coefficient_checks=0
+    for r in range(2,7):
+        for ell in (2,3):
+            for sizes in product(range(1,r),repeat=2*ell):
+                below,above=sizes[:ell],sizes[ell:]
+                criterion=all(below[i]+above[j]>=r
+                    for i in range(ell) for j in range(ell) if i!=j)
+                containment_profiles+=1
+                for beta in (0,7):
+                    minimum=min(containment_row(r,below,above,bits,beta)
+                        for bits in product((0,1),repeat=ell))
+                    containment_coefficient_checks+=2**ell
+                    assert (minimum>=0)==criterion,(r,below,above,beta,minimum)
+    # Arbitrarily long strict chains: a common selected rank always pays.
+    chain_rank_checks=0
+    for r in range(2,30):
+        for rank in range(1,r):
+            for ell in range(2,8):
+                for bits in product((0,1),repeat=ell):
+                    assert containment_row(r,[rank]*ell,[r-rank]*ell,bits,0)==0
+                    chain_rank_checks+=1
     report=dict(status='passed',profiles=profiles,
         admitted_profiles=admitted_profiles,rejected_profiles=rejected_profiles,
         coefficient_checks=coefficient_checks,
         internal_omission_checks=internal_omission_checks,
         four_maxima_pair_checks=menu_checks,
         uniform_negative_flux_checks=negative_flux_checks,
+        containment_profiles=containment_profiles,
+        containment_coefficient_checks=containment_coefficient_checks,
+        chain_rank_checks=chain_rank_checks,
         scope='Exact audit of analytic block-cycle criterion; no general half theorem or SPE counterexample')
     payload=json.dumps(report,indent=2)
     if args.output:
