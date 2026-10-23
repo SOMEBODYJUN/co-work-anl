@@ -56,3 +56,5 @@
 接续的具体正文：[变分规范化](round2/shared/variational_common_credit.md)、[独立盲重构](round2/tail/review_variational_blind.md)、[虚拟换根的真实子树债务](round2/shared/variational_spe_switch_debt.md)、[统一缩尾全树税账](round2/tail/uniform_shrink_full_tree_tax.md)、[一般可信接口独审](round2/relay/review_uniform_credible_contraction.md)。前两条为给定终局辅助状态；换根债务和反复改枝税账仍是OPEN义务，不能把规范化当作已经闭合全树归纳。
 
 PI已由一次完整策略锥诊断分离，并经过[独立盲审](round2/mixed/review_pi_counterexample.md)及root单位展开：根91小于P4−P3=215/2，而W265、OPT324。即使实际profile全局势最优也不救该候选，下一步不得继续把PI当引理。混合WP在此例反而严格成立。另见[53支架的正深度封顶](round2/credible/root_regret_private_boundary.md)：私有遗漏由最后两人支付，停止继续调该族重数。
+
+PI的root自足最终整理见[下一步最优势增量反例](round2/global/potential_next_increment_counterexample.md)，含完整策略表、五类末位BR、全部第二位真实收益及26种势计数类型。数值均经单位展开及已有独立盲审核对；不是新的half反例。
