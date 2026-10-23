@@ -30,6 +30,13 @@ m≥1，每个定义于全部有序历史的纯 SPE 均满足 2W≥OPT_m。
 
 ## 下一步与停止标准
 
+已形成的第一组实质资产是 [固定前缀联合席位谱及共享遗漏障碍](omission/joint_omission_prefix_spectrum.md)。
+它适用于任意人数，但与全部分数覆盖前缀行仍不足一般 half；m≥13 的反模型
+已定义级证明不是 SPE。[独立重构](parent/joint_spectrum_independent_review.md)
+核对了固定 anchor、所有离轨历史、空块和联合预算。
+精确身份见 [CLAIMS](CLAIMS.md)，当前缺口见 [RESEARCH_STATE](RESEARCH_STATE.md)，
+停线理由见 [FAILED_ROUTES](FAILED_ROUTES.md)。
+
 不继续特殊人数的同模板调乘子或阴性扩样。成熟结果先独立攻击对象、量词、
 完整历史激励与边界；未闭合候选和失败也按真实等级备份。
 若没有新的承重机制，明确保留未解义务，不把等价重写称为一般证明。
