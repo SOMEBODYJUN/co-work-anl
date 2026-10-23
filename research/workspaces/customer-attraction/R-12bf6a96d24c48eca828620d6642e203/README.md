@@ -4,7 +4,7 @@
 
 ## 本轮实际工作
 
-五位gpt-6.1-sol ultra子研究员已启动；第六spawn被平台thread limit拒绝，由Boss承担完整策略树表示方向，不虚报子agent数。
+最初五位直属gpt-6.1-sol ultra子研究员启动，第六直属spawn被平台thread limit拒绝；随后dynamic_credit已实际启动继承同配置的background_probe。实际共六名子研究员（五直属、一名下属），Boss另承担完整树表示和独审。
 
 - dynamic_credit/：合法背景与真实尾部信用；避开固定Bellman系数及纯交集可加储备障碍。
 - menu_minimax/：完整r槽根菜单、安全值和较早真实中继比较。
@@ -22,3 +22,6 @@
 ## 已形成的阶段资产
 
 - [额外一槽强聚合桥的独立审查](parent/extra_slot_independent_review.md)：复用已有34客户完整策略，新增沿全实际路径的严格聚合反例；一般空主题方向公式解释一阶欠债。原half与弱福利支付仍OPEN。含独立单位客户审计和冻结有理数。menu_minimax/保存发现者主稿及继续的弱桥义务。
+
+- [全非空主题转移与精确阈值](parent/nonempty_padding_transfer.md)：一般SPE私人填充保持引理，将强聚合反例转为七非空主题；K>66J为该族准确阈值。原half仍OPEN。
+- [本轮精确Claim](CLAIMS.md)、[失败机制](FAILED_ROUTES.md)区分强桥、弱桥和主目标。
