@@ -84,3 +84,9 @@
 同稿同时通过宽修复：放弃“原高尾保持1”，对全部c>=0可统一三尾质量λ_c，既保持原孩子完整SPE与原叶，又满足共同查询信用、正支撑和一次支付预算。不能把窄合同失败扩大成宽桥失败或加权SPE不存在。
 
 `audit_waterfill_credibility_review.py` / `waterfill_credibility_review_audit.json` 不导入作者审计或solver，重放400节点2800原比较、84静态组合、全部末位有理系数/端点，及c0正修复399孩子比较；全c修复另用精确解析与有理夹逼核验。未改旧冻结或共享文件，未git。
+
+## 任意人数正接口独审已通过
+
+`review_uniform_credible_contraction.md` 已审当前修正版：全有序历史避固定非核心背景时，任意正统一尾质量保持同一孩子σ的辅助加权SPE；额外实际叶谱条件S<=a*使一个共同λ达到该叶水位、全目录共同查询信用与一次利润预算。初稿t<min u的负中界已修为正部后通过。严格区分全树SPE与固定叶水位、合法同目录core齐次与另立异质冻结背景版本，并核a*=0的纯core退化及正质量端点。
+
+`audit_uniform_credible_contraction_review.py` / `uniform_credible_contraction_review_audit.json` 仅作有目标边界核验，普遍结论由独立逐客户证明承担。此一般有条件接口通过内部独审，不意味Q-CAG-HALF、安全值聚合或跨根拼接闭合。

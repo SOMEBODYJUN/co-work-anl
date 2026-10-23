@@ -184,6 +184,19 @@ for core in [0,1,10,1000,10**6]:
         assert V-3*weight*target-3==3*weight*residual
     core_repairs.append(dict(c=core,lambda_lower=str(low),lambda_upper=str(high),H_upper=str(H_upper),credit=str(D),exact_tail_budget_slack='3 at the unique water root'))
 repair=dict(scope='all nonnegative integer c analytically; c=0 also exact packet replay; drops original-high-tail-must-stay-1 condition',lambda_value=str(lam),child_comparisons=len(uniform_slacks),minimum_slack=str(min(uniform_slacks)),tail_unit_densities=list(map(str,unit_tail)),maximum_query_refund=str(max(uniform_returns)),global_customer_query_pool=str(H),credit=str(D),old_load_counts=[6,15,11],old_pool_bound_coefficient=str(S),credit_strict_margin_coefficient='133/48',core_repairs=core_repairs)
-out=dict(status='PASS: same-tree IC flip and impossibility of retaining the original waterfill leaf; not failure of waterfill algebra or weighted-SPE existence',sources={name:hashlib.sha256(path.read_bytes()).hexdigest() for name,path in paths.items()},broader_uniform_repair=repair,customers=53,nodes=len(histories),comparisons=len(slacks),minimum_unit_SPE_slack=str(min(slacks)),actual=actual,actual_payoffs=list(map(str,profits(actual))),deviation=deviation,deviation_payoffs=list(map(str,profits(deviation))),static_backgrounds=len(rivals),security_value=str(t),deficit=str(D),buckets=buckets,last_utility_coefficients_C_A_B=last_tables,last_gap_numerators_const_rho_rho2=poly_tables,rho_checks=rho_checks,query_refund_at_zero=str(F(35,12)),query_refund_at_2_over_11=str(F(309,140)),query_credit=str(D),critical_interval='2/11 < rho < 1',boundary_BR={'rho=0':{'after_P_X0_Y0':[4],'after_P_X0_X1':[0]},'rho=2/11':{'after_P_X0_Y0':[4],'after_P_X0_X1':[0,2]},'rho=1':{'after_P_X0_Y0':[1,2,4,5],'after_P_X0_X1':[2]}})
+# Exact all-lambda obstruction outside the protected P child.
+assert policy[(0,0,6)]==1
+full_flip_bins=defaultdict(int)
+for likes in units:
+    for label,sign in [(1,1),(2,-1)]:
+        if label in likes:
+            root_load=int(0 in likes)
+            tail_load=int(0 in likes)+int(6 in likes)+1
+            full_flip_bins[root_load,tail_load]+=sign
+full_flip_bins={key:value for key,value in full_flip_bins.items() if value}
+assert full_flip_bins=={(1,2):3,(0,1):-1}
+assert 3*lam/(1+2*lam)-1==(lam-1)/(1+2*lam)==F(-647,255035)
+full_flip=dict(history=[0,0,6],prescribed=1,deviation=2,buckets=[dict(root_load=a,tail_load=b,coefficient=v) for (a,b),v in sorted(full_flip_bins.items())],profit_delta='(lambda-1)/(1+2lambda)',at_lambda0='-647/255035',scope='Other root X0 child violates the protected interface avoidance condition')
+out=dict(status='PASS: same-tree IC flip and impossibility of retaining the original waterfill leaf; not failure of waterfill algebra or weighted-SPE existence',sources={name:hashlib.sha256(path.read_bytes()).hexdigest() for name,path in paths.items()},broader_uniform_repair=repair,whole_tree_flip=full_flip,customers=53,nodes=len(histories),comparisons=len(slacks),minimum_unit_SPE_slack=str(min(slacks)),actual=actual,actual_payoffs=list(map(str,profits(actual))),deviation=deviation,deviation_payoffs=list(map(str,profits(deviation))),static_backgrounds=len(rivals),security_value=str(t),deficit=str(D),buckets=buckets,last_utility_coefficients_C_A_B=last_tables,last_gap_numerators_const_rho_rho2=poly_tables,rho_checks=rho_checks,query_refund_at_zero=str(F(35,12)),query_refund_at_2_over_11=str(F(309,140)),query_credit=str(D),critical_interval='2/11 < rho < 1',boundary_BR={'rho=0':{'after_P_X0_Y0':[4],'after_P_X0_X1':[0]},'rho=2/11':{'after_P_X0_Y0':[4],'after_P_X0_X1':[0,2]},'rho=1':{'after_P_X0_Y0':[1,2,4,5],'after_P_X0_X1':[2]}})
 (HERE/'waterfill_credibility_review_audit.json').write_text(json.dumps(out,indent=2)+'\n')
 print(json.dumps({key:out[key] for key in ['status','customers','nodes','comparisons','minimum_unit_SPE_slack','security_value','deficit','actual','actual_payoffs','deviation','deviation_payoffs','critical_interval','query_refund_at_zero','query_refund_at_2_over_11']},indent=2))

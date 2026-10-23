@@ -47,8 +47,14 @@
 | [round2/mixed/review_waterfill_sharpness.md](round2/mixed/review_waterfill_sharpness.md) | 53客户完整SPE、真实安全值、共同核心不改变全部比较及锐性极限的独立审查。 |
 | [round2/credible/waterfill_credibility_obstruction.md](round2/credible/waterfill_credibility_obstruction.md) | 同一真实阈值族中，原高尾保1的窄水位合同既不保持原树，也不能保留原实际叶为任何重选续局的加权SPE。没有反驳允许原高尾一起降权的宽桥。 |
 | [round2/relay/review_waterfill_credibility.md](round2/relay/review_waterfill_credibility.md) | 独立审查上述两个窄阻断，并确认全部共同核心大小的统一缩尾正修复；准确记录ρ端点平局。 |
-| [round2/credible/waterfill_credibility_uniform_contraction.md](round2/credible/waterfill_credibility_uniform_contraction.md) | 新的一般充分接口：全历史规定行动避开非共同核心背景时，统一缩全部尾可保同一完整孩子SPE；另加明确负载条件时给H≤D。独立审查进行中，不假设条件普遍。 |
+| [round2/credible/waterfill_credibility_uniform_contraction.md](round2/credible/waterfill_credibility_uniform_contraction.md) | 新的一般充分接口：全历史规定行动避开非共同核心背景时，统一缩全部尾可保同一完整孩子SPE；另加明确负载条件时给H≤D。已获独立解析审查，不假设条件普遍。 |
 | [round2/tail/README.md](round2/tail/README.md)、[round2/shared/README.md](round2/shared/README.md)、[round2/mixed/README.md](round2/mixed/README.md) | 后续凹优化规范水位、单终局近似SPE返还和混合弱推送义务；各自候选状态以文件为准。 |
-| [round2/global/README.md](round2/global/README.md) | 调和最优值增量PI候选及两背景势缺陷必须抵销的准确承重点；没有一般证明。 |
+| [round2/global/README.md](round2/global/README.md) | 调和最优值增量PI候选的完整430客户反例及原推导停界；PI已否定，弱安全值接口仍OPEN。 |
 
 下一步需要把真实树中可以改变的后继偏离与共同查询信用配合。保持每个节点真实比较的补偿项，不能给不同改枝路径免费复用同一终局返还。本文不把新辅助引理、内生阈值锐性或可保可信性的附加条件升级成一般half。
+
+接续的具体正文：[变分规范化](round2/shared/variational_common_credit.md)、[独立盲重构](round2/tail/review_variational_blind.md)、[虚拟换根的真实子树债务](round2/shared/variational_spe_switch_debt.md)、[统一缩尾全树税账](round2/tail/uniform_shrink_full_tree_tax.md)、[一般可信接口独审](round2/relay/review_uniform_credible_contraction.md)。前两条为给定终局辅助状态；换根债务和反复改枝税账仍是OPEN义务，不能把规范化当作已经闭合全树归纳。
+
+PI已由一次完整策略锥诊断分离，并经过[独立盲审](round2/mixed/review_pi_counterexample.md)及root单位展开：根91小于P4−P3=215/2，而W265、OPT324。即使实际profile全局势最优也不救该候选，下一步不得继续把PI当引理。混合WP在此例反而严格成立。另见[53支架的正深度封顶](round2/credible/root_regret_private_boundary.md)：私有遗漏由最后两人支付，停止继续调该族重数。
+
+PI的root自足最终整理见[下一步最优势增量反例](round2/global/potential_next_increment_counterexample.md)，含完整策略表、五类末位BR、全部第二位真实收益及26种势计数类型。数值均经单位展开及已有独立盲审核对；不是新的half反例。
