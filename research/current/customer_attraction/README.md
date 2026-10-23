@@ -6,6 +6,10 @@
 
 从[当前研究入口](../../customer_attraction/README.md)进入[精确目标](../../customer_attraction/CLAIMS.md)、[前沿](../../customer_attraction/RESEARCH_STATE.md)、[失败机制](../../customer_attraction/FAILED_ROUTES.md)和[保留问题分诊](../../customer_attraction/RETAINED_QUESTIONS.md)。Boss 先固定[模型](model.md)，随后沿正在研究的机制按需读取下表；无需通读本页所有正文。
 
+## 主人最新决定：一般命题是唯一新研究任务
+
+所有人只研究一般人数与一般共同目录，所有数学领域开放。停止特殊人数、固定极大主题数、结构子类扩张和局部常数项目。下列既有成果保留其精确数学身份和可引用价值，不代表继续补七、八或其他特殊规模的任务清单。有限实例只检验明确一般候选或核验完整目标反例；算法和扫描不是默认研究目标。做不出来不能推断数学不可能。
+
 ## 已有地基与未闭合范围
 
 | 范围 | 已有答案 | 精确边界 |
