@@ -31,3 +31,42 @@
 新推导会先标明 exact statement 和承重义务，成熟结果经独立攻击后再升级。
 
 [精确账本](CLAIMS.md)、[当前义务](RESEARCH_STATE.md)、[失败机制](FAILED_ROUTES.md) 维护本桌面状态；共享 canonical 账本的状态没有因个人备份自动改变。
+
+
+## 并行同证书与来源核对
+
+同步公屏107后确认 Boss5 的 `R-171cd7d518434f36a48cd50df29c9303/global/optimal_omission_exchange_counterexample.md` 已保存相同71客户证书及参数族。本桌面的发现与root审计保留为独立重现/来源，不主张数学新颖性；正式整理应合并同一数学对象，避免复制共享正文。该核对不改变本证书的精确真值。
+
+## 2026-10-23恢复的完整菜单边界
+
+本clone保留原身份与未提交推导，恢复不算新发现。
+
+| 文件 | 数学资产、范围与读取时机 |
+| --- | --- |
+| [counterexample/pure_full_root_menu_obstruction.md](counterexample/pure_full_root_menu_obstruction.md) | 八人八主题32单位客户完整DAG，根u=13/4而每个完整根终局都有额外查询37/10；否定纯列阻断。实际W=OPT=32。 |
+| [parent/verify_two_block_dag.py](parent/verify_two_block_dag.py)、[独立结果](parent/two_block_dag_independent_audit.json) | 独立单位客户审计13872节点、59496含自身比较，覆盖全部2396745有序决策历史。混合菜单原始/对偶匹配值851/280<13/4。 |
+| [exchange/full_menu_potential_rise_obstruction.md](exchange/full_menu_potential_rise_obstruction.md) | 24客户等势与791客户严格降势反例：额外插入超过根u不强制完整终局势上升；不再以标量势排序证明一般菜单。 |
+| [tree/full_terminal_reply_column_identity.md](tree/full_terminal_reply_column_identity.md) | 任意剩余人数的联合势遗憾精确身份；恰两人可取裸回复值最大的纯列，一般多后继遗憾没有已证符号。 |
+| [induction/full_root_menu_mixed_obligations.md](induction/full_root_menu_mixed_obligations.md)、[tree/full_terminal_menu_interface.md](tree/full_terminal_menu_interface.md) | 混合完整r槽菜单Mfull≤u的minmax/对偶及足够推出half的归约；候选仍OPEN，不与已失败的r−1槽菜单混同。 |
+| [representation/meta_price_comparison_boundary.md](representation/meta_price_comparison_boundary.md)、[induction/tail_price_strengthening_counterfamily.md](induction/tail_price_strengthening_counterfamily.md) | 真实后继平均价格不能普遍替代最大查询价格；合法背景族与空背景两人族的范围分别保留。 |
+| [tree/virtual_adjacency_handoff.md](tree/virtual_adjacency_handoff.md) | 单色后缀虚拟相邻税VA(r)仍OPEN；r=1可证，静态单色势上包络可证，但跨背景真实后继比较未闭合。 |
+
+本轮六路探索写入round5_mixed/、round5_induction/、round5_credible/、round5_coupling/、round5_audit/、round5_global/；未自动成为已审结果。
+
+## 本轮任意人数归纳障碍
+
+[round5_induction/profit_bellman_counterfamily.md](round5_induction/profit_bellman_counterfamily.md)
+精确计算既有完整SPE族的背景最优剩余利润：n≥4，
+F_(n−1)(1_A)=2(n−1)(n−2)+(7n−13)/6。故系数二Bellman台阶对每个n≥5失败；
+任何固定α<17/6也最终失败。此处F是剩余玩家总利润，不是旧总覆盖补全。
+[root独立解析复核](parent/profit_bellman_family_independent_review.md)未读发现者消元证明，
+从原始类型得到同一精确最优值；[独立有理回归](parent/profit_bellman_family_independent_audit.json)
+枚举n4..8共15501个候选只核实现。原族全历史SPE引用已审现行正文。
+新缺口是如何跨深度搬运真实尾部half裕量，不是简单逐步非负式。
+
+[round5_mixed/replicated_menu_minimax.md](round5_mixed/replicated_menu_minimax.md)
+给条件n块菜单的精确minmax；四块静态值会超过u，但
+[round5_credible/last_low_cut_and_three_block_failure.md](round5_credible/last_low_cut_and_three_block_failure.md)
+的单实现整数BI显示三块指定菜单已不能实现。通用last-low截断引理有解析证明，
+[mixed独立局部审查](round5_mixed/three_block_last_low_witness.md)只核一个三剩余人代表，
+不提升为全部截面独立核验。原mixed接口仍OPEN，条件矩阵不能当SPE反例。
