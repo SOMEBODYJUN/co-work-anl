@@ -81,6 +81,57 @@ def replay_copied_audit(relative, output_name):
             "result": report}
 
 
+def stationary_followup():
+    """Check the new scalar bounds and the exact cost of deleting low tails."""
+    checks = 0
+    delta = lambda n,b,I,K: F(n*I-K, n*(b+I+K)) if I or K else F(0)
+    for n in range(1, 11):
+        for b in range(8):
+            for a in range(n+1):
+                for K in range(a+1):
+                    assert delta(n,b,0,K) >= -F(a,n*(b+1))
+                    checks += 1
+                for K in range(n-a+1):
+                    target = F(a,n*(b+n)) if a else F(0)
+                    assert delta(n,b,1,K) >= target
+                    checks += 1
+            for K in range(n+1):
+                for L in range(K+1):
+                    D = b+1+K
+                    increase = F(1,D-L)-F(1,D)
+                    assert increase == F(L,(D-L)*D)
+                    assert increase <= F(L,D)
+                    checks += 2
+            if n >= 2:
+                M = ((0,n-1,1,0), (n-1,0,0,1),
+                     (1,0,0,n-1), (0,1,n-1,0))
+                assert all(sum(row)==n for row in M)
+                assert all(sum(M[j][i] for j in range(4))==n for i in range(4))
+                K = [sum(M[j][i] for j in (0,1)) for i in range(4)]
+                avg = sum((delta(n,b,int(i<2),K[i]) for i in range(4)),F(0))/4
+                exact = -F(n-1,2*n*(b+n)*(b+1))
+                assert avg == exact < 0
+                checks += 1
+    source = ROOT / "research/current/customer_attraction/extreme_maximal_membership_floor.md"
+    regression = ROOT / "tests/audits/customer_attraction_extreme_membership_theta.py"
+    run = subprocess.run([sys.executable, str(regression)], cwd=ROOT,
+                         capture_output=True, text=True, timeout=30, check=True)
+    data = json.loads(run.stdout)
+    frozen = ROOT / "evidence/runs/2026-10-23/customer_attraction_extreme_membership_theta.json"
+    assert data == json.loads(frozen.read_text())
+    return {"source": source.relative_to(ROOT).as_posix(),
+            "source_sha256": digest(source), "exact_scalar_checks": checks,
+            "middle_membership_fixture": "-1/8 at n=2,b=0; menu only, not SPE",
+            "source_regression": {
+                "command": "python tests/audits/customer_attraction_extreme_membership_theta.py",
+                "source_sha256": digest(regression), "matches_frozen": True,
+                "frozen_report": frozen.relative_to(ROOT).as_posix(),
+                "frozen_sha256": digest(frozen), "cases": len(data["cases"]),
+                "scalar_checks": data["scalar_checks"],
+                "profit_checks": data["profit_checks"]},
+            "scope": "Definition-level reconstruction of the stationary proof and local bounds; not a new global payment theorem or external review."}
+
+
 def main():
     product = replay_copied_audit(
         "R-75bfd8f0f91740408bf08f0c9f5e2aa1/dynamic_credit/audit_product_credit.py",
@@ -103,6 +154,7 @@ def main():
         "scope": "Direction review: replay existing finite certificates and independently reconstruct a known price witness; no new general half theorem or external review.",
         "review_base_commit": "799b5242c99f1524842ceaf5bbabaf6adc52edb5",
         "product_credit": product, "iid_support": iid,
+        "new_stationary_followup": stationary_followup(),
         "actual_prefix_relay": {"source": relay.relative_to(ROOT).as_posix(),
             "source_sha256": digest(relay), "certificate_sha256": digest(certificate),
             "stdout": run.stdout.strip(), "strict_proportional_gap": "3/4"},
