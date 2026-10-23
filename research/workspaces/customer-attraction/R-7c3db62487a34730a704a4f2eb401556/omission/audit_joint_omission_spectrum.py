@@ -145,6 +145,56 @@ def obstruction(m: int) -> dict:
     }
 
 
+def matching_obstruction(m: int) -> dict:
+    """v2: distinct maxima and omitted incidence exactly a matching."""
+    L = lcm(*range(1, m + 1))
+    K = L - 1
+    assert L > 2 * m
+    labels = tuple(f"B{j + 1}_{e}" for j in range(m) for e in range(2)) + tuple(
+        f"A{r}" for r in range(1, m + 1))
+    A1 = 2 * m
+    customers = tuple(CustomerType(frozenset({2 * j, 2 * j + 1}), K)
+                      for j in range(m)) + tuple(
+        CustomerType(frozenset({b, A1}), 1) for b in range(2 * m)) + (
+            CustomerType(frozenset({A1}), L - 2 * m),) + tuple(
+        CustomerType(frozenset({2 * m + r - 1}), L // r) for r in range(2, m + 1))
+    instance = Instance(labels, customers, m)
+    path = tuple(2 * m + r - 1 for r in range(m, 0, -1))
+    assert len(maximal_type_sets(instance)) == 3 * m
+    payoffs = instance.player_payoffs(path)
+    expected = tuple(Fraction(L, r) for r in range(m, 0, -1))
+    assert payoffs == expected
+    assert path_spectrum(instance, path) == list(expected)
+    theme_sizes = [sum(c.multiplicity for c in customers if b in c.topics)
+                   for b in range(3 * m)]
+    assert max(theme_sizes) == L
+    optimal_counts = tuple(int(b < 2 * m and b % 2 == 0) for b in range(3 * m))
+    assert instance.welfare(optimal_counts) == m * L
+    W = sum(payoffs)
+    assert m * L > 2 * W
+    prefix = path[:-2] + (0,)
+    follower = {b: instance.player_payoffs(prefix + (b,))[-1]
+                for b in range(3 * m)}
+    best = max(follower.values())
+    replies = [b for b, value in follower.items() if value == best]
+    assert best == L
+    assert set(replies) == set(range(2, 2 * m))
+    assert follower[A1] == L - Fraction(1, 2)
+    assert all(instance.player_payoffs(prefix + (b,))[-2] == L for b in replies)
+    return {
+        "version": "v2_matching", "m": m, "L": L, "K": K,
+        "unit_customer_count": instance.customer_count, "distinct_maxima": 3 * m,
+        "omitted_maximal_incidence": "m disjoint edges, every missing customer degree 2",
+        "all_slots_tight": True, "welfare": str(W), "exact_optimal_welfare": m * L,
+        "exact_OPT_over_W": str(Fraction(m * L, W)),
+        "all_fractional_prefix_rows": "Analytic: |E| <= L tau = r tau u_i for every E and cover.",
+        "not_SPE": True, "penultimate_on_path_payoff": str(payoffs[-2]),
+        "penultimate_deviation_payoff_under_every_best_reply": L,
+        "all_last_player_best_replies": [labels[b] for b in replies],
+        "A1_last_player_payoff": str(follower[A1]),
+    }
+
+
 def main() -> None:
     H13 = sum((Fraction(1, r) for r in range(1, 14)), Fraction())
     assert 13 - 4 * H13 == Fraction(25177, 90090) > 0
@@ -152,6 +202,7 @@ def main() -> None:
         "identity": "Joint real-prefix omission spectrum and all-m interface obstruction",
         "date": "2026-10-23", "universal_result_basis": "Analytic proof in companion Markdown",
         "regression": regression(), "obstruction": [obstruction(m) for m in (13, 20)],
+        "matching_obstruction_v2": [matching_obstruction(m) for m in (5, 13)],
         "m13_minus_four_H13": str(13 - 4 * H13),
         "Q_CAG_HALF": "OPEN; the obstruction paths are explicitly not SPE.",
     }
