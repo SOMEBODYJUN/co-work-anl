@@ -16,7 +16,7 @@ def security(matrix):
     return result.fun,result.x[:-1]
 
 
-def diagnostic(k=4,n=3,iterations=2000):
+def diagnostic(k=4,n=3,iterations=2000,last_best=False):
     rng=np.random.default_rng(19274)
     tails=list(itertools.combinations_with_replacement(range(k),n-1))
     opp=list(itertools.combinations_with_replacement(range(k),n-2))
@@ -24,6 +24,18 @@ def diagnostic(k=4,n=3,iterations=2000):
     T=np.array([[sum((feature(k,c,(a,)+b) for c in b),np.zeros((1<<k)-1)) for b in tails] for a in range(k)])
     C=np.array([[float(any(t & (1<<c) for c in (a,)+b)) for t in range(1,1<<k)] for a in range(k) for b in tails]).reshape(k,len(tails),-1)
     L=np.array([[[feature(k,c,(a,c)+b) for b in opp] for c in range(k)] for a in range(k)])
+    # Tails are unordered only for customer payoff; the last member is placed last.
+    # Check whether either ordering has a last best response when requested.
+    terminal_options=[]
+    if last_best:
+        for a in range(k):
+            aa=[]
+            for b in tails:
+                aa.append([(ordering, np.array([feature(k,c,(a,)+ordering[:-1]+(c,))
+                                                 -feature(k,ordering[-1],(a,)+ordering)
+                                                 for c in range(k)]))
+                           for ordering in set(itertools.permutations(b))])
+            terminal_options.append(aa)
     incumbent=None
     for iteration in range(iterations):
         w=rng.integers(0,10,(1<<k)-1).astype(float)
@@ -33,6 +45,10 @@ def diagnostic(k=4,n=3,iterations=2000):
         local=[security(L[a]@w) for a in range(k)]
         values=R@w; totals=T@w
         allowed=totals>=np.array([x[0] for x in local])[:,None]*(n-1)-1e-8
+        if last_best:
+            terminal_ok=np.array([[any(np.max(gamma@w)<=1e-8 for _,gamma in options)
+                                   for options in aa] for aa in terminal_options])
+            allowed &= terminal_ok
         minima=np.min(np.where(allowed,values,np.inf),axis=1)
         minimum=max(minima)
         choices=np.argmin(np.where(allowed,values,np.inf),axis=1)
@@ -51,4 +67,7 @@ def diagnostic(k=4,n=3,iterations=2000):
 
 
 if __name__=='__main__':
-    print(json.dumps(diagnostic(),indent=2))
+    import argparse
+    parser=argparse.ArgumentParser();parser.add_argument('--last-best',action='store_true')
+    args=parser.parse_args()
+    print(json.dumps(diagnostic(last_best=args.last_best),indent=2))
