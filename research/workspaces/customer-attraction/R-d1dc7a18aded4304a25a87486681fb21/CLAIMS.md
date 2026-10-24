@@ -31,3 +31,33 @@
 ## 仍开放的充分候选
 
 LAST、自由Mpath、真正静态安全值聚合、KAPPA?共同价格预算均未在本组证明或否定。精确对象沿共享一般工作稿及本轮security/README恢复；旧证书/旧固定锥的阴性探针已停止，不作为候选真值证据。
+
+## FULL-SPINE-INSURANCE-REPAIR-v1
+
+任意原模型m≥2、任意合法有序终局a，只要求末位是该真实前缀后的最佳回复。对每个i<m及每个合法C（**包括C=A_i**）固定真正child-SPE η_(i,C)，记其中第i人的收益d_i(C)。任取有理g>0满足全部d_i(C)≤u_i(a)+g。
+
+则加入不交保险块B大小m(m−1)g，以及T和m−2个Z各大小(m−1)g，并取全部Cartesian主题；同一末位平局租金可修复整条旧路径，首次任何坐标偏离后永久采用固定η与全B reset。用L统一复制旧客户并清分母，得到原单位客户模型的完整纯SPE，满足
+
+    W_new=L[W_old+(m²−1)g],
+    OPT_new=L[OPT_old+(m−1)(2m−1)g],
+    OPT_new−2W_new=L[OPT_old−2W_old−3(m−1)g].
+
+g=0时不添加塌缩的空保险标签，按旧路径和首次真旧偏离递归拼接即可。完整定义、量纲、全历史证明见[正文](credible_continue/shared_terminal_rent_compiler.md)；[先读陈述的独立解析审查](independent_continue/full_depth_insurance_compiler_blind_review.md)及root独立重构通过。作者标准库Fraction全树核验是固定实现证据，不承担一般量词。它不改善旧root-only的3Δ修复；没有找到OPT_old−2W_old>3(m−1)g的输入，未解决原half。
+
+## TWO-REAL-CHILD-SLOT-DEFECT-v1
+
+任意合法有序前缀a负载，其一个原真实孩子为T,C^r（r≥1）；同节点强制C后的真正r人child-SPE若存在最后非C动作Q，则原末位BR松弛η_Q及新孩子四税有
+
+    K_(T,C)(Q)=η_Q+A'_Q+E'_Q+γ'_Q+ζ'_Q.
+
+K的两池都使用原真实T,C^r叶中1/[c_x(c_x+1)]。精确集合与各项定义、边界和来源见[正文](budget/terminal_slot_defect_transfer.md)。root与独立子研究员按陈述重构通过。它确实连接两个真实孩子，但不支付旧背景总/逐人利润返还，也没有跨不同根枝共同W容量；文中局部反例不冒称根SPE或half反例。
+
+## LAST-TERMINAL-QUERY-RESERVE-v1
+
+任意原模型m≥2及完整SPE。倒二题B、其前负载d，实际末前b=d+1_B；M_b为LAST的真正单阻挡者minimax。任取对偶最优主题分布p，定义F=Σp_x/(b_x+1)、H(A)=Σ_(x∈A)p_x/[(b_x+1)(b_x+2)]、h=max_A H(A)，则
+
+    M_b=F−h,
+    u_m−M_b≥h,
+    u_(m−1)−M_b≥H(B).
+
+正文及直接逐客户证明见[末两人税池](security_continue/terminal_query_reserve.md)，root独立重构基本式通过。早期总亏损是否由该池、实际尾松弛或其他信用支付仍未解；不能把尾余量的下界倒用成其上界。
