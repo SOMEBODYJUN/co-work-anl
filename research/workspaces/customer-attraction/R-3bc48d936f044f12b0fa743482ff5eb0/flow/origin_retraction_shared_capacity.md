@@ -30,7 +30,7 @@ where a term with b_i=0 is zero.
 
 Proof. Each source-tagged R system is homogeneous and linear, so source scaling preserves every flow equation and every mandatory/common edge constraint. Summing sources preserves the common edge interval because 0<=z^i<=h^i/c_A. Initial R edges only decrease, so all strengthened initial edge bounds remain valid. Each affected initial coordinate increases its current by precisely the amount removed from its outgoing edges; hence its original customer inventory is unchanged. R current belonging to origin i at role l decreases by theta_i K_il, while owner i receives theta_i b_i=y_i. This proves (RETRACT). All downstream aggregate input densities are dominated by the original ones, so the previously proved density bound remains valid, without combining same-role densities. Total mass is unchanged since sum_l K_il=b_i. QED.
 
-**The deliberate relaxation.** d'_i<=u_i need not hold. The remaining certificate uses the single common requirement F'_i<=2u_i; it pays the additional y_i from the spare part of that same role budget. This does not claim a second application of the old IC or a new per-customer IC. Global soundness uses only inventory, conservation and the verified common role caps. The original constraint d_i<=u_i was sufficient to construct an initial point, not necessary for this final conservation proof.
+**The deliberate relaxation.** d'_i<=u_i need not hold. The output is therefore in an **extended certificate class**, not necessarily a point of the original INIT polytope. All coordinate conservation equalities and strengthened initial edge caps survive, but the old initial d bound is replaced by the single common requirement F'_i<=2u_i. This pays the additional y_i from the spare part of that same role budget. This does not claim a second application of the old IC or a new per-customer IC. Global soundness uses only inventory, conservation and the verified common role caps. The original constraint d_i<=u_i was sufficient to construct an initial point, not necessary for this final conservation proof.
 
 Consequently, if the role caps in (RETRACT) all hold, then |O|=sum F'_i<=2W. If T is optimal, this proves HALF for that fixed instance and fixed complete SPE. This enlarges the peer certificate; no strict separation on an actual SPE is asserted here.
 
@@ -70,6 +70,15 @@ At the first greedy failure j there is an explicit violating price. Put lambda_j
 
 Then the left side of (CUT) is exactly z_j<0. To verify, use y_j=0 for this calculation. At an unsaturated earlier coordinate y_i=z_i, so its priced slack is zero; at a saturated coordinate lambda_i=0, so it contributes only b_i q_i from the box minimum. The sum telescopes to z_j. This is an exact rational dual certificate that **no origin-wise proportional retraction of this routing** can work. It is not a HALF counterexample, not a separator for all optional-common choices, and not a claim that no optimal T works.
 
+The same condition has a direct source-price form. Since F_l=A_l+sum_i K_il,
+
+    sum_i b_i min(lambda_i, sum_(l>i)t_il lambda_l)
+       <= sum_l lambda_l(2u_l-A_l).                    (SOURCE-PRICE)
+
+is exactly (CUT), after cancelling sum_i b_i q_i. Requiring SOURCE-PRICE for all nonnegative lambda is equivalent to repair feasibility: necessity is the box calculation, while a first greedy failure supplies the explicit strict separator above. For the failure separator, 0<=lambda_i<=1: q_i is a convex average of later prices and the backward rule either keeps it or sets it to zero. Its positive earlier prices are supported only on roles whose greedy retained amount is below b_i and whose role cap is therefore tight. This localizes a failure to an actual common-budget bottleneck, without summing context densities.
+
+For constant lambda=1, each nonzero source has q_i=1, so SOURCE-PRICE is sum_i b_i<=sum_l(2u_l-A_l), again precisely |O|<=2W. Thus even this shorter dual does not prove a new general funding inequality. The missing SPE input remains visible at constant price.
+
 ## What this adds and what it does not pay
 
 The new general relation is RETRACT plus the exact greedy/cut theorem. It lets an overloaded later role give back all of the part of its current demand traceable to an earlier source, paid from the earlier role's unused share of its same two-wallet budget. It uses the already retained source labels and never gives each context a separate u_l.
@@ -95,4 +104,4 @@ Here b_5=y_5=0. The first cap is unconditional from A_1<=2u_1 and greedy; the ot
 * A full-universe theme is present: choosing T=B=(N,...,N) at the all-full SPE gives b=H=J=0, d_i=u_i=|N|/m, hence no repair is needed. Backward induction makes each actual prescribed coverage full at every history when N is nonempty: once later players take full, any strict subtheme loses a positive contribution, so the current best reply is full. Empty N reduces to the zero case. Equivalent labels retain ties.
 * Arbitrary complete ordered-history ties: no action, completion leaf, history or tie is changed by retraction. We scale proof amounts only. Histories with identical customer counts are never identified. Thus all original complete SPE choices remain intact; the repair theorem is uniform over them.
 
-The accompanying exact audit uses a fixed existing full-SPE fixture and the established all-big m=5 family only to check this candidate construction, not as evidence of universal success.
+The accompanying exact audit rechecks two fixed existing complete-SPE fixtures (258 and 1554 full-history comparisons), the established all-big m=5 family (9330 comparisons), zero customers, full/empty themes, and one explicitly order-sensitive tie policy. The 52-client fixture has 1/8 R mass from each of owners 0 and 1 reaching role 3; both are legally retracted and all source-tagged descendant scaling identities are verified. The other old fixture has no R input, which is reported explicitly. These are construction checks, not evidence of universal success or a strict separation between the original and extended certificate classes.

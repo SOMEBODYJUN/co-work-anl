@@ -1,5 +1,7 @@
 # 最新接续入口
 
+[round4_general/CLAIMS.md](round4_general/CLAIMS.md) 区分自洽真实负载查询的连续性存在事实与未证共同付款。Q-CAG-HALF 仍 OPEN，暂无新无条件福利下界或目标反例。
+
 [round3_general/CLAIMS.md](round3_general/CLAIMS.md)登记本轮两项经独立内部审查的辅助反例与仍OPEN的STATIC-2候选。Q-CAG-HALF没有一般证明、目标反例或新增全输入福利下界。以下旧Claim按原范围保留，不重复认领。
 
 # 精确命题身份（个人区）
