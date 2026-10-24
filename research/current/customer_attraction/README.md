@@ -6,6 +6,8 @@
 
 该关系的[内部审查与复现入口](../../reviews/customer_attraction/prefix_coupled_seat_budget.md)区分解析证明、独立完整策略补全和有限数值范围；对应脚本、输入及冻结动作表均由该页导航。
 
+2026-10-24 状态去重：成果总账已将实际缩放背景的精确税桥 `mM<=W+G_C` 从开放桥移至已反驳项，与[现行反例正文](fractional_actual_load_counterexample.md) §4及研究状态一致。本轮重放旧完整策略，不认领新反例；真正聚合安全值、Mfull/Mpath和原half仍OPEN。另[最优首动作菜单](optimal_first_action_branch_gap.md) §5 的丢信用加强(11?)已由all-big完整SPE族否定，正确局部恒等式保留；详见正文状态更新和失败地图。
+
 研究存档：customer-attraction；目标身份：Q-CAG-HALF。
 
 **当前主攻 Q-CAG-HALF：一般目录、任意人数、每个完整历史纯 SPE 的半覆盖；仍 OPEN。** 模型为有限单位客户、有限非空共同主题目录、单位权提供者依次观察全部有序历史选主题，最终客户价值在覆盖者间均分。全部历史依赖平局、重复选择、空主题和零客户均保留。

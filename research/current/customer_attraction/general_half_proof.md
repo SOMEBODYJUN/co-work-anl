@@ -238,7 +238,7 @@ f_A=|S\setminus(P\cup A\cup Y_A)|,\\
 
 ρ_A恰为强制A后真实孩子的机会损失。若沿根实际路径对每个A*任取分析分布，
 δ望远镜之和为OPT_m−W，故(BG)给净差OPT_m−2W的跨真实孩子分解。
-**未闭合之处：** 负项信用还没有共同支付全部正的ρ_A；折扣(r−1)/r小于一不自动构成归纳。
+**未闭合之处：** 负项信用还没有共同支付全部正的ρ_A；折扣(r−1)/r小于一不自动构成归纳。丢弃ξ、η后只挑菜单分布的加强(11?)已被[all-big完整SPE族](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/all_big_completion_slack_obstruction.md)否定；不能把它继续列为开放付款，保留全部信用的等式不受影响。
 ξ搬用Y_A只比较静态可行覆盖，不声称Y_A是S孩子的真实SPE。没有扩大half已证范围。
 
 完整定义、边界及证明见[最优首动作菜单信用](optimal_first_action_branch_gap.md)，
