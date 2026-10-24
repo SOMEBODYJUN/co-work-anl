@@ -136,7 +136,12 @@ g(D)=\frac{m}{2m-1}+g(B).
 
 可回收的更精确代数是：令 \(G_C=\sum_{x:c_x>0}1/(1+\alpha c_x)\)，则任意终局
 都满足 \(\operatorname{OPT}_m\le mM+W-G_C\)。这是逐客户比较，不要求 SPE。
-因此 \(mM\le W+G_C\) 是另一条尚未在此证明的充分桥；本族的该桥余额为
+因此 \(mM\le W+G_C\) 在代数上仍是充分桥，但其全称版本已经被另一个
+[既存13人36客户完整SPE](../../workspaces/customer-attraction/R-c50fecc37aa44fb4a69a2122bb70e5fe/security/refined_tax_counterexample.md)
+否定：同一定义 \(\alpha=(m-1)/m=12/13\)，有 \(W=33\)、\(M=3\)、
+\(G_C=708669/123025\)，故 \(mM-W-G_C=29481/123025>0\)。
+2026-10-24恢复这项既存边界并重放其封闭自动机全部112050项精确比较，不认领新反例；
+真正安全值聚合及一般half未被否定。本页上述四主题无限族的该桥余额仍为
 
 \[
 W+G_C-mM=\frac{m(m-1)}{\Delta_m}+\frac{m^2}{2m-1}>0.
