@@ -1,5 +1,7 @@
 # Boss10：共享遗漏、完整可信性和低尾信用
 
+最新接续：[round4一般证明工作稿](round4/GENERAL_PROOF_WORKING.md)。MIN-PI已独立反驳；新随机路由仍缺共同费用，half仍OPEN。
+
 **Q-CAG-HALF 仍 OPEN。** 原模型、无界人数/目录、全部有序历史与任意历史依赖平局不变。这里只保存准确研究资产，不把非SPE菜单、有限阴性计算或内部审查升级为一般证明。外审与新颖性均未认证。
 
 首次恢复时环境没有旧clone；附件程序恢复main并生成本clone身份。当前接续复用同一clone与身份。旧Boss10接续入口为[R-75bfd工作区](../R-75bfd8f0f91740408bf08f0c9f5e2aa1/README.md)。实际启动六名指定研究员；发现、独立重构和root复核分别留痕。凭据保留仓库外，研究均由root统一checkpoint。
