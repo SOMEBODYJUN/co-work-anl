@@ -1,7 +1,10 @@
 # 末层多孩子金额归一：两倍列容量及一般未付接口
 
 2026-10-24。个人工作稿。任意有限单位客户和共同目录、任意人数 m。
-本页末层代数不使用 SPE；它尚未支付一般半覆盖。新颖性未认证。
+本页末层代数不使用 SPE；它尚未支付一般半覆盖。已完成父方自足证明、
+[credible 独立重构](../credible/review_terminal_amount_cap.md)及
+[independent 先重构后对稿](../independent/prefix_and_terminal_amount_review.md)。
+无外审或新颖性认证。
 前缀正价 q 的来源是既有
 [同一孩子 prefix 回推](../../R-cd789330fc7141299ac491bbb3ffa420/round7/credible/joint_prefix_claim_pushback.md)。
 
@@ -49,6 +52,10 @@ sum_alpha lambda_(alpha,j)<=2。若 p_j(B)=0，则 B_j 无正价值客户，
 对 x 相加即得 TERMINAL-CAP2。m=1 时 sender 集合为空；零客户、空主题
 及相同主题标签去重均不影响证明。不存在从有限枚举推出一般性的步骤。
 
+[coupling 的全人数完整 SPE 家族](../coupling/amount_cap1_family.md)使该
+合同的列系数为 2−3/(n+1)，n>=3，因而这里的统一系数二不能减小。
+它的实际福利等于最优福利，只检验本合同 sharpness；不是 half 反例。
+
 ## 3. 更深真实分支是不同候选
 
 固定完整 SPE sigma 的实际叶 B。现在分支 alpha=(i_alpha,T_alpha) 可以
@@ -68,6 +75,12 @@ W^alpha 与 B 在 i_alpha 之前一致。对 j<i_alpha 保留同一 AMOUNT，定
 都可能失效。真正要用到全部真实后继 IC，不能把任意合法叶代替真实续局。
 即使 DEEP-CAP2 成立，还必须证明一般覆盖债务能按 AMOUNT 输入且没有
 既有 direct/suffix claim 的重复占款；不能据一个系数二就宣布 half。
+
+另外，AMOUNT 已成立时，合计所有 recipient 的正价金额不超过同一份
+sender 实际利润和，是既有 POSITIVE 的基线推论；见
+[条件源池及保留项](../harmonic/positive_source_pool.md)。因此逐列 cap2
+的用途若有，应是保留下一轮完整 IC 的密度合同，而不是创造额外总金额。
+原覆盖债务的 AMOUNT 初始化仍须另证。
 
 ## 4. 本轮定义级有限攻击及限制
 
