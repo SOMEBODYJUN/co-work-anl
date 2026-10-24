@@ -1,6 +1,6 @@
 # Boss10：共享遗漏、完整可信性和低尾信用
 
-最新接续：[round5一般证明工作稿](round5/GENERAL_PROOF_WORKING.md)。本轮保留并恢复round4未提交的联合Hall投影与审计；MIN-PI已独立反驳，自适应随机路由的共同费用仍未支付，half仍OPEN。
+最新接续：[round6一般证明工作稿](round6/GENERAL_PROOF_WORKING.md)。本轮保留并恢复round4未提交的联合Hall投影与审计；MIN-PI已独立反驳，自适应随机路由的共同费用仍未支付，half仍OPEN。
 
 **Q-CAG-HALF 仍 OPEN。** 原模型、无界人数/目录、全部有序历史与任意历史依赖平局不变。这里只保存准确研究资产，不把非SPE菜单、有限阴性计算或内部审查升级为一般证明。外审与新颖性均未认证。
 
