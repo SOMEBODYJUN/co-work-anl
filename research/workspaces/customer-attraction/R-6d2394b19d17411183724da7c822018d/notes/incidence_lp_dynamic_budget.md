@@ -33,7 +33,7 @@ B(r)=\min\left\{\sum_{j=1}^s \beta_j:\;\beta_j\ge1\ \text{if }w_{\{j\}}>0,\quad
 \tag{2}
 \]
 
-This is a finite rational covering LP. The private lower bound is needed only when the corresponding private block is nonempty. Set
+This is a finite rational covering LP. The private lower bound is needed only when the corresponding private block is nonempty. If `U-c>0`, then `B(r)>=1`; when `U-c=0` the welfare bound is trivial and the LP denominator can be omitted. Set
 
 \[
 D_t=t+B(n-t),
@@ -106,7 +106,7 @@ Let
 \tag{7}
 \]
 
-This is a fractional cover number of the maximal-incidence hypergraph, with singleton edges retained. Taking `beta=r alpha` in (2) gives `B(r)≤r tau_inc`. Since `tau_inc≥1`, the comparison denominator `n+(tau_inc−1)r` is nonincreasing in prefix length and dominates the suffix envelope. Hence
+This is a fractional cover number of the maximal-incidence hypergraph, with singleton edges retained. When `U-c>0`, `tau_inc>=1`. Taking `beta=r alpha` in (2) gives `B(r)≤r tau_inc`. Since `tau_inc>=1`, the comparison denominator `n+(tau_inc−1)r` is nonincreasing in prefix length and dominates the suffix envelope. Hence
 
 \[
 W\ge c+(U-c)\sum_{r=1}^n\frac1{n+(\tau_{\rm inc}-1)r}.
