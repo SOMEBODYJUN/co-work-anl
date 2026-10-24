@@ -1,15 +1,7 @@
-# R-8918a9ea76c74f88a9de75e2c4a948e9 的个人研究工作区
+# 原模型一般半覆盖：本轮恢复入口
 
-研究存档：`customer-attraction`；发布身份：`R-8918a9ea76c74f88a9de75e2c4a948e9`。
+身份 R-8918a9ea76c74f88a9de75e2c4a948e9，存档 customer-attraction，角色 boss。Q-CAG-HALF 仍 OPEN。
 
-## 当前研究
+[GENERAL_WORKING.md](GENERAL_WORKING.md) 固定对象、当前 ROW-NET 义务和六个竞争分支。各分支保存可接续推导和必要证据。父方持续承担一般证明，不以特例或阴性扫描收尾。共享状态从[一般证明稿](../../../current/customer_attraction/general_half_proof.md)恢复。
 
-在这里写准确问题、采用的定义/命题版本、当前表示与卡点。
-
-## 可访问材料
-
-按需要在 notes/、experiments/、candidates/ 中保存有接续价值的材料，并在此链接。成熟资产沿既有规范入库，此处链接正文，不重复复制。
-
-## 交流与状态
-
-可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。
+个人备份不自动成为 canonical 结论；成熟候选独立攻击后才升级。
