@@ -117,7 +117,7 @@ In particular, `tau_inc≤2` implies half coverage because
 
 \[
 \sum_{r=1}^n\frac1{n+(\tau_{\rm inc}-1)r}
-\ge\sum_{r=1}^n\frac1{n+r}=H_{2n}-H_n\ge\log 2>1/2
+\ge\sum_{r=1}^n\frac1{n+r}\ge\frac12
 \]
 
-(the `n=1` endpoint is `1/2`). This condition is a distinct, incidence-level certificate; it is not a bound on the original theme fractional cover `tau_C`. For all-shared incidence and `s≤4`, `alpha_j=1/2` recovers the known `s≤4` route. Sparse incidence can satisfy `tau_inc≤2` even when the number of maximal themes is larger. The condition is only sufficient: disjoint-maxima catalogs have large `tau_inc` but are handled by the separate singleton-load mechanism.
+(each denominator in the last sum is at most `2n`; the `n=1` endpoint is exactly `1/2`). This condition is a distinct, incidence-level certificate; it is not a bound on the original theme fractional cover `tau_C`. For all-shared incidence and `s≤4`, `alpha_j=1/2` recovers the known `s≤4` route. Sparse incidence can satisfy `tau_inc≤2` even when the number of maximal themes is larger. The condition is only sufficient: disjoint-maxima catalogs have large `tau_inc` but are handled by the separate singleton-load mechanism.
