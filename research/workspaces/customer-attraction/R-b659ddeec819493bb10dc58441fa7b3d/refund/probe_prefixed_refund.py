@@ -7,6 +7,12 @@ from functools import lru_cache
 from itertools import product,combinations_with_replacement
 from pathlib import Path
 import json
+import argparse
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output', type=Path,
+                    help='Optional new candidate output; never overwrite the frozen certificate.')
+args = parser.parse_args()
 
 rows=[(1,21),(2,18),(4,26),(8,16),(17,2),(18,8),(24,10),
       (33,2),(34,8),(40,10),(49,10),(52,10),(54,2),(58,2)]
@@ -50,5 +56,10 @@ if base in leaves(()):
     result={'rows':rows,'path':base,'profits':list(map(str,pay(base))),
             'welfare':cover(base),'optimal':op,'optimal_tuples':optimal,
             'actions':[{'history':h,'action':a} for h,a in sorted(actions.items(),key=lambda v:(len(v[0]),v[0]))]}
-    Path(__file__).with_name('prefixed_refund_counterexample.json').write_text(json.dumps(result,indent=2))
+    if args.output:
+        frozen = Path(__file__).with_name('prefixed_refund_counterexample.json').resolve()
+        if args.output.resolve() == frozen:
+            raise ValueError('The frozen certificate must not be overwritten.')
+        with args.output.open('x') as output:
+            output.write(json.dumps(result, indent=2) + '\n')
     print(json.dumps({key:value for key,value in result.items() if key!='actions'},indent=2))
