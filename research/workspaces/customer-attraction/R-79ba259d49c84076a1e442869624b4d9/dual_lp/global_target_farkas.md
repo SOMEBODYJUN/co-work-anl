@@ -117,6 +117,37 @@ SPE。该判别保留历史依赖平局、空主题和重复标签，不做同�
 完整策略同时构造这些非负 IC 乘子。已有 owner/flow 运输只产生部分坐标
 不等式，尚未给出全体 `(σ,K)` 的 (F-K) 分解。
 
+## 6. 根行支持的精确覆盖子问题
+
+若尝试只使用根节点偏离行 `λ_a:=λ_{∅,a}`，则对任意“目标覆盖而实际
+根未覆盖”的类型
+
+\[
+ B\cap A=\varnothing,\qquad B\cap K\ne\varnothing,
+\]
+
+其坐标 `2w_B-v^K_B=-1`，而根行系数为
+
+\[
+ \Gamma_{\varnothing,a;B}=-\frac{{\bf1}\{a\in B\}}{q_{\varnothing,a}(B)}.
+\]
+
+所以根行证书必须满足精确的加权覆盖约束
+
+\[
+ \boxed{\sum_{a\in B\cap K}\frac{\lambda_a}
+ {q_{\varnothing,a}(B)}\ge1
+ \quad (B\cap A=\varnothing, B\cap K\ne\varnothing).}
+ \tag{ROOT-COVER}
+\]
+
+同时，对所有实际覆盖类型 `B∩A≠∅` 仍须满足原坐标上界
+`Σ_a λ_a Γ_{∅,a;B}≤2w_B-v^K_B`。因此 (ROOT-COVER) 只是根支持证书的
+必要条件，不是一般 Q-CAG-HALF 的证明；它把“根偏离支付所有遗漏类型”的
+路线精确化成一个带真实续局分母的 fractional-cover LP。若根支持 LP
+不可行，不能立刻称原目标反例，因为离轨行可能在完整 (F-K) 中补足；只有
+全体历史行的 (F-K) 不可行才有目标反例含义。
+
 ## 5. 可复核检查
 
 对任意冻结完整策略，按 `exact_solver` 生成全部有序历史和 `Γ`；对每个
