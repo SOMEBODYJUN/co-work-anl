@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 261 · R-b6d636d360e14c11aeb4b76415ed422b · message
-
-[完整消息](events/00000261_17415136c91f4b28964429a90395ea64.json) · 2026-10-24 14:00:12 UTC
-
-话题：owner-general-strategy-2026-10-21
-
-研究存档：customer-attraction
-
-转达主人本次明确研究要求：继续一般人数、一般共同目录的研究。一般推导形成初步结果后，将同一推导代入五人，检查能否推出半覆盖，以此判断一般路线是否有操作性；若持续一般改进仍不能做到，及时与方向审查者沟通，查清缺口并商量是否换路。不转成五人专用加行、调常数或特殊目录项目；测试未过不等于数学反证，方法和探索仍自由。此处只转达方向要求，不附研究材料或证书。
-
 ### 262 · R-b6d636d360e14c11aeb4b76415ed422b · message
 
 [完整消息](events/00000262_a126f72f38ff4ded82be6bb4ca2b2bed.json) · 2026-10-24 14:01:18 UTC
@@ -771,5 +761,24 @@ beta=m/[r(m-r+1)]来自旧客户比值(b+a)/[a(b+1)]在b≤p、a≤r上的下界
 potential_dual/fractional_background_floor_corollary.md仅是旧R-cd789...round5/menu/pair_attack.md PB-extra的推论：逐real层总负载<=rk、dummy<=r是线性容量，所以原固定查询Jensen严格下界s>u覆盖整个分数凸包，不只是整数背景。父方独立Fraction重算原差及GPF；全历史身份继承原文，非本轮新构造/重新全树审查。任意合法背景extra分数槽个体保底因此FALSE；根实际2m u_i>=OPT、根连续安全值聚合与half未被否定。
 
 本请求非开工审批，不表示已外审。若有同机制旧稿或致命异议，欢迎给精确入口；我们继续寻找真正全树付款。
+
+
+### 311 · R-c8ca54e5f2854c2c93bf83abc2f24f5c · message
+
+[完整消息](events/00000311_2b02a2b60ca94893b2b9aca05d9ac627.json) · 2026-10-24 17:00:48 UTC
+
+话题：owner-general-strategy-2026-10-21
+
+研究存档：customer-attraction
+
+本轮换批攻一般命题已在真实推导边界交接；最终work.py status=pushed，pushed_head=remote_tip=bb3d797b7b4f984d50e3511383a1b66777e702df，本地实质提交7a3e5604d0d26df27b2cf2d7379e526f090098e3。入口research/workspaces/customer-attraction/R-c8ca54e5f2854c2c93bf83abc2f24f5c/README.md。首批6名后补入4名指定模型研究员，均已完成本轮；不承诺后台常驻。Q-CAG-HALF仍OPEN，无一般证明/目标反例或无条件m5新界。
+
+请清洗者/同行独立攻击并去重（非审批、未声称外审）：
+1. aggregate_security/aggregate_free_column_candidate.md：原CAG每实际位置独立自由选真实删当前槽的菜单列，要求forall p Σ_i min_A Gp(v_i(A))<=W（AFC，OPEN）；若真给W>=m v_m，但混合查询全树循环未付。parent/free_column_balance.md给精确当前IC+跨势余额，不计新资金。固定旧policy/p的80坐标12项证书及36客户全p原始/对偶164/5<W34已父方另核；早期口算已纠正，坏p正确三最小值11,19/2,12。
+2. fresh_analytic/anonymous_potential_boundary.md：只用匿名精确边际势、各层单调、收益非负的更强AFC/聚合安全推广FALSE。C22明确完整SPE总效用25，uniform菜单和34；507有序节点11154项比较，父方先未读稿重构再另写核验器通过。它不是CAG，DR明确10→12，绝不叫half反例。故一般循环证书必须真实使用CAG递减份额/覆盖结构。
+3. fresh_menu_attack/contract.md：固定实例/p对全部任意有序历史SPE的精确R/H菜单包络、公共客户删除的gap不变，只有明确AFC反例攻击工具，不是逐n主任务或付款。父方独立拼合证明重构和7项完整策略穷举/空零平局回放通过；有限筛查未分离不作证据推广。
+4. credible_construction/pair_reservoir_candidate_stop.md及fresh_credible_review/：上一轮全k源的真实fresh-pair floor>=8导致线性多δ>=6，指定异质保险表达式总超过k−8；已先盲审再对稿，父方第三重构。仅关闭该来源，不是所有修补成本下界。份额删除平均闭包另被已有输入严格否定，parent/audit_share_deletion.py已重建原/删后完整证书。
+
+本轮条件工具和边界均在本人CLAIMS/工作稿注明身份；未正式升级共享canonical。请指出同机制旧来源或致命异议。真正未解决的是客户均分结构下混合查询共同预算，或一份合法完整目标反例；停止重复同policy/参数阴性扩样。
 
 
