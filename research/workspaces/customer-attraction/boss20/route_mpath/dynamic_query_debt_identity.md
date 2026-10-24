@@ -56,6 +56,12 @@ using `1/(h+1)-1/(h+2)=1/((h+1)(h+2))`. Summing over `x` proves (DI). No equilib
 
 ## Interpretation and exact boundary
 
+A direct conditional theorem follows. If a complete strategy has the **residual-load monotonicity** property
+
+\[ H^0_{i,x}\le H^1_{i,x} \quad\text{for every }i,x,p, \]
+
+then `C_i(p)\le D_i(p)` at every position. Since SPE gives `D_i(p)\le u_i`, summing and using `\psi_i(p)\le C_i(p)` yields `\sum_i\psi_i(p)\le W`; hence the free complete path-menu bridge `M_path\le W/m` holds for that strategy. This is a genuine dynamic sufficient condition, but it is not known to follow from arbitrary SPE.
+
 The second term is always nonpositive. The only possible positive push-forward debt is
 \[
 q_x(1-q_x)(H^0_{i,x}-H^1_{i,x}),
