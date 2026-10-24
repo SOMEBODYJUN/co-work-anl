@@ -110,3 +110,12 @@ PI已被下述完整SPE反例否定；混合弱推送、全树水位信用仍为
 以上对原全部输入有效，但均为结构/表示组件；主目标OPEN。定义级回归不提升一般福利证据，无外审/新颖性认证。[root审查](round6/parent/review_general_components.md)。
 
 - **B10-ALL-CONTEXT-COUPON-ROLE-HIT-v1**：SAFE净券图、fresh变体、CLIP子核及各自合法OPT-owner初始化，对任意k角色集K有A(K)≤M(K)+k/(k+1)M(K外)。跨全部context/客户，但只约束角色终端质量，不是actual钱包上界。relay提出，credible/root独立重构；root的uniform-subset行表示与角色价层积分为派生工具。见[派生稿](round6/parent/role_price_envelope.md)，原HIT正文在round6/relay。主目标仍OPEN。
+
+## 第七轮精确身份（均非一般福利结论）
+
+- **B10-FRESH-SOURCE-ORDER-v1**：固定合法全客户 SAFE/CLIP 图、任意有限 actual-prefix fresh 源，源 owner k 的最终实际角色 j≥k；以 h_k(K)=|K∩[k,m]| 得 A(K)≤M(K)+Σ_(k∉K)h_k/(1+h_k)M_k，含前缀 cut 与非增价格推论。全 O 初始化不适用。已有 causal interval/HIT 的综合，不认领新机制；coupling证明，root/credible 独立重构通过。[正文](round7/coupling/fresh_source_order_and_suffix_hits.md)。
+- **B10-JOINT-PREFIX-PUSHBACK-v1**：任意两个合法完整叶 B/W 在 i 前行动相同，对同一 W 的全部 prefix 完整利润系数 λ_j∈[0,L]，存在明确非负矩阵将 Σ_(j<i)λ_jp_j(W) 精确写成 Σ_lκ_lp_l(B)，且 κ_l∈[0,L]；矩阵各列和≤1。零利润取零系数。只针对一份 W；已有 suffix 或多个 W 的 claim 不免费叠加。credible证明，coupling/independent/root分别重构通过；§3非减价格与后缀利润推论由金额只前送及列界直接推出。[正文](round7/credible/joint_prefix_claim_pushback.md)。
+- **B10-FIXED-PARENT-SD-TRANSPORT-v1**：任意参考完整叶 Z、另一固定叶 B，S_i=Z_i，d_i=c_B+1−1_Bi。q^B_il=Σ_(x∈S_i∩(B_l\S_l),i≠l)1/(c_Z d_i) 的同一矩阵满足 Σ_l q^B_il≤u_i(Z)，Σ_i q^B_il≤u_l(B;(C_Z∩B_l)\S_l)。行系数≤L 时共同列系数≤L，可与不交客户支持的既有密度合并；不含 direct B 或未来 W 响应项。coupling提出，root/independent独立重构通过。[正文](round7/coupling/fixed_parent_static_column_capacity.md)。
+- **B10-REVERSE-SD-KEEP-B-v1**：固定 reference Z 与真 natural context，SD 有 u_i=v+P_B+P_W−N_B−N_W−ell，ell≥0。ROW 给 r=u_i−P_B≥0，可保留全部 B 正边，当前送 min(v,r)≤v，仅 W 正边保留总额(r−v)_+≤P_W，精确非负守恒。方向 actual→off 利润；B 目标域须按 last-forced/query/prescribed 分类合法化。没有 PRICE/HIT、循环吸收或 actual cap。root推导，coupling/global独立解析确认。[正文及root核查](round7/parent/reverse_sd_and_joint_review.md)。
+
+SD/query-projection 是合法表示，完整说明在 global/coupling；COMMON-CAP 的 per-client 交集运输只付同一 B/W 的共同覆盖部分。所有本轮 finite audits 只核定义和明确候选，不证明上述一般定理或 half；一般关系由解析证明承担。内审通过不等于外审，新颖性未认证。主目标始终 OPEN。
