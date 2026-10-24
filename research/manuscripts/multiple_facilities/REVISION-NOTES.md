@@ -32,3 +32,49 @@ https://www.fim.uni-passau.de/fileadmin/dokumente/fakultaeten/fim/lehrstuhl/hark
 ## 完整editorial报告后的三项局部修复
 
 原冻结稿c8bfa0d…的隔离报告保留其FAIL判定。SE-1在Lemma\ref{lem:deviation} Case2明确把原J_t与新增客户一起装箱；SE-2在默认规则开始固定客户枚举；SE-3用两个具体lemma引用替换描述性指称。三项均采纳，不改变定义域、存在性结论、显示公式或证明路线。主agent逐段核对实际diff及重编译；没有伪称新的隔离delta或editorial PASS。
+## Round-1 referee repair
+
+- **`main.tex:137,153--155` (`lem:capped`)**: replaced the ambiguous phrase
+  “all other facilities” with “every facility that does not host one of these
+  heavy clients.” A heavy singleton is intentionally allowed to exceed the
+  cap, so the original wording contradicted the packing conclusion used in
+  the deviation proof. The proof's invariant and theorem statement are
+  otherwise unchanged.
+- **`main.tex:195`**: repeated the non-heavy-facility qualification in Case 2
+  so the application of `lem:capped` matches its corrected invariant.
+- **`main.tex:215`**: separated polynomial checking of the stored profiles from
+  the symbolic correctness argument for the implicit default rule; this
+  removes an avoidable reading that the exponentially many default executions
+  are all enumerated by a polynomial verifier.
+
+## Round-2 independent proof review fixes
+
+The independent round-2 audit found no S0--S3 issue and three S4 exposition
+items. All three were adopted without changing a theorem, hypothesis, formula,
+or proof strategy:
+
+- **`main.tex:80`** fixes the tie rule for the finite lexicographic maximum by
+  specifying a fixed total order and retaining the first maximizer.
+- **`main.tex:123`** makes the occupied-target comparison explicit:
+  `W_t/q_t>((q_t+1)a)/q_t>a` before the sorted-vector contradiction.
+- **`main.tex:214--220`** calls the continuation outside the stored layouts a
+  deterministic default-rule program, and uses the same fixed enumeration in
+  the certificate proof. This states that the certificate stores a succinct
+  rule rather than an exponentially expanded table.
+
+The round-2 proof report (`REFEREE_REPORT_round2_proof.md`) re-derived the
+model, lexicographic selection, both source-location cases, packing, the cap
+potential, all deviations, continuation compatibility, and rational encoding.
+It found no remaining correctness blocker. The final audit still treats finite
+arithmetic runs as regression evidence rather than a proof of the universal
+claim.
+
+## Round-2 editorial gate
+
+The final fresh-eyes language gate is recorded in
+`EDITORIAL_REVIEW_round2.md`. It found no must-fix prose issue: the earlier
+humanizer pass remains mathematically faithful, terminology is stable, and
+further shortening would remove proof-bearing cases rather than reduce
+unnecessary complexity. The only additional source change after that gate is
+the layout-only `\\enlargethispage` line that keeps the reference entry on the
+last page.

@@ -8,7 +8,7 @@
 | 任意设施数因子二 | [PDF](multiple_facilities/main.pdf)、[LaTeX](multiple_facilities/main.tex)、[写作状态](multiple_facilities/WRITING_STATE.md) | 第一节引言及模型；第二节字典序选择、全部转移预算、原子装箱、离轨修复与短主定理证明。对应 SC-K-2-E；[现行数学地图](../current/multi_facility/README.md)。有限构造、短显示证书与一般多项式搜索严格区分。 |
 | 加权拥塞结构工具及反例族 | [PDF](../current/weighted_congestion/structural_reconstruction/structural_methods_article.pdf)、[LaTeX](../current/weighted_congestion/structural_reconstruction/structural_methods_article.tex)、[写作状态](../current/weighted_congestion/structural_reconstruction/WRITING_STATE.md) | 四节：引言/模型，结构工具，全状态反例族，正向稳定及社会成本应用。先说明工具解释了什么，再由工具解决存在性增长阶问题。参数尾部和全部非法态证明保留；简单参数例不宣称数学最小。对应各独立 WC Claim；[专题地图](../current/weighted_congestion/structural_reconstruction/README.md)。 |
 
-作者、单位及邮箱未由主人提供，正文不虚构署名。历史记录包含 Algorithmica、SIDMA、TEAC、MOR 的编辑建议，没有主人对三篇逐篇定刊的决定；本次可编译稿采用通用数学文稿类，**最终期刊模板尚未确定**，不是已经完成投稿格式的文件。
+作者、单位及邮箱未由主人提供，正文不虚构署名。第二篇已由团队定为 **SIDMA** 主投，采用 SIAM 最新 `siamart251216` 宏包作为提交模板；其余两篇仍按各自写作状态记录的目标推进。第二篇当前可编译稿仍是可复核的通用 `amsart` 版本，待作者元数据齐全后转换 publisher class，不把它误称为已投稿文件。
 
 ## 实际拉取的开源写作 skill
 
