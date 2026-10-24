@@ -64,6 +64,13 @@
 
 ## 主agent最终接续记录
 
+Round-1 isolated referee findings were repaired in REVISION-NOTES.md:
+the false equal-reach quota sentence was removed, the large-pair chord now
+states its no-witness scope, the common-\(h\) reach-order implication and
+fixed-largest-client invariant are explicit, and the polynomial constructor
+has an ordered branch table. The revised source is not yet independently
+passed; a targeted re-review and clean build are required before delivery.
+
 最终交付以[三稿核验汇总](../MANUSCRIPT_REVIEW.md)中的版本和真实覆盖为准。统一构建脚本已实际成功运行；PDF总页数保持25/8/26，已渲染检查全部页面的排版概览。
 独立数学检查者已完整读冻结初稿并发回无已确认致命异议的阶段报告，但最终审查回执未完成。隔离editorial审读因工作区额度错误中断，未产生可验收报告。不得登记独立全文审查通过。
 当前源码SHA-256：`6aaa893eeab3f818fdfee71819830e4880bee66365a077a4d66c092190ec4c3e`。当前PDF SHA-256：`c9b1deb3bd400142626c12e6cba0aa8665226f058d06c89506e99125763c19c5`。最终期刊未定，当前为成文稿而非某刊最终提交包。
