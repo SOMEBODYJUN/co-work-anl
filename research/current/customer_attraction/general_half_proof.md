@@ -208,6 +208,42 @@ W\ge\sum_i\Lambda_i\ge\sum_i\lambda_i.}
 
 完整[定义与证明](../../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/omission/prefix_coupled_seat_budget.md)、[先盲重构 G 后读稿检查 F 的内部审查](../../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/induction/private_offset_spectrum_independent_review.md)、[独立有限证据审查](../../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/menu/refined_spectrum_numerical_review.md)分别保留准确范围。该机制承接已有超集席位归纳；没有外审或新颖性认证。
 
+### 3.2 最优首动作的真实孩子覆盖缺口：不冻结后继的全范围关系
+
+**`CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1`。** 任意有序历史h尚余r≥1人，旧覆盖P，
+实际规定动作S及当前最终利润u。令F_k(Q)为背景覆盖Q下k个合法主题的最大总覆盖，
+G=F_r(P)、H=F_(r−1)(P∪S)、δ=G−H。对任意最优首动作
+`A∈A*={A:F_(r−1)(P∪A)=G}`，沿同一原策略强制A的真实尾并集为Y_A，当前利润d_A，
+Γ_A=u−d_A≥0。定义
+
+\[
+\begin{gathered}
+\rho_A=G-|P\cup A\cup Y_A|,\quad
+M_A=|A\setminus(P\cup S)|,\quad\theta_A=M_A-\delta,\\
+t_A=|A\setminus(P\cup S\cup Y_A)|,\quad
+f_A=|S\setminus(P\cup A\cup Y_A)|,\\
+\xi_A=H-|P\cup S\cup Y_A|,\qquad
+\eta_A=r d_A-M_A-(r-1)t_A.
+\end{gathered}
+\]
+
+全部量非负：θ由最优补全单主题替换得到；ξ来自合法静态同尾补全；η由t个独占新客户
+全归当前、其余M−t个新客户的份额至少1/r得到。两个覆盖并集之差给
+`δ=ρ_A+t_A−f_A−ξ_A`，因此精确有
+
+\[
+\boxed{r(\delta-u)=(r-1)\rho_A-\theta_A-(r-1)(f_A+\xi_A)
+-\eta_A-r\Gamma_A.}\tag{BG}
+\]
+
+ρ_A恰为强制A后真实孩子的机会损失。若沿根实际路径对每个A*任取分析分布，
+δ望远镜之和为OPT_m−W，故(BG)给净差OPT_m−2W的跨真实孩子分解。
+**未闭合之处：** 负项信用还没有共同支付全部正的ρ_A；折扣(r−1)/r小于一不自动构成归纳。
+ξ搬用Y_A只比较静态可行覆盖，不声称Y_A是S孩子的真实SPE。没有扩大half已证范围。
+
+完整定义、边界及证明见[最优首动作菜单信用](optimal_first_action_branch_gap.md)，
+[独立解析内审](../../reviews/customer_attraction/optimal_first_action_branch_gap.md)；外审和新颖性未认证。
+
 ## 4. 独立成立的静态安全值与最优覆盖比较
 
 固定任意合法前缀负载 b 和剩余人数 r≥1，定义真正静态安全值
@@ -588,6 +624,12 @@ M_{\mathrm{path}}\le W/m\tag{27?}
 \]
 
 这个等价没有给出 λ，也没有证明它存在。原唯一正文见[完整根菜单](../../workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/induction/full_root_menu_mixed_obligations.md)和[PRODUCT-MENU-TIME](../../workspaces/customer-attraction/R-4243b113e6fc4c25a197dec299f08049/parent/product_menu_time_obligation.md)。
+
+必须保留本节的**原根实际位置**量词。不能将(26?)无条件加强为“任意合法背景b、任意剩余r，
+局部完整菜单值≤首位收益”：旧[PB-extra背景反例及精确身份](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/CLAIMS.md)
+的R5-PB-EXTRA-NO-v1已有完整续局与内部审查，前两位收益和低于2v_(r+1)(b)，因此至少一位违反
+逐背景额外槽个体保底。该背景未证在根实际到达，故它不反驳本节(26?)、(27?)的实际位置量词，
+也不反驳全局m阈值。原证明与审查范围应按该账本读取，不能用背景反例替换原主目标。
 
 ## 9. 根修复只是一种等价表示，不能填入上述空缺
 
