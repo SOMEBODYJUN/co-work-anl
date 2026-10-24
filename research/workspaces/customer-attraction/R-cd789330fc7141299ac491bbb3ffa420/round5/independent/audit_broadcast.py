@@ -136,8 +136,17 @@ rows_all={g:row(g) for g in strategy}
 rows_fresh={g:row(g,True) for g in strategy}
 rows_cancel={g:row(g,cancel=True) for g in strategy}
 
-# A single legal forced comparison/source query at position one: query D, and retain
-# only its two actual-uncovered TDE customers, rho=1 for each.
+# A legal arbitrary forced query, embedded in the NON-OPTIMAL comparison tuple
+# (D,H,B). This does not audit an optimal-owner initialization. Assign D all
+# its customers, H its private customers and B its customers outside D, then
+# retain rho=1 only for D's two actual-uncovered TDE customers.
+comparison=(D,H,B)
+comparison_union=set().union(*(topics[a] for a in comparison))
+optimal=max(len(set().union(*(topics[a] for a in z))) for z in product(range(6),repeat=3))
+assert len(comparison_union)==17 and optimal==18
+assert len(set().union(*(topics[a] for a in (H,B,T))))==optimal
+assert max(len(set().union(*(topics[a] for a in z)))
+           for z in product(range(6),repeat=3) if D in z)==17
 source_query=D
 source_leaf=finish((D,))
 source_customers=topics[D]-C
@@ -209,11 +218,14 @@ assert beta_all[(H,T)]==F(1,40)
 assert sum(rows_all[(H,T)]['past'].values(),F())==1
 
 result={
-    'scope':'One complete unit-customer SPE implementation audit; no universal computational evidence.',
+    'scope':'One complete unit-customer SPE implementation audit with non-optimal comparison (D,H,B); not an optimal-owner INIT audit and not universal computational evidence.',
     'customers':len(members),'topics':list(LABELS),'players':3,
     'actual_path':[LABELS[a] for a in Z],'actual_payoffs':list(map(str,actual)),
     'complete_histories':len(strategy),'ic_checks_including_self':ic_checks,
     'source_leaf':[LABELS[a] for a in source_leaf],
+    'comparison_tuple':[LABELS[a] for a in comparison],
+    'comparison_coverage':len(comparison_union),'optimal_coverage':optimal,
+    'optimal_owner_initialization_tested':False,
     'source_rho_total':len(source_customers),'source_absorption':str(source_absorption),
     'injected_mass':str(sum(injection.values(),F())),
     'positive_fresh_edge':{'from':['D'],'to':['H','T'],'raw_price':'1/2',

@@ -23,7 +23,7 @@
 | [自然incoming密度总账](rank/incoming_density_diagonal_ledger.md) | 全父子对角项精确为M−H，完整K_in=M−H+T+COV−L，L是真off-history整行IC slack；当前吸收不变时captured可自然重分配 | T+COV−L共同预算未证；[独立盲重构](dynamic/review_density_ledger.md)及[补审](dynamic/review_density_ledger_supplement.md)通过 |
 | [全fresh/全客户消元](credible/all_fresh_submarkov_elimination.md) | 利润归一化正广播是严格角色DAG；fresh子集行质量≤k/(k+1)；全客户past正边落actual券，不调用错误的过去IC | whole-actual行、past券、source三者同一C容量未证；[root解析与证据审查](parent/review_broadcast.md)、[独立单位回归](parent/broadcast_audit.json)；另有独立盲审待完成 |
 | TOTAL-TRIM，见自然密度稿§7 | 若只求总费，可任删G个比较R源，剩源OPT−W；最低费为R−G个最低自然价格之和，旧Hall是更强约束 | 费用≤W未证；任意trim不继承旧SOURCE-NET/逐行钱包 |
-| [PB-extra](independent/two_block_security_reduction.md) | 若任意背景剩r≥2的前两位最终利润和≥2v_(r+1)(b)，则沿actual两位置成块得W≥m v_(m+1)(0)≥OPT/2；奇数与零端点已核 | PB-extra本身OPEN；复制首主题只有同枝等利，不支付跨尾子树；有限阴性非一般正证，已停扩样 |
+| [PB-extra](independent/two_block_security_reduction.md) | 若任意背景剩r≥2的前两位最终利润和≥2v_(r+1)(b)，则沿actual两位置成块得W≥m v_(m+1)(0)≥OPT/2；奇数与零端点已核 | 该任意合法背景版本随后被完整SPE构造分离（见末节）；条件归约保留；复制首主题只有同枝等利，不支付跨尾子树；有限阴性非一般正证，已停扩样 |
 | [全菜单包络](menu/continuation_envelope_and_open_payment.md)、[L矩阵](menu/li/README.md) | actual路径外各孩子可同时独立拼合；在轨孩子不能极小化后仍保原叶；与旧真实偏离/自由matching对齐 | SM/TB/Mpath仍OPEN；量词消元不算新预算 |
 
 全客户消元可先同context同客户净取消，残余past券受正前缀负载缺额控制；沿单谱系过去差异区间不重叠。但整行归一化会重采客户，不同谱系仍重叠，不能把这些结构提升成全树cap1。新增结构的独审范围以实际审查文件为准。
@@ -31,3 +31,19 @@
 下一项有信息价值的关系必须实际调用真实孩子IC，约束T+COV或source/whole-row/past券的共同需求。再次消元fresh、重排静态rank、扩大有限阴性或只看单谱系单次收费都不够。基础广播核本身未使用ell≥0，不能因有完整σ输入就声称已经支付了全部孩子激励。
 
 个人checkpoint仅是可恢复研究备份。外审与新颖性未认证，未把上述表示升级为共享canonical福利结果。
+
+
+来源更正：TOTAL自由trim已由同行incoming_payment.md式(5)–(6)公开，root实际回读确认；本轮同类推导仅保留与自然重分配/密度账的衔接，不计新的预算发现。PB-extra出现完整解析背景分离候选，见menu/pair_attack.md及parent/review_pair_counterexample.md；两名独立审查现已完成，准确分工见末节；任意合法背景版本标为refuted，原half未受否定。
+
+
+## 最后实际判别：任意合法背景PB-extra被分离
+
+[自足解析反例](menu/pair_attack.md)给一个有限单位客户共同目录、合法singleton前缀及剩r=2475人的完整有序历史纯SPE。前三位各得u=dkf(k)，明确独立查询分布保证s=d[f(1+rk/Q)+(k−1)g(r+1)]，精确s>u，所以前两位2u<2v_(r+1)(b)。证明覆盖所有regular历史、真实第二次偏离、处罚者自身IC和首次singleton后的所有子树，不是只检查实际路径或标量菜单。
+
+[root重构](parent/review_pair_counterexample.md)及[独立参数代码](parent/audit_pair_parameters.py)、[精确输出](parent/pair_parameters_independent.json)均通过。另有[credible独审](credible/review_pair_counterexample.md)；另有[dynamic先盲重构审查](dynamic/review_pair_counterexample.md)及独立标量核验，Greedy/Punish全历史部分通过；静态Jensen由root与credible另行合审通过。外审和新颖性未认证；威胁结构文献来源明确保留。
+
+原PB-extra的任意合法背景版本由此否定，其条件归约逻辑仍正确。反例背景已覆盖全部客户，且尚未证明其是根SPE实际前缀；不能迁移成原Q-CAG-HALF反例，不能否定只对根在轨背景成立的弱版本。全局m阈值逐人floor亦未被本反例否定。
+
+路线据此回到真正根福利/actual共享预算，停止再把任意背景PB作为归纳引理。新的传播表示还没有使同一客户跨谱系的actual券容量闭合；本轮未找到能进一步推进这项共同费用的真实IC不等式。保留准确obligation，不以重复扫描或无新增关系的消元延长任务。
+
+[全客户广播的独立盲审](independent/review_broadcast.md)已完成。其补充22客户完整SPE确有非零fresh到future再到past券的传播；该实现测试使用非最优比较元组(D,H,B)，不声称测到最优owner初始化的非零链。基础核与新增净取消/谱系结构的审查范围、两处归一化/区间措辞修复均在独审稿中明确。
