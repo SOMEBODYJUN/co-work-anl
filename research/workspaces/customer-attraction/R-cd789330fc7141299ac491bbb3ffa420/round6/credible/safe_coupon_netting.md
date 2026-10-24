@@ -1,6 +1,6 @@
 # 同 context 安全退券与利润差剪枝
 
-2026-10-24，credible。任意人数、一般单位客户共同目录、全部有序历史纯 SPE。接续 [round5 全客户消元](../../round5/credible/all_fresh_submarkov_elimination.md)。§2 已获 root、shared 按陈述独立重构通过，不称严格盲审；§3—4 为随后加强，待独立核查。**未证明 coupon cap1/cap2 或一般 HALF。**
+2026-10-24，credible。任意人数、一般单位客户共同目录、全部有序历史纯 SPE。接续 [round5 全客户消元](../../round5/credible/all_fresh_submarkov_elimination.md)。安全退券及最大标量剪枝已获 root 独立重构及 shared 的[独立重构与对稿审查](../shared/review_coupon_pruning_blind.md)通过；§5 另获对稿核查。无外审或新颖性认证。**未证明 coupon cap1/cap2 或一般 HALF。**
 
 ## 1. 只使用既有 whole-IC ledger
 
@@ -49,7 +49,7 @@ past正券原标签不动。N只作为同 context 标量退款与当前整行同
 
 ## 3. 最大标量取消只保留 off-profit 超过 actual 的缺额
 
-本节为待独审的后续推导。用F=N+e写成 v=u_i+P−F、0≤F≤u_i。从原正 recipient 边中任删总额 c≤min(P,F)，同时令退款为F−c。当前整行净支付从u_i−F增加c，仍在[0,u_i]。保留正边是原边子容量，future context域及past actual标签均不变。
+用F=N+e写成 v=u_i+P−F、0≤F≤u_i。从原正 recipient 边中任删总额 c≤min(P,F)，同时令退款为F−c。当前整行净支付从u_i−F增加c，仍在[0,u_i]。保留正边是原边子容量，future context域及past actual标签均不变。
 
 这是利润单位的标量取消，不维持逐客户血缘；原利润归一化流本就可在下一context重采客户。没有逐客户改权IC，也没有把负项直接赋给一个past券。若另要求客户不相混，本加强不能原样套用。
 
@@ -74,7 +74,11 @@ P'≤P保证可在原正边保留足够子容量。若先删past正边，剩余p
 
 若v≤u_i，全部利润质量落当前actual行；若v>u_i，比例u_i/v落当前，剩余1−u_i/v沿原正边子集传播。该净化仍未用ell≥0。
 
-beta'不增不代表净kappa'比§2原kappa小：减正边又减退款可能把终端质量转到当前行。必须按新beta'、kappa'、past子边重算load，不能旧退款与新剪枝各领一遍。不同来源/谱系仍可能重用同一actual行或past券，cap未闭。
+beta'不增不代表净kappa'比§2原kappa小：减正边又减退款可能把终端质量转到当前行。必须按新beta'、kappa'、past子边重算load，不能旧退款与新剪枝各领一遍。
+
+仍有两个明确支付关系。固定原beta=h/v，并限制当前整行券系数不超过beta，则任何守恒非负支付至少外送(h−beta u_i)_+=beta(v−u_i)_+。CLIP恰达到这个下界，所以它是在**固定当前gross系数上限**下局部最少传播的选择，不是全局净cap最优。
+
+其次，kappa'≤beta'≤beta，每条past子边满足beta'q'≤beta q。因此对每个actual(j,x)，新正负载逐点不超过原COUPON-LOAD的**gross正负载**（加同一source负载亦然），不保证不超过旧net。这给不增加gross券的正支付选择；不同来源/谱系仍可能共同重用同一券，cap未闭。
 
 ## 5. 仅 fresh 利润分母的适用范围
 
