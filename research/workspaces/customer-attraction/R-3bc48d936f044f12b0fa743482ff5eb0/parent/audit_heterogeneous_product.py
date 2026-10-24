@@ -154,7 +154,7 @@ assert W == 30+M*max(DELTAS)+sum(DELTAS)
 assert O == 30+(2*M-1)*max(DELTAS)
 report = {
     'identity': 'unequal-deficit marked-position full Cartesian regression',
-    'scope': 'this one finite 71-unit-customer, 18-theme, m=3 instance only',
+    'scope': 'this one finite 75-unit-customer, 18-theme, m=3 instance only',
     'python': platform.python_version(),
     'source_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
     'old_sizes_scaled_by_6': SIZES[0],
@@ -164,7 +164,7 @@ report = {
     'marked_positions_one_based': [[1, 2], [2]],
     'actual_product_path': z,
     'actual_payoffs': [str(v) for v in profits],
-    'W': W, 'OPT': O,
+    'customer_count': sum(map(sum, SIZES)), 'W': W, 'OPT': O,
     'ordered_decision_histories': nodes,
     'all_joint_action_comparisons_including_self': checks,
     'terminal_profiles_for_OPT': len(ACTIONS)**M,
