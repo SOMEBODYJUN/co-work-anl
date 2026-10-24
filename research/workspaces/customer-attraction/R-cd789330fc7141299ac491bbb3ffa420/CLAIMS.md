@@ -98,3 +98,13 @@ PI已被下述完整SPE反例否定；混合弱推送、全树水位信用仍为
 - Related Files：round5/menu/pair_attack.md、pair_background_scalar_audit.py及JSON；round5/parent/review_pair_counterexample.md、audit_pair_parameters.py及JSON；round5/credible/review_pair_counterexample.md；round5/dynamic/review_pair_counterexample*.md。
 
 广播基础组件后续审查补充：round5/independent/review_broadcast.md先盲重构后对稿；真正非零fresh审计使用非最优比较(D,H,B)，不声称覆盖最优owner初始化。局部负荷递增只对同一客户，单谱系不重叠只指过去差异区间；这些都不推出全树actual券cap1。
+
+
+## 第六轮一般组件：非福利付款
+
+- **B10-SAFE-ACTUAL-ROW-NET-v1**：全客户context的N+e在[0,u_i]，可在βu_i当前整行统一退款；past正券原actual标签保留。credible发现，root/shared独立重构。净券非负，cap未证。[正文](round6/credible/safe_coupon_netting.md)。
+- **B10-PROFIT-CLIP-v1**：删原正边总c≤min(P,N+e)并将当前净支付增c合法；最大剪枝当前min(v,u_i)、外送(v−u_i)+，κ=h/max(v,u_i)。新正load≤旧gross，未必≤旧net。credible提出，shared/mixed/root重构；无费用改善或cap结论。
+- **B10-FRESH-PROFIT-NORMALIZATION-v1**：仅fresh利润nu归一化，正后继nu>0，sub-Markov角色DAG闭合；nu−P=d_F−N=u_i−Y−N−e>0可安全净成actual整行券，无past或正off-C迁移。relay发现，credible/root重构；beta可能增，旧SOURCE/HIT不自动继承，未用ell及未付容量。[正文](round6/relay/fresh_profit_normalization.md)。
+- **B10-CREDIBLE-ADJACENT-TRANSPOSITION-v1**：一般背景、固定AB尾SPE，收益(alpha,beta)。AB可实现iff alpha≥mu、beta≥mu_A；BA iff beta≥mu、alpha≥mu_B。增序且alpha≥mu_B可保终局负载换位，严格祖先完成叶/IC保持；lex最大固定half坏计数的相邻升序必被mu_B>alpha阻断。global提出，mixed/root重构；未付阈值障碍，不保菜单坏性。[正文](round6/global/credible_adjacent_transposition.md)。
+
+以上对原全部输入有效，但均为结构/表示组件；主目标OPEN。定义级回归不提升一般福利证据，无外审/新颖性认证。[root审查](round6/parent/review_general_components.md)。
