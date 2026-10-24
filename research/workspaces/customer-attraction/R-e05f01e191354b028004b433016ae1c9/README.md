@@ -2,6 +2,7 @@
 
 2026-10-24。唯一主目标 Q-CAG-HALF 保持原模型和全部量词，仍 OPEN。
 
+- [真实根删中间位的向上修复障碍](actual_root_deletion_upward_repair_obstruction.md)：复用已有完整SPE族，解析证明删第二位后的回放 regret 总和趋零，而所有真实删后SPE福利必须高于回放一个客户。只否定用绝对倍数 regret 支付向上修复的合同；保留利润、退款或最优边际的归纳仍待研究。
 - [任意人数的实际倒二真实查询行](penultimate_true_query_row.md)：对任意比较元组的联合覆盖O，在原完整SPE实际倒二位置，真实偏离收益之和至少O−W。全输入解析、独立逐客户内审；早期多后继查询行仍未支付，不能据此宣称一般half。
 - [真实尾主题的菜单外损失上界](offspring_menu_loss_bound.md)：对任何最优首动作A，真实尾主题的原背景首动作损失总量至多(r−1)(|t_A|+η_A)。全输入解析且无需SPE IC；独立逐客户内审通过。真实重置叶差仍待支付，不宣称 half。
 - [同尾补全松弛不可删的全人数解析见证](all_big_completion_slack_obstruction.md)：复用经典大主题加单例族，证明共享正文 `optimal_first_action_branch_gap.md` 的充分预算 (11?) 对每个 m≥3 严格失败；同时定位非根处 ξ 的局部尖锐系数。它没有反驳原 half，不把旧实例认领为新构造。
