@@ -26,6 +26,18 @@ spec.loader.exec_module(cone_module)
 
 
 def main():
+    # Boundary checks: one mover, repeated sole topic, and the zero-client game.
+    boundary = []
+    for players in (1, 3):
+        actions = {tuple(0 for _ in range(depth)): 0 for depth in range(players)}
+        cone = cone_module.StrategyCone(1, players, actions)
+        assert cone.verify((Fraction(0),))
+        assert cone.verify((Fraction(1),))
+        payoff = cone_module.payoff_row(1, cone.root, 0)[0]
+        assert payoff == Fraction(1, players)
+        assert 2 * players * payoff - 1 == 1
+        boundary.append({"players": players, "zero_client_feasible": True,
+                         "one_client_payoff": str(payoff), "direct_margin": "1"})
     reports = []
     failures = []
     for source in sorted((ROOT / "evidence/certificates/customer_attraction").glob("*.json")):
@@ -82,6 +94,7 @@ def main():
                         "smallest_checked_margin": str(best) if best is not None else None})
     print(json.dumps({"claim": "DIRECT-INDIVIDUAL-COVERAGE-FLOOR-v0: 2*m*u_i >= OPT_m",
                       "scope": "selected fixed complete SPE cones only; no universal conclusion",
+                      "boundary_checks": boundary,
                       "reports": reports, "exact_negative_witnesses": failures},
                      ensure_ascii=False, indent=2))
 
