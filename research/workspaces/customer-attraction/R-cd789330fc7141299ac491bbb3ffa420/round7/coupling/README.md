@@ -3,6 +3,7 @@
 一般 Q-CAG-HALF 仍 **OPEN**。只研究任意人数、一般有限共同目录、每份完整历史纯 SPE；未扩结构或固定规模。
 
 - [fresh_source_order_and_suffix_hits.md](fresh_source_order_and_suffix_hits.md)：从 round5 因果区间与 round6 GLOBAL-HIT 推出的 fresh 源支持定理、逐源后缀 HIT、前缀 cut 和后缀角色价格包络。全范围解析推导，root 独立重构/对稿与 credible 盲重构/对稿通过；没有 actual-wallet cap 或福利付款，不主张新颖性。
+- [optimal_coordinate_inventory_blind_review.md](optimal_coordinate_inventory_blind_review.md)：root提出的reference=T最优逐客户库存构造之独立合同审查；确认r_x≥0、正部缺额由一条wholeIC支付、未来量(r_i−u_i)+可同时受库存与原qW边容量限制，并且输出客户不在接收者actual主题。初始化合法，future共同付款仍未闭。
 - [fixed_parent_static_column_capacity.md](fixed_parent_static_column_capacity.md)：同一parent B、不同SD row/不同W_i的第一类正边联合列容量≤L*u_l(B;(C∩B_l)\S_l)。root独立重构与independent独立审查通过，精确密度另经global重构；不含直接项、第二类边或旧请求，不给actualcap。
 - [joint_prefix_claim_transfer_blind_review.md](joint_prefix_claim_transfer_blind_review.md)：只读 credible 精确合同后的独立盲重构；同一孩子的全部 prefix利润请求联合送回同一个 parent B，输出每角色系数不超过输入L上限。确认解析容量；不允许多个孩子或已有suffix请求免费叠加。
 - [static_denominator_and_query_projection_review.md](static_denominator_and_query_projection_review.md)：只读 global 精确合同后的独立重构：确认静态分母 SD 身份、两类边利润支配与直接 backward 域缺口；另给任意 synthetic 叶利润的守恒 QUERY-PROJECTION，送回真 natural current/future context。QUERY-PROJECTION经root独立重构；§6另独立核查root提出的“保留第一类正边”反向非负kernel。整体循环、方向与实际付款仍未闭。

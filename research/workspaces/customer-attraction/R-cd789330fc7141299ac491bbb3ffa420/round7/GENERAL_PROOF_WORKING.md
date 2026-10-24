@@ -33,3 +33,11 @@
 新增共同容量分别针对一份固定 parent B 或一个固定 W 的 prefix，未能共同覆盖互斥子树。最具体的剩余量是：多个 W_i 的独占未来利润、父 B 中被 direct 当前 claim 与静态正价共同使用的新 C 支持，以及正反核反复展开的循环系数。共同客户交集运输能在同一对 B/W 下支付重叠部分；新 W 客户和完整利润重采造成的跨枝重用尚未控制。继续把单枝列和≤1相加会越界，不能据此报告 2W≥OPT。
 
 本轮仍保留 OPEN 的最优静态匹配候选在 [transport 工作稿](transport/frozen_optimal_assignment_working.md)，已有子摘要 gap 的新审查在 [independent](independent/README.md)。它们没有支付上述缺项；有限目标重放和浮点未分离均不是一般正面证据。
+
+## 最后接通的初始化：保留比较客户库存
+
+[root 坐标双预算初始化](parent/optimal_coordinate_initialization.md)及 [global 独立审查](global/two_budget_initialization_audit.md)、[coupling 合同重构](coupling/optimal_coordinate_inventory_blind_review.md)：对任意比较元组 T，r_ix=p_ix−P^B_ix≥0 且 Σ(r_ix−P^W_ix)_+≤queryprofit≤actualu_i。因此可将每个 p_ix 精确保留在 B 实际正价、current完整行金额以及原 W_i 未来边子容量三处。所有比较角色合起来，每个 O 客户仍恰一单位；current≤u、同一B正价列≤u 的两份预算同时成立。
+
+这一路只初始化一次 reverse-SD，后续挂原 full-customer SAFE/CLIP 严格未来 DAG，**无需**递归反向核，故本具体接口本身没有新增循环。未付的是 A_j^out≤2u_j−current_j−Bcol_j；每个实例/完整SPE是否能共同选最优T、坐标剪枝和路由满足此式仍未证。源库存标签不是 actual 同客户券；后继完整利润重采不保留其客户支持。最后一个定义级审计真正激活10单位未来源和3条正边，但没有把实例通过当一般证据。
+
+一般目标保持 OPEN。本轮尚未找到可证明该剩余角色界的新全树不等式；继续只重复单context退款、库存守恒或固定父叶列和，不能补上它。此为当前真实交接点，不是目标不可能的结论。
