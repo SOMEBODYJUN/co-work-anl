@@ -14,4 +14,6 @@ joint核已补单一全局随机排列实现：I信用直接给高于owner的最
 
 `rankwise_joint_hall.md`给更进一步的逐world共同库存：G客户的winner收入为source，owner未覆O客户的最高priority出口给一条e边或真实query-token sink。全部cut由owner hybrid支付，可逐world整数取消G枚R/I-query token；relay已独立重构通过。此图使自适应取消合法，SOURCE-NET及query全费容量仍须另证，不能拿随机收入替换原IC的u_i。
 
+credible亦已独立核rankwise全部cut，并提出其向R-only coupon图的投影；mixed独立重构通过，附录保留准确代价不等式与full-SPE范围。`audit_joint_rank.py`/两份冻结JSON仅在一份旧430客户完整证书核所有6个world、真实Beta边际、cut及非零I取消投影；不作新实例搜索或费用界证据。
+
 `joint_source_net.md`将actual Hall-B source降成真实G利润，以R单位和I-query κ为同一终点取消。局部min(g_i,β_i)取消可扩充，故全部R/I联合初始化费用同时<=同一η_i净收入；尚未付传播费用。已发root/credible独立攻击。

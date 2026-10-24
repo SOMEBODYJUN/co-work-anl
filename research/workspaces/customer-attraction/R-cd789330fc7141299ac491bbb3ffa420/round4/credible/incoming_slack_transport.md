@@ -1,6 +1,6 @@
 # incoming 费用的 off-history IC 与 signed fresh 重置
 
-2026-10-23，credible。一般工作稿，任意人数、任意共同目录、全部有序历史纯 SPE。relay 已逐式独立对稿核对 OFF-IC、FRESH、tracked 一半界及 recipient IC 域通过；该回执不称盲审。以下使用一条真实 off-history IC 给出跨叶约束；不声称已支付 K_in 或一般 half。其目的正是打开 [SOURCE-NET](../../round3/credible/owner_hybrid_transport.md) 尚未用过的真实后继激励，而不是另给已付 source 一份 u。
+2026-10-23，credible。一般工作稿，任意人数、任意共同目录、全部有序历史纯 SPE。relay 的[独立对稿审查](../relay/review_incoming_slack_transport.md)已逐式核对 OFF-IC、FRESH、tracked 一半界及 recipient IC 域通过；不称盲审。以下使用一条真实 off-history IC 给出跨叶约束；不声称已支付 K_in 或一般 half。其目的正是打开 [SOURCE-NET](../../round3/credible/owner_hybrid_transport.md) 尚未用过的真实后继激励，而不是另给已付 source 一份 u。
 
 ## 1. 自然 action-return 保留的额外见证
 
@@ -79,6 +79,8 @@ OFF-IC 必须保留 a 中全部 fresh 客户。对于非 tracked 的 x，off-pre
 * x∉C∪O：需由真实 Hall-A/B 送回 O 的缺口库存，不能借 actual G 名义免费支付。
 
 而 T_C 中的多叶收益迁移也未被证明只使用一次 actual I/G。只有把这三类项、负 ell 及已有 gamma 的净库存同时耦合，才可能从 OFF-IC 控制 K_in。当前没有这种共同选择的证明。
+
+若接 priority-threshold 终端，同一吸收 token x 的真实未来 x-coverer 都在其 owner 阈值以下，所以 FRESH 对这个 x 的正 recipient 可以安全标为低阈值。但整条 IC 的 theta_s=A_s/D_s 会广播到同 a 内其它客户 y；即便 y 也属于父 query 的 tracked 集、有 b_y≥1，也不保证 F_s(y) 在吸收 x 的 owner 阈值以下。故这里只得 diagonal x 的阈值标签，不能将所有 tracked 正项称为共同下降的 priority 链，更不能据此领取阶乘或总体收缩预算。
 
 因此目前增加的是：自然 incoming 的 off-history 原 IC 见证、它对 actual slack 的完整约束、以及 tracked 正重置的严格未来/逐 recipient 一半容量。没有将它们当作已证 dynamic-cut 上界，也没有把新方程本身认作半覆盖进展。
 

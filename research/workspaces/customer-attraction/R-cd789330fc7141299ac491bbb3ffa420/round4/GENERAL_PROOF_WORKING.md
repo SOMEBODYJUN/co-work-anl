@@ -52,3 +52,11 @@ Q-CAG-HALF仍OPEN。本轮继续同一clone/actor；只研究任意人数、任�
 [动态rank](shared/net_dynamic_rank.md)精确消去固定实际Hall取消，费用成为超额价格层Hall缺额；只是完整表示，未证动态cut<=W。NET-FRAC拆证明库存，不改单位客户游戏；不把fractional可行当原INT可行。Hall-A恒定R源的world自适应取消，与Hall-B平均I库存的固定比例取消不可混用；random winner版本另须逐worldcut及source证明。
 
 [真实offhistory桥](credible/incoming_slack_transport.md)给tracked b>=1客户的每recipient收费至多其利润一半，但整个IC还广播fresh R及新outside；不能截掉或把逐recipient半界求和当总收缩。自然action-return有offhistory prescribed行动IC，任意重查不自动有。根继续攻共同预算或更弱总费用，主目标仍OPEN。
+
+## 5. 逐world优惠券与联合正查询的R-only投影
+
+[mixed逐world Hall](mixed/rankwise_joint_hall.md)在同一个角色排序中，把每actual G客户的单位source给最高实际coverer；owner未覆盖O客户按排序选择owner到实际winner的unit边或恰存在的query-token sink。任意角色cut的HYB missing-owner客户各贡献一条出边/终点，故每world送满G。平均source=g、平均I角色边=actual error；这允许I query库存与取消在同world兼容，不是把固定lambda/kappa无证改为依world。
+
+[credible投影](credible/adaptive_hall_projection.md)将全部I客户改成owner到actual winner的unit A边，仅R保留unit sink。B送R的路径可保留，再增广A到满G且不减原R sink。新添R取消量等于原I-query取消量；完整SPE使每终端价格u_i/D_s>=1，故逐world K_R<=K_joint−queryI数，期望 E K_R<=E K_joint−kappa。root独立重构此cut/增广与费用符号通过。
+
+因此任何joint费用<=W+kappa证书可投影为R-only费用<=W，但这里没有任一费用界。新coupon取消域每world是随机网络，不保证每world落在固定均值Gamma；平均flow才满足其容量。随机收入uhat虽然期望u_i，原IC的价格仍固定u_i/D_s，不能用uhat代替。固定局部delta的旧SOURCE-NET也不自动继承。当前最准确未付是这种共同排序下的终端查询价与actual收入优惠券相关性/同role多query碰撞，不能把已证库存兼容当半覆盖完成。

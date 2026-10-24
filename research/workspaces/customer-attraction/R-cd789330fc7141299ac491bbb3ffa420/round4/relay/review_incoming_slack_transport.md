@@ -21,4 +21,4 @@
 
 剩余三类支出与作者范围一致：C内跨叶迁移、非tracked的新R广播、真正新outside，外加负ell必须同账保留。owner-return不自动具有sigma(g)=a的自然见证。没有发现IC域或支撑错误。
 
-与 relay 共用priority世界仅有一条尚未付款的标签：tracked x若在某actual查询终止，该叶全部未来coverers均低于U_owner；FRESH正recipient位于这些未来角色中，也获同一低阈值标签。该事实不证明其整体系数可共同结算，未升级为收缩或half。
+与 relay 共用priority世界仅有一条尚未付款的标签：tracked x若在某actual查询终止，该叶全部未来coverers均低于U_owner；**同一个x**的FRESH正recipient位于这些未来角色中，也获同一低阈值标签。这个标签只覆盖diagonal x：整条IC系数由多个吸收客户形成，会广播到同a内其它tracked y；即使b_y>=1，也未必有F_s(y)全部低于x的owner阈值。credible指出此scope后relay认可。不能从tracked逐recipient半系数推出全tracked广播共同降阈值、总收缩或付款。

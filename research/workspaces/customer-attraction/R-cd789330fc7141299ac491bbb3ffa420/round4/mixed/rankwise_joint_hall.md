@@ -40,3 +40,11 @@ B图的角色边为A子图。取一份B流，只保留终点为R的路径，即A
     E K_Ronly<=E K_joint−κ^-。
 
 所以若联合方案总费<=W+κ^-，便有R-only随机coupon方案总费<=W。这个投影没有证明该费用界，也未固定任何匹配。期望A流位于原actual Hall-A可行集，但单个world容量为unit赢家coupon，不要求每world流都属于原均值容量Γ_A。
+
+## 一份既存证书的定义审计
+
+`audit_joint_rank.py`只读旧430客户PI辅助反例的instance及全部strategy，自行展开单位客户、重建payoff/finish并核43历史258项IC；不导入原solver或作者audit。固定最优T=(1,2,4)，重算W265、OPT324、R110、I214、G51、I^-36。
+
+全部6个排序world核96个A/B割、582个固定state吸收边际，以及source/edge/sink与actual g/e/β的精确均值。B送R子流在A残图增广，核R取消不减及逐world费用投影。
+
+`joint_rank_audit.json`保留首次普通边顺序输出（未出现I取消，不能单凭它声称覆盖非零λI）。`--prefer-I`只改同一图的可行流选择，冻结为`joint_rank_audit_prefer_I.json`；每world取消15或21枚I-query token，projection费用式精确取等。未换实例或扩样，有限核验只校对定义/非零投影，不支持普遍费用界。
