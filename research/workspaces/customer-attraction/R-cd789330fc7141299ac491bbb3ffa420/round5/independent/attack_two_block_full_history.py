@@ -19,7 +19,7 @@ from customer_attraction import CustomerType, ExactSPESolver, Instance
 from attack_two_block import compositions
 
 
-def run(players, topics, tries, seed):
+def run(players, topics, tries, seed, diagnostic=False):
     rng = random.Random(seed)
     masks = tuple(range(1, 1 << topics))
     members = tuple(tuple((mask >> a) & 1 for a in range(topics)) for mask in masks)
@@ -45,6 +45,7 @@ def run(players, topics, tries, seed):
                                   action_selector=lambda h,c: rng.choice(c),
                                   continuation_selector=lambda h,c: rng.choice(c))
         exact_rows = []
+        ic_labels = []
         @lru_cache(None)
         def follow(h):
             if len(h)==players:
@@ -53,6 +54,7 @@ def run(players, topics, tries, seed):
         for h,prescribed in cert.actions.items():
             z = follow(h)
             for a in range(topics):
+                ic_labels.append((h,prescribed,a))
                 exact_rows.append(tuple(x-y for x,y in
                                         zip(coefficient[z,prescribed],coefficient[follow(h+(a,)),a])))
         z = follow(())
@@ -69,6 +71,16 @@ def run(players, topics, tries, seed):
         lp = linprog(np.array(objective,dtype=float),A_ub=matrix,b_ub=rhs,bounds=(0,None),method='highs')
         if not lp.success:
             continue
+        if diagnostic:
+            dual=lp.ineqlin.marginals
+            return {'status':'float dual diagnostic only','path':list(path),
+                    'query':list(map(str,query)),'objective':lp.fun,
+                    'ic_support':[{'history':list(h),'prescribed':a,'deviation':d,
+                                   'multiplier':float(-dual[j])}
+                                  for j,(h,a,d) in enumerate(ic_labels) if dual[j]<-1e-7],
+                    'static_support':[{'background':list(q),'multiplier':float(-dual[len(exact_rows)+j])}
+                                      for j,q in enumerate(static) if dual[len(exact_rows)+j]<-1e-7],
+                    'scope':'Diagnostic for reconstructing a general mechanism; not an exact certificate.'}
         best = lp.fun if best is None else min(best,lp.fun)
         if lp.fun < 2-1e-7:
             ws = tuple(Fraction(float(w)).limit_denominator(10**8) for w in lp.x)
@@ -97,8 +109,9 @@ if __name__=='__main__':
     parser.add_argument('--tries',type=int,default=50)
     parser.add_argument('--seed',type=int,default=441023)
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--diagnostic',action='store_true')
     args=parser.parse_args()
-    result=run(args.players,args.topics,args.tries,args.seed)
+    result=run(args.players,args.topics,args.tries,args.seed,args.diagnostic)
     if args.output:
         args.output.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result,indent=2))

@@ -73,3 +73,13 @@ PI已被下述完整SPE反例否定；混合弱推送、全树水位信用仍为
 - **B10-CAPTURE-HIT-AND-SOURCE-NET-v1（全部输入一般组件；独立重构核对）**：actual-prefix递增角色均分吸收对单个遗漏客户守恒，非owner单行到达≤ρ/2；多角色集只控制曾命中。上述同一γ可使所有owner初始source费用同时≤η_i=u_i(I)+γ_i，总η=W；之后的捕获重置到达费用仍未付。HIT、源预算或协方差界均不升级为NET可行性或half定理。
 
 - **B10-RANKWISE-COUPON-PROJECTION-v1（独立重构通过）**：逐world随机winner Hall-A/B送满G；joint正query可保留B送R路径再增广A，完整SPE下E K_R<=E K_joint−κ^-，κ^-只计owner未覆盖I的query概率。随机域与固定均值Gamma不同，不保旧delta/SOURCE，不能用随机收入代原IC。未证任一总价界；正文见round4/mixed/rankwise_joint_hall.md及round4/credible/adaptive_hall_projection.md。
+
+## 第五轮精确身份（个人内部记录）
+
+| 身份 | Exact statement、对象/定义/量词、假设与结论范围 | 依赖、证据、异议与状态、文件 |
+|---|---|---|
+| R5-IN-DIAG-v1 | 任意原CAG、任意完整有序历史纯SPE、固定ρ∈[0,1]^R。当前吸收f_q/c_q，captured总量f_q(c_q−1)/c_q只送父真叶future coverer，则全父子Σ f_g/c_B=M−H，K_in=M−H+T+COV−L，变量按正文；空源/空主题保留 | 依赖源守恒与完整actual/offhistory IC；解析和独立Fraction审查通过；T+COV−L无共同界；内部已核的精确表示，非half，外审/新颖性未认证。round5/rank/incoming_density_diagonal_ledger.md及dynamic两份审稿 |
+| R5-BROADCAST-ELIM-v1 | 任意原完整σ与actual叶、任意正利润natural context，按两个真实completion的coverer差取q±。future送真实context，past送actual (j,x)券。任意非负利润注入经β=h/v递推，Σb=Σβ[J+L+P_past]=Σβ[u_actual+P_past−N_all−e]；fresh子集行质量≤k/(k+1)。零利润不接正输入，零客户/空主题按空和 | 依赖逐客户差、有限严格角色DAG及actual IC；基础核不需ell。root解析审查和独立单位回归通过，盲审范围以其实际文件为准；全树券cap1未证，负N/e不可假配actual退券。非福利定理，外审/新颖性未认证。round5/credible/all_fresh_submarkov_elimination.md、parent/review_broadcast.md、parent/audit_broadcast.py及JSON |
+| R5-PB-EXTRA-v1 | 任意合法有序背景b、剩r≥2、每个完整纯SPE，前两位最终收益和≥2v_(r+1)(b)。v_k是查询抽样不被静态k−1槽对手观察的max-min。原模型及任意平局不变；若普遍成立则half | 充分归约仅用静态安全值嵌入与OPT_m≤2m v_(m+1)(0)，解析已核；候选本身OPEN，真实第二位跨主题改枝费用未付。更强2v_r与M_r阈值桥不能混同。有限阴性不作证据。round5/independent/two_block_security_reduction.md |
+
+以上对象、假设和量词未更改Q-CAG-HALF。计算是公式/实现核验，非一般证明；没有成立的总费用结论可升级。

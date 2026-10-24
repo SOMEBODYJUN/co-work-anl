@@ -1,6 +1,6 @@
 # Boss10：共享遗漏、完整可信性和低尾信用
 
-最新接续：[round5一般证明工作稿](round5/GENERAL_PROOF_WORKING.md)。本轮保留并恢复round4未提交的联合Hall投影与审计；MIN-PI已独立反驳，自适应随机路由的共同费用仍未支付，half仍OPEN。
+最新接续：[round6一般证明工作稿](round6/GENERAL_PROOF_WORKING.md)。本轮保留并恢复round4未提交的联合Hall投影与审计；MIN-PI已独立反驳，自适应随机路由的共同费用仍未支付，half仍OPEN。
 
 **Q-CAG-HALF 仍 OPEN。** 原模型、无界人数/目录、全部有序历史与任意历史依赖平局不变。这里只保存准确研究资产，不把非SPE菜单、有限阴性计算或内部审查升级为一般证明。外审与新颖性均未认证。
 
@@ -85,3 +85,7 @@ PI的root自足最终整理见[下一步最优势增量反例](round2/global/pot
 同一clone/actor已安全同步main并保留全部未提交工作。本轮六名实际gpt-6.1-sol ultra研究员（含一名子分支）分别研究动态费用、Mpath、可信最小续局矩阵、真实off-history归纳、联合rank与独立一般证明；root直接承担一般全局推导。只研究原模型的全部输入，未提升Q-CAG-HALF状态。
 
 恢复的实质材料包括[逐world联合正查询的R-only投影](round4/credible/adaptive_hall_projection.md)、[联合Hall独立重构](round4/mixed/rankwise_joint_hall.md)、[精确audit](round4/mixed/audit_joint_rank.py)及两份冻结输出。投影保留随机图和均值固定图的区别，只归约正查询费用，不证明费用上界。
+
+## 第五轮接续地图
+
+[第五轮总稿](round5/GENERAL_PROOF_WORKING.md)集中列出文件、用途、已证范围和真正未付项。新增自足资产是自然incoming的M−H共同对角账、全fresh/全客户广播DAG及actual券出口；独立解析与Fraction审查分别留痕。PB-extra是不同的充分候选，仍OPEN。原Q-CAG-HALF无完整证明或目标反例；此处只是个人备份，不自动升共享canonical状态。
