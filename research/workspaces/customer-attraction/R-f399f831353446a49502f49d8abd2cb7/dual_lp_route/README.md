@@ -31,3 +31,11 @@ For fixed `sigma` and comparison union `J`, the exact cone is `D_sigma={r>=0:Gam
 ## Why this is useful
 
 It isolates the dynamic part in a finite, auditable identity: every uncovered type's root deviation deficit is reduced from one unit to a residual reciprocal of the number of branch coverers by legal off-path IC rows. Any future proof can focus on bounding the cross-type spillover of these rows, and any counterexample to that aggregation can be searched as a linear certificate failure.
+
+## Threshold `Theta` versus a fixed Farkas cone (obstruction)
+
+The dynamic threshold `Theta_i=max_A min_{z in R(h_i,A)}u_i(z)` is not a linear functional of the client-type vector on a fixed strategy cone. `Gamma_sigma` only contains the continuation selected by sigma after each child; `R(h,A)` ranges over all SPE continuations of that child, including branches from other complete strategy plans. Replacing the selected branch payoff `g_i^sigma(A)` by `L_i(A)` therefore cannot be done by adding nonnegative rows of the fixed `Gamma_sigma` matrix.
+
+A minimal tie witness uses two topics `A,B`, two providers, and client masses `alpha` on type `{A}`, `beta` on type `{B}` (optional common mass `z` on `{A,B}`). After root is forced to `A`, the follower payoff is `alpha/2+z/2` if choosing `A`, and `beta+z/2` if choosing `B`. At `beta=alpha/2`, both are SPE best replies, and the minimum root payoff is `alpha/2+z/2` (the follower chooses `A`); for `beta>alpha/2`, the unique follower reply is `B` and the minimum root payoff is `alpha+z/2`. Thus `L_1(A)` jumps at the tie and cannot be represented by one homogeneous linear row across adjacent weight cones. The same issue occurs at every off-path history.
+
+This is a finite case-splitting obstruction, not a counterexample to Q-CAG-HALF: on each strict/tie face one may choose a fixed continuation and an ordinary Farkas certificate, but a proof using `Theta` must control all faces and cannot claim a single universal lambda. It explains why the candidate `OPT <= W + sum Theta_i` does not automatically yield `2c-o = Gamma^T lambda + eta`.
