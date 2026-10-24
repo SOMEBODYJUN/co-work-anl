@@ -1491,6 +1491,37 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 | --- | --- | --- | --- |
 | CA-FRACTIONAL-TAIL-WATERFILL-v1 | 任意有限单位客户、任意非负整数背景b、一个保留单位根主题A、任意有限个单位尾部主题及有限t≥0；所有集合可空可重复。辅助终局权重，不是加权SPE结论。 | 存在同一w∈[0,1]^n，原高尾保1、覆盖支撑不变、正权尾unit密度≥t；同一全客户池H≤Σ(t−u_j)_+同时控制全部T⊆N的替根Q和保根插入J增量，并有根/背景/质量尾利润精确守恒。 | [自足证明](customer_attraction/fractional_tail_waterfill.md)、[盲独立内审](../reviews/customer_attraction/fractional_tail_waterfill.md)与Fraction边界审计；无理权允许，SPE继承及跨树总支付未证；一般half仍OPEN，未外审/认证新颖性。 |
 
+## 最优首动作的真实孩子覆盖缺口
+
+| ID | 精确陈述入口 | 真实状态 |
+| --- | --- | --- |
+| CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1 | 下列精确登记及自足证明；全目录、全人数、全有序历史 | 完整一般代数与独立内审；half仍OPEN |
+
+### CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1
+
+- **Exact statement / objects / domain：** CAG-MODEL每个有限单位客户实例、有限非空共同目录、
+  任意总人数、每个完整有序历史纯SPE及其每个合法历史h，尚余r≥1人；P旧覆盖，S当前规定动作，
+  u其真实终局收益，δ=F_r(P)−F_(r−1)(P∪S)。对每个满足F_(r−1)(P∪A)=F_r(P)的A，
+  强制A后原σ的真实尾并集Y_A及当前收益d_A定义ρ、M、t、f、θ、ξ、η、Γ如正文。
+- **Conclusion / scope：** 全部信用非负且
+  `r(δ−u)=(r−1)ρ_A−θ_A−(r−1)(f_A+ξ_A)−η_A−rΓ_A`。
+  ρ_A恰是该真实孩子的机会损失；重复/空主题、零客户和任意历史平局全部保留，S不必属于最优首动作菜单。
+- **Dependencies / evidence：** 最优补全覆盖替换、逐客户均分下界及单条当前真实SPE比较；
+  [自足证明](customer_attraction/optimal_first_action_branch_gap.md)、
+  [独立解析审查](../reviews/customer_attraction/optimal_first_action_branch_gap.md)。
+- **Counterevidence / objections：** 未发现该关系的fatal objection。ξ是静态同尾覆盖松弛，
+  不能当作S孩子的真实损失；不同ρ的共同支付未证明，沿轨相加的完整等式不提升Q-CAG-HALF。
+  原正文(11?)另提出一个**不同的充分加强**：实际路径每位置存在最优首动作菜单分布，
+  使Σ(r_i−1)Eρ_i/r_i ≤Σ[Eθ_i/r_i+(r_i−1)Ef_i/r_i+EΓ_i]，即把ξ和η信用都删去。
+  此加强为 **FALSE**：对任意m≥3，既有大小m的大主题加m−1个单例、全历史恒选大主题的
+  完整SPE使所有分布的左减右至少 (m²−3m−2)/2+H_m>0；
+  但OPT_m=2W−1，不是Q-CAG-HALF反例。
+  [解析证书](../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/all_big_completion_slack_obstruction.md)
+  已经独立逐式检查。保留全部ξ而仅丢η的加强仍OPEN；它等价于
+  Σ_i min_(A∈A_i*) η_(i,A)/r_i ≤ 2W−OPT_m，不等同已证恒等式。
+- **Status：** 完整一般代数证明及独立内部重构；无软件求解合同，无新增有限阴性支持声明；
+  外部审查及全球新颖性未认证。Q-CAG-HALF仍OPEN。
+
 ## 逻辑使用规则
 
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。

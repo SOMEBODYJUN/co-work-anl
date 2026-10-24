@@ -5,7 +5,7 @@
 ## 当前研究
 
 2026-10-24。主目标 Q-CAG-HALF 仍 OPEN；没有一般证明或真正目标反例。
-本轮恢复新独立 clone，六名实际 `gpt-6.1-sol / ultra` 研究员并行工作。
+本轮恢复新独立 clone，六名实际 `gpt-6.1-sol / ultra` 研究员参与研究。
 原模型、任意人数、任意有限共同目录、全部有序历史及任意平局量词不变。
 
 父方直接推导见 [GENERAL_PROOF_WORKING.md](GENERAL_PROOF_WORKING.md)：
@@ -14,16 +14,27 @@
 所有候选仍未证，没有把有限阴性或既有接口重新包装成 half 进展。
 
 另见 [末层多孩子金额归一的两倍容量](parent/terminal_amount_cap.md)：
-末层部分已有自足逐客户证明，独立检查待完成；更深真实分支的两倍容量
+末层部分已有自足逐客户证明及独立内审；更深真实分支的两倍容量
 仍是未证候选。它尚未把一般覆盖债务接成 AMOUNT 输入，不是 half 证明。
 [定义级程序](parent/check_amount_cap.py)和[冻结输出](parent/amount_cap_existing.json)
 只用于该明确候选的既有证书攻击，不作一般阴性证据。
 
 ## 可访问材料
 
-六个分支在 direct/、menu/、harmonic/、credible/、coupling/、independent/
-各自保存实际推导，完成后本页补精确入口与状态；目录存在不表示结果成立。
-当前只备份个人工作，没有新增 canonical Claim 或改变共享数学状态。
+| 材料 | 内容、准确状态及何时读取 |
+| --- | --- |
+| [CLAIMS.md](CLAIMS.md) | 本阶段精确对象、量词、条件、结论、证据、反对意见与未付义务；先读以免把候选当定理 |
+| [末层容量证明](parent/terminal_amount_cap.md) | 任意 m、多孩子 AMOUNT 的两倍列界；已独立内审，不含深层支付 |
+| [全人数锐族](coupling/amount_cap1_family.md) | 完整全历史 SPE 否定金额 cap1、使末层二锐；福利最优，不反驳 half |
+| [credible 审查](credible/README.md) | 末层及全 n 族的独立解析攻击、Hres 退款和原人数门槛更正 |
+| [independent 审查](independent/README.md) | 先按陈述重构父方阈值/末层/反族，再对稿；审查范围逐项分开 |
+| [direct 推导](direct/README.md) | 固定最终遗漏的 RESERVE-FLOOR 未证接口；源池代数重构，无新一般福利界 |
+| [harmonic 推导](harmonic/README.md) | 条件源金额池及 U-only 运输、整行退款缺口；已核来源，基线不冒充新机制 |
+| [menu 推导](menu/README.md) | LAST 未证，pair 原总人数核算及压缩未分离，DEEP 仅粗上界 |
+
+这些是个人阶段资产；尚未正式整理进共享 canonical 正文，不改变共享数学状态。
+下一步真正需要的是适用于全部输入的 AMOUNT 初始化或跨真实 IC 整行共同付款。
+已经停止只增加阴性样本的旧锥扫描；没有承诺六个分支后台无限运行。
 
 ## 交流与状态
 

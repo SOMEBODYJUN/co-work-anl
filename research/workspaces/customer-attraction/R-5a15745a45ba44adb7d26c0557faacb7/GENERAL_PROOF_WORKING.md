@@ -67,6 +67,38 @@ harmonic 分支独立从 U 进入所需的共同覆盖支付尝试该较弱总�
 必经方法。若只有正确恒等式、旧反例适用范围核对或有限阴性，不声称扩大
 half 已证范围。成熟结论需独立攻击；失败路线按真实数学范围保留。
 
+## 本轮形成的末层工具与尚未接入之处
+
+[末层 AMOUNT-cap2](parent/terminal_amount_cap.md)已完成自足证明及两名
+研究员独立重构：允许任意多末位孩子，每个 sender 的跨孩子完整利润
+金额合计不超过其原实际利润，则共同回推正价至多实际末位利润两倍。
+它完全不需要 SPE；不能把该末层负载事实移到多名后继改动的深层。
+
+[任意 n 的完整 SPE 锐族](coupling/amount_cap1_family.md)证明上述二不能
+统一减小。该族本身 W=OPT，因此只澄清金额合同的容量，不否定 half。
+完整历史解析构造及独立审查承担全 n 量词，n3 程序仅核验实现。
+
+当 AMOUNT 已经给定时，所有 recipient 的正价总量受同一份 sender
+实际利润控制，是既有 POSITIVE 的直接基线推论；见
+[条件源池](harmonic/positive_source_pool.md)。这说明逐列 cap2 不是
+凭空增加一份总资金。当前真正没有生成的是：把原覆盖债务化入 AMOUNT，
+同时扣除 direct/suffix 和旧有 claim 的已用来源。
+
+U-only 的逐客户向后运输以及整行最大密度退款见
+[harmonic 工作稿](harmonic/uncovered_transport_working.md)。不同互斥
+context 的完整 IC 各需自己的系数，不能跨行取最大再只付一次利润。
+目前没有证明这些系数超额被同一客户 Refund 共同支付。
+
+### 对同一一般推导的压力检查
+
+把现有一般分数覆盖路径界（不是本轮新结论）代入 m=5、tau<=m，
+用 Fraction 重算得到 W/OPT>=6049/15625，严格低于一半。本轮末层
+工具没有给缺失的早期 AMOUNT，所以同一一般推导仍不能推出五人 half。
+这不是原目标的反例，也不转成五人专用研究；它准确显示本轮尚无新的
+无条件一般福利下界。PREFIX/RESERVE/LAST/DEEP 中的问号必须继续保留。
+
+各条精确身份、范围、来源和真实审查状态见 [本轮账本](CLAIMS.md)。
+
 ## 文献核对
 
 实际联网核对 Deng 等 arXiv:2307.07174v2，以及 University of Twente

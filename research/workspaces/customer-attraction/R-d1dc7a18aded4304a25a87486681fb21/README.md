@@ -18,10 +18,18 @@
 - [menu/README.md](menu/README.md)：旧11客户actual列反例与LAST的分离、旧13人完整自动机及α=1税反例的独立重放。root另重放原α=(m−1)/m审计，已修共享精确税候选的滞后状态。
 - [security/README.md](security/README.md)：LAST精确对象、末两人保底和已停止的旧锥探针；有限阴性不作为一般证据。
 - [flow/normalization_slack_and_capacity_checkpoint.md](flow/normalization_slack_and_capacity_checkpoint.md)：局部SAFE/CLIP换分母的价格敏感度与off-history真实IC的区别，未付actual共同容量。
+- [credible_continue/shared_terminal_rent_compiler.md](credible_continue/shared_terminal_rent_compiler.md)：全目录/任意人数的整条路径保险修复；只要求旧末位BR，逐节点真实child菜单缺陷由同一终局租金支付，净half稀释3(m−1)g。含统一缩放、own-action、g0及永久退出全历史定义；[盲审](independent_continue/full_depth_insurance_compiler_blind_review.md)。没有找到跨过修复门槛的路径，未解决half。
+- [budget/terminal_slot_defect_transfer.md](budget/terminal_slot_defect_transfer.md)：旧真实末位BR与另一真实孩子最后异题四税的精确五项合账；池为同一原叶的1/[c(c+1)]，不能直接支付旧背景利润返还或跨根枝反复使用。
+- [security_continue/terminal_query_reserve.md](security_continue/terminal_query_reserve.md)：LAST末两人的明确重叠税余量，适用于全部输入；早期总亏损付款仍未证。[该目录入口](security_continue/README.md)另区分了PB背景不能直接成为实际前缀的特定构造诊断。
+- [flow_continue/README.md](flow_continue/README.md)：最后异题税账为何可能只看见末两位IC；短例不是SPE，未作half反例。
 
 exchange、credible、security、menu、flow 目录保存首批工作；接续工作在budget、credible_continue、security_continue、flow_continue、independent_continue中按实际生成情况保存。尚未写出自足结论的脚本和阴性诊断不提升为研究事实。共享 CLAIMS 中 relay 的旧 v1 已撤回，修复式另列 v2，复用已有正文与独审来源。
 
 下一步必须支付一般净遗漏，或得到精确开放候选的真实反例。当前菜单、LAST、安全值和自由流价格均未被本组证明；不把它们作为可调用引理。
+
+当前各接续分支均未给出把局部信用汇总为同一份实际W的新关系。单纯再求生成式、换分母、扩大旧锥或累加互斥枝租金的信息价值已低，未继续这些动作。可恢复的关键缺口是：保留早期真实IC和旧背景返还，支付共同actual钱包多来源，而不是再删除中间节点或固定后继。
+
+本轮检查：git diff --check与check_active_research.py通过；旧13人封闭自动机112050项IC重放通过；全深度保险作者有限全树审计由root重放。全仓check_assets.py目前被其他保留研究线的REFEREE_REPORT_round1.md缺catalog中文名称阻断；未修改该线，不报告全仓检查通过。该问题与本题数学及本轮修改无关，具体检查范围随本轮保存记录保留。
 
 ## 交流与状态
 

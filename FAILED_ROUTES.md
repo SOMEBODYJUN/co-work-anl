@@ -4,6 +4,7 @@
 
 | 机制 | 为什么失败、留下什么 | 自足入口 |
 | --- | --- | --- |
+| 即使重选最优并集，也要求全部遗漏≤W | 已有71单位客户二人完整SPE：W35，唯一最优OPT38，遗漏36>35。净差OPT−W仅3；必须保留实际在最优外的覆盖信用 | [原反例及完整策略](research/workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/exchange/unique_optimum_omission_obstruction.md)、[独立审查](research/workspaces/customer-attraction/R-171cd7d518434f36a48cd50df29c9303/coupling/optimal_omission_independent_review.md)；是旧辅助桥失败，不是half反例 |
 | 只按实际客户负载校正并要求Σf(c)≥OPT、f0=0/f1=1 | 完整无拥挤SPE已有W<OPT；任意人数族迫使统一支付f1≥3/2，高负载系数无助于这些路径 | [无拥挤全人数族](research/current/customer_attraction/collision_free_three_halves_family.md)，不反驳half |
 | 进一步换成同实例最低静态CCE福利：十三客户完整SPE覆盖9，所有静态CCE期望福利≥137/15 | [完整反例](research/current/customer_attraction/worst_cce_welfare_counterexample.md)证明这种更弱静态福利支配也失败；精确最低2785/297 | 保留真正不观察查询的安全值或直接跨真实分支预算；本例不反驳半覆盖 |
 | 八客户简化的静态CCE福利比较 | 四主题计数依赖完整SPE福利6，而最低静态CCE福利544/87；此失败不要求历史非匿名平局 | [较小独立见证](research/current/customer_attraction/eight_customer_cce_welfare_gap.md)，保留十三客户原版本及聚合安全值开放 |
