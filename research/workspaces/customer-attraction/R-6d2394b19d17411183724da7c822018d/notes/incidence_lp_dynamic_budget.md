@@ -95,3 +95,29 @@ Since `OPT_n<=U`, the same coefficient bounds optimal coverage. If the coefficie
 Taking `beta_j=r/2` for every `j` (and at `r=1`, `beta_j=1`) recovers the existing scalar budget `t+s(n-t)/2` and `n+s-1`, after suffix enveloping. More generally (2) can be strictly smaller for sparse incidence systems or for maxima without private blocks, giving a data-dependent certificate. It also explains why a uniform factor cannot follow from this LP alone: with all pair incidences on `s` maxima and no private blocks, symmetry forces `B(r)=sr/2`, so the budget is linear in `s`. The missing general step is therefore a second mechanism for dense high-incidence systems (e.g. cross-customer load balancing or true continuation credit); this lemma does not claim that mechanism.
 
 No claim is made that the LP coefficient is sharp for SPE welfare. Failure of the coefficient to reach `1/2` is only a certificate-template boundary, not a Q-CAG-HALF counterexample.
+
+## A clean sufficient incidence condition
+
+Let
+
+\[
+\tau_{\rm inc}=\min\left\{\sum_j\alpha_j:\;\alpha_j\ge1\ (w_{\{j\}}>0),\quad
+\sum_{j\in I}\alpha_j\ge1\ (w_I>0, |I|\ge2),\quad \alpha_j\ge0\right\}.
+\tag{7}
+\]
+
+This is a fractional cover number of the maximal-incidence hypergraph, with singleton edges retained. Taking `beta=r alpha` in (2) gives `B(r)≤r tau_inc`. Since `tau_inc≥1`, the comparison denominator `n+(tau_inc−1)r` is nonincreasing in prefix length and dominates the suffix envelope. Hence
+
+\[
+W\ge c+(U-c)\sum_{r=1}^n\frac1{n+(\tau_{\rm inc}-1)r}.
+\tag{8}
+\]
+
+In particular, `tau_inc≤2` implies half coverage because
+
+\[
+\sum_{r=1}^n\frac1{n+(\tau_{\rm inc}-1)r}
+\ge\sum_{r=1}^n\frac1{n+r}=H_{2n}-H_n\ge\log 2>1/2
+\]
+
+(the `n=1` endpoint is `1/2`). This condition is a distinct, incidence-level certificate; it is not a bound on the original theme fractional cover `tau_C`. For all-shared incidence and `s≤4`, `alpha_j=1/2` recovers the known `s≤4` route. Sparse incidence can satisfy `tau_inc≤2` even when the number of maximal themes is larger. The condition is only sufficient: disjoint-maxima catalogs have large `tau_inc` but are handled by the separate singleton-load mechanism.
