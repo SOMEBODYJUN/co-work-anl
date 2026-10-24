@@ -67,7 +67,7 @@ u_i(z) >= u_i(z_i(T)).
 `3W>=OPT_m`。L1--L4 不受影响；这里撤回这条推导，不声称原条件在完整
 SPE 类中已有反例。发现与独立算术重构见
 [`route5a_half_credit_gap.md`](../../R-65d0f88edf3849b39ca5eb79760e970b/full_tree/route5a_half_credit_gap.md)
-及该工作区的父方审查。
+及该工作区的父方审查。 同期另一组从原式独立重遇同一算术缺口，见 [独立纠错记录](../../R-105f776c3e6d4a22bb7c380c5df8edc7/global_payment/route5a_arithmetic_correction.md)。合并保留两组来源；原证明接口 v1 撤回，下面的净需求条件单列为修正接口 v2，不声称旧条件已有完整 SPE 反例。
 
 准确记 `I=|C intersect U|`、`L=|C\\U|`、`E=|U\\C|`，则
 `W=I+E`、`OPT_m=I+L`、`OPT_m-W=L-E`。令排列付款为
