@@ -1,3 +1,7 @@
+# 本轮最新接续
+
+先读[第五轮一般稿](round5/GENERAL_PROOF_WORKING.md)。一般half仍OPEN；新增密度总账、广播消元、actual券域和PB-extra充分归约，均未提供共同费用上界。旧状态完整保留如下。
+
 # 当前前沿：不能压掉真实孩子内部激励
 
 最新轮：[round4一般工作稿](round4/GENERAL_PROOF_WORKING.md)。MIN-PI已被独立完整SPE反驳，停止此势路线。新Beta随机路由、I精确信用、world适应取消及动态rank仍缺同role多query共同费用。half保持OPEN；固定delta、A/B库存、随机source和原IC适用域不可混用。

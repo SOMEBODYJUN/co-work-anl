@@ -73,3 +73,5 @@
 ## 当前差量审查
 
 见[一般范围续审](continuation_general_scope/README.md)：有数学包含关系的停线、UV严格判别、SOURCE-NET与pair/PAY真正新增义务、有限反例攻击的保护，以及审查过严措辞的纠正。现行判断以最新正文和本轮具体证据为准；旧通知不重复计为实际转向。
+
+2026-10-24 的新一轮定向收束见[一般范围停线与转向跟进](followup_2026_10_24.md)：明确冻结 tau/UV/逐人 floor/stationary/fixed-coefficient、prefix-only LP、固定策略锥和有限阴性扩样；保留 H4/Mpath、Theta/SM/cross-tree 共同支付与动态 owner-cost LP。表中严格区分已发送、已读、已回复和实际转向；一次外发被自动审查阻断，未绕过。
