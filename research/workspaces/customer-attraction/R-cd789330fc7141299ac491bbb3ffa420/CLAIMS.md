@@ -108,3 +108,5 @@ PI已被下述完整SPE反例否定；混合弱推送、全树水位信用仍为
 - **B10-CREDIBLE-ADJACENT-TRANSPOSITION-v1**：一般背景、固定AB尾SPE，收益(alpha,beta)。AB可实现iff alpha≥mu、beta≥mu_A；BA iff beta≥mu、alpha≥mu_B。增序且alpha≥mu_B可保终局负载换位，严格祖先完成叶/IC保持；lex最大固定half坏计数的相邻升序必被mu_B>alpha阻断。global提出，mixed/root重构；未付阈值障碍，不保菜单坏性。[正文](round6/global/credible_adjacent_transposition.md)。
 
 以上对原全部输入有效，但均为结构/表示组件；主目标OPEN。定义级回归不提升一般福利证据，无外审/新颖性认证。[root审查](round6/parent/review_general_components.md)。
+
+- **B10-ALL-CONTEXT-COUPON-ROLE-HIT-v1**：SAFE净券图、fresh变体、CLIP子核及各自合法OPT-owner初始化，对任意k角色集K有A(K)≤M(K)+k/(k+1)M(K外)。跨全部context/客户，但只约束角色终端质量，不是actual钱包上界。relay提出，credible/root独立重构；root的uniform-subset行表示与角色价层积分为派生工具。见[派生稿](round6/parent/role_price_envelope.md)，原HIT正文在round6/relay。主目标仍OPEN。
