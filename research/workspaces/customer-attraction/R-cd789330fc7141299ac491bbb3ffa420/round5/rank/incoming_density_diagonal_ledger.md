@@ -184,3 +184,8 @@
     sum of the r−g lowest natural prices ≤W。    (TOTAL-TRIM?)
 
 它尚未证明。它弱于同一固定路由、固定 owner 的原 Hall 限制 TOTAL，因为原 Γ 是这里 trim 集的子集；相应地原 r_Hall(S)≤min(g,|S|)，故原层 cut 缺额至少 (|S|−g)_+。这个弱化没有给任意 γ 补出合法 actual 运输，也不继承先前已付 source 的结论。若未来仍需要逐行 η 或 COV 的 actual 网络支付，必须保留原 Γ；不能把任意 trim 与原 source 预付的好处相加。
+
+
+### 来源核对补充
+
+root随后实读同行[自由起点/总钱包审查](../../../R-b6d636d360e14c11aeb4b76415ed422b/direction_review/continuation_general_scope/incoming_payment.md)§四式(5)–(6)与seq217，发现其已明确写出自由κ价格及任意净源删减。同类自由trim不计本轮新发现；本页保留自然重分配与M−H整行账的自足衔接。两者都没有普遍费用上界，不再以第二个最短路/静态LP作为新推进。

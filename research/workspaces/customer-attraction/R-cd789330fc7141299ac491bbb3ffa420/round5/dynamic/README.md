@@ -9,3 +9,5 @@
 
 下一步仍须从真实全部孩子 IC 控制 actual-return 与跨客户 covariance，或找到另一条一般 half 关系。单纯最低价、取消域或静态层割重排不作为本分支进展。
 - `review_density_ledger_supplement.md`：新增自然 captured-mass 重分配、Bellman 同时实现与自由 TOTAL-TRIM 的合法归约审查；通过范围与 source 预付边界均已写清。无新的共同费用上界，按任务停在此处。
+- `review_pair_counterexample.md` / `review_pair_counterexample_blind.md`：PB-extra解析候选的Greedy水位、全部regular历史、真实Punish/Fill/Copy切换及(G)(P)(F)独立审查；该分工通过，静态安全值另审，不是half反例。
+- `pair_scalar_independent.py` / `pair_scalar_independent.json`：给定显式参数的Fraction独立重算，无参数或策略扫描。
