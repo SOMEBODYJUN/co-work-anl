@@ -28,7 +28,8 @@
 
 ## 未决事项
 
-- 主人尚未指定这篇的最终期刊。`amsart` 为可编译成文稿，最终 publisher class、参考文献格式及字数需随期刊决定再落地。
+- 团队已将这篇的主投定为 **SIAM Journal on Discrete Mathematics (SIDMA)**；备用为仅在重写算法博弈论定位后考虑的 TEAC。SIDMA 的官方投稿要求和模板转换清单见 [VENUE_TEMPLATE_REVIEW_round2.md](VENUE_TEMPLATE_REVIEW_round2.md)。
+- 当前 `amsart` 是可复核的证明稿；提交版应转换到 SIAM 官方最新 `siamart251216`（或提交时官方替代版本），并补齐作者、单位、邮箱、关键词和 AMS MSC。作者元数据尚未提供，不能虚构。
 - 作者名单、单位、邮箱未提供，全部留空。
 - 文献优先权与外部同行审查未完成；本轮公开版本检查不等于全面新颖性确认。
 - 正文的独立连续阅读及全篇审稿本轮尚未由本写作者执行；自查不能代替独立审查。
@@ -53,9 +54,13 @@
 
 当前 `main.tex` SHA-256：`c8bfa0d94aaf22a732338fba5b1cc9216ba878329c62ddca04f485858240172a`；当前PDF SHA-256：`f96440de8ba4ebfefcee5c7aa5bc8bb1d073e826a2d383732eebb03e73adf65c`。本轮没有改任何精确Claim的身份或状态。
 
+## Round-2 full-cycle status
+
+本轮按 math-proof-review 的两遍要求重启独立审查，并以 `main.tex` 当前版本为唯一正文来源；第一轮报告不被当作通过证明。英文清洗和反 AIGC 检查继续以 `academic-humanizer`、`humanize` 与 `polish-math-prose` 的规则为准：只删除套话、重复和不必要复杂性，不改变量词、假设、公式或证明路线。round-2 独立审查发现 0 个 S0--S3、3 个 S4，3 个 S4 均已修复并重新通过机械检查、编译和 PDF 版面检查。
+
 
 ## 主agent最终接续记录
 
-最终交付以[三稿核验汇总](../MANUSCRIPT_REVIEW.md)中的版本和真实覆盖为准。统一构建脚本已实际成功运行；PDF总页数保持25/8/26，已渲染检查全部页面的排版概览。
-独立数学检查及两项精度修正的bounded delta已通过。隔离editorial原判必要性PASS、指称精度FAIL；3项发现均已逐项修正：Case2明确打包原客户与新增客户之并，默认规则固定客户枚举，依赖引用改为具体引理编号。主agent复核修复，不冒称另一次隔离审读已PASS。
-当前源码SHA-256：`04190ddf297500eb24af37280b1dc61f9f6ce5d06f88065f755a85c93deb2e10`。当前PDF SHA-256：`22a9be2ddbcff76b8c03f2209cf3a7c2e51316e45b27b0df9c256006cf4a23de`。最终期刊未定，当前为成文稿而非某刊最终提交包。
+最终交付以[三稿核验汇总](../MANUSCRIPT_REVIEW.md)中的版本和真实覆盖为准。统一构建脚本已实际成功运行；第二篇最终 PDF 为 8 页，全部页面已渲染检查，无溢出、截断或孤立参考文献页。
+独立 round-2 proof audit 已逐引理重推并关闭前一轮 S2；3 个 S4 澄清已写入 `main.tex` 和 `REVISION-NOTES.md`。`tex-proof-sanity.py`、proof-review note linter、有限算术回归和最终编译均通过。
+当前源码SHA-256：`e745ec526dccb9f874837729c6ec3d092ea6ea9e44edf602a749cef9f18fe922`。当前PDF SHA-256：`e7aa2337c1979bef95d78dc2afc4ed383d3142d6bd193f72c0be94f67d5c94fd`。主投已定为 SIDMA；提交版仍需官方 `siamart251216` 宏包转换和真实作者元数据。

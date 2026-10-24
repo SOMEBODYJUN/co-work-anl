@@ -59,7 +59,7 @@ Harks–Klimm 范文校准后的源码 SHA-256为 `6aaa893eeab3f818fdfee71819830
 | 文章 | TeX SHA-256 | PDF SHA-256 |
 | --- | --- | --- |
 | 第一篇 | `6aaa893eeab3f818fdfee71819830e4880bee66365a077a4d66c092190ec4c3e` | `c9b1deb3bd400142626c12e6cba0aa8665226f058d06c89506e99125763c19c5` |
-| 第二篇 | `04190ddf297500eb24af37280b1dc61f9f6ce5d06f88065f755a85c93deb2e10` | `22a9be2ddbcff76b8c03f2209cf3a7c2e51316e45b27b0df9c256006cf4a23de` |
+| 第二篇 | `e745ec526dccb9f874837729c6ec3d092ea6ea9e44edf602a749cef9f18fe922` | `e7aa2337c1979bef95d78dc2afc4ed383d3142d6bd193f72c0be94f67d5c94fd` |
 | 第三篇 | `f6f65fd53db59261933663ca08cbf042e2cc0eb8d93cfe66b2138b0212d9af0f` | `ee30c135b9825353328ed1ff3ad5f9757bfe9fce8065982b9b99e1121f29c7d8` |
 
 三篇结构成文和PDF已完成。剩余工作是第一、三篇未完成的独立审读回执、第二篇修复后的新隔离复审，以及主人定刊后的格式转换。当前不是某刊最终提交包，外审与新颖性仍独立未认证。
@@ -89,3 +89,15 @@ revised PDF hash is
 A fresh targeted independent review of these repaired proof regions is still
 pending. Until that review closes, the first theorem is a repaired manuscript
 claim, not a publication-grade verified proof.
+
+## 第二篇 round-2 完整闭环（当前）
+
+第二篇已完成针对当前正文的独立第二轮 proof audit。审查者从模型、字典序选择、在轨 NE、两类源地点转移、原子装箱、重原子 cap、全部单方偏离、续局补全和有理证书重新推导；结果为 **S0=0、S1=0、S2=0、S3=0、S4=3**。前一轮的重原子不变式问题已关闭，3 个 S4 均为表述澄清并已采纳：
+
+1. 明写占用目标旧负载 `W_t/q_t>((q_t+1)a)/q_t>a`；
+2. 固定有限最大值的 tie-breaking 顺序；
+3. 把未列出布局的续局明确为 succinct default-rule program。
+
+证明审查记录见 `research/manuscripts/multiple_facilities/REFEREE_REPORT_round2_proof.md`，逐目标 review notes 已通过 `lint-notes.py`。英文清洗的最终门见 `EDITORIAL_REVIEW_round2.md`；没有必须修的语言问题，也没有为缩短篇幅删除证明承担的分支。最终源码和 PDF 均通过 proof-sanity、编译日志检查和 8 页逐页渲染检查；最后一页孤立参考文献行已通过版面调整收回。
+
+团队将第二篇主投定为 **SIDMA**，采用 SIAM 最新标准宏包 `siamart251216`；官方要求、摘要/关键词/MSC/短标题和作者元数据清单见 `VENUE_TEMPLATE_REVIEW_round2.md`。当前可复核 PDF 仍为 `amsart`，因为真实作者元数据未提供且官方宏包需在提交阶段转换；这不再是数学或写作审查阻塞。
