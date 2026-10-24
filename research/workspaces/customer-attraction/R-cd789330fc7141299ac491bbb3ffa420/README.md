@@ -1,6 +1,6 @@
 # Boss10：共享遗漏、完整可信性和低尾信用
 
-**第八轮进行中：一般目标仍OPEN。** 直接攻未来来源共同预算；强FOMA的旧反例已恢复并纠正上轮OPEN标签，见 [第八轮工作稿](round8/GENERAL_PROOF_WORKING.md)。
+**第八轮最新：一般目标仍OPEN。** 加强初始化后，同客户传播在全部非实际context密度≤1，未来wholeIC与客户身份可同时保留；共同边选择族也合法。仍缺同角色全部历史/主题的共同总付款。强FOMA已恢复旧反例并纠正上轮OPEN标签。接续见 [第八轮工作稿](round8/GENERAL_PROOF_WORKING.md)。
 
 **最新第七轮：Q-CAG-HALF 仍 OPEN。** 六名实际 gpt-6.1-sol ultra 与 root 直接接续一般证明；新增同一子枝 prefix 完整利润的共同回推、固定父叶 SD 第一正价的共同 ROW/COLUMN，以及保留比较客户库存的坐标双预算初始化。已分别独立重构，仍未把互斥子树的全部金额共同放入 actual W。接续先读 [第七轮总稿](round7/GENERAL_PROOF_WORKING.md)，其余轮次均保留原真实范围。
 
