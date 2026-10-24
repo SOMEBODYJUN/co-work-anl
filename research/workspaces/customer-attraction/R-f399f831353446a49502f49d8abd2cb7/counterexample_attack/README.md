@@ -10,4 +10,4 @@ Here `k_i(x)` is the number of post-`i` responders that cover `x` on that forced
 
 `owner_tax_exhaustive.py` exactly enumerates all 127 nonempty binary customer-type supports for `k=3,m=3`, every pure-SPE terminal outcome returned by the canonical arbitrary-history solver, and every ordered optimal 3-tuple. It checks 3,984 `(instance, SPE outcome, optimal tuple)` combinations. The largest observed `R_min-|I|-2|G|` is `-1`; no violation occurs. The same script checks the all-big family for `m=1,...,4`; every returned SPE outcome has `R_min=0` for the displayed optimal tuple.
 
-The JSON report contains only exact integer/Fraction outputs. This finite negative result does not establish the bound for general inputs, nor does it refute the main theorem.
+The companion `owner_tax_search_random.py` is retained as a bounded random stress harness (seed 7, sparse binary type supports); it is diagnostic only and is not used for the exact conclusion. The JSON report contains only exact integer/Fraction outputs. This finite negative result does not establish the bound for general inputs, nor does it refute the main theorem.
