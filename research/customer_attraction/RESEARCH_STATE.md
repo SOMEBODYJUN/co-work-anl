@@ -93,3 +93,14 @@ r≥1且m≥(r+1)²+1，同样半覆盖。目录、末位主题、离轨历史�
 后续[统一可信缩尾接口](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/credible/waterfill_credibility_uniform_contraction.md)已独立内审：全历史规定行动避开非核心正背景时，同一正质量保整孩子SPE；查询共同信用另需实际负载谱条件。变分规范水位和原规定路径累计IC税账亦已解析重构，准确状态及证据在同工作区地图。不自动让各离轨叶同时过线，也不让原根/其它孩子免费保真。全树改枝支付仍为当前承重点。
 
 Boss9 本轮新增候选一般接口 `CA-INCIDENCE-LP-DYNAMIC-BUDGET-v1`：用极大主题关联 LP 和后缀包络替代统一的 `s r/2` 预算，解析推出 `tau_inc <= 2` 时的任意人数半覆盖。该接口把缺口精确缩到高密度共享关联的跨真实分支支付；尚待独立清洗，不能把候选条件外推成一般定理。
+
+## 2026-10-24 Boss9 阶段：一般关系与接口障碍
+
+本阶段个人区保存了三条可复用的全范围关系及两类严格接口边界：
+
+- `route5a/sequential_deviation_share_lemma.md` 证明任意位置、任意主题的真实偏离份额下界 (L1)–(L3)，以及偏离枝后继主题包含于当前主题时的同枝收益继承 (L4)。它把一般缺口定位为不同强制主题的后继覆盖数 (q_i(T,x)) 的跨枝聚合；最坏分母在不交遗漏主题上只有调和量级。
+- `representation/cross_branch_welfare_relay_identity.md` 证明节点级精确中继式 (W(z(T))-W(z(A^*))le V(T)-V(A^*))，并给出等价的删去当前玩家后的 Rosenthal 势差式。该式保留真实后继，尚无跨互斥子树的望远镜。
+- `route3/smoothness_bridge_obstruction.md` 严格证明静态终局的 ((1,1))-smoothness及静态 PNE 的半覆盖推论；同页完整三人 SPE 证书排除把冻结静态偏离直接当成真实 SPE 偏离。
+- `representation/complete_pair_incidence_lp_obstruction.md` 对完整 pair-incidence 目录求得根 incidence-LP 对偶精确值 (B(m)=ms/2)，说明单一非负关联乘子不能利用最优解至多使用 (m) 个主题；这只是证明模板障碍，不是 Q-CAG-HALF 反例。
+
+上述材料均已保留完整历史、任意平局和辅助结论边界；主命题仍 **OPEN**。当前最有信息价值的下一步是把节点 relay 与 L3 的真实后继 IC 组合成不重复计费的共同预算，或证明一条适用于全部目录的 edge balancing 关系。

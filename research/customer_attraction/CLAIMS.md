@@ -54,3 +54,12 @@
 2026-10-23全成果清洗补入 `CA-IID-WEAK-WELFARE-NO-v1`：[完整SPE反族](../current/customer_attraction/iid_security_and_flow_barriers.md) §1.2否定同定义弱iid桥 `W≥(1−1/(2m))Z_m`；原成果早存个人区，本轮重构并补共享状态，非新发现。真正安全值强/弱聚合及Q-CAG-HALF仍OPEN。
 
 新增候选接口：[`CA-INCIDENCE-LP-DYNAMIC-BUDGET-v1`](../current/customer_attraction/incidence_lp_dynamic_budget.md)把现有极大覆盖路由的统一预算细化为关联覆盖 LP 与后缀包络；`tau_inc <= 2` 的输入类由此得到半覆盖。高密度共享关联仍未闭合，候选尚待独立清洗，不能升级一般目标状态。
+
+## 2026-10-24 Boss9 阶段性一般接口
+
+| ID | 精确范围 | 结论与边界 | 证据 |
+| --- | --- | --- | --- |
+| `CA-SEQUENTIAL-DEVIATION-SHARES-v1` | 任意有限共同目录、任意 m、任意完整历史依赖纯 SPE；固定实际根路径及任意合法强制主题 | 对每个位置有真实偏离份额下界 `u_i >= |T\\U|/(m-i+1)`，精确式 `u_i >= sum_{x in T\\U}1/(1+q_i(T,x))`，并在后继主题 `R subseteq T` 时有同枝收益继承。最坏分母聚合不足以推出 half；这是一般引理与开放支付接口，不是主命题证明。 | [`route5a/sequential_deviation_share_lemma.md`](../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/route5a/sequential_deviation_share_lemma.md)；解析证明，未外审 |
+| `CA-CROSS-BRANCH-RELAY-v1` | 任意完整历史节点、任意强制主题 T 与原策略动作 A* | 精确有 `W(z(T))-W(z(A*)) <= V(T)-V(A*)`，等价于删去当前玩家后的 Rosenthal 势差不等式；未证明跨互斥子树望远镜，不能推出 Q-CAG-HALF。 | [`cross_branch_welfare_relay_identity.md`](../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/representation/cross_branch_welfare_relay_identity.md)；直接代数证明，未外审 |
+| `CA-STATIC-SMOOTHNESS-SPE-BRIDGE-NO-v1` | 任意静态终局与顺序 CAG 的完整纯 SPE | 静态终局满足 (1,1)-smoothness，静态 PNE 因而满足半覆盖；完整三人 SPE 证书显示冻结静态偏离收益不能替换真实后继收益。只否定该桥，不否定主命题。 | [`smoothness_bridge_obstruction.md`](../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/route3/smoothness_bridge_obstruction.md)；完整有限证书与审计，未外审 |
+| `CA-PAIR-INCIDENCE-LP-OBSTRUCTION-v1` | 完整 pair-incidence 目录 K_s，s >= m >= 2；单偏离、单一非负关联乘子模板 | 根 LP 对偶精确 `B(m)=ms/2`，不能单独利用最优解至多选 m 个主题；这是证明接口障碍，不是低福利 SPE 或 Q-CAG-HALF 反例。 | [`complete_pair_incidence_lp_obstruction.md`](../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/representation/complete_pair_incidence_lp_obstruction.md)；解析对偶计算，未外审 |

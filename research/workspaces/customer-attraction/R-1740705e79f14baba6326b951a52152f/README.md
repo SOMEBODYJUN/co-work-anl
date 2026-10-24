@@ -10,6 +10,9 @@
 
 - [`representation/complete_pair_incidence_lp_obstruction.md`](representation/complete_pair_incidence_lp_obstruction.md)：完整 pair-incidence `K_s` 的精确 LP 对偶计算。它证明单偏离的极大关联 LP 在根节点即被 `B(m)=ms/2` 卡住，即使把比较对象换成精确 `OPT_m`；这只是证明接口 obstruction，不是低福利 SPE 或 Q-CAG 反例。
 - 节点级 relay 恒等式已传给 Boss：若实际动作为 `A*`，任意强制 `T` 满足 `W(T)-W(A*) <= V(T)-V(A*)`，其中 `V` 是后继总福利；等价 harmonic-potential 增益全部来自后继树。缺口是不同有序历史的 `V` 无自然望远镜。
+- [`route5a/sequential_deviation_share_lemma.md`](route5a/sequential_deviation_share_lemma.md)：全范围证明偏离份额下界 (L1)–(L3)，并给出后继主题包含于偏离主题时的同枝收益继承 (L4)；最坏分母在不交遗漏主题上只有调和量级，不能单独闭合 half。
+- [`route3/smoothness_bridge_obstruction.md`](route3/smoothness_bridge_obstruction.md)：严格证明静态终局的 `(1,1)`-smoothness，并用完整三人 SPE 证书说明静态冻结偏离不能直接替代真实后继收益。
+- [`representation/cross_branch_welfare_relay_identity.md`](representation/cross_branch_welfare_relay_identity.md)：把节点级 relay 写成福利式与删去当前玩家后的调和势式，明确未付项是互斥子树的后继势差。
 
 ## 当前判断与下一步
 
