@@ -1,3 +1,9 @@
+# 第五轮最终接续
+
+一般Q-CAG-HALF仍OPEN，无一般证明或目标反例。任意合法背景PB-extra已被完整解析SPE构造分离；不是根half反例，根在轨弱版本未被处理。自然incoming的M−H/COV账和全客户广播/actual券出口经过独立解析及精确审计，仍缺source、重复whole-row与past-C券的共同容量。
+
+本轮成熟辅助结果与候选的精确范围见[总稿](round5/GENERAL_PROOF_WORKING.md)、[Claim](CLAIMS.md)、[失败原因](FAILED_ROUTES.md)。下一步需新真实IC支付，不再扩阴性或重排同一静态网络。以下保留原状态。
+
 # 本轮最新接续
 
 先读[第五轮一般稿](round5/GENERAL_PROOF_WORKING.md)。一般half仍OPEN；新增密度总账、广播消元、actual券域和PB-extra充分归约，均未提供共同费用上界。旧状态完整保留如下。
@@ -45,3 +51,10 @@ PI路线现已真正失败，不再是OPEN候选：430客户完整三人SPE有P4
 本轮续进已形成全输入owner势与全J库存流：见README新增地图。root/relay/shared分别重构通用代数，A/B有独立解析对稿和精确cut/实际maxflow回归。静态anchor容量与可购买原IC的动态范围已拆开，后者目前只在完整OPT前缀的真实未来角色合法。实际G取消γ可同时支付全部初始owner source，剩余明确为捕获重置到达费用。根及source首轮正关系成立，不推出后续row预算；固定势代回原调和势仍回到原总去槽债。
 
 接续入口：round3/GENERAL_PROOF_WORKING.md §4的TREE-F与NET?，同时读取credible的owner_hybrid_transport和tail的ρ版COV。下一有信息价值的一般动作是从全部真实IC为共同剩余η容量构造兼容flow或其全价格割证明；不要继续变换同一ghost恒等式、扩固定样本或把独立叶maxflow当跨树可行性。Q-CAG-HALF仍OPEN。
+
+
+## round6当前接续
+
+同clone/actor保留round4/5稿并六路接续。[本轮一般稿](round6/GENERAL_PROOF_WORKING.md)记录SAFE/CLIP、fresh核、可信换位与准确未付义务。一般half仍OPEN，无真正反例。root六份旧完整策略[回归](round6/parent/clip_audit.json)只核3635原IC、净券DAG和守恒，不是容量/福利试验。
+
+同角色跨context净券、source、past标签的共同cap尚未证明；LAST-DIP的真实子局价值障碍亦未支付。改分母、局部退款或单谱系区间不能代替总预算。PB-extra、Mpath、TOTAL-TRIM仍OPEN。

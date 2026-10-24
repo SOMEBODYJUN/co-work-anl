@@ -8,6 +8,6 @@
 - `two_block_dual_diagnostic.json`：一份浮点对偶机制诊断；没有精确证书身份。静态背景仅用实际主题但 IC 跨全部深度，尚无一般构造。
 - `review_broadcast.md`：全fresh/全客户广播表示组件的独立解析审查；核心 LOSS、合法域、DAG 消元、COUPON-LOAD 通过，明确尚无共同容量或half。两处范围措辞已通知作者。
 - `broadcast_blind_reconstruction.md`：阅读作者稿之前依root消息写出的盲重构；`broadcast_author_snapshot.md`冻结本次所读作者稿。
-- `audit_broadcast.py`、`audit_broadcast.json`：独立22单位客户完整SPE审计，确实触发非零fresh边及terminal past-C出口；43历史258含自身IC，精确通过质量及coupon账。它只核该例实现，不作一般计算证据。
+- `audit_broadcast.py`、`audit_broadcast.json`：独立22单位客户完整SPE审计，以**非最优比较元组(D,H,B)** 的合法任意forced query触发非零fresh边及terminal past-C出口；43历史258含自身IC，精确通过质量及coupon账。比较覆盖17而OPT3=18，D不属于最优元组；本例不测试最优owner初始化的非零链，也不作一般计算证据。
 
 接续应解析 PB-extra 真实两位总信用；不要重启阴性扫描，不要把 TH 的加强失败（若找到）自动当 PB 失败。第二位复制根只有同枝等利；现成八标签菜单参数点 a=1,b=9 表明，根菜单排序、尾 floor、末位全 BR 与复制根信用仍必须加上第二位其他真实跨主题 IC。root 统一保存；本分支未读凭据、未作 git mutation 或 work.py start/send。
