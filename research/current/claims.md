@@ -1511,6 +1511,14 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
   [独立解析审查](../reviews/customer_attraction/optimal_first_action_branch_gap.md)。
 - **Counterevidence / objections：** 未发现该关系的fatal objection。ξ是静态同尾覆盖松弛，
   不能当作S孩子的真实损失；不同ρ的共同支付未证明，沿轨相加的完整等式不提升Q-CAG-HALF。
+  原正文(11?)另提出一个**不同的充分加强**：实际路径每位置存在最优首动作菜单分布，
+  使Σ(r_i−1)Eρ_i/r_i ≤Σ[Eθ_i/r_i+(r_i−1)Ef_i/r_i+EΓ_i]，即把ξ和η信用都删去。
+  此加强为 **FALSE**：对任意m≥3，既有大小m的大主题加m−1个单例、全历史恒选大主题的
+  完整SPE使所有分布的左减右至少 (m²−3m−2)/2+H_m>0；
+  但OPT_m=2W−1，不是Q-CAG-HALF反例。
+  [解析证书](../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/all_big_completion_slack_obstruction.md)
+  已经独立逐式检查。保留全部ξ而仅丢η的加强仍OPEN；它等价于
+  Σ_i min_(A∈A_i*) η_(i,A)/r_i ≤ 2W−OPT_m，不等同已证恒等式。
 - **Status：** 完整一般代数证明及独立内部重构；无软件求解合同，无新增有限阴性支持声明；
   外部审查及全球新颖性未认证。Q-CAG-HALF仍OPEN。
 
