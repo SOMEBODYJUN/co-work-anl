@@ -25,6 +25,7 @@
 
 | 完整正文路径及身份 | 精确已证范围与结论 | 依赖、用途与剩余限制 | 审查 |
 |---|---|---|---|
+| [一般证明工作稿§3.1](../current/customer_attraction/general_half_proof.md#31-冻结真实前缀的联合客户席位一般付款的精细加强)；`CA-PREFIX-COUPLED-SEAT-BUDGET-v1` | 任意原实例、每个完整历史纯 SPE、每个实际前缀：完整利润席位 F 与显式前缀价格席位 G 给 `u_i≥Λ_i≥λ_i`、`W≥ΣΛ_i≥Σλ_i`。 | 新的同利润耦合精细化，承接既有超集席位归纳；严格加强旧私有谱/分母界的逐位置最大值。Q全空时两谱都退回分母界，尚不支付一般 half。 | E；G先盲重构、F随后读稿核对，另一实现补全严格例全部策略并逐历史审计；无外审或新颖性认证 |
 | [research/current/customer_attraction/last_two_floor.md](../current/customer_attraction/last_two_floor.md)；`CA-LAST-TWO-FLOOR`、`CA-ALL-N-WELFARE-4N` | 任意总人数n>=2，任意完整历史的末两人各有局部theta保底；合并最大主题保底得 `W>=4(n−1)OPT_n/[n(2n−1)]`。 | 真实末位最佳回复、两人配对势差；一般弱福利界，不能把theta保底扩大到全部玩家。n>=5未达half。 | E |
 | [research/current/customer_attraction/tail_profit_lift.md](../current/customer_attraction/tail_profit_lift.md)；`CA-TAIL-FOUR-ALL-N` | 任意目录、n>=4、全部纯SPE：`OPT_n<=(n/2−1/750)W`；另给固定k尾部利润定理的合法组合接口。 | 依赖四人**背景剩余利润**界、最优主题索引子集比较与实际前缀税；没有使用已否定的一般根税。常数随n增长，不是half。 | M；实现登记none |
 | [research/current/customer_attraction/oblivious_security.md](../current/customer_attraction/oblivious_security.md)；`CA-OBLIVIOUS-MIXED-SECURITY-2N1` | 任意m与目录，静态对手不观察随机查询，`v_m(0)>=OPT_m/(2m−1)`，下界锐。 | 静态minimax比较定理；实际后继能观察偏离，从v到W仍须另证聚合桥。 | M |

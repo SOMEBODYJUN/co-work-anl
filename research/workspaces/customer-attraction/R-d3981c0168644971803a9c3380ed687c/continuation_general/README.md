@@ -2,6 +2,8 @@
 
 目标始终是 **Q-CAG-HALF**：任意有限共同目录、任意人数、每个完整有序历史纯 SPE 的 `OPT_m≤2W`。状态 **OPEN**。本轮复用本 clone 身份，没有重启固定人数、目录大小或结构子类课题。实际启动六名 `gpt-6.1-sol / ultra` 子研究员；正文的证明、内部检查、数值诊断和外部认证分别记录。
 
+本轮六分支已完成交接；不表示后台继续运行。共享精确身份、工作稿和复现已登记 `CA-PREFIX-COUPLED-SEAT-BUDGET-v1`，见[工作稿§3.1](../../../../current/customer_attraction/general_half_proof.md#31-冻结真实前缀的联合客户席位一般付款的精细加强)及[内部审查](../../../../reviews/customer_attraction/prefix_coupled_seat_budget.md)。原有一般目标未闭合。
+
 ## 已闭合的新关系及其准确作用
 
 [实际前缀联合席位](omission/prefix_coupled_seat_budget.md)给一条对全部原模型输入有效的逐位置付款关系。固定实际位置 i，余 r 人、真实旧负载 b；对每个极大主题 B_j 取其实际遗漏的全局私有块 Q_j，大小 a_j。令
@@ -15,6 +17,8 @@
 同一个真实玩家先用一个完整利润评价所有客户，再只付款一次。共享遗漏与已覆盖客户进入同一分母项，并未各领取一份 W。显式 G 逐位置不弱于旧固定分母私有谱和直接分母保底的最大值；存在完整 SPE 的严格增强见原文和证据。其机制仍承接已有 superset / 私有席位归纳，不认领该上游机制为新。
 
 [独立解析审查](induction/private_offset_spectrum_independent_review.md)先只见 G 陈述重构证明，再读作者稿检查 F，未发现漏洞；清楚区分两段审查的先后。尚无外审或新颖性认证。root 另按定义复核：归纳始终固定起始 b、r 和席位函数，包含全部真实离轨后继；F 的无触块分支确实提供原定义中的可行竞争元组。
+
+[另一分支数值审查](menu/refined_spectrum_numerical_review.md)独立展开单位客户，补全完整 SPE 并检查全部历史，精确确认严格区分；root 重跑标准位置脚本通过。另有[归属动作容量谱](induction/assigned_action_complete_profit_spectrum.md)逐席支配 F/G，但真实背景版既有 joint-copy 动态递归已可复现该类证书，因此只作准确统一写法，不另认领新一般机制或新的共享突破。
 
 **它仍未给出 `Σ_iΛ_i≥OPT_m/2` 或 `OPT_m−W≤Σ_iΛ_i`。** 无私有遗漏时，显式版本退回已有最坏分母保底，不能据此宣称共享遗漏已被一般控制。这里只登记一般推导中新闭合的一步，不报告主猜想突破。
 

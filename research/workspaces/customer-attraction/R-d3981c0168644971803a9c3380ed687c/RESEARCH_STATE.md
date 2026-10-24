@@ -1,5 +1,7 @@
 # 当前前沿与本轮停止点
 
+本次一般证明接续见 [continuation_general/README.md](continuation_general/README.md)。已证明并独立内部核对真实前缀联合席位付款 `u_i≥Λ_i≥λ_i`；严格增强证据由另一实现重构完整 SPE 并逐历史复核。它已接到共享一般工作稿§3.1，但不证明 half、不扩大原目标已证范围。完整菜单 FTA / Mfull / Mpath 和 `OPT−W≤m min_i u_i` 仍 OPEN。下文保留前轮常数三修复及其准确交接。
+
 原Q-CAG-HALF仍OPEN；没有主目标证明或反例。六名指定研究员已完成本轮交接，不宣称后台常驻。
 
 ## 本轮新增的一般工具

@@ -2,6 +2,10 @@
 
 本轮整理入口：[一般证明工作稿](general_half_proof.md)串联全范围已证关系及明确未证步骤；[成果总账](../../customer_attraction/RESULTS_LEDGER.md)逐份列出范围与审查等级，[衔接说明](../../customer_attraction/SYNTHESIS.md)解释共同机制，[个人区恢复总索引](../../customer_attraction/WORKSPACE_RESULTS.md)覆盖全部既存个人区。工作稿的已证关系已经独立内部检查，原Q-CAG-HALF仍OPEN。
 
+接续新增的一般关系见[工作稿§3.1](general_half_proof.md#31-冻结真实前缀的联合客户席位一般付款的精细加强)：冻结每个实际前缀，把所有客户放入同一完整利润席位，证明 `W≥ΣΛ_i≥Σλ_i`，严格加强旧两类保底的逐位置最大值。完整定义、内部解析检查及独立单位客户证据均从该节进入；无私有遗漏时退回已有分母界，尚不推出 half，也未增加特殊人数或结构类项目。
+
+该关系的[内部审查与复现入口](../../reviews/customer_attraction/prefix_coupled_seat_budget.md)区分解析证明、独立完整策略补全和有限数值范围；对应脚本、输入及冻结动作表均由该页导航。
+
 研究存档：customer-attraction；目标身份：Q-CAG-HALF。
 
 **当前主攻 Q-CAG-HALF：一般目录、任意人数、每个完整历史纯 SPE 的半覆盖；仍 OPEN。** 模型为有限单位客户、有限非空共同主题目录、单位权提供者依次观察全部有序历史选主题，最终客户价值在覆盖者间均分。全部历史依赖平局、重复选择、空主题和零客户均保留。
