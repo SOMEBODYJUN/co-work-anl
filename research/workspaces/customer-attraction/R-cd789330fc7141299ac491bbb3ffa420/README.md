@@ -1,5 +1,7 @@
 # Boss10：共享遗漏、完整可信性和低尾信用
 
+最新接续：[round5一般证明工作稿](round5/GENERAL_PROOF_WORKING.md)。本轮保留并恢复round4未提交的联合Hall投影与审计；MIN-PI已独立反驳，自适应随机路由的共同费用仍未支付，half仍OPEN。
+
 **Q-CAG-HALF 仍 OPEN。** 原模型、无界人数/目录、全部有序历史与任意历史依赖平局不变。这里只保存准确研究资产，不把非SPE菜单、有限阴性计算或内部审查升级为一般证明。外审与新颖性均未认证。
 
 首次恢复时环境没有旧clone；附件程序恢复main并生成本clone身份。当前接续复用同一clone与身份。旧Boss10接续入口为[R-75bfd工作区](../R-75bfd8f0f91740408bf08f0c9f5e2aa1/README.md)。实际启动六名指定研究员；发现、独立重构和root复核分别留痕。凭据保留仓库外，研究均由root统一checkpoint。
@@ -77,3 +79,9 @@
 PI已由一次完整策略锥诊断分离，并经过[独立盲审](round2/mixed/review_pi_counterexample.md)及root单位展开：根91小于P4−P3=215/2，而W265、OPT324。即使实际profile全局势最优也不救该候选，下一步不得继续把PI当引理。混合WP在此例反而严格成立。另见[53支架的正深度封顶](round2/credible/root_regret_private_boundary.md)：私有遗漏由最后两人支付，停止继续调该族重数。
 
 PI的root自足最终整理见[下一步最优势增量反例](round2/global/potential_next_increment_counterexample.md)，含完整策略表、五类末位BR、全部第二位真实收益及26种势计数类型。数值均经单位展开及已有独立盲审核对；不是新的half反例。
+
+## 本轮恢复与并行研究
+
+同一clone/actor已安全同步main并保留全部未提交工作。本轮六名实际gpt-6.1-sol ultra研究员（含一名子分支）分别研究动态费用、Mpath、可信最小续局矩阵、真实off-history归纳、联合rank与独立一般证明；root直接承担一般全局推导。只研究原模型的全部输入，未提升Q-CAG-HALF状态。
+
+恢复的实质材料包括[逐world联合正查询的R-only投影](round4/credible/adaptive_hall_projection.md)、[联合Hall独立重构](round4/mixed/rankwise_joint_hall.md)、[精确audit](round4/mixed/audit_joint_rank.py)及两份冻结输出。投影保留随机图和均值固定图的区别，只归约正查询费用，不证明费用上界。

@@ -15,8 +15,12 @@
 | 路径 | 准确内容及状态 |
 |---|---|
 | [GENERAL_WORKING.md](GENERAL_WORKING.md) | root 维护的一般承重义务、查重/撤回与阶段停止点；未闭合部分明确带问号。 |
+| [CLAIMS.md](CLAIMS.md) | 本轮四项命题的精确身份、域、假设、状态、证据、异议及原目标未变的范围。 |
+| [parent/disjoint_reservation_lift.md](parent/disjoint_reservation_lift.md) | root 的全参数保留主题嵌入证明；direct 独立审查及逐字保留策略证书通过。用于攻击一般安全值归纳中的错误根/非根区分，不是特例福利扩张。 |
+| [security/positive_depth_floor_counterexample.md](security/positive_depth_floor_counterexample.md) | 新正深度个体安全值失败：原总人数安全值仍严格高于第二人利润，全部有序历史与静态原始/对偶已获两路独立精确检查。聚合桥和 half 未被否定。 |
+| [parent/occupation_reserve_review.md](parent/occupation_reserve_review.md) | 对 relay 通用整数占用储备的 root 独立重构，明确 V⁺与真实尾利润不同、分数尾不在合同内、另一个 root-reset 未付。 |
 | [independent/minimal_leader_failure.md](independent/minimal_leader_failure.md) | 对前缀嵌入单调 benchmark 的最小 leader 失败归约：每个真实孩子的全部后继过线、不能选根的子主题、根外利润扩张。条件性通用推导，尚未共同支付。 |
-| menu/ | 完整菜单自由混合及其受限选择规则检验。平稳后继规则的候选反例正在独立审查，不否定自由 Mfull/Mpath。 |
+| menu/ | 完整菜单自由混合及其受限选择规则检验。平稳后继规则已被独立核验反例排除；自由 Mfull/Mpath 仍OPEN。另含对新正深度安全值见证的盲审。 |
 | relay/ | 额外一槽对称 pair 的逐客户重置恒等式与准确预算义务；有限检查不承担一般证明。 |
 | direct/、security/ | 真实完整树的逐深度最低利润候选及其有理核验。各历史最低值与原同一路径利润不得混淆。 |
 | credible/ | 任意前缀归纳与 sunk-root reserve；没有将固定祖先收益跨枝替换。 |

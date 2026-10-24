@@ -55,3 +55,13 @@
 - ROW：固定实际位置i、最优m元组，OPT_m−W≤Σ_jV_ij，V是同节点真实偏离收益。比MG更强；一次明确固定锥攻击已完成，同一根税完整策略锥的全部最优四元组/实际位置经精确对偶未得反例，该指定锥的最大标准化违反量为−1/4。此范围不外推一般ROW。见`general_payment/net_gap_handoff.md`、`credible_construction/row_attack.json`。
 - 真正W≥m v_m与较弱足够桥：仍OPEN。`security_aggregate/uniform_background_quadratic_interface.md`是不同外生高背景的辅助展开，不是空根模型支付证明；二次桥与提升条件均未解决。
 - RI-SLACK-IDENTITY：E_r=E_child+2u_A−Δ为已证记账恒等式，不能独自支付总余额。全背景F_r≤2R_r仍比原根目标更强且未证。
+
+## CA-UV-OPTIMAL-CHAIN-EXISTENCE-NO-v1（个人区内部结论）
+
+- Exact statement / quantifiers：对每个m≥4，已知all-big目录（m客户大主题与m−1互不交单例）存在全部有序历史恒选大主题的完整纯SPE；任意最优m元组及其任意排列，来源variation_bridge定义的每个大主题客户V_x=H_m−2>0。因此“每实例每完整SPE存在UV最优链”的一般加强为FALSE。
+- Scope：仅否定该存在性及固定单条链IC非负重权模板；不否定正确条件蕴含、SM-opt-exists、TB、安全值聚合或Q-CAG-HALF。
+- Dependencies / objects：原单位客户共同目录模型，完整SPE定义，来源新UV定义，旧all-big下界族；没有改变客户或玩家权。
+- Evidence：全m解析证明，root和独立研究员重构；m4全部历史、全部最优排列及集合值BI独立精确回归。
+- Counterevidence / objections：当前未见未处理致命异议；固定单条链限制不得扩大成全树方法不可能。
+- Status：完整个人区解析反例、内部交叉核验；未外审、新颖性未认证，不自动成为共享canonical。
+- Related files：direction_review/continuation_general_scope/uv_chain_obstruction.md、uv_all_big_audit.py及JSON。

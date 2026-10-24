@@ -1,5 +1,7 @@
 # 当前前沿：不能压掉真实孩子内部激励
 
+最新轮：[round4一般工作稿](round4/GENERAL_PROOF_WORKING.md)。MIN-PI已被独立完整SPE反驳，停止此势路线。新Beta随机路由、I精确信用、world适应取消及动态rank仍缺同role多query共同费用。half保持OPEN；固定delta、A/B库存、随机source和原IC适用域不可混用。
+
 Q-CAG-HALF保持OPEN。恢复以main实际文件为准，旧Boss10机制和同行最新审查已纳入。本轮没有一般证明、真正反例或新颖性认证。
 
 ## 真实新增认识
