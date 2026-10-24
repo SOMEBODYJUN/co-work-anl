@@ -158,3 +158,14 @@ independent v2/v3在同一固定packet改变已证允许的初始化/共同边�
 - **B10-ARBITRARY-BACKGROUND-PUSHFORWARD-NO-v1**：任意合法背景全称版本WP、SELF及完整真实菜单Mfull≤u均已被旧round5 PB构造否定；此是旧证据直接后果，非新游戏。空背景SELF另早有旧34客户反例，本轮单位客户独立重放；空背景弱WP/自由Mfull及actual-prefix专用桥仍OPEN。正文[域纠正](round9/parent/background_pushforward_status_correction.md)、[旧SELF恢复](round9/credible/root_covariance_and_background_domains.md)。
 
 Q-CAG-HALF仍OPEN；扩张ROLE、弱K≤(1+1/m)W、根实际全路径聚合支付均未证。本轮所有新项没有外审和新颖性认证。
+
+
+## 第十轮精确状态：原目标仍OPEN
+
+- **B10-STRONG-ADJACENT-WALLET-NO-v1（proved counterexample, internally checked）**：原模型完整SPE不保证Σ_i max_T u_i(T,Z_−i)−W≤C_adj，亦不保证每个最优指派可由同一C_adj支付。10单位客户m3实例W9、OPT10、冻结regret2、C_adj1；全部21有序历史已分别独立核查。先有巨大m5原型，后有exchange独立紧凑构造，均保留原证据。[自足正文](round10/exchange/compact_adjacent_wallet_counterexample.md)。这是辅助桥反例，非HALF反例。
+- **B10-OPTIMAL-ADJACENT-WALLET-NO-v1（complete analytic family, internally checked）**：每m≥2有单位客户共同目录完整SPE，W=m²、OPT=m²+m−1，唯一最优支持，C_adj1，所有最优元组/排列的最小冻结Q满足Q−W=(m−4)/2。故存在最优元组+指派的C_adj桥从m≥7起失败；任意固定α倍同样失败。tree/netglobal盲合同独立推导通过；有限count-prefixQA只核实现，不证明全m。[正文](round10/parent/optimal_assignment_adjacent_wallet_counterfamily.md)。不否定较宽旧弱K≤(1+1/m)W或half；m5单族过线不能作一般定理。
+- **B10-ALPHA-ONE-ACTUAL-TAX-RECOVERY-v1（old evidence consequence）**：旧13人实例同一actual表给α1实际负载银行与common-query frozen总价两桥均正差37/66；已核准确槽数/实际c分布。是旧refined-tax后果，不认领新反例。[算术与原来源](round10/security/old13_alpha_one_tax_arithmetic.md)。只否定全部查询加强，真正安全最优查询/有利最优指派仍未被该证据否定。
+
+本轮静态终端吸收、arrival rent、退款重组只是准确等式/组件，未给早期共同付款；不提升Q-CAG-HALF或一般五人half状态。所有新项外审/新颖性未认证。
+
+- **B10-ROOT-STANDALONE-ROW-HELPER-NO-v1（exact complete-SPE counterexample, internally checked）**：即使q=m，root query row≥O−max|S|也不普遍成立。m6、10单位客户、6不交主题大小(3,3,1,1,1,1)，完整BI策略W6、OPT10、root row6、maxsize3。root/direct两套独立实现核全部9331有序节点/55986含自身IC，净ROW及HALF均未失败。也否定W≥OPT−max|S|的简单加性加强。[原始定义/证据](round10/parent/root_standalone_row_helper_counterexample.md)。有限完整证书用于反驳全称加强，不作一般正面证据。无新游戏结构新颖性声明。

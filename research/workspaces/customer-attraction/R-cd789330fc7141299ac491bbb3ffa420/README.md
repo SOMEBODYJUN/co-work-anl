@@ -1,5 +1,7 @@
 # Boss10：共享遗漏、完整可信性和低尾信用
 
+**第十轮最新：一般目标仍 OPEN。** 六名直属指定研究员与root直接一般研究；已证明全人数族否定相邻钱包的existential最优指派桥，连固定倍数也不够；不是half反例。较宽弱K、净ROW、真实最优查询与共同ROLE仍未付。见[第十轮总稿](round10/GENERAL_PROOF_WORKING.md)。
+
 **第九轮最新：一般目标仍 OPEN。** 六名实际指定研究员与 root 已完成本轮一般论证与交叉检查；新末对调和付款、可变所有权与客户保留后继重分配已保存，但早期冻结税和共同 ROLE 仍未付。先读 [第九轮总稿](round9/GENERAL_PROOF_WORKING.md)。
 
 **第八轮最新：一般目标仍OPEN。** 加强初始化后，同客户传播在全部非实际context密度≤1，未来wholeIC与客户身份可同时保留；共同边选择族也合法。仍缺同角色全部历史/主题的共同总付款。强FOMA已恢复旧反例并纠正上轮OPEN标签。接续见 [第八轮工作稿](round8/GENERAL_PROOF_WORKING.md)。
