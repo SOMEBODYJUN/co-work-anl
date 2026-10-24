@@ -12,6 +12,8 @@
 
 继续一般论证时，可读[本轮两项全输入个人区组件](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/README.md)：真实尾主题菜单外静态损失的联合上界，以及实际倒二位置对任意比较主题组的真实查询行。两项已有逐客户内部重构，但仍未支付早期玩家的真实枝重置，未闭合主目标；各自准确范围、证明及五人压力限制在原文。
 
+同一入口另记录[实际根删中间位上向修复障碍](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/actual_root_deletion_upward_repair_obstruction.md)与[三人尾部去相关无符号返还](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/three_remaining_decorrelation_residual.md)；它们分别限制regret唯一付费和单末位去相关的直接递推，均不否定half。
+
 **当前主攻 Q-CAG-HALF：一般目录、任意人数、每个完整历史纯 SPE 的半覆盖；仍 OPEN。** 模型为有限单位客户、有限非空共同主题目录、单位权提供者依次观察全部有序历史选主题，最终客户价值在覆盖者间均分。全部历史依赖平局、重复选择、空主题和零客户均保留。
 
 2026-10-24 阶段性一般接口见 Boss9 个人区：偏离份额的全范围关系与 L4 同枝继承在 [`route5a/sequential_deviation_share_lemma.md`](../../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/route5a/sequential_deviation_share_lemma.md)，节点级跨枝福利/调和势中继在 [`cross_branch_welfare_relay_identity.md`](../../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/representation/cross_branch_welfare_relay_identity.md)。静态 smoothness→SPE 的精确障碍和 pair-incidence LP 的精确障碍也已在该个人区登记；它们均不改变主命题的 OPEN 状态。

@@ -2,6 +2,7 @@
 
 2026-10-24。唯一主目标 Q-CAG-HALF 保持原模型和全部量词，仍 OPEN。
 
+- [三人尾部去相关的无符号返还](three_remaining_decorrelation_residual.md)：全输入势恒等式将两条真实后继IC与删除中间行动的返还差分开；旧34客户完整SPE使返还亏损压过全部IC。只否定这一去相关非负加强，早期真实ROW及原half仍开放。
 - [真实根删中间位的向上修复障碍](actual_root_deletion_upward_repair_obstruction.md)：复用已有完整SPE族，解析证明删第二位后的回放 regret 总和趋零，而所有真实删后SPE福利必须高于回放一个客户。只否定用绝对倍数 regret 支付向上修复的合同；保留利润、退款或最优边际的归纳仍待研究。
 - [任意人数的实际倒二真实查询行](penultimate_true_query_row.md)：对任意比较元组的联合覆盖O，在原完整SPE实际倒二位置，真实偏离收益之和至少O−W。全输入解析、独立逐客户内审；早期多后继查询行仍未支付，不能据此宣称一般half。
 - [真实尾主题的菜单外损失上界](offspring_menu_loss_bound.md)：对任何最优首动作A，真实尾主题的原背景首动作损失总量至多(r−1)(|t_A|+η_A)。全输入解析且无需SPE IC；独立逐客户内审通过。真实重置叶差仍待支付，不宣称 half。
