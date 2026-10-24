@@ -4,6 +4,16 @@ Q-CAG-HALF 仍 OPEN。原任意人数、任意有限共同目录、每个完整�
 
 父方工作稿见 [MAIN_PROOF_WORKING](MAIN_PROOF_WORKING.md)，准确身份见 [CLAIMS](CLAIMS.md)。本轮复用六名指定 gpt-6.1-sol ultra 分支；只研究一般证明、真正适用于全输入的组件或精确一般候选的反例。
 
-目前有可核验的一般 LAST 比较推论：保留实际末位真实最佳回应给出的税余量，得到 OPT_m≤mL+W−u_m/2，并可继续扣非负余项。这里 L 是实际末位前缀的完整额外槽零和菜单值。**付款 mL≤W+u_m/2 未证**，因而没有推出 half 或新的无条件福利常数。
+一般 LAST 比较推论 OPT_m≤mL+W−u_m/2 仍正确；但其付款、甚至重新优化所有列的精确税付款均已被本轮完整 SPE 否定。下列反例实际覆盖全部客户，不能写成 half 反例。
+
+| 资产 | 真实范围 |
+| --- | --- |
+| [全参数 P 池控制器](construction/padded_core_last_budget_counterexample.md) | 任意 k≥1，原模型全历史 SPE，W=OPT；弱 LAST 对 k≥12 失败 |
+| [全列精确税分离](security/last_menu_retained_tax_failure.md) | 对任意列 Q 重新优化也不救回该助手；k≥22 失败，静态比较本身正确 |
+| [capacity 内审](capacity/padded_core_controller_review.md)、[root 独立重构](root/core_controller_independent_review.md) | 分别重构全部历史/全部动作，root 另从原始块写 Fraction 检查；无外审或新颖性认证 |
+| [私有别名转移](menu/private_alias_aggregate_transfer.md)、[内审](security/independent_review_private_alias_transfer.md) | 一般强聚合 δ 缺陷若存在可保留；没有缺陷种子，弱桥/ADM 不自动保留 |
+| [对齐删除边际预算](induction/aligned_deletion_social_marginal.md)、[内审](direct/review_aligned_deletion_social_marginal.md) | 实际前缀共同查询行的一份社会边际预算；物理可信修复与覆盖分解仍未证 |
+
+上述成熟组件均区分解析证明、有限检查、内部审查和未认证的新颖性。当前没有新无条件福利界或原目标反例。LAST 路线关闭后转向全局额外槽个体门槛/全位置菜单及真正共同付款，不再扩展同一末位实例。
 
 上一轮 [共享前缀 cap 回收](../round4_general/menu/shared_prefix_cap_salvage.md)继续有效，但尚未生产低插入且总预算受控的可信端点。纯 SC、all-p 付款和任意背景局部 δ 反例保留原范围，不重复试算。

@@ -16,7 +16,7 @@ HERE = Path(__file__).resolve().parent
 
 
 def audit(k):
-    assert k >= 6
+    assert k >= 1
     m, K = k+3, 6
     blocks = [(frozenset([0]),3), (frozenset([1]),4),
               (frozenset([2,3]),6), (frozenset([2,4]),6),
@@ -81,16 +81,13 @@ def audit(k):
             assert q[5]==k and len(h)<3
             return 0 if not h else good_second[h[0]] if len(h)==1 else good_third[h[0]][h[1]]
         if kind=="B":
+            assert mode[1] in {1,2,3,4}
             check_prefix(q,(mode[1],))
             assert m-sum(q)>=2
             return main_second[mode[1]]
         if kind=="C":
             check_prefix(q,mode[1])
             return mode[2]
-        if kind=="F":
-            check_prefix(q,(0,2))
-            assert m-sum(q)>=2
-            return 2
         if kind=="S":
             # Every nonterminal saturated mode has the advertised raw core cap.
             assert all(payoff(add(q,a),a)<=5*denominator for a in range(5))
@@ -101,27 +98,25 @@ def audit(k):
         kind=mode[0]
         remaining=m-sum(q)
         if kind=="N":
-            return ("N",) if a==5 and q[5]+1<k else ("G",()) if a==5 else ("B",a)
+            if a==5:
+                return ("N",) if q[5]+1<k else ("G",())
+            return None if a==0 else ("B",a)
         if kind=="G":
             return None if a==5 else ("G",mode[1]+(a,))
         if kind=="S":
             return mode if a==5 else None
-        if kind in {"B","C","F"} and a==5:
-            needed=2 if kind in {"B","F"} else 1
+        if kind in {"B","C"} and a==5:
+            needed=2 if kind=="B" else 1
             return mode if remaining>needed else None
         if kind=="C":
             return ("S",) if a==mode[2] else None
-        if kind=="F":
-            return ("C",(0,2,2),1) if a==2 else None
         if kind=="B":
             T=mode[1]
             if a==main_second[T]:
                 return ("C",(T,a),main_third[T])
             if payoff(add(q,a),a)<=main_second_payoff[T]*denominator:
                 return None
-            if (T,a)==(0,2):
-                return ("F",) if remaining>=3 else ("C",(0,2),2)
-            if (T,a) in {(0,4),(2,4),(3,2),(4,3)}:
+            if (T,a) in {(2,4),(3,2),(4,3)}:
                 return ("C",(T,a),2)
             raise AssertionError((q,mode,a))
         raise AssertionError((q,mode,a))
@@ -170,7 +165,7 @@ def audit(k):
     value=F(6)
     gap=m*value-W-payoffs[-1]/2
     assert gap==k-11
-    report={"status":"PASS", "scope":"One exact parameter audit of the all-k>=6 full-history controller; weak LAST budget only, not half.",
+    report={"status":"PASS", "scope":"One exact parameter audit of the all-k>=1 full-history controller; weak LAST budget only, not half.",
             "k":k,"players":m,"topics":K,"unit_clients":len(units),
             "bi_exit_rule":"Permanent deterministic complete backward-induction policy on topic counts; first maximizing action wins ties.",
             "finite_automaton_completeness":"Every controller/BI decision has all six transitions; every transition increments exactly its observed topic count; each ordered history has one deterministic mode run ending at depth m.",

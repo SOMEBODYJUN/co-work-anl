@@ -1,6 +1,6 @@
 # 当前前沿与本轮停止点
 
-第五次一般接续见 [round5_general/MAIN_PROOF_WORKING.md](round5_general/MAIN_PROOF_WORKING.md)。保留实际末位税余量得到全输入比较 OPT_m≤mL+W−u_m/2；LAST 的相应更弱付款仍 OPEN，没有由它获得新无条件福利界。SC 保税、前缀交换、来源重撤与删除耦合继续区分一般代数、真正 IC 和未证共同付款；其余各轮资产保持原准确范围。
+第五次一般接续见 [round5_general/MAIN_PROOF_WORKING.md](round5_general/MAIN_PROOF_WORKING.md)。静态比较 OPT_m≤mL+W−u_m/2 正确，但 LAST、更弱付款及自由全列精确税助手均已被本轮 P 池完整 SPE 族否定；所有有序历史由一般控制器证明并经两路独立解析复核，数值审计只作回归。反例 W=OPT，且 v_m、δ_m≤5、W−5m=8，没有目标或真正安全值聚合反例。新对齐删除社会边际预算、私有别名强聚合转移已内部检查，仍无物理可信修复或覆盖证书。路线转回更早菜单/全局额外槽门槛，未新增无条件福利界。
 
 第四次一般接续见 [round4_general/MAIN_PROOF_WORKING.md](round4_general/MAIN_PROOF_WORKING.md) 与 [精确身份](round4_general/CLAIMS.md)。没有新无条件一般福利界或目标反例。新全输入 cap 回收引理把“某个前缀角色不改善”转成 ADM 总并集成员，独立内部拼合检查通过；仍未生产低插入且预算受控的端点。共同平均负载的混合自洽查询存在，但付款未证；纯点存在已被 16 客户完整 SPE 否定且该例所有混合查询仍支付。另精确关闭任意背景的 FF-LEADER/局部 δ 链与 pooled all-p 付款，均不否定根聚合或 half。六名指定研究员的实际推导、独立审查及原始有限范围从本轮地图恢复，不重复认领前轮资产。
 
