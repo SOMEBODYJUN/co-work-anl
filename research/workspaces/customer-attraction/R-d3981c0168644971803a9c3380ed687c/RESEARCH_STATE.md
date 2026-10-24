@@ -1,5 +1,7 @@
 # 当前前沿与本轮停止点
 
+第四次一般接续正在 [round4_general/MAIN_PROOF_WORKING.md](round4_general/MAIN_PROOF_WORKING.md) 研究。没有新无条件一般福利界或目标反例；共同平均负载的自洽查询存在性不含付款，真正 cap 尚未证明。六名指定研究员与父方分别直接攻击最优安全查询、菜单、共同容量、合法背景归纳和原模型构造；此前结果和失败范围不重复认领。
+
 最新第三次接续见 [round3_general/MAIN_PROOF_WORKING.md](round3_general/MAIN_PROOF_WORKING.md)。**没有新的全输入福利下界或目标反例。** 本轮完整35客户反例否定复制半利润与早晚whole-profit二倍比；完整817客户反例否定all-p平均负载Jensen总付款，且独立证书明确坏p非最优、真聚合与half仍成立。均经独立内部核查，未外审或认证新颖性。新尝试STATIC-2仍OPEN；源共同容量、ADM和真正安全值聚合没有闭合。下文保留前轮状态，不能重复算新进展。
 
 首次保存后实际吸收同行round8 NEW-CAP/全图客户密度与共同付款primal，并让两条原分支继续攻真实角色累计。该新核已解决客户身份保持及每context一次wholeIC的合法性，不再列作缺口；同action汇总又已去重为旧捕获流。仍缺不同action共同费用与同一2u角色余额的关系；价格切分的常数价格项仍是half本身。两分支和root没有新增cross-action付款，见本轮主稿§6。
