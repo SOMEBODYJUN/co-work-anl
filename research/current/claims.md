@@ -1495,3 +1495,5 @@ The new potential interleaves threshold-clipped site-load vectors and home-retur
 - 所有“上界”都量化到每个满足输入条件的实例；有限运行不是其证明。“下界”要求明确属于同一个实例类，且量词是对每个更小因子存在反例。
 - EXACT-KAPPA、MITM-EXACT 返回特定实例的最优因子；SC-PHI-A、HC-2-UP 返回符合普遍上界的一个因子。不能从一个短的达到证书推断它已达到实例最优。
 - 保留历史稿中的推导供追溯，但以[现行分支](README.md)的命题条件为准。修改条件时新建 ID 或明确版本，不覆写旧 ID 的含义。
+
+| `CA-INCIDENCE-LP-DYNAMIC-BUDGET-v1` | CAG-MODEL；任意人数、任意有限共同目录及全部有序历史纯SPE。按目录主题归属到包含极大主题，客户按极大主题关联类型分块。 | 候选全范围引理：关联覆盖 LP 的后缀包络给出 `W >= c + (U-c) sum_t 1/E_t`。若极大关联分数覆盖数 `tau_inc <= 2`，则得到半覆盖；一般高密度关联时该接口仍不足。 | [关联 LP 动态预算](customer_attraction/incidence_lp_dynamic_budget.md)；完整解析候选，内部清洗待做，外审/新颖性未认证。失败只否定证书模板，不否定 Q-CAG-HALF。 |
