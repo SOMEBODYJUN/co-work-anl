@@ -15,8 +15,17 @@
 - [连续分数背景的旧构造推论](potential_dual/fractional_background_floor_corollary.md)：旧PB-extra的Jensen下界覆盖全部分数竞争背景；不是新反例族。
 - [根连续安全值笔记](potential_dual/root_fractional_capacity_notes.md)：精确对偶与未付义务，未称新福利界。
 - [父方复核](parent/stage_one_review.md)、[独立算术](parent/audit_fractional_background.py) / [输出](parent/audit_fractional_background.json)。
+- [聚合自由列候选AFC](aggregate_security/aggregate_free_column_candidate.md)：各位置独立重选真实菜单的竞争列，再共同支付查询；仍OPEN。固定策略的精确证书不推广为一般结论。
+- [父方一般势余额](parent/free_column_balance.md)：精确分离当前IC松弛与无符号跨势项；[独立重构代码](parent/audit_free_column_certificate.py) / [输出](parent/audit_free_column_certificate.json)。
+- [匿名势推广反例](fresh_analytic/anonymous_potential_boundary.md)：全部边际非负、势单调仍不能保证聚合安全；不是CAG或half反例。[父方独立全历史核验](parent/audit_anonymous_potential.py) / [输出](parent/audit_anonymous_potential.json)。
+- [完整历史菜单包络](fresh_menu_attack/contract.md)：只为精确攻击AFC的通用有限oracle；[实现](fresh_menu_attack/full_menu.py)和[独立穷举核验](fresh_menu_attack/verify_oracle.py)，七项空零/平局边界回放一致，不作一般正证据。
+- [旧pair/reservoir源的全参数停止证明](credible_construction/pair_reservoir_candidate_stop.md)、[新研究员盲审](fresh_credible_review/blind_review.md)：真实可信缺陷成本超过原坏差额，排除该来源所有k，不扩大成任意修补成本下界。
+- [份额删除尝试及准确反例](independent/general_reconstruction.md)、[父方精确重放](parent/audit_share_deletion.py) / [输出](parent/audit_share_deletion.json)：静态收益保持并不保SPE或平均最坏福利闭包。
+- [第二阶段独立审查范围](parent/stage_two_review.md)：记录哪些证明先盲重构、哪些只是有限证书、哪些仍未证，避免将核验当普遍付款。
 
 其他分支按需在各自目录保存实质内容；单锥阴性不计一般正证据。真正缺口仍是同一完整策略的跨历史共同资金，或超过可信修复成本的真正坏路径。逐边修复在常价格方向仍要求原总量 OPT≤2W。
+
+本轮首批六人之后实际补入四名新研究员；父方未读稿重构成熟候选并另写核验器。各分支已在实际推导边界交接，没有一般证明或目标反例，不承诺后台常驻。下一次若继续AFC，应真正使用递减份额结构构造全树循环付款，或用完整菜单包络找到有理完整SPE反例；不继续同策略/参数阴性扩样。
 
 ## 交流与状态
 
