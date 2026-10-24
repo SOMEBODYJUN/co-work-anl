@@ -5,6 +5,7 @@ from fractions import Fraction as F
 from itertools import product
 import json
 from pathlib import Path
+import sys
 
 
 def encode(value):
@@ -165,6 +166,10 @@ def fixtures():
 
 def main():
     output = {"status": "exact_implementation_audit_only", "scope": "identities and full IC of named fixtures; not a general proof",
+              "reproduction": {"python": sys.version, "arithmetic": "fractions.Fraction; exact rational comparisons",
+                               "randomness": "none; exhaustive deterministic loops; no seed",
+                               "scalar_m_range": [1, 12], "all_big_regression_m_range": [1, 6],
+                               "error_control": "every identity is tested by exact equality; every IC by exact ordering"},
               "scalar": scalar_checks(), "games": [audit_game(game, menus) for game, menus in fixtures()],
               "five_player_beta_by_position": [F(5, (6 - i) * i) for i in range(1, 6)]}
     target = Path(__file__).with_suffix(".json")
