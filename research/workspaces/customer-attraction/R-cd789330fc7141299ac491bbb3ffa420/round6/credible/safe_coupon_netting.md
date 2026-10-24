@@ -89,3 +89,22 @@ relay另提出[仅 fresh 利润归一化](../relay/fresh_profit_normalization.md
 于是0≤Y_t+N+e_t≤u_i，可用同一SAFE方法全部从当前actual整行安全退，净券为beta(D_F−N)/u_i，无past出口或正X项。§3的标量剪枝也可将out裁至(nu−u_i)_+。
 
 这项变体beta=h/nu一般更大，不保证费用或load下降，也不证明half；它只在源及传播均为fresh利润时合法。不能将包含C源的初始化直接塞进仅fresh图。该变体由relay写自足稿，本节仅记录已独立核对的接合。
+
+## 6. 同 actual 角色 pooling 与全 O 源的 cap2 充分性
+
+本节由 root 独立重构确认。past 正金额 z 的标签(j,x)首先用于验证它属于原实际角色 j 的真实利润域：x∈S_j(Z)，所以 z>0 蕴含 u_j>0。验证后，可将这笔正金额在**同一个 actual 角色 j**内按原实际份额比例分摊，给每个 y∈S_j 的券系数 z/u_j，总额仍为
+
+    Σ_(y∈S_j) (z/u_j)/c_Z(y)=z。
+
+这只是实际钱包内的资金分配，不调用过去玩家的 IC，不把 A 中改枝后的过去利润当作规定叶利润，也不把款项转到另一角色。负 q^- 仍只能按 SAFE 在其原 context 当前行处理，不能借 pooling 跨角色假退款。
+
+对全 O owner 初始化，每个最优客户的一单位在其合法 owner query 的全部真实 coverer 间均分：current/past 进入相应 actual 支付，future 进入合法 natural context。将这些初始支付与全客户 DAG 净化后的全部正终端金额合计为 A_j。质量守恒给
+
+    |O|=Σ_j A_j，    A_j≥0。
+
+角色 j 的所有正金额可以统一 pooling，券系数为 A_j/u_j；u_j=0 时其合法正支付必为0，取系数0。因此一般 half 的一个足够目标是
+
+    A_j≤2u_j  对每个 j，
+    从而 OPT_m=|O|≤2Σ_j u_j=2W。               (ROLE-CAP2?)
+
+固定每个 past 金额必须占原 x 券的 cap 是更强接口；对 HALF，同角色净金额的 cap2 已足够。**ROLE-CAP2 尚未证明。** 本节全 O 源使用全客户图，不能把含 I 的来源直接塞进§5仅 fresh 的归一化图。
