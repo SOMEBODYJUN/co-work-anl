@@ -88,8 +88,24 @@ E_j=\Phi_b(Z_{j-1}\setminus j)-\Phi_b(Z_j\setminus j).
 \sum_i C_i-W=-\sum_i(e_i+R_i+J_i).
 \]
 
-所以全输入候选 ΣᵢRᵢ+ΣᵢJᵢ+Σᵢeᵢ≥0 将支付同分布推送菜单；后者又充分支付自由完整路径菜单。但这比自由菜单所需更强，因为还没有使用自由选列收益 Lᵢ=Cᵢ−min_A Kᵢ(p,A)≥0，也没有允许各位置非均匀混合。不能因等价展开(RESET)而称该候选已经推进或闭合。
+这里必须在全部位置使用同一个 p。若对每个 p 都证明 ΣᵢRᵢ+ΣᵢJᵢ+Σᵢeᵢ≥0，将支付同分布推送菜单；后者又充分支付自由完整路径菜单。若只求半覆盖，一个额外槽静态安全最优 p 满足此式也足够，因为每个 Cᵢ(p)≥vₘ₊₁(0)，故 W≥m vₘ₊₁(0)≥OPTₘ/2。但这些量词均未证明。
+
+全 p 推送预算比自由菜单所需更强，因为还没有使用自由选列收益 Lᵢ=Cᵢ−min_A Kᵢ(p,A)≥0，也没有允许各位置非均匀混合。不能因等价展开(RESET)而称该候选已经推进或闭合。
 
 当前待判别：全部真实 Γ 是否足以共同支付负的删位重置；或完整 SPE 能否反驳这一加强候选，从而证明必须保留自由选列信用。本轮 covariance 分支负责这个明确加强的攻击，root 不做无目标有限扩样。
+
+## 5. 复用已有完整见证划清界线
+
+旧共享 `individual_security_counterexample.md` 的34客户、三人完整 SPE 已经否定 R≥0：在其根使用唯一三人静态安全最优分布 p*=(10,10,21,10,10,21)/82，旧已证数值 D=29/3、C⁻=2411/246 给
+
+\[
+R=-11/82<0.
+\]
+
+本轮只是按(POT)重算同一个已有见证，额外槽折扣为 J=40571/20172，C=52377/6724，因而 D−C=37865/20172>0。这不是新反例，也没有否定推送总预算；它证明即使全部真实后继均为 SPE，也不能单独要求后继联合势后悔非负。复算脚本 `root_potential_regression.py` 从共享原实例读取整数重数，重新核对全部43历史，记录精确输入 SHA-256，不依赖优化器。
+
+本轮 covariance 分支另给四客户完整 SPE 与无平局七客户版本，严格否定逐客户 H⁰≤H¹ 及逐客户 Cₓ≤Dₓ。四客户实例经独立研究员先自行重构全部决策后审查，root 已重放两份独立 Fraction 程序并手核七客户严格比较。其总预算仍成立，因此不能把逐客户失败外推为一般 half 或自由菜单失败。正文见 `covariance/customerwise_covariance_boundary.md`，独审见 `independent_audit/review_covariance_tiny.md`。
+
+POT/RESET 的一般代数已有独立重构，见 `independent_audit/review_potential_reset_identities.md`。这些审查只确认身份和代数，不填补剩余跨客户/跨子树支付。
 
 继承入口：旧 boss20 的 `route_mpath/dynamic_query_debt_identity.md`、`route_flow/dual_owner_budget.md`、`clean_audit/owner_theta_audit.md`；共享一般工作稿 `research/current/customer_attraction/general_half_proof.md`。本文没有把旧资产、表示改写或文件保存计作一般证明的新闭合步骤。

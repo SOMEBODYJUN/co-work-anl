@@ -17,3 +17,12 @@ Q-CAG-HALF仍OPEN；原模型、全部有序历史和任意人数/目录不变�
 [全客户图](../round5/credible/all_fresh_submarkov_elimination.md)的past边只可送actual券，不能调用含未来强制query的过去角色IC。基础式[root核对](../round5/parent/review_broadcast.md)通过；全局容量仍缺。
 
 [私有退出正规形](../round4/global/direct_floor_and_exit_working.md)及[root核对](../round4/parent/review_private_exit_reduction.md)保留：只正规化全前缀FLOOR坏例，不控制新实例实际福利，不是half坏例正规形。
+
+
+## 本轮经过独立复核的全图角色约束
+
+relay从SAFE净券Markov图证明：k角色集K、源当前角色在K外时，最终净券落K比例≤k/(k+1)；包含合法owner INIT后A(K)≤M(K)+k/(k+1)M(K外)。该界跨全部context、客户和来源，不只单节点HIT。credible/root独立重构，正文由relay保存。
+
+root另外给[uniform-subset行与角色价格包络](parent/role_price_envelope.md)：每个recipient原价≤净current吸收，故行是包含current的均匀子集分布混合；HIT层积分给任意非负角色价。它是上述约束的推论，不另算福利关系。恒价格只能得M≤M，仍不能推出A_j≤u_j或客户券cap1。
+
+已复核材料与范围：[root解析及精确回归](parent/README.md)、[global可信换位](global/README.md)、[mixed独审](mixed/README.md)、[credible净化](credible/README.md)、[relay新核](relay/README.md)、[shared独审](shared/README.md)。tail的一般PB探索按实际稿保存，尚未证明PB。没有外审/新颖性认证。

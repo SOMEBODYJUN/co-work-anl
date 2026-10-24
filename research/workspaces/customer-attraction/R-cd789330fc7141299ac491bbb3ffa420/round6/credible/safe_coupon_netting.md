@@ -82,7 +82,7 @@ beta'不增不代表净kappa'比§2原kappa小：减正边又减退款可能把�
 
 ## 5. 仅 fresh 利润分母的适用范围
 
-relay另提出取nu_t=v_t(N\C)，仅传播fresh正边。逐客户LOSS给nu−P=J+L>0，正后继具有fresh利润，故严格角色DAG闭合。若Y_t为actual-reset query在C上的利润，则
+relay另提出[仅 fresh 利润归一化](../relay/fresh_profit_normalization.md)，取nu_t=v_t(N\C)，仅传播fresh正边。逐客户LOSS给nu−P=J+L>0，正后继具有fresh利润，故严格角色DAG闭合。若Y_t为actual-reset query在C上的利润，则
 
     nu−P=D_F−N=u_i−Y_t−N−e_t。
 

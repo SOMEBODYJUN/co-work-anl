@@ -124,7 +124,7 @@
 | [顺序客户吸引全部共享成果的精确总账](<customer_attraction/RESULTS_LEDGER.md>) | `research/customer_attraction/RESULTS_LEDGER.md` | 逐份区分全范围组件、条件定理、开放候选、表示工具与桥梁反例，保留真实审查等级。 | 精确命题登记；摘要不替代原陈述 |
 | [一般半覆盖的现有论证衔接与存量成果归并](<customer_attraction/SYNTHESIS.md>) | `research/customer_attraction/SYNTHESIS.md` | 把既有一般关系连成连续论证，说明特殊范围资产的保留位置以及真正尚未闭合的承重步骤。 | 阅读导航；真值查精确正文及账本 |
 | [全部顺序客户吸引个人区成果恢复总索引](<customer_attraction/WORKSPACE_RESULTS.md>) | `research/customer_attraction/WORKSPACE_RESULTS.md` | 按实际Git快照清点全部个人资产并给出恢复导航，区分入口阅读与未复审正文。 | 阅读导航；真值查精确正文及账本 |
-| [一般半覆盖证明工作稿：通用关系与未闭合步骤](<current/customer_attraction/general_half_proof.md>) | `research/current/customer_attraction/general_half_proof.md` | 自足衔接任意人数任意目录的既有关系和精确充分候选，逐式标明未证动态支付而不宣称目标完成。 | 数学正文；按关联命题分别核对证明及审查；关联 `Q-CAG-HALF`，[命题合同](assets.json) |
+| [一般半覆盖证明工作稿：通用关系与未闭合步骤](<current/customer_attraction/general_half_proof.md>) | `research/current/customer_attraction/general_half_proof.md` | 自足衔接任意人数任意目录的既有关系和精确充分候选，逐式标明未证动态支付而不宣称目标完成。 | 数学正文；按关联命题分别核对证明及审查；关联 `CA-PREFIX-COUPLED-SEAT-BUDGET-v1`、`Q-CAG-HALF`，[命题合同](assets.json) |
 
 <a id="unrelated_machines"></a>
 
@@ -2710,6 +2710,7 @@
 | [无拥挤均衡趋三分之二覆盖族的独立归纳审查](<reviews/customer_attraction/collision_free_three_halves_family.md>) | `research/reviews/customer_attraction/collision_free_three_halves_family.md` | 独立检查多旧A归纳域、fresh B偏离、末节点最佳反应及全部有序子树粘合，区分存在与每个SPE。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-ACTUAL-ROOT-TAIL-MENU-NO`、`CA-ADAPTIVE-DECORRELATION-NO`、`CA-ADAPTIVE-TYPE-SPARSIFICATION`，[命题合同（共 77 项）](assets.json) |
 | [真实末两人菜单及少量早期遗漏定理的独立审查](<reviews/customer_attraction/penultimate_menu_half.md>) | `research/reviews/customer_attraction/penultimate_menu_half.md` | 核对两项条件性half的真实分支比较、零分母约定、全部参数正性和平方阈值，不把有限回归作为一般证明。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-COMMON-PENULTIMATE-HALF-v1`、`CA-PENULTIMATE-FEW-EXCEPTIONS-HALF-v1`，[命题合同](assets.json) |
 | [一般关系工作稿及上一轮资产的独立清洗审查](<reviews/customer_attraction/general_research_curation.md>) | `research/reviews/customer_attraction/general_research_curation.md` | 逐行攻击一般工作稿已证关系并核对来源、缩放、量词与保留状态，明确未复审证书。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-IID-WEAK-WELFARE-NO-v1`、`Q-CAG-HALF`，[命题合同](assets.json) |
+| [冻结真实前缀联合席位预算的解析与数值内部审查](<reviews/customer_attraction/prefix_coupled_seat_budget.md>) | `research/reviews/customer_attraction/prefix_coupled_seat_budget.md` | 区分先盲重构G、后读稿审F及另一路单位客户严格例核验；确认一份W付款而不升级一般half。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-PREFIX-COUPLED-SEAT-BUDGET-v1`，[命题合同](assets.json) |
 
 <a id="publication"></a>
 
