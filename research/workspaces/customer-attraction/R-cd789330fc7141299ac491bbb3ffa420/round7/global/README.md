@@ -9,4 +9,6 @@
 
 本轮另已向 root/credible/transport 传递原 forward reset 图的结构：每个非actual目标自然历史的 first-departure 角色唯一确定其全部原正边 parent 的角色与 action，因此其 incoming 可以按共同 reset query 因式分解。该结构尚未给出 source 密度 cap，不计新的福利不等式。
 
+root 后续给出最优参照逆 SD 的具体两预算初始化；本组 [独立审查](two_budget_initialization_audit.md) 核对定义、符号、真实 W-future 域及逐客户 COORD-CLIP。新初始化可在 PB/current/future 三出口保留每个 OPT 客户总库存一，不使用逐客户 IC。后续 Aout_j≤2u_j−d_j−Bcol_j 仍是未证一般候选；出口时间支持为 j≥源 i，不是严格 >i，也未继承 fresh HIT/PRICE。
+
 下一步是给 SD+合法投影选择同一份非负权，支付 gross excess β(u_i−v) 的联合拥挤债；要控制环、whole-profit 重采样和 source 的互斥性。仅有每边合法、每个局部投影不增密度或有限 LP 无分离都不够。

@@ -119,3 +119,6 @@ PI已被下述完整SPE反例否定；混合弱推送、全树水位信用仍为
 - **B10-REVERSE-SD-KEEP-B-v1**：固定 reference Z 与真 natural context，SD 有 u_i=v+P_B+P_W−N_B−N_W−ell，ell≥0。ROW 给 r=u_i−P_B≥0，可保留全部 B 正边，当前送 min(v,r)≤v，仅 W 正边保留总额(r−v)_+≤P_W，精确非负守恒。方向 actual→off 利润；B 目标域须按 last-forced/query/prescribed 分类合法化。没有 PRICE/HIT、循环吸收或 actual cap。root推导，coupling/global独立解析确认。[正文及root核查](round7/parent/reverse_sd_and_joint_review.md)。
 
 SD/query-projection 是合法表示，完整说明在 global/coupling；COMMON-CAP 的 per-client 交集运输只付同一 B/W 的共同覆盖部分。所有本轮 finite audits 只核定义和明确候选，不证明上述一般定理或 half；一般关系由解析证明承担。内审通过不等于外审，新颖性未认证。主目标始终 OPEN。
+
+- **B10-OPT-COORDINATE-INIT-v1**：每个原实例/完整SPE实际叶B、每个比较m元组T，对 x∈T_i 的份额p_ix=1/cT(x)存在显式非负分解p_ix=P^B_ix+c_ix+Σ_j>i a_ijx，保留原future正边容量；current_i=Σc_ix=min(r_i,u_i)≤u_i，r_ix=p_ix−P^B_ix≥0，future总额(r_i−u_i)_+；所有实际B列Σ_iP^B_i,l≤u_l(B;(O∩B_l)\T_l)。关键一步Σ(r_ix−P^W_ix)_+≤u_i(W_i)≤u_i只在求和后用一次wholeIC，无客户重权。root推导，global/coupling按陈述独立重构通过。库存标签不要求被当前付款actual角色覆盖；与actual客户券不同。[正文](round7/parent/optimal_coordinate_initialization.md)。
+- **B10-OPT-COORDINATE-RESIDUAL-v1**（OPEN充分候选，非上述引理结论）：每个原实例与完整SPE是否存在最优T及允许的坐标剪枝/SAFE或CLIP选择，使仅future源的终端金额Aout_l≤2u_l−current_l−Bcol_l对全部角色同时成立。右边已证非负；若此候选成立则half。没有声称任意固定T/路由满足。真future初始化及严格角色DAG合法，剩余共同容量仍未证。
