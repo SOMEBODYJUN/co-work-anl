@@ -1,5 +1,7 @@
 # Boss10：共享遗漏、完整可信性和低尾信用
 
+**最新第七轮：Q-CAG-HALF 仍 OPEN。** 六名实际 gpt-6.1-sol ultra 与 root 直接接续一般证明；新增同一子枝 prefix 完整利润的共同回推、固定父叶 SD 第一正价的共同 ROW/COLUMN，以及保留该运输的反向核。已分别独立重构，仍未把互斥子树的全部金额共同放入 actual W。接续先读 [第七轮总稿](round7/GENERAL_PROOF_WORKING.md)，其余轮次均保留原真实范围。
+
 **本轮最新：Q-CAG-HALF仍OPEN；任意合法背景PB-extra辅助桥已有完整解析分离及内部独审。传播密度账和全客户券表示仍缺共同预算。先读[第五轮总稿](round5/GENERAL_PROOF_WORKING.md)。**
 最新接续：[round6一般证明工作稿](round6/GENERAL_PROOF_WORKING.md)。同一身份保留round4/5全部未提交资产，六路继续一般证明；SAFE/CLIP、fresh核与可信换位已核，实际信用共同容量未付，half仍OPEN。
 
