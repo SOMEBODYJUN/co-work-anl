@@ -14,11 +14,22 @@ Fix an actual SPE path `S_1,...,S_m`, actual coverage `C`, and a chosen optimal 
 
 more precisely it is `sum_{x in D_j} 1/(1+1_{x\\in B_j})`, plus nonnegative terms. SPE therefore implies
 
-`u_{m-1}(actual) >= sum_{x in D_j} 1/(1+1_{x\\in B_j})`
+`u_{m-1}(actual) >= sum_{x in D_j} 1/(1+1_{x\\in B_j^sigma})`,
 
-for every `j` and every best reply `B_j`. In particular, if some best reply after `T_j` is disjoint from `D_j`, then `u_{m-1} >= |D_j|`; to avoid this, every best reply after each large omitted block must overlap that block. The bank/risk constructions in `R-7c3...` fail exactly here: the last player selects an unused bank or another disjoint risk theme, leaving the deviator's omitted block undiluted.
+where `B_j^sigma` is the particular final action prescribed by the fixed complete
+strategy after the forced history `(h,T_j)`. This is a condition on the selected
+continuation, not on every tied best reply. If all best replies after `T_j` are
+disjoint from `D_j` (in particular, if the best reply is unique and disjoint),
+then `u_{m-1} >= |D_j|`; otherwise a candidate can survive by selecting an
+overlapping tied reply. The bank/risk constructions in `R-7c3...` fail exactly
+because their selected/unique best reply is an unused bank or another disjoint
+risk theme, leaving the deviator's omitted block undiluted.
 
-This criterion is a direct SPE inequality and applies to arbitrary catalogs. It is a useful filter for genuine counterexample search: shared omissions alone are insufficient; all terminal best replies after each large optimum theme must provide real overlap, while preserving low actual welfare.
+This criterion is a direct SPE inequality and applies to arbitrary catalogs. It is
+a useful filter for genuine counterexample search: shared omissions alone are
+insufficient; each selected terminal reply after a large optimum theme must
+provide real overlap (or all tied replies must do so), while preserving low
+actual welfare.
 
 ## Boundary already independently checked
 
