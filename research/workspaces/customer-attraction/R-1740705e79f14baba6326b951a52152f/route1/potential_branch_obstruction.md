@@ -64,3 +64,5 @@ The witness has welfare `W=4` and `OPT_3=4`; it only blocks the implication `SPE
 Any harmonic-potential proof must either (i) pay the signed deletion gaps across several histories so they telescope, or (ii) introduce a different state variable that controls these gaps. A proof that treats each current-action SPE comparison as `\Phi(z_{\sigma})\ge\Phi(z_A)` is false. The usual static exact-potential observation remains valid, but it cannot by itself turn full-history SPE into a potential local maximum.
 
 This file does not alter the status of Q-CAG-HALF; it records a reusable exact identity and a checked mechanism boundary.
+
+The local verifier `verify_potential_branch_obstruction.py` reruns the 43-history/215-deviation certificate check and exact Fraction arithmetic; its output records the two potential gaps as `-1/2`.
