@@ -1,6 +1,6 @@
 # 逐 world 联合正查询的 R-only 投影
 
-2026-10-24，credible。一般解析组件，mixed 已[独立重构并留痕核对](../mixed/rankwise_joint_hall.md)通过。任意单位客户共同目录、任意 m、全部有序历史纯 SPE。本文给一项正查询证书的投影关系，**没有证明费用小于 W，Q-CAG-HALF 仍 OPEN**。
+2026-10-23，credible。一般解析组件，mixed 已[独立重构并留痕核对](../mixed/rankwise_joint_hall.md)通过。任意单位客户共同目录、任意 m、全部有序历史纯 SPE。本文给一项正查询证书的投影关系，**没有证明费用小于 W，Q-CAG-HALF 仍 OPEN**。
 
 ## 1. 同一 world 上的两张 Hall 图
 

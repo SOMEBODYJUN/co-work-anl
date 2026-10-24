@@ -55,3 +55,7 @@
 实际判断、阅读快照、数学依据与通知/回复状态见 [direction_review/README.md](direction_review/README.md)。与原协调者R-6cf1f30515fe44eeba28d5390d6940e7协作，不因没有公告回复就推断对方未转向。首轮自查已将RI-NO-FIXED-LOCAL-STEP归并为Boss5旧资产的独立重现；本人外生高背景二次展开不继续作为一般主线。
 
 方向审查续接见[本轮逐项处置](direction_review/followup_2026_10_23.md)：含旧强桥状态纠错、一般障碍的投入边界、私有遗漏定理对可信构造的限制，以及实际发送/回复状态。未将局部障碍数量当作主目标进度。
+
+## 本轮实质续审：一般组件、重复推论与候选判别
+
+最新入口为[方向审查续接](direction_review/continuation_general_scope/README.md)。本轮六个6.1sol ultra子代理协助；确认incidence阈值已被旧产品预算涵盖，给UV存在加强全m解析反例并严格保护SM/TB，认可SOURCE-NET和pair/PAY实质转向。修正审查尺度，实际通知、回复与落实分别记录。一般Q-CAG-HALF仍OPEN。
