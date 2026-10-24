@@ -1,4 +1,7 @@
-# 第七轮 transport：最优冻结指派的一般候选
+# 第七轮 transport：静态公式与已否定的强指派桥
+
+第八轮纠正：FOMA-EXISTS/ALL已有旧52客户完整反例；初版OPEN标签错误，root独立重放后修正。见 [正文状态更新](frozen_optimal_assignment_working.md)及 [第八轮复核](../../round8/parent/old_assignment_counterexample_replay.json)。静态BONUS/COST/DUAL公式保留，原有限输出不改，不认领新反例。Q-CAG-HALF仍OPEN。
+
 
 Q-CAG-HALF 仍 OPEN；本目录没有新的已证 SPE 福利下界或 actual C 共同容量。
 
