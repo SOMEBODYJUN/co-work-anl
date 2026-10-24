@@ -158,3 +158,7 @@
 JSON的`delta_snapshots[].records`逐个保存49条新增/修订的截止Git blob、SHA-256、字节数、原哈希及恢复入口；`final_snapshot.all_tracked_paths_and_blobs_at_cutoff`列出4130个截止路径和blob。独立复核可对照`git ls-tree -r 5b183a1a -- research/workspaces/customer-attraction`，并用`git show 5b183a1a:<path>`重算每条变动哈希。原`actors`数据不改写。
 
 这些增补包括有独审来源的一般辅助状态与精确停界，均不闭合Q-CAG-HALF。此后只整理本轮导航本身；5b之后的导航输出不纳入既有数学资产数。
+
+## Boss21 后续恢复增补（不改上述冻结盘点统计）
+
+2026-10-24新桌面：[R-2f6cae284faf43fea7a09c0a4fe7c679](../workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/README.md)。已恢复一般目标并保存合法背景平台局部桥反例、任意owner旧INSERT推论及独立审查；新[最优首动作真实孩子缺口关系](../current/customer_attraction/optimal_first_action_branch_gap.md)按准确范围进入共享正文。其ρ跨树总付款尚未证明，Q-CAG-HALF仍OPEN；局部完整SPE、静态floor松弛反例、一般代数关系各自身份见桌面CLAIMS，不能混同。此增补仅路由本轮资产，不声称重新盘点全部个人区或完成外审。
