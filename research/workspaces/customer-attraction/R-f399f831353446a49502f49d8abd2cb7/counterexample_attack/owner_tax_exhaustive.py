@@ -77,7 +77,7 @@ def audit_supports(k=3, m=3):
             "max_gap": str(max_gap), "max_gap_witness": witness}
 
 
-def audit_all_big(max_m=4):
+def audit_all_big(max_m=6):
     out = []
     for m in range(1, max_m + 1):
         a = m
@@ -103,5 +103,5 @@ def audit_all_big(max_m=4):
 
 if __name__ == "__main__":
     report = {"exhaustive_k3_m3": audit_supports(),
-              "all_big_m1_to_8": audit_all_big()}
+              "all_big_m1_to_6": audit_all_big()}
     print(json.dumps(report, indent=2, sort_keys=True))
