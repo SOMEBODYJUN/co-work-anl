@@ -50,7 +50,17 @@ equilibrium尝试对每个p，用真实强制后继删当前的平均负载μ_i�
 
 尝试多尾响应的序列化与几何损失，只能在末位用实际最大化；更早SPE不自动最大化所造势包络。加入对数/自由分数背景的KKT也没有改变这一步。文献查询只核对原市场分享/集合打包工具的范围，没有导入不同模型的定理来宣布解决。
 
-## 6. 本轮交接的真实缺口
+## 6. 首次checkpoint后新同步的round8密度组件
+
+实际读取同行 [NEW-CAP与全图客户密度](../../R-cd789330fc7141299ac491bbb3ffa420/round8/inventory/source_preserving_density_envelope.md)、[共同付款线性证书](../../R-cd789330fc7141299ac491bbb3ffa420/round8/residual/linear_joint_payment_certificate.md)及清洗者的钱包审查后，root重构了以下接点。该组件归原作者，不重复认领为本轮结果。
+
+NEW-CAP将初始化逐边限制为`min(p_ix,1/d_ix)/c_Wi(x)`，仍保留原current与future总额；全部父节点由首actual偏离压到同一角色，结合每客户质量反链得每个非actual context的`f_tx=c_Vt(x)h_tx≤1`。因此客户身份可以全图保持，同时在每个context只合法使用一次完整IC，不能继续把支持保持或该局部合法性叫作未完成。
+
+root与两个原分支接着尝试同角色累计付款。同一role同action在共同future全满的uniform-reset角点，确可把全部输入质量合并并用一条actual-prefix query共同支付；但精确相同机制已在同行`round8/residual/common_action_reset_deduplication.md`去重为旧round3捕获流，不能再算新容量。不同action可以在不同客户分别占满库存，所以同action界不能按action免费相加。
+
+共同线性证书没有藏掉此缺口：其非负价格切分在常价格λ=1时，所有路由总额恒为|O|，所需切分就是|O|≤2W本身。root未找到可从真实off-history IC支付这条切分的新关系；两个接续分支也未将新的密度组件接成角色总上界。详见 [residual新接续](residual/density_followup.md)及[direct新接续](direct/density_payment_followup.md)。它们记录一般推导，不增加原目标已证范围。
+
+## 7. 本轮交接的真实缺口
 
 本轮研究员和root均未找到可共同支付OPT−W的新全输入关系。当前仍可直接攻ADM≤W/m、真正聚合安全值、fresh净券共同余额、STATIC-2或完全不同方法；它们是未证候选，不是路线要求。
 
