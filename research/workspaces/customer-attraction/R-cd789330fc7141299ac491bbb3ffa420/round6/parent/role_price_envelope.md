@@ -49,3 +49,9 @@
 A的总量恒为M。上述反集中和价格包络并未给A_j≤u_j，更没有按actual客户标签的load≤1；lambda恒1只得到M≤M。因此不能把它叫全局费用≤W，也不能从跨角色分散推出half。即便source current系数各≤1，不同来源仍可复用同一actual行。
 
 full/fresh核及CLIP的新beta各不同，这里分别适用它们自己的守恒图，不将三份券叠加。基本coverer核仍未实质用off-history ell≥0；真实后继IC或其他机制怎样限制这些净券总量，仍是一般承重点。
+
+## 复核与策略域
+
+relay读稿后独立逐式重构通过（非盲），核对uniform-subset边际、价格基线和full/fresh/CLIP域。HIT作者[自足正文](../relay/global_role_coupon_hitting.md)保留原发现/独审来源，本页不另算重复价格关系。
+
+结论针对固定合法净券核与初始化。事先确定rho/owner/删边后可重建同图；观察随机路径后续结果后再选择保留source，或套用另一priority-world适应取消，均不能未经重证保留本图条件转移律。固定图HIT不自动涵盖事后选择的路径。
