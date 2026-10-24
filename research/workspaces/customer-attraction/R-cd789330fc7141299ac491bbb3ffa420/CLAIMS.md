@@ -142,3 +142,7 @@ query凸包付款、全选择族LP/价格DP及sibling Hessian只按各自正文�
 - **B10-SOURCE-PRESERVING-PAYMENT-CERTIFICATE-v1**（条件充分接口）：固定原实例、完整SPE与任意比较T，round8/residual/linear_joint_payment_certificate.md的INIT/I-PAY/R-FLOW/ROLE有限线性系统任一可行点都给同一份|O|库存的合法actual两预算付款，故|O|≤2W。数据取同一σ全部有序history，不重命名旧query叶；source current可非极大，共同future用edge z变量保持线性。对最优T的一般存在可行性仍OPEN，未称原目标等价。root提出合成，residual独立展开，root另核质量与域；无外审/新颖性认领。
 
 independent v2/v3在同一固定packet改变已证允许的初始化/共同边选项，激活interlayer但未出现merger。没有从有限通过提升一般role cap；f≤1及wholeIC由解析证明承担。
+
+- **B10-MULTIQUERY-SOURCE-DENSITY-v1**（独立辅助身份）：固定任意完整纯policy及actual叶、有限actual-prefix query sources（同owner可多query），每客户Σp≤1、初始future总量≤p、每初始future边≤p/c_W。则同客户difference/common边家族所有非actual targets密度≤1。actual-prefix/past出口仅终止；不证明初始资金。图/密度不需SPE，wholeIC付款才需原IC。root提出合同，residual证明于primal§4，inventory/independent分别审查通过，不改变Q-CAG-HALF。
+
+共同付款primal双独审见round8/inventory/payment_primal_review.md、round8/independent/linear_joint_payment_review.md；一般ROLE可行性仍OPEN。

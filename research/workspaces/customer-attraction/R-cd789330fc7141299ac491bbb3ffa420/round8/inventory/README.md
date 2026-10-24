@@ -7,3 +7,5 @@
 - [聚合边界](role_density_aggregation_boundary.md)：只否定结构性候选“全部同角色context密度可直接相加≤1”。完整任意policy给同角色同action密度7/6；明确非SPE，不是原目标或SPE辅助命题反例。其current合计5/12≤query1，故保留更弱的同query current共同支付候选。[脚本](attack_role_density.py)与[输出](role_density_counter.json)。
 
 真正未付：同一角色全部context净current，以及初始化d/H、I补券J和actual客户终端共同落入原两份actual钱包。单context密度≤1解决未来wholeIC本地合法性，没有解决角色汇总界。I补券J必须用本次新剪枝的I-future质量重新计算，不能继承旧J数值。
+
+- [联合付款primal审查](payment_primal_review.md)：先由root合同重构，再读residual8全文及价格势；固定数据/线性化、INIT/I补余、mandatory-new/optional-common R流、多query广义密度、MASS⇒HALF条件充分性及价格分离均通过。一般ROLE可行性保持OPEN；没有新扫描。

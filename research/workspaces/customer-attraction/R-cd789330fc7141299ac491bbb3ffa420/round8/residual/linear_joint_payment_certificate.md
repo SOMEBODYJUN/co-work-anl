@@ -84,7 +84,7 @@ L>=0 也由边界自动推出，且
     h_tx/c_At(x)<=L_tx
        <=h_tx[1+|M_t(x)|]/c_At(x).
 
-用边流 z 而非 α 与 h 的乘积，系统才是线性的。若需要比例，可在求得 h>0 后事后定义 α=c_A z/h。旧完成叶 V、reset A 和分母均不因 z 改变。
+用边流 z 而非 α 与 h 的乘积，系统才是线性的。若需要比例，可在求得 h>0 后事后定义 α=c_A z/h。旧完成叶 V、reset A 和分母均不因 z 改变。 L_tx 的 x 也只是来源库存标签；R 时 actual B_k 必不覆盖 x，L 仍通过完整 query IC 付到实际 k 的整行钱包，不能称 actual(k,x) 券。
 
 **共同角色行 ROLE。** 对每个实际角色 l 要求
 
@@ -95,7 +95,7 @@ L>=0 也由边界自动推出，且
 
 ## 3. 对任意可行点的合法性与充分性
 
-**密度对任意变量选择自动成立。** INIT 给 a_ix<=r_ix<=p_ix，以及逐边 c_Wi(x)a_ijx<=p_ix。对每个 origin i、客户 x，严格 future 质量路径在同一角色层至多经过一次，所以该层全部 context 输入不超过 a_ix。
+**密度对任意变量选择自动成立。** INIT 给 a_ix<=r_ix<=p_ix，以及逐边 c_Wi(x)a_ijx<=p_ix。给定仅按客户合并的可行流，可在每个节点按各 origin 的输入比例拆分全部 future 输出及 current（h=0 时全零），得到逐 origin 的守恒流。因此，对每个 origin i、客户 x，严格 future 质量路径在同一角色层至多经过一次，该层全部 context 输入不超过 a_ix；不需父节点唯一。
 
 固定非 actual target t，令 k 为其历史与 actual 首次不同的位置。所有 reset 父节点均在角色 k，可有许多不同旧历史，但 reset 叶相同。每条 mandatory 父边乘目标负载后的贡献恰为父 h_sx，common 父边贡献不超过 h_sx。到这些父节点的 origin 只能小于 k；直接入口的 owner 只能是 k。因此
 
@@ -143,7 +143,7 @@ I-PAY 将 I 源改写为 Σ_lJ_l。R-FLOW 是有限守恒严格 future DAG，所
     A_αx:=Σ_jb_αjx<=p_αx,
     b_αjx<=p_αx/c_Wα(x).
 
-同 owner 可以有多个不同 query，也可有相同 query 的多个标签；各自库存仍参加同一总和。实际前缀目标若出现，直接作 actual 客户 sink；past 正边也只作 actual sink。其余自然 context 使用本页 mandatory-new / optional-common-future 家族。只在接收者动作覆盖 x 时定义输入，故所有使用的分母均正。
+同 owner 可以有多个不同 query，也可有相同 query 的多个标签；各自库存仍参加同一总和。实际前缀目标若出现，直接作 actual 客户 sink。若 x 并非 R，reset 新增的 past coverer 也可出现：其 mandatory h/c_A 正边只作 actual 客户 sink；future 新增边仍为 h/c_A，共同 future 边仍在[0,h/c_A]内。current 留下其余质量，故每客户总出流不超过输入。只在接收者动作覆盖 x 时定义输入，故所有使用的分母均正。R 情形正好退化为本页 R-FLOW。
 
 对非 actual target t，设首次实际差异位置为 k。所有 reset 父节点角色都为 k：否则其 actual-prefix reset 叶的首次差异位置不会是 k。每条父边对目标密度的贡献<=父 h_sx。到这些父节点的 origin owner 都小于 k，且同一 origin/client 在角色 k 的全部输入构成质量反链，所以间接贡献至多 Σ_(α:owner<k)A_αx。
 
@@ -188,3 +188,7 @@ R 内部流可按 [价格递推](common_edge_price_potential.md) 消元。给定
 optional-common 家族一般不是旧 full-profit SAFE/CLIP 子核；本 LP 可行不自动证明旧限制路由 RESIDUAL-CAP。非最大初始 current 也意味着 d、I/R 源量、J 和 R 终端必须共同求取，不能先固定其中某一旧方案的数值。
 
 m=1 时没有 future 图；空主题无正客户行。全零输入所有量与变量为0，不定义效率比。其它分母仅在相应动作确实覆盖该客户时使用。本页未运行新扫描，没有把线性化、密度或价格等价提升为新的共同容量 theorem。
+
+[库存分支的合同重构及全文审查](../inventory/payment_primal_review.md)通过固定线性数据、任意初始分割、多 query 密度、一次 whole-IC、MASS/ROLE 充分性及价格分离；未覆盖一般可行性，不是外审或新颖性认证。
+
+[独立分支的完整审查](../independent/linear_joint_payment_review.md)亦通过上述固定-T primal、任意 source/optional-common 密度、条件充分性及价格消元；特别说明 ψ 是同质流的单位成本系数，不声称可向任意 context 独立注入一单位而保持 IC 密度。一般可行性仍未证明。
