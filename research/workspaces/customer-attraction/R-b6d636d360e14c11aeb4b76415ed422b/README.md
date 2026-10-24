@@ -59,3 +59,5 @@
 ## 本轮实质续审：一般组件、重复推论与候选判别
 
 最新入口为[方向审查续接](direction_review/continuation_general_scope/README.md)。本轮六个6.1sol ultra子代理协助；确认incidence阈值已被旧产品预算涵盖，给UV存在加强全m解析反例并严格保护SM/TB，认可SOURCE-NET和pair/PAY实质转向。修正审查尺度，实际通知、回复与落实分别记录。一般Q-CAG-HALF仍OPEN。
+
+主人最新补充及当前接续见[一般机制的五人压力测试](direction_review/five_player_pressure_test.md)：一般人数推导形成后代入五人检查无条件half，不另做五人模板；不能过二时及时商量缺口与转向。首轮已有精确诊断并区分共享登记2.061695与个人区独审2.042155的证据层；没有新half已证范围。旧停线的路线白名单/次数配额及三条不完整收件身份已纠正。
