@@ -1,6 +1,6 @@
-> 最新一般证明接续见 [next_general主工作稿](next_general/MAIN_PROOF_WORKING.md)、[本轮状态](next_general/README.md)及[精确身份](next_general/CLAIMS.md)。新一轮未取得一般福利付款，原half仍OPEN；有利可信完成菜单已精确构造但W/m预算未证，相邻升幅支付候选已被完整SPE反驳。上一轮[联合前缀谱](continuation_general/README.md)保持原已审范围，不继续扩私有特例。共享恢复入口为[一般工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。
+> 最新一般证明接续见 [next_general主工作稿](next_general/MAIN_PROOF_WORKING.md)、[本轮状态](next_general/README.md)及[精确身份](next_general/CLAIMS.md)。本轮无新一般福利界，half仍OPEN；最新I互补付款与旧ν核的合成已独立内审，R净券共同余额仍未付；有利菜单的W/m预算未证。另去重查明强FOMA早有旧完整反例，已纠正并通知同行。上一轮[联合前缀谱](continuation_general/README.md)保持原已审范围，不继续扩私有特例。共享恢复入口为[一般工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。
 
-# 一般半覆盖：常数三可信根修复与真实全深度障碍
+# 一般半覆盖：当前共同付款与前轮资产
 
 发布身份 `R-d3981c0168644971803a9c3380ed687c`；customer-attraction / boss；本clone首次程序生成身份。研究目标始终为原 `Q-CAG-HALF`，一般目录、任意人数、每个完整历史依赖纯SPE；仍 **OPEN**。本目录是个人研究备份，未代替共享canonical账本。六名指定gpt-6.1-sol ultra实际分支的结果由root统一汇总。
 

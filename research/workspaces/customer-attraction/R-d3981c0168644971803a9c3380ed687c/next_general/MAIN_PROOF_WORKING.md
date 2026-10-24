@@ -72,6 +72,28 @@ m偶数时条件比率为 `4−2/m`；m奇数时为 `4−6/(m+1)`。这些仅为
 
 它阻止这一具体付款；不否定原可信换位、字典序正常形、(ADM?)、(PAIR-ONE?)或half。不能再把有限旧证书上的阴性视作该加强开放。
 
-## 5. 仍需完成的工作
+## 5. 新收到的坐标初始化：I 补余付款与 fresh 剩余
 
-任何候选要接回原目标，必须真正支付本实例的 `OPT−W`，或证明(ADM?)、更强聚合安全值等充分关系。新表示、精确重置、LP对偶与末偏离树都未提供这一步。未来可完全换方法，不限于本页选项。
+实际读取同行round7后接续的正文在 [global_credit/coordinate_residual_attack.md](global_credit/coordinate_residual_attack.md)，[credible独立核对](credible/coordinate_support_attack.md)已覆盖这项合成，未证明剩余容量。
+
+坐标初始化将每个比较客户的一单位分为固定父叶券H、current来源c和future来源a。current角色金额d_l≤u_l，且对x∈I，H_lx≤w_lx=1_(x∈B_l)/c_B(x)。令A_x=Σ_i a_ix、H_x=Σ_lH_lx，则A_x≤1−H_x。故
+
+`J_lx=A_x(w_lx−H_lx)/(1−H_x)`，
+
+零分母时取0，同时支付全部I-future并保持H_lx+J_lx≤w_lx。这项真正同客户付款不调用过去角色IC；它是允许直接实际券出口的新接口，不声称原full-SAFE的受限路由自动实现它。d仍只占第一份u，H+J共同只占第二份I客户券。
+
+剩下的R-future可以从头接旧round6的fresh利润分母ν_t，而非旧完整v_t。ν核精确给
+
+`ν_t−P_t=u_role−Y_t−N_t−e_t>0`，
+
+所以同context安全退Y+N+e后得非负实际整行净券；没有旧v核的正C迁移，但新的β=h/ν不能沿用旧费用。合计净券K_l满足ΣK=原R-future总量，真正仍需
+
+`K_l≤2u_l−d_l−H_l−J_l` 对全部角色共同成立。       (FRESH-RESIDUAL?)
+
+此式未证；单个节点退款和源库存不控制同一角色多历史的累计费用。I预付款的兼容接口有解析证明，不是新的全输入福利界。将I更早直接支付、只对R初始化且用已有source scalarCLIP极大化current，也是旧机制的合法接合，不能重复认领，也不能无证称极大current对全部路由最优。
+
+同行同时提出的强静态匹配FOMA-EXISTS已由旧完整例否定，见 [去重与重放](peer_update_reconciliation.md)。弱匹配及原目标未被否定；该纠正不是新反例。后续研究应跳过已败强桥，不能据先前有限阴性继续称它OPEN。
+
+## 6. 仍需完成的工作
+
+任何候选要接回原目标，必须真正支付本实例的 `OPT−W`，或证明(ADM?)、FRESH-RESIDUAL?、更强聚合安全值等充分关系。新表示、精确重置、LP对偶与末偏离树都未提供这一步。未来可完全换方法，不限于本页选项。本轮未取得新的全输入福利下界，也没有主目标反例；上述若干精确接口不能作为主目标已推进到某个新常数的证据。

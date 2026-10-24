@@ -19,3 +19,7 @@
 ## 当前接续点
 
 候选C已停止，须换另一条真正能将高阈值成本交回同一q利润的关系。原换位定理只给 `mu_B>alpha`，不蕴含 `mu_B<=beta`，也不蕴含 `mu_B>=tau`。虚拟转账本身不使一个非SPE的交换叶成为SPE。
+
+## 新初始化接续
+
+见 [new_initialization_attack.md](new_initialization_attack.md)。已读round7坐标初始化与FOMA正文；发现FOMA-EXISTS已由旧52客户、唯一最优/全部排列完整证书否定，并独立展开重核全部1554IC。直接最优组合交换仍未付O内部future捕获税，净差D-G的退款也尚未接入同context付款。没有新增一般half证明。

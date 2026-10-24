@@ -1,5 +1,7 @@
 # 失败与停止范围
 
+本轮精确新增停止范围：完整四主题参数族否定`μ_B≤β`及以固定倍`β−α`支付相邻可信换位缺陷，见[next_general正文](next_general/normal_form/swap_ascent_payment_counterexample.md)。另查明同行round7的FOMA-EXISTS与旧已否定静态最优匹配桥同量词，root重跑旧独立证据确认，见[更新校对](next_general/peer_update_reconciliation.md)。两者都不是half反例，不否定有利菜单、弱安全值、弱匹配或坐标剩余容量。背景caps不继承到旁枝，统一缩尾的税额不能从一条规定叶扩为max-path预算。
+
 1. 全历史SPE终局/最差福利→计数Markov SPE归约：不是开放正面桥。旧R-18e993.../strategy_duality/markov_obstruction_audit.py已有合法五主题三人反例；root新CSP独立复现full min22428<Markov min22429。初始有限阴性不能覆盖此反例，已停。新工具可用于精确诊断，不再作为归约证据。
 2. 根修复只优化新增客户总数会错过有效目标：新未选叶增加总客户数，却把half稀释降至3Delta；两成本必须分开。新构造仍未产生满足旧gap>3Delta的root-only计划，因此不能报告一般half反例。
 3. 无条件驻留根减平均tail预算即使补全SPE仍可失败，具体真实族见shared_omission；根恰theta，故未否定严格根低阈值的最小反例论证。其他分支的桥失败按正文对象记录，不扩大到Q-CAG-HALF。
