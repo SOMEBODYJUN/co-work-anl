@@ -80,6 +80,21 @@ PI已被下述完整SPE反例否定；混合弱推送、全树水位信用仍为
 |---|---|---|
 | R5-IN-DIAG-v1 | 任意原CAG、任意完整有序历史纯SPE、固定ρ∈[0,1]^R。当前吸收f_q/c_q，captured总量f_q(c_q−1)/c_q只送父真叶future coverer，则全父子Σ f_g/c_B=M−H，K_in=M−H+T+COV−L，变量按正文；空源/空主题保留 | 依赖源守恒与完整actual/offhistory IC；解析和独立Fraction审查通过；T+COV−L无共同界；内部已核的精确表示，非half，外审/新颖性未认证。round5/rank/incoming_density_diagonal_ledger.md及dynamic两份审稿 |
 | R5-BROADCAST-ELIM-v1 | 任意原完整σ与actual叶、任意正利润natural context，按两个真实completion的coverer差取q±。future送真实context，past送actual (j,x)券。任意非负利润注入经β=h/v递推，Σb=Σβ[J+L+P_past]=Σβ[u_actual+P_past−N_all−e]；fresh子集行质量≤k/(k+1)。零利润不接正输入，零客户/空主题按空和 | 依赖逐客户差、有限严格角色DAG及actual IC；基础核不需ell。root解析审查和独立单位回归通过，盲审范围以其实际文件为准；全树券cap1未证，负N/e不可假配actual退券。非福利定理，外审/新颖性未认证。round5/credible/all_fresh_submarkov_elimination.md、parent/review_broadcast.md、parent/audit_broadcast.py及JSON |
-| R5-PB-EXTRA-v1 | 任意合法有序背景b、剩r≥2、每个完整纯SPE，前两位最终收益和≥2v_(r+1)(b)。v_k是查询抽样不被静态k−1槽对手观察的max-min。原模型及任意平局不变；若普遍成立则half | 充分归约仅用静态安全值嵌入与OPT_m≤2m v_(m+1)(0)，解析已核；候选本身OPEN，真实第二位跨主题改枝费用未付。更强2v_r与M_r阈值桥不能混同。有限阴性不作证据。round5/independent/two_block_security_reduction.md |
+| R5-PB-EXTRA-v1 | 任意合法有序背景b、剩r≥2、每个完整纯SPE，前两位最终收益和≥2v_(r+1)(b)。v_k是查询抽样不被静态k−1槽对手观察的max-min。原模型及任意平局不变；若普遍成立则half | 充分归约仅用静态安全值嵌入与OPT_m≤2m v_(m+1)(0)，解析已核；候选任意合法背景版本随后被R5-PB-EXTRA-NO-v1反驳；原条件归约保留。更强2v_r与M_r阈值桥不能混同。有限阴性不作证据。round5/independent/two_block_security_reduction.md |
 
 以上对象、假设和量词未更改Q-CAG-HALF。计算是公式/实现核验，非一般证明；没有成立的总费用结论可升级。
+
+
+## R5-PB-EXTRA-NO-v1（反驳R5-PB-EXTRA-v1的任意合法背景量词）
+
+- Exact Statement：存在原CAG的有限单位客户、有限非空共同目录、合法有序singleton前缀b、剩r=2475和一份包含全部有序历史的完整纯SPE，使其前两位最终利润和严格小于2v_(r+1)(b)。
+- Objects / Domain / Quantifiers：客户、提供者均单位；目录含分段Cartesian regular和每客户singleton；背景通过同一目录合法前缀实现；静态r槽对手不观察查询。
+- Assumptions / Definitions：k=3,d=20,q=12,t=10,Q=2063,H=100000,M=10^9；real块q−1名客户背景M、一名M+1，dummy块Hq名背景HM。f(c)=(q−1)/(M+c)+1/(M+c+1)，g(c)=Hq/(HM+c)。所有整数与动作规则见唯一正文。
+- Conclusion / Scope：前三人各u=dkf(k)，独立查询保证s=d[f(1+rk/Q)+(k−1)g(r+1)]>u；故PB-extra任意合法背景版本FALSE。其强2v_r版本亦随之失败；不反驳原half、根在轨弱版本或全局m阈值floor。
+- Dependencies：全部历史Greedy水位、Fill/Copy/Punish自身IC、singleton严格劣势及BI子树补全；逐客户凸倒数Jensen；(G)(P)(F)及容量严格条件。
+- Evidence：自足全历史解析构造；root独立重构/参数Fraction重算；credible独审通过；dynamic先盲重构后对稿审查Greedy/Punish全历史部分通过，静态Jensen由root与credible另审通过。标量检查不替代全树证明。
+- Counterevidence / Objections：当前内部攻击未发现fatal。背景已覆盖N，未证根实际到达；不得扩大范围。routing只提供威胁结构启发，未直接导入其PoA结论。
+- Status：完整解析反例及内部审查，外审和全球新颖性未认证。原Q-CAG-HALF仍OPEN；R5-PB-EXTRA-v1原陈述不改量词，只将其状态改为refuted。
+- Related Files：round5/menu/pair_attack.md、pair_background_scalar_audit.py及JSON；round5/parent/review_pair_counterexample.md、audit_pair_parameters.py及JSON；round5/credible/review_pair_counterexample.md；round5/dynamic/review_pair_counterexample*.md。
+
+广播基础组件后续审查补充：round5/independent/review_broadcast.md先盲重构后对稿；真正非零fresh审计使用非最优比较(D,H,B)，不声称覆盖最优owner初始化。局部负荷递增只对同一客户，单谱系不重叠只指过去差异区间；这些都不推出全树actual券cap1。

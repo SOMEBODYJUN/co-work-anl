@@ -32,4 +32,4 @@
 
 [root独立参数脚本](audit_pair_parameters.py)用Fraction从定义重算所有严格条件及计数，[冻结输出](pair_parameters_independent.json)保留Python版本和源码hash。它没有枚举巨大策略树，不能代替上述全历史证明。
 
-root目前未发现致命漏洞。可靠状态提升还须等两名独立审查者对Greedy及Punish全部历史攻击完成；范围始终只是任意背景PB反例。若根路径经过该背景，福利已为全客户；其他根路径未受本稿控制，不能据此给出目标反例。
+root未发现致命漏洞。两名独立审查者现已完成Greedy及Punish全部历史攻击：dynamic先盲重构后对稿，credible非盲独立重构；静态Jensen由root与credible另核。范围始终只是任意背景PB反例。若根路径经过该背景，福利已为全客户；其他根路径未受本稿控制，不能据此给出目标反例。

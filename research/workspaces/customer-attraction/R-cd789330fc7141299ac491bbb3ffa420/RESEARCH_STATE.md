@@ -1,3 +1,9 @@
+# 第五轮最终接续
+
+一般Q-CAG-HALF仍OPEN，无一般证明或目标反例。任意合法背景PB-extra已被完整解析SPE构造分离；不是根half反例，根在轨弱版本未被处理。自然incoming的M−H/COV账和全客户广播/actual券出口经过独立解析及精确审计，仍缺source、重复whole-row与past-C券的共同容量。
+
+本轮成熟辅助结果与候选的精确范围见[总稿](round5/GENERAL_PROOF_WORKING.md)、[Claim](CLAIMS.md)、[失败原因](FAILED_ROUTES.md)。下一步需新真实IC支付，不再扩阴性或重排同一静态网络。以下保留原状态。
+
 # 本轮最新接续
 
 先读[第五轮一般稿](round5/GENERAL_PROOF_WORKING.md)。一般half仍OPEN；新增密度总账、广播消元、actual券域和PB-extra充分归约，均未提供共同费用上界。旧状态完整保留如下。
