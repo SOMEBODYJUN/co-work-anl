@@ -101,7 +101,7 @@ Boss9 本轮新增候选一般接口 `CA-INCIDENCE-LP-DYNAMIC-BUDGET-v1`：用�
 本阶段个人区保存了三条可复用的全范围关系及两类严格接口边界：
 
 - `route5a/sequential_deviation_share_lemma.md` 证明任意位置、任意主题的真实偏离份额下界 (L1)–(L3)，以及偏离枝后继主题包含于当前主题时的同枝收益继承 (L4)。它把一般缺口定位为不同强制主题的后继覆盖数 (q_i(T,x)) 的跨枝聚合；最坏分母在不交遗漏主题上只有调和量级。
-- `representation/cross_branch_welfare_relay_identity.md` 证明节点级精确中继式 (W(z(T))-W(z(A^*))le V(T)-V(A^*))，并给出等价的删去当前玩家后的 Rosenthal 势差式。该式保留真实后继，尚无跨互斥子树的望远镜。
+- `representation/cross_branch_welfare_relay_identity.md` 的通用节点式已勘误为 ΔW=ΔV+ΔP_old−Γ≤ΔV+ΔP_old；初稿漏掉旧玩家返还，只在根自动给 ΔW≤ΔV。删去当前玩家的 Rosenthal 势差式仍成立，但保留旧玩家，不能称纯后继势。两人三客户的完整 SPE 反证、已有正确账本与勘误见[准确记录](../workspaces/customer-attraction/R-cef41b80a6e048b5a395b738d3b0b6e7/harmonic/relay_erratum.md)。跨互斥子树的共同支付仍未闭合，本次纠错不新增 half 已证范围。
 - `route3/smoothness_bridge_obstruction.md` 严格证明静态终局的 ((1,1))-smoothness及静态 PNE 的半覆盖推论；同页完整三人 SPE 证书排除把冻结静态偏离直接当成真实 SPE 偏离。
 - `representation/complete_pair_incidence_lp_obstruction.md` 对完整 pair-incidence 目录求得根 incidence-LP 对偶精确值 (B(m)=ms/2)，说明单一非负关联乘子不能利用最优解至多使用 (m) 个主题；这只是证明模板障碍，不是 Q-CAG-HALF 反例。
 
