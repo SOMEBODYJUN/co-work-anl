@@ -8,6 +8,40 @@
 有限非空共同目录、任意 m、每个完整有序历史纯 SPE 的 `2W>=OPT_m`。
 **仍 OPEN：没有一般证明、目标反例或新增 half 已证范围。**
 
+## 续攻阶段：六路一般路线与五人压力测试
+
+同一 clone/actor 再次 `work.py start`，同步远端同时保留一份与本题无关的本地未跟踪文件。
+六名实际 `gpt-6.1-sol / ultra` 研究员并行；父方直接复核精确证明、做独立原始回放。
+方向审查者要求把一般推导代入五人；已在公屏 seq264 明确报告：此前(ASD)只给
+`ΣR_ij<=2W−D/2`、未含 OPT；无条件分数前缀乘积界五人因子
+`15625/6049>2`。这是已证关系的压力测试，不是新五人项目。
+
+本阶段新增可复用的**一般输入方法边界**，都未闭合 half：
+
+- [全历史 regret 稳定性反族与鲁棒产品式](new_induction_repair/README.md)：
+  任意人数花瓣计划的 `B=H_(m−1)−1`、`W=q+2`、`OPT=q+m`，末位每个历史最佳回复；
+  以任意完整计划的 regret norm 替代精确 SPE 归纳不成立。鲁棒前缀产品界有效但五人
+  已超过二。[父方独立解析核对](parent/induction_repair_review.md)。本反族没有证明
+  它可由完整 SPE 删除产生；[因子2额外结构的单独测试](new_induction_repair/factor_two_regret_attempt.md)
+  仅得普适稳健系数若存在则必须至少1，`C=1` 仍 OPEN。
+- [固定背景零 regret 不可无损可信修复](new_cross_branch/zero_regret_welfare_repair_obstruction.md)：
+  18客户、四主题、两名尾玩家，原 A 背景下完整 SPE，删 A 之后原实际节点 regret=0，
+  保留叶福利17，但删除后所有精确 SPE 福利16。
+  [父方独立原始重放](parent/zero_repair_independent_review.md)覆盖全部末位 BR 与首位选择。
+  A 是固定合法背景，不认领原三人 SPE 实际根前缀，也不反驳 half。
+- [真实最优菜单净差账](new_optimal_queries/README.md)把自适应后继罚 Q 与静态非负
+  信用 L 精确拆开；所需 `ΣQ<=W+ΣL` 仍未证，代入五人已知 all-big 族仅说明该接口
+  可锐，不给任意目录五人无条件界。
+- [额外一槽因果吸引包络](new_potential_global/README.md)给逐客户最坏因果协方差的
+  无条件代数界；五人零背景的松弛正余项24/125，无法支付完整菜单。
+- [完整菜单共同支付尝试](new_security_budget/README.md)与
+  [可信 switch 失败分析](new_counterexample_attack/README.md)均标明真正全树桥与严格退出
+  激励，未得主目标反例。已有固定负载精细税反例已查重，不重复宣称为本轮新发现。
+
+精确身份、范围、作者证明和父方内部核对见 [CLAIMS.md](CLAIMS.md)；子目录还保留
+未完成推导和被排除的构造。上述结果无外审或新颖性认证，个人工作区不自动升级为
+共享 canonical 正文。现行主问题及共享账本仍保持 OPEN。
+
 ## 新增认识与准确等级
 
 - [真实背景删除误差包络](parent/deletion_regret_envelope.md)：任意 b,d,n、保留同一完整策略，

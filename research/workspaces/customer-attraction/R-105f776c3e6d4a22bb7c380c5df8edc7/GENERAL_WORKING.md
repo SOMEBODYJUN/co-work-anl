@@ -75,3 +75,32 @@ shared-misery、异构目录和一般共同主题模型。本轮没有导入该�
 本轮静态排列精确反例见 [唯一正文](dynamic_exchange/static_optimal_assignment_counterexample.md)。
 原始1953客户及完整策略已由三路重放，并成功发给seq242候选提出者；只排除辅助桥。
 root可达性lemma及原PB参数的父方复核亦已完成，见 [解析复核](parent/root_reachability_review.md)。
+
+## 2026-10-24 续攻：根方判断与压力测试
+
+恢复同一身份后，我直接检查上一轮删位归纳是否能在五人调用已证关系：
+`(ASD)` 变成 `ΣR_ij<=2W−D/2`，只控制各原实际节点、无最优主题项；
+现行分数前缀产品式在最佳比较元组只知覆盖权至多 m 时五人给
+`W/OPT>=6049/15625`，不足半覆盖。已经把两者的**无条件**范围和真实缺失
+（新离轨叶全部重选）报告方向审查者 seq264。既有五人固定模板的>2可行点
+不是这里的新证据，不以它判全范围不可能。
+
+阅读远端新[任意前缀可信退出编译](../R-65d0f88edf3849b39ca5eb79760e970b/credible_attack/prefix_credible_exit_compiler.md)：
+它用真正后继 SPE 的退出 floor 定义 Delta，编译成本 `(2j+1)Delta`，不同于
+我们原策略删除后的实际 regret。若要从此找主目标反例必须先有
+`OPT−2W>(2j+1)Delta` 的严格旧路径；本轮没有构造到该门槛。
+
+根方独立解析复核了[花瓣反族及鲁棒产品式](parent/induction_repair_review.md)，并对
+[18客户原始背景实例](parent/zero_repair_independent_review.md)独立转换两种数据编码、
+逐一枚举新旧末位全部 BR 和首位可实现 SPE；完全支持作者精确的零 regret/修复损失。
+这里的 fixed background 是合法子博弈，不是原根实际删位；主 half 未受否定。
+
+另在已冻结1953客户静态匹配反例上对现行 Mfull/Mpath 精确指定候选做一次
+针对性 LP 试验：三个单位置菜单值约426.619、426.629、436.604，联合值约415.970，
+均低于 W/3≈578.333。它只显示**该已知静态桥反例没有同时打掉额外槽候选**，
+不是 Mfull/Mpath 的证明或有限阴性推广。临时探针保留在仓库外 scratch，未作
+正式数学证据。方向从该例返回真实后继 IC 与共同支付。
+
+本轮个人工作区的准确资产和下一义务见 [README](README.md)、
+[CLAIMS](CLAIMS.md)、[RESEARCH_STATE](RESEARCH_STATE.md)。没有一般证明、
+真正目标反例或新的 half 已证范围；内部检查与新颖性状态不能混写。
