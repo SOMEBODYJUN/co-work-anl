@@ -60,3 +60,5 @@ Q-CAG-HALF仍OPEN。本轮继续同一clone/actor；只研究任意人数、任�
 [credible投影](credible/adaptive_hall_projection.md)将全部I客户改成owner到actual winner的unit A边，仅R保留unit sink。B送R的路径可保留，再增广A到满G且不减原R sink。新添R取消量等于原I-query取消量；完整SPE使每终端价格u_i/D_s>=1，故逐world K_R<=K_joint−queryI数，期望 E K_R<=E K_joint−kappa。root独立重构此cut/增广与费用符号通过。
 
 因此任何joint费用<=W+kappa证书可投影为R-only费用<=W，但这里没有任一费用界。新coupon取消域每world是随机网络，不保证每world落在固定均值Gamma；平均flow才满足其容量。随机收入uhat虽然期望u_i，原IC的价格仍固定u_i/D_s，不能用uhat代替。固定局部delta的旧SOURCE-NET也不自动继承。当前最准确未付是这种共同排序下的终端查询价与actual收入优惠券相关性/同role多query碰撞，不能把已证库存兼容当半覆盖完成。
+
+投影中的κ应精确记κ^-，只计owner未覆盖I的query概率和，不包含round3中owner覆盖I的那一部分κ。R-only目标是E K_R<=W；joint充分目标可放宽为E K_joint<=W+κ^-。固定Hall-B联合source已付不代表这个后续总价；若坚持总eta=W，得到的整流充分接口还更强。

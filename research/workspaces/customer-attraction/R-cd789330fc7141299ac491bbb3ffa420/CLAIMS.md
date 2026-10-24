@@ -71,3 +71,5 @@ PI已被下述完整SPE反例否定；混合弱推送、全树水位信用仍为
 - **B10-OWNER-EXCHANGE-POTENTIAL-v1（全部输入解析；独立重构通过）**：任意OPT元组T及分析分割Q_i⊆T_i并O，Φ_Q=ΣoutsideH_c−Σowner未cover 1/(c+1)≤0，F_Q=OPT+Φ_Q单调次模且0≤F_Q≤OPT。原单位收益精确拆成formal F边际ℓ和非负error e；同叶Σℓ=G+κ、Σe=I−κ，e是非owner插入势边际。实际-prefix matching查询每客户Σe≤(a−1)/2；最优前缀首次owner选择给≤H_a−1。分析Q不作为行动，无SPE继承或half结论。见round3/shared与relay。
 - **B10-OWNER-HYBRID-TRANSPORT-v1（全部输入解析；独立对稿核查通过）**：任意合法B，全部角色子集hybrid割给A/B两份可选有理maxflow：outside原利润经O真实份额到真遗漏，outside调和份额经owner-error到missing-owner价格。actual A给G单位合法γ取消；可预先在每owner取消至多其actual G利润的R库存再补足。固定合法OPT前缀anchors可避开其全部覆盖，并为真实未来角色的联合捕获/transport提供同一whole-IC钱包。一般散布anchors仅给静态财务容量，不自动购买过去IC。不同叶兼容及动态NET未证明。
 - **B10-CAPTURE-HIT-AND-SOURCE-NET-v1（全部输入一般组件；独立重构核对）**：actual-prefix递增角色均分吸收对单个遗漏客户守恒，非owner单行到达≤ρ/2；多角色集只控制曾命中。上述同一γ可使所有owner初始source费用同时≤η_i=u_i(I)+γ_i，总η=W；之后的捕获重置到达费用仍未付。HIT、源预算或协方差界均不升级为NET可行性或half定理。
+
+- **B10-RANKWISE-COUPON-PROJECTION-v1（独立重构通过）**：逐world随机winner Hall-A/B送满G；joint正query可保留B送R路径再增广A，完整SPE下E K_R<=E K_joint−κ^-，κ^-只计owner未覆盖I的query概率。随机域与固定均值Gamma不同，不保旧delta/SOURCE，不能用随机收入代原IC。未证任一总价界；正文见round4/mixed/rankwise_joint_hall.md及round4/credible/adaptive_hall_projection.md。
