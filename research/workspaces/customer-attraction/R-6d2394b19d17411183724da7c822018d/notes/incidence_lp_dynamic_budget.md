@@ -126,3 +126,11 @@ For a concrete `s=5` pattern with `tau_inc=2`, take positive incidence blocks on
 `{1,2},{1,3},{1,4},{1,5}` and `{2,3,4,5}` (with enough positive mass to make all five maxima distinct). The weights `alpha_1=1` and `alpha_2=...=alpha_5=1/4` cover every incidence edge with total `2`; the corollary therefore gives half coverage despite five maximal sets. This is an incidence pattern certificate, not a claim that every catalog realizing the pattern has no other positive blocks.
 
 A simple structural corollary is useful: if every noncore customer belongs to at least `d` maximal themes and there are at most `2d` maximal themes, then choosing `alpha_j=1/d` gives `tau_inc <= s/d <= 2`; hence the same full-history half-cover guarantee applies. This includes the five-maxima pattern with minimum noncore incidence three, while retaining arbitrary internal subthemes and history-dependent ties.
+
+A second useful threshold is available without bounding the number of maxima: if
+`tau_inc <= 3` and `n >= 7`, then the coefficient in (8) is at least
+\(\sum_{r=1}^n 1/(n+2r)>1/2\). One elementary proof writes this as
+\(n^{-1}\sum_{t=0}^{n-1}(3-2t/n)^{-1}\), applies the composite trapezoid
+bound for the convex function \((3-2x)^{-1}\), and uses
+\(\log 3>7379/6720\) to obtain
+\(\frac12\log3-\frac1{3n}>1/2\) for `n>=7`. Thus `tau_inc<=3` yields a full-history half guarantee for all sufficiently large provider counts, even with unboundedly many maximal sets. The small-count cases are not claimed here.
