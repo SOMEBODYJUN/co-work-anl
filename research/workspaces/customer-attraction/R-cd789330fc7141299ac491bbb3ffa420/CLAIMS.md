@@ -146,3 +146,15 @@ independent v2/v3在同一固定packet改变已证允许的初始化/共同边�
 - **B10-MULTIQUERY-SOURCE-DENSITY-v1**（独立辅助身份）：固定任意完整纯policy及actual叶、有限actual-prefix query sources（同owner可多query），每客户Σp≤1、初始future总量≤p、每初始future边≤p/c_W。则同客户difference/common边家族所有非actual targets密度≤1。actual-prefix/past出口仅终止；不证明初始资金。图/密度不需SPE，wholeIC付款才需原IC。root提出合同，residual证明于primal§4，inventory/independent分别审查通过，不改变Q-CAG-HALF。
 
 共同付款primal双独审见round8/inventory/payment_primal_review.md、round8/independent/linear_joint_payment_review.md；一般ROLE可行性仍OPEN。
+
+
+## 第九轮精确身份（个人资产，非共享canonical提升）
+
+- **B10-HARMONIC-TERMINAL-WALLET-v1**：任意m≥2、任意共同目录、每份完整纯SPE，按实际末对定义C′=min(u_(m−1),u_m)−Σ_(x∈B_(m−1))1/(k_x+2)，有(2H_m+1)C′≤W。完整解析证明、menu/credible/root独立重构及旧packet实现核对。只支付末对一项，早期冻结差未付；无外审/新颖性认证。正文[round9](round9/exchange/harmonic_terminal_wallet.md)。
+- **B10-VARIABLE-COORDINATE-OWNERSHIP-v1**：固定T，full-O坐标付款证书可把p_ix变为支持T_i且逐客户和1的变量，H/r及全部边界线性；p_ix k_ix≤1区域每点均可初始化。扩大证书仍只有ROLE可行⇒half。R任意owner分割早有旧来源，不认领首次。正文[所有权](round9/payment/roleobstruction/fractional_ownership_extension.md)。
+- **B10-ALL-FUTURE-COVERER-PAYMENT-v1**：原R-only自然图上全部真实future coverer边可取0≤z≤h/c_A、L=h−Σz、0≤L≤c_Vh/c_A；全图密度/一次wholeIC/质量守恒同时保持，含旧正边与NET、可把必要净流改送共同coverer。局部允许域可严格扩大，不声称新SPE可付范围。root证明、menu/payment独立重构及menu事后全文核查。正文[边族](round9/parent/all_future_coverer_payment_family.md)。
+- **B10-SOURCE-PRESERVING-ROW-CLIP-v1**：上述edge caps及同客户守恒可配单contextΣ_xL_tx≤u_i（或β_*u_i）；uniform可行后在整行退款内取消同客户边，密度保持。旧scalarCLIP在客户保留边界上的合成表示；不同context总和仍未付；不将可分客户DP迁移到此联合行。正文同上§6；无新颖性声明。
+- **B10-OPTIMAL-EXCHANGE-CURVE-v1**：最优T与任意合法m槽S逐客户负载(k,c)，对每t∈[0,1]有Σ_E[1−(1−t)^c]≤Σ_OPT t^k(1−t)^c binom(m−c,k)/binom(m,k)，及固定槽数/调和积分式。完整静态证明，exchange/root独立核；不使用SPE、不支付遗漏、无half界。正文[交换曲线](round9/global/optimal_exchange_curve.md)。
+- **B10-ARBITRARY-BACKGROUND-PUSHFORWARD-NO-v1**：任意合法背景全称版本WP、SELF及完整真实菜单Mfull≤u均已被旧round5 PB构造否定；此是旧证据直接后果，非新游戏。空背景SELF另早有旧34客户反例，本轮单位客户独立重放；空背景弱WP/自由Mfull及actual-prefix专用桥仍OPEN。正文[域纠正](round9/parent/background_pushforward_status_correction.md)、[旧SELF恢复](round9/credible/root_covariance_and_background_domains.md)。
+
+Q-CAG-HALF仍OPEN；扩张ROLE、弱K≤(1+1/m)W、根实际全路径聚合支付均未证。本轮所有新项没有外审和新颖性认证。

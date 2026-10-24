@@ -1,3 +1,5 @@
+> 第九轮域纠正：任意合法背景的 WP 与完整菜单 Mfull≤u 已由旧 round5 PB 证书直接否定，见[准确后果](../../round9/parent/background_pushforward_status_correction.md)。零背景弱WP/自由菜单及一般half仍OPEN；SELF零背景另有旧34客户反例。以下历史OPEN标签须按本域纠正读取，不复活全背景归纳。
+
 > 当前覆盖更正：本页探索的PI已被[完整三人反例](potential_next_increment_counterexample.md)否定，并经[独立盲审](../mixed/review_pi_counterexample.md)。u=91、P4−P3=215/2。下列推导与有限阴性均仅保留路线来源，不再将PI列为OPEN或下一主攻；WP、extra-one及一般half仍OPEN。
 
 # 第二轮：完整可信策略的势增量候选
