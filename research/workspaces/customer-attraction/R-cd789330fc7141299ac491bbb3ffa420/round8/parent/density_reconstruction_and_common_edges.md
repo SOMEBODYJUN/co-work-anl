@@ -31,3 +31,5 @@ R-only时，保留所有新未来coverer正边h/c_A；每个共同未来covererj
 ## 5. 未付项
 
 共同边可移动付款但不增加钱。常数角色价下最小总费仍是来源质量，不能靠Bellman同义式证明小于预算。实际仍缺Σ_(s:role=i)L_s≤2u_i−d_i−H_i−J_i或更弱总付款关系。密度跨context直接相加有明确非SPE几何反例；这不排除真正SPE的更深激励定理。当前没有得到这样的全树金额不等式。
+
+追加：root核对共同付款primal的INIT/I-PAY/R-FLOW/ROLE、质量和价格分离；inventory和independent分别审查通过。广义多query密度不需SPE，源付款与一般ROLE可行性不在lemma内。
