@@ -1,5 +1,11 @@
 # 本桌面精确Claim及状态
 
+## round4 一般接续
+
+- **B10-MIN-PI-NO-v1（独立单位审查通过）**：最小调和最优增量保底已被完整SPE反驳；首位3481、最小增量3709，W10671、OPT12546。见[审查](round4/global/review_min_pi.md)。有限窗口凹性不足；不反驳无限全局凹性、EI或half。
+- **B10-ACTIVATION-UNIT-WORLD-v1（全输入合法路由；费用界OPEN）**：激活Beta2、actual I逐角色信用、单一优先级unit源及同world适应取消各有独立重构。未证多query整行或总体费用。
+- **B10-NET-DYNAMIC-RANK-v1（精确表示，独立对稿通过）**：actual Hall取消rank/base/greedy、NET全价对偶及FRAC证明库存弱化合法；不推出一般可行。精确对象与审查见[本轮一般稿](round4/GENERAL_PROOF_WORKING.md)。
+
 共同对象一律采用仓库CAG-MODEL：有限单位客户、有限非空共同目录、单位提供者、全部有序历史纯SPE；空主题、重复主题、零客户和任意历史依赖平局不被省略。改变模型的加权实参数只作代数延拓，原单位客户结论取整数参数。无外审或新颖性认证。
 
 ## Q-CAG-HALF（原身份不变，OPEN）
