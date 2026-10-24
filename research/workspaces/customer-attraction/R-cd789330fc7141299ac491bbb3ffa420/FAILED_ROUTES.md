@@ -81,3 +81,5 @@ CLIP只保证新正券≤旧gross，不保证旧net逐券下降；旧证书任�
 - arbitrary frozen-profile min payoff作theta地板的绕路由[direct静态族](round10/direct/frozen_portfolio_floor_obstruction.md)否定；pure portfolio maxmin作actual总收益银行的绕路由[netglobal族](round10/netglobal/pure_egalitarian_detour_counterfamily.md)否定。它们不约束actual-min角色或HALF，不能改成主目标反例。
 
 净ROW、原更宽K≤(1+1/m)W、真正安全最优聚合及ROLE存在未被这些结果否定；本轮没有新的付款关系解决它们。上面是各精确接口边界，非一般数学不可能性结论。
+
+补充本轮最后直接判别：把root净ROW的actual W换成较小的最大主题K，是严格加强且已败；q=m也不救。6人两大主题(各3客户)与4单例、完整BI策略给row6<O−K7，同时W6<OPT−K7。原ROW/half保留，见[全历史证据](round10/parent/root_standalone_row_helper_counterexample.md)。myopic少负载+固定字典tie曾在离轨历史失败，已弃用；保存的完整BI证书无此错误。

@@ -167,3 +167,5 @@ Q-CAG-HALF仍OPEN；扩张ROLE、弱K≤(1+1/m)W、根实际全路径聚合支�
 - **B10-ALPHA-ONE-ACTUAL-TAX-RECOVERY-v1（old evidence consequence）**：旧13人实例同一actual表给α1实际负载银行与common-query frozen总价两桥均正差37/66；已核准确槽数/实际c分布。是旧refined-tax后果，不认领新反例。[算术与原来源](round10/security/old13_alpha_one_tax_arithmetic.md)。只否定全部查询加强，真正安全最优查询/有利最优指派仍未被该证据否定。
 
 本轮静态终端吸收、arrival rent、退款重组只是准确等式/组件，未给早期共同付款；不提升Q-CAG-HALF或一般五人half状态。所有新项外审/新颖性未认证。
+
+- **B10-ROOT-STANDALONE-ROW-HELPER-NO-v1（exact complete-SPE counterexample, internally checked）**：即使q=m，root query row≥O−max|S|也不普遍成立。m6、10单位客户、6不交主题大小(3,3,1,1,1,1)，完整BI策略W6、OPT10、root row6、maxsize3。root/direct两套独立实现核全部9331有序节点/55986含自身IC，净ROW及HALF均未失败。也否定W≥OPT−max|S|的简单加性加强。[原始定义/证据](round10/parent/root_standalone_row_helper_counterexample.md)。有限完整证书用于反驳全称加强，不作一般正面证据。无新游戏结构新颖性声明。

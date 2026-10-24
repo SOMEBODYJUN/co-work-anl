@@ -112,3 +112,27 @@ No finite scan, fixed-player expansion, external-stability assumption, or
 background WP/Mfull floor was used. The all-m star family refutes only the
 named static portfolio-floor step. It does not prove that all adaptive
 portfolio mechanisms fail, nor refute ROW? or HALF.
+
+## 5. Stronger root helper: FALSE, including a full m-slot comparison
+
+A further helper considered in messages was
+
+\[
+\sum_{j=1}^{m}d_1(T_j)\ge
+\left|\bigcup_{j=1}^{m}T_j\right|-K,
+\qquad K=\max_{T\in\mathcal S}|T|.\tag{ROOT-K: FALSE}
+\]
+
+It is not an open route. Root supplied a named complete-SPE counterexample,
+independently reconstructed here: m=6, six disjoint themes of sizes
+(3,3,1,1,1,1). Full backward induction, comparing fully completed children
+and breaking ties by smallest label, gives actual counts (3,3,0,0,0,0), W=6,
+OPT=10, K=3. Each of the six true root query payoffs is 1, so the row is
+6<10-3=7. All 9,331 ordered decision histories and 55,986 IC comparisons,
+including the prescribed action, pass an exact independent reconstruction.
+
+The actual net ROW has right side 10-6=4, and HALF has 10<=12, so both hold
+on this instance. The counterexample only rejects replacing the actual
+coverage credit W by the largest-theme credit K. Details, exact strategy
+definition, and the audit are in
+[the helper counterexample note](root_size_helper_counterexample.md).

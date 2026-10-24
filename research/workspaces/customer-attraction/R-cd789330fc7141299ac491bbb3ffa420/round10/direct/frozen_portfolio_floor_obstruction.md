@@ -6,6 +6,10 @@ minimum-profit net ROW remain OPEN.** No finite search was used. The example
 below is not asserted to be an SPE outcome, and does not furnish a target
 counterexample.
 
+Tree10 independently reconstructed the exact static value and checked the
+scope in [its internal review](../tree/direct_static_floor_review.md).
+This is an internal check only, with no novelty or external-review claim.
+
 ## Candidate and its intended use
 
 For a full legal profile q of m themes, put t(q)=min_i u_i(q), and let

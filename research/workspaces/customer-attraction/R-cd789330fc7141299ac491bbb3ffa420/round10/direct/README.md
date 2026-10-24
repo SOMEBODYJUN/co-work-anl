@@ -14,5 +14,12 @@ ordered-history pure SPE, with repetitions, empty themes, zeros, and ties.
   identity, the adaptive-portfolio attempt, and the currently unpaid
   actual-versus-branch rent. These are research notes, not a new approximation
   theorem or a claim that the general route is impossible.
+* [Root row minus the largest theme is false](root_size_helper_counterexample.md):
+  root's named auxiliary counterexample independently reconstructed by full
+  backward induction and checked at every ordered history. This disposes of
+  the proposed stronger root helper even with all m comparison slots;
+  actual net ROW and HALF hold on the instance.
 
-No finite scan was run. Root handles shared integration and repository saves.
+No instance scan was run. The sole finite computation here checks root's
+named counterexample to one exact general candidate. Root handles shared
+integration and repository saves.
