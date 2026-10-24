@@ -1,5 +1,15 @@
 # 精确命题身份（个人区）
 
+## CA-PREFIX-COUPLED-SEAT-BUDGET-v1
+
+- **Objects/domain/quantifiers：** CAG-MODEL 的每个有限单位客户实例、每个有限非空共同目录、任意 m≥1、每个完整有序历史纯 SPE σ、每个实际位置 i。重复主题、空主题、零客户及任意历史依赖平局保留。
+- **Definitions：** C 为同一 σ 的固定实际覆盖，B_j 为不同极大覆盖，Q_j 为 B_j 中实际遗漏的全局私有块。冻结该位置真实负载 b、r=m−i+1。G_j(k)=|Q_j|/k+Σ_(B_j\Q_j)1/(b_x+r)。F_j(k) 对 r−1 个合法竞争主题中至多 k−1 个触及 Q_j 的完整根收益取极小，1≤k≤r；Λ_i、λ_i 分别为 F、G 全部席位的第 r 大。
+- **Conclusion/scope：** u_i≥Λ_i≥λ_i，W≥Σ_iΛ_i≥Σ_iλ_i；λ_i 逐位置不弱于旧实际遗漏私有谱与直接分母保底的最大值，且有完整 SPE 的严格增强例。全部 Q_j 为空时 F=G，退回直接分母保底。
+- **Dependencies：** 既有超集席位机制、固定实际遗漏的零触块计数、单位玩家同叶包含支配、全部有序历史的真实偏离 IC；没有调用原 half 或 SPE 删除/冻结桥。
+- **Evidence/status：** 自足一般解析证明；induction 先只见 G 陈述独立重构，再读稿审 F；root 定义级重构。menu 独立展开单位客户、重构完整策略并复算严格增强例，root 重跑该标准库审计通过。内部检查完成，未外审、未认证全球新颖性。
+- **Objections/open obligations：** 无已成立的本引理致命异议；未证明 ΣΛ_i≥OPT_m/2 或 OPT_m−W≤ΣΛ_i。没有改变 Q-CAG-HALF 的 OPEN 状态或扩展原命题已证范围。
+- **Related files：** continuation_general/omission/prefix_coupled_seat_budget.md、induction/private_offset_spectrum_independent_review.md、menu/refined_spectrum_numerical_review.md 及相邻实际脚本/JSON；共享工作稿 general_half_proof.md §3.1。
+
 ## ROOT-ONLY-REPAIR-3-v1
 
 - Objects/domain/quantifiers：每个原CAG-MODEL实例、每个m>=2、每个完整纯计划tau，其在每个正深度子局已为SPE；根A不必最优。全部有序历史、重复/空主题、任意历史平局保留。
