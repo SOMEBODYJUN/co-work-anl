@@ -122,3 +122,7 @@ SD/query-projection 是合法表示，完整说明在 global/coupling；COMMON-C
 
 - **B10-OPT-COORDINATE-INIT-v1**：每个原实例/完整SPE实际叶B、每个比较m元组T，对 x∈T_i 的份额p_ix=1/cT(x)存在显式非负分解p_ix=P^B_ix+c_ix+Σ_j>i a_ijx，保留原future正边容量；current_i=Σc_ix=min(r_i,u_i)≤u_i，r_ix=p_ix−P^B_ix≥0，future总额(r_i−u_i)_+；所有实际B列Σ_iP^B_i,l≤u_l(B;(O∩B_l)\T_l)。关键一步Σ(r_ix−P^W_ix)_+≤u_i(W_i)≤u_i只在求和后用一次wholeIC，无客户重权。root推导，global/coupling按陈述独立重构通过。库存标签不要求被当前付款actual角色覆盖；与actual客户券不同。[正文](round7/parent/optimal_coordinate_initialization.md)。
 - **B10-OPT-COORDINATE-RESIDUAL-v1**（OPEN充分候选，非上述引理结论）：每个原实例与完整SPE是否存在最优T及允许的坐标剪枝/SAFE或CLIP选择，使仅future源的终端金额Aout_l≤2u_l−current_l−Bcol_l对全部角色同时成立。右边已证非负；若此候选成立则half。没有声称任意固定T/路由满足。真future初始化及严格角色DAG合法，剩余共同容量仍未证。
+
+## 第八轮已恢复的旧反例：状态纠正
+
+强FOMA-EXISTS与FOMA-ALL均 refuted，旧精确身份 B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1，来源 R-a0bb57fa24044a8794bc7991918a19c6/static_matching/optimal_static_matching_counterexample.md。第七轮漏读旧资产、标为OPEN是本桌面状态错误。root独立代码与新冻结重放在round8/parent，确认52单位客户、m4、actual3322、W47、OPT52唯一支持0145，24匹配最小48。同行R-105的新1953客户证明是另一条独立分离，本桌面未冒称其完整复审。弱K≤(1+1/m)W与原目标仍OPEN。静态公式不因候选失败而失效。
