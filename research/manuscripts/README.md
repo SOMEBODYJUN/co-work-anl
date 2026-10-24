@@ -1,0 +1,51 @@
+# 三篇英文论文：成文入口与写作依据
+
+本轮按主人指定结构整理既有证明，不改变各 Claim 的数学身份，也不把成文或内部审查当作新颖性与外审认证。两阶段设施客户的负载博弈与加权拥塞博弈分别定义，不能与当前顺序客户吸引主攻混用。
+
+| 论文 | 连续稿与源码 | 固定结构、范围与证明来源 |
+| --- | --- | --- |
+| 共同目录双设施黄金比 | [PDF](shared_catalog/main.pdf)、[LaTeX](shared_catalog/main.tex)、[写作状态](shared_catalog/WRITING_STATE.md) | 第一节引言及模型；第二节四类精确均衡菜单、核心引理和短主定理证明。坏回应环、双锚及局部多混合证明在附录完整展开。对应 SC-PHI-E/A；[现行数学地图](../current/shared/README.md)。势修复与已有黄金比下界分别归前人。 |
+| 任意设施数因子二 | [PDF](multiple_facilities/main.pdf)、[LaTeX](multiple_facilities/main.tex)、[写作状态](multiple_facilities/WRITING_STATE.md) | 第一节引言及模型；第二节字典序选择、全部转移预算、原子装箱、离轨修复与短主定理证明。对应 SC-K-2-E；[现行数学地图](../current/multi_facility/README.md)。有限构造、短显示证书与一般多项式搜索严格区分。 |
+| 加权拥塞结构工具及反例族 | [PDF](../current/weighted_congestion/structural_reconstruction/structural_methods_article.pdf)、[LaTeX](../current/weighted_congestion/structural_reconstruction/structural_methods_article.tex)、[写作状态](../current/weighted_congestion/structural_reconstruction/WRITING_STATE.md) | 四节：引言/模型，结构工具，全状态反例族，正向稳定及社会成本应用。先说明工具解释了什么，再由工具解决存在性增长阶问题。参数尾部和全部非法态证明保留；简单参数例不宣称数学最小。对应各独立 WC Claim；[专题地图](../current/weighted_congestion/structural_reconstruction/README.md)。 |
+
+作者、单位及邮箱未由主人提供，正文不虚构署名。历史记录包含 Algorithmica、SIDMA、TEAC、MOR 的编辑建议，没有主人对三篇逐篇定刊的决定；本次可编译稿采用通用数学文稿类，**最终期刊模板尚未确定**，不是已经完成投稿格式的文件。
+
+## 实际拉取的开源写作 skill
+
+来源：[haruhisa-enomoto/math-paper-skills](https://github.com/haruhisa-enomoto/math-paper-skills)，MIT；本轮使用提交 `37d0bb7d3f987b0e75e0ca108ecb0daa719f52fa`。已完整读取 `write-research-paper` 及其 exposition standard、workflow、paper-writing guide；独立表述审查使用 `read-research-paper`，英文润色遵守 `polish-math-prose` 的数学不变量。
+
+恢复时在仓库外检出同一版本，保留四个 sibling skill 的相对目录，不把第三方 skill 或它的 Git 历史混进研究正文：
+
+```sh
+git clone https://github.com/haruhisa-enomoto/math-paper-skills.git ../math-paper-skills
+git -C ../math-paper-skills checkout --detach 37d0bb7d3f987b0e75e0ca108ecb0daa719f52fa
+```
+
+当前使用 writer/reviser 工作流：主人给定的篇章安排是写作约束，不重复套用 coordinator 的初稿审批门。数学核验、独立表述审读、编译、文献核验和新颖性核验分别记录真实范围。
+
+## 英文范文与校准方式
+
+采用实际论文的叙述节奏、逻辑衔接和解释密度，不复制句子，不在正文宣称由范文作者写作。
+
+| 一手范文 | 实际阅读位置 | 在本轮成文中的用途 |
+| --- | --- | --- |
+| [Harks–Klimm，On the Existence of Pure Nash Equilibria in Weighted Congestion Games，MOR 2012](https://www.fim.uni-passau.de/fileadmin/dokumente/fakultaeten/fim/lehrstuhl/harks/HK-MOR-2012.pdf) | 摘要p419，§§1.1–1.2 p420，Lemma 3.1证明pp422–423 | 前两篇采用先对象与精确贡献、再必要机制的叙述；反证中明确所选对象的存在性和极值条件。 |
+| [Christodoulou等，Existence and Complexity of Approximate Equilibria in Weighted Congestion Games，作者稿](https://arxiv.org/pdf/2002.07466) | 摘要，§1.2，Theorem 3证明PDF pp15–16 | 第三篇先组织结构理解，再说明工具怎样导出反例及其他结论；逐项区分已有结果与新应用。 |
+| [Giannakopoulos–Noarov–Schulz，Computing Approximate Equilibria in Weighted Congestion Games via Best-Responses，作者稿](https://arxiv.org/pdf/1810.12806) | 摘要及引言，Lemma 3证明PDF p9，Theorem 4证明PDF p18 | 结构定理与应用分层；证明先给足够完成任务的局部义务，再展开公式推导。 |
+
+2026-10-23实际核对的[MOR编委页](https://pubsonline.informs.org/page/moor/editorial-board)将 Tobias Harks 列于 Game Theory。该事实只说明范文作者与期刊的关系，不表示主人已经选定MOR，也不表示编委认可本稿。
+
+## 构建、检查与接续
+
+从仓库根运行：
+
+```sh
+python3 research/manuscripts/build.py shared multiple congestion
+python3 research/build_catalog.py --check
+python3 research/check_active_research.py
+python3 research/check_assets.py
+```
+
+构建依赖已有 TeX Live、latexmk、BibTeX；脚本将中间文件置于各稿 `.build/`，可在本环境从已安装文件重建缺失的 format，不联网安装。PDF仅在编译和未定义引用检查通过后更新。
+
+各稿 `WRITING_STATE.md` 保存实际版本、正文/附录边界、已发生的检查及未决项。当前审查汇总见[成文核验](MANUSCRIPT_REVIEW.md)。下一轮应先读这些精确记录，再读论文；不要把旧审查当作覆盖新版本，也不要为成文目的擅自增加数学结果。
