@@ -1,8 +1,8 @@
-# fresh 客户不重采时的全图密度不变量（候选，待独审）
+# fresh 客户不重采时的全图密度不变量（纯流条件命题已父方重构）
 
 2026-10-24。任意有限共同目录、任意人数、任意完整有序历史纯 SPE；以下计数/流不变量实际上只需要固定的一份完整确定策略及 actual 叶，不使用其最优性。**Q-CAG-HALF、FRESH-RESIDUAL 均仍 OPEN。**
 
-本稿接 `R-d398.../next_general/credible/clock_cycle/source_preserving_kernel_review.md` §3 的每客户 incoming 保留核。它改变分母，不是原 full-profit/fresh-profit 标量流的删边版本。本稿不声称那些会重采客户的旧标量流也有下述结论。
+本稿接 [客户保留核核查](../../R-d3981c0168644971803a9c3380ed687c/next_general/credible/clock_cycle/source_preserving_kernel_review.md) §3 的每客户 incoming 保留核。它改变分母，不是原 full-profit/fresh-profit 标量流的删边版本。本稿不声称那些会重采客户的旧标量流也有下述结论。父方已按本稿 INV/INIT/EDGE 独立重构纯 DENSITY，见 [父方审查](../parent/reset_density_review.md)；该审查没有提升援引的 whole-IC 核，也没有给 actual cap。
 
 ## 1. 定义及允许初始化
 
@@ -24,7 +24,11 @@
 
 `b^k_s(x) <= rho_k(x)/c_{Y^k}(x)`；                                    (INIT)
 
-非 coverer 不注入。每个 source 的所有初始注入总量不超过 `rho_k(x)`，其余可当前吸收或不使用。原 owner INIT、round7 坐标子边 `a_kjx<=p_kx/c_{Y^k}(x)`、以及对这些边的 further clipping 均在这个域内。若同角色允许多个不同 source action，应改为各自库存之和并保留 `(k,T)` 标签；以下证明不变，但为简洁正文只写单个 `T_k`。
+非 coverer 不注入。每个 source 的所有初始注入总量不超过 `rho_k(x)`，其余可当前吸收或不使用。原 owner INIT、[坐标剩余稿](../../R-d3981c0168644971803a9c3380ed687c/next_general/global_credit/coordinate_residual_attack.md) §7 的保留旧 INIT+CLIP 强逐客户子容量的 R-only 变形，以及对这些边的 further clipping，均在这个域内。
+
+**初始化范围更正。** 初稿误把 raw round7 坐标子边也整体纳入 INIT；自查后撤回。对 fresh x，raw round7 只有 `a_kjx<=min(p_kx/(c_Y-1),1/c_Y)`，一般不保证 `a_kjx<=p_kx/c_Y`。所以本定理不能免费用于原始 round7 坐标初始化，必须另核 INIT 或使用上述确实保留 `p/c_Y` 子容量的 R-only 选择。这里没有为 raw round7 另称密度 1。
+
+若同角色允许多个不同 source action，应改为各自库存之和并保留 `(k,T)` 标签；以下证明不变，但为简洁正文只写单个 `T_k`。
 
 ## 2. 每客户不重采递推
 
@@ -54,7 +58,7 @@
 
 ## 3. 一般不变量
 
-**候选定理（RESET-DENSITY）。** 在 (INV)--(EDGE) 的同一次客户保留流中，每个正生成 natural context `s` 同时满足
+**纯流条件定理（RESET-DENSITY）。** 在 (INV)--(EDGE) 的同一次客户保留流中，每个正生成 natural context `s` 同时满足
 
 `0 <= h_s(x) <= 1/c_{B_s}(x)`，即 `0<=beta_s(x)<=1`。                  (DENSITY)
 
@@ -115,4 +119,6 @@
 
 ## 5. 核查范围
 
-本稿未生成有限实例或扫描。候选证明只用真实 reset completion 的 history 域、每客户保留、source 库存和非增质量流；仍待 root 从精确陈述独立攻击。若成立，其数学新增仅是全图 DENSITY/PREFIX-DENSITY，不作新颖性认证。真正下一步仍须支付同 actual 角色的多 context 合账，不能停在 beta_*t<=1 后宣称实际钱包 cap。
+本稿未生成有限实例或扫描。纯流证明只用真实 reset completion 的 history 域、每客户保留、source 库存和非增质量流；父方已从 INV/INIT/EDGE 独立重构通过。其数学内容仅是这些精确条件下的全图 DENSITY/PREFIX-DENSITY，不作新颖性认证。援引 whole-IC 核的 actual 付款范围未在本稿另作独审；真正下一步仍须支付同 actual 角色的多 context 合账，不能停在 beta_*t<=1 后宣称实际钱包 cap。
+
+本轮据父方指示停在此处，不继续没有新增 IC 的表示扩张，不把该条件命题视作一般 half 正向闭合。
