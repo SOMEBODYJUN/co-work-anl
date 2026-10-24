@@ -66,7 +66,7 @@ for g,a in strategy.items():
         ic_checks+=1
 
 
-def row(g, fresh=False):
+def row(g, fresh=False, cancel=False):
     i=len(g)
     a=strategy[g]
     zb=finish(g)
@@ -90,9 +90,18 @@ def row(g, fresh=False):
         assert F(1,cb)-len(plus)*price==(1+len(ja&jb))*price
         assert F(1,ca)-len(minus)*price==(1+len(ja&jb))*price
         signed_difference+=F(1,cb)-F(1,ca)
-        retained+=(1+len(ja&jb))*price
-        negative+=len(minus)*price
-        for j in plus:
+        removed=min(len(plus),len(minus)) if cancel else 0
+        # Explicit same-customer matching, past positive roles first.
+        ordered_plus=sorted(plus,key=lambda j:(j>i,j))
+        kept_plus=ordered_plus[removed:]
+        retained+=(1+len(ja&jb)+removed)*price
+        negative+=(len(minus)-removed)*price
+        if cancel:
+            kept_past=sum(j<i for j in kept_plus)
+            past_a=sum(j<i for j in ja)
+            past_b=sum(j<i for j in jb)
+            assert kept_past<=max(past_a-past_b,0)
+        for j in kept_plus:
             if j>i:
                 target=za[:j]
                 assert strategy[target]==za[j]
@@ -125,8 +134,9 @@ def row(g, fresh=False):
 
 rows_all={g:row(g) for g in strategy}
 rows_fresh={g:row(g,True) for g in strategy}
+rows_cancel={g:row(g,cancel=True) for g in strategy}
 
-# A single legal forced OPT/source query at position one: query D, and retain
+# A single legal forced comparison/source query at position one: query D, and retain
 # only its two actual-uncovered TDE customers, rho=1 for each.
 source_query=D
 source_leaf=finish((D,))
@@ -168,6 +178,8 @@ def flow(rows):
 
 beta_all,mass_all=flow(rows_all)
 beta_fresh,mass_fresh=flow(rows_fresh)
+beta_cancel,mass_cancel=flow(rows_cancel)
+assert all(beta_cancel[g]<=beta_all[g] for g in strategy)
 coupon={}
 for j in range(3):
     for x in topics[Z[j]]:
@@ -180,6 +192,17 @@ positive_coupons=sum((v/F(sum(x in topics[a] for a in Z))
                       for (j,x),v in coupon.items()),F())
 refund=sum((beta_all[g]*(r['n']+r['e']) for g,r in rows_all.items()),F())
 assert positive_coupons-refund==mass_all
+fresh_c_ledger=F()
+for g,r in rows_fresh.items():
+    i=len(g)
+    a=strategy[g]
+    xb=sum((F(1,sum(x in topics[b] for b in r['B'])) for x in topics[a] if x in C),F())
+    ya=sum((F(1,sum(x in topics[b] for b in r['A'])) for x in topics[a] if x in C),F())
+    fresh_c_ledger+=beta_fresh[g]*(actual[i]+xb-ya-r['n']-r['e'])
+assert fresh_c_ledger==mass_fresh
+cancel_signed=sum((beta_cancel[g]*(actual[r['i']]+sum(r['past'].values(),F())-r['n']-r['e'])
+                   for g,r in rows_cancel.items()),F())
+assert cancel_signed==mass_cancel
 assert beta_all[(D,)]==F(1,4)
 assert rows_fresh[(D,)]['out'][(H,T)]==F(1,2)
 assert beta_all[(H,T)]==F(1,40)
@@ -197,6 +220,7 @@ result={
                            'beta_from':str(beta_all[(D,)]),'transmitted_profit':'1/8'},
     'terminal_past_coupon_raw':str(sum(rows_all[(H,T)]['past'].values(),F())),
     'all_flow_mass':str(mass_all),'fresh_flow_mass':str(mass_fresh),
+    'fresh_c_ledger':str(fresh_c_ledger),'net_cancel_flow_mass':str(mass_cancel),
     'positive_coupon_profit':str(positive_coupons),'signed_refunds':str(refund),
     'status':'passed'
 }
