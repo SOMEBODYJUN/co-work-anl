@@ -5,9 +5,10 @@ coverage question remains **OPEN**. This note disproves only the exact static
 assignment interface described below. It does not give a half counterexample,
 and it does not disprove matching that uses true changing continuations.
 
-Status: author-level exact construction and complete definition-level replay.
-The parent has requested an independent raw-certificate audit; that audit is
-not claimed here. The raw instance and full policy below are frozen. No
+Status: author-level exact construction and complete definition-level replay;
+subsequent [blind raw-certificate audit](../terminal_query/independent_assignment_audit.md)
+and [parent unit-customer integer replay](../parent/static_assignment_unit_audit.json)
+both passed every history and optimal assignment. The raw instance and full policy below are frozen. No
 external review or novelty certification is asserted.
 
 ## 1. Exact candidate that fails

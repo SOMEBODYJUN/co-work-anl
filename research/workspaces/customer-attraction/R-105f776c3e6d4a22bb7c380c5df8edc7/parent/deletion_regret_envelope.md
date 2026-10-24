@@ -100,7 +100,7 @@ d_x/[(b_x+c_x)(b_x+d_x+c_x)]，共有 c_x 名，故
   未读本证明或 harmonic_menu 原稿；重新推得逐位置界和总界，并给精确非负余项。
 - [独立核验代码](../independent_general/audit_background_deletion_blind.py)自行构造原背景
   全历史 SPE，不导入仓库求解器；[冻结结果](../independent_general/background_deletion_blind_audit.json)
-  实际文件名以同目录 README 为准。有限核验不承担上述一般证明。
+  包含65例/469节点/1676个原IC比较。有限核验不承担上述一般证明。
 
 下一步只有在能从真实后继 IC 进一步控制 sum K_j 或用可证明的权重消去
 多叶误差时，才可把本组件接入一般归纳。恒等式、目录 max 和误差记账本身

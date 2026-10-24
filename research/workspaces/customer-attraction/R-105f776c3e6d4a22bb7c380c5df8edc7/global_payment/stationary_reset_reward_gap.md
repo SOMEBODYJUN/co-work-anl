@@ -3,7 +3,11 @@
 2026-10-24. Exact test of a named general candidate, not a new half proof or new
 SPE instance. Q-CAG-HALF remains OPEN. The numerical witness is the pre-existing
 36-client SPE in `research/current/customer_attraction/aggregate_theta_counterexample.md`.
-The independent reconstruction here does not import the canonical code.
+The independent reconstruction here does not import the canonical code. The already-existing
+`research/current/customer_attraction/stationary_pair_transport.md` §3 contains a
+more directly budget-targeted failure of the prescribed stationary-tail kernel
+(cap 6 > W/3 in a 22-client full SPE). The present calculation is only a
+first-moment/reward formulation and is not claimed as new progress.
 
 ## Candidate and exact valid relation
 
