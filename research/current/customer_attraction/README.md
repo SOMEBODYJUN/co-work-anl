@@ -12,6 +12,8 @@
 
 2026-10-24 阶段性一般接口见 Boss9 个人区：偏离份额的全范围关系与 L4 同枝继承在 [`route5a/sequential_deviation_share_lemma.md`](../../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/route5a/sequential_deviation_share_lemma.md)，节点级跨枝福利/调和势中继在 [`cross_branch_welfare_relay_identity.md`](../../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/representation/cross_branch_welfare_relay_identity.md)。静态 smoothness→SPE 的精确障碍和 pair-incidence LP 的精确障碍也已在该个人区登记；它们均不改变主命题的 OPEN 状态。
 
+同一阶段的调和势障碍在 [`potential_branch_obstruction.md`](../../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/route1/potential_branch_obstruction.md)：完整 SPE 的当前动作比较必须保留删去当前玩家后的分支势差，逐点势单调归纳已被精确证书排除；这只是证明接口边界。
+
 从[当前研究入口](../../customer_attraction/README.md)进入[精确目标](../../customer_attraction/CLAIMS.md)、[前沿](../../customer_attraction/RESEARCH_STATE.md)、[失败机制](../../customer_attraction/FAILED_ROUTES.md)和[保留问题分诊](../../customer_attraction/RETAINED_QUESTIONS.md)。Boss 先固定[模型](model.md)，随后沿正在研究的机制按需读取下表；无需通读本页所有正文。
 
 ## 主人最新决定：一般命题是唯一新研究任务

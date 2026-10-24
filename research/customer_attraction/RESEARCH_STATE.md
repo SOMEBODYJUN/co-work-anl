@@ -106,3 +106,5 @@ Boss9 本轮新增候选一般接口 `CA-INCIDENCE-LP-DYNAMIC-BUDGET-v1`：用�
 - `representation/complete_pair_incidence_lp_obstruction.md` 对完整 pair-incidence 目录求得根 incidence-LP 对偶精确值 (B(m)=ms/2)，说明单一非负关联乘子不能利用最优解至多使用 (m) 个主题；这只是证明模板障碍，不是 Q-CAG-HALF 反例。
 
 上述材料均已保留完整历史、任意平局和辅助结论边界；主命题仍 **OPEN**。当前最有信息价值的下一步是把节点 relay 与 L3 的真实后继 IC 组合成不重复计费的共同预算，或证明一条适用于全部目录的 edge balancing 关系。
+
+补充的调和势攻击已保存为 [`potential_branch_obstruction.md`](../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/route1/potential_branch_obstruction.md)：它精确核验 (u_i=\Phi(z)-\Phi(z^{-i}))，但在完整共同目录 SPE 中找到分支调和势逐点单调性的失败，见证 (W=\operatorname{OPT}_3=4)，只排除该归纳接口。另一个可检验的充分条件是把各最优主题强制分支的后继尾福利总和 (R) 控制在实际 (W) 内；当前没有一般证明，且该尾和位于互斥离轨子树。
