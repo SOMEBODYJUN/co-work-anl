@@ -50,7 +50,7 @@ To obtain a half bound from a root certificate of the form
 2D_0\max_j f_j(0,m)=s(s-1),
 \]
 
-whereas (1) is `m s - m(m+1)/2`. For example, with `s=4m` and `m\ge2`, the ratio of the right side of (1) to this doubled root credit tends to `1/4` as `m` grows; more directly, the root LP credit is independent of the fact that the optimum can use only `m` vertices. If one instead asks the one-step form `OPT_m\le 2m\max_j f_j(0,m)`, its right side is `2(s-1)`, while (1) is order `ms`; this fails by an order-`m` factor whenever `s\gg m`.
+whereas (1) is `m s - m(m+1)/2`. For example, with `s=4m` the ratio of (1) to this doubled root credit tends to `7/32`, and with `s\gg m` it is asymptotic to `m/s`; more directly, the root LP credit is independent of the fact that the optimum can use only `m` vertices. If one instead asks the one-step form `OPT_m\le 2m\max_j f_j(0,m)`, its right side is `2(s-1)`, while (1) is order `ms`; this fails by an order-`m` factor whenever `s\gg m`.
 
 Thus the failure is not a numerical weakness of a chosen feasible `\beta`: the complete-graph dual certificate forces `B(m)=ms/2`. Any proof that only (i) routes each action to one maximal theme, (ii) bounds a current deviation by `f_j`, and (iii) pays all uncovered comparison customers through a single nonnegative incidence-LP multiplier vector must introduce a second mechanism. Candidate mechanisms are cross-branch continuation credit, pair-edge load balancing, or a direct comparison that uses the `m`-theme cap in (1).
 
