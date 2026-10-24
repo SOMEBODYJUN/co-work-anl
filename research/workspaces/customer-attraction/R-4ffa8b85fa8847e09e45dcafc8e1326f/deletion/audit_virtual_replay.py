@@ -103,8 +103,9 @@ def audit(m, topics, sigma):
                 gain = max(F(), max(utility(rollout(old_h+(a,)), player, retained)-value
                                    for a in labels))
                 old_value = utility(z, player)
-                cap = min(q*old_value, F(q*largest_topic, q+1), F(m, q+1)*p_deleted)
+                cap = min(q*old_value, F(q*largest_topic, q+1))
                 assert gain <= cap-(value-old_value)
+                assert gain <= F(m, q+1)*p_deleted-(value-old_value)
                 spectral_cap_sum += cap
                 total_regret += gain
                 h += (z[player],)

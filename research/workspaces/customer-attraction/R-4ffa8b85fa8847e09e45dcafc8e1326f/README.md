@@ -23,3 +23,7 @@
 所有有价值备份仅通过根work.py checkpoint本工作区推送到用户明确指定的SOMEBODYJUN/co-work-anl main。凭据在仓库外，未打印或入库。只在收到status=pushed后报告远端保存。
 
 一次公屏状态发送被自动审批以“接收方和状态载荷未单独核准”为由拒绝；未通过别的通道绕过，外部同行通知不能记作已送达。内部六分支工作不受此影响。研究资产备份是用户另外明确要求的动作，与公屏消息区分。
+
+## 最终接续说明
+
+本轮删除误差主干已独立内审并修正q=0锐例端点；root重跑506/6086比较通过。新增[末位Cartesian修复边界](deletion/cartesian_terminal_obstruction.md)只否定同人数完整产品保原计划合同。[root捕获链审查与补充](parent/capture_visit_extremum_review.md)给抽象等分递增链v_k/√k→1，未证明SPE可实现或NET付款。一般工作稿§6列明本轮实际停止位置；没有可合理报告的一般福利新界。背景合同、真实G重置及incoming共同标量仍是明确缺口，阴性扩样和等价账本已停止。
