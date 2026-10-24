@@ -124,3 +124,5 @@ In particular, `tau_inc≤2` implies half coverage because
 
 For a concrete `s=5` pattern with `tau_inc=2`, take positive incidence blocks only on
 `{1,2},{1,3},{1,4},{1,5}` and `{2,3,4,5}` (with enough positive mass to make all five maxima distinct). The weights `alpha_1=1` and `alpha_2=...=alpha_5=1/4` cover every incidence edge with total `2`; the corollary therefore gives half coverage despite five maximal sets. This is an incidence pattern certificate, not a claim that every catalog realizing the pattern has no other positive blocks.
+
+A simple structural corollary is useful: if every noncore customer belongs to at least `d` maximal themes and there are at most `2d` maximal themes, then choosing `alpha_j=1/d` gives `tau_inc <= s/d <= 2`; hence the same full-history half-cover guarantee applies. This includes the five-maxima pattern with minimum noncore incidence three, while retaining arbitrary internal subthemes and history-dependent ties.
