@@ -153,3 +153,30 @@ y_j=n/\delta\quad(1\le j\le s)
 `|I_x|n/delta>=n`。此时 `sum_j y_j=sn/delta<=2n`，所以 (6) 成立。
 
 这比静态 `tau_inc<=2` 的相应度数条件弱：静态条件要求有私有块时归一化权至少 `1`，而本接口只要求 `a_j/n<=1/delta`。例如上面的 `s=2n,delta=n,a_j=1` 族正满足新条件而不满足静态条件。
+
+## 对席位证书失败的精确 LP 对偶
+
+把有正私有块的指标记为 `J_priv`，把出现正客户质量的非核心关联类型记为 `E`。定义
+
+\[
+\begin{array}{ll}
+\text{(P)}\quad\min & \sum_j y_j\\
+\text{s.t.}& y_j\ge a_j\quad(j\in J_{\rm priv}),\\
+&\sum_{j\in I}y_j\ge n\quad(I\in E),\\
+&y_j\ge0.
+\end{array}
+\tag{10}
+\]
+
+这是有限可行线性规划（例如取所有 `y_j=n`）。其对偶为
+
+\[
+\begin{array}{ll}
+\text{(D)}\quad\max & \sum_{j\in J_{\rm priv}}a_j\lambda_j+n\sum_{I\in E}\mu_I\\
+\text{s.t.}&\lambda_j+\sum_{I\ni j}\mu_I\le1\quad(j=1,\ldots,s),\\
+&\lambda_j,\mu_I\ge0.
+\end{array}
+\tag{11}
+\]
+
+因此，席位加权接口不能以总质量 `2n` 闭合的**精确结构性原因**是存在这样的私有/共享关联 fractional packing，其目标值严格大于 `2n`；这只是该席位证书的 Farkas 障碍，不是 Q-CAG-HALF 的反例。`(D)` 还把下一步需要的真实动态信用定位为：它必须支付对偶中超过 `2n` 的私有席位和共享关联需求，或利用顺序后继约束证明这类 packing 不可同时实现为低福利。
