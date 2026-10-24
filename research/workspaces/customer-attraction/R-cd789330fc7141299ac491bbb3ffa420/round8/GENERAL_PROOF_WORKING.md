@@ -42,3 +42,5 @@ root共同未来边选择族保留所有新coverer正边，允许增加共同cov
 independent从原始旧52/348 packet独立实现NEW-CAP、客户DAG、库存、前缀密度和wholeIC退款，并测零客户/空主题。root另运行该实现通过，不称第三套实现。v2在同一固定输入增加允许的初始future，v3再取共同future全满；均通过并激活非实际interlayer。固定输入仍没有merger，故合流由反链解析证明承担，不冒称实测。代码和exclusive冻结结果在[independent地图](independent/README.md)。
 
 一般主目标仍OPEN。当前没有能合法把同角色不同查询/历史的付款共同放入余额的新关系；需要该金额关系或新的直接证明，不能把已解决的支持保持再当作未完成理由，也不能把未付汇总藏在密度/LP字样中。
+
+共同付款primal经[inventory独立审查](inventory/payment_primal_review.md)和[independent另一审查](independent/linear_joint_payment_review.md)通过；多query source密度不需SPE，但不提供初始资金或ROLE存在性。没有外审/新颖性认证，一般目标仍OPEN。

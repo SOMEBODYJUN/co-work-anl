@@ -30,7 +30,7 @@ R 无 actual past coverer，故 N、M 都只含未来角色，且 |N|+|M|+1=c、
 
 ## 3. 固定角色价格的最小费用势
 
-给实际角色非负价格 λ_i。对每个 (t,x)，令 ψ_t(x) 是从此处一单位 x 质量开始、在该选择族内最小的最终实际角色价格。未来角色严格增加，反向递推唯一确定它。令 child(t,j) 为 A 中角色 j 的真实 prescribed context，则
+给实际角色非负价格 λ_i。对每个 (t,x)，令 ψ_t(x) 是该同质线性流从此处出发的单位成本系数，即其最小最终实际角色价格；这不声称可向任意 context 独立注入一单位并保持 source/IC 密度合同。未来角色严格增加，反向递推唯一确定它。令 child(t,j) 为 A 中角色 j 的真实 prescribed context，则
 
     ψ_t(x)=[λ_i
             +sum_(j in N)ψ_child(t,j)(x)
