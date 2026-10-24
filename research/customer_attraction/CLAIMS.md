@@ -43,7 +43,7 @@
 
 新增机制边界：[`CA-WORST-CCE-WELFARE-NO`](../current/customer_attraction/worst_cce_welfare_counterexample.md)给十三客户完整SPE覆盖9，低于同实例每个静态CCE的期望福利；精确最低2785/297。独立内部精确核验通过，不改变一般半覆盖或真正聚合静态安全值的开放状态。
 
-新增机制边界：[`CA-FRACTIONAL-ACTUAL-LOAD-WEAK-NO-v1`](../current/customer_attraction/fractional_actual_load_counterexample.md)对每个m≥4给出四主题完整SPE无限族，否定原正桥`CA-FRACTIONAL-ACTUAL-LOAD-WEAK-v1`；并不否定半覆盖、真正聚合静态安全值，或另立的精确实际税充分候选。全历史解析证明及独立内部精确核验通过；外审与新颖性未认证。
+新增机制边界：[`CA-FRACTIONAL-ACTUAL-LOAD-WEAK-NO-v1`](../current/customer_attraction/fractional_actual_load_counterexample.md)对每个m≥4给出四主题完整SPE无限族，否定原正桥`CA-FRACTIONAL-ACTUAL-LOAD-WEAK-v1`；该无限族本身不否定精确实际税充分桥。后者已由[既存13人36客户完整SPE](../workspaces/customer-attraction/R-c50fecc37aa44fb4a69a2122bb70e5fe/security/refined_tax_counterexample.md)独立否定，2026-10-24恢复该状态并精确重放；不能再列为开放候选。半覆盖及真正聚合静态安全值仍OPEN；外审与新颖性未认证。
 
 独立简化版本：[`CA-WORST-CCE-WELFARE-8`](../current/customer_attraction/eight_customer_cce_welfare_gap.md)使用八单位客户、四主题和计数依赖完整策略给W6<min_CCE E[W]=544/87，OPT3=8。它保留原十三客户身份，外审、新颖性和最小性未认证。
 

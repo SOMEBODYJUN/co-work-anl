@@ -122,3 +122,27 @@ SD/query-projection 是合法表示，完整说明在 global/coupling；COMMON-C
 
 - **B10-OPT-COORDINATE-INIT-v1**：每个原实例/完整SPE实际叶B、每个比较m元组T，对 x∈T_i 的份额p_ix=1/cT(x)存在显式非负分解p_ix=P^B_ix+c_ix+Σ_j>i a_ijx，保留原future正边容量；current_i=Σc_ix=min(r_i,u_i)≤u_i，r_ix=p_ix−P^B_ix≥0，future总额(r_i−u_i)_+；所有实际B列Σ_iP^B_i,l≤u_l(B;(O∩B_l)\T_l)。关键一步Σ(r_ix−P^W_ix)_+≤u_i(W_i)≤u_i只在求和后用一次wholeIC，无客户重权。root推导，global/coupling按陈述独立重构通过。库存标签不要求被当前付款actual角色覆盖；与actual客户券不同。[正文](round7/parent/optimal_coordinate_initialization.md)。
 - **B10-OPT-COORDINATE-RESIDUAL-v1**（OPEN充分候选，非上述引理结论）：每个原实例与完整SPE是否存在最优T及允许的坐标剪枝/SAFE或CLIP选择，使仅future源的终端金额Aout_l≤2u_l−current_l−Bcol_l对全部角色同时成立。右边已证非负；若此候选成立则half。没有声称任意固定T/路由满足。真future初始化及严格角色DAG合法，剩余共同容量仍未证。
+
+## 第八轮已恢复的旧反例：状态纠正
+
+强FOMA-EXISTS与FOMA-ALL均 refuted，旧精确身份 B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1，来源 R-a0bb57fa24044a8794bc7991918a19c6/static_matching/optimal_static_matching_counterexample.md。第七轮漏读旧资产、标为OPEN是本桌面状态错误。root独立代码与新冻结重放在round8/parent，确认52单位客户、m4、actual3322、W47、OPT52唯一支持0145，24匹配最小48。同行R-105的新1953客户证明是另一条独立分离，本桌面未冒称其完整复审。弱K≤(1+1/m)W与原目标仍OPEN。静态公式不因候选失败而失效。
+
+## 第八轮：来源保持密度与一般支付接口
+
+- **B10-COORDINATE-INIT-DENSITY-v1**：原round7任意比较元组T初始化可将每条future子容量进一步裁为min(1/cT,1/d_ix)/cWi，而保留同一current_i=min(r_i,u_i)、future_i=(r_i−u_i)+与全部H不变。逐客户(r−qhat)+≤1/cWi，求和后只用一次wholeIC；每个初始目标密度≤p_ix。inventory证明，independent/root分别重构通过。[正文](round8/inventory/source_preserving_density_envelope.md)。
+- **B10-SOURCE-PRESERVING-DENSITY-ONE-v1**：采用上述初始化及保持同客户的正coverer-difference核，所有非actual natural context的f_tx=cVt(x)h_tx≤p_kx+Σ_(i<k)a_ix≤1，k为history首实际分歧位置。全部父节点为同一角色k、同源同客户质量是角色反链，所以允许真实合流。actual-prefix目标只作终端，不纳入密度声明。全图不重采客户，L_s≤D_s≤u_i及非负退款只用一次完整IC。一般角色汇总cap未证。inventory证明，independent按合同盲重构后对稿、root另核通过；无外审/新颖性认证。
+- **B10-COMMON-COVERER-CHOICE-v1**：先用同行I互补付款，R-only流中保留全部新coverer正边h/cA，允许每个共同future coverer增加[0,h/cA]子边；所有选择均保持库存、密度≤1、wholeIC及future DAG。原current只下降；新future密度贡献≤父h，反链证明保持。全共同角点为旧round3均分flow，不认领新核。root提出，inventory/residual及independent分别确认。[root重构](round8/parent/density_reconstruction_and_common_edges.md)。
+
+以上解决客户身份能否合法穿过未来IC的支持问题，不解决同角色所有contexts的总付款。原fullSAFE/CLIP受限RESIDUAL-CAP没有因此被证明，也不能把新客户核称旧核的删边。
+
+- **B10-TERMINAL-FROZEN-WALLET-v1**：任意实际末两位p,m、此前背景b，A=B_p，a=u_p，v=u_m，L_A=Σ_A1/(b_x+2)，C'_p=min(a,v)−L_A≥0且≤min(a,v)/2。对任意给这两位分配的目录主题，末两行冻结成本总额≤a+v+C'_p；自足精确恒等式另保真末位BR和根IC非负credits，早期总税未付。matching推导，root独立以w(P)−γ(P∩Q)重构CROSS与钱包；独立固定证书代码核全部IC/等式。复用两人共同目录对称交集机制，无外审/新颖性认证。[正文](round8/matching/terminal_frozen_regret_wallet.md)。
+
+query凸包付款、全选择族LP/价格DP及sibling Hessian只按各自正文标为接口/精确身份；尚无新的一般福利付款。有限阴性或纯policy几何例不作SPE/half反例。
+
+- **B10-SOURCE-PRESERVING-PAYMENT-CERTIFICATE-v1**（条件充分接口）：固定原实例、完整SPE与任意比较T，round8/residual/linear_joint_payment_certificate.md的INIT/I-PAY/R-FLOW/ROLE有限线性系统任一可行点都给同一份|O|库存的合法actual两预算付款，故|O|≤2W。数据取同一σ全部有序history，不重命名旧query叶；source current可非极大，共同future用edge z变量保持线性。对最优T的一般存在可行性仍OPEN，未称原目标等价。root提出合成，residual独立展开，root另核质量与域；无外审/新颖性认领。
+
+independent v2/v3在同一固定packet改变已证允许的初始化/共同边选项，激活interlayer但未出现merger。没有从有限通过提升一般role cap；f≤1及wholeIC由解析证明承担。
+
+- **B10-MULTIQUERY-SOURCE-DENSITY-v1**（独立辅助身份）：固定任意完整纯policy及actual叶、有限actual-prefix query sources（同owner可多query），每客户Σp≤1、初始future总量≤p、每初始future边≤p/c_W。则同客户difference/common边家族所有非actual targets密度≤1。actual-prefix/past出口仅终止；不证明初始资金。图/密度不需SPE，wholeIC付款才需原IC。root提出合同，residual证明于primal§4，inventory/independent分别审查通过，不改变Q-CAG-HALF。
+
+共同付款primal双独审见round8/inventory/payment_primal_review.md、round8/independent/linear_joint_payment_review.md；一般ROLE可行性仍OPEN。

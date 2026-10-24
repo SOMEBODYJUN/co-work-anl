@@ -84,3 +84,63 @@
   [父方读稿解析复核](parent/root_reachability_review.md)。内部证明与读稿检查完成；无外审。
 - **Scope / Objections：** 只排除同目录/同负载/同剩余人数的实际实现；PB 的合法离轨
   child 反例不受影响，不排除不同背景编码、更多主题或新的激励。不是 half 新福利界。
+
+## B16-ALL-HISTORY-REGRET-STABILITY-NO-v1
+
+- **Refuted exact contract：** 是否存在与人数、目录、客户无关的常数 C，使每个任意
+  完整纯行动计划 tau 都有 `OPT_m<=2W(tau)+C B(tau)`，其中 B 为逐深度对**全部有序
+  历史**最大真实单步 regret 的和。此处 tau 不要求 SPE；这是明确另立的稳定性桥。
+- **Arbitrary-m family：** m 个主题各为 q 名共同核心客户加一名独有花瓣客户。根选首主题，
+  中间位置重复前一主题，末位取一个尚未使用的主题；该规则在所有有序历史定义，末位
+  处处最佳回复。精确 `W=q+2, OPT=q+m, B=H_(m−1)−1`。q=0 时
+  `(OPT−2W)/B→∞`；q=floor(sqrt(m)) 时 `B/W→0` 而 `OPT/W→∞`。
+- **Proof / Review：** [完整解析及全部历史公式](new_induction_repair/all_history_regret_and_reset.md)、
+  [父方独立公式核对](parent/induction_repair_review.md)；定义级代码只作有限回归。
+  无外审、新颖性未认证。
+- **Scope：** 不是 Q-CAG-HALF 反例，也未嵌入真实 SPE 的删位回放；后者还具有全历史
+  乘法近似及退款结构。本族不能排除利用那些额外信息的修复。
+
+## B16-ROBUST-FRACTIONAL-PREFIX-v1
+
+- **Objects：** 任意原模型有限实例、m≥1、全部有序历史完整纯计划 tau（无需 SPE），
+  实际节点最大真实 regret rho_i，比较客户集大小 O 与分数主题覆盖总重 kappa≥1。
+- **Exact statement：** 令 `r_i=m−i+1`、
+  `F_m(kappa)=1−prod_(r=1)^m(1−1/(r kappa))`、
+  `w_r=prod_(s=1)^(r−1)(1−1/(s kappa))`，则
+  `W>=O F_m(kappa)−sum_i w_(r_i)rho_i`。
+  特别 `OPT_m<=(W+B)/F_m(m)`，B 为上条全历史逐层最大 regret 和。
+- **Dependency / Review：** 已有真实前缀分数覆盖利润计数，把 u_i 替换成 u_i+rho_i，
+  后一项经过非负系数递推；[唯一作者推导](new_induction_repair/all_history_regret_and_reset.md)、
+  [父方独立解析检查](parent/induction_repair_review.md)。新处是明确鲁棒形式，原产品界
+  属既有资产；未外审或认证新颖性。
+- **Limit：** 即使 rho=0，五人无条件因子 `1/F_5(5)=15625/6049>2`，因此不能以本式
+  自动调用精确 SPE 归纳或推出一般 half。
+
+## B16-FACTOR2-REGRET-COEFFICIENT-LOWER-v1
+
+- **Candidate tested：** 对全历史乘法因子2近似纯计划，加上逐深度最大全历史加法 regret
+  B，是否有 `OPT_m−2W<=C B` 的绝对常数 C？该不等式在 B=0 已含原目标，仍 OPEN。
+- **Exact necessary condition：** 对每个 m 取两两不交的大主题 A（大小
+  `L=ceil((m−1)/2)`）和 m−1 个单客户主题；前 m−1 位处处选 A，末位每一历史选
+  真正 BR。此为全部有序历史因子2近似计划，并有 `W=L+1`、`OPT=L+m−1`、
+  `B=m−1−L`、`OPT−2W=B−2`。故上述任何普适 C 必有 C≥1。
+- **Evidence / Scope：** [作者全历史证明](new_induction_repair/factor_two_regret_attempt.md)、
+  [父方独立解析检查](parent/induction_repair_review.md)。没有 C=1 的证明或反例，
+  也未证明该计划来自某次完整 SPE 删位。不是一般 half 新范围；未外审、未认证新颖性。
+
+## B16-BACKGROUND-ZERO-REGRET-REPAIR-NO-v1
+
+- **Refuted exact bridge：** 对任意合法固定背景 b+d 的完整纯 SPE 后缀，删除 d 并
+  保留原完整后缀策略。如果其**原实际后缀节点**删后 regret 总和为零，是否总存在
+  删除后精确纯 SPE，福利至少为保留策略的实际投影福利？答案否；任意只依赖该 regret
+  总量且在零处有限的绝对福利修复损失界也被等比例复制排除。
+- **Exact witness：** 四主题 A,B,C,D；18名单位客户的八种兴趣类型及策略完整列于
+  [自足正文](new_cross_branch/zero_regret_welfare_repair_obstruction.md)与[原始输入](new_cross_branch/zero_regret_repair_witness.json)。
+  固定一份 A 背景时两位尾玩家完整 SPE 为 C,B、福利18（含背景）；删背景后保留
+  策略实际 C,B 覆盖17，两个实际节点 regret 都零；新两人游戏的末位全部 BR 唯一，
+  唯一精确 SPE 实际 D,B 覆盖16。
+- **Evidence / Status：** 作者解析证明与独立代码、
+  [父方原始重放及全部精确 SPE 枚举](parent/zero_repair_independent_review.md)完成，
+  原始 SHA-256 在父方 audit JSON；内部核验，不是外审或新颖性认证。
+- **Scope：** 背景 A 是合法固定背景，不要求是原三人 SPE 的实际根主题；所以不排除
+  额外利用原战略根激励的删位定理，不是 Q-CAG-HALF 反例。原主命题仍 OPEN。

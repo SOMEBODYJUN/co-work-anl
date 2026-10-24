@@ -31,7 +31,7 @@
 
 [静态福利比较反例](../current/customer_attraction/worst_pne_welfare_counterexample.md)已经完整构造并独立核验：三人、四主题、十六单位客户的SPE覆盖十五，同实例全部静态PNE覆盖十六。即使不要求实际终局本身为PNE，也不能用同实例另一最差PNE直接支付顺序福利。该辅助桥失败没有改变一般目标的OPEN状态。 更弱的[最低静态CCE福利桥](../current/customer_attraction/worst_cce_welfare_counterexample.md)也已被十三客户完整SPE反例否定：W9而每个静态CCE期望福利≥137/15，精确最低2785/297。真正不观察查询的聚合安全值桥仍开放；本例的固定背景(0,4)使v3≤3。
 
-[实际分数负载弱桥无限族](../current/customer_attraction/fractional_actual_load_counterexample.md)进一步排除了固定选择实际缩放背景αc、再要求W≥(m−1/2)M的支付方式：每个m≥4均有四主题完整SPE严格违反。原来的OPT≤(2m−1)M代数仍成立；保留精确实际税得到OPT≤mM+W−G_C，而新的充分桥mM≤W+G_C尚未在此证明。该族满足真正强安全预算W≥m v_m，不影响一般目标或真正聚合安全值的开放状态。
+[实际分数负载弱桥无限族](../current/customer_attraction/fractional_actual_load_counterexample.md)进一步排除了固定选择实际缩放背景αc、再要求W≥(m−1/2)M的支付方式：每个m≥4均有四主题完整SPE严格违反。原来的OPT≤(2m−1)M及OPT≤mM+W−G_C代数仍成立，但精确实际税充分桥mM≤W+G_C也已被[既存13人36客户完整SPE](../workspaces/customer-attraction/R-c50fecc37aa44fb4a69a2122bb70e5fe/security/refined_tax_counterexample.md)否定，差为29481/123025。2026-10-24重放全部112050项精确比较后纠正此处滞后状态；不是新反例。该实例及四主题无限族均仍支付真正强安全预算W≥m v_m，不影响一般目标或真正聚合安全值的开放状态。
 
 ## 新表示与支付边界
 
@@ -58,6 +58,27 @@ r≥1且m≥(r+1)²+1，同样半覆盖。目录、末位主题、离轨历史�
 强 iid 福利桥 `W≥Z_m` 已由既有 CCE 反例逻辑否定：静态对称混合 Nash 的 iid 分布属于 CCE，故八客户例有 `Z_3≥544/87>W6`。见 [静态基准 §1.1](../current/customer_attraction/iid_security_and_flow_barriers.md)。这是状态修正，不是新实例。2026-10-23全盘点又核准既存弱iid反族：[§1.2](../current/customer_attraction/iid_security_and_flow_barriers.md)已否定 `W≥(1−1/(2m))Z_m`；真正 `W≥mv_m` 及主目标仍OPEN。
 
 ## 真正缺什么
+
+[最优首动作真实孩子缺口关系](../current/customer_attraction/optimal_first_action_branch_gap.md)
+新增一项全范围解析组件：任意有序历史的当前机会损失减利润，由真实最优首动作孩子的
+覆盖缺口及非负交换、分享、激励信用精确表示。它保留全部后继和任意平局，不需选比较私有块。
+独立内部重构已完成；外审/新颖性未认证。当前仍须用真实后继IC共同支付多个ρ孩子的正项，
+不能把该等式或折扣系数当成一般归纳完成；half范围不变。
+现已严格排除原正文提出的“删去同尾ξ及分享η”的普遍菜单总预算：
+[全人数解析见证](../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/all_big_completion_slack_obstruction.md)
+复用既有all-big完整SPE族，对每个m≥3及任何菜单分布均严格违例。
+它满足OPT_m=2W−1，所以不是原命题反例；要求正ρ仅由ξ局部支付时需保留原系数；减少被减系数只会放松上界，不会破坏上界本身。任意固定比例折扣
+不能保留原余项系数而得到全人数支付。保留全部ξ只删η的显式加强尚未证明；
+它需要真实跨枝约束，不能靠将完整恒等式求和。
+
+本轮另在[同一人研究区](../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/README.md)
+保存两项全输入、已独立逐客户核验的可接续组件，尚未正式升级为原 half：
+[真实尾主题菜单外损失上界](../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/offspring_menu_loss_bound.md)
+控制最优动作A的尾主题首步静态损失Σλ≤(r−1)(t_A+η_A)，但真实枝重置差
+仍无符号；[实际倒二真实查询行](../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/penultimate_true_query_row.md)
+对任意长度比较元组证明R_(m−1)≥O−W+t_b(A)，并给首次覆盖F/2的另一余量。
+倒二与既有末位查询行已付；真正承重的更早位置仍未付。把该一般机制直接代入
+m=5仍未越过因子二，不据此称其为一般 half 证明。
 
 [实际遗漏私有席位谱](../current/customer_attraction/uncovered_private_seat_spectrum.md)新增一个任意目录、任意人数的后验预算：固定实际未覆盖的极大私有块，仅计真实触块次数，实际每一前缀均可从零触块开始取剩余人数对应阈值。得到逐位置谱保底和前m席位和；若某个最优并集全部遗漏为极大全局私有客户，则锐OPT≤(2−1/m)W。已盲独立内部重构，外审/新颖性未认证。一般反例的每个最优并集必须遗漏共享客户；尚缺共享遗漏与已支付私有席位的共同预算，不能重复使用同一份W。
 
