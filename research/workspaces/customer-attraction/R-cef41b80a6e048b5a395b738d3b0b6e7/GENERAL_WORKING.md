@@ -10,6 +10,8 @@
 
 ## 2. 父方直接研究的额外查询缓冲
 
+**来源校正。** 下述 AP-extra 与 [既有 FULL-TERMINAL-AGGREGATE](../R-486bb9adb8cd4d9a940dbf3b1ab0b1de/security/full_terminal_debt.md) 逐字同义；δ 即该页 H。下面的逐对充分条件也已有于该页 §3。本轮是独立重构和定向攻击，不是新候选或新恒等式。找到精确来源后已通知相关研究员停止同机制重复扩样，只继续尝试尚未闭合的真实 IC 支付。
+
 对主题 A 和完整叶 y，记 e_y(A)=Σ_(x∈A)1/(1+c_x(y))。对任意查询分布 p，A、B 独立同分布 p，定义
 
     D_i(p)=E_B d_i(B),
@@ -29,15 +31,19 @@ C_i 是旧 m−1 槽去相关量；C_i⁺ 保留强制 B，因而是 m 槽额外
 
 具体候选 AP-extra：对全部原模型输入、完整 σ 和全部 p，有 Σ_i C_i⁺(p)≤W。它若成立，取安全值 v_(m+1)(0) 的最优 p，每个 C_i⁺ 是合法 m 槽静态竞争背景上的独立查询，便有 C_i⁺≥v_(m+1)(0)，结合已有 OPT_m≤2m v_(m+1)(0) 完成 half。
 
-更弱自由 Mpath 无需用 p 的自身推送。故即使 AP-extra 被否定，仍不否定 Mpath、安全值聚合或 Q-CAG-HALF。menu 分支负责旧完整证书的定向攻击；independent 分支尝试下面更强的两主题充分关系：
+更弱自由 Mpath 无需用 p 的自身推送。故即使 AP-extra 被否定，仍不否定 Mpath、安全值聚合或 Q-CAG-HALF。最初尝试的更强两主题充分关系为：
 
     对任意 A,B，Σ_i[e_(Z_i(B))(A)+e_(Z_i(A))(B)]≤2W. (PAIR-AP?)
 
-若 PAIR-AP 成立，对独立 A,B 取平均即可给 AP-extra；AP-extra 不反推逐对式。纯对角由 e_(Z_i(A))(A)≤d_i(A)≤u_i 直接成立，交叉项尚无支付证明。
+若 PAIR-AP 成立，对独立 A,B 取平均即可给 AP-extra；AP-extra 不反推逐对式。纯对角由 e_(Z_i(A))(A)≤d_i(A)≤u_i 直接成立。
+
+**PAIR-AP 已被否定，撤回“未定”状态。** independent 分支定位并重放旧 [245 客户证书](../R-486bb9adb8cd4d9a940dbf3b1ab0b1de/security/dual/verify_crosscap_failure.py)：四人实际 u_i=45、W=180，查询对 (3,5) 的交叉和 365>360=2W，全部 259 历史、1554 比较通过。该例两点查询的真正 FTA 余量仍为 143t²−101t+48>0，故没有否定 FTA。准确独立恢复见 [审查](independent/old_crosscap_replay_review.md)，不是新反例。本轮局部交叉失败诊断被这个既有全路径证据覆盖，不再作为新数学贡献。
 
 ## 3. 背景福利不能凭根公式免费处理
 
-非根节点 h 有早期玩家。若尾部更换，早期玩家的最终份额也更换。把 W(Z) 仅写成当前利润加后继利润漏掉这项。harmonic 分支正在核对具体旧稿及已有正确的 full-depth 账本；在它核完之前，不依赖存在疑义的非根 relay 式。
+非根节点 h 有早期玩家。若尾部更换，早期玩家的最终份额也更换。把 W(Z) 仅写成当前利润加后继利润漏掉这项。harmonic 分支已给[自足勘误](harmonic/relay_erratum.md)，父方另展开单位客户核验全部三历史、六比较：目录 A={a,b}、T={c}，完整策略根及末位均 A；在 h=(A) 的末位强制 T 时 ΔW=1、ΔV=0、ΔP_old=1、Γ=0，严格反证漏项式。
+
+正确通用关系是 ΔW=ΔV+ΔP_old−Γ≤ΔV+ΔP_old，已有正确来源为 [全深度账本 §1](../R-2e5a6ea95aff4f4c89f75237a74ba472/relay_credit/full_depth_ledger_and_harmonic_obstruction.md)。本轮已具体修复旧 relay 稿、其 README 和本题 RESEARCH_STATE 的错误范围；调和删除势式本身仍有效，但删位后保留了旧玩家及全部后继。本次纠错不构成新增福利界。
 
 任意合法背景 b 下的 extra-one 逐人下界 u_current≥v_(r+1)(b) 已被旧 [PB 反族](../R-cd789330fc7141299ac491bbb3ffa420/round5/menu/pair_attack.md) 否定：前三位均 u<s≤v_(r+1)(b)，完整全历史策略有解析证明。该背景已覆盖全部客户，不能用作根 half 反例，也不自动否定只沿根实际路径、以原总人数阈值计价的弱桥。
 
