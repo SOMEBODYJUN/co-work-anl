@@ -2512,6 +2512,7 @@
 | 中文资产名 | 完整文件位置 | 解决什么、何时读取 | 身份与状态依据 |
 | --- | --- | --- | --- |
 | [加权拥塞结构方法的论文与证明地图](<current/weighted_congestion/structural_reconstruction/README.md>) | `research/current/weighted_congestion/structural_reconstruction/README.md` | 按端点、共同尺度、核心实现、近一实例化与权深度读取，精确区分局部合同与全状态结论。 | 阅读导航；真值查精确正文及账本 |
+| [加权拥塞结构论文四章写作状态](<current/weighted_congestion/structural_reconstruction/WRITING_STATE.md>) | `research/current/weighted_congestion/structural_reconstruction/WRITING_STATE.md` | 记录工具先行、反例应用和正向条件的主人结构，实际范文、source版本及真实核验边界。 | 精确命题登记；摘要不替代原陈述 |
 | [高次端点与离散面积的解析设计原理](<current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md>) | `research/current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md` | 核查网格误差、局部传播阈值、小原子正向势及不可直接实现的非均匀采样。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-ACTUAL-SMALL-SHARE-INTEGRAL-POTENTIAL-v1`、`WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1`，[命题合同](assets.json) |
 | [共同尺度拼接与类型图环失配谱](<current/weighted_congestion/structural_reconstruction/shared_scale_gluing.md>) | `research/current/weighted_congestion/structural_reconstruction/shared_scale_gluing.md` | 选择类型图上的势证书、读取平方根森林推论与指定包络的最优图合同。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-TYPE-CYCLE-IMBALANCE-CONTRACT-v1`、`WC-TYPE-SCALE-COMPATIBLE-POTENTIAL-v1`，[命题合同](assets.json) |
 | [稳定核心的修复转移与恒定辅助成本](<current/weighted_congestion/structural_reconstruction/repair_and_core_transfer.md>) | `research/current/weighted_congestion/structural_reconstruction/repair_and_core_transfer.md` | 检查全状态修复、近似稳定加性容差和扩充游戏中的正向成本选择。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-FRONT-CORE-STABLE-SET-TRANSFER-v1`、`WC-FRONT-SOCIAL-COST-SHIFT-v1`，[命题合同](assets.json) |
@@ -2533,6 +2534,7 @@
 | [共同玩家尺度、环失配与必要权深度的整合审查](<reviews/weighted_congestion/structural_reconstruction/scale_depth_integration_review.md>) | `research/reviews/weighted_congestion/structural_reconstruction/scale_depth_integration_review.md` | 核验共同玩家乘子、类型环与有限区间的不同合同、玩家高度反演及固定c正反桥的明确依赖。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-FINITE-INSTANCE-INTERVAL-CALIBRATION-v1`、`WC-LINEAR-INSTABILITY-CRITICAL-WEIGHT-DEPTH-v1`、`WC-TYPE-CYCLE-IMBALANCE-CONTRACT-v1`，[命题合同（共 5 项）](assets.json) |
 | [稳定核、社会下降与联合质量保证的独立整合审查](<reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md>) | `research/reviews/weighted_congestion/structural_reconstruction/positive_repair_integration_review.md` | 逐式核验稳定容差集、社会外部性预算、完整OPT压缩和正则化核心的联合稳定质量前提。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-FRONT-CORE-STABLE-SET-TRANSFER-v1`、`WC-FRONT-SOCIAL-COST-SHIFT-v1`、`WC-REGULARIZED-CORE-REPAIR-QUALITY-v1`，[命题合同（共 4 项）](assets.json) |
 | [结构方法连续论文的全文与PDF产物核查](<reviews/weighted_congestion/structural_reconstruction/structural_methods_article_review.md>) | `research/reviews/weighted_congestion/structural_reconstruction/structural_methods_article_review.md` | 记录实际最终源稿与PDF版本、真实四份数学审查的范围、引用核对及逐页视觉检查；不声称外审或全球优先权。 | 实际审查记录；只覆盖所列版本与义务；关联 `WC-ACTUAL-SMALL-SHARE-INTEGRAL-POTENTIAL-v1`、`WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1`、`WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1`，[命题合同（共 13 项）](assets.json) |
+| [拥塞结构论文四章重组及数学触及](<current/weighted_congestion/structural_reconstruction/REVISION-NOTES.md>) | `research/current/weighted_congestion/structural_reconstruction/REVISION-NOTES.md` | 逐项记录资源定义前移、共同尺度proof改写和两个短proof，明确24条正式陈述保持。 | 实际审查记录；只覆盖所列版本与义务 |
 | [同权窗口局部端点预算的精确核验程序](<../tests/audits/weighted_congestion/structural_reconstruction/endpoint_certificate.py>) | `tests/audits/weighted_congestion/structural_reconstruction/endpoint_certificate.py` | 以有理数核验一个有限端点面积证书、收缩余量与重端点余量；不验证全状态无限族。 | 有限计算核验；不代替一般证明；关联 `WC-ACTUAL-SMALL-SHARE-INTEGRAL-POTENTIAL-v1`、`WC-ENDPOINT-AREA-WINDOW-CERTIFICATE-v1`，[命题合同](assets.json) |
 | [近次数构造公式和取整的有限精确审计程序](<../tests/audits/weighted_congestion/structural_reconstruction/near_degree_audit.py>) | `tests/audits/weighted_congestion/structural_reconstruction/near_degree_audit.py` | 检查指定端点、return、扭转、时钟修复与二幂邻近取整；一般尾部证明另见数学正文。 | 有限计算核验；不代替一般证明；关联 `WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1`、`WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1`，[命题合同](assets.json) |
 | [窗口与修复门实际资源侧的精确审计程序](<../tests/audits/weighted_congestion/structural_reconstruction/raw_resource_audit.py>) | `tests/audits/weighted_congestion/structural_reconstruction/raw_resource_audit.py` | 从实际资源侧重算有限相位费用、修复位串和稳定集合恒等式，避免只检查化简后公式。 | 有限计算核验；不代替一般证明；关联 `WC-ADDITIVE-NEAR-DEGREE-ALLSTATE-v1`、`WC-NEAR-UNIT-ALLSTATE-NONEXISTENCE-v1`，[命题合同](assets.json) |
@@ -2586,6 +2588,11 @@
 | [共同目录双设施：黄金比主链、尖锐下界与复杂度地图](<current/shared/README.md>) | `research/current/shared/README.md` | 依次进入模型、黄金比完整证明和构造，再选择尖锐下界、小目录复杂度或局部补全工具。 | 阅读导航；真值查精确正文及账本 |
 | [共同目录双设施实例最优倍率的 EPTAS 候选义务](<questions/shared_alpha_eptas.md>) | `research/questions/shared_alpha_eptas.md` | 使用少量重支持与近带精确补全，检查全局近似误差、精确客户均衡和位复杂度，不能报作完整算法定理。 | 候选或未闭合义务；保存不升级状态 |
 | [共同目录双设施实例最优倍率判定的原问题与现行边界](<questions/instance_complexity.md>) | `research/questions/instance_complexity.md` | 固定倍率全局弱 NP 完全性已获内部结果；恰三四地点的高倍率细分类及新输入倍率合同仍须单独立项。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [共同目录黄金比英文稿的读取与构建入口](<manuscripts/shared_catalog/README.md>) | `research/manuscripts/shared_catalog/README.md` | 从两节主文和三个完整技术附录恢复第一篇成文范围，核对原数学证明和期刊未决项。 | 阅读导航；真值查精确正文及账本 |
+| [共同目录双设施黄金比的连续英文论文](<manuscripts/shared_catalog/main.tex>) | `research/manuscripts/shared_catalog/main.tex` | 四类菜单、核心覆盖引理与短主定理证明，长坏环及多混合证明完整放附录；不拼入实例复杂度。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [共同目录黄金比连续英文稿的阅读PDF](<manuscripts/shared_catalog/main.pdf>) | `research/manuscripts/shared_catalog/main.pdf` | 可直接审读两节主文与三个技术附录；数学版本与实际检查范围由同目录写作状态绑定。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [共同目录黄金比英文稿的参考文献](<manuscripts/shared_catalog/references.bib>) | `research/manuscripts/shared_catalog/references.bib` | 原子客户模型、已知黄金比下界和Vos客户修复的引用身份，不将前人方法写作新增贡献。 | 文献核对；与团队新结果分别引用 |
+| [共同目录黄金比英文稿的结构锁与检查状态](<manuscripts/shared_catalog/WRITING_STATE.md>) | `research/manuscripts/shared_catalog/WRITING_STATE.md` | 保存主人结构、精确证明来源、实际英文范文、源码hash及期刊未决项，接续成文先读。 | 精确命题登记；摘要不替代原陈述 |
 
 <a id="heterogeneous"></a>
 
@@ -2649,6 +2656,13 @@
 | [任意设施数：因子二、完整盒和高效构造前沿地图](<current/multi_facility/README.md>) | `research/current/multi_facility/README.md` | 先读一般因子二和完整盒有限构造，再按输入结构选择算法；一般位多项式时间仍单列为义务。 | 阅读导航；真值查精确正文及账本 |
 | [一般输入的位多项式完整盒客户均衡构造义务](<questions/greedy_box_polytime.md>) | `research/questions/greedy_box_polytime.md` | 完整盒可行和有限改善已内部证明后，固定显式有理输入、总运行时间及完整续局输出的剩余算法目标。 | 问题记录；开放/已闭合部分见用途及正文 |
 | [多设施统一常数原问题、恰三设施与特殊布局缺口](<questions/three_facilities.md>) | `research/questions/three_facilities.md` | 统一因子二存在和有限构造已内部闭合；最佳统一常数、恰三设施锐值及指定布局形式分别保持准确义务。 | 问题记录；开放/已闭合部分见用途及正文 |
+| [任意设施数因子二英文稿的读取入口](<manuscripts/multiple_facilities/README.md>) | `research/manuscripts/multiple_facilities/README.md` | 恢复第二篇自足存在性论文及两节结构，区分显式证书与一般多项式搜索。 | 阅读导航；真值查精确正文及账本 |
+| [任意设施数因子二存在性的连续英文论文](<manuscripts/multiple_facilities/main.tex>) | `research/manuscripts/multiple_facilities/main.tex` | 以字典序预算、原子装箱、cap保持和完整续局给自足证明，不并入条件DP与选择器障碍。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [任意设施数因子二英文稿的阅读PDF](<manuscripts/multiple_facilities/main.pdf>) | `research/manuscripts/multiple_facilities/main.pdf` | 直接读取完整八页英文存在性稿；精确量词、构建与独立检查见同目录状态。 | 数学正文；按关联命题分别核对证明及审查；精确范围见本页正文 |
+| [任意设施数因子二稿的一手文献引用](<manuscripts/multiple_facilities/references.bib>) | `research/manuscripts/multiple_facilities/references.bib` | 记录原模型及原文黄金比下界与设施数上界的精确引用，避免混淆福利与稳定性因子。 | 文献核对；与团队新结果分别引用 |
+| [任意设施数因子二稿的写作锁与真实检查](<manuscripts/multiple_facilities/WRITING_STATE.md>) | `research/manuscripts/multiple_facilities/WRITING_STATE.md` | 恢复准确主张、两节安排、来源与英文范文、实编译信息和未定投稿期刊。 | 精确命题登记；摘要不替代原陈述 |
+| [因子二英文校准与精度修订记录](<manuscripts/multiple_facilities/REVISION-NOTES.md>) | `research/manuscripts/multiple_facilities/REVISION-NOTES.md` | 记录covered-client范围和有理负载分母修正，以及叙述变更的数学不变量，供delta核验。 | 实际审查记录；只覆盖所列版本与义务 |
+| [任意设施数因子二英文稿的完整隔离表述审查](<reviews/facility/multiple_facilities_article_editorial.md>) | `research/reviews/facility/multiple_facilities_article_editorial.md` | 冻结c8bfa0d版本的两遍editorial报告，保留必要性PASS与指称精度FAIL及三个确切发现；修复闭合另查成文核验。 | 实际审查记录；只覆盖所列版本与义务 |
 
 <a id="foundation"></a>
 
@@ -2667,6 +2681,9 @@
 | [全仓精确命题登记：范围、依赖与状态位置](<current/claims.md>) | `research/current/claims.md` | 引用或变更某条命题时查稳定 ID、精确输入和证据；不以导航摘要替代原有量词。 | 精确命题登记；摘要不替代原陈述 |
 | [保留问题：当前主目标、已解子题与暂停旧线](<questions/README.md>) | `research/questions/README.md` | 当前Q-CAG-HALF与customer-attraction的研究导航，按本文职责连接精确范围和独立保留模型。 | 阅读导航；真值查精确正文及账本 |
 | [独立检查与清洗记录](<reviews/README.md>) | `research/reviews/README.md` | 当前Q-CAG-HALF与customer-attraction的研究导航，按本文职责连接精确范围和独立保留模型。 | 阅读导航；真值查精确正文及账本 |
+| [三篇英文论文的成文总入口](<manuscripts/README.md>) | `research/manuscripts/README.md` | 对应主人指定的三篇结构，链接连续稿、源码、开源写作skill固定版本、英文范文及未决期刊。 | 阅读导航；真值查精确正文及账本 |
+| [三篇连续稿的独立核验与版本覆盖](<manuscripts/MANUSCRIPT_REVIEW.md>) | `research/manuscripts/MANUSCRIPT_REVIEW.md` | 按源码hash区分数学审查、表述审读和实际修复，避免将旧版本检查误当新稿认证。 | 实际审查记录；只覆盖所列版本与义务 |
+| [三篇英文稿的可复现TeX构建程序](<manuscripts/build.py>) | `research/manuscripts/build.py` | 使用已装TeX在缺少format的环境恢复构建，检查未定义引用后生成三篇PDF，中间文件不入库。 | 算法与构造；适用类及复杂度见正文 |
 
 <a id="facility_review"></a>
 

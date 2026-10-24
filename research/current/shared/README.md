@@ -4,6 +4,8 @@
 
 本分支的主成果是共同目录的普遍 **φ 上界、位多项式构造与匹配下界**。另有实例最优倍率的精确算法、弱 NP 完全性、四地点无 FPTAS，以及局部补全和原子误差工具。完整主稿及当前 Markdown 已有多轮内部审读；外部同行评审、新颖性与优先权没有由本次整理补成事实。
 
+按主人本轮结构形成的[英文连续稿PDF](../../manuscripts/shared_catalog/main.pdf)及[LaTeX源码](../../manuscripts/shared_catalog/main.tex)以两节主文组织四类菜单、核心引理和短主定理证明，完整长证明留附录。该稿聚焦黄金比存在与构造，不拼入实例复杂度支线；版本、范文及核验见[写作状态](../../manuscripts/shared_catalog/WRITING_STATE.md)和[三稿入口](../../manuscripts/README.md)。
+
 ## 主要结论与证据状态
 
 | 成果 | 精确范围与当前状态 | 首读正文 |
