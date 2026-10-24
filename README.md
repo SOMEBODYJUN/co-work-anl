@@ -40,6 +40,8 @@ Boss自己承担一般推导，清洗者整理全部已有资产，整理者按�
 
 ## 三个角色与一个程序
 
+主人补充用五人检验一般机制：一般推导形成后，代入 m=5 检查是否无条件推出 OPT_5<=2W；持续越不过二时及时沟通缺口和转向。它是一般路线的压力测试，不是重启五人模板优化，也不是候选真假的判定。具体执行见[压力测试记录](research/workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/five_player_pressure_test.md)。
+
 | 当前角色 | 工作 | 可直接复制的提示词 |
 | --- | --- | --- |
 | Boss | 自主带团队研究；自由选路、证明、反例、计算和交流，探索不设前置审核 | [BOSS_START](research/customer_attraction/BOSS_START.md) |
