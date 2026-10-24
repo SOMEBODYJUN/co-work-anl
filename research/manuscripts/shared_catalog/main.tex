@@ -128,10 +128,12 @@ include one deterministic output of the strong-chord construction of
 Lemma~\ref{lem:chord}.
 It gives $L_U\ge qV$ and $L_V\ge qU$ in
 $O((k+1)^4)$ rational arithmetic operations. For $k=0$ the maximum-weight
-condition is vacuous. At equal reaches E itself meets these targets; one
-may use it instead, or include an additional asymmetric output together
-with its reflection. This call depends only on the pair's actual reaches
-and common weights, never on global deviation quotas.
+condition is vacuous. At a co-location, retain E for the equal-half
+argument; it is not, in general, a witness for the stronger $qR$ quotas.
+If the strict chord hypotheses hold for a pair of distinct locations,
+include the chord output even when the two reaches are equal. This call
+depends only on the pair's actual reaches and common weights, never on
+global deviation quotas.
 
 \end{description}
 
@@ -320,19 +322,19 @@ In particular, all large pairs that occur on \(T\) intersect pairwise.
 
 \subsubsection{Chord retaining exactly one member of a pair}\label{chord-retaining-exactly-one-member-of-a-pair}
 
-Suppose \(s\) has large customers \(h,j\), \(t\) contains \(h\) but not \(j\), and \(R_s\le R_t\). Let \(H=w_h,J=w_j\). Assign \(h\) to \(s\) and all other common customers to \(t\). If their other-common total is \(\sigma\), the loads are
+In the normalized no-witness situation, for cycle locations \(s,t\), suppose \(s\) has large customers \(h,j\), \(t\) contains \(h\) but not \(j\), and \(R_s\le R_t\). Let \(H=w_h,J=w_j\). Assign \(h\) to \(s\) and all other common customers to \(t\). If their other-common total is \(\sigma\), the loads are
 
 \[
 U=R_s-\sigma\ge H+J>q,\qquad V=R_t-H.
 \]
 
-The customer \(h\) is stable since \(U-H\le V\). If \(V\le U\), this is a pure equilibrium. If \(V>U\), then
+The customer \(h\) is stable since \(U-H\le V\). If \(V\le U\), this is a pure equilibrium. Since \(U>q\ge qd(t)\), the no-witness assumption then forces \(V<qd(s)\), and hence \(d(s)>\phi V=\phi(R_t-H)\). If \(V>U\), then
 
 \[
 V-U\le R_t-2H-J<H,
 \]
 
-because \(R_t<2q<3H+J\). Repair then gives both loads above \(q\), a contradiction. Thus the first case must hold, and absence of stability forces
+because \(R_t<2q<3H+J\). Repair then gives both loads above \(q\), and therefore a quota witness because \(d(s),d(t)\le1\), a contradiction. Thus the displayed implication is valid under the stated no-witness hypothesis:
 
 \begin{equation}
 d(s)>\phi(R_t-H). \label{eq:old-5-3}
@@ -423,7 +425,7 @@ Let \(\mathcal E=\{\mathcal H_s:|\mathcal H_s|=2\}\). Its members pairwise inter
 
 Every location of reach at least \(q\) must meet all three pair types, by \eqref{eq:old-5-2}. By \eqref{eq:old-5-1} its own large set is therefore one of the triangle pairs. Choose a maximum-reach location \(A\), of reach \(R\ge1\), and suppose it has pair \(\{h,j\}\).
 
-Both \(H\) and \(J\) exceed \(a\). For example, if \(H\le a\), choose another triangle-pair location containing \(h\) but not \(j\). Apply Appendix~\ref{chord-retaining-exactly-one-member-of-a-pair} with \(A\) as the higher-reach endpoint. Its load \(R-H\ge1-a=q\), and the other endpoint's load exceeds \(q\); either the displayed profile or repair is stable, a contradiction.
+We claim that both \(H\) and \(J\) exceed \(a\). Suppose, for example, that \(H\le a\). Choose another triangle-pair location containing \(h\) but not \(j\). Apply Appendix~\ref{chord-retaining-exactly-one-member-of-a-pair} with \(A\) as the higher-reach endpoint. Its load \(R-H\ge1-a=q\), and the other endpoint's load exceeds \(q\); either the displayed profile or repair is stable, a contradiction.
 
 Every pair location \(s\) has \(d(s)>q\). Otherwise \eqref{eq:old-2-2} gives \(R_s<2a\). It cannot have the same pair as \(A\), whose two weights exceed \(a\). If it has another triangle pair, sharing \(g\) with \(A\), then \(w_g<q\), so
 
@@ -468,7 +470,11 @@ u(t,s)\le R_t-H\le K. \label{eq:old-9-2}
 
 \subsubsection{A common-h edge with d above q has unique transport}\label{a-common-h-edge-with-d-above-q-has-unique-transport}
 
-Suppose \(s\to t\), both contain \(h\), and \(d(s)>q\). Equation \eqref{eq:old-9-2} first implies \(R_t<R_s\). Take a pure menu member from P. If \(h\) stayed at the source, responder load would be at most \(R_t-H\le K<q\), impossible. If another common customer accompanied \(h\) forward, their equilibrium conditions would give
+Suppose \(s\to t\), both contain \(h\), and \(d(s)>q\). If \(R_t\ge R_s\), the upward common-\(h\) chord gives
+\[
+d(s)=u(t,s)\le R_t-H\le R-H=K<q,
+\]
+which contradicts \(d(s)>q\). Hence \(R_t<R_s\). Take a pure menu member from P. If \(h\) stayed at the source, responder load would be at most \(R_t-H\le K<q\), impossible. If another common customer accompanied \(h\) forward, their equilibrium conditions would give
 
 \[
 2P\le R_s+Q\le2R_s-H,
@@ -828,11 +834,11 @@ These numerical mass implications apply even when the equilibrium in question ha
 
 There is nothing to prove if \(C=0\). Otherwise let \(x\) be a largest common weight and let \(S=C-x\).
 
-If \(\delta>S\), hold \(x\) at \(B\) and choose a pure Nash equilibrium of the remaining clients. Such an equilibrium exists by the usual finite improvement potential. Client \(x\) also has no improvement because
-
+If \(\delta>S\), hold \(x\) at \(B\) and choose a pure Nash equilibrium of the remaining clients. Such an equilibrium exists by the usual finite improvement potential. For every intermediate assignment of the remaining clients, the load difference satisfies
 \[
-L_B-L_A\le x+S-\delta<x.
+L_B-L_A\le x+S-\delta<x,
 \]
+so client \(x\) remains stable throughout the repair sequence. In particular, the terminal equilibrium has no improvement by \(x\).
 
 Moreover \(L_B\ge r-S>r-\delta=2r-1>q\). If \(L_A<qr\), then \(L_B-L_A>Z>S\), so every remaining shared client must be at \(A\); this gives \(L_A=1-x\ge1-a=q\ge qr\), a contradiction. This settles \(\delta>S\).
 
@@ -1082,11 +1088,7 @@ $\Delta=\delta+\sum_i c_i$. Therefore the resulting initial profile is
 exactly the equilibrium of Appendix~\ref{largest-client-and-the-maximum-square-construction}, with one or two designated
 mixers. If it meets the two quotas, return it.
 
-If a quota fails, follow the finite case choices in Appendices~\ref{a-bad-positive-gap-cannot-persist}--\ref{a-bad-negative-gap-cannot-persist}:
-select the prescribed third mixer, a decreasing-weight prefix of mixers,
-or the stated pure seed. Each selection is a scan or a sort. In a pure
-branch, use a largest-weight strictly improving customer at each step.
-The quota-preservation arguments in Appendix~\ref{app:cross-chord} apply to this choice.
+If a quota fails, execute the following ordered branch table from Appendices~\ref{a-bad-positive-gap-cannot-persist}--\ref{a-bad-negative-gap-cannot-persist}. For a positive gap \(d>U\), first test for a pure \(A\)-side client; the three-mixer bound rules this case out. Otherwise scan for a nonlarge client of weight in \([d/3,d]\); if one exists, use it as the third mixer. If none exists, sort the remaining weights, take the prefix whose running sum first reaches \(d\), and apply the large-client split and the final pure repair in the order stated in the appendix. For a negative gap \(-e<-Z\), test for a pure \(B\)-side client, then scan for a remaining client of weight at least \(e/3\), and otherwise use the symmetric pure seed and repair. Every test is an exact comparison of rational sums; every prefix and sort is linear or \(O(k\log k)\), and a pure branch always moves a largest strictly improving client. The quota-preservation arguments in Appendix~\ref{app:cross-chord} apply to each returned branch.
 If $S<\delta$, fix $x$ at the lower-reach location and perform the same
 largest-improvement rule on the other customers, as in Appendix~\ref{largest-client-and-the-maximum-square-construction}.
 The fixed customer's stability is proved there and is preserved throughout.

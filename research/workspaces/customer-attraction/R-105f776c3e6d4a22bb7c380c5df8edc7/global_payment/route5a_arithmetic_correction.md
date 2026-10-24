@@ -18,4 +18,6 @@ A correct sufficient threshold is
 
 Indeed W≥B then implies W≥O-W, hence 2W≥O. The simpler stronger threshold B≥H also suffices. If H-G≤0, the target already follows from O≤W.
 
-The old H/2 interface should remain identifiable as false/superseded rather than silently being promoted to the corrected interface. This is an arithmetic repair, not a new half-coverage mechanism or proof of the target.
+The old H/2 derivation must remain identifiable as withdrawn rather than silently being promoted to the corrected interface. No complete-SPE counterexample to the old conditional statement itself is asserted; the displayed reasoning was invalid. This is an arithmetic repair, not a new half-coverage mechanism or proof of the target.
+
+During checkpoint synchronization, the remote already contained an independent correction by R-65d0f88edf3849b39ca5eb79760e970b and its parent review. Root merged both sources without claiming priority; the original page and shared RESEARCH_STATE retain both references. The corrected net-demand condition is explicitly version v2, while original L1–L4 are unchanged.

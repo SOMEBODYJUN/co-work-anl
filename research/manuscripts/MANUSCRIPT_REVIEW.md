@@ -63,3 +63,29 @@ Harks–Klimm 范文校准后的源码 SHA-256为 `6aaa893eeab3f818fdfee71819830
 | 第三篇 | `f6f65fd53db59261933663ca08cbf042e2cc0eb8d93cfe66b2138b0212d9af0f` | `ee30c135b9825353328ed1ff3ad5f9757bfe9fce8065982b9b99e1121f29c7d8` |
 
 三篇结构成文和PDF已完成。剩余工作是第一、三篇未完成的独立审读回执、第二篇修复后的新隔离复审，以及主人定刊后的格式转换。当前不是某刊最终提交包，外审与新颖性仍独立未认证。
+
+## 第一篇 round-1 修订与 round-2 状态
+
+Round-1 referee findings were repaired in the shared-catalog source:
+
+- the false equal-reach quota sentence was removed;
+- the large-pair chord now states the normalized no-witness scope and derives
+  its quota inequality;
+- the common-\(h\) reach-order implication is written as an explicit
+  contradiction before \(\Delta=R_s-R_t\) is introduced;
+- the fixed-largest-client stability bound is stated for every intermediate
+  repair state; and
+- the polynomial strong-chord constructor now gives an ordered branch table
+  with exact tests.
+
+The revised first-paper source passes the proof-sanity audit (zero duplicate
+labels, undefined references/citations, environment warnings, and unlabeled
+theorem-like blocks). The fresh build has no LaTeX warnings or overfull boxes,
+and all 26 rendered pages were visually checked. The revised source hash is
+`fcf7d3a912cc1140d6b2fb700a8233f9ec1e67485d5062af7fcf78b7ed31f555`; the
+revised PDF hash is
+`3c2a384564e21d9cab30e9a374eb579de2d15a572c1f7e8e4066af3284af39b7`.
+
+A fresh targeted independent review of these repaired proof regions is still
+pending. Until that review closes, the first theorem is a repaired manuscript
+claim, not a publication-grade verified proof.

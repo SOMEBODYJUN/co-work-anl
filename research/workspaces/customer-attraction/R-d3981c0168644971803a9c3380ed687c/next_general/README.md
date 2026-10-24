@@ -6,15 +6,17 @@
 
 ## 可以接续的材料
 
+- [global_credit/coordinate_residual_attack.md](global_credit/coordinate_residual_attack.md)：新收到同行坐标初始化后的I互补付款，保留同一H并使用其未用actual I券，配合旧fresh利润ν核可将剩余集中为R净券。资金和域经root与[credible独立内部重构](credible/coordinate_support_attack.md)确认；同角色累计净券仍未付，不是新福利界或原受限路由RESIDUAL-CAP的证明。
 - [normal_form/admissible_union_menu.md](normal_form/admissible_union_menu.md)：root 提出的 cap 合法全部可信端点菜单。允许保持原经济实际终局而有利地重选离轨完成，含经济实际动作的信号副本。有限多别名可把整张端点菜单同时放进一棵真实 SPE；其值是所有这些有利完成的最小 Mpath。这个 MIN 对象与旧最不利 MAX 包络不同；付款 `M_adm≤W/m` **未证**，不能算福利突破。
 - [normal_form/reset_normal_form.md](normal_form/reset_normal_form.md)：统一重置信号的逐历史构造。它保留原完整零信号树，却不使规定行动变为计数策略，也不使祖先承诺遗传。仅为一般表示工具。
 - [normal_form/swap_ascent_payment_counterexample.md](normal_form/swap_ascent_payment_counterexample.md)：完整 SPE 参数族反驳本轮候选 `μ_B≤β`，更排除用固定倍实际相邻升幅支付换位缺陷。price 分支先未读稿独立核对，root 另展开客户重跑 Fraction 审计。所有例的福利最优；不是 half 反例，也不另开结构类项目。
 - [tree_dual/last_deviation_tree_checkpoint.md](tree_dual/last_deviation_tree_checkpoint.md)、[global_credit/full_tree_credit_working.md](global_credit/full_tree_credit_working.md)：全树 IC 的末偏离树、最优交换行和 swap-token 尝试。不同虚拟终局的库存未获共同支付，图恒等式不计新增福利关系。
 - [direct/adjacent_threshold_cap.md](direct/adjacent_threshold_cap.md)：相邻阈值候选的原尝试和准确失败状态；先前有限阴性被上述真实反例覆盖。
 - [price/README.md](price/README.md)：坐标价格合同与真实任意深度缺口。末两基底的细化不作为本轮一般结果。
+- [peer_update_reconciliation.md](peer_update_reconciliation.md)：实际读取round7更新后，查明FOMA-EXISTS与旧已败强静态匹配完全同量词；root重跑原独立代码、direct另写定义级重放。不是新反例。强桥已停止，弱匹配与原half仍OPEN。
 
-## 当前正在判别的真正一般付款
+## 当前真正未付的一般关系
 
-root 与两个分支另尝试比主目标弱的中间量：任意合法背景、余 r 人的首两人能否至少共同支付一份 `v_r(b)`。若成立，会给全人数常数福利界，而不是继续固定规模；具体条件归约与未证步骤在主工作稿。此候选没有因提出、有限回归或既有更强反例而获得真值。
+最新坐标接口已付d、H+J之后，仍需同一选择的fresh净券共同满足`K_l≤2u_l−d_l−H_l−J_l`。原有有利菜单预算`M_adm≤W/m`、弱首对`u1+u2≥v_r(b)`和弱静态匹配均未闭合。后两项没有给出本轮新的常数界；前一项表示的准确性已获[独立内审](tree_dual/review_admissible_union_menu.md)，付款未证。
 
 原 half 的净缺口始终是 `OPT−W`，不能换成已被旧71客户例否定的单独遗漏 `|O\C|`。所有局部接口失败都只按它们的精确范围记录。接下来必须产生真正全树付款或完整目标反例；不再扩大旧阴性样本、重写等价账本或继续上一轮私有谱特例。

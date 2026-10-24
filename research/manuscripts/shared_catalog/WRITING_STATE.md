@@ -44,7 +44,13 @@
 
 ## 未决事项与接续
 
-1. 目标期刊未确定，当前使用`amsart`通用数学稿；不得声称已经采用某刊最终投稿模板。
+Round-1 venue discussion recommends **Algorithmica** as the primary target and
+**SIDMA** as the fallback for this two-facility common-catalog result. The
+current source remains the generic `amsart` manuscript; the Springer
+Algorithmica source conversion is a separate finalization step after the
+targeted proof review and author metadata are fixed.
+
+1. 目标期刊尚未转换为最终投稿格式，当前使用`amsart`通用数学稿；不得声称已经采用某刊最终投稿模板。
 2. 已完成下述公开样本的局部英文校准；它不意味着已完成隔离全文审读或目标期刊的版式转换。
 3. 当前检查是作者源稿核对和自查，尚不是对这个新排版版本的隔离连续阅读或独立数学审查。下一步应冻结本稿后给独立读者检查，并保持数学身份不变。
 4. 主agent负责同轮统一索引、研究资产登记、commit与push；本agent未提交或推送。
@@ -64,6 +70,13 @@
 
 ## 主agent最终接续记录
 
-最终交付以[三稿核验汇总](../MANUSCRIPT_REVIEW.md)中的版本和真实覆盖为准。统一构建脚本已实际成功运行；PDF总页数保持25/8/26，已渲染检查全部页面的排版概览。
+Round-1 isolated referee findings were repaired in REVISION-NOTES.md:
+the false equal-reach quota sentence was removed, the large-pair chord now
+states its no-witness scope, the common-\(h\) reach-order implication and
+fixed-largest-client invariant are explicit, and the polynomial constructor
+has an ordered branch table. The revised source is not yet independently
+passed; a targeted re-review and clean build are required before delivery.
+
+最终交付以[三稿核验汇总](../MANUSCRIPT_REVIEW.md)中的版本和真实覆盖为准。第一篇修订稿已实际成功运行统一构建；当前PDF页数为26/8/26，第一篇修订版已渲染检查全部页面的排版概览。
 独立数学检查者已完整读冻结初稿并发回无已确认致命异议的阶段报告，但最终审查回执未完成。隔离editorial审读因工作区额度错误中断，未产生可验收报告。不得登记独立全文审查通过。
-当前源码SHA-256：`6aaa893eeab3f818fdfee71819830e4880bee66365a077a4d66c092190ec4c3e`。当前PDF SHA-256：`c9b1deb3bd400142626c12e6cba0aa8665226f058d06c89506e99125763c19c5`。最终期刊未定，当前为成文稿而非某刊最终提交包。
+当前源码SHA-256：`fcf7d3a912cc1140d6b2fb700a8233f9ec1e67485d5062af7fcf78b7ed31f555`。当前PDF SHA-256：`3c2a384564e21d9cab30e9a374eb579de2d15a572c1f7e8e4066af3284af39b7`。最终期刊未定，当前为成文稿而非某刊最终提交包。

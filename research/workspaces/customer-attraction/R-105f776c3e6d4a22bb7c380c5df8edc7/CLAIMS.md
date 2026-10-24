@@ -47,4 +47,40 @@
 - **Corrected distinct v2：** B=max_pi Σ_i |T_pi(i)\C|/(m-i+1)，若 `B>=OPT-W`
   则由已证 W>=B 得 half；更强 B>=|H| 也充分。门槛变化作为新版本，未证明一般成立。
 - **Scope / Evidence / Status：** L1–L4 不变；[精确纠错](global_payment/route5a_arithmetic_correction.md)
-  及父方独立代数核对。原正文已加有日期的撤回与替代，研究状态同步。不是新 half 机制。
+  及父方独立代数核对。原正文已加有日期的撤回与替代，研究状态同步。远端同期已有
+  R-65d0组独立纠错，已安全合并两组来源，不认领首次；未构造旧条件本身的完整 SPE 反例。
+  不是新 half 机制。
+
+## B16-AVERAGED-SUFFIX-DELETION-v1
+
+- **Objects / Domain / Quantifiers：** 任意原模型 m>=1 完整历史纯 SPE，实际 z、负载 c、
+  原实际前缀 b_j。每个 i 后冻结真实前缀，将实际 S_i 作为固定虚拟行动回放后删去
+  其负载；R_ij 是 j>i 的原实际后缀节点的最大真实单步 regret。
+- **Definitions / Exact Statement：** D=#{x:c_x>=2}，
+  K_ij=Σ_(x∈S_i)1/[b_j(x)(b_j(x)+1)]，
+  A_ij=Σ_(x∈S_i∩S_j)1/[c_x(c_x−1)]。
+  `Σ_(i<j)R_ij+D/2<=Σ_(i<j)min{u_j,K_ij}`，后者至多
+  `min{Σ_j(j−1)u_j, Σ_jΣ_(b_j>0)1/(b_j+1)}`，故
+  `ΣR_ij<=[(m−1)W−D]/2`。全部零项按正文处理。
+- **Scope / Dependencies：** 固定每个删除的实际主题与后缀；完整根虚拟回放的较早
+  实际节点另有正文(VR)，离轨节点没有免费全局预算。依赖本轮固定背景删除包络与
+  已有虚拟回放的 `regret<=u_j−A_ij`，同叶退款/原 IC 是已有机制。
+- **Evidence / Status：** [父方一般证明](parent/average_suffix_deletion.md)与
+  [先盲重构后读旧式比较](independent_general/suffix_deletion_corollary_blind.md)完成。
+  未用有限扫描承担证明；内部解析检查通过，未外审或认证新颖性。
+- **Objections / Limitations：** 没有得到低损失精确 SPE 修复，不能应用较小人数 half
+  归纳；实际节点误差为零也不保证离轨可信。一般福利范围没有提升。
+
+## B16-REACHABLE-PREFIX-INCIDENCE-OBSTRUCTION-v1
+
+- **Objects / Quantifiers / Assumptions：** 原模型任意目录，客户分为非空 R,D；每个主题
+  为 D-singleton 或含至少 alpha>0 个 R 客户；每个触 D 的非 singleton 含至少 a>0
+  个 R 客户；某合法主题含至少 q>0 个 R 客户。对任意合法前缀负载 b、剩余人数 r，
+  令 I=Σ_R b、beta=max_R b、B=min_D b。
+- **Exact Conclusion：** 若 B>I/a 且 qB>beta+floor(I/alpha)+r+1，则任何实现该 b
+  的有序前缀都不能是完整根 SPE 的实际前缀。无论后来如何响应，最后一个 D-singleton
+  都有严格盈利偏离。
+- **Evidence / Status：** [自足一般证明与 PB 精确代入](credible_attack/root_reachability_incidence_budget.md)、
+  [父方读稿解析复核](parent/root_reachability_review.md)。内部证明与读稿检查完成；无外审。
+- **Scope / Objections：** 只排除同目录/同负载/同剩余人数的实际实现；PB 的合法离轨
+  child 反例不受影响，不排除不同背景编码、更多主题或新的激励。不是 half 新福利界。

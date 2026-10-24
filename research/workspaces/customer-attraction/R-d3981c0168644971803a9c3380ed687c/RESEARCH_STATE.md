@@ -1,6 +1,8 @@
 # 当前前沿与本轮停止点
 
-本次一般证明接续见 [continuation_general/README.md](continuation_general/README.md)。已证明并独立内部核对真实前缀联合席位付款 `u_i≥Λ_i≥λ_i`；严格增强证据由另一实现重构完整 SPE 并逐历史复核。它已接到共享一般工作稿§3.1，但不证明 half、不扩大原目标已证范围。完整菜单 FTA / Mfull / Mpath 和 `OPT−W≤m min_i u_i` 仍 OPEN。下文保留前轮常数三修复及其准确交接。
+最新一般证明接续见 [next_general/MAIN_PROOF_WORKING.md](next_general/MAIN_PROOF_WORKING.md)与[精确身份](next_general/CLAIMS.md)。本轮没有新的已付一般福利界：有利可信完成菜单已逐量词构造并获独立内审，`M_adm≤W/m`未证；相邻升幅付款已被完整SPE参数族否定。新收到同行round7初始化后，已证明与原H兼容的I-future互补实际券付款，并独立核查仅R入口接旧ν核的资金与零分母域；角色共同净券余额仍未付。另去重查明FOMA-EXISTS已被旧完整反例否定；见[更新校对](next_general/peer_update_reconciliation.md)。主目标、原RESIDUAL-CAP及新fresh剩余候选保持OPEN。
+
+上一轮一般工具见 [continuation_general/README.md](continuation_general/README.md)。真实前缀联合席位付款 `u_i≥Λ_i≥λ_i` 已接到共享一般工作稿§3.1，不重复算本轮成果。完整菜单 FTA / Mfull / Mpath 和 `OPT−W≤m min_i u_i` 仍 OPEN。下文保留更前轮常数三修复及其准确交接。
 
 原Q-CAG-HALF仍OPEN；没有主目标证明或反例。六名指定研究员已完成本轮交接，不宣称后台常驻。
 

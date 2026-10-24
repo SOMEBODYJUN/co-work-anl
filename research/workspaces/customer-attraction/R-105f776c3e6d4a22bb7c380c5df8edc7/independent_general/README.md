@@ -6,6 +6,8 @@ Date: 2026-10-24. This is the private subagent workspace for `independent_genera
 
 Files:
 
+- `suffix_deletion_corollary_blind.md`: analytic confirmation of the new triangular regret bound, exact D/2 refund, comparison with the old virtual replay note, and the remaining earlier-provider/off-path induction obligations. No new scans.
+
 - `background_deletion_blind.md`: blind proof of root's assigned general background-deletion inequality, including the nodewise nonnegative slack identity, exact quantifiers, edge cases, and a sharp five-customer example. This is an auxiliary stability component and does not close half.
 - `audit_background_deletion_blind.py` and `background_deletion_blind_audit.json`: independent Fraction audit of 65 cases, 469 ordered-history nodes, and 1676 original IC comparisons, including 9 positive-regret cases. No repository solver or prior harmonic-menu source is imported.
 
