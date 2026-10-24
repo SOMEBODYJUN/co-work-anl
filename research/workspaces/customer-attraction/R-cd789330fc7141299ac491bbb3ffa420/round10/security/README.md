@@ -1,3 +1,5 @@
+> 当前后续状态：相邻钱包的existential最优元组/指派版本也已由[root全人数族](../parent/optimal_assignment_adjacent_wallet_counterfamily.md)否定；本页较早OPEN仅为阶段历史。原HALF与较宽弱K桥不受此否定。冻结JSON不原位改写。
+
 # Round10/security
 
 一般 Q-CAG-HALF、真正聚合安全值及 Mpath 仍 OPEN。本分支没有新增普遍付款；不以固定锥阴性作一般证据。

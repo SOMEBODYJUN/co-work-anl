@@ -1,3 +1,5 @@
+> 当前后续状态：相邻钱包的existential最优元组/指派版本也已由[root全人数族](../parent/optimal_assignment_adjacent_wallet_counterfamily.md)否定；本页较早OPEN仅为阶段历史。原HALF与较宽弱K桥不受此否定。冻结JSON不原位改写。
+
 # A ten-customer full SPE defeats unrestricted adjacent-wallet funding
 
 2026-10-24, exchange10. This is an exact attack on two stronger auxiliary
@@ -101,7 +103,7 @@ frozen payoff matrix is
 | --- | ---: | ---: | ---: | ---: |
 | First C | 3 | 4 | 7/2 | 3/2 |
 | Second C | 3 | 4 | 7/2 | 3/2 |
-| Last D | 2 | 3 | 5/2 | 3 |
+| Last D | 2 | 3 | 3 | 3 |
 
 Hence the row maxima are (4,4,3), and their total static regret is 2.
 The first adjacent wallet is zero because C=C. At the second transition
@@ -134,6 +136,21 @@ needed by the surviving proposal, not a general funding proof.
 The instance satisfies 2W=18>10=OPT_3. It also leaves the base-price bank
 `J_base=sum_(c_x>0)1/(c_x+1)=6/3+3/2=7/2` unviolated. C_sum and J_base
 must not be denoted by the same letter when interpreting this result.
+
+This last sentence does not leave a universal J_base bridge open. The
+[already certified thirteen-player refined-tax witness](../../../R-c50fecc37aa44fb4a69a2122bb70e5fe/security/refined_tax_counterexample.md)
+also refutes the alpha=1 versions: its actual load blocks are 5 customers
+at load 2, 3 at load 1 and 25 at load 10, while T has three actual-missing
+customers. Therefore J_base=5/3+3/2+25/11=359/66, W=33, g(T)=3, and
+
+    m g(T)-W-J_base=F(T)-W-J_base=37/66>0.
+
+This is arithmetic recovered from an old complete SPE, not a new instance,
+new audit or new openness claim. Both the fixed actual-base envelope
+`m max_T g(T)<=W+J_base` and the universal pure-common-query assertion
+`F(T)<=W+J_base` are false. Optimum-sensitive joint assignment and genuinely
+selected safety-query quantifiers are different and are not refuted by
+these statements.
 
 ## Reproducibility and limits
 

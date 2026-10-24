@@ -1,3 +1,5 @@
+> 当前后续状态：相邻钱包的existential最优元组/指派版本也已由[root全人数族](../parent/optimal_assignment_adjacent_wallet_counterfamily.md)否定；本页较早OPEN仅为阶段历史。原HALF与较宽弱K桥不受此否定。冻结JSON不原位改写。
+
 # 原单位客户完整 SPE 中 StrongA 的严格反例
 
 2026-10-24，credible10。**一般 Q-CAG-HALF 仍 OPEN。** 本文严格否定一条本轮提出、适用于全部人数与共同目录的充分加强；不否定“存在一个最优比较指派”的弱版，不提供原目标反例。正文的有限输入只为反驳这条精确一般候选，非新的固定人数正面项目。无外审或新颖性认证。

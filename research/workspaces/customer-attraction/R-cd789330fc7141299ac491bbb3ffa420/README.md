@@ -1,6 +1,6 @@
 # Boss10：共享遗漏、完整可信性和低尾信用
 
-**第十轮运行中：一般目标仍 OPEN。** 六名直属指定研究员与root直接一般研究；相邻主题变化钱包支付全部冻结regret的加强已被完整SPE否定，并独立缩成10单位客户自足见证。不是half反例，existential最优指派与净ROW仍未付。见[第十轮总稿](round10/GENERAL_PROOF_WORKING.md)。
+**第十轮最新：一般目标仍 OPEN。** 六名直属指定研究员与root直接一般研究；已证明全人数族否定相邻钱包的existential最优指派桥，连固定倍数也不够；不是half反例。较宽弱K、净ROW、真实最优查询与共同ROLE仍未付。见[第十轮总稿](round10/GENERAL_PROOF_WORKING.md)。
 
 **第九轮最新：一般目标仍 OPEN。** 六名实际指定研究员与 root 已完成本轮一般论证与交叉检查；新末对调和付款、可变所有权与客户保留后继重分配已保存，但早期冻结税和共同 ROLE 仍未付。先读 [第九轮总稿](round9/GENERAL_PROOF_WORKING.md)。
 

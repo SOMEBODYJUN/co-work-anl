@@ -1,3 +1,5 @@
+> 当前后续状态：相邻钱包的existential最优元组/指派版本也已由[root全人数族](../parent/optimal_assignment_adjacent_wallet_counterfamily.md)否定；本页较早OPEN仅为阶段历史。原HALF与较宽弱K桥不受此否定。冻结JSON不原位改写。
+
 # 实际相邻下降钱包：两个旧完整策略检验与无拥挤族的锐诊断
 
 2026-10-24；security10。root 提供新的**一般候选**后作定向攻击。任意人数、任意共同有限目录、任意完整有序历史纯 SPE 的原 Q-CAG-HALF 仍 OPEN。本页两份旧packet的诊断均未分离候选；随后 exchange10 的[十单位客户完整 SPE](../exchange/compact_adjacent_wallet_counterexample.md)已严格否定强式 A、逐一最优指派版及逐一共同查询版。存在最优指派的弱式 A-opt 仍 OPEN。冻结旧负值保留，不能当作一般正证。无外审或新颖性主张。

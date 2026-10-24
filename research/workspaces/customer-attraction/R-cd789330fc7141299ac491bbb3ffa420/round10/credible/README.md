@@ -1,3 +1,5 @@
+> 当前后续状态：相邻钱包的existential最优元组/指派版本也已由[root全人数族](../parent/optimal_assignment_adjacent_wallet_counterfamily.md)否定；本页较早OPEN仅为阶段历史。原HALF与较宽弱K桥不受此否定。冻结JSON不原位改写。
+
 # 第十轮 credible：真实完整策略中的相邻退出税反例
 
 2026-10-24，credible10。原对象始终为 Q-CAG-HALF：任意有限共同目录、任意人数、每个完整历史依赖纯 SPE；**主命题仍 OPEN**。本目录的新严格结果只是否定 root 本轮提出的全范围加强 StrongA，不是 HALF 反例。没有新增受限目录正面定理、固定人数常数项目或一般阴性结论。
