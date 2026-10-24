@@ -2,7 +2,9 @@
 
 2026-10-24，payment9/roleobstruction；与 payment9 同时独立得到同一推导。适用任意人数、任意有限共同目录和每份完整历史纯 SPE。本文是第八轮充分证书的有效扩张与解析核验，**不是新的福利不等式，不证明 ROLE 可满足，不认领外部新颖性**。Q-CAG-HALF 仍 OPEN。
 
-主要来源：[固定所有权 primal](../../../round8/residual/linear_joint_payment_certificate.md)及其 GENERAL-DENSITY 合同、[初始化正部证明](../../../round8/inventory/source_preserving_density_envelope.md)。新自由度是把比较客户在不同比较角色之间的所有权也作为变量；证明仍使用原有真实 query、同客户流与一次 whole-IC。
+主要来源：[固定所有权 primal](../../../round8/residual/linear_joint_payment_certificate.md)及其 GENERAL-DENSITY 合同、[初始化正部证明](../../../round8/inventory/source_preserving_density_envelope.md)。本文扩张的是该 full-O 坐标 primal：把 p 以及与之耦合的 H、r、加强入口容量作为同一个线性系统的变量；证明仍使用原有真实 query、同客户流与一次 whole-IC。
+
+**旧来源校正：R 的任意 owner 选择不是本轮新机制。** [round3 捕获流 §2](../../../round3/credible/increasing_role_capture_flow.md) 已允许每个遗漏客户选任意包含它的比较索引 owner；[round5 fresh 初始化 §4](../../../round5/credible/all_fresh_submarkov_elimination.md) 明确允许任意分割 Q_i⊆T_i 及每客户 0<=rho_x<=1 的来源。分数所有权可将同客户拆标签后由线性性合并，不认领这一 R 自由度的首次提出。本轮 TAME 与 H/qhat 的证明是在 round8 具体 full-O 坐标付款系统中的扩张合同，不是重新发现 R owner partition。
 
 ## 1. 固定数据和可变份额
 
@@ -90,7 +92,7 @@ c_B(x)=0 时 H_lx=0，不使用零分母。故原 I 补余钱包容量 w_lx-H_lx
 
 取每坐标 a_ix=min(r_ix,Q_ix)，c_ix=r_ix-a_ix，再按逐边容量比例拆分，就得到该 p 的合法 INIT。没有逐客户使用 IC。空 action 没有客户行；Q=0 时取 a=0。
 
-原 canonical p=1/c_T(x) 属于此区域，因为 k_ix<=c_T(x)。尤其每个 R 客户有 d=1、nB=0、k=1，所以 **任意 R 上的 fractional ownership 都自动 TAME**。这不限制比较客户只能分给一个角色；任意分数分配均有效。全 O 的更大 OWN 区域作为充分 LP 同样合法，只是不给每个 OWN 点的先验初始化保证。
+原 canonical p=1/c_T(x) 属于此区域，因为 k_ix<=c_T(x)。尤其每个 R 客户有 d=1、nB=0、k=1，所以 **任意 R 上的 fractional ownership 都自动 TAME**。这在本 full-O primal 中恢复了上述旧 R owner-partition 初始化的自由度，不认领新 R 源机制。全 O 的更大 OWN 区域作为充分 LP 同样合法，只是不给每个 OWN 点的先验初始化保证。
 
 ## 4. 真正严格的 payment 集扩张：一个完整 SPE 参数族
 
@@ -113,3 +115,5 @@ c_B(x)=0 时 H_lx=0，不使用零分母。故原 I 补余钱包容量 w_lx-H_lx
 对于 **任意目录、每份完整历史纯 SPE 的五人目标**，本机制仍只给条件结论：若存在最优 T 及上述扩张 LP 的 ROLE 可行点，则 OPT_5<=2W。本文尚未证明这种 ROLE 点总存在，因此没有得到任意五人无条件 half，更没有证明一般 HALF。新增的可变库存分配不能被称作新增共同资金不等式。
 
 下一步真正可推进的是用可变 p 对不同 query 的同角色压力作联合调整，或从真实 off-history IC 给这种调整的全局存在关系。单独每 context 的 f<=1、每个给定 TAME p 可初始化，均不能替代该关系。
+
+另有两个直接限制：当某个 R 客户在固定 T 中只有一个 coverer 时，该客户的所有权仍被迫为 1，本扩张没有任何新自由度。并且所有角色价格恒为 1 时，MASS 对每个 p 仍给固定总价 |O|；可变 p 不能独自产生待证的总资金 |O|<=2W。它只提供可能用于共同角色平衡的更大选择空间。
