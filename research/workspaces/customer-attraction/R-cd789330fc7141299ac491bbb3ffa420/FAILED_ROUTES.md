@@ -60,3 +60,14 @@ CLIP只保证新正券≤旧gross，不保证旧net逐券下降；旧证书任�
 新密度定理给每个非actual context的f≤1，不能推Σ_same_role f≤1。inventory的7/6及credible的NET/latest13/12诊断是完整保留客户的纯policy几何，均未认证SPE；它们只阻止把角色反链质量直接等同为按负载加权密度。不能由此否定更深真实IC、共同钱包或half。
 
 全部reset coverer均分的压缩(i,a)流是旧round3机制，已去重；每主题一次wholeIC和query凸包仍缺跨主题共同系数。新的共同边价格DP在常数价格下仍给质量等式，不制造预算。强FOMA已据旧例纠正为refuted，弱指派/一般金额仍未闭合。
+
+
+## 第九轮准确失败/停界
+
+1. **任意合法背景WP与自由Mfull归纳不能使用**：旧PB给统一所有r槽元组查询下界s>u，故真实完整菜单每列亦≥s；直接反驳这些全背景加强。零背景根、actual-prefix受限及half未被反驳。见[精确后果](round9/parent/background_pushforward_status_correction.md)。
+2. **删去根IC松弛的SELF早已失败**：旧34客户完整SPE p=(X2/10+9empty/10)有D−C=−7/120，u−C仍正。本轮独立重放，不认领新游戏。恢复真正ROOT时保留u−D，不把负响应协方差自动删去。
+3. **所有权/NET选择变多≠资金变多**：扩大primal合法，常价格仍是OPT总质量；缺共同ROLE，不能把排序DP当半覆盖。最小外送路径更短、m5至多一条interlayer也不付款不同动作。
+4. **静态最优交换方向不可逆**：EX曲线控制actual在OPT外覆盖；E=∅时左侧0，故本身无一般遗漏预算。
+5. **末对调和钱包仅是分解中一项**：C′≤W/(2H_m+1)不控制早期Σ(E_i−e_i)。其退款来自同一份actual W，不允许再免费叠加已占的source/coordinate银行。
+
+以上不证明原目标为假或所有方法不可能；没有新目标反例。继续研究需新增实际off-history的共同金额关系，而非重复上述已知守恒和阴性。
