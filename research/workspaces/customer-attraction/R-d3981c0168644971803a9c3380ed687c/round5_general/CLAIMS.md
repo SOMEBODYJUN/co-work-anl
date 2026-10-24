@@ -59,6 +59,24 @@ SC 保税、半固定过去算子、前缀交换、异质修复与因果删位�
 
 任意原 m 人零根实例和完整 SPE 的每名实际玩家是否满足 u_i≥δ_(m+1)(0)？若真，静态 OPT_m≤2mδ_(m+1)(0) 推出 half。更弱的充分候选是每名实际玩家 2m·u_i≥OPT_m。
 
-状态：两者均 OPEN，无本轮付款证明或真正反例。量词是原全局人数 m、空根门槛，不是已失败的任意背景局部 δ_(r+1)(b)，也不是 u_i≥v_m。只保证未来玩家利润达到门槛的静态 SAFE-ACTION 助手不足：七环边客户例有静态坏回应，但这些回应不满足末位 BR，不能否定本候选或原目标。
+状态：**两者均 FALSE**，见下项原模型完整 SPE 家族。量词确为原全局人数 m、空根门槛，不是借用已失败的任意背景局部 δ_(r+1)(b)。此前七环静态 SAFE-ACTION 助手反例本身不满足末位 BR，不能否定本候选；现在的保险构造才是合法全历史证书。
 
-精确别名转移的静态证明可把对手质量替换为 m，给额外槽缺陷误差≤Pm/L；它保持任何已存在正缺陷，但没有产生一个缺陷种子。[准确转移及未证处](security/global_extra_fractional_alias_transfer.md)、[direct 当前推导](direct/PROOF_WORKING.md)。
+精确别名转移把对手质量替换为 m 后，额外槽缺陷误差≤Pm/L；现在可以应用于下面的实际个体反例种子。它仍未产生强聚合缺陷，不能混同个体与总量。[准确转移](security/global_extra_fractional_alias_transfer.md)。
+
+## R5-GLOBAL-INDIVIDUAL-FLOORS-NO
+
+每个 m≥2 有原模型实例：m 个单位经济客户、m−1 个互不相交的两客户保险块，目录为全部经济/保险对，共 m(m−1) 个不同三客户主题。显式三模式完整历史纯 SPE 的实际收益为
+
+    u_1=m/(m−1)，u_2=…=u_(m−1)=2+1/(m−1)，u_m=2。
+
+W=2m、OPT_m=3m−2；真正优化自由分数门槛为
+
+    δ_m=1+m/(2m−1)，δ_(m+1)=1/2+2(m−1)/(2m−1)。
+
+因此原零根逐人 δ_m floor 对 m≥3 为假；全局额外槽逐人 δ_(m+1) floor 对 m≥4 为假；更弱的每人 2m·u_i≥OPT_m 对 m≥5 也为假。同一推导 m=5 给 u_1=5/4、OPT_5=13、W=10，OPT_5−10u_1=1/2；不是原 half 反例。
+
+完整证明：NORMAL 锚定根经济行动，第一次中间偏离按保险是否已用转入 EXIT 或 PUNISH；两个后者在所有历史均显式可行、最优，不需 BI 黑箱。所有联合坐标偏离和末位平局均覆盖。direct 独立从单位定义重建一般证明，并完整核验 m=3 的 258 项、m=4 的 22620 项有序历史 IC；root 另独立重构三模式、分数最优值及参数多项式。无外审、新颖性或最小性认证。
+
+范围：本族严格满足原 half；静态整数背景给 v_m≤2=W/m，且 W−mδ_m=m(m−1)/(2m−1)>0。不能写成真正聚合安全值或一般平均福利反例。
+
+文件：[自足正文](security/global_extra_individual_counterfamily.md)、[direct 内审](direct/review_global_extra_individual_counterfamily.md)、[root 独立重构](root/global_extra_counterfamily_review.md)、[独立单位审计](direct/audit_global_extra_insurance.py)。

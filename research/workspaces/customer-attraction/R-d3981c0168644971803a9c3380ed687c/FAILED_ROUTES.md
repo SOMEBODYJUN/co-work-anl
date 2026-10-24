@@ -1,5 +1,7 @@
 # 失败与停止范围
 
+同轮进一步找到 [原零根显式保险反族](round5_general/security/global_extra_individual_counterfamily.md)：m 个经济单例与 m−1 个两客户银行，目录含全部对。三模式完整历史 SPE 有根 m/(m−1)、中间各 2+1/(m−1)、末位 2，W=2m、OPT=3m−2。真正 δ_m=1+m/(2m−1)，extra δ_(m+1)=1/2+2(m−1)/(2m−1)，分别从 m≥3、4 严格超过根收益；每人 OPT/(2m) 助手也从 m≥5 失败。这里是全局原人数、空根实际收益的反例，不是以前 PB 任意背景量词，也不只是静态后继假回复。[direct 全 m 内审](round5_general/direct/review_global_extra_individual_counterfamily.md)及[root 独立重构](round5_general/root/global_extra_counterfamily_review.md)通过，m=3、4 单位定义全历史回归通过。原 half 与真正聚合安全值均仍支付，必须允许角色间补偿，不能再把这些逐人强式当默认一般引理。
+
 第五次接续精确关闭 [LAST / WEAK-LAST / 全列精确税助手](round5_general/security/last_menu_retained_tax_failure.md)：P 池完整 SPE 对所有 k≥1 有 m=k+3、W=OPT=5k+23、u_m=12、L=6；弱付款差 k−11，允许全部列重新优化并保留全部末位税信用的差 (2k²−41k−33)/(2(k+1))，k≥22 正。证明是全部历史控制器，不是把旧核接上 P 前缀或有限无反例；[capacity 审查](round5_general/capacity/padded_core_controller_review.md)及[root 独立重构](round5_general/root/core_controller_independent_review.md)通过。真正静态根安全背景给 v_m、δ_m≤5，故此族不能扩大成根聚合或 half 反例。后续需要更早位置的信息，不继续同一末位预算调系数。另旧34客户实例的所有最小福利 SPE 都有末位收益高于平均，不能用“选最坏福利再令末位最小”免费规范化；有限全集原证据在本轮 direct 目录。
 
 第四次接续见 [round4_general/CLAIMS.md](round4_general/CLAIMS.md)。真实跨角色平均负载即使先平均再倒数，all-p 付款仍被 635 客户完整 SPE 否定；坏 p 未证自洽，真根/聚合桥保留。纯自洽主题普遍存在性被 16 客户完整 SPE 否定，六个主题全部严格被挑战；该例所有混合分布反而支付，不否定混合自洽存在付款。旧 PB 合法背景完整子 SPE 有真正优化自由分数值的连续平台及 u<δ，故任意背景 FF-LEADER、局部 δ 链均为假；背景已覆盖所有客户，不能写成零根或实际前缀反例。新共享前缀 cap 拼合引理成立，但插入/势交换可能增加全部前缀收益或覆盖，尚未闭合 ADM，不将这一步未证写成方法不可能。

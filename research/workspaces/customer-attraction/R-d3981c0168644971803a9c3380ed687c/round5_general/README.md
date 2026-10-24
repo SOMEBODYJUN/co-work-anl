@@ -13,7 +13,8 @@ Q-CAG-HALF 仍 OPEN。原任意人数、任意有限共同目录、每个完整�
 | [capacity 内审](capacity/padded_core_controller_review.md)、[root 独立重构](root/core_controller_independent_review.md) | 分别重构全部历史/全部动作，root 另从原始块写 Fraction 检查；无外审或新颖性认证 |
 | [私有别名转移](menu/private_alias_aggregate_transfer.md)、[内审](security/independent_review_private_alias_transfer.md) | 一般强聚合 δ 缺陷若存在可保留；没有缺陷种子，弱桥/ADM 不自动保留 |
 | [对齐删除边际预算](induction/aligned_deletion_social_marginal.md)、[内审](direct/review_aligned_deletion_social_marginal.md) | 实际前缀共同查询行的一份社会边际预算；物理可信修复与覆盖分解仍未证 |
+| [原零根个体门槛反例](security/global_extra_individual_counterfamily.md)、[direct 内审](direct/review_global_extra_individual_counterfamily.md)、[root 重构](root/global_extra_counterfamily_review.md) | 全历史显式保险家族：逐人 δ_m、extra δ_(m+1)、OPT/(2m) 均失败；平均 half 和真正聚合仍支付 |
 
-上述成熟组件均区分解析证明、有限检查、内部审查和未认证的新颖性。当前没有新无条件福利界或原目标反例。LAST 路线关闭后转向全局额外槽个体门槛/全位置菜单及真正共同付款，不再扩展同一末位实例。
+上述成熟组件均区分解析证明、有限检查、内部审查和未认证的新颖性。当前没有新无条件福利界或原目标反例。LAST 路线关闭后实际继续攻击全局额外槽个体门槛，随后保险家族也将其严格否定；同族 m=5 还否定每人 OPT/(2m) 助手。后续须回到真正总量/全位置菜单的共同付款，不再扩展末位或个体保底的同机制变体。
 
 上一轮 [共享前缀 cap 回收](../round4_general/menu/shared_prefix_cap_salvage.md)继续有效，但尚未生产低插入且总预算受控的可信端点。纯 SC、all-p 付款和任意背景局部 δ 反例保留原范围，不重复试算。

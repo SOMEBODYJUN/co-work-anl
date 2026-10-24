@@ -1,4 +1,4 @@
-> 最新第五次一般接续见 [round5_general主稿](round5_general/MAIN_PROOF_WORKING.md)、[地图](round5_general/README.md)及[精确身份](round5_general/CLAIMS.md)。目标仍 OPEN，无新无条件福利界或目标反例。末位菜单的保税比较正确，但其付款甚至全列精确税预算已被本轮完整 SPE 否定；反例实际 W=OPT，不否定 half 或真正安全值聚合。新对齐删除边际预算与私有别名转移已内部核对，未接成福利证明。前轮 [round4_general](round4_general/README.md) 的共享前缀回收继续有效；更早成果不重复认领。共享恢复入口为[一般工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。
+> 最新第五次一般接续见 [round5_general主稿](round5_general/MAIN_PROOF_WORKING.md)、[地图](round5_general/README.md)及[精确身份](round5_general/CLAIMS.md)。目标仍 OPEN，无新无条件福利界或目标反例。两族完整历史 SPE 分别关闭末位全列税付款，以及原零根的逐人 δ_m、extra δ_(m+1) 和 OPT/(2m) 助手；都满足 half，真正安全值聚合未败。新对齐删除边际预算与私有别名转移已内部核对，未接成平均福利证明。前轮 [round4_general](round4_general/README.md) 的共享前缀回收继续有效；更早成果不重复认领。共享恢复入口为[一般工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。
 
 # 一般半覆盖：当前共同付款与前轮资产
 
