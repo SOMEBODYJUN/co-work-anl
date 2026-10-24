@@ -14,6 +14,8 @@
 
 同一阶段的调和势障碍在 [`potential_branch_obstruction.md`](../../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/route1/potential_branch_obstruction.md)：完整 SPE 的当前动作比较必须保留删去当前玩家后的分支势差，逐点势单调归纳已被精确证书排除；这只是证明接口边界。
 
+2026-10-24 对上述份额稿 §4 的[窄勘误与独立审查](../../workspaces/customer-attraction/R-65d0f88edf3849b39ca5eb79760e970b/parent/route5a_independent_review.md)：遗漏半额付款的原推导只给 OPT≤3W，修正充分接口须支付 `OPT−W`。底层 L1--L4 不变；没有新增 half 已证范围或主目标反例。
+
 从[当前研究入口](../../customer_attraction/README.md)进入[精确目标](../../customer_attraction/CLAIMS.md)、[前沿](../../customer_attraction/RESEARCH_STATE.md)、[失败机制](../../customer_attraction/FAILED_ROUTES.md)和[保留问题分诊](../../customer_attraction/RETAINED_QUESTIONS.md)。Boss 先固定[模型](model.md)，随后沿正在研究的机制按需读取下表；无需通读本页所有正文。
 
 ## 主人最新决定：一般命题是唯一新研究任务
