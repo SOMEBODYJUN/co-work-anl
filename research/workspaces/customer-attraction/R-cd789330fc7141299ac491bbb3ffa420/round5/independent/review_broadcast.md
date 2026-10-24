@@ -103,7 +103,9 @@ B=(D,T,H),\quad A=(H,T,D),\quad v=D=4.
 
 两名 T∩D 客户均在实际 C 外，原 B 由过去 D 覆盖、重置 A 由未来 D 覆盖；每客户产生 future 正价 1/4 和 past 负价 1/4，总 `P^>=N=1/2`，接收 context 为 `(H,T),i=3`。此末位 context 的 reset 叶为 `(H,A,D)`，产生 past-C 正价1及 fresh 负价1。
 
-合法 INIT 取第一位 source query D、rho=1 只放在这两名遗漏客户：rho 总2=source吸收1+注入1。于是第一自然 context β=1/4，向末位传利润1/8，末位 β=1/40。fresh/all 两个图的消元质量都精确为1；全客户实际 coupon 正需求为23/20，负 N/e 退款为3/20，差为1。fresh C-LEDGER、past-first 取消后新流、β'≤β也精确通过。
+本实现只测试**合法任意 forced query／非最优比较初始化**：明确取比较元组 `(D,H,B)`，覆盖17；将 D 客户归其第一位、H 私有客户归第二位、B 在 D 外的客户归第三位，rho=1 仅放在 D 的两名实际遗漏客户，其余 rho=0。于是第一位 source query D 给 rho 总2=source吸收1+注入1。该实例 `OPT_3=18`，由 `(H,B,T)` 达到；任何含 D 的三元组覆盖至多17，所以 D 不是最优元组成员。本例**没有测试最优 owner 初始化的非零链**。
+
+上述任意比较 INIT 仍给第一自然 context β=1/4，向末位传利润1/8，末位 β=1/40。fresh/all 两个图的消元质量都精确为1；全客户实际 coupon 正需求为23/20，负 N/e 退款为3/20，差为1。fresh C-LEDGER、past-first 取消后新流、β'≤β也精确通过。一般 kernel 允许任意非负利润注入，故此范围纠正不影响本例的完整 SPE、非零 edge、合法域或账式审计。
 
 输出冻结在 `audit_broadcast.json`。这只是一个明确非零的实现及域测试，不是一般模型的计算覆盖，也不证明容量或 half；一般正确性的依据是前面逐客户代数与有限 DAG 证明。
 

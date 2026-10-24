@@ -1,4 +1,4 @@
-> 2026-10-23当前任务已转为全成果清洗、整理及一般论证衔接。当前共享入口为[一般证明工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区恢复索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。下文是前轮资产交接，不恢复任何特殊人数、目录或局部常数任务。公屏方向通知已发送，seq198；尚不能据发送声称所有远端团队已执行。
+> 当前直接接续一般证明，见[本轮工作稿与准确状态](continuation_general/README.md)。新增全输入实际前缀联合席位关系已获独立内部解析检查，尚未完成 half；FTA、Mfull、Mpath 继续 OPEN。此前全成果清洗、整理及一般论证衔接入口为[共享工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区恢复索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。下文保留前轮资产，不恢复任何特殊人数、目录或局部常数任务。
 
 # 一般半覆盖：常数三可信根修复与真实全深度障碍
 

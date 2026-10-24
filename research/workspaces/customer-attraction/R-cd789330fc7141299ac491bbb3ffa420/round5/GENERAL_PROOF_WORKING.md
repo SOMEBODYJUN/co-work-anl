@@ -31,3 +31,6 @@
 下一项有信息价值的关系必须实际调用真实孩子IC，约束T+COV或source/whole-row/past券的共同需求。再次消元fresh、重排静态rank、扩大有限阴性或只看单谱系单次收费都不够。基础广播核本身未使用ell≥0，不能因有完整σ输入就声称已经支付了全部孩子激励。
 
 个人checkpoint仅是可恢复研究备份。外审与新颖性未认证，未把上述表示升级为共享canonical福利结果。
+
+
+来源更正：TOTAL自由trim已由同行incoming_payment.md式(5)–(6)公开，root实际回读确认；本轮同类推导仅保留与自然重分配/密度账的衔接，不计新的预算发现。PB-extra出现完整解析背景分离候选，见menu/pair_attack.md及parent/review_pair_counterexample.md；两名独立审查正在完成前，状态仍按候选，原half未受否定。

@@ -66,7 +66,7 @@ Greedy 平局按以下顺序：先选包含最近偏离者的 real 块；再选�
 
 Punish 有定义：在首次偏离 j≤3 前，已用 real 块至多三个；j 在每段至多用三个；每个 Punish 步骤至多添加一个新块。一次 Punish 将某段 j 所选块的最大负载增加一；每段最多 t−1=9 次，故总 Punish 数 ℓ≤d(t−1)=180。任一段已用 real 块至多 3+3+180=186<Q，其他段所需空块始终存在。达到所有段最大负载至少 t 后，负载不会下降，后继一直 Greedy。
 
-若 Punish 玩家本人偏离，则 D 至少两个，后继一直 Greedy。若 Greedy 玩家偏离，其后也一直 Greedy。这些都是真实续局切换。
+若 Punish 玩家本人偏离，则 D 至少两个，后继一直 Greedy。若 Greedy 玩家偏离，其后也一直 Greedy。这些都是真实续局切换。所有尚未指定的热点段、热点块及空块选择统一固定字典序，以明确一份纯策略；证明不依赖具体选择顺序。
 
 ## 4. Greedy 的全部历史激励
 
@@ -175,6 +175,6 @@ s-u=
 
 思想线索来自 Correa–de Jong–de Keijzer–Uetz, *The Inefficiency of Nash and Subgame Perfect Equilibria for Network Routing*, §6，[作者PDF](https://www.dii.uchile.cl/~jcorrea/papers/Journals/CJKU2019.pdf)。这里只借鉴 Fill/Copy/Punish/Greedy 的威胁结构。原 routing 允许很长路径，静态对手可覆盖全部资源，不能直接推出 PB 分离。本构造限制每段最多三个 real 块、加入不同背景的 dummy 块，并重新逐全部历史验证逆负载收益；没有直接导入 routing 的 PoA 定理。
 
-**边界：** b 通过 singleton 前缀覆盖了全部客户，因此整个原人数游戏的福利从该前缀起恒等于客户总数，根 half 不受攻击。这里还没有证明该前缀能成为根 SPE 的实际路径；PB 的题面量化任意合法背景，反驳它不需要该更强性质。该构造也未反驳只在根 SPE 实际前缀成立的两人块桥，不能据此放弃该弱化方向。
+**边界：** b 通过 singleton 前缀覆盖了全部客户，因此整个原人数游戏的福利从该前缀起恒等于客户总数，根 half 不受攻击。固定本构造在该背景子树中的完整SPE后，其他孩子任取完整SPE，再沿该前缀的祖先逐层选最佳动作，即可扩充为原全部人数游戏的完整SPE；该前缀可能离轨。这里还没有证明该前缀能成为根 SPE 的实际路径；PB 的题面量化任意合法背景，反驳它不需要该更强性质。该构造也未反驳只在根 SPE 实际前缀成立的两人块桥，不能据此放弃该弱化方向。
 
 最初单次旧输入诊断的代码/记录仍为 `pair_targeted_diagnostic.py`、`pair_five_individual_diagnostic.jsonl`：只检查既有五人输入的 66 个合法背景，未分离，不作一般正面证据。它不参与本解析候选的证明。
