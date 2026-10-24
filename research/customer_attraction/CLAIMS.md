@@ -52,3 +52,5 @@
 
 
 2026-10-23全成果清洗补入 `CA-IID-WEAK-WELFARE-NO-v1`：[完整SPE反族](../current/customer_attraction/iid_security_and_flow_barriers.md) §1.2否定同定义弱iid桥 `W≥(1−1/(2m))Z_m`；原成果早存个人区，本轮重构并补共享状态，非新发现。真正安全值强/弱聚合及Q-CAG-HALF仍OPEN。
+
+新增候选接口：[`CA-INCIDENCE-LP-DYNAMIC-BUDGET-v1`](../current/customer_attraction/incidence_lp_dynamic_budget.md)把现有极大覆盖路由的统一预算细化为关联覆盖 LP 与后缀包络；`tau_inc <= 2` 的输入类由此得到半覆盖。高密度共享关联仍未闭合，候选尚待独立清洗，不能升级一般目标状态。

@@ -4,6 +4,8 @@
 
 本分支已给**所有设施数的因子二存在性**和**任意规范贪心占位的完整盒均衡有限构造**。一般二进制有理输入的位多项式构造仍开放；最佳普遍常数仍未确定。证明完成度、内部审查、代码与外审彼此分开；外部同行评审和包括未取得的后续学位论文在内的优先权核查尚未完成。
 
+本轮[英文连续稿PDF](../../manuscripts/multiple_facilities/main.pdf)及[LaTeX源码](../../manuscripts/multiple_facilities/main.tex)只聚焦SC-K-2-E：引言和模型后，完整证明字典序预算、装箱与离轨续局。贪心盒和后续条件算法不并入此稿。版本、未决期刊及真实检查见[写作状态](../../manuscripts/multiple_facilities/WRITING_STATE.md)与[三稿入口](../../manuscripts/README.md)。
+
 ## 主要结论与证据状态
 
 | 成果 | 精确结论与证明链 | 证据及实现边界 |
