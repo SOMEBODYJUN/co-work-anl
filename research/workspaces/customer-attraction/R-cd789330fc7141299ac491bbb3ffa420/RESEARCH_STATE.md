@@ -58,3 +58,11 @@ PI路线现已真正失败，不再是OPEN候选：430客户完整三人SPE有P4
 同clone/actor保留round4/5稿并六路接续。[本轮一般稿](round6/GENERAL_PROOF_WORKING.md)记录SAFE/CLIP、fresh核、可信换位与准确未付义务。一般half仍OPEN，无真正反例。root六份旧完整策略[回归](round6/parent/clip_audit.json)只核3635原IC、净券DAG和守恒，不是容量/福利试验。
 
 同角色跨context净券、source、past标签的共同cap尚未证明；LAST-DIP的真实子局价值障碍亦未支付。改分母、局部退款或单谱系区间不能代替总预算。PB-extra、Mpath、TOTAL-TRIM仍OPEN。
+
+## 第七轮：同一父叶/子枝的共同容量与未闭合部分
+
+原目标仍 OPEN，原量词不变。六名实际指定研究员与 root 未进行特殊结构或固定规模正面扩张。正向新增组件均准确停在局部共同容量：同一 W 的全部 prefix claim 通过列次随机算子回推到 B，固定 B 的全部角色 SD 第一正价组成 ROW/COLUMN 受控运输；root 由 ROW 推导保留这些 B 正价、仅剪 W 正价的 reverse-SD 核。fresh-source 时间序是已有 causal interval/HIT 的综合推论。各有自足证明与独立重构，见 [round7](round7/GENERAL_PROOF_WORKING.md)。
+
+一般接合尚缺：多个 W_i 的独占未来利润不能由同一 B 支付；direct B 当前项和第一正价可能在新 C 支持上重用；whole-profit 重采不保持客户不交支持；正反核加 query 投影可能形成循环。把局部共同 cap 简单相加会错。没有证明源支配或 actual cap2，也没有原目标反例。
+
+未证 FOMA-EXISTS（最优元组冻结偏离的最小匹配）仍作为精确一般候选保存，不以有限旧目标未分离当证明。pair/iid 更强路线复用旧反例停止，不再扩阴性；一般安全值/half 未被这些辅助失败否定。外审/新颖性未认证；当前个人备份不自动提升共享 canonical。
