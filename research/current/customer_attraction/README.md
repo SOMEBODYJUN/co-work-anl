@@ -6,6 +6,8 @@
 
 该关系的[内部审查与复现入口](../../reviews/customer_attraction/prefix_coupled_seat_budget.md)区分解析证明、独立完整策略补全和有限数值范围；对应脚本、输入及冻结动作表均由该页导航。
 
+2026-10-24 状态去重：成果总账已将实际缩放背景的精确税桥 `mM<=W+G_C` 从开放桥移至已反驳项，与[现行反例正文](fractional_actual_load_counterexample.md) §4及研究状态一致。本轮重放旧完整策略，不认领新反例；真正聚合安全值、Mfull/Mpath和原half仍OPEN。另[最优首动作菜单](optimal_first_action_branch_gap.md) §5 的丢信用加强(11?)已由all-big完整SPE族否定，正确局部恒等式保留；详见正文状态更新和失败地图。
+
 研究存档：customer-attraction；目标身份：Q-CAG-HALF。
 
 继续一般论证时，可读[本轮两项全输入个人区组件](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/README.md)：真实尾主题菜单外静态损失的联合上界，以及实际倒二位置对任意比较主题组的真实查询行。两项已有逐客户内部重构，但仍未支付早期玩家的真实枝重置，未闭合主目标；各自准确范围、证明及五人压力限制在原文。

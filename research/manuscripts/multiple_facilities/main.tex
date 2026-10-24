@@ -77,7 +77,7 @@ For any placement $s$, let $O=\set{t\in S:s_f=t\text{ for some }f}$ and $q_t=|\s
 \]
 Each client in $J_t$ chooses each of the $q_t$ facilities at $t$ with probability $1/q_t$, independently of all other clients. Every facility at $t$ then has expected load $W_t/q_t$.
 
-Choose a placement and an assignment for which the sorted vector of all $k$ facility loads is lexicographically maximal over all placements and all such assignments. Fix this choice and denote its client profile by $p$.
+Fix a total order on the finite encodings of placements and site assignments. Choose the first pair in this order for which the sorted vector of all $k$ facility loads is lexicographically maximal over all placements and all such assignments. Denote its client profile by $p$.
 \end{construction}
 
 The maximum exists because there are finitely many placements and site assignments. The following elementary comparison will be used repeatedly: replacing one or more occurrences of a value $b$ by values strictly above $b$, while all changed entries previously above $b$ remain above $b$ and all remaining entries do not decrease, strictly increases the sorted vector lexicographically. The comparison remains valid if some smaller entries increase, since their first increase already gives a strict improvement.
@@ -118,7 +118,7 @@ If $q_u=1$, put $J=J_u$. Then
 \end{align}
 \end{lemma}
 \begin{proof}
-Suppose first that $q_u\ge2$. Moving $f$ to $t\in O\setminus\set{u}$ and keeping all client site assignments feasible gives the remaining facilities at $u$ load $q_ua/(q_u-1)>a$. If~\eqref{eq:occupied-survive} failed, all $q_t+1$ facilities at $t$ would also have load above $a$, and their previous loads were above $a$. Every coordinate equal to $a$ at $u$ would thus be replaced by a larger one, with no smaller coordinate decreasing. This contradicts maximality. If~\eqref{eq:empty-survive} failed, moving $f$ to $r$ and assigning all newly covered clients to it would replace its load $a$ by $N_r>a$ and increase the remaining loads at $u$, again a contradiction.
+ Suppose first that $q_u\ge2$. Moving $f$ to $t\in O\setminus\set{u}$ and keeping all client site assignments feasible gives the remaining facilities at $u$ load $q_ua/(q_u-1)>a$. If~\eqref{eq:occupied-survive} failed, all $q_t+1$ facilities at $t$ would also have load above $a$. The old target load was above $a$ as well, since $W_t/q_t>((q_t+1)a)/q_t>a$. Every coordinate equal to $a$ at $u$ would thus be replaced by a larger one, with no smaller coordinate decreasing. This contradicts maximality. If~\eqref{eq:empty-survive} failed, moving $f$ to $r$ and assigning all newly covered clients to it would replace its load $a$ by $N_r>a$ and increase the remaining loads at $u$, again a contradiction.
 
 Now suppose that $q_u=1$, so $w(J)=a$. If~\eqref{eq:occupied-disappear} failed, move $f$ to $t$ and assign all clients of $J\cap C_t$ to $t$. Clients in $J\setminus C_t$ that remain covered are assigned to any other remaining occupied location that covers them; those that become uncovered are unserved. Clients outside $J$ retain their assignments. The new load at $t$ is above $a$. Its old load is also above $a$, since
 \[
@@ -148,10 +148,10 @@ Start with one part per client and merge two parts whenever their combined weigh
 Consequently the total weight would exceed $ba\ge(h+1)a$, a contradiction. The empty list gives no parts.
 \end{proof}
 
-The assignment obtained by packing need not be a client equilibrium. We next show that strict improving client moves preserve the cap on all facilities without an isolated heavy client. Here loads refer to a pure client assignment.
+The assignment obtained by packing need not be a client equilibrium. We next show that strict improving client moves preserve the cap on every facility that does not host an isolated heavy client. Here loads refer to a pure client assignment.
 
 \begin{lemma}\label{lem:capped}
-Fix a placement, a facility $f$, and a number $a>0$. Suppose there is a feasible pure client assignment in which $f$ has load at most $2a$, every client heavier than $2a$ is alone at a facility other than $f$, and all other facilities have load at most $2a$. Then this placement has a pure exact client equilibrium in which $f$ has load at most $2a$.
+Fix a placement, a facility $f$, and a number $a>0$. Suppose there is a feasible pure client assignment in which $f$ has load at most $2a$, every client heavier than $2a$ is alone at a facility other than $f$, and every facility that does not host one of these heavy clients has load at most $2a$. Then this placement has a pure exact client equilibrium in which $f$ has load at most $2a$.
 \end{lemma}
 \begin{proof}
 Repeatedly perform a strict improving pure client move. An isolated client of weight $w_i>2a$ already incurs its smallest possible cost $w_i$, so it never moves strictly profitably. A client at a facility of load at most $2a$ cannot improve by joining one of these isolated clients, because its destination cost would exceed $2a$. If it moves from facility $h$ to facility $g$, strict improvement means
@@ -192,7 +192,7 @@ The old location $u$ disappears. Put $J=J_u$ and keep clients outside $J$ at the
 
 At a surviving old location $t$, the added clients form a subset of $J\cap C_t$. Together with the original clients $J_t$, their total weight is at most $(q_t+1)a$ by~\eqref{eq:occupied-disappear}. Apply Lemma~\ref{lem:packing} to all clients now assigned to $t$ and place the resulting parts on its $q_t$ stationary facilities.
 
-If $r$ was unoccupied, assign the genuinely newly covered clients to $f$ as well. Its load is then at most $N_r+w(J\cap C_r)\le a$ by~\eqref{eq:empty-disappear}. If $r$ was already occupied, every client of $J$ that remains covered has a stationary option, so $f$ receives no client initially. Once again every covered client is served, every client heavier than $2a$ is isolated at a stationary facility, and every other facility has load at most $2a$.
+If $r$ was unoccupied, assign the genuinely newly covered clients to $f$ as well. Its load is then at most $N_r+w(J\cap C_r)\le a$ by~\eqref{eq:empty-disappear}. If $r$ was already occupied, every client of $J$ that remains covered has a stationary option, so $f$ receives no client initially. Once again every covered client is served, every client heavier than $2a$ is isolated at a stationary facility, and every non-heavy facility has load at most $2a$.
 
 In both cases Lemma~\ref{lem:capped} supplies an exact pure client equilibrium with $L_f\le2a$, proving~\eqref{eq:bound-deviation}.
 \end{proof}
@@ -212,16 +212,17 @@ The on-path construction gives equal expected loads to facilities at the same lo
 For rational input, we can record the selected equilibria with polynomially many bits and use a fixed rule to complete all other placements. The next proposition states this encoding consequence.
 
 \begin{proposition}\label{prop:certificate}
-Suppose the weights are positive binary rationals and the client--location incidences and all $k$ facilities are explicit. There is a finite exact procedure that outputs the placement in Theorem~\ref{thm:main}, its on-path client equilibrium, a pure client equilibrium for each of its $k(|S|-1)$ actual deviations, and a deterministic default rule for all other placements. The displayed strategies have encoding length polynomial in the input length. Their client optimality and the inequalities in~\eqref{eq:spe} can be checked in time polynomial in their explicit encoding length.
+Suppose the weights are positive binary rationals and the client--location incidences and all $k$ facilities are explicit. There is a finite exact procedure that outputs the placement in Theorem~\ref{thm:main}, its on-path client equilibrium, a pure client equilibrium for each of its $k(|S|-1)$ actual deviations, and a deterministic default-rule program for all other placements. The displayed strategies have encoding length polynomial in the input length. The stored on-path and actual-deviation profiles, and the facility inequalities for those deviations, can be checked in time polynomial in their explicit encoding length; correctness of the default-rule program follows from the potential argument.
 \end{proposition}
 \begin{proof}
-Enumerate all placements and all feasible client site assignments, and retain a lexicographic maximum. The on-path probabilities belong to $\set{0}\cup\set{1/q:1\le q\le k}$. At each actual deviation, perform the mergers of Lemma~\ref{lem:packing} and strict improving client moves as in Lemma~\ref{lem:capped}. These processes terminate and their output probabilities are zero or one.
+Enumerate all placements and all feasible client site assignments in the fixed order from Construction~\ref{con:selection}, and retain the first lexicographic maximum. The on-path probabilities belong to $\set{0}\cup\set{1/q:1\le q\le k}$. At each actual deviation, perform the mergers of Lemma~\ref{lem:packing} and strict improving client moves as in Lemma~\ref{lem:capped}. These processes terminate and their output probabilities are zero or one.
 
 For the default rule, fix an enumeration of the clients. Assign each covered client to its least-index accessible facility and repeatedly choose the first client in this enumeration with a strict improvement, moving it to its least-index cost-minimizing accessible facility. Equation~\eqref{eq:potential} proves that this rule terminates at every placement. Store its fixed description together with the displayed on-path and actual-deviation profiles. Each displayed pure profile needs at most one facility index per client; the number of displayed profiles is polynomial in the explicit input length. The rational loads are sums of input weights, possibly divided by an integer at most $k$. A denominator for any one load is obtained by multiplying the product of the input denominators by an integer at most $k$. Its bit length is therefore at most the sum of the input denominator bit lengths plus $O(\log k)$, so exact comparisons also have polynomial bit length. Formula~\eqref{eq:cost} checks each displayed client equilibrium, and~\eqref{eq:spe} checks the facility deviations.
 \end{proof}
 
 Proposition~\ref{prop:certificate} distinguishes a short description of the continuation from an efficient search procedure. Exhaustive selection and finite improvement suffice for existence; neither step has a polynomial running-time bound in this proof. Determining the best uniform approximation factor between the golden ratio and two, and finding an efficient construction for general common location sets, remain separate questions.
 
+\enlargethispage{3\baselineskip}
 \bibliographystyle{plain}
 \bibliography{references}
 \end{document}

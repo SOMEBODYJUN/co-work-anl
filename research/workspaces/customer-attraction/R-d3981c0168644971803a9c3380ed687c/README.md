@@ -1,4 +1,4 @@
-> 最新一般证明接续见 [next_general主工作稿](next_general/MAIN_PROOF_WORKING.md)、[本轮状态](next_general/README.md)及[精确身份](next_general/CLAIMS.md)。本轮无新一般福利界，half仍OPEN；最新I互补付款与旧ν核的合成已独立内审，R净券共同余额仍未付；有利菜单的W/m预算未证。另去重查明强FOMA早有旧完整反例，已纠正并通知同行。上一轮[联合前缀谱](continuation_general/README.md)保持原已审范围，不继续扩私有特例。共享恢复入口为[一般工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。
+> 最新接续见 [round3_general主稿](round3_general/MAIN_PROOF_WORKING.md)、[地图](round3_general/README.md)及[精确身份](round3_general/CLAIMS.md)。本轮无新全输入福利界，half仍OPEN；复制半利润/早晚二倍比例与all-p Jensen加强被完整SPE否定，真正共同付款仍缺，STATIC-2未证。前轮[next_general](next_general/README.md)的I互补付款与ADM表示保持原内部已审范围；更前轮[联合前缀谱](continuation_general/README.md)也不重复认领。共享恢复入口为[一般工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。
 
 # 一般半覆盖：当前共同付款与前轮资产
 

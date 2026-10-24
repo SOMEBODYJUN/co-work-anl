@@ -171,9 +171,9 @@ r(\delta-u)
 \tag{11-FALSE}
 \]
 
-**(11-FALSE) 已被完整 SPE 严格否定**：对任意 \(m\ge3\)，取大小为 \(m\) 的主题以及 \(m-1\) 个与其及彼此不交的单例，全部有序历史均选择大主题。这份已有 all-big 锐性族有 \(W=m\)、\(\operatorname{OPT}_m=2m-1\)，但左减右对所有菜单分布均至少为 \((m^2-3m-2)/2+H_m>0\)。[逐历史解析证书及独立复核](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/all_big_completion_slack_obstruction.md)给出每层 \(\rho,\theta,\xi,\eta,\Gamma\)；该族满足 half，故只否定丢弃 \(\xi,\eta\) 的强桥。
+**(11-FALSE) 已被完整 SPE 严格否定**：对任意 \(m\ge3\)，取大小为 \(m\) 的主题以及 \(m-1\) 个与其及彼此不交的单例，全部有序历史均选择大主题。这份已有 all-big 锐性族有 \(W=m\)、\(\operatorname{OPT}_m=2m-1\)，但左减右对所有菜单分布均至少为 \((m^2-3m-2)/2+H_m>0\)。[逐历史解析证书及独立复核](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/all_big_completion_slack_obstruction.md)给出每层 \(\rho,\theta,\xi,\eta,\Gamma\)；该族满足 half，故只否定丢弃 \(\xi,\eta\) 的强桥。 Boss3另从定义独立核验，见[持续方向审查](../../workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/direction_review/continued_exchange_2026_10_24/audits/new_general_mechanisms.md)；不认领新游戏族或先发。
 
-特别是非根菜单查询可有 \(\rho_A=\xi_A=r-1\)、\(\theta_A=f_A=\eta_A=\Gamma_A=0\)；\(\xi\) 在逐节点上界中的原系数不可降低。以任何固定 \(\alpha<1\) 比例保留 \(\xi\) 并保留其余原系数，得到的全人数总预算仍被同族否定。若完整保留 \(\xi\) 而只删 \(\eta\)，其存在菜单形式等价于 \(\sum_i\min_{A\in\mathcal A^*(h_i)}\eta_{i,A}/r_i\le 2W-\operatorname{OPT}_m\)，目前**未证**，也未被这个族反驳。保留全部余项的 (10) 则仍仅是原目标的恒等改写。不同 \(\rho_{i,A}\) 来自不同真实孩子；菜单或非均匀分布本身不提供跨枝付款。
+特别是非根菜单查询可有 \(\rho_A=\xi_A=r-1\)、\(\theta_A=f_A=\eta_A=\Gamma_A=0\)；若要求正的 \(\rho\) 仅由同一 \(\xi\) 局部支付且净额非正，须保留原系数；减少被减的 \(\xi\) 系数只会放松上界，不会使上界本身失效。以任何固定 \(\alpha<1\) 比例保留 \(\xi\) 并保留其余原系数，得到的全人数总预算仍被同族否定。若完整保留 \(\xi\) 而只删 \(\eta\)，其存在菜单形式等价于 \(\sum_i\min_{A\in\mathcal A^*(h_i)}\eta_{i,A}/r_i\le 2W-\operatorname{OPT}_m\)，目前**未证**，也未被这个族反驳。保留全部余项的 (10) 则仍仅是原目标的恒等改写。不同 \(\rho_{i,A}\) 来自不同真实孩子；菜单或非均匀分布本身不提供跨枝付款。
 
 ## 6. 任意合法动作的带覆盖损失版本
 
