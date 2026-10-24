@@ -121,3 +121,6 @@ In particular, `tau_inc≤2` implies half coverage because
 \]
 
 (each denominator in the last sum is at most `2n`; the `n=1` endpoint is exactly `1/2`). This condition is a distinct, incidence-level certificate; it is not a bound on the original theme fractional cover `tau_C`. For all-shared incidence and `s≤4`, `alpha_j=1/2` recovers the known `s≤4` route. Sparse incidence can satisfy `tau_inc≤2` even when the number of maximal themes is larger. The condition is only sufficient: disjoint-maxima catalogs have large `tau_inc` but are handled by the separate singleton-load mechanism.
+
+For a concrete `s=5` pattern with `tau_inc=2`, take positive incidence blocks only on
+`{1,2},{1,3},{1,4},{1,5}` and `{2,3,4,5}` (with enough positive mass to make all five maxima distinct). The weights `alpha_1=1` and `alpha_2=...=alpha_5=1/4` cover every incidence edge with total `2`; the corollary therefore gives half coverage despite five maximal sets. This is an incidence pattern certificate, not a claim that every catalog realizing the pattern has no other positive blocks.
