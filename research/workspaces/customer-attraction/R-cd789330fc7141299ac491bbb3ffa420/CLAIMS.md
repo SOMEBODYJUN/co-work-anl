@@ -126,3 +126,19 @@ SD/query-projection 是合法表示，完整说明在 global/coupling；COMMON-C
 ## 第八轮已恢复的旧反例：状态纠正
 
 强FOMA-EXISTS与FOMA-ALL均 refuted，旧精确身份 B10-STATIC-OPTIMAL-ASSIGNMENT-NO-v1，来源 R-a0bb57fa24044a8794bc7991918a19c6/static_matching/optimal_static_matching_counterexample.md。第七轮漏读旧资产、标为OPEN是本桌面状态错误。root独立代码与新冻结重放在round8/parent，确认52单位客户、m4、actual3322、W47、OPT52唯一支持0145，24匹配最小48。同行R-105的新1953客户证明是另一条独立分离，本桌面未冒称其完整复审。弱K≤(1+1/m)W与原目标仍OPEN。静态公式不因候选失败而失效。
+
+## 第八轮：来源保持密度与一般支付接口
+
+- **B10-COORDINATE-INIT-DENSITY-v1**：原round7任意比较元组T初始化可将每条future子容量进一步裁为min(1/cT,1/d_ix)/cWi，而保留同一current_i=min(r_i,u_i)、future_i=(r_i−u_i)+与全部H不变。逐客户(r−qhat)+≤1/cWi，求和后只用一次wholeIC；每个初始目标密度≤p_ix。inventory证明，independent/root分别重构通过。[正文](round8/inventory/source_preserving_density_envelope.md)。
+- **B10-SOURCE-PRESERVING-DENSITY-ONE-v1**：采用上述初始化及保持同客户的正coverer-difference核，所有非actual natural context的f_tx=cVt(x)h_tx≤p_kx+Σ_(i<k)a_ix≤1，k为history首实际分歧位置。全部父节点为同一角色k、同源同客户质量是角色反链，所以允许真实合流。actual-prefix目标只作终端，不纳入密度声明。全图不重采客户，L_s≤D_s≤u_i及非负退款只用一次完整IC。一般角色汇总cap未证。inventory证明，independent按合同盲重构后对稿、root另核通过；无外审/新颖性认证。
+- **B10-COMMON-COVERER-CHOICE-v1**：先用同行I互补付款，R-only流中保留全部新coverer正边h/cA，允许每个共同future coverer增加[0,h/cA]子边；所有选择均保持库存、密度≤1、wholeIC及future DAG。原current只下降；新future密度贡献≤父h，反链证明保持。全共同角点为旧round3均分flow，不认领新核。root提出，inventory/residual及independent分别确认。[root重构](round8/parent/density_reconstruction_and_common_edges.md)。
+
+以上解决客户身份能否合法穿过未来IC的支持问题，不解决同角色所有contexts的总付款。原fullSAFE/CLIP受限RESIDUAL-CAP没有因此被证明，也不能把新客户核称旧核的删边。
+
+- **B10-TERMINAL-FROZEN-WALLET-v1**：任意实际末两位p,m、此前背景b，A=B_p，a=u_p，v=u_m，L_A=Σ_A1/(b_x+2)，C'_p=min(a,v)−L_A≥0且≤min(a,v)/2。对任意给这两位分配的目录主题，末两行冻结成本总额≤a+v+C'_p；自足精确恒等式另保真末位BR和根IC非负credits，早期总税未付。matching推导，root独立以w(P)−γ(P∩Q)重构CROSS与钱包；独立固定证书代码核全部IC/等式。复用两人共同目录对称交集机制，无外审/新颖性认证。[正文](round8/matching/terminal_frozen_regret_wallet.md)。
+
+query凸包付款、全选择族LP/价格DP及sibling Hessian只按各自正文标为接口/精确身份；尚无新的一般福利付款。有限阴性或纯policy几何例不作SPE/half反例。
+
+- **B10-SOURCE-PRESERVING-PAYMENT-CERTIFICATE-v1**（条件充分接口）：固定原实例、完整SPE与任意比较T，round8/residual/linear_joint_payment_certificate.md的INIT/I-PAY/R-FLOW/ROLE有限线性系统任一可行点都给同一份|O|库存的合法actual两预算付款，故|O|≤2W。数据取同一σ全部有序history，不重命名旧query叶；source current可非极大，共同future用edge z变量保持线性。对最优T的一般存在可行性仍OPEN，未称原目标等价。root提出合成，residual独立展开，root另核质量与域；无外审/新颖性认领。
+
+independent v2/v3在同一固定packet改变已证允许的初始化/共同边选项，激活interlayer但未出现merger。没有从有限通过提升一般role cap；f≤1及wholeIC由解析证明承担。
