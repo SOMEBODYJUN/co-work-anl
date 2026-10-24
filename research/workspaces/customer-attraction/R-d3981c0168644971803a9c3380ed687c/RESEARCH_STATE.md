@@ -1,5 +1,7 @@
 # 当前前沿与本轮停止点
 
+最新第三次接续见 [round3_general/MAIN_PROOF_WORKING.md](round3_general/MAIN_PROOF_WORKING.md)。**没有新的全输入福利下界或目标反例。** 本轮完整35客户反例否定复制半利润与早晚whole-profit二倍比；完整817客户反例否定all-p平均负载Jensen总付款，且独立证书明确坏p非最优、真聚合与half仍成立。均经独立内部核查，未外审或认证新颖性。新尝试STATIC-2仍OPEN；源共同容量、ADM和真正安全值聚合没有闭合。下文保留前轮状态，不能重复算新进展。
+
 最新一般证明接续见 [next_general/MAIN_PROOF_WORKING.md](next_general/MAIN_PROOF_WORKING.md)与[精确身份](next_general/CLAIMS.md)。本轮没有新的已付一般福利界：有利可信完成菜单已逐量词构造并获独立内审，`M_adm≤W/m`未证；相邻升幅付款已被完整SPE参数族否定。新收到同行round7初始化后，已证明与原H兼容的I-future互补实际券付款，并独立核查仅R入口接旧ν核的资金与零分母域；角色共同净券余额仍未付。另去重查明FOMA-EXISTS已被旧完整反例否定；见[更新校对](next_general/peer_update_reconciliation.md)。主目标、原RESIDUAL-CAP及新fresh剩余候选保持OPEN。
 
 上一轮一般工具见 [continuation_general/README.md](continuation_general/README.md)。真实前缀联合席位付款 `u_i≥Λ_i≥λ_i` 已接到共享一般工作稿§3.1，不重复算本轮成果。完整菜单 FTA / Mfull / Mpath 和 `OPT−W≤m min_i u_i` 仍 OPEN。下文保留更前轮常数三修复及其准确交接。
