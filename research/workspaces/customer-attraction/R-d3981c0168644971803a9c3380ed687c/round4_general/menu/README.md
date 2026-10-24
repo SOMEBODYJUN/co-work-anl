@@ -4,7 +4,11 @@
 
 输入为 `../../next_general/normal_form/admissible_union_menu.md`、`../../round3_general/menu/README.md` 及本轮一般工作稿。全部 cap 合法尾完成都在菜单中，包括经济实际行动的替代尾；不将原策略的一份指定孩子当作全部可行孩子。
 
-本轮材料见 [cap 极端点和位置迁移](cap_extremality_and_position_shift.md)。其中：
+本轮新增的确切域组件见 [共享实际前缀 cap 回收](shared_prefix_cap_salvage.md)：任意实际 h_k 强制 A 后的完整尾 SPE 端点，只要前 k 位中有一位最终利润没有超过其原实际利润，就属于总并集 D。证明取最后一位没有改善者，后面全部利润超过原实际阈值，允许无祖先 cap 的旁枝逐层重置；输出可以是经济实际行动的替代完成 D_j,S_j，不能误写为仍在原格 D_kA。故前缀总利润不增（或任意非零非负加权前缀总利润不增）已足够回收 cap。
+
+同文另证明：不能回收的端点可提升为完整根 SPE，且前 k 位全严格改善。对福利最小、同福利首位利润最大的规范化 SPE，由此得到全部不增福利的 suffix-SPE 端点均属 D。root 独立得到同一提升/规范化后果；capacity 的 [独立内部审查及补审](../capacity/shared_prefix_cap_salvage_review.md)通过主回收、完整有序历史拼合、提升和规范化的准确范围。本组件没有给低插入端点，不能提升为 ADM 支付。
+
+其它本轮材料见 [cap 极端点和位置迁移](cap_extremality_and_position_shift.md)。其中：
 
 - §2 明确 cap 约束只施于所选端点，尾节点旁枝可用无祖先承诺的最小收益 SPE 重置；目标孩子可补成尾 SPE 的门槛是原无承诺阈值，而非在 cap 内再取的阈值。
 - §3 给同一经济端点跨实际位置的迁移闭包；匹配的中段变成固定过去后无需重新理性化，只需移植同负载的后缀。

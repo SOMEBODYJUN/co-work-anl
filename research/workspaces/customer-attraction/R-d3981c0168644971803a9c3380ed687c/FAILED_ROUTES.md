@@ -1,5 +1,7 @@
 # 失败与停止范围
 
+第四次接续见 [round4_general/CLAIMS.md](round4_general/CLAIMS.md)。真实跨角色平均负载即使先平均再倒数，all-p 付款仍被 635 客户完整 SPE 否定；坏 p 未证自洽，真根/聚合桥保留。纯自洽主题普遍存在性被 16 客户完整 SPE 否定，六个主题全部严格被挑战；该例所有混合分布反而支付，不否定混合自洽存在付款。旧 PB 合法背景完整子 SPE 有真正优化自由分数值的连续平台及 u<δ，故任意背景 FF-LEADER、局部 δ 链均为假；背景已覆盖所有客户，不能写成零根或实际前缀反例。新共享前缀 cap 拼合引理成立，但插入/势交换可能增加全部前缀收益或覆盖，尚未闭合 ADM，不将这一步未证写成方法不可能。
+
 第三次接续新增精确范围见 [round3_general/CLAIMS.md](round3_general/CLAIMS.md)：复制早先主题不保证原早先收益的一半，原实现早晚whole-profit比也可超过2；35客户例两项均失败但目标交集为空，不能否定prefix请求cap2。all-p平均负载Jensen总付款被817客户完整SPE否定，坏p严格非自由分数/真正安全值最优，所以不否最优查询付款或half。固定ν流再扣ell会破坏守恒；若换核必须重算，不给新核免费继承旧容量。STATIC-2三份固定策略锥没有正候选且未作精确对偶，停止阴性扩张而保持一般候选OPEN。
 
 本轮精确新增停止范围：完整四主题参数族否定`μ_B≤β`及以固定倍`β−α`支付相邻可信换位缺陷，见[next_general正文](next_general/normal_form/swap_ascent_payment_counterexample.md)。另查明同行round7的FOMA-EXISTS与旧已否定静态最优匹配桥同量词，root重跑旧独立证据确认，见[更新校对](next_general/peer_update_reconciliation.md)。两者都不是half反例，不否定有利菜单、弱安全值、弱匹配或坐标剩余容量。背景caps不继承到旁枝，统一缩尾的税额不能从一条规定叶扩为max-path预算。

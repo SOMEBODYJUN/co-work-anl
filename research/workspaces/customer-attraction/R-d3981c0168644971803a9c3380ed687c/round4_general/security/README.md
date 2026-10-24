@@ -4,7 +4,7 @@
 
 ## 可复核资产
 
-1. [PB自由分数鞍点及真实前三步平台](pb_fractional_saddle_plateau.md)：从已有PB完整背景SPE定理，推导一个真正自由分数鞍点和显式负载保持混合。任意合法背景FF-LEADER以及局部链 `u+(r−1)δ_child−rδ_parent≥0` 均被严格反驳；前三步真实F的δ完全相同而u<δ。只否定任意背景版本，不能套到零根或在轨前缀版本。`audit_pb_fractional_plateau.py` / `pb_fractional_plateau_audit.json` 精确检查标量与混合；完整SPE依赖旧PB解析证明。本轮尚未独立审查这条新推论。
+1. [PB自由分数鞍点及真实前三步平台](pb_fractional_saddle_plateau.md)：从已有PB完整背景SPE定理，推导一个真正自由分数鞍点和显式负载保持混合。任意合法背景FF-LEADER以及局部链 `u+(r−1)δ_child−rδ_parent≥0` 均被严格反驳；前三步真实F的δ完全相同而u<δ。只否定任意背景版本，不能套到零根或在轨前缀版本。`audit_pb_fractional_plateau.py` / `pb_fractional_plateau_audit.json` 精确检查标量与混合；完整SPE依赖旧PB解析证明。本轮新推论已通过 [induction独立内部审查](../induction/independent_review_pb_fractional_plateau.md)，并有 [独立脚本](../induction/independent_check_pb_fractional_plateau.py) 与 [精确输出](../induction/independent_pb_fractional_plateau_checks.json)。旧PB全部历史证明未在本轮重新独立证明；无外审或新颖性认证。
 2. [635客户原始输入](pooled_mean_background_raw.json)：对“先跨角色平均真实菜单竞争负载再取倒数”的all-p候选给严格反例，mG−W=40617/340340。W462，OPT558，实际利润全为154；固定对手(0,2)已cap所有查询到154，故不反驳真正安全值或δ聚合。direct在未读发现代码/输出前独立单位展开核查了全部258项IC及上述值，见 [独立审计](../direct/pooled_635_independent_audit.json) 与 [脚本](../direct/audit_pooled_635.py)。发现程序/输出为 `probe_pooled_mean_background.py` / `pooled_mean_background_probe.json`。不再扩展all-p修补或把这些方法障碍作为一般主线。
 3. 本目录其余 `probe_*optimal_fractional_payment*`、`probe_*fractional_local_chain*` 与对应JSON：固定旧六主题完整形式策略、固定有理p/q的精确KKT线性约束下做的少量定点数值攻击。均未给反例或证明，最优值落全兴趣客户等号射线。已有FF-LEADER旧资产早做过类似较广诊断；本轮这些工作是重复的阴性诊断，不算一般推进。不得把数值最优0称为锥证书，更不得推广人数/策略。
 

@@ -1,6 +1,6 @@
 # 当前前沿与本轮停止点
 
-第四次一般接续正在 [round4_general/MAIN_PROOF_WORKING.md](round4_general/MAIN_PROOF_WORKING.md) 研究。没有新无条件一般福利界或目标反例；共同平均负载的自洽查询存在性不含付款，真正 cap 尚未证明。六名指定研究员与父方分别直接攻击最优安全查询、菜单、共同容量、合法背景归纳和原模型构造；此前结果和失败范围不重复认领。
+第四次一般接续见 [round4_general/MAIN_PROOF_WORKING.md](round4_general/MAIN_PROOF_WORKING.md) 与 [精确身份](round4_general/CLAIMS.md)。没有新无条件一般福利界或目标反例。新全输入 cap 回收引理把“某个前缀角色不改善”转成 ADM 总并集成员，独立内部拼合检查通过；仍未生产低插入且预算受控的端点。共同平均负载的混合自洽查询存在，但付款未证；纯点存在已被 16 客户完整 SPE 否定且该例所有混合查询仍支付。另精确关闭任意背景的 FF-LEADER/局部 δ 链与 pooled all-p 付款，均不否定根聚合或 half。六名指定研究员的实际推导、独立审查及原始有限范围从本轮地图恢复，不重复认领前轮资产。
 
 最新第三次接续见 [round3_general/MAIN_PROOF_WORKING.md](round3_general/MAIN_PROOF_WORKING.md)。**没有新的全输入福利下界或目标反例。** 本轮完整35客户反例否定复制半利润与早晚whole-profit二倍比；完整817客户反例否定all-p平均负载Jensen总付款，且独立证书明确坏p非最优、真聚合与half仍成立。均经独立内部核查，未外审或认证新颖性。新尝试STATIC-2仍OPEN；源共同容量、ADM和真正安全值聚合没有闭合。下文保留前轮状态，不能重复算新进展。
 

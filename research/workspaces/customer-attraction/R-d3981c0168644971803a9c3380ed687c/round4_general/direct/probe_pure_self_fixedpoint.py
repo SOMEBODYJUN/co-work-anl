@@ -72,7 +72,32 @@ if res.x is not None:
  rr=linprog(c2,A_ub=aub,b_ub=np.zeros(len(aub)),A_eq=[np.r_[np.ones(n),0]],b_eq=[1],bounds=[(0,None)]*(n+1),method="highs")
  out["challengers"]=challengers
  if rr.success:
-  ww=[F(float(t)).limit_denominator(10**8) for t in rr.x[:n]]
+  # Recover the exact basic point from its active rational equations.
+  support=[j for j,t in enumerate(rr.x[:n]) if t>1e-8]
+  eqrows=[[F(1) for _ in support]+[F(0)]];eqrhs=[F(1)]
+  for ic in IC:
+   if abs(sum(float(v)*t for v,t in zip(ic,rr.x[:n])))<1e-7:
+    eqrows.append([ic[j] for j in support]+[F(0)]);eqrhs.append(F(0))
+  for a,b in enumerate(challengers):
+   diff=[v-u for u,v in zip(G[a][a],G[a][b])]
+   if abs(sum(float(v)*t for v,t in zip(diff,rr.x[:n]))-rr.x[-1])<1e-7:
+    eqrows.append([diff[j] for j in support]+[F(-1)]);eqrhs.append(F(0))
+  basis={};dim=len(support)+1
+  for vals,rhs in zip(eqrows,eqrhs):
+   row=vals+[rhs]
+   for pivot in sorted(basis):
+    if row[pivot]:
+     mul=row[pivot];row=[x-mul*y for x,y in zip(row,basis[pivot])]
+   pivot=next((j for j in range(dim) if row[j]),None)
+   if pivot is not None:
+    mul=row[pivot];basis[pivot]=[x/mul for x in row]
+   if len(basis)==dim:break
+  assert len(basis)==dim
+  sol=[F(0)]*dim
+  for pivot in sorted(basis,reverse=True):
+   sol[pivot]=basis[pivot][-1]-sum(basis[pivot][j]*sol[j] for j in range(pivot+1,dim))
+  ww=[F(0) for _ in MASKS]
+  for j,v in zip(support,sol[:-1]):ww[j]=v
   scale=np.lcm.reduce([v.denominator for v in ww]) if False else 1
   # Fraction arithmetic reports whether rationalization is itself a proof.
   mingap=min(sum(a*w for a,w in zip(ic,ww)) for ic in IC)
@@ -83,4 +108,24 @@ if res.x is not None:
   out.update({"rational_ic_min":str(mingap),"rational_query_gaps":list(map(str,gaps)),
               "integer_counts":{str(s):w for s,w in zip(MASKS,ints) if w},
               "rationalization_exactly_verified":mingap>=0 and min(gaps)>0})
+# Readability reduction of the SAME six-challenger certificate. This is not a
+# second policy or a scan. Exact integer-scaled constraints admit tiny margins.
+if out.get("rationalization_exactly_verified"):
+ from math import lcm
+ crows=[];clo=[]
+ for ic in IC:
+  den=lcm(*(v.denominator for v in ic));crows.append([int(v*den) for v in ic]);clo.append(0)
+ for a,b in enumerate(out["challengers"]):
+  diff=[v-u for u,v in zip(G[a][a],G[a][b])]
+  den=lcm(*(v.denominator for v in diff));crows.append([int(v*den) for v in diff]);clo.append(1)
+ small=milp(np.ones(n),integrality=np.ones(n),bounds=Bounds(np.zeros(n),np.full(n,np.inf)),
+            constraints=LinearConstraint(np.array(crows,dtype=float),np.array(clo,dtype=float),np.full(len(clo),np.inf)),
+            options={"time_limit":90,"mip_rel_gap":0.})
+ if small.x is not None:
+  ints=[int(round(v)) for v in small.x]
+  icmin=min(sum(v*w for v,w in zip(ic,ints)) for ic in IC)
+  gaps=[sum((v-u)*w for u,v,w in zip(G[a][a],G[a][b],ints)) for a,b in enumerate(out["challengers"])]
+  out["small_certificate"]={"counts":{str(s):w for s,w in zip(MASKS,ints) if w},"total_clients":sum(ints),
+      "exact_ic_min":str(icmin),"exact_query_gaps":list(map(str,gaps)),
+      "verified":icmin>=0 and min(gaps)>0,"optimization_status":int(small.status),"optimization_message":small.message}
 print(json.dumps(out,indent=2))

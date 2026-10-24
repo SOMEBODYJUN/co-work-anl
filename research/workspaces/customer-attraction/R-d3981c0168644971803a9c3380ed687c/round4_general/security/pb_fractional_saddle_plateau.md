@@ -1,6 +1,6 @@
 # PB背景构造的自由分数鞍点与真实前三步平台
 
-2026-10-24，round4/security。**精确推导；依赖既有PB完整SPE定理，尚无本轮独立数学审查。** 本页不是根福利反例，不证明新的一般福利下界。它从既有 [PB背景构造](../../../R-cd789330fc7141299ac491bbb3ffa420/round5/menu/pair_attack.md) 推出：任意合法背景版本的自由分数逐人桥 FF-LEADER 及局部自由分数链均为假。原根强/弱聚合自由分数桥、根逐人版本及 Q-CAG-HALF 不受否定。
+2026-10-24，round4/security。**精确推导；已通过本轮独立内部数学审查，完整SPE属性继承既有PB定理。无外审或新颖性认证。** 本页不是根福利反例，不证明新的一般福利下界。它从既有 [PB背景构造](../../../R-cd789330fc7141299ac491bbb3ffa420/round5/menu/pair_attack.md) 推出：任意合法背景版本的自由分数逐人桥 FF-LEADER 及局部自由分数链均为假。原根强/弱聚合自由分数桥、根逐人版本及 Q-CAG-HALF 不受否定。
 
 ## 1. 定义、来源与准确待检验命题
 
@@ -112,3 +112,9 @@ PB原构造已完成独立内部全历史解析审查；本页不重做其巨大
 - 不再沿本局部候选扩参数或制造更多背景反例。根证明需要允许局部欠债并实际支付，或使用确实只量化根/在轨前缀的关系。
 
 `audit_pb_fractional_plateau.py` 使用标准库Fraction，精确检查上述查询/梯度比较、singleton边界、Δ>s>u和q'负载恒等式。它不扫描参数、不枚举目录，也不代替PB原完整历史解析证明。输出在 `pb_fractional_plateau_audit.json`。
+
+## 5. 已完成的独立内部审查
+
+round4/induction未读取或导入本页作者的标量审计脚本及输出，从定义重构并检查了自由分数鞍点、singleton边界、j=1,2,3的合法分布与逐客户负载恒等式，以及严格差Δ−u。15项独立标量检查和4个平台负载行全部通过。见 [独立审查正文](../induction/independent_review_pb_fractional_plateau.md)、[独立检查脚本](../induction/independent_check_pb_fractional_plateau.py) 和 [精确输出](../induction/independent_pb_fractional_plateau_checks.json)。
+
+审查同时核对旧PB定理所用参数与G/P/F标量条件；完整历史SPE证明仍继承旧PB定理，未在本轮重新独立证明。通过的范围仅为本页鞍点、平台和任意背景局部桥的否定，不提升为根聚合结果，也不构成外审或新颖性认证。
