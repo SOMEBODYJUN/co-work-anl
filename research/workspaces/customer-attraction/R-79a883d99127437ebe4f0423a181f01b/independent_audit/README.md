@@ -111,3 +111,15 @@ original half target both hold in the witness.
 `review_potential_reset_identities.md` independently checks the parent's
 POT and RESET algebra. Those identities are valid general representations;
 their missing reset-debt budget is not established by that check.
+
+`review_homogeneous_catalogue_screen.md` independently proves the constructor's
+intrinsic best-response screen, the every-SPE welfare consequence, and the
+root-only source-margin inequality, including m=1, empty and zero cases.
+The screen excludes a specified catalogue class from counterexamples; it
+does not close general half coverage.
+
+`review_theta_multicone_contract.md` independently checks the dynamic threshold
+minimum and the independent-family cone equivalence. It records the essential
+TB/TB-ANY distinction and a reported ineffective postcheck guard in the peer's
+experimental script. No negative witness or general threshold budget is
+established.

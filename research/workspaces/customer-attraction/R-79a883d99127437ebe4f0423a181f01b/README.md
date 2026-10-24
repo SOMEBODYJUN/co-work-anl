@@ -13,7 +13,7 @@
 | 文件或目录 | 对象、范围、读取条件 |
 | --- | --- |
 | [GENERAL_PROOF_WORKING.md](GENERAL_PROOF_WORKING.md) | root 独立推导的后继联合调和势后悔与删位重置恒等式；准确分开全部真实 IC 与删位后不能继承的历史。仅表示和未解候选，不称一般推进闭合。 |
-| [CLAIMS.md](CLAIMS.md)、[FAILED_ROUTES.md](FAILED_ROUTES.md) | 本轮精确辅助身份、实际审查、失败范围与可回收机制；不自动进入共享 canonical。 |
+| [CLAIMS.md](CLAIMS.md)、[FAILED_ROUTES.md](FAILED_ROUTES.md)、[RESEARCH_STATE.md](RESEARCH_STATE.md) | 本轮精确辅助身份、实际审查、失败范围与真正未决义务；不自动进入共享 canonical。 |
 | [root_potential_regression.py](root_potential_regression.py) | 读取旧34客户原实例，重核43历史/258比较与势/重置恒等式，记录输入 SHA；不是新实例或一般证明。 |
 | theta/ | 局部 SPE 孩子最小收益 L、动态 Theta、同序预算的全输入攻击。 |
 | covariance/ | 完整路径菜单协方差的一后继整主题支付、逐客户单调性攻击、多后继共同支付。 |
@@ -29,6 +29,8 @@
 旧动态 Theta 只保证 `ΣTheta≤W`，旧 mixed-owner 对偶仍需共同容量，旧 Mpath 协方差仍需真实后继 IC 支付。本轮 root 将后一缺口写成 `D−C=R+J`，其中 R 为后继联合势后悔、J≥0；多后继时 R 不能当成一个玩家的 IC。旧34客户完整 SPE 已使 R<0，不能假定其符号。进一步逐真实历史展开后剩下删位重置 E，未证明它可共同支付。
 
 本轮已得到逐客户桥的精确失败：四客户完整 SPE 与无平局七客户版本都有 `H⁰ₓ>H¹ₓ`、`Cₓ−Dₓ=1/12>0`。两例总账仍有余量，只说明一般支付必须允许跨客户转移。四客户经独立重构，root 已重放两份独立 Fraction 核验；原目标状态不变。
+
+直接反例构造还有一个通用筛选组件，见 `construct/homogeneous_screen.md`：若某 B 是面对 r−1 个自身的最佳回复，则 `OPT_m≤[1+(m−1)/r]K`，K 为最大主题大小；r=m−1 已排除 half 反例。它只用于裁剪反例源，未解决残余目录。root 与独立审查者重构证明，source 种子已精确回放；不因有限 LP 没有正差额而宣称一般目标为真。
 
 下一步优先寻找新全输入关系或合法完整 SPE 分离；停止无新机制的阴性扩样。一般目标没有因表示、候选、内部审查或 checkpoint 升级。
 

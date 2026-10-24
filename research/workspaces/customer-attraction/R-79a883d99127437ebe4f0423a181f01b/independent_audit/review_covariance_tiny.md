@@ -80,3 +80,40 @@ canonical solver nor the peer's program. Its assertions cover all complete
 SPE comparisons, every table entry and the aggregate identity. This is an
 exact finite counterexample to the stated universal auxiliary assertion,
 not negative-search evidence or a general positive theorem.
+
+## Independently checked strict seven-client variant
+
+The peer later supplied the same strategy with
+
+    A={x,z}, B={y1,y2,y3}, D={x,y1,y2,y3}, E={z,w1,w2}.
+
+The reviewer independently reconstructed its complete payoff table, again
+with columns A,B,D,E. No tie is needed at any prescribed decision:
+
+| decision history | payoff after A | after B | after D | after E | prescribed |
+|---|---:|---:|---:|---:|---|
+| root, following prescribed future replies | 3/2 | 3 | 4 | 3 | D |
+| A | 1 | 3 | 7/2 | 5/2 | D |
+| B | 2 | 3/2 | 5/2 | 3 | E |
+| D | 3/2 | 3/2 | 2 | 3 | E |
+| E | 3/2 | 3 | 4 | 3/2 | D |
+
+All prescribed actions are strict row maxima, so these twenty comparisons
+verify a strict complete pure SPE, including every off-path history. Its
+actual terminal (D,E) covers all seven clients and gives utilities (4,3).
+
+For the same p(A)=p(B)=1/2, client x still has h_A(x)=1,h_B(x)=0,
+H0_x=1>H1_x=1/2, D_x=1/4, and C_x=1/3. Each y_j has
+D_(y_j)=1/2,C_(y_j)=1/4; z has D_z=1/2,C_z=1/4; both w clients have
+D=C=0. Therefore
+
+    D=9/4, C=4/3, D-C=11/12,
+    e=u_root-D=7/4,
+    u_root-C=8/3=e+(D-C).
+
+This strict variant confirms that the clientwise failure does not depend on
+equilibrium ties. It remains a counterexample only to the stated auxiliary
+clientwise assertion; it satisfies aggregate payment and half coverage.
+This appended strict table was checked directly by unit-client arithmetic;
+the standalone audit program above specifically freezes the four-client
+version and should not be described as auditing this later variant.

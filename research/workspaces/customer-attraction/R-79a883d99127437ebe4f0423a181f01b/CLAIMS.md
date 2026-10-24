@@ -24,3 +24,12 @@
 ## 未决候选分开记录
 
 全 p 的 ΣᵢCᵢ(p)≤W 比自由路径菜单更强；只对额外槽安全最优 p 证明也足以 half。两种量词均未证。负样本搜索没有产生反例，不提升真值。动态 Theta 的同序预算、mixed-owner incoming-reset 与 H4 最优元组共同支付仍是各自独立的未决接口。
+
+## B20-HOMOGENEOUS-SCREEN-v1
+
+- **Exact statement/quantifiers:** 对每个原模型有限目录、任意正整数 m,r，若某个合法主题 B 是面对 r−1 个 B 时的末位最佳回复，则 K=max_T|T|=|B|，且 OPT_m≤[1+(m−1)/r]K。任意完整 m 人 SPE 均有 W≥K。因此 r≥m−1（m≥2）时，该目录所有 SPE 均满足 half。
+- **Definitions/assumptions:** 假设等价于对每个 T 有 r|T\\B|+|T∩B|≤|B|；不要求实际路径使用 B 或在平局时选 B。m=1、空 B、零客户均单独核对，无零比率。
+- **Source-plan version:** 完整计划仅根可能失去最优性、根最大真实后悔 Δ≥0 时 W+Δ≥K。因此 r=m−1 给 OPT−2W−3Δ≤−Δ，r=m 给更强的 −W/m−(1+1/m)Δ。仅代数界；原常数3编译器是既有依赖。
+- **Dependencies/evidence:** 同质历史末位真实比较、最优覆盖联合的非重计求和、每位偏离最大主题的 K/m 保证。作者、root 和独立审查者分别重构；root 重放12个被冻结 source 计划的全部正深度比较，但一般引理由解析证明承担。
+- **Status/scope:** 内部已核对的一般筛选组件；不主张新颖性/外审，也不解决不满足筛选的目录。没有重启受限目录正面扩张项目。
+- **Files:** `construct/homogeneous_screen.md`、`independent_audit/review_homogeneous_catalogue_screen.md`；直接原目标 source 攻击代码与精确回放在 `construct/README.md` 索引。
