@@ -1,6 +1,8 @@
 # root 独立重构：全局额外槽个体保底反例
 
-审查对象：[security 全参数构造](../security/global_extra_individual_counterfamily.md)。root 从原始模型及构造描述独立推导以下完整策略，没有导入发现代码或把分量投影自动当作 SPE。direct 另从单位客户逐有序历史核验 m=4，证据独立列在其目录。**结论：原模型全历史构造及两项个体助手反例成立；原 half 未被反驳。** 无外审、新颖性或最小性认证。
+审查对象：[security 全参数构造](../security/global_extra_individual_counterfamily.md)。root 从原始模型及构造描述独立推导以下完整策略，没有导入发现代码或把分量投影自动当作 SPE。direct 另从单位客户逐有序历史核验 m=4，证据独立列在其目录。**结论：原模型全历史构造及三项个体助手反例成立；原 half 未被反驳。** 无外审、新颖性或最小性认证。
+
+随后 root 读取 R-44 的 [旧正文](../../../R-44b24f3962bd4f68a4b6913610c0d417/global_security/cartesian_efficiency_failure.md)，确认 m=3 与旧 a=1、q=2 游戏和策略相同。底层 Cartesian 平局处罚不认领为新机制；本轮工作是全参数证明及明确个体付款合同的适用范围，不是新增这个三人实例。
 
 ## 原实例与三个完整历史模式
 
