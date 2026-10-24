@@ -13,6 +13,12 @@
 支付跨枝实际福利；并列记录固定最终遗漏 U 的限 m 最优覆盖充分候选。
 所有候选仍未证，没有把有限阴性或既有接口重新包装成 half 进展。
 
+另见 [末层多孩子金额归一的两倍容量](parent/terminal_amount_cap.md)：
+末层部分已有自足逐客户证明，独立检查待完成；更深真实分支的两倍容量
+仍是未证候选。它尚未把一般覆盖债务接成 AMOUNT 输入，不是 half 证明。
+[定义级程序](parent/check_amount_cap.py)和[冻结输出](parent/amount_cap_existing.json)
+只用于该明确候选的既有证书攻击，不作一般阴性证据。
+
 ## 可访问材料
 
 六个分支在 direct/、menu/、harmonic/、credible/、coupling/、independent/
