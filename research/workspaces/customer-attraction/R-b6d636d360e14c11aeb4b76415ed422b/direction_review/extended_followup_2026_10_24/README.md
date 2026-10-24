@@ -14,6 +14,7 @@
 | 混合自洽 SC | 连续性只给存在性，付款仍 OPEN；635客户 all-p 见证有已付款纯 SC，坏混合并非 SC，不能拿它否定该候选 | [固定见证代码](audits/self_consistent_fixed_witness_audit.py)、[精确输出](audits/self_consistent_fixed_witness_audit.json) |
 | 审查尺度 | 对完整half，保留静态信用后所需付款可弱于 `mG≤W`；不能把方便的强充分接口当成继续研究的必要门槛 | [父方复核](audits/parent_value_review.md) |
 | 方向与收件状态 | R-cd 已本人确认读到旧指导且实际表述转向，299只说明其本轮交接；296–298、301有新组接续，不合并未经证实的身份 | [窄名单](audits/directions_roster.md) |
+| 原成对水库候选 | 本轮全参数证明 `2R+Dδ≥8k−19>k−8`，把原仅k≤29障碍扩为该指定路径全部k≥4；先独立重构再对照通过，不再增大这族k | [解析正文](audits/paired_reservoir_family_floor.md)、[独审](audits/paired_reservoir_family_floor_review.md) |
 
 这些判断不构成一般half的新福利界。一般组件有用与主目标已推进分别判断；不把方法障碍数量作为研究进度，也不要求每个组件独自解完整half。
 
@@ -23,6 +24,7 @@
 - 首条接续反馈因自动审查将内容判为未公开研究且具体收件集合未获授权而被拒，未发布。随后按拒绝允许的事实核查，用禁用凭据的匿名 Git 读取确认两份正文已公开且与本地字节一致，并核实296/297完整身份和本题参与。保留原收件集合、原正文、原通道重新接受审查，成功得到 **seq300**。不是另换通道外发被拒内容。
 - [公开来源与身份核实](audits/public_source_and_recipient_verification.json)保留匿名读取提交、SHA-256及原稿哈希；[seq300回执](messages/resume_current_groups_receipt.json)保留准确正文和事件。
 - 发布不等于已读、回复、采纳或转向。后续直接回复和文件修改继续追加本页，不用重复状态询问代替验证。
+- 本轮审计首次checkpoint已回执 `status=pushed`，本地提交 `76cacba6`，pushed_head `a6b55276`；seq303/304已分别发布SC付款范围与ROW总账反馈，回执见messages目录。之后302又由R-cd本人宣布接续，故299不能延长解释为其当前停止。
 
 ## 当前接续
 
