@@ -10,4 +10,6 @@
 | 证明、内部检查、外审及实现状态 | [审查等级](research/review_status.json)与各原审查正文 |
 | 依赖与文件合同 | [资产](research/assets.json)、[图](research/graph.json) |
 
+新增已证特例：[CA-FIVE-HALF-EXACT-v1](research/current/customer_attraction/five_player_half.md)，恰五名提供者且保留原模型全部量词，精确计算机辅助证明及内部审查通过；不提升一般 Q-CAG-HALF。
+
 改变域、量词、定义或结论需另立版本。有限计算、已保存草稿及导航摘要均不自动成为已证结论。其他模型的账本从[研究总目录](research/README.md)读取。

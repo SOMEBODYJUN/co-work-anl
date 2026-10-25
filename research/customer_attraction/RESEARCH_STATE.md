@@ -2,12 +2,15 @@
 
 **Q-CAG-HALF**，存档 **customer-attraction**，状态 **OPEN**。没有任意人数、任意共同目录的完整证明，也没有经全部有序历史核验的目标反例。对象与量词见[模型](../current/customer_attraction/model.md)；本页按数学义务组织，不继承旧会话身份或轮次任务。
 
+当前突破：恰五人已由[精确有理证书](../current/customer_attraction/five_player_half.md)证明半覆盖；完整类型域复跑及两路分工独立内审通过，未记录外审。旧五人松弛只作为历史方法边界。下一步主攻一般人数，六人用于检验参数化共同末位价格、隐藏回复投影及索引耦合。
+
 ## 已知范围
 
 | 结果 | 准确边界与正文 |
 | --- | --- |
 | 三人锐 `5/3`，四人 `1499/750<2` | 任意目录、全部完整历史纯 SPE；[三人](../current/customer_attraction/three_player_sharp.md)、[四人](../current/customer_attraction/four_player_bound.md) |
-| 五人共享437行旧界约 `2.06169478572>2` | [原Claim与精确界](../current/customer_attraction/five_player_indexed_bound.md)，不把后来常数静默换进旧ID |
+| **五人半覆盖 `2W≥OPT_5`** | [精确证书证明](../current/customer_attraction/five_player_half.md)：53 正整数乘子、完整类型域；同一完整策略，任意平局、空/重复和零客户保留。内部独立审查，未记录外审；不含任意背景五人利润版或六人。 |
+| 五人共享437行历史松弛约 `2.06169478572>2` | [原Claim与精确界](../current/customer_attraction/five_player_indexed_bound.md)，不把后来常数静默换进旧ID |
 | 五人个人557行，独立全域对偶已审 | `β557=178528430822287579296070598592537012737/87421565922360356032366460363114422206≈2.042155490337931>2`；[独立审查](../workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_independent/full_pricing_review.md)支持任意五人共同目录/完整历史SPE上界。该独审不接受匹配primal最优性；远端前批已重放，本批只核原文和范围 |
 | 五人个人728行，作者证书层 | `β728=903491829723556246762087795616829492745/442437259121664928475146048173419016656≈2.042078986560006>2`；[作者证书](../workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round5_pricing/README.md)、[父方审查边界](../workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round5_parent/README.md)未独立接受全域对偶。模板坏点均不是完整SPE或目标反例 |
 | 无界人数的若干已解子类 | 至多六极大覆盖、层级关联、极端关联、受控分数覆盖、最优遗漏全私有、部分末两人路径条件；[逐项范围表](../current/customer_attraction/README.md#已有地基与未闭合范围)。条件仍承重，不外推一般目录 |

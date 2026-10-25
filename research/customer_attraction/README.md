@@ -2,6 +2,8 @@
 
 目标 **Q-CAG-HALF**，存档 **customer-attraction**，状态 **OPEN**。本页只负责选择输入；长证明、来源库存和协作历史均按需读。
 
+最新已证范围：恰五人[精确半覆盖定理](../current/customer_attraction/five_player_half.md)已入库，保留任意客户数、共同目录与完整历史平局。本轮先读其完整包及入库审查，提取一般工具，再用六人检验；一般命题仍 OPEN。
+
 ## 必读与停止扩读的位置
 
 已读根四入口和适用 [AGENTS](../../AGENTS.md) 后，只读：

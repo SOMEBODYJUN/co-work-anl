@@ -128,6 +128,10 @@
 | [最优首动作菜单的真实孩子覆盖缺口与共同信用](<current/customer_attraction/optimal_first_action_branch_gap.md>) | `research/current/customer_attraction/optimal_first_action_branch_gap.md` | 一般人数、一般目录的机会损失递归组件；使用ρ折扣前读取全部非负信用、原历史身份和仍未闭合的跨孩子总预算。 | 数学正文；按关联命题分别核对证明及审查；关联 `CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1`，[命题合同](assets.json) |
 | [最优首动作真实孩子缺口恒等式的独立解析审查](<reviews/customer_attraction/optimal_first_action_branch_gap.md>) | `research/reviews/customer_attraction/optimal_first_action_branch_gap.md` | 从定义重构菜单、同尾覆盖差、分享余项和真实IC；区分一般关系通过与half总预算尚未证明。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1`，[命题合同](assets.json) |
 | [当前基线的材料分区、个人区恢复与状态更正路由](<customer_attraction/context_inventory.json>) | `research/customer_attraction/context_inventory.json` | 按明确Git截止查全部个人区根入口与哈希、旧状态覆盖和一般组件来源；区分全仓盘点、入口筛查与数学审查，不作为默认上下文。 | 阅读导航；真值查精确正文及账本 |
+| [五名提供者半覆盖的精确证书证明](<current/customer_attraction/five_player_half.md>) | `research/current/customer_attraction/five_player_half.md` | 固定五人原模型全部量词，导航上传完整证明、53行证书、完整系数域、复跑审查与一般推广边界。 | 证书与核验正文；验证范围见合同；关联 `CA-FIVE-HALF-EXACT-v1`，[命题合同](assets.json) |
+| [五人半覆盖证明包的入库与复跑审查](<reviews/customer_attraction/five_player_half_import.md>) | `research/reviews/customer_attraction/five_player_half_import.md` | 核对当前上传证明包、真实节点语义、完整域覆盖及精确复跑；区分独立内部审查、历史日志与外审。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-FIVE-HALF-EXACT-v1`，[命题合同](assets.json) |
+| [五人精确证书局部组件的独立审查](<reviews/customer_attraction/five_player_half_local.md>) | `research/reviews/customer_attraction/five_player_half_local.md` | 逐项检查局部IC符号、强制节点、共同末位价格、最大根及全部局部精确系数；记录未影响当前数据的解析器边界。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-FIVE-HALF-EXACT-v1`，[命题合同](assets.json) |
+| [五人精确主证书的独立审查](<reviews/customer_attraction/five_player_half_global.md>) | `research/reviews/customer_attraction/five_player_half_global.md` | 检查53行语义、索引直方图、共享重数、菜单角点和大整数判号，并明确随包实现独立性的真实范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-FIVE-HALF-EXACT-v1`，[命题合同](assets.json) |
 
 <a id="unrelated_machines"></a>
 
