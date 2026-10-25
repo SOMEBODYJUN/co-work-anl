@@ -25,3 +25,5 @@
 一般定理已获 [aggregate合同独立核查](../aggregate/joint_threshold_blind_review.md)，未发现致命异议。准确盲性范围是未读作者全文；作者合同消息曾包含极点/舍入提示，故该关键步骤不能称完全无提示独立发现。[原CAG严格例的counter独立审查](../counter/joint_threshold_example_independent_review.md) 先从合同推导一般公式，再独立重建全历史策略，未读作者全文或代码；六个指定压力参数含非整除边界，6708节点、240198项含own IC通过。该例审查不承担一般signed修复定理或新颖性。没有外审或新颖性认证。
 
 后续按父方指定直接攻击 [H(1)是否非负](H_at_one_followup.md)，不继续停在工具。指定old34/23core/已读31客户真实全菜单都没有负H；old23仅A0行−1而max_A仍4。另一个明确四人多级压力点H=1/2后停止，没有扩随机扫样。已推一般ADD-3：恰剩3人时任意完整Cartesian产品的H逐tau精确可加，故三人M严格次可加本身不能新造负H(1)；下一步需原负H或真正r>=4 non-product grandchild。此定位尚未另获独立审查，不是一般非负证明。[完整ordered BI脚本](attack_H_at_one.py) / [输出](attack_H_at_one.json) 保存全部指定菜单和见证；主稿冻结v1保持不变。
+
+父方随后指定对该四人家庭完成一次全参数诊断，并给出短解析证明。[全参数诊断稿](H_one_parametric_attack.md) 已由signed独立攻击并补全全部真实尾部，结论是每个根强制均`H_A(1)=b/2>0`，故**该家庭负H来源严格排除并收束**。不证明一般H非负，不开发此固定人数家庭的正面工程。[独立exact脚本](H_one_parametric_attack.py) 的 `--regression` 模式给 [7组literal单位回归](H_one_parametric_regression.json)；默认完整grid的 [23交点/24开区间证书](H_one_parametric_attack.json) 仅作交叉核，分别保留单侧值、actual tie值和尾斜率，均确认归一H恰1/2。解析证明是主要结论，参数检查不是其替代。

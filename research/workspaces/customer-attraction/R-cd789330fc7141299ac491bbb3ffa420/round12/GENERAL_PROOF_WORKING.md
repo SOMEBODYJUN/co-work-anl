@@ -47,3 +47,9 @@ LP强对偶、扩大域、静态余项与有限未分离均不替代共同金额
 first-future强制actual主题再BUBBLE可兼容地转运下一child策略到末位，Γ/slack可消去；但多源堆积，arrival不是下一行原source。HALF-R有真1/2因子，却要求同row行动平衡与逐source容量，尚未接到真实Cov系数。
 
 真重放与几何Doob可按相同逐label端点相等总功；这不控制任意target的同叶不同主题收益差、prefix multiplier或signed净cap转移。继续须构造该共同金额/平衡容量，或换路直接付OPT−W。当前具体推导在此停界；不以更多域/改名/阴性冒充进度，未声称所有一般方法不可能，无后台常驻承诺。
+
+各候选的γ、μ/λ、source分布与reduced-cost库存依对应正文的域定义；deleted/full、原source/global-cap与aligned条件source是不同版本，不能把各自好项直接相加。HALF-R的差是经μ计价的signed差，不是未计价缺额或边正部。
+
+[direct最后推导](direct/GENERAL_PROOF_WORKING.md)把足half的未证TAN-PAY集中到实际负载银行(m−1)/(2m)Σρt²c；KKT可限制该银行≤γ/2，但未将r_beta/reset真实映入它。它不是通用PSD/SPE定理，也不增加资金。[root按定义重构真流](parent/real_replay_definition_review.md)独立核查真实Γ、端点、一次source银行和坐标流区别；只核合法表示，未付乘子上界。
+
+六名指定研究员与父方本次具体推导均已落盘交接。原目标仍OPEN，无新增一般福利界/目标反例；该运行窗口的可续结果是条件性HALF-R、保背景BUBBLE及明确的平衡容量/任意target余项，不以更多局部组件冒充一般目标推进。

@@ -198,3 +198,5 @@ terminal余量、可信endpoint、same-p互补银行和fixed-t切线游戏均保
 - **B10-ACTUAL-PREFIX-BUBBLE-v1**：raw(h_i,A,b_i,Y)真尾SPE可换成下一actual行(h_i,b_i,A,Y)的child SPE，删除query背景/利润相同，净cost差=M(h_i,A)−u_b。真原first-follower强制尾时差=Γ−source slack。下一row cap/原σ一致性与多源容量未保证。[正文及QA](round12/parent/net_cap_bubble_component.md)。tree/credible独立解析通过，有限QA非一般half证据。
 
 同端点真/几何重放的总adaptive work相同，仅真边有原Γ；fixed F/B/r signed工作一次望远镜，不付款任意target余项。[真重放](round12/tree/real_replay_covariance_flow.md)、[几何重放](round12/geometry/conservative_raw_tail_replay.md)。
+
+- **B10-ACTUAL-LOAD-TANGENT-PAY-v1（OPEN充分候选）**：coherent shared KKT下，若C≤D+I+(m−1)/(2m)Σρt²c，则实际银行的KKT上界≤γ/2足half。未有r_beta/reset到该银行的真实映射；不是通用PSD passivity结果。[最后稿](round12/direct/GENERAL_PROOF_WORKING.md)。
