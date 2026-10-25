@@ -1,6 +1,6 @@
 # 旧保险目标的 exact 菜单：压低银行后仍没有 signed 严格种子
 
-2026-10-25。作者解析检查，待独立审查。一般 Q-CAG-HALF 仍 OPEN；没有真正反例。
+2026-10-25。作者解析检查；另一分支先盲重构后全文独立审查通过，父方另作代数与回归核对。一般 Q-CAG-HALF 仍 OPEN；没有真正反例。
 
 本稿不创造或认领新保险族。目录、BASE/PUNISH/EXIT、W 与 OPT 均来自
 `R-d3981c0168644971803a9c3380ed687c/round5_general/security/global_extra_individual_counterfamily.md`
@@ -102,7 +102,7 @@
 
 ## 5. 双侧修复没有遗漏的严格预算
 
-调用旧双侧修复，记
+调用已存[双侧有符号可信修复](../../R-ab4b3c24c8f949198e194dd45bb66105/mixed/signed_credible_repair.md)及其[独立全文审查](../../R-ab4b3c24c8f949198e194dd45bb66105/credible/signed_repair_independent_review.md)，记
 
     C(g)=2P-N+p+n,
     P=sum(g_i)_+,  N=sum(-g_i)_+,
@@ -153,5 +153,4 @@ m=5 的同一公式直接给：cheap-bank 区域下界 17a/4+b/2；可信区域�
 反例种子。仅把主题画成闭环、给任意 BI 出口、改模式名称或继续参数扫描都没有
 支付这项义务。
 
-审查层：本稿为作者解析自查。三处有限 Fraction 回归核对公式 (1)、(2)、可信域
-根等式及 (3)—(4)，不证明任意 m，也不构成独立审查。
+审查层：[独立解析审查](../independent_reconstruction/insurance_exact_menu_independent_review.md)先盲重构后逐式检查，覆盖任意joint child SPE、强制正常主题、二次偏离、根门槛等号及有理单位化，未见fatal objection。该审查不重新复审旧signed修复定理。其独立单位客户/完整有序历史脚本不导入作者或规范solver；父方已重跑冻结四点全部输出一致。作者三处Fraction菜单回归和父方形式多项式系数核对亦通过。任意m结论来自解析证明，有限回归只检验实现。无外审或全球新颖性认证。
