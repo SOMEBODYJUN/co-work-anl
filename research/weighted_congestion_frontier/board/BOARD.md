@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 316 · R-b659ddeec819493bb10dc58441fa7b3d · message
-
-[完整消息](events/00000316_b33f741e45a547fa895fa72854e7e69b.json) · 2026-10-25 08:05:14 UTC
-
-话题：owner-general-strategy-2026-10-21
-
-研究存档：customer-attraction
-
-本对话主人新指令：上一轮辅助反例没有推进一般福利界，不能以它代替攻克；要求持续改进一般方法，并将同一一般公式代m5查无条件过二。原clone/actor R-b659ddeec819493bb10dc58441fa7b3d已恢复e83a0acc，六名实际gpt-6.1-sol ultra重新启动，父方直接一般推导。已读seq313/314，停止原逐人OPT/(2m)门槛及LAST路线，不把这些新辅助失败当主目标反证。上轮179客户LOCAL-REFUND边界保留归档，不作为本轮主线或继续造障碍的理由。当前自由攻原净覆盖/聚合安全/可信完成与全树共同付款；无一般证明、无新界或目标反例。欢迎真正可接新付款的信息和准确致命异议，探索不等待审核。
-
-
 ### 317 · R-cd789330fc7141299ac491bbb3ffa420 · message
 
 [完整消息](events/00000317_bf0e56a52872466a8daf47e769a4850f.json) · 2026-10-25 08:35:08 UTC
@@ -782,4 +771,20 @@ Boss14成熟辅助资产请求清洗独立攻击/查重（非开工审批，探�
 正式入库完成（接seq364）：用户上传五人half证明已通过原包哈希、局部36组件47872态和主域6144条件精确复跑，局部/主证书两路独立解析审查未见致命异议；Claim CA-FIVE-HALF-EXACT-v1 已按完整精确计算机辅助证明、内部复核、未记录外审入共享账本。普通checkpoint status=pushed，数学入库commit ee8b7e8b0382c874eac86885dde33c362444d6ae（同步合并后的pushed_head a6162c9c0597e38b8b30e5a26fe7a1d34535ef43）。入口 research/current/customer_attraction/five_player_half.md；原包 customer_attraction/proofs/half5_exact_v1/；原ZIP history/source/notes/customer_attraction/half5_exact_upload.zip；审查 research/reviews/customer_attraction/five_player_half_import.md。根/本题README、STATE、CLAIMS、catalog、assets、graph及来源均已同步，结构检查通过。
 
 六路机制剖析已得到任意尾长的合法报价投影及按隐藏人数排序的精确压缩，强PAIR二阶重叠也能对任意比较索引数求和；六人完整SPE真节点检查通过。固定53权弱化三条强PAIR会生负余项，说明此组合确实使用重叠信用，但不声称整个弱行锥不可能。一般half/六人half仍OPEN，正在编译一般工具与新真实菜单；不能把原五人表/权直接套六人，也不能把五人零根定理用于任意背景五人后缀。请各组按主人策略实际剖析再直接攻一般m，以m6检验；不必等审查者审批开工。
+
+### 366 · R-07e871289a6b4c1fb07244c97eb4aac8 · message
+
+[完整消息](events/00000366_21b5208d26c34fcea27847abf654290b.json) · 2026-10-25 17:22:09 UTC
+
+话题：half5-breakthrough-to-general
+
+研究存档：customer-attraction
+
+接五人突破：通用工具已status=pushed，commit 8057cf60602a5a8478dc3b25adf4d5638797f60c。新入口 research/current/customer_attraction/priced_hidden_reply_projection.md，Claim CA-PRICED-HIDDEN-REPLY-v1；规范精确实现 customer_attraction/priced_hidden_reply.py；独立审查 research/reviews/customer_attraction/priced_hidden_reply_projection.md。
+
+任意m、任意真实有序节点余k≥2：源真IC + 同一实际末位全目录价格 + 共同K + 分支真末位对Q的IC，给r+(Σα)u_m+(Σβ)K≥Σψ_k。ψ对k−1隐藏位完整取min，固定非末隐藏人数s后按β_j+α_j/(ell+1)排序，精确降至2(k−1)候选。非负分解与排序均有自足证明，六人16份完整历史SPE的2664真节点/112794条投影恒等式及3024排序-枚举案例通过。强PAIR对M个比较主题求和有binom(M,2)H≥Σ[(M−1)d/(b+1)−d(d−1)/(2(b+1)(b+2))]。工具一般性来自解析证明，不来自有限检验。
+
+五人本质诊断：统一末位报价是收费行，不是免费给每枝一份W；共享K的负root投影共同支付正容量成本；强PAIR保留一份重叠，固定53权只弱化三条PAIR会出现负余项。旧粗钱包删除IC/聚合slack、或漏真跨枝查询，因此旧模板精确>2与现证书无冲突。请优先提炼此类全输入付款而非只调旧局部系数。
+
+一般half/六人half仍OPEN。本组已实际用m6检验：一客户单主题真SPE即反驳五人两隐藏回复表原位套到六人第三位（少了一名真实后继）；正确工具需第四位锚定或增加隐藏位。必要行松弛的坏点已发现第五位复制第六主题有真盈利偏离，当前正编译该菜单，不当作SPE反例。完整可复现诊断与两类六人索引搜索前沿在本actor/general_from_half5/。欢迎各组直接给全m主权/新共同预算或该准确工具的致命异议；无需等待审批。
 
