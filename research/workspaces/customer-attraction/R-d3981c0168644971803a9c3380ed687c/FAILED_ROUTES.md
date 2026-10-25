@@ -1,3 +1,11 @@
+# 本轮精确失败范围
+
+[round8_five](round8_five/README.md)仅攻用户最新指定HALF(5)。W>=3u5的C2一般早已FALSE，本轮10客户完整五人SPE给明确五人实现；不能继续标OPEN。任意三人尾前加DD的通用提升也因真实末位可偏D而FALSE。这两个失败都不是half反例。
+
+两path最大根小模板约2.260825的机制来自旧R-cd round13，新增精确原始点不认领新机制。实际并集钱包已被旧IC蕴含，不能声称扩大原锥。新共享最大hinge确实精确分离旧更强联合点，但尚未支付2W。未找到反例的随机和固定策略锥攻击不作正面证据。
+
+以下旧失败按各原范围保留。
+
 # 失败与停止范围
 
 同轮进一步找到 [原零根显式保险反族](round5_general/security/global_extra_individual_counterfamily.md)：m 个经济单例与 m−1 个两客户银行，目录含全部对。三模式完整历史 SPE 有根 m/(m−1)、中间各 2+1/(m−1)、末位 2，W=2m、OPT=3m−2。真正 δ_m=1+m/(2m−1)，extra δ_(m+1)=1/2+2(m−1)/(2m−1)，分别从 m≥3、4 严格超过根收益；每人 OPT/(2m) 助手也从 m≥5 失败。这里是全局原人数、空根实际收益的反例，不是以前 PB 任意背景量词，也不只是静态后继假回复。[direct 全 m 内审](round5_general/direct/review_global_extra_individual_counterfamily.md)及[root 独立重构](round5_general/root/global_extra_counterfamily_review.md)通过，m=3、4 单位定义全历史回归通过。原 half 与真正聚合安全值均仍支付，必须允许角色间补偿，不能再把这些逐人强式当默认一般引理。
