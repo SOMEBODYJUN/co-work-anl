@@ -10,8 +10,11 @@
 |---|---|
 | `insurance_security_lp.py/.json` | 全 actual/T/R 查询的必要安全 LP。AABBC 只能 L≤W；五个实际主题全异时，精确有理点 W137、L150、OPT287。后者不是 SPE |
 | `diagnose_private_insurance.py/.json` | 原始有理点清成287单位客户；完整20主题整数BI（所有分母清为60），53130计数状态/42504终局。目标非SPE，真正最差SPE福利233；逐前缀强制偏离的失败点精确保存 |
-| `partial_insured_bank_lp.py/.json` | 针对上述实际失败，把一半银行质量也挂到某个保险。只生成一个有目的的舍入整数候选，明确记录未通过的必要安全舍入行；不把浮点点称证书 |
+| `partial_insured_bank_lp.py/.json` | 针对上述实际失败，把一半银行质量也挂到某个保险。只生成一个有目的的整数候选；额外加25名普通银行客户吸收舍入误差后，全部必要安全行精确通过，仍不把该点称SPE |
 | `diagnose_partial_insurance.json` | 对该银行保险修复候选的同一定义级完整树诊断 |
+| `diagnose_specialist_insurance.json` | 另一个有目的的银行修复：K5加五个单块银行specialist，目标W145/OPT295，仍非SPE；25主题142506计数状态/118755终局。末二新块选择严格压过specialist，是其失败原因 |
+| `diagnose_private_insurance_canonical.json` | 规范 Fraction solver 对首个287客户输入的交叉核，root45、最差SPE233与numpy整数实现一致；不称外部独审 |
+| `diagnose_cycle_insurance.json` | 从K5删到5-cycle以减少尾部新块选择的精确修复检验；根仍45、最差SPE233，未解决末二偏离 |
 | `edge_insurance_attack.py/.json` | 保险本身 K5 五人精确BI：任一首个pair的真根minmax均1。此有限子局不外推加银行后的门槛单调性 |
 | `cycle_bank_attack.py/.json` | 最初循环双会员遗漏机制的精确必要条件阻碍；被一般查询次数关系吸收，无需继续扩点 |
 | `path_incidence_obstruction.py/.json` | 查询次数不等式的有限型有理算术QA；LP原始点不声称 SPE 可实现 |

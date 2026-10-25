@@ -22,6 +22,24 @@
 64会员状态余项全非负。父方独立标准库核验通过。是旧 IC 的显示组合，非新
 约束锥或福利界；没有外审/新颖性认证。
 
+## TRUE-HQR-TABLE5-v1
+
+- 域：原五人模型每份完整历史纯SPE、每个真实第三位历史；p为其客户过去负载，u为该当前优化者真实规定收益，M是原目录任意裸最大主题；两份任意五合法主题菜单会员数d,j。
+- 结论：`17040u+1085|M|-2679Σj/(p+3)-ΣF(p,d)>=0`，F为正文3×6精确有理表。
+- 依赖：该历史强制背景weighted最大H后的原σ真Q,R；原currentIC、H最大性、真末位IC、裸大小cap、已证两人税，七行非负组合后取隐藏位最大。
+- 证据：作者144状态完整证书；父方不导入作者实现、从七原行独立重建全部144态及完整F表通过。任意第三源的范围是父方直接逐行推论，证明不需prefix包含M。
+- 限制：没有封顶祖先变动利润；未证这些行足以支付2W。外审、新颖性未认证。正文certificate/trueH_seven_rows.md；父方root/trueH_seven_rows_review.md。
+
+## WEIGHTED-H-COVERAGE-RESET5-v1
+
+- 域：同模型任意真实第三位历史h，source真三尾A,B,E；同背景w=1/(p+3)最大合法H，强制H沿同σ真尾H,Q,R。
+- 定义：K=w(H)，V_H为H强制者最终利润，eta=V_H-K；U_source,U_H均为包括完整过去覆盖的并集。
+- 结论：`0<=eta<=u-K` 且 `|U_H minus U_source|<=24eta`，故相同两叶净福利升幅也<=24eta。
+- 依赖：旧BNS精细强制H分支缺席账，source真末位比较H、H分支末位比较source E、同一H最大性及整数覆盖。当前IC只用于最后eta<=u-K投影；未遗漏旧玩家退款。
+- 证据：自足解析证明与显式非负共同账户；父方独立核source kernel并强化eta，tree席另完整独立审查及展开账户。作者192态恒等式审计通过。外审、新颖性未认证。
+- 限制：多个互斥source的eta尚无共同支付。若显式HQR系统已含全部承重原行，本关系不扩大其锥；非HALF5、非已失败的任意固定前缀reset归纳。
+- 正文：direct/weighted_maximum_coverage_transfer.md；tree/coverage_reset_independent_review.md。
+
 ## SELECTED-TAIL-CREDIT5-v1
 
 同域任意真实前三背景 q、实际末二 D,E。令 Gamma 为全局两槽调和势最大值减
