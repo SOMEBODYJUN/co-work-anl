@@ -1,6 +1,6 @@
 # 当前研究与材料使用规则
 
-唯一主目标 **Q-CAG-HALF**，存档 **customer-attraction**，一般命题 **OPEN**。准确模型与量词在 research/current/customer_attraction/model.md；恢复从根四入口及 research/customer_attraction/README.md 进入。当前用户指令优先于旧提示词。
+唯一主目标 **Q-CAG-HALF**，存档 **customer-attraction**，一般命题 **OPEN**。恰五人已由 CA-FIVE-HALF-EXACT-v1 的完整精确证书闭合（内审，未外审）；一般缺口从六人起。本轮用户明确要求剖析五人机制、攻一般人数并用六人检验，优先于旧的五人压力测试表述。准确模型与量词在 research/current/customer_attraction/model.md；恢复从根四入口及 research/customer_attraction/README.md 进入。当前用户指令优先于旧提示词。
 
 ## 研究范围
 

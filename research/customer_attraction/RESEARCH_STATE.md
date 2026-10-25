@@ -2,12 +2,15 @@
 
 **Q-CAG-HALF**，存档 **customer-attraction**，状态 **OPEN**。没有任意人数、任意共同目录的完整证明，也没有经全部有序历史核验的目标反例。对象与量词见[模型](../current/customer_attraction/model.md)；本页按数学义务组织，不继承旧会话身份或轮次任务。
 
+当前突破：恰五人已由[精确有理证书](../current/customer_attraction/five_player_half.md)证明半覆盖；完整类型域复跑及两路分工独立内审通过，未记录外审。旧五人松弛只作为历史方法边界。下一步主攻一般人数，六人用于检验参数化共同末位价格、隐藏回复投影及索引耦合。
+
 ## 已知范围
 
 | 结果 | 准确边界与正文 |
 | --- | --- |
 | 三人锐 `5/3`，四人 `1499/750<2` | 任意目录、全部完整历史纯 SPE；[三人](../current/customer_attraction/three_player_sharp.md)、[四人](../current/customer_attraction/four_player_bound.md) |
-| 五人共享437行旧界约 `2.06169478572>2` | [原Claim与精确界](../current/customer_attraction/five_player_indexed_bound.md)，不把后来常数静默换进旧ID |
+| **五人半覆盖 `2W≥OPT_5`** | [精确证书证明](../current/customer_attraction/five_player_half.md)：53 正整数乘子、完整类型域；同一完整策略，任意平局、空/重复和零客户保留。内部独立审查，未记录外审；不含任意背景五人利润版或六人。 |
+| 五人共享437行历史松弛约 `2.06169478572>2` | [原Claim与精确界](../current/customer_attraction/five_player_indexed_bound.md)，不把后来常数静默换进旧ID |
 | 五人个人557行，独立全域对偶已审 | `β557=178528430822287579296070598592537012737/87421565922360356032366460363114422206≈2.042155490337931>2`；[独立审查](../workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_independent/full_pricing_review.md)支持任意五人共同目录/完整历史SPE上界。该独审不接受匹配primal最优性；远端前批已重放，本批只核原文和范围 |
 | 五人个人728行，作者证书层 | `β728=903491829723556246762087795616829492745/442437259121664928475146048173419016656≈2.042078986560006>2`；[作者证书](../workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round5_pricing/README.md)、[父方审查边界](../workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round5_parent/README.md)未独立接受全域对偶。模板坏点均不是完整SPE或目标反例 |
 | 无界人数的若干已解子类 | 至多六极大覆盖、层级关联、极端关联、受控分数覆盖、最优遗漏全私有、部分末两人路径条件；[逐项范围表](../current/customer_attraction/README.md#已有地基与未闭合范围)。条件仍承重，不外推一般目录 |
@@ -26,6 +29,8 @@
 3. **独立静态安全比较。** 定义 `f_B(A)=Σ_(x∈A)1/(1+c_x(B))`，其中 B 是 m−1 个合法主题的元组；`v_m=max_p min_B E_(A∼p) f_B(A)` 的 B 不观察查询抽样。已证 `OPT_m≤(2m−1)v_m`；[定义与证明](../current/customer_attraction/oblivious_security.md)。动态充分桥 `W≥(m−1/2)v_m` 及更强 `W≥mv_m` 均 **OPEN**。静态比较不自动支付真实顺序收益。
 
 [一般工作稿](../current/customer_attraction/general_half_proof.md)串联这些关系及其他工具，问号处仍未证。[联合前缀席位预算（§3.1）](../current/customer_attraction/general_half_proof.md#31-冻结真实前缀的联合客户席位一般付款的精细加强)是有效强化；[真实孩子覆盖缺口（§3.2）](../current/customer_attraction/general_half_proof.md#32-最优首动作的真实孩子覆盖缺口不冻结后继的全范围关系)是保留信用的准确恒等式；水位是终局共同信用。它们各自尚无通用跨树付款，不能把等价重写算作新增福利结论。
+
+新增[共同报价投影](../current/customer_attraction/priced_hidden_reply_projection.md)：对任意m、任意真源节点，以真实源IC、同一实际末位的全目录报价、共同K和分支真末位IC生成合法行；隐藏位可按人数排序精确消元。一般性有解析证明，六人全历史测试用于核验实现。它还未给出全m主闭合，也没有六人half证书。
 
 ## 承重缺口与按需来源
 

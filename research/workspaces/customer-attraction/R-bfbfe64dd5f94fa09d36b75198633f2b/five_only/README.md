@@ -6,12 +6,21 @@
 
 ## 优先读取的实质资产
 
-1. maxroot_envelope.md / .json：三条新的O<=B*r-C*K作者完整非负证书，
+1. [独立最大根复核与新包络](../boss16_maxroot_review/README.md)：在原192态最大根证书上加入
+   真实第三节点 true-H 七行，得到两条新的全称 `O<=B*r-C*K` 有理证书，并给出
+   `W=16,O=33` 的12型精确松弛见证，证明明确266行锥仍不能过二；不是游戏反例。
+2. [最优根菜单 × ABD真实分支](coupled_d3/README.md)：新增106条双向查询与两人税必要行，
+   合计4348行；四例9179次完整历史比较回放通过。全域定价在首轮LP前因资源边界停止，
+   因而没有新福利界或模板不可行结论。
+3. [共同源流准确残差](treeflow_boundary/README.md)：固定 raw swap/真正换序尾部的 signed
+   残差，并以完整SPE排除自动 reverse-source capacity 和 `J` 固定符号；它只收紧下一步
+   付款义务，不否定HALF(5)。
+4. maxroot_envelope.md / .json：三条新的O<=B*r-C*K作者完整非负证书，
    K为全目录最大主题大小、r为实际根利润。全192客户状态Fraction核验通过；
    audit_maxroot_envelope.py为同作者分离实现，非独立数学审查。已请求同行盲审。
-2. weighted_root_saturation.md：后四位真实IC加权的自足解析候选，三个新权重；
+5. weighted_root_saturation.md：后四位真实IC加权的自足解析候选，三个新权重；
    weighted_root_saturation_check.py只核常数，不替代一般证明。待独审/新颖性。
-3. two_singletons_gamma_counterexample.md：明确Gamma2定义下，
+6. two_singletons_gamma_counterexample.md：明确Gamma2定义下，
    u1+u2+u3+Gamma2>=3u5有两客户两主题完整SPE反例；差-1/3。
    audit_two_singletons_gamma.py不导入SPE求解器，检查全31历史62行动比较。
    原half在此例W=OPT5=2；只排除该助手。已立即反馈提出者。
@@ -41,3 +50,6 @@ PROOF_WORKING.md保留双向菜单的公式与定价合法性。saturation_proje
 
 取得覆盖所有允许客户状态的有理非负二倍证书，或真正单位目录的完整SPE反例。
 当前最大根包络只作为合法必要关系，不能把互斥分支利润总和直接替成W。
+现行最有信息价值的计算接点是4348行系统的首轮受限LP及全域定价；若仍有负列，必须保留
+新增D3的四状态与根直方图联合信息。流式证明若重启，则必须从式(6)同时支付源过载、
+canonical边界与signed reverse-tail mismatch，不能再假设自动容量或把raw swap当真续局。

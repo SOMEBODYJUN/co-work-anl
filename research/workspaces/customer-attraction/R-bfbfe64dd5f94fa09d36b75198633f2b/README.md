@@ -2,6 +2,8 @@
 
 用户最新指令：暂停仓库清理，当前只证明Q-CAG-HALF-5（原一般命题的五人限制）。任意有限共同目录、单位客户、全部有序历史纯SPE、任意平局/空主题/重复均保留，五人仍OPEN。当前入口见[five_only/README.md](five_only/README.md)。下文是上一轮一般研究的准确存档，不是本轮任务。
 
+本轮续攻新增三类可接资产：两条经独立精确重构的最大根/true-H全称包络及一个12型模板分离见证；连接最优根菜单与真实`ABD`末两人分支的106条合法必要行；以及共同源流的准确signed残差和两个完整SPE容量边界。它们均未闭合HALF(5)。精确入口、证据等级和下一步见[five_only/README.md](five_only/README.md)。
+
 # Boss16：一般半覆盖续攻
 
 本 clone 程序身份 R-bfbfe64dd5f94fa09d36b75198633f2b，存档 customer-attraction，main/boss。当前唯一主目标仍为原 Q-CAG-HALF；任意有限单位客户共同目录、任意人数和每个完整有序历史纯 SPE 的 2W>=OPT_m **仍 OPEN**。本轮没有一般福利新界或主目标反例。

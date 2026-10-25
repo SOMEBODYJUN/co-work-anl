@@ -70,3 +70,11 @@
 ## 个人阶段强化合同的精确反证索引
 
 `B18-LOCAL-REFUND-v1/v2`（正文别名`ONCE-REFUND-FLOOR`）已FALSE：原模型任意根完整SPE，实际C，最优联合O，D=O\C，f_D(r)为r主题在D上的最大覆盖，e_i=Σ_(x∈B_i\O)1/c_B(x)。v1要求每个O及每个实际i都有u_i+e_i>=f_D(m-i+1)−f_D(m-i)；v2只要求存在同一O使全部i成立。唯一最优179客户完整SPE同时反驳两版本：u=(34,35,38)，W107，OPT111，e=(34,0,34)，f_D=(0,36,72,72)，倒二35<36。全部57有序节点399比较及唯一最优性已有作者、独立盲核和父方另路单位客户审计。其充分性求和正确，但前提为假；跨角色信用和原half仍未解决。完整Objects/Domain/Quantifiers/Definitions/Dependencies/Evidence/Objections及来源在[个人精确账本](../workspaces/customer-attraction/R-b659ddeec819493bb10dc58441fa7b3d/CLAIMS.md)，[自足反例](../workspaces/customer-attraction/R-b659ddeec819493bb10dc58441fa7b3d/refund/unique_optimum_refund_floor_counterexample.md)从旧71客户机制派生。此索引用于避免重走已反驳的合同，不表示正式共享成稿、外审或全球新颖性认证。
+
+## 恰五人已证特例：CA-FIVE-HALF-EXACT-v1
+
+完整身份见[现行定理](../current/customer_attraction/five_player_half.md)。Exact Statement、Objects、Domain、Quantifiers、Assumptions、Definitions均与本页 Q-CAG-HALF 一致，仅将人数量词固定为 m=5；Conclusion 为2W≥OPT5。依赖CAG-MODEL、同一完整σ中的真实IC、共同目录K、末两人重叠引理及上传精确证书。Evidence为完整正文、全系数域有理/整数复跑及独立内审；当前无未排除的致命异议，未记录外审。Status：完整精确计算机辅助证明，内部复核通过。六人、任意背景五人版及一般m仍未证；不把范围改变藏在旧ID中。
+
+## CA-PRICED-HIDDEN-REPLY-v1：一般局部行生成器
+
+[精确对象、全称量词、非负参数、结论与自足证明](../current/customer_attraction/priced_hidden_reply_projection.md)均已固定。任意m的合法报价投影和排序压缩已证并独立内审；六人语义测试支持实现，不将有限测试当普遍证明。全m/六人half仍OPEN，主闭合参数未找到，外审与新颖性未认证。
