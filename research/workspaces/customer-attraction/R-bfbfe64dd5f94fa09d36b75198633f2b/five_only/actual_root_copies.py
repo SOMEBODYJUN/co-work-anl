@@ -6,7 +6,7 @@ rational multipliers and exact complete coefficient pricing are verified.
 from pathlib import Path
 from fractions import Fraction as F
 from itertools import product,combinations_with_replacement
-import sys,json,time,numpy as np
+import sys,json,time,hashlib,numpy as np
 from scipy.optimize import linprog
 HERE=Path(__file__).resolve().parent
 ROOT=next(p for p in HERE.parents if (p/'customer_attraction/__init__.py').exists())
@@ -60,6 +60,12 @@ def copy_rows(bits,dd,cb,source,exact=True,lhs=None):
         for li,mi in combinations_with_replacement(range(4),2):
             x,y=cb[li],cb[mi]
             out[f'oldpairnew:{pn}:{li}:{mi}']=HH-Q(x+y-2*x*y,pp+1)-Q(2*x*y,pp+2)
+    # Converse direction: each new genuine node queries every old L menu.
+    for ii in range(1,5):
+        prefnew=sum(path[:ii]);knew=5-ii
+        for fi,pn in enumerate(PATHS):
+            ell=lhs[fi][0] if lhs is not None else 0
+            out[f'queryL:{ii}:{pn}']=5*u[ii]-Q(ell,prefnew+knew)
     return out
 
 class Universe(old.Universe):
@@ -79,7 +85,20 @@ class Universe(old.Universe):
             self.names += [f'Copy{src}:{n}' for n in self.cnames]
         self.apids=[self.names.index(n) for n in self.apnames]
         self.menu_weight_indices={pn:[self.names.index(f'Copy{src}:lastmenu:{pn}:{lab}') for src in ROOTS for lab in 'fghi'] for pn in PATHS}
-        print(json.dumps({'root_copy_rows_each':len(self.cnames),'total_rows':len(self.names)}),flush=True)
+        self.query_indices={(src,i,pn):self.names.index(f'Copy{src}:queryL:{i}:{pn}') for src in ROOTS for i in range(1,5) for pn in PATHS}
+        self.QD={}
+        for src in ROOTS:
+            pp=bb[:,LABELS.index(src),None]
+            for i in range(1,5):
+                den=pp+cc[None,:,:i-1].sum(axis=2)+(5-i)
+                self.QD[src,i]=old.sc(old.VE['q'](1,den))
+        self.MenuL=[];self.MenuH=[]
+        for d in range(6):
+            corners=[(0,0),(d,d),(5-d,0),(5,d)]
+            menus=list(product(corners,repeat=3))
+            self.MenuL.append([[z[0] for z in mm] for mm in menus]);self.MenuH.append([[z[1] for z in mm] for mm in menus])
+        self.MenuL=np.asarray(self.MenuL);self.MenuH=np.asarray(self.MenuH)
+        print(json.dumps({'root_copy_rows_each':len(self.cnames),'total_rows':len(self.names),'shared_menu_vertices':64}),flush=True)
     def atom_rows(self,a,exact=True):
         bits=tuple(map(int,a['bits']));d=sum(a['AB_hist'][4:])
         if exact:rr=super().atom_rows(a)
@@ -102,7 +121,16 @@ class Universe(old.Universe):
         for src in ROOTS:
             ww=np.asarray(lam)[self.cids[src]];ids=np.flatnonzero(np.abs(ww)>1e-11)
             score=np.tensordot(self.CT[src][...,ids],ww[ids],axes=([-1],[0])) if len(ids) else np.zeros((1024,6,16))
-            Cidx[src]=np.argmax(score,axis=2);Cvals[src]=np.max(score,axis=2)
+            CE=np.zeros((1024,16,3))
+            for i in range(1,5):
+                for fi,pn in enumerate(PATHS):
+                    CE[:,:,fi]-=lam[self.query_indices[src,i,pn]]*self.QD[src,i]
+            if np.any(CE):
+                joint=score[:,:,:,None]+np.einsum('bsf,dqf->bdsq',CE,self.MenuL,optimize=True)
+                Cidx[src]=np.argmax(joint,axis=2);Cvals[src]=np.max(joint,axis=2)
+            else:
+                Cidx[src]=np.repeat(np.argmax(score,axis=2)[:,:,None],64,axis=2)
+                Cvals[src]=np.repeat(np.max(score,axis=2)[:,:,None],64,axis=2)
         cache={};best=[];minimum=1e100
         for bi,bits in enumerate(self.bits):
             fs=[];E=EC[bi].copy();H=HC[bi].copy();choices=[]
@@ -122,13 +150,14 @@ class Universe(old.Universe):
                     cache[key]=(np.asarray(vals),idx)
                 vals,idx=cache[key];fs.append(vals+const);choices.append(idx);E+=me.T;H+=mh.T
             for d in range(6):
-                corners=[(0,0),(d,d),(5-d,0),(5,d)];lhs=[];menus=0
-                for f in range(3):
-                    lh=max(corners,key=lambda z:z[0]*E[d,f]+z[1]*H[d,f]);lhs.append(lh);menus+=lh[0]*E[d,f]+lh[1]*H[d,f]
-                rho=120*(beta*int(any(bits[:5]))-int(d>0))-fixed[bi,d]-menus-sum(v[d] for v in fs)-sum(Cvals[s][bi,d] for s in ROOTS)
+                scores=self.MenuL[d]@E[d]+self.MenuH[d]@H[d]
+                for src in ROOTS:scores=scores+Cvals[src][bi,d]
+                menu_index=int(np.argmax(scores))
+                lhs=[(int(self.MenuL[d,menu_index,f]),int(self.MenuH[d,menu_index,f])) for f in range(3)]
+                rho=120*(beta*int(any(bits[:5]))-int(d>0))-fixed[bi,d]-float(scores[menu_index])-sum(v[d] for v in fs)
                 minimum=min(minimum,rho)
                 if rho < -1e-7:
-                    a={'bits':''.join(map(str,bits)),'AB_hist':list(self.hist[3][choices[0][d]]),'AE_hist':list(self.hist[3][choices[1][d]]),'second_hist':list(self.hist[4][choices[2][d]]),'menus_lh':lhs,'copies':{s:STATES[Cidx[s][bi,d]] for s in ROOTS}}
+                    a={'bits':''.join(map(str,bits)),'AB_hist':list(self.hist[3][choices[0][d]]),'AE_hist':list(self.hist[3][choices[1][d]]),'second_hist':list(self.hist[4][choices[2][d]]),'menus_lh':lhs,'copies':{s:STATES[Cidx[s][bi,d,menu_index]] for s in ROOTS}}
                     best.append((rho,a))
         best.sort(key=lambda x:x[0])
         for rho,a in best[:batch]:
@@ -141,8 +170,8 @@ class Universe(old.Universe):
 def key(a):return old.atom_key(a)+tuple(tuple(a['copies'][s]) for s in ROOTS)
 
 def run(maxiter=60):
-    U=Universe();target=HERE/'cross_menu_half_search.json'
-    source=HERE/'actual_root_copies_half_search.json';warm=json.loads((target if target.exists() else source).read_text())
+    U=Universe();target=HERE/'bidirectional_menu_half_search.json'
+    source=HERE/'cross_menu_half_search.json';warm=json.loads((target if target.exists() else source).read_text())
     atoms=[];cols=[];keys=set();ws=[];os=[]
     def add(a):
         if key(a) in keys:return 0
@@ -174,6 +203,7 @@ def run(maxiter=60):
         x=U.atom_rows(a);y=U.atom_rows(a,False)
         assert max(abs(float(x[n])-float(y[n])) for n in U.names)<1e-9
     print(json.dumps({'initial_columns':len(atoms),'exact_fast_rows':'passed'}),flush=True)
+    provenance={str(pp.relative_to(ROOT)):hashlib.sha256(pp.read_bytes()).hexdigest() for pp in [Path(__file__),Path(old.__file__),HERE/'ap_binary_pricing.py',ROOT/'tests/audits/customer_attraction_five_indexed.py']}
     history=[]
     for it in range(maxiter):
         t=time.time();mat=np.asarray(cols).T
@@ -181,11 +211,11 @@ def run(maxiter=60):
         rhs=2*np.asarray(ws,float)-np.asarray(os,float)
         out=linprog(np.ones(len(U.names)),A_ub=(mat/scale[:,None]).T,b_ub=rhs,bounds=(0,None),method='highs')
         if not out.success:
-            report={'scope':'Fixed beta=2 certificate search on this row system only; infeasibility is not a game counterexample','status':'restricted-certificate-infeasible','message':out.message,'atoms':atoms,'history':history}
+            report={'scope':'Fixed beta=2 certificate search on this row system only; infeasibility is not a game counterexample','status':'restricted-certificate-infeasible','sources':provenance,'message':out.message,'atoms':atoms,'history':history}
             target.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k not in ['atoms','history']}),flush=True);return U,out,atoms
         beta=2.;lam=out.x/scale;minimum,new,contexts=U.price(lam,beta,batch=400);n=sum(add(a) for _,a in new)
         rec={'iteration':it,'columns':len(atoms),'beta':beta,'minimum_scaled_residual':minimum,'new_columns':n,'contexts':contexts,'seconds':time.time()-t};history.append(rec);print(json.dumps(rec),flush=True)
-        result={'scope':'Floating necessary-condition discovery only, not a universal bound or SPE instance','target':'HALF(5)','row_names':U.names,'atoms':atoms,'warm_column_flags':[1]*len(atoms),'status':'fixed-beta-two-search','dual_beta_float':beta,'dual_multipliers_float':{n:float(v) for n,v in zip(U.names,lam) if v>1e-10},'history':history}
+        result={'scope':'Floating necessary-condition discovery only, not a universal bound or SPE instance','target':'HALF(5)','sources':provenance,'row_names':U.names,'atoms':atoms,'warm_column_flags':[1]*len(atoms),'status':'fixed-beta-two-search','dual_beta_float':beta,'dual_multipliers_float':{n:float(v) for n,v in zip(U.names,lam) if v>1e-10},'history':history}
         target.write_text(json.dumps(result,indent=2)+'\n')
         if n==0:break
     return U,out,atoms
