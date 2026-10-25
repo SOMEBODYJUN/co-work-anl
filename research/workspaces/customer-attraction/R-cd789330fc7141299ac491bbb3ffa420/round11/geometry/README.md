@@ -11,5 +11,8 @@ HALF 与承重候选均 OPEN；没有新的全树金额付款。
   有界浮点反例攻击，无负分离；没有精确 LP 证书或一般性结论。
 - `matching_displacement_gate_review.md`：matching11 零净覆盖损失块替换门的独立核验，
   确认复制退款和最大退款方向；尚无定量付款或新颖性声明。
+- `shared_saddle_geometry_checkpoint.md`：共享 minimax saddle 的等价格 Gram 向量化，
+  真正非负 KKT 松弛与残余协方差，及只需 gamma/2 误差的 HALF-SLOT 开放付款目标。
+  没有新金额付款；五人所需 W>=9gamma/2 仍未证。
 
 接续优先：证明或攻击真正最优覆盖下的 K0<=W+R0；不恢复已失败的任意单 query 加强。
