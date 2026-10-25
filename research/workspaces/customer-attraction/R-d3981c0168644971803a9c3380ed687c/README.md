@@ -1,3 +1,9 @@
+# 当前接续：HALF(5)
+
+用户最新明确要求六名 gpt-6.1-sol ultra 攻 n=5（五名提供者、任意客户/目录）。本轮入口为 [round8_five](round8_five/README.md) 和[精确身份](round8_five/CLAIMS.md)。五人及一般目标均 **OPEN**。共享加权最大性产生了能精确分离旧联合松弛点的新菜单关系；仍没有二倍证明或目标反例。上轮 [round7_general](round7_general/README.md) 的一般产品工具保持原范围。
+
+以下保留此前一般研究的资产地图，不能覆盖本轮用户的人数范围。
+
 > 最新第五次一般接续见 [round5_general主稿](round5_general/MAIN_PROOF_WORKING.md)、[地图](round5_general/README.md)及[精确身份](round5_general/CLAIMS.md)。目标仍 OPEN，无新无条件福利界或目标反例。两族完整历史 SPE 分别关闭末位全列税付款，以及原零根的逐人 δ_m、extra δ_(m+1) 和 OPT/(2m) 助手；都满足 half，真正安全值聚合未败。新对齐删除边际预算与私有别名转移已内部核对，未接成平均福利证明。前轮 [round4_general](round4_general/README.md) 的共享前缀回收继续有效；更早成果不重复认领。共享恢复入口为[一般工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。
 
 最新接续：[round7_general](round7_general/README.md)。新增一般共同后继帽、一次舍入及其真实signed费用改善，并给有限字典精确seed LP；已分别独立内审，尚无严格负种子或一般half。
@@ -6,7 +12,7 @@
 
 # 一般半覆盖：当前共同付款与前轮资产
 
-发布身份 `R-d3981c0168644971803a9c3380ed687c`；customer-attraction / boss；本clone首次程序生成身份。研究目标始终为原 `Q-CAG-HALF`，一般目录、任意人数、每个完整历史依赖纯SPE；仍 **OPEN**。本目录是个人研究备份，未代替共享canonical账本。六名指定gpt-6.1-sol ultra实际分支的结果由root统一汇总。
+发布身份 `R-d3981c0168644971803a9c3380ed687c`；customer-attraction / boss；本clone首次程序生成身份。总目标为原 `Q-CAG-HALF`；本轮按最新用户指令集中恰五人，任意目录和每个完整历史依赖纯SPE；仍 **OPEN**。本目录是个人研究备份，未代替共享canonical账本。六名指定gpt-6.1-sol ultra实际分支的结果由root统一汇总。
 
 ## 先读什么
 
