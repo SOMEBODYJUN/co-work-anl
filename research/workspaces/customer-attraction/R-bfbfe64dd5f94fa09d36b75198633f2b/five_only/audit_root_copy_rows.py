@@ -11,9 +11,9 @@ ROOT=next(p for p in Path(__file__).resolve().parents if (p/'customer_attraction
 HERE=Path(__file__).resolve().parent
 sys.path[:0]=[str(ROOT),str(HERE)]
 from customer_attraction import Instance,ExactSPESolver
-from actual_root_copies import Universe,ROOTS,PATHS
+from actual_root_copies import Universe,ROOTS,PATHS,SPECS
 
-def check(themes):
+def check(themes,row_model=Universe,include_root=False):
     themes=tuple(frozenset(s) for s in themes);N=set().union(*themes)
     inst=Instance.from_topic_sets(themes,5);sol=ExactSPESolver(inst)
     cert=sol.worst_certificate();sigma=cert.actions
@@ -34,8 +34,12 @@ def check(themes):
     ab=[finish((A,B,t)) for t in opt];ae=[finish((A,E,t)) for t in opt];sb=[finish((A,t)) for t in opt]
     prefixes=[actual[:3],second[:3],third[:3]]
     lastmenus=[[finish(pref+(t,))[-1] for t in opt] for pref in prefixes]
-    copies={s:finish((label_topics[s],))[1:] for s in ROOTS}
-    U=object.__new__(Universe);U.overlap=1
+    copies={}
+    for s,(pre,forced) in SPECS.items():
+        hh=tuple(label_topics[x] for x in pre)+(label_topics[forced],)
+        copies[s]=finish(hh)[len(hh):]
+    U=object.__new__(row_model);U.overlap=1
+    rootpaths=[finish((t,)) for t in opt] if include_root else None
     sums={};atom_count=0
     for x in sorted(N):
         def bit(t):return int(x in themes[t])
@@ -50,6 +54,13 @@ def check(themes):
         atom={'bits':''.join(str(bit(label_topics[s])) for s in 'ABCDEUVWXY'),'AB_hist':hs[0],'AE_hist':hs[1],'second_hist':hs[2],
               'menus_lh':[(sum(bit(t) for t in mm),sum(bit(t)*bit(z) for t,z in zip(opt,mm))) for mm in lastmenus],
               'copies':{s:[bit(t) for t in copies[s]] for s in ROOTS}}
+        if include_root:
+            hh=[0]*32
+            for z in rootpaths:
+                index=0
+                for t in z:index=2*index+bit(t)
+                hh[index]+=1
+            atom['root_hist']=hh
         rows=U.atom_rows(atom)
         for n,v in rows.items():sums[n]=sums.get(n,F(0))+v
         atom_count+=1
