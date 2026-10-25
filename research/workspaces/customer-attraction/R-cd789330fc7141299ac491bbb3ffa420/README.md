@@ -1,6 +1,6 @@
 # 第十二轮：一般命题继续
 
-原Q-CAG-HALF仍OPEN。[本轮稿](round12/GENERAL_PROOF_WORKING.md)记录真实端点重选、均值cap分析域与未付总量。六名指定研究员及父方直接推导，不把新对偶当作half完成。
+原Q-CAG-HALF仍OPEN。[本轮稿](round12/GENERAL_PROOF_WORKING.md)记录真实端点重选、均值cap分析域与未付总量。本轮六名指定研究员与父方已完成具体推导交接；HALF-R与BUBBLE按准确条件保存，平衡容量及Cov未付，不把新对偶当half完成。
 
 # 第十一轮接续（Boss10，同一身份）
 
