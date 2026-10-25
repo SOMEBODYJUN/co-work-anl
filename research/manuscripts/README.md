@@ -6,9 +6,9 @@
 | --- | --- | --- |
 | 共同目录双设施黄金比 | [PDF](shared_catalog/main.pdf)、[LaTeX](shared_catalog/main.tex)、[写作状态](shared_catalog/WRITING_STATE.md) | 第一节引言及模型；第二节四类精确均衡菜单、核心引理和短主定理证明。坏回应环、双锚及局部多混合证明在附录完整展开。对应 SC-PHI-E/A；[现行数学地图](../current/shared/README.md)。势修复与已有黄金比下界分别归前人。 |
 | 任意设施数因子二 | [PDF](multiple_facilities/main.pdf)、[LaTeX](multiple_facilities/main.tex)、[写作状态](multiple_facilities/WRITING_STATE.md) | 第一节引言及模型；第二节字典序选择、全部转移预算、原子装箱、离轨修复与短主定理证明。对应 SC-K-2-E；[现行数学地图](../current/multi_facility/README.md)。有限构造、短显示证书与一般多项式搜索严格区分。 |
-| 加权拥塞结构工具及反例族 | [PDF](../current/weighted_congestion/structural_reconstruction/structural_methods_article.pdf)、[LaTeX](../current/weighted_congestion/structural_reconstruction/structural_methods_article.tex)、[写作状态](../current/weighted_congestion/structural_reconstruction/WRITING_STATE.md) | 四节：引言/模型，结构工具，全状态反例族，正向稳定及社会成本应用。先说明工具解释了什么，再由工具解决存在性增长阶问题。参数尾部和全部非法态证明保留；简单参数例不宣称数学最小。对应各独立 WC Claim；[专题地图](../current/weighted_congestion/structural_reconstruction/README.md)。 |
+| 加权拥塞结构工具及反例族 | [TEAC审稿版PDF](../current/weighted_congestion/structural_reconstruction/structural_methods_article.pdf)、[LaTeX](../current/weighted_congestion/structural_reconstruction/structural_methods_article.tex)、[写作状态](../current/weighted_congestion/structural_reconstruction/WRITING_STATE.md)、[选刊和模板核验](../current/weighted_congestion/structural_reconstruction/VENUE_TEMPLATE_REVIEW_round2.md) | 四节：引言/模型，结构工具，全状态反例族，正向稳定及社会成本应用。先说明工具解释了什么，再由工具解决存在性增长阶问题。参数尾部和全部非法态证明保留；简单参数例不宣称数学最小。对应各独立 WC Claim；[专题地图](../current/weighted_congestion/structural_reconstruction/README.md)。 |
 
-作者、单位及邮箱未由主人提供，正文不虚构署名。第二篇已由团队定为 **SIDMA** 主投，采用 SIAM 最新 `siamart251216` 宏包作为提交模板；其余两篇仍按各自写作状态记录的目标推进。第二篇当前可编译稿仍是可复核的通用 `amsart` 版本，待作者元数据齐全后转换 publisher class，不把它误称为已投稿文件。
+作者、单位及邮箱未由主人提供，正文不虚构署名。第二篇已由团队定为 **SIDMA** 主投，采用 SIAM `siamart251216` 宏包作为目标提交模板；当前可编译稿仍是通用 `amsart` 版本。第三篇经本轮讨论定为 **TEAC** 主投、SIDMA 备选，已转换 ACM `acmart` 单栏匿名审稿版；正式 production class 与真实作者元数据仍须投稿前核验。第一篇仍按自身写作状态的目标推进。没有稿件被登记为已经投稿。
 
 ## 实际拉取的开源写作 skill
 
@@ -48,6 +48,6 @@ python3 research/check_active_research.py
 python3 research/check_assets.py
 ```
 
-构建依赖已有 TeX Live、latexmk、BibTeX；脚本将中间文件置于各稿 `.build/`，可在本环境从已安装文件重建缺失的 format，不联网安装。PDF仅在编译和未定义引用检查通过后更新。
+构建依赖已有 TeX Live、latexmk、BibTeX；第三篇还依赖 ACM `acmart` class 和 `ACM-Reference-Format.bst`（生产版应由 ACM/CTAN 获取）。脚本将中间文件置于各稿 `.build/`，可从已安装文件重建缺失的 format；PDF仅在编译和未定义引用检查通过后更新。第三篇本次排版预览使用仓库外固定 v2.20 tag 的测试 class，真实限制和来源见本稿选刊核验。
 
 各稿 `WRITING_STATE.md` 保存实际版本、正文/附录边界、已发生的检查及未决项。当前审查汇总见[成文核验](MANUSCRIPT_REVIEW.md)。下一轮应先读这些精确记录，再读论文；不要把旧审查当作覆盖新版本，也不要为成文目的擅自增加数学结果。

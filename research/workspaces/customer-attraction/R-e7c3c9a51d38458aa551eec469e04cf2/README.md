@@ -17,9 +17,13 @@ Q-CAG-HALF 原模型、全部量词不变，仍 **OPEN**。本轮新环境按附
 | [independent/root_deletion_insurance_drift_review.md](independent/root_deletion_insurance_drift_review.md) | 先独立重构后对稿的全历史审查，核删位口径、边界、子局slack和来源范围 |
 | [construction/README.md](construction/README.md) | 旧437行松弛点的两个明确真实目录投影；精确M及signed预算均大正，没有坏seed；含脚本、源SHA、复制尺度和原始分数 |
 | [repair/signed_budget_exit_cone.md](repair/signed_budget_exit_cone.md) | 固定真实退出表的signed种子LP、无需真实OPT的比较覆盖证书及重复标签的SPE集合商引理；一般付款仍未证 |
+| [dual/README.md](dual/README.md) | 旧人真实收入下包络势候选；旧根税实例两条实际边19>18击穿逐边式，保留解析原因与可重建数据，不否定MP累计 |
+| [global/README.md](global/README.md) | 全槽SUMmin充分聚合候选及精确折扣账；共同付款仍未证；有限LP输出和有理重算严格分层，来源与软件版本齐备 |
 
 ## 接续和证据层
 
 共享工作稿§8、结果总账、研究状态与失败地图已修正逐位置Mfull的滞后OPEN标签。原族和全历史策略来源仍归 R-d3981c0168644971803a9c3380ed687c/round5_general；不认领新half反例。
 
 尚需共同支付真实退出门槛/混合查询，或给严格负signed预算及全部历史退出证书。m5仍未无条件过二。盲独审是内部检查，不是外审或新颖性认证；有限投影失败不排除别的实现。公屏身份、工作区身份、提交回执分别记录；只有 work.py 回执 pushed 后才称远端已保存。
+
+本轮六分支均已准确交接，没有新的普遍付款或严格坏seed。当前机制都止于同一未付的跨分支共同信用，未继续扩大阴性扫描；未声称后台常驻。后续应从真实早期IC产生新金额或找到严格可信种子，不应只重复本轮等价式、局部势或有限检验。

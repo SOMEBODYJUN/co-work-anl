@@ -65,3 +65,7 @@ B2两步安全债务非负仍OPEN；有限诊断及固定p,Q策略锥未命中�
 
 
 2026-10-23清洗同步：常数三锐性和负flux的独立内部审查已经完成，分别见`independent/insurer_three_sharp_review.md`、`full_depth/degree_two_review.md`。本轮一般关系稿另见共享`research/reviews/customer_attraction/general_research_curation.md`；无新增外审或一般half证明。
+
+## 第六次接续的个人精确身份
+
+全阶擦除、损失势、终局嵌套、真实floor付款的窄反例，以及已知末两行去相关接入，见[round6账本](round6_general/CLAIMS.md)。证明与独立内审已有记录，外审和新颖性未认证；没有升级一般half或共享负载/统一价格候选。

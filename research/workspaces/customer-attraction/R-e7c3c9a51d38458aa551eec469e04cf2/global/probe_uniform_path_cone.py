@@ -29,9 +29,13 @@ def probe(name):
     def coeff(z,i):
         return [F(1,sum((mask>>a)&1 for a in z)) if (mask>>z[i])&1 else F(0)
                 for mask in masks]
+    query_cache={}
     def qcoeff(z,p):
-        return [sum((p[a] for a in range(k) if (mask>>a)&1),F(0)) /
-                (1+sum((mask>>a)&1 for a in z)) for mask in masks]
+        key=(z,tuple(p))
+        if key not in query_cache:
+            query_cache[key]=[sum((p[a] for a in range(k) if (mask>>a)&1),F(0)) /
+                    (1+sum((mask>>a)&1 for a in z)) for mask in masks]
+        return query_cache[key]
     z=terminal(())
     W=[int(any((mask>>a)&1 for a in z)) for mask in masks]
     gamma=[]
@@ -67,7 +71,18 @@ def probe(name):
         if avg_lp.success and (best_average is None or -avg_lp.fun>best_average['sum_C']):
             best_average={'p':list(map(str,p)),'sum_C':-avg_lp.fun,'gap':-avg_lp.fun-1,
                 'weights':{str(mask):float(v) for mask,v in zip(masks,avg_lp.x) if v>1e-8}}
-    return {'minimum_menu_test':best,'average_push_test':best_average}
+    cross_best=None
+    for a in range(k):
+        terminals=[terminal(z[:i]+(a,)) for i in range(n)]
+        for t in range(k):
+            p=[F(int(j==t)) for j in range(k)]
+            C=[sum((qcoeff(zz,p)[j] for zz in terminals),F(0)) for j in range(len(W))]
+            cross_lp=linprog([-float(c) for c in C],A_ub=[list(map(float,g)) for g in gamma],
+                       b_ub=[0]*len(gamma),A_eq=[W],b_eq=[1],bounds=[(0,None)]*len(W),method='highs')
+            if cross_lp.success and (cross_best is None or -cross_lp.fun>cross_best['sum_cross']):
+                cross_best={'forced_action':a,'query_action':t,'sum_cross':-cross_lp.fun,'gap':-cross_lp.fun-1,
+                    'weights':{str(mask):float(v) for mask,v in zip(masks,cross_lp.x) if v>1e-8}}
+    return {'minimum_menu_test':best,'average_push_test':best_average,'cross_test':cross_best}
 
 if __name__=='__main__':
     for name in CASES:
