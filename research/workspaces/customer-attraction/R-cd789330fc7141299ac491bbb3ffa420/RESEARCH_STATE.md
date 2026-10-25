@@ -124,3 +124,6 @@ root已重跑独立实现的旧52、348及零客户/空主题边界输入，全�
 [净cap/BUBBLE](round12/parent/net_cap_bubble_component.md)提供保query背景的实际前缀前送，child-SPE合法性由count-isomorphism承担，不保证到达源满足下一行cap或原库存。HALF-R还要求同row行动平衡、逐source原子容量；尚未构造满足全部条件的实际全树流。
 
 真实σ重放和几何coordinate重放总端点工作相同，edge IC不相同。signed fixed-potential银行可使用一次；diagonal prefix multiplier、任意目标主题余项、净cap transfer仍未付。主half/五人仍OPEN。下一次须新增这条真实共同付款或换一般路线，不以更多约束和表示当完成。
+
+
+最新本对话用户指定五人专项，客户/目录任意；一般目标仍OPEN。见[round13](round13/README.md)及[精确范围](round13/CLAIMS.md)。

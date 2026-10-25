@@ -29,3 +29,9 @@ certificate 分支在 Boss16 AP 浮点坏点上发现：second-J 菜单总大小
 ## 当前没有闭合的目标
 
 六路仍在直接研究。强最优静态匹配 K≤W、逐人末位一半等有旧真实反例；已及时恢复来源，停止重复。弱匹配 K≤6W/5、末位聚合份额候选以及真实全树付款未证明。原一般目标与 HALF(5) 均 OPEN。
+
+## 末两人一次势税
+
+security、adversary及父方解析重构的[末两人势损失](parent/two_tail_potential_review.md)给0≤Γ2≤Σ_(D\E)1/[(q+1)(q+2)]≤u4/2。若前三利润+Γ2≥3v5（OPEN），则末两位各≥v5给W≥4.5v5，进而half。导出M2势游戏有prefix重置和移除优化误差，正文精确保留，未把同一Γ发三次。
+
+certificate联合max主题C*原σ真四尾、共同全目录cap、背景3/4利润及direct保留p1残差；首个受限问题仍>2，尚非全域对偶/福利界/SPE反例。继续用真tail对全部合法混合比较元组的利润信息。父方单独234行6144类型接口浮点约2.260825>2只检验明确模板，不称新游戏上界，见parent/max_root_actual_pressure.py/json。
