@@ -5,13 +5,14 @@ of the same original complete SPE. No floating LP status is a game theorem.
 """
 from pathlib import Path
 from fractions import Fraction as F
-import sys,json,time,hashlib,numpy as np
+import sys,json,time,hashlib,math,numpy as np
 from scipy.optimize import linprog
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE))
 import actual_root_copies as copies
 import ap_binary_pricing as ap
-from weighted_root_saturation_check import PAIRS
+from weighted_root_saturation_check import PAIRS as WEIGHTED_PAIRS
+PAIRS=WEIGHTED_PAIRS+[(F(89090,1753),F(29147,3506)),(F(50200,1753),F(4851,1753)),(F(678285,23888),F(64639,23888))]
 old=copies.old;ROOT=copies.ROOT;ROOTS=copies.ROOTS;PATHS=copies.PATHS
 LABELS=copies.LABELS;STATES=copies.STATES;TAILS=copies.TAILS;FIRST=copies.FIRST
 
@@ -26,9 +27,14 @@ def saturation_rows(a,exact=True):
         for fi,pn in enumerate(PATHS):rr[tag+'L:'+pn]=5*B*r-C*a['menus_lh'][fi][0]-5*o
         for src in ROOTS:
             for j,x in enumerate(a['copies'][src]):rr[tag+f'copy:{src}:{j}']=B*r-C*x-o
+        for tag,hn,menus in [('AB','AB_hist','XY'),('AE','AE_hist','XY'),('Sbranch','second_hist','UVW')]:
+            k=1+len(menus)
+            for j,m in enumerate(menus,1):
+                cc=sum(n*((idx>>(k-1-j))&1) for idx,n in enumerate(a[hn]))
+                rr[f'{tag}:Sat:{gi}:{m}']=5*B*r-C*cc-5*o
         for j,m in enumerate(ap.RPOS[1:],1):
             cc=sum(n*int(t[j]) for n,t in zip(a['root_hist'],ap.TYPES))
-            rr[tag+'rootmenu:'+m]=5*B*r-C*cc-5*o
+            rr[f'Saturation{gi}:rootmenu:'+m]=5*B*r-C*cc-5*o
     return rr
 
 class Universe(copies.Universe):
@@ -38,9 +44,9 @@ class Universe(copies.Universe):
         self.root_names=[n for n in self.root_engine.names if n not in self.names]
         self.root_name_set=set(self.root_names)
         self.names+=self.root_names
-        fake={'bits':'0000000000','AB_hist':[5,0,0,0,0,0,0,0],'menus_lh':[(0,0)]*3,'copies':{s:[0]*TAILS[s] for s in ROOTS},'root_hist':[5]+[0]*31}
-        self.satnames=list(saturation_rows(fake));self.satids=list(range(len(self.names),len(self.names)+len(self.satnames)))
-        self.names+=self.satnames
+        fake={'bits':'0000000000','AB_hist':[5,0,0,0,0,0,0,0],'menus_lh':[(0,0)]*3,'copies':{s:[0]*TAILS[s] for s in ROOTS},'root_hist':[5]+[0]*31,'AE_hist':[5]+[0]*7,'second_hist':[5]+[0]*15}
+        self.satnames=[n for n in saturation_rows(fake) if n.startswith("Saturation")];self.satfamily=[n for n in saturation_rows(fake) if ":Sat:" in n];self.satids=list(range(len(self.names),len(self.names)+len(self.satnames)))
+        self.names+=self.satnames+self.satfamily
         st=np.zeros((1024,6,len(self.satnames)),dtype=float)
         for bi,bits in enumerate(self.bits):
             r=old.q(bits[0],sum(bits[:5]))
@@ -59,9 +65,43 @@ class Universe(copies.Universe):
         bits=tuple(map(int,a['bits']));rh=a['root_hist']
         rr.update(ap.base.root_rows(bits,rh,a['menus_lh'],exact))
         rr.update(ap.aligned.aligned_rows(rh,exact,bits))
-        rr.update(ap.root_ap_rows(rh,bits,exact))
+        rr.update(ap.root_ap_rows(rh,bits,True) if exact else self.fast_ap_rows(rh,bits))
         rr.update(saturation_rows(a,exact))
         return rr
+    def family_score(self,bits,tag,weights,integer=False):
+        own=[(n,v) for n,v in weights if ':Sat:' in n];rest=[(n,v) for n,v in weights if ':Sat:' not in n]
+        key,const,vec,E,H=super().family_score(bits,tag,rest,integer)
+        b=dict(zip(LABELS,bits));r=old.q(b['A'],sum(b[m] for m in 'ABCDE'));k=key[0]
+        for n,v in own:
+            _,_,gi,m=n.split(':');B,C=PAIRS[int(gi)]
+            const+=v*float(5*B*r*120)
+            vec.append((-v*float(C*120),self.count[k][m]))
+            vec.append((-v*600,(self.d[k]>0).astype(int)))
+        return key+(tuple(own),),const,vec,E,H
+    @staticmethod
+    def hist_rank(hist):
+        rem=5;rank=0
+        for i,h in enumerate(hist[:-1]):
+            n=32-i
+            for v in range(h):rank+=math.comb(rem-v+n-2,n-2)
+            rem-=h
+        assert rem==hist[-1]
+        return rank
+    def fast_ap_rows(self,hist,bits):
+        rid=self.hist_rank(hist);b=dict(zip(LABELS,bits));out={}
+        for i in (1,2,3):
+            aa=ap.alpha2(5-i)
+            v=self.root_engine.local[f'APshare:{i}'][rid]/120
+            worst=self.root_engine.local[f'APworst:{i}'][rid]/120
+            instant=self.root_engine.local[f'APinstant:{i}'][rid]/120
+            for c in LABELS:
+                for d in LABELS:
+                    cv,dv=b[c],b[d]
+                    out[f'Root:AProot:{i}:{c}:{d}']=aa*v-((aa-2)*cv+2*cv*dv)*worst-2*dv*(1-cv)*instant
+            for c in ap.RPOS:
+                for d in ap.RPOS:
+                    n=f'Root:APown:{i}:{c}:{d}';out[n]=self.root_engine.local[n][rid]/120
+        return out
     def price(self,lam,beta,batch=80):
         weights=[(n,float(v)) for n,v in zip(self.names,lam) if abs(v)>1e-11]
         fam={t:[] for t in ('AB','AE','Sbranch')}
@@ -125,7 +165,7 @@ class Universe(copies.Universe):
                     a['root_hist']=self.root_engine.rh[ri[d]].tolist()
                     best.append((rho,a))
         best.sort(key=lambda x:x[0])
-        for rho,a in best[:batch]:
+        for rho,a in best[:min(batch,8)]:
             rr=self.atom_rows(a)
             direct=120*(beta*int(any(map(int,a['bits'][:5])))-int(any(a['AB_hist'][4:])))
             direct-=120*sum(float(v)*float(rr[n]) for n,v in zip(self.names,lam))
@@ -134,8 +174,8 @@ class Universe(copies.Universe):
 
 def key(a):return copies.key(a)+(tuple(a['root_hist']),)
 def run(maxiter=50):
-    U=Universe();target=HERE/'weighted_saturation_half_search.json'
-    source=HERE/'penultimate_branch_half_search.json'
+    U=Universe();target=HERE/'full_envelope_half_search.json'
+    source=HERE/'envelope_half_search.json'
     warm=json.loads((target if target.exists() else source).read_text())
     atoms=[];cols=[];keys=set();ws=[];os=[]
     def add(a):
@@ -143,7 +183,7 @@ def run(maxiter=50):
         rr=U.atom_rows(a,False);cols.append([float(rr[n]) for n in U.names])
         atoms.append(a);keys.add(key(a));ws.append(int(any(map(int,a['bits'][:5]))));os.append(int(any(a['AB_hist'][4:])))
         return 1
-    keep=list(range(0,len(warm['atoms']),max(1,len(warm['atoms'])//700)))+list(range(max(0,len(warm['atoms'])-150),len(warm['atoms'])))
+    keep=list(range(0,len(warm['atoms']),max(1,len(warm['atoms'])//220)))+list(range(max(0,len(warm['atoms'])-100),len(warm['atoms'])))
     for i in sorted(set(keep)):
         a=warm['atoms'][i]
         if 'root_hist' in a:add(a);continue
@@ -161,8 +201,9 @@ def run(maxiter=50):
     for a in atoms[::max(1,len(atoms)//10)]+atoms[-2:]:
         x=U.atom_rows(a);y=U.atom_rows(a,False)
         assert max(abs(float(x[n])-float(y[n])) for n in U.names)<1e-8
+    for rid in [0,1,15,200,len(U.root_engine.rh)-1]:assert U.hist_rank(U.root_engine.rh[rid])==rid
     print(json.dumps({'initial_columns':len(atoms),'exact_fast_rows':'passed'}),flush=True)
-    provenance={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),Path(copies.__file__),Path(ap.__file__),HERE/'_aligned_rows_safe.py',Path(ap.aligned.__file__),Path(ap.base.__file__),Path(old.__file__),ROOT/'research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/root_saturation.md',HERE/'weighted_root_saturation.md',HERE/'weighted_root_saturation_check.py']}
+    provenance={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),Path(copies.__file__),Path(ap.__file__),HERE/'_aligned_rows_safe.py',Path(ap.aligned.__file__),Path(ap.base.__file__),Path(old.__file__),ROOT/'research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/root_saturation.md',HERE/'weighted_root_saturation.md',HERE/'weighted_root_saturation_check.py',HERE/'maxroot_envelope.py',HERE/'maxroot_envelope.json',HERE/'audit_maxroot_envelope.py']}
     history=[]
     for it in range(maxiter):
         t=time.time();mat=np.asarray(cols).T;scale=np.maximum(1.,np.max(np.abs(mat),axis=1))
