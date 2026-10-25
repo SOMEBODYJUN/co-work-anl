@@ -1,5 +1,7 @@
 # Venue recommendation, round 1 (2026-10-24)
 
+**2026-10-25 correction:** The MOR page-length and e-companion statements below are superseded by the current official instructions: normally at most 40 pages with 1.5 spacing excluding references, up to 45 at the editor's discretion, no 35-page minimum, and main paper plus companion combined for review. The weighted-congestion decision and current template verification are in [round 2](../current/weighted_congestion/structural_reconstruction/VENUE_TEMPLATE_REVIEW_round2.md). This dated memo is retained as the original first-round assessment.
+
 This memo evaluates the three live manuscript artifacts against the venue set used in the project publication notes (TEAC, Algorithmica, SIDMA, MOR, GEB, ACM Transactions on Algorithms, Artificial Intelligence, JAIR, TCS, and DAM; SICOMP is treated as a high-risk stretch). It is an editorial recommendation, not an acceptance forecast, originality certificate, or external referee report. The recommendations use the actual theorem scopes and current proof/review records.
 
 ## Current artifacts and evidence limits

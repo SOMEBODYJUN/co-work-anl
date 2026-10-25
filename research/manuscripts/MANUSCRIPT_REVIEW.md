@@ -101,3 +101,13 @@ claim, not a publication-grade verified proof.
 证明审查记录见 `research/manuscripts/multiple_facilities/REFEREE_REPORT_round2_proof.md`，逐目标 review notes 已通过 `lint-notes.py`。英文清洗的最终门见 `EDITORIAL_REVIEW_round2.md`；没有必须修的语言问题，也没有为缩短篇幅删除证明承担的分支。最终源码和 PDF 均通过 proof-sanity、编译日志检查和 8 页逐页渲染检查；最后一页孤立参考文献行已通过版面调整收回。
 
 团队将第二篇主投定为 **SIDMA**，采用 SIAM 最新标准宏包 `siamart251216`；官方要求、摘要/关键词/MSC/短标题和作者元数据清单见 `VENUE_TEMPLATE_REVIEW_round2.md`。当前可复核 PDF 仍为 `amsart`，因为真实作者元数据未提供且官方宏包需在提交阶段转换；这不再是数学或写作审查阻塞。
+
+## 第三篇 round-2 完整成稿闭环（取代上文第三篇旧版本状态）
+
+第三篇当前稿是 TEAC `acmart` 单栏匿名审稿版，四主节与完整技术附录保持。最终源码 SHA-256 `3ee2db7cadce655e4534d27a0aa1b923ad2a05be383fe82ab8a7f781908cd847`，PDF SHA-256 `33727a90d83c2300658d1bcf89355c998f435af9ba6bdc4a8ef2d0c052407256`，27页。上文 `f6f65...`/`ee30...` 是前一轮的历史快照，不覆盖此新版本。
+
+- 独立数学攻击从共同尺度、端点面积、两型校准、权深度、稳定核，到全部 front 相位、非法态和同次数预算以及社会成本，未发现 S0–S3；有限精确审计仅核对给定参数范围。第二位独立读者对格式、文献范围和写作修订做数学 diff，无新增 S0–S3。单项式 CF2021 的 `d` 上界扩展到非负多项式是逐项拆分的明确推论，不能记作文献原模型逐字陈述。
+- 冻结全文两遍编辑审读先给 necessity FAIL / referential precision FAIL（八项局部问题）。修复后同一读者按 bounded delta 逐项确认八项 CLOSED，修复簇 necessity PASS / referential precision PASS。原始 FAIL 与修订验收分别保留在[第二轮报告](../current/weighted_congestion/structural_reconstruction/REFEREE_REPORT_round2.md)，不将 bounded delta 冒充一篇新全稿盲读。
+- TEAC 主投、SIDMA 备选和 MOR 旧页数错误的纠正，见[选刊与模板核验](../current/weighted_congestion/structural_reconstruction/VENUE_TEMPLATE_REVIEW_round2.md)。编译测试采用 ACM 上游 v2.20 tag 的仓库外测试 class，正式生产 class、TEAC 门户细则及真实作者元数据仍需投稿前完成；没有上传投稿系统。27页已渲染核对无裁切/溢出，proof-sanity 无重号、未定义引用/文献或环境问题。
+
+这些检查是内部证据，不是外审、新颖性认证或期刊接收保证；完整逐命题两遍 proof-review tracker 未完成。其他两篇版本与本节第三篇更新无关。
