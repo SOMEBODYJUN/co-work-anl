@@ -1,9 +1,14 @@
-# HALF(5)：旧索引菜单与背景加权最大主题的真实两后继
+# HALF(5)：正式证明复核与旧研究冻结
 
-HALF(5)仍 **OPEN**。本目录只攻五名提供者、任意有限单位客户、非空有限共同目录、
-任意完整有序历史纯SPE，保留空主题、零客户、重复及任意平局。
+**五人目标已证明：`CA-FIVE-HALF-EXACT-v1`。** 现行结论见
+[正式定理](../../../../../current/customer_attraction/five_player_half.md)，适用于任意有限
+单位客户、非空有限共同目录、每份完整有序历史纯SPE，保留空主题、零客户、重复及任意平局。
 
-当前付款接口见 [实际第三位十三行投影](actual13_projection.md)：在真实第三位选择
+本席原主程序、独立旧引擎parser全6144域交叉核及metadata/K检查全部通过，准确
+范围见 [复核交接](half5_import_audit/README.md)。本席不认领上传证明的发现或新颖性。
+下列是导入正式证明前的旧研究资产，已冻结；全部旧n5搜索停止，没有转做其他人数。
+
+旧付款接口见 [实际第三位十三行投影](actual13_projection.md)：在真实第三位选择
 背景加权最大H并保留同原σ的Q,R，联合多个旧索引菜单的同一真实两人税预算。
 13个非负整数乘子给一条`max8`投影，精确切开6750行63原子的真>2松弛点。
 `actual13_two_state_certificate.py/json`将q/r严格消成3×2×6表，定价只需共享h两态；
@@ -22,10 +27,10 @@ M是同目录裸大小最大主题，绝非人数；没有封顶新分支上的�
 
 | 需要的信息 | 唯一正文或证据 |
 | --- | --- |
-| 当前13行新关系、完整源/菜单、8态与2态证明 | `actual13_projection.md` |
+| 旧13行关系、完整源/菜单、8态与2态证明 | `actual13_projection.md` |
 | 13整数权重及6750精确点严格分离 | `actual13_projection.py/json` |
 | q/r全144 core状态精确消元 | `actual13_two_state_certificate.py/json` |
-| 全actual747单branch扩展及待全域定价种子 | `full_actual_extension.py`、`full_actual_extension_discovery.json` |
+| 已停止的全actual747单branch扩展 | `full_actual_extension.py`、`full_actual_extension_discovery.json` |
 | 新七行关系、完整量词、F表、任意真实第三位扩展 | `trueH_seven_rows.md` |
 | 全域系数证书及144个Fraction余项 | `trueH_table_certificate.py/json` |
 | 真实HQR比虚H/BNS保留更多信息的精确分离 | `exact_trueH_projection.json`、`exact_weighted_source.json` |
@@ -42,7 +47,8 @@ M是同目录裸大小最大主题，绝非人数；没有封顶新分支上的�
 
 所有名字带`discovery`或`lift`的浮点结果只作发现与恢复输入，不是全域最优性、
 真实游戏或SPE反例。`exact_*source`也只是明示必要行的可行点，不能逆向实现
-完整目录策略。当前没有全类型系数二有理对偶证书，最终half状态保持OPEN。
+完整目录策略。本席搜索未自行产生系数二证书；正式导入包已有完整系数二证书，
+本目录旧松弛点不反驳它。
 
 ## 后续诊断的准确归因
 
@@ -60,7 +66,7 @@ M是同目录裸大小最大主题，绝非人数；没有封顶新分支上的�
 单历史先可行、共同互查再失败时，才可把失败归因新增共同目录关系；代码显式
 记录`new_compatibility_attribution_allowed`。当前还没有这样的精确跨历史分离。
 
-## 当前实际全分支接口
+## 冻结的实际全分支接口
 
 `exact_current_source_own_index_v1.json`与`exact_current_source_actual13_v1.json`
 分别恢复最新6750/6751行的63个正有理原子，全旧行精确非负且覆盖比>2。
@@ -68,8 +74,11 @@ M是同目录裸大小最大主题，绝非人数；没有封顶新分支上的�
 共同目录双H兼容。第二点的Farkas只是同一个完整actual分支的另一组支持，未另报机制。
 
 为避免不断叠独立投影，`full_actual_extension.py`把全部747 actual原行一次加入，
-列显式携带`actual_HQR_bits`。A13投影在该扩展中冗余，发现器删除它。当前种子仅
-使用最新精确点63个正旧类型×8状态=504列，受限目标<2；这既不是849个旧known
-类型的闭包，也不是全类型证明。`full_actual_extension_discovery.json`保留完整
-7497行、504列、浮点primal/dual，供兄弟先分离全known pool，再做完整256条件oracle。
-只有精确全域非负余项或真正全部历史SPE反例才能改变HALF(5)的OPEN状态。
+列显式携带`actual_HQR_bits`。A13投影在该扩展中冗余，发现器删除它。初始63旧
+类型×8=504列受限<2；兄弟对849旧known类型×8稀疏价出119负列，补列后获得
+7497行精确>2点`exact_full_actual_extension_known_v1.json`。它有85项explicit
+actual-HQR正有理witness、64项旧投影，全7497余项非负；只界定这个旧必要行集。
+
+该点actual/max单747及双分支64态只得到浮点lift可行，不作方法阴性。新正式证明
+的13投影行在它上面严格负，说明其未满足新证明的预算。此处全部搜索进程已结束，
+不再继续全256定价或添加分支；五人原目标由正式证明闭合。

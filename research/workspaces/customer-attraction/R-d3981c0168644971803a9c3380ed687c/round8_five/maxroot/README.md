@@ -1,6 +1,9 @@
 # 五人最大根路径：审查、实际付款和最新联合目标
 
-HALF(5)仍OPEN。全部陈述保留单位客户、共同目录、完整有序历史纯SPE、任意平局、空主题、重复和零客户。
+HALF(5)现已由正式入库的`CA-FIVE-HALF-EXACT-v1`证明；唯一正文为
+`research/current/customer_attraction/five_player_half.md`及`customer_attraction/proofs/half5_exact_v1/`。
+本工作区搜索已停止。下文保留入库前的必要条件探索与精确障碍，不代表当前主目标仍开放。
+全部陈述保留单位客户、共同目录、完整有序历史纯SPE、任意平局、空主题、重复和零客户。
 本分支未执行git/work.py身份或保存操作；父方统一入库。
 
 ## 已有精确可复用信息
@@ -51,10 +54,14 @@ HALF(5)仍OPEN。全部陈述保留单位客户、共同目录、完整有序历
 
 6751最新源`actual13_payment_discovery.json`的SHA256为684fb0ed354241531fc6ce9a6659881e8f90055428ee5764c232e5d3d57b8916，
 O/W≈2.0006335192498845。actual单HQR仍不可lift，max单可lift；故没有joint新归因。
-certificate正在显式保留actual同一HQR三位和全部747真原行，在兼容实际分支的更强域中继续付款。
+随后certificate显式保留actual同一HQR三位和全部747真原行，并以本分支cheap已知类型定价的119个负列补足种子。
+最终冻结7497行、623列的精确障碍，见其`exact_full_actual_extension_known_v1.json`：
+85正支持显式actual HQR、64个旧投影类型，全7497行Fraction非负，O/W≈2.0000372033346614。
+它仍只是必要条件松弛点。新证明导入后已停止这条搜索，不再扩max/joint或其他人数。
 
-若新行排除该点，`price_trueH_own_index.py`已准备继续完整oracle；可直接固定β=2寻找付款而不追局部常数。
-任何全类型浮点无负候选仍必须恢复有理乘子，并使用真正整数/分数oracle审全域。
+保留的完整oracle和稀疏已知类型oracle仅作可复用实现；没有启动后续搜索。
+任何未来全类型浮点无负候选仍必须恢复有理乘子，并使用真正整数/分数oracle审全域。
 新hinge不在旧120整格；可用合法状态逐项求LCM，并与旧四尾rho合并，当前预计36000足够，不能以int截断冒充证明。
 
-各轴身份及新颖性边界见`novelty_and_scope.md`。本分支没有主目标证明、真正反例、外审或世界新颖性结论。
+各轴身份及新颖性边界见`novelty_and_scope.md`。本分支没有独立发现主目标证明或真正反例；
+五人主定理由用户提交的新证明包完成，发现归属不变。本次部分复核及旧点被新行精确分离的证据见`imported_proof_review.md`。

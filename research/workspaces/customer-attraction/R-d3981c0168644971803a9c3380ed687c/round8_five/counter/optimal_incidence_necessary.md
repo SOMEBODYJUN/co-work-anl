@@ -1,6 +1,6 @@
 # 五人目标反例必须有大量最优元组内单会员遗漏
 
-2026-10-25。counter 分支作者推导。**没有 HALF(5) 反例，也没有无条件 HALF(5) 证明。** 下面是对既有 [真实前缀分数覆盖预算](../../../../../current/customer_attraction/fractional_cover_path_budget.md) 的遗漏需求细化；不认领新的跨树技术。它用于诊断并淘汰“遗漏全在最优查询内共享”的反例机制，不以有限无反例表代替推导。父方尚未独立审查。
+2026-10-25。counter 分支作者推导。**本文早于上传证明，只提供所述必要关系；当前 HALF(5) 已由[正式精确证书](../../../../../current/customer_attraction/five_player_half.md)证明。** 下面是对既有 [真实前缀分数覆盖预算](../../../../../current/customer_attraction/fractional_cover_path_budget.md) 的遗漏需求细化；不认领新的跨树技术。它用于诊断并淘汰“遗漏全在最优查询内共享”的反例机制，不以有限无反例表代替推导。父方尚未独立审查。
 
 ## 精确对象和一般需求细化
 

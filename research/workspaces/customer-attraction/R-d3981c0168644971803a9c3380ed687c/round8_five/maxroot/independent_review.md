@@ -2,7 +2,8 @@
 
 审查对象：`R-bfbfe64dd5f94fa09d36b75198633f2b/five_only/` 内的
 `maxroot_envelope.md/.py/.json` 与 `weighted_root_saturation.md`，以及旧
-`R-acd97406d8c4409d962eab2adcdc520c/root_saturation.md`。本稿是另一研究代理的独立数学重构和分离实现，不是外部同行评审。HALF(5)仍OPEN。
+`R-acd97406d8c4409d962eab2adcdc520c/root_saturation.md`。本稿是另一研究代理的独立数学重构和分离实现，不是外部同行评审。
+本页审的是旧辅助证书；其后HALF(5)已由正式入库的`CA-FIVE-HALF-EXACT-v1`完成，见`imported_proof_review.md`。
 
 ## 192状态的正确语义
 

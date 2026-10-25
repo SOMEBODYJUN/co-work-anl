@@ -1,37 +1,20 @@
-# 当前接续：HALF(5)
+# 当前结论：五人半覆盖已证明
 
-用户最新明确要求六名 gpt-6.1-sol ultra 攻 n=5（五名提供者、任意客户/目录）。本轮入口为 [round8_five](round8_five/README.md) 和[精确身份](round8_five/CLAIMS.md)。五人及一般目标均 **OPEN**。共享加权最大性产生了能精确分离旧联合松弛点的新菜单关系；仍没有二倍证明或目标反例。上轮 [round7_general](round7_general/README.md) 的一般产品工具保持原范围。
+发布身份R-d3981c0168644971803a9c3380ed687c，customer-attraction / boss。本clone稳定身份不变。
+用户最新明确要求六名gpt-6.1-sol ultra攻n=5。该五人原模型目标已由仓库新入库的精确证书闭合，
+父方及六席已复跑并独立核验；本团队不认领原上传证明的发现。一般Q-CAG-HALF仍OPEN。
 
-以下保留此前一般研究的资产地图，不能覆盖本轮用户的人数范围。
+- [当前五人闭合与复核](round8_five/imported_half5_check/README.md)：完整量词、来源、53行整数恒等式、父方复跑与六席审查。
+- [本轮地图](round8_five/README.md)、[精确身份](round8_five/CLAIMS.md)、[旧探索主稿与停止点](round8_five/PROOF_WORKING.md)。
+- [前一轮一般工具](round7_general/README.md)：共同后继门槛、一次舍入及有限字典seed LP，保持原范围，未证明一般half。
 
-> 最新第五次一般接续见 [round5_general主稿](round5_general/MAIN_PROOF_WORKING.md)、[地图](round5_general/README.md)及[精确身份](round5_general/CLAIMS.md)。目标仍 OPEN，无新无条件福利界或目标反例。两族完整历史 SPE 分别关闭末位全列税付款，以及原零根的逐人 δ_m、extra δ_(m+1) 和 OPT/(2m) 助手；都满足 half，真正安全值聚合未败。新对齐删除边际预算与私有别名转移已内部核对，未接成平均福利证明。前轮 [round4_general](round4_general/README.md) 的共享前缀回收继续有效；更早成果不重复认领。共享恢复入口为[一般工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。
+以下原一般研究资产仍保留供按需恢复，不把五人定理推广到任意人数或有背景五人后缀：
 
-最新接续：[round7_general](round7_general/README.md)。新增一般共同后继帽、一次舍入及其真实signed费用改善，并给有限字典精确seed LP；已分别独立内审，尚无严格负种子或一般half。
+| 资产 | 入口 |
+| --- | --- |
+| 多删位、共享损失预算 | [round6_general](round6_general/README.md) |
+| 保险家族与逐人安全失败、LAST失败 | [round5_general](round5_general/README.md) |
+| 共享前缀回收与自洽价格 | [round4_general](round4_general/README.md) |
+| 更早一般接口、编译与完整历史证书 | [continuation_general](continuation_general/README.md)、[根修复](compiler/padded_insurer_repair.md) |
 
-最新接续：[round6_general](round6_general/README.md)（2026-10-25），六名指定模型研究员与父方继续一般推导；共享负载、总查询与可信价格均尚未付款。上轮已否定的个体安全和 LAST 不再调用。一般 Q-CAG-HALF 仍 OPEN。
-
-# 一般半覆盖：当前共同付款与前轮资产
-
-发布身份 `R-d3981c0168644971803a9c3380ed687c`；customer-attraction / boss；本clone首次程序生成身份。总目标为原 `Q-CAG-HALF`；本轮按最新用户指令集中恰五人，任意目录和每个完整历史依赖纯SPE；仍 **OPEN**。本目录是个人研究备份，未代替共享canonical账本。六名指定gpt-6.1-sol ultra实际分支的结果由root统一汇总。
-
-## 先读什么
-
-- [精确状态](RESEARCH_STATE.md)、[Claim身份](CLAIMS.md)、[失败范围](FAILED_ROUTES.md)。
-- [根缺陷常数三修复](compiler/padded_insurer_repair.md)：对每个m>=2及任意所有正深度子局已为SPE的完整计划，修复根最大偏离Delta；新gap=旧gap−3Delta，全部联合历史可信。已获[独立盲重构](independent/insurer_blind_review.md)，无外审/新颖性认证。
-- [三系数架构锐界](compiler/disjoint_insurer_three_sharp.md)：独立不交极大花瓣保险的half稀释下界；已获[独立解析审查](independent/insurer_three_sharp_review.md)；共同核必须包含于所有合法主题，不扩大到根可遗漏的极大共同核。
-- [真实二元客户负flux族](shared_omission/credible_degree_two_negative_flux.md)：无界人数的完整SPE反驳无条件驻留根尾平均预算；W=OPT，根恰theta，不能否定严格根低阈值的最小反例路线。已获[独立审查](full_depth/degree_two_review.md)，平局措辞已按审查修正。
-- [既有Markov反例的独立CSP复现](parent/known_markov_obstruction_replay.json)及[有限CSP工具](parent/count_policy_probe.py)：旧R-18e993...反例，非新数学；全历史最差22428<计数策略最差22429，故停止该归约。有限无分离批次不作正面证据。
-
-- [静态拥挤支配接口](shared_omission/static_crowding_cover_slack.md)：任意客户关联的整数静态槽充分排除严格根低于theta；root[独立重构](parent/static_crowding_review.md)通过。K5完整SPE反例又否定普遍可支配，故仍缺跨客户Gamma支付。
-- [全人数删除停界](potential/population_deletion_boundary.md)：每个m均有同目录，所有m人SPE覆盖同一最优联合，而全部s<m人SPE必须根选联合外主题；[独立审查](security/population_review.md)通过。不是首次否定固定人数删除，也不是half反例。
-- [安全最优查询的真实尾列严格余量](security/strict_tail_menu_gap.md)：复用旧静态族，量化全部完整SPE根尾列；[独立审查](independent/strict_tail_review.md)通过，不反驳Mfull。
-- [祖先承诺重置义务](full_depth/ancestor_promises_and_reset.md)：已知小SPE的新cap诊断与无界继承违例；作者精确核验，未外审。
-- [新编译门槛实际判别](parent/root_regret_handoff.md)：230项固定tail锥精确证书未过新门槛；另对有效保险幅度h−M做固定输入诊断。有限范围与停止理由完整记录；不称一般安全或half证据。
-
-## 前轮留下的可选一般候选（不限制现行工作稿）
-
-原交接提出寻找旧root-only计划使 `OPT_old−2W_old>3Delta`，或证明相反的普遍robust不等式。常数三修复本身并非一般half证明或反例。全深度祖先门槛、聚合安全值、共享遗漏及删除闭包分别由各分支保存，成熟状态按具体独立攻击记录，不按人数投票。六分支已完成本轮交接，无后台常驻承诺。
-
-## 可复现材料
-
-`compiler/audit_padded_insurer.py`、其冻结JSON及m2..5完整联合证书；`independent/insurer_blind_audit.py/.json`独立全历史重建；`shared_omission/audit_credible_degree_two_flux.py/.json`定义级全树回放。各脚本参数和范围在正文，不以有限运行替代任意人数解析证明。
+个人备份不代替共享canonical账本；没有外审或全球新颖性认证。本轮五人搜索停止，所有研究员按实际完成交接，不承诺后台常驻。

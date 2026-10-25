@@ -1,10 +1,10 @@
 # 当前精确身份
 
-本轮用户明确限定五人。现行 [round8_five/CLAIMS.md](round8_five/CLAIMS.md) 区分原HALF5（OPEN）、共享最大hinge已证辅助关系、旧IC组合、末二信用及其OPEN充分桥、已知C2失败的明确五人实现。没有二倍证明或目标反例，未获得外审/新颖性认证。
+用户本轮目标HALF(5)已由原上传证明CA-FIVE-HALF-EXACT-v1闭合，并经本团队复跑和独立审查。当前[精确身份](round8_five/CLAIMS.md)及[完整复核](round8_five/imported_half5_check/README.md)区分来源与本轮贡献。一般人数仍OPEN，无外审/新颖性认证。
 
 以下旧一般Claim按各原量词保存。
 
-# 最新接续入口
+# 历史接续入口
 
 [round5_general/CLAIMS.md](round5_general/CLAIMS.md) 登记实际末位保税比较推论及未证 WEAK-LAST 付款；Q-CAG-HALF 仍 OPEN，没有新无条件福利界或目标反例。
 
