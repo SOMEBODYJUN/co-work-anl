@@ -55,6 +55,9 @@ Unless stated otherwise, theorems allow real data; rational input and output are
 
 A resource can have compulsory users: those whose every strategy contains it. Absorb their load $b_e$ into $\widehat c_e(z)=c_e(b_e+z)$. The function remains a nonnegative-coefficient polynomial of degree at most $d$. Its remaining potential users are those who can both use and omit the resource. A player may be compulsory on one resource and optional on another. Its compulsory resources are retained in every deviation, so this resourcewise preprocessing preserves all its comparisons. Zero-cost resources can be omitted from scale constraints.
 
+\subsection{Research process and AI assistance}
+OpenAI ChatGPT/Codex models, including GPT-6.1-sol review agents, assisted in exploring the finite-window construction and its parameter estimates, drafting and attacking proof arguments, writing exact rational audit code, and editing the exposition. The systems were directed to keep claim domains, quantifiers, and assumptions explicit; test all-state and boundary cases; distinguish finite checks from general proofs; and retain unresolved objections. The mathematical arguments appear in full below, and the audits serve only as checks of finite instances. The authors remain responsible for verifying the submitted work.
+
 
 \paragraph{Organization.}
 Section~\ref{sec:tools} develops the endpoint estimates, common player scales, weight-depth bound, and realization theorem. Section~\ref{sec:application} combines them into explicit all-state counterexamples and deduces the asymptotic threshold. Section~\ref{sec:positive} applies the tools to small shares and to the selection of stable states with social-cost guarantees. Appendix~\ref{app:construction} supplies the parameter estimates and the complete phase analysis for the construction.
@@ -84,7 +87,7 @@ where $C_{i,H}$ is the common cost of the resources retained by the player. Ever
 \begin{proof}
 Fix a unilateral deviation by player $i$. We apply the lower marginal bound to every deleted resource in its old user set, and the upper marginal bound to every added resource in its new user set. Retained resources have unchanged load and potential. Summing these inequalities gives $q_i(\beta C_{i,\mathrm{add}}-C_{i,\mathrm{del}})$, which equals the first expression in~\eqref{eq:masterdeviation}. A strict $\beta$ improvement therefore strictly decreases $\Phi$. Since the state space is finite, every such improvement path terminates, and a global minimum of $\Phi$ is a $\beta$-$\PNE$.
 \end{proof}
-The insistence on a common $q_i$ is essential to this summation. All positive tools in the paper construct such scales; the lower-bound construction exploits a different propagation of endpoint and area costs.
+The insistence on a common $q_i$ is essential to this summation. The potential constructions below choose such scales; the lower-bound construction exploits a different propagation of endpoint and area costs.
 
 \subsection{Endpoint costs and area estimates}\label{sec:area}
 The following estimate separates the mass in a window from its sampling resolution. It will control the cost transmitted between adjacent weight classes in Section~\ref{sec:application}.
@@ -126,7 +129,7 @@ The scalar relevant to propagation of a target factor $\alpha$ is
 \begin{equation}\label{eq:gamma}
  \Gamma=\frac{\alpha X-Y}{R(P-\alpha)}\qquad(P>\alpha).
 \end{equation}
-This expression will be instantiated by actual resource incidences in Appendix~\ref{app:construction}; at present it is a numerical contract. Define
+This expression will be instantiated by actual resource incidences in Section~\ref{sec:application}; at present it is a numerical contract. Define
 \[
  A_d(m)=\frac{(1+m)^{d+1}-1}{d+1},\qquad
  B_d(m)=\frac{m^{d+1}}{d+1}.
@@ -413,7 +416,7 @@ For $1\le\alpha<d$, there is also a witness interpretation for a cycle of strict
 \subsection{Realizing stability on a structured set of states}\label{sec:repair}
 The preceding potentials certify deviations throughout a given game. We now consider a complementary construction: first analyze deviations within a structured set of states, then add legal resources that exclude all other states. The added costs are part of the resulting game and must be included in its stability comparisons.
 
-Let a binary base game $G_B$ have ordered classes $\mathcal C_a=((a,0),\ldots,(a,n_a-1))$, with common weight $w_a>0$ inside each class. Let $F_n$ be the binary strings with at most one change between consecutive positions; we call these strings \emph{fronts} and put $\F=\prod_aF_{n_a}$. A \emph{core deviation} is a real single-player flip whose two endpoints both belong to $\F$. This restricted deviation system need not be a normal-form subgame because $\F$ need not be a Cartesian product over individual players.
+Let a binary base game $G_B$ have ordered classes $\mathcal C_a=((a,0),\ldots,(a,n_a-1))$, with common weight $w_a>0$ inside each class. Let $F_n$ be the binary strings with at most one change between consecutive positions; we call these strings \emph{fronts} and put $\F=\prod_aF_{n_a}$. Write $s^{\xor i}$ for the state obtained by flipping player $i$'s bit. A \emph{core deviation} is a real single-player flip whose two endpoints both belong to $\F$. This restricted deviation system need not be a normal-form subgame because $\F$ need not be a Cartesian product over individual players.
 
 \subsubsection{Legal gates and the complete stable set}
 We realize the front condition using resources shared by three players of the same weight.
@@ -534,7 +537,7 @@ All these definitions use only integer arithmetic, finite rational sums and powe
 The parameters determine a game directly: each player selects one side of every resource pair in which it participates.
 There are players $P_{a,j}$ with $0\le a\le g$ and $j\in\mathbb Z/N\mathbb Z$, of weight $w_a=R^{-a}$. Use representatives $j=0,\ldots,N-1$ and the global position $\pos(a,j)=j(g+1)+a$.
 
-A test $(a,b,k,o)$, $a<b$, has a pair of fresh resources $e_{\tau,j,0},e_{\tau,j,1}$ for each anchor $h=P_{a,j}$. The anchor's action bit selects its resource side. Its window users are $u=P_{b,j+t\bmod N}$ for $t=0,\ldots,k-1$. A window user with action bit $z_u$ selects side
+A test $\tau=(a,b,k,o)$, $a<b$, has a pair of fresh resources $e_{\tau,j,0},e_{\tau,j,1}$ for each anchor $h=P_{a,j}$. The anchor's action bit selects its resource side. Its window users are $u=P_{b,j+t\bmod N}$ for $t=0,\ldots,k-1$. A window user with action bit $z_u$ selects side
 \begin{equation}\label{eq:appincidence}
  z_u\xor\ind[\pos(u)>\pos(h)]\xor\ind[o=-1].
 \end{equation}
