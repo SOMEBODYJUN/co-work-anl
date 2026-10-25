@@ -1,5 +1,8 @@
 # 完整根终局菜单：混合防御义务与纯排序失败边界
 
+> **接续状态更正（2026-10-25）**：逐位置FM/Mfull≤u的旧候选已由[真正零根保险反族](../../R-d3981c0168644971803a9c3380ed687c/round5_general/security/global_extra_individual_counterfamily.md)否定；这不是旧任意背景反例的外推。保留minimax、静态比较及全路径Mpath开放义务，不把逐位置和聚合合同合并。 原稿保留为当时的研究记录；旧指令不覆盖当前用户目标。现行状态先查[研究接续材料](../../../../customer_attraction/SYNTHESIS.md)。
+
+
 2026-10-22，Boss10/induction研究checkpoint。一般Q-CAG-HALF仍OPEN；本文区分开放的混合菜单接口与本轮已击穿的加强路线，不把局部反例升级为half反例。没有外审或新颖性认证。
 
 ## 完整r槽菜单与准确的充分归约

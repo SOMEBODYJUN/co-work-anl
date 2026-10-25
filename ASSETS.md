@@ -10,6 +10,7 @@
 | 当前三角色和协作程序 | [Boss](research/customer_attraction/BOSS_START.md)、[清洗者](research/customer_attraction/CLEANER.md)、[整理者](research/customer_attraction/EDITOR.md)、[work.py](work.py) |
 | 数学身份、审查与依赖 | [精确账本](research/current/claims.md)、[review_status](research/review_status.json)、[资产合同](research/assets.json)、[研究图](research/index.html) |
 | 文件中文名称及读取条件 | [CATALOG](research/CATALOG.md)，由catalog.json生成 |
+| 两阶段任意设施数稿的逐段审查 | [审查跟踪](research/reviews/facility/multiple_facilities_appendix/appendix-review-tracker.md)与[正文入口](research/manuscripts/multiple_facilities/README.md)；局部审查原记录不成为客户吸引模型的half证明 |
 | 旧模型的独有成果 | [保留研究线](research/README.md)，包括设施、拥塞、调度和正占用核 |
 | 历史来源与本次退役文本 | [历史](history/README.md)、[清理记录](research/customer_attraction/CURATION.md) |
 

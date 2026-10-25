@@ -15,7 +15,7 @@
 | [成果总账](research/customer_attraction/RESULTS_LEDGER.md) / [来源库存](research/customer_attraction/WORKSPACE_RESULTS.md) | 追来源、查重与恢复旧尝试；库存不是默认阅读包 |
 | [规则](AGENTS.md) / [操作](research/customer_attraction/RUNBOOK.md) | 清洗、协作和持久化；统一使用根 work.py |
 
-定义 → 全历史真实 SPE 比较 → 已证组件 → **尚缺共同付款** → 一般半覆盖。三人锐 `5/3`、四人 `1499/750<2` 及若干无界人数结构类已有内部证明；五人现有一般上界约 `2.061695>2`。这些没有推出任意人数、任意目录结论。失败的辅助桥也没有否定原目标。
+定义 → 全历史真实 SPE 比较 → 已证组件 → **尚缺共同付款** → 一般半覆盖。三人锐 `5/3`、四人 `1499/750<2` 及若干无界人数结构类已有内部证明；五人共享437行界约 `2.061695`，另有个人557行独立全域对偶上界约 `2.042155>2`（准确审查边界见前沿）。这些没有推出任意人数、任意目录结论。失败的辅助桥也没有否定原目标。
 
 其他模型独立保留：[研究总目录](research/README.md)、[不相关机](research/unrelated_machines/CLAIMS.md)、[加权拥塞](research/weighted_congestion_frontier/CLAIMS.md)、[共同目录设施与英文稿](research/manuscripts/README.md)、[拥塞决策方法](research/current/weighted_congestion/decision_methods/README.md)、[拥塞结构重构](research/current/weighted_congestion/structural_reconstruction/README.md)。它们不是本题的新任务或可直接导入的定理。
 

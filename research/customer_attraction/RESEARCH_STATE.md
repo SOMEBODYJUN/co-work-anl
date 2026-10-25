@@ -7,7 +7,9 @@
 | 结果 | 准确边界与正文 |
 | --- | --- |
 | 三人锐 `5/3`，四人 `1499/750<2` | 任意目录、全部完整历史纯 SPE；[三人](../current/customer_attraction/three_player_sharp.md)、[四人](../current/customer_attraction/four_player_bound.md) |
-| 五人上界约 `2.06169478572>2` | [精确有理界](../current/customer_attraction/five_player_indexed_bound.md)；既定必要条件 LP 的二以上坏点不是完整 SPE，不是目标反例 |
+| 五人共享437行旧界约 `2.06169478572>2` | [原Claim与精确界](../current/customer_attraction/five_player_indexed_bound.md)，不把后来常数静默换进旧ID |
+| 五人个人557行，独立全域对偶已审 | `β557=178528430822287579296070598592537012737/87421565922360356032366460363114422206≈2.042155490337931>2`；[独立审查](../workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_independent/full_pricing_review.md)支持任意五人共同目录/完整历史SPE上界。该独审不接受匹配primal最优性；远端前批已重放，本批只核原文和范围 |
+| 五人个人728行，作者证书层 | `β728=903491829723556246762087795616829492745/442437259121664928475146048173419016656≈2.042078986560006>2`；[作者证书](../workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round5_pricing/README.md)、[父方审查边界](../workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round5_parent/README.md)未独立接受全域对偶。模板坏点均不是完整SPE或目标反例 |
 | 无界人数的若干已解子类 | 至多六极大覆盖、层级关联、极端关联、受控分数覆盖、最优遗漏全私有、部分末两人路径条件；[逐项范围表](../current/customer_attraction/README.md#已有地基与未闭合范围)。条件仍承重，不外推一般目录 |
 
 这些结果有各自的内部证明/审查范围；没有因本轮清理获得外审或新颖性认证。已有特例供引用，新研究仍面向一般人数、一般目录。
@@ -43,6 +45,8 @@
 | 删除/水位/中继 | 同叶守恒和有条件可信修复可用；真实重置、旧玩家返还及跨枝共享信用未付 | [工作稿§6](../current/customer_attraction/general_half_proof.md)、[正确尾删除账](../workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/global/aggregate_tail_deletion_identity.md) |
 
 ## 不能复活的加强与下一动作
+
+冻结实际前缀的 `P+λΔ≥freshOPT` 也已由[52客户真实根SPE](../workspaces/customer-attraction/R-5c4f6385eec046eb9a20052facacba11/background/global_actual_prefix_counterexample.md)反驳，不能把“新增覆盖＋后继总收益”当作已证归纳。
 
 逐位置 `Mfull_i≤u_i`、逐人安全值、强弱 iid 福利桥、固定实际缩放精确税桥均已 **FALSE**；`M_path≤W/m`、真正 v_m 聚合与原 half 仍 **OPEN**。非根 relay 必须保留旧玩家利润变化。准确失败范围、反例与重试条件见[失败机制](FAILED_ROUTES.md)。
 

@@ -1,4 +1,6 @@
-# 顺序客户吸引个人区：完整文件盘点与恢复导航
+# 顺序客户吸引个人区：有截止的盘点与按需恢复
+
+**现行恢复说明：** 本页旧“全部”指文中明确截止的冻结盘点，不是最新HEAD全部个人区，更不是全部证明已审。下一轮不默认读本长表。最新清理覆盖、按actor恢复路由和旧OPEN冲突见[清理记录](CURATION.md)及[本轮机器路由](context_inventory.json)；现行数学状态先查[短接续材料](SYNTHESIS.md)、[前沿](RESEARCH_STATE.md)和精确正文。以下历史阅读范围和哈希原样保留，避免把本轮筛查冒称为早轮或全数学复核。
 
 > **库存截止与本轮读取范围**：下文“全部74个actor”和机器JSON是原批次冻结库存（含其后4130文件截止增量），不是现存全量。本轮2026-10-25另盘点114个工作区入口（包含本轮新建工作区），六名清洗分支中的两名已全文读取其114份顶层README并定点追近期正文/Claim；没有逐篇审核6154余文件或重放全部代码。当前数学接续从[短入口](README.md)及[前沿](RESEARCH_STATE.md)选机制，不能从本页旧OPEN标签恢复候选状态。原清单、哈希和证据保持原截止；缺失入口、未审正文和四处个人导航断链见[本轮清理记录](CURATION.md)。
 
@@ -52,7 +54,7 @@
 
 下列是合并阅读和查重建议，不删原件，不把同一大路线的不同命题强合并。
 
-- **静态PNE/CCE与iid Nash值的不同支付桥**（[3b6b03db](../workspaces/customer-attraction/R-3b6b03db882e4de48cfa5b406f57ef8f/README.md)、[6cfe7c79](../workspaces/customer-attraction/R-6cfe7c79118a41f6bd5659aa5d780852/README.md)、[acd97406](../workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/README.md)、[d321c149](../workspaces/customer-attraction/R-d321c149379b425493c5e8a5e03c6f39/README.md)、[7e9f44be](../workspaces/customer-attraction/R-7e9f44beea424d469713364afe7dd180/README.md)、[fc335927](../workspaces/customer-attraction/R-fc3359276dfd40798e003ae879bde525/README.md)）：八/十三客户是不同实例；强W≥Z_m为既有CCE直接推论。个人区另精确声明反驳W≥(1−1/(2m))Z_m，与共享该式仍OPEN有明确状态冲突；不能只按“弱iid”名称合并。精确对象与来源见下一段，本轮已由root和独立审查核准，见共享§1.2。
+- **静态PNE/CCE与iid Nash值的不同支付桥**（[3b6b03db](../workspaces/customer-attraction/R-3b6b03db882e4de48cfa5b406f57ef8f/README.md)、[6cfe7c79](../workspaces/customer-attraction/R-6cfe7c79118a41f6bd5659aa5d780852/README.md)、[acd97406](../workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/README.md)、[d321c149](../workspaces/customer-attraction/R-d321c149379b425493c5e8a5e03c6f39/README.md)、[7e9f44be](../workspaces/customer-attraction/R-7e9f44beea424d469713364afe7dd180/README.md)、[fc335927](../workspaces/customer-attraction/R-fc3359276dfd40798e003ae879bde525/README.md)）：八/十三客户是不同实例；强W≥Z_m为既有CCE直接推论。个人区另精确声明反驳W≥(1−1/(2m))Z_m，与当时共享该式仍OPEN有明确状态冲突（下文已纠正）；不能只按“弱iid”名称合并。精确对象与来源见下一段，本轮已由root和独立审查核准，见共享§1.2。
 - **覆盖矩空间与稀疏化**（[2fc8878b](../workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/README.md)、[44b24f39](../workspaces/customer-attraction/R-44b24f3962bd4f68a4b6913610c0d417/README.md)、[acd97406](../workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/README.md)）：44b明确与共享主空间/稀疏化重合，保留独立重构来源，不重复认领新增。
 - **唯一最优遗漏71客户**（[171cd7d5](../workspaces/customer-attraction/R-171cd7d518434f36a48cd50df29c9303/README.md)、[d22a706a](../workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/README.md)）：正文已确认同一71客户证书并行同证书/独立重现；保留来源和独立审计，一份数学身份。
 - **无固定利润Bellman系数**（[18e993ca](../workspaces/customer-attraction/R-18e993ca519949aba29e030d3d7b15b3/README.md)、[b6d636d3](../workspaces/customer-attraction/R-b6d636d360e14c11aeb4b76415ed422b/README.md)、[d22a706a](../workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/README.md)、[75bfd8f0](../workspaces/customer-attraction/R-75bfd8f0f91740408bf08f0c9f5e2aa1/README.md)）：b6归属旧18e；d22的17/6障碍后被all-big无界加强；非可加直方图信用是不同更宽合同。

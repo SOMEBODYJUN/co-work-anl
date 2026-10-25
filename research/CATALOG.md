@@ -95,8 +95,8 @@
 | [全历史半覆盖的失效桥与重试条件](<customer_attraction/FAILED_ROUTES.md>) | `research/customer_attraction/FAILED_ROUTES.md` | 按数学机制说明根税、逐人保底、局部非负和模板坏点的失败范围及保留信息。 | 阅读导航；真值查精确正文及账本 |
 | [保留问题的已解开放失效与暂停分诊](<customer_attraction/RETAINED_QUESTIONS.md>) | `research/customer_attraction/RETAINED_QUESTIONS.md` | 把一般目标、辅助义务、已答子题及其它模型未解问题分流，不把旧任务重新派发。 | 阅读导航；真值查精确正文及账本 |
 | [Boss直接攻一般半覆盖的短提示词](<customer_attraction/BOSS_START.md>) | `research/customer_attraction/BOSS_START.md` | 唯一Boss完整复制块；自由带团队研究，写清全历史量词、恢复和阶段保存，不设前置审核。 | 阅读导航；真值查精确正文及账本 |
-| [清洗者的数学检查与自足入库提示词](<customer_attraction/CLEANER.md>) | `research/customer_attraction/CLEANER.md` | 检查承重推导和真实异议，修订正文及身份、证据、目录与依赖，探索不等待批准。 | 阅读导航；真值查精确正文及账本 |
-| [整理者的独立成稿与贡献表达提示词](<customer_attraction/EDITOR.md>) | `research/customer_attraction/EDITOR.md` | 扣除前人贡献后判断拆合文章与价值，准确突出新增机制并推进实际稿件。 | 阅读导航；真值查精确正文及账本 |
+| [数学身份、失效机制与输入质量的清洗者任务](<customer_attraction/CLEANER.md>) | `research/customer_attraction/CLEANER.md` | 检查原命题量词、推导、证据和异议，纠正旧OPEN，合并重复并区分盘点、阅读、数学复核与重放范围。 | 阅读导航；真值查精确正文及账本 |
+| [为下一轮研究组织准确输入的整理者任务](<customer_attraction/EDITOR.md>) | `research/customer_attraction/EDITOR.md` | 维护短接续上下文、按需来源和真实贡献层级，使用不继承历史的阅读检查，不以包装代替数学闭合。 | 阅读导航；真值查精确正文及账本 |
 | [一般半覆盖三角色的统一启动通信与保存](<customer_attraction/RUNBOOK.md>) | `research/customer_attraction/RUNBOOK.md` | 集中维护根work.py启动、角色回执、公屏私聊、工作区、检查和安全checkpoint命令。 | 阅读导航；真值查精确正文及账本 |
 | [一般半覆盖切换中的实际清理与保留依据](<customer_attraction/CURATION.md>) | `research/customer_attraction/CURATION.md` | 列出替换重复入口、归档旧角色和保留独有数学的理由，连接原字节hash与核验合同。 | 阅读导航；真值查精确正文及账本 |
 | [顺序均衡福利低于全部静态Nash福利的完整反例](<current/customer_attraction/worst_pne_welfare_counterexample.md>) | `research/current/customer_attraction/worst_pne_welfare_counterexample.md` | 十六单位客户的完整SPE比同实例每个静态PNE福利都低；排除借另一较差静态均衡导入的福利桥，保留一般半覆盖开放。 | 反例；仅否定正文明确的命题；关联 `CA-ACTUAL-ROOT-TAIL-MENU-NO`、`CA-ADAPTIVE-DECORRELATION-NO`、`CA-ADAPTIVE-TYPE-SPARSIFICATION`，[命题合同（共 77 项）](assets.json) |
@@ -122,11 +122,12 @@
 | [分数尾部水位化的全目录共同信用与利润守恒](<current/customer_attraction/fractional_tail_waterfill.md>) | `research/current/customer_attraction/fractional_tail_waterfill.md` | 任意有限尾部终局的辅助降权代数：同一权重同时控制所有查询返还，明确单位收益、质量利润及SPE不可免费继承。 | 数学正文；按关联命题分别核对证明及审查；关联 `CA-FRACTIONAL-TAIL-WATERFILL-v1`，[命题合同](assets.json) |
 | [分数尾部水位化共同信用的盲独立审查](<reviews/customer_attraction/fractional_tail_waterfill.md>) | `research/reviews/customer_attraction/fractional_tail_waterfill.md` | 核查零端点、支撑、单遍性、全子集共同池、背景返还和无理水位；独立范围限于核心引理。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-FRACTIONAL-TAIL-WATERFILL-v1`，[命题合同](assets.json) |
 | [顺序客户吸引全部共享成果的精确总账](<customer_attraction/RESULTS_LEDGER.md>) | `research/customer_attraction/RESULTS_LEDGER.md` | 逐份区分全范围组件、条件定理、开放候选、表示工具与桥梁反例，保留真实审查等级。 | 精确命题登记；摘要不替代原陈述 |
-| [一般半覆盖的现有论证衔接与存量成果归并](<customer_attraction/SYNTHESIS.md>) | `research/customer_attraction/SYNTHESIS.md` | 把既有一般关系连成连续论证，说明特殊范围资产的保留位置以及真正尚未闭合的承重步骤。 | 阅读导航；真值查精确正文及账本 |
-| [全部顺序客户吸引个人区成果恢复总索引](<customer_attraction/WORKSPACE_RESULTS.md>) | `research/customer_attraction/WORKSPACE_RESULTS.md` | 按实际Git快照清点全部个人资产并给出恢复导航，区分入口阅读与未复审正文。 | 阅读导航；真值查精确正文及账本 |
+| [一般半覆盖下一轮研究的短接续材料](<customer_attraction/SYNTHESIS.md>) | `research/customer_attraction/SYNTHESIS.md` | 默认读取精确模型、可用关系、失败加强和未决义务；需要证明时再取唯一原文及实际审查，不递归灌入全部资料。 | 阅读导航；真值查精确正文及账本 |
+| [有截止的个人区盘点与按需恢复索引](<customer_attraction/WORKSPACE_RESULTS.md>) | `research/customer_attraction/WORKSPACE_RESULTS.md` | 核对旧快照截止与来源阅读范围，并从当期路由找未整合资产；不把旧全部标签或个人OPEN当现行真值。 | 阅读导航；真值查精确正文及账本 |
 | [一般半覆盖证明工作稿：通用关系与未闭合步骤](<current/customer_attraction/general_half_proof.md>) | `research/current/customer_attraction/general_half_proof.md` | 自足衔接任意人数任意目录的既有关系和精确充分候选，逐式标明未证动态支付而不宣称目标完成。 | 数学正文；按关联命题分别核对证明及审查；关联 `CA-PREFIX-COUPLED-SEAT-BUDGET-v1`、`Q-CAG-HALF`，[命题合同](assets.json) |
 | [最优首动作菜单的真实孩子覆盖缺口与共同信用](<current/customer_attraction/optimal_first_action_branch_gap.md>) | `research/current/customer_attraction/optimal_first_action_branch_gap.md` | 一般人数、一般目录的机会损失递归组件；使用ρ折扣前读取全部非负信用、原历史身份和仍未闭合的跨孩子总预算。 | 数学正文；按关联命题分别核对证明及审查；关联 `CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1`，[命题合同](assets.json) |
 | [最优首动作真实孩子缺口恒等式的独立解析审查](<reviews/customer_attraction/optimal_first_action_branch_gap.md>) | `research/reviews/customer_attraction/optimal_first_action_branch_gap.md` | 从定义重构菜单、同尾覆盖差、分享余项和真实IC；区分一般关系通过与half总预算尚未证明。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-OPTIMAL-FIRST-ACTION-BRANCH-GAP-v1`，[命题合同](assets.json) |
+| [当前基线的材料分区、个人区恢复与状态更正路由](<customer_attraction/context_inventory.json>) | `research/customer_attraction/context_inventory.json` | 按明确Git截止查全部个人区根入口与哈希、旧状态覆盖和一般组件来源；区分全仓盘点、入口筛查与数学审查，不作为默认上下文。 | 阅读导航；真值查精确正文及账本 |
 
 <a id="unrelated_machines"></a>
 

@@ -1,5 +1,8 @@
 # 一般半覆盖：真实分支的共同支付与候选安全值接口
 
+接续前先读[短上下文](../customer_attraction/SYNTHESIS.md)。冻结实际前缀的后继总收益P加新增覆盖Δ支付freshOPT的加强，已被[52客户完整根SPE实际前缀](../workspaces/customer-attraction/R-5c4f6385eec046eb9a20052facacba11/background/global_actual_prefix_counterexample.md)否定；P=17、Δ=0、freshOPT₂=18，任意固定系数P+λΔ也不能修复。保留旧玩家信用的一般half仍OPEN。
+
+
 研究存档：customer-attraction；目标身份：Q-CAG-HALF。
 
 本页是 **Q-CAG-HALF** 的短数学义务，不是角色提示词、路线审批或指定方法。[一般目标](customer_attraction_half_coverage.md)仍 OPEN；任意人数、任意有限共同目录、每个完整历史依赖纯 SPE 的量词不变。旧两份长提示词移入[历史原件](../../history/research_operations/customer_attraction_general_handoff_2026_10_10.md)，其中相对链接按原 research/questions 目录解释。

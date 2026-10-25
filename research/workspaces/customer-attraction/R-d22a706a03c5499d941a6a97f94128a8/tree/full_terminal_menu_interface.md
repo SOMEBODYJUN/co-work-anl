@@ -1,5 +1,8 @@
 # 完整 r 槽真实菜单：minmax接口与一个精确非分离核对
 
+> **接续状态更正（2026-10-25）**：逐位置FM/Mfull≤u的旧候选已由[真正零根保险反族](../../R-d3981c0168644971803a9c3380ed687c/round5_general/security/global_extra_individual_counterfamily.md)否定；这不是旧任意背景反例的外推。保留minimax、静态比较及全路径Mpath开放义务，不把逐位置和聚合合同合并。 原稿保留为当时的研究记录；旧指令不覆盖当前用户目标。现行状态先查[研究接续材料](../../../../customer_attraction/SYNTHESIS.md)。
+
+
 2026-10-22；一般 Q-CAG-HALF 仍 OPEN。本页把新一般义务写准，并核对一个已存在实例；未证明该义务。
 
 ## 1. 完整终局菜单及精确分离形式

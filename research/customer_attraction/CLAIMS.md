@@ -27,7 +27,8 @@
 | --- | --- | --- |
 | `CA-THREE-SHARP-5-3` | [三人锐界](../current/customer_attraction/three_player_sharp.md)：\(\operatorname{OPT}_3\le(5/3)W\)，有匹配下界 | 恰三人；不是任意人数定理 |
 | `CA-FOUR-UPPER-1499-750` | [四人一般目录上界](../current/customer_attraction/four_player_bound.md)：\(\operatorname{OPT}_4\le(1499/750)W\)，其中 \(1499/750<2\) | 恰四人；未证常数尖锐 |
-| `CA-FIVE-INDEXED-UPPER` | [五人索引偏离上界](../current/customer_attraction/five_player_indexed_bound.md)：\(\operatorname{OPT}_5\le\beta W\)，\(\beta\approx2.06169478572>2\) | 未达到半覆盖；`\beta` 的精确有理数以原文为准 |
+| 个人区557行独立已审上界（尚未沿用共享ID） | [独立全域对偶](../workspaces/customer-attraction/R-c4732bee2f7b4e50a70568170e3334ae/round4_independent/full_pricing_review.md)支持OPT₅≤β₅₅₇W，β₅₅₇≈2.042155490337931>2；精确分数见[前沿](RESEARCH_STATE.md) | 同一五人一般目录/完整历史量词；该独审只接受对偶上界，不接受匹配primal最优性；无新外审或一般half |
+| `CA-FIVE-INDEXED-UPPER` | [五人共享旧索引上界](../current/customer_attraction/five_player_indexed_bound.md)：\(\operatorname{OPT}_5\le\beta W\)，\(\beta\approx2.06169478572>2\) | 未达到半覆盖；`\beta` 的精确有理数以原文为准 |
 | `CA-SIX-MAXIMA-HALF` | [六极大联合预算](../current/customer_attraction/six_maxima_joint_bound.md)：任意人数半覆盖 | 至多六个不同包含极大覆盖；内部子主题与关联可以任意 |
 | `CA-SEVEN-MAXIMA-N7-PLUS` | [七极大来源证明](../current/customer_attraction/seven_maxima_checkpoint.md)：七人以上 \(U=\operatorname{OPT}_m\le2W\) | 恰七个极大覆盖、\(m\ge7\)；来源证明完整且已内审，现行页只是依赖概述；\(m=5,6\) 仍缺分支 |
 | `CA-LAMINAR-INCIDENCE-MAXIMA-2M1` | [层级关联锐界](../current/customer_attraction/laminar_incidence_bound.md)：带共同核心的 \(2-1/m\) 界 | 客户的极大主题关联为层级族；不等于一般目录 |

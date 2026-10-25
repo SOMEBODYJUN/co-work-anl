@@ -1,5 +1,8 @@
 # Boss10：一般半覆盖的真实分支支付
 
+> **接续状态更正（2026-10-25）**：逐位置FM/Mfull≤u的旧候选已由[真正零根保险反族](../R-d3981c0168644971803a9c3380ed687c/round5_general/security/global_extra_individual_counterfamily.md)否定；这不是旧任意背景反例的外推。保留minimax、静态比较及全路径Mpath开放义务，不把逐位置和聚合合同合并。 原稿保留为当时的研究记录；旧指令不覆盖当前用户目标。现行状态先查[研究接续材料](../../../customer_attraction/SYNTHESIS.md)。
+
+
 目标 **Q-CAG-HALF** 仍 **OPEN**。采用 [CAG-MODEL](../../../current/customer_attraction/model.md)：有限单位客户、共同有限非空目录、任意人数、每个完整有序历史纯 SPE；重复、空主题、任意平局、零客户均保留。
 本 clone 由附件程序恢复 main 后生成本目录身份，复用实际仓库状态；六名指定 gpt-6.1-sol ultra 研究员并行，root 独立检查及汇总提交。旧 Boss10 目录只作为已有资产来源。
 

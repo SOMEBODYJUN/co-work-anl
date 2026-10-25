@@ -306,6 +306,9 @@ def visit(repo, env, save, who, path="README.md"):
 
 
 def start(args):
+    board_limit = getattr(args, "board_limit", 0)
+    if board_limit < 0:
+        raise Stop("start --board-limit 必须是非负整数；0 表示不自动读取公屏。")
     repo = Path(args.repo).expanduser().resolve()
     if not (repo / ".git").exists():
         if repo.exists() and any(repo.iterdir()):
@@ -360,10 +363,13 @@ def start(args):
     }))
     result.update(role=selected_role,
                   role_prompt=ROLE_PROMPTS[selected_role] if selected_role else None)
-    result["communication"] = {"read_on_demand": "python3 work.py read --limit 3",
-                               "note": "start restores research state; read discussion only when needed"}
+    if save == "customer-attraction":
+        result["context_entry"] = "research/customer_attraction/README.md"
+    result["recent_board_limit"] = board_limit
     print(json.dumps(result, ensure_ascii=False), flush=True)
-    return 0
+    if not board_limit:
+        return 0
+    return board(repo, env, "view", ["--save", save, "--limit", str(board_limit)])
 
 
 def board(repo, env, command, extra):
@@ -386,13 +392,15 @@ def main():
     p.add_argument("--token-file")
     p.add_argument("--save", help="研究存档 ID；首次默认 customer-attraction，已绑定 clone 保持原存档")
     sub = p.add_subparsers(dest="command", required=True)
-    s = sub.add_parser("start", help="恢复项目，固定角色号并同步；公屏按需read")
+    s = sub.add_parser("start", help="恢复项目，固定角色号并同步；公屏按需读取")
     s.add_argument("--actor", help="可选；省略时为本对话生成并记住唯一 R-UUID 发布标识")
     s.add_argument("--role", choices=tuple(ROLE_PROMPTS), help="首次默认 boss；独立clone绑定一个角色")
     s.add_argument("--token-file", default=argparse.SUPPRESS)
     s.add_argument("--remote", default=REMOTE)
     s.add_argument("--save", default=argparse.SUPPRESS)
     s.add_argument("--resume", action="store_true", help="明确接续已存在的同号工作区")
+    s.add_argument("--board-limit", type=int, default=0,
+                   help="启动时读取最近几条公屏；默认0不自动读取，完整历史用read按需查询")
     sub.add_parser("sync", help="同步 main 并保留本地工作")
     r = sub.add_parser("read", help="读取异步公屏")
     r.add_argument("--json", action="store_true")
