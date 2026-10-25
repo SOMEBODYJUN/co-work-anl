@@ -28,3 +28,12 @@
 ## 后续独立审查
 
 `universal_signed_certificate_independent_review.md`：盲重构并攻击固定任意 m 的“half iff 存在仅依 m、非负且总和不超过 2m-1 的通用 signed 前缀价格”表示。全树编译、严格银行、实系数有理化、无限锥闭包及分离归一化均未发现致命异议；未提供价格向量或 half 证明。
+
+2026-10-25：上述同一review第9节完成作者最终正文§1–6的全文补审，包括marked K、有限Farkas、BAL完整上/下界、optional安全值加法与[0,1]域；未发现致命异议，范围仅等价表示及这些必要约束。
+
+2026-10-25 后续短审查：
+
+- `lower_price_domain_independent_review.md`：root提出的主half必要下域 `sum(1-lambda)_+<=1`，全参数M=1及完整history证明无致命异议；只否定不满足此域的具体通用价格。
+- `strong_security_exact_M_independent_review.md`：实际通读mixed/next_general.md §1–9，供给组件整数安全值、全1安全价格唯一性及任意累计违例的有限强聚合反例编译无致命异议；没有种子或half结论。
+
+2026-10-25 signed修复补审：`signed_repair_independent_review.md`，先盲重构后实际审mixed/signed_credible_repair.md §1–9；两批层组件的真实signed编译、精确B成本、K_pm支持函数及限定在线性sum-g规则下的有限字典LP最小性无致命异议。没有坏点或普遍付款。
