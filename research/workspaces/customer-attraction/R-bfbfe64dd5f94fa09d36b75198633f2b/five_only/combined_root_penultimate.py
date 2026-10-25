@@ -11,20 +11,24 @@ HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE))
 import actual_root_copies as copies
 import ap_binary_pricing as ap
+from weighted_root_saturation_check import PAIRS
 old=copies.old;ROOT=copies.ROOT;ROOTS=copies.ROOTS;PATHS=copies.PATHS
 LABELS=copies.LABELS;STATES=copies.STATES;TAILS=copies.TAILS;FIRST=copies.FIRST
 
 def saturation_rows(a,exact=True):
     Q=old.EX['q'] if exact else old.VE['q']
     b=list(map(int,a['bits']));r=Q(b[0],sum(b[:5]));d=sum(a['AB_hist'][4:]);o=int(d>0)
-    rr={f'Saturation:C:{lab}':80*r-F(71,5)*v-o for lab,v in zip(LABELS,b)}
-    rr['Saturation:opt']=400*r-F(71,5)*d-5*o
-    for fi,pn in enumerate(PATHS):rr['Saturation:L:'+pn]=400*r-F(71,5)*a['menus_lh'][fi][0]-5*o
-    for src in ROOTS:
-        for j,x in enumerate(a['copies'][src]):rr[f'Saturation:copy:{src}:{j}']=80*r-F(71,5)*x-o
-    for j,m in enumerate(ap.RPOS[1:],1):
-        cc=sum(n*int(t[j]) for n,t in zip(a['root_hist'],ap.TYPES))
-        rr['Saturation:rootmenu:'+m]=400*r-F(71,5)*cc-5*o
+    rr={}
+    for gi,(B,C) in enumerate(PAIRS):
+        tag=f'Saturation{gi}:'
+        rr.update({tag+'C:'+lab:B*r-C*v-o for lab,v in zip(LABELS,b)})
+        rr[tag+'opt']=5*B*r-C*d-5*o
+        for fi,pn in enumerate(PATHS):rr[tag+'L:'+pn]=5*B*r-C*a['menus_lh'][fi][0]-5*o
+        for src in ROOTS:
+            for j,x in enumerate(a['copies'][src]):rr[tag+f'copy:{src}:{j}']=B*r-C*x-o
+        for j,m in enumerate(ap.RPOS[1:],1):
+            cc=sum(n*int(t[j]) for n,t in zip(a['root_hist'],ap.TYPES))
+            rr[tag+'rootmenu:'+m]=5*B*r-C*cc-5*o
     return rr
 
 class Universe(copies.Universe):
@@ -37,16 +41,17 @@ class Universe(copies.Universe):
         fake={'bits':'0000000000','AB_hist':[5,0,0,0,0,0,0,0],'menus_lh':[(0,0)]*3,'copies':{s:[0]*TAILS[s] for s in ROOTS},'root_hist':[5]+[0]*31}
         self.satnames=list(saturation_rows(fake));self.satids=list(range(len(self.names),len(self.names)+len(self.satnames)))
         self.names+=self.satnames
-        st=np.zeros((1024,6,len(self.satnames)),dtype=np.int64)
+        st=np.zeros((1024,6,len(self.satnames)),dtype=float)
         for bi,bits in enumerate(self.bits):
             r=old.q(bits[0],sum(bits[:5]))
             for d in range(6):
                 for ni,n in enumerate(self.satnames):
-                    if n.startswith('Saturation:C:'):v=80*r-F(71,5)*bits[LABELS.index(n.split(':')[-1])]-int(d>0)
-                    elif n=='Saturation:opt':v=400*r-F(71,5)*d-5*int(d>0)
-                    elif n.startswith('Saturation:copy:'):v=80*r-int(d>0)
-                    else:v=400*r-5*int(d>0)
-                    st[bi,d,ni]=old.sc(v)
+                    group,kind,*detail=n.split(':');B,C=PAIRS[int(group[len('Saturation'):])]
+                    if kind=='C':v=B*r-C*bits[LABELS.index(detail[0])]-int(d>0)
+                    elif kind=='opt':v=5*B*r-C*d-5*int(d>0)
+                    elif kind=='copy':v=B*r-int(d>0)
+                    else:v=5*B*r-5*int(d>0)
+                    st[bi,d,ni]=120*float(v)
         self.ST=st
         print(json.dumps({'combined_rows':len(self.names),'new_optimal_root_rows':len(self.root_names)}),flush=True)
     def atom_rows(self,a,exact=True):
@@ -71,8 +76,8 @@ class Universe(copies.Universe):
         for src in ROOTS:
             ww=np.asarray(lam)[self.cids[src]];ids=np.flatnonzero(np.abs(ww)>1e-11)
             score=np.tensordot(self.CT[src][...,ids],ww[ids],axes=([-1],[0])) if len(ids) else np.zeros((1024,6,len(STATES[src])))
-            satq=np.asarray([lam[self.names.index(f'Saturation:copy:{src}:{j}')] for j in range(TAILS[src])])
-            if np.any(satq):score-=float(F(71,5)*120)*(np.asarray(STATES[src])@satq)[None,None,:]
+            satq=np.asarray([sum(float(C*120)*lam[self.names.index(f'Saturation{gi}:copy:{src}:{j}')] for gi,(B,C) in enumerate(PAIRS)) for j in range(TAILS[src])])
+            if np.any(satq):score-=(np.asarray(STATES[src])@satq)[None,None,:]
             CE=np.zeros((1024,len(STATES[src]),3))
             for i in range(FIRST[src],5):
                 for fi,pn in enumerate(PATHS):
@@ -90,7 +95,7 @@ class Universe(copies.Universe):
             bm=dict(zip(LABELS,bits))
             for fi,(pn,z) in enumerate(PATHS.items()):
                 pp=sum(bm[x] for x in z[:3]);ww=float(np.sum(np.asarray(lam)[self.menu_weight_indices[pn]]))
-                E[:,fi]-=float(F(71,5)*120)*lam[self.names.index("Saturation:L:"+pn)]
+                E[:,fi]-=sum(float(C*120)*lam[self.names.index(f"Saturation{gi}:L:"+pn)] for gi,(B,C) in enumerate(PAIRS))
                 E[:,fi]+=ww*int(old.sc(old.q(1,pp+1)))
                 H[:,fi]-=ww*int(old.sc(old.q(1,(pp+1)*(pp+2))))
             for tag in fam:
@@ -104,7 +109,7 @@ class Universe(copies.Universe):
                     cache[key]=(np.asarray(vals),idx)
                 vals,idx=cache[key];fs.append(vals+const);choices.append(idx);E+=me.T;H+=mh.T
             rk,rc,co,me,mh=self.root_engine.root_score(bits,rw)
-            for m in ap.RPOS[1:]:co['count:'+m]-=float(F(71,5)*120)*lam[self.names.index('Saturation:rootmenu:'+m)]
+            for m in ap.RPOS[1:]:co['count:'+m]-=sum(float(C*120)*lam[self.names.index(f'Saturation{gi}:rootmenu:'+m)] for gi,(B,C) in enumerate(PAIRS))
             rk=tuple(sorted((n,v) for n,v in co.items() if v))
             if rk not in rcache:rcache[rk]=self.root_engine.root_price(co)
             rv,ri=rcache[rk];fs.append(rv+rc);E+=me.T;H+=mh.T
@@ -129,7 +134,7 @@ class Universe(copies.Universe):
 
 def key(a):return copies.key(a)+(tuple(a['root_hist']),)
 def run(maxiter=50):
-    U=Universe();target=HERE/'combined_root_saturation_search.json'
+    U=Universe();target=HERE/'weighted_saturation_half_search.json'
     source=HERE/'penultimate_branch_half_search.json'
     warm=json.loads((target if target.exists() else source).read_text())
     atoms=[];cols=[];keys=set();ws=[];os=[]
@@ -157,7 +162,7 @@ def run(maxiter=50):
         x=U.atom_rows(a);y=U.atom_rows(a,False)
         assert max(abs(float(x[n])-float(y[n])) for n in U.names)<1e-8
     print(json.dumps({'initial_columns':len(atoms),'exact_fast_rows':'passed'}),flush=True)
-    provenance={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),Path(copies.__file__),Path(ap.__file__),HERE/'_aligned_rows_safe.py',Path(ap.aligned.__file__),Path(ap.base.__file__),Path(old.__file__),ROOT/'research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/root_saturation.md']}
+    provenance={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),Path(copies.__file__),Path(ap.__file__),HERE/'_aligned_rows_safe.py',Path(ap.aligned.__file__),Path(ap.base.__file__),Path(old.__file__),ROOT/'research/workspaces/customer-attraction/R-acd97406d8c4409d962eab2adcdc520c/root_saturation.md',HERE/'weighted_root_saturation.md',HERE/'weighted_root_saturation_check.py']}
     history=[]
     for it in range(maxiter):
         t=time.time();mat=np.asarray(cols).T;scale=np.maximum(1.,np.max(np.abs(mat),axis=1))
