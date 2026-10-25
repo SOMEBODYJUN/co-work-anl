@@ -158,3 +158,29 @@ independent v2/v3在同一固定packet改变已证允许的初始化/共同边�
 - **B10-ARBITRARY-BACKGROUND-PUSHFORWARD-NO-v1**：任意合法背景全称版本WP、SELF及完整真实菜单Mfull≤u均已被旧round5 PB构造否定；此是旧证据直接后果，非新游戏。空背景SELF另早有旧34客户反例，本轮单位客户独立重放；空背景弱WP/自由Mfull及actual-prefix专用桥仍OPEN。正文[域纠正](round9/parent/background_pushforward_status_correction.md)、[旧SELF恢复](round9/credible/root_covariance_and_background_domains.md)。
 
 Q-CAG-HALF仍OPEN；扩张ROLE、弱K≤(1+1/m)W、根实际全路径聚合支付均未证。本轮所有新项没有外审和新颖性认证。
+
+
+## 第十轮精确状态：原目标仍OPEN
+
+- **B10-STRONG-ADJACENT-WALLET-NO-v1（proved counterexample, internally checked）**：原模型完整SPE不保证Σ_i max_T u_i(T,Z_−i)−W≤C_adj，亦不保证每个最优指派可由同一C_adj支付。10单位客户m3实例W9、OPT10、冻结regret2、C_adj1；全部21有序历史已分别独立核查。先有巨大m5原型，后有exchange独立紧凑构造，均保留原证据。[自足正文](round10/exchange/compact_adjacent_wallet_counterexample.md)。这是辅助桥反例，非HALF反例。
+- **B10-OPTIMAL-ADJACENT-WALLET-NO-v1（complete analytic family, internally checked）**：每m≥2有单位客户共同目录完整SPE，W=m²、OPT=m²+m−1，唯一最优支持，C_adj1，所有最优元组/排列的最小冻结Q满足Q−W=(m−4)/2。故存在最优元组+指派的C_adj桥从m≥7起失败；任意固定α倍同样失败。tree/netglobal盲合同独立推导通过；有限count-prefixQA只核实现，不证明全m。[正文](round10/parent/optimal_assignment_adjacent_wallet_counterfamily.md)。不否定较宽旧弱K≤(1+1/m)W或half；m5单族过线不能作一般定理。
+- **B10-ALPHA-ONE-ACTUAL-TAX-RECOVERY-v1（old evidence consequence）**：旧13人实例同一actual表给α1实际负载银行与common-query frozen总价两桥均正差37/66；已核准确槽数/实际c分布。是旧refined-tax后果，不认领新反例。[算术与原来源](round10/security/old13_alpha_one_tax_arithmetic.md)。只否定全部查询加强，真正安全最优查询/有利最优指派仍未被该证据否定。
+
+本轮静态终端吸收、arrival rent、退款重组只是准确等式/组件，未给早期共同付款；不提升Q-CAG-HALF或一般五人half状态。所有新项外审/新颖性未认证。
+
+- **B10-ROOT-STANDALONE-ROW-HELPER-NO-v1（exact complete-SPE counterexample, internally checked）**：即使q=m，root query row≥O−max|S|也不普遍成立。m6、10单位客户、6不交主题大小(3,3,1,1,1,1)，完整BI策略W6、OPT10、root row6、maxsize3。root/direct两套独立实现核全部9331有序节点/55986含自身IC，净ROW及HALF均未失败。也否定W≥OPT−max|S|的简单加性加强。[原始定义/证据](round10/parent/root_standalone_row_helper_counterexample.md)。有限完整证书用于反驳全称加强，不作一般正面证据。无新游戏结构新颖性声明。
+
+## 第十一轮：一般共享负载接口及准确停界
+
+原Q-CAG-HALF仍OPEN；本轮无新无条件福利界或目标反例。以下为个人阶段身份，不自动作共享canonical提升；外审、新颖性均未认证。
+
+- **B10-SHARED-CONVEX-MENU-CAP-v1（OPEN充分候选）**：对每份原完整SPE、每个查询p，是否 min_(L∈K)Σρ_x/(1+L_x)≤W/m，其中K=(1/m)Σ_i conv{actual-prefix强制B后删当前槽的真实负载}。凸minimax及既有静态关系给条件OPT≤(2−1/m)W，m5仅条件9W/5。[合同](round11/parent/shared_load_bregman_working.md)、[独审](round11/tree/shared_load_independent_review.md)。
+- **B10-SHARED-VARIANCE-BALANCE-v1（全输入凸性/恒等式，内审）**：共享平均负载保留明确非负Jensen余量；最优负载处W−mF=ΣIC−C+D，D≥0，KKT另给非负去相关gap。纯查询可由原IC支付；混合C仍未付。只是表示/充分接口，非新金额。[VAR及纯查询](round11/aggregate/shared_load_components_and_exact_sign_boundary.md)、[root稿](round11/parent/shared_load_bregman_working.md)；tree/aggregate独立检查域与符号。
+- **B10-SHARED-SADDLE-ZERO-C-NO-v1（旧完整SPE的新精确后果，内审）**：旧16单位客户m6保险族有唯一全局shared primal最优L*；任意最优saddle查询仅支持nonanchor主题，逐行C在这些主题恒定。因此任意saddle及保持查询边际的角色运输均有C=135/242>0。正确付款仍D=2017/1210、ΣIC=4/5、W−6γ=21/11>0，不否定SHARED或half。[解析与原来源](round11/aggregate/shared_load_components_and_exact_sign_boundary.md)、[独审](round11/matching/insurance_saddle_independent_review.md)、[root单位客户复核](round11/parent/shared_insurance_literal_independent.json)。全历史SPE继承原证明，180菜单审计不是新全树枚举。
+- **B10-CROSS-ROLE-OPTIMAL-GATE-v1（静态全输入关系，内审）**：取全局最小冻结成本最优tuple/assignment。对等势最优槽I与actual角色J，若换为B_J净覆盖损失δ0，则Σ_I f_i(T_i)≤Σ_Ju_j−max_配对ΣR_ij，R_ij=Σ_(B_j\B_i)1/[c(c+1)]。只要求覆盖数仍最优，不要求同一最优并集；正δ未付。[证明](round11/matching/cross_role_optimal_exchange.md)、[独审](round11/geometry/matching_displacement_gate_review.md)。旧52/1953有限QA只核定义，不作动态half推进。
+- **B10-EXTRA-LOCAL-FRAC-NO-v1（旧PB索引后果）**：任意合法背景的逐步u+(r−1)δ_r(b+S)≥rδ_(r+1)(b)被旧PB同一完整策略严格否定；背景和SPE继承原证明，本轮核新saddle及热负载恢复。该输入总新玩家效用仍超过rδ_(r+1)，聚合与零根目标保留OPEN。[正文](round11/aggregate/extra_fractional_local_plateau.md)、[root标量复核](round11/parent/extra_local_scalar_independent.json)。
+- **B10-OPTIMAL-FRESH-RESERVE-v1（OPEN充分候选）**：最优m主题组中是否存在K0=Σ_jΣ_(x∈T_j)1/(1+c_x)≤W+J，J=Σ_actual1/(1+c_x)。静态OPT≤K0+W−J成立；SPE付款未证。区别于已败所有查询max税。有限旧输入/锥未分离不提升真值。[合同](round11/geometry/optimal_fresh_self_reserve_working.md)。
+
+terminal余量、可信endpoint、same-p互补银行和fixed-t切线游戏均保存准确未付项；没有half新界。前缀harmonic kernel已去重至R-7eb旧稿。原净ROW/SUMROW、宽冻结指派、安全聚合及ROLE仍未闭合。见[本轮稿](round11/GENERAL_PROOF_WORKING.md)。
+
+- **B10-SHARED-HALF-CAP-v1（OPEN、较弱充分候选）**：同一shared minimax值γ是否有W≥(m−1/2)γ。它仅需C≤D+ΣIC+γ/2，已足原half，不要求强SHARED的锐2−1/m。γ/2是目标容许余量，未给资金。m5需(9/2)γ≤W，未无条件成立。原强候选身份保留，不能以此重新命名为已证。

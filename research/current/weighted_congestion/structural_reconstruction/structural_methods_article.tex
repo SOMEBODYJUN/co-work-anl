@@ -56,6 +56,7 @@ A state is an $\alpha$-$\PNE$, $\alpha\ge1$, if $C_i(s)\le\alpha C_i(t_i,s_{-i})
 \begin{equation}\label{eq:welfare}
  W(s)=\sum_iw_iC_i(s)=\sum_ex_e(s)c_e(x_e(s)).
 \end{equation}
+For a game $G$, write $\OPT(G)=\min_{s\in\prod_iS_i}W(s)$, with the minimum taken over all its pure states.
 Unless stated otherwise, theorems allow real data; rational input and output are required for the explicit lower-bound games and exact finite algorithms.
 
 A resource can have compulsory users: those whose every strategy contains it. Absorb their load $b_e$ into $\widehat c_e(z)=c_e(b_e+z)$. The function remains a nonnegative-coefficient polynomial of degree at most $d$. Its remaining potential users are those who can both use and omit the resource. A player may be compulsory on one resource and optional on another. Its compulsory resources are retained in every deviation, so this resourcewise preprocessing preserves all its comparisons. Zero-cost resources can be omitted from scale constraints.
@@ -68,7 +69,7 @@ Section~\ref{sec:tools} develops the endpoint estimates, common player scales, w
 All games are finite, weights are positive, and latency polynomials have nonnegative coefficients. A degree bound is an upper bound unless we specify pure degree-$d$ monomials. All approximation factors are at least one, and strict improvement means a strict multiplicative cost reduction. We use the margin formulation also at zero cost. Logarithms are natural unless a base is shown. The finite constructions use rational data; their output size and improvement-path length are not asserted to be polynomial in a compact description.
 
 \section{Structural tools for approximate stability}\label{sec:tools}
-We first state the summation principle that turns local marginal estimates into a global potential. We then develop estimates that can be used on both sides of the existence question: endpoint amplification for the counterexamples and common marginal scales for positive guarantees. Finally, a realization theorem connects a calculation on front states to the complete state space of a legal congestion game.
+We first isolate the marginal condition that lets resource functions sum to a potential for the whole game.
 
 \subsection{From resource marginals to a common player scale}
 The approximate-potential argument of Caragiannis and Fanelli~\cite{CF2021} compares the insertion marginal of a resource function with the player's resource cost. For a deviation involving several resources, we need the comparison to use one multiplier for the moving player. The following lemma states this requirement explicitly.
@@ -590,7 +591,7 @@ The lower bound is~\eqref{eq:fixedclowerdepth}. For the upper bound choose an in
 The lower and upper bounds match in order, not in leading coefficient. In the varying near-one regime of Theorem~\ref{thm:near}, the chosen depth is larger and this fixed-$c$ statement does not assert a uniform logarithmic bound.
 
 \section{Applications to stable states and social optimization}\label{sec:positive}
-The counterexamples use large endpoint amplification and enough weight levels to propagate it. The same estimates identify conditions under which smaller approximation factors are sufficient. We first apply the area comparison to actual small shares, then use common scales to select a stable state with a cost certificate. Finally, we show when the front realization preserves the unrestricted social optimum as well as stability.
+The counterexamples use large endpoint amplification and enough weight levels to propagate it. We now apply the area comparison to small actual shares and use the scale and gate constructions to study stable states with social-cost guarantees.
 
 \subsection{The positive side: actual small atoms}
 To quantify the effect of small actual atomic shares, define, for $0\le u\le1$,
@@ -635,7 +636,7 @@ For an inserted weight $w$ ending at load $Y$, the marginal of $Xc_e(X)$ lies be
 The stability conclusion uses only local minimality, whereas the social-cost comparison uses global minimality. With compulsory background loads, the target $W$ also includes their varying costs, so~\eqref{eq:costsandwich} requires a separate baseline estimate. The bound is informative when the resulting scale range is controlled.
 
 \subsection{Social compression and transfer of quality}\label{sec:social}
-The gate construction gives more than stable-set localization. Let $\nu_a(s)$ count triggered gates of class $a$, and put
+The gate construction gives more than stable-set localization. Here $C_i^B,W^B$ denote player costs and social cost in the base game $G_B$, and $C_i^+,W^+$ denote those in the augmented game $G_+$. Let $\nu_a(s)$ count triggered gates of class $a$, and put
 \begin{equation}\label{eq:socialgate}
  d_a=3v_a-2u_a-z_a,\qquad
  K_0=\sum_aw_aL_a(2u_a+z_a).
@@ -750,12 +751,10 @@ These claims can also be checked without the table. Within the base core, a stab
 More generally, if the gates are already present in an instance and the dominance inequalities pass, one can enumerate $\F$, check the explicit tolerance conditions, and minimize the base cost on the resulting stable set, adding back $K_0$. With~\eqref{eq:SD}, the same domain also computes the true social optimum. The size of the resulting enumeration is $|\F|$, which need not be polynomial in a compact input. If a core descent potential is available, first use the specified repair and then follow strict full-game improvements inside $\F$. By~\eqref{eq:coremargin} every such core improvement is a strict base $\alpha$ improvement, so that potential proves termination. Without it, finite enumeration remains the justified method. The required existence and quality bounds on the front domain are supplied by the separate potential and optimization arguments.
 
 \subsection{Interpreting the resulting certificates}
-The hypotheses of the positive results describe different features of an instance and can be checked independently.\label{sec:conclusion}
-The methods suggest a concrete order of investigation. Actual small shares can make the integral potential effective before any type decomposition. When optional users have at most two types per resource, finite marginal calibration can exploit the true weights, costs, and population; forest gluing then needs only local feasibility, while cycles return precise scale or obstruction certificates. When many types share resources, the player-height potential supplies a different common multiplier and reveals when a linear factor is impossible. These guarantees overlap without one subsuming all others.
+The hypotheses of the positive results describe different features of an instance.\label{sec:conclusion}
+Small actual shares yield the integral-potential guarantee even without a restriction on the number of weight types. Finite marginal calibration instead uses the actual two-type populations and their scale constraints; player height offers a third bound for resources with many types. For complete anchored gates, the stable-set formula~\eqref{eq:toleranceset} and the social decomposition~\eqref{eq:allsocial} separate stability from the additional condition~\eqref{eq:SD} needed to compare with unrestricted social optimization.
 
-An instance containing complete anchored gates admits exact stable-set localization after their dominance condition is checked. Social selection on that set always uses the constant shift; comparison with unrestricted $\OPT$ additionally uses the social externality budget. If gates are added by a designer, their cost and degree belong to the output game. In either use, approximate core stability is evaluated with the explicit baseline tolerance.
-
-The near-degree example illustrates the opposite use of these same interfaces. Endpoint amplification pays the incoming area, the return window covers all residual front configurations, and legal same-degree gates cover the rest of the state space. It does not follow from the impossibility of a scale contract or from an improvement cycle. This separation of analytic distortion, compatible scales, and state realization is the reusable content: each part has a positive certificate, a clearly bounded scope, and an independent mathematical obligation.
+In the near-degree construction, endpoint amplification, return windows, and same-degree gates have distinct jobs: they transmit a strict margin, cover the remaining front configurations, and exclude nonfront states. Their combination, rather than failure of a scale contract alone, gives the all-state lower bound.
 
 \appendix
 \section{Parameter estimates and complete state coverage}\label{app:construction}
@@ -917,10 +916,9 @@ At an arbitrary base state, each adjacent resource has potential load at most $(
  \quad\text{for all players and all base states},\qquad
  B_*/\eta\le64n(g+1)R^g.
 \end{equation}
-For each class add the complete anchored gates from Section~\ref{sec:repair}, using
+The complete anchored gates were specified after~\eqref{eq:maincompletion}. Their number per class is
 \begin{equation}\label{eq:appclocks}
- L_c=\binom{N-1}{2},\qquad M=2\alpha B_*,\qquad
- c_a^{\rm gate}(x)=M(x/(3w_a))^d.
+ L_c=\binom{N-1}{2}.
 \end{equation}
 To apply the safe budget~\eqref{eq:safebudget} at $D=d$, it remains to prove
 \begin{equation}\label{eq:apprepairtarget}

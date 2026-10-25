@@ -71,3 +71,25 @@ CLIP只保证新正券≤旧gross，不保证旧net逐券下降；旧证书任�
 5. **末对调和钱包仅是分解中一项**：C′≤W/(2H_m+1)不控制早期Σ(E_i−e_i)。其退款来自同一份actual W，不允许再免费叠加已占的source/coordinate银行。
 
 以上不证明原目标为假或所有方法不可能；没有新目标反例。继续研究需新增实际off-history的共同金额关系，而非重复上述已知守恒和阴性。
+
+
+## 第十轮：相邻退出钱包的精确终止范围
+
+- rowmax/all-query/每个最优指派版本由10单位客户完整SPE否定；不是只凭LP点。实值Σ冻结regret2>C_adj1，但W9、OPT10仍满足half。
+- 有利重选最优元组及排列的existential版本也由[全人数族](round10/parent/optimal_assignment_adjacent_wallet_counterfamily.md)否定：C_adj1，minQ−W=(m−4)/2；m≥7违例，任意固定倍数也无法普遍修复。机制是重复实际主题产生多份冻结增益，最优私有标签迫使所有比较主题被选，无法靠重配完全消失。
+- 实际负载J_base替代C_adj后，对所有查询的税桥仍有旧13人反证，两式严格差37/66。必须保留真实最优查询/最优指派选择，不能把它们扩成all-query。
+- arbitrary frozen-profile min payoff作theta地板的绕路由[direct静态族](round10/direct/frozen_portfolio_floor_obstruction.md)否定；pure portfolio maxmin作actual总收益银行的绕路由[netglobal族](round10/netglobal/pure_egalitarian_detour_counterfamily.md)否定。它们不约束actual-min角色或HALF，不能改成主目标反例。
+
+净ROW、原更宽K≤(1+1/m)W、真正安全最优聚合及ROLE存在未被这些结果否定；本轮没有新的付款关系解决它们。上面是各精确接口边界，非一般数学不可能性结论。
+
+补充本轮最后直接判别：把root净ROW的actual W换成较小的最大主题K，是严格加强且已败；q=m也不救。6人两大主题(各3客户)与4单例、完整BI策略给row6<O−K7，同时W6<OPT−K7。原ROW/half保留，见[全历史证据](round10/parent/root_standalone_row_helper_counterexample.md)。myopic少负载+固定字典tie曾在离轨历史失败，已弃用；保存的完整BI证书无此错误。
+
+## 第十一轮准确停界
+
+- 同行313/314的个体零根OPT/(2m)、GLOBAL-extra及LAST保税匹配已败；净差最小收益桥与聚合不由此否定。
+- 旧PB连extra索引逐步δ supersolution也败；该输入全局aggregate仍有正余量。背景已覆盖全部客户，不是根路径half反例。
+- 共享凸负载KKT只控制去相关权ρ，不允许替换同枝指标。更强C≤0连最优saddle及有利角色运输一起选也失败（旧16客户m6，C135/242>0）；D与IC仍足付该输入，正确共享付款未被否定。
+- 跨角色GATE仅对净损失δ0保证退款支配。正δ不能按δ免费付款：旧1953已有X165、δ2而整体Q−W仅1，须保留跨块取消与原IC。
+- 前缀harmonic kernel、RESERVE及旧root-menu接口已标旧来源；命名候选有限锥未分离不作证据推广，不继续同型扫描。
+
+原half、ROW/SUMROW、真正安全聚合、宽冻结指派和正确shared Bregman付款仍OPEN。新无条件福利关系未找到；停界不是一般不可能性结论。

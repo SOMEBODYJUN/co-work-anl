@@ -1,5 +1,7 @@
 # 当前前沿与本轮停止点
 
+第五次一般接续见 [round5_general/MAIN_PROOF_WORKING.md](round5_general/MAIN_PROOF_WORKING.md)。P 池完整 SPE 族关闭 LAST、更弱付款及自由全列精确税助手，静态比较本身保持正确。随后显式保险家族又关闭原零根逐人 δ_m（m≥3）、全局 extra δ_(m+1)（m≥4）及每人 OPT/(2m)（m≥5）；不是从 PB 局部反例推测。两族均有全部历史一般证明、独立内部重构及定义级回归，均严格满足 half，真正聚合 v/δ 继续支付。新对齐删除社会边际预算与私有别名转移仍缺产生 OPT−W 的共同覆盖分解；没有新无条件一般福利界或目标反例。继续的正确义务是总量，而非重做末位或个体门槛变体。
+
 第四次一般接续见 [round4_general/MAIN_PROOF_WORKING.md](round4_general/MAIN_PROOF_WORKING.md) 与 [精确身份](round4_general/CLAIMS.md)。没有新无条件一般福利界或目标反例。新全输入 cap 回收引理把“某个前缀角色不改善”转成 ADM 总并集成员，独立内部拼合检查通过；仍未生产低插入且预算受控的端点。共同平均负载的混合自洽查询存在，但付款未证；纯点存在已被 16 客户完整 SPE 否定且该例所有混合查询仍支付。另精确关闭任意背景的 FF-LEADER/局部 δ 链与 pooled all-p 付款，均不否定根聚合或 half。六名指定研究员的实际推导、独立审查及原始有限范围从本轮地图恢复，不重复认领前轮资产。
 
 最新第三次接续见 [round3_general/MAIN_PROOF_WORKING.md](round3_general/MAIN_PROOF_WORKING.md)。**没有新的全输入福利下界或目标反例。** 本轮完整35客户反例否定复制半利润与早晚whole-profit二倍比；完整817客户反例否定all-p平均负载Jensen总付款，且独立证书明确坏p非最优、真聚合与half仍成立。均经独立内部核查，未外审或认证新颖性。新尝试STATIC-2仍OPEN；源共同容量、ADM和真正安全值聚合没有闭合。下文保留前轮状态，不能重复算新进展。
