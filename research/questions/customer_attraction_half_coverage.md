@@ -26,7 +26,7 @@
 
 - 任意目录、恰三人的[锐 \(5/3\) 界](../current/customer_attraction/three_player_sharp.md)已内部证明。
 - 任意目录、恰四人的[\(1499/750<2\) 界](../current/customer_attraction/four_player_bound.md)已内部证明，未证锐性。
-- 一般五人当前[\(\beta\approx2.06169478572>2\) 界](../current/customer_attraction/five_player_indexed_bound.md)尚未达到半覆盖；对应有限必要条件模板有[精确二以上障碍](../current/customer_attraction/five_player_indexed_obstruction.md)，该点不是完整 SPE。
+- 一般五人共享旧437行[\(\beta\approx2.06169478572>2\) 界](../current/customer_attraction/five_player_indexed_bound.md)尚未达到半覆盖；对应有限必要条件模板有[精确二以上障碍](../current/customer_attraction/five_player_indexed_obstruction.md)，该点不是完整 SPE。个人区另有[557行独立已审上界及728行作者证书](../customer_attraction/RESEARCH_STATE.md)，证据层须分开，均未达到half。
 - [至多六极大覆盖、任意人数](../current/customer_attraction/six_maxima_joint_bound.md)已内部证明；[恰七极大、七人以上](../current/customer_attraction/seven_maxima_checkpoint.md)有完整来源证明与审查，五人和六人仍有明确缺项。
 - [向日葵](../current/customer_attraction/sunflower_maxima_bound.md)、[层级关联](../current/customer_attraction/laminar_incidence_bound.md)类有任意人数锐界，其结构假设仍承重。
 

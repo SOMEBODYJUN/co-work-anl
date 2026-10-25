@@ -1,6 +1,6 @@
 # 当前研究者工作规则
 
-当前唯一主攻 **Q-CAG-HALF**，存档 **customer-attraction**：一般共同目录、任意人数、每个完整历史依赖纯SPE的最终福利W≥OPT/2。主目标仍OPEN。先读根四入口，再读 research/customer_attraction/README.md、research/current/customer_attraction/model.md 和相关数学义务。两阶段设施的客户NE、不相关机调度与拥塞均有不同模型，不得混用。
+当前唯一主攻 **Q-CAG-HALF**，存档 **customer-attraction**：一般共同目录、任意人数、每个完整历史依赖纯SPE的最终福利W≥OPT/2。主目标仍OPEN。先读根四入口，再读 research/current/customer_attraction/model.md 与 research/customer_attraction/SYNTHESIS.md；随后只按当前义务取正文和实际审查。不默认展开长总账、所有个人区或公屏。两阶段设施的客户NE、不相关机调度与拥塞均有不同模型，不得混用。
 
 ## 主人最新决定：只研究一般命题
 
@@ -21,7 +21,7 @@
 
 - Boss带自己的团队直接研究，方法、路线和合作自由，不设前置Route Card、reviewer、名额、认领或审批。使用会话实际可用的模型和工具，不虚报人数、模型配置或无限算力。
 - 清洗者检查对象、量词、推导、算法与证据，处理真实异议，写成自足资产并入库；不以目录检查代替数学检查，不让探索排队等审核。
-- 整理者判断哪些成果能独立成文、如何拆合和定位，突出新增机制、解决的缺口和优势；文献归属、条件、局限和外审状态必须真实，不以包装填补数学缺口。
+- 整理者首先维护下一轮能准确使用的短上下文：精确目标、可用关系、已失败加强、真实缺口与唯一来源。按数学机制合并同义重复；完整盘点、入口筛查、数学复核和证书重放分别记录。独立阅读检查不能代替数学证明；成稿、外审与新颖性另行判断。
 - 当前只维护 research/customer_attraction/BOSS_START.md、CLEANER.md、EDITOR.md 三份角色提示词。其他题目与旧角色是明确隔离的保留或历史材料。
 
 ## 数学资产

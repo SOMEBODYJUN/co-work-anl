@@ -7,7 +7,7 @@
 ## 本轮实际新增材料
 
 - [均匀删除比较式的精确反例候选](boss/uniform_deletion_boundary.md)：五人六主题31单位客户；完整策略已由定义级规范核验，独立审查进行中。只反驳固定均匀删除静态核；不反驳可优化删除支持、真静态安全值或半覆盖。
-- [纯续局门槛与仿射包络](dynamic_induction/nonconvex_screen.md)：四人四主题的非凸筛选边界，子分支与Boss独立Fraction核对；只否定明确的无损筛选等式。
+- `dynamic_induction/nonconvex_screen.md`：历史记录声称有仿射包络结果，但本轮仓库未找到该正文。不能作为已恢复的可调用证明；待恢复原件后核对量词与审查。
 - [独立有序历史审计](boss/audit_affine_obstruction.py)及其JSON：不导入规范求解器，复算仿射筛选边界。
 - potential_transport/ 正在精确化静态对称iid均衡福利桥的反例；成熟状态以该目录README及后续审查为准。
 - global_proof/、counterexample_search/ 保留一般交换、弱逐人门槛和可信反例构造的进行中研究，不是已证半覆盖。

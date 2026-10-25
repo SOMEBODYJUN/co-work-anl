@@ -1,5 +1,8 @@
 # 一般半覆盖：本轮研究地图
 
+> **接续状态更正（2026-10-25）**：此处旧OPEN须校准：背景整体P+λΔ桥已被[真正根SPE实际前缀反例](../R-5c4f6385eec046eb9a20052facacba11/background/global_actual_prefix_counterexample.md)否定；旧逐人OPT/(2m−1)保底也被[零根保险反族](../R-d3981c0168644971803a9c3380ed687c/round5_general/security/global_extra_individual_counterfamily.md)否定（m≥5连更弱OPT/(2m)保底都失败）；固定实际负载精确税桥已有[13人完整反例](../R-c50fecc37aa44fb4a69a2122bb70e5fe/security/refined_tax_counterexample.md)。真正聚合安全值仍OPEN。 原稿保留为当时的研究记录；旧指令不覆盖当前用户目标。现行状态先查[研究接续材料](../../../customer_attraction/SYNTHESIS.md)。
+
+
 ## 2026-10-21 接续：第三阶段正在进行
 
 本环境已在独立 clone 恢复本身份，main 的实际记录为准。一般 Q-CAG-HALF 仍 OPEN；六名指定 gpt-6.1-sol ultra 内部研究员继续推进，下面是当前材料位置，不是结果状态的自动提升。

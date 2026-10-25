@@ -4,7 +4,7 @@
 
 ## 读取与角色
 
-先保留本地工作、安全同步main，读根四入口和本题模型，再按当前数学义务选正文、实际审查及证据。Boss不必通读工具源码、全部历史或每份登记JSON。三个角色只有[Boss](customer_attraction/BOSS_START.md)、[清洗者](customer_attraction/CLEANER.md)、[整理者](customer_attraction/EDITOR.md)，研究探索不等待审核或写作批准。
+先保留本地工作、安全同步main，读根四入口、本题模型和[研究接续材料](customer_attraction/SYNTHESIS.md)，再按当前数学义务选正文、实际审查及证据。不默认展开长总账、全部个人区或公屏历史。Boss不必通读工具源码、全部历史或每份登记JSON。三个角色只有[Boss](customer_attraction/BOSS_START.md)、[清洗者](customer_attraction/CLEANER.md)、[整理者](customer_attraction/EDITOR.md)，研究探索不等待审核或写作批准。
 
 ## 真实数学如何保存
 

@@ -330,5 +330,5 @@ python3 -m customer_attraction examples/customer_attraction/dynamic_iid_local.js
 [主运行](../../../evidence/runs/2026-10-10/dynamic_iid.json)、
 [独立运行](../../../evidence/runs/2026-10-10/dynamic_iid_independent.json) 及
 [内部审查](../../../evidence/runs/2026-10-10/dynamic_iid_review.md) 区分一般代数接口、
-完整有限SPE认证和仍开放的全局义务。没有把局部失败升级成全局反例，也没有把
+完整有限SPE认证和当时尚开放的全局义务；其中弱iid福利桥后来已由[iid反族§1.2](iid_security_and_flow_barriers.md)否定，真正安全值另论。没有把局部失败升级成全局反例，也没有把
 状态KKT与 Farkas 的存在条件当作已经闭合的福利证明。

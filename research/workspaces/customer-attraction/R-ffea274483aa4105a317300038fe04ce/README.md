@@ -1,5 +1,8 @@
 # Boss8：一般半覆盖的继续研究
 
+> **接续状态更正（2026-10-25）**：任意合法背景首两人2v_r保底的旧候选已被[更弱PB-extra完整解析反例](../R-cd789330fc7141299ac491bbb3ffa420/round5/menu/pair_attack.md)排除；该背景未证为根SPE实际可达，不据此否定实际前缀专用弱化或真正根聚合安全值。强弱iid福利替代另已否定，不能与真正v混同。 原稿保留为当时的研究记录；旧指令不覆盖当前用户目标。现行状态先查[研究接续材料](../../../customer_attraction/SYNTHESIS.md)。
+
+
 精确主目标 Q-CAG-HALF，采用 `research/current/customer_attraction/model.md` 的全部量词：有限单位客户、共同有限目录、任意人数、每个完整有序历史纯SPE的 `2W≥OPT_m`。一般仍 **OPEN**。本clone程序发布身份R-ffea274483aa4105a317300038fe04ce；恢复基线7d8465d2f558817bda25ce079457aaf4fa512743。
 
 旧Boss8实际资产见 `../R-d51d7a410c12456aa5c44e84b78708d0/README.md`。旧入口提及的部分子目录本次main中不存在，不据此推断内容。下列个人阶段资产不自动成为共享canonical结果；外审与新颖性均未认证。

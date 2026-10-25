@@ -18,8 +18,8 @@
 
 | [customer_coupling/cycle_alignment_budget.md](customer_coupling/cycle_alignment_budget.md) | 共同客户的多真实末位菜单环必要支付：任意K、任意非负边权下，独立pair包络相对共同索引排列的精确损失omega*kappa；奇/偶O环均分类。父已独立解析重构及精确穷尽核验，见[parent_tail审查](parent_tail/cycle_alignment_independent_review.md)。它不建立全局策略可实现或根W支付。 |
 | [parent_tail/audit_cycle_alignment_independent.py](parent_tail/audit_cycle_alignment_independent.py)与[输出](parent_tail/cycle_alignment_independent_audit.json) | 不导入作者，135168个会员赋值、13384个精确边缘极值与29007条贪心路径核对。有限审计不是一般证明，任意参数依据奇偶性及显式集中损失构造。 |
-| [uncovered_profit/README.md](uncovered_profit/README.md) | 逐人机会缺口与价格全Γ攻击的参数、有限结果、独立端点审计；一般候选未升级。 |
-| [direct_global/README.md](direct_global/README.md) | 实际红覆盖/蓝漏覆盖分解与候选；已证的蓝私有块委托是既有单资源路由机制的重构，一般交叠仍未支付。 |
+| [端点独立审查](uncovered_profit/endpoint_strengthening_review.md) | 现存端点审查可用；原uncovered_profit/README未物化，不能据旧链接补造完整目录说明。一般候选未升级。 |
+| `direct_global/README.md`（未恢复） | 仅为历史任务记录，本轮无该目录正文；不可视为可调用成果或正在运行的任务。 |
 
 ## 正在进行的六个研究任务
 

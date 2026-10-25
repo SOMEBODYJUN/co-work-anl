@@ -1,64 +1,66 @@
-# 一般顺序客户吸引：现有成果的衔接与成稿定位
+# 一般半覆盖：下一轮研究的接续材料
 
-2026-10-23。本文综合现有正文与本轮已保存资产，不提升任何命题的审查等级，也不作外审或新颖性声明。精确身份仍以[模型](../current/customer_attraction/model.md)、[命题账本](CLAIMS.md)、[数学地图](../current/customer_attraction/README.md)及各项实际审查为准。
+**Q-CAG-HALF / customer-attraction：OPEN。** 本页是短的工作上下文。它不新增定理或审查等级，不规定研究方法；需要使用某项关系时，读该行的唯一原文及实际审查，而非展开全部链接。盘点截止与实际核验见[清理记录](CURATION.md)。
 
-原问题是：有限单位客户、有限非空共同主题目录、任意人数 $m\ge1$，提供者依次观察完整有序历史选择主题，客户在最终覆盖者间均分；是否每个完整历史依赖纯 SPE 都有 $2W\ge\operatorname{OPT}_m$？重复选择、空主题、零客户及全部离轨平局都属于原量词。**一般命题仍 OPEN，没有统一证明，也没有目标反例。** 现有成果已经给出若干对任意人数、任意目录成立的预算和表示，但尚未把真实后继的适应性统一支付给实际覆盖。后续研究只以这个全范围问题为主线；下列已完成特例作为可调用地基和归档结果保留，不继续以扩大人数、极大主题数或结构边界为独立研究目标。
+## 固定对象，不在整理中换题
 
-文献地基应先扣除。[既有文献核对](../current/customer_attraction/literature.md)记录 Deng 等的两人锐 $3/2$ 界和共同目录 $2-1/m$ 下界；Vetta 的有效效用半覆盖是静态 Nash 定理；对称 singleton 的 SPE 终局为 PNE 属于已有单资源机制；层级关联证明采用的最大交叠保护思想有 extension-parallel 拥塞文献来源。客户均分的 Shapley 解释、调和势差、有限逆向归纳、minimax 与 Farkas 工具本身也不能计为本题新增贡献。现有资产的实际内容在于核查这些工具进入共同目录、任意内部子主题和完整历史 SPE 后，哪些推导仍成立。[目录与量词复核](../current/customer_attraction/literature_followup.md)没有给出可直接解决原问题的文献定理；检索未找到不是不存在证明。
+采用[模型](../current/customer_attraction/model.md)：有限单位客户集 N、有限非空共同目录 S⊆2^N、任意 m≥1 位单位权提供者依次各选一次主题，观察全部有序历史。允许重复、空主题、零客户及任意历史依赖平局。终局 z 的客户负载 cₓ 给收益 uᵢ(z)=Σₓ∈Sᵢ1/cₓ，福利 W(z)=Σuᵢ=|∪Sᵢ|；OPTₘ 是 m 个主题的最大并集大小。
 
-目前最直接的全范围正向链从真实路径出发。任取比较客户集 $C$，令 $O=|C|$，用合法主题分数覆盖它，总重为 $\tau\ge1$。[前缀最终利润预算](../current/customer_attraction/fractional_cover_path_budget.md)对每个真实位置给出
+固定**任意一份完整历史纯 SPE σ**，实际终局 z。每个有序历史 h、每个合法主题 T 都满足真实偏离比较
 
 \[
-O\le P_{i-1}+(m-i+1)\tau u_i,
-\qquad
-W\ge O F_m(\tau),\quad F_m(\tau)=1-\prod_{r=1}^{m}\left(1-\frac1{r\tau}\right),
+u_i(z_h)\ge u_i(z_{h,T}).
 \]
 
-其中 $P_{i-1}$ 是早期玩家在**同一实际终局**中的最终利润和。这项递推用真实旧玩家收益支付前缀负载，偏离后的后继只通过合法分母上界控制，因此不需要冻结后继或删除玩家后搬用旧 SPE。取最优并集并用 $\tau\le m$，得到全范围 $W\ge F_m(m)\operatorname{OPT}_m$，其中 $F_m(m)=(1+o(1))H_m/m$；固定 $\tau$ 时保证随人数趋于全部比较覆盖。它也给出 $\tau\le7/2$ 的全人数半覆盖推论和反例的 $\tau>H_m/\log2$ 必要条件，但没有控制 $\tau$ 随人数增长的一般情形。
+zₕ,ₜ 在 h 强制选 T 后继续沿原 σ；全部后继都可以响应 T。相同主题计数的两个历史可以有不同续局。计数缓存的可实现终局集合不等于只允许计数依赖策略。
 
-[实际遗漏私有席位谱](../current/customer_attraction/uncovered_private_seat_spectrum.md)提供另一项全范围预算：固定实际未覆盖的极大全局私有块，只计真实触及这些块的动作。实际每个前缀都零触及，因此阈值可按剩余人数重置，得到 $u_i\ge\lambda_{m-i+1}$、$W\ge\sum_{r=1}^m\lambda_r$。若某个最优并集的遗漏全为这种私有客户，进一步得到锐 $\operatorname{OPT}_m\le(2-1/m)W$。这与分数覆盖递推可以共享实际路径、比较并集和最终利润的记账语言，却尚无将两份信用共同用于任意共享遗漏的预算。不能把两项充分条件的并列当作覆盖全部实例的分类。
+对任意最优主题元组的并集 O，令 C 为实际并集，L=|O\C|、E=|C\O|。则
 
-另一条全范围链从静态比较游戏出发。[不观察随机查询的安全值](../current/customer_attraction/oblivious_security.md)满足锐 $v_m\ge\operatorname{OPT}_m/(2m-1)$；[静态 iid 凹势](../current/customer_attraction/iid_security_and_flow_barriers.md)确定对称混合 Nash 覆盖基准，并给 $mv_m\le Z_m\le\operatorname{OPT}_m$。因此真正安全值候选 $W\ge(m-1/2)v_m$ 足以完成 half。原iid候选 $W\ge(1-1/(2m))Z_m$ 也曾是充分桥，但个人区已存完整反族，本轮核准后补入[共享§1.2](../current/customer_attraction/iid_security_and_flow_barriers.md)，不得继续列为开放。[安全值链](../current/customer_attraction/security_chain_and_local_boundary.md)及[动态 iid 租金记账](../current/customer_attraction/dynamic_iid_debt_boundary.md)把所缺步骤精确写成真实全路径的总债务界，而非每步非负。**静态下界已经成立，实际 SPE 对真正安全值的全树支付仍未成立；对上述iid值的弱支付已经为假。** 强 iid 桥 $W\ge Z_m$ 已由完整 SPE 与最低静态 CCE 的严格分离否定；逐人安全保底、末位最坏回复值的全员保底及静态 NE 替代也不能补上这一缺口。这些分离应在论证衔接处说明，不另包装成多个一般福利进展。
+\[
+\operatorname{OPT}_m-W=L-E,\qquad
+2W\ge\operatorname{OPT}_m\ \Longleftrightarrow\ L-E\le W.
+\]
 
-可复用的局部正向机制也已经清楚。[末两人保底](../current/customer_attraction/last_two_floor.md)和[固定背景两人税](../current/customer_attraction/two_remaining_tax.md)分别控制真实后两人的逐人收益与比较利润；三、四人背景利润定理使其中一部分能够合法提升。[末四人提升](../current/customer_attraction/tail_profit_lift.md)给所有 $m\ge4$ 的 $\operatorname{OPT}_m\le(m/2-1/750)W$，但仍随人数增长。它与前述乘积弱界都是一般有效保证，不是人数无关的常数二。非零背景中的剩余利润也不是根终局覆盖，二者须通过已证明的提升接口衔接。
+不能丢掉 E 后将原任务偷换成 L≤W；后一加强已有完整反例。零福利实例直接用乘法不等式，不定义0/0。
 
-下表保存已完成正面范围的位置。表中的结构条件与路径条件是真实前提；它们不组成下一轮逐项扩张计划。
+## 已经可以调用的关系
 
-| 已完成或已有界的范围 | 可调用结果与原正文 | 归档定位 |
+| 关系及准确范围 | 它给什么；还不给什么 | 唯一原文 |
 | --- | --- | --- |
-| 任意目录，$m=1,2$ | 一人最优；两人锐 $\operatorname{OPT}_2\le3W/2$，见[文献及两人机制](../current/customer_attraction/two_remaining_tax.md) | 文献地基及背景工具 |
-| 任意目录，$m=3,4$ | [三人锐 $5/3$](../current/customer_attraction/three_player_sharp.md)；[四人 $1499/750$](../current/customer_attraction/four_player_bound.md) | 完整小人数地基；四人未证锐 |
-| 任意目录，$m=5$ | [当前索引界约 $2.061695$](../current/customer_attraction/five_player_indexed_bound.md) | 尚未 half；模板最优不等于游戏最坏值 |
-| 任意人数，不交极大花瓣、极大向日葵、层级客户极大关联 | [不交](../current/customer_attraction/disjoint_maxima_bound.md)、[向日葵](../current/customer_attraction/sunflower_maxima_bound.md)、[层级关联](../current/customer_attraction/laminar_incidence_bound.md)：带核心锐 $2-1/m$ | 前三者按所述条件递进，内部子主题仍保留 |
-| 任意人数、任意极大主题数；客户极大归属数仅 $1,k-1,k$ | [真实中继及驻留支付](../current/customer_attraction/extreme_maximal_membership_floor.md)：合法背景全员 $\theta$ 保底、利润界及带核心锐 $2-1/m$ | 包含向日葵，与一般层级关联类不可比 |
-| 至多六个极大覆盖；另恰七极大且 $m\ge7$ | [六极大联合预算](../current/customer_attraction/six_maxima_joint_bound.md)；[七极大来源证明](../current/customer_attraction/seven_maxima_checkpoint.md)：half | 七极大 $m=5,6$ 未闭合；来源完整与现行概述分开 |
-| 任意人数、无界目录；某个最优并集 $\tau\le7/2$ | [分数覆盖预算](../current/customer_attraction/fractional_cover_path_budget.md)：half | 全范围引理的条件性推论 |
-| 任意人数、无界目录；某个最优并集的遗漏全为极大全局私有客户 | [实际遗漏谱](../current/customer_attraction/uncovered_private_seat_spectrum.md)：锐 $2-1/m$ | 条件依赖给定 SPE 实际并集 |
-| 任意目录、人数；实际倒二主题被全部早期主题包含，或至多 $r$ 个例外且 $m\ge(r+1)^2+1$ | [共同倒二主题](../current/customer_attraction/common_penultimate_theme_half.md)、[少量例外](../current/customer_attraction/penultimate_few_exceptions.md)：half | 真实末两人菜单的路径条件推论 |
+| 任意真实历史，旧负载 b、含当前尚余 r=m−i+1≥1 人：当前收益 ≥ maxₜΣₓ∈T1/(bₓ+r) | 对全部后继有效的分母下界；不把实际收益搬到另一分支 | [一般稿§2](../current/customer_attraction/general_half_proof.md#2-从真实行得到的无条件保证) |
+| 任意非空比较集 O，以合法主题作总重 τ≥1 的分数覆盖；Pᵢ₋₁ 是同一实际终局早期收益和：|O|≤Pᵢ₋₁+(m−i+1)τuᵢ | 迭代得到下式；τ可随人数增长，无条件保证尚不到half | [分数覆盖前缀预算](../current/customer_attraction/fractional_cover_path_budget.md) |
+| 真正静态安全值 vₘ(0)≥OPTₘ/(2m−1) | 对手的联合竞争主题不观察查询抽样；真实后继会观察，故不能直接推出 W≥mvₘ | [不观察查询的安全值](../current/customer_attraction/oblivious_security.md) |
+| 实际遗漏私有席位谱及冻结前缀联合谱：uᵢ≥Λᵢ≥λᵢ、W≥ΣΛᵢ | 提供同一路径预算；私有遗漏为空时退回旧分母界，不自动支付共享遗漏 | [实际遗漏谱](../current/customer_attraction/uncovered_private_seat_spectrum.md)、[联合谱定义/审查](../current/customer_attraction/general_half_proof.md#31-冻结真实前缀的联合客户席位一般付款的精细加强) |
+| 任意节点跨枝：ΔW=ΔV+ΔP旧−Γ，Γ≥0 | 非根必须保留旧玩家最终收益变化；根上 P旧=0。跨互斥子树仍无共同付款 | [修正后的节点式](../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/representation/cross_branch_welfare_relay_identity.md) |
+| 给定终局的软水位、共同信用和原规定路径税账 | 终局代数、条件可信接口各自有效；不能免费继承 SPE 或跨改枝重复花一份信用 | [软水位](../current/customer_attraction/fractional_tail_waterfill.md)、[条件接口恢复](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/credible/README.md) |
 
-表示与辅助变换为一般问题保留了可检查的对象，但不应与福利证明混计。[集合值逆向归纳](../current/customer_attraction/exact_solver.md)按计数缓存可实现终局集合，同时为各有序历史独立重构续局；它没有把策略限制成 Markov 规则。[完整策略锥](../current/customer_attraction/strategy_cone.md)保留每条真实偏离，覆盖矩表示则精确区分线性资料、非负实现与激励方向；[覆盖矩正文](../current/customer_attraction/coverage_moment_geometry.md)明确说明末层行空间足够恢复数值，不等于末层不等式足够证明 SPE 或 half。[分数尾部水位化](../current/customer_attraction/fractional_tail_waterfill.md)对全部查询提供同一客户信用池，并精确保留根、背景和尾利润守恒，却不使降权后的对象继承原 SPE。最近的静态拥挤槽[充分排除接口](../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/shared_omission/static_crowding_cover_slack.md)同样是一般有效的条件引理；所有真实菜单未被证明满足其条件。它们可进入后续证明，当前没有已成立的通用连接把它们的信用支付给 $2W-\operatorname{OPT}_m$。
-
-同步补入的[对数势变分规范化](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/shared/variational_common_credit.md)进一步给出**任意给定单位终局的通用正向代数定理**。阈值 $t>0$ 时，盒约束最大元保持覆盖支撑，满足包括零权重入的完整 KKT；规范客户负载和总尾质量 $M$ 唯一，权分解可以不唯一。共同查询池仍有 $H\le D$，并有利润守恒、负载伸缩预算与联合势账
+分数覆盖递推的准确结论是
 
 \[
-\max\{H,\Gamma+\Delta B\}+F^*+tM\le tn.
+W\ge |O|\left[1-\prod_{r=1}^m\left(1-\frac1{r\tau}\right)\right].
 \]
 
-这里 $n$ 为尾玩家数，$\Gamma+\Delta B$ 是根与背景总返还，$F^*$ 是变分最优目标值。最大值不能换成两项之和，$H$ 与 $F^*$ 也不能各领一次缺口 $D$ 后相加；仅在另有真实尾利润 $V(1)\ge nt$ 时，右侧才可进一步由该 $V(1)$ 支付。这补全了单遍构造没有保证的终点互补性与规范状态，仍不产生分数 SPE；总质量随阈值非增，也不推出根信用单调。
+取 τ≤m 得一般弱界；直接代 m=5、τ=5 仅为 W≥(6049/15625)OPT₅。某个最优并集 τ≤7/2 时，m≥5由乘积界给half；m≤4另用已有一至四人一般定理。因此全人数的条件结论依赖两部分，不能说递推单独覆盖小人数；该条件仍不覆盖任意目录。弱界、条件推论和一般结论须分开。
 
-[统一缩尾全树税账](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/uniform_shrink_full_tree_tax.md)则从一份真实完整单位 SPE 出发，把同一固定质量 $\lambda$ 用于全部尾玩家、历史和动作。其一般结论是：原收益与新质量利润的差为非负税 $k_i^\lambda$，终局总税等于背景返还 $B_\lambda$；每个真实节点的新单步 regret 满足 $R_\lambda(h)\le k_i^\lambda(z_h)$，从任意历史起沿**原规定续局**的累计 regret 至多为同一终局的 $B_\lambda$。这是已证的带预算 IC，不是无转移 SPE 保持。反复改枝会改变 $z_h$，不能沿偏离边免费递推同一税余额。
+已有三人锐5/3、四人1499/750<2、有限极大主题数及结构类定理，供引用，不从头重做。五人证据分为：共享正式437行上界约2.061695；个人557行**独立全域对偶已审上界**约2.04215549034；728行约2.04207898656仍为作者证书层。全都大于二。准确分数、独审和限制见[前沿](RESEARCH_STATE.md)。不把更强数值静默换进旧 Claim，也不把模板primal当成SPE。
 
-因此变分状态与原树激励的连接已有精确对象，但没有闭合。[变分根交换稿](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/shared/variational_spe_switch_debt.md)证明同一单位终局多重集内，低规范根与权一尾换标记会严格增势；真实孩子改变后只保留恒等式 $J_b-J_a=\mathrm{Gain}_{a\to b}-\mathrm{Debt}_{a\to b}$。这项严格交换引理与债务身份均有效，跨真实孩子的 Debt 尚无总支付。[零池实例](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/zero_pool_switch_debt.md)复用既有三人完整 SPE，在真正 $t=v_3$ 下所有真实根分支的 $H=F^*=\Gamma=0$，却有正的虚拟交换 Debt，明确否定“只运输真实返还池 $H$ 就能支付该债务”的桥。该实例仍有 $W>3v_3$，并未否定聚合安全值、额外一槽接口或 half。这里需要的是高尾剩余利润或其他真实激励的联合支付，不能把规范化、税账和严格交换首尾拼成已完成的证明。
+## 最容易再次误用的失败桥
 
-此次同步补读范围为上述四份正文，以及变分稿的[盲重构](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/review_variational_blind.md)、[最终对稿](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/tail/review_variational_final.md)和税账的[独立解析审查](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/global/uniform_tax_independent_review.md)。VAR 与同多重集交换按其已有内部审查范围记录，税账另按自己的审查记录，零池应用按正文注明的 root 独立核对记录；本综述的阅读与分类不为它们新增统一审查等级。
+| 精确误用 | 已有见证/纠错；留下的自由 |
+| --- | --- |
+| 把SPE终局冻结成静态Nash，或改用同实例最低静态CCE福利 | [静态福利分离](../current/customer_attraction/eight_customer_cce_welfare_gap.md)已有完整策略。真正静态安全值与CCE/iid福利不是同一对象 |
+| 要求每个玩家有安全值/额外槽保底，或每个前缀余额非负 | [逐人反例](../current/customer_attraction/individual_security_counterexample.md)、[零根额外槽反族](../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round5_general/security/global_extra_individual_counterfamily.md)、[负前缀族](../current/customer_attraction/prefix_balance_family.md)。不否定尚未证明的真正聚合安全值桥 |
+| 实际前缀冻结后，要求后继总收益 P 加新增覆盖 Δ 支付前缀外最优覆盖 | [52客户完整根SPE](../workspaces/customer-attraction/R-5c4f6385eec046eb9a20052facacba11/background/global_actual_prefix_counterexample.md)：P=17、Δ=0，前缀外两主题最优为18；甚至 P+λΔ 的任意固定λ也不能修复。它仍满足half |
+| 只支付遗漏 L，或各角色只用自己的收益和退款支付 | [71客户唯一最优例](../workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/exchange/unique_optimum_omission_obstruction.md)有 L=36>W=35；[179客户逐角色反例](../workspaces/customer-attraction/R-b659ddeec819493bb10dc58441fa7b3d/refund/unique_optimum_refund_floor_counterexample.md)有倒二35<36。仍允许共同净差支付 |
+| 强/弱iid福利替代真正vₘ，或固定实际负载缩放税桥 | [iid§1.2](../current/customer_attraction/iid_security_and_flow_barriers.md)、[精确税§4](../current/customer_attraction/fractional_actual_load_counterexample.md)已否。不能由此声称真正强/弱安全值聚合为假 |
+| 将有限必要条件模板的二以上点称为目标反例 | 只否定那份模板足以证明half；仍需同目录客户实现、实际OPT及全部历史可信补全，见[五人障碍](../current/customer_attraction/five_player_indexed_obstruction.md) |
 
-最近[常数三根修复](../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/compiler/padded_insurer_repair.md)给一个与原目标精确相容的反例接口。对所有正深度子局已为完整 SPE、仅根有最大获利偏离 $\Delta$ 的计划，利用共同目录 Cartesian 保险修复全部历史；在共同缩放前的记账单位中，保险实际覆盖增加 $(m+1)\Delta$，最优覆盖增加 $(2m-1)\Delta$，所以坏差额减少 $3\Delta$。有理缺陷须共同复制客户清分母，输出全部数值同比例缩放；不是只加两个总主题。因而每个固定 $m\ge2$ 的原 half 等价于所有此类计划的 $\operatorname{OPT}_m-2W\le3\Delta$。该编译及[独立不交保险的锐三稀释界](../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/compiler/disjoint_insurer_three_sharp.md)已有独立内部重构；后者的共同核心必须包含于所有合法主题，且根以下分量独立。等价重述提供了另一种攻击原问题的方式，尚未给出越过门槛的计划，也没有把半覆盖归纳自动闭合。
+原始量词、其他失败机制、回收信息和重试条件按需查[失败地图](FAILED_ROUTES.md)。历史稿中的OPEN、后来撤回的公式和研究指令不直接继承；先按其精确 Claim 检查现行状态。
 
-既有成果按能够自足回答的问题归并，不按研究轮次、作者或算法数量拆分。以下记录存量资产的整理位置；特殊范围部分只保全来源，不重新启动局部成稿或局部研究任务。
+## 还缺什么，怎样继续
 
-1. **真实路径的覆盖与利润预算。** 以分数覆盖前缀递推为主定理，合并实际遗漏席位谱，统一模型、比较并集、实际最终利润与真实偏离的记账。两个机制及其条件性锐结论分别证明，明确它们尚未共同支付一般共享遗漏；末四人提升作为已有一般弱界的比较。单遍水位化、变分规范化、统一缩尾税账及严格换根可另合为一份“辅助负载与真实激励的共同记账”方法稿，以规范状态、联合势账、规定路径 regret 预算为正向命题，以零池实例准确限定其组合接口；不把该稿视为覆盖预算主定理的最后一步。这些结果已有自足的全范围不等式和明确适用推论，适合形成部分结果稿；外部优先性仍须另核。
-2. **极大关联结构中的真实中继。** 在统一“客户对极大主题的归属集合”语言下，合并不交、向日葵、层级保护与极端归属驻留证明，写清包含关系与不可比性；扣除 singleton 与最大交叠的文献地基。六、七极大的联合系数证明作为另一种有限结构方法独立归档，不用其病例数充当一般机制。既有小人数最佳界及旧常数作为独立地基归档，不继续逐人数调优。
-3. **可信性、静态比较与完整资料。** 将 SPE 不等于 PNE、最低静态 CCE 仍不能代表 SPE、无拥挤 $3/2$ 族、负前缀无限族等，围绕“真实后继为何不能由静态终局替代”组织成一份有主命题的分离稿；完整策略证书作为可核验附录。覆盖矩、非负实现及全树锥可另成表示方法稿，避免把标准求解器实现与新的表示定理混写。
-4. **可信编译与稳健根缺陷。** 常数三根修复、精确缩放、全历史拼合、相同人数的等价重述，以及所述独立保险架构的匹配下界，自然组成一篇方法短稿。应与普通有限负例诊断分开；固定锥未越门槛、算法数量和阴性试验不列为数学贡献。该稿的准确结论是可复用编译和架构锐性，不是原猜想已解决。
+现有预算路线都尚缺一条对**一般人数、一般目录、每份完整策略**有效的共同控制：把真实离轨后继改变行动带来的损失与旧收益返还放在同一份实际预算中，不重复使用 W。局部恒等式成立、形式表示等价或有限锥成功，都没有补上这一点。原目标也可通过完全不同的方法证明，不必先证明这些预算候选。
 
-这些合并建议保留每项现有定理的独立范围与来源，不要求用一篇稿件容纳全部资产。下一项主线成果必须对任意 $m$、任意共同目录提供新的真实全树支付、合法等价归约或完整目标反例；方法不限定为上述预算、安全值、势、运输或编译。现有结构与小人数结果继续可读、可引用、可回归，但不再以扩张特例代替这一全范围义务。
+两项具体的开放接口供按需接续：真实查询行在更早位置的净差付款（[倒二已证行与限制](../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/penultimate_true_query_row.md)）；真正安全值的弱充分桥 W≥(m−1/2)vₘ(0)（[安全值债务链](../current/customer_attraction/security_chain_and_local_boundary.md)）。后者及更强 W≥mvₘ 仍 **OPEN**：历史口头声称的聚合反例尚未恢复成可检查证书，不得当作反证。
+
+下一轮先选一个精确一般义务，再读取其原文、真实反例和审查；写明新增哪条信息、推进哪一步。失败时记录准确范围和可复用机制。不要再用旧证书重放、同义改写、增加目录或多人赞同替代一般研究进展。

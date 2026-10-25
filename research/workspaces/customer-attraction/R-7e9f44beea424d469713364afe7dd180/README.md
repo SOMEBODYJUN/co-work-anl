@@ -1,5 +1,8 @@
 # Boss7：完整历史顺序客户吸引的一般半覆盖
 
+> **接续状态更正（2026-10-25）**：任意合法背景首两人2v_r保底的旧候选已被[更弱PB-extra完整解析反例](../R-cd789330fc7141299ac491bbb3ffa420/round5/menu/pair_attack.md)排除；该背景未证为根SPE实际可达，不据此否定实际前缀专用弱化或真正根聚合安全值。强弱iid福利替代另已否定，不能与真正v混同。 原稿保留为当时的研究记录；旧指令不覆盖当前用户目标。现行状态先查[研究接续材料](../../../customer_attraction/SYNTHESIS.md)。
+
+
 研究存档 `customer-attraction`；本对话生成身份 `R-7e9f44beea424d469713364afe7dd180`，独立 clone `co-work-anl-boss7`，分支 main。恢复以本 clone 绑定和根 work.py 为准；凭据不在仓库内。
 
 ## 精确目标与现状

@@ -146,8 +146,12 @@ def check() -> None:
                  "design/AI_Co_Mathematician_master.md",
                  "design/work_github_adaptation.md",
                  "design/large_scale_research_collaboration.md"}
+    # Manuscript support notes are classified by the same named catalogue as
+    # research assets; this does not admit arbitrary unregistered docs files.
+    named_support_docs = {row["path"] for row in load("catalog.json")["entries"]
+                          if row["path"].startswith("docs/proof-review/")}
     unknown = {p for p in tracked if p.split("/", 1)[0] not in roots
-               and p not in root_docs}
+               and p not in root_docs and p not in named_support_docs}
     require(not unknown, ("unclassified repository files", sorted(unknown)))
     for group in ("history/source/manuscripts", "history/source/notes",
                   "evidence", "examples", "research/current"):

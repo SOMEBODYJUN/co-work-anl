@@ -306,6 +306,9 @@ def visit(repo, env, save, who, path="README.md"):
 
 
 def start(args):
+    board_limit = getattr(args, "board_limit", 3)
+    if board_limit < 0:
+        raise Stop("start --board-limit 必须是非负整数；0 表示不自动读取公屏。")
     repo = Path(args.repo).expanduser().resolve()
     if not (repo / ".git").exists():
         if repo.exists() and any(repo.iterdir()):
@@ -360,8 +363,13 @@ def start(args):
     }))
     result.update(role=selected_role,
                   role_prompt=ROLE_PROMPTS[selected_role] if selected_role else None)
+    if save == "customer-attraction":
+        result["context_entry"] = "research/customer_attraction/SYNTHESIS.md"
+    result["recent_board_limit"] = board_limit
     print(json.dumps(result, ensure_ascii=False), flush=True)
-    return board(repo, env, "view", ["--save", save])
+    if not board_limit:
+        return 0
+    return board(repo, env, "view", ["--save", save, "--limit", str(board_limit)])
 
 
 def board(repo, env, command, extra):
@@ -391,6 +399,8 @@ def main():
     s.add_argument("--remote", default=REMOTE)
     s.add_argument("--save", default=argparse.SUPPRESS)
     s.add_argument("--resume", action="store_true", help="明确接续已存在的同号工作区")
+    s.add_argument("--board-limit", type=int, default=3,
+                   help="启动时读取最近几条公屏；默认3，0不自动读取，完整历史用read按需查询")
     sub.add_parser("sync", help="同步 main 并保留本地工作")
     r = sub.add_parser("read", help="读取异步公屏")
     r.add_argument("--json", action="store_true")

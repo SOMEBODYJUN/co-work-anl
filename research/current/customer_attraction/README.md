@@ -1,12 +1,12 @@
 # 顺序客户吸引：成果、反例与一般半覆盖数学地图
 
-本轮整理入口：[一般证明工作稿](general_half_proof.md)串联全范围已证关系及明确未证步骤；[成果总账](../../customer_attraction/RESULTS_LEDGER.md)逐份列出范围与审查等级，[衔接说明](../../customer_attraction/SYNTHESIS.md)解释共同机制，[个人区恢复总索引](../../customer_attraction/WORKSPACE_RESULTS.md)覆盖全部既存个人区。工作稿的已证关系已经独立内部检查，原Q-CAG-HALF仍OPEN。
+下一轮先读[模型](model.md)及[短接续材料](../../customer_attraction/SYNTHESIS.md)。本页是按需的数学全文地图，不要求默认通读。[一般工作稿](general_half_proof.md)是未完成汇编，各关系按其实际审查范围使用；[成果总账](../../customer_attraction/RESULTS_LEDGER.md)是有截止的分类记录；[个人区索引](../../customer_attraction/WORKSPACE_RESULTS.md)区分旧冻结盘点与后续恢复。原Q-CAG-HALF / customer-attraction仍OPEN，不把汇编称作全证明已审。
 
 接续新增的一般关系见[工作稿§3.1](general_half_proof.md#31-冻结真实前缀的联合客户席位一般付款的精细加强)：冻结每个实际前缀，把所有客户放入同一完整利润席位，证明 `W≥ΣΛ_i≥Σλ_i`，严格加强旧两类保底的逐位置最大值。完整定义、内部解析检查及独立单位客户证据均从该节进入；无私有遗漏时退回已有分母界，尚不推出 half，也未增加特殊人数或结构类项目。
 
 该关系的[内部审查与复现入口](../../reviews/customer_attraction/prefix_coupled_seat_budget.md)区分解析证明、独立完整策略补全和有限数值范围；对应脚本、输入及冻结动作表均由该页导航。
 
-2026-10-24 状态去重：成果总账已将实际缩放背景的精确税桥 `mM<=W+G_C` 从开放桥移至已反驳项，与[现行反例正文](fractional_actual_load_counterexample.md) §4及研究状态一致。本轮重放旧完整策略，不认领新反例；真正聚合安全值、Mfull/Mpath和原half仍OPEN。另[最优首动作菜单](optimal_first_action_branch_gap.md) §5 的丢信用加强(11?)已由all-big完整SPE族否定，正确局部恒等式保留；详见正文状态更新和失败地图。
+2026-10-24 状态去重：成果总账已将实际缩放背景的精确税桥 `mM<=W+G_C` 从开放桥移至已反驳项，与[现行反例正文](fractional_actual_load_counterexample.md) §4及研究状态一致。本轮重放旧完整策略，不认领新反例；真正聚合安全值、全路径Mpath和原half仍OPEN；逐位置Mfull已被下述零根保险族否定。另[最优首动作菜单](optimal_first_action_branch_gap.md) §5 的丢信用加强(11?)已由all-big完整SPE族否定，正确局部恒等式保留；详见正文状态更新和失败地图。
 
 2026-10-25 接续勘正：[工作稿§8](general_half_proof.md#8-额外一槽与完整菜单逐位置加强已失败聚合接续未闭合)中的逐位置 Mfull 加强现已由既有全人数零根保险族反驳，旧OPEN标签撤回；该族 `M_1>=δ_(m+1)>u_1`，却 `M_1<W/m`。因此全路径 Mpath 聚合及原 half 仍 OPEN。原2026-10-24段所述旧精确税反例本身不否定菜单，这与后来真正零根反证分开记录。
 
@@ -81,7 +81,7 @@
 | --- | --- |
 | [任意目录三人的锐福利界](three_player_sharp.md) | **数学正文。** 恰三人、任意完整历史纯 SPE 的 OPT₃≤(5/3)W 及达到下界；当前三人结论的首读正文。 |
 | [任意目录四人的真实根偏离福利界](four_player_bound.md) | **数学正文。** 恰四人、零根背景的 OPT₄≤(1499/750)W；保留原策略的根偏离与后继节点比较，不声称常数尖锐。 |
-| [任意目录五人的索引最优偏离福利界](five_player_indexed_bound.md) | **数学正文。** 恰五人、零根背景的当前较强上界 β≈2.061695；真实索引续局与有理非负证书仍未达到半覆盖。 |
+| [任意目录五人的索引最优偏离福利界](five_player_indexed_bound.md) | **数学正文。** 恰五人、零根背景的共享旧437行上界 β≈2.061695；真实索引续局与有理非负证书仍未达到半覆盖。 |
 | [五人的三个真实最优回复菜单福利界](five_player_reply_bound.md) | **数学正文。** 保留最优主题重数及三个真实末位菜单，给约 2.101243 的五人界；作为独立菜单机制保留，不是当前最强五人界。 |
 | [五人的两条真实中途偏离福利界](five_player_bound.md) | **数学正文。** 给约 2.209867 的五人上界及独立的两人税组合机制；后续上界更强，本稿原 claim 身份与推导仍保留。 |
 | [三人的两人税组合福利界](three_player_bound.md) | **数学正文。** 给旧 142/81 上界及从固定背景两人税到根覆盖的推导；三人最佳界已由独立的锐界正文替代。 |

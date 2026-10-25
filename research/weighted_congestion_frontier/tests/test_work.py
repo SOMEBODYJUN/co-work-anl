@@ -40,6 +40,35 @@ def value(repo, *args):
 
 
 class WorkTests(unittest.TestCase):
+    def test_start_limits_recent_context_without_deleting_board_history(self):
+        self.start()
+        for label in ("older-context", "recent-a", "recent-b", "recent-c"):
+            sent = self.work("send", "--text", label, "--thread", "context-fixture")
+            self.assertEqual(sent.returncode, 0, sent.stderr)
+        recent = self.work("start", "--remote", str(self.remote))
+        self.assertEqual(recent.returncode, 0, recent.stderr)
+        receipt = json.loads(recent.stdout.splitlines()[0])
+        self.assertEqual(receipt["context_entry"], "research/customer_attraction/SYNTHESIS.md")
+        self.assertEqual(receipt["recent_board_limit"], 3)
+        self.assertNotIn("older-context", recent.stdout)
+        self.assertIn("recent-a", recent.stdout)
+        self.assertIn("recent-c", recent.stdout)
+        quiet = self.work("start", "--remote", str(self.remote), "--board-limit", "0")
+        self.assertEqual(quiet.returncode, 0, quiet.stderr)
+        self.assertEqual(len(quiet.stdout.splitlines()), 1)
+        one = self.work("start", "--remote", str(self.remote), "--board-limit", "1")
+        self.assertEqual(one.returncode, 0, one.stderr)
+        self.assertNotIn("recent-b", one.stdout)
+        self.assertIn("recent-c", one.stdout)
+        all_messages = self.work("read", "--json", "--limit", "0")
+        self.assertEqual(all_messages.returncode, 0, all_messages.stderr)
+        self.assertEqual(len(json.loads(all_messages.stdout)["events"]), 4)
+
+    def test_negative_start_context_limit_fails_before_recovery(self):
+        result = self.work("start", "--remote", str(self.remote), "--board-limit", "-1")
+        self.assertEqual(result.returncode, 2)
+        self.assertFalse(self.repo.exists())
+
     def test_automatic_actor_is_stable_and_creates_no_work_branch(self):
         result = self.work("start", "--token-file", str(self.credential),
                            "--remote", str(self.remote))

@@ -1,5 +1,44 @@
 # 一般半覆盖研究入口与保留资产的清理记录
 
+## 2026-10-25：以研究接续正确性验收的清理
+
+本轮按用户要求先清理再研究。基线为 `4b57ec59cb67ddbeb737a843c8ccf6d110c2e43b`。以下是本轮实际执行的范围；后面的较早批次记录保留其原截止，不能合并成“这轮全部重做”。**Q-CAG-HALF / customer-attraction仍OPEN**，没有新数学发现、一般证明或完整目标反例。
+
+### 什么被实际改变
+
+- 重写根四入口、本题短地图、SYNTHESIS和当前前沿；默认输入只保留模型量词、可用关系、失效加强、关键缺口及唯一来源。长一般稿、成果总账、数学全文地图与个人区改为按需查阅，不要求递归展开链接。
+- 三份角色提示词统一上述读取合同。清洗者实质检查命题和证据；整理者首先组织下一轮可使用的输入，论文定位另行判断。个人备份保留未审/失败尝试，但不自动进入当前事实或指令。
+- 恢复五人557行独立全域对偶上界，区分共享437行原Claim与728行作者证书；旧2.061695不再无限定称当前最佳。原Claim身份与原证明不换常数；匹配primal、模板精确最优和实际SPE仍分别标级。
+- 补入52客户真正根SPE实际前缀反例，关闭P+λΔ整体加强；给逐位置Mfull和任意背景首两人旧OPEN入口加准确盖帽。强弱iid、实际负载税和真正聚合安全值分开；最后者仍OPEN，历史口头反例保留待恢复线索，不能当反证。
+- 更正旧“全部个人区”索引的截止范围，补两份漏列共享稿的路由；`incidence_lp_dynamic_budget.md`明确仍为待独立清洗候选。
+- 修复四处不存在的个人入口文件/目录链接：三处来自入口筛查，另一处由父方完整递归README链接检查发现。未物化内容明确标为未恢复，不补造证明。独有正文、原证书和旧库存哈希保留原路径与字节。
+- 根work.py的start从原先隐式显示最近50条公屏改为默认3条，回执增加短上下文路径；`--board-limit 0`不自动读取，完整历史仍可按需read。旧存档、身份、凭据、同步和消息保存合同不变。
+
+### 全材料盘点、实际阅读与数学审查分开
+
+[机器路由](context_inventory.json)记录精确Git基线的全仓材料分区；基线可见非缓存源文件9377份。customer-attraction个人区为113个actor、6142文件、707份递归README。父方用Git树独立核对全部个人路径/actor计数和113份根README的基线SHA-256；本轮新建工作区另列，不混入基线。
+
+两名入口审计者完成递归README的内容/链接/状态筛查，并对根入口和有冲突子页重点阅读；前半根以状态抽读、后半57根全文，嵌套正文仅定点全文，具体覆盖在[盘点报告](../workspaces/customer-attraction/R-d5b468f0c01140e79be5afef669bc0e5/audit/cleanup_inventory_audit.md)。这不是全部707份逐式全文已读，更不是全部6142文件数学已审。后续个人区一般组件保留按需源路由，不把候选统一提升为可靠结果。
+
+本轮实质定点复核包括三/四人审计、五人557行全类型对偶，以及52客户背景整体反例和179客户逐角色退款反例的精确重放。557行独立程序检查全部6144条件，非发现支持上的抽样；52例259历史/1554比较、179例57历史/399比较通过。原脚本写冻结JSON的行为通过输出重定向或仅抑制写入执行，未覆盖原证据；命令、实际范围和输出分别见[正面审计](../workspaces/customer-attraction/R-d5b468f0c01140e79be5afef669bc0e5/audit/cleanup_evidence_audit.md)、[失败审计](../workspaces/customer-attraction/R-d5b468f0c01140e79be5afef669bc0e5/audit/cleanup_failure_audit.md)。这些是既有结果的定点复核，不算本轮新增数学贡献。
+
+### 独立阅读验收与修复
+
+另启动不继承本轮聊天历史的接续者，只允许读取根四入口、AGENTS、模型、SYNTHESIS和当前前沿，回答八组问题：原量词、五人各证据层、背景归纳、净需求L−E、安全值/iid对象、计数/可信性/模板误用、五人压力及一般缺口/取源方法。[完整报告](../workspaces/customer-attraction/R-d5b468f0c01140e79be5afef669bc0e5/audit/cold_context_review.md)保留原问题与回答。
+
+该检查实际发现并修正两处歧义：τ≤7/2的全人数half需要m≥5的乘积界与m≤4既有定理共同支撑；分母中的剩余人数r明确包含当前玩家。修订后复读确认，通过阅读正确性与接续性验收，未发现尚存致命误导。**这不是未来研究产出已提高的实验，也不是全部证明复审。**
+
+输入组织的文献依据仅作方法参考：[Lost in the Middle](https://arxiv.org/abs/2307.03172)在其所测任务/模型中发现相关信息位置影响长上下文利用；[OpenAI prompting guide](https://developers.openai.com/cookbook/examples/gpt4-1_prompting_guide)强调用任务评估迭代。它们不证明本仓某个字数最优，也不能代替本题阅读验收。因此本轮不将压缩率当数学收益，保留按需深入所有必要证据的通道。
+
+### 本轮可复现核验
+
+- [verify_context.py](../workspaces/customer-attraction/R-d5b468f0c01140e79be5afef669bc0e5/verify_context.py)：Python Fraction反算各上界与产品式，含零基数的729组净差身份检查、基线6142路径/113根哈希及1940个本地链接目标检查；无剩余断链。
+- 相同默认文件集UTF-8输入从49567字节变为26278字节，约减少46.98%；这是字节量而非token数或模型能力分数，未为压缩删除数学前提。[实际输出](../workspaces/customer-attraction/R-d5b468f0c01140e79be5afef669bc0e5/audit/context_verification.json)保存文件集与限制。
+- work.py集成回归26项通过，涵盖默认/单条/零条/负值启动边界、完整历史仍可读取及既有同步和凭据边界；active routing回归14项通过。不为本轮导航改动重跑无关特例搜索。
+
+结构生成与检查已通过：active routing（29入口/467链接、74数学文件、28退役原件hash）、catalog（2089命名资产）、map（1149节点/1349关系）、crosswalk、check_assets（347资产合同/9396索引路径）、check_wc_assets（164保留路由）和git diff --check。首次check_assets实际发现9份既有设施稿审查笔记未分类，已逐份登记catalog并连接ASSETS；分类校验只接受已命名的docs/proof-review路径，另用未登记临时文档验证仍会拒绝。拥塞派生FILES按既有生成器刷新，未改其冻结代码/证据。最终远端保存仍以checkpoint回执为准。本轮可恢复审计源和下一义务从[本轮工作区](../workspaces/customer-attraction/R-d5b468f0c01140e79be5afef669bc0e5/README.md)进入。旧批次记录如下，均保留当时范围。
+
+
 当前主攻 **Q-CAG-HALF**，存档 **customer-attraction**。本次只改变研究组织、默认路由和重复入口，不宣称新增数学定理。原主目标仍OPEN。
 
 ## 实际清理

@@ -1,5 +1,9 @@
 # 顺序客户吸引成果总账：一般组件、条件结论、开放义务与桥梁边界
 
+**读取范围更新：** 下文为原截止分类及明确增补，不是随HEAD自动完备的真值快照。下一轮从[短接续材料](SYNTHESIS.md)和[当前前沿](RESEARCH_STATE.md)进入；五人557行独立已审上界强于下表437行，旧值不能再无限定称“当前最佳”。本轮不重新审完全部正文。
+
+本轮补齐的路由：[最优首动作真实孩子缺口](../current/customer_attraction/optimal_first_action_branch_gap.md)为已有全范围恒等式，跨孩子正项仍未支付；[关联LP动态预算](../current/customer_attraction/incidence_lp_dynamic_budget.md)仍为待独立清洗候选，不因进入current升级。冻结实际前缀的P+λΔ整体归纳已被[52客户完整证书](../workspaces/customer-attraction/R-5c4f6385eec046eb9a20052facacba11/background/global_actual_prefix_counterexample.md)否定。
+
 盘点基线：2026-10-23，`69e6012bd585e1e1b53b7535a1cff661fe35a855` 同步后的实际文件，并纳入整理过程中新增的 `general_half_proof.md`。覆盖 `research/current/customer_attraction/` 的 **71份数学/定义/文献/衔接正文及1份README**，并对照 `research/current/claims.md`、`research/customer_attraction/CLAIMS.md`、`research/review_status.json` 和 `research/assets.json`。正文声明、命题量词、来源证明、内审、外审与实现保持独立；本轮是分类和登记核对，**没有重新审完全部证明，也不提升任何审查等级**。
 
 唯一继续研究的目标是原 **Q-CAG-HALF**：有限单位客户、有限非空共同目录、任意人数m、每个完整有序历史纯SPE均满足 `2W>=OPT_m`；允许空主题、重复选择、零客户与任意历史依赖平局。它仍 **OPEN**，没有完整一般证明或真正目标反例。当前授权只攻一般m、一般目录；下列条件目录、固定人数和局部常数成果保留供引用与提取一般组件，**停止把扩张这些特殊范围作为研究任务**。特殊实例只用于检验一个明确的一般候选。
@@ -50,7 +54,7 @@
 | [research/current/customer_attraction/four_player_bound.md](../current/customer_attraction/four_player_bound.md)；`CA-FOUR-UPPER-1499-750` | 恰四人、空根背景、任意目录：`OPT_4<=(1499/750)W<2W`；未证锐。 | 原完整策略的根偏离及后继自身比较，不冻结后继。 | M |
 | [research/current/customer_attraction/five_player_bound.md](../current/customer_attraction/five_player_bound.md)；`CA-FIVE-UPPER-221-100` | 恰五人：系数 `24236714656727/10967499015623`，约2.209867，仍>2。 | 两条真实中途偏离、恰两人税组合；上界不是低效SPE实例。 | M |
 | [research/current/customer_attraction/five_player_reply_bound.md](../current/customer_attraction/five_player_reply_bound.md)；`CA-FIVE-REPLY-UPPER` | 恰五人：系数 `493266145873827/234749688354196`，约2.101243，仍>2。 | 三个真实末位菜单及匹配项消去；保留独立机制，不作当前最佳界。 | M |
-| [research/current/customer_attraction/five_player_indexed_bound.md](../current/customer_attraction/five_player_indexed_bound.md)；`CA-FIVE-INDEXED-UPPER` | 恰五人当前较强界：beta=`145473820534756099649387160645076613709/70560308704423797361284609157664425493`，约2.061695>2。 | 保留真实索引回复与联合直方图；437行模板精确最优仍不等于原游戏最坏比例。 | M |
+| [research/current/customer_attraction/five_player_indexed_bound.md](../current/customer_attraction/five_player_indexed_bound.md)；`CA-FIVE-INDEXED-UPPER` | 恰五人共享旧437行界：beta=`145473820534756099649387160645076613709/70560308704423797361284609157664425493`，约2.061695>2。 | 保留真实索引回复与联合直方图；437行模板精确最优仍不等于原游戏最坏比例。 | M |
 | [research/current/customer_attraction/three_remaining_profit_bound.md](../current/customer_attraction/three_remaining_profit_bound.md)；`CA-THREE-REMAINING-PROFIT-5-3` | 任意合法固定背景、恰三名剩余人：同背景最优剩余利润 `F_3(b)<=(5/3)P_tail`，统一常数锐。 | 三人真实回复恒等式加背景校正；剩余利润不是全局覆盖，可供一般尾部提升。 | M |
 | [research/current/customer_attraction/four_remaining_profit_bound.md](../current/customer_attraction/four_remaining_profit_bound.md)；`CA-FOUR-REMAINING-PROFIT-1499-750` | 任意合法固定背景、恰四名剩余人：`F_4(b)<=(1499/750)P_tail`；未证锐。 | 真实D/Q/R/S节点及背景聚合校正；一般提升只能用此背景版，不能裸搬空背景根证明。 | M |
 | [research/current/customer_attraction/two_remaining_tax.md](../current/customer_attraction/two_remaining_tax.md)；`CA-TWO-REMAINING-TAX` | 任意固定合法背景、恰两剩余人、任意比较主题对：最优比较剩余利润不超过实际剩余利润加倒二主题的局部税。空背景重构3/2。 | 三条真实比较及对称交叠恒等式；一般首步税和总税均不能由此递推。 | E |
