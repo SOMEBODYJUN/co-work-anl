@@ -9,23 +9,24 @@ histogram after actual membership and optimal multiplicity are fixed.
 from itertools import product
 from math import comb
 from pathlib import Path
+from fractions import Fraction as F
 import json
 import numpy as np
 from scipy.optimize import linprog
 
 HERE=Path(__file__).resolve().parent
 M=5
-BETA={1:1.,2:1.5,3:5/3,4:1499/750}
+BETA={1:F(1),2:F(3,2),3:F(5,3),4:F(1499,750)}
 BITS=list(product((0,1),repeat=4))
 
-def rat(a,b): return a/b if a else 0.
+def rat(a,b): return F(a,b) if a else F(0)
 def profit_count(p,c): return rat(c,p+c)
 def subset_profit(p,c,k):
     return sum(comb(c,d)*comb(5-c,k-d)*profit_count(p,d)
                for d in range(max(0,k-(5-c)),min(c,k)+1))
 
 def col(a,j,x,y):
-    c=sum(a); w=float(c>0); o=float(j>0)
+    c=sum(a); w=int(c>0); o=int(j>0)
     u=np.array([rat(v,c) for v in a]); rows=[]; names=[]
     def put(n,z): names.append(n);rows.append(z)
     # All actual-node guaranteed payoff queries, including exact final BR.
@@ -64,7 +65,7 @@ def col(a,j,x,y):
         put(f'root:profit{k}:opt',coef*v-rhs)
         rhs=sum(mult*subset_profit(t+sum(z[:offset]),c,k) for t,z,mult in seqs)
         put(f'root:profit{k}:actual',coef*v-rhs)
-    return np.array(rows),w,o,names
+    return np.array(rows,dtype=object),w,o,names
 
 def main():
     cols=[]; desc=[]; ws=[];os=[]
@@ -76,7 +77,7 @@ def main():
             for x in xp:
                 for y in yp:
                     r,w,o,names=col(a,j,x,y)
-                    cols.append(r);ws.append(w);os.append(o);desc.append((a,j,x,y))
+                    cols.append(np.array(r,dtype=float));ws.append(w);os.append(o);desc.append((a,j,x,y))
     mat=np.array(cols).T
     res=linprog(-np.array(os),A_ub=-mat,b_ub=np.zeros(len(names)),
                 A_eq=[ws],b_eq=[1],bounds=(0,None),method='highs')

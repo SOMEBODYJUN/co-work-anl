@@ -55,7 +55,17 @@ class Universe(CrossUniverse):
         self.fixednames=list(fixed_rows((0,)*10,0));self.names+=self.fixednames+[z[0] for z in self.specs]
         # Add fixed-state rows to the original base tensor and leave old-menu
         # affine coefficients zero. The original price() will then use them.
-        extra=np.asarray([[[int(sc(v)) for v in fixed_rows(bits,d).values()] for d in range(6)] for bits in self.bits],dtype=np.int64)
+        bb=np.asarray(self.bits,dtype=float);ds=np.arange(6)[None,:];fx=[]
+        for pn,i in NODES:
+            path=PATHS[pn];load=bb[:,[LABELS.index(t) for t in path]].sum(1)[:,None];p=bb[:,[LABELS.index(t) for t in path[:i]]].sum(1)[:,None];k=5-i;a=aa(k)
+            u=np.divide(bb[:,LABELS.index(path[i])][:,None],load,out=np.zeros((1024,1)),where=load>0)
+            for c in LABELS:
+                for e in LABELS:
+                    cv=bb[:,LABELS.index(c)][:,None];dv=bb[:,LABELS.index(e)][:,None]
+                    value=a*u-((a-2)*cv+2*cv*dv)/(p+k)-2*dv*(1-cv)/(p+1)
+                    fx.append(np.broadcast_to(sc(value),(1024,6)))
+            value=25*a*u-((a-2)*5*ds+2*ds*ds)/(p+k)-2*(5*ds-ds*ds)/(p+1);fx.append(sc(value))
+        extra=np.stack(fx,axis=2)
         self.base=np.concatenate((self.base,extra),axis=2)
         zeros=np.zeros((1024,6,3,len(self.fixednames)),dtype=np.int64)
         self.ec=np.concatenate((self.ec,zeros),axis=3);self.hc=np.concatenate((self.hc,zeros),axis=3)
