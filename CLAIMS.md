@@ -1,27 +1,13 @@
-# 精确命题入口：顺序客户吸引一般半覆盖
+# 精确命题路由
 
-当前主攻 **Q-CAG-HALF**，存档 **customer-attraction**。对任意有限共同目录、任意人数单位权提供者、单位价值客户以及每个完整历史依赖纯SPE，欲证2W≥OPT。主目标 **OPEN**；没有因导航整理而提升任何数学状态。
+**Q-CAG-HALF**，存档 **customer-attraction**，状态 **OPEN**：对每个有限单位客户集、每个有限非空共同主题目录、每个 `m≥1` 和每个完整历史依赖纯 SPE，证明 `2W≥OPT_m`。允许重复、空主题、零客户和任意历史平局。
 
-| 必须核对什么 | 权威位置 |
+| 需要核对 | 唯一职责入口 |
 | --- | --- |
-| 对象、收益、全部历史、空主题与零福利 | [CAG-MODEL](research/current/customer_attraction/model.md) |
-| 目标完整陈述及文献范围 | [Q-CAG-HALF](research/questions/customer_attraction_half_coverage.md)、[本题账本](research/customer_attraction/CLAIMS.md) |
-| CA系列重要命题的精确身份 | [全仓精确账本](research/current/claims.md)；不是角色消息或README摘要 |
-| 证明、内审、外审与实现的分别状态 | [五轴审查账本](research/review_status.json) |
-| 证据、依赖、文件与已成立异议 | [资产合同](research/assets.json)、[关系图](research/graph.json)、[本题地图](research/current/customer_attraction/README.md) |
+| 对象、收益与全部历史 | [模型](research/current/customer_attraction/model.md) |
+| 主目标的量词、假设、证据、异议 | [本题精确身份](research/customer_attraction/CLAIMS.md) |
+| 各具体 CA Claim 的完整身份 | [全仓精确账本](research/current/claims.md) |
+| 证明、内部检查、外审及实现状态 | [审查等级](research/review_status.json)与各原审查正文 |
+| 依赖与文件合同 | [资产](research/assets.json)、[图](research/graph.json) |
 
-改变目录条件、权重、客户价值、SPE量词或结论，应另立版本。安全值加强桥或某个LP模板失败，与原半覆盖的真值不同；原文事实、解释、猜想、计算观察和长期记录分别表述。
-
-## 其他模型的独立账本
-
-- [一般不相关机](research/unrelated_machines/CLAIMS.md)：UM-TARGET-v1与一般反面均OPEN。
-- [加权拥塞](research/weighted_congestion_frontier/CLAIMS.md)：线性全状态非存在证明与文献上界分开，最优常数未定。
-- [共同目录双设施](research/current/shared/theorems.md)、[任意设施数](research/current/multi_facility/claims.md)：存在性、有限构造与位多项式算法分别记录。
-
-暂停旧题不会使其命题变成已解决或被否定；按[保留问题表](research/customer_attraction/RETAINED_QUESTIONS.md)接续。
-
-新增内部已审表示/构造：[固定人数覆盖矩与真实行span](research/current/customer_attraction/coverage_moment_geometry.md)、[任意人数无拥挤SPE比率趋3/2族](research/current/customer_attraction/collision_free_three_halves_family.md)。各有独立精确身份、证明、审查及证据登记；均不解决一般half，外审及新颖性未认证。
-
-加权拥塞新增的七项结构决策接口/反例，精确身份、量词和证据在[专题账本末节](research/weighted_congestion_frontier/CLAIMS.md)，成稿及复现见[方法包](research/current/weighted_congestion/decision_methods/README.md)。
-
-后续[结构重构专题](research/current/weighted_congestion/structural_reconstruction/README.md)按独立身份登记端点—面积规律、共同尺度与环合同、权深度、稳定核实现及近次数全状态非存在；既有 d/10 命题不改量词，较强结论另立身份。正向方法、所选势字典的最优证书与全类均衡阈值分别记录。
+改变域、量词、定义或结论需另立版本。有限计算、已保存草稿及导航摘要均不自动成为已证结论。其他模型的账本从[研究总目录](research/README.md)读取。

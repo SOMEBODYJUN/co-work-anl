@@ -1,5 +1,8 @@
 # 顺序客户吸引成果总账：一般组件、条件结论、开放义务与桥梁边界
 
+> **读取范围**：本表是原批次逐项盘点及后续定点勘正，不是全部最新个人资产已复审的声明。“本轮重放”等旧批次叙述只指其所链审计；2026-10-25入口清理未重放这些大证书。当前FALSE/OPEN以[前沿](RESEARCH_STATE.md)、[失败机制](FAILED_ROUTES.md)及对应精确反证为准；近期个人来源补充见[机制索引](WORKSPACE_RESULTS.md#2026-10-25补充按义务选择近期来源)。
+
+
 盘点基线：2026-10-23，`69e6012bd585e1e1b53b7535a1cff661fe35a855` 同步后的实际文件，并纳入整理过程中新增的 `general_half_proof.md`。覆盖 `research/current/customer_attraction/` 的 **71份数学/定义/文献/衔接正文及1份README**，并对照 `research/current/claims.md`、`research/customer_attraction/CLAIMS.md`、`research/review_status.json` 和 `research/assets.json`。正文声明、命题量词、来源证明、内审、外审与实现保持独立；本轮是分类和登记核对，**没有重新审完全部证明，也不提升任何审查等级**。
 
 唯一继续研究的目标是原 **Q-CAG-HALF**：有限单位客户、有限非空共同目录、任意人数m、每个完整有序历史纯SPE均满足 `2W>=OPT_m`；允许空主题、重复选择、零客户与任意历史依赖平局。它仍 **OPEN**，没有完整一般证明或真正目标反例。当前授权只攻一般m、一般目录；下列条件目录、固定人数和局部常数成果保留供引用与提取一般组件，**停止把扩张这些特殊范围作为研究任务**。特殊实例只用于检验一个明确的一般候选。
@@ -143,7 +146,7 @@
 | [research/current/customer_attraction/dynamic_iid_debt_boundary.md](../current/customer_attraction/dynamic_iid_debt_boundary.md)；`CA-WEAK-LOCAL-IID-DRIFT-NO` | 五人七主题60客户完整SPE实际节点否定指定弱局部iid漂移。 | 这个60客户例仍满足较弱全局iid不等式；其全称版本已由另一个多花瓣族反驳。局部失败和全局失败的证据对象须分开。 | M |
 | [research/current/customer_attraction/stationary_pair_transport.md](../current/customer_attraction/stationary_pair_transport.md)；`CA-PRESCRIBED-STATIC-KERNELS-NO` | 完整SPE分别否定根回复驻留核的W/m cap和实际经验iid核的W/(m−1/2) cap。 | 末两人循环运输恒等式不受影响；不排除重选Q、全部节点菜单或全历史非均匀支付。 | M |
 | [research/current/customer_attraction/fractional_actual_load_counterexample.md](../current/customer_attraction/fractional_actual_load_counterexample.md)；`CA-FRACTIONAL-ACTUAL-LOAD-WEAK-NO-v1` | 每个m>=4有四主题完整SPE，W=m²、OPT=m²+1，否定实际均匀缩放背景的 `(m−1/2)M<=W`。 | 静态代数保留；本族本身没有反驳精确税桥，但该桥另已被旧13人36客户完整SPE否定，见下一行。真正v、half仍开放。 | E |
-| [research/current/customer_attraction/fractional_actual_load_counterexample.md](../current/customer_attraction/fractional_actual_load_counterexample.md) §4；[旧36客户完整策略](../workspaces/customer-attraction/R-c50fecc37aa44fb4a69a2122bb70e5fe/security/refined_tax_counterexample.md) | `alpha=(m−1)/m` 的精确实际税充分桥 `mM<=W+G_C` 已由旧13人完整SPE严格反证：W=33、OPT=36、M=3、G_C=708669/123025，差29481/123025>0。 | 普遍代数 `OPT<=mM+W−G_C` 保留；真正安全值、Mfull/Mpath与half未被反驳。本轮只纠正总账滞后并重放既有112050项精确IC，不认领新反例。 | E；既有独立审计，本轮定义级重放 |
+| [research/current/customer_attraction/fractional_actual_load_counterexample.md](../current/customer_attraction/fractional_actual_load_counterexample.md) §5；[旧36客户完整策略](../workspaces/customer-attraction/R-c50fecc37aa44fb4a69a2122bb70e5fe/security/refined_tax_counterexample.md) | `alpha=(m−1)/m` 的精确实际税充分桥 `mM<=W+G_C` 已由旧13人完整SPE严格反证：W=33、OPT=36、M=3、G_C=708669/123025，差29481/123025>0。 | 普遍代数 `OPT<=mM+W−G_C` 保留；此精确税反例不否定真正安全值或菜单比较；逐位置Mfull已被另一零根保险族否定，Mpath与half仍OPEN。本轮只纠正总账滞后并重放既有112050项精确IC，不认领新反例。 | E；既有独立审计，本轮定义级重放 |
 | [research/current/customer_attraction/optimal_last_query_counterexample.md](../current/customer_attraction/optimal_last_query_counterexample.md)；`CA-OPTIMAL-LAST-QUERY-SUM-NO` | 四人1651客户完整SPE，唯一最优主题组合在真实末节点的查询和>W，否定“另选最优组合即可使查询和付W”。 | 只是根税充分接口失败；独立实际根税反例另有正文。 | M |
 | [research/current/customer_attraction/random_position_exchange_boundary.md](../current/customer_attraction/random_position_exchange_boundary.md)；`CA-RANDOM-PREFIX-EXCHANGE-NO` | 三人五客户完整SPE否定随机最优主题排列前缀的位置交换步骤。 | 随机排列不能代替真实后继回复控制；不否定任意随机分析。 | E |
 | [research/current/customer_attraction/collision_free_occupancy_obstruction.md](../current/customer_attraction/collision_free_occupancy_obstruction.md)；`CA-COLLISION-FREE-LOAD-PAYMENT-NO` | 两人五客户完整SPE实际无拥挤、W4<OPT5；否定一切f(0)=0、f(1)=1的纯负载可加OPT支付。 | 改f(2),f(3),…无法修复该见证；half不受否定。 | E |

@@ -172,10 +172,10 @@ C 是 m 个比较主题的并集，所以这些主题各取权一就给 τ≤m �
 
 ### 3.1 冻结真实前缀的联合客户席位：一般付款的精细加强
 
-**`CA-PREFIX-COUPLED-SEAT-BUDGET-v1`。** 以下对任意原模型输入及每个完整历史纯 SPE 成立，不给目录或人数加结构限制。不同极大主题记为 B_j，固定实际并集 C，取其实际遗漏全局私有块
+**`CA-PREFIX-COUPLED-SEAT-BUDGET-v1`。** 以下对任意原模型输入及每个完整历史纯 SPE 成立，不给目录或人数加结构限制。不同极大主题记为 B_j，固定实际并集 U_act，取其实际遗漏全局私有块
 
 \[
-Q_j=\left(B_j\setminus\bigcup_{\ell\ne j}B_\ell\right)\setminus C,
+Q_j=\left(B_j\setminus\bigcup_{\ell\ne j}B_\ell\right)\setminus U_{\rm act},
 \qquad a_j=|Q_j|.
 \]
 
@@ -238,7 +238,7 @@ f_A=|S\setminus(P\cup A\cup Y_A)|,\\
 
 ρ_A恰为强制A后真实孩子的机会损失。若沿根实际路径对每个A*任取分析分布，
 δ望远镜之和为OPT_m−W，故(BG)给净差OPT_m−2W的跨真实孩子分解。
-**未闭合之处：** 负项信用还没有共同支付全部正的ρ_A；折扣(r−1)/r小于一不自动构成归纳。丢弃ξ、η后只挑菜单分布的加强(11?)已被[all-big完整SPE族](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/all_big_completion_slack_obstruction.md)否定；不能把它继续列为开放付款，保留全部信用的等式不受影响。
+**未闭合之处：** 负项信用还没有共同支付全部正的ρ_A；折扣(r−1)/r小于一不自动构成归纳。丢弃ξ、η后只挑菜单分布的加强(11-FALSE)已被[all-big完整SPE族](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/all_big_completion_slack_obstruction.md)否定；不能把它继续列为开放付款，保留全部信用的等式不受影响。
 ξ搬用Y_A只比较静态可行覆盖，不声称Y_A是S孩子的真实SPE。没有扩大half已证范围。
 
 完整定义、边界及证明见[最优首动作菜单信用](optimal_first_action_branch_gap.md)，
@@ -596,10 +596,10 @@ M_i=\min_Q\max_T\mathbb E_Q K_i(T,A)
 必满足 `M_i≥v_{m+1}(0)`。如果能够对任意实例及全部实际位置另证
 
 \[
-M_i\le u_i,\tag{26?}
+M_i\le u_i,\tag{26-FALSE}
 \]
 
-则由(15)有 `OPT_m≤2m v_{m+1}(0)≤2Σ_i u_i`，完成(Q)。这是含根额外一槽的逐位置 Mfull 加强，但 **(26?)现已被原零背景完整 SPE 反驳**，不能继续作为开放一般引理。
+则由(15)有 `OPT_m≤2m v_{m+1}(0)≤2Σ_i u_i`，完成(Q)。这是含根额外一槽的逐位置 Mfull 加强，但 **(26-FALSE)现已被原零背景完整 SPE 反驳**，不能继续作为开放一般引理。
 
 具体地，[全人数保险反族](../../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/round5_general/security/global_extra_individual_counterfamily.md)在 m≥4 给根实际收益 `u_1=1+1/(m−1)`，而自由分数额外槽值 `δ_(m+1)=3/2−1/(2m−1)>u_1`。对每个整数 m 槽背景混合，先逐客户用 Jensen，再对自由分数背景取最小，得 `v_(m+1)≥δ_(m+1)`；故 `M_1≥v_(m+1)>u_1`。这是实际根反例，不能再用“只反驳任意背景”排除。m=5 时 `u_1=5/4<25/18=δ_6`，同时 `W=10、OPT_5=13`，原 half 仍成立。[独立定义级核查](../../workspaces/customer-attraction/R-e7c3c9a51d38458aa551eec469e04cf2/independent/mfull_insurance_scope_review.md)还直接算出该族 `M_1=2−1/m−1/[3(m−1)]<2=W/m`，所以这不是下述聚合候选的反例。这里转接已有反例的准确推论，不认领新的坏实例。
 
@@ -618,7 +618,7 @@ M_{\mathrm{path}}\le W/m\tag{27?}
 
 也能与(15)闭合(Q)。逐位置证书在逻辑上足以推出(27?)，但该加强已失败；(27?)本身仍 OPEN。
 
-聚合候选保留查询与背景独立的量词。只用根的 m−1 槽尾菜单、指定推送分布或旧逐人 `u_i≥v_m` 的失败，不能直接当作(27?)的反例；上段则给了(26?)所需的真正零根反证。产品闭包又给一个已证的兼容性关系：对固定 m，(27?)对全部实例成立，等价于存在只依赖 m 的位置分布 λ，使对全部实例和全部 p 有
+聚合候选保留查询与背景独立的量词。只用根的 m−1 槽尾菜单、指定推送分布或旧逐人 `u_i≥v_m` 的失败，不能直接当作(27?)的反例；上段则给了(26-FALSE)所需的真正零根反证。产品闭包又给一个已证的兼容性关系：对固定 m，(27?)对全部实例成立，等价于存在只依赖 m 的位置分布 λ，使对全部实例和全部 p 有
 
 \[
 \sum_i\lambda_i\min_A\sum_Tp_TK_i(T,A)\le W/m.
@@ -627,7 +627,7 @@ M_{\mathrm{path}}\le W/m\tag{27?}
 
 这个等价没有给出 λ，也没有证明它存在。原唯一正文见[完整根菜单](../../workspaces/customer-attraction/R-d22a706a03c5499d941a6a97f94128a8/induction/full_root_menu_mixed_obligations.md)和[PRODUCT-MENU-TIME](../../workspaces/customer-attraction/R-4243b113e6fc4c25a197dec299f08049/parent/product_menu_time_obligation.md)。
 
-仍须保留各反例的准确量词。旧[PB-extra背景反例及精确身份](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/CLAIMS.md)的 R5-PB-EXTRA-NO-v1 只反驳逐背景个体保底；它本身未证明原根实际可达。现有(26?)的反证来自上段独立的零根保险族，二者不混同；二者也都没有反驳(27?)、(28?)或原 half。
+仍须保留各反例的准确量词。旧[PB-extra背景反例及精确身份](../../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/CLAIMS.md)的 R5-PB-EXTRA-NO-v1 只反驳逐背景个体保底；它本身未证明原根实际可达。现有(26-FALSE)的反证来自上段独立的零根保险族，二者不混同；二者也都没有反驳(27?)、(28?)或原 half。
 
 ## 9. 根修复只是一种等价表示，不能填入上述空缺
 

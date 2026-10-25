@@ -1,10 +1,30 @@
 # 顺序客户吸引个人区：完整文件盘点与恢复导航
 
+> **库存截止与本轮读取范围**：下文“全部74个actor”和机器JSON是原批次冻结库存（含其后4130文件截止增量），不是现存全量。本轮2026-10-25另盘点114个工作区入口（包含本轮新建工作区），六名清洗分支中的两名已全文读取其114份顶层README并定点追近期正文/Claim；没有逐篇审核6154余文件或重放全部代码。当前数学接续从[短入口](README.md)及[前沿](RESEARCH_STATE.md)选机制，不能从本页旧OPEN标签恢复候选状态。原清单、哈希和证据保持原截止；缺失入口、未审正文和四处个人导航断链见[本轮清理记录](CURATION.md)。
+
+
 2026-10-23；跟踪路径范围固定于基线`69e6012bd585e1e1b53b7535a1cff661fe35a855`；文件哈希及字节数采自生成时政策HEAD `52887e7309e8cfac558b1d967f86e1f233f82a3f`下的当前工作树（含本组此前状态修订，Git index对象另存）。Q-CAG-HALF仍 **OPEN**。本页整理恢复入口，不新增福利定理，不升级草稿、模板坏点或有限搜索。
 
 用户现已要求此后只研究一般人数和一般目录。已有条件类、固定人数及失败资产保留用于复用和查重，不继续特例扩张；本轮不移动、改名或删除原文件。
 
 > **明确截止增补：** 下文原4095文件基线原样保留；截止`5b183a1a03b5adda9748280fe8ef4a95d67d6ed3`的最终个人区为4130文件，新增35、修订14、无删除，详见文末增量与JSON `delta_snapshots` / `final_snapshot`。
+
+## 2026-10-25补充：按义务选择近期来源
+
+以下只做来源清洗；范围及内审状态按源稿与Claim/审查记录报告，本轮未逐篇深审其证明或重放证书。主目标Q-CAG-HALF仍OPEN。当前六个主要付款接口见[前沿](RESEARCH_STATE.md)，这里补列不同机制而不复制全部actor摘要。
+
+| 机制 | 已有信息、仍缺什么 | 唯一正文/状态入口 |
+| --- | --- | --- |
+| 真实末位BR剥离 | `u−C=e+EL+J+Δ`，前三项非负；中间真实负载漂移Δ仍未付。正文旧“未独审”标签与较新Claim不同，使用时核版本 | [剥离正文](../workspaces/customer-attraction/R-059140e622784d85a4e3a4dd6554f506/menu_covariance/last_successor_peeling.md)、[状态](../workspaces/customer-attraction/R-059140e622784d85a4e3a4dd6554f506/CLAIMS.md) |
+| 因果删位共同regret预算 | 同一完整策略的真实删位包络与后缀合账；不控制免费重置后的离轨节点，不可直接调用较小人数SPE归纳 | [删除包络](../workspaces/customer-attraction/R-105f776c3e6d4a22bb7c380c5df8edc7/parent/deletion_regret_envelope.md)、[后缀合账](../workspaces/customer-attraction/R-105f776c3e6d4a22bb7c380c5df8edc7/parent/average_suffix_deletion.md) |
+| 稀疏时钟与skip premium | reset租金分为clock费用和非负skip premium；clock路径容量已知，premium及其真实IC接口未获全树付款 | [时钟正文](../workspaces/customer-attraction/R-171cd7d518434f36a48cd50df29c9303/continuation/coupling/chronological_sparse_rent_and_skip_premium.md)、[准确合同](../workspaces/customer-attraction/R-171cd7d518434f36a48cd50df29c9303/continuation/CLAIMS.md) |
+| 可信缺陷统一signed价格 | 共同价格/双侧修复的全输入等价接口；没有负seed或普适预算。特定字典内的最优成本不扩大到所有修复器 | [signed价格](../workspaces/customer-attraction/R-ab4b3c24c8f949198e194dd45bb66105/construction/uniform_signed_defect_prices.md)、[准确合同](../workspaces/customer-attraction/R-ab4b3c24c8f949198e194dd45bb66105/CLAIMS.md) |
+| 异质早期缺陷修复 | 可信后缀前j位的缺陷δ_i可按代价 `2Σδ_i+maxδ_i` 编译为同人数完整SPE；尚无超成本坏路径 | [修复正文](../workspaces/customer-attraction/R-3bc48d936f044f12b0fa743482ff5eb0/credible/heterogeneous_prefix_repair.md)、[准确合同](../workspaces/customer-attraction/R-3bc48d936f044f12b0fa743482ff5eb0/CLAIMS.md) |
+| 同背景正测度pair差 | 同背景/同pivot差分可在平衡流消去；尚无真实全树统一平衡流，变背景另付。第二独审范围须回源确认 | [pair正文](../workspaces/customer-attraction/R-5dbadd913a00492e994a6cfca3ec53fc/tree_certificate/background_pair_lift.md) |
+| Cartesian银行与共同偏离 | 任意跨坐标历史的主菜单盈利有银行时间谱容量；投影完整SPE有全映射历史条件，单条路径不足 | [银行预算](../workspaces/customer-attraction/R-4243b113e6fc4c25a197dec299f08049/global_induction/bank_joint_deviation_budget.md) |
+
+其他已共享机制优先读 current 唯一正文；个人版本保留来源与独立实现。仅有顶层模板不能证明目录为空：R-f399f831353446a49502f49d8abd2cb7实际另有18文件，其中未深审部分不据此删除或提升。协作回执、有限阴性及多轮相同残差均不进入当前数学frontier。
+
 
 ## 盘点范围与实际阅读
 

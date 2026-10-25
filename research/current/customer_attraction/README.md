@@ -1,34 +1,12 @@
-# 顺序客户吸引：成果、反例与一般半覆盖数学地图
+# 顺序客户吸引：全部数学正文地图
 
-本轮整理入口：[一般证明工作稿](general_half_proof.md)串联全范围已证关系及明确未证步骤；[成果总账](../../customer_attraction/RESULTS_LEDGER.md)逐份列出范围与审查等级，[衔接说明](../../customer_attraction/SYNTHESIS.md)解释共同机制，[个人区恢复总索引](../../customer_attraction/WORKSPACE_RESULTS.md)覆盖全部既存个人区。工作稿的已证关系已经独立内部检查，原Q-CAG-HALF仍OPEN。
+研究存档 **customer-attraction**；主目标 **Q-CAG-HALF**，一般命题仍 **OPEN**。本页只检索正文，不兼任进展日志。首次恢复读[短入口](../../customer_attraction/README.md)、[模型](model.md)及[当前前沿](../../customer_attraction/RESEARCH_STATE.md)，然后按义务选择下表。
 
-接续新增的一般关系见[工作稿§3.1](general_half_proof.md#31-冻结真实前缀的联合客户席位一般付款的精细加强)：冻结每个实际前缀，把所有客户放入同一完整利润席位，证明 `W≥ΣΛ_i≥Σλ_i`，严格加强旧两类保底的逐位置最大值。完整定义、内部解析检查及独立单位客户证据均从该节进入；无私有遗漏时退回已有分母界，尚不推出 half，也未增加特殊人数或结构类项目。
+[一般证明工作稿](general_half_proof.md)保留连续推导和未证步骤；[成果总账](../../customer_attraction/RESULTS_LEDGER.md)登记范围，[失败机制](../../customer_attraction/FAILED_ROUTES.md)记录已否桥，[个人区库存](../../customer_attraction/WORKSPACE_RESULTS.md)用于追来源。库存和工作稿都不是默认需通读的材料。
 
-该关系的[内部审查与复现入口](../../reviews/customer_attraction/prefix_coupled_seat_budget.md)区分解析证明、独立完整策略补全和有限数值范围；对应脚本、输入及冻结动作表均由该页导航。
+现行边界：逐位置完整菜单付款 Mfull 已FALSE，聚合 Mpath 及真正安全值聚合仍OPEN；固定实际缩放精确税桥、弱iid及BG删信用加强也已FALSE。独立静态比较、正确恒等式和原目标各自保留。完整身份在[精确账本](../claims.md)，内审/外审分别在[状态登记](../../review_status.json)。本轮清理不改变真值或审查等级。
 
-2026-10-24 状态去重：成果总账已将实际缩放背景的精确税桥 `mM<=W+G_C` 从开放桥移至已反驳项，与[现行反例正文](fractional_actual_load_counterexample.md) §4及研究状态一致。本轮重放旧完整策略，不认领新反例；真正聚合安全值、Mfull/Mpath和原half仍OPEN。另[最优首动作菜单](optimal_first_action_branch_gap.md) §5 的丢信用加强(11?)已由all-big完整SPE族否定，正确局部恒等式保留；详见正文状态更新和失败地图。
-
-2026-10-25 接续勘正：[工作稿§8](general_half_proof.md#8-额外一槽与完整菜单逐位置加强已失败聚合接续未闭合)中的逐位置 Mfull 加强现已由既有全人数零根保险族反驳，旧OPEN标签撤回；该族 `M_1>=δ_(m+1)>u_1`，却 `M_1<W/m`。因此全路径 Mpath 聚合及原 half 仍 OPEN。原2026-10-24段所述旧精确税反例本身不否定菜单，这与后来真正零根反证分开记录。
-
-研究存档：customer-attraction；目标身份：Q-CAG-HALF。
-
-继续一般论证时，可读[本轮两项全输入个人区组件](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/README.md)：真实尾主题菜单外静态损失的联合上界，以及实际倒二位置对任意比较主题组的真实查询行。两项已有逐客户内部重构，但仍未支付早期玩家的真实枝重置，未闭合主目标；各自准确范围、证明及五人压力限制在原文。
-
-同一入口另记录[实际根删中间位上向修复障碍](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/actual_root_deletion_upward_repair_obstruction.md)与[三人尾部去相关无符号返还](../../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/three_remaining_decorrelation_residual.md)；它们分别限制regret唯一付费和单末位去相关的直接递推，均不否定half。
-
-**当前主攻 Q-CAG-HALF：一般目录、任意人数、每个完整历史纯 SPE 的半覆盖；仍 OPEN。** 模型为有限单位客户、有限非空共同主题目录、单位权提供者依次观察全部有序历史选主题，最终客户价值在覆盖者间均分。全部历史依赖平局、重复选择、空主题和零客户均保留。
-
-2026-10-24 阶段性一般接口见 Boss9 个人区：偏离份额的全范围关系与 L4 同枝继承在 [`route5a/sequential_deviation_share_lemma.md`](../../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/route5a/sequential_deviation_share_lemma.md)，节点级跨枝福利/调和势中继在 [`cross_branch_welfare_relay_identity.md`](../../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/representation/cross_branch_welfare_relay_identity.md)。静态 smoothness→SPE 的精确障碍和 pair-incidence LP 的精确障碍也已在该个人区登记；它们均不改变主命题的 OPEN 状态。
-
-同一阶段的调和势障碍在 [`potential_branch_obstruction.md`](../../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/route1/potential_branch_obstruction.md)：完整 SPE 的当前动作比较必须保留删去当前玩家后的分支势差，逐点势单调归纳已被精确证书排除；这只是证明接口边界。
-
-2026-10-24 对上述份额稿 §4 的[窄勘误与独立审查](../../workspaces/customer-attraction/R-65d0f88edf3849b39ca5eb79760e970b/parent/route5a_independent_review.md)：遗漏半额付款的原推导只给 OPT≤3W，修正充分接口须支付 `OPT−W`。底层 L1--L4 不变；没有新增 half 已证范围或主目标反例。
-
-从[当前研究入口](../../customer_attraction/README.md)进入[精确目标](../../customer_attraction/CLAIMS.md)、[前沿](../../customer_attraction/RESEARCH_STATE.md)、[失败机制](../../customer_attraction/FAILED_ROUTES.md)和[保留问题分诊](../../customer_attraction/RETAINED_QUESTIONS.md)。Boss 先固定[模型](model.md)，随后沿正在研究的机制按需读取下表；无需通读本页所有正文。
-
-## 主人最新决定：一般命题是唯一新研究任务
-
-所有人只研究一般人数与一般共同目录，所有数学领域开放。停止特殊人数、固定极大主题数、结构子类扩张和局部常数项目。下列既有成果保留其精确数学身份和可引用价值，不代表继续补七、八或其他特殊规模的任务清单。有限实例只检验明确一般候选或核验完整目标反例；算法和扫描不是默认研究目标。做不出来不能推断数学不可能。
+新研究只面向一般人数、一般共同目录；以下特例供引用，不是继续扩规模的任务。有限工具只检验明确候选或真正目标反例。
 
 ## 已有地基与未闭合范围
 

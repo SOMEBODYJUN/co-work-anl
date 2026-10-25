@@ -15,6 +15,7 @@ python3 <附件work.py> --repo <本对话项目目录> start --save customer-att
 
 清洗者将角色换成 `cleaner`，整理者换成 `editor`。每个独立对话一个 clone，全部在 `main`，不另建研究分支。
 首次程序生成 actor；启动回执给出 `actor`、`workspace.path`、`branch=main`、存档与角色入口。
+`start`只输出恢复回执，不自动加载公屏。需要讨论背景时再执行`python3 work.py read --limit 3`或按线程读取；数学状态以正文和精确账本为准。
 进入项目根目录后统一用仓库内最新版 `work.py`，日常命令复用已经绑定的 token 路径、身份和存档。
 
 同一项目继续时：

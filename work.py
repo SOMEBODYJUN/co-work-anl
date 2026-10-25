@@ -360,8 +360,10 @@ def start(args):
     }))
     result.update(role=selected_role,
                   role_prompt=ROLE_PROMPTS[selected_role] if selected_role else None)
+    result["communication"] = {"read_on_demand": "python3 work.py read --limit 3",
+                               "note": "start restores research state; read discussion only when needed"}
     print(json.dumps(result, ensure_ascii=False), flush=True)
-    return board(repo, env, "view", ["--save", save])
+    return 0
 
 
 def board(repo, env, command, extra):
@@ -384,7 +386,7 @@ def main():
     p.add_argument("--token-file")
     p.add_argument("--save", help="研究存档 ID；首次默认 customer-attraction，已绑定 clone 保持原存档")
     sub = p.add_subparsers(dest="command", required=True)
-    s = sub.add_parser("start", help="恢复项目，固定角色号，同步并读取公屏")
+    s = sub.add_parser("start", help="恢复项目，固定角色号并同步；公屏按需read")
     s.add_argument("--actor", help="可选；省略时为本对话生成并记住唯一 R-UUID 发布标识")
     s.add_argument("--role", choices=tuple(ROLE_PROMPTS), help="首次默认 boss；独立clone绑定一个角色")
     s.add_argument("--token-file", default=argparse.SUPPRESS)
