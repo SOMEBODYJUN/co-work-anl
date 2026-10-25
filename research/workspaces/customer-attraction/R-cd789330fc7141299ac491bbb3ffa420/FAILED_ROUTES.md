@@ -93,3 +93,15 @@ CLIP只保证新正券≤旧gross，不保证旧net逐券下降；旧证书任�
 - 前缀harmonic kernel、RESERVE及旧root-menu接口已标旧来源；命名候选有限锥未分离不作证据推广，不继续同型扫描。
 
 原half、ROW/SUMROW、真正安全聚合、宽冻结指派和正确shared Bregman付款仍OPEN。新无条件福利关系未找到；停界不是一般不可能性结论。
+
+## 第十二轮准确停界
+
+- 逐叶cap纯重选与均值cap分析域不同；后者可用于背景构造，不是原纯SPE完成。cap dual只支持其域，原子内一次偏离叶未必仍是完整child SPE。
+- floor-domain要覆盖所有raw reset须在分析中释放actual tags；保固定tag时changed-tail actual叶不在域。所有祖先floor亏损须保留，不只计偏离者Γ。
+- 统一μ由一个净cap预算构造，不是原逐history最优λ可假定相等。原source超额只在同一cap/KKT银行内使用，不另领S或μW。
+- HALF-R只控制same-row balanced流的signed差，且使用R还要逐source容量。不同row的M(h_i,A)势不因全局行动平衡自动取消；没有边正部上界。
+- BUBBLE合法保背景但不同source前送会堆积，arrival不是下一行原source；next child cap也未保证。不能由true尾SPE可转移就称一般资金闭合。
+- 几何coordinate replay冻结旧suffix，其边未必有原σ IC；真正逐步σ replay有IC。二者只能合用相同逐label端点的总功，不能逐边互借银行。
+- query martingale总能量≤Vp不控制乘以前缀负载的diagonal工作；“只有半个方差”仍为候选。一般PSD/匿名势不自动给CAG付款。
+
+上述是具体未证接点，并非原half反例或一般不可能。原净覆盖、shared弱half、全槽银行、uniform netcap及原目标均未闭合。

@@ -121,3 +121,37 @@ Domain legality, absence of a lottery-completion claim, finite duality,
 KKT signs, reduced costs, CREDIT and BAL pass. In particular actual source
 IC is not obtained from global background CAP. The remaining issue is a
 genuine cross-history covariance payment, not another price identity.
+
+## 6. Independent check of aggregate12's full-slot extension
+
+Aggregate12 subsequently supplied the exact full-slot contract by message;
+this subsection reconstructs that contract before reading a full source
+note. For a tagged endpoint use full load `ell+1_A` in the BACKGROUND row,
+while its cap remains the original entering payoff `d=F_A(ell)`. Keep
+ORIGINAL deleted source ell in the reciprocal expansion at the selected
+full-load point L*. The same global mean-cap LP dual gives
+
+    Gplus=m w dot L*-sum_i E_p[w dot(ell_i^0(A)+1_A)]
+         =sum_i mu_i I_i+R.
+
+Put z_x=rho_x t_x. Since E_p[1_A]=rho,
+
+    Gplus=m w dot L*-sum_i E_p[w dot ell_i^0(A)]-m sum_x z_x^2.
+
+Thus the DELETED-source covariance expansion has
+
+    C0=Cov0-Gplus-m sum_x z_x^2,
+    W-m gamma_plus=sum_i(1+mu_i)I_i+R+D0-Cov0+m sum_x z_x^2.
+
+The positive sign and factor m on the self-norm are correct. Source I
+must still use `1+ell`, not `1+ell+1_A`; otherwise it is no longer the
+original whole-query IC. A selected full background has provider mass m,
+so Qplus=`m gamma_plus-sum L*t` is nonnegative and
+`OPT_m<=2m gamma_plus-Qplus`. Its sufficient payment is therefore
+
+    Cov0<=sum_i(1+mu_i)I_i+R+D0+m sum_x z_x^2+Qplus/2.
+
+The scalar fact `m z_x^2>=z_x/2` when `z_x>=1/(2m)` correctly pays half of
+that coordinate's gamma contribution; it is not by itself a welfare or
+private-seat assertion. This check establishes the proposed extension's
+algebraic scope, not its remaining covariance amount, including at m=5.

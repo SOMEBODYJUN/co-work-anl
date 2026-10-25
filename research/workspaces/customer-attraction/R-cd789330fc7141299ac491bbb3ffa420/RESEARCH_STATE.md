@@ -116,3 +116,11 @@ root已重跑独立实现的旧52、348及零客户/空主题边界输入，全�
 下一条实质义务：在shared saddle特定权下，用完整后继IC支付C对D与实际松弛的差，或绕开加强直接付OPT−W。terminal同p互补银行亦给准确需求，尚无早期共同预算。没有由未完成推导声称一般不可能，也无后台常驻承诺。
 
 为原half而非锐界，可优先尝试弱shared W≥(m−1/2)γ，即C≤D+ΣIC+γ/2。此为目标容许余量，未有资金证明；m5要求(9/2)γ≤W，仍未无条件成立。
+
+## 第十二轮接续
+
+[本轮稿](round12/GENERAL_PROOF_WORKING.md)记最新一般推导，无新无条件福利界或目标反例。均值cap对偶把KKT余量接到实际source IC；full-slot保留own范数银行。canonical-floor raw分析域明确价格reset；统一净孩子超额cap给共同μ，复制消去及同row平衡流HALF-R已独立解析检查。
+
+[净cap/BUBBLE](round12/parent/net_cap_bubble_component.md)提供保query背景的实际前缀前送，child-SPE合法性由count-isomorphism承担，不保证到达源满足下一行cap或原库存。HALF-R还要求同row行动平衡、逐source原子容量；尚未构造满足全部条件的实际全树流。
+
+真实σ重放和几何coordinate重放总端点工作相同，edge IC不相同。signed fixed-potential银行可使用一次；diagonal prefix multiplier、任意目标主题余项、净cap transfer仍未付。主half/五人仍OPEN。下一次须新增这条真实共同付款或换一般路线，不以更多约束和表示当完成。

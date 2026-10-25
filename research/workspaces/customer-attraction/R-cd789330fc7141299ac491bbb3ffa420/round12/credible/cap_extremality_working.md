@@ -31,6 +31,28 @@ source endpoint's IC because their entering actions or deleted loads agree.
 Each complete witness and its own true deviation leaf must remain paired.
 That reset cost is not removed by endpoint extremality alone.
 
+More precisely, GDUAL applies to COMPLETE child-SPE endpoints. A unilateral
+deviation leaf inside one such witness need not itself be a child-SPE
+endpoint from the same entering history: the deviating mover is not
+necessarily best responding there. Applying cap duality to that leaf
+requires an additional credible-endpoint closure argument, or one must
+retain its genuine originating IC row explicitly. No such amount or
+closure was established here. This limits that proposed use of GDUAL; it
+does not establish that another reset transport cannot work.
+
+An all-terminal relaxation was considered solely to price otherwise
+uncovered reset leaves. If its actual-action tag is also freed, its row
+domain collapses exactly to `b_i+(r_i-1)conv(catalog)`, where b_i is the
+actual preceding load and r_i=m-i+1. Indeed for every T one can force T
+and let all r_i-1 future players copy T; the entering utility equals the
+universal safe floor `sum_(x in T)1/(b_i(x)+r_i)<=u_i`. Thus every all-copy
+vertex is cap-feasible, and the opposite domain inclusion is immediate.
+This broad relaxation can take shadow-optimal mu_i=0 and supplies no new
+cap-slack leverage. It does not characterize tree12's complete-child-SPE
+domain with actual tags fixed. Only nonactual all-copy vertices are then
+automatically available. This scope calculation was not pursued as a new
+auxiliary endpoint or welfare theorem.
+
 No target counterexample was constructed, and no finite scan, new auxiliary
 counterexample or repeated bank calculation was pursued. The general
 weighted-credit component is retained with its m=5 unpaid boundary. This is

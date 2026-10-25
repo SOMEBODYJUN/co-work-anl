@@ -24,6 +24,26 @@ Boss10同clone/actor接续，原Q-CAG-HALF仍OPEN，全部有序历史、任意�
 
 仍需Cov≤D+Σ(1+μ)I+ΣER+(γ+Qstat)/2，或改变路线证明原目标。没有新无条件half界；m5同式仍待付款。
 
-## 探索进行中
+## 本轮推导状态
 
 LP强对偶、扩大域、静态余项与有限未分离均不替代共同金额。各分支自由换路，成熟资产独立攻击，探索不等审批。当前原目标和充分候选均OPEN。
+
+## 后续正文与检查
+
+- [full-slot银行](aggregate/full_slot_cap_dual_norm_bank.md)与[独审](tree/full_slot_norm_independent_review.md)：插入税/曲率组合成m||ρt||²，低有效密度关联未付。
+- [aligned fixedpoint](tree/aligned_credible_menu_fixedpoint.md)与[独审](credible/aligned_fixedpoint_review.md)：源/选中边际及future折扣一致；非minimax，不能同时免费领global版G。
+- [floor域](tree/reset_floor_domain_independent_check.md)与[RESET](credible/mean_floor_reset_review.md)：raw reset价保全部祖先利润损失；释放actual tags仅为分析域。
+- [净cap/BUBBLE](parent/net_cap_bubble_component.md)、[独审](credible/actual_prefix_bubble_review.md)、[QA](parent/netcap_bubble_exact_audit.json)：共同μ、保背景到下一actual行child SPE成立；下一行cap/原source库存未保证，finite只核实现。
+- [swap/HALF-R](credible/uniform_copy_swap_component.md)、[独审](tree/uniform_swap_and_raw_flow_independent_review.md)：同row行动平衡及source容量下的signed缺额≤半份R，实际全树流未获这些条件。
+- [真重放](tree/real_replay_covariance_flow.md)及[几何重放](geometry/conservative_raw_tail_replay.md)：正流/exact Q端点/一次signed银行成立，几何坐标边未必有Γ，仅总端点功可合用。
+- [单query候选](geometry/one_query_convexification_candidate.md)、[条件信息](geometry/conditional_demand_and_information_budget.md)：Vp≤γ、martingale能量和末位transport正确；prefix multiplier未控制，Vp/2付款未证。
+- [净cap对称](geometry/uniform_net_cross_history_symmetry.md)：交叉保持shadow，但cap变化是signed量，非自动可行。
+- [正loss交换](matching/positive_loss_and_cap_domain_working.md)、[组件审查](matching/frontier_components_independent_review.md)：静态slack准确，没有可行shadow-improving孩子交换。
+
+以上同一般m代m5仍全为条件付款。保留所有Popt/Rep/Out恰好重述原half，不算新钱。无新无条件福利界、目标反例、外审或新颖性认证。
+
+## 实际停界
+
+first-future强制actual主题再BUBBLE可兼容地转运下一child策略到末位，Γ/slack可消去；但多源堆积，arrival不是下一行原source。HALF-R有真1/2因子，却要求同row行动平衡与逐source容量，尚未接到真实Cov系数。
+
+真重放与几何Doob可按相同逐label端点相等总功；这不控制任意target的同叶不同主题收益差、prefix multiplier或signed净cap转移。继续须构造该共同金额/平衡容量，或换路直接付OPT−W。当前具体推导在此停界；不以更多域/改名/阴性冒充进度，未声称所有一般方法不可能，无后台常驻承诺。
