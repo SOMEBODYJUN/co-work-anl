@@ -1,4 +1,4 @@
-"""HALF(5): four genuine root copies B,C,D,E plus existing indexed menus.
+"""HALF(5): genuine root copies and early deviations to penultimate D.
 
 All-state column generation, no finite catalog scan. Discovery only until
 rational multipliers and exact complete coefficient pricing are verified.
@@ -16,15 +16,21 @@ import full_pricing as old
 sys.path.insert(0,str(HERE))
 from ap_binary_pricing import fixed_rows
 LABELS,PATHS,START=old.LABELS,old.PATHS,old.START
-ROOTS='BCDE';STATES=list(product((0,1),repeat=4))
+SPECS={**{s:('',s) for s in 'BCDE'},'D2':('A','D'),'D3':('AB','D')}
+ROOTS=tuple(SPECS);TAILS={s:4-len(pre) for s,(pre,_) in SPECS.items()}
+STATES={s:list(product((0,1),repeat=TAILS[s])) for s in ROOTS}
+NEWLABELS={s:'fghi'[:TAILS[s]] for s in ROOTS}
+FIRST={s:1+len(pre) for s,(pre,_) in SPECS.items()}
 
 def copy_rows(bits,dd,cb,source,exact=True,lhs=None):
     Q=old.EX['q'] if exact else old.VE['q']
-    b=dict(zip(LABELS,bits));p=b[source];path=(p,*cb);total=sum(path)
+    b=dict(zip(LABELS,bits));pre,forced=SPECS[source];start=FIRST[source]
+    assert len(cb)==TAILS[source]
+    path=tuple(b[x] for x in pre)+(b[forced],*cb);p=path[0];total=sum(path)
     u=[Q(x,total) for x in path];act=PATHS['actual'];actload=sum(b[x] for x in act)
-    out={'root-IC':Q(b['A'],actload)-u[0]}
+    out={'forced-IC':Q(b[act[start-1]],actload)-u[start-1]}
     labels={**b,**dict(zip('fghi',cb))}
-    for i in range(1,5):
+    for i in range(start,5):
         pref=sum(path[:i]);k=5-i
         for lab,x in labels.items():out[f'{i}:K:{lab}']=u[i]-Q(x,pref+k)
         out[f'{i}:opt']=5*u[i]-Q(dd,pref+k)
@@ -44,9 +50,10 @@ def copy_rows(bits,dd,cb,source,exact=True,lhs=None):
     def g4(bg,d):return Q(d*(d-1),bg+d-1)+Q((5-d)*d,bg+d)
     V3=sum(u[2:]);V4=sum(u[1:]);Vin=p-u[0]
     for name,d in [('opt',dd),*[(n,sum(b[x] for x in z)) for n,z in PATHS.items()]]:
-        out['r3:'+name]=50*V3-3*g3(p+path[1],d)
-        out['r4:'+name]=7495*V4-750*g4(p,d)
-        out['r4binary:'+name]=29985*V4-4985*Vin-3000*g4(p,d)
+        if start<=2:out['r3:'+name]=50*V3-3*g3(path[0]+path[1],d)
+        if start<=1:
+            out['r4:'+name]=7495*V4-750*g4(p,d)
+            out['r4binary:'+name]=29985*V4-4985*Vin-3000*g4(p,d)
     # Cross-history money: the old genuine last menus can query each new
     # reply, and the old genuine two-tail nodes can query all mixed pairs.
     for fi,(pn,z) in enumerate(PATHS.items()):
@@ -57,11 +64,11 @@ def copy_rows(bits,dd,cb,source,exact=True,lhs=None):
             out[f'lastmenu:{pn}:{lab}']=Q(ell-5*x,pp+1)+Q(dd*x-match,DP)
             for oldlabel,y in b.items():
                 out[f'oldpair:{pn}:{lab}:{oldlabel}']=HH-Q(x+y-2*x*y,pp+1)-Q(2*x*y,pp+2)
-        for li,mi in combinations_with_replacement(range(4),2):
+        for li,mi in combinations_with_replacement(range(len(cb)),2):
             x,y=cb[li],cb[mi]
             out[f'oldpairnew:{pn}:{li}:{mi}']=HH-Q(x+y-2*x*y,pp+1)-Q(2*x*y,pp+2)
     # Converse direction: each new genuine node queries every old L menu.
-    for ii in range(1,5):
+    for ii in range(start,5):
         prefnew=sum(path[:ii]);knew=5-ii
         for fi,pn in enumerate(PATHS):
             ell=lhs[fi][0] if lhs is not None else 0
@@ -74,23 +81,24 @@ class Universe(old.Universe):
         self.apnames=list(fixed_rows([0]*10));self.names+=self.apnames
         self.AP=np.array([[int(old.sc(v)) for v in fixed_rows(b).values()] for b in self.bits],dtype=np.int64)
         bb=np.array(self.bits,dtype=np.int8);bits=[bb[:,i,None,None] for i in range(10)]
-        ds=np.arange(6)[None,:,None];cc=np.array(STATES,dtype=np.int8);cb=[cc[None,None,:,i] for i in range(4)]
-        self.CT={};self.cnames=None;self.cids={}
+        ds=np.arange(6)[None,:,None]
+        self.CT={};self.cnames={};self.cids={}
         for src in ROOTS:
-            rr=copy_rows(bits,ds,cb,src,False)
-            if self.cnames is None:self.cnames=list(rr)
-            assert self.cnames==list(rr)
-            self.CT[src]=np.stack([old.sc(np.broadcast_to(v,(1024,6,16))) for v in rr.values()],axis=-1).astype(np.int32)
+            cc=np.array(STATES[src],dtype=np.int8);cb=[cc[None,None,:,i] for i in range(TAILS[src])]
+            rr=copy_rows(bits,ds,cb,src,False);self.cnames[src]=list(rr)
+            self.CT[src]=np.stack([old.sc(np.broadcast_to(v,(1024,6,len(STATES[src])))) for v in rr.values()],axis=-1).astype(np.int32)
             self.cids[src]=list(range(len(self.names),len(self.names)+len(rr)))
-            self.names += [f'Copy{src}:{n}' for n in self.cnames]
+            self.names += [f'Copy{src}:{n}' for n in self.cnames[src]]
         self.apids=[self.names.index(n) for n in self.apnames]
-        self.menu_weight_indices={pn:[self.names.index(f'Copy{src}:lastmenu:{pn}:{lab}') for src in ROOTS for lab in 'fghi'] for pn in PATHS}
-        self.query_indices={(src,i,pn):self.names.index(f'Copy{src}:queryL:{i}:{pn}') for src in ROOTS for i in range(1,5) for pn in PATHS}
+        self.menu_weight_indices={pn:[self.names.index(f'Copy{src}:lastmenu:{pn}:{lab}') for src in ROOTS for lab in NEWLABELS[src]] for pn in PATHS}
+        self.query_indices={(src,i,pn):self.names.index(f'Copy{src}:queryL:{i}:{pn}') for src in ROOTS for i in range(FIRST[src],5) for pn in PATHS}
         self.QD={}
         for src in ROOTS:
-            pp=bb[:,LABELS.index(src),None]
-            for i in range(1,5):
-                den=pp+cc[None,:,:i-1].sum(axis=2)+(5-i)
+            pre,forced=SPECS[src];fixed=pre+forced
+            pp=sum(bb[:,LABELS.index(x),None] for x in fixed)
+            cc=np.array(STATES[src],dtype=np.int8)
+            for i in range(FIRST[src],5):
+                den=pp+cc[None,:,:i-FIRST[src]].sum(axis=2)+(5-i)
                 self.QD[src,i]=old.sc(old.VE['q'](1,den))
         self.MenuL=[];self.MenuH=[]
         for d in range(6):
@@ -98,7 +106,7 @@ class Universe(old.Universe):
             menus=list(product(corners,repeat=3))
             self.MenuL.append([[z[0] for z in mm] for mm in menus]);self.MenuH.append([[z[1] for z in mm] for mm in menus])
         self.MenuL=np.asarray(self.MenuL);self.MenuH=np.asarray(self.MenuH)
-        print(json.dumps({'root_copy_rows_each':len(self.cnames),'total_rows':len(self.names),'shared_menu_vertices':64}),flush=True)
+        print(json.dumps({'continuation_rows':{s:len(v) for s,v in self.cnames.items()},'total_rows':len(self.names),'shared_menu_vertices':64}),flush=True)
     def atom_rows(self,a,exact=True):
         bits=tuple(map(int,a['bits']));d=sum(a['AB_hist'][4:])
         if exact:rr=super().atom_rows(a)
@@ -120,9 +128,9 @@ class Universe(old.Universe):
         Cvals={};Cidx={}
         for src in ROOTS:
             ww=np.asarray(lam)[self.cids[src]];ids=np.flatnonzero(np.abs(ww)>1e-11)
-            score=np.tensordot(self.CT[src][...,ids],ww[ids],axes=([-1],[0])) if len(ids) else np.zeros((1024,6,16))
-            CE=np.zeros((1024,16,3))
-            for i in range(1,5):
+            score=np.tensordot(self.CT[src][...,ids],ww[ids],axes=([-1],[0])) if len(ids) else np.zeros((1024,6,len(STATES[src])))
+            CE=np.zeros((1024,len(STATES[src]),3))
+            for i in range(FIRST[src],5):
                 for fi,pn in enumerate(PATHS):
                     CE[:,:,fi]-=lam[self.query_indices[src,i,pn]]*self.QD[src,i]
             if np.any(CE):
@@ -157,7 +165,7 @@ class Universe(old.Universe):
                 rho=120*(beta*int(any(bits[:5]))-int(d>0))-fixed[bi,d]-float(scores[menu_index])-sum(v[d] for v in fs)
                 minimum=min(minimum,rho)
                 if rho < -1e-7:
-                    a={'bits':''.join(map(str,bits)),'AB_hist':list(self.hist[3][choices[0][d]]),'AE_hist':list(self.hist[3][choices[1][d]]),'second_hist':list(self.hist[4][choices[2][d]]),'menus_lh':lhs,'copies':{s:STATES[Cidx[s][bi,d,menu_index]] for s in ROOTS}}
+                    a={'bits':''.join(map(str,bits)),'AB_hist':list(self.hist[3][choices[0][d]]),'AE_hist':list(self.hist[3][choices[1][d]]),'second_hist':list(self.hist[4][choices[2][d]]),'menus_lh':lhs,'copies':{s:STATES[s][Cidx[s][bi,d,menu_index]] for s in ROOTS}}
                     best.append((rho,a))
         best.sort(key=lambda x:x[0])
         for rho,a in best[:batch]:
@@ -170,8 +178,8 @@ class Universe(old.Universe):
 def key(a):return old.atom_key(a)+tuple(tuple(a['copies'][s]) for s in ROOTS)
 
 def run(maxiter=60):
-    U=Universe();target=HERE/'bidirectional_menu_half_search.json'
-    source=HERE/'cross_menu_half_search.json';warm=json.loads((target if target.exists() else source).read_text())
+    U=Universe();target=HERE/'penultimate_branch_half_search.json'
+    source=HERE/'bidirectional_menu_half_search.json';warm=json.loads((target if target.exists() else source).read_text())
     atoms=[];cols=[];keys=set();ws=[];os=[]
     def add(a):
         if key(a) in keys:return 0
@@ -184,18 +192,18 @@ def run(maxiter=60):
     keep+=list(range(max(0,len(warm['atoms'])-200),len(warm['atoms'])))
     for i in sorted(set(keep)):
         a=warm['atoms'][i]
-        if 'copies' in a:add(a);continue
-        for state in ((0,0,0,0),(1,1,1,1)):
-            add({**a,'copies':{s:state for s in ROOTS}})
+        if 'copies' in a and all(s in a['copies'] for s in ROOTS):add(a);continue
+        for bit in (0,1):
+            add({**a,'copies':{s:a.get('copies',{}).get(s,(bit,)*TAILS[s]) for s in ROOTS}})
     for d in (0,5):
         h3=[0]*8;h3[3 if d==0 else 7]=5;h4=[0]*16;h4[7 if d==0 else 15]=5
-        add({'bits':'1111111111','AB_hist':h3,'AE_hist':h3,'second_hist':h4,'menus_lh':[(5,d)]*3,'copies':{s:(1,1,1,1) for s in ROOTS}})
+        add({'bits':'1111111111','AB_hist':h3,'AE_hist':h3,'second_hist':h4,'menus_lh':[(5,d)]*3,'copies':{s:(1,)*TAILS[s] for s in ROOTS}})
     # Genuine all-big five-player SPE gives W=5, OPT=9. Its two full
     # customer states seed ratio 9/5 rather than a degenerate ratio-one start.
     h3=[0]*8;h3[3]=4;h3[7]=1;h4=[0]*16;h4[7]=4;h4[15]=1
-    big={'bits':'1111111111','AB_hist':h3,'AE_hist':h3,'second_hist':h4,'menus_lh':[(5,1)]*3,'copies':{ss:(1,1,1,1) for ss in ROOTS}}
+    big={'bits':'1111111111','AB_hist':h3,'AE_hist':h3,'second_hist':h4,'menus_lh':[(5,1)]*3,'copies':{ss:(1,)*TAILS[ss] for ss in ROOTS}}
     h3o=[0]*8;h3o[0]=4;h3o[4]=1;h4o=[0]*16;h4o[0]=4;h4o[8]=1
-    omitted={'bits':'0000000000','AB_hist':h3o,'AE_hist':h3o,'second_hist':h4o,'menus_lh':[(0,0)]*3,'copies':{ss:(0,0,0,0) for ss in ROOTS}}
+    omitted={'bits':'0000000000','AB_hist':h3o,'AE_hist':h3o,'second_hist':h4o,'menus_lh':[(0,0)]*3,'copies':{ss:(0,)*TAILS[ss] for ss in ROOTS}}
     rb=U.atom_rows(big);ro=U.atom_rows(omitted)
     assert all(rb[n]+F(4,5)*ro[n]>=0 for n in U.names)
     add(big);add(omitted)
