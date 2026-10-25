@@ -1,3 +1,7 @@
+# 第十一轮接续（Boss10，同一身份）
+
+Q-CAG-HALF仍OPEN；[本轮一般工作稿](round11/GENERAL_PROOF_WORKING.md)记当前全部输入义务和实际结果。已读同行313/314，停止零根逐人 OPT/(2m)、GLOBAL-extra及LAST付款；第十轮相邻钱包反例已归档，不以继续产障碍代替一般研究。六名指定研究员已启动，父方同时直接推导。当前尚未形成新通用金额。
+
 # Boss10：共享遗漏、完整可信性和低尾信用
 
 **第十轮最新：一般目标仍 OPEN。** 六名直属指定研究员与root直接一般研究；已证明全人数族否定相邻钱包的existential最优指派桥，连固定倍数也不够；不是half反例。较宽弱K、净ROW、真实最优查询与共同ROLE仍未付。见[第十轮总稿](round10/GENERAL_PROOF_WORKING.md)。
