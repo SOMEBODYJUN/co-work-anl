@@ -22,3 +22,15 @@
 因此付款等价于 C≤D+ΣIC。KKT 只控制将 1_(x∈A) 换为 ρ_x 的去相关线性项；它没有直接控制 C。要求更强 C≤0 会够用，但未证且可能过强。不能只用 reciprocal 凸性或 KKT 把关联项丢掉。
 
 新观察的用途是将同一共享分母下的剩余项变成明确的加权线性负载关联及 Bregman 正项；这只是等价/充分接口，没有新增金额。下一步应让完整后继 IC 与这个特定最优权 t² 耦合，而非扩大同一锥阴性。
+
+## 后续独审与准确停界
+
+[tree独审](../tree/shared_load_independent_review.md)核全部域、KKT、零ρ和IC，另保留G_KKT≥0得W−mF=ΣIC+G_KKT+D−Cov。仍无Cov金额界。joint saddle另给γ=F(p*,L*)，每个主题g_t(A)=Σ_A t≤γ，查询支持等号；L*是m−1份合法主题分数负载，故ΣtL*≤(m−1)γ。此额外条件不使C非正。
+
+matching允许角色查询运输：每行p_i质量1且平均为p，仍精确W−mF_p(L*)=Σ_iIC_i(p_i)−C(p_i)+D(p_i)。每角色一份whole IC，此自由度不是资金。
+
+[精确旧保险族诊断](../aggregate/shared_load_components_and_exact_sign_boundary.md)证明m6有唯一global primal负载，所有joint saddle仅支持nonanchor主题，逐行C在这些主题恒定。共同重选saddle及角色运输仍C135/242>0，但D2017/1210、IC4/5给W−6γ21/11>0。只关闭C≤0加强，不否定SHARED。[matching独审](../matching/insurance_saddle_independent_review.md)及[root字面16客户复核](shared_insurance_literal_independent.json)通过；全历史SPE继承同行一般证明，180菜单不是全树审计。
+
+C≤D等价于原查询总和Σ_iE_p d_i(A)≥mF，也是未证加强，不是已败个体SELF。完整C≤D+ΣIC仍是一般义务。[terminal同p互补银行](../direct/direct_general_working.md)提供另一精确非负需求，早期IC仍未付款。[saddle完整后继IC尝试](../tree/saddle_price_law_and_variance_attempt.md)保留输入/后继两种曲率及r_beta插入势差；等price条件不能免费删它。
+
+同式m5只给条件9W/5，无无条件half。本轮停在上述实际推导的金额缺口，未有新福利界、目标反例、外审或新颖性认证；不重复零C、原钱包系数或同锥阴性来代替付款。

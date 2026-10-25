@@ -125,5 +125,8 @@ displayed all-input relation above.
 Existing static min-assignment decomposition and same-role zero-loss
 selection are acknowledged rather than claimed as a solved payment.
 The COPY refund and cross-role block gate were reconstructed directly from
-the unit-customer formula here; deduplication and independent attack are
-pending.
+the unit-customer formula here. [Geometry11's independent review](../geometry/matching_displacement_gate_review.md)
+reconstructs their definitions, signs, joint min-Q use, and arbitrary I,J
+quantifiers with no fatal issue. No quantitative positive-loss payment or
+novelty statement is inferred. `audit_cross_role_exchange.py` and its
+separate JSON check the formulas on old52/old1953 without changing sources.
