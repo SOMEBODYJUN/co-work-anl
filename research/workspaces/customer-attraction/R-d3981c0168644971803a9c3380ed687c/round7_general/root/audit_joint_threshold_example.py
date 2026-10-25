@@ -83,4 +83,4 @@ if __name__=='__main__':
     rows=[check(*t) for t in params]
     result={'status':'PASS','independence':'Only raw unit interests and Fraction ordered BI; no author or canonical imports','scope':'Exact regression of explicit parameterized product example, not a general proof','records':rows}
     Path(__file__).with_suffix('.json').write_text(json.dumps(result,indent=2)+'\n')
-    print(json.dumps({'status':'PASS','records':[{k:r[k] for k in ('q','a','b','topics','all_terminal_profiles','M_exact','one_total_constraint_value','repair_saved','target_plus_new_repair')} for r in rows]},indent=2))
+    print(json.dumps({'status':'PASS','records':[{k:r[k] for k in ('q','bank_copies','a','b','topics','all_terminal_profiles','M_exact','one_total_constraint_value','repair_saved','target_plus_new_repair')} for r in rows]},indent=2))

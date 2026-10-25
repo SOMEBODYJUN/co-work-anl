@@ -14,3 +14,8 @@ Q-CAG-HALF 仍 OPEN：无一般或五人half新界、无真目标反例。原单
 | R7-ALL-BIG-FLOW-v1 | old all-big全m流程中当前C分享损失m(H_m−1)，真实Γ必须同付；任意有界角色补贴放松即使bank一次预算也不推出half | aggregate解析，输入/模型边界明列 | 原CAG与角色补贴放松分开Claim；非目标反例，不认证新机制 |
 
 [正文与来源地图](README.md)、[父方工作稿](MAIN_PROOF_WORKING.md)。上述内部核验不等于外审或文献新颖性认证。H(1)一般非负及严格负seed仍OPEN；指定组件无负不提高真值。
+
+新增准确组件：
+
+- **R7-H-PRODUCT-STRUCTURE-v1**：任意r≥2/固定背景完整Cartesian产品，tau≥0时H_P≤ΣH；r=2、3时等号。aggregate有提示独立合同核查通过。r2真实M精确可加；r3同型Psi齐次，异质共同price与整数凸化收益分清。无一般H非负结论。
+- **R7-DESIGNATED-H4-FAMILY-v1**：只为一般H候选做一次明确家庭反例诊断；4人E3(a)×J2(b)零根，对所有正整数a,b及每个强制根H(1)=b/2。父方解析、signed独立攻击/全参数收益网格交叉核通过。不是固定四人福利项目，不证明一般H或half；该家庭检验已收束。
