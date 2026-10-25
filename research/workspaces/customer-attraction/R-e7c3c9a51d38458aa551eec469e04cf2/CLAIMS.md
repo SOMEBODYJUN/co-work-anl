@@ -24,4 +24,11 @@
 - **Actual evidence：** construction/ 的两脚本及精确JSON，源SHA与scale均保存；真SPE续局全集重算各强制孩子的M，含own-action。W=1、OPT约2.0616948、末位BR，但两signed预算约1.8426651、1.8764749均大于0。
 - **Status / limits：** 仅两个明确定义候选没有产生严格坏seed；不是普遍非负证明，不排除原松弛点的其他真实实现，不是原SPE反例。
 
-其余一般候选、失败尝试和接续义务在 GENERAL_WORKING.md 及各分支原稿，未获新无条件一般福利界。
+## B16-OLD-RENT-BANK-EDGE-NO-v1
+
+- **Exact candidate：** 任意合法前缀b、余r，V为最优r主题补全后的总覆盖，E为全部真实子SPE终局中全部旧玩家总收入的最小值，Psi=V-E。问每条合法动作A是否 `Psi(b,r)-Psi(b+A,r-1)<=2M(b,r)`。
+- **Counterevidence / conclusion：** 旧六主题61客户四人完整SPE的实际A、AA前缀给Psi=52、33、14，M=9；两条边均19>18，故该一般单步加强为假。
+- **Evidence / dependencies：** dual/credible_bank_potential_attempt.md的解析极值和旧完整策略来源；dual/credible_bank_edge_counterexample.json冻结R集合、极值实现者及源SHA；dual/reproduce_credible_bank_edge.py --check-reference由作者和父方分别重放通过。
+- **Scope / status：** 只排除该逐边势式，不排除全二价MP累计或原half。旧实例本身2W-OPT=15，局部亏损被其他边余量覆盖。没有新目标反例或全输入新付款。
+
+其余一般候选、失败尝试和接续义务在 GENERAL_WORKING.md 及各分支原稿，未获新无条件一般福利界。global/SUMmin-full仍只是一般充分候选，有限LP检错没有改变其OPEN身份。
