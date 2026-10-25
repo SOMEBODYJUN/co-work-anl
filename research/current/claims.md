@@ -4,6 +4,7 @@
 
 | ID | Exact scope | Result and boundary | Proof and status |
 | --- | --- | --- | --- |
+| CA-PRICED-HIDDEN-REPLY-v1 | CAG-MODEL；任意m≥2、每份完整历史纯SPE、任意余k≥2人的真节点；任意合法T,Q及非负有理α,β,μ。 | r+(Σα)u_m+(Σβ)K≥Σψ_k；ψ为真隐藏回复的逐客户最小值，按非末隐藏人数与末位位排序精确压至2(k−1)候选。所有实际报价支出须共同计账，不推出half。 | [自足非负恒等式与排序证明](customer_attraction/priced_hidden_reply_projection.md)；[独立代数审查](../reviews/customer_attraction/priced_hidden_reply_projection.md)，六人完整历史真节点精确核验；已证一般局部引理，未外审，无一般/六人付款证书。 |
 | CA-FIVE-HALF-EXACT-v1 | CAG-MODEL；恰五名单位提供者、任意有限单位客户集、有限非空共同目录、每份完整有序历史依赖纯SPE；空主题、重复、零客户和任意平局均保留。 | OPT_5≤2W；零根背景的普遍半覆盖。53正整数乘子与全系数域非负余项恒等式闭合；不含任意背景五人剩余利润、六人或一般人数。 | [完整证明包及精确恒等式](customer_attraction/five_player_half.md)，[本轮入库审查](../reviews/customer_attraction/five_player_half_import.md)；局部及完整域精确复跑、分工独立内审通过，外审/新颖性/锐性未认证。 |
 | CA-EXACT-PURE-SPE-ALL | 有限共同主题目录、单位权提供者依次观察完整历史、单位客户均分；整数重数代表单位 clones，全部历史依赖纯 SPE。 | 集合值逆归纳精确返回每个 prefix 的全部可实现终局计数，并为每个终局重构完整有序历史策略；不涵盖混合行为 SPE，不声称位多项式。 | [完整必要/充分归纳](customer_attraction/exact_solver.md)、独立完整策略枚举及规范实现；外审未记录。 |
 | CA-PREFIX-COUPLED-SEAT-BUDGET-v1 | CAG-MODEL；任意目录、m≥1、每个全历史纯SPE及每个实际前缀b余r；Q_j为极大全局私有实际遗漏块；F/G和第r大Λ_i/λ_i按工作稿§3.1定义。 | u_i≥Λ_i≥λ_i，W≥ΣΛ_i≥Σλ_i；逐位置加强旧固定分母私有谱与分母保底之最大值，有完整SPE严格例；Q全空时两谱退回原分母界。未证其总和足付OPT/2。 | [工作稿§3.1](customer_attraction/general_half_proof.md#31-冻结真实前缀的联合客户席位一般付款的精细加强)、[完整证明](../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/omission/prefix_coupled_seat_budget.md)及内部解析/独立单位客户审查；无外审或新颖性认证。 |

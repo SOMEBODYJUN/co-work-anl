@@ -30,6 +30,8 @@
 
 [一般工作稿](../current/customer_attraction/general_half_proof.md)串联这些关系及其他工具，问号处仍未证。[联合前缀席位预算（§3.1）](../current/customer_attraction/general_half_proof.md#31-冻结真实前缀的联合客户席位一般付款的精细加强)是有效强化；[真实孩子覆盖缺口（§3.2）](../current/customer_attraction/general_half_proof.md#32-最优首动作的真实孩子覆盖缺口不冻结后继的全范围关系)是保留信用的准确恒等式；水位是终局共同信用。它们各自尚无通用跨树付款，不能把等价重写算作新增福利结论。
 
+新增[共同报价投影](../current/customer_attraction/priced_hidden_reply_projection.md)：对任意m、任意真源节点，以真实源IC、同一实际末位的全目录报价、共同K和分支真末位IC生成合法行；隐藏位可按人数排序精确消元。一般性有解析证明，六人全历史测试用于核验实现。它还未给出全m主闭合，也没有六人half证书。
+
 ## 承重缺口与按需来源
 
 固定最优并集 O、实际覆盖 U，令 `L=|O\U|`、`E=|U\O|`，则 **`OPT_m−W=L−E`**。真正需要支付的是净差；不能只给遗漏半额付款就称 half，也不能丢掉 E。早期改一个主题会改变整段真实后继；核心缺口是跨互斥分支、不同查询或不同位置共同使用一次利润预算。

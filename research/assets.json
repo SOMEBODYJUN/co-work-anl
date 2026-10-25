@@ -12667,6 +12667,39 @@
         "research/reviews/customer_attraction/five_player_half_local.md",
         "research/reviews/customer_attraction/five_player_half_global.md"
       ]
+    },
+    {
+      "id": "customer_attraction_priced_hidden_reply",
+      "claims": [
+        "CA-PRICED-HIDDEN-REPLY-v1"
+      ],
+      "status": "complete general local lemma and exact count compression; internally audited; unrefereed",
+      "applies_when": [
+        "CAG-MODEL, any m>=2 and any complete ordered-history pure SPE",
+        "any true history with at least two remaining players",
+        "nonnegative rational source/price/capacity/last-IC multipliers"
+      ],
+      "produces": "A valid projected necessary row for arbitrary remaining horizon; exact sorting reduces binary hidden memberships to 2(k-1) candidates.",
+      "implementation": [
+        "customer_attraction/priced_hidden_reply.py"
+      ],
+      "proof": [
+        "research/current/customer_attraction/priced_hidden_reply_projection.md"
+      ],
+      "tests": [
+        "tests/audits/customer_attraction_priced_hidden_reply.py"
+      ],
+      "records": [
+        "evidence/customer_attraction/priced_hidden_reply_projection.json"
+      ],
+      "examples": [],
+      "sources": [
+        "history/source/notes/customer_attraction/half5_exact_upload.zip"
+      ],
+      "reviews": [
+        "research/reviews/customer_attraction/priced_hidden_reply_projection.md"
+      ],
+      "limit": "This is not a general or six-provider half-coverage proof. All uses of actual u_i and K require one final common budget. Sorting does not automatically apply after adding identity-dependent intermediate IC or cross terms. Finite m6 tests verify implementation, while the displayed slack identity proves the lemma."
     }
   ]
 }

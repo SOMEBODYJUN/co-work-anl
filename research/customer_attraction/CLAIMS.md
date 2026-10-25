@@ -74,3 +74,7 @@
 ## 恰五人已证特例：CA-FIVE-HALF-EXACT-v1
 
 完整身份见[现行定理](../current/customer_attraction/five_player_half.md)。Exact Statement、Objects、Domain、Quantifiers、Assumptions、Definitions均与本页 Q-CAG-HALF 一致，仅将人数量词固定为 m=5；Conclusion 为2W≥OPT5。依赖CAG-MODEL、同一完整σ中的真实IC、共同目录K、末两人重叠引理及上传精确证书。Evidence为完整正文、全系数域有理/整数复跑及独立内审；当前无未排除的致命异议，未记录外审。Status：完整精确计算机辅助证明，内部复核通过。六人、任意背景五人版及一般m仍未证；不把范围改变藏在旧ID中。
+
+## CA-PRICED-HIDDEN-REPLY-v1：一般局部行生成器
+
+[精确对象、全称量词、非负参数、结论与自足证明](../current/customer_attraction/priced_hidden_reply_projection.md)均已固定。任意m的合法报价投影和排序压缩已证并独立内审；六人语义测试支持实现，不将有限测试当普遍证明。全m/六人half仍OPEN，主闭合参数未找到，外审与新颖性未认证。
