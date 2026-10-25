@@ -1,5 +1,7 @@
 > 最新第五次一般接续见 [round5_general主稿](round5_general/MAIN_PROOF_WORKING.md)、[地图](round5_general/README.md)及[精确身份](round5_general/CLAIMS.md)。目标仍 OPEN，无新无条件福利界或目标反例。两族完整历史 SPE 分别关闭末位全列税付款，以及原零根的逐人 δ_m、extra δ_(m+1) 和 OPT/(2m) 助手；都满足 half，真正安全值聚合未败。新对齐删除边际预算与私有别名转移已内部核对，未接成平均福利证明。前轮 [round4_general](round4_general/README.md) 的共享前缀回收继续有效；更早成果不重复认领。共享恢复入口为[一般工作稿](../../../current/customer_attraction/general_half_proof.md)、[成果总账](../../../customer_attraction/RESULTS_LEDGER.md)及[个人区索引](../../../customer_attraction/WORKSPACE_RESULTS.md)。
 
+最新接续：[round7_general](round7_general/README.md)。新增一般共同后继帽、一次舍入及其真实signed费用改善，并给有限字典精确seed LP；已分别独立内审，尚无严格负种子或一般half。
+
 最新接续：[round6_general](round6_general/README.md)（2026-10-25），六名指定模型研究员与父方继续一般推导；共享负载、总查询与可信价格均尚未付款。上轮已否定的个体安全和 LAST 不再调用。一般 Q-CAG-HALF 仍 OPEN。
 
 # 一般半覆盖：当前共同付款与前轮资产

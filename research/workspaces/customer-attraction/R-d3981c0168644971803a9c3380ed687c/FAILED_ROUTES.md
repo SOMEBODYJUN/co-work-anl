@@ -23,3 +23,7 @@
 ## 第六轮准确边界
 
 真实删首后全部目标前缀的max-min floor增量，含未先BR-reset的末位，不能仅由被删者利润或其退款共同支付：31客户完整四人SPE给11>28/3；直接去正部也失败。先末位BR-reset版本不被该例否定。另核实Cauchy源界在ai≤u_m时被原始分母界支配，未当新强化。新全阶擦除预算不是失败：其终局公式和共同势成立，仍缺真实子SPE转换/删当前槽reset付款。见[round6](round6_general/README.md)。
+
+## 第七轮接续停界
+
+优先权依赖的winner行系数不保持原IC条件非负，点态行质量1也不能代确定整query envelope；两人3客户完整SPE已有精确诊断，未反驳任何尚未实例化的source流。固定实际mM+K早由old13否定，本轮及时停掉该付款。新共同价格虽改善真实M/signed费，但全部已核种子仍正；H(1)的单A负值不等max后负，三人产品H逐τ可加不制造新负供体。详见[round7](round7_general/README.md)。
