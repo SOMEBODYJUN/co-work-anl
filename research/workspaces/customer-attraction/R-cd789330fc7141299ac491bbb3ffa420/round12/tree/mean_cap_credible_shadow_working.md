@@ -99,6 +99,13 @@ No sign eta_i>=0 is asserted. Actual-action tags are fixed original
 endpoints. High-d offactual endpoints remain in this dual comparison because
 the global cap constrains their mixture's entering payoff.
 
+GDUAL compares child-SPE endpoint profiles only. A unilateral deviation leaf
+inside a genuine witness need not itself be an endpoint of a complete SPE
+after the entering history: its deviating role need not be best responding.
+Therefore GDUAL cannot automatically be applied to every original reset leaf.
+Such an application needs a separate credible-realizability argument or an
+explicitly larger analytical raw-tail domain; neither is supplied here.
+
 ## 4. Nonnegative cap-slack credit in the KKT gap
 
 For each original source query define
@@ -155,3 +162,9 @@ credible endpoint improving shadow is priced by APRICE/GDUAL, not yet paid
 by the actual wallet. The domains, dual and cap-slack relation are retained
 without claiming a welfare improvement. No finite scan or fixed-player
 positive project was performed in this round.
+
+Credible11 independently reviewed sections 1 and 3--5, and matching11
+independently checked sections 1--5. Both passed domain/dual/CAP-SLACK/GBAL
+algebra and weak sufficiency, without any covariance amount. Credible11's
+additional scope warning about non-credible deviation leaves is retained
+above. These are internal checks, not external review or new welfare claims.

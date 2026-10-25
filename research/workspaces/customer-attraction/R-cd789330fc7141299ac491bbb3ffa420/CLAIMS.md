@@ -184,3 +184,19 @@ Q-CAG-HALF仍OPEN；扩张ROLE、弱K≤(1+1/m)W、根实际全路径聚合支�
 terminal余量、可信endpoint、same-p互补银行和fixed-t切线游戏均保存准确未付项；没有half新界。前缀harmonic kernel已去重至R-7eb旧稿。原净ROW/SUMROW、宽冻结指派、安全聚合及ROLE仍未闭合。见[本轮稿](round11/GENERAL_PROOF_WORKING.md)。
 
 - **B10-SHARED-HALF-CAP-v1（OPEN、较弱充分候选）**：同一shared minimax值γ是否有W≥(m−1/2)γ。它仅需C≤D+ΣIC+γ/2，已足原half，不要求强SHARED的锐2−1/m。γ/2是目标容许余量，未给资金。m5需(9/2)γ≤W，未无条件成立。原强候选身份保留，不能以此重新命名为已证。
+
+## 第十二轮个人阶段身份
+
+原HALF与m5仍OPEN，无新无条件福利界/目标反例；外审、新颖性未认证。
+
+- **B10-MEAN-CAP-SHADOW-CREDIT-v1**：全行均值cap分析域保留原source，μ_i≥0、η_i自由给G=Σμ_i I_i+ΣE R_i≥Σμ_i I_i。均值cap不是纯重选，无μ_i u_i额外钱包。[正文](round12/tree/mean_cap_credible_shadow_working.md)、[独审](round12/credible/mean_cap_weighted_credit_review.md)。
+- **B10-ALIGNED-CREDIBLE-FIXPOINT-v1**：Kakutani给query/background边际、max-price支持和future折扣一致的固定点；非minimax、小γ或原纯SPE，不免费叠global版G。[正文](round12/tree/aligned_credible_menu_fixedpoint.md)、[独审](round12/credible/aligned_fixedpoint_review.md)。
+- **B10-FULL-SLOT-NORM-BANK-v1**：full负载/原deleted source有W−mγ+=Σ(1+μ_i)I_i+R+D0−Cov0+m||ρt||²。插入税/曲率抵消成范数项，Cov未付。[正文](round12/aggregate/full_slot_cap_dual_norm_bank.md)、[独审](round12/tree/full_slot_norm_independent_review.md)。
+- **B10-CANONICAL-FLOOR-RESET-PRICE-v1**：旧min-pasting给有序FLOOR-IFF。raw均值floor分析域λ_h≥0定价允许reset，source slack非负；固定actual标签须保例外。[域审查](round12/tree/reset_floor_domain_independent_check.md)、[独审](round12/credible/mean_floor_reset_review.md)。
+- **B10-UNIFORM-NET-CAP-v1**：B_i=d_i−Σ_future(u−M)，一份总约束ΣE B_i≤W给共同μ、G=μ(I_total+S_total)+R。辅助路径非SPE；真copy消去root/current变化，前缀损失未付。[正文](round12/parent/net_cap_bubble_component.md)。
+- **B10-HALF-REDUCED-COST-FLOW-v1**：同row非负行动平衡first-follower流满足μΣθ(d−v)≤½Σθr(source)。还须原source逐原子容量才可用半份R，不控制边正部和，实际Cov流平衡未证。[证明](round12/credible/uniform_copy_swap_component.md)、[独审](round12/tree/uniform_swap_and_raw_flow_independent_review.md)。
+- **B10-ACTUAL-PREFIX-BUBBLE-v1**：raw(h_i,A,b_i,Y)真尾SPE可换成下一actual行(h_i,b_i,A,Y)的child SPE，删除query背景/利润相同，净cost差=M(h_i,A)−u_b。真原first-follower强制尾时差=Γ−source slack。下一row cap/原σ一致性与多源容量未保证。[正文及QA](round12/parent/net_cap_bubble_component.md)。tree/credible独立解析通过，有限QA非一般half证据。
+
+同端点真/几何重放的总adaptive work相同，仅真边有原Γ；fixed F/B/r signed工作一次望远镜，不付款任意target余项。[真重放](round12/tree/real_replay_covariance_flow.md)、[几何重放](round12/geometry/conservative_raw_tail_replay.md)。
+
+- **B10-ACTUAL-LOAD-TANGENT-PAY-v1（OPEN充分候选）**：coherent shared KKT下，若C≤D+I+(m−1)/(2m)Σρt²c，则实际银行的KKT上界≤γ/2足half。未有r_beta/reset到该银行的真实映射；不是通用PSD passivity结果。[最后稿](round12/direct/GENERAL_PROOF_WORKING.md)。
