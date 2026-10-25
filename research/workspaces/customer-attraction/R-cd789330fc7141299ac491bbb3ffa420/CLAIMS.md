@@ -200,3 +200,6 @@ terminal余量、可信endpoint、same-p互补银行和fixed-t切线游戏均保
 同端点真/几何重放的总adaptive work相同，仅真边有原Γ；fixed F/B/r signed工作一次望远镜，不付款任意target余项。[真重放](round12/tree/real_replay_covariance_flow.md)、[几何重放](round12/geometry/conservative_raw_tail_replay.md)。
 
 - **B10-ACTUAL-LOAD-TANGENT-PAY-v1（OPEN充分候选）**：coherent shared KKT下，若C≤D+I+(m−1)/(2m)Σρt²c，则实际银行的KKT上界≤γ/2足half。未有r_beta/reset到该银行的真实映射；不是通用PSD passivity结果。[最后稿](round12/direct/GENERAL_PROOF_WORKING.md)。
+
+
+最新本对话用户指定五人专项，客户/目录任意；一般目标仍OPEN。见[round13](round13/README.md)及[精确范围](round13/CLAIMS.md)。

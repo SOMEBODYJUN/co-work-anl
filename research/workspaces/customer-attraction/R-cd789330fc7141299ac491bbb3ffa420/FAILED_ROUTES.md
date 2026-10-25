@@ -105,3 +105,6 @@ CLIP只保证新正券≤旧gross，不保证旧net逐券下降；旧证书任�
 - query martingale总能量≤Vp不控制乘以前缀负载的diagonal工作；“只有半个方差”仍为候选。一般PSD/匿名势不自动给CAG付款。
 
 上述是具体未证接点，并非原half反例或一般不可能。原净覆盖、shared弱half、全槽银行、uniform netcap及原目标均未闭合。
+
+
+最新本对话用户指定五人专项，客户/目录任意；一般目标仍OPEN。见[round13](round13/README.md)及[精确范围](round13/CLAIMS.md)。
