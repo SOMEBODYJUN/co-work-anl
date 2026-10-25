@@ -11,6 +11,11 @@ maxroot_envelope.md给行来源；JSON和分离标准库实现验证完整192系
 状态：作者完整非负证书、同作者分离实现精确复核；待独立解析审核和新颖性，不是HALF(5)。
 加权饱和解析候选另见weighted_root_saturation.md，亦不升级为五人主目标证明。
 
+五人失败身份 FIVE-GAMMA2-THRESHOLD-NO：Gamma2精确定义为固定实际前三前缀下最大两槽harmonic势
+减实际势。候选u1+u2+u3+Gamma2>=3u5被N={0,1},S={{0},{1}}、路径(0,1,1,1,0)的完整纯SPE
+严格击穿，差-1/3。实际W=OPT5=2。正文two_singletons_gamma_counterexample.md给完整计数策略及
+各节点IC差；标准库无求解器重构全31历史62比较通过。作者完整反例，待外部独审/新颖性；不否定原half。
+
 以下为上一轮一般研究的身份存档。
 
 # 精确身份与状态
