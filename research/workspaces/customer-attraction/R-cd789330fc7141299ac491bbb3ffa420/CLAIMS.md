@@ -182,3 +182,5 @@ Q-CAG-HALF仍OPEN；扩张ROLE、弱K≤(1+1/m)W、根实际全路径聚合支�
 - **B10-OPTIMAL-FRESH-RESERVE-v1（OPEN充分候选）**：最优m主题组中是否存在K0=Σ_jΣ_(x∈T_j)1/(1+c_x)≤W+J，J=Σ_actual1/(1+c_x)。静态OPT≤K0+W−J成立；SPE付款未证。区别于已败所有查询max税。有限旧输入/锥未分离不提升真值。[合同](round11/geometry/optimal_fresh_self_reserve_working.md)。
 
 terminal余量、可信endpoint、same-p互补银行和fixed-t切线游戏均保存准确未付项；没有half新界。前缀harmonic kernel已去重至R-7eb旧稿。原净ROW/SUMROW、宽冻结指派、安全聚合及ROLE仍未闭合。见[本轮稿](round11/GENERAL_PROOF_WORKING.md)。
+
+- **B10-SHARED-HALF-CAP-v1（OPEN、较弱充分候选）**：同一shared minimax值γ是否有W≥(m−1/2)γ。它仅需C≤D+ΣIC+γ/2，已足原half，不要求强SHARED的锐2−1/m。γ/2是目标容许余量，未给资金。m5需(9/2)γ≤W，未无条件成立。原强候选身份保留，不能以此重新命名为已证。
