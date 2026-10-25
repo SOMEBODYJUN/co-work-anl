@@ -1,16 +1,8 @@
-\documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs}
-\usepackage{microtype}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
+\documentclass[manuscript,review,anonymous]{acmart}
+\acmJournal{TEAC}
+\setcopyright{none}
+\usepackage{amssymb,mathtools,booktabs}
+\IfFileExists{libertine.sty}{}{\microtypesetup{expansion=false}}
 \newcommand{\PNE}{\mathrm{PNE}}
 \newcommand{\OPT}{\mathrm{OPT}}
 \newcommand{\F}{\mathcal F}
@@ -21,27 +13,29 @@
 \newcommand{\R}{\mathbb R}
 \newcommand{\N}{\mathbb N}
 \DeclareMathOperator{\pos}{pos}
-\title{Structural Methods for Approximate Stability\\in Weighted Congestion Games}
-\author{}
-\date{Research manuscript}
-\hypersetup{pdftitle={Structural Methods for Approximate Stability in Weighted Congestion Games}}
+\title{Structural Methods for Approximate Stability in Weighted Congestion Games}
+\ccsdesc[500]{Theory of computation~Algorithmic game theory and mechanism design}
+\ccsdesc[300]{Theory of computation~Approximation algorithms analysis}
 \begin{document}
-\maketitle
 \begin{abstract}
 We study how local cost comparisons determine approximate stability in weighted congestion games with polynomial latencies. We develop tools for comparing endpoint costs with area estimates, combining resource potentials with a common scale for each player, and realizing stability on a structured set of states by legal congestion resources. These tools explain both the amplification caused by large atoms and the existence guarantees available under small atomic shares, compatible weight types, or bounded weight depth. As an application, we construct rational games of degree $d$ with no $(d-1200\lceil\log_2d\rceil^2)$-approximate pure Nash equilibrium, for every integer $d\ge2^{20}$. Together with the known $d$-approximate existence theorem, this answers the asymptotic existence question raised by Christodoulou, Gairing, Giannakopoulos, Po\c{c}as, and Waldmann. We also give conditions under which the same realization method preserves social optimization and approximation quality.
 \end{abstract}
+\keywords{weighted congestion games, approximate pure Nash equilibria, approximate potentials, social cost}
+\maketitle
 
 \section{Introduction}
 Weighted congestion games describe systems in which indivisible users choose resources and the cost of each resource depends on its total load. Approximate pure Nash equilibria provide a finite-state notion of stability when exact equilibria may fail to exist. Their analysis often begins with a local comparison between a player's cost and a change in a resource potential. To obtain a statement about the whole game, however, these local comparisons must remain consistent across every resource that the player can enter or leave.
 
-We study three aspects of this passage from local costs to global stability. First, we compare the cost at a polynomial's endpoint with a discrete approximation to the area beneath it. The comparison distinguishes the total mass in a window from the size of the individual atoms used to sample it. Second, we identify when local resource potentials admit the same multiplier for a player on all resources. For resources with two optional weight types, this compatibility is described by product inequalities around type cycles. Third, we give a construction that confines every stable state to a prescribed product of binary fronts, while retaining an explicit formula for the approximation tolerance introduced by the added resources.
+We study three aspects of this passage from local costs to global stability. First, we compare the cost at a polynomial's endpoint with a discrete approximation to the area beneath it. The comparison distinguishes the total mass in a window from the size of the individual atoms used to sample it. Second, we identify when local resource potentials admit the same multiplier for a player on all resources. For resources with two optional weight types, this compatibility is described by product inequalities around type cycles. Third, we give a construction that confines every stable state to a prescribed set of structured binary states, while retaining an explicit formula for the approximation tolerance introduced by the added resources.
 
-Each tool has a positive use. Small actual atomic shares make the integral potential effective. On forests of interacting weight types, the common-scale construction gives an approximation factor of order $\sqrt d$, independently of the number of types. For arbitrary resource populations, a common ordering by decreasing weight gives an existence bound determined by the height of the player graph. The realization construction allows stable states to be selected on the smaller front domain; with an additional externality bound, it also allows social optimization on that domain.
+Each tool has a positive use. Small actual atomic shares make the integral potential effective. On forests of interacting weight types, the common-scale construction gives an approximation factor of order $\sqrt d$, independently of the number of types. For arbitrary resource populations, a common ordering by decreasing weight gives an existence bound determined by the height of the player graph. The realization construction allows stable states to be selected on the smaller structured domain; with an additional externality bound, it also allows social optimization on that domain.
 
-These comparisons also explain how large approximation factors arise. A short, finely sampled window can transmit a cost of order $d$ from one weight class to the next, even though the light users pay an area rather than an endpoint cost. We use this distinction to build a finite family in which every front state has an improving deviation. The realization theorem then excludes all other states without increasing the degree.
+These comparisons also explain how large approximation factors arise. A short, finely sampled window can preserve an endpoint-to-area amplification of order $d$ as costs propagate between weight classes, even though the light users pay an area rather than an endpoint cost. We use this distinction to build a finite family in which every structured state has an improving deviation. The realization theorem then excludes all other states without increasing the degree.
 
 \paragraph{Relation to the existence question.}
-Caragiannis and Fanelli~\cite{CF2021} prove that every weighted congestion game with nonnegative-coefficient polynomial latencies of degree at most $d$ has a $d$-approximate pure Nash equilibrium. Christodoulou, Gairing, Giannakopoulos, Po\c{c}as, and Waldmann~\cite[Section~7]{CGGPW2023} establish a nonexistence bound of order $\sqrt d/\log d$ and ask how to close the gap to the linear existence bound. Our construction gives a lower bound of $d-O((\log d)^2)$, and therefore determines the leading asymptotic constant of the universal threshold. The $d$ upper bound is imported from Caragiannis and Fanelli; the construction and the structural statements used here are proved below.
+Caragiannis and Fanelli~\cite[Theorem~2]{CF2021} prove a $d$-approximate potential guarantee for positive-degree monomial latencies. Their marginal bounds extend it to nonnegative-coefficient polynomials of degree at most $d\ge1$: split each resource into one copy per positive term, so every strategy uses all its copies together, and give a constant term $a_{e,0}$ the potential $a_{e,0}$ times its load. This preserves all player costs and the common marginal interval from $w_i c_e(Y)/d$ to $w_i c_e(Y)$. Christodoulou, Gairing, Giannakopoulos, Po\c{c}as, and Waldmann~\cite[Section~7]{CGGPW2023} establish a nonexistence bound of order $\sqrt d/\log d$ and ask how to close the gap to the linear existence bound. Our construction gives a lower bound of $d-O((\log d)^2)$, and therefore determines the leading asymptotic constant of the universal threshold. The $d$ upper bound follows from the cited potential; the construction and the structural statements used here are proved below.
+
+Caragiannis and Fanelli also obtain an $e^{1/\tau}$-approximate potential for their $\tau$-congested games with $\tau>0$~\cite[Corollary~5]{CF2021}: in their monomial model, at every state each user of a degree-$k_e$ resource shares it with other users of total weight at least $\tau k_ew_i$. They give an upper bound $(d+1)/(d+\delta)$ on the $(d+\delta)$-approximate price of stability for $0\le\delta\le1$~\cite[Theorem~7]{CF2021}. Our small-share bound gives an explicit integral factor under its own all-state share condition; our social-cost results select within a realized structured domain and require a separate externality condition to compare with the full-game optimum. Neither use of potential methods is claimed as new by itself.
 
 The counterexamples and the positive results answer different questions. In the unrestricted class, the leading linear factor is unavoidable. Under verifiable conditions on actual shares, compatible scales, or decreasing weight depth, the same local comparisons yield smaller factors. A failed scale certificate concerns the specified potential representation; a full-state counterexample requires the separate realization argument.
 
@@ -75,7 +69,7 @@ We first isolate the marginal condition that lets resource functions sum to a po
 The approximate-potential argument of Caragiannis and Fanelli~\cite{CF2021} compares the insertion marginal of a resource function with the player's resource cost. For a deviation involving several resources, we need the comparison to use one multiplier for the moving player. The following lemma states this requirement explicitly.
 
 \begin{lemma}[Common player scales]\label{lem:glue}
-Suppose a resource set function $H_e$ and positive numbers $q_i$ satisfy, for every optional insertion of player $i$ and every relevant local user set,
+Suppose resource set functions $H_e$ and positive numbers $q_i$ satisfy the following bounds. For each resource $e$, optional player $i$, and local optional-user set occurring in a legal state where $i$ omits $e$, insert $i$ into that set and require
 \begin{equation}\label{eq:mastermarginal}
  q_i\widehat c_e(Y)\le\Delta_iH_e\le\beta q_i\widehat c_e(Y),
 \end{equation}
@@ -173,7 +167,7 @@ Dropping the nonnegative term $m^{d+1}$ in the numerator produces an explicitly 
 Indeed the derivative has the sign of $d^2-x^{d+1}$, and $e^{-u}>1-u$ gives the strict final inequality. Every strictly smaller target has finite rational window parameters, by continuity followed by Proposition~\ref{prop:window}. This is a local propagation threshold, not a statement that all states of a game are unstable. A later propagation may require $\kappa\Gamma<1$ for an additional amplitude factor $\kappa>1$; the two conditions should not be conflated.
 
 \subsection{Ordered marginals and compatible player scales}\label{sec:scales}
-Throughout this subsection $d\ge2$. The cases $d=0,1$ are handled separately in Section~\ref{sec:depth}. The area potential uses only load. An ordered right sum also records how individual weights reach that load. For a current user ordering $v_1,\ldots,v_n$, write
+Throughout this subsection $d\ge2$. The cases $d=0,1$ are handled separately in Section~\ref{sec:depth}. The integral resource potential $F_e(U)=\int_0^{\sum_{j\in U}w_j}\widehat c_e(z)\,dz$ depends only on load. An ordered right sum also records how individual weights reach that load. For a current user ordering $v_1,\ldots,v_n$, write
 \begin{equation}\label{eq:orderedsum}
  P_c=\sum_{j=1}^nv_jc(v_1+\cdots+v_j).
 \end{equation}
@@ -280,7 +274,7 @@ It is attained, $a_d\le\beta_G<d$, and equality $\beta_G=a_d$ holds exactly when
 \end{theorem}
 \begin{proof}
 Summing log-ratio intervals around a cycle requires
-$p_C\log L\le q_C\log\beta$ and $q_C\log L\le p_C\log\beta$, giving necessity. For sufficiency, a simple directed cycle of the difference-constraint graph is either a two-arc return on one edge, whose length is $\log\beta-\log L$, or a traversal of an undirected simple cycle. The single-edge condition and the displayed cycle inequalities make every such length nonnegative. Hence no negative cycle exists. Add a source with zero arcs; shortest-path distances satisfy all upper difference bounds and supply $z_v$. Exponentiating supplies the scales.
+$p_C\log L\le q_C\log\beta$ and $q_C\log L\le p_C\log\beta$, giving necessity. For sufficiency, a simple directed cycle of the difference-constraint graph is either a two-arc return on one edge, whose length is $\log\beta-\log L$, or a traversal of an undirected simple cycle. The single-edge condition and~\eqref{eq:cycleproducts} make every such length nonnegative. Hence no negative cycle exists. Add a source with zero arcs; shortest-path distances satisfy all upper difference bounds and supply $z_v$. Exponentiating supplies the scales.
 
 The cycle and single-edge conditions combine as $\log\beta\ge\rho_G\log((d-1)/(\beta-1))$. The difference of these sides is strictly increasing on $(1,d)$, tends to minus infinity at one, and is positive at $d$. Its unique zero is~\eqref{eq:betarho}. At $a_d$ both logarithms agree and are positive, yielding the comparison and its equality criterion. For $\beta\ge d$, constant scales work directly.
 \end{proof}
@@ -345,7 +339,7 @@ holds on every edge. The same difference-constraint proof applies, now with reve
  \prod_{e\in F}l_e\le\beta^{|R|},\qquad
  \prod_{e\in R}l_e\le\beta^{|F|}.
 \]
-These heterogeneous constraints should not be replaced by the uniform imbalance formula. On a forest, nonempty local intervals are sufficient, by assigning scales along unique paths.
+These heterogeneous constraints should not be replaced by the uniform imbalance formula~\eqref{eq:betarho}. On a forest, nonempty local intervals are sufficient, by assigning scales along unique paths.
 
 For a resource with $0<A<1<B$, its least feasible dictionary factor is the unique positive root $q_e>1$ of
 \begin{equation}\label{eq:quadratic}
@@ -414,12 +408,12 @@ whenever no $cd$-$\PNE$ exists and $d$ is sufficiently large. It also calibrates
 
 The fixed-$c$ qualification cannot be dropped. At $\alpha=d-1$, nonexistence already requires $h,k\ge d$. More generally the constants in~\eqref{eq:fixedclowerdepth} diverge as $c$ tends to one. High depth is necessary, not sufficient, for instability: an arbitrarily deep potential co-occupancy graph can coexist with an exact equilibrium.
 
-There is also a witness interpretation for an actual strict improvement cycle. Retain only players moving in the cycle, absorb the others as background, and draw decreasing-weight arcs only between players actually sharing a resource at some endpoint of that cycle. Apply the proof of Theorem~\ref{thm:height} with ranks from this graph. Its insertion bounds are needed only for the old deletion and new addition endpoints that occur in the cycle, where the ranks are compatible with the weights. If its height were at most $H_d(\alpha)$, the same potential would strictly decrease around the cycle, a contradiction. Thus even an improvement cycle must collectively witness a longer decreasing-weight path, possibly using different resources and endpoint states for its different edges. This statement does not assert nonexistence from the cycle.
+For $1\le\alpha<d$, there is also a witness interpretation for a cycle of strict $\alpha$ improvements. Retain only players moving in the cycle, absorb the others as background, and draw decreasing-weight arcs only between players actually sharing a resource at some endpoint of that cycle. Apply the proof of Theorem~\ref{thm:height} with ranks from this graph. Its insertion bounds are needed only for the old deletion and new addition endpoints that occur in the cycle, where the ranks are compatible with the weights. If its height were at most $H_d(\alpha)$, the same potential would strictly decrease around the cycle, a contradiction. Thus even such a cycle must collectively witness a longer decreasing-weight path, possibly using different resources and endpoint states for its different edges. This statement does not assert nonexistence from the cycle.
 
 \subsection{Realizing stability on a structured set of states}\label{sec:repair}
 The preceding potentials certify deviations throughout a given game. We now consider a complementary construction: first analyze deviations within a structured set of states, then add legal resources that exclude all other states. The added costs are part of the resulting game and must be included in its stability comparisons.
 
-Let a binary base game $G_B$ have ordered classes $A_a=((a,0),\ldots,(a,n_a-1))$, with common weight $w_a>0$ inside each class. Let $F_n$ be the binary strings with at most one change between consecutive positions, and put $\F=\prod_aF_{n_a}$. A \emph{core deviation} is a real single-player flip whose two endpoints both belong to $\F$. This restricted deviation system need not be a normal-form subgame because $\F$ need not be a Cartesian product over individual players.
+Let a binary base game $G_B$ have ordered classes $\mathcal C_a=((a,0),\ldots,(a,n_a-1))$, with common weight $w_a>0$ inside each class. Let $F_n$ be the binary strings with at most one change between consecutive positions; we call these strings \emph{fronts} and put $\F=\prod_aF_{n_a}$. A \emph{core deviation} is a real single-player flip whose two endpoints both belong to $\F$. This restricted deviation system need not be a normal-form subgame because $\F$ need not be a Cartesian product over individual players.
 
 \subsubsection{Legal gates and the complete stable set}
 We realize the front condition using resources shared by three players of the same weight.
@@ -446,7 +440,7 @@ In the augmented game $G_+$, the entire set of $\alpha$-$\PNE$ is
  \mathcal T_\alpha=\left\{s\in\F:
  C_i^B(s)-\alpha C_i^B(s^{\xor i})
  \le(\alpha-1)r_{a,i}u_a
- \quad\text{for every core flip by }i\in A_a\right\}.
+ \quad\text{for every core flip by }i\in\mathcal C_a\right\}.
 \end{equation}
 At $\alpha=1$ this is exactly the base core's stable set. For $\alpha>1$ the displayed tolerance is essential.
 \end{theorem}
@@ -464,9 +458,9 @@ Finally take a core flip. In each gate involving the mover, both endpoint patter
 \end{equation}
 The three cases exhaust every state and legal deviation, proving the formula.
 \end{proof}
-Every $\alpha$-stable base core state lifts, but approximate stable states can also be added: the common gate baseline absorbs a small positive base margin. Exact stability is preserved in both directions. In particular, a core with one exact stable state cannot be made completely unstable merely by increasing these gate coefficients. Conversely, all-state nonexistence follows if every core state has a preserving exit exceeding its corresponding tolerance. A single improving sweep is insufficient.
+Every $\alpha$-stable base core state lifts, but approximate stable states can also be added: the common gate baseline absorbs a small positive base margin. Exact stability is preserved in both directions. In particular, a core with one exact stable state cannot be made completely unstable merely by increasing these gate coefficients. Conversely, all-state nonexistence follows if every core state has a preserving exit exceeding its corresponding tolerance.
 
-The nonzero baseline reflects a general obstruction. If every action of a player appears in some core state, a genuinely nonnegative added congestion cost that vanishes for that player on all core states must vanish on all its states. Indeed a nonzero nonnegative-coefficient resource has positive cost at any positive load, including the player's own weight; hence none of its actions can contain such a resource. One cannot assume zero gate leakage on a full-projection core without proving a different implementation.
+The nonzero baseline reflects an obstruction for added resources with nonnegative-coefficient polynomial latencies. If every action of a player appears in some core state, an added cost of this kind that vanishes for that player on all core states must vanish on all its states. Indeed a nonzero nonnegative-coefficient resource has positive cost at any positive load, including the player's own weight; hence none of its actions can contain such a resource. One cannot assume zero gate leakage on a full-projection core without proving a different implementation.
 
 \subsubsection{Repair paths and the degree budget}
 The same construction gives an explicit correction path and a condition for implementing the gates at a prescribed degree.
@@ -490,7 +484,7 @@ The resulting game has no $\alpha$-$\PNE$. A convenient stronger sufficient budg
 \end{equation}
 The output degree is $\max\{p,D\}$ when the base degree is at most $p$. The number of added resources is $2\sum_aL_a$, and the number of new player--action--resource incidences is $6\sum_aL_a$. The coefficient $M/(3w_a)^D$ is rational for rational data and has bit length $O(\operatorname{bits}(M)+D(1+\operatorname{bits}(w_a)))$. Thus keeping a prescribed degree requires a real inequality proving $D$ is within budget; it does not follow from finite realizability.
 
-This design can also be expressed as a finite linear certificate. Given already legal disjoint modules $H^j$, nonnegative coefficients $\lambda_j$ yield costs $C_i^\lambda=B_i+\sum_j\lambda_jH_i^j$. Chosen exits from states to exclude impose strict linear inequalities
+This design can also be expressed as a finite linear certificate. For a base cost function $B_i(s)$ and already legal disjoint modules with player costs $H_i^j(s)$, nonnegative coefficients $\lambda_j$ yield $C_i^\lambda(s)=B_i(s)+\sum_j\lambda_jH_i^j(s)$. For a deviation $s\to t$ by player $i$, write $\Delta_{\alpha,i}X(s,t)=X_i(s)-\alpha X_i(t)$ for any player-cost family $X$. Chosen exits from states to exclude impose strict linear inequalities
 \[
  \Delta_{\alpha,i}B(s,t)+\sum_j\lambda_j\Delta_{\alpha,i}H^j(s,t)>0,
 \]
@@ -574,7 +568,7 @@ Put $\ell=\lceil\log_2d\rceil$ and $n=\lceil d/(1200\ell^2)\rceil$. Appendix~\re
 \end{proof}
 The parameter check is uniform in $n$ and $d$. This is needed because $n$ now grows with the degree; a statement with a separate unspecified threshold for each fixed $n$ would not imply Theorem~\ref{thm:near}.
 
-Let $a_*(d)$ be the infimum of $\alpha\ge1$ such that every finite game of degree at most $d$ has an $\alpha$-$\PNE$. The cited $d$ existence theorem of Caragiannis and Fanelli~\cite{CF2021} and Theorem~\ref{thm:near} give
+Let $a_*(d)$ be the infimum of $\alpha\ge1$ such that every finite game of degree at most $d$ has an $\alpha$-$\PNE$. Caragiannis and Fanelli's monomial potential~\cite[Theorem~2]{CF2021}, extended termwise as in the Introduction, and Theorem~\ref{thm:near} give
 \begin{equation}\label{eq:universalthreshold}
  d-1200\lceil\log_2d\rceil^2\le a_*(d)\le d,
  \qquad \lim_{d\to\infty}\frac{a_*(d)}d=1.
@@ -593,7 +587,7 @@ The lower and upper bounds match in order, not in leading coefficient. In the va
 \section{Applications to stable states and social optimization}\label{sec:positive}
 The counterexamples use large endpoint amplification and enough weight levels to propagate it. We now apply the area comparison to small actual shares and use the scale and gate constructions to study stable states with social-cost guarantees.
 
-\subsection{The positive side: actual small atoms}
+\subsection{Existence under small atomic shares}
 To quantify the effect of small actual atomic shares, define, for $0\le u\le1$,
 \begin{equation}\label{eq:kfunction}
  K_d(u)=\int_0^1(1-uv)^d\,dv
@@ -613,7 +607,7 @@ In this sum the retained resources add the nonnegative term $w_i(1-K_d(\eta))C_{
 For fixed $a>0$, $K_d(a/d)^{-1}\to a/(1-e^{-a})$; when $d\eta\to0$ the guarantee tends to one. The hypothesis refers to occupied loads at all relevant states. For the resourcewise preprocessing of Section~\ref{sec:model}, the largest optional share on resource $e$ is exactly $w_i/(b_e+w_i)$: every other optional user can independently choose a legal strategy omitting $e$, while $i$ chooses one containing it. Thus explicit strategy menus make this bound directly checkable. In particular a resource with no compulsory load offers only the bound one under this all-state condition. Adding many potential users, or checking only one state, does not establish a small-share guarantee. This positive theorem and the endpoint gain describe the same analytic phenomenon from opposite atomic scales.
 
 \subsection{Choosing a stable state with a social-cost certificate}\label{sec:regularization}
-The same potentials also support a positive decision tradeoff. Here assume no compulsory users on any resource, so that the load in the potential is the entire load in~\eqref{eq:welfare}. Let $\Phi$ be a potential from Theorem~\ref{thm:typescales} with factor $\beta\le d$, resource multiplier $\kappa_e=t_{\rm light}$ on two-type resources and $\kappa_e=t_v$ on single-type resources. Ignore resources without potential users, and assume at least one remains. Put
+The same potentials also give a tradeoff between approximate stability and social cost. Here assume no compulsory users on any resource, so that the load in the potential is the entire load in~\eqref{eq:welfare}. Let $\Phi$ be a potential from Theorem~\ref{thm:typescales} with factor $\beta\le d$, resource multiplier $\kappa_e=t_{\rm light}$ on two-type resources and $\kappa_e=t_v$ on single-type resources. Ignore resources without potential users, and assume at least one remains. Put
 \[
  m_0=\frac{\min_e\kappa_e}{d+1},\qquad
  M_0=\max_e\kappa_e,\qquad t_{\min}=\min_vt_v.
@@ -652,7 +646,7 @@ In particular $W^+(s)=W^B(s)+K_0$ throughout $\F$.
 \begin{proof}
 An untriggered gate has two users paying $u_a$ and one paying $z_a$, while a triggered gate has three users paying $v_a$. The users have the same weight $w_a$. Summing the two possible contributions gives the identity.
 \end{proof}
-The same front constant-shift identity holds for any objective $J_\gamma=\sum_a\gamma_a\sum_{i\in A_a}C_i$ with coefficients constant within a class, replacing $w_a$ by $\gamma_a$. It need not hold for arbitrary player coefficients or the maximum player cost.
+The same front constant-shift identity holds for any objective $J_\gamma=\sum_a\gamma_a\sum_{i\in\mathcal C_a}C_i$ with coefficients constant within a class, replacing $w_a$ by $\gamma_a$. It need not hold for arbitrary player coefficients or the maximum player cost.
 
 Under~\eqref{eq:RD}, if the stable set is nonempty, Theorem~\ref{thm:core} and Lemma~\ref{lem:socialdecomposition} imply the exact stable selection identity
 \begin{equation}\label{eq:stableselection}
@@ -748,7 +742,7 @@ $111$ & yes & $12$ & no\\
 \end{center}
 These claims can also be checked without the table. Within the base core, a stable state has one or two users on $A$, with base total cost five or six respectively; all-$A$ and all-$B$ have preserving improvements. Theorems~\ref{thm:core} and~\ref{thm:socialrepair} then show that the full-game optimum is eleven and is achieved at an exact equilibrium. Selecting among the stable states reduces twelve to eleven while retaining exact stability. The output degree is two, whereas the base degree is one.
 
-More generally, if the gates are already present in an instance and the dominance inequalities pass, one can enumerate $\F$, check the explicit tolerance conditions, and minimize the base cost on the resulting stable set, adding back $K_0$. With~\eqref{eq:SD}, the same domain also computes the true social optimum. The size of the resulting enumeration is $|\F|$, which need not be polynomial in a compact input. If a core descent potential is available, first use the specified repair and then follow strict full-game improvements inside $\F$. By~\eqref{eq:coremargin} every such core improvement is a strict base $\alpha$ improvement, so that potential proves termination. Without it, finite enumeration remains the justified method. The required existence and quality bounds on the front domain are supplied by the separate potential and optimization arguments.
+More generally, if the gates are already present in an instance and~\eqref{eq:RD} holds, one can enumerate $\F$, check the tolerance conditions~\eqref{eq:toleranceset}, and minimize the base cost on the resulting stable set, adding back $K_0$. With~\eqref{eq:SD}, the same domain also computes the true social optimum. The size of the resulting enumeration is $|\F|$, which need not be polynomial in a compact input. If a core descent potential is available, first use the specified repair and then follow strict full-game improvements inside $\F$. By~\eqref{eq:coremargin} every such core improvement is a strict base $\alpha$ improvement, so that potential proves termination. Without it, finite enumeration remains the justified method. The required existence and quality bounds on the front domain are supplied by the separate potential and optimization arguments.
 
 \subsection{Interpreting the resulting certificates}
 The hypotheses of the positive results describe different features of an instance.\label{sec:conclusion}
@@ -907,7 +901,6 @@ The mismatch case and the short-difference case exhaust all phase vectors. We ha
 \begin{equation}\label{eq:appeta}
  \eta=\theta H/4>0.
 \end{equation}
-In particular no assumption about a synchronized sweep has been used.
 
 \subsection{All-state cost cap and same-degree completion}\label{app:samedegree}
 At an arbitrary base state, each adjacent resource has potential load at most $(1+\theta)w_a$. A heavy user uses one pair and a light user uses $K$ pairs. Thus the contribution from any such test is at most $KA_aT$. With $1<S<R$, all adjacent tests together cost any player at most $gKS^{g-1}T\le gR^gT$. The return contribution is at most $NA_RW_0=NH/(4\alpha)\le R^gT$. Consequently
@@ -986,7 +979,7 @@ The last inequality follows by integrating $1/t$ on $[1,3/2]$, giving $\log(3/2)
 \[
  \alpha=d-d/n\ge d-1200\ell^2.
 \]
-Since all deviation costs are nonnegative, a strict improvement at factor $\alpha$ is strict at the smaller factor $d-1200\ell^2$ as well. This proves Theorem~\ref{thm:near} for every stated integer degree. It uses the uniform conditions themselves, rather than a nonuniform fixed-$n$ threshold.
+Since all deviation costs are nonnegative, a strict improvement at factor $\alpha$ is strict at the smaller factor $d-1200\ell^2$ as well. This proves Theorem~\ref{thm:near} for every stated integer degree.
 
 \subsection{Fixed linear targets and depth accounting}\label{app:fixedc}
 When $n$ is fixed, the same estimates also give an explicit degree threshold and the exact number of weight levels.
@@ -1008,9 +1001,9 @@ the last inequality follows from $d^2\ge196608n^4$. For $d\ge2^{20}$, $\log d\le
  d\log(3/2)>d/3\ge200n\sqrt d
  \ge200n(\log d)^2.
 \]
-The uniform theorem applies. There is one weight $R^{-a}$ per class and the gates add no players. The adjacent resource pair anchored at $P_{a,0}$ has $P_{a+1,0}$ among its optional users, so $P_{0,0},\ldots,P_{g,0}$ is a decreasing-weight path of length $g+1$ in vertices. No longer decreasing path exists because there are only $g+1$ weights. This proves the exact count and height.
+Theorem~\ref{thm:uniformfamily} applies. There is one weight $R^{-a}$ per class and the gates add no players. The adjacent resource pair anchored at $P_{a,0}$ has $P_{a+1,0}$ among its optional users, so $P_{0,0},\ldots,P_{g,0}$ is a decreasing-weight path of length $g+1$ in vertices. No longer decreasing path exists because there are only $g+1$ weights. This proves the exact count and height.
 \end{proof}
 
-\bibliographystyle{plain}
+\bibliographystyle{ACM-Reference-Format}
 \bibliography{structural_methods_article}
 \end{document}
