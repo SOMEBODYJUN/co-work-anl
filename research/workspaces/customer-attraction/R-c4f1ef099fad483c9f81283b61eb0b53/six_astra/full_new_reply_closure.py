@@ -104,7 +104,10 @@ def main():
     target=HERE/'full_new_reply_closure_exact.json'
     if '--verify' in sys.argv:
         print(json.dumps(verify(json.loads(target.read_text())),indent=2));return
-    histcols=[c for c in json.loads((HERE/'new_reply_lift_exact.json').read_text())['columns'] if c['kind']=='hist']
+    # The final exact witness is self-contained; no unpublished floating or
+    # earlier weak-stage files are needed to rerun its support optimization.
+    input_file=target if target.exists() else HERE/'new_reply_lift_exact.json'
+    histcols=[c for c in json.loads(input_file.read_text())['columns'] if c['kind']=='hist']
     cols,names,m,obj,normal=build(histcols)
     print('full identity closure',len(m),'rows',len(cols),'columns',len(histcols),'histograms',flush=True)
     a=np.array([[float(x) for x in row] for row in m]);scale=np.max(abs(a),axis=1);scale[scale==0]=1

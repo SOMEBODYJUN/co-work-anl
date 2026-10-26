@@ -28,7 +28,7 @@
 
 - `full_new_reply_closure.py --verify`：只需重建保存的完整抬升点并精确核验；这是最终停界的正文实现。
 - `new_reply_budget.py`：最初37行在全部448实际客户型、109824旧直方图上的共同预算LP。求解输出只是浮点发现记录，不是证书。
-- `recover_new_reply_lift.py --verify`、`new_reply_lift_exact.json`：最初37行的精确抬升点，主要作为最终16直方图支撑的可复现来源。
+- 最初37行的弱阶段发现文件不属于本次主交接。`full_new_reply_closure.py --verify`与默认支撑优化均可直接从其已保存的1033行精确点恢复，不依赖临时浮点包或弱阶段文件。
 - `verify_reply_algebra.py/json`：4096个独立局部份额恒等式以及3432个完整直方图/族计数恒等式的 Fraction 核验。
 - `actual_fifth_nested.py`：下一层研究入口，实际第五位再选择某个新R，由同一策略产生新Z；用四状态联合保留(R,Z)，状态以其输出正文为准。
 
