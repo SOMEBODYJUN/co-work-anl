@@ -7,10 +7,13 @@
 | 读取条件 | 唯一正文、实际内容及证据 |
 | --- | --- |
 | 想将末两人回复轨道直接向前迭代 | [general_n/promotion_reset_boundary.md](general_n/promotion_reset_boundary.md)：真三人完整 SPE 家族使末主题提前后势下降；已有强PAIR的正确新枝独有税恰好取等，系数不能减；任意 k 的真实枝账保留有符号 reset。[定义级代码](general_n/verify_promotion_reset.py)、[冻结输出](general_n/promotion_reset_exact.json)。不是 half 反例。 |
+| 想用发起者收益损失或回放原主题的 IC 松弛支付该 reset | [general_n/zero_regret_promotion_reset.md](general_n/zero_regret_promotion_reset.md)：七客户完整 SPE 的实际012提前末主题后变232，源及所选回放链全部IC松弛为零，势9→8，福利7→6；新枝独有税仍恰为1。因此这些特定松弛任意有限加权均不足。[作者定义级核验](general_n/verify_zero_regret_promotion.py)、[独立有序树重构](general_n/independent_zero_source.py)及各自冻结输出；原half未反驳。 |
 | 需要保留中间玩家真实激励，而单末回复投影过弱 | [promoted_fork/proof.md](promoted_fork/proof.md)：任意 k≥3 的真实倒二复制末主题叉，两个任意共同目录报价，明确一次收费及 8(k−2) 隐藏人数消元。固定有理权严格切掉旧702行点；同一行不切最新3889点。[无优化器核验器](promoted_fork/verify.py)、[精确证据](promoted_fork/exact.json)。不是六人福利证书。 |
 
 ## 证明义务及当前状态
 
-局部关系保留的真激励分别属于不同完整有序源；新枝税、原源 r、共同报价及 K 都有实际成本。还没有将这些成本共同支付到同一份实际 W，也没有随 n 闭合的非负证书或真正目标反例。不能把局部严格分离旧松弛点写成最新前沿已闭合。
+局部关系保留的真激励分别属于不同完整有序源；新枝税、原源 r、共同报价及 K 都有实际成本。只用原源IC及原主题回放链IC的付款已由七客户例排除，正确新枝税也不能缩系数。还没有将这些成本共同支付到同一份实际 W，也没有随 n 闭合的非负证书或真正目标反例。不能把局部严格分离旧松弛点写成最新前沿已闭合。
 
-本目录是准确标级的研究阶段备份；独立内部审查另附于各正文，外审和新颖性未认证。全题恢复入口仍是 [共享当前前沿](../../../customer_attraction/RESEARCH_STATE.md)，已有共同报价和同源再查询工具保持原身份，不重复另存其全文。
+本轮具体推导已停在这个新付款义务：保留真正的跨分支或跨角色信用，并与一般叉中明确报价/容量成本同时合账。没有继续扩大同一有限锥、没有把有限未分离当作正面证据；上述工具和障碍可供下一次不同机制直接使用。
+
+本目录是准确标级的研究阶段备份；[一般叉独审](general_n/promoted_fork_independent_review.md)和[父方复核](general_n/parent_review.md)明确审查范围，外审和新颖性未认证。全题恢复入口仍是 [共享当前前沿](../../../customer_attraction/RESEARCH_STATE.md)，已有共同报价和同源再查询工具保持原身份，不重复另存其全文。
