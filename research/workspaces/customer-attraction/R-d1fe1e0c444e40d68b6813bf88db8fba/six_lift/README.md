@@ -8,6 +8,7 @@
 
 - `AB_projected_row.json`：真正六人、完整 448 个实际会员位/比较重数类型上的新必要行。`coefficients` 每项给出 `actual_bits,d,coefficient`，整数 K 列为 **37823040**。可直接接任何使用同样 448 类型的主 LP。
 - `verify_farkas_and_project.py`：**独立标准库精确审计**，不导入发现程序、NumPy 或优化器。重新穷尽完整 AB 直方图域并生成上述表；再独立重建 Farkas 严格负值。
+- `AB_projected_row_joint.json`：第二条完整 448 型 AB 行，**K 系数为 0**，严格切掉父方加入第一条后得到的联合点；由同一个独立核验器以命令行参数重放。
 - `background_obstruction.md`：原 53 行机械移植的精确失败点、合法背景 PC3 重建、排除忽略前置玩家收益的完整六人 SPE。
 - `full_AB_extension.json`：新 3088 行固定查询松弛点不能延伸到完整 AB 索引族的整数 Farkas 证书。不是 SPE 反例。
 - `fixed_graph_priced.json` / `fixed_graph_priced_verification.json`：3088 行必要松弛的精确可行点，覆盖比约 `.41568253`；全部行以 Fraction 检查，但没有声称该值的精确最优性。该点随后被上述完整 AB 行严格切掉。
@@ -79,18 +80,48 @@ PAIR 的合法性来自原包 `PROOF_ZH.md` §2.2 的任意背景末二人引理
 
 独立完整域投影重新得到每个支持点的同一最大系数与同一负值。因此这 33 型点没有任何 AB 直方图延伸；不是只排除了“每个 t 一种回复词”的子域。这说明完整索引主题身份在此处提供了固定主题查询和单枝投影尚未支付的信息。
 
+## 第二轮：完整 AB 再切联合点，无 K 成本
+
+父方将第一条 AB 行加入最大根、回复菜单和强 PAIR 联合系统后，仍得到 697 行精确必要条件可行点，`W/O≈0.44578<1/2`。该点已冻结为 `joint_AB_input.json`；它不是 SPE。对其 13 个 d=1 支持，保留完整 AB 四位索引族，并仅保留 actual 路径及实际六主题作为固定查询，得到 **164 行、82368 个完整直方图列**。同样保留族内 own/all/off 以及 PAIR 的五种索引相等模式。
+
+该点仍无法延伸，第二份整数 Farkas 上界为
+
+`−91349718500898376119822922846103334631798555340791880 / 21162912871981828450039063390798893871166580197 < 0`。
+
+此轮所有容量权都为零，得到的通用投影行是 `sum_x gamma2(eta_x,d_x) >= 0`，**没有 K 成本**。`AB_projected_row_joint.json` 保存完整 448 型整数系数。统一独立核验器重新枚举完整 162792 直方图态；第二行的隐藏极值依赖 `(A+B,A,A+B+C+D,A+B+C+D+E,d)`，共 168 条件态。其非零原始行与权为：
+
+| 行名 | 真实语义 | 整数权 |
+|---|---|---:|
+| source | 原第三位对六个 T_i 的真实偏离 IC 之和 | 7718781 |
+| fixedfloor:actual:1:3 | actual 第二位在历史 A 比较六个 V_i，使用正确剩余五人的收益 floor | 601905 |
+| fixedfloor:actual:5:1 | actual 真末位比较六个 R_i 的精确 IC | 401490 |
+| fixedfloor:actual:5:2 | actual 真末位比较六个 S_i 的精确 IC | 394655 |
+| fixedfloor:actual:5:3 | actual 真末位比较六个 V_i 的精确 IC | 399314 |
+| fixedpair:actual:2:3 | actual 真末二人对每组 `(S_i,V_i)` 的任意背景 PAIR | 140143 |
+| floorfamily:1:3:off | AB 第 i 支的真正第四位比较 V_j，i≠j，使用该支背景和剩余三人的正确 floor | 8778 |
+| floorfamily:3:1:off | AB 第 i 支真末位精确比较 R_j，i≠j | 58963 |
+| floorfamily:3:2:off | AB 第 i 支真末位精确比较 S_j，i≠j | 43390 |
+| floorfamily:3:3:all | AB 第 i 支真末位精确比较 V_j，所有 i,j | 51757 |
+| pairfamily:2:3:query_equal | AB 第 i 支真末二人 PAIR 查询 `(S_j,V_j)`，i≠j | 180823 |
+
+这十一条同样可在任意固定背景下按真实分母重建；末二人 PAIR 没有总人数限制。冻结 gamma2 仍只断言恰六人的完整 448 类型域。第一条与第二条均已交给父联合 LP；两次严格分离证明了完整 AB 索引信息在指定松弛点上有信息增量，没有证明完整 AB 图已经足够闭合 half。
+
 ## 重放
 
 切换到本目录后运行：
 
-- `python verify_farkas_and_project.py`：独立精确验证并生成完整 448 型行；无优化器依赖。
+- `python verify_farkas_and_project.py`：独立精确验证第一条完整 448 型行；无优化器依赖。
+- `python verify_farkas_and_project.py --certificate joint_full_AB_extension.json --input joint_AB_input.json --output AB_projected_row_joint.json`：同一核验器验证第二条完整 448 型行。权可参数化，但显式只支持当前十五种已重构原始行，未知行名拒绝运行。
 - `python fixed_graph.py --verify fixed_graph_priced.json`：对保存的 3088 行坏点逐行 Fraction 核验。
-- `OPENBLAS_NUM_THREADS=1 python full_ab_extension.py AB`：重跑完整 AB 延伸 Phase I，再用整数权和全直方图最大值验证严格 Farkas 分离。
+- `OPENBLAS_NUM_THREADS=1 python full_ab_extension.py AB`：重跑第一轮完整 AB 延伸与整数 Farkas 分离。
+- `OPENBLAS_NUM_THREADS=1 python joint_ab_extension.py AB`：重跑第二轮 164 行完整 AB 延伸与整数 Farkas 分离。
 
 `indexed_extension.py/json` 是较早的“每个 t 只一种回复词”子域初试；其中不可行仅为浮点诊断，不作为完整域证据。完整域证据只在 `full_AB_extension.json` 和独立审计中。`fixed_graph_raw.*` 是不加新增离轨定价投影的 1118 行中间松弛记录。
 
 ## 仍缺的全局付款
 
-父方已经把本行加入最大根、回复菜单、强 PAIR 等联合系统；截至本轮交接，该联合系统仍有精确必要条件可行点 `W/O≈0.446<1/2`，记录在 `../parent/joint_system.json`，不声称为 SPE 或精确最优。故完整 AB 身份信息确实切掉旧固定查询点，但新联合系统仍未闭合。
+父方已经把两条 AB 行加入最大根、回复菜单、强 PAIR 等联合系统；其最新精确可行点与行集记录在 `../parent/joint_system.json`。第一轮联合点约 `.446` 仍低于 half，随后已被第二条 AB 行切掉；本目录不将该旧点当成第二条已加入后的状态。第二条加入后，父方最新 **701 行** 联合系统仍有精确可行点 `W/O≈0.4467<1/2`（不是 SPE，也未声称精确最优），故 six-player half 仍未闭合。
 
-本行是一个通用六人必要行，尚未与其他行组合支付 `2W−OPT6`。AF、Sbranch 的完整 4/5 位索引族、三套末位菜单及其跨族查询在一个主系统中共同保留的义务仍在；本结果不声称这些彼此独立。完整 AB 行切掉某个松弛点不等于六人 half，也不等于存在 SPE 反例。
+这两行是通用六人必要行，尚未与其他行组合支付 `2W−OPT6`。AF、Sbranch 的完整 4/5 位索引族、三套末位菜单及其跨族查询在一个主系统中共同保留的义务仍在；本结果不声称这些彼此独立。完整 AB 行切掉某个松弛点不等于六人 half，也不等于存在 SPE 反例。
+
+可接续的精确接口：父主系统可重复在其新精确点上运行过滤后的完整 AB Phase I，若出现新的非零行种类，须先在独立核验器重构其代数，不能仅凭浮点列生成终止宣称闭包。更有机制价值的下一步是把 AF、Sbranch 和三套 L 菜单在同一真实策略查询图中共同保留，使用明确全局矩域的定价；一次 AB 可延伸也不能代替跨族一致性。

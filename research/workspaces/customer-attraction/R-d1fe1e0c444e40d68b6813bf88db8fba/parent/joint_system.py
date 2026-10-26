@@ -22,10 +22,11 @@ def build():
     extra=BASE/'general_payment/target_joint.json'
     if extra.exists():
         for cut in json.loads(extra.read_text())['cuts']:rows.append(make_row(types,6,rawcut(cut)))
-    ab=json.loads((BASE/'six_lift/AB_projected_row.json').read_text())
-    lookup={(tuple(map(int,q['actual_bits'])),q['d']):F(q['coefficient']) for q in ab['coefficients']}
-    normal=F(ab['row_scale']*ab['integer_row_weights']['source'])
-    rows.append(('full-indexed-AB-projection',[lookup[t]/normal for t in types]+[F(ab['K_integer_coefficient'])/normal]))
+    for filename in ('AB_projected_row.json','AB_projected_row_joint.json'):
+        ab=json.loads((BASE/'six_lift'/filename).read_text())
+        lookup={(tuple(map(int,q['actual_bits'])),q['d']):F(q['coefficient']) for q in ab['coefficients']}
+        normal=F(ab['row_scale']*ab['integer_row_weights']['source'])
+        rows.append(('full-indexed-AB-projection:'+filename,[lookup[t]/normal for t in types]+[F(ab['K_integer_coefficient'])/normal]))
     return types,rows
 
 
