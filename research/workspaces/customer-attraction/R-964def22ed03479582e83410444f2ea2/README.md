@@ -10,8 +10,8 @@
 
 ## 本轮可接续资产
 
-- [实际第四位完整索引投影](parent/fourth_indexed_projection.md)：五条真实非负关系、全部 448 客户型及完整八格回复直方图的零 K 成本不等式；严格切掉旧 701 行点。作者全域精确核验及子代理节点语义审查通过，未记录外审或新颖性。
-- `parent/fourth_indexed_projection.py/json`：标准库 Fraction/整数重建原始行和完整投影；不是有限游戏扫描。`parent/combine_fourth.py` 将新行接入冻结 701 行并对新点做精确核验，不将必要条件点当成 SPE。
+- [实际第四位完整索引投影](parent/fourth_indexed_projection.md)：五条真实非负关系、全部 448 客户型及完整八格回复直方图的零 K 成本不等式；严格切掉旧 701 行点。作者全域精确核验与[子代理全域独立审查](six_independent/review_fourth_projection.md)通过；同正文给出另一组小整数权的可读共同预算，未记录外审或新颖性。
+- `parent/fourth_indexed_projection.py/json`：标准库 Fraction/整数重建原始行和完整投影；不是有限游戏扫描。`parent/combine_fourth.py` 将新行接入冻结 701 行；`parent/combined_702.json` 是 O=1、W约0.450971的精确可行必要条件点，逐行核验通过，不能当成 SPE、精确最优或福利界。
 - `six_independent/`：唯一指定研究员的研究区；未完成计算和候选按其文件自身标级。固定旧策略锥的阴性 LP 只是诊断，不作为新一般结论。
 
 关键剩余义务仍是跨实际位置共同支付真实查询信用。末位及倒二 ROW 已证；第4位及更早行尚未付款。只有完整全域证书或真实全历史反例才会改变六人主目标状态。
