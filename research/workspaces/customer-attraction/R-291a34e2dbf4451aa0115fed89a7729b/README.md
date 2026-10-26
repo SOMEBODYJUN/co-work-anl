@@ -18,6 +18,8 @@
 - [半重启控制引理与六人付款接口](candidates/half_restart_absorption.md)：自足证明、两种符号、与已有 uniform SWAP / shared-load `Qinput` 的精确接法及尚缺义务。
 - [Fraction 审计](experiments/audit_half_restart.py)及其[冻结输出](experiments/half_restart_audit.json)：独立枚举小有理核，检查不等式、容量二和紧例；一般性由解析证明承担。
 - [调和势候选的小目录穷尽攻击](experiments/exhaust_copy_tax_three_topics.py)及其[精确输出](experiments/copy_tax_three_topics_exact.json)：三主题重数0..2、`m=2..6`，以及六人四主题全部0/1兴趣类型；保留全部可实现根SPE终局和每终局最小税，未发现反例。只属有限证据。
+- [调和势候选的逐子局归纳边界](candidates/copy_tax_induction_boundary.md)：三人三主题六客户完整SPE严格击穿最自然的 `BRANCH-MONO`，差 `1/6`；候选本身仍有余量1。说明需要跨分支共同付款，不能逐枝归纳。
+- [失败路线](FAILED_ROUTES.md)：记录上述接口为何失败、保留什么以及何时值得重试。
 
 ## 交流与状态
 
