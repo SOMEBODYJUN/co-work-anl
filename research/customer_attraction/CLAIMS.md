@@ -78,3 +78,7 @@
 ## CA-PRICED-HIDDEN-REPLY-v1：一般局部行生成器
 
 [精确对象、全称量词、非负参数、结论与自足证明](../current/customer_attraction/priced_hidden_reply_projection.md)均已固定。任意m的合法报价投影和排序压缩已证并独立内审；六人语义测试支持实现，不将有限测试当普遍证明。全m/六人half仍OPEN，主闭合参数未找到，外审与新颖性未认证。
+
+## CA-PRICED-REPLY-MENU-COUPLING-v1：共同菜单真实回复互查
+
+[自足陈述、全部对象与量词、非负恒等式及边界](../current/customer_attraction/priced_hidden_reply_projection.md)。任意人数的真实倒二源，固定合法A和任意可重复比较索引族，双向真实末位互查给 `r+αu_m+βK≥Σψ`。独立内部相关性与消元审查通过；实现对旧单回复闭包点给严格精确分离。只提升这条一般局部引理，六人和一般半覆盖仍OPEN；没有目标反例、外审或全球新颖性认证。

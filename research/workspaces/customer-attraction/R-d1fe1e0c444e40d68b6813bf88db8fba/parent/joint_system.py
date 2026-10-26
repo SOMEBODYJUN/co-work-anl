@@ -7,7 +7,7 @@ from free_joint import make_row,rawcut
 
 def build():
     types,rows,diags=system()
-    for filename in ('exact_cuts.json','exact_cuts_threecopy.json'):
+    for filename in ('exact_cuts.json','exact_cuts_threecopy.json','exact_cut_directional.json'):
         for idx,c in enumerate(json.loads((BASE/'six_maxroot'/filename).read_text())):
             B,C=F(c['B']),F(c['C'])
             rows.append(('maxroot:'+filename+':'+str(idx),[B*sh(a[0],sum(a))-int(d>0) for a,d in types]+[C]))
@@ -19,6 +19,13 @@ def build():
     joint=json.loads((BASE/'general_payment/compact_cuts.json').read_text())
     for cut in joint['cuts']:rows.append(make_row(types,6,rawcut(cut)))
     rows.append(('existing-root-saturation',[F(150)*sh(a[0],sum(a))-int(d>0) for a,d in types]+[-F(139,6)]))
+    extra=BASE/'general_payment/target_joint.json'
+    if extra.exists():
+        for cut in json.loads(extra.read_text())['cuts']:rows.append(make_row(types,6,rawcut(cut)))
+    ab=json.loads((BASE/'six_lift/AB_projected_row.json').read_text())
+    lookup={(tuple(map(int,q['actual_bits'])),q['d']):F(q['coefficient']) for q in ab['coefficients']}
+    normal=F(ab['row_scale']*ab['integer_row_weights']['source'])
+    rows.append(('full-indexed-AB-projection',[lookup[t]/normal for t in types]+[F(ab['K_integer_coefficient'])/normal]))
     return types,rows
 
 

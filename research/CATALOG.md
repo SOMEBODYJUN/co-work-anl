@@ -132,7 +132,7 @@
 | [五人半覆盖证明包的入库与复跑审查](<reviews/customer_attraction/five_player_half_import.md>) | `research/reviews/customer_attraction/five_player_half_import.md` | 核对当前上传证明包、真实节点语义、完整域覆盖及精确复跑；区分独立内部审查、历史日志与外审。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-FIVE-HALF-EXACT-v1`，[命题合同](assets.json) |
 | [五人精确证书局部组件的独立审查](<reviews/customer_attraction/five_player_half_local.md>) | `research/reviews/customer_attraction/five_player_half_local.md` | 逐项检查局部IC符号、强制节点、共同末位价格、最大根及全部局部精确系数；记录未影响当前数据的解析器边界。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-FIVE-HALF-EXACT-v1`，[命题合同](assets.json) |
 | [五人精确主证书的独立审查](<reviews/customer_attraction/five_player_half_global.md>) | `research/reviews/customer_attraction/five_player_half_global.md` | 检查53行语义、索引直方图、共享重数、菜单角点和大整数判号，并明确随包实现独立性的真实范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-FIVE-HALF-EXACT-v1`，[命题合同](assets.json) |
-| [任意人数共同末位报价、隐藏回复投影与人数压缩](<current/customer_attraction/priced_hidden_reply_projection.md>) | `research/current/customer_attraction/priced_hidden_reply_projection.md` | 从五人证书提取任意尾长的合法非负行、自足排序压缩与强末对重叠；核对它尚缺全局half付款。 | 表示或证书接口；不自动给出待求系数；关联 `CA-PRICED-HIDDEN-REPLY-v1`，[命题合同](assets.json) |
+| [任意人数共同末位报价、隐藏回复投影与人数压缩](<current/customer_attraction/priced_hidden_reply_projection.md>) | `research/current/customer_attraction/priced_hidden_reply_projection.md` | 从五人证书提取任意尾长报价投影与压缩，并证明同菜单真实末回复双向互查的联合消元；区分局部信息、六人必要行障碍与未闭合half。 | 表示或证书接口；不自动给出待求系数；关联 `CA-PRICED-HIDDEN-REPLY-v1`、`CA-PRICED-REPLY-MENU-COUPLING-v1`，[命题合同](assets.json) |
 | [同源真实回复再查询与任意尾长联合投影](<current/customer_attraction/same_source_reply_requery.md>) | `research/current/customer_attraction/same_source_reply_requery.md` | 固定同一源历史的两次合法偏离，保留返回主题与交叉查询身份，自足证明一般七行投影及双计数压缩；区分局部新信息与未闭合half。 | 表示或证书接口；不自动给出待求系数；关联 `CA-SAME-SOURCE-REQUERY-v1`，[命题合同](assets.json) |
 
 <a id="unrelated_machines"></a>
@@ -2734,6 +2734,7 @@
 | [冻结真实前缀联合席位预算的解析与数值内部审查](<reviews/customer_attraction/prefix_coupled_seat_budget.md>) | `research/reviews/customer_attraction/prefix_coupled_seat_budget.md` | 区分先盲重构G、后读稿审F及另一路单位客户严格例核验；确认一份W付款而不升级一般half。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-PREFIX-COUPLED-SEAT-BUDGET-v1`，[命题合同](assets.json) |
 | [任意人数报价投影及排序压缩的独立审查](<reviews/customer_attraction/priced_hidden_reply_projection.md>) | `research/reviews/customer_attraction/priced_hidden_reply_projection.md` | 独立证明投影与排序、检查六人全部真节点和合法强制查询的非负恒等式；明确局部工具与总福利结论的边界。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-PRICED-HIDDEN-REPLY-v1`，[命题合同](assets.json) |
 | [四十四、五十三、六十行描述的独立机制比较](<reviews/customer_attraction/same_source_reply_requery.md>) | `research/reviews/customer_attraction/same_source_reply_requery.md` | 审查证书支持数与K余项不能排序强弱，独立重建同源七行关系，并在指定六人旧闭包点精确确认信息增量；不冒充新整包核验。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-SAME-SOURCE-REQUERY-v1`，[命题合同](assets.json) |
+| [共同菜单真实末回复互查的独立相关性审查](<reviews/customer_attraction/priced_reply_menu_coupling.md>) | `research/reviews/customer_attraction/priced_reply_menu_coupling.md` | 检查固定回复与最优索引回复之间双向查询的平均次序、自己的联合矩和消元方向；不审六人half或主LP最优性。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-PRICED-REPLY-MENU-COUPLING-v1`，[命题合同](assets.json) |
 
 <a id="publication"></a>
 
