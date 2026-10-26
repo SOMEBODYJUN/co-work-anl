@@ -7,7 +7,7 @@ themes and zero-customer instances. This lane has no proof or SPE
 counterexample to that target.
 
 The new durable result here is an **independent exact audit of the
-parent's necessary-condition obstruction**, not a new candidate payment.
+parent's proposed-envelope obstruction**, not a new candidate payment.
 
 - `suffix_envelope_independent_review.md` gives the precise accepted
   statement, all six suffix maxima and the fatal actual penultimate IC.
@@ -22,7 +22,7 @@ every safe actual-prefix row and every actual-suffix relative-harmonic
 potential/self-copy envelope, and has an actual last best reply. It is
 strictly incompatible with complete SPE: at the actual fifth-player node,
 querying any T-theme has the unique final reply A6 and gains `1804/15`.
-Thus those necessary conditions together do not pay half. This is an
+Thus those conditions together do not pay half; necessity of the potential envelopes for SPE remains conjectural. This is an
 internal independent finite audit; no external review or novelty claim.
 
 **Dependencies:** the mathematical definition of the proposed envelope

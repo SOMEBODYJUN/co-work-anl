@@ -15,7 +15,7 @@ distinct customer subsets. The nominated path is `(A1,...,A6)`, and
 
 Each customer belongs to exactly one T-theme, so `(T1,...,T6)` covers every
 customer and certifies OPT. Thus `OPT_6-2W=120>0`. This statement concerns
-the nominated path and the specified necessary inequalities; it is not a
+the nominated path and the specified envelope/safety inequalities; it is not a
 counterexample to the SPE half-coverage claim.
 
 At position i let `b_i(x)` be the actual prefix load and `r=7-i`. All 72
@@ -54,7 +54,7 @@ Order does not affect a comparison tuple's loads or relative potential,
 so multiset enumeration covers every ordered r-tuple, including all
 repetitions. Every actual prefix and all twelve catalog themes are
 included. The input has no empty theme, which is allowed for an explicit
-counterexample to the sufficiency of a universal necessary-condition
+counterexample to the sufficiency of the proposed envelope/safety
 system; the full target retains empty themes.
 
 **The nominated path is strictly incompatible with SPE.** At the actual
