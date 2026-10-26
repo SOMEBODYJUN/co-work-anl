@@ -133,6 +133,7 @@
 | [五人精确证书局部组件的独立审查](<reviews/customer_attraction/five_player_half_local.md>) | `research/reviews/customer_attraction/five_player_half_local.md` | 逐项检查局部IC符号、强制节点、共同末位价格、最大根及全部局部精确系数；记录未影响当前数据的解析器边界。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-FIVE-HALF-EXACT-v1`，[命题合同](assets.json) |
 | [五人精确主证书的独立审查](<reviews/customer_attraction/five_player_half_global.md>) | `research/reviews/customer_attraction/five_player_half_global.md` | 检查53行语义、索引直方图、共享重数、菜单角点和大整数判号，并明确随包实现独立性的真实范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-FIVE-HALF-EXACT-v1`，[命题合同](assets.json) |
 | [任意人数共同末位报价、隐藏回复投影与人数压缩](<current/customer_attraction/priced_hidden_reply_projection.md>) | `research/current/customer_attraction/priced_hidden_reply_projection.md` | 从五人证书提取任意尾长的合法非负行、自足排序压缩与强末对重叠；核对它尚缺全局half付款。 | 表示或证书接口；不自动给出待求系数；关联 `CA-PRICED-HIDDEN-REPLY-v1`，[命题合同](assets.json) |
+| [同源真实回复再查询与任意尾长联合投影](<current/customer_attraction/same_source_reply_requery.md>) | `research/current/customer_attraction/same_source_reply_requery.md` | 固定同一源历史的两次合法偏离，保留返回主题与交叉查询身份，自足证明一般七行投影及双计数压缩；区分局部新信息与未闭合half。 | 表示或证书接口；不自动给出待求系数；关联 `CA-SAME-SOURCE-REQUERY-v1`，[命题合同](assets.json) |
 
 <a id="unrelated_machines"></a>
 
@@ -2732,6 +2733,7 @@
 | [一般关系工作稿及上一轮资产的独立清洗审查](<reviews/customer_attraction/general_research_curation.md>) | `research/reviews/customer_attraction/general_research_curation.md` | 逐行攻击一般工作稿已证关系并核对来源、缩放、量词与保留状态，明确未复审证书。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-IID-WEAK-WELFARE-NO-v1`、`Q-CAG-HALF`，[命题合同](assets.json) |
 | [冻结真实前缀联合席位预算的解析与数值内部审查](<reviews/customer_attraction/prefix_coupled_seat_budget.md>) | `research/reviews/customer_attraction/prefix_coupled_seat_budget.md` | 区分先盲重构G、后读稿审F及另一路单位客户严格例核验；确认一份W付款而不升级一般half。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-PREFIX-COUPLED-SEAT-BUDGET-v1`，[命题合同](assets.json) |
 | [任意人数报价投影及排序压缩的独立审查](<reviews/customer_attraction/priced_hidden_reply_projection.md>) | `research/reviews/customer_attraction/priced_hidden_reply_projection.md` | 独立证明投影与排序、检查六人全部真节点和合法强制查询的非负恒等式；明确局部工具与总福利结论的边界。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-PRICED-HIDDEN-REPLY-v1`，[命题合同](assets.json) |
+| [四十四、五十三、六十行描述的独立机制比较](<reviews/customer_attraction/same_source_reply_requery.md>) | `research/reviews/customer_attraction/same_source_reply_requery.md` | 审查证书支持数与K余项不能排序强弱，独立重建同源七行关系，并在指定六人旧闭包点精确确认信息增量；不冒充新整包核验。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-SAME-SOURCE-REQUERY-v1`，[命题合同](assets.json) |
 
 <a id="publication"></a>
 

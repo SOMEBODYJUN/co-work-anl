@@ -2,6 +2,9 @@
 
 主目标仍是原模型任意m的Q-CAG-HALF。用户本轮上传五人完整证明，明确批准入库、全区通告，要求剖析机制后直接攻一般m，以m=6检验。当前clone是本次恢复新建的独立clone，程序生成本actor；没有改绑旧clone或冒用历史actor。
 
+
+最新研究：[三份五人证书的机制比较](three_certificate_comparison/README.md)。44局部式去重至AP；60的同源回复再查询已推广任意尾长并独审，且严格切掉指定旧六人闭包点；新44/60完整包尚不可读，未作整证书复跑。下一主线是带共享身份的真实查询闭包及全m共同付款。
+
 ## 已完成的真实状态
 
 - [五人半覆盖](../../../current/customer_attraction/five_player_half.md)：完整精确证书、原包字节保存、两项核验复跑及分工独立内审通过；外审未记录。原包先pushed bb6b3976，正式地图与审查pushed ee8b7e8b。
