@@ -49,3 +49,7 @@ Q-CAG-HALF-6 仍 OPEN：无无条件证明，亦无经全历史核验的严格�
 ## 本轮资产
 
 各线程材料保存于本目录 `research_1/` 至 `research_6/`。本页仅链接有新增信息的正文。主方收到可接续资产后及时核对范围、按需入账，并用根 `work.py checkpoint` 保存；只有 `status=pushed` 才报告远端可恢复。
+
+## 本轮新增局部根关系（内部复核）
+
+`research_4/ROOT_REQUERY_ZH.md` 给同一原策略最大根枝内的 QI/QL/QD 真源查询，得三条 `u1≥a OPT6+βK`。父方独立阅读原行及两人税原引理，另写 `audit_root_rows.py`，完整 19/18 位整数域核验通过；精确权、输入SHA与旧3889点负有理余量见 `root_row_audit.json`，审查见 `root_row_review.md`。它们仅排除旧指定抬升点。旧三复制图新方向本身也切该点，不能把全部分离归因于新身份；加行后的整个共同系统是否仍可行尚未判定，六人目标仍OPEN。
