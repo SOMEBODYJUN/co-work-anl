@@ -60,3 +60,7 @@
 `δ H + p_o x_o ≥ 1_{o≠0} d_0 x_0 + d Σ_{j∈{1,...,6}\{o}} x_j`
 
 其中 `δ=15591089/238321440`、`d_0=7905391/238321440`、`d=34758511/238321440`、`p_0=111255329/238321440`、`p=84402209/238321440` 且 `p_o=p_0`（`o=0`）或 `p`，则 `2W≥OPT_6`。这是完整历史 SPE 的精确条件证书，不是无条件主定理；条件失败只表示该行组合未支付 singleton 质量。
+
+代理 b 又给出一个独立的更宽结构子类：若七个极大主题中有 singleton-incidence 的主题至多两个，则可选择一个无 singleton 的主题省略，确有 `OPT_6=U`。按两个 singleton 轨道是否包含真实末位最大动作分成两类，证书分别核验 3904 个完整列，最小余量为 `34955/3308688` 与 `30253/9473184`；正文和审计脚本已推送到本工作区的 `singleton_two_maxima/`。因此七极大六人的剩余 singleton 缺口至少要求三个不同极大主题各有 private block。该结果仍是结构性条件 half，不是无条件主定理。
+
+代理 d 的对应方法边界也已推送：在两 private maxima 各一个客户、其余五 maxima 形成 `K_5` 的 pair-incidence 时，现有 incidence-seat 充分接口要求总权至少 19，而可用预算仅 12；这只否定该 seat certificate，不能当作 SPE 或目标反例。入口 `research/workspaces/customer-attraction/subagent-d-mixed-private/incidence_seat_two_private_obstruction.md`。
