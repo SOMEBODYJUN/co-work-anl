@@ -39,5 +39,6 @@
 - `R-ad571.../exhaustive_k4_binary.py` 对四主题、六人、全部 15 个非空二值客户类型重数 `{0,1}` 的 32767 个实例做完整纯 SPE 递推，零个 half 违例；这是有限证据，不是普适结论。
 - `research/current/customer_attraction/six_maxima_joint_bound.md` 的精确证书覆盖全目录至多六个极大覆盖集；任意目录仍可能有七个或更多极大集，因此不能直接闭合本目标。
 - `R-5c817.../parent/static_potential_barrier.md` 的静态势加实际末位报价点被倒二真实 IC 排除，不能当反例；六人目标仍 OPEN。
+- `R-7f5d.../notes/q7_joint_row_obstruction.md` 给出七个极大主题、六人路由 `(0,0,0,0,1,0)` 上的精确 Farkas 停界：现有 41 条自然 mixed/末位 BR/末两位税行族不能直接推广到七极大情形。脚本逐列核验 1631 列与 17 个有理支持点；这是模板障碍，不是 SPE 反例。
 
 这些材料均已区分为条件引理、有限观察或方法边界，没有升级为目标证明/反例。
