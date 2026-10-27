@@ -20,6 +20,8 @@
 
 上述均为导航与数学范围整理，不新增数学Claim，不提升任何审查等级。
 
+新增个人层可接续数学资产：[两名剩余、三个比较主题的任意背景总覆盖付款](research_1/two_remaining_three_comparison.md)，自足解析证明与[作者精确核验](research_1/audit_two_remaining_three_comparison.py)、[实际复跑记录](research_1/two_remaining_author_replay.json)；[父方阅读审查](research_1/review_two_remaining_three_comparison.md)明确覆盖与局限。它只证明该两人范围，未闭合六人、五人背景或一般FREE-ROOT；尚未完成全仓同结果查重，无新颖性/外审结论。
+
 阅读覆盖：根四入口/AGENTS、本题模型/地图/STATE/FAILED/RUNBOOK/SYNTHESIS；五人主证明承重部分、priced/same-source、六/七极大、共同倒二两固定包含正文、遗漏最优重数及其独审、根遗漏回复触及界、1033/3889行前沿、r≤4背景利润接口、旧root-only/FREE-ROOT与非极小可信续局正文。未宣称通读全库存，未重跑五人完整包或七极大压缩包。
 
 ## 交流与状态
