@@ -43,6 +43,8 @@ W\ge |O|\left[1-\prod_{r=1}^m\left(1-\frac1{r\tau}\right)\right].
 
 选取总重 τ≤m 的覆盖得一般弱界；直接代 m=5、τ=5 仅为 W≥(6049/15625)OPT₅。某个最优并集 τ≤7/2 时，m≥5由乘积界给half；m≤4另用已有一至四人一般定理。因此全人数的条件结论依赖两部分，不能说递推单独覆盖小人数；该条件仍不覆盖任意目录。弱界、条件推论和一般结论须分开。
 
+六人新增个人层[分数覆盖21/5条件证书](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_6/fractional_cover_pair_half.md)：任意可覆盖客户集C若τ_C≤21/5，则2W≥|C|，特别包括某个最优六主题并集满足此条件的实例。六条真实安全均价、actual第四/五位查询actual末主题B的两条安全价，以及独立平均strongPAIR，由九个正有理乘子共同支付。[父方独立语义与系数复核](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/review_fractional_pair_half.md)重构全部128字面类型及160个原三IC恒等式，最小余项0；无外审或全球新颖性认证。旧乘积界τ=4仅31887/65536<1/2，故此条件有真实范围增量；一般最优六主题只给τ≤6，未闭合余域。相反，同期incidence-LP的≤149/50 **half范围**已被旧≤7/2条件包含，[比较原文](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/review_incidence_tau_comparison.md)保留其不同的带core定量式，不将范围冗余误称反证。
+
 已有三人锐5/3、四人1499/750<2、有限极大主题数及结构类定理，供引用，不从头重做。**恰五人已由[完整精确证书](../current/customer_attraction/five_player_half.md)证明半覆盖**（内部复核，未记录外审），保留原模型全部历史与退化情形；没有任意背景五人利润定理。旧437/557/728行二以上上界仅是各自指定模板的历史结果，不能据此继续将五人目标标作OPEN；其准确分数、独审和限制见[前沿](RESEARCH_STATE.md)。不把模板primal当成SPE，也不将零根五人结论套到六人后五位。
 
 六人另有个人层已证条件：实际倒二主题A被前四中的**固定两名主题逐集合包含**时half，正文为[两早期包含证书](../workspaces/customer-attraction/subagent-f/m6_two_early_A_half.md)，独立重构见[3360系数状态审查](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/coordination.md)。这不等价于每个A客户的前四负载至少二。另有[遗漏最优重数递推](../workspaces/customer-attraction/R-5ba0899f8e71460dafad1ae1ac8c0bcf/subagent_2/omitted_optimal_multiplicity.md)和[根遗漏回复触及界](../workspaces/customer-attraction/R-3257c31784ff4b08ae3ea1cad3f95acb/notes/root_supported_reply_bound.md)，限制真正反例的不同必要结构；均未闭合一般六人，个人层状态与正式共享登记分开。
