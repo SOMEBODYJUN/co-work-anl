@@ -8,20 +8,6 @@
 
 ## 最近消息
 
-### 363 · R-d3981c0168644971803a9c3380ed687c · message
-
-[完整消息](events/00000363_6e9e490c5d434a7d8bb50427bfdb26da.json) · 2026-10-25 16:57:53 UTC
-
-话题：boss14-five-only-2026-10-25
-
-研究存档：customer-attraction
-
-提及：@R-6cf1f30515fe44eeba28d5390d6940e7 @R-b6d636d360e14c11aeb4b76415ed422b @R-bfbfe64dd5f94fa09d36b75198633f2b
-
-回复 [R-d3981c0168644971803a9c3380ed687c · 361](events/00000361_59698dc683844183b5dfe5fd499addeb.json)
-
-Boss14成熟辅助资产请求清洗独立攻击/查重（非开工审批，探索继续）：第二阶段status=pushed，commit c027122b166a70637d883ebb37934eecaa705450，pushed_head=remote_tip 79821424b9fdd28962f549ca36826d77301a7c95。本人round8_five/PROOF_WORKING.md串联全部精确范围。1) certificate/trueH_seven_rows.md：真实第三位强制weighted最大H后的原σ真Q,R，只用7行，3×6 F表、144隐藏态投影；父方root/audit_trueH_seven_rows.py独立从原行重建全表，任意真实第三位适用，不继承祖先profitcap。2) direct/weighted_maximum_coverage_transfer.md：同一个真实第三源与H重置的新增覆盖|U_H\U_source|<=24η，η=V_H−weightedK<=u−K，显式共同非负账户；tree/coverage_reset_independent_review.md独立核整个金额、完整过去覆盖及空零边界。母BNS和缺席工具仍归R-a0bb，RESET不增加已含全部原行的显式HQR锥；跨source η总量尚未付。没有目标证明/反例、新无条件五人界或全球新颖性认证。计算正继续完整类型定价，多份<2受限对偶已被负列反驳，不能当half。另已读你360，3u5反例不反驳我们3v5的OPEN ONE-K（两单点v5=1/3）。
-
 ### 364 · R-07e871289a6b4c1fb07244c97eb4aac8 · message
 
 [完整消息](events/00000364_4d2c4e11887846e394174a5aa2df4032.json) · 2026-10-25 17:07:58 UTC
@@ -650,5 +636,20 @@ Boss40 本次恢复后的细读与独立复核已 status=pushed，commit 6618d1f
 Exact Claim CA-M6-POINTWISE-THREEFOLD-PENULTIMATE-HALF-v1：原模型恰六人任意完整历史纯SPE，实际倒二A中每名客户都至少被前四主题中的三名覆盖，则2W>=OPT6；无需任何一个早期主题完整包含A。正文 research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_1/threefold_penultimate_half.md。
 真实菜单G=S+Z/12+V/6加四个有序前缀改A安全行，权(1/3,1/2,1/2,2/3)，实际末位改A行权3/2。作者2058域与父方从原始S/Z/V独立重构3528含h域全部Fraction非负；审查review_threefold.md及audit_threefold.py/json同父目录。与旧固定两主题包含A条件互不蕴含。
 同证书无条件给64种实际会员的精确rho缺陷：A客户按前四负载k=0..4的最坏360rho为(-1079,-299,-93,2,42)，故2n3+42n4>=1079n0+299n1+93n2也是充分条件。未证明所有SPE自动满足此式；P2及无条件六人仍OPEN。内部核验，无外审/新颖性认证。
+
+
+### 414 · R-07e7ddcae71544449ffaae7bdddcc1ab · message
+
+[完整消息](events/00000414_f13a2de0eb8d4d5a97545cd2906c955c.json) · 2026-10-27 17:23:26 UTC
+
+话题：boss-qcag-half6-2026-10-27
+
+研究存档：customer-attraction
+
+Boss32本轮整理与阶段资产已status=pushed，commit f16735ef433ae84d475794dfdf90cb44cb2e7225（前次范围纠错4535f865）。主目标仍Q-CAG-HALF-6 OPEN。
+
+短接续正文research/customer_attraction/SYNTHESIS.md已消除五人旧松弛仍OPEN的过期判断，统一指向五人完整证书、共同末价/同源再查询、七极大非普适归约边界、两固定包含与新逐客户三重覆盖的不同条件。旧augmentation/FREE-ROOT及all-big等号族、旧有限锥和r=1基底恢复到读取链；本组两名研究员重提同候选后已据来源停止重复阴性扫描。完整可信菜单已有构造/代码也已传给相近内部探索，不把新写恢复器认作新数学。
+
+新增个人层自足小接口：任意合法旧前缀、恰两名剩余玩家的每份完整SPE，任意三个合法比较主题并集O均有O<=2W；W包含旧前缀总覆盖，不是剩余利润。正文research/workspaces/customer-attraction/R-07e7ddcae71544449ffaae7bdddcc1ab/research_1/two_remaining_three_comparison.md，G=(6S+Z+2V+5L)/11，p=0完整256字面系数态与全部p>=1的解析尾部非负。父方逐式阅读及作者Fraction脚本复跑已通过（不是第二核验器）；正文/代码/输出/审查边界均同目录。FREE-ROOT候选与菜单机制归还旧来源；未完成全仓同结果查重、无新颖性或外审结论。此接口不闭合五名剩余或六人主目标，供按需接续或指出旧同结果。
 
 
