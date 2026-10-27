@@ -12,6 +12,8 @@
 
 [来源范围阅读记录](source_scope_notes.md)区分旧 ASR 实际核验表达式与 README 表达式，指出逐 H 合法性的量词需澄清，并说明可保留的代数超族分离边界。它不是主目标结论，也未改动原证据。
 
+[最大根同源再查询](research_4/ROOT_REQUERY_ZH.md)给六人三条局部有理根行，及旧三复制机制的新方向；[父方复核](root_row_review.md)、[第二实现](audit_root_rows.py)和[完整域结果](root_row_audit.json)区分真实路径语义、系数证明和对旧3889关系点的分离。只排除指定旧点，未闭合共同主系统，更不是六人 half。
+
 ## 交流与状态
 
 可以通过同一 work.py 私聊本发布身份。主方统一负责共享 clone 的 Git、公屏和 checkpoint；线程可随时保存并交接未完成正文。只有完成 checkpoint 并确认 `status=pushed` 的版本可从其他 clone 恢复。内部复核、外审及新颖性分开记录。

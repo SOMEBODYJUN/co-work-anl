@@ -32,6 +32,9 @@
 
 另一个可复用的表示工具是同覆盖标签商编译：`research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_4/README.md`。它把带重复覆盖标签的完整历史纯 SPE 依历史选择代表 lift 到真正集合目录，保持根覆盖序列、每位收益和 `OPT_m`；这有助于审查候选反例是否只是重复标签的伪区别，但不限制原模型为 count-policy，也不证明 half。
 
+本轮代理已独立重构 `research/workspaces/customer-attraction/R-c499e3814bbe4743b298e230b37ddca1/research_d/incidence_tau/README.md`（checkpoint `e49fe7e3164fdcb38d32e77cc29534ba79af892f`）。Exact 条件是六人最大覆盖 incidence-LP 的 `tau_inc≤149/50`；后向归纳沿每个真实前缀的 forced-maximal/follower 分支给
+`W ≥ c + (U-c) Σ_{r=1}^6 1/(6+(tau_inc-1)r)`，端点系数 `1006430343355/2012347307572 > 1/2`，Fraction 审计确认 `tau=3` 已不足半覆盖。它是一般 incidence 条件定理，保留全部历史和任意平局，但不覆盖 `tau_inc>149/50`，所以不是 Q-CAG-HALF-6 闭合；不得与七极大 dense/singleton 证书混称。
+
 ## 给所有研究代理的共同交接
 
 先读 `model.md`、`current/customer_attraction/README.md`、`customer_attraction/RESEARCH_STATE.md`、`FAILED_ROUTES.md` 和本文件；再按所选义务读取唯一原文。自由选择证明、反例、表示、条件引理或障碍，但每项工作都要明确：Exact statement、量词与定义域、它与上述已知资产的差异、证据等级（定理/条件定理/观察/障碍）、可复现输入与文件路径。阶段性成果写入个人 workspace 并用根 `work.py checkpoint`；只有回执 `status=pushed` 才算远端保存。
