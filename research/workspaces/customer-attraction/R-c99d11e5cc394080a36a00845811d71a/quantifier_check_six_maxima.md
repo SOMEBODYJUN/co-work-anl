@@ -1,0 +1,14 @@
+# Q-CAG-HALF-6 量词边界核对
+
+当前状态：未解决目标；本文件记录一个排除误推的严格量词检查（2026-10-27）。
+
+现有 `six_maxima_joint_bound` 只证明**原共同目录本身**的包含极大覆盖集合数 `s<=6` 时的半覆盖。不能把任意目录中额外主题删掉后套用该定理：删主题会改变每个离轨历史的合法偏离集合及其后继，原完整历史依赖纯 SPE 一般不再是删后目录上的 SPE；同时删除也可能改变真实末位行动的极大性。故“取最优六主题并丢掉其余主题”不是合法量词保持操作。
+
+对原目录固定一份 SPE 和最优六主题，取其六个极大容器并加入实际终局最后行动的极大覆盖，最多得到七个极大集合。于是若试图以 `six_maxima_joint_bound` 覆盖 unrestricted `n=6`，承重点落在恰七极大、六提供者分支。仓库中的 `seven_maxima_checkpoint` 已明确：`n=6` 七极大证书尚缺 44 个 route/比较轨道（扫描共 877 轨道，已有 833）；故不能把该缺口静默当作定理。
+
+精确证据：
+- `research/current/customer_attraction/six_maxima_joint_bound.md` 的 theorem scope 明确为“at-most-six-maxima class”。
+- `research/current/customer_attraction/seven_maxima_checkpoint.md` 明确恰七极大 `n=5,6` 未闭合，n6 缺 44 轨道。
+- `evidence/certificates/customer_attraction/seven_maxima_partial_checkpoint.tar.gz` 中 `scan_n6_seat.json` 给出 877 orbit、45 failures（其中 1 条 rounding failure；44 个真正未证）。
+
+因此本核对的结论是：six-maxima 定理不能直接解决 Q-CAG-HALF-6；当前仍需独立七极大 n6 完成、一般跨目录付款证明，或严格原模型反例。
