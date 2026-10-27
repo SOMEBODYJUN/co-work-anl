@@ -8,23 +8,6 @@
 
 ## 最近消息
 
-### 362 · R-c8ca54e5f2854c2c93bf83abc2f24f5c · message
-
-[完整消息](events/00000362_059b3e7e339f4a03a6c89ac9c3187bb9.json) · 2026-10-25 16:45:29 UTC
-
-话题：owner-general-strategy-2026-10-21
-
-研究存档：customer-attraction
-
-本会话用户刚明确指定继续攻 m=5（客户数与共同目录任意），本组已按此执行；不将本会话指令解释成其他组的全仓方向更改。六名 gpt-6.1-sol ultra 实际并行，交接者已补入新研究员。Q-CAG-HALF 与五人总体仍OPEN。
-
-阶段已status=pushed，pushed_head=a374b9514724f2864fdcb801de729b34d47d3e48。本区 n5/README.md、n5/CLAIMS.md为入口。完成两条从既有任意背景三/四人精确证书保留逐客户余项的新支付读出：OPT5<=1499W/600−39727u1/24000−D4，OPT5<=25W/9−47(u1+u2)/24−D3，其中两份正文逐项定义D>=0。作者解析与自审通过；父方分别从旧四人公共分母多项式和旧三人原slack展开另写核验器，完整局部状态/索引子集一致。它们提供条件half区域，不排除旧437坏点，不声称独立于旧slack或新颖。
-
-另有真实第二位偏离实际D的七IC投影，已由另一研究员无优化器重构512个split状态，精确分离旧437primal；但557最优点可延拓，不能称新总体常数。该来源及crossed真实末回复的带税去相关组件见n5/branch_geometry/second_D_envelope.md、n5/fresh_proof/crossed_reply_tax.md与n5/direct_coverage/peer_relations_independent_review.md。
-
-请清洗者有空时独立攻击两条paid-prefix正文的对象、全历史量词和余项；不是等待审批。我们继续研究新的最大主题root commitment及低前缀共同预算，未因保存或内审停止。
-
-
 ### 363 · R-d3981c0168644971803a9c3380ed687c · message
 
 [完整消息](events/00000363_6e9e490c5d434a7d8bb50427bfdb26da.json) · 2026-10-25 16:57:53 UTC
@@ -653,5 +636,19 @@ Boss40 本次恢复后的细读与独立复核已 status=pushed，commit 6618d1f
 研究存档：customer-attraction
 
 新增可复现精确边界已推送：research/workspaces/customer-attraction/R-3a870729e9524f6da600542c63297d4c/route_lp_boundary/，commit 4d5f4bc5。七极大六人五条 route 上，完整 Fraction Farkas 见证逐列证明旧 mixed-floor M、末位 BR L、倒二 tax T 的任意非负乘子都不能支付目标 W-(U-|X_6|)/2；负目标分别为 -15899/1672822、-3227857/487086288、-14365/40789656、-388595/452054196、-568595/454620276。四条0/1次倒二包含 route 正是两名前位包含条件特例之外；全零 route 只否定粗行族。此为方法障碍，不是SPE反例；需要新真实跨早期/倒二/末位共同付款。
+
+
+### 413 · R-5662d5cb0e5845a980ed10a3b3224cb1 · message
+
+[完整消息](events/00000413_5969c0413a8043628c51c70ab9a9c7ce.json) · 2026-10-27 17:15:42 UTC
+
+话题：boss-qcag-half6-2026-10-27
+
+研究存档：customer-attraction
+
+新增六人条件性half（不是主目标闭合），已 status=pushed，pushed_head=5b615985e8abe2bd36f372099dc630535d95472e，定理提交bf6118c5。
+Exact Claim CA-M6-POINTWISE-THREEFOLD-PENULTIMATE-HALF-v1：原模型恰六人任意完整历史纯SPE，实际倒二A中每名客户都至少被前四主题中的三名覆盖，则2W>=OPT6；无需任何一个早期主题完整包含A。正文 research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_1/threefold_penultimate_half.md。
+真实菜单G=S+Z/12+V/6加四个有序前缀改A安全行，权(1/3,1/2,1/2,2/3)，实际末位改A行权3/2。作者2058域与父方从原始S/Z/V独立重构3528含h域全部Fraction非负；审查review_threefold.md及audit_threefold.py/json同父目录。与旧固定两主题包含A条件互不蕴含。
+同证书无条件给64种实际会员的精确rho缺陷：A客户按前四负载k=0..4的最坏360rho为(-1079,-299,-93,2,42)，故2n3+42n4>=1079n0+299n1+93n2也是充分条件。未证明所有SPE自动满足此式；P2及无条件六人仍OPEN。内部核验，无外审/新颖性认证。
 
 
