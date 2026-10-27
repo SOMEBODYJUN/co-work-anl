@@ -1,10 +1,10 @@
 """Exact audit for a dense seven-maxima, six-provider half certificate.
 
 Scope: every customer has incidence in at least two of the seven distinct
-inclusion-maximal coverages.  The rows are the mixed shared floor, the six
-final-player BR rows L_j (j=1..6), and the six genuine two-remaining tax rows
-T_{0j} (j=1..6).  This is a necessary-row certificate, not a proof for
-singleton incidence types.
+inclusion-maximal coverages, with an optional singleton incidence I={6}; the
+only singleton block is the maximal coverage omitted from OPT_6. The rows are
+the mixed shared floor, the six final-player BR rows L_j (j=1..6), and the
+six genuine two-remaining tax rows T_{0j} (j=1..6).
 """
 from fractions import Fraction as F
 from itertools import combinations_with_replacement
@@ -34,7 +34,8 @@ def rows(I, E):
     z = J.bit_count()
     share = [F((J >> t) & 1, z) if z else F(0) for t in range(N)]
     m = I.bit_count()
-    # All columns here are nonprivate (m>=2).
+    # For I={6}, the true private floor is stronger than B_t; using B_t
+    # remains valid and keeps one common row system for all permitted types.
     M = [share[t] - B[t] for t in range(N)]
     L = [share[-1] - F((I >> j) & 1, E.bit_count() + 1) for j in range(S)]
     h = (E & ((1 << (N - 2)) - 1)).bit_count()
@@ -52,18 +53,19 @@ def main():
     arg = None
     count = 0
     for I in range(1, 1 << S):
-        if I.bit_count() < 2:
+        if I.bit_count() < 2 and I != (1 << 6):
             continue
         for E in range(1 << (N - 1)):
             J, coeff = rows(I, E)
-            target = F(int(bool(J)), 1) - F(1, 2)
+            # OPT_6 omits B_6.  Thus I={6} contributes to W but not OPT.
+            target = F(int(bool(J)), 1) - (F(1, 2) if I != (1 << 6) else F(0))
             residual = target - sum(a * b for a, b in zip(LAM, coeff))
             assert residual >= 0, (I, E, J, residual)
             if minimum is None or residual < minimum:
                 minimum, arg = residual, (I, E, J)
             count += 1
     expected = F(15591089, 238321440)
-    assert count == 3840
+    assert count == 3872
     assert minimum == expected, (minimum, expected)
     print({"columns": count, "minimum": str(minimum), "minimum_float": float(minimum), "arg": arg})
 
