@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 355 · R-bfbfe64dd5f94fa09d36b75198633f2b · message
-
-[完整消息](events/00000355_071423e32a4e4367a37461fbf53ef2d7.json) · 2026-10-25 16:08:00 UTC
-
-话题：boss16-five-only-2026-10-25
-
-研究存档：customer-attraction
-
-提及：@R-acd97406d8c4409d962eab2adcdc520c @R-cd789330fc7141299ac491bbb3ffa420
-
-Boss16更新：阶段已pushed，commit 82e7d5e53。加权解析候选及新maxroot_envelope.md/.py/.json、audit_maxroot_envelope.py已在本人five_only目录。后者仅192状态，以最大主题根真实分支的大小cap、第三位比较末主题的安全IC、最后位精确最优菜单IC、末两人税恢复三条新全称辅助关系O<=B r-C K：(89090/1753,29147/3506)、(50200/1753,4851/1753)、(678285/23888,64639/23888)。所有乘子和192状态余项均Fraction非负；分离标准库审计不导入发现器，也全部通过（同作者实现，不冒充独审）。第一证书仅7条非root行，正文有全表。ρ网格只发现，恢复后的恒等式不保留ρ假设。请团队优先独立复核节点合法性与192状态证书、查重。当前尚无HALF(5)付款；正把这三条投影加入真实根/早期D/最优根联合系统，不等审核继续。
-
 ### 356 · R-cd789330fc7141299ac491bbb3ffa420 · message
 
 [完整消息](events/00000356_23ae18134d104914829c0a00808339c9.json) · 2026-10-25 16:12:46 UTC
@@ -660,5 +648,17 @@ Boss32 已整理并推送 remote commit 22ad6bec。新增可复用但非闭合�
 Boss40 新增可复用方法障碍（已精确 Fraction 重放并 status=pushed）：
 文件 research/workspaces/customer-attraction/subagent-f/m6_r2_uniform_K_obstruction.md 与 replay_m6_r2_uniform_K.py，远端 commit 131954173d506873decc2c77d958cfa4e120173a。
 在 m=6、倒二 A、前四中两主题含 A、两个例外 E1,E2 的辅助证书 G=S+Z/12+V/6 加统一非负例外补偿 lambda1 K1+lambda2 K2 上，三种合法局部位型精确给出 lambda1+lambda2>=4、lambda1<=5/3、lambda2<=5/3，故该证书不可行；扩展 S,Z,V 三权的 5600 位型 LP 也无可行点（路线障碍）。这不是原模型反例，只排除 uniform-K 组合；需要真正跨枝/更早查询行。
+
+
+### 406 · R-2118664d5481486fb34eb4b7f788af5a · message
+
+[完整消息](events/00000406_99bc23e10e084b12bfc79f342d1074e9.json) · 2026-10-27 16:43:51 UTC
+
+话题：boss-qcag-half6-2026-10-27
+
+研究存档：customer-attraction
+
+Boss40 去重简报已更新并推送：research/workspaces/customer-attraction/R-2118664d5481486fb34eb4b7f788af5a/notes/coordination.md，远端 commit 4a8d34bb06a2d6f34817c3fd3c4d466b8d04d1f1。
+新增登记：subagent-f 的 m=6、倒二两例外 uniform-K 组合被三行 Fraction 精确矛盾排除（资产 commit 22e6564804c023a4b6081e56404742dbd91ea8b4）；只是否定指定辅助证书，不是目标反例。七极大恰六人固定 M/L/T/P/requery 行族仍无正证书，44 缺口未闭合；请继续寻找真正共同付款或完整原模型反例。
 
 
