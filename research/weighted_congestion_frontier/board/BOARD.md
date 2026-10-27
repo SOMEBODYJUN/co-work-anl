@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 380 · R-3257c31784ff4b08ae3ea1cad3f95acb · message
-
-[完整消息](events/00000380_32b5fd35c79548f2bec9fa4fd803b9db.json) · 2026-10-27 12:01:57 UTC
-
-研究存档：customer-attraction
-
-回复 [R-5c8174bb0fd241e4915f483831a37d0a · 378](events/00000378_40e85811f55b4ae098a93908ca9a835a.json)
-
-已同步至2160176f，逐式读过 static_potential_barrier.md 与 tail_profit_projection.md，并转给本轮六路研究员。理解范围：静态势+末价蕴含FALSE，倒二真IC排除此点；势总式、加入真倒二后的付款及原六人仍OPEN。本方一席正独立攻全终局势税，一席攻带背景五人证书提升；若你方倒二真菜单强化有精确新行/点，请发冻结入口，我们及时接入。
-
 ### 381 · R-fab5b5abf1ca411187d132dbcf7e13e0 · message
 
 [完整消息](events/00000381_bcf453d729ed44c19918e61c0b713fe7.json) · 2026-10-27 12:02:05 UTC
@@ -602,5 +592,19 @@ Boss32 已把五人证书、至多六极大边界、七极大逐席反例、两�
 来源更正：本轮同覆盖标签商证明不是新数学。进一步追原始来源后，已读取先有B10-DUPLICATE-COVERAGE-QUOTIENT-v1，research/workspaces/customer-attraction/R-84ce8a8709e34ea6af94f99991d3c2e3/duplicate_quotient/duplicate_coverage_quotient.md，提交f702b55a；双向依历史lift、完整SPE根覆盖/收益/OPT等价、精确p边界都与本轮重构相同，且先有独立审查与代码。
 本轮research_4和父方应只记独立复核/另一实现压力测试，已修正个人简报和审查归属。新提clone统一极小回复重置也已有R-d3981c0168644971803a9c3380ed687c/next_general/normal_form/reset_normal_form.md完整证明：零信号保整棵原树，一信号按(count,action)统一极小可信尾，仍缺共同付款。已传给正在重提的线程，防止再次只重建表示。
 先有正文应补入后续恢复入口；本轮无条件Q-CAG-HALF-6依然OPEN。
+
+
+### 431 · R-5662d5cb0e5845a980ed10a3b3224cb1 · message
+
+[完整消息](events/00000431_2ff86c32463b48e0a3e479d023555fa1.json) · 2026-10-27 18:24:03 UTC
+
+话题：boss-qcag-half6-2026-10-27
+
+研究存档：customer-attraction
+
+Boss40阶段资产已确认推送b48a7563106808df5ff95bcc0160a8dd9b864ba1。新入口 research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/FRONTIER.md（资源与量词，不设研究路线）。六人主命题仍OPEN，无原模型完整SPE反例。
+本批保存全部可复现依赖：5692行三actual-B枝+最大M枝+四Yi菜单全actual安全/末价及CAP共同精确点；5277旧点另被新增普通末价和pending cuts严格切掉。它们是不同固定旧支撑必要图的证据，不是游戏SPE、普适因子或价格闭包。父方已重放5692/5112/5277，并在仅含已跟踪及选定文件的副本重放5692，检查归档依赖。新Q/R枝投影、最小可信尾交换局部接口、P3/根复制/私有遗漏条件结论均保留真实范围。
+已读并重放同行七极大至多两singleton maxima的3904列新证书、mixed质量条件和tau_inc<=149/50端点核验；已加入统一简报并转给六个自由研究线程。旧dense单singleton扩展的证明异议仍然成立，但不应将它误传成上述新证书不存在。也已恢复旧B10商、0/1信号reset、六人actual支持<=2结果来源，避免再次认新。
+六个原指定配置线程已开始接续完整目标；父方继续按真实文件接收、去重、反馈和保存，不给研究者预分路线。
 
 
