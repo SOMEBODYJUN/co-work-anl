@@ -25,6 +25,7 @@
 | 全目录至多六个包含极大覆盖 | 任意人数 half；人数至少五时甚至目录总并集 U≤2W | `research/current/customer_attraction/six_maxima_joint_bound.md`；内部子主题任意，早期主题只路由到容器，不等同于容器 |
 | 恰七极大且人数至少七 | U=OPT≤2W | `research/current/customer_attraction/seven_maxima_checkpoint.md` 及来源证明；六人缺失轨道不在其范围 |
 | 实际倒二 A 被前四中某两名主题逐集合包含 | 恰六人任意目录 half | `research/workspaces/customer-attraction/subagent-f/m6_two_early_A_half.md`；对称乘子为 `(5/4,5/4,1)`，不是早期公屏旧乘子 |
+| 实际倒二 A 每个客户在前四逐客户负载至少三 | 恰六人任意目录 half；不需固定早期主题包含A | 本目录 `research_1/threefold_penultimate_half.md`；父方独立原始行重构及全部3528个含h类型核验见 `review_threefold.md`、`audit_threefold.py/json` |
 | 实际倒二至多 r 个早期例外且 m≥(r+1)^2+1 | half | `research/current/customer_attraction/penultimate_few_exceptions.md`；m=6时r=1可用，而r=2的原平方阈值不适用 |
 | 选定最优六元组的实际遗漏平均索引重数 θ≥β−1 | half | `research/workspaces/customer-attraction/R-5ba0899f8e71460dafad1ae1ac8c0bcf/subagent_2/omitted_optimal_multiplicity.md`，β=6718464/2352949；不是全目录极大关联重数 |
 | 某最优并集分数覆盖数≤7/2，或其实际遗漏全为全局极大私有 | 相应一般人数 half/锐界 | `fractional_cover_path_budget.md`、`uncovered_private_seat_spectrum.md`（均在 current 本题目录）；条件不能删 |
@@ -117,6 +118,7 @@ r=5无已证背景定理。`R-2118664d5481486fb34eb4b7f788af5a/notes/researcher_
 
 假定存在严格反例，则必须在已证子类以外：全目录至少七极大；
 实际倒二A只能被前四至多一名主题完整包含（不意味着逐客户负载均低）；
+本轮三重早期覆盖特例还要求严格反例有至少一个A客户的前四负载不超过二；
 对每个最优六元组遗漏平均索引重数不足β−1，且单次遗漏数大于
 `(340383/2352949)W`；真实最优偏离的后继触及遗漏并集B须有`|B|>W/5`。
 这些是不同对象上的必要条件，不是足以构造反例的条件，也未共同推出矛盾。
@@ -132,6 +134,10 @@ r=5无已证背景定理。`R-2118664d5481486fb34eb4b7f788af5a/notes/researcher_
 一般证明工作稿、末回复运输、两早期包含/统一K原稿、遗漏重数/根回复原稿及背景利润接口。
 没有重跑五人全部原包、七极大压缩包或有限四主题普查；其已有证据等级依原审查，不冒称本轮重做。
 本轮实际重放：旧两早期证书1960域、uniform-K三行、父方独立3360域和遗漏重数常数。
+新增独立复核：逐客户三重覆盖证书2058投影类型/3528含可行h类型，及64实际会员ρ表。
+ρ对A客户的前四负载k=0,…,4最坏值为`(-1079,-299,-93,2,42)/360`，
+因此`2n_3+42n_4≥1079n_0+299n_1+93n_2`也足以half。
+这只是一个新的充分条件；没有证明所有SPE自动满足该式，没有提升主目标。
 
 内部代理收到同一完整目标和资源入口；相近想法及时互通，不作方法认领。
 未产生新信息的重复floor LP诊断不新建成“成果”；若有精确分离且范围不同，可另存清晰合同。

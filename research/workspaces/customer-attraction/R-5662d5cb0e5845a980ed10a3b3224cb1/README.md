@@ -16,6 +16,11 @@
 - [独立系数审计](audit_containment.py)及[本轮输出](audit_containment.json)：
   从三个原始菜单行重构两早期包含特例的全部可行重叠类型，复算遗漏重数常数。
   这是既有条件定理的复核，不认领新定理或外审。
+- [逐客户三重早期覆盖定理](research_1/threefold_penultimate_half.md)：
+  新的六人路径条件性half，以及全部实际会员类型的无条件缺陷预算；
+  [父方审查](review_threefold.md)和[独立核验](audit_threefold.py)、
+  [输出](audit_threefold.json)给出3528个含重叠类型的重构。
+  与固定两早期主题包含A互不蕴含，未闭合无条件六人。
 - `research_1/` 至 `research_6/`：内部代理按自身需要保存可接续资产；
   候选、证明、浮点诊断和精确障碍分别标明，不以目录存在表示有成果。
 
