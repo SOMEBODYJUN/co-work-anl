@@ -40,3 +40,12 @@
 ## 6. 必读入口顺序
 
 先读：`research/current/customer_attraction/model.md`、`research/customer_attraction/RESEARCH_STATE.md`、`research/customer_attraction/FAILED_ROUTES.md`、本题数学地图 `research/current/customer_attraction/README.md`。再按具体义务读取上面的唯一正文和审查；不要把全部公屏、个人工作区、大型 JSON 或全部库存塞进默认上下文。
+
+## 7. 本轮新增可复用资产：七极大六人无单例关联半覆盖
+
+已由同目标代理精确推送（commit `1ffe0346509c98828615b6f1c13f03300a83d3db`；实际数学提交含 `fe99fcfe`）：
+`research/workspaces/customer-attraction/R-d54cef1094414cc6a98575e671bd060e/dense_shared_seven_n6/dense_shared_seven_n6.md` 及其 Fraction 审计脚本。
+
+精确范围：恰七个 distinct inclusion-maximal coverage、六名提供者、每个可覆盖客户至少属于两个极大主题（无 singleton incidence），任意内部子主题、全部有序历史纯 SPE、重复/空主题/历史平局均保留；证明 `U<=2W`，从而 `OPT_6<=2W`。证书使用七极大 shared mixed floor 的 `M_0..M_3`、六个真实末位 BR `L_1..L_6`、六个真实两人税 `T_{0j}`，全部为合法全历史 SPE 行；3840 个完整 literal 列 Fraction 检验，最小余量 `15591089/238321440>0`。
+
+它不是 unrestricted 六人结论。单例 incidence `I={j}` 未覆盖，且不能把残差简单与 `OPT_6=U` 的单例块相减；当前七极大缺口因此更精确地集中到 mixed singleton/dense incidence，以及怎样用最小遗漏私有块的真实跨枝回复共同付款。代理的同类旧行族 LP 在44条缺失轨道仍有负余量，不能把行族阴性当主目标反例。
