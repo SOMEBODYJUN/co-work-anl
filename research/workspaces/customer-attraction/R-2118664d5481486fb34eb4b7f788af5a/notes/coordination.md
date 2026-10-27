@@ -16,6 +16,8 @@
 6. `research/workspaces/customer-attraction/R-3257c31784ff4b08ae3ea1cad3f95acb/notes/root_supported_reply_bound.md` 给出条件界：若最优查询后的真实后继不触及根遗漏，便有 `OPT_m <= (2-1/m)W`；无条件定量版要求严格六人反例的根遗漏触及并集 `|B| > W/5`。这只是必要结构，未付跨枝信用。
 7. `research/workspaces/customer-attraction/R-ad571a29e6fa477aad8b112b20cb5b59/coordination_brief.md` 登记四主题、六人、全部 32767 个二值类型重数的完整 SPE 精确搜索零违例（最坏 `W/OPT=6/7`），仅为有限证据。
 8. 本轮新增 `research/workspaces/customer-attraction/subagent-f/m6_r2_uniform_K_obstruction.md`（远端资产 commit `22e6564804c023a4b6081e56404742dbd91ea8b4`）：在 `m=6`、倒二主题前四中两例外的指定辅助组合 `G=S+Z/12+V/6` 加统一非负 `lambda_1 K_1+lambda_2 K_2` 上，三个 Fraction 精确局部类型迫使 `lambda_1+lambda_2>=4`、`lambda_1<=5/3`、`lambda_2<=5/3`，故该组合不可行。扩展 LP 仅为浮点诊断；这不是原模型反例。
+9. 本轮新增条件性正结果 `research/workspaces/customer-attraction/subagent-f/m6_two_early_A_half.md`（远端资产 commit `10d16587b46939e53477143909ac728f436f4f11`）：若实际倒二主题 `A` 被前四个实际主题中的至少两名包含，则共同倒二三类真实行 `G`、前两名早期改选 `A` 的真实 IC 行 `H_1,H_2`、末位改选 `A` 的行 `L`，以乘子 `22/15,31/30,1` 组成完整逐客户证书。扩大域 1960 个 `(a,e_1,...,e_4,b,d,ell)` 状态的 Fraction 核验最小余项为 0，因此这一结构类的 `2W>=OPT_6` 已闭合；它不是无条件六人定理，`A` 只被一名或零名前位包含时仍开放。
+10. `research/workspaces/customer-attraction/R-2118664d5481486fb34eb4b7f788af5a/notes/researcher_b_bg5_profit_candidate.md` 只登记一个待证的五人任意背景利润接口 `R_p(T_1,...,T_5)<=2V`。仓库现有五人证书是零背景根证书，且任意背景五人接口尚未证明；有限 Fraction 探测与七极大 LP 接入均不足以升级，不能在六人主证明中调用。
 
 ## 已判死、不要原样重做的桥
 
