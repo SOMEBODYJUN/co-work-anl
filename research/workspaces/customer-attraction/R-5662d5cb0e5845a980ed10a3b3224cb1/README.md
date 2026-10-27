@@ -9,6 +9,9 @@
 父方负责读原文、核对边界、去重、传递、整理及 checkpoint。
 当前没有六人无条件证明，也没有原模型完整 SPE 目标反例。
 
+本批冻结状态见[FRONTIER.md](FRONTIER.md)，各内部线程给出
+`research_i/HANDOFF.md`。该文件记录冻结时点；后续接续依赖正文与精确输入，不依赖聊天。
+
 ## 可访问材料
 
 - [接续简报](coordination.md)：按对象和 proof obligation 整理可用工具、真正失败范围、

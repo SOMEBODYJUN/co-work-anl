@@ -17,9 +17,28 @@
 因此切掉更强图的一个指定坏点，尚未提高这个较弱完整主域的界；不可混淆。
 research_5 正把表接入其更强的显式比较主题图。
 
+后续精确增量见 `early_B_projections.md`：实际源2/3/4改B的三条共同K投影，
+完整448表严格分离research_5指定5108点。`early_B_projection_certificate.json`
+与纯标准库 `early_B_projections.py` 是冻结证据；三条都已交research_5共同接入。
+`B_family_oracle.py` 提供同类完整单B枝的条件lift分离器，返回的非负有理权与
+完整448最大投影可以脱离发现LP精确检查。
+
+显式跨枝联合见 `coupled_B_branch_master.md`、`coupled_B_families_master.py`：
+新B枝会员保持与旧Ti/Bi/Ci完整直方图相关，并在两方向增加真实安全/末位查询。
+这些点一直只满足所列必要关系，不是策略或SPE。
+
+**普通末价勘误。** research_1发现：旧显式B枝菜单的六个真末回复Yi已有ell，
+但此前图未给这些Yi加入全部actual源查询价。应对每个actual位置a加
+`u_a−sum_x ell_x/[6*(prefix_a(x)+7−a)]≥0`，另加`K−sum_x ell_x/6≥0`。
+此前所谓“全部安全查询”仅限具名B枝行动主题，不能解释成对这些未具名Yi也
+已全目录闭包。新价的量词由research_4独立核对通过；这7行对ell仿射，保留
+原端点凸化。`B_menu_prices_master.py --all-families` 已向三个显式B枝及最大M
+枝的每个菜单各补7行；最终范围和进程状态见 `HANDOFF.md`。不将旧未补价点
+再称为此新报价闭包的可行点。
+
 `old702_plus_B_families.py` 是另一次完整448域的条件分布 lift：每个实际源
 i=1,...,4强制实际B后，都保留其全真后继、IC、末两菜单、全部实际与枝内安全
-查询、共同K的CAP。各family共享实际边缘，隐藏位跨family独立是扩大域。
+查询（仅具名行动主题）、共同K的CAP。各family共享实际边缘，隐藏位跨family独立是扩大域。
 共54,209变量、978不等式、1,793边缘等式，浮点
 `W≈0.4514692203392219`（比率约 `2.21499042448`），仍未half。
 这只比旧702域略强；不能把不同模板数值当作真实游戏的坏比率。
