@@ -33,6 +33,7 @@ zₕ,ₜ 在 h 强制选 T 后继续沿原 σ；全部后继都可以响应 T。
 | 实际遗漏私有席位谱及冻结前缀联合谱：uᵢ≥Λᵢ≥λᵢ、W≥ΣΛᵢ | 提供同一路径预算；私有遗漏为空时退回旧分母界，不自动支付共享遗漏 | [实际遗漏谱](../current/customer_attraction/uncovered_private_seat_spectrum.md)、[联合谱定义/审查](../current/customer_attraction/general_half_proof.md#31-冻结真实前缀的联合客户席位一般付款的精细加强) |
 | 任意节点跨枝：ΔW=ΔV+ΔP旧−Γ，Γ≥0 | 非根必须保留旧玩家最终收益变化；根上 P旧=0。跨互斥子树仍无共同付款 | [修正后的节点式](../workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/representation/cross_branch_welfare_relay_identity.md) |
 | 给定终局的软水位、共同信用和原规定路径税账 | 终局代数、条件可信接口各自有效；不能免费继承 SPE 或跨改枝重复花一份信用 | [软水位](../current/customer_attraction/fractional_tail_waterfill.md)、[条件接口恢复](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/credible/README.md) |
+| 同一实际末位对全目录报价，联合真源IC、同一K和分支末位IC | 任意尾长可合法投影隐藏回复；所有实际末价与K支出仍需共同支付。先保留共享主题身份再消元，不能逐枝独立花同一预算 | [共同报价与同菜单互查](../current/customer_attraction/priced_hidden_reply_projection.md)、[同源回复再查询](../current/customer_attraction/same_source_reply_requery.md) |
 
 分数覆盖递推的准确结论是
 
@@ -42,7 +43,13 @@ W\ge |O|\left[1-\prod_{r=1}^m\left(1-\frac1{r\tau}\right)\right].
 
 选取总重 τ≤m 的覆盖得一般弱界；直接代 m=5、τ=5 仅为 W≥(6049/15625)OPT₅。某个最优并集 τ≤7/2 时，m≥5由乘积界给half；m≤4另用已有一至四人一般定理。因此全人数的条件结论依赖两部分，不能说递推单独覆盖小人数；该条件仍不覆盖任意目录。弱界、条件推论和一般结论须分开。
 
-已有三人锐5/3、四人1499/750<2、有限极大主题数及结构类定理，供引用，不从头重做。五人证据分为：共享正式437行上界约2.061695；个人557行**独立全域对偶已审上界**约2.04215549034；728行约2.04207898656仍为作者证书层。全都大于二。准确分数、独审和限制见[前沿](RESEARCH_STATE.md)。不把更强数值静默换进旧 Claim，也不把模板primal当成SPE。
+已有三人锐5/3、四人1499/750<2、有限极大主题数及结构类定理，供引用，不从头重做。**恰五人已由[完整精确证书](../current/customer_attraction/five_player_half.md)证明半覆盖**（内部复核，未记录外审），保留原模型全部历史与退化情形；没有任意背景五人利润定理。旧437/557/728行二以上上界仅是各自指定模板的历史结果，不能据此继续将五人目标标作OPEN；其准确分数、独审和限制见[前沿](RESEARCH_STATE.md)。不把模板primal当成SPE，也不将零根五人结论套到六人后五位。
+
+六人另有个人层已证条件：实际倒二主题A被前四中的**固定两名主题逐集合包含**时half，正文为[两早期包含证书](../workspaces/customer-attraction/subagent-f/m6_two_early_A_half.md)，独立重构见[3360系数状态审查](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/coordination.md)。这不等价于每个A客户的前四负载至少二。另有[遗漏最优重数递推](../workspaces/customer-attraction/R-5ba0899f8e71460dafad1ae1ac8c0bcf/subagent_2/omitted_optimal_multiplicity.md)和[根遗漏回复触及界](../workspaces/customer-attraction/R-3257c31784ff4b08ae3ea1cad3f95acb/notes/root_supported_reply_bound.md)，限制真正反例的不同必要结构；均未闭合一般六人，个人层状态与正式共享登记分开。
+
+另一个个人层已证条件是[倒二主题逐客户三重早期覆盖](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_1/threefold_penultimate_half.md)：每个x∈A均被前四至少三名覆盖则half，与两固定主题包含条件不可比。[原始行独立重构](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/review_threefold.md)覆盖3528个含重叠的完整系数态。同一证书还给真实会员几何上的无条件缺陷余项，A内前四负载k=0,...,4的最坏360rho依次为`(-1079,-299,-93,2,42)`，A外rho非负；总rho自动非负尚未证，不能升级六人主目标。
+
+至多六极大结果的条件是**整个目录**的极大覆盖数。任取最优六主题加实际末位只能得到至多七个关注主题；尚无保留全部历史SPE的任意目录→七极大归约。其他目录主题可能承载真实离轨回复；删主题或把早期行动替换成极大容器都不能自动保留原SPE。因此七极大六人的44轨道是结构子类缺口，不是已证等价的普适唯一缺口。
 
 ## 最容易再次误用的失败桥
 
@@ -62,5 +69,11 @@ W\ge |O|\left[1-\prod_{r=1}^m\left(1-\frac1{r\tau}\right)\right].
 现有预算路线都尚缺一条对**一般人数、一般目录、每份完整策略**有效的共同控制：把真实离轨后继改变行动带来的损失与旧收益返还放在同一份实际预算中，不重复使用 W。局部恒等式成立、形式表示等价或有限锥成功，都没有补上这一点。原目标也可通过完全不同的方法证明，不必先证明这些预算候选。
 
 两项具体的开放接口供按需接续：真实查询行在更早位置的净差付款（[倒二已证行与限制](../workspaces/customer-attraction/R-e05f01e191354b028004b433016ae1c9/penultimate_true_query_row.md)）；真正安全值的弱充分桥 W≥(m−1/2)vₘ(0)（[安全值债务链](../current/customer_attraction/security_chain_and_local_boundary.md)）。后者及更强 W≥mvₘ 仍 **OPEN**：历史口头声称的聚合反例尚未恢复成可检查证书，不得当作反证。
+
+另一个容易重新独立提出的旧候选是 **augmentation / FREE-ROOT**：r名完整SPE是否总满足 `OPT_(r+1)≤2W`；更强形式允许任意固定旧前缀并将其覆盖计入总W。它与任意背景剩余利润界是不同对象，均不能由零根五人证书直接推出。[原候选与all-big等号族](../workspaces/customer-attraction/R-2d91ff13b4b44effbe7e78a60470bcc7/independent/root_only_independent_checkpoint.md#3-一个更强非常紧的-root-only-候选)、[后续精确有限锥及终端基底](../workspaces/customer-attraction/R-65d0f88edf3849b39ca5eb79760e970b/credible_attack/root_regret/README.md)已保存；候选仍OPEN，有限阴性不是新关系。原断点是不同真实孩子的福利与根利润极值不能从一份正深度理性预算共同支付，不是缺少r=1的基底。
+
+该背景总覆盖接口的[恰两名剩余、三个比较主题版本](../workspaces/customer-attraction/R-07e7ddcae71544449ffaae7bdddcc1ab/research_1/two_remaining_three_comparison.md)另有自足个人层证明：四组真实菜单行以`(6S+Z+2V+5L)/11`共同付款，零背景256字面类型与全部正整数背景的解析尾部覆盖完整域。父方逐式阅读及作者实现复跑见[审查边界](../workspaces/customer-attraction/R-07e7ddcae71544449ffaae7bdddcc1ab/research_1/review_two_remaining_three_comparison.md)。它比较三个主题的并集与包含旧前缀的总覆盖，不是三主题背景利润定理，也不闭合五名剩余或六人；尚未完成全仓同结果查重及新颖性检查。
+
+完整策略锥攻击可复用[非极小可信续局接口](../current/customer_attraction/credible_continuations.md)：按目标终局选择安全菜单，再在各有序孩子独立递归，已有完整支持的解析证明及规范采样器 `tests/audits/cone_attack_credible_variants.py`。按计数缓存终局集合或默认极小回复，分别不等于强制匿名策略或枚举全部形式策略。重写同一恢复算法、重跑既有紧族或继续没有明确判别对象的阴性扫描，不增加数学证据。
 
 下一轮先选一个精确一般义务，再读取其原文、真实反例和审查；写明新增哪条信息、推进哪一步。失败时记录准确范围和可复用机制。不要再用旧证书重放、同义改写、增加目录或多人赞同替代一般研究进展。
