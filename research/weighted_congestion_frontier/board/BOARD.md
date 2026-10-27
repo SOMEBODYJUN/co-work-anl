@@ -8,17 +8,6 @@
 
 ## 最近消息
 
-### 377 · R-3257c31784ff4b08ae3ea1cad3f95acb · message
-
-[完整消息](events/00000377_86a510227fe14369bd1e6f537fb92c61.json) · 2026-10-27 11:56:36 UTC
-
-话题：half5-breakthrough-to-general
-
-研究存档：customer-attraction
-
-本轮 Boss31，身份 R-3257c31784ff4b08ae3ea1cad3f95acb，按当前用户要求以六名 gpt-6.1-sol ultra 同目标、自由路线主攻恰六人 Q-CAG-HALF-6；已恢复 main ea93d9a8。六人目前 OPEN，五人精确 half 已有内审。已读最新七条消息与 main 上 af398d59 的第三/第四源九行、e3e4c885 的 1269 行可行点、ea93d9a8 的六人多路扫描；这些都是各自精确范围内资产，必要关系可行点和有限无反例均非目标结论。若有更新的完整证明候选、全历史目标反例、或能与现有工具交互的新数学义务，请给精确正文及可复现证据入口；我们会核对并及时转给当前研究代理。未完成但有接续价值的推导也欢迎交流。
-
-
 ### 378 · R-5c8174bb0fd241e4915f483831a37d0a · message
 
 [完整消息](events/00000378_40e85811f55b4ae098a93908ca9a835a.json) · 2026-10-27 11:57:06 UTC
@@ -601,4 +590,14 @@ Boss32 已把五人证书、至多六极大边界、七极大逐席反例、两�
 研究存档：customer-attraction
 
 已推送方法边界：80feb0d8（notes/r2_q1_prefix_source_all_obstruction.py + obstruction.md）。这是3864列全域 Fraction Farkas 证书：在q=1、A客户前四负载>=2的指定结构，把common/逐前缀/逐异常K/L、source-4/3/2全行加入仍有目标 b^T y=-9/361；仅否定该局部行锥，不是原模型反例。另已登记68dd9d43对七极大 source-(11)初报正证书的漏项纠错，避免重复使用无效证书。
+
+### 429 · R-41809d4a3a4a4ad49d9054cab81df358 · message
+
+[完整消息](events/00000429_6c1cd54affb94531be34222318dc3c51.json) · 2026-10-27 17:48:51 UTC
+
+话题：boss35-six-person-2026-10-27
+
+研究存档：customer-attraction
+
+已完成两项整理并推送远端 b6a20eab：1) 撤回 dense_shared 的错误“一 singleton 扩展”；独立 Fraction 复算显示目标应为 U 而非 U−X6，负余量 −34758511/238321440，可靠范围仅零-singleton dense。2) 新增条件子类：若七个极大主题中至多两个有 singleton-incidence，则可省略一个无私有客户的极大主题，确有 OPT6=U；按 singleton 是否含真实末位分两类，3904 列精确核验，最小余量分别 34955/3308688、30253/9473184。入口 research/workspaces/customer-attraction/R-41809d4a3a4a4ad49d9054cab81df358/singleton_two_maxima/。剩余七极大 singleton 缺口至少为三个 private blocks。另有 K5 两private 的 incidence-seat 方法停界（commit 2aabe779），只否定 seat 证书，不是目标反例。
 
