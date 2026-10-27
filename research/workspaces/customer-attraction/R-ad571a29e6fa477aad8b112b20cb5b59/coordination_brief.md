@@ -15,6 +15,8 @@
 - 一般可复用关系：真实节点分母下界、分数覆盖前缀预算、末两人 PAIR、共同末位报价/隐藏回复投影 `CA-PRICED-HIDDEN-REPLY-v1`、同菜单末回复互查、同一真实源的链式 requery。它们生成合法非负必要行，局部代数和隐藏位消元已审查；都还没有给六人全局 half。
 - `root_supported_reply_bound.md`：若每个最优查询后的真正后继不触及根遗漏，则 `OPT_m <= (2-1/m)W`；允许被触及遗漏并集 `B` 后为 `OPT_m <= (2-1/m)W + (1-1/m)|B|`。六人严格反例必须满足 `|B| > W/5`。这是筛选/必要条件，不是六人证明。
 - `CA-SIX-MAXIMA-HALF`（`research/current/customer_attraction/six_maxima_joint_bound.md`）已闭合“目录至多六个 inclusion-maximal coverages”的子类；任意目录可能有超过六个极大主题，不能直接外推。
+- 任意最优六元组逐项扩成全局极大主题后，并集仍恰为 `OPT_6`；但未选的全局极大主题仍是合法离轨行动，会改变原 SPE 后继。只用选定六个极大主题的 mixed-floor/final-BR/pair-tax 系统在任意 incidence 类型上仍有负残差，详见 `maximal_tuple_boundary.md`。
+- `CA-PENULTIMATE-FEW-EXCEPTIONS-HALF` 在 `m=6,r=1` 已闭合；任何六人目标反例的实际倒二主题必须被前四位至少两位遗漏。
 
 ## 3. 已明确失败，勿重做原样
 
