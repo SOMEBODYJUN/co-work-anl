@@ -24,7 +24,7 @@ q_{j,k}\le \frac{|B_j|}{p_j+k}\le U_{j,k}:=\frac K{p_j+k},
 \sum_{\ell=1}^{N}q_\ell
 \le \sum_{h\in H_{\max}}U_h +(N-r+1)\xi,
 \]
-其中 `H_max` 是 `r−1` 个最大上界的席位索引。于是有合法行
+其中 `H_max` 是 `r−1` 个最大上界的席位索引。若统一取 `U_{j,k}=K/(p_j+k)`，其排序只由整数前缀 `p` 决定，故该索引可在 LP 外预先固定；若改用 `|B_j|/(p_j+k)`，排序依赖客户重数，必须保留相应的分段/析取结构。于是有合法行
 \[
  u\ge \xi\ge \frac{\sum_\ell q_\ell-\sum_{h\in H_{\max}}U_h}{N-r+1}.\tag{ASR}
 \]
