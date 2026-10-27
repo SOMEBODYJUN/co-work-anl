@@ -1,5 +1,12 @@
 # 同覆盖动作商策略的父方审查
 
+**来源去重（本轮后续细读）：** 本文重构的完整结论及两方向构造，已由
+`B10-DUPLICATE-COVERAGE-QUOTIENT-v1`给出。唯一先有正文是
+`research/workspaces/customer-attraction/R-84ce8a8709e34ea6af94f99991d3c2e3/duplicate_quotient/duplicate_coverage_quotient.md`，
+提交`f702b55a`；该正文已有独立盲重构与实现回归。
+因此本轮只新增独立复核/另一实现的压力测试，**不认领新数学定理**。
+原稿与下文保留是为了审查可复现性，引用数学陈述优先回先有正文。
+
 对象：`research_4/duplicate_action_quotient.md`、`duplicate_action_quotient.py`。
 结论：依历史 lift 的解析构造成立；不需区别客户或固定代表。
 这是内部数学审查与作者测试重放，不是独立完整测试实现、外审或新颖性认证。

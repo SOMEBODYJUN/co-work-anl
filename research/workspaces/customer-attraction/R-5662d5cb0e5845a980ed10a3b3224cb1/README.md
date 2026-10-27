@@ -24,8 +24,8 @@
 - [第四复制最大根条件](research_1/fourcopy_root.md)：旧合法根机制的新增支持线，
   `350u_1≤59K`足以half；65536型精确阈值证书在同子目录，
   [父方重放](fourcopy_threshold_replay.json)仅复跑原独立核验器，不另称一套实现。
-- [同覆盖动作商编译](research_4/duplicate_action_quotient.md)：
-  依历史lift保持完整SPE根覆盖/收益/OPT，解决标签锥优化的模型合法性；
+- [既有同覆盖动作商定理](../R-84ce8a8709e34ea6af94f99991d3c2e3/duplicate_quotient/duplicate_coverage_quotient.md)：
+  依历史lift保持完整SPE根覆盖/收益/OPT；本轮[复核与新实现](research_4/duplicate_action_quotient.md)不算新数学；
   [父方解析审查](review_action_quotient.md)和[测试重放](action_quotient_replay.json)。
 - [同源后继平均运输](research_3/stationary_successor_transfer.md)：
   任意尾长平稳核的粗带符号支付；[父方审查](review_stationary_transfer.md)、

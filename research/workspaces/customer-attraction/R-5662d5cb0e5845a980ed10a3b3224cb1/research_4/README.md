@@ -1,10 +1,10 @@
 # research_4：同覆盖标签的完整 SPE 商编译
 
-本分支没有证明 Q-CAG-HALF-6，也没有严格目标反例。可复用实质成果是同覆盖标签商编译引理：任意带重复覆盖标签的完整历史纯 SPE，能用依历史选择代表的 lift 编译到真正不同覆盖集合的目录，并保持根覆盖序列、每位收益和 OPT_m。
+本分支没有证明 Q-CAG-HALF-6，也没有严格目标反例。同覆盖标签商编译是旧定理 `B10-DUPLICATE-COVERAGE-QUOTIENT-v1` 的独立重构、新实现及压力测试；原正文为 `R-84ce8a8709e34ea6af94f99991d3c2e3/duplicate_quotient/duplicate_coverage_quotient.md`，本轮不认领新数学。其内容是：任意带重复覆盖标签的完整历史纯 SPE，能用依历史选择代表的 lift 编译到真正不同覆盖集合的目录，并保持根覆盖序列、每位收益和 OPT_m。
 
 | 文件 | 准确用途与状态 |
 | --- | --- |
-| `duplicate_action_quotient.md` | 自足一般证明；作者层，父方独立审查另记。并非六人 half 证明。 |
+| `duplicate_action_quotient.md` | 旧定理的自足独立重构；父方解析审查另记。并非六人 half 证明。 |
 | `duplicate_action_quotient.py` | 完整商策略及历史 lift 的构造实现；重写客户类型不改变单位客户。 |
 | `test_duplicate_action_quotient.py` | 定义级 Fraction 测试；不调用仓库 solver。 |
 | `duplicate_action_quotient_test_report.json` | 64 个两人实例、5184 份完整策略中 856 份 SPE，200 个三人完整 BI 策略，以及一个六人完整规模回归，全部编译核验通过。 |

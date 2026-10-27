@@ -76,4 +76,10 @@ W\ge |O|\left[1-\prod_{r=1}^m\left(1-\frac1{r\tau}\right)\right].
 
 完整策略锥攻击可复用[非极小可信续局接口](../current/customer_attraction/credible_continuations.md)：按目标终局选择安全菜单，再在各有序孩子独立递归，已有完整支持的解析证明及规范采样器 `tests/audits/cone_attack_credible_variants.py`。按计数缓存终局集合或默认极小回复，分别不等于强制匿名策略或枚举全部形式策略。重写同一恢复算法、重跑既有紧族或继续没有明确判别对象的阴性扫描，不增加数学证据。
 
+另两项容易被重新提出的既有表示应直接恢复：[同覆盖标签的全历史商定理](../workspaces/customer-attraction/R-84ce8a8709e34ea6af94f99991d3c2e3/duplicate_quotient/duplicate_coverage_quotient.md)（`B10-DUPLICATE-COVERAGE-QUOTIENT-v1`）用依历史lift保持SPE根覆盖序列/收益/OPT；[0/1信号统一可信重置](../workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/next_general/normal_form/reset_normal_form.md)在零信号历史保原整树，一信号按(count,action)重置最小可信尾。它们不是新福利支付，也不将原策略变成匿名策略。本轮另一实现和独立复核不另认新数学；真正未付的是规范化列之间的共同利润/覆盖预算。
+
+六人的“实际最多两个覆盖主题”也已是旧结构结果的推论，不能重开成新目标：[末位频次筛选](../workspaces/customer-attraction/R-31bbb6cfd6594bc8bb076db7b2950993/credible_search/two_theme_terminal.md)在末位频次l≥2、k+l=6时全部满足`l(2k+1)≥k²−1`；l=1则是其重复首主题情形。另有[末两位不同的任意人数定理](../workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/terminal_pair/two_support_end_ab.md)。目录仍可任意大，条件只约束真实在轨支持，不是把目录删成两主题。
+
+七极大六人还有可恢复的[dense系数证书](../workspaces/customer-attraction/R-d54cef1094414cc6a98575e671bd060e/dense_shared_seven_n6/dense_shared_seven_n6.md)：**每个可覆盖客户至少属于两个极大主题**时，3840列有理核验支持U≤2W。该原稿声称的“唯一singleton块”扩展存在未消除的致命范围异议，不能一并调用：正确静态最优是`OPT_6=U−min_j|X_{j}|`，原脚本却按遗漏唯一正私有块计目标。[范围审查及八客户覆盖等式反证](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/review_dense_seven_scope.md)明确只否该扩展的证明，不否扩展真值或六人目标。
+
 下一轮先选一个精确一般义务，再读取其原文、真实反例和审查；写明新增哪条信息、推进哪一步。失败时记录准确范围和可复用机制。不要再用旧证书重放、同义改写、增加目录或多人赞同替代一般研究进展。

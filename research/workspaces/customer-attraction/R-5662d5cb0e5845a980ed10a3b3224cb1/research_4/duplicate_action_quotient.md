@@ -1,6 +1,8 @@
 # 同覆盖标签的依历史商策略：完整 SPE 保持引理
 
-**状态：自足解析证明、完整有限测试；作者层，父方独立审查进行中。**
+**状态：既有定理的独立重构、新实现与压力测试。** 原唯一正文为
+`R-84ce8a8709e34ea6af94f99991d3c2e3/duplicate_quotient/duplicate_coverage_quotient.md`，
+Claim `B10-DUPLICATE-COVERAGE-QUOTIENT-v1`（提交 `f702b55a`）。本轮没有新增这个数学结论；父方重构审查与本轮实现测试已通过，准确记录见父方 `review_action_quotient.md`。
 
 本引理不证明 Q-CAG-HALF-6，也不提供目标反例。它解决固定标签策略锥搜索中的一个模型合法性问题：浮点或有理 LP 的正客户支撑可能使两个标签覆盖完全相同，而目标目录是集合 `S⊆2^N`，不允许把相同子集作为两个不同目录动作。
 
