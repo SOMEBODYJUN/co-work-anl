@@ -21,6 +21,19 @@
   [父方审查](review_threefold.md)和[独立核验](audit_threefold.py)、
   [输出](audit_threefold.json)给出3528个含重叠类型的重构。
   与固定两早期主题包含A互不蕴含，未闭合无条件六人。
+- [第四复制最大根条件](research_1/fourcopy_root.md)：旧合法根机制的新增支持线，
+  `350u_1≤59K`足以half；65536型精确阈值证书在同子目录，
+  [父方重放](fourcopy_threshold_replay.json)仅复跑原独立核验器，不另称一套实现。
+- [同覆盖动作商编译](research_4/duplicate_action_quotient.md)：
+  依历史lift保持完整SPE根覆盖/收益/OPT，解决标签锥优化的模型合法性；
+  [父方解析审查](review_action_quotient.md)和[测试重放](action_quotient_replay.json)。
+- [同源后继平均运输](research_3/stationary_successor_transfer.md)：
+  任意尾长平稳核的粗带符号支付；[父方审查](review_stationary_transfer.md)、
+  [复跑](stationary_transfer_replay.json)。没有支付实际跨分支总预算。
+- [势与真实末两人菜单的精确停界](research_6/potential_menu_joint.md)：
+  物化有限单位客户目录、通过全部十八标签六槽势比较及指定末两IC，
+  却有明确倒二盈利偏离；[父方原审计重放](potential_menu_replay.json)。
+  这不是SPE，更不是主目标反例。
 - `research_1/` 至 `research_6/`：内部代理按自身需要保存可接续资产；
   候选、证明、浮点诊断和精确障碍分别标明，不以目录存在表示有成果。
 
