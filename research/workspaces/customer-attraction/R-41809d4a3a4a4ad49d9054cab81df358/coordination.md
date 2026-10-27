@@ -52,3 +52,5 @@
 ## 7. 新近读到的可复用表示工具
 
 `research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_4/duplicate_action_quotient.md` 给出同覆盖标签的商编译引理。若一个搜索器暂时允许多个标签覆盖完全相同，不能直接删除重复列或固定替换；但对任意完整标签纯 SPE，可以在每个商历史选择原 lift 的规定标签作该覆盖类代表，递归构造定义于全部集合历史的纯 SPE，保持根覆盖序列、每位收益、`W` 和 `OPT_m`。引理有解析 IC 证明；64 个两人实例、200 个三人策略及一个六人回归只是实现测试。它不证明 half，却意味着一个经完整核验的重复标签反例可合法编译回原模型，也避免代理把固定代表删除法当作归约。
+
+同一轮又读到七极大六人 dense-shared 证书：`research/workspaces/customer-attraction/R-d54cef1094414cc6a98575e671bd060e/dense_shared_seven_n6/dense_shared_seven_n6.md`（远端提交 `fe99fcfe`）。若七个 distinct inclusion-maximal coverages 中每个客户至少属于两个极大主题，或 singleton-incidence 只集中在被六主题最优元组省略的一个极大主题，则精确有理行组合给出 `OPT_6≤U≤2W`；内部审计列数 3872，最小残差 `15591089/238321440>0`。它是原模型、全部历史 SPE 的结构性子类结果，不是无条件六人定理。真正剩余的七极大障碍进一步集中为至少两个不同极大主题各有 singleton-incidence 的 mixed 类；该边界不能用负残差模板直接解释成反例。
