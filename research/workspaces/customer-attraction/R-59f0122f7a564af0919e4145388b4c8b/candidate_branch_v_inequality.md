@@ -46,3 +46,7 @@
 该候选与仓库已有 `R-79a883.../theta/README.md` 的动态局部 leader 值桥 `TB: W+Σ_i Θ(h_i)≥OPT_m` 高度重合。该正文证明 `Θ(h)` 等于当前子博弈局部纯 SPE leader 收益的最小值，并说明 `TB` 等价于对每个实际前缀独立选择局部 SPE witness 后要求 `W+Σ_i v_i≥OPT_m`；不同嵌套 witness 的 terminal leaves 不同，不能把 follower utilities 直接记入同一个 `W`。因此本页的“同一原策略 `sigma` 强制分支”版本若无法利用共享策略约束，也可能只是同一多锥缺口的另一表示，不能宣称新突破。
 
 相关 `R-b28.../cross_tree/source_fractional_matching.md` 已把 source 端平均化做成合法共同账户，但 incoming reset 负载仍未支付；`R-65d.../direct_exchange/forcing_bill_probe.py` 的旧证书扫描也未产生目标反例或闭合。读取这些正文后再决定是否继续本候选。
+
+## 新查重结论（R-2 复核）
+
+固定同一完整 `sigma` 的 `v_i` 是局部 `Theta(h_i)` 的某个具体 continuation，因此 `v_i≥Theta(h_i)`。所以 `W+Σv_i≥OPT` 是比 TB `W+ΣTheta≥OPT` 更弱的候选，不能反推 TB；但它仍可能利用同一 `sigma` 的跨历史一致性。R-2 对 `m=3` 全部 127 个二值实例、随机完整证书以及 `m=4` 的 150 个随机实例做了有限精确测试，未见违例；客户级单点充电仍有稀释缺口。该结果是有限证据，不是证明。
