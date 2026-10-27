@@ -11,6 +11,8 @@
 
 - [1269行联合精确停界](astra/promotion_joint_atoms_exact.json)与[父方复核](parent/audit_joint_promotion.json)：加入全部88条promotion原始行后仍有共同会员分布，W≈0.49632002347<1/2。旧1143行复用冻结生成器，新增88行由父方独立实现；点不是SPE。
 
+- [跨实际第三/第四位的九行通式](astra/third_cross_source.md)及[父方独立审计](parent/audit_third_cross_source.json)：任意余r>=4人，完整保留第一后继、中间负载和末两人；六人中的固定行严格排除1269点。尚未证明新联合系统足以half。
+
 准确当前义务与下一研究方向在[前沿](parent/FRONTIER.md)。单行切旧点不代表剩余锥过二；本轮没有全类型half证书。
 
 ## 当前前沿
