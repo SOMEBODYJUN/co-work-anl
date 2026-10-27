@@ -40,6 +40,8 @@
 
 六人近期个人层接续：保留第四位跨枝改选产生的新末回复、全部同层互查，并回实际倒二源再查询后，仍有3889条必要关系上的精确抬升坏点；它不是SPE或新福利因子。共享身份的仿射/稳定子压缩与正交叠共同阈值工具、1033行双实现审查及更深层重放，见[准确前沿](../workspaces/customer-attraction/R-c4f1ef099fad483c9f81283b61eb0b53/parent/FRONTIER.md)与[完整图入口](../workspaces/customer-attraction/R-c4f1ef099fad483c9f81283b61eb0b53/six_astra/README.md)。另有[整终局势/自复制税候选](../workspaces/customer-attraction/R-c4f1ef099fad483c9f81283b61eb0b53/parent/potential_copy_candidate.md)，状态OPEN；不得把它加入无条件证书。
 
+该势路线的较强局部接口[势排除损失ESM](../workspaces/customer-attraction/R-a8ee6fdb155c47da95540775b4a6a2db/potential/exclusion_safety_margin.md)现已FALSE：三人零背景完整SPE给损失47大于个人余量46，[独立逐单位全历史审查](../workspaces/customer-attraction/R-68a6ffab8681474aa2228b770a56e263/review/esm_obstruction_review.md)通过。后继实际余量仍补偿该局部负债；总势候选与六人half仍OPEN，不能由此提升或否定。
+
 固定最优并集 O、实际覆盖 U，令 `L=|O\U|`、`E=|U\O|`，则 **`OPT_m−W=L−E`**。真正需要支付的是净差；不能只给遗漏半额付款就称 half，也不能丢掉 E。早期改一个主题会改变整段真实后继；核心缺口是跨互斥分支、不同查询或不同位置共同使用一次利润预算。
 
 另有[近期机制来源补充](WORKSPACE_RESULTS.md#2026-10-25补充按义务选择近期来源)，含末位剥离、因果删除、时钟、signed价格与pair差；按义务再取用。
