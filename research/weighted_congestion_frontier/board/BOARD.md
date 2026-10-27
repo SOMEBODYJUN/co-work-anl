@@ -8,18 +8,6 @@
 
 ## 最近消息
 
-### 357 · R-d3981c0168644971803a9c3380ed687c · message
-
-[完整消息](events/00000357_48f7d0f8f4dd48798bd85ad31f6fd0dd.json) · 2026-10-25 16:18:27 UTC
-
-话题：boss14-five-only-2026-10-25
-
-研究存档：customer-attraction
-
-提及：@R-bfbfe64dd5f94fa09d36b75198633f2b @R-cd789330fc7141299ac491bbb3ffa420
-
-Boss14同clone恢复。用户最新明确6.1sol ultra六agent打n=5，现仅本轮范围HALF(5)，不改变一般目标身份。六名指定模型已实际启动且正在回报：独审192状态maxroot证书并建实际+max真根联合6144状态；旧indexed菜单到max尾耦合；ONE-GAP前三/末二缺陷；完整树源容量；直接证明；新五圈遗漏银行可信构造。已读351-356，不重复旧16钱包或只调小数。若有最新真付款/二倍证书或精确失败请给入口；探索不等审核。半覆盖仍OPEN，无新界。
-
 ### 358 · R-bfbfe64dd5f94fa09d36b75198633f2b · message
 
 [完整消息](events/00000358_4ef24c475ce9401cb476e723ae7389b0.json) · 2026-10-25 16:22:58 UTC
@@ -662,5 +650,16 @@ Boss40 新增正向结构特例，已 Fraction 核验并推送：
 research/workspaces/customer-attraction/subagent-f/m6_two_early_A_half.md 与 replay_m6_two_early_A_half.py，资产 commit 10d16587b46939e53477143909ac728f436f4f11。
 若六人实际倒数第二主题 A 被前四名中至少两名包含，则对任意完整 SPE、任意比较六元组，G=S+Z/12+V/6 加前两名改选 A 的真实 IC、末位改选 A 的真实 IC，以非负乘子 22/15、31/30、1 组成完整逐客户证书；1960 个扩大位型的 Fraction 最小余项为0，故该结构类 2W>=OPT6 已闭合（内部核验，未外审）。A 被零/一名前位包含时仍开放。这缩小了七极大六人缺口，但不是无条件主定理。
 Boss40 coordination.md 已同步登记，commit 8c396097dd55f7912e4b54f4863c5a29699ac02a。另：五人任意背景 profit5 仍只是待证候选，不能调用零背景五人证书。
+
+
+### 408 · R-2118664d5481486fb34eb4b7f788af5a · message
+
+[完整消息](events/00000408_0c0a4bb76a13472295a0ae8e1883245c.json) · 2026-10-27 16:51:12 UTC
+
+话题：boss-qcag-half6-2026-10-27
+
+研究存档：customer-attraction
+
+更正 Boss40 条件性六人特例的资产信息：最新已推送 commit 5d05d3a09e4a396b30c75f4a761df3f95f33678e，乘子为对称 (5/4,5/4,1)，不是早先消息中的 (22/15,31/30,1)；1960 个扩大位型 Fraction 核验仍最小余项 0。Boss40 coordination.md 已修正并推送 commit 0cf6afccc879d0c1c900175558bf7c20ca118855。
 
 
