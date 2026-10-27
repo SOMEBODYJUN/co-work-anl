@@ -1,10 +1,10 @@
 # Seven maximal coverages, six providers: dense incidence half certificate
 
-**Status:** exact finite coefficient certificate for a structural sub-class; internal artifact, not a proof of unrestricted Q-CAG-HALF-6. It proves the missing `s=7,n=6` case when every coverable customer belongs to at least two distinct maximal coverages. The singleton incidence case remains open.
+**Status:** exact finite coefficient certificate for a structural sub-class; internal artifact, not a proof of unrestricted Q-CAG-HALF-6. It proves the missing `s=7,n=6` case whenever singleton incidence is concentrated in at most one maximal coverage (in particular, when every coverable customer belongs to at least two distinct maximal coverages). The mixed case with singleton customers in two or more maxima remains open.
 
 ## Statement
 
-Let `B_0,...,B_6` be the distinct inclusion-maximal coverages of a finite common catalog and let `U=|union_j B_j|`. Assume every customer in `U` belongs to at least two of these maxima. For every complete ordered-history pure SPE with six providers, `U<=2W`; therefore `OPT_6<=2W`.
+Let `B_0,...,B_6` be the distinct inclusion-maximal coverages of a finite common catalog and let `U=|union_j B_j|`. Assume that at most one maximal coverage, say `B_6`, has any singleton-incidence customers (customers belonging to no other maximal coverage). For every complete ordered-history pure SPE with six providers, `OPT_6<=2W`. If `B_6` has no singleton customers this strengthens to `U<=2W`; in the general one-singleton case, `OPT_6=U-|X_{\{6\}}|` and the same certificate proves the claim.
 
 This is the same model and all-history quantifier as `Q-CAG-HALF-6`. Internal subthemes, repeated actions, empty actions, and history-dependent ties remain allowed. The proof uses only genuine full-history SPE inequalities, so no static NE identification or anonymous tie rule is introduced.
 
@@ -14,7 +14,7 @@ Relabel the actual final maximal action as `B_0`. For a customer, let `I` be its
 
 `1_{5 in J}=1_{0 in I}`.
 
-The dense hypothesis is `|I|>=2`; earlier memberships are otherwise unrestricted. For `n=6,s=7`, the shared part of the mixed floor is
+For the dense columns `|I|>=2`; the only permitted singleton columns are `I={6}`, the one maximal coverage omitted from the six-theme optimum. Earlier memberships are otherwise unrestricted. For `n=6,s=7`, the shared part of the mixed floor is
 
 `B=(1/21, 2/37, 1/16, 2/27, 1/11, 7/72)`.
 
@@ -46,7 +46,7 @@ Use the following nonnegative multipliers:
 
 ## Residual identity and exact audit
 
-For each customer column `(I,J)`, the coefficient in `W-U/2` is `1_{J != empty}-1/2`. Subtracting the displayed nonnegative row combination leaves a residual `r(I,J)`. The exact audit enumerates all `120` incidence sets with `|I|>=2` and all `32` earlier-membership masks, hence `3840` literal columns. It verifies every residual is nonnegative and obtains
+For each customer column `(I,J)`, the coefficient in `W-U/2` is `1_{J != empty}-1/2`. Subtracting the displayed nonnegative row combination leaves a residual `r(I,J)`. The exact audit enumerates all `120` incidence sets with `|I|>=2`, plus the allowed singleton `I={6}`, across all `32` earlier-membership masks. The unrestricted dense subcase has `3840` columns; the one-singleton extension has `3872` columns and the same minimum. It verifies every residual is nonnegative and obtains
 
 `min r = 15591089/238321440 > 0`,
 
@@ -66,4 +66,4 @@ Expected output is `columns=3840`, `minimum=15591089/238321440`.
 
 ## Boundary
 
-This certificate does not cover singleton incidence types `I={j}`. It cannot simply be combined with the unrestricted target `OPT_6=U-min_j w_{\{j\}}`: the same rows have negative residuals on some singleton columns. The unresolved seven-maxima six-provider obstruction is therefore concentrated in mixed singleton/dense incidence and in finding a cross-type payment that uses the smallest omitted private block. A negative residual here is a certificate-template boundary, not a Q-CAG-HALF-6 counterexample.
+This certificate does not cover singleton incidence types on two or more different maxima. It cannot simply be combined with the unrestricted target `OPT_6=U-min_j w_{\{j\}}`: the same rows have negative residuals on singleton columns whose maxima are not omitted. The unresolved seven-maxima six-provider obstruction is therefore concentrated in mixed singleton/dense incidence with at least two nonzero private blocks, and in finding a cross-type payment that uses the smallest omitted private block. A negative residual here is a certificate-template boundary, not a Q-CAG-HALF-6 counterexample.
