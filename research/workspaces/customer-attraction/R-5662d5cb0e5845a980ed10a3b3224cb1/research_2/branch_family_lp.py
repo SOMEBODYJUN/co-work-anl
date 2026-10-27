@@ -29,6 +29,9 @@ def base_rows(act,d,ell):
         for j,t in enumerate(act):
             names.append(f'floor:{i+1}:{j+1}');vals.append(u[i]-F(t,denom))
         names.append(f'optfloor:{i+1}');vals.append(n*u[i]-F(d,denom))
+        names.append(f'Kfloor:{i+1}');vals.append(n*u[i])
+    for j,t in enumerate(act):
+        names.append(f'CAP:{j+1}');vals.append(-F(t))
     return names,vals
 
 def branch_rows(act,source,hidden,d,ell):
@@ -41,6 +44,8 @@ def branch_rows(act,source,hidden,d,ell):
         denom=n-i+sum(act[:i])
         for j,t in enumerate(hidden):
             names.append(f'actual:{i+1}:hidden:{j+1}');vals.append(au[i]-F(t,denom))
+    for j,t in enumerate(hidden):
+        names.append(f'CAP:hidden:{j+1}');vals.append(-F(t))
     for k in range(1,len(branch)):
         denom=n-source-k+pre+sum(branch[:k])
         for j,t in enumerate(labels):
@@ -73,6 +78,14 @@ def solve(n=6,sources=None):
                 for ell in (0,n):
                     _,vals=branch_rows(act,s,hidden,d,ell)
                     add([(off[s]+j,v) for j,v in enumerate(vals)]+[(toff[s]+ci,-1)],0)
+    kvals=[]
+    for j,name in enumerate(base_names):
+        if name.startswith('Kfloor:'):kvals.append((j,-1))
+        if name.startswith('CAP:'):kvals.append((j,1))
+    for s in sources:
+        for j,name in enumerate(branch_names[s]):
+            if name.startswith('CAP:'):kvals.append((off[s]+j,1))
+    add(kvals,0)
     mat=coo_matrix((vv,(rr,cc)),shape=(len(rhs),nv)).tocsc()
     obj=np.zeros(nv);obj[beta]=1
     bounds=[(0,None)]*toff[sources[0]]+[(None,None)]*(nv-toff[sources[0]]-1)+[(0,None)]
