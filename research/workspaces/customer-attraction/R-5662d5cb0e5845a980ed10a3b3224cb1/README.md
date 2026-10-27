@@ -20,6 +20,9 @@
   最小可信尾、旧比例中继反例及精确修复器，避免重新包装既有OPEN接口。
 - [incidence参数范围比较](review_incidence_tau_comparison.md)：同期149/50的half类
   已含于现行7/2条件；保留不同的带core定量结论，不把冗余说成反证。
+- [六人分数覆盖21/5条件定理](research_6/fractional_cover_pair_half.md)：九条合法真实行的
+  共同有理证书，扩大旧分数覆盖条件；[父方独立审查](review_fractional_pair_half.md)
+  与[独立128类型重构](audit_fractional_pair_half.py)保留完整模型，未闭合tau≤6。
 - [独立系数审计](audit_containment.py)及[本轮输出](audit_containment.json)：
   从三个原始菜单行重构两早期包含特例的全部可行重叠类型，复算遗漏重数常数。
   这是既有条件定理的复核，不认领新定理或外审。
