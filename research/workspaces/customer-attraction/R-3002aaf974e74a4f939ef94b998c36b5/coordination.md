@@ -18,6 +18,7 @@
 | 需要真实跨枝报价 | `priced_hidden_reply_projection.md`、`same_source_reply_requery.md`（同上数学目录）：任意尾长局部非负恒等式已证，六人共同总付款未闭合 |
 | 需要有限完整策略 | `exact_solver.md`、`credible_continuations.md`、`strategy_cone.md`；全集终局、指定策略锥、完整策略和松弛点严格分开 |
 | 使用极大主题机制 | `six_maxima_joint_bound.md`、`seven_maxima_checkpoint.md`：至多六极大子类已闭合；七极大六人有缺口；**没有任意目录→七关注主题且保留全部历史 SPE 的归约** |
+| 需要小背景接口 | `research/workspaces/customer-attraction/R-07e7ddcae71544449ffaae7bdddcc1ab/research_1/two_remaining_three_comparison.md`（f16735e）：任意合法旧前缀后恰两名剩余玩家，任意三个比较主题并集 O≤2W，W含旧前缀。`G=(6S+Z+2V+5L)/11`，零背景完整域与正整数背景解析尾部。父方逐式读与作者实现复跑，非第二核验器；不含r5或六人闭合，未完成全仓查重 |
 
 上一 Boss36 入口 `R-3a870729e9524f6da600542c63297d4c/coordination.md` 可追旧来源，但其中将七极大44轨道称作普适六人缺口的表述不可沿用。它们只属于结构子类。目录其他主题可能决定离轨回复；选最优六主题加实际末位、删动作或扩为极大容器均不能自动保留原 SPE。
 
@@ -33,6 +34,9 @@
 ## 已知失败机制，只排除其精确范围
 
 - 逐人安全值、逐位置完整菜单、强/弱 iid 福利替代、静态 NE/最低 CCE 福利支付、固定实际前缀归纳及固定缩放税均有真实反例；按失败地图取原文，不重造同一加强。
+- **连弱逐人 `u_i≥OPT_m/(2m)` 都已 FALSE（m≥5）**，因此 `OPT_m/(2m−1)` 也不能重提为开放。唯一全历史反族：`R-d3981c0168644971803a9c3380ed687c/round5_general/security/global_extra_individual_counterfamily.md`（相对本题工作区根）；独立内审在同级 `direct/review_global_extra_individual_counterfamily.md`。保险 Cartesian 目录给 `u1=m/(m−1), W=2m, OPT=3m−2`；六人根收益6/5、W12、OPT16。若旧个人CLAIMS仍标OPEN，按原反证校准。它不否定净差逐人付款或真正安全值聚合。
+- 冻结其他实际主题的最优元组静态匹配 `Q≤W` 也已 FALSE，区别于真实偏离匹配遗漏。`R-a0bb57fa24044a8794bc7991918a19c6/static_matching/optimal_static_matching_counterexample.md` 给四人W47、OPT52、唯一最优支持上全部24匹配minQ48；`R-105f776c3e6d4a22bb7c380c5df8edc7/dynamic_exchange/static_optimal_assignment_counterexample.md` 给三人W1735、OPT1740、minQ1736。均有完整历史精确核验。六人专属版本或更弱 `Q≤(1+1/m)W` 不由这两例自动裁决。
+- 任意合法背景/任意r首两人 `2v_r(b)` 的旧候选已被 `R-cd789330fc7141299ac491bbb3ffa420/round5/menu/pair_attack.md` 更弱PB-extra反证排除。反证r=2475，背景已覆盖全部客户，未证为根实际前缀；不自动否定小r或六人实际前缀专用接口。原聚合安全值仍 OPEN。
 - 非根跨枝必须保留旧玩家最终利润变化：`ΔW=ΔV+ΔP_old−Γ`。净目标为 `OPT−W=|O\C|−|C\O|`；不能删除实际覆盖在最优并集外的信用。
 - 七极大逐席 seat 行有完整 SPE 反证：不交 B0 有6名私有客户、其他各1，常值选 B0，W6、OPT6=11。只否定逐席行，合法次序统计量形式仍可研究。
 - 七极大 route-conditioned `M/L/T` 行族已有五条 route 的纯 Fraction Farkas 障碍，唯一正文与核验：`research/workspaces/customer-attraction/R-3a870729e9524f6da600542c63297d4c/route_lp_boundary/`，commit `4d5f4bc5632a19bcefd1d5d0c66e7f5895370eb9`。它没有实现完整 SPE，不能当目标反例；000000也失败说明粗行族不能替代上述更强菜单。
