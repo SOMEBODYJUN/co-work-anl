@@ -105,6 +105,12 @@ actual第4位强制实际末主题B的真枝，及actual第2/3/4位同类真枝�
   一般下界W≥c+(U-c)Σ_{r=1}^6[6+(tau_inc-1)r]^{-1}；端点系数
   1006430343355/2012347307572>1/2，而tau=3代入只有2509/5040。
   这是目录结构条件，不是选择最优六主题后自动成立的参数。
+  **范围去重：** research_6随后指出、父方重读现行
+  `research/current/customer_attraction/fractional_cover_path_budget.md`确认，
+  此tau_inc正是整个并集U的普通分数覆盖数tau_U。既有乘积预算取C=U、tau_U≤7/2，
+  已包含≤149/50的half子类；现行§5还证明无core乘积界不弱于同一求和界。
+  因而149/50只相对原候选8/3提高阈值，不能记作相对仓库现行half范围的新拓展。
+  带core的加法定量式是不同结论，尚未在此断言被该无core乘积式包含。
 - 同作者`notes/r2_q1_prefix_source_obstruction.md`及`r2_q1_prefix_source_all_obstruction.py`：
   固定一早期主题包含A、A客户前四负载至少二的指定局部锥，即使加入前缀安全价、逐异常K、
   source-4/3/2既有行，仍有精确七列Farkas证书、目标-9/361。
