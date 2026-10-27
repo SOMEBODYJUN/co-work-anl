@@ -12,3 +12,7 @@
 - `evidence/certificates/customer_attraction/seven_maxima_partial_checkpoint.tar.gz` 中 `scan_n6_seat.json` 给出 877 orbit、45 failures（其中 1 条 rounding failure；44 个真正未证）。
 
 因此本核对的结论是：six-maxima 定理不能直接解决 Q-CAG-HALF-6；当前仍需独立七极大 n6 完成、一般跨目录付款证明，或严格原模型反例。
+
+## Seat-row obstruction (exact)
+
+The attempted n=6 seven-maxima LP used rows named `seat(t,j,k)`. Their implementation has, for a singleton incidence I={j}, coefficient `1/(h+k)` for every k=1,…,n−t. That is not a valid individual SPE lower bound. An exact counterinstance is seven private maxima with multiplicities `(6,1,1,1,1,1,1)` and n=6. The complete history-dependent certificate in `seat_row_counterexample_certificate.json` has terminal `(6,0,0,0,0,0,0)` and passes `verify_certificate` on all 19,608 ordered decision histories (117,648 deviations). Along the root path all six choose B0. For the six B0-private customers, each actual per-customer share is 1/6, whereas `seat(0,0,1)` charges 1; the aggregate row would demand u_0≥6, while actual u_0=1. Hence any LP feasibility obtained by adding all seat rows is not a valid SPE certificate. The valid mechanism only guarantees an order-statistic/r-th-seat statement after selecting an appropriate seat, not every k-row simultaneously.
