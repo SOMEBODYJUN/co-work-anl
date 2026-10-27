@@ -33,6 +33,7 @@ class Cone:
         self.opt=(self.bits[:min(m,k)].sum(axis=0)>0).astype(float)
         self.distinct_rows=-np.array([self.bits[i]!=self.bits[j] for i,j in combinations(range(k),2)],float)
         self.distinct_epsilon=0.
+        self.variable_bounds=[(0,None)]*((1<<k)-1)
         self.states=[q for lv in self.levels[:-1] for q in lv]
         self.sidx={q:i for i,q in enumerate(self.states)}
         self.children={q:[q[:j]+(q[j]+1,)+q[j+1:] for j in range(k)] for q in self.states}
@@ -69,7 +70,7 @@ class Cone:
         if minvalue is not None:
             rows.append(-self.opt);rhs=np.append(rhs,-minvalue)
         ans=linprog(-self.opt if side is None else -side,A_ub=csr_matrix(np.array(rows)),b_ub=rhs,
-                    A_eq=self.cover[root:root+1],b_eq=[1.],bounds=(0,None),method='highs')
+                    A_eq=self.cover[root:root+1],b_eq=[1.],bounds=self.variable_bounds,method='highs')
         return ans,root
 
     def constant_policy(self,a=0):
@@ -140,7 +141,7 @@ class OrderedCone(Cone):
         if minvalue is not None:
             A=np.vstack([A,-self.opt]);rhs=np.append(rhs,-minvalue)
         ans=linprog(-self.opt if side is None else -side,A_ub=csr_matrix(A),b_ub=rhs,
-                    A_eq=self.cover[root:root+1],b_eq=[1.],bounds=(0,None),method='highs')
+                    A_eq=self.cover[root:root+1],b_eq=[1.],bounds=self.variable_bounds,method='highs')
         return ans,root
 
     def recompute(self,act):
@@ -177,18 +178,35 @@ def main():
     p.add_argument('--ordered',action='store_true')
     p.add_argument('--mutate',action='store_true')
     p.add_argument('--distinct',type=float,default=1e-6,help='minimum positive symmetric-difference mass / on-path welfare')
-    a=p.parse_args(); rng=np.random.default_rng(a.seed); C=(OrderedCone if a.ordered else Cone)(a.k)
+    p.add_argument('--seed-file')
+    p.add_argument('--seed-support',action='store_true')
+    a=p.parse_args(); rng=np.random.default_rng(a.seed)
+    seed_data=json.loads(Path(a.seed_file).read_text()) if a.seed_file else None
+    if seed_data:a.k=len(seed_data['topics'])
+    C=(OrderedCone if a.ordered else Cone)(a.k)
     C.distinct_epsilon=a.distinct
+    seed_w=None
+    if seed_data:
+        seed_w=np.zeros((1<<a.k)-1)
+        for cust in seed_data['customers']:
+            mask=sum(1<<j for j in cust['topics'])
+            if mask:seed_w[mask-1]+=cust['multiplicity']
+        seed_w/=np.sum(seed_w)
+        if a.seed_support:C.variable_bounds=[(0,None) if v>0 else (0,0) for v in seed_w]
+        best_ts=max(combinations(range(a.k),min(C.m,a.k)),key=lambda ts:((C.bits[list(ts)].sum(axis=0)>0)*seed_w).sum())
+        C.opt=(C.bits[list(best_ts)].sum(axis=0)>0).astype(float)
     best=0.; stale=0; w=rng.exponential(1,size=(1<<a.k)-1)
     curact,curterminal=C.constant_policy(0);curvalue=0.
     for step in range(a.steps):
-        if step%10==0:
+        if seed_w is not None and step%10==0:
+            w=seed_w+rng.exponential(1,size=len(w))*seed_w*.05
+        elif step%10==0:
             # Sparse and highly nonsymmetric starts include pure-private, pair, and dense types.
             w=rng.exponential(1,size=len(w))*(rng.random(len(w))<rng.choice([.1,.3,.6,1]))
             w[rng.integers(len(w))]+=rng.uniform(0,10)
         if a.mutate and step>0:
             act,terminal=C.mutated(curact,rng)
-        elif step==0:
+        elif step==0 and seed_w is None:
             act,terminal=C.constant_policy(0)
         else:
             act,terminal=C.policy(w,rng)
