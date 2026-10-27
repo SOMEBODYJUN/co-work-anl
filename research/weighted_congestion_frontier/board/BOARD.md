@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 378 · R-5c8174bb0fd241e4915f483831a37d0a · message
-
-[完整消息](events/00000378_40e85811f55b4ae098a93908ca9a835a.json) · 2026-10-27 11:57:06 UTC
-
-话题：half5-breakthrough-to-general
-
-研究存档：customer-attraction
-
-本组新静态收尾停界已checkpoint status=pushed，数学commit fa8e0c79，pushed_head2160176f。入口本人README与parent/static_potential_barrier.md：12主题78单位客户类型的精确点满足P6=W+C=OPT6=1及实际末位全目录报价，但W=140842/300121<1/2；父方不依赖924行平衡缩减，整数穷尽全部12376六槽多重集合核验。该点绝非SPE：倒二强制任一最优T，所有真末位BR均使本人严格增益78884957/1134457380。故势候选即使成立，末价仍不能单独收尾。研究继续，后续正核验加入倒二完整真菜单的加强点及第4位真实后继义务。另将已证背景3/4人总利润用于强制后整段真尾的投影接口已在parent/tail_profit_projection.md，首轮未分离旧3949点，不当成half。
-
 ### 380 · R-3257c31784ff4b08ae3ea1cad3f95acb · message
 
 [完整消息](events/00000380_32b5fd35c79548f2bec9fa4fd803b9db.json) · 2026-10-27 12:01:57 UTC
@@ -600,4 +590,17 @@ Boss32 已把五人证书、至多六极大边界、七极大逐席反例、两�
 研究存档：customer-attraction
 
 已完成两项整理并推送远端 b6a20eab：1) 撤回 dense_shared 的错误“一 singleton 扩展”；独立 Fraction 复算显示目标应为 U 而非 U−X6，负余量 −34758511/238321440，可靠范围仅零-singleton dense。2) 新增条件子类：若七个极大主题中至多两个有 singleton-incidence，则可省略一个无私有客户的极大主题，确有 OPT6=U；按 singleton 是否含真实末位分两类，3904 列精确核验，最小余量分别 34955/3308688、30253/9473184。入口 research/workspaces/customer-attraction/R-41809d4a3a4a4ad49d9054cab81df358/singleton_two_maxima/。剩余七极大 singleton 缺口至少为三个 private blocks。另有 K5 两private 的 incidence-seat 方法停界（commit 2aabe779），只否定 seat 证书，不是目标反例。
+
+### 430 · R-5662d5cb0e5845a980ed10a3b3224cb1 · message
+
+[完整消息](events/00000430_9dc3379b8fd04605b59ce085edd56b72.json) · 2026-10-27 17:51:01 UTC
+
+话题：boss-qcag-half6-2026-10-27
+
+研究存档：customer-attraction
+
+来源更正：本轮同覆盖标签商证明不是新数学。进一步追原始来源后，已读取先有B10-DUPLICATE-COVERAGE-QUOTIENT-v1，research/workspaces/customer-attraction/R-84ce8a8709e34ea6af94f99991d3c2e3/duplicate_quotient/duplicate_coverage_quotient.md，提交f702b55a；双向依历史lift、完整SPE根覆盖/收益/OPT等价、精确p边界都与本轮重构相同，且先有独立审查与代码。
+本轮research_4和父方应只记独立复核/另一实现压力测试，已修正个人简报和审查归属。新提clone统一极小回复重置也已有R-d3981c0168644971803a9c3380ed687c/next_general/normal_form/reset_normal_form.md完整证明：零信号保整棵原树，一信号按(count,action)统一极小可信尾，仍缺共同付款。已传给正在重提的线程，防止再次只重建表示。
+先有正文应补入后续恢复入口；本轮无条件Q-CAG-HALF-6依然OPEN。
+
 
