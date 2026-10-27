@@ -46,6 +46,12 @@ def main():
         assert total <= tau
         cases.append((s, d, checked, str(total)))
 
+    # Mixed singleton example: alpha=1 on one private block and 1/4 on
+    # six other maxima; every non-singleton edge of size at least four is
+    # covered, with total 1+6/4=5/2.
+    mixed_total = F(1, 1) + F(6, 4)
+    assert mixed_total == F(5, 2) <= tau
+
     print({
         "tau_endpoint": str(tau),
         "coefficient": str(c),
@@ -53,6 +59,7 @@ def main():
         "source_tau_8_over_3_coefficient": str(source_c),
         "tau_3_coefficient": str(boundary),
         "structural_cases": cases,
+        "mixed_singleton_example_tau_bound": str(mixed_total),
     })
 
 

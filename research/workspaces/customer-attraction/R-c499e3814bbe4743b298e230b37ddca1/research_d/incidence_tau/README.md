@@ -70,13 +70,13 @@ The argument uses the original all-history SPE inequalities and does not identif
 
 ## Structural corollary
 
-If there are no singleton incidence blocks and every non-core customer belongs to at least `d>=2` maximal coverages, then `alpha_j=1/d` is feasible and `tau_inc<=s/d`. Therefore six-player half coverage follows whenever
+If exactly `p` maximal coverages have positive singleton blocks, and every non-singleton positive incidence has size at least `d>=2`, then the explicit vector `alpha_j=1` on those `p` labels and `alpha_j=1/d` on the other labels is feasible. Thus
 
 ```
-s/d <= 149/50.
+tau_inc <= p + (s-p)/d,
 ```
 
-For example, all catalogs with at most 11 maximal coverages and minimum non-core incidence 4 satisfy the condition (`11/4 < 149/50`), as do 14 maxima with minimum incidence 5 and 8 maxima with minimum incidence 3. This extends the earlier convenient `s<=2d` corollary. It remains a condition on the entire maximal-incidence hypergraph, not a reduction of arbitrary catalogs.
+so six-player half coverage follows whenever `p+(s-p)/d <= 149/50`. The no-singleton case is `p=0`; for example, at most 11 maxima with minimum non-core incidence 4, 14 maxima with minimum incidence 5, and 8 maxima with minimum incidence 3 all qualify. A mixed example also qualifies: one private maximal block, six other maxima, and minimum non-singleton incidence 4 gives `tau_inc<=1+6/4=5/2`. This strictly separates the condition from the earlier dense seven-maxima certificate, which allowed one private block only in a prescribed omitted-max position. It remains a condition on the entire maximal-incidence hypergraph, not a reduction of arbitrary catalogs.
 
 ## Independent exact audit
 
