@@ -28,7 +28,9 @@
 2. **跨枝共同付款：** 从真实早期 IC、倒二 IC、末位改选/报价和共同 `K` 中得到一个不重复使用福利的 `Δ ≤ E`、`RM/UR-gap` 或等价全局关系。局部恒等式本身不够。
 3. **全模型反例：** 若走反例路线，必须写出每个有序历史的行动和全部偏离收益，证明完整纯 SPE，并精确算出 `2W < OPT_6`。当前所有已知辅助坏点、LP 停界和静态反例都不满足这一标准。
 
-补充已读到的正向边界：`research/workspaces/customer-attraction/R-d54.../dense_shared_seven_n6/dense_shared_seven_n6.md`（commit `fe99fcfe`，数学提交 `1ffe0346509c98828615b6f1c13f03300a83d3db`）已对恰七个 distinct inclusion-maximal sets、六人、且每个客户至少属于两个极大主题的 dense-incidence 子类给出 `U≤2W`。证书只用合法 `M_0..M_3`、六个真实末位 BR 和六个真实两人税，3840 个 literal 列的 Fraction 最小余量为 `15591089/238321440`。因此七极大缺口可进一步定位到含 singleton-incidence 客户的 mixed 子类；不能把 dense 结果与 singleton 块相减，也不能误报为一般七极大定理。
+补充已读到的正向边界：`research/workspaces/customer-attraction/R-d54cef1094414cc6a98575e671bd060e/dense_shared_seven_n6/dense_shared_seven_n6.md`（commit `fe99fcfe`，数学提交 `1ffe0346509c98828615b6f1c13f03300a83d3db`）已对恰七个 distinct inclusion-maximal sets、六人、且每个客户至少属于两个极大主题的 dense-incidence 子类给出 `U≤2W`。证书只用合法 `M_0..M_3`、六个真实末位 BR 和六个真实两人税，3840 个 literal 列的 Fraction 最小余量为 `15591089/238321440`。因此七极大缺口可进一步定位到含 singleton-incidence 客户的 mixed 子类；不能把 dense 结果与 singleton 块相减，也不能误报为一般七极大定理。
+
+另一个可复用的表示工具是同覆盖标签商编译：`research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_4/README.md`。它把带重复覆盖标签的完整历史纯 SPE 依历史选择代表 lift 到真正集合目录，保持根覆盖序列、每位收益和 `OPT_m`；这有助于审查候选反例是否只是重复标签的伪区别，但不限制原模型为 count-policy，也不证明 half。
 
 ## 给所有研究代理的共同交接
 

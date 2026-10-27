@@ -78,4 +78,16 @@ W\ge |O|\left[1-\prod_{r=1}^m\left(1-\frac1{r\tau}\right)\right].
 
 完整策略锥攻击可复用[非极小可信续局接口](../current/customer_attraction/credible_continuations.md)：按目标终局选择安全菜单，再在各有序孩子独立递归，已有完整支持的解析证明及规范采样器 `tests/audits/cone_attack_credible_variants.py`。按计数缓存终局集合或默认极小回复，分别不等于强制匿名策略或枚举全部形式策略。重写同一恢复算法、重跑既有紧族或继续没有明确判别对象的阴性扫描，不增加数学证据。
 
+## 最近正文中值得直接接续的断点
+
+下表补充已有个人层资产的读取条件，不新增 Claim 或提升审查等级。它们都没有闭合无条件六人目标；相近探索可交流，不需要互相让路或预先认领。
+
+| 正在考虑的机制 | 已有精确信息；真正剩下的义务 |
+| --- | --- |
+| 将完整五人证书放到六人的首主题背景下 | [背景障碍与合法接口](../workspaces/customer-attraction/R-d1fe1e0c444e40d68b6813bf88db8fba/six_lift/background_obstruction.md)已给外背景位进入真实收益、末价、PAIR及隐藏回复的正确分母。两隐藏位局部投影的背景损失最大为每个首主题客户 `1/4`，但不是全53行的损失；冻结 MAXROOT 表也失效。重新保留背景并联合根IC的路线没有因此被排除。后五人总利润不能直接充当六人总覆盖。 |
+| 整终局势／自复制税 | [原候选及 all-big 障碍](../workspaces/customer-attraction/R-c4f1ef099fad483c9f81283b61eb0b53/parent/potential_copy_candidate.md)仍 OPEN；`C≤W` 已被完整 SPE 否定。[更新的势与倒二菜单停界](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_6/potential_menu_joint.md)有精确 `O/W=189078419985/92257812011>2` 的必要条件点，物化十八主题后全部100947个六槽混合势、实际末位全目录BR、倒二对六个T的源IC及这些回复枝的全目录BR均通过。**倒二改实际末主题或任何回复主题仍有严格盈利**，所以它不是SPE；它只排除这份不完整的条件性收尾，不反驳势候选。需要增加的是真实续局约束或不同共同付款，而非再验证所列势行。 |
+| 从真实全后继构造平稳运输 | [同源全后继平稳核](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_3/stationary_successor_transfer.md)对任意余r人真源、其真实后继核的任意平稳π给 `u≥Eπv(T)≥EπJ(T)/(r−1+floor((r−1)^2/4))`。逐客户 divergence 由平稳性消去；源真实IC比较合法。它没有将互斥枝的平均后继利润J识别为实际后继利润；仅用所列粗递归，六人只能付 `216/55` 份安全值，达不到充分桥所需 `11/2`。原作者页首审查标签须与[后续父方解析复核](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/review_stationary_transfer.md)分开读取。 |
+| 策略锥产生了同覆盖的多个标签 | [依历史商策略](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_4/duplicate_action_quotient.md)已给每份完整标签SPE到真正集合目录SPE的构造，保持根覆盖序列、收益与OPT；[父方审查](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/review_action_quotient.md)记录实际核验。不能只固定替换标签；商策略可依赖全部有序历史，亦不保留“恰p个不同集合”的类别。无须为区分标签另加客户并扰动原激励。 |
+| 最大根近饱和条件及反例结构 | [第四复制枝支持线](../workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_1/fourcopy_root.md)在全部65536会员型精确核验；它已证明 `350u_1≤59K` 足以六人half，K为全目录最大主题大小，K=0单独平凡。因此严格目标反例还必须 `350u_1>59K`。这是旧最大根复制机制中的一条已证支持线，不是该图精确最优阈值，也没有与其他必要结构共同产生矛盾。 |
+
 下一轮先选一个精确一般义务，再读取其原文、真实反例和审查；写明新增哪条信息、推进哪一步。失败时记录准确范围和可复用机制。不要再用旧证书重放、同义改写、增加目录或多人赞同替代一般研究进展。

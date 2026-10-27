@@ -48,3 +48,7 @@
 ## 6. 读取顺序
 
 根入口：`README.md`、`RESEARCH_STATE.md`、`CLAIMS.md`、`FAILED_ROUTES.md`、`AGENTS.md`、`research/customer_attraction/RUNBOOK.md`。本题正文：`research/current/customer_attraction/model.md`、`README.md`、`research/customer_attraction/SYNTHESIS.md`。按具体义务再读取五人证书、priced/same-source 投影、六极大联合预算、条件性六人证书及 `route_lp_boundary/`；不要把全仓库存或公屏流水作为默认上下文。
+
+## 7. 新近读到的可复用表示工具
+
+`research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_4/duplicate_action_quotient.md` 给出同覆盖标签的商编译引理。若一个搜索器暂时允许多个标签覆盖完全相同，不能直接删除重复列或固定替换；但对任意完整标签纯 SPE，可以在每个商历史选择原 lift 的规定标签作该覆盖类代表，递归构造定义于全部集合历史的纯 SPE，保持根覆盖序列、每位收益、`W` 和 `OPT_m`。引理有解析 IC 证明；64 个两人实例、200 个三人策略及一个六人回归只是实现测试。它不证明 half，却意味着一个经完整核验的重复标签反例可合法编译回原模型，也避免代理把固定代表删除法当作归约。
