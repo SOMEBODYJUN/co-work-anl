@@ -40,3 +40,9 @@
 - 让独立研究线程先重构候选的精确量词和有限验证，再尝试客户级充电、交换或归纳证明。
 - 定向攻击单独最优客户被后继反复覆盖、实际 `U` 与最优 `O` 大幅交叉、以及任意历史平局的情况。
 - 若找到严格反例，保存完整原模型策略和全历史核验；若找到证明，只在独立 Fraction/定义级核验后提升状态。
+
+## 已有同类接口（查重补充）
+
+该候选与仓库已有 `R-79a883.../theta/README.md` 的动态局部 leader 值桥 `TB: W+Σ_i Θ(h_i)≥OPT_m` 高度重合。该正文证明 `Θ(h)` 等于当前子博弈局部纯 SPE leader 收益的最小值，并说明 `TB` 等价于对每个实际前缀独立选择局部 SPE witness 后要求 `W+Σ_i v_i≥OPT_m`；不同嵌套 witness 的 terminal leaves 不同，不能把 follower utilities 直接记入同一个 `W`。因此本页的“同一原策略 `sigma` 强制分支”版本若无法利用共享策略约束，也可能只是同一多锥缺口的另一表示，不能宣称新突破。
+
+相关 `R-b28.../cross_tree/source_fractional_matching.md` 已把 source 端平均化做成合法共同账户，但 incoming reset 负载仍未支付；`R-65d.../direct_exchange/forcing_bill_probe.py` 的旧证书扫描也未产生目标反例或闭合。读取这些正文后再决定是否继续本候选。
