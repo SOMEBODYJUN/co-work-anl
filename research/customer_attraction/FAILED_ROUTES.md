@@ -49,3 +49,9 @@
 ## 最优势增量不能直接给首位保底
 
 PI候选u_first≥P_(r+1)(b)−P_r(b)已被[完整三人SPE精确反例及独立盲审](../workspaces/customer-attraction/R-cd789330fc7141299ac491bbb3ffa420/round2/mixed/review_pi_counterexample.md)否定：430单位客户，首位91，P3=329、P4=873/2。实际及全部真实根终局都达全局P3，故问题甚至不必来自尾部势效率；P_k最优值序列本身不凹。该例W265、OPT3=324，且全部根插入核项≤90<91，WP仍严格成立。此反例不否定half或更弱真正安全值接口。
+
+## 2026-10-27：七极大六人 `seat` 逐席 LP 停界
+
+七极大、六人缺失轨道的一个 LP 试图把席位次序统计量逐列写成 `u_t >= 1/(h+k)` 的独立 `seat(t,j,k)` 行；44 个轨道因此得到正浮点余量。该行并非由完整 SPE 普遍推出：七个互不相交主题中，`B_0` 有 6 个私有客户、其余各有 1 个，所有有序历史都选 `B_0` 的常值策略是完整纯 SPE；定义级核验覆盖 19,608 个历史和 117,648 个偏离。根实际 `u_0=1`，而 `k=1` 行对 6 个单位客户合计要求 `u_0>=6`。该实例 `W=6, OPT_6=11`，仍满足主目标，所以它只反驳逐席 LP 行，不是 Q-CAG-HALF-6 反例。
+
+席位机制可继续使用其合法的第 `r` 大次序统计量形式；若要补齐七极大 `n=6` 的 44 个轨道，必须保留阈值/排序分支或给出逐行有效性证明，不能把 LP 正余量当作定理。完整证书与核验见 [Boss35 工作区](../workspaces/customer-attraction/R-c99d11e5cc394080a36a00845811d71a/seat_lp_validity_check.md) 和 `seat_row_counterexample_certificate.json`（commit `a6bc73a52d2cfb9aaedaf1953d4820ea7e2ecd39` 之后的更新）。
