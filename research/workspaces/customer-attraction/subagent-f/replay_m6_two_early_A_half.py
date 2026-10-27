@@ -2,7 +2,7 @@ from fractions import Fraction as F
 from itertools import product
 
 M=6
-L1=F(22,15); L2=F(31,30); MU=F(1)
+L1=F(5,4); L2=F(5,4); MU=F(1)
 mins=(F(999),None); count=0; bad=[]
 for a in (0,1):
     for es in product((0,1), repeat=4):

@@ -42,17 +42,16 @@ L_x=\frac b{p+a+b}-\frac a{p+a+1}.
 \]
 取精确非负乘子
 \[
-\lambda_1=\frac{22}{15},\qquad
-\lambda_2=\frac{31}{30},\qquad
+\lambda_1=\lambda_2=\frac{5}{4},\qquad
 \mu=1.
 \]
 全域残差
 \[
-Q_x=2w-o-G_x-\frac{22}{15}H_{1,x}-\frac{31}{30}H_{2,x}-L_x
+Q_x=2w-o-G_x-\frac{5}{4}H_{1,x}-\frac{5}{4}H_{2,x}-L_x
 \]
 在所有允许局部位型上均非负。因此
 \[
-2W-O=G+\frac{22}{15}H_1+\frac{31}{30}H_2+L+
+2W-O=G+\frac{5}{4}H_1+\frac{5}{4}H_2+L+
 \sum_xQ_x\ge0,
 \]
 其中 `O=|\cup_iT_i|`。对任意比较六元组成立，取最大即得 `2W≥OPT_6`。
