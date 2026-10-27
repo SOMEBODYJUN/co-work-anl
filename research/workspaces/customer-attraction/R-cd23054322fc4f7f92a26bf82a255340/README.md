@@ -8,6 +8,8 @@
 
 本轮协调总览见 [coordination.md](coordination.md)。它按“已证地基—真实缺口—已否桥—后续高信息动作”整理六人目标的现有材料，不替代各数学正文。
 
+本轮七极大六人缺口的精确轨道盘点见 [notes/research4_seven_maxima_n6_gap.md](notes/research4_seven_maxima_n6_gap.md)。
+
 ## 可访问材料
 
 按需要在 notes/、experiments/、candidates/ 中保存有接续价值的材料，并在此链接。成熟资产沿既有规范入库，此处链接正文，不重复复制。
