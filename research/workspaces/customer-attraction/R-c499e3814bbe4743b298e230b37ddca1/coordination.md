@@ -37,6 +37,8 @@
 
 另有一个应停止重复的精确方法边界（commit `de15c9af`）：在六人、仅一固定早期主题包含倒二 `A`、且 `A` 客户前四负载至少二的指定结构中，把 common/逐前缀/逐异常 `K_i`、`L_A` 与已审 source-cut 行全部加入，七客户列的有理 Farkas 见证仍给目标 `-9/361`。这只否定该 enriched local cone；它不是结构类反例，也不说明真实跨枝预算不可能。若重试这类路线，必须加入本质新的跨源信用或改变表示。
 
+七极大六人 source-(11) 的另一轮尝试也已精确收束（commit `68dd9d439424562c874d41e451114a7c3932c4ca`，入口 `notes/n6_seven_source11_failed.md`）：初报的正证书漏掉了末位份额中的 `q*f/|J|`，修正后在 130 个压缩状态上，合法 `M/L/T` 四参数族的统一余项最优值约为 `-0.0231282509`（Fraction 见脚本）。因此该行族不能闭合；初报正证书作废，这也不是目标反例。
+
 ## 给所有研究代理的共同交接
 
 先读 `model.md`、`current/customer_attraction/README.md`、`customer_attraction/RESEARCH_STATE.md`、`FAILED_ROUTES.md` 和本文件；再按所选义务读取唯一原文。自由选择证明、反例、表示、条件引理或障碍，但每项工作都要明确：Exact statement、量词与定义域、它与上述已知资产的差异、证据等级（定理/条件定理/观察/障碍）、可复现输入与文件路径。阶段性成果写入个人 workspace 并用根 `work.py checkpoint`；只有回执 `status=pushed` 才算远端保存。
