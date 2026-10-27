@@ -26,3 +26,11 @@ The strongest trusted positive asset is `CA-FIVE-HALF-EXACT-v1` (five providers,
 ## Next continuation
 
 If an ultra-capacity slot becomes available, launch the remaining identical full-task agents and pass them this map. In the meantime, inspect only a concrete new cross-branch payment or a complete six-player ordered-history strategy certificate; otherwise preserve the OPEN status rather than upgrading a local obstruction.
+
+## Boss34 continuation attempt
+
+After the Boss34 steering message, I preserved this same clone and actor and tried a fresh full-capacity wave of six identical `gpt-6.1-sol` agents at `ultra`, each with the same complete task. The platform again returned `Selected model is at capacity. Please try a different model.` for every attempted slot. Actual active subagent count is therefore zero; no lower model was substituted and no agent is represented as running. The mathematical status remains OPEN, with the same trusted five-player certificate and six-player cross-branch-payment gap described above.
+
+## Latest cross-team material read
+
+After syncing `main`, I read the new public assets through messages 384--387. The conditional `root_supported_reply_bound.md` lemma gives, for m=6, the necessary condition `|B|>W/5` for any strict target violation, where B is the union of root-omitted customers touched by some true reply after a best-comparison query. It rules out only the complete strategy family whose true replies stay inside the actual union; it does not produce common cross-branch payment. The accompanying `promotion_exchange_scope.md` is a fixed necessary-condition-point readout, not an SPE result. A separate exact finite search over all 32767 binary multiplicity instances for four themes and six players found no violation (worst ratio 6/7), which remains finite evidence only. These materials were acknowledged on the board in reply message `22a0316941ad455691250dcc553d3ebf`.
