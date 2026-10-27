@@ -45,3 +45,28 @@ Reproduce:
 ```sh
 python research/workspaces/customer-attraction/R-c499e3814bbe4743b298e230b37ddca1/notes/r2_q1_prefix_source_obstruction.py
 ```
+
+## Stronger replay including source-3 and source-2 cuts
+
+The stronger script `r2_q1_prefix_source_all_obstruction.py` adds the reviewed
+source-at-3 cut (left side `u_3+2K/9`, query `A`) and source-at-2 cut (left side
+`u_2+3u_6/32+7K/64`, query `A`) to the same row cone. The same seven-column
+weights, with the second column changed to `(0,0,0000,d=1,ell=6,h=1)` and
+weights `155/361,30/361,6/361,44/361,6/361,60/361,60/361`, still sum to one and
+give `b^T y=-9/361`. The additional exact row dot products are
+
+```text
+SRC3_A=23267/116964,   SRC2_A=14815/138624,
+```
+
+and are nonnegative; all previously listed row dot products remain unchanged.
+Thus even the union of the reviewed source-4, source-3 and source-2 cuts does
+not close this specified local cone. This remains a boundary for the chosen
+certificate family only; it does not rule out new cross-source rows or the
+original half claim.
+
+Reproduce the stronger check with:
+
+```sh
+python research/workspaces/customer-attraction/R-c499e3814bbe4743b298e230b37ddca1/notes/r2_q1_prefix_source_all_obstruction.py
+```
