@@ -1,0 +1,29 @@
+# research_4：同覆盖标签的完整 SPE 商编译
+
+本分支没有证明 Q-CAG-HALF-6，也没有严格目标反例。可复用实质成果是同覆盖标签商编译引理：任意带重复覆盖标签的完整历史纯 SPE，能用依历史选择代表的 lift 编译到真正不同覆盖集合的目录，并保持根覆盖序列、每位收益和 OPT_m。
+
+| 文件 | 准确用途与状态 |
+| --- | --- |
+| `duplicate_action_quotient.md` | 自足一般证明；作者层，父方独立审查另记。并非六人 half 证明。 |
+| `duplicate_action_quotient.py` | 完整商策略及历史 lift 的构造实现；重写客户类型不改变单位客户。 |
+| `test_duplicate_action_quotient.py` | 定义级 Fraction 测试；不调用仓库 solver。 |
+| `duplicate_action_quotient_test_report.json` | 64 个两人实例、5184 份完整策略中 856 份 SPE，200 个三人完整 BI 策略，以及一个六人完整规模回归，全部编译核验通过。 |
+| `policy_cone_search.py` | 未完成原模型反例搜索工具；支持 count policy 与全部有序历史独立平局、策略锥边界随机侧点、策略 mutation。数值发现工具，未给一般数学结论。 |
+| `verify_policy_candidate.py` | 独立整数核验数值候选：重数有理化后整数化，n=6 收益乘 60，核验完整 IC、主题是否相同、真实 OPT_6；未自动调用商编译。 |
+
+一般引理的证明不依赖有限测试。两人有限测试穷举该指定域的全部完整策略；三人随机 BI 是实现压力测试；六人回归只是旧 all-big 家族。它们均不能作为 half 的证明或反例。
+
+从仓库根重放商编译测试：
+
+```sh
+python research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_4/test_duplicate_action_quotient.py
+```
+
+反例工具示例（不会宣称有限阴性为定理）：
+
+```sh
+python research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_4/policy_cone_search.py --k 7 --ordered --steps 40 --seed 45 --output /tmp/ordered_candidate.json
+python research/workspaces/customer-attraction/R-5662d5cb0e5845a980ed10a3b3224cb1/research_4/verify_policy_candidate.py /tmp/ordered_candidate.json
+```
+
+原始数值扫描只再现旧 `11/6` 型，没有严格 `>2` 候选；其重复候选文件已删除。可用商编译避免把同覆盖标签误称为原目录独立动作，也不必添加区别客户。数值工具仍可选 `--distinct 0` 允许同覆盖标签，之后对精确候选调用本引理编译。
