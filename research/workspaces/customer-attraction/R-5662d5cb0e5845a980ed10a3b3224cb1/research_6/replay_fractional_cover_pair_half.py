@@ -47,4 +47,30 @@ def main():
     print(json.dumps({k:v for k,v in report.items() if k!='zero_states'},indent=2))
 
 
-if __name__=='__main__':main()
+def main_endpoint():
+    tau=F(9,2);denominator=961717337
+    floor=[F(n,denominator) for n in (218088780,226476810,236182380,177467790,0,428553180)]
+    h4weight=F(515142618,denominator);endpointweight=F(333319140,denominator)
+    residuals=[];zero=[]
+    for e in product((0,1),repeat=6):
+        c=sum(e);u=[share(bit,c) for bit in e];b=[sum(e[:i]) for i in range(6)];p=b[4]
+        for o in (0,1):
+            floors=[tau*u[i]-F(o,b[i]+6-i) for i in range(6)]
+            h4=u[3]-F(e[5],b[3]+3)
+            endpoint=tau*u[4]+u[5]/2-F(o,p+1)+F(o*e[4]*int(p==0),4)
+            q=2*int(c>0)-o-sum(x*y for x,y in zip(floor,floors))-h4weight*h4-endpointweight*endpoint
+            assert q>=0,(e,o,q)
+            residuals.append(q)
+            if not q:zero.append({'actual_bits':e,'comparison_bit':o})
+    report={'scope':'six-player tau<=9/2 endpoint-menu certificate; not unrestricted half',
+            'tau':str(tau),'state_count':len(residuals),'minimum_residual':str(min(residuals)),
+            'minimum_positive_residual':str(min(q for q in residuals if q)),
+            'floor_multipliers':list(map(str,floor)),'actual_fourth_to_B':str(h4weight),
+            'endpoint_row':str(endpointweight),'zero_states':zero}
+    Path(__file__).with_name('fractional_cover_endpoint_half_audit.json').write_text(json.dumps(report,indent=2)+'\n')
+    print(json.dumps({k:v for k,v in report.items() if k!='zero_states'},indent=2))
+
+
+if __name__=='__main__':
+    import sys
+    main_endpoint() if '--endpoint' in sys.argv else main()

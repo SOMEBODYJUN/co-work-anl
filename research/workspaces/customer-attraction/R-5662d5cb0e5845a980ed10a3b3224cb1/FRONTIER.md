@@ -15,12 +15,14 @@
 
 ## 哪些是真正可用的结论
 
-- 六人分数覆盖总重21/5：任意可覆盖C若tau_C≤21/5，则2W≥|C|，特别包括
+- 六人分数覆盖当前总重9/2：任意可覆盖C若tau_C≤9/2，则2W≥|C|，特别包括
   某个最优六主题并集满足此条件的实例。正文`research_6/fractional_cover_pair_half.md`；
-  六个真实安全均价、actual4/5改末B的两safe行及独立平均strongPAIR，九正乘子共同支付。
-  父方另写`audit_fractional_pair_half.py/json`，128完整类型、160原三IC恒等式通过；
-  审查`review_fractional_pair_half.md`。旧乘积τ=4仅31887/65536，故有实际条件范围增量。
-  21/5<tau_C≤6仍未闭合，不声称阈值锐性或全局新颖性。
+  五个真实安全均价、actual4改末B安全行、旧实权S/Z/V端点R，七正乘子共同支付。
+  父方`audit_fractional_pair_half.py --endpoint`独立重构128类型与80完整q/ell角点；
+  `audit_fractional_endpoint_half.json`、`review_fractional_pair_half.md`记录全部通过。
+  原21/5九行strongPAIR证书在同一资产保留，不与新机制混写。
+  旧乘积τ=4仅31887/65536，故有实际条件范围增量；九极大dense可取各权1/2。
+  9/2<tau_C≤6仍未闭合，不声称阈值锐性或全局新颖性。
 - 逐客户P3条件：实际倒二A中的每个客户都被前四至少三名覆盖，则half。
   正文在`research_1/threefold_penultimate_half.md`；作者2058型与父方3528个
   含交集型的原始S/Z/V重构均通过。它不是固定两主题包含条件，也不是无条件六人。
