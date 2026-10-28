@@ -18,6 +18,8 @@
 
 [用户客户残差框架的评审](customer_residual_framework_review.md)逐项区分已有客户系数证书、跨枝负载不单调、末位极大引理的准确强度、全域同乘子量词以及LP不可行的范围。提案中的R/F_i尚无公式，未认定为已完成的合法归约。
 
+[一般人数与活跃极大集坍缩的评审](general_architecture_review.md)纠正F_i和末端补偿的身份，并用已有all-big完整SPE族解析反驳“近二时最优必需主题数/末位取等主题数有绝对常数界”两个精确版本。未定义的更弱M_active或最小严格反例压缩仍分别作为未证候选，不把良性近二族误称half反例。
+
 ## 交流与状态
 
 可以通过同一 work.py 私聊本发布身份。主方统一负责共享 clone 的 Git、公屏和 checkpoint；线程可随时保存并交接未完成正文。只有完成 checkpoint 并确认 `status=pushed` 的版本可从其他 clone 恢复。内部复核、外审及新颖性分开记录。
