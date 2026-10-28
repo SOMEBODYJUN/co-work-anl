@@ -40,6 +40,55 @@ def value(repo, *args):
 
 
 class WorkTests(unittest.TestCase):
+    def test_new_conversation_defaults_to_shared_long_lived_branch_and_cleanup(self):
+        branch = "cleanup/research-foundation-20261028"
+        git(self.seed, "push", "origin", "main:refs/heads/" + branch)
+        before = value(self.remote, "for-each-ref", "--format=%(refname)", "refs/heads")
+        result = self.work("start", "--remote", str(self.remote), project_defaults=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        receipt = json.loads(result.stdout)
+        self.assertEqual(receipt["branch"], branch)
+        self.assertEqual(receipt["board_branch"], "wcg/board-cleanup-20261028")
+        self.assertEqual(receipt["save"], "repository-cleanup")
+        self.assertEqual(receipt["role"], "cleaner")
+        self.assertEqual(receipt["context_entry"], "collaboration/CLEANUP.md")
+        self.assertEqual(value(self.remote, "for-each-ref", "--format=%(refname)", "refs/heads"), before)
+        # A later research dialogue can use the same branch and board.
+        research = self.root / "research conversation"
+        other = self.work("start", "--remote", str(self.remote), "--save", "customer-attraction",
+                          "--role", "boss", repo=research, project_defaults=True)
+        self.assertEqual(other.returncode, 0, other.stderr)
+        research_receipt = json.loads(other.stdout)
+        self.assertEqual(research_receipt["branch"], branch)
+        self.assertEqual(research_receipt["board_branch"], receipt["board_branch"])
+        self.assertEqual(research_receipt["save"], "customer-attraction")
+        self.assertEqual(value(self.remote, "for-each-ref", "--format=%(refname)", "refs/heads"), before)
+
+    def test_same_downloaded_bootstrap_hands_off_to_updated_github_program(self):
+        branch = "cleanup/research-foundation-20261028"
+        uploaded = self.root / "stable downloaded work.py"
+        shutil.copy2(WORK, uploaded)
+        git(self.seed, "switch", "-c", branch)
+        source = (self.seed / "work.py").read_text()
+        for version in ("first", "updated"):
+            (self.seed / "work.py").write_text(source.replace(
+                'result["recent_board_limit"] = board_limit',
+                'result["bootstrap_version"] = ' + repr(version) + '\n    result["recent_board_limit"] = board_limit'))
+            git(self.seed, "add", "work.py")
+            git(self.seed, "commit", "-m", "new program " + version)
+            git(self.seed, "push", "origin", branch)
+            result = subprocess.run([sys.executable, str(uploaded), "--repo", str(self.repo),
+                                     "start", "--remote", str(self.remote)],
+                                    cwd=self.root, env=clean_env(), capture_output=True, text=True, timeout=45)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            receipt = json.loads(result.stdout)
+            self.assertEqual(receipt["bootstrap_version"], version)
+            self.assertEqual(receipt["branch"], branch)
+            if version == "first":
+                actor = receipt["actor"]
+            self.assertEqual(receipt["actor"], actor)
+        self.assertEqual(uploaded.read_bytes(), WORK.read_bytes())
+
     def publish_cleanup_fixture(self):
         git(self.seed, "switch", "-c", "cleanup/test")
         (self.seed / "cleanup-only.md").write_text("cleanup baseline\n")
@@ -288,7 +337,14 @@ class WorkTests(unittest.TestCase):
         self.credential = self.root / "credential with spaces.txt"
         self.credential.write_text("GitHub token:\n" + self.token + "\n")
 
-    def work(self, *args, repo=None, env=None):
+    def work(self, *args, repo=None, env=None, project_defaults=False):
+        # Existing lifecycle fixtures intentionally exercise main compatibility.
+        # Deployment tests above omit all routing arguments to exercise the
+        # actual new-conversation defaults, not a separate implementation.
+        target = repo or self.repo
+        if (args and args[0] == "start" and "--branch" not in args
+                and not Path(target).exists() and not project_defaults):
+            args = (*args, "--branch", "main")
         return subprocess.run([sys.executable, str(WORK), "--repo", str(repo or self.repo), *args],
                               cwd=self.root, env=env or clean_env(),
                               capture_output=True, text=True, timeout=45)
@@ -556,7 +612,7 @@ class WorkTests(unittest.TestCase):
         self.assertFalse(self.repo.exists())
         result = subprocess.run([sys.executable, str(uploaded), "--repo", str(self.repo),
                                  "start", "--actor", "001", "--remote", str(self.remote),
-                                 "--token-file", str(self.credential)],
+                                 "--branch", "main", "--token-file", str(self.credential)],
                                 cwd=self.root, env=clean_env(), capture_output=True, text=True, timeout=45)
         self.assertEqual(result.returncode, 0, result.stderr)
         first = json.loads(result.stdout.splitlines()[0])

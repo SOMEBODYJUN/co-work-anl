@@ -18,9 +18,14 @@ import uuid
 REMOTE = "https://github.com/SOMEBODYJUN/co-work-anl.git"
 TOOLS = "research/weighted_congestion_frontier/tools"
 WORKSPACES = "research/workspaces"
-# This file must also work alone as an uploaded bootstrap. Keep the matching
-# checkpoint.py fallback in sync; bound clones always retain their own save.
+# Legacy unbound non-start/checkpoint fallback; preserve topic compatibility.
+# New-conversation phase defaults are separate below and are applied by start.
 DEFAULT_SAVE = "customer-attraction"
+# New conversations share this long-lived branch and board. Existing bound
+# clones keep their own routes; cleanup is a phase, not a branch lifecycle.
+DEFAULT_BRANCH = "cleanup/research-foundation-20261028"
+DEFAULT_BOARD_BRANCH = "wcg/board-cleanup-20261028"
+DEFAULT_START_SAVE = "repository-cleanup"
 RESEARCH_ENTRIES = {
     "repository-cleanup": {
         "research_entry": "collaboration/CLEANUP.md",
@@ -122,7 +127,9 @@ def checked_branch(repo, name, board=False):
 def branch_id(repo, requested=None):
     saved = run(repo, "config", "--local", "--get", "wcg.branch",
                 check=False).stdout.decode().strip()
-    chosen = checked_branch(repo, requested or saved or "main")
+    current = value(repo, "branch", "--show-current")
+    fallback = DEFAULT_BRANCH if current == DEFAULT_BRANCH else "main"
+    chosen = checked_branch(repo, requested or saved or fallback)
     if saved and requested and chosen != saved:
         raise Stop("本clone已绑定文件分支 " + saved + "；其他分支使用独立clone。")
     return chosen
@@ -131,7 +138,8 @@ def branch_id(repo, requested=None):
 def board_branch(repo, requested=None):
     saved = run(repo, "config", "--local", "--get", "wcg.boardBranch",
                 check=False).stdout.decode().strip()
-    chosen = checked_branch(repo, requested or saved or "wcg/board", board=True)
+    fallback = DEFAULT_BOARD_BRANCH if branch_id(repo) == DEFAULT_BRANCH else "wcg/board"
+    chosen = checked_branch(repo, requested or saved or fallback, board=True)
     if chosen == branch_id(repo):
         raise Stop("公屏分支与研究文件分支必须分开。")
     if saved and requested and saved != chosen:
@@ -244,9 +252,9 @@ def sync(repo, env, allow_legacy=False):
                 **({"main": tip} if target == "main" else {}), "preserved_work": True}
 
 
-def save_id(repo, requested=None):
+def save_id(repo, requested=None, default=None):
     saved = run(repo, "config", "--local", "--get", "wcg.save", check=False).stdout.decode().strip()
-    chosen = requested if requested is not None else (saved or DEFAULT_SAVE)
+    chosen = requested if requested is not None else (saved or default or DEFAULT_SAVE)
     if not IDENTIFIER.fullmatch(chosen):
         raise Stop("研究存档请使用安全 ID：字母、数字、点、下划线或连字符。")
     if saved and requested and requested != saved:
@@ -256,10 +264,10 @@ def save_id(repo, requested=None):
     return chosen
 
 
-def role_id(repo, requested=None, prompts=None):
+def role_id(repo, requested=None, prompts=None, default="boss"):
     prompts = prompts or ROLE_PROMPTS
     saved = run(repo, "config", "--local", "--get", "wcg.role", check=False).stdout.decode().strip()
-    chosen = requested if requested is not None else (saved or "boss")
+    chosen = requested if requested is not None else (saved or default)
     if chosen not in prompts:
         raise Stop("本存档支持角色：" + "、".join(prompts))
     if saved and saved != chosen:
@@ -355,6 +363,10 @@ def visit(repo, env, save, who, path="README.md", branch=None):
 
 
 def start(args):
+    # A downloaded copy stays a bootstrap. After restoring the selected branch
+    # it hands control to that branch's current root program, before binding a
+    # phase/save/role. Later prompt and phase updates therefore live on GitHub.
+    running_source = Path(__file__).read_bytes()
     board_limit = getattr(args, "board_limit", 0)
     if board_limit < 0:
         raise Stop("start --board-limit 必须是非负整数；0 表示不自动读取公屏。")
@@ -370,7 +382,7 @@ def start(args):
         remote = args.remote
         if SECRET.search(remote.encode()) or re.search(r"https?://[^/]*@", remote):
             raise Stop("仓库地址请使用普通 Git URL。")
-        target = checked_branch(repo.parent, getattr(args, "branch", None) or "main")
+        target = checked_branch(repo.parent, getattr(args, "branch", None) or DEFAULT_BRANCH)
         run(repo.parent, "clone", "--quiet", "--single-branch", "--branch", target, remote, str(repo), env=env)
     repo = checked_repo(repo)
     origin = value(repo, "remote", "get-url", "--all", "origin")
@@ -386,20 +398,34 @@ def start(args):
     if selected_board == target:
         raise Stop("公屏分支与研究文件分支必须分开。")
     env = auth(repo, args)
+    run(repo, "config", "--local", "wcg.branch", target)
+    result = sync(repo, env, allow_legacy=legacy)
+    current_program = repo / "work.py"
+    if (Path(__file__).resolve() != current_program.resolve()
+            or current_program.read_bytes() != running_source):
+        forwarded = ["--repo", str(repo), "start", "--remote", args.remote,
+                     "--board-limit", str(board_limit)]
+        for name in ("actor", "role", "token_file", "save", "branch", "board_branch"):
+            supplied = getattr(args, name, None)
+            if supplied is not None:
+                forwarded.extend(["--" + name.replace("_", "-"), str(supplied)])
+        if getattr(args, "resume", False):
+            forwarded.append("--resume")
+        return subprocess.call([sys.executable, str(current_program), *forwarded], env=env)
     who = actor(repo, args.actor)
     if not run(repo, "config", "--local", "--get", "user.name", check=False).stdout:
         run(repo, "config", "--local", "user.name", "WCG " + who)
     if not run(repo, "config", "--local", "--get", "user.email", check=False).stdout:
         run(repo, "config", "--local", "user.email", "wcg@users.noreply.github.com")
-    save = save_id(repo, getattr(args, "save", None))
+    save = save_id(repo, getattr(args, "save", None),
+                   DEFAULT_START_SAVE if target == DEFAULT_BRANCH else DEFAULT_SAVE)
     requested_role = getattr(args, "role", None)
     prompts = CLEANUP_ROLE_PROMPTS if save == "repository-cleanup" else ROLE_PROMPTS
     if requested_role is not None and save not in {"customer-attraction", "repository-cleanup"}:
         raise Stop("此存档不使用这些角色；旧存档保留原绑定。")
-    selected_role = role_id(repo, requested_role, prompts) if save in {"customer-attraction", "repository-cleanup"} else None
-    run(repo, "config", "--local", "wcg.branch", target)
+    selected_role = role_id(repo, requested_role, prompts,
+                            "cleaner" if save == "repository-cleanup" else "boss") if save in {"customer-attraction", "repository-cleanup"} else None
     run(repo, "config", "--local", "wcg.boardBranch", selected_board)
-    result = sync(repo, env, allow_legacy=legacy)
     if legacy:
         # sync has already preserved staged/unstaged/untracked work and stopped
         # on any real conflict. Keep any existing local main under a local ref
@@ -454,13 +480,13 @@ def main():
     sub = p.add_subparsers(dest="command", required=True)
     s = sub.add_parser("start", help="恢复项目，固定角色号并同步；公屏按需读取")
     s.add_argument("--actor", help="可选；省略时为本对话生成并记住唯一 R-UUID 发布标识")
-    s.add_argument("--role", choices=tuple(ROLE_PROMPTS), help="首次默认 boss；独立clone绑定一个角色")
+    s.add_argument("--role", choices=tuple(ROLE_PROMPTS), help="本轮新清洗clone默认cleaner；既有绑定复用")
     s.add_argument("--token-file", default=argparse.SUPPRESS)
     s.add_argument("--remote", default=REMOTE)
     s.add_argument("--save", default=argparse.SUPPRESS)
     s.add_argument("--resume", action="store_true", help="明确接续已存在的同号工作区")
-    s.add_argument("--branch", help="文件分支；新clone默认main，绑定后复用，不自动切换")
-    s.add_argument("--board-branch", help="独立公屏分支；新clone默认wcg/board，绑定后复用")
+    s.add_argument("--branch", help="文件分支；新clone默认长期共用分支，既有绑定不变")
+    s.add_argument("--board-branch", help="公屏分支；新长期分支clone默认新公屏，既有绑定不变")
     s.add_argument("--board-limit", type=int, default=0,
                    help="启动时读取最近几条公屏；默认0不自动读取，完整历史用read按需查询")
     sub.add_parser("sync", help="只同步绑定分支并保留本地工作")
