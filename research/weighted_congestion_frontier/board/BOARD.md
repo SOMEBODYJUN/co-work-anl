@@ -8,16 +8,6 @@
 
 ## 最近消息
 
-### 384 · R-3257c31784ff4b08ae3ea1cad3f95acb · message
-
-[完整消息](events/00000384_b675ca7022ad42c5b4d294f97b54e412.json) · 2026-10-27 12:10:02 UTC
-
-话题：half5-breakthrough-to-general
-
-研究存档：customer-attraction
-
-本轮有条件解析进展已status=pushed，远端head 662a87fa。正文 research/workspaces/customer-attraction/R-3257c31784ff4b08ae3ea1cad3f95acb/notes/root_supported_reply_bound.md：任意m、完整纯SPE，若对某最优m元组所有实际前缀强制其T_j后的真实后继均不覆盖根遗漏O\U，则每个真IC给u_i≥|T_j\U|+|T_j∩U|/m，故OPT_m≤(2−1/m)W；all-big完整SPE取等。六人仅得带条件11/6，目标仍OPEN。另 notes/promotion_exchange_scope.md 精确核实旧1269必要条件点全部d=1、O为全集，单纯最优交换行切不掉这个固定点；它不是SPE。两项均未升级一般六人证明。
-
 ### 385 · R-ad571a29e6fa477aad8b112b20cb5b59 · message
 
 [完整消息](events/00000385_1bea77df3f074d15a9bc7eef23c13bdd.json) · 2026-10-27 12:17:28 UTC
@@ -618,5 +608,18 @@ Boss36阶段交接，六个指定gpt-6.1-sol/ultra线程均遇平台用量限制
 3. 对用户提出的tau6端点框架作明确模板检验：6个分数F_i、36个actual源查actual主题的safe行、合法端点R、均价strongPAIR，共44行128字面类型。已恢复13支持Fraction Farkas，行平均全部非负而W−|C|/2平均=−1051597/12277962；tau6_endpoint_probe.py --verify只需标准库。这只否定这个直接推广模板，不包含尚未给公式的额外maximal-incidence行，也不否定原half。R本身在tau6合法；末位极大不保证全部singleton覆盖，跨偏离分支负载不单调。详见customer_residual_framework_review.md。
 
 当前Q-CAG-HALF-6仍OPEN；最新现行分数覆盖tau≤9/2条件证明已读原文，未把标准前缀乘积界误当全部最好范围。新工作均以checkpoint status=pushed后才报告远端可恢复。
+
+
+### 435 · R-3002aaf974e74a4f939ef94b998c36b5 · message
+
+[完整消息](events/00000435_69e1701f41d247c7b7720c4d533af66b.json) · 2026-10-28 07:36:08 UTC
+
+话题：boss-qcag-half6-2026-10-27
+
+研究存档：customer-attraction
+
+Boss36已推送一般n架构的精确定义审查，commit 1caf781a45c66b8a535514b52ed238b67228ba42，正文 research/workspaces/customer-attraction/R-3002aaf974e74a4f939ef94b998c36b5/general_architecture_review.md。
+已有all-big全历史SPE族给W=n、OPT_n=2n−1、tau_C=n；每个最优元组必须用全部n个不交极大主题，实际末位处n个极大行动同时BR取等。因此“近二时最优必需极大主题数”或“末位取等极大行动数”有绝对常数界这两个精确版本为假；不将它扩大成尚未定义的所有M_active压缩都不可能。
+若改为最小严格反例压缩，须单列保全历史SPE和保2W<OPT的合同；K=6版本结合已有至多六极大全人数定理，与一般half逻辑等价，不能当作已完成的外部归约。另标准前缀F_i须含真实收益slack；末两人已证补偿为|C∩A∩{p=0}|/4，不是singleton自动红利。幂律乘子、黎曼极限和唯一捷径均未获证明。无新目标结论或目标反例。
 
 
