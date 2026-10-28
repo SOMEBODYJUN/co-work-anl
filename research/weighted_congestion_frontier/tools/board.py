@@ -211,7 +211,7 @@ def render(state, now=None, selected=None, actor=None):
     lines = ['# 研究公屏', '', '每个 Work 对话使用一个稳定发布标识署名；程序可自动生成。',
              '消息随时发布、异步回复；同题的多条研究路线可以同时推进。',
              '子 agent 的发现由所在对话转述。', '',
-             '研究资产统一保存在 main；公屏用于异步研讨，消息中的冻结文件附带 commit 和 SHA-256。', '',
+             '研究文件使用启动回执绑定的分支；公屏用于异步研讨，冻结文件附带 branch、commit 和 SHA-256。', '',
              '## 最近消息', '']
     allowed = [e for e in state['events'] if visible(e, actor)]
     displayed = allowed[-50:] if selected is None else [e for e in selected if visible(e, actor)]
@@ -306,14 +306,17 @@ class Board:
         self.checkout(directory)
         return self.decode(directory)
 
+    def write_readme(self, root):
+        (root / 'README.md').write_text(
+            '# 研究公屏\n\n[最近消息](BOARD.md)。\n\n'
+            '在各自文件分支使用根 work.py read / send --text，以稳定发布身份交流。\n')
+
     def write_empty(self, directory):
         root = Path(directory) / PREFIX
         root.mkdir(parents=True, exist_ok=True)
         (root / 'events').mkdir(exist_ok=True)
         (root / 'meta.json').write_text(encode({'schema': SCHEMA}))
-        (root / 'README.md').write_text(
-            '# 研究公屏\n\n[最近消息](BOARD.md)。\n\n'
-            '使用 main 的 tools/work.py read / send --text，按提示词角色号直接交流。\n')
+        self.write_readme(root)
         (root / 'BOARD.md').write_text(render(empty_state()))
 
     def initialize(self):
@@ -483,6 +486,7 @@ class Board:
                     events = root / 'events'
                     events.mkdir(exist_ok=True)
                     (events / f"{event['seq']:08d}_{event['id']}.json").write_text(encode(event))
+                    self.write_readme(root)
                     (root / 'BOARD.md').write_text(render(updated))
                     git(directory, 'add', str(PREFIX))
                     git(directory, 'commit', '--quiet', '-m', f"board: {event['actor']} {event['kind']} {event['id']}")
