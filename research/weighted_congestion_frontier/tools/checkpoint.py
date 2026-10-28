@@ -21,6 +21,9 @@ COMMON_PATHS = ["README.md", "RESEARCH_STATE.md", "CLAIMS.md", "FAILED_ROUTES.md
                 "research/graph.json", "research/index.html", "research/source_crosswalk.json",
                 "research/source_crosswalk.md", "research/catalog.json", "research/CATALOG.md"]
 SAVE_PATHS = {
+    "repository-cleanup": ["collaboration", "work.py",
+                           "research/weighted_congestion_frontier/tools",
+                           "research/weighted_congestion_frontier/tests"],
     "customer-attraction": ["research/current/customer_attraction",
                             "research/questions/customer_attraction",
                             "research/questions/customer_attraction_half_coverage.md",
@@ -149,12 +152,12 @@ def audit_outgoing(repo, head, remote_tip, paths):
     return commits, sorted(changed)
 
 
-def describe_assets(repo, directory, commit, files):
+def describe_assets(repo, directory, commit, files, branch="main"):
     assets = []
     for name in files:
         blob = git(repo, "cat-file", "blob", commit + ":" + name, check=False)
         if not blob.returncode:
-            asset = {"branch": "main", "commit": commit, "path": name,
+            asset = {"branch": branch, "commit": commit, "path": name,
                      "sha256": hashlib.sha256(blob.stdout).hexdigest()}
             descriptor = directory / (hashlib.sha256(name.encode()).hexdigest()[:16] + ".json")
             descriptor.write_text(json.dumps(asset, ensure_ascii=False, indent=2) + "\n")
@@ -208,10 +211,13 @@ def locked_save(repo, common, cache, args):
     if branch_result.returncode:
         raise Stop("Detached HEAD: switch to a dedicated work branch first.")
     branch = branch_result.stdout.decode().strip()
-    if branch == "wcg/board":
+    board = git(repo, "config", "--local", "--get", "wcg.boardBranch", check=False).stdout.decode().strip() or "wcg/board"
+    if branch == board or branch == "wcg/board" or branch.startswith("wcg/board-"):
         raise Stop("Board messages must use board.py.")
-    if branch != "main":
-        raise Stop("Run work.py start to preserve and migrate this old work branch to main before checkpointing.")
+    bound = git(repo, "config", "--local", "--get", "wcg.branch", check=False).stdout.decode().strip() or "main"
+    if branch != bound:
+        raise Stop("Current branch differs from the bound branch " + bound + "; work is retained.")
+    git(repo, "check-ref-format", "refs/heads/" + bound)
     for item in ("MERGE_HEAD", "CHERRY_PICK_HEAD", "REVERT_HEAD", "rebase-merge", "rebase-apply"):
         if Path(value(repo, "rev-parse", "--git-path", item)).is_absolute():
             p = Path(value(repo, "rev-parse", "--git-path", item))
@@ -288,7 +294,7 @@ def locked_save(repo, common, cache, args):
     if not files:
         files = names(git(repo, "diff-tree", "--root", "--no-commit-id",
                           "--name-only", "-r", "-z", snapshot, "--", *specs))
-    assets = describe_assets(repo, record_dir, snapshot, files)
+    assets = describe_assets(repo, record_dir, snapshot, files, branch)
     result = {"status": "local-only", "branch": branch, "commit": snapshot,
               "files": files, "created_commit": created, "assets": assets,
               "outgoing_commits": [], "outgoing_files": []}
@@ -309,14 +315,26 @@ def locked_save(repo, common, cache, args):
         before = git(repo, "fetch", "--quiet", "--no-tags", "--no-write-fetch-head",
                      "origin", "+" + ref + ":" + private, check=False)
         if before.returncode:
-            detail = SECRET.sub(b"[REDACTED]", before.stderr).decode(errors="replace").strip()[:500]
-            break
+            exists = git(repo, "ls-remote", "--exit-code", "origin", ref, check=False)
+            if exists.returncode == 2 and getattr(args, "create_branch", False) and branch != "main":
+                # First publication audits every outgoing commit against main.
+                # Push remains a normal fast-forward operation if a peer wins
+                # the creation race; the next iteration fetches that peer tip.
+                git(repo, "fetch", "--quiet", "--no-tags", "--no-write-fetch-head",
+                    "origin", "+refs/heads/main:" + private)
+                if git(repo, "merge-base", "--is-ancestor", private, head, check=False).returncode:
+                    raise Stop("New branch must descend from current remote main; local snapshot retained.")
+            else:
+                detail = SECRET.sub(b"[REDACTED]", before.stderr).decode(errors="replace").strip()[:500]
+                if exists.returncode == 2:
+                    detail = "Remote branch does not exist; first publication requires --create-branch."
+                break
         baseline = value(repo, "rev-parse", private)
         commits, outgoing = audit_outgoing(repo, head, baseline, paths)
         result["outgoing_commits"] = list(dict.fromkeys(result["outgoing_commits"] + commits))
         result["outgoing_files"] = sorted(set(result["outgoing_files"]) | set(outgoing))
         result["files"] = sorted(set(result["files"]) | set(outgoing))
-        result["assets"] = describe_assets(repo, record_dir, head, result["files"])
+        result["assets"] = describe_assets(repo, record_dir, head, result["files"], branch)
         result["checked_head"] = head
         receipt.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
         pushed = git(repo, "push", "--quiet", "origin", head + ":" + ref, check=False)
@@ -365,6 +383,8 @@ def main():
     parser.add_argument("--repo", default=str(Path(__file__).resolve().parents[3]))
     parser.add_argument("-m", "--message")
     parser.add_argument("--token-file", help="Optional external token file; remembers only its path locally")
+    parser.add_argument("--create-branch", action="store_true",
+                        help="Allow first publication of the bound branch, audited against remote main")
     args = parser.parse_args()
     print(json.dumps(save(args), ensure_ascii=False, indent=2))
 

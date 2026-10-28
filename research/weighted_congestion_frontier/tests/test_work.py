@@ -40,6 +40,147 @@ def value(repo, *args):
 
 
 class WorkTests(unittest.TestCase):
+    def publish_cleanup_fixture(self):
+        git(self.seed, "switch", "-c", "cleanup/test")
+        (self.seed / "cleanup-only.md").write_text("cleanup baseline\n")
+        git(self.seed, "add", "cleanup-only.md")
+        git(self.seed, "commit", "-m", "cleanup baseline")
+        git(self.seed, "push", "origin", "cleanup/test")
+
+    def start_cleanup(self, repo=None, actor="001", board="wcg/board-cleanup-test"):
+        result = self.work("start", "--remote", str(self.remote),
+                           "--actor", actor, "--save", "repository-cleanup", "--role", "cleaner",
+                           "--branch", "cleanup/test", "--board-branch", board, repo=repo)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        return json.loads(result.stdout.splitlines()[0])
+
+    def test_cleanup_branch_clones_checkpoints_and_peer_sync_leave_main_unchanged(self):
+        self.publish_cleanup_fixture()
+        main_before = value(self.remote, "rev-parse", "main")
+        receipt = self.start_cleanup()
+        self.assertEqual(receipt["context_entry"], "collaboration/CLEANUP.md")
+        self.assertEqual(receipt["branch"], "cleanup/test")
+        self.assertEqual(receipt["board_branch"], "wcg/board-cleanup-test")
+        peer = self.root / "cleanup peer"
+        self.start_cleanup(peer, actor="002")
+        note = self.repo / "cleanup-only.md"
+        note.write_text("new cleanup work\n")
+        saved = self.work("checkpoint", "cleanup-only.md", "-m", "cleanup work")
+        self.assertEqual(saved.returncode, 0, saved.stderr)
+        result = json.loads(saved.stdout)
+        self.assertEqual(result["status"], "pushed")
+        self.assertEqual(result["branch"], "cleanup/test")
+        self.assertEqual(result["assets"][0]["asset"]["branch"], "cleanup/test")
+        self.assertEqual(value(self.remote, "rev-parse", "main"), main_before)
+        self.assertEqual(self.work("board-init").returncode, 0)
+        published = self.work("send", "--text", "branch asset", "--asset-json",
+                              result["assets"][0]["descriptor"])
+        self.assertEqual(published.returncode, 0, published.stderr)
+        self.assertEqual(json.loads(published.stdout)["body"]["asset"]["branch"], "cleanup/test")
+        dirty = peer / "outside.md"
+        dirty.write_text("peer staged draft\n")
+        git(peer, "add", "outside.md")
+        dirty.write_text("peer staged draft\nunstaged draft\n")
+        (peer / "untracked.md").write_text("untracked idea\n")
+        synced = self.work("sync", repo=peer)
+        self.assertEqual(synced.returncode, 0, synced.stderr)
+        self.assertEqual((peer / "cleanup-only.md").read_text(), "new cleanup work\n")
+        self.assertEqual(value(peer, "show", ":outside.md"), "peer staged draft")
+        self.assertIn("unstaged draft", dirty.read_text())
+        self.assertEqual((peer / "untracked.md").read_text(), "untracked idea\n")
+        # Advancing main is not silently merged into a bound cleanup clone.
+        git(self.seed, "switch", "main")
+        self.advance_main("main-only.md", "independent Pro work\n")
+        self.assertEqual(self.work("sync", repo=peer).returncode, 0)
+        self.assertFalse((peer / "main-only.md").exists())
+        self.assertEqual(git(self.remote, "merge-base", "--is-ancestor", main_before, "main").returncode, 0)
+        self.assertNotEqual(value(self.remote, "rev-parse", "main"), result["commit"])
+        self.assertEqual(value(self.remote, "show", "cleanup/test:cleanup-only.md"), "new cleanup work")
+
+    def test_new_board_is_independent_and_init_does_not_erase_either_board(self):
+        self.start()
+        self.assertEqual(self.work("send", "--text", "old board content").returncode, 0)
+        self.publish_cleanup_fixture()
+        other = self.root / "cleanup board clone"
+        self.start_cleanup(other, actor="002")
+        initialized = self.work("board-init", repo=other)
+        self.assertEqual(initialized.returncode, 0, initialized.stderr)
+        self.assertEqual(json.loads(self.work("read", "--json", repo=other).stdout)["events"], [])
+        self.assertEqual(self.work("send", "--text", "new cleanup idea", repo=other).returncode, 0)
+        self.assertEqual(self.work("board-init", repo=other).returncode, 0)
+        self.assertEqual(len(json.loads(self.work("read", "--json", repo=other).stdout)["events"]), 1)
+        self.assertEqual([e["body"]["text"] for e in self.read()["events"]], ["old board content"])
+
+    def test_bound_clone_refuses_branch_or_board_rebinding_and_retains_bytes(self):
+        self.publish_cleanup_fixture()
+        self.start_cleanup()
+        (self.repo / "untracked.md").write_text("valuable unfinished note\n")
+        before = value(self.repo, "rev-parse", "HEAD")
+        for args in (("--branch", "main"), ("--board-branch", "another-board")):
+            result = self.work("start", "--remote", str(self.remote), *args)
+            self.assertEqual(result.returncode, 2)
+        self.assertEqual(value(self.repo, "branch", "--show-current"), "cleanup/test")
+        self.assertEqual(value(self.repo, "rev-parse", "HEAD"), before)
+        self.assertEqual((self.repo / "untracked.md").read_text(), "valuable unfinished note\n")
+        git(self.repo, "switch", "-c", "wrong-branch")
+        for command in ("sync", "checkpoint", "workspace"):
+            self.assertEqual(self.work(command).returncode, 2)
+
+    def test_first_publication_requires_explicit_create_and_stays_off_main(self):
+        self.start()
+        before = value(self.remote, "rev-parse", "main")
+        git(self.repo, "switch", "-c", "cleanup/new")
+        git(self.repo, "config", "wcg.branch", "cleanup/new")
+        (self.repo / "new-cleanup.md").write_text("foundation\n")
+        refused = self.work("checkpoint", "new-cleanup.md", "-m", "foundation")
+        self.assertEqual(refused.returncode, 2)
+        self.assertEqual(value(self.remote, "rev-parse", "main"), before)
+        self.assertEqual(value(self.remote, "for-each-ref", "refs/heads/cleanup/new"), "")
+        saved = self.work("checkpoint", "new-cleanup.md", "--create-branch")
+        self.assertEqual(saved.returncode, 0, saved.stderr)
+        result = json.loads(saved.stdout)
+        self.assertEqual(result["status"], "pushed")
+        self.assertEqual(result["assets"][0]["asset"]["branch"], "cleanup/new")
+        self.assertEqual(value(self.remote, "rev-parse", "main"), before)
+        self.assertEqual(value(self.remote, "rev-parse", "cleanup/new"), result["commit"])
+
+    def test_first_publication_audits_all_unpublished_commits(self):
+        self.start()
+        git(self.repo, "switch", "-c", "cleanup/new")
+        git(self.repo, "config", "wcg.branch", "cleanup/new")
+        (self.repo / "outside.md").write_text("unpublished other change\n")
+        git(self.repo, "add", "outside.md")
+        git(self.repo, "commit", "-m", "other change")
+        note = self.repo / SCOPE / "note.md"
+        note.write_text("selected change\n")
+        result = self.work("checkpoint", SCOPE, "--create-branch")
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("outside checkpoint scope", result.stderr)
+        self.assertEqual(value(self.remote, "for-each-ref", "refs/heads/cleanup/new"), "")
+
+    def test_visit_uses_bound_branch_and_can_explicitly_read_main(self):
+        self.publish_cleanup_fixture()
+        folder = self.seed / "research/workspaces/repository-cleanup/002"
+        folder.mkdir(parents=True)
+        (folder / "README.md").write_text("peer on cleanup\n")
+        git(self.seed, "add", "research/workspaces")
+        git(self.seed, "commit", "-m", "peer cleanup draft")
+        git(self.seed, "push", "origin", "cleanup/test")
+        self.start_cleanup()
+        result = self.work("visit", "002")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(json.loads(result.stdout)["branch"], "cleanup/test")
+        git(self.seed, "switch", "main")
+        folder.mkdir(parents=True, exist_ok=True)
+        (folder / "README.md").write_text("peer on main\n")
+        git(self.seed, "add", "research/workspaces")
+        git(self.seed, "commit", "-m", "peer main draft")
+        git(self.seed, "push", "origin", "main")
+        result = self.work("visit", "002", "--branch", "main")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(json.loads(result.stdout)["text"], "peer on main\n")
+        self.assertEqual(value(self.repo, "branch", "--show-current"), "cleanup/test")
+
     def test_start_limits_recent_context_without_deleting_board_history(self):
         self.start()
         for label in ("older-context", "recent-a", "recent-b", "recent-c"):

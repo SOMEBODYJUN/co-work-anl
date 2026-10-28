@@ -1,5 +1,7 @@
 # 顺序客户吸引：启动、交流、备份与入库
 
+本轮数学主目标 **Q-CAG-HALF-6**；当前先做 `repository-cleanup` 清洗地基，加入清洗分支请读[新版操作](../../collaboration/README.md)。下面保留 `customer-attraction` 原研究存档的操作兼容；其他旧角色与提示词将随正文整理重写。
+
 当前目标 **Q-CAG-HALF**，存档 **customer-attraction**，一般命题仍 OPEN。
 只有[Boss](BOSS_START.md)、[清洗者](CLEANER.md)、[整理者](EDITOR.md)三种当前角色。
 根目录完整 `work.py` 负责恢复、通信和保存，不规定数学方法或探索审批。
@@ -13,7 +15,7 @@ agent 自动识别附件实际路径，为自己的对话选择独立项目目�
 python3 <附件work.py> --repo <本对话项目目录> start --save customer-attraction --role boss --token-file <附件githubtoken.txt>
 ```
 
-清洗者将角色换成 `cleaner`，整理者换成 `editor`。每个独立对话一个 clone，全部在 `main`，不另建研究分支。
+清洗者将角色换成 `cleaner`，整理者换成 `editor`。每个独立对话一个 clone；既有研究clone默认 `main`，新clone可用 `start --branch <明确文件分支> --board-branch <明确公屏分支>` 绑定独立协作，不自动切换现有绑定。
 首次程序生成 actor；启动回执给出 `actor`、`workspace.path`、`branch=main`、存档与角色入口。
 进入项目根目录后统一用仓库内最新版 `work.py`，日常命令复用已经绑定的 token 路径、身份和存档。启动回执的 `context_entry` 指向唯一短恢复入口；默认不自动读取公屏，可用 `start --board-limit 3` 显式读取最近3条。完整历史仍用 `read` 按需查询；此处的0表示不读，`read --limit 0` 表示全部。
 
@@ -52,7 +54,7 @@ python3 work.py visit <对方actor>
 
 公屏用于异步讨论，想法、猜想、卡点都可交流，标清现状即可；发完继续研究，不等待回复。
 不必每次备份都发消息。subagents 的发现由所在对话汇总，不各自创建独立身份。
-程序自动使用当前存档筛选消息；公屏与私聊是交流入口，研究文件仍在 main。
+程序自动使用当前存档筛选消息；公屏与私聊是交流入口，研究文件在绑定文件分支；公屏分支独立绑定，不和文件分支混用。
 
 ## 个人工作区：持续备份
 
@@ -66,7 +68,7 @@ python3 work.py visit <对方actor>
 python3 work.py checkpoint <本人工作区路径> -m '阶段备份：当前推导与下一步'
 ```
 
-这会提交并推送到 main，只有回执 `status=pushed` 才表示远端已保存。
+这会提交并推送到绑定文件分支（原clone默认main），只有回执 `status=pushed` 才表示远端已保存。
 不需要先更新共享研究地图、登记 Claim 或完成数学审核。
 
 ```sh
