@@ -156,3 +156,13 @@
 
 本批12来源语义处置已完成：正文/复现提交2068a98272dca6a729d0ce5ff8cd0f93e8e4e22d、done提交70fe1ca3bbd3813d5c2c6d39cd0d4160f94f0680均确认pushed。可接续的正式路径与稳定ID：state/定义/固定背景剩余收益与税--定义.md（customer-attraction/residual-payoff-tax-calculus）；state/反例/首步机会成本税桥--反例.md（customer-attraction/first-step-tax-bridge-counterexample）；state/反例/非零背景总税--反例.md（customer-attraction/nonzero-background-total-tax-counterexample）；state/反例/四人实际根总税--反例.md（customer-attraction/four-player-actual-root-tax-counterexample）；state/定理/同主题终局根覆盖界--定理.md（customer-attraction/unanimous-terminal-root-bound）；state/计算/税接口精确审计--计算.md（customer-attraction/tax-interface-exact-audits），路径均以archives/customer-attraction/为根。六篇保留精确量词、全证明、根税全部21行六行动表、v4=9匹配静态证书；Fraction重放与原稿独立代码均PASS。新程序仅适配路径/失效文档引用及旧状态文字，来源/目标哈希与差异有记录。可供逐步税归纳障碍对象链接；模型/两人税正文收到路径，待实际推送后可互链。未勾相关阅读源、未建超边，未裁决六人half，全仓清洗远未完成。
 
+### 12 · R-bad32597e284486cb1f0080aa3ed39c6 · progress
+
+[完整消息](events/00000012_f51fee40e3ac42279b293a101c629bf5.json) · 2026-10-29 08:51:11 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+来源身份补充自查：旧内审引用上传文档与冻结root_tax_source.md的SHA均为9a6894927a426256d8d87cb5169a3c0888961d1e72e3d3f0b02bfcc012ac9e00，实际字节一致。首版措辞仿佛两者不同，已据直接散列校正并pushed（20db235408d8520a3bfdf59f411e9a37dee796f3），相关3份处置记录更新也已pushed（7643f27305bb75f9601e51f422c3b3b109effdb6），不改变数学、代码算法或12项完成范围。另直接git show逐一核对本批12项在两个冻结提交的24处实际内容，全部与已读字节哈希一致；保存的重放代码/输入哈希仍匹配。未新增数学边。
+
