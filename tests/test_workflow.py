@@ -121,6 +121,49 @@ class WorkflowTests(unittest.TestCase):
         with (self.a/'cleanup/inventory.jsonl').open('a') as f:f.write('\n')
         self.assertNotEqual(self.work(self.a,'clean','status').returncode,0)
 
+    def add_increment(self):
+        baseline=(self.seed/'cleanup/inventory.jsonl').read_bytes()
+        name='raw/c.md';data=b'unique increment mathematical source\n'
+        (self.seed/name).write_bytes(data)
+        git(self.seed,'add',name);git(self.seed,'commit','-m','reviewed additional raw source')
+        commit=git(self.seed,'rev-parse','HEAD');git(self.seed,'push','origin','HEAD:refs/heads/main')
+        row={'id':'increment-source-c','path':name,'blob':git(self.seed,'rev-parse',commit+':'+name),
+             'sha256':hashlib.sha256(data).hexdigest(),'sources':[{'name':'increment','commit':commit,'path':name}]}
+        path='cleanup/increments/extra.jsonl';payload=(json.dumps(row)+'\n').encode()
+        target=self.seed/path;target.parent.mkdir();target.write_bytes(payload)
+        meta_path=self.seed/'cleanup/sources.json';meta=json.loads(meta_path.read_text())
+        meta['increments']=[{'path':path,'count':1,'sha256':hashlib.sha256(payload).hexdigest()}]
+        meta['snapshots'].append({'commit':commit});meta_path.write_text(json.dumps(meta))
+        hold={'items':[{'disposition':'admit-source','source_id':row['id'],'admitted_path':name,
+                       'sha256':row['sha256'],'review_note':'Read and selected for mathematical relevance','review_commit':commit}]}
+        (self.seed/'cleanup/local-unpublished.json').write_text(json.dumps(hold))
+        git(self.seed,'add','cleanup');git(self.seed,'commit','-m','register frozen increment without changing baseline')
+        git(self.seed,'push','origin','HEAD:refs/heads/'+BRANCH)
+        self.assertEqual(self.work(self.a,'sync').returncode,0)
+        self.assertEqual((self.a/'cleanup/inventory.jsonl').read_bytes(),baseline)
+        return row,path
+
+    def test_increment_is_readable_searchable_and_remains_semantically_pending(self):
+        row,_=self.add_increment()
+        status=json.loads(self.work(self.a,'clean','status').stdout)
+        self.assertEqual((status['source_versions'],status['completed'],status['local_source_hold']),(3,0,0))
+        self.assertIn('unique increment',self.work(self.a,'clean','show',row['id']).stdout)
+        found=json.loads(self.work(self.a,'clean','search','unique increment').stdout)
+        self.assertEqual(found[0]['id'],row['id'])
+        hold_path=self.a/'cleanup/local-unpublished.json';hold=json.loads(hold_path.read_text())
+        hold['items'][0]['source_id']='not-registered';hold_path.write_text(json.dumps(hold))
+        self.assertEqual(json.loads(self.work(self.a,'clean','status').stdout)['local_source_hold'],1)
+
+    def test_increment_hash_and_unique_ids_are_enforced(self):
+        row,path=self.add_increment();target=self.a/path
+        target.write_bytes(target.read_bytes()+b'\n')
+        self.assertNotEqual(self.work(self.a,'clean','status').returncode,0)
+        row['id']=self.ids[0];payload=(json.dumps(row)+'\n').encode();target.write_bytes(payload)
+        meta_path=self.a/'cleanup/sources.json';meta=json.loads(meta_path.read_text())
+        meta['increments'][0]['sha256']=hashlib.sha256(payload).hexdigest();meta_path.write_text(json.dumps(meta))
+        r=self.work(self.a,'clean','status');self.assertNotEqual(r.returncode,0)
+        self.assertIn('Duplicate source IDs',r.stderr)
+
     def test_multi_source_edge_and_stage_gate(self):
         edge=self.a/'archives/demo/map/edges/joint.md'
         edge.parent.mkdir(parents=True,exist_ok=True)

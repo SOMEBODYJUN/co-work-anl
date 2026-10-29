@@ -13,7 +13,45 @@ def inventory(root):
     meta=json.loads((root/'cleanup/sources.json').read_text())
     if hashlib.sha256(data).hexdigest()!=meta['inventory_sha256']:
         raise ValueError('Frozen inventory changed; register a separate source increment')
-    return [json.loads(line) for line in data.decode().splitlines() if line]
+    rows=[json.loads(line) for line in data.decode().splitlines() if line]
+    if 'inventory_count' in meta and len(rows)!=meta['inventory_count']:
+        raise ValueError('Frozen inventory count mismatch')
+    for increment in meta.get('increments',[]):
+        path=(root/increment['path']).resolve()
+        if not path.is_relative_to((root/'cleanup/increments').resolve()):
+            raise ValueError('Source increments must stay inside cleanup/increments')
+        payload=path.read_bytes()
+        if hashlib.sha256(payload).hexdigest()!=increment['sha256']:
+            raise ValueError('Frozen source increment changed: '+increment['path'])
+        added=[json.loads(line) for line in payload.decode().splitlines() if line]
+        if len(added)!=increment['count']:
+            raise ValueError('Source increment count mismatch')
+        rows.extend(added)
+    if len({r['id'] for r in rows})!=len(rows):
+        raise ValueError('Duplicate source IDs across frozen batches')
+    return rows
+
+
+def local_hold(root, rows):
+    path=root/'cleanup/local-unpublished.json'
+    local=json.loads(path.read_text()).get('items',[]) if path.exists() else []
+    by_id={r['id']:r for r in rows}
+    unresolved=0
+    for item in local:
+        disposition=item.get('disposition')
+        if disposition=='admit-source':
+            target=by_id.get(item.get('source_id'),{})
+            resolved=target.get('sha256')==item.get('sha256') and target.get('path')==item.get('admitted_path')
+        elif disposition=='exclude-prefix-copy':
+            comparisons=item.get('byte_comparison',[])
+            resolved=bool(comparisons) and all(c.get('exact_prefix') is True and
+                by_id.get(c.get('canonical_id'),{}).get('sha256')==c.get('canonical_sha256') for c in comparisons)
+        else:
+            resolved=disposition in {'exclude-nonmathematical','absorbed-defect-note'}
+        # A judgment needs an explanation and a concrete published review record.
+        if not resolved or not item.get('review_note') or not item.get('review_commit'):
+            unresolved+=1
+    return unresolved
 
 
 def progress(root, sid):
@@ -23,13 +61,11 @@ def progress(root, sid):
 
 def stats(root):
     rows=inventory(root);states=[progress(root,r['id']) for r in rows]
-    hold=root/'cleanup/local-unpublished.json'
-    local=json.loads(hold.read_text()).get('items',[]) if hold.exists() else []
     return {'source_versions':len(rows),'distinct_paths':len({r['path'] for r in rows}),
             'completed':sum(s.get('disposition') in COMPLETE for s in states),
             'claimed':sum(s.get('owner') is not None and s.get('disposition') not in COMPLETE for s in states),
             'unresolved':sum(s.get('disposition')=='needs-decision' for s in states),
-            'local_source_hold':len(local)}
+            'local_source_hold':local_hold(root,rows)}
 
 
 def coverage(root):
@@ -48,7 +84,7 @@ def coverage(root):
         (directory/name).write_text('\n'.join(lines)+'\n');pages.append(name)
     s=stats(root)
     lines=['# 全量清点与勾选','',f"远端源版本 {s['source_versions']}；不同路径 {s['distinct_paths']}；语义处置完成 {s['completed']}；认领中 {s['claimed']}；待裁决 {s['unresolved']}；另有本地来源待处理 {s['local_source_hold']}。",'',
-           '分母固定于 sources.json 的提交和 inventory.jsonl。进度来源为 progress/ 下逐文件记录；机器生成本页和分册。','']
+           '原始分母与每批增量分别冻结于 sources.json；进度来源为 progress/ 下逐文件记录。来源补录不等于语义清洗完成。机器生成本页和分册。','']
     lines += [f'- [第{i+1}册](checklists/{p})' for i,p in enumerate(pages)]
     (root/'cleanup/CHECKLIST.md').write_text('\n'.join(lines)+'\n')
     return s
