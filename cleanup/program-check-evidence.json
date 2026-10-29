@@ -1,0 +1,123 @@
+{
+  "baseline_reproduction": [
+    {
+      "step": "first",
+      "seconds": 0.504,
+      "exit": 0,
+      "response": {
+        "status": "pushed",
+        "operation": "claim",
+        "actor": "A",
+        "ids": [
+          "c8480155bc556fa01b5b"
+        ],
+        "remote_tip": "e4a342e5d259f8336cbdecb5c6d0412fedc00b9c",
+        "note": "Declared semantic work; field checks do not prove mathematical correctness. Run sync before further shared-file edits."
+      }
+    },
+    {
+      "step": "second",
+      "seconds": 0.549,
+      "exit": 0,
+      "response": {
+        "status": "pushed",
+        "operation": "claim",
+        "actor": "A",
+        "ids": [
+          "c8480155bc556fa01b5b"
+        ],
+        "remote_tip": "6a68b9f4d3c4b65bf1bbd11316d66e8a07fc38a0",
+        "note": "Declared semantic work; field checks do not prove mathematical correctness. Run sync before further shared-file edits."
+      }
+    },
+    {
+      "step": "local-list",
+      "seconds": 0.182,
+      "exit": 0,
+      "response": [
+        {
+          "id": "c8480155bc556fa01b5b",
+          "path": "raw/a.md",
+          "blob": "02a2d9aa2ee8554da49e516fda0c3b53e2b7f08d",
+          "sha256": "3da82b763f9a1fe1cef5ec05a99f2206759ed992337bb442264cb70332487f68",
+          "sources": [
+            {
+              "name": "fixture",
+              "commit": "32376530c8f592e95b6595b100ca7e8e6e8504a6",
+              "path": "raw/a.md"
+            }
+          ],
+          "progress": {}
+        },
+        {
+          "id": "535473df6984a066324a",
+          "path": "raw/b.md",
+          "blob": "4b70c412cf24cc30549d55c04663d6e6a038f3b7",
+          "sha256": "fbad15e00858abb27a64b17ad6304801ae150cc405447757934aae150d26751a",
+          "sources": [
+            {
+              "name": "fixture",
+              "commit": "32376530c8f592e95b6595b100ca7e8e6e8504a6",
+              "path": "raw/b.md"
+            }
+          ],
+          "progress": {}
+        }
+      ]
+    }
+  ],
+  "local_commands_after": [
+    {
+      "command": "clean status",
+      "seconds": 0.452,
+      "exit": 0,
+      "output_bytes": 137,
+      "error": ""
+    },
+    {
+      "command": "clean list --limit 5",
+      "seconds": 0.278,
+      "exit": 0,
+      "output_bytes": 549,
+      "error": ""
+    },
+    {
+      "command": "clean list --limit 5 --full",
+      "seconds": 0.314,
+      "exit": 0,
+      "output_bytes": 2533,
+      "error": ""
+    },
+    {
+      "command": "clean search Q-CAG-HALF-6 --limit 3",
+      "seconds": 0.462,
+      "exit": 0,
+      "output_bytes": 1878,
+      "error": ""
+    }
+  ],
+  "cold_start_baseline": {
+    "cold_start_seconds": 18.176,
+    "exit": 0,
+    "stdout_bytes": 786,
+    "stderr": "",
+    "branch": "rebuild/research-v2",
+    "git_dir_bytes": 84535512
+  },
+  "cold_start_shallow_only": {
+    "cold_start_seconds": 15.933,
+    "exit": 0,
+    "stderr": "",
+    "branch": "rebuild/research-v2",
+    "git_dir_bytes": 1992381,
+    "shallow": "true"
+  },
+  "measurement_scope": "本环境单次测量；浅克隆阶段尚未包含消除bootstrap重复同步后的远端部署复测。",
+  "production_math_progress": "No source claims or semantic completion changed by these tests; bare Git fixtures are isolated.",
+  "tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 18,
+    "failed": 0,
+    "seconds": 49.975
+  }
+}

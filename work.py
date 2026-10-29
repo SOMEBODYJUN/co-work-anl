@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import contextlib
 import fcntl
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -354,6 +355,11 @@ def start(args):
     # it hands control to that branch's current root program, before binding a
     # phase/save/role. Later prompt and phase updates therefore live on GitHub.
     running_source = Path(__file__).read_bytes()
+    # Consume a one-hop handoff receipt. The bootstrap has just fetched this
+    # exact checkout; its current program need not repeat the same network sync.
+    try:handoff=json.loads(os.environ.pop('WCG_START_HANDOFF','null'))
+    except (ValueError,TypeError):handoff=None
+    created_clone=False
     board_limit = getattr(args, "board_limit", 0)
     if board_limit < 0:
         raise Stop("start --board-limit 必须是非负整数；0 表示不自动读取公屏。")
@@ -370,7 +376,8 @@ def start(args):
         if SECRET.search(remote.encode()) or re.search(r"https?://[^/]*@", remote):
             raise Stop("仓库地址请使用普通 Git URL。")
         target = checked_branch(repo.parent, getattr(args, "branch", None) or DEFAULT_BRANCH)
-        run(repo.parent, "clone", "--quiet", "--single-branch", "--branch", target, remote, str(repo), env=env)
+        run(repo.parent, "clone", "--quiet", "--depth=1", "--single-branch", "--branch", target, remote, str(repo), env=env)
+        created_clone=True
     repo = checked_repo(repo)
     origin = value(repo, "remote", "get-url", "--all", "origin")
     push_origin = value(repo, "remote", "get-url", "--push", "--all", "origin")
@@ -386,8 +393,21 @@ def start(args):
         raise Stop("公屏分支与研究文件分支必须分开。")
     env = auth(repo, args)
     run(repo, "config", "--local", "wcg.branch", target)
-    result = sync(repo, env, allow_legacy=legacy)
     current_program = repo / "work.py"
+    valid_handoff=(isinstance(handoff,dict) and handoff.get('repo')==str(repo)
+                   and handoff.get('branch')==target
+                   and handoff.get('head')==value(repo,'rev-parse','HEAD')
+                   and handoff.get('program_sha256')==hashlib.sha256(current_program.read_bytes()).hexdigest()
+                   and isinstance(handoff.get('result'),dict)
+                   and handoff['result'].get('status')=='synced'
+                   and handoff['result'].get('branch')==target)
+    if valid_handoff:
+        result=handoff['result']
+    elif created_clone:
+        tip=value(repo,'rev-parse','refs/remotes/origin/'+target)
+        result={'status':'synced','branch':target,'remote_tip':tip,'preserved_work':True}
+    else:
+        result = sync(repo, env, allow_legacy=legacy)
     if (Path(__file__).resolve() != current_program.resolve()
             or current_program.read_bytes() != running_source):
         forwarded = ["--repo", str(repo), "start", "--remote", args.remote,
@@ -398,7 +418,10 @@ def start(args):
                 forwarded.extend(["--" + name.replace("_", "-"), str(supplied)])
         if getattr(args, "resume", False):
             forwarded.append("--resume")
-        return subprocess.call([sys.executable, str(current_program), *forwarded], env=env)
+        forwarded_env=dict(env,WCG_START_HANDOFF=json.dumps({
+            'repo':str(repo),'branch':target,'head':value(repo,'rev-parse','HEAD'),
+            'program_sha256':hashlib.sha256(current_program.read_bytes()).hexdigest(),'result':result}))
+        return subprocess.call([sys.executable, str(current_program), *forwarded], env=forwarded_env)
     who = actor(repo, args.actor)
     if not run(repo, "config", "--local", "--get", "user.name", check=False).stdout:
         run(repo, "config", "--local", "user.name", "WCG " + who)
@@ -409,12 +432,17 @@ def start(args):
     requested_sub=getattr(args,"subarchive",None)
     if requested_sub and (not IDENTIFIER.fullmatch(requested_sub) or (previous_save and requested_sub!=saved_sub)):
         raise Stop("子存档变更请使用独立clone；不改写已有绑定。")
-    save = save_id(repo, getattr(args, "save", None),
-                   DEFAULT_START_SAVE if target == DEFAULT_BRANCH else DEFAULT_SAVE)
+    requested_save=getattr(args,"save",None)
+    preview_save=requested_save or previous_save or (DEFAULT_START_SAVE if target==DEFAULT_BRANCH else DEFAULT_SAVE)
+    if not IDENTIFIER.fullmatch(preview_save):
+        raise Stop("研究存档请使用安全ID。")
     selected_sub=requested_sub or saved_sub
     if selected_sub:
-        if save=='repository-cleanup' or not (repo/'archives'/save/'subarchives'/selected_sub/'README.md').is_file():
+        if preview_save=='repository-cleanup' or not (repo/'archives'/preview_save/'subarchives'/selected_sub/'README.md').is_file():
             raise Stop("不存在该研究子存档；先按实际问题建立目录。")
+    save = save_id(repo, requested_save,
+                   DEFAULT_START_SAVE if target == DEFAULT_BRANCH else DEFAULT_SAVE)
+    if selected_sub:
         run(repo,"config","--local","wcg.subarchive",selected_sub)
     requested_role = getattr(args, "role", None)
     prompts = CLEANUP_ROLE_PROMPTS if save == "repository-cleanup" else ROLE_PROMPTS
@@ -483,7 +511,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--repo", default=default_repo())
     p.add_argument("--token-file")
-    p.add_argument("--save", help="研究存档 ID；首次默认 customer-attraction，已绑定 clone 保持原存档")
+    p.add_argument("--save", help="研究存档 ID；新clone默认 repository-cleanup，已绑定clone保持原存档")
     sub = p.add_subparsers(dest="command", required=True)
     s = sub.add_parser("start", help="恢复项目，固定角色号并同步；公屏按需读取")
     s.add_argument("--actor", help="可选；省略时为本对话生成并记住唯一 R-UUID 发布标识")
@@ -558,7 +586,23 @@ def main():
         raise Stop("私聊必须指定另一位 Worker 的有效编号；不会改发到公屏。")
     if a.command in ("clean", "map"):
         module = "cleanup.py" if a.command == "clean" else "maps.py"
-        return subprocess.call([sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args], env=env)
+        command=[sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args]
+        if a.command=='clean' and a.args and a.args[0] in ('claim','done','release'):
+            result=subprocess.run(command,env=env,capture_output=True,text=True)
+            if result.stderr:sys.stderr.write(result.stderr)
+            if result.returncode:
+                sys.stdout.write(result.stdout)
+                return result.returncode
+            receipt=json.loads(result.stdout)
+            if receipt.get('status')=='pushed':
+                try:receipt['local_sync']=sync(repo,env)
+                except (Stop,OSError) as exc:
+                    # The remote operation succeeded even if restoring local
+                    # drafts needs attention; keep that success distinguishable.
+                    receipt['local_sync']={'status':'needs-attention','detail':str(exc)}
+            print(json.dumps(receipt,ensure_ascii=False,indent=2))
+            return 0
+        return subprocess.call(command, env=env)
     if a.command == "sync":
         print(json.dumps(sync(repo, env), ensure_ascii=False))
         return 0

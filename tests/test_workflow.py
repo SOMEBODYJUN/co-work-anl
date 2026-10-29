@@ -100,6 +100,74 @@ class WorkflowTests(unittest.TestCase):
         owner=json.loads(git(self.remote,'show',BRANCH+':cleanup/progress/'+self.ids[0]+'.json'))['owner']
         self.assertIn(owner,['A','B'])
 
+    def test_prefix_claim_advances_and_local_list_refreshes(self):
+        results=[]
+        for _ in range(2):
+            r=self.work(self.a,'clean','claim','--prefix','raw/','--limit','1')
+            self.assertEqual(r.returncode,0,r.stderr);receipt=json.loads(r.stdout)
+            self.assertEqual(receipt['status'],'pushed');self.assertEqual(receipt['local_sync']['status'],'synced')
+            results.extend(receipt['ids'])
+        self.assertEqual(set(results),set(self.ids))
+        rows=json.loads(self.work(self.a,'clean','list','--owner','self','--state','in-progress').stdout)
+        self.assertEqual({r['id'] for r in rows},set(self.ids));self.assertNotIn('sources',rows[0])
+        self.assertEqual(json.loads(self.work(self.a,'clean','list','--available').stdout),[])
+        empty=json.loads(self.work(self.a,'clean','claim','--prefix','raw/').stdout)
+        self.assertEqual(empty['status'],'empty');self.assertEqual(empty['ids'],[])
+        full=json.loads(self.work(self.a,'clean','list','--full','--limit','1').stdout)
+        self.assertIn('sources',full[0]);self.assertEqual(full[0]['progress']['owner'],'A')
+
+    def test_six_cleaners_share_prefix_without_duplicate_claims(self):
+        repos=[self.a,self.b]+[self.start(name) for name in ('C','D','E','F')]
+        with concurrent.futures.ThreadPoolExecutor(6) as pool:
+            results=list(pool.map(lambda repo:self.work(repo,'clean','claim','--prefix','raw/','--limit','1'),repos))
+        for r in results:self.assertEqual(r.returncode,0,r.stderr)
+        receipts=[json.loads(r.stdout) for r in results]
+        acquired=[sid for r in receipts for sid in r['ids']]
+        self.assertEqual(sorted(acquired),sorted(self.ids))
+        self.assertEqual(sum(r['status']=='empty' for r in receipts),4)
+
+    def test_claim_refresh_preserves_staged_unstaged_and_untracked_work(self):
+        tracked=self.a/'raw/a.md';tracked.write_text('my staged draft\n')
+        git(self.a,'add','raw/a.md');tracked.write_text('my staged draft\nplus unstaged paragraph\n')
+        draft=self.a/'unrelated-draft.md';draft.write_text('keep my private draft\n')
+        self.claim(self.a,self.ids[0])
+        self.assertEqual(tracked.read_text(),'my staged draft\nplus unstaged paragraph\n')
+        self.assertEqual(git(self.a,'show',':raw/a.md'),'my staged draft')
+        self.assertEqual(draft.read_text(),'keep my private draft\n')
+        progress=json.loads((self.a/f'cleanup/progress/{self.ids[0]}.json').read_text())
+        self.assertEqual(progress['owner'],'A')
+
+    def test_remote_success_survives_local_restore_conflict(self):
+        path=self.a/f'cleanup/progress/{self.ids[0]}.json';path.parent.mkdir()
+        path.write_text('my conflicting untracked draft\n')
+        r=self.work(self.a,'clean','claim',self.ids[0]);self.assertEqual(r.returncode,0,r.stderr)
+        receipt=json.loads(r.stdout);self.assertEqual(receipt['status'],'pushed')
+        self.assertEqual(receipt['local_sync']['status'],'needs-attention')
+        self.assertEqual(git(self.a,'show','stash@{0}^3:'+str(path.relative_to(self.a))),'my conflicting untracked draft')
+        remote=json.loads(git(self.remote,'show',BRANCH+':'+str(path.relative_to(self.a))))
+        self.assertEqual(remote['owner'],'A')
+
+    def test_failed_subarchive_start_can_be_corrected(self):
+        repo=self.base/'bad-sub'
+        failed=self.work(repo,'start','--remote',str(self.remote),'--save','facility-games','--subarchive','missing','--role','boss')
+        self.assertNotEqual(failed.returncode,0)
+        retry=self.work(repo,'start','--remote',str(self.remote),'--save','facility-games','--subarchive','common-two','--role','boss')
+        self.assertEqual(retry.returncode,0,retry.stderr)
+        self.assertEqual(json.loads(retry.stdout)['subarchive'],'common-two')
+
+    def test_shallow_start_reads_old_source_and_checkpoints(self):
+        repo=self.base/'shallow';remote=self.remote.as_uri()
+        r=self.work(repo,'start','--remote',remote,'--actor','S')
+        self.assertEqual(r.returncode,0,r.stderr)
+        self.assertEqual(git(repo,'rev-parse','--is-shallow-repository'),'true')
+        old=self.work(repo,'clean','show',self.ids[0]);self.assertEqual(old.returncode,0,old.stderr)
+        self.assertIn('source A',old.stdout)
+        self.claim(repo,self.ids[0])
+        path=self.node(repo,'D')
+        pushed=self.work(repo,'checkpoint',path,'-m','shallow clone checkpoint')
+        self.assertEqual(pushed.returncode,0,pushed.stderr)
+        self.assertEqual(json.loads(pushed.stdout)['status'],'pushed')
+
     def test_done_requires_pushed_target_and_updates_checkbox(self):
         self.claim(self.a,self.ids[0]);bad=self.record(self.a,self.ids[0],['archives/demo/not-pushed.md'])
         self.assertNotEqual(bad.returncode,0);self.assertIn('already be pushed',bad.stderr)

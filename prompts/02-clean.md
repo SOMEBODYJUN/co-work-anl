@@ -5,7 +5,7 @@
 
 自动识别新版work.py与仓库外githubtoken.txt，在本对话独立目录运行附件work.py --repo 自选独立目录 start --token-file 实际凭据路径。新程序默认结果分支rebuild/research-v2、公屏wcg/board-cleanup-20261028、repository-cleanup/cleaner；身份自动生成。旧来源clone不改绑。恢复后用仓库根程序。凭据只用于认证，不打印或入消息/正文/remote/提交。
 
-先读cleanup/README.md、cleanup/OBJECTS.md和tools/README.md。允许全仓与工具访问；不要默认通读所有历史。读公屏rebuild-v2线程，说明负责的数学对象/目录，使用work.py clean list和clean claim正式领取来源文件；公屏认领不代替机器勾选。源文件不在结果树里，用clean show ID读取，二进制先导出再用合适工具读。清点含两个冻结版本，同路径内容不同须分别比较。
+先读cleanup/README.md、cleanup/OBJECTS.md和tools/README.md。允许全仓与工具访问；不要默认通读所有历史。读公屏rebuild-v2线程，说明负责的数学对象/目录，用clean list --available看未领项、clean claim正式领取；按prefix领取下一批会跳过既有认领，恢复当前批次用clean list --owner self，完整元数据按需加--full。公屏认领不代替机器勾选。源文件不在结果树里，用clean show ID读取，二进制先导出再用合适工具读。清点含冻结版本及单独增量，同路径内容不同须分别比较。
 
 逐份读懂对象、模型、假设、量词、命题、关键论证、证据、用途和未完成部分。主动搜索并读取全仓相关先有工作、后续证明/纠错/反例；旧入口或图只能作线索。不要只搬文件、只压短摘要、只数扫描，也不能把未成熟或不在当前主线直接当无用。保留完整数学和独有信息；需要新问题/子存档/数学类型文件夹时按实读创建，不能被初始四家族封死。
 
@@ -13,7 +13,7 @@
 
 有用但未完成的内容可留工作室或开放问题，不要求在清洗时解完。重复源须吸收独有信息后再退役。学习/历史/设计/程序目录也要真实判断，不能按目录名整类删除。原资料保留于冻结分支；不要在结果树复制整套旧history与Boss流水。
 
-先显式路径checkpoint正式正文及复现依赖，收到pushed后再clean done --record-file填写每份来源的阅读、相关比较、处置理由和目标；可批量记录，一源多对象/多源一对象均可。full_file_reviewed/related_material_checked/unique_content_accounted_for必须真实。needs-decision不算完成；程序只校验字段和目标已远端存在，不能证明你读懂或数学正确。claim/done返回pushed才确认操作，随后sync再改共享文件。遇真实写入冲突保留各方再协调，不强推或覆盖。
+先显式路径checkpoint正式正文及复现依赖，收到pushed后再clean done --record-file填写每份来源的阅读、相关比较、处置理由和目标；可批量记录，一源多对象/多源一对象均可。full_file_reviewed/related_material_checked/unique_content_accounted_for必须真实。needs-decision不算完成；程序只校验字段和目标已远端存在，不能证明你读懂或数学正确。claim/done/release返回pushed后程序自动刷新本地状态；若local_sync标needs-attention，远端已成功而本地恢复冲突，先保留并处理，不重复认领。遇真实写入冲突保留各方再协调，不强推或覆盖。
 
 当前焦点Q-CAG-HALF-6：有限单位客户、有限共同目录，六提供者按完整有序历史选主题，均分客户价值；每份完整历史纯SPE覆盖≥最优六主题一半。空/重复/零客户、任意离轨历史和平局均保留。两阶段主动客户设施模型、拥塞和调度等保留各自量词。候选、完整证明、条件结果、模板障碍、有限实验和真正目标反例分清，不能把失败桥当主目标反例。
 

@@ -1,6 +1,6 @@
 """Frozen-source reading and concurrent per-file semantic-cleaning receipts."""
 from __future__ import annotations
-import argparse, hashlib, json, subprocess, sys, time, uuid
+import argparse, fcntl, hashlib, json, subprocess, sys, time, uuid
 from pathlib import Path
 from urllib.parse import quote
 import board
@@ -59,6 +59,49 @@ def progress(root, sid):
     return json.loads(p.read_text()) if p.exists() else {}
 
 
+def source_list(root, prefix='', limit=30, owner=None, state=None, available=False, full=False):
+    if owner=='self':
+        owner=board.git(root,'config','--local','--get','wcg.actor').stdout.decode().strip()
+    result=[]
+    for row in inventory(root):
+        if not row['path'].startswith(prefix):continue
+        record=progress(root,row['id']);disposition=record.get('disposition','unread')
+        if owner is not None and record.get('owner')!=owner:continue
+        if state and not (disposition in COMPLETE if state=='completed' else disposition==state):continue
+        if available and (record.get('owner') is not None or disposition in COMPLETE):continue
+        result.append(dict(row,progress=record) if full else
+                      {'id':row['id'],'path':row['path'],'state':disposition,'owner':record.get('owner')})
+        if limit and len(result)>=limit:break
+    return result
+
+
+def refresh_snapshot(client):
+    """Reuse fetched objects across transactions; never share a writable checkout."""
+    key=hashlib.sha256((client.remote+'\0'+client.branch).encode()).hexdigest()[:16]
+    cache=client.cache/('cleanup-snapshot-'+key+'.git')
+    with (client.cache/('cleanup-snapshot-'+key+'.lock')).open('a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX)
+        if not cache.exists():
+            board.git(client.repo,'init','--quiet','--bare',str(cache))
+            board.git(cache,'remote','add','origin',client.remote)
+        if board.git(cache,'remote','get-url','origin').stdout.decode().strip()!=client.remote:
+            raise ValueError('Cleanup snapshot remote mismatch')
+        board.git(cache,'fetch','--quiet','--no-tags','--depth=1','origin',
+                  '+refs/heads/'+client.branch+':refs/heads/snapshot')
+        tip=board.git(cache,'rev-parse','refs/heads/snapshot').stdout.decode().strip()
+        shallow=(cache/'shallow').read_bytes() if (cache/'shallow').exists() else None
+    return cache,tip,shallow
+
+
+def checkout_snapshot(client, directory):
+    cache,tip,shallow=refresh_snapshot(client)
+    client.setup(directory)
+    objects=Path(directory)/'.git/objects/info';objects.mkdir(exist_ok=True)
+    (objects/'alternates').write_text(str(cache/'objects')+'\n')
+    if shallow is not None:(Path(directory)/'.git/shallow').write_bytes(shallow)
+    board.git(directory,'checkout','--quiet','--detach',tip)
+
+
 def stats(root):
     rows=inventory(root);states=[progress(root,r['id']) for r in rows]
     return {'source_versions':len(rows),'distinct_paths':len({r['path'] for r in rows}),
@@ -101,7 +144,7 @@ def show(root,sid,output=None):
     row=resolve(inventory(root),sid);source=row['sources'][0];commit=source['commit']
     probe=board.git(root,'cat-file','-e',commit+':'+row['path'],check=False)
     if probe.returncode:
-        board.git(root,'fetch','--quiet','--no-tags','origin',commit)
+        board.git(root,'fetch','--quiet','--no-tags','--depth=1','origin',commit)
     data=board.git(root,'show',commit+':'+row['path']).stdout
     if hashlib.sha256(data).hexdigest()!=row['sha256']:
         raise ValueError('Source content hash mismatch')
@@ -123,7 +166,7 @@ def search(root, query, pattern='*.md', limit=30):
     for snapshot in snapshots:
         commit=snapshot['commit']
         if board.git(root,'cat-file','-e',commit,check=False).returncode:
-            board.git(root,'fetch','--quiet','--no-tags','origin',commit)
+            board.git(root,'fetch','--quiet','--no-tags','--depth=1','origin',commit)
         r=board.git(root,'-c','core.quotePath=false','grep','-n','-I','-F','-e',query,commit,'--',pattern,check=False)
         if r.returncode not in (0,1):
             raise ValueError('Could not search frozen source')
@@ -168,18 +211,22 @@ def mutate(root, operation, ids=(), prefix=None, limit=20, records=()):
     client=board.Board(root,branch=branch,retries=20);request_id=uuid.uuid4().hex
     for attempt in range(20):
         with client.scratch() as name:
-            directory=Path(name);client.setup(directory);client.checkout(directory)
+            directory=Path(name);checkout_snapshot(client,directory)
             rows=inventory(directory);by_id={r['id']:r for r in rows}
             chosen=[]
             if operation=='claim' and prefix is not None:
                 chosen=[r for r in rows if r['path'].startswith(prefix)
                         and progress(directory,r['id']).get('disposition') not in COMPLETE
-                        and progress(directory,r['id']).get('owner') in (None,actor)]
+                        and progress(directory,r['id']).get('owner') is None]
                 if limit:chosen=chosen[:limit]
             elif operation=='done':
                 chosen=[resolve(rows,item['id']) for item in records]
             else:chosen=[resolve(rows,sid) for sid in ids]
-            if not chosen:raise ValueError('No eligible source files')
+            if not chosen:
+                if operation=='claim' and prefix is not None:
+                    return {'status':'empty','operation':operation,'ids':[],
+                            'note':'No unclaimed sources in this prefix; use clean list --owner self to resume your current batch.'}
+                raise ValueError('No eligible source files')
             if len({r['id'] for r in chosen})!=len(chosen):raise ValueError('Duplicate source in one operation')
             updates=[]
             for index,row in enumerate(chosen):
@@ -204,14 +251,13 @@ def mutate(root, operation, ids=(), prefix=None, limit=20, records=()):
             board.git(directory,'commit','--quiet','-m',f'cleanup {operation}: {actor} ({len(updates)} source versions)')
             pushed=board.git(directory,'push','--quiet','origin','HEAD:refs/heads/'+branch,check=False)
             # Check actual remote state even if the push response was lost.
-            board.git(directory,'fetch','--quiet','--no-tags','origin','refs/heads/'+branch)
-            remote=board.git(directory,'rev-parse','FETCH_HEAD').stdout.decode().strip()
+            _,remote,_=refresh_snapshot(client)
             confirmed=True
             for sid in updates:
                 blob=board.git(directory,'show',remote+':cleanup/progress/'+sid+'.json',check=False)
                 if blob.returncode or json.loads(blob.stdout).get('request_id')!=request_id:
                     confirmed=False;break
-            if confirmed:return {'status':'pushed','operation':operation,'actor':actor,'ids':updates,'remote_tip':remote,'note':'Declared semantic work; field checks do not prove mathematical correctness. Run sync before further shared-file edits.'}
+            if confirmed:return {'status':'pushed','operation':operation,'actor':actor,'ids':updates,'remote_tip':remote,'note':'Declared semantic work; field checks do not prove mathematical correctness. The root work.py refreshes the local checkout after this receipt.'}
         time.sleep(min(.4,.03*(attempt+1)))
     raise ValueError('Concurrent updates could not be confirmed; no completion reported')
 
@@ -219,6 +265,10 @@ def mutate(root, operation, ids=(), prefix=None, limit=20, records=()):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--repo',type=Path,default=Path(__file__).resolve().parents[1]);sub=p.add_subparsers(dest='command',required=True)
     sub.add_parser('status');li=sub.add_parser('list');li.add_argument('--prefix',default='');li.add_argument('--limit',type=int,default=30)
+    li.add_argument('--owner',help='Actor ID, or self for this clone')
+    li.add_argument('--state',choices=('unread','in-progress','needs-decision','completed'))
+    li.add_argument('--available',action='store_true',help='Only unclaimed, unfinished sources')
+    li.add_argument('--full',action='store_true',help='Include full frozen-source metadata and receipt')
     sh=sub.add_parser('show');sh.add_argument('id');sh.add_argument('--out')
     se=sub.add_parser('search');se.add_argument('query');se.add_argument('--path',default='*.md');se.add_argument('--limit',type=int,default=30)
     cl=sub.add_parser('claim');cl.add_argument('ids',nargs='*');cl.add_argument('--prefix');cl.add_argument('--limit',type=int,default=20)
@@ -233,8 +283,7 @@ def main():
     elif a.command=='coverage':result=coverage(root)
     elif a.command=='list':
         if a.limit<0:raise ValueError('limit must be nonnegative')
-        rows=[dict(r,progress=progress(root,r['id'])) for r in inventory(root) if r['path'].startswith(a.prefix)]
-        result=rows[:a.limit] if a.limit else rows
+        result=source_list(root,a.prefix,a.limit,a.owner,a.state,a.available,a.full)
     elif a.command=='done':
         records=json.loads(a.record_file.read_text());records=records if isinstance(records,list) else [records]
         result=mutate(root,'done',records=records)

@@ -25,6 +25,9 @@ python3 work.py inbox
 ```sh
 python3 work.py clean status
 python3 work.py clean list --prefix research/current/customer_attraction/ --limit 20
+python3 work.py clean list --available --prefix research/current/customer_attraction/ --limit 20
+python3 work.py clean list --owner self --state in-progress
+python3 work.py clean list --owner self --full
 python3 work.py clean search '精确数学关键词' --path '*.md' --limit 30
 python3 work.py clean show <源ID>
 python3 work.py clean show <二进制源ID> --out <本地临时文件>
@@ -34,7 +37,11 @@ python3 work.py clean done --record-file <一个或一组语义处置JSON>
 python3 work.py clean release <本人未完成源ID>
 ```
 
-数字limit只控制领取/显示批量，按实际工作调整，不是研究时间/方法配额。认领和勾选在远端最新结果分支上串行争用同一源ID，正常Git推送重试；两个对话不能同时获得同一项。返回pushed才确认操作，之后sync再改共享文件。公屏说“我看这部分”不能代替正式认领。
+数字limit只控制领取/显示批量，按实际工作调整，不是研究时间/方法配额。list默认只给ID、路径、状态和owner，完整指纹/来源/记录用--full。--available看本地快照中未认领的项；--owner self恢复本人当前批次。查看其他人的最新进度可先sync；claim始终以远端最新状态裁决。
+
+按prefix领取下一批只选尚无人认领的文件，不会重复领取本人上一批；该范围已领完返回status=empty。显式ID仍可用于继续本人已有认领。认领和勾选使用正常Git推送重试；两个对话不能同时获得同一项。返回pushed才确认操作；根程序随后自动同步本地清单并保留暂存、未暂存和未跟踪草稿，无需每次另敲sync。若回执local_sync.status=needs-attention，远端操作已经成功，但本地恢复有冲突；先按说明处理，备份仍保留，不能把它当作未领取再抢一批。公屏说“我看这部分”不能代替正式认领。
+
+新clone只下载结果分支最新快照；原始来源按冻结提交按需取回。清洗事务使用本clone内可复用的Git对象缓存，各事务的写入工作树仍独立，避免每领取一批就重新下载整棵结果树。
 
 处置文件格式见cleanup/receipt-example.json，可为单条或JSON数组；一源可对应多对象、多源可对应一个自足正文。正文先checkpoint，完成登记会检查目标已在远端分支存在，不能拿本地未推送文件勾选。integrated/retained/duplicate/retired为完成处置，needs-decision不算完成。read/compared等字段是清洗者的实质工作声明，程序校验不能替代数学阅读。
 
