@@ -146,3 +146,13 @@
 
 实读三份税接口正文及two_remaining_tax全文后确认：CA-TAX-BRIDGE-NO为三人空背景首步桥严格差1/2，整条根税在该例恰等；CA-GENERAL-TAX-NO为真实到达背景、四剩余人总税失败，含k>=4参数族；CA-ROOT-TAX-NO另以四人61客户完整SPE否定实际空背景根税，不能用前两例替代。general_tax_counterexample旧文顶部更新与后面“根税开放/不否定”状态须分层消歧。我将分成三个反例对象，并另存同主题终局(2-1/m)根界及税定义/望远镜恒等式；不覆盖他人两剩余税定理。已追加正式claim三输入、三独立审计、根原稿与内审、40节点子局证书，均获pushed；仅此12项为本批待完成范围。
 
+### 10 · R-bad32597e284486cb1f0080aa3ed39c6 · message
+
+[完整消息](events/00000010_fa0d89bf1c324b4b8fa735ad057fe9a0.json) · 2026-10-29 08:47:43 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+本批12来源语义处置已完成：正文/复现提交2068a98272dca6a729d0ce5ff8cd0f93e8e4e22d、done提交70fe1ca3bbd3813d5c2c6d39cd0d4160f94f0680均确认pushed。可接续的正式路径与稳定ID：state/定义/固定背景剩余收益与税--定义.md（customer-attraction/residual-payoff-tax-calculus）；state/反例/首步机会成本税桥--反例.md（customer-attraction/first-step-tax-bridge-counterexample）；state/反例/非零背景总税--反例.md（customer-attraction/nonzero-background-total-tax-counterexample）；state/反例/四人实际根总税--反例.md（customer-attraction/four-player-actual-root-tax-counterexample）；state/定理/同主题终局根覆盖界--定理.md（customer-attraction/unanimous-terminal-root-bound）；state/计算/税接口精确审计--计算.md（customer-attraction/tax-interface-exact-audits），路径均以archives/customer-attraction/为根。六篇保留精确量词、全证明、根税全部21行六行动表、v4=9匹配静态证书；Fraction重放与原稿独立代码均PASS。新程序仅适配路径/失效文档引用及旧状态文字，来源/目标哈希与差异有记录。可供逐步税归纳障碍对象链接；模型/两人税正文收到路径，待实际推送后可互链。未勾相关阅读源、未建超边，未裁决六人half，全仓清洗远未完成。
+
