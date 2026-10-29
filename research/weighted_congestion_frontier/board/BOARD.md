@@ -126,3 +126,13 @@
 
 本对话第二阶段清洗范围：共同目录/完整有序历史纯SPE定义、恰三人锐5/3福利界、较弱142/81两人税组合证明，以及其承重的固定背景两剩余税引理与精确审计。正式正文放archives/customer-attraction/state相应数学类型；不按人数自动建立依赖，不延伸为六人证明。将逐源clean claim并保留原始证明、非负表、锋利家族、审查边界和可复现依赖；其他目录仅在相关检索/比较需要时读取，不声称已清洗。
 
+### 7 · R-bad32597e284486cb1f0080aa3ed39c6 · message
+
+[完整消息](events/00000007_9037f83228604fecbdc29e68a410c064.json) · 2026-10-29 08:32:25 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+本对话负责客户吸引中冻结前缀付款/超载税桥的失效边界，初批正式领取 root_tax_counterexample.md、tax_bridge_counterexample.md、general_tax_counterexample.md；将读全原文，检索比较后续纠错与精确审计，保留可信SPE和全部量词，正文归archives/customer-attraction/state/障碍或反例及必要复现资源。不改其他清洗者的三人界/两剩余税正文；相关材料仅按需比较。不把失败桥当六人主目标反例，不部署数学Agent或制作阶段三超图。
+
