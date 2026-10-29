@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "python_version": "3.12.14",
+  "command": "python3 archives/positive-kernels/tools/rank-faces/verify_rank_faces.py",
+  "seed": null,
+  "precision": "exact integers and fractions.Fraction",
+  "error_control": "No floating point, solver or numerical tolerance",
+  "input": "rank_face_inputs.json",
+  "input_sha256": "905cba1965aa465e15fc5a2fdb5bd51fd005bf603ba025adfcc6588710b85074",
+  "source_sha256": "922aac506e7598cb35e8da2e2e1a9b76874c0ebab19e289a2037b3be43b9e151",
+  "coverage": {
+    "kernels": 656,
+    "rank_checks": 656,
+    "mobius_entries": 29064,
+    "top_gamma_checks": 618,
+    "mixed_context_checks": 88496,
+    "gamma_attainment_checks": 95,
+    "operator_norm_checks": 16
+  },
+  "reuse": {
+    "gamma": "11/54",
+    "L2": "11/50",
+    "bad_mass": "27/25",
+    "reverse_L_over_gamma": "27/25",
+    "sup_error": "9/25"
+  },
+  "zero_weight_boundary_rank": 1,
+  "closure_diagnostics": [
+    {
+      "degree": 2,
+      "unanimity_sup_error": "81/400",
+      "bottom_L2": "7/20",
+      "top_L2": "7/20"
+    },
+    {
+      "degree": 4,
+      "unanimity_sup_error": "6561/40000",
+      "bottom_L2": "5747/10000",
+      "top_L2": "11111/10000"
+    },
+    {
+      "degree": 8,
+      "unanimity_sup_error": "43046721/400000000",
+      "bottom_L2": "42207767/100000000",
+      "top_L2": "203246351/100000000"
+    },
+    {
+      "degree": 16,
+      "unanimity_sup_error": "1853020188851841/40000000000000000",
+      "bottom_L2": "1591551603817007/10000000000000000",
+      "top_L2": "26762357968076831/10000000000000000"
+    },
+    {
+      "degree": 32,
+      "unanimity_sup_error": "3433683820292512484657849089281/400000000000000000000000000000000",
+      "bottom_L2": "2634405843950503269882568200287/100000000000000000000000000000000",
+      "top_L2": "294729519662746769563509632841791/100000000000000000000000000000000"
+    },
+    {
+      "degree": 64,
+      "unanimity_sup_error": "11790184577738583171520872861412518665678211592275841109096961/40000000000000000000000000000000000000000000000000000000000000000",
+      "bottom_L2": "8847345954649519324386605577959765873567351293577252661498047/10000000000000000000000000000000000000000000000000000000000000000",
+      "top_L2": "29982305306260965217841175519991403779966808174814711252213059711/10000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "limitations": "Finite exact algebra checks only; no proof of arbitrary real weights, all degrees, cone closure or equilibrium existence."
+}
