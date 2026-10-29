@@ -6,6 +6,7 @@
 
 | 尝试与失败点 | 仍可回收什么 | 改变什么才值得重试 |
 | --- | --- | --- |
+| 仅用前 n−2 真实安全行与末对实权 R_tau，要求所有独立会员位/比较位的客户残差非负：[解析架构审计](../workspaces/customer-attraction/R-c499e3814bbe4743b298e230b37ddca1/general_envelope_audit/architecture_audit.md)的三类状态给必要 tau≤2H_n−1；故 tau=n,n≥3 不能闭合。近边界常数极大数假说另被既有 M=n、OPT/W=2−1/n 的 all-big 完整 SPE 族排除 | 真实末对投影与前缀递推仍成立；恢复了显式解析递推乘子。旧私有谱混合预算另给带共享遗漏的缺陷界；模板坏列不是 SPE 反例 | 增加本质新的跨源行或类型间真实结构；若做归约，须另证严格最小反例的全历史保SPE归约，不能从近边界推常数秩 |
 | 局部势排除损失`E_r(b,A)≤u−s`：三人零背景621客户[完整SPE及独立审查](../workspaces/customer-attraction/R-68a6ffab8681474aa2228b770a56e263/review/esm_obstruction_review.md)给E47、个人余量46；另有六人1131客户实际FFF前缀嵌入，全部有序历史IC通过，第四位同样失败 | r≤2证明、Bellman及路径总余额恒等式仍成立；三人例后继余量139/2补偿首位−1，总势预算仍余137/2。两例均满足half | 必须保留跨位置的真实后继信用，或换总付款机制；限制到六人实际尾背景也不能修复局部ESM，不自动否定六人较弱总势候选 |
 | 冻结实际前缀后的整体归纳 `P+λΔ≥freshOPT`：任意固定λ均被[52客户真正根SPE实际前缀](../workspaces/customer-attraction/R-5c4f6385eec046eb9a20052facacba11/background/global_actual_prefix_counterexample.md)否定，P=17、Δ=0、freshOPT₂=18 | 原根W=34、OPT₄=52仍满足half；[独立审查](../workspaces/customer-attraction/R-5c4f6385eec046eb9a20052facacba11/parent/actual_prefix_independent_review.md)及远端前批禁写重放259历史1554比较通过。它不同于仅首步余额反例 | 需要保留过去收益、旧负载或跨分支信用；只调新增覆盖的固定系数不能修复，不反驳原half |
 | 任意非根节点都用 `ΔW≤ΔV`，省去旧玩家最终利润变化：[旧v1完整反证](../workspaces/customer-attraction/R-cef41b80a6e048b5a395b738d3b0b6e7/harmonic/relay_erratum.md)两人三客户给ΔW=1、ΔV=0 | 正确式为 `ΔW=ΔV+ΔP_old−Γ≤ΔV+ΔP_old`，Γ是当前IC余量；根P_old=0的特例保留。旧v1是FALSE，修正v2另立身份，未完成共同付款 | 必须保留并支付ΔP_old，或另证它≤Γ；不能把根恒等式搬到有背景节点。精确版本见[本题Claim](CLAIMS.md#2026-10-24-boss9-阶段性一般接口) |

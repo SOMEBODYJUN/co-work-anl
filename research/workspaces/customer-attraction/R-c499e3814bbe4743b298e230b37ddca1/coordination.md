@@ -6,6 +6,10 @@
 
 研究对象是 `research/current/customer_attraction/model.md` 的原模型：有限单位客户集 `N`、有限非空共同目录 `S ⊆ 2^N`、恰六名单位权提供者按固定顺序观察全部有序历史并选目录主题。允许重复、空主题、零客户和任意历史依赖平局。固定任意完整历史依赖纯 SPE `σ`，终局福利为覆盖客户数 `W`，最优六主题并集为 `OPT_6`。主 Claim Q-CAG-HALF-6 要求对每个实例、每个完整纯 SPE 都有 `2W ≥ OPT_6`。若主 Claim 为假，必须给出原模型中的严格反例、覆盖全部有序历史的完整策略、以及 Fraction/整数可复现的全历史偏离核验；辅助松弛、局部菜单和静态点都不够。
 
+用户最新要求考察一般 n 的解析包络、递推与活跃极大集归约。最新接续入口为 [general_envelope_audit/architecture_audit.md](general_envelope_audit/architecture_audit.md)：该截短逐客户模板必须 tau≤2H_n−1，故不能覆盖 tau=n,n≥3；既有 all-big 族的 M=n、OPT/W=2−1/n 排除普适近边界常数秩说法，但不反驳仍未证明的严格最小反例归约。旧混合席位预算直接给 OPT_n≤(2−1/n)W+(1−1/n)D_shared；需在同一 W 中支付共享遗漏的剩余缺陷。
+
+同步到 `8ca370ad` 后的范围纠正：六人现有分数覆盖条件证书已到 tau_C≤9/2，见 `SYNTHESIS.md`；本工作区旧 tau_inc≤149/50 的 half 范围已被较早的更强条件覆盖，其带核心定量式另有意义，不能继续当作范围突破。六人任意目录及一般人数仍 OPEN。
+
 ## 已可靠闭合或可直接引用的内容
 
 1. 恰五人任意目录、全部有序历史、任意平局的 `2W ≥ OPT_5` 已有完整精确证书（见 `research/current/customer_attraction/five_player_half.md`）。它不是六人定理，也不能作为任意背景的五人利润定理。

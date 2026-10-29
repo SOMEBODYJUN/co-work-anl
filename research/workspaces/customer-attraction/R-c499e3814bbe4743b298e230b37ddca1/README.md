@@ -4,7 +4,13 @@
 
 ## 当前研究
 
-在这里写准确问题、采用的定义/命题版本、当前表示与卡点。
+一般人数 Q-CAG-HALF 的解析包络与递推审计；六人仍是未闭合的首个关键人数。优先读取 [一般架构审计](general_envelope_audit/architecture_audit.md)，它分开真实已证行、指定模板障碍、近边界秩界反证与最小严格反例归约候选。
+
+| 文件 | 精确用途与状态 |
+| --- | --- |
+| [architecture_audit.md](general_envelope_audit/architecture_audit.md) | 任意 n 的前 n−2 安全行 + 末对 R 的完整客户类型证书必须满足 tau≤2H_n−1；三类状态给解析 Farkas 停界，不是主猜想反例。另恢复旧 all-big 近边界高维族、显式前缀递推乘子，并由旧私有谱预算读出 OPT_n≤(2−1/n)W+(1−1/n)D_shared。 |
+| [audit_architecture.py](general_envelope_audit/audit_architecture.py) | Fraction 闭式 Farkas 向量、解析递推乘子恒等式、all-big 的充分历史计数与末对投影角点实现审计；不调用 LP，不枚举一般 SPE，不以有限回放代替普适证明。 |
+| [audit_architecture_result.json](general_envelope_audit/audit_architecture_result.json) | 实际运行结果、Python 版本、参数域与复现命令；目标猜想仍 OPEN。 |
 
 ## 可访问材料
 
