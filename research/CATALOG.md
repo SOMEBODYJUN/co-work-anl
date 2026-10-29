@@ -134,6 +134,7 @@
 | [五人精确主证书的独立审查](<reviews/customer_attraction/five_player_half_global.md>) | `research/reviews/customer_attraction/five_player_half_global.md` | 检查53行语义、索引直方图、共享重数、菜单角点和大整数判号，并明确随包实现独立性的真实范围。 | 实际审查记录；只覆盖所列版本与义务；关联 `CA-FIVE-HALF-EXACT-v1`，[命题合同](assets.json) |
 | [任意人数共同末位报价、隐藏回复投影与人数压缩](<current/customer_attraction/priced_hidden_reply_projection.md>) | `research/current/customer_attraction/priced_hidden_reply_projection.md` | 从五人证书提取任意尾长报价投影与压缩，并证明同菜单真实末回复双向互查的联合消元；区分局部信息、六人必要行障碍与未闭合half。 | 表示或证书接口；不自动给出待求系数；关联 `CA-PRICED-HIDDEN-REPLY-v1`、`CA-PRICED-REPLY-MENU-COUPLING-v1`，[命题合同](assets.json) |
 | [同源真实回复再查询与任意尾长联合投影](<current/customer_attraction/same_source_reply_requery.md>) | `research/current/customer_attraction/same_source_reply_requery.md` | 固定同一源历史的两次合法偏离，保留返回主题与交叉查询身份，自足证明一般七行投影及双计数压缩；区分局部新信息与未闭合half。 | 表示或证书接口；不自动给出待求系数；关联 `CA-SAME-SOURCE-REQUERY-v1`，[命题合同](assets.json) |
+| [六人研究精简资料包的来源与范围索引](<customer_attraction/PRO_N6_PACKET_INDEX.md>) | `research/customer_attraction/PRO_N6_PACKET_INDEX.md` | 定位六人资料包对应的冻结提交、内容选择及排除范围，区分9/2分数覆盖条件与尚未闭合的无条件目标。 | 阅读导航；真值查精确正文及账本 |
 
 <a id="unrelated_machines"></a>
 

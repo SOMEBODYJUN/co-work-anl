@@ -111,6 +111,20 @@ def main():
         rows.append([-r[6][k] for r in records]); names.append(('late_SZV', k))
     for j in range(len(records[0][5])):
         rows.append([-r[5][j] for r in records]); names.append(('floor', j))
+    # Optional new experiment: exact-catalog private-seat row.  The saved
+    # obstruction above deliberately omits this row; use --private to attack
+    # the stronger system without replacing its frozen JSON.
+    import sys
+    private_mode = '--private' in sys.argv
+    if private_mode:
+        rows.append([F(d,6)+F(5,6)*int(mask==0 and d==1 and ell==0)-wi
+                     for (mask,d,ell,overlap),(_,wi,*rest) in zip(types,records)])
+        names.append(('exact_catalog_private_seat',))
+        for player in range(6):
+            rows.append([F(d,6)+F(5,6)*int(mask==0 and d==1 and ell==0)
+                         -6*safe((mask>>player)&1,mask.bit_count())
+                         for mask,d,ell,overlap in types])
+            names.append(('symmetric_private_individual_seat',player))
     matrix = np.array(rows, dtype=float)
     print('types', len(types), 'rows', len(rows), flush=True)
     res = linprog(-o, A_ub=matrix, b_ub=np.zeros(len(rows)), A_eq=w[None, :], b_eq=[1],
@@ -120,14 +134,16 @@ def main():
         result['value'] = float(-res.fun)
         exact, minimum_residual = recover(rows, w.tolist(), res.x)
         objective = sum(F(int(oi)) * xi for oi, xi in zip(o, exact))
-        assert objective > 2
+        if not private_mode:
+            assert objective > 2
         result['exact_value'] = str(objective)
         result['minimum_residual'] = str(minimum_residual)
         result['positive_types'] = [[list(t), str(x)] for t, x in zip(types, exact) if x]
         result['floating_dual_not_certified'] = [[names[k], str(F(float(-x)).limit_denominator(10**8))]
                           for k, x in enumerate(res.ineqlin.marginals) if abs(x) > 1e-9]
         print('objective', -res.fun, 'support', len(result['positive_types']), flush=True)
-    Path(__file__).with_suffix('.json').write_text(json.dumps(result, indent=2) + '\n')
+    output=Path(__file__).with_name('potential_menu_joint_private.json') if private_mode else Path(__file__).with_suffix('.json')
+    output.write_text(json.dumps(result, indent=2) + '\n')
 
 
 if __name__ == '__main__':

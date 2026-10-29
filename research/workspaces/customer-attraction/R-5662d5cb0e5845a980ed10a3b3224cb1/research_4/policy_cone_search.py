@@ -212,7 +212,9 @@ def main():
             act,terminal=C.policy(w,rng)
         ans,root=C.optimize(act,terminal)
         if not ans.success:
-            print(json.dumps({'step':step,'status':ans.message}),flush=True);w=rng.exponential(1,size=len(w));continue
+            print(json.dumps({'step':step,'status':ans.message}),flush=True)
+            w=(seed_w+rng.exponential(1,size=len(w))*seed_w*.05) if seed_w is not None else rng.exponential(1,size=len(w))
+            continue
         v=-ans.fun
         if v>best+1e-8:
             best=v;C.write_candidate(a.output,ans.x,act,terminal,v)
@@ -234,6 +236,7 @@ def main():
                 ans=sideans
         # LP vertex plus sparse random perturbations, with occasional large excursions.
         noise=rng.exponential(1,size=len(w))*(rng.random(len(w))<.1)
+        if a.seed_support and seed_w is not None:noise*=seed_w>0
         eps=rng.choice([1e-7,1e-5,1e-3,.03,.2])
         w=np.maximum(ans.x,0)+eps*noise
     print(json.dumps({'steps':step+1,'best':best,'k':a.k,'seed':a.seed}),flush=True)

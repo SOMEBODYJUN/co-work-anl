@@ -145,7 +145,14 @@ r=5无已证背景定理。`R-2118664d5481486fb34eb4b7f788af5a/notes/researcher_
 
 ## 7. 后续可复用增量与审查范围
 
-- `research_4/duplicate_action_quotient.md`：同覆盖标签可经**依历史lift**商为真正集合目录，
+- **来源纠正：** 同覆盖商的先有唯一正文为
+  `R-84ce8a8709e34ea6af94f99991d3c2e3/duplicate_quotient/duplicate_coverage_quotient.md`，
+  Claim `B10-DUPLICATE-COVERAGE-QUOTIENT-v1`，提交`f702b55a`。
+  本轮`research_4/duplicate_action_quotient.md`只作独立重构/另一实现回归，
+  不计新数学。相同clone统一重置规范形也已在
+  `R-d3981c0168644971803a9c3380ed687c/next_general/normal_form/reset_normal_form.md`完整证明。
+  其零信号保原整树，一信号按(count,action)重置最小可信尾；没有支付跨列共同预算。
+- `research_4/duplicate_action_quotient.md`复核既有结论：同覆盖标签可经**依历史lift**商为真正集合目录，
   保持每份完整SPE的根覆盖序列、收益和OPT。父方解析重构通过并重放作者全部测试，
   见`review_action_quotient.md`、`action_quotient_replay.json`。
   因此带同覆盖标签的严格目标候选可用此编译，而非添加区别客户；
@@ -166,3 +173,34 @@ r=5无已证背景定理。`R-2118664d5481486fb34eb4b7f788af5a/notes/researcher_
 
 这些增量均不闭合Q-CAG-HALF-6。最新真正目标攻击由研究者自主选择，
 种子改造不保旧游戏/SPE；真正反例仍须全历史策略、合法单位客户和精确检查。
+
+## 8. 恢复出的旧结果与新增精确行：不要混记
+
+**两实际覆盖主题情形已经由旧资产闭合六人。**
+`R-31bbb6cfd6594bc8bb076db7b2950993/credible_search/two_theme_terminal.md`
+的ClaimA处理末位只出现一次；其ClaimB对六人末位频次至少二全部成立。
+`R-27557809587746c59216a46867c9eb07/terminal_pair/two_support_end_ab.md`
+另已处理任意人数的两主题异末位情形。本轮更简洁的六人系数分解可作复核，
+不记新结构定理；严格六人反例必须实际使用至少三个不同客户覆盖集合。
+
+**七极大dense原证书的安全范围仅先采用零singleton。**
+本轮从提交`fe99fcfe`恢复并重算3840 dense列，最小剩余正。
+原稿单私有块扩展用了错误OPT恒等式及I={6}目标，
+同一乘子在修正目标下有负余项。见`review_dense_seven_scope.md`及
+`dense_seven_scope_audit.json`；这是对证明范围的致命异议，不是主目标反例。
+
+**actual第四位强制actual末主题B的新具体投影。**
+`research_2/tail3_B_projection.md/py`和`tail3_B_projection_certificate.json`
+用八项真实slack的非负整数权保留真枝Q/R，再最大化隐藏位。
+父方独立原始S/Z/V重构21504态、448可见表通过，
+见`audit_tail3_B_projection.py`及`review_tail3_B_projection.md`。
+它严格切掉旧1033/1097/3889点的共同actual/d边缘，但未提高弱702完整域的当前最优；
+新更早B枝的三条带K投影和显式旧Ti枝的共同master是不同联合问题。
+
+**可见主题身份没有自动得到所有合法查询。**
+本轮独立审查发现：旧图虽留R/Z及其对角身份，仍未接全旧B_i/C_i实际末位报价、
+对角/非对角basic分别计账、新R/Z与actual/旧主题的混合强PAIR、
+所有actual早源安全查询。新增这些行确实切旧点；
+它们多为已有引理在新共享身份上的实例化，不应重命名为新机制。
+同源13/16末查询先合并再投影、容量费共同入K，随后同源reply requery，
+才是当前仍在核验的跨枝信息。最新联合必要点仍不是SPE，未给无条件half。

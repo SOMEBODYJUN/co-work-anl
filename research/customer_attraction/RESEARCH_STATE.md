@@ -42,6 +42,8 @@
 
 该势路线的较强局部接口[势排除损失ESM](../workspaces/customer-attraction/R-a8ee6fdb155c47da95540775b4a6a2db/potential/exclusion_safety_margin.md)现已FALSE：三人零背景完整SPE给损失47大于个人余量46，并已严格嵌入六人实际第四位背景，[独立逐单位全历史审查](../workspaces/customer-attraction/R-68a6ffab8681474aa2228b770a56e263/review/esm_obstruction_review.md)通过。后继实际余量仍补偿该局部负债；总势候选与六人half仍OPEN，不能由此提升或否定。
 
+新增个人层[最大根同源再查询及独立内审](../workspaces/customer-attraction/R-3002aaf974e74a4f939ef94b998c36b5/root_row_review.md)：QI/QL/QD及联合图给精确局部根行，19/18/21位完整整数域通过；一条QL行由36支持有理分离点证明确超出所列旧235根行。新行切掉旧3889点，但[共同加入五行并重优化](../workspaces/customer-attraction/R-3002aaf974e74a4f939ef94b998c36b5/research_5/README.md)后3894关系仍有 `O=1, W=11563846740120540563650285979166203/24234087715908087797320314905948740<1/2` 的精确点。它是行族边界，不是SPE反例；切旧点不等于共同预算闭合。
+
 固定最优并集 O、实际覆盖 U，令 `L=|O\U|`、`E=|U\O|`，则 **`OPT_m−W=L−E`**。真正需要支付的是净差；不能只给遗漏半额付款就称 half，也不能丢掉 E。早期改一个主题会改变整段真实后继；核心缺口是跨互斥分支、不同查询或不同位置共同使用一次利润预算。
 
 另有[近期机制来源补充](WORKSPACE_RESULTS.md#2026-10-25补充按义务选择近期来源)，含末位剥离、因果删除、时钟、signed价格与pair差；按义务再取用。
