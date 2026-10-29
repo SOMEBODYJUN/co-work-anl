@@ -122,6 +122,12 @@ def shared_defect_identity():
         target = (1 + eta) * W + eta * Ds - (I + Dp + Ds)
         slack = W - Dp - F(I + Ds, n) + eta * (W - I)
         assert target == slack and target >= 0
+        E = W - I
+        net_target = (1 + eta) * W + eta * (Ds - E) - (I + Dp + Ds)
+        assert net_target == W - Dp - F(I + Ds, n)
+        assert net_target >= 0
+        if Ds - E <= W / (n - 1):
+            assert I + Dp + Ds <= 2 * W
         if Ds <= W / (n - 1):
             assert I + Dp + Ds <= 2 * W
         checked += 1
