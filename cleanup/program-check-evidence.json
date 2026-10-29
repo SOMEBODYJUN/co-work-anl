@@ -112,7 +112,7 @@
     "git_dir_bytes": 1992381,
     "shallow": "true"
   },
-  "measurement_scope": "本环境单次测量；GitHub冷启动及读源已实际测试，按需读源和批量搜索也已在真实GitHub源验证；最终下载包部署后再整体验证。",
+  "measurement_scope": "本环境真实GitHub单次/两次测量，耗时有波动；记录全部测量，不承诺固定启动耗时。最终下载程序的独立clone、按需源读取指纹、冷/热文本检索均已跑通。",
   "production_math_progress": "No source claims or semantic completion changed by these tests; bare Git fixtures are isolated.",
   "tests": {
     "command": "python -m unittest discover -s tests -v",
@@ -169,5 +169,40 @@
     "stderr": "",
     "git_bytes": 17489343,
     "matches": 3
+  },
+  "final_download_package_validation": {
+    "cold_start": {
+      "seconds": 17.14,
+      "exit": 0,
+      "stderr": "",
+      "branch": "rebuild/research-v2",
+      "git_dir_bytes": 2001028
+    },
+    "first_frozen_source_read": {
+      "seconds": 6.857,
+      "exit": 0,
+      "stderr": "",
+      "bytes": 2721,
+      "sha256_matched": true,
+      "git_dir_bytes": 2543839
+    },
+    "repeat_frozen_source_read": {
+      "seconds": 0.542,
+      "exit": 0,
+      "stderr": ""
+    },
+    "first_text_search": {
+      "seconds": 7.285,
+      "exit": 0,
+      "stderr": "",
+      "matches": 3,
+      "git_dir_bytes": 17490863
+    },
+    "cached_text_search": {
+      "seconds": 0.854,
+      "exit": 0,
+      "stderr": ""
+    },
+    "program_commit": "f40544c6372683c26fae7fb79f67deeb316d74af"
   }
 }
