@@ -83,6 +83,16 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(json.loads(again.stdout)['subarchive'],'common-two')
         self.assertNotEqual(self.work(repo,'start','--remote',str(self.remote),'--subarchive','other').returncode,0)
 
+    def test_new_archive_does_not_require_hardcoded_topic_registration(self):
+        directory=self.seed/'archives/fair-division';directory.mkdir(parents=True)
+        (directory/'README.md').write_text('# A genuinely new problem archive\n')
+        git(self.seed,'add','archives/fair-division');git(self.seed,'commit','-m','new archive')
+        git(self.seed,'push','origin','HEAD:refs/heads/'+BRANCH)
+        r=self.work(self.base/'N','start','--remote',str(self.remote),'--save','fair-division','--role','boss')
+        self.assertEqual(r.returncode,0,r.stderr);receipt=json.loads(r.stdout)
+        self.assertEqual(receipt['context_entry'],'archives/fair-division/README.md')
+        self.assertIn('archives/fair-division/workspaces/',receipt['workspace']['path'])
+
     def test_concurrent_claim_has_one_owner(self):
         with concurrent.futures.ThreadPoolExecutor(2) as pool:
             out=list(pool.map(lambda repo:self.work(repo,'clean','claim',self.ids[0]),[self.a,self.b]))

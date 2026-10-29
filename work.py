@@ -418,10 +418,11 @@ def start(args):
         run(repo,"config","--local","wcg.subarchive",selected_sub)
     requested_role = getattr(args, "role", None)
     prompts = CLEANUP_ROLE_PROMPTS if save == "repository-cleanup" else ROLE_PROMPTS
-    if requested_role is not None and save not in RESEARCH_ENTRIES:
-        raise Stop("此存档不使用这些角色；旧存档保留原绑定。")
+    valid_archive=(repo/'archives'/save/'README.md').is_file()
+    if requested_role is not None and save not in RESEARCH_ENTRIES and not valid_archive:
+        raise Stop("请先为明确研究问题建立存档README，再绑定此角色。")
     selected_role = role_id(repo, requested_role, prompts,
-                            "cleaner" if save == "repository-cleanup" else "boss") if save in RESEARCH_ENTRIES else None
+                            "cleaner" if save == "repository-cleanup" else "boss") if save in RESEARCH_ENTRIES or valid_archive else None
     run(repo, "config", "--local", "wcg.boardBranch", selected_board)
     if legacy:
         # sync has already preserved staged/unstaged/untracked work and stopped
@@ -440,6 +441,10 @@ def start(args):
         "research_entry": None, "research_prompt": None,
         "research_note": "Unregistered archive: select its research entry explicitly; no topic is inherited.",
     }))
+    if save not in RESEARCH_ENTRIES and valid_archive:
+        base=(Path('archives')/save).as_posix()
+        prompt=base+'/prompts/README.md'
+        result.update(research_entry=base+'/README.md',research_prompt=prompt if (repo/prompt).is_file() else 'prompts/README.md',research_runbook='tools/README.md')
     if result.get('research_entry'):
         result['context_entry']=result['research_entry']
     if selected_sub:

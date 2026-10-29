@@ -14,7 +14,7 @@
 
 顶层：README/AGENTS/work.py；archives（数学存档）；map（全仓图）；prompts（阶段提示词）；tools（可执行程序与许可上游）；tests（程序验证）；cleanup（冻结来源、临时勾选与清洗工作区）。
 
-每个存档/子存档：README、问题--问题.md、state/按数学类型的正文、workspaces/个人临时工作、papers/稿件、prompts/本题指令、map/本层投影；有子问题则放subarchives/。对象分类可动态添加。文件名和标签见[命名及入库](OBJECTS.md)。
+每个存档/子存档：README、问题--问题.md、state/按数学类型的正文、workspaces/个人临时工作、papers/稿件、prompts/本题指令、tools/evidence/本题程序与证据、map/本层投影；有子问题则放subarchives/。对象分类可动态添加。文件名和标签见[命名及入库](OBJECTS.md)。
 
 cleanup下覆盖与进度属于本轮临时工作，不把它作为未来Solver的默认上下文。完成重构后，可在保留Git恢复的前提下收起临时清洗材料；正常数学正文及三级图继续维护。
 
