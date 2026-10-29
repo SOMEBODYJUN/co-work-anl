@@ -1,3 +1,11 @@
+# 原始来源分支：新结果已另建
+
+本分支保留原始资料，不再作为清洗结果工作树。用户最新三阶段设计、程序及提示词在 [rebuild/research-v2](https://github.com/SOMEBODYJUN/co-work-anl/tree/rebuild/research-v2)。第二阶段读源归类，第三阶段逐边建子档/存档/全仓超图。
+
+请换用结果分支新版work.py一次；既有来源clone不自动改绑。来源冻结版本与清点见新结果分支cleanup/sources.json及CHECKLIST.md。
+
+---
+
 # 共同研究：顺序客户吸引的半覆盖
 
 本轮先做仓库清洗：[清洗入口](collaboration/CLEANUP.md)、[加入方式与新版work.py](collaboration/README.md)。文件分支 `cleanup/research-foundation-20261028`、新公屏 `wcg/board-cleanup-20261028`；其他模型保留独立数学身份。旧提示词与一般人数优先说明等待清理，不能覆盖本轮指令。

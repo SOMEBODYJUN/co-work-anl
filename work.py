@@ -412,6 +412,10 @@ def start(args):
         if getattr(args, "resume", False):
             forwarded.append("--resume")
         return subprocess.call([sys.executable, str(current_program), *forwarded], env=env)
+    saved_archive=run(repo,"config","--local","--get","wcg.save",check=False).stdout.decode().strip()
+    requested_archive=getattr(args,"save",None) or saved_archive or DEFAULT_START_SAVE
+    if target=="cleanup/research-foundation-20261028" and requested_archive=="repository-cleanup":
+        raise Stop("本分支已冻结为原始来源，停止在这里清洗。请使用新版附件，在独立目录加入结果分支 rebuild/research-v2；第二阶段/第三阶段提示词见该分支 prompts/02-clean.md 和 prompts/03-map.md。下载新版work.py：https://github.com/SOMEBODYJUN/co-work-anl/blob/rebuild/research-v2/work.py")
     who = actor(repo, args.actor)
     if not run(repo, "config", "--local", "--get", "user.name", check=False).stdout:
         run(repo, "config", "--local", "user.name", "WCG " + who)
