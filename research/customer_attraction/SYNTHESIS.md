@@ -70,6 +70,8 @@ W\ge |O|\left[1-\prod_{r=1}^m\left(1-\frac1{r\tau}\right)\right].
 
 ## 还缺什么，怎样继续
 
+若要把问题交给基础数学研究者，可直接使用[完整词树与非负锥问题单](../workspaces/customer-attraction/R-c499e3814bbe4743b298e230b37ddca1/elementary_reformulation/PURE_MATH_HANDOFF_ZH.md)。它由旧策略锥、覆盖矩和谐和势组织出两个与原模型等价的自足问题，并保留反例的有理整数化与全历史商编译；不是新的福利定理。裸相交神经不保留收益，低阶加权交集也可能不够；自然凸参数域的整个未标记策略区域覆盖神经可缩，不能仅从该粗同伦资料推出二倍界。带权/标记/坏目标半空间的精细几何仍可自由研究。
+
 一般 n 的解析包络建议已经过[指定模板审计](../workspaces/customer-attraction/R-c499e3814bbe4743b298e230b37ddca1/general_envelope_audit/architecture_audit.md)：只用前 n−2 安全行和末对 R_tau，要求完整独立客户类型域非负，必要 tau≤2H_n−1，不能靠调整幂律乘子覆盖 tau=n。近边界亦不迫使常数个极大主题，既有 all-big 族已给 M=n 且 OPT/W→2。可回收的正向式来自[旧混合席位预算§2](../workspaces/customer-attraction/R-324fbf8f72b041578583b51189f13d1a/dynamic_budget.md)：对任意最优并集，令 D_shared 是其实际遗漏中的全局共享客户数，E=|实际覆盖\最优并集|，则 OPT_n≤(2−1/n)W+(1−1/n)(D_shared−E)。因此 D_shared−E≤W/(n−1) 已充分；严格违例必须对每个最优并集超过这个净差阈值。它是旧预算的直接推论，不是新的无条件 half，也不同于根回复触及集合的 W/5 界。
 
 现有预算路线都尚缺一条对**一般人数、一般目录、每份完整策略**有效的共同控制：把真实离轨后继改变行动带来的损失与旧收益返还放在同一份实际预算中，不重复使用 W。局部恒等式成立、形式表示等价或有限锥成功，都没有补上这一点。原目标也可通过完全不同的方法证明，不必先证明这些预算候选。

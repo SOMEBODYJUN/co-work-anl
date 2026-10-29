@@ -4,6 +4,8 @@
 
 ## 当前研究
 
+当前对外数学入口是 [基础数学问题单](elementary_reformulation/PURE_MATH_HANDOFF_ZH.md)：完整词树上的特殊谐和边际不等式，以及其等价的非负向量分解问题。它明确保留全部历史、重复/空主题、非负客户实现和任意目录；不把普通次模或裸拓扑当作无损替身。
+
 一般人数 Q-CAG-HALF 的解析包络与递推审计；六人仍是未闭合的首个关键人数。优先读取 [一般架构审计](general_envelope_audit/architecture_audit.md)，它分开真实已证行、指定模板障碍、近边界秩界反证与最小严格反例归约候选。
 
 | 文件 | 精确用途与状态 |
@@ -13,6 +15,10 @@
 | [audit_architecture_result.json](general_envelope_audit/audit_architecture_result.json) | 实际运行结果、Python 版本、参数域与复现命令；目标猜想仍 OPEN。 |
 | [review_shared_defect.md](general_envelope_audit/review_shared_defect.md) | 从旧谱原文独立重构带 E 的共享遗漏缺陷界，并核对安全行/末对投影/完整独立类型域障碍；内部解析复核，未外审。 |
 | [private_recurrence_audit.md](general_envelope_audit/private_recurrence_audit.md) | 精确指出 mixed-floor 的 private 部分在同路由加入后下降；给一侧递推、望远镜损失和补偿势，明确补偿仍需共同付款。 |
+| [基础数学问题单](elementary_reformulation/PURE_MATH_HANDOFF_ZH.md) | 给新的组合、凸几何或离散分析研究者直接使用；区分等价问题 P1/P2 与充分缺陷接口，准确评价本轮相对旧资产的进步。 |
+| [词树、锥与加权交集审查](elementary_reformulation/agent_a/exact_tree_cone_and_nerve.md) | 独立重构原模型双向转换、Farkas 反编译及全历史商策略；六人低于六阶加权交集不足的 parity 例有 Fraction 审计。 |
+| [集合函数和拓扑范围审查](elementary_reformulation/agent_b/capacity_and_topology.md) | 非负交错差分与正核积分、全目录公共 core 可删除规约、自然凸区域覆盖的神经可缩性；只排除未附目标方向的粗拓扑路线。 |
+| [转换实现核验](elementary_reformulation/audit_conversion.py) | 从显式单位客户逐历史复核谐和边际、矩阵行、同计数异动作、动态标签商及 core 删除；固定回归不是 half 搜索。 |
 
 ## 可访问材料
 

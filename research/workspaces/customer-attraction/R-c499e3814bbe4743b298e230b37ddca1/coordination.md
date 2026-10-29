@@ -4,6 +4,8 @@
 
 ## 固定目标
 
+最新用户要求先准确评价包络方法的增量，再转成基础数学问题交给新的研究者。已整理 [PURE_MATH_HANDOFF_ZH.md](elementary_reformulation/PURE_MATH_HANDOFF_ZH.md)：P1 是完整词树上的非负覆盖函数谐和边际不等式；P2 是全部原始历史行构成的精确非负锥包含。两份独立重构核对反转化与边界；这不是新的 half 定理。裸 nerve/低阶交集缺少收益信息，自然参数域上的未标记策略区域神经也可缩；仍可自由研究带目标方向、标签、权重的几何或其他精确表示。
+
 研究对象是 `research/current/customer_attraction/model.md` 的原模型：有限单位客户集 `N`、有限非空共同目录 `S ⊆ 2^N`、恰六名单位权提供者按固定顺序观察全部有序历史并选目录主题。允许重复、空主题、零客户和任意历史依赖平局。固定任意完整历史依赖纯 SPE `σ`，终局福利为覆盖客户数 `W`，最优六主题并集为 `OPT_6`。主 Claim Q-CAG-HALF-6 要求对每个实例、每个完整纯 SPE 都有 `2W ≥ OPT_6`。若主 Claim 为假，必须给出原模型中的严格反例、覆盖全部有序历史的完整策略、以及 Fraction/整数可复现的全历史偏离核验；辅助松弛、局部菜单和静态点都不够。
 
 用户最新要求考察一般 n 的解析包络、递推与活跃极大集归约。最新接续入口为 [general_envelope_audit/architecture_audit.md](general_envelope_audit/architecture_audit.md)：该截短逐客户模板必须 tau≤2H_n−1，故不能覆盖 tau=n,n≥3；既有 all-big 族的 M=n、OPT/W=2−1/n 排除普适近边界常数秩说法，但不反驳仍未证明的严格最小反例归约。旧混合席位预算直接给 OPT_n≤(2−1/n)W+(1−1/n)(D_shared−E)；需在同一 W 中支付共享遗漏的剩余缺陷。
