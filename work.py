@@ -16,45 +16,26 @@ import tempfile
 import uuid
 
 REMOTE = "https://github.com/SOMEBODYJUN/co-work-anl.git"
-TOOLS = "research/weighted_congestion_frontier/tools"
+TOOLS = "tools"
 WORKSPACES = "research/workspaces"
 # Legacy unbound non-start/checkpoint fallback; preserve topic compatibility.
 # New-conversation phase defaults are separate below and are applied by start.
 DEFAULT_SAVE = "customer-attraction"
 # New conversations share this long-lived branch and board. Existing bound
 # clones keep their own routes; cleanup is a phase, not a branch lifecycle.
-DEFAULT_BRANCH = "cleanup/research-foundation-20261028"
+DEFAULT_BRANCH = "rebuild/research-v2"
 DEFAULT_BOARD_BRANCH = "wcg/board-cleanup-20261028"
 DEFAULT_START_SAVE = "repository-cleanup"
 RESEARCH_ENTRIES = {
-    "repository-cleanup": {
-        "research_entry": "collaboration/CLEANUP.md",
-        "research_prompt": "collaboration/CLEANER_START.md",
-        "research_runbook": "collaboration/README.md",
-    },
-    "customer-attraction": {
-        "research_entry": "research/current/customer_attraction/README.md",
-        "research_prompt": "research/customer_attraction/BOSS_START.md",
-        "research_runbook": "research/customer_attraction/RUNBOOK.md",
-    },
-    "unrelated-machines": {
-        "research_entry": "research/current/unrelated_machines/README.md",
-        "research_prompt": "research/unrelated_machines/BOSS_START.md",
-    },
-    "shared": {
-        "research_entry": "research/weighted_congestion_frontier/README.md",
-        "research_prompt": None,
-    },
+    "repository-cleanup": {"research_entry": "cleanup/README.md", "research_prompt": "prompts/02-clean.md", "research_runbook": "tools/README.md"},
+    "customer-attraction": {"research_entry": "archives/customer-attraction/README.md", "research_prompt": "archives/customer-attraction/prompts/README.md", "research_runbook": "tools/README.md"},
+    "facility-games": {"research_entry": "archives/facility-games/README.md", "research_prompt": "archives/facility-games/prompts/README.md", "research_runbook": "tools/README.md"},
+    "weighted-congestion": {"research_entry": "archives/weighted-congestion/README.md", "research_prompt": "archives/weighted-congestion/prompts/README.md", "research_runbook": "tools/README.md"},
+    "unrelated-machines": {"research_entry": "archives/unrelated-machines/README.md", "research_prompt": "archives/unrelated-machines/prompts/README.md", "research_runbook": "tools/README.md"},
+    "positive-kernels": {"research_entry": "archives/positive-kernels/README.md", "research_prompt": "archives/positive-kernels/prompts/README.md", "research_runbook": "tools/README.md"},
 }
-ROLE_PROMPTS = {
-    "boss": "research/customer_attraction/BOSS_START.md",
-    "cleaner": "research/customer_attraction/CLEANER.md",
-    "editor": "research/customer_attraction/EDITOR.md",
-}
-CLEANUP_ROLE_PROMPTS = {
-    "boss": "collaboration/CLEANER_START.md",
-    "cleaner": "collaboration/CLEANER_START.md",
-}
+ROLE_PROMPTS = {"boss": "prompts/README.md", "cleaner": "prompts/02-clean.md", "mapper": "prompts/03-map.md"}
+CLEANUP_ROLE_PROMPTS = ROLE_PROMPTS
 IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}")
 TOKEN = re.compile(rb"(?:github_pat_|ghp_)[A-Za-z0-9_]{12,}")
 SECRET = re.compile(rb"(?:github_pat_|gh[pousr]_)[A-Za-z0-9_]{12,}")
@@ -280,7 +261,13 @@ def role_id(repo, requested=None, prompts=None, default="boss"):
 def workspace_path(repo, save, who):
     if not IDENTIFIER.fullmatch(save) or not IDENTIFIER.fullmatch(who):
         raise Stop("工作区 ID 不合法。")
-    relative = Path(WORKSPACES) / save / who
+    subarchive=run(repo,"config","--local","--get","wcg.subarchive",check=False).stdout.decode().strip()
+    base=Path("archives")/save
+    if subarchive:
+        if not IDENTIFIER.fullmatch(subarchive):raise Stop("子存档绑定不合法。")
+        base=base/"subarchives"/subarchive
+    relative = (Path("cleanup/workspaces") / who if save == "repository-cleanup"
+                else base / "workspaces" / who)
     cursor = repo
     for part in relative.parts:
         cursor /= part
@@ -405,7 +392,7 @@ def start(args):
             or current_program.read_bytes() != running_source):
         forwarded = ["--repo", str(repo), "start", "--remote", args.remote,
                      "--board-limit", str(board_limit)]
-        for name in ("actor", "role", "token_file", "save", "branch", "board_branch"):
+        for name in ("actor", "role", "token_file", "save", "branch", "board_branch", "subarchive"):
             supplied = getattr(args, name, None)
             if supplied is not None:
                 forwarded.extend(["--" + name.replace("_", "-"), str(supplied)])
@@ -417,14 +404,24 @@ def start(args):
         run(repo, "config", "--local", "user.name", "WCG " + who)
     if not run(repo, "config", "--local", "--get", "user.email", check=False).stdout:
         run(repo, "config", "--local", "user.email", "wcg@users.noreply.github.com")
+    previous_save=run(repo,"config","--local","--get","wcg.save",check=False).stdout.decode().strip()
+    saved_sub=run(repo,"config","--local","--get","wcg.subarchive",check=False).stdout.decode().strip()
+    requested_sub=getattr(args,"subarchive",None)
+    if requested_sub and (not IDENTIFIER.fullmatch(requested_sub) or (previous_save and requested_sub!=saved_sub)):
+        raise Stop("子存档变更请使用独立clone；不改写已有绑定。")
     save = save_id(repo, getattr(args, "save", None),
                    DEFAULT_START_SAVE if target == DEFAULT_BRANCH else DEFAULT_SAVE)
+    selected_sub=requested_sub or saved_sub
+    if selected_sub:
+        if save=='repository-cleanup' or not (repo/'archives'/save/'subarchives'/selected_sub/'README.md').is_file():
+            raise Stop("不存在该研究子存档；先按实际问题建立目录。")
+        run(repo,"config","--local","wcg.subarchive",selected_sub)
     requested_role = getattr(args, "role", None)
     prompts = CLEANUP_ROLE_PROMPTS if save == "repository-cleanup" else ROLE_PROMPTS
-    if requested_role is not None and save not in {"customer-attraction", "repository-cleanup"}:
+    if requested_role is not None and save not in RESEARCH_ENTRIES:
         raise Stop("此存档不使用这些角色；旧存档保留原绑定。")
     selected_role = role_id(repo, requested_role, prompts,
-                            "cleaner" if save == "repository-cleanup" else "boss") if save in {"customer-attraction", "repository-cleanup"} else None
+                            "cleaner" if save == "repository-cleanup" else "boss") if save in RESEARCH_ENTRIES else None
     run(repo, "config", "--local", "wcg.boardBranch", selected_board)
     if legacy:
         # sync has already preserved staged/unstaged/untracked work and stopped
@@ -443,13 +440,18 @@ def start(args):
         "research_entry": None, "research_prompt": None,
         "research_note": "Unregistered archive: select its research entry explicitly; no topic is inherited.",
     }))
+    if result.get('research_entry'):
+        result['context_entry']=result['research_entry']
+    if selected_sub:
+        base=(Path('archives')/save/'subarchives'/selected_sub).as_posix()
+        result.update(subarchive=selected_sub,research_entry=base+'/README.md',research_prompt=base+'/prompts/README.md',context_entry=base+'/README.md')
     result.update(role=selected_role,
                   role_prompt=prompts[selected_role] if selected_role else None,
                   board_branch=selected_board)
-    if save == "customer-attraction":
-        result["context_entry"] = "research/customer_attraction/README.md"
+    if save == "customer-attraction" and not selected_sub:
+        result["context_entry"] = "archives/customer-attraction/README.md"
     elif save == "repository-cleanup":
-        result["context_entry"] = "collaboration/CLEANUP.md"
+        result["context_entry"] = ("prompts/03-map.md" if selected_role == "mapper" else "cleanup/README.md")
     result["recent_board_limit"] = board_limit
     print(json.dumps(result, ensure_ascii=False), flush=True)
     if not board_limit:
@@ -485,12 +487,17 @@ def main():
     s.add_argument("--remote", default=REMOTE)
     s.add_argument("--save", default=argparse.SUPPRESS)
     s.add_argument("--resume", action="store_true", help="明确接续已存在的同号工作区")
+    s.add_argument("--subarchive", help="父存档下的明确子问题；首次绑定，继续同clone复用")
     s.add_argument("--branch", help="文件分支；新clone默认长期共用分支，既有绑定不变")
     s.add_argument("--board-branch", help="公屏分支；新长期分支clone默认新公屏，既有绑定不变")
     s.add_argument("--board-limit", type=int, default=0,
                    help="启动时读取最近几条公屏；默认0不自动读取，完整历史用read按需查询")
     sub.add_parser("sync", help="只同步绑定分支并保留本地工作")
     sub.add_parser("board-init", help="初始化绑定公屏；已有公屏不删除消息")
+    clean = sub.add_parser("clean", help="来源、逐文件认领/勾选与覆盖")
+    clean.add_argument("args", nargs=argparse.REMAINDER)
+    mapping = sub.add_parser("map", help="检查/生成子存档、存档和全仓超图")
+    mapping.add_argument("args", nargs=argparse.REMAINDER)
     r = sub.add_parser("read", help="读取异步公屏")
     r.add_argument("--json", action="store_true")
     r.add_argument("--thread")
@@ -544,6 +551,9 @@ def main():
     target = getattr(a, "to", None)
     if target is not None and (not IDENTIFIER.fullmatch(target) or target == who):
         raise Stop("私聊必须指定另一位 Worker 的有效编号；不会改发到公屏。")
+    if a.command in ("clean", "map"):
+        module = "cleanup.py" if a.command == "clean" else "maps.py"
+        return subprocess.call([sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args], env=env)
     if a.command == "sync":
         print(json.dumps(sync(repo, env), ensure_ascii=False))
         return 0
