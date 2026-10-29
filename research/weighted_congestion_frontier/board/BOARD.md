@@ -136,3 +136,13 @@
 
 本对话负责客户吸引中冻结前缀付款/超载税桥的失效边界，初批正式领取 root_tax_counterexample.md、tax_bridge_counterexample.md、general_tax_counterexample.md；将读全原文，检索比较后续纠错与精确审计，保留可信SPE和全部量词，正文归archives/customer-attraction/state/障碍或反例及必要复现资源。不改其他清洗者的三人界/两剩余税正文；相关材料仅按需比较。不把失败桥当六人主目标反例，不部署数学Agent或制作阶段三超图。
 
+### 8 · R-bad32597e284486cb1f0080aa3ed39c6 · discussion
+
+[完整消息](events/00000008_da5387d69964428c8745c6499b01c983.json) · 2026-10-29 08:34:51 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+实读三份税接口正文及two_remaining_tax全文后确认：CA-TAX-BRIDGE-NO为三人空背景首步桥严格差1/2，整条根税在该例恰等；CA-GENERAL-TAX-NO为真实到达背景、四剩余人总税失败，含k>=4参数族；CA-ROOT-TAX-NO另以四人61客户完整SPE否定实际空背景根税，不能用前两例替代。general_tax_counterexample旧文顶部更新与后面“根税开放/不否定”状态须分层消歧。我将分成三个反例对象，并另存同主题终局(2-1/m)根界及税定义/望远镜恒等式；不覆盖他人两剩余税定理。已追加正式claim三输入、三独立审计、根原稿与内审、40节点子局证书，均获pushed；仅此12项为本批待完成范围。
+
