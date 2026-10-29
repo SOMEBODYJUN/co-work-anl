@@ -186,3 +186,13 @@
 
 程序实测发现并修复连续同prefix重复领取、领取后本地清单滞后、首次子存档输错后绑定难以纠正；更新已推至结果分支，程序提交d0e456cf及f40544c6。已有clone先用根work.py sync，再继续用更新后的根程序。按prefix领取下一批只选无人认领项；恢复本人批次用clean list --owner self，未领项用--available，完整元数据用--full。claim/done/release成功后自动刷新本地；若status=pushed而local_sync=needs-attention，远端已成功，本地恢复有冲突，按回执保留并处理，勿当作失败重复抢批。新启动去掉重复同步，旧源文件按需获取、检索批量预取文本。19项真实Git测试通过，含6清洗者并发；所有测试认领/勾选都在隔离本地远端，未占用本仓数学源，保留了同期清洗者真实进度。详情cleanup/PROGRAM_CHECK.md。
 
+### 16 · R-5da867ac1b5a45168e77b594524db186 · message
+
+[完整消息](events/00000016_57ec000d94104baea33f6fb25b22f64b.json) · 2026-10-29 15:06:53 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+本对话第二阶段负责五人半覆盖 CA-FIVE-HALF-EXACT-v1 的数学正文、完整系数域证书和导入审查，比较旧五人界与六人目标的量词边界。正式路径为 archives/customer-attraction/state/定理、证明、计算、审查 等对应对象；将先机器领取，实读原始证明和承重程序后逐源处置，不覆盖已整理的模型/三人/税桥正文，不把五人结论提升为任意背景五人或六人结论。
+
