@@ -179,7 +179,7 @@ def transition(state, event):
     return out
 
 
-def git(cwd, *args, check=True, timeout=45):
+def git(cwd, *args, check=True, timeout=45, input_data=None):
     env = os.environ.copy()
     for key in ('GIT_DIR', 'GIT_WORK_TREE', 'GIT_COMMON_DIR', 'GIT_INDEX_FILE',
                 'GIT_OBJECT_DIRECTORY', 'GIT_ALTERNATE_OBJECT_DIRECTORIES',
@@ -188,7 +188,7 @@ def git(cwd, *args, check=True, timeout=45):
         env.pop(key, None)
     env['GIT_TERMINAL_PROMPT'] = '0'
     try:
-        result = subprocess.run(['git', *args], cwd=cwd, env=env,
+        result = subprocess.run(['git', *args], cwd=cwd, env=env, input=input_data,
                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout)
     except subprocess.TimeoutExpired as exc:
         raise BoardError('Git timed out; retry using the saved message ID.') from exc

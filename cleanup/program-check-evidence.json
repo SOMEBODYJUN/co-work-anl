@@ -112,12 +112,62 @@
     "git_dir_bytes": 1992381,
     "shallow": "true"
   },
-  "measurement_scope": "本环境单次测量；浅克隆阶段尚未包含消除bootstrap重复同步后的远端部署复测。",
+  "measurement_scope": "本环境单次测量；GitHub冷启动及读源已实际测试，按需读源和批量搜索也已在真实GitHub源验证；最终下载包部署后再整体验证。",
   "production_math_progress": "No source claims or semantic completion changed by these tests; bare Git fixtures are isolated.",
   "tests": {
     "command": "python -m unittest discover -s tests -v",
-    "passed": 18,
+    "passed": 19,
     "failed": 0,
-    "seconds": 49.975
+    "seconds": 54.132
+  },
+  "deployed_smoke_before_source_filter": {
+    "cold_start": {
+      "seconds": 4.124,
+      "exit": 0,
+      "stderr": "",
+      "branch": "rebuild/research-v2",
+      "git_dir_bytes": 1999508
+    },
+    "first_frozen_source_read": {
+      "seconds": 10.546,
+      "exit": 0,
+      "stderr": "",
+      "bytes": 2721,
+      "sha256_matched": true,
+      "git_dir_bytes": 69159727
+    },
+    "repeat_frozen_source_read": {
+      "seconds": 0.509,
+      "exit": 0
+    },
+    "current_status": {
+      "source_versions": 10921,
+      "distinct_paths": 10909,
+      "completed": 24,
+      "claimed": 0,
+      "unresolved": 0,
+      "local_source_hold": 0
+    }
+  },
+  "partial_source_probe": {
+    "fetch": {
+      "seconds": 3.484,
+      "stderr": "",
+      "git_bytes": 2539472
+    },
+    "show": {
+      "seconds": 2.949,
+      "sha256_matched": true,
+      "stderr": "",
+      "git_bytes": 2542319
+    }
+  },
+  "partial_search_probe": {
+    "seconds": 7.771,
+    "exit": 0,
+    "output_bytes": 1878,
+    "stderr": "",
+    "git_bytes": 17489343,
+    "matches": 3
   }
 }

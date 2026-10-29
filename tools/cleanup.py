@@ -1,6 +1,6 @@
 """Frozen-source reading and concurrent per-file semantic-cleaning receipts."""
 from __future__ import annotations
-import argparse, fcntl, hashlib, json, subprocess, sys, time, uuid
+import argparse, fcntl, fnmatch, hashlib, json, subprocess, sys, time, uuid
 from pathlib import Path
 from urllib.parse import quote
 import board
@@ -140,11 +140,28 @@ def resolve(rows, text):
     return found[0]
 
 
+def ensure_source(root,commit):
+    if board.git(root,'cat-file','-e',commit,check=False).returncode:
+        # Git lazily obtains requested blobs from the ordinary authenticated
+        # origin. Servers without filtering fall back to a complete snapshot.
+        board.git(root,'config','remote.origin.promisor','true')
+        board.git(root,'config','remote.origin.partialclonefilter','blob:none')
+        board.git(root,'fetch','--quiet','--no-tags','--depth=1','--filter=blob:none','origin',commit)
+
+
+def prefetch_text(root,commit,rows):
+    # Avoid one network round trip for every promised text blob during grep.
+    listing=board.git(root,'rev-list','--objects','--missing=print','--no-object-names',commit).stdout
+    missing={line[1:].decode() for line in listing.splitlines() if line.startswith(b'?')}
+    wanted=sorted(missing.intersection(row['blob'] for row in rows))
+    if wanted:
+        board.git(root,'fetch','--quiet','--no-tags','--no-write-fetch-head',
+                  '--filter=blob:none','--stdin','origin',input_data=('\n'.join(wanted)+'\n').encode())
+
+
 def show(root,sid,output=None):
     row=resolve(inventory(root),sid);source=row['sources'][0];commit=source['commit']
-    probe=board.git(root,'cat-file','-e',commit+':'+row['path'],check=False)
-    if probe.returncode:
-        board.git(root,'fetch','--quiet','--no-tags','--depth=1','origin',commit)
+    ensure_source(root,commit)
     data=board.git(root,'show',commit+':'+row['path']).stdout
     if hashlib.sha256(data).hexdigest()!=row['sha256']:
         raise ValueError('Source content hash mismatch')
@@ -163,13 +180,21 @@ def search(root, query, pattern='*.md', limit=30):
     lookup={(s['commit'],s['path']):r for r in rows for s in r['sources']}
     snapshots=json.loads((root/'cleanup/sources.json').read_text())['snapshots']
     found=[];seen=set()
+    searched_blobs=set()
     for snapshot in snapshots:
         commit=snapshot['commit']
-        if board.git(root,'cat-file','-e',commit,check=False).returncode:
-            board.git(root,'fetch','--quiet','--no-tags','--depth=1','origin',commit)
-        r=board.git(root,'-c','core.quotePath=false','grep','-n','-I','-F','-e',query,commit,'--',pattern,check=False)
+        eligible=[row for row in rows if row['blob'] not in searched_blobs
+                  and fnmatch.fnmatchcase(row['path'],pattern)
+                  and any(s['commit']==commit for s in row['sources'])]
+        if not eligible:continue
+        ensure_source(root,commit);prefetch_text(root,commit,eligible)
+        # Search only registered versions, including small increment snapshots;
+        # their inherited old tree is not a fresh set of research sources.
+        paths=[':(literal)'+row['path'] for row in eligible]
+        r=board.git(root,'-c','core.quotePath=false','grep','-n','-I','-F','-e',query,commit,'--',*paths,check=False)
         if r.returncode not in (0,1):
             raise ValueError('Could not search frozen source')
+        searched_blobs.update(row['blob'] for row in eligible)
         for line in r.stdout.decode(errors='replace').splitlines():
             fields=line.split(':',3)
             if len(fields)!=4:continue

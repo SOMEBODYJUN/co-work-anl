@@ -168,6 +168,23 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(pushed.returncode,0,pushed.stderr)
         self.assertEqual(json.loads(pushed.stdout)['status'],'pushed')
 
+    def test_partial_source_read_and_batched_search(self):
+        git(self.remote,'config','uploadpack.allowFilter','true')
+        git(self.remote,'config','uploadpack.allowAnySHA1InWant','true')
+        git(self.seed,'rm','raw/a.md','raw/b.md');git(self.seed,'commit','-m','source-only files are absent from result tree')
+        git(self.seed,'push','origin','HEAD:refs/heads/'+BRANCH)
+        repo=self.base/'partial'
+        started=self.work(repo,'start','--remote',self.remote.as_uri(),'--actor','P')
+        self.assertEqual(started.returncode,0,started.stderr)
+        self.assertFalse((repo/'raw/a.md').exists())
+        first=self.work(repo,'clean','show',self.ids[0]);self.assertEqual(first.returncode,0,first.stderr)
+        self.assertIn('source A',first.stdout)
+        self.assertEqual(git(repo,'config','remote.origin.promisor'),'true')
+        search=self.work(repo,'clean','search','source B')
+        self.assertEqual(search.returncode,0,search.stderr)
+        self.assertEqual(json.loads(search.stdout)[0]['id'],self.ids[1])
+        self.assertTrue(list((repo/'.git/objects/pack').glob('*.promisor')))
+
     def test_done_requires_pushed_target_and_updates_checkbox(self):
         self.claim(self.a,self.ids[0]);bad=self.record(self.a,self.ids[0],['archives/demo/not-pushed.md'])
         self.assertNotEqual(bad.returncode,0);self.assertIn('already be pushed',bad.stderr)
