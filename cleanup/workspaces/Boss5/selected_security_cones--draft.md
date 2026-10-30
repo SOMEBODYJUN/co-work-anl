@@ -1,0 +1,115 @@
+---
+id: "CA-SELECTED-SECURITY-CONES"
+kind: "certificate-and-obstruction-review"
+type_tag: "审查"
+title: "三个指定完整策略锥的安全证书与五个固定游戏预算核验"
+status: "complete"
+truth_status: "exact-on-fixed-policy-cones-and-five-fixed-games"
+review_level: "source-read-compared-with-existing-duality-and-budget-objects"
+scope: "共同有限目录、单位客户、完整有序历史纯SPE；三棵固定形式策略的任意非负客户重数，以及五个固定客户游戏中的指定安全最优查询分布"
+legacy_ids:
+  - "CA-SELECTED-SECURITY-CONES"
+source_refs:
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/customer_attraction/security_gluing_2026-10-10/selected_cones_source.md"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/customer_attraction/security_gluing_2026-10-10/selected_cones_source.md"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/selected_security_cones.json"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/certificates/customer_attraction/selected_security_cones.json"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/selected_security_budgets/all_SPE_GB_original36.json"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/selected_security_budgets/all_SPE_GB_individual34.json"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/selected_security_budgets/all_SPE_GB_individual360.json"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/selected_security_budgets/all_SPE_GB_root_tax_failure.json"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/certificates/customer_attraction/selected_security_budgets/all_SPE_GB_global_decorrelation_failure.json"
+evidence_paths:
+  - "archives/customer-attraction/tools/evidence/security-cones-new/original/selected_security_cones.json"
+  - "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_original36.json"
+  - "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_individual34.json"
+  - "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_individual360.json"
+  - "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_root_tax_failure.json"
+  - "archives/customer-attraction/tools/evidence/security-cones-new/original/all_SPE_GB_global_decorrelation_failure.json"
+---
+
+# 对象边界
+
+本对象只处理三个已保存的完整形式策略及五个固定客户游戏。先固定策略 \(\sigma\)，再让每个非空兴趣类型的客户重数 \(w_T\ge0\) 变化；它不量化任意纯策略、任意人数、任意目录，也不替代六人 half 目标。所有偏离均沿完整有序历史计算，允许重复标签和独立平局。
+
+令 \(\Gamma\) 收集固定策略在每个历史和每个备选动作下的真实激励差行。固定策略的全部客户重数纯 SPE 锥是
+\[
+\mathcal K_\sigma=\{w\ge0:\Gamma w\ge0\}.
+\]
+终局覆盖向量记为 \(c\)，玩家终局收益向量记为 \(d_i\)。对静态竞争元组 \(B\in[m]^{n-1}\) 和查询主题 \(a\)，按客户类型定义
+\[
+f_B(a)_T=\frac{\mathbf 1[a\in T]}{1+\#\{b\in B:b\in T\}}.
+\]
+这里的 \(B\) 是合法静态背景，可含重复，不必来自指定策略的真实回复菜单。
+
+# 全锥证书
+
+若存在合法静态分布 \(Q\)、逐历史偏离乘子 \(\lambda\ge0\) 和逐类型余项 \(r\ge0\)，使对每个查询主题 \(a\)
+\[
+d-\sum_B Q_B f_B(a)=\Gamma^{\mathsf T}\lambda_a+r_a,\tag{1}
+\]
+则任意 \(w\in\mathcal K_\sigma\) 都满足
+\[
+d\cdot w\ge \sum_BQ_B f_B(a)\cdot w
+\]
+并因此封顶每个纯查询及其混合。取 \(d=d_i\) 得指定策略锥上的逐人 \(u_i\ge v_n\)；取 \(d=c/n\) 得 \(W\ge n v_n\)。证书中的 \(Q\) 同时支付整个非负重数锥，不能随 \(w\) 变更；乘子可以使用真实离轨历史。该推导只证明固定策略锥上的结论。
+
+冻结证书包有三棵策略、13 个 (1) 证书。独立审计从完整有序策略重建 \(\Gamma\)，核对所有真实行、非负 \(Q,\lambda,r\) 和非空兴趣类型余项；共 4,914 个有理系数恒等式通过。三棵策略的承重范围如下：
+
+| 固定策略 | 规模 | 全锥结论 |
+|---|---:|---|
+| 61 客户根税策略 | \(n=4,m=6\) | 每位 \(u_i\ge v_4\)，并有 \(W\ge4v_4\) |
+| 89 客户总去相关策略 | \(n=4,m=6\) | 每位 \(u_i\ge v_4\)，并有 \(W\ge4v_4\) |
+| 原 36 客户策略 | \(n=3,m=6\) | 后两位 \(u_i\ge v_3\)，并有 \(W\ge3v_3\) |
+
+前两棵的逐人背景可取实际终局删除目标玩家后的纯背景，所以其终局在整个锥上仍为静态 PNE。原 36 客户策略的聚合背景可取
+\[
+01:\frac{1982}{6471},\quad
+02:\frac{1442}{6471},\quad
+03:\frac13,\quad
+04:\frac{565}{6471},\quad
+05:\frac5{719},\quad
+34:\frac{55}{2157},\quad
+35:\frac{115}{6471}.
+\]
+因此沿这三棵固定形式策略只改变客户重数，不能得到聚合安全桥反例。原 36 客户策略首位的逐人桥确有完整 SPE 反例，但其聚合安全余量仍为正，必须与本证书分开。
+
+# 五个固定游戏的完整 SPE 预算核验
+
+这部分固定一个客户游戏和一个已知精确安全最优查询分布 \(p\)。对历史 \(h\)，令 \(M(h)\) 是该历史后所有完整纯 SPE 能实现的有序终局。递归阈值为
+\[
+L(h)=\max_b\min_{z\in M(hb)}u_{|h|+1}(z),\qquad
+M(h)=\bigcup_b\{z\in M(hb):u_{|h|+1}(z)\ge L(h)\}.\tag{2}
+\]
+归纳在完整历史上进行，因此不能把计数相同的不同历史强行共用平局策略。
+
+固定实现路径 \(z\) 后，玩家在节点上的首次偏离可从对应 \(M(z_{<i}b)\) 选择一个使其收益不超过 \(u_i(z)\) 的终局；不同真实节点的偏离子树互不相交，故可独立最大化各项去相关预算 \(C_i(p)\)。遍历所有可实现 \(z\) 及其合法偏离菜单，得到该固定游戏、该固定 \(p\) 下所有完整 SPE 的最小
+\[
+GB=W-\sum_i C_i(p).
+\]
+
+| 固定游戏与查询分布 | 完整有序 SPE 路径数 | 最小 \(GB\) |
+|---|---:|---:|
+| 原 36 客户，均匀 \(p\) | 48 | \(17/6\) |
+| 34 客户，唯一 \(p^*\) | 40 | \(60/41\) |
+| 360 客户，唯一 \(p^*\) | 23 | \(55088965/3710088\) |
+| 61 客户，指定安全最优 \(p\) | 102 | \(3/2\) |
+| 89 客户，指定安全最优 \(p\) | 6 | \(70429743611/10570351740\) |
+
+五项均严格为正。它们只核对每个固定游戏中的一个指定安全最优分布；若安全最优分布不唯一，未覆盖其余最优分布。全局去相关、根税等旧预算接口出现的负值，说明的是特定支付规则会漏掉真实后继信用，不能改写成聚合安全桥或 half 反例。
+
+# 证据与接续
+
+源稿的独立复验入口为：
+
+    python3 tests/audits/customer_attraction_selected_security_cones.py
+    python3 tests/audits/customer_attraction_selected_security_budgets.py
+
+当前 clone 未包含这两个审计脚本的活动路径；冻结 JSON、原策略快照和既有审查对象已保全，故本次不把“可执行入口”写成已在当前 checkout 重跑。已读内容与既有对象的去向：
+
+* 全锥证书与 (1) 的定义、对偶关系接入 state/定理/完整策略锥的静态安全值对偶--定理.md；
+* 五个固定游戏的正预算表接入 state/障碍/固定安全预算锥的五个失败实例--障碍.md 的范围说明，并作为其正向预算边界的补充；
+* 34/360 逐人失败、全局 GB 失败和当前三棵锥证书保持不同稳定对象，不相互替代；
+* 任何六人 half 结论、任意策略结论或任意安全最优分布上的预算命题均保持开放。
+
+本稿是对 source ae28fc07bc363c5214e9 的语义清洗草稿；正式归档前应由 Boss5 将本稿与既有对象逐段合并，避免建立同一 CA-SELECTED-SECURITY-CONES 的重复稳定 ID。

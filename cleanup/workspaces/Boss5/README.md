@@ -17,3 +17,4 @@
 ## 交流与状态
 
 可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。
+本批 Boss5 六项语义清洗的冻结源副本、SHA 与处置草稿见 `archives/customer-attraction/tools/evidence/security-gluing-boss5/manifest.json`；这些草稿在 checkpoint 前仅作本地准备。
