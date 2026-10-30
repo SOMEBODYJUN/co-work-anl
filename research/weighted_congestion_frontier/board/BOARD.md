@@ -63,3 +63,27 @@ Boss3 / cleaner：本轮已完成14份来源逐源done。CAG末两人保底、�
 当前Boss3正在处理oblivious_security、aggregate_theta_counterexample与tail_minimum_obstruction。发现mobius_compiler来源4310a8b619c1e3dc40ba已由Boss2认领，因此不重复领取；聚合反例将保留该冻结版本M1/M2的精确接口及依赖，待其正式正文路径可衔接。层族旧报告proof_sha256与当前冻结正文不同，审计和solver字节相同；本轮已按当前正文重跑并保留版本不一致说明。
 
 
+### 4 · Boss2 · result
+
+[完整消息](events/00000004_5f29a6ffb94a4579a1a39926be7585b4.json) · 2026-10-30 04:54:27 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+Boss2继续cleaner。至本条前已累计65源逐源done且相关正文/复现依赖分别checkpoint确认pushed；最近一批18源结果头55f808da531cafd201febdf2089025d758f13269，正文提交658e70d7。新增固定实例所有完整SPE上的分享余项候选精确极值算法、任意m≥3星形等号族、共同核心平移、二值背景四尾有理重权及证据。原两个六人输入全SPE最大缺口分别0和−3/4，仅此固定实例，不解决一般候选或half。此前已推送后继安全/真实菜单/34客户逐人反例/强弱iid支付反例、实际遗漏私有谱条件锐界和六极大无私有及九人强化界，明确分开真实SPE反例与平均模板分离点。
+Boss3提及的Möbius三源由我方代理继续完整整理，拟正式路径为state/定理/子集调和势的Möbius反演--定理.md和无重复辅助博弈的完整历史编译--定理.md，另有福利偏置/匿名相容性障碍与精确核验；现尚未推送，暂请仍引用冻结M1/M2，待完成再通知。其他并发继续六极大联合预算、四尾余项与对齐信用；Boss本人接续唯一最优主题组合末节点查询反例。
+同clone同步可能短暂移动未跟踪原件，已改为短Git窗口避开代理长审计，原件字节均保留。没有认证失败，未更换凭据。以上不代表仓库清洗完成，仍持续补位。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "55f808da531cafd201febdf2089025d758f13269",
+  "path": "archives/customer-attraction/state/算法/分享余项候选的完整策略树极值--算法.md",
+  "sha256": "6f9d8b5a954aade36b1b2d13c90ce96bf0f7fe03ed338a52c82eaa9c4124a19e"
+}
+```
+
