@@ -1,35 +1,11 @@
-# Boss4 当前发布与接续状态
+# Boss4 网络边界交接草稿（仅本地，尚未共享）
 
-Boss4 / cleaner，独立clone；结果rebuild/research-v2，公屏wcg/board-cleanup-20261028，存档repository-cleanup。身份start --resume及receive-pack实际写端点已验证通过。指定仓库过去、本次与后续推送均已获用户明确授权；不再重复询问。
+当前源站代理CONNECT403，另有工具network approval cancelled；没有凭据Authentication rejected证据。用户对过去、本次、以后推送的持续授权不变，不需再次确认。已停止新认领和网络取源。
 
-## 原101源已经完成
+截至最后确认远端：Boss4完成570，未完52；最后确认done为b38553cfd0b7f6da5ec7954654901162be888115，最后确认claim为78f3b9416ba51e4447c8f245425e8aab672d503a。前各数学pushed/done分别见PUBLICATION_STATUS.json。
 
-原45篇正文与复现依赖checkpoint确认pushed：a9fe1925fb460b7cdc4fc0937b3f52f111c94443。交接期间5源已被Boss2完成，原记录保留；其余96恢复认领pushed b2f1e31f1ef368cd47e3ace355cf045a08b62c0f，随后真实done pushed bca761c311652fc050590e1c5582c39197b1eeb0。101源已全部有完成处置，不再按旧“仅本地/零pushed”接续。
+21源完整成稿/原件/实际复现依赖及本地语义回执已齐，准备checkpoint --local-only，不冒称pushed或done。清单LOCAL21_RECEIPTS_PENDING_PUSH.json与cache/local21-paths.json。31源（class17、shared-catalog9、Pro-brief5）均原文已全读、外部成稿正在最后收口；网络缺依赖及外文不可核范围真实保留，稍后更新本草稿。不长期保占新任务，最终将实际clean handoff --all；尚未执行，不预写成功。
 
-原入口DELIVERY_INDEX.md、LOCAL_RECEIPTS.json、LOCAL_VALIDATION.json及各数学对象。旧自动审批阻塞与handoff记录属于Git历史，不是当前推送状态。
+unit-code4认领没有成功回执，网络403发生前后远端状态不能复核，不计入52；恢复后先核owner，勿重复抢领。acb/ccda/general-weighted-clause/dce的冲突认领均未成功，尊重Boss2；未认领metadata/旁读不当新完成来源。
 
-## 后续100源与64源接续
-
-100源正式认领pushed 312c5851e9e6e7256584ab8d3e3c1da2df0dd966。六gpt-6.1-sol/ultra完整实质清洗，Boss负责幂桥12源并串行Git。共51自足正文，7组逐源回执；程序、输入、原件与实际复跑都在数学存档tools/evidence。
-
-source-envelope12正文先pushed 09c6931e220630d0ff0ebed7811a6f01c3d000c9，再done pushed d58152cae3174301d9feb86af1fbb7bb7ce55834。其余88及另10编译依赖已done pushed b69dfcbacf1d3857a1058a47ed87f9819c26091c；100源全批与10依赖均已完成。
-
-另外64源已按空出的实际执行能力接续认领：density-share12与class-front-closure10（5741b4df90b822f7b09842c68b8871109fbd6395）、support10（cd1ee7177bd059ce763cf4c24cf55239e5c55410）、UM比较8与cohort比较10（c398df86664ad40d0cfc6ab57da3ad7248ec872d）、shared-side依赖14（f6e00072bc16cb1fef104ad287ee698cc115032f）。各候选与独立回执不混入100源分母。比较依赖可复用真实完整阅读/实际运行，未重复无理由审计。
-
-## 最新接续入口
-
-见CONTINUATION_INDEX.md及CONTINUATION_RECEIPTS_101.json：另外101源已pushed 760ff40cef415b7cf06f7172e0b94717d86f7fbb并done a847763a85cfdb659b1a38ac21aa925554f5b55a；UM恢复9源已pushed/done（b347a993/8094718e）；新63源已claim pushed 41ff6857并实际执行。六指定模型代理继续完整数学清洗，没有把metadata候选算认领或完成。
-
-## 恢复方法与边界
-
-先读最新Git/checkpoint回执和clean list --owner self；远端逐源记录裁定已完成/当前认领，本文只记录写作时点。正式正文按数学对象分类，旧OPEN以实际后续纠错更新，受限势合同失败与真实无均衡分别标明。所有未决材料须实际checkpoint后done或真实handoff，不能把子代理完成信息当推送证明。
-
-暂停/收尾仍须clean handoff --all并准确draft-note。本文不是本次handoff完成声明，当前仍在工作。凭据只留仓库外认证，不入正文、remote或提交。
-
-## 最新实际发布与运行范围
-
-下一63中的首12已先正文pushed37705992、done8ec60041；余51与新46中的UM模型2共同53源，正文最终发布头0325cab6c125f5a852017bfe023115fe0c2515bc（正文提交81ad730e已包含于正常合并同步头0325cab6），done另推送c2a9cff23b8b4f3a57f87becba4cf46aaa0dc840。READY53_RECEIPTS.json保逐源语义。next63全批已完成。
-
-新46claim a064b932中余44继续实质整理；另按已空出的两代理实际能力接续facility18与UM依赖7，claim pushed20ffb1f03e8bdaca5d59ec32ffebe290bfe4fa26，25原件完整缓存。当前Boss4官方完成392（358 integrated、33 retained、1 duplicate），当前认领69；全仓10921中仍有未处理来源，不声称全仓完成。
-
-新增两主稿原文全部实读，拼接主定理及完整归属边界已写，尚待其自身checkpoint/done。当前仍在工作，本文不是实际handoff回执。
+临时阅读与尚未核主稿的旁推：boss4-next-cache/um-tiny-weighted-affine-unclaimed-handoff，boss4-next-cache/um-unit-leaf-selector-reconstruction-notes.md，分别标仅metadata/比较，不称主稿实读或数学认证。

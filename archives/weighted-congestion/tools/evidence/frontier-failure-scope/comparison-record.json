@@ -1,0 +1,1150 @@
+{
+  "schema": 1,
+  "claimed_markdown_sources_fully_read": [
+    {
+      "id": "da2988afff40bfa14750",
+      "path": "research/weighted_congestion_frontier/ACCEPTANCE.md",
+      "bytes": 5461,
+      "lines": 45
+    },
+    {
+      "id": "e98f702114c577183629",
+      "path": "research/weighted_congestion_frontier/FAILED_ROUTES.md",
+      "bytes": 27525,
+      "lines": 153
+    },
+    {
+      "id": "b4472c094e6338152350",
+      "path": "research/weighted_congestion_frontier/MODEL.md",
+      "bytes": 3011,
+      "lines": 35
+    },
+    {
+      "id": "1766af59df3c9049db9f",
+      "path": "research/weighted_congestion_frontier/RESEARCH_STATE.md",
+      "bytes": 5922,
+      "lines": 37
+    }
+  ],
+  "general_model_and_acceptance_delivery": "archives/weighted-congestion/state/资料/全类近似门槛的模型与研究验收合同--资料.md",
+  "source_intro_status_lines": [
+    3,
+    9
+  ],
+  "source_intro_account": "all-class Cd/log d already negated by dedicated all-state family; healthy special-input proof does not restore false generic sweep/front compiler",
+  "failure_route_count": 49,
+  "failure_routes": [
+    {
+      "id": "FR01",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 13,
+      "original_line_end": 13,
+      "original_fragment": "| 奇环所有 aligned light 强制偏离，再用 odd hub 覆盖 | [精确 T_d 包络](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md)限制全部这套正测试，多项式混合不扩大 | 证书上限本身仍非存在证明；但新增[第10节](../current/weighted_congestion/odd_ring/cohort_lower_bound_and_envelope.md#10-一般群组奇环实际阈值与正测试包络一致)用稳定区间/双取向/平移消去独立证明一般cohort实际阈值恰T_d。该同权同费奇环内即使放弃UF也不能放大；需改变承重拓扑/权/费用合同 |\n",
+      "original_fragment_sha256": "604753ad7fe89374964fb617e19cec659ffec71845d0813b408d9f9477761a24",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR01：同权cohort奇环。** 原正测试要求aligned light统一改善、再借奇数hub反馈覆盖，其包络是\n\n\\[\n T_d=\\sup_{R>1}\\frac{R(1+R)^d+1}{(1+R)^d+R^{d+1}}\\sim d/\\ln d.\n\\]\n\n正测试上限本身不能证明原游戏存在均衡；但后来的[实际拓扑阈值证明](../定理/同权群组奇环的实际均衡阈值--定理.md)不假设UF，先取light稳定整数区间，再列至多 $2m$ 个单缺陷候选，以中央双标签、L/R取向和平移消去证明至少一个 $T_d$-PNE。其对象是奇数单环、每cohort同权、同群side同费、二元同费副本；hub权可以不同。结合该拓扑严格下界才得到最坏有限实例阈值的sup恰 $T_d$，不是每个实例都同阈值或有单个实例取得sup。只在这个完整合同内放弃UF仍不能放大；改变cohort权、费用副本或关联后须重证真实全部状态。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/同权群组奇环的实际均衡阈值--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR02",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 14,
+      "original_line_end": 14,
+      "original_fragment": "| 同一重轻两列拓扑靠调参或多项式变强 | [完整拓扑还原](../current/weighted_congestion/source_topology/symmetric_two_column_reduction.md)在精确倍率范围还原到源族 | 异权和非对称资源不在范围；有限 crossover 给分离 |\n",
+      "original_fragment_sha256": "fe4369d16ed855e67141f98669d6f0680f4d0024ba56ea2eedb63e0e90126547",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR02：相同轻权的对称两列。** [拓扑还原](../定理/对称两列拓扑的单项式两攻击归约--定理.md)先压缩到 $m=0,\\ldots,n$ 轨道的全部真实偏离、求light稳定区间，再平移/倒权消去。准确归约域是 $d\\ge1$、$\\alpha\\ge(1+\\sqrt3)/2$：若此同轻权、主副本同费及全部卫星同费的游戏无 $\\alpha$-PNE，就有可以改变人数、共同权和多项式的单项式两攻击源。它不保原实例最优因子，不能省略倍率域，也不是异质light或非对称资源的规范形。十四资源有限crossover在合同外给分离；保守两攻击端点公式还另有弱于完整轨道阈值的损失，不能混为“任何参数游戏等价”。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR03",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 15,
+      "original_line_end": 15,
+      "original_fragment": "| 固定小支持 gadget 重复堆叠 | 资源潜在用户数 r 有 r-PNE 的总成本证明；[三玩家例](../current/weighted_congestion/quadratic_triad/three_player_integer_obstruction.md)不可能独自给随 d 无界的下界 | 需增长用户支持或改变机制；有限例仍可复用 |\n",
+      "original_fragment_sha256": "40e4371276cacba08a9e7e63c1c6f5f0e72a87b337560873fed26a4c39009206",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR03：固定小资源支持。** 若每资源潜在用户数至多 $r\\ge1$，[总成本势](../定理/资源潜在用户支持的总成本势--定理.md)在任意非负非减费用下给 $r$-PNE。删除资源使总成本至多减少旧费用的负值，加入资源使其至多增加 $r$ 倍新费用；保留资源取消，故 $\\Delta\\Phi\\le rC_i(new)-C_i(old)$。严格 $r$ 改善下降。固定小gadget只要重复后仍保持每资源该支持上限，就不能给随次数无界的非存在；三玩家六资源例的有限阈值仍有价值。若叠加引入共享资源而使支持增长，就已改变此合同。全部潜在用户为空时所有成本零，另为精确PNE。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR04",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 16,
+      "original_line_end": 16,
+      "original_fragment": "| 自然 complementary multicolumn 扩展 | [平衡轻玩家状态](../current/weighted_congestion/multicolumn/complement_column_escape.md)提供两倍逃逸 | 只排除此拓扑的放大；非所有多列构造 |\n",
+      "original_fragment_sha256": "e9d1fdd40dfae557c001825d11e991e3ac02285ca13718b5e5185d8b739d67c2",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR04：自然互补多列。** [平衡多列定理](../定理/互补多列的平衡均衡与锐阈值--定理.md)对 $q\\ge3$、一名权1主玩家、$n\\ge1$ 名共同权 $0<w\\le1$ light、主列/补列卫星的同费关联，给非负非减费用下的2-PNE。机制是在固定主列的light精确势最小点中平衡非主列人数，再逐条支付主玩家偏离。$w\\le1$、共同轻权、同卫星费与补列关联不能删；不排所有多列构造。其固定 $q$ 的人数锐极限 $(q-1)/(q-2)$ 和三列sup为2也只是这个拓扑，不是全类阈值。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/互补多列的平衡均衡与锐阈值--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR05",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 17,
+      "original_line_end": 17,
+      "original_fragment": "| 仅通过优化有序分组的潜在尾部参数A求统一界 | [两权级锐式](../current/weighted_congestion/weight_bands/ordered_tail_freezing.md)给min A=min{H,(1+K/H)^d}；K=ceil(H²)时固定次数仍随H无界 | 只否定此A包络控制；同一游戏有全空精确PNE，不能推断冻结程序本身选坏状态。可回收阶段Shapley拼接；[双排序混合势](../current/weighted_congestion/weight_bands/two_weight_order_blend.md)已给两权整个子类统一平方根次数界，故参数无界不能外推为该子类存在性障碍；实际占用或重开早组改变合同后可重试 |\n",
+      "original_fragment_sha256": "8414d532308829d7abc60e74780fbedd9cea9ce8bd640e00a2c214e1a2e2229c",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR05：仅优化有序分组的潜在尾部参数。** [参数锐式](../障碍/潜在尾部参数的锐界--障碍.md)对一名权 $H\\ge1$、$K\\ge1$ 名单位权者、$d\\ge1$ 的所写单潜在资源接口，证明全部有序非空分组中\n\n\\[\n \\min A=\\min\\{H,(1+K/H)^d\\}.\n\\]\n\n$K=\\lceil H^2\\rceil$ 时固定正次数下此保证随 $H$ 无界，但同一全可选空策略游戏有全空精确PNE；这既不证明实际冻结输出差，也不否定两权子类存在统一界。[双排序混合势](../定理/两权类别双排序混合势--定理.md)已给平方根次数保证，使用不同机制。可回收阶段Shapley拼接；实际占用预算或重开早组必须另给新接口，不能从旧A无界直接宣布不可能。$d=0$ 的最佳参数另为1。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/潜在尾部参数的锐界--障碍.md",
+        "archives/weighted-congestion/state/定理/两权类别双排序混合势--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR06",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 18,
+      "original_line_end": 18,
+      "original_fragment": "| 保留统一固定低漏、只靠更深或更密DAG放大阶跃源 | [精确路径预算](../current/weighted_congestion/polynomial_curvature/dag_low_leakage_budget.md)把检测可行性化为z(z−1)ΣP_kz^(k−1)≤1，原step阈值至多O(√d) | 只限制所列低高端点；不控制过冲或实际多项式β。可回收最小/slack权表示；异质泄漏、改权或直接全状态机制需另证 |\n",
+      "original_fragment_sha256": "e0f1db2350a812317380c03e654b47857b45bd67ba16c97cbdf477d87767f50a",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR06：统一低漏DAG端点检测。** [精确端点预算](../定理/有向无环端点低泄漏的精确次数预算--定理.md)固定simple DAG、$d\\ge1$、$0<\\varepsilon<1$，取 $z=\\varepsilon^{-1/d}>1$、$P_k$ 为含k顶点路径数。允许选择合法正权和非零非负费用，指定根/卫星端点检测可行当且仅当\n\n\\[\n z(z-1)\\sum_kP_kz^{k-1}\\le1.\n\\]\n\n反拓扑最小权和非负slack表示给必要充分性，等号可行；这不是“任意已固定权均可行”。固定 $\\varepsilon$ 时辅助阶跃源门槛至多 $1+\\sqrt{d/\\ln(1/\\varepsilon)}$，量级可达。它不控制其他低端、高平台过冲或全部玩家成本和，充分性仅指指定端点检测。所排的是保统一固定低漏再只加深/加密DAG的源放大；异质泄漏、改权或直接真实全态证明未被排除。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR07",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 19,
+      "original_line_end": 19,
+      "original_fragment": "| 固定step-DAG极值幅度，只改多项式曲线以利用过冲或漏费 | [实际全入状态界](../current/weighted_congestion/step_dag/polynomial_extremal_all_in.md)在p0(1)=A,pv(1+wv)=A h_v(q_D)下给d≥16的4√(d/ln d)-PNE | 直接处理所有玩家真实偏离，但仅限该锚定幅度；任意幅度未被排除。回收缺口矩Σh_v(w_v−outsum)<1/q与Jensen；改幅度/选其他light集合时需新证明 |\n",
+      "original_fragment_sha256": "35cfd5e645d7fac4dc41a953561842aaa79c396a4f65d56ce2a7c1c30924ee12",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR07：DAG极值振幅下仅改曲线。** [实际全入均衡](../定理/阶跃极值幅度的多项式全入均衡--定理.md)另固定主/卫星的极值归一幅度 $p_0(1)=A>0$、$p_v(1+w_v)=Ah_v(q_D)$，以及所写binary DAG、同费副本和严格合法权。缺口矩 $\\mu=\\sum_vh_v(w_v-outsum_v)<1/q_D$，加Jensen控制根偏离，light逐条真实比较，给 $d\\ge16$ 的 $4\\sqrt{d/\\ln d}$-PNE。它容纳漏费和过冲，但只在这项振幅合同内；没有证明任意幅度可归一到这里。FR06的端点预算与本振幅条件互不蕴含，不能互代充分性。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR08",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 20,
+      "original_line_end": 20,
+      "original_fragment": "| 固定正权向量，仅把所有正次数提高 | [高次份额势](../current/weighted_congestion/high_degree_share.md)证明，即使拓扑与系数变化，最低正次数趋无穷时近似保证一致趋1 | 排除这一纯高次放大路线；权向量随次数变化或保留低次项不在范围。必要小份额仍非充分反例 |\n",
+      "original_fragment_sha256": "224b34d9daa8c7bc9b6b2ffba387c3398693afb8494955491e5e31cf12295e01",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR08：固定正权向量只提高最低正次数。** [高次份额势](../定理/高次费用最小潜在权份额势--定理.md)令固定有限权向量 $q_*=\\min_iw_i/\\sum_iw_i>0$。若全部正次项的最低次数 $k\\to\\infty$，即使资源、策略和系数变化，也统一有 $[1-(1-q_*)^k]^{-1}$-PNE，趋1。零/常数资源另按人数势支付。只固定人数而改变权，或保留正的低次项，都不满足该统一量词。小潜在份额是纯高次坏游戏的必要条件，不是充分反例。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/高次费用最小潜在权份额势--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR09",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 21,
+      "original_line_end": 21,
+      "original_fragment": "| 保持 crossover 权和系数只提高次数 | [degree40 与精确极限](../current/weighted_congestion/crossover/README.md)已有较低因子均衡 | 缩权和调幅可重试；固定四玩家仍只能给常数 |\n",
+      "original_fragment_sha256": "07975074f410f118abcb25cb414f8f565d359c254a8b93bf592a00862f136d65",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR09：固定crossover权和归一振幅升幂。** [真实持久性反例](../反例/固定权重十四资源族升幂失去九五障碍--反例.md)对固定四玩家、mask、归一振幅，前六对升为d次而第七对仍二次的族，在 $d=40$ 已有9/5-PNE；固定权极限阈值 $5235403/2930833<9/5$，有限状态正分母极限给最终全部充分大d亦有。没有证明最小起点为40或每个d≥40都已单调。该族保留二次项，所以不能直接用FR08替代其成本极限证明。改变小权/幅度可绕过这个固定参数失败；固定四人仍只能支撑常数级全类下界。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/反例/固定权重十四资源族升幂失去九五障碍--反例.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR10",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 22,
+      "original_line_end": 22,
+      "original_fragment": "| 稀疏权谱下模拟阶跃坏博弈 | [曲率](../current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md)与[密度存在界](../current/weighted_congestion/weight_density.md)限制对应保持结构的替换。更直接地，若同一非负系数次数至多 d 的多项式 p 要在两个正负载 L<H 上实现 \\(p(H)/p(L)\\ge1/\\varepsilon\\)，则 \\(d\\ge\\ln(1/\\varepsilon)/\\ln(H/L)\\)，因为 \\(p(H)/p(L)\\le(H/L)^d\\)。Theorem 5 型稀疏权重中 H/L=1+2^{-i}，所以第 i 层要求的次数至少约 \\(2^i\\ln(1/\\varepsilon)\\)；阶跃阈值的 n/ln n 玩家放大不能直接搬到 n≫log d。 | 这只否定同一资源、同一稀疏权谱上的 faithful step-simulation 路线；不排引入稠密 cohort、改变覆盖结构、放弃平台保真或直接构造全状态偏离。 |\n",
+      "original_fragment_sha256": "10ec7222d86414624dd0d2748c68e7048318960c26a0f66accf524be15dfe0a0",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR10：同一稀疏权谱保真阶跃模拟。** 非零非负系数次数至多d的 $p$ 在 $0<L<H$ 满足\n\n\\[\n p(H)\\le(H/L)^dp(L).\n\\]\n\n故若要求 $p(H)/p(L)\\ge1/\\varepsilon$，必要 $d\\ge\\ln(1/\\varepsilon)/\\ln(H/L)$。对所考察的相邻相对尺度 $H/L=1+2^{-i}$，由 $\\ln(1+x)\\le x$ 得 $d\\ge2^i\\ln(1/\\varepsilon)$。因此原稀疏前缀的玩家放大不能保持同资源平台保真而直接取 $n\\gg\\log d$。[三载荷精确包络](../定理/非负多项式三载荷精确包络--定理.md)和[真实前缀过冲](../障碍/前缀阶跃平台的三载荷过冲--障碍.md)还证明低漏与高平台平坦的冲突。仅排faithful模拟；稠密cohort、新覆盖、利用过冲或直接全状态偏离不在范围。这里没有重新核外部Theorem5全文或认证其优先权。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/非负多项式三载荷精确包络--定理.md",
+        "archives/weighted-congestion/state/障碍/前缀阶跃平台的三载荷过冲--障碍.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR11",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 23,
+      "original_line_end": 23,
+      "original_fragment": "| 同资源密集尺度固定 power 乘子拼接 | [仿射路径](../current/weighted_congestion/power_bridge.md)在固定 p<1 下无统一夹逼，另有 sharp 两类型损失 | 不是博弈无均衡；允许实例相关乘子、跨资源支付等须另证 |\n",
+      "original_fragment_sha256": "5fbd337d1e484558ecb2366ff8fb260a1f112022c45e255f63e7719892018979",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR11：固定power玩家乘子拼接。** [共同尺度桥](../定理/资源幂矩与降序边际势的共同尺度桥--定理.md)可以用同一 $w_i^p$、$0<p<1$ 跨资源拼接，但其保证保留局部权比或半开权窗密度。固定p下，任意权谱/密集同资源的仿射加入路径没有统一夹逼；这不是游戏无均衡，也不排实例相关乘子。关键错误是从“每个资源可选一个好比例”跳到“同一玩家在全部资源有同一比例”。允许跨资源支付、新乘子或其他目标时须重新证明全偏离合同；固定两类型另有锐式，不得把它与任意权谱量词合并。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/资源幂矩与降序边际势的共同尺度桥--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR12",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 24,
+      "original_line_end": 24,
+      "original_fragment": "| 窄权带单独归一化 Shapley | [mixed difference/curl 与 selector 线性损失](../current/weighted_congestion/weight_bands/README.md) | 限指定势与归一化规则，不反驳全类次线性存在 |\n",
+      "original_fragment_sha256": "32ed163272bf56dc1fb6ff4af82aef9ffe25f3894a2beb8d6cf6c35e25192db2",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR12：窄带各自归一化Shapley。** [分带障碍](../障碍/Shapley选择器与分带归一化--障碍.md)的两名用户权1、M>1、总费 $F(x)=x^3$（延迟二次）给混合差 $\\kappa=3M(M+1)/2>0$。分别归一化后的两边要求同一普通势混合差等于κ和κ/M，矛盾；仍可有带玩家乘子的加权势。标准Shapley全局最小点还可跨两单点带损失线性于次数，或在局部权比R合同内逼近R；这些游戏都有exact PNE。故仅限制指定势与归一化/选态规则。潜在每带人数可用可选空动作任意增多，最小点的实际活跃人数却不相应增多；不能把潜在密集当活跃密集。其作者精确程序本轮前批已单独处理，不再执行。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/Shapley选择器与分带归一化--障碍.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR13",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 25,
+      "original_line_end": 25,
+      "original_fragment": "| 任意固定玩家乘子及依游戏可分序势覆盖全部改善边 | [有限多尺度与固定资源束证明](../current/weighted_congestion/separable_ordinal_obstruction.md)已独立重构攻击；扭曲门槛ρ_d/d→1 | 只否定边际夹逼和全改善边可分序势；全空仍为精确均衡。非可分势、选定改善步或全局极小点接口改变时可重试；普适复制桥其他推论仍各自核对 |\n",
+      "original_fragment_sha256": "dc72a12b11fadc3c08faa59a25e3e2e944bcb723c3a3ed7ec481d6e0e58f590a",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR13：任意固定玩家乘子与依游戏可分全边序势。** [有限多尺度夹逼](../障碍/任意玩家乘子的多尺度边际夹逼--障碍.md)先选有限正权向量，再排任意正玩家乘子下的单资源全部子集边际合同；[同一游戏内的有限资源束](../障碍/依游戏资源可分全改善序势--障碍.md)再把它变成“先固定游戏、后量化任意资源可分函数”的全改善序势障碍。其扭曲阈值 $\\rho_d/d\\to1$，但见证有全空exact PNE。证明中的资源数必须在候选势之前固定，通过同一游戏自同构平均和有限有理复制强迫禁夹逼，不能看过势再扩充游戏。仅排可分、全部指定严格改善边下降；非可分势、只选部分移动或仅要求全局最小点稳定都另有量词。跨游戏统一复制桥的额外假设也不能倒填到逐游戏任意选势。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+        "archives/weighted-congestion/state/障碍/依游戏资源可分全改善序势--障碍.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR14",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 29,
+      "original_line_end": 31,
+      "original_fragment": "## 正展开提取中只取底背景的稳定预算失败\n\n[正占用核](../current/positive_kernels/occupancy_rank_faces.md)中，底背景q差分虽在有限正锥精确判秩，但n≥q+2的full-support归一化k次核使全部这些差分趋0，极限unanimity仍秩n−1。失败是遗漏高背景，不是数值精度；因此该测试没有无界次数统一gap，且不能交换闭包截面。改取顶背景可回收显式锐gamma与稳定删除；不排低次数的大支持线性资源，更不改变全类均衡状态。零质量反边界必须计算所有active坐标，不能漏掉零质量观察者。\n",
+      "original_fragment_sha256": "dfce044184fcec7504cfd07b723b157ba474a5ab7c1b9235f4063083e503f14f",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR14：底背景正差分不能给无界次数稳定预算。** [正占用核](../../../positive-kernels/state/定义/正占用核与顶背景交互秩--定义.md)固定有限正质量，active表为自身开关开启后的对手响应。底背景q阶差分在有限非负核锥确能判秩；但 $n\\ge q+2$ 的full-support高次核以全激活质量归一后，所有这些底差分趋0，极限unanimity仍有秩n−1。缺的是高背景，不是精度，因此底测试没有跨无界次数统一gap，不能据它交换闭包与截面。[顶背景锐预算](../../../positive-kernels/state/定理/正占用核锐截断预算--定理.md)通过覆盖概率给固定质量的γ>0和稳定删除，[闭包定理](../../../positive-kernels/state/定理/正占用核闭包与低秩截面--定理.md)另补unanimity方向。低次项仍可有大支持，不得把秩过滤误成全部小支持。严格正质量承重；零质量例需算所有active观察者：旧 $(1,1,0),k=2$ 的第三表仍含二次项，正确低秩边界用 $(1,0,0)$。这项独立代数工具没有一般WC均衡桥。",
+      "related_formal_paths": [
+        "archives/positive-kernels/state/定义/正占用核与顶背景交互秩--定义.md",
+        "archives/positive-kernels/state/定理/正占用核锐截断预算--定理.md",
+        "archives/positive-kernels/state/定理/正占用核闭包与低秩截面--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR15",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 33,
+      "original_line_end": 35,
+      "original_fragment": "## 序势障碍不能外推到任意依游戏最小点选择\n\n可能的错误延伸是：既然资源可分目标无法对全部α改善严格下降，就断言任何资源可分目标均不能选出α-PNE。[精确等价](../current/weighted_congestion/separable_ordinal_obstruction.md)第四节否定这种延伸：入射距离唯一选择任意给定合法状态。因此只要求依游戏目标的全部全局最小点为均衡，与该游戏均衡存在本身等价。可回收的是精确量词边界，不是更强无势或无均衡结论；若要求单调、费用局部、跨游戏同规则或非循环有效构造，则需另立并验证这些新增条件。\n",
+      "original_fragment_sha256": "6aaf3aef1d1d3130764baee0dac0334af52942f1b445a14f3f54ffb47b971bba",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR15：把全边序势障碍扩大到任意依游戏最小点。** [入射距离等价](../等价/任意合法状态的资源可分唯一选择--等价.md)精确反驳这种延伸。给任意合法目标状态 $s^*$，令 $F_e(U)=|U\\triangle S_e(s^*)|$，则\n\n\\[\n \\sum_eF_e(S_e(s))=\\sum_i|s_i\\triangle s_i^*|\\ge0\n\\]\n\n且仅在 $s=s^*$ 为零。因此“存在任意依整个游戏选择的资源可分目标，其全部最小点为α-PNE”与“此游戏存在α-PNE”等价。拿一个已知均衡当目标并不给新的有效存在证明；要求单调、费用局部、跨游戏同规则、有效可求或全部改善下降都是额外条件。本等价没有排它们，也不受FR13否定。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/等价/任意合法状态的资源可分唯一选择--等价.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR16",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 37,
+      "original_line_end": 39,
+      "original_fragment": "## 全状态dual的平稳或回返支撑限制\n\n尝试把原dual概率取成selector单位速度链的平稳概率，会引入原替代不要求的流量方程。[明确增长反障碍](../current/weighted_congestion/template_certificates/stationary_selector_obstruction.md)在仿射费用已让该条件的必要倍率无界，尽管原dual和exactPNE存在；具体失败是轻重移动访问频率不匹配。放宽为任意回返状态支撑也恰好要求全模板αFIP，强于只找PNE。可回收的是仿射循环按移动者权重重加权，以及回返支撑的准确量词。允许暂态质量或另选持留率时应重新研究，不受单位速度否定直接覆盖。\n",
+      "original_fragment_sha256": "05c48209f4a4ec0bd2e0124f77b263e73dadcee8a41f486c87755582969d1fc1",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR16：把全状态对偶强限为单位速度平稳或回返支撑。** [平稳选择器障碍](../障碍/单位速度平稳择证的无界损失--障碍.md)在仿射费用就让该流量条件需要的倍率无界，而原dual和exact PNE仍存在；具体缺口是轻重移动访问频率不匹配。原全状态择证替代并没有要求 $\\pi(s)=\\sum_{t\\to s}\\pi(t)$ 的单位速度平稳方程。[回返支撑等价](../等价/循环支撑择证与全部改善终止--等价.md)另表明仅允许recurrent状态支撑恰要求全模板α-FIP，严格强于存在一个PNE。回收仿射环按移动者权重重加权和准确量词；允许暂态质量、持留率或另一转移机制须另研究，不能把单位速度反例外推。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/单位速度平稳择证的无界损失--障碍.md",
+        "archives/weighted-congestion/state/等价/循环支撑择证与全部改善终止--等价.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR17",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 41,
+      "original_line_end": 43,
+      "original_fragment": "## 有向分叉的统一强迫放大\n\n把一个light复制出多条私有双人side以影响多个hub，仍共同占用其唯一main强迫预算。[割均衡定理](../current/weighted_congestion/directed_fanout_forcing_cut.md)在弱UF及α≥T_d用加权割平衡入反馈，给全anti真实PNE，所以此准确拓扑和假设内无法放大非存在。失败是结构上已有均衡，不是浮点搜索失败；异权、异形side、并行和selfloop均被覆盖。可回收工具是预算不等式与正部割；UF失败、同一side含多hub、action-asymmetric副本或多主源改变承重条件时才值得重试。它不排除这些类外机制，更不证明全类上界。\n",
+      "original_fragment_sha256": "38f84efc7527db6f03e83aca8ee259b3883e117e2ad18945a9abc2ee07f3dd5d",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR17：私有双人侧资源的有向分叉。** [加权割均衡](../定理/统一强迫分叉反馈的割均衡--定理.md)允许异权hub、异形side、平行边和selfloop，但每side仅一light一hub、每light唯一main source、动作副本同费，并要求逐light弱UF。对 $\\alpha\\ge T_d$，正部侧容量由每light一次main预算支付，加权割局部最小点给全反位真实 $\\alpha$-PNE。把同一light复制多条side不能逐边重领其main预算。失败是该精确合同内已经有均衡，不是搜索失败；UF失败、多人hub共享side、异费副本或多个main source须另证。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/统一强迫分叉反馈的割均衡--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR18",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 45,
+      "original_line_end": 47,
+      "original_fragment": "## 全部改善终止与共同幂混合选态的两种真实失败\n\n[循环窗口复制](../current/weighted_congestion/cyclic_clone_improvement_cycles.md)先补连接测试、重新求有限gain锥，再以逐人圆周秩实现真实近d环，故旧局部循环实现义务已闭合：任意全局函数也不能对全部严格α改善下降（α<ρ_d）。这是方法失败而非无均衡，因为全空精确PNE保留。可回收循环lift与连接guard；只选部分改善步、非循环地选全局最小点仍可重试。\n",
+      "original_fragment_sha256": "308347508f3a94b514d5bad96951c3fe85c1dc8de8b29e98157c72e4f99d00a6",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR18：近d真实环排除任意全边下降函数。** [循环窗口复制](../定理/循环窗口复制的近次数真实改善环--定理.md)先补连接测试、重求有限gain正锥，再以逐人圆周秩lift，已经实现所写近d严格环。沿环任何实值全局函数若对每条严格α改善下降，会严格降回自身，矛盾；此结论不限资源可分。它仍非全状态无PNE，因为全空exact PNE保留。可回收循环lift和连接guard；只要求选定移动、或另选某个全局最小点，不属于被排范围。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/循环窗口复制的近次数真实改善环--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR19",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 49,
+      "original_line_end": 49,
+      "original_fragment": "[共同幂混合](../current/weighted_congestion/common_power_mixture_obstruction.md)在一个四玩家游戏中用同一严格正分离击败全部非负μ，而非把逐单幂坏例交换量词。失败精确限于保留原a_e、资源共同μ的目标族；固定背景消去后的新规则、资源分别归一化或集合型目标尚未排除。回收点态分离再积分的全局最小点攻击工具。\n",
+      "original_fragment_sha256": "ff3fd4897906f199cc5910af961c7e18bf78537053950ab85071f4a38630ae96",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR19：共同非负幂混合的全部最小点。** [统一分离](../障碍/共同非负幂混合的全局最小点线性损失--障碍.md)对每个d≥32先固定同一个四玩家四资源纯d次游戏，再量化所有共同非零非负Borel测度μ（p>0，全部状态目标有限）。保留原 $a_e$ 的目标是 $\\sum_ea_e\\int x_e^p\\,d\\mu(p)$。同一正有理κ使全实p范围的两块坏减好差满足 $\\kappa D_H(p)+D_L(p)\\le-11/16$，积分后至少一块严格选坏，所以**全部**全局最小点非 $1\\le\\alpha<d/16$ 的PNE。原游戏却有唯一exact PNE。不是“每个p有不同坏游戏”交换量词；非零μ与全部状态有限保证积分合法，不作无穷减无穷。只限共同μ、原系数；资源独立重加权、吸收固定背景后的新规则或集合目标未被排除。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/共同非负幂混合的全局最小点线性损失--障碍.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR20",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 51,
+      "original_line_end": 53,
+      "original_fragment": "## 用已有近d环直接否定全类：缺失的是次数预算\n\n原先直接把改善环当无均衡的推断仍无效，因为全空精确PNE存在。[锚定三元锁定](../current/weighted_congestion/anchored_cycle_lock.md)现在通过限制回两个动作并新增资源，解决指定双轮环的全状态出口，但输出次数q=max(p,D)，D依δ、B/η、n。具体失败步骤是把原环倍率α≈p直接当作输出次数q上的倍率；尚未证明α ln q/q无界。可回收的是完整全状态编译与确定first-opposite修复。可重试条件是改善次数预算、另造更均衡且余量可控的输入环，或另用不受当前统一δ估计约束的锁定机制；这里没有证明所有时钟不可能。\n",
+      "original_fragment_sha256": "4f9592374510d698ee0b9798f94af8b45e2af10c1b9ce333b588e9396cd12fcd",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR20：近d改善环直接升级成全类反例。** 环外全空精确PNE使原推断无效。[锚定全态编译](../定理/双轮改善环的锚定三元全状态编译--定理.md)确实把指定双轮环限制到两个动作并新增门资源，使用first-opposite修复覆盖其余状态，但实际次数为 $q=\\max\\{p,D\\}$，$D$ 依赖泄漏、人数及 $B/\\eta$。原环倍率接近p不自动接近q；否定匹配上界需要实际比率 $\\alpha\\ln q/q$ 无界或相应全态量词。回收的是合法全状态编译，不是已支付的增长次数预算。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/双轮改善环的锚定三元全状态编译--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR21",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 55,
+      "original_line_end": 57,
+      "original_fragment": "## 在原次数内仅调锚定三元费用\n\n尝试为每个anchor0三元自由选择同pair同费非负多项式而保持p。失败不只是统一δ估计松：[显式三次基体](../current/weighted_congestion/anchored_clock_degree_barrier.md)的12列非负锥有精确整数dual，只需两条sweep弱margin≥0就强制0101/1010所有偏离margin<0。准确范围是该基体、anchor、phase、同费pair、degree≤3；不否定O(p)常数倍degree。可回收有限列分离及允许非均匀幅度的攻击接口；重试须改次数预算、拓扑、相位/两侧费用或基体。\n",
+      "original_fragment_sha256": "6f1e5b79c178282e31f59ab2058aba1af3880806fc733d3eaf79629598966a01",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR21：固定三次基体仅调同费三元费用。** [三次保边障碍](../障碍/同费锚定三元时钟的三次保边障碍--障碍.md)对指定四人基体、anchor0、相位、同pair同费、degree≤3的12列非负锥给整数dual；只保两条sweep弱margin非负，就迫0101/1010全部偏离严格稳定。它排除的是这个固定度数/架构，不排常数倍 $O(p)$ 次数，也不是所有基体都失败。有限列分离可回收；改次数、基体、相位、两侧费用或拓扑才改变承重合同。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/同费锚定三元时钟的三次保边障碍--障碍.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR22",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 59,
+      "original_line_end": 61,
+      "original_fragment": "## 用固定者、必选资源或包含动作承担全类难点\n\n[空交反链核心](../current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md)给alpha-independent lifting，严格反例可剥掉上述部分；不能把它们当作无界可动类别桥本身。具体易错步骤是把原成本中的共同非负K直接当成core成本，反向投影对α>1会失败。可回收单向提升及整数展开；若路线要求保人数、所有原均衡投影或精确最佳因子，须重立并证明新增合同。\n",
+      "original_fragment_sha256": "a9fe7736c5702e95eb0390687aa92906b94acc631eff0055ed16a0c0491410f2",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR22：把固定者/必选资源/包含动作当全类难点。** [空交反链核心](../定理/必选背景消除的空交反链核心--定理.md)可剥固定背景和支配动作，并用同一个与 $\\alpha$ 无关的lift提升全部倍率均衡。共同非负费用 $K$ 对 $\\alpha>1$ 不能反向当作core费用：删除它改变margin $(\\alpha-1)K$，故并不保全部原均衡投影或单实例最佳倍率。整数单项式展开另是严格反例规范形；保人数、双向投影和精确阈值均须额外证明。该归约是简化合法困难核心的工具，不是“任何规范化都已解决全类”。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/必选背景消除的空交反链核心--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR23",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 63,
+      "original_line_end": 65,
+      "original_fragment": "## 在统一低泄漏clock预算内继续优化输入环\n\n尝试用近p倍率双轮环、换anchor或优化B/η/n，再沿δ^D≤η/(4α²BL)得到超q/lnq全状态反例。失败机制现在有[普适证明](../current/weighted_congestion/uniform_clock_budget_barrier.md)：完整MODEL的strict R-FIP迫使R>α，任意anchor含全局极大极小三元给δ≥(R+1)/(R+2)，因此所有满足该预算的D都超2(α+1)ln(2α)，实际次数q≥D有αlnq/q<α/(α+1)<1。无需重复极值，也不要求α趋无穷。可回收R-FIP/极端三元/一元单调性接口；只封闭该充分预算的输入调参，重试须使用actual新旧clock差、逐三元不同预算或新全状态机制。没有证明该预算必要或游戏本身有q/lnq-PNE。\n",
+      "original_fragment_sha256": "f1c298aeb8cc7e9cd3de6a7af60415119af851db536c9770b919c4682be8f0e3",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR23：在统一低漏充分预算内优化输入。** [统一预算障碍](../障碍/统一低泄漏锚定预算的次数效率--障碍.md)只针对满足 $\\delta^D\\le\\eta/(4\\alpha^2BL)$ 的编译。输入真实严格环与全模型的权比FIP界迫权跨度 $R>\\alpha$；任意anchor含极大极小三元，给 $\\delta\\ge(R+1)/(R+2)$。结合完整预算推出 $D>2(\\alpha+1)\\ln(2\\alpha)$，所以 $q\\ge D$ 时 $\\alpha\\ln q/q<\\alpha/(\\alpha+1)<1$。换anchor或调 $B/\\eta,n$ 不能在**这项充分预算内**越界。没有证明此预算必要、输出游戏存在 $q/\\ln q$-PNE或所有clock不可能；真实差分、逐三元预算和新机制不受该推论直接排除。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/统一低泄漏锚定预算的次数效率--障碍.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR24",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 67,
+      "original_line_end": 69,
+      "original_fragment": "## 类内同权锁定后假设不同步前沿自动有出口\n\n尝试仅在同权clone类内加clock避免global极差，再把每类prefix/suffix合法性当全局sweep。[12player反例](../current/weighted_congestion/class_front_phase_quotient.md)有strict24步环却在phase(0,4,0)六端点全稳定；任意递增同权010/101 clock在留front边old=new，不能新造出口。失败步骤正是未证的全front base出口，不是一般clock不可能；内部clone仍有改善。可回收扭转phase商、2N费用表和literal反例；重试须明确处理错位同步或保留/控制离front出口。\n",
+      "original_fragment_sha256": "c537c127da1449ce8135f22557b4aaf9b6276177733a059ecbfee148d48b45a1",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR24：同类合法前沿自动继承strict sweep。** [12玩家不同步例](../反例/严格双扫环的不同步稳定前沿--反例.md)有严格24步环，但phase $(0,4,0)$ 的六个保前沿端点全稳定；类内同权010/101门在这些保前沿边旧新费用相同，不能造出口。内部位仍可改善，所以这项旧例只证明缺保前沿出口，不冒称整个状态已经PNE。回收扭转phase商和2N费用表；后续专用增长族必须实际证明每个错位前沿出口。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/反例/严格双扫环的不同步稳定前沿--反例.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR25",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 71,
+      "original_line_end": 73,
+      "original_fragment": "## 用低阶局部一致矩替代完整selector支撑多面体\n\n[局部矩精确接口](../current/weighted_congestion/template_certificates/selector_local_moments.md)说明资源测试只看≤d对手，但可行feature必须来自conv{Ψ_h(s)}。擅自删掉全局selector-support兼容性会扩大可行集；D维或小支撑只改表示，未证明每selector可行。可回收张量基、正锥消元、dual小支撑和parity暂态例；重试须对真正凸包与资源极锥给统一相交证明，不可把parity例当暂态必要。\n",
+      "original_fragment_sha256": "bdc033aee7002b935063faf0072fed803a0e1c657a81cb3353c7010a7d87902a",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR25：低阶局部一致矩代替完整selector兼容性。** [局部矩极锥接口](../等价/低阶转移矩极锥与单移动者分离--等价.md)确实只用至多d个对手的资源测试，但可行feature必须属于固定selector的真实凸包 $\\operatorname{conv}\\{\\Psi_h(s)\\}$。任意局部一致表或删全局支撑条件会扩大域，有限维和小支撑只改变表示，不证明每个selector可行。可回收张量基、资源正锥消元和dual维数支撑；parity暂态例仅说明一个可行表示，不能从该例直接断言所有dual必须暂态。需要对真正feature hull与资源极锥证明相交，不能对放宽域做完LP就称全状态结论。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/等价/低阶转移矩极锥与单移动者分离--等价.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR26",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 77,
+      "original_line_end": 77,
+      "original_fragment": "- 仅把私有side改成共享多个同权hub、仍保留unique-light/source和最坏负载UF，不能自动突破现有量级：[截断Rosenthal势](../current/weighted_congestion/shared_side_truncated_potential.md)给A_d≤2d/ln d的全antiPNE。原私有割不能直接迁移，但α倍纯hub底势与正部补偿支付source重置；可回收AS+B判据，不排异权hub、跨source多light或预算失败的真实游戏。\n",
+      "original_fragment_sha256": "dd67d4682ab84637fda15b68a0fed07a844d06826bf75c9f149bf64f86080ba4",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR26：unique-light共享多个同权hub仍保最坏UF。** [截断侧势](../定理/唯一轻玩家共享侧资源的截断势预算--定理.md)在任意hub共享side、每side唯一light、每light唯一source、同权hub与同费副本合同中，以 $A_d=[1-(d-1)d^{-d/(d-1)}]^{-1}\\le2d/\\ln d$ 及UF给全反位 $\\alpha\\ge A_d$ 的PNE。固定light的截断Rosenthal边际与source重置预算替代原私有割；直接AS+B条件更宽且不要求UF。它不覆盖异权hub、多light跨source或预算失败的游戏，也不把结构保证升为全类上界。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/唯一轻玩家共享侧资源的截断势预算--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR27",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 78,
+      "original_line_end": 78,
+      "original_fragment": "- 直接替代uniformδ时，不可把[保环S总预算](../current/weighted_congestion/anchored_clock_actual_margins.md)当充分可行性，也不可把firstopp出口失败升级为稳定态。新κ条件才同时控制全部玩家，且仅为充分稳定条件；固定三次基体上较旧dual弱。43次稀疏实际证书及同稿所接原全三元统一M的80次证书对照uniform91，后者另证明(U)对原架构本身也非必要；只说明保守预算有损，不能否定已证uniform预算障碍，也未给一般常数倍degree或最优43。\n",
+      "original_fragment_sha256": "8cacdbfa8a879cd8f7ade0a5f4a51ded618ff5b02f8abfca5f2315ce4eefce9f",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR27：真实S预算、first-opposite和κ稳定条件。** [真实差分接口](../等价/锚定时钟的真实有向差分与线性预算--等价.md)中的保环总S预算是必要条件，不能当作充分可行性；某个指定first-opposite出口失败不表示该状态无其他改善。κ条件控制全部玩家才是所写充分稳定条件，仍不宣称必要。固定基体的43次稀疏实际证书，以及原全三元统一幅度的80次证书低于保守uniform91，说明该充分预算有损；80证书还保持原架构，故$U$对原架构本身亦非必要。没有证明最优次数43、任意输入常数倍degree或推翻FR23。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/等价/锚定时钟的真实有向差分与线性预算--等价.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR28",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 80,
+      "original_line_end": 82,
+      "original_fragment": "## 动态层秩不能直接拼成同一全局势\n\n[共占高度接口](../current/weighted_congestion/weight_bands/finite_weight_class_potentials.md)沿全局固定相容秩或整闭词端点图给三角边际。逐步把当前活跃层重排会改变势本身，势降不能望远镜；没有证明每次能选到不扩张累计height的改善边。两相同资源已有精确PNE但全部状态实际height随人数增长，故“找低单点height态”也不是一般必要步骤。回收的是固定图/端点图相容性；可重试条件为证明高链SCC有出口、累计移动者图可控制或直接构造瞬态dual，不能从长链推无PNE。\n",
+      "original_fragment_sha256": "fdd394ceae5bfdc09e7f8a4e6b3bac838532ddf21e26fda09d5bbcc65dc04a7c",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR28：逐步重排活跃层不能拼成同一势。** [共占高度](../定理/共占降权高度与改善闭词长链--定理.md)要求跨资源固定相容玩家秩，或对完整闭词全部端点共占图一次定秩。每步按当前状态重排会改势本身，单步下降不能望远镜；还没有从该接口推出总能选到不扩张累计高度的改善边。两个同费资源的任意高异权玩家例有exact PNE，而每态实际高度仍随人数增长，所以找低单点height也非一般必要条件。回收固定图/端点图；高链SCC出口、受控累计移动者图或暂态dual需新证明，高链本身不推出无PNE。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/共占降权高度与改善闭词长链--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR29",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 84,
+      "original_line_end": 86,
+      "original_fragment": "## 从低阶成本空间直接推出小用户支持资源表示\n\n尝试先用degree≤d的低阶张量空间，再把每个cost interaction项当成只依赖少数玩家的合法正资源，从而降到有限interaction结构。[异权仿射全签名刚性](../current/weighted_congestion/template_certificates/selector_local_moments.md)给精确失败：V_i=s_iΣ_jw_js_j仅degree1、任意n≥2且权不全等，但一对异权的零contrast排掉共享高次，solo成本饱和迫全部正资源全用户且费用a_e x。任意提高有限degree仍不能全保真缩支持；正锥约束不是线性cost-space维界。等权pair高次表示说明不能删权假设。可回收≤D资源数量压缩、局部矩极锥和一般完整成本张量界；本障碍不排改权、加辅助玩家、仅保均衡/单向lift或近似成本归约。重试这些路线须重新写清并证明较弱保真合同，不能把本例有精确PNE误作全类反例。\n",
+      "original_fragment_sha256": "1e1a2965844fca7749c52531897619011b64afa6f3a8e7575e9436a5f8e13df3",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR29：低阶完整成本空间不等于小用户合法正资源表示。** [异权仿射射线刚性](../障碍/异权仿射成本射线的全用户刚性--障碍.md)给任意n≥2、正权不全等时的 $V_i(s)=s_i\\sum_jw_js_j$。虽然费用次数仅1，一对异权的零contrast排除共享高次；solo成本饱和又迫所有正资源全用户且费用为 $a_ex$。即使表示方提高任意有限degree，也不能在相同玩家/权和完整成本逐项保真合同下缩支持。等权pair可用高次表示，故非等权条件不能删。[有限维压缩](../定理/有限次全成本空间与正资源压缩--定理.md)能控制资源**条数**，不能控制每条用户数。改权、辅助玩家、仅保均衡、单向lift或近似成本需不同合同；本例仍有exact PNE。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/异权仿射成本射线的全用户刚性--障碍.md",
+        "archives/weighted-congestion/state/定理/有限次全成本空间与正资源压缩--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR30",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 88,
+      "original_line_end": 90,
+      "original_fragment": "## 允许有限近似和改权后的小用户支持全成本归约\n\n尝试把degree低的完整cost table近似拆成统一有限支持r，再调用r-PNE。新[定量收费下界](../current/weighted_congestion/template_certificates/selector_local_moments.md)允许表示方改正权、提高任意有限degree，仍有β≥m(1+ε)/[(r−1)(1+mε)+mε]；固定r,β取m和正有理ε即失败。失败步骤是每个light在singleton到heavy-pair的成本跃升都需共享资源支付，而每条heavy小支持资源至多覆盖r−1名light，预算由heavy全入成本控制。回收pair收费与对称A²缩放；只限制相同玩家/标签的完整成本夹逼。原例全0 exactPNE，辅助玩家、只保均衡/单向lift及选择性成本保持仍可重试，不能把这一障碍说成无均衡。\n",
+      "original_fragment_sha256": "df446fde50d14ae0dc92ddd8f7a6a818c469775ac948cbf72e61a1ea7ecefbd5",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR30：改权加任意有限次数仍未给统一小支持近似全成本。** [定量收费障碍](../障碍/小用户支持近似成本表示的失真--障碍.md)允许表示方改变正权、提高有限degree，对相同玩家标签的完整cost table夹逼仍有\n\n\\[\n \\beta\\ge\\frac{m(1+\\varepsilon)}{(r-1)(1+m\\varepsilon)+m\\varepsilon}.\n\\]\n\n每个light从singleton到heavy-pair的跃升需共享正资源支付，一条heavy资源至多覆盖r−1名light，其预算受heavy全入成本控制。固定r、取m大及正有理ε小就排任意统一有限β；例如ε=m⁻²给右端无界。回收pair收费与对称 $A^2$ 缩放；辅助玩家、选择性成本保持或只保均衡/单向提升不在此同标签全表合同内。原例全0仍exact PNE，不能从近似表示失败推出无均衡。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/小用户支持近似成本表示的失真--障碍.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR31",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 92,
+      "original_line_end": 94,
+      "original_fragment": "## 同类有序三元时钟不能通用锁定全部严格环输入\n\n旧不同步反例只缺front端点出口；新[64资源actual系数基体](../current/weighted_congestion/class_front_phase_quotient.md)本身就在phase(0,0,1)具有全部玩家严格exactPNE，同时保有strict21/20双轮环。所有类front在任意递增三元上非010/101，所以所有玩家翻位时clock负载只为2w→2w或w→3w，任意fresh同费非负非减三元clock叠加仍保留PNE。具体失败是时钟完全无法新增该front的任何真实出口，而非次数选择不足。回收front精确PNE局部引理和显式有理基体；跨类、其他arity、非对称副本、辅助玩家或更高倍率专用输入类尚未排除。仅加次数/幅度不能修复本输入；不把固定反例外推为全部近线性环都有稳定front。\n",
+      "original_fragment_sha256": "6ad19fef4e13374277fb65eac0e9df73bbdf8541a58af70ffa46689d0633ec16",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR31：同类有序三元门通用锁定全部严格环。** [64资源实际基体](../障碍/有序同类三元时钟保留严格均衡--障碍.md)比FR24更强：保有严格21/20双轮环的同时，phase $(0,0,1)$ 本身就是全部玩家严格稳定的exact PNE。所有类front局部模式不为010/101；任一人翻位时门负载只发生 $2w\\to2w$ 或 $w\\to3w$，因此任意叠加fresh、同费、非负非减的这些有序同类三元门仍保该PNE。提高次数或幅度不能救这个输入；跨类、不同arity、两侧异费、辅助玩家或专用更健康输入没有被排除，也不能外推成“所有近d环都有稳定front”。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/有序同类三元时钟保留严格均衡--障碍.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR32",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 96,
+      "original_line_end": 98,
+      "original_fragment": "## 跨source共享侧资源也须超出准确强迫合同\n\n[新真实Rosenthal势](../current/weighted_congestion/shared_side_truncated_potential.md)以κ_d(t)=min(dt,t+1)控制已有外场上的重置增量，闭合此前TR仅从零外场出发的缺口。在同权hub及按side全部light总权的UFmulti下，任意跨source共享仍有1+√d-PNE。 同稿第九节进一步分离UF强迫τ与目标α，(τ−1)(α−1)≥d即足够；因此达到目标量级也不需把强迫倍率提高到目标倍率，τ=1+ln d已给α=1+d/ln d。 v2进一步给α=d/ln d，且τ≥d+1可取精确PNE；均仍是同权/UF子类充分条件。 v3再用side增量把条件降为ατ≥d并纳τ1，τ=ln d即可给目标量级；独立2玩家四状态证明τ=d是保证exactPNE的sharp强迫边界，不能据此声称α>1乘积域必要或全类下界。可回收reset预算和源超可加估计；不覆盖异权hub、非UF或多个main source，负向若只保全部该合同便不能放大。此为结构存在定理，不是全类上界。\n",
+      "original_fragment_sha256": "737d4e080a55de78bfad114a801109ee5dbb6c4fbc002ff94704c3fa4e6d5e57",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR32：跨source多light仍满足准确强迫合同。** [重置增量乘积定理](../定理/跨源共享侧资源的重置增量乘积预算--定理.md)对同权hub、每light唯一source、同费二元副本及UFτ，逐段加强旧平方根/v1/v2到 $\\alpha\\tau\\ge d$、$\\alpha,\\tau\\ge1$。关键 $\\kappa_d(t)=\\min\\{dt,t+1\\}$ 同时控制已有外场上的side增量和source主增量，并且一名light只领一次main预算。旧 $(\\tau-1)(\\alpha-1)\\ge d$、v2的 $\\alpha(\\tau-1)\\ge d$ 各有历史证明，不是默改原Claim。v3取 $\\tau=\\ln d$ 得目标量级，$\\tau\\ge d$ 给exact PNE；四态反例只证明exact边界τ=d锐，不证明 $\\alpha>1$ 乘积域必要。异权hub、非UF和多main source仍是类外合同。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR33",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 101,
+      "original_line_end": 103,
+      "original_fragment": "## 仅依结构参数给actual保环时钟统一次数\n\n尝试摆脱uniformδ预算后，直接要求次数cap只依p/n/权谱/α。失败发生在真实环余量：[actual接口第九节](../current/weighted_congestion/anchored_clock_actual_margins.md)对每cap构造同4玩家/同权/同α/p3的空交反链基体，以动作专属private三次成本压低全部环margin而保持0101/1010稳定gap；必要ΣS预算趋零，固定cap逐列效率有界，任意允许非统一clock只要保全环仍保这些均衡。系数幅度和资源数保持有界，不是无限幅度问题。可回收actual预算和padding压力测试；重试须控制特选输入的余量/稳定gap或改变架构/放弃保环，不排健康余量增长族或全类目标。\n",
+      "original_fragment_sha256": "718a843c0e3f1eff4b2d5a4b1fe5db5d5c89cc35f93e9b8f14e3afb300845107",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR33：只依结构参数给actual保环clock统一次数。** [真实余量依赖](../障碍/锚定保环时钟的真实余量依赖--障碍.md)固定四玩家、权 $(1,1/2,1/4,1/8)$、$\\alpha=21/20$、纯三次基体。对每个cap $D$ 添加有界动作专属私有三次成本，令八条环余量同为 $\\varepsilon_D\\to0$，而0101/1010的稳定gap保持正。保环迫必要 $\\sum_TS_T<4\\varepsilon_D/(\\alpha-1)$，逐列效率最多 $Q_D=(3/2)^D$，选 $\\varepsilon_D$ 后全部允许非统一clock仍不能破坏稳定gap。资源数和系数幅度有界，退化的是余量/有理精度。量词是 $\\forall D\\exists G_D$，不排控制余量的特选增长输入、异侧费、改拓扑或放弃保环。动作专属private保持空交反链，故FR22规范化也不会自动绕过它。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/锚定保环时钟的真实余量依赖--障碍.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR34",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 105,
+      "original_line_end": 107,
+      "original_fragment": "## 把完整proper锥的dual自动限于recurrent或点质量\n\n旧子锥反例不能单独排除“完整锥会强制recurrent解”的希望。[local-moment第11节](../current/weighted_congestion/template_certificates/selector_local_moments.md)把低阶parity暂态dual与唯一真实strict坏环同时植入完整proper锥：任何dual必须有正暂态质量；singleton常数列又排除所有点质量。新增范围是无删列/无共同sink，不是任意selector可行法；实例质量下界依η/M，没有统一d估计。可回收同时化路由和概率质量分离，重试仍须处理任意selector的真正feature hull，而非交换singleton例的量词。\n",
+      "original_fragment_sha256": "24edcb00b8a7a477e227e9299a2286ac5702b9e27ee80990a46037c8d8e08608",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR34：完整proper锥不自动使dual回返或点质量。** 仅在删列子锥有parity暂态解，不足以排除完整锥存在另一recurrent解；[完整锥植入](../定理/奇偶暂态层与完整锥必要质量--定理.md)把低阶parity暂态dual与唯一真实严格坏环同时放入全部proper列，迫任何dual有正暂态质量，singleton常数列另排所有点质量。新范围确为无删列、无共同sink的固定实例；质量下界依η/M，没有统一次数估计，也不是每个selector均可行。回收同时化路由与质量分离；仍要处理真实全局feature hull。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR35",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 110,
+      "original_line_end": 112,
+      "original_fragment": "## 将全状态择证对偶截断为固定数量移动者\n\n尝试用少量玩家的方向矩匹配或局部transfer覆盖每个selector，再拼成全类证书。[奇环缺陷择证](../current/weighted_congestion/template_certificates/selector_local_moments.md)给出具体失败：等权奇n、任意d≥1与1≤α<2^d，两个proper邻边degree-d列迫相邻移动者质量互相为正，私人常数列再迫每个方向正质量；最小状态支撑恰2n而n任意大。原selector有显式α1 dual，故失败是人数截断而非全类dual不可行或无均衡。回收的是完整补偿链、定量质量界及min-index的2^d锐边界。重试必须允许无界数量玩家、证明可控全局transfer或使用依模板/D的支撑界；不能把本例当作主目标否定。\n",
+      "original_fragment_sha256": "a09b5b57073ad832cc4c6b3523b42470b4f7c3fabfe9c2338fab06cf9cb64f73",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR35：将dual截断为固定数量移动者。** [奇环缺陷择证](../定理/奇环缺陷择证的无界移动者支撑--定理.md)对任意等权奇n、d≥1和 $1\\le\\alpha<2^d$，用两类proper邻边d次列迫相邻移动者质量互为正，私人常数列再迫每个方向正质量；最小状态支撑恰2n，n可任意大。该固定selector有显式α=1 dual，所以失败是移动者截断，不是dual不存在或游戏无均衡。min-index的 $2^d$ 边界有其指定合同；允许无界移动者、全局transfer或依模板/维数的支撑界仍可继续，不能交换“某selector需多人”与“所有selector都坏”的量词。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/奇环缺陷择证的无界移动者支撑--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR36",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 114,
+      "original_line_end": 116,
+      "original_fragment": "## 把异权hub直接当同权Rosenthal边际\n\n[局部异权排序侧势](../current/weighted_congestion/shared_side_truncated_potential.md)第十节用降序前缀取代真实同权计数；凸性给边际[G,(a/A_j)G]，源重置另付K。原exact marginal不能原样使用：配套审查有三hub整数二次side-only游戏，八态均有strict改善。即使只分析新排序势，其单副本R损失在线性例的比值(n+1)R/(R+n)→R，故不能从该夹逼直接消R。这不是全类存在障碍；单side锐式例由最小绝对负载差给exactPNE，pair-only仍受既有2-PNE界覆盖。可回收排序边际/κ重置和局部R/K充分界；重试需利用副本差额或新选态，并重新证明全部真实偏离。\n",
+      "original_fragment_sha256": "1b5bc3c6514b7ba1d11530e78108b7207d2a52cef2cf1b808b31082629527425",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR36：把异权hub当同权精确边际。** [异权排序势](../定理/局部异权共享侧资源的排序势乘积预算--定理.md)改用按权降序前缀，其边际满足 $G\\le\\Delta P\\le(a/A_j)G$，源重置另需K。直接沿用同权exact marginal会失败：三hub二次side-only实例八态都有严格改善。但其pair支持仍有2-PNE，不能当全类存在障碍。即使使用正确排序势，单副本线性边际比 $(n+1)R/(R+n)\\to R$ 仍阻止从该夹逼删除R；当前充分域是UFhetτ、$\\alpha\\ge R$、$\\alpha\\tau\\ge Kd$，R控制side内部跨度，K还含source到side最小权跨度。单side锐例仍有exact PNE。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/局部异权共享侧资源的排序势乘积预算--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR37",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 118,
+      "original_line_end": 120,
+      "original_fragment": "## 只改取降序侧势的全局最小点来删除局部R\n\n第十节原边际锐性只限制逐副本夹逼；现在[第十一节完整线性游戏](../current/weighted_congestion/shared_side_truncated_potential.md)证明更强失败：n重n轻分离时，全部全局最小点精确由非负恒等式覆盖，且均有趋近R的真实改善，也均为严格局部最小点。因此global-min间tie-breaking不能修复删除α≥R的论证。该游戏仍有exactPNE，失败只限这个势的最小化；回收GlobalR恒等式和完整方法反例，换势或选择非最小状态时可重试。\n",
+      "original_fragment_sha256": "f6b574fe896694a728e06f1dfda46ff54e6bb520be81c85e4c8ab1573d800d43",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR37：只在降序势全局最小点间打破平局以删除R。** [完整GlobalR障碍](../障碍/降序侧势全部全局最小点的权比障碍--障碍.md)取n重n轻、权a=RA>A、线性单side。任意计数态相对全分离态的势差为 $a(k-\\ell)^2+(a-A)\\ell(n-\\ell)\\ge0$，等号仅两个互补全分离态；二者均严格局部极小且重hub真实比 $nR/(R+n)\\to R$。所以全部最小点都坏，tie-breaking无效，强于FR36的单边际锐性。最小绝对负载差状态却为exact PNE；只否定这项势的最小化，不排换势或选非最小态。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/障碍/降序侧势全部全局最小点的权比障碍--障碍.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR38",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 122,
+      "original_line_end": 124,
+      "original_fragment": "## 将森林的递归稳定延续直接扩大到单环或多根\n\n[森林归约](../current/weighted_congestion/incidence_forest_private_reduction.md)靠互不相交子树的固定报价闭合任意耦合策略。单环二玩家四资源已无exactPNE；循环共享会破坏独立报价，不能仅按某个根的响应重置后费用替代真实冻结偏离。保次数lift只覆盖每附属分量至多一个核心玩家；核心资源挂树或多核心接触需新合同。回收当前价相等/进入价下界接口，不外推全类失败。\n",
+      "original_fragment_sha256": "48a405b02a83ce222dbcb5001929acb4ac9169e8cdbc2a598da9bfd5fd40f348",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR38：把森林递归报价扩到单环或多核心。** [森林精确均衡](../定理/潜在使用森林的精确均衡--定理.md)对任意正实权、任意有限耦合策略、有限非负非减费用成立，依赖子树互不交、当前使用价等于报价、冻结进入价至少报价。单环两玩家四资源二次例已无exact PNE，最佳因子72/71，[完整四态表](../反例/单环潜在使用图的二次均衡缺失--反例.md)而非仅循环给边界。保次数[挂树lift](../归约/单核心挂树的私人成本提升--归约.md)只允许每附属分量至多一个核心玩家、被删玩家不使用核心资源；同一个lift服务全部 $\\alpha\\ge1$，但不保全部原均衡投影。多核心接触、核心资源挂树或共享循环须新证明，不能让核心偏离时后代重新均衡替代真实冻结偏离。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/潜在使用森林的精确均衡--定理.md",
+        "archives/weighted-congestion/state/反例/单环潜在使用图的二次均衡缺失--反例.md",
+        "archives/weighted-congestion/state/归约/单核心挂树的私人成本提升--归约.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR39",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 126,
+      "original_line_end": 126,
+      "original_fragment": "全前沿条件编译没有修复strict sweep自动覆盖的失败：它另要求全部front保front严格出口，增长输入与B/η控制仍缺。\n",
+      "original_fragment_sha256": "14764d76b9e41c308faab488f9847fe8172c6d19474a4b9fc6c1364b98729463",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR39：全前沿条件编译被误当strict sweep自动覆盖。** [条件编译定理](../定理/同权类前沿全覆盖的全状态编译--定理.md)另外假设每个product-front有保front严格出口，并需要基体成本/余量与实际门次数预算。该独立假设恰是FR24失败之处；定理不从单环推出它。特选健康参数已为后续增长族支付这些义务，不等于条件定理给任意输入统一增长界。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/同权类前沿全覆盖的全状态编译--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR40",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 128,
+      "original_line_end": 130,
+      "original_fragment": "## 把固定hub的精确轻响应当成整个游戏的提升\n\n[阈值响应接口](../current/weighted_congestion/fixed_hub_light_threshold_response.md)给unique-light、无UF的真实稳定light选态，但其势随hub向量改变，不能累计为同一全局势。原共享侧正文9.17两玩家例在每个固定hub都有精确light响应，重选后hub成本由补位对称相同，仍有真实冻结light的hub改善。因此失败是偏离合同和响应预算缺失，不是light响应不存在。多light共享side另由旧三玩家例直接阻止该exact响应推广；回收显式阈值势/单遍选择，下一步须支付冻结与重置成本差。存在/FIP为已知Milchtaich特例，新颖性不因重构升级。\n",
+      "original_fragment_sha256": "ef5639306d88ef99d779fd59d09c50348fba4449f7267d7121caee42c4b8f359",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/拓扑放大与时钟编译的失败边界--审查.md",
+      "integrated_scope_text": "**FR40：固定hub的精确light响应直接lift整个游戏。** [阈值响应](../定理/固定主玩家的轻玩家阈值响应--定理.md)在unique-light/unique-source、固定全部hub、无UF下给全符号/平局序势和单向删除响应，每light在该指定过程最多移动一次。势和阈值随hub向量改变，不能跨不同冻结子游戏望远镜。两玩家四态例每个hub位都有精确light响应，重选后hub报价对称相同，但真实hub偏离必须冻结旧light，仍有改善；multi-light side另有八态反例阻止exact响应推广。可回收阈值势和删除接口，原游戏提升必须另付冻结/重置差额。其存在/FIP是已有Milchtaich特例，显式重构没有自动升级新颖性；本批没有重查该外文或再运行原程序。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/固定主玩家的轻玩家阈值响应--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR41",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 136,
+      "original_line_end": 136,
+      "original_fragment": "| 将必用负载吸为背景、归零势后直接用mW≤Φ | 只有必用正费资源时Φ=0、W>0，根本没有m>0 | [恢复基线并重证](../current/weighted_congestion/decision_methods/decision_quality.md)后可拼装成本项；压缩原势只保稳定 |\n",
+      "original_fragment_sha256": "2cd3edb5125c5292ab835b8d4aa5b5ca452ecfa2d05d30d0cda93c6904aaa019",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR41：吸收必用背景后把归零势当全社会包络。** 必用正费资源可使归零势Φ=0而社会成本W>0，不存在 $m>0$ 使mW≤Φ。固定背景/压缩势仍可保稳定，[恢复基线再拼成本](../定理/共同尺度势的稳定与全社会成本正则化--定理.md)才可谈质量包络。归零只是势的常数平移，不能把社会成本常数一并删除而保持乘法比；OPT=0等边界也应单独核。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR42",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 137,
+      "original_line_end": 137,
+      "original_fragment": "| 把校准LP的精确NO当作原游戏无均衡 | 权(1,2)、x/x²资源的完整16态游戏改善无环且有唯一空空PNE，但共同尺度图校准在α1仍NO | [方形兼容性反例](../current/weighted_congestion/decision_methods/calibration.md)保留精确Farkas用途；改接口或直接求状态，不扩大NO范围 |\n",
+      "original_fragment_sha256": "c981875f156af872760493a195c33862165eda1933867159572d86574da1cc68",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR42：校准LP的精确NO当原游戏无均衡。** [方形兼容性例](../反例/唯一精确均衡与共同尺度图势不相容--反例.md)两玩家权$1,2$、资源x和x²、各人全部四个子集菜单，共16态。唯一全空exact PNE，严格改善图无环；但α=1的共同玩家尺度全状态成本差接口要求同时 $2h_1=h_2$ 与 $8h_1=5h_2$，正h不可能。精确Farkas/负圈认证的是该字典或图差合同NO，甚至不否定严格改善FIP，更不否定状态存在。需要换接口或直接求状态，不能扩大NO。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/反例/唯一精确均衡与共同尺度图势不相容--反例.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR43",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 138,
+      "original_line_end": 138,
+      "original_fragment": "| 最小势或普通最佳反应等同于成本最优 | [四状态例](../current/weighted_congestion/decision_methods/decision_quality.md)最小势精确均衡W6，另一精确均衡W11/2 | 正则化或在稳定集合内优化；预算约束停点仍须检查全部原偏离 |\n",
+      "original_fragment_sha256": "6234bd8c373fee055a67ef9cb9b5bc688ac374a197523041aab1e3582e33f29d",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR43：最小势/普通最佳反应等于社会最优。** [完整四态例](../反例/稳定约束与最小势选择的社会成本分离--反例.md)有唯一最小势exact PNE的W=6，另一exact PNE的W=11/2；从前者严格最佳反应已停，仍错过更好稳定点。该例单位权，W与无权和相同；一般模型必须区分它们。可在稳定集合内优化或用已付完整包络的正则化，但预算约束下停止某种动作不表示全部原偏离都已稳定。另两态例的7/6弱端点是允许稳定损失换质量，不能混成保持exact稳定的四态例。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/反例/稳定约束与最小势选择的社会成本分离--反例.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR44",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 139,
+      "original_line_end": 139,
+      "original_fragment": "| 单靠位串规范化或新增惩罚资源便声称原游戏修复 | 无条件earliest翻位能把原精确PNE任意增费并破坏稳定；增加资源改变问题 | [已有时钟强支配](../current/weighted_congestion/decision_methods/repair.md)才认证原游戏改善；即使支配成立仍可能前沿循环，须完整核心求解 |\n",
+      "original_fragment_sha256": "660e9a32e6683dd1cd9aaddfb7fd27bd403888556f961a3269c866b1513ac9eb",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR44：无条件earliest几何翻位或新增惩罚冒称原游戏修复。** [几何反例](../反例/几何前沿修复的成本与稳定性失真--反例.md)可把原exact PNE翻到任意增费且不稳定状态；增加资源则改变原游戏。[原实例已有门强支配](../算法/原实例支配时钟的前沿精确决策--算法.md)才保证所选非法态修复是原游戏真实改善，但仍可能在前沿有六玩家循环，因此还须完整核心求解。前沿规范形、合法改善、全态稳定与算法终止是不同义务；新增游戏的定理不能替代旧游戏修复。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/反例/几何前沿修复的成本与稳定性失真--反例.md",
+        "archives/weighted-congestion/state/算法/原实例支配时钟的前沿精确决策--算法.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR45",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 147,
+      "original_line_end": 147,
+      "original_fragment": "| 将局部d−2 log d传播包络当全状态坏游戏 | [端点工具](../current/weighted_congestion/structural_reconstruction/endpoint_area_principle.md)只给收缩；必须另证振幅闭合、全部前沿出口、非法状态和实际次数。新的[加性近次数证明](../current/weighted_congestion/structural_reconstruction/additive_near_degree_lower_bound.md)逐项支付这些预算。 |\n",
+      "original_fragment_sha256": "70a8bb5ecc5a894dc61571cd57307597953022e80b063732826cf137a6ec81fc",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR45：局部窗口端点包络当全态坏游戏。** [端点面积](../定理/右端离散面积的网格误差与最优采样--定理.md)与[等权传播](../定理/等权窗口传播的精确阈值与安全余量--定理.md)给局部 $d-2\\log d$ 量级收缩接口，不自行给振幅闭合、全部不同步前沿、非法位串出口和实际次数。[近次数全态族](../定理/平方对数加性缺口的全状态近次数下界--定理.md)另逐项支付这些预算。局部精确优化与真实全游戏阈值不能因都出现d−log项就当同一对象。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md",
+        "archives/weighted-congestion/state/定理/等权窗口传播的精确阈值与安全余量--定理.md",
+        "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR46",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 148,
+      "original_line_end": 148,
+      "original_fragment": "| 在固定n的d₀(n)定理中直接代入n(d) | 原(600n)²起点不支持目标替换；新证明先改用统一端点/修复条件，再核对每个整数d及ceil跳跃，保留独立Claim版本。 |\n",
+      "original_fragment_sha256": "3778bac8912fb7c358b158819d3381f5d37c582d6401b40485f624beeb99e3a5",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR46：固定n的大次数起点直接代入n(d)。** 固定n构造的起点 $d_0(n)=\\max\\{2^{20},(600n)^2\\}$ 不能直接支持目标 $n(d)=\\lceil d/(1200\\lceil\\log_2d\\rceil^2)\\rceil$；平方项会增长得更快。当前[统一近次数证明](../定理/平方对数加性缺口的全状态近次数下界--定理.md)改用同一个端点/修复充分条件，先核每个整数d及ceil跳跃，再得可变n结论，并保独立Claim版本。固定n定理本身没有被推翻，错误是非法换量词。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR47",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 149,
+      "original_line_end": 149,
+      "original_fragment": "| 将环失配或精确字典NO当无均衡 | [统一包络](../current/weighted_congestion/structural_reconstruction/shared_scale_gluing.md)与[实际区间](../current/weighted_congestion/structural_reconstruction/instance_interval_calibration.md)优化域不同；两者NO都只否定各自证书合同，可与exactPNE并存。 |\n",
+      "original_fragment_sha256": "dc3c079cb3a705750f3fe552ad9f72cd68f7bc941e015ff6c340a0d8293eddcc",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR47：环失配或精确双排序字典NO当无均衡。** [统一包络拼接](../定理/两类型资源的共同尺度拼接与环失配阈值--定理.md)与[实际有限实例区间](../定理/有限实例双排序尺度区间的精确校准--定理.md)优化域不同：一者对一类允许输入统一支付，一者利用给定实例实际边际区间；不能把一个字典的最优值称真实PNE阈值。两种NO都可以与exact PNE并存。保留各自精确圈比/区间、零边际约定及共同玩家尺度，扩大字典或直接求状态须另证。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/两类型资源的共同尺度拼接与环失配阈值--定理.md",
+        "archives/weighted-congestion/state/定理/有限实例双排序尺度区间的精确校准--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR48",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 150,
+      "original_line_end": 150,
+      "original_fragment": "| 将强支配RD当完整社会下降 | [六玩家有理边界](../current/weighted_congestion/structural_reconstruction/socially_descending_repair.md)在RD成立时仍有社会OPT位于前沿外；额外3v−2u−z>(p+1)B才支付基体外部性，或用3α≥p+1的充分推论。 |\n",
+      "original_fragment_sha256": "a05a31b21e166ed73adc5b1bbd3e20221f37781606ce131d7787bdc4485a0119",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR48：强支配RD被当社会下降。** 稳定修复只支付移动者的近似改善；社会成本还受其他用户的外部性影响。[完整门费用分解](../定理/锚定门的社会费用分解与最优压缩--定理.md)给六玩家有理边界：RD成立仍可能社会OPT在前沿外。要保证所写社会下降，另需 $3v-2u-z>(p+1)B$，或由合同内 $3\\alpha\\ge p+1$ 的充分推论支付基体外部性；它不是RD本身的等价式。只有稳定集转移与完整社会成本/OPT转移同时成立，才可用[正则化联合转移](../定理/正则化核心的稳定与社会质量联合转移--定理.md)。不能忽略固定玩家费用或把不乘权的玩家约定误作社会目标不乘权。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+        "archives/weighted-congestion/state/定理/正则化核心的稳定与社会质量联合转移--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    },
+    {
+      "id": "FR49",
+      "source_id": "e98f702114c577183629",
+      "original_line_start": 151,
+      "original_line_end": 151,
+      "original_fragment": "| 将固定c的Θ_c(log d)深度当近一一致界 | [精确反演](../current/weighted_congestion/structural_reconstruction/weight_depth_threshold.md)在α=d−1已迫h,k≥d；高深度本身也不排除exactPNE。 |\n",
+      "original_fragment_sha256": "41a737f1bc188d43ca0548a40d08cfd87447ae14f0d57c12491aace82ada64cc",
+      "formal_delivery_path": "archives/weighted-congestion/state/审查/势与成本表示失效的准确量词--审查.md",
+      "integrated_scope_text": "**FR49：固定c的对数深度推广到c(d)→1。** [高度精确反演](../定理/高度势的精确反演与线性过渡--定理.md)对固定 $0<c<1$ 给必要深度 $\\mathcal H_d(cd)=(\\log d+\\log(1-c))/\\log(1/c)+o_c(1)$，常数依c。α=d−1的连续分支却精确给 $\\mathcal H_d=d-1$，所以无该倍率PNE必须h,k≥d，不能一致保O(log d)。高深度也可与exact PNE并存；必要结构、势保证曲线、真正坏族的最小复杂度是三种量词。可变n近次数族有自己统一尾部和更大权层规模，不从固定c估计直接取得。",
+      "related_formal_paths": [
+        "archives/weighted-congestion/state/定理/高度势的精确反演与线性过渡--定理.md"
+      ],
+      "comparison_contract": "exact model/quantifier/failure mechanism and reusable interface compared; no inference from a finite failure to universal nonexistence"
+    }
+  ],
+  "current_formal_comparisons": [
+    {
+      "path": "archives/positive-kernels/state/定义/正占用核与顶背景交互秩--定义.md",
+      "sha256": "5df74fd1780aa8027962508a4695a40dd6a6ab31d065b0c4c3b080bacf1a5dc8",
+      "stable_id": "positive-kernels/occupancy-active-rank",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/positive-kernels/state/定理/正占用核锐截断预算--定理.md",
+      "sha256": "5c6c4c3a7b186ae901f3db419d20e3204a4fea58e38935602f86250a9301d6eb",
+      "stable_id": "positive-kernels/sharp-forbidden-mass",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/positive-kernels/state/定理/正占用核闭包与低秩截面--定理.md",
+      "sha256": "05db24044bfa9b69b7e996361a17626e2f3966d8248a3cf46dc38958bf0e60d9",
+      "stable_id": "positive-kernels/occupancy-cone-closure",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/严格双扫环的不同步稳定前沿--反例.md",
+      "sha256": "222dd987512b2cd87a52483618fd3f1cb71f32a6bb5b0c28909d17636a8c0ef3",
+      "stable_id": "weighted-congestion/class-internal-clock-front-obstruction",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/几何前沿修复的成本与稳定性失真--反例.md",
+      "sha256": "30312c19c706c2f264e97484315813cd4593dbd327bf1e5466f6fef9a700b9c1",
+      "stable_id": "weighted-congestion/front-normalization-and-endpoint-screening-failures",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/单环潜在使用图的二次均衡缺失--反例.md",
+      "sha256": "3e3959a20d3aef53808aef07d9536fcfc69b958e3fdd10575d57d88373f3cb0a",
+      "stable_id": "wc-incidence-unicycle-counterexample",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/唯一精确均衡与共同尺度图势不相容--反例.md",
+      "sha256": "dcd8d6acb69bd12d22c5173451e87f4834f09fd8825b2feb02786a2bfe268b6f",
+      "stable_id": "weighted-congestion/unique-pne-without-common-scale-graph-potential",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/固定权重十四资源族升幂失去九五障碍--反例.md",
+      "sha256": "7e4d5f0138df1336720191c57ebc12394fd0930f6743c9886699615f815c4316",
+      "stable_id": "weighted-congestion/fixed-weight-fourteen-resource-degree-persistence-failure",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/反例/稳定约束与最小势选择的社会成本分离--反例.md",
+      "sha256": "f85f3ab2017869c657e0937ec5f04963989cb4ba302d49a9a702ba4f33552b8e",
+      "stable_id": "weighted-congestion/stability-potential-welfare-separations",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/两权类别双排序混合势--定理.md",
+      "sha256": "efb5cb8755a18dcadfc53a4abc366ccc826c470cbd8c7196826ae89bcd906b38",
+      "stable_id": "weighted-congestion/two-weight-order-blend",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/两类型资源的共同尺度拼接与环失配阈值--定理.md",
+      "sha256": "26fd8be4e82f5c84fbe7cf7c657f1036f0dc7680c3e0cb00dc412efac3dde1e1",
+      "stable_id": "wc-two-type-common-scale-gluing-and-cycle-threshold",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/严格反例的整数单位单项式规范形--定理.md",
+      "sha256": "b41d5a72415a0700ff4dc5b8145342ffc4dd4f55d7cb72b5ff3859282d627b88",
+      "stable_id": "weighted-congestion/integer-unit-monomial-counterexample-normal-form",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/互补多列的平衡均衡与锐阈值--定理.md",
+      "sha256": "be3cce27aafbbb36419e1f72a8d213fb1f4c7699420e2abb762278528f54ba73",
+      "stable_id": "weighted-congestion/complementary-multicolumn-balanced-equilibrium-and-sharpness",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/共占降权高度与改善闭词长链--定理.md",
+      "sha256": "d51793b15dda8825b7ab88c60c01495c235ae25f11712626ec8c1bf2b2d777ba",
+      "stable_id": "weighted-congestion/interaction-height-triangular-potential",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/共同尺度势的稳定与全社会成本正则化--定理.md",
+      "sha256": "c55c041ea1d065a2b74e19ebb84a36cc1e53b42f62f37380a5ad1da07cd29a5f",
+      "stable_id": "weighted-congestion/common-scale-full-welfare-regularization",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/双轮改善环的锚定三元全状态编译--定理.md",
+      "sha256": "d9ab6ab66b70fc0acbc402e267195ab68419966777cb639473994c8847e4db93",
+      "stable_id": "weighted-congestion/anchored-triad-allstate-cycle-compiler",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/右端离散面积的网格误差与最优采样--定理.md",
+      "sha256": "cbdb0a71ada8f10a75ac76a1e98f0eac7c604e3a20ab89a52a661344f61ea0bf",
+      "stable_id": "weighted-congestion/right-endpoint-area-quadrature",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权类前沿全覆盖的全状态编译--定理.md",
+      "sha256": "afc7c969b97519ad257c46e1ecbb1c0a1c2038a822c85f50ef0f04fdf8e980be",
+      "stable_id": "weighted-congestion/class-front-allstate-compiler",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/同权群组奇环的实际均衡阈值--定理.md",
+      "sha256": "755e77ae54125c64c49e01fb442953f56cb5a3e71f9cc3239d2d92b80ffb7fd9",
+      "stable_id": "weighted-congestion/general-cohort-odd-ring-actual-threshold",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/唯一轻玩家共享侧资源的截断势预算--定理.md",
+      "sha256": "6040b8cc7afc31f3426d9b6e83d65bb2f0b36ed4863672cc99384ec511bb8a56",
+      "stable_id": "wc-shared-side-truncated-budget",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/固定主玩家的轻玩家阈值响应--定理.md",
+      "sha256": "bc2b7717ea9455eabc29f3abceaadb2e1f2338d43cf829dc340fdc8a38f33676",
+      "stable_id": "weighted-congestion/fixed-hub-light-threshold-response",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇偶暂态层与完整锥必要质量--定理.md",
+      "sha256": "cb6d1ab1078978f2fdd7e380ac1731d6876a782467d8cfd1b97e17d34fe6c826",
+      "stable_id": "weighted-congestion/transient-parity-and-core-mass",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/奇环缺陷择证的无界移动者支撑--定理.md",
+      "sha256": "add2b0ad6b10fdc16ef69cd85583b04ca4b5e056b68bdb9978a62380e897eb2b",
+      "stable_id": "weighted-congestion/selector-unbounded-mover-support",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/对称两列拓扑的单项式两攻击归约--定理.md",
+      "sha256": "61d77f7a80ea36ab6fb580edcece333bd4d50da54a40cfd3e80ff75181d1b444",
+      "stable_id": "weighted-congestion/symmetric-two-column-source-reduction",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/局部异权共享侧资源的排序势乘积预算--定理.md",
+      "sha256": "5c5a5eecc01946502b6dc3af3fc8e30a6be076bd5269b23538a757c9dc1405a5",
+      "stable_id": "wc-heterogeneous-sorted-side-product",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/平方对数加性缺口的全状态近次数下界--定理.md",
+      "sha256": "da1bfeda2c6a8422849057ea3c30c67f3848b4083275696183acaf7b813ea102",
+      "stable_id": "wc-additive-log-square-allstate-degree-lower-bound",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/循环窗口复制的近次数真实改善环--定理.md",
+      "sha256": "c74e90aae42c54acc0b5da49f35408baa523a247b25285d6df16f7d699e9558f",
+      "stable_id": "weighted-congestion/cyclic-window-improvement-cycle",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/必选背景消除的空交反链核心--定理.md",
+      "sha256": "a9c4e143c66de010604c8c143c224daf49684534dac3135284d98a9ea18978bb",
+      "stable_id": "weighted-congestion/mandatory-background-antichain-core",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/普遍近似均衡阈值的闭端点--定理.md",
+      "sha256": "6547fc23e128521343486ede7be0e7b0268b531229ccd0059783735486940e64",
+      "stable_id": "weighted-congestion/universal-approximation-threshold-closed-endpoint",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有向无环端点低泄漏的精确次数预算--定理.md",
+      "sha256": "c3f24417837aa688367270aa2305b9a8dc3a6db759949bbea7bfbb2f12b6f7ce",
+      "stable_id": "weighted-congestion/DAG-endpoint-leakage-degree-budget",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限实例双排序尺度区间的精确校准--定理.md",
+      "sha256": "fa74aa7084c29253386b97d82c0f2ea52b6e1f4db913d4f01123f3994ae4a2ac",
+      "stable_id": "wc-finite-instance-two-order-exact-scale-interval",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+      "sha256": "8ba4aa1eb415777d93ee0847d76c38f3e75ee22a1bb3d1a5f0cd564e26c39ce2",
+      "stable_id": "weighted-congestion/finite-weight-class-triangular-potential",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/有限次全成本空间与正资源压缩--定理.md",
+      "sha256": "e1fce510fb6248dde7cfa87d5f4f576e127b712a1d4d65871ab4fcbd15b3f758",
+      "stable_id": "weighted-congestion/degree-local-cost-compression",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/正则化核心的稳定与社会质量联合转移--定理.md",
+      "sha256": "b30c141a5a855315fca9713b4abfbdf73f456993594aed8782b1895c73d42cb3",
+      "stable_id": "weighted-congestion/regularized-core-repair-quality",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/潜在使用森林的精确均衡--定理.md",
+      "sha256": "403e5541be23f8315b202bf29c9ac9012d5d861818d05d99dfee99a0a1ca8932",
+      "stable_id": "wc-incidence-forest-exact",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/等权窗口传播的精确阈值与安全余量--定理.md",
+      "sha256": "af010b359f1f608ce0e9e4960c23bd3c8fad2f2f03ec5916c2e1e2f08c22ae45",
+      "stable_id": "weighted-congestion/equal-window-area-threshold",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/统一强迫分叉反馈的割均衡--定理.md",
+      "sha256": "0008b05b7b319a2af8c370e73f10e4ba7da958a323b59b4bc7618492b4b7bb9c",
+      "stable_id": "wc-directed-fanout-forcing-cut",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/资源幂矩与降序边际势的共同尺度桥--定理.md",
+      "sha256": "0aee2a71ab1072a673b4e712a444625e0a26f6a05f65ebc215069fe55e69892d",
+      "stable_id": "weighted-congestion/resource-power-sorted-bridge",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/资源潜在用户支持的总成本势--定理.md",
+      "sha256": "4f252181961ef4fdda7e02f6ee460861b4d52c1271d85c8d1dd1242ef8f42844",
+      "stable_id": "weighted-congestion/potential-user-support-total-cost",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/跨源共享侧资源的重置增量乘积预算--定理.md",
+      "sha256": "967206cca9300b34cc3311684640a05f54374e329769e610faa2c820e9f66a13",
+      "stable_id": "wc-multisource-reset-product-budget",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/锚定门的社会费用分解与最优压缩--定理.md",
+      "sha256": "dc6b751a584d2f2bc89e8aa092c8d5c2bcf6339c1d108f3499d85d96115e8f1d",
+      "stable_id": "weighted-congestion/anchor-social-compression",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/阶跃极值幅度的多项式全入均衡--定理.md",
+      "sha256": "f0dfda0d49f23858f6ae30319eda08c101930fefc97dbb762406962d5a45934d",
+      "stable_id": "weighted-congestion/extremal-step-amplitude-polynomial-all-in",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/非负多项式三载荷精确包络--定理.md",
+      "sha256": "9e9e0ff46cfc434a21b0be882e45c3d6eefb3956e944f3af9c97d786247a1618",
+      "stable_id": "weighted-congestion/nonnegative-polynomial-three-load-envelope",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/高度势的精确反演与线性过渡--定理.md",
+      "sha256": "123cc783de22739cb0dfed668c41971af03b787246d685a4560d45c98bb706ea",
+      "stable_id": "weighted-congestion/weight-height-exact-inversion",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/定理/高次费用最小潜在权份额势--定理.md",
+      "sha256": "37be30ae95ca802398ec30c7be1cbe8e59200dd67e0252c74531c4ed9fe39fdd",
+      "stable_id": "weighted-congestion/high-degree-minimum-potential-share-potential",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/审查/线性全状态族的三路独立攻击范围--审查.md",
+      "sha256": "55373f5fddab389129d37899e078af08945fed6d7e0873ef6ffa5ec49e7548f1",
+      "stable_id": "weighted-congestion/linear-allstate-three-attacks-review",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/归约/单核心挂树的私人成本提升--归约.md",
+      "sha256": "456b96fc3baea68a591e7deec3c327cf0f6a144016fc020fc3d96ba08308e454",
+      "stable_id": "wc-one-player-tree-private-lift",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/文献/线性全状态下界论文的冻结稿与证据--文献.md",
+      "sha256": "8d543250fe9050f2ebb9b547e7295ecd45eb914a7f2b08d5515370c2160aa443",
+      "stable_id": "weighted-congestion/linear-allstate-article-frozen-resource",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/任意合法状态的资源可分唯一选择--等价.md",
+      "sha256": "7f52e51ce775a338af7d67603587f7e9c51aaf46ee24389c1a27e5d4c8ac533d",
+      "stable_id": "weighted-congestion/game-specific-minimizer-equivalence",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/低阶转移矩极锥与单移动者分离--等价.md",
+      "sha256": "8c859cb78ca41d36bd5ae49720c1f89c711addf180f3f191771545ff424aa69c",
+      "stable_id": "weighted-congestion/selector-local-moment-interface",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/循环支撑择证与全部改善终止--等价.md",
+      "sha256": "d27c1d80599a6b6653f0a47492e4caea86cd02c53cd6415a9573751f3804d56e",
+      "stable_id": "weighted-congestion/recurrent-selector-dual-fip-equivalence",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/等价/锚定时钟的真实有向差分与线性预算--等价.md",
+      "sha256": "cbeb9c76a2fd11237e7c94bd1a99fa2b6b75bc801f827d006975ccf8345a3328",
+      "stable_id": "weighted-congestion/anchored-clock-directed-margin-interface",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/算法/原实例支配时钟的前沿精确决策--算法.md",
+      "sha256": "d5a582732ee9747e78d95f60f01a71e4f7ea7787d03512bf3946285c2bf0328b",
+      "stable_id": "weighted-congestion/existing-clock-front-decision",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/Shapley选择器与分带归一化--障碍.md",
+      "sha256": "5548bbb065324016ce85c6665d542d59055b81521e4327b412f62bee5113f38e",
+      "stable_id": "weighted-congestion/shapley-selector-band-obstructions",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/任意玩家乘子的多尺度边际夹逼--障碍.md",
+      "sha256": "a8a81a49e28d9aa79571dda74c10e0ac45123f3ed2298b8625a1cfb3794e13ac",
+      "stable_id": "weighted-congestion/multiplier-multiscale-sandwich",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/依游戏资源可分全改善序势--障碍.md",
+      "sha256": "0f2f070f80abaa6359243336104aeaeb0417930e8cf4cf5ba7dbb1df5fced48d",
+      "stable_id": "weighted-congestion/game-specific-separable-ordinal",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/共同非负幂混合的全局最小点线性损失--障碍.md",
+      "sha256": "b73bbe64206ccdfdfd6617ea14c5e0d4bf17d1c1fd066b6daee5a7569523293a",
+      "stable_id": "weighted-congestion/common-power-mixture-minimizer-obstruction",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/前缀阶跃平台的三载荷过冲--障碍.md",
+      "sha256": "eaeba6a2f2ba4d610cdac119baa3f39fe9f9cdf8aae6ae1f5f693b0b9f8a4084",
+      "stable_id": "weighted-congestion/prefix-step-three-load-overshoot",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/单位速度平稳择证的无界损失--障碍.md",
+      "sha256": "57a9fd750e05b94429f62420510420c3316da3c396b1fde24ad4e8ed003ba602",
+      "stable_id": "weighted-congestion/unit-speed-stationary-selector-barrier",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/同费锚定三元时钟的三次保边障碍--障碍.md",
+      "sha256": "af97063b5a506da4f022889cc4b2b456f86fe4647ccbb0f9ad7f66c04444770f",
+      "stable_id": "weighted-congestion/anchored-cubic-clock-retention-obstruction",
+      "reading_scope": "targeted model/statement/key-mechanism comparison; not a new certification of the entire proof or old audit"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/小用户支持近似成本表示的失真--障碍.md",
+      "sha256": "dce34dffdc46516a6cd60686e414bde9a9035ab339c02c5772b8259f9256d084",
+      "stable_id": "weighted-congestion/approximate-support-distortion",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/异权仿射成本射线的全用户刚性--障碍.md",
+      "sha256": "6c6d7fbc27a388c6b1d8e895fd8560a41031b1ef4e60b128e6b03242351a1500",
+      "stable_id": "weighted-congestion/affine-full-signature-rigidity",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/有序同类三元时钟保留严格均衡--障碍.md",
+      "sha256": "72a5e06f14ad2666daf0591b9dbcb3125f1e51d685319f20e0089f7872aa204d",
+      "stable_id": "weighted-congestion/class-internal-clock-compiler-obstruction",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/潜在尾部参数的锐界--障碍.md",
+      "sha256": "bc236e33caf47d75f02f2c32e9947e5c31a068a4869b4469772e094f1096aa08",
+      "stable_id": "weighted-congestion/ordered-tail-parameter-limit",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/统一低泄漏锚定预算的次数效率--障碍.md",
+      "sha256": "39319c53ffdad9fefd4738d8ea4e9e1c2f5bc38e9899b59cec64a13af9d3ef1d",
+      "stable_id": "weighted-congestion/uniform-anchored-clock-budget-efficiency",
+      "reading_scope": "prior complete mathematical reading reused, with current contract comparison"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/锚定保环时钟的真实余量依赖--障碍.md",
+      "sha256": "1fcbcb2d3b5fc5e105f687a15b67aea73e068568fd706ab6904b0aab85843250",
+      "stable_id": "weighted-congestion/anchored-clock-true-margin-dependence",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    },
+    {
+      "path": "archives/weighted-congestion/state/障碍/降序侧势全部全局最小点的权比障碍--障碍.md",
+      "sha256": "7adaeb367ed972fb9a7b6b78058757c9741fbf7ff5666829c339193d59cc6525",
+      "stable_id": "wc-sorted-side-global-minimum-r-barrier",
+      "reading_scope": "fresh full mathematical text read in this batch"
+    }
+  ],
+  "additional_full_reads_not_necessarily_directly_linked": [
+    "archives/weighted-congestion/state/资料/加权拥塞成果入口的模型与结论范围--资料.md",
+    "archives/weighted-congestion/state/审查/加权拥塞旧候选目录与后续数学状态--审查.md"
+  ],
+  "targeted_positive_kernel_review": "archives/positive-kernels/state/审查/正占用核重构与冻结攻击--审查.md: zero-weight active observer correction section; no new external source verification",
+  "original_math_program_runs_this_batch": [],
+  "why_no_reruns": "Four pure Markdown sources. No modified mathematical code, new parameter case, unresolved audit failure, or new numerical claim requiring another original execution. Earlier successful proofs/audits are linked with their own identities, not recounted as new runs.",
+  "review_boundary": "This is mathematical curation/comparison, not a newly organized blind review, external refereeing, complete priority search, or certification of every source linked by an old navigation file."
+}

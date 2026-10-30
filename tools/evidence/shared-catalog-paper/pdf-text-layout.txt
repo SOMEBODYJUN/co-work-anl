@@ -1,0 +1,1133 @@
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES
+             WITH ATOMIC CLIENTS
+
+       Abstract. Krogmann, Lenzner, Skopalik, Uetz, and Vos introduced
+       two-stage facility location with atomic clients and left open whether the
+       golden ratio guarantees an approximate subgame-perfect equilibrium. We
+       settle this question for two facilities with the same finite location catalog.
+       For arbitrary positive client weights, we construct a selection of exact
+       client Nash equilibria
+                          √     supporting a ϕ-approximate facility equilibrium,
+       where ϕ = (1 + 5)/2. For rational input given by explicit coverage
+       sets, the construction runs in polynomial time and returns rational client
+       strategies. The approximation factor matches the known two-facility
+       lower bound. The proof uses finite menus of client equilibria and an
+       overlap estimate for two selected locations. We show that these local
+       choices exclude every closed response cycle that could obstruct the
+       required equilibrium.
+
+
+
+
+                                 1. Introduction
+   A facility in a two-stage location game chooses its location before clients
+decide which facility to use. Its payoff therefore depends on the client
+equilibrium selected after the move. Atomic clients may have several Nash
+equilibria at a given placement, yielding different facility loads. To establish
+subgame-perfect equilibrium, we must choose a facility placement together
+with client equilibria at all possible placements.
+   Krogmann, Lenzner, Skopalik, Uetz, and Vos [2] introduced this atomic
+model. They established exact existence for equal client weights and a golden-
+ratio lower bound for weighted clients, leaving the corresponding existence
+guarantee open. We prove that the golden ratio suffices when two facilities
+share the same finite location set. For rational input, we also construct the
+facility placement and its client continuations in polynomial time. Thus the
+two-facility common-catalog case attains the known lower bound.
+1.1. The model. We use the atomic client model of [2, Section 1.1], with
+two facilities and a common location catalog. Describing eligibility by sets
+permits the location and client sets to be distinct.
+Definition 1.1. An instance consists of a finite client set G, positive weights
+wg , a finite nonempty location set S, and coverage sets Cs ⊆ G for s ∈ S.
+Both labeled facilities choose a location in S, simultaneously and with co-
+location permitted. After a placement (s, t), each covered client chooses one
+of its accessible facilities, independently of the other clients. An uncovered
+client is not served. A client minimizes its expected realized facility load,
+including its own weight; a facility maximizes its expected attracted weight.
+                                             1
+2   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+   A complete continuation rule σ assigns an exact client Nash equilibrium
+to each ordered placement. For α ≥ 1, a placement (s, t) and such a rule
+form an α-approximate subgame-perfect equilibrium if
+(1.1)
+L1 (σ(r, t)) ≤ αL1 (σ(s, t)) (r ̸= s), L2 (σ(s, r)) ≤ αL2 (σ(s, t)) (r ̸= t).
+    The requirement is the existence of one complete rule. It does not impose
+stability under every choice of client equilibria. The multiplicative inequalities
+in (1.1) also cover aPzero on-path payoff.
+    Write w(X) =       g∈X wg and Rs = w(Cs ). At a placement (s, t), let
+A = w(Cs \ Ct ) and  P B = w(Ct \ Cs ). Enumerate the common clients by
+1, . . . , k, put W = i wi , and let pi be client i’s probability of using the first
+facility. The two expected loads and their difference are
+                    X                        X
+(1.2) Ls = A +        wi p i ,    Lt = B +       wi (1 − pi ),    ∆ = Ls − Lt .
+                    i                         i
+The difference between client i’s conditional costs is ∆ + wi (1 − 2pi ). Conse-
+quently, the exact client Nash conditions are
+(1.3)
+  pi = 1 ⇒ ∆ ≤ wi , pi = 0 ⇒ ∆ ≥ −wi , 0 < pi < 1 ⇒ ∆ = wi (2pi − 1).
+These are individual mixed strategies, with no division or correlation of a
+client’s atomic weight.
+1.2. The proof idea and its relation to earlier work. The argument
+has two main ingredients. First, we construct finite menus of exact client
+equilibria, using the same menus to support a placement and to evaluate
+every deviation from it. Minimizing the deviator’s load within these menus
+defines a response map on locations. Second, we analyze a closed response
+cycle under the assumption that its menus contain no supporting placement.
+The overlap inequalities require the pairs of sufficiently heavy clients to form
+a star. Two selected locations then bound the common client weight along
+the cycle, excluding both a closed path of decreasing reaches and a return to
+a small deviation threshold.
+   For pure client assignments, we use the repair operation of Vos [3, Lem-
+ma 29]. Our overlap argument builds on the analysis in [3, Section 8.3]; the
+proof below treats every cycle length and supplies the required mixed client
+equilibria. The squared-load potential establishes termination of local client
+repairs. To obtain the polynomial-time facility construction, we additionally
+bound the number of exchanges in the mixed-equilibrium algorithm.
+Organization. Section 2 defines the four equilibrium families, states the
+structural lemma, and deduces the main theorem. Appendix A proves the
+structural lemma by contradiction. Appendices B and C prove the local
+mixed-equilibrium result and its polynomial construction. √
+Conventions and notation. Throughout, ϕ = (1 + 5)/2, q = ϕ−1 ,
+a = q 2 = 1 − q, and c = ϕ/2. Client weights are positive real numbers in
+the existence statements and positive binary rationals in the complexity
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS            3
+
+statements. All client randomizations are independent, all placement profiles
+are labeled, and all tie choices in a construction are fixed by index.
+
+                     2. The golden-ratio theorem
+   We first construct the client equilibria needed at a pair of locations. We
+then show that the resulting finite menus contain a placement satisfying
+both facilities’ deviation bounds. The main theorem follows by choosing the
+client continuations from these menus.
+2.1. Local equilibria and repair. A pure improvement moves weight w
+from a facility of load H to one of load L < H precisely when w < H − L.
+Both resulting loads lie strictly between L and H. This elementary fact gives
+the following form of the repair from [3, Lemma 29].
+Lemma 2.1. Suppose a pure client assignment has loads L < H, and each
+common client initially on the lower-load side has weight at least H − L.
+Repeatedly move a largest strictly improving client from the original higher-
+load side to the original lower-load side, stopping when no such client remains
+or when the load order first reverses. The output is an exact pure client Nash
+equilibrium. Both final loads are at least L, and the original lower-load side
+finishes strictly below H. At most k clients move.
+Proof. Before a reversal, the load gap decreases, and the moved weights are
+nonincreasing: a client too heavy to improve cannot become improving as
+that gap decreases. If the order reverses after moving weight w, the new
+gap is less than w. Every previously moved client and every common client
+initially on the lower side has weight at least w, so none can move back.
+The remaining clients are on the new lower side. If no reversal occurs, the
+stopping condition and the initial weight bound give the same conclusion.
+Each move leaves both loads in the preceding load interval and each client
+moves at most once.                                                      □
+   In particular, putting every common client on one side always gives either
+an equilibrium or a seed to which Lemma 2.1 applies. Thus every placement
+has a pure default continuation.
+   For comparable reaches and sufficiently small common clients, the next
+lemma gives one equilibrium in which both facilities receive a prescribed
+fraction of the opposite reach. We construct it by assigning an individual
+mixing probability to each common client.
+Lemma 2.2. Consider two locations with reaches U ≥ V > cU and common
+client weight W < qV . If every common client has weight at most aU , there
+is an exact independently mixed client Nash equilibrium with
+(2.1)                      LU ≥ qV,      LV ≥ qU.
+For rational input with k common clients, one such equilibrium can be
+constructed with O((k + 1)4 ) rational operations and polynomial intermediate
+encoding length.
+4   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+   Appendix B proves existence and gives all equilibrium coordinates. Ap-
+pendix C bounds the number of exchanges used to obtain them. For example,
+with private loads 40, 39 and three common clients of weight 20, all three
+common clients can use the first facility with probability 39/80. The result-
+ing loads (277/4, 279/4) satisfy (2.1) for reaches 100, 99. Pure equilibria or
+equilibria with only two mixing clients do not satisfy these two bounds.
+2.2. Four fixed families of client equilibria. For each pair of coverage
+sets, we now construct a finite menu from the original list of weighted clients.
+The construction precedes the choice of a response map, so its members
+remain available throughout the cycle argument.
+Construction 2.3. At a pair let A, B denote exclusive customer        P      loads,
+let w1 , . . . , wk be the common customer weights, and let W = i wi . The
+reaches are A + W, B + W . Fix all tie choices by customer index. Construct
+F (s, t) as follows. A label reversal uses the reflection of this same menu.
+      P.: Guarded pure seeds. Use the two assignments putting all common
+          customers on one side. Also use, for every common customer h,
+          both assignments putting only h on one side and all other common
+          customers on the other. Retain a seed if it is already an NE. Otherwise,
+          let its initial loads be Q < P , and retain a repaired output only if
+          each common customer initially on the lower side has weight at least
+          P − Q. Move a largest strictly improving customer from the original
+          higher side to the original lower side, stopping at the first reversal of
+          load order or when no improvement remains. Lemma 2.1 proves that
+          the output is an NE and preserves the initial lower load as a lower
+          bound. Unqualified seeds are discarded. The all-common seeds make
+          this pure submenu nonempty: either the occupied side is already
+          lower, or the other side has no common customer and the guard is
+          vacuous. There are at most 2(k + 1) outputs.
+      E.: Equal-reach half splitting. If A = B, let each common customer
+          independently use each side with probability 1/2. Each customer is
+          indifferent. In particular this includes loads (Rs /2, Rs /2) at every
+          co-location (s, s).
+      T.: Two designated mixers. Choose distinct common customers h, j.
+          Orient the endpoints so that A ≤ B, and put all other common
+          customers on the B side. Set Z = W −wh −wj and D = B −A+Z. If
+          D ≤ min(wh , wj ), give h, j probabilities (1 + D/wh )/2, (1 + D/wj )/2
+          on the A side. The expected load gap is D, so the designated
+          customers are indifferent and the others prefer the lower expected-load
+          side. This is an exact NE. If A = B, include both orientations. This
+                                  k
+          family has at most 2 2 members, including boundary probabilities.
+      C.: A two-location quota equilibrium. Order the reaches as U ≥ V .
+          Whenever
+                   V > cU,       W < qV,        max wi ≤ aU,
+                                                  i
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS            5
+
+        include one deterministic output of the strong-chord construction of
+        Lemma 2.2. It gives LU ≥ qV and LV ≥ qU in O((k + 1)4 ) rational
+        arithmetic operations. For k = 0 the maximum-weight condition
+        is vacuous. At a co-location, retain E for the equal-half argument;
+        it is not, in general, a witness for the stronger qR quotas. If the
+        strict chord hypotheses hold for a pair of distinct locations, include
+        the chord output even when the two reaches are equal. This call
+        depends only on the pair’s actual reaches and common weights, never
+        on global deviation quotas.
+  Every member satisfies (1.3). For family T, the expected load difference is
+D, so the two designated clients are indifferent and the other common clients
+prefer the side with smaller expected load. Lemmas 2.1 and 2.2 justify P
+and C, respectively. Family E follows directly from (1.3). The menu contains
+O((k + 1)2 ) members and at least one pure member.
+2.3. The structural lemma and the main theorem. For an oriented
+pair, let Ls (e) denote the load received at s in menu member e. Define
+(2.2)
+   u(s, t) = min Ls (e),       d(t) = max u(s, t),    b(t) ∈ argmax u(s, t).
+           e∈F (s,t)                     s∈S                     s∈S
+
+The maximum defining d(t) includes the entire catalog. The finite-family
+minimum is sufficient for our construction, whether or not smaller payoffs
+are possible at equilibria outside the family.
+   The next lemma compares the two loads at a candidate placement with the
+largest deviation minima. It supplies the placement from which we construct
+the complete continuation rule.
+Lemma 2.4. For every instance of Definition 1.1, the menus in Construc-
+tion 2.3 contain a pair (s, t) and a member e ∈ F (s, t) such that
+(2.3)                  Ls (e) ≥ qd(t),         Lt (e) ≥ qd(s).
+In fact, every directed cycle of b contains such a pair of locations.
+   Since b maps the finite nonempty catalog to itself, it has a directed cycle.
+Fix such a cycle and suppose that its menus contain no pair satisfying (2.3).
+Its maximum d-value is positive, since a zero maximum makes any equal-half
+co-location a suitable witness. After scaling this maximum to one, every
+response edge has a responder load exceeding c times the source reach and
+an incumbent load below q. Appendix A first shows that the pairs of clients
+heavier than q/2 form a star. We then choose two consecutive locations
+and apply inclusion–exclusion to their common clients. This excludes both
+a closed path of decreasing reaches and an exit from the path. Every
+equilibrium used in the contradiction belongs to the fixed menus, including
+the mixed equilibria in family C.
+   The load bounds in Lemma 2.4 allow us to choose consistent client contin-
+uations after every facility deviation.
+6   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+Theorem 2.5. Every instance of Definition 1.1 has a ϕ-approximate subgame-
+perfect equilibrium. With n positive binary-rational client weights and
+N explicitly listed locations, one can construct such an equilibrium with
+O(N 2 (n + 1)4 ) rational operations and polynomial intermediate bit length.
+The output gives rational on-path and unilateral-deviation continuations and
+a polynomial-time default rule for every other placement.
+
+Proof. Choose (s, t), e by Lemma 2.4, and after each unilateral deviation
+select a menu member minimizing the deviator’s load. By (2.2) and (2.3), the
+deviating load is at most ϕ times the corresponding on-path load. Since the
+two deviation families consist of disjoint ordered placements, these selections,
+completed elsewhere by Lemma 2.1, define a complete continuation rule. The
+menu bounds below give the stated complexity.                                 □
+
+   Krogmann et al. [2, Theorem 5] give two-facility instances with no α-
+approximate equilibrium for any prescribed α < ϕ. Thus the existence factor
+in Theorem 2.5 is best possible. Their unrestricted instances lie within the
+common-catalog class. Their decision hardness result allows varying facility
+numbers and distinct location restrictions; it is a different statement from
+the two-facility construction proved here.
+
+2.4. The constructive bound. Construct all pair menus, store one member
+attaining each minimum u(s, t), and compute d by (2.2). Scan the menu
+members for (2.3); Lemma 2.4 guarantees success. Return the selected
+member and the minimizing continuations for the at most 2N − 2 actual
+unilateral deviations. At all other placements, use the all-common-client
+seed and Lemma 2.1.
+   At a pair with k common customers P has at most 2(k + 1) outputs and
+costs O((k + 1)3 ) rational operations: each guarded repair moves at most
+k customers and a direct scan per move costs O(k + 1). T has O((k + 1)2 )
+outputs and costs O((k + 1)3 ) including direct Nash verification. E is
+linear. Appendix C proves an O((k + 1)4 ) bound for C. Therefore all menus,
+minima, maxima, cycle selection and scanning require O(N 2 (n + 1)4 ) rational
+operations. Explicitly storing every probability vector uses O(N 2 (n + 1)3 )
+rational entries, still polynomial.
+   Every pure load is a sum of input weights. Every exchange coordinate
+in Appendix C is an input endpoint or a signed sum of input weights and
+the slice target. The later mixer gaps divide such sums by an integer at
+most n, and probabilities additionally divide by an input weight. Thus all
+intermediate rational encodings have length polynomial in the total binary
+input length. Comparisons with q are exact: for rational z ≥ 0, the sign of
+z − q is the sign of z 2 + z − 1, and z < 0 is immediate. Using q 2 = 1 − q
+reduces all other irrational thresholds to this form. Zero-payoff cases are
+handled by cross-multiplication, without division by zero. This proves the
+stated bit complexity.
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS               7
+
+   The output is independently checkable using the individual Nash inequal-
+ities in (1.3) and the actual deviation inequalities (1.1). The verifier need
+not reconstruct the menus, prove their completeness, or compute minimum
+payoffs. The short certificate and the polynomial search proof are separate
+parts of the result.
+
+          Appendix A. Excluding a closed response cycle
+Proof of Lemma 2.4. We use only members of the menus already constructed,
+while all deviation maxima continue to range over the full catalog.
+
+A.1. The normalized no-witness inequalities. Choose, with arbitrary
+tie breaking,
+
+                             b(t) ∈ arg max u(s, t)
+                                          s
+   and let T be any directed cycle of this map. Suppose no menu witness
+on a pair of cycle locations satisfies (2.3). All uses of d below retain the
+maximum over the full location set S. The cycle maximum M = maxs∈T d(s)
+is positive: if M = 0, an equal-half co-location equilibrium at any cycle
+location already satisfies (2.3). Divide all weights and loads by M , so
+
+                                 max d(s) = 1.
+                                 s∈T
+   Scope convention. Unless explicitly stated otherwise, every location
+quantified below belongs to T . The value d(s) continues to maximize over the
+full set S. In particular, all reach upper bounds and d-value upper bounds
+below are asserted for cycle locations, not for arbitrary locations outside
+the cycle. Lemma 2.2 is a separate two-location statement and has its own
+hypotheses.
+   Co-location at s, with all covered customers independently choosing each
+facility with probability 1/2, gives load Rs /2 on each facility. Thus failure of
+(2.3) implies
+
+(A.1)                 d(s) > cRs ,      Rs < 2q    (s ∈ T ).
+  Let R = maxs∈T Rs . Since u(b(s), s) ≤ Rb(s) and b(T ) ⊆ T ,
+
+(A.2)                             1 ≤ R < 2q.
+  For every edge s → t = b(s) and every member of its fixed menu, write
+P = Lt , Q = Ls . Then
+
+(A.3)                P ≥ d(s) > cRs ,         Q < qd(t) ≤ q.
+   Indeed, the responder already exceeds its stability threshold qd(s); if the
+incumbent reached qd(t), (2.3) would hold.
+8   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+A.2. Reach bounds and return inequalities. An all-common-client seed
+bounds the deviation threshold whenever the source reach is large:
+
+(A.4)                      Rs ≥ q   =⇒     d(s) ≤ Rs .
+   To prove this, suppose d(s) > Rs , and put t = b(s). Let E = w(Ct \ Cs ).
+If E ≤ Rs , assign all common customers to s. Either this is an equilibrium
+or pure repair gives an equilibrium with responder load at most Rs . The
+seed or its guarded output belongs to P, contradicting u(t, s) = d(s) > Rs .
+Consequently E > Rs . Every common customer then strictly prefers s: its
+cost there is at most Rs , whereas choosing t costs at least E + wg . Thus
+all actual customer equilibria coincide; the nonempty menu consists of that
+equilibrium, with responder load E = d(s) and incumbent load Rs . Equation
+(A.3) forces d(t) > ϕRs , and hence Rs < q. This proves (A.4).
+   The same argument gives the following return rule: if d(s) > Rs , the edge
+from s has a unique customer equilibrium, the incumbent receives Rs , and
+the next d-value exceeds ϕRs .
+
+A.3. Every client visible on the cycle has weight below q. Suppose a
+customer of weight H ≥ q is visible at a location of T . Whenever its current
+location is s, (A.3) forces it to remain accessible at b(s), since otherwise the
+incumbent load would be at least H ≥ q. It therefore covers the entire cycle.
+   For any edge s → t, let Sst be the total weight of its common customers
+other than this customer. If
+
+                                Rt ≥ Rs − Sst ,
+   assign the heavy customer to s and all other common customers to t. The
+loads are
+
+               Q = Rs − Sst ≥ H,         P = Rt − H < H ≤ Q,
+   where Rt < 2q ≤ 2H. The heavy customer is stable because Q − H ≤ P ,
+equivalently Q ≤ Rt ; the other common customers choose the lower-load
+side and are stable. This pure equilibrium contradicts Q < q in (A.3). Thus
+every edge satisfies
+
+                             Rt < Rs − Sst ≤ Rs ,
+    which is impossible on a cycle. Therefore
+
+(A.5)             wg < q    for every customer visible on T.
+
+A.4. Heavy pairs: size, avoidance, and a chord lemma. Call a cus-
+tomer large if wg > τ = q/2, and put
+
+                            Hs = {g ∈ Cs : wg > τ }.
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS           9
+
+A.4.1. At most two large customers at a location. In a pure member of the
+menu of an edge, two large customers belonging to the source cannot both be
+assigned to the responder. If they were, with source reach r, then Q < r − q.
+Both transferred common customers have weight at least P − Q, so
+
+                            2P ≤ r + Q < 2r − q.
+   Together with 2P > ϕr, this gives (2 − ϕ)r > q, hence r > ϕ, contradicting
+r < 2q < ϕ.
+   If a source covered three large customers, Q < q would force at least two
+of them to the responder. An equal-reach edge cannot avoid this argument
+by being mixed: its equal-half equilibrium has equal loads, each at least
+d(s) > ϕRs /2 > 3/4 > q, again contradicting (A.3). A pure member of P
+exists in the unequal-reach case. Consequently
+
+(A.6)                            |Hs | ≤ 2.
+A.4.2. Avoidance of a large pair. If s contains two large customers and t
+contains neither, then
+
+(A.7)                         Rt < qd(s) ≤ q.
+  The exclusive weight of s against t is A > q. Put all common customers
+at t. If Rt ≤ A, this is a pure equilibrium with loads A, Rt . If Rt > A,
+repair gives both loads at least A > q. Hence Rt ≥ qd(s) would satisfy both
+thresholds in (2.3).
+  In particular, all large pairs that occur on T intersect pairwise.
+A.4.3. Chord retaining exactly one member of a pair. In the normalized
+no-witness situation, for cycle locations s, t, suppose s has large customers
+h, j, t contains h but not j, and Rs ≤ Rt . Let H = wh , J = wj . Assign h
+to s and all other common customers to t. If their other-common total is σ,
+the loads are
+
+               U = Rs − σ ≥ H + J > q,      V = Rt − H.
+  The customer h is stable since U − H ≤ V . If V ≤ U , this is a pure
+equilibrium. Since U > q ≥ qd(t), the no-witness assumption then forces
+V < qd(s), and hence d(s) > ϕV = ϕ(Rt − H). If V > U , then
+
+                        V − U ≤ Rt − 2H − J < H,
+   because Rt < 2q < 3H + J. Repair then gives both loads above q, and
+therefore a quota witness because d(s), d(t) ≤ 1, a contradiction. Thus the
+displayed implication is valid under the stated no-witness hypothesis:
+
+(A.8)                        d(s) > ϕ(Rt − H).
+10 GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+   In particular, a pair-source best response cannot have at least the source
+reach while retaining exactly one member of that pair: the constructed
+equilibrium has incumbent load above q, while every menu member has
+responding load at least d(s).
+
+A.5. Capacity of a location containing a large pair. We next bound
+the reach of a location from the weights of its two large clients.
+  If Hs = {h, j}, then
+
+
+(A.9)                       Rs < q + max(H, J).
+   First let r = Rs ≥ 1. Equal reaches on its edge are impossible by (A.3).
+In a pure menu member, if two or more common customers went forward,
+then 2P ≤ r + Q < r + q, while 2P > ϕr; this would imply r < 1. Therefore
+exactly one common customer goes forward. Since the two large customers
+cannot both remain at the incumbent, the transferred customer is one of
+them, say of weight H. Then r − H = Q < q, proving (A.9).
+   Now suppose r < 1 but r ≥ q + max(H, J). Then r > 3q/2 and P >
+ϕr/2 > 3/4. Exactly one of the two large customers goes forward, say H,
+and the other J remains. If the responder also covered J, it would have
+the same pair. If its reach were at least one, the already proved case would
+give its reach < q + max(H, J) ≤ r < 1, impossible. If its reach were below
+one, its load would be < 1 − J < 1 − q/2 < 3/4, also impossible. Thus J is
+inaccessible to the responder.
+   Reassign only H forward and all other common customers to the incumbent.
+Let their total be σ; the loads are
+
+                    Q0 = r − H ≥ q,        P0 = Rb(s) − σ,
+  and
+
+                 σ ≤ r − H − J,       P0 ≥ d(s) − r + H + J.
+   The original equilibrium condition for H implies P0 ≤ r, so H is still
+stable. If P0 ≥ Q0 , the new profile is a pure equilibrium, contradicting (A.3).
+If P0 < Q0 , then
+
+                   Q0 − P0 < (2 − ϕ/2)r − 2H − J < H,
+   using r < 1 and 3H + J > 2q > 2 − ϕ/2. Repair produces a responder
+load strictly below Q0 . But
+
+                         Q0 = r − H < ϕr/2 < d(s),
+  since H > q/2 > ar/2. This contradicts the definition of d(s) = u(b(s), s),
+proving (A.9).
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS 11
+
+A.6. No edge connects two locations with the same large pair. Let
+two locations have the same pair of weights H ≥ J > q/2. Write their private
+weights as A ≤ B, the total of other common customers as W , and label
+their reaches rℓ ≤ rh . Thus
+
+              rℓ = A + H + J + W,        rh = B + H + J + W.
+  Set D = B − A + W . Capacity gives
+
+             0 ≤ D ≤ B + W = rh − H − J < q − J < J ≤ H.
+   Assign all common customers other than the large pair to the higher-reach
+location. Let each large customer of weight w ∈ {H, J} choose the lower-
+reach location with probability (1 + D/w)/2. This is an equilibrium: both
+large customers are indifferent and all other common customers choose the
+lower expected-load side. Its loads are
+
+           Lh = rℓ − W − (H + J)/2,         Lℓ = rh − (H + J)/2.
+   In either possible orientation as source and responder, the responder load
+is at most
+
+                Rsource − (H + J)/2 < cRsource < d(source).
+  Here H + J > q > aRsource , because Rsource < 2q and 2aq < q. This
+contradicts a best-response edge. Hence
+
+(A.10)       No b-edge joins two locations with the same large pair.
+
+A.7. The large-pair family is a star. Let E = {Hs : |Hs | = 2}. Its
+members pairwise intersect by (A.7). A pairwise-intersecting family of two-
+element sets either has a common member or contains exactly the three pair
+types of a triangle. Suppose such a triangle occurs, on customers h, j, k.
+   Every location of reach at least q must meet all three pair types, by (A.7).
+By (A.6) its own large set is therefore one of the triangle pairs. Choose a
+maximum-reach location A, of reach R ≥ 1, and suppose it has pair {h, j}.
+   We claim that both H and J exceed a. Suppose, for example, that
+H ≤ a. Choose another triangle-pair location containing h but not j. Apply
+Appendix A.4.3 with A as the higher-reach endpoint. Its load R − H ≥
+1 − a = q, and the other endpoint’s load exceeds q; either the displayed
+profile or repair is stable, a contradiction.
+   Every pair location s has d(s) > q. Otherwise (A.1) gives Rs < 2a. It
+cannot have the same pair as A, whose two weights exceed a. If it has
+another triangle pair, sharing g with A, then wg < q, so
+
+                        R − wg > 1 − q = a ≥ qd(s).
+  Appendix A.4.3 again constructs a stable equilibrium, a contradiction.
+12 GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+  Thus pair locations form a nonempty b-closed subset: their responders
+have reach at least their d-value, hence above q, and so must again be
+pair locations. An edge to a different pair cannot weakly increase reach by
+Appendix A.4.3. An edge to the same pair is impossible by (A.10). Hence
+every edge in this finite closed subset strictly decreases reach, a contradiction.
+The triangle is impossible, proving
+                                           \
+(A.11)                    E ̸= ∅    =⇒           E ̸= ∅.
+                                           E∈E
+
+A.8. Common-h chords, transport, and two-anchor covering. The
+rest of the proof repeatedly uses a customer h, of weight H, satisfying
+
+(A.12)           H > aR,        K := R − H < q,            H < q.
+  In particular R < 3H.
+A.8.1. An upward common-h chord. For locations s, t containing h and
+Rs ≤ Rt , assign h to s and all other common customers to t. Their loads are
+
+                    U = Rs − σ ≥ H,     V = Rt − H.
+   The customer h is stable. If V ≤ U , the profile is an equilibrium. If
+V > U , then V − U ≤ R − 2H < H, so repair applies and the final load at t
+is at most V . Therefore
+
+(A.13)                      u(t, s) ≤ Rt − H ≤ K.
+A.8.2. A common-h edge with d above q has unique transport. Suppose s → t,
+both contain h, and d(s) > q. If Rt ≥ Rs , the upward common-h chord gives
+                 d(s) = u(t, s) ≤ Rt − H ≤ R − H = K < q,
+which contradicts d(s) > q. Hence Rt < Rs . Take a pure menu member from
+P. If h stayed at the source, responder load would be at most Rt −H ≤ K < q,
+impossible. If another common customer accompanied h forward, their
+equilibrium conditions would give
+
+                        2P ≤ Rs + Q ≤ 2Rs − H,
+  so P ≤ Rs − H/2 < cRs < d(s), using H > aR ≥ aRs . Thus h is the only
+common customer going forward.
+  Let σ be the other-common total, and ∆ = Rs − Rt > 0. The pure loads
+are Q = Rs − H, P = Rt − σ, with σ < R − q < H. If σ ≥ ∆, the reverse
+assignment, placing h at the source and all other common customers at
+the responder, would be an exact singleton seed in P with responder load
+Rt − H ≤ K < q, impossible. Consequently σ < ∆.
+  By this inequality, h strictly prefers the responder regardless of other
+choices: its minimum source cost is Rs − σ > Rt . Given this choice, every
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS 13
+
+other common customer strictly prefers the source, whose maximum load is
+Rs − H ≤ K < q, below the responder’s minimum load Rt − σ ≥ d(s) > q.
+Thus all, including mixed, customer equilibria coincide. In particular, the
+finite-menu minimum equals this unique payoff, and
+
+(A.14)       d(s) = Rt − σ,    Q = Rs − H,      0 ≤ σ < Rs − Rt .
+A.8.3. Two-anchor coverage. The following inclusion–exclusion estimate
+prevents a high-reach path from reaching a low deviation threshold.
+Lemma A.1. Suppose an edge X → Y has the unique transport (A.14).
+Write
+
+   x = RX > y = RY ,      δ = d(X) = y − σ,     ε = d(Y ),   B = ϕ(y − H).
+  Assume
+
+(A.15)               δ > B,    ε > B,    δ > ϕH,    ε ≤ y.
+  Then there is no h-containing location t with
+
+(A.16)                   B < Rt ≤ y,        d(t) ≤ B.
+Proof. For each anchor i ∈ {X, Y }, assign h to t and the other common
+customers to i. If their total σit satisfied σit ≤ Rt − qd(i), the initial loads
+would be
+
+      Ut = Rt − σit ≥ qd(i),       Vi = Ri − H ≥ y − H = qB ≥ qd(t).
+   The customer h is stable since Rt ≤ Ri . If Vi ≤ Ut , this is an equilibrium.
+Otherwise repair applies because R < 3H; both final loads are at least Ut ,
+which exceeds both required thresholds because d(i) > B ≥ d(t). Thus no
+solution forces
+
+                    σXt > Rt − qδ,      σY t > Rt − qε.
+  Their intersection, excluding h, has weight at most σ, so
+
+                          σXt + σY t ≤ Rt − H + σ.
+  It follows that
+
+                         Rt < L := q(δ + ε) − H + σ.
+  But
+
+                B − L = δ − qε + qσ − qH ≥ aδ − qH > 0,
+  where only ε ≤ y = δ + σ is used. Hence Rt < B, contradicting (A.16). □
+14 GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+A.9. A common heavy client excludes a closed cycle. The overlap
+bound now links a local transport edge to the full cycle. We first prove the
+conditional statement for one common client and then verify its hypotheses
+for a nondegenerate star.
+
+A.9.1. Abstract center theorem. Under (A.12), suppose every location with-
+out h has reach at most ϕH. Then the no-solution closed cycle is impossible.
+   First, every h-containing location has d(s) > H. Suppose instead u
+contains h and d(u) ≤ H. Then Ru < 2qH < ϕH. For any t with Rt > ϕH,
+the assumption makes t an h-location. If d(t) ≤ ϕH, put h at u and
+other common customers at t. The loads satisfy U ≥ H ≥ qd(t) and
+V = Rt − H > qH ≥ qd(u). The common-h chord construction, with
+repair if necessary, gives stability. Thus all locations of reach above ϕH
+have d-value above ϕH. This set is nonempty since R ≥ 1 > ϕH, and it
+is b-closed. It consists entirely of h-locations. On it (A.13) forbids every
+nondecreasing-reach edge, since K < q < ϕH, a contradiction.
+   If u → v leaves h, (A.3) gives
+
+                              d(v) > ϕH ≥ Rv .
+   The return rule of Appendix A.2 makes the next edge’s equilibrium unique.
+Its target w has reach at least d(v) > ϕH, hence contains h, and
+
+
+(A.17)                   d(w) > ϕRv ≥ ϕd(u) > ϕH.
+
+   Choose an h-location X maximizing d among h-locations, and put δ =
+d(X). We have δ > cR, since the maximum-reach location contains h, and
+δ > ϕH: if there is an exit, use (A.17); otherwise all locations contain h, so
+δ = 1 > ϕH. The responder Y = b(X) contains h; otherwise (A.17) would
+produce an h-location with d exceeding ϕδ > δ.
+   Since δ > ϕH > q, Appendix A.8.2 applies. Use its notation x, y, σ, ε.
+Set B = ϕ(y − H). Then ε > ϕ(x − H) > B. Since ε ≤ δ, we also have
+x < H +qδ and hence B < δ. Moreover B > K: if H ≤ R/2, use y ≥ δ > cR;
+if H ≥ R/2, use y ≥ δ > ϕH, which gives B > H ≥ K. The covering lemma
+applies because y > q and hence ε ≤ y.
+   Starting at Y , as long as the path remains among h-locations with d above
+B, (A.13) forces strictly decreasing reach. A first h-location with d at most B
+would still have reach above B and at most y, contradicting Appendix A.8.3.
+The path must therefore leave h. At that exit its source has d above B;
+(A.17) gives a returning h-location with d above ϕB. But
+
+                      ϕB − δ = ϕ(δ − ϕH) + ϕ2 σ > 0,
+  contradicting the choice of δ. This proves the common-client argument.
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS 15
+
+A.9.2. Nondegenerate stars satisfy its assumptions. Suppose E contains at
+least two distinct pairs, with unique common customer h. Every location
+of reach at least q contains h: otherwise it must meet two different pairs
+by covering their two leaves, producing the triangle already excluded in
+Appendix A.7. Thus every no-h reach is below q.
+   Apply the maximum-reach first-edge argument of Appendix A.10.1 below
+(that argument itself does not assume an empty or single-pair family). It
+gives a unique forward customer g on A → b(A), of weight exceeding R − q,
+and other-common weight
+
+                   σ < R − cR = aR/2 < aq = q 3 < q/2.
+   Both endpoints have reach above q, so both contain the star center h. If
+g ̸= h, the weight of h, which exceeds q/2, would be included in σ, impossible.
+Thus g = h, and H > R − q ≥ aR, while H < q by Appendix A.3. In
+particular ϕH > q. All no-h reaches are below q < ϕH, and the common-
+client argument rules out this case for arbitrary cycle length.
+
+A.10. The first edge and selection of a single-large-customer anchor.
+The first-edge argument below applies to every large-pair family, as used in
+Appendix A.9.2. After that argument, only E = ∅ or E = {{h, j}} remains
+after Appendix A.9.2. Here “h-only” means that h is the location’s only
+large customer; it may have any number of small customers.
+
+A.10.1. The maximum-reach first edge. Choose A0 of reach R, and put
+A1 = b(A0 ). Equation (A.3) gives responder load P ≥ d(A0 ) > cR and
+incumbent load Q < q. An equal-reach responder is impossible because the
+equal-half equilibrium has P = Q. Thus R1 < R, and take a pure menu
+member from P.
+   There must be at least one common customer assigned forward, since
+otherwise Q = R ≥ 1. If at least two went forward, their equilibrium
+conditions would give
+
+                            2P ≤ R + Q < R + q,
+  which, with 2P > ϕR, would imply R < 1. Therefore exactly one customer
+h goes forward. Its weight is
+
+
+(A.18)               H = R − Q > R − q ≥ aR > q/2.
+   Appendix A.3 gives H < q, so (A.12) holds. If σ0 is the other-common
+weight, then P = R1 − σ0 > q, so σ0 < R − q < H. As in Appendix A.8.2,
+σ0 ≥ R − R1 would make the reverse pure assignment an exact singleton
+seed in P with responder load R1 − H < K < q. Therefore σ0 < R − R1 , all
+actual equilibria coincide by strict dominance, so the menu minimum is their
+common payoff and
+16 GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+
+
+
+(A.19)        d(A0 ) = R1 − σ0 ,     d(A1 ) > ϕ(R − H) = ϕK.
+   If there is a unique large pair, h belongs to it. Indeed, a maximum-reach
+location must meet that pair by (A.7); the presence of a different large
+customer would create another pair.
+A.10.2. A high h-only anchor always exists. If A0 is h-only, use it. Otherwise
+it has the unique pair, so A1 is h-only by (A.10), since it contains h. In
+either case an h-only location Z has reach
+
+(A.20)                             RZ > cR.
+A.10.3. The case H at least R/2. Suppose H ≥ R/2. Use the h-only anchor
+Z above, with reach z. If any no-h location t had reach rt > ϕH, then
+
+                      rt > cz,     z > cR ≥ crt .
+  Its common weight with Z satisfies
+
+                 C ≤ z − H ≤ H < qrt ,      C ≤ z/2 < qz.
+   Every common customer is small, with weight at most q/2 < az, because
+z > cR ≥ c and ac = q/2. Both reaches exceed c2 R > q. Apply Lemma 2.2
+and then (A.4): the resulting loads meet qd(t) and qd(Z), giving stability.
+   Thus every no-h reach is at most ϕH, and the common-client argument
+gives a contradiction. This rules out H ≥ R/2.
+A.10.4. Selecting consecutive anchors when H is below R/2. Henceforth
+H < R/2. By (A.19),
+
+(A.21)                       d(A1 ) > ϕK > cR.
+  If A1 is h-only, select X = A0 , Y = A1 .
+  The only other possibility is that A0 is h-only and A1 has the unique pair.
+Let A2 = b(A1 ). If A2 lacked h, then
+
+                           R2 ≥ d(A1 ) > ϕK > cR.
+   The common weight between A0 and A2 is at most K < qR2 , and all these
+common customers are small because A0 is h-only. Their weights are at most
+q/2 < aR. The strong cross-chord lemma gives stability, using (A.4) at both
+endpoints, a contradiction. Therefore A2 contains h. Equation (A.10) makes
+it h-only. Since d(A1 ) > q, Appendix A.8.2 gives unique h-transport along
+A1 → A2 . Select X = A1 , Y = A2 .
+   In either selection, write
+
+  x = RX > y = RY > cR,        δ = d(X) = y − σ > cR > ϕH,       ε = d(Y ).
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS 17
+
+  The selected edge has unique h-transport, 0 ≤ σ < x − y, and Y is h-only.
+Furthermore
+
+(A.22)                            y > ϕK.
+   For Y = A1 , this follows from d(A1 ) > ϕK and d(A1 ) ≤ R1 . For Y = A2 ,
+it follows from R2 ≥ d(A1 ) > ϕK. The use of (A.4) in the first case is valid
+because R1 > cR > q.
+A.11. Final two-anchor closure for the empty and single-pair cases.
+Use X, Y, x, y, δ, ε, σ from Appendix A.10.4, and set
+
+                             B = ϕ(y − H).
+  The edge inequality gives ε > ϕ(x − H) > B. Also ε ≤ y by (A.4), so
+x < H + qy. Therefore
+
+                 δ = y − σ > 2y − x > (2 − q)y − H > B,
+  where the last difference is q(H − ay) > 0. Finally, (A.22) gives
+
+(A.23)                   B − K > ϕ(R − 2H) > 0.
+   Thus all assumptions (A.15) of the two-anchor covering lemma hold.
+   If H ≥ y/2, any no-h location of reach above ϕH forms a stable strong
+cross-chord with the h-only anchor Y , exactly as in Appendix A.10.3: both
+reach ratios exceed c, common weight is below q times either reach, and
+common weights are at most q/2 < ay. Hence all no-h reaches are at most
+ϕH, and the common-client argument is a contradiction.
+   It remains that H < y/2. Now
+
+(A.24)                      B > cy > c2 R > q.
+  Any no-h location t with reach rt > B forms a stable strong cross-chord
+with Y . Indeed,
+
+                      rt > cy,       y > cR ≥ crt ,
+  and, since H > aR ≥ ay,
+
+             C(Y, t) ≤ y − H < qy,     C(Y, t) ≤ y − H < qrt .
+   All common customers are small, with weight at most q/2 < ay. Both
+reaches exceed q, so (A.4) upgrades the cross-chord reach thresholds to the
+exact global d-thresholds. Thus no solution forces
+
+(A.25)                    h∈
+                           / Ct    =⇒     Rt ≤ B.
+  Start at Y , which has d(Y ) > B, and follow b. As long as a source has
+d above B, its responder has reach at least that d-value and hence above
+18 GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+B. By (A.25) it contains h. An h-to-h edge with d above B > K strictly
+decreases reach by (A.13).
+   If the path never encountered a d-value at most B, this would give strictly
+decreasing reaches around a finite closed cycle. Otherwise let t be the first
+such location. Its reach is above B, because the preceding source has d above
+B, and is at most y, by the preceding strict decreases. It contains h, and
+d(t) ≤ B. This contradicts the two-anchor covering lemma, Appendix A.8.3.
+   The empty-pair and single-pair cases are impossible. The nondegenerate-
+star case was ruled out in Appendix A.9, and Appendix A.7 excludes all
+other pair families. Thus the no-witness assumption is false.               □
+
+   Appendix B. The cross-chord lemma for arbitrarily many
+                           common customers
+  We prove the existence assertion of Lemma 2.2 by constructing individual
+equilibrium coordinates. The running time is established in Appendix C.
+                                                    √
+B.1. Statement and normalization. Let q = ( 5 − 1)/2, a = q 2 = 1 − q.
+Consider two locations with reaches R ≥ r > ϕR/2. Their common clients
+have arbitrary finite positive weights wi , total C, satisfying
+
+                          C < qr,       max wi ≤ aR.
+                                          i
+  Each common client chooses a location independently and minimizes
+expected total weight at its chosen location, including itself. Exclusive clients
+are forced. Then a possibly mixed Nash equilibrium exists with
+
+                            LA ≥ qr,          LB ≥ qR.
+   Here A is the location with reach R. All probabilities constructed below
+are individual, independent probabilities; no grouping or correlation of clients
+is used.
+   Normalize R = 1, write r = 1 − δ, so 0 ≤ δ < a/2. Let V = 2 − δ − C be
+the union weight, and put
+
+        U = V − 2q = 2a − C − δ,         Z = V − 2qr = 2a − C + q 3 δ.
+  The two lower bounds in (2.1) are equivalent to the following interval for
+the expected load difference ∆ = LA − LB is [−Z, U ].
+  Useful consequences are
+
+         U > q 4 − aδ > q 4 /2 > 0,    Z ≥ U,     Z > 3δ/2,   V /2 > q.
+  For the third inequality, Z > q 4 + (q + q 3 )δ, whose difference from 3δ/2 is
+positive throughout [0, a/2]; at the upper endpoint the difference is aq 3 /4 > 0.
+For the fourth, V > 1 + ar > 1 + q/2 > 2q.
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS 19
+
+B.2. Equilibrium coordinates and three mixers. Give common client i
+coordinate ci = wi (2pi (A) − 1). Its equilibrium conditions are
+
+                          ci = wi    =⇒ ∆ ≤ wi ,
+                          ci = −wi =⇒ ∆ ≥ −wi ,
+                          |ci | < wi =⇒ ci = ∆.
+                                   P
+  The load identity is ∆ = δ + i ci . If there are k ≥ 2 mixed clients and
+pure masses PA , PB , this gives
+
+                        (k − 1)∆ = −δ − PA + PB .
+   Every equilibrium with at least three mixed clients already meets both
+targets. In the constructions below, a designated mixing probability may
+equal an endpoint; the same coordinate formulas remain valid by continu-
+ity, and such a client may be treated as a designated mixer for the mass
+inequalities. For ∆ = d ≥ 0, all mixed weights are at least d, and
+
+                  C ≥ δ + (2k − 1)d + 2PA ≥ δ + 5d.
+  Hence d ≤ (C − δ)/5 < U . Indeed,
+
+                6C + 4δ < 6q + (4 − 6q)δ < 5 − 2q < 10a,
+  where the last strict inequality is q < 5/8. For ∆ = −e ≤ 0, similarly
+
+                   C ≥ (2k − 1)e − δ + 2PB ≥ 5e − δ,
+  so e ≤ (C + δ)/5 < Z. To verify this last inequality,
+
+               6C + (1 − 5q 3 )δ < 6q + (6 − 16q)δ ≤ 6q < 10a.
+  These numerical mass implications apply even when the equilibrium in
+question has only two mixers: whenever C ≥ δ + 5d or C ≥ 5e − δ, the same
+conclusion follows.
+B.3. Largest client and the maximum-square construction. There is
+nothing to prove if C = 0. Otherwise let x be a largest common weight and
+let S = C − x.
+   If δ > S, hold x at B and choose a pure Nash equilibrium of the remaining
+clients. Such an equilibrium exists by the usual finite improvement potential.
+For every intermediate assignment of the remaining clients, the load difference
+satisfies
+                          LB − LA ≤ x + S − δ < x,
+so client x remains stable throughout the repair sequence. In particular, the
+terminal equilibrium has no improvement by x.
+   Moreover LB ≥ r − S > r − δ = 2r − 1 > q. If LA < qr, then LB −
+LA > Z > S, so every remaining shared client must be at A; this gives
+LA = 1 − x ≥ 1 − a = q ≥ qr, a contradiction. This settles δ > S.
+   Now assume δ ≤ S. On the nonempty compact polytope
+20 GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+
+                                                   X
+                P = {(ci )i̸=x : −wi ≤ ci ≤ wi ,          ci = −δ},
+                                                   i̸=x
+   use the polynomial exchange algorithm of Appendix C toP    obtain a vertex at
+which no feasible two-coordinate endpoint move increases i̸=x c2i . A vertex
+has at most one coordinate strictly between its bounds. If all coordinates are
+endpoints, assign x probability 1/2; this gives ∆ = 0 and is an equilibrium.
+   Otherwise let the unique interior coordinate have weight z ≤ x and value d.
+Assign x coordinate d, so x and z both mix independently with probability
+(1 + d/w)/2. The load identity gives ∆ = d. For a pure A client of weight
+v, decreasing its coordinate and increasing the pivot is locally feasible, and
+pairwise endpoint maximality gives d ≤ v. For a pure B client, the opposite
+perturbation gives d ≥ −v. Thus this is a Nash equilibrium.
+   The same two-coordinate endpoint comparisons give stronger exchange
+conditions. If d > 0, every pure A client has weight at least z; every pure B
+client of weight below z has weight at most d.
+   For the first assertion, consider a pure A client of weight v. If 2v ≥ z − d,
+move the pivot to z and its coordinate from v to v − (z − d). The change in
+the squared objective is
+
+                               2(z − d)(z − v),
+  so v ≥ z. If 2v < z − d, flip its coordinate to −v and increase the pivot to
+d + 2v. The gain 4v(d + v) > 0 is impossible.
+  For a pure B client of weight v < z, if 2v ≥ z + d, moving the pivot to
+−z and its coordinate to −v + (z + d) gives positive gain 2(z + d)(z − v),
+impossible. Otherwise flipping it to +v and moving the pivot to d − 2v has
+gain 4v(v − d), forcing v ≤ d.
+  For negative gap −e, the symmetric statements hold: every pure B client
+has weight at least z; pure A clients below z have weight at most e.
+
+B.4. A bad positive gap cannot persist. Suppose the constructed equi-
+librium has gap d > U . If a pure A client exists, its weight is at least z ≥ d.
+With pure masses PA , PB , the two-mixer balance gives PB = δ + PA + d, and
+hence
+
+                     C = x + z + 2PA + δ + d ≥ δ + 5d.
+   Appendix B.2 rules this out. Therefore all other clients are pure B, with
+total weight δ + d.
+   Call such a client large if its weight is at least z; every other one has
+weight at most d. If some latter client has weight v ∈ [d/3, d], mix it with
+x, z. The new gap is (d − v)/2, which is within all three weights, and every
+remaining client stays pure B. This is a three-mixer equilibrium and meets
+the two load bounds. We can therefore assume every nonlarge client has
+weight below d/3.
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS 21
+
+   There must be a large client. Otherwise order the small weights decreasing-
+ly and take the prefix just before its running sum first reaches d. Let its sum
+be T < d, and let v be the next weight. Then d − T ≤ v, and every weight
+in the prefix is at least v. Mix this prefix together with x, z, keeping all
+others at B. If the prefix contains m clients, the new gap is (d − T )/(m + 1),
+feasible for every mixer. Since each small weight is below d/3, the prefix is
+nonempty; the resulting equilibrium has at least three mixers and meets the
+two load bounds.
+   We next show d ≤ δ. If at least two large clients exist, δ + d ≥ 2z ≥ 2d. If
+exactly one exists, call its weight y ≥ z and let the small total be T = δ +d−y.
+If δ + T ≤ 2z, mix x, y, z and place every small client at A; the gap is
+−(δ + T )/2, feasible for all three mixers, and gives the two load bounds.
+Otherwise
+
+                       2δ + d ≥ δ + T + z > 3z ≥ 3d,
+  which gives δ > d.
+  Change to the pure profile with x at A and all other common clients at B.
+Since C = x + z + δ + d, its loads are
+
+                      LA = r − z − d,       LB = r − x.
+  In fact LB ≥ q. Otherwise x + δ > a, and hence C > a + 2d. Together
+with C < qr this gives
+
+                                    q 3 − qδ
+                                 d<          .
+                                        2
+   But d > U > q 4 − aδ; combining these inequalities forces δ > a, contrary
+to δ < a/2. Also, since x ≥ z and δ ≥ d,
+
+               2(z + d) ≤ C < qr,       LA > (1 − q/2)r > qr.
+   Repair this pure profile by successive strict improvements. If its initial
+gap G = x − z − d is nonnegative, both loads are at least q, and every
+improvement leaves both new loads strictly between the previous two loads,
+so both quotas remain satisfied.
+   If G < 0, its magnitude is at most d. The clients x, z and all large clients
+have weights at least d, and cannot improve; only the small clients, each below
+d/3, can move. Before the first sign reversal LA increases and LB ≥ V /2 > q.
+At the first reversal the positive gap is smaller than the moved weight, hence
+below
+
+                        d/3 ≤ δ/3 < a/6 < q 4 /2 < U.
+  At this point both loads exceed q, and remain so during all later improve-
+ments. The finite potential ensures termination at a pure Nash equilibrium
+meeting the two load bounds.
+22 GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+B.5. A bad negative gap cannot persist. Suppose instead the construct-
+ed equilibrium has gap −e < −Z. Every pure B client has weight at least
+z ≥ e. If any exists, the two-mixer balance PA − PB = e − δ gives
+
+                      C = x + z + 2PB + e − δ ≥ 5e − δ,
+   which Appendix B.2 rules out. Thus all remaining clients are at A, with
+total T = e − δ ≤ e. If some has weight v ≥ e/3, mix it with x, z, giving gap
+−(e − v)/2. This is a valid designated-three-client equilibrium and meets the
+two load bounds. We may therefore assume every remaining weight is below
+e/3.
+   Since C = x + z + e − δ ≥ 2z + e − δ and e > Z,
+
+                  2z < C − Z + δ = 2C − 2a + 2aδ < 2q 3 r.
+  Consequently e ≤ z < q 3 r. Moreover
+
+                          U > q 4 − aδ > q 3 r/3 > e/3.
+  For the middle inequality, multiply by three and use
+
+     3q 4 − q 3 − (3a − q 3 )δ > 3q 4 − q 3 − (3a − q 3 )a/2 = (5 − 8q)/2 > 0.
+  Change to the pure profile with x at B, and every other common client at
+A. Its loads are
+
+                LA = 1 − x ≥ 1 − a = q,          LB = 1 − z − e.
+  If LB ≥ q, successive pure improvements preserve both lower bounds.
+Otherwise the gap G = z + e − x is positive and satisfies
+
+                                   U < G ≤ e.
+   Clients x, z, having weights at least e, cannot improve. Only the remaining
+tiny clients can move. While the gap is positive, LA ≥ V /2 > q, and LB
+increases. At the first negative sign reversal the new absolute gap is below
+the weight moved, hence below e/3 < U ≤ Z; both loads then exceed q, and
+all later improvements are safe.
+   If the process terminates without reaching LB ≥ q, its positive gap is still
+larger than U > e/3. No tiny client can remain at A, because every one
+would have a strict improvement. Thus all tiny clients must be at B, and
+LB = r − z. But
+
+              δ + z < q 3 + (1 − q 3 )δ = q 3 + 2aδ < q 3 + a2 = a,
+  so LB = r − z > q, a contradiction. The final equilibrium therefore meets
+both targets.
+  This proves the lemma for arbitrary finite numbers of shared clients.
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS 23
+
+B.6. Termination of pure improvements. If a shared client of weight
+w strictly improves by leaving a facility of load H for one of load L < H,
+then w < H − L. The new loads H − w, L + w both lie strictly between
+L, H. The absolute load gap strictly decreases; if its sign reverses, the new
+absolute gap is less than w. The potential L2A + L2B strictly decreases, so
+any sequence of strict pure improvements terminates in this finite game. All
+constructions and repairs above therefore use ordinary independent mixed
+equilibria or pure equilibria.
+
+ Appendix C. A polynomial constructor for the strong chord
+   This appendix supplies the algorithmic step used in menu C. The objective
+is to obtain the exchange inequalities used in Appendix B.3. Computing a
+global maximum of a convex quadratic function is unnecessary.
+C.1. P
+     An exchange algorithm on a box slice. Let v1 , . . . , vm > 0, let
+|t| ≤ i vi , and define
+                                    X                  X
+      P = {z ∈ Rm : −vi ≤ zi ≤ vi ,   zi = t}, F (z) =       zi2 .
+                                         i                       i
+A vertex has at most one coordinate strictly between its two bounds. To
+obtain an initial vertex, begin at zi =P−vi and increase coordinates in index
+order until their total increase is t + i vi . All but possibly one coordinate
+end at a bound. If all coordinates are at bounds, stop. Otherwise let j be
+the unique interior coordinate, write vj = z and zj = d, and call j the pivot.
+  For each i ̸= j write zi = sv, where s ∈ {−1, 1} and v = vi . Holding the
+sum b = d + sv fixed, the feasible pair segment is
+      zj = u,     zi = b − u,       u ∈ [max(−z, b − v), min(z, b + v)].
+The current d is one endpoint. Inspect the other endpoint. If it strictly
+increases the two squares, move there and restart the scan in index order.
+If no pair endpoint strictly improves, return the current vertex. At each
+move at least one of the two changed coordinates is at a bound; all other
+coordinates were already at bounds. Thus feasibility and the vertex invariant
+are preserved.
+Theorem C.1. This algorithm terminates after O((m + 1)3 ) moves and
+O((m + 1)4 ) rational arithmetic operations. Its output is a vertex at which
+no two-coordinate endpoint move increases F .
+Proof. If a nonterminal move changes the pivot from weight z to weight v,
+the old pivot reaches the bound sz. The gain is
+                                2(z − sd)(z − v).
+Since |d| < z, a strict gain implies v < z. Every pivot change strictly
+decreases its weight, so there are at most m − 1 changes.
+  If the pivot does not change, coordinate i flips from sv to −sv, d′ = d+2sv,
+and |d′ | > |d|. Fix a maximal phase with one pivot. When such a flip reverses
+24 GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+the nonzero sign of d, it requires v > |d| and leaves |d′ | = 2v − |d| > v. The
+weights of successive sign-reversing flips therefore strictly increase. There
+are at most m − 1 reversals in one phase. Between reversals every nonpivot
+coordinate flips at most once: a nonreversing improving flip must have s
+aligned with the sign of d, and afterwards that coordinate is opposed to that
+sign. A first flip from d = 0 merely establishes a sign; a strict gain never
+returns to zero. Thus each phase contains O((m + 1)2 ) flips. There are at
+most m phases and at most one final all-bound move. Scanning at most
+m − 1 pairs for each move proves the claimed operation bound. The estimate
+is independent of weight magnitudes and separations.                         □
+
+C.2. The exact inequalities supplied by the output. Suppose the
+returned vertex still has pivot weight z and value d. On each pair segment, F
+is convex. Since the opposite endpoint has no larger value, no interior point
+has larger value either. Its directional derivative at the current endpoint
+therefore gives
+(C.1)            zi = +v ⇒ d ≤ v,        zi = −v ⇒ d ≥ −v.
+For d > 0 the endpoint comparisons also imply
+(C.2)         zi = +v ⇒ v ≥ z,        zi = −v, v < z ⇒ v ≤ d.
+Indeed, for a positive coordinate, if 2v ≥ z − d, moving the pivot to z has
+gain 2(z − d)(z − v); otherwise flipping the coordinate has gain 4v(d + v) > 0.
+Either alternative excludes v < z. For a negative coordinate with v < z,
+if 2v ≥ z + d, moving the pivot to −z has the forbidden positive gain
+2(z + d)(z − v). Otherwise its full flip has gain 4v(v − d), forcing v ≤ d. For
+d < 0 the signs reverse: pure negative coordinates have weight at least z,
+and pure positive coordinates below z have weight at most −d.
+   These are exactly the local derivative and four endpoint comparisons in
+Appendix B.3. That appendix proves the initial customer equilibrium using
+(C.1). Its positive-gap branch uses the two statements of (C.2); its negative-
+gap branch uses their sign reversal. The later mass inequalities, explicit
+mixer choices and pure repairs never compare quadratic objectives again.
+Thus every remaining argument in Appendix B is valid for this polynomially
+obtained vertex.
+   The output need not maximize F globally. For weights (14, 13, 19) and
+target −10, the vertex (14, −5, −19) has no improving pair endpoint, but its
+value 582 is below the value 654 at (−14, −13, 17). This distinction is why
+only the required exchange inequalities are claimed.
+
+C.3. Completing and timing the strong-chord construction. Normal-
+ize the larger reach to one, put δ = 1 − r, choose a largest common weight x,
+and write S for all other common weight. If S ≥ δ, apply Theorem C.1 to the
+other coordinates with target −δ. If its output is all-bound, give x coordinate
+zero. Otherwise give x the pivot coordinate d. The coordinate
+                                                          P       of customer i
+is ci = wi (2pi (A) − 1), and the gap identity is ∆ = δ + i ci . Therefore the
+   GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS 25
+
+resulting initial profile is exactly the equilibrium of Appendix B.3, with one
+or two designated mixers. If it meets the two quotas, return it.
+   If a quota fails, execute the following ordered branch table from Appen-
+dices B.4–B.5. For a positive gap d > U , first test for a pure A-side client; the
+three-mixer bound rules this case out. Otherwise scan for a nonlarge client
+of weight in [d/3, d]; if one exists, use it as the third mixer. If none exists,
+sort the remaining weights, take the prefix whose running sum first reaches d,
+and apply the large-client split and the final pure repair in the order stated
+in the appendix. For a negative gap −e < −Z, test for a pure B-side client,
+then scan for a remaining client of weight at least e/3, and otherwise use
+the symmetric pure seed and repair. Every test is an exact comparison of
+rational sums; every prefix and sort is linear or O(k log k), and a pure branch
+always moves a largest strictly improving client. The quota-preservation
+arguments in Appendix B apply to each returned branch. If S < δ, fix x at
+the lower-reach location and perform the same largest-improvement rule on
+the other customers, as in Appendix B.3. The fixed customer’s stability is
+proved there and is preserved throughout.
+   For completeness, this pure improvement rule moves at most k customers
+in a two-facility game with k movable common customers, even with private
+base loads. An improving weight w changes absolute gap g to |g − 2w| < g.
+Before a sign reversal, candidates on the higher side can only disappear, so
+chosen weights are nonincreasing. At a reversal the new gap is below the last
+moved weight; every earlier moved customer is therefore permanently stable,
+as all future gaps are smaller. Any newly movable customer has weight
+below the new gap, hence below the preceding chosen weight. Inductively no
+customer moves twice. A direct scan for each move costs O((k + 1)2 ) rational
+operations. Fixed customers are simply absorbed into the private base loads
+in this argument.
+   The exchange algorithm consequently dominates the running time: O((k +
+1)4 ) rational operations per strong chord. Every exchange coordinate is an
+endpoint or the slice target minus a signed sum of input weights. Subsequent
+mixed gaps divide signed sums by integers at most k, and probabilities divide
+by the corresponding input weight. The encoding lengths remain polynomial.
+The exact golden-ratio comparisons described in Section 2.4 avoid numerical
+tolerances.
+   The elementary two-facility improvement analysis above is also consistent
+with the maximum-weight improvement rule studied for load balancing by
+Even-Dar, Kesselman, and Mansour [1]. The box-slice exchange bound is
+supplied in full here; no efficient global convex-maximization claim is used.
+
+                                      References
+[1] Eyal Even-Dar, Alexander Kesselman, and Yishay Mansour. Convergence time to nash
+    equilibrium in load balancing. ACM Transactions on Algorithms, 3(3):32, 2007.
+[2] Simon Krogmann, Pascal Lenzner, Alexander Skopalik, Marc Uetz, and Marnix C.
+    Vos. Equilibria in two-stage facility location with atomic clients. In Proceedings of the
+26 GOLDEN-RATIO EQUILIBRIA FOR TWO FACILITIES WITH ATOMIC CLIENTS
+
+    Thirty-Third International Joint Conference on Artificial Intelligence, pages 2842–2850,
+    2024.
+[3] Marnix C. Vos. Equilibria in the two-stage facility location game with unsplittable
+    clients. Master’s thesis, University of Twente, July 2023.
+
