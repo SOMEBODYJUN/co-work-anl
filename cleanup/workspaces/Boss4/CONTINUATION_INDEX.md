@@ -4,7 +4,7 @@
 
 后续100源形成51正式对象，正文pushed b24f1909257fc618113c336fa963a81cf0bbf68d；其中source-envelope12先done d58152cae3174301d9feb86af1fbb7bb7ce55834，余88及另10编译依赖done pushed b69dfcbacf1d3857a1058a47ed87f9819c26091c。
 
-当前另101源数学处理/真实复现和逐源回执齐全，先集中checkpoint确认pushed再done；记录CONTINUATION_RECEIPTS_101.json。写作时仍有UM恢复9源正在完整整理，其他下一闭包只metadata准备，未认领。
+另101源已先checkpoint pushed 760ff40cef415b7cf06f7172e0b94717d86f7fbb，再逐源done pushed a847763a85cfdb659b1a38ac21aa925554f5b55a；记录CONTINUATION_RECEIPTS_101.json。UM恢复9源数学及回执已交付，待单独checkpoint/done；下一59源只有metadata选批，尚未认领。
 
 | 本批子组 | 来源数 | 逐源回执 |
 | --- | ---: | --- |
