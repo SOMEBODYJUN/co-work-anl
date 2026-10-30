@@ -1,0 +1,75 @@
+{
+  "scope": "Three new literal boundary checks; original 1080-instance main not executed",
+  "source_sha256": "0961efd2ca2f1a163e12611b0dc3f22ac47805bb5a1204ce5198bcec1c7febae",
+  "actual_main_parameters": [
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      4,
+      2
+    ]
+  ],
+  "historical_report_scope": "incorrectly claims q=3 for every r=0,1,2",
+  "static_instance_count": 1080,
+  "cases": [
+    {
+      "name": "zero-private-endpoint-cap",
+      "n": 1,
+      "edges": [],
+      "k": 2,
+      "h": "2",
+      "r": 0,
+      "alpha": "1",
+      "opt": "2",
+      "assignments": 1,
+      "old_uncapped_alpha_plus_h": "3",
+      "corrected_lower": "2"
+    },
+    {
+      "name": "actual-third-main-parameter",
+      "n": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "k": 2,
+      "h": "1/4",
+      "r": 2,
+      "alpha": "3/2",
+      "opt": "7/4",
+      "assignments": 72,
+      "old_uncapped_alpha_plus_h": "7/4",
+      "corrected_lower": "7/4"
+    },
+    {
+      "name": "zero-macro-excluded-from-positive-yes",
+      "n": 1,
+      "edges": [],
+      "k": 0,
+      "h": "1/3",
+      "r": 0,
+      "alpha": "1",
+      "opt": "0",
+      "assignments": 1,
+      "old_uncapped_alpha_plus_h": "4/3",
+      "corrected_lower": null
+    }
+  ],
+  "python": "3.12.14"
+}

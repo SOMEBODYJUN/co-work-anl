@@ -1,0 +1,79 @@
+[
+  {
+    "id": "138311ac22dbdd11174b",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/CATALOG.md",
+    "line": "475",
+    "text": "| [组—汇点比例处理时间的联合槽候选](<questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md>) | `research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md` | 记录把等端时间放宽为组—汇点恒定比例的联合宏/home/sink槽候选、完整量词、证明义务和未解决的分组生成限制。；配套 [共同资格私有组的加权出口与联合槽舍入](<current/unrelated_machines/weighted_group_joint_slot_rounding.md>) | 候选或未闭合义务；保存不升级状态；关联 `UM-DISTORTED-GROUP-JOINT-SLOT-v1`、`UM-DISTORTED-GROUP-PROMISE-APPROX-v1`、`UM-RATIO-GROUP-JOINT-SLOT-v1`，[命题合同（共 4 项）](assets.json) |"
+  },
+  {
+    "id": "8cebb6932c909f78d976",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/current/claims.md",
+    "line": "884",
+    "text": "| UM-RATIO-GROUP-JOINT-SLOT-v1 | 唯一home共同资格组内 `p_zj=ρ_hz w_j`，给定T、W_h≤T、w_j≤δT、宏端>T/2；候选联合槽输出 home≤(3/2+δ)T、sink≤(1+ρ_max/2)T，ρ_max<2。 | [比例组联合槽候选](../questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md)；候选证明草稿，内部两路攻击无fatal报告，正式审查/新颖性未认证；主目标OPEN。 |"
+  },
+  {
+    "id": "8cebb6932c909f78d976",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/current/claims.md",
+    "line": "885",
+    "text": "| UM-RATIO-GROUP-PROMISE-APPROX-v1 | 同一比例组结构，OPT处承诺阈值，固定 δ̄<1/2、ρ̄<2 时候选 `Cmax≤max(3/2+δ̄,1+ρ̄/2)OPT`；比例分组不是一般输入免费结构。 | [比例组联合槽候选](../questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md)§1、§5；候选状态，未替代UM-TARGET-v1。 |"
+  },
+  {
+    "id": "940acf0c0aed3103cfdb",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/current/unrelated_machines/README.md",
+    "line": "237",
+    "text": "问题账本新增 `UM-RATIO-GROUP-JOINT-SLOT-v1` 与 `UM-RATIO-GROUP-PROMISE-APPROX-v1` 候选。它把 `weighted_group_joint_slot_rounding.md` 的“组内所有有限端时间相同”放宽为：对每个组 `h` 和共同资格 sink `z`，存在任务无关比例 `ρ_hz`，使 `p_zj=ρ_hz w_j`。按 `c_hz=ρ_hz(W_h−T/2)_+` 排序造槽并与宏/home容量一次整数流，可得 home≤`(3/2+δ)T`、sink≤`(1+ρ_max/2)T`；固定 `δ<1/2, ρ_max<2` 才有结构类统一低于2。候选正文、必要性、未知OPT单调网格和待审义务见 [组—汇点比例联合槽候选](../../questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md)。分组生成、唯一home和共同资格仍未从一般矩阵中可计算提取，`UM-TARGET-v1`保持OPEN。"
+  },
+  {
+    "id": "0e59dadbc4e30c209811",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md",
+    "line": "15",
+    "text": "固定阈值命题 `UM-RATIO-GROUP-JOINT-SLOT-v1`：给定有理 `T≥0`、`0≤δ<1/2`，若"
+  },
+  {
+    "id": "0e59dadbc4e30c209811",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md",
+    "line": "38",
+    "text": "未知最优值命题 `UM-RATIO-GROUP-PROMISE-APPROX-v1`：在同一结构类中，不给 `OPT`，承诺在真实 `OPT` 处上述三项阈值条件成立（`W_h≤OPT`, `w_j≤δOPT`, 所有有限宏端 `>OPT/2`），并给定 `δ̄,ρ̄` 的固定上界。则有确定性位多项式算法输出实际调度，`C_max≤αOPT`。若 `OPT=0`，逐任务选择零端；空任务直接输出空分配。若比例常数随输入任意逼近边界，则这里只得到逐实例 `max{3/2+δ,1+ρ_max/2}`，不声称统一 `ε`。"
+  },
+  {
+    "id": "984a73cedc8b69b63593",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/unrelated_machines/CLAIMS.md",
+    "line": "1098",
+    "text": "## UM-RATIO-GROUP-JOINT-SLOT-v1：组—汇点比例处理时间的联合槽候选"
+  },
+  {
+    "id": "984a73cedc8b69b63593",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/unrelated_machines/CLAIMS.md",
+    "line": "1103",
+    "text": "- Conclusion：候选正面结构接口；等端处理时间的加权组是 ρ_hz=1 特例。未知OPT承诺版本另记 UM-RATIO-GROUP-PROMISE-APPROX-v1。"
+  },
+  {
+    "id": "984a73cedc8b69b63593",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/unrelated_machines/CLAIMS.md",
+    "line": "1110",
+    "text": "## UM-RATIO-GROUP-PROMISE-APPROX-v1：组—汇点比例结构的未知OPT候选"
+  },
+  {
+    "id": "984a73cedc8b69b63593",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/unrelated_machines/CLAIMS.md",
+    "line": "1116",
+    "text": "- Dependencies：UM-RATIO-GROUP-JOINT-SLOT-v1、UM-WEIGHTED-GROUP-PROMISE-APPROX-v1。"
+  },
+  {
+    "id": "46a002184c7580ebe0db",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/unrelated_machines/README.md",
+    "line": "190",
+    "text": "- `UM-RATIO-GROUP-JOINT-SLOT-v1` / `UM-RATIO-GROUP-PROMISE-APPROX-v1`：组内任务在 home 与共同资格 sink 之间按组—汇点恒定比例缩放；按真实比例成本 `ρ_hz d_h` 排序造槽，给出 home `≤(3/2+δ)T`、sink `≤(1+ρ_max/2)T` 的候选接口。唯一 home、共同资格、宏大边和固定比例仍是额外结构，正文在 `research/questions/unrelated_machines/group_sink_ratio_joint_slot_candidate.md`。"
+  }
+]
