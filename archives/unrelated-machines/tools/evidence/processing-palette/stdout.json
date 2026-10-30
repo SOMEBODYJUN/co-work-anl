@@ -1,0 +1,77 @@
+{
+  "kind": "new source-informed interface characterization",
+  "python": "3.12.14",
+  "source_sha256": "aea8a50663aa63803b9f5377e992cc7abb6fc3b97ad53bf4c3a2f3c68b4170e1",
+  "characterization_script_sha256": "7c6061d1707a015dd48e13b5a8e6ad89563d841f39d39c8947911d47b7473f76",
+  "observations": [
+    {
+      "name": "all_finite_edges_zero",
+      "matrix": [
+        [
+          "0"
+        ]
+      ],
+      "independent_optimum": "0",
+      "independent_witness": [
+        0
+      ],
+      "every_job_has_zero_edge": true,
+      "helper_result": {
+        "name": "all_finite_edges_zero",
+        "opt": "0",
+        "zero_only": true
+      },
+      "helper_outcome": "returned"
+    },
+    {
+      "name": "zero_optimum_with_unused_positive_edge",
+      "matrix": [
+        [
+          "0"
+        ],
+        [
+          "1"
+        ]
+      ],
+      "independent_optimum": "0",
+      "independent_witness": [
+        0
+      ],
+      "every_job_has_zero_edge": true,
+      "helper_outcome": "AssertionError",
+      "exception_message": ""
+    },
+    {
+      "name": "positive_optimum_control",
+      "matrix": [
+        [
+          "1"
+        ]
+      ],
+      "independent_optimum": "1",
+      "independent_witness": [
+        0
+      ],
+      "every_job_has_zero_edge": false,
+      "helper_result": {
+        "name": "positive_optimum_control",
+        "machines": 1,
+        "jobs": 1,
+        "finite_edges": 1,
+        "feasible_assignments": 1,
+        "assignments_with_all_edges_finite": 1,
+        "common_denominator_bits": 1,
+        "g": "1",
+        "B": "1",
+        "g_over_B": "1",
+        "opt": "1",
+        "rho": "1",
+        "grid_targets_checked": 1,
+        "arithmetic_inequalities_checked": 2,
+        "zero_only": false
+      },
+      "helper_outcome": "returned"
+    }
+  ],
+  "scope": "The zero-optimum model branch is broader than this internal helper's all-finite-edges-zero shortcut.  The historical ten positive-optimum fixtures, generic LP solving and the universal theorem are not rerun here."
+}
