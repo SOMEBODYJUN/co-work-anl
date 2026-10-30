@@ -1,0 +1,3276 @@
+{
+  "title": "真实最优矩固定向量规则的双路精确证书与实际范围",
+  "executed_at_utc": "2026-10-17T05:35:37.156407+00:00",
+  "arithmetic": "fractions.Fraction; no floating decisions",
+  "claim_scope": [
+    "UM-PROJECTED-VECTOR-GREEDY-UNBOUNDED-v1",
+    "UM-PROJECTED-VECTOR-GREEDY-UNIT-COLLISION-v1"
+  ],
+  "file_sha256": {
+    "research/current/unrelated_machines/projected_vector_greedy_unbounded.md": "2fcf158da283347c1b58db5358e46b21d33e8d6c8edec5c568d8938993e994f1",
+    "tests/audits/unrelated_machines/projected_vector_greedy.py": "e03c73b9f9675d9ed6748e749c1ca88f594c3b546c7d391ebd7c80139c2f078d",
+    "tests/audits/unrelated_machines/vector_moment_greedy_independent.py": "097157d029f33517350ad8bafb1360cf86cc9b0b324e65a5693e7112b3a91eb4",
+    "examples/unrelated_machines/projected_vector_greedy_unit5.json": "9818f23c6a9190f1cbe4a1f08aa761c4a063ee810925e057b4a6823d77af5222",
+    "examples/unrelated_machines/projected_vector_control3_positive.json": "f76a2da028ca6088253e9e4be691389add76ba43d6c247786f09e80384982cab"
+  },
+  "commands": [
+    "python3 tests/audits/unrelated_machines/projected_vector_greedy.py examples/unrelated_machines/projected_vector_greedy_unit5.json examples/unrelated_machines/projected_vector_control3_positive.json",
+    "python3 tests/audits/unrelated_machines/vector_moment_greedy_independent.py examples/unrelated_machines/projected_vector_greedy_unit5.json --all-orders",
+    "python3 tests/audits/unrelated_machines/vector_moment_greedy_independent.py examples/unrelated_machines/projected_vector_control3_positive.json",
+    "python3 tests/audits/unrelated_machines/vector_moment_greedy_independent.py --self-check"
+  ],
+  "canonical_gram_inverse": {
+    "runs": [
+      {
+        "arithmetic": "fractions.Fraction; independent columns and Gram inverse",
+        "python_version": "3.12.14",
+        "input_sha256": "9818f23c6a9190f1cbe4a1f08aa761c4a063ee810925e057b4a6823d77af5222",
+        "script_sha256": "e03c73b9f9675d9ed6748e749c1ca88f594c3b546c7d391ebd7c80139c2f078d",
+        "machines": 5,
+        "jobs": 5,
+        "atoms": 14,
+        "dimension": 12,
+        "target": "1",
+        "max_support_makespan": "1",
+        "all_processing_times_positive_and_finite": true,
+        "all_winners_strict": true,
+        "strict_steps": 5,
+        "minimum_gap_over_state_norm": "60889883528620/1391369553599211",
+        "assignment": [
+          0,
+          1,
+          2,
+          3,
+          1
+        ],
+        "loads": [
+          "1",
+          "2",
+          "1",
+          "1",
+          "0"
+        ],
+        "makespan": "2",
+        "remaining_true_prefix_atoms": 0,
+        "steps": [
+          {
+            "job": 0,
+            "machine": 0,
+            "scores": [
+              "5/14",
+              "3/14",
+              "1/7",
+              "1/7",
+              "1/7"
+            ],
+            "strict_gap": "1/7",
+            "true_prefix_atoms": 5
+          },
+          {
+            "job": 1,
+            "machine": 1,
+            "scores": [
+              "0",
+              "425/2226",
+              "0",
+              "0",
+              "19/159"
+            ],
+            "strict_gap": "1/14",
+            "true_prefix_atoms": 3
+          },
+          {
+            "job": 2,
+            "machine": 2,
+            "scores": [
+              "14587/4019679",
+              "0",
+              "342595/4019679",
+              "1304509/18758502",
+              "14587/4019679"
+            ],
+            "strict_gap": "882803/56275506",
+            "true_prefix_atoms": 2
+          },
+          {
+            "job": 3,
+            "machine": 3,
+            "scores": [
+              "7060515485/1422701067186",
+              "25149175/711350533593",
+              "49501777/26346316059",
+              "55036175531/1422701067186",
+              "90960130/2927368451"
+            ],
+            "strict_gap": "10829552351/1422701067186",
+            "true_prefix_atoms": 1
+          },
+          {
+            "job": 4,
+            "machine": 1,
+            "scores": [
+              "0",
+              "87309533259533/5994550946588211",
+              "24075411496421/35967305679529266",
+              "113038867573/666061216287579",
+              "231483658014289/17983652839764633"
+            ],
+            "strict_gap": "30444941764310/17983652839764633",
+            "true_prefix_atoms": 0
+          }
+        ],
+        "scope": "Exact supplied finite distribution and fixed order; not a general upper bound."
+      },
+      {
+        "arithmetic": "fractions.Fraction; independent columns and Gram inverse",
+        "python_version": "3.12.14",
+        "input_sha256": "f76a2da028ca6088253e9e4be691389add76ba43d6c247786f09e80384982cab",
+        "script_sha256": "e03c73b9f9675d9ed6748e749c1ca88f594c3b546c7d391ebd7c80139c2f078d",
+        "machines": 3,
+        "jobs": 323,
+        "atoms": 12,
+        "dimension": 5,
+        "target": "1",
+        "max_support_makespan": "1",
+        "all_processing_times_positive_and_finite": true,
+        "all_winners_strict": true,
+        "strict_steps": 323,
+        "minimum_gap_over_state_norm": "521796552054743579919012803736103754805929174079299609329918781302396066604308628876495007444522112379841017088872931704329449168405685550808682723900356016106905055877263590516456572112977131980110549829082698766007591969197910567566245235280902663977475942956645678249690259536491121210364134615755975124018756981543127678560356556083338695220811908961619353084431429840353872864147975314771550597428934643053807203912742804259205440888668897188691779225965706169683861913420624317857548073216915561365998120284599418476255998234939414723525791498737866991634447326774296920098885324511179115503246334791659784384282138529907219967824312767877339547415382181201860879434198114950246832155621925679531729779113788720231356357938480574979878710459475270660635806473737848950054452364759019207569578283199594312833035790205434073623080072170192297217265632047530509329625059203115969158987179351235938691361989655225687194199206355484391119563623648055762150847129626453148503075434942545353013501813217141120396998543292558085217794246045410666138670451208680196460555202351448348108564656465227471881475538399394406778407258698547874219995193485655905566408566/551878661967636157049481214274559603496973480105221959089060061815666538364762248001680889347772274896867509089347973154746416525379173467737095503160448759179715105722030185313167615532884117969582919116062646334413649851678189101734733139299334829213978662443288514324695140971612468504635668787102506553131987162269878526958327845207758120810249810341753026285598751930088248701944461882055073796032207542096827121718094877323209328264325556476207822607309360515597458798140911564427802188618168229488755696050995056016917530330380022565728611779040861393135297339371599217739238442235725854315695887858620903332589918095910726724768290348231705412653245947338728117593523386050654219959046781227479210855692737837727036866546843892541969997839272989301829222755254834958668721961134707898208702582907812869814665750159488211269740532345318603999492858622046222320542982336635274057326901613887315084917136805195258268147224347782473296505017660043402616723065483210349756035663137928394298147964132804669952201226163095899933439137785651459103064886550551418941883632411433274639117691315292111330557128312315907488505200611788139550662022259288980089955715745",
+        "assignment": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "loads": [
+          "2579/966",
+          "0",
+          "1"
+        ],
+        "makespan": "2579/966",
+        "remaining_true_prefix_atoms": 0,
+        "steps": [],
+        "scope": "Exact supplied finite distribution and fixed order; not a general upper bound."
+      }
+    ]
+  },
+  "independent_sample_projection_unit": {
+    "arithmetic": "fractions.Fraction; sample-space orthogonal projection",
+    "python_version": "3.12.14",
+    "input_sha256": "9818f23c6a9190f1cbe4a1f08aa761c4a063ee810925e057b4a6823d77af5222",
+    "script_sha256": "097157d029f33517350ad8bafb1360cf86cc9b0b324e65a5693e7112b3a91eb4",
+    "atoms": 14,
+    "dimension": 12,
+    "unique_generator_functions": 24,
+    "m": 5,
+    "n": 5,
+    "T": "1",
+    "all_atom_makespans_equal_T": true,
+    "optimality_certified_by_single_job": true,
+    "single_job_lower_bound": "1",
+    "all_winners_strict": true,
+    "choices_in_job_order": [
+      0,
+      1,
+      2,
+      3,
+      1
+    ],
+    "loads": [
+      "1",
+      "2",
+      "1",
+      "1",
+      "0"
+    ],
+    "makespan": "2",
+    "true_prefix_atoms_after_all_jobs": 0,
+    "scope": "Only supplied finite true-distribution witnesses and explicitly enumerated orders.",
+    "minimum_normalized_margin": {
+      "exact_fraction_sha256": "8e28c8968cc8044321660bed98e44c1a2a008050133623d382726f02c68e3cfc",
+      "lower": "437625527819761030698357658423050464105/10000000000000000000000000000000000000000",
+      "upper": "437625527819761030698357658423050464106/10000000000000000000000000000000000000000",
+      "numerator_bits": 46,
+      "denominator_bits": 51,
+      "strictly_positive": true
+    },
+    "minimum_normalized_margin_job": 4,
+    "steps": [
+      {
+        "job": 0,
+        "machine": 0,
+        "scores": [
+          "5/14",
+          "3/14",
+          "1/7",
+          "1/7",
+          "1/7"
+        ],
+        "strict_margin": "1/7",
+        "true_prefix_atoms": 5,
+        "projected_state": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      {
+        "job": 1,
+        "machine": 1,
+        "scores": [
+          "0",
+          "425/2226",
+          "0",
+          "0",
+          "19/159"
+        ],
+        "strict_margin": "1/14",
+        "true_prefix_atoms": 3,
+        "projected_state": [
+          "45/53",
+          "42/53",
+          "164/159",
+          "38/159",
+          "14/159",
+          "-14/159",
+          "11/53",
+          "-19/159",
+          "11/53",
+          "-11/53",
+          "19/159",
+          "-19/159",
+          "14/159",
+          "-14/159"
+        ]
+      },
+      {
+        "job": 2,
+        "machine": 2,
+        "scores": [
+          "14587/4019679",
+          "0",
+          "342595/4019679",
+          "1304509/18758502",
+          "14587/4019679"
+        ],
+        "strict_margin": "882803/56275506",
+        "true_prefix_atoms": 2,
+        "projected_state": [
+          "4994/8427",
+          "1940/2809",
+          "3464/25281",
+          "12080/25281",
+          "-445/25281",
+          "445/25281",
+          "286/2809",
+          "-3019/25281",
+          "286/2809",
+          "-286/2809",
+          "6040/25281",
+          "-3019/25281",
+          "-445/25281",
+          "445/25281"
+        ]
+      },
+      {
+        "job": 3,
+        "machine": 3,
+        "scores": [
+          "7060515485/1422701067186",
+          "25149175/711350533593",
+          "49501777/26346316059",
+          "55036175531/1422701067186",
+          "90960130/2927368451"
+        ],
+        "strict_margin": "10829552351/1422701067186",
+        "true_prefix_atoms": 1,
+        "projected_state": [
+          "666196/1339893",
+          "55273/1339893",
+          "310973/4019679",
+          "2065874/4019679",
+          "-238396/4019679",
+          "309151/4019679",
+          "-55273/1339893",
+          "-72577/4019679",
+          "-55273/1339893",
+          "55273/1339893",
+          "72577/4019679",
+          "-72577/4019679",
+          "-238396/4019679",
+          "238396/4019679"
+        ]
+      },
+      {
+        "job": 4,
+        "machine": 1,
+        "scores": [
+          "0",
+          "87309533259533/5994550946588211",
+          "24075411496421/35967305679529266",
+          "113038867573/666061216287579",
+          "231483658014289/17983652839764633"
+        ],
+        "strict_margin": "30444941764310/17983652839764633",
+        "true_prefix_atoms": 0,
+        "projected_state": [
+          "30694832/213042987",
+          "10094443/213042987",
+          "-1899823/23671443",
+          "27432824/71014329",
+          "3501982/213042987",
+          "-3501982/213042987",
+          "-10094443/213042987",
+          "13596425/213042987",
+          "-10094443/213042987",
+          "18882850/213042987",
+          "-13596425/213042987",
+          "1083316/23671443",
+          "-9133006/213042987",
+          "-3501982/213042987"
+        ]
+      }
+    ],
+    "all_orders": {
+      "tie_rule": "smallest machine index",
+      "count": 120,
+      "makespan_counts": {
+        "2": 2,
+        "1": 118
+      },
+      "records": [
+        {
+          "order": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "makespan": "2",
+          "choices_in_order": [
+            0,
+            1,
+            2,
+            3,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            1,
+            2,
+            4,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            1,
+            3,
+            2,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            1,
+            3,
+            4,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            1,
+            2,
+            4,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            1,
+            4,
+            2,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            1,
+            4,
+            3,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            1,
+            4,
+            3,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            1,
+            4,
+            2,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            1,
+            4,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            2,
+            1,
+            4,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            2,
+            3,
+            1,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            3,
+            4,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            2,
+            3,
+            4,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            3,
+            1,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            2,
+            4,
+            1,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            1,
+            4,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            2,
+            4,
+            3,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            3,
+            1,
+            2,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            3,
+            4,
+            2,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            3,
+            1,
+            4,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            3,
+            4,
+            1,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            3,
+            2,
+            1,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            3,
+            2,
+            4,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            3,
+            2,
+            4,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            3,
+            2,
+            1,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            3,
+            4,
+            1,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            3,
+            1,
+            4,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            3,
+            4,
+            2,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            3,
+            1,
+            2,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            4,
+            1,
+            2,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            1,
+            3,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            4,
+            1,
+            3,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            1,
+            2,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            4,
+            2,
+            1,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            3,
+            1,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            4,
+            2,
+            3,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            3,
+            2,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            4,
+            3,
+            1,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            2,
+            1,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            0,
+            4,
+            3,
+            2,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            2,
+            3,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            0,
+            2,
+            3,
+            4
+          ],
+          "makespan": "2",
+          "choices_in_order": [
+            1,
+            0,
+            2,
+            3,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            0,
+            2,
+            4,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            0,
+            2,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            0,
+            3,
+            2,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            0,
+            2,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            0,
+            3,
+            4,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            0,
+            2,
+            4,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            0,
+            4,
+            2,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            0,
+            4,
+            3,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            0,
+            4,
+            3,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            0,
+            4,
+            2,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            2,
+            0,
+            3,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            2,
+            0,
+            4,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            2,
+            0,
+            4,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            2,
+            0,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            2,
+            3,
+            0,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            2,
+            0,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            2,
+            3,
+            4,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            2,
+            0,
+            4,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            2,
+            4,
+            0,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            2,
+            4,
+            3,
+            0
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            2,
+            4,
+            3,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            2,
+            4,
+            0,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            3,
+            0,
+            2,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            0,
+            3,
+            2,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            3,
+            0,
+            4,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            0,
+            3,
+            4,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            3,
+            2,
+            0,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            0,
+            2,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            3,
+            2,
+            4,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            0,
+            2,
+            4,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            3,
+            4,
+            0,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            0,
+            4,
+            3,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            3,
+            4,
+            2,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            0,
+            4,
+            2,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            4,
+            0,
+            2,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            4,
+            0,
+            3,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            4,
+            0,
+            3,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            4,
+            0,
+            2,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            4,
+            2,
+            0,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            4,
+            2,
+            3,
+            0
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            4,
+            2,
+            3,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            4,
+            2,
+            0,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            4,
+            3,
+            0,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            4,
+            0,
+            3,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            1,
+            4,
+            3,
+            2,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            1,
+            4,
+            0,
+            2,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            2,
+            0,
+            1,
+            3,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            1,
+            4,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            0,
+            1,
+            4,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            1,
+            3,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            0,
+            3,
+            1,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            3,
+            4,
+            1
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            0,
+            3,
+            4,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            3,
+            1,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            0,
+            4,
+            1,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            1,
+            4,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            0,
+            4,
+            3,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            1,
+            3,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            1,
+            0,
+            3,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            0,
+            4,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            1,
+            0,
+            4,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            0,
+            3,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            1,
+            3,
+            0,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            0,
+            3,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            1,
+            3,
+            4,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            0,
+            4,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            1,
+            4,
+            0,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            4,
+            3,
+            0
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            1,
+            4,
+            3,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            4,
+            0,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            3,
+            0,
+            1,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            0,
+            4,
+            1
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            3,
+            0,
+            4,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            0,
+            1,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            3,
+            1,
+            0,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            4,
+            0,
+            1
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            3,
+            1,
+            4,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            4,
+            1,
+            0
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            3,
+            4,
+            0,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            1,
+            0,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            3,
+            4,
+            1,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            1,
+            4,
+            0
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            4,
+            0,
+            1,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            4,
+            3,
+            1,
+            0
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            4,
+            0,
+            3,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            4,
+            3,
+            0,
+            1
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            4,
+            1,
+            0,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            4,
+            1,
+            3,
+            0
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            4,
+            1,
+            3,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            4,
+            1,
+            0,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            4,
+            3,
+            0,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            4,
+            0,
+            3,
+            1
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            2,
+            4,
+            3,
+            1,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            4,
+            0,
+            1,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            0,
+            1,
+            2,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            1,
+            4,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            0,
+            1,
+            4,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            0,
+            2,
+            1,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            3,
+            4,
+            1
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            0,
+            2,
+            4,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            3,
+            1,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            0,
+            4,
+            1,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            1,
+            4,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            0,
+            4,
+            2,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            1,
+            0,
+            2,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            1,
+            3,
+            2,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            1,
+            0,
+            4,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            1,
+            3,
+            4,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            1,
+            2,
+            0,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            1,
+            2,
+            4,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            1,
+            2,
+            4,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            1,
+            4,
+            0,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            1,
+            4,
+            3,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            1,
+            4,
+            2,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            1,
+            4,
+            2,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            2,
+            0,
+            1,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            1,
+            3,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            2,
+            0,
+            4,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            1,
+            2,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            2,
+            1,
+            0,
+            4
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            3,
+            1,
+            2
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            2,
+            1,
+            4,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            3,
+            2,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            2,
+            4,
+            0,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            2,
+            1,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            2,
+            4,
+            1,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            4,
+            2,
+            3,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            3,
+            4,
+            0,
+            1,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            4,
+            0,
+            2,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            1,
+            4,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            4,
+            1,
+            0,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            3,
+            1,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            4,
+            1,
+            2,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            3,
+            4,
+            1
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            4,
+            2,
+            0,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            4,
+            1,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            3,
+            4,
+            2,
+            1,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            0,
+            2,
+            4,
+            3,
+            1
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            4,
+            0,
+            1,
+            2,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            3,
+            4,
+            0
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            0,
+            1,
+            3,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            3,
+            0,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            0,
+            2,
+            1,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            4,
+            3,
+            0
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            0,
+            2,
+            3,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            4,
+            0,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            0,
+            3,
+            1,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            0,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            0,
+            3,
+            2,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            0,
+            4,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            1,
+            0,
+            2,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            1,
+            4,
+            0
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            1,
+            0,
+            3,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            1,
+            0,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            1,
+            2,
+            0,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            0,
+            4,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            1,
+            2,
+            3,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            0,
+            1,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            1,
+            3,
+            0,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            0,
+            1,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            1,
+            3,
+            2,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            3,
+            0,
+            4,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            2,
+            0,
+            1,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            4,
+            3,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            2,
+            0,
+            3,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            4,
+            1,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            2,
+            1,
+            0,
+            3
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            3,
+            4,
+            1
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            2,
+            1,
+            3,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            3,
+            1,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            2,
+            3,
+            0,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            1,
+            4,
+            3
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            2,
+            3,
+            1,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            0,
+            1,
+            3,
+            4
+          ],
+          "all_winners_strict": true
+        },
+        {
+          "order": [
+            4,
+            3,
+            0,
+            1,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            0,
+            4,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            4,
+            3,
+            0,
+            2,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            0,
+            3,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            4,
+            3,
+            1,
+            0,
+            2
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            3,
+            4,
+            0
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            4,
+            3,
+            1,
+            2,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            3,
+            0,
+            4
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            4,
+            3,
+            2,
+            0,
+            1
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            0,
+            4,
+            3
+          ],
+          "all_winners_strict": false
+        },
+        {
+          "order": [
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "makespan": "1",
+          "choices_in_order": [
+            2,
+            1,
+            0,
+            3,
+            4
+          ],
+          "all_winners_strict": false
+        }
+      ]
+    }
+  },
+  "independent_sample_projection_positive_control": {
+    "arithmetic": "fractions.Fraction; sample-space orthogonal projection",
+    "python_version": "3.12.14",
+    "input_sha256": "f76a2da028ca6088253e9e4be691389add76ba43d6c247786f09e80384982cab",
+    "script_sha256": "097157d029f33517350ad8bafb1360cf86cc9b0b324e65a5693e7112b3a91eb4",
+    "atoms": 12,
+    "dimension": 5,
+    "unique_generator_functions": 12,
+    "m": 3,
+    "n": 323,
+    "T": "1",
+    "all_atom_makespans_equal_T": true,
+    "optimality_certified_by_single_job": true,
+    "single_job_lower_bound": "1",
+    "all_winners_strict": true,
+    "choices_in_job_order": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "loads": [
+      "2579/966",
+      "0",
+      "1"
+    ],
+    "makespan": "2579/966",
+    "true_prefix_atoms_after_all_jobs": 0,
+    "scope": "Only supplied finite true-distribution witnesses and explicitly enumerated orders.",
+    "minimum_normalized_margin": {
+      "exact_fraction_sha256": "106469d28b1507281b4638beac0c2e3da014d0aa1daf115b9d4327493b42f1a9",
+      "lower": "9454914422571810114073294447517193586/10000000000000000000000000000000000000000",
+      "upper": "9454914422571810114073294447517193587/10000000000000000000000000000000000000000",
+      "numerator_bits": 3856,
+      "denominator_bits": 3866,
+      "strictly_positive": true
+    },
+    "minimum_normalized_margin_job": 169
+  },
+  "reproducible_boundary_and_scalar_checks": {
+    "arithmetic": "fractions.Fraction",
+    "python_version": "3.12.14",
+    "script_sha256": "097157d029f33517350ad8bafb1360cf86cc9b0b324e65a5693e7112b3a91eb4",
+    "self_checks": {
+      "boundary_inputs": [
+        {
+          "case": "empty",
+          "accepted": true,
+          "dimension": 1,
+          "makespan": "0"
+        },
+        {
+          "case": "zero",
+          "accepted": true,
+          "dimension": 1,
+          "makespan": "0"
+        },
+        {
+          "case": "unavailable",
+          "accepted": true,
+          "dimension": 1,
+          "makespan": "1/3"
+        },
+        {
+          "case": "large-denominator",
+          "accepted": true,
+          "dimension": 1,
+          "makespan": "1/3291009114642412084309938365114701009965471731267159726697218071"
+        },
+        {
+          "case": "negative-processing",
+          "rejected": true
+        },
+        {
+          "case": "zero-weight",
+          "rejected": true
+        },
+        {
+          "case": "false-feasibility",
+          "rejected": true
+        }
+      ],
+      "event_probability_scalars": {
+        "k_min": 2,
+        "k_max": 64,
+        "k_count": 63,
+        "transitions_checked": 2016,
+        "conditional_probabilities_checked": 89376,
+        "checks": "sum p=1; all p,q positive; q<1; both strict majorities; next-minus-others >= 3eta/16"
+      },
+      "positive_three_machine_algebra": {
+        "k_min": 2,
+        "k_max": 64,
+        "helper_counts": [
+          0,
+          1,
+          2,
+          7,
+          100,
+          1000000000000
+        ],
+        "parameter_pairs_checked": 378,
+        "checks": "positive rational times; row-load upper bounds; output identity and >k-1/2",
+        "scope": "Only algebra at the displayed parameter pairs; no assertion every helper count is produced by event repetition."
+      },
+      "scope": "Finite reproducible checks; no replacement for the universal event-chain proof."
+    }
+  },
+  "cross_checks": {
+    "unit_all_default_scores_exactly_equal": true,
+    "positive_control_exact_minimum_fraction_sha256_equal": true,
+    "unit_exact_minimum_fraction_sha256_equal": true,
+    "same_actual_inputs_and_literal_dimensions": true,
+    "unit_all_order_count": 120,
+    "unit_all_order_strict_count": 78
+  },
+  "limits": [
+    "General k unboundedness follows from the event-chain proof, not these two finite instances.",
+    "No polynomial bound in k on the event repetitions or compact construction is certified.",
+    "No μ generation algorithm from general P; no adaptive-order or recoupling impossibility.",
+    "External review and global novelty not certified."
+  ]
+}
