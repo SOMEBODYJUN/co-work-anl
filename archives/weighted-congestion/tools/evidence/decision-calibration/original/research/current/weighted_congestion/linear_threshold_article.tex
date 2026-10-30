@@ -1,0 +1,444 @@
+% 加权拥塞博弈线性近似均衡门槛：完整主论文草稿。
+% Source: linear_degree_allstate_lower_bound.md at 6fea2ee, SHA256
+% 04181c4d5c09fb85ac84270e06743571e156a8334611943aa5f6b865f9409c33.
+% Budget proof: independent review supplement at 365425d.
+% This reader-facing draft preserves the source claims. Priority and external
+% peer review remain unassessed; author information is intentionally omitted.
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{microtype}
+\hypersetup{pdftitle={A Linear Nonexistence Bound for Approximate Pure Nash Equilibria in Weighted Congestion Games},pdfsubject={Research draft with complete construction and proof}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\PNE}{\textup{PNE}}
+\newcommand{\F}{\mathcal F}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\xor}{\mathbin{\oplus}}
+\newcommand{\marginof}[3]{\Delta_{#1}^{#2}(#3)}
+\title{A Linear Nonexistence Bound for Approximate Pure Nash Equilibria\\in Weighted Congestion Games}
+\author{}
+\date{Research draft}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the approximation factor required for pure Nash equilibria in finite weighted atomic congestion games with nonnegative polynomial costs. For every integer $d\ge 2^{20}$, we construct a game with positive rational weights and positive rational monomial costs of degree exactly $d$ in which every pure state admits a strict $d/10$ improvement. Each player has only two nonempty, disjoint strategies. Together with the known $d$-approximate existence guarantee, this determines the order of the universal existence threshold as $\Theta(d)$ and rules out every universal sublinear guarantee. The construction first provides an improving exit from every product of ordered class fronts. Short adjacent windows constrain the relative phases of any putatively stable front; a full return window then provides an exit in either parity. Anchored triples within each weight class repair all remaining states. The front margin and global cost bound allow these additional resources to retain the original degree.
+\end{abstract}
+
+\section{Introduction}
+Approximate pure Nash equilibria relax stability by allowing a bounded multiplicative incentive to deviate. In weighted congestion games with polynomial costs, the natural existence question is how this factor depends on the maximum degree, with no bound on the number of players or the range of their weights. Caragiannis and Fanelli~\cite{CF2021} establish a $d$-approximate potential and hence the existence of a $d$-approximate pure Nash equilibrium. Christodoulou et al.~\cite{CGGPW2023} construct nonexistence families with a factor growing as $\Omega(\sqrt d/\ln d)$ and explicitly identify the gap to the linear existence bound as a question for further investigation.
+
+We prove a linear nonexistence bound. The result concerns the universal guarantee over all finite instances, so the size of a witnessing game may grow with the degree. A nonexistence result must cover every state of that game. An improving cycle supplies only a sequence of unstable states and leaves open the possibility of an equilibrium elsewhere. The construction below is designed around this all-state requirement.
+
+\paragraph{Main result.}
+A player's cost is the sum of the costs of the resources in its strategy, evaluated at their total user weights. A state $s$ is an $\alpha$-approximate pure Nash equilibrium if
+\begin{equation}\label{eq:pne}
+ C_i(s)\le\alpha C_i(t_i,s_{-i})
+ \quad\text{for every player $i$ and every legal strategy $t_i$.}
+\end{equation}
+All deviations in this paper keep the other players fixed and include the deviator's weight in the new loads.
+
+\begin{theorem}\label{thm:main}
+For every integer $d\ge2^{20}$, there is a finite weighted congestion game with positive rational player weights and resource costs $c_e(x)=a_ex^d$, $a_e>0$ rational, such that each player has exactly two nonempty, disjoint strategies and every state $s$ has a legal unilateral deviation satisfying
+\[
+ C_i(s)-\frac d{10}C_i(t_i,s_{-i})
+ \ge\frac{2^d-d/10}{8}>0.
+\]
+In particular, this game has no $(d/10)$-approximate pure Nash equilibrium.
+\end{theorem}
+
+Let $a_*(d)$ be the infimum of the factors $\alpha\ge1$ for which every finite weighted congestion game with nonnegative polynomial costs of degree at most $d$ admits an $\alpha$-$\PNE$. Theorem~\ref{thm:main}, combined with the existence result of~\cite{CF2021}, gives
+\begin{equation}\label{eq:threshold}
+ d/10\le a_*(d)\le d\qquad(d\ge2^{20}).
+\end{equation}
+Thus $a_*(d)=\Theta(d)$. The lower bound uses only positive pure monomials and two strategies per player. The upper bound is imported from prior work; it is not part of our construction.
+
+\paragraph{Proof mechanism.}
+We group equal-weight players into ordered classes. A class front is a binary string with at most one change in its linear order. The proof has three substantive steps. First, a cyclic window construction gives a cost cap and usable improvement margins while allowing the number of weight classes to grow. Second, every product of class fronts has a front-preserving improvement: an adjacent phase difference outside two short intervals gives a local heavy-player exit, while the remaining phase configurations are defeated by a full return window. Third, same-class anchored triples give an improving repair outside the front set. Their leakage is exponentially small in the degree, whereas the relevant cost-to-margin budget grows only as the exponential of a squared logarithm. This permits the completion to use degree $d$ itself.
+
+The short-window/full-return mechanism is the reason that asynchronous fronts cannot remain stable. The triple completion alone does not establish this property for an arbitrary input game. We separate these obligations so that the main lower bound cannot be inferred from an improving cycle alone.
+
+\paragraph{Scope and organization.}
+The argument is constructive and finite but makes no polynomial-size or computational-efficiency claim. Section~\ref{sec:model} fixes the model. Section~\ref{sec:completion} proves the front-completion lemma. Sections~\ref{sec:construction} and~\ref{sec:fronts} build the input and prove its all-front property. Section~\ref{sec:degree} completes the construction at the original degree and derives the universal consequences. Only the cited existence bound is needed to pass from our lower bound to~\eqref{eq:threshold}.
+
+\section{Model and ordered fronts}\label{sec:model}
+A game has finite nonempty player and resource sets $I,E$. Player $i$ has a weight $w_i>0$ and a nonempty finite family $S_i\subseteq2^E$. Each resource has a cost
+\[
+ c_e(x)=\sum_{r=0}^d a_{e,r}x^r,\qquad a_{e,r}\ge0.
+\]
+For a state $s\in\prod_iS_i$, write
+\[
+ x_e(s)=\sum_{i:e\in s_i}w_i,
+ \qquad C_i(s)=\sum_{e\in s_i}c_e(x_e(s)).
+\]
+Empty strategies, zero cost functions, and different strategy families are allowed. Condition~\eqref{eq:pne} is used directly when a cost is zero. Multiplying a fixed player's costs by its positive weight would leave this condition unchanged, but we use the unmultiplied convention throughout.
+
+Our lower-bound games have binary action labels. Write $s\xor i$ for the state obtained by flipping player $i$. For a fixed target $\alpha$, its improvement margin is
+\[
+ \Delta_i(s)=C_i(s)-\alpha C_i(s\xor i).
+\]
+Players are partitioned into ordered classes of size $N$, indexed by $a$. The players in class $a$ all have weight $w_a$. Within a class the order is $0,\ldots,N-1$.
+
+\begin{definition}
+A class front is a bit string whose consecutive bits in this linear order change at most once. A product-front state is a state in which every class is a front. Denote the set of these states by $\F$.
+\end{definition}
+The order is linear, not circular. Every front can be parametrized by a phase $x\in\mathbb Z/(2N)$ using
+\begin{equation}\label{eq:frontbit}
+ B_x(j)=\begin{cases}
+ \ind[j<x],&0\le x<N,\\
+ \ind[j\ge x-N],&N\le x<2N.
+ \end{cases}
+\end{equation}
+The forward flip is clone $x\bmod N$ and changes the phase to $x+1$; the backward flip is clone $(x-1)\bmod N$ and changes it to $x-1$. These are real single-player flips.
+
+\section{Completing front exits to all-state exits}\label{sec:completion}
+We first isolate the state-repair step. Its hypothesis is an improving exit from every front, rather than an improving sweep through some fronts.
+
+\begin{lemma}[Same-class completion]\label{lem:completion}
+Consider a finite binary weighted congestion game of degree at most $p$, with equal weights within ordered classes of a common size $N\ge3$. Let $\alpha\ge1$. Suppose $C_i(s)\le B$ at every state, and every $s\in\F$ has a player $i$ such that $s\xor i\in\F$ and $\Delta_i(s)\ge\eta>0$. Put
+\[
+ L_c=\binom{N-1}{2},\qquad M=2\alpha B.
+\]
+If a positive integer $D$ satisfies
+\begin{equation}\label{eq:clockbudget}
+ (2/3)^D\le\frac{\eta}{4\alpha^2BL_c},
+\end{equation}
+then adding $2L_c$ resources per class, with positive monomial costs of degree $D$, produces a game of degree at most $\max\{p,D\}$ in which every state has an improvement margin at least $\eta/2$. Players, weights, action labels, and all original resource incidences are preserved.
+\end{lemma}
+\begin{proof}
+For each class $a$ and every $1\le i<j<N$, add a fresh pair of resources used only by clones $0,i,j$. Their side choices are their action bits xor the respective incidence phases $(0,1,0)$. Both resources have cost
+\[
+ c_a(x)=M\left(\frac{x}{3w_a}\right)^D.
+\]
+The action patterns $010$ and $101$ place all three users on one side, giving each cost $M$. In every other pattern, any user's cost is at most $M\delta$, where $\delta=(2/3)^D$. A player participates in at most $L_c$ pairs, including the anchor clone $0$.
+
+All triples of a class are nontriggering exactly when the class is a front. Indeed, a nonfront string has a first bit $b$, an earliest opposite bit at $i$, and a later bit $b$ at some $j>i$. The triple $(0,i,j)$ triggers. A front cannot contain such a subsequence.
+
+For a product-front state, take the promised front-preserving flip. Its new clock cost is at most $L_cM\delta$, so its total margin is at least
+\[
+ \eta-\alpha L_cM\delta\ge\eta/2.
+\]
+For a nonfront state, choose one illegal class and flip its earliest bit opposite to its first bit back to that first bit. The mover's old clock cost is at least $M$. After the flip, every triple containing the mover is nontriggering. If it is the middle index, it now agrees with the anchor; if it is the last index, the middle index is earlier and already agrees with the anchor. No other class's clock involves this player. Its new base cost is at most $B$, and its new clock cost is at most $L_cM\delta$. Its total margin is therefore at least
+\[
+ M-\alpha B-\alpha L_cM\delta
+ \ge\alpha B-\eta/2\ge\eta/2.
+\]
+The last inequality uses $B\ge\eta$, which follows from the assumed front margin and nonnegative costs. This covers every state by a legal single-player deviation.
+\end{proof}
+
+The lemma's degree budget depends on $B/\eta$ and the class size, not on an additional global weight-ratio parameter. The remaining task is to provide a growing input family with all-front exits and a controlled budget.
+
+\section{The cyclic window input}\label{sec:construction}
+Fix an integer $p\ge20$. The construction uses the parameters
+\begin{equation}\label{eq:parameters}
+ \alpha=p/10,\quad Q=p^4,\quad
+ m=1+\lceil\log_2(p^2)\rceil,\quad
+ N=Q^{m-1}/p=p^{4m-5},\quad H=2^p-\alpha.
+\end{equation}
+There are $m$ classes, indexed by $a=0,\ldots,m-1$, with weights
+\[
+ w_a=Q^{-a},\qquad \varepsilon=Q^{-(m-1)}.
+\]
+Thus $N\varepsilon=1/p$. All class sizes and window lengths below are positive integers, with $N>Q$.
+
+Define the sums
+\begin{align}
+ X&=\sum_{r=1}^Q(1+r/Q)^p,&Y&=\sum_{r=1}^Q(r/Q)^p,&L&=\alpha X-Y,\label{eq:XY}\\
+ U&=\sum_{r=1}^N(1+r\varepsilon)^p,&V&=\sum_{r=1}^N(r\varepsilon)^p,&Z&=U-\alpha V.\label{eq:UV}
+\end{align}
+Also put
+\begin{equation}\label{eq:amplitudes}
+ W=(1+1/p)^p,\quad J=\alpha W-1,\quad
+ A_a=(2L/H)^a\ (0\le a\le m-2),\quad A_R=H/(2J).
+\end{equation}
+Lemma~\ref{lem:scalars} will show that these are positive rational quantities. The choice $A_aH=2A_{a-1}L$ balances a heavy player's adjacent exit against the cost of its incoming light role. The return amplitude pays for closing this chain.
+
+\subsection{Resources and action incidences}
+Player $P_{a,j}$ is clone $j\in\mathbb Z/N$ of class $a$, with global linear position
+\[
+ \operatorname{pos}(a,j)=jm+a.
+\]
+A test is a tuple $\tau=(a,b,K,o)$ with $a<b$, window length $K\le N$, and orientation $o\in\{-1,+1\}$. For each $j$, create a fresh pair $e_{\tau,j,0},e_{\tau,j,1}$. The distinguished user $h=P_{a,j}$ uses side $0$ in action $0$ and side $1$ in action $1$. Its window consists of
+\[
+ P_{b,(j+k)\bmod N},\qquad k=0,\ldots,K-1.
+\]
+For a window user $u$, its side in action $0$ is
+\begin{equation}\label{eq:incidence}
+ \sigma(h,u)=\ind[\operatorname{pos}(u)>\operatorname{pos}(h)]
+                 \xor\ind[o=-1],
+\end{equation}
+and its side in action $1$ is the opposite side. No other player uses this pair.
+
+Use the adjacent tests $(a,a+1,Q,-1)$, $a=0,\ldots,m-2$, with cost $(A_a/w_a^p)x^p$ on both sides, and the return test $(0,m-1,N,+1)$, with cost $A_Rx^p$ on both sides. Every player's action is the union of all the sides assigned to it across all tests. Different pairs are disjoint. Every player participates in a test, and hence both its actions are nonempty and disjoint. There are $mN$ players and $2mN$ base resources.
+
+In each test, the distinguished user has the heavy role and the window users have the light role, since $a<b$ implies $w_a>w_b$. A class can have different roles in its incoming and outgoing tests.
+
+\subsection{Budget estimates}
+\begin{lemma}\label{lem:scalars}
+For the parameters above,
+\begin{equation}\label{eq:scalarbounds}
+ \frac4Q\le\frac HL\le\frac{40}Q,\qquad
+ \frac ZJ>\frac3{p^2\varepsilon},\qquad
+ A_RZ>3A_{m-2}L.
+\end{equation}
+Moreover $A_a\ge1$, $L>H$, $2<W<3$, $J>3$, $m\le p$, and $N\ge p^7$.
+\end{lemma}
+\begin{proof}
+Monotonicity of $(1+t)^p$ and its integral on $[0,1]$ give
+\[
+ Q\frac{2^{p+1}-1}{p+1}\le X
+ \le Q\frac{2^{p+1}-1}{p+1}+2^p-1
+ \le 2^p\left(\frac{2Q}{p+1}+1\right)
+ \le\frac94\frac Qp2^p.
+\]
+For the last step use $2p/(p+1)+p/Q\le2+1/8\le9/4$. Termwise $r/Q\le(1+r/Q)/2$ gives $Y\le2^{-p}X$, so $L>0$. Since $p\le2^p$, we have $H\ge(9/10)2^p$. Thus
+\[
+ L<\alpha X\le\frac9{40}Q2^p,
+ \qquad H/L\ge4/Q.
+\]
+The same termwise comparison also gives
+\[
+ L\ge(\alpha-2^{-p})X\ge\frac\alpha2X
+ \ge\frac{\alpha Q2^p}{2(p+1)}.
+\]
+Consequently $L/H\ge Q/40$. In particular
+\begin{equation}\label{eq:amprange}
+ Q/20\le2L/H\le Q/2.
+\end{equation}
+This proves the claims about $A_a,L$.
+
+For $r\le N$, $r\varepsilon\le1/p$ and
+\[
+ (1+r\varepsilon)^p-\alpha(r\varepsilon)^p
+ \ge1-\alpha p^{-p}\ge9/10.
+\]
+Hence $Z\ge9N/10$. The binomial expansion gives $W>2$, while $\binom pr p^{-r}\le1/r!$ and $\sum_{r\ge0}1/r!<3$ give $W<3$. Since $\alpha\ge2$, $J>3$ and $J<3\alpha$. Therefore
+\[
+ Z/J>\frac{3N}{10\alpha}=\frac3{p^2\varepsilon}.
+\]
+Using $\varepsilon=Q^{-(m-1)}$,
+\[
+ \frac{A_RZ}{A_{m-2}L}
+ =\frac{(H/L)^{m-1}(Z/J)}{2^{m-1}}
+ >\frac{3\,2^{m-1}}{p^2}\ge3.
+\]
+Finally $m\ge3$ implies $N=p^{4m-5}\ge p^7$. For $p\ge20$, $2^{p-1}\ge p^2$, so the minimal defining exponent for $m$ gives $m\le p$. The elementary inequality $2^{p-1}\ge p^2$ follows at $p=7$ and persists because $2p^2>(p+1)^2$ for $p\ge3$.
+\end{proof}
+
+\begin{lemma}[Global base-cost cap]\label{lem:cap}
+Every player's base cost at every state is at most
+\begin{equation}\label{eq:cap}
+ B_*=mQ^{m-1}2^p.
+\end{equation}
+\end{lemma}
+\begin{proof}
+An adjacent resource has potential total weight $w_a+Qw_{a+1}=2w_a$. Its distinguished user participates in one pair; a light user participates in exactly $Q$ pairs of that test. Thus any player's contribution from this test is at most $QA_a2^p$. By~\eqref{eq:amprange}, $A_a\le Q^{m-2}$, and all adjacent tests contribute at most $(m-1)Q^{m-1}2^p$.
+
+A return resource has potential total weight $1+N\varepsilon=1+1/p$. Any player participates in at most $N$ return pairs, so its return cost is at most $NA_RW$. Since $J\ge\alpha-1$,
+\[
+ NA_RW<\frac{3N2^p}{2(\alpha-1)}
+ =\frac3{2p(\alpha-1)}Q^{m-1}2^p
+ \le Q^{m-1}2^p.
+\]
+Adding the bounds proves~\eqref{eq:cap}.
+\end{proof}
+
+\section{Every product-front has an exit}\label{sec:fronts}
+The central property of the base game is the following.
+\begin{proposition}\label{prop:frontcover}
+Every product-front state has a front-preserving single-player flip whose $\alpha=p/10$ margin is at least
+\[
+ \eta_0=H/4.
+\]
+\end{proposition}
+We prove it by eliminating widely separated adjacent phases, then using the return test on the remaining phase configurations.
+
+\subsection{Normalization and adjacent endpoint costs}
+\begin{lemma}[Twisted rotation]\label{lem:twist}
+In the base game, simultaneously mapping every clone index $j$ to $j+1\bmod N$ and flipping the action of each wrapping clone preserves current costs and corresponding unilateral-deviation costs. On product-front states it increases every class phase by one.
+\end{lemma}
+\begin{proof}
+Let $\rho_i$ indicate that player $i$ wraps. A window's circular user set is preserved. For any distinguished user $h$ and window user $u$, the new linear-order indicator is the old indicator xor $\rho_h\xor\rho_u$. In~\eqref{eq:incidence}, the change $\rho_u$ cancels the wrapping flip of $u$'s action. The remaining $\rho_h$ exchanges the two sides of the distinguished pair exactly when its own user wraps. Both sides have identical costs and all weights are unchanged. This proves the cost assertion, including after a specified player's flip. Direct substitution in~\eqref{eq:frontbit} proves the phase assertion.
+\end{proof}
+Thus a chosen mover's class may be normalized to phase zero while all other classes retain their relative phases. This symmetry is needed only for the base game, before the anchored triples are added.
+
+For an adjacent test $a\to a+1$, normalize its heavy class to zero and put $r=x_{a+1}-x_a\pmod{2N}$. The heavy forward mover is clone zero. Its number of same-side window users is
+\begin{equation}\label{eq:nr}
+ n(r)=\begin{cases}
+ Q-\min\{r,Q\},&0\le r\le N,\\
+ \min\{r-N,Q\},&N\le r<2N.
+ \end{cases}
+\end{equation}
+Consequently its old and new costs in this test are
+\begin{equation}\label{eq:heavycost}
+ A_a(1+n(r)/Q)^p,\qquad A_a(2-n(r)/Q)^p.
+\end{equation}
+A backward flip is the reverse of the previous forward edge. Its old and new costs are therefore the new and old quantities in~\eqref{eq:heavycost} evaluated at $r+1$ modulo $2N$.
+
+\begin{lemma}[Adjacent endpoint bounds]\label{lem:endpoints}
+For either light endpoint of any front, both its old and new costs in an adjacent test $a\to a+1$ are at most $A_aX$. If
+\[
+ r\notin[0,Q]\cup[N,N+Q],
+\]
+then one of the heavy endpoints has old and new costs exactly $A_a2^p,A_a$ in that test.
+\end{lemma}
+\begin{proof}
+Normalize the light class to zero and take its forward mover $(a+1,0)$. It participates in the $Q$ windows whose distinguished indices are $-k\bmod N$, $k=0,\ldots,Q-1$. On its current side there are $Q-k$ light users; on its new side, including itself, there are $k+1$. For some indicators $e_k\in\{0,1\}$ determined by the heavy phase, its two costs are
+\[
+ A_a\sum_{k=0}^{Q-1}\big((Q-k)/Q+e_k\big)^p,
+ \qquad
+ A_a\sum_{k=0}^{Q-1}\big((k+1)/Q+1-e_k\big)^p.
+\]
+Each is bounded by $A_aX$ term by term. Backward costs exchange the corresponding forward pair, so they have the same bound. This counting includes the wrapping windows.
+
+If $Q<r<N$, then $n(r+1)=0$, giving the asserted backward costs. If $N+Q<r<2N$, then $n(r)=Q$, giving the asserted forward costs. These are precisely the two portions outside the displayed closed intervals.
+\end{proof}
+
+For an intermediate class $1\le a\le m-2$, the selected heavy exit has total margin at least
+\begin{align}\label{eq:intermediateexit}
+ A_aH-\alpha A_{a-1}X
+ &=A_{a-1}(\alpha X-2Y)
+ \ge\tfrac12 A_{a-1}L>H/2.
+\end{align}
+Here $Y\le2^{-p}X$, $\alpha\ge2$, $L\le\alpha X$, and $L>H$. Class zero instead has one return pair. Its new return cost is at most $A_RW$, so its selected exit has margin at least
+\begin{equation}\label{eq:firstexit}
+ H-\alpha A_RW=\frac{H(J-1)}{2J}>H/3,
+\end{equation}
+because $J>3$. Thus failure to find an exit of margin $H/4$ forces every adjacent phase difference into the two short intervals.
+
+\subsection{Accumulating short differences and using the return window}
+We may now write, for all $a=0,\ldots,m-2$,
+\[
+ x_{a+1}-x_a=k_aN+t_a\pmod{2N},
+ \qquad k_a\in\{0,1\},\quad0\le t_a\le Q.
+\]
+It follows that
+\begin{equation}\label{eq:accumulated}
+ x_{m-1}-x_0=kN+T\pmod{2N},\quad
+ 0\le T\le(m-1)Q<N,
+\end{equation}
+where $k$ is the parity of $\sum_a k_a$. The strict upper bound on $T$ follows from $m\le p$ and $N\ge p^7$.
+
+Normalize the last class to phase zero. In the return test its heavy class has relative phase $r=x_0-x_{m-1}$. Enumerate the last-class mover's windows by distinguished indices $h_j=-j\bmod N$, $j=0,\ldots,N-1$. Define
+\[
+ \sigma_0=1,\quad \sigma_j=0\ (j>0),\qquad
+ e_j(r)=\ind[B_r(h_j)=\sigma_j].
+\]
+The actual forward old and new costs, before multiplication by $A_R$, are
+\begin{align}
+ O(r)&=\sum_{j=0}^{N-1}\big((N-j)\varepsilon+e_j(r)\big)^p,\label{eq:returnold}\\
+ F(r)&=\sum_{j=0}^{N-1}\big((j+1)\varepsilon+1-e_j(r)\big)^p.\label{eq:returnnew}
+\end{align}
+This is the same window count as above, now with a full window and positive orientation. If all indicators equal one, the pair is $(U,V)$; if all equal zero, it is $(V,U)$. Changing one indicator changes each cost by at most $W$, since all loads are at most $1+N\varepsilon=1+1/p$.
+
+\begin{lemma}[Return endpoint]\label{lem:return}
+For the phase configurations in~\eqref{eq:accumulated}, the last class has an endpoint whose return-test margin is at least
+\[
+ A_R\big[Z-(\alpha+1)(T+1)W\big].
+\]
+\end{lemma}
+\begin{proof}
+If $k$ is even, then $r=-T\pmod{2N}$. Use the forward endpoint. For $T=0$ only $e_0$ is zero. For $1\le T<N$, precisely $e_0,\ldots,e_T$ are zero. Thus there are $T+1$ defects from the ideal all-one pattern.
+
+If $k$ is odd, then $r=N-T\pmod{2N}$. Use the backward endpoint, whose old and new costs are $F(r+1),O(r+1)$. For $T=0$, the indicators at $r+1=N+1$ are all zero. For $1\le T<N$, exactly $T$ indicators at $r+1=N-T+1$ are one. This is at most $T+1$ defects from the ideal all-zero pattern. In either case a defect loses at most $(\alpha+1)W$ of margin, and the ideal margin is $Z$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:frontcover}]
+The heavy exits~\eqref{eq:intermediateexit} and~\eqref{eq:firstexit} handle a phase difference outside the short intervals. Otherwise apply Lemma~\ref{lem:return}. Put $D_0=(\alpha+1)(T+1)W$. Since $\alpha+1\le p/5$, $T+1\le pQ=p^5$, and $W<3$,
+\[
+ D_0\le(3/5)p^6\le Z/30.
+\]
+The second inequality follows from $Z\ge(9/10)N\ge(9/10)p^7$ and $p\ge20$. The last class's new incoming cost is at most $A_{m-2}X$. Also $\alpha X\le2L$, because $Y\le\alpha X/2$. Its selected return exit therefore has total margin strictly greater than
+\[
+ \frac{29}{30}A_RZ-\alpha A_{m-2}X
+ >\left(\frac{29}{10}-2\right)A_{m-2}L>H/2.
+\]
+All selected endpoints preserve the front of the moving class and leave every other class fixed. The cases cover all phase vectors, proving the uniform lower bound $H/4$.
+\end{proof}
+
+\section{Retaining the degree and proving the main theorem}\label{sec:degree}
+Apply Lemma~\ref{lem:completion} with $B=B_*$ and $\eta=\eta_0=H/4$. The issue is whether the added monomials can use the original degree $p$. The following estimate answers it using only integer comparisons and induction.
+
+\begin{lemma}[Original-degree budget]\label{lem:degree}
+For every integer $p\ge2^{20}$, the parameters above satisfy
+\[
+ 4\alpha^2B_*L_c/\eta_0<(3/2)^p.
+\]
+\end{lemma}
+\begin{proof}
+Since $H\ge(9/10)2^p$,
+\[
+ B_*/\eta_0\le(40/9)mQ^{m-1}.
+\]
+Moreover $L_c\le N^2=Q^{2m-2}/p^2$. Using $\alpha=p/10$ and $Q=p^4$ gives
+\begin{equation}\label{eq:budgetmajorant}
+ R:=\frac{4\alpha^2B_*L_c}{\eta_0}
+ \le\frac8{45}m p^{12(m-1)}\le m p^{12(m-1)}.
+\end{equation}
+Let $k$ be the integer with $2^k\le p<2^{k+1}$, so $k\ge20$. Then
+\[
+ m-1\le2(k+1),\qquad m\le2k+3\le2^k.
+\]
+The last inequality holds at $k=20$ and propagates by $2(2k+3)>2(k+1)+3$. Thus, for $f(k)=24(k+1)^2+k$,
+\[
+ R<2^{f(k)}.
+\]
+We have $f(20)=10604<524288=2^{19}$ and
+\[
+ 2f(k)-f(k+1)=24k^2+k-49>0\qquad(k\ge20).
+\]
+Induction gives $f(k)<2^{k-1}$. Finally
+\[
+ (3/2)^p\ge(3/2)^{2^k}=(9/4)^{2^{k-1}}
+ >2^{2^{k-1}}>2^{f(k)}>R.
+\]
+All exponents used here are integers.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Take $p=d$ and build the base game of Section~\ref{sec:construction}. Lemma~\ref{lem:cap} and Proposition~\ref{prop:frontcover} supply the inputs to Lemma~\ref{lem:completion}. Lemma~\ref{lem:degree} makes~\eqref{eq:clockbudget} hold with $D=p$. Therefore every state in the completed game has a legal flip of margin at least
+\[
+ \eta_0/2=H/8=(2^p-p/10)/8>0.
+\]
+Every old resource has cost a positive rational multiple of $x^p$. Every added resource has cost $M(x/(3w_a))^p$, also a positive rational multiple of $x^p$. The input parameters are rational, all sums are finite, and $N$ is an integer. The added pairs preserve the two action labels and their disjointness and nonemptiness. Hence the completed game satisfies every asserted model condition and has actual degree exactly $p$.
+\end{proof}
+
+\begin{corollary}\label{cor:sublinear}
+There is no universal $o(d)$ existence guarantee for approximate pure Nash equilibria in this model. In particular, there are no absolute constants $C\ge1$ and $d_0\ge2$ such that every degree-at-most-$d$ game has a $(Cd/\ln d)$-$\PNE$ for all integers $d\ge d_0$.
+\end{corollary}
+\begin{proof}
+Any factor $f(d)=o(d)$ is below $d/10$ for all sufficiently large $d$, and Theorem~\ref{thm:main} rules it out. Explicitly, for given $C,d_0$, choose an integer
+\[
+ k\ge\max\{20,\lceil20C\rceil,\lceil\log_2d_0\rceil\},
+ \qquad d=2^k.
+\]
+Then $d\ge d_0$ and $\ln d=k\ln2>k/2\ge10C$. Every state of the resulting game has a deviation with
+\[
+ C_i(s)>\frac d{10}C_i(t_i,s_{-i})
+ \ge\frac{Cd}{\ln d}C_i(t_i,s_{-i}).
+\]
+The first inequality stays strict even if the deviation cost is zero.
+\end{proof}
+
+\begin{corollary}\label{cor:order}
+The universal existence threshold satisfies $a_*(d)=\Theta(d)$.
+\end{corollary}
+\begin{proof}
+Theorem~\ref{thm:main} gives $a_*(d)\ge d/10$. The $d$-approximate potential theorem of Caragiannis and Fanelli~\cite[Theorem~2]{CF2021}, in the same positive-weight resource-subset model, gives $a_*(d)\le d$.
+
+For completeness, the monomial presentation of that result extends to the full nonnegative polynomial convention here. First fix any player having a strategy consisting entirely of identically zero-cost resources, including an empty strategy, to that strategy. Its cost is zero and it affects no positive-cost resource. Remove these players; if none remain, the fixed state is an exact equilibrium. Omit zero-cost resources from all remaining strategies. Every remaining strategy then has positive cost. Split each positive monomial term into a separate resource with the original incidence. Realize a constant term separately for each player by a private linear resource: when player $i$ selects an original resource with constant term $a_0$, it also selects the corresponding private resource of cost $(a_0/w_i)x$. Its occupied load is always $w_i$, so its cost is exactly $a_0$. Identical resulting actions may be merged. Costs and unilateral comparisons of the remaining players are preserved, and the fixed zero-cost players are stable. These operations use degree at most $d$ for $d\ge1$. Thus the imported guarantee applies to every game in our definition of $a_*(d)$.
+\end{proof}
+
+\section{Scope and further questions}
+The construction permits a growing number of weight classes, an unbounded range of weights, and strategies containing many resources. Its consequence concerns the worst-case existence threshold over the full model. Bounds for restricted weight spectra or restricted strategy structures remain separate questions. The exact leading constant in $a_*(d)$ and the smallest useful constructions are also left open. Neither an efficient equilibrium algorithm nor an improved complexity classification is required for the lower bound proved here.
+
+\bibliographystyle{plain}
+\bibliography{linear_threshold_references}
+\end{document}
