@@ -25,3 +25,11 @@ source-envelope12正文先pushed 09c6931e220630d0ff0ebed7811a6f01c3d000c9，再d
 先读最新Git/checkpoint回执和clean list --owner self；远端逐源记录裁定已完成/当前认领，本文只记录写作时点。正式正文按数学对象分类，旧OPEN以实际后续纠错更新，受限势合同失败与真实无均衡分别标明。所有未决材料须实际checkpoint后done或真实handoff，不能把子代理完成信息当推送证明。
 
 暂停/收尾仍须clean handoff --all并准确draft-note。本文不是本次handoff完成声明，当前仍在工作。凭据只留仓库外认证，不入正文、remote或提交。
+
+## 最新实际发布与运行范围
+
+下一63中的首12已先正文pushed37705992、done8ec60041；余51与新46中的UM模型2共同53源，正文最终发布头0325cab6c125f5a852017bfe023115fe0c2515bc（正文提交81ad730e已包含于正常合并同步头0325cab6），done另推送c2a9cff23b8b4f3a57f87becba4cf46aaa0dc840。READY53_RECEIPTS.json保逐源语义。next63全批已完成。
+
+新46claim a064b932中余44继续实质整理；另按已空出的两代理实际能力接续facility18与UM依赖7，claim pushed20ffb1f03e8bdaca5d59ec32ffebe290bfe4fa26，25原件完整缓存。当前Boss4官方完成392（358 integrated、33 retained、1 duplicate），当前认领69；全仓10921中仍有未处理来源，不声称全仓完成。
+
+新增两主稿原文全部实读，拼接主定理及完整归属边界已写，尚待其自身checkpoint/done。当前仍在工作，本文不是实际handoff回执。
