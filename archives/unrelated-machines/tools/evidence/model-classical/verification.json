@@ -1,0 +1,135 @@
+{
+  "claim_commit": "a064b9320dfc2553aba36f3c40c236dfd6617c18",
+  "full_source_count": 13,
+  "claimed_sources": [
+    "87998ce1dba9e905479b",
+    "d6e0835f7054ca7b4789"
+  ],
+  "all_original_size_and_sha256_checks": true,
+  "new_audit_executions": 0,
+  "historical_audits": [
+    {
+      "name": "classical",
+      "script_path": "original/tests/audits/unrelated_machines/rounding_and_gap.py",
+      "script_sha256": "5ba0dc52ddbb90ffece75e5accd2e801957c1172e337b9bdf033e22a64cbd75a",
+      "historical_report_path": "original/evidence/runs/unrelated_machines/classical_baseline_audit.json",
+      "historical_report_sha256": "4055c4113e7b0d1090d77c1f2ad183c0a6efd561d72e5b93b74b7af4565e0ca9",
+      "script_hash_matches_report": true,
+      "new_execution_in_this_batch": false,
+      "scope_note": "Historical frozen actual output and original model execution description; not claimed as a new Boss2 rerun"
+    },
+    {
+      "name": "dense",
+      "script_path": "original/tests/audits/unrelated_machines/dense_small_integer_equivalence.py",
+      "script_sha256": "8bd2ddee874cbeb93284f7fd2e6b74aa5fb795834c177de5df4c0065590ae108",
+      "historical_report_path": "original/evidence/runs/unrelated_machines/dense_small_integer_equivalence.json",
+      "historical_report_sha256": "2ca13b6d0b7b9b77ea09af285aa3d554c0f992cb2c28a57eef1c3e9be5a5bdd4",
+      "script_hash_matches_report": true,
+      "new_execution_in_this_batch": false,
+      "scope_note": "Dedicated historical review explicitly records real execution; distinct author/reviewer scopes preserved in resource page"
+    },
+    {
+      "name": "geometric",
+      "script_path": "original/tests/audits/unrelated_machines/geometric_alphabet_equivalence.py",
+      "script_sha256": "5ddaf740aae1e40f03f74840b898db94666851b225548d66a509bfc3188051d1",
+      "historical_report_path": "original/evidence/runs/unrelated_machines/geometric_alphabet_equivalence.json",
+      "historical_report_sha256": "f620ed3bccd82d8f09867f2ea2671c9655387229fc6d2acc9b67ee31ef0b6ad2",
+      "script_hash_matches_report": true,
+      "new_execution_in_this_batch": false,
+      "scope_note": "Dedicated historical review explicitly records real execution; distinct author/reviewer scopes preserved in resource page"
+    },
+    {
+      "name": "log-padding",
+      "script_path": "original/tests/audits/unrelated_machines/logarithmic_palette_padding_equivalence.py",
+      "script_sha256": "6f3b3c11815f82eb51f03ae63e529288898ddd4fab2022656f3af36b1e242391",
+      "historical_report_path": "original/evidence/runs/unrelated_machines/logarithmic_palette_padding_equivalence.json",
+      "historical_report_sha256": "83898ee4d9ed44667e38a23dbffa84e620504e7d445ba006a663c6d67b73b444",
+      "script_hash_matches_report": true,
+      "new_execution_in_this_batch": false,
+      "scope_note": "Dedicated historical review explicitly records real execution; distinct author/reviewer scopes preserved in resource page"
+    }
+  ],
+  "weighted_reuse": {
+    "prior_real_run": "../weighted-joint/independent-run.json",
+    "raw_stdout": "../weighted-joint/independent.stdout.txt",
+    "raw_stderr": "../weighted-joint/independent.stderr.txt",
+    "comparison": "../weighted-joint/independent-comparison.json",
+    "returncode": 0,
+    "stderr_bytes": 0,
+    "stdout_sha256": "00c1285f8279c7a6f6afbaae4d8034bcf4d8fb3b6b153294030dfe5dfa4ae1ae",
+    "script_sha256": "4e26d6f9a865d9def8f674334be568c440b4a17e5bb21f5c322b5e09b467836f",
+    "candidate_sha256": "4cab1691aaef9c1265fd517d1cf5dbd2cb2f7e5b0757a0d88fcc2e9ae3905a4e",
+    "entire_json_equal_to_historical_nested_object": true,
+    "coverage": {
+      "cases": 7708,
+      "true_feasible": 3057,
+      "true_infeasible": 4651,
+      "source_witnesses": 3824,
+      "partial_last_slots": 121,
+      "families": {
+        "two_home_one_sink_exhaustive": 7300,
+        "three_home_two_sink_seed572991": 400,
+        "zero_T": 1,
+        "delta_zero_macro": 1,
+        "no_sinks_positive_small_group": 1,
+        "prune_above_T": 1,
+        "empty_homes": 1,
+        "huge_denominator": 1,
+        "delta_near_half": 1,
+        "large_rational_scale": 1
+      }
+    },
+    "reason_not_repeated": "Both exact source files and expected object unchanged; previous batch actually ran this optional-candidate kernel in this same curation session; repeated execution would add no evidence"
+  },
+  "padding_reading_correction": {
+    "field": "N_is_2_to_power",
+    "meaning": "E = log2(N), not N",
+    "samples": [
+      {
+        "original_n": 1,
+        "fixed_k": 2,
+        "N_is_2_to_power": 256,
+        "actual_H": 257,
+        "sentinel_bitlength": 513
+      },
+      {
+        "original_n": 2,
+        "fixed_k": 2,
+        "N_is_2_to_power": 320,
+        "actual_H": 321,
+        "sentinel_bitlength": 641
+      },
+      {
+        "original_n": 5,
+        "fixed_k": 2,
+        "N_is_2_to_power": 448,
+        "actual_H": 449,
+        "sentinel_bitlength": 897
+      },
+      {
+        "original_n": 5,
+        "fixed_k": 3,
+        "N_is_2_to_power": 1344,
+        "actual_H": 1345,
+        "sentinel_bitlength": 2689
+      }
+    ],
+    "actual_N_materialized": false
+  },
+  "classical_hash_correction": {
+    "old_other_owner_manifest": "../classical-baseline-work-gcd-20261030/source-manifest.json",
+    "old_manifest_left_unchanged": true,
+    "source_sha256_field_means": "code digest",
+    "report_bytes_sha256": "4055c4113e7b0d1090d77c1f2ad183c0a6efd561d72e5b93b74b7af4565e0ca9",
+    "code_sha256": "5ba0dc52ddbb90ffece75e5accd2e801957c1172e337b9bdf033e22a64cbd75a"
+  },
+  "scope": "Full general proofs are in six separate formal mathematical objects. Hash checks, historical exact output and finite enumeration are not substitutes for those proofs; no unknown B or generic LP backend has been run.",
+  "formal_validation": {
+    "formal_pages": 7,
+    "unique_stable_ids": true,
+    "source_refs_validated": 17,
+    "local_relative_links_validated": 36,
+    "receipt_count": 2,
+    "all_receipt_targets_are_existing_formal_pages": true
+  }
+}

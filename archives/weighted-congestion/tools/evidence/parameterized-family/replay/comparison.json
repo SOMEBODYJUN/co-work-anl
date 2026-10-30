@@ -1,0 +1,47 @@
+{
+  "runs": [
+    {
+      "script": "tests/audits/weighted_congestion/structural_reconstruction/near_degree_audit.py",
+      "source_sha256": "39a1040ea037144dd41c4106e97a560049f1d0ca8746ffb0731859da9ca8f68c",
+      "exit_code": 0,
+      "byte_equal": true,
+      "differences": {},
+      "full_result": {
+        "status": "PASS",
+        "checks": {
+          "audit_heavy_and_light": 332,
+          "audit_return": 225,
+          "audit_twist": 560,
+          "audit_clock": 2040,
+          "audit_tail_rounding": 245
+        },
+        "total_exact_cases": 3402,
+        "arithmetic": "Fraction and integer",
+        "seed": null,
+        "python_version": "3.12.14",
+        "scope": "finite endpoint, parity, twist, repair and rounding audits only; universal tail has a separate analytic proof",
+        "code_sha256": "39a1040ea037144dd41c4106e97a560049f1d0ca8746ffb0731859da9ca8f68c"
+      },
+      "scope": "unchanged finite exact inputs; no enormous asymptotic game or infinite tail enumeration"
+    },
+    {
+      "script": "tests/audits/weighted_congestion/structural_reconstruction/raw_resource_audit.py",
+      "source_sha256": "e75d0f1d3293d7c9b3a470a35223a7dee9505df99e17f56c10960a874ae38f8b",
+      "exit_code": 0,
+      "byte_equal": true,
+      "differences": {},
+      "full_result": {
+        "status": "PASS",
+        "scope": "finite actual-resource identities only; not a universal proof",
+        "phase_parameter_cases": 1358,
+        "repair_bit_strings": 2046,
+        "stable_set_instances": 168,
+        "seed": null,
+        "arithmetic": "fractions.Fraction, exact integers",
+        "source_sha256": "e75d0f1d3293d7c9b3a470a35223a7dee9505df99e17f56c10960a874ae38f8b"
+      },
+      "scope": "unchanged finite exact inputs; no enormous asymptotic game or infinite tail enumeration"
+    }
+  ],
+  "all_passed": true
+}

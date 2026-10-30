@@ -1,0 +1,85 @@
+{
+  "distinct_original_programs_successful": 3,
+  "actual_attempts": 4,
+  "preserved_failure_count": 1,
+  "failure": "Recovery initially could read its fixed commit/tree but lacked the historical article tex blob. Boss supplied that same immutable object; only recovery was retried. Calibration/repair were not repeated.",
+  "attempts": [
+    {
+      "record_directory": "replay",
+      "name": "calibration",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/audits/weighted_congestion/decision_methods/calibration_audit.py",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/replay/calibration_audit.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/original",
+      "exit_code": 0,
+      "seconds": 1.3049863369960804,
+      "source_sha256": "f291a764f4e38d7078639739fc0c350fa5a292e40e8871286ed73869d9f7ec4a",
+      "output": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/replay/calibration_audit.json",
+      "output_sha256": "7bdadf9187efb7ce9565061d344c6c83380335d5ef75dc63ff11c2114df1b306"
+    },
+    {
+      "record_directory": "replay",
+      "name": "repair",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/audits/weighted_congestion/decision_methods/repair_audit.py",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/replay/repair_audit.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/original",
+      "exit_code": 0,
+      "seconds": 4.923066782997921,
+      "source_sha256": "6ca9a8fdfe1bb2e40053ca0613f7d4ea88df15de38bca9e67aed926b84689914",
+      "output": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/replay/repair_audit.json",
+      "output_sha256": "8257fbddb8b47795d62841357a317db01b9b929132151a344d943cf124c9b37d"
+    },
+    {
+      "record_directory": "replay-recovery",
+      "name": "recovery",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/audits/weighted_congestion/decision_methods/recovery_scope_audit.py",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/replay-recovery/recovery_scope_audit.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/original",
+      "exit_code": 1,
+      "seconds": 0.06296348600153578,
+      "source_sha256": "52308a3cec92e2d83c2edba3701548d3090ae307e579aa0626b852bae66f9778",
+      "output": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/replay-recovery/recovery_scope_audit.json",
+      "output_sha256": null
+    },
+    {
+      "record_directory": "replay-recovery-after-dependency",
+      "name": "recovery",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/audits/weighted_congestion/decision_methods/recovery_scope_audit.py",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/replay-recovery-after-dependency/recovery_scope_audit.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/original",
+      "exit_code": 0,
+      "seconds": 0.07128139400447253,
+      "source_sha256": "52308a3cec92e2d83c2edba3701548d3090ae307e579aa0626b852bae66f9778",
+      "output": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/decision-calibration/replay-recovery-after-dependency/recovery_scope_audit.json",
+      "output_sha256": "04d013e91721867d5e78c5e8bc29faeb2b0a0148361506ca2d7ffd6bb6756d92"
+    }
+  ],
+  "extra_witness_export": {
+    "command": [
+      "python3",
+      "archives/weighted-congestion/tools/evidence/decision-calibration/export_calibration_witnesses.py"
+    ],
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "exit_code": 0,
+    "output": "extra-witnesses.json",
+    "output_sha256": "517a0c0f15e84e6701f4da060bec113f01dc6d452a8aa3e8ca541eb2b4e4279f",
+    "scope": "Two previously unpersisted lower-end duals, literal 16-state/96-deviation/47-strict-edge counterexample and topological order; not a second complete original audit."
+  }
+}

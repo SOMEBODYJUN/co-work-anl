@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "python_version": "3.12.14",
+  "seed": 20261016,
+  "arithmetic": "fractions.Fraction, exact; no floating point solver",
+  "source_sha256": "5ba0dc52ddbb90ffece75e5accd2e801957c1172e337b9bdf033e22a64cbd75a",
+  "matrix_cases": 3375,
+  "oracle_assignments": 13824,
+  "rational_cases": 150,
+  "invalid_cases": 6,
+  "toy": {
+    "optimum": "3",
+    "bad_assignment_makespan": "5",
+    "ratio": "5/3",
+    "enumerated_assignments": 2187,
+    "attribution": "Only the OPT and bad schedule checked; no claim this is a reproduced textbook matching"
+  },
+  "expanded_gap_cases": [
+    {
+      "k": 2,
+      "height": 1,
+      "root_alpha": "1",
+      "optimum": "3/2",
+      "certified_lp_upper": "3/2",
+      "gap_lower_bound": "1",
+      "dp_units": {
+        "0": 2,
+        "1": 3
+      },
+      "machines": 4,
+      "jobs": 5,
+      "configuration_certificate_checked": true,
+      "enumerated_assignments": 32,
+      "independent_optimum": "3/2"
+    },
+    {
+      "k": 3,
+      "height": 1,
+      "root_alpha": "1/2",
+      "optimum": "5/3",
+      "certified_lp_upper": "4/3",
+      "gap_lower_bound": "5/4",
+      "dp_units": {
+        "0": 3,
+        "1": 5
+      },
+      "machines": 4,
+      "jobs": 7,
+      "configuration_certificate_checked": true,
+      "enumerated_assignments": 128,
+      "independent_optimum": "5/3"
+    },
+    {
+      "k": 4,
+      "height": 3,
+      "root_alpha": "16/27",
+      "optimum": "7/4",
+      "certified_lp_upper": "5/4",
+      "gap_lower_bound": "7/5",
+      "dp_units": {
+        "0": 4,
+        "1": 7
+      },
+      "machines": 74,
+      "jobs": 169,
+      "configuration_certificate_checked": true
+    }
+  ],
+  "compressed_gap_cases": [
+    {
+      "k": 5,
+      "height": 5,
+      "root_alpha": "625/1024",
+      "optimum": "9/5",
+      "certified_lp_upper": "6/5",
+      "gap_lower_bound": "3/2",
+      "dp_units": {
+        "0": 5,
+        "1": 9
+      }
+    },
+    {
+      "k": 8,
+      "height": 11,
+      "root_alpha": "1073741824/1977326743",
+      "optimum": "15/8",
+      "certified_lp_upper": "9/8",
+      "gap_lower_bound": "5/3",
+      "dp_units": {
+        "0": 8,
+        "1": 15
+      }
+    },
+    {
+      "k": 16,
+      "height": 33,
+      "root_alpha": "340282366920938463463374607431768211456/647159824910983792506158351898193359375",
+      "optimum": "31/16",
+      "certified_lp_upper": "17/16",
+      "gap_lower_bound": "31/17",
+      "dp_units": {
+        "0": 16,
+        "1": 31
+      }
+    },
+    {
+      "k": 32,
+      "height": 88,
+      "root_alpha": "88725430211866075506509253892578678509965986412026130405455346579667881849780019937279180995332466499116518750764914298527173050368/173711694783329886747340700142280526219070382414659579890474457813633946118366825776800447238433639642831064082112331815096634819841",
+      "optimum": "63/32",
+      "certified_lp_upper": "33/32",
+      "gap_lower_bound": "21/11",
+      "dp_units": {
+        "0": 32,
+        "1": 63
+      }
+    }
+  ],
+  "limitations": [
+    "Finite checks are not a universal proof or novelty certificate",
+    "No generic LP solver implemented; rounding receives a feasible x",
+    "Compressed DP applies only to the explicit symmetric VW tree family",
+    "Large k full graphs not materialized; no claim of a generic efficient exact solver"
+  ]
+}
