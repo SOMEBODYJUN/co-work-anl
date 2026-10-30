@@ -78,3 +78,7 @@ READY5E：净券fresh初始化/F-BUDGET、含current价格的行凸包、control
 READY5E数学pushed0b512e62789df222e53638e6fc9e82cba8e10914（27文件），5源done另推送af9105c268727e316cf031fbef1deb66afad9c94，synced；累计786完成。
 
 READY21F：单home版本/双证明5，设施与CAG失败边界3，仿射合并版本/分域审查3，exact/非线性/near-band教材5，双见证实际超载闭包/两五机锐例历史5；完整证明/候选/有限核算/历史scope分别保留；共21主源，先明确正文/证据checkpoint再逐源done；其余认领见READY21F_REMAINING_SCOPE.json。
+
+READY21F数学pushed763c4a63c3402c73ffb66dcba28bcd39c7c3b9db（115文件），21源done另推送5eaa74612e824b83409bf03ae61af9ec084de82d，synced。累计807完成，当前仅4鲜源/原审计收束。本轮执行容量接近边界，不扩认领；收尾必须实际handoff --all。
+
+READY4G：最后四已认领鲜广播数学源、局部价格审查、原程序与冻结报告；一次真实审计全字节一致，普遍共同cap仍未证。共享容量交接草稿，随后单独done及实际handoff检查；共4主源，先明确正文/证据checkpoint再逐源done；其余认领见READY4G_REMAINING_SCOPE.json。
