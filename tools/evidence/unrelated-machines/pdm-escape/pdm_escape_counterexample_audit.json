@@ -1,0 +1,51 @@
+{
+  "title": "pDM阈值桥低负载NO逃逸的精确枚举",
+  "claim_scope": "有限观察；不是一般NO上界，也不是UM-TARGET-v1的困难性证明",
+  "arithmetic": "fractions.Fraction exact",
+  "python": "3.12",
+  "command": "python3 tests/audits/unrelated_machines/pdm_escape_counterexample.py",
+  "instance": {
+    "dimension_d": 3,
+    "part_size_n": 2,
+    "edge_count_m": 3,
+    "b": 4,
+    "edges": [
+      [
+        "a1",
+        "b1",
+        "c1"
+      ],
+      [
+        "a1",
+        "b2",
+        "c2"
+      ],
+      [
+        "a2",
+        "b1",
+        "c2"
+      ]
+    ],
+    "threshold_T": "12",
+    "dummy_jobs": 4,
+    "total_work": "36"
+  },
+  "exact_result": {
+    "perfect_matching": false,
+    "assignments_checked": 648,
+    "OPT": "13",
+    "best_loads": [
+      "12",
+      "11",
+      "13"
+    ],
+    "OPT_over_T": "13/12",
+    "NO_schedule_at_T": false
+  },
+  "limitations": [
+    "The witness only attacks the naive inference that absence of a perfect matching forces a near-two NO value.",
+    "The pDM threshold theorem still proves the exact YES threshold and the integer lower bound OPT>=T+1 for every valid NO instance.",
+    "No statement about all possible gap amplifications or all R||Cmax algorithms is established."
+  ],
+  "audit_code_sha256": "d8ecca86cfd98551ed046fd5f2d3466c00c8832b8bbd0b2767bb8499c94a64f6"
+}
