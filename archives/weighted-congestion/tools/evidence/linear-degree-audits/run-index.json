@@ -1,0 +1,119 @@
+{
+  "source_count": 17,
+  "assigned_source_count": 14,
+  "comparison_or_replay_dependency_count": 3,
+  "actual_audit_attempts": 7,
+  "successful_distinct_audits": 6,
+  "failed_attempts": 1,
+  "failure_explanation": "The author audit was started before its input JSON had been copied; it raised FileNotFoundError on read_bytes before running mathematical assertions. Original stderr and exit 1 retained. After the input arrived, only this audit was restarted, into replay-author; the four successful independent audits were not repeated.",
+  "failed_stderr": "replay/verify_linear_degree_front_cover.stderr.txt",
+  "dependency_preflight_added": true,
+  "attempts": [
+    {
+      "record_directory": "replay",
+      "script": "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_sweep.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_sweep.py"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/original",
+      "exit_code": 0,
+      "seconds": 0.53481383700273,
+      "source_sha256": "45ea962bdbd9c030154819ff70cfa6b19edbf5fe99c5b33e55ccfda89c3f637e",
+      "output": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/replay/independent_linear_degree_sweep.json",
+      "output_sha256": "ca3dd83bb4e058f56e933d858e8d77f9dbb4197738685b36a35b4118aee7fc01"
+    },
+    {
+      "record_directory": "replay",
+      "script": "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_front.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_front.py"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/original",
+      "exit_code": 0,
+      "seconds": 0.39762941699882504,
+      "source_sha256": "3be2409adf1ee00d8b55e8daea41e3f634b307dda99be141e517e88b94260591",
+      "output": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/replay/independent_linear_degree_front.json",
+      "output_sha256": "d2d486957d3bd2cc4b19c8489ca37cb93d3d5451727378870448272887150e32"
+    },
+    {
+      "record_directory": "replay",
+      "script": "tests/audits/weighted_congestion/cyclic_clone/clean_attack_linear_degree.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/audits/weighted_congestion/cyclic_clone/clean_attack_linear_degree.py"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/original",
+      "exit_code": 0,
+      "seconds": 0.3331171579993679,
+      "source_sha256": "98f61e99f5516424e33faa411397255b2d37eba90c5a24e9997d26e1a0bb43b5",
+      "output": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/replay/clean_attack_linear_degree.json",
+      "output_sha256": "b0c9cc1f8e42a3117f0ee19b16f5d39a70b1901c4008df577721bb9dfe2291b5"
+    },
+    {
+      "record_directory": "replay",
+      "script": "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_allphases.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_linear_degree_allphases.py"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/original",
+      "exit_code": 0,
+      "seconds": 6.227362286001153,
+      "source_sha256": "d95537da42448f9e17f66fcebe62030721ebd686dfbe401c69bd5fcac9858ad5",
+      "output": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/replay/independent_linear_degree_allphases.json",
+      "output_sha256": "b4300b7ebb53f269e72362395c270cc552d2789c2e5c0a78e892bc6211fb5c96"
+    },
+    {
+      "record_directory": "replay",
+      "script": "tests/audits/weighted_congestion/cyclic_clone/verify_linear_degree_front_cover.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_linear_degree_front_cover.py",
+        "--input",
+        "examples/weighted_congestion/cyclic_clone/linear_degree_front_audit.json",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/replay/verify_linear_degree_front_cover.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/original",
+      "exit_code": 1,
+      "seconds": 0.04315601399866864,
+      "source_sha256": "235db059cdb88e24cc869ab462b530abb02f243d9958f38287bb2115c32c0784",
+      "output": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/replay/verify_linear_degree_front_cover.json",
+      "output_sha256": null
+    },
+    {
+      "record_directory": "replay-author",
+      "script": "tests/audits/weighted_congestion/cyclic_clone/verify_linear_degree_front_cover.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/audits/weighted_congestion/cyclic_clone/verify_linear_degree_front_cover.py",
+        "--input",
+        "examples/weighted_congestion/cyclic_clone/linear_degree_front_audit.json",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/replay-author/verify_linear_degree_front_cover.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/original",
+      "exit_code": 0,
+      "seconds": 1.1956868979978026,
+      "source_sha256": "235db059cdb88e24cc869ab462b530abb02f243d9958f38287bb2115c32c0784",
+      "output": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/replay-author/verify_linear_degree_front_cover.json",
+      "output_sha256": "135c36b157e72dde00d06fdb6aa0f95e58e65b324571bcde33e39f27cee2a5db"
+    },
+    {
+      "record_directory": "replay-assembly",
+      "script": "tests/audits/weighted_congestion/cyclic_clone/independent_multiclass_assembly.py",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/audits/weighted_congestion/cyclic_clone/independent_multiclass_assembly.py"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/original",
+      "exit_code": 0,
+      "seconds": 4.944694072997663,
+      "source_sha256": "1fd607c2f3ed7445f071642d890ccd7cfb1b6f22a96e2098b797c2c44179a67a",
+      "output": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/linear-degree-audits/replay-assembly/independent_multiclass_assembly.json",
+      "output_sha256": "1c3a8be7174ce3051751ad56942df2b39d4b68d24fa0b6818099cb81a86023df"
+    }
+  ]
+}

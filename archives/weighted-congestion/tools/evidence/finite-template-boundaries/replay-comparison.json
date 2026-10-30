@@ -1,0 +1,100 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "runs": [
+    {
+      "program": "original/tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py",
+      "command": [
+        "python3",
+        "tests/audits/weighted_congestion/template_certificates/verify_affine_full_signature.py"
+      ],
+      "cwd": "original",
+      "exit_code": 0,
+      "stdout": "replay-verify_affine_full_signature.json",
+      "stderr": "replay-verify_affine_full_signature.stderr.txt",
+      "stderr_bytes": 0,
+      "frozen": "original/evidence/runs/weighted_congestion/template_certificates/affine_full_signature_rigidity.json#result",
+      "differences": [],
+      "mathematical_fields_equal": true
+    },
+    {
+      "program": "original/tests/audits/weighted_congestion/template_certificates/verify_transient_core_implant.py",
+      "command": [
+        "python3",
+        "tests/audits/weighted_congestion/template_certificates/verify_transient_core_implant.py"
+      ],
+      "cwd": "original",
+      "exit_code": 0,
+      "stdout": "replay-verify_transient_core_implant.json",
+      "stderr": "replay-verify_transient_core_implant.stderr.txt",
+      "stderr_bytes": 0,
+      "frozen": "original/evidence/runs/weighted_congestion/template_certificates/transient_core_implant.json",
+      "differences": [
+        {
+          "path": "/command",
+          "frozen": "tests/audits/weighted_congestion/template_certificates/verify_transient_core_implant.py --output evidence/runs/weighted_congestion/template_certificates/transient_core_implant.json",
+          "replay": "tests/audits/weighted_congestion/template_certificates/verify_transient_core_implant.py"
+        }
+      ],
+      "mathematical_fields_equal": true
+    },
+    {
+      "program": "original/tests/audits/weighted_congestion/template_certificates/independent_transient_core_implant.py",
+      "command": [
+        "python3",
+        "tests/audits/weighted_congestion/template_certificates/independent_transient_core_implant.py"
+      ],
+      "cwd": "original",
+      "exit_code": 0,
+      "stdout": "replay-independent_transient_core_implant.json",
+      "stderr": "replay-independent_transient_core_implant.stderr.txt",
+      "stderr_bytes": 0,
+      "frozen": "original/evidence/runs/weighted_congestion/template_certificates/independent_transient_core_implant.json",
+      "differences": [
+        {
+          "path": "/command",
+          "frozen": "tests/audits/weighted_congestion/template_certificates/independent_transient_core_implant.py --output evidence/runs/weighted_congestion/template_certificates/independent_transient_core_implant.json",
+          "replay": "tests/audits/weighted_congestion/template_certificates/independent_transient_core_implant.py"
+        }
+      ],
+      "mathematical_fields_equal": true
+    },
+    {
+      "program": "original/tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py",
+      "command": [
+        "python3",
+        "tests/audits/weighted_congestion/template_certificates/independent_two_column_alternative.py"
+      ],
+      "cwd": "original",
+      "exit_code": 0,
+      "stdout": "replay-independent_two_column_alternative.json",
+      "stderr": "replay-independent_two_column_alternative.stderr.txt",
+      "stderr_bytes": 0,
+      "frozen": "original/evidence/runs/weighted_congestion/template_certificates/independent_two_column_alternative.json",
+      "differences": [],
+      "mathematical_fields_equal": true
+    }
+  ],
+  "interpretation": "The two implant reports differ only in command metadata: this replay defaults to stdout, while frozen reports used --output. No fields were hidden or overwritten. Affine frozen record wraps program stdout in result.",
+  "certificate_export": {
+    "command": [
+      "python3",
+      "export_two_column_certificates.py"
+    ],
+    "cwd": ".",
+    "exit_code": 0,
+    "stdout": "replay-two-column-certificates.json",
+    "stderr": "replay-two-column-certificates.stderr.txt",
+    "stderr_bytes": 0,
+    "records": 819,
+    "counts": {
+      "primal": 129,
+      "dual": 690,
+      "dual_all_columns_equal_zero": 198
+    },
+    "digest": "11361eba4e83b694e58a17cff7bb69e25f5675423a353324c59e76352c2ed539",
+    "matches_frozen_stream_digest": true,
+    "independent_solver": false
+  }
+}

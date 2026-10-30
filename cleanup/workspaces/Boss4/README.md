@@ -25,4 +25,4 @@
 
 原101源已完整处置：45正文/证据checkpoint pushed a9fe1925fb460b7cdc4fc0937b3f52f111c94443；96条Boss4 done pushed bca761c311652fc050590e1c5582c39197b1eeb0，另5条保留Boss2已完成记录，无覆盖。旧LOCAL_RECEIPTS.json与DELIVERY_INDEX.md是这批的详细入口。
 
-后续100源形成51正式对象；其中source-envelope12源已pushed并done，余88条待此次共同正文checkpoint确认pushed再done。7组回执为*-next-receipts.json。当前六名指定gpt-6.1-sol/ultra代理接续已正式认领的64源小批；它们与前100源严格分批登记。最新准确恢复状态见LOCAL_HANDOFF.md；各delivery里的“未Git/done”是子代理交付时点，不代替Boss远端回执。
+后续100源形成51正式对象，全部正文与依赖pushed b24f1909257fc618113c336fa963a81cf0bbf68d，先后逐源done；另10编译依赖也done。当前另外101源准备集中checkpoint→pushed→done，UM恢复9源仍实际执行。最新入口[CONTINUATION_INDEX.md](CONTINUATION_INDEX.md)，旧101入口仍为DELIVERY_INDEX.md。各delivery“未Git/done”只记代理交付时点。
