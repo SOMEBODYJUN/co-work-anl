@@ -4,7 +4,7 @@
 
 后续100源形成51正式对象，正文pushed b24f1909257fc618113c336fa963a81cf0bbf68d；其中source-envelope12先done d58152cae3174301d9feb86af1fbb7bb7ce55834，余88及另10编译依赖done pushed b69dfcbacf1d3857a1058a47ed87f9819c26091c。
 
-另101源已先checkpoint pushed 760ff40cef415b7cf06f7172e0b94717d86f7fbb，再逐源done pushed a847763a85cfdb659b1a38ac21aa925554f5b55a；记录CONTINUATION_RECEIPTS_101.json。UM恢复9源数学及回执已交付，待单独checkpoint/done；下一59源只有metadata选批，尚未认领。
+另101源已先checkpoint pushed 760ff40cef415b7cf06f7172e0b94717d86f7fbb，再逐源done pushed a847763a85cfdb659b1a38ac21aa925554f5b55a；记录CONTINUATION_RECEIPTS_101.json。UM恢复9源已pushed b347a993c602859962b3b3257321ff393ac9ce8d并done 8094718edf410511f2f991821dfe01b366fc6e10。下一63源已claim pushed 41ff68570d7b0daad1d66fc6714045c6d9727e16，按数学对象去重分7实际范围，六指定代理与Boss继续工作。
 
 | 本批子组 | 来源数 | 逐源回执 |
 | --- | ---: | --- |
