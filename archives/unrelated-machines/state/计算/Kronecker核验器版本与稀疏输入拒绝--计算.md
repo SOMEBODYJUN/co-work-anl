@@ -15,6 +15,9 @@ source_refs:
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/actual_kronecker_checker_original_objections.md"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/actual_kronecker_checker_code_read_after_v2.md"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/actual_kronecker_checker_sparse_guard_addendum_v3.md"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/actual_kronecker_checker_original_objections.md"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/actual_kronecker_checker_code_read_after_v2.md"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/actual_kronecker_checker_sparse_guard_addendum_v3.md"
 ---
 
 # Kronecker核验器版本与稀疏输入拒绝
@@ -130,6 +133,25 @@ python3 tools/evidence/private-tree/kronecker-checker-mutations/replay_v3_guards
 
 这两份来源给[完整矩阵反例](../反例/完整矩阵Kronecker偶次幂坍缩--反例.md)补充“数学见证正确”和“输入记录会被怎样检查”的区别：同一数学矩阵可以有不同原始记录表达，v3 在不改数学实例的前提下把这种表达固定为 100 行、每行四个不同严格整数端，再比较原资格及时间。完整正例的规范重放见上一计算对象；本对象只承担版本及指定错误输入的证据。
 
-本轮还为版本关系全文比较了三份历史说明：cb2d91934f58059179de（初版异议）、30e302f02f337c8c4b75（v2 读后）、bcce655bc830b0b0f58c（v3 补充）。这些是比较读取，不把三份来源自动记为已完成清洗。原说明的独立性和运行顺序保持原状。
+三份历史说明先用于上述版本比较，随后已逐源完整清洗并归入本对象，精确去向见下一节。它们没有产生新的数学定理或额外的本轮运行；原说明的独立性、修复责任和实际读序保持原状。
 
 此处不主张所有畸形 JSON 均被拒绝，也不把 hash 匹配当作算法正确性证明。可复用的是确定版本、完整原报告、可核重建的 v2 字节、最终原 checker 及五项新明确 fixture。若后续必须复现历史驱动的每个精确变异，需要补取得旧驱动或旧完整输入；若扩展为一般验证服务，需要另立接受语法和拒绝行为合同。当前材料没有一般 LP 求解、普遍调度算法、源困难性或所有乘积均失败的结论。
+
+
+## 三份历史说明的逐源归入与证据边界
+
+| 来源 ID 与原文件 | 全文身份 | 独有内容及本文去向 |
+|---|---|---|
+| cb2d91934f58059179de；actual_kronecker_checker_original_objections.md | 1932 字节；SHA256 caa035fb5474a20a5ca803dfb1719ec4ed1cd6c5e9effa23bfe805ca9fafe832 | “三个版本”节保留 v1 正确输入基线通过、负索引与 False 别名推导、字典分支忽略第101行及 primal 报告作用不符；旧变异因 hash 已变而中止，不能追认实际错误输入接受运行 |
+| 30e302f02f337c8c4b75；actual_kronecker_checker_code_read_after_v2.md | 3733 字节；SHA256 cade82ab9a8d8ed6ef2de2d89099a565e566767c433fab800f7423e7e97d18f2 | “v2 完整报告”节逐项保留九拒一接受及拒覆盖；[核心计算对象](完整Kronecker矩阵与双平方证书核验--计算.md)保留固定矩阵、真实任务元组、双证书、初态与十五交换、有限四次幂、实际 primal/dual 的完整程序合同 |
+| bcce655bc830b0b0f58c；actual_kronecker_checker_sparse_guard_addendum_v3.md | 2516 字节；SHA256 5c83d1e0d889ff4ebdf4bdbee6ec723d6ce980cc60bd3c036393c7d3df4de19a | “v3 的六行收紧”节保留唯一差分、五项新拒绝及只重查新增部分的限制；下段补全两个 clone 的历史字节核对，不把复制相同代码计作新数学审查 |
+
+初版三项异议由原审者报告给当时主研究者，后者修改共享代码，审者没有亲自改共享版本。首次准备旧版变异副本时，身份保护断言发现代码已是 bb7d555b…，立即中止；不是对一个失败的旧版攻击静默改标签，也没有覆盖旧基线。primal 项的缺口在代码验证内容与输出措辞之间：半半原初在数学正文中已经给出，不能把这项实现遗漏写成 LP 数学恒等式缺证明。
+
+原说明分别提到 canonical_checker_baseline_run_v1.json、canonical_checker_baseline_run_v2.json，v3 又命名 canonical_checker_guard_v2_to_v3.diff。本轮未取得两份独立旧基线文件，不能把随后最终 v3 的完整重放报告充当它们的原字节。v3 差分内容则已经完整嵌在本批保存的 v3 JSON 内，可据它准确重建 hash 匹配的 v2 程序；这里保留原文件名与实际可取得内容的区别。
+
+v2 的输出拒覆盖还具有两层机制：先检查路径已存在，再以 open('x') 独占创建；后一层在检查后、打开前出现同名文件时仍不会覆写。旧说明的实际实验是已有基线路径请求被拒、前后 hash 相同，并未记录并发竞争实验。本轮也没有据代码机制追加一个未运行的竞争测试记录。
+
+v3 原说明记载分别读取 co-work-anl-boss11 与 co-work-anl-boss11-negative 两个 clone 的同路径最终 checker，二者 hash 都为 8e95e8c4…，且审者未修改两 clone。这只确认那次复制前后是同一程序，不等于进行了两次新的完整数学审查或两次完整审计。该说明自己的五项新拒绝与当时主研究者正确 v3 输入运行是不同事件，前文保留了二者范围。
+
+三个来源均 integrated 入现对象；本轮没有重跑旧 v1/v2 基线、旧十项变异、旧拒覆盖或两个历史 clone。缺少旧独立基线与驱动文件的实际边界仍保留，不以本轮新五项 guard 运行替代。
