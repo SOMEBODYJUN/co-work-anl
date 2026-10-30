@@ -1,0 +1,44 @@
+[
+  {
+    "id": "3e853e2f77d938aaf6cc",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "全文读取 63 个 k=2..64 实例的 Fraction 冻结审计；每项记录 OPT=1、初始峰值 2-1/k、最小成本支撑槽匹配、唯一机器分配、one-destination makespan 非增修复数为 0，并核对代表性 k=2 的 19 机/22 任务矩阵、分数点和槽注入。",
+    "comparison_note": "对照 cyclic_batch_repair_and_fork_obstruction.md 与 cyclic_batch_fork_review.md，确认该 JSON 是既有分流/填充叉对象的有限证书，不是新的通用定理；同时保留其关于所有最小成本槽匹配诱导同一机器分配的证据范围。",
+    "decision_note": "将 63 实例与 k=2 具体矩阵、17,010 次槽注入作为填充叉审查的独有证据并入向量贪心/填充叉/累计路径冻结审计正文；明确不扩展到全部 LST 实现、全部 LP 点或 UM-TARGET-v1。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/unrelated-machines/state/审查/向量贪心填充叉与累计路径冻结审计--审查.md",
+      "archives/unrelated-machines/tools/evidence/projected-vector-padded-query-20261030/padded_fork_unique_cost_audit.json"
+    ]
+  },
+  {
+    "id": "08c48c4d8d64c69cf6af",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "全文读取双路 Fraction 运行记录：五机五任务 14 原子单位碰撞、三机 323 任务正数提升、所有任务顺序计数、最小严格间隙 hash 与边界自检；确认支撑原子峰值 1、默认输出峰值 2 和 120 顺序中 78 个全程严格。",
+    "comparison_note": "通读 projected_vector_greedy_unbounded.md 及 projected_vector_greedy_review.md，比较事件链无界证明、交换算子正面边界、规范 Gram 逆与独立样本投影；有限运行只作证书，不替代一般证明。",
+    "decision_note": "将单位碰撞与三机正数化的双路精确结果、120 顺序枚举和严格评分范围并入向量贪心审查正文；保留固定顺序/给定真实分布量词，不声称自适应调序或一般算法不可能。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/unrelated-machines/state/审查/向量贪心填充叉与累计路径冻结审计--审查.md",
+      "archives/unrelated-machines/tools/evidence/projected-vector-padded-query-20261030/projected_vector_greedy_audit.json"
+    ]
+  },
+  {
+    "id": "a020d8a2dc3bb375fd57",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "全文读取 root_full_matrix_verification：26 机/30 任务/57 有限资格的八五证书、8 机/10 任务/24 有限资格的 5,184 个完整分配枚举与峰值直方图，确认审计范围标为 audit_only 且没有运行优化器。",
+    "comparison_note": "对照 line_set_packing_and_take_continue_compilation_obstructions.md 与 partial_sum_take_continue_actual_escape_review.md，确认第一部分支撑 canonical 的 8/5 下界证明，第二部分仅是固定 UNSAT 矩阵的三半有限核验；同时核对来源标签纠正及作者证明/statement-first/复核的分工。",
+    "decision_note": "将 57 条资格逐项核验和 5,184 次枚举作为累计 take/continue 对象的有限证据并入审查正文；保留 OPT_SC=0、V=2/5、OPT_UM=8/5 的精确条件，不把单实例枚举升级为一般编译困难或主目标否定。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/unrelated-machines/state/审查/向量贪心填充叉与累计路径冻结审计--审查.md",
+      "archives/unrelated-machines/tools/evidence/projected-vector-padded-query-20261030/root_full_matrix_verification.json"
+    ]
+  }
+]
