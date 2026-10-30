@@ -6,6 +6,19 @@ from urllib.parse import quote
 import board
 
 COMPLETE={'integrated','retained','duplicate','retired'}
+_STATE_INDEX={}
+
+
+def tracked_state(root):
+    name=str(root.resolve());entry=_STATE_INDEX.get(name)
+    if entry is None:
+        raw=board.git(root,'rev-parse','--git-path','index').stdout.decode().strip();index=(root/raw).resolve()
+    else:index=entry[0]
+    stat=index.stat() if index.exists() else None;stamp=(stat.st_mtime_ns,stat.st_size) if stat else None
+    if entry is None or entry[1]!=stamp:
+        paths=board.git(root,'ls-files','-z','--','cleanup/progress').stdout
+        entry=(index,stamp,{p.decode() for p in paths.split(b'\0') if p});_STATE_INDEX[name]=entry
+    return entry[2]
 
 
 def inventory(root):
@@ -56,6 +69,7 @@ def local_hold(root, rows):
 
 def progress(root, sid):
     p=root/'cleanup/progress'/f'{sid}.json'
+    if 'cleanup/progress/'+sid+'.json' not in tracked_state(root):return {}
     return json.loads(p.read_text()) if p.exists() else {}
 
 
@@ -285,6 +299,7 @@ def mutate(root, operation, ids=(), prefix=None, limit=20, records=()):
                 new.update(id=sid,source_sha256=row['sha256'],request_id=request_id,updated=int(time.time()))
                 dest=directory/'cleanup/progress'/f'{sid}.json';dest.parent.mkdir(exist_ok=True)
                 dest.write_text(json.dumps(new,ensure_ascii=False,indent=2)+'\n');updates.append(sid)
+            board.git(directory,'add','cleanup/progress')
             coverage(directory)
             board.git(directory,'add','cleanup/progress','cleanup/CHECKLIST.md','cleanup/checklists')
             board.git(directory,'commit','--quiet','-m',f'cleanup {operation}: {actor} ({len(updates)} source versions)')

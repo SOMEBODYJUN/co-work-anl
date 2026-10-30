@@ -12,6 +12,7 @@ def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def inspect(root):
     rows={r['id']:r for r in cleanup.inventory(root)};done=[];pending=[];targets={}
     for path in sorted((root/'cleanup/progress').glob('*.json')):
+        if path.relative_to(root).as_posix() not in cleanup.tracked_state(root):continue
         record=json.loads(path.read_text())
         if record.get('disposition') in cleanup.COMPLETE:
             cleanup.validate_receipt(root,record)
@@ -57,6 +58,35 @@ def prepare_result(root,actor,board_tip):
     (root/'cleanup/reset-receipt.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     (root/'cleanup/RESET.md').write_text('# 协作重置\n\n保留'+str(report['done_count'])+'条已交付处置及其正文/证据；清空未完成认领与未被完成成果引用的临时工作区。\n\n旧公屏当前消息清空，新公屏从完成成果摘要开始；历史提交保留可回滚。具体指纹与旧提交见reset-receipt.json。新对话按提示词显式编号登记后再认领。\n')
     return report
+
+
+def clean_local(root):
+    committed=board.git(root,'show','HEAD:cleanup/reset-receipt.json',check=False)
+    if committed.returncode:return {'status':'no-reset-receipt','archived_files':0}
+    receipt=json.loads(committed.stdout);tracked={p.decode() for p in board.git(root,'ls-files','-z').stdout.split(b'\0') if p}
+    candidates=[root/item['path'] for item in receipt.get('unfinished_records',[])]
+    for name in receipt.get('remove_temporary_workspaces',[]):
+        path=root/name
+        if path.is_symlink() or path.is_file():candidates.append(path)
+        elif path.is_dir():candidates.extend(p for p in path.rglob('*') if p.is_file() or p.is_symlink())
+    common=board.git(root,'rev-parse','--git-common-dir').stdout.decode().strip()
+    backup=(root/common).resolve()/'reset-backups'/receipt['reset_id'];archived=[]
+    for path in sorted(set(candidates)):
+        relative=path.relative_to(root).as_posix()
+        if relative in tracked or not (path.exists() or path.is_symlink()):continue
+        if not relative.startswith(('cleanup/progress/','cleanup/workspaces/')) or '..' in Path(relative).parts:
+            raise ValueError('Reset backup path outside the authorized coordination area')
+        if not path.parent.resolve().is_relative_to(root.resolve()):raise ValueError('Reset backup crosses a symlink boundary')
+        target=backup/relative;target.parent.mkdir(parents=True,exist_ok=True)
+        if target.exists() or target.is_symlink():target=target.with_name(target.name+'.'+uuid.uuid4().hex)
+        shutil.move(str(path),str(target));archived.append(relative)
+    for name in receipt.get('remove_temporary_workspaces',[]):
+        path=root/name
+        if path.is_dir() and not path.is_symlink():
+            for directory in sorted((p for p in path.rglob('*') if p.is_dir() and not p.is_symlink()),key=lambda p:len(p.parts),reverse=True)+[path]:
+                try:directory.rmdir()
+                except OSError:pass
+    return {'status':'local-reset-copies-archived','archived_files':len(archived),'backup':str(backup)}
 
 
 def apply(root,actor):
@@ -111,10 +141,10 @@ def apply(root,actor):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--repo',type=Path,required=True)
-    p.add_argument('command',choices=('plan','apply'));p.add_argument('--actor',default='Boss32');p.add_argument('--out',type=Path)
+    p.add_argument('command',choices=('plan','apply','clean-local'));p.add_argument('--actor',default='Boss32');p.add_argument('--out',type=Path)
     a=p.parse_args();root=a.repo.resolve()
     try:
-        report=inspect(root) if a.command=='plan' else apply(root,a.actor)
+        report=inspect(root) if a.command=='plan' else clean_local(root) if a.command=='clean-local' else apply(root,a.actor)
         if a.command=='plan':report.update(status='plan-only-not-applied',source_tip=board.git(root,'rev-parse','HEAD').stdout.decode().strip(),board_policy='Replace current chat by one verified-delivery entry; preserve Git history')
         if a.out:a.out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
         print(json.dumps({k:v for k,v in report.items() if k not in ('preserved_receipts','preserved_targets','unfinished_records')},ensure_ascii=False,indent=2));return 0

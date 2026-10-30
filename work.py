@@ -221,8 +221,8 @@ def sync(repo, env, allow_legacy=False):
             "+refs/heads/" + target + ":" + tracking, env=env)
         tip = value(repo, "rev-parse", tracking)
         if run(repo, "merge-base", "--is-ancestor", tip, "HEAD", check=False).returncode == 0:
-            return {"status": "synced", "branch": target, "remote_tip": tip,
-                    **({"main": tip} if target == "main" else {}), "preserved_work": True}
+            return finish_sync(repo,{"status": "synced", "branch": target, "remote_tip": tip,
+                    **({"main": tip} if target == "main" else {}), "preserved_work": True})
         stash = None
         if run(repo, "status", "--porcelain").stdout:
             run(repo, "stash", "push", "--quiet", "--include-untracked", "-m", "work sync " + uuid.uuid4().hex)
@@ -242,8 +242,16 @@ def sync(repo, env, allow_legacy=False):
                 raise Stop("同步后恢复遇到文件冲突；本地内容和完整备份 " + stash + " 均保留。")
         if merged.returncode:
             raise Stop(target + " 有真实文件冲突；合并已撤回，本地成果已恢复。")
-        return {"status": "synced", "branch": target, "remote_tip": tip,
-                **({"main": tip} if target == "main" else {}), "preserved_work": True}
+        return finish_sync(repo,{"status": "synced", "branch": target, "remote_tip": tip,
+                **({"main": tip} if target == "main" else {}), "preserved_work": True})
+
+
+def finish_sync(repo,result):
+    if (repo/'tools/restart.py').is_file() and (repo/'cleanup/reset-receipt.json').is_file():
+        cleanup=subprocess.run([sys.executable,str(repo/'tools/restart.py'),'--repo',str(repo),'clean-local'],capture_output=True,text=True)
+        try:result['reset_cleanup']=json.loads(cleanup.stdout)
+        except ValueError:result['reset_cleanup']={'status':'needs-attention','detail':cleanup.stderr[-700:]}
+    return result
 
 
 def save_id(repo, requested=None, default=None):

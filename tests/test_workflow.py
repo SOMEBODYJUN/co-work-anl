@@ -290,6 +290,24 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn('reset rejected in isolated test',reset.stdout)
         self.assertEqual(before,[git(self.remote,'rev-parse',name) for name in (BRANCH,'wcg/board-cleanup-20261028')])
 
+    def test_untracked_reset_copies_are_not_claims_and_sync_archives_them(self):
+        self.reset_fixture()
+        old=git(self.remote,'show',BRANCH+':cleanup/progress/'+self.ids[1]+'.json')
+        published=self.work(self.a,'checkpoint','cleanup/workspaces/A','-m','old temporary workspace')
+        self.assertEqual(published.returncode,0,published.stderr)
+        reset=self.work(self.a,'reset','apply','--actor','Boss32');self.assertEqual(reset.returncode,0,reset.stderr+reset.stdout)
+        self.assertEqual(self.work(self.a,'sync').returncode,0)
+        ghost=self.a/f'cleanup/progress/{self.ids[1]}.json';ghost.write_text(old)
+        note=self.a/'cleanup/workspaces/A/unfinished.md';note.parent.mkdir(parents=True,exist_ok=True);note.write_text('keep this local draft in backup\n')
+        unrelated=self.a/'unrelated.md';unrelated.write_text('keep outside reset scope\n')
+        status=json.loads(self.work(self.a,'clean','status').stdout);self.assertEqual(status['claimed'],0)
+        plan=json.loads(self.work(self.a,'reset','plan').stdout);self.assertEqual(plan['unfinished_count'],0)
+        synced=self.work(self.a,'sync');self.assertEqual(synced.returncode,0,synced.stderr)
+        report=json.loads(synced.stdout)['reset_cleanup'];self.assertGreaterEqual(report['archived_files'],2)
+        self.assertFalse(ghost.exists());self.assertFalse(note.exists())
+        backup=Path(report['backup']);self.assertEqual((backup/'cleanup/workspaces/A/unfinished.md').read_text(),'keep this local draft in backup\n')
+        self.assertEqual(unrelated.read_text(),'keep outside reset scope\n')
+
     def test_reset_rechecks_new_done_and_blocks_invalid_done(self):
         self.reset_fixture();plan=self.work(self.a,'reset','plan');self.assertEqual(json.loads(plan.stdout)['done_count'],1)
         # Finish the second source in its original actor before the new policy was read locally.
