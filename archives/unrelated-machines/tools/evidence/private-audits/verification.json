@@ -1,0 +1,91 @@
+{
+  "claim_commit": "1f45864cf2ba71ce392adba52bada8e83a3ea09c",
+  "original_size_sha256_checks": 5,
+  "new_program_executions": 0,
+  "programs": [
+    {
+      "file": "original/tests/audits/unrelated_machines/private_graft_and_resource_repetition.py",
+      "sha256": "a538217b275a362d3ab8fef9cb0d6925b8778380136c13d3f5b97f5d16e55065",
+      "historical_output_section": "canonical",
+      "same_hash_real_output_reused": true,
+      "stdout_object_keys_equal_historical_section": true,
+      "stdlib_imports": [
+        "fractions",
+        "hashlib",
+        "itertools",
+        "json",
+        "pathlib",
+        "platform"
+      ],
+      "new_execution": false
+    },
+    {
+      "file": "original/tests/audits/unrelated_machines/private_graft_independent.py",
+      "sha256": "8e185af99510f75fcf416349adfca2376ca6414e3ba22bba8d939f82cc2fa626",
+      "historical_output_section": "independent_graft_gate",
+      "same_hash_real_output_reused": true,
+      "stdout_object_keys_equal_historical_section": true,
+      "stdlib_imports": [
+        "fractions",
+        "hashlib",
+        "itertools",
+        "json",
+        "random"
+      ],
+      "new_execution": false
+    },
+    {
+      "file": "original/tests/audits/unrelated_machines/resource_pool_independent.py",
+      "sha256": "0f1e1e3aee5baa75cd66509ffef5f0b30cb435cf0c6b0b16f188a2b6c5245c32",
+      "historical_output_section": "independent_pool",
+      "same_hash_real_output_reused": true,
+      "stdout_object_keys_equal_historical_section": true,
+      "stdlib_imports": [
+        "functools",
+        "hashlib",
+        "itertools",
+        "json"
+      ],
+      "new_execution": false
+    }
+  ],
+  "fixture_sha256": "94f4d9edd13c74328ef7bcefcb19dd507139d92af5c2a007c9c755c14396f092",
+  "canonical_input_hash_matches": true,
+  "canonical_relative_dependency_layout_preserved": true,
+  "historical_report_sha256": "e18ca771ca6c41a073b7b5226802e57968aaed0dfca93b5ada8168a7cfccebcf",
+  "historical_report_reclaimed": false,
+  "historical_generation_base_commit": "00f181f0b3767047edd014d8bd60061e56f2f178",
+  "historical_independent_runtime": {
+    "python": "3.12.14",
+    "arithmetic": "exact integers/Fraction",
+    "commands": [
+      "python3 tests/audits/unrelated_machines/private_graft_independent.py",
+      "python3 tests/audits/unrelated_machines/resource_pool_independent.py"
+    ]
+  },
+  "scope_clarifications": {
+    "canonical_composite_vertex_cap": 6,
+    "independent_has_same_cap": false,
+    "independent_substitution_static_upper_bound": 9,
+    "independent_gate_static_upper_bound": 10,
+    "independent_actual_maximum_not_recorded": true,
+    "two_graft_oracles_both_enumerate_parent_choices": true,
+    "independent_single_forward_scan_requires_topological_numbering": true,
+    "token_calls_are_recursive_calls_not_all_assignments": true,
+    "token_optimum_reason": "Bound 1 is infeasible, bound 3/2 has a complete witness, and all actual finite times/loads lie on the half-integer grid. This is one fixed token input only.",
+    "tensor_square_relation_edges": 16,
+    "tensor_square_perfect_witness_edges": 4,
+    "pool_relation_edges": 32,
+    "pool_perfect_witness_edges": 4,
+    "fixture_description_fields_are_not_generic_schema_parameters": true
+  },
+  "formal_validation": {
+    "formal_pages": 1,
+    "unique_global_stable_id": true,
+    "full_commit_source_refs": 5,
+    "relative_links": 9,
+    "semantic_receipts": 4,
+    "all_targets_are_existing_formal_pages": true
+  },
+  "scope": "Full source/input reading and same-hash historical real-output reuse. No new blind review, repeat execution, general proof by finite counts, LP/backend implementation, hardness or novelty certification."
+}
