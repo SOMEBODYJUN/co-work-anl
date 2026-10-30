@@ -1,0 +1,224 @@
+{
+  "status": "passed",
+  "arithmetic": "fractions.Fraction; no float comparisons",
+  "seed": 20261019,
+  "grid_interval": [
+    16,
+    4096
+  ],
+  "grid_count": 4081,
+  "grid_probe_count": 940974,
+  "grid_samples": [
+    {
+      "n": "16",
+      "h": 5,
+      "R": 25,
+      "distinct": 23,
+      "max_retained": "96",
+      "max_power_bits": 65,
+      "probes": 52
+    },
+    {
+      "n": "17",
+      "h": 5,
+      "R": 25,
+      "distinct": 23,
+      "max_retained": "96",
+      "max_power_bits": 65,
+      "probes": 52
+    },
+    {
+      "n": "31",
+      "h": 5,
+      "R": 28,
+      "distinct": 26,
+      "max_retained": "165",
+      "max_power_bits": 73,
+      "probes": 59
+    },
+    {
+      "n": "32",
+      "h": 6,
+      "R": 35,
+      "distinct": 31,
+      "max_retained": "221",
+      "max_power_bits": 99,
+      "probes": 72
+    },
+    {
+      "n": "100",
+      "h": 7,
+      "R": 50,
+      "distinct": 44,
+      "max_retained": "794",
+      "max_power_bits": 151,
+      "probes": 102
+    },
+    {
+      "n": "1000",
+      "h": 10,
+      "R": 97,
+      "distinct": 84,
+      "max_retained": "10354",
+      "max_power_bits": 336,
+      "probes": 197
+    },
+    {
+      "n": "4096",
+      "h": 13,
+      "R": 147,
+      "distinct": 127,
+      "max_retained": "53846",
+      "max_power_bits": 560,
+      "probes": 297
+    }
+  ],
+  "large_grid_only": [
+    {
+      "n": "1000000",
+      "h": 20,
+      "R": 345,
+      "distinct": 305,
+      "max_retained": "20431873",
+      "max_power_bits": 1516,
+      "probes": 7
+    },
+    {
+      "n": "1073741824",
+      "h": 31,
+      "R": 764,
+      "distinct": 688,
+      "max_retained": "34217584391",
+      "max_power_bits": 3821,
+      "probes": 7
+    },
+    {
+      "n": "1152921504606846976",
+      "h": 61,
+      "R": 2811,
+      "distinct": 2621,
+      "max_retained": "70937023940453287300",
+      "max_power_bits": 16738,
+      "probes": 7
+    },
+    {
+      "n": "340282366920938463463374607431768211456",
+      "h": 129,
+      "R": 12119,
+      "distinct": 11620,
+      "max_retained": "43932659046672488622469319239682994526878",
+      "max_power_bits": 85105,
+      "probes": 7
+    }
+  ],
+  "small_h_transformation_checks": {
+    "matrices": 7871,
+    "zero_opt_matrices": 819,
+    "original_assignments": 34041,
+    "threshold_instances": 29648,
+    "transformed_assignments": 246196,
+    "sentinel_assignments": 183643,
+    "retained_assignments": 62553,
+    "optimal_witness_checks": 18885,
+    "strict_sentinel_cases": 11423,
+    "all_qualifying_output_checks": 25533
+  },
+  "ratio_identity_k_interval": [
+    2,
+    1000
+  ],
+  "ratio_samples": [
+    {
+      "k": 2,
+      "ratio_bound": "867/512",
+      "claimed_bound": "7/4"
+    },
+    {
+      "k": 3,
+      "ratio_bound": "3125/1728",
+      "claimed_bound": "11/6"
+    },
+    {
+      "k": 10,
+      "ratio_bound": "124659/64000",
+      "claimed_bound": "39/20"
+    },
+    {
+      "k": 100,
+      "ratio_bound": "127678599/64000000",
+      "claimed_bound": "399/200"
+    },
+    {
+      "k": 1000,
+      "ratio_bound": "127967985999/64000000000",
+      "claimed_bound": "3999/2000"
+    }
+  ],
+  "actual_large_branch_fixture": {
+    "n": 32768,
+    "m": 2,
+    "h": 16,
+    "k": 2,
+    "nonzero_jobs": 6,
+    "zero_jobs": 32762,
+    "original_opt": "6808670216069591511945183337/3713820117856140824697372726",
+    "L": "3/2",
+    "U": "22901890726779535085633798489/7427640235712281649394745452",
+    "first_good_T": "250563/131072",
+    "grid_steps_to_good_T": 4,
+    "rounded_flexible_rows": [
+      [
+        1073741824,
+        144702,
+        94661,
+        1,
+        1073741824,
+        430917
+      ],
+      [
+        144702,
+        281897,
+        184412,
+        40511,
+        69908,
+        1073741824
+      ]
+    ],
+    "rounded_opt": 527424,
+    "rounded_opt_certificate": {
+      "flexible_assignment": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "zero_count_on_machine0": 1845
+    },
+    "total_exact_load_pairs": 2096832,
+    "qualifying_alpha_load_pairs": 262104,
+    "qualifying_flexible_patterns": 8,
+    "qualifying_zero_count_range": [
+      0,
+      32762
+    ],
+    "largest_qualifying_original_load": "215/84",
+    "alpha": "3/2",
+    "transfer_ratio_bound": "867/512",
+    "claimed_ratio": "7/4",
+    "sentinel": 1073741824,
+    "scope": "Every transformed schedule is covered by one flexible pattern and zero-job count; no sub-2 backend assumed or run."
+  },
+  "scope": "Finite checks of encoding lemmas only; no unknown sub-2 backend; no hardness proof.",
+  "reproduction": {
+    "command": "python3 tests/audits/unrelated_machines/geometric_alphabet_equivalence.py --max-n 4096 --large-bits 128 --seed 20261019",
+    "python": "3.12.14",
+    "arithmetic": "standard-library Fraction and integers; deterministic seed recorded above",
+    "code_sha256": "5ddaf740aae1e40f03f74840b898db94666851b225548d66a509bfc3188051d1",
+    "proof_sha256": "251dc664bc623901df0841cf791345745d6c4ccfc12ce0e3eec208c27245ec4b",
+    "author_output_sha256": "3d28c729faacbc1d0d2f339d1ee49033b58bdb00c82dec35ed92aea8082d0c22",
+    "parent_rerun_matches_author_json": true,
+    "unverified": "Unknown B not supplied or executed; finite checks do not prove the universal equivalence."
+  }
+}
