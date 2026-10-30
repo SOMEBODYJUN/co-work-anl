@@ -1,0 +1,25 @@
+--- frozen/multi_facility_spe/greedy_box.py
++++ report-bound-decimal-v1/multi_facility_spe/greedy_box.py
+@@ -15,0 +16,19 @@
++
++
++# Report-only adaptation report-bound-decimal/v1, created during cleanup.
++# Frozen base: 68fad804ec5946cb296f77dc5b336308a66abf12, source 4e4efdb8c30ab03aee8b.
++# The original module is retained separately. Only assignment_move_bound uses
++# this helper; Fraction formatting and consumers parsing long strings are unchanged.
++# The small decimal-chunk approach also appears in the compared equal_light_flow
++# source e19c1dd1197f68906d4a; no flow implementation is imported by this helper.
++def _bound_decimal_text(value: int) -> str:
++    """Exact nonnegative integer text without changing Python's digit limit."""
++    if type(value) is not int or value < 0:
++        raise ValueError("The movement bound must be a nonnegative integer")
++    if value < 10 ** 9:
++        return str(value)
++    chunks = []
++    while value:
++        value, remainder = divmod(value, 10 ** 9)
++        chunks.append(remainder)
++    return str(chunks[-1]) + ''.join(f'{part:09d}' for part in reversed(chunks[:-1]))
+@@ -227 +246 @@
+-        microsteps=improvements + repairs, assignment_move_bound=str(bound),
++        microsteps=improvements + repairs, assignment_move_bound=_bound_decimal_text(bound),
