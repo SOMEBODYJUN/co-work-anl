@@ -1,0 +1,526 @@
+A Linear Nonexistence Bound for Approximate Pure Nash Equilibria
+                 in Weighted Congestion Games
+
+
+                                              Research draft
+
+
+                                                  Abstract
+         We study the approximation factor required for pure Nash equilibria in finite weighted atomic
+     congestion games with nonnegative polynomial costs. For every integer d ≥ 220 , we construct a
+     game with positive rational weights and positive rational monomial costs of degree exactly d in
+     which every pure state admits a strict d/10 improvement. Each player has only two nonempty,
+     disjoint strategies. Together with the known d-approximate existence guarantee, this determines
+     the order of the universal existence threshold as Θ(d) and rules out every universal sublinear
+     guarantee. The construction first provides an improving exit from every product of ordered class
+     fronts. Short adjacent windows constrain the relative phases of any putatively stable front; a
+     full return window then provides an exit in either parity. Anchored triples within each weight
+     class repair all remaining states. The front margin and global cost bound allow these additional
+     resources to retain the original degree.
+
+
+1    Introduction
+Approximate pure Nash equilibria relax stability by allowing a bounded multiplicative incentive to
+deviate. In weighted congestion games with polynomial costs, the natural existence question is how
+this factor depends on the maximum degree, with no bound on the number of players or the range
+of their weights. Caragiannis and Fanelli [1] establish a d-approximate potential and hence the
+existence of a d-approximate pure Nash√ equilibrium. Christodoulou et al. [2] construct nonexistence
+families with a factor growing as Ω( d/ ln d) and explicitly identify the gap to the linear existence
+bound as a question for further investigation.
+    We prove a linear nonexistence bound. The result concerns the universal guarantee over all
+finite instances, so the size of a witnessing game may grow with the degree. A nonexistence result
+must cover every state of that game. An improving cycle supplies only a sequence of unstable states
+and leaves open the possibility of an equilibrium elsewhere. The construction below is designed
+around this all-state requirement.
+
+Main result. A player’s cost is the sum of the costs of the resources in its strategy, evaluated at
+their total user weights. A state s is an α-approximate pure Nash equilibrium if
+
+                Ci (s) ≤ αCi (ti , s−i )   for every player i and every legal strategy ti .              (1)
+
+All deviations in this paper keep the other players fixed and include the deviator’s weight in the
+new loads.
+
+
+
+
+                                                      1
+Theorem 1.1. For every integer d ≥ 220 , there is a finite weighted congestion game with positive
+rational player weights and resource costs ce (x) = ae xd , ae > 0 rational, such that each player has
+exactly two nonempty, disjoint strategies and every state s has a legal unilateral deviation satisfying
+
+                                                  d                   2d − d/10
+                                       Ci (s) −      Ci (ti , s−i ) ≥           > 0.
+                                                  10                      8
+In particular, this game has no (d/10)-approximate pure Nash equilibrium.
+   Let a∗ (d) be the infimum of the factors α ≥ 1 for which every finite weighted congestion game
+with nonnegative polynomial costs of degree at most d admits an α-PNE. Theorem 1.1, combined
+with the existence result of [1], gives
+
+                                          d/10 ≤ a∗ (d) ≤ d                 (d ≥ 220 ).               (2)
+
+Thus a∗ (d) = Θ(d). The lower bound uses only positive pure monomials and two strategies per
+player. The upper bound is imported from prior work; it is not part of our construction.
+
+Proof mechanism. We group equal-weight players into ordered classes. A class front is a binary
+string with at most one change in its linear order. The proof has three substantive steps. First, a
+cyclic window construction gives a cost cap and usable improvement margins while allowing the
+number of weight classes to grow. Second, every product of class fronts has a front-preserving
+improvement: an adjacent phase difference outside two short intervals gives a local heavy-player exit,
+while the remaining phase configurations are defeated by a full return window. Third, same-class
+anchored triples give an improving repair outside the front set. Their leakage is exponentially small
+in the degree, whereas the relevant cost-to-margin budget grows only as the exponential of a squared
+logarithm. This permits the completion to use degree d itself.
+    The short-window/full-return mechanism is the reason that asynchronous fronts cannot remain
+stable. The triple completion alone does not establish this property for an arbitrary input game.
+We separate these obligations so that the main lower bound cannot be inferred from an improving
+cycle alone.
+
+Scope and organization. The argument is constructive and finite but makes no polynomial-size
+or computational-efficiency claim. Section 2 fixes the model. Section 3 proves the front-completion
+lemma. Sections 4 and 5 build the input and prove its all-front property. Section 6 completes the
+construction at the original degree and derives the universal consequences. Only the cited existence
+bound is needed to pass from our lower bound to (2).
+
+
+2    Model and ordered fronts
+A game has finite nonempty player and resource sets I, E. Player i has a weight wi > 0 and a
+nonempty finite family Si ⊆ 2E . Each resource has a cost
+                                                         d
+                                                         X
+                                          ce (x) =              ae,r xr ,       ae,r ≥ 0.
+                                                         r=0
+                  Q
+For a state s ∈       i Si , write
+                                                X                               X
+                                     xe (s) =            wi ,        Ci (s) =          ce (xe (s)).
+                                                i:e∈si                          e∈si
+
+
+                                                                    2
+Empty strategies, zero cost functions, and different strategy families are allowed. Condition (1) is
+used directly when a cost is zero. Multiplying a fixed player’s costs by its positive weight would
+leave this condition unchanged, but we use the unmultiplied convention throughout.
+    Our lower-bound games have binary action labels. Write s ⊕ i for the state obtained by flipping
+player i. For a fixed target α, its improvement margin is
+
+                                    ∆i (s) = Ci (s) − αCi (s ⊕ i).
+
+Players are partitioned into ordered classes of size N , indexed by a. The players in class a all have
+weight wa . Within a class the order is 0, . . . , N − 1.
+
+Definition 2.1. A class front is a bit string whose consecutive bits in this linear order change at
+most once. A product-front state is a state in which every class is a front. Denote the set of these
+states by F.
+
+    The order is linear, not circular. Every front can be parametrized by a phase x ∈ Z/(2N ) using
+                                        (
+                                          1[j < x],       0 ≤ x < N,
+                               Bx (j) =                                                          (3)
+                                          1[j ≥ x − N ], N ≤ x < 2N.
+
+The forward flip is clone x mod N and changes the phase to x + 1; the backward flip is clone
+(x − 1) mod N and changes it to x − 1. These are real single-player flips.
+
+
+3    Completing front exits to all-state exits
+We first isolate the state-repair step. Its hypothesis is an improving exit from every front, rather
+than an improving sweep through some fronts.
+
+Lemma 3.1 (Same-class completion). Consider a finite binary weighted congestion game of degree
+at most p, with equal weights within ordered classes of a common size N ≥ 3. Let α ≥ 1. Suppose
+Ci (s) ≤ B at every state, and every s ∈ F has a player i such that s ⊕ i ∈ F and ∆i (s) ≥ η > 0.
+Put                                           
+                                         N −1
+                                  Lc =           ,     M = 2αB.
+                                           2
+If a positive integer D satisfies
+                                                        η
+                                         (2/3)D ≤                  ,                               (4)
+                                                      4α2 BL   c
+then adding 2Lc resources per class, with positive monomial costs of degree D, produces a game of
+degree at most max{p, D} in which every state has an improvement margin at least η/2. Players,
+weights, action labels, and all original resource incidences are preserved.
+
+Proof. For each class a and every 1 ≤ i < j < N , add a fresh pair of resources used only by clones
+0, i, j. Their side choices are their action bits xor the respective incidence phases (0, 1, 0). Both
+resources have cost
+                                                       x D
+                                                         
+                                         ca (x) = M           .
+                                                      3wa
+The action patterns 010 and 101 place all three users on one side, giving each cost M . In every
+other pattern, any user’s cost is at most M δ, where δ = (2/3)D . A player participates in at most Lc
+pairs, including the anchor clone 0.
+
+                                                  3
+    All triples of a class are nontriggering exactly when the class is a front. Indeed, a nonfront string
+has a first bit b, an earliest opposite bit at i, and a later bit b at some j > i. The triple (0, i, j)
+triggers. A front cannot contain such a subsequence.
+    For a product-front state, take the promised front-preserving flip. Its new clock cost is at most
+Lc M δ, so its total margin is at least
+
+                                                 η − αLc M δ ≥ η/2.
+
+For a nonfront state, choose one illegal class and flip its earliest bit opposite to its first bit back to
+that first bit. The mover’s old clock cost is at least M . After the flip, every triple containing the
+mover is nontriggering. If it is the middle index, it now agrees with the anchor; if it is the last index,
+the middle index is earlier and already agrees with the anchor. No other class’s clock involves this
+player. Its new base cost is at most B, and its new clock cost is at most Lc M δ. Its total margin is
+therefore at least
+                                M − αB − αLc M δ ≥ αB − η/2 ≥ η/2.
+The last inequality uses B ≥ η, which follows from the assumed front margin and nonnegative costs.
+This covers every state by a legal single-player deviation.
+
+   The lemma’s degree budget depends on B/η and the class size, not on an additional global
+weight-ratio parameter. The remaining task is to provide a growing input family with all-front exits
+and a controlled budget.
+
+
+4    The cyclic window input
+Fix an integer p ≥ 20. The construction uses the parameters
+
+        α = p/10,     Q = p4 ,          m = 1 + ⌈log2 (p2 )⌉,      N = Qm−1 /p = p4m−5 ,    H = 2p − α.   (5)
+
+There are m classes, indexed by a = 0, . . . , m − 1, with weights
+
+                                            wa = Q−a ,          ε = Q−(m−1) .
+
+Thus N ε = 1/p. All class sizes and window lengths below are positive integers, with N > Q.
+   Define the sums
+                  Q
+                  X                                          Q
+                                                             X
+                                        p
+             X=           (1 + r/Q) ,                  Y =         (r/Q)p ,          L = αX − Y,          (6)
+                  r=1                                        r=1
+                  XN                                         XN
+             U=           (1 + rε)p ,                  V =         (rε)p ,           Z = U − αV.          (7)
+                    r=1                                      r=1
+
+Also put
+
+       W = (1 + 1/p)p ,         J = αW − 1,         Aa = (2L/H)a (0 ≤ a ≤ m − 2),          AR = H/(2J).   (8)
+
+Lemma 4.1 will show that these are positive rational quantities. The choice Aa H = 2Aa−1 L balances
+a heavy player’s adjacent exit against the cost of its incoming light role. The return amplitude pays
+for closing this chain.
+
+
+
+                                                           4
+4.1    Resources and action incidences
+Player Pa,j is clone j ∈ Z/N of class a, with global linear position
+
+                                           pos(a, j) = jm + a.
+
+A test is a tuple τ = (a, b, K, o) with a < b, window length K ≤ N , and orientation o ∈ {−1, +1}.
+For each j, create a fresh pair eτ,j,0 , eτ,j,1 . The distinguished user h = Pa,j uses side 0 in action 0
+and side 1 in action 1. Its window consists of
+
+                                  Pb,(j+k) mod N ,        k = 0, . . . , K − 1.
+
+For a window user u, its side in action 0 is
+
+                               σ(h, u) = 1[pos(u) > pos(h)] ⊕ 1[o = −1],                                 (9)
+
+and its side in action 1 is the opposite side. No other player uses this pair.
+    Use the adjacent tests (a, a + 1, Q, −1), a = 0, . . . , m − 2, with cost (Aa /wap )xp on both sides, and
+the return test (0, m − 1, N, +1), with cost AR xp on both sides. Every player’s action is the union
+of all the sides assigned to it across all tests. Different pairs are disjoint. Every player participates
+in a test, and hence both its actions are nonempty and disjoint. There are mN players and 2mN
+base resources.
+    In each test, the distinguished user has the heavy role and the window users have the light role,
+since a < b implies wa > wb . A class can have different roles in its incoming and outgoing tests.
+
+4.2    Budget estimates
+Lemma 4.1. For the parameters above,
+                          4   H  40             Z   3
+                            ≤   ≤ ,               > 2 ,            AR Z > 3Am−2 L.                      (10)
+                          Q   L  Q              J  p ε
+
+Moreover Aa ≥ 1, L > H, 2 < W < 3, J > 3, m ≤ p, and N ≥ p7 .
+
+Proof. Monotonicity of (1 + t)p and its integral on [0, 1] give
+
+                2p+1 − 1            2p+1 − 1
+                                                                     
+                                                                 2Q      9Q p
+              Q           ≤X≤Q                + 2p − 1 ≤ 2p         +1 ≤    2 .
+                  p+1                 p+1                       p+1      4p
+
+For the last step use 2p/(p + 1) + p/Q ≤ 2 + 1/8 ≤ 9/4. Termwise r/Q ≤ (1 + r/Q)/2 gives
+Y ≤ 2−p X, so L > 0. Since p ≤ 2p , we have H ≥ (9/10)2p . Thus
+                                               9
+                                  L < αX ≤        Q2p ,        H/L ≥ 4/Q.
+                                               40
+The same termwise comparison also gives
+                                                           α     αQ2p
+                                  L ≥ (α − 2−p )X ≥          X≥          .
+                                                           2    2(p + 1)
+
+Consequently L/H ≥ Q/40. In particular
+
+                                          Q/20 ≤ 2L/H ≤ Q/2.                                            (11)
+
+                                                     5
+This proves the claims about Aa , L.
+   For r ≤ N , rε ≤ 1/p and
+
+                            (1 + rε)p − α(rε)p ≥ 1 − αp−p ≥ 9/10.
+
+Hence Z ≥ 9N/10. The binomial expansion gives W > 2, while pr p−r ≤ 1/r! and r≥0 1/r! < 3
+                                                                           P
+give W < 3. Since α ≥ 2, J > 3 and J < 3α. Therefore
+                                                 3N    3
+                                         Z/J >       = 2 .
+                                                 10α  p ε
+
+Using ε = Q−(m−1) ,
+                              AR Z    (H/L)m−1 (Z/J)   3 2m−1
+                                    =                >        ≥ 3.
+                             Am−2 L       2m−1            p2
+Finally m ≥ 3 implies N = p4m−5 ≥ p7 . For p ≥ 20, 2p−1 ≥ p2 , so the minimal defining exponent
+for m gives m ≤ p. The elementary inequality 2p−1 ≥ p2 follows at p = 7 and persists because
+2p2 > (p + 1)2 for p ≥ 3.
+
+Lemma 4.2 (Global base-cost cap). Every player’s base cost at every state is at most
+
+                                          B∗ = mQm−1 2p .                                        (12)
+
+Proof. An adjacent resource has potential total weight wa + Qwa+1 = 2wa . Its distinguished user
+participates in one pair; a light user participates in exactly Q pairs of that test. Thus any player’s
+contribution from this test is at most QAa 2p . By (11), Aa ≤ Qm−2 , and all adjacent tests contribute
+at most (m − 1)Qm−1 2p .
+   A return resource has potential total weight 1 + N ε = 1 + 1/p. Any player participates in at
+most N return pairs, so its return cost is at most N AR W . Since J ≥ α − 1,
+                                    3N 2p         3
+                       N AR W <             =           Qm−1 2p ≤ Qm−1 2p .
+                                   2(α − 1)   2p(α − 1)
+
+Adding the bounds proves (12).
+
+
+5     Every product-front has an exit
+The central property of the base game is the following.
+
+Proposition 5.1. Every product-front state has a front-preserving single-player flip whose α = p/10
+margin is at least
+                                           η0 = H/4.
+
+   We prove it by eliminating widely separated adjacent phases, then using the return test on the
+remaining phase configurations.
+
+5.1   Normalization and adjacent endpoint costs
+Lemma 5.2 (Twisted rotation). In the base game, simultaneously mapping every clone index j to
+j +1 mod N and flipping the action of each wrapping clone preserves current costs and corresponding
+unilateral-deviation costs. On product-front states it increases every class phase by one.
+
+
+                                                  6
+Proof. Let ρi indicate that player i wraps. A window’s circular user set is preserved. For any
+distinguished user h and window user u, the new linear-order indicator is the old indicator xor
+ρh ⊕ ρu . In (9), the change ρu cancels the wrapping flip of u’s action. The remaining ρh exchanges
+the two sides of the distinguished pair exactly when its own user wraps. Both sides have identical
+costs and all weights are unchanged. This proves the cost assertion, including after a specified
+player’s flip. Direct substitution in (3) proves the phase assertion.
+    Thus a chosen mover’s class may be normalized to phase zero while all other classes retain their
+relative phases. This symmetry is needed only for the base game, before the anchored triples are
+added.
+    For an adjacent test a → a + 1, normalize its heavy class to zero and put r = xa+1 − xa
+(mod 2N ). The heavy forward mover is clone zero. Its number of same-side window users is
+                                    (
+                                     Q − min{r, Q}, 0 ≤ r ≤ N,
+                             n(r) =                                                             (13)
+                                     min{r − N, Q}, N ≤ r < 2N.
+Consequently its old and new costs in this test are
+                                Aa (1 + n(r)/Q)p ,        Aa (2 − n(r)/Q)p .                    (14)
+A backward flip is the reverse of the previous forward edge. Its old and new costs are therefore the
+new and old quantities in (14) evaluated at r + 1 modulo 2N .
+Lemma 5.3 (Adjacent endpoint bounds). For either light endpoint of any front, both its old and
+new costs in an adjacent test a → a + 1 are at most Aa X. If
+                                        r∈
+                                         / [0, Q] ∪ [N, N + Q],
+then one of the heavy endpoints has old and new costs exactly Aa 2p , Aa in that test.
+Proof. Normalize the light class to zero and take its forward mover (a + 1, 0). It participates in
+the Q windows whose distinguished indices are −k mod N , k = 0, . . . , Q − 1. On its current side
+there are Q − k light users; on its new side, including itself, there are k + 1. For some indicators
+ek ∈ {0, 1} determined by the heavy phase, its two costs are
+                        Q−1                                   Q−1
+                        X                   p                X                       p
+                   Aa         (Q − k)/Q + ek ,           Aa         (k + 1)/Q + 1 − ek .
+                        k=0                                   k=0
+
+Each is bounded by Aa X term by term. Backward costs exchange the corresponding forward pair,
+so they have the same bound. This counting includes the wrapping windows.
+    If Q < r < N , then n(r + 1) = 0, giving the asserted backward costs. If N + Q < r < 2N ,
+then n(r) = Q, giving the asserted forward costs. These are precisely the two portions outside the
+displayed closed intervals.
+   For an intermediate class 1 ≤ a ≤ m − 2, the selected heavy exit has total margin at least
+                        Aa H − αAa−1 X = Aa−1 (αX − 2Y ) ≥ 21 Aa−1 L > H/2.                     (15)
+Here Y ≤ 2−p X, α ≥ 2, L ≤ αX, and L > H. Class zero instead has one return pair. Its new
+return cost is at most AR W , so its selected exit has margin at least
+                                               H(J − 1)
+                                   H − αAR W =          > H/3,                               (16)
+                                                  2J
+because J > 3. Thus failure to find an exit of margin H/4 forces every adjacent phase difference
+into the two short intervals.
+
+                                                     7
+5.2    Accumulating short differences and using the return window
+We may now write, for all a = 0, . . . , m − 2,
+                  xa+1 − xa = ka N + ta      (mod 2N ),        ka ∈ {0, 1},    0 ≤ ta ≤ Q.
+It follows that
+                      xm−1 − x0 = kN + T (mod 2N ), 0 ≤ T ≤ (m − 1)Q < N,                   (17)
+where k is the parity of a ka . The strict upper bound on T follows from m ≤ p and N ≥ p7 .
+                            P
+   Normalize the last class to phase zero. In the return test its heavy class has relative phase
+r = x0 − xm−1 . Enumerate the last-class mover’s windows by distinguished indices hj = −j mod N ,
+j = 0, . . . , N − 1. Define
+                        σ0 = 1,    σj = 0 (j > 0),         ej (r) = 1[Br (hj ) = σj ].
+The actual forward old and new costs, before multiplication by AR , are
+                                            N −1
+                                            X                       p
+                                  O(r) =           (N − j)ε + ej (r) ,                                (18)
+                                            j=0
+                                            N −1
+                                            X                           p
+                                  F (r) =          (j + 1)ε + 1 − ej (r) .                            (19)
+                                            j=0
+
+This is the same window count as above, now with a full window and positive orientation. If all
+indicators equal one, the pair is (U, V ); if all equal zero, it is (V, U ). Changing one indicator changes
+each cost by at most W , since all loads are at most 1 + N ε = 1 + 1/p.
+Lemma 5.4 (Return endpoint). For the phase configurations in (17), the last class has an endpoint
+whose return-test margin is at least
+                                                          
+                                     AR Z − (α + 1)(T + 1)W .
+Proof. If k is even, then r = −T (mod 2N ). Use the forward endpoint. For T = 0 only e0 is zero.
+For 1 ≤ T < N , precisely e0 , . . . , eT are zero. Thus there are T + 1 defects from the ideal all-one
+pattern.
+    If k is odd, then r = N − T (mod 2N ). Use the backward endpoint, whose old and new costs
+are F (r + 1), O(r + 1). For T = 0, the indicators at r + 1 = N + 1 are all zero. For 1 ≤ T < N ,
+exactly T indicators at r + 1 = N − T + 1 are one. This is at most T + 1 defects from the ideal
+all-zero pattern. In either case a defect loses at most (α + 1)W of margin, and the ideal margin is
+Z.
+Proof of Proposition 5.1. The heavy exits (15) and (16) handle a phase difference outside the
+short intervals. Otherwise apply Lemma 5.4. Put D0 = (α + 1)(T + 1)W . Since α + 1 ≤ p/5,
+T + 1 ≤ pQ = p5 , and W < 3,
+                                    D0 ≤ (3/5)p6 ≤ Z/30.
+The second inequality follows from Z ≥ (9/10)N ≥ (9/10)p7 and p ≥ 20. The last class’s new
+incoming cost is at most Am−2 X. Also αX ≤ 2L, because Y ≤ αX/2. Its selected return exit
+therefore has total margin strictly greater than
+                                                        
+                         29                        29
+                            AR Z − αAm−2 X >          − 2 Am−2 L > H/2.
+                         30                        10
+All selected endpoints preserve the front of the moving class and leave every other class fixed. The
+cases cover all phase vectors, proving the uniform lower bound H/4.
+
+                                                       8
+6    Retaining the degree and proving the main theorem
+Apply Lemma 3.1 with B = B∗ and η = η0 = H/4. The issue is whether the added monomials can
+use the original degree p. The following estimate answers it using only integer comparisons and
+induction.
+
+Lemma 6.1 (Original-degree budget). For every integer p ≥ 220 , the parameters above satisfy
+
+                                         4α2 B∗ Lc /η0 < (3/2)p .
+
+Proof. Since H ≥ (9/10)2p ,
+                                         B∗ /η0 ≤ (40/9)mQm−1 .
+Moreover Lc ≤ N 2 = Q2m−2 /p2 . Using α = p/10 and Q = p4 gives
+
+                                  4α2 B∗ Lc  8
+                           R :=             ≤ mp12(m−1) ≤ mp12(m−1) .                            (20)
+                                     η0      45
+
+Let k be the integer with 2k ≤ p < 2k+1 , so k ≥ 20. Then
+
+                              m − 1 ≤ 2(k + 1),           m ≤ 2k + 3 ≤ 2k .
+
+The last inequality holds at k = 20 and propagates by 2(2k + 3) > 2(k + 1) + 3. Thus, for
+f (k) = 24(k + 1)2 + k,
+                                        R < 2f (k) .
+We have f (20) = 10604 < 524288 = 219 and
+
+                        2f (k) − f (k + 1) = 24k 2 + k − 49 > 0                (k ≥ 20).
+
+Induction gives f (k) < 2k−1 . Finally
+                                           k            k−1          k−1
+                         (3/2)p ≥ (3/2)2 = (9/4)2             > 22         > 2f (k) > R.
+
+All exponents used here are integers.
+
+Proof of Theorem 1.1. Take p = d and build the base game of Section 4. Lemma 4.2 and Proposi-
+tion 5.1 supply the inputs to Lemma 3.1. Lemma 6.1 makes (4) hold with D = p. Therefore every
+state in the completed game has a legal flip of margin at least
+
+                                  η0 /2 = H/8 = (2p − p/10)/8 > 0.
+
+Every old resource has cost a positive rational multiple of xp . Every added resource has cost
+M (x/(3wa ))p , also a positive rational multiple of xp . The input parameters are rational, all sums
+are finite, and N is an integer. The added pairs preserve the two action labels and their disjointness
+and nonemptiness. Hence the completed game satisfies every asserted model condition and has
+actual degree exactly p.
+
+Corollary 6.2. There is no universal o(d) existence guarantee for approximate pure Nash equilibria
+in this model. In particular, there are no absolute constants C ≥ 1 and d0 ≥ 2 such that every
+degree-at-most-d game has a (Cd/ ln d)-PNE for all integers d ≥ d0 .
+
+
+
+                                                    9
+Proof. Any factor f (d) = o(d) is below d/10 for all sufficiently large d, and Theorem 1.1 rules it
+out. Explicitly, for given C, d0 , choose an integer
+
+                              k ≥ max{20, ⌈20C⌉, ⌈log2 d0 ⌉},               d = 2k .
+
+Then d ≥ d0 and ln d = k ln 2 > k/2 ≥ 10C. Every state of the resulting game has a deviation with
+
+                                           d                   Cd
+                                Ci (s) >      Ci (ti , s−i ) ≥      Ci (ti , s−i ).
+                                           10                  ln d
+The first inequality stays strict even if the deviation cost is zero.
+
+Corollary 6.3. The universal existence threshold satisfies a∗ (d) = Θ(d).
+
+Proof. Theorem 1.1 gives a∗ (d) ≥ d/10. The d-approximate potential theorem of Caragiannis and
+Fanelli [1, Theorem 2], in the same positive-weight resource-subset model, gives a∗ (d) ≤ d.
+     For completeness, the monomial presentation of that result extends to the full nonnegative
+polynomial convention here. First fix any player having a strategy consisting entirely of identically
+zero-cost resources, including an empty strategy, to that strategy. Its cost is zero and it affects no
+positive-cost resource. Remove these players; if none remain, the fixed state is an exact equilibrium.
+Omit zero-cost resources from all remaining strategies. Every remaining strategy then has positive
+cost. Split each positive monomial term into a separate resource with the original incidence. Realize
+a constant term separately for each player by a private linear resource: when player i selects an
+original resource with constant term a0 , it also selects the corresponding private resource of cost
+(a0 /wi )x. Its occupied load is always wi , so its cost is exactly a0 . Identical resulting actions may be
+merged. Costs and unilateral comparisons of the remaining players are preserved, and the fixed
+zero-cost players are stable. These operations use degree at most d for d ≥ 1. Thus the imported
+guarantee applies to every game in our definition of a∗ (d).
+
+
+7    Scope and further questions
+The construction permits a growing number of weight classes, an unbounded range of weights, and
+strategies containing many resources. Its consequence concerns the worst-case existence threshold
+over the full model. Bounds for restricted weight spectra or restricted strategy structures remain
+separate questions. The exact leading constant in a∗ (d) and the smallest useful constructions are
+also left open. Neither an efficient equilibrium algorithm nor an improved complexity classification
+is required for the lower bound proved here.
+
+
+References
+[1] Ioannis Caragiannis and Angelo Fanelli. On approximate pure Nash equilibria in weighted
+    congestion games with polynomial latencies. Journal of Computer and System Sciences, 117:40–
+    48, 2021.
+
+[2] George Christodoulou, Martin Gairing, Yiannis Giannakopoulos, Diogo Poças, and Clara
+    Waldmann. Existence and complexity of approximate equilibria in weighted congestion games.
+    Mathematics of Operations Research, 48(1):583–602, 2023.
+
+
+
+
+                                                       10
+

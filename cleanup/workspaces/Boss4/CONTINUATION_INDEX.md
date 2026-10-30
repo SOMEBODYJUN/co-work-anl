@@ -25,3 +25,11 @@
 本地同步恢复曾提示needs-attention；逐项核249未跟踪/8已跟踪备份均无缺失，无未合并索引；唯一较新triad修正核其真实资源负载后保留。旧stash e446c02c83beabcecc2a94fa160b3bb936f15018保留，不覆盖新草稿。
 
 凭据只留仓库外认证。用户对指定仓库的过去、本次及后续正常推送授权持续有效。
+
+## 最新实际发布与运行范围
+
+下一63中的首12已先正文pushed37705992、done8ec60041；余51与新46中的UM模型2共同53源，正文最终发布头0325cab6c125f5a852017bfe023115fe0c2515bc（正文提交81ad730e已包含于正常合并同步头0325cab6），done另推送c2a9cff23b8b4f3a57f87becba4cf46aaa0dc840。READY53_RECEIPTS.json保逐源语义。next63全批已完成。
+
+新46claim a064b932中余44继续实质整理；另按已空出的两代理实际能力接续facility18与UM依赖7，claim pushed20ffb1f03e8bdaca5d59ec32ffebe290bfe4fa26，25原件完整缓存。当前Boss4官方完成392（358 integrated、33 retained、1 duplicate），当前认领69；全仓10921中仍有未处理来源，不声称全仓完成。
+
+新增两主稿原文全部实读，拼接主定理及完整归属边界已写，尚待其自身checkpoint/done。当前仍在工作，本文不是实际handoff回执。

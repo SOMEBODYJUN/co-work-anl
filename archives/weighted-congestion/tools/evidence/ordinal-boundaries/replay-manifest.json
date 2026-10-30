@@ -1,0 +1,59 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "dependencies": "Python standard library only; Fraction, Decimal(display), math.comb, pathlib, argparse, json, hashlib",
+  "runs": [
+    {
+      "name": "marginal",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/ordinal-boundaries/original/tests/audits/weighted_congestion/marginal_potentials/verify.py",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/ordinal-boundaries/replay-marginal.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/ordinal-boundaries",
+      "exit_code": 0,
+      "stdout_bytes": 716,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "faulhaber",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/ordinal-boundaries/original/tests/audits/weighted_congestion/ordinal_potentials/verify_full_faulhaber_failure.py",
+        "--repo",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/ordinal-boundaries/original"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/ordinal-boundaries",
+      "exit_code": 0,
+      "stdout_bytes": 501,
+      "stderr_bytes": 0
+    },
+    {
+      "name": "power",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/ordinal-boundaries/original/tests/audits/weighted_congestion/ordinal_potentials/verify_power_objective.py"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research/archives/weighted-congestion/tools/evidence/ordinal-boundaries",
+      "exit_code": 0,
+      "stdout_bytes": 82,
+      "stderr_bytes": 0
+    }
+  ],
+  "new_supplement": {
+    "program": "independent_faulhaber_correction.py",
+    "command": "python3 -B archives/weighted-congestion/tools/evidence/ordinal-boundaries/independent_faulhaber_correction.py > archives/weighted-congestion/tools/evidence/ordinal-boundaries/independent-faulhaber-correction.json 2> archives/weighted-congestion/tools/evidence/ordinal-boundaries/independent-faulhaber-correction.stderr.txt",
+    "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+    "exit_code": 0,
+    "stderr_bytes": 0,
+    "provenance": "new independent implementation; not a replay of historical code",
+    "arithmetic": "Fraction; Newton integer-value interpolation; no Bernoulli recurrence or original import",
+    "checks": {
+      "integer_values": 231,
+      "derivatives": 4,
+      "negative_value": 1
+    }
+  }
+}
