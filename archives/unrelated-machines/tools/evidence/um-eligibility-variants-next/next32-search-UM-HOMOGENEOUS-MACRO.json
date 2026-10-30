@@ -1,0 +1,72 @@
+[
+  {
+    "id": "138311ac22dbdd11174b",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/CATALOG.md",
+    "line": "477",
+    "text": "| [同质大宏占位下任意私有边的 ST 舍入候选](<questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md>) | `research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md` | 记录固定同质大宏占位后，任意逐件私有资格和小边处理时间如何由 LST/ST 联合恢复，并明确宏异质时重新出现的容量耦合义务。；配套 [不相关并行机的精确目标、经典舍入与配置间隙](<current/unrelated_machines/model_and_classical_barriers.md>) | 候选或未闭合义务；保存不升级状态；关联 `UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1`、`UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1`，[命题合同](assets.json) |"
+  },
+  {
+    "id": "8cebb6932c909f78d976",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/current/claims.md",
+    "line": "880",
+    "text": "| UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1 | `|B|=|H|`、宏仅home且每个home的有限宏边同一 `P_h>T/2`；私有任务任意逐件资格、每条有限私有边≤δT。固定宏完美匹配后 LST/ST 给所有机器≤(1+δ)T，OPT≤T时LP必可行。 | [同质大宏任意私有边 ST 候选](../questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md)；标准机制结构重构，候选审查未冻结。 |"
+  },
+  {
+    "id": "8cebb6932c909f78d976",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/current/claims.md",
+    "line": "881",
+    "text": "| UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1 | 同结构未知 `OPT`，承诺每个home `P_h>OPT/2`、私有边≤δOPT；有理网格单调LP候选输出≤(1+δ̄)OPT（固定δ̄<1）。 | [同质大宏任意私有边 ST 候选](../questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md)§2；承诺算法候选，主目标OPEN。 |"
+  },
+  {
+    "id": "940acf0c0aed3103cfdb",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/current/unrelated_machines/README.md",
+    "line": "241",
+    "text": "`UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1` 把私有任务资格放宽到任意逐件集合 `A_j⊆H∪Z`，并允许每条私有边有不同处理时间，只要求≤`δT`；承重条件改为 `|B|=|H|`、宏只在 home、每个 home 的宏边时间固定为 `P_h>T/2` 且宏图有完美匹配。任取宏完美匹配后，私有 LST LP 的 home 容量 `T−P_h` 与匹配无关，ST 舍入给 `(1+δ)T` 候选。承诺 `P_h>OPT/2`、私有边≤`δOPT` 时，网格搜索给未知 OPT 的 `(1+δ̄)` 候选。该接口是标准 LST/ST 的结构重构，未认证新颖性；宏身份相关时长、宏数不等于 home 数或大私有边会重新产生联合容量义务。正文见 [同质大宏任意私有边候选](../../questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md)。"
+  },
+  {
+    "id": "cd484ee6b4f82c43337a",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md",
+    "line": "49",
+    "text": "同质宏候选 `UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1` 以每个 home 的宏时间与宏身份无关为代价，达到 `1+δ`；本候选允许宏时间随宏身份变化，但统一残余容量只给 `3/2+δ`。这一差异不能通过任意宏匹配后的逐 home 残余容量直接消除。"
+  },
+  {
+    "id": "6fb6a420ff9beda4a770",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/questions/unrelated_machines/homogeneous_macro_private_edge_st_rounding_candidate.md",
+    "line": "41",
+    "text": "`UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1`：不给 `OPT`，承诺在真实 `OPT` 处每个 home 的宏时间满足 `P_h>OPT/2`，且每条有限私有边满足 `p_{ij}≤δOPT`，其中固定 `δ≤δ̄<1`。令 `Q` 为所有有限处理时间分母乘积，取任意合法分配给出网格上界 `U`。在网格 `t=k/Q` 上测试：`t≥max_h P_h`、宏边图有完美匹配、删去 `p_{ij}>t` 的私有边后上述 LP 可行。测试单调：容量 `t−P_h` 与 `t` 增大，私有资格边只增加；宏匹配图不变。二分最小接受 `t*`，承诺保证在 `t=OPT` 通过，故 `t*≤OPT`。"
+  },
+  {
+    "id": "984a73cedc8b69b63593",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/unrelated_machines/CLAIMS.md",
+    "line": "1158",
+    "text": "## UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1：同质大宏占位下任意逐件资格的 ST 候选"
+  },
+  {
+    "id": "984a73cedc8b69b63593",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/unrelated_machines/CLAIMS.md",
+    "line": "1170",
+    "text": "## UM-HOMOGENEOUS-MACRO-PRIVATE-PROMISE-v1：home固定宏时长承诺下的未知OPT候选"
+  },
+  {
+    "id": "984a73cedc8b69b63593",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/unrelated_machines/CLAIMS.md",
+    "line": "1176",
+    "text": "- Dependencies：UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1。"
+  },
+  {
+    "id": "46a002184c7580ebe0db",
+    "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "path": "research/unrelated_machines/README.md",
+    "line": "197",
+    "text": "新增候选 `UM-HOMOGENEOUS-MACRO-PRIVATE-ST-v1`：`|B|=|H|`，宏只在 homes，且每个 home 的宏端处理时间只依赖 home、满足 `P_h>T/2`；任意私有任务可在任意显式资格边上运行，只要求每条私有边≤`δT`。固定任意宏完美匹配后，LST/ST 给 `(1+δ)T`；承诺 `P_h>OPT/2` 时用网格测试得到未知OPT候选。它精确显示共同资格与唯一home可去掉，但宏占位同质性仍是额外结构，不能替代一般 `UM-TARGET-v1`。"
+  }
+]
