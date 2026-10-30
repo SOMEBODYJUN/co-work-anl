@@ -157,7 +157,7 @@ source_refs:
 
 ## 独立尾部程序的实际覆盖与本轮核对
 
-本轮为核对审查范围，完整读取了相关源`source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py#main`，并读取原冻结报告的coverage/hash汇总字段；没有在本批重新运行，也没有逐项语义审读报告内全部102个输入。比较读取不为这两个尚未属于本批的源登记done。
+本审查对象最初整理时，为核对审查范围完整读取相关源`source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/weighted_congestion/weight_bands/independent_tail_freezing.py#main`，当时只读取原冻结报告的coverage/hash汇总字段，没有运行或为这两个来源登记done。后续单独认领程序及报告，已逐项全文读取全部102输入与结果、64参数记录及全部密集群记录，原样复跑一次并与冻结报告逐字节完全相同；完整接口和报告范围见[精确核验对象](../计算/权类别与局部权带的精确核验--计算.md)。后续复现没有改变两份历史审查的独立性或当时覆盖。
 
 程序版本1.0、seed95471、SHA256 `7318309925723b9e279b0ad64fd62d567712d152ec57c8ab65f4d0fdafe5690b`。原始子集份额`phi_direct`与势`potential`是分开实现；没有导入作者代码。程序用Fraction和显式`require`检查真值；默认完整JSON stdout，`--output`以x模式独占创建。以下为审查记载且与实际源码/冻结汇总字段相符的范围：
 
