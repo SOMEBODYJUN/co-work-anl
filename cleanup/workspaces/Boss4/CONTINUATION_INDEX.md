@@ -74,3 +74,7 @@ READY11D：Boss完整前缀/完整槽原源2，单home原程序/审查2，双见
 READY11D数学pushed89a875a61d340f6a61412f75648a9727da5ef9ac（90文件），11源done另推送7fb0df364d6d59c0a39786a907a2710eb75a558b且synced。Boss4累计781完成；其余26来源由六个指定模型worker持续实读/整理，Boss并行整合。
 
 READY5E：净券fresh初始化/F-BUDGET、含current价格的行凸包、controlled-positive全图金额合同及两份来源时间重构五主源；共同费用/ROLE仍未证；共5主源，先明确正文/证据checkpoint再逐源done；其余认领见READY5E_REMAINING_SCOPE.json。
+
+READY5E数学pushed0b512e62789df222e53638e6fc9e82cba8e10914（27文件），5源done另推送af9105c268727e316cf031fbef1deb66afad9c94，synced；累计786完成。
+
+READY21F：单home版本/双证明5，设施与CAG失败边界3，仿射合并版本/分域审查3，exact/非线性/near-band教材5，双见证实际超载闭包/两五机锐例历史5；完整证明/候选/有限核算/历史scope分别保留；共21主源，先明确正文/证据checkpoint再逐源done；其余认领见READY21F_REMAINING_SCOPE.json。

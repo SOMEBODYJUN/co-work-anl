@@ -1,0 +1,9 @@
+# Boss4：A11–A15五源交付
+
+正式认领沿用Boss确认的59e397d06e983c455714294bacff86aa87a00c2f。五源ID为58af934ed8b1ea06bb56、ef0d8c29f8e9fc054380、b9edcd7405dc21f9b8bd、f30b3dc9ccba0e9c3075、07e7a888ba6aef67422f。
+
+外部staging含五份独立完整正式页、原件与相关来源、5源receipts、关系说明、实质自查、窄精确核算及静态验证。未修改此前已交正文。没有Git写事务、claim/done/checkpoint/认证，也没有另开子代理。由Boss给拷入窗口并在正文checkpoint确认pushed后逐源done。
+
+重要边界：A12/A13有自足非线性正规形和异址双交叠九矩形数学算法，未交付canonical软件；A11一般LP与权类ILP仍未实现；A14为全部布局/全部实概率的全局gap；A15局部引理已有证明，EPTAS仍候选。教学文本没有自动修复或升级一般φ、一般异构2或EPTAS。
+
+新窄核算已exit0：两份出行九布局表/距离平方、立方九状态、两份四地点16布局见证、十个近带输入。旧suite均未重跑。完整实际输入/概率/成本/输出、stdout/stderr与执行SHA保在证据目录。五原件104083字节SHA须与inventory逐一核同；validation给最终静态合同，不替代数学判断。
