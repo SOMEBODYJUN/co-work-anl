@@ -1,0 +1,9 @@
+# Boss4：异构学习附录五源交付
+
+五个正式认领ID为3e47c08c5ae2d164165a、f8a3d653e3df87849e4e、62b0cfbfc9b7e5d45b65、95d67929c3c07f58f3f2、730eaf86b48d690a63a5。五源均全文实读、逐项核冻结SHA，与主TeX/current/现正文比较后形成五份独立自足正式页；原件与比较证据在tools/evidence/heterogeneous-learning-appendices。
+
+本批所有写入先在仓库外delivery staging完成，没有Git/claim/done/checkpoint/认证操作。父Boss负责拷入窗口、正文checkpoint确认pushed，再用receipts.json逐源done。代理完成时不声称已推送或已勾选。
+
+五页保完整证明和教学增量：抽象配额/核心、相关续局与费用边界、短目录ρ和六顶点下界、守卫四种子算法、任意长两分支候选推导。一般因子2继续候选；未定位具体新缺口亦未升级。TeX直接Theorem与appendix/current候选冲突、单交叠任意目录后续以及A07错引§9均明确记录。
+
+validation.json给五源hash与所有新页本地链接检查；semantic-review.md给全文阅读、全部章节去向和数学自查。没有新数学runtime；旧suite和M1000不重复计为本批执行。关系判断见relation-notes.md。次批真实来源候选见next-source-candidates.json，尚未检查当前可领状态。

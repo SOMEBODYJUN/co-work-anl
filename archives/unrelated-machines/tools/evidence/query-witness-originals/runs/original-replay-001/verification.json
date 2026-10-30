@@ -1,0 +1,181 @@
+{
+  "status": "passed",
+  "python": "3.12.14",
+  "query_literal_counts": {
+    "original_input_finite_edges": 33,
+    "complete_schedule_records": 44,
+    "actual_job_assignments": 224,
+    "all_machine_loads": 264,
+    "valid_strict_machine_triggers": 7,
+    "finite_two_endpoint_states_rechecked": 32
+  },
+  "query_cases": [
+    {
+      "case_id": "sharp_six_machine_five_job",
+      "A_q": {
+        "q1": [
+          "x1"
+        ],
+        "q2": [
+          "x2"
+        ]
+      },
+      "W": "1",
+      "sum_fees": "0",
+      "tau": [
+        {
+          "q": "q1",
+          "peak": "11/8",
+          "delta": "1/8",
+          "bound": "3/2",
+          "fee": "0"
+        },
+        {
+          "q": "q2",
+          "peak": "11/8",
+          "delta": "1/8",
+          "bound": "3/2",
+          "fee": "0"
+        }
+      ]
+    },
+    {
+      "case_id": "zero_threshold_two_queries",
+      "A_q": {
+        "za": [],
+        "zb": []
+      },
+      "W": "0",
+      "sum_fees": "0",
+      "tau": [
+        {
+          "q": "za",
+          "peak": "0",
+          "delta": "0",
+          "bound": "0",
+          "fee": "0"
+        },
+        {
+          "q": "zb",
+          "peak": "0",
+          "delta": "0",
+          "bound": "0",
+          "fee": "0"
+        }
+      ]
+    },
+    {
+      "case_id": "arbitrary_times_shared_query_source",
+      "A_q": {
+        "qa": [
+          "xa",
+          "y",
+          "z",
+          "v"
+        ],
+        "qb": [
+          "xb"
+        ]
+      },
+      "W": "39",
+      "sum_fees": "39",
+      "tau": [
+        {
+          "q": "qa",
+          "peak": "21/10",
+          "delta": "3/5",
+          "bound": "3",
+          "fee": "28"
+        },
+        {
+          "q": "qb",
+          "peak": "9/4",
+          "delta": "2/5",
+          "bound": "3",
+          "fee": "11"
+        }
+      ]
+    }
+  ],
+  "fixed_matrix_audit": {
+    "scope": "audit_only: two fixed explicit matrices, not a production solver",
+    "take_continue": {
+      "sha256": "9cf13ec0f81346889d177095e1c04b0dac13230ff8fd13f3fc8d23e537edd2f7",
+      "machines": 26,
+      "jobs": 30,
+      "finite_entries": 57,
+      "exact_witness_peak": "8/5",
+      "witness_partial_value": "2/5",
+      "all_original_jobs_and_loads_checked": true,
+      "optimization_run": false,
+      "analytic_lower_bound": "canonical proof, not inferred from this check"
+    },
+    "sharp_three_halves": {
+      "root_sha256": "6c9e872acd6f88c4c19c019ac2e7010597fb92df6c83ce4debefa688e959ad3d",
+      "independent_sha256": "d7fb60f5c1857174868efe7366c3506ca6cacb2cf2710bfe37586113a3d2cad4",
+      "machines": 8,
+      "jobs": 10,
+      "finite_entries": 24,
+      "complete_assignments": 5184,
+      "exact_opt": "3/2",
+      "peak_histogram_units": {
+        "15": 247,
+        "16": 601,
+        "18": 1485,
+        "20": 1331,
+        "24": 264,
+        "26": 1112,
+        "34": 144
+      },
+      "denominator": 10,
+      "scope": "one explicit UNSAT source only; no general theorem from enumeration"
+    }
+  },
+  "commands": [
+    {
+      "name": "query-audit",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/query-witness-originals-run-001/source/two_witness_query_separation.py",
+        "--input",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/query-witness-originals-run-001/inputs/two_witness_query_separation_cases.json",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/query-witness-originals-run-001/query-audit.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "query-audit.stdout",
+      "stderr": "query-audit.stderr"
+    },
+    {
+      "name": "fixed-certificates-audit",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/query-witness-originals-run-001/source/audit_query_return_source_fixed_certificates.py",
+        "--take-certificate",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/query-witness-originals-run-001/inputs/partial_sum_take_continue_flat_menu_actual_escape_independent_fraction_check_v1.json",
+        "--sharp-certificate",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/query-witness-originals-run-001/inputs/direct_cohabiting_sharp_unsat_root_integer_enumeration.json",
+        "--independent-sharp-certificate",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/query-witness-originals-run-001/inputs/direct_cohabiting_sat_sharp_three_halves_independent_enum_v1.json",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/query-witness-originals-run-001/fixed-certificates-audit.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "fixed-certificates-audit.stdout",
+      "stderr": "fixed-certificates-audit.stderr"
+    }
+  ],
+  "source_sha256": {
+    "audit_query_return_source_fixed_certificates.py": "5a338e62d31512260d6ab41c479cda482f6fd0d4cb3b28e31e8a956ccd339a74",
+    "two_witness_query_separation.py": "cc50d2e612de59b225d8bdf009d38cfa7e22c8ae67b10900086e6b7786238759"
+  },
+  "input_sha256": {
+    "direct_cohabiting_sat_sharp_three_halves_independent_enum_v1.json": "d7fb60f5c1857174868efe7366c3506ca6cacb2cf2710bfe37586113a3d2cad4",
+    "direct_cohabiting_sharp_unsat_root_integer_enumeration.json": "6c9e872acd6f88c4c19c019ac2e7010597fb92df6c83ce4debefa688e959ad3d",
+    "partial_sum_take_continue_flat_menu_actual_escape_independent_fraction_check_v1.json": "9cf13ec0f81346889d177095e1c04b0dac13230ff8fd13f3fc8d23e537edd2f7",
+    "two_witness_query_separation_cases.json": "cee13089d6cc2e8d78aaae6fe80b60da442ff3fabced16bb7ff70f44406e147c"
+  },
+  "scope": "Two original entrypoints each run once. Query checker independently rechecked all 44 saved complete schedules/trace invariants; only the listed 32 endpoint states were rechecked. Original fixed auditor enumerated exactly 5184 assignments for one 8-machine matrix; take/continue only checked a complete attaining witness, not optimization. No general scheduler, source reduction, v3 selector or global price backend."
+}

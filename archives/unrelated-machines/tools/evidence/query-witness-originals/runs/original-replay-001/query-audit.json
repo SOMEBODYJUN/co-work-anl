@@ -1,0 +1,3706 @@
+{
+  "audit": "General two-witness direct-job-arc monotone coloring; no unit/home assumptions",
+  "claim_reference": {
+    "id": "UM-TWO-WITNESS-QUERY-SEPARATION-v2",
+    "exact_sha256": "7db463223261bbaee605beb4e3689e57a84b268df2a0024f7fda1fde332a3c28",
+    "proof_sha256": "73e650ca7607977e251d7d5f229cafa9e6424ede40b8f24f92006da988acfc7a"
+  },
+  "evidence_scope": "Only the explicitly listed cases and optional bounded finite states are checked; these checks do not prove a general theorem.",
+  "arithmetic": "fractions.Fraction only; exact string rational input",
+  "python_version": "3.12.14",
+  "invocation": [
+    "python3",
+    "/workspace/scratch/37f0f9248cfc/boss4-next-cache/query-witness-originals-run-001/source/two_witness_query_separation.py",
+    "--input",
+    "/workspace/scratch/37f0f9248cfc/boss4-next-cache/query-witness-originals-run-001/inputs/two_witness_query_separation_cases.json",
+    "--output",
+    "/workspace/scratch/37f0f9248cfc/boss4-next-cache/query-witness-originals-run-001/query-audit.json"
+  ],
+  "input_filename": "two_witness_query_separation_cases.json",
+  "input_sha256": "cee13089d6cc2e8d78aaae6fe80b60da442ff3fabced16bb7ff70f44406e147c",
+  "script_filename": "two_witness_query_separation.py",
+  "script_sha256": "cc50d2e612de59b225d8bdf009d38cfa7e22c8ae67b10900086e6b7786238759",
+  "all_checks_passed": true,
+  "case_count": 3,
+  "cases": [
+    {
+      "case_id": "sharp_six_machine_five_job",
+      "purpose": "Exact 32-state sharpness audit at eta=gamma=1/8; this finite test is not a general theorem proof.",
+      "T": "1",
+      "original_machine_count": 6,
+      "original_job_count": 5,
+      "D": [
+        "q1",
+        "q2",
+        "x1",
+        "x2",
+        "f"
+      ],
+      "Q": [
+        "q1",
+        "q2"
+      ],
+      "arcs": [
+        {
+          "job": "q1",
+          "source": "H1",
+          "target": "A",
+          "source_time": "1/8",
+          "target_time": "1",
+          "final_color": "q1"
+        },
+        {
+          "job": "q2",
+          "source": "H2",
+          "target": "Bm",
+          "source_time": "1/8",
+          "target_time": "1",
+          "final_color": "q2"
+        },
+        {
+          "job": "x1",
+          "source": "A",
+          "target": "R",
+          "source_time": "1",
+          "target_time": "1/2",
+          "final_color": "q1"
+        },
+        {
+          "job": "x2",
+          "source": "Bm",
+          "target": "R",
+          "source_time": "1",
+          "target_time": "1/2",
+          "final_color": "q2"
+        },
+        {
+          "job": "f",
+          "source": "R",
+          "target": "S",
+          "source_time": "7/8",
+          "target_time": "1",
+          "final_color": null
+        }
+      ],
+      "trigger_threshold": "1/2",
+      "trigger_trace": [
+        {
+          "step": 1,
+          "machine": "A",
+          "color": "q1",
+          "inflow_at_trigger": "1",
+          "strict_threshold": "1/2",
+          "newly_colored_arcs": [
+            {
+              "job": "x1",
+              "target": "R",
+              "added_inflow": "1/2",
+              "new_color_inflow_at_target": "1/2"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "machine": "Bm",
+          "color": "q2",
+          "inflow_at_trigger": "1",
+          "strict_threshold": "1/2",
+          "newly_colored_arcs": [
+            {
+              "job": "x2",
+              "target": "R",
+              "added_inflow": "1/2",
+              "new_color_inflow_at_target": "1/2"
+            }
+          ]
+        }
+      ],
+      "machine_colors": {
+        "H1": null,
+        "H2": null,
+        "A": "q1",
+        "Bm": "q2",
+        "R": null,
+        "S": null
+      },
+      "final_colored_inflow": {
+        "H1": {
+          "q1": "0",
+          "q2": "0"
+        },
+        "H2": {
+          "q1": "0",
+          "q2": "0"
+        },
+        "A": {
+          "q1": "1",
+          "q2": "0"
+        },
+        "Bm": {
+          "q1": "0",
+          "q2": "1"
+        },
+        "R": {
+          "q1": "1/2",
+          "q2": "1/2"
+        },
+        "S": {
+          "q1": "0",
+          "q2": "0"
+        }
+      },
+      "stationary_loads": {
+        "H1": "0",
+        "H2": "0",
+        "A": "0",
+        "Bm": "0",
+        "R": "0",
+        "S": "0"
+      },
+      "each_machine_triggered_at_most_once_checked": true,
+      "final_threshold_invariants_checked": true,
+      "A_q": {
+        "q1": [
+          "x1"
+        ],
+        "q2": [
+          "x2"
+        ]
+      },
+      "A_q_pairwise_disjoint_checked": true,
+      "uncolored_nonquery": [
+        "f"
+      ],
+      "c_q": {
+        "q1": "0",
+        "q2": "0"
+      },
+      "sum_c_q": "0",
+      "W": "1",
+      "total_fee_inequality_checked": true,
+      "sigma0": {
+        "schedule": {
+          "q1": "H1",
+          "q2": "H2",
+          "x1": "A",
+          "x2": "Bm",
+          "f": "R"
+        },
+        "loads": {
+          "H1": "1/8",
+          "H2": "1/8",
+          "A": "1",
+          "Bm": "1",
+          "R": "7/8",
+          "S": "0"
+        },
+        "jobs_by_machine": {
+          "H1": [
+            {
+              "job": "q1",
+              "processing_time": "1/8"
+            }
+          ],
+          "H2": [
+            {
+              "job": "q2",
+              "processing_time": "1/8"
+            }
+          ],
+          "A": [
+            {
+              "job": "x1",
+              "processing_time": "1"
+            }
+          ],
+          "Bm": [
+            {
+              "job": "x2",
+              "processing_time": "1"
+            }
+          ],
+          "R": [
+            {
+              "job": "f",
+              "processing_time": "7/8"
+            }
+          ],
+          "S": []
+        },
+        "peak": "1",
+        "peak_machines": [
+          "A",
+          "Bm"
+        ],
+        "all_original_jobs_checked": true,
+        "all_original_machine_loads_checked": true
+      },
+      "sigma1": {
+        "schedule": {
+          "q1": "A",
+          "q2": "Bm",
+          "x1": "R",
+          "x2": "R",
+          "f": "S"
+        },
+        "loads": {
+          "H1": "0",
+          "H2": "0",
+          "A": "1",
+          "Bm": "1",
+          "R": "1",
+          "S": "1"
+        },
+        "jobs_by_machine": {
+          "H1": [],
+          "H2": [],
+          "A": [
+            {
+              "job": "q1",
+              "processing_time": "1"
+            }
+          ],
+          "Bm": [
+            {
+              "job": "q2",
+              "processing_time": "1"
+            }
+          ],
+          "R": [
+            {
+              "job": "x1",
+              "processing_time": "1/2"
+            },
+            {
+              "job": "x2",
+              "processing_time": "1/2"
+            }
+          ],
+          "S": [
+            {
+              "job": "f",
+              "processing_time": "1"
+            }
+          ]
+        },
+        "peak": "1",
+        "peak_machines": [
+          "A",
+          "Bm",
+          "R",
+          "S"
+        ],
+        "all_original_jobs_checked": true,
+        "all_original_machine_loads_checked": true
+      },
+      "requested_tau": [
+        {
+          "schedule": {
+            "q1": "A",
+            "q2": "H2",
+            "x1": "R",
+            "x2": "Bm",
+            "f": "R"
+          },
+          "loads": {
+            "H1": "0",
+            "H2": "1/8",
+            "A": "1",
+            "Bm": "1",
+            "R": "11/8",
+            "S": "0"
+          },
+          "jobs_by_machine": {
+            "H1": [],
+            "H2": [
+              {
+                "job": "q2",
+                "processing_time": "1/8"
+              }
+            ],
+            "A": [
+              {
+                "job": "q1",
+                "processing_time": "1"
+              }
+            ],
+            "Bm": [
+              {
+                "job": "x2",
+                "processing_time": "1"
+              }
+            ],
+            "R": [
+              {
+                "job": "x1",
+                "processing_time": "1/2"
+              },
+              {
+                "job": "f",
+                "processing_time": "7/8"
+              }
+            ],
+            "S": []
+          },
+          "peak": "11/8",
+          "peak_machines": [
+            "R"
+          ],
+          "all_original_jobs_checked": true,
+          "all_original_machine_loads_checked": true,
+          "query": "q1",
+          "changed_jobs": [
+            "q1",
+            "x1"
+          ],
+          "A_q": [
+            "x1"
+          ],
+          "delta_q": "1/8",
+          "theorem_bound": "3/2",
+          "actual_nonquery_fee": "0",
+          "support_fee": "0",
+          "fee_equality_checked": true,
+          "load_bound_checked": true,
+          "manual_values_checked": {
+            "peak": "11/8",
+            "delta": "1/8",
+            "bound": "3/2",
+            "fee": "0"
+          }
+        },
+        {
+          "schedule": {
+            "q1": "H1",
+            "q2": "Bm",
+            "x1": "A",
+            "x2": "R",
+            "f": "R"
+          },
+          "loads": {
+            "H1": "1/8",
+            "H2": "0",
+            "A": "1",
+            "Bm": "1",
+            "R": "11/8",
+            "S": "0"
+          },
+          "jobs_by_machine": {
+            "H1": [
+              {
+                "job": "q1",
+                "processing_time": "1/8"
+              }
+            ],
+            "H2": [],
+            "A": [
+              {
+                "job": "x1",
+                "processing_time": "1"
+              }
+            ],
+            "Bm": [
+              {
+                "job": "q2",
+                "processing_time": "1"
+              }
+            ],
+            "R": [
+              {
+                "job": "x2",
+                "processing_time": "1/2"
+              },
+              {
+                "job": "f",
+                "processing_time": "7/8"
+              }
+            ],
+            "S": []
+          },
+          "peak": "11/8",
+          "peak_machines": [
+            "R"
+          ],
+          "all_original_jobs_checked": true,
+          "all_original_machine_loads_checked": true,
+          "query": "q2",
+          "changed_jobs": [
+            "q2",
+            "x2"
+          ],
+          "A_q": [
+            "x2"
+          ],
+          "delta_q": "1/8",
+          "theorem_bound": "3/2",
+          "actual_nonquery_fee": "0",
+          "support_fee": "0",
+          "fee_equality_checked": true,
+          "load_bound_checked": true,
+          "manual_values_checked": {
+            "peak": "11/8",
+            "delta": "1/8",
+            "bound": "3/2",
+            "fee": "0"
+          }
+        }
+      ],
+      "finite_enumeration": {
+        "scope": "Only this explicit finite case; not a proof of the general separation theorem.",
+        "D_bit_order": [
+          "q1",
+          "q2",
+          "x1",
+          "x2",
+          "f"
+        ],
+        "state_count": 32,
+        "all_finite_endpoint_assignments_covered": true,
+        "threshold_checks": [
+          {
+            "query_subset": [
+              "q1"
+            ],
+            "cap": "4/3",
+            "feasible_state_count": 2,
+            "minimum_fee": "1",
+            "mandatory_changed_nonquery": [
+              "x1",
+              "f"
+            ],
+            "minimum_fee_witness_bits": [
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "minimum_fee_witness_peak": "1",
+            "checked": true
+          },
+          {
+            "query_subset": [
+              "q2"
+            ],
+            "cap": "4/3",
+            "feasible_state_count": 2,
+            "minimum_fee": "1",
+            "mandatory_changed_nonquery": [
+              "x2",
+              "f"
+            ],
+            "minimum_fee_witness_bits": [
+              0,
+              1,
+              0,
+              1,
+              1
+            ],
+            "minimum_fee_witness_peak": "1",
+            "checked": true
+          },
+          {
+            "query_subset": [
+              "q1"
+            ],
+            "cap": "11/8",
+            "feasible_state_count": 3,
+            "minimum_fee": "0",
+            "mandatory_changed_nonquery": [
+              "x1"
+            ],
+            "minimum_fee_witness_bits": [
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "minimum_fee_witness_peak": "11/8",
+            "checked": true
+          },
+          {
+            "query_subset": [
+              "q2"
+            ],
+            "cap": "11/8",
+            "feasible_state_count": 3,
+            "minimum_fee": "0",
+            "mandatory_changed_nonquery": [
+              "x2"
+            ],
+            "minimum_fee_witness_bits": [
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "minimum_fee_witness_peak": "11/8",
+            "checked": true
+          }
+        ],
+        "minimum_peak_checks": [
+          {
+            "query_subset": [
+              "q1"
+            ],
+            "fee_at_most": "0",
+            "minimum_peak": "11/8",
+            "witness_bits": [
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "checked": true
+          },
+          {
+            "query_subset": [
+              "q2"
+            ],
+            "fee_at_most": "0",
+            "minimum_peak": "11/8",
+            "witness_bits": [
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "checked": true
+          },
+          {
+            "query_subset": [
+              "q1"
+            ],
+            "fee_at_most": "1",
+            "minimum_peak": "1",
+            "witness_bits": [
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "checked": true
+          },
+          {
+            "query_subset": [
+              "q2"
+            ],
+            "fee_at_most": "1",
+            "minimum_peak": "1",
+            "witness_bits": [
+              0,
+              1,
+              0,
+              1,
+              1
+            ],
+            "checked": true
+          }
+        ],
+        "states": [
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "H2",
+              "x1": "A",
+              "x2": "Bm",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "1/8",
+              "A": "1",
+              "Bm": "1",
+              "R": "7/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "1",
+            "peak_machines": [
+              "A",
+              "Bm"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "query_subset": [],
+            "changed_nonquery": [],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "H2",
+              "x1": "A",
+              "x2": "Bm",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "1/8",
+              "A": "1",
+              "Bm": "1",
+              "R": "0",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "1",
+            "peak_machines": [
+              "A",
+              "Bm",
+              "S"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "query_subset": [],
+            "changed_nonquery": [
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "H2",
+              "x1": "A",
+              "x2": "R",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "1/8",
+              "A": "1",
+              "Bm": "0",
+              "R": "11/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [],
+              "R": [
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "11/8",
+            "peak_machines": [
+              "R"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "query_subset": [],
+            "changed_nonquery": [
+              "x2"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "H2",
+              "x1": "A",
+              "x2": "R",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "1/8",
+              "A": "1",
+              "Bm": "0",
+              "R": "1/2",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [],
+              "R": [
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "1",
+            "peak_machines": [
+              "A",
+              "S"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "query_subset": [],
+            "changed_nonquery": [
+              "x2",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "H2",
+              "x1": "R",
+              "x2": "Bm",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "1/8",
+              "A": "0",
+              "Bm": "1",
+              "R": "11/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [],
+              "Bm": [
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "11/8",
+            "peak_machines": [
+              "R"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "query_subset": [],
+            "changed_nonquery": [
+              "x1"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "H2",
+              "x1": "R",
+              "x2": "Bm",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "1/8",
+              "A": "0",
+              "Bm": "1",
+              "R": "1/2",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [],
+              "Bm": [
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "1",
+            "peak_machines": [
+              "Bm",
+              "S"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "query_subset": [],
+            "changed_nonquery": [
+              "x1",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "H2",
+              "x1": "R",
+              "x2": "R",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "1/8",
+              "A": "0",
+              "Bm": "0",
+              "R": "15/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [],
+              "Bm": [],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "15/8",
+            "peak_machines": [
+              "R"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            "query_subset": [],
+            "changed_nonquery": [
+              "x1",
+              "x2"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "H2",
+              "x1": "R",
+              "x2": "R",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "1/8",
+              "A": "0",
+              "Bm": "0",
+              "R": "1",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [],
+              "Bm": [],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "1",
+            "peak_machines": [
+              "R",
+              "S"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "query_subset": [],
+            "changed_nonquery": [
+              "x1",
+              "x2",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "Bm",
+              "x1": "A",
+              "x2": "Bm",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "0",
+              "A": "1",
+              "Bm": "2",
+              "R": "7/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [],
+              "A": [
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "2",
+            "peak_machines": [
+              "Bm"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "query_subset": [
+              "q2"
+            ],
+            "changed_nonquery": [],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "Bm",
+              "x1": "A",
+              "x2": "Bm",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "0",
+              "A": "1",
+              "Bm": "2",
+              "R": "0",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [],
+              "A": [
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "2",
+            "peak_machines": [
+              "Bm"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "query_subset": [
+              "q2"
+            ],
+            "changed_nonquery": [
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "Bm",
+              "x1": "A",
+              "x2": "R",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "0",
+              "A": "1",
+              "Bm": "1",
+              "R": "11/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [],
+              "A": [
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "11/8",
+            "peak_machines": [
+              "R"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "query_subset": [
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x2"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "Bm",
+              "x1": "A",
+              "x2": "R",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "0",
+              "A": "1",
+              "Bm": "1",
+              "R": "1/2",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [],
+              "A": [
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "1",
+            "peak_machines": [
+              "A",
+              "Bm",
+              "S"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              1,
+              0,
+              1,
+              1
+            ],
+            "query_subset": [
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x2",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "Bm",
+              "x1": "R",
+              "x2": "Bm",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "0",
+              "A": "0",
+              "Bm": "2",
+              "R": "11/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [],
+              "A": [],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "2",
+            "peak_machines": [
+              "Bm"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "query_subset": [
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x1"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "Bm",
+              "x1": "R",
+              "x2": "Bm",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "0",
+              "A": "0",
+              "Bm": "2",
+              "R": "1/2",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [],
+              "A": [],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "2",
+            "peak_machines": [
+              "Bm"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            "query_subset": [
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x1",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "Bm",
+              "x1": "R",
+              "x2": "R",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "0",
+              "A": "0",
+              "Bm": "1",
+              "R": "15/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [],
+              "A": [],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "15/8",
+            "peak_machines": [
+              "R"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "query_subset": [
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x1",
+              "x2"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "H1",
+              "q2": "Bm",
+              "x1": "R",
+              "x2": "R",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "1/8",
+              "H2": "0",
+              "A": "0",
+              "Bm": "1",
+              "R": "1",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [
+                {
+                  "job": "q1",
+                  "processing_time": "1/8"
+                }
+              ],
+              "H2": [],
+              "A": [],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "1",
+            "peak_machines": [
+              "Bm",
+              "R",
+              "S"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "query_subset": [
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x1",
+              "x2",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "H2",
+              "x1": "A",
+              "x2": "Bm",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "1/8",
+              "A": "2",
+              "Bm": "1",
+              "R": "7/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "2",
+            "peak_machines": [
+              "A"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "query_subset": [
+              "q1"
+            ],
+            "changed_nonquery": [],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "H2",
+              "x1": "A",
+              "x2": "Bm",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "1/8",
+              "A": "2",
+              "Bm": "1",
+              "R": "0",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "2",
+            "peak_machines": [
+              "A"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "query_subset": [
+              "q1"
+            ],
+            "changed_nonquery": [
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "H2",
+              "x1": "A",
+              "x2": "R",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "1/8",
+              "A": "2",
+              "Bm": "0",
+              "R": "11/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [],
+              "R": [
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "2",
+            "peak_machines": [
+              "A"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "query_subset": [
+              "q1"
+            ],
+            "changed_nonquery": [
+              "x2"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "H2",
+              "x1": "A",
+              "x2": "R",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "1/8",
+              "A": "2",
+              "Bm": "0",
+              "R": "1/2",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [],
+              "R": [
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "2",
+            "peak_machines": [
+              "A"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              0,
+              0,
+              1,
+              1
+            ],
+            "query_subset": [
+              "q1"
+            ],
+            "changed_nonquery": [
+              "x2",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "H2",
+              "x1": "R",
+              "x2": "Bm",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "1/8",
+              "A": "1",
+              "Bm": "1",
+              "R": "11/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "11/8",
+            "peak_machines": [
+              "R"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "query_subset": [
+              "q1"
+            ],
+            "changed_nonquery": [
+              "x1"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "H2",
+              "x1": "R",
+              "x2": "Bm",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "1/8",
+              "A": "1",
+              "Bm": "1",
+              "R": "1/2",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "1",
+            "peak_machines": [
+              "A",
+              "Bm",
+              "S"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "query_subset": [
+              "q1"
+            ],
+            "changed_nonquery": [
+              "x1",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "H2",
+              "x1": "R",
+              "x2": "R",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "1/8",
+              "A": "1",
+              "Bm": "0",
+              "R": "15/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "15/8",
+            "peak_machines": [
+              "R"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              0,
+              1,
+              1,
+              0
+            ],
+            "query_subset": [
+              "q1"
+            ],
+            "changed_nonquery": [
+              "x1",
+              "x2"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "H2",
+              "x1": "R",
+              "x2": "R",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "1/8",
+              "A": "1",
+              "Bm": "0",
+              "R": "1",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [
+                {
+                  "job": "q2",
+                  "processing_time": "1/8"
+                }
+              ],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "1",
+            "peak_machines": [
+              "A",
+              "R",
+              "S"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "query_subset": [
+              "q1"
+            ],
+            "changed_nonquery": [
+              "x1",
+              "x2",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "Bm",
+              "x1": "A",
+              "x2": "Bm",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "0",
+              "A": "2",
+              "Bm": "2",
+              "R": "7/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "2",
+            "peak_machines": [
+              "A",
+              "Bm"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            "query_subset": [
+              "q1",
+              "q2"
+            ],
+            "changed_nonquery": [],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "Bm",
+              "x1": "A",
+              "x2": "Bm",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "0",
+              "A": "2",
+              "Bm": "2",
+              "R": "0",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "2",
+            "peak_machines": [
+              "A",
+              "Bm"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            "query_subset": [
+              "q1",
+              "q2"
+            ],
+            "changed_nonquery": [
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "Bm",
+              "x1": "A",
+              "x2": "R",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "0",
+              "A": "2",
+              "Bm": "1",
+              "R": "11/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "2",
+            "peak_machines": [
+              "A"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              1,
+              0,
+              1,
+              0
+            ],
+            "query_subset": [
+              "q1",
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x2"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "Bm",
+              "x1": "A",
+              "x2": "R",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "0",
+              "A": "2",
+              "Bm": "1",
+              "R": "1/2",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "2",
+            "peak_machines": [
+              "A"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              1,
+              0,
+              1,
+              1
+            ],
+            "query_subset": [
+              "q1",
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x2",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "Bm",
+              "x1": "R",
+              "x2": "Bm",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "0",
+              "A": "1",
+              "Bm": "2",
+              "R": "11/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "2",
+            "peak_machines": [
+              "Bm"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            "query_subset": [
+              "q1",
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x1"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "Bm",
+              "x1": "R",
+              "x2": "Bm",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "0",
+              "A": "1",
+              "Bm": "2",
+              "R": "1/2",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "2",
+            "peak_machines": [
+              "Bm"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              1,
+              1,
+              0,
+              1
+            ],
+            "query_subset": [
+              "q1",
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x1",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "Bm",
+              "x1": "R",
+              "x2": "R",
+              "f": "R"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "0",
+              "A": "1",
+              "Bm": "1",
+              "R": "15/8",
+              "S": "0"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "f",
+                  "processing_time": "7/8"
+                }
+              ],
+              "S": []
+            },
+            "peak": "15/8",
+            "peak_machines": [
+              "R"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              1,
+              1,
+              1,
+              0
+            ],
+            "query_subset": [
+              "q1",
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x1",
+              "x2"
+            ],
+            "nonquery_move_fee": "0"
+          },
+          {
+            "schedule": {
+              "q1": "A",
+              "q2": "Bm",
+              "x1": "R",
+              "x2": "R",
+              "f": "S"
+            },
+            "loads": {
+              "H1": "0",
+              "H2": "0",
+              "A": "1",
+              "Bm": "1",
+              "R": "1",
+              "S": "1"
+            },
+            "jobs_by_machine": {
+              "H1": [],
+              "H2": [],
+              "A": [
+                {
+                  "job": "q1",
+                  "processing_time": "1"
+                }
+              ],
+              "Bm": [
+                {
+                  "job": "q2",
+                  "processing_time": "1"
+                }
+              ],
+              "R": [
+                {
+                  "job": "x1",
+                  "processing_time": "1/2"
+                },
+                {
+                  "job": "x2",
+                  "processing_time": "1/2"
+                }
+              ],
+              "S": [
+                {
+                  "job": "f",
+                  "processing_time": "1"
+                }
+              ]
+            },
+            "peak": "1",
+            "peak_machines": [
+              "A",
+              "Bm",
+              "R",
+              "S"
+            ],
+            "all_original_jobs_checked": true,
+            "all_original_machine_loads_checked": true,
+            "state_bits_in_D_order": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "query_subset": [
+              "q1",
+              "q2"
+            ],
+            "changed_nonquery": [
+              "x1",
+              "x2",
+              "f"
+            ],
+            "nonquery_move_fee": "1"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "zero_threshold_two_queries",
+      "purpose": "T=0, two queries move between distinct original/new zero endpoints; no machine can trigger.",
+      "T": "0",
+      "original_machine_count": 4,
+      "original_job_count": 2,
+      "D": [
+        "za",
+        "zb"
+      ],
+      "Q": [
+        "za",
+        "zb"
+      ],
+      "arcs": [
+        {
+          "job": "za",
+          "source": "Za0",
+          "target": "Za1",
+          "source_time": "0",
+          "target_time": "0",
+          "final_color": "za"
+        },
+        {
+          "job": "zb",
+          "source": "Zb0",
+          "target": "Zb1",
+          "source_time": "0",
+          "target_time": "0",
+          "final_color": "zb"
+        }
+      ],
+      "trigger_threshold": "0",
+      "trigger_trace": [],
+      "machine_colors": {
+        "Za0": null,
+        "Za1": null,
+        "Zb0": null,
+        "Zb1": null
+      },
+      "final_colored_inflow": {
+        "Za0": {
+          "za": "0",
+          "zb": "0"
+        },
+        "Za1": {
+          "za": "0",
+          "zb": "0"
+        },
+        "Zb0": {
+          "za": "0",
+          "zb": "0"
+        },
+        "Zb1": {
+          "za": "0",
+          "zb": "0"
+        }
+      },
+      "stationary_loads": {
+        "Za0": "0",
+        "Za1": "0",
+        "Zb0": "0",
+        "Zb1": "0"
+      },
+      "each_machine_triggered_at_most_once_checked": true,
+      "final_threshold_invariants_checked": true,
+      "A_q": {
+        "za": [],
+        "zb": []
+      },
+      "A_q_pairwise_disjoint_checked": true,
+      "uncolored_nonquery": [],
+      "c_q": {
+        "za": "0",
+        "zb": "0"
+      },
+      "sum_c_q": "0",
+      "W": "0",
+      "total_fee_inequality_checked": true,
+      "sigma0": {
+        "schedule": {
+          "za": "Za0",
+          "zb": "Zb0"
+        },
+        "loads": {
+          "Za0": "0",
+          "Za1": "0",
+          "Zb0": "0",
+          "Zb1": "0"
+        },
+        "jobs_by_machine": {
+          "Za0": [
+            {
+              "job": "za",
+              "processing_time": "0"
+            }
+          ],
+          "Za1": [],
+          "Zb0": [
+            {
+              "job": "zb",
+              "processing_time": "0"
+            }
+          ],
+          "Zb1": []
+        },
+        "peak": "0",
+        "peak_machines": [
+          "Za0",
+          "Za1",
+          "Zb0",
+          "Zb1"
+        ],
+        "all_original_jobs_checked": true,
+        "all_original_machine_loads_checked": true
+      },
+      "sigma1": {
+        "schedule": {
+          "za": "Za1",
+          "zb": "Zb1"
+        },
+        "loads": {
+          "Za0": "0",
+          "Za1": "0",
+          "Zb0": "0",
+          "Zb1": "0"
+        },
+        "jobs_by_machine": {
+          "Za0": [],
+          "Za1": [
+            {
+              "job": "za",
+              "processing_time": "0"
+            }
+          ],
+          "Zb0": [],
+          "Zb1": [
+            {
+              "job": "zb",
+              "processing_time": "0"
+            }
+          ]
+        },
+        "peak": "0",
+        "peak_machines": [
+          "Za0",
+          "Za1",
+          "Zb0",
+          "Zb1"
+        ],
+        "all_original_jobs_checked": true,
+        "all_original_machine_loads_checked": true
+      },
+      "requested_tau": [
+        {
+          "schedule": {
+            "za": "Za1",
+            "zb": "Zb0"
+          },
+          "loads": {
+            "Za0": "0",
+            "Za1": "0",
+            "Zb0": "0",
+            "Zb1": "0"
+          },
+          "jobs_by_machine": {
+            "Za0": [],
+            "Za1": [
+              {
+                "job": "za",
+                "processing_time": "0"
+              }
+            ],
+            "Zb0": [
+              {
+                "job": "zb",
+                "processing_time": "0"
+              }
+            ],
+            "Zb1": []
+          },
+          "peak": "0",
+          "peak_machines": [
+            "Za0",
+            "Za1",
+            "Zb0",
+            "Zb1"
+          ],
+          "all_original_jobs_checked": true,
+          "all_original_machine_loads_checked": true,
+          "query": "za",
+          "changed_jobs": [
+            "za"
+          ],
+          "A_q": [],
+          "delta_q": "0",
+          "theorem_bound": "0",
+          "actual_nonquery_fee": "0",
+          "support_fee": "0",
+          "fee_equality_checked": true,
+          "load_bound_checked": true,
+          "manual_values_checked": {
+            "peak": "0",
+            "delta": "0",
+            "bound": "0",
+            "fee": "0"
+          }
+        },
+        {
+          "schedule": {
+            "za": "Za0",
+            "zb": "Zb1"
+          },
+          "loads": {
+            "Za0": "0",
+            "Za1": "0",
+            "Zb0": "0",
+            "Zb1": "0"
+          },
+          "jobs_by_machine": {
+            "Za0": [
+              {
+                "job": "za",
+                "processing_time": "0"
+              }
+            ],
+            "Za1": [],
+            "Zb0": [],
+            "Zb1": [
+              {
+                "job": "zb",
+                "processing_time": "0"
+              }
+            ]
+          },
+          "peak": "0",
+          "peak_machines": [
+            "Za0",
+            "Za1",
+            "Zb0",
+            "Zb1"
+          ],
+          "all_original_jobs_checked": true,
+          "all_original_machine_loads_checked": true,
+          "query": "zb",
+          "changed_jobs": [
+            "zb"
+          ],
+          "A_q": [],
+          "delta_q": "0",
+          "theorem_bound": "0",
+          "actual_nonquery_fee": "0",
+          "support_fee": "0",
+          "fee_equality_checked": true,
+          "load_bound_checked": true,
+          "manual_values_checked": {
+            "peak": "0",
+            "delta": "0",
+            "bound": "0",
+            "fee": "0"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "arbitrary_times_shared_query_source",
+      "purpose": "Arbitrary endpoint times, stationary jobs, shared query source, a multi-step cascade and extra unused finite endpoints.",
+      "T": "2",
+      "original_machine_count": 8,
+      "original_job_count": 9,
+      "D": [
+        "qa",
+        "qb",
+        "xa",
+        "xb",
+        "y",
+        "z",
+        "v"
+      ],
+      "Q": [
+        "qa",
+        "qb"
+      ],
+      "arcs": [
+        {
+          "job": "qa",
+          "source": "H",
+          "target": "A",
+          "source_time": "2/5",
+          "target_time": "3/2",
+          "final_color": "qa"
+        },
+        {
+          "job": "qb",
+          "source": "H",
+          "target": "B",
+          "source_time": "3/5",
+          "target_time": "5/4",
+          "final_color": "qb"
+        },
+        {
+          "job": "xa",
+          "source": "A",
+          "target": "C",
+          "source_time": "7/4",
+          "target_time": "5/4",
+          "final_color": "qa"
+        },
+        {
+          "job": "xb",
+          "source": "B",
+          "target": "C",
+          "source_time": "4/3",
+          "target_time": "1/4",
+          "final_color": "qb"
+        },
+        {
+          "job": "y",
+          "source": "C",
+          "target": "D",
+          "source_time": "3/2",
+          "target_time": "3/2",
+          "final_color": "qa"
+        },
+        {
+          "job": "z",
+          "source": "D",
+          "target": "E",
+          "source_time": "1",
+          "target_time": "2/3",
+          "final_color": "qa"
+        },
+        {
+          "job": "v",
+          "source": "D",
+          "target": "H",
+          "source_time": "1",
+          "target_time": "3/2",
+          "final_color": "qa"
+        }
+      ],
+      "trigger_threshold": "1",
+      "trigger_trace": [
+        {
+          "step": 1,
+          "machine": "A",
+          "color": "qa",
+          "inflow_at_trigger": "3/2",
+          "strict_threshold": "1",
+          "newly_colored_arcs": [
+            {
+              "job": "xa",
+              "target": "C",
+              "added_inflow": "5/4",
+              "new_color_inflow_at_target": "5/4"
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "machine": "B",
+          "color": "qb",
+          "inflow_at_trigger": "5/4",
+          "strict_threshold": "1",
+          "newly_colored_arcs": [
+            {
+              "job": "xb",
+              "target": "C",
+              "added_inflow": "1/4",
+              "new_color_inflow_at_target": "1/4"
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "machine": "C",
+          "color": "qa",
+          "inflow_at_trigger": "5/4",
+          "strict_threshold": "1",
+          "newly_colored_arcs": [
+            {
+              "job": "y",
+              "target": "D",
+              "added_inflow": "3/2",
+              "new_color_inflow_at_target": "3/2"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "machine": "D",
+          "color": "qa",
+          "inflow_at_trigger": "3/2",
+          "strict_threshold": "1",
+          "newly_colored_arcs": [
+            {
+              "job": "z",
+              "target": "E",
+              "added_inflow": "2/3",
+              "new_color_inflow_at_target": "2/3"
+            },
+            {
+              "job": "v",
+              "target": "H",
+              "added_inflow": "3/2",
+              "new_color_inflow_at_target": "3/2"
+            }
+          ]
+        },
+        {
+          "step": 5,
+          "machine": "H",
+          "color": "qa",
+          "inflow_at_trigger": "3/2",
+          "strict_threshold": "1",
+          "newly_colored_arcs": []
+        }
+      ],
+      "machine_colors": {
+        "H": "qa",
+        "A": "qa",
+        "B": "qb",
+        "C": "qa",
+        "D": "qa",
+        "E": null,
+        "F": null,
+        "X": null
+      },
+      "final_colored_inflow": {
+        "H": {
+          "qa": "3/2",
+          "qb": "0"
+        },
+        "A": {
+          "qa": "3/2",
+          "qb": "0"
+        },
+        "B": {
+          "qa": "0",
+          "qb": "5/4"
+        },
+        "C": {
+          "qa": "5/4",
+          "qb": "1/4"
+        },
+        "D": {
+          "qa": "3/2",
+          "qb": "0"
+        },
+        "E": {
+          "qa": "2/3",
+          "qb": "0"
+        },
+        "F": {
+          "qa": "0",
+          "qb": "0"
+        },
+        "X": {
+          "qa": "0",
+          "qb": "0"
+        }
+      },
+      "stationary_loads": {
+        "H": "0",
+        "A": "0",
+        "B": "0",
+        "C": "1/2",
+        "D": "0",
+        "E": "4/3",
+        "F": "0",
+        "X": "0"
+      },
+      "each_machine_triggered_at_most_once_checked": true,
+      "final_threshold_invariants_checked": true,
+      "A_q": {
+        "qa": [
+          "xa",
+          "y",
+          "z",
+          "v"
+        ],
+        "qb": [
+          "xb"
+        ]
+      },
+      "A_q_pairwise_disjoint_checked": true,
+      "uncolored_nonquery": [],
+      "c_q": {
+        "qa": "28",
+        "qb": "11"
+      },
+      "sum_c_q": "39",
+      "W": "39",
+      "total_fee_inequality_checked": true,
+      "sigma0": {
+        "schedule": {
+          "qa": "H",
+          "qb": "H",
+          "xa": "A",
+          "xb": "B",
+          "y": "C",
+          "z": "D",
+          "v": "D",
+          "s": "C",
+          "w": "E"
+        },
+        "loads": {
+          "H": "1",
+          "A": "7/4",
+          "B": "4/3",
+          "C": "2",
+          "D": "2",
+          "E": "4/3",
+          "F": "0",
+          "X": "0"
+        },
+        "jobs_by_machine": {
+          "H": [
+            {
+              "job": "qa",
+              "processing_time": "2/5"
+            },
+            {
+              "job": "qb",
+              "processing_time": "3/5"
+            }
+          ],
+          "A": [
+            {
+              "job": "xa",
+              "processing_time": "7/4"
+            }
+          ],
+          "B": [
+            {
+              "job": "xb",
+              "processing_time": "4/3"
+            }
+          ],
+          "C": [
+            {
+              "job": "y",
+              "processing_time": "3/2"
+            },
+            {
+              "job": "s",
+              "processing_time": "1/2"
+            }
+          ],
+          "D": [
+            {
+              "job": "z",
+              "processing_time": "1"
+            },
+            {
+              "job": "v",
+              "processing_time": "1"
+            }
+          ],
+          "E": [
+            {
+              "job": "w",
+              "processing_time": "4/3"
+            }
+          ],
+          "F": [],
+          "X": []
+        },
+        "peak": "2",
+        "peak_machines": [
+          "C",
+          "D"
+        ],
+        "all_original_jobs_checked": true,
+        "all_original_machine_loads_checked": true
+      },
+      "sigma1": {
+        "schedule": {
+          "qa": "A",
+          "qb": "B",
+          "xa": "C",
+          "xb": "C",
+          "y": "D",
+          "z": "E",
+          "v": "H",
+          "s": "C",
+          "w": "E"
+        },
+        "loads": {
+          "H": "3/2",
+          "A": "3/2",
+          "B": "5/4",
+          "C": "2",
+          "D": "3/2",
+          "E": "2",
+          "F": "0",
+          "X": "0"
+        },
+        "jobs_by_machine": {
+          "H": [
+            {
+              "job": "v",
+              "processing_time": "3/2"
+            }
+          ],
+          "A": [
+            {
+              "job": "qa",
+              "processing_time": "3/2"
+            }
+          ],
+          "B": [
+            {
+              "job": "qb",
+              "processing_time": "5/4"
+            }
+          ],
+          "C": [
+            {
+              "job": "xa",
+              "processing_time": "5/4"
+            },
+            {
+              "job": "xb",
+              "processing_time": "1/4"
+            },
+            {
+              "job": "s",
+              "processing_time": "1/2"
+            }
+          ],
+          "D": [
+            {
+              "job": "y",
+              "processing_time": "3/2"
+            }
+          ],
+          "E": [
+            {
+              "job": "z",
+              "processing_time": "2/3"
+            },
+            {
+              "job": "w",
+              "processing_time": "4/3"
+            }
+          ],
+          "F": [],
+          "X": []
+        },
+        "peak": "2",
+        "peak_machines": [
+          "C",
+          "E"
+        ],
+        "all_original_jobs_checked": true,
+        "all_original_machine_loads_checked": true
+      },
+      "requested_tau": [
+        {
+          "schedule": {
+            "qa": "A",
+            "qb": "H",
+            "xa": "C",
+            "xb": "B",
+            "y": "D",
+            "z": "E",
+            "v": "H",
+            "s": "C",
+            "w": "E"
+          },
+          "loads": {
+            "H": "21/10",
+            "A": "3/2",
+            "B": "4/3",
+            "C": "7/4",
+            "D": "3/2",
+            "E": "2",
+            "F": "0",
+            "X": "0"
+          },
+          "jobs_by_machine": {
+            "H": [
+              {
+                "job": "qb",
+                "processing_time": "3/5"
+              },
+              {
+                "job": "v",
+                "processing_time": "3/2"
+              }
+            ],
+            "A": [
+              {
+                "job": "qa",
+                "processing_time": "3/2"
+              }
+            ],
+            "B": [
+              {
+                "job": "xb",
+                "processing_time": "4/3"
+              }
+            ],
+            "C": [
+              {
+                "job": "xa",
+                "processing_time": "5/4"
+              },
+              {
+                "job": "s",
+                "processing_time": "1/2"
+              }
+            ],
+            "D": [
+              {
+                "job": "y",
+                "processing_time": "3/2"
+              }
+            ],
+            "E": [
+              {
+                "job": "z",
+                "processing_time": "2/3"
+              },
+              {
+                "job": "w",
+                "processing_time": "4/3"
+              }
+            ],
+            "F": [],
+            "X": []
+          },
+          "peak": "21/10",
+          "peak_machines": [
+            "H"
+          ],
+          "all_original_jobs_checked": true,
+          "all_original_machine_loads_checked": true,
+          "query": "qa",
+          "changed_jobs": [
+            "qa",
+            "xa",
+            "y",
+            "z",
+            "v"
+          ],
+          "A_q": [
+            "xa",
+            "y",
+            "z",
+            "v"
+          ],
+          "delta_q": "3/5",
+          "theorem_bound": "3",
+          "actual_nonquery_fee": "28",
+          "support_fee": "28",
+          "fee_equality_checked": true,
+          "load_bound_checked": true,
+          "manual_values_checked": {
+            "peak": "21/10",
+            "delta": "3/5",
+            "bound": "3",
+            "fee": "28"
+          }
+        },
+        {
+          "schedule": {
+            "qa": "H",
+            "qb": "B",
+            "xa": "A",
+            "xb": "C",
+            "y": "C",
+            "z": "D",
+            "v": "D",
+            "s": "C",
+            "w": "E"
+          },
+          "loads": {
+            "H": "2/5",
+            "A": "7/4",
+            "B": "5/4",
+            "C": "9/4",
+            "D": "2",
+            "E": "4/3",
+            "F": "0",
+            "X": "0"
+          },
+          "jobs_by_machine": {
+            "H": [
+              {
+                "job": "qa",
+                "processing_time": "2/5"
+              }
+            ],
+            "A": [
+              {
+                "job": "xa",
+                "processing_time": "7/4"
+              }
+            ],
+            "B": [
+              {
+                "job": "qb",
+                "processing_time": "5/4"
+              }
+            ],
+            "C": [
+              {
+                "job": "xb",
+                "processing_time": "1/4"
+              },
+              {
+                "job": "y",
+                "processing_time": "3/2"
+              },
+              {
+                "job": "s",
+                "processing_time": "1/2"
+              }
+            ],
+            "D": [
+              {
+                "job": "z",
+                "processing_time": "1"
+              },
+              {
+                "job": "v",
+                "processing_time": "1"
+              }
+            ],
+            "E": [
+              {
+                "job": "w",
+                "processing_time": "4/3"
+              }
+            ],
+            "F": [],
+            "X": []
+          },
+          "peak": "9/4",
+          "peak_machines": [
+            "C"
+          ],
+          "all_original_jobs_checked": true,
+          "all_original_machine_loads_checked": true,
+          "query": "qb",
+          "changed_jobs": [
+            "qb",
+            "xb"
+          ],
+          "A_q": [
+            "xb"
+          ],
+          "delta_q": "2/5",
+          "theorem_bound": "3",
+          "actual_nonquery_fee": "11",
+          "support_fee": "11",
+          "fee_equality_checked": true,
+          "load_bound_checked": true,
+          "manual_values_checked": {
+            "peak": "9/4",
+            "delta": "2/5",
+            "bound": "3",
+            "fee": "11"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -31,3 +31,5 @@
 ## 单边际与PI-SIMPLEX的来源混置补齐
 
 旧仿射线双源页第3节数学是272中的PI-SIMPLEX（R⁴ states，V=2/(R+1)），不能代表185的R-states/helper单边际构造（V=1/(R−1)）已吸收。新独立反例保185完整构造、任意partial界、全UM和padding；旧页改正确去向链接与三对象说明，原unit/PI证明第2–3节逐字节保持。不是推翻PI数学。前后SHA和确切路径见TAGGED_SOURCE_ROUTING_CORRECTION.json。
+
+双见证原程序三源全文比较，纠正三处旧摘要：着色incoming使用目标σ1时间b_j（旧a_j用于初态/残余）；累计路径是每agent三个groups、五states；v3需T>0、R_beta<d才除d−R_beta，单件初态≤eta T，eta=0单独得全部d合格。三个旧SHA已逐项guard后拷入，原冻结字节不改，详情query-witness-originals-next/editorial-corrections.json。
