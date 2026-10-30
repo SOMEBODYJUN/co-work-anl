@@ -1,0 +1,369 @@
+ FACTOR-TWO SUBGAME-PERFECT EQUILIBRIA WITH
+  ATOMIC CLIENTS AND A COMMON LOCATION SET
+
+        Abstract. Krogmann, Lenzner, Skopalik, Uetz, and Vos introduced
+        a two-stage facility-location game in which facilities choose locations
+        and weighted atomic clients then choose accessible facilities to minimize
+        congestion. Their existence guarantee for weighted clients depends on
+        the number of facilities, while their lower bound is the golden ratio.
+        We prove that a factor-two approximate subgame-perfect equilibrium
+        exists whenever the facilities share a finite location set, independently of
+        their number. Client equilibria are exact at every placement. On path,
+        every covered client chooses an occupied location and independently
+        randomizes uniformly among its facilities; all other continuations may
+        be pure. We obtain the placement by lexicographically maximizing
+        the facility-load vector. The resulting weight bounds, combined with
+        an atomic packing argument, yield exact client equilibria after every
+        deviation and limit every facility’s improvement factor to two.
+
+
+
+
+                                  1. Introduction
+   We study approximate subgame-perfect equilibria in a facility-location
+game with weighted atomic clients. Facilities first choose locations, and the
+clients then choose accessible facilities to minimize congestion. A facility move
+changes both the clients it can serve and the client game. The equilibrium
+existence question therefore requires a choice of client equilibrium at every
+placement, with a bound on each facility’s gain from moving.
+   Krogmann, Lenzner, Skopalik, Uetz, and Vos [1] study this problem for
+clients with unsplittable weights who may randomize over accessible facilities.
+They prove existence of exact subgame-perfect equilibria for unit-weight
+clients. For unequal weights, their Theorem 5 gives examples excluding every
+approximation factor below the golden ratio, while Observation 4 gives a
+guarantee of k for k facilities. Their Section 6 asks whether the golden ratio
+suffices in the weighted game. We consider the case in which all facilities
+have the same available locations, and prove an existence guarantee of two
+for every k.
+   To prove the factor-two bound, we need a placement with controlled client
+weight after each facility move and an exact client equilibrium respecting that
+control. We first maximize the sorted facility-load vector over placements and
+a finite family of mixed client profiles. We show that the selected profile is a
+client equilibrium and derive bounds on the weight affected by every facility
+move. We then construct a pure client equilibrium after each deviation. In
+this construction, a client heavier than the required load bound stays alone
+                                             1
+2               FACTOR-TWO EQUILIBRIA WITH ATOMIC CLIENTS
+
+at a stationary facility, while strict improving moves of the other clients
+preserve the bound. Combining these choices gives a complete continuation.
+
+1.1. The model and the result. We specify the game by its clients,
+locations, and coverage sets. Let I be a finite client set with weights wi > 0,
+let S be a finite nonempty location set, and let F = {1, . . . , k} be the set
+of labeled facilities, where k ≥ 2. A location t ∈ S covers a specified set
+Ct ⊆ I. Every facility may choose every location in S. A placement is a
+tuple s = (sf )f ∈F ∈ S k ; several facilities may occupy the same location.
+   At a fixed placement s, client i may use the facilities in
+                           Ai (s) = {f ∈ F : i ∈ Csf }.
+If Ai (s) ̸= ∅, the client must choose one of these facilities; otherwise it is
+unserved. Clients randomize independently.
+                                   P            A feasible client profile p = (pif )
+has pif = 0 outside Ai (s) and f ∈Ai (s) pif = 1 when Ai (s) ̸= ∅. For an
+unserved client all probabilities are zero. The expected load of facility f and
+the conditional cost to client i of using f are
+                         X                              X
+(1)             Lf (p) =    wi pif ,    cif (p) = wi +      wj pjf .
+                         i∈I                              j̸=i
+
+In particular, the whole weight wi enters the cost when client i uses a
+facility. A client profile is an exact Nash equilibrium if every facility used
+with positive probability minimizes the client’s conditional cost among its
+accessible facilities.
+   A continuation assigns an exact client equilibrium σ(t) to every labeled
+placement t ∈ S k . We write s[f ← r] for the placement obtained by moving
+only facility f from sf to r.
+Definition 1.1. For α ≥ 1, an α-approximate subgame-perfect equilibrium
+is a placement s and a continuation σ such that
+                                        
+(2)         Lf σ(s[f ← r]) ≤ αLf σ(s)         (f ∈ F, r ∈ S).
+The client equilibrium requirement is exact at every placement.
+   We prove that every instance of this model admits a 2-approximate
+subgame-perfect equilibrium. On path, every covered client chooses a s-
+ingle occupied location and independently samples a facility there uniformly.
+At every other placement we may choose a pure client equilibrium. The proof
+gives a finite exact construction; a polynomial-time algorithm for general
+inputs remains open.
+   The common location set is used when a facility is moved to another
+occupied location to compare two load vectors. Thus the result concerns
+a restriction of the facility-dependent location sets allowed in [1]. Their
+two-facility lower bound still leaves a gap between the golden ratio and two
+for a uniform guarantee over all numbers of facilities.
+               FACTOR-TWO EQUILIBRIA WITH ATOMIC CLIENTS                      3
+
+Organization. Section 2 derives the weight bounds from a lexicographic
+maximum, converts those bounds into exact client equilibria after deviation-
+s, and assembles the complete continuation. It concludes with the finite
+certificate supplied for rational input.                         P
+Conventions and notation. For J ⊆ I, write w(J) =                  i∈J wi . We
+sort load vectors in nondecreasing order and compare the resulting vectors
+lexicographically. Facility labels are retained in every placement and continu-
+ation. The weights are positive real numbers except in the explicit encoding
+statement at the end of Section 2.
+
+                      2. A factor-two equilibrium
+   To obtain a complete continuation, we must bound the moving facility’s
+load at an exact client equilibrium after every deviation. We first derive
+sufficient weight bounds from a lexicographically maximal placement and
+assignment. An atomic packing lemma then gives a pure client profile after
+each move. We show that strict improving client moves preserve the required
+load bound and terminate at an exact equilibrium.
+
+2.1. Lexicographic selection and transfer bounds. At an occupied
+location, independent uniform randomization gives equal expected facility
+loads while keeping each client’s weight indivisible in every realization. We
+maximize the resulting load vector over a finite family of profiles.
+Construction 2.1. For any placement s, let O = {t ∈ S : sf = t for some f }
+and qt = |{f : sf = t}| for t ∈ O. Assign every covered client i to a single
+location t(i) ∈ O that covers it, and put
+                     Jt = {i : t(i) = t},    Wt = w(Jt ).
+Each client in Jt chooses each of the qt facilities at t with probability 1/qt ,
+independently of all other clients. Every facility at t then has expected load
+Wt /qt .
+   Fix a total order on the finite encodings of placements and site assignments.
+Choose the first pair in this order for which the sorted vector of all k
+facility loads is lexicographically maximal over all placements and all such
+assignments. Denote its client profile by p.
+   The maximum exists because there are finitely many placements and site
+assignments. The following elementary comparison will be used repeatedly:
+replacing one or more occurrences of a value b by values strictly above b,
+while all changed entries previously above b remain above b and all remaining
+entries do not decrease, strictly increases the sorted vector lexicographically.
+The comparison remains valid if some smaller entries increase, since their
+first increase already gives a strict improvement.
+Lemma 2.2. If R = maxt∈S w(Ct ) > 0, the profile p in Construction 2.1 is
+an exact client equilibrium and every facility has load at least R/k.
+4              FACTOR-TWO EQUILIBRIA WITH ATOMIC CLIENTS
+
+Proof. Placing all facilities at a location of reach R and using the prescribed
+uniform probabilities gives each facility load R/k. Lexicographic maximality
+therefore implies that the smallest load in the selected profile is at least R/k.
+  Consider a client i ∈ Jt . Its conditional cost at any facility at t is
+                                         W t − wi
+(3)                               wi +            .
+                                             qt
+At a facility at another accessible occupied location v, its cost is wi + Wv /qv .
+Suppose this alternative were strictly better, so that
+                              W t − wi   Wv
+                                       >    = b.
+                                  qt     qv
+Reassign only client i from t to v in Construction 2.1. All qv coordinates
+formerly equal to b become (Wv + wi )/qv > b, while the qt coordinates at t
+remain above b. This strictly increases the sorted vector, a contradiction.
+Facilities at t have equal conditional costs by (3). Hence no pure client devia-
+tion improves, and linearity of expected cost in the client’s own probabilities
+excludes a mixed improvement as well.                                         □
+   The selected assignment also controls clients who were unserved before
+a move and clients whose assigned location disappears. For an unoccupied
+location r ∈
+           / O, define
+                                              !
+                                        [
+(4)                      Nr = w Cr \        Ct .
+                                              t∈O
+
+These are precisely the clients newly covered when a facility moves to r.
+Lemma 2.3. Assume R > 0. Fix a facility f at u = sf , and put a = Wu /qu .
+If qu ≥ 2, then
+(5)              Wt ≤ (qt + 1)a                       (t ∈ O \ {u}),
+(6)              Nr ≤ a                               (r ∈
+                                                         / O).
+If qu = 1, put J = Ju . Then
+(7)         Wt + w(J ∩ Ct ) ≤ (qt + 1)a                   (t ∈ O \ {u}),
+(8)         Nr + w(J ∩ Cr ) ≤ a                           (r ∈
+                                                             / O).
+Proof. Suppose first that qu ≥ 2. Moving f to t ∈ O \ {u} and keeping
+all client site assignments feasible gives the remaining facilities at u load
+qu a/(qu − 1) > a. If (5) failed, all qt + 1 facilities at t would also have
+load above a. The old target load was above a as well, since Wt /qt >
+((qt + 1)a)/qt > a. Every coordinate equal to a at u would thus be replaced
+by a larger one, with no smaller coordinate decreasing. This contradicts
+maximality. If (6) failed, moving f to r and assigning all newly covered
+clients to it would replace its load a by Nr > a and increase the remaining
+loads at u, again a contradiction.
+               FACTOR-TWO EQUILIBRIA WITH ATOMIC CLIENTS                       5
+
+   Now suppose that qu = 1, so w(J) = a. If (7) failed, move f to t and assign
+all clients of J ∩ Ct to t. Clients in J \ Ct that remain covered are assigned to
+any other remaining occupied location that covers them; those that become
+uncovered are unserved. Clients outside J retain their assignments. The new
+load at t is above a. Its old load is also above a, since
+      Wt + w(J ∩ Ct ) > (qt + 1)a,     w(J ∩ Ct ) ≤ a    =⇒     Wt > qt a.
+The coordinate a at u disappears, every changed coordinate at t remains
+above a, and no other facility load decreases. This strictly improves the
+sorted vector.
+   Finally, if (8) failed, move f to r and assign both the newly covered
+clients and J ∩ Cr to r. These two sets are disjoint. Redistribute the other
+still-covered clients of J to any remaining locations that cover them. The
+coordinate a is replaced by Nr + w(J ∩ Cr ) > a, while all other coordinates
+do not decrease. This is the final contradiction.                         □
+
+  The terms involving J account for the clients assigned to a location with
+only one facility. Including them before choosing a destination permits an
+arbitrary redistribution of those clients after that facility departs.
+
+2.2. Packing clients and equilibrating after a move. We now distribute
+the weight bounded in Lemma 2.3 over the stationary facilities. The next
+lemma allows a client heavier than the desired cap to occupy a facility alone.
+All remaining facilities satisfy the cap.
+Lemma 2.4. Let a > 0 and let h ≥ 1 be an integer. Any finite list of
+positive weights with total at most (h + 1)a can be partitioned into at most h
+parts, each having weight at most 2a or consisting of a single client of weight
+greater than 2a.
+Proof. Start with one part per client and merge two parts whenever their
+combined weight is at most 2a. A part heavier than 2a remains a singleton.
+If the process stopped with b ≥ h + 1 parts, every pair of distinct parts would
+have combined weight above 2a. Writing their weights as B1 , . . . , Bb and
+summing over pairs gives
+                             b           
+                             X           b
+                     (b − 1)   Bj > 2a        = (b − 1)ba.
+                                         2
+                            j=1
+
+Consequently the total weight would exceed ba ≥ (h + 1)a, a contradiction.
+The empty list gives no parts.                                          □
+
+   The assignment obtained by packing need not be a client equilibrium.
+We next show that strict improving client moves preserve the cap on every
+facility that does not host an isolated heavy client. Here loads refer to a
+pure client assignment.
+6              FACTOR-TWO EQUILIBRIA WITH ATOMIC CLIENTS
+
+Lemma 2.5. Fix a placement, a facility f , and a number a > 0. Suppose
+there is a feasible pure client assignment in which f has load at most 2a,
+every client heavier than 2a is alone at a facility other than f , and every
+facility that does not host one of these heavy clients has load at most 2a.
+Then this placement has a pure exact client equilibrium in which f has load
+at most 2a.
+Proof. Repeatedly perform a strict improving pure client move. An isolated
+client of weight wi > 2a already incurs its smallest possible cost wi , so it
+never moves strictly profitably. A client at a facility of load at most 2a cannot
+improve by joining one of these isolated clients, because its destination cost
+would exceed 2a. If it moves from facility h to facility g, strict improvement
+means
+                             Lg + wi < Lh ≤ 2a.
+Thus its destination and source loads remain at most 2a, and the hypotheses
+are invariant.
+   For the potential Ψ = 12 v∈F L2v , a move by i from h to g changes its
+                             P
+value by
+(9)                    Ψ′ − Ψ = wi (Lg + wi − Lh ) < 0.
+There are finitely many feasible pure assignments, so the process terminates.
+No client then has a profitable pure move; since the other clients are fixed,
+randomization cannot improve its cost either. The terminal assignment is
+the required exact client equilibrium.                                     □
+   Lemmas 2.4 and 2.5 now apply to every deviation of a facility in the
+lexicographically selected placement.
+Lemma 2.6. Assume R > 0. For every facility f and every location r ̸= sf ,
+the placement s[f ← r] has an exact pure client equilibrium p′ satisfying
+(10)                           Lf (p′ ) ≤ 2Lf (p).
+Proof. Put u = sf and a = Lf (p) = Wu /qu . Facilities other than f are called
+stationary. We construct a feasible pure assignment satisfying Lemma 2.5.
+   Case 1: qu ≥ 2. Every old occupied location survives. Keep each
+previously served client at its assigned location. There are hu = qu − 1
+stationary facilities at u, and the assigned weight there is
+                            Wu = qu a = (hu + 1)a.
+At each other old location t, there are ht = qt stationary facilities, and (5)
+gives Wt ≤ (ht + 1)a. Apply Lemma 2.4 at each location and assign the
+parts to its stationary facilities, leaving unused facilities empty. Every client
+is eligible for every facility at its assigned location.
+   If r was unoccupied, assign all newly covered clients to f ; their total
+weight is at most a by (6). If r was occupied, leave f empty. This serves
+every covered client. Every facility other than f either has load at most 2a
+or hosts a single client heavier than 2a.
+               FACTOR-TWO EQUILIBRIA WITH ATOMIC CLIENTS                       7
+
+   Case 2: qu = 1. The old location u disappears. Put J = Ju and keep
+clients outside J at their old assigned locations. Assign each client of J that
+has a stationary accessible facility to any such location. If no stationary
+facility is accessible but r covers the client, assign it to f . All remaining
+clients of J become unserved.
+   At a surviving old location t, the added clients form a subset of J ∩ Ct .
+Together with the original clients Jt , their total weight is at most (qt + 1)a
+by (7). Apply Lemma 2.4 to all clients now assigned to t and place the
+resulting parts on its qt stationary facilities.
+   If r was unoccupied, assign the genuinely newly covered clients to f as
+well. Its load is then at most Nr + w(J ∩ Cr ) ≤ a by (8). If r was already
+occupied, every client of J that remains covered has a stationary option, so
+f receives no client initially. Once again every covered client is served, every
+client heavier than 2a is isolated at a stationary facility, and every non-heavy
+facility has load at most 2a.
+   In both cases Lemma 2.5 supplies an exact pure client equilibrium with
+Lf ≤ 2a, proving (10).                                                        □
+
+2.3. Completion of the continuation. It remains to specify one contin-
+uation at all placements. Since distinct unilateral deviations from a fixed
+labeled placement reach distinct placements, the client equilibria supplied by
+Lemma 2.6 can be selected simultaneously.
+
+Theorem 2.7. For every finite nonempty common location set, every finite
+set of clients with positive real weights, and every integer k ≥ 2, there exists
+a 2-approximate subgame-perfect equilibrium. On path every covered client
+may choose one occupied location and independently randomize uniformly
+among its facilities. Every off-path client equilibrium may be chosen pure.
+
+Proof. If R = 0, all facility loads are zero at every placement and the assertion
+is immediate. Otherwise choose (s, p) as in Construction 2.1. Lemma 2.2
+gives an exact on-path client equilibrium, and Lemma 2.6 gives a pure
+client equilibrium satisfying (2) with α = 2 at each actual deviation. These
+placements are pairwise distinct: deviations by different facility labels change
+different coordinates of s, and different targets for one facility change its
+coordinate to different values. At every remaining placement, start with
+any feasible pure assignment and perform strict improving client moves.
+Equation (9) ensures termination at a pure client equilibrium. These choices
+define the required complete continuation.                                      □
+
+  The on-path construction gives equal expected loads to facilities at the
+same location. After a deviation we use a different selection: an isolated
+heavy client remains at a stationary facility, and the moving facility satisfies
+the factor-two load bound. The continuation need not preserve symmetry
+among facilities at a location.
+8                FACTOR-TWO EQUILIBRIA WITH ATOMIC CLIENTS
+
+  For rational input, we can record the selected equilibria with polynomially
+many bits and use a fixed rule to complete all other placements. The next
+proposition states this encoding consequence.
+Proposition 2.8. Suppose the weights are positive binary rationals and
+the client–location incidences and all k facilities are explicit. There is a
+finite exact procedure that outputs the placement in Theorem 2.7, its on-path
+client equilibrium, a pure client equilibrium for each of its k(|S| − 1) actual
+deviations, and a deterministic default-rule program for all other placements.
+The displayed strategies have encoding length polynomial in the input length.
+The stored on-path and actual-deviation profiles, and the facility inequalities
+for those deviations, can be checked in time polynomial in their explicit
+encoding length; correctness of the default-rule program follows from the
+potential argument.
+Proof. Enumerate all placements and all feasible client site assignments in
+the fixed order from Construction 2.1, and retain the first lexicographic
+maximum. The on-path probabilities belong to {0} ∪ {1/q : 1 ≤ q ≤ k}.
+At each actual deviation, perform the mergers of Lemma 2.4 and strict
+improving client moves as in Lemma 2.5. These processes terminate and
+their output probabilities are zero or one.
+   For the default rule, fix an enumeration of the clients. Assign each covered
+client to its least-index accessible facility and repeatedly choose the first
+client in this enumeration with a strict improvement, moving it to its least-
+index cost-minimizing accessible facility. Equation (9) proves that this rule
+terminates at every placement. Store its fixed description together with the
+displayed on-path and actual-deviation profiles. Each displayed pure profile
+needs at most one facility index per client; the number of displayed profiles is
+polynomial in the explicit input length. The rational loads are sums of input
+weights, possibly divided by an integer at most k. A denominator for any
+one load is obtained by multiplying the product of the input denominators
+by an integer at most k. Its bit length is therefore at most the sum of the
+input denominator bit lengths plus O(log k), so exact comparisons also have
+polynomial bit length. Formula (1) checks each displayed client equilibrium,
+and (2) checks the facility deviations.                                       □
+  Proposition 2.8 distinguishes a short description of the continuation from
+an efficient search procedure. Exhaustive selection and finite improvement
+suffice for existence; neither step has a polynomial running-time bound in
+this proof. Determining the best uniform approximation factor between
+the golden ratio and two, and finding an efficient construction for general
+common location sets, remain separate questions.
+
+                                      References
+[1] Simon Krogmann, Pascal Lenzner, Alexander Skopalik, Marc Uetz, and Marnix C.
+    Vos. Equilibria in two-stage facility location with atomic clients. In Proceedings of the
+    Thirty-Third International Joint Conference on Artificial Intelligence, pages 2842–2850.
+    International Joint Conferences on Artificial Intelligence Organization, 2024.
+

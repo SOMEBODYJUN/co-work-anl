@@ -1,0 +1,13 @@
+--- actual-first-entry
++++ current-entry
+@@ -25,6 +25,10 @@
+     snapshot = out / 'original'
+     shutil.copytree(evidence / 'original', snapshot)
+     for item in json.loads((evidence / 'provenance.json').read_text()):
++        # Later comparison-only dependencies are kept under related/, not
++        # executed. The actual original/ snapshot remains the same 20 files.
++        if not (evidence / 'original' / item['path']).is_file():
++            continue
+         assert sha(snapshot / item['path']) == item['sha256']
+     helper = Path(__file__).resolve().with_name('extract_adaptive_once.py')
+     shutil.copyfile(helper, out / helper.name)
