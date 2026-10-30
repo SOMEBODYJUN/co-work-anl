@@ -1,0 +1,33 @@
+--- original/qary_affine_menu_near_full_deficit_exact_only_review_v1.md
++++ original/qary_affine_menu_near_full_deficit_exact_only_review_v1_final.md
+@@ -127,7 +127,7 @@
+ 
+ 因a_1a_2≠1，得delta_1=delta_2=0，故groups相同。所有7项bundles全局不交，给D*≤2。
+ 
+-因此D*=2、V*=7/9。完整actual schedule按上一节反向规则，把全部9个selectors放所选state；各所选state外送这7件原incidences、其余2件留private；所有未选state的原jobs全留各自private。Selected私机负载1+2/9=11/9，未选机1，资源≤1。共有9³=729枚incidences及9枚selectors全部执行；不是只执行81?枚selected jobs的子实例。由(C)反向界，完整OPT_3,2=11/9。此论证不使用MILP不可行返回或有限枚举。
++因此D*=2、V*=7/9。完整actual schedule按上一节反向规则，把全部9个selectors放所选state；各所选state外送这7件原incidences、其余2件留private；所有未选state的原jobs全留各自private。Selected私机负载1+2/9=11/9，未选机1，资源≤1。共有9³=729枚incidences及9枚selectors全部执行；所执行的是全部原任务，包含所有未选states，而非只处理81枚selected-state incidences。由(C)反向界，完整OPT_3,2=11/9。此论证不使用MILP不可行返回或有限枚举。
+ 
+ ## 7. q3,t3与一般nonlinear范围：不关闭
+ 
+@@ -152,3 +152,5 @@
+ 近满下界是任意给定allocation/完整actual的解析性质，不承诺多项式寻找最优nonlinear selector。上述特定cyclicwitness和可选Hall matching可按展开graph生成；没有poly(t,log q)输出全部N³ jobs的声明。未作软件实现/运行认证。未添加任何状态一致性物理gadget或更窄selector量词。
+ 
+ **最终冻结：Exact (A)/(B)/(C)通过，q3,t2全域allocation与actual精确端点通过，无fatal；q3,t3及一般nonlinear全域最优仍未关闭。**
++
++排版冻结说明：首写v1原字节保留（SHA 86ca0183e49059118c494813b03e8f3bcd513b800e0134a73cd12c5204532a35）。本final仅将§6一处含问号的非正式短语精确化为“81枚selected-state incidences”，不改任何数学式或结论。
+--- original/qary_affine_menu_near_full_deficit_exact_only_review_v2.md
++++ original/qary_affine_menu_near_full_deficit_exact_only_review_v2_final.md
+@@ -158,10 +158,12 @@
+ 
+ 全部对象计数N groups、N² indexed states/private、N²资源机、N³ incidence jobs与N selectors、2N³+N² sparse finite资格均正确。普通有理1/N位长O(t log q)，给定标准F_q表示即可作所需有限域运算；没有将prime-power整数环误当域。
+ 
+-H(k)有t+1项，powers/binomial及结果的位长O(t log q)量级；例如0≤H(k)≤kN≤N²。逐项整数求值、H(k)≤kD比较及O(log N)次二分均对给定参数位长多项式，当然也对展开instance位长多项式。不枚举候选ell，不求一般nonlinear optimum。
++H(k)有t+1项，powers/binomial及结果的位长O(t log q)量级；例如0≤H(k)≤kN≤N²。逐项整数求值、H(k)≤kD比较及O(log N)次二分均对log N=t log q及这些显式计数的编码位长多项式，因此对展开instance位长多项式；不称仅依log t+log q的succinct标量输入长度多项式。不枚举候选ell，不求一般nonlinear optimum。
+ 
+ 显式生成complete matrix、给定见证回算及q3,t3 witness matching也对展开总规模多项式，不声称poly(t,log q)输出N³件任务。此处无软件运行/实现认证。
+ 
+ v1的严格近满合同保持原阈值与原记录，q3,t2端点不受影响。v2没有宣称(C)逐参数支配v1、没有把H粗界说成tight，也没有闭合其它q,t的所有nonlinear selectors；不产生normalized tiny-gap复杂性源，不排全部tensor，不免费强制全fiber或block-fiber一致性。标准投影与matching计数本身不作原创性认证。
+ 
+ **最终Exact-only冻结：v2 (A)–(D)有效，无fatal；q3,t3作为新解析后果现已闭合为D*=3、V*=8/9、完整actual OPT=10/9。旧v1字节不改，尚未读取任一q-ary作者Proof。**
++
++计量措辞冻结说明：首写v2原字节保留（SHA 322d2cc388cc34a34f9ec122e6960b6b72556639b5b3001b185cf6eefb47f626）。本final仅把§8“参数位长”的一句精确为log N=t log q及展开输入计量，明确不作log t+log q的succinct标量复杂度声明；数学证明和结论均未改。

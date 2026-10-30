@@ -21,3 +21,8 @@
 ## 五地点审计的模型与正规形更正
 
 旧文件`五设施DECa硬度有限审计--审查.md`保稳定ID/路径，但标题与正文改为两设施五地点。root全文核原构造器、原audit_case及14+9全部raw行：source_yes是SUBSET SUM真值；不存在source_no字段；每个a的15客户主回归有两YES和一NO。full=False按已证同址正规形求全表最小，因而不是部分域最优，只有个别异址候选是放松值。修正前后SHA、实际源码/原报告路径见FIVE_SITE_REVIEW_CORRECTION.json；原字节不改、不重复旧审计。新计算对象保完整推导与三份实际资产复现，一般NP归约依准确主稿证明，不由有限例外推。
+
+
+## 原任务负载、有限域pair与四地点计数
+
+笛卡尔双源审查改精确selected private负载为1+d/N，跨组不交来自每resource至多一unit；逐坐标不同的两组支持必恰交一枚，不能用“至多”支撑pair下界。qary历史新页保存原证明及版本演进。四地点独立审查的n=4/6/8是补零后变量客户数，设施始终两家；标题/正文纠正，保旧文件名兼容、原JSON不改。前后SHA及依据见SUMMARY_PRECISION_CORRECTIONS.json。
