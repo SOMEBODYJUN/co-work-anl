@@ -18,7 +18,7 @@ source-envelope12正文先pushed 09c6931e220630d0ff0ebed7811a6f01c3d000c9，再d
 
 ## 最新接续入口
 
-见CONTINUATION_INDEX.md及CONTINUATION_RECEIPTS_101.json：另外101源已完成实质正文与回执，正集中checkpoint后done；UM恢复9源仍实际执行。六指定模型代理继续完整数学清洗，没有把metadata候选算认领或完成。
+见CONTINUATION_INDEX.md及CONTINUATION_RECEIPTS_101.json：另外101源已pushed 760ff40cef415b7cf06f7172e0b94717d86f7fbb并done a847763a85cfdb659b1a38ac21aa925554f5b55a；UM恢复9源已交付待单独checkpoint/done。六指定模型代理继续完整数学清洗，没有把metadata候选算认领或完成。
 
 ## 恢复方法与边界
 
