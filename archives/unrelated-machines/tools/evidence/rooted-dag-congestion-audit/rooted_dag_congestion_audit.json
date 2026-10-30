@@ -1,0 +1,1161 @@
+{
+  "title": "共同拥塞流、最小整数拥塞与激活走廊的双路冻结精确核验",
+  "arithmetic": "integers / Fraction; no tolerance",
+  "claims": [
+    "UM-DAG-CONGESTION-FLOW-v1",
+    "UM-DAG-ACTIVATION-CORRIDOR-GAP-v1"
+  ],
+  "base_commit": "e0e88bd1d1f5f1edf7516ff1fa189b8e733cae43",
+  "commands": [
+    "python3 tests/audits/unrelated_machines/rooted_dag_congestion_flow.py",
+    "python3 tests/audits/unrelated_machines/rooted_dag_congestion_independent.py",
+    "python3 tests/audits/unrelated_machines/rounding_and_gap.py"
+  ],
+  "source_sha256": {
+    "research/current/unrelated_machines/rooted_dag_congestion_flow.md": "76196177fdabf4dff01d8f71ce814c80fd9d41bca61ff081030a152e14fefcdf",
+    "tests/audits/unrelated_machines/rooted_dag_congestion_flow.py": "64895990f782290aab59bedd7600422bc046cfd818d2f648c8142c5e06a056bd",
+    "tests/audits/unrelated_machines/rooted_dag_congestion_independent.py": "bafee6f27f3c10268c5fdf98f9ad9d6c13597e60637493550b2103178396ca2a",
+    "research/reviews/unrelated_machines/rooted_dag_congestion_review.md": "471162cbc256fe120ba8c5ba5932bce84a603eb4b83b385776f9ea350fc10d2c",
+    "examples/unrelated_machines/rooted_dag_congestion_cases.json": "4b7103b2d064d6f20a7694120758894e241a008ef6f094bb3df9ee5641c44a85",
+    "evidence/certificates/unrelated_machines/rooted_dag_congestion_cases.json": "16731b7e90e89b2d45ac2bfa80c46362e014eee642902ecb60f5b3055c7814b9"
+  },
+  "canonical": {
+    "title": "有向需求树共同拥塞证书的一次整数流精确审计",
+    "python": "3.12.14",
+    "precision": "integers / fractions.Fraction; exact",
+    "seed": null,
+    "code_sha256": "64895990f782290aab59bedd7600422bc046cfd818d2f648c8142c5e06a056bd",
+    "enumerated_certificate_assignments": 14076,
+    "accepted_certificates_extracted": 497,
+    "fixed_support_search_instances": 4548,
+    "fixed_support_search_feasible": 434,
+    "fixed_support_search_oracle": "exhaustive integer edge flows in 0..K for n<=3",
+    "minimum_congestion_support_instances": 1516,
+    "minimum_congestion_feasible_supports": 262,
+    "monotonicity_checked_K": [
+      1,
+      2,
+      3
+    ],
+    "special_cases": [
+      {
+        "n": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "demands": [
+          3,
+          1,
+          1,
+          0,
+          0
+        ],
+        "K": 2,
+        "W": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "root": 0,
+        "flow": [
+          {
+            "edge": [
+              0,
+              1
+            ],
+            "value": "3/2"
+          },
+          {
+            "edge": [
+              0,
+              2
+            ],
+            "value": "3/2"
+          },
+          {
+            "edge": [
+              1,
+              3
+            ],
+            "value": "3/2"
+          },
+          {
+            "edge": [
+              2,
+              3
+            ],
+            "value": "1/2"
+          },
+          {
+            "edge": [
+              2,
+              4
+            ],
+            "value": "1"
+          }
+        ],
+        "tree": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "score": "1/3",
+        "guarantee": "1/3"
+      },
+      {
+        "n": 6,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "demands": [
+          3,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "K": 2,
+        "W": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "root": 0,
+        "flow": [
+          {
+            "edge": [
+              0,
+              1
+            ],
+            "value": "1"
+          },
+          {
+            "edge": [
+              0,
+              2
+            ],
+            "value": "2"
+          },
+          {
+            "edge": [
+              1,
+              3
+            ],
+            "value": "1"
+          },
+          {
+            "edge": [
+              2,
+              3
+            ],
+            "value": "1"
+          },
+          {
+            "edge": [
+              2,
+              5
+            ],
+            "value": "1"
+          },
+          {
+            "edge": [
+              3,
+              4
+            ],
+            "value": "2"
+          }
+        ],
+        "tree": [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "score": "1/3",
+        "guarantee": "1/3"
+      },
+      {
+        "n": 4,
+        "edges": [
+          [
+            3,
+            2
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "demands": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "K": 2,
+        "W": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "root": 3,
+        "flow": [
+          {
+            "edge": [
+              3,
+              2
+            ],
+            "value": "2"
+          },
+          {
+            "edge": [
+              2,
+              1
+            ],
+            "value": "2"
+          },
+          {
+            "edge": [
+              1,
+              0
+            ],
+            "value": "2"
+          }
+        ],
+        "tree": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "score": "1",
+        "guarantee": "1/3"
+      },
+      {
+        "n": 3,
+        "edges": [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "demands": [
+          0,
+          0,
+          5
+        ],
+        "K": 3,
+        "W": [
+          0,
+          1,
+          2
+        ],
+        "root": 2,
+        "flow": [
+          {
+            "edge": [
+              2,
+              0
+            ],
+            "value": "3"
+          },
+          {
+            "edge": [
+              2,
+              1
+            ],
+            "value": "2"
+          }
+        ],
+        "tree": [
+          [
+            2,
+            0
+          ]
+        ],
+        "score": "1/5",
+        "guarantee": "1/5"
+      },
+      {
+        "n": 3,
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "demands": [
+          1,
+          0,
+          10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        ],
+        "K": 2,
+        "W": [
+          0,
+          1
+        ],
+        "root": 0,
+        "flow": [
+          {
+            "edge": [
+              0,
+              1
+            ],
+            "value": "2"
+          }
+        ],
+        "tree": [
+          [
+            0,
+            1
+          ]
+        ],
+        "score": "1",
+        "guarantee": "1/3"
+      },
+      {
+        "n": 3,
+        "edges": [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "demands": [
+          0,
+          0,
+          19999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+        ],
+        "K": 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+        "W": [
+          0,
+          1,
+          2
+        ],
+        "root": 2,
+        "flow": [
+          {
+            "edge": [
+              2,
+              0
+            ],
+            "value": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "edge": [
+              2,
+              1
+            ],
+            "value": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+          }
+        ],
+        "tree": [
+          [
+            2,
+            0
+          ]
+        ],
+        "score": "1/19999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+        "guarantee": "1/19999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+      },
+      {
+        "n": 1,
+        "edges": [],
+        "demands": [
+          0
+        ],
+        "K": 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+        "W": [
+          0
+        ],
+        "root": 0,
+        "flow": [],
+        "tree": [],
+        "score": "1",
+        "guarantee": "1/19999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+      }
+    ],
+    "low_corridor_depth_checked": 1000,
+    "sharp_family_cases": [
+      {
+        "K": 2,
+        "layer_sizes": [
+          1,
+          2,
+          3
+        ],
+        "vertices": 6,
+        "edges": 8,
+        "terminal_capacity": 3,
+        "binary_tree_terminals_required": 4,
+        "extracted_score": "1/3",
+        "edge_subset_oracle_optimum": "1/3"
+      },
+      {
+        "K": 3,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          7
+        ],
+        "vertices": 14,
+        "edges": 38,
+        "terminal_capacity": 7,
+        "binary_tree_terminals_required": 8,
+        "extracted_score": "1/5",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 4,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          7
+        ],
+        "vertices": 14,
+        "edges": 38,
+        "terminal_capacity": 7,
+        "binary_tree_terminals_required": 8,
+        "extracted_score": "1/7",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 5,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          15
+        ],
+        "vertices": 30,
+        "edges": 162,
+        "terminal_capacity": 15,
+        "binary_tree_terminals_required": 16,
+        "extracted_score": "1/9",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 6,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          15
+        ],
+        "vertices": 30,
+        "edges": 162,
+        "terminal_capacity": 15,
+        "binary_tree_terminals_required": 16,
+        "extracted_score": "1/11",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 7,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          15
+        ],
+        "vertices": 30,
+        "edges": 162,
+        "terminal_capacity": 15,
+        "binary_tree_terminals_required": 16,
+        "extracted_score": "1/13",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 8,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          15
+        ],
+        "vertices": 30,
+        "edges": 162,
+        "terminal_capacity": 15,
+        "binary_tree_terminals_required": 16,
+        "extracted_score": "1/15",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 9,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          31
+        ],
+        "vertices": 62,
+        "edges": 666,
+        "terminal_capacity": 31,
+        "binary_tree_terminals_required": 32,
+        "extracted_score": "1/17",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 10,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          31
+        ],
+        "vertices": 62,
+        "edges": 666,
+        "terminal_capacity": 31,
+        "binary_tree_terminals_required": 32,
+        "extracted_score": "1/19",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 11,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          31
+        ],
+        "vertices": 62,
+        "edges": 666,
+        "terminal_capacity": 31,
+        "binary_tree_terminals_required": 32,
+        "extracted_score": "1/21",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 12,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          31
+        ],
+        "vertices": 62,
+        "edges": 666,
+        "terminal_capacity": 31,
+        "binary_tree_terminals_required": 32,
+        "extracted_score": "1/23",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 13,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          31
+        ],
+        "vertices": 62,
+        "edges": 666,
+        "terminal_capacity": 31,
+        "binary_tree_terminals_required": 32,
+        "extracted_score": "1/25",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 14,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          31
+        ],
+        "vertices": 62,
+        "edges": 666,
+        "terminal_capacity": 31,
+        "binary_tree_terminals_required": 32,
+        "extracted_score": "1/27",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 15,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          31
+        ],
+        "vertices": 62,
+        "edges": 666,
+        "terminal_capacity": 31,
+        "binary_tree_terminals_required": 32,
+        "extracted_score": "1/29",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "K": 16,
+        "layer_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          31
+        ],
+        "vertices": 62,
+        "edges": 666,
+        "terminal_capacity": 31,
+        "binary_tree_terminals_required": 32,
+        "extracted_score": "1/31",
+        "edge_subset_oracle_optimum": null
+      }
+    ],
+    "invalid_cases_rejected": 19,
+    "limits": "Finite certificate enumeration only. The theorem is conditional on the explicit certificate; no general support-selection or constant-K search theorem, no UM-TARGET-v1 algorithm."
+  },
+  "independent": {
+    "certificate_cases": 1566,
+    "distinct_object_cases": 596,
+    "fractional_cases": 240,
+    "huge_K_cases": 60,
+    "root_labels": 240,
+    "unreachable_case": 1,
+    "shared_resource_examples": [
+      {
+        "K": 1,
+        "tree_nodes": 3,
+        "root_degree": 1
+      },
+      {
+        "K": 2,
+        "tree_nodes": 3,
+        "root_degree": 1
+      },
+      {
+        "K": 3,
+        "tree_nodes": 3,
+        "root_degree": 1
+      },
+      {
+        "K": 4,
+        "tree_nodes": 3,
+        "root_degree": 1
+      },
+      {
+        "K": 5,
+        "tree_nodes": 3,
+        "root_degree": 1
+      }
+    ],
+    "sharp_width_cases": 10001,
+    "sharp_explicit_graphs": [
+      {
+        "K": 2,
+        "vertices": 6,
+        "edges": 8,
+        "score": "1/3"
+      },
+      {
+        "K": 3,
+        "vertices": 14,
+        "edges": 38,
+        "score": "1/5"
+      },
+      {
+        "K": 4,
+        "vertices": 14,
+        "edges": 38,
+        "score": "1/7"
+      },
+      {
+        "K": 5,
+        "vertices": 30,
+        "edges": 162,
+        "score": "1/9"
+      },
+      {
+        "K": 6,
+        "vertices": 30,
+        "edges": 162,
+        "score": "1/11"
+      },
+      {
+        "K": 7,
+        "vertices": 30,
+        "edges": 162,
+        "score": "1/13"
+      },
+      {
+        "K": 8,
+        "vertices": 30,
+        "edges": 162,
+        "score": "1/15"
+      },
+      {
+        "K": 9,
+        "vertices": 62,
+        "edges": 666,
+        "score": "1/17"
+      },
+      {
+        "K": 10,
+        "vertices": 62,
+        "edges": 666,
+        "score": "1/19"
+      },
+      {
+        "K": 11,
+        "vertices": 62,
+        "edges": 666,
+        "score": "1/21"
+      },
+      {
+        "K": 12,
+        "vertices": 62,
+        "edges": 666,
+        "score": "1/23"
+      },
+      {
+        "K": 13,
+        "vertices": 62,
+        "edges": 666,
+        "score": "1/25"
+      },
+      {
+        "K": 14,
+        "vertices": 62,
+        "edges": 666,
+        "score": "1/27"
+      },
+      {
+        "K": 15,
+        "vertices": 62,
+        "edges": 666,
+        "score": "1/29"
+      },
+      {
+        "K": 16,
+        "vertices": 62,
+        "edges": 666,
+        "score": "1/31"
+      },
+      {
+        "K": 17,
+        "vertices": 126,
+        "edges": 2698,
+        "score": "1/33"
+      },
+      {
+        "K": 18,
+        "vertices": 126,
+        "edges": 2698,
+        "score": "1/35"
+      }
+    ],
+    "fixed_support_finder_cases": 5350,
+    "fixed_support_feasible_cases": 504,
+    "fixed_support_monotonic_adjacent_pairs": 3834,
+    "fixed_support_object_cases": 1516,
+    "huge_binary_finder_cases": 4,
+    "huge_binary_minimum_cases": 4,
+    "minimum_finder_oracle_cases": 1516,
+    "activation_corridor_cases": [
+      {
+        "q": 2,
+        "vertices": 11,
+        "edges": 12,
+        "path_score": "1/2",
+        "edge_subset_oracle_optimum": "1/2"
+      },
+      {
+        "q": 3,
+        "vertices": 19,
+        "edges": 24,
+        "path_score": "1/3",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 4,
+        "vertices": 29,
+        "edges": 40,
+        "path_score": "1/4",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 5,
+        "vertices": 41,
+        "edges": 60,
+        "path_score": "1/5",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 6,
+        "vertices": 55,
+        "edges": 84,
+        "path_score": "1/6",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 7,
+        "vertices": 71,
+        "edges": 112,
+        "path_score": "1/7",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 8,
+        "vertices": 89,
+        "edges": 144,
+        "path_score": "1/8",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 9,
+        "vertices": 109,
+        "edges": 180,
+        "path_score": "1/9",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 10,
+        "vertices": 131,
+        "edges": 220,
+        "path_score": "1/10",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 11,
+        "vertices": 155,
+        "edges": 264,
+        "path_score": "1/11",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 12,
+        "vertices": 181,
+        "edges": 312,
+        "path_score": "1/12",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 13,
+        "vertices": 209,
+        "edges": 364,
+        "path_score": "1/13",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 14,
+        "vertices": 239,
+        "edges": 420,
+        "path_score": "1/14",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 15,
+        "vertices": 271,
+        "edges": 480,
+        "path_score": "1/15",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 16,
+        "vertices": 305,
+        "edges": 544,
+        "path_score": "1/16",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 17,
+        "vertices": 341,
+        "edges": 612,
+        "path_score": "1/17",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 18,
+        "vertices": 379,
+        "edges": 684,
+        "path_score": "1/18",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 19,
+        "vertices": 419,
+        "edges": 760,
+        "path_score": "1/19",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 20,
+        "vertices": 461,
+        "edges": 840,
+        "path_score": "1/20",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 21,
+        "vertices": 505,
+        "edges": 924,
+        "path_score": "1/21",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 22,
+        "vertices": 551,
+        "edges": 1012,
+        "path_score": "1/22",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 23,
+        "vertices": 599,
+        "edges": 1104,
+        "path_score": "1/23",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 24,
+        "vertices": 649,
+        "edges": 1200,
+        "path_score": "1/24",
+        "edge_subset_oracle_optimum": null
+      },
+      {
+        "q": 25,
+        "vertices": 701,
+        "edges": 1300,
+        "path_score": "1/25",
+        "edge_subset_oracle_optimum": null
+      }
+    ],
+    "actual_tree_to_certificate_cases": 5279,
+    "kappa_optimum_oracle_cases": 396,
+    "canonical_extract_crosschecks": 2071,
+    "python": "3.12.14",
+    "precision": "integers and Fraction; exact",
+    "seed": 792148,
+    "limits": "Finite audit only; universal theorem relies on the proof, not this search.",
+    "sha256": "bafee6f27f3c10268c5fdf98f9ad9d6c13597e60637493550b2103178396ca2a"
+  },
+  "classical_baseline": {
+    "schema_version": 1,
+    "python_version": "3.12.14",
+    "seed": 20261016,
+    "arithmetic": "fractions.Fraction, exact; no floating point solver",
+    "source_sha256": "5ba0dc52ddbb90ffece75e5accd2e801957c1172e337b9bdf033e22a64cbd75a",
+    "matrix_cases": 3375,
+    "oracle_assignments": 13824,
+    "rational_cases": 150,
+    "invalid_cases": 6,
+    "toy": {
+      "optimum": "3",
+      "bad_assignment_makespan": "5",
+      "ratio": "5/3",
+      "enumerated_assignments": 2187,
+      "attribution": "Only the OPT and bad schedule checked; no claim this is a reproduced textbook matching"
+    },
+    "expanded_gap_cases": [
+      {
+        "k": 2,
+        "height": 1,
+        "root_alpha": "1",
+        "optimum": "3/2",
+        "certified_lp_upper": "3/2",
+        "gap_lower_bound": "1",
+        "dp_units": {
+          "0": 2,
+          "1": 3
+        },
+        "machines": 4,
+        "jobs": 5,
+        "configuration_certificate_checked": true,
+        "enumerated_assignments": 32,
+        "independent_optimum": "3/2"
+      },
+      {
+        "k": 3,
+        "height": 1,
+        "root_alpha": "1/2",
+        "optimum": "5/3",
+        "certified_lp_upper": "4/3",
+        "gap_lower_bound": "5/4",
+        "dp_units": {
+          "0": 3,
+          "1": 5
+        },
+        "machines": 4,
+        "jobs": 7,
+        "configuration_certificate_checked": true,
+        "enumerated_assignments": 128,
+        "independent_optimum": "5/3"
+      },
+      {
+        "k": 4,
+        "height": 3,
+        "root_alpha": "16/27",
+        "optimum": "7/4",
+        "certified_lp_upper": "5/4",
+        "gap_lower_bound": "7/5",
+        "dp_units": {
+          "0": 4,
+          "1": 7
+        },
+        "machines": 74,
+        "jobs": 169,
+        "configuration_certificate_checked": true
+      }
+    ],
+    "compressed_gap_cases": [
+      {
+        "k": 5,
+        "height": 5,
+        "root_alpha": "625/1024",
+        "optimum": "9/5",
+        "certified_lp_upper": "6/5",
+        "gap_lower_bound": "3/2",
+        "dp_units": {
+          "0": 5,
+          "1": 9
+        }
+      },
+      {
+        "k": 8,
+        "height": 11,
+        "root_alpha": "1073741824/1977326743",
+        "optimum": "15/8",
+        "certified_lp_upper": "9/8",
+        "gap_lower_bound": "5/3",
+        "dp_units": {
+          "0": 8,
+          "1": 15
+        }
+      },
+      {
+        "k": 16,
+        "height": 33,
+        "root_alpha": "340282366920938463463374607431768211456/647159824910983792506158351898193359375",
+        "optimum": "31/16",
+        "certified_lp_upper": "17/16",
+        "gap_lower_bound": "31/17",
+        "dp_units": {
+          "0": 16,
+          "1": 31
+        }
+      },
+      {
+        "k": 32,
+        "height": 88,
+        "root_alpha": "88725430211866075506509253892578678509965986412026130405455346579667881849780019937279180995332466499116518750764914298527173050368/173711694783329886747340700142280526219070382414659579890474457813633946118366825776800447238433639642831064082112331815096634819841",
+        "optimum": "63/32",
+        "certified_lp_upper": "33/32",
+        "gap_lower_bound": "21/11",
+        "dp_units": {
+          "0": 32,
+          "1": 63
+        }
+      }
+    ],
+    "limitations": [
+      "Finite checks are not a universal proof or novelty certificate",
+      "No generic LP solver implemented; rounding receives a feasible x",
+      "Compressed DP applies only to the explicit symmetric VW tree family",
+      "Large k full graphs not materialized; no claim of a generic efficient exact solver"
+    ]
+  },
+  "limits": [
+    "Finite ranges in each actual run; not universal proof or novelty certification.",
+    "No arbitrary support W selection algorithm or input-independent bound on K.",
+    "No SA transfer, hardness claim or UM-TARGET-v1 improvement."
+  ]
+}
