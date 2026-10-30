@@ -1,0 +1,274 @@
+{
+  "python": "3.12.14",
+  "original_verify_executions": [
+    {
+      "kind": "tstar",
+      "code_sha256": "961bb9f074fbd794c0b2b9000cd710487bcd90ca116873ddc4c0d69cc12acfab",
+      "certificate_sha256": "926e784b611374bd57259544e283c87511848578344c1d7842362d67853c7e1a",
+      "command": [
+        "python3",
+        "-E",
+        "-B",
+        "credible/fixed_policy_price_certificate.py",
+        "verify",
+        "--file",
+        "credible/nonPNE_fixed_policy_tstar_exact.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.12738583499958622,
+      "output": {
+        "verified": true,
+        "scope": "fixed supplied full-policy cone only",
+        "kind": "tstar",
+        "queries": 30,
+        "occupied_topics": 2,
+        "dual_proofs": 60,
+        "row_count": 39,
+        "all_bounds_nonpositive": true,
+        "maximum_beta": "0",
+        "source_histories_verified": 21,
+        "source_deviations_verified": 63
+      },
+      "certificate_bytes_unchanged": true,
+      "stdout_sha256": "04993df196fc926ddcfa17167c2829a6595774e58123997a743bd3a2d73cf0f2"
+    },
+    {
+      "kind": "price_plus_u",
+      "code_sha256": "961bb9f074fbd794c0b2b9000cd710487bcd90ca116873ddc4c0d69cc12acfab",
+      "certificate_sha256": "9faf718d29e79c7e4a3e85fc33e60ab0fa02f6d12a44aaed95ab1fd7c7e12c91",
+      "command": [
+        "python3",
+        "-E",
+        "-B",
+        "credible/fixed_policy_price_certificate.py",
+        "verify",
+        "--file",
+        "credible/nonPNE_fixed_policy_price_plus_u_exact.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.11893263399997522,
+      "output": {
+        "verified": true,
+        "scope": "fixed supplied full-policy cone only",
+        "kind": "price_plus_u",
+        "queries": 30,
+        "occupied_topics": 2,
+        "dual_proofs": 60,
+        "row_count": 39,
+        "all_bounds_nonpositive": true,
+        "maximum_beta": "0",
+        "source_histories_verified": 21,
+        "source_deviations_verified": 63
+      },
+      "certificate_bytes_unchanged": true,
+      "stdout_sha256": "97ffc05343625ce1aea3b26c3c6d3b0f8b8d11d452575545bcab99298d33b7ce"
+    }
+  ],
+  "independent_residual_reconstruction": [
+    {
+      "kind": "tstar",
+      "proof_count": 60,
+      "residual_coordinates_checked": 900,
+      "nonzero_multiplier_entries_checked": 272,
+      "beta_counts": {
+        "-1/10": 1,
+        "-1/12": 1,
+        "-1/2": 2,
+        "-1/20": 2,
+        "-1/21": 1,
+        "-1/3": 8,
+        "-1/30": 3,
+        "-1/4": 3,
+        "-1/6": 4,
+        "-1/8": 3,
+        "-1/9": 1,
+        "-2/11": 1,
+        "-2/3": 3,
+        "-2/9": 4,
+        "-29/63": 1,
+        "-37/126": 1,
+        "-4/15": 1,
+        "-4/9": 1,
+        "-5/18": 1,
+        "0": 18
+      },
+      "minimum_residual": "0",
+      "source_W": "15",
+      "source_OPT": "16",
+      "source_point_prices": [
+        {
+          "topic": 0,
+          "u": "17/3",
+          "full_vertex_price": "6",
+          "maximizing_query_indices": [
+            4
+          ]
+        },
+        {
+          "topic": 3,
+          "u": "14/3",
+          "full_vertex_price": "15/2",
+          "maximizing_query_indices": [
+            4
+          ]
+        }
+      ],
+      "source_root_deviation_table": [
+        {
+          "action": 0,
+          "static_return_with_other_actions_fixed": "17/3",
+          "sequential_terminal": [
+            0,
+            3,
+            3
+          ],
+          "sequential_return": "17/3",
+          "actual_root_payoff": "17/3"
+        },
+        {
+          "action": 1,
+          "static_return_with_other_actions_fixed": "6",
+          "sequential_terminal": [
+            1,
+            2,
+            3
+          ],
+          "sequential_return": "11/2",
+          "actual_root_payoff": "17/3"
+        },
+        {
+          "action": 2,
+          "static_return_with_other_actions_fixed": "14/3",
+          "sequential_terminal": [
+            2,
+            1,
+            3
+          ],
+          "sequential_return": "5",
+          "actual_root_payoff": "17/3"
+        },
+        {
+          "action": 3,
+          "static_return_with_other_actions_fixed": "11/3",
+          "sequential_terminal": [
+            3,
+            0,
+            3
+          ],
+          "sequential_return": "14/3",
+          "actual_root_payoff": "17/3"
+        }
+      ]
+    },
+    {
+      "kind": "price_plus_u",
+      "proof_count": 60,
+      "residual_coordinates_checked": 900,
+      "nonzero_multiplier_entries_checked": 281,
+      "beta_counts": {
+        "-1/10": 4,
+        "-1/2": 3,
+        "-1/3": 8,
+        "-1/4": 5,
+        "-1/5": 6,
+        "-1/6": 1,
+        "-1/9": 2,
+        "-2/11": 2,
+        "-2/15": 2,
+        "-2/3": 2,
+        "-2/7": 1,
+        "-2/9": 1,
+        "-24/85": 1,
+        "-29/63": 1,
+        "-3/10": 1,
+        "-3/20": 2,
+        "-3/22": 2,
+        "-3/5": 1,
+        "-4/15": 1,
+        "-4/9": 1,
+        "-5/18": 1,
+        "-5/22": 1,
+        "-5/44": 2,
+        "-7/33": 1,
+        "0": 8
+      },
+      "minimum_residual": "0",
+      "source_W": "15",
+      "source_OPT": "16",
+      "source_point_prices": [
+        {
+          "topic": 0,
+          "u": "17/3",
+          "full_vertex_price": "6",
+          "maximizing_query_indices": [
+            4
+          ]
+        },
+        {
+          "topic": 3,
+          "u": "14/3",
+          "full_vertex_price": "15/2",
+          "maximizing_query_indices": [
+            4
+          ]
+        }
+      ],
+      "source_root_deviation_table": [
+        {
+          "action": 0,
+          "static_return_with_other_actions_fixed": "17/3",
+          "sequential_terminal": [
+            0,
+            3,
+            3
+          ],
+          "sequential_return": "17/3",
+          "actual_root_payoff": "17/3"
+        },
+        {
+          "action": 1,
+          "static_return_with_other_actions_fixed": "6",
+          "sequential_terminal": [
+            1,
+            2,
+            3
+          ],
+          "sequential_return": "11/2",
+          "actual_root_payoff": "17/3"
+        },
+        {
+          "action": 2,
+          "static_return_with_other_actions_fixed": "14/3",
+          "sequential_terminal": [
+            2,
+            1,
+            3
+          ],
+          "sequential_return": "5",
+          "actual_root_payoff": "17/3"
+        },
+        {
+          "action": 3,
+          "static_return_with_other_actions_fixed": "11/3",
+          "sequential_terminal": [
+            3,
+            0,
+            3
+          ],
+          "sequential_return": "14/3",
+          "actual_root_payoff": "17/3"
+        }
+      ]
+    }
+  ],
+  "source_files_hash_checked": 9,
+  "build_executions": 0,
+  "LP_executions": 0,
+  "SPE_solver_searches": 0,
+  "unique_policy_histories": 21,
+  "unique_policy_nonself_comparisons": 63,
+  "certificate_count": 2,
+  "proofs_verified": 120,
+  "residual_coordinates_verified": 1800,
+  "scope": "The supplied single full-policy cone and its two exact objectives, not arbitrary policies."
+}
