@@ -1,0 +1,91 @@
+{
+  "status": "passed",
+  "command": [
+    "python3",
+    "tests/audits/weighted_congestion/template_certificates/verify_antichain_core.py"
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "arithmetic": "fractions.Fraction; any display-only diagnostic is separately labelled by the core report",
+  "source_sha256": "a0c848ceb6b4374ed4e58880e0df747c98d50d717079cfdd4458fa1eeea1db3a",
+  "result": {
+    "status": "all exact Fraction checks passed",
+    "scope": "Five fixed fixtures only; finite replay does not prove arbitrary real-coefficient lifting or counterexample equivalence.",
+    "arithmetic": "fractions.Fraction; no random input or numeric tolerance",
+    "command": [
+      "python3",
+      "tests/audits/weighted_congestion/template_certificates/verify_antichain_core.py"
+    ],
+    "python": "3.12.14",
+    "source_sha256": "a0c848ceb6b4374ed4e58880e0df747c98d50d717079cfdd4458fa1eeea1db3a",
+    "fixtures": [
+      {
+        "fixture": "overlapping mandatory plus optional users, containment and fixed player",
+        "original_players": 3,
+        "core_players": 2,
+        "core_states": 4,
+        "alpha_pne_counts": {
+          "1": 1,
+          "3/2": 1,
+          "4": 2
+        },
+        "varying_own_baseline": true,
+        "integer_expanded_resources": 219
+      },
+      {
+        "fixture": "fractional weights and coefficients with zero fee",
+        "original_players": 2,
+        "core_players": 2,
+        "core_states": 4,
+        "alpha_pne_counts": {
+          "1": 1,
+          "3/2": 1,
+          "4": 1
+        },
+        "varying_own_baseline": true,
+        "integer_expanded_resources": null
+      },
+      {
+        "fixture": "all players deleted, empty strategy dominates",
+        "original_players": 2,
+        "core_players": 0,
+        "core_states": 1,
+        "alpha_pne_counts": {
+          "1": 1,
+          "3/2": 1,
+          "4": 1
+        },
+        "varying_own_baseline": false,
+        "integer_expanded_resources": null
+      },
+      {
+        "fixture": "zero-degree and zero-cost mobile core",
+        "original_players": 2,
+        "core_players": 2,
+        "core_states": 4,
+        "alpha_pne_counts": {
+          "1": 4,
+          "3/2": 4,
+          "4": 4
+        },
+        "varying_own_baseline": false,
+        "integer_expanded_resources": null
+      },
+      {
+        "fixture": "no mandatory sets, nonempty antichains",
+        "original_players": 2,
+        "core_players": 2,
+        "core_states": 4,
+        "alpha_pne_counts": {
+          "1": 1,
+          "3/2": 1,
+          "4": 4
+        },
+        "varying_own_baseline": false,
+        "integer_expanded_resources": 3
+      }
+    ],
+    "lifted_original_deviations_checked": 124,
+    "own_action_baseline_identities": 64,
+    "unit_expanded_deviations_checked": 32
+  }
+}
