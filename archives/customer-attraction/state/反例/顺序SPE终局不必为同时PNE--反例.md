@@ -11,6 +11,8 @@ legacy_ids:
 summary: "三客户三主题完整SPE的路径(C,A,C)中，中间人静态偏离B获4/3，但真实顺序续局只获5/6。"
 source_refs:
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/customer_attraction/continuation_lemmas.md#CA-SPE-NON-PNE"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/customer_attraction/continuation_lemmas.md#CA-SPE-NON-PNE"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_continuations.py#run"
 ---
 
 # 顺序SPE终局不必是固定其他行动的同时PNE
@@ -30,3 +32,5 @@ source_refs:
 [独立单位客户重放](../../tools/evidence/continuation-bridges/replay.json)检查13个节点、26个备选行动；[规范solver回归](../计算/完整历史求解器的精确复现--计算.md)也为指定路径重构并核验完整证书。两者分别是给定证书定义级重放和算法接口检验，没有据此认证一般福利猜想。
 
 源文献页还记录两人四客户的另一非PNE例；本三人三客户例是独立具体证书，否定同一桥梁而非另一数学主张。与[历史平局反例](同负载历史的不同续局--反例.md)的用途不同：这里的关键是偏离后行动响应，不是单独的同计数破平局现象。
+
+本轮已全文核对原文、源审计内嵌的客户及完整行动字典，并实际重放；[三种续局捷径精确审计](../计算/三种续局捷径的完整策略精确审计--计算.md)给出代码合同、全部节点/偏离计数与冻结输出对照。本文稳定对象身份未改变，计算资源仅提供有限证书核验关系。
