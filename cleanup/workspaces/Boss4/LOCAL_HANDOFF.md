@@ -12,9 +12,13 @@ Boss4 / cleaner，独立clone；结果rebuild/research-v2，公屏wcg/board-clea
 
 100源正式认领pushed 312c5851e9e6e7256584ab8d3e3c1da2df0dd966。六gpt-6.1-sol/ultra完整实质清洗，Boss负责幂桥12源并串行Git。共51自足正文，7组逐源回执；程序、输入、原件与实际复跑都在数学存档tools/evidence。
 
-source-envelope12正文先pushed 09c6931e220630d0ff0ebed7811a6f01c3d000c9，再done pushed d58152cae3174301d9feb86af1fbb7bb7ce55834。其余88目前数学交付已齐，正集中checkpoint并在确认pushed后done，未在此先称done。
+source-envelope12正文先pushed 09c6931e220630d0ff0ebed7811a6f01c3d000c9，再done pushed d58152cae3174301d9feb86af1fbb7bb7ce55834。其余88及另10编译依赖已done pushed b69dfcbacf1d3857a1058a47ed87f9819c26091c；100源全批与10依赖均已完成。
 
 另外64源已按空出的实际执行能力接续认领：density-share12与class-front-closure10（5741b4df90b822f7b09842c68b8871109fbd6395）、support10（cd1ee7177bd059ce763cf4c24cf55239e5c55410）、UM比较8与cohort比较10（c398df86664ad40d0cfc6ab57da3ad7248ec872d）、shared-side依赖14（f6e00072bc16cb1fef104ad287ee698cc115032f）。各候选与独立回执不混入100源分母。比较依赖可复用真实完整阅读/实际运行，未重复无理由审计。
+
+## 最新接续入口
+
+见CONTINUATION_INDEX.md及CONTINUATION_RECEIPTS_101.json：另外101源已完成实质正文与回执，正集中checkpoint后done；UM恢复9源仍实际执行。六指定模型代理继续完整数学清洗，没有把metadata候选算认领或完成。
 
 ## 恢复方法与边界
 
