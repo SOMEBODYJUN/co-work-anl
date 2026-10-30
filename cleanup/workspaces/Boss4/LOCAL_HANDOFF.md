@@ -4,7 +4,7 @@
 
 最后确认远端：Boss4完成570，未完52。最后done为b38553cfd0b7f6da5ec7954654901162be888115；最后claim为78f3b9416ba51e4447c8f245425e8aab672d503a。所有此前pushed与done分别保在PUBLICATION_STATUS.json，不把本地提交混作远端发布。
 
-52源的原文、数学比较、自足正文、真实程序输入/输出及逐源语义回执均已收齐。原件52份共875677字节，SHA256/大小逐一核，全部目标存在；此静态校验未重跑数学程序。当前52均未pushed、未done。已local-only提交的21源为fb58b66fc6e42e64429d10962dcf6f520001bfca；余31（local-exact17、shared-catalog9、Pro-brief5）已安装，随后本地checkpoint。待发布回执LOCAL52_RECEIPTS_PENDING_PUSH.json只作草稿，不能当done成功记录。
+52源的原文、数学比较、自足正文、真实程序输入/输出及逐源语义回执均已收齐。原件52份共875677字节，SHA256/大小逐一核，全部目标存在；此静态校验未重跑数学程序。当前52均未pushed、未done。已local-only提交的21源为fb58b66fc6e42e64429d10962dcf6f520001bfca；余31（local-exact17、shared-catalog9、Pro-brief5）已local-only提交e64b1d949fa7831109b45548533dfb4ffadef324。待发布回执LOCAL52_RECEIPTS_PENDING_PUSH.json只作草稿，不能当done成功记录。
 
 数学层保定理/条件结论/有限实验/障碍的区分。两设施混合原子客户、UM与六提供者全历史纯SPE保持不同模型。双目录κ和共同目录κ_≠的优化关系另见LOCAL52_RELATION_EVIDENCE.md；黄金比全局修订稿仍需定向复审，不以有限程序通过代替。
 
@@ -15,3 +15,5 @@ unit-code4认领没有成功回执，远端状态无法复核，四源未开始�
 六指定模型代理均已结束/冻结，没有后台继续。同步恢复备份stash60e630a068bde553324ec6036b2620a31247ea06、88f72856aca3c9ef679117ae3827356b94049bd2、e446c02c83beabcecc2a94fa160b3bb936f15018均保留。之前已逐项核实其应恢复的文件无缺失及无unmerged，不删除备份。
 
 实际clean handoff --all尚待在本地保存后尝试；不预写释放成功。此草稿尚未推送，尚未送达公屏或协调Boss。恢复后先核绑定、真实owner及这52远端处置是否已被接续，正常checkpoint取得pushed，再逐源done；不得重复覆盖他人后续处置。
+
+本地保全回执：21源148文件，31源157文件；两次均status=local-only，无pushed_head。正文及所有52来源原件已在两提交内，无新增done。当前交接草稿准备执行实际handoff，不能预写释放。
