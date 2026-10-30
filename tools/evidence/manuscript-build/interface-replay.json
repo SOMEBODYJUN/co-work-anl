@@ -1,0 +1,302 @@
+{
+  "scope": "Actual unchanged canonical program execution with explicitly non-production command/template fixtures; no TeX compilation or external/private PDF inspection.",
+  "canonical_sources_verified": 6,
+  "python": "3.12.14",
+  "texlive_tree_exists": true,
+  "build_runs": [
+    {
+      "returncode": 0,
+      "stdout": "research/manuscripts/shared_catalog/main.pdf\nresearch/manuscripts/multiple_facilities/main.pdf\nresearch/current/weighted_congestion/structural_reconstruction/structural_methods_article.pdf\n",
+      "stderr": "",
+      "case": "explicit_all",
+      "mode": "clean",
+      "keys": [
+        "shared",
+        "multiple",
+        "congestion"
+      ],
+      "pdf_copied": [
+        true,
+        true,
+        true
+      ],
+      "source_unchanged": true,
+      "format_log_created": false
+    },
+    {
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: build.py [-h] [{shared,multiple,congestion} ...]\nbuild.py: error: argument papers: invalid choice: \"['shared', 'multiple', 'congestion']\" (choose from shared, multiple, congestion)\n",
+      "case": "default_no_args",
+      "mode": "clean",
+      "keys": [],
+      "pdf_copied": [
+        false,
+        false,
+        false
+      ],
+      "source_unchanged": true,
+      "format_log_created": false
+    },
+    {
+      "returncode": 0,
+      "stdout": "usage: build.py [-h] [{shared,multiple,congestion} ...]\n\nBuild the three manuscripts without changing their source or page layout.\n\npositional arguments:\n  {shared,multiple,congestion}\n\noptions:\n  -h, --help            show this help message and exit\n",
+      "stderr": "",
+      "case": "help",
+      "mode": "clean",
+      "keys": [
+        "--help"
+      ],
+      "pdf_copied": [
+        false,
+        false,
+        false
+      ],
+      "source_unchanged": true,
+      "format_log_created": false
+    },
+    {
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: build.py [-h] [{shared,multiple,congestion} ...]\nbuild.py: error: argument papers: invalid choice: 'not-a-paper' (choose from shared, multiple, congestion)\n",
+      "case": "invalid_key",
+      "mode": "clean",
+      "keys": [
+        "not-a-paper"
+      ],
+      "pdf_copied": [
+        false,
+        false,
+        false
+      ],
+      "source_unchanged": true,
+      "format_log_created": false
+    },
+    {
+      "returncode": 0,
+      "stdout": "research/current/weighted_congestion/structural_reconstruction/structural_methods_article.pdf\n",
+      "stderr": "",
+      "case": "format_branch",
+      "mode": "format",
+      "keys": [
+        "congestion"
+      ],
+      "pdf_copied": [
+        false,
+        false,
+        true
+      ],
+      "source_unchanged": true,
+      "format_log_created": true
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Unresolved diagnostics in /workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/build-warning_gate/repository/research/current/weighted_congestion/structural_reconstruction/structural_methods_article.tex:\nLaTeX Warning: explicit fixture warning\n",
+      "case": "warning_gate",
+      "mode": "warning",
+      "keys": [
+        "congestion"
+      ],
+      "pdf_copied": [
+        false,
+        false,
+        false
+      ],
+      "source_unchanged": true,
+      "format_log_created": false
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Unresolved diagnostics in /workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/build-overfull_gate/repository/research/current/weighted_congestion/structural_reconstruction/structural_methods_article.tex:\nOverfull \\hbox (1pt too wide)\n",
+      "case": "overfull_gate",
+      "mode": "overfull",
+      "keys": [
+        "congestion"
+      ],
+      "pdf_copied": [
+        false,
+        false,
+        false
+      ],
+      "source_unchanged": true,
+      "format_log_created": false
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Unresolved diagnostics in /workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/build-undefined_gate/repository/research/current/weighted_congestion/structural_reconstruction/structural_methods_article.tex:\nUndefined fixture diagnostic\n",
+      "case": "undefined_gate",
+      "mode": "undefined",
+      "keys": [
+        "congestion"
+      ],
+      "pdf_copied": [
+        false,
+        false,
+        false
+      ],
+      "source_unchanged": true,
+      "format_log_created": false
+    },
+    {
+      "returncode": 0,
+      "stdout": "research/current/weighted_congestion/structural_reconstruction/structural_methods_article.pdf\n",
+      "stderr": "",
+      "case": "underfull_allowed",
+      "mode": "underfull",
+      "keys": [
+        "congestion"
+      ],
+      "pdf_copied": [
+        false,
+        false,
+        true
+      ],
+      "source_unchanged": true,
+      "format_log_created": false
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Build failed; inspect /workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/build-compiler_failure/repository/research/current/weighted_congestion/structural_reconstruction/.build/build.txt\nfixture compiler failure; no real TeX was invoked\n\n",
+      "case": "compiler_failure",
+      "mode": "compile_fail",
+      "keys": [
+        "congestion"
+      ],
+      "pdf_copied": [
+        false,
+        false,
+        false
+      ],
+      "source_unchanged": true,
+      "format_log_created": false
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/build-missing_log/repository/research/manuscripts/build.py\", line 78, in <module>\n    main()\n  File \"/workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/build-missing_log/repository/research/manuscripts/build.py\", line 74, in main\n    build(PAPERS[key])\n  File \"/workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/build-missing_log/repository/research/manuscripts/build.py\", line 58, in build\n    log = (temporary / f\"{source.stem}.log\").read_text(errors=\"replace\")\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1027, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/build-missing_log/repository/research/current/weighted_congestion/structural_reconstruction/.build/structural_methods_article.log'\n",
+      "case": "missing_log",
+      "mode": "missing_log",
+      "keys": [
+        "congestion"
+      ],
+      "pdf_copied": [
+        false,
+        false,
+        false
+      ],
+      "source_unchanged": true,
+      "format_log_created": false
+    },
+    {
+      "returncode": 1,
+      "stdout": "research/manuscripts/shared_catalog/main.pdf\n",
+      "stderr": "Build failed; inspect /workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/build-partial_batch/repository/research/manuscripts/multiple_facilities/.build/build.txt\nfixture compiler failure; no real TeX was invoked\n\n",
+      "case": "partial_batch",
+      "mode": "partial_fail",
+      "keys": [
+        "shared",
+        "multiple",
+        "congestion"
+      ],
+      "pdf_copied": [
+        true,
+        false,
+        false
+      ],
+      "source_unchanged": true,
+      "format_log_created": false
+    }
+  ],
+  "conversion_runs": [
+    {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "case": "success",
+      "output_created": true,
+      "files_in_output": [
+        "eqndefns-left.sty",
+        "informs2014.bst",
+        "informs4.cls",
+        "informs_Logo.pdf",
+        "main.bib",
+        "main.tex"
+      ],
+      "main_tex_sha256": "0729d63bd9fb0e7f5d47c02f0a41461b5c983da37f2e0a7493941aba5ec2e422",
+      "matches_historically_reported_private_TeX_hash": true,
+      "bib_unchanged": true,
+      "template_fixture_copies_unchanged": true,
+      "generated_source_kept_in_external_work_tree": "/workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/convert-success/output/main.tex",
+      "formal_statements_count": 24,
+      "formal_statements_byte_equal": true,
+      "proof_count": 24,
+      "proof_arguments_equal_after_heading_and_Halmos_normalization": true,
+      "labels_preserved_order": true,
+      "display_count": [
+        119,
+        119
+      ],
+      "display_raw_differences": [
+        71
+      ],
+      "display_math_equal_after_documented_alignment_normalization": true,
+      "proof_headings_for_INFORMS": {
+        "optional_proof_headings_remaining": 0,
+        "Halmos_count": 24,
+        "APPENDICES_begin": 1,
+        "APPENDICES_end": 1
+      },
+      "intro_disclosure_removed": true,
+      "relocated_disclosure_present": true
+    },
+    {
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: prepare_mor.py [-h] template_dir output_dir\nprepare_mor.py: error: output_dir must be outside the public repository\n",
+      "case": "inside_root",
+      "output_created": false,
+      "files_in_output": []
+    },
+    {
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: prepare_mor.py [-h] template_dir output_dir\nprepare_mor.py: error: output_dir must be outside the public repository\n",
+      "case": "root_itself",
+      "output_created": true,
+      "files_in_output": []
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/convert-missing_template/repository/research/manuscripts/prepare_mor.py\", line 23, in <module>\n    shutil.copy2(template / name, out / name)\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py\", line 475, in copy2\n    copyfile(src, dst, follow_symlinks=follow_symlinks)\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py\", line 260, in copyfile\n    with open(src, 'rb') as fsrc:\n         ^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/workspace/scratch/37f0f9248cfc/boss4-next-cache/manuscript-build-run-003/convert-missing_template/template-fixture/eqndefns-left.sty'\n",
+      "case": "missing_template",
+      "output_created": true,
+      "files_in_output": [
+        "informs4.cls"
+      ]
+    },
+    {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "case": "missing_appendix",
+      "output_created": true,
+      "files_in_output": [
+        "eqndefns-left.sty",
+        "informs2014.bst",
+        "informs4.cls",
+        "informs_Logo.pdf",
+        "main.bib",
+        "main.tex"
+      ],
+      "APPENDICES_begin": 0,
+      "APPENDICES_end": 1
+    }
+  ],
+  "current_real_source_unchanged": true,
+  "current_real_bib_unchanged": true
+}
