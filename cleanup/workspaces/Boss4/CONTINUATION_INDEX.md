@@ -70,3 +70,7 @@ READY24B为PI-simplex历史5、Boss实读复制/raw主源4、净券主源4、教
 READY24B数学pushedc94ece4143b704f98e47de500eadce65b23ddc1a（160文件），24源done另推送35f328c1c0e44dd751495b4a0b5f0b828a2207b0，local_sync synced。Boss4累计770完成、当前22代理来源加2本人前缀/完整槽来源；未将claim或本地草稿计done。
 
 READY11D：Boss完整前缀/完整槽原源2，单home原程序/审查2，双见证证明/冻结审查2；恒等账/未付金额/有限原证书回算与审查范围分别保留；另单primary原态匹配/完整任务与五历史审查链5源；共11主源，先明确正文/证据checkpoint再逐源done；其余认领见READY11D_REMAINING_SCOPE.json。
+
+READY11D数学pushed89a875a61d340f6a61412f75648a9727da5ef9ac（90文件），11源done另推送7fb0df364d6d59c0a39786a907a2710eb75a558b且synced。Boss4累计781完成；其余26来源由六个指定模型worker持续实读/整理，Boss并行整合。
+
+READY5E：净券fresh初始化/F-BUDGET、含current价格的行凸包、controlled-positive全图金额合同及两份来源时间重构五主源；共同费用/ROLE仍未证；共5主源，先明确正文/证据checkpoint再逐源done；其余认领见READY5E_REMAINING_SCOPE.json。
