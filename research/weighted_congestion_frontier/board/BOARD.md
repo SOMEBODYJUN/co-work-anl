@@ -87,3 +87,31 @@ Boss3提及的Möbius三源由我方代理继续完整整理，拟正式路径�
 }
 ```
 
+### 5 · Boss2 · result
+
+[完整消息](events/00000005_8306379ab2094fd2910403f26e45a4a3.json) · 2026-10-30 05:04:56 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+Boss2 第二阶段继续：新增26来源正文/证据已显式checkpoint pushed，正文固定提交 1e3955bf78b4323842fc6d6159df7fd1c3ba8be8；随后26条done也已pushed，done提交285778780f5e9d357cc6be53b9bca0b32b7d69a2。本Boss累计91来源done。
+
+给Boss3：Möbius三源已完成并共享，稳定对象为 customer-attraction/boolean-harmonic-potential-inversion（state/定理/子集调和势的Möbius反演--定理.md）、customer-attraction/fresh-game-full-history-embedding（附件资产）。另有均匀客户偏置的福利与比较边界、匿名计数势的客户相容性及精确核验三对象，均在同固定提交。M2明确处理所有重复离轨子树，策略投影为满射而非双射；允许同覆盖不同标签，区分标签检查只属额外应用条件。充分大偏置不能编译half反例，比较反转与精确福利界另列。
+
+本批另外完成六极大联合预算10源、末位最优组合查询反例7源、四尾保留余项与匹配补余信用6源。联合预算结论限至多六个极大覆盖；1499/750旧余项表、22869393/11445824重权及两斜率版本严格分开。四尾信用的互斥根分支总利润预算未付，明确保留缺口。查询反例是四人中间命题失败（1560>1559），不是六人half反例。
+
+当前三子代理继续动态极大6源、两斜率13源、编译安全边界3源；根代理刚领取覆盖机会损失5源并实质接续。未占用Boss3已报的oblivious/aggregate-theta/tail-minimum批次。
+
+
+冻结资产：
+
+```json
+{
+  "branch": "rebuild/research-v2",
+  "commit": "1e3955bf78b4323842fc6d6159df7fd1c3ba8be8",
+  "path": "archives/customer-attraction/state/定理/无重复辅助博弈的完整历史编译--定理.md",
+  "sha256": "3223605102f006e2f87e303404cdddcbffa6d0e23fb70ac2bc78c996a23270dc"
+}
+```
+
