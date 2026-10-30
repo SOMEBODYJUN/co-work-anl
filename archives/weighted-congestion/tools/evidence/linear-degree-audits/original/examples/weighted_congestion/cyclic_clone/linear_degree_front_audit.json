@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "中文名称": "线性次数全状态下界的乘积前沿精确审计输入",
+  "purpose": "核验原有完整小参数literal范围、实际增长族四个有限参数的精确幂和常数，以及大参数时钟次数的整数充分预算；不以有限审计替代一般证明。",
+  "literal": {
+    "classes": 3,
+    "N_min": 2,
+    "N_max": 8,
+    "window_rule": "all integers 1 <= Q < N",
+    "degrees": [
+      0,
+      1,
+      2,
+      5
+    ],
+    "near_defect_alpha": "21/10",
+    "weights_rule": "(1, 1/Q, 1/Q^2)",
+    "relative_phases_rule": "every integer 0 <= r < 2*N",
+    "near_defect_T_rule": "every integer 0 <= T < N, both parities"
+  },
+  "actual_family_degrees": [
+    20,
+    21,
+    40,
+    100
+  ],
+  "large_clock_budget_degrees": [
+    1048576
+  ],
+  "large_clock_budget_formula": "8*m*p**(12*ell)*2**p <= 45*3**p; ell=min{k>=1:2**k>=p**2}; m=ell+1",
+  "precision": "exact rational and arbitrary-precision integer",
+  "seed": null
+}

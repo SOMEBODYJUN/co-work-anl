@@ -1,0 +1,95 @@
+[
+  {
+    "source_ref": "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/CATALOG.md",
+    "full_file_sha256": "530bb95cee99af8d6946eed49b439551686ab651bb9f9bd910bca17cba038436",
+    "read_scope": "complete listed relevant sections/table rows only; no full-file done claim",
+    "excerpts": [
+      {
+        "start_line": 1929,
+        "end_line": 1929,
+        "text": "| [资源局部权密度：锐矩不等式与纯近似均衡](<current/weighted_congestion/weight_density.md>) | `research/current/weighted_congestion/weight_density.md` | 先证明半开乘法区间密度约束下的锐矩估计，再将其用于共享幂成本势的实例结构存在界。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](assets.json) |\n"
+      },
+      {
+        "start_line": 1931,
+        "end_line": 1931,
+        "text": "| [资源权密度与锐矩估计：定义级有理审计](<../tests/audits/weighted_congestion_density.py>) | `tests/audits/weighted_congestion_density.py` | 使用可由有理幂表示的权和精确整数幂比较检查矩与游戏势不等式；不使用浮点根误差。 | 有限计算核验；不代替一般证明；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](assets.json) |\n"
+      },
+      {
+        "start_line": 1932,
+        "end_line": 1932,
+        "text": "| [资源权密度与锐矩估计：有限审计冻结记录](<../evidence/runs/2026-10-14/weighted_congestion_density.json>) | `evidence/runs/2026-10-14/weighted_congestion_density.json` | 保存参数、种子、矩样例、实际游戏和边界计数、程序哈希及任意实权推广的证据限制。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](assets.json) |\n"
+      },
+      {
+        "start_line": 1933,
+        "end_line": 1933,
+        "text": "| [资源外部性与权密度：初始推导来源记录](<../history/source/notes/weighted_congestion/density_externality.md>) | `history/source/notes/weighted_congestion/density_externality.md` | 保留权密度势的原始外部性计算与研究起点；规范加强证明与独立审查另见现行资产。 | 来源或历史判断；不作为现行结论；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](assets.json) |\n"
+      }
+    ]
+  },
+  {
+    "source_ref": "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/claims.md",
+    "full_file_sha256": "dd25571aac7cd4fc71a8a2e3ffaa7f5638ba90619c4e4ccacf7774a28bef0b81",
+    "read_scope": "complete listed relevant sections/table rows only; no full-file done claim",
+    "excerpts": [
+      {
+        "start_line": 299,
+        "end_line": 299,
+        "text": "| WC-R2-DENSITY-MOMENT | Sharp finite sparse power-moment inequality v1 | complete general proof, independently internally checked; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |\n"
+      },
+      {
+        "start_line": 300,
+        "end_line": 300,
+        "text": "| WC-R2-WEIGHT-DENSITY | Resource-local weight-density PNE existence v1 | complete general proof, independently internally checked; unrefereed | [精确身份](../weighted_congestion_frontier/CLAIMS.md)；[现行内容](weighted_congestion/README.md) |\n"
+      }
+    ]
+  },
+  {
+    "source_ref": "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/CLAIMS.md",
+    "full_file_sha256": "f7e8cfa05fe1625a0d874c8c2b17178675925e3a88e19e6ecc31f31e0dd3f7b8",
+    "read_scope": "complete listed relevant sections/table rows only; no full-file done claim",
+    "excerpts": [
+      {
+        "start_line": 197,
+        "end_line": 205,
+        "text": "## WC-R2-DENSITY-MOMENT v1 — COMPLETE INTERNAL PROOF\n\n- Exact Statement/Objects/Domain/Quantifiers/Assumptions/Definitions：任意正实有限多重集，R>1、0<p<1，每个[x,Rx)最多K项（计重数）；sum z^p≤A_R(p)K^(1-p)(sum z)^p，A_R(p)=(1−R^-1)^p/(1−R^-p)。\n- Scope/Conclusion：幂矩常数是有限序列的sharp supremum，由K重几何链逼近；不主张均衡因子sharp。\n- Dependencies：排序链分解、有限尾和望远镜和凹性，无外部定理。\n- Evidence/Objections/Status：[完整证明](../current/weighted_congestion/weight_density.md)及独立内部审查；半开端点、空链、重数已检查，无未处理fatal objection；外审与global priority未认证。\n- Related Files：当前完整证明、research/reviews/weighted_congestion/weight_density/review.md、tests/audits/weighted_congestion_density.py、evidence/runs/2026-10-14/weighted_congestion_density.json。\n\n\n"
+      },
+      {
+        "start_line": 206,
+        "end_line": 215,
+        "text": "## WC-R2-WEIGHT-DENSITY v1 — COMPLETE INTERNAL PROOF\n\n- Exact Statement/Objects/Domain/Quantifiers/Assumptions：MODEL所有有限游戏、任意正实权与非负degree≤d系数、多资源策略；d≥1，任意R>1,p∈(0,1)，K_R为每资源潜在使用者[x,Rx)最大人数。\n- Definitions/Scope/Conclusion：Σw_i^p C_i每个单边局部min是[1+A_R(p)K_R^(1-p)d^p]-PNE，above-factor严格改善终止；K_R=0时全零成本。结构子类，无运行时间保证。d≥3取R=d、p=ln2/lnd得≤1+4K_d，几何分离谱O(log d)。\n- Dependencies：WC-R2-DENSITY-MOMENT v1、实际总负载多项式增量界、有限势min。\n- Evidence：[完整一般证明](../current/weighted_congestion/weight_density.md)、先自主重构再攻击的内部review、Fraction字面全偏离核验。\n- Counterevidence/Objections：K_R全类无界，等权人多时不能直接推出全类o(d)；固定p微权外部增量确无统一界。零cost/空strategy/commonresource均已处理；不声称sharp均衡阈值。\n- Status：内部完整证明，Canonical Record限本精确scope；Truth按proof，Value为结构机制，Novelty未认证，Mechanism为敏感度×稀疏moment，Ambition为结构子类；本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。\n- Related Files：同上一条。\n\n"
+      }
+    ]
+  },
+  {
+    "source_ref": "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/weighted_congestion_frontier/FILES.md",
+    "full_file_sha256": "2c906f6b1d7eecfc40f675ab817494679af9257bdf9ecd45cea18e473db454ee",
+    "read_scope": "complete listed relevant sections/table rows only; no full-file done claim",
+    "excerpts": [
+      {
+        "start_line": 143,
+        "end_line": 143,
+        "text": "| [资源局部权密度：锐矩不等式与纯近似均衡](<../current/weighted_congestion/weight_density.md>) | `research/current/weighted_congestion/weight_density.md` | 先证明半开乘法区间密度约束下的锐矩估计，再将其用于共享幂成本势的实例结构存在界。 | 数学正文；按关联命题分别核对证明及审查；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](../assets.json) |\n"
+      },
+      {
+        "start_line": 145,
+        "end_line": 145,
+        "text": "| [资源权密度与锐矩估计：定义级有理审计](<../../tests/audits/weighted_congestion_density.py>) | `tests/audits/weighted_congestion_density.py` | 使用可由有理幂表示的权和精确整数幂比较检查矩与游戏势不等式；不使用浮点根误差。 | 有限计算核验；不代替一般证明；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](../assets.json) |\n"
+      },
+      {
+        "start_line": 146,
+        "end_line": 146,
+        "text": "| [资源权密度与锐矩估计：有限审计冻结记录](<../../evidence/runs/2026-10-14/weighted_congestion_density.json>) | `evidence/runs/2026-10-14/weighted_congestion_density.json` | 保存参数、种子、矩样例、实际游戏和边界计数、程序哈希及任意实权推广的证据限制。 | 冻结输入、证书或结果；不原位覆盖；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](../assets.json) |\n"
+      },
+      {
+        "start_line": 147,
+        "end_line": 147,
+        "text": "| [资源外部性与权密度：初始推导来源记录](<../../history/source/notes/weighted_congestion/density_externality.md>) | `history/source/notes/weighted_congestion/density_externality.md` | 保留权密度势的原始外部性计算与研究起点；规范加强证明与独立审查另见现行资产。 | 来源或历史判断；不作为现行结论；关联 `WC-R2-DENSITY-MOMENT`、`WC-R2-WEIGHT-DENSITY`，[命题合同](../assets.json) |\n"
+      }
+    ]
+  },
+  {
+    "source_ref": "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/source_crosswalk.md#L145",
+    "read_scope": "complete match row supplied by exact frozen search, not the full file",
+    "text": "| [history/source/notes/weighted_congestion/density_externality.md](../history/source/notes/weighted_congestion/density_externality.md) | Recovered byte-for-byte from the frozen remote branch inventory in weighted_congestion_frontier/INTEGRATION.json. | [research/current/weighted_congestion/weight_density.md](../research/current/weighted_congestion/weight_density.md) | Discovery/source record. Current exact assumptions, proof and review status are recorded separately; integration does not promote the source. |"
+  }
+]
