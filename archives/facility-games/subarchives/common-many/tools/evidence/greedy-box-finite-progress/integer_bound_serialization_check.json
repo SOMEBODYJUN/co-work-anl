@@ -1,0 +1,72 @@
+{
+  "compared_source_id": "4e4efdb8c30ab03aee8b",
+  "source_sha256": "b3b391f6e4c1efd8e56c036d3d588f191959504aede58e686c3bfcb291f6ef35",
+  "python": "3.12.14",
+  "integer_decimal_digit_limit": 4300,
+  "mobile_clients": 15000,
+  "private_clients": [
+    {
+      "weight": "3",
+      "sites": [
+        0
+      ]
+    },
+    {
+      "weight": "2",
+      "sites": [
+        1
+      ]
+    }
+  ],
+  "each_mobile": {
+    "weight": "1/15000",
+    "sites": [
+      0,
+      1
+    ]
+  },
+  "m": 2,
+  "k": 3,
+  "canonical_layout": [
+    0,
+    0,
+    1
+  ],
+  "gamma": "2",
+  "initial_normalized_surpluses": [
+    "0",
+    "0"
+  ],
+  "mathematical_strict_improvements_needed": 0,
+  "mathematical_home_returns_needed": 0,
+  "assignment_bound_bit_length": 15000,
+  "expected_failure_stage": "serialization of assignment_move_bound via str(bound), after final mathematical verification",
+  "actual_exception": {
+    "type": "ValueError",
+    "message": "Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit"
+  },
+  "elapsed_seconds": 0.45164235400079633,
+  "global_digit_limit_modified": false,
+  "original_source_modified": false,
+  "actual_failure_location_and_locals": {
+    "function": "construct_on_path",
+    "original_source_line": 227,
+    "source_expression": "microsteps=improvements + repairs, assignment_move_bound=str(bound),",
+    "actual_improvements_before_failure": 0,
+    "actual_home_returns_before_failure": 0,
+    "actual_batches_before_failure": 0,
+    "final_mathematical_verification": {
+      "exact_ne": true,
+      "full_boxes": true,
+      "frozen_clients": true,
+      "home_inequality": true,
+      "gamma": "2",
+      "site_loads": {
+        "0": "4",
+        "1": "2"
+      }
+    }
+  },
+  "targeted_runs": 2,
+  "second_run_purpose": "Record exact exception frame and verify zero moves plus completed final verification."
+}
