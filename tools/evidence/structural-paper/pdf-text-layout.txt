@@ -1,0 +1,1981 @@
+1    Structural Methods for Approximate Stability in Weighted Congestion Games
+2
+3    ANONYMOUS AUTHOR(S)
+4
+5    We study how local cost comparisons determine approximate stability in weighted congestion games with polynomial
+6
+     latencies. We develop tools for comparing endpoint costs with area estimates, combining resource potentials with
+7
+     a common scale for each player, and realizing stability on a structured set of states by legal congestion resources.
+8
+     These tools explain both the amplification caused by large atoms and the existence guarantees available under small
+9
+10
+     atomic shares, compatible weight types, or bounded weight depth. As an application, we construct rational games of
+11   degree 𝑑 with no (𝑑 − 1200⌈log2 𝑑⌉2 )-approximate pure Nash equilibrium, for every integer 𝑑 ≥ 220 . Together with
+12   the known 𝑑-approximate existence theorem, this answers the asymptotic existence question raised by Christodoulou,
+13   Gairing, Giannakopoulos, Poças, and Waldmann. We also give conditions under which the same realization method
+14   preserves social optimization and approximation quality.
+15
+16   CCS Concepts:  Theory of computation → Algorithmic game theory and mechanism design; Approxi-
+17   mation algorithms analysis.
+18
+19
+     Additional Key Words and Phrases: weighted congestion games, approximate pure Nash equilibria, approximate
+20   potentials, social cost
+21
+     ACM Reference Format:
+22
+     Anonymous Author(s). 2026. Structural Methods for Approximate Stability in Weighted Congestion Games. ACM
+23
+24
+     Trans. Econ. Comput. 1, 1 (October 2026), 27 pages. https://doi.org/10.1145/nnnnnnn.nnnnnnn
+25
+26   1    Introduction
+27
+     Weighted congestion games describe systems in which indivisible users choose resources and the cost of
+28
+29
+     each resource depends on its total load. Approximate pure Nash equilibria provide a finite-state notion of
+30   stability when exact equilibria may fail to exist. Their analysis often begins with a local comparison between
+31   a player’s cost and a change in a resource potential. To obtain a statement about the whole game, however,
+32
+     these local comparisons must remain consistent across every resource that the player can enter or leave.
+33
+34
+         We study three aspects of this passage from local costs to global stability. First, we compare the cost at a
+35   polynomial’s endpoint with a discrete approximation to the area beneath it. The comparison distinguishes
+36   the total mass in a window from the size of the individual atoms used to sample it. Second, we identify
+37
+     when local resource potentials admit the same multiplier for a player on all resources. For resources with
+38
+39
+     two optional weight types, this compatibility is described by product inequalities around type cycles. Third,
+40   we give a construction that confines every stable state to a prescribed set of structured binary states, while
+41   retaining an explicit formula for the approximation tolerance introduced by the added resources.
+42
+         Each tool has a positive use. Small actual atomic shares make the integral potential effective. On forests
+43                                                                                                             √
+44
+     of interacting weight types, the common-scale construction gives an approximation factor of order           𝑑,
+45   independently of the number of types. For arbitrary resource populations, a common ordering by decreasing
+46   weight gives an existence bound determined by the height of the player graph. The realization construction
+47
+     allows stable states to be selected on the smaller structured domain; with an additional externality bound,
+48
+49
+     it also allows social optimization on that domain.
+50   2026. Manuscript submitted to ACM
+51
+52   Manuscript submitted to ACM                                                                                       1
+      2                                                                                                                   Anon.
+
+53        These comparisons also explain how large approximation factors arise. A short, finely sampled window
+54
+      can preserve an endpoint-to-area amplification of order 𝑑 as costs propagate between weight classes, even
+55
+56
+      though the light users pay an area rather than an endpoint cost. We use this distinction to build a finite
+57    family in which every structured state has an improving deviation. The realization theorem then excludes
+58    all other states without increasing the degree.
+59
+60
+61        Relation to the existence question. Caragiannis and Fanelli [1, Theorem 2] prove a 𝑑-approximate potential
+62    guarantee for positive-degree monomial latencies. Their marginal bounds extend it to nonnegative-coefficient
+63
+      polynomials of degree at most 𝑑 ≥ 1: split each resource into one copy per positive term, so every strategy
+64
+65
+      uses all its copies together, and give a constant term 𝑎𝑒,0 the potential 𝑎𝑒,0 times its load. This preserves
+66    all player costs and the common marginal interval from 𝑤𝑖 𝑐𝑒 (𝑌 )/𝑑 to 𝑤𝑖 𝑐𝑒 (𝑌 ). Christodoulou, Gairing,
+                                                                                                       √
+67    Giannakopoulos, Poças, and Waldmann [2, Section 7] establish a nonexistence bound of order 𝑑/ log 𝑑
+68
+      and ask how to close the gap to the linear existence bound. Our construction gives a lower bound of
+69
+70
+      𝑑 − 𝑂((log 𝑑)2 ), and therefore determines the leading asymptotic constant of the universal threshold. The
+71    𝑑 upper bound follows from the cited potential; the construction and the structural statements used here
+72    are proved below.
+73
+          Caragiannis and Fanelli also obtain an 𝑒1/𝜏 -approximate potential for their 𝜏 -congested games with
+74
+75
+      𝜏 > 0 [1, Corollary 5]: in their monomial model, at every state each user of a degree-𝑘𝑒 resource shares it
+76    with other users of total weight at least 𝜏 𝑘𝑒 𝑤𝑖 . They give an upper bound (𝑑 + 1)/(𝑑 + 𝛿) on the (𝑑 + 𝛿)-
+77    approximate price of stability for 0 ≤ 𝛿 ≤ 1 [1, Theorem 7]. Our small-share bound gives an explicit integral
+78
+      factor under its own all-state share condition; our social-cost results select within a realized structured
+79
+80
+      domain and require a separate externality condition to compare with the full-game optimum. Neither use
+81    of potential methods is claimed as new by itself.
+82        The counterexamples and the positive results answer different questions. In the unrestricted class, the
+83
+      leading linear factor is unavoidable. Under verifiable conditions on actual shares, compatible scales, or
+84
+85
+      decreasing weight depth, the same local comparisons yield smaller factors. A failed scale certificate con-
+86    cerns the specified potential representation; a full-state counterexample requires the separate realization
+87    argument.
+88
+89
+90    1.1    Model and equilibrium
+91
+92
+      A finite weighted congestion game has players 𝐼, resources 𝐸, positive weights 𝑤𝑖 , and nonempty finite
+      strategy families 𝑆𝑖 ⊆ 2𝐸 . At a state 𝑠 ∈ 𝑖 𝑆𝑖 put
+                                                ∏︀
+93
+94
+                                 ∑︁                        ∑︁                                𝑑
+                                                                                            ∑︁
+95
+                     𝑥𝑒 (𝑠) =            𝑤𝑖 ,   𝐶𝑖 (𝑠) =          𝑐𝑒 (𝑥𝑒 (𝑠)),   𝑐𝑒 (𝑥) =         𝑎𝑒,𝑘 𝑥𝑘 ,   𝑎𝑒,𝑘 ≥ 0.
+96
+                                𝑖:𝑒∈𝑠𝑖                     𝑒∈𝑠𝑖                             𝑘=0
+97
+98    A state is an 𝛼-PNE, 𝛼 ≥ 1, if 𝐶𝑖 (𝑠) ≤ 𝛼𝐶𝑖 (𝑡𝑖 , 𝑠−𝑖 ) for all players and legal deviations. We use the margin
+99    𝐶𝑖 (𝑠) − 𝛼𝐶𝑖 (𝑡𝑖 , 𝑠−𝑖 ), including at zero costs. Multiplying a player’s whole cost by its fixed positive weight
+100   leaves these stability comparisons unchanged. The social objective used below is specified separately:
+101                                            ∑︁             ∑︁
+102                                    𝑊 (𝑠) =    𝑤𝑖 𝐶𝑖 (𝑠) =    𝑥𝑒 (𝑠)𝑐𝑒 (𝑥𝑒 (𝑠)).                                          (1)
+103                                                    𝑖                    𝑒
+104   Manuscript submitted to ACM
+      Structural Methods for Approximate Stability in Weighted Congestion Games                                   3
+
+105   For a game 𝐺, write OPT(𝐺) = min𝑠∈∏︀𝑖 𝑆𝑖 𝑊 (𝑠), with the minimum taken over all its pure states. Unless
+106
+      stated otherwise, theorems allow real data; rational input and output are required for the explicit lower-
+107
+108
+      bound games and exact finite algorithms.
+109       A resource can have compulsory users: those whose every strategy contains it. Absorb their load 𝑏𝑒 into
+110   𝑐𝑒 (𝑧) = 𝑐𝑒 (𝑏𝑒 + 𝑧). The function remains a nonnegative-coefficient polynomial of degree at most 𝑑. Its
+      ̂︀
+111
+      remaining potential users are those who can both use and omit the resource. A player may be compulsory
+112
+113
+      on one resource and optional on another. Its compulsory resources are retained in every deviation, so this
+114   resourcewise preprocessing preserves all its comparisons. Zero-cost resources can be omitted from scale
+115   constraints.
+116
+117
+      1.2    Research process and AI assistance
+118
+119   OpenAI ChatGPT/Codex models, including GPT-6.1-sol review agents, assisted in exploring the finite-
+120   window construction and its parameter estimates, drafting and attacking proof arguments, writing exact
+121
+      rational audit code, and editing the exposition. The systems were directed to keep claim domains, quantifiers,
+122
+123
+      and assumptions explicit; test all-state and boundary cases; distinguish finite checks from general proofs;
+124   and retain unresolved objections. The mathematical arguments appear in full below, and the audits serve
+125   only as checks of finite instances. The authors remain responsible for verifying the submitted work.
+126
+127       Organization. Section 2 develops the endpoint estimates, common player scales, weight-depth bound,
+128
+      and realization theorem. Section 3 combines them into explicit all-state counterexamples and deduces the
+129
+130
+      asymptotic threshold. Section 4 applies the tools to small shares and to the selection of stable states with
+131   social-cost guarantees. Appendix A supplies the parameter estimates and the complete phase analysis for
+132   the construction.
+133
+134       Conventions and notation. All games are finite, weights are positive, and latency polynomials have non-
+135
+      negative coefficients. A degree bound is an upper bound unless we specify pure degree-𝑑 monomials. All
+136
+137
+      approximation factors are at least one, and strict improvement means a strict multiplicative cost reduction.
+138   We use the margin formulation also at zero cost. Logarithms are natural unless a base is shown. The fi-
+139   nite constructions use rational data; their output size and improvement-path length are not asserted to be
+140
+      polynomial in a compact description.
+141
+142
+143
+      2     Structural tools for approximate stability
+144   We first isolate the marginal condition that lets resource functions sum to a potential for the whole game.
+145
+146
+      2.1    From resource marginals to a common player scale
+147
+148   The approximate-potential argument of Caragiannis and Fanelli [1] compares the insertion marginal of
+149
+      a resource function with the player’s resource cost. For a deviation involving several resources, we need
+150
+      the comparison to use one multiplier for the moving player. The following lemma states this requirement
+151
+152   explicitly.
+153
+154       Lemma 2.1 (Common player scales). Suppose resource set functions 𝐻𝑒 and positive numbers 𝑞𝑖
+155   satisfy the following bounds. For each resource 𝑒, optional player 𝑖, and local optional-user set occurring in
+156                                                                                     Manuscript submitted to ACM
+      4                                                                                                       Anon.
+
+157   a legal state where 𝑖 omits 𝑒, insert 𝑖 into that set and require
+158
+159                                                   𝑐𝑒 (𝑌 ) ≤ ∆𝑖 𝐻𝑒 ≤ 𝛽𝑞𝑖 ̂︀
+                                                   𝑞𝑖 ̂︀                    𝑐𝑒 (𝑌 ),                               (2)
+160
+161
+      where 𝑌 is the optional load after insertion. The same 𝑞𝑖 must work on all resources that player 𝑖 can toggle.
+                   ∑︀
+162   Then Φ(𝑠) =     𝑒 𝐻𝑒 (𝑠) satisfies, for every unilateral deviation 𝑠 → 𝑡 by 𝑖,
+163
+164                        Φ(𝑡) − Φ(𝑠) ≤ 𝑞𝑖 [𝛽𝐶𝑖 (𝑡) − 𝐶𝑖 (𝑠) − (𝛽 − 1)𝐶𝑖,𝐻 ] ≤ 𝑞𝑖 [𝛽𝐶𝑖 (𝑡) − 𝐶𝑖 (𝑠)],             (3)
+165
+      where 𝐶𝑖,𝐻 is the common cost of the resources retained by the player. Every strict 𝛽 improvement decreases
+166
+167   Φ, every such improvement path terminates, and a 𝛽-PNE exists.
+168
+169       Proof. Fix a unilateral deviation by player 𝑖. We apply the lower marginal bound to every deleted
+170   resource in its old user set, and the upper marginal bound to every added resource in its new user set.
+171
+      Retained resources have unchanged load and potential. Summing these inequalities gives 𝑞𝑖 (𝛽𝐶𝑖,add −𝐶𝑖,del ),
+172
+173
+      which equals the first expression in (3). A strict 𝛽 improvement therefore strictly decreases Φ. Since the
+174   state space is finite, every such improvement path terminates, and a global minimum of Φ is a 𝛽-PNE.          □
+175
+176       The insistence on a common 𝑞𝑖 is essential to this summation. The potential constructions below choose
+177
+      such scales; the lower-bound construction exploits a different propagation of endpoint and area costs.
+178
+179
+180   2.2    Endpoint costs and area estimates
+181
+      The following estimate separates the mass in a window from its sampling resolution. It will control the cost
+182
+183
+      transmitted between adjacent weight classes in Section 3. Let 0 = 𝑥0 < · · · < 𝑥𝑛 = 𝑄, 𝑎𝑗 = 𝑥𝑗 − 𝑥𝑗−1 ,
+184   𝑇 = 𝑏 + 𝑄, and ℎ = max𝑗 𝑎𝑗 , with 𝑏 ≥ 0 and 𝑄 > 0.
+185
+186       Lemma 2.2 (Endpoint–area error). For every nondecreasing function 𝑓 on [𝑏, 𝑇 ],
+187                        ∫︁ 𝑇                                ∫︁ 𝑇
+                                           ∑︁
+188                             𝑓 (𝑡) 𝑑𝑡 ≤    𝑎𝑗 𝑓 (𝑏 + 𝑥𝑗 ) ≤      𝑓 (𝑡) 𝑑𝑡 + ℎ[𝑓 (𝑇 ) − 𝑓 (𝑏)].                  (4)
+189                             𝑏              𝑗                      𝑏
+
+190
+      For 𝑓 (𝑡) = 𝑡𝑑 , write 𝑟 = 𝑏/𝑇 , 𝜁 = ℎ/𝑇 , and 𝜗 = 𝑀/𝑇 for any 𝑀 > 0. Then
+191
+192                                       (𝑑 + 1)𝜗                           𝑀𝑇 𝑑            (𝑑 + 1)𝜗
+                                                                  ≤ ∑︀                     ≤          .            (5)
+193                             1 − 𝑟𝑑+1 + (𝑑 + 1)𝜁(1 − 𝑟𝑑 )              𝑗 𝑎𝑗 (𝑏 + 𝑥𝑗 )
+                                                                                         𝑑   1 − 𝑟𝑑+1
+194
+195       Proof. The error on the 𝑗th interval is nonnegative and at most 𝑎𝑗 [𝑓 (𝑏 + 𝑥𝑗 ) − 𝑓 (𝑏 + 𝑥𝑗−1 )]. Replace 𝑎𝑗
+196
+      by ℎ and telescope. Integrating 𝑡𝑑 and dividing gives (5).                                                    □
+197
+198
+199
+          Thus 𝑑ℎ/𝑇 controls the discretization loss. The endpoint coefficient 𝑀 and the sampled mass 𝑄 need
+200   not agree. This distinction permits a short, fine window to preserve an amplification approaching 𝑑. For a
+      nonnegative-coefficient polynomial 𝑓 (𝑡) = 𝑑𝑘=0 𝑐𝑘 𝑡𝑘 with 𝑓 (𝑇 ) > 0, its exact normalized area is
+                                                  ∑︀
+201
+202                           ∫︀ 𝑇             𝑑
+203                             𝑏
+                                   𝑓 (𝑡) 𝑑𝑡   ∑︁    1 − 𝑟𝑘+1           𝑐𝑘 𝑇 𝑘    ∑︁
+                                            =    𝜆𝑘          ,  𝜆𝑘 =          ,     𝜆𝑘 = 1.                  (6)
+204                              𝑇 𝑓 (𝑇 )             𝑘+1              𝑓 (𝑇 )
+                                              𝑘=0                                           𝑘
+205
+206   This follows by integrating term by term. A degree bound alone therefore does not force a degree-sized gain:
+207   the endpoint may be dominated by lower-degree terms.
+208   Manuscript submitted to ACM
+      Structural Methods for Approximate Stability in Weighted Congestion Games                                       5
+
+209   2.3   Equal-weight windows and a local threshold
+210
+211
+      Fix an integer 𝑑 ≥ 1 and normalize a heavy weight to one. Let a window contain an integer 𝐾 ≥ 1 of light
+212   weights 1/𝑅, and put 𝑚 = 𝐾/𝑅 and
+213                                                      𝐾                           𝐾
+                                                        ∑︁                          ∑︁
+214                             𝑃 = (1 + 𝑚)𝑑 ,     𝑋=      (1 + 𝑗/𝑅)𝑑 ,       𝑌 =      (𝑗/𝑅)𝑑 .
+215                                                     𝑗=1                         𝑗=1
+216
+217
+      The scalar relevant to propagation of a target factor 𝛼 is
+218                                                  𝛼𝑋 − 𝑌
+                                                Γ=                 (𝑃 > 𝛼).                                          (7)
+219                                                  𝑅(𝑃 − 𝛼)
+220
+      This expression will be instantiated by actual resource incidences in Section 3; at present it is a numerical
+221
+222
+      contract. Define
+                                                (1 + 𝑚)𝑑+1 − 1                      𝑚𝑑+1
+223                                  𝐴𝑑 (𝑚) =                  ,     𝐵𝑑 (𝑚) =            .
+224
+                                                     𝑑+1                            𝑑+1
+225
+      Lemma 2.2 gives the finite bounds
+226
+                                          𝐴𝑑 (𝑚) ≤ 𝑋/𝑅 ≤ 𝐴𝑑 (𝑚) + (𝑃 − 1)/𝑅,                                         (8)
+227
+                                                                          𝑑
+228                                       𝐵𝑑 (𝑚) ≤ 𝑌 /𝑅 ≤ 𝐵𝑑 (𝑚) + 𝑚 /𝑅.                                             (9)
+229
+230     Proposition 2.3 (Finite window certificate). If
+231
+                                                                              𝛼(𝑃 − 1)
+232                      𝐷 = 𝑃 + 𝐵𝑑 (𝑚) − 𝛼[1 + 𝐴𝑑 (𝑚)] > 0,        𝑅>                 ,      𝑚𝑅 ∈ N,
+                                                                                 𝐷
+233
+234
+      then 𝑃 > 𝛼, 𝛼𝑋 − 𝑌 > 0, and
+                                                      𝐷 − 𝛼(𝑃 − 1)/𝑅
+235                                          1−Γ≥                       > 0.                                        (10)
+236
+                                                           𝑃 −𝛼
+237
+      For fixed 𝑑, 𝑚, the supremum of these finite-grid local thresholds is
+238                                               𝑃 + 𝐵𝑑 (𝑚)   (𝑑 + 1)(1 + 𝑚)𝑑 + 𝑚𝑑+1
+239
+                                 𝛼area (𝑑, 𝑚) =              =                        .                             (11)
+                                                  1 + 𝐴𝑑 (𝑚)       𝑑 + (1 + 𝑚)𝑑+1
+240
+241     Proof. Since 𝐴𝑑 (𝑚) > 𝐵𝑑 (𝑚) and 𝑃 > 1, the ratio in (11) is less than 𝑃 ; hence 𝐷 > 0 implies 𝑃 > 𝛼.
+242   Termwise 𝑋 > 𝑌 , so 𝛼𝑋 − 𝑌 > 0. Subtract the upper estimate obtained from (8) and the lower estimate
+243
+      from (9) from one to obtain (10).
+244
+        For completeness, the finite-grid threshold is (𝑃 + 𝑌 /𝑅)/(1 + 𝑋/𝑅). The increasing function (1 + 𝑡)𝑑 − 𝑡𝑑
+245
+246   has a nonnegative right-sum error, so 0 ≤ 𝑌 /𝑅 − 𝐵𝑑 (𝑚) ≤ 𝑋/𝑅 − 𝐴𝑑 (𝑚). Also 𝑃 + 𝐵𝑑 (𝑚) ≥ 1 + 𝐴𝑑 (𝑚):
+247   their difference is zero at 𝑚 = 0, and its derivative is 𝑑(1 + 𝑚)𝑑−1 − [(1 + 𝑚)𝑑 − 𝑚𝑑 ] ≥ 0. The last inequality
+248
+      follows by integrating the derivative of 𝑡𝑑 over [𝑚, 𝑚 + 1]. Adding no more error to the numerator than to
+249
+      the denominator cannot increase a ratio at least one. Thus every finite threshold is at most (11); the two
+250
+251   sums converge to their areas as 𝑅 → ∞ along 𝑚𝑅 ∈ N.                                                             □
+252
+        Dropping the nonnegative term 𝑚𝑑+1 in the numerator produces an explicitly optimized lower envelope.
+253
+254   For 𝑑 > 1, differentiation gives
+255
+                                  (𝑑 + 1)𝑥𝑑
+256                           max           = 𝑑(𝑑−1)/(𝑑+1) > 𝑑 − 2 log 𝑑,           𝑥 = 𝑑2/(𝑑+1) .                  (12)
+                              𝑥>1 𝑑 + 𝑥𝑑+1
+257
+258   Indeed the derivative has the sign of 𝑑2 − 𝑥𝑑+1 , and 𝑒−𝑢 > 1 − 𝑢 gives the strict final inequality. Every
+259   strictly smaller target has finite rational window parameters, by continuity followed by Proposition 2.3. This
+260                                                                                          Manuscript submitted to ACM
+      6                                                                                                     Anon.
+
+261   is a local propagation threshold, not a statement that all states of a game are unstable. A later propagation
+262
+      may require 𝜅Γ < 1 for an additional amplitude factor 𝜅 > 1; the two conditions should not be conflated.
+263
+264
+265   2.4     Ordered marginals and compatible player scales
+266
+      Throughout this subsection 𝑑∑︀≥ 2. The cases 𝑑 = 0, 1 are handled separately in Section 2.5. The integral
+267                               ∫︀    𝑤𝑗
+      resource potential 𝐹𝑒 (𝑈 ) = 0 𝑗∈𝑈 ̂︀𝑐𝑒 (𝑧) 𝑑𝑧 depends only on load. An ordered right sum also records how
+268
+269   individual weights reach that load. For a current user ordering 𝑣1 , . . . , 𝑣𝑛 , write
+270                                                       𝑛
+                                                         ∑︁
+271                                               𝑃𝑐 =         𝑣𝑗 𝑐(𝑣1 + · · · + 𝑣𝑗 ).                         (13)
+272                                                      𝑗=1
+273
+      The order is a rule for defining a set function, not an ordering of actual moves.
+274
+275
+          Lemma 2.4 (Ordered insertion bounds). Insert a player of weight 𝑤 into a fixed ordering, leaving
+276                                                                  ∑︀
+277   prefix weight 𝑋 and subsequent weights 𝑣1 , . . . , 𝑣𝑚 . Let 𝑌 = 𝑋 + 𝑤 +
+                                                                        𝑗 𝑣𝑗 . For a nonnegative-coefficient
+278   polynomial 𝑐 of degree at most 𝑑 ≥ 1,
+279                                                   0 ≤ ∆𝑃𝑐 ≤ 𝑑𝑤𝑐(𝑌 ).
+280
+281   If all subsequent users have weight at most 𝑤, the upper bound improves to 𝑤𝑐(𝑌 ). If all have weight at
+282   least 𝑤, the lower bound improves to 𝑤𝑐(𝑌 ). A last-position insertion has marginal exactly 𝑤𝑐(𝑌 ).
+283
+                                      ∑︀
+284       Proof. Let 𝑧𝑗 = 𝑋 + 𝑤 +        𝑞≤𝑗 𝑣𝑞 . The exact marginal is
+285                                                              ∑︁
+286                                 ∆𝑃𝑐 = 𝑤𝑐(𝑋 + 𝑤) +                 𝑣𝑗 [𝑐(𝑧𝑗 ) − 𝑐(𝑧𝑗 − 𝑤)] ≥ 0.
+287                                                               𝑗
+288
+      For 𝑐(𝑧) = 𝑧 𝑘 , 1 ≤ 𝑘 ≤ 𝑑, each difference is at most 𝑘𝑤𝑌 𝑘−1 . On dividing by 𝑤𝑌 𝑘 , the upper bound
+289
+290   becomes 𝑢𝑘 + 𝑘(1 − 𝑢) ≤ 𝑘, where 𝑢 = (𝑋 + 𝑤)/𝑌 . A constant monomial has exact marginal 𝑤 times its
+291   coefficient, so the bound follows by addition.
+292
+          For adjacent weights 𝑎 ≥ 𝑏 and a common endpoint 𝑧, the contribution with 𝑎 before 𝑏 minus that with
+293
+      𝑏 before 𝑎 is                          [︂                           ]︂
+294
+                                        𝑐(𝑧) − 𝑐(𝑧 − 𝑎)   𝑐(𝑧) − 𝑐(𝑧 − 𝑏)
+295                                     𝑎𝑏              −                    ≤ 0.                      (14)
+                                               𝑎                 𝑏
+296
+      The inequality holds because the slope of a convex function on a shorter interval with the same right
+297
+298   endpoint is larger. Move the inserted player from the end of its subsequent block to its assigned position.
+299   If those subsequent weights are all at most 𝑤, the swaps can only reduce its added contribution; if all are
+300   at least 𝑤, they can only increase it. Appending contributes 𝑤𝑐(𝑌 ), proving the refinements.              □
+301
+302
+      2.4.1    Two orders on a resource with two weight types. We now use the ordering estimate to choose local
+303
+304
+      marginals that can be added across resources. Suppose the resource has potential optional weights 𝑎 > 𝑏 > 0,
+305   with current counts 𝑚, 𝑛. Define the heavy-first and light-first sums
+306                                                         𝑚
+                                                           ∑︁                 𝑛
+                                                                             ∑︁
+307                                      𝐷𝑐 (𝑚, 𝑛) = 𝑎           𝑐(𝑗𝑎) + 𝑏         𝑐(𝑚𝑎 + 𝑘𝑏),                 (15)
+308                                                        𝑗=1               𝑘=1
+309                                                         𝑛
+                                                           ∑︁                 𝑚
+                                                                             ∑︁
+310                                        𝑈𝑐 (𝑚, 𝑛) = 𝑏         𝑐(𝑘𝑏) + 𝑎         𝑐(𝑛𝑏 + 𝑗𝑎).                 (16)
+311                                                        𝑘=1               𝑗=1
+
+312   Manuscript submitted to ACM
+      Structural Methods for Approximate Stability in Weighted Congestion Games                                        7
+
+313   Equal-weight users can be freely permuted without changing the value. Applying Lemma 2.4, with 𝑌 always
+314
+      the post-insertion load, gives
+315
+316                 0 ≤ ∆𝑎 𝐷𝑐 ≤ 𝑎𝑐(𝑌 ),   ∆𝑎 𝑈𝑐 = 𝑎𝑐(𝑌 ),     ∆𝑏 𝐷𝑐 = 𝑏𝑐(𝑌 ),    𝑏𝑐(𝑌 ) ≤ ∆𝑏 𝑈𝑐 ≤ 𝑑𝑏𝑐(𝑌 ).          (17)
+317
+318   For 𝑟 ≥ 1, set
+319                       𝐹𝑐,𝑟 = (1 − 1/𝑟)𝐷𝑐 + (1/𝑟)𝑈𝑐 ,        𝐾𝑑ord (𝑟) = max{𝑟, 1 + (𝑑 − 1)/𝑟}.
+320
+321   Then
+                        1
+322                       𝑎𝑐(𝑌 ) ≤ ∆𝑎 𝐹𝑐,𝑟 ≤ 𝑎𝑐(𝑌 ),    𝑏𝑐(𝑌 ) ≤ ∆𝑏 𝐹𝑐,𝑟 ≤ [1 + (𝑑 − 1)/𝑟]𝑏𝑐(𝑌 ).            (18)
+                        𝑟
+323
+324
+      The minimum of 𝐾𝑑ord is                   √
+                                            1 + 4𝑑 − 3
+325                                   𝑎𝑑 =              ,     𝑎𝑑 (𝑎𝑑 − 1) = 𝑑 − 1.                           (19)
+326
+                                                 2
+327
+      The issue is whether the resource’s heavy/light scale ratio 𝑟 can be made consistent on the other resources
+328   of the same players.
+329
+330     Proposition 2.5 (Fixed local scales). Suppose a fixed local resource function has marginal bounds
+331                                                      𝑐𝑒 (𝑌 ) ≤ ∆𝑣 𝐻𝑒 ≤ 𝛽𝑝𝑒,𝑣 𝑣̂︀
+      with type coefficients 𝑝𝑒,𝑣 > 0, of the form 𝑝𝑒,𝑣 𝑣̂︀                       𝑐𝑒 (𝑌 ). On the multigraph of two-
+332
+      type resources, orient each edge 𝑢 → 𝑣 arbitrarily and label it 𝑞𝑒 = 𝑝𝑒,𝑣 /𝑝𝑒,𝑢 . Positive resource multipliers
+333
+334
+      𝜅𝑒 and common type scales 𝑡𝑣 satisfying 𝜅𝑒 𝑝𝑒,𝑣 = 𝑡𝑣 exist if and only if the oriented product of labels around
+335   every closed walk is one.
+336
+337     Proof. The equations imply 𝑡𝑣 /𝑡𝑢 = 𝑞𝑒 , so necessity follows by cancellation around a walk. Conversely
+338   choose one root scale in each component and define the others by multiplying labels along a path, using
+339
+      inverse labels backwards. The closed-walk condition makes this independent of the path. Set 𝜅𝑒 = 𝑡𝑢 /𝑝𝑒,𝑢 .
+340
+341
+      Single-type resources impose no further condition.                                                               □
+342
+343     This is an equivalence for positive multiples of the specified local functions. It does not classify all resource
+344   potentials.
+345
+346     Theorem 2.6 (Compatible type scales). Assume every resource has at most two optional weight
+347   types. Form a simple type graph by joining types that share a nonzero-cost two-type resource, oriented from
+348
+      heavy 𝑎 to light 𝑏. If positive scales 𝑡𝑣 satisfy, on every such edge,
+349
+350
+                                  𝑟𝑎𝑏 = 𝑡𝑏 /𝑡𝑎 ≥ 1,     𝑟𝑎𝑏 ≤ 𝛽,      1 + (𝑑 − 1)/𝑟𝑎𝑏 ≤ 𝛽,                          (20)
+351
+352   then a 𝛽-PNE exists and every strict 𝛽 improvement terminates.
+353
+354     Proof. Use 𝑡𝑏 𝐹𝑐̂︀𝑒 ,𝑟𝑎𝑏 on a two-type resource. By (18), its common lower scales are 𝑎𝑡𝑎 and 𝑏𝑡𝑏 , and the
+355
+                                                                                                     ∑︀𝑛
+      corresponding upper scales are at most 𝛽 times these. On a single-type resource of type 𝑣 use 𝑡𝑣 𝑣     𝑐𝑒 (𝑗𝑣).
+                                                                                                        𝑗=1 ̂︀
+356
+      The insertion marginal is exactly 𝑡𝑣 𝑣̂︀
+                                            𝑐𝑒 (𝑌 ). Apply Lemma 2.1 with 𝑞𝑖 = 𝑤𝑖 𝑡𝑤𝑖 .                                □
+357
+358
+        Corollary 2.7 (Type forests). If the type graph is a forest, an 𝑎𝑑 -PNE exists and every strict 𝑎𝑑
+359
+360   improvement terminates, independently of the number of types or their weight ratios.
+361
+362     Proof. Choose a root scale on each tree and impose 𝑡𝑏 = 𝑎𝑑 𝑡𝑎 along every heavy-to-light edge. Unique
+363   paths make these equations consistent, and (19) verifies (20).                                                   □
+364                                                                                        Manuscript submitted to ACM
+      8                                                                                                        Anon.
+
+365       A long decreasing chain alone therefore does not force a linear approximation in this class. The type
+366
+      graph is distinct from the player–resource incidence graph: two players sharing two resources already give
+367
+368
+      a cycle in the latter and a single edge in the former.
+369
+370   2.4.2   Cycle constraints and exact contract thresholds. The forest construction extends to a general type
+371   graph precisely when its scale intervals are consistent around cycles. For 1 < 𝛽 < 𝑑, the uniform contract is
+372
+373                                    𝐿 ≤ 𝑡𝑏 /𝑡𝑎 ≤ 𝛽,     𝐿 = (𝑑 − 1)/(𝛽 − 1) > 1.                               (21)
+374
+375
+      Writing 𝑧𝑣 = log 𝑡𝑣 turns it into difference constraints with arcs 𝑎 → 𝑏 of length log 𝛽 and 𝑏 → 𝑎 of length
+376   − log 𝐿.
+377
+378       Theorem 2.8 (Cycle imbalance). For every undirected simple cycle 𝐶, let 𝑝𝐶 , 𝑞𝐶 count heavy-to-light
+379
+      and light-to-heavy steps along a traversal. Both are positive. Define
+380
+381                            𝜌𝐺 = max ({1} ∪ {max(𝑝𝐶 /𝑞𝐶 , 𝑞𝐶 /𝑝𝐶 ) : 𝐶 a simple cycle}) .
+382
+383   If the type graph has an edge, the least 𝛽 satisfying (20) is the unique root 𝛽𝐺 ∈ (1, 𝑑) of
+384
+385                                             𝛽𝐺 (𝛽𝐺 − 1)𝜌𝐺 = (𝑑 − 1)𝜌𝐺 .                                       (22)
+386
+      It is attained, 𝑎𝑑 ≤ 𝛽𝐺 < 𝑑, and equality 𝛽𝐺 = 𝑎𝑑 holds exactly when 𝜌𝐺 = 1. Equivalently, for 1 < 𝛽 < 𝑑
+387
+388   the contract is feasible precisely when 𝛽 ≥ 𝑎𝑑 and every simple cycle satisfies
+389
+390
+                                𝛽 𝑞𝐶 (𝛽 − 1)𝑝𝐶 ≥ (𝑑 − 1)𝑝𝐶 ,     𝛽 𝑝𝐶 (𝛽 − 1)𝑞𝐶 ≥ (𝑑 − 1)𝑞𝐶 .                     (23)
+391
+392       Proof. Summing log-ratio intervals around a cycle requires 𝑝𝐶 log 𝐿 ≤ 𝑞𝐶 log 𝛽 and 𝑞𝐶 log 𝐿 ≤ 𝑝𝐶 log 𝛽,
+393   giving necessity. For sufficiency, a simple directed cycle of the difference-constraint graph is either a two-arc
+394
+      return on one edge, whose length is log 𝛽 − log 𝐿, or a traversal of an undirected simple cycle. The single-
+395
+396
+      edge condition and (23) make every such length nonnegative. Hence no negative cycle exists. Add a source
+397   with zero arcs; shortest-path distances satisfy all upper difference bounds and supply 𝑧𝑣 . Exponentiating
+398   supplies the scales.
+399
+          The cycle and single-edge conditions combine as log 𝛽 ≥ 𝜌𝐺 log((𝑑 − 1)/(𝛽 − 1)). The difference of these
+400
+401
+      sides is strictly increasing on (1, 𝑑), tends to minus infinity at one, and is positive at 𝑑. Its unique zero
+402   is (22). At 𝑎𝑑 both logarithms agree and are positive, yielding the comparison and its equality criterion. For
+403   𝛽 ≥ 𝑑, constant scales work directly.                                                                          □
+404
+405
+406
+          These conditions provide usable decision certificates: feasible scales certify a potential, and a violated
+407   product inequality certifies failure of this contract. Failure does not certify that the game has no 𝛽-PNE. For
+408   example, put one independent resource of cost 𝑥𝑑 on each edge of any type graph, with dedicated endpoint
+409
+      players choosing between that resource and the empty action. The all-empty state is an exact equilibrium,
+410
+411
+      including when the uniform scale contract fails.
+412       The imbalance 𝜌𝐺 can be obtained without listing every cycle. With 𝑛 type vertices, it belongs to
+413   {1} ∪ {𝑃/𝑄 : 1 ≤ 𝑄 ≤ 𝑃 ≤ 𝑛 − 1}. For any candidate 𝑅 ≥ 1, the rational difference system
+414
+415                                             1 ≤ ℎ𝑏 − ℎ𝑎 ≤ 𝑅     (𝑎 → 𝑏)
+416   Manuscript submitted to ACM
+      Structural Methods for Approximate Stability in Weighted Congestion Games                                             9
+
+417   is feasible exactly when 𝑅 ≥ 𝜌𝐺 , by the same cycle proof. A shortest-path computation with rational arc
+418
+      lengths 𝑅, −1 gives feasibility or a negative cycle. Searching the polynomial-sized candidate set finds 𝜌𝐺 ;
+419
+420
+      this complexity statement concerns the explicit type graph, not equilibrium search. At the endpoint, scales
+421   can be expressed as 𝑡𝑣 = 𝐿ℎ𝑣 with a feasible ℎ for 𝑅 = 𝜌𝐺 . If 𝜌𝐺 = 𝑃/𝑄, the unique endpoint satisfies the
+                          𝑄
+422   integer polynomial 𝛽𝐺 (𝛽𝐺 − 1)𝑃 = (𝑑 − 1)𝑃 , so a finite algebraic representation suffices.
+423
+        A chain of 𝑔 decreasing edges plus a shortcut from its heaviest to lightest type has 𝜌𝐺 = 𝑔 and contract
+424
+425
+      endpoint 𝛽(𝛽 − 1)𝑔 = (𝑑 − 1)𝑔 . For fixed 𝑔, this is asymptotic to 𝑑𝑔/(𝑔+1) . If 𝑔/ log 𝑑 → 𝑎 ∈ (0, ∞), division
+426   by 𝑑 gives a limit 𝑒−1/𝑎 . To see the latter directly, use 𝛽 − 1 = (𝑑 − 1)/𝛽 1/𝑔 : the bound 𝛽 < 𝑑 first gives
+427   a positive lower bound on 𝛽/𝑑, and then log 𝛽/ log 𝑑 → 1. Deleting the shortcut restores a forest and its
+428
+      square-root guarantee. This is a statement about scale conflict, rather than a nonexistence construction.
+429
+430   2.4.3   Calibration from actual weights and user counts. The bounds 0, 𝑑 in (17) may be loose. On a nonzero
+431
+      two-type resource let 𝑛𝑎 , 𝑛𝑏 be the numbers of optional users and define exact finite extrema
+432
+433                                               ∆𝑎 𝐷(𝑚, 𝑛)                                     ∆𝑏 𝑈 (𝑚, 𝑛)
+                        A𝑒 =          min                    ,         B𝑒 =         max                      .            (24)
+434                             0≤𝑚<𝑛𝑎 , 0≤𝑛≤𝑛𝑏    𝑎̂︀
+                                                     𝑐𝑒 (𝑌 )                  0≤𝑚≤𝑛𝑎 , 0≤𝑛<𝑛𝑏     𝑏̂︀
+                                                                                                    𝑐𝑒 (𝑌 )
+435
+      They use all local count sets within the potential population, whether or not every such set occurs in a
+436
+437
+      global state. The dictionary studied here is the nonnegative span 𝑥𝐷 + 𝑦𝑈 ; the certificate requires insertion
+438   bounds on that complete local domain.
+439
+440
+        Theorem 2.9 (Finite interval calibration). One has 0 < A𝑒 ≤ 1 ≤ B𝑒 ≤ 𝑑. Fix 𝛽 ≥ 1, normalize
+441   the heavy type scale to one, and write 𝑟 = 𝑡𝑏 /𝑡𝑎 . There are 𝑥, 𝑦 ≥ 0 giving common marginal bounds at
+442   factor 𝛽 if and only if
+443
+444                             A𝑒 𝑥 + 𝑦 ≥ 1,      𝑥 + 𝑦 ≤ 𝛽,         𝑟 ≤ 𝑥 + 𝑦,          𝑥 + B𝑒 𝑦 ≤ 𝛽𝑟.                  (25)
+445
+446   If nonempty, the projection onto 𝑟 is a compact interval [𝑙𝑒 , 𝛽], 𝑙𝑒 > 0, with rational endpoints for rational
+447   data and rational 𝛽.
+448
+        Writing 𝐴 = A𝑒 , 𝐵 = B𝑒 , define
+449                ⎧                                                        ⎧
+450                ⎨0                                       𝐴 = 1,          ⎨1                                   𝐵 = 1,
+451           𝜆− =                                                     𝜆+ =
+                   ⎩max{0, (𝛽 −1 − 𝐴)/(1 − 𝐴)}              𝐴 < 1,          ⎩min{1, (𝛽 − 1)/(𝐵 − 1)}             𝐵 > 1.
+452
+453
+      The interval is nonempty exactly when 𝜆− ≤ 𝜆+ . In that case
+454
+455
+                                                                     1 + (𝐵 − 1)𝜆
+                                                 𝑙𝑒 =     min                         .                                   (26)
+456                                                     𝜆∈[𝜆− ,𝜆+ ] 𝛽[𝐴 + (1 − 𝐴)𝜆]
+
+457
+      The minimum is at 𝜆− when 𝐴𝐵 ≥ 1 and at 𝜆+ when 𝐴𝐵 ≤ 1.
+458
+459     Proof. The heavy insertion in 𝐷 has a strictly positive own term, and the finite population gives a
+460
+      positive minimum. Its maximum normalized marginal is one, attained with no light users. For light insertion
+461
+      in 𝑈 , the minimum is one, attained with no heavy users. The other two normalized marginals are identically
+462
+463   one. Thus the exact extrema of the nonnegative mixture are 𝐴𝑥 + 𝑦, 𝑥 + 𝑦 for heavy users and 𝑥 + 𝑦, 𝑥 + 𝐵𝑦
+464   for light users; these are exactly (25).
+465
+        Put 𝑠 = 𝑥 + 𝑦, 𝜆 = 𝑦/𝑠. Then 1 ≤ 𝑠 ≤ 𝛽, and feasibility is
+466
+467                               𝑠[𝐴 + (1 − 𝐴)𝜆] ≥ 1,       𝑠[1 + (𝐵 − 1)𝜆] ≤ 𝛽𝑟,         𝑟 ≤ 𝑠 ≤ 𝛽.
+468                                                                                                Manuscript submitted to ACM
+      10                                                                                                     Anon.
+
+469   For fixed 𝜆, existence is equivalent to 𝐴+(1−𝐴)𝜆 ≥ 𝛽 −1 and 1+(𝐵 −1)𝜆 ≤ 𝛽, namely the stated 𝜆 interval.
+470
+      The least 𝑟 at that 𝜆 is the ratio in (26), obtained by taking 𝑠 = [𝐴 + (1 − 𝐴)𝜆]−1 . Its derivative has the
+471
+472
+      sign of 𝐴𝐵 − 1. The feasible polytope is convex and bounded in 𝑥, 𝑦, 𝑟, with 𝑟 ≥ 1/𝛽 > 0, so the projection
+473   is a compact interval. From any feasible (𝑥, 𝑦, 𝑟), multiply 𝑥, 𝑦 by 𝛽/𝑠 and set 𝑟 = 𝛽; the inequalities remain
+474   valid. Hence its upper endpoint is 𝛽. All formulas are rational when the input is rational.                  □
+475
+476
+477
+           Unlike (20), an actual interval can include 𝑟 < 1. After combining parallel resources by 𝑙𝑎𝑏 = max𝑒 𝑙𝑒 ,
+478   common type scales exist exactly when
+479                                                    𝑙𝑎𝑏 ≤ 𝑡𝑏 /𝑡𝑎 ≤ 𝛽                                          (27)
+480
+481
+      holds on every edge. The same difference-constraint proof applies, now with reverse arc length − log 𝑙𝑎𝑏 .
+482   Equivalently, every traversal of a simple cycle, with forward-edge set 𝐹 and reverse-edge set 𝑅, obeys
+483                                          ∏︁                 ∏︁
+484
+                                                 𝑙𝑒 ≤ 𝛽 |𝑅| ,      𝑙𝑒 ≤ 𝛽 |𝐹 | .
+                                              𝑒∈𝐹                𝑒∈𝑅
+485
+486   These heterogeneous constraints should not be replaced by the uniform imbalance formula (22). On a forest,
+487   nonempty local intervals are sufficient, by assigning scales along unique paths.
+488
+           For a resource with 0 < 𝐴 < 1 < 𝐵, its least feasible dictionary factor is the unique positive root 𝑞𝑒 > 1
+489
+490   of
+491                                       (1 − 𝐴)𝑞𝑒2 + (𝐴𝐵 − 1)𝑞𝑒 − (𝐵 − 1) = 0.                                 (28)
+492
+      If 𝐴 = 1 or 𝐵 = 1, it is one. To prove (28), on 1 ≤ 𝛽 ≤ min{1/𝐴, 𝐵} cross-multiply 𝜆− ≤ 𝜆+ ; the resulting
+493
+494   inequality is that the polynomial in (28) is nonnegative. It has one positive root, is negative at one, and
+495   is nonnegative at both 1/𝐴 and 𝐵. Above their minimum feasibility persists by relaxing the same bounds.
+496
+      Consequently the exact minimum dictionary factor on a forest is max𝑒 𝑞𝑒 , with the endpoint attained.
+497
+      Exactness here refers throughout to this dictionary, these type scales, and all local insertions.
+498
+499        Rational calibration can avoid numerical logarithms. Treat difference-constraint arc lengths as logarithms
+500   of rational multipliers 𝛽 and 1/𝑙𝑒 . A layered shortest-path calculation multiplies these rationals and com-
+501
+      pares the products. At most 𝑛 layers suffice for feasibility or a cycle certificate; path products then have
+502
+      polynomial bit length in explicit rational input. The extrema (24) use at most 𝑛𝑎 (𝑛𝑏 + 1) + (𝑛𝑎 + 1)𝑛𝑏
+503
+504   count evaluations. With explicitly listed players and strategies and dense polynomial input these certificate
+505   calculations have polynomial size. They do not bound the length of a subsequent improvement path.
+506
+           For example, one optional user of weight three and one of weight one on cost 𝑥2 give 𝐴 = 7/8, 𝐵 = 11/8.
+507
+      At 𝛽 = 10/9, the exact interval is [43/40, 10/9], with lower-endpoint mixture 𝑥 = 8/9, 𝑦 = 2/9. Indeed
+508
+509   𝐴𝑥 + 𝑦 = 1, 𝑥 + 𝑦 = 10/9, and 𝑥 + 𝐵𝑦 = 43/36 = 𝛽(43/40). This improves the uniform square-root
+510   certificate on this resource and any forest of such calibrated resources, without asserting that the game’s
+511
+      true best equilibrium factor is 10/9.
+512
+513
+514
+      2.5     Weight depth and the onset of linear approximation factors
+515   Type-cycle compatibility and weight depth measure different obstructions. The next theorem allows arbi-
+516
+      trarily many types per resource and uses a common rank on individual players.
+517
+518        Absorb globally fixed players as background. On the remaining players put an arc 𝑖 → 𝑗 if 𝑤𝑖 > 𝑤𝑗
+519   and some resource belongs to at least one strategy of each. Let ℎ be the maximum number of vertices on a
+520   Manuscript submitted to ACM
+      Structural Methods for Approximate Stability in Weighted Congestion Games                                                11
+
+521   directed path, and 𝑘 the number of distinct remaining weights. The graph is acyclic and ℎ ≤ 𝑘. In particular,
+522
+      the graph uses potential co-occupancy, not co-occupancy at one chosen state. Aggregating players of the
+523
+524
+      same weight into types can create paths that cannot be followed through the same intermediate player.
+525     For 𝑑 ≥ 2, ℎ ≥ 1, let 𝐴𝑑,ℎ be the unique positive root
+526                                                    ℎ−1
+                                                       ∑︁ (︂ 𝑑 − 1 )︂𝑗
+527                                              𝐴=                    .                                                      (29)
+528                                                    𝑗=0
+                                                               𝐴
+529
+530
+      It lies in [1, 𝑑): the right side minus 𝐴 is strictly decreasing, is nonnegative at one, and is negative at 𝑑.
+531
+        Theorem 2.10 (Player-height potential). Every game of degree at most 𝑑 ≥ 2 and potential
+532
+533   decreasing-weight height ℎ ≥ 1 has an 𝐴𝑑,ℎ -PNE, and every strict improvement by this factor terminates.
+534   The same conclusion holds with 𝑘 in place of ℎ.
+535
+536     Proof. Give player 𝑖 rank 𝑟𝑖 , the length in vertices of a longest directed path ending there. Potential
+537
+      co-users of unequal weight have strictly increasing ranks as their weights decrease; equal-rank co-users
+538
+      therefore have equal weights. For 𝑏 = 1, . . . , ℎ, order resource users by the rank order
+539
+540
+                                            𝜋𝑏 = (ℎ, ℎ − 1, . . . , 𝑏 + 1, 1, 2, . . . , 𝑏)
+541
+542   and use the right sum (13), denoted 𝑃𝑏,𝑒 . In a given rank, identical weights can be reordered so that an
+543
+      insertion is last in its rank. For a player of rank 𝑖, Lemma 2.4 gives normalized marginal intervals [1, 𝑑]
+544
+545
+      when 𝑏 < 𝑖, the exact value one when 𝑏 = 𝑖, and [0, 1] when 𝑏 > 𝑖.
+        Write 𝐴 = 𝐴𝑑,ℎ , 𝑡 = (𝑑 − 1)/𝐴, 𝜆𝑏 = 𝑡𝑏−1 /𝐴, and 𝑆𝑖 = 𝑏≤𝑖 𝜆𝑏 . Equation (29) gives 𝑏 𝜆𝑏 = 1. The
+                                                                  ∑︀                       ∑︀
+546
+                    ∑︀
+547   mixture 𝐹𝑒 = 𝑏 𝜆𝑏 𝑃𝑏,𝑒 has insertion bounds
+548
+549                                𝑐𝑒 (𝑌 ) ≤ ∆𝑖 𝐹𝑒 ≤ [1 + (𝑑 − 1)𝑆𝑖−1 ]𝑤̂︀
+                               𝑆𝑖 𝑤̂︀                                   𝑐𝑒 (𝑌 ) = 𝐴𝑆𝑖 𝑤̂︀
+                                                                                       𝑐𝑒 (𝑌 ).
+550
+551   The last identity follows directly from the finite geometric sums, including 𝑡 = 1. Thus 𝑞𝑖 = 𝑤𝑖 𝑆𝑟𝑖 is
+552   independent of the resource. Apply Lemma 2.1. The root is nondecreasing in ℎ, so ℎ ≤ 𝑘 yields the second
+553   assertion.                                                                                                                □
+554
+555     For 𝑑 = 0, each player independently minimizes its sum of constant latencies. For 𝑑 = 1, an exact resource
+556
+      potential is ℓ𝑒 (𝑥2𝑒 + 𝑖:𝑒∈𝑠𝑖 𝑤𝑖2 )/2 + 𝛾𝑒 𝑥𝑒 when 𝑐𝑒 (𝑥) = ℓ𝑒 𝑥 + 𝛾𝑒 ; its insertion marginal is 𝑤𝑖 𝑐𝑒 (𝑌 ). Thus
+                            ∑︀
+557
+558   these degrees have exact equilibria without a height restriction.
+559
+560     Theorem 2.11 (Necessary depth, with its exact inversion). For 1 ≤ 𝛼 < 𝑑, define
+                                              log(𝑑 − 𝛼)
+561
+                                          ⎧
+562
+                                          ⎪
+                                          ⎨                , 𝛼 ̸= 𝑑 − 1,
+                                 𝐻𝑑 (𝛼) =   log((𝑑 − 1)/𝛼)                                                                    (30)
+563                                       ⎪
+                                          ⎩𝑑 − 1,            𝛼 = 𝑑 − 1.
+564
+565
+      A game without an 𝛼-PNE must have ℎ > 𝐻𝑑 (𝛼) and 𝑘 > 𝐻𝑑 (𝛼). No game without an 𝛼-PNE exists for
+566
+567
+      𝛼 ≥ 𝑑.
+568                                                                            ∑︀ℎ−1                𝑗
+569
+        Proof. Theorem 2.10 implies 𝛼 < 𝐴𝑑,ℎ < 𝑑. Let 𝑓ℎ (𝑥) =                    𝑗=0 ((𝑑 − 1)/𝑥)       − 𝑥, a strictly decreasing
+570   function. With 𝑡 = (𝑑 − 1)/𝛼 ̸= 1,
+571                                             (𝑡 − 1)𝑓ℎ (𝛼) = 𝑡ℎ − (𝑑 − 𝛼).
+572                                                                                                 Manuscript submitted to ACM
+      12                                                                                                           Anon.
+
+573   If 𝑡 > 1, 𝑓ℎ (𝛼) > 0 means 𝑡ℎ > 𝑑 − 𝛼; if 𝑡 < 1, it means 𝑡ℎ < 𝑑 − 𝛼. Taking logarithms in either case gives
+574
+      ℎ > 𝐻𝑑 (𝛼). At 𝑡 = 1 the condition is ℎ > 𝑑 − 1. The inequality for 𝑘 follows from ℎ ≤ 𝑘.                          □
+575
+576        For each fixed 𝑐 ∈ (0, 1) this yields
+577
+578
+                                                  log((1 − 𝑐)𝑑)    log 𝑑 + log(1 − 𝑐)
+                                     ℎ, 𝑘 >                      =                    + 𝑜𝑐 (1)                        (31)
+579                                             log((1 − 1/𝑑)/𝑐)        log(1/𝑐)
+580   whenever no 𝑐𝑑-PNE exists and 𝑑 is sufficiently large. It also calibrates the potential’s transition: if ℎ/ log 𝑑 →
+581
+      𝑎 ∈ (0, ∞), then 𝐴𝑑,ℎ /𝑑 → 𝑒−1/𝑎 . Indeed for each fixed 𝑥 ∈ (0, 1) the ratio 𝐻𝑑 (𝑥𝑑)/ log 𝑑 tends to 1/ log(1/𝑥),
+582
+583   and 𝐴𝑑,ℎ > 𝑥𝑑 is equivalent to ℎ > 𝐻𝑑 (𝑥𝑑). Taking 𝑥 on either side of 𝑒−1/𝑎 proves the limit. The endpoint
+584   cases give 𝐴𝑑,ℎ = 𝑜(𝑑) if ℎ = 𝑜(log 𝑑) and 𝐴𝑑,ℎ /𝑑 → 1 if ℎ/ log 𝑑 → ∞.
+585        The fixed-𝑐 qualification cannot be dropped. At 𝛼 = 𝑑 − 1, nonexistence already requires ℎ, 𝑘 ≥ 𝑑.
+586
+      More generally the constants in (31) diverge as 𝑐 tends to one. High depth is necessary, not sufficient, for
+587
+588   instability: an arbitrarily deep potential co-occupancy graph can coexist with an exact equilibrium.
+589        For 1 ≤ 𝛼 < 𝑑, there is also a witness interpretation for a cycle of strict 𝛼 improvements. Retain only
+590   players moving in the cycle, absorb the others as background, and draw decreasing-weight arcs only between
+591
+      players actually sharing a resource at some endpoint of that cycle. Apply the proof of Theorem 2.10 with
+592
+593   ranks from this graph. Its insertion bounds are needed only for the old deletion and new addition endpoints
+594   that occur in the cycle, where the ranks are compatible with the weights. If its height were at most 𝐻𝑑 (𝛼),
+595   the same potential would strictly decrease around the cycle, a contradiction. Thus even such a cycle must
+596
+      collectively witness a longer decreasing-weight path, possibly using different resources and endpoint states
+597
+598   for its different edges. This statement does not assert nonexistence from the cycle.
+599
+600   2.6     Realizing stability on a structured set of states
+601
+      The preceding potentials certify deviations throughout a given game. We now consider a complementary
+602
+603   construction: first analyze deviations within a structured set of states, then add legal resources that exclude
+604   all other states. The added costs are part of the resulting game and must be included in its stability
+605
+      comparisons.
+606
+           Let a binary base game 𝐺𝐵 have ordered classes 𝒞𝑎 = ((𝑎, 0), . . . , (𝑎, 𝑛𝑎 −1)), with common weight 𝑤𝑎 > 0
+607
+608   inside each class. Let 𝐹𝑛 be the binary strings with at most one change between consecutive positions; we
+                                            ∏︀               ⊕𝑖
+609   call these strings fronts and put ℱ =   𝑎 𝐹𝑛𝑎 . Write 𝑠   for the state obtained by flipping player 𝑖’s bit. A
+610
+      core deviation is a real single-player flip whose two endpoints both belong to ℱ. This restricted deviation
+611
+      system need not be a normal-form subgame because ℱ need not be a Cartesian product over individual
+612
+613   players.
+614
+615
+      2.6.1    Legal gates and the complete stable set. We realize the front condition using resources shared by three
+616   players of the same weight. For every class and 1 ≤ 𝑗 < 𝑘 < 𝑛𝑎 , add two fresh resources used only by players
+617   (𝑎, 0), (𝑎, 𝑗), (𝑎, 𝑘). Their resource sides are their action bits xor (0, 1, 0) respectively. The two sides have the
+618
+      same nonnegative nondecreasing latency 𝑐𝑎 , which may be a nonnegative-coefficient polynomial. Resource
+619
+620
+      pairs are disjoint from all other pairs and the base game. No players, weights, or action labels are added.
+621   Write                          (︃          )︃
+622                                       𝑛𝑎 − 1
+                              𝐿𝑎 =                 ,   𝑧𝑎 = 𝑐𝑎 (𝑤𝑎 ),   𝑢𝑎 = 𝑐𝑎 (2𝑤𝑎 ),   𝑣𝑎 = 𝑐𝑎 (3𝑤𝑎 ),             (32)
+623                                         2
+624   Manuscript submitted to ACM
+      Structural Methods for Approximate Stability in Weighted Congestion Games                                          13
+
+625   with 𝐿𝑎 = 0 if 𝑛𝑎 ≤ 2. A gate is triggered precisely for action patterns 010 or 101, when all three players
+626
+      use the same side and each pays 𝑣𝑎 . Otherwise its users split into a pair and a singleton. The number of
+627
+628
+      gates involving player (𝑎, 𝑖) is                  ⎧
+629
+                                                        ⎪𝐿 ,       𝑖 = 0,
+                                                        ⎨ 𝑎
+                                                        ⎪
+                                                        ⎪
+630
+                                               𝑟𝑎,𝑖 =    𝑛 − 2,    𝑖 > 0, 𝑛𝑎 ≥ 3,                                      (33)
+631                                                     ⎪ 𝑎
+                                                        ⎪
+                                                                   𝑛𝑎 ≤ 2.
+                                                        ⎪
+                                                        ⎩0,
+632
+633
+      In all cases 𝑟𝑎,𝑖 ≤ 𝐿𝑎 . Let 𝐵𝑎 > 0 bound every base-game cost of every player of class 𝑎 over all states.
+634
+635
+      Such a bound can be obtained by evaluating each resource at the total weight of all its potential users and
+636   summing over the resources a player may use.
+637
+638     Theorem 2.12 (Stable-core realization). Fix 𝛼 ≥ 1. Suppose, for each 𝑛𝑎 ≥ 3,
+639
+                                                        𝑣𝑎 > 𝛼(𝐵𝑎 + 𝐿𝑎 𝑢𝑎 ).                                           (34)
+640
+641
+      In the augmented game 𝐺+ , the entire set of 𝛼-PNE is
+642                    {︁                                                                                   }︁
+643              𝒯𝛼 = 𝑠 ∈ ℱ : 𝐶𝑖𝐵 (𝑠) − 𝛼𝐶𝑖𝐵 (𝑠⊕𝑖 ) ≤ (𝛼 − 1)𝑟𝑎,𝑖 𝑢𝑎           for every core flip by 𝑖 ∈ 𝒞𝑎 .         (35)
+644
+645   At 𝛼 = 1 this is exactly the base core’s stable set. For 𝛼 > 1 the displayed tolerance is essential.
+646
+647     Proof. All gates of a class are untriggered exactly for front strings. A front has no alternating subse-
+648   quence of the form 𝑏, 1 − 𝑏, 𝑏. If a string is not a front, let 𝑖 > 0 be its first bit different from its first bit 𝑏;
+649
+      some later 𝑗 equals 𝑏, so gate (0, 𝑖, 𝑗) triggers.
+650
+        At a state outside ℱ, perform this single-player correction 𝑖 ↦→ 𝑏. Its old gate cost is at least 𝑣𝑎 . Every
+651
+652   gate involving it is now untriggered: when 𝑖 is the middle index it equals the anchor; when it is the last
+653   index, the middle index is earlier and already equals the anchor. The new base cost is at most 𝐵𝑎 and new
+654
+      gate cost at most 𝐿𝑎 𝑢𝑎 . Thus the correction has strictly positive 𝛼 margin by (34). No outside state is
+655
+      stable.
+656
+657     Starting inside ℱ, a flip leaving ℱ triggers a gate involving the mover. Its new cost is at least 𝑣𝑎 , whereas
+658   its old cost is at most 𝐵𝑎 + 𝐿𝑎 𝑢𝑎 < 𝑣𝑎 /𝛼. Such a flip cannot be a strict 𝛼 improvement.
+659
+        Finally take a core flip. In each gate involving the mover, both endpoint patterns are untriggered. The
+660
+      mover must be in a two-player group before and after: moving from a singleton would join the other two
+661
+662   and trigger the gate. Its cost is therefore exactly 𝑢𝑎 on both endpoints of every participating gate. Its full
+663   margin is
+664
+                                 𝐶𝑖+ (𝑠) − 𝛼𝐶𝑖+ (𝑠⊕𝑖 ) = 𝐶𝑖𝐵 (𝑠) − 𝛼𝐶𝑖𝐵 (𝑠⊕𝑖 ) − (𝛼 − 1)𝑟𝑎,𝑖 𝑢𝑎 .                      (36)
+665
+666   The three cases exhaust every state and legal deviation, proving the formula.                                      □
+667
+668
+        Every 𝛼-stable base core state lifts, but approximate stable states can also be added: the common gate
+669   baseline absorbs a small positive base margin. Exact stability is preserved in both directions. In particular,
+670   a core with one exact stable state cannot be made completely unstable merely by increasing these gate
+671
+      coefficients. Conversely, all-state nonexistence follows if every core state has a preserving exit exceeding its
+672
+673
+      corresponding tolerance.
+674     The nonzero baseline reflects an obstruction for added resources with nonnegative-coefficient polynomial
+675   latencies. If every action of a player appears in some core state, an added cost of this kind that vanishes
+676                                                                                           Manuscript submitted to ACM
+      14                                                                                                          Anon.
+
+677   for that player on all core states must vanish on all its states. Indeed a nonzero nonnegative-coefficient
+678
+      resource has positive cost at any positive load, including the player’s own weight; hence none of its actions
+679
+680
+      can contain such a resource. One cannot assume zero gate leakage on a full-projection core without proving
+681   a different implementation.
+682
+683
+684
+685
+      2.6.2    Repair paths and the degree budget. The same construction gives an explicit correction path and a
+686
+687   condition for implementing the gates at a prescribed degree. The correction in the proof lowers by one the
+688   number of nonanchor bits differing from the anchor. Initially that number is at most 𝑛𝑎 − 2 in an illegal
+689   class. The specified correction schedule therefore reaches ℱ in at most
+690                                                ∑︁
+691                                                    max{𝑛𝑎 − 2, 0}                                                 (37)
+692                                                     𝑎
+693
+      steps, each a strict 𝛼 improvement under (34). This does not imply termination of arbitrary improvement
+694
+      paths after entering the core.
+695
+696        For a monomial implementation, let 𝐵 = max𝑎 𝐵𝑎 , 𝐿 = max𝑎 𝐿𝑎 ≥ 1, and choose
+697
+698
+                                   𝑀 = 2𝛼𝐵,        𝑐𝑎 (𝑥) = 𝑀 (𝑥/(3𝑤𝑎 ))𝐷 ,      𝜁𝐷 = (2/3)𝐷 .
+699
+      Then 𝑣𝑎 = 𝑀 and 𝑢𝑎 = 𝑀 𝜁𝐷 . The condition 𝜁𝐷 ≤ 1/(4𝛼𝐿) implies (34), with margin at least 𝛼𝐵/2. If
+700
+701
+      every core state has a preserving base exit of margin at least 𝜂 > 0, it is enough in addition that
+702
+                                                      (𝛼 − 1)𝐿𝑀 𝜁𝐷 ≤ 𝜂/2.                                             (38)
+703
+704   The resulting game has no 𝛼-PNE. A convenient stronger sufficient budget, when 𝜂 ≤ 𝐵, is
+705
+                                                                    𝜂
+706                                                    (2/3)𝐷 ≤          .                                            (39)
+707
+                                                                  4𝛼2 𝐵𝐿
+708   The output degree is max{𝑝, 𝐷} when the base degree is at most 𝑝. The number of added resources is
+      2 𝑎 𝐿𝑎 , and the number of new player–action–resource incidences is 6 𝑎 𝐿𝑎 . The coefficient 𝑀/(3𝑤𝑎 )𝐷
+       ∑︀                                                                  ∑︀
+709
+710
+      is rational for rational data and has bit length 𝑂(bits(𝑀 ) + 𝐷(1 + bits(𝑤𝑎 ))). Thus keeping a prescribed
+711
+712
+      degree requires a real inequality proving 𝐷 is within budget; it does not follow from finite realizability.
+713        This design can also be expressed as a finite linear certificate. For a base cost function 𝐵𝑖 (𝑠) and already
+      legal disjoint modules with player costs 𝐻𝑖𝑗 (𝑠), nonnegative coefficients 𝜆𝑗 yield 𝐶𝑖𝜆 (𝑠) = 𝐵𝑖 (𝑠)+          𝑗
+                                                                                                            ∑︀
+                                                                                                               𝑗 𝜆𝑗 𝐻𝑖 (𝑠).
+714
+715
+      For a deviation 𝑠 → 𝑡 by player 𝑖, write ∆𝛼,𝑖 𝑋(𝑠, 𝑡) = 𝑋𝑖 (𝑠) − 𝛼𝑋𝑖 (𝑡) for any player-cost family 𝑋. Chosen
+716
+717
+      exits from states to exclude impose strict linear inequalities
+718
+                                                        ∑︁
+                                         ∆𝛼,𝑖 𝐵(𝑠, 𝑡) +     𝜆𝑗 ∆𝛼,𝑖 𝐻 𝑗 (𝑠, 𝑡) > 0,
+719
+                                                             𝑗
+720
+721   and all deviations of states to retain impose the corresponding weak reverse inequalities. A common slack
+722   variable 0 ≤ 𝜌 ≤ 1 replacing strict positivity by ≥ 𝜌 certifies feasibility with 𝜌 > 0. Rational feasible data
+723   admit rational realizations. This is a finite template-selection method, possibly involving all states; it cannot
+724
+      convert arbitrary prescribed cost tables into legal congestion resources, nor can an infeasible template rule
+725
+726   out all other realizations.
+727
+728   Manuscript submitted to ACM
+      Structural Methods for Approximate Stability in Weighted Congestion Games                                           15
+
+729   3     All-state counterexamples from finite windows
+730
+731
+      The endpoint estimates and the realization theorem now give a family with a strict improvement at every
+732   state. Adjacent windows transmit the improvement between weight classes; a return window covers the
+733   phase configurations left by the adjacent tests. The anchored gates from Theorem 2.12 then cover all states
+734
+      outside the product of fronts. We give the actual parameters and resource sets before proving the asymptotic
+735
+736
+      consequence.
+737
+738   3.1     A family with explicit rational parameters
+739
+740   The construction has one parameter controlling the target factor and another controlling the polynomial
+741   degree. All resource incidences and coefficients are specified by the following finite formulas.
+742
+743
+          Theorem 3.1 (Uniform family). Let integers 𝑛 ≥ 2 and 𝑑 ≥ 16 satisfy
+744
+745                         𝑑 ≥ 8𝑛,      𝑇 = (1 + 1/(8𝑛))𝑑 ≥ 16𝑛𝑑,            𝑑 log(3/2) > 200𝑛(log 𝑑)2 .                (40)
+746
+747   There is a finite rational game with positive pure degree-𝑑 monomial latencies, two nonempty disjoint strate-
+748
+      gies per player, and a strict (1 − 1/𝑛)𝑑 improvement at every state.
+749
+750
+751
+          We specify the game and then deduce the theorem from the estimates in Appendix A. Define
+752
+                  𝛿 = 1/𝑛,     𝛼 = (1 − 𝛿)𝑑,   𝜃 = 𝛿/8,     𝜅 = 1 + 𝜃,   𝑏 = 1 − 𝛿/2,         𝐾 = 𝑑4 ,     𝑅 = 8𝑛𝑑4 .    (41)
+753
+754
+      Thus 𝐾/𝑅 = 𝜃 and the atomic resolution is 1/𝑅; these two quantities have separate roles. Set
+755
+                                                             𝐾                                        𝐾
+756                                                         ∑︁                                       ∑︁
+757
+                         𝐻 = 𝑇 − 𝛼,                    𝑋=      (1 + 𝑟/𝑅)𝑑 ,                   𝑌 =       (𝑟/𝑅)𝑑 ,         (42)
+                                                            𝑟=1                                      𝑟=1
+758
+759                      𝐽 = 𝛼𝑋 − 𝑌,                   𝑆 = 𝜅𝐽/𝐻.
+760
+      Let 𝑔 ≥ 2 be the least integer with 𝑏𝑔 ≤ (192𝑑2 )−1 , and put
+761
+762
+                                           𝑁 = 𝑅𝑔 /𝑑,        𝜀 = 𝑅−𝑔 ,        𝑁 𝜀 = 1/𝑑.                                 (43)
+763
+764   The number 𝑁 is an integer because 𝑑 divides 𝑅. Define the return sums and amplitudes
+765
+                                                𝑁                                        𝑁
+766
+                                               ∑︁                                       ∑︁
+            𝑊0 = (1 + 1/𝑑)𝑑 ,             𝑈=      (1 + 𝑟𝜀)𝑑 ,                     𝑉 =      (𝑟𝜀)𝑑 ,         𝑍 = 𝑈 − 𝛼𝑉,   (44)
+767
+                                                 𝑟=1                                    𝑟=1
+768
+769
+              𝐴𝑎 = 𝑆 𝑎    (0 ≤ 𝑎 < 𝑔),      𝐴𝑅                     = 𝐻/(4𝛼𝑊0 ).
+770
+      All these definitions use only integer arithmetic, finite rational sums and powers, and rational comparisons.
+771
+772
+      Logarithms enter the estimates but not the game data.
+773
+774   3.1.1    Players, resource pairs, and actions. The parameters determine a game directly: each player selects
+775   one side of every resource pair in which it participates. There are players 𝑃𝑎,𝑗 with 0 ≤ 𝑎 ≤ 𝑔 and 𝑗 ∈ Z/𝑁 Z,
+776
+      of weight 𝑤𝑎 = 𝑅−𝑎 . Use representatives 𝑗 = 0, . . . , 𝑁 − 1 and the global position pos(𝑎, 𝑗) = 𝑗(𝑔 + 1) + 𝑎.
+777
+778
+          A test 𝜏 = (𝑎, 𝑏, 𝑘, 𝑜), 𝑎 < 𝑏, has a pair of fresh resources 𝑒𝜏,𝑗,0 , 𝑒𝜏,𝑗,1 for each anchor ℎ = 𝑃𝑎,𝑗 . The
+779   anchor’s action bit selects its resource side. Its window users are 𝑢 = 𝑃𝑏,𝑗+𝑡 mod 𝑁 for 𝑡 = 0, . . . , 𝑘 − 1. A
+780                                                                                               Manuscript submitted to ACM
+      16                                                                                                       Anon.
+
+781   window user with action bit 𝑧𝑢 selects side
+782
+783                                        𝑧𝑢 ⊕ 1[pos(𝑢) > pos(ℎ)] ⊕ 1[𝑜 = −1].                                   (45)
+784
+785
+      No other user occupies the pair. Use the 𝑔 adjacent tests (𝑎, 𝑎 + 1, 𝐾, −1) with both resource latencies
+786   (𝐴𝑎 /𝑤𝑎𝑑 )𝑥𝑑 , and the return test (0, 𝑔, 𝑁, +1) with both latencies 𝐴𝑅 𝑥𝑑 . All pairs in all tests are distinct.
+787   A player’s action is the union of the sides prescribed by its bit over all pairs in which it participates.
+788
+      Every player participates, so both actions are nonempty; the actions are disjoint since each pair contributes
+789
+790
+      opposite sides. There are (𝑔 + 1)𝑁 players and 2(𝑔 + 1)𝑁 base resources, all with positive rational data.
+791        For the full game, set
+792                                          𝐵* = (𝑔 + 1)𝑅𝑔 𝑇,      𝑀 = 2𝛼𝐵* .                                    (46)
+793
+794   For every class 𝑎 and every 1 ≤ 𝑗 < 𝑘 < 𝑁 , add the anchored pair of Section 2.6 on 𝑃𝑎,0 , 𝑃𝑎,𝑗 , 𝑃𝑎,𝑘 , with
+795   latency 𝑀 (𝑥/(3𝑤𝑎 ))𝑑 on both sides. These are ordinary congestion resources. They add no players and
+796   preserve the two disjoint actions of every player.
+797
+798
+           Proof of Theorem 3.1. Lemma A.1 gives the endpoint, propagation, and return estimates for these
+799
+800
+      parameters. The phase analysis in Appendix A.2 shows that every product-front state has a preserving
+801   single-player deviation with base margin at least 𝜂 = 𝜃𝐻/4. Appendix A.3 proves that 𝐵* bounds all base
+802   costs and verifies the degree-𝑑 gate budget (39). Theorem 2.12 therefore excludes every nonfront state,
+803
+      while each front exit retains margin at least 𝜂/2. Thus every state has a strict 𝛼 = (1 − 1/𝑛)𝑑 improvement.
+804
+805
+      The displayed resource formulas give positive rational data and two nonempty disjoint actions for every
+806   player.                                                                                                       □
+807
+808        For a single fully specified member of the family, take 𝑛 = 2 and 𝑑 = 221 in these formulas. Corollary A.3
+809   verifies the parameter conditions, so the resulting rational game has no 220 -PNE. This choice provides an
+810
+      explicit instance without optimizing its number of players or resources. Varying 𝑛 and 𝑑 gives the stronger
+811
+812   asymptotic statement below.
+813
+814   3.2     The near-degree bound and the universal threshold
+815
+816
+      We now choose the target factor as a function of the degree. The uniform conditions of Theorem 3.1 allow
+817   this choice to approach 𝑑 while retaining the same legal resource construction.
+818
+819        Theorem 3.2 (All-state near-degree lower bound). For every integer 𝑑 ≥ 220 there is a finite
+820   weighted congestion game with positive rational weights and latencies 𝑐𝑒 (𝑥) = 𝑎𝑒 𝑥𝑑 , 𝑎𝑒 > 0 rational, such
+821
+      that every player has exactly two nonempty disjoint resource-set strategies and
+822
+
+                                   ∀𝑠 ∃𝑖, 𝑡𝑖 : 𝐶𝑖 (𝑠) > 𝑑 − 1200⌈log2 𝑑⌉2 𝐶𝑖 (𝑡𝑖 , 𝑠−𝑖 ).
+                                                       (︀                )︀
+823                                                                                                               (47)
+824
+825        Proof. Put ℓ = ⌈log2 𝑑⌉ and 𝑛 = ⌈𝑑/(1200ℓ2 )⌉. Appendix A.4 checks all three conditions in (40) for
+826
+      every 𝑑 ≥ 220 . Theorem 3.1 gives a strict improvement at factor 𝑑 − 𝑑/𝑛 ≥ 𝑑 − 1200ℓ2 . Nonnegative costs
+827
+828
+      give the claimed margin at the smaller factor.                                                                □
+829
+830        The parameter check is uniform in 𝑛 and 𝑑. This is needed because 𝑛 now grows with the degree; a
+831   statement with a separate unspecified threshold for each fixed 𝑛 would not imply Theorem 3.2.
+832   Manuscript submitted to ACM
+      Structural Methods for Approximate Stability in Weighted Congestion Games                                    17
+
+833        Let 𝑎* (𝑑) be the infimum of 𝛼 ≥ 1 such that every finite game of degree at most 𝑑 has an 𝛼-PNE.
+834
+      Caragiannis and Fanelli’s monomial potential [1, Theorem 2], extended termwise as in the Introduction,
+835
+836
+      and Theorem 3.2 give
+                                                                        𝑎* (𝑑)
+837                                𝑑 − 1200⌈log2 𝑑⌉2 ≤ 𝑎* (𝑑) ≤ 𝑑,         lim = 1.                       (48)
+                                                                          𝑑𝑑→∞
+838
+      The infimum formulation needs no claim about an extremal finite game at the precise universal threshold.
+839
+840        There is also a matching structural consequence. For fixed 𝑐 ∈ (0, 1) define 𝐻𝑐 (𝑑) and 𝐾𝑐 (𝑑) as the
+841   least possible potential player height and the least possible number of distinct movable weights among
+842
+      degree-at-most-𝑑 games with no 𝑐𝑑-PNE, with value +∞ if none exist.
+843
+844        Corollary 3.3 (Minimum depth for a fixed linear obstruction). For every fixed 𝑐 ∈ (0, 1), both
+845
+      𝐻𝑐 (𝑑) and 𝐾𝑐 (𝑑) are Θ𝑐 (log 𝑑) for all sufficiently large integer 𝑑.
+846
+847        Proof. The lower bound is (31). For the upper bound choose an integer 𝑛 > 1/(1 − 𝑐) once and use the
+848
+      uniform construction in Section 3, verified in Appendix A with target (1 − 1/𝑛)𝑑. Its sufficient conditions
+849
+      hold for every large enough 𝑑, as shown in Corollary A.3. The players have weights 𝑅−𝑎 for 𝑎 = 0, . . . , 𝑔,
+850
+851   with 𝑔 ≤ 13𝑛 log 𝑑. Repair adds no players or weights. Hence 𝑘 = 𝑔 + 1. Moreover the particular players
+852   𝑃0,0 , . . . , 𝑃𝑔,0 form a potential decreasing-weight path: the adjacent test anchored at clone zero includes
+853
+      light clone zero in its window. Thus ℎ = 𝑔 + 1 as well. The constants may depend on the fixed 𝑐 through
+854
+      𝑛.                                                                                                           □
+855
+856
+           The lower and upper bounds match in order, not in leading coefficient. In the varying near-one regime
+857
+      of Theorem 3.2, the chosen depth is larger and this fixed-𝑐 statement does not assert a uniform logarithmic
+858
+859   bound.
+860
+861   4     Applications to stable states and social optimization
+862
+      The counterexamples use large endpoint amplification and enough weight levels to propagate it. We now
+863
+864   apply the area comparison to small actual shares and use the scale and gate constructions to study stable
+865   states with social-cost guarantees.
+866
+867   4.1     Existence under small atomic shares
+868
+869   To quantify the effect of small actual atomic shares, define, for 0 ≤ 𝑢 ≤ 1,
+                                        ∫︁ 1
+870
+                                                            1 − (1 − 𝑢)𝑑+1
+871                           𝐾𝑑 (𝑢) =       (1 − 𝑢𝑣)𝑑 𝑑𝑣 =                ,    𝐾𝑑 (0) = 1.                      (49)
+                                          0                    (𝑑 + 1)𝑢
+872
+873   It is nonincreasing in 𝑢, and 𝐾𝑘 (𝑢) ≥ 𝐾𝑑 (𝑢) when 𝑘 ≤ 𝑑.
+874
+875
+           Theorem 4.1 (Small-share existence). Suppose that, at every feasible state where an optional player
+876   𝑖 occupies resource 𝑒, its share of the actual total load obeys 𝑤𝑖 /𝑥𝑒 (𝑠) ≤ 𝜂 ≤ 1. Then a 𝐾𝑑 (𝜂)−1 -PNE exists,
+877   and every strict improvement by that factor terminates.
+878                           ∑︀ ∫︀ 𝑥𝑒 (𝑠)
+879     Proof. Use Φ(𝑠) =       𝑒 𝑏𝑒       𝑐𝑒 (𝑡) 𝑑𝑡. The contribution removed by a player of weight 𝑤 from total
+880   load 𝐿 is, for each monomial, exactly 𝑤𝐿𝑘 𝐾𝑘 (𝑤/𝐿). Thus it is at least 𝑤𝐾𝑑 (𝜂)𝑐𝑒 (𝐿). On an added resource
+881
+      monotonicity bounds the contribution by 𝑤𝑐𝑒 (𝐿′ ). Retained costs do not change, so
+882
+883                                         Φ(𝑡) − Φ(𝑠) ≤ 𝑤𝑖 [𝐶𝑖 (𝑡) − 𝐾𝑑 (𝜂)𝐶𝑖 (𝑠)].
+884                                                                                      Manuscript submitted to ACM
+      18                                                                                                       Anon.
+
+885   In this sum the retained resources add the nonnegative term 𝑤𝑖 (1 − 𝐾𝑑 (𝜂))𝐶𝑖,𝐻 to the right side. A strict
+886
+      𝐾𝑑 (𝜂)−1 improvement decreases this finite-state potential.                                                   □
+887
+888
+889
+           For fixed 𝑎 > 0, 𝐾𝑑 (𝑎/𝑑)−1 → 𝑎/(1 − 𝑒−𝑎 ); when 𝑑𝜂 → 0 the guarantee tends to one. The hypothesis
+890   refers to occupied loads at all relevant states. For the resourcewise preprocessing of Section 1.1, the largest
+891   optional share on resource 𝑒 is exactly 𝑤𝑖 /(𝑏𝑒 + 𝑤𝑖 ): every other optional user can independently choose a
+892
+      legal strategy omitting 𝑒, while 𝑖 chooses one containing it. Thus explicit strategy menus make this bound
+893
+894
+      directly checkable. In particular a resource with no compulsory load offers only the bound one under this
+895   all-state condition. Adding many potential users, or checking only one state, does not establish a small-
+896   share guarantee. This positive theorem and the endpoint gain describe the same analytic phenomenon from
+897
+      opposite atomic scales.
+898
+899
+900   4.2     Choosing a stable state with a social-cost certificate
+901
+      The same potentials also give a tradeoff between approximate stability and social cost. Here assume no
+902
+903
+      compulsory users on any resource, so that the load in the potential is the entire load in (1). Let Φ be a
+904   potential from Theorem 2.6 with factor 𝛽 ≤ 𝑑, resource multiplier 𝜅𝑒 = 𝑡light on two-type resources and
+905   𝜅𝑒 = 𝑡𝑣 on single-type resources. Ignore resources without potential users, and assume at least one remains.
+906
+      Put
+907                                        min𝑒 𝜅𝑒
+                                    𝑚0 =           ,𝑀0 = max 𝜅𝑒 ,      𝑡min = min 𝑡𝑣 .
+908                                         𝑑+1             𝑒                   𝑣
+909                                                 ∫︀ 𝑋
+      Every ordered right sum at load 𝑋 lies between 0 𝑐𝑒 (𝑧) 𝑑𝑧 and 𝑋𝑐𝑒 (𝑋); the integral is at least 𝑋𝑐𝑒 (𝑋)/(𝑑+
+910
+911
+      1), term by term. Convex combinations preserve this, so
+912
+                                                 𝑚0 𝑊 (𝑠) ≤ Φ(𝑠) ≤ 𝑀0 𝑊 (𝑠).                                      (50)
+913
+914
+           Proposition 4.2 (Stability and cost regularization). For 𝜂 ≥ 0, any global minimizer 𝑠𝜂 of
+915
+916   Φ + 𝜂𝑊 satisfies
+917                                                     (𝑑 + 1 − 𝛽)𝜂                 𝑀0 + 𝜂
+918                    𝑠𝜂 is a 𝛾𝜂 -PNE,      𝛾𝜂 = 𝛽 +                ,   𝑊 (𝑠𝜂 ) ≤          min 𝑊 (𝑠).            (51)
+                                                          𝑡min + 𝜂                   𝑚0 + 𝜂 𝑠
+919
+920      Proof. For an inserted weight 𝑤 ending at load 𝑌 , the marginal of 𝑋𝑐𝑒 (𝑋) lies between 𝑤𝑐𝑒 (𝑌 ) and
+921
+      (𝑑 + 1)𝑤𝑐𝑒 (𝑌 ). For a monomial this is the identity 𝑌 𝑘+1 − (𝑌 − 𝑤)𝑘+1 = 𝑤 𝑘𝑟=0 𝑌 𝑘−𝑟 (𝑌 − 𝑤)𝑟 , whose
+                                                                                 ∑︀
+922
+      sum lies between 𝑌 𝑘 and (𝑘 + 1)𝑌 𝑘 . Hence the new lower and upper marginal coefficients for player 𝑖 are
+923
+924   𝑤𝑖 (𝑡𝑤𝑖 + 𝜂) and 𝑤𝑖 (𝛽𝑡𝑤𝑖 + (𝑑 + 1)𝜂). Their ratio is at most 𝛾𝜂 , maximized at 𝑡min . Lemma 2.1 gives stability.
+925   Global minimality and (50) give the cost comparison.                                                          □
+926
+927
+           The stability conclusion uses only local minimality, whereas the social-cost comparison uses global mini-
+928
+929
+      mality. With compulsory background loads, the target 𝑊 also includes their varying costs, so (50) requires
+930   a separate baseline estimate. The bound is informative when the resulting scale range is controlled.
+931
+932   4.3     Social compression and transfer of quality
+933
+934   The gate construction gives more than stable-set localization. Here 𝐶𝑖𝐵 , 𝑊 𝐵 denote player costs and social
+935   cost in the base game 𝐺𝐵 , and 𝐶𝑖+ , 𝑊 + denote those in the augmented game 𝐺+ . Let 𝜈𝑎 (𝑠) count triggered
+936   Manuscript submitted to ACM
+      Structural Methods for Approximate Stability in Weighted Congestion Games                                                  19
+
+937   gates of class 𝑎, and put
+938                                                                       ∑︁
+939                               𝑑𝑎 = 3𝑣𝑎 − 2𝑢𝑎 − 𝑧𝑎 ,         𝐾0 =           𝑤𝑎 𝐿𝑎 (2𝑢𝑎 + 𝑧𝑎 ).                               (52)
+940                                                                        𝑎
+
+941   The symbol 𝑑𝑎 is a social penalty, distinct from the polynomial degree 𝑑.
+942
+943     Lemma 4.3 (Exact social decomposition). At every state,
+944                                                       ∑︁
+945                              𝑊 + (𝑠) = 𝑊 𝐵 (𝑠) + 𝐾0 +    𝑤𝑎 𝜈𝑎 (𝑠)𝑑𝑎 .                                                      (53)
+946                                                                       𝑎
+
+947   In particular 𝑊 + (𝑠) = 𝑊 𝐵 (𝑠) + 𝐾0 throughout ℱ.
+948
+949     Proof. An untriggered gate has two users paying 𝑢𝑎 and one paying 𝑧𝑎 , while a triggered gate has three
+950
+      users paying 𝑣𝑎 . The users have the same weight 𝑤𝑎 . Summing the two possible contributions gives the
+951
+      identity.                                                                                                                   □
+952
+953                                                                                       ∑︀        ∑︀
+        The same front constant-shift identity holds for any objective 𝐽𝛾 =                  𝑎 𝛾𝑎        𝑖∈𝒞𝑎 𝐶𝑖   with coefficients
+954
+955
+      constant within a class, replacing 𝑤𝑎 by 𝛾𝑎 . It need not hold for arbitrary player coefficients or the maximum
+956   player cost.
+957     Under (34), if the stable set is nonempty, Theorem 2.12 and Lemma 4.3 imply the exact stable selection
+958
+      identity
+959
+960
+                                            min         𝑊 + (𝑠) = 𝐾0 + min 𝑊 𝐵 (𝑠).                                             (54)
+                                         𝑠∈PNE𝛼 (𝐺+ )                         𝑠∈𝒯𝛼
+961
+      This remains valid without any assertion about unrestricted social optimization. To compare with the
+962
+963
+      complete game’s OPT, the following externality control is needed.
+964
+        Lemma 4.4 (Base social externality). If the base degree is at most 𝑝, then for a unilateral deviation
+965
+966   𝑠 → 𝑡 by a player of weight 𝑤𝑖 ,
+967                                                           ∑︁
+                            𝑊 𝐵 (𝑡) − 𝑊 𝐵 (𝑠) ≤ (𝑝 + 1)𝑤𝑖               𝑐𝑒 (𝑥𝑒 (𝑡)) ≤ (𝑝 + 1)𝑤𝑖 𝐶𝑖𝐵 (𝑡).                        (55)
+968
+                                                             𝑒∈𝑡𝑖 ∖𝑠𝑖
+969
+970     Proof. Retained resources have the same load; deleted resources cannot increase 𝑥𝑐𝑒 (𝑥). At an added
+971
+      resource, with new load 𝑦 = 𝑥 + 𝑤𝑖 , a degree-𝑘 monomial contributes a social increment 𝑦 𝑘+1 − 𝑥𝑘+1 =
+972
+      𝑤𝑖 𝑘𝑟=0 𝑦 𝑘−𝑟 𝑥𝑟 ≤ (𝑘 + 1)𝑤𝑖 𝑦 𝑘 . Sum with the nonnegative coefficients and then over added resources. This
+         ∑︀
+973
+974   counts the externality on compulsory users as part of the true social cost.                                                 □
+975
+976
+        Theorem 4.5 (Socially decreasing repair). If every class with 𝑛𝑎 ≥ 3 satisfies
+977
+                                               3𝑣𝑎 − 2𝑢𝑎 − 𝑧𝑎 > (𝑝 + 1)𝐵𝑎 ,                                                     (56)
+978
+979
+      then every specified earliest-error correction strictly decreases 𝑊 + . Every global social optimum lies in ℱ,
+980
+      and
+981
+982                                          OPT(𝐺+ ) = 𝐾0 + min 𝑊 𝐵 (𝑠).                                                       (57)
+                                                                        𝑠∈ℱ
+983
+      If (34) also holds and 𝑠 ∈ 𝒯𝛼 satisfies 𝑊 𝐵 (𝑠) ≤ 𝜆 min𝑡∈ℱ 𝑊 𝐵 (𝑡) for 𝜆 ≥ 1, then 𝑠 is an 𝛼-PNE and
+984
+985
+                                                  𝑊 + (𝑠) ≤ 𝜆OPT(𝐺+ ).                                                          (58)
+986
+987   An additive base-core gap 𝜀 likewise transfers as an additive full-game gap 𝜀.
+988                                                                                                 Manuscript submitted to ACM
+       20                                                                                                         Anon.
+
+989         Proof. The correction removes at least one trigger and creates none: the proof of Theorem 2.12 shows
+990
+       every gate involving the mover becomes untriggered, and no other gate changes. The social gate reduction is
+991
+992
+       at least 𝑤𝑎 𝑑𝑎 . Lemma 4.4 bounds the base increase by (𝑝+1)𝑤𝑎 𝐵𝑎 , so (56) makes the total strictly decrease.
+993    No outside state can be optimal; on ℱ use (53) to obtain (57). For quality, stability follows from (35) and
+994
+995
+                                𝑊 + (𝑠) = 𝐾0 + 𝑊 𝐵 (𝑠) ≤ 𝐾0 + 𝜆 min 𝑊 𝐵 ≤ 𝜆(𝐾0 + min 𝑊 𝐵 ),
+                                                                       ℱ                    ℱ
+996
+       since 𝐾0 ≥ 0. The additive version uses the same equality. No division by the optimum is needed.                 □
+997
+998
+999         When 3𝛼 ≥ 𝑝 + 1, strong dominance (34) already implies (56). Indeed 𝐿𝑎 ≥ 1, 𝑧𝑎 ≤ 𝑢𝑎 , and
+1000
+1001                                 3𝑣𝑎 − 2𝑢𝑎 − 𝑧𝑎 > 3𝛼𝐵𝑎 + (3𝛼𝐿𝑎 − 3)𝑢𝑎 ≥ (𝑝 + 1)𝐵𝑎 .
+1002
+1003   In particular every strongly dominating repair on a base of degree at most two has this social property. For
+1004   higher-degree bases, an individually improving correction need not reduce social cost, which is why (56) is
+1005
+       retained. The degree in that condition is the base degree, even when the gate has higher degree.
+1006
+1007
+1008
+            Corollary 4.6 (Regularized core selection with full-game quality). Suppose base resource
+1009   functions 𝐹𝑒 , with 𝐹𝑒 (∅) = 0, have common insertion scales ℎ𝑖 > 0 and factor 𝛼0 ≥ 1:
+1010
+1011
+                                                   ℎ𝑖 𝑐𝑒 (𝑌 ) ≤ ∆𝑖 𝐹𝑒 ≤ 𝛼0 ℎ𝑖 𝑐𝑒 (𝑌 )
+1012                                                                                               ∑︀
+       on their potential-user insertion domain, with actual load 𝑌 after insertion. Write Φ𝐵 =         𝑒 𝐹𝑒 , and suppose
+1013
+1014   0 < 𝑚 ≤ 𝑀 < ∞ satisfy 𝑚𝑊 𝐵 ≤ Φ𝐵 ≤ 𝑀 𝑊 𝐵 on ℱ. For 𝜂 ≥ 0 put
+1015                                                𝛼0 ℎ𝑖 + 𝜂(𝑝 + 1)𝑤𝑖                  𝑀 +𝜂
+1016
+                                        𝛽𝜂 = max                       ,        𝜆𝜂 =         .
+                                               𝑖         ℎ𝑖 + 𝜂𝑤𝑖                       𝑚+𝜂
+1017
+1018   Choose a global minimizer 𝑠𝜂 of Φ𝐵 + 𝜂𝑊 𝐵 over ℱ. If the gates satisfy (34) at 𝛼 = 𝛽𝜂 and satisfy (56),
+1019   then 𝑠𝜂 is a full-game 𝛽𝜂 -PNE and 𝑊 + (𝑠𝜂 ) ≤ 𝜆𝜂 OPT(𝐺+ ).
+1020
+1021
+            Proof. The social resource function 𝑥𝑐𝑒 (𝑥) has insertion bounds 𝑤𝑖 𝑐𝑒 (𝑌 ) and (𝑝 + 1)𝑤𝑖 𝑐𝑒 (𝑌 ), as in the
+1022
+1023
+       proof of Proposition 4.2. Consequently Φ𝐵 + 𝜂𝑊 𝐵 has common lower scale ℎ𝑖 + 𝜂𝑤𝑖 and upper scale at
+1024   most 𝛽𝜂 times it. Applying the deviation calculation of Lemma 2.1 to endpoints in ℱ shows that a strict
+1025   core 𝛽𝜂 improvement would decrease this objective. Its global core minimum is thus core stable and lifts by
+1026
+       Theorem 2.12. If 𝑜 minimizes 𝑊 𝐵 over ℱ, global minimality gives
+1027
+1028                    (𝑚 + 𝜂)𝑊 𝐵 (𝑠𝜂 ) ≤ Φ𝐵 (𝑠𝜂 ) + 𝜂𝑊 𝐵 (𝑠𝜂 ) ≤ Φ𝐵 (𝑜) + 𝜂𝑊 𝐵 (𝑜) ≤ (𝑀 + 𝜂)𝑊 𝐵 (𝑜).
+1029
+1030   Theorem 4.5 transfers this quality ratio to the complete game.                                                   □
+1031
+1032
+1033
+            The required cost envelope concerns the real 𝑊 𝐵 . If optional-user potentials are normalized after ab-
+1034   sorbing compulsory loads, their constants must first be restored and that envelope proved again; a positive
+1035   resource used only by compulsory players otherwise has zero compressed potential and positive social cost.
+1036
+       The statement is a finite selection theorem. A core local minimum gives its stability conclusion, but the
+1037
+1038
+       cost conclusion requires the stated global minimum or a separate global objective bound. In particular its
+1039   gate dominance must be checked at 𝛽𝜂 , rather than at an earlier factor before regularization.
+1040   Manuscript submitted to ACM
+       Structural Methods for Approximate Stability in Weighted Congestion Games                                     21
+
+1041   4.4   A positive selection example and a decision procedure
+1042
+1043
+       Three unit-weight players choose resource 𝐴 of latency 𝑥 or resource 𝐵 of constant latency two; bit zero
+1044   means 𝐴. Add the one anchored gate 𝑐(𝑥) = 6(𝑥/3)2 in the order 0, 1, 2. Here 𝐵𝑎 = 3, 𝐿𝑎 = 1, (𝑧𝑎 , 𝑢𝑎 , 𝑣𝑎 ) =
+1045   (2/3, 8/3, 6). At 𝛼 = 1, the dominance margin is 6−3−8/3 = 1/3 > 0; the social penalty is 18−16/3−2/3 =
+1046
+       12 > (𝑝 + 1)𝐵𝑎 = 6. The gate baseline is 𝐾0 = 6.
+1047
+1048
+         The six front states have costs and exact stability as follows; the two excluded states are shown to make
+1049   the full-game comparison explicit.
+1050
+1051
+1052
+                                           State   In ℱ   𝑊+     Exact equilibrium
+1053
+                                            000    yes     15            no
+1054
+1055
+                                            001    yes     12            yes
+1056                                        010     no     24            no
+1057                                        011    yes     11            yes
+1058
+                                            100    yes     12            yes
+1059
+1060
+                                            101     no     23            no
+1061                                        110    yes     11            yes
+1062                                        111    yes     12            no
+1063
+1064
+1065
+       These claims can also be checked without the table. Within the base core, a stable state has one or two
+1066   users on 𝐴, with base total cost five or six respectively; all-𝐴 and all-𝐵 have preserving improvements. The-
+1067   orems 2.12 and 4.5 then show that the full-game optimum is eleven and is achieved at an exact equilibrium.
+1068
+       Selecting among the stable states reduces twelve to eleven while retaining exact stability. The output degree
+1069
+1070
+       is two, whereas the base degree is one.
+1071     More generally, if the gates are already present in an instance and (34) holds, one can enumerate ℱ,
+1072   check the tolerance conditions (35), and minimize the base cost on the resulting stable set, adding back 𝐾0 .
+1073
+       With (56), the same domain also computes the true social optimum. The size of the resulting enumeration
+1074
+1075
+       is |ℱ |, which need not be polynomial in a compact input. If a core descent potential is available, first use the
+1076   specified repair and then follow strict full-game improvements inside ℱ. By (36) every such core improvement
+1077   is a strict base 𝛼 improvement, so that potential proves termination. Without it, finite enumeration remains
+1078
+       the justified method. The required existence and quality bounds on the front domain are supplied by the
+1079
+1080
+       separate potential and optimization arguments.
+1081
+1082
+1083   4.5   Interpreting the resulting certificates
+1084
+       The hypotheses of the positive results describe different features of an instance. Small actual shares yield
+1085
+1086
+       the integral-potential guarantee even without a restriction on the number of weight types. Finite marginal
+1087   calibration instead uses the actual two-type populations and their scale constraints; player height offers a
+1088   third bound for resources with many types. For complete anchored gates, the stable-set formula (35) and
+1089
+       the social decomposition (53) separate stability from the additional condition (56) needed to compare with
+1090
+1091
+       unrestricted social optimization.
+1092                                                                                       Manuscript submitted to ACM
+       22                                                                                                     Anon.
+
+1093        In the near-degree construction, endpoint amplification, return windows, and same-degree gates have
+1094
+       distinct jobs: they transmit a strict margin, cover the remaining front configurations, and exclude nonfront
+1095
+1096
+       states. Their combination, rather than failure of a scale contract alone, gives the all-state lower bound.
+1097
+1098
+       A     Parameter estimates and complete state coverage
+1099
+1100   This appendix verifies the uniform family defined in Section 3. We first bound the endpoint and return
+1101
+       sums, then cover all relative phases of the front domain, and finally verify that the legal gates exclude every
+1102
+       remaining state at the same degree. All costs include the mover’s own weight.
+1103
+1104
+1105
+       A.1     Endpoint, propagation, and return estimates
+1106
+1107   We begin with the estimates used to transmit an improvement across adjacent weight classes and to close
+1108   the return window.
+1109
+1110
+1111        Lemma A.1 (Endpoint and propagation estimates). The parameters satisfy 𝐻, 𝐽 > 0, 1 < 𝑆 ≤
+1112   𝑏𝑅 < 𝑅, and
+1113
+                           𝐽/𝐻 ≥ 𝐾/8 > 1,         𝑌 /𝐽 ≤ 𝜃/16,      𝛼𝑋 ≤ 2𝐽,       𝜅𝐽 − 𝛼𝑋 ≥ 𝜃𝐽/2.               (59)
+1114
+1115   Furthermore,
+1116                                                                       𝐴𝑅 𝑍
+                                        𝑔 ≤ 13𝑛 log 𝑑,      𝑍 ≥ 𝑁/2,              ≥ 8,                           (60)
+1117                                                                       𝐴𝑔−1 𝐽
+1118   where 𝐴𝑔−1 = 𝑆 𝑔−1 , and
+1119
+1120                     𝑁 ≥ 24(𝑑 + 1)(𝑔𝐾 + 1) > 𝑔𝐾,          (𝛼 + 1)(𝑡 + 1)𝑊0 ≤ 𝑍/4       (0 ≤ 𝑡 ≤ 𝑔𝐾).         (61)
+1121
+1122
+1123        Proof. Lemma 2.2 gives
+1124                                       (1 + 𝜃)𝑇 − 1      (1 + 𝜃)𝑇 − 1
+1125                                   𝑅                ≤𝑋≤𝑅              + 𝑇 − 1.                               (62)
+                                               𝑑+1               𝑑+1
+1126
+1127
+       The second condition in (40) implies 𝛼/𝑇 ≤ 𝛿/16, and thus 𝐻 ≥ (1 − 𝛿/16)𝑇 > 𝑇 /2. Also 𝑑/𝑅 ≤ 𝛿/32, and
+1128
+                                       (1 − 𝛿)(1 + 𝛿/8)2 ≤ 1 − 3𝛿/4,       𝜅(1 − 𝛿) < 1.
+1129
+1130   Using 𝐽 ≤ 𝛼𝑋 in (62),
+1131
+                                  𝑆   𝜅(1 − 𝛿)(1 + 𝜃 + 𝑑/𝑅)   1 − 23𝛿/32
+1132                                ≤                       ≤            ≤ 1 − 𝛿/2 = 𝑏.                          (63)
+1133                              𝑅          1 − 𝛼/𝑇           1 − 𝛿/16
+1134
+       Termwise comparison yields 𝑌 ≤ 𝜌𝑋, with 𝜌 = (𝜃/(1 + 𝜃))𝑑 ≤ 𝜃2 . Since 𝛼 ≥ 2, 𝐽 ≥ 𝛼𝑋/2 > 0. The left
+1135
+       side of (62) is at least 𝐾𝑇 /(𝑑 + 1), as (1 + 𝜃)𝑇 − 1 ≥ 𝜃𝑇 . Hence 𝐽/𝐻 ≥ 𝛼𝐾/(2(𝑑 + 1)) ≥ 𝐾/8, and 𝑆 > 1.
+1136
+1137   Moreover
+                                              𝑌      𝜃2
+1138                                            ≤         ≤ 𝜃2 ≤ 𝜃/16,
+1139
+                                              𝐽    2 − 𝜃2
+1140   which proves all of (59) by 𝛼𝑋 = 𝐽 + 𝑌 and 𝜅 = 1 + 𝜃.
+1141        Since − log 𝑏 ≥ 1/(2𝑛), minimality of 𝑔 gives
+1142
+1143                                         2 ≤ 𝑔 ≤ 2𝑛 log(192𝑑2 ) + 1 ≤ 13𝑛 log 𝑑.
+1144   Manuscript submitted to ACM
+       Structural Methods for Approximate Stability in Weighted Congestion Games                                 23
+
+1145   For the last inequality, 𝑑 ≥ 4 suffices. The elementary exponential bound gives 𝑊0 < 3. Every term in 𝑍 is
+1146
+       at least 1 − 𝛼𝑑−𝑑 ≥ 1/2, so 𝑍 ≥ 𝑁/2. As 𝐻 = 𝜅𝐽/𝑆, (63) implies
+1147
+1148                                         𝐴𝑅 𝑍       𝜅𝑍         1
+                                                    =          ≥         ≥ 8.
+1149                                         𝐴𝑔−1 𝐽   4𝛼𝑊0 𝑆 𝑔   24𝑑2 𝑏𝑔
+1150
+       For 𝑔 ≥ 2, 𝑅𝑔−2 ≥ 2𝑔−2 ≥ 𝑔/2 by induction. Therefore
+1151
+1152                                        𝑔𝑅2
+                                      𝑁≥        ≥ 128𝑔𝑑7 ≥ 24(𝑑 + 1)(𝑔𝐾 + 1) > 𝑔𝐾.
+1153                                         2𝑑
+1154
+       For example, the penultimate comparison follows from 24(𝑑 + 1)(𝑔𝐾 + 1) ≤ 96𝑔𝑑5 . Finally 𝛼 ≤ 𝑑 and
+1155
+1156
+       𝑊0 < 3 give
+1157                                (𝛼 + 1)(𝑡 + 1)𝑊0 ≤ 3(𝑑 + 1)(𝑔𝐾 + 1) ≤ 𝑁/8 ≤ 𝑍/4,
+1158
+       proving (61).                                                                                              □
+1159
+1160
+1161
+       A.2     All front configurations have a preserving exit
+1162
+1163   A front in class 𝑎 is represented by 𝑥𝑎 ∈ Z/(2𝑁 )Z through
+1164                                               ⎧
+1165
+                                                   ⎨1[𝑗 < 𝑥],      0 ≤ 𝑥 < 𝑁,
+                                          𝐵𝑥 (𝑗) =                                                              (64)
+1166                                               ⎩1[𝑗 ≥ 𝑥 − 𝑁 ], 𝑁 ≤ 𝑥 < 2𝑁.
+1167
+1168   Forward 𝑥 → 𝑥 + 1 flips clone 𝑥 mod 𝑁 ; backward 𝑥 → 𝑥 − 1 flips clone (𝑥 − 1) mod 𝑁 . Thus these are
+1169   genuine one-player deviations, not moves by a whole class.
+1170
+         We first justify a common phase normalization for the base window game from its real resource incidences.
+1171
+1172
+       Shift all clone indices by one modulo 𝑁 and flip precisely those player bits crossing 𝑁 − 1 → 0. If 𝑒ℎ , 𝑒𝑢
+1173   are the corresponding wrap indicators, the ordering predicate in (45) changes by 𝑒ℎ ⊕ 𝑒𝑢 . The light player’s
+1174   changed bit cancels 𝑒𝑢 , and all users of an anchor pair change side by the same 𝑒ℎ . Exchange that pair’s
+1175
+       resource labels when 𝑒ℎ = 1. The two sides have the same latency, so base-game loads and player costs,
+1176
+1177
+       including costs after any specified single-player flip, are preserved. In (64) this transformation adds one
+1178   to every phase. We may therefore normalize a chosen mover class to phase zero while leaving the relative
+1179   phases arbitrary.
+1180
+1181
+1182     Lemma A.2 (Adjacent endpoint costs). Normalize the heavy phase of an adjacent test to zero, and
+1183
+       write 𝑟 = 𝑥𝑎+1 − 𝑥𝑎 (mod 2𝑁 ). Its heavy forward mover is clone zero, with old and new costs
+1184
+1185                                   𝐴𝑎 (1 + ℎ(𝑟)/𝑅)𝑑 ,     𝐴𝑎 (1 + (𝐾 − ℎ(𝑟))/𝑅)𝑑 ,                          (65)
+1186
+1187   where                                       ⎧
+1188                                               ⎨𝐾 − min{𝑟, 𝐾},   0 ≤ 𝑟 ≤ 𝑁,
+1189                                      ℎ(𝑟) =
+                                                   ⎩min{𝑟 − 𝑁, 𝐾},   𝑁 ≤ 𝑟 < 2𝑁.
+1190
+1191   The heavy backward costs are the reverse of (65) at 𝑟 + 1 (mod 2𝑁 ). If 𝑟 ∈
+                                                                                 / [0, 𝐾] ∪ [𝑁, 𝑁 + 𝐾], there is a
+1192   heavy front-preserving direction with costs (𝐴𝑎 𝑇, 𝐴𝑎 ).
+1193
+         At any relative phase, either front-preserving endpoint flip of a light class has old and new costs at most
+1194
+1195   𝐴𝑎 𝑋 in its incoming adjacent test.
+1196                                                                                     Manuscript submitted to ACM
+       24                                                                                                            Anon.
+
+1197        Proof. For heavy clone zero all its window users have greater global position. The negative orientation
+1198
+       in (45) therefore makes their resource sides equal their bits. Count the zero bits of 𝐵𝑟 on positions 0, . . . , 𝐾−1
+1199
+1200
+       to obtain ℎ(𝑟) and the two complementary loads in (65). A backward edge is the reversal of the forward
+1201   edge starting one phase earlier; relative to its normalized starting heavy phase, the light phase is 𝑟 + 1. For
+1202   𝐾 < 𝑟 < 𝑁 use backward, and for 𝑁 + 𝐾 < 𝑟 < 2𝑁 use forward, obtaining the displayed costs.
+1203
+            For the light statement normalize its phase to zero and consider its forward mover, clone zero. It belongs
+1204
+1205
+       to exactly 𝐾 windows, whose anchors have indices −𝑘 mod 𝑁 , 0 ≤ 𝑘 < 𝐾. Among the light users in each
+1206   window, the number on its current side is 𝐾 − 𝑘 and on its target side after moving is 𝑘 + 1, including the
+1207   mover. For 𝑘 = 0 the anchor is clone zero and all window positions precede a wrap; for 𝑘 > 0 the window
+1208
+       wraps through clone zero, with its 𝑘 high-index light users on the other side. This also gives the same counts
+1209
+1210
+       at the wrap. Let 𝑒𝑘 ∈ {0, 1} say whether that window’s heavy anchor is on its current side. Its two costs
+1211   are precisely
+                                      𝐾−1                                  𝐾−1
+1212                                  ∑︁                                   ∑︁
+1213
+                                 𝐴𝑎         ((𝐾 − 𝑘)/𝑅 + 𝑒𝑘 )𝑑 ,     𝐴𝑎          ((𝑘 + 1)/𝑅 + 1 − 𝑒𝑘 )𝑑 .              (66)
+                                      𝑘=0                                  𝑘=0
+1214
+1215
+       Both are at most 𝐴𝑎 𝑋. A backward edge reverses a forward edge at another relative phase, so the same
+1216   bounds hold.                                                                                                      □
+1217
+1218
+            If an adjacent difference is outside the two short intervals, choose the heavy exit from Lemma A.2. For
+1219
+1220   class zero the only other test is its one return pair; its new normalized load is at most 1 + 𝑁 𝜀, so discarding
+1221   nonnegative old return costs leaves total margin at least
+1222
+1223                                                      𝐻 − 𝛼𝐴𝑅 𝑊0 = 3𝐻/4.                                           (67)
+1224
+1225
+       For a heavy mover in class 1 ≤ 𝑎 < 𝑔, the only other test is incoming. The corresponding total margin is at
+1226   least
+1227                             𝐴𝑎 𝐻 − 𝛼𝐴𝑎−1 𝑋 = 𝐴𝑎−1 (𝜅𝐽 − 𝛼𝑋) ≥ (𝜃/2)𝐴𝑎−1 𝐽 ≥ 𝜃𝐻/2.                                 (68)
+1228
+1229
+       The last step uses 𝑆 > 1 and 𝐽 > 𝐻.
+1230        It remains to cover every front vector whose adjacent differences all lie in the short intervals. Write
+1231
+1232
+                               𝑥𝑎+1 − 𝑥𝑎 = 𝑘𝑎 𝑁 + 𝑡𝑎          (mod 2𝑁 ),    𝑘𝑎 ∈ {0, 1},
+                                                                             0 ≤ 𝑡𝑎 ≤ 𝐾.              (69)
+1233                                                                                  ∑︀
+       Summing gives 𝑥𝑔 − 𝑥0 = 𝑘𝑁 + 𝑡 (mod 2𝑁 ), with a parity 𝑘 ∈ {0, 1} and 0 ≤ 𝑡 = 𝑎 𝑡𝑎 ≤ 𝑔𝐾 < 𝑁 .
+1234
+1235        Normalize the last class to phase zero and write 𝑟 = 𝑥0 − 𝑥𝑔 . For its forward clone zero in the return test,
+1236   index all 𝑁 anchors by ℎ𝑗 = −𝑗 mod 𝑁 . Let 𝜎0 = 1, 𝜎𝑗 = 0 for 𝑗 > 0, and 𝑒𝑗 (𝑟) = 1[𝐵𝑟 (ℎ𝑗 ) = 𝜎𝑗 ]. By the
+1237   positive orientation in (45), the unscaled old and new return costs are
+1238
+                                    𝑁 −1                                         𝑁 −1
+1239                                ∑︁                                           ∑︁
+                           𝑂(𝑟) =           ((𝑁 − 𝑗)𝜀 + 𝑒𝑗 (𝑟))𝑑 ,   𝑄(𝑟) =             ((𝑗 + 1)𝜀 + 1 − 𝑒𝑗 (𝑟))𝑑 .     (70)
+1240
+                                      𝑗=0                                         𝑗=0
+1241
+1242   Indeed the light-side counts follow the same wrap count as (66), now with all 𝑁 light users. The all-one
+1243   𝑒 vector gives (𝑈, 𝑉 ) and the all-zero vector gives (𝑉, 𝑈 ). Flipping a single entry changes each cost by at
+1244
+       most 𝑊0 , because every load is at most 1 + 𝑁 𝜀.
+1245
+1246        If 𝑘 = 0, choose forward, with 𝑟 = −𝑡 (mod 2𝑁 ). At 𝑡 = 0 only 𝑒0 is zero; at 1 ≤ 𝑡 < 𝑁 , precisely
+1247   𝑒0 , . . . , 𝑒𝑡 are zero. Hence the vector differs from all ones in at most 𝑡 + 1 entries. If 𝑘 = 1, choose backward,
+1248   Manuscript submitted to ACM
+       Structural Methods for Approximate Stability in Weighted Congestion Games                                   25
+
+1249   with 𝑟 = 𝑁 − 𝑡. Its old/new costs are 𝑄(𝑟 + 1), 𝑂(𝑟 + 1). At 𝑡 = 0 the vector for 𝑟 + 1 = 𝑁 + 1 is all zero;
+1250
+       at 1 ≤ 𝑡 < 𝑁 it has exactly 𝑡 ones. Thus in this direction it differs from all zeros in at most 𝑡 + 1 entries.
+1251
+1252
+       Both parity cases yield a return margin at least
+1253
+                                            𝐴𝑅 [𝑍 − (𝛼 + 1)(𝑡 + 1)𝑊0 ] ≥ 3𝐴𝑅 𝑍/4.                                 (71)
+1254
+1255   The mover’s other cost is the incoming adjacent test, whose new cost is at most 𝐴𝑔−1 𝑋. Lemma A.1
+1256
+       therefore gives total margin at least
+1257
+1258                           3𝐴𝑅 𝑍/4 − 𝛼𝐴𝑔−1 𝑋 ≥ 6𝐴𝑔−1 𝐽 − 2𝐴𝑔−1 𝐽 = 4𝐴𝑔−1 𝐽 > 𝜃𝐻/2.                            (72)
+1259
+1260   The mismatch case and the short-difference case exhaust all phase vectors. We have proved that every
+1261
+       product-front state has a preserving real single-player exit with margin at least
+1262
+1263                                                    𝜂 = 𝜃𝐻/4 > 0.                                             (73)
+1264
+1265
+1266
+       A.3   All-state cost cap and same-degree completion
+1267
+1268   At an arbitrary base state, each adjacent resource has potential load at most (1 + 𝜃)𝑤𝑎 . A heavy user uses
+1269
+       one pair and a light user uses 𝐾 pairs. Thus the contribution from any such test is at most 𝐾𝐴𝑎 𝑇 . With
+1270
+       1 < 𝑆 < 𝑅, all adjacent tests together cost any player at most 𝑔𝐾𝑆 𝑔−1 𝑇 ≤ 𝑔𝑅𝑔 𝑇 . The return contribution
+1271
+1272   is at most 𝑁 𝐴𝑅 𝑊0 = 𝑁 𝐻/(4𝛼) ≤ 𝑅𝑔 𝑇 . Consequently
+1273
+1274
+               𝐶𝑖𝐵 (𝑠) ≤ 𝐵* = (𝑔 + 1)𝑅𝑔 𝑇      for all players and all base states,    𝐵* /𝜂 ≤ 64𝑛(𝑔 + 1)𝑅𝑔 .     (74)
+1275
+       The complete anchored gates were specified after (46). Their number per class is
+1276
+                                                         (︃     )︃
+1277                                                       𝑁 −1
+1278
+                                                   𝐿𝑐 =            .                                              (75)
+                                                              2
+1279
+1280   To apply the safe budget (39) at 𝐷 = 𝑑, it remains to prove
+1281
+1282                                                (2/3)𝑑 ≤ 𝜂/(4𝛼2 𝐵* 𝐿𝑐 ).                                      (76)
+1283
+       Since 𝐿𝑐 ≤ 𝑁 2 ≤ 𝑅2𝑔 , (74) yields
+1284
+1285
+                                            4𝛼2 𝐵* 𝐿𝑐 /𝜂 ≤ Γ* = 256𝑛𝑑2 (𝑔 + 1)𝑅3𝑔 .                               (77)
+1286
+1287   The first uniform condition and 𝑑 ≥ 16 imply
+1288
+1289                     log 𝑅 ≤ 5 log 𝑑,      𝑔 ≤ 13𝑛 log 𝑑,     𝑔 + 1 ≤ 14𝑛 log 𝑑 ≤ 14𝑑 log 𝑑 ≤ 𝑑3 .
+1290
+1291   It follows that
+1292                            log Γ* ≤ 195𝑛(log 𝑑)2 + 8 log 𝑑 ≤ 200𝑛(log 𝑑)2 < 𝑑 log(3/2).                      (78)
+1293                                                                                                     2
+       Here log(256𝑛) + 5 log 𝑑 ≤ 8 log 𝑑 follows from 𝑛 ≤ 𝑑/8 and 𝑑 ≥ 16, and 8 log 𝑑 ≤ 5𝑛(log 𝑑) . The last strict
+1294
+1295   inequality is exactly the third condition in (40). Thus (76) holds.
+1296     For clarity, this budget covers both kinds of state directly. On a front, the preserving exit of margin 𝜂
+1297
+       acquires new gate cost at most 𝐿𝑐 𝑀 (2/3)𝑑 , and its full margin remains at least 𝜂/2. On a nonfront, flip the
+1298
+       earliest nonanchor bit different from the anchor back to that anchor. It leaves a triggered gate of cost 𝑀 ,
+1299
+1300                                                                                       Manuscript submitted to ACM
+       26                                                                                                     Anon.
+
+1301   all its new gates are untriggered, and its new base cost is at most 𝐵* . Its full margin is at least
+1302
+1303                                 𝑀 − 𝛼𝐵* − 𝛼𝐿𝑐 𝑀 (2/3)𝑑 ≥ 𝛼𝐵* − 𝜂/2 ≥ 𝜂/2 > 0.
+1304
+1305
+       This is one deviation in the current state. The last inequality uses 𝐵* ≥ 𝜂. Every state therefore has a strict
+1306   𝛼 improvement. The player set and action labels are unchanged, every new coefficient is positive rational,
+1307   and the resource count is                                     (︃ )︃
+1308                                                               𝑁 −1
+1309                                          2(𝑔 + 1)𝑁 + 2(𝑔 + 1)        .                                      (79)
+                                                                     2
+1310
+1311
+       Every old and new latency has degree exactly 𝑑. This proves Theorem 3.1 with a finite exact construction;
+1312   the output can be very large.
+1313
+1314
+1315
+       A.4   A uniform substitution approaching the degree
+1316   We now check the parameter conditions when the approximation factor approaches 𝑑 with an explicit
+1317
+       additive error. For an arbitrary integer 𝑑 ≥ 220 , put
+1318                                                                 ⌈︂          ⌉︂
+1319                                                                        𝑑
+                                             ℓ = ⌈log2 𝑑⌉,      𝑛=                  .                            (80)
+1320                                                                      1200ℓ2
+1321
+       We check all three uniform conditions, including changes of ℓ at powers of two. First 𝑑 > 1200ℓ2 throughout
+1322
+1323   this range. At 𝑑 = 220 this is 220 > 1200 · 202 . For ℓ ≥ 21, use 𝑑 > 2ℓ−1 and 220 > 1200 · 212 ; the latter
+1324   comparison propagates because 2(ℓ/(ℓ + 1))2 ≥ 1 for ℓ ≥ 3. Therefore 𝑛 ≥ 2 and
+1325
+                                              𝑑          𝑑          𝑑
+1326                                               ≤𝑛≤        +1≤       .                                        (81)
+                                            1200ℓ2     1200ℓ2     600ℓ2
+1327
+1328   In particular 𝑑 ≥ 8𝑛. The integral inequality log(1 + 𝑥) ≥ 𝑥/(1 + 𝑥) gives
+1329                                                      𝑑       𝑑   200 2
+1330
+                                              log 𝑇 ≥          ≥    ≥    ℓ .
+                                                        8𝑛 + 1   9𝑛    3
+1331
+       But 𝑛 ≤ 𝑑, log 𝑑 ≤ ℓ log 2 < ℓ, and log 16 < 4, so
+1332
+1333                                                                            200 2
+                                   log(16𝑛𝑑) ≤ log 16 + 2 log 𝑑 < 4 + 2ℓ <         ℓ ≤ log 𝑇.
+1334                                                                             3
+1335   Hence 𝑇 > 16𝑛𝑑. Finally (81) gives
+1336
+                                                 𝑑             𝑑
+1337                            200𝑛(log 𝑑)2 ≤     (log 𝑑/ℓ)2 ≤ (log 2)2 < 𝑑/3 < 𝑑 log(3/2).
+1338
+                                                 3             3
+1339   The last inequality follows by integrating 1/𝑡 on [1, 3/2], giving log(3/2) > 1/3. All of (40) holds. The
+1340   uniform family has target
+1341
+                                                 𝛼 = 𝑑 − 𝑑/𝑛 ≥ 𝑑 − 1200ℓ2 .
+1342
+1343   Since all deviation costs are nonnegative, a strict improvement at factor 𝛼 is strict at the smaller factor
+1344   𝑑 − 1200ℓ2 as well. This proves Theorem 3.2 for every stated integer degree.
+1345
+1346
+1347   A.5   Fixed linear targets and depth accounting
+1348
+       When 𝑛 is fixed, the same estimates also give an explicit degree threshold and the exact number of weight
+1349
+1350
+       levels.
+1351
+1352   Manuscript submitted to ACM
+       Structural Methods for Approximate Stability in Weighted Congestion Games                                           27
+
+1353     Corollary A.3. For each fixed integer 𝑛 ≥ 2, the construction works for every integer
+1354
+1355                                            𝑑 ≥ 𝑑0 (𝑛) = max{220 , (600𝑛)2 }.
+1356
+1357
+       It has exactly 𝑔 + 1 ≤ 13𝑛 log 𝑑 + 1 movable weight values and potential decreasing-weight height 𝑔 + 1.
+1358
+1359
+         Proof. These 𝑑 satisfy 𝑑 ≥ 8𝑛 and 𝑑 ≥ 512𝑛2 . A cubic binomial term gives
+                                            (︃ )︃
+1360
+                                              𝑑              𝑑3
+1361                                   𝑇 ≥       (8𝑛)−3 ≥          ≥ 16𝑛𝑑;
+                                              3           12288𝑛3
+1362
+1363   the last inequality follows from 𝑑2 ≥ 196608𝑛4 . For 𝑑 ≥ 220 , log 𝑑 ≤ 𝑑1/4 : it holds at the endpoint and
+1364
+       𝑑1/4 − log 𝑑 increases for 𝑑 ≥ 256. Hence
+1365
+                                                                 √
+1366
+                                          𝑑 log(3/2) > 𝑑/3 ≥ 200𝑛 𝑑 ≥ 200𝑛(log 𝑑)2 .
+1367
+1368   Theorem 3.1 applies. There is one weight 𝑅−𝑎 per class and the gates add no players. The adjacent resource
+1369
+       pair anchored at 𝑃𝑎,0 has 𝑃𝑎+1,0 among its optional users, so 𝑃0,0 , . . . , 𝑃𝑔,0 is a decreasing-weight path of
+1370
+       length 𝑔 + 1 in vertices. No longer decreasing path exists because there are only 𝑔 + 1 weights. This proves
+1371
+1372   the exact count and height.                                                                                         □
+1373
+1374   References
+1375   [1] Ioannis Caragiannis and Angelo Fanelli. 2021. On approximate pure Nash equilibria in weighted congestion games with
+1376       polynomial latencies. J. Comput. System Sci. 117 (2021), 40–48. doi:10.1016/j.jcss.2020.10.007
+1377   [2] George Christodoulou, Martin Gairing, Yiannis Giannakopoulos, Diogo Poças, and Clara Waldmann. 2023. Existence
+1378       and Complexity of Approximate Equilibria in Weighted Congestion Games. Mathematics of Operations Research 48, 1
+1379       (2023), 583–602. doi:10.1287/moor.2022.1272
+1380
+1381
+1382
+1383
+1384
+1385
+1386
+1387
+1388
+1389
+1390
+1391
+1392
+1393
+1394
+1395
+1396
+1397
+1398
+1399
+1400
+1401
+1402
+1403
+1404                                                                                           Manuscript submitted to ACM
+
