@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-10",
+  "base_commit": "ab99e6624e43010421cc146ad83d67e0407c1346",
+  "scope": "Genuine individual safety failure; static iid benchmark; compressed full-tree flow template obstructions; three selected full-policy cones and five fixed-game full-SPE budgets; legal unrestricted all-n tail lift; random-prefix exchange boundary. Audited source-only seven-maxima checkpoint preserved separately.",
+  "current_claims": [
+    "CA-INDIVIDUAL-SECURITY-NO",
+    "CA-IID-SECURITY-BENCHMARK",
+    "CA-FULL-TREE-AVERAGING-NO",
+    "CA-SELECTED-SECURITY-CONES",
+    "CA-TAIL-FOUR-ALL-N",
+    "CA-RANDOM-PREFIX-EXCHANGE-NO"
+  ],
+  "source_checkpoint_claim": "CA-SEVEN-MAXIMA-N7-PLUS",
+  "replay_commands": [
+    "python3 tests/audits/customer_attraction_individual_security.py",
+    "python3 tests/audits/customer_attraction_individual_security_independent.py",
+    "python3 tests/audits/customer_attraction_full_tree_flow.py",
+    "python3 tests/audits/customer_attraction_iid_conditional_cone.py",
+    "python3 tests/audits/customer_attraction_lift_and_flow_independent.py",
+    "python3 tests/audits/customer_attraction_selected_security_cones.py",
+    "python3 tests/audits/customer_attraction_selected_security_budgets.py",
+    "python3 tests/audits/customer_attraction_random_position_exchange.py",
+    "python3 -m unittest tests.test_customer_attraction",
+    "python3 research/build_map.py --check",
+    "python3 research/build_crosswalk.py --check",
+    "python3 research/check_assets.py"
+  ],
+  "source_sha256": {
+    "evidence/certificates/customer_attraction/iid_security_conditional_36.json": "a4131782789d3b7a4ba528dbdebb4c12a1b4a3ed89bd7984b4793dd30ca8faf3",
+    "evidence/certificates/customer_attraction/individual_security_failure.json": "d5c8fc3abe3acf7b4b61b776a957a13e49dfe276df517ee9ba4a47093a2792ab",
+    "evidence/certificates/customer_attraction/selected_security_cones.json": "48eba055b3f439e21d95d7f96b7f179f2cd907337ca42d57ade7b0f931327a70",
+    "evidence/certificates/customer_attraction/seven_maxima_n7_n8_checkpoint.json": "c24b264bc00d455f382f55bb1fdf925ea1950cda1efe14c0855bb0137efb782f",
+    "evidence/certificates/customer_attraction/seven_maxima_partial_checkpoint.tar.gz": "cae7856e0b44336502dec2f20e162b78053fe264a80414000910150af849f9a2",
+    "examples/customer_attraction/individual_security_failure.json": "bc5202502faa778fae402da4d74a4da8971ffa30bd712423147555b6e15a437a",
+    "research/current/customer_attraction/iid_security_and_flow_barriers.md": "c6b2313759719271542364efd94b29aee71b82da82cb278ff1df10664277247f",
+    "research/current/customer_attraction/individual_security_counterexample.md": "a50812a944ac35dcbaa18e77f9cbd8e33a958c4d9db189b4d8fad829bf479b35",
+    "research/current/customer_attraction/random_position_exchange_boundary.md": "cfab03766e6bbcefa33044ef6670cd64ee41e0e25b1e485bda203d7ae1daa86d",
+    "research/current/customer_attraction/selected_security_cones.md": "fc2fdc44159311afd7c32b6593ceed73e1092acce280fc8e254108764da01abf",
+    "research/current/customer_attraction/seven_maxima_checkpoint.md": "1755b7f59ec733700485793b2bd457fbb6170883e8d7c6b8a80eb3e3e6d410de",
+    "research/current/customer_attraction/tail_profit_lift.md": "074e0cf59e7bc688d267a9b57ac574372415fa3350ec3cb2bfab420b462f277b",
+    "research/questions/customer_attraction_general_handoff.md": "23a0ed34a6baa0302867248244677037207e14a5f8b2627a4a42afcc354bbb3d",
+    "tests/audits/customer_attraction_full_tree_flow.py": "0762f79c46af253a5c7948120a7ea27fc2db7c0172fc767c263f78bd37e060ce",
+    "tests/audits/customer_attraction_iid_conditional_cone.py": "8c84ee88f140c6dcdd4de92f557db8ea84e273ddeff569d9dfc72859517bebb2",
+    "tests/audits/customer_attraction_individual_security.py": "637c4bf6438daed1acf2868600afd90ef1d60234ac11106f6b79f08a81caabe7",
+    "tests/audits/customer_attraction_individual_security_independent.py": "895d1cfdc78e83eb55fe52064ad001b1dcafc93d0d791d0eb204c9e960d4de05",
+    "tests/audits/customer_attraction_lift_and_flow_independent.py": "210a36cf18f25d0165d75253263f526c0ebfe003eabcaf28c2337295bd0aea0c",
+    "tests/audits/customer_attraction_random_position_exchange.py": "e4435ad0a2c7f7a33e3214ed21a1a2d105c317871554599e9399a86544a65d29",
+    "tests/audits/customer_attraction_selected_security_budgets.py": "fa481f8e3b040bdd1b8c0134c2b878ad869b77da0565528c9f33fb10da262b2b",
+    "tests/audits/customer_attraction_selected_security_cones.py": "49cb05ae4ca195c2b95e8977717148e559f2baf78955578e735676f4960f56aa"
+  },
+  "limitations": [
+    "No arbitrary-player half-coverage proof and no counterexample to that target.",
+    "No aggregate security bridge proof or full-SPE aggregate counterexample.",
+    "The iid flow separation vectors are deliberately not full SPE.",
+    "Selected cone identities and fixed-game menu enumerations do not quantify over arbitrary complete policies.",
+    "Seven-maxima source proof is complete only for n>=7; the current page is an overview, n5/n6 orbit assets are incomplete.",
+    "No external peer review or global novelty certification."
+  ]
+}
