@@ -1,11 +1,17 @@
-# Boss4 网络边界交接草稿（仅本地，尚未共享）
+# Boss4 网络边界交接（仅本地，尚未共享）
 
-当前源站代理CONNECT403，另有工具network approval cancelled；没有凭据Authentication rejected证据。用户对过去、本次、以后推送的持续授权不变，不需再次确认。已停止新认领和网络取源。
+用户已明确授权过去、本次及后续正常推送，不需再次确认。当前源站代理返回CONNECT403，另一次工具执行返回network approval cancelled before a decision；没有凭据Authentication rejected证据。停止新认领及网络取源，没有改用其他凭据或路线。
 
-截至最后确认远端：Boss4完成570，未完52；最后确认done为b38553cfd0b7f6da5ec7954654901162be888115，最后确认claim为78f3b9416ba51e4447c8f245425e8aab672d503a。前各数学pushed/done分别见PUBLICATION_STATUS.json。
+最后确认远端：Boss4完成570，未完52。最后done为b38553cfd0b7f6da5ec7954654901162be888115；最后claim为78f3b9416ba51e4447c8f245425e8aab672d503a。所有此前pushed与done分别保在PUBLICATION_STATUS.json，不把本地提交混作远端发布。
 
-21源完整成稿/原件/实际复现依赖及本地语义回执已齐，准备checkpoint --local-only，不冒称pushed或done。清单LOCAL21_RECEIPTS_PENDING_PUSH.json与cache/local21-paths.json。31源（class17、shared-catalog9、Pro-brief5）均原文已全读、外部成稿正在最后收口；网络缺依赖及外文不可核范围真实保留，稍后更新本草稿。不长期保占新任务，最终将实际clean handoff --all；尚未执行，不预写成功。
+52源的原文、数学比较、自足正文、真实程序输入/输出及逐源语义回执均已收齐。原件52份共875677字节，SHA256/大小逐一核，全部目标存在；此静态校验未重跑数学程序。当前52均未pushed、未done。已local-only提交的21源为fb58b66fc6e42e64429d10962dcf6f520001bfca；余31（local-exact17、shared-catalog9、Pro-brief5）已安装，随后本地checkpoint。待发布回执LOCAL52_RECEIPTS_PENDING_PUSH.json只作草稿，不能当done成功记录。
 
-unit-code4认领没有成功回执，网络403发生前后远端状态不能复核，不计入52；恢复后先核owner，勿重复抢领。acb/ccda/general-weighted-clause/dce的冲突认领均未成功，尊重Boss2；未认领metadata/旁读不当新完成来源。
+数学层保定理/条件结论/有限实验/障碍的区分。两设施混合原子客户、UM与六提供者全历史纯SPE保持不同模型。双目录κ和共同目录κ_≠的优化关系另见LOCAL52_RELATION_EVIDENCE.md；黄金比全局修订稿仍需定向复审，不以有限程序通过代替。
 
-临时阅读与尚未核主稿的旁推：boss4-next-cache/um-tiny-weighted-affine-unclaimed-handoff，boss4-next-cache/um-unit-leaf-selector-reconstruction-notes.md，分别标仅metadata/比较，不称主稿实读或数学认证。
+共享目录旁支三套原测试未运行：canonical pure.py、strong_chord.py、tiny.json、on_path_chord.json、sharp_lower_rational.json、sparse_four_rational.json缺失。离线已恢复六个原依赖，剩余六个如上，不用stub替代；实际producer导入因缺pure.py退出1，独立数学核验及最小模块探针另记实际成功范围。Pro-brief的历史比较manifest b243d725bddf75daa54d未取得/未读，旧完整TASK、ZIP、export commit及verified receipt未取得，不伪造新复现。局部精确算法的四原入口与一次-O窄核验均有实际记录，缺失历史300/100套件未恢复。
+
+unit-code4认领没有成功回执，远端状态无法复核，四源未开始实读，不计入52；ID见offline-unclaimed/README.md。冲突原子批次均没有认领成功，尊重已有Boss2归属。未认领候选及旁推仅保workspaces，不升级数学正文状态。
+
+六指定模型代理均已结束/冻结，没有后台继续。同步恢复备份stash60e630a068bde553324ec6036b2620a31247ea06、88f72856aca3c9ef679117ae3827356b94049bd2、e446c02c83beabcecc2a94fa160b3bb936f15018均保留。之前已逐项核实其应恢复的文件无缺失及无unmerged，不删除备份。
+
+实际clean handoff --all尚待在本地保存后尝试；不预写释放成功。此草稿尚未推送，尚未送达公屏或协调Boss。恢复后先核绑定、真实owner及这52远端处置是否已被接续，正常checkpoint取得pushed，再逐源done；不得重复覆盖他人后续处置。

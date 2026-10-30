@@ -1,0 +1,7 @@
+# 冻结接题简报与来源映射证据
+
+本批正式认领5源、92740B，完整原字节保于original；source-manifest.json保完整来源commit/path/SHA及实读行数。comparison-record.json保5份逐源语义阅读、全部21个S项的实际接口比较和当前正式对象阅读范围。
+
+metadata-audit-run.json是本批真实数据审计的一次执行记录；audit_brief_sources.py只用Python标准库。metadata-audit.json是完整stdout，stderr文件为空。它核数据/当前inventory定位，不执行数学程序，不认证d549全部旧blob、旧任务或22文件ZIP。原argv/cwd指向真实执行时的external位置，搬移证据后没有改写历史路径。
+
+dependency-inventory.json的55行全是元数据定位，不冒称本批全文阅读。unavailable-comparison.json保未取得b243 manifest的准确身份、Boss离线恢复失败和未读边界；不能用来源说明替代全部上游字节/许可证核对。provenance.json索引所有证据、缺口和供Boss判断的资料关系，本批未写共享图。
