@@ -1,0 +1,13 @@
+# 来源回撤：一次原样真实复跑
+
+原四源完整实读取回、核SHA；6个旁读原件（含两个实际输入）也逐一核SHA，清单给完整来源定位。本次未执行Git、claim、done、checkpoint或外发。
+
+按原始相对路径重建replay-tree。唯一程序为未修改的10829字节audit_origin_retraction.py；它的HERE.parents[4]根定位保持原样，仅用标准库，读取原348客户与52客户完整策略JSON，不导入其他SPE工具。真实命令、cwd、exit与stdout/stderr指纹见replay/execution.json。
+
+一次普通python3运行exit0，生成9173字节JSON和stdout均与冻结报告逐字节同：SHA6488b65a790c2af4bab4f0019a10f6cd4f784d6318fd12517232ba6cfd077cd9。stderr为空。原件保存在original，原程序只写replay-tree内报告；成功后复制结果至replay，不覆盖冻结证据。没有额外重复运行或扫描。
+
+6固定case总11572项含自身全历史IC比较；唯一非零R来源出现在52客户max_future例，为来源0/1各1/8到角色3。全部first_failure/failure_dual为空，因此失败价格分支没有被这次运行动态触发。解析正确性由正式算法的源拆分、齐次缩放、三角归纳和首失败价格望远镜证明承担，不从这些6成功样本推断SPE总成功。
+
+程序的assert依赖普通非-O模式；它没有通用CLI或外部恶意证书验证合同。同程序不同路线的既有52客户无环审计没有重跑或混为本次结果。
+
+完整读过后续应用审查与cap-salvage范围修正。两者承认fixed-routing受限正确、证书类已扩张，但未证whole-history joint cut或新福利常数。一般SPE成功与当前六人half保持未证，五人half另有现正式定理。

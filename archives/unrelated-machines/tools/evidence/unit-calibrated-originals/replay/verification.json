@@ -1,0 +1,194 @@
+{
+  "status": "passed",
+  "python": "3.12.14",
+  "counts": {
+    "literal_complete_output_records": 17,
+    "literal_original_job_assignments": 376,
+    "literal_listed_machine_loads": 310,
+    "counterexample_all_legal_assignments_enumerated": 1698
+  },
+  "cardinality_counts": {
+    "actual_schedules": 1464,
+    "actual_jobs": 85094,
+    "exhaustive_calibrated_wirings_r": 895,
+    "random_general_given_witnesses": 240,
+    "random_bounded_density": 320,
+    "bounded-density-calibrated": 156,
+    "bounded-density-path-matching": 163,
+    "bounded-density-optimum-two": 1,
+    "small_original_OPT_instances": 3,
+    "all_legal_assignments_enumerated": 1698,
+    "empty_huge_binary_boundaries": 2,
+    "deep_explicit_large_capacity_boundaries": 2,
+    "decimal_text_over_4300_digits_exact_cases": 2,
+    "invalid_inputs_rejected": 2,
+    "invalid_D_rejected": 3
+  },
+  "independent_counts": {
+    "actual_one_density_profiles": 188,
+    "deliberate_matching_obstruction": 1,
+    "empty_lp_rounded": 1,
+    "feasible_lp_rounded": 90,
+    "giant_denominator_lp_rounded": 1,
+    "matching_failure_exact_two": 2,
+    "one_path_matching": 118,
+    "unconditional_necessity_negative_control": 1,
+    "uniform_lp": 168
+  },
+  "independent_giant_denominator_bit_length": 522,
+  "literal_counts": {
+    "actual_complete_schedules": 4337,
+    "actual_original_jobs": 59121,
+    "literal-LP-unary-matching": 214,
+    "exhaustive_wiring_and_weight_cases": 4168,
+    "literal-LP-active-calibrated": 4121,
+    "random_feasible_source_witnesses": 160,
+    "feasible_despite_global_density_failure": 3,
+    "exact_binary_and_zero_capacity_boundaries": 3,
+    "literal-LP-empty": 2,
+    "empty_huge_binary_parameters": 2,
+    "invalid_inputs_rejected": 15
+  },
+  "counterexamples": [
+    {
+      "name": "strong-LP-not-necessary-four-machines-five-jobs",
+      "original_jobs": 5,
+      "optimum": "1",
+      "all_legal_assignments": 162
+    },
+    {
+      "name": "weak-LP-not-sufficient-four-machines-nine-jobs",
+      "original_jobs": 9,
+      "optimum": "7/4",
+      "all_legal_assignments": 512
+    },
+    {
+      "name": "small-k-failed-matching-optimum-two",
+      "original_jobs": 10,
+      "optimum": "2",
+      "all_legal_assignments": 1024
+    }
+  ],
+  "commands": [
+    {
+      "name": "cardinality-audit",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/source/unit_readout_calibrated_cardinality.py",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/cardinality-audit.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "cardinality-audit.stdout",
+      "stderr": "cardinality-audit.stderr"
+    },
+    {
+      "name": "independent-audit",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/source/unit_readout_calibrated_independent.py",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/independent-audit.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "independent-audit.stdout",
+      "stderr": "independent-audit.stderr"
+    },
+    {
+      "name": "literal-audit",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/source/unit_readout_literal_gap.py",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/literal-audit.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "literal-audit.stdout",
+      "stderr": "literal-audit.stderr"
+    },
+    {
+      "name": "calibrated-cli",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/source/unit_readout_calibrated_cardinality.py",
+        "--input",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/calibrated-input.json",
+        "--mode",
+        "calibrated",
+        "--r",
+        "1",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/calibrated-cli.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "calibrated-cli.stdout",
+      "stderr": "calibrated-cli.stderr"
+    },
+    {
+      "name": "bounded-cli",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/source/unit_readout_calibrated_cardinality.py",
+        "--input",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/bounded-input.json",
+        "--mode",
+        "bounded",
+        "--D",
+        "8",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/bounded-cli.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "bounded-cli.stdout",
+      "stderr": "bounded-cli.stderr"
+    },
+    {
+      "name": "witness-cli",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/source/unit_readout_calibrated_cardinality.py",
+        "--input",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/witness-input.json",
+        "--mode",
+        "witness",
+        "--r",
+        "1",
+        "--t-file",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/witness-t.json",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/witness-cli.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "witness-cli.stdout",
+      "stderr": "witness-cli.stderr"
+    },
+    {
+      "name": "literal-cli",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/source/unit_readout_literal_gap.py",
+        "--input",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/literal-input.json",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-calibrated-originals-run-001/literal-cli.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "literal-cli.stdout",
+      "stderr": "literal-cli.stderr"
+    }
+  ],
+  "source_sha256": {
+    "unit_readout_calibrated_cardinality.py": "039ac7dbbfc0858aa9f51086ad8debb2b2f403b282e6a516ada328e2ebf175c4",
+    "unit_readout_calibrated_counterexamples.json": "56bd2e6fb9b7449ff6e7bb49f66aedcb74967be174321ca8c7c8f9f23347f4e6",
+    "unit_readout_calibrated_independent.py": "b87e5c382ccbe2c85e69cc8c81e98e35fb7967491914d5e5db26896f01608b1e",
+    "unit_readout_literal_gap.py": "8dfc9770be270a2ec561f3ee437154ec40d0052dd22847183d9a7a2e6b833b25"
+  },
+  "scope": "Three original finite audits and four distinct CLIs replayed once. New independent literal recheck covers only the saved explicit boundary/CLI/counterexample records. New exhaustive enumeration is only the three original small examples, 1698 schedules. No exact LP, infeasibility oracle, or generic OPT backend was implemented."
+}
