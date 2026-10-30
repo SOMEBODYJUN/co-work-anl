@@ -1,0 +1,38 @@
+{
+  "status": "finite-exact-audit-replayed",
+  "command": "python3 tools/evidence/private-tree/bounded-wiring/bounded_multiplicity_clone_audit.py --output tools/evidence/private-tree/bounded-wiring/replay_report.json",
+  "python": "3.12.14",
+  "exit_code": 0,
+  "replay_count": 1,
+  "script_sha256": "0e671a934710df3c542a1e863d339a8eae5a68a5c07807316c1583c7e86a12d9",
+  "frozen_report_sha256": "9681729724c2a5c45f414b13be1be1f79d710c548b82159e2e577342eea4a927",
+  "replay_report_sha256": "9681729724c2a5c45f414b13be1be1f79d710c548b82159e2e577342eea4a927",
+  "byte_equal": true,
+  "json_equal": true,
+  "stdout_equals_output_file": true,
+  "common_cycle_totals": {
+    "clone_machines": 1784,
+    "clone_jobs": 21776,
+    "finite_edges": 46816
+  },
+  "two_label_wiring_scope": {
+    "original_incidences": 4,
+    "graphs": 81,
+    "formula": "3^4; each incidence is identity, swap, or their union",
+    "c1_graphs_included": 16,
+    "all_assignments": 2448,
+    "assignment_formula": "(sum_{a,b in [1,1,2]}(a+b)^2)*(1^2+1^2+2^2)^2 = 68*6^2",
+    "c1_assignments_included": 64,
+    "separate_common_cycle_assignments": 256,
+    "separate_common_cycle_is_already_one_of_81_graphs": true
+  },
+  "denominator_two_scope": "22 ordered arrays of two half-weight configurations per row; eight laws after within-row permutation; reduced denominator may be one",
+  "certificate_serialization": "Complete labeled schedules and wiring are constructed and checked internally; report stores summary counts, not complete certificates",
+  "strict_hierarchy_scope": "c=1..4: actual cap-(c+1) lifts; local cap-c configurations at threshold one. Lower-cap optimum field comes from mathematical formula, not generic LP optimization.",
+  "limits": [
+    "finite exact audit only",
+    "no generic MC_c optimizer",
+    "no general source hardness or approximation algorithm",
+    "ordinary python3 required because verification uses assert"
+  ]
+}
