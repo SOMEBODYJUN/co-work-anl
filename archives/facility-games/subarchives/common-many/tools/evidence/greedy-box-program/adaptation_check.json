@@ -1,0 +1,104 @@
+{
+  "adaptation": "report-bound-decimal/v1",
+  "python": "3.12.14",
+  "integer_decimal_digit_limit_before": 4300,
+  "integer_decimal_digit_limit_after": 4300,
+  "original_source_sha256": "b3b391f6e4c1efd8e56c036d3d588f191959504aede58e686c3bfcb291f6ef35",
+  "adapted_source_sha256": "a50ea29a2506d9890d0773e69747a18e4127516d781a4750b1f757af3462f91c",
+  "validation_helper_sha256": "d67dac0f0f18222f013bc29b2d4d0f1723a87c331e4a4012fca6e1bd357e1d30",
+  "verified_fixture_files": [
+    "multi_facility_spe/__init__.py",
+    "multi_facility_spe/two_exists.py",
+    "multi_facility_spe/greedy_box.py",
+    "multi_facility_spe/equal_light_flow.py"
+  ],
+  "ast_scope_check": "After deleting the one new helper and restoring the one report call to str, all original executable AST nodes match.",
+  "formatter_comparisons": [
+    {
+      "binary_bits": 0,
+      "decimal_characters": 1,
+      "matches_decimal": true
+    },
+    {
+      "binary_bits": 1,
+      "decimal_characters": 1,
+      "matches_decimal": true
+    },
+    {
+      "binary_bits": 30,
+      "decimal_characters": 9,
+      "matches_decimal": true
+    },
+    {
+      "binary_bits": 30,
+      "decimal_characters": 10,
+      "matches_decimal": true
+    },
+    {
+      "binary_bits": 30,
+      "decimal_characters": 10,
+      "matches_decimal": true
+    },
+    {
+      "binary_bits": 60,
+      "decimal_characters": 19,
+      "matches_decimal": true
+    },
+    {
+      "binary_bits": 60,
+      "decimal_characters": 19,
+      "matches_decimal": true
+    },
+    {
+      "binary_bits": 15000,
+      "decimal_characters": 4516,
+      "matches_decimal": true
+    }
+  ],
+  "original_constructor_calls": 0,
+  "adapted_constructor_calls": 1,
+  "complete_constructor_calls": 0,
+  "equal_light_flow_calls": 0,
+  "off_path_calls": 0,
+  "default_evaluations": 0,
+  "zero_step_regression": {
+    "mobile_clients": 15000,
+    "layout": [
+      0,
+      0,
+      1
+    ],
+    "gamma": "2",
+    "strict_improvements": 0,
+    "home_returns": 0,
+    "batches": 0,
+    "microsteps": 0,
+    "final_verification": {
+      "exact_ne": true,
+      "full_boxes": true,
+      "frozen_clients": true,
+      "home_inequality": true,
+      "gamma": "2",
+      "site_loads": {
+        "0": "4",
+        "1": "2"
+      }
+    },
+    "decimal_bound_characters": 4516,
+    "decimal_bound_sha256": "a37dbe59dfa254d9898596fd93ec6195914cf4c40e70af479ad8722f0e2e17c9",
+    "exact_bound_matches_decimal": true,
+    "elapsed_seconds": 0.45242600699930335
+  },
+  "existing_downstream_int_conversion": {
+    "outcome": "ValueError",
+    "message": "Exceeds the limit (4300 digits) for integer string conversion: value has 4516 digits; use sys.set_int_max_str_digits() to increase the limit"
+  },
+  "original_source_modified": false,
+  "limits": [
+    "Only assignment_move_bound formatting is adapted.",
+    "Large Fraction formatting and input parsing are unchanged.",
+    "An existing downstream int(very_long_decimal_text) may still fail.",
+    "No claim that all methods or complete continuations were run.",
+    "No change to the mathematical general-time bound."
+  ]
+}
