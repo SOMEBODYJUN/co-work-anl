@@ -2,14 +2,14 @@
 id: "unrelated-machines/affine-line-primary-marginal-review"
 kind: "review"
 type_tag: "审查"
-title: "仿射线单primary与单边际趋二双源审查"
+title: "仿射线单primary、单边际与多primary的双源审查"
 status: "integrated-with-separated-contracts"
 truth_status: "scoped-structural-proofs; exact-UM-values; no-hard-image-or-general-UM-conclusion"
 review_level: "full-source-read-and-cross-archive-comparison"
-scope: "tagged affine-line pairwise-independence boundary and uniform marginal near-two construction"
+scope: "one-primary pairwise-uniform unit contract; distinct single-marginal and multi-primary simplex near-two constructions"
 source_refs:
-  - "source:272262722a54067c48fd:research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md"
-  - "source:185276e862541c1855b6:research/current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md"
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/tagged_affine_line_pairwise_independence_boundary_review.md"
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/reviews/unrelated_machines/tagged_affine_line_uniform_marginal_gap_review.md"
 legacy_ids:
@@ -22,7 +22,9 @@ legacy_ids:
 
 本批完整读取两个当前 canonical 正文、`clean show` 全文、inventory 元数据、相应冻结审查、先前 affine-line/line-set-packing 相关正文与证据说明。当前源 `272262722a54067c48fd` 路径为 `research/current/unrelated_machines/tagged_affine_line_pairwise_independence_boundary.md`，SHA-256 `0b94156ecd6552e8ab29961ce03a5d21ddfa75cb945ab802da7115bf781970bf`；`185276e862541c1855b6` 路径为 `research/current/unrelated_machines/tagged_affine_line_uniform_marginal_gap.md`，SHA-256 `b81d3f53d711d30ac83f5ba94f12a9a14e7ffc8242cd176373d05bf3c457c501`。两源均为冻结提交 `aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c` 的当前版本。
 
-两源共享 tagged affine-line 的普通 UM 编码：每个 indexed state 一台私有机，每个 tagged 资源一点一台资源机，每组一个 selector，所有 state-resource incidence 是完整原任务，私权为 private 端处理时间，resource 端处理时间为 1；零权 incidence、未选 state 和 fresh padding 均保留。它们的合同和量词相反：第一源在**一个 main、每 helper 一个 primary**、给定局部 pairwise-uniform 边际下，证明可以实际达到 V=1；第二源构造**一个 main、R(R−1) 个 helper**的 uniform marginal 显式族，精确 V=1/(R−1) 并使实际 OPT 趋 2。不能把第一源的单-primary Hall 论证套到第二源的多-primary simplex，也不能把第二源的结构值写成一般 hardness。
+两源共享tagged affine-line的完整普通UM编码：每indexed state一private、每tagged真实资源一resource、每group一selector，全部state-resource incidences均为原任务；私权作private处理时间，resource处理时间1，零私时任务、未选state及fresh padding全部保留。第一源272同时保留两个不同对象：每helper仅一primary且primary/auxiliary pairwise-uniform时的unit正面合同，以及每helper多primary、仍all-pair uniform的PI-SIMPLEX反例。第二源185另给每group恰R states、R(R−1) helpers、V=1/(R−1)的单标签均匀族；其中helper虽仅一primary，但其auxiliary与primary相关，故不满足unit定理的pairwise前提。它不是PI-SIMPLEX的R⁴-states构造。
+
+后续整理发现本页原第3节展开的是272里的PI-SIMPLEX，不能据此称185独有构造已逐项吸收。185的完整构造、任意选态/partial上下界、全任务OPT=2−1/(R−1)、共同arity/R-partite padding及精确计数现见[独立单边际反例正文](../反例/单标签均匀边际仿射线菜单的趋零保留--反例.md)。保稳定ID与旧文件名作引用兼容，不改下述unit与PI-SIMPLEX数学，也不追溯改写原阅读过程。
 
 # 2. 单 primary：pairwise uniform 足以做 unit escape
 
@@ -59,14 +61,15 @@ B/[1+B(R-1)].
 
 # 4. 比较、反例边界和第三阶段用途
 
-两源共同说明 pairwise/local independence 不是物理共同 allocation：单 primary 的条件 Hall 能利用“一个 primary + 每 auxiliary 一次 uniform”实现 unit escape；多 primary simplex 的每个 helper 同时占 R+1 primary，仍可用公共 coset 和 fresh padding 把 all-pair uniform 与全局资源拥塞分离。第一源的 V=1 是正面合同，第二源的 V趋0/OPT趋2 是反面结构边界，不能互相改写量词。
+这两个来源涉及三个准确不同的对象。单primary正面合同利用primary/auxiliary的pairwise条件化和Hall实现unit escape。PI-SIMPLEX让每helper同时占R+1 primary，在all-pair uniform下仍发生全局拥塞，值为2/(R+1)。独立单边际族每helper仍仅一primary，却缺pairwise独立，值为1/(R−1)。PI反例逻辑上也说明更弱单边际条件不足，但不能替代185的具体构造、精确值和来源去向；三个量词/状态表均不合并。
 
-与 `weighted_affine_parallel_relation_reweighting` 的任意权 affine-line 半保留相比，单-primary 源在更强 pairwise 条件下给 unit 调度；与 uniform affine-line gap、wide rectangle、line-set packing 审查相比，simplex 源新增公共四维 code、R+1 primary 的多主交互和 fresh padding 的真实完整任务计数。上述正反面均没有 source hardness、NP-hardness、一般近二近似下界或 UM-TARGET 结论。
+与任意权完整并行关系的affine-line半保留相比，这里更强pairwise单primary前提给unit调度；PI-SIMPLEX另外依赖公共四维code、多primary及完整fresh padding。185的单边际反例则有自己的R-states/helper拥塞与零权保值变换。它们均未给source hardness、NP-hardness或一般UM近二近似结论。
 
-第三阶段可记录两条关系：
+第三阶段可据精确对象分别记录关系：
 
 - `one-primary + primary/auxiliary pairwise uniform` → `条件化 + Hall` → `V=1、OPT=1`；
 - `multi-primary simplex + common coset + all pairwise uniform` → `每 block R−1 helper 占位` → `V=2/(R+1)、OPT=2−2/(R+1)`。
+- `R-states单边际族、相关auxiliary` → `main block的R−1 helpers占R个可用正点` → `V=1/(R−1)、OPT=2−1/(R−1)`；完整论证在上述独立反例正文。
 
 关系边必须标注“显式结构域”和“完整原任务/资源表”条件，不能把 simplex 的趋二族当作 hard image，也不能把 one-primary 的 Hall 证明推广到多 primary。
 
@@ -74,7 +77,7 @@ B/[1+B(R-1)].
 
 逐源处置：
 
-- `272262722a54067c48fd`：`integrated`。one-primary 的 pairwise 边际、条件 Hall、显式状态图、完整 unit 调度及 multi-primary simplex 反例范围写入第 2–4 节。
-- `185276e862541c1855b6`：`integrated`。单标签 uniform marginal 的 `V=1/(R−1)` 精确族、共同 arity/zero padding、完整 UM `OPT=2−1/(R−1)` 及相关性边界写入第 3–4 节。
+- `272262722a54067c48fd`：既有`integrated`记录保留。one-primary的pairwise边际、条件Hall、显式状态图、完整unit调度及同源multi-primary simplex对象在第2–4节。
+- `185276e862541c1855b6`：既有`integrated`记录保留；其R-states、非pairwise单边际构造、精确V=1/(R−1)、完整OPT=2−1/(R−1)、padding与计数已独立整理为[单标签均匀边际反例](../反例/单标签均匀边际仿射线菜单的趋零保留--反例.md)。本页第3节保留另一个PI-SIMPLEX对象，不再将185错接为该节的独有来源。
 
 两源均为全文件实读，相关审查/程序/证据已比较，独有内容去向和不混量词的理由已明确记录。

@@ -1,0 +1,127 @@
+--- original/tagged_affine_line_wide_rectangle_joint_escape_exact_v1.md
++++ original/tagged_affine_line_wide_rectangle_joint_escape_exact_v2.md
+@@ -1,73 +1,91 @@
+-# Tagged affine LINE：wide rectangles 的 sparse unit 与任意权 half escape
++# Tagged affine LINE：wide rectangles 的 marked/unmarked 联合实际 escape
+ 
+-ID：UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v1。
++ID：UM-TAGGED-AFFINE-LINE-WIDE-RECTANGLE-JOINT-ESCAPE-v2。
+ 
+-作者 rainbow_gap_source，2026-10-18。仅 scratch。此为首次冻结的 statement-only Exact；作者 Proof 另存、仅交 root hold。此前未将本合同的作者证明或策略发送给 rank、general 或其它独立 reviewer。
++作者 rainbow_gap_source，2026-10-18。仅 scratch。此为 statement-only Exact，作者 Proof 另存、仅交 root hold。v1 双合同 Exact 已先冻结（SHA256 `379ca688ef9ca69a660549d5f82d176d981adfbdd5cf78a76dd3ee82c6836ef5`）；v2 用一个 marked/unmarked 合同统一并加强，保留 v1 原字节，不把中间来源另作资产。作者此前未向 rank、general、bicriteria 或其它独立 reviewer 发送本合同的证明或策略；root 已读消息中的策略，不具 blind 身份。
+ 
+ ## 1. 完整显式几何域
+ 
+-给定素数 R≥2，在 F_R 上运算。有限变量集 X 可含 unused variables；非空 group 集 G，每个 group g 有非空的 distinct-variable 集 X_g⊆X 及非空显式 indexed-state 菜单 S_g。记
++给定素数 R≥2，在 F_R 上运算。有限变量集 X 可含 unused variables；非空 group 集 G，每个 group g 有非空 distinct-variable 集 X_g⊆X 及非空显式 indexed-state 菜单 S_g。记
+ 
+ q=max_g |X_g|≥1，
+ d_x=|{g:x∈X_g}|，
+-D=max_x d_x≥1。
++D=max_x d_x≥1，
++M=max_g Σ_{x∈X_g}(d_x−1)。
+ 
+-所以 D≤R。每个 incidence (g,x) 给固定 intercept j_x(g)∈F_R，同一变量的不同 groups 的 intercept 互异。这些 intercept 是输入，结论对所有合法输入编号成立，不允许算法修改它们。
++因此 D≤R，0≤M≤q(D−1)。每个 incidence (g,x) 给固定 intercept j_x(g)∈F_R，同一变量不同 groups 的 intercept 互异。这些 intercept 是输入；结论对所有合法固定编号成立，算法不能修改它们。
+ 
+-每变量资源为带 x 标签的完整 plane U_x={x}×F_R²，不同变量块分离。state s∈S_g 给每个 x∈X_g 一个 slope label a_{g,s}(x)∈F_R；其完整资源集为
++每变量资源为完整 tagged plane U_x={x}×F_R²，变量块互异。state s∈S_g 给各 x∈X_g slope label a_{g,s}(x)∈F_R，完整资源集为
+ 
+ T_{g,s}=⊔_{x∈X_g}{(x,z,a_{g,s}(x)z+j_x(g)):z∈F_R}。
+ 
+-同一 state 内资源 distinct。每个完整 state-resource incidence 显式给非负有理 private 权 p_{g,s,u}，总和严格为1。权可依赖整个 indexed state、变量、intercept、点及全部输入；没有 uniform-within-line 或与编号无关的假设。零权 incidences 全部保留。
++每个完整 state-resource incidence 显式给非负有理 private 权 p_{g,s,u}，且 Σ_{u∈T_{g,s}}p_{g,s,u}=1。权可依赖整个 indexed state、变量、intercept、点和全部输入。零权 incidences 全部保留；不要求 uniform-within-line 或权与编号无关。
+ 
+-每个 group 额外给显式非空 slope 集 A_{g,x}⊆F_R（x∈X_g），满足 rectangle containment：
++## 2. 显式 rectangle 接口与 marked 输入
+ 
+-∏_{x∈X_g} A_{g,x} ⊆ {(a_{g,s}(x))_{x∈X_g}:s∈S_g}。
++每 incidence (g,x) 给显式非空 slope 集 A_{g,x}⊆F_R，满足
+ 
+-令 L=min_{g,x∈X_g}|A_{g,x}|，因此1≤L≤R。菜单可有多个 indexed states 使用相同 label vector 而不同权；containment 只要求每个 rectangle vector 至少有一个 indexed state。所有这些 states 仍保留。无需菜单正好等于 rectangle，无需给 states 的概率分布、单变量均匀边际或 pairwise independence。
++∏_{x∈X_g}A_{g,x} ⊆ {(a_{g,s}(x))_{x∈X_g}:s∈S_g}。
+ 
+-全部资源 planes、state label tables 及完整 line 权表均已显式给出或实际展开。这里的“总位多项式”以此显式输入为准，不是仅给二进制 R、compact CSP 和权 oracle 的 poly(log R) 声称。
++记 L=min_{g,x∈X_g}|A_{g,x}|，故1≤L≤R。菜单可在 rectangle 外有其它 states，且可有多个相同 label vector、不同权的 indexed states；containment 只要求每个 rectangle vector 至少出现一次。不要求任何 state 分布、均匀标签边际或 pairwise independence。
+ 
+-## 2. Partial allocation 与完整 ordinary P
++再给有理数 β≥0、二进制整数 b≥0，以及每个 state-variable incidence 的显式 marked point 集 E_{g,s,x}，满足：
+ 
+-partial allocation 每组选择一 indexed state s(g)，领取 B_g⊆T_{g,s(g)}，跨组 B_g 互异。质量为 Σ_{u∈B_g}p_{g,s(g),u}；V 为其最大最小值，V∈[0,1]。
++- E_{g,s,x} 是该 state 在变量 x 上完整 line 的子集，|E_{g,s,x}|≤b；
++- 每个不在 E_{g,s,x} 中的 line cell，其 private 权≤β。
+ 
+-完整 UM 实例 P：每个 indexed state 各一台不同 private root；每个 tagged resource 各一台 resource machine。每个 group 一枚 selector，在该组任意 state root 上用时1。每枚 state-resource incidence 是不同 job，在其 private root 用时 p_{g,s,u}、在该 resource machine 用时1，其余资格∞。全部 indexed states、全部 selector、全部 incidence jobs（包括 private 权0）必须实际调度；无预载、虚拟任务、外部锁定模式或免费导出。
++marked 可含0权点；全部集合可依赖完整 state 与编号，不要求先固定 selected states。它们是已给定或可由显式权表计算出的集合；任何处理只扫描实际列表，不按巨大 b、1/β 或有理分母展开。
+ 
+-## 3. 合同 A：sparse-positive unit escape
++全部资源 planes、state label tables、完整 line 权表和 marked 列表已显式给出或实际展开。总位多项式以此为准，不是 compact CSP、二进制 R 和权 oracle 的 poly(log R) 声称。
+ 
+-另给整数 b≥1，并假定对每个 state-variable incidence，其完整 line 上的正权点数至多 b；不同 states 的这些点可任意变化，且可依赖完整 state 和 intercept。若
++## 3. Partial allocation、完整 ordinary P 与主合同
++
++partial allocation 为每组选择一 indexed state s(g)，领取 B_g⊆T_{g,s(g)}，跨组 B_g 互异；质量为其 p 权和。V 为最大最小质量，V∈[0,1]。
++
++完整 ordinary UM 实例 P：每个 indexed state 各一台不同 private root，每个 tagged resource 各一台 resource machine；每 group 一枚 selector，在其全部 state roots 用时1；每枚 state-resource incidence 是不同 job，在自己的 private root 用时 p_{g,s,u}、在对应 resource machine 用时1，其余资格∞。所有 states、selector、incidence jobs（含 private 权0）必须实际调度；没有预载、额外模式或虚拟任务。
++
++若
+ 
+ L>b(D−1)，
+ 
+-则存在确定性总位多项式算法输出 partial allocation，每组质量恰1；并输出包含全部原 jobs 的实际 C_max=1 schedule。因此 V=1、OPT(P)=1。
++则存在确定性总位多项式算法输出 states s(g) 及 partial allocation B_g，使
+ 
+-结论对任意固定合法 intercepts 同时适用，不是“存在一种可重编号的 index”。b 是每个 incidence 的 probe/正点预算，D 是变量参加 groups 的数量；二者不可混同。该合同没有排除 compiler 自选参数后不满足上述不等式的实例。
++E_{g,s(g),x}⊆B_g 对所有 g,x，
+ 
+-## 4. 合同 B：任意 state 权的 half escape
++min_g Σ_{u∈B_g}p_{g,s(g),u} ≥ v:=max{0,1−Mβ}。
+ 
+-此合同不加任何 sparse-positive 假设；每条 line 可在全部 R 点具有任意非负权，只要求每个 state 总质量1。若 D>1 且
++还可要求 B_g 包含 T_{g,s(g)} 中不属于任何其它 selected state 完整资源集的全部点。若某点同时是一个 selected state 的 marked 点与另一个 selected state 的 unmarked 点，则只由其 marked owner 领取；全部 selected marked sets 互异。没有声称 selected states 的完整几何 supports 互不相交。
++
++算法同时输出包含全部原 jobs 的完整实际 schedule，满足
++
++C_max≤2−v。
++
++主合同覆盖 v=0、β=0、b=0 及 M=0 端点。它量化所有合法固定 intercepts 与全部输入 state-dependent 权/marked 选择，不是对期望、局部 CONFIG/FSLP 或任意预选 state tuple 的断言。
++
++## 4. 两个直接应用及 D=1
++
++**Sparse-positive unit escape。** 若每个 state-variable incidence 至多有 b 个正权点，取 marked 为全部正权点、β=0。在 L>b(D−1) 下，V=1，并可输出全部原 jobs 的实际 C_max=1 schedule，因此 OPT(P)=1。b 是每 incidence 正点预算，不是变量 degree D。Probe 可依赖完整 state、intercept 和其它输入。
++
++**Arbitrary-weight half escape。** 不加 sparse 假设。若 D>1 且
+ 
+ L>2q(D−1)²，
+ 
+-则存在确定性总位多项式算法输出 partial allocation，每组质量至少1/2；并输出包含全部原 jobs 的实际 C_max≤3/2 schedule。因此 V≥1/2、OPT(P)≤3/2。
++则对任意上述 norm1 state 权，存在确定性总位多项式 partial allocation 达每组质量≥1/2，并有完整实际 C_max≤3/2 schedule。可把 β=1/(2q(D−1))、marked 为权严格大于 β 的点、b=floor(1/β) 作为主合同的显式实例；b 仅用于界，不创建 b 或1/β个虚拟对象。
+ 
+-这是共同选择 states 与实际资源分配的合同；既不是先固定 states 的断言，也不是由单独的期望、CONFIG 或 FSLP 可行性推出。未声称3/2为该受限类的最佳常数或 NP-hard 近似比。
++**D=1 / M=0。** 任意 state choices 的不同 groups 的资源块分离，不需阈值除法或 probe 界即可全领取正权资源；V=1、OPT(P)=1。unused variables 的资源可空置。groups、变量集及 menus 非空，保证 minquality 与归一化有定义。
+ 
+-## 5. D=1、空/零与计算接口
++## 5. 全部 jobs、查表与位复杂度
+ 
+-若 D=1，不需合同 A 的 probe 预算或合同 B 的额外不等式：任意选择一 state/group 都可完整领取其全部正权资源，V=1、OPT(P)=1。unused variables 的资源可空置；groups、其变量集及 menus 保持非空以使归一化和 minquality 有定义。
++0权 incidence 仍是实际任务。全部未选 states 的 jobs 均在输出中被实际分配；没有预先删除它们或将其外送当作免费。Partial allocation 可忽略零质量资源，不等于删除实际 jobs。
+ 
+-0权 jobs 仍是实际任务。两个合同均保证输出全部未选 states 的实际 jobs，不把其资源外送当作免费、也不预先删除这些 jobs。Partial allocation 中忽略0质量资源与完整 actual P 中保留0权任务是不同操作。
++Rectangle containment 可在总位多项式内核查：从显式菜单统计落在 rectangle 内的 distinct label vectors 数，与二进制整数 ∏_x|A_{g,x}| 比较。不必枚举比输入更大的 Cartesian product。给定 rectangle vector，可在显式菜单中查出一个同 vector 的 indexed state；不默认其权由 label vector 唯一决定，也不调用额外 oracle。
+ 
+-rectangles 作为显式 sets 给定，可在总位多项式内核 containment：从显式 state table 计算落在 rectangle 中的 distinct label vectors 数，与整数 ∏_x|A_{g,x}| 比较，不必枚举一个超过输入大小的 Cartesian product。给定任意 rectangle vector，可在显式菜单中确定性查出一个同 vector 的 indexed state；无需默认权由 label vector 唯一决定，也无需额外 oracle。
++阈值比较、Mβ、field arithmetic、选态和完整实际 assignment 均使用精确二进制计算并仅扫描显式对象。对 giant binary b 或极小正 β，不按其数值创建列表。β=0不计算1/β；M=0不进行阈值除法。若输出 sparse finite-option 表，每枚 incidence 恰两有限端（private 为0亦照列）；dense P 的机器数与 job 数乘积仍是上述显式展开输入的多项式。
+ 
+-所有处理仅扫描显式 groups、变量、states、line points 及有理数表，阈值运算和 field arithmetic 使用二进制精确计算；不按有理分母的数值展开。若用 sparse finite-option 表给 P，每枚 incidence 恰两个有限端（private 为0亦照列）；若给 dense matrix，机器数与 job 数的乘积仍为上述展开输入大小的多项式。
++## 6. 源应用边界
+ 
+-## 6. 条件源应用与明确边界
++若某份 source 的 tables、实际提供的 rectangles 和参数满足本域，合同保留该 source tables 与固定编号并直接给上述 actual escape；不要求 source 为 YES。同域内任何 NO 输入也受该实际上界约束。
+ 
+-若一份 source 的 allowed tables 与实际提供的 rectangles 满足上述对象及参数条件，合同直接适用于其 tagged-line 编译，保留这些原 source tables 和固定 intercepts。它不要求 source 为 YES，因此同域内任意 NO 输入也受到该实际 schedule 上界约束。
++不声称所有 LST/Chan hard images 有 wide Cartesian rectangles，不声称 R-degree-bounded hard family 满足上述 label-slack 不等式。Compiler 可选不满足条件的 R、D、q、b 或无 wide rectangles 的 code-coset tables；不能从可自行扩张一份 source 的 alphabet 推断排除一切 sparse 编译。真实 source perfect-completeness、PI lifting、困难性和规模仍需另行独立核查，不是本纯几何定理的外部前提。
+ 
+-这不声称所有 LST/Chan hard images 有 wide Cartesian rectangles，不声称原 R-degree-bounded hard family 满足 L>2q(D−1)²，也不从可自行扩大某份 source 的 alphabet 推断排除一切 sparse 编译。Compiler 可选择不满足这些参数条件的 R、D、q、b，或使用无 wide rectangle 的 code-coset tables。真实 source perfect-completeness、PI lifting、硬度及规模还需另行独立核查；不是本纯几何定理的外部前提。
+-
+-本结果不是一般 SC/UM 常数近似算法，不是一般 arbitrary-weight tagged-line 的常数界，也不是任何新的 hardness。它明确给出 wide-rectangle 与 label slack 子域中的实际 escape；未把局部均匀标签或预期碰撞本身当作联合 minquality 保证。
++这不是一般 tagged-line、SC 或 UM 的常数近似结论，也不是新 hardness。它仅给 wide-rectangle/label-slack 子域的联合实际 escape；均匀边际或预期碰撞本身没有被当作 minquality 保证。

@@ -26,3 +26,8 @@
 ## 原任务负载、有限域pair与四地点计数
 
 笛卡尔双源审查改精确selected private负载为1+d/N，跨组不交来自每resource至多一unit；逐坐标不同的两组支持必恰交一枚，不能用“至多”支撑pair下界。qary历史新页保存原证明及版本演进。四地点独立审查的n=4/6/8是补零后变量客户数，设施始终两家；标题/正文纠正，保旧文件名兼容、原JSON不改。前后SHA及依据见SUMMARY_PRECISION_CORRECTIONS.json。
+
+
+## 单边际与PI-SIMPLEX的来源混置补齐
+
+旧仿射线双源页第3节数学是272中的PI-SIMPLEX（R⁴ states，V=2/(R+1)），不能代表185的R-states/helper单边际构造（V=1/(R−1)）已吸收。新独立反例保185完整构造、任意partial界、全UM和padding；旧页改正确去向链接与三对象说明，原unit/PI证明第2–3节逐字节保持。不是推翻PI数学。前后SHA和确切路径见TAGGED_SOURCE_ROUTING_CORRECTION.json。
