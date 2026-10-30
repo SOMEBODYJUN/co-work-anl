@@ -1,0 +1,44 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "execution_copies": [
+    {
+      "role": "author",
+      "source_path": "tests/audits/weighted_congestion/multicolumn/verify.py",
+      "actual_script": "archives/weighted-congestion/tools/evidence/multicolumn/replay-source/author/verify.py",
+      "code_sha256": "8e90c40e26f01b0f537d4d524f042b521277891a7422fa2e45c9baa8a9d73482",
+      "unchanged_execution_copy": true
+    },
+    {
+      "role": "independent",
+      "source_path": "tests/audits/weighted_congestion/multicolumn_review/verify_multicolumn.py",
+      "actual_script": "archives/weighted-congestion/tools/evidence/multicolumn/replay-source/independent/verify_multicolumn.py",
+      "code_sha256": "ba0df429910a66f3804e1f1c49b982ee9eab0725b0c48e0b4efd9a74e233c5b7",
+      "unchanged_execution_copy": true
+    }
+  ],
+  "reason": "Both frozen mains write adjacent files; run exact byte copies in fresh directories to preserve all originals.",
+  "runs": [
+    {
+      "role": "author",
+      "exit_code": 0,
+      "output": "replay-source/author/evidence.json",
+      "stdout": "replay/author.stdout.txt",
+      "stderr": "replay/author.stderr.txt"
+    },
+    {
+      "role": "independent",
+      "exit_code": 0,
+      "output": "replay-source/independent/exact_test_results.json",
+      "stdout": "replay/independent.stdout.txt",
+      "stderr": "replay/independent.stderr.txt"
+    },
+    {
+      "role": "new-nonseparable-supplement",
+      "exit_code": 0,
+      "script": "verify_nonseparable_examples.py",
+      "output": "replay/nonseparable-new-examples.json",
+      "stderr": "replay/nonseparable-new-examples.stderr.txt",
+      "historical_recovery": false
+    }
+  ]
+}
