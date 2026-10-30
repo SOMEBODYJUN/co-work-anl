@@ -1,0 +1,105 @@
+{
+  "claims": [
+    "UM-STAR-CONFIG-TRANSFER-v1",
+    "UM-CONTRACTED-SPARSE-CONFIG-GAP-v1"
+  ],
+  "arithmetic": "fractions.Fraction; exact rational, no numerical tolerance",
+  "seed": "not applicable; exhaustive final edges on deterministic expanded instance",
+  "base_commit": "e0e88bd1d1f5f1edf7516ff1fa189b8e733cae43",
+  "commands": [
+    "python3 tests/audits/unrelated_machines/star_configuration_transfer.py --export-dir <fresh scratch directory>",
+    "python3 tests/audits/unrelated_machines/star_configuration_transfer_independent.py"
+  ],
+  "hashes": {
+    "research/current/unrelated_machines/minimal_star_contraction_and_capacity_gap.md": "974332b1d8f919cc8dd994aadbd66f79c4b0703e15f1868bab4a2516e09dcaa0",
+    "research/current/unrelated_machines/sparse_conditioned_configuration_gap.md": "88af645ff4ee5bd81afdeef2b67824ca34ed9183630c180373d1efa2d63c25f2",
+    "tests/audits/unrelated_machines/star_configuration_transfer.py": "b7b42bdd0f24b43007843acbcd150b9b69ef4380c92a7e0462c80d41baf64c2e",
+    "tests/audits/unrelated_machines/star_configuration_transfer_independent.py": "611d8ee53b4300eebf8db9661a217b860c9d76b052c192283f3a7f842a1e8870",
+    "research/reviews/unrelated_machines/star_configuration_transfer_review.md": "5590e7af8eb49c6b26b4749b68ae5fad19a12b9991ce0d5a348d62236454904e"
+  },
+  "main": {
+    "arithmetic": "fractions.Fraction",
+    "python": "3.12.14",
+    "code_sha256": "b7b42bdd0f24b43007843acbcd150b9b69ef4380c92a7e0462c80d41baf64c2e",
+    "small": {
+      "zero_and_empty": true,
+      "rational_roundtrip": true,
+      "forced_machine_priority": true,
+      "missing_exclusivity_rejected": true,
+      "actual_global_splits": 1
+    },
+    "expanded": {
+      "k": 3,
+      "H": 5,
+      "gamma": "1/8",
+      "threshold": "4/3",
+      "original_machines": 729,
+      "original_jobs": 1051,
+      "contractions": 324,
+      "machines": 405,
+      "jobs": 727,
+      "final_triggers": 0,
+      "maximum_job_degree": 3,
+      "probe_counts": {
+        "all_final_edges": 1778,
+        "replacement_edges": 972
+      },
+      "max_original_support": 2182,
+      "max_final_support": 1480,
+      "max_actual_splits": 162,
+      "integer_upper": "5/3",
+      "input_sha256": "c057fcf5bc2f3671c0ecd553405a721edceb53d74abaa26f257bb5bd2ebc4ee3"
+    }
+  },
+  "independent": {
+    "arithmetic": "fractions.Fraction",
+    "python": "3.12.14",
+    "code_sha256": "611d8ee53b4300eebf8db9661a217b860c9d76b052c192283f3a7f842a1e8870",
+    "legacy_generator_sha256": "8fc65e79f4d854642832126026cbb11406f3adfa55de433706945b7178b94372",
+    "old_machines": 729,
+    "old_jobs": 1051,
+    "contractions": 324,
+    "final_machines": 405,
+    "final_jobs": 727,
+    "all_final_finite_edges": 1778,
+    "all_probe_certificates_verified": true,
+    "no_minimal_star": true,
+    "max_added_support_per_contraction": 1,
+    "max_support": 1480,
+    "max_total_splits_per_probe": 162,
+    "missing_mutual_exclusion_counterexample": {
+      "old_configuration_feasible": true,
+      "old_expected_exterior_F_count": "1",
+      "old_exterior_occupancy": "1/2",
+      "new_configuration_infeasible_by_forcing_chain": true
+    },
+    "seconds": 86.661,
+    "reverse_conditioned_counterexample": {
+      "structural_mutual_exclusion": true,
+      "reduced_all_edges_forcible": true,
+      "original_edge_job0_to_u_impossible": true
+    },
+    "forced_machine_priority_control": {
+      "exterior_occupancy": "2",
+      "ordinary_order_target_mass": "0",
+      "priority_order_target_mass": "1"
+    }
+  },
+  "serialized_artifacts": {
+    "all_rows_and_jobs": true,
+    "forced_mass": "1",
+    "integer_upper": "5/3",
+    "no_remaining_minimal_star": true,
+    "finite_edges": 1778,
+    "hashes": {
+      "examples/unrelated_machines/contracted_sparse_configuration_input.json": "1e3af40687a0d24be95bf7d4b9e70855aa4218858a3a176116ab4b4b039a38b4",
+      "evidence/certificates/unrelated_machines/contracted_sparse_configuration_witness.json": "21d3b92e50517f40b2d5a8a9102b1fcb71d7e33511373cceef05c5305eaf201c"
+    }
+  },
+  "limitations": [
+    "Only k=3,H=5 fully expanded; no all-schedule enumeration or generic CONFIG solver.",
+    "Both codes share the old instance/certificate generator but implement distinct matrix transfer and validation.",
+    "General statements follow the frozen mathematical proofs, not finite calculations.",
+    "No general approximation improvement, external review, novelty or independent publication certification."
+  ]
+}
