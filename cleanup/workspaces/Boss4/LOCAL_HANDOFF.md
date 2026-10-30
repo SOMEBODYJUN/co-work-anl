@@ -17,3 +17,7 @@ unit-code4认领没有成功回执，远端状态无法复核，四源未开始�
 实际clean handoff --all尚待在本地保存后尝试；不预写释放成功。此草稿尚未推送，尚未送达公屏或协调Boss。恢复后先核绑定、真实owner及这52远端处置是否已被接续，正常checkpoint取得pushed，再逐源done；不得重复覆盖他人后续处置。
 
 本地保全回执：21源148文件，31源157文件；两次均status=local-only，无pushed_head。正文及所有52来源原件已在两提交内，无新增done。当前交接草稿准备执行实际handoff，不能预写释放。
+
+## 实际后续：写入恢复，继续清洗
+
+实际clean handoff --all已确认pushed 22fb59fb680f25057b26709f80d54826389febca，52项释放，local_sync=synced。网络恢复后立即复核52项均仍无owner、handoff状态，再正式claim确认pushed 26f580e62070dee5542f7a0c43d7614c162689fc，重新承担这52份已成稿来源。前述网络停止只描述该时点，不再是当前停止理由。接下来执行明确checkpoint推送与逐源done，并继续六代理新批次；本文件不是最终收尾。详细协调通知仍未送达，不把结果分支发布混作公屏/私聊发送。
