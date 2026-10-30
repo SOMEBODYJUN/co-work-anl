@@ -21,3 +21,5 @@ unit-code4认领没有成功回执，远端状态无法复核，四源未开始�
 ## 实际后续：写入恢复，继续清洗
 
 实际clean handoff --all已确认pushed 22fb59fb680f25057b26709f80d54826389febca，52项释放，local_sync=synced。网络恢复后立即复核52项均仍无owner、handoff状态，再正式claim确认pushed 26f580e62070dee5542f7a0c43d7614c162689fc，重新承担这52份已成稿来源。前述网络停止只描述该时点，不再是当前停止理由。接下来执行明确checkpoint推送与逐源done，并继续六代理新批次；本文件不是最终收尾。详细协调通知仍未送达，不把结果分支发布混作公屏/私聊发送。
+
+52实际已先checkpoint pushed 5d850a40030f1321427a67e8e5775685f888df3d，再独立done pushed 67eac78f28426dff0fc6eb39531c599b873aae22；上文“52未pushed/未done”仅是网络边界旧时点，当前由此实际回执覆盖。40新来源已claim98211b34，六指定代理实际工作中；此文不是当前最终handoff。

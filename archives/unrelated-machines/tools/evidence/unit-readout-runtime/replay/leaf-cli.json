@@ -1,0 +1,321 @@
+{
+  "source_claims": [
+    "UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1"
+  ],
+  "k": 2,
+  "h": 1,
+  "variable_labels": [
+    0
+  ],
+  "roots": [
+    [
+      0,
+      1
+    ]
+  ],
+  "jobs": [
+    {
+      "job": 0,
+      "kind": "selector",
+      "variable": 0,
+      "edges": [
+        [
+          0,
+          "1"
+        ],
+        [
+          1,
+          "1"
+        ]
+      ]
+    },
+    {
+      "job": 1,
+      "variable": 0,
+      "sign": 0,
+      "path": [
+        0
+      ],
+      "parent": 0,
+      "kind": "port",
+      "clause": 0,
+      "edges": [
+        [
+          0,
+          "1/2"
+        ],
+        [
+          2,
+          "1"
+        ],
+        [
+          3,
+          "1"
+        ]
+      ],
+      "external": {
+        "start": 2,
+        "count": 2,
+        "time": "1"
+      }
+    },
+    {
+      "job": 2,
+      "variable": 0,
+      "sign": 0,
+      "path": [
+        1
+      ],
+      "parent": 0,
+      "kind": "port",
+      "clause": 0,
+      "edges": [
+        [
+          0,
+          "1/2"
+        ],
+        [
+          2,
+          "1"
+        ],
+        [
+          3,
+          "1"
+        ]
+      ],
+      "external": {
+        "start": 2,
+        "count": 2,
+        "time": "1"
+      }
+    },
+    {
+      "job": 3,
+      "variable": 0,
+      "sign": 1,
+      "path": [
+        0
+      ],
+      "parent": 1,
+      "kind": "port",
+      "clause": 0,
+      "edges": [
+        [
+          1,
+          "1/2"
+        ],
+        [
+          2,
+          "1"
+        ],
+        [
+          3,
+          "1"
+        ]
+      ],
+      "external": {
+        "start": 2,
+        "count": 2,
+        "time": "1"
+      }
+    },
+    {
+      "job": 4,
+      "variable": 0,
+      "sign": 1,
+      "path": [
+        1
+      ],
+      "parent": 1,
+      "kind": "port",
+      "clause": 0,
+      "edges": [
+        [
+          1,
+          "1/2"
+        ],
+        [
+          2,
+          "1"
+        ],
+        [
+          3,
+          "1"
+        ]
+      ],
+      "external": {
+        "start": 2,
+        "count": 2,
+        "time": "1"
+      }
+    }
+  ],
+  "sigma": [
+    0,
+    2,
+    0,
+    1,
+    1
+  ],
+  "listed_machines": [
+    {
+      "machine": 0,
+      "kind": "internal",
+      "variable": 0,
+      "sign": 0,
+      "path": []
+    },
+    {
+      "machine": 1,
+      "kind": "internal",
+      "variable": 0,
+      "sign": 1,
+      "path": []
+    },
+    {
+      "machine": 2,
+      "kind": "clause_unit",
+      "clause": 0,
+      "unit": 0
+    },
+    {
+      "machine": 3,
+      "kind": "clause_unit",
+      "clause": 0,
+      "unit": 1
+    }
+  ],
+  "listed_loads": [
+    {
+      "machine": 0,
+      "load": "3/2"
+    },
+    {
+      "machine": 1,
+      "load": "1"
+    },
+    {
+      "machine": 2,
+      "load": "1"
+    },
+    {
+      "machine": 3,
+      "load": "0"
+    }
+  ],
+  "clause_ranges": [
+    {
+      "clause": 0,
+      "start": 2,
+      "count": 2,
+      "arity": 4,
+      "listed_units": 2
+    }
+  ],
+  "full_machine_count": 4,
+  "dummy_used": false,
+  "internal_machine_count": 2,
+  "omitted_unit_machine_count": 0,
+  "omitted_unit_machine_load": "0",
+  "makespan": "3/2",
+  "bound": "3/2",
+  "b": 2,
+  "leaves_per_tree": 2,
+  "flow_selected_port_jobs": [
+    [
+      1,
+      2
+    ]
+  ],
+  "flow_maximality_cut": {
+    "tested_common_supply": 3,
+    "flow_value": 2,
+    "required_value": 3,
+    "cut_capacity": 2,
+    "cut_source_side": [
+      [
+        "clause",
+        0
+      ],
+      [
+        "port",
+        1
+      ],
+      [
+        "port",
+        2
+      ],
+      [
+        "port",
+        3
+      ],
+      [
+        "port",
+        4
+      ],
+      [
+        "source"
+      ],
+      [
+        "variable",
+        0
+      ]
+    ],
+    "cut_forward_edges": [
+      [
+        [
+          "clause",
+          0
+        ],
+        [
+          "sink"
+        ],
+        2
+      ]
+    ]
+  },
+  "approximation_ratio": {
+    "exact_expression": "1+2^(-1/h)",
+    "height": 1,
+    "fixed_height_required_for_uniform_epsilon": true,
+    "exact_value": "3/2"
+  },
+  "software_dependency": {
+    "model_kernel": "unit_readout_calibrated_cardinality.py",
+    "model_kernel_sha256": "039ac7dbbfc0858aa9f51086ad8debb2b2f403b282e6a516ada328e2ebf175c4",
+    "reused_functions": [
+      "build_instance",
+      "finish",
+      "actual_loads"
+    ]
+  },
+  "mode": "leaf-flow-ancestor-pruning",
+  "r": 1,
+  "m": 1,
+  "floor_root": 1,
+  "forest": {
+    "r": 1,
+    "variables": [
+      {
+        "variable": 0,
+        "sign": 0,
+        "root": 0,
+        "active_internal": [
+          0
+        ],
+        "selected_child_jobs": [
+          1
+        ],
+        "selected_ports": [
+          1
+        ]
+      }
+    ],
+    "selected_leaf_counts": [
+      1
+    ],
+    "selected_unit_machines": [
+      2
+    ]
+  }
+}

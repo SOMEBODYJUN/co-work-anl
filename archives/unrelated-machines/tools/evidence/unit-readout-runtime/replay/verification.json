@@ -1,0 +1,183 @@
+{
+  "status": "passed",
+  "python": "3.12.14",
+  "counts": {
+    "literal_original_job_assignments": 731,
+    "literal_listed_load_records": 620,
+    "literal_complete_schedules": 15,
+    "given_yes_complete_schedules": 12,
+    "given_yes_job_assignments": 642,
+    "sharp_all_matrix_cells": 3002,
+    "sharp_finite_matrix_cells": 1166,
+    "sharp_job_assignments": 480,
+    "sharp_all_load_records": 300,
+    "sharp_complete_schedules": 14
+  },
+  "leaf_audit_counts": {
+    "key_actual_schedules": 7,
+    "physical_sigma_enumerations": 0,
+    "quota_forest_oracle_enumerations": 0
+  },
+  "mixing_audit_counts": {
+    "actual_complete_schedules": 7,
+    "actual_jobs": 361,
+    "selector-mixing-calibrated-active-only": 4,
+    "sharp_profile_capacity_lower_bounds": 2,
+    "selector-mixing-one-YES": 2,
+    "selector-mixing-empty": 1,
+    "rejected_invalid_incomplete": 1,
+    "rejected_invalid_no-witness": 1,
+    "rejected_invalid_uncovered": 1,
+    "rejected_invalid_bad-sign-type": 1,
+    "rejected_invalid_not-C1": 1,
+    "rejected_invalid_N<p": 1
+  },
+  "leaf_cases": [
+    {
+      "name": "h1-actual-ratio-three-halves",
+      "b": 2,
+      "r": 1,
+      "makespan": "3/2"
+    },
+    {
+      "name": "competing-variables-b-zero-exact-two",
+      "b": 0,
+      "r": 0,
+      "makespan": "2"
+    },
+    {
+      "name": "zero-capacity-clause",
+      "b": 0,
+      "r": 0,
+      "makespan": "2"
+    },
+    {
+      "name": "sixty-four-open-preserves-real-ancestor-obstruction",
+      "b": 64,
+      "r": 1,
+      "makespan": "7/4"
+    },
+    {
+      "name": "explicit-unary-depth-80",
+      "b": 1,
+      "r": 1,
+      "makespan": "1"
+    },
+    {
+      "name": "over-4300-decimal-digits-original-capacity",
+      "b": 2,
+      "r": 1,
+      "makespan": "1"
+    },
+    {
+      "name": "empty-before-enormous-binary-height",
+      "b": 0,
+      "r": 0,
+      "makespan": "0"
+    }
+  ],
+  "sharp_profiles": [
+    {
+      "p": 1,
+      "machines": 3,
+      "jobs": 3,
+      "given_yes": 1,
+      "profile_optimum": "1",
+      "global_optimum": "1",
+      "lower_bound_method": "symbolic root/export counting, not enumeration"
+    },
+    {
+      "p": 2,
+      "machines": 10,
+      "jobs": 14,
+      "given_yes": 2,
+      "profile_optimum": "5/3",
+      "global_optimum": "1",
+      "lower_bound_method": "symbolic root/export counting, not enumeration"
+    },
+    {
+      "p": 3,
+      "machines": 21,
+      "jobs": 33,
+      "given_yes": 3,
+      "profile_optimum": "9/5",
+      "global_optimum": "1",
+      "lower_bound_method": "symbolic root/export counting, not enumeration"
+    },
+    {
+      "p": 4,
+      "machines": 36,
+      "jobs": 60,
+      "given_yes": 4,
+      "profile_optimum": "13/7",
+      "global_optimum": "1",
+      "lower_bound_method": "symbolic root/export counting, not enumeration"
+    }
+  ],
+  "commands": [
+    {
+      "name": "leaf-audit",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/unrelated-machines/tools/evidence/unit-readout-runtime/original/unit_readout_leaf_flow.py",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-readout-runtime-run-001/leaf-audit.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "leaf-audit.stdout",
+      "stderr": "leaf-audit.stderr"
+    },
+    {
+      "name": "mixing-audit",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/unrelated-machines/tools/evidence/unit-readout-runtime/original/unit_readout_selector_mixing.py",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-readout-runtime-run-001/mixing-audit.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "mixing-audit.stdout",
+      "stderr": "mixing-audit.stderr"
+    },
+    {
+      "name": "leaf-cli",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/unrelated-machines/tools/evidence/unit-readout-runtime/original/unit_readout_leaf_flow.py",
+        "--input",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-readout-runtime-run-001/leaf-input.json",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-readout-runtime-run-001/leaf-cli.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "leaf-cli.stdout",
+      "stderr": "leaf-cli.stderr"
+    },
+    {
+      "name": "mixing-cli",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/37f0f9248cfc/boss4-research/archives/unrelated-machines/tools/evidence/unit-readout-runtime/original/unit_readout_selector_mixing.py",
+        "--input",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-readout-runtime-run-001/mixing-input.json",
+        "--output",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/unit-readout-runtime-run-001/mixing-cli.json"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-research",
+      "exit_code": 0,
+      "stdout": "mixing-cli.stdout",
+      "stderr": "mixing-cli.stderr"
+    }
+  ],
+  "source_sha256": {
+    "unit_readout_calibrated_cardinality.py": "039ac7dbbfc0858aa9f51086ad8debb2b2f403b282e6a516ada328e2ebf175c4",
+    "unit_readout_global_leaf_flow_and_selector_mixing_review.md": "4fbcbc68b7b7607de5d5e7164a7c3a8b11cab2b0300e2773683777f09c89de32",
+    "unit_readout_leaf_flow.py": "43dbf6749b993871cfe8363b3da280d82590147a352f95e46c2eb0eb88a3284f",
+    "unit_readout_selector_mixing.py": "ddc7714e3718f39a08da091394c72b3145c8e1b3f0613690ab36c5459be1ce9f",
+    "unit_readout_selector_mixing_sharp_profiles.json": "4b9907c02b0b32e1fb26beb856980e5defe294d9e7dacfcd037b05ded483cf55"
+  },
+  "scope": "Exact finite original-input and matrix recheck. No general OPT/LP backend, no exhaustive schedule/forest enumeration, no new theorem or independent full-stack constructor."
+}

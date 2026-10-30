@@ -1,0 +1,27 @@
+{
+  "k": 7,
+  "sites": ["H", "M", "L", "R"],
+  "clients": [
+    {"weight": 130, "sites": ["H"]},
+    {"weight": 80, "sites": ["M"]},
+    {"weight": 52, "sites": ["L"]},
+    {"weight": 50, "sites": ["R"]},
+    {"weight": 25, "sites": ["H", "M"]},
+    {"weight": 25, "sites": ["M", "L"]}
+  ],
+  "purpose": "A strict greedy-realizable equal-movable-weight exact site NE can violate the lower box; only global potential minimizers have the automatic full-box property.",
+  "expected": {
+    "strict_greedy_order": ["H", "M", "H", "M", "L", "H", "R"],
+    "greedy_scores": ["155", "105", "155/2", "105/2", "52", "155/3", "50"],
+    "q": [3, 2, 1, 1],
+    "gamma": "50",
+    "normalized_c": ["1/10", "1/10", "1/25", "0"],
+    "normalized_w": ["1/2", "1/2"],
+    "movable_indices": [4, 5],
+    "local_ne_movable_assignment": ["M", "L"],
+    "local_ne_X": ["-2/5", "1/10", "27/50", "0"],
+    "local_ne_Psi": "-4/25",
+    "unique_global_movable_assignment": ["H", "M"],
+    "global_Psi": "-1/3"
+  }
+}
