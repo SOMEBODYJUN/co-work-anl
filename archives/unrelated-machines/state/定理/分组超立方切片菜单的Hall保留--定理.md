@@ -116,3 +116,20 @@ Q=1时同一变量的索引互异，全部所选集合已不交。由此均可�
 **原论文范围核对。** 本轮打开[Davies–Guruswami–Ren原论文v1 §5](https://arxiv.org/html/2511.00184v1#S5)及Theorem4，核其无分组set selection、高保留比例、degree5/二元字母表/七满足状态/15元素及ε<1/30参数。每组必须选择一个状态与这里的普通UM任务桥属于本对象另加的合同；19/15及三半是本文计数与Hall推导的结论，不归给原论文。这里只核这组具体依赖和差异，不声称重证该论文的全部困难性。
 
 **关联。** 与[深树坐标切片源反例](../反例/坐标切片投影源编译--反例.md)的共同来源是乘积坐标切片，区别是这里资源保留不需形成深度Q的完整分叉子树；因此Hall匹配可直接输出本平星模型的调度。若改变变量资源命名、incidence索引注入、非乘积共享或小端归一化，就离开本定理域，但仍需另给源NO与每个低负载调度的解码。一般UM目标未被本对象解决。
+
+## 分组切片专门审查的来源与独立性
+
+本段整理source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/unrelated_machines/grouped_hypercube_slice_scheduling_review.md（对应源ID aa2d41822ff3e0ca8de1）的独有审查信息。它只覆盖分组超立方v2，不扩到坐标源v4或一般UM。
+
+原构造者先读DGR原论文§3/5再提出乘积计数与Hall。原独立审者先只收Exact并重构Hall与19/15；原研究者后来提出全类三半与四格锐例，该审者也推出这一结论并提供c_d≥(d+1)/(2d)的短证。作者核对后冻结新的v2 Exact/Proof，审者再按Exact、Proof、最终组合的顺序核读。因此这份记录既含独立重构，也含审查者对最终证明的实质贡献，不能把整个过程一概称为对最终作者证明完全无先验的盲审。
+
+最终读后提出的“全部incidence jobs外放”歧义及其修复已在上文保留。原记录没有生产flow实现，构造者额外有限算术检查也没有登记成原主研究者的新运行。
+
+| 冻结来源路径（均相对于同一完整commit） | 原记录的SHA256 |
+|---|---|
+| history/source/notes/unrelated_machines/grouped_hypercube_slice_scheduling_v1_exact_and_proof.md | e380618458138f3c43f9692673f19b208c604112dd41a31c89b92e3b297987bf |
+| history/source/notes/unrelated_machines/grouped_hypercube_slice_scheduling_v2_exact.md | edc9658d7f33ece188b4542178f7b82cf7d657099da1c6fd90dcf5979cf6ee55 |
+| history/source/notes/unrelated_machines/grouped_hypercube_slice_scheduling_v2_author_proof.md.gz | 74715bf688a7819b389f036608ecb7a79c370c8d253694f3ce51362c019dad04 |
+| history/source/notes/unrelated_machines/grouped_hypercube_slice_scheduling_v2_independent_review.md | f0b20bdd293b123d62f098d391427c2516fca27c7dd4fdf940c6830ad3a6304d |
+
+gzip行是压缩文件的指纹；冻结记录另给解压原文SHA256 f773a57f681556f331f7d9804cf0c30d2fedbd00ac9ac595804cfda2330e7db0，说明保留了包括末尾空行的完整原字节。这两个指纹属于不同字节对象，不能直接比较为“文件变了”。本轮读取并整理该记录，没有重新解压该历史附件或重新执行其算术检查；其真实性范围仍按明确来源和读取顺序登记。
