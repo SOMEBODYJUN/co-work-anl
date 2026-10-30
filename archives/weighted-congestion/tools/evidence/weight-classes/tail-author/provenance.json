@@ -1,0 +1,112 @@
+{
+  "source_exports": [
+    {
+      "source_id": "150b52b3e60825fe5ff5",
+      "source_path": "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py",
+      "source_locations": [
+        {
+          "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+          "name": "legacy-cleanup",
+          "path": "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py"
+        },
+        {
+          "commit": "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c",
+          "name": "main",
+          "path": "tests/audits/weighted_congestion/weight_bands/verify_ordered_tail_freezing.py"
+        }
+      ],
+      "local_file": "verify_ordered_tail_freezing.py",
+      "sha256": "487ec65fbc85dc8fe015855624ab6ded0a74e6106d03a453f015ac556e9fe4de",
+      "size": 9970,
+      "byte_identical_to_inventory": true
+    },
+    {
+      "source_id": "cda1c528f8c77fef2401",
+      "source_path": "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json",
+      "source_locations": [
+        {
+          "commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+          "name": "legacy-cleanup",
+          "path": "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json"
+        },
+        {
+          "commit": "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c",
+          "name": "main",
+          "path": "evidence/runs/weighted_congestion/weight_bands/ordered_tail_freezing.json"
+        }
+      ],
+      "local_file": "frozen-report.json",
+      "sha256": "b4f46d867fa295815dd51939d83eeec69b692d2c86a8d7412a563a1c7126a7eb",
+      "size": 70479,
+      "byte_identical_to_inventory": true
+    }
+  ],
+  "source_reading": {
+    "code": "All functions and CLI fully read with clean show.",
+    "frozen_report": "Complete metadata, all 15 dense records and all 32 parameter records read; every full game input/result read in lossless consecutive ranges 0..21 and 22..42."
+  },
+  "new_execution": {
+    "count": 1,
+    "manifest": "replay-manifest.json",
+    "new_report": "replay-report.json",
+    "code_modified": false,
+    "author_implementation": true,
+    "whole_json_equal": true,
+    "whole_bytes_equal": true,
+    "excluded_fields": [],
+    "check_option_additionally_executed": false
+  },
+  "finite_scope": {
+    "seed": 712941,
+    "games": 43,
+    "fixed_boundary_games": 3,
+    "generated_five_player_games": 40,
+    "single_continuous_random_generator": true,
+    "template_degree_correlation": "even index: weights 24,16,4,1,1/2 with d0,2,4; odd index: weights64,64,4,4,1/8 with d1,3,5",
+    "stage_candidates": 511,
+    "stage_minima": 164,
+    "final_profiles": 64,
+    "legal_strategy_comparisons": 664,
+    "self_strategy_comparisons_derived_from_full_report": 305,
+    "nonself_comparisons": 359,
+    "stage_marginal_implementation": "Difference of stage_phi before/after algebraically emptying mover; not separate original Shapley probability routine.",
+    "dense_parameter_records": 15,
+    "dense_beta_bound_actually_checked": "11/4",
+    "parameter_records": 32,
+    "labelled_ordered_partition_evaluations": 2656,
+    "parameter_degree_zero_included": false,
+    "parameter_formula_non_H_case": {
+      "H": "2",
+      "K": 1,
+      "d": 1,
+      "minimum": "3/2"
+    },
+    "input_records_complete": true,
+    "all_terminal_profiles_and_chain_values_stored_in_report": false
+  },
+  "related_comparison": {
+    "full_read_sources": [
+      "40d8889785ccb26f9532",
+      "cf5761c011b6af32ee86",
+      "96a3b9b556e6034a2a1e",
+      "abc5ac0eb01a29d0c2eb",
+      "73ff2d243eafad2dc73f",
+      "fae6eb998004650e33a8",
+      "4d798c72dbe520d5469a",
+      "e122f804c9c1cf9ed182",
+      "c1bc5b87a6c3ebb8a94e",
+      "52a32b7ed6f8fb7c6dd8"
+    ],
+    "frozen_search": "verify_ordered_tail_freezing: 17 Markdown matches in 3 sources; catalogs used as routing only.",
+    "current_search": "Program name, old author-run pointers and specific counts across current archive/review objects.",
+    "distinctions": [
+      "Author stage marginal derived from same potential; independent audit separately implements raw Shapley share.",
+      "Whole tree retains every global minimizer, not one random tie choice.",
+      "511 candidates differs from independent stage-node count.",
+      "305 self-strategy comparisons are included in 664, including singleton-family players.",
+      "Dense finite bound11/4 differs from independent3 and analytic e.",
+      "32/2656 labelled partitions differs from independent64/10112 labelled and12/8661 quotient counts.",
+      "Parameter failure concerns guarantee only; all-empty exactPNE persists in the parameter witness."
+    ]
+  }
+}
