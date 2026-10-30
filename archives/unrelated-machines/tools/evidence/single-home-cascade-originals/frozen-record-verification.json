@@ -1,0 +1,98 @@
+{
+  "scope": "Read-only independent arithmetic/identity verification of one previously successful frozen output; constructor not imported or executed; no general theorem or optimality test.",
+  "all_checks_passed": true,
+  "python_version_this_check": "3.12.14",
+  "historical_run_python_version": "3.12.14",
+  "historical_invocation": [
+    "python3",
+    "tests/audits/unrelated_machines/single_home_cascade_query_separation.py",
+    "--input",
+    "examples/unrelated_machines/home_cascade_query_patterns.json",
+    "--output",
+    "evidence/runs/unrelated_machines/single_home_cascade_query_patterns_v2.json"
+  ],
+  "source_sha256": {
+    "source/single_home_cascade_query_separation.py": "c52eb5be01a64e7d13f1e80a7ad1cb5711ed187f0a8ad1000269847d004d59cd",
+    "source/single_home_cascade_query_separation_review.md": "3f92aec8afd506dd6ed879311cbb4b48e6482f8e1bd0e4673a62f8b6798bc934",
+    "inputs/home_cascade_query_patterns.json": "cfb25856400d6d0ee6b6cea9cb100d8545c97fe2025643f8a62260763fc69573",
+    "frozen/single_home_cascade_query_patterns_v2.json": "846ec8efc0e0b3ea2f92e71a548ea4b62aaef60f40c2d74ed2ef8cd001dcf286"
+  },
+  "verifier_sha256": "ebf53cdd6f15e80896f0e705210770aaf97d5cb1514ad43bf396752e4f9796d5",
+  "counts": {
+    "schedules": 10,
+    "original_job_assignments": 140,
+    "machine_loads": 140,
+    "jobs_by_machine_entries": 140
+  },
+  "patterns": [
+    {
+      "subset": [],
+      "peak": "1",
+      "delta": "3/16",
+      "fee": "0"
+    },
+    {
+      "subset": [
+        "q1"
+      ],
+      "peak": "19/16",
+      "delta": "3/16",
+      "fee": "34"
+    },
+    {
+      "subset": [
+        "q2"
+      ],
+      "peak": "9/8",
+      "delta": "1/8",
+      "fee": "7"
+    },
+    {
+      "subset": [
+        "q3"
+      ],
+      "peak": "1",
+      "delta": "1/8",
+      "fee": "17"
+    },
+    {
+      "subset": [
+        "q1",
+        "q2"
+      ],
+      "peak": "17/16",
+      "delta": "1/16",
+      "fee": "41"
+    },
+    {
+      "subset": [
+        "q1",
+        "q3"
+      ],
+      "peak": "9/8",
+      "delta": "1/8",
+      "fee": "51"
+    },
+    {
+      "subset": [
+        "q2",
+        "q3"
+      ],
+      "peak": "9/8",
+      "delta": "1/8",
+      "fee": "24"
+    },
+    {
+      "subset": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "peak": "1",
+      "delta": "0",
+      "fee": "58"
+    }
+  ],
+  "all_eight_subsets_of_this_fixture_checked": true,
+  "general_boolean_cube_enumeration_claimed": false
+}

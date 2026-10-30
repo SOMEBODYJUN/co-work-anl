@@ -66,3 +66,7 @@ READY45数学pushed68fde5a8199453c67c15f13597b9caf49b8125a9；45源done另推送
 READY28数学pushed00460b6050e15f0216102aa35a5d492473c86936（147文件），28源done另推送e08c17e3dac22323fde7d3d1d1df7b79b532e64b；累计746完成、24执行中。恢复备份22327dc4的21未跟踪原样全在、无unmerged，备份保留。
 
 READY24B为PI-simplex历史5、Boss实读复制/raw主源4、净券主源4、教材附录5、任意设施数登记3、双见证原程序3，全部自足整理完毕；即将先正文/证据checkpoint后逐来源done。既有simplex主值不重复，新补完整trace/finder/CSP/表示与认证范围；复制成本保中间收益差，净券三对象仍留共同ROLE缺口。其余认领准确见ACTIVE_AFTER_READY24B_SCOPE.json。
+
+READY24B数学pushedc94ece4143b704f98e47de500eadce65b23ddc1a（160文件），24源done另推送35f328c1c0e44dd751495b4a0b5f0b828a2207b0，local_sync synced。Boss4累计770完成、当前22代理来源加2本人前缀/完整槽来源；未将claim或本地草稿计done。
+
+READY11D：Boss完整前缀/完整槽原源2，单home原程序/审查2，双见证证明/冻结审查2；恒等账/未付金额/有限原证书回算与审查范围分别保留；另单primary原态匹配/完整任务与五历史审查链5源；共11主源，先明确正文/证据checkpoint再逐源done；其余认领见READY11D_REMAINING_SCOPE.json。
