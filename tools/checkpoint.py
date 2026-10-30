@@ -205,7 +205,9 @@ def locked_save(repo, common, cache, args):
     if SECRET.search(remote.encode()) or re.search(r"https?://[^/]*@", remote):
         raise Stop("Remove credentials embedded in origin; use external authentication.")
     credential = args.token_file or os.environ.get("WCG_CHECKPOINT_TOKEN_FILE")
-    if not credential:
+    auth_mode=git(repo,'config','--local','--get','wcg.auth',check=False).stdout.decode().strip()
+    if auth_mode=='ssh':credential=None
+    if not credential and auth_mode!='ssh':
         credential = git(repo, "config", "--local", "--get", "wcg.tokenFile", check=False).stdout.decode().strip()
     if credential:
         credential = Path(credential).resolve()
@@ -275,6 +277,7 @@ def locked_save(repo, common, cache, args):
             result[key] = previous.get(key, [])
     receipt.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     print("LOCAL_CHECKPOINT " + snapshot, file=sys.stderr, flush=True)
+    if getattr(args,'local_only',False):return result
     head = snapshot
     ref = "refs/heads/" + branch
     private = "refs/wcg/checkpoint/" + namespace
@@ -365,6 +368,7 @@ def main():
     parser.add_argument("--token-file", help="Optional external token file; remembers only its path locally")
     parser.add_argument("--create-branch", action="store_true",
                         help="Allow first publication of the bound branch, audited against remote main")
+    parser.add_argument('--local-only',action='store_true')
     args = parser.parse_args()
     print(json.dumps(save(args), ensure_ascii=False, indent=2))
 

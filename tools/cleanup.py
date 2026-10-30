@@ -1,6 +1,6 @@
 """Frozen-source reading and concurrent per-file semantic-cleaning receipts."""
 from __future__ import annotations
-import argparse, fcntl, fnmatch, hashlib, json, subprocess, sys, time, uuid
+import argparse, fcntl, fnmatch, hashlib, json, re, subprocess, sys, time, uuid
 from pathlib import Path
 from urllib.parse import quote
 import board
@@ -234,9 +234,18 @@ def mutate(root, operation, ids=(), prefix=None, limit=20, records=()):
     actor=board.git(root,'config','--local','--get','wcg.actor').stdout.decode().strip()
     branch=board.git(root,'config','--local','--get','wcg.branch').stdout.decode().strip()
     client=board.Board(root,branch=branch,retries=20);request_id=uuid.uuid4().hex
+    instance=board.git(root,'config','--local','--get','wcg.instance',check=False).stdout.decode().strip();checked=False
     for attempt in range(20):
         with client.scratch() as name:
             directory=Path(name);checkout_snapshot(client,directory)
+            policy_file=directory/'cleanup/coordination.json';rules=json.loads(policy_file.read_text()) if policy_file.exists() else {}
+            if rules.get('require_boss_number'):
+                if not re.fullmatch(r'Boss[1-9][0-9]*',actor):raise ValueError('Explicit Boss number required; update the root program and bind this conversation')
+                person=directory/'cleanup/people'/f'{actor}.json'
+                if not person.exists() or json.loads(person.read_text()).get('instance')!=instance:raise ValueError('Boss identity is not registered to this conversation')
+                if not checked:
+                    from coordination import verify_write
+                    verify_write(directory,branch,board.git(directory,'rev-parse','HEAD').stdout.decode().strip());checked=True
             rows=inventory(directory);by_id={r['id']:r for r in rows}
             chosen=[]
             if operation=='claim' and prefix is not None:
@@ -246,6 +255,8 @@ def mutate(root, operation, ids=(), prefix=None, limit=20, records=()):
                 if limit:chosen=chosen[:limit]
             elif operation=='done':
                 chosen=[resolve(rows,item['id']) for item in records]
+            elif operation=='handoff' and prefix is not None:
+                chosen=[r for r in rows if progress(directory,r['id']).get('owner')==actor and progress(directory,r['id']).get('disposition') not in COMPLETE]
             else:chosen=[resolve(rows,sid) for sid in ids]
             if not chosen:
                 if operation=='claim' and prefix is not None:
@@ -264,6 +275,9 @@ def mutate(root, operation, ids=(), prefix=None, limit=20, records=()):
                 elif operation=='release':
                     if old.get('disposition') in COMPLETE:raise ValueError('Completed items need explicit editorial correction, not release')
                     new=dict(old,owner=None,disposition='unread')
+                elif operation=='handoff':
+                    if old.get('owner')!=actor or old.get('disposition') in COMPLETE:raise ValueError('Only hand off this Boss\'s unfinished sources')
+                    new=dict(old,owner=None,previous_owner=actor,disposition='handoff',handoff_reason=records[0]['reason'],draft_note=records[0].get('draft_note'))
                 else:
                     if old.get('owner')!=actor:raise ValueError('Claim the source before recording its semantic disposition')
                     item=records[index];validate_receipt(directory,item)
@@ -275,6 +289,7 @@ def mutate(root, operation, ids=(), prefix=None, limit=20, records=()):
             board.git(directory,'add','cleanup/progress','cleanup/CHECKLIST.md','cleanup/checklists')
             board.git(directory,'commit','--quiet','-m',f'cleanup {operation}: {actor} ({len(updates)} source versions)')
             pushed=board.git(directory,'push','--quiet','origin','HEAD:refs/heads/'+branch,check=False)
+            if board.auth_rejected(pushed):raise board.AuthenticationError('Authentication rejected; no remote success confirmed. Stop retries with the same credential.')
             # Check actual remote state even if the push response was lost.
             _,remote,_=refresh_snapshot(client)
             confirmed=True
@@ -291,7 +306,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--repo',type=Path,default=Path(__file__).resolve().parents[1]);sub=p.add_subparsers(dest='command',required=True)
     sub.add_parser('status');li=sub.add_parser('list');li.add_argument('--prefix',default='');li.add_argument('--limit',type=int,default=30)
     li.add_argument('--owner',help='Actor ID, or self for this clone')
-    li.add_argument('--state',choices=('unread','in-progress','needs-decision','completed'))
+    li.add_argument('--state',choices=('unread','in-progress','needs-decision','handoff','completed'))
     li.add_argument('--available',action='store_true',help='Only unclaimed, unfinished sources')
     li.add_argument('--full',action='store_true',help='Include full frozen-source metadata and receipt')
     sh=sub.add_parser('show');sh.add_argument('id');sh.add_argument('--out')
@@ -299,6 +314,7 @@ def main():
     cl=sub.add_parser('claim');cl.add_argument('ids',nargs='*');cl.add_argument('--prefix');cl.add_argument('--limit',type=int,default=20)
     re=sub.add_parser('release');re.add_argument('ids',nargs='+')
     dn=sub.add_parser('done');dn.add_argument('--record-file',type=Path,required=True)
+    ho=sub.add_parser('handoff');ho.add_argument('ids',nargs='*');ho.add_argument('--all',action='store_true');ho.add_argument('--reason',required=True);ho.add_argument('--draft-note')
     sub.add_parser('coverage');a=p.parse_args();root=a.repo.resolve()
     if a.command=='show':show(root,a.id,a.out);return
     if a.command=='search':
@@ -312,6 +328,9 @@ def main():
     elif a.command=='done':
         records=json.loads(a.record_file.read_text());records=records if isinstance(records,list) else [records]
         result=mutate(root,'done',records=records)
+    elif a.command=='handoff':
+        if a.all==bool(a.ids):raise ValueError('Use explicit IDs or --all')
+        result=mutate(root,'handoff',a.ids,prefix='' if a.all else None,records=[{'reason':a.reason,'draft_note':a.draft_note}])
     else:
         if getattr(a,'limit',0)<0:raise ValueError('limit must be nonnegative')
         result=mutate(root,a.command,getattr(a,'ids',()),getattr(a,'prefix',None),getattr(a,'limit',20))

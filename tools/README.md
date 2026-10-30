@@ -3,10 +3,10 @@
 新对话使用本结果分支的新版work.py和仓库外凭据，自动找附件路径及独立--repo目录：
 
 ```sh
-python3 <新版work.py> --repo <本对话独立目录> start --token-file <仓库外凭据路径>
+python3 <新版work.py> --repo <本对话独立目录> start --actor Boss编号 --token-file <仓库外凭据路径>
 ```
 
-默认结果分支rebuild/research-v2、公屏wcg/board-cleanup-20261028、repository-cleanup/cleaner；身份自动生成。第三阶段新对话加`--role mapper`。已有其他绑定clone不改绑，另建独立目录。附件启动后转用结果分支根最新程序；本次换结果分支后需换用此次新版附件一次，旧版仍指向来源分支。
+默认结果分支rebuild/research-v2、公屏wcg/board-cleanup-20261028、repository-cleanup/cleaner；身份由提示词明确指定，程序只绑定校验。第三阶段新对话加`--role mapper`。已有其他绑定clone不改绑，另建独立目录。附件启动后转用结果分支根最新程序；本次换结果分支后需换用此次新版附件一次，旧版仍指向来源分支。
 
 以后新研究明确指定父存档和子问题，例如`start --save facility-games --subarchive common-two --role boss`；回执会给出该子存档入口，工作室在其内部。继续同一clone复用绑定，换研究问题使用独立clone。新问题目录先按实际数学建立，不能让一个子存档暗中变成别的题。
 
@@ -52,3 +52,12 @@ cleanup/CHECKLIST.md及checklists/分册会自动从逐源记录生成勾选。i
 `work.py map check`检查对象和边字段；`map build --draft`只生成明确标待建的三级投影；`map build`为第二阶段源版本全部完成后的第三阶段生成。正文及每边数学解释仍要由清洗者斟酌，不能以程序通过代替正确性。
 
 运行需要Python3.10+、Git、POSIX（Linux/macOS/WSL），不需要数学Agent CLI、数据库或Lean。上游格式代码及许可证见vendor/UPSTREAM.md。共享协议程序来自既有工具并调整路径；公屏旧存储路径为兼容协议保留在独立公屏分支，本结果文件树不保留旧研究目录。
+
+
+## 固定身份、认证与重置
+
+新对话显式start --actor Boss编号；旧同一clone迁移用--adopt-legacy。doctor检查实际写端点，公开读取不代表认证成功。登记失败不可新认领；暂停用clean handoff --all，认证受阻仅checkpoint --local-only保全。
+
+HTTPS令牌模式为--auth token --token-file 仓库外路径。SSH模式为--auth ssh，使用当前运行环境的SSH agent并忽略旧PAT文件；GitHub默认remote转为SSH地址，新建SSH clone后同clone继续会复用模式。SSH公钥不是token，私钥不进入程序包/仓库。本地Windows SSH不会自动提供云端身份。本程序运行环境仍为Linux/macOS/WSL；Windows原生Python兼容性不在本次已验证范围。
+
+reset plan只生成保全清单，不改远端。reset apply由明确协调Boss执行：重新读取最新远端核实done，清掉未完成状态/未引用的临时协作区，公屏重建为1条成果入口；结果与公屏两个分支使用正常--atomic推送，一起成功或一起失败。保留Git历史，不强推。执行前停止旧客户端认领并先部署此程序，失败不报告重置完成。

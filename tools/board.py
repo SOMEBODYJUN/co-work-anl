@@ -36,6 +36,14 @@ class BoardError(Exception):
     pass
 
 
+class AuthenticationError(BoardError):
+    pass
+
+
+def auth_rejected(result):
+    return result.returncode and re.search(rb'authentication failed|invalid username or token|bad credentials|write access .*not granted|permission .*denied|HTTP (?:401|403)',result.stderr,re.I)
+
+
 class Conflict(BoardError):
     pass
 
@@ -194,6 +202,7 @@ def git(cwd, *args, check=True, timeout=45, input_data=None):
         raise BoardError('Git timed out; retry using the saved message ID.') from exc
     if check and result.returncode:
         detail = SECRET.sub('[REDACTED]', result.stderr.decode(errors='replace'))
+        if auth_rejected(result):raise AuthenticationError('Credential/write permission rejected; stop retries with the same credential. '+detail[:700])
         raise BoardError('Git operation failed: ' + detail.strip()[:1000])
     return result
 
@@ -497,7 +506,7 @@ class Board:
                         pending.unlink(missing_ok=True)
                         return found
                     raise BoardError('Remote confirmation missing; message remains pending.')
-            except (Conflict, ValidationError):
+            except (Conflict, ValidationError, AuthenticationError):
                 raise
             except BoardError as exc:
                 error = exc

@@ -58,9 +58,14 @@ def credential(path):
     return tokens.pop().decode()
 
 
-def environment(path=None):
+def environment(path=None, mode='token'):
     env = {k: v for k, v in os.environ.items() if k not in ROUTING}
     env["GIT_TERMINAL_PROMPT"] = "0"
+    if mode=='ssh':
+        for key in ('GIT_ASKPASS','WCG_WORK_ASKPASS','WCG_CHECKPOINT_ASKPASS','WCG_CHECKPOINT_TOKEN_FILE'):
+            env.pop(key,None)
+        env.setdefault('GIT_SSH_COMMAND','ssh -o BatchMode=yes')
+        return env
     if path:
         credential(path)
         base = Path.cwd()
@@ -76,6 +81,8 @@ def environment(path=None):
         helper.chmod(0o700)
         env.update(GIT_ASKPASS=str(helper),
                    WCG_WORK_ASKPASS="1", WCG_CHECKPOINT_TOKEN_FILE=str(path))
+        count=int(env.get('GIT_CONFIG_COUNT','0'));env['GIT_CONFIG_COUNT']=str(count+1)
+        env['GIT_CONFIG_KEY_'+str(count)]='credential.helper';env['GIT_CONFIG_VALUE_'+str(count)]=''
     return env
 
 
@@ -149,6 +156,9 @@ def checked_repo(path):
 
 
 def auth(repo, args):
+    mode=getattr(args,'auth',None) or run(repo,'config','--local','--get','wcg.auth',check=False).stdout.decode().strip() or 'token'
+    if getattr(args,'auth',None):run(repo,'config','--local','wcg.auth',mode)
+    if mode=='ssh':return environment(mode='ssh')
     supplied = getattr(args, "token_file", None)
     path = supplied or run(repo, "config", "--local", "--get", "wcg.tokenFile",
                            check=False).stdout.decode().strip()
@@ -162,17 +172,19 @@ def auth(repo, args):
     return environment(path)
 
 
-def actor(repo, requested=None):
+def actor(repo, requested=None, adopt_legacy=False):
     saved = run(repo, "config", "--local", "--get", "wcg.actor", check=False).stdout.decode().strip()
     # A caller may pin a role without putting it in the command line.  This is
     # useful for an explicitly assigned research lead while preserving the
     # historical random fallback for ordinary sessions.
     requested_from_env = os.environ.get("WCG_ACTOR", "").strip()
-    chosen = requested if requested is not None else (requested_from_env or saved or ("R-" + uuid.uuid4().hex))
+    chosen = requested if requested is not None else (requested_from_env or saved)
     if not chosen or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}", chosen):
-        raise Stop("start --actor 应使用安全的发布身份；省略即可自动生成并记住 R-UUID。")
+        raise Stop('首次启动必须按提示词给出 --actor Boss编号；程序不再随机分配身份。')
     if saved and saved != chosen:
-        raise Stop("这个工作目录使用角色号 " + saved + "；新对话请使用自己的目录。")
+        if adopt_legacy and re.fullmatch(r'R-[0-9a-f]{32}',saved) and re.fullmatch(r'Boss[1-9][0-9]*',chosen):
+            run(repo,'config','--local','wcg.legacyActor',saved);run(repo,'config','--local','wcg.actor',chosen)
+        else:raise Stop('本目录已绑定 '+saved+'；同一旧对话迁移需明确 --adopt-legacy，其他对话用独立clone。')
     if not saved:
         run(repo, "config", "--local", "wcg.actor", chosen)
     return chosen
@@ -364,13 +376,18 @@ def start(args):
     if board_limit < 0:
         raise Stop("start --board-limit 必须是非负整数；0 表示不自动读取公屏。")
     repo = Path(args.repo).expanduser().resolve()
+    if not getattr(args,'auth',None) and (repo/'.git').exists():
+        saved_auth=run(repo,'config','--local','--get','wcg.auth',check=False).stdout.decode().strip()
+        if saved_auth:args.auth=saved_auth
+    if getattr(args,'auth',None)=='ssh' and args.remote==REMOTE:
+        args.remote='git@github.com:SOMEBODYJUN/co-work-anl.git'
     if not (repo / ".git").exists():
         if repo.exists() and any(repo.iterdir()):
             raise Stop("目标目录有其他文件；请为仓库指定空目录。")
         path = Path(args.token_file).expanduser().resolve() if args.token_file else None
         if path and path.is_relative_to(repo):
             raise Stop("凭据文件请放在仓库外。")
-        env = environment(path)
+        env = environment(path,mode=getattr(args,'auth',None) or 'token')
         repo.parent.mkdir(parents=True, exist_ok=True)
         remote = args.remote
         if SECRET.search(remote.encode()) or re.search(r"https?://[^/]*@", remote):
@@ -412,17 +429,21 @@ def start(args):
             or current_program.read_bytes() != running_source):
         forwarded = ["--repo", str(repo), "start", "--remote", args.remote,
                      "--board-limit", str(board_limit)]
-        for name in ("actor", "role", "token_file", "save", "branch", "board_branch", "subarchive"):
+        for name in ("actor", "role", "token_file", "save", "branch", "board_branch", "subarchive",'auth'):
             supplied = getattr(args, name, None)
             if supplied is not None:
                 forwarded.extend(["--" + name.replace("_", "-"), str(supplied)])
         if getattr(args, "resume", False):
             forwarded.append("--resume")
+        if getattr(args,'adopt_legacy',False):forwarded.append('--adopt-legacy')
         forwarded_env=dict(env,WCG_START_HANDOFF=json.dumps({
             'repo':str(repo),'branch':target,'head':value(repo,'rev-parse','HEAD'),
             'program_sha256':hashlib.sha256(current_program.read_bytes()).hexdigest(),'result':result}))
         return subprocess.call([sys.executable, str(current_program), *forwarded], env=forwarded_env)
-    who = actor(repo, args.actor)
+    who = actor(repo, args.actor,getattr(args,'adopt_legacy',False))
+    policy_file=repo/'cleanup/coordination.json';rules=json.loads(policy_file.read_text()) if policy_file.exists() else {}
+    if rules.get('require_boss_number') and not re.fullmatch(r'Boss[1-9][0-9]*',who):
+        raise Stop('本轮须按提示词绑定Boss编号；旧UUID对话用--actor Boss编号 --adopt-legacy。')
     if not run(repo, "config", "--local", "--get", "user.name", check=False).stdout:
         run(repo, "config", "--local", "user.name", "WCG " + who)
     if not run(repo, "config", "--local", "--get", "user.email", check=False).stdout:
@@ -486,6 +507,15 @@ def start(args):
     elif save == "repository-cleanup":
         result["context_entry"] = ("prompts/03-map.md" if selected_role == "mapper" else "cleanup/README.md")
     result["recent_board_limit"] = board_limit
+    if rules.get('require_boss_number') and save=='repository-cleanup':
+        command=[sys.executable,str(repo/TOOLS/'coordination.py'),'--repo',str(repo),'register']
+        registered=subprocess.run(command,env=env,capture_output=True,text=True)
+        try:detail=json.loads(registered.stdout)
+        except ValueError:detail={'status':'write-blocked','detail':registered.stderr[:800]}
+        result['identity_registration']=detail
+        if registered.returncode:
+            result.update(status='read-only',write_access='blocked');print(json.dumps(result,ensure_ascii=False));return registered.returncode
+        result['write_access']='verified'
     print(json.dumps(result, ensure_ascii=False), flush=True)
     if not board_limit:
         return 0
@@ -511,10 +541,13 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--repo", default=default_repo())
     p.add_argument("--token-file")
+    p.add_argument('--auth',choices=('token','ssh'),help='HTTPS令牌或本环境SSH agent；SSH模式不读取令牌文件')
     p.add_argument("--save", help="研究存档 ID；新clone默认 repository-cleanup，已绑定clone保持原存档")
     sub = p.add_subparsers(dest="command", required=True)
     s = sub.add_parser("start", help="恢复项目，固定角色号并同步；公屏按需读取")
-    s.add_argument("--actor", help="可选；省略时为本对话生成并记住唯一 R-UUID 发布标识")
+    s.add_argument('--actor',help='提示词明确指定的Boss编号；首次必填，接续复用')
+    s.add_argument('--adopt-legacy',action='store_true')
+    s.add_argument('--auth',choices=('token','ssh'),default=argparse.SUPPRESS)
     s.add_argument("--role", choices=tuple(ROLE_PROMPTS), help="本轮新清洗clone默认cleaner；既有绑定复用")
     s.add_argument("--token-file", default=argparse.SUPPRESS)
     s.add_argument("--remote", default=REMOTE)
@@ -526,6 +559,9 @@ def main():
     s.add_argument("--board-limit", type=int, default=0,
                    help="启动时读取最近几条公屏；默认0不自动读取，完整历史用read按需查询")
     sub.add_parser("sync", help="只同步绑定分支并保留本地工作")
+    sub.add_parser('doctor',help='不改远端，检查实际写端点权限')
+    restart=sub.add_parser('reset',help='生成或执行保留真实done的协作重置')
+    restart.add_argument('args',nargs=argparse.REMAINDER)
     sub.add_parser("board-init", help="初始化绑定公屏；已有公屏不删除消息")
     clean = sub.add_parser("clean", help="来源、逐文件认领/勾选与覆盖")
     clean.add_argument("args", nargs=argparse.REMAINDER)
@@ -569,6 +605,7 @@ def main():
     c.add_argument("-m", "--message")
     c.add_argument("--create-branch", action="store_true",
                    help="明确允许首次发布绑定分支；基线为远端main，不覆盖已有分支")
+    c.add_argument('--local-only',action='store_true')
     sub.add_parser("pending", help="查看待发送消息")
     r = sub.add_parser("retry", help="以原消息 ID 重试发送")
     r.add_argument("event_id")
@@ -579,6 +616,10 @@ def main():
         return start(a)
     repo = checked_repo(a.repo)
     env = auth(repo, a)
+    if a.command=='doctor':
+        return subprocess.call([sys.executable,str(repo/TOOLS/'coordination.py'),'--repo',str(repo),'doctor'],env=env)
+    if a.command=='reset':
+        return subprocess.call([sys.executable,str(repo/TOOLS/'restart.py'),'--repo',str(repo),*a.args],env=env)
     who = actor(repo)
     save = save_id(repo, a.save)
     target = getattr(a, "to", None)
@@ -587,7 +628,7 @@ def main():
     if a.command in ("clean", "map"):
         module = "cleanup.py" if a.command == "clean" else "maps.py"
         command=[sys.executable, str(repo / TOOLS / module), "--repo", str(repo), *a.args]
-        if a.command=='clean' and a.args and a.args[0] in ('claim','done','release'):
+        if a.command=='clean' and a.args and a.args[0] in ('claim','done','release','handoff'):
             result=subprocess.run(command,env=env,capture_output=True,text=True)
             if result.stderr:sys.stderr.write(result.stderr)
             if result.returncode:
@@ -664,6 +705,7 @@ def main():
             command += ["-m", a.message]
         if a.create_branch:
             command += ["--create-branch"]
+        if a.local_only:command.append('--local-only')
         return subprocess.call(command, env=env)
     return 0
 

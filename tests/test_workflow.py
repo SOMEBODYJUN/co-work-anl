@@ -74,7 +74,7 @@ class WorkflowTests(unittest.TestCase):
 
     def test_research_subarchive_is_explicit_and_stable(self):
         repo=self.base/'F'
-        r=self.work(repo,'start','--remote',str(self.remote),'--save','facility-games','--subarchive','common-two','--role','boss')
+        r=self.work(repo,'start','--remote',str(self.remote),'--actor','F','--save','facility-games','--subarchive','common-two','--role','boss')
         self.assertEqual(r.returncode,0,r.stderr);receipt=json.loads(r.stdout)
         self.assertEqual(receipt['subarchive'],'common-two')
         self.assertEqual(receipt['context_entry'],'archives/facility-games/subarchives/common-two/README.md')
@@ -88,7 +88,7 @@ class WorkflowTests(unittest.TestCase):
         (directory/'README.md').write_text('# A genuinely new problem archive\n')
         git(self.seed,'add','archives/fair-division');git(self.seed,'commit','-m','new archive')
         git(self.seed,'push','origin','HEAD:refs/heads/'+BRANCH)
-        r=self.work(self.base/'N','start','--remote',str(self.remote),'--save','fair-division','--role','boss')
+        r=self.work(self.base/'N','start','--remote',str(self.remote),'--actor','N','--save','fair-division','--role','boss')
         self.assertEqual(r.returncode,0,r.stderr);receipt=json.loads(r.stdout)
         self.assertEqual(receipt['context_entry'],'archives/fair-division/README.md')
         self.assertIn('archives/fair-division/workspaces/',receipt['workspace']['path'])
@@ -149,9 +149,9 @@ class WorkflowTests(unittest.TestCase):
 
     def test_failed_subarchive_start_can_be_corrected(self):
         repo=self.base/'bad-sub'
-        failed=self.work(repo,'start','--remote',str(self.remote),'--save','facility-games','--subarchive','missing','--role','boss')
+        failed=self.work(repo,'start','--remote',str(self.remote),'--actor','F','--save','facility-games','--subarchive','missing','--role','boss')
         self.assertNotEqual(failed.returncode,0)
-        retry=self.work(repo,'start','--remote',str(self.remote),'--save','facility-games','--subarchive','common-two','--role','boss')
+        retry=self.work(repo,'start','--remote',str(self.remote),'--actor','F','--save','facility-games','--subarchive','common-two','--role','boss')
         self.assertEqual(retry.returncode,0,retry.stderr)
         self.assertEqual(json.loads(retry.stdout)['subarchive'],'common-two')
 
@@ -205,6 +205,106 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(json.loads(found.stdout)[0]['id'],self.ids[0])
         with (self.a/'cleanup/inventory.jsonl').open('a') as f:f.write('\n')
         self.assertNotEqual(self.work(self.a,'clean','status').returncode,0)
+
+    def enable_numbered_policy(self):
+        git(self.seed,'fetch','origin','refs/heads/'+BRANCH);git(self.seed,'merge','--ff-only','FETCH_HEAD')
+        (self.seed/'cleanup/coordination.json').write_text(json.dumps({'require_boss_number':True,'coordinators':['Boss32']}))
+        git(self.seed,'add','cleanup/coordination.json');git(self.seed,'commit','-m','numbered identities')
+        git(self.seed,'push','origin','HEAD:refs/heads/'+BRANCH)
+
+    def reset_fixture(self):
+        self.claim(self.a,self.ids[0]);self.assertEqual(self.record(self.a,self.ids[0]).returncode,0)
+        self.claim(self.a,self.ids[1]);self.enable_numbered_policy()
+        self.assertEqual(self.work(self.a,'board-init').returncode,0)
+        self.assertEqual(self.work(self.a,'send','--text','old unfinished discussion').returncode,0)
+        self.assertEqual(self.work(self.a,'sync').returncode,0)
+
+    def test_explicit_identity_is_required(self):
+        repo=self.base/'unnamed';r=self.work(repo,'start','--remote',str(self.remote))
+        self.assertNotEqual(r.returncode,0);self.assertIn('--actor Boss',r.stderr)
+
+    def test_numbered_registration_rejects_another_conversation_instance(self):
+        self.enable_numbered_policy();first=self.start('Boss32')
+        person=json.loads(git(self.remote,'show',BRANCH+':cleanup/people/Boss32.json'))
+        self.assertEqual(person['boss'],'Boss32')
+        second=self.work(self.base/'second-Boss32','start','--remote',str(self.remote),'--actor','Boss32')
+        self.assertNotEqual(second.returncode,0)
+        self.assertEqual(person,json.loads(git(self.remote,'show',BRANCH+':cleanup/people/Boss32.json')))
+        self.claim(first,self.ids[0])
+
+    def test_legacy_adoption_keeps_local_draft(self):
+        old='R-'+'1'*32;repo=self.start(old);draft=repo/f'cleanup/workspaces/{old}/draft.md';draft.write_text('keep local mathematics\n')
+        self.enable_numbered_policy()
+        adopted=self.work(repo,'start','--remote',str(self.remote),'--actor','Boss32','--adopt-legacy')
+        self.assertEqual(adopted.returncode,0,adopted.stderr);self.assertEqual(draft.read_text(),'keep local mathematics\n')
+        self.assertEqual(json.loads(git(self.remote,'show',BRANCH+':cleanup/people/Boss32.json'))['legacy_actors'],[old])
+
+    def test_authentication_denial_stops_after_one_claim_push(self):
+        count=self.base/'attempts';hook=self.remote/'hooks/pre-receive'
+        hook.write_text('#!/bin/sh\necho attempt >> "'+str(count)+'"\necho "Invalid username or token" >&2\nexit 1\n');hook.chmod(0o755)
+        result=self.work(self.a,'clean','claim',self.ids[0]);self.assertNotEqual(result.returncode,0)
+        self.assertEqual(len(count.read_text().splitlines()),1)
+        self.assertFalse(git(self.remote,'ls-tree',BRANCH,'--','cleanup/progress/'+self.ids[0]+'.json'))
+
+    def test_handoff_preserves_completed_receipt(self):
+        self.claim(self.a,self.ids[0]);self.assertEqual(self.record(self.a,self.ids[0]).returncode,0);self.claim(self.a,self.ids[1])
+        before=git(self.remote,'show',BRANCH+':cleanup/progress/'+self.ids[0]+'.json')
+        handoff=self.work(self.a,'clean','handoff','--all','--reason','changing task','--draft-note','unpublished local draft')
+        self.assertEqual(handoff.returncode,0,handoff.stderr)
+        after=json.loads(git(self.remote,'show',BRANCH+':cleanup/progress/'+self.ids[1]+'.json'))
+        self.assertIsNone(after['owner']);self.assertEqual(after['previous_owner'],'A')
+        self.assertEqual(before,git(self.remote,'show',BRANCH+':cleanup/progress/'+self.ids[0]+'.json'))
+
+    def test_doctor_and_local_only_checkpoint_do_not_change_remote(self):
+        before=git(self.remote,'rev-parse',BRANCH)
+        doctor=self.work(self.a,'doctor');self.assertEqual(doctor.returncode,0,doctor.stderr)
+        path=self.node(self.a,'D');saved=self.work(self.a,'checkpoint',path,'--local-only','-m','offline draft')
+        self.assertEqual(saved.returncode,0,saved.stderr);self.assertEqual(json.loads(saved.stdout)['status'],'local-only')
+        self.assertEqual(before,git(self.remote,'rev-parse',BRANCH))
+
+    def test_ssh_mode_ignores_stale_token_and_is_reused(self):
+        repo=self.base/'ssh-mode'
+        started=self.work(repo,'start','--remote',str(self.remote),'--actor','SSHFixture','--auth','ssh')
+        self.assertEqual(started.returncode,0,started.stderr)
+        git(repo,'config','wcg.tokenFile',str(self.base/'missing-token-file'))
+        resumed=self.work(repo,'start','--remote',str(self.remote));self.assertEqual(resumed.returncode,0,resumed.stderr)
+        path=self.node(repo,'D');saved=self.work(repo,'checkpoint',path,'-m','ssh mode does not parse PAT')
+        self.assertEqual(saved.returncode,0,saved.stderr)
+
+    def test_reset_preserves_done_and_atomically_replaces_live_board(self):
+        self.reset_fixture();receipt=git(self.remote,'show',BRANCH+':cleanup/progress/'+self.ids[0]+'.json')
+        target=git(self.remote,'show',BRANCH+':archives/demo/state/定理/A--定理.md')
+        reset=self.work(self.a,'reset','apply','--actor','Boss32');self.assertEqual(reset.returncode,0,reset.stderr+reset.stdout)
+        result=json.loads(reset.stdout);self.assertEqual(result['status'],'pushed');self.assertEqual(result['preserved_done'],1)
+        self.assertEqual(receipt,git(self.remote,'show',BRANCH+':cleanup/progress/'+self.ids[0]+'.json'))
+        self.assertEqual(target,git(self.remote,'show',BRANCH+':archives/demo/state/定理/A--定理.md'))
+        self.assertFalse(git(self.remote,'ls-tree',BRANCH,'--','cleanup/progress/'+self.ids[1]+'.json'))
+        prefix='research/weighted_congestion_frontier/board/events'
+        events=git(self.remote,'ls-tree','-r','--name-only','wcg/board-cleanup-20261028','--',prefix).splitlines()
+        self.assertEqual(len(events),1);self.assertIn('Boss32',git(self.remote,'show','wcg/board-cleanup-20261028:'+events[0]))
+
+    def test_atomic_reset_rejection_keeps_both_branches_unchanged(self):
+        self.reset_fixture();before=[git(self.remote,'rev-parse',name) for name in (BRANCH,'wcg/board-cleanup-20261028')]
+        hook=self.remote/'hooks/pre-receive';hook.write_text('#!/bin/sh\necho "reset rejected in isolated test" >&2\nexit 1\n');hook.chmod(0o755)
+        reset=self.work(self.a,'reset','apply','--actor','Boss32');self.assertNotEqual(reset.returncode,0)
+        self.assertIn('reset rejected in isolated test',reset.stdout)
+        self.assertEqual(before,[git(self.remote,'rev-parse',name) for name in (BRANCH,'wcg/board-cleanup-20261028')])
+
+    def test_reset_rechecks_new_done_and_blocks_invalid_done(self):
+        self.reset_fixture();plan=self.work(self.a,'reset','plan');self.assertEqual(json.loads(plan.stdout)['done_count'],1)
+        # Finish the second source in its original actor before the new policy was read locally.
+        git(self.seed,'fetch','origin','refs/heads/'+BRANCH);git(self.seed,'merge','--ff-only','FETCH_HEAD')
+        path=self.seed/f'cleanup/progress/{self.ids[1]}.json';record=json.loads(path.read_text())
+        record.update(full_file_reviewed=True,related_material_checked=True,unique_content_accounted_for=True,read_note='read',comparison_note='compared',decision_note='kept',disposition='integrated',targets=['archives/demo/state/定理/A--定理.md'])
+        path.write_text(json.dumps(record));git(self.seed,'add',str(path.relative_to(self.seed)));git(self.seed,'commit','-m','peer finished after plan');git(self.seed,'push','origin','HEAD:refs/heads/'+BRANCH)
+        reset=self.work(self.a,'reset','apply','--actor','Boss32');self.assertEqual(reset.returncode,0,reset.stderr+reset.stdout)
+        self.assertEqual(json.loads(reset.stdout)['preserved_done'],2)
+        # Corrupt a completion target, then ensure no reset success is reported.
+        git(self.seed,'fetch','origin','refs/heads/'+BRANCH);git(self.seed,'merge','--ff-only','FETCH_HEAD')
+        record['targets']=['missing-delivery.md'];path.write_text(json.dumps(record));git(self.seed,'add',str(path.relative_to(self.seed)));git(self.seed,'commit','-m','invalid record fixture');git(self.seed,'push','origin','HEAD:refs/heads/'+BRANCH)
+        before=git(self.remote,'rev-parse',BRANCH)
+        blocked=self.work(self.a,'reset','apply','--actor','Boss32');self.assertNotEqual(blocked.returncode,0)
+        self.assertEqual(before,git(self.remote,'rev-parse',BRANCH))
 
     def add_increment(self):
         baseline=(self.seed/'cleanup/inventory.jsonl').read_bytes()
