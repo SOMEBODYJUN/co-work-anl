@@ -1,8 +1,25 @@
 {
-  "owner": "Boss3",
-  "disposition": "in-progress",
   "id": "9836b2dba11f078bb586",
+  "full_file_reviewed": true,
+  "related_material_checked": true,
+  "unique_content_accounted_for": true,
+  "read_note": "全文读取4324字节原报告，核final code hash、only_new_sparse_guard_retested=true、完整六行diff、全部五case的非零退出/拒绝/未写成功输出及对应stderr、scope。区分追加同端、长度四替换不同端、bool端ID、第五不同端和第101行。",
+  "comparison_note": "与原最终checker及v2报告/三历史说明全文对照，六行diff恰能从原v3字节逆向重建报告hash匹配的v2，没有其它差异。原驱动未取得，故本轮新写明示fixture驱动，仅调用未经改动v3代码在五个新独立输入上各运行一次；都在预期新增guard断言拒绝，位于seed枚举前，未重复完整审计；原程序和三个输入hash前后相同。",
+  "decision_note": "retained：原报告不改，新计算对象保留v3只复查新增guard的范围；新驱动/新结果单列，列出每项确切变异和新input hash，不冒旧fixture字节重放。相关反例/核心计算补版本链接。未把有限错误案例升级为完备schema拒绝、普遍算法或困难性；v2旧案例与覆盖拒绝未本轮重跑。",
+  "disposition": "retained",
+  "targets": [
+    "archives/unrelated-machines/state/计算/Kronecker核验器版本与稀疏输入拒绝--计算.md",
+    "archives/unrelated-machines/state/计算/完整Kronecker矩阵与双平方证书核验--计算.md",
+    "archives/unrelated-machines/state/反例/完整矩阵Kronecker偶次幂坍缩--反例.md",
+    "tools/evidence/private-tree/kronecker-checker-mutations/actual_kronecker_checker_mutations_v2.json",
+    "tools/evidence/private-tree/kronecker-checker-mutations/actual_kronecker_checker_sparse_guard_v3.json",
+    "tools/evidence/private-tree/kronecker-checker-mutations/actual_kronecker_product_v2_reconstructed.py",
+    "tools/evidence/private-tree/kronecker-checker-mutations/version_comparison.json",
+    "tools/evidence/private-tree/kronecker-checker-mutations/replay_v3_guards.py",
+    "tools/evidence/private-tree/kronecker-checker-mutations/replay_v3_guards.json"
+  ],
+  "owner": "Boss3",
   "source_sha256": "227aa0c0a225cc8d482cecedaeeb9b2bceeaeafbbcaaaee01404f2c7a0f34159",
-  "request_id": "16b3967991924098923ac268909a95f6",
-  "updated": 1793338467
+  "request_id": "7e22630744dd43dcb0ab418a4164976e",
+  "updated": 1793339277
 }

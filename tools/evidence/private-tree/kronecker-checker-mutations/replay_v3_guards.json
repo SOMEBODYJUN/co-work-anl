@@ -1,0 +1,179 @@
+{
+  "status": "five_targeted_v3_guards_replayed",
+  "python": "3.12.14",
+  "driver_sha256": "2e89c377dba06e516214199850556d472dcf2d0666d83e64d02d8c70f9f73b77",
+  "canonical_code_sha256": "8e95e8c4b00654b2e85efbd37e294837796755ce189e7e933e5200752abebbb3",
+  "canonical_resource_hashes": {
+    "tests/audits/unrelated_machines/actual_kronecker_product.py": "8e95e8c4b00654b2e85efbd37e294837796755ce189e7e933e5200752abebbb3",
+    "examples/unrelated_machines/actual_kronecker_square_input.json": "e1ddd488baaae57191ca64136100ae21d8bfe45e0e5215396d13010cd69d2d1c",
+    "evidence/certificates/unrelated_machines/actual_kronecker_square_assignment.json": "e9549591650682d90bb5918be55a3e74c8f7df4694cec4f50b54b09ddfe70f21",
+    "evidence/certificates/unrelated_machines/actual_kronecker_square_independent_assignment.json": "cc62a3c385008150e411590240c78ef8c6f6b182d7625552fc1523220ad0e9a3"
+  },
+  "canonical_resources_unchanged": true,
+  "cases": [
+    {
+      "case": "duplicate_same_endpoint_appended",
+      "exact_new_mutation": "Append a copy of row 0 entry 0 as its fifth record.",
+      "returncode": 1,
+      "rejected_at_expected_guard": true,
+      "expected_assertion": "assert len(row) == 4",
+      "stdout": "",
+      "no_success_output_created": true,
+      "mutated_input_sha256": "0df7ee97153292537104688e1814870d8c8bf57ec54132b6556f86fb1ac5bf39",
+      "finite_row_count": 100,
+      "first_finite_row": [
+        [
+          0,
+          "1"
+        ],
+        [
+          1,
+          "1"
+        ],
+        [
+          8,
+          "1"
+        ],
+        [
+          9,
+          "1"
+        ],
+        [
+          0,
+          "1"
+        ]
+      ],
+      "guard_precedes_seed_enumeration_in_original_code": true
+    },
+    {
+      "case": "duplicate_same_endpoint_replaces_distinct",
+      "exact_new_mutation": "Replace row 0 entry 1 by a copy of row 0 entry 0.",
+      "returncode": 1,
+      "rejected_at_expected_guard": true,
+      "expected_assertion": "assert len(set(ids)) == 4",
+      "stdout": "",
+      "no_success_output_created": true,
+      "mutated_input_sha256": "27d180e62b45722e3db7907ae735610349d0183a85d5d84cf3addf9917589356",
+      "finite_row_count": 100,
+      "first_finite_row": [
+        [
+          0,
+          "1"
+        ],
+        [
+          0,
+          "1"
+        ],
+        [
+          8,
+          "1"
+        ],
+        [
+          9,
+          "1"
+        ]
+      ],
+      "guard_precedes_seed_enumeration_in_original_code": true
+    },
+    {
+      "case": "row_boolean_id",
+      "exact_new_mutation": "Replace machine ID 0 at row 0 entry 0 by JSON false.",
+      "returncode": 1,
+      "rejected_at_expected_guard": true,
+      "expected_assertion": "assert all(type(i) is int and 0 <= i < 64 for i in ids)",
+      "stdout": "",
+      "no_success_output_created": true,
+      "mutated_input_sha256": "d1637978acf38673ea7d80b80cabf9033f7b9914bda01b15409b8555792212a2",
+      "finite_row_count": 100,
+      "first_finite_row": [
+        [
+          false,
+          "1"
+        ],
+        [
+          1,
+          "1"
+        ],
+        [
+          8,
+          "1"
+        ],
+        [
+          9,
+          "1"
+        ]
+      ],
+      "guard_precedes_seed_enumeration_in_original_code": true
+    },
+    {
+      "case": "fifth_entry_in_row",
+      "exact_new_mutation": "Append [2, '1'] to row 0; ID 2 differs from its four original IDs.",
+      "returncode": 1,
+      "rejected_at_expected_guard": true,
+      "expected_assertion": "assert len(row) == 4",
+      "stdout": "",
+      "no_success_output_created": true,
+      "mutated_input_sha256": "25ae9e13506810a0713b4322549d876fb13f0e2c42eddb371e162fae14b0d5bf",
+      "finite_row_count": 100,
+      "first_finite_row": [
+        [
+          0,
+          "1"
+        ],
+        [
+          1,
+          "1"
+        ],
+        [
+          8,
+          "1"
+        ],
+        [
+          9,
+          "1"
+        ],
+        [
+          2,
+          "1"
+        ]
+      ],
+      "guard_precedes_seed_enumeration_in_original_code": true
+    },
+    {
+      "case": "extra_101st_finite_row",
+      "exact_new_mutation": "Append a copy of finite row 0 as row 100.",
+      "returncode": 1,
+      "rejected_at_expected_guard": true,
+      "expected_assertion": "assert len(inp['finite_edges']) == 100",
+      "stdout": "",
+      "no_success_output_created": true,
+      "mutated_input_sha256": "ada367da2c9af22f0187ef750945e214aa094bcaa791518ce30a7b563ddd33be",
+      "finite_row_count": 101,
+      "first_finite_row": [
+        [
+          0,
+          "1"
+        ],
+        [
+          1,
+          "1"
+        ],
+        [
+          8,
+          "1"
+        ],
+        [
+          9,
+          "1"
+        ]
+      ],
+      "guard_precedes_seed_enumeration_in_original_code": true
+    }
+  ],
+  "limits": [
+    "New explicitly specified fixtures, not byte-for-byte replay of missing historical harness.",
+    "No v2 mutations or v1 acceptance experiment executed.",
+    "All failures precede seed enumeration, certificate checks, and fourth-power construction.",
+    "No repeated correct-input full Kronecker audit and no exhaustive invalid-input testing."
+  ]
+}
