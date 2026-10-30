@@ -21,4 +21,8 @@
 
 ## 当前接续决定
 
-用户已明确重申对指定GitHub仓库及rebuild/research-v2的过去、本次与后续成果推送授权。保持该授权，不再重复询问。恢复101源本地交付，先标准checkpoint确认pushed，再核最新ownership和逐源done；随后按实际执行继续领取。入口DELIVERY_INDEX.md，完整记录LOCAL_RECEIPTS.json。
+指定GitHub仓库及rebuild/research-v2的过去、本次与后续成果推送授权持续有效，不重复询问。
+
+原101源已完整处置：45正文/证据checkpoint pushed a9fe1925fb460b7cdc4fc0937b3f52f111c94443；96条Boss4 done pushed bca761c311652fc050590e1c5582c39197b1eeb0，另5条保留Boss2已完成记录，无覆盖。旧LOCAL_RECEIPTS.json与DELIVERY_INDEX.md是这批的详细入口。
+
+后续100源形成51正式对象；其中source-envelope12源已pushed并done，余88条待此次共同正文checkpoint确认pushed再done。7组回执为*-next-receipts.json。当前六名指定gpt-6.1-sol/ultra代理接续已正式认领的64源小批；它们与前100源严格分批登记。最新准确恢复状态见LOCAL_HANDOFF.md；各delivery里的“未Git/done”是子代理交付时点，不代替Boss远端回执。
