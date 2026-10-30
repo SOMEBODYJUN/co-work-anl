@@ -1,0 +1,39 @@
+{
+  "actor": "Boss4",
+  "date": "2026-10-30",
+  "scope": "Only the ten manifest sources; no remote mutation; original programs unchanged",
+  "commands": [
+    "python3 original/tests/audits/weighted_congestion/verify_incidence_forest.py --output replay/incidence-author.json",
+    "python3 original/tests/audits/weighted_congestion/independent_incidence_forest.py > replay/incidence-independent.json",
+    "python3 original/tests/audits/weighted_congestion/verify_directed_fanout_forcing_cut.py --output replay/directed-fanout.json"
+  ],
+  "exit_codes": [
+    0,
+    0,
+    0
+  ],
+  "output_comparison": "All three output files are byte-for-byte identical to frozen JSON; see comparison.json",
+  "prefix_hash_checks": [
+    {
+      "path": "original/research/current/weighted_congestion/incidence_forest_private_reduction.md",
+      "cut_before": "\n## 7.",
+      "byte_length": 13290,
+      "sha256": "f2f3de5f542c0b6cbac9389930c9da045ba2ca5638369ed1608957e0b30ee0c7",
+      "matches_review_freeze": true
+    },
+    {
+      "path": "original/research/current/weighted_congestion/incidence_forest_private_reduction.md",
+      "cut_before": "\n## 8.",
+      "byte_length": 15961,
+      "sha256": "0c6e6bf077bee061da4a70d7983618d60273df58bb16378fdaef670eb5698876",
+      "matches_review_freeze": true
+    },
+    {
+      "path": "original/research/current/weighted_congestion/directed_fanout_forcing_cut.md",
+      "cut_before": "\n[同权hub",
+      "byte_length": 10032,
+      "sha256": "99d9de56cc1d99ff1fed7882332660fa51f04a24b5cbce481ce4218887b7052e",
+      "matches_review_freeze": true
+    }
+  ]
+}
