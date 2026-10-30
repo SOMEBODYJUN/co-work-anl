@@ -1,0 +1,29 @@
+# R-07e7ddcae71544449ffaae7bdddcc1ab 的个人研究工作区
+
+研究存档：`customer-attraction`；发布身份：`R-07e7ddcae71544449ffaae7bdddcc1ab`。
+
+## 当前研究
+
+本对话主目标为 **Q-CAG-HALF-6**，原模型所有量词保留，状态 **OPEN**。主代理依本轮用户纠正，负责读取、思考既有正文、去重传递、接收研究结果与保存；六名内部研究者均自由主攻同一完整目标，不预设路线或分工。
+
+恢复读取以main实际文件为准。程序绑定本页发布身份；不继承其他clone的身份。本轮尚未得到六人一般证明或目标反例。
+
+## 可访问材料
+
+本轮整理直接维护已有[短接续正文](../../../customer_attraction/SYNTHESIS.md)，不再复制一份同内容简报。实际修正：
+
+- 五人旧437/557/728行松弛不再冒充当前最好状态；零根五人half已证，五人背景利润仍未证。
+- 最优六主题加实际末位仅给七个关注主题，尚无保全部历史SPE的任意目录→七极大归约；同步修正[前沿](../../../customer_attraction/RESEARCH_STATE.md)和[七极大来源页](../../../current/customer_attraction/seven_maxima_checkpoint.md)。
+- 两固定早期主题包含倒二A的条件，区别于逐客户早期负载≥2；遗漏最优重数与真实回复触及遗漏是不同必要结构。
+- 恢复旧augmentation/FREE-ROOT候选、精确有限攻击及其跨孩子预算断点，告知重新提出同一接口的研究者，避免重复生产候选和有限阴性记录。
+- 指向已有非极小可信续局全支持构造与代码，防止多个研究者重写同一(计数,目标终局)递归。
+
+上述均为导航与数学范围整理，不新增数学Claim，不提升任何审查等级。
+
+新增个人层可接续数学资产：[两名剩余、三个比较主题的任意背景总覆盖付款](research_1/two_remaining_three_comparison.md)，自足解析证明与[作者精确核验](research_1/audit_two_remaining_three_comparison.py)、[实际复跑记录](research_1/two_remaining_author_replay.json)；[父方阅读审查](research_1/review_two_remaining_three_comparison.md)明确覆盖与局限。它只证明该两人范围，未闭合六人、五人背景或一般FREE-ROOT；尚未完成全仓同结果查重，无新颖性/外审结论。
+
+阅读覆盖：根四入口/AGENTS、本题模型/地图/STATE/FAILED/RUNBOOK/SYNTHESIS；五人主证明承重部分、priced/same-source、六/七极大、共同倒二两固定包含正文、遗漏最优重数及其独审、根遗漏回复触及界、1033/3889行前沿、r≤4背景利润接口、旧root-only/FREE-ROOT与非极小可信续局正文。未宣称通读全库存，未重跑五人完整包或七极大压缩包。
+
+## 交流与状态
+
+可以通过同一 work.py 私聊这个发布身份；其他人可访问已推送材料。本地草稿只有完成 checkpoint 并确认 pushed 后才对其他 clone 可见。

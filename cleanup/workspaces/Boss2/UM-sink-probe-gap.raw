@@ -1,0 +1,69 @@
+{
+  "title": "稀释终端阻塞器的精确有限核验",
+  "python": "3.12.14",
+  "arithmetic": "fractions.Fraction, exact",
+  "seed": null,
+  "code_sha256": "9aa9c7c3390b658da10b925618ff0fed2762c61e768cf6e2c232fc3936fd9092",
+  "results": [
+    {
+      "k": 2,
+      "height": 1,
+      "N": 2,
+      "machines": 6,
+      "jobs": 7,
+      "eligible_edges": 14,
+      "T": "3/2",
+      "config_columns": 16,
+      "lst_probes_checked": 14,
+      "lst_probe_scope": "all edges",
+      "representative_classes": null,
+      "star_matching_edges_checked": 14,
+      "analytic_optimum": "3/2",
+      "constructed_schedule_value": "3/2",
+      "ratio": "1",
+      "exhaustive_optimum": "3/2",
+      "exhaustive_assignments": 128
+    },
+    {
+      "k": 3,
+      "height": 1,
+      "N": 6,
+      "machines": 14,
+      "jobs": 17,
+      "eligible_edges": 74,
+      "T": "4/3",
+      "config_columns": 74,
+      "lst_probes_checked": 74,
+      "lst_probe_scope": "all edges",
+      "representative_classes": null,
+      "star_matching_edges_checked": 74,
+      "analytic_optimum": "5/3",
+      "constructed_schedule_value": "5/3",
+      "ratio": "5/4"
+    },
+    {
+      "k": 4,
+      "height": 3,
+      "N": 12,
+      "machines": 426,
+      "jobs": 521,
+      "eligible_edges": 4562,
+      "T": "5/4",
+      "config_columns": 4570,
+      "lst_probes_checked": 4562,
+      "lst_probe_scope": "all edges",
+      "representative_classes": null,
+      "star_matching_edges_checked": 4562,
+      "analytic_optimum": "7/4",
+      "constructed_schedule_value": "7/4",
+      "ratio": "7/5"
+    }
+  ],
+  "limitations": [
+    "Finite checks do not prove the general family theorem.",
+    "No approximation algorithm or complexity hardness result is claimed.",
+    "This defeats independent per-edge LST probes, not conditioned configuration-LP probes."
+  ],
+  "run_command": "python3 tests/audits/unrelated_machines/diluted_sink_probe_gap.py --all-k4",
+  "evidence_scope": "k=2,3,4 expanded; all forced-edge probes in each expanded instance; only k=2 exhaustive schedules; no generic LP solver."
+}

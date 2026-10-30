@@ -1,0 +1,51 @@
+{
+  "title": "锚定三元统一泄漏预算的独立有理区间审计",
+  "scope": "Finite arithmetic parameter audit only; alpha<R is necessary for a real strict cycle, not sufficient. No general theorem is inferred from sampling.",
+  "arithmetic": "fractions.Fraction; log enclosure uses 24 odd-power terms after exact power-of-two reduction and a proved geometric tail bound",
+  "parameters": {
+    "alphas": [
+      "1",
+      "3/2",
+      "3",
+      "7"
+    ],
+    "eta_over_B": [
+      "1",
+      "1/1000"
+    ],
+    "degree_choices": "D_min,D_min+1,2D_min; p=0,D-1,D,D+1,2D",
+    "seed": "none"
+  },
+  "checks": [
+    "all anchors: delta >= (R+1)/(R+2)",
+    "minimal D satisfies budget and D-1 fails",
+    "D > (R+1) log(4 alpha^2 L)",
+    "D > 2(alpha+1) log(2 alpha)",
+    "q > (alpha+1) log(q), using rational upper log bounds"
+  ],
+  "totals": {
+    "weight_vectors": 71,
+    "anchors": 323,
+    "parameter_cases": 2264,
+    "q_checks": 33960,
+    "equal_weight_cases": 7,
+    "max_minimal_degree": 1914
+  },
+  "smallest_certified_gap": "27135435772695302628465250754719645869343/7064464936003454603306139044839743942450",
+  "smallest_gap_case": {
+    "weights": [
+      "1/4",
+      "1/4",
+      "1"
+    ],
+    "anchor": 0,
+    "alpha": "1",
+    "eta_over_B": "1",
+    "D": 8,
+    "p": 0,
+    "q": 8
+  },
+  "code_sha256": "318c237da878917251379420285a399bf6dcd6e5dde2b8232e2a47653c171a7f",
+  "python": "3.12.14",
+  "command": "tests/audits/weighted_congestion/cyclic_clone/independent_uniform_clock_budget.py --output evidence/runs/weighted_congestion/cyclic_clone/independent_uniform_clock_budget.json"
+}
