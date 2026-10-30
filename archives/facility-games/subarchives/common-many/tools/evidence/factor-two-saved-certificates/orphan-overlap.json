@@ -1,0 +1,240 @@
+{
+  "schema": "SC-K-2-E/v1",
+  "instance": {
+    "m": 3,
+    "k": 3,
+    "clients": [
+      {
+        "weight": "5",
+        "sites": [
+          0,
+          1
+        ]
+      },
+      {
+        "weight": "7",
+        "sites": [
+          1,
+          2
+        ]
+      },
+      {
+        "weight": "11",
+        "sites": [
+          0,
+          2
+        ]
+      },
+      {
+        "weight": "1",
+        "sites": [
+          0
+        ]
+      }
+    ]
+  },
+  "factor": "2",
+  "on_path": {
+    "layout": [
+      0,
+      0,
+      1
+    ],
+    "site_assignment": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "probabilities": [
+      [
+        "1/2",
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "0"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "0"
+      ]
+    ]
+  },
+  "deviations": [
+    {
+      "facility": 0,
+      "site": 1,
+      "pure_assignment": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "audit": {
+        "strict_improvement_steps": 1,
+        "isolated_giants": 0,
+        "final_loads": [
+          "5",
+          "12",
+          "7"
+        ],
+        "deviator": 0,
+        "target_site": 1,
+        "source_multiplicity": 2,
+        "departed_site_disappears": false,
+        "target_previously_occupied": true,
+        "on_path_load": "17/2",
+        "bins_used": 2
+      }
+    },
+    {
+      "facility": 0,
+      "site": 2,
+      "pure_assignment": [
+        2,
+        0,
+        1,
+        1
+      ],
+      "audit": {
+        "strict_improvement_steps": 2,
+        "isolated_giants": 0,
+        "final_loads": [
+          "7",
+          "12",
+          "5"
+        ],
+        "deviator": 0,
+        "target_site": 2,
+        "source_multiplicity": 2,
+        "departed_site_disappears": false,
+        "target_previously_occupied": false,
+        "on_path_load": "17/2",
+        "bins_used": 2
+      }
+    },
+    {
+      "facility": 1,
+      "site": 1,
+      "pure_assignment": [
+        1,
+        2,
+        0,
+        0
+      ],
+      "audit": {
+        "strict_improvement_steps": 1,
+        "isolated_giants": 0,
+        "final_loads": [
+          "12",
+          "5",
+          "7"
+        ],
+        "deviator": 1,
+        "target_site": 1,
+        "source_multiplicity": 2,
+        "departed_site_disappears": false,
+        "target_previously_occupied": true,
+        "on_path_load": "17/2",
+        "bins_used": 2
+      }
+    },
+    {
+      "facility": 1,
+      "site": 2,
+      "pure_assignment": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "audit": {
+        "strict_improvement_steps": 2,
+        "isolated_giants": 0,
+        "final_loads": [
+          "12",
+          "7",
+          "5"
+        ],
+        "deviator": 1,
+        "target_site": 2,
+        "source_multiplicity": 2,
+        "departed_site_disappears": false,
+        "target_previously_occupied": false,
+        "on_path_load": "17/2",
+        "bins_used": 2
+      }
+    },
+    {
+      "facility": 2,
+      "site": 0,
+      "pure_assignment": [
+        2,
+        -1,
+        1,
+        0
+      ],
+      "audit": {
+        "strict_improvement_steps": 1,
+        "isolated_giants": 0,
+        "final_loads": [
+          "1",
+          "11",
+          "5"
+        ],
+        "deviator": 2,
+        "target_site": 0,
+        "source_multiplicity": 1,
+        "departed_site_disappears": true,
+        "target_previously_occupied": true,
+        "on_path_load": "7",
+        "bins_used": 2
+      }
+    },
+    {
+      "facility": 2,
+      "site": 2,
+      "pure_assignment": [
+        0,
+        2,
+        1,
+        0
+      ],
+      "audit": {
+        "strict_improvement_steps": 0,
+        "isolated_giants": 0,
+        "final_loads": [
+          "6",
+          "11",
+          "7"
+        ],
+        "deviator": 2,
+        "target_site": 2,
+        "source_multiplicity": 1,
+        "departed_site_disappears": true,
+        "target_previously_occupied": false,
+        "on_path_load": "7",
+        "bins_used": 2
+      }
+    }
+  ],
+  "default_rule": "least-index initial pure assignment, then strict pure best responses",
+  "search_audit": {
+    "site_allocations_evaluated": 23,
+    "lex_key": [
+      "7",
+      "17/2",
+      "17/2"
+    ]
+  },
+  "complexity": "exhaustive finite construction; no polynomial-time claim"
+}
