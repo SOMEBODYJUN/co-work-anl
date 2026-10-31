@@ -1,0 +1,66 @@
+# 逐源数学、范围与字节自查
+
+- [x] 五原MD20388B逐字primary全读/sizeSHA256blob核；c3d3251虽旧context仍完整逐源处置。
+- [x] 实际KU5 claim pushed/synced6596b1…整5原capture不改，own5 owner/sourceSHA核。
+- [x] 有限单位客户共同非空目录、完整有序纯SPE，空重复零客户任意平局保。
+- [x] 20388B中SCREEN全部独有证明/范围/先验已在已推KP页，准确duplicate不重造定理。
+- [x] 原3251SCREEN d≤u/N−n/m2/U/L/rootfloor/旧族m≥4全部锚点对照。
+- [x] SUMROW原actual前缀真实σ强制Z_i(A)，F冻结诊断不同不能应用同一IC。
+- [x] 最优m索引元组可重复，D=OPT−W，Σu=W，原actual组合保证D≥0。
+- [x] R_i是m查询总和非均值，原IC给R_i≤m u_i，ROW⇒MG。
+- [x] SUMROW只聚合ΣR≥mD，不能要求每MG；MG非已否OPT/(2m)个体floor。
+- [x] Q/L逐客户H/I/G五类静态非负信用和完整L式自足保。
+- [x] ΣF=D+u+L；Q=Σ(F−V)有符号，R=D+u+L−Q。
+- [x] 保所有Γ得到m(2W−OPT)=ΣΓ+W+ΣL−ΣQ，不重命名目标余额当付款。
+- [x] 末位Q_m0与R_m≥D+u_m，不递推所有早期行。
+- [x] 任意K客户效用限制保原动作标签/σ，未宣称限制计划SPE。
+- [x] SPLIT Kgain=Bactual−Bdev−Γ，偏离B利润和Γ符号正确。
+- [x] PATH只同actual路径共同z、每原身份λ行质量≤1，右端一份|C∩B|。
+- [x] ε每actual位置最大positive可一行或零行实现，Σε≤|C\K|。
+- [x] 任意起始history只有该共同叶剩余角色B利润预算，不合并不同context。
+- [x] K=O预算E=|C\O|不使限制游戏SPE，稳健全树转换未证。
+- [x] K=O\C actualK0只重写遗漏受当前原profit付，不新深层付款。
+- [x] SOCIAL-FLOW用每h原σ完整Z_h和固定B，q合法但可不理性。
+- [x] 根质量1/内部守恒/终端分布使signed社会覆盖差望远镜。
+- [x] 不同最优排列混合仍一个流，不每排列另领W，不任意行质量都当流。
+- [x] 当前B分享差非社会覆盖差，客户都覆盖仍可换身份/分母产生利润损失。
+- [x] X_B包括原所有其它角色含过去/未来，A_B+X_B=社会差。
+- [x] TRANSFER A_B=rootB−EterminalB−X_B，需X_B≥−EterminalB方向正确。
+- [x] 原全客户IC只A_N≥0，不给B部分转移下界。
+- [x] 两客户例原SPE rootX/lastfresh全3nodes6comparisons，root平局末位严格。
+- [x] 原actualXY、每人1、W=OPT2=2，无half违例。
+- [x] 干预YY完整合法但非SPE，正边rootY和Y→YY，各μ1。
+- [x] 沿q原σ叶XY→YX→YY，不能将第二节点误作actual末位X。
+- [x] B=x原两角色利润(1,0)→(0,1)→(0,0)，当前损失各1。
+- [x] 其他B转移−1/0，社会差0/1，A_B2/X_B−1/rootB1/terminalB0。
+- [x] 一般q分享钱包2≤1失败、所需−1≥0失败，原社会FLOW恰1仍成立。
+- [x] 原全客户当前IC流0+1/2≥0，K当前增益抵消B损失，不矛盾。
+- [x] actual限制K regrets1/0，和1等actual外部1，PATH并未反驳。
+- [x] qYY非最优元组XY排列，B=x非C\O(empty)，不否最优排列特选流。
+- [x] 只否任意m/q/B宽加强，未嵌六人、不否SUMROW/ROW/MG/half。
+- [x] m5倒二t_b/F真实定义已追完整现定理，s取max不sum，早期三行未付。
+- [x] K±是均匀位置Minkowski，不自由位置convall，q只是外均值非混合原SPE。
+- [x] 相同q有plus≥minus，Fp递减给min与γ+≤γ−，不偷换系数。
+- [x] γ=minLmaxquery=maxpminL，有限查询上闭成本集闭凸分离证明域正确。
+- [x] K+合法fraction槽权m、K−m−1，OPT≤(m+r)F逐客户分解自足。
+- [x] full mγ+≤W与weakdeleted(m−1/2)γ−≤W各足half，但大小关系不能互推后者到前者。
+- [x] Mpath自由位置≤Munif，Jensenγ+≤Munif，两界不可合成γ+≤Mpath。
+- [x] 自由full负载凸包才有其值≤Mpath，未擅改源均匀域。
+- [x] PF q_i=p对每p强于自由q，FTA⇒PF；没有已证一般PF/early付款。
+- [x] 完整列Cpen=β+A+B(A)、Clast=β+P+A，额外query保原m槽。
+- [x] Ipen/Im分别原actual当前完整IC，G比较在同一个A历史整主题BR。
+- [x] DC用U对称交项+wβ差和iid A/T交换，不能客户重加权或多后继当单人。
+- [x] 插入Tax_pen/last只A∩T、所有分母正，u−J=I+EG+Tax精确。
+- [x] p任意非必Nash/saddle，同历史任意末位平局不绑，m2PF直接成立。
+- [x] Taxpen=旧Vpen+Qpen、EG旧L、Taxlast旧Vm，未创造第二尾钱包。
+- [x] 全局Jensen V=ΣJi−mFp(Cbar)一份，非旧单倒二Vpen。
+- [x] EARLY exact ledger含Ipen+Im+EG+两Tax+全V，早期项未知符号。
+- [x] 全V已含行内与行间Jensen，不另加逐行完整银行。
+- [x] m5early3/m6early4，当前HALF5别证不自动证明PF/SUMROW等强helper。
+- [x] finite exactterminalaudit数量原README未给，不借probe6/24/30×3统计。
+- [x] 6旧probe+24全IC锥W1交替优化+30锥3fixedp SHARED分域，浮点阴性非证明。
+- [x] 原程序/JSON不在五MD闭包，原entry/canonical/LP/scan0，不冒复跑或精确dual。
+- [x] 7正式对象全文sameSHA比较，source新2客户是知情解析例非原作者实验/新颖认证。
+- [x] 两README完整导航/停止点/未来依赖保，未读attempts或audits不附done。
+- [x] 新3数学对象与1已推duplicate target分开，非每源造新定理。
+- [x] 全部原字节/claim/receipts/关系及实际C0检查，不以字段校验代数学判断。
