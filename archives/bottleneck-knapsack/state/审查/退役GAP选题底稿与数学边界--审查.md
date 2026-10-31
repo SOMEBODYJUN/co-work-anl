@@ -8,7 +8,23 @@ truth_status: review-record
 review_level: complete-source-read-and-cross-compared
 scope: retired topic-selection GAP/packing lane; candidate status, exact local certificates, literature deduplication and stopping obligations
 summary: "完整读取 gap.md 的 15 项 GAP/舍入/公平候选与 P01--P11 primary 文献记录，保留其来源级优先级、精确局部证据和去重边界；C01 与两尺寸固定激活障碍已有独立对象，其他候选仍是开放义务或策略建议，不能从本稿推出总算法、新颖性或开放性。"
-legacy_ids: [gap-lane-20261020, C01, C02, C03, C04, C05, C06, C07, C08, C09, C10, C11, C12, C13, C14, C15]
+legacy_ids:
+  - gap-lane-20261020
+  - C01
+  - C02
+  - C03
+  - C04
+  - C05
+  - C06
+  - C07
+  - C08
+  - C09
+  - C10
+  - C11
+  - C12
+  - C13
+  - C14
+  - C15
 source_refs:
   - source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/lanes/gap.md
   - source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/lanes/gap.md
