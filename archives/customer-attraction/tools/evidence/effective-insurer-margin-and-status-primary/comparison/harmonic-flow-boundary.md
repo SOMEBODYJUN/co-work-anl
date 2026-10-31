@@ -1,0 +1,91 @@
+---
+id: "customer-attraction/cross-branch-common-payment-harmonic-obstruction"
+kind: "obstruction"
+type_tag: "障碍"
+title: "跨枝共同付款与调和全深度支付障碍"
+status: "scoped-template-obstruction"
+truth_status: "finite-evidence-and-payment-template-boundary"
+summary: "非根福利中继需要保留旧玩家返还；全深度调和账本显示一条最优比较前缀展开的费用会超过共同实际路径的信用。该障碍排除特定共同付款模板，不否定 Q-CAG-HALF。"
+source_refs:
+  - "clean:b243bc081ceffd6be46b"
+  - "clean:39d6432f7dbc0270bd8f"
+  - "clean:f9696dd81c9a59d41582"
+  - "clean:4a0a90aa4d26e578c914"
+related_objects:
+  - "customer-attraction/nonroot-cross-branch-welfare-relay-identity"
+  - "customer-attraction/signed-harmonic-support-reduction"
+---
+
+# 已确定的失败机制
+
+在完整 CAG-MODEL 中，强制一个当前动作后必须沿该枝完整策略续局。非根福利差满足引理中的
+
+\[
+\Delta W=\Delta V+\Delta P-\Gamma,
+\]
+
+其中旧玩家最终利润差 `ΔP` 可为正。把它丢掉、把后继冻结成原路径、或把不同互斥子树的返还当作同一笔钱，均不能得到一般福利界。
+
+全深度账本把三类量分开：真实前缀利润、后续提供者利润和当前 IC 余量。沿互斥子树重复展开时，错误模板会多次向同一源客户收费；在 all-big/sharp 家族中，所需的调和付款规模达到 `m(H_m-1)` 量级。该结论是对“单一实际路径信用支付全部真实后继”的模板障碍，不是对所有共同 source 设计的不可行性定理。
+
+# 级别不同的证据
+
+* 两人三客户实例是 v1 局部恒等式的精确完整 SPE 反例：`ΔW=1` 而 `ΔV=0`，但它满足 `2W≥OPT_2`，不是主目标反例。
+* 有限 Fraction 审计覆盖 `m=2..6` 的完整历史与动作比较、`m=2..7` 的最优排列、公式至 `m=80`，并包含空主题、零客户与任意策略代数样例；代码不搜索一般 SPE，不能替代全称证明。
+* 全深度账本和其程序输出是支付模板的来源证据；其 sharp 族应作为障碍/候选边界保留，不升级为一般定理或 Q-CAG-HALF 反例。
+
+# 未闭合义务
+
+要证明六人或一般人数半覆盖，仍需在互斥真实后继之间构造共同可支付流，并逐枝结算有符号旧玩家返还。调和势删位比较保留旧玩家和真实后继，不能直接求和成纯后继势。当前材料没有给出低福利完整 SPE，也没有否定替代势函数、真实 source 共享或新的动态信用合同；`Q-CAG-HALF` 仍开放。
+
+
+# 全人数、全历史账本与排序无关的锐族（来源全文补全）
+
+本节在[共同目录完整历史模型](../定义/共同目录完整历史模型--定义.md)中，完整保留来源 `39d6432f7dbc0270bd8f` 的一般证明。此前“调和付款量级”精确为以下等式；“单一实际路径信用”指一条**最优比较元组的前缀展开**使用共同实际 W 付款，不能误读为只能沿原实际路径行动。
+
+固定任意人数 m>=1、同一完整有序历史纯 SPE sigma。对长 i-1 的合法有序历史 h，z(h) 是沿原 sigma 补完的完整终局；强制当前合法 a 后沿同一 sigma 补完记 z(ha)。保留原玩家身份，定义
+
+\[
+\gamma_h(a)=u_i(z(h))-u_i(z(ha))\ge0,\quad
+T_h(a)=\sum_{j>i}[u_j(z(ha))-u_j(z(h))],\quad
+O_h(a)=\sum_{j<i}[u_j(z(ha))-u_j(z(h))].
+\]
+
+客户总效用等于覆盖，故精确有 Delta W=T+O-gamma。T、O 都有符号。若某客户旧前缀负载 b>0，替换前后剩余负载为 c、c'，则旧利润差为 b/(b+c')-b/(b+c)；b=0 项取零。这个零分支不写成 0/0，也不以低尾门槛 deficit 替换绝对返还。
+
+任意比较元组 t=(A1,...,Am) 的比较前缀 h_i=(A1,...,A_{i-1}) 满足 z(h_i A_i)=z(h_{i+1})，因此
+
+\[
+\boxed{\mathcal C_\sigma(t):=\sum_i(T_{h_i}(A_i)+O_{h_i}(A_i))
+=W(t)-W(z(\varnothing))+\sum_i\gamma_{h_i}(A_i).}
+\]
+
+若某个最优排序能给 C_sigma<=W，确足够 half；以下对**每个**最优排序同时否定这个辅助桥。非负前缀树边流若根质量1、终端总质量1且内部流守恒，则加权 Delta W 精确等于期望终端覆盖减原 W。把互斥子树各作质量1却只扣一次根会破坏守恒。重入边 h->g 不是自动合法的单玩家偏离，其完整 W(z(g))-W(z(h)) 也必须计入；本恒等式不授予它免费 IC。
+
+令 m>=2。大主题 B 含 m 个单位客户，另有 m-1 个互不相交单客户主题 s1,...,s_{m-1}，全部与 B 不交。sigma 在每个有序历史都选 B。任意历史当前若选 B，最终 B 人数至多 m，收益至少1；偏离 singleton 收益至多1。因此这是一份保全部离轨历史、重复 singleton 和任意平局的完整纯 SPE。实际 W=m，OPT_m=2m-1；每个最优元组必须 B 及各 singleton 各一次。
+
+在比较前缀的 singleton 步，设含当前的余人数为 r，过去 B 次数为 b∈{0,1}。当前原收益 m/(b+r)、改 singleton 收益1，且覆盖增加1，故
+
+\[
+\gamma=\frac m{b+r}-1,\qquad T+O=\frac m{b+r}.
+\]
+
+这些步 b+r-1>0：若此前没有 B，比较元组以后还必须选 B。于是还可分别写
+
+\[
+T=\frac{(r-1)m}{(b+r-1)(b+r)},\quad
+O=\frac{bm}{(b+r-1)(b+r)}.
+\]
+
+B 本身的比较步骤不改变原行动，三量均零。无论 B 放第几位，全部 singleton 步的 b+r 恰遍历 m,m-1,...,2，所以
+
+\[
+\boxed{C_\sigma(t)=m(H_m-1)},\quad
+\sum\gamma=mH_m-2m+1,\quad OPT-W=m-1.
+\]
+
+m=4 时 C=13/3>4，且 C/W=H_m-1 无界。任意最优排序的概率混合仍有相同费用，故排序随机化不能救这类付款；模型 half 却始终成立，OPT/W=2-1/m。m=1 可直接取 B 一客户、无 singleton、C=0，不参与无界结论。
+
+同一个族在实际第 i 个前缀 B^{i-1}，每个尚未覆盖 singleton 的真实偏离只用当前利润1，且 T=(m-i)/(m-1)、O=(i-1)/(m-1)、总和1。给 m-1 个不同 singleton 各分配不同实际玩家只花 m-1<=W。故本族不排除多实际 source、一般全树流或已付款重入；真正还缺的是共享遗漏客户、旧份额返还与互斥子树的联合容量。
+
+本次一般证明来自全文阅读和上面解析推导。原审计 py/JSON 本地缺件，0原入口、0新数学程序；原 m<=6 全历史、m<=7 最优排列、m<=80 公式与空/零代数样例仍只保原报告范围，不能冒新复跑。来源与修改前后字节见 [本批证据](../../../../tools/evidence/root-relay-and-requery-primary/README.md)。

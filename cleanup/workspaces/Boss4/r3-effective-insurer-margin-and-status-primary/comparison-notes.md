@@ -1,0 +1,7 @@
+# 全仓比较与状态分层
+
+14完整比较页含HQ三对象/HI全compiler、HN任意背景两尾FILTER/产品G与凸化/同质对角及原审查、上传five完整53行证明、后bankfullmenu/Markov原模型与aux区分、末BRpush和跨枝harmonic账。exactSHA快照保，不从本地存在推发布。
+
+HY有效e要匹配完整menu。独立coordinate admissiblefamily得M_ind可加，任意coupled不保；HN真实G2<2G1是严格警示。E3actualhH_m不等比较前缀费用m(H_m−1)，也不控制OPT。所有m2/oldR4/general保险strongcandidate范围自足。
+
+Claims全部身份与FAILED所有历史层不是全proof集合；未全文重读的proof原来源按登记保，不冒本批新认证/依赖done。five独立上传proof已解恰5，六人仍开；旧tailgap不否Mfull逻辑仍真，后bank另已否一般Mfull，不能用旧OPEN覆盖。allfinite仅原文所报，无原run。
