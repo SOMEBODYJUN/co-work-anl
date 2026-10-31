@@ -1,0 +1,49 @@
+{
+  "source": "manual semantic extraction from full Exact/Proof/independent/read-after",
+  "actual_assignment": {
+    "variables": [
+      "S",
+      "T",
+      "rho"
+    ],
+    "H": "sum_{i in S} a_i <=1",
+    "E_i": "1_{i notin S}+1_{i in T}",
+    "P_r": "cardinality {i notin T:rho(i)=r}",
+    "C": "positive integer; may exceed2"
+  },
+  "pattern_optimum": {
+    "quantifier": "minimize over rho for fixed arbitrary S,T",
+    "good": "empty!=T subseteq S -> exact OPT1, constructive",
+    "bad": "T empty or T notsubset S -> every rho C>=2 and some rho C2"
+  },
+  "actual_weak_decode": {
+    "antecedent": "given original complete sigma with C<2",
+    "conclusion": "same sigma C1 and empty!=T subseteq S",
+    "does_not_rearrange_rho": true
+  },
+  "nonoptimal_good_example": {
+    "k": 3,
+    "S": [
+      1
+    ],
+    "T": [
+      1
+    ],
+    "rho": {
+      "b2": "P1",
+      "b3": "P1"
+    },
+    "actual_C": 2,
+    "pattern_OPT": 1
+  },
+  "B2": "all patterns have some witness<=2; not all rho accepted",
+  "k1": "no pool; Tempty pattern has no finite assignment so excluded",
+  "not_guaranteed": [
+    "S=T",
+    "singleton query or return",
+    "return for every internal query",
+    "source NO",
+    "variable consistency"
+  ],
+  "mathematical_runs_this_batch": 0
+}
