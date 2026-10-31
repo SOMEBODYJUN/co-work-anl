@@ -3,16 +3,22 @@ id: "customer-attraction/r2fc-background-induction-artificial-probe-and-two-play
 kind: "computation"
 type_tag: "计算"
 title: "R-2fc 背景人工负载探针与两人 fresh 证书模板"
-status: "finite-experiment-and-template-obstruction"
+status: "finite-experiment-and-multiple-template-obstruction"
 truth_status: "artificial-negative-search-finite-only; universal-coefficient-template-infeasible"
 review_level: "source-bytes-read-and-reexecuted-with-captured-output"
 scope: "R-2fc8878b4bdd4328bbc1bcf1df8ca831/background_induction 下两份程序；q=6、剩余两人、人工背景有限随机试验与二值 fresh 系数模板"
-summary: "artificial_background_probe.py 在放宽的独立背景类型上按默认 200 次随机试验未发现负候选；two_player_fresh_certificate.py 对 64 个二值类型、192 行（fresh、p=1、斜率）构造的非负 slack LP 返回 infeasible。两项都不是合法 CAG 六人 half 证书：前者没有共同目录产生的合法过去，后者只否定这一特定系数模板。"
+summary: "人工背景 200 次有限探针无负候选；原 fresh 17-slack 模板以及 round3 的两条响应链闭包模板均返回 infeasible；全有序历史 gap 锥 smoke 也无负点。所有结果只约束预选模板或有限浮点运行，不是合法 CAG 六人 half 证书。"
 source_refs:
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/background_induction/artificial_background_probe.py"
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/background_induction/artificial_background_probe.py"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/background_induction/two_player_fresh_certificate.py"
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/background_induction/two_player_fresh_certificate.py"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/round3_background/two_player_closure_certificate.py"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/round3_background/two_player_closure_certificate.py"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/round3_background/two_player_full_closure_certificate.py"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/round3_background/two_player_full_closure_certificate.py"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/round3_background/whole_gap_cone_walk.py"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/round3_background/whole_gap_cone_walk.py"
 ---
 
 # 对象边界
@@ -108,3 +114,14 @@ Q-CAG-HALF-6 的目标仍是对**所有**共同目录、单位客户和完整六
 - `run-manifest.json`：源 ID、完整提交、哈希、命令、时间、退出码、输出文件和“未生成 JSON”状态。
 
 重跑依赖 Python 3.12.14、NumPy 2.3.5、SciPy 1.17.0。源代码中的默认参数未改写，运行只在证据独立副本中进行；没有 git/checkpoint/done 操作。
+
+
+# round3_background：响应链闭包与全历史 gap 锥
+
+本节补充同一 R-2fc 背景/fresh 接口下的三个独立源码。三个源均在 `R-2fc-round3-background-20261031` 中原字节保存，`source-manifest.json` 记录冻结提交、blob、大小和 SHA；`validation.json` 记录 `py_compile`、LP 运行及 smoke 探针。
+
+`two_player_closure_certificate.py` 预设实际 A→B，并给 T、S 各建立两层命名回复链。对每个二值客户成员模式，构造根/跟随 slack、fresh 值、occupied-at-1 值和 p=1 到 p=2 的斜率约束；`depth=2, mode=whole` 有 8 个标签、39 个 slack，HiGHS 返回 infeasible。`two_player_full_closure_certificate.py` 将链扩展为 B、T、S 三组，`depth=2` 为 10 个标签、69 个 slack；whole 与 residual 两种目标也均 infeasible。这里的量词是给定命名链、二值模式和仿射背景模板；LP 不枚举共同目录、合法过去、完整 SPE 或所有可能付款系数。
+
+`whole_gap_cone_walk.py` 则生成 q 个标签、k 个行动的全部有序历史策略锥，使用浮点 `linprog` 约束每个历史的一步激励差，再以 `profit+fresh` 对比 fresh 最优主题集。副本 `q=4,k=2,trials=5,seed=640130` 退出 0、`best=0.0`、stderr 为空；默认 q=6,k=3,trials=1000 仍只是随机发现器。没有生成候选 JSON，不能把 no-hit 写成全称非负。
+
+三源的新独有内容是把两人 fresh 模板按响应链深度与全有序历史策略锥分开测试；它们与本页先前的 64 模式 17-slack/192-row 模板不同，不能合并为“所有两人系数证明不可行”。它们也不改变已有 52 客户合法完整 SPE 对全局 `P+Delta>=freshOPT` 的精确反驳；六人 Q-CAG-HALF 的一般量词仍开放。

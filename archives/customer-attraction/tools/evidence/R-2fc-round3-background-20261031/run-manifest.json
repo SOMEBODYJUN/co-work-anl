@@ -1,0 +1,20 @@
+{
+  "validator": "validate_round3_background.py",
+  "validation": "validation.json",
+  "replays": [
+    "closure-d2.stdout",
+    "full-d2.stdout",
+    "full-residual-d2.stdout",
+    "gap-smoke.stdout",
+    "gap-q6k3-t3.stdout"
+  ],
+  "commands": [
+    "python3 -m py_compile source/*.py",
+    "python3 source/two_player_closure_certificate.py --depth 2 --mode whole",
+    "python3 source/two_player_full_closure_certificate.py --depth 2 --mode whole",
+    "python3 source/two_player_full_closure_certificate.py --depth 2 --mode residual",
+    "python3 source/whole_gap_cone_walk.py --q 4 --k 2 --trials 5 --seed 640130",
+    "python3 source/whole_gap_cone_walk.py --q 6 --k 3 --trials 3 --seed 640130"
+  ],
+  "all_checked": true
+}
