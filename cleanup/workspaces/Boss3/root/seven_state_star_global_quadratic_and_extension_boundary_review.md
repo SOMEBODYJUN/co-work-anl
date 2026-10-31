@@ -1,0 +1,58 @@
+# 七态局部共同矩、显式CONFIG及接线边界：实际审查
+
+2026-10-18，boss11。规范正文180行18177bytes，SHA218a5c4e5b346c8c4816b609a98073958186cb222390839b54229aa5c4beecb6。四条精确Claim各分层，不将OPT1局部噪声核冒成gap/hardness。
+
+## 实际先行与后读链
+
+核心Exact939a单独先行，identity仅据它独立冻224行7d61；root实际全文读后才释放86行d560作者Proof，identity实际完整读后另冻100行7549。root自己参与插值，不是另一blind。原Proof/114行691d重整稿保原字节。新LOCAL-v2另外支付显式poly-support CFG，不用旧票追认构造性。
+
+稀疏支持是root新statement bf45先给global；它先冻65行a1e5 Fisher–Yates/特征线性闭合/有理消列方案，root实际全文读后才释放15行f3d7另一左右递归/超几何/显式候选LP Proof；global实际完整读后另冻29行b5d6。root实际全文读读后。证明只输出first/pair，不改共同L高阶。标准凸压缩/置换工具不认领原创。
+
+仿射新Exact94行a38d先行，literal冻94行d320独立重构（已披露七态背景），root实际全文读后才释放138行b887作者Proof；literal实际全文读后17行24f1。AND另56行8ca3 Exact先行，literal冻57行a492，root实际全文读后释放77行6869作者Proof，literal实际完整读后15行8fbf；每份先行均原字节不动。root实际全文读这些Proof/重构/读后，逐查degree预算、每原job和scope。
+
+最终规范稿actual read以最后冻结票为准。root实际全文读180行时已将两处Gram记法改为明确Lhat[(X−f)²]=0，另将Cauchy最后乘Σqclass²的strict <改<=以覆盖q=0；原单独常数比较仍严格，主结论未改。旧1c2053版本没有作为最终hash冒报；最终218a5c记录应准确记实际全文或三处差分实读。
+
+## 精确数学及范围
+
+原星d+2机器/d+1原jobs/2(d+1)finite ends，actualOPT1。七态完整assignment law给共同M3/全部onehot；原行CFG pair trade准确平衡H(H−1)。任意globalq通过全部端点仿射化、正slack Jensen、坏点不变和五点评估Cauchy控制，坏质量η³/1000不随d丢失。所有其它原行逐样本<=1。新增显式CFG firstpair证书使用实际合法定基数subsets，不能把pair设计用于替换L高阶。
+
+affine实系数分类包括h1/d4/h=d4，M3线性零向量只乘到degree3，base4平方期望零后给literal清单；同行unitpair0使covered正owners最多两个且互补。条件背景不免费继承M3/fullsupport，N原jobs随机β反例说明无条件物理入度可任大。
+
+AND使用base5及degree2 Gram-null，先Boolean Z²→Z、再乘degree3 g(H−h)²，给严格负−p(1−η)(d−h)²。Z是新原endpoint/明确Boolean坐标，不是给CY改名偷降次数；原UM没有逻辑AND侧约束。仅给定点忠实扩展失败，不排所有非线性依赖。原u/z加入负载、共享heads、growing共同law和source decoder各自仍须付款。
+
+## root实际软件，仅有限核
+
+root实际完整读129行4850bytes SHA86d05b90 code，规范位置保原字节；一次fresh --output CLI完成，JSON6210bytes逐字同9be19dec。12组参数核row first/pair与五维signedslack；其中(4,2)/(8,2)/(8,4)全Boolean basis M3维26/130/130、q2维16/46/46分别exact PSD，并对完整assignment枚举18/90/130 states核全部degree<=6 moments（32/466/466 monomials）。这是Boolean基，所有互补原端点由仿射张成，不冒枚举全部冗余monomial labels。
+
+无seed，Fraction精确计算与精确无pivot消元；大d参数不跑full矩阵，只firstpair/五维块。没有实现sparse support、affine分类/AND、接线、SDP finder或general算法。数学审者未读跑这份软件，不代root签执行；完整argv/cwd/真实未检查范围在scope。有限12例不是全称证明。
+
+## 主目标关系
+
+局部构件与可复用点延拓cut已核，外审/新颖性/独立论文价值未认证。没有真正NP/UGC/GapETH near2源或任意低载σ decoder，也没有strong rawSH3 gap/一般<2算法。UM-TARGET-v1及其反面OPEN。
+
+最终identity票958aa33f已冻结：先实际全读旧1c2053的180行，再实际全读最终218a5c的180行，并反向三处diff精确重构旧hash；92行final记录由root实际全文读。它对affine/AND是作者知情核对，对kernel保旧独立先行身份，对新§7首次按正文自足证明攻击；未读code/source不代签。root也实际全文读最终180行和规范新v5的104行。
+
+## 保真来源
+
+| Source | Container SHA256 | Original SHA256 | 包装 |
+| --- | --- | --- | --- |
+| history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_exact_v1.md | 939a9b12b0dc8d74aa9809f816140b8569d6c6d091ee6fd809492256d1a0b477 | 939a9b12b0dc8d74aa9809f816140b8569d6c6d091ee6fd809492256d1a0b477 | original bytes |
+| history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_coercivity_learning.md | d560f9cf9a263d75cb1fa518a118078bcd013de91af4a8c771ced9257f3ef072 | d560f9cf9a263d75cb1fa518a118078bcd013de91af4a8c771ced9257f3ef072 | original bytes |
+| history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_canonical_v1.md | 691da049257e25486139214a923f4f4908a61df14ca6034caea0c3cbc86f3765 | 691da049257e25486139214a923f4f4908a61df14ca6034caea0c3cbc86f3765 | original bytes |
+| history/source/notes/unrelated_machines/sol_identity_coupling_seven_state_star_exact_first_reconstruction.md | 7d61b211b43d03cdf3c64d16605ab745a2ef77dd1e0cf43896ff59b886f8ab86 | 7d61b211b43d03cdf3c64d16605ab745a2ef77dd1e0cf43896ff59b886f8ab86 | original bytes |
+| history/source/notes/unrelated_machines/sol_identity_coupling_seven_state_star_author_read_after.md | 7549910df7e0d48cb1835a3408f39e5b77eb2afee34c3779f5981046caed00fb | 7549910df7e0d48cb1835a3408f39e5b77eb2afee34c3779f5981046caed00fb | original bytes |
+| history/source/notes/unrelated_machines/boss11_uniform_cardinality_pair_sparse_support_exact_v1.md | bf45e8b182f2dd69908c9a923ed0f8b41f4341c32f36700007b1f4d87e451535 | bf45e8b182f2dd69908c9a923ed0f8b41f4341c32f36700007b1f4d87e451535 | original bytes |
+| history/source/notes/unrelated_machines/boss11_uniform_cardinality_pair_sparse_support_proof_v1.md | f3d759b4a0e147ab215f2aa1c09f72aca5aeda687426a3adac3ce2643fc28274 | f3d759b4a0e147ab215f2aa1c09f72aca5aeda687426a3adac3ce2643fc28274 | original bytes |
+| history/source/notes/unrelated_machines/sol_uniform_cardinality_pair_design_independent_reconstruction_v1.md | a1e5c37ea049647dfcb59a3f2629cffa36a857e67180066fa913f3a6def8069b | a1e5c37ea049647dfcb59a3f2629cffa36a857e67180066fa913f3a6def8069b | original bytes |
+| history/source/notes/unrelated_machines/sol_uniform_pair_sparse_root_proof_read_after_v1.md | b5d61a931c29de5fc10be789d972a7750ba343311968e9b5807228304e690d57 | b5d61a931c29de5fc10be789d972a7750ba343311968e9b5807228304e690d57 | original bytes |
+| history/source/notes/unrelated_machines/sol_seven_state_affine_boolean_owner_boundary_exact_v1.md | a38dfcf05158f38d93f1a26c54591944b8a662174018ece9f81388d499bef250 | a38dfcf05158f38d93f1a26c54591944b8a662174018ece9f81388d499bef250 | original bytes |
+| history/source/notes/unrelated_machines/sol_seven_state_affine_boolean_owner_boundary_author_proof_v1.md | b887d569b134bebe1a99172d2332d670e60088705e41764db24d775d2da97259 | b887d569b134bebe1a99172d2332d670e60088705e41764db24d775d2da97259 | original bytes |
+| history/source/notes/unrelated_machines/sol_seven_state_affine_boolean_owner_boundary_exact_first_review.md | d3201aba5c072a5a48accffd80347820eb6dead90cf22a30d3ff6799784787d0 | d3201aba5c072a5a48accffd80347820eb6dead90cf22a30d3ff6799784787d0 | original bytes |
+| history/source/notes/unrelated_machines/sol_seven_state_affine_boolean_owner_boundary_author_read_after.md | 24f14f901c269fc0b071d5f6a2324739c5b4699228a5bfea0bcbcf648ccc15a3 | 24f14f901c269fc0b071d5f6a2324739c5b4699228a5bfea0bcbcf648ccc15a3 | original bytes |
+| history/source/notes/unrelated_machines/sol_seven_state_and_gate_localizer_obstruction_exact_v1.md | 8ca3b942276658319808f3c32d5057b53611555d76bfbf6f4c5f94ea18e511ab | 8ca3b942276658319808f3c32d5057b53611555d76bfbf6f4c5f94ea18e511ab | original bytes |
+| history/source/notes/unrelated_machines/sol_seven_state_and_gate_localizer_obstruction_author_proof_v1.md | 6869558f8f155de15bc65f305ce0a3c5d42d76e84a936eb4fdfd5b7c90f29d75 | 6869558f8f155de15bc65f305ce0a3c5d42d76e84a936eb4fdfd5b7c90f29d75 | original bytes |
+| history/source/notes/unrelated_machines/sol_seven_state_and_gate_localizer_obstruction_exact_first_review.md | a492c7a07259e2d2b55d46de257bac4687618f88e420f4567d98652fc080ed2e | a492c7a07259e2d2b55d46de257bac4687618f88e420f4567d98652fc080ed2e | original bytes |
+| history/source/notes/unrelated_machines/sol_seven_state_and_gate_localizer_obstruction_author_read_after.md | 8fbf850ba8c91df530c2c55f28e990a230b87749e091700b2b91e554a5777cbb | 8fbf850ba8c91df530c2c55f28e990a230b87749e091700b2b91e554a5777cbb | original bytes |
+| history/source/notes/unrelated_machines/sol_identity_coupling_seven_state_star_canonical_v2_final_actual_read.md | 958aa33f7dcc653d4b38213258eb8346cf3809a75752d3ab22be7f22046fab3f | 958aa33f7dcc653d4b38213258eb8346cf3809a75752d3ab22be7f22046fab3f | original bytes |
+
+代码：tests/audits/unrelated_machines/seven_state_star_global_quadratic_audit.py。记录：evidence/runs/unrelated_machines/seven_state_star_global_quadratic_audit.json；root范围：evidence/runs/unrelated_machines/seven_state_star_global_quadratic_root_replay_scope.json。
