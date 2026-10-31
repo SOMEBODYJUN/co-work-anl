@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "python": "3.12.14",
+  "clean_show": {
+    "attempted": 10,
+    "exit_codes": {
+      "1": 10
+    },
+    "stdout_empty": true,
+    "error": "promisor remote unavailable via browser-proxy:8889"
+  },
+  "runs": [
+    {
+      "script": "run/independent_summary_validator.py",
+      "command": "python3 run/independent_summary_validator.py",
+      "exit_code": 0,
+      "stdout": "run/independent_summary_validator.stdout",
+      "stderr": "run/independent_summary_validator.stderr"
+    },
+    {
+      "script": "run/old_largest_incumbent_recheck.py",
+      "command": "python3 old_largest_incumbent_recheck.py",
+      "exit_code": 0,
+      "stdout": "run/old_largest_incumbent_recheck.stdout",
+      "stderr": "run/old_largest_incumbent_recheck.stderr"
+    },
+    {
+      "script": "source/audit_old_largest_incumbent.py",
+      "command": "python3 source/audit_old_largest_incumbent.py (temporary dependency layout)",
+      "exit_code": 0,
+      "stdout": "run/exact_audit_old_largest.stdout",
+      "stderr": "run/exact_audit_old_largest.stderr"
+    }
+  ],
+  "historical_runs_read": [
+    "run/dag_individual_historical_summary.json",
+    "run/dag_restricted_historical_summary.json"
+  ],
+  "generated_outputs": [
+    "audit/individual_candidate_audit.json",
+    "audit/extra_candidate_audit.json",
+    "audit/cyclic_candidate_audit.json"
+  ],
+  "missing_outputs": [
+    "new unrestricted DAG optimum certificate",
+    "new restricted-half incumbent",
+    "new cyclic search point"
+  ],
+  "byte_identity": "original frozen source bytes not regenerated; source-manifest records inventory SHA-256; audit outputs are captured readouts"
+}
