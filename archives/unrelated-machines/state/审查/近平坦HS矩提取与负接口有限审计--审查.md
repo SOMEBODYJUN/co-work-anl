@@ -8,15 +8,18 @@ truth_status: "exact-fraction-conditional-extractor-with-explicit-rejection-boun
 review_level: "full-json-read-and-cross-archive-comparison"
 scope: "near-flat HS independent audit, self-contained moment extraction fixtures, and negative-interface reproducibility scope"
 source_refs:
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/nearflat_moment_inputs.json"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/nearflat_moment_inputs.json"
   - "source:6e5b68e01092324cf1e7:evidence/runs/unrelated_machines/near_flat_hs_independent_audit.json"
   - "source:984f155725e45efa0b41:evidence/runs/unrelated_machines/nearflat_moment_extraction_audit.json"
   - "source:f411848d34f2ee35abca:evidence/runs/unrelated_machines/negative_interface_reproduction_scope.json"
 evidence_manifest: "../../tools/evidence/nearflat-hs-interface-20261030/source-manifest.json"
+input_source_sha256: "f5b35bc248500d8986f7fb9b58e427c0c6cc9194ec6a9a879789eaa5f78f4b3f"
 ---
 
 # 1. 对象身份和共同量词
 
-本批三源研究同一类矩/PSD/HS 接口的不同层次：第一源在给定 exact distribution 上运行独立 G-HS 贪心并只对小缺陷给出条件 extractor；第二源把若干 rational matrix primitives 内置到 self-contained moment extractor，逐行检查 Schur PSD 和实际调度；第三源只保存四个相关脚本的 hash/命令元数据。
+本批三源研究同一类矩/PSD/HS 接口的不同层次：第一源在给定 exact distribution 上运行独立 G-HS 贪心并只对小缺陷给出条件 extractor；第二源把若干 rational matrix primitives 内置到 self-contained moment extractor，逐行检查 Schur PSD 和实际调度；第三源只保存四个相关脚本的 hash/命令元数据。另有输入源 `9a2fcf936eefd8d2c1db`，完整保存这六个 self-contained fixture 的 jobs、variables、moments 与 generating distribution；它是下游六项审计的输入合同，不是第四个独立结果。
 
 共同边界是：程序接收实际分布或 moments，不负责从任意 unrelated-machines 输入生成近平坦分布，也没有 SDP/通用 LP solver。`certificate_rejected` 或“大缺陷”只表示充分条件未满足，不能推出原输入不可行或算法失败。结果与《前缀原子有限精度与相对 Gram 审计》《重型匹配凸化与逃逸残余审计》《固定阶向量贪心与 q=13 线性缺口增量审计》相邻，但变量、矩阶和输入合同不同。
 
