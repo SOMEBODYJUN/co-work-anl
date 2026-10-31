@@ -19,6 +19,9 @@ source_refs:
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/sol_multiouter_single_state_tiny_home_19_10_author_read_after.md"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_multiouter_single_state_tiny_home_19_10_independent_exact_first.md"
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/sol_multiouter_single_state_tiny_home_19_10_independent_exact_first.md"
+  - "clean:ed33bb167491de41a491"
+  - "clean:04dae13e7eb821aeaa1e"
+  - "clean:f52fb32efeeba91da30a"
   - "source:19575b9ed8447b7d0589:evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_audit.json"
   - "source:3743fee56233f1e58188:evidence/runs/unrelated_machines/multi_outer_request_winner_pair_backend_root_replay_scope.json"
 related_objects:
@@ -157,3 +160,19 @@ backend 明确 whole_scheduling_algorithm_checked=false、small_weight_class_ins
 
 处置为 integrated-exact-provenance：Exact 原字节和作者 proof 原字节已复制到 evidence；正式正文保留 Exact-only 输入合同、author proof read-after 链、independent/canonical/read-after 版本关系和 finite backend 的有限范围。其正式算法身份仍限于 UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1；不得把后续 v4/v5、有限 backend 或该 typed 合同外推为一般 unrelated-machines 算法。
 
+
+# 8. NSW v5 三源 Exact-first、Proof read-after 与最终 canonical 增量
+
+本轮另完整实读 v5 的 Exact-first、作者 Proof read-after 与最终中文 canonical 三源；它们是后续 working/canonical 版本，不回写 v1/v4/v5 之前的历史身份。
+
+| clean ID | SHA-256 | 阅读层级 | 处置 |
+|---|---|---|---|
+| `ed33bb167491de41a491` | `a900867a462b030db5cb2556f68f992b89efce28936a5c2658b13aeb03d7d306` | v5 Exact-first：A fractional matching、B1–B6 全分数量词、B15 inverse moment、B16 DP、B19 rematching、C–F 与全 jobs | integrated |
+| `04dae13e7eb821aeaa1e` | `d70dcc172cdaafaf32ba7cdc842d967d0e8289666fcf77d977a3a94506a0d1cb` | 作者 Proof read-after：逐式核 log/LP vertex bits、support split、relative floor、B15/B16、cycles、D promise、E zeros/jobs | integrated |
+| `f52fb32efeeba91da30a` | `ba2e84477f5ab1857b2dce5d61f3fc2c7651d6f0ac17ced051c06ec97ee662cf` | 最终 canonical full review：三 formal IDs、最终 2365f5…c6c81 字节、空 residual convention 修正、C–F 与 source-regime 边界 | integrated |
+
+三源共同核对的数学范围是：A 为一般 monotone subadditive 的 semantic fractional matching 接口；B 为有限显式、非负 binary-rational、无权 XOS；C 为原 normalized total-one menu；D 为指定同组 singleton REPAIR promise LP；E 为保留所有原 selectors/incidences/zero/unselected jobs 的完整 ordinary schedule。B 的 1/1,125,000 与 C 的 NSW 下界、D 的 fixed slack、E 的 makespan/selected-root count 均有明确量词，未把有限 backend 当成算法实现。
+
+Canonical 最终版本只修正了 B5 中对 `i notin A''` 的显式 empty convention（与既有 Proof/Exact 意图一致），并明确区分 `delta_mask=2/35`、`delta_quality`、`a_rep`。它仍不覆盖 source regime `gamma<=delta_quality`，不把 source decoder/需求树历史事实冒作已审材料，也不把 v5 working algorithm升级为一般 UM 或 hardness。
+
+原件副本、manifest、哈希校验和 validation PASS 位于 `archives/unrelated-machines/tools/evidence/retired-nsw-v5-20261031/`；本增量不重复建立第二个算法正文。
