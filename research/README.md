@@ -31,4 +31,4 @@ Research Boss 作为唯一整合者，六个 subagent 采用两种配比：
 
 Verifier、adversary、形式化工具只在一个具体结果需要它时临时占位。常态输出是：新路线、对象关系、证据需求、失败边界和下一动作。两跳是默认上下文窗口，遇到边界再按路径扩展。
 
-JSON 是路由和登记规范，数学正文仍用 Markdown。见 `schemas/`、`templates/`、`prompts/02.5-research.md` 和 `prompts/research-runtime.md`。
+JSON 是路由和登记规范，数学正文仍用 Markdown。见 `schemas/`、`templates/`、`prompts/02.5-research.md` 和 `prompts/research-runtime.md`。长程运行状态只保存 run、workspace、frontier、feedback 和 checkpoint，不保存整段对话；恢复先读 resume bundle，再沿原 run 继续。
