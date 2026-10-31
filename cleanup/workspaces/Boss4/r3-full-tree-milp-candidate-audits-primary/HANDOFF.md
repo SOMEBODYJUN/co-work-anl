@@ -1,0 +1,13 @@
+# CF五源成熟交付
+
+原25claim回执完整原字节保留，pushed/synced9bff88d715e258bf152edf97073591b1652307e2/Boss4；期望5与actual25交集全5、missing0、当时5HEADowner/SHA核实。只5receipt全部integrated，不投影伪造原回执、不额外done依赖。
+
+三新自足正文：实际玩家归一的全树效用向量表示；自由终局逐人归一模型的候选与对偶复核；逐人末位二倍保底的七客户反例。保任意j归一及M=m双向证明、2根支持轨道、GAP/individual/terminal目标、原独审先验/方法复用、14点完整数据和后状态，原作者七客户发现不新领novelty。
+
+原defaultMILP1次4.782849652s、2MILP/status0/0LP；原audit通过runpy__main__1次3.729519172s、8input14LP0MILP，134039B全字节同2c97695a…。14μ新只读观察保存并新独立Γ/坐标重放。trace28events两两同≠28LP；raw与执行旧observer保留，derived14与correctedexecution明确，绝未重跑原main。原码/helper/输入不改。
+
+std新1次untimed0solver：14gap796h/3919incl3123nonself，2terminal42h/168incl126nonself，总838h/4087incl/3249nonself；首七客户strict4coverC1差−1/2、C2等号、WOPT7/root26。terminal旧固定β不冒这14新μ认证。所有比较源均未primarydone。
+
+真实read-order边界已保存：run前原码+完整14精确报告全读、8raw核SHA；8raw剩余浮点metadata运行后无损全文补读，不把hash核冒成当时semantic fullread，也不虚构一次新run来改顺序。最终所有必要原件全文/独有内容完整。
+
+按copy-files精确白名单复制，先新正文/证据发布后仅5receipt done。next5为C1原稿/terminalJSON/独审md/py/JSON，需Root实际ledger核claim再正式处理；当前只是完整比较，不重造已成反例。无sharedGit/claim/done/sync/checkpoint/auth写，Root串行发布。

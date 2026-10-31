@@ -1,0 +1,1 @@
+这是供Root实读核验/核owner后串行维护的最小独立建议，不会由本copy白名单覆盖原目标。原快照在formal-comparison；proposed只替两处说明，patch精确可查。source断言load>T or allowed表示load<=T时必allowed，另一条只保T+b/2；计数中的u范围总长度18已包括ell1..4。原程序/旧done不改，不报数学反例。before/proposed SHA和精确路径见manifest.json。
