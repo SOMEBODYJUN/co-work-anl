@@ -412,3 +412,7 @@ R3_READY33LT：三十三源自足正文；严格策略/价格原审计、共同�
 R3_READY33LT数学/证据pushed 6be610b63e9c6f191baa3ea17ff04ce2a7577866；33源done另推送 230d3a575b5a9aedf309eb7a38a6260ab7e0fca5。Boss4累计2360完成，实际未完0；持续接续全仓，不以本批清空收尾。
 
 R3_READY21MB：二十一主源完整正文与程序合同；逐人与均匀查询、汉明/旋转菜单程序、实际末主题分支及共同客户价格/共享saddle，准确保有限检查与当前未证义务；共21主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY21MB_REMAINING_SCOPE.json。
+
+R3_READY21MB数学/证据pushed 401a3baab87c0022754eca40974709e1b72718ec；21源done另推送 3fca03c57bf37c9e9e3c2db0806a57673fe24d73。Boss4累计2381完成，实际未完15；持续接续全仓，不以本批清空收尾。
+
+R3_READY15MG：十五主源完整H/source解析、extra-iid聚合/预留正文与原程序精确复放、静态安全哨兵和删槽/共同乘子程序合同；四原入口和一次静态补充的真实边界分别保全；共15主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY15MG_REMAINING_SCOPE.json。
