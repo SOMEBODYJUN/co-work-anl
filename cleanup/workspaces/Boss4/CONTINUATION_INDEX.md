@@ -246,3 +246,8 @@ R3_READY18FM：FG5/EZ5/EX3/FD5共18源：已全文原平台/owner/十环原稿�
 R3_READY18FM数学/证据pushed cf7a2a670d238cdc7bb6a6010e7ac8f363da33c8；18源done另推送 c65c4b089fc6aae5c7564ba9a98baf95d1689397。Boss4累计1753完成，实际未完20；持续接续全仓，不以本批清空收尾。
 
 R3_READY24FQ：FB5/FC5/FI5/FF5/FJ4共24源：Cartesian可信菜单/删除支持、结构证书与尾投影、统一价格命题史、非均匀捕获/弱平均及52客户冻结匹配。原/新/复用运行分层；修旧页误排同模型六人特例单句，保所有候选未付。先明确正文证据checkpoint pushed再逐源done，六线持续全仓。；共24主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY24FQ_REMAINING_SCOPE.json。
+
+R3_READY24FQ数学/证据pushed 616d2539b2a520b7aaec4bf9237e0d773f674806；24源done另推送 4375b5034fc6760ff55aa6b62f16926692c27510。Boss4累计1777完成，实际未完5；持续接续全仓，不以本批清空收尾。
+
+
+R3_READY32FW：32源完整实读比较：FN4/FP5/FS5/FT3/FL5/FR5/FK5。真客户与扩大势模型、覆盖矩、完整菜单银行/最小支撑、单色税、尾分歧/ordered loader与gluing、额外槽机会信用分别保留准确量词和有限核验边界；Root完整复核银行全列精确值一般m证明并修正旧Pay分母漏加号。17源仅本地中间草稿合并入本32源，未曾声称其已推。明确checkpoint pushed后逐源done，立即继续全仓下一批。；共32主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY32FW_REMAINING_SCOPE.json。
