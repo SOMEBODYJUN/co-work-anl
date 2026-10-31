@@ -16,6 +16,8 @@
 
 `doctor` 已通过 `receive-pack dry-run`。本批 `clean done` 远端推送、checkpoint 推送和 handoff 推送均尚未完成：自动审批拒绝了向 GitHub 的外部写入。正式资产、原始证据、14 条回执和本地工作草稿已保存在本地 checkpoint 中；不得把本地状态称为 `pushed` 或 `done`。
 
+本次尝试执行 `clean handoff --all` 也被同一外部写入审批拦截；因此认领状态仍由远端保留为 `in-progress`，恢复时应先取得写入审批或由协调 Boss 接续。
+
 ## 恢复步骤
 
 1. 在同一 Boss1 clone 上先确认 remote 与分支仍为 `rebuild/research-v2`，运行 `sync` 保留本地草稿。
