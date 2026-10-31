@@ -259,3 +259,7 @@ R3_READY20GD：FO3/FU4/FV5/FX3/FY5共20来源：三势/正矩原稿证据层次�
 R3_READY20GD数学/证据pushed 8a18842b5e261895a629fb391a596986b93bde64；20源done另推送 8379346243b26638c29d0ebe5f51b01ef3d599da。Boss4累计1829完成，实际未完11；持续接续全仓，不以本批清空收尾。
 
 R3_READY9GH：GC4/GA5九源：无拥挤五客户/任意k真SPE族、t>2多围堵目标所有排列的末位失败；遗漏客户删除全参数126终局/211仿射线/129代表完整证书与同步重入一般归约。原/新/未读证据分层，Root完整读一般证明和全部边界；明确checkpoint pushed再9来源done，立即继续全仓。；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY9GH_REMAINING_SCOPE.json。
+
+R3_READY9GH数学/证据pushed c42e7e0a4ea5917f6d9b7ee0112e5de3dfaa4013；9源done另推送 fb765665dd692effe670156dd9762619b6e46339。Boss4累计1838完成，实际未完24；持续接续全仓，不以本批清空收尾。
+
+R3_READY11GK：FZ5/GB1/GD5共11源：跨真实根孩子递归删除势、两query四路径原入口一次及791真实缺输入；完整背景pair浮点探针合同；singleton全局势最大可实现完整SPE、银行另一证明和跨人数CCE精确候选。准确区分新原run/仅标量核对/0run程序资源，不伪造缺输入，先正文证据checkpoint pushed再11逐源done，继续全仓。；共11主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY11GK_REMAINING_SCOPE.json。
