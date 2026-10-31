@@ -1,0 +1,121 @@
+CLAIMS full lines 361..480; Cn=exact path in previously fully read catalog; all link labels, math and unmatched paths retained.
+361: | WC-ORDERED-TAIL-PARAMETER-LIMIT-v1 | 任意d≥1,H≥1,K≥1，单资源一名权H玩家及K名单位权玩家、费用x^d、人人可选空策略或该资源。全部有序非空划分的最小A恰为min{H,(1+K/H)^d}。K=ceil(H²)时恰H，固定d仍可无界；游戏有全空精确PNE。 | [完整正文](C353), [独立审查](C354)；只否定对该潜在尾部A参数的统一控制，不否定冻结程序可能有更精细分析，也不是均衡非存在。 |
+362: | WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1 | 任意非空有限simple DAG、d≥1及ε∈(0,1)，令z=ε^(-1/d),P_k为k顶点有向路径数,S_D(z)=ΣP_kz^(k−1)。存在根权1、正轻权W<1及outsum<w_v、非零非负degree≤d费用通过p0(W)≤εp0(1)和pv(1+outsum)≤εpv(1+w_v)，当且仅当z(z−1)S_D(z)≤1。全部可行权有正文slack表示；饱和时权唯一。原辅助step阈值q满足q(q−1)≤1/[z(z−1)]≤d/ln(1/ε)，固定ε的√d量级在检测系统内可达。 | [完整正文](C361), [独立审查](C362)；iff仅是指定端点检测系统；未控制高平台过冲或真实全状态偏离，不给实际多项式博弈的β上界。 |
+363: 
+364: ## 择证循环边界与有向分叉强迫割均衡
+365: 
+366: | ID | 精确范围与结论 | 证明与状态 |
+367: | --- | --- | --- |
+368: | WC-SELECTOR-UNIT-SPEED-STATIONARY-BARRIER-v1 | 单位速度平稳择证的无界损失；For every finite real alpha>=1 and d>=1, some finite positive rational weight two-action template and full selector have no unit-speed stationary dual, already witnessed by an affine column; this is no nonexistence result. | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](C367)、[独立审查](C368)。 |
+369: | WC-AFFINE-SELECTOR-CYCLE-DUAL-v1 | 任意仿射择证的循环权重对偶；For every finite positive-weight action template and tagged selector, every selected cycle gives an affine dual by lambda_s proportional to the selected mover weight; self-loops are allowed and all affine columns sum to zero at alpha=1. | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](C367)、[独立审查](C368)。 |
+370: | WC-RECURRENT-SUPPORT-FIP-EQUIVALENCE-v1 | 循环支撑择证与全模板有限改善性等价；For fixed finite weights, action counts, degree, real alpha>=1 and any fixed nonempty signature-column subcone, every selector admits a dual supported on its recurrent states iff every nonnegative-coefficient game on that template has no strict alpha-improvement cycle; this is stronger than mere PNE existence. | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](C367)、[独立审查](C368)。 |
+371: | WC-DIRECTED-FANOUT-FORCING-CUT-v1 | 分叉双人侧反馈的统一强迫割均衡；For d>=2 and alpha>=T_d, every finite unique-source light/multihead-private-pair-side topology satisfying the weak uniform aligned-light forcing inequalities admits an all-anti alpha-PNE selected by any local minimum of the stated weighted cut; no unrestricted existence claim. | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](C371)、[独立审查](C372)。 |
+372: 
+373: 
+374: ## 阶跃DAG极值幅度的真实多项式状态
+375: 
+376: | ID | 精确范围与结论 | 状态与限制 |
+377: | --- | --- | --- |
+378: | WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1 | 任意非空有限simple DAG，root权1、正轻权W<1且outsum<w_v、原双列binary策略；两列相同非零非负degree≤d费用，d≥1。令q=q_D>1、h_v=(1+Σ_in h_u)/q且Σh=q−1，存在A>0使p0(1)=A、pv(1+w_v)=A h_v。真实全入状态是max{1+1/q,B_d(q)}-PNE，B_d(q)=q/[1+(q−1)(1+1/[q(q−1)])^(−d)]；d≥16时统一为4√(d/ln d)-PNE。不要求低漏/高平台保真，但必须保留极值幅度条件。 | [正文](C375)、[冻结独立攻击](C376)；仅限所写DAG策略及极值幅度；任意幅度/全类策略尚无归约，不是本题一般肯定证明，也不是非存在下界。 |
+379: 
+380: ## 两权类别的平方根次数存在界
+381: 
+382: | ID | 精确范围与结论 | 状态与读取入口 |
+383: | --- | --- | --- |
+384: | WC-TWO-WEIGHT-ORDER-BLEND-v1 | 对每个d≥2及MODEL有限游戏，若所有玩家权重属于固定{a,b}、a≥b>0，则双排序混合势的每个单方局部最小点为A_d=(1+√(4d−3))/2-PNE，任意严格A_d改善终止；各类人数、权比、拓扑和系数任意。d≤1或仅一权时有精确PNE。不是任意权重全类上界。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[完整正文](C381)、[独立攻击](C382)。 |
+385: 
+386: ## 循环窗口复制实现近线性倍率的真实改善环
+387: 
+388: | ID | 精确范围与结论 | 正文与实际状态 |
+389: | --- | --- | --- |
+390: | WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1 | 对每个d≥2、每个1≤α<ρ_d=sup_t>0[(d+1)(1+t)^d+t^(d+1)]/[d+(1+t)^(d+1)]，存在正有理权、全部资源费用x^d、人人策略族2^E的有限MODEL游戏，真实偏离图含严格α改善环，同时全空是精确PNE。ρ_d/d→1，故任何全局实值函数（含非可分）不能在该游戏全部严格α改善边下降。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](C387)、[审查](C388)；Only all-improvement termination and global strict ordinal potentials are obstructed; no PNE-nonexistence, chosen-step or minimizer-selection obstruction. |
+391: 
+392: ## 共同幂混合全局最小点的线性障碍
+393: 
+394: | ID | 精确范围与结论 | 正文与实际状态 |
+395: | --- | --- | --- |
+396: | WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1 | 对每个d≥32，存在四玩家四资源、正有理权/系数、纯d次费用且有精确PNE的有限游戏，使任意非零非负Borel测度μ（全部状态目标有限）给出的Pμ(s)=Σ_e a_e∫_(p>0)x_e(s)^p dμ(p)每个全局最小点都非α-PNE，对全部1≤α<d/16成立；μ可依完整游戏。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](C395)、[审查](C396)；Does not cover per-resource normalization, elimination of fixed-background players followed by a new coefficient rule, arbitrary separable objectives, nonseparable objectives or PNE nonexistence. |
+397: 
+398: ## 有限可动权类别与窄权簇
+399: 
+400: | ID | 精确范围和结论 | 正文与状态 |
+401: | --- | --- | --- |
+402: | WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1 | 对每个d≥2,k≥1，全MODEL中全球正权值至多k种的每个游戏有A_(d,k)-PNE，其中A∈[1,d)唯一满足A=Σ_(j=0)^(k−1)((d−1)/A)^j。三角排序混合势的每个单方局部min均是该均衡，全部严格A改善终止；任意人数、权比、费用/策略均覆盖。A≤B=(d−1)/(d^(1/k)−1)，固定k时A∼d^(1−1/k)，k≤ln d/lnln d且d≥16给2d/ln d。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](C401)、[重构攻击](C402)、[informed攻击](C403)。 |
+403: | WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1 | 对每个d≥2,k≥1，全MODEL中只有可动玩家（策略族非单元素）的权值至多k种时，即使任意固定玩家的权种类无限制，仍有A_(d,k)-PNE。c_e(B_e+x)展开仍非负系数并逐状态保持可动者成本；无可动玩家时唯一状态精确。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](C401)、[重构攻击](C402)、[informed攻击](C403)。 |
+404: | WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1 | 对每个d≥2,k≥1,R≥1，若每个可动玩家有固定标签τ使v_τ≤w_i≤Rv_τ，其中k个代表权为正，则全MODEL原游戏有R^d A_(d,k)-PNE；固定玩家无需取整且权不受限。代表可重复/缺席；R=exp(1/d)时损失e，结合类别门槛给2e d/ln d的该明确子类界。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](C401)、[重构攻击](C402)、[informed攻击](C403)。 |
+405: 
+406: ## 双轮环的全状态锁定编译
+407: 
+408: | ID | 精确范围和结论 | 正文与状态 |
+409: | --- | --- | --- |
+410: | WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1 | 每个n≥3、degree≤p、两动作MODEL游戏的严格α≥1双同序2n环，可保持玩家/权重/旧资源，增加2L个正单项式资源编译为无αPNE游戏。q≤max(p,D)，D=ceil[ln(4α²BL/η)/ln(1/δ)]，B为全状态成本界、η为环余量，L=C(n−1,2)，δ为锚定三元缺员负载比。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[完整证明](C408)、[独立重构攻击](C409)。D依实例且输出只保留两个动作；无全类次数预算。 |
+411: 
+412: ## 三次双轮环的锚定时钟次数保持障碍
+413: 
+414: | ID | 精确范围与结论 | 正文与状态 |
+415: | --- | --- | --- |
+416: | WC-ANCHORED-DEGREE-THREE-LOCK-OBSTRUCTION-v1 | 显式四玩家有理三次基体G，权(1,1/2,1/4,1/8)、α=21/20，有严格双同序环及0101/1010精确PNE。任意λ>0，对λG只加anchor0的T012,T013,T023互补010/101同费pair，每T独立任意degree≤3非负多项式（可零/省略），若0000玩家0及1100玩家2的总αmargin均≥0，则0101/1010全部四个翻位margin均<0，故仍αPNE。 | complete fixed-architecture proof; independently reconstructed and exactly audited; unrefereed；[正文](C417)、[独立审查](C418)。只限明示基体、anchor、phase、同pair两侧同费及degree≤3；不排常数倍degree、其他anchor、两侧异费、辅助玩家或其他拓扑。 |
+417: 
+418: ## 去包含支配与必选背景的空交反链核心规范形
+419: 
+420: | ID | 精确范围与结论 | 正文与状态 |
+421: | --- | --- | --- |
+422: | WC-ANTICHAIN-CORE-NORMAL-FORM-v1 | 任意d≥0 MODEL游戏有不依α的有限core变换：或给显式exactPNE，或得到同次数界、原玩家非空子集/原权的H，人人≥2非空两两不可包含且交集空的策略；固定lift将每个实α≥1的任意H αPNE提升原游戏。同一固定d、实α处，全类无αPNE反例存在等价于该core策略结构的正整数权/单位单项式x^j(j≤d)反例存在。 | complete direct proof; independently reconstructed and exactly audited; unrefereed；[正文](C349)、[独立审查](C423)。提升单向、不保人数/资源数、不保最佳因子或逐状态反投影；没有无限规范模板的规模截止或全类C,d0。旧整数v1身份/保人数义务不改。 |
+423: 
+424: ## 统一低泄漏锚定时钟预算的普适次数障碍
+425: 
+426: | ID | 精确范围与结论 | 正文与状态 |
+427: | --- | --- | --- |
+428: | WC-UNIFORM-CLOCK-BUDGET-BARRIER-v1 | 任意n≥3、整数p≥0的MODEL两动作严格α≥1双同序环、任意锚点，B为全状态原成本有限上界、η为环最小严格差、L=C(n−1,2)、δ=max锚定三元(1−minw/Σw)。若任意整数D≥1满足δ^D≤η/(4α²BL)，则全局权比R>α、D>(R+1)ln(4α²BL/η)>2(α+1)ln(2α)，且每个实q≥D均有αlnq/q<α/(α+1)<1；包括实际输出最高次数。只封闭该统一充分预算的目标否定证书，非实际最小锁定次数下界或全类PNE存在结论。 | complete budget-obstruction proof; independently reconstructed and exactly audited; unrefereed；[一般证明](C428)、[独立重构攻击](C429)。 |
+429: 
+430: ## 循环窗口前沿的扭转平移与精确相位商
+431: 
+432: | ID | 精确范围与结论 | 正文与状态 |
+433: | --- | --- | --- |
+434: | WC-CLONE-FRONT-PHASE-QUOTIENT-v1 | 任意m≥2,N≥1正类权、每类至少参与一test的循环窗口两动作lift（保留零系数资源），同test全部index及pair两侧同费；共同index平移并wrap翻bit逐成本/偏离协变。合法class prefix/suffix由x∈(Z2N)^m编码，对角T使x各加1，商恰(2N)^(m−1)，单clone留front动作恰±1（N1两邻居重合）。有显式2N长forward成本表及backward r+1交换式。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](C434)、[独立审查](C435)。count是互异MODEL动作状态；单测试子项可缺席类，但不能把空/空标签当两策略。class0商动作改变所有相对相位，须保mover标签。不是对全front出口或PNE的断言。 |
+435: 
+436: ## 类内时钟的前沿出口障碍与不同步反例
+437: 
+438: | ID | 精确范围与结论 | 正文与状态 |
+439: | --- | --- | --- |
+440: | WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1 | 任意α≥1，同权类内递增锚定010/101同费三元时钟在每条合法front边的own old=new=c(2w)，clock margin≤0。显式12player/N4/degree8/α21/20有理窗口lift有strict24步环，但phase(0,4,0)六端点margin<−9/50；512front恰8稳定，仍有内部clone margin>1/5。故strict环不自动给每个类front改善端点，任意此类clock不新增front内改善。 | complete stated-scope proof; independently reconstructed and exactly audited; unrefereed；[正文](C434)、[独立审查](C435)。局部lemma要两端均非full触发；front使用递增锚定三元，不涵盖任意乱序wrap。实例非αPNE，有离front出口；不排所有类内compiler或其他同步机制。 |
+441: 
+442: ## 有限次局部成本空间与全成本资源压缩
+443: 
+444: | ID | 精确范围与结论 | 正文与状态 |
+445: | --- | --- | --- |
+446: | WC-DEGREE-LOCAL-COST-COMPRESSION-v1 | 固定n≥1,m_i≥1,d≥0与正实权，D=Σ_i m_i Σ_(T⊆N\i,|T|≤d)∏_(j∈T)(m_j−1)。全部玩家cost tables位于维D局部张量空间；任意游戏可用≤D正系数单项式签名类型及≤Σm_i零费私有动作marker保所有state/deviation成本和动作标签，core可保持。binary时D=2nΣ_(r≤min(d,n−1))C(n−1,r)，一般D=O_d((Σm_i)^(d+1))。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](C440)、[独立审查](C441)。不保原资源身份、单位系数或算法效率；零成本可用0正资源但markers保MODEL合法。所有人数/动作数无界，维界不是全类规模截止。 |
+447: 
+448: ## 全状态择证的低阶矩极锥与小支撑接口
+449: 
+450: | ID | 精确范围与结论 | 正文与状态 |
+451: | --- | --- | --- |
+452: | WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1 | 固定任意完整selector h及实α≥1，其概率dual等价conv{Ψ_h(s)}∩K^-非空；Ψ只含所选动作边和≤d对手动作的signed discounted矩，K为全部允许资源cost vectors锥。若dual存在，有≤D+1状态支撑dual。binary指定单mover翻位支撑且α1时，dual存在等价两方向≤d上下文矩匹配/无degree≤d严格多项式分离；α>1仅primitive非负tests乘性夹逼。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](C440)、[独立审查](C441)。不能删selector-support marginal-polytope条件、改成任意局部一致矩或强求feature=0；不要求stationary/recurrent，未保证每selector可行或单mover证书。 |
+453: 
+454: ## 完全暂态奇偶支撑的择证对偶
+455: 
+456: | ID | 精确范围与结论 | 正文与状态 |
+457: | --- | --- | --- |
+458: | WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1 | 每个d≥0、每个d+3维正实权向量，都有binary无self-loop且唯一2cycle的selector，及全部支撑在暂态state的概率λ，对全部signature的degree0..d列在α1恰零、对所有α≥1非正；限制core proper signatures仍成立。flag0偶active states均匀分布，active维d+2使cost active-degree≤d+1严格低于维数。 | complete structural proof; independently reconstructed and exactly audited; unrefereed；[正文](C440)、[独立审查](C441)。仅证明transient dual可行；唯一2cycle自身也有dual，不证明暂态必要/更优，不给任意selector或全类存在。 |
+459: 
+460: ## 锚定双轮时钟的有向差分、线性预算与逐次数锐效率
+461: 
+462: | ID | 精确范围与结论 | 正文与状态 |
+463: | --- | --- | --- |
+464: | WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1 | 任意n≥3、α≥1、正权两动作MODEL基体的严格双同序环，任意逐三元非负多项式同费010/101锚定pair：两半合法margin同为g_i，非法firstopp i的真实clock margin恰g_i+Σ_{j later同anchor}Δ_ij，Δ≥0。γ_i为两半base margin之min、B覆盖全部base成本时，γ_i+g_i>0及每i<j的g_i+Δ_ij>αB给全状态无αPNE的n+L条充分线性约束。保环必要Σg=−(α−1)ΣS、(α−1)ΣS<Γ；degree≤D的Δ/S锐界为逐0..D单项式max，一般不取最高次；κ逐状态列界另给保原αPNE的全玩家充分条件。明示四玩家三次基体有43次实际证书，原uniform预算选值91。 | complete stated-scope interface proof; independently reconstructed and exactly audited; unrefereed；[正文](C446)、[独立审查](C447)。约束仅充分、总预算仅必要；κ稳定条件非必要，保firstopp失败不等于PNE；不保证给定D可行或B可多项式时间计算。43不称最优，91只是统一充分预算选值。没有一般次数效率或全类结论。 |
+465: 
+466: ## 同权主玩家共享侧资源的统一强迫截断势均衡
+467: 
+468: | ID | 精确范围与结论 | 正文与状态 |
+469: | --- | --- | --- |
+470: | WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1 | 对每个d≥2、有限同权u>0 hubs/任意正异权lights，每light唯一source、每side唯一light并允许任意hub子集H_j及空集/含source、两动作副本同费非负degree≤d；若α≥A_d=[1−(d−1)d^(−d/(d−1))]^(−1)，且逐light弱UF为F_v(u+w)+ΣG_j(w)≥α[F_v(W_v)+ΣG_j(w+|H_j|u)]，则所写截断Rosenthal势任hub单翻位局部最小点配全anti lights给αPNE。A_d≤2d/ln d对全部d≥2，常数仅限该子类。 | complete structural proof; independent bottleneck reconstruction and frozen attack; exactly audited; unrefereed；[正文](C455)、[独立审查](C456)。共同hub权、每side唯一light、每light唯一source、动作副本同费与UF最坏负载均承重。不覆盖异权hub、多source side或UF失败且直接AS+B未满足的全类情形；子类C2,d0=2不代替唯一题。 |
+471: 
+472: ## 同权主玩家共享侧资源的直接侧势预算均衡
+473: 
+474: | ID | 精确范围与结论 | 正文与状态 |
+475: | --- | --- | --- |
+476: | WC-SHARED-SIDE-BUDGET-POTENTIAL-v1 | 相同unique-light/shared-hub/unique-source拓扑，任意d≥0、实α≥1；H_j(m)=Σ_{r≤m}[G_j(w+ru)−αG_j(ru)]_+、M_v=αF_v(u+W_v)−F_v(u)。若逐light AS为F_v(W_v)+ΣG_j(w+|H_j|u)≤α[F_v(u+w)+ΣG_j(w)]，逐source Σ_jH_j(|H_j|)≤M_v，则同一有限势每个单hub局部最小点配全anti是αPNE。无需UF或α≥A_d。 | complete conditional proof; independently attacked after abstraction; exactly audited; unrefereed；[正文](C455)、[独立审查](C456)。AS与源预算是充分假设，不证明所有该拓扑游戏都满足；仍限同权hub、unique-light/unique-source和同费副本。此ID扩大degree/alpha域并改变假设，未静默改UF-v1；后置抽象攻击不冒充初次未读稿全证明重构。 |
+477: 
+478: ## 潜在可动用户共占高度的三角排序势
+479: 
+480: | ID | 精确范围与结论 | 正文与状态 |

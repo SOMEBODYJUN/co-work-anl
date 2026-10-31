@@ -1,0 +1,111 @@
+CLAIMS full lines 931..1040; Cn=exact path in previously fully read catalog; all link labels, math and unmatched paths retained.
+931: 
+932: 
+933: ## 低重数共享标签的真实树边界
+934: 
+935: | ID | 精确结论 | 范围与证据 |
+936: | --- | --- | --- |
+937: | UM-BOUNDED-COLLISION-LABEL-FLOOR-v1 | ∀显式四层r→X→E_x→R需求DAG，q=|X|≥1，d_r=q,d_x=1,d_e=K_e≥1,d_R=0、各E_x不交；∀给定每x一标签e_x及K_e个不同邻资源B_x，设Δ=max_u|{x:u∈B_x}|，有确定性总位多项式算法输出真实根树b(H)≥1/Δ；既有token桥梁给完整实际调度Cmax≤2−1/Δ。 | 低重数是给定选择的实际重数；未给寻找最小Δ的算法，不排高重数/跨层/一般归约。 [自足正文](C927)、[冻结攻击](C928)。 |
+938: | UM-PAIRWISE-LABEL-FLOOR-SHARP-v1 | ∀k≥1，q=2s≥2个变量成对、每变量唯一需求k标签、同对共享恰k资源且不同对不交时，b*=1/2及token实例OPT=3/2。另∀Δ≥1，q=sΔ变量每Δ个共享同一singleton、标签需求1时b*=1/Δ、OPT=2−1/Δ。 | Δ2对每个束宽锐；一般Δ只声称singleton通用锐性，不声称所有固定束宽1/Δ锐。 [自足正文](C927)、[冻结攻击](C928)。 |
+939: | UM-GROUP-DEGREE-LABEL-APPROX-v1 | ∀上述显式四层DAG，不要求局部完整；令Δ_G=max({0}∪{每资源涉及的不同变量组数})。q≥1且Δ_G≥1时，不给标签见证或b*，确定性总位多项式输出b(H)≥U/Δ_G≥b*/Δ_G，其中a_x=max_e min(1,|S_e|/K_e)、空max0、U=max_s min(s/q,a_(s))；token桥梁实际Cmax≤(2−1/Δ_G)OPT。q0根终端精确1；Δ_G0且q≥1精确b*=0。 | Δ_G计不同变量组而非标签总入度；仅此四层桥梁族。Δ_G增长无统一ε；非一般UM逆表示。 [自足正文](C927)、[冻结攻击](C928)。 |
+940: 
+941: 
+942: 
+943: ## 大需求束的平方碰撞边界
+944: 
+945: | ID | 精确结论 | 范围与证据 |
+946: | --- | --- | --- |
+947: | UM-LARGE-BUNDLE-COLLISION-FLOOR-v1 | ∀q≥1显式完整束B_x、K_x=|B_x|、Δ为所选束实际资源重数、∀整数1≤c≤q，确定性总位多项式输出真实根树b≥Λ_c=min{ceil(q/c)/q,min_x floor(K_x c/(c+Δ−1))/K_x}。q=Δ=K_x=t²、标签邻域恰共同t²池且无额外边时，max_cΛ_c=b*=1/t（t≥2取c=t+1，t1取c1）。若b*≤η∈(0,1)，cη=ceil(1/η)−1，则Δ≥1+cη[1/(η+1/Kmin)−1]；沿η→0且ηKmin→∞必要liminfη²Δ≥1，平方池达到。 | 给定完整选择和四层模型承重；渐近条件不能省略。[正文](C933)、[冻结攻击](C934)。 |
+948: 
+949: ## 全局四阶负载松弛的精确间隙
+950: 
+951: | ID | 精确结论 | 范围与证据 |
+952: | --- | --- | --- |
+953: | UM-C2-LOAD-UNIT-GAP-v1 | 对每个整数m≥3，n=m+1个全单位同机任务的现行C2-load阈值恰为t=n/m，而整数OPT=2；兼容四阶矩y_S=∏a(t)_{c_a(S)}/(n)_{|S|}给显式有理证书，M2半正定且全部负载localizer为0。比值2m/(m+1)趋2；一般此C2松弛的supgap恰为2。 | 不含三阶逐项非负或CONFIG；后者本族阈值2。完整一般证明、独立冻结攻击和双路精确核验；非一般hardness。[正文](C938)、[审查](C939)。 |
+954: 
+955: ## 闭环弱单调修复与组内异端畸变
+956: 
+957: | ID | 适用范围及状态 | 精确结论 | 正文 |
+958: | --- | --- | --- | --- |
+959: | UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1 | 完整声明范围证明；内部独立审查；新颖性/外审未认证 | ∀整数k≥3,d≥1，§11的显式正有理两选实例满足T=OPT=1、所有有限边≤1；x为两个实际最优调度的正有理凸组合。任意逐机等尺寸平局排序下，标准有序单位槽的全部最小总处理时间覆盖匹配诱导同一σ，Cmax(σ)=B_k=2−3/k+3/(2k²)。任意不同于σ且Cmax(τ)≤B_k的合法τ，改变原任务数及其新旧机器端点并集大小分别至少d+1；同一严格下降动作同时达到两界。 | [正文](C708)；准确身份/软件限制见专题账本。 |
+960: | UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1 | 完整声明范围证明；内部独立审查；新颖性/外审未认证 | ∀上述k,d及同一σ，在所有从σ出发、终点满足Cmax=1的有限单任务合法迁移路径中，最小可能路径最大负载精确为B_k+c，其中c=1/k²；显式(k−1)(d+1)步路径达到该值。所有非平凡单任务首步峰值至少B_k+c，故下界不要求中间单调。 | [正文](C708)；准确身份/软件限制见专题账本。 |
+961: | UM-DISTORTED-GROUP-JOINT-SLOT-v1 | 完整声明范围证明；内部独立审查；新颖性/外审未认证 | ∀显式不交H∪Z、宏B与唯一home私有组J_h；组内共同E_h，home时间w_j，给有理0≤δ<1/2、κ≥1、B̄≥0、0≤b_hz≤B̄，满足(b_hz/κ)w_j≤p_zj≤b_hz w_j。∀有理T≥0、1/2≤r<1−δ，若W_h≤T、w_j≤δT且全部有限宏端>T/2，则有确定性总位多项式算法返回FAIL或实际完整σ，home≤(1+r+δ)T、sink≤[κ+B̄(1−r)]T，OPT≤T必成功。 | [正文](C946)；准确身份/软件限制见专题账本。 |
+962: | UM-DISTORTED-GROUP-PROMISE-APPROX-v1 | 完整声明范围证明；内部独立审查；新颖性/外审未认证 | ∀同一显式包络结构及有理参数，不给OPT；承诺在真实OPT处W_h≤OPT、w_j≤δOPT、全部有限宏端>OPT/2，则确定性总位多项式算法输出Cmax≤α(r)OPT的实际完整调度，α=max(1+r+δ,κ+B̄(1−r))，含空任务/OPT0。固定δ,κ,B̄满足κ+B̄δ<2时取r*=max(1/2,(κ+B̄−1−δ)/(1+B̄))，有本结构类统一α(r*)<2；参数趋边界时不声称统一余量。 | [正文](C946)；准确身份/软件限制见专题账本。 |
+963: 
+964: ## 异质大宏匹配与严格次二批量能垒
+965: 
+966: | ID | Exact Statement | 范围、状态与入口 |
+967: | --- | --- | --- |
+968: | UM-HETEROGENEOUS-MACRO-ARBITRARY-TINY-v1 | 给定 `|B|=|H|`、宏仅在 H、每条有限宏边 `T/2<p_{hb}≤T`、每条 tiny 边 `p_{ij}≤δT` 且 `δ<1/2`；若 `OPT≤T`，任取宏完美匹配后以 home 容量 `T/2`、sink 容量 `T` 求 tiny LST LP 并 ST 舍入，得到实际 `Cmax≤(3/2+δ)T`。 | tiny 资格和边成本可完全任意；宏时间依赖 `(h,b)`。正文、Fraction 审查和审计见 `research/current/unrelated_machines/heterogeneous_macro_uniform_residual_st_rounding.md`；不是一般 UM 算法。 |
+969: | UM-HETEROGENEOUS-MACRO-PROMISE-v1 | 同拓扑不给 T，promise 在真实 OPT 处所有有限宏边 `>OPT/2`、tiny 边 `≤δ̄OPT`（固定 `δ̄<1/2`）；保留全部 tiny 边的单调 `F(t)` 在分母乘积网格上整数二分，取最小接受阈值 `t*≤OPT`，输出实际 `Cmax≤(3/2+δ̄)OPT`。 | `OPT=0` 先精确处理；不枚举数值网格，二分次数按 `log(QU)` 计。结构分层不是一般输入可免费获得。 |
+970: | UM-HETERO-TINY-3PARTITION-FLOW-BARRIER-v1 | 对任意固定 `δ>0`，强 3-PARTITION 可缩放为 tiny 边均 `≤δT` 的残余阈值实例；T-feasible 整数调度当且仅当 3-partition，均匀分数 LP 始终可行。 | 只反驳把异质接收成本精确化为普通整数流/简单可积多面体；不反驳带 ST 加性余量的 `(3/2+δ)` 候选，也不是近 2 困难性。 |
+971: | UM-STRICT-SUB2-BATCH-BARRIER-v1 | 对每个 `k≥2` 存在 `OPT=1` 实例和负载 `<2` 坏态；允许每步最多 k 件迁移且所有中间态保持 `<2` 时，坏态在状态图中孤立，首个出口需 `k+1` 件。 | 只限制常数批量、严格次二局部修复；允许无界批量、跨过 2 或重新求解时不适用。正文与 Fraction 审计见 `strict_sub2_batch_barrier.md`。 |
+972: 
+973: 
+974: ## 单任务外接端口的等值复制边界
+975: 
+976: | ID | 精确结论 | 范围与证据 |
+977: | --- | --- | --- |
+978: | UM-SIGNED-ONE-JOB-PORT-DOWNSET-v1 | 一个内部端点/一个固定外部端点的真实端口任务，排除外部容量的内部投影对入向位向下闭。若两全局一致态可行，正时间两符号数a,b、零时间位z，则状态数≥2^z(2^a+2^b−1)，任意T>0逐参数锐；k≥2可从已有一致见证单翻位构造混合严格见证，故任意ρ≥1不能纯等值复制。 | 不排多任务编码或外部联合容量。一般signed PCSP近二源难度没有自动保留双出现限制。[正文](C972)、[冻结攻击](C973)。 |
+979: 
+980: ## 两完整状态下的可用性复制锐界
+981: 
+982: | ID | 精确结论 | 范围与证据 |
+983: | --- | --- | --- |
+984: | UM-THREE-HOST-SELECTOR-THREE-HALVES-v1 | 三host独立空/满T预载，给only-a与b+c-free两实际C≤T分配，单调二色拼接总位多项式实际输出only-b或only-c的C≤3T/2分配；每T>0两任务精确锐，含T0/空/零/多可用端。 | 不求未知YES，不排共同外部容量。[正文](C983)、[审查](C984)。 |
+985: | UM-TWO-YES-SC-DUPLICATION-HALF-v1 | 一般非负加性SC给ordinary+A、ordinary+B+C的minvalue≥1分配；同一闭包实际输出ordinary+B或ordinary+C的minvalue≥1/2分配，正degree任意且常数锐，无复杂度假设。 | 只限制三特殊物品可用性复制，不给一般SC常数算法或一般UM困难性。同一正文及独立实际allocation审计。 |
+986: 
+987: ## UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1：restricted Santa 与需求树桥梁的模型边界
+988: 
+989: | ID | Exact Statement | 范围、状态与入口 |
+990: | --- | --- | --- |
+991: | UM-SANTA-RESTRICTED-BRIDGE-BOUNDARY-v1 | token桥梁中若存在正需求 \\(k_v>1\\) 且 \\(d_v>0\\)，同一外送任务在父/子端非零时间为 \\(1/k_v,1\\)，不满足 restricted Santa 的 \\(v_{ci}\\in\\{0,p_i\\}\\)；只有所有正需求为1时退化到restricted支持，此时正点只表达出度0/1层。 | Haeupler–Saha–Srinivasan 的常数结果只属restricted模型；一般桥梁与restricted不保真。 [正文](C990)。 |
+992: 
+993: ## UM-DUPLICATION-TWO-COPY-FLOOR-v1：两份完整复制的一半一致性地板
+994: 
+995: | ID | Exact Statement | 范围、状态与入口 |
+996: | --- | --- | --- |
+997: | UM-DUPLICATION-TWO-COPY-FLOOR-v1 | 每变量两标签、每标签完整束 \\(B_x^a\\)，且每一副本内部束两两不交、根需求为变量数时，资源二着色和较大颜色类选择给确定性真实根树 \\(b(H)\\ge1/2\\)，从而简单duplication不能给 \\(b^*\\le\\delta<1/2\\) 的NO侧。根需求改为 \\(Q\\) 时保证为 \\(|X|/(2Q)\\)。 | 两复制地板是 `UM-BOUNDED-COLLISION-LABEL-FLOOR-v1` 的专门推论；不排跨层共享或非内部不交的一致性构造。 [正文](C991)。 |
+998: 
+999: 
+1000: ## UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1：两状态残余的多数状态地板
+1001: 
+1002: | ID | Exact Statement | 范围、状态与入口 |
+1003: | --- | --- | --- |
+1004: | UM-DUPLICATION-STATE-MAJORITY-FLOOR-v1 | 两状态标签束各自内部不交；对保留变量 \\(Y\\) 和任意 \\(\\delta\\)，令 \\(G_a(\\delta)=\\{x:|R_x^a|\\ge\\delta K_x^a\\}\\)。若 \\(G_0\\cup G_1\\ne\\varnothing\\)，确定性选较大状态得到 \\(b(H)\\ge\\min\\{|G_0\\cup G_1|/(2q_r),\\delta\\}\\)；根需求为 \\(|Y|\\) 且每变量有一好状态时得 \\(\\min\\{1/2,\\delta\\}\\)。 | 允许任意删叶/删变量但保留状态内不交；行列池在K≥2s时达到 \\(\\min\\{1/2,s/K\\}\\)。比一般 \\(\\Delta_G\\le2\\) 的 \\(\\delta/2\\) 更强；不排跨状态外部重用导致状态内不交失效。 [正文](C992)、[审计](C994)、[冻结结果](C995)。 |
+1005: 
+1006: 
+1007: ## 2026-10-17：门槛覆盖修正与真实 OPT=1 支撑释放前沿
+1008: 
+1009: | ID | Exact scope | Result and boundary |
+1010: | --- | --- | --- |
+1011: | UM-THRESHOLD-COVER-JOINT-SLOT-v1 | 共同资格、等端时间、唯一 home 的宏/私有组结构；固定 `δ,η` 满足 `δ+η+δη<1`，宏/组条件按 `barrier_escape_obligations.md`。 | 原固定前缀恢复错误并曾撤回complete；修复后的覆盖FPTAS、联合槽流及同一覆盖恢复给原 `R*=((1+η)(3+δ))/(2+η)<2` 与one-sided搜索。原量词/假设/输出不变；一般结构提取仍未解。 [正文](C602)、[撤回及冻结修复审查](C997)。 |
+1012: | UM-LST-SUPPORT-RELEASE-OPTIMAL-v1 | `r` 个独立块，每块 `m≥2` 核心机、一备用机、私有任务大小 `1−1/m` 和单位锚任务；固定 LST 点的零质量边释放预算 `k`。 | `OPT=1`；约束至多 `k` 条 `x=0` 边时，`F(k)=2−1/m` 对 `k<r`，`F(k)=1` 对 `k≥r`。令 `m` 增长得到固定不足预算时相对 OPT 趋2。只排除固定支撑释放合同，不是一般困难性。 [正文](C996)、[审计](C998)。 |
+1013: 
+1014: ## 2026-10-17：共同尺寸可重开容量流
+1015: 
+1016: | ID | Exact scope | Result and boundary |
+1017: | --- | --- | --- |
+1018: | UM-COMMON-SIZE-REOPEN-v1 | 给定冻结核心、残余任务共同尺寸资格边和有理流证书；接收机允许增载。 | 分数共同容量加 `q_max` 头部余量时可由有序槽构造整修复；支持连通分量内单一尺寸时普通整数槽流无加性损失。一般异端/混尺寸仍有整数缺口，不关闭 UM-TARGET-v1。 [正文](C1000)、[审查](C1001)。 |
+1019: 
+1020: 
+1021: ## 两状态残余行列池的真实部分束前沿
+1022: 
+1023: | ID | 精确结果 | 范围与证据 |
+1024: | --- | --- | --- |
+1025: | UM-TWO-STATE-POOL-EXACT-FRONTIER-v1 | K≥s≥1时b*=max_k min(k/(2s),min(s,floor(s²/k))/K)，有总位多项式求值与实际树构造；sK4精确5/8。 | 修复附属锐性，主多数下界不变；部分束可混选。[正文](C992)、[实际反例审查](C1004)。 |
+1026: 
+1027: ## 多输出可用性复制的加权预算
+1028: 
+1029: | ID | 精确结果 | 范围与证据 |
+1030: | --- | --- | --- |
+1031: | UM-WEIGHTED-FANOUT-PROFILE-BOUNDARY-v1 | 每局部K和显式β可构造某i的C≤(2−β_i)T；真实状态OPT之和≤(2|K|−1)T，加权星全等号。 | 给两实际YES，未知OPT只用于存在证明。[正文](C1009)、[审查](C1010)。 |
+1032: | UM-FANOUT-MISSING-ONE-THREE-HALVES-v1 | 任意两缺一OPT之和≤3T，至多一个>1.5T，全部和≤1.5qT；每q满二叉树同时取等。 | 可实际输出给定pair某一缺一状态三半σ；不排联合外部容量或不同读出合同。 |
+1033: 
+1034: ## 双轨阈值编码的实际负载边界
+1035: 
+1036: | ID | 精确结果 | 身份 |
+1037: | --- | --- | --- |
+1038: | UM-NORMALIZED-DUAL-RAIL-UNIVERSAL-THREE-HALVES-v1 | 每变量两私有轨、selector两端时间1；每真实occurrence内部1/K(v,s)、外部单clause时间1/A_c，A_c≥1且arity≤2A_c−1。无额外jobs/预载/资格。任意源公式均可总位poly输出全σ且C≤3/2；存在selector时给本类3/2近似。10机15job重复occurrence例真实OPT=3/2，锐性仅为绝对T1界。 | [正文](C1015)、[审查](C1016)；仅声明范围。 |
+1039: | UM-SPLIT-CAPACITY-DUAL-RAIL-THREE-HALVES-v1 | 与scalar不同的真实P：外部每clause有min(A_c,m_c)台互异unit机器、port可至其任一台且时间1；arity≤2A_c。其余归一化轨不变。任意源均可总位poly输出全σ，轨≤3/2、unit≤1；14机15job重复例真实OPT=3/2，绝对T1界锐。 | [正文](C1015)、[审查](C1016)；仅声明范围。 |
+1040: | UM-DUAL-RAIL-ONE-EXCEPTION-FLOOR-v1 | 另一模型：port内部非负有理w_e、每轨总W≤1；selector1；外部统一scalar1/A、arity≤2A。给ρ≥1，空轨预处理，其余每轨指定exception满足W−w_e≤ρ−1。可总位poly完整C≤ρ且clause≤1。对ρ1，arity2A+1的两clause族真实OPT=1+1/A，显示arity假设锐。 | [正文](C1015)、[审查](C1016)；仅声明范围。 |
