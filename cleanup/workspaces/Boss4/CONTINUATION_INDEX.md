@@ -355,3 +355,7 @@ R3_READY12JO：12源正文及真实复跑；Round5各统计量维度、对称que
 R3_READY12JO数学/证据pushed ead27453f4e2bb68f4e90f4515ba0394fca6cad1；12源done另推送 ba2a7f1e8dcdf98c1a8f1b44d836bd55e85b0340。Boss4累计2145完成，实际未完22；持续接续全仓，不以本批清空收尾。
 
 R3_READY22JW：22源数学正文及精确证据；任意背景割锥与DP、PAY路径切断、incidence字面条件纠错、来源回撤入口及九人双原实现全字段复核；共22主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY22JW_REMAINING_SCOPE.json。
+
+R3_READY22JW数学/证据pushed 292030a93288b3f7ec83535e555ad591c64672b0；22源done另推送 afc2182bf465c57364ec90fc3109126da9e9edbb。Boss4累计2167完成，实际未完10；持续接续全仓，不以本批清空收尾。
+
+R3_READY5JX：5源正文证据；完整末列与储备/三角回撤/真实重启及共同交集gamma严格抵消修正；共5主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY5JX_REMAINING_SCOPE.json。

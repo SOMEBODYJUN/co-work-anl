@@ -1,0 +1,9 @@
+# JH5 CAG真实分支、菜单和回撤的来源证据
+
+本包primary恰89f64465d29696938faf、f3f1ec02ccbbf002fe96、7e9387a45a48bb0410fa、b1f6a04d07d6835f8d19、657caca9d3baac5508e2，39543B/648物理行，均全文实读。原17项actualclaim091e0771a7c694210c81789599caa7feb8c08a8d完整保留，不投影；本5subset/当前Boss4 owner/原SHA在owner-check/source-manifest。其余12项不由本包处置。
+
+10个当前正式对象全文比较（全是本批新完整阅读，没有借其他agent的Boss4 owner冒本人旧全文复用）。保五人half现代真值、bank个体extraone已反、泛用三角与应用不同、被删ξ预算已反而省η候选不能一并反。无需为已done无新疑点原证明重新清洗；本批没有新读所有被链原稿/代码/报告/外部纸面文献，0新run/0extra done。原39k数学稿的有限样本/旧独立身份逐项保，不将负LPmax或1000个样本当全域证明。
+
+新正文有两个准确的解析澄清：共享Ei若另被branch动作覆盖，原单项b/r不再精确，但H_i与D共同Ei份额抵消，末位严格偏离仍证；bank目录纯θextra用整数计数自足算3/2，给原逐人theta候选的真正完整SPE反例而不否聚合。此批无需改共享旧页，原字节保持。
+
+5新资源分别保惩罚/移植与候选catalog、theta势/分支extent、complete push储备、最优补全restart、generic三角feasibility，关系为阶段二解释，无阶段三图。数学/真值/历史审查/有限证据分开。

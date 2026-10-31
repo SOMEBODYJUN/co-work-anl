@@ -1,0 +1,11 @@
+# 五源实读与独有内容去向
+
+| source | 独有内容 | 比较与边界 | target |
+|---|---|---|---|
+| 89f64465d29696938faf | 8648B目标攻击checkpoint：共享遗漏H_i与原Q/B不同，Ei共同份额抵消、literal no-background PB IC相斥、Beta重复同label非fresh；all-k合法目录O5k+8/W2k+8及倒二floor9使2R+D≥21，非SPE种子。 | current03异质compiler真实完整ρ/D0端点、09旧重复惩罚不同目录；当前m5 half为另定理。对source允许额外Ei覆盖的文字条件，b/r只特例，新正文改写抵消差保严格结论，不改原稿。 | archives/customer-attraction/state/资源/共享遗漏惩罚与无背景移植的真实末位障碍--资源.md |
+| f3f1ec02ccbbf002fe96 | 9106B extra-slot静态计数/自由进入势/真实偏离分支Cauchy上界及八旧SPE例theta诊断；原逐人候选已由现代银行族否定，聚合另命题。 | current01/10给v与分数门槛及完整bank控制器；自足推导bank纯θextra=3/2(m≥3)，u1<θ(m≥4)且W2m仍付aggregate。08五人当前精确证书全文，不把旧m5基线当现状。 | archives/customer-attraction/state/资源/额外槽饱和势与真实偏离分支覆盖上界--资源.md |
+| 7e9387a45a48bb0410fa | 10098B完整P/删own C/真实D三对象，R自身折扣、倒二L/V/Q/末位V_m与actual列R_m/G_m不双计、EXACT/PAID尾储备及earlypay未付；固定cone两p LP负max只是浮点诊断。 | current05逐尾完整信用区分Σ(D−P)与W−ΣP；root单位置Mfull反例不否Mpath。current04联合势松弛不是真SPE；08五人定理只更新历史状态，不证明该路线。 | archives/customer-attraction/state/资源/完整终局推送的自身折扣与末两位储备--资源.md |
+| b1f6a04d07d6835f8d19 | 7771B完整ρ/f/ξ/θ/η/Γ定义及EXACT/PATH，低λ offspring不付真restart，all-big数值侦错；retainξ omitη候选/最小收益行充分接口/1000seed723有限阴性分开。 | current06/07精确公式、删ξ/统一折扣已反但保ξ省η未被all-big反，当前08五人已证不等于该强候选已证；未用恒等式充新支付。 | archives/customer-attraction/state/资源/最优补全的真实重启差与保留信用停界--资源.md |
+| 657caca9d3baac5508e2 | 3920B声明先行三角审查：非负stricttriangular盒系统greedy iff/逐坐标最大、所有λcut与firstfail显式λ、C=z_j<0；泛用不需行和1。 | current02游戏固定来源应用须真库存/退款/independentcaps，共同行和才给λ∈[0,1]；generic λ可>1，本批不把application自动可行、不复修当前已正确cut符号。 | archives/customer-attraction/state/资源/非负严格三角回撤的最大解与失败割--资源.md |
+
+五primary39543B/648物理行全文；10当前正式全文比较。当前五人定理含53乘子/余项论证正文已读，但没有本批重跑6144系数域或 companion源码/数据的新认证。原probe/test/八输入/381数据只按各来源实际范围保留，不把名称、索引或数学稿等同全部原件已读。
