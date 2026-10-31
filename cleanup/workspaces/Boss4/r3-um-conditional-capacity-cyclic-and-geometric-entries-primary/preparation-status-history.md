@@ -1,0 +1,3 @@
+# 准备期记录
+
+本stage的数学稿在IL认领回执前开始，未写成功receipt；临时DRAFT标志仅用于阻止目录扫描。原10项actual pushed/synced回执已出现并核五subset/owner/sourceSHA后才写正式receipt。早期seed/H2 proposal在未领时冻结，其pending字段保当时历史；不改冻结包。当前成熟状态只以最终copy-files白名单及本批claim为准。stage外生成/验证脚本不是交付内容。

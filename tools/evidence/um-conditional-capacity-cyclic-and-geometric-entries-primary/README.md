@@ -1,0 +1,11 @@
+# 条件容量、循环与几何入口证据
+
+本包primary恰5个README：f464d6e5a846640c07e1、64a1115b87ae34b09fd1、3ed59ac68fd95568dc13、b2867455f2e04fcdf12a、fb7e727fd358399f9345，共5152B/58物理行。原完整10项claim回执pushed/synced27e843cd27e9534a32790ca9653e5f896307080c未投影修改，claim-raw-10.json可读；owner-check核本5subset/Boss4/in-progress/sourceSHA。另5项不由本包处置。
+
+8个字面Markdown引用对应7个不同旧路径；CLAIMS586921B只用已done导航/当前资料，不冒全文。b286另外两条无URL的实质内联描述分别定位模型§7同任务数几何log²表与MinRep末尾seed lemma，contextual-inline-resolution.json记录依据与准确阅读范围。模型§8 padding logN只另作比较，未偷换为§7。
+
+9个当前正式页全文比较：3本人此前真实完整同SHA复用、6本批新全文。配对页另一source只作比较，不扩大为本README新原稿或extra done。数学正文之外，5个必要原稿全文：5756稀释review16218B、d01循环42108B、6a55弱H223401B、6ec几何review5298B、c8b4seedreview7499B。782a原33322B仅唯一final后缀5377B完整定点读，SHA40d7d2f0406f50aba5358140967a32deaf3404f3d2cef65bd7e72c0b6c2cf1fa；保存原整字节不等于整稿已读，manifest明确actual_full_read=false。0新run/0重复旧run/0extra done/0新外部论文/0外审或新颖性认证。
+
+7自足资源分别保稀释global z、循环工具、坐标/开链/闭环不同邻域、弱/强H2、包络三种凸化、同n几何表、种子证书。原source与历史有限证据范围分开，未把一般目标OPEN、given witness与existence等量词升格。
+
+两组冻结勘误建议总3旧页/4处：seed-fail-and-multislice-label-errata-proposal-v1包含FAIL证书接受反向、(N,m)顺序、同机pair正号；single-global-z-errata-proposal-v1含全组唯一z措辞。各有整页before/proposed、准确句子、SHA/patch与原正确证据。前一组在认领前准备时冻结，其manifest pending字段仅保当时状态；本批实际claim在上级回执，不改旧冻结proposal。Root需全文核对后守卫串行应用，shared页/源/进度本包未动。HT52/更旧冻结proposal不变。

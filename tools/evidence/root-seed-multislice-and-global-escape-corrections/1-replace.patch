@@ -1,0 +1,20 @@
+--- a/archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md
++++ b/archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md
+@@ -89,7 +89,7 @@
+ 
+ ## 2.4 有限证据和限制
+ 
+-规范验证器使用 Fraction/整数 Bareiss 做通用 `m,N=(4,3),(5,3)` 的 PSD 与 one-hot 小检查；全局 `k=2,b=2,T=4/3` fixture 检查 M1、全部机器 localizer、有限端 CONFIG 边际和负同机 pair/负三阶。一般 PSD 由 multislice 分解承担，有限 fixture 不承担任意 `k` 量词；没有枚举全局混合的全部矩，也没有通用精确 SDP/CONFIG 求解器。
++规范验证器使用 Fraction/整数 Bareiss 做通用 `(N,m)=(4,3),(5,3)` 的 PSD 与 one-hot 小检查；全局 `k=2,b=2,T=4/3` fixture 检查 M1、全部机器 localizer、有限端 CONFIG 边际和正同机 pair/负三阶。一般 PSD 由 multislice 分解承担，有限 fixture 不承担任意 `k` 量词；没有枚举全局混合的全部矩，也没有通用精确 SDP/CONFIG 求解器。
+ 
+ 强化反对意见是实质性的：弱证书在 R 行的同机二阶为正（约为 `t(t-1)/(N)_2`），而 singleton CONFIG 的同机二阶为零；同机三阶还可为负。故它不满足共享二阶或全三阶非负的强化合同。不能把弱 gap 直接转写成强合同 gap，也不能用有限程序通过替代一般证明。
+ 
+@@ -156,7 +156,7 @@
+ 
+ **一般证明：** 弱 H2 稀释星族 `OPT=2-1/k`、fractional multislice PSD、同一一阶 CONFIG、趋二比值；强同机二阶共享在该族的条件容量引理和阈值精确性；加权闭包算法、`sum mu <=(2k-1)T`、缺一两两预算和满二叉树 `3T/2` 锐例。上述量词不依赖有限枚举。
+ 
+-**有限精确证据：** 弱 H2 验证器的小 `m,N` Bareiss PSD、`k=2,b=2` fixture、有限端 CONFIG/负 pair/负 triple 检查，以及扇出来源列出的确定性 Fraction 代码和控制实例。有限审计不能扩大任意 `k`、任意扇出、一般强 H2 或复杂度结论。
++**有限精确证据：** 弱 H2 验证器的小 `m,N` Bareiss PSD、`k=2,b=2` fixture、有限端 CONFIG/正 pair/负 triple 检查，以及扇出来源列出的确定性 Fraction 代码和控制实例。有限审计不能扩大任意 `k`、任意扇出、一般强 H2 或复杂度结论。
+ 
+ **保留的障碍：** 弱证书不满足共享同机二阶，强合同不能由弱点免费升级；扇出算法不生成未知 YES，且单外层预载结构不能把每个缺一状态都做成近二。保留 T=0、空任务、零时间、额外资格、单可用任务等边界，避免把它们误删为“非典型”。
+ 
