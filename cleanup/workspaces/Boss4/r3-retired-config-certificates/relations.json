@@ -1,0 +1,163 @@
+{
+  "stage": "2 explanation evidence only; no map graph mutation",
+  "relations": [
+    {
+      "kind": "proof-use",
+      "participants": [
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "role": "integer equivalence and normalized submodular coverage"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "role": "sparse support initial value and feasible rounding"
+        }
+      ],
+      "common_premises": "finite explicit support, downclosed local sets, nonnegative profits and affordable bins, given rational x satisfying bin/item/budget constraints",
+      "why": "Coverage permits layer-cake initial1-1/e bound and convex opposite-sign pipage; downclosure returns true assignment after conflict deletion.",
+      "evidence": "6d3758c99a298bd754b6 lines5-16,70-107; complete new algorithm",
+      "gap": "No construction of exponential configuration LP solution/pricing is included."
+    },
+    {
+      "kind": "scope-refutation",
+      "participants": [
+        {
+          "source_id": "6d3758c99a298bd754b6",
+          "lines": [
+            37,
+            46
+          ],
+          "role": "old equal-cost arbitrary-natural-LP strong rounding claim"
+        },
+        {
+          "path": "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md",
+          "role": "two-bin exact counterexample"
+        }
+      ],
+      "common_premises": "equal cost1, budget199/100, two bins with distinct unit-profit items; given x each199/200 meets every original constraint",
+      "why": "LP/G/L=199/100 but integerOPT=1; Euler e>5/2 gives(1-1/e)L>597/500>1, so even expected strong output impossible.",
+      "evidence": "new counterexample exact computation; source first-round4",
+      "gap": "Refutes this given-x and original-L contract, not CGST theorems or arbitrary-cost half-baseline."
+    },
+    {
+      "kind": "corrected-conditional-derivation",
+      "participants": [
+        {
+          "path": "archives/configuration-assignment/state/反例/等启用成本的自然预算LP与整数截断缺口--反例.md",
+          "role": "identify missing integer truncation and changed domain"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "role": "equal-cost strong bound under sum x<=floor(B/c)"
+        }
+      ],
+      "common_premises": "common positive cost c and strengthened sum x<=integer k=floor(B/c); or c=0 treated separately",
+      "why": "After cost/sum-preserving endpoint moves one fraction remains; integer k allows rounding it upward without budget loss, preserving G.",
+      "evidence": "new algorithm final section and exact gap page",
+      "gap": "Adding constraint may change feasible x/LP optimum/L; it cannot preserve original1.99 target."
+    },
+    {
+      "kind": "algorithm-interface-boundary",
+      "participants": [
+        {
+          "path": "archives/configuration-assignment/state/等价/下闭配置指派与最大值覆盖的整数等价--等价.md",
+          "role": "possibly exponential configuration ground set"
+        },
+        {
+          "path": "archives/configuration-assignment/state/审查/隐式配置定价与梯度背景的算法合同--审查.md",
+          "role": "pricing, candidate-dependent gradient and conditional interval oracle"
+        },
+        {
+          "path": "archives/configuration-assignment/state/算法/给定稀疏配置的确定性预算舍入--算法.md",
+          "role": "algorithm only for given explicit sparse support"
+        }
+      ],
+      "common_premises": "max-profit assignment, not makespan or max-min; standard independent multilinear extension for gradient formula",
+      "why": "Excluding a positive candidate changes background; overlap example gives derivative1/5 vs4/5. Explicit0/1 consecutive-ones local LP is integral, but does not supply full implicit outer algorithm.",
+      "evidence": "6d lines17-63; current audit with exact gradient example and TU proof",
+      "gap": "No free approximate pricing, sparse-point construction, general budgeted SAP/GBAP algorithm, or historical-literature freshness."
+    },
+    {
+      "kind": "implementation-plus-continuous-proof",
+      "participants": [
+        {
+          "path": "archives/contention-resolution/state/反例/固定激活背包的类内统一权与拆分障碍--反例.md",
+          "role": "fixed-x all-continuous-class method counterexample and split direction proof"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/related/history/retired_topic_selection/multi_lane/research/topic_selection/probes/gap_tools/exact_uniformization_counterexample.py",
+          "role": "supporting Fraction finite enumeration; no extra done"
+        },
+        {
+          "path": "tools/evidence/retired-config-certificates/runs/exact_uniformization_counterexample/exact_uniformization_counterexample.json",
+          "role": "single run byte-identical exact supporting output"
+        }
+      ],
+      "common_premises": "literal five probabilities/sizes, nonnegative weights, positive denominator, fixed x; within-class uniform positive weights may have any sub-support",
+      "why": "32 activations and all masks/four endpoints compute strict rational gap; piecewise affine-over-affine proof makes endpoint reduction cover continuous ratios.",
+      "evidence": "3dda9a2cab33c32fa3f3 lines17-45; supporting full code/JSON; runmanifest",
+      "gap": "Not global symmetrization that changes x or a general CRS conjecture refutation; support report ownerBoss3 retained only read-only."
+    },
+    {
+      "kind": "literal-exact-implementation",
+      "participants": [
+        {
+          "path": "archives/budget-games/state/证明/合并不变性的短失败证书与有理位长--证明.md",
+          "role": "universal rational certificate/coNP inclusion proof"
+        },
+        {
+          "path": "archives/budget-games/state/计算/三项目合并失败的精确验证输入与输出--计算.md",
+          "role": "trusted-shape literal zero-based toy checker/report contract"
+        }
+      ],
+      "common_premises": "same2x3 nonnegative rational A and given I/S/delta/xi/y toy; Python assertions enabled and Fraction literals",
+      "why": "All active values/gradient maxima/nonnegative y and Mtranspose y>=1 are checked exactly, output pair reproduced byte-for-byte once.",
+      "evidence": "0d1de683131f668ca73b all31 lines, fecc943fd7a554d43d2b all23 lines and actual run",
+      "gap": "Helper lacks full type/shape validation; no arbitrary-input parser, general certificate finder, hardness or proof-of-language from one JSON."
+    },
+    {
+      "kind": "finite-evidence-versus-analytic-proof",
+      "participants": [
+        {
+          "path": "archives/weighted-congestion/state/计算/有限双权边际势的自由尺度浮点搜索--计算.md",
+          "role": "finite grid free-h floating feasibility search and exact literal-residual audit"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/双权二次延迟的共同类型缩放近似势--定理.md",
+          "role": "all-integer analytic resource marginals/common scaling"
+        },
+        {
+          "path": "archives/weighted-congestion/state/资料/原子拥塞候选线与37-33小证书--资料.md",
+          "role": "older finite true-weight37/33 template and candidate map"
+        }
+      ],
+      "common_premises": "weights1/2 and quadratic congestion resource costs; finite LP itself only pureL^2 and bounded populations",
+      "why": "Free h changes old scaling template; seven finite opt guesses and tiny literal violations are exploratory, whereas analytic64/59 all-population proof is independent and covers all polynomial monomials.",
+      "evidence": "8e1e219638c57a102f54 all51 lines, one actual run and full7360 literal-constraint inspection",
+      "gap": "No exact finite optimum/infeasibility, no all-N limit or best PNE threshold; saved guesses not exact certificates."
+    },
+    {
+      "kind": "different-scope-comparison",
+      "participants": [
+        {
+          "path": "archives/weighted-congestion/state/计算/有限双权边际势的自由尺度浮点搜索--计算.md",
+          "role": "fixed1/2 bounded-grid pure-quadratic LP"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/有限权类别三角排序势--定理.md",
+          "role": "at-most-k arbitrary real weight values and degree-d analytic existence"
+        }
+      ],
+      "common_premises": "finite strategies and nonnegative congestion polynomial costs; both require consistent player multipliers across resources",
+      "why": "Related resource marginal mechanism, but one optimizes finite numerical matrices and one gives a general analytic existence factor; no automatic optimality transfer.",
+      "evidence": "full current reading of finite weight classes theorem and script model",
+      "gap": "No inference between numeric best constants or general finite-alphabet classification from shared name."
+    }
+  ],
+  "no_implied_relations": [
+    "Historical CAG carrier does not contain configuration max-profit/CRS/congestion mathematics.",
+    "BMKP max-min and UM makespan do not imply this max-profit assignment rounding.",
+    "Floor repaired LP does not keep original comparison value automatically.",
+    "One exact toy is not general complexity proof; finite float table is not all-population theorem."
+  ]
+}

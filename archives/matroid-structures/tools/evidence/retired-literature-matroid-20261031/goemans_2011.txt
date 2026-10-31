@@ -1,0 +1,631 @@
+Massachusetts Institute of Technology                                                    Handout 9
+18.433: Combinatorial Optimization                                                 March 16th, 2011
+Michel X. Goemans
+
+
+            4. Lecture notes on matroid optimization
+
+4.1      Definition of a Matroid
+Matroids are combinatorial structures that generalize the notion of linear independence in
+matrices. There are many equivalent definitions of matroids, we will use one that focus on
+its independent sets. A matroid M is defined on a finite ground set E (or E(M ) if we want
+to emphasize the matroid M ) and a collection of subsets of E are said to be independent.
+The family of independent sets is denoted by I or I(M ), and we typically refer to a matroid
+M by listing its ground set and its family of independent sets: M = (E, I). For M to be a
+matroid, I must satisfy two main axioms:
+(I1 ) if X ⊆ Y and Y ∈ I then X ∈ I,
+(I2 ) if X ∈ I and Y ∈ I and |Y | > |X| then ∃e ∈ Y \ X : X ∪ {e} ∈ I.
+In words, the second axiom says that if X is independent and there exists a larger independent
+set Y then X can be extended to a larger independent by adding an element of Y \X. Axiom
+(I2 ) implies that every maximal (inclusion-wise) independent set is maximum; in other words,
+all maximal independent sets have the same cardinality. A maximal independent set is called
+a base (or basis) of the matroid.
+
+Examples.
+   • One trivial example of a matroid M = (E, I) is a uniform matroid in which
+                                        I = {X ⊆ E : |X| ≤ k},
+      for a given k. It is usually denoted as Uk,n where |E| = n. A base is any set of
+      cardinality k (unless k > |E| in which case the only base is |E|).
+      A free matroid is one in which all sets are independent; it is Un,n .
+   • Another is a partition matroid in which E is partitioned into (disjoint) sets E1 , E2 , · · · , El
+     and
+                        I = {X ⊆ E : |X ∩ Ei | ≤ ki for all i = 1, · · · , l},
+      for some given parameters k1 , · · · , kl . As an exercise, let us check that (I2 ) is satisfied.
+      If X, Y ∈ I and |Y | > |X|, there must exist i such that |Y ∩ Ei | > |X ∩ Ei | and this
+      means that adding any element e in Ei ∩ (Y \ X) to X will maintain independence.
+      Observe that M would not be a matroid if the sets Ei were not disjoint. For example,
+      if E1 = {1, 2} and E2 = {2, 3} with k1 = 1 and k2 = 1 then both Y = {1, 3} and
+      X = {2} have at most one element of each Ei , but one can’t find an element of Y to
+      add to X.
+4. Lecture notes on matroid optimization                              March 16th, 2011          2
+
+
+     • Linear matroids (or representable matroids) are defined from a matrix A, and this is
+       where the term matroid comes from. Let E denote the index set of the columns of
+       A. For a subset X of E, let AX denote the submatrix of A consisting only of those
+       columns indexed by X. Now, define
+
+                                       I = {X ⊆ E : rank(AX ) = |X|},
+
+       i.e. a set X is independent if the corresponding columns are linearly independent. A
+       base B corresponds to a linearly independent set of columns of cardinality rank(A).
+       Observe that (I1 ) is trivially satisfied, as if columns are linearly independent, so is a
+       subset of them. (I2 ) is less trivial, but corresponds to a fundamental linear algebra
+       property. If AX has full column rank, its columns span a space of dimension |X|, and
+       similarly for Y , and therefore if |Y | > |X|, there must exist a column of AY that is not
+       in the span of the columns of AX ; adding this column to AX increases the rank by 1.
+       A linear matroid can be defined over any field F (not just the reals); we say that the
+       matroid is representable over F. If the field is F2 (field of 2 elements with operations
+       (mod 2)) then the matroid is said to be binary. If the field is F3 then the matroid is
+       said to be ternary.
+       For example, the binary matroid corresponding to the matrix
+                                                      
+                                               1 1 0
+                                        A= 1 0 1 
+                                               0 1 1
+
+       corresponds to U2,3 since the sum of the 3 columns is the 0 vector when taking com-
+       ponents modulo 2. If A is viewed over the reals or over F3 then the matroid is the free
+       matroid on 3 elements.
+       Not every matroid is linear. Among those that are linear, some can be represented over
+       some fields F but not all. For example, there are binary matroids which are not ternary
+       and vice versa (for example, U2,4 is ternary but not binary). Matroids which can be
+       represented over any field are called regular. One can show that regular matroids
+       are precisely those linear matroids that can be represented over the reals by a totally
+       unimodular marix. (Because of this connection, a deep result of Seymour provides a
+       polynomial-time algorithm for deciding whether a matrix is TU.)
+
+     • Here is an example of something that is not a matroid. Take a graph G = (V, E), and
+       let I = {F ⊆ E : F is a matching}. This is not a matroid since (I2 ) is not necessarily
+       satisfied ((I1 ) is satisfied1 , however). Consider, for example, a graph on 4 vertices and
+       let X = {(2, 3)} and Y = {(1, 2), (3, 4)}. Both X and Y are matchings, but one cannot
+       add an edge of Y to X and still have a matching.
+ 1
+     When (I1 ) alone is satisfied, (E, I) is called an independence system.
+4. Lecture notes on matroid optimization                        March 16th, 2011                    3
+
+
+   • There is, however, another matroid associated with matchings in a (general, not nec-
+     essarily bipartite) graph G = (V, E), but this time the ground set of M corresponds to
+     V . In the matching matroid, I = {S ⊆ V : S is covered by some matching M }. In
+     this definition, the matching does not need to cover precisely S; other vertices can be
+     covered as well.
+
+   • A very important class of matroids in combinatorial optimization is the class of graphic
+     matroids (also called cycle matroids). Given a graph G = (V, E), we define independent
+     sets to be those subsets of edges which are forests, i.e. do not contain any cycles. This
+     is called the graphic matroid M = (E, I), or M (G).
+     (I1 ) is clearly satisfied. To check (I2 ), first notice that if F is a forest then the number of
+     connected components of the graph (V, F ) is given by K(V, F ) = |V | − |F |. Therefore,
+     if X and Y are 2 forests and |Y | > |X| then K(V, Y ) < K(V, X) and therefore there
+     must exist an edge of Y \ X which connects two different connected components of X;
+     adding this edge to X results in a larger forest. This shows (I2 ).
+     If the graph G is connected, any base will correspond to a spanning tree T of the graph.
+     If the original graph is disconnected then a base corresponds to taking a spanning tree
+     in each connected component of G.
+     A graphic matroid is a linear matroid. We first show that the field F can be chosen to
+     be the reals. Consider the matrix A with a row for each vertex i ∈ V and a column for
+     each edge e = (i, j) ∈ E. In the column corresponding to (i, j), all entries are 0, except
+     for a 1 in i or j (arbitrarily) and a −1 in the other. To show equivalence between the
+     original matroid M and this newly constructed linear matroid M 0 , we need to show
+     that any independent set for M is independent in M 0 and vice versa. This is left as an
+     exercise.
+     In fact, a graphic matroid is regular; it can be represented over any field F. In fact the
+     above matrix A can be shown to be TU. To obtain a representation for a field F, one
+     simply needs to take the representation given above for R and simply view/replace all
+     −1 by the additive inverse of 1 (e.g. by p − 1 for Fp ).
+
+4.1.1    Circuits
+A minimal (inclusionwise) dependent set in a matroid is called a circuit. In a graphic matroid
+M (G), a circuit will be the usual notion of a cycle in the graph G; to be dependent in the
+graphic matroid, one needs to contain a cycle and the minimal sets of edges containing a
+cycle are the cycles themselves. In a partition matroid, a circuit will be a set C ⊆ Ei with
+|C ∩ Ei | = ki + 1.
+   By definition of a circuit C, we have that if we remove any element of a circuit then we
+get an independent set. A crucial property of circuit is given by the following property,
+4. Lecture notes on matroid optimization                              March 16th, 2011                 4
+
+
+Theorem 4.1 (Unique Circuit Property) Let M = (E, I) be a matroid. Let S ∈ I and
+e such that2 S + e ∈
+                   / I. Then there exists a unique circuit C ⊆ S + e.
+
+    The uniqueness is very important. Indeed, if we consider any f ∈ C where C is this
+unique circuit then we have that C + e − f ∈ I. Indeed, if C + e − f was dependent, it would
+contain a circuit C 0 which is distinct from C since f ∈
+                                                       / C 0 , a contradiction.
+    As a special case of the theorem, consider a graphic matroid. If we add an edge to a
+forest and the resulting graph has a cycle then it has a unique cycle.
+Proof:
+    Suppose S+e contains more than one circuit, say C1 and C2 with C1 6= C2 . By minimality
+of C1 and C2 , we have that there exists f ∈ C1 \ C2 and g ∈ C2 \ C1 . Since C1 − f ∈ I (by
+minimality of the circuit C1 ), we can extend it to a maximal independent set X of S + e.
+Since S is also independent, we must have that |X| = |S| and since e ∈ C1 − f , we must have
+that X = S + e − f ∈ I. But this means that C2 ⊆ S + e − f = X which is a contradiction
+since C2 is dependent.                                                                   4
+
+Exercise 4-1. Show that any partition matroid is also a linear matroid over F = R. (No
+need to give a precise matrix A representing it; just argue its existence.)
+
+Exercise 4-2.         Prove that a matching matroid is indeed a matroid.
+
+Exercise 4-3.         Show that U2,4 is representable over F3 .
+
+Exercise 4-4.         Consider the linear matroid (over the reals) defined by the 3 × 5 matrix:
+                                                            
+                                            1 2 1 0 1
+                                     A =  1 2 0 1 −1  .
+                                            1 2 0 1 −1
+
+The ground set E = {1, 2, 3, 4, 5} has cardinality 5, corresponds to the columns of A, and
+the independent sets are the set of columns which are linearly independent (over the reals).
+
+   1.Give all bases of this matroid.
+   2.Give all circuits of this matroid.
+   3.Choose a base B and an element e not in B, and verify the unique circuit property for
+     B + e.
+
+Exercise 4-5. Given a family A1 , A2 , · · · , An of sets (they are not necessarily disjoint), a
+transversal is a set T such that T = {a1 , a2 , · · · , an }, the ai ’s are distinct, and ai ∈ Ai for all
+i. A partial transversal is a transversal for Ai1 , Ai2 , · · · , Aik for some subfamily of the Ai ’s.
+Show that the family of all partial transversals forms a matroid (on the ground set E = ∪Ai ).
+(Hint: Think of bipartite matchings.)
+   2
+       For a set S and an element e, we often write S + e for S ∪ {e} and S − e for S \ {e}.
+4. Lecture notes on matroid optimization                         March 16th, 2011                    5
+
+
+Exercise 4-6.      Let M = (E, I) be a matroid. Let k ∈ N and define
+
+                                     Ik = {X ∈ I : |X| ≤ k}.
+
+Show that Mk = (E, Ik ) is also a matroid. This is known as a truncated matroid.
+
+Exercise 4-7. A family F of sets is said to be laminar if, for any two sets A, B ∈ F, we
+have that either (i) A ⊆ B, or (ii) B ⊆ A or (iii) A ∩ B = ∅. Suppose that we have a laminar
+family F of subsets of E and an integer k(A) for every set A ∈ F. Show that (E, I) defines
+a matroid (a laminar matroid) where:
+
+                         I = {X ⊆ E : |X ∩ A| ≤ k(A) for all A ∈ F}.
+
+
+4.2      Matroid Optimization
+Given a matroid M = (E, I) and a cost function c : E →        PR, we are interested in finding
+an independent set S of M of maximum total cost c(S) = e∈S c(e). This is a fundamental
+problem.
+    If all c(e) ≥ 0, the problem is equivalent to finding a maximum cost base in the matroid.
+If c(e) < 0 for some element e then, because of (I1 ), e will not be contained in any optimum
+solution, and thus we could eliminate such an element from the ground set. In the special case
+of a graphic matroid M (G) defined on a connected graph G, the problem is thus equivalent
+to the maximum spanning tree problem which can be solved by a simple greedy algorithm.
+This is actually the case for any matroid and this is the topic of this section.
+    The greedy algorithm we describe actually returns, for every k, a set Sk which maximizes
+c(S) over all independent sets of size k. The overall optimum can thus simply be obtained
+by outputting the best of these. The greedy algorithm is the following:
+    . Sort the elements (and renumber them) such that c(e1 ) ≥ c(e2 ) ≥ · · · ≥ c(e|M | )
+    . S0 = ∅, k=0
+    . For j = 1 to |E|
+            . if Sk + ej ∈ I then
+                  . k ←k+1
+                  . Sk ← Sk−1 + ej
+                  . sk ← ej
+    . Output S1 , S2 , · · · , Sk
+
+Theorem 4.2 For any matroid M = (E, I), the greedy algorithm above finds, for every k,
+an independent set Sk of maximum cost among all independent sets of size k.
+
+Proof:         Suppose not. Let Sk = {s1 , s2 , · · · , sk } with c(s1 ) ≥ c(s2 ) ≥ · · · ≥ c(sk ), and
+suppose Tk has greater cost (c(Tk ) > c(Sk )) where Tk = {t1 , t2 , · · · , tk } with c(t1 ) ≥ c(t2 ) ≥
+· · · ≥ c(tk ). Let p be the first index such that c(tp ) > c(sp ). Let A = {t1 , t2 , · · · , tp } and
+B = {s1 , s2 , · · · , sp−1 }. Since |A| > |B|, there exists ti ∈/ B such that B + ti ∈ I. Since
+4. Lecture notes on matroid optimization                     March 16th, 2011                 6
+
+
+c(ti ) ≥ c(tp ) > c(sp ), ti should have been selected when it was considered. To be more
+precise and detailed, when ti was considered, the greedy algorithm checked whether ti could
+be added to the current set at the time, say S. But since S ⊆ B, adding ti to S should have
+resulted in an independent set (by (I1 )) since its addition to B results in an independent set.
+This gives the contradiction and completes the proof.                                        4
+     Observe that, as long as c(sk ) ≥ 0, we have that c(Sk ) ≥ c(Sk−1 ). Therefore, to find a
+maximum cost set over all independent sets, we can simply replace the loop
+     . For j = 1 to |E|
+by
+     . For j = 1 to q
+where q is such that c(eq ) ≥ 0 > c(eq+1 ), and output the last Sk .
+     For the maximum cost spanning tree problem, the greedy algorithm reduces to Kruskal’s
+algorithm which considers the edges in non-increasing cost and add an edge to the previously
+selected edges if it does not form a cycle.
+     One can show that the greedy algorithm actually characterizes matroids. If M is an
+independence system, i.e. it satisfies (I1 ), then M is a matroid if and only if the greedy
+algorithm finds a maximum cost set of size k for every k and every cost function.
+
+Exercise 4-8. We are given n jobs that each take one unit of processing time. All jobs
+are available at time 0, and job j has a profit of cj and a deadline dj . The profit for job
+j will only be earned if the job completes by time dj . The problem is to find an ordering
+of the jobs that maximizes the total profit. First, prove that if a subset of the jobs can be
+completed on time, then they can also be completed on time if they are scheduled in the
+order of their deadlines. Now, let E(M ) = {1, 2, · · · , n} and let I(M ) = {J ⊆ E(M ) : J
+can be completed on time }. Prove that M is a matroid and describe how to find an optimal
+ordering for the jobs.
+
+
+4.3      Rank Function of a Matroid
+Similarly to the notion of rank for matrices, one can define a rank function for any matroid.
+The rank function of M , denoted by either r(·) or rM (·), is defined by:
+
+                     rM : 2E → N : rM (X) = max{|Y | : Y ⊆ X, Y ∈ I}.
+
+   Here are a few specific rank functions:
+
+   • For a linear matroid, the rank of X is precisely the rank in the linear algebra sense of
+     the matrix AX corresponding to the columns of A in X.
+
+   • For a partition matroid M = (E, I) where
+
+                           I = {X ⊆ E : |X ∩ Ei | ≤ ki for i = 1, · · · , l}
+4. Lecture notes on matroid optimization                        March 16th, 2011              7
+
+
+      (the Ei ’s forming a partition of E) its rank function is given by:
+                                             l
+                                             X
+                                    r(X) =         min(|Ei ∩ X|, ki ).
+                                             i=1
+
+   • For a graphic matroid M (G) defined on graph G = (V, E), the rank function is equal
+     to:
+                                 rM (G) (F ) = n − K(V, F ),
+      where n = |V | and K(V, F ) denotes the number of connected components (including
+      isolated vertices) of the graph with edges F .
+   The rank function of any matroid M = (E, I) has the following properties:
+(R1 ) 0 ≤ r(X) ≤ |X| and is integer valued for all X ⊆ E
+(R2 ) X ⊆ Y ⇒ r(X) ≤ r(Y ),
+(R3 ) r(X) + r(Y ) ≥ r(X ∩ Y ) + r(X ∪ Y ).
+The last property is called submodularity and is a key concept in combinatorial optimization.
+It is clear that, as defined, any rank function satisfies (R1 ) and (R2 ). Showing that the rank
+function satisfies submodularity needs a proof.
+Lemma 4.3 The rank function of any matroid is submodular.
+Proof:     Consider any two sets X, Y ⊆ E. Let J be a maximal independent subset of
+X ∩ Y ; thus, |J| = r(X ∩ Y ). By (I2 ), J can be extended to a maximal (thus maximum)
+indenpendent subset of X, call it JX . We have that J ⊆ JX ⊆ X and |JX | = r(X).
+Furthermore, by maximality of J within X ∩ Y , we know
+                                       JX \ Y = JX \ J.                                     (1)
+Now extend JX to a maximal independent set JXY of X ∪ Y . Thus, |JXY | = r(X ∪ Y ).
+  In order to be able to prove that
+                             r(X) + r(Y ) ≥ r(X ∩ Y ) + r(X ∪ Y )
+or equivalently
+                                  |JX | + r(Y ) ≥ |J| + |JXY |,
+we need to show that r(Y ) ≥ |J| + |JXY | − |JX |. Observe that JXY ∩ Y is independent (by
+(I1 )) and a subset of Y , and thus r(Y ) ≥ |JXY ∩ Y |. Observe now that
+                        JXY ∩ Y = JXY \ (JX \ Y ) = JXY \ (JX \ J),
+the first equality following from the fact that JX is a maximal independent subset of X and
+the second equality by (1). Therefore,
+                  r(Y ) ≥ |JXY ∩ Y | = |JXY \ (JX \ J)| = |JXY | − |JX | + |J|,
+proving the lemma.                                                                           4
+4. Lecture notes on matroid optimization                   March 16th, 2011                 8
+
+
+4.3.1    Span
+The following definition is also motivated by the linear algebra setting.
+
+Definition 4.1 Given a matroid M = (E, I) and given S ⊆ E, let
+
+                           span(S) = {e ∈ E : r(S ∪ {e}) = r(S)}.
+
+The span of a set is also called the closure. Observe that S ⊆ span(S). We claim that r(S) =
+r(span(S)); in other words, if adding an element to S does not increase the rank, adding
+many such elements also does not increase the rank. Indeed, take a maximal independent
+subset of S, say J. If r(span(S)) > |J| then there exists e ∈ span(S) \ J such that J + e ∈ I.
+Thus r(S + e) ≥ r(J + e) = |J| + 1 > |J| = r(S) contradicting the fact that e ∈ span(S).
+
+Definition 4.2 A set S is said to be closed if S = span(S).
+
+Exercise 4-9. Given a matroid M with rank function r and given an integer k ∈ N, what
+is the rank function of the truncated matroid Mk (see Exercise 4-6 for a definition).
+
+Exercise 4-10.      What is the rank function of a laminar matroid, see exercise 4-7?
+
+
+4.4     Matroid Polytope
+Let
+                               X = {χ(S) ∈ {0, 1}|E| : S ∈ I}
+denote the incidence (or characteristic) vectors of all independent sets of a matroid M =
+(E, I), and let the matroid polytope be defined as conv(X). In this section, we provide
+a complete characterization of conv(X) in terms of linear inequalities. In addition, we
+illustrate the different techniques proposed in the polyhedral chapter for proving a complete
+description of a polytope.
+
+Theorem 4.4 Let
+                           P = {x ∈ R|E| : x(S) ≤ r(S) ∀S ⊆ E
+                                           xe ≥ 0      ∀e ∈ E}
+                P
+where x(S) :=    e∈S xe . Then conv(X) = P .
+
+
+    It is clear that conv(X) ⊆ P since X ⊆ P . The harder part is to show that P ⊆ conv(X).
+In the next three subsections, we provide three different proofs based on the three techniques
+to prove complete polyhedral descriptions.
+4. Lecture notes on matroid optimization                                  March 16th, 2011                        9
+
+
+4.4.1     Algorithmic Proof
+Here we provide an algorithmic proof based on the greedy algorithm. From conv(X) ⊆ P ,
+we know that
+     max{cT x : x ∈ X} = max{cT x : x ∈ conv(X)} ≤ max{cT x : x(S) ≤ r(S) S ⊆ E
+                                                              xe ≥ 0      e ∈ E}.
+Using LP duality, we get that this last expression equals:
+                           P              P
+                      min{ S r(S)yS :        S:e∈S yS ≥ c(e) ∀e ∈ E
+                                                yS ≥ 0       S ⊆ E}.
+Our goal now is, for any cost P  function c, to get an independent set S and a dual feasible
+                       T
+solution y such that c χ(S) = S r(S)yS which proves that conv(X) = P .
+    Consider any cost function c. We know that the maximum cost independent set can be
+obtained by the greedy algorithm. More precisely, it is the last set Sk returned by the greedy
+algorithm when we consider only those elements up to eq where c(eq ) ≥ 0 ≥ c(eq+1 ). We
+need now to exhibit a dual solution of the same value as Sk . There are exponentially many
+variables in the dual, but this is not a problem. In fact, we will set most of them to 0.
+    For any index j ≤ k, we have Sj = {s1 , s2 , · · · , sj }, and we define Uj to be all elements in
+our ordering up to and excluding sj+1 , i.e. Uj = {e1 , e2 , · · · , el } where el+1 = sj+1 . In other
+words, Uj is all the elements in the ordering just before sj+1 . One important property of Uj
+is that
+                                       r(Uj ) = r(Sj ) = j.
+Indeed, by independence r(Sj ) = |Sj | = j, and by (R1 ), r(Uj ) ≥ r(Sj ). If r(Uj ) > r(Sj ),
+there would be an element say ep ∈ Uj \Sj such that Sj ∪{ep } ∈ I. But the greedy algorithm
+would have selected that element (by (I1 )) contradicting the fact that ep ∈ Uj \ Sj .
+   Set the non-zero entries of yS in the following way. For j = 1, · · · , k, let
+                                            yUj = c(sj ) − c(sj+1 ),
+where it is understood that c(sk+1 ) = 0. By the ordering of the c(·), we have that yS ≥ 0 for
+all S. In addition, for any e ∈ E, we have that
+                                     X             k
+                                                   X
+                                            yS =         yUj = c(st ) ≥ c(e),
+                                    S:e∈S          j=t
+
+where t is the least index such that e ∈ Ut (implying that e does not come before st in the
+ordering). This shows that y is a feasible solution to the dual. Moreover, its dual value is:
+X               k
+                X                   k
+                                    X                             k
+                                                                  X                           k
+                                                                                              X
+     r(S)yS =         r(Uj )yUj =         j(c(sj )−c(sj+1 )) =          (j −(j −1))c(sj ) =         c(sj ) = c(Sk ).
+ S              j=1                 j=1                           j=1                         j=1
+
+This shows that the dual solution has the same value as the independent set output by the
+greedy algorithm, and this is true for all cost functions. This completes the algorithmic
+proof.
+4. Lecture notes on matroid optimization                    March 16th, 2011                 10
+
+
+4.4.2     Vertex Proof
+Here we will focus on any vertex x of
+                           P = {x ∈ R|E| : x(S) ≤ r(S) ∀S ⊆ E
+                                           xe ≥ 0      ∀e ∈ E}
+
+and show that x is an integral vector. Since x({e}) ≤ r({e}) ≤ 1, we get that x ∈ {0, 1}|E|
+and thus it is the incidence vector of an independent set.
+   Given any x ∈ P , consider the tight sets S, i.e. those sets for which x(S) = r(S). The
+next lemma shows that these tight sets are closed under taking intersections or unions. This
+lemma is really central, and follows from submodularity.
+
+Lemma 4.5 Let x ∈ P . Let
+
+                                 F = {S ⊆ E : x(S) = r(S)}.
+
+Then
+                          S ∈ F, T ∈ F ⇒ S ∩ T ∈ F, S ∪ T ∈ F.
+
+Observe that the lemma applies even if S and T are disjoint. In that case, it says that ∅ ∈ F
+(which is always the case as x(∅) = 0 = r(∅)) and S ∪ T ∈ F.
+Proof:     The fact that S, T ∈ F means that:
+
+                                 r(S) + r(T ) = x(S) + x(T ).                               (2)
+               P
+Since x(S) =    e∈S xe , we have that
+
+                            x(S) + x(T ) = x(S ∩ T ) + x(S ∪ T ),                           (3)
+
+i.e. that the function x(·) is modular (both x and −x are submodular). Since x ∈ P , we know
+that x(S ∩ T ) ≤ r(S ∩ T ) (this is true even if S ∩ T = ∅) and similarly x(S ∪ T ) ≤ r(S ∪ T );
+this implies that
+                           x(S ∩ T ) + x(S ∪ T ) ≤ r(S∩) + r(S ∪ T ).                       (4)
+By submodularity, we have that
+
+                             r(S ∩ T ) + r(S ∪ T ) ≤ r(S) + r(T ).                          (5)
+
+Combining (2)–(5), we get
+
+ r(S) + r(T ) = x(S) + x(T ) = x(S ∩ T ) + x(S ∪ T ) ≤ r(S ∩ T ) + r(S ∪ T ) ≤ r(S) + r(T ),
+
+and therefore we have equality throughout. This implies that x(S ∩ T ) = r(S ∩ T ) and
+x(S ∪ T ) = r(S ∪ T ), i.e. S ∩ T and S ∪ T in F.                                          4
+    To prove that any vertex or extreme point of P is integral, we first characterize any face
+of P . A chain C is a family of sets such that for all S, T ∈ C we have that either S ⊆ T or
+T ⊆ S (or both if S = T ).
+4. Lecture notes on matroid optimization                 March 16th, 2011                11
+
+
+Theorem 4.6 Consider any face F of P . Then there exists a chain C and a subset J ⊆ E
+such that:
+                    F = {x ∈ R|E| : x(S) ≤ r(S) ∀S ⊆ E
+                                     x(C) = r(C) ∀C ∈ C
+                                     xe ≥ 0        ∀e ∈ E \ J
+                                     xe = 0        ∀e ∈ J.}
+Proof:      By Theorem 3.5 of the polyhedral notes, we know that any face is characterized
+by setting some of the inequalities of P by equalities. In particular, F can be expressed as
+                        F = {x ∈ R|E| : x(S) ≤ r(S)     ∀S ⊆ E
+                                        x(C) = r(C)     ∀C ∈ F
+                                        xe ≥ 0          ∀e ∈ E \ J
+                                        xe = 0          ∀e ∈ J.}
+where J = {e : xe = 0 for all x ∈ F } and F = {S : x(S) = r(S) for all x ∈ F }. To prove the
+theorem, we need to argue that the system of equations:
+                                   x(C) = r(C) ∀C ∈ F
+can be replaced by an equivalent (sub)system in which F is replaced by a chain C. To be
+equivalent, we need that
+                                   span(F) = span(C)
+where by span(L) we mean
+                             span(L) := span{χ(C) : C ∈ L}.
+    Let C be a maximal subchain of F, i.e. C ⊆ F, C is a chain and for all S ∈ F \ C, there
+exists C ∈ C such that S 6⊆ C and C 6⊆ S. We claim that span(C) = span(F).
+    Suppose not, i.e. H 6= span(F) where H := span(C). This means that there exists
+S ∈ F \ C such that χ(S) ∈  / H but S cannot be added to C without destroying the chain
+structure. In other words, for any such S, the set of ’chain violations’
+                           V (S) := {C ∈ C : C 6⊆ S and S 6⊆ C}
+is non-empty. Among all such sets S, choose one for which |V (S)| is as small as possible
+(|V (S)| cannot be 0 since we are assuming that V (S) 6= ∅ for all possible S). Now fix some
+set C ∈ V (S). By Lemma 4.5, we know that both C ∩ S ∈ F and C ∪ S ∈ F. Observe that
+there is a linear dependence between χ(C), χ(S), χ(C ∪ T ), χ(C ∩ T ):
+                           χ(C) + χ(S) = χ(C ∪ S) + χ(C ∩ S).
+This means that, since χ(C) ∈ H and χ(S) ∈    / H, we must have that either χ(C ∪ S) ∈   /H
+or χ(C ∩ S) ∈/ H (otherwise χ(S) would be in H). Say that χ(B) ∈     / H where B si either
+C ∪ S or C ∩ S. This is a contradiction since |V (B)| < |V (S)|, contradicting our choice of
+S. Indeed, one can see that V (B) ⊂ V (S) and C ∈ V (S) \ V (B).                          4
+   As a corollary, we can also obtain a similar property for an extreme point, starting from
+Theorem 3.6.
+4. Lecture notes on matroid optimization                      March 16th, 2011             12
+
+
+Corollary 4.7 Let x be any extreme point of P . Then there exists a chain C and a subset
+J ⊆ E such that x is the unique solution to:
+
+                                     x(C) = r(C) ∀C ∈ C
+                                     xe = 0      ∀e ∈ J.
+
+   From this corollary, the integrality of every extreme point follows easily. Indeed, if the
+chain given in the corollary consists of C1 ⊂ C2 ⊂ Cp the the system reduces to
+
+                         x(Ci \ Ci−1 ) = r(Ci ) − r(Ci−1 ) i = 1, · · · , p
+                         xe = 0                            ∀e ∈ J,
+
+where C0 = ∅. For this to have a unique solution, we’d better have |Ci \ Ci−1 \ J| ≤ 1 for
+all i and the values for the resulting xe ’s will be integral. Since 0 ≤ xe ≤ r({e}) ≤ 1, we
+have that x is a 0 − 1 vector and thus x = χ(S) for some set S. As |S| ≤ r(S) ≤ |S|, we
+have |S| = r(S) and thus S ∈ I and therefore x is the incidence vector of an independent
+set. This completes the proof.
+
+4.4.3    Facet Proof
+Our last proof of Theorem 4.4 focuses on the facets of conv(X).
+   First we need to argue that we are missing any equalities. Let’s focus on the (interesting)
+case in which any singleton set is independent: {e} ∈ I for every e ∈ E. In that case
+dim(conv(X)) = |E| since we can exhibit |E| + 1 affinely independent points in X: the
+0 vector and all unit vectors χ({e}) for e ∈ E. Thus we do not need any equalities. See
+exercise 4-11 if we are not assuming that every singleton set is independent.
+   Now considerP  any facet F of conv(X). This facet is induced by a valid inequality αT x ≤ β
+where β = max{ e∈I αe : I ∈ I}. Let
+                                                 X
+                                  O = {I ∈ I :         αe = β},
+                                                 e∈I
+
+i.e. O is the set of all independent sets whose incidence vectors belong to the face. We’ll
+show that there exists an inequality in our description of P which is satisfied at equality by
+the incidence vectors of all sets I ∈ O.
+    We consider two cases. If there exists e ∈ M such that αe < 0 then I ∈ O implies that
+e∈ / I, implying that our face F is included in the face induced by xe ≥ 0 (which is in our
+description of P ).
+    For the other case, we assume that for all e ∈ E, we have αe ≥ 0. We can further assume
+that αmax := maxe∈E αe > 0 since otherwise F is trivial. Now, define S as
+
+                                  S = {e ∈ E : αe = αmax }.
+
+Claim 4.8 For any I ∈ O, we have |I ∩ S| = r(S).
+4. Lecture notes on matroid optimization                         March 16th, 2011           13
+
+
+This means that the face F is contained in the face induced by the inequality x(S) ≤ r(S)
+and therefore we have in our description of P one inequality inducing each facet of conv(X).
+Thus we have a complete description of conv(X).
+    To prove the claim, suppose that |I ∩ S| < r(S). Thus I ∩ S can be extended to an
+independent set X ∈ I where X ⊆ S and |X| > |I ∩ S|. Let e ∈ X \ (I ∩ S); observe
+that e ∈ S by our choice of X. Since αe > 0 we have that I + e ∈       / I, thus there is a
+circuit C ⊆ I + e. By the unique circuit property (see Theorem 4.1), for any f ∈ C we have
+I + e − f ∈ I. But C \ S 6= ∅ since (I ∩ S) + e ∈ I, and thus we can choose f ∈ C \ S. The
+cost of I + e − f satisfies:
+
+                          c(I + e − f ) = c(I) + c(e) − c(f ) > c(I),
+
+contradicting the definition of O.
+
+
+4.5      Facets?
+Now that we have a description of the matroid polytope in terms of linear inequalities, one
+may wonder which of these (exponentially many) inequalities define facets of conv(X).
+    For simplicity, let’s assume that r({e}) = 1 for all e ∈ E (e belongs to some independent
+set). Then, every nonnegativity constraint defines a facet of P = conv(X). Indeed, the 0
+vector and all unit vectors except χ({e}) constitute |E| affinely independent points satisfying
+xe = 0. This mean that the corresponding face has dimension at least |E| − 1 and since the
+dimension of P itself is |E|, the face is a facet.
+    We now consider the constraint x(S) ≤ r(S) for some set S ⊆ E. If S is not closed (see
+Definition 4.2) then x(S) ≤ r(S) definitely does not define a facet of P = conv(X) since it
+is implied by the constraints x(span(S)) ≤ r(S) and xe ≥ 0 for e ∈ span(S) \ S.
+    Another situation in which x(S) ≤ r(S) does not define a facet is if S can be expressed
+as the disjoint union of U 6= ∅ and S \ U 6= ∅ and r(U ) + r(S \ U ) = r(S). In this case, the
+inequality for S is implied by those for U and for S \ U .
+Definition 4.3 S is said to be inseparable if there is no U with ∅ 6= U ⊂ S such that
+r(S) = r(U ) + r(S \ U ).
+   From what we have just argued, a necessary condition for x(S) ≤ r(S) to define a facet
+of P = conv(X) is that S is closed and inseparable. This can be shown to be sufficient as
+well, although the proof is omitted.
+   As an example, consider a partition matroid with M = (E, I) where
+
+                      I = {X ⊆ E : |X ∩ Ei | ≤ ki for all i = 1, · · · , l},
+
+for disjoint Ei ’s. Assume that ki ≥ 1 for all i. The rank function for this matroid is:
+                                          l
+                                          X
+                                 r(S) =         min(ki , |S ∩ Ei |).
+                                          i=1
+4. Lecture notes on matroid optimization                       March 16th, 2011                    14
+
+
+For a set S to be inseparable, there must exist (i) i ∈ {1, · · · , l} with S ⊆ Ei , and (ii) |S ∩Ei |
+is either ≤ 1 or > ki for every i. Furthermore, for S ⊆ Ei to be closed, we must have that if
+|S ∩ Ei | ≥ ki then S ∩ Ei = Ei . Thus the only sets we need for the description of a partition
+matroid polytope are (i) sets S = Ei for i with |Ei | > ki and (ii) singleton sets {e} for e ∈ E.
+The partition matroid polytope is thus given by:
+
+                    P = {x ∈ R|E| : x(Ei ) ≤ ki i ∈ {1, · · · , l} : |Ei | > ki
+                                    0 ≤ xe ≤ 1 e ∈ E}.
+
+    As another example, take M to be the graphic matroid M (G). For a set of edges F ⊆ E
+to be inseparable, we need that the subgraph (V, F ) either is a single edge or has only one
+non-trivial (i.e. with more than 1 vertex) 2-connected component (this is a maximal set
+of vertices such that for any two vertices in it, there exists two (internally) vertex-disjoint
+paths between them). Indeed, if we partition F into the edge sets F1 , · · · , Fc of the (c non-
+trivial) 2-connected components and  P single edges (for those edges not in any 2-connected
+components), we have that r(F ) = ci=1 r(Fi ) and thus c must be 1 for F to be inseparable.
+Given a set F of edges, its span (with respect to the graphic matroid) consists of all the edges
+with both endpoints within the same 2-connected component of F ; these are the edges whose
+addition does not increase the size of the largest forest. Thus, for F to be inseparable and
+closed, either it must be a single edge or there exists a vertex set S ⊆ V such that F = E(S)
+(E(S) denotes all the edges with both endpoints in S) and (S, E(S)) is 2-connected. Thus
+the forest polytope (convex hull of all forests in a graph G = (V, E)) is given by:
+
+                P = {x ∈ R|E| : x(E(S)) ≤ |S| − 1 S ⊆ V, E(S) 2-connected
+
+                                   0 ≤ xe ≤ 1             e ∈ E}.
+                            P
+(As usual, x(E(S)) denotes e∈E(S) xe .) Observe that this polyhedral description still has
+a very large number of inequalities.
+   From this, we can also easily derive the spanning tree polytope of a graph, namely the
+convex hull of incidence vectors of all spanning trees in a graph. Indeed, this is a face of
+the forest polytope obtained by replacing the inequality for S = V (x(E) ≤ |V | − 1) by an
+equality:
+               P = {x ∈ R|E| : X(E) = |V | − 1
+                                x(E(S)) ≤ |S| − 1 S ⊂ V, E(S) 2-connected
+
+                                   0 ≤ xe ≤ 1             e ∈ E}.
+
+Exercise 4-11. Let M = (E, I) be a matroid and let S = {e ∈ E : {e} ∈ I}. Show that
+dim(conv(X)) = |S| (where X is the set of incidence vectors of independent sets) and show
+that the description for P has the required number of linearly independent equalities.
+
+Exercise 4-12. Let M = (E, I) be a matroid and let P be the corresponding matroid
+polytope, i.e. the convex hull of characteristic vectors of independent sets. Show that two
+4. Lecture notes on matroid optimization                      March 16th, 2011                  15
+
+
+independent sets I1 and I2 are adjacent on P if and only if either (i) I1 ⊆ I2 and |I1 |+1 = |I2 |,
+or (ii) I2 ⊆ I1 and |I2 | + 1 = |I1 |, or (iii) |I1 \ I2 | = |I2 \ I1 | = 1 and I1 ∪ I2 ∈
+                                                                                        / I.
+

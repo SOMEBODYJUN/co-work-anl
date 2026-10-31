@@ -1,0 +1,1667 @@
+                                         Even Delta-Matroids and the Complexity of Planar Boolean
+                                         CSPs
+                                         ALEXANDR KAZDA, IST Austria, Austria and Charles University, Czech Republic
+arXiv:1602.03124v6 [cs.CC] 14 Jun 2018
+
+
+
+
+                                         VLADIMIR KOLMOGOROV, IST Austria, Austria
+                                         MICHAL ROLÍNEK, IST Austria, Austria and Max Planck Institute for Intelligent Systems, Germany
+                                         The main result of this paper is a generalization of the classical blossom algorithm for finding perfect matchings.
+                                         Our algorithm can efficiently solve Boolean CSPs where each variable appears in exactly two constraints
+                                         (we call it edge CSP) and all constraints are even ∆-matroid relations (represented by lists of tuples). As a
+                                         consequence of this, we settle the complexity classification of planar Boolean CSPs started by Dvořák and
+                                         Kupec.
+                                            Using a reduction to even ∆-matroids, we then extend the tractability result to larger classes of ∆-matroids
+                                         that we call efficiently coverable. It properly includes classes that were known to be tractable before, namely
+                                         co-independent, compact, local, linear and binary, with the following caveat: we represent ∆-matroids by lists of
+                                         tuples, while the last two use a representation by matrices. Since an n × n matrix can represent exponentially
+                                         many tuples, our tractability result is not strictly stronger than the known algorithm for linear and binary
+                                         ∆-matroids.
+                                         CCS Concepts: • Theory of computation → Design and analysis of algorithms; • Mathematics of
+                                         computing → Graph theory;
+
+                                         Additional Key Words and Phrases: Constraint satisfaction problem, delta-matroid, blossom algorithm
+                                         ACM Reference Format:
+                                         Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek. 2017. Even Delta-Matroids and the Complexity of
+                                         Planar Boolean CSPs . ACM Trans. Algor. 0, 0, Article 0 ( 2017), 33 pages. https://doi.org/0000001.0000001
+
+                                         1    INTRODUCTION
+                                         The constraint satisfaction problem (CSP) has been a classical topic in computer science for decades.
+                                         Aside from its indisputable practical importance, it has also heavily influenced theoretical research.
+                                         The uncovered connections between CSP and areas such as graph theory, logic, group theory,
+                                         universal algebra, or submodular functions provide some striking examples of the interplay between
+                                         CSP theory and practice.
+                                            We can exhibit such connections especially if we narrow our interest down to fixed-template
+                                         CSPs, that is, to sets of constraint satisfaction instances in which the constraints come from a
+                                         fixed set of relations Γ. For any fixed Γ the set of instances CSP(Γ) forms a decision problem; the
+                                         question if CSP(Γ) is always either polynomial-time solvable or NP-complete (in other words it
+                                         avoids intermediate complexities assuming P , N P) is known as the CSP dichotomy conjecture
+
+                                         Alexandr Kazda (ORCID 0000-0002-7338-037X), Department of Algebra, Charles University, Sokolovská 83, 18675 Praha
+                                         8, Czech Republic; Vladimir Kolmogorov, IST Austria, Am Campus 1, 3400 Klosterneuburg, Austria; Michal Rolínek, Max
+                                         Planck Institute for Intelligent Systems, Max-Planck-Ring 4, 72076 Tübingen, Germany.
+
+                                         Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
+                                         provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the
+                                         full citation on the first page. Copyrights for components of this work owned by others than the author(s) must be honored.
+                                         Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
+                                         prior specific permission and/or a fee. Request permissions from permissions@acm.org.
+                                         © 2017 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+                                         1549-6325/2017/0-ART0 $15.00
+                                         https://doi.org/0000001.0000001
+
+
+                                                                                                   ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:2                                             Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+[13]. After 20 years of effort by mathematicians and computer scientists, the dichotomy conjecture
+seems to be finally proved [6], [24].
+   In this work we address two special structural restrictions for CSPs with Boolean variables. One
+is limiting to at most two constraints per variable and the other requires the constraint network to
+have a planar representation. The first type, introduced by Feder [11], has very natural interpretation
+as CSPs in which edges play the role of variables and nodes the role of constraints, which is why we
+choose to refer to it as edge CSP. It was Feder who showed the following hardness result: Assume
+the constraint language Γ contains both unary constant relations (that is, constant 0 and constant
+1). Then unless all relations in Γ are ∆-matroids, the edge CSP with constraint language Γ has
+the same complexity as the unrestricted CSP with constraint language Γ. Since then, there has
+also been progress on the algorithmic side. Several tractable (in the sense of being polynomial
+time solvable) classes of ∆-matroids were identified [8, 9, 11, 12, 14, 16]. A recurring theme is the
+connection between ∆-matroids and matching problems.
+   Recently, a setting for planar CSPs was formalized by Dvořák and Kupec [9]. In their work, they
+provide certain hardness results together with a reduction of the remaining cases to Boolean edge
+CSP. Dvořák and Kupec’s results imply that completing the complexity classification of Boolean
+planar CSPs is equivalent to establishing the complexity of (planar) Boolean edge CSP where all
+the constraints are even ∆-matroids. In their paper, Dvořák and Kupec provided a tractable subclass
+of even ∆-matroids along with computer-aided evidence that the subclass (matching realizable
+even ∆-matroids) covers all even ∆-matroids of arity at most 5. However, it turns out that there
+exist even ∆-matroids of arity 6 that are not matching realizable; we provide an example of such a
+∆-matroid in Appendix A.
+   The main result of our paper is a generalization of the classical Edmonds’ blossom-shrinking algo-
+rithm for matchings [10] that we use to efficiently solve edge CSPs with even ∆-matroid constraints.
+This settles the complexity classification of planar CSP. Moreover, we give an extension of the
+algorithm to cover a wider class of ∆-matroids. This extension subsumes (to our best knowledge) all
+previously known tractable classes. This paper is the journal version of the conference article [18].
+   One notable problem that our paper leaves open is how to generalize the Tutte-Berge formula[1,
+23]. By this formula, the size of a maximum matching in a graph G is 1/2 · minU ⊆V (G) (|V (G)| +
+|U | − odd(G − U )) where odd(G − U ) counts the number of odd components of the graph we obtain
+from G by removing all vertices in U . Since edge CSPs generalize graph matchings, it would be
+satisfying to obtain a similar formula for, say, the minimal number of inconsistent variables in a
+solution of an edge CSP with even ∆-matroid constraints. However, we believe that obtaining such
+a formula will require expanding our toolbox (particularly when it comes to situations involving
+several blossoms at once), so we leave generalization of Tutte-Berge formula to even ∆-matroids as
+an open problem.
+   The paper is organized as follows. In the introductory Sections 2, 3, and 4 we formalize the
+frameworks, discuss how dichotomy for Boolean planar CSP follows from our main theorem
+and sharpen our intuition by highlighting similarities between edge-CSPs and perfect matching
+problems, respectively. The algorithm is described in Section 5 and the proofs required for showing
+its correctness are in Section 6. The extension of the algorithm is discussed in Section 7 and
+Appendix B.
+
+
+2     PRELIMINARIES
+   Definition 1. A Boolean CSP instance I is a pair (V , C) where V is the set of variables and C the
+set of constraints of I . A k-ary constraint C ∈ C is a pair (σ , RC ) where σ ⊆ V is a set of size k (called
+
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                  0:3
+
+the scope of C) and RC ⊆ {0, 1}σ is a relation on {0, 1}. A solution to I is a mapping fˆ : V → {0, 1}
+such that for every constraint C = (σ , RC ) ∈ C, fˆ restricted to σ lies in RC .
+
+  Definition 2. If all constraint relations of I come from a set of relations Γ (called the constraint
+language), we say that I is a Γ-instance. For Γ fixed, we will denote the problem of deciding if a
+Γ-instance given on input has a solution by CSP(Γ).
+
+   Note that the above definition is not fully general in the sense that it does not allow one variable
+to occur multiple times in a constraint; we have chosen to define Boolean CSP in this way to make
+our notation a bit simpler. This can be done without loss of generality as long as Γ contains the
+equality constraint (i.e. {(0, 0), (1, 1)}): If a variable, say v, occurs in a constraint multiple times,
+we can add extra copies of v to our instance and join them together by the equality constraint to
+obtain a slightly larger instance that satisfies our definition.
+   For brevity of notation, we will often not distinguish a constraint C ∈ C from its constraint
+relation RC ; the exact meaning of C will always be clear from the context. Even though in principle
+different constraints can have the same constraint relation, our notation would get cumbersome if
+we wrote RC everywhere.
+   The main point of interest is classifying the computational complexity of CSP(Γ). Constraints
+of an instance are specified by lists of tuples in the corresponding relations and thus those lists
+are considered to be part of the input. We will say that Γ contains the unary constant relations if
+{(0)}, {(1)} ∈ Γ (these relations allow us to fix the value of a certain variable to 0 or 1).
+   For Boolean CSPs (where variables are assigned Boolean values), the complexity classification of
+CSP(Γ) due to Schaefer has been known for a long time [21]. There was much progress since then,
+including a full classification for the three-element domain [5] and for conservative structures [4].
+Recently, two proofs of classification in the general case were presented at the FOCS conference [6],
+[24]. However, in this work we concentrate on Boolean domains only.
+   Our main focus is on restricted forms of the CSP. In particular, we are interested in structural
+restriction, i.e. in restriction on the constraint network. Once one starts to limit the shape of
+instances, the Boolean case becomes complicated again. (As a side note, we expect similar problems
+for larger domains to be very hard to classify. For example, Dvořák and Kupec note that one can
+encode coloring planar graphs by four colors as a class of planar CSPs that always have a solution
+for a highly nontrivial reason, namely the four color theorem.)
+   A natural structural restriction would be to limit the number of constraints in whose scope a
+variable can lie. When k ≥ 3 and Γ contains all unary constants, then CSP(Γ) with each variable in at
+most k constraints is polynomial time equivalent to unrestricted CSP(Γ), see [8, Theorem 2.3]. This
+leaves instances with at most two occurrences per variable in the spotlight. To make our arguments
+clearer, we will assume that each variable occurs exactly in two constraints (following [11], we can
+reduce decision CSP instances with at most two appearances of each variable to instances with
+exactly two appearances by taking two copies of the instance and identifying both copies of v
+whenever v is a variable that originally appeared in only a single constraint).
+
+   Definition 3 (Edge CSP). Let Γ be a constraint language. Then the problem CSPedge (Γ) is the
+restriction of CSP(Γ) to those instances in which every variable is present in exactly two constraints.
+
+  Perhaps a more natural way to look at an instance I of an edge CSP is to consider a graph whose
+edges correspond to variables of I and nodes to constraints of I . Constraints (nodes) are incident with
+variables (edges) they interact with. In this (multi)graph, we are looking for a satisfying Boolean
+edge labeling. Viewed like this, edge CSP becomes a counterpart to the usual CSP where variables
+are typically identified with nodes and constraints with (hyper)edges. The idea of “switching” the
+
+                                               ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:4                                             Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+role of (hyper)edges and vertices already appeared in the counting CSP community under the name
+Holant problems [7].
+   This type of CSP is sometimes called “binary CSP” in the literature [9]. However, this term is
+very commonly used for CSPs whose all constraints have arity at most two [22]. In order to resolve
+this confusion (and for the reasons described in the previous paragraph), we propose the term
+“edge CSP”.
+   As we said above, we will only consider Boolean edge CSP, often omitting the word “Boolean”
+for space reasons. The following Boolean-specific definitions will be useful to us:
+
+    Definition 4. Let f : V → {0, 1} (we will denote the set of all such mappings f by {0, 1}V ) and
+let v ∈ V . We will denote by f ⊕ v the mapping V → {0, 1} that agrees with f on V \ {v} and
+has value 1 − f (v) on v. For a set S = {s 1 , . . . , sk } ⊆ V we let f ⊕ S = f ⊕ s 1 ⊕ · · · ⊕ sk . Also for
+f , д : V → {0, 1} let f ∆ д ⊆ V be the set of variables v for which f (v) , д(v).
+
+    Definition 5. Let V be a set. A nonempty subset M of {0, 1}V is called a ∆-matroid if whenever
+f , д ∈ M and v ∈ f ∆ д, then there exists u ∈ f ∆ д such that f ⊕ {u, v} ∈ M. If moreover, the parity
+of the number of ones over all tuples of M is constant, we have an even ∆-matroid (note that in
+that case we never have u = v so f ⊕ {u, v} reduces to f ⊕ u ⊕ v).
+
+   The ∆-matroid parity problem [17, Problem (23)] has as its input a ∆-matroid M ⊆ {0, 1} E and a
+partition P of E into pairs. The goal is to find α ∈ M such that α(u) , α(v) for as few pairs {u, v} ∈ P
+as possible. This problem is easily equivalent to finding an edge labeling that minimizes the number
+of inconsistent edges of the edge CSP with edges (variables) E, binary equality constraints on all
+pairs in P and one big constraint M with the scope E (see Definition 20 for an exact definition of
+what we mean by an edge labeling and inconsistent edges).
+   A ∆-matroid with all tuples containing exactly the same number of ones is (the set of bases of) a
+matroid. There is a vast body of literature on the properties of matroids; here we only mention two
+notions that are immediately relevant to edge CSP: The matroid parity problem is the ∆-matroid
+parity problem where M is a matroid. In the literature, the matroid parity problem is usually
+formulated in the equivalent way “find α ∈ M so that α(u) = α(v) = 1 for as many pairs {u, v} ∈ P
+as possible.”
+   A similar problem is the matroid matching problem where we are given a graph G (with vertex set
+V (G) and edge set E(G)) and a matroid M on the variable set V (G) and are looking for α ∈ M such
+that the subgraph of G induced by {v ∈ V (G) : α(v) = 1} contains as big a matching as possible. It is
+straightforward to verify that this problem is equivalent to finding an edge labeling that minimizes
+the number of inconsistent edges in the edge CSP instance with variable set V (G) ∪ E(G), one big
+constraint M on V (G) and a constraint Cv for each v ∈ V (G). The scope of Cv consists of v and all
+e ∈ E(G) incident with v in G. The relation of Cv contains the all zero tuple (0, . . . , 0) and the tuple
+(0, . . . , 0) ⊕ v ⊕ e for each e ∈ E(G) incident with v.
+   We note for future reference that (even) ∆-matroids are closed under gadget constructions,
+known as compositions in ∆-matroid theory: If M ⊆ {0, 1}U and N ⊆ {0, 1}V are ∆-matroids
+defined on two sets of variables such that the set symmetric difference of U and V , denoted by
+U ∆ V , is nonempty, we define the composition of M and N to be the relation
+
+                       {γ ∈ {0, 1}U ∆ V : ∃α ∈ M, ∃β ∈ N , ∀u ∈ U ∩ V , α(u) = β(u),
+                                                                       ∀u ∈ U \ V , γ (u) = α(u),
+                                                                       ∀v ∈ V \ U , γ (v) = β(v)}.
+
+   Proposition 6 ([3]). The composition of two ∆-matroids is a ∆-matroid.
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                                 0:5
+
+  Moreover, a quick parity argument gives us that the composition of two even ∆-matroids must
+be an even ∆-matroid.
+  The strongest hardness result on Boolean edge CSP is from Feder.
+  Theorem 7 ([11]). If Γ is a constraint language containing unary constant relations such that
+CSP(Γ) is NP-Hard and there is R ∈ Γ which is not a ∆-matroid, then CSPedge (Γ) is NP-Hard.
+  Tractability was shown for special classes of ∆-matroids, namely binary [8, 14], linear [14]1 ,
+co-independent [11], compact [16], and local [8] (see the definitions in the respective papers). All
+the proposed algorithms are based on variants of searching for augmenting paths. In this work we
+propose a more general algorithm that involves both augmentations and contractions. In particular,
+we prove the following.
+  Theorem 8. If Γ contains only even ∆-matroid relations, then CSPedge (Γ) can be solved in polyno-
+mial time.
+   Our algorithm will in fact be able to solve even a certain optimization version of the edge CSP
+(corresponding to finding a maximum matching). This is discussed in detail in Section 5.
+   In Section 7 we show that if a class of ∆-matroids is efficiently coverable, then it defines a tractable
+CSP. The whole construction is similar to, but more general than, C-zebra ∆-matroids introduced
+in [12]. We note here also that the class of coverable ∆-matroids is natural in the sense of being
+closed under gadget constructions (also known as composition of ∆-matroids) which we split into
+taking direct products and identifying variables.
+    Definition 9. Let M be a ∆-matroid. We say that α, β ∈ M are even-neighbors if there exist distinct
+variables u, v ∈ V such that β = α ⊕ u ⊕ v and α ⊕ u < M. We say we can reach γ ∈ M from α ∈ M
+if there is a chain α = β 0 , β 1 , . . . , βn = γ where each pair βi , βi+1 are even-neighbors.
+   Definition 10. We say that M is coverable if for every α ∈ M there exists M α such that:
+   (1) M α is an even ∆-matroid (over the same ground set as M),
+   (2) M α contains all β ∈ M that can be reached from α (including α itself),
+   (3) whenever γ ∈ M can be reached from α and γ ⊕ u ⊕ v ∈ M α \ M, then γ ⊕ u, γ ⊕ v ∈ M.
+  In our algorithm, we will need to have access to the sets M α , so we need to assume that all our
+∆-matroids, in addition to being coverable, come from a class of ∆-matroids where the sets M α
+can be determined quickly. This is what efficiently coverable means (for a formal definition see
+Definition 47).
+  The following theorem is a strengthening of a result from [12]:
+  Theorem 11. Given an edge CSP instance I with efficiently coverable ∆-matroid constraints, an
+optimal edge labeling (i.e. edge labeling having fewest possible inconsistently labeled edges) f of I can
+be found in time polynomial in |I |. In particular, CSPedge (Γ) can be solved in polynomial time.
+   As we show in Appendix B, efficiently coverable ∆-matroid classes include numerous known
+tractable classes of ∆-matroids: C-zebra ∆-matroids [12] for any subclass C of even ∆-matroids
+(where we assume, just like in [12], that we are given the zebra representations on input) as well as
+co-independent [11], compact [16], local [8], linear [14] and binary [8, 14] ∆-matroids. To our best
+knowledge these are all the known tractable classes and according to [8] the classes other than
+C-zebras are pairwise incomparable.
+1 The paper [14] actually showed tractability of the ∆-matroid parity problem with linear or binary constraints. However,
+
+given representations of constraints of an edge CSP by matrices M 1, M 2, . . . , like in [14], a block matrix with M 1, M 2, . . .
+on the diagonal and zeroes elsewhere represents a “big” ∆-matroid parity problem (with a suitably chosen pairing) which,
+when solved, gives a solution of the original edge CSP.
+
+                                                           ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:6                                             Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+   One caveat of our result when applied to linear or binary ∆-matroids, which does not allow us
+to say that our algorithm generalizes everything that came before, is that our representation of
+∆-matroids (by lists of tuples) is different from e.g. [14] where linear and binary ∆-matroids are
+represented by matrices. A linear ∆-matroid described by an n × n matrix can contain exponential
+number of tuples, making our algorithm inefficient when constraints are encoded by matrices on
+the input.
+
+3     IMPLICATIONS
+In this section we explain how our result implies full complexity classification of planar Boolean CSPs.
+  Definition 12. Let Γ be a constraint language. Then CSPplanar (Γ) is the restriction of CSP(Γ) to
+the set of instances for which there exists a planar graph G(V , E) such that v 1 , . . . , vk is a face of G
+(with nodes listed in counter-clockwise order) if and only if there is a unique constraint imposed
+on the tuple of variables (v 1 , . . . , vk ).
+   It is also noted in [9] that checking whether an instance has a planar representation can be done
+efficiently (see e.g.. [15]) and hence it does not matter if we are given a planar drawing of G as a
+part of the input or not. The planar restriction does lead to new tractable cases, for example planar
+NAE-3-SAT (Not-All-Equal 3-Satisfiability) [20].
+  Definition 13. A relation R is called self-complementary if for all T ∈ {0, 1}n we have T ∈ R if and
+only if T ⊕ {1, 2, . . . , n} ∈ R (i.e. R is invariant under simultaneous flipping of all entries of a tuple).
+    Definition 14. For a tuple of Boolean variables T = (t 1 , . . . , tn ) ∈ {0, 1}n , let
+                                     dT = {ti + ti+1 (mod 2) : i = 1, 2, . . . , n}
+(we take tn+1 = t 1 here). For a relation R and a set of relations Γ, let dR = {dT : T ∈ R} and
+dΓ = {dR : R ∈ Γ}.
+   Since self-complementary relations don’t change when we flip all their coordinates, we can
+describe a self-complementary relation by looking at the differences of neighboring coordinates;
+this is exactly the meaning of dR. Note that these differences are realized over edges of the given
+planar graph.
+   Knowing this, it is not so difficult to imagine that via switching to the planar dual of G, one can
+reduce a planar CSP instance to some sort of edge CSP instance. This is in fact part of the following
+theorem from [9]:
+    Theorem 15. Let Γ be such that CSP(Γ) is NP-Hard. Then:
+    (1) If there is R ∈ Γ that is not self-complementary, then CSPplanar (Γ) is NP-Hard.
+    (2) If every R ∈ Γ is self-complementary and there exists R ∈ Γ such that dR is not even ∆-matroid,
+        then CSPplanar (Γ) is NP-Hard.
+    (3) If every R ∈ Γ is self-complementary and dR is an even ∆-matroid, then CSPplanar (Γ) is
+        polynomial-time reducible to
+                                    CSPedge (dΓ ∪ {EV EN 1 , EV EN 2 , EV EN 3 })
+        where EV ENi = {(x 1 , . . . x i ) : x 1 + · · · + x i ≡ 0 (mod 2)}.
+    Using Theorem 8, we can finish this classification:
+   Theorem 16 (Dichotomy for CSPplanar ). Let Γ be a constraint language. Then CSPplanar (Γ) is
+solvable in polynomial time if either
+   (1) CSP(Γ) is solvable in polynomial time or;
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                     0:7
+
+
+                          M2
+                                             I
+                   M3              M4
+    M3                                                                            I0
+                                                                                                M2
+              M3
+                                                                                       M3                 M4
+                                                                       M3                     III
+                   M2     M3            M3           M3                           IV                           III
+         M3                                                                 V                     II
+                                                                                       X                   Y
+                   M2              M3                                                              I
+                                                      Y
+         X
+
+Fig. 1. On the left we see an instance I that is equivalent to testing for perfect matching of the given graph.
+On the right is an equivalent instance I ′ with contracted “supernodes” X and Y .
+
+
+  (2) Γ contains only self-complementary relations R such that dR is an even ∆-matroid.
+Otherwise, CSPplanar (Γ) is NP-Hard.
+    Proof. By Theorem 15 the only unresolved case reduces to solving
+                               CSPedge (dΓ ∪ {EV EN 1 , EV EN 2 , EV EN 3 }).
+Since the relations EV ENi are even ∆-matroids for every i, this is polynomial-time solvable thanks
+to Theorem 8.                                                                                    □
+
+4    EVEN ∆-MATROIDS AND MATCHINGS
+In this section we highlight the similarities and dissimilarities between even ∆-matroid CSPs and
+matching problems. These similarities will guide us on our way through the rest of the paper.
+   Example 17. For n ∈ N consider the “perfect matching” relation Mn ⊆ {0, 1}n containing
+precisely the tuples in which exactly one coordinate is set to one and all others to zero. Note that
+Mn is an even ∆-matroid for all n. Then the instance I of CSPedge ({Mn : n ∈ N}) (represented in
+Figure 1) is equivalent to deciding whether the graph of the instance has a perfect matching (every
+node is adjacent to precisely one edge with label 1).
+   One may also construct an equivalent instance I ′ by “merging” some parts of the graph (in
+Figure 1 those are X and Y ) to single constraint nodes (this is exactly composition of ∆-matroids).
+The constraint relations imposed on the “supernodes” record sets of outgoing edges which can be
+extended to a perfect matching on the subgraph induced by the “supernode”. For example, in the
+instance I ′ the constraints imposed on X and Y would be (with variables ordered as in Figure 1):
+                        X = {10000, 01000, 00100, 00010, 11001, 10101, 10011},
+                        Y = {001, 010, 100, 111}.
+It is easy to check that both X and Y are even ∆-matroids.
+  One takeaway from this example is that any algorithm that solves edge CSP for the even ∆-
+matroid case has to work for perfect matchings in graphs as well. Another is the construction of
+even ∆-matroids X and Y which can be generalized as follows.
+   Definition 18 (Matching realizable relations). Let G be a graph and let v 1 , . . . , va ∈ V (G) be
+distinct nodes of G. For an a-tuple T = (x 1 , . . . , x a ) ∈ {0, 1}a , we denote by GT the graph obtained
+
+                                                  ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:8                                             Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+from G by deleting all nodes vi such that x i = 1. Then we can define
+                       M(G, v 1 , . . . , va ) = {T ∈ {0, 1}a : GT has a perfect matching}.
+We say that a relation R ∈ {0, 1}a is matching realizable if R = M(G, v 1 , . . . , va ) for some graph G
+and nodes v 1 , . . . , va ∈ V (G).
+  Every matching realizable relation is an even ∆-matroid [2]. Also, it should be clear from the
+definition and the preceding example that CSPedge (Γ) is tractable if Γ contains only matching
+realizable relations (assuming we know the graph G and the nodes v 1 , . . . , va for each relation):
+One can simply replace each constraint node with the corresponding graph and then test for
+existence of perfect matching.
+  The authors of [9] also verify that every even ∆-matroid of arity at most 5 is matching realizable.
+However, as we prove in Appendix A, this is not true for higher arities.
+    Proposition 19. There exists an even ∆-matroid of arity 6 which is not matching realizable.
+   Proposition 19 shows that we cannot hope to simply replace the constraint nodes by graphs and
+run the Edmonds’ algorithm. The ∆-matroid constraints can exhibit new and more complicated
+behavior than just matchings in graphs, as we shall soon see. In fact, there is a known exponential
+lower bound for the matroid parity problem (matroids being special cases of even ∆-matroids and
+matroid parity being a special case of edge CSP, see above) where M is given by an oracle (i.e. not
+explicit lists of tuples) [17] (see also a related result by L. Lovász [19] that considers a problem
+slightly different from matroid matchings), which rules out any polynomial time algorithm that
+would work in the oracle model. In particular, we are convinced that our method of contracting
+blossoms cannot be significantly simplified while still staying polynomial time computable.
+
+5     ALGORITHM
+5.1    Setup
+We can draw edge CSP instances as constraint graphs: The constraint graph G I = (V ∪ C, E) of I is
+a bipartite graph with parts V and C. There is an edge {v, C} ∈ E if and only if v belongs to the
+scope of C. Throughout the rest of the paper we use lower-case letters u, v, x, y, . . . for variable
+nodes in V and upper-case letters A, B, C, . . . for constraint nodes in C. Since we are dealing with
+edge CSP, the degree of each node v ∈ V in G I is exactly two and since we don’t allow a variable
+to appear in a constraint twice, G I has no multiple edges. For such instances I we introduce the
+following terminology and notation.
+  Definition 20. An edge labeling of I is a mapping f : E → {0, 1}. For a constraint C ∈ C with
+the scope σ we will denote by f (C) the tuple in {0, 1}σ such that f (C)(v) = f ({v, C}) for all v ∈ σ .
+Edge labeling f will be called valid if f (C) ∈ C for all C ∈ C.
+  Variable v ∈ V is called consistent in f if f ({v, A}) = f ({v, B}) for the two distinct edges
+{v, A}, {v, B} ∈ E of G I . Otherwise, v is inconsistent in f .
+  A valid edge labeling f is optimal if its number of inconsistent variables is minimal among all
+valid edge labelings of I . Otherwise f is called non-optimal.
+  Note that I has a solution if and only if an optimal edge labeling f of I has no inconsistent
+variables.
+  The main theorem we prove is the following strengthening of Theorem 8.
+   Theorem 21. Given an edge CSP instance I with even ∆-matroid constraints, an optimal edge
+labeling f of I can be found in time polynomial in |I |.
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                      0:9
+
+  Walks and blossoms. When studying matchings in a graph, paths and augmenting paths are
+important. We will use analogous objects, called f -walks and augmenting f -walks, respectively.
+  Definition 22. A walk q of length k in the instance I is a sequence q 0C 1q 1C 2 . . . Ck qk where the
+variables qi−1 , qi lie in the scope of the constraint Ci , and each edge {v, C} ∈ E is traversed at most
+once: vC and Cv occur in q at most once, and they do not occur simultaneously.
+  We allow walks of length 0 (i.e. single vertex walks) for formal reasons.
+   Note that a walk in the instance I can be viewed as a walk in the graph G I that starts and ends at
+nodes in V and uses each edge at most once. Since each node v ∈ V has degree two in G I , a walk
+that enters a variable node v through an edge must leave v through the other edge and cannot ever
+return to v again. The two exceptional vertices are the initial and terminal vertex of a walk. These
+vertices can be identical, i.e. we allow walks of the form vCq 1 . . . qk −1 Dv.
+   A subwalk of q, denoted by q [i, j] , is the walk qi Ci+1 . . . C j q j (again, we need to start and end in a
+variable). The inverse walk to q, denoted by q −1 , is the sequence qk Ck . . . q 1C 1q 0 . Given two walks
+p and q such that the last node of p is the first node of q, we define their concatenation pq in the
+natural way. If p = α 1 . . . α k and q = β 1 . . . β ℓ are sequences of nodes of a graph where α k and β 1
+are different but adjacent, we will denote the sequence α 1 . . . α k β 1 . . . β ℓ also by pq (or sometimes
+as p, q).
+   If f is an edge labeling of I and q a walk in I , we denote by f ⊕ q the mapping that takes f and
+flips the values on all variable-constraint edges encountered in q, i.e.
+                                             (
+                                              1− f ({v, C}) if q contains vC or Cv
+                       (f ⊕ q)({v, C}) =                                                                     (1)
+                                              f ({v, C})        otherwise.
+    Definition 23. Let f be a valid edge labeling of an instance I . A walk q = q 0C 1q 1C 2 . . . Ck qk with
+q 0 , qk will be called an f -walk if
+    (1) variables q 1 , . . . , qk −1 are consistent in f , and
+    (2) f ⊕ q [0,i] is a valid edge labeling for any i ∈ [1, k].
+If in addition variables q 0 and qk are inconsistent in f then q will be called an augmenting f -walk.
+  Observe that condition 2 of the definition of an f -walk is stronger than just “f ⊕ q is valid.”
+Instead, an f -walk corresponds to a whole sequence of valid labelings.
+  Later we will show that a valid edge labeling f is non-optimal if and only if there exists an
+augmenting f -walk. Note that one direction is straightforward: If p is an augmenting f -walk, then
+f ⊕ p is valid and has 2 fewer inconsistent variables than f .
+  Another structure used by the Edmonds’ algorithm for matchings is a blossom. The precise
+definition of a blossom in our setting (Definition 39) is a bit technical. Informally, an f -blossom is a
+walk b = b0C 1b1C 2 . . . Ck bk with b0 = bk such that:
+  (1) variable b0 = bk is inconsistent in f while variables b1 , . . . , bk−1 are consistent, and
+  (2) f ⊕ b[i, j] is a valid edge labeling for any non-empty proper subinterval [i, j] ⊊ [0, k],
+  (3) there are no bad shortcuts inside b (we will make this precise later).
+
+5.2   Algorithm description
+We are given an instance I of edge CSP with even ∆-matroid constraints together with a valid edge
+labeling f and we want to either show that f is optimal or improve it. Our algorithm will explore
+the graph (V ∪ C, E) building a directed forest T . Each variable node v ∈ V will be added to T at
+most once. Constraint nodes C ∈ C, however, can be added to T multiple times. To tell the copies of
+C apart (and to keep track of the order in which we built T ), we will mark each C with a timestamp
+
+                                                   ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:10                                            Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+ALGORITHM 1: Improving a given edge labeling
+Input: Instance I , valid edge labeling f of I .
+Output: A valid edge labeling д of I with fewer inconsistent variables than f , or “No” if no such д exists.
+  (1) Initialize T as follows: set timestamp t = 1, and for each inconsistent variable v ∈ V of I add v to T as
+       an isolated root.
+  (2) Pick an edge {v, C} ∈ E such that v ∈ V (T ) but there is no s such that vC s ∈ E(T ) or C s v ∈ E(T ). (If
+       no such edge exists, then output “No” and terminate.)
+  (3) Add new node C t to T together with the edge vC t .
+  (4) Let W be the set of all variables w , v in the scope of C such that f (C) ⊕ v ⊕ w ∈ C (recall that
+       f (C) ⊕ v ⊕ w ∈ C is a shorthand for f (C) ⊕ v ⊕ w ∈ RC ). For each w ∈ W do the following (see Figure
+       2):
+     (a) If w < V (T ), then add w to T together with the edge C t w.
+    (b) Else if w has a parent of the form C s for some s, then do nothing.
+     (c) Else if v and w belong to different trees in T (i.e. originate from different roots), then we have found
+          an augmenting path. Let p = walk(C t ), walk(w)−1 , output f ⊕ p and exit.
+     (d) Else if v and w belong to the same tree in T , then we have found a blossom. Form a new instance I b
+          and new valid edge labeling f b of I b by contracting this blossom. Solve this instance recursively, use
+          the resulting improved edge labeling for I b (if it exists) to compute an improved valid edge labeling
+          for I , and terminate. All details are given in Sec. 5.3.
+  (5) Increase the timestamp t by 1 and goto step 2.
+
+
+
+
+t ∈ N; the resulting node of T will be denoted as C t ∈ C × N. Thus, the forest will have the form
+T = (V (T ) ∪ C(T ), E(T )) where V (T ) ⊆ V and C(T ) ⊆ C × N.
+   The roots of the forest T will be the inconsistent nodes of the instance (for current f ); all non-root
+nodes in V (T ) will be consistent. The edges of T will be oriented towards the leaves. Thus, each
+non-root node α ∈ V (T ) ∪ C(T ) will have exactly one parent β ∈ V (T ) ∪ C(T ) with βα ∈ E(T ). For
+a node α ∈ V (T ) ∪ C(T ) let walk(α) be the the unique path in T from a root to α. Note that walk(α)
+is a subgraph of T . Sometimes we will treat walks in T as sequences of nodes in V ∪ C discussed in
+Section 5.1 (i.e. with timestamps removed); such places should be clear from the context.
+   We will grow the forest T in a greedy manner as shown in Algorithm 1. The structure of
+the algorithm resembles that of the Edmonds’ algorithm for matchings [10], with the following
+important distinctions: First, in the Edmonds’ algorithm each “constraint node” (i.e. each node of
+the input graph) can be added to the forest at most once, while in Algorithm 1 some constraints
+C ∈ C can be added to T and “expanded” multiple times (i.e. E(T ) may contain edges C s u and C t w
+added at distinct timestamps s , t). This is because we allow more general constraints. In particular,
+if C is a “perfect matching” constraint (i.e. C = {(a 1 , . . . , ak ) ∈ {0, 1}k : a 1 + . . . + ak = 1}) then
+Algorithm 1 will expand it at most once. (We will not use this fact, and thus omit the proof.)
+   Note that even when we enter a constraint node for the second or third time, we “branch out”
+based on transitions vCw available before the first visit, even though the tuple of C might have
+changed in the meantime. This could cause one to doubt that Algorithm 1 works at all.
+   A vague answer to this objection is that we grow T very carefully: While the Edmonds’ algorithm
+does not impose any restrictions on the order in which the forest is grown, we require that all valid
+children w ∈ W be added to T simultaneously when exploring edge {v, C} in step 4. Informally
+speaking, this will guarantee that forest T does not have “shortcuts”, a property that will be essential
+in the proofs. The possibility of having shortcuts is something that is not present in graph matchings
+and is one of the properties of even ∆-matroids responsible for the considerable length of the
+correctness proofs.
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                        0:11
+
+                      t                                             t                            z
+                          D
+              E                       v
+                                          C                    E1        D2                     A3      B4
+          s               u
+
+                                                        u          s         v              r          y         x
+          F               w                   x
+
+                  q           y
+      r                                   B       C5
+
+              A                   z
+                                                  v           x
+
+Fig. 2. A possible run of Algorithm 1 on the instance I ′ from Example 17 (with renamed constraint nodes)
+where the edge labeling f is marked by thick (1) and thin (0) half-edges. We see that the algorithm finds a
+blossom when it hits the variable v the second time in the same tree. However, had we first processed the
+transition Cx (which we could have done), we would have found an augmenting path p = walk(C 5 ) walk(x)−1
+(where walk(x)−1 ends in z).
+
+
+  In the following theorem, we collect all pieces we need to show that Algorithm 1 is correct and
+runs in polynomial time:
+  Theorem 24. If I is a CSP instance, f is a valid edge labeling of I , and we run Algorithm 1, then
+the following is true:
+  (1) The mapping f ⊕ p from step 4c is a valid edge labeling of I with fewer inconsistencies than f .
+  (2) When contracting a blossom as described in Section 5.3 I b is an edge CSP instance with even
+       ∆-matroid constraints and f b is a valid edge labeling to I b .
+  (3) The recursion in 4d will occur at most O(|V |) many times.
+  (4) In step 4d, f b is optimal for I b if and only if f is optimal for I . Moreover, given a valid edge
+       labeling дb of I b with fewer inconsistent variables than f b , we can in polynomial time output a
+       valid edge labeling д of I with fewer inconsistent variables than f .
+  (5) If the algorithm answers “No” then f is optimal.
+
+5.3   Contracting a blossom (step 4d)
+We now elaborate step 4d of Algorithm 1. First, let us describe how to obtain the blossom b. Let
+α ∈ V (T ) ∪ C(T ) be the lowest common ancestor of nodes v and w in T . Two cases are possible.
+  (1) α = r ∈ V (T ). Variable node r must be inconsistent in f because it has outdegree two. We let
+      b = walk(C t ), walk(w)−1 in this case.
+  (2) α = R s ∈ C(T ). Let r be the child of R s in T that is an ancestor of v. Replace edge labeling f
+      with f ⊕ walk(r ) (variable r then becomes inconsistent). Now define walk b = p, q −1 , r where
+      p is the walk from r to C t in T and q is the walk from R s to w in T (see Figure 3).
+  Lemma 25 (To be proved in Section 6.3). Assume that Algorithm 1 reaches step 4d and one of
+the cases described in the above paragraph occurs. Then:
+  (1) in case 2 the edge labeling f ⊕ walk(r ) is valid, and
+  (2) in both cases the walk b is an f -blossom (for the new edge labeling f , in case 2). (Note that we
+      have not formally defined f -blossoms yet; they require some machinery that will come later –
+      see Definition 39.)
+
+                                                      ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:12                                                 Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+
+                                                                                    ..
+                                                                                     .
+
+                                   r
+                                                                                  Rs        r
+                                                 s
+                                             R
+
+                                                           v
+
+
+                                                      Ct                                            v
+
+                                                                                          C t0
+                               C   0         w
+                                                                                   w
+
+Fig. 3. The two cases of step 4d. On the left, α = r is a variable, while on the right α = R s is a constraint and
+the thick edges denote p = walk(r ). The dashed edges are orientations of edges from E that are not in the
+digraph T , but belong to the blossom.
+
+
+
+   To summarize, at this point we have a valid edge labeling f of instance I and an f -blossom
+b = b0C 1b1 . . . Ck bk . Let us denote by L the set of constraints in the blossom, i.e. L = {C 1 , . . . , Ck }.
+   We construct a new instance I b and its valid edge labeling f b by contracting the blossom b as
+follows: we take I , add one |L|-ary constraint N to I , delete the variables b1 , . . . , bk , and add new
+variables {vC : C ∈ L} (see Figure 4). The scope of N is {vC : C ∈ L} and the ∆-matroid of N consists
+of exactly those maps α ∈ {0, 1} L that send one vC to 1 and the rest to 0 (that is, N is one of the
+perfect matching ∆-matroids from Example 17).
+   In addition to all this, we replace each blossom constraint D ∈ L by the constraint D b whose
+scope is σ \ {b1 , . . . , bk } ∪ {v D } where σ is the scope of D. The constraint relation of D b consists
+of all maps β for which there exists α ∈ D such that α agrees with β on σ \ {b1 , . . . , bk } and one of
+the following occurs (see Figure 5; note that σ can contain more than two elements of {b1 , . . . , bk }
+if D appears in the blossom multiple times):
+   (1) β(v D ) = 0 and α agrees with the original labeling f (D) on all variables in {b1 , . . . , bk } ∩ σ , or
+   (2) β(v D ) = 1 and there is exactly one variable z ∈ {b1 , . . . , bk } ∩ σ such that α(z) , f (D)(z).
+  We claim that D b is an even ∆-matroid. Indeed, let Z D be the relation on variables {b1 , . . . , bk } ∩
+σ ∪ {v D } with the set of tuples
+
+                               Z D = {α } ∪ {α ⊕ b ⊕ v D | b ∈ {b1 , . . . , bk } ∩ σ }
+
+where α is the tuple with α(bi ) = f (bi ) and α(v D ) = 0. It is straightforward to verify that Z D is an
+even ∆-matroid and that D b is the composition of D and Z D so, it follows from Proposition 6 that
+each D b is an even ∆-matroid.
+   We define the edge labeling f b of I b as follows: for constraints A < {C 1 , . . . , Ck , N } we set
+f (A) = f (A). For each C ∈ L, we let f b (C b )(v) = f (C)(v) when v , vC , and f b (C b )(vC ) = 0.
+ b
+
+Finally, we let f b (N )(vC ) = 1 for C = C 1 and f b (N )(vC ) = 0 for all other Cs. (The last choice is
+arbitrary; initializing f b (N ) with any other tuple in N would work as well.)
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                      0:13
+
+
+                  b0         C1          b1                                              C1b
+
+                                                                                          vC1
+            C7                                C2                      C7b                                C2b
+                                                                                   vC7
+                                                                                                   vC2
+       b6                                           b2                                   N
+                                                                            vC6
+            C6                                 C3                    C6b                           vC3     C3b
+                                                                                  vC5     vC4
+             b5                               b3
+                       C5           C4                                            C5b           C4b
+                             b4
+
+Fig. 4. A blossom (left) and a contracted blossom (right) in case when all constraints C 1 , . . . , Ck are distinct.
+If some constraints appear in the blossom multiple times then the number of variables vCi will be smaller
+than k (see Figure 5).
+
+
+  It is easy to check that f b is valid for I b . Furthermore, vC1 is inconsistent in f b while for each
+C ∈ L \ {C 1 } the variable vC is consistent.
+   Observation 26. In the situation described above, the instance I b will have at most as many
+variables as I and one constraint more than I . Edge labelings f and f b have the same number of
+inconsistent variables.
+  Corollary 27 (Theorem 24(3)). When given an instance I , Algorithm 1 will recursively call itself
+O(|V |) many times.
+    Proof. Since C and V are partitions of G I and the degree of each v ∈ V is two, the number of
+edges of G I is 2|V |. From the other side, the number of edges of G I is equal to the sum of arities of all
+constraints in I . Since we never consider constraints with empty scopes, the number of constraints
+of an instance is at most double the number of variables of the instance.
+    Since each contraction adds one more constraint and never increases the number of variables,
+it follows that there cannot be a sequence of consecutive contractions longer than 2|V |, which is
+O(|V |).                                                                                                  □
+   The following two lemmas, which we prove in Section 6, show why the procedure works. In
+both lemmas, we let (I , f ) and (I b , f b ) denote the instance and the valid edge labeling before and
+after the contraction, respectively.
+  Lemma 28. In the situation described above, if f b is optimal for I b , then f is optimal for I .
+   Lemma 29. In the situation described above, if we are given a valid edge labeling дb of I b with fewer
+inconsistencies than f b , then we can find in polynomial time a valid edge labeling д of I with fewer
+inconsistencies than f .
+
+5.4   Time complexity of Algorithm 1
+To see that Algorithm 1 runs in time polynomial in the size of I , consider first the case when step 4d
+does happen. In this case, the algorithm runs in time polynomial in the size of I , since it essentially
+just searches through the graph G I .
+
+                                                     ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:14                                            Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+                                                   Db
+                    bi−1                                      bi−1
+
+y                                       y
+                                                                                               (λ    i−1 λi λj−1 λj 0
+                                                                                                                     )
+                            bi
+                                                         bi                                        λi−1 λi λj−1 λj 1
+           D                                      D              ZD               N      ZD =      λi−1 λi λj−1 λj 1
+                                                         bj              vD                        λi−1 λi λj−1 λj 1
+                                       z
+                           bj                                                                      λi−1 λi λj−1 λj 1
+z
+             bj−1                                         bj−1
+
+Fig. 5. Modification of a constraint node D that appears in a blossom b twice, i.e. when we have b =
+. . . bi−1 Dbi . . . b j−1 Db j . . . (and so D = Ci = C j ). Variables y and z are not part of the walk. The construction
+of D b described in the text can be alternatively viewed as composing D with the ∆-matroid Z D as shown in
+the figure. Here Z D is an even ∆-matroid with five tuples that depend on the values λk = f ({bk , D}) and
+λk = 1 − λk .
+
+
+
+
+     Moreover, from the description of contracting a blossom in Section 5.3, it is easy to see that one
+can compute I b and f b from I and f in polynomial time and that I b is not significantly larger than
+I : I b has at most as many variables as I and the contracted blossom constraints C b are not larger
+than the original constraints C. Finally, I b does have one brand new constraint N , but N contains
+only O(|V |) many tuples. Therefore, we have |I b | ≤ |I | + O(|V |) where |V | does not change. By
+Corollary 27, there will be at most O(|V |) contractions in total, so the size of the final instance I ⋆ is
+at most |I | + O(|V | 2 ), which is easily polynomial in |I |.
+     All in all, Algorithm 1 will give its answer in time polynomial in |I |.
+
+6   PROOFS
+In this section, we flesh out detailed proofs of the statements we gave above. In the whole section,
+I will be an instance of a Boolean edge CSP whose constraints are even ∆-matroids.
+   In Sec. 6.1 we establish some properties of f -walks, and show in particular that a valid edge
+labeling f of I is non-optimal if and only if there exists an augmenting f -walk in I . In Sec. 6.2 we
+introduce the notion of an f -DAG, prove that the forest T constructed during the algorithm is in
+fact an f -DAG, and describe some tools for manipulating f -DAGs. Then in Sec. 6.3 we analyze
+augmentation and contraction operations, namely prove Theorem 24(1) and Lemmas 25, 28, 29
+(which imply Theorem 24(2, 4). Finally, in Sec. 6.4 we prove Theorem 24(5).
+   For edge labelings f , д, let f ∆ д ⊆ E be the set of edges in E on which f and д differ.
+
+   Observation 30. If f and д are valid edge labelings of instance I then they have the same number
+of inconsistencies modulo 2.
+
+   Proof. We use induction on | f ∆ д|. The base case | f ∆ д| = 0 is trivial. For the induction step
+let us consider valid edge labelings f , д with | f ∆ д| ≥ 1. Pick an edge {v, C} ∈ f ∆ д. By the
+property of even ∆-matroids there exists another edge {w, C} ∈ f ∆ д with w , v such that
+f (C) ⊕ v ⊕ w ∈ C. Thus, edge labeling f ⋆ = f ⊕ (vCw) is valid. Clearly, f and f ⋆ have the same
+number of inconsistencies modulo 2. By the induction hypothesis, the same holds for edge labelings
+f ⋆ and д (since | f ⋆ ∆ д| = | f ∆ д| − 2). This proves the claim.                                 □
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                 0:15
+
+6.1   The properties of f -walks
+Let us begin with some results on f -walks that will be of use later. The following lemma is a (bit
+more technical) variant of the well known property of labelings proven in [8, Theorem 3.6]:
+   Lemma 31. Let f , д be valid edge labelings of I such that д has fewer inconsistencies than f , and x
+be an inconsistent variable in f . Then there exists an augmenting f -walk that begins in a variable
+different from x. Moreover, such a walk can be computed in polynomial time given I , f , д, and x.
+   Proof. Our algorithm will proceed in two stages. First, we repeatedly modify the edge labeling
+д using the following procedure:
+   (1) Pick a variable v ∈ V which is consistent in f , but not in д. (If no such v exists then go to the
+       next paragraph). By the choice of v, there exists a unique edge {v, C} ∈ f ∆ д. Pick a variable
+       w , v in the scope of C such that {w, C} ∈ f ∆ д and д(C) ⊕ v ⊕ w ∈ C (it exists since C is an
+       even ∆-matroid). Replace д with д ⊕ (vCw), then go to the beginning and repeat.
+It can be seen that д remains a valid edge labeling, and the number of inconsistencies in д never
+increases. Furthermore, each step decreases | f ∆ д| by 2, so this procedure must terminate after at
+most O(|E |) = O(|V |) steps.
+   We now have valid edge labelings f , д such that f has more inconsistencies than д, and variables
+consistent in f are also consistent in д. Since the parity of number of inconsistencies in f and д is
+the same, f has at least two more inconsistent variables than д; one of them must be different from
+x.
+   In the second stage we will maintain an f -walk p and the corresponding valid edge labeling
+f ⋆ = f ⊕ p. To initialize, pick a variable r ∈ V \ {x } which is consistent in д but not in f , and set
+p = r and f ⋆ = f . We then repeatedly apply the following step:
+   (2) Let v be the endpoint of p. The variable v is consistent in д but not in f ⋆ , so there is a unique
+       edge {v, C} ∈ f ⋆ ∆ д. Pick a variable w , v in the scope of C such that {w, C} ∈ f ⋆ ∆ д and
+       f ⋆ (C) ⊕ v ⊕ w ∈ C (it exists since C is an even ∆-matroid). Append vCw to the end of p, and
+       accordingly replace f ⋆ with f ⋆ ⊕ (vCw) (which is valid by the choice of w). As a result of
+       this update of f ⋆ , edges {v, C} and {w, C} disappear from f ⋆ ∆ д.
+       If w is inconsistent in f , then output p (which is an augmenting f -walk) and terminate.
+       Otherwise w is consistent in f (and thus in д) but not in f ⋆ ; in this case, go to the beginning
+       and repeat.
+Each step decreases | f ⋆ ∆ д| by 2, so this procedure must terminate after at most O(|E |) = O(|V |)
+steps. To see that p is indeed a walk, observe that the starting node r has exactly one incident edge
+in the graph (V ∪ C, f ⋆ ∆ д). Since this edge is immediately removed from f ⋆ ∆ д, we will never
+encounter the variable r again during the procedure.                                                     □
+
+6.2   Invariants of Algorithm 1: f -DAGs
+In this section we examine the properties of the forest T as generated by Algorithm 1. For future
+comfort, we will actually allow T to be a bit more general than what appears in Algorithm 1 – our
+T can be a directed acyclic digraph (DAG):
+   Definition 32. Let I be a Boolean edge CSP instance and f a valid edge labeling of I . We will call
+a directed graph T an f -DAG if T = (V (T ) ∪ C(T ), E(T )) where V (T ) ⊆ V , C(T ) ⊆ C × N, and the
+following conditions hold:
+   (1) Edges of E(T ) have the form vC t or C t v where {v, C} ∈ E and t ∈ N.
+   (2) For each {v, C} ∈ E there is at most one t ∈ N such that vC t or C t v appears in E(T ). Moreover,
+       vC t and C t v are never both in E(T ).
+
+                                                ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:16                                            Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+   (3) Each node v ∈ V (T ) has at most one incoming edge. (Note that by the previous properties,
+       the node v can have at most two incident edges in T .)
+   (4) Timestamps t for nodes C t ∈ C(T ) are all distinct (and thus give a total order on C(T )).
+       Moreover, this order can be extended to a total order ≺ on V (T ) ∪ C(T ) such that α ≺ β for
+       each edge α β ∈ E(T ). (So in particular the digraph T is acyclic.)
+   (5) If T contains edges uC t and one of vC t or C t v, then f (C) ⊕ u ⊕ v ∈ C.
+   (6) (“No shortcuts” property) If T contains edges uC s and one of vC t or C t v where s < t, then
+       f (C) ⊕ u ⊕ v < C.
+   From the definition of an f -DAG, we immediately obtain the following.
+   Observation 33. Any subgraph of an f -DAG is also an f -DAG.
+  If T is an f -DAG, then we denote by f ⊕ T the edge labeling we obtain from f by flipping the
+value of any f ({v, C}) such that vC t ∈ E(T ) or C t v ∈ E(T ) for some timestamp t. We will need to
+show that f ⊕ T is a valid edge labeling for nice enough f -DAGs T .
+  The following lemma shows the promised invariant property:
+  Lemma 34. Let us consider the structure T during the run of Algorithm 1 with the input I and f . At
+any moment during the run, the forest T is an f -DAG.
+  Moreover, if steps 4c or 4d are reached, then the digraph T ⋆ obtained from T by removing all edges
+outgoing from C t and adding the edge wC t is also an f -DAG.
+    Proof. Obviously, an empty T is an f -DAG, as is the initial T consisting of inconsistent variables
+and no edges. To verify that T remains an f -DAG during the whole run of Algorithm 1, we need to
+make sure that neither adding vC t in step 3, nor adding C t w in step 4a violates the properties of
+T . Let us consider step 3 first. By the choice of v and C t , we immediately get that properties (1),
+(2), (3), and (4) all hold even after we have added vC t to T (we can order the nodes by the order in
+which they were added to T ). Since there is only one edge incident with C t , property (5) holds as
+well. Finally, the only way the “no shortcuts” property (i.e. property (6)) could fail would be if there
+were some u and s < t such that uC s ∈ E(T ) and f (C) ⊕ u ⊕ v ∈ C. But then, after the node C s got
+added to T , we should have computed the set W of variables w such that f (C) ⊕ u ⊕ w ∈ C (step 4)
+and v should have been in W \ V (T ) at that time, i.e. we should have added the edge C s v before, a
+contradiction. The analysis of step 4a is similar.
+    Assume now that Algorithm 1 has reached one of steps 4c or 4d and consider the DAG T ⋆ that
+we get from T by removing all edges of the form C t z and adding the edge wC t . Note that the node
+C t is the only node with two incoming edges. The only three properties that could possibly be
+affected by going from T to T ⋆ are (2), (5) and (6). Were (2) violated, we would have C s w ∈ E(T )
+already, and so step 4b would be triggered instead of steps 4c or 4d. For property (5), the only new
+pair of edges to consider is vC t and wC t for which we have f (C) ⊕v ⊕ w ∈ C. Finally, if property (6)
+became violated after adding the edge wC t then there were a u and s < t such that uC s ∈ E(T )
+and f (C) ⊕ u ⊕ w ∈ C. Node C s must have been added after w, or else we would have C s w ∈ E(T ).
+Also, w cannot have a parent of the form C k (otherwise step 4b would be triggered for w when
+expanding C t ). But then one of steps 4d or 4c would be triggered at timestamp s already when we
+tried to expand C s , a contradiction.                                                                □
+  We will use the following two lemmas to prove that f ⊕ p is a valid edge labeling of I for various
+paths p that appear in steps 4c and 4d.
+   Lemma 35. Let T be an f -DAG, and C s be the constraint node in C(T ) with the smallest timestamp
+s. Suppose that C s has exactly two incident edges, namely incoming edge uC s where u does not have
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                       0:17
+
+                                           u
+                              T
+                                      Cs
+
+                                           v                                    T?          v
+
+                    f -DAG                                            f ? -DAG
+
+                               ...             ...                               ...            ...
+
+      Fig. 6. An f -DAG T on the left turns into f ⋆ -DAG T ⋆ on the right; the setting from Lemma 35.
+
+
+other incident edges besides uC s and another edge C s v (see Figure 6). Let f ⋆ = f ⊕ (uCv) and let T ⋆
+be the DAG obtained from T by removing nodes u, C s and the two edges incident to C s . Then f ⋆ is a
+valid edge labeling of I and T ⋆ is an f ⋆ -DAG.
+
+    Proof. Since T ⋆ is a subgraph of T , it immediately follows that T ⋆ satisfies the properties (1),
+(2), (3), and (4) from the definition of an f -DAG all hold.
+    Let us show that T ⋆ has property (5). Consider a constraint node C t ∈ C(T ⋆ ) with t > s (nothing
+has changed for other constraint nodes in C(T ⋆ )), and suppose that T ⋆ contains edges xC t and
+one of yC t or C t y. If x = y, the situation is trivial, so assume that u, v, x, y are all distinct variables.
+We need to show that f ⋆ (C) ⊕ x ⊕ y ∈ C. The constraint C contains the tuples f (C) ⊕ u ⊕ v and
+f (C) ⊕ x ⊕ y (by condition (5) for T ), but the no shortcuts property prohibits the tuples f (C) ⊕ u ⊕ x
+and f (C) ⊕ u ⊕ y from lying in C. Therefore, applying the even ∆-matroid property on f (C) ⊕ u ⊕ v
+and f (C) ⊕ x ⊕ y in the variable u we get that C must contain f (C) ⊕ u ⊕ v ⊕ x ⊕ y, so we have
+f ⋆ (C) ⊕ x ⊕ y ∈ C.
+    Now let us prove that T ⋆ and f ⋆ have the “no shortcuts” property. Consider constraint nodes
+C , C ℓ in C(T ⋆ ) with s < k < ℓ (since nothing has changed for constraint nodes other than C), and
+  k
+
+suppose that T ⋆ contains edges xC k and one of yC ℓ or C ℓy, where again u, v, x, y are all distinct
+variables. We need to show that f ⋆ (C) ⊕ x ⊕ y < C, or equivalently that f (C) ⊕ u ⊕ v ⊕ x ⊕ y < C.
+    Assume that it is not the case. Apply the even ∆-matroid property to tuples f (C)⊕u ⊕v ⊕x ⊕y and
+f (C) (which are both in C) in coordinate v. We get that either f (C) ⊕ x ⊕ y ∈ C, or f (C) ⊕ u ⊕ x ∈ C,
+or f (C) ⊕ u ⊕ y ∈ C. This contradicts the “no shortcuts” property for the pair (C k , C ℓ ), or (C s , C k ),
+or (C s , C ℓ ), respectively, and we are done.                                                              □
+  Corollary 36. Let I be an edge CSP instance and f be a valid edge labeling.
+  (1) Let T be an f -DAG that consists of two directed paths x 0C 1t1 x 1 . . . x k −1Cktk and y0 D s11 . . . y ℓ−1 D sℓℓ
+      that are disjoint everywhere except at the constraint Cktk = D sℓℓ (see Figure 7). Then f ⊕ T is a
+      valid edge labeling of I .
+  (2) Let T be an f -DAG that consists of a single directed path x 0C 1t0 x 1 . . . x k −1Cktk x k . Then f ⊕ T is
+      a valid edge labeling of I .
+   Proof. We will prove only part (a); the proof of part (b) is completely analogous. We proceed by
+induction on k + ℓ. If k = ℓ = 1, T consists only of the two edges x 0C t and y0C t (where C t is an
+abbreviated name for C 1t1 = D s11 ). Then the fact that f ⊕ (x 0Cy0 ) is a valid edge labeling follows
+from the property (5) of f -DAGs.
+   If we are now given an f -DAG T of the above form, then we compare t 1 and s 1 . Since the situation
+is symmetric, we can assume without loss of generality that s 1 > t 1 . We then use Lemma 35 for
+
+                                                      ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:18                                            Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+         x0                                                                                                    y0
+                           x1                                                                 y1
+                 C1t1                                                                                   D1s1
+                                   C2t2               xk−1              y`−1          D2s2
+                                              ...                           ...
+
+                                                          Cktk = D`s`
+
+                                    Fig. 7. Two meeting paths from Corollary 36.
+
+                                                  u
+                                       T
+                                                                                       T?
+                           f -DAG            Cs                           f ? -DAG           Cs
+
+                                   v                                              v
+
+                                                    ...                                           ...
+
+
+
+
+                                       ...                                            ...
+
+                         Fig. 8. An f -DAG T turns into an f ⋆ -DAG T ⋆ (see Lemma 37).
+
+
+x 1C 1t1 x 2 (there is a x 2 since tk > s 1 > t 1 ), obtaining the (f ⊕ (x 1C 1x 2 ))-DAG T ⋆ that consists of two
+directed paths x 2 . . . x k C tk and y1 D s11 . . . y ℓ D sℓℓ . Since T ⋆ is shorter than T , the induction hypothesis
+gets us that f ⊕ (x 1C 1x 2 ) ⊕ T ⋆ = f ⊕ T is a valid edge labeling.                                                □
+
+   Lemma 37. Let T be an f -DAG, and C s be the constraint node in C(T ) with the smallest timestamp
+s. Suppose that C s has exactly one incoming edge uC s , and u does not have other incident edges besides
+uC s . Suppose also that C s has an outgoing edge C s v. Let f ⋆ = f ⊕ (uCv), and T ⋆ be the DAG obtained
+from T by removing the edge uC s together with u and reversing the orientation of edge C s v (see Figure
+8). Then f ⋆ is a valid edge labeling of I and T ⋆ is an f ⋆ -DAG.
+
+   Proof. It is easy to verify that T ⋆ satisfies the properties (1), (2) and (3). To see property (4),
+just take the linear order on nodes of T and change the position of v so that it is the new minimal
+element in this order (v has no incoming edges in T ⋆ ).
+   Let us prove that property (5) of Definition 32 is preserved. First, consider constraint node C s .
+Suppose that T ⋆ contains one of xC s or C s x with x , v. We need to show that f ⋆ (C) ⊕ v ⊕ x ∈ C,
+or equivalently f (C) ⊕ u ⊕ x ∈ C (since f ⋆ (C) ⊕ v = f (C) ⊕ (u ⊕ v) ⊕ v = f (C) ⊕ u). This claim
+holds by property (5) of Definition 32 for T .
+   Now consider a constraint node C t ∈ C(T ⋆ ) with t > s, and suppose that T ⋆ contains edges
+xC t and one of yC t or C t y. We need to show that f ⋆ (C) ⊕ x ⊕ y ∈ C, or equivalently that
+f (C) ⊕ u ⊕ v ⊕ x ⊕ y ∈ C. For that we can simply repeat word-by-word the argument used in the
+proof of Lemma 35.
+   Now let us prove that the “no shortcuts” property is preserved. First, consider a constraint node
+C t in C(T ⋆ ) with t > s, and suppose that T ⋆ contains one of xC t or C t x. We need to show that
+f ⋆ (C) ⊕v ⊕ x < C, or equivalently f (C) ⊕u ⊕ x < C. This claim holds by the “no shortcuts” property
+for T . Now consider constraint nodes C k , C ℓ in C(T ⋆ ) with s < k < ℓ, and suppose that T ⋆ contains
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                 0:19
+
+edges xC k and one of yC ℓ or C ℓy. Note that u, v, x, y are all distinct variables. We need to show
+that f ⋆ (C) ⊕ x ⊕ y < C, or equivalently that f (C) ⊕ u ⊕ v ⊕ x ⊕ y < C. For that we can simply repeat
+word-by-word the argument used to show the no shortcuts property in the proof of Lemma 35. □
+
+6.3 Analysis of augmentations and contractions
+First, we prove the correctness of the augmentation operation.
+   Proposition 38 (Theorem 24(1) restated). The mapping f ⊕ p from step 4c is a valid edge
+labeling of I with fewer inconsistencies than f .
+   Proof. Let T1 be the f -DAG constructed during the run of Algorithm 1; let T2 be the DAG
+obtained from T1 by adding the edge wC t . By Lemma 34, T2 is an f -DAG. Let T3 be the subgraph of
+T2 induced by the nodes in p. It is easy to verify that T3 consists of two directed paths that share
+their last node. Therefore, by Corollary 36, we get that f ⊕ T3 = f ⊕ p is a valid edge labeling of
+I.                                                                                                 □
+  In the remainder of this section we show the correctness of the contraction operation by proving
+Lemmas 25, 28, 29. Let us begin by giving a full definition of a blossom:
+  Definition 39. Let f be a valid edge labeling. An f -blossom is any walk b = b0C 1b1C 2 . . . Ck bk
+with b0 = bk such that:
+  (1) variable b0 = bk is inconsistent in f while variables b1 , . . . , bk −1 are consistent, and
+  (2) there exists ℓ ∈ [1, k] and timestamps t 1 , . . . , tk such that the DAG consisting of two directed
+      paths b0C 1t1 . . . b ℓ−1C ℓt ℓ and bk Cktk bk −1 . . . b ℓC ℓt ℓ is an f -DAG.
+  Lemma 40. Let b be an f -blossom. Then b[i, j] is an f -walk (as per Definition 23) for any non-empty
+proper subinterval [i, j] ⫋ [0, k].
+    Proof. Let us denote the f -DAG from the definition of a blossom by B. By taking an appropriate
+subgraph of B and applying Corollary 36 we get that f ⊕b[i, j] is valid for any non-empty subinterval
+[i, j] ⫋ [0, k]. Since the set of these intervals is downward closed, b[i, j] is in fact an f -walk. □
+  Lemma 41 (Lemma 25 restated). Assume that Algorithm 1 reaches step 4d and one of the cases
+described at the beginning of Section 5.3 occurs. Then:
+  (1) in case 2 the edge labeling f ⊕ walk(r ) is valid, and
+  (2) in both cases the walk b is an f -blossom (for the new edge labeling f , in case 2).
+    Proof. Let T be the forest at the moment of contraction, T † be the subgraph of T containing
+only paths walk(C t ) and walk(w), and T ⋆ be the graph obtained from T † by adding the edge wC t .
+By Lemma 34, graph T ⋆ is an f -DAG (any subgraph of an f -DAG is again an f -DAG; this is
+Observation 33).
+    If the lowest common ancestor of w and v in T is a variable node r ∈ V (T ) (i.e. we have case 1
+from Section 5.3), then the f -DAG T ⋆ consists of two directed paths from r to the constraint C and
+it is easy to verify that when we let b to be one of these paths followed by the other in reverse, we
+get a blossom.
+    Now consider case 2, i.e. when the lowest common ancestor of w and v in T is a constraint node
+R s ∈ C(T ). Note that T ⋆ has the unique source node u (that does not have incoming edges), and
+u has an outgoing edge uD t where D t is the constraint node with the smallest timestamp in T ⋆ .
+Let us repeat the following operation while D t , R s : Replace f with f ⊕ (uD t z) where z is the
+unique out-neighbor of D t in T ⋆ , and simultaneously modify T ⋆ by removing nodes u, D t and
+edges uD t , D t z. By Lemma 35 f remains a valid edge labeling throughout this process, and T ⋆
+remains an f -DAG (for the latest f ).
+
+                                                ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:20                                            Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+  We get to the point that the unique in-neighbor u of R s is the source node of T ⋆ . Replace f with
+f ⊕ (uR s r ), and simultaneously modify T ⋆ by removing node u together with the edge uR s and
+reversing the orientation of edge R s r . The new f is again valid, and the new T ⋆ is an f -DAG by
+Lemma 37. This means that the resulting walk b is an f -blossom for the new f .                     □
+
+  Finally, we prove two lemmas showing that if we contract a blossom b in instance I to obtain the
+instance I b and the edge labeling f b , then f is optimal for I if and only if f b is optimal for I b .
+  Lemma 42 (Lemma 28 restated). In the situation described above, if f b is optimal for I b , then f is
+optimal for I .
+   Proof. Assume that f is not optimal for I , so there exists a valid edge labeling д with fewer
+inconsistencies than f . Then by Lemma 31 there exists an augmenting f -walk p in I that starts at
+some node other than bk . Denote by p b the sequence obtained from p by replacing each Ci from
+the blossom by Cib . Observe that if p does not contain the variables b1 , . . . , bk , then p is an f -walk
+if and only if p b is an f b -walk, so the only interesting case is when p enters the set {b1 , . . . , bk }.
+   We will proceed along p and consider the first i such that there is a blossom constraint D and an
+index j for which p[0,i] Db j is an f -walk (i.e. we can enter the blossom from p).
+                       b Cbv
+   If D = C 1 , then p[0,i]                b           b                             b
+                              1 C 1 is an f -walk in I . To see that this is an f -walk, note that the
+labeling f ⊕ p[0,i]C 1b j of I agrees with f on all edges of b incident to C 1 except for C 1b j , so it follows
+from part 2 of the definition of C 1b that the tuple (f b ⊕ p[0,i]
+                                                                b C b v )(C b ) lies inside C b .
+                                                                    1 C1      1               1
+                                                     b Db v
+   If D , C 1 , then similar arguments give us that p[0,i]                   b
+                                                            C D NvC 1 is an f -walk. In both cases,
+the f b -walk found is augmenting (recall that the variable vC1 is inconsistent in f b ). We found an
+augmentation of f b , and so f b was not optimal.                                                   □
+
+   To show the other direction, we will first prove the following result.
+  Lemma 43. Let q be an f -walk and T an f -DAG such that q ∩T ∩V = ∅ and there is no proper prefix
+q⋆ of q and no edge vC s or C s v of T such that q⋆Cv would be an f -walk. Then T is a (f ⊕ q)-DAG.
+   Proof. We proceed by induction on the length of q. If q has length 0, the claim is trivial. Otherwise,
+let q = xCyq † for some q † . Note that q † is trivially an (f ⊕ (xCy))-walk. We verify that T is an
+(f ⊕ (xCy))-DAG, at which point it is straightforward to apply the induction hypothesis with
+f ⊕ xCy and q † to show that T is an (f ⊕ q)-DAG.
+   We choose the timestamp t to be smaller than any of the timestamps appearing in T and construct
+the DAG T † from T by adding the nodes x, y, C t and edges xC t and C t y. It is easy to see that T † is
+an f -DAG – the only property that might possibly fail is the “no shortcuts” property. However,
+since the timestamp of C t is minimal, were the “no shortcuts” property violated, T would have to
+contain an edge of the form vC s or C s v such that f (C) ⊕ x ⊕ v ∈ C. But in that case, we would
+have the f -walk xCv, contradicting our assumption on prefixes of q.
+   It follows that T † is an f -DAG and we can use Lemma 35 with the constraint C t and edges xC t
+and C t y to show that T is an (f ⊕ (xC t y))-DAG, concluding the proof.                               □
+
+   Lemma 44 (Lemma 29 restated). In the situation described above, if we are given a valid edge
+labeling дb of I b with fewer inconsistencies than f b , then we can find in polynomial time a valid edge
+labeling д of I with fewer inconsistencies than f .
+  Proof. Our overall strategy here is to take an inconsistency from the outside of the blossom b
+and bring it into the blossom. We begin by showing how to get a valid edge labeling f ′ for I with
+an inconsistent variable just one edge away from b.
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                         0:21
+
+
+                                             bk
+
+                                      Cktk
+                                                                                     x
+                                                                            t
+                                                                          Cj j
+
+                                                                             bj
+
+
+                                                      C`t`
+
+                          Fig. 9. The f ′ -DAG B ′ constructed using xC j b j (where j < ℓ).
+
+
+
+
+    Using Lemma 31, we can use дb and f b to find in polynomial time an augmenting f b -walk p b
+that does not begin at the inconsistent variable vC1 . If p b does not contain any of the variables
+vC1 , . . . , vCk , then we can just output the walk p obtained from p b by replacing each Cib by Ci and
+be done. Assume now that some vC appears in p b . We choose the f b -walk r b so that r b C b vC is
+the shortest prefix of p b that ends with some blossom variable vC . By renaming all C b s in r b to Cs,
+we get the walk r . It is straightforward to verify that r is an f -walk and that rCi bi or rCi bi−1 is an
+f -walk for some i ∈ [1, k]. Let q be the shortest prefix of r such that one of qCi bi or qCi bi−1 is an
+f -walk for some i ∈ [1, k].
+    Recall that the blossom b originates from an f -DAG B. The minimality of q allows us to apply
+Lemma 43 and obtain that B is also an (f ⊕ q)-DAG. Let f ′ = f ⊕ q and let x be the last variable in
+q. It is easy to see that f ′ is a valid edge labeling with exactly as many inconsistent variables as f .
+Moreover x is inconsistent in f ′ and there is an index i such that at least one of xCi bi or xCi bi−1 is
+an f ′-walk. We will now show how to improve f ′.
+    If the constraint Ci appears only once in the blossom b, it is easy to verify (using Lemma 40)
+that one of xCi b[i,k ] or xCi b[0,i−1] −1 is an augmenting f ′-walk. However, since the constraint Ci
+might appear in the blossom several times, we have to come up with a more elaborate scheme.
+The blossom b comes from an f ′-DAG B in which some node C ℓt ℓ is the node with the maximal
+timestamp (for a suitable ℓ ∈ [1, k]). Assume first that there is a j ∈ [ℓ, k] such that xC j b j is an
+f ′-walk. In that case, we take maximal such j and consider the DAG B ′ we get by adding the edge
+  t                                                      t        t j +1
+C j j x to the subgraph of B induced by the nodes C j j , b j , C j+1    , . . . , Cktk , bk , obtaining the directed
+                                  t
+path bk Cktk bk −1Cktk−1
+                       −1
+                           . . . b j C j j x.
+   It is routine to verify that B ′ is an f ′-DAG; the only thing that could possibly fail is the “no
+                                              t       t
+shortcuts” property involving C j j . However, C j j has maximal timestamp in B ′ and there is no i > j
+such that f ′(C j ) ⊕ x ⊕ bi ∈ C j .
+   Using Corollary 36, we get that f ′ ⊕ B ′ is a valid edge labeling which has fewer inconsistencies
+than f ′, so we are done. In a similar way, we can improve f ′ when there exists a j ∈ [1, ℓ] such
+that xC j b j−1 is an f ′-walk.
+   If neither of the above cases occurs, then we take j such that the timestamp t j is maximal and
+either xC j b j or xC j b j−1 is an f ′-walk. Without loss of generality, let xC j b j be an f ′-walk. Then j < ℓ
+                                                                                       t       t j +1
+and we consider the DAG B ′ we get from the subgraph of B induced by C j j , b j , C j+1              , . . . , Cktk , bk by
+
+                                                        ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:22                                            Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+                         t
+adding the edge xC j j (see Figure 9). As before, the only way B ′ cannot be an f ′-DAG is if the “no
+shortcuts” property fails, but that is impossible: we chose j so that t j is maximal, so an examination
+of the makeup of B ′ shows that the only bad thing that could possibly happen is if there were an
+index i ≥ ℓ such that Ci = C j , we had in B the edge bi Citi , and f ′(Ci ) ⊕ bi ⊕ x ∈ Ci . But then we
+would have the f ′-walk xCi bi for i ≥ ℓ and the procedure from the previous paragraph would apply.
+Using Corollary 36, we again see that f ′ ⊕ B ′ is a valid edge labeling with fewer inconsistencies
+than f .
+    It is easy to verify that finding q, calculating f ′ = f ⊕ q, finding an appropriate j and augmenting
+f can all be done in time polynomial in the size of the instance.
+  ′                                                                                                     □
+
+6.4    Proof of Theorem 24(5)
+In this section we will prove that if the algorithm answers “No” then f is an optimal edge labeling.
+  Lemma 45. Suppose that Algorithm 1 outputs “No” in step 2, without ever visiting steps 4c and 4d.
+Then f is optimal.
+  Proof. Let T be the forest upon termination. Our goal is to show that T describes all edges that
+can be reached from some inconsistent variable by an f -walk. In the paragraphs below, we make
+the meaning of “describes” more precise.
+  First of all, we define the set of edges present in T (i.e. we forget the timestamps):
+                  E(T ) = {Cv : C t v ∈ E(T ) for some t } ∪ {vC : vC t ∈ E(T ) for some t }.
+Inspecting Algorithm 1, one can check that E(T ) has the following properties:
+   (1) If v is an inconsistent variable in f and {v, C} ∈ E, then vC ∈ E(T ).
+   (2) If Cv ∈ E(T ) and {v, D} ∈ E, D , C, then vD ∈ E(T ).
+   (3) If vC ∈ E(T ), then Cv < E(T ).
+   (4) Suppose that vC ∈ E(T ) and f (C) ⊕ v ⊕ w ∈ C where v, w are distinct nodes in the scope of
+       constraint C. Then Cw ∈ E(T ).
+   It is easy to see that for each Cv ∈ E(T ) there is an f -walk that starts in an inconsistent
+variable and ends in Cv: Just take the directed path from a suitable root of T to C t v in T and apply
+Corollary 36.
+   Our goal in the rest of the proof is to show the converse – if there is an f -walk that starts in an
+inconsistent variable and ends with the edge Cv then Cv ∈ E(T ). This will prove the Lemma: If f is
+not optimal then by Lemma 31 there is an augmenting f -walk that ends with an edge Cv where v
+is inconsistent. We thus should have Cv ∈ E(T ). However, by property 1 above we have vC ∈ E(T )
+and thus (by property 3) Cv < E(T ), a contradiction.
+   However, to be able to take a smallest counterexample, we will need to strengthen our statement,
+making it more local: Call an f -walk bad if it starts at a variable node which is inconsistent in f ,
+and contains (anywhere; not just at the end) an edge Cv < E(T ); otherwise an f -walk is good. We
+will show that bad f -walks do not exist, which in particular means that any nonzero length f -walk
+from an inconsistent variable needs to end with Cv ∈ E(T ) and the argument from the previous
+paragraph applies.
+   Assume for a contradiction that there exists a bad f -walk. Let p be a shortest bad walk. Write
+p = p ⋆ (vCw) where p ⋆ ends at v. By minimality of p, p ⋆ is good and Cw < E(T ). Using properties (1)
+or (2), we obtain that vC ∈ E(T ) (and therefore Cv < E(T )).
+   Let q be the shortest prefix of p ⋆ (also an f -walk) such that the labeling f ⊕ q ⊕ (vCw) is valid
+(at least one such prefix exists, namely q = p ⋆ ). The walk q must be of positive length (otherwise
+the precondition of property (4) would hold, and we would get Cw ∈ E(T ), a contradiction). Also,
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                  0:23
+
+the last constraint node in q must be C, otherwise we could have taken a shorter prefix. Thus, we
+can write q = q⋆ (xCy) where q⋆ ends at x. Note that, since p is a walk, the variables x, y, v, w are
+(pairwise) distinct.
+   We shall write д = f ⊕q⋆ . Let us apply the even ∆-matroid property to the tuples д(C)⊕x ⊕y⊕v ⊕w
+and д(C) (which are both in C) in coordinate y. We get that either д(C)⊕v ⊕w ∈ C, or д(C)⊕x ⊕v ∈ C,
+or д(C) ⊕ x ⊕ w ∈ C. In the first case we could have chosen q⋆ instead of q – a contradiction to the
+minimality of q. In the other two cases q⋆ (xCu) is an f -walk for some u ∈ {v, w }. But then from
+Cu < E(T ) we get that q⋆ (xCu) is a bad walk – a contradiction to the minimality of p.            □
+    Corollary 46 (Theorem 24(5)). If Algorithm 1 answers “No”, then the edge labeling f is optimal.
+   Proof. Algorithm 1 can answer “No” for two reasons: either the forest T cannot be grown
+further and neither an augmenting path nor a blossom are found, or the algorithm finds a blossom
+b, contracts it and then concludes that f b is optimal for I b . We proceed by induction on the number
+of contractions that have occurred during the run of the algorithm.
+   The base case, when there were no contractions, follows from Lemma 45. The induction step
+is an easy consequence of Lemma 28 (also known as Lemma 42): If we find b and the algorithm
+answers “No” when run on f b and I b then, by the induction hypothesis, f b is optimal for I b , and
+by Lemma 28 f is optimal for I .                                                                    □
+
+7    EXTENDING OUR ALGORITHM TO EFFICIENTLY COVERABLE ∆-MATROIDS
+In this section we extend Algorithm 1 from even ∆-matroids to a wider class of so-called efficiently
+coverable ∆-matroids. The idea of the algorithm is similar to what [12] previously did for C-zebra
+∆-matroids, but our method covers a larger class of ∆-matroids.
+   Let us begin by giving a formal definition of efficiently coverable ∆-matroids.
+  Definition 47. We say that a class of ∆-matroids Γ is efficiently coverable if there is an algorithm
+that, given input M ∈ Γ and α ∈ M, lists in polynomial time a set M α so that the system {M α : α ∈
+M } satisfies the conditions of Definition 10.
+  Before we go on, we would like to note that coverable ∆-matroids are closed under gadgets, i.e.
+the “supernodes” shown in Figure 1. Taking gadgets is a common construction in the CSP world,
+so being closed under gadgets makes coverable ∆-matroids a very natural class to study. Taking
+gadgets is equivalent to repeated composition of ∆-matroids (see Proposition 6).
+  Definition 48. Given M ⊆ {0, 1}U and N ⊆ {0, 1}V with U , V disjoint sets of variables, we define
+the direct product of M and N as
+                           M × N = {(α, β) : α ∈ M, β ∈ N } ⊆ {0, 1}U ∪V .
+If w 1 , w 2 ∈ U are distinct variables of M, then the ∆-matroid obtained from M by identifying w 1
+and w 2 is
+                          Mw 1 =w 2 = {β ↾U \{w 1,w 2 } : β ∈ M, β(w 1 ) = β(w 2 )}
+                                   ⊆ {0, 1}U \{w 1,w 2 }
+  Since both above operations are special cases of ∆-matroid compositions, by Proposition 6, (even)
+∆-matroids are closed under direct product and identifying variables.
+  If a ∆-matroid P is obtained from some ∆-matroids M 1 , . . . , Mk by a sequence of direct products
+and identifying variables, we say that P is gadget-constructed from M 1 , . . . , Mk (a gadget is an edge
+CSP instance with some variables present in only one constraint – these are the “output variables”).
+    Theorem 49. The class of coverable ∆-matroids is closed under:
+
+                                                 ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:24                                            Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+   (1) Direct products,
+   (2) identifying pairs of variables, and
+   (3) compositions,
+   (4) gadget constructions.
+
+   Proof. (1) Let M ⊆ {0, 1}U and N ⊆ {0, 1}V be two coverable ∆-matroids. We claim that if
+       (α, β) and (γ , δ ) are even-neighbors in M ×N , then either α = γ and β is an even-neighbor of δ
+       in N , or β = δ and α is an even-neighbor of γ in M. This is straightforward to verify: Without
+       loss of generality let us assume that u ∈ U is a variable of M such that (α, β) ⊕ u < M × N ,
+       and let v be the variable such that (α, β) ⊕ u ⊕ v = (γ , δ ). Since we are dealing with a direct
+       product, we must have α ⊕ u < M and in order for (α, β) ⊕ u ⊕ v to lie in M × N , we must
+       have α ⊕ u ⊕ v ∈ M. But then δ = β and α ⊕ u ⊕ v = γ is an even-neighbor of α.
+       Let α ∈ M, β ∈ N and let M α , N β be the even ∆-matroids from Definition 10 for M and N .
+       From the above paragraph, it follows by induction that whenever (γ , δ ) is reachable from
+       (α, β), then (γ , δ ) ∈ M α × N β . Since each M α × N β is an even ∆-matroid, the direct product
+       M × N satisfies the first two parts of Definition 10.
+       It remains to show that if we can reach (γ , δ ) ∈ M ×N from (α, β) ∈ M ×N and (γ , δ ) ⊕u ⊕v ∈
+       M α × N β \ M × N , then (γ , δ ) ⊕ u, (γ , δ ) ⊕ v ∈ M × N . By the first paragraph of this proof,
+       we can reach γ from α in M and δ from β in N . Moreover, both u and v must lie in the same
+       set U or V , for otherwise we would have that (γ ⊕ v, δ ⊕ u) or (γ ⊕ u, δ ⊕ v) lies in M α × N β ,
+       a contradiction with M α being an even ∆-matroid. So let (again without loss of generality)
+       u, v ∈ V . Then δ ⊕ u ⊕ v ∈ N β \ N . Since N is coverable and δ is reachable from β, we get
+       δ ⊕ v, δ ⊕ u ∈ N , giving us (γ , δ ) ⊕ u, (γ , δ ) ⊕ v ∈ M × N and we are done.
+   (2) Let M ⊆ {0, 1}U be coverable and w 1 , w 2 be two variables.
+       Similarly to the previous item, the key part of the proof is to show that the relation of being
+       reachable survives identifying w 1 and w 2 : More precisely, take α, γ ∈ Mw 1 =w 2 and β ∈ M
+       such that β(w 1 ) = β(w 2 ) and α = β ↾U \{w 1,w 2 } (i.e. β witnesses α ∈ Mw 1 =w 2 ). Assume that we
+       can reach γ from α. Then we can reach from β a tuple δ ∈ M such that δ (w 1 ) = δ (w 2 ) and
+       γ = δ ↾U \{w 1,w 2 } .
+       Since we can proceed by induction, it is enough to prove this claim in the case when α, γ are
+       even-neighbors. So assume that there exist variables u and v such that γ = α ⊕ u ⊕ v and
+       α ⊕ u < Mw 1 =w 2 . From the latter, it follows that β ⊕ u, β ⊕ u ⊕ w 1 ⊕ w 2 < M. Knowing all this,
+       we see that if β ⊕ u ⊕ v ∈ M, the tuple β ⊕ u ⊕ v is an even-neighbor of β and we are done.
+       Suppose, to the contrary, that β ⊕ u ⊕ v < M. Let δ be the tuple of M witnessing γ ∈ Mw 1 =w 2 .
+       Since β ⊕ u ⊕ v < M, we get δ = β ⊕ u ⊕ v ⊕ w 1 ⊕ w 2 . Since β ⊕ u, β ⊕ u ⊕ v < M, the
+       ∆-matroid property applied on β and δ in the variable u gives us (without loss of generality)
+       that β ⊕ u ⊕ w 1 ∈ M. But then β is an even-neighbor of β ⊕ u ⊕ w 1 in M, which is an even
+       neighbor (via the variable w 2 – recall that β ⊕ u ⊕ w 1 ⊕ w 2 < M) of δ and so we can reach δ
+       from β, proving the claim.
+       Assume now that M is coverable. We want to show that the sets (M β )w 1 =w 2 where β ranges
+       over M cover Mw 1 =w 2 . Choose α ∈ Mw 1 =w 2 and let β ∈ M be the witness for α ∈ Mw 1 =w 2 .
+       We claim that the even ∆-matroid (M β )w 1 =w 2 contains all members of Mw 1 =w 2 that can be
+       reached from α. Indeed, whenever γ can be reached from α, some δ ∈ M that witnesses
+       γ ∈ Mw 1 =w 2 can be reached from β, so δ ∈ M β and γ ∈ (M β )w 1 =w 2 .
+       To finish the proof, take β ∈ M witnessing α ∈ Mw 1 =w 2 and γ ∈ Mw 1 =w 2 that is reachable
+       from α and satisfies γ ⊕ u ⊕ v ∈ (M β )w 1 =w 2 \ Mw 1 =w 2 for a suitable pair of variables u, v. Take
+       a δ ∈ M that witnesses γ ∈ Mw 1 =w 2 and is reachable from β (we have shown above that
+       such a δ exists). Since γ ⊕ u ⊕ v ∈ (M β )w 1 =w 2 \ Mw 1 =w 2 , we know that neither δ ⊕ u ⊕ v nor
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                      0:25
+
+      δ ⊕ u ⊕ v ⊕ w 1 ⊕ w 2 lies in M, but at least one of these two tuples lies in M β . If δ ⊕ u ⊕ v ∈ M β ,
+      we just use coverability of M to get δ ⊕u, δ ⊕v ∈ M, which translates to γ ⊕u, γ ⊕v ∈ Mw 1 =w 2 .
+      If this is not the case, we know that δ, δ ⊕ u ⊕v ⊕ w 1 ⊕ w 2 ∈ M β and δ ⊕ u ⊕v < M β . We show
+      that in this situation we have γ ⊕ u ∈ Mw 1 =w 2 ; the proof of γ ⊕ v ∈ Mw 1 =w 2 is analogous.
+      Using the even ∆-matroid property of M β on δ and δ ⊕u ⊕v ⊕w 1 ⊕w 2 in the variable u, we get
+      that without loss of generality δ ⊕ u ⊕ w 1 ∈ M β (recall that δ ⊕ u ⊕ v < M β ). If δ ⊕ u ⊕ w 1 < M,
+      we can directly use coverability of M on δ to get that δ ⊕ u ∈ M, resulting in γ ⊕ u ∈ Mw 1 =w 2 .
+      If, on the other hand, δ ⊕ u ⊕ w 1 ∈ M and δ ⊕ u < M, then δ ⊕ u ⊕ w 1 is reachable from β, so
+      we can use coverability of M on δ ⊕ u ⊕ w 1 ∈ M and δ ⊕ u ⊕ v ⊕ w 1 ⊕ w 2 ∈ M β \ M to get
+      δ ⊕ u ⊕ w 1 ⊕ w 2 ∈ M, which again results in γ ⊕ u ∈ Mw 1 =w 2 , finishing the proof.
+  (3) Since a composition of two ∆-matroids is just a direct product followed by a series of
+      identifying variables, it follows from previous points that coverable ∆-matroids are closed
+      under compositions.
+  (4) This follows from first two points as any gadget construction is equivalent to a sequence of
+      products followed by identifying variables.
+                                                                                                           □
+
+  Returning to edge CSP, the main notions from the even ∆-matroid case translate to the efficiently
+coverable ∆-matroid case easily. The definitions of valid, optimal, and non-optimal edge labeling
+may remain intact for coverable ∆-matroids, but we need to adjust our definition of a walk, which
+will now be allowed to end in a constraint.
+   Definition 50 (Walk for general ∆-matroids). A walk q of length k or k + 1/2 in the instance I
+is a sequence q 0C 1q 1C 2 . . . Ck qk or q 0C 1q 1C 2 . . . Ck +1 , respectively, where the variables qi−1 , qi lie
+in the scope of the constraint Ci , and each edge {v, C} ∈ E is traversed at most once: vC and Cv
+occur in q at most once, and they do not occur simultaneously.
+   Given an edge labeling f and a walk q, we define the edge labeling f ⊕ q in the same way as
+before (see eq. (1)). We also extend the definitions of an f -walk and an augmenting f -walk for a
+valid edge labeling f : A walk q is an f -walk if f ⊕ q⋆ is a valid edge labeling whenever q⋆ = q
+or q⋆ is a prefix of q that ends at a variable. An f -walk is called augmenting if: (1) it starts at a
+variable inconsistent in f , (2) it ends either at a different inconsistent variable or in a constraint,
+and (3) all variables inside of q (i.e.. not endpoints) are consistent in f . Note that if f is a valid edge
+labeling for which there is an augmenting f -walk, then f is non-optimal (since f ⊕ q is a valid
+edge labeling with 1 or 2 fewer inconsistent variables).
+   The main result of this section is tractability of efficiently coverable ∆-matroids.
+  Theorem 51 (Theorem 11 restated). Given an edge CSP instance I with efficiently coverable
+∆-matroid constraints, an optimal edge labeling f of I can be found in time polynomial in |I |.
+   The rough intuition of the algorithm for improving coverable ∆-matroid edge CSP instances
+is the following. When dealing with general ∆-matroids, augmenting f -walks may also end in a
+constraint – let us say that I has the augmenting f -walk q that ends in a constraint C. In that case,
+the parity of f (D) and (f ⊕ p)(D) is the same for all D , C. If we guess the correct C (in fact, we
+will try all options) and flip its parity, we can, under reasonable conditions, find this augmentation
+via the algorithm for even ∆-matroids.
+   Not all ∆-matroids M are coverable. However, we will show below how to efficiently cover
+many previously considered classes of ∆-matroids. These would be co-independent [11], compact
+[16], local [8], linear [14] and binary [8, 14] ∆-matroids (note that in the case of the last two our
+representation of the ∆-matroid is different from [14]).
+
+                                                     ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:26                                            Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+   Proposition 52. The classes of co-independent, local, compact, linear and binary ∆-matroids are
+efficiently coverable.
+
+   One part of Proposition 52 that is easy to prove is efficient coverability of linear ∆-matroids: Every
+linear ∆-matroid is even because the tuples in the ∆-matroid correspond to regular skew-symmetric
+matrices and every skew-symmetric matrix of odd size is singular (see [14] for the definition and
+details). Thus our basic algorithm already solves edge CSP with linear ∆-matroid constraints (should
+we represent our constraints by lists of tuples and not matrices).
+   For the rest of the proof of this proposition as well as (some of) the definitions, we refer the
+reader to Appendix B.
+
+7.1     The algorithm
+The following lemma is a straightforward generalization of the result given in Lemma 31.
+
+  Lemma 53. Let f , д be valid edge labelings of instance I (with general ∆-matroid constraints) such
+that д has fewer inconsistencies than f . Then we can, given f and д, compute in polynomial time an
+augmenting f -walk p (possibly ending in a constraint, in the sense of Definition 50).
+
+   Proof. We proceed in two stages like in the proof of Lemma 31: First we modify д so that any
+variable consistent in f is consistent in д, then we look for the augmenting f -walk in f ∆ д. The
+only difference over Lemma 31 is that our д-walks and f -walks can now end in a constraint as well
+as in a variable.
+   First, we repeatedly modify the edge labeling д using the following procedure:
+   (1) Pick a variable v ∈ V which is consistent in f , but not in д. (If no such v exists then go to the
+       next paragraph). By the choice of v, there exists a unique edge {v, C} ∈ f ∆ д. If д(C) ⊕ v ∈ C,
+       replace д with д ⊕ vC, then go to the beginning and repeat. Otherwise, pick variable w , v in
+       the scope of C such that {w, C} ∈ f ∆ д and д(C) ⊕ v ⊕ w ∈ C (it exists since C is a ∆-matroid
+       and д(C) ⊕ v < C). Replace д with д ⊕ (vCw) and then also go to the beginning and repeat.
+It can be seen that д remains a valid edge labeling, and the number of inconsistencies in д never
+increases. Furthermore, each step decreases | f ∆ д|, so this procedure must terminate after at most
+O(|E |) = O(|V |) steps.
+   We now have valid edge labelings f , д such that f has more inconsistencies than д, and variables
+consistent in f are also consistent in д. In the second stage we will maintain an f -walk p and
+the corresponding valid edge labeling f ⋆ = f ⊕ p. To initialize, pick a variable r ∈ V which is
+consistent in д but not in f , and set p = r and f ⋆ = f . We then repeatedly apply the following step:
+      2. Let v be the endpoint of p. The variable v is consistent in д but not in f ⋆ , so there must
+         exist a unique edge {v, C} ∈ f ⋆ ∆ д. If f ⋆ (C) ⊕ v ∈ C, then output pC (an augmenting
+         f -walk). Otherwise, pick variable w , v in the scope of C such that {w, C} ∈ f ⋆ ∆ д and
+         f ⋆ (C) ⊕ v ⊕ w ∈ C (it exists since C is a ∆-matroid and f ⋆ (C) ⊕ v < C). Append vCw to the
+         end of p, and accordingly replace f ⋆ with f ⋆ ⊕ (vCw) (which is valid by the choice of w). As
+         a result of this update of f ⋆ , edges {v, C} and {w, C} disappear from f ⋆ ∆ д.
+         If w is inconsistent in f , then output p (which is an augmenting f -walk) and terminate.
+         Otherwise w is consistent in f (and thus in д) but not in f ⋆ ; in this case, go to the beginning
+         and repeat.
+It is easy to verify that the p being produced is an f -walk. Also, each step decreases | f ⋆ ∆ д| by 2,
+so this procedure must terminate after at most O(|E |) = O(|V |) steps and just like in the case of
+even ∆-matroids, the only way to terminate is to find an augmentation.                                □
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                  0:27
+
+   Definition 54. Let f be a valid edge labeling of instance I with coverable ∆-matroid constraints.
+For a constraint C ∈ C and a ∆-matroid C ′ ⊆ C, we will denote by I (f , C, C ′) the instance obtained
+from I by replacing the constraint relation of C by C ′ and the constraint relation of each D ∈ C \ {C}
+by the even ∆-matroid D f (D) (that comes from the covering).
+
+    Observe that f induces a valid edge labeling for I (f , C, C). Moreover, if we choose α ∈ C, then
+I (f , C, {α }) is an edge CSP instance with even ∆-matroid constraints and hence we can find its
+optimal edge labeling by Algorithm 1 in polynomial time.
+
+  Lemma 55. Let f be a non-optimal valid edge labeling of instance I with coverable ∆-matroid
+constraints. Then there exist C ∈ C and α ∈ C such that the optimal edge labeling for I (f , C, {α }) has
+fewer inconsistencies than f .
+
+   Proof. If f is non-optimal for I , then by Lemma 53 there exists an augmenting f -walk q in I .
+Take q such that no proper prefix of q is augmenting (i.e. we cannot end early in a constraint). Let
+C be the last constraint in the walk and let α = (f ⊕ q)(C).
+   We claim that f ⊕ q is also a valid edge labeling for the instance I (f , C, {α }). Since we choose
+α so that (f ⊕ q)(C) = α, we only need to consider constraints different from C. Assume that p is
+the shortest prefix of q such that (f ⊕ p)(D) is not reachable from D f (D) for some D , C (if there
+is no such thing, then (f ⊕ q)(D) ∈ D f (D) for all D , C). We let p = p ⋆xDy. Since (f ⊕ p ⋆ )(D) is
+reachable from f (D), but (f ⊕ p ⋆ )(D) ⊕ x ⊕ y is not, we must have (f ⊕ p ⋆ )(D) ⊕ x ∈ D. But then
+p ⋆xD is an augmenting f -walk in I that is shorter than p, a contradiction with the choice of p. □
+
+   Lemma 56. Let f be a valid assignment for the instance I with coverable ∆-matroid constraints and
+let C ∈ C and α ∈ C be such that there exists a valid edge labeling д for the instance I (f , C, {α }) with
+fewer inconsistencies than f . Then there exists an augmenting f -walk for I and it can be computed in
+polynomial time given д.
+
+    Proof. We begin by noticing that both f and д are valid edge labelings for the instance I (f , C, C).
+Since д has fewer inconsistencies than f , by Lemma 53 we can compute an f -walk q which
+is augmenting in I (f , C, C). It is easy to examine q and check if some proper prefix of q is an
+augmenting f -walk for I (ending in a constraint). If that happens we are done, so let us assume
+that this is not the case. We will show that then q itself must be an augmenting f -walk for I .
+    First assume that every prefix of q with integral length is an f -walk in I . Then either q is of
+integral length and we are done (q is its own prefix), or q ends in a constraint. If it is the latter,
+q must end in C, since that is the only constraint of I (f , C, C) that is not forced to be an even
+∆-matroid. But the constraint relation C is the same for both I and I (f , C, C), so flipping the last
+edge of q is allowed in I .
+    Let now p be the shortest prefix of q with integral length which is not an f -walk in I . We can write
+p = p ⋆xDy for suitable x, y, D. The constraint relation of D must be different in I and I (f , C, C),
+so D , C. By the choice of p, for any prefix r of p ⋆ of integral length we have (f ⊕ r )(D) ∈ D and
+moreover the tuple (f ⊕ r )(D) is reachable from f (D). (If not, take the shortest counterexample r .
+Obviously, r = r ⋆uDv for some variables u, v and a suitable r ⋆ . Since (f ⊕ r ⋆ )(D) ∈ D is reachable
+from f (D) and (f ⊕ r ⋆ )(D) ⊕ u ⊕ v is not, we get (f ⊕ r ⋆ )(D) ⊕ u ∈ D and r ⋆uD is augmenting in
+I , which is a contradiction.) This holds also for r = p ⋆ , so (f ⊕ p ⋆ )(D) is reachable from f (D).
+    To finish the proof, let β ⋆ = (f ⊕ p ⋆ )(D) and β = (f ⊕ p)(D). We showed that β ⋆ ∈ D is reachable
+from f (D). Also, β ⋆ ⊕ x ⊕ y = β ∈ D f (D) \ D. Then by the definition of coverable ∆-matroids we
+have β ⋆ ⊕ x ∈ D. Thus p ⋆xD is an augmenting f -walk in I and we are done.
+    It is easy to see that all steps of the proof can be made algorithmic.                              □
+
+                                                 ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:28                                            Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+    Now the algorithm is very simple to describe. Set some valid edge labeling f and repeat the
+following procedure. For all pairs (C, α) with α ∈ C and C ∈ C, call Algorithm 1 on the instance
+I (f , C, {α }) (computing the instance I (f , C, {α }) can be done in polynomial time because all con-
+straints of I come from an efficiently coverable class). If for some (C, α) we obtained an edge
+labeling of I (f , C, {α }) with fewer inconsistencies, use Lemma 56 to get an augmenting f -walk for
+I . Otherwise, we have proved that the original f was optimal.
+    The algorithm is correct due to Lemma 55. The running time is polynomial because there are at
+most |I | pairs (C, α) such that α ∈ C and at most |I | inconsistencies in the initial edge labeling, so
+the (polynomial) Algorithm 1 gets called at most |I | 2 times.
+
+7.2    Even-zebras are coverable (but not vice versa)
+The paper [12] introduces several classes of zebra ∆-matroids. For simplicity, we will consider only
+one of them: C-zebras.
+
+   Definition 57. Let C be a subclass of even ∆-matroids. A ∆-matroid M is a C-zebra if for every
+α ∈ M there exists an even ∆-matroid M α in C that contains all tuples in M of the same parity
+as α and such that for every β ∈ M and every u, v ∈ V such that β ⊕ u ⊕ v ∈ M α \ M we have
+β ⊕ v, β ⊕ u ∈ M.
+
+   In [12], the authors show a result very much similar to Theorem 11, but for C-zebras: In our
+language, the result states that if one can find optimal labelings for CSPedge (C) in polynomial time,
+then the same is true for the edge CSP with C-zebra constraints. In the rest of this section, we
+show that coverable ∆-matroids properly contain the class of C-zebras with C equal to all even
+∆-matroids (this is the largest C allowed in the definition of C-zebras) – we will call this class even-
+zebras for short. We need to assume, just like in [12], that we are given the zebra representations
+on input.
+
+   Observation 58. Let M be an even-zebra. Then M is coverable.
+
+   Proof. Given α ∈ M, we can easily verify that the ∆-matroids M α satisfy all conditions of the
+definition of coverable ∆-matroids: Everything reachable from α has the same parity as α and the
+last condition from the definition of even-zebras is identical to coverability.                 □
+
+
+   Moreover, it turns out that the inclusion is proper: There exists a ∆-matroid that is coverable,
+but is not an even-zebra.
+   Let us take M = {(0, 0, 0), (1, 1, 0), (1, 0, 1), (0, 1, 1), (1, 1, 1)} and consider N = M × M. It is easy
+to verify that M is a ∆-matroid that is an even-zebra with the sets M α equal to {(0, 0, 0), (1, 1, 0),
+(1, 0, 1), (0, 1, 1)} and {(1, 1, 1)}, respectively, and thus M is coverable.
+   Since coverable ∆-matroids are closed under direct products, N is also coverable. However, N is
+not an even-zebra: Assume that there exists a set N α that contains all tuples of N of odd parity and
+satisfies the zebra condition. Then the two tuples (1, 1, 1, 0, 0, 0) and (1, 1, 0, 1, 1, 1) of N belong to
+N α . Since N α is an even ∆-matroid, switching in the third coordinate yields that N contains the
+tuple (1, 1, 0, 1, 0, 0) (this is without loss of generality; the other possibilities are all symmetric). This
+tuple is not a member of N , yet we got it from (1, 1, 1, 0, 0, 0) ∈ N by switching the third and fourth
+coordinate. So in order for the zebra property to hold, we need (1, 1, 1, 1, 0, 0) ∈ N , a contradiction.
+   The above example also shows that even-zebras, unlike coverable ∆-matroids, are not closed
+under direct products.
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                     0:29
+
+APPENDIX
+A     NON MATCHING REALIZABLE EVEN ∆-MATROID
+Here we prove Proposition 19 which says that not every even ∆-matroid of arity six is matching
+realizable. We do it by first showing that matching realizable even ∆-matroids satisfy certain
+decomposition property and then we exhibit an even ∆-matroid of arity six which does not possess
+this property and thus is not matching realizable.
+  Lemma 59. Let M be a matching realizable even ∆-matroid and let f , д ∈ M. Then f ∆ д can be
+partitioned into pairs of variables P1 , . . . Pk such that f ⊕ Pi ∈ M and д ⊕ Pi ∈ M for every i = 1 . . . k.
+   Proof. Fix a graph G = (N , E) that realizes M and let V = {v 1 , . . . , vn } ⊆ N be the nodes
+corresponding to variables of M. Let E f and Eд be the edge sets from matchings that correspond
+to tuples f and д. Now consider the graph G ′ = (N , E f ∆ Eд ) (symmetric difference of matchings).
+Since both E f and Eд cover each node of N \ V , the degree of all such nodes in G ′ will be zero or
+two. Similarly, the degrees of nodes in (V \ (f ∆ д)) are either zero or two leaving f ∆ д as the set of
+nodes of odd degree, namely of degree one. Thus G ′ is a union of induced cycles and paths, where
+the paths pair up the nodes in f ∆ д. Let us use this pairing as P1 , . . . , Pk .
+   Each such path is a subset of E and induces an alternating path with respect to both E f and Eд .
+After altering the matchings accordingly, we obtain new matchings that witness f ⊕ Pi ∈ M and
+д ⊕ Pi ∈ M for every i.                                                                               □
+    Lemma 60. There is an even ∆-matroid of arity 6 which does not have the property from Lemma 59.
+    Proof. Let us consider the set M with the following tuples:
+                                     000000     100100     011011     111111
+                                                011000     100111
+                                                001100     110011
+                                                001010     110101
+                                                000101     111010
+                                                001001     001111
+                                                010001     101101
+                                                100010     101011
+                                                           111100
+With enough patience or with computer aid one can verify that this is indeed an even ∆-matroid.
+However, there is no pairing satisfying the conclusion of Lemma 59 for tuples f = 000000, and
+д = 111111. In fact the set of pairs P for which both f ⊕ P ∈ M and д ⊕ P ∈ M is {v 1 , v 4 }, {v 2 , v 3 },
+{v 3 , v 4 }, {v 3 , v 5 }, {v 4 , v 6 } (see the first five lines in the middle of the table above) but no three of
+these form a partition on {v 1 , . . . , v 6 }.                                                                   □
+
+B     CLASSES OF ∆-MATROIDS THAT ARE EFFICIENTLY COVERABLE
+As we promised, here we will show that all classes of ∆-matroids that were previously known to be
+tractable are efficiently coverable.
+
+B.1    Co-independent ∆-matroids
+   Definition 61. A ∆-matroid M is co-independent if whenever α < M, then α ⊕ u ∈ M for every u
+in the scope of M.
+   Let V be the set of variables of M. In this case we choose M α to be the ∆-matroid that contains
+all members of {0, 1}V of the same parity as α. This trivially satisfies the first two conditions in
+
+                                                    ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:30                                            Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+the definition of a ∆-matroid. To see the third condition, observe that whenever γ ∈ M α \ M, the
+co-independence of M gives us that γ ⊕ u ∈ M for every u ∈ V , so we are done.
+  Moreover, each set M α is roughly as large as M itself: A straightforward double counting argument
+gives us that M ≥ 2 |V |−1 , so listing M α can be done in time linear in |M |.
+
+B.2    Compact ∆-matroids
+We present the definition of compact ∆-matroids in an alternative form compared to [16].
+  Definition 62. Function F : {0, 1}V → {0, . . . , |V |} is called a generalized counting function (gc-
+function) if
+  (1) for each α ∈ {0, 1}V and v ∈ V we have F (α ⊕ v) = F (α) ± 1 and;
+  (2) if F (α) > F (β) for some α, β ∈ {0, 1}V , then there exist u, v ∈ α ∆ β such that F (α ⊕ u) =
+      F (α) − 1 and F (β ⊕ v) = F (β) + 1
+   An example of such function is the function which simply counts the number of ones in a tuple.
+  Definition 63. We say that a S ⊆ {0, 1, . . . n} is 2-gap free if whenever x < S and min S < x <
+max S, then x + 1, x − 1 ∈ S. A set of tuples M is compact-like if α ∈ M if and only if F (α) ∈ S for
+some gc-function F and a 2-gap free subset S of {0, 1, . . . |V |}.
+   The difference to the presentation in [16] is that they give an explicit set of possible gc-functions
+(without using the term gc-function). However, we decided for more brevity and omit the description
+of the set.
+   Lemma 64. Each compact-like set of tuples M is a ∆-matroid.
+   Proof. Let the gc-function F and the 2-gap free set S witness that M is compact-like. Take
+α, β ∈ M and u ∈ α ∆ β. If F (α ⊕ u) ∈ S, then α ⊕ u ∈ M and we are done. Thus we have
+F (α ⊕ u) , F (β). We need to find a v ∈ α ∆ β such that F (α ⊕ u ⊕ v) ∈ S.
+   Let us assume F (α ⊕ u) > F (β). Since F is a gc-function we can find v ∈ (α ⊕ u) ∆ β (note that
+u , v) such that F (α ⊕ u ⊕ v) = F (α ⊕ u) − 1. Now we have either F (α) = F (α ⊕ u ⊕ v) ∈ S, or
+F (α) > F (α ⊕ u) > F (α ⊕ u ⊕ v) ≥ F (β), which again means F (α ⊕ u ⊕ v) ∈ S because S does not
+have 2-gaps.
+   The case when F (α ⊕ u) < F (β) is handled analogously.                                       □
+   It turns out that any practical class of compact-like ∆-matroids is efficiently coverable:
+   Lemma 65. Assume M is a class of compact-like ∆-matroids where the description of each M ∈ M
+includes a set S M (given by a list of elements) and a function F M witnessing that M is compact-like and
+there is a polynomial p such that the time to compute F M (α) is at most p(|M |). Then M is efficiently
+coverable.
+   Proof. Given M ∈ M and α ∈ M, we let M α be the compact-like even ∆-matroid given by the
+function F M and the set U = [min S M , max S M ] ∩ {F M (α) + 2k : k ∈ Z}. It is an easy observation
+that α, β ∈ {0, 1}V have the same parity if and only if F M (α) and F M (β) have the same parity, so all
+members of M α have the same parity. In particular M α contains all β ∈ M of the same parity as α.
+Moreover, the set U is 2-gap free, so M α is an even ∆-matroid.
+   Let now γ ∈ M α \ M. Then F M (γ ) < S M . Since S M is 2-gap free and F M (γ ) is not equal to min S M ,
+nor max S M , it follows that both F M (γ ) + 1 and F M (γ ) − 1 lie in S M . Therefore, γ ⊕ v ∈ M for any
+v ∈ V by the first property of gc-functions.
+   It remains to show how to construct M α in polynomial time. We begin by adding to M α all tuples
+of M of the same parity as α. Then we go through all tuples β ∈ M of parity different from α and
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                 0:31
+
+for each such β we calculate F M (β ⊕ v) for all v ∈ V . If min S < F (β ⊕ v) < max S, we add β ⊕ v to
+M α . By the argument in the previous paragraph, this procedure will eventually find and add to M α
+all tuples γ such that F M (γ ) ∈ U \ S M .                                                          □
+
+B.3   Local and binary ∆-matroids
+We will avoid giving the definitions of local and binary ∆-matroids. Instead, we will rely on a result
+from [8] saying that both of these classes avoid a certain substructure. This will be enough to show
+that both binary and local ∆-matroids are efficiently coverable.
+  Definition 66. Let M, N be two ∆-matroids where M ⊆ {0, 1}V . We say that M contains N as a
+minor if we can get N from M by a sequence of the following operations: Choose c ∈ {0, 1} and
+v ∈ V and take the ∆-matroid we obtain by fixing the value at v to c and deleting v:
+                Mv=c ={β ∈ {0, 1}V \{v } : ∃α ∈ M, α(v) = c ∧ ∀u , v, α(u) = β(u)}.
+   Definition 67. The interference ∆-matroid is the ternary ∆-matroid given by the tuples {(0, 0, 0),
+(1, 1, 0), (1, 0, 1), (0, 1, 1), (1, 1, 1)}. We say that a ∆-matroid M is interference free if it does not
+contain any minor isomorphic (via renaming variables or flipping the values 0 and 1 of some
+variables) to the interference ∆-matroid.
+  Lemma 68. If M is an interference-free ∆-matroid and α, β ∈ M are such that |α ∆ β | is odd, then
+we can find v ∈ α ∆ β so that α ⊕ v ∈ M.
+   Proof. Let us take β ′ ∈ M so that α ∆ β ′ ⊆ α ∆ β and |α ∆ β ′ | is odd and minimal possible. If
+|α ∆ β ′ | = 1, we are done. Assume thus that |α ∆ β ′ | = 2k + 3 for some k ∈ N0 . Applying the
+∆-matroid property on α and β ′ (with α being the tuple changed) k many times, we get a set of 2k
+variables U ⊆ α ∆ β ′ such that α ⊕ U ∈ M (since β ′ is at minimal odd distance from α, in each step
+we need to switch exactly two variables of α).
+   Let the three variables in α ∆ β ′ \ U be x, y, and z and consider the ∆-matroid P on x, y, z we
+get from M by fixing the values of all v < {x, y, z} to those of α ⊕ U and deleting these variables
+afterward. Moreover, we switch 0s and 1s so that the triple corresponding to (α(x), α(y), α(z)) is
+(0, 0, 0). We claim that P is the interference ∆-matroid: It contains the triple (0, 0, 0) (because of
+α ⊕ U ) and (1, 1, 1) (as witnessed by β ′) and does not contain any of the triples (1, 0, 0), (0, 1, 0),
+or (0, 0, 1) (for then β ′ would not be at minimal odd distance from α). Applying the ∆-matroid
+property on (1, 1, 1) and (0, 0, 0) in each of the three variables then necessarily gives us the tuples
+(0, 1, 1), (1, 0, 1), and (1, 1, 0) ∈ P.                                                               □
+  Corollary 69. Let M be an interference-free ∆-matroid. If M contains at least one even tuple then
+the set Even(M) of all even tuples of M forms a ∆-matroid. The same holds for Odd(M) the set of all
+odd tuples of M. In particular, M is efficiently coverable by the even ∆-matroids Even(M) and Odd(M).
+   Proof. We show only that Even(M) is a ∆-matroid; the case of Odd(M) is analogous and the
+covering result immediately follows.
+   Take α, β ∈ Even(M) and let v be a variable v such that α(v) , β(v). We want u , v so that
+α(u) , β(u) and α ⊕ u ⊕ v ∈ M. Apply the ∆-matroid property of M to α and β, changing the tuple
+α. If we get α ⊕ v ⊕ u ∈ M for some u, we are done, so let us assume that we get α ⊕ v ∈ M instead.
+But then we recover as follows: The tuples α ⊕ v and β have different parity, so by Lemma 68 there
+exists a variable u so that (α ⊕ v)(u) , β(u) (i.e. u ∈ α ∆ β \ {v}) and α ⊕ v ⊕ u ∈ M.          □
+   It is mentioned in [8] (Section 4) that the interference ∆-matroid is among the forbidden minors
+for both local and binary (minors B1 and L2) ∆-matroids. Thus both of those classes are efficiently
+coverable.
+
+                                                ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+0:32                                            Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek
+
+ACKNOWLEDGMENTS
+Most of this work was done while the authors were with IST Austria. This work was supported by
+European Research Council under the European Unions Seventh Framework Programme (FP7/2007-
+2013)/ERC grant agreement no 616160.
+
+REFERENCES
+ [1] Claude Berge. 1962. The Theory of Graphs And Its Applications. Methuen, London, Chapter Matching in the general
+     case, 171–186.
+ [2] André Bouchet. 1989. Matchings and ∆-matroids. Discrete Applied Mathematics 24, 1 (1989), 55 – 62. https://doi.org/
+     10.1016/0166-218X(92)90272-C
+ [3] André Bouchet and William H. Cunningham. 1995. Delta-Matroids, Jump Systems, and Bisubmodular Poly-
+     hedra. SIAM Journal on Discrete Mathematics 8, 1 (1995), 17–32. https://doi.org/10.1137/S0895480191222926
+     arXiv:https://doi.org/10.1137/S0895480191222926
+ [4] Andrei Bulatov. 2011. Complexity of Conservative Constraint Satisfaction Problems. ACM Trans. Comput. Logic 12, 4,
+     Article 24 (July 2011), 66 pages. https://doi.org/10.1145/1970398.1970400
+ [5] Andrei A. Bulatov. 2006. A Dichotomy Theorem for Constraint Satisfaction Problems on a 3-element Set. J. ACM 53, 1
+     (Jan. 2006), 66–120. https://doi.org/10.1145/1120582.1120584
+ [6] Andrei A. Bulatov. 2017. A dichotomy theorem for nonuniform CSPs. In Proceedings of the 58th Annual IEEE Symposium
+     on Foundations of Computer Science. IEEE, 319–330. https://doi.org/10.1109/FOCS.2017.37
+ [7] Jin-Yi Cai, Pinyan Lu, and Mingji Xia. 2011. Computational Complexity of Holant Problems. SIAM J. Comput. 40, 4
+     (July 2011), 1101–1132. https://doi.org/10.1137/100814585
+ [8] Victor Dalmau and Daniel Ford. 2003. Mathematical Foundations of Computer Science 2003: 28th International Symposium,
+     MFCS 2003, Bratislava, Slovakia, August 25-29, 2003. Proceedings. Springer Berlin Heidelberg, Berlin, Heidelberg, Chapter
+     Generalized Satisfiability with Limited Occurrences per Variable: A Study through Delta-Matroid Parity, 358–367.
+     https://doi.org/10.1007/978-3-540-45138-9_30
+ [9] Zdeněk Dvořák and Martin Kupec. 2015. On Planar Boolean CSP. In ICALP ’15. Lecture Notes in Computer Science,
+     Vol. 9134. Springer Berlin Heidelberg, Berlin, Heidelberg, 432–443. https://doi.org/10.1007/978-3-662-47672-7_35
+[10] Jack Edmonds. 1965. Path, trees, and flowers. Canadian J. Math. 17 (1965), 449–467.
+[11] Tomás Feder. 2001. Fanout limitations on constraint systems. Theoretical Computer Science 255, 1–2 (2001), 281–293.
+     https://doi.org/10.1016/S0304-3975(99)00288-1
+[12] Tomás Feder and Daniel Ford. 2006. Classification of Bipartite Boolean Constraint Satisfaction through Delta-Matroid
+     Intersection. SIAM Journal on Discrete Mathematics 20, 2 (2006), 372–394. https://doi.org/10.1137/S0895480104445009
+     arXiv:http://dx.doi.org/10.1137/S0895480104445009
+[13] Tomás Feder and Moshe Y. Vardi. 1999. The computational structure of monotone monadic SNP and constraint
+     satisfaction: a study through Datalog and group theory. SIAM J. Comput. 28, 1 (1999), 57–104. https://doi.org/10.1137/
+     S0097539794266766
+[14] James F. Geelen, Satoru Iwata, and Kazuo Murota. 2003. The linear delta-matroid parity problem. Journal of Combina-
+     torial Theory, Series B 88, 2 (2003), 377 – 398. https://doi.org/10.1016/S0095-8956(03)00039-X
+[15] John Hopcroft and Robert Tarjan. 1974. Efficient Planarity Testing. J. ACM 21, 4 (Oct. 1974), 549–568. https:
+     //doi.org/10.1145/321850.321852
+[16] Gabriel Istrate. 1997. Looking for a version of Schaefer’s dichotomy theorem when each variable occurs at most twice.
+     Technical Report. University of Rochester, Rochester, NY, USA.
+[17] Per M. Jensen and Bernhard Korte. 1982. Complexity of Matroid Property Algorithms. SIAM J. Comput. 11, 1 (1982),
+     184–190. https://doi.org/10.1137/0211014 arXiv:https://doi.org/10.1137/0211014
+[18] Alexandr Kazda, Vladimir Kolmogorov, and Michal Rolínek. 2017. Even Delta-Matroids and the Complexity of Planar
+     Boolean CSPs. In Proceedings of the Twenty-Eighth Annual ACM-SIAM Symposium on Discrete Algorithms (SODA’17).
+     SIAM, 307–326. https://doi.org/10.1137/1.9781611974782.20
+[19] L. Lovász. 1978. The matroid matching problem. In Algebraic Methods in Graph Theory, Proceedings of a Conference
+     Held in Szeged. 495–517.
+[20] Bernard M. E. Moret. 1988. Planar NAE3SAT is in P. SIGACT News 19, 2 (June 1988), 51–54. https://doi.org/10.1145/
+     49097.49099
+[21] Thomas J. Schaefer. 1978. The Complexity of Satisfiability Problems. In Proceedings of the Tenth Annual ACM Symposium
+     on Theory of Computing (STOC ’78). ACM, New York, NY, USA, 216–226. https://doi.org/10.1145/800133.804350
+[22] Edward P. K. Tsang. 1993. Foundations of constraint satisfaction. Academic Press, London and San Diego.
+[23] W. T. Tutte. 1947. The Factorization of Linear Graphs. Journal of the London Mathematical Society s1-22, 2 (1947),
+     107–111. https://doi.org/10.1112/jlms/s1-22.2.107
+
+
+ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+Even Delta-Matroids and the Complexity of Planar Boolean CSPs                                                    0:33
+
+[24] Dmitriy Zhuk. 2017. A proof of CSP dichotomy conjecture. In Proceedings of the 58th Annual IEEE Symposium on
+     Foundations of Computer Science. IEEE, 331–342. https://doi.org/10.1109/FOCS.2017.38
+
+Received February 2017; revised May 2018; accepted May 2018
+
+
+
+
+                                                   ACM Trans. Algor., Vol. 0, No. 0, Article 0. Publication date: 2017.
+

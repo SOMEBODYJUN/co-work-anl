@@ -64,5 +64,42 @@
       "run_checks": {"transversal_bases": 17, "transversal_pairs": 136, "pair_instances": 8192, "all_checks_passed": true}
     }
   ],
-  "cross_source_relation": "The generalized-assignment and common-marginal JSONs reuse the same K4 edge numbering and basis pair [0,1,4]/[2,3,5]. This is retained as a combinatorial relation only; their objectives and game/allocation models remain separate. The generalized-assignment script was read and rerun; its generated JSON equals the frozen source output."
+  "additional_scripts": [
+    {
+      "id": "e5e7c644c62fd3c6715c",
+      "path": "history/retired_topic_selection/independent_review/tests/audits/topic_selection/cross_field_battle/toy_checks.py",
+      "source_sha256": "8fc46c77f144bfbac88d597086ed29356dedece7b68090cb380875b16bd14288",
+      "size": 5161,
+      "copy": "scripts/cross_field/cross_field_toy_checks.py",
+      "copy_sha256": "8fc46c77f144bfbac88d597086ed29356dedece7b68090cb380875b16bd14288",
+      "run_output": "scripts/cross_field/toy_results.json",
+      "run_output_sha256": "decc0be5a91c19a267ce46dac06f3a26cb5b537d5fd8ef8ef5e7f23260efd75c",
+      "run_output_equal_frozen": true,
+      "summary": {"copies_profiles": 9216, "rank2_word_multisets": 12825, "key8_random_profiles": 1000, "key8_allocations": 864}
+    },
+    {
+      "id": "c881cce8a0c31075098a",
+      "path": "history/retired_topic_selection/independent_review/tests/audits/topic_selection/fair_goods/verify_frozen.py",
+      "source_sha256": "ff19f582a7bbac8d5087f6b5a0e33cd9f54984415cf5bebf2e3b02cf0a3070b5",
+      "size": 2111,
+      "copy": "scripts/fair_goods/fair_goods_verify_frozen.py",
+      "copy_sha256": "ff19f582a7bbac8d5087f6b5a0e33cd9f54984415cf5bebf2e3b02cf0a3070b5",
+      "run_output": "scripts/fair_goods/run.json",
+      "run_output_equal_frozen": true,
+      "summary": {"K8_feasible": 864, "K8_witnesses": 6, "K12_feasible": 31104, "K12_witnesses": 256, "copies_witnesses": [26, 106, 9]}
+    },
+    {
+      "id": "0dfd4144a8ecf95e50ce",
+      "path": "history/retired_topic_selection/independent_review/tests/audits/topic_selection/fair_chores/toy_search.py",
+      "source_sha256": "f25aa4dfe14f3f4a789c45b58fd73fd8b9a4907369de7f46fcaed29c025351e4",
+      "size": 4995,
+      "copy": "scripts/fair_chores/fair_chores_toy_search.py",
+      "copy_sha256": "f25aa4dfe14f3f4a789c45b58fd73fd8b9a4907369de7f46fcaed29c025351e4",
+      "run_output": "scripts/fair_chores/toy_results.json",
+      "run_output_sha256": "3a097378f4b2e209ac1d9c34c6317bb626617b74c557b2e9931d49969b3a9251",
+      "run_output_equal_frozen": true,
+      "summary": {"MMS_trials": 30000, "cycle_exhaustive_profiles": [64, 256, 1024], "cycle_random_profiles": 10000, "alpha_demo": "discarded"}
+    }
+  ],
+  "cross_source_relation": "The generalized-assignment and common-marginal JSONs reuse the same K4 edge numbering and basis pair [0,1,4]/[2,3,5]. This is retained as a combinatorial relation only; their objectives and game/allocation models remain separate. The generalized-assignment script was read and rerun; its generated JSON equals the frozen source output. The three additional scripts here are method/reproduction sources for independent fair-allocation objects and are not merged into one theorem."
 }

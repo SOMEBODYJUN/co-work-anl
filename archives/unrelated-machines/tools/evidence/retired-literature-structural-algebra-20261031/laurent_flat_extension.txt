@@ -1,0 +1,557 @@
+A Sparse Flat Extension Theorem for Moment
+Matrices
+Monique Laurent and Bernard Mourrain
+
+     Abstract. In this note we prove a generalization of the flat extension theorem
+     of Curto and Fialkow [4] for truncated moment matrices. It applies to moment
+     matrices indexed by an arbitrary set of monomials and its border, assuming
+     that this set is connected to 1. When formulated in a basis-free setting, this
+     gives an equivalent result for truncated Hankel operators.
+     Mathematics Subject Classification (2000). Primary 30E05; Secondary 12D10.
+     Keywords. Truncated moment problem, moment matrix, Hankel operator,
+     polynomial optimization.
+
+
+
+
+1. Introduction
+Throughout this note, K denotes a field, K[x] = K[x1 , . . . , xn ] is the ring of
+multivariate polynomials in n variables x = (x1 , . . . , xn ) with coefficients in K,
+Mn = {xα := xα           αn         n
+                1 · · · xn | α ∈ N } is the set of monomials in the variables x, and
+                  1
+
+
+Mn,t (resp., K[x]t ) is the set of monomials (resp., of polynomials) of degree at most
+t. The dual basis of Mn in the dual space K[x]∗ is denoted as Dn = {dβ | β ∈ Nn }.
+The natural action of K[x] on K[x]∗ is denoted by
+                       (p, Λ) ∈ K[x] × K[x]∗ 7→ p · Λ ∈ K[x]∗
+where (p · Λ)(q) := Λ(pq) for q ∈ K[x].
+1.1. The moment problem
+In this section, we consider K = R. The moment problem (see e.g. [1, 7]) deals with
+the characterization of the sequences of moments of measures. Given a probability
+                                                                        R
+measure µ on Rn , its moment of order a = xα ∈ Mn is the quantity xα µ(dx).
+The moment problem concerns the characterization of the sequences y = (ya )a∈Mn
+that are the sequences of moments of some nonnegative measure µ, in which case
+one says that µ is a representing measure for y, with y1 = 1 if µ is a probability
+measure. Let Λ ∈ R[x]∗ denote the linear form on R[x] associated to the sequence
+2                           M. Laurent and B. Mourrain
+
+                       P                                 P
+y, defined by Λ(p) = a pa ya for any polynomial p = a∈Mn pa a ∈      R R[x]. Then, y
+has a representing measure µ precisely when Λ is given by Λ(p) = p(x)µ(dx) for
+all p ∈ R[x]. A well known necessary condition for the existence of a representing
+measure is the positivity of Λ, i.e. Λ(p2 ) ≥ 0 for all p ∈ R[x], which is equivalent
+to requiring that the matrix M (y) := (yab )a,b∈Mn be positive semidefinite. As is
+well known this necessary condition is also sufficient in the univariate case (n = 1)
+(Hamburger’s theorem), but it is not sufficient in the multivariate case (n ≥ 2).
+However, positivity is sufficient for the existence of a representing measure under
+some additional assumptions. This is the case, for instance, when the sequence y
+is bounded [2] or, more generally, exponentially bounded [3]. The next result of
+Curto and Fialkow [4] shows that this is also the case when the matrix M (y) has
+finite rank (cf. also [14, 15] for a short proof).
+Theorem 1.1. [4] If M (y) is positive semidefinite and the rank of M (y) is fi-
+nite, then y has a (unique) representing measure (which is finitely atomic with
+rank M (y) atoms).
+      In the univariate case n = 1, a matrix of the form M (y) is a Hankel matrix.
+In the multivariate case, M (y) is known as a generalized Hankel matrix (see [17])
+or moment matrix (see [15]). One can also define truncated moment matrices:
+A matrix M indexed by a subset C ⊆ Mn is said to be a moment matrix if
+Ma,b = Ma′ ,b′ for all a, b, a′ , b′ ∈ C with ab = a′ b′ . Thus its entries are given by a
+sequence y = (yc )c∈C·C , where C·C := {ab | a, b ∈ C}, and we can write M = MC (y).
+When C = Mn,t , we also write M = Mt (y), where the entries of y are indexed
+by Mn,2t . Such matrices arise naturally in the context of the truncated moment
+problem, which asks for the existence of a representing measure for a truncated
+sequence indexed by a subset of monomials. A solution to the truncated moment
+problem would in fact imply a solution to the moment problem. Indeed, Stochel
+[19] shows that a sequence y = (ya )a∈Mn has a representing measure if and only
+if the truncated sequence (ya )a∈Mn,t has a representing measure for all t ∈ N.
+1.2. The flat extension theorem of Curto and Fialkow
+Curto and Fialkow studied intensively the truncated moment problem (cf. e.g.
+[4, 5, 6] and further references therein). In particular, they observed that the
+notion of flat extension of matrices plays a central role in this problem. Given
+matrices MC and MB indexed, respectively, by C and B ⊆ C, MC is said to be a
+flat extension of MB if MB coincides with the principal submatrix of MC indexed
+by B and rank MC = rank MB . Curto and Fialkow [4] show the following result
+for truncated moment matrices.
+Theorem 1.2 (The flat extension theorem [4]). For a sequence y = (ya )a∈Mn,2t ,
+if Mt (y) is a flat extension of Mt−1 (y), then there exists a (unique) sequence
+ỹ = (ỹa )a∈Mn for which M (ỹ) is a flat extension of Mt (y).
+      The flat extension theorem combined with Theorem 1.1 directly implies the
+following sufficient condition for existence of a representing measure.
+                  A Sparse Flat Extension Theorem for Moment Matrices                          3
+
+Corollary 1.3. For a sequence y = (ya )a∈Mn,2t , if Mt (y) is positive semidefinite
+and Mt (y) is a flat extension of Mt−1 (y), then y has a representing measure.
+
+    Curto and Fialkow [5] show moreover that the flat extension condition is in
+some sense necessary and sufficient for the existence of a representing measure.
+More precisely, they show that a sequence y = (ya )a∈Mn,2t has a representing
+measure if and only if it can be extended to a sequence y ′ = (ya′ )a∈Mn,2t+2k+2 (for
+some k ≥ 0) for which Mt+k+1 (y ′ ) is a flat extension of Mt+k (y ′ ).
+
+      The proof of Theorem 1.2 relies on a “truncated ideal like” property of the
+kernel of flat moment matrices (see (2.2) below). This permits to set up a linear
+system of equations in order to construct the flat extension Mt+1 (ỹ) of Mt (y) (and
+then iteratively the infinite flat extension M (ỹ)). See also [15] for an exposition of
+this proof. Schweighofer [18] proposes an alternative proof which is less technical
+and relies on properties of Gröbner bases. We propose in this note another simple
+alternative proof, which applies more generally to truncated moment matrices
+indexed by (suitable) general monomial sets (see Theorem 1.4).
+
+1.3. A generalized flat extension theorem
+We need some definitions to state our extension of Theorem 1.2. For C ⊆ Mn ,
+                         n
+                         [
+            +
+        C       := C ∪         xi C = {m, x1 m, . . . , xn m | m ∈ C} and ∂C := C + \ C
+                         i=1
+
+are called, respectively, the closure and the border of C. The set C ⊆ Mn is said
+to be connected to 1 if 1 ∈ C and every monomial m ∈ C \ {1} can be written as
+m = xi1 · · · xik with xi1 , xi1 xi2 , . . . , xi1 · · · xik ∈ C. For instance, C is connected to
+1 if C is closed under taking divisions. For example, {1, x2 , x1 x2 } is connected to
+1 but {1, x1 x2 } is not. We now state our main result.
+
+Theorem 1.4. Consider a sequence y = (ya )a∈C + ·C + , where C ⊆ Mn is finite and
+connected to 1. If MC + (y) is a flat extension of MC (y), then there exists a (unique)
+sequence ỹ = (ỹ)a∈Mn for which M (ỹ) is a flat extension of MC + (y).
+
+      The proof is delayed till Section 2. Note that Theorem 1.2 follows directly
+from Theorem 1.4 applied to the case C = Mn,t−1 . Thus our result can be seen
+as a sparse version of Theorem 1.2, which applies to a more general monomial set
+C, not necessarily the full set of monomials up to a given degree. We now give an
+example showing that the assumption that C is connected to 1 cannot be omitted.
+
+Example. For n = 1, consider the set C = {1, x3 }, which is not connected to 1, with
+                                              +  +
+∂C = {x, x4 }. Consider the sequence y ∈ RC ·C defined by y1 = yx = yx2 = 1,
+yx3 = yx4 = yx5 = a and yx6 = yx7 = yx8 = b, where a, b are scalars with b 6= a2 .
+Then, rank MC + (y) = rank MC (y) = 2. If there is a flat extension M (ỹ) of MC + (y),
+4                           M. Laurent and B. Mourrain
+
+then its principal submatrix indexed by C + ∪ {x2 } has the form:
+                                            1   x3   x x4    x2
+                                                               
+                                       1    1   a    1 a     1
+                                       x3 
+                                           a    b   a b     a 
+                    MC + ∪{x2 } (ỹ) = x 1    a    1 a     a 
+                                       x4  a    b   a b      b 
+                                       x2 1     a    a b     a
+However, 1 − x ∈ ker MC + (y) implies x − x2 ∈ ker MC + ∪{x2 } (ỹ) (see (2.2)) and thus
+1 = a = b, contradicting our choice b 6= a2 . Hence no flat extension exists.
+1.4. Basis-free reformulation
+Here we reformulate our result in a basis-free setting. Moment matrices correspond
+indeed to choosing the monomial basis Mn in the polynomial ring K[x] and its
+dual basis Dn in the dual space K[x]∗ . Given Λ ∈ K[x]∗ , the operator
+                                HΛ :   K[x] → K[x]∗
+                                       p    7→ p · Λ
+is known as a Hankel operator. Its matrix with respect to the bases Mn and
+Dn is precisely the moment matrix (Λ(xα+β ))α,β∈Mn = M (y) of the sequence
+y = (Λ(a))a∈Mn . The kernel of HΛ ,
+                    ker HΛ = {p ∈ K[x] | Λ(pq) = 0 ∀q ∈ K[x]},
+is an ideal in K[x]. Moreover, when K = R and Λ is positive, i.e. when Λ(p2 ) ≥ 0 for
+all p ∈ R[x], ker HΛ is a real radical ideal [14]. Theorem 1.1 means that Λ ∈ R[x]∗
+is positive with rank HΛ < ∞Rif and only if there exists a nonnegative finite atomic
+measure µ for which Λ(p) = p(x)µ(dx) for all p ∈ R[x].
+      Truncated Hankel operators can be analogously defined. Given C ⊆ Mn and
+Λ ∈ (Span(C + · C + ))∗ , the corresponding Hankel operator is
+                            +
+                        HΛC : Span(C + ) → Span(C + )∗
+                              p          7→ p · Λ
+and its restriction to Span(C) is HΛC : Span(C) → Span(C)∗ . We have the following
+mappings:
+                 Span(C) σ1           Span(C)        σ2 Span(C + )
+                       C
+                          ←−          C +           −→           +            (1.1)
+                 ker HΛ         ker HΛ ∩ Span(C)         ker HΛC
+where σ1 is onto and σ2 is one-to-one, so that
+             Span(C)            Span(C)            Span(C + )
+       dim           ≤ dim                   ≤ dim         + .                    (1.2)
+             ker HΛC              +
+                           ker HΛC ∩ Span(C)       ker HΛC
+               +                                                    +
+Thus, rank HΛC = rank HΛC (in which case we also say that HΛC is a flat extension
+of HΛC ) if and only if equality holds throughout in (1.2), i.e. both σ1 and σ2 in (1.1)
+are isomorphisms or, equivalently, if
+                                       +                            +
+       Span(C + ) = Span(C) + kerHΛC       and ker HΛC = ker HΛC ∩ Span(C).
+             A Sparse Flat Extension Theorem for Moment Matrices                        5
+
+Theorem 1.4 can be reformulated as follows.
+
+Theorem 1.5. Let Λ ∈ (Span(C + · C + ))∗ , where C ⊆ Mn is finite and connected to
+                              +
+1, and assume that rank HΛC = rank HΛC . Then there exists (a unique) Λ̃ ∈ R[x]∗
+                                        +
+for which HΛ̃ is a flat extension of HΛC , i.e. Λ̃ coincides with Λ on Span(C + · C + )
+                          +
+and rank HΛ̃ = rank HΛC .
+
+1.5. Border bases and commuting multiplication operators
+We recall here a result of [16] about border bases of polynomial ideals that we
+exploit to prove our flat extension theorem. Let B := {b1 , . . . , bN } be a finite set
+of monomials. Assume that, for each border monomial xi bj ∈ ∂B, we are given a
+polynomial of the form
+                                        N
+                                        X      (ij)               (ij)
+                    g (ij) := xi bj −         ah b h      where ah       ∈ K.
+                                        h=1
+
+The set
+             F := {g (ij) | i = 1, . . . , n, j = 1, . . . , N with xi bj ∈ ∂B}      (1.3)
+is known as a border prebasis [9] or a rewriting family for B [16]. When the set B
+contains the constant monomial 1, one can easily verify that B is a generating set
+for the quotient space K[x]/(F ), where (F ) is the ideal generated by the set F .
+When B is connected to 1, Theorem 1.6 below characterizes the case when B is a
+basis of K[x]/(F ), in which case F is said to be a border basis of the ideal (F ). For
+this, for each i = 1, . . . , n, consider the linear operator:
+
+        χi : Span(B) → Span(B)
+                                              
+                                                  xi bj              if xi bj ∈ B,   (1.4)
+              bj          7→ χi (bj ) =           PN       (ij)
+                                                      h=1 ah bh      if xi bj ∈ ∂B
+
+extended to Span(B) by linearity. When B is a basis of K[x]/(F ), χi corresponds
+to the “multiplication operator by xi ” from K[x]/(F ) to K[x]/(F ) and thus the
+operators χ1 , . . . , χn commute pairwise. The next result of [16] shows that the
+converse implication holds when B is connected to 1; this was also proved later in
+[9] when B is closed under taking divisions.
+
+Theorem 1.6. [16] Let B ⊆ Mn be a finite set of monomials which is connected
+to 1, let F be a rewriting family for B as in (1.3), and let χ1 , . . . , χn be defined
+as in (1.4). The set B is a basis of the quotient space K[x]/(F ) if and only if the
+operators χ1 , . . . , χn commute pairwise.
+
+      The proof of our sparse flat extansion theorem is an adaptation of this result
+to kernels of Hankel operators, where we omit the assumption that B is connected
+to 1.
+6                                 M. Laurent and B. Mourrain
+
+1.6. Contents of the paper
+Section 2 contains the proof of our generalized flat extension theorem and we
+mention some applications in Section 3. In particular, we observe that Theorem
+1.2 is an ‘easy’ instance of our flat extension theorem (since one can prove existence
+of a basis connected to 1). We also point out the relevance of the flat extension
+theorem to polynomial optimization and to the problem of computing real roots
+to systems of polynomial equations.
+
+
+2. Proof of the flat extension theorem
+We give here the proof of Theorem 1.5 (equivalently, of Theorem 1.4). We will often
+use the following simple observations, which follow directly from the assumption
+              +
+that rank HΛC = rank HΛC : For all p ∈ Span(C + ),
+                          +   def.
+              p ∈ ker HΛC ⇐⇒ Λ(ap) = 0 ∀a ∈ C + ⇐⇒ Λ(ap) = 0 ∀a ∈ C,                      (2.1)
+                              +                                              +
+                p ∈ ker HΛC       and xi p ∈ Span(C + ) =⇒ xi p ∈ ker HΛC .               (2.2)
+                                                             ∗
+Our objective is to construct a linear form Λ̃ ∈ K[x] whose Hankel operator HΛ̃
+                          +
+is a flat extension of HΛC .
+                                     +
+       Let B ⊆ C for which rank HΛC = rank HΛB = |B|. Note that we can assume
+that 1 ∈ B. Indeed, if no such B exists containing 1, then Λ(p) = 0 ∀p ∈ Span(C + )
+and one can easily verify that this implies that Λ is identically zero, in which case
+the theorem trivially holds.
+                                           +
+    From the assumption: rank HΛC = rank HΛB = |B|, we have the direct sum
+                                             +
+decomposition: Span(C + ) = Span(B) ⊕ ker HΛC , and thus
+                                                                                      +
+    ∀p ∈ Span(C + )    ∃! π(p) ∈ Span(B) such that f (p) := p−π(p) ∈ ker HΛC . (2.3)
+Then the set
+                         F := {f (m) = m − π(m) | m ∈ ∂B}
+is a rewriting family for B and, for i = 1, . . . , n, the linear operator χi in (1.4) maps
+p ∈ Span(B) to χi (p) = π(xi p) ∈ Span(B). We show that χ1 , . . . , χn commute
+                            +
+pairwise. Set K := ker HΛC .
+Lemma 2.1. χi ◦ χj = χj ◦ χi .
+                                      P
+Proof. Let m ∈ B. Write π(xi m) := b∈B λib b (λib ∈ R). We have:
+                       P              P                  P
+          χi (m) = χj ( Pb∈B λib b) = b∈B λib χj (b) = b∈B λib (x
+      χj ◦P                                                      Pj b − f (xj b))
+    = xj ( b∈B λib b) − b∈B λib f (xj b) = xj (xi m − f (xi m)) − b∈B λib f (xj b).
+Therefore,
+                                                                 X j
+    p := χj ◦ χi (m) − χi ◦ χj (m) = xi f (xj m) − xj f (xi m) +   λ f (xj b) − λib f (xi b) .
+                                     |           {z          } b∈B b
+                                                 p1              |         {z              }
+                                                                                 p2
+             A Sparse Flat Extension Theorem for Moment Matrices                       7
+
+We show that p1 ∈ K. Indeed, ∀a ∈ C, Λ(ap1 ) = Λ(axi f (xj m) − axj (xi m)) = 0
+since axi , axj ∈ C + and f (xi m), f (xj m) ∈ K; by (2.1), this shows that p1 ∈ K.
+As p2 ∈ K too, this implies p ∈ K and thus p = 0, because p ∈ Span(B).           
+     Our objective now is to show that B is a basis of K[x]/(F ) and that, if π̃
+denotes the projection from K[x] onto Span(B) along (F ), then the operator Λ̃
+defined by Λ̃(p) = Λ(π̃(p)) for p ∈ K[x], defines the desired flat extension of Λ.
+Note that when B is connected to 1, Theorem 1.6 implies directly that B is a basis
+of K[x]/(F ). As we do not assume B connected to 1, we cannot apply Theorem 1.6,
+but our arguments below are inspired from its proof. In particular, we construct
+the projection π̃ via the mapping ϕ from (2.4) below.
+     As the χi ’s commute, the operator f (χ) := f (χ1 , . . . , χn ) is well defined for
+any polynomial f ∈ K[x]. Then K[x] acts on Span(B) by
+                   (f, p) ∈ K[x] × Span(B) 7→ f (χ)(p) ∈ Span(B).
+Recall that 1 ∈ B. The mapping
+                               ϕ : K[x] → Span(B)
+                                                                                   (2.4)
+                                   f    7→ f (χ)(1)
+is a homomorphism and, by the following property,
+                 ϕ(f g) = f (χ)(g(χ)(1)) = f (χ)(ϕ(g)) ∀f, g ∈ K[x],               (2.5)
+                                                                           +
+ker ϕ is an ideal in K[x]. We now prove that ϕ coincide on Span(C ) with the
+                                         +
+projection π on Span(B) along K = ker HΛC .
+Lemma 2.2. For any element m ∈ C + , ϕ(m) = π(m).
+Proof. We use induction on the degree of m. If m = 1, we have ϕ(1) = π(1) = 1
+since 1 ∈ B. Let m 6= 1 ∈ C + . As C is connected to 1, m is of the form m = xi m1
+for some m1 ∈ C + . By the induction assumption, we have ϕ(m1 ) = π(m1 ). Then,
+            ϕ(m) = ϕ(xi m1 ) = χi (ϕ(m1 )) = χi (π(m1 )) = xi π(m1 ) − κ,
+with κ ∈ F ⊆ K. But we also have
+             m = xi m1 = xi (π(m1 ) + m1 − π(m1 )) = xi π(m1 ) + xi κ1
+where κ1 = m1 − π(m1 ) ∈ K. We deduce that
+                         m = ϕ(m) + κ + xi κ1 = ϕ(m) + κ2
+with κ2 = κ + xi κ1 ∈ K + ∩ Span(C + ). As κ1 ∈ K and xi κ1 ∈ Span(C + ), we
+deduce using (2.1) that xi κ1 ∈ K, thus implying κ2 ∈ K. As ϕ(m) ∈ Span(B), it
+coincides with the projection of m on Span(B) along K.                      
+     This implies directly:
+                  ϕ(b) = b, ϕ(xi b) = χi (b) ∀b ∈ B ∀i = 1, . . . , n,             (2.6)
+                                                                     +
+               Λ(pq) = Λ(p ϕ(q)) = Λ(ϕ(p)ϕ(q)) ∀p, q ∈ Span(C ).                   (2.7)
+                                    +
+Lemma 2.3. For all p, q ∈ Span(C ), Λ(pq) = Λ(ϕ(pq)).
+8                           M. Laurent and B. Mourrain
+
+Proof. We first show by induction on the degree of m ∈ C + that
+
+                            Λ(mb) = Λ(ϕ(mb)) ∀b ∈ B.                             (2.8)
+
+The result is obvious if m = 1. Else, as C + is connected to 1, we can write m = xi m1
+where m1 ∈ C + . Using first (2.7) and then (2.6), we find:
+
+                  Λ(mb) = Λ(m1 xi b) = Λ(m1 ϕ(xi b)) = Λ(m1 χi (b)).
+
+Next, using first the induction assumption and then (2.5), (2.6), we find:
+
+     Λ(m1 χi (b)) = Λ(ϕ(m1 χi (b))) = Λ(m1 (χ)(χi (b))) = Λ(m(χ)(b)) = Λ(ϕ(mb)),
+
+thus showing (2.8). We can now conclude the proof of the lemma. Let p, q ∈
+Span(C + ). Then, using successively (2.7), (2.8), (2.5), (2.6), Λ(pq) is equal to
+
+    Λ(p ϕ(q)) = Λ(ϕ(pϕ(q))) = Λ(p(χ)(ϕ(ϕ(q)))) = Λ(p(χ)(ϕ(q))) = Λ(ϕ(pq)).        
+
+    We can now conclude the proof of Theorem 1.5. Let Λ̃ be the linear operator
+on K[x] defined by
+                           Λ̃(p) := Λ(ϕ(p))   for p ∈ K[x].
+                                                        +
+We show that HΛ̃ is the unique flat extension of HΛC .
+                                        +
+     First, HΛ̃ is an extension of HΛC since, for all p, q ∈ Span(C + ), Λ̃(pq) =
+Λ(ϕ(pq)) = Λ(pq) (by Lemma 2.3).
+                                +
+     Next, we have K = ker HΛC ⊆ ker HΛ̃ . Indeed, let κ ∈ K. By Lemma 2.2,
+ϕ(κ) = π(κ) = 0. Thus for any p ∈ K[x], we have Λ̃(p κ) = Λ(ϕ(p κ)) =
+Λ(p(χ)(ϕ(κ))) = 0, which shows that κ ∈ ker HΛ̃ .
+     As F is a rewritting family for B and B contains 1, B is a generating set
+of K[x]/(F ) and thus dim K[x]/(F ) ≤ |B|. Set AΛ̃ := K[x]/ ker HΛ̃ . Then, as
+F ⊆ K ⊆ ker HΛ̃ , we have dim AΛ̃ ≤ dim K[x]/(F ) ≤ |B|. On the other hand,
+dim AΛ̃ = rankHΛ̃ ≥ rankHΛ̃B = rankHΛB = |B|. Therefore, dim AΛ̃ = rankHΛ̃ =
+                                                    +
+|B|, ker HΛ̃ = (K), HΛ̃ is a flat extension of HΛC , and we have the direct sum:
+K[x] = Span(B)⊕ ker HΛ̃ . Moreover, ϕ(p) is the projection of p ∈ K[x] on Span(B)
+along ker HΛ̃ . Indeed, ϕ(p) ∈ Span(B) and p − ϕ(p) ∈ ker HΛ̃ for any p ∈ K[x]
+since, for any q ∈ K[x],
+
+                 Λ̃(pq) = Λ(ϕ(pq)) = Λ(p(χ)(ϕ(q))),
+                 Λ̃(pϕ(q)) = Λ(ϕ(pϕ(q))) = Λ(p(χ)(ϕ(q))) = Λ̃(pq).
+
+      Finally, if Λ′ ∈ K[x]∗ is another linear form whose Hankel operator HΛ′ is
+                       +
+a flat extension of HΛC , then ker HΛ̃ = (K) ⊆ ker HΛ′ . This implies that for all
+p ∈ K[x], Λ′ (p) = Λ′ (ϕ(p)) = Λ(ϕ(p)) = Λ̃(p). This shows the unicity of the flat
+                  +
+extension of HΛC , which concludes the proof of Theorem 1.5.
+              A Sparse Flat Extension Theorem for Moment Matrices                           9
+
+3. Applications
+3.1. Application to the flat extension theorem of Curto and Fialkow
+Theorem 1.2 is in some sense an ‘easy’ instance of Theorem 1.4. Indeed, under its
+assumptions, one can show existence of a maximum rank principal submatrix of
+Mt−1 (y) indexed by a monomial set B connected to 1 which, as noted in the proof
+of Theorem 1.4, permits to apply Theorem 1.6.
+                                                                                        +
+Proposition 3.1. Let Λ ∈ (Span(C + · C + ))∗ , where C := Mn,t−1 . If rank HΛC =
+rank HΛC , then there exists B ⊆ C closed under taking divisions (and thus connected
+                          +
+to 1) for which rank HΛC = rank HΛB = |B|.
+                                                                   +
+Proof. Let M = (Λ(ab))a,b∈C + denote the matrix of HΛC in the canonical bases.
+Consider a total degree monomial ordering  of C and let B ⊆ C index a maximum
+linearly independent set of columns of M which is constructed by the greedy
+algorithm using the ordering . One can easily verify that B is closed under taking
+divisions (cf. [13]).                                                            
+
+     The following example shows that, even if C is connected to 1, there may not
+always exist a base B connected to 1 for HΛC (which justifies our generalisation of
+Theorem 1.6 to kernels of Hankel operators).
+
+Example. For n = 2, let C = {1, x1 , x1 x2 } with ∂C = {x2 , x1 x22 , x21 , x21 x2 }, and let
+Λ ∈ (Span(C + · C + ))∗ be defined by Λ(xi1 xj2 ) = 1 if j = 0, 1, and Λ(xi1 xj2 ) = a if
+j = 2, 3, 4, except Λ(x21 x42 ) = a2 , where a is a scalar with a 6= 1. The associated
+moment matrix has the form
+                             1    x1   x1 x2   x21   x21 x2   x2   x1 x22
+                                                                         
+                    1        1    1      1     1       1      1     a
+                    x1     1    1      1     1       1      1     a    
+                    x1 x2 1     1     a      1       a      a     a    
+                    x21   1     1      1     1       1      1     a    
+                    x21 x2 
+                           1     1     a      1       a      a     a    
+                    x2  1        1     a      1       a      a     a 
+                    x1 x22 a      a     a      a       a      a     a2
+                              +                                +
+and rank HΛC = rank HΛC = 2. As 1 − x1 ∈ ker HΛC , the only sets indexing a
+column base for HΛC are B = {1, x1 x2 } and {x1 , x1 x2 }, thus not connected to 1.
+
+     Combining Theorem 1.5 with Theorem 1.1 we obtain the following extension
+of Corollary 1.3.
+
+Theorem 3.2. Let Λ ∈ (Span(C + · C + ))∗ , where C ⊆ Mn is finite and connected to
+                                                 +
+1. Assume that Λ is positive and that rank HΛC = rank HΛC . Then the sequence
+y = (Λ(a))a∈C + ·C + has a representing measure.
+10                         M. Laurent and B. Mourrain
+
+3.2. Application to polynomial optimization
+We point out here the relevance of the flat extension theorems to polynomial opti-
+mization and to the problem of computing the real roots to polynomial equations.
+In this section, we take again K = R.
+      The truncated moment problem has recently attracted a lot of attention also
+within the optimization community, since it can be used to formulate semidefinite
+programming relaxations to polynomial optimization problems (see [11]). Moreover
+the flat extension theorem of Curto and Fialkow permits to detect optimality of the
+relaxations and to extract global optimizers to the original optimization problem
+(see [8]). Here is a brief sketch; see e.g. [15] and references therein for details.
+      Suppose we want to compute the infimum p∗ of a polynomial p over a semi-
+algebraic set K defined by the polynomial inequalities g1 ≥ 0, . . . , gm ≥ 0. For any
+integer t ≥ deg(p)/2 and such that t ≥ dj := ⌈deg(gj )/2⌉, consider the program:
+
+  p∗t := inf Λ(p) s.t. Λ ∈ (R[x]2t )∗ , Λ(1) = 1, Λ  0, gj · Λ  0 (∀j ≤ m). (3.1)
+
+Here, Λ  0 means that Λ is positive (i.e., Λ(p2 ) ≥ 0 for all p ∈ R[x]t ) and the
+localizing conditions gj · Λ  0 (i.e. Λ(gj p2 ) ≥ 0 for all p ∈ R[x]t−dj ) aim to
+restrict the search for a representing measure suported by the set K (cf. [6, 11]).
+Using moment matrices, the program (3.1) can be formulated as an instance of
+semidefinite programming for which efficient algorithms exist (see e.g. [20, 21]).
+                                          M                              M
+We have: p∗t ≤ p∗ , with equality if HΛ n,t is a flat extension of HΛ n,t−d for
+an optimum solution Λ to (3.1) (d := maxj dj ). In that case, the atoms of the
+representing measure (which exists by Corollary 1.3) are global minimizers of p
+over the semi-algebraic set K and they can be computed from Λ [8]. Moreover,
+                                             M
+they are all the global minimizers when HΛ n,t has the maximum possible rank
+among all optimum solutions to the semidefinite program (3.1).
+      As shown in [12], the truncated moment problem also yields an algorithmic
+approach to the problem of computing the real roots to polynomial equations
+g1 = 0, . . . , gm = 0 (assuming their number is finite). Indeed, this amounts to
+finding all global minimizers to a constant polynomial, say p = 0, over the real
+variety K := {x ∈ Rn | gj (x) = 0 ∀j = 1, . . . , m}. Consider the semidefinite
+program (3.1) where the localizing conditions now read gj · Λ = 0 ∀j. For t large
+enough, the program (3.1) has a maximum rank solution which is a flat extension
+and thus, as noted above, all points of K can be computed from this solution. See
+[12] for details.
+      A concern in this type of approach is the size of the matrices appearing in
+the semidefinite program (3.1). In order to improve the practical applicability of
+this approach, it is crucial to derive semidefinite programs involving matrices of
+moderate sizes. For this one may want to consider moment matrices indexed by
+sparse sets of monomials instead of the full degree levels Mn,t . This is where our
+new sparse flat extension theorem may become very useful. It will be used, in
+particular, in [10].
+             A Sparse Flat Extension Theorem for Moment Matrices                      11
+
+      The approach in [12] also permits to find the real radical of the ideal generated
+by the polynomials g1 , . . . , gm . Indeed, if Λ ∈ (R[x])∗ is positive, then the kernel
+of its Hankel operator HΛ is a real radical ideal [14] and, under the conditions
+                          +
+of Theorem 3.2, ker HΛC generates a real radical ideal. These facts explain the
+relevance of moment matrices and Hankel operators to the problem of finding
+the real radical of a polynomial ideal. For instance, this permits to weaken the
+assumptions in Proposition 4.1 of [12] and to strengthen its conclusions; more
+precisely, we do not need to assume the commutativity of the operators χi ’s (as
+this holds automatically, by Lemma 2.1) and we can claim that the returned ideal
+is real radical (by the above argument).
+
+
+References
+ [1] N.I. Akhiezer. The Classical Moment Problem. Hafner, New York, 1965.
+ [2] C. Berg, J.P.R. Christensen, and P. Ressel. Positive definite functions on Abelian
+     semigroups. Mathematische Annalen, 223:253–272, 1976.
+ [3] C. Berg and P.H. Maserick. Exponentially bounded positive definite functions. Illi-
+     nois Journal of Mathematics, 28:162–179, 1984.
+ [4] R.E. Curto and L.A. Fialkow. Solution of the truncated complex moment problem
+     for flat data. Memoirs of the American Mathematical Society, vol. 119, Amer. Math.
+     Soc., Providence, RI, 1996.
+ [5] R.E. Curto and L.A. Fialkow. Flat extensions of positive moment matrices: recur-
+     sively generated relations. Memoirs of the American Mathematical Society, vol. 648,
+     Amer. Math. Soc., Providence, RI, 1998.
+ [6] R.E. Curto and L.A. Fialkow. The truncated complex K-moment problem. Trans.
+     Amer. Math. Soc., 352:28252855, 2000.
+ [7] B. Fuglede. The multidimensional moment problem. Expositiones Mathematicae,
+     1:47–65, 1983.
+ [8] D. Henrion and J.B. Lasserre. Detecting global optimality and extracting solutions
+     in GloptiPoly. In Positive Polynomials in Control, D. Henrion and A. Garulli (eds.),
+     Lecture Notes on Control and Information Sciences, 312:293–310, Springer, Berlin,
+     2005.
+ [9] A. Kehrein, M. Kreuzer, and L. Robbiano. An algebraist’s view on border bases.
+     In Solving Polynomial Equations - Foundations, Algorithms and Applications, A.
+     Dickenstein and I.Z. Emiris (eds.), pages 169–202. Springer, 2005.
+[10] J.B. Lasserre, M. Laurent, B. Mourrain, P. Rostalski, and P. Trebuchet. Moment
+     matrices, border bases and real radical ideals. In preparation, 2009.
+[11] J.B. Lasserre. Global optimization with polynomials and the problem of moments.
+     SIAM Journal on Optimization 11:796–817, 2001.
+[12] J.B. Lasserre, M. Laurent, and P. Rostalski. Semidefinite characterization and com-
+     putation of zero-dimensional real radical ideals. Foundations of Computational Math-
+     ematics, 8(5):607–647, 2008.
+[13] J.B. Lasserre, M. Laurent, and P. Rostalski. A prolongation-projection algorithm for
+     computing the finite real variety of an ideal. arXiv:0806.3874v1, June 2008.
+12                          M. Laurent and B. Mourrain
+
+[14] M. Laurent. Revisiting two theorems of Curto and Fialkow on moment matrices.
+     Proceedings of the American Mathematical Society 133(10):2965–2976, 2005.
+[15] M. Laurent. Sums of squares, moment matrices and optimization over polynomials.
+     In Emerging Applications of Algebraic Geometry, Vol. 149 of IMA Volumes in Math-
+     ematics and its Applications, M. Putinar and S. Sullivant (eds.), Springer, pages
+     157-270, 2009.
+[16] B. Mourrain. A new criterion for normal form algorithms. In Proceedings of the
+     13th International Symposium on Applied Algebra, Algebraic Algorithms and Error-
+     Correcting Codes, H. Imai, S. Lin, and A. Poli (eds.), vol. 1719 of Lecture Notes In
+     Computer Science, pages 430–443. Springer Verlag, 1999.
+[17] B. Mourrain and V.Y. Pan. Multivariate Polynomials, Duality, and Structured Ma-
+     trices. J. Complexity, 16(1):110–180, 2000.
+[18] M. Schweighofer. A Gröbner basis proof of the flat extension theorem for moment
+     matrices. arXiv:0801.4243v1, January 2008.
+[19] J. Stochel. Solving the truncated moment problem solves the moment problem. Glas-
+     gow Journal of Mathematics, 43:335–341, 2001.
+[20] L. Vandenberghe and S. Boyd. Semidefinite Programming. SIAM Review 38(1):49–
+     95, 1996.
+[21] H. Wolkowicz, R. Saigal, L. Vandeberghe (eds.). Handbook of Semidefinite Program-
+     ming, Kluwer, 2000.
+
+Monique Laurent
+Centrum Wiskunde & Informatica (CWI)
+Kruislaan 413
+1098 SJ Amsterdam
+The Netherlands
+e-mail: M.Laurent@cwi.nl
+Bernard Mourrain
+GALAAD, INRIA Méditerranée
+BP 93, 06902 Sophia Antipolis
+France
+e-mail: mourrain@sophia.inria.fr
+
