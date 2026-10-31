@@ -6,7 +6,7 @@ title: "分数重匹配、归一化 XOS 与稳健小质量缺口"
 status: "standalone-core-proved; backend-conditional"
 summary: "独立分数 benchmark 重匹配引理及其在显式归一化 XOS/unit-FSLP 中的条件后果。A 的匹配结论和有限位最大乘积算法有完整证明与两份独立审查支持；残余 backend、rounding、1/1125000（预留安全因子后 1/2250000）和 rho=2^24 只在作者证明的显式 XOS 路线下作为待独立复核的条件合同。"
 truth_status: "A proved under stated semantic hypotheses; B-C candidate conditional contract; D-E deductions conditional on C"
-review_level: "A independently reconstructed in v1/v3 reviews; author Proof v5 fully read; no independent read-after of that proof and no executable backend audit"
+review_level: "A independently reconstructed in v1/v3 reviews; Boss1 full read-after of author Proof v5; no executable backend audit"
 scope: "finite disjoint allocations, fractional residual configuration families, maximum-product singleton rematching, normalized explicit XOS, unit-FSLP, shared singleton REPAIR, flat unrelated-machines schedule"
 source_refs:
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/fractional_rematching_extension_author_proof_v5.md#all"
@@ -36,7 +36,7 @@ legacy_ids:
  \mathcal B(y)=\exp\!\left(\frac1n\sum_{i,S}y_{i,S}\ln v_i(S)\right)>0.
 \]
 
-本档合并七个冻结源的稳定内容：三个 statement-only 版本、两份 rank 独立审查、v3 增量审查以及作者 Proof v5。statement-only 文件本身没有证明；A 的证明由 v1/v3 审查独立重构，作者 Proof v5 给出更长的实现化证明。v1/v2/v3 与作者 Proof 的数值合同不能视为同一个成熟定理：作者 Proof v5 的显式 XOS 路线已全文读取，但尚无针对该稿的独立 read-after 或执行审计。
+本档合并七个冻结源的稳定内容：三个 statement-only 版本、两份 rank 独立审查、v3 增量审查以及作者 Proof v5。statement-only 文件本身没有证明；A 的证明由 v1/v3 审查独立重构，作者 Proof v5 给出更长的实现化证明。本轮 Boss1 已对作者 Proof v5 做完整 read-after；v1/v2/v3 与作者 Proof 的数值合同仍不能视为同一个成熟定理，且 backend 尚无执行审计。
 
 # 2. A：分数 benchmark 重匹配引理（完整结论）
 
@@ -89,7 +89,7 @@ B 不是原论文逐字定理。它把 A 与一个显式有限 XOS backend 接�
 \]
 并以固定步长更新 \(x\leftarrow(1-h)x+h(b/4+3u/4)\)。有限位凸势分析保证终点 \(M\le2|A|\)，从而所有 residual 分数族都满足 A2（\(c=2\)），且恢复的 \(V_i\) 有多项式支撑与有理编码。此路线的关键是“所有分数族”的 inclusion，而非只恢复一个 witness。
 
-这是作者稿中的候选实现；没有独立 read-after 或运行记录。后续若采用它，必须审计 LP 基本解位长、嵌套前缀回收、空活动集和数值预算。
+这是作者稿中的候选实现；本轮 read-after 逐节核对了证明接口，但没有运行记录或独立 backend 实现。后续若采用它，必须审计 LP 基本解位长、嵌套前缀回收、空活动集和数值预算。
 
 ## 3.2 E2：显式 XOS rounding、mask 与 rematching
 
@@ -154,6 +154,6 @@ A 与 \(c=2,d=5/2\) 组合得 benchmark 除以 \(1{,}125{,}000\)，另预留固�
 
 - statement-only v1/v2/v3 逐字保留版本演进：A 相同；v2/v3 改用保守 60000、内部 floor 及共享 REPAIR；旧 20000、1/375000 等数字只作为历史候选，不当最终结论。
 - v1 审查完整重构 A、unit-FSLP 证书、matching finite-bit 过程和低 utility 计数；v2 审查核对 60000 的 factor-three 算术和 \(3/4\) floor，但明确未审 backend 全链；v3 审查指出旧一般次可加 tail 的具体缺口，并给出更保守替代链（例如 \(400000d^2\) 或 \(\rho=2^{30}\)），不把该替代链与作者 v5 的显式 XOS 证明混为一谈。
-- 作者 Proof v5 自称给出显式 XOS 的 residual lift、welfare CDF rounding、split、shifted inverse-moment、finite mask DP、任意 comparison rematching 和完整 flat-UM schedule；本档已全文读取并把接口和常数写入，但没有执行程序、独立复核或新颖性认证。未来应建立独立 read-after，逐项检查 LP 基本解位长、采样 cutoff、相同成功事件和每个 DP/log 误差预算。
+- 作者 Proof v5 自称给出显式 XOS 的 residual lift、welfare CDF rounding、split、shifted inverse-moment、finite mask DP、任意 comparison rematching 和完整 flat-UM schedule；本档及本轮增量审查已全文读取并把接口和常数写入，但没有执行程序、独立 backend 复核或新颖性认证。未来仍应逐项检查 LP 基本解位长、采样 cutoff、相同成功事件和每个 DP/log 误差预算。
 
 该对象可被第三阶段作为多个关系节点使用：A 是一般分数配置到 singleton matching 的证明节点；B/C 是带精确外部前件的条件推导节点；D 是 C 的 promise-gap 组合，E 是 C 输出到普通 UM 全作业调度的实现迁移。与当前六人客户 SPE 主问题没有已知直接同构边，暂不造边。
