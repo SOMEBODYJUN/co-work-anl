@@ -1,0 +1,689 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\pdfmapfile{+lm.map}
+\pdfmapfile{+cm.map}
+\pdfmapfile{+cmextra.map}
+\pdfmapfile{+symbols.map}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={Sharp Approximation for Two Facilities with Heterogeneous Location Sets},pdfauthor={Research draft}}
+\setlist{topsep=4pt,itemsep=2pt,parsep=0pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\NE}{\mathcal N}
+\newcommand{\Rmenu}{\mathcal R}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\argmax}{\operatorname*{arg\,max}}
+\newcommand{\phiG}{\varphi}
+\newcommand{\rhoG}{\rho}
+\newcommand{\Uone}{U_1}
+\newcommand{\Utwo}{U_2}
+\DeclareMathOperator{\poly}{poly}
+\title{Sharp Approximation for Two Facilities\\with Heterogeneous Location Sets}
+\author{Research draft}
+\date{September 30, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study two-stage facility location with weighted atomic customers and arbitrary finite, potentially different allowed location sets for two facilities. We prove that the optimal universal approximation factor is exactly $2$, and construct a factor-$2$ approximate subgame-perfect equilibrium in polynomial bit time. Facility locations and all customer continuations are pure; customers play exact Nash equilibria. The construction uses at most four pure equilibrium witnesses per layout, obtained from all-on-one-side and maximum-customer assignments by guarded repair. Its proof excludes every bad alternating response cycle using customer transfers, legal cross-color chords, and a bound on common-customer weights that propagates around cycles of arbitrary length. A six-vertex undirected host graph with exactly two common customers at every legal layout gives the matching lower bound, with unique customer continuations. If every legal pair shares at most one customer and one facility has at most two allowed locations, the sharp factor improves to $\rhoG=2\cos(\pi/7)$. Both sharp guarantees extend to customer-specific strictly increasing realized-load costs. We also prove a general closed-response-core lifting theorem and, for linear costs, an exact optimization algorithm parameterized by maximum pairwise customer overlap.
+\end{abstract}
+
+\section{Introduction and scope}
+
+In atomic two-stage facility location, facilities first choose locations and customers then select accessible facilities to minimize congestion. Each customer is indivisible, although its continuation strategy may independently randomize. Facility payoffs are the expected weights of customers they serve. Heterogeneous allowed location sets remove a useful construction: the two facilities need not be able to co-locate at a common maximum-reach site.
+
+Our main theorem allows arbitrary finite catalogs on both sides, arbitrary positive customer weights, and any number of common customers at a legal pair. Write
+\[
+ \phiG=\frac{1+\sqrt5}{2},\qquad
+ \rhoG=2\cos(\pi/7)=1.8019377358\ldots.
+\]
+The latter is the largest real root of
+\begin{equation}\label{eq:cubic}
+ q(z)=z^3-z^2-2z+1.
+\end{equation}
+We establish the following results.
+\begin{enumerate}
+\item For arbitrary heterogeneous catalogs, the optimal universal factor is exactly $2$. A factor-$2$ approximate SPE can be constructed with pure exact customer continuations in polynomial bit time, using $O(|\Uone||\Utwo|(n+1)^2)$ arithmetic operations.
+\item The lower bound already uses a six-vertex undirected host graph, two choices per facility, and exactly two common customers at each legal pair. Every customer continuation is unique, even when independent mixing or coarse correlation is permitted.
+\item With at most one common customer at every legal pair and at most two choices for one facility, the sharp universal factor is $\rhoG$. A predetermined pure tie rule and at most two retained columns suffice for its upper bound.
+\item For general two-leader continuation games, a cycle of responses maximizing minimum attainable continuation payoff defines a square subgame preserving full-game deviation threats. Approximate stability in this core lifts to the full game.
+\item For linear costs and arbitrary catalogs, an exact rational algorithm computes the instance-optimal factor in time exponential only in maximum pairwise customer overlap.
+\end{enumerate}
+The universal factor-$2$ proof is independent of any common-catalog golden-ratio existence theorem. In the class with one catalog of size at most two, allowing the pairwise overlap to increase from one customer to two changes the sharp universal constant from $\rhoG$ to $2$. Whether the single-common-customer $\rhoG$ guarantee extends to arbitrary catalog sizes on both sides remains outside our results.
+
+\paragraph{Related work and the scope of earlier statements.}
+Krogmann, Lenzner, Skopalik, Uetz, and Vos~\cite{krogmann2024} introduce and study the atomic model with facility-specific allowed location sets. Heterogeneous catalogs are therefore already part of the model. Their Theorem~5 gives a golden-ratio lower bound using an unrestricted two-facility instance. Their Observation~4 states a general $k$-approximation bound for $k$ facilities. The accompanying argument places all facilities at one maximum-reach location and lets customers randomize uniformly. It directly covers common unrestricted choices, but does not by itself provide a construction for arbitrary facility-specific catalogs: the proposed common location may be unavailable to some facilities. Vos's thesis~\cite[Chapter~8, Theorem~17]{vos2023} states the corresponding bound for unrestricted instances and explicitly notes that the proof does not apply to different location sets.
+
+Our factor-$2$ existence conclusion agrees with the two-facility specialization of that earlier stated bound; we distinguish this statement from the scope of its accompanying argument. The results here provide a complete proof and a polynomial pure-continuation construction for arbitrary heterogeneous two-facility catalogs, together with a matching factor-$2$ lower bound and the single-common-customer refinement. We make no publication-priority claim based on the scope issue. The use of on-path and unilateral-neighbor continuation certificates is already present in~\cite[Theorem~6]{krogmann2024}; our algorithmic contribution is the completeness of a particular four-seed pure-equilibrium menu, not merely the availability of finite local certificates.
+
+\section{Model and continuation selection}\label{sec:model}
+
+There is a finite customer set $I$, with $|I|=n$, and positive weights $w_i$. For algorithmic statements, the weights are binary-encoded rationals. Facilities $1$ and $2$ choose locations from nonempty finite sets $\Uone$ and $\Utwo$. A site $s$ has a fixed accessible customer set $S_s\subseteq I$. Define its \emph{reach}
+\[
+ R_s=\wt(S_s),\qquad \wt(H)=\sum_{i\in H}w_i.
+\]
+A physical site available to both facilities is represented by two labeled choices with the same customer set. This bookkeeping permits co-location without identifying the two leaders' actions. The incidence model includes graph-accessibility instances; in the lower-bound example, each candidate site can also be represented by a positive-weight customer vertex.
+
+At a legal labeled layout $(s,t)\in\Uone\times\Utwo$, every customer in $S_s\cup S_t$ must choose exactly one accessible facility. Uncovered customers do not participate. There is no outside option. A customer's cost is the realized total weight at the chosen facility, including its own weight. Mixed customer strategies are independent. If customer $i$ uses facility $f$ with probability $p_{if}$, its expected cost conditional on choosing $f$ is
+\begin{equation}\label{eq:conditional}
+ C_{if}=w_i+\sum_{j\ne i}w_jp_{jf}.
+\end{equation}
+Let $\NE(s,t)$ be the set of exact customer Nash equilibria. Facility $f$'s payoff is its expected load $L_f=\sum_iw_ip_{if}$. For every continuation, equilibrium or otherwise,
+\begin{equation}\label{eq:conservation}
+ L_1+L_2=\wt(S_s\cup S_t).
+\end{equation}
+A pure customer equilibrium always exists; a constructive proof is given in Section~\ref{sec:repair}. The mixed equilibrium set is a nonempty closed subset of a finite product of simplices, and hence compact.
+
+A \emph{full continuation selection} chooses one member of $\NE(s,t)$ at every legal labeled layout. For $\alpha\ge1$, a pure facility layout together with such a selection is an \emph{$\alpha$-approximate SPE} if every unilateral facility deviation obtains payoff at most $\alpha$ times that facility's on-path payoff. All customer equilibria are exact; approximation applies only to the facilities. We use additive inequalities $L_f'\le\alpha L_f$, which also handle zero loads.
+
+For local constructions, the common customers are $S_s\cap S_t$. Their weights remain separate atomic weights. The private baseline loads are
+\[
+ A=\wt(S_s\setminus S_t),\qquad B=\wt(S_t\setminus S_s).
+\]
+At a pure assignment with loads $x,y$, a common customer of weight $w$ assigned to the first facility is stable exactly when $x\le y+w$. A common customer assigned to the lower-loaded facility is always stable.
+
+\section{Closed response cores for two leaders}\label{sec:core}
+
+We first state a reduction independently of the facility model. Two leaders choose actions in finite nonempty sets $A,B$. At $(s,t)$, let $E(s,t)$ be a nonempty set of permitted exact continuation equilibria, with nonnegative leader payoffs $g_1(s,t,e),g_2(s,t,e)$. Assume each payoff minimum over $E(s,t)$ is attained. Finite menus and compact equilibrium sets with continuous payoffs both satisfy this condition. Continuations at different labeled action pairs can be selected independently.
+
+Define
+\begin{align*}
+ m_1(s,t)&=\min_{e\in E(s,t)}g_1(s,t,e),&
+ D_1(t)&=\max_{s\in A}m_1(s,t),\\
+ m_2(s,t)&=\min_{e\in E(s,t)}g_2(s,t,e),&
+ D_2(s)&=\max_{t\in B}m_2(s,t).
+\end{align*}
+The two minima at a pair need not have the same witness.
+
+\begin{lemma}[Exact continuation-selection criterion]\label{lem:selection}
+For $\alpha\ge1$, a layout $(s,t)$ and an on-path permitted continuation with payoffs $(x,y)$ extend to an $\alpha$-stable full continuation selection if and only if
+\begin{equation}\label{eq:quotas}
+ \alpha x\ge D_1(t),\qquad \alpha y\ge D_2(s).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Every continuation following a first-leader deviation to $r$ gives that leader at least $m_1(r,t)$, proving necessity for true deviations. The unchanged action also satisfies $m_1(s,t)\le x\le\alpha x$ by nonnegativity; the second leader is identical.
+
+For sufficiency, at every true first-leader deviation $(r,t)$ select a minimizer of $m_1(r,t)$; at every true second-leader deviation $(s,r')$ select a minimizer of $m_2(s,r')$. These two off-path families are disjoint, since their only possible intersection is the excluded on-path pair. Thus no profile is asked to minimize both leaders' payoffs. Select arbitrary permitted continuations elsewhere. Equation~\eqref{eq:quotas} bounds every deviation.
+\end{proof}
+
+Choose maximizing responses
+\[
+ b_1(t)\in\argmax_{s\in A}m_1(s,t),\qquad
+ b_2(s)\in\argmax_{t\in B}m_2(s,t).
+\]
+On disjoint colored copies of $A$ and $B$, draw arcs $t\to b_1(t)$ and $s\to b_2(s)$. Every vertex has one outgoing arc.
+
+\begin{theorem}[Closed-response-core lifting]\label{thm:core}
+Let $T$ be any simple directed cycle of this response graph, and set $A_T=T\cap A$, $B_T=T\cap B$. Then
+\begin{enumerate}
+\item $|A_T|=|B_T|=\ell\le\min\{|A|,|B|\}$;
+\item for every retained opponent, the restricted threat equals the full threat:
+\begin{equation}\label{eq:core-equality}
+ \max_{s\in A_T}m_1(s,t)=D_1(t)\quad(t\in B_T),\qquad
+ \max_{t\in B_T}m_2(s,t)=D_2(s)\quad(s\in A_T);
+\end{equation}
+\item every $\alpha$-stable selection in the restricted game lifts to the full game with the same on-path actions and continuation.
+\end{enumerate}
+Consequently, a guarantee valid for all induced $\ell\times\ell$ games with $\ell\le k$ extends to games with $\min\{|A|,|B|\}\le k$, provided the continuation correspondence is unchanged by restriction.
+\end{theorem}
+\begin{proof}
+Every arc changes color, so the simple cycle contains equally many vertices of each color. At a retained opponent $t$, its full-game maximizing successor $b_1(t)$ is retained. The restricted maximum is therefore both at most $D_1(t)$ and at least $m_1(b_1(t),t)=D_1(t)$. This proves the first identity in~\eqref{eq:core-equality}; the other is identical. A restricted stable selection satisfies the quota criterion with restricted threats. The identities replace them by full threats, and Lemma~\ref{lem:selection} completes the full selection. The final assertion follows by applying the assumed small-square guarantee to the cycle core.
+\end{proof}
+
+\begin{remark}[Menus and computational scope]
+The theorem applies verbatim to a supplied finite menu $E(s,t)$, but then the small-core theorem must use that same menu. It does not assert that exact minima over all equilibria can be efficiently computed. Our factor-$2$ construction avoids that task: its permitted continuations are an explicit polynomial menu. Restricting to an arbitrary small subgame is insufficient; preservation of the full threats in~\eqref{eq:core-equality} is essential.
+\end{remark}
+
+\section{A four-seed pure-equilibrium menu}\label{sec:repair}
+
+\begin{lemma}[Guarded pure repair]\label{lem:preserve}
+At a fixed layout with $k$ common customers, suppose a pure assignment has loads $Q_0<P_0$ and every common customer initially on the lower-loaded side has weight at least $P_0-Q_0$. Repeatedly move a largest-weight strictly improving customer from the original higher side to the original lower side, stopping at the first load-order reversal or when no improvement remains. The output is a pure customer NE, the original lower side has final load at least $Q_0$, and there are at most $k$ moves. A direct implementation uses $O((k+1)^2)$ arithmetic operations.
+\end{lemma}
+\begin{proof}
+A common customer on the higher side improves exactly when its weight $w$ is smaller than the current load gap $g$. A move changes the absolute gap to $|g-2w|<g$. Before the first reversal, only original higher-side customers move, all into the original lower side; no customer moves twice. Since the gap decreases and a largest improving customer is always selected, their moved weights are nonincreasing.
+
+If the process stops before a reversal, no common customer on the high side improves and all customers on the low side are stable, so the result is a pure NE. Otherwise, let $w$ cause the first reversal. The new gap is $2w-g<w$. Every previously moved customer has weight at least $w$, while every customer initially on the lower side has weight at least the initial gap, which exceeds $w$. Therefore every common customer now on the higher side has weight larger than the new gap; those on the other side are stable automatically. The result is already a pure NE. No customer has left the original lower side. At most $k$ moves occur, and each step can scan all $k$ customers.
+\end{proof}
+
+Assign customers distinct fixed identifiers. At each legal pair with at least one common customer, designate a customer $h$ with maximum weight, breaking ties by minimum identifier. Equivalently, maximize the lexicographic pair $(w_i,-\mathrm{ID}_i)$. Generate just four candidate seeds:
+\begin{enumerate}
+\item all common customers at the first facility;
+\item all common customers at the second facility;
+\item $h$ alone at the first facility and all other common customers at the second;
+\item $h$ alone at the second facility and all other common customers at the first.
+\end{enumerate}
+If a seed is already a pure NE, retain it. Otherwise, retain its repaired output only if the guard in Lemma~\ref{lem:preserve} holds; discard it if the guard fails. Fix customer-identifier tie breaking during repair. With no common customer, simply retain the forced assignment. Let $\Rmenu(s,t)$ be the resulting menu, used jointly for both facility payoff coordinates.
+
+\begin{lemma}[Size, feasibility, and construction]\label{lem:four-seed}
+The menu $\Rmenu(s,t)$ is nonempty, contains at most four pure exact customer NE, and is constructible with $O((k+1)^2)$ arithmetic operations. Each witness has $O(k)$ customer-action coordinates.
+\end{lemma}
+\begin{proof}
+Feasibility follows from the seed check and Lemma~\ref{lem:preserve}. For nonemptiness, consider an all-common-on-one-side seed. If that side has no larger load, every common customer is already stable. Otherwise the lower side contains no common customers, and the repair guard holds vacuously. There are at most four seeds, and each check and repair has the stated cost. Duplicate assignments may be removed.
+\end{proof}
+
+The fact that only the maximum common customer needs an individual seed is a \emph{completeness} property, not merely a size observation. Its essential step is proved explicitly in Lemma~\ref{lem:heavy}: a hypothetical heavy customer is chosen globally on an entire response cycle, and propagation makes that same customer the predesignated maximum at every edge. Thus the proof never asks the pre-generated menu for an unavailable individual seed. One could retain all $2(k+1)$ all-on-one and single-customer seeds instead; the same argument would work with the weaker $O((k+1)^3)$ local bound.
+
+It is convenient to use colored action vertices and a coordinate-free notation. For opposite-color choices $s,t$, define
+\[
+ u(t,s)=\min_{\sigma\in\Rmenu(s,t)}L_t(\sigma),\qquad
+ d(s)=\max_{t\text{ of the opposite color}}u(t,s),
+\]
+and choose $b(s)$ attaining the maximum. These values retain the full allowed action sets. By Lemma~\ref{lem:selection}, a menu witness at $(s,t)$ is sufficient for a factor-$2$ SPE whenever
+\begin{equation}\label{eq:two-quotas}
+ 2L_s\ge d(t),\qquad 2L_t\ge d(s).
+\end{equation}
+
+\section{Excluding bad alternating cycles of arbitrary length}\label{sec:fourcycle}
+
+Suppose, for contradiction, that no legal layout and no member of its menu satisfy~\eqref{eq:two-quotas}. On every directed cycle edge $s\to t=b(s)$ and for every menu member, write $P=L_t$ for the responder's load and $Q=L_s$ for the incumbent's load. Then
+\begin{equation}\label{eq:badedge}
+ P\ge d(s),\qquad Q<\frac{d(t)}2.
+\end{equation}
+Indeed, the responder already satisfies its quota, so the incumbent must fail its quota. If the maximum $d$ on the cycle were zero, any edge would satisfy both quotas. We may therefore scale all weights so that this maximum is one.
+
+\begin{lemma}[Reach and atomic-weight bounds on a bad cycle]\label{lem:heavy}
+Under this normalization, every cycle vertex has reach below $3/2$, and every customer visible at any cycle vertex has weight below $1/2$.
+\end{lemma}
+\begin{proof}
+On $s\to t$, choose a menu witness minimizing the responder's load, so $P=u(t,s)=d(s)$. Conservation and~\eqref{eq:badedge} give
+\begin{equation}\label{eq:reach-bound}
+ R_s\le\wt(S_s\cup S_t)=P+Q<d(s)+\frac{d(t)}2\le\frac32.
+\end{equation}
+
+Suppose some cycle-visible customer has weight at least $1/2$. Among \emph{all} customers visible at any cycle vertex, choose $h$ maximizing $(w_i,-\mathrm{ID}_i)$, and write $H=w_h\ge1/2$. If $h$ is visible at $s$ but absent from $t=b(s)$, it is forced to $s$ and makes $Q\ge H\ge1/2$, contradicting~\eqref{eq:badedge}. Following the cycle shows that $h$ is visible at every cycle vertex.
+
+For each cycle edge, its common set now contains $h$ and is a subset of the union used to choose $h$. Therefore $h$ is exactly the maximum-weight, minimum-identifier common customer designated \emph{in advance} for that pair. Both orientations of its individual seed are among the four candidates defining $\Rmenu$.
+
+For an edge $s\to t$, let $S$ be the total weight of the other common customers. Consider the menu seed putting $h$ at $s$ and all other common customers at $t$. Its loads are
+\[
+ Q_0=R_s-S\ge H,\qquad P_0=R_t-H.
+\]
+Suppose $R_t\ge Q_0$. If $Q_0\ge P_0$, all other common customers are on the lower-loaded side, and $h$ is stable because moving it would give cost $P_0+H=R_t\ge Q_0$. The seed is a pure NE and contradicts~\eqref{eq:badedge}. If $Q_0<P_0$, then~\eqref{eq:reach-bound} implies
+\[
+ P_0-Q_0\le R_t-2H<\frac32-2H\le\frac12\le H.
+\]
+Lemma~\ref{lem:preserve} applies: the only common customer initially at $s$ is $h$. The menu contains the repaired NE, whose $s$-load is at least $Q_0\ge1/2$, again a contradiction. Therefore every cycle edge would have to satisfy $R_t<Q_0\le R_s$, a strict reach decrease around a closed cycle. This is impossible.
+\end{proof}
+
+\begin{lemma}[No bad response cycle]\label{lem:allcycles}
+Under failure of~\eqref{eq:two-quotas} at every legal layout, no simple directed response cycle of length at least four can exist.
+\end{lemma}
+\begin{proof}
+Let $v_1\to\cdots\to v_\ell\to v_1$ be such a cycle, where $\ell\ge4$ is even. Rotate and normalize as above, and use the names
+\[
+ A=v_1,\quad B=v_2,\quad C=v_3,\quad F=v_\ell,\quad G=v_{\ell-1},
+\]
+with
+\[
+ d(A)=1,\qquad d(B)=b,\qquad d(C)=c,\qquad d(F)=e,\qquad d(G)=g.
+\]
+All these values are at most one. When $\ell=4$, $G=C$; nothing below requires them to be different. Both $C$--$F$ and $B$--$G$ are legal opposite-color pairs.
+
+We repeatedly use the following inequality for any legal pair, including a chord of the cycle:
+\begin{equation}\label{eq:private-chord}
+ \wt(S_s\setminus S_t)\le u(s,t)\le d(t).
+\end{equation}
+The first bound is forced private load, and the second uses the full opposite-color response maximum. Neither bound presumes that the chord is a selected response edge.
+
+\paragraph{The maximum edge and the transferred set.}
+On $A\to B$, every pure menu witness has responder load at least one and incumbent load below $b/2\le1/2$. The gap exceeds $1/2$. By Lemma~\ref{lem:heavy}, no common customer can remain at the responder in a pure NE. Thus all common customers choose $A$, giving
+\begin{equation}\label{eq:max-edge}
+ R_A<\frac b2,\qquad R_B\ge1,\qquad
+ E:=S_B\setminus S_A\text{ has weight at least }1,
+ \qquad e\le R_A<\frac b2.
+\end{equation}
+The inequality $e\le R_A$ follows from the response $F\to A$. In particular $b>2e$. The last edge also gives
+\begin{equation}\label{eq:last-edge}
+ R_F<e+\frac12,\qquad \wt(S_F\setminus S_A)<\frac12.
+\end{equation}
+
+Choose a pure menu witness on $B\to C$, with loads $Q_B,P_C$ at the incumbent and responder. Let $X$ be the customers in $E$ assigned to $C$. At most $Q_B<c/2$ of the weight of $E$ remains at $B$. Pure Nash stability for a customer assigned to $C$ gives the necessary inequality $w_i\ge P_C-Q_B$, regardless of the sign of the load difference. Consequently
+\begin{equation}\label{eq:batch}
+ \wt(X)>1-\frac c2\ge\frac12,\qquad
+ w_i>b-\frac c2\quad(i\in X),\qquad X\cap S_A=\varnothing.
+\end{equation}
+Put $h=b-c/2$. By~\eqref{eq:last-edge} and~\eqref{eq:batch}, $X$ cannot be contained in $S_F$. An absent member contributes its weight, greater than $h$, to $z:=\wt(S_C\setminus S_F)$. The legal chord~\eqref{eq:private-chord} therefore implies
+\begin{equation}\label{eq:h-e}
+ z>h,\qquad z\le e,\qquad
+ h<e,\qquad c>2b-2e>2e,\qquad c>b.
+\end{equation}
+We split into two exhaustive cases.
+
+\paragraph{Case 1: $h\ge e/2$.}
+Here $z>h\ge e/2$, so the $C$-facility at $(C,F)$ exceeds its quota $e/2$ in every menu witness using private customers alone. Failure of~\eqref{eq:two-quotas} forces every such witness to give $F$ load below $c/2$.
+
+Choose a menu member minimizing the $C$-load. By~\eqref{eq:private-chord} this load is $u(C,F)\le e<c/2$. This minimizing witness is \emph{pure}, and both its loads are below $c/2$. Every customer covered at this pair is assigned wholly to one side, so
+\begin{equation}\label{eq:tail-atomic}
+ \text{every customer in }S_C\cup S_F\text{ has weight below }c/2.
+\end{equation}
+
+This bound extends to every customer visible at any action of $A$'s color. Indeed, if a customer of weight at least $c/2$ were visible at such an action $s$, then its weight would exceed $e$ by~\eqref{eq:h-e}. The legal private-load inequality $\wt(S_s\setminus S_F)\le d(F)=e$ would force it to be visible at $F$, contradicting~\eqref{eq:tail-atomic}. Hence
+\begin{equation}\label{eq:one-color-atomic}
+ \text{every customer visible at any action of }A\text{'s color has weight below }c/2.
+\end{equation}
+Every common customer at a legal pair is visible at an action of this color. Thus every common customer on every cycle edge has weight below $c/2$. Customers visible only at actions of the other color need not obey this bound; when covered they are forced, and never move between facilities.
+
+Start at $C=v_3$ and follow the cycle toward $F$. Initially $d(C)=c$ and $R_C\ge b\ge c/2$, the latter because $h\ge e/2\ge0$. Suppose the current vertex $s$ has $d(s)\ge c$ and $R_s\ge c/2$. If its successor $t$ had $d(t)\le c$, then a pure menu witness on $s\to t$ would have responder load at least $c$ and incumbent load below $c/2$. Its gap would exceed $c/2$. By~\eqref{eq:one-color-atomic}, no common customer could occupy the higher-loaded responder. All $s$-customers would therefore remain at $s$, giving
+\[
+ R_s=L_s<\frac{d(t)}2\le\frac c2,
+\]
+a contradiction. Thus $d(t)>c$, and $R_t\ge d(s)\ge c$ supplies the induction hypothesis at the next vertex. The argument works through either color because only common customers require the weight bound. It forces $d(F)>c$, contradicting~\eqref{eq:h-e}. This excludes Case~1 for every cycle length.
+
+\paragraph{Case 2: $h<e/2$.}
+The case assumption and $b>2e$ imply
+\begin{equation}\label{eq:small-e}
+ c>2b-e>3e,\qquad e<\frac13.
+\end{equation}
+We first claim
+\begin{equation}\label{eq:g-upper}
+ g<\frac{1+e}{2}.
+\end{equation}
+Otherwise, on $G\to F$ the responder load is at least $g$ and the incumbent load below $e/2$, so the gap exceeds $1/2$. Lemma~\ref{lem:heavy} precludes any common customer at the responder in a pure menu witness. All $G$-customers stay at $G$, and $R_G<e/2$. The legal $B$--$G$ chord then gives
+\[
+ g\ge\wt(S_B\setminus S_G)\ge R_B-R_G>1-\frac e2.
+\]
+But $g\le R_F<e+1/2$ by the last two response edges and~\eqref{eq:last-edge}. Combining the inequalities forces $e>1/3$, contradicting~\eqref{eq:small-e}. This proves~\eqref{eq:g-upper}; together with $e<1/3$ it yields $g+e<1$.
+
+The set inclusion
+\[
+ E\cap S_G\subseteq(S_G\setminus S_F)\cup(S_F\setminus S_A)
+\]
+uses only that $E$ is absent from $A$. The first set has weight below $e/2$ by the incumbent bound on $G\to F$, and the second below $1/2$ by~\eqref{eq:last-edge}. Since $\wt(E)\ge1$,
+\begin{equation}\label{eq:penultimate-private}
+ \wt(S_B\setminus S_G)
+ \ge\wt(E)-\wt(E\cap S_G)
+ >\frac{1-e}{2}>\frac g2.
+\end{equation}
+Thus at the legal pair $(B,G)$, the $B$-facility exceeds its quota $g/2$ using private customers alone. Failure of~\eqref{eq:two-quotas} forces every menu member to give $G$ load below $b/2$. Choose one minimizing the $B$-load. This load is $u(B,G)\le g$, so
+\[
+ 1\le R_B\le\wt(S_B\cup S_G)<g+\frac b2<\frac{1+e+b}{2}.
+\]
+Hence $b>1-e$. Equation~\eqref{eq:small-e} now yields
+\[
+ c>2b-e>2-3e>1,
+\]
+contradicting the normalized cycle maximum. This excludes Case~2 and completes the proof.
+\end{proof}
+
+\section{The constructive factor-2 theorem}\label{sec:two}
+
+\begin{theorem}[Arbitrary heterogeneous catalogs]\label{thm:two}
+For arbitrary finite nonempty $\Uone,\Utwo$, the facility game has a factor-$2$ approximate SPE with pure facility locations and pure exact customer continuations at every layout. The universal constant $2$ is optimal, even on undirected host graphs with two choices per facility and exactly two common customers per legal pair, as shown in Section~\ref{sec:sharp-two}. For positive rational weights, a factor-$2$ profile can be constructed with
+\[
+ O\bigl(|\Uone||\Utwo|(n+1)^2\bigr)
+\]
+arithmetic operations and polynomial bit complexity.
+\end{theorem}
+\begin{proof}
+Generate all menus $\Rmenu$ and compute $u,d$. If no menu witness meets~\eqref{eq:two-quotas}, take a simple cycle of the finite response graph. It alternates colors. On a two-cycle $s\to t\to s$, every member of the common menu simultaneously satisfies
+\[
+ L_s\ge u(s,t)=d(t),\qquad L_t\ge u(t,s)=d(s),
+\]
+so it already meets the exact-stability quotas. A cycle of any larger even length contradicts Lemma~\ref{lem:allcycles}. Therefore a factor-$2$ menu witness exists. Lemma~\ref{lem:selection} supplies a pure minimizing continuation after each true unilateral deviation, and arbitrary menu members complete the other profiles.
+
+There are at most four seeds per pair, each taking $O((n+1)^2)$ checking and repair operations. Computing minima, maxima, and scanning all menu witnesses for~\eqref{eq:two-quotas} takes polynomial additional work within the stated arithmetic bound. The proof also permits restricting the final scan to the legal layouts induced by a chosen response cycle: all edge and chord witnesses in the contradiction use those vertices, while $d$ retains the full-game maxima.
+
+Let $L$ be the rational input encoding length. Scale by a common denominator of bit length at most the sum of the input denominator lengths. All pure loads are sums of the resulting integer weights, with bit length $O(L+\log(n+1))$. The algorithm uses only sums, differences, comparisons, and constant-factor multiplication. Its bit complexity is therefore polynomial in the input length; no pseudopolynomial dependence on total weight is hidden. The certificate consists of one on-path assignment, at most $|\Uone|+|\Utwo|-2$ deviation assignments, and a deterministic default all-on-one-side seed and guarded repair rule for all other profiles. Every probability is $0$ or $1$.
+\end{proof}
+
+\begin{remark}[Boundary cases and the role of purity]
+The proof allows zero-reach sites, overlapping catalogs, co-location, and identical coverage sets. The only scaling divides by a positive maximum threat on a selected cycle; a zero maximum is handled separately. The two chords in Lemma~\ref{lem:allcycles} always pair opposite colors. Their threat bounds use full global maxima, not maxima recomputed on a restricted cycle. The minimizing witness in Case~1 is pure because it belongs to $\Rmenu$; we do not assert that a true minimum over all mixed customer NE must be attained purely. The algorithm and its completeness proof use only this explicit polynomial pure menu.
+\end{remark}
+
+\section{A six-vertex lower bound approaching two}\label{sec:sharp-two}
+
+The preceding upper bound is sharp in the original graph-accessibility setting. Consider the undirected graph on vertices $A,B,C,D,E,F$ with edges
+\[
+ AB,\quad AC,\quad BD,\quad CD,\quad BE,\quad CF.
+\]
+A customer can use a facility at its own vertex or an adjacent vertex. For an integer $M>4$, give the vertices the weights
+\[
+ (w_A,w_B,w_C,w_D,w_E,w_F)=(M,1,M+8,M+2,10,6).
+\]
+Facility 1 may choose $A$ or $B$, and facility 2 may choose $C$ or $D$. All customer weights are positive, all candidate vertices themselves contain a customer, and the catalogs are disjoint. The relevant coverage sets are
+\[
+ S_A=\{A,B,C\},\quad S_B=\{A,B,D,E\},\quad
+ S_C=\{A,C,D,F\},\quad S_D=\{B,C,D\}.
+\]
+Every legal pair therefore has exactly two common customers.
+
+\begin{theorem}[Sharp factor-$2$ lower bound]\label{thm:two-lower}
+For this instance, the best attainable approximation factor over all pure facility layouts and all independent mixed customer continuation selections is exactly
+\begin{equation}\label{eq:alpha-M}
+ \alpha^*(M)=\frac{2M+10}{M+14}=2-\frac{18}{M+14}.
+\end{equation}
+At every legal layout the customer equilibrium is unique and pure. It is also the unique coarse correlated equilibrium. Consequently no universal factor below $2$ is possible in Theorem~\ref{thm:two}.
+\end{theorem}
+\begin{proof}
+At each layout one of the two strategic customers first has a strictly dominant action, independently of the other customer's choice. The table compares the \emph{largest} other-customer load on that action with the \emph{smallest} other-customer load on the alternative. The customer's own weight is the same in both costs and is omitted.
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Layout & First strictly dominant action & Pointwise comparison \\
+\midrule
+$AC$ & Customer $C$ chooses facility $A$ & $M+1<M+8$ \\
+$AD$ & Customer $C$ chooses facility $A$ & $M+1<M+2$ \\
+$BC$ & Customer $D$ chooses facility $B$ & $M+11<M+14$ \\
+$BD$ & Customer $D$ chooses facility $D$ & $M+9<M+10$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+After this forced choice, the remaining common customer has a unique best response:
+\begin{align*}
+ AC:&\quad A\text{ chooses }C,&& M+8<M+9;\\
+ AD:&\quad B\text{ chooses }D,&& M+2<2M+8;\\
+ BC:&\quad A\text{ chooses }B,&& M+13<M+14;\\
+ BD:&\quad B\text{ chooses }B,&& M+10<2M+10.
+\end{align*}
+Again these are other-customer load comparisons. Thus all four continuations are uniquely determined, with payoff matrix
+\begin{equation}\label{eq:M-payoffs}
+\begin{array}{c|cc}
+ &C&D\\ \hline
+ A&(M+9,\,2M+8)&(2M+8,\,M+3)\\
+ B&(2M+13,\,M+14)&(M+11,\,2M+10).
+\end{array}
+\end{equation}
+
+The improvement cycle $AC\to BC\to BD\to AD\to AC$ has ratios
+\[
+ r_1=\frac{2M+13}{M+9},\qquad
+ r_2=\frac{2M+10}{M+14},\qquad
+ r_3=\frac{2M+8}{M+11},\qquad
+ r_4=\frac{2M+8}{M+3}.
+\]
+For $M>4$, all exceed one. Every other available move reverses a cycle edge and strictly decreases its mover's payoff. Therefore the best factor over the four layouts is $\min_i r_i$. Direct subtraction gives
+\[
+ r_1-r_2=\frac{13M+92}{(M+9)(M+14)}>0,\qquad
+ r_3-r_2=\frac{4M+2}{(M+11)(M+14)}>0,
+\]
+and $r_4>r_3$. This proves~\eqref{eq:alpha-M}. In particular, any $\alpha<2$ is excluded by choosing a sufficiently large integer $M$.
+
+The first strict dominance comparison is pointwise in the other customer's action. Thus it also eliminates the dominated action in every independent mixed NE. Once it is eliminated, the second customer's strict comparison fixes its action too. The same elimination applies to coarse correlated equilibria: a positive probability of the first dominated action would be improved by an unconditional switch to the dominating action; after that action has probability one, the second strict comparison has the same implication. All other covered customers are forced. Hence no alternative mixed or correlated continuation changes~\eqref{eq:M-payoffs}.
+\end{proof}
+
+\section{A sharp bound with at most one common customer}\label{sec:rho}
+
+Assume now that
+\begin{equation}\label{eq:single}
+ |S_s\cap S_t|\le1\qquad
+ \text{for every }(s,t)\in\Uone\times\Utwo.
+\end{equation}
+There is no restriction on how many same-facility locations a customer can reach.
+
+\begin{lemma}[Local equilibrium correspondence]\label{lem:single}
+At a pair with no common customer, the loads are fixed. At a pair with unique common customer of weight $w$, that customer's two conditional costs are exactly $R_s,R_t$. If $R_s<R_t$, the unique NE has loads $(R_s,R_t-w)$. If $R_s=R_t=R$, every mixing probability is an NE and the first load ranges over $[R-w,R]$.
+\end{lemma}
+\begin{proof}
+Every other covered customer is forced. The unique strategic customer's own choice produces deterministic loads $R_s$ or $R_t$ at its destination. Strict comparison yields its unique action; equality makes every probability optimal.
+\end{proof}
+
+First suppose that the facilities have two locations each, $\{A,B\}$ and $\{C,D\}$, and that any pair sharing a customer has unequal reaches. All continuations are then unique and pure.
+
+\begin{lemma}[Classification of a hard four-cycle]\label{lem:classification}
+Fix $r>\phiG$. If every layout has a unilateral improvement of factor at least $r$, then labels can be chosen so that, with reaches $a,b,c,d$ at $A,B,C,D$,
+\begin{equation}\label{eq:strict-order}
+ b<c<a<d,
+\end{equation}
+and the improving cycle is $AD\to AC\to BC\to BD\to AD$. Moreover, the common customer at $AC$ and the common customer at $AD$ are the same customer, of weight $X>b$, and this customer does not reach $B$.
+\end{lemma}
+\begin{proof}
+Only strict payoff improvements are directed; zero-to-zero moves are not improvements. Each of the four vertices has an outgoing edge. The square cannot contain a two-cycle, since the same facility cannot strictly improve in both directions with its opponent fixed, so a directed four-cycle is forced.
+
+Relabel the facilities so that $D$ has a globally maximum reach, and choose $A$ of maximum reach for the other facility. Thus $d\ge a\ge b$. If $d=a$, a shared customer at $AD$ would violate the unequal-reach assumption. Without a shared customer, both facilities at $AD$ obtain their own maximum reach and the layout is already exact-stable. Hence a hard instance has $d>a$. At $AD$ the first facility obtains its full maximum reach $a$, so the cycle must leave by $D\to C$. Its direction is therefore the one stated.
+
+At $AC$, facility 1 must improve by moving to $B$. If $a<c$, it already obtains its full reach and cannot improve. If $a=c$, a shared customer is excluded by assumption, while no shared customer again gives full reach. Thus $c<a<d$. At $BD$ and $AD$, the first facility is on the lower-reach side and receives $b$ and $a$, giving
+\begin{equation}\label{eq:a-rb}
+ a\ge rb.
+\end{equation}
+Here $b>0$, since a move to a zero-reach $B$ cannot be a strict improvement.
+
+Let $X$ be the weight of the common customer at $AC$, or zero if absent. If $b\ge c$, then $X\le c$ and the payoff after the move to $B$ is at most $b$. Consequently
+\[
+ b\ge r(a-X)\ge r(a-c)\ge r(a-b)\ge r(r-1)b,
+\]
+contradicting $r>\phiG$. This proves~\eqref{eq:strict-order}.
+
+Let $Z$ be the common weight at $AD$, again zero if absent. The first and last relevant cycle inequalities give
+\[
+ X\ge a-\frac br,\qquad Z\ge d-\frac cr.
+\]
+If these overlaps were distinct customers, both would contribute to $R_A$, so $a\ge X+Z$ and hence $rd\le b+c$. But $b\le a/r<d/r$ and $c<a<d$, yielding $r<1+1/r$, a contradiction. They are the same customer, and
+\[
+ X\ge a-\frac br\ge\left(r-\frac1r\right)b>b.
+\]
+A customer heavier than $R_B=b$ cannot reach $B$.
+\end{proof}
+
+\begin{proposition}[The strict two-by-two bound]\label{prop:strict-rho}
+Under the preceding assumptions, some layout has maximum unilateral improvement factor strictly below $\rhoG$.
+\end{proposition}
+\begin{proof}
+If every layout had an improvement of factor at least $r>\phiG$, apply Lemma~\ref{lem:classification}. Let $Y,T$ be the common weights at $BC,BD$, with zero for an empty overlap. The weight-$X$ customer is different from both, so $c\ge X+Y$. The payoff matrix is
+\[
+\begin{array}{c|cc}
+ &C&D\\ \hline
+ A&(a-X,c)&(a,d-X)\\
+ B&(b,c-Y)&(b,d-T)
+\end{array}
+\]
+and the cycle inequalities are
+\[
+ b\ge r(a-X),\qquad d-T\ge r(c-Y),\qquad
+ a\ge rb,\qquad c\ge r(d-X).
+\]
+They imply
+\[
+ a\le\frac{r^2X}{r^2-1},\qquad d\ge rX,\qquad
+ c\ge r(r-1)X.
+\]
+Because $X>0$ and $c<a$,
+\[
+ r(r-1)<\frac{r^2}{r^2-1},
+ \qquad\text{equivalently}\qquad q(r)<0.
+\]
+The polynomial $q$ is strictly increasing on $[\phiG,\infty)$ and vanishes there exactly at $\rhoG$. Taking $r=\rhoG$ is therefore impossible.
+\end{proof}
+
+\begin{proposition}[A fixed pure tie rule]\label{prop:tie}
+Give the four labeled actions distinct positive integer priorities $h_s$. At every layout, send its common customer, if any, to the action with lexicographically smaller pair $(R_s,h_s)$. Under this single predetermined pure continuation selection, some layout is $\rhoG$-stable, even with tied reaches or overlapping physical catalogs.
+\end{proposition}
+\begin{proof}
+The rule is a pure customer NE by Lemma~\ref{lem:single}. Temporarily replace labeled actions by distinct site copies with the same original incidence, and give copy $s$ an additional private customer of weight $\varepsilon h_s$. For every sufficiently small positive $\varepsilon$, unequal original reaches keep their order and tied reaches are ordered by priority. Thus all cross reaches are distinct, and the unique original-customer assignments are exactly those specified by the rule. The extra customers preserve~\eqref{eq:single}.
+
+If all four original layouts had a deviation with payoff strictly above $\rhoG$ times the current payoff, choose one such deviation at each layout. Their finitely many strictly positive additive margins persist for sufficiently small $\varepsilon$. This contradicts Proposition~\ref{prop:strict-rho}. The copying is only a perturbation device: at $\varepsilon=0$, copies of the same physical site recover its exact original incidence and all original labeled profiles, including co-location.
+\end{proof}
+
+\begin{theorem}[Sharp short-catalog bound under single overlap]\label{thm:rho}
+Suppose~\eqref{eq:single} holds and $\min\{|\Uone|,|\Utwo|\}\le2$. Then a $\rhoG$-approximate SPE with pure customer continuations can be constructed in polynomial bit time. A straightforward arithmetic bound is $O(n|\Uone||\Utwo|)$. If every pair sharing a customer has unequal reaches, some factor strictly below $\rhoG$ is attainable. The constant $\rhoG$ is the optimal universal factor for this class, even when arbitrary independent mixed continuations are permitted.
+\end{theorem}
+\begin{proof}[Upper bound and algorithm]
+Assume $|\Uone|\le2$. Fix distinct priorities on all labeled choices and use the pure rule of Proposition~\ref{prop:tie} at every full-game layout. This gives a fixed rational payoff matrix. For each row $u\in\Uone$, retain a column maximizing facility 2's payoff in that row. At most two columns are retained, and all rows remain.
+
+If two rows and two columns remain, Proposition~\ref{prop:tie} supplies a $\rhoG$-stable entry of this restricted matrix. Every facility-1 deviation is already retained, and a full-game best facility-2 column at the chosen row is retained by construction. Restricted stability is therefore full stability under the same continuation. With one row, choose its best column. With two rows and one retained column, choose a best row in that column; the column is best at both rows, so this gives exact stability. Proposition~\ref{prop:strict-rho} gives the strict refinement when applicable.
+
+Reaches, unique common customers, and the fixed payoffs can be computed by direct incidence scans. The remaining work is a scan for two best columns and then at most four entries. All probabilities are binary. For exact verification against $\rhoG$, if a rational ratio $z>1$ must be compared, $z\le\rhoG$ is equivalent to $q(z)\le0$; $q$ has just one root in $(1,\infty)$ and is negative on $(1,\rhoG)$. Equivalently, for $v>x\ge0$, test
+\[
+ v^3-v^2x-2vx^2+x^3\le0
+\]
+to decide $v\le\rhoG x$. If $x=0<v$ this test correctly fails. Factors at most one need no test. The rational bit lengths are polynomial. The matching lower bound is proved next.
+\end{proof}
+
+\subsection{The six-customer lower-bound family}\label{sec:lower}
+
+There are four candidate sites $A,B,C,D$. Four customers reach only their respective sites and have weights $a_0,b_0,c_0,d_0$. A customer $x$ of weight $X$ reaches $A,C,D$, and a customer $y$ of weight $Y$ reaches $B,C$. The two allowed sets are $\{A,B\}$ and $\{C,D\}$; in particular co-location is not feasible. Assume
+\begin{equation}\label{eq:lower-conditions}
+ a_0>c_0+Y,\qquad d_0>a_0,\qquad b_0<c_0+X.
+\end{equation}
+Every layout has at most one strategic customer, and it has a strictly dominant choice. The unique payoff matrix is
+\[
+\begin{array}{c|cc}
+ &C&D\\ \hline
+ A&(a_0,c_0+X+Y)&(a_0+X,d_0)\\
+ B&(b_0+Y,c_0+X)&(b_0+Y,d_0+X).
+\end{array}
+\]
+The cycle $AC\to BC\to BD\to AD\to AC$ has improvement ratios
+\begin{equation}\label{eq:lower-ratios}
+ \frac{b_0+Y}{a_0},\qquad
+ \frac{d_0+X}{c_0+X},\qquad
+ \frac{a_0+X}{b_0+Y},\qquad
+ \frac{c_0+X+Y}{d_0}.
+\end{equation}
+
+\begin{proposition}[Matching lower bound]\label{prop:lower}
+For every $\alpha<\rhoG$, there is an instance of the preceding form with all six weights positive rational numbers and no $\alpha$-approximate SPE. The weights may all be made positive integers. The exclusion holds for every independent mixed continuation selection, and even if customer continuations may be coarse correlated equilibria.
+\end{proposition}
+\begin{proof}
+Put
+\begin{align*}
+ X&=1,& d_0&=\rhoG-1,&
+ a_0&=\frac1{\rhoG^2-1}=\rhoG^2-\rhoG-1,\\
+ b_0&=d_0-a_0,& Y&=a_0-\eta,& c_0&=\eta/2,
+\end{align*}
+where $\eta>0$ is sufficiently small. The cubic identity gives
+\[
+ \rhoG a_0=d_0,\qquad 1+a_0=\rhoG d_0.
+\]
+The constants $a_0,b_0,d_0$ are positive and $d_0>a_0$. For small $\eta$, all six weights are positive and~\eqref{eq:lower-conditions} holds strictly. The four ratios in~\eqref{eq:lower-ratios} become
+\[
+ \rhoG-\frac{\eta}{a_0},\qquad
+ \frac{\rhoG}{1+\eta/2},\qquad
+ \frac{\rhoG d_0}{d_0-\eta},\qquad
+ \rhoG-\frac{\eta}{2d_0}.
+\]
+Each tends to $\rhoG$ as $\eta\downarrow0$. For any fixed $\alpha<\rhoG$, choose a positive $\eta$ making all four ratios greater than $\alpha$. The positivity, customer strict preferences, and facility strict improvement inequalities form a finite family of open conditions in the six weights. Approximate this chosen real vector closely enough by a positive rational vector; all conditions persist. Scaling by a common denominator yields positive integers.
+
+The four displayed layouts are the full set of legal facility profiles. Every one has an improvement larger than $\alpha$, and its customer continuation is unique. Hence no other independent mixed continuation can repair stability. Moreover, at a layout with a strategic customer, that customer has a strictly dominant action while every other customer is forced. Any distribution assigning positive probability to its other action violates an unconditional coarse-correlated deviation inequality. Thus the coarse correlated continuation is unique as well.
+\end{proof}
+
+For example, the positive integer vector
+\[
+ (a_0,b_0,c_0,d_0,X,Y)
+ =(44504187,35689587,1,80193774,100000000,44504185)
+\]
+has minimum cycle ratio exactly
+\[
+ \frac{80193772}{44504187}=1.8019376918400958\ldots.
+\]
+The symbolic family, rather than this single numerical example, establishes the limiting constant.
+
+\begin{corollary}[Customer-specific increasing congestion costs]\label{cor:nonlinear}
+The sharp factor-$2$ result of Theorems~\ref{thm:two} and~\ref{thm:two-lower}, and the sharp $\rhoG$ result of Theorem~\ref{thm:rho}, remain valid if customer $i$ has any strictly increasing function $f_i$ of realized load, provided it uses the same function at both facilities. The upper-bound constructions still have polynomial bit complexity and pure customer continuations.
+\end{corollary}
+\begin{proof}
+For a pure assignment and a unilateral pure customer move, the two realized destination loads are constants. Applying the same strictly increasing $f_i$ preserves their comparison. Consequently the set of \emph{pure} customer NE is exactly the same as for linear costs. The repaired menus used in Theorem~\ref{thm:two} still consist of exact pure NE, and the facility payoffs and all menu comparisons are unchanged. The algorithm need not evaluate $f_i$.
+
+In the factor-$2$ lower-bound family, each first dominance comparison in Theorem~\ref{thm:two-lower} is pointwise in the other customer's action. Strict increase preserves it pointwise, and therefore also after taking expectations. The subsequent strict comparison is deterministic. Thus every independent mixed NE, and every coarse correlated equilibrium, remains the same unique pure continuation. This preserves the lower bound.
+
+Under single overlap, the entire local equilibrium correspondence is unchanged: the only strategic customer compares the deterministic costs $f_i(R_s)$ and $f_i(R_t)$, whose ordering and ties are exactly those of $R_s,R_t$. This gives the $\rhoG$ upper and lower bounds as well. We do \emph{not} assert that arbitrary multiple-common-customer mixed equilibria are preserved by nonlinear transformations.
+\end{proof}
+
+\section{Conclusions and remaining boundaries}
+
+The universal factor-$2$ construction uses at most four pre-generated pure customer equilibria per legal layout. A failed stability assumption produces an alternating response cycle. After a maximum edge identifies a large transferred set, legal cross-color chords force either a bound on all common-customer weights or an incompatible pair of private-load inequalities. The first alternative propagates around a cycle of any length; the second uses only its penultimate and last vertices. A six-vertex undirected family shows that the resulting factor is sharp even when every layout has exactly two common customers and a unique customer continuation.
+
+The response-core theorem gives a reusable reduction for two-leader equilibrium-selection problems beyond this model. Under single overlap, its small-square viewpoint is complemented by a direct fixed-continuation reduction: with one short catalog, a hard cycle forces a particular heavy customer to reach three sites, and its reach inequalities yield $\rhoG$. The resulting distinction is exact for that class: one common customer gives sharp factor $\rhoG$, while two already permit a factor approaching $2$.
+
+The remaining existence question highlighted here is whether the $\rhoG$ guarantee under single overlap extends to arbitrary catalog sizes on both sides. The bounded-overlap algorithm supplies an exact test and certificates for finite instances, without resolving that uniform bound. A further computational question is whether its dependence on overlap can be improved while retaining exact independent customer equilibria. These are scope limits of the present results, not literature-priority claims.
+
+\appendix
+\section{Exact optimization parameterized by overlap}\label{sec:fpt}
+
+For linear customer costs, one can optimize the instance's approximation factor exactly when the maximum number of common customers is small, without restricting either catalog's size. Put
+\[
+ N_1=|\Uone|,\qquad N_2=|\Utwo|,\qquad
+ \kappa=\max_{s\in\Uone,\,t\in\Utwo}|S_s\cap S_t|.
+\]
+This algorithm computes the exact instance optimum, complementing the universal guarantee $\alpha^*\le2$ established above.
+
+\begin{theorem}[Exact optimization with bounded overlap]\label{thm:fpt}
+For linear costs and positive rational weights, the optimal approximation factor $\alpha^*\ge1$ over all pure facility layouts and all exact independent mixed customer continuation selections can be computed using
+\[
+ O\!\left(N_1N_2\bigl[n+(\kappa+1)3^\kappa\bigr]\right)
+\]
+exact rational arithmetic operations and an additional polynomial bit factor. It returns a rational optimum $1\le\alpha^*\le2$ and a compact rational continuation certificate attaining it. In particular, $\kappa\le2$ permits polynomial-time exact optimization for arbitrary finite catalog sizes.
+\end{theorem}
+\begin{proof}
+Fix one layout with private loads $A,B$ and common weights $w_1,\ldots,w_k$, where $k\le\kappa$. Write
+\[
+ V=A+B+\sum_iw_i,\quad \delta=A-B,\quad
+ c_i=w_i(2p_i-1),\quad \Delta=L_1-L_2=\delta+\sum_i c_i.
+\]
+From~\eqref{eq:conditional}, the first-minus-second conditional cost difference for customer $i$ is $\Delta-c_i$. Its Nash conditions are consequently
+\[
+\begin{array}{lll}
+ p_i=1:&c_i=w_i,&\Delta\le w_i,\\
+ p_i=0:&c_i=-w_i,&\Delta\ge-w_i,\\
+ 0<p_i<1:&c_i=\Delta,&|\Delta|<w_i.
+\end{array}
+\]
+Enumerate the $3^k$ templates designating each customer as pure first, pure second, or mixed. A designated mixed customer may be at an endpoint: imposing $c_i=\Delta$ and $|\Delta|\le w_i$ there is still a valid Nash condition. This closed representation may duplicate equilibria but adds none.
+
+For a template, let $H$ be the designated mixed set, $h=|H|$, and let $P=\sum_{i\notin H}c_i$ be its fixed signed pure weight. The load identity is
+\begin{equation}\label{eq:support-gap}
+ (1-h)\Delta=\delta+P.
+\end{equation}
+If $h=0$, take the single candidate $\Delta=\delta+P$ and check all pure inequalities. If $h\ge2$, take
+\[
+ \Delta=-\frac{\delta+P}{h-1},\qquad
+ p_i=\frac{1+\Delta/w_i}{2}\quad(i\in H),
+\]
+and check $|\Delta|\le w_i$ for designated mixed customers and the appropriate pure inequalities for all others.
+
+If $h=1$, with sole designated mixer $j$, a solution exists only when $\delta+P=0$. In that event the exact feasible gap set is the rational closed interval $[\ell,u]$, where
+\begin{align*}
+ \ell&=\max\bigl(\{-w_j\}\cup\{-w_i:i\text{ is pure second}\}\bigr),\\
+ u&=\min\bigl(\{w_j\}\cup\{w_i:i\text{ is pure first}\}\bigr).
+\end{align*}
+Keep the interval if $\ell\le u$, with explicit realization $p_j=(1+\Delta/w_j)/2$. The case $h=1$ cannot be replaced by an isolated-point enumeration.
+
+Every retained point or interval satisfies all Nash conditions. Conversely, any actual equilibrium defines a template by its genuine pure and mixed coordinates, and~\eqref{eq:support-gap} places it in the corresponding branch. Thus these at most $3^k$ pieces represent the entire attainable load set, not a convex relaxation. Each piece converts to a first-load interval through $x=(V+\Delta)/2$, including singleton intervals.
+
+Taking extreme endpoints over all pieces computes the true minimum first load $m_1(s,t)$ and the true minimum second load $m_2(s,t)$, with rational witnesses. Form the full threats $D_1(t),D_2(s)$ of Section~\ref{sec:core}. By Lemma~\ref{lem:selection}, the best factor at this pair is the minimum, over all its first-load pieces $[a,b]$, of
+\begin{equation}\label{eq:piece-opt}
+ \min_{x\in[a,b]}\max\left\{1,\frac{D_1(t)}x,
+                               \frac{D_2(s)}{V-x}\right\}.
+\end{equation}
+A zero numerator contributes zero, including $0/0$, and a positive numerator over zero contributes infinity. If $D_1+D_2>0$, an optimum in~\eqref{eq:piece-opt} is the clipped balancing point
+\[
+ x^*=\min\left\{b,\max\left\{a,\frac{VD_1(t)}{D_1(t)+D_2(s)}\right\}\right\}.
+\]
+Indeed, the first ratio is nonincreasing and the second nondecreasing, and they meet at the unclipped point. The outer floor at one does not change this choice. If both threats are zero, every feasible point gives factor one. Scan all pieces at all layouts and take the least factor. This proves global optimality. Theorem~\ref{thm:two} guarantees that at least one finite candidate exists and that the minimum is at most two.
+
+There are $O(k3^k)$ local template checks and $O(n)$ incidence work per pair; the displayed bound includes constant work when $k=0$. To bound bit lengths, scale input weights in the analysis by the product of their denominators. The resulting integers have $O(L)$ bits for total input length $L$. Template sums have $O(L+\log(k+1))$ bits, and point gaps divide these sums only by an integer at most $k-1$. Recovering probabilities divides once more by a customer weight. Threats select extrema from these rationals; balancing and evaluating the final factor add only a constant number of sums, products, and divisions. All output quantities therefore have polynomial bit length (indeed $O(L+\log(\kappa+1))$ up to a constant factor).
+
+Finally, record the on-path probabilities and one true minimum-payoff NE for each unilateral deviation. Complete other profiles using an all-on-one-side seed and guarded repair. A verifier checks the original customer inequalities and all deviation inequalities directly, without repeating the support enumeration. The certificate contains at most $N_1+N_2-1$ explicit local equilibria and a default rule, so its length is polynomial in the input length.
+\end{proof}
+
+Theorem~\ref{thm:fpt} is an exponential-overlap exact algorithm, rather than a claim that true local equilibrium minima can generally be found in polynomial time. It permits any number of designated mixers, and is distinct from the pure-menu existence algorithm of Theorem~\ref{thm:two}. Its full mixed-equilibrium representation uses linear costs; Corollary~\ref{cor:nonlinear} does not extend this representation to arbitrary increasing functions.
+
+\begin{thebibliography}{9}
+\bibitem{krogmann2024}
+Simon Krogmann, Pascal Lenzner, Alexander Skopalik, Marc Uetz, and Marnix C. Vos.
+\newblock Equilibria in Two-Stage Facility Location with Atomic Clients.
+\newblock In \emph{Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)}, pages 2842--2850, 2024.
+\newblock \href{https://doi.org/10.24963/ijcai.2024/315}{doi:10.24963/ijcai.2024/315}.
+\newblock Full version: \url{https://arxiv.org/abs/2403.03114v2}.
+
+\bibitem{vos2023}
+Marnix C. Vos.
+\newblock \emph{Equilibria in the Two-Stage Facility Location Game With Unsplittable Clients}.
+\newblock Master's thesis, Applied Mathematics, University of Twente, July 21, 2023.
+\newblock Chapter 8, Theorem 17 and the following scope discussion.
+\newblock \url{https://essay.utwente.nl/96484/1/Vos_MA_EEMCS.pdf}.
+\end{thebibliography}
+\end{document}
