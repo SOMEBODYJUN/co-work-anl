@@ -428,3 +428,7 @@ R3_READY16MN：十六主源iid精确二次域和weak全树原审计、协调三�
 R3_READY16MN数学/证据pushed 66e30d8d01523cff20616982655452290de60873；16源done另推送 b91d70e0c69755d14f517f68459c10671aad518f。Boss4累计2423完成，实际未完19；持续接续全仓，不以本批清空收尾。
 
 R3_READY23MR：二十三主源：三配对原点显式单位核与逐叶平方程序；cyclic全SPE分类与父审；成块条件归约/换位审查；fresh与整份safe策略扩展；根四复制条件/真实signal reset和指定Yi价；只校准一处本批认领时态；共23主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY23MR_REMAINING_SCOPE.json。
+
+R3_READY23MR数学/证据pushed 62e00c612f7c43d4fdd114a460a33d4862574975；23源done另推送 22e2f2b0f76762eee32599fe567066a692a3745e。Boss4累计2446完成，实际未完9；持续接续全仓，不以本批清空收尾。
+
+R3_READY9MZ：九主源孪生包含递归独立有限计数审计与两旧原报告准确绑定；四人真实H(1)全参数证明/互补保险两人BR边界与真实P势误差，严格保related程序missing和0新扫描身份；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY9MZ_REMAINING_SCOPE.json。
