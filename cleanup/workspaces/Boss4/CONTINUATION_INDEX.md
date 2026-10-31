@@ -218,3 +218,7 @@ R3_READY59ED：十三组59份完整实质正文与依赖；Root独立两覆盖AB
 R3_READY59ED数学/证据pushed 0d5e1b99a57d22a66bf09080505175c1bab481e2；59源done另推送 6b012356481d6bc10ab34608513e94df693cfa38。Boss4累计1648完成，实际未完10；持续接续全仓，不以本批清空收尾。
 
 R3_READY14EJ：EC5/DZ5与RootEE4：完整空查询/自由端点、上行归纳真实slack和统一尾钱包、任意背景二主题正误差/固定旧人租金及AB内部复核，14源自足正文先checkpoint pushed再逐源done；全仓仍持续清洗。；共14主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY14EJ_REMAINING_SCOPE.json。
+
+R3_READY14EJ数学/证据pushed 17cfd9f68a22f743d145acde83b664eaeb365aae；14源done另推送 4e9ad52da84b25df400bd4b2bf7dce4fa8de27ec。Boss4累计1662完成，实际未完24；持续接续全仓，不以本批清空收尾。
+
+R3_READY16EN：EA5/EG5与RootEL2：独立水位填充原码唯一复跑与真实输入域、完整两尾分支及原模型边界、五态副本全历史证明和背景编译独审；Root原拟4中作者2已归Boss3故未领不done，仅接本人2独审主源。先明确正文checkpoint pushed再逐源done，继续全仓。；另EH4的两人实背景与中央联合删除预算完整并入，合16源。；共16主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY16EN_REMAINING_SCOPE.json。
