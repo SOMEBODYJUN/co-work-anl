@@ -1,0 +1,9 @@
+# R-2fc aggregate-security pair evidence
+
+This packet records the five claimed source versions from the frozen `68fad804ec5946cb296f77dc5b336308a66abf12` aggregate-security directory. Each of the four JSON files was read in full through its public raw URL after `clean show` failed because this clone's promisor remote could not connect to the browser proxy. The verifier source was read in full, reconstructed byte-for-byte in `original/verify_dr_boundary.py`, and rerun locally.
+
+All four JSONs explicitly report `floating diagnostic in an enlarged model, not CAG evidence`. The two `groups` files have one finite floating witness each (`root=[0,3,4]`, 83 states, 43 policy entries); their objectives are `-0.00028370513150265814` with DR enabled and `-0.001265207200675137` with `no_dr=true`. The monotone-policy (`n=4,k=4`, 500 trials) and plateau (`n=3,k=4`, 1000 trials) files report objective `0.0` with no witness. These are distinct finite parameter records, not exact CAG claims.
+
+The verifier run exited `0` with 1487 stdout bytes and zero stderr bytes. It certifies the already integrated enlarged-model integer boundary: 84 potential values, 168 monotonicity checks, 252 DR checks, 43 ordered SPE histories, 258 comparisons, path `(0,3,4)`, utilities `(0,105,56)`, `W=161`, and exact static security value `v=56`. It also records the non-CAG diagonal failure `Phi(11)=Phi(1)=161`, so the repeated-action total-payoff budget is not CAG's support-invariant budget.
+
+See `sources-summary.json` for source IDs, frozen blobs, sizes, SHA-256 values, per-source parameters, semantic dispositions, and target paths. `replay/verify_dr_boundary.stdout` and `.stderr` preserve the verifier run; `replay/validate_pair_summary.py` and its captured output validate this packet's metadata without upgrading floating results to CAG evidence.
