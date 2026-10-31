@@ -1,0 +1,87 @@
+{
+  "status": "reviewable-proposal-only-shared-target-unchanged",
+  "target": "archives/unrelated-machines/state/审查/单home去环与有向需求树v2增量审查--审查.md",
+  "before_sha256": "5d2d9e0733681206c6ea9930ec6c30404502eedb48054926b03231fe5366bfa8",
+  "proposed_sha256": "7400fdb94fb606debcf21e0087e5ac7937ee26d33afd35743b408b3493d17067",
+  "replacement_count": 2,
+  "logical_issues": 3,
+  "replacements": [
+    {
+      "id": "root-job-total",
+      "before_lines": [
+        53,
+        53
+      ],
+      "before_exact": "构造 unrelated-machines 实例 `P(D,k)`：每台机器一枚只在 r 以 1 处理的 U 根任务；对每个正需求 v，令 `d_v=outdeg_D(v)`, `q_v=min(k_v,d_v)`，建 q_v 个互异 J 子任务，每件在 home v 处理时间 `1/k_v`、每个原孩子端处理时间 1；若 q_v<k_v，再建一枚仅能在 v 处理、时间 `1−q_v/k_v` 的 filler；零需求不建 J。任务数至多 `1+|E|+|V|`，不按二进制需求展开。",
+      "after_exact": "构造 unrelated-machines 实例 `P(D,k)`：每顶点一台原机器；全实例仅一枚 U 根任务，只能在 r 以 1 处理；对每个正需求 v，令 `d_v=outdeg_D(v)`, `q_v=min(k_v,d_v)`，建 q_v 个互异 J 子任务，每件在 home v 处理时间 `1/k_v`、每个原孩子端处理时间 1；若 q_v<k_v，再建一枚仅能在 v 处理、时间 `1−q_v/k_v` 的 filler；零需求不建 J。任务数至多 `1+|E|+|V|`，不按二进制需求展开。",
+      "issues": [
+        "Old review quantity contradicts exact original v2 source and implementation: one root job total, not one per machine."
+      ]
+    },
+    {
+      "id": "prune-and-full-load",
+      "before_lines": [
+        61,
+        61
+      ],
+      "before_exact": "**从 H 构造调度。** 给定任意 H，逐点把至多 `min(k_v,deg_H^+(v))` 个 J tokens 送到其 H children（具体 token 可任取），把其余 q_v tokens 和 filler 留在 home，沿 D 非 H 端不处理；叶节点仍留其 demand mass。根 U 留在 r。根机器含 U 根任务，负载为 `2−deg_H^+(r)/k_r`（若根需求为零则按定义没有该项）；非根机器的 home 质量为 `1−deg_H^+(v)/k_v`，不超过 1，树外机器也不超过 1。因此整体峰值≤`2−b(H)`，得到 `OPT≤2−b*`。",
+      "after_exact": "**从 H 构造调度。** 令 `α=b(H)`。从根向外，对每个仍保留的正需求 v，只保留 `min(k_v,deg_H^+(v))` 个孩子，把其余孩子连同整棵后继子树删除，得到 H′。每个保留正需求点仍有 `s_v≥αk_v` 个孩子，且 `s_v≤q_v`。将 s_v 枚不同原 J 子任务分别送往这些孩子，其他 child tokens、所有 filler 和树外全部 J 留 home；唯一根 U 留在 r。选中正需求点收到恰一枚 unit（根由 U，其余由唯一父任务），完整负载均为 `1+(q_v−s_v)/k_v+(1−q_v/k_v)=2−s_v/k_v≤2−α`；q_v=k_v 时末项按零计。树外正需求机负载 1，零需求终端负载至多 1。根为零需求时取单点树，峰值 1。因此全部原任务完整合法且峰值≤`2−b(H)`，得到 `OPT≤2−b*`。这里必须使用裁枝后 s_v，不能用原树可能大于 k_v 的出度；非根的 home 余量不是其完整负载。",
+      "issues": [
+        "The implementation prunes excess children and their full descendants before assigning tokens.",
+        "All retained positive nonroot vertices receive a parent unit; full load is 2-s/k, not merely home remainder.",
+        "Original H degree may exceed k; use retained degree s."
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "path": "support/e0965328b2194975c31c.md",
+      "sha256": "5de9dff0b3467dfc2105e93945d7e5e0e4dda534dbf73cf73f9bc097fd8468a3",
+      "actual_read": "full",
+      "lines": [
+        39,
+        39
+      ],
+      "role": "Exact frozen original already has correct root-task quantity; no original source edit."
+    },
+    {
+      "path": "support/eef751243f82cd1689d6.md",
+      "sha256": "dd3a012c9e24eb64a6ddc4f8e953ccc787aa27cc8a6945a454af2357d5689fb8",
+      "actual_read_ranges": [
+        [
+          1,
+          111
+        ]
+      ],
+      "lines": [
+        58,
+        85
+      ],
+      "role": "Canonical actual construction, complete selected load and subtree pruning proof; tail unreviewed."
+    },
+    {
+      "path": "original/e8b6428338f9c956317c.py",
+      "sha256": "1cf7ebfc58e92dc7dac92a6d1753f8ae899be8be078b00b1da53e1ae7c6982bc",
+      "lines": [
+        182,
+        182
+      ],
+      "role": "Exactly one unit eligibility entry."
+    },
+    {
+      "path": "original/e8b6428338f9c956317c.py",
+      "sha256": "1cf7ebfc58e92dc7dac92a6d1753f8ae899be8be078b00b1da53e1ae7c6982bc",
+      "lines": [
+        228,
+        242
+      ],
+      "role": "Exact schedule_tree pruning before traversal."
+    },
+    {
+      "path": "errata-diagnostic/report.json",
+      "role": "Two once-executed exact witnesses: root degree2/k1 actual root load1, not0; chain k(1,2,0) actual nonroot load3/2, home1/2 plus unit1."
+    }
+  ],
+  "mathematical_status": "OPT=2-b* survives with corrected complete construction; no refutation of the frozen source identity; no new general UM algorithm",
+  "application_contract": "Root reads original/proposed/evidence, checks before SHA, serially replaces only two precise paragraphs. Preserve frozen sources, old evidence/progress and all prior errata packages."
+}

@@ -1,0 +1,5 @@
+# 先行相关正文比较
+
+此时权威BG capture尚未出现，只读已发表正文；未读取待领primary、未填receipt或声称claim。
+
+已完整实读五份当前对象：后期净券GLOBAL-HIT是最终角色质量而非访问；full-O不继承fresh源时序；固定ROLE证书区分单context密度和同role聚合；分数NET/RI共享激活保单一wholeIC系数且新增I源IC税不免费；自然recipient重分配在固定当前吸收/captured总量下保对角账但不自动保旧recipient等份HIT；末对缺额资料说明早期两child和自洽查询的删除势债尚未付。与BG原文的具体等价/区别，待实际claim后逐篇确认，不预设同模型或路线。
