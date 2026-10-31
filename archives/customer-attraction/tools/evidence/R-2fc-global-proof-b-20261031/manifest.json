@@ -1,0 +1,488 @@
+{
+  "schema": 1,
+  "batch": "R-2fc-global-proof-b-20261031",
+  "actor": "Boss2",
+  "research_workspace": "customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/global_proof",
+  "source_commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+  "source_count": 8,
+  "clean_show": {
+    "command_template": "GIT_NO_LAZY_FETCH=1 python3 co-work-anl/work.py clean show <source_id>",
+    "result": "all eight attempts returned nonzero because the promised source blob is absent locally; no stdout bytes were emitted",
+    "raw_directory": "clean-show/",
+    "network_boundary": "normal lazy fetch also failed because browser-proxy:8889 was unavailable; no source bytes were reconstructed or fabricated",
+    "lazy_fetch_replay": {
+      "command_template": "python3 co-work-anl/work.py clean show <source_id>",
+      "result": "all eight attempts returned nonzero; stderr records browser-proxy:8889 unavailable and missing promisor blob",
+      "raw_directory": "clean-show/*lazy.*"
+    }
+  },
+  "sources": [
+    {
+      "id": "c06e10c8bc47d9ff656c",
+      "path": "research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/global_proof/harmonic_minimized_audit.json",
+      "blob": "4b07886721c29f7a33563e7ec2a7fac1234dad2b",
+      "sha256": "919e0a22b7cdfd7fda889e7d1bde5c26dae3f80fb285afd0600ad54b7c7c3386",
+      "size": 510,
+      "classification": "完整有限证书（固定十一客户策略的Fraction审计输出）；不是全模型最小性",
+      "evidence": [
+        "replay/harmonic_11/stdout.json",
+        "replay/harmonic_11/stderr.txt",
+        "replay/harmonic_11/execution.json"
+      ],
+      "status": "retained"
+    },
+    {
+      "id": "d17fd27b86c077066c01",
+      "path": "research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/global_proof/harmonic_obstruction_minimized.json",
+      "blob": "c5219da614eaa0e5149cca85146bcadad6dd2979",
+      "sha256": "c555b3f266fd9d0fdaf12740d91ee2372ef979075574104a51dd503dafb89cfb",
+      "size": 3385,
+      "classification": "固定策略的整数输入/候选压缩；有效性由独立Fraction审计承担",
+      "evidence": [
+        "replay/harmonic_11/audit_harmonic_11.py",
+        "replay/harmonic_11/stdout.json"
+      ],
+      "status": "retained"
+    },
+    {
+      "id": "d889a8a86821640e75b5",
+      "path": "research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/global_proof/joint_collision_free_m3p6.json",
+      "blob": "1e88a507b8684c4b21025a8d225ed11f3a23e929",
+      "sha256": "35ba5523aa7e82d873c733ac416179d425b37e237eedf15d185e26e3107a5f20",
+      "size": 6816,
+      "classification": "有限联合MILP探索（m=3,q=6；含15秒主题子问题）；超时/浮点状态不构成不存在性证据",
+      "evidence": [
+        "context-scope.md",
+        "clean-show/d889a8a86821640e75b5.status.json"
+      ],
+      "status": "retained"
+    },
+    {
+      "id": "00d4e04095615c2ae506",
+      "path": "research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/global_proof/joint_collision_free_m3p6_k1.json",
+      "blob": "c2dae404fdd862c2f5b2efc193d22308de68c208",
+      "sha256": "000b7e53cb66d1468fa35b9b7f308dbfdfb89a8ef68286058cc0c665d932ae94",
+      "size": 13232,
+      "classification": "有限联合MILP探索的k=1切片；只报告该运行的候选/求解状态，不升级为全局结论",
+      "evidence": [
+        "context-scope.md",
+        "clean-show/00d4e04095615c2ae506.status.json"
+      ],
+      "status": "retained"
+    },
+    {
+      "id": "c69ae6a40ba4270c0cc2",
+      "path": "research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/global_proof/joint_collision_free_probe.py",
+      "blob": "eb6ab4d7228f3b41da347ca09e1979409613ee53",
+      "sha256": "f2402cc7c0253cf7a3f06d32cbde495c90f6f9c93fb85ccb755235f97f3429a1",
+      "size": 3239,
+      "classification": "有限浮点/MILP探针代码；实验边界和15秒时限必须随结果保留",
+      "evidence": [
+        "context-scope.md",
+        "clean-show/c69ae6a40ba4270c0cc2.status.json"
+      ],
+      "status": "retained"
+    },
+    {
+      "id": "ff2ee8e20a0b853b3e25",
+      "path": "research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/global_proof/minimize_harmonic_obstruction.py",
+      "blob": "6fae7e801cfffbaa159f1d5e0db44ee2c5ea40a7",
+      "sha256": "29867fab83ffd98475b7dbafb8c462387a82d59695c44a661978b17a6595a63d",
+      "size": 1876,
+      "classification": "固定策略上的MILP最小化/发现程序；求解器输出不是反例有效性证明，也不是全模型最小性",
+      "evidence": [
+        "context-scope.md",
+        "replay/harmonic_11/execution.json"
+      ],
+      "status": "retained"
+    },
+    {
+      "id": "4e0abf587b1b57da4145",
+      "path": "research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/global_proof/probe_promoted_family_failure.py",
+      "blob": "3e2eef622e5ed0c898001a5cb1f6265ac5dce0a2",
+      "sha256": "9478bdc452e714e33522c1807e349d1b09c1506cebf53ab02f981e84f0d532cb",
+      "size": 1030,
+      "classification": "有限ExactSPESolver失败探针（仅三点历史）；一般受限族失败由末位偏离解析式承担",
+      "evidence": [
+        "replay/promoted_family/stdout.json",
+        "replay/promoted_family/execution.json"
+      ],
+      "status": "retained"
+    },
+    {
+      "id": "f7fcdd25e0b844982443",
+      "path": "research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/global_proof/promoted_family_oracle_observed.json",
+      "blob": "72081e01d93f39a3e10e1f2997b6e2aa0d9d8cab",
+      "sha256": "3ba6b358c3eaedd1a45fea35ca1a59fbc542ab7c174ee2ff9daf11d02f8e903f",
+      "size": 384,
+      "classification": "有限oracle观察输出转录；原stdout未带哈希，不视为可重放完整证书",
+      "evidence": [
+        "replay/promoted_family/stdout.json",
+        "context-scope.md"
+      ],
+      "status": "retained"
+    }
+  ],
+  "related_material": [
+    "archives/customer-attraction/tools/evidence/R-2fc-global-proof-a-20261031/related/global_proof_README.md",
+    "archives/customer-attraction/tools/evidence/R-2fc-global-proof-a-20261031/related/harmonic_potential_obstruction.md",
+    "archives/customer-attraction/tools/evidence/R-2fc-global-proof-a-20261031/related/collision_free_three_halves_family.md",
+    "archives/customer-attraction/tools/evidence/R-2fc-global-proof-a-20261031/related/collision_free_occupancy_obstruction.md",
+    "archives/customer-attraction/tools/evidence/R-2fc-global-proof-a-20261031/related/promoted_punishment_family_failure.md",
+    "archives/customer-attraction/state/资源/边际势预算与全局正矩原稿的精确证据层次--资源.md",
+    "archives/customer-attraction/state/资源/无拥挤完整均衡族原稿与有限探索的准确范围--资源.md",
+    "archives/customer-attraction/state/障碍/多个围堵块的目标终局末位障碍--障碍.md"
+  ],
+  "replay_boundary": {
+    "exact_fraction": [
+      "harmonic_11",
+      "promoted_family",
+      "family_related"
+    ],
+    "historical_only": [
+      "joint_collision_free_m3p6",
+      "joint_collision_free_m3p6_k1",
+      "joint_collision_free_probe.py",
+      "promoted_family_oracle_observed.json"
+    ],
+    "no_claims": [
+      "global harmonic minimality",
+      "global Q-CAG-HALF proof or disproof",
+      "solver timeout as infeasibility",
+      "floating point candidate as theorem",
+      "oracle transcript as hashed stdout"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "clean-show/00d4e04095615c2ae506.lazy.status.json",
+      "bytes": 489,
+      "sha256": "c2e6644b5912ad2c448545403395424593cf3fe828cde04afa1de742606cb4fe"
+    },
+    {
+      "path": "clean-show/00d4e04095615c2ae506.lazy.stderr.txt",
+      "bytes": 266,
+      "sha256": "7fd67ea1fabcb04ab5dbab76801f1f92813e476b2a40c99ad73fbef823fe7ae1"
+    },
+    {
+      "path": "clean-show/00d4e04095615c2ae506.lazy.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/00d4e04095615c2ae506.status.json",
+      "bytes": 499,
+      "sha256": "a890fea9317a5a48a48a9775b5664f15a071259e2be86c22c987ab49ab6becec"
+    },
+    {
+      "path": "clean-show/00d4e04095615c2ae506.stderr.txt",
+      "bytes": 203,
+      "sha256": "c70cec64f7c25f61d6bd88327c8259b4226dd1fdd5047dbafc5959ce73f44fd7"
+    },
+    {
+      "path": "clean-show/00d4e04095615c2ae506.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/4e0abf587b1b57da4145.lazy.status.json",
+      "bytes": 489,
+      "sha256": "3ca4baecb4d2bcad86d0933abe192a6c5f27c299b53c091934749ffeb2846770"
+    },
+    {
+      "path": "clean-show/4e0abf587b1b57da4145.lazy.stderr.txt",
+      "bytes": 266,
+      "sha256": "7e4da92eea72d03fb8e14c2bab04a30e552f6849e628a42978b7c45c75a54e03"
+    },
+    {
+      "path": "clean-show/4e0abf587b1b57da4145.lazy.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/4e0abf587b1b57da4145.status.json",
+      "bytes": 499,
+      "sha256": "5185c559021eb2df5378d8f3ef538f775c8d13ecdb471459fee12ef1b38aacf7"
+    },
+    {
+      "path": "clean-show/4e0abf587b1b57da4145.stderr.txt",
+      "bytes": 202,
+      "sha256": "c6e79a21a35c51c0f90b8457024aa205d8d5485b91fcd5813bfaf7ec71421d2b"
+    },
+    {
+      "path": "clean-show/4e0abf587b1b57da4145.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/c06e10c8bc47d9ff656c.lazy.status.json",
+      "bytes": 489,
+      "sha256": "3944c23a5109b7d1afc1cc8cd5208d1d665b6293558c6e863573986f0c039520"
+    },
+    {
+      "path": "clean-show/c06e10c8bc47d9ff656c.lazy.stderr.txt",
+      "bytes": 266,
+      "sha256": "9e1a843cb246c38bea74f51c3fc80e9e2f3810f38f23bb556b82c85aed30cc5f"
+    },
+    {
+      "path": "clean-show/c06e10c8bc47d9ff656c.lazy.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/c06e10c8bc47d9ff656c.status.json",
+      "bytes": 499,
+      "sha256": "9eaa565f9802fb6c4a5109ee9b6a59f6ca7973fea41b9f6553e6ffe9e5e90848"
+    },
+    {
+      "path": "clean-show/c06e10c8bc47d9ff656c.stderr.txt",
+      "bytes": 199,
+      "sha256": "d4882f597e5bfabb14804ba692cc63e164ea7f12f6d529b184d0c6961160c999"
+    },
+    {
+      "path": "clean-show/c06e10c8bc47d9ff656c.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/c69ae6a40ba4270c0cc2.lazy.status.json",
+      "bytes": 489,
+      "sha256": "c12c6fc65d8ea29c29ffaa604cc615b25af72c20db484cd56790cecbc7b509d1"
+    },
+    {
+      "path": "clean-show/c69ae6a40ba4270c0cc2.lazy.stderr.txt",
+      "bytes": 266,
+      "sha256": "04383a163f6e8944f03cadf5110570333e456bfa150cc9263363942e633c0b3c"
+    },
+    {
+      "path": "clean-show/c69ae6a40ba4270c0cc2.lazy.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/c69ae6a40ba4270c0cc2.status.json",
+      "bytes": 499,
+      "sha256": "e56144c914816ce5e5ffee521bd91f9cd0e3fb008842b1f98f67a7f5c10495c1"
+    },
+    {
+      "path": "clean-show/c69ae6a40ba4270c0cc2.stderr.txt",
+      "bytes": 199,
+      "sha256": "f62080e4ee8192354bc6bd6a2440272d1dc1620ed3d7ead62f096df74df5f9db"
+    },
+    {
+      "path": "clean-show/c69ae6a40ba4270c0cc2.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/d17fd27b86c077066c01.lazy.status.json",
+      "bytes": 489,
+      "sha256": "3060d6eb529eb046d4462b5ab401e048a3f02244c59297c44a7788728dc9a640"
+    },
+    {
+      "path": "clean-show/d17fd27b86c077066c01.lazy.stderr.txt",
+      "bytes": 266,
+      "sha256": "e3d7f16756bf883d658efc8e2902361e50ce062667c1c3cb7eeffac430279972"
+    },
+    {
+      "path": "clean-show/d17fd27b86c077066c01.lazy.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/d17fd27b86c077066c01.status.json",
+      "bytes": 499,
+      "sha256": "a636c2af9bf30e2afc7ffeafd54761ab9814c6462e5a9fdd17a399ee9b2ba055"
+    },
+    {
+      "path": "clean-show/d17fd27b86c077066c01.stderr.txt",
+      "bytes": 205,
+      "sha256": "cd472a7ffefd762ffa2b2bf13841072fedb36877cc89e6eec2b6c930c27d7d1d"
+    },
+    {
+      "path": "clean-show/d17fd27b86c077066c01.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/d889a8a86821640e75b5.lazy.status.json",
+      "bytes": 489,
+      "sha256": "dddce14eb182258003226b0810966affb1975073aedb4c54ae89696709efb850"
+    },
+    {
+      "path": "clean-show/d889a8a86821640e75b5.lazy.stderr.txt",
+      "bytes": 266,
+      "sha256": "6f4f012bf4b92b9bce4a860e0333d5b9a79486eb0da5fff6f722b55850cab8d6"
+    },
+    {
+      "path": "clean-show/d889a8a86821640e75b5.lazy.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/d889a8a86821640e75b5.status.json",
+      "bytes": 499,
+      "sha256": "f4ab8efed2c986dfba28b46979d9b006fd1e6f285f10612cb8dec5f6dac747d4"
+    },
+    {
+      "path": "clean-show/d889a8a86821640e75b5.stderr.txt",
+      "bytes": 200,
+      "sha256": "c1f5cf88d674216170035d6a8906520804145dddf059c1992103ab87b83b49ff"
+    },
+    {
+      "path": "clean-show/d889a8a86821640e75b5.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/f7fcdd25e0b844982443.lazy.status.json",
+      "bytes": 489,
+      "sha256": "26a507c68d8c3241c692f984f3499f3af51b0d6ad87c9128fffb0d067f5c9531"
+    },
+    {
+      "path": "clean-show/f7fcdd25e0b844982443.lazy.stderr.txt",
+      "bytes": 266,
+      "sha256": "fa775bb749f30f62c1b45355e0ebe451469c93c9cb41347a6a7ac816028b10de"
+    },
+    {
+      "path": "clean-show/f7fcdd25e0b844982443.lazy.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/f7fcdd25e0b844982443.status.json",
+      "bytes": 499,
+      "sha256": "1137ee8f0ef82c1f8a2b8f738de8276d91b71e28d8d761c0adda79a88199c09b"
+    },
+    {
+      "path": "clean-show/f7fcdd25e0b844982443.stderr.txt",
+      "bytes": 206,
+      "sha256": "d7f7535dda6ab2b19b073d56d912683ed2a559f0985df5f7dd0ba0191e1eb09d"
+    },
+    {
+      "path": "clean-show/f7fcdd25e0b844982443.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/ff2ee8e20a0b853b3e25.lazy.status.json",
+      "bytes": 487,
+      "sha256": "08671a78e8799dad72b7c61270c213d77f62ae17d97e8ec80f0fbd49c1a0c84a"
+    },
+    {
+      "path": "clean-show/ff2ee8e20a0b853b3e25.lazy.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/ff2ee8e20a0b853b3e25.lazy.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "clean-show/ff2ee8e20a0b853b3e25.status.json",
+      "bytes": 499,
+      "sha256": "706a2b2032d0c359ad6de2f1ced9d438be5c9db459281e2a3b9329494568faf9"
+    },
+    {
+      "path": "clean-show/ff2ee8e20a0b853b3e25.stderr.txt",
+      "bytes": 202,
+      "sha256": "80da2e6647eb2b98b5220b55029c9c2eee1aa5eaca298dce4a5d206145b90daf"
+    },
+    {
+      "path": "clean-show/ff2ee8e20a0b853b3e25.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "context-scope.md",
+      "bytes": 1748,
+      "sha256": "68517d182395a9fa34301a57c04f8b2b24398fa4c317b50945210f0a7dd0c289"
+    },
+    {
+      "path": "replay/family_related/audit_collision_free_family_independent.py",
+      "bytes": 4253,
+      "sha256": "d8656e0214f73d5db4875d9007a03e69e6f32c5f04c49246783be9405bfe7908"
+    },
+    {
+      "path": "replay/family_related/execution.json",
+      "bytes": 1206,
+      "sha256": "88ca026338612e064717063a293c823c017db30170f467a05e70ae0ef2349533"
+    },
+    {
+      "path": "replay/family_related/family_audit.json",
+      "bytes": 1183,
+      "sha256": "8e63bb1f845683eae08a4445d1a5977cfc537187c879552c6b6197e5689723f4"
+    },
+    {
+      "path": "replay/family_related/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "replay/family_related/stdout.txt",
+      "bytes": 1184,
+      "sha256": "e72851df8fbbf576c989f737def3fcd320c4aef7a84701ec5d617938080bc665"
+    },
+    {
+      "path": "replay/harmonic_11/audit_harmonic_11.py",
+      "bytes": 2535,
+      "sha256": "8bea0fc337ceeabaef3cd65a5029b40033ac2690bb180defbeab719f22f1ff9b"
+    },
+    {
+      "path": "replay/harmonic_11/execution.json",
+      "bytes": 867,
+      "sha256": "599cfc7c7dbcceb3aa22929f650a9aa4eb91c3bc334a9047dc509c70cb7038ba"
+    },
+    {
+      "path": "replay/harmonic_11/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "replay/harmonic_11/stdout.json",
+      "bytes": 1115,
+      "sha256": "54028640f34dbefe55f0924b25829c94d65ed23287c3ea33af223eede63d7716"
+    },
+    {
+      "path": "replay/promoted_family/execution.json",
+      "bytes": 905,
+      "sha256": "107cfec00c282d1e8595ba39b17a4d456a81b76a67592f34e27843cffe5862f5"
+    },
+    {
+      "path": "replay/promoted_family/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "replay/promoted_family/stdout.json",
+      "bytes": 5291,
+      "sha256": "96ff47407239ea68259ef84a00cc9ec55cf10e71be8507d28d671c36c5396107"
+    },
+    {
+      "path": "replay/promoted_family/verify_promoted_family_failure.py",
+      "bytes": 1149,
+      "sha256": "f0478077f0279a57b6b64a3e1e38cd3f41e9d2fa104fd37c3b7c1ba8d8293656"
+    },
+    {
+      "path": "repository-search.txt",
+      "bytes": 1553,
+      "sha256": "8f47d281075b8412f0eb8ccac49b480e0bb0a6d0622ebd6f43e4dffe33d12118"
+    }
+  ],
+  "checkpoint": {
+    "status": "ready-for-parent-checkpoint",
+    "branch": "rebuild/research-v2",
+    "base_head": "6d6b93331d44363cb75d442f7e15e115352686e2",
+    "git_commit_created": false,
+    "cleanup_done_submitted": false,
+    "validations": [
+      "inventory hash/size cross-check PASS",
+      "8 clean-show records present",
+      "harmonic Fraction replay returncode 0",
+      "promoted-family rational replay returncode 0",
+      "collision-free family k1-k3 Fraction replay returncode 0",
+      "receipt eight-entry required-field check PASS"
+    ]
+  }
+}
