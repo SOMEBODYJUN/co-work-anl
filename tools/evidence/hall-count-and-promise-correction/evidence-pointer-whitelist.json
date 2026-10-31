@@ -1,0 +1,101 @@
+{
+  "policy": "仅这些实际冻结代码行、原文行及JSON字段支撑三条建议；不由文件名、旧图或多数摘要外推。所有路径相对结果repo；本包不重写这些既有证据。",
+  "pointers": [
+    {
+      "id": "hall-code-counts",
+      "repo_relative_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/original/tests/audits/unrelated_machines/hall_group_joint_flow.py",
+      "sha256": "ebcf08cbc82b841b86ab5c567d1abad79de0cf4b501bcffc24172fba3b94e46e",
+      "source_is_frozen_in_prior_54_file_package": true,
+      "line_range_inclusive": [
+        302,
+        340
+      ],
+      "exact_line_excerpt": "def audit(export_dir=None):\n    counts = {\"all_instances\":0,\"T_feasible\":0,\"successful_outputs\":0,\"reliable_rejections\":0}\n    promise_checks=0\n    def check_promise(groups,E,M,k,q,delta,opt):\n        nonlocal promise_checks\n        theta=F(1,2)+F(1,q)\n        in_promise=(all(p is None or p>opt/2 for row in M for p in row)\n                    and all(theta*opt<=sum(G,F(0))<=opt for G in groups)\n                    and all(w<=delta*opt for G in groups for w in G))\n        if in_promise:\n            out=solve_promise(groups,E,M,k,q,delta)\n            matrix_check(groups,E,M,k,opt,out)\n            assert out['threshold']<=opt\n            promise_checks+=1\n    # Exhaust all eligibility and macro support graphs through 3 homes, 2 sinks,\n    # 2 macros; all private groups have two half-jobs, macro times 3/4.\n    q,delta = 2,F(1,2)\n    for h in range(1,4):\n        for k in range(0,3):\n            subsets = [tuple(z for z in range(k) if mask>>z&1) for mask in range(1<<k)]\n            supports = [tuple(F(3,4) if mask>>i&1 else None for i in range(h)) for mask in range(1,1<<h)]\n            for Es in product(subsets,repeat=h):\n                groups = [[F(1,2),F(1,2)] for _ in range(h)]\n                for b in range(min(2,h)+1):\n                    for Ms in product(supports, repeat=b):\n                        counts['all_instances'] += 1\n                        optimum = matrix_optimum(full_matrix(groups,Es,Ms,k),h+k)\n                        feasible = optimum <= 1\n                        assert feasible == exact_feasible(groups, Es, Ms, k)\n                        result = solve(groups, Es, Ms, k, q, delta)\n                        matrix_check(groups,Es,Ms,k,F(1),result)\n                        check_promise(groups,Es,Ms,k,q,delta,optimum)\n                        counts['T_feasible'] += feasible\n                        counts['successful_outputs'] += result is not None\n                        assert not feasible or result is not None\n                        if result is None:\n                            counts['reliable_rejections'] += 1\n                            assert not feasible\n    # q=3, nonuniform near-full groups and zero jobs; arbitrary eligibility."
+    },
+    {
+      "id": "hall-base-report",
+      "repo_relative_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/evidence/runs/unrelated_machines/hall_group_joint_flow_audit.json",
+      "sha256": "3a4136a952a4b3adc0a833ab58d050eeb8d4ee2bcd21597fa7716e81fc6e6327",
+      "source_is_frozen_in_prior_54_file_package": true,
+      "exact_JSON_fields": {
+        "all_instances": 4448,
+        "T_feasible": 2278,
+        "successful_outputs": 2773,
+        "reliable_rejections": 1675,
+        "nonuniform_zero_job_cases": 228,
+        "varying_macro_times": {
+          "instances": 10122,
+          "T_feasible": 2071,
+          "outputs": 2650
+        },
+        "metadata.source_sha256": "ebcf08cbc82b841b86ab5c567d1abad79de0cf4b501bcffc24172fba3b94e46e"
+      }
+    },
+    {
+      "id": "final-data-counts",
+      "repo_relative_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/data-selfcheck.json",
+      "sha256": "7d79595ca673017ae9317c8a3e08bdc90d17222aa6fc245703ba54876f09fccd",
+      "source_is_frozen_in_prior_54_file_package": true,
+      "exact_JSON_fields": {
+        "status": "passed",
+        "hall.base_cases": 4448,
+        "hall.base_success_above_true_T_feasibility_count": 495
+      }
+    },
+    {
+      "id": "hall-code-contract",
+      "repo_relative_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/original/tests/audits/unrelated_machines/hall_group_joint_flow.py",
+      "sha256": "ebcf08cbc82b841b86ab5c567d1abad79de0cf4b501bcffc24172fba3b94e46e",
+      "source_is_frozen_in_prior_54_file_package": true,
+      "line_range_inclusive": [
+        97,
+        106
+      ],
+      "exact_line_excerpt": "    require(len(eligibility) == h, 'one common eligibility list per home')\n    require(all(type(z) is int and 0 <= z < k for E in eligibility for z in E), 'invalid sink index')\n    eligibility=[tuple(sorted(set(E))) for E in eligibility]\n    require(all(len(row) == h for row in macros), 'macro row length must equal number of homes')\n    require(all(any(p is not None for p in row) for row in macros), 'each macro needs a finite edge')\n    require(all(p is None or p > T/2 for row in macros for p in row), 'finite macro times must exceed T/2')\n    require(all(w >= 0 for G in groups for w in G), 'negative private processing time')\n    require(all((F(1,2)+F(1,q))*T <= sum(G, F(0)) <= T for G in groups), 'group total outside promised interval')\n    require(all(w <= delta*T for G in groups for w in G), 'private task exceeds delta*T')\n    tau = F(q-1+q*delta, q+1)"
+    },
+    {
+      "id": "hall-canonical-general-lower-bound",
+      "repo_relative_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/hall_group_joint_flow.md",
+      "sha256": "10aabd8e9cc0eccf10974f94e23633f6d1034313348a69ceac003bb876af5b2b",
+      "source_is_frozen_in_prior_54_file_package": true,
+      "line_range_inclusive": [
+        12,
+        24
+      ],
+      "exact_line_excerpt": "\n`(1/2+1/q)T≤W_h≤T`，`w_j≤δT`。\n\n这些条件包括T=0。宏边大于T仍可在原输入存在，算法剪掉它们。设\n\n`τ=(q−1+qδ)/(q+1)`，`r=q(2+δ)/(q+1)`。\n\n**Exact Statement / Quantifiers。** 对所有上述合法输入，存在统一确定性、输入总位长的多项式算法，返回FAIL或实际合法调度；每次成功均满足`C_max≤rT`。若OPT≤T，必成功，所以FAIL蕴含OPT>T。成功不判定T精确可行。q可以作为二进制输入增长，没有按q数值复制机器。\n\n### UM-HALL-GROUP-PROMISE-APPROX-v1：无需给定OPT的实际近似\n\n给上述结构、q和δ，不给T。承诺在真实OPT处有：全部有限宏边`p_hb>OPT/2`，每组`(1/2+1/q)OPT≤W_h≤OPT`，每私有任务`w_j≤δOPT`。要求`qδ<2`；δ0单独按零值分支处理。\n"
+    },
+    {
+      "id": "hall-canonical-q2-counterexample",
+      "repo_relative_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/hall_group_joint_flow.md",
+      "sha256": "10aabd8e9cc0eccf10974f94e23633f6d1034313348a69ceac003bb876af5b2b",
+      "source_is_frozen_in_prior_54_file_package": true,
+      "line_range_inclusive": [
+        97,
+        97
+      ],
+      "exact_line_excerpt": "组负载下界也承重。q2、三home各有仅在本home时间2/3的macro，每组四件1/6，唯一共同sink。每home留两件、退两件，sink恰负载1，所以T1可行；但q2槽网络只容纳两个组。该例违反W_h≥T，不能用它攻击本定理。"
+    },
+    {
+      "id": "hall-code-joint-bottleneck",
+      "repo_relative_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/original/tests/audits/unrelated_machines/hall_group_joint_flow.py",
+      "sha256": "ebcf08cbc82b841b86ab5c567d1abad79de0cf4b501bcffc24172fba3b94e46e",
+      "source_is_frozen_in_prior_54_file_package": true,
+      "line_range_inclusive": [
+        172,
+        190
+      ],
+      "exact_line_excerpt": "    if not macros:\n        bottleneck=F(0)\n    else:\n        values=sorted({p for row in macros for p in row if p is not None})\n        require(joint_flow(h,eligibility,macros,k,q,values[-1]) is not None,\n                'no joint macro/receiver matching; unknown-OPT promise is violated')\n        lo,hi=-1,len(values)-1\n        while hi-lo>1:\n            mid=(lo+hi)//2\n            if joint_flow(h,eligibility,macros,k,q,values[mid]) is None:\n                lo=mid\n            else:\n                hi=mid\n        bottleneck=values[hi]\n    target=max([F(0),bottleneck]+[sum(G,F(0)) for G in groups]\n               +[w/delta for G in groups for w in G])\n    result=solve(groups,eligibility,macros,k,q,delta,target)\n    require(result is not None,'unknown-OPT promise violated during threshold recovery')\n    result['threshold']=target"
+    },
+    {
+      "id": "hall-canonical-joint-bottleneck",
+      "repo_relative_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/comparison/research/current/unrelated_machines/hall_group_joint_flow.md",
+      "sha256": "10aabd8e9cc0eccf10974f94e23633f6d1034313348a69ceac003bb876af5b2b",
+      "source_is_frozen_in_prior_54_file_package": true,
+      "line_range_inclusive": [
+        79,
+        89
+      ],
+      "exact_line_excerpt": "先逐任务检查零边，若每件都有零边就输出零调度。对满足promise且δ0的输入，这一步必成功：若OPT>0，则宏存在会要求home存在，或有正私有任务；然而任意home组W_h≥(1/2+1/q)OPT>0与全部w_j≤0矛盾。无home又无任务时OPT0。δ0非零输入可拒绝（API报ValueError），不声称该域外输入满足promise。\n\n下设δ>0。忽略T的组大小/宏下界检查，保留§3网络结构，只把macro→home边限定为p_hb≤u。其余资格及容量固定。随u增大，网络边只增加。设D为所有有限宏处理时间的去重排序表；用整数最大流在D中二分，取得可覆盖全部宏的最小瓶颈B；若最大候选阈值仍无全流，则拒绝为promise违例（API报ValueError）。无宏时取B=0。\n\n设空max=0，并取\n\n`t=max(max_h W_h, max_(private j) w_j/δ, B)`。\n\n在promise的真实OPT处，§2适用，故B≤OPT；另外两个量由promise不超过OPT，因此t≤OPT。于是所有有限宏边>OPT/2≥t/2，每组W_h≥(1/2+1/q)OPT≥(1/2+1/q)t；上界W_h≤t和w_j≤δt由t定义成立。在t上调用阈值构造，网络必满流并输出\n\n`C_max≤rt≤rOPT`。"
+    }
+  ]
+}

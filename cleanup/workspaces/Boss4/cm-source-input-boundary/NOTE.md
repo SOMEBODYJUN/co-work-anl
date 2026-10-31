@@ -1,0 +1,5 @@
+# CM五源输入边界及交接
+
+五个primary仍未读取：e285a5c5428b9f209e67、3c0b982bc439ef7ad28d、6d59ba9d59baf830536c、80c4de9d51ecdd7cc93a、a4bdd236a2a38b2f03df。自动审批拒绝会触发意外github.com HTTPS的clean show准备命令；没有重试或换网络路线。纯本地禁网blob及全workspace同SHA检查均未找到源码，0主源全文/0运行/0receipt，不能done。
+
+本说明先checkpoint确认共享，再逐五源实际handoff，供有原冻结输入的协调Boss接续；不是全仓停止。query随后接四份已纯本地导出并核Git blob/SHA256/size的真实原程序。source manifest、原claim/独立恢复及本地检查均保留，原needs-attention回执不改。

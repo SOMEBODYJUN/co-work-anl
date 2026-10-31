@@ -1,0 +1,11 @@
+--- a/archives/unrelated-machines/state/审查/最优凸包长链与私有汇点边界两源精读--审查.md
++++ b/archives/unrelated-machines/state/审查/最优凸包长链与私有汇点边界两源精读--审查.md
+@@ -22,7 +22,7 @@
+ 
+ 每个 root/chain home 负载由 `a=1−1/(2k)` 构成；若实际输出 `Cmax≤2−δ`，下传比特只能形成后缀，rootjob 离根则强制整条链下传。没有新 rootjob 离根时，旧 active 链不能返回 root；其它链仅可迁移后缀，排序向量不减，故严格 lex 改善至少激活一条新链。该链改变至少 `d+1` 个任务和 `d+2` 台机器；另有一条 tiny 链可达到该下界。该证明覆盖任意合法实际重分配，不能缩成净负载变化计数。
+ 
+-最优槽/成本分解给唯一最低成本 cover matching：至少一个 rootjob 离根，tiny activation cost `c_t=(d+2k−2)/(2k)>0`，macro cost 更大；因而最低成本输出激活恰一条 tiny 链。此局部 lex 障碍不排除其它初始化或直接返回 optimal 分量。
++最优槽/成本分解表明全部最低成本 cover matching 诱导唯一实际机器分配：至少一个 rootjob 离根，tiny activation cost `c_t=(d+2k−2)/(2k)>0`，macro cost 更大；因而最低成本输出激活恰一条 tiny 链。此局部 lex 障碍不排除其它初始化或直接返回 optimal 分量。
+ 
+ 同一族存在 weak-Cmax 非增修复：沿 inactive tiny 链从 sink 逆序下传，前 d 步峰值不增但 lex 变坏，最后一步峰值下降 δ；依次激活其余链得到 S0。因此该障碍只针对严格 lex 局部改进，不是 Cmax 单调路径困难性或一般近二 hardness。
+ 

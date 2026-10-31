@@ -1,0 +1,15 @@
+# CB五源交付
+
+实际claim989fa6648a46b4211c890cdb40fc65996d675ea3/Boss4/synced，五owner核在原件导出之前。primary1015212B，五receipt全部integrated。两个新正文：最差覆盖计数化的三人有限筛查；计数策略客户锥搜索与保存输入的精确分版。
+
+原默认welfare1次8.901155004s，20000=19856checked+144skip、无阳性file；原defaultcone1次23.947556420s、无失败300LP、best1.8。新m5输出38047B/SHA db3c2e8941e4597a7eb19724f916cc89f09b6f5f917f89e94f44bb23d6f27578仅seconds异。m6/m8本轮发现0次。
+
+三冻结全部8052count records完整无损读，独立std1次0solver/未计时验证所有state/action并以计数策略的确切归纳提升覆盖完整ordered树，没有冒实际枚举千万历史。三精确版本必须分开：m5 literal0.2=1/5/小分母重构SPE；将Pythonfloat0.2当精确重数根真违差−1/90071992547409920。m6 literal约9.17e16客户、binary约6.61e16客户、只有明确重构为11客户；三版本都SPE。m8相同12客户。source labels重复全部保，未商成严格SET。
+
+特殊发表依赖：BL基线页原已实际在657bd0c110e3dd7ddfd51d9cc5e70e28fe1fa06c发布且3afc9e6293320f9c8fd52737281ee2a2da267294 done；后续merge删除导致当前checkout暂缺。gitshow原发布正文与成熟外部stage11644B/SHA d820d313…相同。请按Root既定恢复流水在CB done前还原该本地链接；不能说BL从未发布，不能额外重done旧来源。本包不覆盖旧正文。
+
+下一五只是候选874c0db324473e83674c/8542015b808290c371cf/ebda4e0db4f534b555d5/e1dbcd18938f638babaa/2cfcb16f997f78dba665；当前已知progress回退，不依据本地缺记录称available，待Root修复后真实ledger核认领再开primary。
+
+按copy-files精确白名单保存，数学证据和原始run均完整；只本5receipt在新正文/证据发布后登记。所有sharedGit/ledger恢复由Root串行，本worker仅external写。
+
+最终验证时Root已恢复该BL基线页；16个本地正文链接全部存在，validation为PASS、pending restore=0。上面当前暂缺/恢复要求保留为先前真实观察及流水上下文，不表示最终交付仍有缺链。下一候选仍按Root真实ledger核，不以本地缺progress推available。

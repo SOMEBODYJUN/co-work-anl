@@ -1,0 +1,134 @@
+{
+  "python": "3.12.14",
+  "arithmetic": "integer units / fractions.Fraction",
+  "source_sha256": "0a1fb9de11d9a28cfea2d53f501cb28de927aae5553ac72fc2aad53467c26422",
+  "tested_rounding_sha256": "1ba0fd5745c0fc7e07cac99e59b2fe16e2d2138849bede2020f1e329056642ac",
+  "reduction": [
+    {
+      "q": 0,
+      "all_tripartite_triples": 0,
+      "family_instances": 1,
+      "yes_instances": 1,
+      "positive_delta_queries": 2,
+      "independent_schedule_search_states": 4
+    },
+    {
+      "q": 1,
+      "all_tripartite_triples": 1,
+      "family_instances": 2,
+      "yes_instances": 1,
+      "positive_delta_queries": 4,
+      "independent_schedule_search_states": 12
+    },
+    {
+      "q": 2,
+      "all_tripartite_triples": 8,
+      "family_instances": 256,
+      "yes_instances": 175,
+      "positive_delta_queries": 512,
+      "independent_schedule_search_states": 26065
+    }
+  ],
+  "conditional_rounding": {
+    "exact_fractional_cases": [
+      {
+        "T": "1",
+        "delta": "1/8",
+        "loads": [
+          "5/4",
+          "1"
+        ]
+      },
+      {
+        "T": "1/231584178474632390847141970017375815706539969331281128078915168015826259279873",
+        "delta": "1/8",
+        "loads": [
+          "5/926336713898529563388567880069503262826159877325124512315660672063305037119492",
+          "1/231584178474632390847141970017375815706539969331281128078915168015826259279873"
+        ]
+      },
+      {
+        "T": "0",
+        "delta": "1/8",
+        "loads": [
+          "0",
+          "0"
+        ]
+      }
+    ],
+    "empty_task_case": true
+  },
+  "block_cuts": {
+    "path_orientation_enumeration": [
+      {
+        "k": 2,
+        "star_escape_patterns": 8
+      },
+      {
+        "k": 3,
+        "star_escape_patterns": 32
+      },
+      {
+        "k": 4,
+        "star_escape_patterns": 128
+      },
+      {
+        "k": 5,
+        "star_escape_patterns": 512
+      },
+      {
+        "k": 6,
+        "star_escape_patterns": 2048
+      }
+    ],
+    "exact_interval_checks": [
+      {
+        "k": 4,
+        "height": 3,
+        "threshold": "7/4",
+        "floor_interval_samples": 6,
+        "r_at_threshold": 1
+      },
+      {
+        "k": 5,
+        "height": 5,
+        "threshold": "9/5",
+        "floor_interval_samples": 8,
+        "r_at_threshold": 1
+      },
+      {
+        "k": 8,
+        "height": 11,
+        "threshold": "15/8",
+        "floor_interval_samples": 14,
+        "r_at_threshold": 1
+      },
+      {
+        "k": 16,
+        "height": 33,
+        "threshold": "31/16",
+        "floor_interval_samples": 30,
+        "r_at_threshold": 1
+      },
+      {
+        "k": 32,
+        "height": 88,
+        "threshold": "63/32",
+        "floor_interval_samples": 62,
+        "r_at_threshold": 1
+      },
+      {
+        "k": 64,
+        "height": 221,
+        "threshold": "127/64",
+        "floor_interval_samples": 126,
+        "r_at_threshold": 1
+      }
+    ]
+  },
+  "limits": [
+    "Finite reduction tests do not prove NP-completeness.",
+    "Path orientation tests are local, not general scheduling enumeration.",
+    "Interval algebra is specific to the recognized shared-z family."
+  ]
+}
