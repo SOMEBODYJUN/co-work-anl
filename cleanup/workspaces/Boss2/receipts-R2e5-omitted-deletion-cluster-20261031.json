@@ -1,0 +1,77 @@
+[
+  {
+    "id": "2d2830667667511eefe4",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取665B breakpoints.json；核对65个有理切点，包含0与1端点，逐条保存。",
+    "comparison_note": "与既有 parameter-partition.json 的 cuts 字段逐条比较，65项完全相同；该源是冻结切点列表而非新的证明。",
+    "decision_note": "并入遗漏删除障碍的参数扫描证据包，保留切点与全参数线性论证的分工。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/customer-attraction/state/障碍/实际遗漏客户删除与可信根门槛的无界敏感性--障碍.md",
+      "archives/customer-attraction/tools/evidence/R2e5-omitted-deletion-cluster-20261031/source/breakpoints.json",
+      "archives/customer-attraction/tools/evidence/R2e5-omitted-deletion-cluster-20261031/replay/verification.stdout.txt"
+    ]
+  },
+  {
+    "id": "6e242beec67849c083e0",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取3437B discovery.json；核对五人六主题、82名客户、target=(2,0,1,0,0,2)、seed=20261023与trial=135。",
+    "comparison_note": "与既有遗漏删除障碍目标c、参数证书输入和 minimal 约简链比较；本源是发现实例，未把发现次数当概率或最小性结论。",
+    "decision_note": "并入障碍页和证据包，保留发现输入及82名客户规模，后续约简由minimize.py重放。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/customer-attraction/state/障碍/实际遗漏客户删除与可信根门槛的无界敏感性--障碍.md",
+      "archives/customer-attraction/tools/evidence/R2e5-omitted-deletion-cluster-20261031/source/discovery.json",
+      "archives/customer-attraction/tools/evidence/R2e5-omitted-deletion-cluster-20261031/replay/minimal.replayed.json"
+    ]
+  },
+  {
+    "id": "802c9677e58ef2b5cfb9",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取2052B minimal.json；核对target相同、16类客户行、总重数38与reductions=36。",
+    "comparison_note": "与discovery.json及minimize.py隔离重放结果逐字节比较；冻结minimal与生成minimal完全相同。",
+    "decision_note": "作为贪心约简冻结输出整合；正文明确36步不是全局最小客户数证明。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/customer-attraction/state/障碍/实际遗漏客户删除与可信根门槛的无界敏感性--障碍.md",
+      "archives/customer-attraction/tools/evidence/R2e5-omitted-deletion-cluster-20261031/source/minimal.json",
+      "archives/customer-attraction/tools/evidence/R2e5-omitted-deletion-cluster-20261031/replay/minimal.replayed.json"
+    ]
+  },
+  {
+    "id": "5cfc23dcca78cd034036",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取1989B minimize.py；核对ExactSPESolver目标可实现性、按行/重数贪心删除、保留客户条件与输出方式。隔离运行exit0、stderr为空。",
+    "comparison_note": "与既有exact-spe依赖、遗漏删除障碍和full-tree-duality审计比较；脚本只给诊断约简轨迹，不给全局优化证明。",
+    "decision_note": "保留源码、依赖副本、36步stdout和独立verifier，整合到遗漏删除障碍；不升级为最小性或half结论。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/customer-attraction/state/障碍/实际遗漏客户删除与可信根门槛的无界敏感性--障碍.md",
+      "archives/customer-attraction/tools/evidence/R2e5-omitted-deletion-cluster-20261031/source/minimize.py",
+      "archives/customer-attraction/tools/evidence/R2e5-omitted-deletion-cluster-20261031/replay/verification.stdout.txt"
+    ]
+  },
+  {
+    "id": "8f930829ba24af5ed22e",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取25867B parameter_scan.json；核对129代表、target_realizable/threshold/outcomes字段及3/4与91/120两个转折位置。",
+    "comparison_note": "与既有129 representatives和65 cuts逐条投影比较，字段完全相等；只保留冻结扫描，不将其替代既有 affine-line 证明。",
+    "decision_note": "并入障碍页参数扫描证据，明确前96项33/4门槛、后33项7门槛、边界根结果变化与有限范围。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/customer-attraction/state/障碍/实际遗漏客户删除与可信根门槛的无界敏感性--障碍.md",
+      "archives/customer-attraction/tools/evidence/R2e5-omitted-deletion-cluster-20261031/source/parameter_scan.json",
+      "archives/customer-attraction/tools/evidence/R2e5-omitted-deletion-cluster-20261031/replay/verification.stdout.txt"
+    ]
+  }
+]
