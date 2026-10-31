@@ -1,0 +1,100 @@
+# 运行程序：当前调度研究与各模型算法
+
+当前主攻 `UM-TARGET-v1`，存档 `unrelated-machines`。启动、通信和提交统一使用[work.py](research/weighted_congestion_frontier/tools/work.py)，完整命令在[新题手册](research/unrelated_machines/RUNBOOK.md)，新对话粘贴[完整提示词](research/unrelated_machines/BOSS_START.md)。新建未绑定clone默认新题，旧绑定保留。调度精确核验代码从[本题地图](research/current/unrelated_machines/README.md)按Claim选择；目前没有解决主目标的一般新算法。
+
+下表是独立保留的设施模型算法。仅在研究该模型时，从仓库根目录以 Python 3 运行规范包，不需要第三方依赖。每个命令对应不同的问题；[规范模型](research/current/model.md)规定客户成本与延续选择，[命题登记](research/current/claims.md)记录结果状态。此仓库没有选定公共许可或稳定的安装式 API。
+
+| 所需结果 | 额外输入条件 | 运行命令 | 输出含义 |
+| --- | --- | --- | --- |
+| 共同目录的普遍 \(\phi\) 构造 | 两家选同一非空目录，可省略 U1/U2 使用全部地点；正有理权重；独立混合精确客户 NE | python3 -m facility_spe.shared_phi examples/shared/tiny.json --output certificate.json | factor 不超过 \(\phi\) 的一个实例证书，非实例最优 |
+| 任意 $k$ 共同目录的因子 2 存在证书 | 显式 `k` 家带标签设施、共同非空目录、正有理客户；接受指数最坏时间 | python3 -m multi_facility_spe examples/multi_facility/rational.json --output kfac_certificate.json | 一个完整续局的紧凑描述；构造为穷举，不声称多项式时间或 2 尖锐 |
+| 任意 $k$ 规范贪心完整盒的因子 2 证书 | 同上；接受一般有限而非已证多项式的最坏时间 | python3 -m multi_facility_spe examples/multi_facility/greedy_box_global.json --method greedy-box --output greedy_box_certificate.json | 阈值势保证在轨改善—归位有限终止；输出完整精确续局，离轨仍用有限的帽容量纯改善过程 |
+| 等权可移动轻客户的完整因子 2 证书 | 贪心归一化后未冻结多选项客户等权；其他客户权重可不同 | python3 -m multi_facility_spe examples/multi_facility/equal_light_flow_complete.json --method equal-light-flow --output equal_flow_certificate.json | 在轨无约束流为位多项式并自动保盒与 `(H)`；完整软件的离轨及默认阶段仍有限改善，异权可移动输入直接拒绝 |
+| 异构目录的普遍 2 构造 | 分别给出非空 U1/U2，可不同；选纯精确客户 NE | python3 -m facility_spe.heterogeneous_two examples/heterogeneous/tight_two_M1000.json | alpha 不超过 2 的一个实例证书 |
+| 整个实例的最优因子 | U1/U2 均明确给出；接受对最大公共客户数 \(\kappa\) 指数增长的时间 | python3 -m facility_spe.exact.bounded_overlap examples/heterogeneous/tight_two_M1000.json | 支持区间完整枚举的最优 alpha；短证书独自只证“达到” |
+| 共同目录的实例最优因子（异址参数） | U1/U2 同时省略，或二者为同一非空地点集；只对**不同地点**交叠人数 $\kappa_{\ne}$ 指数增长 | python3 -m facility_spe.exact.shared_offdiag examples/shared/sparse_four_rational.json | 最优有理 alpha $6327/4000$ 和全部实际偏离 NE；同址续局统一对半。单张证书只验证达到值，最优性依赖同址正规形 |
+| 至多单交叠的实例最优因子 | 每个跨目录地点对最多一名共有客户 | python3 -m facility_spe.exact.single_overlap examples/heterogeneous/rho_lower.json | 特定输入的最优 alpha；双方目录任意长的普遍 \(\rho\) 结论另由 SPARSE-RHO-ALL 证明 |
+| 共同目录的指数精确比较 | 全部地点可供两设施选；接受指数时间 | python3 -m facility_spe.exact.mitm examples/shared/tiny.json | 实例最优，用作小规模比较 |
+| 五地点固定倍率困难性实例生成 | 固定有理 $1<a<\phi$，显式 SUBSET SUM 正整数列表及合法目标 | python3 -m facility_spe.shared.five_site_hardness --factor 3/2 --numbers 2 --target 1 --output five_no.json | 精确归约的**正整数输入实例**；不求解源问题，也不是普通输入的快速最优倍率算法 |
+
+输入 JSON 的 weights 为正整数、精确分数或小数字符串；locations[j] 列出地点 j 覆盖的从零开始的客户编号。共同目录程序要求 U1/U2 同时省略，或二者给出相同非空地点集合。其他两个目录程序要求两者都出现。命令行读取 JSON 小数时保留精确十进制；Python API 不接受二进制 float 作为权重。空地点和不被任何地点覆盖的客户可以存在。
+
+例如：
+
+    {"weights":["1/3",2,"0.125"],"locations":[[0,1],[1,2],[0,2]],"U1":[0,1],"U2":[1,2]}
+
+这个例子属于异构模型，不能直接交给共同目录程序。它没有退出选择、距离、设施开设费、容量或第三设施。
+
+## 证书检查与所不能推出的结论
+
+共单例源输入可编译为真实规范贪心实例：
+
+```sh
+python3 -m multi_facility_spe.complement_reduction examples/multi_facility/complement_source_two_speed.json --output compiled_search.json
+python3 -m tests.test_complement_reduction
+python3 tests/audits/kfac_complement_reduction.py
+```
+
+输入字段为 `q,B,u,A` 与可选 `eta`；索引从零开始，使用精确整数/分数字符串，
+输出文件存在时拒绝覆盖。输出含真实客户、布局和抽象接口，**没有求解均衡**。
+API `as_facility_instance(compiled)` 接入现有原模型，`decode_ne` 检查外部提供的
+站纯均匀 NE 并返回源排除地点；二选一时所选机器是另一个端点。
+`to_bounded_complement(q,c,w,A)` 输出一般带区间共单例合同，不展开二进制重数。
+源编译按显式 `k=1+sum(q)` 收费；两速度 `1,2` 才是通常源位长下的多项式归约。
+完整证明和边界见[规范稿](research/current/multi_facility/complement_search_reduction.md)。
+
+`--method equal-light-flow` 使用[无约束等权流](research/current/multi_facility/equal_light_flow.md)，
+不模拟客户改善链、不展开二进制 `q`、不按分母数值循环。归位排名与物理地点标签
+分别保留，完整偏离仍检查实际带标签布局。底层抽象 API 为
+`multi_facility_spe.equal_light_flow.equal_weight_box_ne(q,c,w,A)`，接受精确有理数，
+输出全部客户的一整站归属、负载、目标值、增广数和流审计；不拆原子。
+独立核心、反例攻击和完整接口分别运行：
+
+```sh
+python3 tests/audits/kfac_equal_light_flow.py
+python3 tests/audits/kfac_equal_light_flow_adversary.py
+python3 tests/audits/kfac_equal_light_flow_continuation.py
+```
+
+这些命令默认不改冻结证据。一般异权总时间未解决；旧等权原模型多项式类已存在，
+新稿提供去除冗余约束的证明、`(H)` 强化和在轨规范实现。
+
+`multi_facility_spe --method greedy-box` 使用 [SC-K-GREEDY-BOX-EXISTS](research/current/multi_facility/greedy_box_global_progress.md) 的确定性在轨构造：按 `(r_i,i)` 选择有严格改善的客户，再取最小单位负载目的地，接逆地点序、最小阈值归位修复。最终逐项检查完整盒、全部原始允许偏离的精确 NE 不等式及 `(H)`；修复中间允许上溢，不删去客户选项。零覆盖按空服务处理。
+
+新势给有限终止和不保留轨迹时的多项式空间，未给一般位多项式总时间。完整证书连接的离轨及默认规则仍用既有有限纯改善过程；这不是 `MF-PURE-CAP-POLY` 所导入多项式调度算法的软件实现。`SC-K-BOX-STRUCTURED-POLY-2` 的两个固定结构参数 DP 推论目前也是数学结果，不能据此给此 CLI 标注多项式运行时间。
+
+共同目录的输出使用 factor、common、prob_first、loads；异构四种子使用 alpha 与纯概率；支持枚举程序也用 alpha，但可以有真混合概率且把共同客户字段命名为 shared。不要将一种证书传给另一种验证函数。
+
+共同目录可用以下命令复查**该输入**：
+
+    python3 -m facility_spe.shared_phi examples/shared/tiny.json --output certificate.json
+    python3 -m facility_spe.cli.verify_phi examples/shared/tiny.json certificate.json
+
+`facility_spe.cli.verify_phi` 是只依赖 Python 标准库的独立检查器，不导入构造器、菜单或共用 NE 核心。它从原始覆盖集合直接计算每名共同客户选择两设施时的条件期望成本，检查概率端点与真混合的精确最优反应，重算两家负载，并要求每个**实际**单方偏离恰有一条证书。所有比较用有理数；`factor >= 1` 与 `factor² - factor - 1 <= 0` 精确检查黄金比界，包括在轨收益为零的情形。Python 调用不接受布尔值或二进制浮点数充当权重、概率、负载、倍率或索引；CLI 保留 JSON 十进制数的精确值，并拒绝重复 JSON 字段与非有限数。输入覆盖列表与目录中的重复索引按集合规范化，与构造器一致；证书共同客户列表仍必须排序且唯一。
+
+默认续局字段必须精确等于 `guarded_repair of all common customers at facility 1`。检查器对每个尚未列出的**带标签布局**自行复算该规则：共同客户先全部到设施 1；当其负载较大时，将仍在那里且权重严格小于负载差的最大权重客户移到设施 2（并列取最小客户编号），首次负载反转或无人严格改善即停止。它还逐个检查生成的纯策略满足上述客户最优反应。因此通过检查覆盖整个续局，不能任填默认规则文本。响应环、菜单威胁、菜单计数、`family` 与 `guarantee` 文本是解释信息，不受此检查器认证；通过只证明该输入达到所给倍率，不证明菜单极小性、实例最优性、普遍定理或运行时间。对 EXACT-KAPPA 的 verify 函数同样只验证达到的倍率；“最优”来自算法的完整谱枚举证明。
+
+另一个冻结实例的在轨均衡使用三个真混合客户，可直接检查：
+
+    python3 -m facility_spe.cli.verify_phi examples/shared/on_path_chord.json evidence/certificates/shared/on_path_chord.json
+
+共享黄金比和异构因子 2 的普遍上界均已有完整成文主稿与内部审读，尚无外部同行评审。[共享证明 Markdown](research/current/shared/README.md)已将 G1–G3、L1–L2 分支重写到对应页并进行内部逐式核对。把可核查实例证书用于满足模型的研究数据是当前直接可做的事；证书只核验所给实例。
+
+## 回归入口
+
+    python3 -m tests.test_shared_phi
+    python3 -m tests.test_shared_offdiag
+    python3 -m tests.test_verify_phi
+    python3 -m tests.test_four_seed
+    python3 -m tests.test_heterogeneous
+    python3 -m tests.test_lazy_ring
+    python3 -m facility_spe.exact.threshold_dp
+    python3 tests/audits/five_site_hardness.py --output five_site_replay.json
+    python3 tests/audits/five_site_hardness_edges.py --output five_site_edges_replay.json
+    python3 tests/multi_facility/verify_delivery.py --output kfac_replay.json
+    python3 -m tests.test_greedy_box_global
+    python3 tests/audits/kfac_greedy_box_global.py --output greedy_box_replay.json
+    python3 research/build_map.py --check
+    python3 research/check_assets.py
+
+测试默认不覆盖[evidence/runs](evidence/runs)中的冻结记录。各个数学保证、实际运算界和详细来源见[研究资产表](ASSETS.md)。
