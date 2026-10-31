@@ -1,0 +1,74 @@
+{
+  "mathematical_runs_this_batch": 0,
+  "input": {
+    "T": "positive binary rational",
+    "H": "finite explicit internal machines, empty allowed",
+    "jobs": "fixedA, disjointQ/R ofsizek>=2, N=|A|+2k actualexplicitjobs>=4",
+    "row": "allfinite at h exactly same nonnegative rational s_h; arbitrary eligibility and cross-machine times",
+    "outside": "each boundary own distinct exclusive O_z:T; A has none"
+  },
+  "capacity": {
+    "positive": "min(N,floor(T/s_h))",
+    "zero": "N, no division",
+    "greater_than_T": "0",
+    "equivalence": "all originaljob subsets and concrete destinations, not just chosen modes",
+    "slots_bound": "|H|N; finiteeligibility expansion<=originalfinite*N",
+    "large_ratio": "compare N*s_h<=T first, never expand untruncated ratio"
+  },
+  "rank": {
+    "commonC": "A plusR excludingbi,bj",
+    "aligned_pairs": [
+      "qi,bj",
+      "qj,bi"
+    ],
+    "inactive": "bi,bj dependent nonloops=>parallel sameclosure",
+    "conclusion_pairs": [
+      "qj,bj",
+      "qi,bi"
+    ],
+    "no_rank2_or_full_capacity_assumed": true,
+    "optional_rank_truncation": "preserve<=2set independence; proof language distinct fromphysicalcapN"
+  },
+  "author_algorithm": {
+    "initial": "alignedi minus originalqi, sizeL-1; allA andRminusbi remain",
+    "restrictedU": "A+R+qj",
+    "larger_witness": "alignedj sizeL in sameU implies augmentation",
+    "free_left": [
+      "bi",
+      "qj"
+    ],
+    "one_success": "bi=>inactive, qj=>specifiedmismatch(j,i); stop atL",
+    "terminal": "free slot, not necessarily empty machine"
+  },
+  "independent_algorithm": {
+    "first": "qj single-source alternating search",
+    "success": "specifiedmismatch",
+    "failure": "Munchanged; larger witness implies augmentation and onlybi canstart",
+    "second": "bi success givesinactive; unmatchedqj not intermediate matchedjob",
+    "all_original_aux_remain": true
+  },
+  "quantifiers": {
+    "no_inactive_promise": "given two actualaligned<=T, output at leastone inactive orspecifiedmismatch; not exactlyone feasible",
+    "inactive_forbidden": "atT forcesdirectedmismatch; swapij forother direction",
+    "all_aligned": "allk(k-1) cross outputs, algorithms may loop over explicitpairs",
+    "no_witness": "restrictedcapacitymatching can findorreportfailedaligned, not generalweightedUMoracle",
+    "weak": "anyB>=T with inactiveBforbidden; T-aligned remains required, noBtoTcompression",
+    "private_wrapper": "allN jobs once and allactualmachines<=T, slots disappear",
+    "all_outside": "given onealigned, keepA andsendallboundary toO yieldsmodeempty, distinct frominactiveR"
+  },
+  "v1": {
+    "domain": "T<=B<2T and everyfinitep in(B/2,T], same-machineheterogeneous allowed",
+    "modes": "weakB iff strictT iff eligibilitymatching internally only",
+    "reduction": "replacefinite byT analysis, usev2single-slot output, restoreoriginalp<=T",
+    "literal_matrix_inclusion": false
+  },
+  "complexity": "explicitdense/finite and all rationalbitlength charged; atmosttwo searches andone successfulflip; no denominator/numericinverse expansion",
+  "not_certified": [
+    "same-machine heterogeneous v2",
+    "mode-dependentA/preload",
+    "shared actualoutside loads",
+    "bundles/multiscale/internal-external inseparable constraints",
+    "fullformula/near2 source or generalUMsolver",
+    "novelmatching/globalnovelty/externalreview/UMTARGETclosure"
+  ]
+}
