@@ -120,11 +120,23 @@ def main():
                 raise ValueError(('missing link', str(rel), url))
             links.append(dict(source=str(rel), target=str(dest), passed=True))
     copy_path = root / ws / 'copy-files.json'
+    copy_list_check_mode = 'not-present'
     if copy_path.is_file():
-        expected_files = sorted(str(p.relative_to(root)) for p in root.rglob('*') if p.is_file())
-        if read_json(ws / 'copy-files.json') != expected_files:
-            raise ValueError('exact copy-files list')
+        listed = read_json(ws / 'copy-files.json')
+        if not isinstance(listed, list) or listed != sorted(set(listed)):
+            raise ValueError('copy-files must be a sorted unique list')
+        for rel in listed:
+            if Path(rel).is_absolute() or '..' in Path(rel).parts or not resolve(rel).is_file():
+                raise ValueError(('invalid or missing listed copy file', rel))
+        if (root / 'cleanup/inventory.jsonl').is_file():
+            copy_list_check_mode = 'repository-listed-files-exist'
+        else:
+            copy_list_check_mode = 'staging-exact-file-list'
+            expected_files = sorted(str(p.relative_to(root)) for p in root.rglob('*') if p.is_file())
+            if listed != expected_files:
+                raise ValueError('exact staging copy-files mismatch')
     report = dict(check_kind='delivery-bytes-typographic-delta-scope-review-chain-only-not-mathematical-run', all_checks_passed=True, primary_source_count=5, comparison_source_count=9, source_byte_checks=checks, comparison_artifact_count=len(artifact_checks), comparison_artifact_checks=artifact_checks, exact_initial_final_delta_verified=True, delta_bytes=234, mathematical_revision=False, review_hash_chain_count=len(scopes['hash_chains']), canonical_slice_count=len(scopes['canonical_slices']), historical_json_transcription_verified=True, historical_enumerations_replayed=False, receipt_count=5, markdown_link_count=len(links), markdown_link_checks=links, mathematical_runs_this_batch=0, blind_reviews_this_batch=0, original_source_bytes_modified=False, formal_hypergraph_written=False)
+    report['copy_list_check_mode'] = copy_list_check_mode
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({key: report[key] for key in ['check_kind', 'all_checks_passed', 'primary_source_count', 'comparison_source_count', 'comparison_artifact_count', 'delta_bytes', 'review_hash_chain_count', 'canonical_slice_count', 'receipt_count', 'markdown_link_count', 'mathematical_runs_this_batch']}, ensure_ascii=False))

@@ -1,0 +1,5 @@
+# 实际格式恢复
+
+Root prepare在checkpoint前发现总合同原字符7207/7232的formfeed+rac和7222的backspace+ar。仅外部派生正文恢复为字面LaTeX反斜杠frac/bar，同时修相应派生writer。原JSON/Markdown及所有原数学字节保持。
+
+此前2198项检查没有C0覆盖，不能拿其PASS否定此次缺陷。补全部13份formal逐字符C0检查后，新2211项通过，禁止C0为0。不是旧suite或新数学认证。精确before/after SHA及三个定位见证据format-recovery.json；安全覆盖清单在external根format-recovery-replacements.json。

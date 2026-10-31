@@ -1,0 +1,137 @@
+{
+  "scope": "exact literal runtime data extracted without executing original source",
+  "source_sha256": "536f72ffe712eadb0602536f767b1f75d54c5fd81f29b102006c49a75a1fb343",
+  "standard_library_imports": [
+    "from collections import deque",
+    "from fractions import Fraction as F",
+    "from itertools import product",
+    "from math import comb",
+    "from pathlib import Path",
+    "import json"
+  ],
+  "external_files_read": [],
+  "owner_selectors": "(lambda x, v: v[0], lambda x, v: v[-1], lambda x, v: v[x % len(v)])",
+  "cases": [
+    {
+      "name": "empty",
+      "players": 1,
+      "topics": [
+        0
+      ],
+      "optimal_tuple": [
+        0
+      ]
+    },
+    {
+      "name": "one-slot-outside",
+      "players": 1,
+      "topics": [
+        0,
+        1,
+        2
+      ],
+      "optimal_tuple": [
+        1
+      ]
+    },
+    {
+      "name": "one-slot-cross",
+      "players": 1,
+      "topics": [
+        3,
+        5,
+        10
+      ],
+      "optimal_tuple": [
+        3
+      ]
+    },
+    {
+      "name": "A-needs-role-edge",
+      "players": 2,
+      "topics": [
+        3,
+        12,
+        20
+      ],
+      "optimal_tuple": [
+        3,
+        12
+      ]
+    },
+    {
+      "name": "overlap-owner-choice",
+      "players": 2,
+      "topics": [
+        7,
+        28,
+        42
+      ],
+      "optimal_tuple": [
+        7,
+        28
+      ]
+    },
+    {
+      "name": "duplicate-labels",
+      "players": 2,
+      "topics": [
+        0,
+        0,
+        3,
+        3
+      ],
+      "optimal_tuple": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "three-owners",
+      "players": 3,
+      "topics": [
+        3,
+        12,
+        48,
+        69
+      ],
+      "optimal_tuple": [
+        3,
+        12,
+        48
+      ]
+    },
+    {
+      "name": "repeated-optimal-slots",
+      "players": 3,
+      "topics": [
+        0,
+        3,
+        5
+      ],
+      "optimal_tuple": [
+        3,
+        5,
+        3
+      ]
+    },
+    {
+      "name": "four-owners",
+      "players": 4,
+      "topics": [
+        3,
+        12,
+        48,
+        192,
+        277
+      ],
+      "optimal_tuple": [
+        3,
+        12,
+        48,
+        192
+      ]
+    }
+  ],
+  "output_contract": "Path(__file__).with_suffix(.json), assert absent before write; original report kept outside replay root"
+}
