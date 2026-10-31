@@ -14,6 +14,12 @@ source_refs:
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_general_repair_shared_ud_tiny_state_potential_canonical_append_v4b.md"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_general_repair_shared_ud_O1k_v5_final_actual_read_v1.md"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_general_repair_shared_ud_k2_refinement_informed_audit_v1.md"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_shared_ud_tiny_state_potential_19_10_independent_exact_first.md"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/sol_shared_ud_tiny_state_potential_19_10_independent_exact_first.md"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_shared_ud_tiny_state_potential_19_10_author_read_after.md"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/sol_shared_ud_tiny_state_potential_19_10_author_read_after.md"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_shared_ud_tiny_state_potential_v4_append_actual_read.md"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/sol_shared_ud_tiny_state_potential_v4_append_actual_read.md"
 evidence_manifest: "../../tools/evidence/shared-ud-tiny-potential-20261031/manifest.json"
 legacy_ids:
   - "UM-MULTI-OUTER-SINGLE-STATE-TINY-HOME-19-10-APPROX-v1"
@@ -50,7 +56,8 @@ P(S)=\max_W\Phi(W).
 P(S')-P(S)geDelta_j-2(\lambda_i(j)/\lambda_{\min})^2w_j^2.
 ]
 
-若真实 (Vgearepsilon)，某 target profile 对所有正权 (lambda) 提供 (arepsilon^2sum_ilambda_i) 的 benchmark。次模 option-sum 加上曲率界，说明只要 deficit (D=sum_i(c-W_i)_+) 尚未低于 (9/80)，至少一个单 helper state 替换带来固定 (ho>0) 的 profile 进展。用固定步长 (	au=1/(2048H)) 的近似 profile 搜索，势值域有限，故 move 次数为多项式；无进展时可 sound 地判定 (V<15/16)，而全 private baseline 的比率严格小于 (19/10)。
+若真实 (Vgearepsilon)，某 target profile 对所有正权 (lambda) 提供 (arepsilon^2sum_ilambda_i) 的 benchmark。次模 option-sum 加上曲率界，说明只要 deficit (D=sum_i(c-W_i)_+) 尚未低于 (9/80)，至少一个单 helper state 替换带来固定 (
+ho>0) 的 profile 进展。用固定步长 (	au=1/(2048H)) 的近似 profile 搜索，势值域有限，故 move 次数为多项式；无进展时可 sound 地判定 (V<15/16)，而全 private baseline 的比率严格小于 (19/10)。
 
 profile 评价以有理 Frank–Wolfe 近似 (P(S))，只调用显式 matching/matroid greedy 和有理算术；候选数是显式 state 数，不枚举指数 joint profile。此处的算法合同仍是作者候选，尚无 end-to-end 软件认证。
 
@@ -69,3 +76,11 @@ k² informed audit 重新推导
 ule1/(16384k^2)) 下得到 (1/16384+(21/128)D)，(k=1) 另用实际 (lambda_{min})；它只做有限 Fraction 参数核查，不是 fresh independent 或完整运行。v5 后置读后同样区分 actual-I、相对 reciprocal 势和旧版本，不把后置作者票当 blind 审查。
 
 本批六源没有提供 end-to-end scheduler、完整 profile/FW/prefix-flow 运行、外部 referee 或一般 UM hardness。它们支持的是版本化、条件性的作者证明链和精确范围记录；multi-state outer、home overlap、非 UD extra groups、一般 unrelated-machines、六人 SPE 与 Q-CAG-HALF 均未由此解决。
+
+## 本轮清洗记录（Boss8，2026-10-31）
+
+本轮实际以 `clean show` 导出并全文阅读三份新增冻结文本：独立 Exact-first `a75610d59f434a20ce79`、作者证明 read-after `763df8bd92e8632c9ca0`、v4b 追加 actual-read `e73eae47950670afa3b3`。三者均有 legacy/main 双来源，原字节、SHA 与角色记录见 [v4b 三源证据](../../tools/evidence/shared-ud-tiny-state-potential-v4b-20261031/README.md)。
+
+独立稿只承重旧 k^4 typed 域的完整 value bridge、叶匹配/剩余供给 matroid、profile 次模性与强凸势候选；它没有读取作者 Proof，不能当作作者路线的盲审。作者 read-after 逐项复核 profile smooth-deficit、stable weighted-matroid exchange、Frank–Wolfe、soundFAIL、prefix-flow、完整 ordinary jobs 回填及位复杂度，但没有端到端软件或全参数运行认证。v4b 追加稿明确 k=1 无 tiny 上界、k>=2 的 `nu<=1/(16384 k^2)` 扩域与单独 greedy/曲率分支，同时保留 shared-UD、single-state outer、互异 homes、B-only leaves 和所有 zero/duplicate/inactive payload 的 typed 量词。
+
+这些来源只补足版本化候选证明链和范围边界；不把 k^4、k^2、v4b 或 v5 量词互换，不把作者自述运行当本轮重放。一般 unrelated-machines 19/10、multi-state outer、重合 homes、非 UD extra groups、hardness、六人 SPE/Q-CAG-HALF 仍未解决。
