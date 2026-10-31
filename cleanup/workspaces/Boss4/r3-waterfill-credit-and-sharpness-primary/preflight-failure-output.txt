@@ -1,0 +1,25 @@
+Read-only preparation attempt A (no original wrapper call in this attempt):
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/scratch/37f0f9248cfc/boss4-research/cleanup/progress.json'
+
+Read-only preparation attempt B then wrapper preflight (zero original source calls):
+Traceback (most recent call last):
+  File "<stdin>", line 10, in <module>
+KeyError: 'status'
+Observed first record:
+79c287548a2a767d9927 {'owner': 'Boss4', 'disposition': 'in-progress', 'id': '79c287548a2a767d9927', 'source_sha256': 'fadbad340267ff20ae6b4e4e134e69dba1e3024ef3068455c4c366bab3651779', 'request_id': '633a95c918aa4702a6cf0b11e248b514', 'updated': 1793456878}
+Traceback (most recent call last):
+  File "/workspace/scratch/37f0f9248cfc/boss4-next-cache/r3-waterfill-credit-and-sharpness-primary/archives/customer-attraction/tools/evidence/waterfill-credit-and-sharpness-primary/execute-original-once.py", line 8, in <module>
+    gate=json.loads((W/'primary-authorization-check.json').read_text())
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/scratch/37f0f9248cfc/boss4-next-cache/r3-waterfill-credit-and-sharpness-primary/cleanup/workspaces/Boss4/r3-waterfill-credit-and-sharpness-primary/primary-authorization-check.json'
+
+Correction: actual source records are cleanup/progress/<id>.json; field is disposition. Re-read all five owner/disposition records, then wrote the authentic gate and copied full original actual claim. Confirmed replay did not exist. Only after this did the first and unique original runpy invocation occur successfully. This file transcribes the returned preparation failures; they are not original program failures or an extra original run.

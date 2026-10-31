@@ -1,0 +1,11 @@
+# Waterfill原主稿、作者入口与零池/锐性身份
+
+5primary36721B完整原件在original，两个真正runtime输入37315B在dependencies。5640B源码没有main guard，只有stdlib；p/Q是源码常量，security746B、构造器和项目求解器不是input。
+
+原claim完整原样保在工作区，actual86239392f353628df95534d325c3ec115645d5ca pushed/synced且五ownerBoss4。gate准备的只读路径/字段错误及wrapper预检一次停止在原入口前，见preflight-corrections.json；不能把它算原失败或隐去。纠正后新空replay一次原run，Python3.12.14 optimize0/exit0/stderr0，原文件和两inputs不变；4775B输出SHA46abde1969843921d8dbf508f8f6e1ff575f26668eeb987b50ee704319d16145字节同冻，stdout1233B是六JSON文档。
+
+execute-original-once.py只被动profile实际原filename，源函数不被observer调用；原实测400/2800、84、142、5case80步。check-zero-pool-and-brackets.py是分开的新一次数据补核，只六34根叶/21静态列及五冻结区间、严格积分分式，不重新验证43历史258IC，不求VAR/LP、不调用原程序。
+
+context两VAR稿及34证书/输入用来给J/Gain/Debt自足定义与精确有理下界，不是本五primary/done。comparison七正式页为局部快照；不从本地文件存在断言push。mixed7068审查先只收陈述推导再读主稿，原稿记peer96步c37和c1/7额外5600是历史内部审查，其7105/4257载体未在本批执行。
+
+解析引理承担任意r，核心族解析承担任意整数c；五点回归不外推普遍命题。四正文/五receipt、自查关系及精确白名单在工作区；Root负责串行copy/push后done，本包本地完成不冒称已发布。

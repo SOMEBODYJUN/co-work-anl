@@ -1,0 +1,92 @@
+"""Read-only final source/evidence/vector/link/manifest checks; no source or security checker rerun."""
+from pathlib import Path
+from fractions import Fraction as F
+from itertools import product,combinations_with_replacement
+import ast,hashlib,json,re
+S=Path(__file__).resolve().parents[4];R=Path('/workspace/scratch/37f0f9248cfc/boss4-research');E=S/'archives/customer-attraction/tools/evidence/endogenous-padding-and-security-primary';W=Path(__file__).resolve().parent
+checks=[]
+def ck(n,v):
+ if not v:raise AssertionError(n)
+ checks.append(n)
+def J(p):return json.loads(p.read_text(),parse_constant=lambda s:(_ for _ in ()).throw(ValueError(s)))
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+M=J(E/'source-manifest.json');D=J(E/'dependency-manifest.json');T=J(W/'target-paths.json');claim=J(W/'claim-evidence.json');auth=J(W/'primary-authorization-check.json')
+ck('exact-five-primary-versions',set(x['id']for x in M)=={'7bf3acd3a0230d7892e1','6b82d9246e87ddc266e8','0ebc828733fab492d2a5','8dc3d81738c6ed662858','2cd505cd05ed8ab77f21'})
+ck('five-primary41687B',sum(x['size']for x in M)==41687)
+for x in M:
+ p=E/'original'/x['path'];b=p.read_bytes();ck('raw-size-SHA256-blobSHA1-'+x['id'],len(b)==x['size']and sha(p)==x['sha256']and hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==x['blob'])
+ck('actual-five-pushed-Boss4-synced',len(claim['ids'])==5 and claim['status']=='pushed'and claim['actor']=='Boss4'and claim['local_sync']['status']=='synced')
+ck('actual845f01-tip',auth['remote_tip']==claim['remote_tip']==claim['local_sync']['remote_tip']=='845f01b5db0585ad6b2855eb3ae631104e5a2fa8')
+ck('actual-five-intersection',set(auth['expected_ids'])==set(auth['expected_actual_intersection'])==set(claim['ids'])==set(x['id']for x in M)and auth['actual_claim_ids_count']==5)
+ck('full-original-capture-bytes',Path(auth['original_capture']).read_bytes()==(W/'claim-evidence.json').read_bytes()and sha(W/'claim-evidence.json')==auth['original_capture_sha256'])
+ck('all-five-owner-gate',len(auth['owners_at_primary_start'])==5 and all(x['owner']=='Boss4'and x['disposition']=='in-progress'and x['source_sha256']==next(y['sha256']for y in M if y['id']==x['id'])for x in auth['owners_at_primary_start']))
+local=J(W/'local-source-export-manifest.json');ck('local-safe-export-five-no-missing',len(local['rows'])==5 and not local['missing']and all(sha(Path(x['local_path']))==x['sha256']for x in local['rows']))
+ck('no-prior-constructor-success-record',J(W/'pre-execution-same-sha-search.json')['matching_execution_records']==[])
+ck('true-five-dependencies26940B',len(D)==5 and sum(x['size']for x in D)==26940 and len([x for x in D if x['path'].startswith('customer_attraction/')])==4)
+for x in D:ck('dependency-raw-'+x['id'],sha(S/x['copied_path'])==x['sha256']and(S/x['copied_path']).stat().st_size==x['size'])
+src=next(x for x in M if x['id']=='6b82d9246e87ddc266e8');code=(E/'original'/src['path']).read_text();tree=ast.parse(code)
+ck('constructor-top-level-no-main-guard',not any(isinstance(n,ast.If)and '__main__'in ast.unparse(n.test)for n in ast.walk(tree)))
+ck('constructor-only34-JSON-actual-read','individual_security_failure.json'in code and 'endogenous_53_security.json'not in code and 'verify_certificate('not in code)
+state=J(E/'replay/execution.json');ob=J(E/'replay/passive-observation.json');scope=J(E/'execution-and-evidence-scope.json')
+ck('constructor-original-once-exit0',state['source_invocations']==1 and state['returncode']==0 and state['optimize']==0 and state['extra_original_function_calls']==0)
+ck('constructor-source-mirror-SHA',sha(E/'replay/source-root'/src['path'])==state['source_sha256']==src['sha256']=='405283a2e1135130e5a8f995ff24b63d0528c5da7594d37fda23afe8dbeb7461')
+ck('original-ROOT-correct-depth',(E/'replay/source-root'/src['path']).parent.parents[5]==E/'replay/source-root'and state['cwd']==state['resolved_ROOT']==str(E/'replay/source-root'))
+ck('constructor-five-real-input-records',set(x['id']for x in state['true_file_dependencies'])==set(x['id']for x in D)and len(state['imported_local_modules'])==4 and state['third_party_libraries']==[])
+for x in state['true_file_dependencies']:ck('mirrored-true-input-'+x['id'],sha(E/'replay/source-root'/x['path'])==x['sha256'])
+for x in state['imported_local_modules']:ck('actual-local-import-'+x['module'],sha(Path(x['path']))==x['sha256'])
+ck('certificate1-verifier0-not-independent-verification',state['actual_calls']==ob['actual_calls']=={'ExactSPESolver.certificate':1,'verify_certificate':0})
+ck('outputs-not-constructor-inputs',not any(x['id']in ['0ebc828733fab492d2a5','2cd505cd05ed8ab77f21','8dc3d81738c6ed662858']for x in state['true_file_dependencies']))
+ck('two-real-output-files',len(state['outputs'])==2 and {i for x in state['outputs']for i in x['equals_primary_ids']}=={'0ebc828733fab492d2a5','2cd505cd05ed8ab77f21'})
+for x in state['outputs']:
+ i=x['equals_primary_ids'][0];p=E/x['path'];old=E/'original'/next(y['path']for y in M if y['id']==i);ck('output-frozen-byte-match-'+i,p.read_bytes()==old.read_bytes()and sha(p)==x['sha256']and p.stat().st_size==x['bytes'])
+ck('stdout234-construct-only',(E/'replay/stdout.txt').stat().st_size==state['stdout_bytes']==234 and J(E/'replay/stdout.txt')['ordered_decision_histories']==400 and 'constructs'in J(E/'replay/stdout.txt')['construction_scope'])
+ck('stderr-empty',(E/'replay/stderr.txt').stat().st_size==0)
+ck('constructed53-7-4-400',ob['generated_customer_count']==53 and len(ob['generated_topics'])==7 and ob['generated_players']==4 and ob['strategy_keys']==400 and ob['terminal_counts']==[1,0,0,1,1,0,1])
+ins=J(E/'original'/next(x['path']for x in M if x['id']=='0ebc828733fab492d2a5'));strategy=J(E/'original'/next(x['path']for x in M if x['id']=='2cd505cd05ed8ab77f21'))
+ck('primary53-instance-schema-and14-types',ins['players']==4 and len(ins['topics'])==7 and len(ins['customers'])==14 and sum(x['multiplicity']for x in ins['customers'])==53 and ins['customers'][-1]=={'topics':[6],'multiplicity':19})
+ck('primary400-no-missing-or-duplicates',len(strategy['actions'])==400 and {tuple(x['history'])for x in strategy['actions']}=={h for d in range(4)for h in product(range(7),repeat=d)})
+reuse=J(E/'reused-SPE-validation-manifest.json');ck('reuse-same-both-input-SHA',all(reuse['input_sha256'][i]==next(x['sha256']for x in M if x['id']==i)for i in ['0ebc828733fab492d2a5','2cd505cd05ed8ab77f21']))
+ck('reuse-399-plus-separate-root7-complete400',reuse['new_old_tax_entry_calls']==0 and reuse['prior_original_nonempty_histories']==399 and reuse['prior_original_nonempty_IC_including_self']==2793 and reuse['prior_original_empty_root_checks']==0 and reuse['separate_prior_root_checks']==7 and reuse['combined_complete_histories']==400 and reuse['combined_action_comparisons_including_self']==2800)
+ck('six-small-reused-raw-artifacts',len(reuse['small_original_artifacts'])==6)
+for x in reuse['small_original_artifacts']:ck('reused-byte-'+Path(x['copied_path']).name,sha(S/x['copied_path'])==x['sha256']and(S/x['copied_path']).stat().st_size==x['bytes'])
+large=reuse['large_existing_trace_reference'];ck('large-existing-trace-bytehash-reference',large['duplicated_in_this_package']is False and (R/large['canonical_prior_archive_path']).stat().st_size==large['bytes']and sha(R/large['canonical_prior_archive_path'])==large['sha256'])
+oldrun=J(E/'reused-complete-SPE-validation/tree-tax-execution.json');root=J(E/'reused-complete-SPE-validation/root-complement-and-scope-check.json')['root_complement']
+ck('prior-success-assertions-on-and-inputs-match',oldrun['returncode']==0 and oldrun['optimize']==0 and all(x['sha256']==reuse['input_sha256'][x['id']]for x in oldrun['true_file_inputs']))
+ck('reused-root-P19-six29over3',root['comparison_count_including_self']==7 and root['was_not_checked_by_original_tax_entry']and root['root_payoffs']==['29/3']*6+['19']and root['actual']==[6,0,3,4])
+ck('reused-actual-W51-OPT53-witness',root['actual_unit_payoffs']==['19','29/3','67/6','67/6']and root['actual_W53']==51 and root['OPT53']==53 and root['OPT53_coverage_witness']==[2,4,5,6])
+sec=J(E/'static-security-exact.json');sc=J(E/'original'/next(x['path']for x in M if x['id']=='8dc3d81738c6ed662858'));p=list(map(F,sec['primary_probabilities']));q=sec['dual_distribution'];val=F(sec['value'])
+ck('fresh-static-certificate-two-input-SHA',sec['input_sha256']=={i:next(x['sha256']for x in M if x['id']==i)for i in ['0ebc828733fab492d2a5','8dc3d81738c6ed662858']})
+ck('static-four-including-query-three-rivals',sc['players_in_static_security']==4 and sec['opponent_slots']==3 and sec['integer_opponent_multisets']==84 and sec['query_actions']==7 and sec['matrix_entries']==588)
+ck('static-all84-with-repetition',sec['matrix_columns']==[list(z)for z in combinations_with_replacement(range(7),3)]and len(sec['primary_column_results'])==84)
+ck('static-primal-probabilities-sum1',len(p)==7 and min(p)>0 and sum(p)==1 and list(map(F,sc['primary']))==p)
+ck('static-dual-probabilities-sum1',len(q)==7 and sum(F(x['probability'])for x in q)==1 and all(F(x['probability'])>0 and len(x['rivals'])==3 for x in q))
+ck('static-matrix-seven-by84',len(sec['full_matrix_query_rows'])==7 and all(len(row)==84 for row in sec['full_matrix_query_rows']))
+for j,x in enumerate(sec['primary_column_results']):
+ v=sum((p[a]*F(sec['full_matrix_query_rows'][a][j])for a in range(7)),F());ck('static-primal-column-'+str(j),x['rivals']==sec['matrix_columns'][j]and v==F(x['expected_primal_payoff'])>=val and (v-val)*70176==x['integer_margin_scale70176']>=0)
+ck('static-eight-tight-opponents',sec['tight_opponent_profiles']==[[0,1,2],[0,1,6],[0,2,6],[1,2,6],[3,4,5],[3,4,6],[3,5,6],[4,5,6]])
+ck('static-seven-dual-upper-rows-all-equal',list(map(F,sec['dual_pure_query_payoffs']))==[val]*7 and val==F(sec['primal_minimum'])==F(sec['dual_maximum'])==F(28481,2924)and sec['exact_optimality_proved'])
+ck('integer-scale-and-value',sec['primal_margin_integer_scale']==70176 and sec['value_times_scale70176']==683544 and val*70176==683544)
+ck('static-no-LP-SPE-or-original-calls',sec['new_LP_calls']==sec['new_SPE_solver_calls']==sec['new_original_program_calls']==0 and scope['new_static_certificate_checker_calls']==1)
+ck('dynamic-scalar-comparisons-distinguished',val-F(29,3)==F(647,8772)and F(19)>val and F(51)-4*val==F(8800,731)and F(29,3)/val==F(84796,85443))
+ck('no-repeat-full-SPE-or-old-entry',scope['reused_prior_complete_SPE']['new_old_source_entry_calls']==0 and scope['reused_prior_complete_SPE']['new_full2800_IC_scan']is False)
+ck('one-new-original-no-failures',scope['new_original_entry_calls']==1 and scope['original_failures']==scope['original_retries']==0)
+for x in J(E/'comparison-manifest.json'):ck('comparison-raw-'+Path(x['path']).stem,sha(S/x['copied_path'])==x['sha256']and(S/x['copied_path']).stat().st_size==x['bytes'])
+r=J(W/'semantic-receipts.json');ck('exact-five-final-receipts',len(r)==5 and set(x['id']for x in r)==set(x['id']for x in M))
+for x in r:ck('complete-semantic-'+x['id'],all(x[k]is True for k in ['full_file_reviewed','related_material_checked','unique_content_accounted_for'])and x['disposition']=='integrated'and all(len(x[k])>40 for k in ['read_note','comparison_note','decision_note'])and all(t in T and(S/t).exists()for t in x['targets']))
+ck('43-human-math-items',len(re.findall(r'^\d+\. ',(W/'mathematical-self-review.md').read_text(),re.M))==43)
+ck('10-human-relations',len(J(W/'relation-review.json')['relations'])==10)
+n=J(W/'next-candidates.json')['candidates'];ck('five-local-next-no-false-history',len(n)==5 and all(x['availability_readonly']['progress_file_exists']is False and x['availability_readonly']['history_checked']is False for x in n))
+links=[];ids=[]
+for rel in T:
+ path=S/rel;s=path.read_text();front=s.split('---',2)[1];ck('flat-MATEK-'+path.name,all(re.search(r'^'+k+r':',front,re.M)for k in ['id','kind','type_tag','title','status','summary','source_refs']));ids.append(re.search(r'^id: (.+)$',front,re.M).group(1));ck('no-template-placeholder-'+path.name,not any(x in s for x in ['SOURCE_','MARGINS_TABLE','COUNT_STATES','TERMINAL_STATES']))
+ for dest in re.findall(r'\[[^\]]*\]\(([^)]+)\)',s):
+  if dest.startswith(('http:','https:','#','source:')):continue
+  z=(path.parent/dest.split('#')[0]).resolve();rr=z.relative_to(S);ck('formal-link-'+str(len(links)),z.exists()or(R/rr).exists());links.append({'from':rel,'to':str(rr)})
+ck('three-distinct-stable-object-IDs',len(T)==len(set(ids))==3)
+ck('security-body-complete84-integer-margin-table',len(re.findall(r'^\|[0-6],[0-6],[0-6]\|\d+\|[0-6],[0-6],[0-6]\|\d+\|$',(S/T[2]).read_text(),re.M))==42)
+actual=sorted(str(z.relative_to(S))for z in S.rglob('*')if z.is_file());manifest=J(W/'copy-files.json');ck('exact-sorted-white-list-self-inclusive',manifest==actual and len(manifest)==len(set(manifest))and str((W/'copy-files.json').relative_to(S))in manifest)
+ck('safe-relative-white-list',all(not Path(x).is_absolute()and '..'not in Path(x).parts for x in manifest))
+for path in S.rglob('*.json'):J(path)
+ck('strict-finite-JSON-all-files',True)
+out={'status':'pass','scope':'final read-only hashes, certificate carrier, links/whitelist; no constructor/static-checker/old-SPE execution','checks_count':len(checks),'checks':checks,'formal_links_count':len(links),'formal_links':links,'formal_objects':3,'primary_receipts':5,'new_original_constructor_calls':1,'constructor_verifier_calls':0,'new_static_checker_calls':1,'new_LP_calls':0,'new_static_SPE_solver_calls':0,'new_old_SPE_entry_calls':0,'new_full2800_IC_scans':0,'original_or_checker_calls_in_selfcheck':0,'security_integer_opponent_profiles':84,'security_payoff_matrix_entries':588,'human_math_items':43,'human_relations':10}
+(W/'selfcheck.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in out.items()if k not in ['checks','formal_links']},ensure_ascii=False))
