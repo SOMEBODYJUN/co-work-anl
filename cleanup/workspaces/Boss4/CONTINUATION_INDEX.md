@@ -440,3 +440,7 @@ R3_READY18NA：十八主源GAP/G2与P-seat/hub准确归档、23单位完整SPE�
 R3_READY18NA数学/证据pushed 24e31f8498cec6cd7d7377c24ec8508a667a3dda；18源done另推送 15c202bbfad5f8ca9c82254ff07de7a269db8106。Boss4累计2473完成，实际未完13；持续接续全仓，不以本批清空收尾。
 
 R3_READY18NJ：十八主源ABB七真松弛有限75证书与五乘子唯一坏类；全w固定网格/epigraph/完整字典、储备调和root账本与三客户删除、父方frontier和156精确冻结报告；全仓实查5666/10921、119认领、2 unresolved；共18主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY18NJ_REMAINING_SCOPE.json。
+
+R3_READY18NJ数学/证据pushed cc4f0b7c825b09491800646fa9c9ee1636ad408e；18源done另推送 320d7451aa0d3b31c12632bb74fc9548500feac0。Boss4累计2491完成，实际未完13；持续接续全仓，不以本批清空收尾。
+
+R3_READY8NL：八原程序/报告完整合同：signed多源/客户二次/背景分母审计与22已知输入20有效myopic探针；gap算术与36客户低尾闭DAG新原入口；两skip/wholem7/时间字段及旧packet认证各准确保；共8主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY8NL_REMAINING_SCOPE.json。
