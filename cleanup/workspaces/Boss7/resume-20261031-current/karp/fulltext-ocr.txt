@@ -1,0 +1,1128 @@
+===== PDF PAGE 3 =====
+8 Reducibility Among Combinatorial Problems 221
+
+
+===== PDF PAGE 4 =====
+222 Richard M. Karp
+
+The following article originally appeared as:
+
+R.M. Karp, Reducibility Among Combinatorial Problems, Complexity of Computer
+Computations (R.E. Miller and J.W. Thatcher, eds.), Plenum Press, 1972, pp. 85-
+103.
+
+Copyright © 1972 Plenum Press.
+
+Reprinted by permission from Kluwer Academic Publishers.
+
+
+===== PDF PAGE 5 =====
+8 Reducibility Among Combinatorial Problems
+
+223
+
++
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS
+
+Richard M. Karp
+
+University of California at Berkeley
+
+Abstract: A large class of computational problems involve the
+determination of properties of graphs, digraphs, integers, arrays
+of integers, finite families of finite sets, boolean formulas and
+elements of other countable domains. Through simple encodings
+from such domains into the set of words over a finite alphabet
+these problems can be converted into language recognition problems,
+and we can inquire into their computational complexity. It is
+reasonable to consider such a problem satisfactorily solved when
+an algorithm for its solution is found which terminates within a
+number of steps bounded by a polynomial in the length of the input.
+We show that a large number of classic unsolved problems of cover-
+ing, matching, packing, routing, assignment and sequencing are
+equivalent, in the sense that either each of them possesses a
+polynomial-bounded algorithm or none of them does.
+
+1. INTRODUCTION
+
+All the general methods presently known for computing the
+chromatic number of a graph, deciding whether a graph has a
+Hamilton circuit, or solving a system of linear inequalities in
+which the variables are constrained to be 0 or 1, require a
+combinatorial search for which the worst case time requirement
+grows exponentially with the length of the input. In this paper
+we give theorems which strongly suggest, but do not imply, that
+these problems, as well as many others, will remain intractable
+perpetually.
+
+This research was partially supported by National Science Founda-
+tion Grant GJ-474,
+
+85
+
+
+
+===== PDF PAGE 6 =====
+224 Richard M. Karp
+
+86 RICHARD M. KARP
+
+We are specifically interested in the existence of algorithms
+that are guaranteed to terminate in a number of steps bounded by a
+polynomial in the length of the input. We exhibit a class of well-
+known combinatorial problems, including those mentioned above,
+which are equivalent, in the sense that a polynomial-bounded algo-
+rithm for any one of them would effectively yield a polynomial-
+bounded algorithm for all. We also show that, if these problems
+do possess polynomial-bounded algorithms then all the problems in
+an unexpectedly wide class (roughly speaking, the class of problems
+solvable by polynomial-depth backtrack search) possess polynomial-
+bounded algorithms.
+
+The following is a brief summary of the contents of the paper.
+For the sake of definiteness our technical development is carried
+out in terms of the recognition of languages by one-tape Turing
+machines, but any of a wide variety of other abstract models of
+computation would yield the same theory. Let 2* be the set of
+all finite strings of 0's and 1's. A subset of I* is called
+a language. Let P be the class of languages recognizable in
+polynomial time by one-tape deterministic Turing machines, and let
+NP be the class of languages recognizable in polynomial time by
+one-tape nondeterministic Turing machines. Let Il be the class
+of functions from 2* into =* computable in polynomial time by
+one-tape Turing machines. Let L and M be languages. We say
+that L«M (L is reducible to M) if there is a function f é Il
+such that f(x) €M*x€ Tf MeP and Le&M then Le P.
+We call L and M equivalent if L«M and ML. Call L
+(polynomial) complete if Le NP and every language in NP is
+reducible to L. Either all complete languages are in P, or none
+of them are. The former alternative holds if and only if P = NP.
+
+The main contribution of this paper is the demonstration that
+a large number of classic difficult computational problems, arising
+in fields such as mathematical programming, graph theory, combina-
+torics, computational logic and switching theory, are complete
+(and hence equivalent) when expressed in a natural way as language
+recognition problems.
+
+This paper was stimulated by the work of Stephen Cook (1971),
+and rests on an important theorem which appears in his paper. The
+author also wishes to acknowledge the substantial contributions of
+Eugene Lawler and Robert Tarjan.
+
+2. THE CLASS P
+
+There is a large class of important computational problems
+which involve the determination of properties of graphs, digraphs,
+integers, finite families of finite sets, boolean formulas and
+
+
+
+===== PDF PAGE 7 =====
+8 Reducibility Among Combinatorial Problems 225
+
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS 87
+
+elements of other countable domains. It is a reasonable working
+hypothesis, championed originally by Jack Edmonds (1965) in connec-
+tion with problems in graph theory and integer programming, and by
+now widely accepted, that such a problem can be regarded as tract-
+able if and only if there is an algorithm for its solution whose
+running time is bounded by a polynomial in the size of the input.
+In this section we introduce and begin to investigate the class of
+problems solvable in polynomial time.
+
+We begin by giving an extremely general definition of "deter-
+ministic algorithm", computing a function from a countable domain
+D into a countable range R.
+
+For any finite alphabet A, let A* be the set of finite
+
+strings of elements of A; for xe A*, let l1g(x) denote the
+length of x.
+
+A deterministic algorithm A is specified by:
+
+a countable set D (the domain)
+a countable set R (the range)
+a finite alphabet A such that A*AR = >
+
+an encoding function E: D > A*
+a transition function tT: A* + A*UR.
+
+The computation of A on input x €D is the unique sequence
+YysYooe++ Such that y, = E(x), y,4, = T(y,) for all i and,
+if the sequence is finite and ends with y,, then y, € R. Any
+string occurring as an element of a computation is catiea an
+instantaneous description. If the computation of A on input x
+is finite and of length t(x), then t(x) is the running time of
+
+A on input x. A is terminating if all its computations are
+finite. A terminating algorithm A computes the function
+f4t D+R_ such that £4(x) is the last element of the computation
+
+of A on x.
+
+If R= {ACCEPT,REJECT} then A is called a recognition
+algorithm. A recognition algorithm in which D = 2* is called a
+string recognition algorithm. If A is a string recognition
+algorithm then the language recognized by A is {xe 2*| Ey(x) =
+ACCEPT}. If D=R=2* then A is called a string mapping
+algorithm. A terminating algorithm A with domain D = 2
+operates in polynomial time if there is a polynomial p(+) such
+that, for every x é@ 2*, t(x) < p(1g(x)).
+
+To discuss algorithms in any practical context we must spe-
+cialize the concept of deterministic algorithm. Various well
+known classes of string recognition algorithms (Markov algorithms,
+one-tape Turing machines, multitape and multihead Turing machines,
+
+
+
+===== PDF PAGE 8 =====
+226 Richard M. Karp
+
+88 RICHARD M. KARP
+
+random access machines, etc.) are delineated by restricting the func-
+tions E and T to be of certain very simple types. These definitions
+are standard [Hopcroft & Ullman (1969)] and will not be repeated here.
+It is by now commonplace to observe that many such classes are equi-
+valent in their capability to recognize languages; for each such
+class of algorithms, the class of languages recognized is the
+
+class of recursive languages. This invariance under changes in
+definition is part of the evidence that recursiveness is the cor-
+rect technical formulation of the concept of decidability.
+
+The class of languages recognizable by string recognition
+algorithms which operate in polynomial time is also invariant
+under a wide range of changes in the class of algorithms. For
+example, any language recognizable in time p(*) by a multihead
+or multitape Turing machine is recognizable in time p*(+) by a
+one-tape Turing machine. Thus the class of languages recognizable
+in polynomial time by one-tape Turing machines is the same as the
+class recognizable by the ostensibly more powerful multihead or
+multitape Turing machines. Similar remarks apply to random access
+machines.
+
+Definition 1. P is the class of languages recognizable by
+one-tape Turing machines which operate in polynomial time.
+
+Definition 2. Il is the class of functions from =* into I*
+defined by one-tape Turing machines which operate in polynomial
+time.
+
+The reader will not go wrong by identifying P with the class
+of languages recognizable by digital computers (with unbounded
+backup storage) which operate in polynomial time and [I with the
+class of string mappings performed in polynomial time by such
+computers.
+
+Remark. If f: 2* + 2* is in I then there is a polynomial
+p(+) such that 1g(£(x)) < p(1g(x)).
+
+We next introduce a concept of reducibility which is of cen-
+tral importance in this paper.
+
+Definition 3. Let L and M be languages. Then L«=M
+(L is reducible to M) if there is a function f € Il such that
+f(x) eM*xeL.
+
+Lemma l. If L&=M and Me P then Le P,
+
+Proof. The following is a polynomial-time bounded algorithm
+to decide if x € L: compute f(x); then test in polynomial time
+
+whether f(x) € M.
+
+We will be interested in the difficulty of recognizing subsets
+of countable domains other than 2*, Given such a domain D,
+
+
+
+===== PDF PAGE 9 =====
+8 Reducibility Among Combinatorial Problems 227
+
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS 89
+
+there is usually a natural one-one encoding e: D+ 5*, For exam-
+ple we can represent a positive integer by the string of 0's and
+1's comprising its binary representation, a 1-dimensional integer
+array as a list of integers, a matrix as a list of 1-dimensional
+arrays, etc.; and there are standard techniques for encoding lists
+into strings over a finite alphabet, and strings over an arbitrary
+finite alphabet as strings of 0's and 1's. Given such an encod-
+ing e: D>+2*, we say that a set TCD is recognizable in poly-
+nomial time if e(T) € P. Also, given sets TCD and UCD’,
+and encoding functions e: D+ * and e': D' > I* we say T= U
+if e(T) « e'(U).
+
+As a rule several natural encodings of a given domain are
+
+possible, For instance a graph can be represented by its adjacency
+matrix, by its incidence matrix, or by a list of unordered pairs
+
+of nodes, corresponding to the arcs. Given one of these represen-
+tations, there remain a number of arbitrary decisions as to format
+and punctuation. Fortunately, it is almost always obvious that
+
+any two "reasonable" encodings e, and e, of a given problem are
+equivalent; i.e., e9(S) € P #e,(S) € P. One important exception
+concerns the representation of positive integers; we stipulate
+
+that a positive integer is encoded in a binary, rather than unary,
+representation. In view of the invariance of recognizability in
+polynomial time and reducibility under reasonable encodings, we
+discuss problems in terms of their original domains, without speci-
+fying an encoding into =*.
+
+We complete this section by listing a sampling of problems
+which are solvable in polynomial time. In the next section we exa-
+mine a number of close relatives of these problems which are not
+
+known to be solvable in polynomial time. Appendix 1 establishes
+our notation.
+
+Each problem is specified by giving (under the heading
+"INPUI") a generic element of its domain of definition and (under
+the heading "PROPERTY") the property which causes an input to be
+accepted,
+
+SATISFIABILITY WITH AT MOST 2 LITERALS PER CLAUSE [Cook (1971)]
+
+INPUT: Clauses C,,C,,...,C,, each containing at most 2 literals
+
+PROPERTY: The conjunction of the given clauses is_satisfiable;
+
+i.e., there is a set SC {x1 5% yo 000% oy Kyo eee Xt such that
+a) S$ does not contain a complementary pair of literals and
+b) sNc #$, k= 1,2,...5P -
+
+MINIMUM SPANNING TREE [Kruskal (1956)]
+INPUT: G, w, W
+PROPERTY: There exists a spanning tree of weight < W.
+
+
+
+===== PDF PAGE 10 =====
+228 Richard M. Karp
+
+90 RICHARD M. KARP
+
+SHORTEST PATH [Dijkstra (1959)]
+INPUT: G, w, W, 8, t
+PROPERTY: There is a path between s and t of weight < W.
+
+MINIMUM CUT [Edmonds & Karp (1972) ]
+INPUT: G, w, W, s, t
+PROPERTY: There is an s,t cut of weight SW.
+
+ARC COVER [Edmonds (1965)]
+
+INPUT: G, k
+
+PROPERTY: There is a set YCA such that |y¥| < k and every
+node is incident with an arc in Y.
+
+ARC DELETION
+
+INPUT: G, k
+PROPERTY: There is a set of k arcs whose deletion breaks all
+cycles.
+
+BIPARTITE MATCHING [Hall (1948)]
+
+INPUT: SCZ x2,
+
+PROPERTY: There are p elements of S, no two of which are
+equal in either component.
+
+SEQUENCING WITH DEADLINES
+INPUT: (Tys++0sT) ez, (Dy>+++5D) e2™, k
+
+PROPERTY: Starting at time 0, one can execute jobs 1,2,...,n,
+with execution times T; and deadlines Dj, in some order such
+that not more than k jobs miss their deadlines.
+
+SOLVABILITY OF LINEAR EQUATIONS
+INPUT: (oi). (ai)
+PROPERTY: There exists a vector (yj) such that, for each i,
+
+5 Sag%5 7
+
+3. NONDETERMINISTIC ALGORITHMS AND COOK'S THEOREM
+
+In this section we state an important theorem due to Cook (1971)
+which asserts that any language in a certain wide class NP is
+reducible to a specific set $, which corresponds to the problem
+of deciding whether a boolean formula in conjunctive normal form
+is satisfiable.
+
+tet P) denote the class of subsets of I*xE* which are
+recognizable in polynomial time. Given 12) ¢ P(2) and a poly-
+nomial p, we define a language L as follows:
+
+(2)
+
+L = {x| there exists y such that <x,y> € L*’ and lg(y) < p(1g(x))}.
+
+
+
+===== PDF PAGE 11 =====
+8 Reducibility Among Combinatorial Problems 229
+
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS a7
+(2)
+
+We refer to L as the language derived from L
+p-bounded existential quantification.
+
+by
+
+Definition 4. NP is the set of languages derived from ele-
+ments of PC2) by polynomial-bounded existential quantification.
+
+There is an alternative characterization of NP in terms of
+nondeterministic Turing machines. A nondeterministic recognition
+algorithm A is specified by:
+
+a countable set D (the domain)
+
+a finite alphabet A such that A* M{ACCEPT,REJECT} = 9
+an encoding function E: D + A*
+
+a transition relation t C A*x (A*U {ACCEPT,REJECT})
+
+such that, for every y, € A*, the set {<y,,y>| <y,,y> € T} has
+fewer than ka elements, where ka is a constant. A computation
+of A on input x €D is a sequence yj,y7,... such that
+
+yy = E(x), <yyoyyy1? € T for all i, and, if the sequence is
+finite and ends with y,, then y, € {ACCEPT,REJECT}. A string
+
+y € A* which occurs in some computation is an instantaneous
+description. A finite computation ending in ACCEPT is an
+accepting computation. Input x is accepted if there is an
+accepting computation for x. If D=2* then A is a nondeter-
+ministic string recognition algorithm and we say that A operates
+‘in polynomial time if there is a polynomial p(+) such that, when-
+ever x accepts x, there is an accepting computation for x of
+
+length < p(1g(x)).
+
+A nondeterministic algorithm can be regarded as a process
+which, when confronted with a choice between (say) two alternatives,
+can create two copies of itself, and follow up the consequences of
+both courses of action. Repeated splitting may lead to an exponen-
+tially growing number of copies; the input is accepted if any
+sequence of choices leads to acceptance.
+
+The nondeterministic 1-tape Turing machines, multitape
+Turing machines, random-access machines, etc. define classes of
+nondeterministic string recognition algorithms by restricting the
+encoding function E and transition relation Tt to particularly
+simple forms. All these classes of algorithms, restricted to oper-
+ate in polynomial time, define the same class of languages. More-
+
+over, this class is NP.
+
+Theorem 1. L¢ NP if and only if L is accepted by a non-
+deterministic Turing machine which operates in polynomial time.
+
+Proof. = Suppose Lé NP. Then, for some L(2) € P(2) and
+some polynomial p, L is obtained from L(2) by p-bounded exis-
+tential quantification. We can construct a nondeterministic
+
+
+
+===== PDF PAGE 12 =====
+230 Richard M. Karp
+
+92 RICHARD M. KARP
+
+machine which first guesses the successive digits of a agping y
+of length < p(lg(y)) and then tests whether <x,y> € L Such
+
+a machine Clearly recognizes L in polynomial time.
+
+“Suppose L is accepted by a nondeterministic Turing
+machine T which operates in time p. Assume without loss of
+generality that, for any instantaneous description Z, there are
+at most two instantaneous descriptions that may follow Z (i.e.,
+at most two primitive transitions are applicable). Then the se-
+quence of choices of instantaneous descriptions made by T ina
+given computation can be encoded as a string y of 0's and l's,
+such that lg(y) < p(1g(x)).
+
+Thus we can construct a deterministic Turing machine T',
+with =*xz* as its domain of inputs, which, on input <x,y>,
+simulates the action of T on input x with the sequence of
+choices y. Clearly T' operates in polynomial time, and L is
+obtained by polynomial bounded existential quantification from the
+set of pairs of strings accepted by T'.
+
+The class NP is very extensive. Loosely, a recognition
+problem is in NP if and only if it can be solved by a backtrack
+search of polynomial bounded depth. A wide range of important
+computational problems which are not known to be in P are obvious-
+ly in NP. For example, consider the problem of determining whe-
+ther the nodes of a graph G can be colored with k colors so
+that no two adjacent nodes have the same color. A nondeterministic
+algorithm can simply guess an assignment of colors to the nodes and
+then check (in polynomial time) whether all pairs of adjacent nodes
+
+have distinct colors.
+
+In view of the wide extent of NP, the following theorem due
+
+to Cook is remarkable. We define the satisfiability problem as
+follows:
+
+SATISFIABILITY
+
+INPUT: Clauses C1,C2,.--4C,
+
+PROPERTY: The conjunction of the given clauses is iattsttables
+
+i.e., there is a set $C {x1 5X75 +6 oX_sX 3X1 .Xp9-e such that
+a) § does not contain a Complementary pair %y) literals
+
+and b) SMC, #4, k= 1,2,..5p-
+
+Theorem 2 (Cook). If Le NP then L« SATISFIABILITY.
+
+The theorem stated by Cook (1971) uses a weaker notion of
+reducibility than the one used here, but Cook's proof supports the
+present statement.
+
+Corollary 1. P = NP * SATISFIABILITY € P.
+
+
+
+===== PDF PAGE 13 =====
+8 Reducibility Among Combinatorial Problems 231
+
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS 3
+
+Proof. If SATISFIABILITY € P then, for each Le NP, Le P,
+since L © SATISFIABILITY. If SATISFIABILITY ¢ P, then, since
+clearly SATISFIABILITY e NP, P # NP.
+
+Remark. If P= NP then NP is closed under complementation
+and polynomial-bounded existential quantification, Hence it is
+also closed under polynomial-bounded universal quantification. It
+follows that a polynomial-bounded analogue of Kleene's Arithmetic
+Hierarchy [Rogers (1967)] becomes trivial if P = NP.
+
+Theorem 2 shows that, if there were a polynomial-time algo-
+rithm to decide membership in SATISFIABILITY then every problem
+
+solvable by a polynomial-depth backtrack search would also be
+solvable by a polynomial-time algorithm. This is strong circum-
+stantial evidence that SATISFIABILITY ¢ P.
+
+4, COMPLETE PROBLEMS
+
+The main object of this paper is to establish that a large
+number of important computational problems can play the role of
+SATISFIABILITY in Cook's theorem. Such problems will be called
+complete.
+
+Definition 5. The language L is (polynomial) complete if
+a) Le NP
+and b) SATISFIABILITY = L.
+
+Theorem 3. Either all complete languages are in P, or none
+of them are. The former alternative holds if and only if P = NP.
+
+We can extend the concept of completeness to problems defined
+over countable domains other than =*.
+
+Definition 6, Let D be a countable domain, e a "standard"
+one-one encoding e: D+ Z* and T a subset of D. Then T is
+complete if and only if e(D) is complete.
+
+Lemma 2, Let D and D' be countable domains, with one-one
+encoding functions e and e'. Let TCD and T'CD', Then
+T«T' if there is a function F: D*D' such that
+
+a) F(x) eT! @xeT “1
+and b) there is a function f € I such that f(x) = e'(F(e (x)))
+
+whenever e'(F(el(x))) is defined.
+
+The rest of the paper is mainly devoted to the proof of the
+following theorem.
+
+
+
+===== PDF PAGE 14 =====
+232 Richard M. Karp
+94 RICHARD M. KARP
+Main Theorem. All the problems on the following list are
+complete.
+1. SATISFIABILITY
+COMMENT: By duality, this problem is equivalent to deter-
+mining whether a disjunctive normal form expression is a
+tautology.
+2. 0-1 INTEGER PROGRAMMING
+INPUT: integer matrix C and integer vector d
+PROPERTY: There exists a 0-1 vector x such that Cx = d.
+3. CLIQUE
+INPUT: graph G, positive integer k
+PROPERTY: G has a set of k mutually adjacent nodes.
+4. SET PACKING
+INPUT: Family of sets {8}, positive integer £
+PROPERTY : {s,} contains “2 mutually disjoint sets
+5. NODE COVER
+INPUT: graph G', positive integer &
+PROPERTY: There is a set RCN!' such that |R| < 2% and
+every arc is incident with some node in R.
+6. SET COVERING
+INPUT: finite family of finite sets {S;}, positive integer k
+PROPERTY: There is a subfamily {T,} C {85} containing < k
+sets such that Ur, als
+7. FEEDBACK NODE SET
+INPUT: digraph H, positive integer k
+PROPERTY: There is a set RCV such that every (directed)
+cycle of H contains a node in R.
+8. | FEEDBACK ARC SET
+INPUT: digraph H, positive integer k
+PROPERTY: There is a set S$ CE such that every (directed)
+cycle of H contains an arc in S.
+9, DIRECTED HAMILTON CIRCUIT
+INPUT: digraph H
+PROPERTY: H has a directed cycle which includes each node
+exactly once.
+10, UNDIRECTED HAMILTON CIRCUIT
+INPUT: graph G
+PROPERTY: G has a cycle which includes each node exactly
+once.
+
+
+
+===== PDF PAGE 15 =====
+8 Reducibility Among Combinatorial Problems 233
+
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS 95
+11. SATISFIABILITY WITH AT MOST 3 LITERALS PER CLAUSE
+INPUT: Clauses Dj,D9,.-.,D,, each consisting of at most 3
+literals from the set {uy,u9,...,u,} U {t),09,...,u,}
+PROPERTY: The set {D,,Dj,+++,D.} is satisfiable
+12. CHROMATIC NUMBER
+INPUT: graph G, positive integer k
+PROPERTY: There is a function $: N> Z, such that, if u
+and v are adjacent, then $(u) # $(v).
+13. CLIQUE COVER
+INPUT: graph G', positive integer 2
+PROPERTY: N' is the union of & or fewer cliques.
+14, EXACT COVER
+INPUT: family {Sj} of subsets of a set {uj, i = 1,2,...,t}
+PROPERTY: There i8 a subfamily {T,,} C {sj} such that the
+isjoi ur =U = seegthe
+sets T, are disjoint and UT, 8; {uy, i = 1,2,...,t}
+15. HITTING SET
+INPUT: family {Uy} of subsets of {s;, j = 1,2,...,r}
+PROPERTY: There is a set W such that, for each i,
+|wou,] =1.
+i
+16. STEINER TREE
+INPUT: graph G, RCN, weighting function w: A> Z,
+positive integer k
+PROPERTY: G has a subtree of weight < k containing the set
+of nodes in R.
+17. 3-DIMENSIONAL MATCHING
+INPUT: set UCTxTxT, where T is a finite set
+PROPERTY: There is a set WCU such that |wW| = |T| and
+no two elements of W agree in any coordinate.
+18. KNAPSACK atl
+INPUT: (aj,a2,+..,a;,b) € Z
+PROPERTY: “Z ajx, = b has a 0-1 solution.
+19. JOB SEQUENCING
+INPUT: "execution time vector" (Ty). 25%) e 2°,
+"deadline vector" (D,,...,D,) € Z
+"penalty vector" (PyseeesPpd e zP
+positive integer k
+PROPERTY: There is a permutation tm of {1,2,...,p} such
+that
+Bet teeetT 7... > D.. thi Po. 1 0 <k.
+CEE Bray aca > Pacay Mer Brgy ste OD <
+
+
+
+===== PDF PAGE 16 =====
+Richard M. Karp
+
+234
+
+RICHARD M. KARP
+
+waAOD
+andIT9
+
+sueTqoag eqeTduoy - T FUNOTA
+Ind Xv
+NOILILYVd ONIONaNDAS
+Linow1o
+NOLTIAVH
+aTUL ISN aun ONTHOLVA CaLOAaTANA
+WANIZIS ONILLIH y, ‘TWNOISNAWIG-€
+™\ a LnouIo
+waAdo oxne? NOLTINVH aS OUV LAS aGON
+LOWXE qaLoqild yovadaad yovacaaa
+oNTWOVd ho
+‘wa aqNAN ia as TdON
+asaVIO Wad STVYALIT € LSOW ONIWNVUOONd le
+LY HLIM ALITIaVIaSILvs UGOALNI T-0
+ALITLAVIASILVS
+
+96
+
+
+
+===== PDF PAGE 17 =====
+8 Reducibility Among Combinatorial Problems 235
+
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS 7
+
+20. PARTITION s
+INPUT: (c1,C9,+++5Cg) € Z
+PROPERTY: There is a set I C {1,2,...,s} such that
+
+Yor la.
+her > ht h
+
+21. MAX CUT
+INPUT: graph G, weighting function w: A+ Z, positive
+integer W
+
+PROPERTY: There is a set S CN such that
+
+) wuv})>w.
+{u,v}ea
+ues
+
+ves
+
+It is clear that these problems (or, more precisely, their
+encodings into £*), are all in NP. We proceed to give a series
+of explicit reductions, showing that SATISFIABILITY is reducible
+to each of the problems listed. Figure 1 shows the structure of
+the set of reductions. Each line in the figure indicates a reduc-
+tion of the upper problem to the lower one.
+
+To exhibit a reduction of a set TCD toaset T'CD',
+we specify a function F: D>D' which satisfies the conditions
+of Lemma 2. In each case, the reader should have little difficulty
+
+in verifying that F does satisfy these conditions
+
+SATISFIABILITY « 0-1 INTEGER PROGRAMMING
+1 if x, €C,
+i ai
+
+47 -l if Re Cy
+
+0 otherwise
+
+i= 1,2,...5p
+j= 1,2,...5n
+b, = 1-(the number of complemented variables in C,) ,
+i= 1,2,...,p-
+SATISFIABILITY « CLIQUE
+N = {<o,i>| 06 is a literal and occurs in Cy}
+A= {{<o,i>,<6,j>}| i # j and o # 5}
+
+k =p, the number of clauses.
+
+CLIQUE «= SET PACKING
+
+Assume N = {1,2,...,n}. The elements of the sets
+S1,S7,+++,S, are those two-element sets of nodes {i,j} not in A.
+
+s; ={{i,j}| {i,j} € AL i = 1,2,...,n
+L=k.
+
+
+
+===== PDF PAGE 18 =====
+236 Richard M. Karp
+
+98 RICHARD M. KARP
+
+CLIQUE « NODE COVER
+
+G' is the complement of CG.
+2 = |N| -k
+
+NODE COVER © SET COVERING
+
+Assume N' = {1,2,...,n}. The elements are the arcs of G'.
+Sj is the set of arcs incident with node j. k= %.
+NODE COVER «© FEEDBACK NODE SET
+
+v=Nn'
+
+E = {<u,v>| {u,v} € A'}
+
+k=2
+
+NODE COVER « FEEDBACK ARC SET
+v = N'x {0,1}
+E = {<<u,0>,<u,1>>| u € N'} U {<<u,1>,<v,0>>| {u,v} € A'}
+k= 2,
+
+NODE COVER « DIRECTED HAMILTON CIRCUIT
+
+Without loss of generality assume A' = Zp.
+V = {aj,a9,..-,ag} U {<u,i,a>| u @ N' is incident with i € A'
+and a € {0,1}}
+E = {<<u,i,0>,<u,i,1>>| <u,i,0> € v}
+U {<<u,i,a>,<v,i,o>>| i € A’, u and v are incident with i,
+ae {0,1}}
+U {<<u,i,1>,<u,j,0>>| u is incident with i and j and dh,
+i< h< j, such that u is incident
+with h}
+U {<<u,i,1>,ag>| 1 < £ < 2 and Zh > i such that u is inci-
+dent with h}
+U {<ag,<u,i,0>>| 1 < £ < 2 and gh < i such that u is inci-
+dent with h} .
+
+DIRECTED HAMILTON CIRCUIT « UNDIRECTED HAMILTON CIRCUIT
+N = vx {0,1,2}
+A = {{<u,0>,<u,1>}, {<u,1>,<u,2>}| ue v}
+U {{<u,2>,<v,0>}| <u,v> € E}
+SATISFIABILITY « SATISFIABILITY WITH AT MOST 3 LITERALS PER CLAUSE
+
+Replace a clause 0, Vo, U-+- Von, where the oO; are literals
+and m> 3, by
+
+(01 Yon Yuj) (63 U +++ Yo, Vit) (G3 Yuy) +++ (G,, Yu) >
+where u, is a new variable. Repeat this transformation until no
+clause has more than three literals.
+
+
+
+===== PDF PAGE 19 =====
+8 Reducibility Among Combinatorial Problems 237
+
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS 99
+
+SATISFIABILITY WITH AT MOST 3 LITERALS PER CLAUSE
+« CHROMATIC NUMBER
+
+Assume without loss of generality that m> 4.
+N= {uz,ug,.-.,u,} U {ty,t2,..-,0,} U {vy ,v25--+ vat
+U {Dy ,D9,+++ Dy}
+A= {{uj,G,}] i=1,2,...,n} U {{vz.v53] i#j} U (lvy,x,}] Ai}
+U {{vq,%5}] i#i} YU {{uz,D_}] uy ¢ De} U (5 .D¢3] Gy € De}
+k=r4tl1
+
+CHROMATIC NUMBER « CLIQUE COVER
+G' is the complement of G
+Rok.
+CHROMATIC NUMBER « EXACT COVER
+The set of elements is
+NUA U{<u,e,f>| u is incident with e and 1<f£<k} .
+The sets Sj are the following:
+
+for each f, 1<f£<k, and each ueéN,
+{u} Uf{<u,e,£>] e is incident with u} ;
+
+for each e € A and each pair fj, f2 such that
+1<fj<k, 1<f)<k and fj # fy
+fe} U{<u,e,f>,f#£)} Uf<v,e,g>| g#fo}
+
+where u and v are the two nodes incident with e.
+
+EXACT COVER © HITTING SET
+The hitting set problem has sets Uj and elements sj, such
+
+that sj € Uj * uy € Sj.
+
+EXACT COVER « STEINER TREE
+N= {no} U {sj} Ufug}
+
+{ng} Ufuy}
+
+= {{ng,85}} U{{s;,uz}| uy € S53}
+
+w({ng,85}) = Is5]
+
+w({Sj,uj}) = 0
+
+k= |{u}].
+
+>
+n
+
+EXACT COVER « 3-DIMENSIONAL MATCHING
+
+Without loss of generality assume |$j| > 2 for each j.
+Let T= {<i,j>| uy € sj}. Let a be an arbitrary one-one function
+
+
+
+===== PDF PAGE 20 =====
+238
+
+Richard M. Karp
+
+100 RICHARD M. KARP
+
+from {uy} into T. Let m: T+ T be a permutation such that
+for each fixed j, {<i,j>| uy € 83} is a cycle of m1.
+
+U = {<a(uy),<i,j>,<i,j>>| <i,j> € T}
+
+U {<B8,0,m(0)>| for all i, B#a(uy)} .
+
+EXACT COVER = KNAPSACK
+= . = di if uj € Sj
+Let d= |{Sj}|+1. Let e54 {i if us é st Let
+
+t
+r= [{S}], aj = J eygaé? and b= $4,
+
+KNAPSACK = SEQUENCING
+p=r, Ty = Py = aj, Dg=b.
+
+KNAPSACK « PARTITION
+
+s=xrt2
+cyt ay, 1° 1,2,.00,0
+Cee] = b+
+r
+Cyy = CE a,)t1-b
+ra ~ U8
+
+PARTITION « MAX CUT
+
+N = {1,2,...,s}
+A= {{i,j}] 1€N, j e@N, i # 5}
+w({i,j} = eytey
+
+Brel
+
+Some of the reductions exhibited here did not originate with
+the present writer. Cook (1971) showed that SATISFIABILITY «
+SATISFIABILITY WITH AT MOST 3 LITERALS PER CLAUSE. The reduction
+
+SATISFIABILITY « CLIQUE
+
+is implicit in Cook (1970), and was also known to Raymond Reiter.
+The reduction
+
+NODE COVER « FEEDBACK NODE SET
+
+was found by the Algorithms Seminar at the Cornell University
+Computer Science Department. The reduction
+
+NODE COVER « FEEDBACK ARC SET
+
+was found by Lawler and the writer, and Lawler discovered the
+reduction
+
+EXACT COVER = 3-DIMENSIONAL MATCHING
+
+
+
+===== PDF PAGE 21 =====
+8 Reducibility Among Combinatorial Problems 239
+
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS 101
+
+The writer discovered that the exact cover problem was redu-
+cible to the directed traveling-salesman problem on a digraph in
+which the arcs have weight zero or one. Using refinements of the
+technique used in this construction, Tarjan showed that
+
+EXACT COVER « DIRECTED HAMILTON CIRCUIT
+and, independently, Lawler showed that
+NODE COVER « DIRECTED HAMILTON CIRCUIT .
+
+The reduction
+DIRECTED HAMILTON CIRCUIT « UNDIRECTED HAMILTON CIRCUIT
+
+was pointed out by Tarjan.
+
+Below we list three problems in automata theory and language
+theory to which every complete problem is reducible. These pro-
+blems are not known to be complete, since their membership in NP
+is presently in doubt. The reader unacquainted with automata and
+language theory can find the necessary definitions in Hopcroft and
+Ullman (1969).
+
+EQUIVALENCE OF REGULAR EXPRESSIONS
+INPUT: A pair of regular expressions over the alphabet {0,1}
+
+PROPERTY: ‘The two expressions define the same language.
+
+EQUIVALENCE OF NONDETERMINISTIC FINITE AUTOMATA
+INPUT: A pair of nondeterministic finite automata with input
+
+alphabet {0,1}
+PROPERTY: The two automata define the same language.
+
+CONTEXT-SENSITIVE RECOGNITION
+INPUT: A context-sensitive grammar I and a string x
+PROPERTY: x is in the language generated by I.
+
+First we show that
+
+SATISFIABILITY WITH AT MOST 3 LITERALS PER CLAUSE
+« EQUIVALENCE OF REGULAR EXPRESSIONS .
+
+The reduction is made in two stages. In the first stage we con-
+struct a pair of regular expressions over an alphabet A = {uj,u2,
+s+e5Ug,Uy,09,..-,0,}. We then convert these regular expressions to
+
+regular expressions over {0,1}.
+
+The first regular expression is A™A* (more exactly, A is
+written out as (uytugts stutuyt- +u,), and A® represents n
+
+copies of the expression for A concatenated together). The se-
+cond regular expression is
+
+nak Rk yk Ho yk, ak
+ana* U Be u,O*0,A* U AAD, A*u,d*) U RO)
+
+
+
+===== PDF PAGE 22 =====
+240
+
+Richard M. Karp
+
+RICHARD M. KARP
+
+102
+where
+A*G1A* if Dy = 9]
+AGA 90% U AG 94%5 0% if_ Dy = 01 Uo
+8(D,) = 9 A*Oy TMG 90*S40* Wats 105 90°5 2 "
+UA AO QA*T ANT AA* U ASG DATS 3A) Ay
+U Ar35A TA ‘ODA* U A*a3A*0D4 *oia*
+if Dy = 01U0,Uo,.
+Now let _m be the least positive integer > log JA], and let
+
+be a 1-1 function from A into {0,1}™. Replace*each regular
+expression by a regular expression over {0, 1}, by making the
+substitution a+ $(a) for each occurrence of each element of A.
+
+EQUIVALENCE OF REGULAR EXPRESSIONS © EQUIVALENCE OF NONDETERMINISTIC
+FINITE AUTOMATA
+
+There are standard polynomial-time algorithms [Salomaa (1969) ]
+to convert a regular expression to an equivalent nondeterministic
+automaton. Finally, we show that, for any L e NP,
+
+L & CONTEXT-SENSITIVE RECOGNITION .
+
+Suppose L is recognized in time p() by a nondeterministic
+Turing machine. Then the following language L over the alphabet
+
+{0,1,#} is accepted by a nondeterministic linear bounded automaton
+which simulates the Turing machine:
+
+Le fg? C8), gp Ce G)) | xeL}
+
+Hence L is context-sensitive and has a context-sensitive grammar
+fT. Thus x €L iff
+
+Fe (1g(x)) gp (1g (=)
+is an acceptable input to CONTEXT-SENSITIVE RECOGNITION.
+
+We conclude by listing the following important problems in NP
+which are not known to be complete,
+
+GRAPH ISOMORPHISM
+INPUT: graphs G and G'
+PROPERTY: G is isomorphic to G'.
+
+NONPRIMES
+INPUT: positive integer k
+PROPERTY: k is composite.
+
+LINEAR INEQUALITIES
+INPUT: integer matrix C, integer vector d
+PROPERTY: Cx > d has a rational solution.
+
+
+
+===== PDF PAGE 23 =====
+8 Reducibility Among Combinatorial Problems
+
+241
+
+REDUCIBILITY AMONG COMBINATORIAL PROBLEMS
+
+103
+
+APPENDIX I
+
+Notation and Terminology Used in Problem Specification
+
+PROPOSITIONAL CALCULUS
+
+Up pUy sere ot,
+
+XpoXooeeeeX)
+
+Usd, sss
+
+0,05
+
+propositional variables
+
+complements of
+propositional variables
+literals
+
+clauses
+
+C1,C2,.--,Cp D1,D2,...,Dr
+Cy CS {x25 666 Xe X19 X2Q0+6+ Xt
+Dg © {uy,ug,..-,ugsty,U2,--. 0}
+
+A clause contains no complementary pair of literals.
+
+SCALARS , VECTORS, MATRICES
+
+vA the positive integers
+zP the set of p-tuples of positive integers
+
+Zp the set {0,1,...,p-1}
+k,W elements of Z
+<x,y> the ordered pair <x,y>
+
+(a) GY, d vectors with nonnegative integer components
+
+(ci) Cc matrices with integer components
+GRAPHS AND DIGRAPHS
+
+G = (N,A) G' = (N',A') finite graphs
+
+N,N' sets of nodes A,A' sets of arcs
+
+s,t,u,v nodes e,{u,v} arcs
+
+(X,X) = {{u,v}| ue X and ve X} cut
+
+If s€X and te X, (X,X) isa s-t cut
+
+wi A*Z w':A'>Z weight functions
+
+The weight of a subgraph is the sum of the weights of its arcs.
+
+H= (V,E) digraph V_ set of nodes, E set of arcs
+e,<u,v> arcs
+
+SETS
+o the empty set
+
+|s the number of elements in the finite set S$
+s;} {T,} {U,} fimite families of finite sets
+
