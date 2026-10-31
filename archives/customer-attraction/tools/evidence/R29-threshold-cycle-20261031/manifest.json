@@ -1,0 +1,40 @@
+{
+  "evidence_id": "customer-attraction/r29-threshold-cycle-20261031",
+  "source_commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+  "assigned_source_refs": [
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/new_representation/audit_opt_threshold_cycle.py",
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/new_representation/opt_threshold_cycle_audit.json"
+  ],
+  "files": {
+    "source/audit_opt_threshold_cycle.py": {
+      "source_id": "cb9df3377d9e31979119",
+      "blob": "5b448cca8144b0bb246c880fd419d17a21836d9f",
+      "bytes": 2250,
+      "sha256": "b223f6e4acfd2cf373ec6315b332bb8f8207fe6c44767ad55998bb24dd577845",
+      "role": "exact definition-level audit of the abstract root-tail bridge"
+    },
+    "source/opt_threshold_cycle_audit.json": {
+      "source_id": "835cbdc7c9f3c7efe65e",
+      "blob": "346e67ac22ec67ca994c4d82c38b208fb9c783c2",
+      "bytes": 14921,
+      "sha256": "29ebd343038c81a207199706702238789318c7c0b64c33b0cb8290aa8ddb8869",
+      "role": "frozen Fraction output for k=9..12 and all roots"
+    },
+    "replay/verify_threshold_cycle.py": {
+      "sha256": "local-generated-after-read",
+      "role": "independent exact checker"
+    },
+    "replay/verification.json": {
+      "role": "independent checker output: 4 cases, 42 menus, PASS"
+    }
+  },
+  "replay": {
+    "full_driver_command": "cd replay/workdir && PYTHONDONTWRITEBYTECODE=1 python audit_opt_threshold_cycle.py",
+    "full_driver_status": "exit 0; stderr empty; stdout cases=4, menus=42, all_checks=true; regenerated JSON byte-identical",
+    "checker_command": "PYTHONDONTWRITEBYTECODE=1 python replay/verify_threshold_cycle.py",
+    "checker_status": "PASS",
+    "universal_claim": false,
+    "full_spe_oracle": false,
+    "integer_customer_reconstruction": false
+  }
+}
