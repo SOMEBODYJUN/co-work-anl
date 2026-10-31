@@ -1,0 +1,24 @@
+--- original-v1
++++ original-v2
+@@ -1,6 +1,10 @@
+-# Ci/Rc/unit-clause OR 变体的全公式严格可行：作者证明 v1
++# Ci/Rc/unit-clause OR 变体的全公式严格可行：作者证明 v2
+ 
+-对应 `UM-PROTECTED-CYCLE-CIRCUIT-CLAUSE-OR-FAILURE-v1`，完整对象见 `protected_cycle_shared_clause_or_failure_exact_v1.md`。本证明在 Exact 已交由另一审查者仅读独立攻击后冻结；不主动发送给该审查者。
++对应 `UM-PROTECTED-CYCLE-CIRCUIT-CLAUSE-OR-FAILURE-v2`，完整对象见 `protected_cycle_shared_clause_or_failure_exact_v2.md`。本证明在 Exact 已交由另一审查者仅读独立攻击后冻结；不主动发送给该审查者。v2 仅同步修复空公式边界，v1 原字节保留。
++
++## 0. 空公式退化情况
++
++若 Φ 为空，则 N=m=0，v2 的实际 P 有一台 idle 机器、零 jobs。唯一空调度合法，负载0；“每台非 idle 机器恰一原 job”与所有 R_c 的结论均真。以下均假设 2N+m>0，此时没有 idle 机器，机器数与 job 数同为2N+m。
+ 
+ ## 1. 显式共同 fractional perfect matching
+ 
+@@ -34,7 +38,7 @@
+ 
+ R_c 的原邻接 jobs只有该 clause 的 q_i，所以整数 matching 中每 R_c 确实收到一枚属于该 clause 的原 q_i，并走原 unit 端。这保留了任务身份读取本身，而没有保住它与被返回 b_i 的编号关联。
+ 
+-构造显式规模O(N+Σ_c k_c)，x_i 只需分母 k_c 的O(log N)位。可直接运行任意确定性二部整数最大流/匹配算法，不必按分数分母展开复制，更不按1/a枚举。全部原矩阵输出、actual matching与逐机负载回算均为总位多项式。
++有限资格图有O(N+Σ_c k_c)条边；若要求完整稠密矩阵，显式填入其余∞项也只用O((2N+m)^2)项。x_i 只需分母 k_c 的O(log(N+1))位。可直接运行任意确定性二部整数最大流/匹配算法，不必按分数分母展开复制，更不按1/a枚举。全部原矩阵输出、actual matching与逐机负载回算均为总位多项式。
+ 
+ ## 3. 一个10-job/10-machine的真实 UNSAT→strict YES
+ 

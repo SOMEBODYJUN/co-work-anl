@@ -138,3 +138,7 @@ R3_READY47M：真实网络恢复后发布47源全部完整正文/依赖/历史�
 R3_READY47M数学/证据pushed 7399453deeef450540c64501bc429c457d56e93d；47源done另推送 5ae3a861a5fa3c350ad8f7d5749f66c403fc2485。Boss4累计1108完成，实际未完33；持续接续全仓，不以本批清空收尾。
 
 R3_READY18N：18源：静态指派发现/简化完整合同与两代精确回放3、五独立审计完整实现与历史run5、一般相邻钱包固定倍数反族5、bounded/bundle/cactus五历史数学审查5；保存全部原域/版本/有限证据/位复杂度，纠正混同但不覆盖旧共享页，先body明确pushed后逐源done；共18主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY18N_REMAINING_SCOPE.json。
+
+R3_READY18N数学/证据pushed 216e10d6628891b99410b12fcb28fb78113fb7e6；18源done另推送 efc829e1800982a9071d02d136ee9e8f889c48c1。Boss4累计1126完成，实际未完34；持续接续全仓，不以本批清空收尾。
+
+R3_READY24Q：24源：平稳根重置4、保护环全任务及真实空式修订5、claims/graph全语义与未登记尾部5、slot四原入口/历史审查5、adaptive relay全部q/路径/Γ/局部约束及割价合同5；全部实读数学自足，先body明确pushed后逐源done，仍持续六线；共24主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY24Q_REMAINING_SCOPE.json。

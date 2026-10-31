@@ -1,0 +1,111 @@
+CLAIMS full lines 601..710; Cn=exact path in previously fully read catalog; all link labels, math and unmatched paths retained.
+601: | --- | --- | --- |
+602: | UM-TARGET-v1 | ∃统一ε∈(0,1)，∃确定性位多项式算法，∀合法非负有理/不可用边输入（m,n可变），输出全部任务的合法分配且C_max≤(2−ε)OPT；零最优值亦覆盖。 | OPEN，无新算法；精确身份见[本题账本](C595)。 |
+603: | UM-ST-ROUND-v1 | ∀P,T≥0及剪枝LST有理可行x，可确定性位多项式舍入为每机器L_i≤分数负载+支撑最大值≤2T。 | 已知结果的[自足重构](C593)与[独立攻击](C603)；只实现给定x接口，非新贡献。 |
+604: | UM-CONF-GAP-v1 | 配置LP在正最优值实例上sup OPT/T_CONF=2，即使每任务至多两台可用机。 | [重索引两树证明](C593)；原高度疑点显式处理；只限相对该LP值的合同，不证明主目标为假。 |
+605: | UM-FINITE-PALETTE-GCD-BARRIER-v1 | 二进制有理处理时间的最大正有理gcd为g(P)、最大有限时间为B(P)时，LST网格算法输出真实分配且 C_max≤(2−g(P)/B(P))OPT；固定g/B>0的处理时间族不能承担近二反面。 | [有限字母表gcd余量正文](C1902)；有理缩放、慢边支撑两情形和Fraction审计均已登记；不证明UM-TARGET-v1一般不存在统一ε。 |
+606: | UM-LONG-PATH-GAP-v1 | 对每个整数g≥3，正最优值、恰两可用机器/任务、简单机器图围长≥g子类上sup OPT/T_CONF=2。 | [长链阈值保真证明](C620)、[冻结独立攻击](C621)；非算法困难性，全球新颖性未认证。 |
+607: | UM-COALITION-PROJECTION-GAP-v1 | 对每个整数r≥1、g≥3，上述子类精确定义CC_r的sup gap=2；各coalition仅共享完整单机配置分布，不要求多机overlap一致。 | [正文定义和森林耦合](C620)；完整三机交叠相容性在本树宽2族精确；主目标OPEN，独立内部已审、未外审。 |
+608: 
+609: ## 不相关并行机：大边残余与共享容量方法边界
+610: 
+611: | ID | 精确范围与结论 | 正文与状态 |
+612: | --- | --- | --- |
+613: | UM-HEAVY-MATCH-FILTER-v1 | ∀合法P,T≥0，精确GHMR在总位多项式内保留所有T可行调度的使用边；拒绝⇒OPT>T，接受不蕴含可行。 | [完整安全性及复杂度](C633)、内部独立冻结审查；无近似保证/全球新颖性认证。 |
+614: | UM-SIMPLE-SUPPORT-GAP-v1 | 每k≥4路径终端两树：每任务恰2选、每机器对至多1任务、OPT=2−1/k、配置T₀=1+1/k可行；此子类sup gap=2。 | 同正文§4，已内部独立审查；已知障碍支撑简化，不是算法困难性。 |
+615: | UM-ESCAPE-MATCH-GAP-v1 | 每k≥4，共享z成本1/2逃逸族OPT=2−1/k，配置T₀可行且GHMR首轮零删边；∀固定ε>0能击穿相对T的(2−ε)合同。 | 同正文§5，核心/星2选、占位3选；不排除联合强化或OPT相对算法。 |
+616: 
+617: ## 不相关并行机：成束相容与计数闭包
+618: 
+619: | ID | 精确范围与结论 | 正文与状态 |
+620: | --- | --- | --- |
+621: | UM-BUNDLE-MOMENT-v1 | For every k>=4 the canonical VW two-tree instance has strengthened configuration threshold exactly 2-1/k after adding the aggregate second-moment complement equation for each terminal bundle. | [自足正文](C627)、[冻结攻击](C628)；一般主目标仍OPEN，新颖性未认证。 |
+622: | UM-CARDINALITY-CLOSURE-v1 | For all legal P and rational T>=0 the synchronous forced-residual cardinality filter preserves every T-feasible schedule and terminates in deterministic bit-polynomial time. Its monotone integer-scaled bisection gives a lower bound B<=OPT; acceptance is not feasibility. | [自足正文](C627)、[冻结攻击](C628)；一般主目标仍OPEN，新颖性未认证。 |
+623: | UM-PAIR-SUBDIVISION-GAP-v1 | The pair-configuration LP, with common singleton machine marginals and exact complementarity for every degree-two job internal to each pair, has supremum gap 2 even on simple bipartite machine graphs. The stated cardinality filter makes no deletion on the subdivided VW certificates. | [自足正文](C627)、[冻结攻击](C628)；一般主目标仍OPEN，新颖性未认证。 |
+624: 
+625: ## 不相关并行机：共同匹配补全与条件块容量
+626: 
+627: | ID | 精确范围与结论 | 正文与状态 |
+628: | --- | --- | --- |
+629: | UM-JOINT-SMALL-ROUND-v1 | ∀P,T≥0,δ≥0及给定(Aδ)有理H,x，位多项式输出保持H的合法调度，全部L_i≤(3/2+δ)T。 | [自足接口](C653)；ST直接推论，未给选择H算法。 |
+630: | UM-JOINT-CHOICE-NP-v1 | 每固定有理δ∈[0,1/3)，(Aδ)存在性判定NP完全，即使T1、N空、每任务唯一small、时间{1/3,1}；不含δ1/3。 | 同正文§3；导入Karp3DM及完整新归约，精确接口障碍，不是UM近似困难性。 |
+631: | UM-ESCAPE-BLOCK-CUT-v1 | 每k≥4、1≤B≤θ，末簇Z_g≥(r_B−1)Y_v有效；随B重算的块强化在共享z族的阈值恰θ=2−1/k。 | 同正文§4；对整个强化解的计数证明，尚无一般分离/舍入。 |
+632: 
+633: ## 不相关并行机：生成树再耦合的固定补全边界
+634: 
+635: | ID | 精确范围与结论 | 正文与状态 |
+636: | --- | --- | --- |
+637: | UM-TREE-MARKOV-COMPLETION-NO-v1 | 指定五机实例T=OPT=1，真实全局分布的生成树pair Markov再耦合有概率1/4产生冻结树任务后最优补全2的态；只否定每个支持态都可补<2T的合同。 | [正文](C639)、[独立审查](C640)；一步迁移即可修复，不排聪明择态/换树；同合同至多四机连通树总可补T。 |
+638: 
+639: ## 不相关并行机：可恢复星消去与容量身份
+640: 
+641: | ID | 精确范围与结论 | 正文与状态 |
+642: | --- | --- | --- |
+643: | UM-MINIMAL-STAR-CONTRACTION-v1 | For every legal P,T>=0 after pruning p>T, if a machine full neighborhood F has S>T and S-p_va<=T for every a, its replacement by one job with outside min times preserves T-feasibility. Every reduced schedule B lifts in deterministic bit-polynomial time to max(B,T); <=m repeated contractions retain the same bound. | [自足正文](C645)、[冻结攻击](C646)；非主目标突破。 |
+644: | UM-CAPACITY-ONE-PAIR-GAP-v1 | Over positive-OPT UM inputs the general pair-configuration LP GPC2 has supremum gap 2, even after iterating the specified residual-cardinality filter and minimal-star contraction. Explicit two-value family has m=k²+3k-1,n=2k²+k,T=1,OPT=2-1/k, all pair witnesses, and neither preprocessing rule triggers for k>=3. | [自足正文](C645)、[冻结攻击](C646)；非主目标突破。 |
+645: | UM-STAR-Q-JOB-COMPRESSION-NO-v1 | For every integer q>=2, there is a (q+1)-job star with T=1 for which no q ordinary replacement jobs on the same external machines, with arbitrary nonnegative/infinite times and no extra identity constraints, preserve feasibility for every specified A/B residual capacity profile. | [自足正文](C645)、[冻结攻击](C646)；非主目标突破。 |
+646: 
+647: 
+648: ## 条件证书与终端容量稀释
+649: 
+650: | ID | 精确增量与限制 | 正文/审查 |
+651: | --- | --- | --- |
+652: | UM-HEAVY-ALTERNATIVE-FILTER-v1 | 重备选源权部分匹配的安全位多项式删边；不额外覆盖全局必经大任务。 | [正文](C660)、[冻结审查](C661)；外审/新颖性未认证。 |
+653: | UM-DILUTED-SINK-PROBE-GAP-v1 | 配置可行＋全部逐边强制LST可行＋星匹配固定点仍sup gap2；阻塞任务多端，不是OPT相对否定。 | [正文](C660)、[冻结审查](C661)；外审/新颖性未认证。 |
+654: | UM-BIG-CARDINALITY-PROBE-v1 | 条件LST内加入大任务基数的安全位多项式探针；只证明对未加逃逸边的稀释族准确识别OPT。 | [正文](C660)、[冻结审查](C661)；外审/新颖性未认证。 |
+655: 
+656: 
+657: | ID | 精确范围与结论 | 正文与状态 |
+658: | --- | --- | --- |
+659: | UM-DILUTED-ESCAPE-PROBE-GAP-v1 | 配置可行＋所有边独立强制LST＋现行GHMR＋局部星匹配合用仍sup gap2；稀释底座加共享1/2小端，OPT=2−1/k。 | [正文§11](C660)、[冻结独立攻击](C661)；不含条件配置/条件基数；主目标OPEN。 |
+660: 
+661: ## 半单位共同见证的全窗口边界
+662: 
+663: | ID | 精确范围与结论 | 正文与状态 |
+664: | --- | --- | --- |
+665: | UM-JOINT-HALF-CHOICE-NP-v1 | ∀固定有理δ∈[0,1/2)，T=1、唯一small端、有限时间仅{1/2,1}时(Aδ)存在性NP完全，且该整个子类上(Aδ)存在⇔OPT≤1。 | [完整证明](C653)§3a、[独立攻击](C670)；内部已审，外审/新颖性未认证。 |
+666: | UM-JOINT-HALF-PROMISE-NO-v1 | 假设P≠NP，∀固定有理δ∈[0,1/2)，不存在总确定性位多项式算法，对所有OPT≤T的合法输入保证输出(Aδ)见证；即使只要求T1、唯一small、时间{1/2,1}子类亦不可能。域外可任意输出。 | [完整证明](C653)§3a、[独立攻击](C670)；内部已审，外审/新颖性未认证。 |
+667: 
+668: ## 全局单行基数匹配与紧凑共享逃逸
+669: 
+670: | ID | 精确范围与结论 | 正文/审查 |
+671: | --- | --- | --- |
+672: | UM-GLOBAL-ROW-COUNT-FILTER-v1 | For every legal P and rational T>=0, the synchronous global single-row exact-load/count-capacity filter of section 1 preserves every T-feasible schedule edge and terminates in deterministic bit-polynomial time. With fixed globally valid row bounds/caps, the global query is equivalent in strength to all corresponding resource-subpool queries. Acceptance is not feasibility. | [自足正文](C674)、[冻结审查](C675)；主目标OPEN，外审/新颖性未认证。 |
+673: | UM-COMPACT-COUNT-ESCAPE-GAP-v1 | For every integer k>=2, the section 2 family with N=2k² blocks, N-2k global unit slots and common Y escape cost 1/k has OPT=2-1/k and GPC2(1) certificates. No minimal-star/cardinality rule starts; all global row-count forced-edge queries pass in the first round. Every machine configuration at T=1 extends to a complete assignment obeying other machines initial row-min count caps. The conjunction contract has supremum gap 2 on positive-OPT inputs; it does not include conditional LST/configuration LP. | [自足正文](C674)、[冻结审查](C675)；主目标OPEN，外审/新颖性未认证。 |
+674: 
+675: ## 直接联合舍入的受限类正面衔接
+676: 
+677: | ID | 精确范围与结论 | 正文与状态 |
+678: | --- | --- | --- |
+679: | UM-ROW-SPREAD-TWO-ROUND-v1 | ∀合法非负有理UM输入，删除有零端任务后，若每个非空机器行的有限正时间均在某[γ_i,2γ_i]内（各γ_i>0可不同），则存在确定性位多项式算法输出全部原任务合法调度，C_max≤3OPT/2；含空任务/OPT0。 | [完整构造](C682)、[独立审查](C683)；已知机制直接推论，非一般目标突破，新颖性未认证。 |
+680: 
+681: ## 稀疏深树的独立条件配置边界
+682: 
+683: | ID | Exact Statement及范围 | 正文与审查 |
+684: | --- | --- | --- |
+685: | UM-SPARSE-CONDITIONED-CONFIG-GAP-v1 | 每k≥3的显式三选族OPT=2−1/k，T=1+1/k下每条有限边各有强制为1的完整配置点；独立单边配置删边/基数LST均零删除，sup相对证书阈值间隙2。不同查询不需共同基点或交叠一致性，不含星消元预处理。 | [自足稿](C687)、[独立审查](C688)；不排主目标。 |
+686: 
+687: | ID | 精确范围与结论 | 正文与状态 |
+688: | --- | --- | --- |
+689: | UM-COMPACT-MULTIROW-EXTENSION-v1 | For each k>=2 compact family, every U with card(U intersect V)<=N-2k, every v in U and every T=1 configuration C of v has an explicit complete assignment with v exactly C, true load<=1 on all U, and initial row-min count caps on every machine. This universal center budget is sharp: some U with N-2k+1 centers plus z and pin z=empty has no such assignment. Different queries share no joint witness; no general solver is claimed. | [正文§6](C674)、[追加冻结攻击](C675)；主目标OPEN，外审/新颖性未认证。 |
+690: 
+691: 
+692: 
+693: ## 完整单机配置的独立全LP延伸
+694: 
+695: | ID | 精确范围与结论 | 正文与状态 |
+696: | --- | --- | --- |
+697: | UM-MACHINE-CONFIG-PROBE-GAP-v1 | ∀k≥2，既有紧凑族在T1对每机器每个合法C分别有y_iC=1完整配置LP点，OPT=2−1/k，故该合同sup gap2。∀i∀C∃各自y，不含共同base/条件混合恒等式；(MP)非整数可行必要条件，安全规则仅删失败配置，本族无首次删除。 | [正文§7](C674)、[独立审查](C696)；全部分类/位长/来源见正文与专题CLAIMS，双路有限证据不代一般证明；外审/新颖性未认证，主目标OPEN。 |
+698: 
+699: ## 真实最优凸包与固定槽输出空间
+700: 
+701: | ID | 精确范围与结论 | 正文与状态 |
+702: | --- | --- | --- |
+703: | UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1 | ∀m≥2，m台identical机器/n=m²正有理任务有OPT1及m个显式最优调度均匀边际x=1/m；任意逐机ties的固定有序槽图，每个覆盖匹配值均为2m/(m+1)→2。修复另见下项。 | [自足正文](C700)、[冻结独立审查](C701)；不排换x/换槽/repair或主目标，不声称新颖性。 |
+704: | UM-OPTIMAL-CONVEX-SLOT-REPAIR-v1 | 对固定槽反例族的任意覆盖matching调度，恰m−1任务跨槽迁移即可达到OPT1，且该Hamming修改数最优；扫描与重分配为O(n+m)组合操作。 | 同正文§4及增补审查；只针对显式族，不是一般repair算法。 |
+705: 
+706: ## 不相关并行机：循环批量修复与分流合流
+707: 
+708: | ID | 精确范围与结论 | 正文与限制 |
+709: | --- | --- | --- |
+710: | UM-ROBUST-CYCLIC-BATCH-OPT-v1 | For every fixed rational eta in (0,1), all legal P,T>0 and pruned actual schedules sigma with Cmax<=2T admit deterministic bit-polynomial coordinatewise nonincreasing optimization to a state with no machine-simple arbitrary-bundle cycle reducing every participating load by eta*T. At most floor(4m/eta) successful rounds. Variable-eta complexity is polynomial in 1/eta, not log(1/eta). | [自足正文](C708)；[冻结审查](C709)；主目标OPEN、新颖性未认证。 |

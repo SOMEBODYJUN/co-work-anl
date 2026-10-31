@@ -1,0 +1,7 @@
+# 已发表对象的比较
+
+已全文核当前rankwise三合同审查与R-only residual投影，五份rankwise正文逐字节核同已交付原件。固定actual等分Gamma_A上的R-only自适应方案必须保owner总取消下界，方可继承SOURCE-NET；rankwise随机赢家unit source/token图不凭均值继承此预算，winner收入不代原IC固定u。
+
+裸Hall价格rank/greedy与指定逐客户delta残余rank已在现行固定价格对象保存。未来adaptive cut若是同一对象，须保推导身份/适应world接口，不能重新认领静态rank或普遍费用。
+
+本批已在claim pushed确认1ebbee727a90cfda0aa0c66fbf6f19090a96d682后重新全文读五主源、核SHA并完整处理。此页保现行比较身份；四份自足新对象、五receipt及原件另存，旁读报告/审查不替其source done。

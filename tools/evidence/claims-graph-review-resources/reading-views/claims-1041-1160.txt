@@ -1,0 +1,121 @@
+CLAIMS full lines 1041..1160; Cn=exact path in previously fully read catalog; all link labels, math and unmatched paths retained.
+1041: | UM-DUAL-RAIL-FULLCUBE-EXACT-FAILURE-v1 | 归一化scalar的特殊族：A≥1,d=2A−1,k=2^(d−1)，含全部2^d符号clauses。R_B=Σ_s(s−B)_+ binom(d,s)、r_B=ceil(R_B/d)。真实OPT=min_{B=A..d}max(B/A,1+r_B/k)，可按显式展开P位poly构造。A≥2源弱阈值d−1仍NO，而OPT≤1+1/(2sqrt(d))+1/k→1。A3真实OPT9/8。 | [正文](C1015)、[审查](C1016)；仅声明范围。 |
+1042: 
+1043: ## 单位读出配额森林与全深度半密度障碍
+1044: 
+1045: | ID | 精确结果 | 范围 |
+1046: | --- | --- | --- |
+1047: | UM-UNIT-READOUT-PRUNED-FOREST-IDENTITY-v1 | 每变量两私有满k叉深h树；selector两根时间1、内部edge父1/k子1、leaf父1/k或本clause任一unit slot时间1。原资格恰此、slots跨clause互异无pins。对每有理1≤C<2，r=ceil(k(2−C))，真实C可行当且仅当每变量恰选一sign的深h恰r分叉森林可注入slots；给任方向见证可显式输入总位poly转另一方向。 | [正文](C1036)、[审查](C1037) |
+1048: | UM-UNIT-READOUT-HALF-DENSITY-THREE-HALVES-v1 | 同一模型另有每clause arity d_c≤2A_c。任意树深和任意wiring均可确定性总位poly输出全部原jobs实际C≤1+floor(k/2)/k≤3/2，所有外unit≤1。k1非空OPT1；k2h1复用14机15job split例真实OPT3/2，使整类绝对T1界锐，不声称近似比锐。 | [正文](C1036)、[审查](C1037) |
+1049: | UM-PRUNED-TREE-LEAF-HITTING-v1 | 完整k叉深h树、1≤r≤k，q=k−r+1。命中每个rooted深h恰r分叉子树的最小叶集恰q^h；不含任何该子树的叶子集最大恰k^h−q^h，所有参数锐。显式树双色DP可构造蓝r子树或红q子树；真实叶少于q^h时补集有纯dummy r子树，实际逃逸仍需外部共同容量。 | [正文](C1036)、[审查](C1037) |
+1050: 
+1051: ## 校准计数槽与固定密度的定量边界
+1052: 
+1053: | ID | 精确结果 | 范围 |
+1054: | --- | --- | --- |
+1055: | UM-UNIT-READOUT-CALIBRATED-SLOT-v1 | 同私有k叉双树unit读出模型，给1≤r≤k、有理edge/leaf下传t∈[0,1]、selector两根质量合1；每internal Σout t≥r−1+incoming且每clause Σleaf t≤A。可按P加见证总位长poly输出全σ，内部≤2−r/k、unit≤1。uniform x0=1/2,x_l=(r−1+xprev)/k使行取等，若d_c x_h≤A_c则所有wiring均可构造。 | [正文](C1045)、[审查](C1046) |
+1056: | UM-UNIT-READOUT-BOUNDED-DENSITY-SUBTWO-v1 | 对每个固定有理D≥2，同unit读出模型中若全部d_c≤D A_c，存在deterministic总位poly完整σ使C≤(2−1/(4D))OPT，允许k,h无界。大k校准r=1+floor((k−1)/(2D))；小k用r1容量匹配，失败证OPT2并全parent达到。空变量OPT0。 | [正文](C1045)、[审查](C1046) |
+1057: 
+1058: ## 重轻任务机器价格的精确凸化与共同面恢复
+1059: 
+1060: | ID | 精确结果 | 证据与限制 |
+1061: | --- | --- | --- |
+1062: | UM-HEAVY-LIGHT-PRICE-CONVEXIFICATION-v1 | ∀T>0、β∈[1/2,1)，剪枝p≤T后全部机器价格测试等价LST容量+每机big分数基数≤1；固定价格整数费用流可求，joint Γ/T的sup恰2。未剪枝固定m的sup恰m。精确dual最优价下若最优流big部分全相同，可核验并恢复Γ=τ；τ≤T时实际输出≤τ+βT。 | [正文](C1053)、[审查](C1054)；已知gap直接推论，非一般算法/困难性；面失败不可靠拒绝T。 |
+1063: 
+1064: ## 固定残余容量结构与严格次二占位的准确表示
+1065: 
+1066: | ID | 精确结果 | 范围 |
+1067: | --- | --- | --- |
+1068: | UM-RESIDUAL-THROUGHPUT-LATTICE-v1 | 对固定有限 M,R,E 与非负有理处理时间 p，容量函数 F 在数学上对 c,d∈R_+^M 满足格次模与单调性；当 c,d 为带输入位长的有理向量时，F 可由有理 LP 在输入总位长多项式时间精确求值。固定占位扣减给 F(I) 非增次模、D(I) 超模；角色随 H 变时不继承，2×2 真实 OPT=1/2 反例给 V=2,1,1,2。 | [正文](C1057)、[审查](C1058)；不提供一般 joint 恢复。 |
+1069: | UM-OCCUPATION-INDUCED-EDGE-DEFICIT-v1 | ∀固定有理1≤α<2、固定有理δ>0、任意显式非空simple图，poly(|G|)构造OPT=1、同尺寸≤δ tiny与任机unit宏，全部α可行图机占位投影恰IS(G)，且D(I)=|E(G[I])|。 | [正文](C1057)、[审查](C1058)；非uniform bit(α,δ)构造、非UM困难性，原调度可直接最优解。 |
+1070: 
+1071: 
+1072: ## UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1：两状态残余树的 two-rail quota orientation 表示
+1073: 
+1074: | ID | Exact Statement | 范围、状态与入口 |
+1075: | --- | --- | --- |
+1076: | UM-TWO-STATE-QUOTA-ORIENTATION-EQUIV-v1 | 对满足状态内资源不交的两状态残余DAG和固定 \(\delta\in(0,1]\)，存在根树 \(b(H)\ge\delta\) 当且仅当存在至少 \(\lceil\delta q_r\rceil\) 个变量的rail选择，并为每个选中标签注入 \(\lceil\delta K\rceil\) 个互不重复资源。 | \(\delta=1\) 且全资源支付时退化为2-SAT禁冲突；\(\delta<1\) 是允许部分资源支付的quota packing。该等价不提供一般近二困难性。 [正文](C1063)。 |
+1077: | UM-TWO-STATE-QUOTA-HALL-CUT-v1 | 固定变量子集、rail方向和整数标签需求 \(t_\ell\) 后，资源支付存在当且仅当所有标签子集 \(U\) 满足 \(\sum_{\ell\in U}t_\ell\le|\bigcup_{\ell\in U}R(\ell)|\)；资源度至多二时邻域恰分解为私有、内部共享和边界共享资源，并给出显式 Hall 缺口。 | 固定方向可由整数最大流输出实际支付或由一个 Hall 子集核验失败；全输入桥仍缺同时选择方向/变量子集及对所有方向的 sound FAIL，不能把单方向缺口升级为一般困难性。 [正文](C1097)；有限审计 279,936 个固定方向实例，见 `tests/audits/unrelated_machines/two_state_quota_hall.py` 与 `evidence/runs/unrelated_machines/two_state_quota_hall_audit.json`。 |
+1078: 
+1079: ## UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1：任意密度完整单位树的固定高度次二近似
+1080: 
+1081: | ID | Exact scope / conclusion | Proof and state |
+1082: | --- | --- | --- |
+1083: | UM-UNIT-READOUT-FIXED-HEIGHT-APPROX-v1 | 任意clause密度的私有双k叉深h单位读出完整模型，可确定性按显式输入总位长poly输出全部原jobs的合法σ，C≤(1+2^(−1/h))OPT；h≤固定H时统一严格小于2，h1给3/2。算法不求未知OPT；b0分支证明OPT2并全parent达到；空变量先返0。 | [正文](C1064)、[实际审查](C1065)；限定完成，内审/实现通过，外审与新颖性未认证 |
+1084: 
+1085: ## UM-UNIT-READOUT-SELECTOR-MIXING-v1：完整YES支持的指定selector重组锐界
+1086: 
+1087: | ID | Exact scope / conclusion | Proof and state |
+1088: | --- | --- | --- |
+1089: | UM-UNIT-READOUT-SELECTOR-MIXING-v1 | 同一P给p≥1份完整实际C≤1调度，每变量指定一个至少在一见证采用过的selector sign；非空另需N=k^h≥p。可按P加全部见证位长poly输出满足全部指定根的完整σ，C≤2−1/(2p−1)。大k取r=floor(k/p)，小k取r1；p1直接原YES。对每p该指定profile保证精确锐，而原全局OPT1。 | [正文](C1064)、[实际审查](C1065)；限定完成，内审/实现通过，外审与新颖性未认证 |
+1090: 
+1091: ## 槽包络与共同矩配置的精确接口
+1092: 
+1093: | ID | 精确结果 | 范围与入口 |
+1094: | --- | --- | --- |
+1095: | UM-ST-ENVELOPE-CONFIG-IDENTITY-v1 | 任意非负有理行的E=ΣΔp ceil(prefix x)；固定B子水平凸包恰配置多面体、至多d+1有理原子。全局min max E=OPT，可ST实际恢复；先固定B逐行凸化恰CONFIG，先凸化上图仅线性负载。 | [正文](C1072)、[审查](C1073)；精确表示不等于可求非凸选择；CONFIG的二倍gap为既有结论复用；未给主目标近似算法。 |
+1096: | UM-WEAK-H2-CONFIG-MOMENT-GAP-v1 | 弱H2=C2-load(T)+共享一阶x的完整CONFIG(T)，一般正值sup OPT/T=2。k≥3,b=k²稀释资源星在T=1+(k−1)/(k²+1)有显式有理全局PSD/全localizer与同x CONFIG1，真实OPT=2−1/k。 | [正文](C1076)、[审查](C1077)；不共享行二阶且三阶仍可负；不含强二阶H2、完整SoS(CONFIG)或一般计算困难性；本族可直接最优解。 |
+1097: | UM-STRONG-H2-ROW-PAIR-STAR-EXACT-v1 | 若容量一行CONFIG同机pair与全局M2共享，则任意端f有Σ_row y_fe≤x_f；在同一k≥3,b=k²无z星族，共享每行二阶CONFIG的强H2阈值恰2−1/k=OPT，所有T<OPT均不可行，真实Dirac达到。 | [正文](C1076)、[审查](C1077)；仅此族的强合同精确校准，不含一般强H2间隙改善或求解复杂度；该条件容量证明不需要负载localizer。 |
+1098: 
+1099: 
+1100: | UM-CROSS-LAYER-CORE-PRIVATE-NEAR-TWO-v1 | 核心—私有资源四层需求DAG：K>s≥1、q≥ceil((K−s)K/s)。全层配额值 b*=s/K，桥梁矩阵真实 OPT=2−s/K；私有 padding 可把任意基系统的全部中间层 matching soundness 平移到实际不可拆调度。 | [正文](C1080)、[独立审查](C1083)、[Fraction审计](C1086)；限定接口障碍，不是一般近二困难性，UM-TARGET-v1仍OPEN。 |
+1101: | UM-INDEPENDENT-SET-BIG-RESIDUAL-INTERFACE-v1 | 最大度图上的全图 unit 宏任务、私有 tiny 与边 tiny：rh=α−1、Δh≤1、α<2 时，存在 Cmax≤α 当且仅当存在大小k独立集；NO下界为 min{2,α+h}。 | [候选正文](C1081)、[独立审查](C1084)、[1080实例Fraction审计](C1090)；只限制先选big再残余流接口，不是UM-TARGET-v1反面。 |
+1102: | UM-FIXED-WORK-CONVEX-LOCAL-MINIMUM-v1 | m≥3完全相同机器上的两件unit与m²−1件1/m tiny：总工作量固定，初始Cmax=2、OPT=1+2/m，二次势和排序势均为严格单任务局部极小，达到2−ε需迁移至少2+ceil(εm)件任务。 | [正文](C1082)、[独立审查](C1085)、[Fraction审计](C1088)；只关闭单任务严格下降和最终总支持界；固定批量多轮外推已撤回，见正文末节三件启动反驳。 |
+1103: 
+1104: ## 私有单位树的配置阈值与严格单位间隙
+1105: 
+1106: | ID | 精确结论与范围 | 正文/审查 |
+1107: | --- | --- | --- |
+1108: | UM-UNIT-READOUT-CONFIG-POSITIVE-PART-v1 | 对完整私有单位双树，T∈[1,2)、s=floor k(T−1)，CONFIG可行恰为共同边际满足Σ(q−t)+≤sq和clause容量；显式有理分解、多项式LP及精确阈值网格。 | [正文](C1101)、[审查](C1102)；一般LP未集成，外审/新颖性未认证。 |
+1109: | UM-UNIT-READOUT-STRICT-UNIT-GAP-v1 | CONFIG1等价整轨literal LP；可行时多数轨active-only槽输出全部原jobs C≤5/3，偶k≤3/2，k1≤1；为(1,5/3) promise gap，不是任意OPT比例。 | [正文](C1101)、[审查](C1102)；一般LP未集成，外审/新颖性未认证。 |
+1110: | UM-UNIT-READOUT-CLOSED-TREES-EXACT-CONFIG-v1 | 每末父k叶共一私有unit的闭合两树，OPT=2−1/k，Tconf=1+s*/k，s*=min{s:(k−s)^h≤2k^(h−1)}；经典gap高度下精确1+1/k。 | [正文](C1101)、[审查](C1102)；一般LP未集成，外审/新颖性未认证。 |
+1111: 
+1112: ## 剪枝首步容量与固定批量临时峰值
+1113: 
+1114: | ID | 精确结果 | 范围与入口 |
+1115: | --- | --- | --- |
+1116: | UM-PRUNED-FIRST-MOVE-BOUND-v1 | 对任意合法P、有理T≥0与T≤C≤2T、使用p≤T端且Cmaxσ≤C的实际σ，若存在不同τ且Cmaxτ≤T，则某一件直接σ→τ迁移后的最大负载≤U=max(2T,C+T/2)。不给τ时可位多项式返回DONE、此类MOVE或可靠NO_T_SCHEDULE⇒OPT>T；MOVE不保证改善。 | [正文](C1107)、[冻结审查](C1108)、[实际证据](C1112)；首步不推出全程或统一ε。 |
+1117: | UM-BOUNDED-BATCH-TRANSIENT-PEAK-SHARP-v1 | 对每k≥1、每有理T>0及T≤C≤2T，显式m=k+1环族全部有限边≤T、每任务≤2端、OPT=T、初值C；任意非空≤k件同步变化新值≥U=max(2T,C+T/2)，到指定不同最优τ的最小路径峰恰U（单件路径达到）。孤立图范围C≤B<U；C=T不排零步到OPT集合。 | [正文](C1107)、[冻结审查](C1108)、[实际证据](C1112)；首步不推出全程或统一ε。 |
+1118: 
+1119: | UM-FULL-DEGREE-MOMENT-DECODING-v1 | 次数至多 `2n+1` 的 Boolean/one-hot 共同泛函、次数 `n` 平方正性与逐机次数 `n` 负载 localizer 若同时给定，则必存在真实 `T`-可行整数调度；原子权重由 `m_σ` 提取，但证书/原子族可指数大。 | [全阶矩整数提取桥](C1115)、[独立核对](C1118)、[Fraction审计](C1121)；精确充分桥，不是多项式算法。 |
+1120: | UM-HEAVY-LIGHT-SADDLE-CERTIFICATE-v1 | 固定重边/轻边角色下，若某 heavy placement `H` 的残余 LP 最优对偶 `λ*` 同时使 `H` 最小化 `g(·,λ*)`，则 `H` 全局最小化残余 makespan；`R(H)≤T` 时 ST 给 `(1+β)T` 实际调度。参数化两机 YES 族证明纯自洽 placement 甚至可能不存在。 | [重轻自洽对偶证书](C1116)、[独立攻击](C1119)、[Fraction审计](C1121)；只给条件证书和固定点边界。 |
+1121: | UM-INCIDENCE-FEEDBACK-EXACT-v1 | 对有限机器—任务关联图环秩 `b=|E|-|V|+c`，给定 `T` 可由反馈边子集枚举加森林叶消元在 `2^b·poly(L)` 位时间内精确判定并输出实际调度；`b≤1` 时为任意任务支持度的位多项式精确子类。 | [反馈边参数精确阈值](C1117)、[独立审查](C1120)、[Fraction审计](C1122)；方法级正面子类，不解决一般统一 epsilon。 |
+1122: | UM-SUBLINEAR-CC-PROJECTION-GAP-v1 | 对任意 `r(s)=o(s)`（`s` 为机器数），存在每任务恰两端、机器图简单且围长 `>r(M)` 的长链实例，使 `OPT/T_CC_{r(M)}>2-epsilon`；这是固定 `r` 高围长构造的对角量词加强，大小参数不是总编码位长。 | [子线性联合投影间隙](C1124)、[Fraction/计数审计](C1126)；直接推论，非一般困难性。 |
+1123: | UM-HEAVY-LIGHT-FOREST-INTEGRALITY-BARRIER-v1 | `T=1` 的参数族（中心 light 任务成本 `beta`、每机私有任务成本 `1-beta/m`）有纯自洽重轻 saddle、残余分数值 `R(H)=T`，但 `OPT=1+beta-beta/m→2`; `T=3,beta=2/3` 是最小审计特例。森林残余 LP 不能替代整数容量补全。 | [森林残余整数边界](C1125)、[Fraction审计](C1127)；方法边界，非一般 hardness。 |
+1124: 
+1125: ## UM-PDM-THRESHOLD-EXACT-v1：pDM 的整数阈值调度桥梁
+1126: 
+1127: | ID | Exact Statement | 范围、状态与入口 |
+1128: | --- | --- | --- |
+1129: | UM-PDM-THRESHOLD-EXACT-v1 | 对固定 d≥3、b>d 且 gcd(b,d)=1 的 d-dimensional matching，构造受限整数 R∥Cmax：incident 顶点任务耗时 b，dummy 任务耗时 d。源有完美匹配当且仅当调度可达阈值 bd；无完美匹配时整数 OPT≥bd+1。 | 条件性阈值内核；完整合法源域待补，NO≥bd+1只是下界。合法编译由已有槽定理给(1,1+1/d) promise过程，不能从加一独自推断gap上界。 [合入异议](C1135)。 [正文](C1123)。 |
+1130: 
+1131: 
+1132: | UM-ROW-UNIFORM-CORRELATED-GUARD-HALF-RETENTION-v2 | 简单二部关联、各复合请求行均匀到right degree个单位资源时，任意跨测试共享标签仍可确定性位poly共同选择标签并为每左点保留ceil(d/2)条真实请求。 | [精确正文](C1130)、[陈述先行攻击](C1131)、[实际构造器](C1132)；不是一般UM结论。 |
+1133: | UM-ROW-UNIFORM-FLAT-STATE-THREE-HALVES-v1 | 上述表的显式flat-state原编译中，每状态parent及全部ports、unit selector有完整sigma，Cmax≤3/2；非空OPT≥1、空任务OPT0，故该子类三二近似。 | [全部机器负载证明](C1130)、[有限证据](C1133)；输入结构显式给出，不声称一般P识别或比值锐利。 |
+1134: 
+1135: | UM-PRIVATE-TREE-Q-VALUATION-v1 | 显式k,h≥1同深单射树；多state、signed有理价格 | 显式多state单射树的f=max q为次可加，任意有理signed价格可精确位poly输出真实demand集合与子树。 | [正文](C1136)、陈述先行内审与有限精确实现；外审/新颖性未认证。 |
+1136: | UM-TREE-Q-XOS-ENVELOPE-v1 | 显式k,h≥1同深单射树；single-state、非负minorant | 单state E_q(L)=k^h/[k^h−(k−1)^h]；损失G在min(k,h)的1/2至1倍，叶预算B的最大损失阶logB/loglogB。 | [正文](C1136)、陈述先行内审与有限精确实现；外审/新颖性未认证。 |
+1137: | UM-TREE-Q-MINORANT-LP-v1 | 显式k,h≥1同深单射树；single-state、非负minorant | 补集最小blocking树给精确强分离；O(k|V|)紧凑LP投影恰为A(q)，指定集合可标准有理LP精确求E。 | [正文](C1136)、陈述先行内审与有限精确实现；外审/新颖性未认证。 |
+1138: 
+1139: | UM-PRIVATE-TREE-GLOBAL-XOS-LOSS-v1 | 显式k,h≥1私有state树、任意S、全域minorant | 对每个S构造全域有效w≤f，w(S)≥f(S)/G(k,h)，G=k[1−(1−1/k)^h]逐参数锐；不需精确minorant分离。 | [正文](C1136)、陈述先行内部审查；无新实现、外审与新颖性未认证。 |
+1140: | UM-MULTISTATE-Q-MINORANT-GRAPH-HARDNESS-v1 | k2h1显式无孤立图、uniform正权W<2 | k2h1图边states，即使uniform正权且总重<2，nonminorant NP完全、membership coNP完全；但E_f(S)=f(S)及value/demand均易解。 | [正文](C1136)、陈述先行内部审查；无新实现、外审与新颖性未认证。 |
+1141: 
+1142: | UM-TREE-Q-ONE-THRESHOLD-MINORANT-v1 | single-state显式k,h≥1满树、非负权重、全部叶子集 | q=单位色类划分数；单blocking阈值及O(V)非零扩展LP精确刻画A(q) | [正文](C1136)、陈述先行与读后独立攻击；无新实现，外审/新颖性未认证。 |
+1143: 
+1144: | UM-COTRANSVERSAL-UNIFORM-CONFIG-SHARP-GAP-v1 | D≥3,m=D+1显式余横截状态族 | 显式D≥3,m=D+1族，每C独立M且uniform边际属于P(M)，但最优min保留1/D；普通UM有Tconf1、真OPT2−1/D。 | [正文](C1141)、内部陈述先行/读后审查；有限证书实现。 |
+1145: | UM-UNIFORM-PORT-PARKING-PAPER-APPROX-v1 | 共同D≥1平层ports+任意外部unit aux，固定η | 统一D、固定外资源ports、任意mandatory unit aux且parents/external分离时，由BLMRS Thm4得实际2−1/(4+η)近似；Baux≥2或U空分支精确。 | [正文](C1141)、内部陈述先行/读后审查；published算法未集成。 |
+1146: 
+1147: | UM-NEAR-UNIT-PCSP-EXACT-MINION-v1 | 固定k≥2,r∈[1,k−1]；一般Boolean约束无次数/类型承诺 | 固定k≥2、1≤r≤k−1时，Pol恰为非空单调相交winning族且全部minwinner大小≤k−r；同一minwinner双侧fixing，不保证bounded essential arity。 | [正文](C1145)、陈述先行/读后独立审查；physical compiler OPEN。 |
+1148: | UM-NEAR-UNIT-PCSP-UNRESTRICTED-HARDNESS-v1 | 固定k≥2,r∈[1,k−1]；一般Boolean约束无次数/类型承诺 | 对每个固定k,r，A_k→B_k,r加exact AMO2/ONE的unrestricted PCSP NP-hard；没有保持physical two-occurrence/端口类型的归约。 | [正文](C1145)、陈述先行/读后独立审查；physical compiler OPEN。 |
+1149: 
+1150: | UM-MULTISMALL-INCIDENCE-FLOW-APPROX-v1 | {1,1/k}、k≥2；B为unit-only最小计数瓶颈，F为其余仅small最小瓶颈，rho_i=sum1/d_j。 全部P可实际输出C≤B+F/k≤B+maxceilrho/k；small行≤k且每非unit-only job至少D≥2个small端时为unknownOPT 1+ceil(k/D)/k≤5/3；d_j≥k时strict1+1/k iff unit-only可单匹配。 | [正文](C1145)、陈述先行及读后审查；implementation=none，主目标OPEN。 |
+1151: | UM-TERNARY-UNIT-SELECTOR-NORMAL-FORM-v1 | 任意合法P，给正有理b且每有限p≤b；允许zero/empty/单端，普通完整sigma。 二叉私有单位树使每newjob为一q<b端加unit端或unit-only至多3端；forward≤max(b,C)，任意newC<2b反投影逐原机不增；非空OPTnew=min(2b,max(b,OPTold))，两值small关联数保留。 | [正文](C1145)、陈述先行及读后审查；implementation=implemented，主目标OPEN。 |
+1152: | UM-TARGET-TERNARY-SELECTOR-EQUIVALENCE-v1 | 一般UM全输入含OPT0；正规类随输入给定共同b>0，全部SU端q<b或unit-only arity≤3。 UM-TARGET成立 iff 正规类有某统一确定性位poly actual次二算法；反向先zero处理，再L=max minp,U=sum minp≤nL的常数有理比率尺度，实际C<2b才投影，余量仍固定正。 | [正文](C1145)、陈述先行及读后审查；implementation=none，主目标OPEN。 |
+1153: | UM-TWO-MEASUREMENT-UNIT-PRESENCE-SHARP-GLUING-v1 | 任意{1,1/k}原P，k≥2，给两完整actualσ≤1+1/k；两不同原机presence00/11，资格arity/行关联数不限。 任意两mixed真实sigma可位poly构造C≤B(k)=1+ceil((k+2)/2)/k；四机2k+6job族两mixed真OPT=B(k)。k2/3 B2，k≥4≤9/5，B≤3T/2。 | [正文](C1150)、陈述先行及读后审查；implementation=none，主目标OPEN。 |
+1154: | UM-TWO-MEASUREMENT-TINY-PRESENCE-GLUING-v1 | 有限p属于{1}∪[0,a]，给有理0≤a<1、两完整actualσ≤T1+a、两测量00/11；无arity/行数/time-consistency限制。 任意两mixed actualσ可确定性总位poly构造≤3T/2；unit匹配+两选择加权半整化。a<1/3绝对<2；odd reciprocal a→0族恰3T/2，a1/3可恰2；不是每单独a逐参数锐。 | [正文](C1150)、陈述先行及读后审查；implementation=none，主目标OPEN。 |
+1155: 
+1156: | UM-LIST-AGREEMENT-DEGREE-BUDGET-v1 | 显式simple (d,D)-biregular projection图，B非空、d≥1、D≥2、逐right公共像非空；binary L≥1，lists大小≤L。 确定性actual lists agr≥L(D−1)/(2d+L(D−1))；L≥ceil2d/D可整数流全agree，且此通用整数阈值在每固定图上有多项式地图锐例；低soundness须d/L≥(D−1)(1−alpha)/(2alpha)。 | [正文](C1158)及实际独立审查；源预算非UM hardness，implementation=none。 |
+1157: 
+1158: | UM-PARTIAL-MINREP-SPARSIFICATION-BRIDGE-v2 | 显式平衡D-regular全投影游戏，平行约束逐条计；binary g≥2、0<rho≤1，N≥2，Q≥2；cost为全部顶点列表总大小。 给定val≤rho³/(10^9g^8)，随机位poly删边使最大度Δ=1000ceil(1000gλ/(rho floorlog2g))；好NO非空且全部cost≤gN列表cover<rho，概率≥0.9；perfect YES每seed保留。固定参数PCP下Q=poly_rho(g)、Δ=O_rho(g)，同覆盖禁令必需Δmax>(2g−1)/rho。 | [正文](C1162)及实际独立审查；源和固定费用条件，非UM hardness；implementation=none。 |
+1159: 
+1160: | UM-Q-COORDINATE-SLICE-PARTIAL-MINREP-COUNTEREXAMPLE-v4 | simple平衡Dregular全投影源、D≥3、共同Q≥2；明确坐标slice叶/完整树port矩阵；显式展开。padding和随机双射族各按正文附加参数。 strictP≤1 iff fullLC；linear-degree cheap-list NO显式家却OPT=1+1/D；proper-color private-output padding保NO仍低C；随机conditioned-bijection族至少1/2概率同NO，每seed Tconfig1/实际C≤1+1/D，好NO整数OPT精确。 | [正文](C1167)与分版本实际审查；有限I/J检查不验证NO/OPT；audit_only，非一般UM结论。 |
