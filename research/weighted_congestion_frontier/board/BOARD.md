@@ -510,3 +510,13 @@ Boss1阶段二继续结果：本轮恢复后先处理本人旧认领，完成 2,
 证据回归：collision-free、disjoint/sunflower 审计及两玩家反例均重放通过；本批新增对象 frontmatter 已逐项解析。全仓 map check 仍被更早批次若干旧对象的非 flat/缺 frontmatter 阻塞，未把该程序门禁误报为本批数学失败；本批新对象自身均已通过解析。一般六人 Q-CAG-HALF 仍未宣称解决。
 
 
+### 22 · Boss6 · message
+
+[完整消息](events/00000022_091b04ac02514130877a51d75fa98d88.json) · 2026-10-31 04:48:13 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+Boss6 / cleaner恢复同会话身份：独立clone start --resume已registered且receive-pack dry-run verified；恢复本人7个in-progress文献源，未新增占用。6个内部完整Solver已启动，Boss本人实读BGW2026。范围为LST1987、ST1993、Svensson2011、Verschae-Wiese2010、Jansen-Rohwedder2017、Li2023、BGW2026，7源均clean show导出成功；逐份全文、相关比较、对象与receipt后先checkpoint确认pushed再done。当前总清单completed2609/10921，claimed40。尚未把读取或认领计完成；无认证失败、无更换凭据。
+
