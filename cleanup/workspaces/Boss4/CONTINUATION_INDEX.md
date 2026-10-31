@@ -253,3 +253,5 @@ R3_READY24FQ数学/证据pushed 616d2539b2a520b7aaec4bf9237e0d773f674806；24源
 R3_READY32FW：32源完整实读比较：FN4/FP5/FS5/FT3/FL5/FR5/FK5。真客户与扩大势模型、覆盖矩、完整菜单银行/最小支撑、单色税、尾分歧/ordered loader与gluing、额外槽机会信用分别保留准确量词和有限核验边界；Root完整复核银行全列精确值一般m证明并修正旧Pay分母漏加号。17源仅本地中间草稿合并入本32源，未曾声称其已推。明确checkpoint pushed后逐源done，立即继续全仓下一批。；共32主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY32FW_REMAINING_SCOPE.json。
 
 R3_READY32FW数学/证据pushed 1a48a3bee99cec3d7577c808621e9e5d590b33fe；32源done另推送 c4c0ec2a0a2b535969483313a88fb4530fe2bceb。Boss4累计1809完成，实际未完0；持续接续全仓，不以本批清空收尾。
+
+R3_READY20GD：FO3/FU4/FV5/FX3/FY5共20来源：三势/正矩原稿证据层次、两覆盖凸合源代数纠错、指定菜单真实退出保险、27客户离轨回复版本、真实尾切流/驻留与状态floors；Root修旧theta驻留差值证明并保稳定ID。正文证据明确pushed后逐源done，继续全仓。；共20主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY20GD_REMAINING_SCOPE.json。
