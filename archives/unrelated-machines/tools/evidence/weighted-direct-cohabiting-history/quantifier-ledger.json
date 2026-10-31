@@ -1,0 +1,53 @@
+{
+  "mathematical_runs_this_batch": 0,
+  "claim_id": "UM-WEIGHTED-DIRECT-COHABITING-QUERY-RETURN-ALL-FORMULA-FAILURE-v1",
+  "input": {
+    "formula": "every finite CNF with at least two labelled physical occurrences per clause, repetitions allowed; only appeared variables, each padded cycle length at least three",
+    "rho": "binary rational 1/2<rho<1",
+    "real_weights": "arbitrary per-occurrence positive rational x,y with x+y<=1",
+    "dummy": "x=1, no y/u eligibility; q and b remain original jobs; b pin/C both present",
+    "empty": "one idle original machine, zero jobs, OPT0"
+  },
+  "strict": {
+    "quantifiers": "every original actual complete schedule of peak<=1 decodes SAT; every satisfying assignment yields one complete original strict schedule",
+    "author_identity": "E subset R and N-|E|+|R|<=N imply E=R",
+    "independent_identity": "2N q/b jobs saturate 2N at-most-one q/b slots",
+    "general_weighted_nonempty_OPT1_not_asserted": true
+  },
+  "upper": {
+    "quantifiers": "all SAT/UNSAT formulas, every legal occurrence-dependent weight table, ring order, dummy polarity: deterministically output one actual all-original-job schedule of peak<=3/2",
+    "unknown_source_or_strict_witness_input": false,
+    "classification": "baseline exists y<=1/2; active all y>1/2 imply all x<1/2",
+    "author_graph_size_each_side": "2N+h",
+    "independent_graph_size_each_side": "N+L_active+h",
+    "graph_equivalence": "remove/add forced baseline/dummy b_i-C_i pairs; preserve all q",
+    "fractional_certificate": "theta_i=1/k_c active else0; q half/half M with pin subtraction; b pin/C theta/1-theta; active u-C theta",
+    "output": "one common integer matching, map virtual query to same original C with original x, restore all baseline original u",
+    "active_empty_included": true
+  },
+  "counts": {
+    "machines": "2N",
+    "jobs": "2N+m",
+    "finite": "5N+L",
+    "dense": "2N(2N+m)",
+    "minimal_padding": "N<=L+2v; extra explicit padding charged at actual N",
+    "bit_complexity": "explicit graph matching, rational comparisons and sums; no numeric inverse/denominator expansion"
+  },
+  "excluded_extensions": [
+    "zero x or y",
+    "rho=1/2",
+    "unit/empty clauses",
+    "arbitrary new eligibility or external jobs",
+    "old physical D/h/R input as identical matrix",
+    "sharp bound for arbitrary weights",
+    "near2 hardness or general medium impossibility"
+  ],
+  "other_primary": {
+    "id": "fb794955429597b2945d",
+    "canonical": "6074 whole14658B",
+    "formal": "only shared-outside 4–5; four-task standard matching no new research Claim; pool new exact-relation ID",
+    "four_task": "0<epsilon<1; C<2-epsilon exactly2 assignments, equality5; isolatedOPT1",
+    "pool": "all k>=2, positive rational a sum<=1, all S/T and all actual pool maps; patternOPT1 iff nonempty T subset S else2; actual C<2 itself has peak1",
+    "no_free_external_composition": true
+  }
+}
