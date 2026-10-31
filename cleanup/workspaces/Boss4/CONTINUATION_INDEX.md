@@ -383,3 +383,7 @@ R3_READY4KS：四源固定完整策略程序和九条原浮点记录；精确重
 R3_READY4KS数学/证据pushed 6ba1abf99e87e023da99c473eca2f5af2d167b74；4源done另推送 6e6ac02f81552dbb45b3d461b54be8e606996f87。Boss4累计2243完成，实际未完24；持续接续全仓，不以本批清空收尾。
 
 R3_READY10KT：十源正文证据；retention半群/cocycle/真实身份与signed筛选/五reset合同，R105五入口补退款证明并按后续真SPE反驳纠正Mfull历史OPEN；共10主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY10KT_REMAINING_SCOPE.json。
+
+R3_READY10KT数学/证据pushed abfcdb98d05bb5104b1d8593caf9a67caaa17370；10源done另推送 c71e3bd36e1b8d3991c36ac47beedea482ac1d53。Boss4累计2253完成，实际未完19；持续接续全仓，不以本批清空收尾。
+
+R3_READY5KW：五源完整正文；Hamming标签删行、全共享遗漏常值构造、保客户核，根支撑与1269点纯基数交换范围，相关精确JSON原片段只一次未冒全行或SPE核验；共5主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY5KW_REMAINING_SCOPE.json。
