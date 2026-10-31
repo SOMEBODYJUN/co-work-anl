@@ -1,0 +1,121 @@
+[
+  {
+    "source_id": "4a9d84f0b03bbbf6c01a",
+    "name": "test_ten_independent_clones_chat_and_publish_only_their_own_workspaces",
+    "start_line": 25,
+    "end_line": 93,
+    "actual_assertion_scope": "十个独立本地P00–P09 clone；每个给环后继1DM+1公开提及，并发共20不同ID；公开每人仅10消息且无PRIVATE，inbox各2来自前驱；ack后空。再十个并发checkpoint仅本人workspace，保未跟踪本地草稿，远端各note/SHA可重放，只main与board两个远端ref。"
+  },
+  {
+    "source_id": "4a9d84f0b03bbbf6c01a",
+    "name": "test_direct_message_survives_offline_and_lost_push_reply_without_duplication",
+    "start_line": 95,
+    "end_line": 128,
+    "actual_assertion_scope": "retries=1时fetch离线保私聊pending原intent；真实本地push后注入丢响应仍留pending；第三次同ID恢复只一事件并清pending、默认render无私聊文本。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_private_text_absent_from_default_markdown_json_and_thread_exports",
+    "start_line": 24,
+    "end_line": 39,
+    "actual_assertion_scope": "默认Markdown/JSON/thread/limit及派生BOARD.md不含私聊sentinel，公开事件仍可见，raw state不当权限隔离。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_inbox_only_delivers_direct_messages_mentions_and_replies_to_recipient",
+    "start_line": 41,
+    "end_line": 54,
+    "actual_assertion_scope": "inbox只给收件者的DM、提及；普通公开不通知、不送Charlie；双方peer view只相应DM。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_private_reply_cannot_become_public_change_recipient_or_cross_save",
+    "start_line": 56,
+    "end_line": 68,
+    "actual_assertion_scope": "私聊回复不得公开、换收件人、第三方或跨save；反向同双方同save允许。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_public_reply_cannot_cross_save_and_legacy_messages_use_shared",
+    "start_line": 70,
+    "end_line": 76,
+    "actual_assertion_scope": "公开回复不能跨save；无save历史事件按shared，显式shared回复兼容。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_message_id_cannot_be_reused_to_change_route_or_mentions",
+    "start_line": 78,
+    "end_line": 89,
+    "actual_assertion_scope": "同ID改to/save/mentions均Conflict，保持原一事件。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_private_pending_retry_and_discard_check_sender_before_mutation",
+    "start_line": 91,
+    "end_line": 111,
+    "actual_assertion_scope": "离线私聊pending下Charlie retry/discard在变更前拒绝；原Alice可恢复且只一事件。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_unread_queries_do_not_mark_messages_and_ack_is_precise",
+    "start_line": 113,
+    "end_line": 126,
+    "actual_assertion_scope": "unread查询不自动标记，limit1只显示最新；ack精确删被读ID，Charlie非法ack不改Bob游标。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_explicit_empty_view_identifiers_are_rejected_not_treated_as_public_defaults",
+    "start_line": 128,
+    "end_line": 134,
+    "actual_assertion_scope": "显式空actor/save/peer或自己peer都拒绝，不作公开默认值。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_repeated_start_and_workspace_prepare_never_overwrite_drafts",
+    "start_line": 146,
+    "end_line": 158,
+    "actual_assertion_scope": "重复workspace/start保自定义README、未发表草稿、profile字节和暂存状态。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_visit_rejects_traversal_and_local_symlink_without_reading_target",
+    "start_line": 160,
+    "end_line": 173,
+    "actual_assertion_scope": "visit拒actor/路径越界、绝对、反斜杠、冒号、换行及本地symlink，不读fixture私有sentinel。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_visit_fetches_remote_file_without_touching_head_index_or_drafts",
+    "start_line": 175,
+    "end_line": 191,
+    "actual_assertion_scope": "visit取远端已发表peer文本且HEAD/index/status/未暂存草稿字节保持。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_published_identity_collision_requires_explicit_resume",
+    "start_line": 193,
+    "end_line": 208,
+    "actual_assertion_scope": "已发表同号profile的另clone需显式resume，随后instance及既有正文保持，远端只两分支。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_daily_sync_rejects_other_branch_and_detached_head_without_mutation",
+    "start_line": 210,
+    "end_line": 220,
+    "actual_assertion_scope": "错主题分支或detached时sync拒绝且HEAD不变。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_empty_private_recipient_never_falls_back_to_public_send_or_read",
+    "start_line": 222,
+    "end_line": 231,
+    "actual_assertion_scope": "dm/send的空收件者及空dm读取都拒绝，不能把私聊sentinel落公开。"
+  },
+  {
+    "source_id": "086e17d599de8edb10a2",
+    "name": "test_visit_rejects_remote_symlink_leaf_and_explicit_empty_save",
+    "start_line": 233,
+    "end_line": 244,
+    "actual_assertion_scope": "远端symlink叶不当普通file读，显式空save也拒绝。"
+  }
+]

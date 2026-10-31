@@ -1,0 +1,9 @@
+# 实读与全仓比较
+
+唯一capture实际status=pushed/actorBoss4/精确5IDs吻合后才主源读取；claim tip33aa28beeb19e3261758cbd2d78ade21b094b52e，local_sync已同步到较新a5b43b7933d77b2252be47b3a526d1079c9b7a05。此前metadata搜索repo+cache两同名code无文件，未先写未领primary。
+
+11168B主稿全五节（含INSERT、actual DIRECT、E、修正ROLL定义）重新primary读，前批长稿/两JSON只是旁读不代done。4825B shared重构全文作为相关原件，保K_T有限归零基线与REPEAT身份，不额外done。五现行正式对象全文比较并绑定hash：owner单位势、后期端点任意/分数归属、旧E2和Bernoulli税、同SHA rankwise全树输入回归。
+
+本批重新读6992/2717B源与2156/434B报告，真实6437B全部内嵌实例/43动作读核，不读取source_strategy所指旧34客户。各新根原字节入口一次成功，无互import，报告/stdout字节等原件。第一程序只18指定IC/15distinct，无全258或OPT搜索；第二无实例。72818仅Beta，144是组含208个标量信用值，不能按名字扩大范围。
+
+全仓比较保固定配对与平均注入静态核区别、firstowner和后来任意owner区别、actual Y与完整OPT B链区别、形式删槽与删人SPE区别、同叶I与跨叶e+D未付区别。3新对象自足，不把原核重复计发现、外审或一般付款。
