@@ -174,3 +174,7 @@ R3_READY25AR：固定G前缀两版原入口与精确行复核5、cycle/leaf/card
 R3_READY25AR数学/证据pushed bdc02e35f454b77824558d2b234cae04f4889da0；25源done另推送 ce8ed4a3d73bab01495be9f61b6bfcbd3a916122。Boss4累计1323完成，实际未完37；持续接续全仓，不以本批清空收尾。
 
 R3_READY57BC：57源逐源完整整理：Root4检查点/FTA信用/末位cap全历史族；三批CAG/治理程序与21固定策略/五游戏正GB5+5+5；CAG终层首人5、weakDAG5、relay长稿5；UMdraft/pin5、AQ5、AX5、BA5、AV3、AU5。全部保输入/运行副作用/精确有限与一般范围；Root仅凸化一维例纠错，原源/旧progress不改；六Solver持续全仓接续；共57主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY57BC_REMAINING_SCOPE.json。
+
+R3_READY57BC数学/证据pushed cd7b2788aea955d1ca38ebc1b070ae7bc3b6ce89；57源done另推送 6ac7a830af63258104859b8f98a9b90aa3f54e09。Boss4累计1380完成，实际未完35；持续接续全仓，不以本批清空收尾。
+
+R3_READY20BK：Root10七Claim账本/强聚合非空填充/61客户真实比例中继/静态调和交换/多尾末位互斥；CAG一般长稿及最优交换原核5；UM部分配额五程序原PASS与typed-Z缺陷区分5。两旧UM页七数学替换与flat字段补全，有原快照及精确审读；先正文证据pushed后逐源done，六Solver全仓持续接续。；共20主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY20BK_REMAINING_SCOPE.json。

@@ -1,0 +1,7 @@
+# 配额模型及原枚举器范围的最小旧正文勘误
+
+两份旧正式正文、七处精确替换，每份有完整before/proposed及unified patch。manifest逐处列原准确片段、行号、before/proposed SHA和证据。仅供Root实读后按before SHA守卫串行应用；没有修改共享页、冻结source、progress或前批包。
+
+主要证据是原程序完整语义与当前一次新隔离运行、独立typed反例/模型不等价诊断；空根由原token桥标准定义直接算出，不是新实验。gamma条件在原canonical页首及旧正式页第9节已经明示，这里仅将它补回承重第8节和其实际计数，不倒填原错误为真，也不认证robust源的存在。
+
+原PASS、源程序字节和错误历史都保留；解析公式证明没有因软件标签缺陷被宣称反驳。上批errata11和独立convexification单处包均完全未动。

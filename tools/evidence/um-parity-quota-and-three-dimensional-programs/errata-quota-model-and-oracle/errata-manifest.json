@@ -1,0 +1,86 @@
+{
+  "status": "frozen concrete proposals only; no shared targets modified; parent must inspect and apply serially with full before-SHA guard",
+  "targets": [
+    {
+      "target_path": "archives/unrelated-machines/state/审查/k均匀束与单层配额超图双源审查--审查.md",
+      "key": "bundle-and-single",
+      "before_sha256": "c4ff7032b433c6493b5abaf76f4cfa08dbd6b41e70cbef5e5b899d35531385d4",
+      "proposed_sha256": "110ed7308004818ad284eb5d7ab9ae20a2abead07c7ba38192414a606f726429",
+      "replacement_count": 3,
+      "replacements": [
+        {
+          "reason": "empty formula convention is not standard zero-root bridge value",
+          "original_start_line": 39,
+          "exact_before": "当 (q=0) 时按空根分支定义两边为 0。通过既有调度桥梁，对应实际实例的值为 (OPT=2-b^*)。",
+          "exact_after": "q>0 时通过既有调度桥梁，对应实际实例的值为 (OPT=2-b^*)。原公式及程序在 q=0 返回 0 只是空值约定，不能当作标准根树评分或据此推出 OPT=2：标准零需求终端根的截断评分为 1，原 token 桥只剩 unit 根任务时 OPT=1。",
+          "evidence": "8af formula q0 branch; 88372 source convention; 1612 canonical §§1–4 standard terminal-root b1/OPT1"
+        },
+        {
+          "reason": "single-layer root quota q is independent of N=|X|",
+          "original_start_line": 79,
+          "exact_before": "若某接口要求 YES 具有 \\(b^*=1\\)，则必须有 \\(t=K\\) 且 \\(\\nu_K=q\\)：需要 \\(q\\) 个完整 \\(K\\)-元领取。",
+          "exact_after": "若本单邻域接口要求 YES 具有 \\(b^*=1\\)，则必须有 \\(t=K\\) 且 \\(\\nu_K\\ge q\\)：需要至少 \\(q\\) 个完整 \\(K\\)-元领取。这里根需求 q 独立于选择点数；例如 N=2、q=K=1、两个不交 singleton 邻域给 ν_K=2、b*=1。前述根需求恰为选择点数的 bundle 模型才将此条件写成等号。",
+          "evidence": "a68 formula explicit min1; diagnostic free-q boundary N2/q1/K1/nu2/b1"
+        },
+        {
+          "reason": "arbitrary multi-label 3DM is not the one-neighborhood model",
+          "original_start_line": 83,
+          "exact_before": "三维匹配需求树是特例，其一终端逃逸正是低层 \\(t=1\\) 或 \\(t=2\\) 没有被完整匹配 soundness 排除的情形。",
+          "exact_after": "任意多标签三维匹配需求树属于前述可选 bundle 模型 k=2 的特例；只有每个 x 至多一个允许三元组并保同一根需求时，才直接属于本单邻域接口。不能把同 x 的全部标签邻域取并集：q=K=2、E={(0,0,0),(0,1,1),(1,0,1),(1,1,0)} 的原 μ=2、ν=1、b*=1/2，取并集后两个邻域都是全四资源，ν_2=2、b*=1。",
+          "evidence": "8af choice bundle versus a68 single Ax; independent typed fixture/model report"
+        }
+      ],
+      "frozen_sources_or_progress_mutated": false
+    },
+    {
+      "target_path": "archives/unrelated-machines/state/审查/三维匹配与高维配额部分障碍双源审查--审查.md",
+      "key": "three-dimensional-and-quota",
+      "before_sha256": "67fc6cf734f06d114315295dc3a2a5ae57c9bcae0c2c5eff527ee6f02e41e495",
+      "proposed_sha256": "7e520aaf5cbefb4f6809962e8e6e70c4080e5dc18ed13d38d95173d0d8807a1d",
+      "replacement_count": 4,
+      "replacements": [
+        {
+          "reason": "q0 convention must not alter standard terminal-root identity",
+          "original_start_line": 49,
+          "exact_before": "当 `q=0` 时，正文约定两边值为 0，避免把空根误算成正常正比例。",
+          "exact_after": "原公式及程序在 `q=0` 将返回值约定为 0；这不是标准根树的截断评分。此时一般 token 桥的零需求终端根评分为 1、unit 根任务的实际 OPT=1，因此下述 (1) 的约定空分支不能经 (2) 外推为 OPT=2；(2) 在这里限 q>0 使用。",
+          "evidence": "4f13 closed_form q0 explicit return0 versus1612 standard root-terminal branch"
+        },
+        {
+          "reason": "raw PASS does not verify a faithful typed Y/Z tree oracle",
+          "original_start_line": 91,
+          "exact_before": "三维源的精确核验脚本使用 `Fraction`：对 `q<=2` 的所有边集、`K=2,...,6` 全枚举正评分根树；对 `q=3` 的空图、满图和固定种子随机边集，在 `K` 的指定集合逐项核对式 (1)，并核对完美匹配族 `b^*=2/K`。这些运行支持实现和边界，不能替代一般性结构证明，也不能证明复杂度困难性。",
+          "exact_after": "原三维脚本使用 Fraction，默认入口确实通过；其循环为 q1/2 的 (2+256)*5=1290 次比较、q3 空图/满图及600固定seed样本的602*4=2408次比较，另有28个完美族与3个pool断言。但原 brute_b 将 singleton `(z,)` 经 zip 从第一个 y 标签开始，误把 Z_z 标成 Y_z，不是忠实 typed 树 oracle。显式 q=3、K=2、E={(0,0,0),(1,0,0),(2,0,0)} 上，原 brute_b=1/3，正确保 Y/Z 类型的树及原 closed_form 均为1/2（μ=2、ν=1）。故这些原PASS只能保留为代码实际断言通过，不能称全枚举真实树的认证；结构证明与式(1)本身不因该软件缺陷失效。参见新增《三维匹配树枚举的资源标签缺陷与有限合同》及其精确诊断。",
+          "evidence": "4f13 original lines75–79 and run exit0; diagnose typed counterexample63 nonempty states; original loop domains"
+        },
+        {
+          "reason": "robust theorem must state the gamma<=delta repair already discussed later in this page",
+          "original_start_line": 143,
+          "exact_before": "给变量集 `X`、`|X|=q`；每个 `x` 有若干标签超边 `e`，每条标签资源束 `S_e` 大小为 K。定义 `(K,delta,gamma)`-robust bundle matching promise：",
+          "exact_after": "给变量集 `X`、`|X|=q`；每个 `x` 有若干标签超边 `e`，每条标签资源束 `S_e` 大小为 K。本节 (7) 的编译另要求 gamma<=delta，落实第9节保留的修复；没有此条件时，所列 NO 只能直接给 b*<max(delta,gamma)，不是 b*<delta。定义 `(K,delta,gamma)`-robust bundle matching promise：",
+          "evidence": "91e source initial correction and same formal §9; root-count proof below requires δq>=γq"
+        },
+        {
+          "reason": "apply source NO at an eligible number of selected variables",
+          "original_start_line": 148,
+          "exact_before": "若 NO 中存在 `b>=delta` 的树，根至少选 `delta q` 个变量；",
+          "exact_after": "若 NO 中存在 `b>=delta` 的树，根至少选 `delta q>=gamma q` 个变量；",
+          "evidence": "same repaired premise γ<=δ; no novelty or actual robust-source existence inferred"
+        }
+      ],
+      "frozen_sources_or_progress_mutated": false
+    }
+  ],
+  "target_files": 2,
+  "exact_replacements": 7,
+  "evidence_files": [
+    "../original/4f13d4de5870674ce284.py",
+    "../original/a68bbc33808220d4814e.py",
+    "../original/8af37296657f6ee6656d.py",
+    "../run-diagnostics/report.json",
+    "../support/1612ef209f096d6f4803.md",
+    "../support/91e3e78a4390c625b4b7.md"
+  ],
+  "original_inventory_sources_and_prior_packages_untouched": true,
+  "scope": "correct resource-model/empty-root contracts, explicit typed-oracle evidence and already-known gamma condition; no new general algorithm or hardness assertion"
+}
