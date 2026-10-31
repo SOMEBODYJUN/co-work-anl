@@ -275,3 +275,7 @@ R3_READY18GQ：GJ5/GF5/GE3/GK5共18源：循环根扩张/精确末位支持/两�
 R3_READY18GQ数学/证据pushed a51b7e273ee3b3bf68cbcfa721f3fb9d8164fdfb；18源done另推送 0eefc66d910d02a56e1176428208b08513a00a89。Boss4累计1876完成，实际未完22；持续接续全仓，不以本批清空收尾。
 
 R3_READY9GT：GP1/GM3/GI5九源：family890与三独审完整同SHA别名按准确数学覆盖duplicate，0冗余新正文；固定高尾窄水位失败、全历史避背景的统一缩尾正接口和输入/原审计严格scope，原8522入口一次/6997字节全同与独立data-only有限算术分开。全仓10921源版本、最新实际快照完成4648，远未全仓结束；先checkpoint pushed再9逐源done，继续全仓。；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY9GT_REMAINING_SCOPE.json。
+
+R3_READY9GT数学/证据pushed 0be35cc114acc8003f52e4d4766e6e28b1ab4af9；9源done另推送 51d85d2f22b34f98062c5ab12d9afcbf87ba157d。Boss4累计1885完成，实际未完28；持续接续全仓，不以本批清空收尾。
+
+R3_READY24GU：GN4/GL5/GQ5/GR5/GO5共24源：产品菜单277/54夹证/小支撑几何/cap上下游、六人残差与根图原义务、真正安全产品与全部位置门槛、两个统一缩尾/relay原入口不同域、共同matching包络与60点557行/跨族220。缺代码/全型lambda/未审数据仅保原身份；共同包络不替全局付款，全部formal-SPE界分别保留。先明确checkpoint pushed再24逐源done，继续全仓。；共24主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY24GU_REMAINING_SCOPE.json。
