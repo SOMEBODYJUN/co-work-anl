@@ -84,3 +84,5 @@ READY21F数学pushed763c4a63c3402c73ffb66dcba28bcd39c7c3b9db（115文件），21
 READY4G：最后四已认领鲜广播数学源、局部价格审查、原程序与冻结报告；一次真实审计全字节一致，普遍共同cap仍未证。共享容量交接草稿，随后单独done及实际handoff检查；共4主源，先明确正文/证据checkpoint再逐源done；其余认领见READY4G_REMAINING_SCOPE.json。
 
 READY4G数学pusheda08be499e2e8070c3ff1cb1428f0ecf3bc3b1c8b（30文件），4源done另推送0fc173b211be9848fb3b4e5093e4a0304cd2898a且synced。全本轮93源均先pushed后done，累计811完成、owner-self未完[]。实际handoff --all返回No eligible source files，无可释放认领，不称handoff另推送；六worker均完成、无后台继续。容量边界收尾及全仓剩余/疑点见CAPACITY_HANDOFF_20261030.md和END_HANDOFF_RESULT.json；旧next/active字段为历史快照。
+
+R2_READY9A：全局dummy六源完整证明/修正/认证链，与Boss净cap相邻前缀换位主稿及原程序/报告三源；原QA一次全字节同冻结，不升级共同付款；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R2_READY9A_REMAINING_SCOPE.json。
