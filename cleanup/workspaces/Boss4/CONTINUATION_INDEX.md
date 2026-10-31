@@ -242,3 +242,7 @@ R3_READY8FH：ES4与RootFA4共8源：真实action阈值/背景union精准量词�
 R3_READY8FH数学/证据pushed 5b315506ce2c0c5520f084ac7e4cee7ed7267f63；8源done另推送 3b3112e40258f31982f390444c63aeb384795183。Boss4累计1735完成，实际未完23；持续接续全仓，不以本批清空收尾。
 
 R3_READY18FM：FG5/EZ5/EX3/FD5共18源：已全文原平台/owner/十环原稿正式语义处置且复用明确已推原字节；exactM/SC版本检查、weak pushforward新旧真值及VAR独审/原有限实现/达等域纠正。先明确正文证据checkpoint pushed再18逐源done；各原/新/复用运行准确分开，持续全仓。；共18主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY18FM_REMAINING_SCOPE.json。
+
+R3_READY18FM数学/证据pushed cf7a2a670d238cdc7bb6a6010e7ac8f363da33c8；18源done另推送 c65c4b089fc6aae5c7564ba9a98baf95d1689397。Boss4累计1753完成，实际未完20；持续接续全仓，不以本批清空收尾。
+
+R3_READY24FQ：FB5/FC5/FI5/FF5/FJ4共24源：Cartesian可信菜单/删除支持、结构证书与尾投影、统一价格命题史、非均匀捕获/弱平均及52客户冻结匹配。原/新/复用运行分层；修旧页误排同模型六人特例单句，保所有候选未付。先明确正文证据checkpoint pushed再逐源done，六线持续全仓。；共24主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY24FQ_REMAINING_SCOPE.json。
