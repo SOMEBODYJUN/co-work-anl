@@ -1,0 +1,45 @@
+# 失真舍入、指定例外与固定容量五原程序证据
+
+实际AU回执为pushed、Boss4、synced，tip46517e4362599a3681dfc1c9f9c2d4761f0e1433；主源据真实IDs导出并核inventory SHA。五源实际不含palette，目录名沿分配保持，正式对象按实读内容命名。没有共享Git/claim/done/checkpoint或子代理操作。
+
+| role | ID | bytes | SHA256 | 原件 |
+|---|---|---:|---|---|
+|primary|4c8e805ff35508e0fbcb|11206|6235657b39bddf8845e7d1308465e2167971258179551bcb4383fa3126d6a368|[distorted_group_joint_slot.py](original/tests/audits/unrelated_machines/distorted_group_joint_slot.py)|
+|primary|715ea829785382371843|3550|a0af40d2cd6679ba1beafb1400f8a5eb39050df897fca3300e84e82b06f31a68|[distorted_group_software_review.py](original/tests/audits/unrelated_machines/distorted_group_software_review.py)|
+|primary|fedae2449f1b5a14f98c|8959|08f4ff4de5eff68ebd17bca9126599c0603cdacf8a458543883d7e089125adb0|[dual_rail_one_exception_independent.py](original/tests/audits/unrelated_machines/dual_rail_one_exception_independent.py)|
+|primary|1baaf1963c7582471b42|18941|88796d363c8dc33348ed6e156287a1d4daa30398db104c7fe21f20f14e3ab532|[fixed_arity_overload_witness_audit.py](original/tests/audits/unrelated_machines/fixed_arity_overload_witness_audit.py)|
+|primary|646706d3cc8b9a7cde8c|17137|962091a67089344df5dba3e0fe19141bf3a91acceb073374eff8cf4735e53048|[fixed_sink_occupation_audit.py](original/tests/audits/unrelated_machines/fixed_sink_occupation_audit.py)|
+|runtime-dependency|e1717477e9541ed63b58|11989|4cab1691aaef9c1265fd517d1cf5dbd2cb2f7e5b0757a0d88fcc2e9ae3905a4e|[weighted_group_joint_slot.py](original/tests/audits/unrelated_machines/weighted_group_joint_slot.py)|
+|runtime-dependency|b083c8d4196a16c48a20|76603|ff7a5d39e5a0b1cea78a319837f3d7eb473fc72a4a2980ced61e9d21656c368b|[distorted_group_joint_slot_cases.json](original/examples/unrelated_machines/distorted_group_joint_slot_cases.json)|
+|comparison|31e60cfda5fb778289bc|13265|05a44e1c9bb7eeae3b9586d8af4cb0608351c6a377537bafd5b3067beae9f476|[distorted_group_joint_slot_witness.json](comparison/evidence/certificates/unrelated_machines/distorted_group_joint_slot_witness.json)|
+|comparison|b5df6f2c556585b4801d|9823|a4c1af539997c777d62a57b3a05d07b5a1f8d66fe580ad68c5144d8cfbecd664|[distorted_group_joint_slot_audit.json](comparison/evidence/runs/unrelated_machines/distorted_group_joint_slot_audit.json)|
+|comparison|2fbfc0ca1d7366227c6e|79146|9d5fccb84d422925c977a2e26a6547e3140be28cd2b5035fbb59aaa01ae11307|[dual_rail_threshold_soundness_boundary_audit.json](comparison/evidence/runs/unrelated_machines/dual_rail_threshold_soundness_boundary_audit.json)|
+|comparison|2503c0d7bd0be638eeb2|2173|7708dc8e4206bd043a55148421d7567394b0c76d56cfed2dc400697df597a822|[fixed_arity_overload_witness_audit.json](comparison/evidence/runs/unrelated_machines/fixed_arity_overload_witness_audit.json)|
+|comparison|b1c932da42fb8603fc7f|2105|23c1ce41ac30c3e3599f19b0e65043c62b53eb15d3ae367aff1bcf628714b948|[fixed_sink_occupation_audit.json](comparison/evidence/runs/unrelated_machines/fixed_sink_occupation_audit.json)|
+|comparison|bdd4c9c864096e4caa4e|15662|de39d3d70e4a1d5835eaecf196d0a0bcff51006f6d7eb4006354344b737f5deb|[distorted_group_joint_slot_rounding.md](comparison/research/current/unrelated_machines/distorted_group_joint_slot_rounding.md)|
+|comparison|40d26116913be01e868f|12066|c70cd5cea78e9e0b3fce2dc4d8a02349b9f7a180cfd00c7c95d3a78564ca9125|[distorted_group_joint_slot_review.md](comparison/research/reviews/unrelated_machines/distorted_group_joint_slot_review.md)|
+|comparison|82af0ae2f147b7c28726|23491|5d41fe7e8530a7cc17f633e15498b58080f405835c6659ca18ab7ce2ff34aae9|[fixed_sink_occupation_rounding.md](comparison/research/current/unrelated_machines/fixed_sink_occupation_rounding.md)|
+|comparison|1fdb08ccd3717fa2ad9c|8637|7ec9d61c2e67345bffa9aa640a7d8fb622a303954a86630ccf0bcd9f26d1c51c|[fixed_sink_occupation_review.md](comparison/research/reviews/unrelated_machines/fixed_sink_occupation_review.md)|
+|comparison|24a0d40ff9904652d586|25250|7edef8d895a5f5ea7eeb507251268fd303388d26da8429882ee5ac2cb857e119|[top_two_pair_witness_boundary.md](comparison/research/current/unrelated_machines/top_two_pair_witness_boundary.md)|
+|comparison|b77536c5a2bc8c724e9a|4138|de9df9e840add79a2979461cf005faee867f0cc5995d39c81b177c2a5a6983c7|[fixed_arity_overload_witness_review.md](comparison/research/reviews/unrelated_machines/fixed_arity_overload_witness_review.md)|
+|comparison|47781e3c6375a3868f86|16085|069d7ac109263c410b0874e86840d5ad8fb0720b03b4acaae80825c7d11550ee|[dual_rail_threshold_soundness_boundary.md](comparison/research/current/unrelated_machines/dual_rail_threshold_soundness_boundary.md)|
+
+## 实质去向
+
+四个自足资源页保存五主源全部定义/输入/算法/论证/输出/实际有限域。distorted两个主源分别保给证书舍入与导入被测core的软件审查；one-exception保二进制容量和完整原矩阵；fixedarity保三流及big-only真实证书；fixedsink保DP/base-face/实际回填/阈值逻辑。已存一般证明不重复授新定理。
+
+comparison-findings.json、relationship-review.json区分实现、有限检查、版本和不同域。完整原数学/review逐份实读；大bundle2fbf仅完整审阅metadata与one-exception分支，其他模型原字节保存但不伪称全量复核。
+
+## 真实程序证据
+
+原程序新run=0。四份完整旧run记录中五primary代码SHA均匹配；旧数据已足够且本批没有扩大原运行域。旧report缺独立exit/elapsed处不补造，bundle的8个零退出码不擅自逐分支映射。distorted旧报告未单列Flow依赖SHA，本包保当前完整冻结依赖并明确这个缺口。
+
+verify_saved_data.py为本批独立原输入/保存输出算术检查，不导入原算法。最终实际执行记录在saved-data-final-matrix-check-execution（当前codeSHA/stdout/stderr/exit0）；此前数据检查的确切旧脚本也按原SHA保留，不把两次数据自查算成原程序run。
+
+检查结果saved-data-selfcheck.json：19原件SHA/AST；distorted16fixture86真实源σ/520任务检查、平均LP与槽成本、两路184原job输出；one-exception3原矩阵7jobs、945随机小OPT+1134穷举计数；fixedarity14424/65640/5440两原子/484/4092；fixedsink33910含不可用端选择、两个完整P与6份不同原sigma，对应12个回填事件。全部实际输入/输出和新边界矩阵JSON保全。
+
+## 旧页边界与交接
+
+existing-formal-snapshots与unapplied-formal-clarifications.json保确切旧SHA/原文/最小建议：c递推适用r>=4；33910是过滤前机器标号选择；12是回填事件。旧共享页未改、旧来源未重新认领或勾选。
+
+逐源semantic-receipts、自查、精确copy清单和下一本地unread/unowned候选位于cleanup/workspaces/Boss4/r3-um-following-palette-and-distortion-primary。候选没有认领或primarydone。
