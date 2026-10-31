@@ -8,6 +8,12 @@ status: proof-candidates-with-internal-reconstruction; applications-and-novelty-
 legacy_ids: [SEL-MATROID-EXCHANGE-DISTANCE-v1, CS-THETA-EXACT-v1]
 source_refs:
   - source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/CLAIMS.md
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/combinatorial_equal_theta_correlation.md
+  - source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/combinatorial_equal_theta_correlation.md
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/matroid_exchange_distance_and_girth.md
+  - source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/matroid_exchange_distance_and_girth.md
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:history/retired_topic_selection/multi_lane/research/topic_selection/notes/matroid_exchange_distance_independent_review.md
+  - source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/retired_topic_selection/multi_lane/research/topic_selection/notes/matroid_exchange_distance_independent_review.md
 ---
 
 # 交换距离与等长theta相关间隙的独立接口
