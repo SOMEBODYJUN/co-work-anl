@@ -448,3 +448,7 @@ R3_READY8NL：八原程序/报告完整合同：signed多源/客户二次/背景
 R3_READY8NL数学/证据pushed 3279fe1d24f69d0194bd9c6d5020a84b19ef43ec；8源done另推送 3c2defd6ee26d47574b44813261ae0b848ee74a2。Boss4累计2499完成，实际未完23；持续接续全仓，不以本批清空收尾。
 
 R3_READY23NS：二十三主源单色续局闭包一般证明/原入口、八根/末利润/方向四数学、背景区间与BR资金、child整数支持和cap、协调beta/遗漏需求/可信signal reset；全部有限原报告与新原入口/旧充分成功范围各保；共23主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY23NS_REMAINING_SCOPE.json。
+
+R3_READY23NS数学/证据pushed 6465399b3f0d1d78274c5218f8e4c9f03146ca4d；23源done另推送 234a3657ec587caf286a4691a8cdd2fb55ff9cc6。Boss4累计2522完成，实际未完8；持续接续全仓，不以本批清空收尾。
+
+R3_READY15NV：十五原来源定向行动上界四冻结点与九客户完整构造、最大裸题hub两原实现、资金三原entry主源合同、遗漏需求/审查最终修正与原先验；准确区分新定点核/新CLI/旧充分成功与0发现器；共15主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY15NV_REMAINING_SCOPE.json。
