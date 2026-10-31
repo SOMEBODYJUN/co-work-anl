@@ -283,3 +283,7 @@ R3_READY24GU：GN4/GL5/GQ5/GR5/GO5共24源：产品菜单277/54夹证/小支撑�
 R3_READY24GU数学/证据pushed b26ba720a88388ac166b998176f48f8947522154；24源done另推送 70f449b912f2480018a652a3633d636974bf5158。Boss4累计1909完成，实际未完6；持续接续全仓，不以本批清空收尾。
 
 R3_READY10GZ：GT中2477单源/GS4/GV5十源：UM三维/全层匹配需求与近二源归约不同、空根约定/typed审计后修正及Santa位模型义务；D22十一合同/六失败/两Bellman族及M0端点，14/12类型/selector非同字节；一般统一缩尾1662报告目标SHA版本差与零输入vertical纯BR两点不同scope。所有原件不改，先checkpoint pushed再10逐源done，Root同claim另一UM大入口仍独立在做，全仓不收尾。；共10主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY10GZ_REMAINING_SCOPE.json。
+
+R3_READY10GZ数学/证据pushed 50b4cd81ada9c439a7ace88af8911738188fb998；10源done另推送 ff40e003c09886c872568e0cdddf29f6c457f176。Boss4累计1919完成，实际未完19；持续接续全仓，不以本批清空收尾。
+
+R3_READY18HE：GU5/GW3/GX5/GY5十八源：银行joint资本/前缀映射/客户吸收整行包络、同客户reset库存与wholeIC退款、共同iid混合Jensen及53/100显式证书、五利润信用主稿精确来源绑定。Root全文读6149原证明/1250README/639JSON及两提案，逐式恢复28控制损伤与遗失TeX并补原HALF未付式，保stableID/原始来源/旧done；0修复数学run。正文证据checkpoint pushed后逐源done，继续全仓。；共18主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY18HE_REMAINING_SCOPE.json。
