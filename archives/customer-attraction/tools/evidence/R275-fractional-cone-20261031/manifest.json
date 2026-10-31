@@ -1,0 +1,46 @@
+{
+  "evidence_id": "customer-attraction/r275-fractional-cone-20261031",
+  "source_commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+  "assigned_source_refs": [
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/direct_global/floor_scan.py",
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/direct_global/fractional_cone_attack.py",
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/direct_global/fractional_cone_best.json"
+  ],
+  "files": {
+    "source/floor_scan.py": {
+      "source_id": "90578ba48285bc04f0c3",
+      "sha256": "ba406363e5a12959096613530441ae171df58ca9cd18a182cfc49d5dd1dbc66d",
+      "bytes": 1817,
+      "role": "runtime dependency and independently read assigned source"
+    },
+    "source/fractional_cone_attack.py": {
+      "source_id": "a7ef17f66c745033bde1",
+      "sha256": "7f1b44dba3c864935cc94e9a24eed772a447b6fe30c5dd7f0a7c979f1cac7f90",
+      "bytes": 1340,
+      "role": "assigned finite LP driver"
+    },
+    "source/fractional_cone_best.json": {
+      "source_id": "125d193cad51e79adaf8",
+      "sha256": "7947d012ec5ba828a3c3250cceef89ddd5426540c2a46298abc13ef0c3328ced",
+      "bytes": 80603,
+      "role": "assigned saved floating-point candidate"
+    },
+    "source/cone_floor_attack.py": {
+      "source_id": "dbf018232df702a3cfaf",
+      "sha256": "af4f1f7f4e65a9c27d6b433e24dd1e3ff2cd7819cfd09dc140a580833d85ddb0",
+      "bytes": 2986,
+      "role": "runtime dependency imported by fractional_cone_attack.py; preserved for replay"
+    }
+  },
+  "replay": {
+    "script": "replay/verify_fractional.py",
+    "output": "replay/verification.json",
+    "command": "PYTHONDONTWRITEBYTECODE=1 python archives/customer-attraction/tools/evidence/R275-fractional-cone-20261031/replay/verify_fractional.py",
+    "status": "quick finite target/objective replay passes; no exact SPE certificate",
+    "full_driver_command": "cd archives/customer-attraction/tools/evidence/R275-fractional-cone-20261031/source && PYTHONDONTWRITEBYTECODE=1 python fractional_cone_attack.py",
+    "full_driver_note": "The full 60-iteration driver is retained for an optional deterministic rerun; the quick checker avoids repeating that long floating search.",
+    "universal_claim": false,
+    "exact_rational_certificate": false,
+    "policy_serialization_limit": "saved policy contains only chosen action per history; child terminal terms and original random LP point are not serialized"
+  }
+}
