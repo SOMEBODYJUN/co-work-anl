@@ -28,40 +28,40 @@ source_version: "arXiv:1701.07208v2 [cs.DS], 20 August 2019 (PDF title page 21 A
 `history/source/literature/unrelated_machines/jansen_rohwedder_2019_quasi_polynomial_v2.pdf`，SHA-256 为
 `6371eaf41ed90ec3c92e6626ccf1ff209935d67ced11d918cf85a91719ca244f`，字节数 311771。两冻结提交保存同一源版本，不是两个独立证明。本次导出后完整读取 PDF 的 30 个物理页，覆盖摘要、配置 LP 原/对偶、2+ε 算法、非构造性 11/6 局部搜索、准多项式构造算法、所有定义、Lemma/Claim/Theorem 证明和参考文献；未把论文引用的外部证明当作本对象的独立重证。
 
-输入是有限任务集 (J) 与机器集 (M)。每个任务 (j) 有一个机器无关的处理时间 (p_j)，且只能放到资格集合 (Gamma(j)) 内的一台机器；目标是最小化最大机器负载。这是 **restricted assignment**，等价于一般不相关机器的 (p_{ij}in{p_j,infty}) 特例。论文不要求每个任务只有两个资格端，也没有客户、目录、历史或终局均分量词，因此与六人 Q-CAG-HALF-6 模型保持独立。
+输入是有限任务集 (J) 与机器集 (M)。每个任务 (j) 有一个机器无关的处理时间 (p_j)，且只能放到资格集合 (\Gamma(j)) 内的一台机器；目标是最小化最大机器负载。这是 **restricted assignment**，等价于一般不相关机器的 (p_{ij}\in\{p_j,\infty\}) 特例。论文不要求每个任务只有两个资格端，也没有客户、目录、历史或终局均分量词，因此与六人 Q-CAG-HALF-6 模型保持独立。
 
 源引言记录了经典 3/2 多项式困难性与受限版本的准多项式条件困难性等背景；这些是文献叙述，本文对象不把它们升级为本轮独立的复杂度重证。
 
 ## 配置 LP 与对偶停滞证书
 
-给定阈值 (	au)，机器 (i) 的合法配置为
+给定阈值 (\tau)，机器 (i) 的合法配置为
 [
-  {cal C}(i,	au)=\{S\subseteq J:p(S)\le\tau,;S\subseteq\Gamma^{-1}(i)\}.
+  \mathcal C(i,\tau)=\{S\subseteq J:p(S)\le \tau,;S\subseteq\Gamma^{-1}(i)\}.
 ]
 配置 LP 的一个等价原始形式为
 [
-\sum_{C\in{cal C}(i,\tau)}x_{i,C}\le1\quad(i\in M),
-\qquad
+\sum_{C\in\mathcal C(i,\tau)}x_{i,C}\le1\quad(i\in M),
+\quad
 \sum_{i\in M}\sum_{C\ni j}x_{i,C}\ge1\quad(j\in J),
-\qquad x\ge0.
+\quad x\ge0.
 ]
-令 (mathrm{OPT}^{*}) 为该 LP 可行的最小 (	au)。其对偶写成
+令 (\mathrm{OPT}^{*}) 为该 LP 可行的最小 (\tau)。其对偶写成
 [
   \min \sum_{i\in M}y_i-\sum_{j\in J}z_j,
-  \qquad \sum_{j\in C}z_j\le y_i
-  quad(i\in M,C\in{cal C}(i,\tau)),
-  \qquad y,z\ge0.
+  \quad \sum_{j\in C}z_j\le y_i
+  \quad(i\in M,C\in\mathcal C(i,\tau)),
+  \quad y,z\ge0.
 ]
-若能构造 (sum_i y_i<sum_j z_j) 且满足所有配置约束，则对偶可沿正倍数缩放而无界，因而配置 LP 在 (	au) 不可行。论文 Lemma 1 把这作为所有“无停滞则给证书”论证的统一入口。由于配置族向下封闭，论文的“至少覆盖”写法可与精确覆盖形式互换，但这不替代配置分离或目标搜索的位复杂度证明。
+若能构造 (\sum_i y_i<\sum_j z_j) 且满足所有配置约束，则对偶可沿正倍数缩放而无界，因而配置 LP 在 (\tau) 不可行。论文 Lemma 1 把这作为所有“无停滞则给证书”论证的统一入口。由于配置族向下封闭，论文的“至少覆盖”写法可与精确覆盖形式互换，但这不替代配置分离或目标搜索的位复杂度证明。
 
 ## 2+ε 准多项式算法（方法导入）
 
-第一算法从任意分配 (sigma) 开始。称机器坏若负载 (> (2+\varepsilon)\tau)，好若不超过该值；按层 (L_0,L_1,ldots) 追踪坏机器及其当前任务能到达的资格机器。若在下一层找到负载 (le(1+\varepsilon)\tau) 的目标，就移动一项并重置层。移动后目标负载至多 ((2+\varepsilon)\tau)，所以好机器不会再次变坏。
+第一算法从任意分配 (\sigma) 开始。称机器坏若负载 (> (2+\varepsilon)\tau)，好若不超过该值；按层 (L_0,L_1,ldots) 追踪坏机器及其当前任务能到达的资格机器。若在下一层找到负载 (\le(1+\varepsilon)\tau) 的目标，就移动一项并重置层。移动后目标负载至多 ((2+\varepsilon)\tau)，所以好机器不会再次变坏。
 
 若层数达到 (log_{1+\varepsilon}|M|)，算法用
 [
  y_i=(1+\varepsilon)^{1-k}\quad(i\in L_k),
- qquad z_j=(1+\varepsilon)^{-k}p_j/\tau
+ q\quad z_j=(1+\varepsilon)^{-k}p_j/\tau
 ]
 （(k) 为任务第一次进入层的最小层号，未进入层的 (z_j=0)）构造 Lemma 1 的负对偶证书：每个配置的 (z)-质量不超过所在机器的 (y_i)，而所有任务 (z)-总和严格超过机器 (y)-总和。这说明配置 LP 不可行。以坏机器数、各层任务数及末尾哨兵组成的字典序势严格下降，得到 (n^{O((1/\varepsilon)\log n)}) 的准多项式状态界。该算法只是导入层搜索和对偶证书的教学版本，最终常数仍是 2+ε。
 
@@ -69,11 +69,11 @@ source_version: "arXiv:1701.07208v2 [cs.DS], 20 August 2019 (PDF title page 21 A
 
 第二算法令坏机器阈值为 (11\tau/6)，大任务满足 (p_j>\tau/2)，其余为小任务。维护按字典序选择的待定移动列表 (P)。只有当任务在其当前机器被“排斥”（repelled）且目标机器未排斥时才把 move 加入列表；若目标加入后仍不超过 (11\tau/6)，执行 move 并清空列表。小任务 move 会使目标排斥所有任务；大任务 move 按阈值 (W_0) 排斥当前机上小任务和大小不超过 (W_0) 的大任务。
 
-当配置 LP 在 (	au) 可行而仍有坏机器时，若列表既无可执行 move 也不能再添加 move，论文 Lemma 2 用对偶证书矛盾。对所有被当前机器排斥的任务取
+当配置 LP 在 (\tau) 可行而仍有坏机器时，若列表既无可执行 move 也不能再添加 move，论文 Lemma 2 用对偶证书矛盾。对所有被当前机器排斥的任务取
 [
  z_j=\min\{p_j/\tau,5/6\},
 ]
-其余 (z_j=0)；若机器排斥所有任务则设 (y_i=1)，否则设 (y_i=z(\sigma^{-1}(i)))。配置至多含一个大任务，(W_0) 的最小性和“小任务无其它可行端”保证 (z(C)\le y_i)。Lemma 3 证明排斥所有任务的机器中至少一半是小任务 move 的目标，因而这些机器的对偶质量可以与非小目标机器摊销，得到 (sum_jz_j>sum_i y_i)。
+其余 (z_j=0)；若机器排斥所有任务则设 (y_i=1)，否则设 (y_i=z(\sigma^{-1}(i)))。配置至多含一个大任务，(W_0) 的最小性和“小任务无其它可行端”保证 (z(C)\le y_i)。Lemma 3 证明排斥所有任务的机器中至少一半是小任务 move 的目标，因而这些机器的对偶质量可以与非小目标机器摊销，得到 (\sum_jz_j>\sum_i y_i)。
 
 算法确实终止（Lemma 4）：在两次执行 move 的间隔，以坏机器数、被当前机排斥任务数和每个待定 move 的 ((p_j,j,i))、剩余排斥边数等组成有限字典序势，插入/删除与执行都会严格下降。该有限性没有给出多项式步数界。于是 Theorem 5 得到配置 LP 在 restricted assignment 上的积分间隙至多
 [
@@ -85,7 +85,7 @@ source_version: "arXiv:1701.07208v2 [cs.DS], 20 August 2019 (PDF title page 21 A
 
 第四节把前述非构造性算法与层法结合。令坏阈值为 ((11/6+2\varepsilon)\tau)。任务分为
 
-- small：(p_j\le\tau/2)；
+- small：(p_j\le \tau/2)；
 - medium：(\tau/2<p_j\le5\tau/6)；
 - huge：(p_j>5\tau/6)。
 
@@ -114,13 +114,13 @@ critical 选择通过已阻塞的小任务量、medium 任务量和“私有可�
 
 ### 关键正确性与复杂度
 
-Lemma 9 断言：若配置 LP 在 (	au) 可行且仍有坏机器，则在上述层数上限内一定找到 valid move 或 leap。反证时，在每个以 leap layer 结尾的前缀定义 (z_j^{(k)})、(y_i^{(k)})，并以几何系数
+Lemma 9 断言：若配置 LP 在 (\tau) 可行且仍有坏机器，则在上述层数上限内一定找到 valid move 或 leap。反证时，在每个以 leap layer 结尾的前缀定义 (z_j^{(k)})、(y_i^{(k)})，并以几何系数
 [
  z_j^{(\le k)}=\sum_{k'=-1}^{k}(1+\varepsilon)^{-k'}z_j^{(k')},
- \qquad
+ \quad
  y_i^{(\le k)}=\sum_{k'=-1}^{k}(1+\varepsilon)^{-k'}y_i^{(k')}
 ]
-组合。Claim 10 证明每个配置的前缀 (z)-质量不超过下一层 (y)；Claim 11 用坏机器的余量、critical 与 small 目标的成对摊销，证明最终 (sum_jz_j>sum_i y_i)。因此无动作会给 Lemma 1 的不可行证书。
+组合。Claim 10 证明每个配置的前缀 (z)-质量不超过下一层 (y)；Claim 11 用坏机器的余量、critical 与 small 目标的成对摊销，证明最终 (\sum_jz_j>\sum_i y_i)。因此无动作会给 Lemma 1 的不可行证书。
 
 算法终止的 Lemma 14 维护每层不同类型的势：leap 层看排斥边数，critical 层看层大小和未排斥任务数，small 层看未排斥任务数，non-critical 层看排斥边数及未排斥任务数，并在开头比较好机器数和坏机器所排斥任务数。Claim 15 说明每次 move/leap 后该向量字典序严格增加（等价于反向势严格下降）。层数至多 (O((1/\varepsilon)\log n))，每个分量只有多项式多个值，所以总状态数、运行时间为
 [
