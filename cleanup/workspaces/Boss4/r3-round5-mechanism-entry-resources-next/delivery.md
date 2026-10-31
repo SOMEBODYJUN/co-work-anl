@@ -1,0 +1,7 @@
+# IS交付
+
+5primary9064B/76行全部实际原文读，3integrated+2duplicate，一新自足资源。原15ids claim 6ee0cfa438457fb1d930d333113c2295da2d1669 actualpushed/synced原字节保，仅本5subset/currentowner/sourceSHA；六正式上下文与以前全文读交付物逐字节一致。
+
+新独有内容为16852 retainedoutcomes计数及967浮点目标/0.75未认证上界、19输入2503背景/SPE终局计数等资源合同；完整定理和条件菜单按准确对象复用，0新定理/实例/数学程序/原CLI/旧成功复跑。未读原程序/JSON的作者有限记录保身份，不扩大SPE或全参数量词。
+
+下一5原件共14067B纯本地核齐，尚byteavailable未本批全文，不预claim/receipt；一次helper5尝试0missing0network。Root先推正文和依赖再done，本代理0sharedGit/账号或第三阶段mapper。

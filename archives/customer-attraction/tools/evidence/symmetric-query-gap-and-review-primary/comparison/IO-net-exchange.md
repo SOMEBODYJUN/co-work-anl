@@ -1,0 +1,72 @@
+---
+id: optimal-comparison-pool-net-exchange-and-random-retention-identity
+kind: lemma
+type_tag: 引理
+title: 最优比较池的净交换与随机保留恒等式
+status: proved-combinatorial-identities; cumulative-SPE-payment-open
+summary: "比较池换actual的净损失含新增覆盖退款；随机删比较索引给L_i精确式，终点OPT−W不变，累计付款与旧逐人缺口候选D仍未证。保单步损失/势递推旧失败，不当half反例。"
+source_refs: ["source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/exchange/exchange_notes.md", "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/fresh/README.md"]
+---
+
+# 最优比较池的净交换与随机保留恒等式
+
+4784B交换笔记与fresh/总导航完整primary处理；真实15项claim中的本5已核owner/SHA，原暂停草稿记录另保，不把claim推送当正文或done。本页恒等式对任意有限主题序列成立，只有SPE付款目标需要全部真实后继最优性。源未给新一般福利界。
+
+## 单步损失必须保退款
+
+固定m个合法比较主题标签T_1,…,T_m（可重复），并集O；actual已选前缀并集C_prev，剩余比较池M中删除某个索引j的T_j，加入actual当前A。换前后并集分别C_prev∪⋃M与C_prev∪A∪⋃(M\{j})，两集合大小差精确为
+
+\[
+\underbrace{|T_j\setminus(C_{prev}\cup A\cup\bigcup_{T\in M\setminus\{j\}}T)|}_{lost}
+-\underbrace{|A\setminus(C_{prev}\cup\bigcup_{T\in M}T)|}_{new}.
+\tag{SWAP}
+\]
+
+lost只数删除独有、且当前A未救的客户；new是actual新增、原比较池未覆盖的客户。整条链初O、末actualC_m，净损失望远镜恒|O|−W。71客户唯一最优例已否只用W付gross|O\C_m|，不能删new或C_m\O。
+
+逐步净损失≤u_i的更强模板已有旧完整SPE反例。连只要求某个j的lost≤u_i也失败：源重用root_tax_failure在真实h=(A)、还余3人、当前仍A、比较池(B,C,D)，三种lost为10,11,10，actual当前9。只能排此单步候选；未给一般跨时付款或half反例。程序/JSON所述Fraction只是旧数据重算，本稿0原入口。
+
+## 随机保留的完整表示
+
+把比较**索引**作均匀随机排列，在actual位置i删除前i个、保留后m−i个。客户x在m比较槽出现d_x≥1次，不要求T标签互异。它的所有覆盖索引均被删去的概率为
+
+\[
+p_i(d_x)=\frac{\binom{i}{d_x}}{\binom m{d_x}},\quad i<d_x\text{时为0}.
+\]
+
+actual前缀并集C_i。比较O与“C_i加随机保留主题”并集的期望净差恰
+
+\[
+\boxed{L_i=\sum_{x\in O\setminus C_i}p_i(d_x)-|C_i\setminus O|.}\tag{RET}
+\]
+
+O内已actual覆盖客户不损失；未覆盖者仅在全部比较索引删去时损失；actual在O外每客净增加一。故L_0=0、L_m=|O|−W，L_i可负。这里随机的是比较池，不是玩家看到的随机目录承诺或新的混合SPE。
+
+为了把退款看清，令N_i=C_i\C_(i−1)，直接相减还得
+
+\[
+L_i-L_{i-1}=\sum_{x\in O\setminus C_i}[p_i(d_x)-p_{i-1}(d_x)]
+-\sum_{x\in N_i\cap O}p_{i-1}(d_x)-|N_i\setminus O|.
+\]
+
+首项可正，后两项是真actual新覆盖信用。该式只是RET的解析展开，未赋予任何信用跨互斥真实分支重复使用。
+
+## 累计付款是目标而非已证不变量
+
+令P_i=Σ_(j≤i)u_j。若可从SPE证明每i的L_i≤P_i，特别在最优O的终点给OPT−W≤W，便得half。只证终点本身就是原净缺口问题，没有因此更容易；允许先期未用利润/后期新覆盖结算中间亏损仍缺真实跨枝机制。不能把“有一个随机保留表示”换名成正向界。
+
+源exchange与fresh曾各写\(OPT_m\le W+m\min_i u_i\)，随后root对齐为旧R324 residual_deficit的(D)：\(m u_i\ge OPT_m-W\)对每actual i。该式若全输入真，求和mW≥m(OPT−W)足够half，严格强于half且未证必要性，不因低收益但W=OPT的例子立即失败。五个旧全策略兴趣权重锥LP未发现正差，只是有限阴性，没有有理对偶一般证明；不认新候选、不继续扩锥。Root同对象IF接续中的状态也保开放，本稿不重算那些原锥。
+
+## 两个已停止的局部递推
+
+记\(F_r(b)=\max_{Z\in S^r}\sum_x c_x(Z)/(b_x+c_x(Z))\)，零分子取0，是背景下剩余玩家可实现的**最大总利润**，不等原零背景OPT_r。候选2u_current≥F_r(b)−F_(r−1)(b+A)被旧15客户star根的2u6<15−7=8否定。
+
+另定义\(H_b(Z)=\sum_{x:c_x(Z)>0}(b_x+1)^{-2}\)。曾希望
+
+\[
+F_r(b)-F_{r-1}(b+A)\le u+H_b(A+tail)-H_{b+A}(tail)
+\]
+
+可望远镜给OPT≤W+H_0=2W。源旧61客户root_tax_failure真实h=(A)处，F_3(A)36、F_2(2A)21、u9，\(\Delta H=30(1/4-1/9)=25/6\)，右79/6<15，slack−11/6。程序只重算F/H/既有证书叶，原完整SPE身份来自已有正文/两份独审；本稿没有该全部原输入/新run，不伪成重新认证控制器，也不再调指数/系数。
+
+这与[动态门槛剥离资料](../障碍/动态可信门槛与剥离递归缺口--障碍.md)的精确PEEL可成立但下次需reset项同属“局部真实恒等式未支付全局”的边界，不能把某递推失败写成所有归纳不可能。真正需要保全后继SPE、净机会缺口与一份共同信用，见[尾部理性障碍](../障碍/尾部价格证书不能替代完整续局激励--障碍.md)。
