@@ -9,6 +9,8 @@ review_level: "full-frozen-json-read-and-scope-classification"
 scope: "12组参数的Fraction七态星审计、其中3组完整small M3/global-q2矩阵及一次root fresh CLI字节重放"
 summary: "完整保存并核对两个冻结运行JSON；只认证其精确有理有限案例、PSD秩和作者/root输出字节一致性，不将12参数、3组small矩阵或代码哈希升级为任意d,s定理、递归接线或一般调度算法。"
 source_refs:
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_canonical_v1.md"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_canonical_v1.md"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/seven_state_star_global_quadratic_audit.json"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/seven_state_star_global_quadratic_root_replay_scope.json"
 ---
@@ -111,3 +113,7 @@ root 范围 JSON 明列未检查：
 - tools/evidence/private-tree/seven-state-star/seven_state_star_global_quadratic_root_replay_scope.json，1985字节，SHA256 365f4b15b962accb5a88626708136e0873a6012480c6d1dff1e7ca3d10357b07。
 
 这两份副本是 JSON 结果和范围记录，不是审计源程序。主源报告的129行代码 hash、作者输出 hash、fresh CLI 命令和 not_checked 清单均按第二份 JSON 原样保留。本轮没有重跑审计程序，也没有声称可以从网络或缺失 promisor 对象取得更多代码；最初 clean show 的代理连接失败后按原命令重试成功，未见认证错误。
+
+## Boss6 v1 canonical source integration
+
+本轮完整读取 `sol_seven_state_star_global_quadratic_canonical_v1.md`（clean ID `ee0deff479cc5c374543`，7683 字节，SHA-256 `691da049257e25486139214a923f4f4908a61df14ca6034caea0c3cbc86f3765`）。该 v1 来源承担显式偶 `d,s` 原星的共同真实 assignment law、M3、全局 degree≤2 负载局部化和逐行 CONFIG first/pair 解析合同；finite audit/root replay 仍只支持列出参数。新增 payload、shared owner、growing-depth、near-two、hardness 与一般 UM 软件均不由本来源或本审计推出。

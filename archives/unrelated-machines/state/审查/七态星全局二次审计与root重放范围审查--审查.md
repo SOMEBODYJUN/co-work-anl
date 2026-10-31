@@ -6,6 +6,8 @@ title: "七态星全局二次审计与root重放范围审查"
 status: "historical-reviews-reconciled"
 summary: "逐字段核对七态星12参数Fraction审计及root fresh-output范围，确认三组完整small矩阵、九组局部检查、作者/root字节一致性和明确未查软件；不把有限结果扩为任意维度定理或递归接线。"
 source_refs:
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_canonical_v1.md"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/sol_seven_state_star_global_quadratic_canonical_v1.md"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/seven_state_star_global_quadratic_audit.json"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/seven_state_star_global_quadratic_root_replay_scope.json"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/seven_state_star_global_quadratic_and_extension_boundaries.md"
@@ -105,3 +107,7 @@ source_refs:
 ## 6. 保留结论
 
 本轮审查无数据字段冲突或 hash 不一致。两份 evidence/runs 可以作为七态星局部核的有限实现证据和 root 输出一致性记录；主源解析证明、边界条件、有限审计和未检查软件必须保持四层分离。当前仍开放任意 growing-depth 连接、共享 owner 的统一 law、全部机器共同低载 decoder、一般 UM 目标和任何 near-two hardness。
+
+## Boss6 v1 canonical source integration
+
+本轮完整读取 `sol_seven_state_star_global_quadratic_canonical_v1.md`（clean ID `ee0deff479cc5c374543`，7683 字节，SHA-256 `691da049257e25486139214a923f4f4908a61df14ca6034caea0c3cbc86f3765`）。该 v1 来源承担显式偶 `d,s` 原星的共同真实 assignment law、M3、全局 degree≤2 负载局部化和逐行 CONFIG first/pair 解析合同；finite audit/root replay 仍只支持列出参数。新增 payload、shared owner、growing-depth、near-two、hardness 与一般 UM 软件均不由本来源或本审计推出。
