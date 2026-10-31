@@ -1,0 +1,76 @@
+# 数学与运行边界自查
+
+- [x] 五源22433B全读/size/blob/SHA原字节保，不用旁读代primary。
+- [x] 一般10430审查先获exact statement独立重建后读稿并修正，当前非blind。
+- [x] 无外审新颖性，一般half和跨根拼合不由条件接口闭合。
+- [x] 固定b=b0+unitA，n只计尾，根单位不缩。
+- [x] 合法前缀核心齐次与异质冻结整数背景加强版分开。
+- [x] 全历史规定动作避C外正b，不只actual，不要求目录全避。
+- [x] b不含过去尾，全部n尾包括已行动者/离轨行动同lambda。
+- [x] 规定非核心π保持，偏离税b(1−λ)/((b+k)(b+λk))非负。
+- [x] 核心K密度/λK利润各在两侧抵消，不声称利润保持。
+- [x] 新IC slack恰原l+偏离非核心税，来自旧税机制不抢新发现。
+- [x] 任意λ保孩子SPE不需S，且不保更早根IC。
+- [x] 实际谱a/S/D只固定一叶，不给所有离轨叶过线。
+- [x] 替根Q分母b0+1+λk与保根再插J不同，返还同H界。
+- [x] 正k非核心必b0=0且不在A，k0无query返还。
+- [x] H全客户同一池，每query只子和，不补N成目录。
+- [x] 有限差方向λ/(1+λk)≤1/(1+k)正确。
+- [x] a*>0高t根存在唯一依1/λ发散；t低分支λ1不需S。
+- [x] 初稿H≤t−min负中界确错，修正正部后当前通式正确。
+- [x] 冻report已称after positivepart，旧目标hash差不认定未修稿。
+- [x] 正λ保支撑，Γ/旧返还/Vλ一次守恒不双领。
+- [x] 异质旧退款逐b0客户求和，不能提成常数。
+- [x] 精确水根Vλ−tnλ=Σa−na*≥0，不套低tλ1分支。
+- [x] 53余量3是一般余量特例，不是本5155当前重算。
+- [x] a*=0完整SPE迫纯C目录，任何strictT可添正收益。
+- [x] 纯核K1<t<K0唯一正根，t≥K0含等号无正解。
+- [x] 空核只t0由λ1处理，λ0排因合同非泛称支撑必丢。
+- [x] 无界n新鲜族a*1/S n²/(n+1)²<1，不藏固定人数。
+- [x] 5155仅内部七族，无53packet/security输入。
+- [x] 六合法族n1/3/7各空核/两core b1，旧前缀实际为空。
+- [x] 异质n3 b1/3/7旧core0/2/6不可能合法同目录前缀。
+- [x] 277族内历史×3mass×2action=1662精确，非1662模型。
+- [x] 3mass=1,3over4,1over7，所有h规定Q而past可A。
+- [x] Q利润≥1、A私有≤1over2，核心相消解释任意λSPE。
+- [x] 族水位min+1over3，Dtotal n/3，S公式a*1。
+- [x] 7族各110步，不求值零端点发散。
+- [x] 无core精确root3over4但lo<root，Hlo是保守值。
+- [x] 无core Hroot n²/((n+1)(3n+4))，1/14,9/52,49/200。
+- [x] 四点1/3over4/lo/hi守恒含signed residual，hi不强称可行。
+- [x] 每族3低阈0/min−1over4/min的正部为0。
+- [x] 3个a*0纯core边界110步，K0/K1/t精确。
+- [x] 27参数组合各核税和有限差，两关系非只27assert。
+- [x] 5155无guard全顶层，write_text覆盖输出需新空目录。
+- [x] 5155唯一runtime文件为14339作者稿结尾hash，不parse数学。
+- [x] source text不参与样本数值，仍真实必需输入不能省。
+- [x] 冻报告旧target1d150仅引用，无旧字节，不网络/重构。
+- [x] 当前真targetf0a14339原字节保，不冒充旧目标版本。
+- [x] 新旧报告只/source_sha变，其余字段全一致；不称全字节相同。
+- [x] sourcehash只是链接身份，不能机械认证数学或语义等价。
+- [x] 5155 exactSHA无旧成功才必要原入口1，所有断言开启。
+- [x] vertical919无guard顶层/零文件输入，不同于5155有MD依赖。
+- [x] M1/2/7展开3M不同单位客户，A2M/BM不交。
+- [x] 固定祖先A的一future两纯BR current都M，ancestorM/2M。
+- [x] 纯jointset恰两点，只有混合凸包才整纵段。
+- [x] 任意有限state-dependent C乘零仍0，M正排斜率。
+- [x] 两份完整2人σ扩展rootA/afterB→A，afterA分别A/B。
+- [x] root改B得M，根依A得M或2M，所以两份均完整SPE且A可达。
+- [x] 两终局来自不同σ，不说同历史同一确定σ有两动作。
+- [x] 原919只局部12payoff/6BR成员，未核根IC；扩展是解析。
+- [x] verticalM1基础例与GI三客户相同，但此处不缩权/自由阈值。
+- [x] 安全值平台反例是另坐标另背景另人数，不能混有限斜率对象。
+- [x] 绝对未来利润M可能付祖先损失M，current差0不代表未来无收入。
+- [x] 同叶绝对接触不免费变成跨真实分支共同预算。
+- [x] W2M或3M/OPT3M，2over3和1均不反half。
+- [x] 526三行原字段完整，零input不附加一般authorhash。
+- [x] 919 exactSHA无旧成功才新1次，原source及冻report均保。
+- [x] 两原执行迁移绝对路径如实写，guard均无main却module1。
+- [x] 被动profile不调用源函数；source文本读取/模块事件不是多run。
+- [x] 旧GI/GR/VAR/水位/税/construct均0重跑。
+- [x] README仅相关全文读，完整条件BI/finite-slope导航不附带done。
+- [x] README旧OPEN Mfull/DB不继承为当前真，旧停止非清洗停工。
+- [x] 3正式对象关系解释源角色/前提/证据，非全仓阶段三完结。
+- [x] receipt disposition integrated仅最终语义整合，待发布放另字段。
+- [x] 完整claim多组ids保存不投影，取本5实际owner/SHA交集。
+- [x] 所有actualcanonical/证据bytes C0扫除只LF/TAB/CR，冻原件不改。
