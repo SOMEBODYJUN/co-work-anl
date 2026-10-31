@@ -481,3 +481,7 @@ R3_READY18PB数学/证据pushed 5f6812d3e0ac6f1f27bb7bc7003505d78bda2cf1；18源
 
 
 R3_READY23PG：二十三主源：十八主源区间终局/全效率/单例近半地板与父审，最晚NET原入口和旧cut报告，整数污染guard与全m weak-outside边界，forced-v与Theta原错误的六人8单位真反例修正，合法背景纯/行为混合分离及非凸promise；精确域和新原入口/旧成功复用分开，global5846未全清继续六线；另global5完整原DAG审计与全树代表历史/phi连续纯亏空停界，修正PE原一般族提出方归属不改数学；共23主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY23PG_REMAINING_SCOPE.json。
+
+R3_READY23PG数学/证据pushed fcc4c1b8178b6521876dab46d58e960045fd319b；23源done另推送 241d998cf7afe4938c4dcb8a4ff64495b4d00627。Boss4累计2676完成，实际未完5；持续接续全仓，不以本批清空收尾。
+
+R3_READY29PN：二十九主源：终局税两原探索与九客户9330项新定义级核验、三minvector主源精确去重、密度与根重放真实scope、核心容量作者/独审时序、小外题条件半覆盖、Theta独立锥/固定k交换、纯菜单原件去重和确定环/负探针合同；另最小四公式及未知review时序澄清，不重开旧done/不复扫阴性；共29主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY29PN_REMAINING_SCOPE.json。
