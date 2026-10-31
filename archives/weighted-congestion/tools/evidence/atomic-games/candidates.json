@@ -1,0 +1,422 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-20",
+  "scope": "重新选题，原子/加权拥塞博弈子线",
+  "ranking": [
+    "AG-01",
+    "AG-03",
+    "AG-05",
+    "AG-02",
+    "AG-06",
+    "AG-04"
+  ],
+  "candidates": [
+    {
+      "id": "AG-01",
+      "title": "长度二策略单调拥塞博弈的纯均衡计算复杂度",
+      "rank": 1,
+      "origin": "EXPLICIT_PUBLIC_OPEN_PROBLEM",
+      "status": "OPEN_RECOMMENDED_FOR_BATTLE",
+      "deep_dive": true,
+      "problem": {
+        "players": "任意有限n，单位权重",
+        "strategies": "显式策略表，每个策略至多2资源；首切口每人恰2个不相交二资源策略",
+        "costs": "非负非减有理延迟表；首切口非负仿射",
+        "quantifiers": "对所有此类输入，求关于全部单方偏离的PNE；多项式位时间算法或PLS-complete分类",
+        "output": "PNE，不是全局最小势"
+      },
+      "sources": [
+        {
+          "authors": "Vittorio Bilò; Angelo Fanelli; Laurent Gourvès; Christos Tsoufis; Cosimo Vinci",
+          "year": 2025,
+          "title": "Minimizing Rosenthal’s Potential in Monotone Congestion Games",
+          "url": "https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p343.pdf",
+          "location": "§6 p.350; Theorems 2–4",
+          "web_refs": [
+            "turn42view0",
+            "turn96view1",
+            "turn105search46"
+          ]
+        }
+      ],
+      "paper_type": [
+        "复杂度分类",
+        "组合优化工具"
+      ],
+      "core_mechanism": "对称size2全局问题可化matching；非对称/长度3留下local vs global孔洞。",
+      "paper_fact": "§6 p.350明确列一般size2/对称size3 PNE计算和常数size自然动态时间问题。",
+      "our_idea": "先研究binary、affine和资源出现结构，写成列至多4非零D的受限二次二元单翻转局部搜索。",
+      "nearest_results": "一般size2 MinPotential NP-hard、对称size2 MinPotential polynomial；全局硬度不是局部硬度。经典PLS归约长度需逐构造核查。",
+      "novelty_check": {
+        "as_of": "2026-10-20",
+        "queries": [
+          "title + 2026",
+          "congestion games (2,2)",
+          "short strategies congestion PLS",
+          "bounded strategy size congestion",
+          "two resources congestion complexity",
+          "size two equilibrium"
+        ],
+        "finding": "未找到量词完全一致后续解答；two resources与two strategies常为不同模型；不能认证仍未解。",
+        "remaining": "独立子线继续核查(2,2)术语和经典局部MaxCut归约。"
+      },
+      "feasibility_basis": "有限精确表示、公开孔洞、自然组合结构坐标，适合自动gadget与结构算法双向攻击。",
+      "biggest_obstacle": "可能贴近低度LocalMaxCut等长期边界；一般PSD QUBO不满足稀疏D和非负成本约束。",
+      "value_test": "必须推进公开分类孔洞或给自然更大类；标准树宽DP不足。",
+      "toy_model": "n=m=6，二不相交资源对/玩家，仿射整数成本，seed20261020，200实例，每例64状态完整改善图。",
+      "toy_evidence": {
+        "longest_observed_moves": 15,
+        "trial": 20,
+        "number_pne": 1,
+        "status": "FINITE_SAMPLED_FAMILY",
+        "file": "toy_output.json"
+      },
+      "falsification_test": "若现成PLS归约已保留size2及单调非负延迟则题目过时；若拟议QUBO表示违反每列稀疏限制则归约无效。",
+      "first_proof_obligation": "重建经典硬度的策略长度/资源出现表；严格证明稀疏二次局部搜索表示及其可逆范围。"
+    },
+    {
+      "id": "AG-02",
+      "title": "二权重拟阵非加性聚合的接近1近似局部动态",
+      "rank": 4,
+      "origin": "EXPLICIT_FUTURE_DIRECTION_WITH_OUR_RESTRICTION",
+      "status": "RESERVE_HIGH_BARRIER",
+      "deep_dive": false,
+      "problem": {
+        "players": "权重{1,W}，W固定或输入分版本",
+        "strategies": "rank≤2分区拟阵基",
+        "costs": "非负仿射资源成本，共同固定p的ℓp聚合",
+        "quantifiers": "对全部输入，调度单交换(1+epsilon)改善过程，求全策略(1+epsilon)-PNE并证明位时间多项式；或证明该窄域障碍"
+      },
+      "sources": [
+        {
+          "authors": "Kenjiro Takazawa",
+          "year": 2025,
+          "title": "Pure Nash equilibria in weighted matroid congestion games with non-additive aggregation and beyond",
+          "url": "https://doi.org/10.1016/j.dam.2024.10.017",
+          "fulltext_url": "https://arxiv.org/pdf/2401.03861",
+          "location": "长稿 Theorem 3.3, Lemma 3.7, §5 p.13",
+          "web_refs": [
+            "turn10view0",
+            "turn13view0",
+            "turn13view1",
+            "turn119view0"
+          ]
+        },
+        {
+          "authors": "Heiner Ackermann; Heiko Röglin; Berthold Vöcking",
+          "year": 2009,
+          "title": "Pure Nash equilibria in player-specific and weighted congestion games",
+          "url": "https://www.roeglin.org/publications/WINE06.pdf",
+          "location": "Theorems 13–14; §4.2 Theorem 18 pp.17–18; §5",
+          "web_refs": [
+            "turn27view0",
+            "turn57view2",
+            "turn96view2"
+          ]
+        }
+      ],
+      "paper_type": [
+        "工具统一",
+        "交换结构"
+      ],
+      "core_mechanism": "单交换局部改善、共同资源全预序、排序(cost,occupancy)字典序势。",
+      "paper_fact": "S2 §5列convergence time；S3 ordinary BR可循环、lazy BR有限收敛且存在超多项式路径。",
+      "our_idea": "分层近似进展量限制权重类型间反复重置。",
+      "nearest_results": "共同ℓp经p次幂等价加性c_e^p；存在性直接推广可能只是旧证明。",
+      "novelty_check": {
+        "as_of": "2026-10-20",
+        "finding": "查DAM2025及作者2026论文表；未发现此窄题，但未穷尽否重。"
+      },
+      "feasibility_basis": "rank和权重类型给有限结构，Lemma3.7提供局部接口。",
+      "biggest_obstacle": "ARV下界或循环已在窄域内；局部近似不自动推出全局近似。",
+      "value_test": "需新多项式自然动态或清楚新边界；异质p/不同rank的直接存在推论淘汰。",
+      "toy_model": "重建ARV两玩家权重1、2及四资源BR循环，区分lazy与ordinary BR。",
+      "falsification_test": "若c^p变换后已有定理直接覆盖，或ARV下界满足全部限制，则相应泛猜想淘汰。",
+      "first_proof_obligation": "证明近似单交换停止到全基偏离的近似因子，核查p次幂换回损失。"
+    },
+    {
+      "id": "AG-03",
+      "title": "有限权重字母表资源势的自动合成与无限域证书",
+      "rank": 2,
+      "origin": "OUR_TOOL_EXTENSION_IDEA",
+      "status": "IDEA_WITH_FALSIFIED_FIRST_CANDIDATE",
+      "deep_dive": true,
+      "problem": {
+        "players": "任意有限n；权重{1,2}",
+        "strategies": "任意显式有限策略族",
+        "costs": "非负系数多项式，先degree2和3",
+        "quantifiers": "对所有a,b∈Z≥0及w∈{1,2}，资源计数势的加入增量在[w(L+w)^d, alpha*w(L+w)^d]",
+        "output": "显式势、全域代数证书、与旧势同域比较；不宣称多项式动态或最佳PNE存在阈值"
+      },
+      "sources": [
+        {
+          "authors": "Christoph Hansknecht; Max Klimm; Alexander Skopalik",
+          "year": 2014,
+          "title": "Approximate Pure Nash Equilibria in Weighted Congestion Games",
+          "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol028-approx-random2014/LIPIcs.APPROX-RANDOM.2014.242/LIPIcs.APPROX-RANDOM.2014.242.pdf",
+          "location": "§3 Definitions 1–2, Theorem 3; Table 1",
+          "web_refs": [
+            "turn88view0"
+          ]
+        },
+        {
+          "authors": "Yiannis Giannakopoulos; Diogo Poças",
+          "year": 2023,
+          "title": "A Unifying Approximate Potential for Weighted Congestion Games",
+          "url": "https://doi.org/10.1007/s00224-023-10133-z",
+          "fulltext_url": "https://arxiv.org/pdf/2005.10101",
+          "location": "Lemma 1; Definition 2; Theorem 1; equation (9); introduction p.3",
+          "web_refs": [
+            "turn57view0",
+            "turn58view3",
+            "turn58view4"
+          ]
+        }
+      ],
+      "paper_type": [
+        "近似势工具",
+        "局部增量接口"
+      ],
+      "core_mechanism": "有限LP发现候选，精确有理数反算，尾部非负性/分段证书连接任意人数。",
+      "paper_fact": "S4排序离散积分；S5局部资源势上下界接口容许其他势。",
+      "our_idea": "权重类型计数多项式、分段势及LP对偶证书，刻画哪类统计量真正超越排序/积分势。",
+      "nearest_results": "二次8/7 warm-up恰为S4降序积分特例，不能宣称新颖；一般4/3不是足够的比较基准。",
+      "novelty_check": {
+        "as_of": "2026-10-20",
+        "queries": [
+          "weighted congestion 8/7",
+          "weighted congestion bounded weights quadratic approximation",
+          "weighted congestion moment potential",
+          "quadratic congestion two weights"
+        ],
+        "finding": "未发现同题证明；二次warm-up主动降为旧工具特例；cubic有限结果不认证新颖。"
+      },
+      "feasibility_basis": "固定类型/次数可自动生成显式线性约束，能给小反证；方法产物可迁移。",
+      "biggest_obstacle": "格内系数在格外失败；最优势或需分段；方法阈值与PNE阈值不同。",
+      "value_test": "须在无限人数域严格改进最佳邻近势，并解释可迁移机制；有限n系数表或单ansatz障碍不足。",
+      "toy_model": "P(a,b)总次数≤d+1，a+b≤10/30/50的LP；三矩二次势；Fraction逐约束检查。",
+      "toy_evidence": {
+        "quadratic_warmup": "8/7，旧降序积分特例",
+        "cubic_grid_float_optimum": "137/107",
+        "cubic_old_sorted_grid_distortion": "64/49",
+        "cubic_50_user_candidate_fails_at": {
+          "a": 100,
+          "b": 0,
+          "w": 2,
+          "exact_ratio": "275527/278307",
+          "required_lower_bound": 1
+        },
+        "status": "FINITE_GRID_AND_EXACT_FALSIFICATION",
+        "files": [
+          "toy_checks.py",
+          "toy_output.json"
+        ]
+      },
+      "falsification_test": "全域不等式任一格外违反即推翻该候选；目前n50候选已推翻。",
+      "first_proof_obligation": "给候选两侧增量多项式的全非负整数域证书或有限临界点+尾部证书；先排除系数依K漂移。"
+    },
+    {
+      "id": "AG-04",
+      "title": "非拟阵策略的跨玩家资源关联无环边界",
+      "rank": 6,
+      "origin": "OUR_CLASSIFICATION_EXTENSION_IDEA",
+      "status": "BROAD_VERSION_REFUTED_NARROW_VERSION_UNVERIFIED",
+      "deep_dive": false,
+      "problem": {
+        "players": "任意正权重",
+        "strategies": "任意显式策略；潜在玩家–资源二部关联图是森林",
+        "costs": "非负非减资源延迟",
+        "quantifiers": "是否全部有PNE并可叶消去构造；首次允许关联环时边界如何变化",
+        "refuted_version": "仅玩家交互图森林、每资源至多2玩家可用、每人2条size2策略不足"
+      },
+      "sources": [
+        {
+          "authors": "Heiner Ackermann; Heiko Röglin; Berthold Vöcking",
+          "year": 2009,
+          "title": "Pure Nash equilibria in player-specific and weighted congestion games",
+          "url": "https://www.roeglin.org/publications/WINE06.pdf",
+          "location": "Theorems 13–14; §4.2 Theorem 18 pp.17–18; §5",
+          "web_refs": [
+            "turn27view0",
+            "turn57view2",
+            "turn96view2"
+          ]
+        }
+      ],
+      "paper_type": [
+        "策略结构分类"
+      ],
+      "core_mechanism": "S3最大性定理允许资源任意交织；限制交织是另一坐标。",
+      "paper_fact": "Theorem18任意非拟阵反链可构造二玩家无PNE，通过识别不同玩家资源。",
+      "our_idea": "按玩家–资源关联环而非玩家交互图，寻找最小禁图/叶消去。",
+      "nearest_results": "acyclic graphical congestion相关结果尚需完整主源否重；当前只做低优先边界。",
+      "novelty_check": {
+        "as_of": "2026-10-20",
+        "finding": "森林/图形拥塞检索覆盖不足，不能声称新。"
+      },
+      "feasibility_basis": "最小反例可以枚举，树消息是否保类是具体条件。",
+      "biggest_obstacle": "宽版本二玩家已失败；强森林可能已有初等叶消去或标准结果。",
+      "value_test": "须自然必要充分边界；仅重写树DP或已有无环存在定理淘汰。",
+      "toy_model": "权重1,2；行列二策略四资源；对角x²、非对角(9/2)x。",
+      "toy_evidence": {
+        "cost_matrix": [
+          [
+            [
+              "27/2",
+              "18"
+            ],
+            [
+              "29/2",
+              "35/2"
+            ]
+          ],
+          [
+            [
+              "29/2",
+              "35/2"
+            ],
+            [
+              "27/2",
+              "18"
+            ]
+          ]
+        ],
+        "pne_exists": false,
+        "best_pure_approximation": "36/35",
+        "status": "EXACT_FINITE_COUNTEREXAMPLE_NOT_NOVELTY_CLAIM"
+      },
+      "falsification_test": "关联路径3玩家2资源枚举；若无PNE则强森林猜想也淘汰。",
+      "first_proof_obligation": "证明叶玩家最优回应压缩为一维单调消息，且消去后仍保留模型；未证明。"
+    },
+    {
+      "id": "AG-05",
+      "title": "对称二资源策略最小精确势的二权重复杂度边界",
+      "rank": 3,
+      "origin": "OUR_NEW_CLASSIFICATION_AXIS",
+      "status": "RESERVE_NEEDS_CROSS_FIELD_NOVELTY_CHECK",
+      "deep_dive": false,
+      "problem": {
+        "players": "权重{1,2}任意两类玩家",
+        "strategies": "所有玩家共同显式资源对集合F",
+        "costs": "非负仿射",
+        "quantifiers": "求全局加权精确势最小值及分配；分类polynomial/NP-hard，先F二分图再一般图",
+        "output": "global optimum，与AG01 local PNE不同"
+      },
+      "sources": [
+        {
+          "authors": "Vittorio Bilò; Angelo Fanelli; Laurent Gourvès; Christos Tsoufis; Cosimo Vinci",
+          "year": 2025,
+          "title": "Minimizing Rosenthal’s Potential in Monotone Congestion Games",
+          "url": "https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p343.pdf",
+          "location": "§6 p.350; Theorems 2–4",
+          "web_refs": [
+            "turn42view0",
+            "turn96view1",
+            "turn105search46"
+          ]
+        }
+      ],
+      "paper_type": [
+        "复杂度分类",
+        "matching工具迁移"
+      ],
+      "core_mechanism": "两类有色边多重图的度向量经L=x+2y耦合的可分凸优化。",
+      "paper_fact": "S1单位权重对称size2的global MinPotential可由matching求解。",
+      "our_idea": "检验权重类型使matching/整数分解失效的最小边界。",
+      "nearest_results": "colored b-matching、general factors、可分凸度费用和离散凸可能直接覆盖；未排完。",
+      "novelty_check": {
+        "as_of": "2026-10-20",
+        "queries": [
+          "Minimizing Rosenthal weighted",
+          "weighted congestion two weights potential",
+          "symmetric size two weighted potential"
+        ],
+        "finding": "未获得直接覆盖主定理；跨域否重不足。"
+      },
+      "feasibility_basis": "固定权重排除Partition数值编码，精确势公式明确。",
+      "biggest_obstacle": "可能已有图因子gadget解法或标准硬度；拆重玩家为独立单位玩家改变可行集。",
+      "value_test": "解释权重/对称性的本质交互；一般W的弱硬度没有价值。",
+      "toy_model": "F为4环、两类各两玩家，枚举可实现的有色度向量与L松弛孔洞。",
+      "falsification_test": "若整数分解与convex matching直接适用则视为旧结果；若拆分后解无法合并同边，则拆分算法无效。",
+      "first_proof_obligation": "精确刻画有色度向量可行域和双份同边约束，再做matching gadget或硬度。"
+    },
+    {
+      "id": "AG-06",
+      "title": "收费上限下公平税的CCE效率曲线",
+      "rank": 5,
+      "origin": "OUR_CONSTRAINED_OPTIMIZATION_EXTENSION",
+      "status": "LOW_PRIORITY_NEEDS_BOUNDED_TOLL_LITERATURE_CHECK",
+      "deep_dive": false,
+      "problem": {
+        "players": "先单位/两类权重，再一般权重分版本",
+        "strategies": "先并行资源，再显式一般策略",
+        "costs": "非负仿射延迟；共同资源税0≤tau_e(x)≤beta*ell_e(x)",
+        "quantifiers": "对每固定beta求最佳可保证CCE-PoA，评价原始加权总延迟",
+        "output": "紧效率曲线与公平机制，非重新求无上限公平最优界"
+      },
+      "sources": [
+        {
+          "authors": "Miriam Fischer; Martin Gairing; Dario Paccagnan",
+          "year": 2024,
+          "title": "Fair Interventions in Weighted Congestion Games",
+          "url": "https://arxiv.org/pdf/2311.16760",
+          "location": "§1.4; Theorems 1–4; §3.2",
+          "web_refs": [
+            "turn10view2",
+            "turn96view0",
+            "turn117view1",
+            "turn119search0"
+          ]
+        }
+      ],
+      "paper_type": [
+        "机制优化",
+        "LP与对称性下界工具"
+      ],
+      "core_mechanism": "旧公平干预的LP税设计加逐负载幅度约束。",
+      "paper_fact": "S6已解决无额外上限公平干预紧效率界、算法和匹配硬度。",
+      "our_idea": "让可执行收费上限成为新优化参数，求精确代价曲线。",
+      "nearest_results": "bounded tolls、subsidies、altruism成熟文献可能完全覆盖，尚未完成primary-source链。",
+      "novelty_check": {
+        "as_of": "2026-10-20",
+        "queries": [
+          "weighted congestion bounded tolls",
+          "weighted congestion budget fair interventions"
+        ],
+        "finding": "覆盖不足；不能主推。"
+      },
+      "feasibility_basis": "两资源有限可达负载税变量可枚举/优化，端点与旧机制可比较。",
+      "biggest_obstacle": "等价已知有界税率模型，或atomic/nonatomic及PNE/CCE误迁移。",
+      "value_test": "需真正紧的新参数曲线；只额外加约束并数值跑LP不足。",
+      "toy_model": "2玩家权重1,2、两并行资源，常数延迟与仿射延迟，有限负载上税变量。",
+      "falsification_test": "对照bounded-toll定理的权重、均衡、税依赖量词；一致则立即淘汰。",
+      "first_proof_obligation": "排除等价现有结果，证明一个非平凡beta区间的上下界端点。"
+    }
+  ],
+  "explicit_vetoes": [
+    {
+      "topic": "旧Ψ辅助博弈之外、用真实成本作BR",
+      "reason": "Giannakopoulos–Noarov–Schulz MOR 10.1287/moor.2021.1144 已给该路线，不能照抄旧open。"
+    },
+    {
+      "topic": "优先级玩家产生有限而非无限延迟",
+      "reason": "Takazawa arxiv2407.12300于2024公开，WALCOM2025、TCS1082(2026)116144正式刊出，旧open已解/重定。"
+    },
+    {
+      "topic": "二次{1,2}权重8/7作为新结果",
+      "reason": "本轮代数恰为HKS2014降序离散积分直接特例。"
+    },
+    {
+      "topic": "cubic有限格137/107作为全域势",
+      "reason": "K50候选在a100,b0,w2精确违反归一化下界。"
+    }
+  ],
+  "artifacts": [
+    "REPORT.md",
+    "candidates.json",
+    "toy_checks.py",
+    "toy_output.json",
+    "toy_run.log"
+  ],
+  "claim_policy": "没有新颖性认证、20天可解决承诺、全局PNE阈值新界。计算只是有限证据。"
+}
