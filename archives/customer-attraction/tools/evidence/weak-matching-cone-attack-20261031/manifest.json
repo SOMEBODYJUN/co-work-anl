@@ -1,0 +1,133 @@
+{
+  "evidence_id": "customer-attraction/weak-matching-cone-attack-20261031",
+  "source_commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+  "assigned_source_refs": [
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/weak_matching/p6m4_seed104211.json",
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/weak_matching/p7m5_seed104212.json",
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/weak_matching/probe.py"
+  ],
+  "source_sha256": {
+    "p6m4_seed104211.json": "3897844396918eb9bdc4253fe17579def2a4138da70ec569c23ed7bf5ea1ae5d",
+    "p7m5_seed104212.json": "7926d9e3a6dd7c4fd87754767f9f2d45b036fc631c38546d612ace289ed1b8dd",
+    "probe.py": "4bbd3280c6a2eda7ca461fa2cc713b1183b5c0fecae2c0295c5488dccd997f15"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "commands": [
+      "PYTHONDONTWRITEBYTECODE=1 python probe.py --topics 6 --players 4 --games 1 --seed 104211 --source static_matching_counterexample.json --output p6_one_game.json",
+      "PYTHONDONTWRITEBYTECODE=1 python probe.py --topics 7 --players 5 --games 1 --seed 104212 --output p7_one_game.json",
+      "PYTHONDONTWRITEBYTECODE=1 python replay/verify_weak_matching.py"
+    ]
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3018,
+      "sha256": "72111a0bb6232a0b3231dea31a5ad98971b4f13cd3a80ca5ba806c8d3af4dd17"
+    },
+    {
+      "path": "replay/p6_one_game.json",
+      "bytes": 36952,
+      "sha256": "7e41e9686e193c706f82889f1dd2b04a3238a20a5b3d90d168a3e8333a655306"
+    },
+    {
+      "path": "replay/p6_one_game.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "replay/p6_one_game.stdout",
+      "bytes": 182,
+      "sha256": "3232ac54a3611ec5be33dda0577b74e472632042c4b27960449a08bf0684847a"
+    },
+    {
+      "path": "replay/p7_one_game.json",
+      "bytes": 384634,
+      "sha256": "c1b0e64b38566b6e73d8401c1fad9e0c0e97188326b6375501e6860817ca8d1e"
+    },
+    {
+      "path": "replay/p7_one_game.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "replay/p7_one_game.stdout",
+      "bytes": 181,
+      "sha256": "5180b5387ac0dababf0f4629db49c37af269618f14b5e2304ee37b8b1ba6a1b3"
+    },
+    {
+      "path": "replay/probe_replay.py",
+      "bytes": 7852,
+      "sha256": "4bbd3280c6a2eda7ca461fa2cc713b1183b5c0fecae2c0295c5488dccd997f15"
+    },
+    {
+      "path": "replay/verification.json",
+      "bytes": 433,
+      "sha256": "760410ae2504c9e30a277c299dcb6871522ee261680946e656586df5e77a4205"
+    },
+    {
+      "path": "replay/verify_weak_matching.py",
+      "bytes": 3373,
+      "sha256": "64c7d0eeb0106b9741efa4012b40c988cdf85fdf9c27540bfb15259a3f92729e"
+    },
+    {
+      "path": "source/dependencies/customer_attraction/__init__.py",
+      "bytes": 691,
+      "sha256": "284282dfb35d5612734b979d691d57be9808c07a03857b533248eb2cbd5079ca"
+    },
+    {
+      "path": "source/dependencies/customer_attraction/certificate.py",
+      "bytes": 6201,
+      "sha256": "a269b532260b537e67879eba609ef23e046e8f7303458ecf11271c4673aecc45"
+    },
+    {
+      "path": "source/dependencies/customer_attraction/exact.py",
+      "bytes": 9943,
+      "sha256": "a4c76d77fd6c8d18ac668ce2070a65f927d9dca6bbe3cdd36f467d1598b4a892"
+    },
+    {
+      "path": "source/dependencies/customer_attraction/model.py",
+      "bytes": 8640,
+      "sha256": "ac28fc1a3837954ab9b8fc658701f53aecf0a1da059e316158aab7565dc5f6a8"
+    },
+    {
+      "path": "source/dependencies/static_matching_counterexample.json",
+      "bytes": 32574,
+      "sha256": "9e7cf1437a7b03fe89d843d4ae20efa3c6a4137373098ed1220d4370656a5245"
+    },
+    {
+      "path": "source/dependencies/tests_audits/cone_attack_credible_variants.py",
+      "bytes": 13242,
+      "sha256": "396b540ae30f4bcefd1c2570f375f6cc51a65d9e4c0db1edac21b16d397a2b0e"
+    },
+    {
+      "path": "source/dependencies/tests_audits/customer_attraction_strategy_lp.py",
+      "bytes": 20567,
+      "sha256": "a5b3cac73cf07134609af60f101e384cf6f6b325caa24d8d3c31e019b71574d3"
+    },
+    {
+      "path": "source/p6m4_seed104211.json",
+      "bytes": 52831,
+      "sha256": "3897844396918eb9bdc4253fe17579def2a4138da70ec569c23ed7bf5ea1ae5d"
+    },
+    {
+      "path": "source/p7m5_seed104212.json",
+      "bytes": 475501,
+      "sha256": "7926d9e3a6dd7c4fd87754767f9f2d45b036fc631c38546d612ace289ed1b8dd"
+    },
+    {
+      "path": "source/probe.py",
+      "bytes": 7852,
+      "sha256": "4bbd3280c6a2eda7ca461fa2cc713b1183b5c0fecae2c0295c5488dccd997f15"
+    }
+  ],
+  "replay": {
+    "verification": "PASS",
+    "one_game_replays": "PASS",
+    "universal_claim": false,
+    "exact_rational_spe_certificate": false,
+    "integer_client_reconstruction": false
+  }
+}
