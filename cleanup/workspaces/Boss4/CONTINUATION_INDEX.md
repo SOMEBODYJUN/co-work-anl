@@ -182,7 +182,3 @@ R3_READY20BK：Root10七Claim账本/强聚合非空填充/61客户真实比例�
 R3_READY20BK数学/证据pushed bead41b32a9753f78f96758ce45e59152e7971a7；20源done另推送 32cf101972a7a4bab54ad7742761b5a9e4ecf061。Boss4累计1400完成，实际未完40；持续接续全仓，不以本批清空收尾。
 
 R3_READY20BQ：原终局见证DAG五源与原模型计数净化严格分离，GHMR/平矩/半单位/Hall五源，Hall/森林/价格/matching原程序五源，席位/隐藏回复/随机交换/九人/上传独审五源。Root完整复核6642B穷尽代码并按精确反例改旧OPEN页、保历史有限阴性与稳定ID；复现依赖先明确正文pushed后逐源done。其他旧页建议另有独立待应用包，未倒填已改。六Solver持续接续。；共20主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY20BQ_REMAINING_SCOPE.json。
-
-R3_READY20BQ数学/证据pushed f6b6626fa666d4686ec6086f4f90babc2a8c2773；20源done另推送 f95d2749bf3ebbd36aa7ece0ebb259a8a3cc14d0。Boss4累计1420完成，实际未完40；持续接续全仓，不以本批清空收尾。
-
-R3_READY25BV：Root5森林θ/UTP候选及全部有限报告/重复尾3888必要比较，BG5真银行完整根菜单Mfull/NQ/allp反例与正FUND/HIT/OWNER组件，BL5七主题基线与历史/运行版本，BN5宏/HS/环秩/gluing/稀释原审计，BJ5home/transit/slot原程序；Root按guard修两旧CAG状态及整数extraone-v≥B推论、重轻review来源指针。原方程/历史阴性/旧done保留，其他旧页精确建议尚待实读应用，六线全仓继续。；共25主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY25BV_REMAINING_SCOPE.json。
