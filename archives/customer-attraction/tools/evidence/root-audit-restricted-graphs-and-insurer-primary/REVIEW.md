@@ -1,0 +1,7 @@
+# 数学与证据自审
+
+三合同分开：root已fixedsuffix计划根可bad；graph18pure BI有限诊断无classhalf；padded改变instance与目录完整积，proof保全jointroot/positivehist。当前输入真实closed，不用frozenPASS替原run。
+
+后sharpness不是由C下界猜测：相关7242/7382完整证明另给正差与baseline，K=alltopics intersection而非maximal only，任意内部root/δsigned多独立坐标保。第一份blind不审sharp的历史身份仍原样，所有context不done。
+
+所有math数据/原source/package bytes/hash/时间差/调用范围保。sourceframe只观察、未额外调用；证书moduleimport类定义非verify函数run。最终actualbytes C0/metadata/links/严格JSON/精确manifest核，semantic integrated/待publish分栏。

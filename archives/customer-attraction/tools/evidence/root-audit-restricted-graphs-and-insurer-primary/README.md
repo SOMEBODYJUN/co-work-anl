@@ -1,0 +1,7 @@
+# 七根审计、18受限目录及padded修复
+
+original/5源40285B；dependencies/6文件62790B=root两data37315与graph四源码25475；context/6份statement/两先验/成本/锐性原文，均全文相关读不primarydone；comparison/4正式或成熟页原字节。
+
+原root/code无自定义import、两JSON真data；graph外部data0但真package4source依赖，main之前import有副作用。两原main有guard且exclusive新输出，新空相对布局/绝对路径迁移和loaded包path真实保。rootreportbyte同；graphreport18timing差保实际非归零，数学所有字段同。
+
+solver只pure outcome countsets，不Markovpolicy/no fullstrategycert。root有限399/2793/105/210不推allmultiplicity，padded任意m/oldtau靠解析，R4/三cost/后续sharp alltopicK及coordinate独立scope自足清楚。未运行任何insurance或旧waterfill/VAR/SPE其它控制器。
