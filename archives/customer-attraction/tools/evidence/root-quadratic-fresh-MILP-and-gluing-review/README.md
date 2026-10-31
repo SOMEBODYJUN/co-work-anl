@@ -1,0 +1,3 @@
+# 二次fresh探索及局部粘合独审四来源
+
+四原件8777B全文，前三是独立fresh有理二次模型/三人根有限B MILP及45秒无primal报告，不是原允许重复CAG或一般候选证明；第四已被NT三自足正文全覆盖，首次primary精确duplicate。初local缺后normal实际取源、完整19claim及本4ownerSHA保。当前0CLI/import/LP/MILP/数学helper/旧阴性或NT成功重放；新解析计数与m1/p=m基例由正文直接推，原report十一字段原样。未来搜索须新输出目录并显式参数，勿覆原证据。
