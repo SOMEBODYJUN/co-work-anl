@@ -1,0 +1,25 @@
+{
+  "batch": "R-3b6b-potential-exchange-20261031",
+  "replays": [
+    {
+      "command": "python3 audit_last_average_selection.py --output audit_replay.json",
+      "output": "replay/audit_last_average_selection.json",
+      "scope": "definition-level Fraction strictness audit of the 16-client small certificate"
+    },
+    {
+      "command": "python3 verify_potential.py",
+      "output": "replay/verify_potential.stdout",
+      "scope": "independent exact verifier for both 3b6b average-selection certificates"
+    },
+    {
+      "command": "python3 min_payoff_lp_search.py --trials 20 --output min_payoff_smoke.json",
+      "output": "replay/min_payoff_smoke.json",
+      "scope": "deterministic finite fixed-policy LP search smoke"
+    }
+  ],
+  "limitations": [
+    "The certificate sources refute a last-player <= W/n selector claim in their own 3-player/4-topic instances; they are not current six-provider half counterexamples",
+    "min-payoff outputs are finite fixed-policy searches and use floating LP discovery; no bridge theorem follows",
+    "Exact verification proves the supplied strategy tree and welfare values, not global search optimality unless the source explicitly supplies exhaustive all-SPE data"
+  ]
+}
