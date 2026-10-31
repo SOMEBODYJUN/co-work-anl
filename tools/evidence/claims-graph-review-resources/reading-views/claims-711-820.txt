@@ -1,0 +1,111 @@
+CLAIMS full lines 711..820; Cn=exact path in previously fully read catalog; all link labels, math and unmatched paths retained.
+711: | UM-BATCH-SUPPORT-REPAIR-NO-v1 | For every integer k>=1 the section5 three-machine family has OPT=1, a pruned schedule of loads (2,2,2), minimum sorted-lex improvement support k+1, and minimum maximum per-machine outgoing count k. Thus neither constant support nor constant outgoing budget guarantees monotone improvement. | [自足正文](C708)；[冻结审查](C709)；主目标OPEN、新颖性未认证。 |
+712: | UM-FORK-MINCOST-ROUND-REPAIR-NO-v1 | For every integer k>=2 the sections6-7 padded fork has T=OPT=1 and explicit feasible rational assignment x; every minimum-processing-cost ordered-slot matching induces the same actual schedule sigma of makespan 2-1/k. No nontrivial makespan-nonincreasing reassignment from sigma can have at most one outgoing destination per source machine, even with arbitrary bundle size and arbitrarily many machines. | [自足正文](C708)；[冻结审查](C709)；主目标OPEN、新颖性未认证。 |
+713: 
+714: ## 有向需求树与真实调度的直接桥梁
+715: 
+716: | ID | 精确范围与结论 | 正文与状态 |
+717: | --- | --- | --- |
+718: | UM-DAG-DEGREE-TOKEN-IDENTITY-v1 | ∀显式根简单DAG及正文二进制需求，q=min(k,d)个tokens＋filler构造的真实调度OPT=2−截断需求树最优比例；任意C<2调度可解码比例≥2−C，反向也位多项式可构造。 | [自足正文](C722)、[冻结独立审查](C723)；已知机制直接重构，无SA/困难性转移。 |
+719: | UM-TARGET-IMPLIES-DAG-DEGREE-v1 | 若UM-TARGET-v1有统一ε，则同一个调度算法在≤1+|E|个正确缩放输入上给所有上述DAG的真实根树，b(H)≥εb*，总确定性位多项式。 | 同正文§5；条件必要能力，不是新近似算法或新颖性认证。 |
+720: 
+721: ## 逐坐标循环修复与真实最优凸包的衔接
+722: 
+723: | ID | 精确范围与结论 | 正文与限制 |
+724: | --- | --- | --- |
+725: | UM-COORDINATE-REPAIR-ST-GAP-v1 | ∀m≥2、∀有理η∈(0,1)，boss7真最优凸包槽族的任意matching输出接鲁棒循环优化仍0轮，值2m/(m+1)→2。相同机器任意逐坐标非增序列都保持每台负载。 | [正文§9](C708)、追加冻结审查；守恒＋既有族的直接推论，不是新族，不排低机上升的makespan改善。 |
+726: 
+727: ## 不相关机：固定最优边际的舍入断点与森林批量恢复
+728: 
+729: | ID | Exact scope and result | Boundary and evidence |
+730: | --- | --- | --- |
+731: | UM-OPT-HULL-ROW-DISCREPANCY-GAP-v1 | ∀固定实常数a,b≥1，取所有OPT(P)>0的UM-MODEL-v1输入和有理x∈conv(最优整数调度)。ell_i=Σ_{j:p_ij<∞}p_ij x_ij，s_i=max_{x_ij>0}p_ij（空0），R_ab={合法σ:∀i L_i≤a ell_i+b s_i}。R_ab总非空，且sup_{P,x} min_{σ∈R_ab} C_max(σ)/OPT(P)=2。另∀固定整数b0≥0，每机任务数≤ceil(Σx_ij)+b0的合法集也非空且sup最佳比2。 | 本族直接可最优求解；换x/集中迁移不受排除。不是配置gap、算法困难性或主目标否定。 [正文](C732)，内部独立审查/有限精确核验；未外审/新颖性未核。 |
+732: | UM-OPT-HULL-PAIR-NC-GAP-v1 | ∀整数k≥2,r≥k，在私有sink族的OPT1和固定最优平均x上，∀保持全部x边际的合法随机Σ，若每对同sink不同small的联合概率≤1/r²，则E C_max≥2−1/k−(k−1)/(2r)。∀ε∈(0,1)，q=ceil(εk)≥2时P(C_max≤2−ε)≤min(1,k(k−1)/(r q(q−1)))。r≥max(k,binom(k,2))时期望下界和每个q的非截断尾上界均分别精确达到。 | 真实最优平均的组内small为正相关，不属NC类。保持正相关、重选点/选好态和一般随机算法未被排除。 [正文](C732)，内部独立审查/有限精确核验；未外审/新颖性未核。 |
+733: | UM-OPT-HULL-HIGHER-NC-SUCCESS-v1 | k≥2,r≥k,1≤d,q≤k，保私有sink固定最优边际及所有同sink的2..d阶全送事件上负相关，t=min(d,q)时最大Pr[Cmax≤2−q/k]恰1(t1)，否则min(1,C(k,t)/(r^(t−1)C(q,t)))，显式达到。r=k²、固定ε及d(k)→∞时poly次采样择优成功趋零。 | 仅正事件NC；补事件、采后重排和更改边际分开；自适应乘积界需条件law守合同。[正文§11](C732)，[独立审查](C1640)；非一般算法困难性，外审/新颖性未认证。 |
+734: | UM-FOREST-BOUNDARY-AUGMENT-v1 | ∀给定单边界森林gadget(V,r,K)、有理T≥0和0<η≤1，存在确定性poly(总位长,1/η)算法，返回FAIL（蕴含内部≤T无解）或实际τ,b≥0，根负载b、内部负载≤(1+η)T；对每个内部≤T的原分配ρ均b≤L_r(ρ)。用单端根任务b替换，保全局T可行性正向，任意约化调度B恢复≤max(B,(1+η)T)。同T,η每次删至少一机器的≤m次嵌套消元保持同界。 | 成功不等于原T精确可行，根b可>T。单边界承重，多边界不能逐坐标min；已有bounded-treewidth FPTAS是背景，未认证接口新颖性。 [正文](C734)，内部独立审查/有限精确核验；未外审/新颖性未核。 |
+735: 
+736: ## 容量接口与最小总处理量初始化的锐边界
+737: 
+738: | ID | Exact scope and result | Account and status |
+739: | --- | --- | --- |
+740: | UM-KNAPSACK-MATROID-ENVELOPE-v1 | For all integers k,p>=1, on one weight-1 item and k weight-1/k items, the minimum over all p same-ground-set matroids whose common independent sets contain every weight<=1 subset of the maximum common-independent-set weight equals max(1,2-p/k), and is attained by partition matroids. A uniform bound 2-epsilon requires p>=ceil(epsilon*k) on this family. | [原任务地集上多拟阵容量外包的精确损失](C645)；独立冻结审查通过；标准工具直接扩展，主目标OPEN，外审/新颖性未认证。 |
+741: | UM-MIN-WORK-FACE-SUPPORT-GAP-v1 | For every m>=2 the positive finite m-machine home-penalty family has OPT=m+1/m and T_LST=m. At T=OPT every minimum-total-processing-time assignment-LP point has the same support and every supported integer assignment has makespan 2m-1; the face contains an explicit vertex of the original LP. Exact nonincreasing total-work schedules have the same bad value. With integer q>=0 small off-home moves allowed, the exact optimum is max(2m-1-min(q,m-1),m+1/m). | [最小总处理量整个最优面的支撑损失](C700)；独立冻结审查通过；标准工具直接扩展，主目标OPEN，外审/新颖性未认证。 |
+742: 
+743: ### 大小任务共同迁移的新增限域身份
+744: 
+745: | ID | Exact Statement | 范围、状态与入口 |
+746: | --- | --- | --- |
+747: | UM-FROZEN-MACRO-TINY-REOPT-GAP-v1 | ∀整数r≥1，k=r(r+1)，存在所述受限指派P_r、r²个真实最优调度平均点x及真实ST槽输出σ，OPT=1、Cmax(σ)=2−1/r；固定全部宏任务位置后，允许全部微任务任意使用其所有有限边联合重优化，精确最优为2r/(r+1)。∀固定δ,ε∈(0,1)，可选r使微任务1/k≤δ且该值>(2−ε)OPT。 | 只排固定宏任务的后处理合同；重选宏任务或换x/匹配、一般算法均不受排除。 [正文](C732)；独立内部已审，未外审。 |
+748: | UM-MACRO-MIGRATION-FRONTIER-v1 | ∀整数r≥1、0≤d≤r−1，k=r(r+1)、s=r−d，从指定σ改至多d个宏任务最终机器、微任务全自由时，精确最优F_r(d)=ceil(2sk/(s+1))/k。∀实α∈[1,2)，M=floor(kα)，达到Cmax≤α的最少宏任务改数恰max(0,r−floor(M/(2k−M)))。允许≥r−1次改动时OPT=1。 | 固定改善必改r−O(1/ε)个宏任务，但不排一次改变线性数量宏任务的位多项式算法。 [正文](C732)；独立内部已审，未外审。 |
+749: | UM-DEPTH-TWO-HALF-v1 | ∀显式层状简单DAG D:{r}→U→W，r/U需求为正二进制整数、W需求0，存在确定性总位多项式算法输出真实根树H，b(H)≥b*/2；对原token/filler桥梁P(D,k)，实际输出调度Cmax≤2−b*/2≤3OPT/2。根为零需求终端的情形由原桥梁精确处理。 | 标准贪心收费的局部构造；深层资源共享和一般R∥Cmax均未解决，新颖性未认证。 [正文](C722)；独立内部已审，未外审。 |
+750: 
+751: ## 不相关机：双边界相关菜单与单目的地路径修复
+752: 
+753: | ID | Exact scope and result | Boundary and evidence |
+754: | --- | --- | --- |
+755: | UM-FOREST-TWO-BOUNDARY-MENU-v1 | ∀给定双边界a≠b的森林任务gadget、二进制有理T≥0及0<η≤1，存在确定性poly(总位长,1/η)算法输出多项式大小的实际分配菜单；每项内部及b负载≤(1+η)T。∀原分配ρ，若内部≤T且L_b(ρ)≤T（a不限容），则∃同一菜单项τ使L_a(τ)≤L_a(ρ)、L_b(τ)≤(1+η)L_b(ρ)，因此严格保b=0。 | 给定结构的可恢复接口；同批任务/内部不交挂件可共享存活边界，前向乘性贡献求和不按件数累计，选好项后逆恢复max(B,(1+η)T)。不包括结构寻找、普通job替换、一般核心共同选择或免费串行嵌套。 [正文](C734)。独立内审及有限精确核验，未外审/未认证新颖性。 |
+756: | UM-ONE-DESTINATION-SLOT-REPAIR-v1 | ∀m≥2及UM-OPTIMAL-CONVEX-ST-SLOT-GAP-v1的任一槽输出σ，若每原来源机器全部迁出原任务至多去一个外部目的地，则达到OPT1的最小Hamming为m(m−1)/2；强制big搬走时最小为m(m+1)/2。big不动的达到构造可按路径逐批执行，第t批后C_t=(2m−t)/(m+1)，每整批严格降1/(m+1)，t=1,…,m−1。 | 仅此显式族的正面修复与精确修改数；接收机可增载。原不限制目的地的m−1最优迁移Claim不改变。没有一般配置初始化的首次进展或统一近似结论。 [正文](C700)。独立内审及有限精确核验，未外审/未认证新颖性。 |
+757: 
+758: 
+759: 
+760: ## 星收缩的配置接口与预处理组合边界
+761: 
+762: | ID | 精确范围与结论 | 正文与状态 |
+763: | --- | --- | --- |
+764: | UM-STAR-CONFIG-TRANSFER-v1 | 全邻域极小星满足逐外机配置互斥时，配置可行性双向保持，全部独立单边条件证书向前保持；单点前向仅需外部占用Q≥1。每步全球最多分裂一列，复杂度计入给定证书。 | [星正文§8](C645)、[冻结攻击](C773)；缺条件及逆向probe均有反例；未外审/未核新颖性。 |
+765: | UM-CONTRACTED-SPARSE-CONFIG-GAP-v1 | 每k≥3稀疏深树沿指定合法次序收两端后，无极小星、全部最终边条件CONFIG可行，OPT=2−1/k，T=1+1/k；组合接受合同sup2。 | [稀疏正文末节](C687)；双路全最终边有限核验与一般证明分开，不排共同base或主目标。 |
+766: 
+767: ## 单共享汇点的宏任务共同选择
+768: 
+769: | ID | Exact Statement | 范围、状态与入口 |
+770: | --- | --- | --- |
+771: | UM-SHARED-SINK-JOINT-MACRO-v1 | ∀给定H∪{z}、仅homes可用且每有限边>T/2的宏任务、各任务仅在唯一指定home与公共z的非空子集可用的私有组、二进制有理T≥0及0<η≤1，有确定性poly(总位长,1/η)算法返回FAIL或实际调度，所有home≤T、z≤(1+η)T；OPT≤T时必成功，故FAIL蕴含OPT>T。私有任务无需尺寸上界，宏任务图任意。 | 仅单共享sink与唯一home的给定结构，宏任务每有限边严格>T/2承重；成功不判定T精确可行，不含一般多sink/多home转换或统一ε。标准覆盖背包+匹配的组合接口，未认证新颖性。 [自足证明](C802)、[冻结审查](C803)。独立内部核验，未外审。 |
+772: 
+773: ## 对称共同条件矩的运输与重新耦合
+774: 
+775: | ID | 精确范围与结论 | 正文与状态 |
+776: | --- | --- | --- |
+777: | UM-SYMMETRIC-JOB-AGGREGATION-v1 | For every nonempty bounded one-hot rational P, symmetric normalized certificate (x,Y), and given deterministic jobwise aggregation/deletion R with at least one retained job, mapped old true columns in their scaled P-prime imply (Rx,RYR^T) is a same-layer certificate. With no retained jobs check the zero-dimensional base separately. Given data and explicit P-prime can be checked in bit-polynomial time; finding R is not solved. | [正文](C779)、[冻结审查](C780)；限范围完整证明/双路精确审计，外审与新颖性未认证，主目标OPEN。 |
+778: | UM-SINGLE-MACHINE-MOMENT-RESET-THRESHOLD-v1 | For each q>=2, m=2q machines and n=2q^2 identical jobs p=1/q,T=OPT=1, the uniform balanced true-optimum moment matrix needs exactly 2q absorbed jobs for some deterministic single-machine fallback pushforward to satisfy residual true/false capacities. Every c<2q and every fallback fail. At c=q balanced groups, the same first moment Rx has a rebuilt true residual T-distribution, in deterministic bit-polynomial time. | [正文](C779)、[冻结审查](C780)；限范围完整证明/双路精确审计，外审与新颖性未认证，主目标OPEN。 |
+779: 
+780: ## 共同拥塞流、支撑选择和单位走廊的准确身份
+781: 
+782: | ID | Exact Statement | 范围与入口 |
+783: | --- | --- | --- |
+784: | UM-DAG-CONGESTION-FLOW-v1 | ∀显式根简单DAG及二进制非负需求（零需求仅原终端），∀整数K≥1及含根支撑W上的正文共同K证书，可确定性总位多项式用一次整数流输出真实根树b≥1/(2K−1)。固定W,K的证书可行性与一整数流饱和等价；可行性对K单调，可位多项式求最小可行K或报告该W无证书。∀K≥2存在本合同证书族且真实b*=1/(2K−1)。全支撑最优κ*在b*>0时满足(1+1/b*)/2≤κ*≤ceil(1/b*)；给评分β>0的实际树及K≥1/β可构造其支撑证书。 | W、K明确输入，允许不可达组件、正需求死点、任意根、极大二进制需求；K为整数。输出可用E[W]的零f边。给定W的不可行不意味着无好树。没有一般支撑搜索、统一常数K或一般调度算法。 [自足正文](C787)、[冻结审查](C788)。独立内审及精确有限核验，未外审/未认证新颖性。 |
+785: | UM-DAG-ACTIVATION-CORRIDOR-GAP-v1 | ∀整数q≥2，正文四段DAG有1+q(q+3)点、2q²+2q边，根/走廊需求1、q个分叉点需求q、末端需求0。加强激活LP a_r=1、非根a_v=Σ_u x_uv≤1、Σ_w x_vw≥k_va_v、0≤x_vw≤a_v精确有理可行，但真实根树最优b*=1/q。 | 仅上述激活边际LP的统一正常数充分性反例；未满足或否定共同K强证书，未导入SA或调度困难性，未认证全球新颖性。 [自足正文](C787)、[冻结审查](C788)。独立内审及精确有限核验，未外审/未认证新颖性。 |
+786: 
+787: ## 独立均匀选择的正面条件矩运输
+788: 
+789: | ID | 精确范围与结论 | 正文与状态 |
+790: | --- | --- | --- |
+791: | UM-INDEPENDENT-UNIFORM-MOMENT-RESET-v1 | For every q>=2 with m=2q,n=2q^2,p=1/q, the fixed uniform balanced optimal-distribution matrix under independent uniform rerouting of old deleted-machine choices satisfies residual P0(1) true/false capacities iff absorbed integer job count c>=q+2. Other old choices stay fixed; no conditioning on absorbed labels. Exact moments are deterministically bit-polynomial computable; transported states may still have load2. q=1 separately has threshold1. | [正文§9](C779)、追加冻结审查和双路真实矩核验；非调度算法，m=2q不可省，主目标OPEN。 |
+792: 
+793: 跨路线[补充审查](C808)仅核所列UM接口和拼接义务，未更改上述Claim量词、状态或新增主目标算法。
+794: 
+795: ## 固定数量共享汇点的共同占位与实际调度
+796: 
+797: | ID | Exact Statement | 范围、状态与入口 |
+798: | --- | --- | --- |
+799: | UM-OCCUPATION-MODE-SIDE-CONSTRAINT-v1 | ∀有宏全覆盖匹配的有限宏/home二分图、每home有限非空带0/1占位标签的模式库、整数K≥0，P={每home模式和1、占位边际属于宏可匹配home基凸包}加任意K个线性侧不等式后，每个模式投影顶点至多2K个home有多于一个正模式。正支持内可用整数下界匹配和实际模式恢复，仅改变这些home；不承诺侧预算保持。 | K可随输入增长；一般结论只给2K支撑界。模式只依占位bit，不能依具体macro身份/残余容量；所有额外耦合约束须计入侧约束rank。 [正文](C811)、[冻结审查](C812)。限域完整证明，未外审/未认证新颖性。 |
+800: | UM-FIXED-SINK-PRIVATE-GROUP-THREE-HALVES-v1 | ∀固定整数K≥1，∃确定性A_K，∀给定H∪Z(|Z|=K)、仅H可用且每有限边>T/2的宏任务B、不交私有组J_h（每件仅{h}∪Z的非空子集可用）、二进制有理T≥0，A_K按输入总位长多项式返回可靠FAIL或实际调度Cmax≤3T/2；OPT≤T必成功。私有尺寸任意，有限p>T先剪枝。多项式次数依K。 | 给定T的one-sided资源增广；成功不判定T精确可行。固定K与唯一home分组承重，不提供一般实例分区/分组提取，不含K增长的统一多项式保证。 [正文](C811)、[冻结审查](C812)。限域完整证明，未外审/未认证新颖性。 |
+801: | UM-FIXED-SINK-MACRO-PROMISE-APPROX-v1 | ∀固定整数K≥1，∃确定性位多项式算法，∀同给定H/Z/B/私有组但无T的合法实例，若每条有限宏任务时间严格>OPT(P)/2（B可空），则输出实际调度Cmax≤3OPT(P)/2。零最优值精确零输出；算法不验证含OPT的promise，不要求给OPT或好调度。次数依K。 | 含OPT的大宏任务promise与结构分区为额外假设；不是一般UM-TARGET-v1。通过共同分母整数网格及可靠FAIL/任意成功负载界二分，不假定接受集合单调。 [正文](C811)、[冻结审查](C812)。限域完整证明，未外审/未认证新颖性。 |
+802: 
+803: ## 真实最优凸包初始化的长链修复边界
+804: 
+805: | ID | 精确范围与结论 | 正文与限制 |
+806: | --- | --- | --- |
+807: | UM-OPT-HULL-LONG-CHAIN-LOCAL-GAP-v1 | ∀k≥3,d≥1，两个真实OPT1调度平均点的全部mincost ST输出σ都有Cmax=2−1/k；严格lex改善的最小任务支持d+1、最小新旧端点参与机数d+2同时达到，每源仅迁一件。 | [循环正文§10](C708)、[冻结审查](C817)。中性Cmax链尾预修明确可行，未排一般算法，未外审/未核新颖性。 |
+808: 
+809: ## 守恒扩区与非单位分叉参数的独立身份
+810: 
+811: | ID | Exact Statement | 范围与证据 |
+812: | --- | --- | --- |
+813: | UM-DAG-TRANSIT-CONGESTION-v1 | ∀上述合法D,k,r,K，新共同证书可总位多项式提取真实树b≥1/(2K−1)，每个K由单边k_r=2K−1族精确达到；固定W/K证书与一次整数流饱和等价，K可行单调且最小K位多项式可求。令h_K=#{k≥2K}，枚举这些高点子集、免费补入全L/Z，在2^{h_K}poly(总位长)判定某W证书并输出W/f/树。旧k≥K合同同W/K证书可拓扑裁流转新，反向不总成立。 | 新合同另立身份，不更改UM-DAG-CONGESTION-FLOW-v1。指数因子2^{h_K}仍在，未证明一般好支撑可多项式搜索，未给统一常数K或一般UM算法。 [正文](C787)§7–10、[冻结审查](C788)。内部独立核对，未外审/未认证新颖性。 |
+814: | UM-DAG-NONUNIT-PARAMETER-EXACT-v1 | ∀上述合法D,k,r，令h=#{v:k_v≥2}和总二进制位长B_in；有确定性2^h poly(B_in)算法输出实际根树H，精确达到b(H)=b*。含b*=0、根终端、巨大二进制需求；不按k数值枚举。 | h是输入参数，任意h时2^h不是多项式。此为根树对象的精确FPT算法，不承诺一般调度近似，不免费从任意处理时间矩阵取得需求树结构。 [正文](C787)§7–10、[冻结审查](C788)。内部独立核对，未外审/未认证新颖性。 |
+815: 
+816: 
+817: ## 宏任务真实退出与完整profile接收池
+818: 
+819: | ID | Exact Statement | 范围与证据 |
+820: | --- | --- | --- |
