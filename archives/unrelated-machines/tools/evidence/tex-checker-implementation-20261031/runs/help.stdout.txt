@@ -1,0 +1,34 @@
+usage: check_preservation.py [-h] [--limit LIMIT] [--allow-additions]
+                             [--approved-symbol-map OLD=NEW] [--project]
+                             original polished
+
+Check TeX preservation and hard polishing constraints.
+
+positional arguments:
+  original              Original or author-approved baseline TeX file
+  polished              Candidate or normalization-result TeX file
+
+options:
+  -h, --help            show this help message and exit
+  --limit LIMIT         Maximum issues to print per category
+  --allow-additions     Allow ordinary prose additions only. Protected TeX
+                        structures and math remain exact; numeric values and
+                        recognized unit, currency, sign, and marker tokens in
+                        supported anchored, connected, delimited, or cue
+                        contexts remain exact and in order. Other contexts
+                        require manual source comparison. Recognized comments
+                        and literal/code regions are exact protected source in
+                        every mode; custom unrecognized literal macros require
+                        manual comparison. Retained for workflow
+                        compatibility.
+  --approved-symbol-map OLD=NEW
+                        Authorize an exact global math-symbol substitution.
+                        Repeat for multiple mappings. This enters
+                        normalization-only mode, rejects unambiguous numeric,
+                        currency, percentage, and sign mappings, never
+                        authorizes unit changes, and permits no other prose or
+                        protected change.
+  --project             Treat each positional file as a root TeX file and
+                        recursively compare statically resolvable
+                        \input/\include/\subfile/\subfileinclude and import-
+                        family content.
