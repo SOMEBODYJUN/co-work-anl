@@ -315,3 +315,7 @@ R3_READY10HZ：10源正文与原入口证据；根审计与受限图枚举、保
 R3_READY10HZ数学/证据pushed 5645f8c1bb50f03ce124d738f0036d250d14f5a6；10源done另推送 759e798f59cebdd4a0cc97ddbba6a6d852e7f8a2。Boss4累计2018完成，实际未完24；持续接续全仓，不以本批清空收尾。
 
 R3_READY11IA：11源正文证据；R373入口量词接续、UM共同选择/仙人掌边界、查询字母表与回复闭包，并修两页配置阈值及根任务模型；共11主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY11IA_REMAINING_SCOPE.json。
+
+R3_READY11IA数学/证据pushed d9766ba7ff91e20c1aae534de23e6e497ba2834f；11源done另推送 bf9e558cb854c45d162460b953af3aec5a415217。Boss4累计2029完成，实际未完30；持续接续全仓，不以本批清空收尾。
+
+R3_READY13IE：13源正文证据；任意比较槽根包络与DIRECT纠错、完整菜单COH/ESC合同、保险span与精确sharp域，并显式澄清两篇重复尾假设；共13主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY13IE_REMAINING_SCOPE.json。
