@@ -432,3 +432,7 @@ R3_READY23MR：二十三主源：三配对原点显式单位核与逐叶平方�
 R3_READY23MR数学/证据pushed 62e00c612f7c43d4fdd114a460a33d4862574975；23源done另推送 22e2f2b0f76762eee32599fe567066a692a3745e。Boss4累计2446完成，实际未完9；持续接续全仓，不以本批清空收尾。
 
 R3_READY9MZ：九主源孪生包含递归独立有限计数审计与两旧原报告准确绑定；四人真实H(1)全参数证明/互补保险两人BR边界与真实P势误差，严格保related程序missing和0新扫描身份；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY9MZ_REMAINING_SCOPE.json。
+
+R3_READY9MZ数学/证据pushed 8600d8b47ebe7a0e46db9d058379ff613294c059；9源done另推送 102402333e6a98e33c39a215ce0da184bba57e98。Boss4累计2455完成，实际未完22；持续接续全仓，不以本批清空收尾。
+
+R3_READY18NA：十八主源GAP/G2与P-seat/hub准确归档、23单位完整SPE收益比较与旧静态/税来源、储备/调和原程序真实有限域及旧成功复用、极小尾前移严格例和真实查询接口；各原失败attempt/旧报告范围保；共18主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY18NA_REMAINING_SCOPE.json。
