@@ -295,3 +295,7 @@ R3_READY25HJ：25源正文与证据；净遗漏预算、完整笛卡尔补偿与
 R3_READY25HJ数学/证据pushed e1748ce814a4fe55c5e20bb5ebd805839ae6c48e；25源done另推送 a6eb09bd84bef4626b17bcd3b84cfc8789fb7bda。Boss4累计1962完成，实际未完31；持续接续全仓，不以本批清空收尾。
 
 R3_READY6HK：6源正文与证据；UM大入口全层合同、OPT前缀BILL与net菜单，并逐项修正7篇既有数学正文；共6主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY6HK_REMAINING_SCOPE.json。
+
+R3_READY6HK数学/证据pushed 6f7cdf441ada04e69679d00233d06d36001a9762；6源done另推送 6d9375e864436803c7a73e50170ddd679a203ed7。Boss4累计1968完成，实际未完30；持续接续全仓，不以本批清空收尾。
+
+R3_READY10HN：10源正文证据；all-k极大归属、人口版本与严格有序压缩、可信修复和任意旧背景末位两比较合同；共10主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY10HN_REMAINING_SCOPE.json。
