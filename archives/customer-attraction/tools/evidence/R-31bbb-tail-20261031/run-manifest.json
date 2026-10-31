@@ -1,0 +1,35 @@
+{
+  "batch": "R-31bbb-tail-20261031",
+  "replays": [
+    {
+      "command": "cd tmp/r31tail_replay && python3 terminal_tax/terminal_probe.py --games 0 --named --output terminal_named_smoke.json",
+      "output": "replay/terminal_named_smoke.json",
+      "result": "all 17 source named labels matched; replay also saw 2 extra certificates"
+    },
+    {
+      "command": "cd tmp/r31tail_replay && python3 weak_matching/markov_cone.py --players 5 --topics 7 --games 2 --seed 10214 --output markov_smoke.json",
+      "output": "replay/markov_smoke.json",
+      "result": "no floating separator in 2-game smoke"
+    },
+    {
+      "command": "cd tmp/r31tail_replay/research/workspaces/customer-attraction/R-31bbb6cfd6594bc8bb076db7b2950993 && python3 weak_matching/portfolio_addition_cone.py --games 1 --topics 6 --players 4 --seed 10211 --mode portfolio --output portfolio_smoke.json",
+      "output": "replay/portfolio_smoke.json",
+      "result": "no floating separator in one-game smoke"
+    },
+    {
+      "command": "cd tmp/r31tail_replay/research/workspaces/customer-attraction/R-31bbb6cfd6594bc8bb076db7b2950993 && python3 weak_matching/portfolio_addition_cone.py --games 200 --topics 6 --players 4 --seed 10211 --mode portfolio --output portfolio_200_replay.json",
+      "output": "replay/portfolio_200_replay.json",
+      "result": "matches source games=200/pairs=1663/largest_gap=-1/37"
+    }
+  ],
+  "dependencies": [
+    "dependencies/customer_attraction/*.py (canonical package SHA family)",
+    "dependencies/tests/audits/customer_attraction_strategy_lp.py",
+    "dependencies/evidence/certificates/customer_attraction/*.json"
+  ],
+  "limitations": [
+    "All cone LP outputs are floating discovery screens; no positive candidate was produced.",
+    "terminal named replay uses a superset of currently frozen certificate files; every one of 17 source labels matches by value.",
+    "workspace.json is provenance metadata only."
+  ]
+}

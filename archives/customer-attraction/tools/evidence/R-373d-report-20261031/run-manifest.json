@@ -1,0 +1,16 @@
+{
+  "batch": "R-373d-report-20261031",
+  "replay_command": "python3 archives/customer-attraction/tools/evidence/R-373d-background-20261031/source/three_price_template.py",
+  "replay_output": "replay/three_price_template_replay.json",
+  "comparison": "source and replay equal after removing generated enriched=false metadata",
+  "interpretation": {
+    "n_1_2": "feasible floating LP templates",
+    "n_3_plus": "HiGHS status 2 infeasible for this named template",
+    "scope": "template obstruction only; no SPE/payment/coverage theorem"
+  },
+  "limitations": [
+    "HiGHS floating LP report; no rational Farkas certificate in this source itself",
+    "bgmax=30 finite scan",
+    "template has seven symmetric multipliers and is not the full ordered-history SPE cone"
+  ]
+}

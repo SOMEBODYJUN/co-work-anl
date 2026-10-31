@@ -1,0 +1,29 @@
+{
+  "batch": "R-373d-coupling-credible-20261031",
+  "replays": [
+    {
+      "command": "python3 audit_signed_graph_menus.py",
+      "output": "replay/signed_graph_menu_audit.json",
+      "scope": "1200 random definition cases, 150 half-density sharp cases, 135 clique cases, K5 odd-cycle check"
+    },
+    {
+      "command": "python3 replay/verify_candidates.py",
+      "output": "replay/candidates_verify.stdout",
+      "scope": "independent Fraction verifier for three extracted count-MILP candidates"
+    },
+    {
+      "command": "python3 fixed_bridge_attack.py",
+      "output": "replay/fixed_bridge/",
+      "scope": "p=6,m=3 fixed bridge scans for mult=2,3"
+    }
+  ],
+  "dependencies": [
+    "weak-matching-cone-attack-20261031 frozen customer_attraction package and strategy LP audit",
+    "individual_security_failure.json frozen 6-provider/3-theme certificate"
+  ],
+  "limitations": [
+    "MILP source statuses are HiGHS time-limit (status 1); exact extracted certificates are verified, but no optimality claim for the MILP search objective",
+    "bridge objects are exact finite bridge checks and explicitly not half counterexamples",
+    "signed graph audit proves formula identities in its generated families, not a SPE realization or universal theorem"
+  ]
+}
