@@ -1,0 +1,41 @@
+{
+  "batch": "dual-rail-input-certificates-20261031",
+  "source_commits": [
+    "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c"
+  ],
+  "source_ids": {
+    "distorted_group_joint_slot_cases": "b083c8d4196a16c48a20",
+    "dual_rail_exception_arity_sharp_certificates": "0d323a2d8638ce87fc76",
+    "dual_rail_fullcube_A3_actual_certificate": "c364b9a5b3af1dd211c5"
+  },
+  "source_sha256": {
+    "dual_rail_exception_arity_sharp_certificates.json": "def385e1e55209058fc5500bb107338526b6c030d60e91697b3544ab1b44bd7f",
+    "distorted_group_joint_slot_cases.json": "ff7a5d39e5a0b1cea78a319837f3d7eb473fc72a4a2980ced61e9d21656c368b",
+    "dual_rail_fullcube_A3_actual_certificate.json": "95975b6ffc7c6c9cef342281c1bd1cf7c6d26f6ed0e2c6d81a98c1f9f9428af0"
+  },
+  "checks": [
+    {
+      "name": "distorted_group_joint_slot_cases",
+      "cases": 16,
+      "seed": 2984106,
+      "verified": "all private assignment target legality and exact home/sink load sums"
+    },
+    {
+      "name": "dual_rail_exception_arity_sharp_certificates",
+      "A_range": [
+        1,
+        8
+      ],
+      "verified": "all 8 sigma assignments legal, exact machine loads and makespan=(A+1)/A"
+    },
+    {
+      "name": "dual_rail_fullcube_A3_actual_certificate",
+      "A": 3,
+      "machines": 42,
+      "jobs": 165,
+      "verified": "both supplied sigma certificates legal with exact loads and makespan 9/8; formula candidates include minimum B=3"
+    }
+  ],
+  "scope": "exact source-input preservation and independent Fraction consistency checks; no general UM theorem inferred"
+}
