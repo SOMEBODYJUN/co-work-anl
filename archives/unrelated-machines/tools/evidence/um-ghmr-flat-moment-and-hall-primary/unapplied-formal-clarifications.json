@@ -1,0 +1,86 @@
+[
+  {
+    "target_repo_path": "archives/unrelated-machines/state/审查/Hall联合流与前缀匹配增量审计--审查.md",
+    "snapshot_repo_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/existing-formal-snapshots/Hall联合流与前缀匹配增量审计--审查.md",
+    "old_sha256": "158724bd9ffbbbe74f474ab7d876987a31f21c5e300485249ded50a3016837bf",
+    "old_line_number": 50,
+    "exact_old_line": "基础域有 4448 个枚举输入。`T_feasible=2278` 与 `successful_outputs=2773` 不应被理解为“所有可行输入都输出”：输出计数还包括命名 fixture 和其他分支，审计自身没有把计数声明为一般完备性。`reliable_rejections=1675` 是程序在原矩阵下可靠拒绝的分支；`nonuniform_zero_job_cases=228` 单独保留零 job 语义。varying-macro 域再给出 10122、2071、2650 三个计数，unknown-OPT-promise 3991 例则明确把真实 OPT promise 作为额外前提，不可回填到所有源输入。",
+    "suggested_replacement": "基础域共4448个枚举输入，T_feasible=2278、successful_outputs=2773、reliable_rejections=1675均只在该基础循环中累加。代码逐例断言全部2278个真实T=1可行输入均输出；2773还包括495个T=1不可行但允许rhoT舍入成功的基础输入。命名fixture、非均匀228例和varying-macro域未计入这四个基础计数，后两域分别单列。这里的有限逐例完备性不构成一般算法证明。",
+    "reason": "原循环明确区分真实T可行性与rhoT成功；原旧解释误把其他分支混入2773。",
+    "evidence": [
+      {
+        "primary_id": "9fa5bc2e0157bd3693a9",
+        "sha256": "ebcf08cbc82b841b86ab5c567d1abad79de0cf4b501bcffc24172fba3b94e46e",
+        "lines": [
+          302,
+          340
+        ],
+        "detail": "303初始化基础counts；327,334,335,338累加；336断言真实可行必成功；340开始其他域。"
+      },
+      {
+        "comparison_id": "6b44adbc694f4eb1778f",
+        "sha256": "3a4136a952a4b3adc0a833ab58d050eeb8d4ee2bcd21597fa7716e81fc6e6327",
+        "fields": [
+          "all_instances=4448",
+          "T_feasible=2278",
+          "successful_outputs=2773",
+          "reliable_rejections=1675"
+        ]
+      },
+      {
+        "new_data_check": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/data-selfcheck.json",
+        "field": "hall.base_success_above_true_T_feasibility_count=495"
+      }
+    ],
+    "status": "unapplied-suggestion-only",
+    "old_shared_page_modified": false
+  },
+  {
+    "target_repo_path": "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+    "snapshot_repo_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/existing-formal-snapshots/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+    "old_sha256": "86bf3e261da4a01f5359f265930bac742e5c92dd1106989b1727540cbb746d93",
+    "old_line_number": 95,
+    "exact_old_line": "共同资格是核心承重条件。两个私有任务分别只能去不同 sink 时，交集可能为空，联合流会可靠 FAIL，即便允许把任务分开看似可行。组负载下界 (W_h\\ge T) 也不可省略：若每组总量低于 (T)，可以构造一个 home 负载与共同 sink 负载都不超过 (T) 的例子，但 q 槽网络不再代表该组的实际出口需求。严格 Hall 计数不能自动把 q 槽降成 q−1；存在三组、两个共同 sink 的实际 (T=1) 见证要求两个槽以上的联合容量。",
+    "suggested_replacement": "共同资格是核心承重条件。两个私有任务若只能去不同sink，交集会丢掉可行迁移，不能直接套共同资格网络。一般组下界是W_h≥(1/2+1/q)T；原文的W_h≥T反例专指q=2：三个home各有时间2/3宏与四件1/6私有任务、同一个sink，真实T=1可行而q=2槽不足。严格Hall计数也不能据此任意把q槽降成q−1。",
+    "reason": "保留真实反例而补q=2限定；W_h≥T不是一般q合同。",
+    "evidence": [
+      {
+        "comparison_id": "326d6af1da65fbe4ab4c",
+        "sha256": "10aabd8e9cc0eccf10974f94e23633f6d1034313348a69ceac003bb876af5b2b",
+        "detail": "§1一般组下界及§6 q2、三home、四件1/6的实际反例；冻结原文第97行。"
+      },
+      {
+        "primary_id": "9fa5bc2e0157bd3693a9",
+        "detail": "solve验证theta=1/2+1/q；不可改成所有q都W_h≥T。"
+      }
+    ],
+    "status": "unapplied-suggestion-only",
+    "old_shared_page_modified": false
+  },
+  {
+    "target_repo_path": "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+    "snapshot_repo_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/existing-formal-snapshots/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+    "old_sha256": "86bf3e261da4a01f5359f265930bac742e5c92dd1106989b1727540cbb746d93",
+    "old_line_number": 89,
+    "exact_old_line": "作为阈值，其中 (B) 是使宏任务可被 home 覆盖的最小实际宏时间瓶颈。承诺域内 (t\\le OPT)，且宏边、组总量和单件上界都能在 (t) 上满足阈值合同，因此调用阈值算法得到 (rOPT) 上界。搜索只访问实际输入时间，不二分连续实数，也不调用 OPT 精度 oracle。",
+    "suggested_replacement": "未知OPT版本先逐件检查零边；正值且delta>0时，在实际宏时间集合中二分最小联合流瓶颈B：同一个macro→home→receiver网络必须覆盖全部宏，receiver资格及q容量保持不变。无宏取B=0。令t=max(max_h W_h,max_j w_j/delta,B)，完整承诺下t≤OPT并满足阈值合同，得到rhoOPT真实调度。这里的B不能只求宏到home的匹配瓶颈。",
+    "reason": "旧表述可被读成仅macro/home匹配；实际代码与现行原稿都使用共同接收网络，缺少接收条件会使t≤OPT后的成功推导失去依据。",
+    "evidence": [
+      {
+        "primary_id": "9fa5bc2e0157bd3693a9",
+        "sha256": "ebcf08cbc82b841b86ab5c567d1abad79de0cf4b501bcffc24172fba3b94e46e",
+        "lines": [
+          172,
+          190
+        ],
+        "detail": "176,181均调用joint_flow(h,eligibility,macros,k,q,threshold)，非macro-only匹配。"
+      },
+      {
+        "comparison_id": "326d6af1da65fbe4ab4c",
+        "detail": "§5第81行保留§3网络结构，只改变宏边阈值。"
+      }
+    ],
+    "status": "unapplied-suggestion-only",
+    "old_shared_page_modified": false
+  }
+]
