@@ -1,4 +1,16 @@
----\nid: customer-attraction/five-client-collision-free-load-bridge\nkind: counterexample\ntype_tag: 反例\ntitle: 五客户无拥挤SPE对可加负载桥的障碍\nstatus: established-with-scope\nsummary: 五客户无拥挤SPE对可加负载桥的障碍\nsource_refs:\n  - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/customer_attraction/collision_free_occupancy.md\n  - source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_collision_free_occupancy.py\n---\n\n# 五客户、二人、四主题无拥挤 SPE 障碍：独立审查
+---
+id: customer-attraction/five-client-collision-free-load-bridge
+kind: counterexample
+type_tag: 反例
+title: 五客户无拥挤SPE对可加负载桥的障碍
+status: established-with-scope
+summary: 五客户无拥挤SPE对可加负载桥的障碍
+source_refs:
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/reviews/customer_attraction/collision_free_occupancy.md
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:tests/audits/customer_attraction_collision_free_occupancy.py
+---
+
+# 五客户、二人、四主题无拥挤 SPE 障碍：独立审查
 
 日期：2026-10-21。状态：**按定义独立重构，完整 SPE 与桥反例成立**。未读取发现者稿件或代码；审计只用标准库、显式单位客户集合和 `Fraction`，未调用规范求解器。这里不是一般半覆盖反例，没有外审或全球新颖性认证。
 
