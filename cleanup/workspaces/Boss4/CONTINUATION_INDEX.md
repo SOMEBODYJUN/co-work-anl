@@ -420,3 +420,7 @@ R3_READY15MG：十五主源完整H/source解析、extra-iid聚合/预留正文�
 R3_READY15MG数学/证据pushed 54302d133ec73a62760065846a8fcf5a6426234e；15源done另推送 c9b7b5bd743428a3a1b0ae529ea3bdbd23cb6666。Boss4累计2396完成，实际未完22；持续接续全仓，不以本批清空收尾。
 
 R3_READY11MJ：十一主源完整弱菜单/静态extra-one程序范围与完整最优交换曲线，旧审查和真正背景量词各自保；实际全仓5589/10921、120认领，公屏20事件seq24与前次无新变化；共11主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY11MJ_REMAINING_SCOPE.json。
+
+R3_READY11MJ数学/证据pushed 2628be24761615e3fff2ff7f6c987092868e874e；11源done另推送 0d73383e4b3d070d1601a3231fb08e6247bc5ad4。Boss4累计2407完成，实际未完21；持续接续全仓，不以本批清空收尾。
+
+R3_READY16MN：十六主源iid精确二次域和weak全树原审计、协调三原程序真实成功的后续主源绑定、真实产品整数门槛/精确M/signed与整除口头勘误；无旧成功重复；共16主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY16MN_REMAINING_SCOPE.json。
