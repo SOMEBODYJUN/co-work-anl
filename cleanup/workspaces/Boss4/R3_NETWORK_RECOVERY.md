@@ -1,0 +1,7 @@
+# 实际写通路恢复及回执丢失纠正
+
+真实handoff于remote_tip9637d3bec7e864badae7e6dce37cf10a498d2465明确pushed，交接65而非旧本地清单47。由远端实际集合确认：此前next18 claim虽本地capture为空且同步报CONNECT403，其远端认领已经提交，后续本地同步失败；不是18源没有发生远端写入。此前记录仅说未确认/本地未见，应保留该历史不确定性，并以此实际65项结果纠正。
+
+原47正文处置准备均保全、local snapshots仍在HEAD；18新增源只有已发表context准备，没有primary成稿/receipt。draft-note在handoff中明确“仅本地未共享”，本次handoff元数据已写远端，草稿正文需随后正常checkpoint推送才算共享。
+
+写端点本次实际成功、身份匹配仍有效，网络边界已经解除。用户要求全仓持续清洗，因此恢复真实执行范围的claim、六个实质代理及正文/依赖正常checkpoint，明确pushed后再逐源done；不以成功交接或一个批次结束收尾。不把之前CONNECT403误称凭据认证失败，未换凭据。

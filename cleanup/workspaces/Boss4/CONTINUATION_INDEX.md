@@ -132,3 +132,5 @@ R3_LOCAL17I：真实代理CONNECT403后的本地保全17源：direct/compact5、
 R3_LOCAL5J：真实CONNECT403期间保存cyclic/resource已领5源完整交付；原程序数学运行0，只复用同SHA真实旧run；修正建议不覆盖Boss2共享对象；未远端pushed/未done；共5主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_LOCAL5J_REMAINING_SCOPE.json。
 
 R3_LOCAL8K：真实CONNECT403期间收齐最后已领8源：rankwise5与全字段assets/review/FILES三源；本地完整保真、全语义/数学与程序范围准确，不推定remote pushed/done；共8主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_LOCAL8K_REMAINING_SCOPE.json。
+
+R3_READY47M：真实网络恢复后发布47源全部完整正文/依赖/历史处置，复用已完成实读并保新增30local原件；此前65实际handoff与丢失18回执纠正一并保存，继续六线；本次明确pushed后再逐源done，不把旧local保存或handoff作done；共47主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY47M_REMAINING_SCOPE.json。

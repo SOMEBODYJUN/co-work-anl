@@ -33,3 +33,7 @@ next18认领调用失败：GitHub CONNECT tunnel failed,response403，等待工�
 R3_PENDING47_PREPARED_RECEIPTS.json为精确47源处置草稿，R3_PENDING47_FINAL_INTEGRITY.json给逐源字节位置；字段/哈希检查不代替正文数学。R3_PENDING47_RECOVERY_SCOPE.json是完整发布恢复范围。各原运行成功/复用旧run/未跑普通分支/负结果与开放接口均据实分开。
 
 六名实质清洗代理均已交付并停止；没有后台继续。准备实际clean handoff --all，草稿目前仍仅本地、未共享。其实际结果将在后文独立追加。
+
+## 实际结果及恢复纠正
+
+实际handoff明确pushed9637d3bec7e864badae7e6dce37cf10a498d2465，释放65项（47旧清单+前次回执丢失18）。这证明网络写通路已恢复；边界不再作为停止理由，六线程已恢复接续，重新claim正在执行。详R3_HANDOFF_ACTUAL_OUTCOME.json及R3_NETWORK_RECOVERY.md。上文“六名代理停止”仅为交接尝试前的当时状态，不是当前仍暂停。draft_note元数据已随handoff共享，但本稿正文仍待本次正常checkpoint才共享。
