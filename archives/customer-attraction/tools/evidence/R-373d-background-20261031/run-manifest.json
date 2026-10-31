@@ -1,0 +1,21 @@
+{
+  "batch": "R-373d-background-20261031",
+  "commands": [
+    "python3 -m py_compile source/*.py",
+    "run audit_max_theme_branch_capacity.py",
+    "run deficit_probe.py 1000 4 4",
+    "run deficit_probe.py 5000 5 4",
+    "run three_price_template.py",
+    "run three_price_template_obstruction.py"
+  ],
+  "replays": [
+    "replay/work/max_theme_branch_capacity_audit.json",
+    "replay/deficit/deficit_probe_4_4.json",
+    "replay/deficit/deficit_probe_5_4.json",
+    "replay/work/three_price_template_obstruction.json",
+    "replay/work/three_price_template_report.json",
+    "validation.json"
+  ],
+  "all_checked": true,
+  "validator": "validate_r373d.py"
+}
