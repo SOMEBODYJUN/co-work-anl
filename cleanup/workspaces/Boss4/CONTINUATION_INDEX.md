@@ -327,3 +327,7 @@ R3_READY8IJ：8源正文证据；scalar金融与free-source协方差、原局部
 R3_READY8IJ数学/证据pushed c49abf6db71b3681c1e90b13308e9f571b0be365；8源done另推送 8d5d2b749c56ec3414796bf0dd55827c66b6aea8。Boss4累计2050完成，实际未完27；持续接续全仓，不以本批清空收尾。
 
 R3_READY15IM：15源正文证据；EI与BGNEW历史纠错、私有共享同利润谱、保险effective域、UM前沿及两处参数单位勘误；共15主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY15IM_REMAINING_SCOPE.json。
+
+R3_READY15IM数学/证据pushed 7559d0185d5b8cd929e9b3c9fadf4e33780aedc0；15源done另推送 0e280a8d4a00983fbdb410ac9a95fc27d01a6dbd。Boss4累计2065完成，实际未完26；持续接续全仓，不以本批清空收尾。
+
+R3_READY7IR：7源正文证据；根Claims和owner薄化精确合同、H4真实费用边界、SSR静态后悔与原始对偶证书；共7主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY7IR_REMAINING_SCOPE.json。
