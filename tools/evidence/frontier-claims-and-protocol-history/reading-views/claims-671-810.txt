@@ -1,0 +1,141 @@
+FRONTIER CLAIMS full lines671..810; Cn=exact previously fully read catalog path; all labels/math/unmatched paths retained.
+671: 
+672: 
+673: ## WC-ANCHORED-POLYNOMIAL-CYCLE-LOCK-v1 — 锚定三元多项式时钟的双轮改善环全状态锁定
+674: 
+675: - Exact Statement / Conclusion：任意n≥3,p≥0的MODEL两动作游戏，若有按0,…,n−1翻全1再同序翻回0的严格α≥1改善环，则仅加2L个正单项式资源、保持原玩家/权重/旧资源及两个动作标签，可得到无α-PNE游戏，次数≤max(p,D)。L=C(n−1,2)，B上界全部原状态玩家成本，η为环最小严格差，δ=max_(0,i,j)(1−min(w0,wi,wj)/(w0+wi+wj))，D=ceil[ln(4α²BL/η)/ln(1/δ)]。全有理输入给全有理输出。
+676: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：全MODEL的任意有限两动作实例及实α≥1，正实权、非负实多项式、允许原空动作和零费用；输入严格双同序环、B>0、0<η≤B及0<δ<1定义固定在[正文](C408)。输出只含两个增广动作，不能再添空动作或2^E。
+677: - Dependencies：WC-MODEL、锚定010/101 literal和真实负载、有限最大最小、最早反位修复及泄漏差估计；不以某个环存在定理为编译证明前提。
+678: - Evidence：审查者读作者稿前完整独立重构，再攻击冻结hash；两份不互相导入的Fraction代码分别核验真实三玩家base+compiler和条件式时钟几何。源码hash、运行环境、参数、seed及结果见正文审计合同。
+679: - Counterevidence / Objections：无尚成立fatal；D依完整实例，未控制q=max(p,D)上的α ln q/q，不能用本接口替代全类否定或上界。
+680: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所述全状态编译定理；Value=可复用cycle-to-no-PNE桥；Novelty=未认证；Mechanism=锚定三元与最早反位修复；Ambition=唯一全类判定仍OPEN。
+681: - Related Files：research/current/weighted_congestion/anchored_cycle_lock.md；research/reviews/weighted_congestion/ordinal_potentials/anchored_cycle_lock_review.md；tests/audits/weighted_congestion/cyclic_clone/verify_clock_compiler.py；tests/audits/weighted_congestion/cyclic_clone/independent_clock.py；evidence/runs/weighted_congestion/cyclic_clone/cycle_lock_triad.json；evidence/runs/weighted_congestion/cyclic_clone/independent_clock.json。
+682: 
+683: 
+684: ## WC-ANCHORED-DEGREE-THREE-LOCK-OBSTRUCTION-v1 — 三次双轮环的锚定时钟次数保持障碍
+685: 
+686: - Exact Statement / Conclusion：显式四玩家有理三次基体G，权(1,1/2,1/4,1/8)、α=21/20，有严格双同序环及0101/1010精确PNE。任意λ>0，对λG只加anchor0的T012,T013,T023互补010/101同费pair，每T独立任意degree≤3非负多项式（可零/省略），若0000玩家0及1100玩家2的总αmargin均≥0，则0101/1010全部四个翻位margin均<0，故仍αPNE。
+687: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确系数、对象和变换固定在[正文](C417)；完整采用MODEL的真实成本和零成本不等式。只限明示基体、anchor、phase、同pair两侧同费及degree≤3；不排常数倍degree、其他anchor、两侧异费、辅助玩家或其他拓扑。
+688: - Dependencies：WC-MODEL, WC-CUBIC-ANCHOR-CONE-DEFINITION；前提的直接证明及使用位置由正文明确。
+689: - Evidence：先从精确statement独立重构，再攻击freeze；两份不互相导入的Fraction实际成本代码及运行命令/环境/hash/输入/seed适用性由正文审计合同连接。
+690: - Counterevidence / Objections：无尚成立fatal；只限明示基体、anchor、phase、同pair两侧同费及degree≤3；不排常数倍degree、其他anchor、两侧异费、辅助玩家或其他拓扑。
+691: - Status：complete fixed-architecture proof; independently reconstructed and exactly audited; unrefereed。Truth=上述限定命题；Value=可复用桥或精确方法限制；Novelty=未认证；Mechanism=四对显式有理x³基体；三种anchor0 triple各degree0..3共12列；四个简单非负dual仅用γ0、γ2，clock残差非正且base严格负。 Ambition=全类匹配上界判定仍OPEN。
+692: - Related Files：research/current/weighted_congestion/anchored_clock_degree_barrier.md；research/reviews/weighted_congestion/ordinal_potentials/anchored_clock_degree_barrier_review.md；tests/audits/weighted_congestion/cyclic_clone/verify_clock_degree_barrier.py；tests/audits/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.py；evidence/runs/weighted_congestion/cyclic_clone/clock_degree_barrier.json；evidence/runs/weighted_congestion/cyclic_clone/independent_clock_degree_barrier.json。
+693: 
+694: 
+695: ## WC-ANTICHAIN-CORE-NORMAL-FORM-v1 — 去包含支配与必选背景的空交反链核心规范形
+696: 
+697: - Exact Statement / Conclusion：任意d≥0 MODEL游戏有不依α的有限core变换：或给显式exactPNE，或得到同次数界、原玩家非空子集/原权的H，人人≥2非空两两不可包含且交集空的策略；固定lift将每个实α≥1的任意H αPNE提升原游戏。同一固定d、实α处，全类无αPNE反例存在等价于该core策略结构的正整数权/单位单项式x^j(j≤d)反例存在。
+698: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确系数、对象和变换固定在[正文](C349)；完整采用MODEL的真实成本和零成本不等式。提升单向、不保人数/资源数、不保最佳因子或逐状态反投影；没有无限规范模板的规模截止或全类C,d0。旧整数v1身份/保人数义务不改。
+699: - Dependencies：WC-MODEL, WC-ANTICHAIN-CORE-DEFINITION, WC-INTEGER-MONOMIAL-COUNTEREXAMPLE-v1；前提的直接证明及使用位置由正文明确。
+700: - Evidence：先从精确statement独立重构，再攻击freeze；两份不互相导入的Fraction实际成本代码及运行命令/环境/hash/输入/seed适用性由正文审计合同连接。
+701: - Counterevidence / Objections：无尚成立fatal；提升单向、不保人数/资源数、不保最佳因子或逐状态反投影；没有无限规范模板的规模截止或全类C,d0。旧整数v1身份/保人数义务不改。
+702: - Status：complete direct proof; independently reconstructed and exactly audited; unrefereed。Truth=上述限定命题；Value=可复用桥或精确方法限制；Novelty=未认证；Mechanism=A_i为包含极小动作，F_i=∩A_i=∩S_i，B_e为全体必选权和；用c_e(B_e+x)、a减F_i，删除singleton；原成本=core成本+自身偏离不变K_i≥0。 Ambition=全类匹配上界判定仍OPEN。
+703: - Related Files：research/current/weighted_congestion/template_certificates/integer_counterexample_normal_form.md；research/reviews/weighted_congestion/template_certificates/antichain_core_normal_form_review.md；tests/audits/weighted_congestion/template_certificates/verify_antichain_core.py；tests/audits/weighted_congestion/template_certificates/independent_antichain_core.py；evidence/runs/weighted_congestion/template_certificates/antichain_core.json；evidence/runs/weighted_congestion/template_certificates/independent_antichain_core.json。
+704: 
+705: ## WC-UNIFORM-CLOCK-BUDGET-BARRIER-v1 — 统一低泄漏锚定时钟预算的普适次数障碍
+706: 
+707: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：任意n≥3、整数p≥0的MODEL两动作严格α≥1双同序环、任意锚点，B为全状态原成本有限上界、η为环最小严格差、L=C(n−1,2)、δ=max锚定三元(1−minw/Σw)。若任意整数D≥1满足δ^D≤η/(4α²BL)，则全局权比R>α、D>(R+1)ln(4α²BL/η)>2(α+1)ln(2α)，且每个实q≥D均有αlnq/q<α/(α+1)<1；包括实际输出最高次数。只封闭该统一充分预算的目标否定证书，非实际最小锁定次数下界或全类PNE存在结论。
+708: - Dependencies：MODEL；WC-R3-DENSE-LOCAL-v1 的 strict R-FIP；WC-ANCHORED-CLOCK-DEFINITION 的双轮输入和统一预算；初等对数单调性。非从均衡存在性推出无改善环。
+709: - Evidence：完整一般证明；先独立重构后冻结攻击；两份Fraction、有理对数余项及最小D反验，作者另重算真实三玩家输入。
+710: - Counterevidence / Objections：不将(U)提升为必要条件；actual有向clock差、非统一幅度/次数、多项式或其他架构不受限制；无αPNE不代表无更大倍率PNE。
+711: - Status：complete budget-obstruction proof; independently reconstructed and exactly audited; unrefereed。Truth仅预算障碍，Value为封闭输入优化路线，Novelty未认证，Mechanism为R-FIP与最坏三元耦合，Ambition保持唯一本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+712: - Related Files：[统一低泄漏锚定时钟预算的普适次数障碍](C428)、[独立审查](C429)；两代码与冻结记录从正文读取。
+713: 
+714: 
+715: ## WC-CLONE-FRONT-PHASE-QUOTIENT-v1 — 循环窗口前沿的扭转平移与精确相位商
+716: 
+717: - Exact Statement / Conclusion：任意m≥2,N≥1正类权、每类至少参与一test的循环窗口两动作lift（保留零系数资源），同test全部index及pair两侧同费；共同index平移并wrap翻bit逐成本/偏离协变。合法class prefix/suffix由x∈(Z2N)^m编码，对角T使x各加1，商恰(2N)^(m−1)，单clone留front动作恰±1（N1两邻居重合）。有显式2N长forward成本表及backward r+1交换式。
+718: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确条件与完整定义见[正文](C434)；采用MODEL非负费用、正权和真实偏离。count是互异MODEL动作状态；单测试子项可缺席类，但不能把空/空标签当两策略。class0商动作改变所有相对相位，须保mover标签。不是对全front出口或PNE的断言。
+719: - Dependencies：WC-MODEL, WC-CLASS-FRONT-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
+720: - Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
+721: - Counterevidence / Objections：无未结范围内fatal；count是互异MODEL动作状态；单测试子项可缺席类，但不能把空/空标签当两策略。class0商动作改变所有相对相位，须保mover标签。不是对全front出口或PNE的断言。
+722: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+723: - Related Files：[正文](C434)、[独立审查](C435)及正文末节的audit/run。
+724: 
+725: 
+726: ## WC-CLASS-INTERNAL-CLOCK-FRONT-OBSTRUCTION-v1 — 类内时钟的前沿出口障碍与不同步反例
+727: 
+728: - Exact Statement / Conclusion：任意α≥1，同权类内递增锚定010/101同费三元时钟在每条合法front边的own old=new=c(2w)，clock margin≤0。显式12player/N4/degree8/α21/20有理窗口lift有strict24步环，但phase(0,4,0)六端点margin<−9/50；512front恰8稳定，仍有内部clone margin>1/5。故strict环不自动给每个类front改善端点，任意此类clock不新增front内改善。
+729: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确条件与完整定义见[正文](C434)；采用MODEL非负费用、正权和真实偏离。局部lemma要两端均非full触发；front使用递增锚定三元，不涵盖任意乱序wrap。实例非αPNE，有离front出口；不排所有类内compiler或其他同步机制。
+730: - Dependencies：WC-MODEL, WC-CLONE-FRONT-PHASE-QUOTIENT-v1, WC-CLASS-FRONT-FIXTURE；共同前提的使用与自足代数证明由正文分节给出。
+731: - Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
+732: - Counterevidence / Objections：无未结范围内fatal；局部lemma要两端均非full触发；front使用递增锚定三元，不涵盖任意乱序wrap。实例非αPNE，有离front出口；不排所有类内compiler或其他同步机制。
+733: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+734: - Related Files：[正文](C434)、[独立审查](C435)及正文末节的audit/run。
+735: 
+736: 
+737: ## WC-DEGREE-LOCAL-COST-COMPRESSION-v1 — 有限次局部成本空间与全成本资源压缩
+738: 
+739: - Exact Statement / Conclusion：固定n≥1,m_i≥1,d≥0与正实权，D=Σ_i m_i Σ_(T⊆N\i,|T|≤d)∏_(j∈T)(m_j−1)。全部玩家cost tables位于维D局部张量空间；任意游戏可用≤D正系数单项式签名类型及≤Σm_i零费私有动作marker保所有state/deviation成本和动作标签，core可保持。binary时D=2nΣ_(r≤min(d,n−1))C(n−1,r)，一般D=O_d((Σm_i)^(d+1))。
+740: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确条件与完整定义见[正文](C440)；采用MODEL非负费用、正权和真实偏离。不保原资源身份、单位系数或算法效率；零成本可用0正资源但markers保MODEL合法。所有人数/动作数无界，维界不是全类规模截止。
+741: - Dependencies：WC-MODEL, WC-DEGREE-LOCAL-SPACE-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
+742: - Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
+743: - Counterevidence / Objections：无未结范围内fatal；不保原资源身份、单位系数或算法效率；零成本可用0正资源但markers保MODEL合法。所有人数/动作数无界，维界不是全类规模截止。
+744: - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+745: - Related Files：[正文](C440)、[独立审查](C441)及正文末节的audit/run。
+746: 
+747: 
+748: ## WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1 — 全状态择证的低阶矩极锥与小支撑接口
+749: 
+750: - Exact Statement / Conclusion：固定任意完整selector h及实α≥1，其概率dual等价conv{Ψ_h(s)}∩K^-非空；Ψ只含所选动作边和≤d对手动作的signed discounted矩，K为全部允许资源cost vectors锥。若dual存在，有≤D+1状态支撑dual。binary指定单mover翻位支撑且α1时，dual存在等价两方向≤d上下文矩匹配/无degree≤d严格多项式分离；α>1仅primitive非负tests乘性夹逼。
+751: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确条件与完整定义见[正文](C440)；采用MODEL非负费用、正权和真实偏离。不能删selector-support marginal-polytope条件、改成任意局部一致矩或强求feature=0；不要求stationary/recurrent，未保证每selector可行或单mover证书。
+752: - Dependencies：WC-DEGREE-LOCAL-COST-COMPRESSION-v1, WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1, WC-ANTICHAIN-CORE-NORMAL-FORM-v1, WC-SELECTOR-MOMENT-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
+753: - Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
+754: - Counterevidence / Objections：无未结范围内fatal；不能删selector-support marginal-polytope条件、改成任意局部一致矩或强求feature=0；不要求stationary/recurrent，未保证每selector可行或单mover证书。
+755: - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+756: - Related Files：[正文](C440)、[独立审查](C441)及正文末节的audit/run。
+757: 
+758: 
+759: ## WC-TRANSIENT-PARITY-SELECTOR-DUAL-v1 — 完全暂态奇偶支撑的择证对偶
+760: 
+761: - Exact Statement / Conclusion：每个d≥0、每个d+3维正实权向量，都有binary无self-loop且唯一2cycle的selector，及全部支撑在暂态state的概率λ，对全部signature的degree0..d列在α1恰零、对所有α≥1非正；限制core proper signatures仍成立。flag0偶active states均匀分布，active维d+2使cost active-degree≤d+1严格低于维数。
+762: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：精确条件与完整定义见[正文](C440)；采用MODEL非负费用、正权和真实偏离。仅证明transient dual可行；唯一2cycle自身也有dual，不证明暂态必要/更优，不给任意selector或全类存在。
+763: - Dependencies：WC-MODEL, WC-SELECTOR-LOCAL-MOMENT-INTERFACE-v1, WC-PARITY-SELECTOR-DEFINITION；共同前提的使用与自足代数证明由正文分节给出。
+764: - Evidence：先由精确statement独立重构再攻击实际冻结hash；两份独立Fraction代码/输入/命令/精度/seed适用性及结果见正文审计合同。
+765: - Counterevidence / Objections：无未结范围内fatal；仅证明transient dual可行；唯一2cycle自身也有dual，不证明暂态必要/更优，不给任意selector或全类存在。
+766: - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所述表示/机制/反例；Value=可复用精确接口；Novelty未认证；Ambition=本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+767: - Related Files：[正文](C440)、[独立审查](C441)及正文末节的audit/run。
+768: 
+769: ## WC-ANCHORED-ACTUAL-MARGIN-INTERFACE-v1 — 锚定双轮时钟的有向差分、线性预算与逐次数锐效率
+770: 
+771: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：任意n≥3、α≥1、正权两动作MODEL基体的严格双同序环，任意逐三元非负多项式同费010/101锚定pair：两半合法margin同为g_i，非法firstopp i的真实clock margin恰g_i+Σ_{j later同anchor}Δ_ij，Δ≥0。γ_i为两半base margin之min、B覆盖全部base成本时，γ_i+g_i>0及每i<j的g_i+Δ_ij>αB给全状态无αPNE的n+L条充分线性约束。保环必要Σg=−(α−1)ΣS、(α−1)ΣS<Γ；degree≤D的Δ/S锐界为逐0..D单项式max，一般不取最高次；κ逐状态列界另给保原αPNE的全玩家充分条件。明示四玩家三次基体有43次实际证书，原uniform预算选值91。
+772: - Dependencies：WC-MODEL、锚定010/101实际用户表、非负多项式凸组合、有限最大最小；条件障碍只使用本文保环预算。
+773: - Evidence：完整一般推导、精确冻结审查及真实资源Fraction核验；源码、seed/参数、Python版本、误差控制和实际运行hash由[正文](C446)末节连接。
+774: - Counterevidence / Objections：约束仅充分、总预算仅必要；κ稳定条件非必要，保firstopp失败不等于PNE；不保证给定D可行或B可多项式时间计算。43不称最优，91只是统一充分预算选值。没有一般次数效率或全类结论。 所述范围无尚成立fatal；外审和新颖性未认证。
+775: - Status：complete stated-scope interface proof; independently reconstructed and exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+776: - Related Files：[正文](C446)、[独立审查](C447)，配套代码、输入、证据见正文审计合同。
+777: 
+778: ## WC-SHARED-SIDE-TRUNCATED-ROSENTHAL-v1 — 同权主玩家共享侧资源的统一强迫截断势均衡
+779: 
+780: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：对每个d≥2、有限同权u>0 hubs/任意正异权lights，每light唯一source、每side唯一light并允许任意hub子集H_j及空集/含source、两动作副本同费非负degree≤d；若α≥A_d=[1−(d−1)d^(−d/(d−1))]^(−1)，且逐light弱UF为F_v(u+w)+ΣG_j(w)≥α[F_v(W_v)+ΣG_j(w+|H_j|u)]，则所写截断Rosenthal势任hub单翻位局部最小点配全anti lights给αPNE。A_d≤2d/ln d对全部d≥2，常数仅限该子类。
+781: - Dependencies：WC-MODEL、WC-SHARED-SIDE-BUDGET-POTENTIAL-v1、本文正部望远镜(TR)及UF聚合预算；无外部定理。
+782: - Evidence：完整一般推导、精确冻结审查及真实资源Fraction核验；源码、seed/参数、Python版本、误差控制和实际运行hash由[正文](C455)末节连接。
+783: - Counterevidence / Objections：共同hub权、每side唯一light、每light唯一source、动作副本同费与UF最坏负载均承重。不覆盖异权hub、多source side或UF失败且直接AS+B未满足的全类情形；子类C2,d0=2不代替唯一题。 所述范围无尚成立fatal；外审和新颖性未认证。
+784: - Status：complete structural proof; independent bottleneck reconstruction and frozen attack; exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+785: - Related Files：[正文](C455)、[独立审查](C456)，配套代码、输入、证据见正文审计合同。
+786: 
+787: ## WC-SHARED-SIDE-BUDGET-POTENTIAL-v1 — 同权主玩家共享侧资源的直接侧势预算均衡
+788: 
+789: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：相同unique-light/shared-hub/unique-source拓扑，任意d≥0、实α≥1；H_j(m)=Σ_{r≤m}[G_j(w+ru)−αG_j(ru)]_+、M_v=αF_v(u+W_v)−F_v(u)。若逐light AS为F_v(W_v)+ΣG_j(w+|H_j|u)≤α[F_v(u+w)+ΣG_j(w)]，逐source Σ_jH_j(|H_j|)≤M_v，则同一有限势每个单hub局部最小点配全anti是αPNE。无需UF或α≥A_d。
+790: - Dependencies：WC-MODEL、同权fixed-light势边际、source重置误差、有限局部最小化；不调用TR/M标量界或UF聚合。
+791: - Evidence：完整一般推导、精确冻结审查及真实资源Fraction核验；源码、seed/参数、Python版本、误差控制和实际运行hash由[正文](C455)末节连接。
+792: - Counterevidence / Objections：AS与源预算是充分假设，不证明所有该拓扑游戏都满足；仍限同权hub、unique-light/unique-source和同费副本。此ID扩大degree/alpha域并改变假设，未静默改UF-v1；后置抽象攻击不冒充初次未读稿全证明重构。 所述范围无尚成立fatal；外审和新颖性未认证。
+793: - Status：complete conditional proof; independently attacked after abstraction; exactly audited; unrefereed。Truth仅精确范围；Value为可复用表示/选态接口；Mechanism见正文；Ambition保留本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+794: - Related Files：[正文](C455)、[独立审查](C456)，配套代码、输入、证据见正文审计合同。
+795: 
+796: ## WC-WEIGHT-INTERACTION-HEIGHT-POTENTIAL-v1 — 潜在可动用户共占高度的三角排序势
+797: 
+798: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：对任意d≥2 MODEL游戏，先吸收singleton固定玩家背景；非空可动玩家图置i→j当wi>wj且二者各有策略使用同一资源，k为DAG最长路径顶点数。则有A_(d,k)-PNE及全部严格A改善下降的身份子集资源可加势。A仍为A=Σ_{j<k}((d−1)/A)^j在[1,d)唯一根；全局不同权值数任意大，无可动者精确PNE。
+799: - Dependencies：MODEL、跨资源共同层秩、原三角势根及排序边际、第7节背景吸收；完整证明见原稿第11–12节。H2只在闭词端点使用边际估计。
+800: - Evidence：先仅据新exact Claim自主重构，再攻击冻结hash；两路Fraction从身份排序/实际端点重算，运行参数/seed/精度/hash见正文第13节与JSON。
+801: - Counterevidence / Objections：潜在共占height是同一个全局玩家图参数，不能换成逐资源种类数或单点用户数；k无全类统一界。原有限权类ID中的k不变，本新ID单独扩大输入类。 已修去解释中未经本命题证明的存在暗示，无尚成立fatal；未外审/新颖性未认证。
+802: - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth为所写结构界/必要条件；Value为相容层秩复用；Mechanism为身份子集排序及固定势望远镜；Ambition全类仍OPEN。
+803: - Related Files：[正文第11–13节](C401)、[独立重构与冻结攻击](C463)，代码/证据由正文进入。
+804: 
+805: ## WC-REALIZED-INTERACTION-CHAIN-CYCLE-v1 — 严格改善闭合词中的实际共占长权链
+806: 
+807: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：对任意d≥2、实α≥1 MODEL游戏的非空有限严格α改善闭合真实单方词，令M为至少移动一次玩家；其余按沿词不变策略吸收背景。在M上按wi>wj及某端点状态实际同资源置弧，height为k，则α<A_(d,k)。所以任正整数K≥1、α≥A_(d,K)的这种闭词必含至少K+1顶点降权实际共占链，各边可来自不同状态/资源。
+808: - Dependencies：MODEL、跨资源共同层秩、原三角势根及排序边际、第7节背景吸收；完整证明见原稿第11–12节。H2只在闭词端点使用边际估计。
+809: - Evidence：先仅据新exact Claim自主重构，再攻击冻结hash；两路Fraction从身份排序/实际端点重算，运行参数/seed/精度/hash见正文第13节与JSON。
+810: - Counterevidence / Objections：只为给定严格改善闭词的必要链，不构造近d环，不证明无PNE；未访问状态不用相容，不把整链断言为同一状态共占。动态换秩改变势，尚无SCC出口或瞬态dual。 已修去解释中未经本命题证明的存在暗示，无尚成立fatal；未外审/新颖性未认证。

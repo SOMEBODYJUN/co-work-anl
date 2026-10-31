@@ -1,0 +1,141 @@
+FRONTIER CLAIMS full lines111..250; Cn=exact previously fully read catalog path; all labels/math/unmatched paths retained.
+111: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：每个整数d≥1,n≥1,1≤k≤d,实0<w≤1,0≤β≤1；只约束指定两类偏离认证包络。完整身份见下列证明。
+112: - Conclusion：给该证书机制准确有限必要条件；不是a_*(d)上界，不是同拓扑实际最佳均衡因子上界。
+113: - Dependencies：WC-LIT-LOWER v1的精确式(3)，初等log不等式与单变量最大值。
+114: - Evidence：完整一般推导；clean_attack先自主重构后逐行攻击，无fatal objection；Fraction代数与Decimal sanity checks可复现。
+115: - Counterevidence / Objections：不排除不同全状态攻击机制；数值没有严格区间误差保证；外审/新颖性未认证。
+116: - Status：内部独立审查的局部数学资产。Truth有一般证明支持；Value为证书ceiling；Novelty未认证；Mechanism为light衰减与heavy负载跳跃的耦合；Ambition保留主目标OPEN。
+117: - Related Files：[完整证明](C128)、[核验代码](C182)、[结果](C181)。
+118: 
+119: 
+120: ## WC-R1-LF-SHARP v1 — COMPLETE CANDIDATE, REVIEW IN PROGRESS
+121: 
+122: - Exact Statement：令F_d为论文式(3)对n,k,w,β的参数sup，则F_d∼(2/√e)·√(d ln ln d)/ln d；显式合法参数游戏对每个固定c<2/√e、全部充分大d无任何α<c·√(d ln ln d)/ln d的α-PNE。
+123: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完整采用research/questions/weighted_congestion/source_envelope_candidate/sharp_envelope.md的参数域、全部状态覆盖与sup量词；不假定sup取到。
+124: - Conclusion：细化文献既有族的渐近分析并加强其公开打印的粗渐近下界，未超过文献exact参数sup；不提供全类上界或增长阶匹配。
+125: - Dependencies：WC-LIT-LOWER v1的策略拓扑与式(3)；独立重建的全状态表及uniform一维引理。
+126: - Evidence：完整候选证明、独立内部asymptotic_attack重构；Fraction逐资源全状态与Decimal数值代码结果。clean_attack正在审查冻结稿。
+127: - Counterevidence / Objections：后续文献与优先权未穷尽；同拓扑其他攻击未被该包络上界排除；重要状态提升等待clean review。
+128: - Status：complete candidate。Truth待最后独立攻击；Value/Mechanism为锐渐近与隐藏log-log增益；Novelty未认证；Ambition未满足严格超exact文献族的阶段门槛。
+129: - Related Files：[完整稿](C144)、[代码](C189)、[结果](C188)、[来源](C168)。
+130: 
+131: ## WC-R1-PREFIX-SMOOTHING v1 — LOCAL OBSTRUCTION
+132: 
+133: - Exact Statement：整数 m≥3，L=3/2−2^(−m)、H=3/2、U=2−2^(−m)。任意非零非负系数有限次数多项式 p 与 ε∈(0,1)，若 p(L)≤εp(H)，则 p(U)/p(H)≥ε^(−2^(m−2))；还必有 d≥log(1/ε)/log(H/L)。
+134: - Objects / Domain / Quantifiers / Assumptions / Definitions：上式量化所有 m、p、ε；三个负载由原 binary-prefix 游戏卫星 a_1 的合法纯状态达到。d 为 p 的次数上限。
+135: - Scope / Conclusion：原阶跃的低泄漏与有界高平台失真不能同时被任意高次非负多项式普遍模拟；不排除利用高端过冲、重配系数、修改权重或拓扑的下界。
+136: - Dependencies：log p(exp t) 的凸性在 proof.md 自足证明；原文 Theorem 5 的权重和策略已核对。
+137: - Evidence：一般证明；标准库 Fraction 检查实际可达负载、全部指定系数向量及次数不等式，结果见 results.json；独立先重构攻击见 review.md。
+138: - Counterevidence / Objections：m=2 不满足所写指数结论；零多项式不作除法；基础分析不主张新颖。该 obstruction 不是 a_*(d) 上界/下界。
+139: - Status：一般证明的局部研究资产，内部独立审查；没有外部评审或完整优先权认证。本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+140: - Related Files：research/current/weighted_congestion/polynomial_curvature/three_load_curvature_bound.md、verify.py、results.json、review.md。
+141: 
+142: 
+143: ## WC-R1-THREELOAD-ENVELOPE v1 — EXACT BASIC TOOL
+144: 
+145: 完整精确身份与一般证明见 [extension.md](C120)。对任意 0<L<H<U、ε∈(0,1)，在所有非零非负系数多项式且 p(L)≤εp(H) 中，p(U)/p(H) 的精确最小值由相邻两个次数的单项式凸组合取得；可行最小整数次数为 ceil(log(1/ε)/log(H/L))，超过此次数不再降低该最优值。一般离散凸包证明与有理精确回归已完成，主对话知情复核；基础分析工具不主张新颖，不是新博弈门槛。
+146: 
+147: 
+148: ## WC-R1-HET-ENDPOINT-REDUCTION v1 — LOCAL REDUCTION
+149: 
+150: - Exact Statement：异权两列 star 的重玩家权 1，轻玩家正权 w_i，总重 W；主多项式 p、各卫星多项式 f_i 非负系数且次数≤d。若 α>1 时严格通过 p(1)+Σf_i(1+w_i)>α[p(1+W)+Σf_i(1)] 与每个 p(1+w_i)+f_i(w_i)>α[p(W)+f_i(1+w_i)]，则存在同次数同权整数 star，无 γ-PNE，其中 γ=1+(floor(n)/n)(α−1)>max{1,α−1/(α−1)}、n=W/w_i 为某个选中权重对应的实数中间量。
+151: - Objects / Domain / Quantifiers / Assumptions / Definitions：任意有限人数、任意正实权、任意非负实系数；完整 paired-column star 策略与身份见 endpoint_reduction.md。实数 n 仅用于代数，不是玩家人数。
+152: - Scope / Conclusion：端点强制证书内，异权性不能改变同权多项式 star 认证倍率的增长阶；不是任意 full-state star 的上界，也未导入同权多项式到文献 monomial 包络的还原。
+153: - Dependencies：单调性、主多项式凸性、按权重密度选择与整数向下取整；一般证明自足。
+154: - Evidence：独立先重构攻击通过；实际有理输入/输出各全状态检查，含常数、零卫星与近整数边界，见 verification.json、review.md。
+155: - Counterevidence / Objections：若某个 singleton 由其他偏离者覆盖而不满足所写轻玩家测试，本条不能应用；n<1 的假想残余量也不能自动取整。
+156: - Status：一般证明的局部 reduction，内部独立审查；新颖性与外部评审未认证。本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+157: - Related Files：research/current/weighted_congestion/heterogeneous_endpoint/endpoint_reduction.md、verify_endpoint_reduction.py、verification.json、review.md。
+158: 
+159: 
+160: ## WC-R1-INTEGER-TRIAD v1 — LOCAL ASSET
+161: 
+162: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：Exactly the six-resource degree-two game with weights (16,2,5); all eight binary profiles and 24 deviations, including endpoint PNE.
+163: - Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Integer quadratic triad has exact pure factor 286/267](C126)；精确复算见[tests/audits/weighted_congestion/quadratic_triad/verify.py](C184)与[evidence/runs/weighted_congestion/quadratic_triad/verification.json](C183)。完整证明与精确核验已保存，独立审查按五轴表分别登记；外审及新颖性未认证。本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+164: 
+165: 
+166: ## WC-R1-RESOURCE-SUPPORT v1 — LOCAL ASSET
+167: 
+168: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：All finite positive-weight congestion games with nonnegative nondecreasing costs and at most r>=1 potential users per resource; unweighted social-cost minimizers are r-PNE. No full-class o(d) claim.
+169: - Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Bounded resource user support gives r-PNE](C127)；精确复算见[tests/audits/weighted_congestion/signed_columns/verify.py](C178)与[evidence/runs/weighted_congestion/signed_columns/verification.json](C177)。完整证明与精确核验已保存，独立审查按五轴表分别登记；外审及新颖性未认证。本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+170: 
+171: 
+172: ## WC-R1-SOURCE-D2-ENVELOPE v1 — LOCAL ASSET
+173: 
+174: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：All integer n>=1,k in {1,2}, w,beta in [0,1] in arXiv:2002.07466v3 equation (3); strict polynomial inequalities cover zero denominators. Not a G2 upper bound.
+175: - Dependencies / Evidence / Objections / Status / Related Files：完整身份、全部推导和边界见[Source equation (3) at d=2 has ceiling 19/18](C125)；精确复算见[tests/audits/weighted_congestion/quadratic_source/verify.py](C210)与[evidence/runs/weighted_congestion/quadratic_source/verification.json](C209)。完整证明与精确核验已保存，独立审查按五轴表分别登记；外审及新颖性未认证。本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+176: 
+177: ## WC-R1-DAG-STEP v1 — 内部独立证明，辅助模型
+178: 
+179: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：完全采用 research/current/weighted_congestion/step_dag/step_dependency_threshold.md；任意 finite simple DAG 的对称 step dependency game，满足明确严格载荷分离与非负幅度，幅度全域的最佳纯均衡门槛为唯一 q=1+ΣP_kq^{-k}，由正幅度取得。
+180: - Dependencies：真实 threshold 载荷化简、topological greedy、path recursion；完整证明自足。
+181: - Evidence：独立先重构、两份不互相导入的 Fraction literal verifiers。
+182: - Counterevidence / Objections：不属于 G_d 多项式模型；equal load separation 可使化简失效；bounded DAG path height 不自动给 sqrt(m) 界。
+183: - Status：完整内部审查，外审/新颖性未认证。Truth 已内部支持；Value 为 exact dependency 接口；Mechanism 是 path counts；Ambition 辅助。
+184: - Related Files：research/current/weighted_congestion/step_dag/step_dependency_threshold.md、research/reviews/weighted_congestion/step_dag/independent_review.md、tests/audits/weighted_congestion/step_dag/verify.py、evidence/runs/weighted_congestion/step_dag/verification.json、tests/audits/weighted_congestion/step_dag/independent_audit.py。
+185: 
+186: ## WC-R1-MULTICOLUMN-2 v1 — INTERNALLY REVIEWED LOCAL RESULT
+187: 
+188: - Exact Statement / Conclusion：补列多列游戏存在2-PNE；q=3的拓扑最坏最佳均衡倍率的上确界恰为2。一般q固定、n→∞时最坏最佳倍率趋(q−1)/(q−2)，本结论允许次数随n增加。
+189: - Objects / Domain / Quantifiers / Assumptions：每个整数q≥3,n≥1，一个权1重玩家与n个共同轻权0<w≤1玩家；每列主资源共同费用f、各玩家私有卫星共同费用g，任意非负非减f,g。重玩家选整列；轻玩家选该列主资源及自己在其它全部列的卫星。精确费用与U(n,q)见RESULT。
+190: - Definitions / Scope：MODEL成本与α-PNE弱边界；仅上述补列拓扑，不允许偷换为异重、w>1或任意多列游戏。
+191: - Dependencies：固定重列轻玩家精确势最小、非重列平衡、非减性；一般证明不导入外部定理。
+192: - Evidence：完整分支证明、独立先重构后审查、两份Fraction逐资源及人数轨道审计；显式多项式锐性族逐状态覆盖。
+193: - Counterevidence / Objections：未发现对2-PNE证明的fatal objection；w≤1实际用于负载排序，不能省略。sharpness/U补充已由主对话检查，独立审查主要针对核心2-PNE。
+194: - Status：内部审查通过的局部机制障碍；外部审查、新颖性未认证。Truth有自足证明；Value排除自然多列扩展并解释平衡逃逸；Novelty未定；Mechanism平衡轻NE支付重偏离；Ambition局部，不完成WC-TARGET。
+195: - Related Files：research/current/weighted_congestion/multicolumn/complement_column_escape.md、tests/audits/weighted_congestion/multicolumn/verify.py、evidence/runs/weighted_congestion/multicolumn/evidence.json；research/reviews/weighted_congestion/multicolumn_review/REVIEW.md、tests/audits/weighted_congestion/multicolumn_review/verify_multicolumn.py、evidence/runs/weighted_congestion/multicolumn_review/exact_test_results.json。
+196: 
+197: ## WC-R2-DENSITY-MOMENT v1 — COMPLETE INTERNAL PROOF
+198: 
+199: - Exact Statement/Objects/Domain/Quantifiers/Assumptions/Definitions：任意正实有限多重集，R>1、0<p<1，每个[x,Rx)最多K项（计重数）；sum z^p≤A_R(p)K^(1-p)(sum z)^p，A_R(p)=(1−R^-1)^p/(1−R^-p)。
+200: - Scope/Conclusion：幂矩常数是有限序列的sharp supremum，由K重几何链逼近；不主张均衡因子sharp。
+201: - Dependencies：排序链分解、有限尾和望远镜和凹性，无外部定理。
+202: - Evidence/Objections/Status：[完整证明](C135)及独立内部审查；半开端点、空链、重数已检查，无未处理fatal objection；外审与global priority未认证。
+203: - Related Files：当前完整证明、research/reviews/weighted_congestion/weight_density/review.md、tests/audits/weighted_congestion_density.py、evidence/runs/2026-10-14/weighted_congestion_density.json。
+204: 
+205: 
+206: ## WC-R2-WEIGHT-DENSITY v1 — COMPLETE INTERNAL PROOF
+207: 
+208: - Exact Statement/Objects/Domain/Quantifiers/Assumptions：MODEL所有有限游戏、任意正实权与非负degree≤d系数、多资源策略；d≥1，任意R>1,p∈(0,1)，K_R为每资源潜在使用者[x,Rx)最大人数。
+209: - Definitions/Scope/Conclusion：Σw_i^p C_i每个单边局部min是[1+A_R(p)K_R^(1-p)d^p]-PNE，above-factor严格改善终止；K_R=0时全零成本。结构子类，无运行时间保证。d≥3取R=d、p=ln2/lnd得≤1+4K_d，几何分离谱O(log d)。
+210: - Dependencies：WC-R2-DENSITY-MOMENT v1、实际总负载多项式增量界、有限势min。
+211: - Evidence：[完整一般证明](C135)、先自主重构再攻击的内部review、Fraction字面全偏离核验。
+212: - Counterevidence/Objections：K_R全类无界，等权人多时不能直接推出全类o(d)；固定p微权外部增量确无统一界。零cost/空strategy/commonresource均已处理；不声称sharp均衡阈值。
+213: - Status：内部完整证明，Canonical Record限本精确scope；Truth按proof，Value为结构机制，Novelty未认证，Mechanism为敏感度×稀疏moment，Ambition为结构子类；本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+214: - Related Files：同上一条。
+215: 
+216: ## R2 方法资产 v1 — 完整内部证明，非主目标突破
+217: 
+218: WC-R2-RESOURCE-POWER-BRIDGE v1、WC-R2-POWER-PATH-OBSTRUCTION v1、
+219: WC-R2-AFFINE-TWO-TYPE v1 的 Exact Statement、Objects、Domain、Quantifiers、Assumptions、
+220: Definitions、Scope、Conclusion、Dependencies、Evidence、Objections、Status、Related Files
+221: 完整固定在[规范证明](C122)第1节，
+222: 及根[现行命题登记](C292)。依赖分别为谱packing/排序、路径求和、C1梯度/自项；
+223: 有限Fraction与独立重构记录均由README索引。外审与新颖性未认证，本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+224: 
+225: ## R3-SOURCE-SHARP-ASYMPTOTIC-v1 — INTERNAL PROOF
+226: 
+227: - Exact Statement / Conclusion：原式(3)源域全部参数sup F_d∼(2/√e)√(d ln ln d)/ln d。显式合法family在两类偏离均趋同常数，故a_*(d)≥(2/√e−o(1))同scale。
+228: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：d≥2整数，n≥1整数，k∈{1,…,d}，0<w≤1，0≤β≤1；F_d为两认证倍率min之sup，非单游戏exact threshold或全类上界。
+229: - Dependencies：MODEL、源式(3)两个全状态attack（本轮已独立重构）；完整证明不导入既有matching O上界。
+230: - Evidence：research/current/weighted_congestion/source_envelope/sharp_asymptotic_envelope.md、review.md；Decimal验证仅诊断，未用来证明一般不等式。
+231: - Counterevidence / Objections：未见fatal objection；极慢收敛不影响asymptotic，未认证后续文献全球优先权。源式sup本来已知，因此不称严格超过其基线。
+232: - Status：完整一般证明与独立内部攻击；未外审。Truth有proof、Value给参数优化边界、Novelty未认证、Mechanism全局消元与局部化、Ambition为受限族。
+233: - Related Files：assets/R3/sharp_source_review/、../current/weighted_congestion/README.md、根graph/review_status/assets。
+234: 
+235: 
+236: ## WC-R3-FULL-TOPOLOGY-REDUCTION v3 — INTERNAL PROOF
+237: 
+238: - Version history：v1 α≥2；v2 α≥φ、全部w>0；v3 α≥ρ=(1+√3)/2，右支单轻玩家允许w反演；每版范围明确，旧版为subcase。
+239: - Exact Statement：对每个degree≤d对称同轻权两列F,G游戏和每个α≥ρ，若无α-PNE，则存在原式(3)域内monomial参数，其两test均strict通过同α。
+240: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：n≥1整数，w>0，F,G任意非负系数degree≤d同主/同副多项式；完整策略参proof；新游戏参数可改变。
+241: - Conclusion：源包络F_d≤actual拓扑sup T_d≤max{ρ,F_d}；F_d≥ρ时T_d=F_d，所以该拓扑与源包络有同一sharp asymptotic。非a_*(d)上界。
+242: - Dependencies：light稳定区间/反射、平移保持系数、右支n′α(α−1)<1和单轻反演、endpoint chord及系数线性消元。
+243: - Evidence：research/current/weighted_congestion/source_topology/symmetric_two_column_reduction.md、verify.py/results.json；research/reviews/weighted_congestion/source_topology_review/review.md及独立literal checker。
+244: - Counterevidence / Objections：初版φ仅w≤1的解释已由w≥1时z≥u机制补齐；v3不能坚持整个还原保持原w。F≡0直接存在PNE，zero分母未除。未见fatal objection。
+245: - Status：完整一般证明及独立攻击；未外审、未认证novelty。Truth有proof、Value封闭整个受限搜索、Mechanism为整数稳定区间、Ambition不涉及异权/交叉拓扑。
+246: - Related Files：assets/R3/full_topology/、assets/R3/topology_attack/、../current/weighted_congestion/README.md。
+247: 
+248: 
+249: ## WC-R3-SOURCE32-178-v1 — COMPLETE STATED SCOPE
+250: 

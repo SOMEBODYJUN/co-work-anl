@@ -1,0 +1,141 @@
+FRONTIER CLAIMS full lines531..670; Cn=exact previously fully read catalog path; all labels/math/unmatched paths retained.
+531: - Exact Statement / Conclusion：任意MODEL游戏、d≥0和玩家有序非空划分，资源组潜在用户最小/最大权a,b与后组潜在总权L定义A=max_(e,j)(b/a)(1+L/a)^d（无潜在用户取1）。依次固定先组背景，最小化按(1+L/a)^d/a缩放的活动组Shapley势并冻结，任取阶段全局最小均得到A-PNE。若组内比≤R且L≤εa，给R(1+ε)^d；不控制全类最佳划分参数。
+532: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完整采用[正文](C353)的精确身份；每个实权、每个合法偏离按真实负载。对象限制不得省略；主目标保持OPEN。
+533: - Dependencies：WC-MODEL, WC-R3-DENSE-SHARE-v1, WC-ORDERED-TAIL-PARAMETERS；有限最小化、单项式比较或DAG拓扑递推；正文逐项给出，无外部存在定理导入。
+534: - Evidence：一般证明；先依据精确命题独立重构，后读冻结hash逐项攻击；Fraction独立实现与实际运行分开记录。
+535: - Counterevidence / Objections：只证此实例参数界，无全类Cd/ln d；不要求同一势对全部改善边下降。未处理的全类义务不升级；外审/优先权未认证。
+536: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth按所写范围；Value为接口及准确边界；Novelty未认证；Mechanism见正文；Ambition不是全类完成。
+537: - Related Files：[正文](C353)、[审查](C354)；规范代码和冻结结果见正文审计合同及assets.json。
+538: 
+539: ## WC-ORDERED-TAIL-PARAMETER-LIMIT-v1 — 两权级有序尾部参数的精确最优值
+540: 
+541: - Exact Statement / Conclusion：任意d≥1,H≥1,K≥1，单资源一名权H玩家及K名单位权玩家、费用x^d、人人可选空策略或该资源。全部有序非空划分的最小A恰为min{H,(1+K/H)^d}。K=ceil(H²)时恰H，固定d仍可无界；游戏有全空精确PNE。
+542: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完整采用[正文](C353)的精确身份；每个实权、每个合法偏离按真实负载。对象限制不得省略；主目标保持OPEN。
+543: - Dependencies：WC-MODEL, WC-ORDERED-TAIL-PARAMETERS；有限最小化、单项式比较或DAG拓扑递推；正文逐项给出，无外部存在定理导入。
+544: - Evidence：一般证明；先依据精确命题独立重构，后读冻结hash逐项攻击；Fraction独立实现与实际运行分开记录。
+545: - Counterevidence / Objections：只否定对该潜在尾部A参数的统一控制，不否定冻结程序可能有更精细分析，也不是均衡非存在。未处理的全类义务不升级；外审/优先权未认证。
+546: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth按所写范围；Value为接口及准确边界；Novelty未认证；Mechanism见正文；Ambition不是全类完成。
+547: - Related Files：[正文](C353)、[审查](C354)；规范代码和冻结结果见正文审计合同及assets.json。
+548: 
+549: ## WC-DAG-LOW-LEAKAGE-DEGREE-BUDGET-v1 — 有向无环阶跃端点的低泄漏次数预算
+550: 
+551: - Exact Statement / Conclusion：任意非空有限simple DAG、d≥1及ε∈(0,1)，令z=ε^(-1/d),P_k为k顶点有向路径数,S_D(z)=ΣP_kz^(k−1)。存在根权1、正轻权W<1及outsum<w_v、非零非负degree≤d费用通过p0(W)≤εp0(1)和pv(1+outsum)≤εpv(1+w_v)，当且仅当z(z−1)S_D(z)≤1。全部可行权有正文slack表示；饱和时权唯一。原辅助step阈值q满足q(q−1)≤1/[z(z−1)]≤d/ln(1/ε)，固定ε的√d量级在检测系统内可达。
+552: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完整采用[正文](C361)的精确身份；每个实权、每个合法偏离按真实负载。对象限制不得省略；主目标保持OPEN。
+553: - Dependencies：WC-MODEL, WC-DAG-ENDPOINT-TESTS, WC-R1-DAG-STEP；有限最小化、单项式比较或DAG拓扑递推；正文逐项给出，无外部存在定理导入。
+554: - Evidence：一般证明；先依据精确命题独立重构，后读冻结hash逐项攻击；Fraction独立实现与实际运行分开记录。
+555: - Counterevidence / Objections：iff仅是指定端点检测系统；未控制高平台过冲或真实全状态偏离，不给实际多项式博弈的β上界。未处理的全类义务不升级；外审/优先权未认证。
+556: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth按所写范围；Value为接口及准确边界；Novelty未认证；Mechanism见正文；Ambition不是全类完成。
+557: - Related Files：[正文](C361)、[审查](C362)；规范代码和冻结结果见正文审计合同及assets.json。
+558: 
+559: 
+560: ## WC-TWO-WEIGHT-ORDER-BLEND-v1 — 两权类别双排序混合势
+561: 
+562: - Exact Statement / Objects / Domain / Quantifiers：对每个d≥2及MODEL有限游戏，若所有玩家权重属于固定{a,b}、a≥b>0，则双排序混合势的每个单方局部最小点为A_d=(1+√(4d−3))/2-PNE，任意严格A_d改善终止；各类人数、权比、拓扑和系数任意。d≤1或仅一权时有精确PNE。不是任意权重全类上界。
+563: - Assumptions / Definitions / Scope：固定全局两权值而非逐资源任意选两权，任意有限非空玩家/资源、正实权、任意有限非空资源子集策略族、非负degree≤d多项式；允许空策略、常数和零费用。D,U为相反排序加权离散积分，λ解(d−1)λ²=1+λ。
+564: - Conclusion：共享玩家乘子h重=λa、h轻=(1+λ)b，所有局部势最小点满足弱A_d-PNE；没有计算时间或全类匹配声明。
+565: - Dependencies：MODEL、凸排序交换、逐项导数界、有限势最小化；不导入外部存在定理。
+566: - Evidence：完整一般证明，先从exact statement独立重构后攻击冻结hash；两份不互相导入的Fraction核验。
+567: - Counterevidence / Objections：已修正a=b时按固定类别选乘子和严格A_d改善措辞；未见所述范围内fatal。三类没有同样互补精确边际，全类任意多权仍OPEN。
+568: - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=子类完整内部证明；Value=任意权比/人数的两权桥；Novelty=未认证；Mechanism=双排序互补边际；Ambition=结构子类。
+569: - Related Files：research/current/weighted_congestion/weight_bands/two_weight_order_blend.md；research/reviews/weighted_congestion/weight_types/two_weight_order_blend_review.md；tests/audits/weighted_congestion/weight_types/verify_order_blend.py；tests/audits/weighted_congestion/weight_types/independent_order_blend.py；evidence/runs/weighted_congestion/weight_types/order_blend.json；evidence/runs/weighted_congestion/weight_types/independent_order_blend.json。
+570: 
+571: ### WC-SELECTOR-UNIT-SPEED-STATIONARY-BARRIER-v1 — 单位速度平稳择证的无界损失
+572: 
+573: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For every finite real alpha>=1 and d>=1, some finite positive rational weight two-action template and full selector have no unit-speed stationary dual, already witnessed by an affine column; this is no nonexistence result. 完整中文逐项身份及符号见[自足正文](C367)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+574: - Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+575: - Evidence：[独立先重构后冻结攻击](C368)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+576: - Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+577: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+578: - Related Files：上述正文、审查及从正文审计合同连接的code/run。
+579: 
+580: ### WC-AFFINE-SELECTOR-CYCLE-DUAL-v1 — 任意仿射择证的循环权重对偶
+581: 
+582: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For every finite positive-weight action template and tagged selector, every selected cycle gives an affine dual by lambda_s proportional to the selected mover weight; self-loops are allowed and all affine columns sum to zero at alpha=1. 完整中文逐项身份及符号见[自足正文](C367)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+583: - Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+584: - Evidence：[独立先重构后冻结攻击](C368)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+585: - Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+586: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+587: - Related Files：上述正文、审查及从正文审计合同连接的code/run。
+588: 
+589: ### WC-RECURRENT-SUPPORT-FIP-EQUIVALENCE-v1 — 循环支撑择证与全模板有限改善性等价
+590: 
+591: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For fixed finite weights, action counts, degree, real alpha>=1 and any fixed nonempty signature-column subcone, every selector admits a dual supported on its recurrent states iff every nonnegative-coefficient game on that template has no strict alpha-improvement cycle; this is stronger than mere PNE existence. 完整中文逐项身份及符号见[自足正文](C367)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+592: - Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+593: - Evidence：[独立先重构后冻结攻击](C368)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+594: - Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+595: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+596: - Related Files：上述正文、审查及从正文审计合同连接的code/run。
+597: 
+598: ### WC-DIRECTED-FANOUT-FORCING-CUT-v1 — 分叉双人侧反馈的统一强迫割均衡
+599: 
+600: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Definitions / Scope / Conclusion：For d>=2 and alpha>=T_d, every finite unique-source light/multihead-private-pair-side topology satisfying the weak uniform aligned-light forcing inequalities admits an all-anti alpha-PNE selected by any local minimum of the stated weighted cut; no unrestricted existence claim. 完整中文逐项身份及符号见[自足正文](C371)；该链接是精确陈述来源，不以本段英文压缩替代量词。
+601: - Dependencies：MODEL及正文所列完整前提；择证支撑等价另用全状态线性替代，分叉割另用精确拓扑和弱UF。
+602: - Evidence：[独立先重构后冻结攻击](C372)及正文末节的精确代码和冻结证据；有限核验不是一般证明。
+603: - Counterevidence / Objections：只能使用正文写明的限制；单位速度障碍不否定持留率，仿射dual不外推高次，recurrent支撑不是一般dual要求，UF不能从真实非存在自动推出。
+604: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth为所述精确Claim；Value为机制或边界；Novelty未认证；Ambition不完成唯一全类命题。
+605: - Related Files：上述正文、审查及从正文审计合同连接的code/run。
+606: 
+607: ## WC-DAG-EXTREMAL-AMPLITUDE-ALL-IN-v1 — 阶跃DAG极值幅度的多项式全入状态
+608: 
+609: - Exact Statement / Conclusion：任意非空有限simple DAG，root权1、正轻权W<1且outsum<w_v、原双列binary策略；两列相同非零非负degree≤d费用，d≥1。令q=q_D>1、h_v=(1+Σ_in h_u)/q且Σh=q−1，存在A>0使p0(1)=A、pv(1+w_v)=A h_v。真实全入状态是max{1+1/q,B_d(q)}-PNE，B_d(q)=q/[1+(q−1)(1+1/[q(q−1)])^(−d)]；d≥16时统一为4√(d/ln d)-PNE。不要求低漏/高平台保真，但必须保留极值幅度条件。
+610: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：对每个上述有限DAG、合法正实权和实系数；准确资源、策略与幅度(N)见[正文](C375)第1节。费用正归一化，不将任意MODEL的零费用/空策略偷换进子类。
+611: - Dependencies：MODEL、WC-R1-DAG-STEP的q/h及路径展开、真实负载、单项式次数界、总权缺口矩、Jensen。与端点低泄漏预算无逻辑依赖。
+612: - Evidence：一般直接证明；先仅由exact statement独立重构，再逐式攻击冻结hash；两份不互相导入的Fraction实际资源审计。
+613: - Counterevidence / Objections：仅限所写DAG策略及极值幅度；任意幅度/全类策略尚无归约，不是本题一般肯定证明，也不是非存在下界。未发现所写范围内fatal；只升内部结果，外审/新颖性未认证。
+614: - Status：complete restricted proof; independently reconstructed and exactly audited; unrefereed。Truth为明确状态的实际存在界；Value为极值幅度模拟边界；Novelty未认证；Mechanism为缺口矩和Jensen；Ambition保留本项仅限所写范围；现行本题否定见WC-MATCHING-LOG-UPPER-NEGATIVE-v1。
+615: - Related Files：[正文](C375)、[独立审查](C376)；具体代码和冻结记录见正文审计合同。
+616: 
+617: 
+618: ## WC-CYCLIC-CLONE-IMPROVEMENT-CYCLES-v1 — 循环窗口复制实现近线性倍率的真实改善环
+619: 
+620: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Scope / Conclusion：对每个d≥2、每个1≤α<ρ_d=sup_t>0[(d+1)(1+t)^d+t^(d+1)]/[d+(1+t)^(d+1)]，存在正有理权、全部资源费用x^d、人人策略族2^E的有限MODEL游戏，真实偏离图含严格α改善环，同时全空是精确PNE。ρ_d/d→1，故任何全局实值函数（含非可分）不能在该游戏全部严格α改善边下降。
+621: - Definitions：循环类窗口、互补资源对、双同序翻转及加入guard后的有限gain锥；每名light的rank完整枚举而非期望。
+622: - Dependencies：WC-MODEL、WC-R1-MULTIPLIER-BARRIER、WC-ALLSTATE-SELECTOR-ALTERNATIVE-v1；循环窗口的逐人秩均匀化、非负dual零坐标连接、严格锥替代。
+623: - Evidence：完整一般证明；独立先重构瓶颈后攻击冻结稿；代码、参数、seed（适用时）、源码hash、精度和实际结果由正文末节链接。
+624: - Counterevidence / Objections：Only all-improvement termination and global strict ordinal potentials are obstructed; no PNE-nonexistence, chosen-step or minimizer-selection obstruction. 该游戏有精确PNE；不能据此否定唯一题。未见所述范围内fatal。
+625: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所写方法边界；Value=可复用构造或分离；Novelty=未认证；Mechanism=循环窗口的逐人秩均匀化、非负dual零坐标连接、严格锥替代；Ambition=全类仍OPEN。
+626: - Related Files：research/current/weighted_congestion/cyclic_clone_improvement_cycles.md；research/reviews/weighted_congestion/ordinal_potentials/cyclic_clone_improvement_cycles_review.md；tests/audits/weighted_congestion/cyclic_clone/verify_lift.py；tests/audits/weighted_congestion/cyclic_clone/verify_cycle_certificate.py；tests/audits/weighted_congestion/cyclic_clone/independent_lift.py；evidence/runs/weighted_congestion/cyclic_clone/lift.json；evidence/runs/weighted_congestion/cyclic_clone/cycle_certificate.json；evidence/runs/weighted_congestion/cyclic_clone/independent_lift.json。
+627: 
+628: 
+629: ## WC-COMMON-POWER-MIXTURE-MINIMIZER-OBSTRUCTION-v1 — 共同幂混合全局最小点的线性障碍
+630: 
+631: - Exact Statement / Objects / Domain / Quantifiers / Assumptions / Scope / Conclusion：对每个d≥32，存在四玩家四资源、正有理权/系数、纯d次费用且有精确PNE的有限游戏，使任意非零非负Borel测度μ（全部状态目标有限）给出的Pμ(s)=Σ_e a_e∫_(p>0)x_e(s)^p dμ(p)每个全局最小点都非α-PNE，对全部1≤α<d/16成立；μ可依完整游戏。
+632: - Definitions：同一实例的两独立移动者及固定背景；保留原a_e、全部资源共同非负μ，p>0时0^p=0。
+633: - Dependencies：WC-MODEL；两构件目标差的同一正系数逐实幂严格分离并积分。
+634: - Evidence：完整一般证明；独立先重构瓶颈后攻击冻结稿；代码、参数、seed（适用时）、源码hash、精度和实际结果由正文末节链接。
+635: - Counterevidence / Objections：Does not cover per-resource normalization, elimination of fixed-background players followed by a new coefficient rule, arbitrary separable objectives, nonseparable objectives or PNE nonexistence. 该游戏有精确PNE；不能据此否定唯一题。未见所述范围内fatal。
+636: - Status：complete stated-scope proof; independently reconstructed and exactly audited; unrefereed。Truth=所写方法边界；Value=可复用构造或分离；Novelty=未认证；Mechanism=两构件目标差的同一正系数逐实幂严格分离并积分；Ambition=全类仍OPEN。
+637: - Related Files：research/current/weighted_congestion/common_power_mixture_obstruction.md；research/reviews/weighted_congestion/ordinal_potentials/common_power_mixture_review.md；tests/audits/weighted_congestion/ordinal_potentials/verify_common_power_mixture.py；tests/audits/weighted_congestion/ordinal_potentials/independent_common_power_mixture.py；evidence/runs/weighted_congestion/common_power_mixture/author.json；evidence/runs/weighted_congestion/common_power_mixture/independent.json。
+638: 
+639: 
+640: ## WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1 — 有限权类别三角排序混合势
+641: 
+642: - Exact Statement / Conclusion：对每个d≥2,k≥1，全MODEL中全球正权值至多k种的每个游戏有A_(d,k)-PNE，其中A∈[1,d)唯一满足A=Σ_(j=0)^(k−1)((d−1)/A)^j。三角排序混合势的每个单方局部min均是该均衡，全部严格A改善终止；任意人数、权比、费用/策略均覆盖。A≤B=(d−1)/(d^(1/k)−1)，固定k时A∼d^(1−1/k)，k≤ln d/lnln d且d≥16给2d/ln d。
+643: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完全采用MODEL，费用系数任意非负实数、次数≤d，任意有限多资源策略（含空）、零/常数费用；A、π、λ、S、固定/可动及代表权定义固定在[正文](C401)。k不是资源各自种类数或某状态活跃类别数。
+644: - Dependencies：WC-MODEL、WC-TRIANGULAR-ORDER-DEFINITION；完整边际、有限最小化、背景展开和取整链分别由正文证明。
+645: - Evidence：先仅给精确statement独立重构瓶颈后冻结攻击；另一份informed攻击准确区分；两份独立Fraction源码/参数/seed（适用时）/精度/hash/实际结果由正文末节连接。
+646: - Counterevidence / Objections：无尚成立fatal；固定d时k无界A趋d，不得用子类C=2,d0=16替代全类题。B粗方案与两权原Claim未被静默改写。
+647: - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所写子类/归约；Value=有限可动权类桥；Novelty=未认证；Mechanism=三角排序累计下界；Ambition=全类目标仍OPEN。
+648: - Related Files：research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md；research/reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md；research/reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md；tests/audits/weighted_congestion/weight_types/verify_triangular_classes.py；tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py；evidence/runs/weighted_congestion/weight_types/triangular_classes.json；evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json。
+649: 
+650: 
+651: ## WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1 — 固定玩家背景的非负多项式精确吸收
+652: 
+653: - Exact Statement / Conclusion：对每个d≥2,k≥1，全MODEL中只有可动玩家（策略族非单元素）的权值至多k种时，即使任意固定玩家的权种类无限制，仍有A_(d,k)-PNE。c_e(B_e+x)展开仍非负系数并逐状态保持可动者成本；无可动玩家时唯一状态精确。
+654: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完全采用MODEL，费用系数任意非负实数、次数≤d，任意有限多资源策略（含空）、零/常数费用；A、π、λ、S、固定/可动及代表权定义固定在[正文](C401)。k不是资源各自种类数或某状态活跃类别数。
+655: - Dependencies：WC-MODEL、WC-WEIGHT-CLASS-TRIANGULAR-POTENTIAL-v1；完整边际、有限最小化、背景展开和取整链分别由正文证明。
+656: - Evidence：先仅给精确statement独立重构瓶颈后冻结攻击；另一份informed攻击准确区分；两份独立Fraction源码/参数/seed（适用时）/精度/hash/实际结果由正文末节连接。
+657: - Counterevidence / Objections：无尚成立fatal；固定d时k无界A趋d，不得用子类C=2,d0=16替代全类题。B粗方案与两权原Claim未被静默改写。
+658: - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所写子类/归约；Value=有限可动权类桥；Novelty=未认证；Mechanism=三角排序累计下界；Ambition=全类目标仍OPEN。
+659: - Related Files：research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md；research/reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md；research/reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md；tests/audits/weighted_congestion/weight_types/verify_triangular_classes.py；tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py；evidence/runs/weighted_congestion/weight_types/triangular_classes.json；evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json。
+660: 
+661: 
+662: ## WC-WEIGHT-CLASS-CLUSTER-ROUNDING-v1 — 窄权簇的单向取整与近似均衡提升
+663: 
+664: - Exact Statement / Conclusion：对每个d≥2,k≥1,R≥1，若每个可动玩家有固定标签τ使v_τ≤w_i≤Rv_τ，其中k个代表权为正，则全MODEL原游戏有R^d A_(d,k)-PNE；固定玩家无需取整且权不受限。代表可重复/缺席；R=exp(1/d)时损失e，结合类别门槛给2e d/ln d的该明确子类界。
+665: - Objects / Domain / Quantifiers / Assumptions / Definitions / Scope：完全采用MODEL，费用系数任意非负实数、次数≤d，任意有限多资源策略（含空）、零/常数费用；A、π、λ、S、固定/可动及代表权定义固定在[正文](C401)。k不是资源各自种类数或某状态活跃类别数。
+666: - Dependencies：WC-MODEL、WC-WEIGHT-CLASS-FIXED-BACKGROUND-v1；完整边际、有限最小化、背景展开和取整链分别由正文证明。
+667: - Evidence：先仅给精确statement独立重构瓶颈后冻结攻击；另一份informed攻击准确区分；两份独立Fraction源码/参数/seed（适用时）/精度/hash/实际结果由正文末节连接。
+668: - Counterevidence / Objections：无尚成立fatal；固定d时k无界A趋d，不得用子类C=2,d0=16替代全类题。B粗方案与两权原Claim未被静默改写。
+669: - Status：complete structural proof; independently reconstructed and exactly audited; unrefereed。Truth=所写子类/归约；Value=有限可动权类桥；Novelty=未认证；Mechanism=三角排序累计下界；Ambition=全类目标仍OPEN。
+670: - Related Files：research/current/weighted_congestion/weight_bands/finite_weight_class_potentials.md；research/reviews/weighted_congestion/weight_types/finite_weight_classes_reconstruction_review.md；research/reviews/weighted_congestion/weight_types/finite_weight_classes_informed_review.md；tests/audits/weighted_congestion/weight_types/verify_triangular_classes.py；tests/audits/weighted_congestion/weight_types/independent_triangular_classes.py；evidence/runs/weighted_congestion/weight_types/triangular_classes.json；evidence/runs/weighted_congestion/weight_types/independent_triangular_classes.json。

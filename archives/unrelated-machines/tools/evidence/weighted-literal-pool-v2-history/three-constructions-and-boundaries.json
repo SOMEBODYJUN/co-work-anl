@@ -1,0 +1,68 @@
+{
+  "physical": {
+    "machines": "2N+L, or1idle ifN=L=0",
+    "jobs": "N+L+M",
+    "finite": "2N+3L",
+    "arity": "everyclause at least2 physical occurrences",
+    "budgets": "everyvariable/polarity ALL eligible occurrence weights nonnegative binaryrational sum<=1",
+    "endpoints": [
+      "f:its two pools,each1",
+      "j_e:ownroot1 orownpoolb_e",
+      "selector:itsclause occurrence roots,each1"
+    ],
+    "retain": [
+      "zerojobs",
+      "unselectedroots",
+      "unusedvariables",
+      "duplicateoccurrenceidentities",
+      "alloriginaljobs"
+    ],
+    "slots_not_physical": true
+  },
+  "typed_continuous": {
+    "left": "clauses and alloriginal f",
+    "x_e": "1/k_c<=1/2",
+    "f": "half ineachpool, sortedfirst among weight1ties",
+    "edge": "positive-length overlap only; coalescededge storesactualoccurrencewitness",
+    "rank": "right_endpoint=1/2+Q_j; Q_j<=j/2; overlapell>=2 -> right>ell-1 -> j>=2ell-2",
+    "load": "query-only<=sum w_even<=fullbudget/2",
+    "size": "O(N+L+M) vertices; <=2L+2N witnessingedges",
+    "bit_cost": "exactrational endpoints, productdenominator bitlength sum ofinputbitlength, no denominatorvalue expansion"
+  },
+  "author_discrete": {
+    "left": "clauses only",
+    "slot": "two signs top occurrences shareone special; eachside remainder pairs(2,3),(4,5),...",
+    "fraction": "eachclause occurrence1/k, <=2occurrences/slot -> col<=1",
+    "f": "choose sign withunselectedtop or emptysign",
+    "load": "same even-index halfbudget estimate"
+  },
+  "new_independent_alljob": {
+    "left": "allN+L+M originaljobs",
+    "poolslots": "separate first{f,q1} eachside, then querypairs(2,3),(4,5),...",
+    "root_slots": "one peroriginalR_e",
+    "fraction": "f/query halfperedge; selector1/k; rootcol1/2+1/k<=1",
+    "cleanup": "returnall nonselected queries to their ownroot; only decreasespoolloads",
+    "edges": "exactly2N+3L",
+    "relation_to_author": "eliminatef from twofirstslotcapacity2 -> onesharedtopslot; eliminatequery/rootchoice -> clauseonly; conversely expand withf andallunselectedqueries atroots"
+  },
+  "not_claimed": [
+    "threegraphs identical",
+    "same matchingor same outputsets",
+    "bijection ofcontinuous anddiscrete outputsets",
+    "zero-domain strictSAT equivalence",
+    "sharpness",
+    "largerbudget/guards/extraendpoints result",
+    "generalUMapprox/hardness",
+    "novel matchingtheorem",
+    "new productionimplementation/audit/run"
+  ],
+  "identity": {
+    "original": "scratchstatementv2 hasnostablecanonicalID, notasset",
+    "canonical": "firstassigns UM-OCCURRENCE-WEIGHTED-DIRECT-LITERAL-POOL-BUDGET-ESCAPE-v1; no backdating",
+    "uniform_prior": "typedproposer/familiarity disclosed; no unseenuniform fullread/diff/Proof invented",
+    "root": "reports pairingderivedbeforeExactrouting, Proofwrittenafterfulltypedread; nonblind",
+    "independent_final": "actuallywholeheader+sections1-5, unopenedtyped/linkedhistoricalrecords excluded"
+  },
+  "mathematical_runs_this_batch": 0,
+  "blind_reviews_this_batch": 0
+}

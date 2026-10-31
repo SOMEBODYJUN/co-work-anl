@@ -1,0 +1,82 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "original_program_execution_count": 2,
+  "entry_side_effects": "Both programs execute at module top level and create sibling JSON exclusively. Neither imports the other. The priority input is the frozen original report, not the newly produced predictable output.",
+  "runs": [
+    {
+      "case": "predictable",
+      "program": "audit_predictable_activation.py",
+      "program_sha256": "c64638d2664e9fd24d0bd79fcb827184a9db762695cf06fcb671229311b40c33",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/r3-relay-priority-audit-contracts/archives/customer-attraction/tools/evidence/relay-priority-audit-contracts-primary/replay/predictable/audit_predictable_activation.py"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-next-cache/r3-relay-priority-audit-contracts/archives/customer-attraction/tools/evidence/relay-priority-audit-contracts-primary/replay/predictable",
+      "execution_count": 1,
+      "exit_code": 0,
+      "duration_seconds": 0.05524444580078125,
+      "imports": [
+        "collections",
+        "fractions",
+        "itertools",
+        "pathlib",
+        "json",
+        "math"
+      ],
+      "local_program_imports": [],
+      "dependencies": [],
+      "stdout_bytes": 218,
+      "stdout_sha256": "ad4afb924f2691ff85ce5e14c2f8378350a7306a2010044d22bc48bb01ec958a",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_created": true,
+      "exclusive_output": "x mode in unmodified source",
+      "path_difference": "copied byte-identical source executes in independent external replay directory; not original frozen path",
+      "output_bytes": 6435,
+      "output_sha256": "3476b355c72605d35dc6c6e1c534ca6816797e72359d25c36136a3acb0a3c3aa",
+      "equals_frozen_bytes": true
+    },
+    {
+      "case": "priority",
+      "program": "audit_priority_coupling.py",
+      "program_sha256": "e34ef44af28cde556b5fddbe0387d39bfcd71974ad98d167db0427e5c7ad0132",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/37f0f9248cfc/boss4-next-cache/r3-relay-priority-audit-contracts/archives/customer-attraction/tools/evidence/relay-priority-audit-contracts-primary/replay/priority/audit_priority_coupling.py"
+      ],
+      "cwd": "/workspace/scratch/37f0f9248cfc/boss4-next-cache/r3-relay-priority-audit-contracts/archives/customer-attraction/tools/evidence/relay-priority-audit-contracts-primary/replay/priority",
+      "execution_count": 1,
+      "exit_code": 0,
+      "duration_seconds": 0.04206347465515137,
+      "imports": [
+        "collections",
+        "fractions",
+        "itertools",
+        "pathlib",
+        "math",
+        "json"
+      ],
+      "local_program_imports": [],
+      "dependencies": [
+        {
+          "path": "predictable_activation_audit.json",
+          "kind": "frozen-primary-report-not-imported-program",
+          "sha256": "3476b355c72605d35dc6c6e1c534ca6816797e72359d25c36136a3acb0a3c3aa",
+          "bytes": 6435
+        }
+      ],
+      "stdout_bytes": 267,
+      "stdout_sha256": "1b14cc68b30cae13a8e8e551a8cca899f273782fe985feab5cfff8d63f10a875",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_created": true,
+      "exclusive_output": "x mode in unmodified source",
+      "path_difference": "copied byte-identical source executes in independent external replay directory; not original frozen path",
+      "output_bytes": 285,
+      "output_sha256": "ea545e2457bae36de57e97836394c354e6accf3cc6545dad632b362f13203e0c",
+      "equals_frozen_bytes": true
+    }
+  ]
+}
