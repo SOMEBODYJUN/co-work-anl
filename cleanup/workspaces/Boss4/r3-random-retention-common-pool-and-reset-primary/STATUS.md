@@ -1,0 +1,1 @@
+KC五源完整成熟；真实pushed/synced原capture own5 owner/SHA核。原CLI/source函数/canonical/LP/scan0，知情31定义级调用2（1失败1成功）（340原策略IC+真三人85state/21node/84children）。5最终semantic integrated，不是body-pushed/done。初始missing/后取得/一次run分开，三context与原JSON不附done。
