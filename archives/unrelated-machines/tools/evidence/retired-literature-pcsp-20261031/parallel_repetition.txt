@@ -1,0 +1,1717 @@
+           Analytical Approach to Parallel Repetition
+
+                              Irit Dinur∗            David Steurer†
+
+                                          June 10, 2014
+
+
+
+                                              Abstract
+           We propose an analytical framework for studying parallel repetition, a basic product
+       operation for one-round two-player games. In this framework, we consider a relaxation
+       of the value of projection games. We show that this relaxation is multiplicative with
+       respect to parallel repetition and that it provides a good approximation to the game
+       value. Based on this relaxation, we prove the following improved parallel repetition
+       bound: For every projection game G with value at most ρ, the k-fold parallel repetition
+       G⊗k has value at most                           √ !
+                                                     2 ρ k/2
+                                        val(G⊗k ) ⩽           .
+                                                     1+ρ
+       This statement implies a parallel repetition bound for projection games with low
+       value ρ. Previously, it was not known whether parallel repetition decreases the value
+       of such games. This result allows us to show that approximating set cover to within
+       factor (1 − ε) ln n is NP-hard for every ε > 0, strengthening Feige’s quasi-NP-hardness
+       and also building on previous work by Moshkovitz and Raz.
+           In this framework, we also show improved bounds for few parallel repetitions of
+       projection games, showing that Raz’s counterexample to strong parallel repetition is
+       tight even for a small number of repetitions.
+           Finally, we also give a short proof for the NP-hardness of label cover(1, δ) for
+       all δ > 0, starting from the basic PCP theorem.
+
+Keywords: parallel repetition, one-round two-player games, label cover, set cover, hardness of
+approximation, copositive programming, operator norms.
+
+
+
+
+   ∗
+     Department of Computer Science and Applied Mathematics, Weizmann Institute. Part of this work was
+done at Microsoft Research New England and Radcliffe Institute for Advanced Study. Work supported in
+part by an ISF grant number 1179/09 and by an ERC-StG grant number 239985.
+   †
+     Computer Science Department, Cornell University. Part of this work was done at Microsoft Research
+New England. Research supported in part by NSF and the Alred P. Sloan Foundation.
+Contents
+1   Introduction                                                                                 3
+    1.1 Our Contribution . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       3
+    1.2 High Level Proof Overview . . . . . . . . . . . . . . . . . . . . . . . . . . .          5
+    1.3 Related work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     6
+    1.4 Organization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     7
+
+2   Technique                                                                                    7
+    2.1 Games and linear operators . . . . . . . . . . . . . . . . . . . . . . . . . . .         7
+    2.2 Playing games in parallel . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      8
+    2.3 The collision value of a game . . . . . . . . . . . . . . . . . . . . . . . . . .        8
+    2.4 Expanding Games . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       10
+    2.5 A family of trivial games . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     10
+
+3   The Basic Approach                                                                          11
+    3.1 Multiplicative game parameters . . . . . . . . . . . . . . . . . . . . . . . . .        11
+    3.2 Approximation bound for expanding projection games . . . . . . . . . . .                13
+    3.3 Short proof for the hardness of label cover . . . . . . . . . . . . . . . . . .         15
+
+4   Approximation bound for general projection games                                            15
+    4.1 Parallel repetition bound for general projection games . . . . . . . . . . . .          20
+
+5   Few Repetitions — Proof of Theorem 1.7                                                      20
+
+6   Inapproximability Results                                                                   23
+    6.1 label cover . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     23
+    6.2 set cover . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   25
+
+7   Conclusions                                                                                 26
+
+References                                                                                      26
+
+A Additional Proofs                                                                             29
+
+B Feige’s Game                                                                                  29
+1     Introduction
+A one-round two-player game G is specified by a bipartite graph with vertex sets U and V
+and edges decorated by constraints π ⊆ Σ × Σ for an alphabet Σ. The value of a game is the
+maximum, over all assignments f : U → Σ and 1 : V → Σ, of the fraction of constraints
+satisfied (where a constraint π is satisfied if f (u), 1(v) ∈ π)
+                                                            
+
+                                                n               o
+                           val(G) = max P          f (u), 1(v) ∈ π .
+                                              f,1 u,v,π
+
+The term one-round two-player game stems from the following scenario: A referee
+interacts with two players, Alice and Bob. Alice has a strategy f : U → Σ, and Bob a
+strategy 1 : V → Σ. A referee selects a random edge u, v in E and sends u as a question
+to Alice, and v as a question to Bob. Alice responds with f (u) and Bob with 1(v). They
+succeed if their answers satisfy the constraint decorating the edge uv.
+    In the k-fold parallel repetition G⊗k , the referee selects k edges u1 v1 , . . . , uk vk independently
+from E and sends a question tuple u1 , . . . , uk to Alice, and v1 , . . . , vk to Bob. Each player
+responds with a k-tuple of answers and they succeed if their answers satisfy each of the k
+constraints on these edges.
+    Parallel repetition is a basic product operation on games, and yet its effect on the game
+value is far from obvious. Contrary to what one might expect, there are strategies for
+the repeated game that do significantly better than the naive strategy answering each of
+the k questions using the best single-shot strategy. Nevertheless, the celebrated parallel
+repetition theorem of Raz [Raz98] bounds the value of G⊗k by a function of the value
+of G that decays exponentially with the number of repetitions. The broad impact of
+this theorem can be partly attributed to the general nature of parallel repetition. It is
+an operation that can be applied to any game without having to know almost anything
+about its structure. Raz’s proof has since been simplified, giving stronger and sometimes
+tight bounds [Hol09, Rao11]. Still, there is much that is left unknown regarding the
+behavior of games under parallel repetition. For example, previous to this work, it was
+not known if repetition causes a decrease in the value for a game whose value is already
+small, say sub-constant. It was also not known how to bound the value of the product of
+just two games. Other open questions include bounding the value of games with more
+than two players, and bounding the value of entangled games (where the two players
+share quantum entanglement). The latter question has recently received some attention
+[DSV14, JPY14, CS13].
+
+1.1    Our Contribution
+Our main contribution is a new analytical framework for studying parallel repetitions of
+projection games. In this framework, we prove for any projection game:1
+
+Theorem 1.1 (Parallel Repetition Bound). Let G be a projection game. If val(G) ⩽ ρ for some
+ρ > 0 then,
+                                              √ !
+                                             2 ρ k/2
+                                      ⊗k
+                                 val(G ) ⩽             .
+                                            1+ρ
+   We remark that for values of val(G) close to 1 this theorem matches Rao’s bound for
+projection games, with improved constants.
+  1
+    In a projection game, for any two questions u and v to the players and any answer β of Bob, there exists at
+most one acceptable answer α for Alice.
+
+
+                                                      3
+Corollary 1.2 (Parallel Repetition for high-value games [Rao08a]). For any projection game
+G with val(G) ⩽ 1 − ε ,
+                                                      k
+                                 val(G⊗k ) ⩽ 1 − ε2 /16 .
+   We give a particularly short proof of a (strong) parallel repetition bound for a subclass of
+games, namely expanding projection games. This class of games is rich enough for the main
+application of parallel repetition: NP-hardness of label cover with perfect completeness
+and soundness close to 0 (the starting point for most hardness of approximation results).
+See Section 3.2.
+   Next, we list some new results that are obtained by studying parallel repetition in this
+framework.
+
+Repetition of small-value games. Our first new result is that if the initial game G has
+value ρ that is possibly sub-constant, then the value of the repeated game still decreases
+exponentially with the number of repetitions. Indeed, Theorem 1.1 for small ρ becomes,
+Corollary 1.3 (Repetition of games with small value). For any projection game G with
+val(G) ⩽ ρ ,
+                                 val(G⊗k ) ⩽ (4ρ)k/4 .
+   This bound allows us to prove NP-hardness for label cover that is better than was
+previously known (see Theorem 6.4) by applying our small-value parallel repetition
+theorem on the PCP of [MR10]. A concrete consequence is the following corollary.
+Corollary 1.4 (NP-hardness for label cover). For every constant c > 0, given a label cover
+instance of size n with alphabet size at most n, it is NP-hard to decide if its value is 1 or at most
+ε = (log1 n)c .
+
+Hardness of set cover. A famous result of Uriel Feige [Fei98] is that unless NP ⊆
+DTIME(nO(log log n) ) there is no polynomial time algorithm for approximating set cover
+to within factor (1 − o(1)) ln n. Feige’s reduction is slightly super-polynomial because
+it involves, on top of the basic PCP theorem, an application of Raz’s parallel repetition
+theorem with Θ(log log n) number of repetitions. Later, Moshkovitz and Raz [MR10]
+constructed a stronger PCP whose parameters are closer but still not sufficient for lifting
+Feige’s result to NP-hardness. Moshkovitz [Mos12] also generalized Feige’s reduction to
+work from a generic projection label cover rather than the specific one that Feige was
+using. Our Corollary 1.4 makes the last step in this sequence of works and gives the first
+tight NP-hardness for approximating set cover.
+Corollary 1.5 (Tight NP-hardness for approximating set cover). For every α > 0, it is
+NP-hard to approximate set cover to within (1 − α) ln n, where n is the size of the instance. The
+reduction runs in time nO(1/α) .
+Unlike the previous quasi NP-hardness results for set cover, Corollary 1.5 rules out that
+approximation ratios of (1 − α) ln n can be achieved in time 2n (unless NP ⊆ TIME(2n )).
+                                                               o(1)                  o(1)
+
+
+Together with the best known approximation algorithm for set cover [CKW09], we can
+characterize the time vs. approximation trade-off for the problem:
+                                            o(1)
+Corollary 1.6. Assuming NP 6⊆ TIME(2n ), the time complexity of achieving an approximation
+                                      Θ(α)
+ratio (1 − α) ln n for set cover is 2n .
+    Going back to label cover, we remark that the hardness proven in Corollary 1.4 is still
+far from the known algorithms for label cover and it is an interesting open question to
+determine the correct tradeoff between ε and the alphabet size.
+
+                                                   4
+Few repetitions. Most parallel repetition bounds are tailored to the case that the number
+of repetitions k is large compared to 1/ε (where as usual, val(G) = 1 − ε). For example, when
+the number of repetitions k  1/ε, the bound val(G⊗k ) ⩽ (1 − O(ε2 ))k ≈ (1 − O(kε2 )) for
+projection games [Rao11] is weaker than the trivial bound val(G⊗k ) ⩽ 1 − ε. The following
+theorem gives an improved and tight bound when k  1/ε2 .
+Theorem 1.7 (Few repetitions). Let G be a projection game with val(G) = 1 − ε. Then for all
+k  1/ε2 ,                                        √
+                               val(G⊗k ) ⩽ 1 − Ω( k · ε) .
+     A relatively recent line of work [FKO07, Raz08, BHH+ 08, BRR+ 09, RR12] focused on
+the question of strong parallel repetition. Namely, given a game G with val(G) ⩽ 1 − ε is
+it true that val(G⊗k ) ⩽ (1 − O(ε))k ? If true for any unique game G, such a bound would
+imply a reduction from max cut to unique games. However,
+                                                       √        Raz [Raz08] showed that the
+value of the odd cycle xor game is at least 1 − O( k · ε), much larger than the 1 − O(kε)
+in strong parallel repetition. Our bound matches Raz’s bound even for small values of k,
+thereby confirming a conjecture of Ryan O’Donnell2 and extending the work of [FKO07]
+who proved such an upper bound for the odd-cycle game.
+
+1.2      High Level Proof Overview
+We associate a game G with its label-extended graph, by blowing up each vertex in U or in
+V to a cloud of |Σ| vertices. In this bipartite graph we connect a left vertex (u, α) in the
+cloud of u to a right vertex (v, β) in the cloud of v iff (α, β) satisfy the constraint attached to
+u, v. This graph naturally gives rise to a linear operator mapping functions f on the right
+vertices to functions G f on the left vertices, where G f (u, α) is defined by aggregating the
+values of f (v, β) over all neighboring vertices.
+    In this language, the product operation on games is given by the tensor product
+operation on the corresponding linear operators.
+    It turns out that a good measure for the value of the game G is its collision value, denoted
+kGk, defined by measuring how self-consistent Bob’s strategy (answering questions in
+V) is, with respect to its projection on a random u. This value is not new and has been
+implicitly studied before as it describes the value of a symmetrization of the game G, for
+example it occurs in PCP constructions when moving from a line versus point test to a line
+versus line test. A simple Cauchy–Schwarz inequality shows that (see Claim 2.3)
+
+                                       val(G) ⩽ kGk ⩽ val(G)1/2 .                             (1.1)
+
+The collision value is more amenable to analysis, and indeed, our main technical theorem
+shows that the collision value has the following very nice property,
+Theorem√ 1.8. Any two projections games G and H satisfy kG ⊗ Hk ⩽ ϕ(kGk) · kHk , where
+           2 x
+ϕ(x) = 1+x .
+    Theorem 1.1 follows directly from repeated applications of this theorem, together with
+the bound in (1.1). We remark that a similar statement for val(·) instead of k·k, i.e. of the
+form val(G ⊗ H) ⩽ ϕ(val(G)) · val(H), is false. Feige shows [Fei91] an example of a game
+for which val(G ⊗ G) = val(G) = 12 , see discussion in Appendix B. In contrast, Theorem 1.8
+implies that there is no projection game G for which kG ⊗ Gk = kGk < 1.
+    The proof of Theorem 1.8 proceeds by looking for a parameter ρG for which kG ⊗ Hk ⩽
+ρG · kHk, and such that ρG depends only on G. One syntactic possibility is to take ρG to be
+   2
+       Personal communication, 2012.
+
+
+                                                   5
+the supremum of kG⊗Hk                        3
+                     kHk over all games H, but from this definition it is not clear how to
+prove that ρG ≈ val(G).
+    Instead, starting from this ratio we arrive at a slightly weaker relaxation that is
+expressed as a generalized Rayleigh quotient,4 or, more precisely, as the ratio of two collision
+values: one for the game G and the other involving a trivial game T that provides suitable
+normalization. The key difference to standard linear-algebraic quantities is that we restrict
+this generalized Rayleigh quotient to functions that take only nonnegative values. Thus,
+intuitively one can think of the value val+ (G) as a “positive eigenvalue” of the game G. In
+order to connect the ratio kG⊗Hk
+                             kHk to a generalized Rayleigh quotient for G and T, we factor
+the operator G ⊗ H into two consecutive steps
+
+                                         G ⊗ H = (G ⊗ Id)(Id ⊗ H) .
+
+The same factorization can be applied to the operator T ⊗ H. This factorization allows us
+to magically “cancel out” the game H, and we are left with an expression that depends
+only on G.
+
+    The main technical component of the proof is to prove that val+ (G) ≈ val(G), and this
+proof has two components. The first is a rounding algorithm that extracts an assignment
+from a non-negative function with large Rayleigh quotient (i.e., a large ratio between
+the norm of G f and the norm of T f ). In the case of expanding games, this is the only
+component necessary and it is obtained rather easily from the expander mixing lemma. For
+non-expanding games, we rely on a subtler (more “parameter-sensitive”) proof, building
+on a variant of Cheeger’s inequality in [Ste10b]. Here a non-negative function will only
+give a good partial assignment: an assignment that assigns values only to a small subset of
+the vertices. We then combine many partial assignments into a proper assignment using
+correlated sampling, first used in this context by [Hol09].
+
+1.3    Related work
+Already in [FL92], Feige and Lovász proposed to study parallel repetition via a relaxation of
+the game value. Their relaxation is defined as the optimal value of a semidefinite program.
+While this relaxation is multiplicative, it does not provide a good approximation for the
+game value.5 In particular, the value of this relaxation can be 1, even if the game value is
+close to 0. The proof that the Feige–Lovász relaxation is multiplicative uses semidefinite
+programming duality (similar to [Lov79]). In contrast, we prove the multiplicativity of
+val+ in a direct way.6
+    For unique two-player games, Barak et al. [BHH+ 08] introduced a new relaxation,
+called Hellinger value, and showed that this relaxation provides a good approximation
+to both the game value and the value of the Feige–Lovász relaxation (see [Ste10a] for
+improved approximation bounds). These quantitative relationships between game value,
+Hellinger value, and the Feige–Lovász relaxation lead to counter-examples to “strong
+parallel repetition,” generalizing [Raz08].
+   3
+      Goldreich suggests to call this the “environmental value” of a game G because it bounds the value of G
+relative to playing in parallel with any environment H
+    4
+      Rayleigh quotients refer to the expressions of the form h f, A f i/h f, f i for operators A and functions f .
+Generalized Rayleigh quotients refer to expressions of the form f 7→ h f, A f i/h f, B f i for operators A and B and
+functions f .
+    5
+      In fact, no polynomial-time computable relaxation can provide a good approximation for the game value
+unless P = NP, because the game value is NP-hard to approximate.
+    6
+       The relaxation val+ can be defined as a convex program (in fact, a copositive program). However, it turns
+out that unlike for semidefinite programs, the dual objects are not closed under tensor products.
+
+
+                                                         6
+    The relaxation val+ is a natural extension of the Hellinger value to projection games
+(and even, general games). Our proof that val+ satisfies the approximation property for
+projection games follows the approach of [BHH+ 08]. The proof is more involved because,
+unlike for unique games, val+ is no longer easily expressed in terms of Hellinger distances.
+Another difference to [BHH+ 08] is that we need to establish the approximation property
+also when the game’s value is close to 0. This case turns out to be related to Cheeger-type
+inequalities in the near-perfect expansion regime [Ste10b].
+
+1.4   Organization
+In Section 2 we describe the analytic framework in which we study games. In Section 3
+we outline the main approach and give a complete and relatively simple analysis of the
+parallel repetition bound for expanding projection games. This proof gives a taste of our
+techniques in a simplified setting, and gives gap amplification for label cover, thereby
+proving the NP-hardness of label cover (1, δ). In Section 4 we prove the approximation
+property of val+ for non-expanding games and then immediately derive Theorem 1.1 and
+Corollary 1.3. In Section 5 we analyze parallel repetition with few repetitions, proving
+Theorem 1.7. We prove Corollary 1.4 and related hardness results for label cover and set
+cover in Section 6.
+
+
+2     Technique
+2.1   Games and linear operators
+A two-prover game G is specified by a bipartite graph with vertex sets U and V and edges
+decorated by constraints π ⊆ Σ × Σ for an alphabet Σ. (We allow parallel edges and
+edges with nonnegative weights.) The graph gives rise to a distribution on triples (u, v, π)
+(choose an edge of the graph with probability proportional to its weight). The marginals
+of this distribution define probability measures on U and V. When the underlying graph
+is regular, these measures on U and V are uniform. It’s good to keep this case in mind
+because it captures all of the difficulty. We write (v, π) | u to denote the distribution over
+edges incident to a vertex u. (Formally, this distribution is obtained by selecting a triple
+(u, v, π) conditioned on u)
+     We say that G is a projection game if every constraint π that appears in the game is a
+projection constraint, i.e., each β ∈ Σ has at most one α ∈ Σ for which (α, β) ∈ π. We write
+   π
+α ←[ β to denote (α, β) ∈ π for projection constraints π. If the constraint is clear from the
+context, we just write α ←[ β.
+
+Linear-algebra notation for games. In this work we       Pwill represent an assignment for Bob
+by a nonnegative function f : V × Σ → R such that β∈Σ f (v, β) = 1 for every v ∈ V. The
+value f (v, β) is interpreted as the probability that Bob answers β when asked   Pv. Similarly,
+an assignment for Alice is a nonnegative function 1 : U × Σ → R such that α 1(u, α) = 1
+for all u ∈ U.
+    Let L(U × Σ) be the space of real-valued functions on U × Σ endowed with the inner
+product h·, ·i,                                X
+                                  h1, 10 i = E   1(u, α)10 (u, α).
+                                         u
+                                             α
+
+The measure on U is the probability measure defined by the graph; the measure on Σ is the
+counting measure. More generally, if Ω is a measure space, L(Ω) is the space of real-valued
+
+
+                                                 7
+functions on Ω endowed with the inner product defined by the measure on Ω. The inner
+product induces a norm with k1k = h1, 1i1/2 for 1 ∈ L(Ω).
+    We identify a projection game G with a linear operator from L(V × Σ) to L(U × Σ),
+defined by                                     X
+                              G f (u, α) = E         f (v, β) .
+                                                     (v,π)|u
+                                                               β: α←[β
+
+The bilinear form h·, G·i measures the value of assignments for Alice and Bob.
+Claim 2.1. If Alice and Bob play the projection game G according to assignments f and 1,
+then their success probability is equal to h1, G f i,
+                                              X
+                             h1, G f i = E         1(u, α) f (v, β) .
+                                                (u,v,π)
+                                                          a←[β
+
+    This setup shows that the value of the game G is the maximum of the bilinear form
+h1, G f i over assignments f and 1. If we were to maximize the bilinear form over all
+functions with unit norm (instead of assignments), the maximum value would be the
+largest singular value of an associated matrix.
+
+2.2     Playing games in parallel
+Let G be a projection game with vertex sets U and V and alphabet Σ. Let H be a projection
+game with vertex sets U0 and V 0 and alphabet Σ0 . The direct product G ⊗ H is the following
+game with vertex sets U × U0 and V × V 0 and alphabet Σ × Σ0 : The referee chooses (u, v, π)
+from G and (u0 , v0 , π0 ) from H independently. The referee sends u, u0 to Alice and v, v0 to
+Bob. Alice answers α, α0 and Bob answers β, β0 . The players succeed if both α ←[ β and
+α0 ←[ β0 . In linear algebra notation,
+Claim 2.2. Given two games G : L(V × Σ) → L(U × Σ) and H : L(V 0 × Σ) → L(U0 × Σ), the
+direct product game G ⊗ H : L(V × V 0 × Σ × Σ0 ) → L(U × U0 × Σ × Σ0 ) is given by the tensor
+of the two operators G and H. More explicitly, for any f ∈ L(V × V 0 × Σ × Σ0 ), the operator
+for G ⊗ H acts as follows,
+                                                   X        X
+            (G ⊗ H) f (u, u0 , α, α0 ) = E  E                       f (v, v0 , β, β0 )
+                                           (v,π)|u (v ,π )|u
+                                           0 0  0
+                                                                 β : (α,β)∈π β0 : (α0 ,β0 )∈π0
+
+                                                                                                              
+      The notation G⊗k is short for G ⊗ · · · ⊗ G (k times).
+
+2.3     The collision value of a game
+The collision value of a projection game G is a relaxation of the value of a game that is
+obtained by moving from G to a symmetrized version of it.7 The advantage of the collision
+value is that it allows us to eliminate one of the players (Alice) in a simple way. Let the
+collision value of an assignment f for Bob be kG f k = hG f, G f i1/2 . We define the collision
+value of G to be
+                                      kGk = maxkG f k
+                                                           f
+
+where the maximum is over all assignments f ∈ L(V × Σ).
+    7
+      Such a transformation is well-known in e.g. the PCP literature, albeit implicitly. Moving to a symmetrized
+version occurs for example in low degree tests when when converting a line versus point test to a line versus
+line test.
+
+
+                                                          8
+   The value kG f k2 can be interpreted as the success probability of the following process:
+Choose a random u and then choose independently (v, π)|u and (v0 , π0 )|u; choose a random
+label β with probability f (v, β) and a random label β0 with probability f (v0 , β0 ), accept if
+                                     π           π0
+there is some label α such that α ←[ β and α ←[ β0 (in this case β, β0 ’collide’).
+    The collision value of a projection game is quadratically related to its value. This claim
+is the only place where we use that the constraints are projections.
+Claim 2.3. Let G be a projection game. Then val(G) ⩽ kGk ⩽ val(G)1/2 .
+
+Proof. Let f, 1 be assignments attaining the value of G. The first inequality holds because
+
+                         val(G) = h1, G f i ⩽ k1k · kG f k ⩽ kG f k ⩽ kGk ,
+
+where we used Cauchy–Schwarz followed by the bound k1k ⩽ 1 which holds for any
+assignment 1. For the second inequality, let f be an assignment for G such that kG f k = kGk.
+Then,
+                     kGk2 = kG f k2 = hG f, G f i ⩽ maxh1, G f i = val(G)
+                                                        1
+
+where the inequality used the fact that if f is an assignment then α G f (u, α) ⩽ 1 for every
+                                                                  P
+u, so G f can be turned into a proper assignment 1 ∈ L(U × Σ) by possibly increasing
+some of its entries. Thus, hG f, G f i ⩽ h1, G f i because all entries of these vectors are
+non-negative.                                                                               
+
+   The following claim says that the collision value cannot increase if we play, in parallel
+with G, another game H.
+Claim 2.4. Let G, H be two projection games, then kG ⊗ Hk ⩽ kGk.
+
+Proof. This claim is very intuitive and immediate for the standard value of a game, as it is
+always easier to play one game rather than two, and it is similarly proven here for the
+collision value. Given an assignment for G ⊗ H we show how to derive an assignment for
+G that has a collision value that is at least as high. Let G be a game on question sets U and
+V, and let H be a game on question sets U0 and V 0 . Let f ∈ L(V × Σ × V 0 × Σ0 ) be such that
+k(G⊗H) f k = kG⊗Hk. ForPeach v0 we can define a strategy fv0 for G by fixing v0 and summing
+over β0 , i.e. fv0 (v, β) := β0 f (v, v0 , β, β0 ). For each u0 ∈ U0 let fu0 be an assignment for G
+defined by fu0 (v, β) := Ev0 |u0 fv0 (v, β). In words, fu0 is the strategy obtained by averaging
+over fv0 for all neighbors v0 of u0 . We claim that kGk2 ⩾ Eu0 kG fu0 k2 ⩾ k(G ⊗ H) f k2 where
+the second inequality comes from the following ‘coupling’ argument: Select a random
+vertex uu0 and then two possible neighbors v1 v01 and v2 v02 , and then two answers β1 β01 and
+β2 β02 according to f . With these random choices a collision for f is if β1 β01 is consistent with
+β2 β02 . With the same random choices a collision for fu0 is when β1 is consistent with β2 , an
+easier requirement.                                                                               
+
+Symmetrizing the Game. An additional way to view the collision value is as the value
+of a constraint satisfaction problem (CSP) that is obtained by symmetrizing the game.
+
+Definition 2.5 (Symmetrized Constraint Graph). For a projection game G given by
+distribution µ, we define its symmetrized constraint graph to be the weighted graph Gsym on
+vertex set V, described as a distribution µsym given by
+
+   – Select u at random (according to µ), and then select (v, π)|u and independently
+     (v0 , π0 )|u.
+
+
+
+                                                 9
+      – Output (v, v0 , τ) where τ ⊆ Σ × Σ consists of all pairs (β, β0 ) such that there exists
+                              π                π0
+        some α such that α ←[ β and α ←[ β0 .
+
+   It is standard to define the value of a deterministic assignment a : V → Σ in a constraint
+graph by
+                          val(Gsym , a) = 0 P     [(a(v), a(v0 )) ∈ τ] .
+                                                  (v,v ,τ)∼µsym
+
+We extend this to randomized assignments a, i.e. when a(v) is a random variable taking
+values in Σ. In this case the value of a in Gsym is defined as the expectation over the values
+of a. If the randomized assignment is described by a vector f ∈ R⩾0            V×Σ so that a(v) = β with
+
+probability f (v, β), one can check that the value of this randomized assignment is equal to
+                                       X
+                                 E           f (v, β) f (v0 , β0 ) = kG f k2 ,                      (2.1)
+                             (v,v ,τ)∼µsym
+                               0
+                                             (β,β0 )∈τ
+
+which is the square of the collision value. Thus, the value of the CSP described by Gsym
+(which is, as usual, the maximum value over all possible assignments) is equal to kGk2 .
+   We note that the symmetrized game (G ⊗ H)sym can be obtained as the natural direct
+product of Gsym and Hsym , giving an alternative (intuitive) proof for Claim 2.4.
+
+2.4     Expanding Games
+A game G will be called expanding if the constraint graph of the symmetrized game Gsym is
+an expander.
+    Formally let A be defined by the matrix describing the random walk in the graph
+underlying Gsym , so Av1 ,v2 = µsym (v2 |v1 ). In words, this is the probability of the next step
+in the random walk landing in v2 conditioned on being in v1 . Observe that for any two
+vectors x, y ∈ L(V), hx, Ayi = hAx, yi where the inner product is taken as usual with respect
+to the measure of V, which is also the stationary measure of A. This implies that A is
+diagonalizable with real eigenvalues 1 = λ1 ⩾ λ2 ⩾ · · · λn > −1. Since A is stochastic the
+top eigenvalue is 1 and the corresponding eigenvector is the all 1 vector. We define the
+spectral gap of the graph to be 1 − max(|λ2 |, |λn |).
+    A game G is said to be c-expanding if the spectral gap of the Markov chain A corre-
+sponding to Gsym is at least c.
+
+2.5     A family of trivial games
+We will consider parameters of games (meant to approximate the game value) that compare
+the behavior of a game to the behavior of certain trivial games. As games they are not
+very interesting, but their importance will be for normalization.
+    Let T be the following projection game with the same vertex set V on both sides and
+alphabet Σ: The referee chooses a vertex v from V at random (according to the measure on
+V). The referee sends v to both Alice and Bob. The players succeed if Alice answers with
+1 ∈ Σ, regardless of Bob’s answer. The operator of this game acts on L(V × Σ) as follows,
+                                          P
+                                           β f (v, β) if α = 1,
+                                          
+                             T f (v, α) = 
+                                          
+                                          0
+                                                      otherwise.
+
+We consider a related trivial game Tv with vertex sets {v} and V and alphabet Σ. The
+operator maps L(V × Σ) to L({v} × Σ) as follows: Tv f (v, α) = T f (v, α) for α ∈ Σ. The operator
+Tv “removes” the part of f that assigns values to questions other than v.
+
+                                                         10
+    While both T and Tv have the same value 1 for every assignment, they behave differently
+when considering a product game G ⊗ H and an assignment f for it. In particular, the
+norm of (T ⊗ H) f may differ significantly from the norms of (Tv ⊗ H) f , and this difference
+will be important.
+
+
+3     The Basic Approach
+We will prove parallel repetition bounds for the collision value of projection games. Since
+the collision value is quadratically related to the usual value, due to Claim 2.3, these
+bounds imply the same parallel repetition bounds for the usual value (up to a factor of 2
+in the number of repetitions). We state again our main theorem,
+
+Theorem√ 1.8. Any two projections games G and H satisfy kG ⊗ Hk ⩽ ϕ(kGk) · kHk , where
+        2 x
+ϕ(x) = 1+x .
+
+   Before describing the proof, let us show how this theorem implies parallel repetition
+bounds. By repeated application of the theorem,
+
+               kG⊗k k ⩽ ϕ(kGk) · kG⊗k−1 k ⩽ . . . ⩽ ϕ(kGk)k−1 · kGk ⩽ ϕ(kGk)k ,
+                                                            √
+On the interval [0, 1], the function ϕ satisfies ϕ(x) ⩽ 2 x and ϕ(1 − ε) ⩽ 1 − ε2 /8. The
+first bound implies a new parallel repetition bound for games with value close to 0. The
+second bound improves constant factors in the previous best bound for projection games
+[Rao08b].
+
+3.1   Multiplicative game parameters
+Let G be a projection game with vertex sets U and V and alphabet Σ. We are looking for a
+parameter ρG of G (namely, a function that assigns a non-negative value to a game) that
+approximates the value of the game and such that for every projection game H,
+
+                                      kG ⊗ Hk ⩽ ρG · kHk .                                   (3.1)
+
+Dividing both sides by kHk, we want a parameter of G that upper bounds the ratio
+kG ⊗ Hk/kHk for all projection games H. The smallest such parameter is simply
+
+                                                   kG ⊗ Hk
+                                      ρG = sup             .                                 (3.2)
+                                              H      kHk
+
+An intuitive interpretation of this value is that it is a kind of “parallel value" of G, in that it
+measures the relative decrease in value caused by playing G in parallel with any game
+H, compared to playing only H. Clearly kGk ⩽ ρG , but the question is whether ρG ≈ kGk.
+We will show that this is the case through another game parameter, val+ (G), such that
+val+ (G) ⩾ ρG ⩾ kGk and such that val+ (G) ≈ kGk. First we introduce the game parameter
+λ+ (G) which is not a good enough approximation for ρG (although it suffices when G is
+expanding), and then we refine it to obtain the final game parameter, val+ (G).
+    To lead up to the definition of λ+ (G) and then val+ (G), let us assume that we know that
+ρG > ρ for some fixed ρ > 0. This means that there is some specific projection game H for
+which kG⊗Hk
+         kHk > ρ. Let H be a projection game with vertex sets U and V and alphabet Σ ,
+                                                                      0        0                  0
+
+and let f be an optimal assignment for G ⊗ H, so that k(G ⊗ H) f k = kG ⊗ Hk. We can view
+f also as an assignment for the game T ⊗ H, where T is the trivial game from Section 2.5.
+
+                                                  11
+   The assignment f satisfies k(T ⊗ H) f k ⩽ kT ⊗ Hk ⩽ kHk (the second inequality is by
+Claim 2.4). So
+                                    kG ⊗ Hk k(G ⊗ H) f k
+                                ρ<          ⩽               .
+                                      kHk      k(T ⊗ H) f k
+We would like to “cancel out” H, so as to be left with a quantity that depends only on
+G and not on H. To this end, we consider the factorizations G ⊗ H = (G ⊗ Id)(Id ⊗ H)
+and T ⊗ H = (T ⊗ Id)(Id ⊗ H), where Id is the identity operator on the appropriate space.
+Intuitively, this factorization corresponds to a two step process of first applying the
+operator Id ⊗ H on f to get h and then applying either G ⊗ Id or T ⊗ Id.
+
+                     (G ⊗ Id) f         G ⊗ Id
+                                                                    Id ⊗ H
+                                                       h                     f
+                     (T ⊗ Id) f         T ⊗ Id
+
+
+If we let h = (Id ⊗ H) f , then
+                                  kG ⊗ Hk k(G ⊗ H) f k k(G ⊗ Id)hk
+                          ρ<             ⩽              =             .                      (3.3)
+                                    kHk    k(T ⊗ H) f k   k(T ⊗ Id)hk
+    By maximizing the right-most quantity in (3.3) over all nonnegative functions h, we
+get a value that does not depend on the game H so it can serve as a game parameter that is
+possibly easier to relate to the value of G algorithmically. Observe that there is a slight
+implicit dependence on (the dimensions of) H since the Id operator is defined on the same
+space as that of H. It turns out though that the extra dimensions here are unnecessary
+and the maximum is attained already for one dimensional functions h, so the identity
+operator Id can be removed altogether. This leads to the following simplified definition of
+a game parameter
+Definition 3.1. For any projection game G let
+                                                           kGhk
+                                        λ+ (G) = max            .
+                                                 h⩾0       kThk
+Theorem 3.2. Any two projection games G and H satisfy kG ⊗ Hk ⩽ λ+ (G) · kHk. Therefore,
+λ+ (G) ⩾ ρG .
+    Before proving this, we mention again that in general λ+ (G) 0 kGk which is why we
+later make a refined definition val+ (G).
+Proof. By (3.3), there exists a non-negative function h ∈ L(V × Σ × V 0 × Σ0 ) such that
+kG ⊗ Hk/kHk ⩽ k(G ⊗ Id)hk/k(T ⊗ Id)hk. We can view h as a matrix with each column
+belonging to L(V × Σ) - the input space for G and T. Then, (G ⊗ Id)h is the matrix obtained
+by applying G to the columns of the matrix h, and (T ⊗ Id)h is the matrix obtained by
+applying T to the columns of h. Next, we expand the squared norms of these matrices
+column-by-column,
+                                                            2
+                                 k(G ⊗ Id)hk2 E j kGh j k
+                                               =
+                                 k(T ⊗ Id)hk2    E j kTh j k2
+where j runs over the columns (this happens to be j ∈ U0 × Σ0 but it is not important at
+                                                                                 kGh j∗ k2
+this stage). An averaging argument implies that there is some j∗ for which kTh ∗ k2 is at least
+                                                                                     j
+as large as the ratio of the averages. Removing the squares from both sides, we get
+                                     kG ⊗ Hk kGh j∗ k
+                                            ⩽          ⩽ λ+ (G)                                 
+                                       kHk    kTh j∗ k
+
+
+                                                 12
+    In the next subsection we will show that for expanding games G, λ+ (G) ≈ kGk, thus
+proving Theorem 1.8 for the special case of expanding games. For non-expanding games,
+λ+ (G) is not a good approximation to kGk and a more refined argument is called for as
+follows. Instead of comparing the value of G ⊗ H to T ⊗ H, we compare it to the collection
+Tv ⊗ H for all v ∈ V (defined in Section 2.5). We observe that the inequality (3.3) also holds
+with T replaced by Tv , so that for all v ∈ V
+
+                             kG ⊗ Hk   k(G ⊗ H) f k   k(G ⊗ Id)hk
+                        ρ<           ⩽              =             .                        (3.4)
+                               kHk     k(Tv ⊗ H) f k k(Tv ⊗ Id)hk
+
+Now, by maximizing the right hand side over all measure spaces L(Ω) for Id and over all
+non-negative functions h ∈ L(V × Σ × Ω), we finally arrive at the game parameter
+
+                                    def             k(G ⊗ Id)hk
+                           val+ (G) = sup max                        ,                     (3.5)
+                                          Ω   h⩾0 max v k(Tv ⊗ Id)hk
+
+where the Id operator is defined on the measure space L(Ω) and we are taking the
+supremum over all finite dimensional measure spaces Ω. It turns out that the supremum
+is attained for finite spaces—polynomial in the size of G.
+
+Theorem 3.3. Any two projection games G and H satisfy kG ⊗ Hk ⩽ val+ (G) · kHk .
+
+Proof. We essentially repeat the proof for λ+ (·). Let H be any projection game, and let
+f be an optimal assignment for G ⊗ H. For every question v we compare k(G ⊗ H) f k to
+k(Tv ⊗ H) f k for Tv the trivial operator from Section 2.5. Since k(Tv ⊗ H) f k ⩽ kTv ⊗ Hk ⩽ kHk
+we get,
+
+  kG ⊗ Hk     k(G ⊗ H) f k                k(G ⊗ H) f 0 k
+          ⩽                    ⩽ max
+    kHk     maxv k(Tv ⊗ H) f k   f 0 ⩾0 maxv k(Tv ⊗ H) f 0 k
+                                                                  k(G ⊗ Id)hk
+                                                        ⩽ max                     = val+ (G) .
+                                                            h⩾0 maxv k(Tv ⊗ Id)hk
+
+                                                                                                 
+
+    The advantage of val+ over λ+ will be seen in the next sections, when we show that
+this value is a good approximation of value of the game G.
+
+3.2   Approximation bound for expanding projection games
+In this section we show that if G is an expanding game then λ+ (G) ≈ kGk. (Recall from
+Section 2.4 that a game is called γ-expanding if the graph underlying Gsym is has spectral
+gap at least γ.) By definition, kGk ⩽ λ+ (G). The interesting direction is
+
+Theorem 3.4. Let G be a γ-expanding projection game for some γ > 0. Suppose λ+ (G) > 1 − ε.
+Then, kGk > 1 − O(ε/γ).
+
+Proof. We may assume ε/γ is sufficiently small, say ε/γ ⩽ 1/6, for otherwise the theorem
+statement is trivially true. Let f ∈ L(V × Σ) be nonnegative, such that
+
+                                          kG f k
+                                                 > 1 − ε,
+                                          kT f k
+
+witnessing the fact that λ+ (G) > 1 − ε. First, we claim that without loss of generality we
+may assume that f is deterministic, i.e., for every vertex v, there is at most one label β
+
+                                                13
+such that f (v, β) > 0. (This fact is related to the fact that randomized strategies can be
+converted to deterministic ones without decreasing the value.) We can write a general
+nonnegative function f as a convex combination of deterministic functions f 0 using the
+following sampling procedure: For every vertex v independently, choose a label βv from
+                                             f (v,β0 )
+the distribution that gives probability P f (v,β) to label β0 ∈ Σ. Set f 0 (v, βv ) = β f (v, β)
+                                                                                     P
+                                                         β
+and f 0 (v, β0 ) = 0 for β0 , βv . The functions f 0 are deterministic and satisfy E f 0 = f . By
+convexity of the function f 7→ kG f k (being a linear map composed with a convex norm),
+we have EkG f 0 k ⩾ kG E f 0 k = kG f k. So, there must be some f 0 for which kG f 0 k ⩾ kG f k.
+                                                          kG f 0 k kG f k
+By construction, T f (v) = β f (v, β) = T f 0 (v), so kT f 0 k ⩾ kT f k . (We remark that this
+                                 P
+
+derandomization step would fail without the premise that f is nonnegative.)
+    Thus we can assume that for every vertex v, there is some label βv such that f (v, β0 ) = 0
+for all β0 , βv . We may also assume that kT f k = 1 (because we can scale f ). Since f is
+deterministic, we can simplify the quadratic form kG f k2 ,
+
+                            (1 − ε)2 ⩽ kG f k2 = E0 f (v, βv ) f (v0 , βv0 ) · Qv,v0 ,                (3.6)
+                                                        (v,v )
+
+where the pair (v, v0 ) is distributed according to the edge distribution of the symmetrized
+game Gsym and Qv,v0 = Pτ|(v,v0 ) {(βv , βv0 ) ∈ τ}. Since we can view b(v) := βv as an assignment
+for Gsym , we can lower bound the value of the symmetrized game in terms of Qv,v0 ,
+
+                             kGk2 = val(Gsym ) ⩾ val(Gsym , b) = E0 Qv,v0 .                           (3.7)
+                                                                        (v,v )
+
+To prove the theorem, we will argue that the right hand sides of (3.6) and (3.7) are close.
+The key step toward this goal is to show that f (v, βv ) ≈ 1 for a typical vertex v. A priori
+f (v, βv ) can be very high for some vertices, and very small for others, while maintaining
+Ev f (v, βv )2 = 1. However, the expansion of G will rule this case out.
+     Denote 1(v) = f (v, βv ) and let A be the matrix corresponding to the Markov chain on the
+graph underlying Gsym and let L = Id − A. The smallest eigenvalue of L is 0 corresponding
+to the constant functions, and the second smallest eigenvalue is at least γ > 0 because of
+the expansion of G. Now, using inner products with respect to the natural measure on V,
+
+               h1, L1i = E f (v, βv )2 − E0 f (v, βv ) f (v0 , βv0 ) ⩽ 1 − (1 − ε)2 ⩽ 2ε .
+                             v                 (v,v )
+
+On the other hand if we write 1 = f¯ + 1⊥ for f¯ = Ev f (v, βv ) = Ev 1(v), we have h1⊥ , f¯i = 0
+and
+                 h1, L1i = h f¯, L f¯i + h1⊥ , L1⊥ i = 0 + h1⊥ , L1⊥ i ⩾ γk1⊥ k2 .
+Combining the above we get Ev ( f (v, βv ) − f¯)2 = k1⊥ k2 ⩽ 2ε/γ which means that 1 ≈ f¯ ≈ 1.
+The following bound concludes the proof of theorem,
+
+      1 − kGk2 ⩽ E0 (1 − Qv,v0 )             (using (3.7))
+                   (v,v )
+                                                   2               2                         
+                ⩽ E0 (1 − Qv,v0 ) · 9 f (v, βv ) − f¯ + f (v, βv ) − f¯ + f (v, βv ) f (v0 , βv0 )
+                   (v,v )
+
+                ⩽ 36ε/γ + 9 · E0 (1 − Qv,v0 ) · f (v, βv ) f (v0 , βv0 )
+                                    (v,v )
+
+                ⩽ 36ε/γ + 18ε .
+
+The second step uses that all nonnegative numbers a and b satisfy the inequality 1 ⩽
+9ab + 9(a − f¯)2 + 9(b − f¯)2 (using f¯ ⩾ 2/3). To verify this inequality we will do a case
+distinction based on whether a or b are smaller than 1/3 or not. If one of a or b is smaller
+
+                                                             14
+than 1/3, then one of the last two terms contributes at least 1 because f¯ ⩾ 2/3. On the
+other hand, if both a and b are at least 1/3, then the first term contributes at least 1. The
+third step uses the f (v, βv ) is close to the constant function f¯ · 1. The fourth step uses (3.6)
+and the fact that E(v,v0 ) f (v, βv ) f (v0 , βv0 ) ⩽ Ev f (v, βv )2 = 1.                        
+
+3.3   Short proof for the hardness of label cover
+label cover(1, δ) is the gap problem of deciding if the value of a given projection game
+is 1 or at most δ. The results of this section suffice to give the following hardness
+of label cover, assuming the PCP theorem. This result is a starting point for many
+hardness-of-approximation results.
+
+Theorem. label cover(1, δ) is NP-hard for all δ > 0.
+
+    Let us sketch a proof of this. The PCP theorem [AS98, ALM+ 98] directly implies
+that label cover(1, 1 − ε) is NP-hard for some constant ε > 0. Let G be an instance of
+label cover(1, 1 − ε). We can assume wlog that G is expanding, see Claim A.1. We claim
+                   log 1/δ
+that G⊗k for k = O( ε ) has the required properties. If val(G) = 1 clearly val(G⊗k ) = 1. If
+val(G) < 1 − ε, then
+
+                         val(G⊗k ) ⩽ kG⊗k k ⩽ λ+ (G)k ⩽ (1 − Ω(ε))k ⩽ δ
+
+where the second inequality is due to repeated applications of Theorem 3.2, and the third
+inequality is due to Theorem 3.4.                                                       
+
+
+4     Approximation bound for general projection games
+Theorem 4.1. Let G be a game with val+ (G)2 > ρ, then
+
+                                                      1 − ρ2
+                                                    p
+                                               1 −
+                             val(G) ⩾ kGk2 >                 .
+                                               1 + 1 − ρ2
+                                                    p
+
+
+Contrapositively, if kGk2 < δ, then
+                                                   √
+                                                  2 δ
+                                       val+ (G) <
+                                                2
+                                                      .
+                                                  1+δ
+In particular, if kGk2 is small then the above bound becomes val+ (G)2 ⩽ 2kGk; and if kGk2 < 1 − ε
+then val+ (G)2 < 1 − ε2 /8.
+
+    Let G be a projection game with vertex set U, V and alphabet Σ. Our assumption that
+val+ (G)2 > ρ implies the existence of a measure space Ω and a non-negative function
+f ∈ L(V × Σ × Ω) such that
+
+                             k(G ⊗ IdΩ ) f k2 > ρ maxk(Tv ⊗ IdΩ ) f k2
+                                                     v
+
+    (In this section we denote by IdΩ , rather than Id, the identity operator on the space
+L(Ω), to emphasize the space on which it is operating.)
+    Without loss of generality, by rescaling, assume that f ⩽ 1. Since the integration over Ω
+occurs on both sides of the inequality, we can rescale the measure on Ω without changing
+the inequality, so that maxv k(Tv ⊗ IdΩ ) f k = 1.
+
+
+                                                15
+    We also claim that for each ω ∈ Ω, the slice of f restricted to ω, can be assumed to be a
+“deterministic fractional assignment”, i.e., that for every v, ω, there is at most one β such
+that f (v, β, ω) > 0. The reason is, just as we have done in the proof of Theorem 3.4, that any
+slice fω of f can be written a convex combination of deterministic fractional assignments,
+ fω = E f 0 such that Tv f 0 = Tv fω for all v and all f 0 . By convexity EkG f 0 k ⩾ kG E f 0 k = kG fω k
+so there must be some f 0 for which kG f 0 k is as high as the average.
+
+Proof Overview. The proof is by an algorithm that extracts from f an assignment for G.
+We have seen that for expanding games G there is always a single element ω ∈ Ω such that
+the slice fω of f restricted to ω is already “good enough”, in that it can be used to derive a
+good assignment for G (see Theorem 3.4). When G is not expanding this is not true because
+each fω can potentially concentrate its mass on a different part of G. For example, imagine
+that G is made of two equal-sized but disconnected sub-games G1 and G2 , with optimal
+assignments f1 , f2 respectively, and let f be a vector assignment defined as follows. For
+every v, β we will set f (v, β, ω1 ) = f1 (v, β) if v is in G1 and f (v, β, ω2 ) = f2 (v, β) if v is in G2 .
+Everywhere else we set f to 0. The quality of f will be proportional to the average quality
+of f1 , f2 , yet there is no single ω from which an assignment for G can be derived. Our
+algorithm, therefore, will have to construct an assignment for G by combining between
+the assignments derived from different components (ω’s) of f .
+    Conceptually the algorithm has two steps. In the first step we convert each fω to a
+partial assignment, namely, a 0/1 function that might be non-zero only on a small portion
+of G. This is done by randomized rounding. We use Cheeger-type arguments to show
+that on average over ω the quality of this partial assignment is not too far from ρ. This is
+done in Lemma 4.2 and is analogous to but more subtle than Theorem 3.4.
+    The second step, done in Lemma 4.3, is to combine the different partial assignments
+into one global assignment. For this step to work we must ensure that the different partial
+assignments cover the entire game in a uniform way. Otherwise one may worry that all
+of the partial assignments are concentrated on the same small part of G. Indeed, that
+                                                                                     k(G⊗Id ) f k2
+would have been a problem had we defined val+ (G) to be supΩ, f k(T⊗Id Ω) f k2 . Instead, the
+                                                                                            Ω
+denominator in the definition of val+ is the maximum over v of k(Tv ⊗ IdΩ ) f k2 . This
+essentially forces sufficient mass to be placed on each vertex v in G, so G is uniformly
+covered by the collection of partial assignments. The second step is known as correlated
+sampling, introduced to this context in [Hol09], because when viewed as a protocol
+between two players, the two players will choose ω using shared randomness, and then
+each player will answer his question according to the partial assignment derived from fω .
+(To be more accurate, shared randomness is also used in the first step, for deciding the
+rounding threshold through which a partial assignment is derived).
+
+Lemma 4.2 (Threshold Rounding). There exists a 0/1-valued function f 0 ∈ L(V ×Σ×Ω×[0, 1]),
+such that for ψ(x) = 1 − (1 − x2 )1/2 ,
+
+                                    k(G ⊗ IdΩ ⊗ Id[0,1] ) f 0 k2 > ψ(ρ)
+
+and yet
+                                  maxk(Tv ⊗ IdΩ ⊗ Id[0,1] ) f 0 k ⩽ 1 .
+                                     v
+
+Proof. Choose f 0 : (V × Σ) × Ω × [0, 1] as
+                                                   
+                                                   1
+                                                            if f (v, β, ω)2 > τ ,
+                                f 0 (v, β, ω, τ) = 
+                                                   
+                                                   0
+                                                            otherwise.
+
+                                                        16
+Notation: We will use shorthand fω,τ    0 to mean the function in L(V × Σ) which is the slice of
+
+f defined by fω,τ (v, β) = f (v, β, ω, τ) and similarly fv,β
+ 0              0           0                              0 is a function of τ and ω.
+
+    Since the slices fω are deterministic fractional assignments, the slices fω,τ         0 are also
+
+deterministic fractional assignments. (Actually, they are 0/1-valued partial assignments.)
+First observe that for every v, β, ω, we have Eτ f 0 (v, β, ω, τ)2 = f (v, β, ω)2 . Thus,
+                                        X            X
+            k(Tv ⊗ IdΩ×[0,1] ) f 0 k2 =      0 2
+                                          k fv,β k =  k fv,β k2 = k(Tv ⊗ IdΩ ) f k2 ⩽ 1 ,
+                                                   β                       β
+
+where the first and third equalities hold because f (and f 0 ) assign a non-zero value to at
+most one β for every v, ω (and τ). It remains to show that
+
+                       k(G ⊗ IdΩ ⊗ Id[0,1] ) f 0 k2 =                      E             0
+                                                                                    E k fτ,ω k2 > ψ(ρ) .
+                                                                         τ∼[0,1] ω∼Ω
+
+Let ρω ∈ [0, 1] be such that kG fω k2 = ρω k fω k2 . We will first show that for all ω ∈ Ω,
+                                                     0
+                                               E kG fω,τ k2 ⩾ ψ(ρω )k fω k2                                  (4.1)
+                                            τ∼[0,1]
+
+We will deduce the desired bound on k(G ⊗ IdΩ×[0,1] ) f 0 k by integrating (4.1) over Ω and
+using the convexity of ψ on [0, 1].
+   Let xω ∈ ΣV be an assignment that is consistent with the fractional assignment fω (so
+that fω (v, β) = 0 for all β , xω,v ). Note that also fω,τ
+                                                       0 (v, β) = 0 whenever β , x
+                                                                                               ω,v , so
+                                X                   X
+                     0
+                 kG fω,τ k2 = E          E                  0
+                                                           fω,τ (v1 , β1 ) · fω,τ
+                                                                              0
+                                                                                  (v2 , β2 ) ,
+                                u          (v1 ,π1 ),(v2 ,π2 )|u
+                                     α                              π1         π2
+                                                                   α←[β1 ,α←[β2
+
+                        =       E         π(xω,v1 , xω,v2 ) fω,τ
+                                                             0
+                                                                 (v1 , xω,v1 ) · fω,τ
+                                                                                  0
+                                                                                      (v2 , xω,v2 )          (4.2)
+                            (v1 ,v2 ,π)
+
+where in the remainder of this proof (v1 , v2 , π) will always be distributed by choosing u at
+random and then (v1 , π1 ), (v2 , π2 )|u; and the constraint π : Σ × Σ → {0, 1} is 1 on pairs β1 , β2
+                                               π1             π2
+for which there is some α such that α ←[ β1 and α ←[ β2 .
+    For every pair v1 , β1 and v2 , β2 ,
+                                                               n                               o
+                  E fω,τ 0
+                            (v1 , β1 ) · fω,τ
+                                          0
+                                              (v2 , β2 ) = min fω (v1 , β1 )2 , fω (v2 , β2 )2   (4.3)
+                  τ∼[0,1]
+
+    Now, combining (4.2) and (4.3),
+                                                                  n                                     o
+                  0
+             EkG fω,τ k2 =       E         π(xω,v1 , xω,v2 ) · min fω (v1 , xω,v1 )2 , fω (v2 , xω,v2 )2 .   (4.4)
+             τ               (v1 ,v2 ,π)
+
+
+Again using that fω is a fractional assignment, we can express kG fω k2 in a similar way,
+
+                    kG fω k2 =            E       π(xω,v1 , xω,v2 ) · fω (v1 , xω,v1 ) fω (v2 , xω,v2 )      (4.5)
+                                    (v1 ,v2 ,π)
+
+At this point we will use the following simple inequality (see Corollary 4.5 toward the end
+of this subsection):
+
+      Let A, B, Z be jointly-distributed random variables, such that A, B take only nonnega-
+      tive values and Z is 0/1-valued. Then, E Z min{A, B} ⩾ ψ(ρω ) E 12 (A + B) holds as
+                   √
+      long as E Z AB ⩾ ρω E 12 (A + B).
+
+
+                                                                    17
+We will instantiate the inequality with Z = π(xω,v1 , xω,v2 ), A = fω (v1 , xv1 )2 , and
+B = fω (v2 , xv2 )2 (with (v1 , v2 , π) drawn as above). With this setup, E 12 (A + B) = k fω k2 .
+                                                                                        √
+Furthermore, E Z min{A, B} corresponds to the right-hand side of (4.4) and E Z AB corre-
+sponds to the right-hand side of (4.5). Thus, kG fω k2 ⩾ ρω k fω k2 means that the condition
+above is satisfied, and we get the desired conclusion, Eτ kG fω,τ 0 k2 ⩾ ψ(ρ )k f k2 as required
+                                                                                ω  ω
+in (4.1).
+    Finally,
+                                       Z                  Z
+              k(G ⊗ IΩ×[0,1] ) f k =
+                                0 2            0    2
+                                          EkG fω,τ k dω ⩾   ψ(ρω ) · k fω k2 dω ⩾ ψ(ρ).
+                                        Ω τ                      Ω
+                                                                               R
+For the last step, we use the convexity of ψ and that ρ =                       Ω
+                                                                                    ρω k fω k2 dω and k f k2 =
+R
+   k f k2 dω ⩽ 1.
+  Ω ω
+                                                                                                             
+
+    Let Ω0 = Ω × [0, 1]. We now have a 0/1 function f 0 ∈ L(V × Σ × Ω0 ) such that
+
+                 k(G ⊗ IdΩ0 ) f 0 k2 ⩾ ψ(ρ)       and         maxk(Tv ⊗ IdΩ0 ) f 0 k2 = 1 .
+                                                                v
+
+The next step is to combine the different components of f 0 into one assignment for G.
+                                                                                                             1−γ
+Lemma 4.3 (Correlated Sampling). There exists an assignment x for G with value at least 1+γ
+for 1 − γ = k(G ⊗ IdΩ0 ) f 0 k2 ⩾ ψ(ρ).
+Proof. We may assume k(Tv ⊗ Id) f 0 k2 = 1 for all v ∈ V. (We can arrange this condition to
+hold by adding additional points to Ω0 , one for each vertex in V, and extending f 0 in a
+suitable way.)
+      Rescale Ω0 to a probability measure. Let λ be the scaling factor, so that k(G ⊗ IΩ0 ) f 0 k2 =
+(1 − γ)λ (after rescaling). Then, f 0 also satisfies k(Tv ⊗ Id) f 0 k2 = λ for all v ∈ V.
+      For every ω ∈ Ω0 , the slice fω0 is a partial assignment (in the sense that it uniquely assigns
+a label to a subset of vertices). We will construct (jointly-distributed) random variables
+{Xv }v∈V , taking values in Σ, by combining the partial assignments fω0 in a probabilistic way.
+(The sampling procedure we describe corresponds to correlated sampling applied to the
+distributions Ω0v = {ω ∈ Ω0 | fω0 (v, β) > 1}.)
+      Let {ω(n)}n∈N be an infinite sequence of independent samples from Ω0 and let f 0(n) = fω0 n
+be the corresponding slices of f 0 . Let R(v) be the smallest number r such that the partial
+assignment fω(r) 0   assigns a label to v, i.e. such that fω(r)0 (v, β) > 0 for some (unique) β ∈ Σ.
+
+We define Xv to be the label assigned to v by this procedure, so that fω(R(v))     0     (v, Xv ) = 1.
+      In this randomized process, the probability that the random assignment X satisfies a
+constraint (v1 , v2 , π) is bounded from below by the probability that R(v1 ) = R(v2 ) and the
+partial assignment fω(R(v0        = fω(R(v
+                                     0         assigns consistent values to v1 , v2 . The probability of
+                             1 ))         2 ))
+this event is equal to the probability that the partial assignment fω0 satisfies the constraint
+(v1 , v2 , π) conditioned on the event that fω0 assigns a label to either v1 or v2 . Therefore,
+
+   P π(Xv1 , Xv2 ) = 1 ⩾ P π(Xv1 , Xv2 ) = 1 ∧ R(v1 ) = R(v2 )
+                          
+   X                     X
+                = P 0 π(xω,v1 , xω,v2 ) = 1 | fω (v1 , xω,v1 ) = 1 ∨ fω (v2 , xω,v2 ) = 1
+                       
+                    ω∼Ω
+                                        Eω∼Ω0 π(xω,v1 , xω,v2 ) min{ fω0 (v1 , xω,v1 ), fω0 (v2 , xω,v2 )}
+                                    =                                                                      . (4.6)
+                                              Eω∼Ω0 max{ fω0 (v1 , xω,v1 ), fω0 (v2 , xω,v2 )}
+(Here, xω ∈ ΣW denotes any assignment consistent with the partial assignment fω0 for
+ω ∈ Ω0 .) At this point, we will use the following simple inequality (see Lemma 4.6 toward
+the end of this subsection):
+
+                                                     18
+      Let A, B, Z be jointly-distributed random variables such that A, B are nonnegative-
+                                                             1−γ0
+      valued and Z is 0/1-valued. Then, E Z · min{A, B} ⩾ ( 1+γ0 ) E max{A, B} as long as
+      E Z · min{A, B} ⩾ (1 − γ0 ) E 12 (A + B) .
+We instantiate this inequality with A = fω0 (v1 , xω,v1 ), B = fω0 (v2 , xω,v2 ), Z = π(xω,v1 , xω,v2 ) for
+ω ∼ Ω0 , and γ0 = γv1 ,v2 ,π , where
+
+                        E π(xω,v1 , xω,v2 ) fω0 (v1 , xω,v1 ) fω0 (v2 , xω,v2 ) = (1 − γv1 ,v2 ,π )λ.
+                        ω
+
+The condition of the A, B, Z-inequality corresponds to the condition
+Eω π(xω,v1 , xω,v2 ) min{ fω0 (v1 , xω,v1 ), fω0 (v2 , xω,v2 )} ⩾ (1 − γv1 ,v2 ,π )λ, because f 0 is 0/1-
+valued and Eω fω0 (v, xω,v )2 = k(T ⊗ Id) f 0 k2 = λ. The conclusion of the A, B, Z-inequality
+shows that the right-hand side of (4.6) is bounded from below by 1−γv1 ,v2 ,π/1+γv1 ,v2 ,π .
+   Hence, by convexity of ϕ0 (x) = (1 − x)/(1 + x),
+                                                                                                        
+ E val(G; X) =                P π(Xv1 , Xv2 ) = 1 ⩾                 ϕ0 (γv1 ,v2 ,π ) ⩾ ϕ0      γv1 ,v2 ,π .
+                                 
+                      E                                         E                           E
+  X                 (v1 ,v2 ,π)∼G X                               (v1 ,v2 ,π)∼G                        (v1 ,v2 ,π)∼G
+
+It remains to lowerbound the expectation of γv1 ,v2 ,π over (v1 , v2 , π) ∼ G.
+
+                E          1 − γv1 ,v2 ,π =         E       1
+                                                              E π(xω,v1 , xω,v2 ) fω0 (v1 , xω,v1 ) fω0 (v2 , xω,v2 )
+           (v1 ,v2 ,π)∼G                      (v1 ,v2 ,π)∼G λ ω
+
+                                         = λ1 k(G ⊗ IΩ0 ) f 0 k2 = 1 − γ .                                              
+
+Some inequalities. The following lemma show that if the expected geometric average
+of two random variable is close to their expected arithmetic average, then the expected
+minimum of the two variables is also close to the expected arithmetic average. A similar
+lemma is also used in proofs of Cheeger’s inequality.
+Lemma
+  √   4.4. Let A, B be jointly-distributed random variables, taking nonnegative values. If
+E AB = ρ E 12 (A + B), then
+
+                                        E min{A, B} ⩾ ϕ(ρ) · E 21 (A + B) ,
+                  √
+for ϕ(x) = 1 −        1 − x2 .
+Proof. Since min{A, B} = 21 (A + B) − 12 |A − B|, it is enough to lower bound
+
+               E 21 |A − B| = E 12 A1/2 − B1/2 A1/2 − B1/2
+                                                                 1/2
+                                             1/2 2            1/2 2
+                                                      
+                                  1   1/2             1   1/2
+                            ⩽ E2 A −B              ·E2 A −B
+                                                √                   √  1/2
+                            = E 12 (A + B) − E AB · E 12 (A + B) + E AB
+                              q
+                            = 1 − ρ2 · E 21 (A + B) .
+
+The second step uses Cauchy–Schwarz.                                                                                    
+
+   The following corollary will be useful for us to prove Cheeger’s inequality for two-
+player games.
+Corollary 4.5. Let A, B√be as before. Let Z be a 0/1-valued random variable, jointly distributed
+with A and B. If E Z · AB = ρ E 12 (A + B), then E Z · min{A, B} ⩾ ϕ(ρ) E 12 (A + B), for ϕ as
+before.
+
+
+                                                               19
+Proof. The corollary follows from the convexity of ϕ. For notational simplicity, assume
+E 12 (A + B) = 1 (by scaling). Let λ = E Z · 21 (A + B). Write ρ as a convex combination of
+                                                                    √
+0 and a number ρ0 such that ρ = ρ0 · λ + 0 · (1 − λ). Since E Z AB = ρ0 · λ, Lemma 4.4
+implies E Z min{A, B} ⩾ ϕ(ρ0 ) · λ. The convexity of ϕ implies ϕ(ρ) ⩽ λ · ϕ(ρ0 ) + (1 − λ)ϕ(0) =
+λ · ϕ(ρ0 ).                                                                                    
+
+Lemma 4.6. Let A, B, Z be jointly-distributed random variables as before (A, B taking nonnegative
+values and Z taking 0/1 values). If E Z · min{A, B} = (1 − γ) E 12 (A + B), then
+
+                                     E Z · min{A, B} 1 − γ
+                                                    ⩾      .
+                                      E max{A, B}     1+γ
+
+Proof. For simplicity, assume E 12 (A+B) = 1 (by scaling). Since min{A, B} = 12 (A+B)− 12 |A−B|,
+we get 1 − γ ⩽ E min{A, B} = 1 − E 12 |A − B|, which means that E 21 |A − B| ⩽ γ. Since
+max{A, B} = 12 (A + B) + 12 |A − B|, it follows that
+
+                           E Z · min{A, B}       1−γ        1−γ
+                                           =              ⩾      .                             
+                            E max{A, B}      1 + E |A − B| 1 + γ
+                                                  1
+                                                      2
+
+
+4.1   Parallel repetition bound for general projection games
+Let us now prove Theorem 1.1 and Corollary 1.3 and Corollary 1.2 together:
+
+Theorem 4.7. Let G be a projection game with val(G) ⩽ δ. Then,
+                                                          !k/2
+                                                2δ1/2
+                                            ⊗k
+                                      val(G ) ⩽                  .
+                                                1+δ
+
+In particular, val(G⊗k ) ⩽ (1 − ε2 /16)k for δ = 1 − ε and val(G⊗k ) ⩽ (4δ)k/4 .
+
+Proof. By applying Theorem 3.3 repeatedly, val(G⊗k ) ⩽ kG⊗k k ⩽ val+ (G)k . The game
+                                                                      1/2
+G satisfies kGk2 ⩽ val(G) ⩽ δ. Thus, by Theorem 4.1, val +(G)2 ⩽ 2δ  1+δ . Therefore,
+             1/2
+val(G) ⩽ ( 2δ
+           1+δ )
+                 k/2                                                               
+
+
+5     Few Repetitions — Proof of Theorem 1.7
+The following theorem will allow us to prove a tight bound on the value of projection
+games after few parallel-repetitions (Theorem 1.7).
+
+Theorem 5.1. Let G and H be two projection games. Suppose kHk2 ⩽ 1−γ but kG⊗Hk2 ⩾ 1−η−γ
+(with γ small enough, say γ ⩽ 1/100). Then,
+                                                   √ 
+                                   kGk2 ⩾ 1 − O η + γη .
+
+    Let us first explain how the bound above improves over the bounds in the previous
+sections. In the notation of the above theorem, Theorem 3.3 implies that val+ (G)2 =
+kG⊗Hk2                                  √
+  kHk2
+        ⩾ 1 − O(η). Thus, kGk2 ⩾ 1 − O( η) by Theorem 4.1. We see that this bound is
+worse than the above bound whenever γ is close to 0.
+    Before proving the theorem, we will show how it implies Theorem 1.7 (parallel-
+repetition bound for few repetitions).
+
+
+                                                 20
+Proof of Theorem 1.7. Let us first reformulate Theorem 5.1. (The above formulation reflects
+our proof strategy for Theorem 5.1 but for our current application, the following formulation
+is more convenient.) Let G and H be two projection games. Suppose kGk2 ⩽ 1 − ε and
+kHk2 ⩽ 1 − tε for some ε > 0 and 1 ⩽ t  1/ε. Then, Theorem 5.1 shows that
+                                                       
+                                 kG ⊗ Hk2 ⩽ 1 − t + Ω 1t · ε
+                                                               √
+(Here, we use that for γ = tε and η = Ω(1/t)ε, we have η + ηγ = Ω(ε).) From this bound,
+we can prove by induction on k that kG⊗k k2 ⩽ 1 − Ω(k)1/2 · ε for k  1/ε2 . Concretely,
+let {t(k)}k∈N be the sequence such that kG⊗k k2 = 1 − t(k) · ε. The above formulation of
+Theorem 5.1 implies t(k + 1) ⩾ t(k) + Ω(1/t(k)) (as long as t(k)  1/ε). Since the sequence
+increases monotonically, it follows that t(k+1)2 ⩾ t(k)2 +Ω(1) (by multiplying the recurrence
+relation with t(k + 1) on both sides). Hence, as long as t(k)  1/ε, we have t(k)2 = Ω(k) and
+t(k) = Ω(k)1/2 , as desired.                                                                
+
+    The proof of Theorem 5.1 follows a similar structure as the proofs in Section 3 and
+Section 4. If kHk2 ⩽ 1 − γ and kGk2 ⩾ 1 − η − γ, then following the proof of Theorem 3.3 we
+can construct a function for G that satisfies certain properties. (In particular, the function
+certifies val+ (G)2 ⩾ 1 − O(η)). The challenge is to construct an assignment for G from this
+function. This construction is the content of the following two lemmas, Lemma 5.2 and
+Lemma 5.3.
+   In the following G will be the “square” of a projection game G0 (formally, the operator
+G = GT0 G0 ). Let AssignW,Σ (Ω) be the set of nonnegative functions f ∈ L(W × Σ × Ω) such
+that every slice fω is deterministic, i.e., for every v ∈ W, there exists at most one label β
+with fω (v, β) > 0. We write fv,∗ to denote the function (Tv ⊗ IdΩ ) f .
+
+Lemma 5.2. Let f ∈ AssignW,Σ (Ω) be a [0, 1]-valued function with k fu,∗ k2 ⩽ 1 − γ for all
+u ∈ W and k f k1 = 1. Suppose every slice of f is a deterministic fractional assignment. Suppose
+h f, (G ⊗ IΩ ) f i ⩾ 1 − η − γ and that γ is small enough (say, γ < 1/100). Then, there exists a
+0/1-valued function f 0 ∈ AssignW,Σ (Ω0 ) with
+                                                               √ 
+                            h f 0 , (G ⊗ IΩ0 ) f 0 i ⩾ 1 − O(η + ηγ) k f 0 k2 ,
+
+       0 k2 ⩾ 1/3 for all but an O(η) fraction of vertices in W.
+and k fu,∗
+
+Proof. Since k fu,∗ k2 ⩽ 1 − γ for all u ∈ W, the condition h f, (G ⊗ IΩ ) f i ⩾ 1 − η − γ implies
+that k fu,∗ k2 ⩾ 0.9 for all but O(η) fraction of vertices u ∈ W.
+    Let Ω0 = Ω × [1/10, 9/10] (with the uniform measure on the interval [1/10, 9/10]). Let
+f : W × Σ × Ω0 → {0, 1} be such that for all u ∈ W, α ∈ Σ, ω ∈ Ω, τ ∈ [1/10, 9/10],
+ 0
+
+                                                
+                                                1 if fω (u, α) > τ ,
+                                                              2
+                                   0
+                                       (u, α) = 
+                                                
+                                  fω,τ
+                                                0 otherwise.
+                                                
+
+                   0 k2 ⩾ 1/3 for all but O(η) vertices u ∈ W (using that k f k2 ⩾ 0.9 for
+It follows that k fu,∗                                                           u,∗
+all but O(η) vertices). We see that fω (u, α)2 − 1/10 ⩽ Eτ fω,τ
+                                                             0 (u, α)2 ⩽ 10/9 f (u, α)2 . Let
+                                                                                  ω
+Bω : W × Σ → R be the 0/1 indicator function of the event { f (u, α)2 ∈ [1/10, 9/10]}. Then,
+                                   2                               2
+         0
+     E fω,τ (u, α) − fω,τ
+                      0
+                          (u0 , α0 ) ⩽ 2 · fω (u, α) − fω (u0 , α0 )
+     τ
+                                                                   
+                                       + 2 Bω (u, α) + Bω (u0 , α0 ) · fω (u, α)2 − fω (u0 , α0 )2   (5.1)
+
+
+                                                     21
+We can see that the left-hand side is always at most 2| fω (u, α)2 − fω (u0 , α0 )2 |. Hence,
+the inequality holds if Bω (u, α) + Bω (u0 , α0 ) ⩾ 1. Otherwise, if Bω (u, α) + Bω (u0 , α0 ) = 0,
+then the left-hand side is either 0 or 1. In both cases, the left-hand side is bounded by
+2( fω (u, α) − fω (u0 , α0 ))2 .
+     For every ω ∈ Ω, let xω ∈ ΣV be an assignment consistent with the fractional assignment
+fω . Let hω : W → [0, 1] be the function hω (u) = fω (u, xω,u ). Similarly, h0ω,τ (u) = fω,τ
+                                                                                         0 (u, x
+                                                                                                 ω,u ).
+Let Gω be the linear operator on functions on W, so that for every 1 : W → R
+
+                                h1, Gω 1i =           E       π(xω,u , xω,v ) · 1(u) · 1(v) .
+                                                  (u,v,π)∼G
+
+(As a graph, Gω corresponds to the constraint graph of G, but with some edges deleted.)
+Let Lω be the corresponding Laplacian, so that for all 1 : W → R
+                                                                  2
+                     h1, Lω 1i = E π(xω,u , xω,v ) · 21 1(u) − 1(v) .
+                                               (u,v,π)∼G
+
+With these definitions, h fω , G fω i = hhω , Gω hω i and h fω,τ
+                                                             0 , G f 0 i = hh0 , G h0 i. We also
+                                                                    ω,τ      ω,τ  ω ω,τ
+use the short-hand, Bω (u) = Bω (u, xω,u ). With this setup, we can relate Eτ hh0ω,τ , Lω , h0ω,τ i
+and hhω , Lω , hω i,
+
+     Ehh0ω,τ , Lω h0ω,τ i
+     τ
+                                                          
+     ⩽ 2hhω , Lω hω i +        E            Bω (u) + Bω (v) · π(xω,u , xω,v ) · hω (u)2 − hω (v)2   (by (5.1))
+                            (u,v,π)∼G
+
+     ⩽ 2hhω , Lω , hω i + 10hhω , Lω hω i1/2 · kBω k             (using Cauchy–Schwarz) .
+
+Let Mω be the linear operator on functions on W with the following quadratic form,
+                                                                          
+                  hhω , Mω hω i = E (1 − π(xu , xv )) 12 hω (u)2 + hω (v)2
+                                                (u,v,π)∼G
+
+Let L0ω = Lω + Mω . The following identity among these operators holds
+
+              hhω , Gω hω i = khω k2 − hhω , L0ω hω i = khω k2 − hhω , Lω hω i − hhω , Mω hω i.              (5.2)
+
+Let γω = khω k1 −khω k2 , and let ηω = hhω , L0ω hω i. We see that Eτ hh0ω,τ , Mω h0ω,τ i ⩽ 2hhω , Mω hω i.
+                                       √
+Thus, Eτ hh0ω,τ , L0ω h0ω,τ i ⩽ O(ηω + ηω · kBω k) (using (5.1)).
+    Next, we claim that kBω k2 = O(γω ). On the whole domain W, we have Bω ⩽ 100(1 −
+hω )hω = 100(hω − h2ω ). So, kBω k2 ⩽ 100(khω k1 − khω k2 ) = 100γω . Hence,
+                                                                 √
+                                   Ehh0ω,τ , L0ω h0ω,τ i ⩽ O(ηω + ηω γω ).                          (5.3)
+                                        τ
+
+Using (5.2) and the relation between G and Gω , we can integrate (5.3) over Ω,
+                               Z                                    Z
+                                                                          √
+        h f , (G ⊗ IΩ0 ) f i =
+           0              0
+                                 Ehhω,τ , Ghω,τ i dω = k f k − O(1)
+                                    0       0             0 2
+                                                                      ηω + ηω γω dω
+                                        Ω τ                                               Ω
+                                                                     √
+                                                     = k f k − O(η + ηγ) .0 2
+
+                                R                                 R
+The last step uses that ω ηω = k f k2 − h f, (G ⊗ IΩ ) f i ⩽ η and γω = k f k1 − k f k2 ⩽ γ, as well
+as Cauchy–Schwarz. Since k f 0 k2 ⩾ 0.9 − η − γ (using that k f k ⩾ 1 − η − γ), we see that
+                                     √
+h f 0 , (G ⊗ IΩ0 ) f 0 i ⩾ (1 − O(η + ηγ))k f 0 k2 .                                              
+
+Lemma 5.3. Let f ∈ AssignW,Σ (Ω) be a 0/1-valued function with k fu,∗ k ⩾ 1/3 for all but O(ε)
+vertices, and h f, (G ⊗ IΩ ) f i = (1 − ε)k f k2 . Then,
+
+                                                    val(G) ⩾ 1 − O(ε) .
+
+                                                               22
+Proof. Rescale Ω so that it becomes a probability measure. Let λ be the scaling factor
+so that 1/3λ ⩽ k fu,∗ k2 ⩽ λ for all u ∈ W (after rescaling of Ω). Following the analysis in
+Lemma 4.3, there exists an assignment for G with value at least val(G) ⩾ (1 − ε0 )/(1 + ε0 ) for
+
+              ε0 =      E        1 − kf     2
+                                                          · E π(xω,u , xω,v ) · fω (u, xω,u ) fω (u, xω,v ) .
+                                       u,∗ k +k fv,∗ k
+                                            2         2
+                     (u,v,π)∼G                             ω
+
+
+Here, xω ∈ ΣW is a consistent assignment with fω for all ω ∈ Ω. We are to show ε0 = O(ε).
+To ease notation, let use define two jointly-distributed random variables, for (u, v, π) ∼ G,
+
+             ∆ · k f k2 = 12 (k fu,∗ k2 + k fv,∗ k2 )
+             Γ · k f k2 = 21 (k fu,∗ k2 + k fv,∗ k2 ) − E π(xω,u , xω,v ) · fω (u, xω,u ) fω (u, xω,v )
+                                                               ω
+
+In expectation, E Γ = ε. Also, 0 ⩽ Γ ⩽ ∆ with probability 1. Furthermore, P {∆ < 1/3} = O(ε).
+We can express ε0 in terms of these variables,
+
+                                      ε0 = E 1 − ∆1 · (∆ − Γ) = E ∆1 Γ .
+
+Let B (for bad) be the 0/1-indicator variable of the event {∆ < −2/3} (which is the same
+as {1/(1 + ∆) > 3}). Since this event happens with probability at most O(ε), we have
+E B = O(ε). Then, we can bound ε0 as
+
+                ε0 = E ∆1 Γ = E B ·         ∆Γ
+                                            1
+                                              + (1 − B) · ∆1 · Γ ⩽ E B + 3 E Γ = O(ε) .                         
+                                          |{z} | {z }
+                                             ⩽1                    ⩽3
+
+Proof of Theorem 5.1. Let G and H be two projection games. Suppose G has vertex sets
+U and V and alphabet Σ. Suppose kHk2 ⩽ 1 − γ but kG ⊗ Hk2 ⩾ 1 − η − γ (with γ small
+                                                             √
+enough, say γ ⩽ 1/100). We are to show kGk2 ⩾ 1 − O(η + γη) .
+    Let f be an optimal assignment for G ⊗ H so that k(G ⊗ H) f k2 ⩾ 1 − η − γ. Consider the
+function h = (Id ⊗ H) f . This function satisfies k(G ⊗ Id)hk2 ⩾ 1 − η − γ. Since kHk2 ⩽ 1 − γ,
+we know that k(Tv ⊗ Id)hk2 ⩽ 1 − γ for all vertices v ∈ V. As before (by a convexity
+argument), we can derandomize h so that h ∈ AssignV,Σ (Ω). Since 0 ⩽ h ⩽ 1, we can apply
+Lemma 5.2 to the operator G0 = GT G and the function h to obtain a 0/1-valued function
+                                                         √
+h0 ∈ AssignV,Σ (Ω0 ) such that k(G ⊗ Id)h0 k ⩾ 1 − O(η + ηγ)kh0 k2 and kh0v,∗ k2 ⩾ 1/3 for all but
+an O(η) fraction of vertices in V. (The transposition in GT is with respect to the underlying
+inner product so that hp, Gqi = hGT p, qi for all functions p and q.) By Lemma 5.3, we can
+                                                                                √
+use this function to get an assignment for G0 of value at least 1 − O(η + ηγ). The value
+of an assignment in G0 corresponds exactly to the collision value of the assignment in G.
+                               √
+Therefore, kGk2 ⩾ 1 − O(η + γη).                                                                
+
+
+6    Inapproximability Results
+6.1 label cover
+In this section we prove a new hardness result for label cover (Theorem 6.4 below), and
+derive Corollary 1.4.
+
+Definition 6.1 (label cover). Let ε : N → [0, 1] and let s : N → N be functions. We define
+the label covers (1, ε) problem to be the problem of deciding if an instance of label cover
+of size n and alphabet size at most s(n) has value 1 or at most ε(n).
+
+
+
+                                                               23
+    When we refer to a reduction from 3SAT to label covers (1, ε), we mean that satisfiable
+3SAT instances are mapped to label cover instances with value 1, and unsatisfiable 3SAT
+instances are mapped to label cover instances with value at most ε.
+    Let us begin by reviewing the known results. We mentioned in Section 3.3 that the PCP
+theorem [AS98, ALM+ 98] implies that label covers (1, 1 − δ) for some constant s and (small
+enough) δ > 0. Parallel repetition applied to this instance k times implies, via Raz’s bound
+that label coverak (1, βk ) is NP-hard, for some β < 1 and some constant a > 1. So, taking
+k = O(log 1/ε) will imply a soundness of ε, with an alphabet of size s = poly(1/ε) = ak .
+(This is proved in Section 3.3).
+
+Theorem 6.2 (PCP theorem followed by Raz’s theorem). There are some absolute constants
+a > 1 and 0 < β < 1 such that for every k ∈ N there is a reduction that takes instances of 3SAT
+of size n to instances of label covers (1, ε) of size nO(k) , such that s ⩽ ak and ε ⩽ βk , and in
+particular, s ⩽ poly(1/ε).
+
+    In fact, one can take k = ω(1) in the above and get a reduction from the original label
+cover to label covers (1, ε) still with s = poly(1/ε) = ak but now the size of the instance
+grows to be nk . Setting k = log log n or log n is still often considered reasonable, and
+yields quasi NP hardness results, namely, hardness results under quasi-polynomial time
+reductions.
+    For strictly polynomial-time reductions, the work of Moshkovitz and Raz [MR10] gives
+hardness for label cover with sub-constant value of ε,
+
+Theorem 6.3 (Theorem 10 in [MR10]). There exists some constant c > 0 such that the following
+holds. For every ε : N → [0, 1] there is a reduction taking 3SAT instances of size n to
+label covers (1, ε) instances of size n1+o(1) · poly(1/ε) such that s ⩽ exp(1/εc ).
+
+   By applying parallel repetition to an instance of label cover from the above theorem,
+and using the bound of Corollary 1.3, we get,
+
+Theorem 6.4 (New NP-hardness for label cover). For every constant α > 0 the following holds.
+For every ε : N → [0, 1] there is a reduction taking 3SAT instances of size n to label covers (1, ε)
+instances of size nO(1) · poly(1/ε) such that s ⩽ exp(1/εα ).
+
+   The improvement of this theorem compared to Theorem 6.3 is in the for-all quantifier
+over α.
+
+Proof. Assume ε = o(1) otherwise Theorem 6.2 can be applied with k = O(log 1/ε) resulting
+in a much smaller bound on s. The reduction is as follows. Starting with a 3SAT instance of
+size n, let G be the label covers1 (1, ε1 ) instance output of the reduction from Theorem 6.3
+with ε1 = (3c/α · εα )1/c , and output G⊗k for k = 3c/α.
+    The resulting instance G⊗k has size nO(1) , alphabet size s = (s1 )k and the soundness is at
+                           1/c α/c )3c/2α ⩽ ε by Corollary 1.3 (and assuming ε = o(1)). Finally,
+                        α) ε
+most (4ε1 )k/2 ⩽ (4 · ( 3c
+plugging in the bound for s1 and the value of ε1 ,
+
+                               s = (s1 )k ⩽ exp(k/εc1 ) = exp(1/εα ) .
+
+                                                                                                 
+
+    Finally, Corollary 1.4 follows immediately from the above theorem, by taking ε =
+(log n)−c and choosing α < 1/c so that the alphabet size is bounded by s ⩽ exp(1/εα ) ⩽ n.
+We also remark that the resulting instance is regular, due to the regularity of the [MR10]
+instance.
+
+
+                                                 24
+6.2 set cover
+In this section we prove Corollary 1.5. First, a brief background. Feige [Fei98] proved
+(extending [LY94]) that set cover is hard to approximate to within factor (1 − o(1)) ln n, by
+showing a quasi-polynomial time reduction from 3SAT. His reduction has two components:
+a multi-prover verification protocol, and a set-partitioning gadget. Moshkovitz [Mos12]
+shows that the multi-prover protocol can be replaced by a label cover instance with an
+agreement soundness property that she defines. She also shows how to obtain such an instance
+starting with a standard label cover instance. Corollary 1.5 follows by instantiating this
+chain of reductions starting with a label cover instance from Theorem 6.4. Details follow.
+    Let α > 0 and let G be an instance of label cover as per Corollary 1.4, with soundness
+ε < a2 /(log n)4 for a = O(α5 ), and with |Σ| ⩽ n. This clearly follows by setting c = 5 in the
+corollary, and we can also assume that G is regular. Using a reduction of Moshkovitz
+(Lemma 2.2 in [Mos12]) we construct in polynomial-time a label cover instance G1 such
+that the Alice degree of G1 is D = Θ(1/α), and such that, setting ε1 = a/(log n)2 ,
+      – If val(G) = 1 then val(G1 ) = 1
+      – If val(G) < ε21 = a2 /(log n)4 then every assignment for G1 has the following agreement
+        soundness property8 . For at least 1 − ε1 fraction of the vertices u ∈ U1 the neighbors
+        of u project to D distinct values (i.e., they completely disagree).
+While a hardness for set cover is proven in [Mos12], it is unfortunately proven under a
+stronger conjecture than our Corollary 1.4. For completeness, we repeat the argument. Let
+us recall the gadget used in [Fei98] (see Definition 3.1 in [Fei98])
+Definition 6.5 (Partition Systems). A partition system B(m, L, k, d) has the following
+properties:
+      – m: There is a ground set [m]. (We will use m = nD
+                                                        1
+                                                          , where n1 is the size of G1 ).
+      – L: There is a collection of L distinct partitions, p1 , . . . , pL . (We will use L = |Σ| ⩽ n).
+      – k: For 1 ⩽ i ⩽ L, partition pi is a collection of k disjoint subsets of [m] whose union is
+        [m]. (We will use k = D = O(1/α)).
+        Let us denote pi ( j) the j-th set in the partition pi .
+      – d: Any cover of [m] by subsets that appear in pairwise different partitions requires at
+        least d subsets. (We will use d = k · (1 − D2 ) ln m).
+    Such a gadget is explicitly constructed in time linear in m and termed “anti-universal
+sets” in [NSS95]). The intention is that the gadget can be covered in the yes case by k sets,
+and in the no case by at least d = k · (1 − D2 ) ln m sets.
+
+Construction of set cover instance. Finally, the set cover instance will have a ground
+set U1 × [m] consisting of |U1 | partition-system gadgets. For every v ∈ V1 and value β ∈ Σ
+there will be a set Sv,β in the set cover instance. Denoting by DV the number of neighbors
+of v in G1 , the set Sv,β will be the union of DV sets, one for each neighbor u of v. We
+arbitrarily enumerate the neighbors of each u ∈ U1 with numbers from 1 to D, and then
+denote by juv ∈ [D] the number on the edge from u to v. With this notation, Sv,β will be the
+union of the sets {u} × pα ( j) where j is the number of the edge uv and α = πuv (β):
+                                          [
+                                   Sv,β =    {u} × (pπuv (β) ( juv )) .
+                                               u∼v
+  8
+      In [Mos12] the projections go from Alice to Bob, while ours go from Bob to Alice.
+
+
+                                                      25
+Completeness. It is easy to see that if f, 1 is a satisfying assignment for G1 then by taking
+the sets Sv, f (v) the gadget corresponding to u is covered by the k sets in the partition
+corresponding to α = 1(u). In total the set cover has size |V1 | = D|U1 |.
+
+Soundness. In the no case, we claim that every set cover has size at least Z = (1 − D4 ) ln m ·
+|V1 |. Assume otherwise, and let su be the number of sets in the cover that touch {u} × [m].
+By                                    X
+                                         su = Z · DV ,
+                                            u
+                                                              def
+at least D2 fraction of the vertices u ∈ U1 have su < ` = (1 − D2 )D ln m, and we call such
+u’s good. Define a randomized assignment f : V → Σ by selecting for each v a value β at
+random from the set of β’s for which Sv,β belongs to the set cover (or, if no such set exists
+output a random β).
+    First, by the property of the gadget, since the set cover must cover each {u} × [m], if u is
+good there must be two neighbors v1 , v2 ∼ u such that the sets Sv1 ,β1 and Sv2 ,β2 are in the
+cover, and such that πuv1 (β1 ) = α = πuv2 (β2 ) (both pα ( juv ) ⊂ Sv1 ,β1 and pα ( juv2 ) ⊂ Sv2 ,β2 ).
+    Next, observe that if u is good then each neighbor v of u has at most ` = (1 − D2 )D ln m
+values of β for which Sv,β is in the cover, because each such set is counted in su .
+    So the probability that f (v1 ) = β1 and f (v2 ) = β2 is at least D2 · `12 > ε1 and this contradicts
+the agreement soundness property of G1 as long as ε1 < a/(log n)2 , for a < O(1/D5 ) = O(α5 ).
+
+Size. The size of the setcover instance is at most m = nD        1
+                                                                   times n1 , so ln(nD+1
+                                                                                     1
+                                                                                         ) =
+(D + 1) ln n1 = (1 + D ) ln m. So by choosing the appropriate constant relation between 1/D
+                     1
+
+and α we get a factor of (1 − α) ln N hardness for approximating a set cover instance of
+size N.
+
+
+7    Conclusions
+In many contexts, tight parallel repetition bounds are still open, for example, general9
+(non-projection) two-player games, XOR games, and games with more than two parties.
+    It is an interesting question whether the analytical approach in this work can give
+improved parallel repetition bounds for these cases. Recently, the authors together with
+Vidick gave a bound on entangled games (where the two players share entanglement),
+following the approach of this work.
+    A more open-ended question is whether analytical approaches can complement or
+replace information-theoretic approaches in other contexts (for example, in communication
+complexity) leading to new bounds or simpler proofs.
+
+Acknowledgments
+We thank Boaz Barak, Ryan O’Donnell, Ran Raz, and Oded Regev for insightful discussions
+and comments about this work.
+   9
+     An earlier version of this manuscript erroneously claimed a reduction from general constraints to
+projection constraints. We are thankful to Ran Raz for pointing out this error.
+
+
+
+
+                                                  26
+References
+[ALM+ 98] S. Arora, C. Lund, R. Motwani, M. Sudan, and M. Szegedy, Proof verification
+          and intractability of approximation problems, Journal of the ACM 45 (1998), no. 3,
+          501–555. 15, 24
+
+[AS98]     S. Arora and S. Safra, Probabilistic checking of proofs: A new characterization of NP,
+           Journal of the ACM 45 (1998), no. 1, 70–122. 15, 24
+
+[BHH+ 08] Boaz Barak, Moritz Hardt, Ishay Haviv, Anup Rao, Oded Regev, and David
+          Steurer, Rounding parallel repetitions of unique games, FOCS, 2008, pp. 374–383. 5,
+          6, 7
+
+[BRR+ 09] Boaz Barak, Anup Rao, Ran Raz, Ricky Rosen, and Ronen Shaltiel, Strong
+          parallel repetition theorem for free projection games, APPROX-RANDOM, 2009,
+          pp. 352–365. 5
+
+[CKW09] Marek Cygan, Lukasz Kowalik, and Mateusz Wykurz, Exponential-time ap-
+        proximation of weighted set cover, Inf. Process. Lett. 109 (2009), no. 16, 957–961.
+        4
+
+[CS13]     André Chailloux and Giannicola Scarpa, Parallel repetition of entangled games
+           with exponential decay via the superposed information cost, arXiv:1310.7787, 2013. 3
+
+[DSV14]    Irit Dinur, David Steurer, and Thomas Vidick, A parallel repetition theorem for
+           entangled projection games, IEEE Conference on Computational Complexity,
+           2014, arXiv:1310.4113. 3
+
+[Fei91]    Uriel Feige, On the success probability of the two provers in one-round proof systems,
+           Structure in Complexity Theory Conference, IEEE Computer Society, 1991,
+           pp. 116–123. 5, 29
+
+[Fei98]    U. Feige, A threshold of ln n for approximating set cover, Journal of the ACM 45
+           (1998), no. 4, 634–652. 4, 25
+
+[FKO07]    Uriel Feige, Guy Kindler, and Ryan O’Donnell, Understanding parallel repetition
+           requires understanding foams, IEEE Conference on Computational Complexity,
+           2007, pp. 179–192. 5
+
+[FL92]     Uriel Feige and László Lovász, Two-prover one-round proof systems: Their power
+           and their problems (extended abstract), STOC, 1992, pp. 733–744. 6
+
+[Hol09]    Thomas Holenstein, Parallel repetition: Simplification and the no-signaling case,
+           Theory of Computing 5 (2009), no. 1, 141–172. 3, 6, 16
+
+[JPY14]    Rahul Jain, Attila Pereszlényi, and Penghui Yao, A parallel repetition theorem for
+           entangled two-player one-round games under product distributions, IEEE Conference
+           on Computational Complexity, 2014. 3
+
+[Lov79]    László Lovász, On the shannon capacity of a graph, IEEE Transactions on Infor-
+           mation Theory 25 (1979), no. 1, 1–7. 6
+
+[LY94]     Carsten Lund and Mihalis Yannakakis, On the hardness of approximating mini-
+           mization problems, Journal of the ACM 41 (1994), no. 5, 960–981. 25
+
+
+                                              27
+[Mos12]    Dana Moshkovitz, The projection games conjecture and the NP-hardness of ln
+           n-approximating set-cover, APPROX-RANDOM, 2012, pp. 276–287. 4, 25
+
+[MR10]     Dana Moshkovitz and Ran Raz, Two-query PCP with subconstant error, J. ACM
+           57 (2010), no. 5. 4, 24
+
+[NSS95]    Moni Naor, Leonard J. Schulman, and Aravind Srinivasan, Splitters and near-
+           optimal derandomization, FOCS, 1995, pp. 182–191. 25
+
+[Rao08a]   Anup Rao, Parallel repetition in projection games and a concentration bound, STOC,
+           2008, pp. 1–10. 4
+
+[Rao08b]         , Parallel repetition in projection games and a concentration bound, Electronic
+           Colloquium on Computational Complexity (ECCC) 15 (2008), no. 013. 11
+
+[Rao11]         , Parallel repetition in projection games and a concentration bound, SIAM J.
+           Comput. 40 (2011), no. 6, 1871–1891. 3, 5
+
+[Raz98]    Ran Raz, A parallel repetition theorem, SIAM J. Comput. 27 (1998), no. 3, 763–803.
+           3
+
+[Raz08]           , A counterexample to strong parallel repetition, FOCS, 2008, pp. 369–373.
+           5, 6
+
+[RR12]     Ran Raz and Ricky Rosen, A strong parallel repetition theorem for projection
+           games on expanders, IEEE Conference on Computational Complexity, 2012,
+           pp. 247–257. 5
+
+[Ste10a]   David Steurer, Improved rounding for parallel repeated unique games, APPROX-
+           RANDOM, 2010, pp. 724–737. 6
+
+[Ste10b]           , Subexponential algorithms for d-to-1 two-prover games and for certifying
+           almost perfect expansion, Manuscript, available from the author’s website., 2010.
+           6, 7
+
+
+
+
+                                             28
+A    Additional Proofs
+Reduction to expanding games.
+Claim A.1. There is a constant γ > 0 and a simple transformation from a projection game
+                                                        val(G)
+G to a projection game G0 such that val(G0 ) = 12 + 2 and such that G0 has eigenvalue
+gap ⩾ γ . If G is (c, d)-regular (i.e. the degree of any u ∈ U is c and the degree of any v ∈ V
+is d) then G0 can be made (c, 2d)-regular.
+Proof. Let U, V be the vertices of G, and let µ be the associated distribution of G. Define
+U0 = U ∪ {u0 }, and a new distribution µ0 that is with probability 1/2 equal to µ and with
+probability 1/2 equal to the product distribution given by {u0 } × µV × {π0 } where π0 is
+a ’trivial’ constraint that accepts when Alice answers 1 and regardless of Bob’s answer.
+The claim about the value is easily verified. As for the eigenvalue gap, it follows because
+the symmetrized game corresponding to {u0 } × µV × {π0 } is the complete graph, with
+eigenvalue gap 1.
+    If G is (c, d) regular and we want G0 to also be (c, 2d)-regular, then instead of adding
+one vertex u0 we add a set U0 of |U| new vertices, so U0 = U ∪ U0 , and place a (c, d)-regular
+graph G0 between U0 and V, accompanied with π0 constraints as above. We are free to
+choose the structure of G0 , and if we take it to be such that its symmetrized graph has
+eigenvalue gap 2γ, then the eigenvalue gap of G0 will be at least γ. Clearly the distribution
+µ0 is uniform on U0 which means that with probability 1/2 it chooses a trivial constraint,
+and with probability 1/2 a G constraint. Hence, val(G0 ) = 21 + 12 val(G).                  
+
+
+B    Feige’s Game
+Uri Feige [Fei91] describes a game G (which he calls NA for non-interactive agreement)
+for which val(G) = val(G ⊗ G) = 12 . This example rules out results of the form val(G ⊗ H) ⩽
+val0 (G) · val(H), for a useful approximation val0 of val thus perhaps discouraging the search
+for game-relaxations that are multiplicative. Our Theorem 1.8 sidesteps this limitation by
+proving a multiplicative relation for kGk and not for val(G). We prove, in Theorem 1.8 that
+kG ⊗ Hk ⩽ val+ (G) · kHk and that the relaxation val+ (G) is bounded away from 1 for any
+game G whose value is bounded away from 1.
+     Our theorem implies that there is no projection game (including Feige’s NA game)
+for which kG ⊗ Gk = kGk. Indeed we calculate below and show that for Feige’s game,
+kG ⊗ Gk = kGk2 = 1/2.
+     Feige’s game is defined over question set U = {0, 1} = V where each pair of questions
+(u, v) ∈ {0, 1}2 is equally likely (this is called a free game). The players win if they agree on a
+player and her question, namely, the alphabet is Σ = {A0, A1, B0, B1} and for each question
+pair (u, v) ∈ {0, 1}2 , there are two acceptable pairs of answers: (Au, Au) and (Bv, Bv) (where
+u, v should be replaced by the bit value 0 or 1).
+     Is this a projection game? It is true that every answer for Bob leaves at most one possible
+accepting answer for Alice, but note that some answers leave no possible accepting answer.
+Nevertheless, the inequality between the value and the collision value established in
+Claim 2.3 holds for such games.
+Claim B.1. kGk2 = 1/2.
+Proof. It is easy to see that kGk2 = 12 , by having Bob always reply with A0, i.e., setting
+Bob’s strategy to be f (0, A0) = 1, f (1, A0) = 1, and then
+                             X                   X
+               kG f k2 = 1/2   G f (0, α)2 + 1/2   G f (1, α)2 = 1/2 · 1 + 1/2 · 0 = 1/2 .
+                           α∈Σ                α∈Σ
+
+
+                                                29
+                                                                                                
+
+     Feige’s strategy achieving val(G ⊗ G) = 1/2 is one where Bob hopes that his second
+question is equal to Alice’s first question, and thus answers a question v1 v2 by (Av2 , Bv2 ) ∈
+Σ2 .
+Claim B.2. Let f be Feige’s strategy attaining val(G⊗G) = 1/2 (defined as f (v1 v2 , Av2 Bv2 ) = 1
+for each v1 v2 ). Then kG ⊗ G f k2 = 14 .
+
+Proof. Note that val(G ⊗ G, f ) = 1/2 because with probability 1/2 v2 = u1 and if Alice takes
+a symmetrical strategy 1(u1 u2 , Au1 Bu1 ) = 1 then the players win. Let us analyze kG ⊗ G f k2
+for this f . G f looks similar for all question tuples u1 u2 ∈ {00, 01, 10, 11} that Alice might
+see. For example, suppose u1 u2 = 00. Of the four possible tuples v1 v2 that Bob may have
+received, only v1 v2 = 00 and v1 v2 = 10 will contribute to G f (00, A0B0). Indeed
+
+                   f (00, A0B0) + f (01, A0B0) + f (10, A0B0) + f (11, A0B0) 1 + 0 + 1 + 0
+G f (00, A0B0) =                                                            =              = 1/2
+                                               4                                   4
+For any other α ∈ Σ2 , G f (00, α) = 0, because the answer A1B1 is not acceptable when
+Alice’s questions are u1 u2 = 00. Thus, we get kG ⊗ G f k2 = 14 · 4 · ( 14 )2 = 14 . 
+
+   One would guess also that kG ⊗ Gk2 = 14 but we have not analyzed this.
+
+
+
+
+                                               30
+
