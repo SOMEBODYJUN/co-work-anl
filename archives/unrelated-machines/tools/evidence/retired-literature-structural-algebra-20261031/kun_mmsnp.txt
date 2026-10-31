@@ -1,0 +1,597 @@
+                                                  CONSTRAINTS, MMSNP AND EXPANDER
+                                                       RELATIONAL STRUCTURES
+arXiv:0706.1701v2 [math.CO] 13 Mar 2013
+
+
+
+
+                                                                            GÁBOR KUN
+
+                                                  Abstract. We give a poly-time construction for a combinato-
+                                                  rial classic known as Sparse Incomparability Lemma, studied by
+                                                  Erdős, Lovász, Nešetřil, Rödl and others: We show that every
+                                                  Constraint Satisfaction Problem is poly-time equivalent to its re-
+                                                  striction to structures with large girth. This implies that the com-
+                                                  plexity classes CSP and Monotone Monadic Strict NP introduced
+                                                  by Feder and Vardi are computationally equivalent. The technical
+                                                  novelty of the paper is a concept of expander relations and a new
+                                                  type of product for relational structures: a generalization of the
+                                                  zig-zag product, the twisted product.
+
+
+
+                                                                        1. Introduction
+                                             The construction of graphs with large girth and chromatic number
+                                          is a classic in probabilistic combinatorics. Many great mathematicians
+                                          have contributed to this: Erdős [4] gave a probabilistic construction
+                                          for graphs. Lovász [10] had a deterministic, but huge construction for
+                                          hypergraphs. Nešetřil and Rödl gave a short probabilistic construction
+                                          [16] for hypergraphs, see also Duffus, Rödl, Sands and Sauer[3]. Feder
+                                          and Vardi showed [5] a more general statement known as Sparse Incom-
+                                          parability Lemma: They proved that for every CSP problem there is a
+                                          randomized, poly-time algorithm that transforms every input structure
+                                          of the CSP to an equivalent one of large girth.
+                                             Nešetřil and Matoušek gave a deterministic poly-time algorithm [15]
+                                          to this in case of graphs. This was simplified in the recent work of
+                                          Nešetřil and Siggers [17]. The main result of this paper is a determin-
+                                          istic, poly-time algorithm for the Sparse Incomparability Lemma for
+                                          general CSP’s. 1
+                                          Theorem 1. (Algorithm) Let t, k be positive integers and τ a finite
+                                          relational type. For every structure S of type τ there exists a polynomial
+                                             This research was supported by OTKA Grants no. T043671 and NK 67867, Sub-
+                                          hash Khot’s NSF Waterman Award CCF-1061938 and the MTA Rényi ”Lendület”
+                                          Groups and Graphs Research Group.
+                                             1
+                                              We will follow the terminology of relational structures, but our theorems hold
+                                          in the special case of hypergraphs, too.
+                                                                                   1
+2                              GÁBOR KUN
+
+time constructible structure S′ of type τ with girth > k such that for
+every structure T of size < t the equivalence S ∈ CSP (T) ⇐⇒ S′ ∈
+CSP (T) holds. Moreover, S′ ∈ CSP (S).
+  This theorem also answers a problem posed by Nešetřil, Kostochka
+and Smolı́kova [7]. However, our work was primarily motivated by
+the paper of Feder and Vardi [5] on the dichotomy conjecture: They
+analyzed the complexity classes CSP and Monotone Monadic Strict NP
+(MMSNP). The class MMSNP contains the class CSP, and it has much
+bigger expressive power. Feder and Vardi proved that these classes are
+equivalent in a random sense. (For more on these classes and a simple
+proof see [9].) The only random part in their algorithm comes from
+their probabilistic proof of the Sparse Incomparability Lemma, so we
+can derandomize their result using Theorem 1.
+Theorem 2. Let τ be a finite relational type, L ⊆ Rel(τ ) an MMSNP
+language. Then there is a finite set of relational structures T ⊂ Rel(τ )
+such that
+   (1) L has a polynomial time reduction to CSP (T ).
+   (2) CSP (T ) has a polynomial time reduction to L.
+   Note that the equivalence of the complexity classes CSP and MM-
+SNP does not only mean that both of these classes contain an NP-
+complete problem. In particular, Theorem 2 shows that if dichotomy
+holds for CSP then it also holds for MMSNP.
+   Nešetřil and Matoušek used expander graphs to give a poly-time al-
+gorithm for the Sparse Incomparability Lemma in the case of graphs.
+Expander graphs are sparse but highly connected graphs. These play
+an important role in number theory, group theory and graph theory.
+Ajtai, Komlós and Szemerédi used expanders in their paper on parallel
+sorting [1]: this was the first time when expanders were used in com-
+puter science. ”Optimal expander graphs”, Ramanujan graphs were
+constructed by Margulis [14] and independently by Lubotzky, Phillips
+and Sarnak [11]. Simpler and simpler constructions were found in the
+last decade [2, 18]. Recently Lubotzky, Samuels and Vishne introduced
+a concept of Ramanujan complexes [12, 13].
+   On the other hand, for relational structures (hypergraphs) no similar
+construction or even definition is known. We introduce a concept of
+expander relations. We say that the r-ary relation R on S is an ε-
+expander relation if for every S1 , . . . , Sr ⊆ S the number of relational
+tuples with the ith coordinate in Si differs by less than ε|R| from the
+expected value. We construct ε-expander relational structures with
+large girth and bounded degree in poly-time.
+   CONSTRAINTS, MMSNP AND EXPANDER RELATIONAL STRUCTURES                     3
+
+Theorem 3. (Algorithm) Let τ be a finite relational type, k a positive
+integer and ε > 0. Then for every n > nτ,ε,k there exists a polynomial
+time constructible ε-expander S of size n, type τ , maximal degree at
+most M = Mτ,ε and girth at least k.
+   In order to give this construction we define the twisted product of
+relational structures, a generalization of the so-called zig-zag product
+used by Reingold, Vadhan and Widgerson [18]. Alon, Schwartz and
+Shapira used a similar product called replacement product in their
+expander construction [2].
+   In Section 2 we give the basic definitions. Section 3 contains the
+novelties of this paper: the definition and properties of expander rela-
+tional structures and the twisted product. In Section 4 we construct
+expander relational structures with large girth and bounded degree. In
+Section 5 we prove Theorem 1 and Theorem 2.
+
+
+                      2. Definitions, notations
+   We will work with finite relational structures throughout this pa-
+per: we denote these by boldface letters A, B, C, . . . and their base
+set by A, B, C, . . . , respectively. For an r-ary relational symbol R
+and relational structure A with base set A let R = R(A) denote
+the set of tuples of A which are in relation R. Recall, that a ho-
+momorphism is a mapping which preserves all relations. Just to be
+explicit, for relational structures A, B of the same type τ a map-
+ping f : A −→ B is a homomorphism A −→ B if for every r-
+ary relational symbol R ∈ τ and (x1 , . . . , xr ) ∈ Ar the implication
+(x1 , . . . , xr ) ∈ R(A) −→ (f(x1 ), . . . , f(xr )) ∈ R(B) holds. A cycle in
+a relational structure A is either a minimal sequence of distinct points
+and distinct tuples x0 , r1 , x1 , . . . , rt , xt = x0 where t ≥ 2, each tuple
+ri belongs to one of the relations R(A) and each xi is a coordinate of
+ri and ri+1 , or, in the degenerate case, a relational tuple with at least
+one multiple coordinate. The length of the cycle is the integer t in the
+first case and 1 in the second case. The girth of a structure A is the
+length of the shortest cycle in A (if it exists; otherwise it is a forest
+and we define the girth to be infinity). The degree of an element x of
+S is the number of relational tuples containing x (with multiplicity).
+Denote the     Pmaximal degree in S by ∆(S). Given a function f : S → R
+let |f | = x∈S |f (x)| denote its first norm and max(f ) its maximum,
+respectively.
+   For the relational structure A set CSP (A) = {B : B is homomorphic
+to A}. For a finite set T of relational structures of the same type define
+4                                   GÁBOR KUN
+
+CSP (T ) = ∪A∈T CSP (A). The class CSP consists of languages of the
+form CSP (T ).
+
+         3. Expander relations and the twisted product
+Definition 4. Given a finite relational structure A, a relation R ⊆ Ar
+and functions f1 , . . . , fr : A → R let us denote the sum
+      X       Y r
+                     fi (xi )
+    (x1 ,...,xr )∈R(A) i=1
+by R(f1 , . . . , fr ). For the subsets S1 , . . . , Sr ⊆ A set R(S1 , . . . , Sr ) =
+R(χS1 , . . . , χSr ). This equals the number of r-tuples (x1 , . . . , xr ) ∈ R
+such that x1 ∈ S1 , . . . , xr ∈ Sr .
+Definition 5. A nonempty r-ary relation R ⊆ S r is called an ε-
+expander relation if Q    for every S1 , . . . , Sr ⊆ S the inequality
+                            r
+                                |Si |
+ R(S1 , . . . , Sr ) − |R| i=1
+                             |S|r
+                                      ≤ ε|R| holds.
+A relational structure S is a (∆, ε) -expander relational structure if
+every at least binary relation of S is an ε-expander relation and ∆(S) ≤
+∆.
+   An expander graph is an expander relational structure: this is a triv-
+ial consequence of the Expander Mixing Lemma [6]. We postpone the
+study of such expanders until Section 4. Now we give several equivalent
+definitions for expander relations.
+Lemma 6. For a finite r-ary relation R ⊆ S r the followings are
+equivalent.
+    (1) For every f1 , . . . , fr Q: S → [0; ∞),
+                                     k
+                                        |fi |
+                                              ≤ ε|R| ri=1 max(fi ) holds.
+                                                     Q
+         R(f1 , . . . , fr ) − |R| i=1
+                                     |S|r
+    (2) For every f1 , . . . , fr Q: S → [0; 1],
+                                     r
+                                        |fi |
+         R(f1 , . . . , fr ) − |R| i=1
+                                     |S|r
+                                              ≤ ε|R| holds.
+    (3) R is an ε-expander relation.
+Proof. The implication (1) → (2) is trivial. (3) is the special case of
+(2) when all the functions fi are characteristic functions. We have to
+prove (3) → (1):
+ R(f1 , . . . , fr ) − ri=1 |fi | |S| |R|
+                         Q
+                                          r    =
+ R max(f1 )        R max(fr ) P                   Qr
+  y1 =0
+              . . . yr =0         (e1 ,...,er )∈R   i=1 χ{yi <fi (ei )} dy1 . . . dyr −
+R max(f1 )        R max(fr ) |R| Qr  P                            
+ y1 =0
+           . .  .  yr =0     |S|r     i=1         s∈S {yi <fi (s)} dy1 . . . dyr ≤
+                                                      χ
+R max(f1 )        R max(f )
+ y1 =0
+           . . . yr =0 r R({s : y1 < f1 (s)}, . . . , {s : yr < fr (s)}) −
+   CONSTRAINTS, MMSNP AND EXPANDER RELATIONAL STRUCTURES                           5
+
+ |R| Qr
+|S|r    i=1 |{s : yi < fi (s)}| dy1 . . . dyr ≤
+R max(f1 )      R max(f )
+           . . . yr =0 r ε|R|dy1 . . . dyr = ε|R| ri=1 max(fi ).
+                                                 Q
+  y1 =0
+                                                                                 
+
+Definition 7. Let A and B be relational structures of type τ . We say
+that C is a twisted product of A and B if the followings hold.
+    (1) The base set of C is the product set: C = A × B.
+    (2) The projection πB : A × B → B is a homomorphism C → B.
+    (3) For every r-ary relational symbol R of type τ , 1 ≤ i ≤ r and
+        relational tuple t = (t1 , . . . , tr ) ∈ R(B) there exists a bijec-
+        tion αt,i : A → C such that πB ◦ αt,i = ti and (x1 , . . . , xr ) ∈
+        R(A) ⇐⇒ αt,1 (x1 ), . . . , αt,r (xr ) ∈ R(C).
+  If all the bijections in the definition are identical we get the direct
+product A × B. In the case of simple, undirected graphs the last
+condition means that the preimage of every edge in B is isomorphic to
+the direct product of A and an edge. The celebrated zig-zag product
+[18] is a very special case (e.g. A is a complete graph with loops).
+Two structures may have many different twisted products: we can
+choose many bijections freely. However, every twisted product of two
+expanders is an expander.
+Lemma 8. Consider an εA -expander A and an εB -expander B of
+type τ . If C is the twisted product of A and B then C is an (εA + εB )-
+expander. And ∆(A)∆(B) ≥ ∆(C) holds for the maximal degrees.
+Proof. Let R be an at least binary relation of type τ . We will prove
+that (2) of Lemma 6 holds for R(C). Consider the functions       P f1 , . . . , fr :
+C → [0; 1]. Let gi : B → R denote the function gi (b) = x∈π−1 (b) fi (x).
+                                                                    B
+Now |gi | = |fi |, and for every b ∈ B the inequality 0 ≤ gi (b) ≤ |A|
+holds. So the expander property of R(B) implies that
+ R(B)(g1 , . . . , gr ) − |R(B)| |g1|B|
+                                     |...|gr |
+                                         r     ≤ εB |R(B)||A|r .
+Given an r-tuple b = (b1 , . . . , br ) ∈ R(B) consider the bijections αb,1 , . . . ,
+αb,r determining the twisted product. Clearly gi (bi ) = fi |π−1 (bi ) = fi ◦
+                                                                  B
+αb,i . We sum up all the error terms using |A||B| = |C|, |R(A)||R(B)| =
+|R(C)| and the triangle inequality.
+                                 Qr
+                                           |fi |
+ R(C)(f1 , . . . , fr ) − |R(C)| i=1 r           =
+                                 Qr   |C|
+                                           |gi |
+ R(C)(f1 , . . . , fr ) − |R(C)| i=1 r           ≤
+                                      |C|
+                          |R(A)|
+ R(C)(f1 , . . . , fr ) −         R(B)(g1 , . . . , gr ) +
+                            |A|r
+6                                  GÁBOR KUN
+                                           Qr
+ |R(A)                                            |gi |
+       r
+         R(B)(g1 , . . . , gr ) − |R(C)| i=1 r           =
+   |A|                                        |C|
+                                                             r
+   X                                               |R(A)| Y            
+           R(A)(f1 ◦ αb,1 , . . . , fr ◦ αb,r ) −               gi (bi ) +
+                                                      |A|r i=1
+ b∈R(B)
+                                           Qr
+|R(A)|                                             |gi |
+      r
+          R(B)(g1, . . . , gr ) − |R(B)| i=1 r           ≤
+  |A|                                          |B|
+                                                            r
+ X                                                |R(A)| Y                
+          R(A)(f1 ◦ αb,1 , . . . , fr ◦ αb,r ) −               |fi ◦ αb,i | +
+                                                     |A|r i=1
+b∈R(B)
+|R(A)|                  r
+                                X
+         ε B |R(B)||A|     ≤          εA |R(A)| + εB |R(C)| = (εA + εB )|R(C)|.
+  |A|r
+                          b∈R(B)
+  The statement about the maximal degrees follows immediately from
+the definition.                                                  
+   Now we have arrived at the crucial technical theorem of the paper:
+Two structures with small maximal degree have a twisted product with
+large girth if the first structure has large girth.
+Theorem 9. (Algorithm) Consider the finite relational structures A
+and B of type τ . Suppose that the girth of A is ≥ k and |A|1/k >
+∆(A)∆(B). Then there exists a twisted product C of A and B with
+girth ≥ k. The structure C can be constructed in polynomial time (in
+|A| and |B|).
+Proof. We will define better and better twisted products of A and B.
+The number of cycles of minimal length will decrease in every step. We
+start with the direct product C0 = A × B. Let Ci denote the twisted
+product after Step i. of the algorithm. The bijections determining Ci
+                  i
+are denoted by αv,l  : A → C (where v is an r-ary relational tuple of B,
+1 ≤ l ≤ r and πB ◦ αv,l = vl ).
+   Now we describe Step (i+1). Assume that the girth of Ci is j < k.
+Let t ∈ R(B) be an r-ary relational tuple, 1 ≤ l ≤ r and c, c′ ∈ Ci such
+that their distance is ≥ k and πB (c) = πB (c′ ) = tl . We will specify
+other conditions on the choice of t, l, c and c′ later.
+                                             i
+   Now we will change the bijection αt,l        but none of the other bijec-
+tions defining Ci . The relations of Ci+1 and Ci will agree but the lth
+coordinate of the tuples in πB−1 (t).
+        i+1
+   Set αt,l = (aa′ ) ◦ αt,l
+                        i
+                            , where (aa′ ) is the transposition of A flipping
+        ′
+a and a .
+   The figure illustrates this idea on the product of two undirected
+paths. The number of cycles of length four decreases. (We neglect the
+fact that undirected graphs have many degenerate cycles of length two
+   CONSTRAINTS, MMSNP AND EXPANDER RELATIONAL STRUCTURES                   7
+
+when considered as relational structures (digraphs). So we actually do
+not work with the shortest cycles in the figure.)
+
+
+
+
+                                                c
+
+
+
+
+                                               c’
+
+   We call a cycle short if its length is j. We will prove that the number
+of short cycles is strictly less in Ci+1 than in Ci . We correspond to
+short cycles in Ci+1 short cycles in Ci . Let ξ denote the following
+bijection between the set of relational tuples of Ci+1 and Ci . For a
+relational tuple u of Ci+1 set ξ(u) = u if πB (u) 6= t, else ξ(u)h = uh if
+h 6= l and ξ(u)l = (aa′ ) ◦ ul .
+   We will show that the image of a short cycle under ξ will be short.
+Call the tuple u critical if ξ(u) 6= u. This means that πB (u) = t and
+the lth coordinate of u is c or c′ . The lth coordinate of a critical tuple
+is called critical coordinate. We call a pair of tuples (u1 , u2) in Ci+1 a
+cutting pair if πB (u1 ) 6= πB (u2 ) and the tuples intersect. Every cycle
+with length ≤ k has a cutting pair: otherwise its image under πA would
+be a cycle, too.
+   Claim: Let t1 , . . . , tm be a cycle in Ci+1 , where m < max{k, 2j}
+and (to , to+1 ) is a cutting pair. Assume that c (c′ ) is a coordinate of
+both to and to+1 . Then c (c′ ) can not be a critical coordinate of to or
+to+1 .
+   The Claim implies that the image of a short cycle under ξ is a (short)
+cycle: If the image of two intersecting tuples under ξ will not intersect
+then one should be a critical tuple and its critical coordinate should be
+in the intersection.
+
+Proof. (of the Claim) We will prove by contradiction. We might sup-
+pose that o = m, say t1 is critical, tm is not and the critical coordinate c
+is in their intersection. If there is no other adjacent critical-noncritical
+8                                  GÁBOR KUN
+
+pair of tuples s.t. c′ is the critical coordinate and it is in their intersec-
+tion then the path ξ(t1 ), . . . , ξ(tm ) connects c and c′ , hence m ≥ k.
+   If there is such a pair, say (th , th+1 ) then we distinguish two cases:
+   If th+1 is critical then ξ(t1 ), . . . , ξ(th ) is a cycle, since ξ(t1 ) and ξ(th )
+contains c′ and the other tuples remained adjacent under ξ. Similarly,
+ξ(th+1), . . . , ξ(tm ) is a cycle, hence min{h, m − h} ≥ j, so m ≥ 2j, a
+contradiction.
+   In the other case, when th is critical the path ξ(t1 ), . . . , ξ(th ) connects
+ ′
+c and c, hence k ≤ h < m, a contradiction.
+                                                                                   
+   The main step of the algorithm does not increase the girth. The
+image of a short cycle under ξ will not be a cycle if it has a cutting
+pair such that exactly one of the two tuples is critical and the critical
+coordinate is in the intersection. The image of the other short cycles
+is still a cycle, and the cutting pairs are the same.
+   Let us do the main step of the algorithm for all possible triple c ∈
+C, l, t (and arbitrary c′ ) such that πB (c) = tl . This will hit every cycle
+of length < max{k, 2j}, since the cutting pairs of a cycle do not change.
+If we iterate this (log2 (k) + 1) times then we will get the required girth.
+   The number of such triples is O(|B||A|). We need to find c′ in every
+step: this requires O(|A||B|) time using Breadth First Search. We
+can exchange c and c′ in the appropriate tuples in the same time.
+Altogether, the running time of the algorithm is O(|A||A||B|2log(k)).
+                                                                           
+
+        4. Construction of expanders with large girth
+  We prove Theorem 3 in this section. First we give a probabilistic
+existential proof in the spirit of [4, 5].
+Lemma 10. Let τ be a finite relational type, k a positive integer and
+ε > 0. Then there is a ∆ > 0 such that for every n large enough there
+exists a (∆, ε)-expander of type τ on n vertices with girth ≥ k.
+Proof. We consider a probability space on the set of relational struc-
+tures with base set {1, . . . , 2n}. For every r-ary relational symbol R ∈ τ
+                                      D
+and r-tuple u let P r(u ∈ R) = nr−1       independently, where the constant
+D will be chosen later. The expected number of cycles with length ≤ k
+is O(ck D k ), and the expected degree of a vertex is O(cD), where c is
+a constant depending only on τ . Set ∆ to be ten times the expected
+value of the degree of a vertex.
+   The Markov inequality implies that the number of elements covered
+by the cycles with length ≤ k is at most n/4 with probability 1 − on (1),
+   CONSTRAINTS, MMSNP AND EXPANDER RELATIONAL STRUCTURES                            9
+
+and the number of elements with degree at least ∆ is at most n/4 with
+probability ≥ 53 . Remove every element with large degree or covered by
+a short cycle (to get a structure on exactly n elements we may remove
+more), and consider the resulted structure A with base set A. With
+probability 53 − on (1) the girth of A is ≥ k and the maximal degree of
+A is bounded.
+   We have to prove the expander property. Consider the r-ary rela-
+tion R and the subsets     Qr
+                               S1 , . . . Sr ⊆ {1, . . . , 2n}. The probability that
+                                 |Si |                           1 2
+|R(S1 , . . . , Sr ) − Dn i=1 nr
+                                       | < 3ε Dn is at most 2e− 36 ε Dn by the Cher-
+noff bound. Since the number of the possible choices is 22nr this will
+hold for a D large enough with probability 1 − oD (1) for every r, every
+r-ary relational symbol R ∈ τ and every S1 , . . . , Sr ⊆ A. In partic-
+ular, |R(A)| − Dn < 3ε Dn. Hence A is an ε-expander. Altogether,
+with probability 35 − on (1) − o1 (D) the structure A is a (∆, ε)-expander
+with girth ≥ k. And this probability is positive if n and D are large
+enough.                                                                           
+Lemma 11. Consider the d-regular undirected graph G = (V, E) with
+second largest eigenvalue λ and the integer k ≥ 2. Let S be the rela-
+tional structure with base set V and a single k-ary relation Rk :
+Rk = {(a1 , . . . , ak ) : ∀i (ai , ai+1 ) ∈ E}.                    
+                                                     k−1         |λ|
+Then the relational structure S is a kd , (k − 1) d -expander.
+
+
+
+Proof. Note that |Ri | = |V |di−1 and the degree of every element is
+idi−1 . Set ε = |λ|
+                 d
+                    . We prove by induction on k: First suppose that
+k = 2. We will use the expander mixing lemma       [6]: for every T, W ⊆ V
+the inequality |E(T, W ) − d |T|V||W| | | ≤ λ |T ||W | holds. This implies
+                                             p
+
+ R2 (T, W ) − |T|V||W  |2
+                          |
+                            |R2 | ≤ ε|R2 |. Hence R2 is an ε-expander relation.
+   Assume that we have proved the lemma for (k − 1). Consider the
+functions x1 , . . . , xk : S    Qk
+                                   → [0; 1]. By Lemma 6 we need to show that
+                                  i=1 |xi |
+ Rk (x1 , . . . , xk ) − |Rk | |V |k        ≤ ε(k − 1)|Rk |.
+   For i = 1, . . . , k define the sequence of functions yi : S →X     R recur-
+                                             1
+sively. Let y0 be the constant d function and yi+1 (a) =                   xi (b).
+                                                                          (a,b)∈E
+Note that |yi+1 | = R2 (yi , xi+1 ). Clearly 0 ≤ max(yi ) ≤ di−1 and
+Ri (x1 , . . . , xi ) = |yi |. Now
+                               Qk
+                                     we use the inductional hypothesis:
+                                                                    Qk
+                                 i=1 |xi |                               |xi |
+Rk (x1 , . . . , xk ) − |Rk | |V |k        = R2 (yk−1 , xk ) − |Rk | i=1
+                                                                     |V |k
+                                                                               ≤
+                                                            Qk
+                       |y   ||x |         |y   ||x |          i=1 |xi |
+R2 (yk−1 , xk ) − |R2 | k−1
+                         |V |2
+                               k
+                                 + |R2 | k−1
+                                          |V |2
+                                                k
+                                                  − |Rk |     |V |k
+                                                                          ≤
+10                              GÁBOR KUN
+                                     Qk−1
+                                      i=1 |xi |
+ε|R2 |max(yk−1 ) + d|x k|
+                    |V |
+                          |yk−1| −   |V |k−1
+                                                |Rk−1 |   ≤
+ε|Rk | + d|x k|
+          |V |
+                (k − 2)ε|Rk−1| ≤ (k − 1)ε|Rk |
+The structure S is a kdk−1, (k − 1)ε -expander.
+                                        
+                                                                          
+Proof. (of Theorem 3) Assume that every relational symbol in R is at
+most r-ary. We know that for some d there exists a polynomial time
+construction of d-regular expander graphs with eigenvalue gap | λd | < 2rε ,
+see [14, 11].
+   On the other hand by Lemma 10 there exists an 2ε -expander A with
+                               1
+girth at least k such that |A| k > rdr−1∆(A) holds. If n is large enough
+then there exists such an A of size log(n) by Theorem 10, and so we
+can find it in polynomial time.
+                                               n
+   We construct an expander graph G of size |A|   with the above prop-
+                                                r−1
+erties. Lemma 11 shows how to construct an ε 2r -expander B on the
+vertex set of G with maximal degree rdr−1. The conditions of Lemma 9
+hold for A and B, hence there exists a polynomial time constructible
+twisted product C of A and B with girth at least k. Now C is an
+ε-expander by Lemma 8 with maximal degree at most M = rdr−1∆(A)
+and girth at least k.                                                    
+
+                          5. CSP vs MMSNP
+   Now we prove Theorem 2 showing that CSP and MMSNP are com-
+putationally equivalent. Feder and Vardi [5] proved the following (see
+[9] for a simple proof).
+Theorem 12. Let L be an MMSNP language. Then there is a finite
+set of relational structures T and a positive integer k such that
+    (1) L has a polynomial time reduction to CSP (T ).
+    (2) CSP (T ) restricted to structures with girth at least k has a poly-
+        nomial time reduction to L.
+   Theorem 1 and Theorem ?? would imply Theorem 2. So we succeed
+to prove Theorem 1.
+Lemma 13. Consider the structures A, B and T of type τ , where A
+is an ε-expander. Suppose that every relational symbol in τ is at most
+r-ary and ε|T |r < 1. Let C be a twisted product of A and B. Then B
+is homomorphic to T iff C is homomorphic to T.
+Proof. By the definition of the twisted product there is a homomor-
+phism πB : C → B. If B is homomorphic to T then so is C. In
+order to prove the converse assume that there exists a homomorphism
+ϕ : C → T. Let us define the mapping ξ : B → T in the following way.
+    CONSTRAINTS, MMSNP AND EXPANDER RELATIONAL STRUCTURES 11
+
+For an element b ∈ B let ξ(b) be one of the elements of T such that
+|πB−1 (b) ∩ ϕ−1 (ξ(b))| ≥ |A| |T |
+                                   . We will show that ξ is a homomorphism.
+Let R be an r-ary relational symbol in τ , b = (b1 , . . . , br ) ∈ R(B). We
+need to show that (ξ(b1 ), . . . , ξ(br )) ∈ R(T).
+   Set Si = ϕ−1 (ξ(bi )) ∩ πB−1 (bi ). We succeed to show that there is
+a tuple (c1 , . . . , cr ) ∈ R(C) with ci ∈ Si : In this case the tuple
+(ξ(b1 ), . . . , ξ(br )) = (ϕ(c1 ), . . . , ϕ(cr )) would be in R(T), since ϕ is
+a homomorphism.
+   Denote the bijections corresponding to b determining the twisted
+product C by αb,i : A → πB−1 (bi ). The tuple (c1 , . . . , cr ) (where ci ∈
+πB−1 (bi ) for every i) is in R(C) iff αb,1      −1                  −1
+                                                    (c1 ), . . . , αb,r (cr ) ∈ R(A).
+                                                                       −1
+   We use the expander property of A for the sets αb,i (Si ) for 1 ≤ i ≤ r.
+                                             −1                   −1
+Since R(C)(S1 , . . . , Sl ) = R(A)(αb,1        (S1 ), . . . , αb,r  (Sr )) we have
+                                                Ql
+                                                 i=1 |Si |
+             R(C)(S1 , . . . , Sl ) − |R(A)|                 ≤ ε|R(A)|.
+                                                  |A|l
+                                    Ql
+                                         |S |
+                                           i
+  On the other hand |R(A)| i=1        |A|l
+                                             > ε|R(A)| by the choice of the
+sets Si and ε. Hence R(C)(S1 , . . . , Sr ) > 0, there exists an appropriate
+tuple (c1 , . . . , cr ) ∈ R(C). This completes the proof of the lemma. 
+Proof. (of Theorem 1) Let us choose r such that every relational symbol
+in τ is at most r-ary. Consider a tr 1+1 -expander A with girth > k and
+                                                         1
+bounded degree. Hence if |A| is large enough then |A| k > ∆(A)∆(S)
+holds. Such an expander A can be constructed in polynomial time
+(of |S|) for fixed t and k. Now we can use Lemma 9 for A = A and
+B = S to construct a twisted product C of girth at least k. Set S′ = C.
+Lemma 13 implies Theorem 1.                                           
+
+                                  References
+ [1] M. Ajtai, J. Komlós, E. Szemerédi, Sorting in c logn parallel steps, Combina-
+     torica 3(1), (1983), 1–19.
+ [2] N. Alon, Oded Schwartz, Asaf Shapira, An elementary construction of
+     constant-degree expanders, 17th ACM-SIAM Symposium on Discrete Algo-
+     rithms, (2007), 454–458.
+ [3] D. Duffus, V. Rödl, B. Sands, N. Sauer, Chromatic numbers and homomor-
+     phisms of large girth hypergraphs, preprint, (2006).
+ [4] P. Erdős, Graph theory and probability, Canad. J. Math., 11, (1959), 34–38.
+ [5] T. Feder, M. Y. Vardi: The computational structure of monotone monadic
+     SNP and constraint satisfaction: A study through Datalog and group theory,
+     SIAM J. Comput. 28, 1 (1999), 57–104.
+ [6] S. Hoory, N. Linial, A. Widgerson, Expander graphs and their applications,
+     http://www.cs.huji.ac.il/∼nati/
+12                                  GÁBOR KUN
+
+ [7] A. Kostochka, J. Nešetřil, P. Smolı́kova, Colorings and homomorphisms of
+     bounded degree and degenerate graphs. Graph theory (Prague, 1998). Discrete
+     Math. 233 (2001), no. 1-3, 257–276.
+ [8] G. Kun: On the complexity of Constraint Satisfaction Problem, PhD thesis
+     (in Hungarian), 2006.
+ [9] G. Kun, J. Nešetřil: Forbidden lifts (NP and CSP for combinatorists), KAM-
+     DIMATIA Series 2006-775 (to appear in European J. Comb.).
+[10] L. Lovász, On chromatic number of finite set-systems, Acta Math. Acad. Sci.
+     Hungar. 19 1968, 59–67.
+[11] A. Lubotzky, R. Phillips, P. Sarnak, Ramanujan graphs, Combinatorica 8(3):
+     261 – 277, 1988.
+[12] A. Lubotzky, B. Samuels, V. Vishne, Ramanujan complexes of type Ad , Israel
+     J. of Math., 2005, accepted.
+[13] A. Lubotzky, B. Samuels, V. Vishne, Explicit constructions of Ramanujan
+     complexes of type Ad , Europ. J. of Combinatorics, 2005, submitted.
+[14] G. A. Margulis, Explicit group-theoretical constructions of combinatorial
+     schemes and their application to the design of expanders and concentrators,
+     J. Probl. Inf. Transm., 24, No. 1, (1988), 39–46.
+[15] J. Matoušek, J. Nešetřil: Constructions of sparse graphs with given homomor-
+     phisms (to appear).
+[16] J. Nešetřil, V. Rödl: A short proof of the existence of highly chromatic hyper-
+     graphs without short cycle, J. Comb. Th. B 27 (1979), 225–227.
+[17] J. Nešetřil, M. H. Siggers: A new combinatorial approach to the Constraint
+     Satisfaction Problem dichotomy conjecture, 32nd Symposium on the Mathe-
+     matical Foundation of Computer Science, 2007, submitted.
+[18] O. Reingold, S. Vadhan, A. Widgerson, Entropy, waves the zig-zag product,
+     and new constant degree expanders, Annals of mathematics, 155 (1), (2002),
+     157–187.
+   E-mail address: kungabor@cs.elte.hu
+
+  Department of Algebra and Number Theory, Eötvös University,
+Budapest, Pázmány sétány 1C, H-1117, Hungary
+
