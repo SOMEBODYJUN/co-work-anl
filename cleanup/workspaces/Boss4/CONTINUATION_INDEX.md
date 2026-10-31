@@ -375,3 +375,7 @@ R3_READY15KL：15源数学正文证据；尾端诊断合同/119字段核验，�
 R3_READY15KL数学/证据pushed 6f2ae5d7f094d6f8a40a6efd922215b426230b70；15源done另推送 211c5ff5b7211a4737ac12eef12d930193a540c2。Boss4累计2217完成，实际未完19；持续接续全仓，不以本批清空收尾。
 
 R3_READY22KM：22源自足正文和准确原运行合同；强价格模板分离、公共尾重构、随机保留共同池/真实删槽、六人关联位置和人口反例，保持来源版本与程序实跑界限；共22主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY22KM_REMAINING_SCOPE.json。
+
+R3_READY22KM数学/证据pushed 102fa8667074c3a3bd131dc7207b8e1ab116236e；22源done另推送 cef30d260173527efeee34610b07eb34adae6ded。Boss4累计2239完成，实际未完11；持续接续全仓，不以本批清空收尾。
+
+R3_READY4KS：四源固定完整策略程序和九条原浮点记录；精确重构IC/补全LP合同与7固定iid查询有理验收，旧身份只溯源，0原程序新跑；共4主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY4KS_REMAINING_SCOPE.json。
