@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResearchPacket",
+  "type": "object",
+  "required": ["packet_id", "problem_id", "object_refs", "known", "boundaries", "evidence", "context_profiles", "next_questions"],
+  "properties": {
+    "packet_id": {"type": "string", "minLength": 1},
+    "problem_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string"},
+    "object_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["object_id", "path", "role"],
+        "properties": {
+          "object_id": {"type": "string"},
+          "path": {"type": "string"},
+          "role": {"type": "string"},
+          "status": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "known": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "text", "claim_type", "status"],
+        "properties": {
+          "claim_id": {"type": "string"},
+          "text": {"type": "string"},
+          "claim_type": {"type": "string"},
+          "status": {"type": "string"},
+          "refs": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "boundaries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["boundary_id", "text"],
+        "properties": {
+          "boundary_id": {"type": "string"},
+          "text": {"type": "string"},
+          "related_object_refs": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "path", "kind"],
+        "properties": {
+          "evidence_id": {"type": "string"},
+          "path": {"type": "string"},
+          "kind": {"type": "string"},
+          "command": {"type": "string"},
+          "expected": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "context_profiles": {
+      "type": "object",
+      "required": ["full", "boundary", "blind"],
+      "properties": {
+        "full": {"type": "array", "items": {"type": "string"}},
+        "boundary": {"type": "array", "items": {"type": "string"}},
+        "blind": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "inheritance": {
+      "type": "object",
+      "properties": {
+        "allowed": {"type": "array", "items": {"type": "string"}},
+        "independent": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "next_questions": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
