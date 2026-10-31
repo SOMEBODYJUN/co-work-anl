@@ -150,3 +150,7 @@ R3_READY67Y：67源完整实质清洗：命名钱包/固定鞍点/保护根/CLAI
 R3_READY67Y数学/证据pushed 00d7b719be971fc956d35addad78a391694896d4；67源done另推送 78e380031530e0e39da36b463ad49396883923c9。Boss4累计1217完成，实际未完37；持续接续全仓，不以本批清空收尾。
 
 R3_READY14Z：背景删除定义级原入口/65例精确同字节与终局税搜索边界4；board双版全状态机/54原测试+18新例5；dual/XOS/arity/SA/sink完整版本审查5。持续六条完整清洗线，未终止；共14主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY14Z_REMAINING_SCOPE.json。
+
+R3_READY14Z数学/证据pushed 4cd40d1cd1eaddd71c25718a2b8ab20e33eff3ca；14源done另推送 fd20a9c4d289321554f587b849f849bb4996a325。Boss4累计1231完成，实际未完33；持续接续全仓，不以本批清空收尾。
+
+R3_READY23AD：容量一与半单位槽/row及CONFIG原审查4，根平稳独立复核与通用锥两主入口5，checkpoint双版完整保存/测试5，四UM实际原audit与β2合同probe4，positive-fee/root-regret/relay五长稿5；保持全部原版本、精确运行及未证范围。继续全仓动态接续；共23主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY23AD_REMAINING_SCOPE.json。

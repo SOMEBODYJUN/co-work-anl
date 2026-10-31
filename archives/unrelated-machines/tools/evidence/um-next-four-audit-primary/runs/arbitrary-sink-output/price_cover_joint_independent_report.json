@@ -1,0 +1,5672 @@
+{
+  "arithmetic": "fractions.Fraction; no floating-point decisions",
+  "environment_not_for_exact_comparison": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "seed": 2026101811,
+  "source_sha256": "bc555c5d6254884d3b9cb41a65b126d0b857021d3bac876edca967f97baa067b",
+  "fixtures_sha256": "fb82e4a9040d8bdadd1ee314653212b82b8ed61aed07f08aed0ceffe05d87c3a",
+  "specification": {
+    "cover_epsilon": "eta/4",
+    "gamma": "eta/4",
+    "N": "ceil(16 R K/eta^2)",
+    "mean_budget": "(1+eta)T",
+    "R": "max(1,|H|B/T)",
+    "required_B_over_T": "<=1"
+  },
+  "static_original_cases": 112,
+  "static_T_feasible_cases": 64,
+  "static_oracle_price_calls": 371,
+  "counters": {
+    "oracle_calls": 1876,
+    "local_cover_checks": 4016,
+    "nonempty_local_covers": 3415,
+    "positive_cost_covers": 3352,
+    "zero_cost_covers": 63,
+    "infeasible_covers": 8,
+    "pruned_items": 96,
+    "matching_rejections": 146,
+    "priced_rejections": 1,
+    "actual_schedules_enumerated": 104920
+  },
+  "maxima": {
+    "cover_approx_ratio": "97/96",
+    "mode_l1_over_B": "549755813888/549755813889",
+    "priced_load_over_T": "2"
+  },
+  "static_cases": [
+    {
+      "name": "no-home-empty",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "no-macro",
+      "OPT": "1/4",
+      "T_feasible": true,
+      "opt_dest": [
+        0
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/5",
+            "2/5"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/7",
+            "5/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/11",
+            "9/11"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "zero-work",
+      "OPT": "1",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0
+      ],
+      "enumerated_schedules": 3,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/7",
+            "6/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "no-sink-feasible",
+      "OPT": "1",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "no-sink-infeasible",
+      "OPT": "2",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "zero-price-and-prune",
+      "OPT": "1",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 81,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "9/11",
+            "2/11"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "6/7",
+            "1/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "9/14",
+            "5/14"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "disjoint-qualifications",
+      "OPT": "1",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        1,
+        2,
+        1,
+        2
+      ],
+      "enumerated_schedules": 16,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "1/4"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/3",
+            "2/3"
+          ],
+          "status": "OK",
+          "cost": "1/6"
+        },
+        {
+          "price": [
+            "9/11",
+            "2/11"
+          ],
+          "status": "OK",
+          "cost": "1/11"
+        },
+        {
+          "price": [
+            "8/17",
+            "9/17"
+          ],
+          "status": "OK",
+          "cost": "4/17"
+        }
+      ]
+    },
+    {
+      "name": "unexportable-forced-home",
+      "OPT": "17/20",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 8,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "1/2"
+        }
+      ]
+    },
+    {
+      "name": "too-many-macros",
+      "OPT": "2",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "pruned-all-macro-edges",
+      "OPT": "5/4",
+      "T_feasible": false,
+      "opt_dest": [
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "genuine-cover-approximation",
+      "OPT": "1",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 8,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "97/240"
+        }
+      ]
+    },
+    {
+      "name": "near-tight-mode-B",
+      "OPT": "1",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 16,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "1/2"
+        }
+      ]
+    },
+    {
+      "name": "random-0",
+      "OPT": "94296213929941075627081767/48357032784585166988247160",
+      "T_feasible": true,
+      "opt_dest": [
+        2,
+        1,
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "enumerated_schedules": 9,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-1",
+      "OPT": "15313060381785302879611569/6044629098073145873530895",
+      "T_feasible": false,
+      "opt_dest": [
+        1,
+        0,
+        2,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "enumerated_schedules": 12,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-2",
+      "OPT": "2",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-3",
+      "OPT": "4835703278458516698824706/1208925819614629174706179",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 27,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "5/12",
+            "7/12"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "4/5",
+            "1/5"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "3/10",
+            "7/10"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-4",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/5",
+            "3/5"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/4",
+            "3/4"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-5",
+      "OPT": "2",
+      "T_feasible": false,
+      "opt_dest": [
+        2,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 13122,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1/13",
+            "5/13",
+            "7/13"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "4/13",
+            "4/13",
+            "5/13"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "4/9",
+            "7/18",
+            "1/6"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-6",
+      "OPT": "18536862567424314012161373/12089258196146291747061790",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "enumerated_schedules": 4,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-7",
+      "OPT": "2",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "enumerated_schedules": 16,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-8",
+      "OPT": "11/8",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "7/11",
+            "4/11"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "2/7",
+            "5/7"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-9",
+      "OPT": "7253554917687775048237059/4835703278458516698824716",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        1
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-10",
+      "OPT": "46/45",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "enumerated_schedules": 4,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-11",
+      "OPT": "3/4",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        2,
+        1,
+        0,
+        3,
+        3,
+        3
+      ],
+      "enumerated_schedules": 1458,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/7",
+            "1/7",
+            "4/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "4/7",
+            "2/7",
+            "1/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/11",
+            "4/11",
+            "5/11"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-12",
+      "OPT": "39/40",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "enumerated_schedules": 3,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-13",
+      "OPT": "65281994259189975434133531/24178516392292583494123580",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        1,
+        2,
+        2,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 1944,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "9/22",
+            "7/22",
+            "3/11"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "2/3",
+            "1/6",
+            "1/6"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "9/22",
+            "3/11",
+            "7/22"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-14",
+      "OPT": "2417851639229258349412353/690814754065502385546388",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-15",
+      "OPT": "2417851639229258349412353/1208925819614629174706179",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        4,
+        2,
+        2,
+        2,
+        2
+      ],
+      "enumerated_schedules": 1728,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/4",
+            "1/4"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/8",
+            "7/8"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-16",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [
+        0
+      ],
+      "enumerated_schedules": 3,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "7/17",
+            "9/17",
+            "1/17"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "6/19",
+            "4/19",
+            "9/19"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-17",
+      "OPT": "5/6",
+      "T_feasible": false,
+      "opt_dest": [
+        2,
+        1,
+        0,
+        0,
+        1
+      ],
+      "enumerated_schedules": 9,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-18",
+      "OPT": "12089258196146291747061765/9671406556917033397649432",
+      "T_feasible": true,
+      "opt_dest": [
+        2,
+        2,
+        2
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-19",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/7",
+            "6/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/5",
+            "2/5"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/5",
+            "3/5"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-20",
+      "OPT": "805950546409752783137451/1208925819614629174706179",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "enumerated_schedules": 8,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-21",
+      "OPT": "5/4",
+      "T_feasible": false,
+      "opt_dest": [
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 54,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "7/13",
+            "3/13",
+            "3/13"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1/2",
+            "3/7",
+            "1/14"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "3/11",
+            "5/11",
+            "3/11"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-22",
+      "OPT": "2417851639229258349412353/653473416007907662003340",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "enumerated_schedules": 4,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-23",
+      "OPT": "1/2",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        2,
+        2,
+        2,
+        1
+      ],
+      "enumerated_schedules": 54,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/2",
+            "1/14",
+            "3/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "7/16",
+            "1/4",
+            "5/16"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/3",
+            "1/9",
+            "5/9"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-24",
+      "OPT": "2417851639229258349412353/690814754065502385546388",
+      "T_feasible": false,
+      "opt_dest": [
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 256,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-25",
+      "OPT": "5/4",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        0
+      ],
+      "enumerated_schedules": 3,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "8/17",
+            "9/17"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-26",
+      "OPT": "1/3",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        3,
+        2,
+        1,
+        2
+      ],
+      "enumerated_schedules": 108,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/10",
+            "9/10"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "5/9",
+            "4/9"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-27",
+      "OPT": "7/6",
+      "T_feasible": false,
+      "opt_dest": [
+        1,
+        1,
+        0
+      ],
+      "enumerated_schedules": 4,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-28",
+      "OPT": "805950546409752783137451/1208925819614629174706179",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        4,
+        5
+      ],
+      "enumerated_schedules": 432,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/11",
+            "5/11",
+            "4/11"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "5/21",
+            "3/7",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/7",
+            "2/7",
+            "2/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-29",
+      "OPT": "4835703278458516698824706/1208925819614629174706179",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        2
+      ],
+      "enumerated_schedules": 3,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "7/10",
+            "1/5",
+            "1/10"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "2/15",
+            "4/15",
+            "3/5"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "3/8",
+            "9/16",
+            "1/16"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-30",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [
+        2
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "4/7",
+            "3/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "4/5",
+            "1/5"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "5/13",
+            "8/13"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-31",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "enumerated_schedules": 16,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-32",
+      "OPT": "2417851639229258349412353/2417851639229258349412358",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-33",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-34",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        1
+      ],
+      "enumerated_schedules": 6,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "4/13",
+            "9/13"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/7",
+            "5/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/3",
+            "2/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-35",
+      "OPT": "1/2",
+      "T_feasible": true,
+      "opt_dest": [
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-36",
+      "OPT": "3/5",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        2,
+        1
+      ],
+      "enumerated_schedules": 12,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "5/9",
+            "4/9"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "5/7",
+            "2/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "4/7",
+            "3/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-37",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        1,
+        0
+      ],
+      "enumerated_schedules": 8,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-38",
+      "OPT": "3/16",
+      "T_feasible": true,
+      "opt_dest": [
+        3,
+        0,
+        0,
+        2,
+        1
+      ],
+      "enumerated_schedules": 72,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "4/9",
+            "5/9"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/8",
+            "7/8"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "7/16",
+            "9/16"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-39",
+      "OPT": "29/18",
+      "T_feasible": false,
+      "opt_dest": [
+        1,
+        0,
+        0,
+        0,
+        3,
+        2,
+        0
+      ],
+      "enumerated_schedules": 27,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "6/13",
+            "6/13",
+            "1/13"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-40",
+      "OPT": "1/8",
+      "T_feasible": true,
+      "opt_dest": [
+        3,
+        2
+      ],
+      "enumerated_schedules": 6,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/3",
+            "2/15",
+            "8/15"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "8/17",
+            "3/17",
+            "6/17"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "6/11",
+            "1/11",
+            "4/11"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-41",
+      "OPT": "1",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-42",
+      "OPT": "5/4",
+      "T_feasible": false,
+      "opt_dest": [
+        2,
+        0,
+        0,
+        1,
+        3,
+        3,
+        3
+      ],
+      "enumerated_schedules": 96,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1/9",
+            "8/9"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "4/13",
+            "9/13"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "3/7",
+            "4/7"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-43",
+      "OPT": "41103477866897391940010001/24178516392292583494123580",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-44",
+      "OPT": "805950546409752783137451/1208925819614629174706179",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-45",
+      "OPT": "12089258196146291747061765/4835703278458516698824716",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        2,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 36,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "9/20",
+            "1/10",
+            "9/20"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "7/20",
+            "7/20",
+            "3/10"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "4/19",
+            "9/19",
+            "6/19"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-46",
+      "OPT": "10477357103326786180786863/2417851639229258349412358",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-47",
+      "OPT": "26596368031521841843535883/9671406556917033397649432",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        2,
+        2
+      ],
+      "enumerated_schedules": 18,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-48",
+      "OPT": "1",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        3,
+        2,
+        0,
+        0,
+        1
+      ],
+      "enumerated_schedules": 324,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "1/24"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "7/15",
+            "2/15",
+            "2/5"
+          ],
+          "status": "OK",
+          "cost": "1/30"
+        },
+        {
+          "price": [
+            "5/18",
+            "7/18",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "5/144"
+        },
+        {
+          "price": [
+            "2/11",
+            "7/11",
+            "2/11"
+          ],
+          "status": "OK",
+          "cost": "1/44"
+        }
+      ]
+    },
+    {
+      "name": "random-49",
+      "OPT": "5/6",
+      "T_feasible": false,
+      "opt_dest": [
+        1,
+        0,
+        0,
+        0,
+        2
+      ],
+      "enumerated_schedules": 8,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-50",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-51",
+      "OPT": "7253554917687775048237059/38685626227668133590597728",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        2
+      ],
+      "enumerated_schedules": 6,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/14",
+            "1/7",
+            "9/14"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/19",
+            "7/19",
+            "9/19"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/3",
+            "3/5",
+            "1/15"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-52",
+      "OPT": "27/20",
+      "T_feasible": false,
+      "opt_dest": [
+        2,
+        0,
+        0,
+        1,
+        1,
+        4,
+        1,
+        1,
+        2,
+        2
+      ],
+      "enumerated_schedules": 3888,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "5/19",
+            "6/19",
+            "8/19"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "8/21",
+            "3/7",
+            "4/21"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "7/19",
+            "8/19",
+            "4/19"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-53",
+      "OPT": "1/3",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 16,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-54",
+      "OPT": "1",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "4/19",
+            "6/19",
+            "9/19"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "4/13",
+            "6/13",
+            "3/13"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1/17",
+            "8/17",
+            "8/17"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-55",
+      "OPT": "9/4",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-56",
+      "OPT": "7253554917687775048237059/4835703278458516698824716",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        3
+      ],
+      "enumerated_schedules": 12,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/2",
+            "1/4",
+            "1/4"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/11",
+            "4/11",
+            "4/11"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/6",
+            "7/18",
+            "4/9"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-57",
+      "OPT": "2417851639229258349412353/653473416007907662003340",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-58",
+      "OPT": "7253554917687775048237059/9671406556917033397649432",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-59",
+      "OPT": "7253554917687775048237059/6044629098073145873530895",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        0,
+        2,
+        0,
+        0,
+        1,
+        2,
+        2,
+        2
+      ],
+      "enumerated_schedules": 128,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-60",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-61",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        5
+      ],
+      "enumerated_schedules": 18,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/13",
+            "4/13",
+            "8/13"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/13",
+            "8/13",
+            "4/13"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/11",
+            "2/11",
+            "6/11"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-62",
+      "OPT": "0",
+      "T_feasible": true,
+      "opt_dest": [],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/3",
+            "2/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/5",
+            "4/5"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-63",
+      "OPT": "2417851639229258349412353/1208925819614629174706179",
+      "T_feasible": true,
+      "opt_dest": [
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "4/7",
+            "2/7",
+            "1/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "8/25",
+            "9/25",
+            "8/25"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/2",
+            "1/14",
+            "3/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-64",
+      "OPT": "1/2",
+      "T_feasible": true,
+      "opt_dest": [
+        2,
+        0,
+        1,
+        4,
+        4,
+        3
+      ],
+      "enumerated_schedules": 108,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/13",
+            "8/13",
+            "2/13"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/4",
+            "1/3",
+            "5/12"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "4/15",
+            "2/15",
+            "3/5"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-65",
+      "OPT": "19/18",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        1
+      ],
+      "enumerated_schedules": 16,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-66",
+      "OPT": "27/20",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        1,
+        0,
+        2,
+        0,
+        3
+      ],
+      "enumerated_schedules": 108,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "3/10",
+            "1/10",
+            "3/5"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "2/7",
+            "2/7",
+            "3/7"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "2/11",
+            "3/11",
+            "6/11"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-67",
+      "OPT": "8/5",
+      "T_feasible": false,
+      "opt_dest": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        3,
+        1,
+        2
+      ],
+      "enumerated_schedules": 4374,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "5/19",
+            "5/19",
+            "9/19"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1/16",
+            "3/8",
+            "9/16"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "7/16",
+            "1/4",
+            "5/16"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-68",
+      "OPT": "2/3",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-69",
+      "OPT": "31/12",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-70",
+      "OPT": "17/20",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-71",
+      "OPT": "7253554917687775048237059/6044629098073145873530895",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        1
+      ],
+      "enumerated_schedules": 6,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/11",
+            "6/11",
+            "2/11"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/9",
+            "1/3",
+            "4/9"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "4/9",
+            "1/18",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-72",
+      "OPT": "17/30",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        1,
+        2
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-73",
+      "OPT": "16/15",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 36,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-74",
+      "OPT": "1",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        0,
+        2,
+        2,
+        2,
+        0
+      ],
+      "enumerated_schedules": 108,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "6/7",
+            "1/7"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "2/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-75",
+      "OPT": "2/3",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        0,
+        1
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-76",
+      "OPT": "37/20",
+      "T_feasible": false,
+      "opt_dest": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2
+      ],
+      "enumerated_schedules": 32,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-77",
+      "OPT": "2",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        1
+      ],
+      "enumerated_schedules": 12,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-78",
+      "OPT": "3/2",
+      "T_feasible": false,
+      "opt_dest": [
+        2,
+        2,
+        0
+      ],
+      "enumerated_schedules": 3,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "2/9",
+            "7/9"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "5/9",
+            "4/9"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "5/12",
+            "7/12"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-79",
+      "OPT": "4/3",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-80",
+      "OPT": "2417851639229258349412353/1208925819614629174706179",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        2,
+        2
+      ],
+      "enumerated_schedules": 8,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-81",
+      "OPT": "1/8",
+      "T_feasible": true,
+      "opt_dest": [
+        0
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "9/14",
+            "5/14"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "8/11",
+            "3/11"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-82",
+      "OPT": "5/4",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        2,
+        2,
+        2
+      ],
+      "enumerated_schedules": 27,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "5/12",
+            "1/4",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "5/17",
+            "5/17",
+            "7/17"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "3/10",
+            "2/5",
+            "3/10"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-83",
+      "OPT": "7253554917687775048237059/1208925819614629174706179",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-84",
+      "OPT": "15313060381785302879611569/6044629098073145873530895",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-85",
+      "OPT": "17/30",
+      "T_feasible": true,
+      "opt_dest": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2
+      ],
+      "enumerated_schedules": 3,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-86",
+      "OPT": "1/2",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0
+      ],
+      "enumerated_schedules": 1,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-87",
+      "OPT": "9/10",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        2,
+        1
+      ],
+      "enumerated_schedules": 32,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-88",
+      "OPT": "7/4",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        1,
+        2,
+        0,
+        3,
+        1,
+        1
+      ],
+      "enumerated_schedules": 1944,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "7/15",
+            "1/5",
+            "1/3"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "3/4",
+            "1/8",
+            "1/8"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1/4",
+            "1/4",
+            "1/2"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-89",
+      "OPT": "2417851639229258349412353/1208925819614629174706179",
+      "T_feasible": true,
+      "opt_dest": [
+        2,
+        1,
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "enumerated_schedules": 144,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "9/20",
+            "3/20",
+            "2/5"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/7",
+            "2/7",
+            "2/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/15",
+            "4/15",
+            "3/5"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-90",
+      "OPT": "2417851639229258349412353/653473416007907662003340",
+      "T_feasible": false,
+      "opt_dest": [
+        1,
+        0,
+        1
+      ],
+      "enumerated_schedules": 4,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-91",
+      "OPT": "7253554917687775048237059/6044629098073145873530895",
+      "T_feasible": true,
+      "opt_dest": [
+        1
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-92",
+      "OPT": "8/5",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "enumerated_schedules": 4,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-93",
+      "OPT": "1/2",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "enumerated_schedules": 4,
+      "oracle": [
+        {
+          "price": [
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-94",
+      "OPT": "2/3",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        1,
+        4,
+        0,
+        1,
+        1,
+        4
+      ],
+      "enumerated_schedules": 144,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "2/7",
+            "3/7",
+            "2/7"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1/2",
+            "1/16",
+            "7/16"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/7",
+            "8/21",
+            "4/21"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-95",
+      "OPT": "3/4",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        2,
+        3
+      ],
+      "enumerated_schedules": 18,
+      "oracle": [
+        {
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "9/16",
+            "1/16",
+            "3/8"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "7/16",
+            "7/16",
+            "1/8"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "5/22",
+            "9/22",
+            "4/11"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-96",
+      "OPT": "1/4",
+      "T_feasible": true,
+      "opt_dest": [
+        0,
+        2,
+        0
+      ],
+      "enumerated_schedules": 12,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "7/9",
+            "2/9"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "5/6",
+            "1/6"
+          ],
+          "status": "OK",
+          "cost": "0"
+        },
+        {
+          "price": [
+            "3/5",
+            "2/5"
+          ],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    },
+    {
+      "name": "random-97",
+      "OPT": "4835703278458516698824706/1208925819614629174706179",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "enumerated_schedules": 8,
+      "oracle": [
+        {
+          "price": [],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-98",
+      "OPT": "19342813113834066795298824/6044629098073145873530895",
+      "T_feasible": false,
+      "opt_dest": [
+        0,
+        0,
+        1
+      ],
+      "enumerated_schedules": 3,
+      "oracle": [
+        {
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "1",
+            "0"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "0",
+            "1"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "9/10",
+            "1/10"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        },
+        {
+          "price": [
+            "5/8",
+            "3/8"
+          ],
+          "status": "NO_MATCHING",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "name": "random-99",
+      "OPT": "1/2",
+      "T_feasible": true,
+      "opt_dest": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "enumerated_schedules": 2,
+      "oracle": [
+        {
+          "price": [],
+          "status": "OK",
+          "cost": "0"
+        }
+      ]
+    }
+  ],
+  "mw_results": [
+    {
+      "name": "mw-single-sink-full",
+      "status": "OK",
+      "rounds": 64,
+      "full_N_completed": true,
+      "R": "1",
+      "gamma": "1/8",
+      "N": 64,
+      "average_loads": [
+        "1/2"
+      ],
+      "average_budget": "3/2",
+      "parameter_upper_bound": "10/7",
+      "weight_max_bits": 262,
+      "product_certificate_prefixes": 64,
+      "sample_rounds": [
+        {
+          "round": 1,
+          "price": [
+            "1"
+          ],
+          "loads": [
+            "1/2"
+          ],
+          "cost": "1/2",
+          "macro_dest": [
+            0
+          ]
+        },
+        {
+          "round": 2,
+          "price": [
+            "1"
+          ],
+          "loads": [
+            "1/2"
+          ],
+          "cost": "1/2",
+          "macro_dest": [
+            0
+          ]
+        },
+        {
+          "round": 3,
+          "price": [
+            "1"
+          ],
+          "loads": [
+            "1/2"
+          ],
+          "cost": "1/2",
+          "macro_dest": [
+            0
+          ]
+        },
+        {
+          "round": 4,
+          "price": [
+            "1"
+          ],
+          "loads": [
+            "1/2"
+          ],
+          "cost": "1/2",
+          "macro_dest": [
+            0
+          ]
+        },
+        {
+          "round": 5,
+          "price": [
+            "1"
+          ],
+          "loads": [
+            "1/2"
+          ],
+          "cost": "1/2",
+          "macro_dest": [
+            0
+          ]
+        },
+        {
+          "round": 64,
+          "price": [
+            "1"
+          ],
+          "loads": [
+            "1/2"
+          ],
+          "cost": "1/2",
+          "macro_dest": [
+            0
+          ]
+        }
+      ],
+      "distinct_occupied_menus": 1,
+      "occupied_menus": [
+        {
+          "home": 0,
+          "private_ids": [
+            0,
+            1
+          ],
+          "sink_destinations": [
+            0,
+            0
+          ],
+          "count": 64,
+          "weight": "1",
+          "load": [
+            "1/2"
+          ],
+          "volume": "1/2",
+          "need": "1/2"
+        }
+      ],
+      "macro_edge_marginals": [
+        {
+          "macro": 0,
+          "home": 0,
+          "weight": "1"
+        }
+      ],
+      "OPT": "1",
+      "T_feasible": true,
+      "enumerated_original_schedules": 16
+    },
+    {
+      "name": "mw-two-sinks-full-sub2",
+      "status": "OK",
+      "rounds": 512,
+      "full_N_completed": true,
+      "R": "1",
+      "gamma": "1/16",
+      "N": 512,
+      "average_loads": [
+        "1/8",
+        "1/8"
+      ],
+      "average_budget": "5/4",
+      "parameter_upper_bound": "6/5",
+      "weight_max_bits": 3590,
+      "product_certificate_prefixes": 512,
+      "sample_rounds": [
+        {
+          "round": 1,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "1/8",
+            "1/8"
+          ],
+          "cost": "1/8",
+          "macro_dest": [
+            0,
+            1
+          ]
+        },
+        {
+          "round": 2,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "1/8",
+            "1/8"
+          ],
+          "cost": "1/8",
+          "macro_dest": [
+            0,
+            1
+          ]
+        },
+        {
+          "round": 3,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "1/8",
+            "1/8"
+          ],
+          "cost": "1/8",
+          "macro_dest": [
+            0,
+            1
+          ]
+        },
+        {
+          "round": 4,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "1/8",
+            "1/8"
+          ],
+          "cost": "1/8",
+          "macro_dest": [
+            0,
+            1
+          ]
+        },
+        {
+          "round": 5,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "1/8",
+            "1/8"
+          ],
+          "cost": "1/8",
+          "macro_dest": [
+            0,
+            1
+          ]
+        },
+        {
+          "round": 512,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "1/8",
+            "1/8"
+          ],
+          "cost": "1/8",
+          "macro_dest": [
+            0,
+            1
+          ]
+        }
+      ],
+      "distinct_occupied_menus": 2,
+      "occupied_menus": [
+        {
+          "home": 0,
+          "private_ids": [
+            0
+          ],
+          "sink_destinations": [
+            0
+          ],
+          "count": 512,
+          "weight": "1",
+          "load": [
+            "1/8",
+            "0"
+          ],
+          "volume": "1/4",
+          "need": "1/4"
+        },
+        {
+          "home": 1,
+          "private_ids": [
+            5
+          ],
+          "sink_destinations": [
+            1
+          ],
+          "count": 512,
+          "weight": "1",
+          "load": [
+            "0",
+            "1/8"
+          ],
+          "volume": "1/4",
+          "need": "1/4"
+        }
+      ],
+      "macro_edge_marginals": [
+        {
+          "macro": 0,
+          "home": 0,
+          "weight": "1"
+        },
+        {
+          "macro": 1,
+          "home": 1,
+          "weight": "1"
+        }
+      ],
+      "OPT": "1",
+      "T_feasible": true,
+      "enumerated_original_schedules": 6561
+    },
+    {
+      "name": "mw-two-sinks-full-cycling",
+      "status": "OK",
+      "rounds": 384,
+      "full_N_completed": true,
+      "R": "3",
+      "gamma": "1/8",
+      "N": 384,
+      "average_loads": [
+        "3/4",
+        "3/4"
+      ],
+      "average_budget": "3/2",
+      "parameter_upper_bound": "10/7",
+      "weight_max_bits": 785,
+      "product_certificate_prefixes": 384,
+      "sample_rounds": [
+        {
+          "round": 1,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "3/2",
+            "0"
+          ],
+          "cost": "3/4",
+          "macro_dest": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "round": 2,
+          "price": [
+            "17/33",
+            "16/33"
+          ],
+          "loads": [
+            "0",
+            "3/2"
+          ],
+          "cost": "8/11",
+          "macro_dest": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "round": 3,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "3/2",
+            "0"
+          ],
+          "cost": "3/4",
+          "macro_dest": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "round": 4,
+          "price": [
+            "17/33",
+            "16/33"
+          ],
+          "loads": [
+            "0",
+            "3/2"
+          ],
+          "cost": "8/11",
+          "macro_dest": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "round": 5,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "3/2",
+            "0"
+          ],
+          "cost": "3/4",
+          "macro_dest": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "round": 384,
+          "price": [
+            "17/33",
+            "16/33"
+          ],
+          "loads": [
+            "0",
+            "3/2"
+          ],
+          "cost": "8/11",
+          "macro_dest": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "distinct_occupied_menus": 6,
+      "occupied_menus": [
+        {
+          "home": 0,
+          "private_ids": [
+            0
+          ],
+          "sink_destinations": [
+            0
+          ],
+          "count": 192,
+          "weight": "1/2",
+          "load": [
+            "1/2",
+            "0"
+          ],
+          "volume": "1/2",
+          "need": "1/2"
+        },
+        {
+          "home": 0,
+          "private_ids": [
+            0
+          ],
+          "sink_destinations": [
+            1
+          ],
+          "count": 192,
+          "weight": "1/2",
+          "load": [
+            "0",
+            "1/2"
+          ],
+          "volume": "1/2",
+          "need": "1/2"
+        },
+        {
+          "home": 1,
+          "private_ids": [
+            2
+          ],
+          "sink_destinations": [
+            0
+          ],
+          "count": 192,
+          "weight": "1/2",
+          "load": [
+            "1/2",
+            "0"
+          ],
+          "volume": "1/2",
+          "need": "1/2"
+        },
+        {
+          "home": 1,
+          "private_ids": [
+            2
+          ],
+          "sink_destinations": [
+            1
+          ],
+          "count": 192,
+          "weight": "1/2",
+          "load": [
+            "0",
+            "1/2"
+          ],
+          "volume": "1/2",
+          "need": "1/2"
+        },
+        {
+          "home": 2,
+          "private_ids": [
+            4
+          ],
+          "sink_destinations": [
+            0
+          ],
+          "count": 192,
+          "weight": "1/2",
+          "load": [
+            "1/2",
+            "0"
+          ],
+          "volume": "1/2",
+          "need": "1/2"
+        },
+        {
+          "home": 2,
+          "private_ids": [
+            4
+          ],
+          "sink_destinations": [
+            1
+          ],
+          "count": 192,
+          "weight": "1/2",
+          "load": [
+            "0",
+            "1/2"
+          ],
+          "volume": "1/2",
+          "need": "1/2"
+        }
+      ],
+      "macro_edge_marginals": [
+        {
+          "macro": 0,
+          "home": 0,
+          "weight": "1"
+        },
+        {
+          "macro": 1,
+          "home": 1,
+          "weight": "1"
+        },
+        {
+          "macro": 2,
+          "home": 2,
+          "weight": "1"
+        }
+      ],
+      "OPT": "3/2",
+      "T_feasible": false,
+      "enumerated_original_schedules": 729
+    },
+    {
+      "name": "mw-priced-rejection",
+      "status": "PRICED_FAIL",
+      "rounds": 0,
+      "full_requested": true,
+      "R": "4",
+      "gamma": "1/8",
+      "N": 256,
+      "failed_cost": "2",
+      "OPT": "2",
+      "T_feasible": false,
+      "enumerated_original_schedules": 256
+    },
+    {
+      "name": "mw-small-eta-prefix",
+      "status": "OK",
+      "rounds": 32,
+      "full_N_completed": false,
+      "R": "3/2",
+      "gamma": "1/32",
+      "N": 4608,
+      "average_loads": [
+        "63/512",
+        "33/256",
+        "63/512"
+      ],
+      "average_budget": "9/8",
+      "parameter_upper_bound": "34/31",
+      "weight_max_bits": 169,
+      "product_certificate_prefixes": 32,
+      "sample_rounds": [
+        {
+          "round": 1,
+          "price": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "loads": [
+            "3/16",
+            "0",
+            "3/16"
+          ],
+          "cost": "1/8",
+          "macro_dest": [
+            0,
+            1
+          ]
+        },
+        {
+          "round": 2,
+          "price": [
+            "257/770",
+            "128/385",
+            "257/770"
+          ],
+          "loads": [
+            "0",
+            "3/8",
+            "0"
+          ],
+          "cost": "48/385",
+          "macro_dest": [
+            0,
+            1
+          ]
+        },
+        {
+          "round": 3,
+          "price": [
+            "257/772",
+            "129/386",
+            "257/772"
+          ],
+          "loads": [
+            "3/16",
+            "0",
+            "3/16"
+          ],
+          "cost": "771/6176",
+          "macro_dest": [
+            0,
+            1
+          ]
+        },
+        {
+          "round": 4,
+          "price": [
+            "66049/198146",
+            "33024/99073",
+            "66049/198146"
+          ],
+          "loads": [
+            "0",
+            "3/8",
+            "0"
+          ],
+          "cost": "12384/99073",
+          "macro_dest": [
+            0,
+            1
+          ]
+        },
+        {
+          "round": 5,
+          "price": [
+            "66049/198662",
+            "33282/99331",
+            "66049/198662"
+          ],
+          "loads": [
+            "3/16",
+            "0",
+            "3/16"
+          ],
+          "cost": "198147/1589296",
+          "macro_dest": [
+            0,
+            1
+          ]
+        },
+        {
+          "round": 32,
+          "price": [
+            "1580019571820317063568778786121273112555213952001/4752161546587358125551491844278012052334429612034",
+            "796061201473361999206967136017732913612000854016/2376080773293679062775745922139006026167214806017",
+            "1580019571820317063568778786121273112555213952001/4752161546587358125551491844278012052334429612034"
+          ],
+          "loads": [
+            "3/16",
+            "0",
+            "3/16"
+          ],
+          "cost": "4740058715460951190706336358363819337665641856003/38017292372698865004411934754224096418675436896272",
+          "macro_dest": [
+            0,
+            1
+          ]
+        }
+      ],
+      "distinct_occupied_menus": 4,
+      "occupied_menus": [
+        {
+          "home": 0,
+          "private_ids": [
+            0
+          ],
+          "sink_destinations": [
+            0
+          ],
+          "count": 21,
+          "weight": "21/32",
+          "load": [
+            "3/16",
+            "0",
+            "0"
+          ],
+          "volume": "1/4",
+          "need": "1/4"
+        },
+        {
+          "home": 0,
+          "private_ids": [
+            2
+          ],
+          "sink_destinations": [
+            1
+          ],
+          "count": 11,
+          "weight": "11/32",
+          "load": [
+            "0",
+            "3/16",
+            "0"
+          ],
+          "volume": "1/4",
+          "need": "1/4"
+        },
+        {
+          "home": 1,
+          "private_ids": [
+            4
+          ],
+          "sink_destinations": [
+            2
+          ],
+          "count": 21,
+          "weight": "21/32",
+          "load": [
+            "0",
+            "0",
+            "3/16"
+          ],
+          "volume": "1/4",
+          "need": "1/4"
+        },
+        {
+          "home": 1,
+          "private_ids": [
+            5
+          ],
+          "sink_destinations": [
+            1
+          ],
+          "count": 11,
+          "weight": "11/32",
+          "load": [
+            "0",
+            "3/16",
+            "0"
+          ],
+          "volume": "1/4",
+          "need": "1/4"
+        }
+      ],
+      "macro_edge_marginals": [
+        {
+          "macro": 0,
+          "home": 0,
+          "weight": "1"
+        },
+        {
+          "macro": 1,
+          "home": 1,
+          "weight": "1"
+        }
+      ],
+      "OPT": "1",
+      "T_feasible": true,
+      "enumerated_original_schedules": 65536
+    },
+    {
+      "name": "mw-joint-home-switch-full-sub2",
+      "status": "OK",
+      "rounds": 512,
+      "full_N_completed": true,
+      "R": "1",
+      "gamma": "1/16",
+      "N": 512,
+      "average_loads": [
+        "1/8",
+        "1/8"
+      ],
+      "average_budget": "5/4",
+      "parameter_upper_bound": "6/5",
+      "weight_max_bits": 1542,
+      "product_certificate_prefixes": 512,
+      "sample_rounds": [
+        {
+          "round": 1,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "1/4",
+            "0"
+          ],
+          "cost": "1/8",
+          "macro_dest": [
+            0
+          ]
+        },
+        {
+          "round": 2,
+          "price": [
+            "65/129",
+            "64/129"
+          ],
+          "loads": [
+            "0",
+            "1/4"
+          ],
+          "cost": "16/129",
+          "macro_dest": [
+            1
+          ]
+        },
+        {
+          "round": 3,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "1/4",
+            "0"
+          ],
+          "cost": "1/8",
+          "macro_dest": [
+            0
+          ]
+        },
+        {
+          "round": 4,
+          "price": [
+            "65/129",
+            "64/129"
+          ],
+          "loads": [
+            "0",
+            "1/4"
+          ],
+          "cost": "16/129",
+          "macro_dest": [
+            1
+          ]
+        },
+        {
+          "round": 5,
+          "price": [
+            "1/2",
+            "1/2"
+          ],
+          "loads": [
+            "1/4",
+            "0"
+          ],
+          "cost": "1/8",
+          "macro_dest": [
+            0
+          ]
+        },
+        {
+          "round": 512,
+          "price": [
+            "65/129",
+            "64/129"
+          ],
+          "loads": [
+            "0",
+            "1/4"
+          ],
+          "cost": "16/129",
+          "macro_dest": [
+            1
+          ]
+        }
+      ],
+      "distinct_occupied_menus": 2,
+      "occupied_menus": [
+        {
+          "home": 0,
+          "private_ids": [
+            0
+          ],
+          "sink_destinations": [
+            0
+          ],
+          "count": 256,
+          "weight": "1/2",
+          "load": [
+            "1/4",
+            "0"
+          ],
+          "volume": "1/4",
+          "need": "1/4"
+        },
+        {
+          "home": 1,
+          "private_ids": [
+            4
+          ],
+          "sink_destinations": [
+            1
+          ],
+          "count": 256,
+          "weight": "1/2",
+          "load": [
+            "0",
+            "1/4"
+          ],
+          "volume": "1/4",
+          "need": "1/4"
+        }
+      ],
+      "macro_edge_marginals": [
+        {
+          "macro": 0,
+          "home": 0,
+          "weight": "1/2"
+        },
+        {
+          "macro": 0,
+          "home": 1,
+          "weight": "1/2"
+        }
+      ],
+      "OPT": "1",
+      "T_feasible": true,
+      "enumerated_original_schedules": 512
+    }
+  ],
+  "zero_threshold_results": [
+    {
+      "name": "T0-empty",
+      "status": "ZERO_SCHEDULE",
+      "assignment": [],
+      "OPT": "0",
+      "enumerated_original_schedules": 1,
+      "division_by_T_performed": false
+    },
+    {
+      "name": "T0-all-jobs-have-zero-edge",
+      "status": "ZERO_SCHEDULE",
+      "assignment": [
+        0,
+        0
+      ],
+      "OPT": "0",
+      "enumerated_original_schedules": 2,
+      "division_by_T_performed": false
+    },
+    {
+      "name": "T0-positive-macro-has-no-zero-edge",
+      "status": "FAIL",
+      "assignment": null,
+      "OPT": "1",
+      "enumerated_original_schedules": 2,
+      "division_by_T_performed": false
+    }
+  ],
+  "scope": [
+    "Independent min-priced eligible endpoint selection",
+    "Independent cost-scaled covering DP and exhaustive subset optimum",
+    "Actual-volume inclusion minimization and per-mode l1 bound B",
+    "Exhaustive macro injection matching and one-sided priced rejection",
+    "Original full processing matrix schedule enumeration",
+    "Exact product-potential MW prefix checks and selected full-N averages",
+    "Pre-division T=0 per-job zero-edge branch"
+  ],
+  "not_checked": [
+    "No generic rational LP or matroid intersection/rounding backend",
+    "No final matroid IR+B claim checked here",
+    "No arbitrary-instance structure extraction",
+    "No external novelty or universal approximation claim",
+    "The small-eta three-sink case runs a strict prefix, not its complete theoretical N"
+  ]
+}
