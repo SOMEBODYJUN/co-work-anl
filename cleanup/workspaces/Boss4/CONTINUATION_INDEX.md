@@ -335,3 +335,11 @@ R3_READY7IR：7源正文证据；根Claims和owner薄化精确合同、H4真实�
 R3_READY7IR数学/证据pushed aa9c9141e9ebd8b2367ab8d4cecc470198ac67d1；7源done另推送 77ce19ae0c5bed1ba79a184eb7cbcaec781fc0f3。Boss4累计2072完成，实际未完29；持续接续全仓，不以本批清空收尾。
 
 R3_READY14IU：14源正文证据；24客户势最大列精确核验、真实前缀完整利润席位及静态最坏占位与全SPE零遗憾边界；共14主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY14IU_REMAINING_SCOPE.json。
+
+R3_READY14IU数学/证据pushed b809acfa064bafb3144e372057592bd8451b92ed；14源done另推送 37652c39bfed6e762596975b5278c0f9442faf44。Boss4累计2086完成，实际未完20；持续接续全仓，不以本批清空收尾。
+
+R3_READY20IZ：20源完整数学正文与证据；全参数真实末菜单锥/低尾选择报告、727原始付款/共同签名分解、UM六处修正及入口边界、H4与金融路由量词；共20主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY20IZ_REMAINING_SCOPE.json。
+
+R3_READY20IZ数学/证据pushed 162df1f9f66f80d7747ee1a3e23179c74b17941b；20源done另推送 d1297f567f2ec9647bc42abb6179c26c77439f03。Boss4累计2106完成，实际未完15；持续接续全仓，不以本批清空收尾。
+
+R3_READY13JC：13源正文证据；一般净缺口与FTA/Mpath、原weak-iid审查证书及元数据错项、私有谱原报告与身份账范围；共13主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY13JC_REMAINING_SCOPE.json。
