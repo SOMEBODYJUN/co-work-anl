@@ -12,12 +12,15 @@ source_refs:
   - source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_conditional_leaf_hall_author_read_after.md
   - source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_conditional_leaf_hall_consistent_marginals_author_read_after.md
   - source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_conditional_leaf_hall_final_canonical_review.md
-source_ids: [c36affbedf5dbbdc82cf, ee48773613be507fe14e, 980f7d9ca13ea7f9a0b4, 4c1d42084dbfbe3f593f]
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/conditional_leaf_hall_consistent_marginals_author_proof_v3.md
+  - source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/conditional_leaf_hall_consistent_marginals_author_proof_v3.md
+source_ids: [c36affbedf5dbbdc82cf, ee48773613be507fe14e, 980f7d9ca13ea7f9a0b4, 4c1d42084dbfbe3f593f, 2c9423076f733f78f201]
 source_sha256:
   - f5e2bbfc15066eff1969a8a91106d92c22103c1c245b80f65eda365e85518812
   - ca41d9f2bde78ceee5a2905ad00ac3ee871467ecfcdc909aa16c2c85d47264f5
   - 4cd8ac153a7532edd5e97a4009e741c2c7142827b7b5f93b96a984da323dff41
   - 5a526fd69b8174218796e674e3f378cd1c6bd7f52ced120dad1121ffd168731b
+  - 730c5ef3af3861f123466d7e561111b363f5effb51c839efc0d6d284591d14c9
 evidence_manifest: ../../tools/evidence/retired-conditional-leaf-hall-proof-canonical-20261031/manifest.json
 related_objects:
   - archives/unrelated-machines/state/障碍/一致条件叶边际仍无福利下界--障碍.md
@@ -71,3 +74,7 @@ consistent-marginals author read-after 对 lower-fill transportation 给出完�
 四源共同 PASS 只针对该 relaxation、指定 partition/path projection、Q_t family 和 MC edge-marginal consistency。它们不提供 actual-YES approximation barrier、NP hardness、PCP/UGC、full CONFIG/PSD equivalence、一般 unrelated-machines 算法或 UM-TARGET-v1 结论。现有障碍页中的“v3 Exact-only 尚待证明”应由本增量引用，而不是删除原始历史；如第三阶段需要状态转换，可把“candidate statement -> proof read-after PASS”作为版本关系，不能把 t=2 audit 升格为全参数软件证明。
 
 原件、manifest、哈希校验脚本和 validation PASS 见 `archives/unrelated-machines/tools/evidence/retired-conditional-leaf-hall-proof-canonical-20261031/`。
+
+## Boss6 对 v3 作者证明源的补充读取
+
+本轮新增完整读取 `conditional_leaf_hall_consistent_marginals_author_proof_v3.md`（clean ID `2c9423076f733f78f201`，5886 字节，SHA-256 `730c5ef3af3861f123466d7e561111b363f5effb51c839efc0d6d284591d14c9`）。该作者源把运输表写成无除法的残余贪心：先放 `w_(s,i)=z_s`，再用总量相同的残余行 `lambda_s-z_s` 与残余列 `pi_i-b_i, pi_h` 逐次填充；因此 `lambda=0`、`b=1`、`d=0/1` 和显式 zero-incidence 边界均闭合。按列边际求和得到同一 global leaf flow，证明范围仍限指定 core/path partition；它不提供 all-core joint law、完整 CONFIG/PSD 后端、实际调度硬度或一般 UM 算法。该来源是本对象的 primary author-proof 版本，不能把其历史独立性升级为本轮盲审。
