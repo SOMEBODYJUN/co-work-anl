@@ -1,0 +1,91 @@
+{
+  "status": "passed",
+  "arithmetic": "exact Fraction",
+  "original_entry_runs": 0,
+  "definition_only_imports": 1,
+  "diagnostic_runs": 1,
+  "source_sha256": "1cf7ebfc58e92dc7dac92a6d1753f8ae899be8be078b00b1da53e1ae7c6982bc",
+  "cases": [
+    {
+      "name": "prune-excess-root-children",
+      "demand": [
+        1,
+        0,
+        0
+      ],
+      "given_tree": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "tree_score": "1",
+      "actual_schedule": [
+        1,
+        0
+      ],
+      "actual_loads": [
+        "1",
+        "1",
+        "0"
+      ],
+      "root_unit_jobs_total": 1,
+      "child_jobs": [
+        [
+          0
+        ],
+        [],
+        []
+      ],
+      "old_unpruned_root_formula": "2-2/1=0",
+      "correct_kept_root_formula": "2-1/1=1"
+    },
+    {
+      "name": "include-nonroot-incoming-unit",
+      "demand": [
+        1,
+        2,
+        0
+      ],
+      "given_tree": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "tree_score": "1/2",
+      "actual_schedule": [
+        1,
+        2,
+        1,
+        0
+      ],
+      "actual_loads": [
+        "1",
+        "3/2",
+        "1"
+      ],
+      "root_unit_jobs_total": 1,
+      "child_jobs": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        []
+      ],
+      "nonroot_home_mass": "1/2",
+      "nonroot_incoming_unit": "1",
+      "full_nonroot_load": "3/2"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+--- archives/customer-attraction/state/问题/自由extra-one与iid安全值边界--问题.md
++++ archives/customer-attraction/state/问题/自由extra-one与iid安全值边界--问题.md
+@@ -1,6 +1,34 @@
++---
++id: customer-attraction/free-extra-one-iid-security-boundaries
++kind: problem
++type_tag: 问题
++title: 自由extra-one与iid安全值桥的边界
++status: structured-subclass-proved; general-extra-one-Mfull-NQ-all-p-WP-refuted; historical-tests-retained
++summary: 保结构归属定理和最小反例正规形；银行完整SPE经Jensen同时否定整数extra-one逐人桥及完整根菜单低值候选，历史有限阴性不再代表当前开放。
++source_refs:
++- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/structured_maximal_membership_theta.md
++- source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/structured_maximal_membership_theta.md
++- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/audit_structured_theta.py
++- source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/audit_structured_theta.py
++- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/structured_theta_audit.json
++- source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/structured_theta_audit.json
++- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/minimal_extra_one_counterexample_normal_form.md
++- source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/minimal_extra_one_counterexample_normal_form.md
++- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/extra_iid_probe.py
++- source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/extra_iid_probe.py
++- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/extra_iid_probe_report.json
++- source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/extra_iid_probe_report.json
++- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/full_weak_wp_probe.py
++- source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/full_weak_wp_probe.py
++- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/full_weak_wp_report.json
++- source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/full_weak_wp_report.json
++- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/README.md
++- source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-0f99797b33de46bfb498541a0bc5fae9/security/README.md
++---
++
+ # 自由 extra-one 与 iid 安全值桥的边界
+ 
+-状态：条件结论、有限实验与障碍均已整理；一般 Q-CAG-HALF、自由 extra-one 首位桥和 extra-iid 首位桥仍开放。
++状态：条件结论、有限实验与障碍均已整理。下文九源的OPEN为历史记述；当前完整根菜单Mfull、全p-WP与低值对称Nash-NQ已有[银行反例](../反例/笛卡尔银行完整根菜单的低值自洽分布失败--反例.md)。自由分数extra-one逐人桥的后续反族见[银行门槛反族](../反例/笛卡尔银行目录的逐人分数门槛反族--反例.md)。本页不认证其它旧OPEN仍为现状；恰六人half未被这些例否定，五人half已有[定理](../定理/五人半覆盖--定理.md)。
+ 
+ 本条目处置 R-0f997 的 security 九源。研究对象是六人有限单位客户、有限非空共同目录、完整有序历史纯 SPE；形式推理允许任意合法主题前缀形成的整数背景负载、任意历史依赖平局，以及空主题、重复标签、零客户和离轨历史。这里的“首位桥”是对任意剩余人数 r 和背景 b，完整纯 SPE 的首位收益下界；它不能被静态菜单、末位均衡或有限浮点扫描替代。
+ 
+@@ -41,6 +69,8 @@
+ 
+ ## 二、一般目录的 extra-one 最小反例正规形
+ 
++当前原整数静态F_r也已否定，不能只报告自由分数门槛失败：令Q为任意r槽合法整数背景的混合，其均值负载仍在r·conv{1_A}内。逐客户Jensen给max_T E_Q[Σ_(x∈T)1/(b_x+1+c_x)]≥B_r(b)，对Q取min即真正整数静态安全值v_(r+1)(b)≥B_r(b)。银行m4的完整SPE给u=4/3<19/14=B4≤v5；一般m≥4亦然，包含恰六人。这里是下界关系，不把整数值与自由分数值宣称相等。故下面最小反例正规形保其条件推导和已证小目录边界；不再将其一般目标当成尚待证明。Mfull失败、整数F_r失败、自由分数桥失败与half各是不同命题。
++
+ 源 `minimal_extra_one_counterexample_normal_form.md`（`c3317c7ab24c0a5af1b5`）研究较弱的候选
+ 
+     F_r: 首位收益 u >= v_(r+1)(b),
+@@ -64,9 +94,11 @@
+ 
+     p^T K p <= u
+ 
+-而不是 Mfull 中的 `min_b p^T K[:,b] <= u`。它对 k=4/5、r=3/4/5 的 80 个完整策略和所有非空均匀支持 p 求线性规划；`full_weak_wp_report.json`（`5989499940c8c0986df2`）输出 `best=0`。报告明白标注“all-p WP not Mfull”，所以无正差只说明有限实验未击穿更弱、不同的对象，不能外推到 Mfull、iid 桥或一般 half。
++而不是 Mfull 中的 `min_b p^T K[:,b] <= u`。它对 k=4/5、r=3/4/5 的 80 个完整策略和所有非空均匀支持 p 求线性规划；`full_weak_wp_report.json`（`5989499940c8c0986df2`）输出 `best=0`。报告明白标注“all-p WP not Mfull”，所以无正差只说明该有限域未找到这项全p二次型违反，不能作为Mfull、iid桥或一般half的普遍证明。
+ 
+ README（`d18feeb0709a144aadce`）把这四条边界汇总为：结构化 theta 是已证主成果；extra-one 与 extra-iid 仍是候选；有限扫描不构成一般结论。其余脚本还保留了失败路线的名称和停止追加同类样本的理由，不能把 README 摘要当作新的数学证据。
++
++后续校正：上述 `best=0` 仅是历史有限阴性。完整银行四人根例保根共四槽，对每个列分布Q都有 `max_T(KQ)_T>=B4=19/14>u=4/3`；所有对称NE的值更精确为59/36，故一般Mfull、低值NQ及全p-WP均已否定。它不是删根矩阵，不反驳half，也不据此判定其它iid或路径级桥，详[完整根菜单反例](../反例/笛卡尔银行完整根菜单的低值自洽分布失败--反例.md)。
+ 
+ ## 四、对当前六人目标的用法与未解决义务
+ 
