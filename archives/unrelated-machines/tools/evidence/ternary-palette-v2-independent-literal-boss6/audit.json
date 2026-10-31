@@ -1,0 +1,46 @@
+{
+  "status": "pass",
+  "scope": {
+    "gap_k": "1..30",
+    "local_palette_k": "1..4",
+    "tree_matrix": "two explicit d=3, h=2 trees; all 2^9 edge assignments"
+  },
+  "G_values": {
+    "1": "5/4",
+    "2": "17/14",
+    "3": "53/46",
+    "4": "161/146",
+    "5": "485/454"
+  },
+  "tree_instances": [
+    {
+      "name": "binary_palette_height2",
+      "d": 3,
+      "height": 2,
+      "q": 2,
+      "opt": "4/3",
+      "expected_2_minus_q_over_d": "4/3",
+      "all_bottom_parents_at_most_two_colors": true
+    },
+    {
+      "name": "monochrome_palette_height2",
+      "d": 3,
+      "height": 2,
+      "q": 1,
+      "opt": "5/3",
+      "expected_2_minus_q_over_d": "5/3",
+      "all_bottom_parents_at_most_two_colors": true
+    }
+  ],
+  "checks": [
+    "G_1=5/4 and G_k strictly decreases through k=30",
+    "G_k<=5/4 through k=30",
+    "2^k < 3^k-1 for k>=2 through k=30",
+    "all products of k palettes of size at most two have at most 2^k tuples for k<=4",
+    "finite ordinary tree-machine enumeration matches OPT=2-q/d on both instances"
+  ],
+  "limitations": [
+    "finite checks do not prove the all-height identity or any complexity theorem",
+    "no arbitrary recoloring, non-aligned tensor, padding, or altered task interface is tested"
+  ]
+}
