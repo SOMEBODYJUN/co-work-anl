@@ -271,3 +271,7 @@ R3_READY9GM：GH4/GG5九源：one-excess换手/新角色POOL与银行重入全q�
 R3_READY9GM数学/证据pushed be307b051dbfaa0ca2bcae9322b43c36e8ff85d8；9源done另推送 5b9e4bf112a5e27a7bdc4ae2544398f0cf2d905f。Boss4累计1858完成，实际未完28；持续接续全仓，不以本批清空收尾。
 
 R3_READY18GQ：GJ5/GF5/GE3/GK5共18源：循环根扩张/精确末位支持/两奖励补全；Root纠正旧963候选三正式页根IC遗漏和hardcoded verified误标，保stableID/旧原源done，新增一次定义核验五根负行。等号模式闭包/联合截断严格非SPE；三入口精确版本与Beta-clone固定策略lift/collision债务。正文证据checkpoint pushed后18逐源done，继续全仓。；共18主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY18GQ_REMAINING_SCOPE.json。
+
+R3_READY18GQ数学/证据pushed a51b7e273ee3b3bf68cbcfa721f3fb9d8164fdfb；18源done另推送 0eefc66d910d02a56e1176428208b08513a00a89。Boss4累计1876完成，实际未完22；持续接续全仓，不以本批清空收尾。
+
+R3_READY9GT：GP1/GM3/GI5九源：family890与三独审完整同SHA别名按准确数学覆盖duplicate，0冗余新正文；固定高尾窄水位失败、全历史避背景的统一缩尾正接口和输入/原审计严格scope，原8522入口一次/6997字节全同与独立data-only有限算术分开。全仓10921源版本、最新实际快照完成4648，远未全仓结束；先checkpoint pushed再9逐源done，继续全仓。；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY9GT_REMAINING_SCOPE.json。
