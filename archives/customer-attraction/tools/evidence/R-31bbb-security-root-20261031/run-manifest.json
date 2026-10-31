@@ -1,0 +1,59 @@
+{
+  "batch": "R-31bbb-security-root-20261031",
+  "source_results": [
+    {
+      "file": "source/background_pair_numerical.json",
+      "status": "numerical_only",
+      "trials": 260,
+      "max_ratio": 1.0,
+      "candidate": null
+    },
+    {
+      "file": "source/background_pair_large_numerical.json",
+      "status": "numerical_only",
+      "trials": 120,
+      "max_ratio": 1.0,
+      "candidate": null
+    },
+    {
+      "file": "source/common_policy_Q_numerical.json",
+      "status": "numerical template screen only",
+      "cases": 85,
+      "all_solver_status": 0
+    },
+    {
+      "file": "source/ssr_41_isolation_numerical.json",
+      "status": "numerical_only",
+      "completed": 1500,
+      "max_min_optimal_regret": 0.0,
+      "counterexample_candidate": null
+    }
+  ],
+  "replays": [
+    {
+      "command": "cd tmp/r31replay/common && python3 common_policy_Q_probe.py --trials 2 --output common_smoke.json",
+      "output": "common_smoke.json",
+      "scope": "five fixed policies plus two deterministic random cones"
+    },
+    {
+      "command": "cd tmp/r31replay/ssr && python3 ssr_41_isolation_probe.py --trials 2 --output ssr_smoke.json",
+      "output": "ssr_smoke.json",
+      "scope": "two deterministic perturbation trials"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "dependencies/common/background_pair_probe.py",
+      "sha256": "70bf8fe44b71958d8d808a41e470f68814c01fe0bb3755dcf7f25ac5212316d5"
+    },
+    {
+      "path": "dependencies/ssr/research/workspaces/customer-attraction/R-a0bb57fa24044a8794bc7991918a19c6/security_aggregate/pair_theory/all_optimal_query_failure_41.json",
+      "sha256": "a338bb34429a770783d54d16a9924f565af599758a927a2e67bab1ddee1bd76e"
+    }
+  ],
+  "limitations": [
+    "SciPy/HiGHS floating LP; no rational certificate",
+    "common-Q cases are template screens and do not prove aggregate security",
+    "SSR source is a 41-client policy used as a fixed perturbation baseline; this batch does not prove the six-provider theorem"
+  ]
+}
