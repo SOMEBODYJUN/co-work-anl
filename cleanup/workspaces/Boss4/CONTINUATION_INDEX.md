@@ -279,3 +279,7 @@ R3_READY9GT：GP1/GM3/GI5九源：family890与三独审完整同SHA别名按准�
 R3_READY9GT数学/证据pushed 0be35cc114acc8003f52e4d4766e6e28b1ab4af9；9源done另推送 51d85d2f22b34f98062c5ab12d9afcbf87ba157d。Boss4累计1885完成，实际未完28；持续接续全仓，不以本批清空收尾。
 
 R3_READY24GU：GN4/GL5/GQ5/GR5/GO5共24源：产品菜单277/54夹证/小支撑几何/cap上下游、六人残差与根图原义务、真正安全产品与全部位置门槛、两个统一缩尾/relay原入口不同域、共同matching包络与60点557行/跨族220。缺代码/全型lambda/未审数据仅保原身份；共同包络不替全局付款，全部formal-SPE界分别保留。先明确checkpoint pushed再24逐源done，继续全仓。；共24主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY24GU_REMAINING_SCOPE.json。
+
+R3_READY24GU数学/证据pushed b26ba720a88388ac166b998176f48f8947522154；24源done另推送 70f449b912f2480018a652a3633d636974bf5158。Boss4累计1909完成，实际未完6；持续接续全仓，不以本批清空收尾。
+
+R3_READY10GZ：GT中2477单源/GS4/GV5十源：UM三维/全层匹配需求与近二源归约不同、空根约定/typed审计后修正及Santa位模型义务；D22十一合同/六失败/两Bellman族及M0端点，14/12类型/selector非同字节；一般统一缩尾1662报告目标SHA版本差与零输入vertical纯BR两点不同scope。所有原件不改，先checkpoint pushed再10逐源done，Root同claim另一UM大入口仍独立在做，全仓不收尾。；共10主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY10GZ_REMAINING_SCOPE.json。
