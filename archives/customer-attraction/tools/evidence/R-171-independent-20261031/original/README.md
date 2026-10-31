@@ -10,3 +10,5 @@
 * `signed_delta_residual_review.md`：独立重构有符号δ稿第5/6节的新标量余项加强、真实S/Z归一化系数、末位信用及含tau跨玩家总支付式。解析检查通过；没有审计13人新数值、没有证明一般支付。
 
 旧弱CCE计数LP、精确对偶及充分性在`../../independent/weak_cce_occupancy.md`。
+
+新增来源增量 `e659ae7cc2fe2ecebd70` 已保留为 `weak_cce_boss2_audit.json` 原字节。该报告的 Fraction 数值与 57 组有限范围保持不变；审查修正是：原固定槽位混合只有聚合 `aggregate_slack` 非负，须先对玩家位置均匀对称化后才得到逐玩家 CCE。花瓣标签对称不能替代玩家对称，一般弱 CCE 桥与 Q-CAG-HALF 仍开放。
