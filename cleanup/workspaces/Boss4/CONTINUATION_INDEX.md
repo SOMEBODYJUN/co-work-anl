@@ -105,3 +105,8 @@ R3_READY9B：可信BUBBLE正规范真IC见证/完整迭代链与正损失静态�
 R3_READY9B数学/证据pushed 9d4e0ad4605ce126bf4a3aa2f816881683ca5268；9源done另推送 4de83a6d44e7bc63d8323e27eced5f813428cc0c。Boss4累计906完成，实际未完36；持续接续全仓，不以本批清空收尾。
 
 R3_READY6C：Boss direct原共享菜单KKT/实际负载银行、T-IC及有限hinge两源；uniform presence/端口审查及双reset原入口四源完整处理，两个原程序各一次精确复现，有限与一般阈值分开；共6主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY6C_REMAINING_SCOPE.json。
+
+R3_READY6C数学/证据pushed 262cec13ae16a0c7577fa11f131cb0034336eddb；6源done另推送 e33ba9550ee2c33f0c0e1a1294c5376b1064f665。Boss4累计912完成，实际未完40；持续接续全仓，不以本批清空收尾。
+
+
+R3_READY25D：私有全模板双构造历史5、父broadcast/density原件双复现5、退役五主稿完整六对象5、跨角色零loss/容量二/原QA5；保全部证明与精确未证接口，不把局部QA改称完整SPE新认证；再含学习构建/全HTML语义/审计绑定5源，字体规则吞并与模型标签纠错准确保全，未冒称新视觉PASS；共25主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY25D_REMAINING_SCOPE.json。
