@@ -396,3 +396,7 @@ R3_READY11LA数学/证据pushed 340e2e41e29503a80bd401b2257b2f0144de77ed；11源
 
 
 R3_READY21LD：十七源正文；五UM程序/精确导出与两旧页任务单位澄清、四bank输出原证据精确归位、五路由原有理分离和固定目标纠错、闭包与共同客户删除义务；另四源私有遗漏比率/成对额外槽势/覆盖参数比较，0旧扫描重跑；共21主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY21LD_REMAINING_SCOPE.json。
+
+R3_READY21LD数学/证据pushed b6a989156242c74dc452c5830b86f8d80dcf63a6；21源done另推送 9d27dff73302d05522d92c6b15e7495f5673fee1。Boss4累计2290完成，实际未完9；持续接续全仓，不以本批清空收尾。
+
+R3_READY17LI：十七源正文/来源绑定；静态iid与受限探针、SUMROW外部钱包/完整末池与两客户流范围、三原Farkas源准确复用、五枢轴与几何实现primary合同，0重复充分运行；共17主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY17LI_REMAINING_SCOPE.json。
