@@ -67,15 +67,16 @@ for name, exp in EXPECTED.items():
         witness = obj.get("witness")
         if name.startswith("6c9d"):
             if witness is not None: errors.append(f"unexpected witness {name}")
-            continue
-        if not isinstance(witness, dict): errors.append(f"missing witness {name}"); continue
-        if witness.get("root") != [0, 3, 4]: errors.append(f"root {name}: {witness.get('root')!r}")
-        if witness.get("p") != P: errors.append(f"p {name}: {witness.get('p')!r}")
-        if len(witness.get("policy", {})) != 43: errors.append(f"policy count {name}")
-        if len(witness.get("states", [])) != 83: errors.append(f"state count {name}")
-        if len(witness.get("potential", [])) != 83: errors.append(f"potential count {name}")
-        for field in ("value_lower", "welfare"):
-            if not isinstance(witness.get(field), (int, float)) or not math.isfinite(witness[field]): errors.append(f"nonfinite {name}.{field}")
+        elif not isinstance(witness, dict):
+            errors.append(f"missing witness {name}")
+        else:
+            if witness.get("root") != [0, 3, 4]: errors.append(f"root {name}: {witness.get('root')!r}")
+            if witness.get("p") != P: errors.append(f"p {name}: {witness.get('p')!r}")
+            if len(witness.get("policy", {})) != 43: errors.append(f"policy count {name}")
+            if len(witness.get("states", [])) != 83: errors.append(f"state count {name}")
+            if len(witness.get("potential", [])) != 83: errors.append(f"potential count {name}")
+            for field in ("value_lower", "welfare"):
+                if not isinstance(witness.get(field), (int, float)) or not math.isfinite(witness[field]): errors.append(f"nonfinite {name}.{field}")
     else:
         if "witness" in obj: errors.append(f"unexpected witness {name}")
     print(f"OK {name} bytes={len(data)} sha256={got_sha} objective={obj.get('best_objective')!r}")
