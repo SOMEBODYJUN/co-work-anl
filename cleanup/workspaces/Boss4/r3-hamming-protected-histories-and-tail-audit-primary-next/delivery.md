@@ -1,0 +1,5 @@
+# Hamming恢复代码/报告两源交付
+
+2primary13923B全部真实完整读，2integrated/1程序对象；原KQ数学不重造。原localmissing与后来normalshow双capture真实边界保，全8case/7尾scope/7预期negative完整去向。
+
+原36claim b766fbfeb3bb5a319e9401d300b476ace7e0a0f3 pushed、local_sync原synced不改（若needs-attention另保Root独立恢复证据），本2owner/SHA核。0原CLI/import/数学/旧成功复跑，无扩阴性扫描或sharedGit。Root先推证据正文再done。
