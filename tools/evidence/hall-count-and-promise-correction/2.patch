@@ -1,0 +1,39 @@
+--- archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md
++++ archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md
+@@ -1,8 +1,10 @@
+ ---
+ id: unrelated-machines/hall-group-flow-and-shared-sink-joint-review
+ kind: review
++type_tag: 审查
+ title: Hall联合组流与共享汇点宏分配双源审查
+ status: complete-source-read-integrated
++summary: 同体积共同资格组的联合Hall流及单汇点模式匹配分别保严格范围，未知OPT瓶颈须含接收网络。
+ truth_status: two restricted positive interfaces with exact quantifiers and failure boundaries
+ scope: "common-eligibility Hall flow and one-shared-sink joint macro assignment; no general UM theorem"
+ source_refs:
+@@ -86,13 +88,13 @@
+ \[
+ t=\max\left(\max_h W_h,\max_j w_j/\delta,B\right)
+ \]
+-作为阈值，其中 (B) 是使宏任务可被 home 覆盖的最小实际宏时间瓶颈。承诺域内 (t\le OPT)，且宏边、组总量和单件上界都能在 (t) 上满足阈值合同，因此调用阈值算法得到 (rOPT) 上界。搜索只访问实际输入时间，不二分连续实数，也不调用 OPT 精度 oracle。
++作为阈值，其中 (B) 是使同一 macro→home→receiver 联合网络覆盖全部宏任务的最小实际宏时间瓶颈，接收资格和 q 容量保持不变；它不是仅 macro→home 匹配的瓶颈。承诺域内 (t\le OPT)，且宏边、组总量和单件上界都能在 (t) 上满足阈值合同，因此调用阈值算法得到 (rOPT) 上界。搜索只访问实际输入时间，不二分连续实数，也不调用 OPT 精度 oracle。
+ 
+ (T=0)、(delta=0)、空任务、(Z/E_h=\varnothing)、没有 home 和宏任务过多等分支均显式处理。网络的节点边数是输入长度的多项式；整数增广最多增加 (|B|) 次，容量按数值存储但不按 q 复制。前缀和、精确有理比较和输出任务编号的位长受显式输入总位长多项式控制。附带的指数 DFS 和有限枚举只作独立审计，不能替代生产算法的多项式证明。
+ 
+ ## 5. 反例边界和可回收机制
+ 
+-共同资格是核心承重条件。两个私有任务分别只能去不同 sink 时，交集可能为空，联合流会可靠 FAIL，即便允许把任务分开看似可行。组负载下界 (W_h\ge T) 也不可省略：若每组总量低于 (T)，可以构造一个 home 负载与共同 sink 负载都不超过 (T) 的例子，但 q 槽网络不再代表该组的实际出口需求。严格 Hall 计数不能自动把 q 槽降成 q−1；存在三组、两个共同 sink 的实际 (T=1) 见证要求两个槽以上的联合容量。
++共同资格是核心承重条件。两个私有任务分别只能去不同 sink 时，交集可能为空，联合流会可靠 FAIL，即便允许把任务分开看似可行。一般组负载下界为 ((1/2+1/q)T\le W_h)。原文 (W_h\ge T) 的反例专指 (q=2)：三个 home 各有时间 (2/3) 的宏任务及四件 (1/6) 私有任务、一个共同 sink，真实 (T=1) 可行而两槽网络无法接收三个占用组。严格 Hall 计数不能自动把 q 槽降成 q−1；存在三组、两个共同 sink 的实际 (T=1) 见证要求两个槽以上的联合容量。
+ 
+ 任意有理 sink 容量下，满足选择条件的 home 子集也不必形成拟阵。例如三个组对四个容量半单位 sink 的资格关系可使单组与两组联合可行，但任意两组加第三组的交换条件失败。这限制了把该接口抽象成简单拟阵基的做法；它不是一般选择或 UM 硬度结论。
+ 
+@@ -133,8 +135,7 @@
+ a_zc_j\le p_{zj}\le\rho a_zc_j,
+ \qquad p_{zj}\le\beta T.
+ \]
+-把任务虚拟化到单汇点，虚拟时间为 (c_j/S)，(S=\sum_z1/a_z)，调用单汇点算法得到总虚拟 work 不超过 ((1+\eta)TS)。再按实际 pool 负载最小的机器逐件恢复；总 work 上界保证每一步至少存在某台负载不超过 (
+-ho(1+\eta)T)，加上单件上界后得到 pool 负载 ([\rho(1+\eta)+\beta]T)。这是真实 profile 结构的条件恢复，不是把多个 sink 任意压成单一预算。
++把任务虚拟化到单汇点，虚拟时间为 (c_j/S)，(S=\sum_z1/a_z)，调用单汇点算法得到总虚拟 work 不超过 ((1+\eta)TS)。再按实际 pool 负载最小的机器逐件恢复；总 work 上界保证每一步至少存在某台负载不超过 (\rho(1+\eta)T)，加上单件上界后得到 pool 负载 ([\rho(1+\eta)+\beta]T)。这是真实 profile 结构的条件恢复，不是把多个 sink 任意压成单一预算。
+ 
+ ## 9. 失败机制、证据和开放范围
+ 

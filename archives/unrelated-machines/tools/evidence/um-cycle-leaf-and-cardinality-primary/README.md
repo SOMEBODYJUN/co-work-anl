@@ -1,0 +1,9 @@
+# 五份闭环、条件叶、C2与计数闭包原程序
+
+original为五个inventory精确原件，comparisons/historical-runs保完整相关证明/旧输出，manifest逐源给完整hash/冻结位置；旁读不替其它source done。
+
+本批新增原入口执行0。同SHA充分真实旧run及两leaf的rootfresh目录重放由runtime-dependencies-and-run-binding准确绑定。两个leaf原脚本会写CWD固定名，本批没有运行它们或覆盖任何旧输出。
+
+fixtures为直接数学描述保全的3个旧leaf输入点、3个闭环原双端输入/显式path和m2负平方，不导入原程序。verify_delivery只核冻结字节、全部真实矩阵/赋值/flow/matching以及直接有理算术，不重新运行Bareiss/closure/Dijkstra/lift/audit。
+
+comparison-findings与两旧页snapshot保beta1计数和失败rank字段的最小未应用澄清；已正确的后续证明页不覆盖。四篇正式资源分别保存原程序独有数学、实现/输入和有限范围；五receipt及自查/关系见workspace。

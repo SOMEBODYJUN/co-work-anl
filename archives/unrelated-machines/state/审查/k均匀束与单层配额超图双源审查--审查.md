@@ -1,8 +1,10 @@
 ---
 id: unrelated-machines/k-uniform-bundle-and-single-layer-quota-review
 kind: review
+type_tag: 审查
 title: k均匀束与单层配额超图双源审查
 status: complete-source-read-integrated
+summary: 显式区分可选资源束与单邻域、q独立根需求及零根约定；分层恒等不提供一般UM困难性。
 scope: "exact layered matching-floor identities and the cross-layer consistency obligation for shared-resource demand trees"
 source_refs:
   - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/current/unrelated_machines/k_uniform_bundle_matching_floor.md
@@ -36,7 +38,7 @@ inventory_sha256:
  \min\left\{\frac{\nu_t(E)}q,\frac tK\right\}.
 \tag{1}
 \]
-当 (q=0) 时按空根分支定义两边为 0。通过既有调度桥梁，对应实际实例的值为 (OPT=2-b^*)。这一定义把“每个选中束只取 (t) 件”作为一个真实层，而不是把完整 (K)-束和单资源边混成同一对象。
+q>0 时通过既有调度桥梁，对应实际实例的值为 (OPT=2-b^*)。原公式及程序在 q=0 返回 0 只是空值约定，不能当作标准根树评分或据此推出 OPT=2：标准零需求终端根的截断评分为 1，原 token 桥只剩 unit 根任务时 OPT=1。这一定义把“每个选中束只取 (t) 件”作为一个真实层，而不是把完整 (K)-束和单资源边混成同一对象。
 
 ## 2. 完整证明机制
 
@@ -76,11 +78,11 @@ b^*(Q(A;q,K))
 
 ## 6. 对近二归约的必要义务
 
-若某接口要求 YES 具有 \(b^*=1\)，则必须有 \(t=K\) 且 \(\nu_K=q\)：需要 \(q\) 个完整 \(K\)-元领取。NO 要求 \(b^*\le\delta\) 时，所有 \(t=1,\ldots,K\) 都必须满足
+若本单邻域接口要求 YES 具有 \(b^*=1\)，则必须有 \(t=K\) 且 \(\nu_K\ge q\)：需要至少 \(q\) 个完整 \(K\)-元领取。这里根需求 q 独立于选择点数；例如 N=2、q=K=1、两个不交 singleton 邻域给 ν_K=2、b*=1。前述根需求恰为选择点数的 bundle 模型才将此条件写成等号。NO 要求 \(b^*\le\delta\) 时，所有 \(t=1,\ldots,K\) 都必须满足
 \[
 \min\left\{\frac{\nu_t}{q},\frac tK\right\}\le\delta. \tag{4}
 \]
-只证明 \(\nu_K/q\le\delta\) 不足；所有中间 \(t>\delta K\) 层也必须压低 \(\nu_t/q\)。三维匹配需求树是特例，其一终端逃逸正是低层 \(t=1\) 或 \(t=2\) 没有被完整匹配 soundness 排除的情形。
+只证明 \(\nu_K/q\le\delta\) 不足；所有中间 \(t>\delta K\) 层也必须压低 \(\nu_t/q\)。任意多标签三维匹配需求树属于前述可选 bundle 模型 k=2 的特例；只有每个 x 至多一个允许三元组并保同一根需求时，才直接属于本单邻域接口。不能把同 x 的全部标签邻域取并集：q=K=2、E={(0,0,0),(0,1,1),(1,0,1),(1,1,0)} 的原 μ=2、ν=1、b*=1/2，取并集后两个邻域都是全四资源，ν_2=2、b*=1。
 
 若每个 \(A_x\) 的大小恰为 \(K\)，\(\nu_K\) 只是最大不交邻域子族，公式 (4) 仍要求所有部分领取层；给每个邻域增加私有资源会同时抬高多个 \(\nu_t\)，不能只改善 YES。正文没有声称一般二进制 \(K\) 下这些层的判定容易或困难，也没有把它们升级为复杂度下界。
 

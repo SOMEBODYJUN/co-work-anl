@@ -1,0 +1,112 @@
+{
+  "status": "reviewable-proposal-only-shared-targets-unchanged",
+  "target_files": 2,
+  "exact_replacements": 3,
+  "targets": [
+    {
+      "key": "collision",
+      "target_path": "archives/unrelated-machines/state/审查/Knapsack拟阵包络与大束碰撞有限审查--审查.md",
+      "before_sha256": "12a5bee177089ddd3adf3d9e1a17aa2a559c5a2e2328d0dfb516b6466e1100de",
+      "proposed_sha256": "ac1fefd35bbdf9075ebed9c58670fb534ecf32f640e1e51f88af91d940d8a2b3",
+      "replacement_count": 1,
+      "replacements": [
+        {
+          "exact_before": "(q\\in\\{1,3\\})",
+          "exact_after": "(q=1,2,3)",
+          "before_lines": [
+            89,
+            89
+          ],
+          "reason": "JSON q:[1,3] is interval-endpoint scope; actual code loops range(1,4), includes q2."
+        }
+      ]
+    },
+    {
+      "key": "star",
+      "target_path": "archives/unrelated-machines/state/审查/极小星收缩与配置耦合有限审查--审查.md",
+      "before_sha256": "bfad798f54df11b5dcdc56d6504fa8978b55c153f3be9e6029765916687f91e5",
+      "proposed_sha256": "57618f5f9c1a704f0b53a70f9e7f74115e079efae9a6697864c6b35dbd6c2593",
+      "replacement_count": 2,
+      "replacements": [
+        {
+          "exact_before": "已审计整数最优值",
+          "exact_after": "公式输出的整数最优值（仅k=2另作全枚举）",
+          "before_lines": [
+            38,
+            38
+          ],
+          "reason": "The main only builds the full compact instance for k2; k3..12 table values are arithmetic/formula output, general correctness has a separate proof."
+        },
+        {
+          "exact_before": "其中 `k=2` 的独立脚本穷举了 82,944 个整数分配（尺度 2），得到整数最优 3、精确最优 `3/2`。`k=3..12` 的 `minimal_star_irreducible=true` 只表示该有限族没有被所测的合法收缩消去；它不是所有机器矩阵都不可收缩的证明。",
+          "exact_after": "其中规范 `minimal_overload_star.py` 的 `k=2` 段实际构造紧凑实例并穷举 82,944 个整数分配（尺度 2），得到整数最优 3、精确最优 `3/2`。`k=3..12` 在该入口只作边际/最优公式的有理等式检查，并直接令 `minimal_star_irreducible=(k>=3)`；没有为这些参数构造完整实例、搜索合法收缩或枚举调度。此族不消元及整数最优的一般符号证明另见主数学稿，不能把该布尔字段当作已经运行的收缩检查，更不是所有机器矩阵不可收缩的证明。",
+          "before_lines": [
+            40,
+            40
+          ],
+          "reason": "The irreducible flag is directly assigned, not searched; this entry is not a second independent script. Generic theorem remains separately proved."
+        }
+      ]
+    }
+  ],
+  "primary_evidence": [
+    {
+      "source_id": "7e9a28847d18f65c3e1a",
+      "path": "original/7e9a28847d18f65c3e1a.py",
+      "sha256": "27be4142f848dde2336cd666b775ff50f6adb443a59f551dcce047b563ec45c5",
+      "actual_read": "full",
+      "exact_lines": [
+        {
+          "needle": "        for q in range(1, 4):",
+          "lines": [
+            381,
+            381
+          ]
+        },
+        {
+          "needle": "    expected_instances = sum(",
+          "lines": [
+            395,
+            395
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "eec3fb2bff408d1f3a48",
+      "path": "original/eec3fb2bff408d1f3a48.py",
+      "sha256": "062b2630aded0a125dc57ab9ad14069b712eec6ab8eb3baf6dec471a9c1bb98f",
+      "actual_read": "full",
+      "exact_lines": [
+        {
+          "needle": "    for k in range(2, 13):",
+          "lines": [
+            184,
+            184
+          ]
+        },
+        {
+          "needle": "                           \"minimal_star_irreducible\": k >= 3})",
+          "lines": [
+            195,
+            195
+          ]
+        },
+        {
+          "needle": "    # Independent full schedule enumeration of the smallest star-gap instance.",
+          "lines": [
+            196,
+            196
+          ]
+        }
+      ]
+    }
+  ],
+  "report_evidence": [
+    "runs/7e9a28847d18f65c3e1a/report.json",
+    "runs/eec3fb2bff408d1f3a48/report.json"
+  ],
+  "new_extra_diagnostic_runs": 0,
+  "mathematical_effect": "Correct finite execution descriptions only. Original entries pass. Generic collision theorem/compact-star optimum and irreducibility remain supported by separately stated proofs, not refuted.",
+  "application_contract": "Root reviews exact original/proposed with primary lines, checks each beforeSHA and serially replaces only three snippets. Preserve frozen original reports/sources/progress and all prior errata packages."
+}

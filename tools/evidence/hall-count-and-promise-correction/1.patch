@@ -1,0 +1,20 @@
+--- archives/unrelated-machines/state/审查/Hall联合流与前缀匹配增量审计--审查.md
++++ archives/unrelated-machines/state/审查/Hall联合流与前缀匹配增量审计--审查.md
+@@ -35,9 +35,7 @@
+ 
+ | 源 ID | 冻结输出与实际阅读 | 独有数学内容 | 处置 |
+ |---|---|---|---|
+-| `6b44adbc694f4eb1778f` | `hall_group_joint_flow_audit.json`，3455 字节；精确整数/Fraction，9 个命名 fixture 和五个有限参数族 | 基础域 4448 例，其中 (T)-feasible 2278、successful 2773、reliable rejection 1675、非均匀零 job 228；varying-macro 域 10122 例、2071 个 (T)-feasible、2650 个 output；3991 个 unknown-OPT-promise 例；2079 个公式检查；保存非 matroid 可行独立集 (-arnothing,{0},{1},{2},{1,2})，明确没有无界穷举和 uniform-(-arepsilon) 结论 | integrated 到本页的 Hall 联合流有限审计；不新造统一近似定理 |
++| `6b44adbc694f4eb1778f` | `hall_group_joint_flow_audit.json`，3455 字节；精确整数/Fraction，9 个命名 fixture 和五个有限参数族 | 基础域 4448 例，其中 (T)-feasible 2278、successful 2773、reliable rejection 1675、非均匀零 job 228；varying-macro 域 10122 例、2071 个 (T)-feasible、2650 个 output；3991 个 unknown-OPT-promise 例；2079 个公式检查；保存非 matroid 可行独立集 (\varnothing,{0},{1},{2},{1,2})，明确没有无界穷举和 uniform-(\varepsilon) 结论 | integrated 到本页的 Hall 联合流有限审计；不新造统一近似定理 |
+ | `5fc9e049f0a8a7aaaaed` | `hall_group_joint_flow_independent.json`，439 字节；另一段阈值 DFS 汇总 | 8123 例，原矩阵 (T)-feasible 3688，success 4066，rejection 4057，显式非法拒绝 7；`proof_scope` 明确是 finite original-matrix threshold DFS，**没有 Hall oracle** | integrated 为独立实现证据；不冒称独立一般证明 |
+ | `2848badca09c5d4df4d8` | `hall_group_opt_promise_independent.json`，518 字节；精确原始 job subset-sum/threshold enumeration 加联合选择 DFS | 301 个 sampled inputs 中 122 个满足 exact-OPT promise 且全部成功，只有 1 个 `strict_t_less_than_OPT_cases`；使用 Fraction/int 和 exhaustive joint-choice bottleneck 检查 | integrated 为 promise/反例边界回归；不能据 122 例把 promise 推广到所有输入 |
+ | `bc969f57611eec4af74d` | `joint_matching_completion_audit.json`，35048 字节；含 conditional-interface、unique-small-and-block、independent、50 个实际 q=3 tripartite sample 及限制 | 3DM reduction 有 309 例、194 yes、24927 个 exhaustive oracle nodes；q=0,1,2 全 hypergraph 枚举 1、2、256，q=3 仅采样50；block cuts 检查 (k=4,5,6,ldots,64) 的阈值 (7/4,9/5,11/6,ldots,127/64)，并记录 (delta=1/3) counterexample；独立 path-orientation 计数 (8,32,128,512,2048) | integrated 到联合匹配完成审查；把 3DM 复杂度、局部 interval algebra 和有限搜索各自保留 |
+@@ -47,7 +45,7 @@
+ 
+ `6b44...` 的审计以 (h=1..3)、半任务数 (k=0..2)、宏边数 (blemin(2,h))、所有宏支持/共同组资格图为基础；固定 (q=2,delta=1/2,W=1)，含两件 half jobs 和 macro (3/4)。非均匀域改用 (q=3,delta=1/3)、group weights ((0,1/3,1/3,1/6))、macro (2/3)；varying 域让宏时间取 `None, 3/5, 1, 5/4` 的所有行组合（排除全 None）。这些描述说明输出确实覆盖了零宏、强制 home、宏边变化和资格图变化，但仍是显式有限域。
+ 
+-基础域有 4448 个枚举输入。`T_feasible=2278` 与 `successful_outputs=2773` 不应被理解为“所有可行输入都输出”：输出计数还包括命名 fixture 和其他分支，审计自身没有把计数声明为一般完备性。`reliable_rejections=1675` 是程序在原矩阵下可靠拒绝的分支；`nonuniform_zero_job_cases=228` 单独保留零 job 语义。varying-macro 域再给出 10122、2071、2650 三个计数，unknown-OPT-promise 3991 例则明确把真实 OPT promise 作为额外前提，不可回填到所有源输入。
++基础域有 4448 个枚举输入；`T_feasible=2278`、`successful_outputs=2773` 和 `reliable_rejections=1675` 均只在基础循环累加，未混入命名 fixture 或其他分支。代码逐例断言全部 2278 个真实 (T=1) 可行输入均输出；2773 另含 495 个 (T=1) 不可行但允许 (rho T) 舍入成功的基础输入。这是该有限域内的逐例检查，不是一般完备性证明。`reliable_rejections=1675` 是程序在原矩阵下可靠拒绝的分支；`nonuniform_zero_job_cases=228` 单独保留零 job 语义。varying-macro 域再给出 10122、2071、2650 三个计数，unknown-OPT-promise 3991 例则明确把真实 OPT promise 作为额外前提，不可回填到所有源输入。
+ 
+ 审计的 2079 个 formula cases 与 9 个命名 fixture 适合检查分母、空任务、零目标、宏边剪除、重新选槽和大 (q) 的算术。输出写明所有值由 Python Fraction/integer 计算，无浮点误差；也写明“no general UM structure extraction or uniform epsilon for unbounded q”。因此本批新增的是可复核的参数边界和失败机制，不能从计数外推一个无界 Hall 保留比例。
+ 

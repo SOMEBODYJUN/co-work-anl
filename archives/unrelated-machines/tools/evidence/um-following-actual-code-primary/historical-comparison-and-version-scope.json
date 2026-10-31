@@ -1,0 +1,107 @@
+{
+  "comparisons": [
+    {
+      "name": "sink-all-k4",
+      "current": "archives/unrelated-machines/tools/evidence/um-following-actual-code-primary/runs/sink-all-k4.stdout",
+      "historical": "archives/unrelated-machines/tools/evidence/um-following-actual-code-primary/comparison/evidence/runs/unrelated_machines/diluted_sink_probe_gap_audit.json",
+      "differences": [
+        {
+          "path": "/evidence_scope",
+          "current": null,
+          "historical": "k=2,3,4 expanded; all forced-edge probes in each expanded instance; only k=2 exhaustive schedules; no generic LP solver."
+        },
+        {
+          "path": "/run_command",
+          "current": null,
+          "historical": "python3 tests/audits/unrelated_machines/diluted_sink_probe_gap.py --all-k4"
+        }
+      ]
+    },
+    {
+      "name": "escape-full",
+      "current": "archives/unrelated-machines/tools/evidence/um-following-actual-code-primary/runs/escape-full.stdout",
+      "historical": "archives/unrelated-machines/tools/evidence/um-following-actual-code-primary/comparison/evidence/runs/unrelated_machines/diluted_escape_probe_gap_audit.json",
+      "differences": [
+        {
+          "path": "/expanded/LST_elapsed_seconds",
+          "current": 90.735,
+          "historical": 119.472
+        },
+        {
+          "path": "/expanded/actual_peer_GHMR/elapsed_seconds",
+          "current": 1.11,
+          "historical": 1.284
+        },
+        {
+          "path": "/run_command",
+          "current": null,
+          "historical": "python3 tests/audits/unrelated_machines/diluted_escape_probe_gap.py"
+        }
+      ]
+    },
+    {
+      "name": "raw-k2",
+      "current": "archives/unrelated-machines/tools/evidence/um-following-actual-code-primary/runs/raw-k2.payload.json",
+      "historical": "archives/unrelated-machines/tools/evidence/um-following-actual-code-primary/comparison/evidence/runs/unrelated_machines/diluted_shared_terminal_raw_k2_local_frame_audit.json",
+      "byte_equal": true,
+      "structurally_equal": true
+    },
+    {
+      "name": "row-degree",
+      "current": "archives/unrelated-machines/tools/evidence/um-following-actual-code-primary/runs/row-degree.payload.json",
+      "historical": "archives/unrelated-machines/tools/evidence/um-following-actual-code-primary/comparison/evidence/runs/unrelated_machines/diluted_row_degree_trade_four_cases_audit.json",
+      "byte_equal": true,
+      "structurally_equal": true
+    },
+    {
+      "name": "raw-k2-old-double-replay",
+      "new_stdout_equal_both_old_stdout": true,
+      "old_executions_not_new": true
+    },
+    {
+      "name": "row-degree-old-replay",
+      "new_stdout_equal_old_stdout": true,
+      "old_execution_not_new": true
+    },
+    {
+      "name": "distorted-independent",
+      "differences_from_old_source_enumeration": [
+        {
+          "path": "/actual_fixture_file",
+          "current": "/workspace/scratch/37f0f9248cfc/boss4-next-cache/r3-um-following-actual-code-primary/archives/unrelated-machines/tools/evidence/um-following-actual-code-primary/runs/distorted-group.fixtures.json",
+          "historical": null
+        },
+        {
+          "path": "/actual_fixture_sha256",
+          "current": "ff7a5d39e5a0b1cea78a319837f3d7eb473fc72a4a2980ced61e9d21656c368b",
+          "historical": null
+        }
+      ],
+      "new_fixture_sha256": "ff7a5d39e5a0b1cea78a319837f3d7eb473fc72a4a2980ced61e9d21656c368b",
+      "old_fixture_inventory_sha256": "ff7a5d39e5a0b1cea78a319837f3d7eb473fc72a4a2980ced61e9d21656c368b",
+      "new_fixture_matches_old_inventory_SHA": true,
+      "new_fixture_size": 76603,
+      "new_fixture_cases": 16,
+      "old_normative_and_software_reviewer_CLIs_not_run": true
+    }
+  ],
+  "mathematical_programs_executed_for_comparison": 0,
+  "new_blind_reviews": 0,
+  "original_claim_receipt_retained": true,
+  "claim_sync_resolution_separate": true,
+  "code_read_corrections": [
+    {
+      "field": "escape.only_mandatory_job",
+      "stored": 0,
+      "meaning": "bridge job ID, unique mandatory set is {bridge}, not count zero"
+    },
+    {
+      "field": "distorted.explicit_blocked_conservation.demand",
+      "stored": "1/2",
+      "origin": "source computes W-T/2 only to assert positivity",
+      "actual_r": "3/5",
+      "actual_demand": "2/5",
+      "meaning": "does not change x=1,sum_y=0 infeasibility; source and history unmodified"
+    }
+  ]
+}

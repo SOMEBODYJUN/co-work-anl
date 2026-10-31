@@ -1,0 +1,64 @@
+{
+  "status": "minimal-unapplied-three-fragment-corrections",
+  "base_package_absolute_path": "/workspace/scratch/37f0f9248cfc/boss4-next-cache/r3-um-ghmr-flat-moment-and-hall-primary",
+  "old_shared_files_modified": false,
+  "items": [
+    {
+      "item": 1,
+      "target_repo_path": "archives/unrelated-machines/state/审查/Hall联合流与前缀匹配增量审计--审查.md",
+      "old_sha256": "158724bd9ffbbbe74f474ab7d876987a31f21c5e300485249ded50a3016837bf",
+      "old_snapshot_repo_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/existing-formal-snapshots/Hall联合流与前缀匹配增量审计--审查.md",
+      "old_line_number": 50,
+      "before_fragment": "基础域有 4448 个枚举输入。`T_feasible=2278` 与 `successful_outputs=2773` 不应被理解为“所有可行输入都输出”：输出计数还包括命名 fixture 和其他分支，审计自身没有把计数声明为一般完备性。",
+      "proposed_fragment": "基础域有 4448 个枚举输入；`T_feasible=2278`、`successful_outputs=2773` 和 `reliable_rejections=1675` 均只在基础循环累加，未混入命名 fixture 或其他分支。代码逐例断言全部 2278 个真实 (T=1) 可行输入均输出；2773 另含 495 个 (T=1) 不可行但允许 (rho T) 舍入成功的基础输入。这是该有限域内的逐例检查，不是一般完备性证明。",
+      "before_full_line": "基础域有 4448 个枚举输入。`T_feasible=2278` 与 `successful_outputs=2773` 不应被理解为“所有可行输入都输出”：输出计数还包括命名 fixture 和其他分支，审计自身没有把计数声明为一般完备性。`reliable_rejections=1675` 是程序在原矩阵下可靠拒绝的分支；`nonuniform_zero_job_cases=228` 单独保留零 job 语义。varying-macro 域再给出 10122、2071、2650 三个计数，unknown-OPT-promise 3991 例则明确把真实 OPT promise 作为额外前提，不可回填到所有源输入。",
+      "proposed_full_line": "基础域有 4448 个枚举输入；`T_feasible=2278`、`successful_outputs=2773` 和 `reliable_rejections=1675` 均只在基础循环累加，未混入命名 fixture 或其他分支。代码逐例断言全部 2278 个真实 (T=1) 可行输入均输出；2773 另含 495 个 (T=1) 不可行但允许 (rho T) 舍入成功的基础输入。这是该有限域内的逐例检查，不是一般完备性证明。`reliable_rejections=1675` 是程序在原矩阵下可靠拒绝的分支；`nonuniform_zero_job_cases=228` 单独保留零 job 语义。varying-macro 域再给出 10122、2071、2650 三个计数，unknown-OPT-promise 3991 例则明确把真实 OPT promise 作为额外前提，不可回填到所有源输入。",
+      "evidence_whitelist_ids": [
+        "hall-code-counts",
+        "hall-base-report",
+        "final-data-counts"
+      ],
+      "status": "unapplied-only",
+      "source_done_status_changed": false
+    },
+    {
+      "item": 2,
+      "target_repo_path": "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+      "old_sha256": "86bf3e261da4a01f5359f265930bac742e5c92dd1106989b1727540cbb746d93",
+      "old_snapshot_repo_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/existing-formal-snapshots/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+      "old_line_number": 95,
+      "before_fragment": "组负载下界 (W_h\\ge T) 也不可省略：若每组总量低于 (T)，可以构造一个 home 负载与共同 sink 负载都不超过 (T) 的例子，但 q 槽网络不再代表该组的实际出口需求。",
+      "proposed_fragment": "一般组负载下界为 ((1/2+1/q)T\\le W_h)。原文 (W_h\\ge T) 的反例专指 (q=2)：三个 home 各有时间 (2/3) 的宏任务及四件 (1/6) 私有任务、一个共同 sink，真实 (T=1) 可行而两槽网络无法接收三个占用组。",
+      "before_full_line": "共同资格是核心承重条件。两个私有任务分别只能去不同 sink 时，交集可能为空，联合流会可靠 FAIL，即便允许把任务分开看似可行。组负载下界 (W_h\\ge T) 也不可省略：若每组总量低于 (T)，可以构造一个 home 负载与共同 sink 负载都不超过 (T) 的例子，但 q 槽网络不再代表该组的实际出口需求。严格 Hall 计数不能自动把 q 槽降成 q−1；存在三组、两个共同 sink 的实际 (T=1) 见证要求两个槽以上的联合容量。",
+      "proposed_full_line": "共同资格是核心承重条件。两个私有任务分别只能去不同 sink 时，交集可能为空，联合流会可靠 FAIL，即便允许把任务分开看似可行。一般组负载下界为 ((1/2+1/q)T\\le W_h)。原文 (W_h\\ge T) 的反例专指 (q=2)：三个 home 各有时间 (2/3) 的宏任务及四件 (1/6) 私有任务、一个共同 sink，真实 (T=1) 可行而两槽网络无法接收三个占用组。严格 Hall 计数不能自动把 q 槽降成 q−1；存在三组、两个共同 sink 的实际 (T=1) 见证要求两个槽以上的联合容量。",
+      "evidence_whitelist_ids": [
+        "hall-code-contract",
+        "hall-canonical-general-lower-bound",
+        "hall-canonical-q2-counterexample"
+      ],
+      "status": "unapplied-only",
+      "source_done_status_changed": false
+    },
+    {
+      "item": 3,
+      "target_repo_path": "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+      "old_sha256": "86bf3e261da4a01f5359f265930bac742e5c92dd1106989b1727540cbb746d93",
+      "old_snapshot_repo_path": "archives/unrelated-machines/tools/evidence/um-ghmr-flat-moment-and-hall-primary/existing-formal-snapshots/Hall联合组流与共享汇点宏分配双源审查--审查.md",
+      "old_line_number": 89,
+      "before_fragment": "其中 (B) 是使宏任务可被 home 覆盖的最小实际宏时间瓶颈。",
+      "proposed_fragment": "其中 (B) 是使同一 macro→home→receiver 联合网络覆盖全部宏任务的最小实际宏时间瓶颈，接收资格和 q 容量保持不变；它不是仅 macro→home 匹配的瓶颈。",
+      "before_full_line": "作为阈值，其中 (B) 是使宏任务可被 home 覆盖的最小实际宏时间瓶颈。承诺域内 (t\\le OPT)，且宏边、组总量和单件上界都能在 (t) 上满足阈值合同，因此调用阈值算法得到 (rOPT) 上界。搜索只访问实际输入时间，不二分连续实数，也不调用 OPT 精度 oracle。",
+      "proposed_full_line": "作为阈值，其中 (B) 是使同一 macro→home→receiver 联合网络覆盖全部宏任务的最小实际宏时间瓶颈，接收资格和 q 容量保持不变；它不是仅 macro→home 匹配的瓶颈。承诺域内 (t\\le OPT)，且宏边、组总量和单件上界都能在 (t) 上满足阈值合同，因此调用阈值算法得到 (rOPT) 上界。搜索只访问实际输入时间，不二分连续实数，也不调用 OPT 精度 oracle。",
+      "evidence_whitelist_ids": [
+        "hall-code-joint-bottleneck",
+        "hall-canonical-joint-bottleneck"
+      ],
+      "status": "unapplied-only",
+      "source_done_status_changed": false
+    }
+  ],
+  "proposed_whole_file_sha256": {
+    "archives/unrelated-machines/state/审查/Hall联合流与前缀匹配增量审计--审查.md": "d49f7ce60b7a6e0ea60f30d4546df2e88c18ed1d68ec5f497c32018dadd544ff",
+    "archives/unrelated-machines/state/审查/Hall联合组流与共享汇点宏分配双源审查--审查.md": "a15be03c023a27cd1f30e0389065657ede6fa9a72c020ce8a0f3ebedc42e66b4"
+  }
+}

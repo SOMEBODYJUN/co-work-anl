@@ -1,0 +1,143 @@
+"""Exact polynomial constructor for equal movable weights; sites are zero-based."""
+from fractions import Fraction
+from math import lcm
+from typing import Sequence
+
+Rational = int | str | Fraction
+
+def equal_weight_box_ne(
+    q: Sequence[int], c: Sequence[Rational], w: Sequence[Rational],
+    A: Sequence[Sequence[int]],
+) -> dict:
+    """Return a boxed exact NE with H. Reject nonuniform movable weights."""
+    def rational(x: Rational) -> Fraction:
+        if isinstance(x, bool) or not isinstance(x, (int, str, Fraction)):
+            raise ValueError("Use integers, Fraction, or rational strings, not floats.")
+        try:
+            return Fraction(x)
+        except (ValueError, ZeroDivisionError) as exc:
+            raise ValueError("Invalid rational input.") from exc
+
+    q, c, w = tuple(q), tuple(map(rational, c)), tuple(map(rational, w))
+    m, n = len(q), len(w)
+    if len(c) != m or len(A) != n:
+        raise ValueError("Dimension mismatch.")
+    if any(type(x) is not int or x < 1 for x in q):
+        raise ValueError("q must contain positive integers.")
+    if any(q[t] < q[t + 1] for t in range(m - 1)):
+        raise ValueError("q must be nonincreasing.")
+    if any(not 0 <= x <= 1 for x in c):
+        raise ValueError("c must lie in [0,1].")
+    if any(not 0 < x < 1 for x in w):
+        raise ValueError("Each weight must lie in (0,1).")
+    if n and any(x != w[0] for x in w):
+        raise ValueError("This constructor requires equal movable weights.")
+    choices = []
+    for row in A:
+        row = tuple(row)
+        if not row or any(type(t) is not int or not 0 <= t < m for t in row):
+            raise ValueError("Each allowed set must be nonempty and valid.")
+        choices.append(tuple(sorted(set(row))))
+    A = tuple(choices)
+    delta = w[0] if n else Fraction(1, 2)
+    h = tuple(row[0] for row in A)
+    home_count, degree = [0] * m, [0] * m
+    for i, row in enumerate(A):
+        home_count[h[i]] += 1
+        for t in row:
+            degree[t] += 1
+    b = [c[t] - delta * home_count[t] for t in range(m)]
+
+    # Scale costs, never capacities, to integers. No denominator-sized loops.
+    D = lcm(delta.denominator, *(x.denominator for x in c))
+    scale = D * lcm(1, *q)
+    source, sink, V = n + m, n + m + 1, n + m + 2
+    graph: list[list[list[int]]] = [[] for _ in range(V)]
+
+    def add(u: int, v: int, cost: int) -> int:
+        j, k = len(graph[u]), len(graph[v])
+        graph[u].append([v, k, 1, cost])
+        graph[v].append([u, j, 0, -cost])
+        return j
+
+    assignment_edges = []
+    for i, row in enumerate(A):
+        add(source, i, 0)
+        assignment_edges.append([(t, add(i, n + t, 0)) for t in row])
+    for t in range(m):
+        for ell in range(degree[t]):
+            z = (b[t] + ell * delta) * scale / q[t]
+            if z.denominator != 1:
+                raise RuntimeError("Cost scaling failed.")
+            add(n + t, sink, z.numerator)
+
+    # Exactly n unit augmentations; Bellman-Ford handles negative slot costs.
+    total_cost = 0
+    for _ in range(n):
+        dist: list[int | None] = [None] * V
+        parent: list[tuple[int, int] | None] = [None] * V
+        dist[source] = 0
+        for _pass in range(V - 1):
+            changed = False
+            for u in range(V):
+                if dist[u] is None:
+                    continue
+                for j, (v, _rev, cap, cost) in enumerate(graph[u]):
+                    candidate = dist[u] + cost
+                    if cap and (dist[v] is None or candidate < dist[v]):
+                        dist[v], parent[v] = candidate, (u, j)
+                        changed = True
+            if not changed:
+                break
+        if dist[sink] is None:
+            raise RuntimeError("Unexpected infeasibility.")
+        path, seen, v = [], set(), sink
+        while v != source:
+            if v in seen or parent[v] is None:
+                raise RuntimeError("Invalid shortest-path predecessor chain.")
+            seen.add(v)
+            u, j = parent[v]
+            path.append((u, j))
+            v = u
+        for u, j in path:
+            v, rev, cap, cost = graph[u][j]
+            graph[u][j][2] = cap - 1
+            graph[v][rev][2] += 1
+            total_cost += cost
+
+        audit_residual(graph, source, sink, total_cost)
+
+    a = []
+    for i, refs in enumerate(assignment_edges):
+        selected = [t for t, j in refs if graph[i][j][2] == 0]
+        if len(selected) != 1:
+            raise RuntimeError("Nonintegral or incomplete assignment.")
+        a.append(selected[0])
+    count = [0] * m
+    for t in a:
+        count[t] += 1
+    X = [b[t] + delta * count[t] for t in range(m)]
+    if any(not 0 <= x <= 1 for x in X):
+        raise RuntimeError("Full-box certificate failed.")
+    for i, s in enumerate(a):
+        external = (X[s] - delta) / q[s]
+        if external > (1 - delta) / q[h[i]]:
+            raise RuntimeError("H certificate failed.")
+        if any(external > X[t] / q[t] for t in A[i]):
+            raise RuntimeError("Exact NE certificate failed.")
+    objective = sum(
+        (b[t] * count[t] + delta * count[t] * (count[t] - 1) / 2) / q[t]
+        for t in range(m)
+    )
+    if Fraction(total_cost, scale) != objective:
+        raise RuntimeError("Flow/objective identity failed.")
+    return {"assignment": a, "X": list(map(str, X)),
+            "objective": str(objective), "augmentations": n}
+
+if __name__ == "__main__":
+    import json
+    import sys
+    data = json.load(sys.stdin)
+    result = equal_weight_box_ne(**{key: data[key] for key in ("q", "c", "w", "A")})
+    json.dump(result, sys.stdout, ensure_ascii=False, indent=2)
+    print()

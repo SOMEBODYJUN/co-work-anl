@@ -1,0 +1,38 @@
+{
+  "source": "all input constructed in original main; no external file read",
+  "n": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "mask_meaning": "bit x means topic covers unit customer x",
+  "catalogues": "all distinct mask subsets of size1..min(3,2**n), explicitly enumerated in complete-built-input-catalogues.json",
+  "catalogue_count": 806,
+  "m": [
+    1,
+    2,
+    3
+  ],
+  "T": "all combinations_with_replacement(catalogue,m) maximizing union cardinality; one canonical sorted order per multiset, no T permutations",
+  "B": "all ordered product(catalogue,repeat=m)",
+  "bernoulli_p": [
+    "0",
+    "1/3",
+    "1/2",
+    "2/3",
+    "1"
+  ],
+  "realizations": "only when m<=2 and p=1/2, enumerate all2**m replacement bit words with uniform1/2**m weights",
+  "harmonic": "exact finite Fraction H_c",
+  "alpha": [
+    1,
+    2,
+    3
+  ],
+  "matching": "closed hypergeometric coefficient; no explicit m! permutation loop",
+  "anchor": "each same-position index j where optimum[j]==profile[j], including empty theme; fixed theme protected, formula uses m-1 residual slots",
+  "spe_calls": 0,
+  "external_file_inputs": []
+}

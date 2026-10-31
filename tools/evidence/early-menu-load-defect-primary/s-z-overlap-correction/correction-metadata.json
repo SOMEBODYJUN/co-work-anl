@@ -1,0 +1,72 @@
+{
+  "canonical_path": "archives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md",
+  "before_sha256": "307b1be1d19b796e2f19cce3910f59673849135697976c63ae6d92e38d79f028",
+  "before_bytes": 1873,
+  "before_path": "tools/evidence/early-menu-load-defect-primary/s-z-overlap-correction/before/archives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md",
+  "after_sha256_if_applied": "e8426729bed52b09a18ac9f1c38558ec89fb301c06a46dc59dffe83ead4778f4",
+  "proposed_path": "tools/evidence/early-menu-load-defect-primary/s-z-overlap-correction/proposed/archives/customer-attraction/state/障碍/R-171有符号delta选择与重叠信用边界--障碍.md",
+  "patch_path": "tools/evidence/early-menu-load-defect-primary/s-z-overlap-correction/s-z-overlap-credit-only.patch",
+  "patch_sha256": "f5e5ab21134d8a29ecd4041abf1b4465e5fd28ac68e5f0de2bac16b42fe048de",
+  "patch_context_lines": 0,
+  "replacements": [
+    {
+      "old": "保留真实 `S/Z` slack 和重叠余项后，旧粗包络在该最大组合上仍留下 `4982/5577` 超额；新增标量余项",
+      "new": "仅保留真实 `S/Z` slack、尚未扣查询依赖重叠余项时，旧粗包络在该最大组合上仍留下 `4982/5577` 超额；再扣新增标量余项",
+      "expected_count": 1
+    }
+  ],
+  "applied_to_shared_tree": false,
+  "scope": "Only which credit has been subtracted in one sentence; no assertion that old page/source done as a whole was wrong.",
+  "evidence": {
+    "report_source_id": "dc8933a15680748913d6",
+    "report_original_path": "research/workspaces/customer-attraction/R-171cd7d518434f36a48cd50df29c9303/continuation/prices/signed_delta_report.json",
+    "report_sha256": "46e73447954de7f97a7f72a61fb24f12388dee54a0cffddb2d7f8b8716b47756",
+    "note_source_id": "ffdb213269fc25b70ecf",
+    "note_sections": [
+      "5. 保留剩余真实S、Z与总质量",
+      "6. 从原角点消元保留重叠信用"
+    ],
+    "query_counts": [
+      1,
+      1,
+      1,
+      9,
+      0,
+      1
+    ],
+    "topic_order": [
+      "A",
+      "B",
+      "T",
+      "D",
+      "E",
+      "P"
+    ],
+    "m": 13,
+    "tau": 13,
+    "W": "33",
+    "w": "3",
+    "budget": "18/13",
+    "maximum_total_delta": "1373/507",
+    "exact_report_fields": {
+      "current_credit": "5/11",
+      "last_menu_credit": "40/13",
+      "last_player_credit": "68/33",
+      "total_credit": "2399/429",
+      "adjusted_total_delta": "12704/5577",
+      "adjusted_excess": "4982/5577",
+      "overlap_credit": "441/2",
+      "overlap_adjusted_excess": "-179225/11154"
+    },
+    "checks": {
+      "CG": "2399/429",
+      "adjusted_total_delta": "12704/5577",
+      "before_overlap_signed_excess": "4982/5577",
+      "aggregate_overlap_credit": "441/2",
+      "normalized_overlap_credit": "441/26",
+      "after_overlap_signed_excess": "-179225/11154",
+      "after_overlap_positive_budget_slack": "179225/11154"
+    },
+    "runtime_scope": "Exact arithmetic of already-read report fields only, not replay of packet or 2002-query search"
+  }
+}

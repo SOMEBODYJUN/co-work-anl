@@ -1,0 +1,124 @@
+{
+  "status": "reviewable-proposal-only-shared-pages-unchanged",
+  "target_files": 3,
+  "exact_replacements": 3,
+  "targets": [
+    {
+      "key": "menu-finite",
+      "target_path": "archives/unrelated-machines/state/审查/归一化菜单福利与CE后端有限审查--审查.md",
+      "before_sha256": "d6c54a9a6a738266ea1f8b68e2baf9bf6391fc3790f1995db293e986cbdf6809",
+      "proposed_sha256": "f8ab8c9b7b8f598f36c49dfc321a135d9214f506538b4eecff7886e241b431e7",
+      "replacement_count": 1,
+      "replacements": [
+        {
+          "exact_before": "`normalized_menu_partial_quota_welfare.json` 的程序和输出全部使用 `fractions.Fraction`。它保留重复 indexed states、零权重、零激活行、未用资源、大二进制分母和极小 `q`，并在无随机抽样的有限域中枚举 5,696 个候选，拒绝 2,168 个超容量项，接受 3,536 个，访问 86,912 个 joint actions 和 42,418 个正概率前缀；边界 fixture 为 8 个，非法输入拒绝 19 个。",
+          "exact_after": "`normalized_menu_partial_quota_welfare.json` 的程序和输出全部使用 `fractions.Fraction`。它保留重复 indexed states、零权重、零激活行、未用资源、大二进制分母和极小 `q`。无随机抽样的枚举域有 5,696 个候选，拒绝 2,168 个超容量项、接受 3,528 个；另 8 个边界 fixture 也调用同一审计函数，所以报告 `feasible_cases=3,536=3,528+8`。包含边界在内共访问 86,912 个 joint actions 和 42,418 个正概率前缀，非法输入拒绝 19 个。",
+          "before_lines": [
+            23,
+            23
+          ],
+          "reason": "3536 counter includes8 fixtures, not accepted subset of5696 enumeration candidates."
+        }
+      ]
+    },
+    {
+      "key": "menu-review",
+      "target_path": "archives/unrelated-machines/state/审查/部分配额福利罚项的原审查与纠错合并范围--审查.md",
+      "before_sha256": "94f9e98e58e12538aff22f98a490fb8aed7234236659e466dbbcc48b2a277e0b",
+      "proposed_sha256": "6bb632165a84bf0fd38ea5f09069ff6a76a18ba50eb934017c5a317abdcf252b",
+      "replacement_count": 1,
+      "replacements": [
+        {
+          "exact_before": "3536 feasible、5696 candidates、2168 over-capacity",
+          "exact_after": "3536 feasible（3528枚举接受加8边界fixture）、5696枚举candidates、2168 over-capacity",
+          "before_lines": [
+            50,
+            50
+          ],
+          "reason": "Clarify exact shared counter semantics without changing source report or previous review provenance."
+        }
+      ]
+    },
+    {
+      "key": "dynamic-opt",
+      "target_path": "archives/unrelated-machines/state/审查/残余通过量格结构与占位图表示最终独立审查--审查.md",
+      "before_sha256": "cd249f3854506eee93f9822ae6e306475c621395a1489acf3bb9e5eacb14f207",
+      "proposed_sha256": "29fc22ffccfdfe0256718691a88ef3a4418280f60f6168c25fcfab3dea1d0ed6",
+      "replacement_count": 1,
+      "replacements": [
+        {
+          "exact_before": "当宏边选择 H 同时改变残余任务 R(H) 与扣减 h_i(H)，冻结 R 的格次模性不能直接继承。已有 2×2 交叉 light 矩阵给出 V(empty)=2、V({e})=V({f})=1、V({e,f})=2，非单调且非次模；原实例仍有直接 OPT=1 调度，因此这是范围负控，不是 promise 算法反例。",
+          "exact_after": "当宏边选择 H 同时改变残余任务 R(H) 与扣减 h_i(H)，冻结 R 的格次模性不能直接继承。原矩阵 `P=[[1,1/2],[1/2,1]]` 给出 V(empty)=2、V({e})=V({f})=1、V({e,f})=2，非单调且非次模；其实际 `OPT=1/2`，由两件任务分别走交叉 light 端同时达到，而每任务所有有限端至少 1/2 给下界。它是范围负控，不是 promise 算法反例；不要与另一任意图占位构造的 OPT=1 混同。",
+          "before_lines": [
+            65,
+            65
+          ],
+          "reason": "Canonical fixed-residual source explicitly states OPT1/2; cross assignment supplies exact upper bound and min per-job endpoint supplies matching lower bound."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "path": "original/1d9b334ebced677c1709.py",
+      "sha256": "ee41f5fd20993dff6ecdf7103d5930793654201557b83c293f9b929e3d971e53",
+      "actual_read": "full336 lines",
+      "locations": [
+        {
+          "needle": "    counters[\"feasible_cases\"] += 1",
+          "lines": [
+            232,
+            232
+          ]
+        },
+        {
+          "needle": "    for name, menus, probabilities in fixtures:",
+          "lines": [
+            250,
+            250
+          ]
+        },
+        {
+          "needle": "                        audit_case(menus, lambdas, counts)",
+          "lines": [
+            303,
+            303
+          ]
+        }
+      ]
+    },
+    {
+      "path": "runs/1d9b334ebced677c1709/report.json",
+      "sha256": "a26e79a25ddb2d89aa3ba450180124e51cc04e44222c9d09c63850aa31784430",
+      "enumeration_accepts_sum": 3528,
+      "boundary_fixtures": 8,
+      "feasible_counter_total": 3536,
+      "candidates": 5696,
+      "rejects": 2168
+    },
+    {
+      "path": "support/c8cdbf5ff2de274caf1b.md",
+      "sha256": "2c0c8001e0c2313bdcad7ca434e8a16688f10488aa050ff9390ab642fa9a295e",
+      "actual_read": "full canonical source",
+      "locations": [
+        {
+          "needle": "P=\\begin{pmatrix}1&1/2\\\\1/2&1\\end{pmatrix}",
+          "lines": [
+            70,
+            70
+          ]
+        },
+        {
+          "needle": "原OPT=1/2，直接用交叉light调度达到；它不是promise算法反例。",
+          "lines": [
+            80,
+            80
+          ]
+        }
+      ]
+    }
+  ],
+  "new_extra_program_runs_for_errata": 0,
+  "mathematical_effect": "Menu generic welfare/count theorem and original audit PASS unchanged; fixed-residual lattice theorem and graphOPT1 identity unchanged. Only enumeration counter interpretation and separate dynamic2x2 OPT value corrected.",
+  "application_contract": "Root reads before/proposed/exact primary and canonical lines, checks before SHA and serially applies exactly3 snippets. Frozen originals/reports/progress/prior errata packages unchanged."
+}

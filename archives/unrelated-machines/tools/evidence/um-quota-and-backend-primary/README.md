@@ -1,0 +1,45 @@
+# 配额与结构后端五主源证据
+
+Boss4实际认领next5an pushed/Boss4，tip e0fe042553c1ef8df380c69f3085b2c02a9138ff、synced。五primary在回执后全部实读，不以旧依赖阅读代本次主源处置。外部独立stage；无共享Git/claim/done/checkpoint操作。
+
+| role | ID | bytes | SHA256 | 原件 |
+|---|---|---:|---|---|
+|primary|9b448a530454307c83ef|3893|17cffcb715a14e594c5626804b7e743bc035b0bc8194c96de6e1ab373fa667c3|[cross_layer_quota_matching.py](original/tests/audits/unrelated_machines/cross_layer_quota_matching.py)|
+|primary|bc7fbb3d9e7d1df6050e|16597|3ac389c7ab6bf1037c51d744d18e6191b5be8df1ba559e731fbbcaf4ebcc3c99|[degree_two_weighted_menu_backend.py](original/tests/audits/unrelated_machines/degree_two_weighted_menu_backend.py)|
+|primary|3d1c2add3e0914dc2348|5483|1adbcfc8620ed2462829a5b5e148382be05411b3921df0506676b3561858d5a7|[depth_two_quota_conformance.py](original/tests/audits/unrelated_machines/depth_two_quota_conformance.py)|
+|primary|203f58ab81cdd87d6563|6206|dd160d6977fb395992f81cfbe92208e6404648a4dbc6844d4d24357f022a663e|[depth_two_quota_greedy.py](original/tests/audits/unrelated_machines/depth_two_quota_greedy.py)|
+|primary|be10ebd228c9c911c731|7538|c5f5f32f59fb65607e3ecd81b3c37e7d25385e8cea99a93d618e2b32fe7fdc4b|[depth_two_quota_independent.py](original/tests/audits/unrelated_machines/depth_two_quota_independent.py)|
+|runtime-dependency|1d119c87988eadadc643|7086|825e60011c2777e45d4c71a48b9988c9293bc0346293a7502657748d79fef409|[rooted_dag_token_bridge.py](original/tests/audits/unrelated_machines/rooted_dag_token_bridge.py)|
+|comparison|1612ef209f096d6f4803|17392|aeea58b882dc1a9a87946bc7f359bea89de346e5756b2fdd9526ca9575925320|[rooted_dag_degree_token_bridge.md](comparison/research/current/unrelated_machines/rooted_dag_degree_token_bridge.md)|
+|comparison|8693d2d14e3cb4d0612e|8411|314d47e0a1ac0f0399ac130ee3c99ca8d691495b6b3dbcebb43f6ff19f220d06|[cross_layer_quota_matching_near_two_obstruction.md](comparison/research/current/unrelated_machines/cross_layer_quota_matching_near_two_obstruction.md)|
+|comparison|85d567cbb07542eff2ca|1950|ca9acbf90411b97e60f2a782ca14b0be5181047f2dd3317b9a8a490ba04ea0ad|[cross_layer_quota_matching_review.md](comparison/research/reviews/unrelated_machines/cross_layer_quota_matching_review.md)|
+|comparison|c068fa2c780c878cd674|8787|a05e663b79e77a74495f936265e4cbfdd72bff5d54ce8978597016fb9d87eefa|[depth_two_quota_review.md](comparison/research/reviews/unrelated_machines/depth_two_quota_review.md)|
+|runtime-dependency|af2ee631a5e5e8dfd2e2|9284|2a6b5b009ecedc417343fe42b44113aaf513b7e661756005fdd6738e71979a3d|[audit_degree_two_weighted_menu_backend.py](original/tests/audits/unrelated_machines/audit_degree_two_weighted_menu_backend.py)|
+|runtime-dependency|b88c0af63e1cab4774d1|4466|59501d74f2c092af8cbf56921987436b160274db325f4f30b69b058c10edf72f|[weighted_menu_joint_fixtures.json](original/examples/unrelated_machines/weighted_menu_joint_fixtures.json)|
+|comparison|0e40cceb6da556656823|10554|b0897b06723f4dd410ad230806a0ae03712a178b6a259ec8dd1688e04a6a8889|[weighted_menu_bounded_group_interaction_rounding.md](comparison/research/current/unrelated_machines/weighted_menu_bounded_group_interaction_rounding.md)|
+|comparison|c9345a9e96096177bc5e|469|12b805f69f3b346e28550326c130e2952a795db8761f8f3a9c40d297591fff1f|[depth_two_quota_audit.json](comparison/evidence/runs/unrelated_machines/depth_two_quota_audit.json)|
+|comparison|50ea6d5d9732a1367835|801|665dba5651ac1c738efea0519d590a4f3276644cd48b3ce8989671576542339e|[depth_two_quota_conformance.json](comparison/evidence/runs/unrelated_machines/depth_two_quota_conformance.json)|
+|comparison|b7261224bccbf3f21de2|748|7c5f40dae712da2a826b0278f76c92805addfe6b3f826bbe027ea46f3567d801|[depth_two_quota_independent.json](comparison/evidence/runs/unrelated_machines/depth_two_quota_independent.json)|
+|comparison|46ebe5c64966d76d94aa|1152|3f646ef44872150c0acb63fbb533076915104a562fca47590bf4fa2c2d575773|[cross_layer_quota_matching_candidate.json](comparison/evidence/runs/unrelated_machines/cross_layer_quota_matching_candidate.json)|
+|comparison|d2e422bf37d9a3df70d0|9713|41ceb9e9bdbe2fe81705d2c4f8b64c23983beba2f9767ec97ad36db4eba97e18|[degree_two_group_bounded_menu_joint_rounding.md](comparison/research/current/unrelated_machines/degree_two_group_bounded_menu_joint_rounding.md)|
+|comparison|db02c179f52182242b1e|6167|2b648658d42fb41b839933a81c262fe28859e719d92d34f7b0acea0f06a4cf71|[degree_two_group_bounded_menu_joint_rounding_review.md](comparison/research/reviews/unrelated_machines/degree_two_group_bounded_menu_joint_rounding_review.md)|
+
+## 阅读与数学去向
+
+三个自足资源页完整保存core/private所有层和原审计算法、深度二构造/完整收费证明/两类独立oracle、度二强制闭包/配对/BFS/单向二分/全部原job输出。已有主定理不重复授身份。comparison-findings.json和relationship-review.json说明实际差异和可用关系，未把来源链接充作阶段三完整超图。
+
+## 运行边界
+
+本批原算法新run=0。cross旧JSON完整记录同SHA35小层检查、4950闭式点、3样本；三个depth旧记录程序SHA吻合，1803+250+4/3、129554/4006/6728及1000conformance范围分开保全。旧记录无退出码或耗时，不造记录。
+
+backend当前16597B exactSHA在先前外置fixture审计中真实运行。reused-runs/backend-menu.execution.json是原事件复制，exit0、0.5179290771484375秒；本包不称新事件。五例完整输出、stdout/stderr与原fixture齐全。version-comparison保旧16349B展开版本及精确diff。
+
+verify_data.py为本批独立数据自查，不导入或执行原算法，已实际运行通过。核19原件SHA/语法；从原fixture独立重建5例全部29原job资格/p/区间/峰、bonus前后负载及832/24820计数；重建conformance生成统计631/758/464；核旧程序SHA、cross8参数点/35层/4950点/333300层及版本差异。结果data-selfcheck.json不能冒作原算法run或新通用证明。
+
+历史conformance记824d…正文整篇哈希，当前完整冻结主稿为aeea…；旧824d整篇未找到，仅保review/JSON纪录，不合成文件、不覆盖先验。
+
+## 现有正文比较
+
+已实读深度二有限核验、压缩任务桥、标签碰撞/全层配额、余横截跨层有限审计、度二外置夹具与后端版本、二度三源审查、联合取整有限审计、配额选择器边界及14份实际依赖/比较原件。原程序stale docstring K<=5与实际K6分开；独立4006例代数界不称实际schedule。旧共享页不覆盖。
+
+逐源receipt、自查、下一实际unread/unowned候选在cleanup/workspaces/Boss4/r3-um-quota-and-backend-primary。候选未认领、未primarydone。

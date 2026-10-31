@@ -1,0 +1,1182 @@
+Sum of Squares Lower Bounds from Symmetry
+and a Good Story
+Aaron Potechin
+University of Chicago Department of Computer Science, 5730 S. Ellis Avenue,
+John Crerar Library, Chicago, IL 60637, United States
+potechin@uchicago.edu
+
+
+
+      Abstract
+In this paper, we develop machinery which makes it much easier to prove sum of squares lower
+bounds when the problem is symmetric under permutations of [1, n] and the unsatisfiability of
+our problem comes from integrality arguments, i.e. arguments that an expression must be an
+integer. Roughly speaking, to prove SOS lower bounds with our machinery it is sufficient to
+verify that the answer to the following three questions is yes:
+1. Are there natural pseudo-expectation values for the problem?
+2. Are these pseudo-expectation values rational functions of the problem parameters?
+3. Are there sufficiently many values of the parameters for which these pseudo-expectation values
+   correspond to the actual expected values over a distribution of solutions which is the uniform
+   distribution over permutations of a single solution?
+
+
+    We demonstrate our machinery on three problems, the knapsack problem analyzed by Grigor-
+iev, the MOD 2 principle (which says that the complete graph Kn has no perfect matching when
+n is odd), and the following Turan type problem: Minimize the number of triangles in a graph
+G with a given edge density. For knapsack, we recover Grigoriev’s lower bound exactly. For
+the MOD 2 principle, we tighten Grigoriev’s linear degree sum of squares lower bound, making
+it exact. Finally, for the triangle problem, we prove a sum of squares lower bound for finding
+the minimum triangle density. This lower bound is completely new and gives a simple example
+where constant degree sum of squares methods have a constant factor error in estimating graph
+densities.
+
+2012 ACM Subject Classification Theory of computation → Proof complexity
+
+Keywords and phrases Sum of squares hierarchy, proof complexity, graph theory, lower bounds
+
+Digital Object Identifier 10.4230/LIPIcs.ITCS.2019.61
+
+Related Version A full version of the paper is available at https://arxiv.org/abs/1711.
+11469.
+
+Acknowledgements The author would like to thank Sasha Razborov for suggesting the triangle
+problem and for helpful conversations. The author would also like to thank Johan Håstad,
+Fernando Geronimo, Annie Raymond, and anonymous reviewers for helpful comments on the
+paper. Finally, the author would like to thank Fernando Geronimo for helpful discussions on
+representation theory. This work was supported by the Simons Collaboration for Algorithms
+and Geometry, the NSF under agreement No. CCF-1412958, the Knut and Alice Wallenberg
+Foundation, the European Research Council, and the Swedish Research Council.
+            © Aaron Potechin;
+            licensed under Creative Commons License CC-BY
+10th Innovations in Theoretical Computer Science (ITCS 2019).
+Editor: Avrim Blum; Article No. 61; pp. 61:1–61:20
+                   Leibniz International Proceedings in Informatics
+                   Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany
+61:2   Sum of Squares Lower Bounds from Symmetry and a Good Story
+
+
+        1     Introduction
+       The sum of squares hierarchy (which we call SOS for brevity), a hierarchy of semidefinite
+       programs first indepedently investigated by Shor [33], Nesterov [27], Parrilo [28], Lasserre
+       [22], and Grigoriev [15, 16], is an exciting frontier of algorithm design, complexity theory,
+       and proof complexity. SOS is exciting because it provides a single unified framework
+       which can be applied to give approximation algorithms for a wide variety of combinatorial
+       optimization problems. Moreover, SOS is conjectured to be optimal for many of these
+       problems. In particular, SOS captures the Goemans-Williamson algorithm for MAX-CUT
+       [13], the Goemans-Linial relaxation for sparsest cut (analyzed by Arora, Rao, and Vazirani
+       [2]), and the subexponential time algorithm for unique games found by Arora, Barak, and
+       Steurer [1]. More recently, SOS has been applied directly to give algorithms for several
+       problems including planted sparse vector [5], dictionary learning [6], tensor decomposition
+       [12, 19, 25], tensor completion [8, 29], and quantum separability [7].
+           That said, there are limits to the power of SOS. As shown by SOS lower bounds for
+       constraint satisfactions problems (CSPs) [16, 32, 3, 20] and gadget reductions [34], SOS
+       requires degree Ω(n) (and thus exponential time) to solve most NP-hard problems. As shown
+       by SOS lower bounds on planted clique and other planted problems [26, 10, 17, 4, 18], SOS
+       can have difficulty distinguishing between a random input and an input which is random
+       except for a solution which has been planted inside it. Finally, as shown by Grigoriev’s
+       SOS lower bound for the knapsack problem [15], SOS has difficulty capturing integrality
+       arguments, i.e. arguments which say that an expression must be an integer.
+           In this paper, we further explore this last weakness of SOS. In particular, we develop
+       machinery which makes it much easier to prove SOS lower bounds when the problem is
+       symmetric and the unsatisfiability of our problem comes from integrality arguments. The
+       usual process for proving SOS lower bounds involves finding pseudo-expectation values (see
+       subsection 2.3) and then proving that a matrix called the moment matrix is PSD (postive
+       semidefinite), which can be quite difficult. Roughly speaking, to prove SOS lower bounds
+       with our machinery it is sufficient to verify that the answer to the following three questions
+       is yes:
+        1. Are there natural pseudo-expectation values for the problem?
+        2. Are these pseudo-expectation values rational functions of the problem parameters?
+        3. Are there sufficiently many values of the parameters for which these pseudo-expectation
+           values correspond to the actual expected values over a distribution of solutions which is
+           the uniform distribution over permutations of a single solution?
+
+           We demonstrate our machinery on three problems, the knapsack problem itself, the MOD
+       2 principle (which says that the complete graph Kn on n vertices does not have a perfect
+       matching when n is odd), and the following Turan-type problem: Minimize the number of
+       triangles in a graph G with a given edge density.
+
+
+       1.1    Equations and SOS lower bounds for knapsack, the MOD 2
+              principle, and a triangle problem
+       To state our SOS lower bounds on knapsack, the MOD 2 principle, and the triangle problem,
+       we must first express these problems as infeasible systems of polynomial equations. We do
+       this because as we will discuss in subsection 2.3, SOS gives a proof system for proving that
+       systems of polynomial equations over R are infeasible. Our lower bounds show that SOS
+       requires high degree to prove that the systems of equations corresponding to knapsack, the
+       MOD 2 principle, and the triangle problem are infeasible.
+A. Potechin                                                                                            61:3
+
+
+    For the knapsack problem, we consider the simple case when all of the weights are 1, the
+knapsack capacity is k, and we are asked whether it is possible to fill the knapsack to its
+capacty. We can express this problem with equations as follows:
+1. ∀i, x2i − xi = 0
+    Pn
+2.    i=1 xi − k = 0.
+These equations are clearly infeasible whenever k ∈ / Z. However, as Grigoriev [15] showed,
+since SOS has difficulty capturing integrality arguments, SOS requires high degree to refute
+these equations.
+I Theorem 1 (Grigoriev’s SOS lower bound for knapsack).
+Degree min {2bmin {k, n − k}c + 3, n} SOS fails to prove that the knapsack equations are
+infeasile.
+In this paper, we observe that Grigoriev’s lower bound (which is tight) follows immediately
+from our machinery.
+    For the MOD 2 principle, we are asked whether the complete graph Kn has a perfect
+matching. To express this problem with equations, we take a variable xij for each possible
+edge (i, j) and we want that xij = 1 if the edge (i, j) is in our matching and xij = 0 otherwise.
+We encode this and the claim that we have a perfect matching as follows:
+1. For all i, j ∈ [1, n] such that i < j, x2ij − xij = 0
+                       P
+2. For all i ∈ [1, n], j∈[1,n]:j6=i xij − 1 = 0 (where we take xij = xji whenever i > j)
+These equations are infeasible whenever n is odd. However, Grigoriev [16] showed that SOS
+requires high degree to refute these equations. While Grigoriev’s lower bound is shown via a
+reduction from the Tseitin equations and is tight up to a constant factor, in this paper we
+use our machinery to obtain the following tight SOS lower bound directly.
+I Theorem 2 (SOS lower bound for the MOD 2 principle).
+Degree n−1
+        2 SOS fails to prove that the equations for the MOD 2 principle are infeasible.
+
+For the triangle problem, we want to minimize the number of triangles in a graph with edge
+density ρ. For this problem, Goodman [14] showed the following lower bound.
+I Theorem 3 (Goodman’s bound). The minimal number of triangles in a graph G with n
+vertices and edge density ρ is at least
+                
+                n    n(n − 1)(1 − ρ)
+    t(n, ρ) :=     −                   ((1 + 2ρ)n − 2 − 2ρ)
+                3            6
+As we will discuss in the full version of this paper, this bound is tight if there is an integer k
+such that
+ 1. nk − 1 = (1 − ρ)(n − 1)
+ 2. n is divisible by k.
+If so, then we can take G to have k independent sets of size nk and have all of the edges
+between different independent sets, which minimizes the number of triangles in G and matches
+Goodman’s bound. Otherwise, Goodman’s bound cannot be achieved.
+    To express this problem using equations, we again create a variable xij for each possible
+edge (i, j) and we want xij = 1 if the edge (i, j) is in the graph and xij = 0 if the edge (i, j)
+is not in the graph. We encode this, the requirement the edge density is ρ, and the claim
+that Goodman’s bound can be achieved with the following equations
+ 1. For all i, j ∈ [1, n] such that i < j, x2ij − xij = 0
+    P                         n
+ 2.    i,j∈[1,n]:i<j xij − ρ 2 = 0
+    P                                                              n
+                                                                      n(n−1)(1−ρ)
+ 3.    i,j,k∈[1,n]:i<j<k xij xik xjk − t(n, ρ) = 0 where t(n, ρ) = 3 −        6      ((1 + 2ρ)n −
+    2 − 2ρ)
+
+
+                                                                                                     ITCS 2019
+61:4   Sum of Squares Lower Bounds from Symmetry and a Good Story
+
+
+       Using our machinery, we show the following SOS lower bound which is completely new and
+       was the motivation for developing our machinery.
+
+       I Theorem 4 (SOS lower bound for the triangle problem).
+       Letting k be the number such that nk − 1 = (1 − ρ)(n − 1), degree bmin {k, nk }c + 1 SOS fails
+       to refute the triangle problem equations.
+
+
+       1.2    Relation to previous work on symmetry and SOS
+       There is a considerable body of prior research on symmetry and SOS. Several works built
+       on the difficulty on knapsack and/or further investigated symmetric polynomials on the
+       variables {x1 , . . . , xn }. Laurent [23] used the difficulty of knapsack to show that degree d n2 e
+       SOS is required to capture the CUT polytope of the complete graph. Bleckherman, Gouveia,
+       and Pfeiffer [9] used the difficulty of knapsack to construct degree 4 polynomials which are
+       non-negative but cannot be written as a sum of squares of low degree rational functions. Lee,
+       Prakash, Wolf, and Yuen [24] showed that there are symmetric non-negative polynomials on
+       the variables {x1 , . . . , xn } which cannot be approximated with low degree sums of squares.
+       Kurpisz, Leppänen, and Mastrolilli [21] gave a general criterion for determining if a symmetric
+       polynomial on {x1 , . . . , xn } is a sum of squares or not.
+           While these prior works give more precise results for symmetric problems on the vari-
+       ables {x1 , . . . , xn }, they do not show how to handle problems which are symmetric under
+       permutations of [1, n] but have variables such as {xij : i < j} which depend on 2 or more
+       indices. Thus, these prior works are incomparable with this work.
+           Another line of research on symmetry and SOS which is more closely connected to this
+       work uses symmetry to reduce the algorithmic complexity of implementing SOS. Gatermann
+       and Parrilo [11] showed how representation theory can be used to greatly reduce the search
+       space for pseudo-expectation values, allowing SOS to be run more efficiently on symmetric
+       problems. Recently, Raymond et. al. [30] combined the analysis of Gatermann and Parrilo
+       with Razborov’s flag algebras [31] to show that in the case of k-subset hypercubes, the
+       resulting semidefinite program has size which is independent of n. These results are quite
+       general and apply to all of the problems we are considering. That said, these results do not
+       tell us how to find or verify pseudo-expectation values by hand, which is generally what is
+       needed for SOS lower bounds.
+           In this paper, we show how the representation theory which allows Gatermann and Parrilo
+       [11] and Raymond et. al. [30] to dramatically reduce the size of the semidefinite programs
+       for SOS on symmetric problems can also be used to help prove theoretical SOS lower bounds
+       on symmetric problems. In particular, Theorem 21, which is a crucial part of our machinery,
+       essentially follows from Corollary 2.6 of Raymond et. al. [30]. We obtain our lower bounds
+       by combining this theorem with the additional assumption that the unsatisfiability of the
+       problem we are analyzing comes from integrality arguments.
+
+
+       1.3    Paper outline
+       The remainder of the paper is organized as follows. In Section 2, we give some preliminaries.
+       In Section 3 we describe how we can find candidate pseudo-expectation values from stories.
+       In Section 4 we highlight how symmetry is useful for proving SOS lower bounds even without
+       additional assumptions. In Section 5, we rigorously define what stories and good stories
+       are and show that good stories imply SOS lower bounds. Finally, in Section 6, we show a
+       method for verifying that stories are good stories.
+A. Potechin                                                                                            61:5
+
+
+ 2     Preliminaries
+Before we can describe our machinery, we must first give some preliminaries. We begin by
+describing the class of symmetric problems which our machinery can be applied to. We then
+define the sum of squares hierarchy and discuss some notation for the paper.
+
+2.1    Symmetric problems
+I Definition 5. We make the following assumptions about the problem P we are analyzing:
+1. We assume that P is a problem about hypergraphs G with vertices V (G) = [1, n] and a
+    set of possible hyperedges EP . We view the hyperedges e ∈ EP as subsets of [1, n] which
+    may be unordered or ordered depending on P . If all of these subsets have the same size
+    t ≥ 1 then we say that the problem P has arity t.
+2. We assume that P has variables {xe : e ∈ EP } and P is a YES/NO question which is
+    described by a set of problem equations {si ({xe : e ∈ EP }) = 0}. The answer to P is
+    YES if all of these equations can be satisfied simultaneously and NO otherwise.
+3. We assume that the set EP of possible hyperedges and the set {si ({xe : e ∈ EP }) = 0}
+    of problem equations are both symmetric under permutations of [1, n].
+If a problem P satisfies all of these assumptions then we say that P is a symmetric hypergraph
+problem. Since we only consider problems of this type, for brevity we will just say symmetric
+problem rather than symmetric hypergraph problem.
+
+I Example 6. Symmetric problems P of arity 1 are YES/NO questions on the variables
+{x1 , . . . , xn } which are symmetric under permutations of [1, n].
+
+I Example 7. For symmetric problems P of arity 2, EP is the set of subsets of [1, n] of size
+2. If the subsets in EP are unordered then G is an undirected graph and we have variables
+{xij : i, j ∈ [1, n], i 6= j} where we take xji = xij . If the subsets in EP are ordered then G is
+a directed graph and we have distinct variables {xij : i, j ∈ [1, n], i 6= j}.
+
+I Remark. While our machinery can handle symmetric problems of any arity, the examples
+we focus on all have arity 1 or 2. Knapsack with unit weights has arity 1 while the MOD 2
+principle and the triangle problem have arity 2 and are about undirected graphs.
+I Remark. Since our machinery is based on polynomial interpolation, it is important that the
+symmetric problem P does not have inequalities as well as equalities. If P has inequalities
+then our machinery does not immediately give an SOS lower bound and more analysis is
+needed.
+
+
+2.2    Index degree
+For our results, rather than considering the degree of a polynomial f , it is more natural to
+consider the largest number of indices mentioned in any one monomial of f . We call this the
+index degree of f .
+
+I Definition 8 (Index degree).
+                          Q
+1. Given a monomial p = e∈Ep xe , we define I(p) = {i : ∃e ∈ Ep : i ∈ e} and we define the
+   index degree of p to be
+
+       indexdeg(p) = indexdeg[1,n] (p) = |I(p)|
+
+   In other words, indexdeg(p) is the number of indices which p depends on.
+                                 P
+2. Given a polynomial f , if f = j cj pj is the decomposition of f into monomials then we
+   define the index degree of f to be indexdeg(f ) = maxj {indexdeg(pj )}
+
+                                                                                                     ITCS 2019
+61:6   Sum of Squares Lower Bounds from Symmetry and a Good Story
+
+
+       I Example 9. If p is the monomial p = x12 x34 then p has degree 2 and index degree 4.
+
+       I Example 10. If f = x12 x13 + x424 then f has degree 4 and index degree 3.
+       We will also need an analagous definition where we only consider the indices outside of a
+       subset I ⊆ [1, n].
+
+       I Definition 11 (Index degree outside of I). Let I ⊆ [1, n] be a subset of indices.
+                                 Q
+       1. Given a monomial p = e∈Ep xe , we define the index degree of p on [1, n] \ I to be
+
+              indexdeg[1,n]\I (p) = |I(p) \ I|
+
+          In other words, indexdeg[1,n]\I (p) is the number of indices in [1, n] \ I which p depends
+          on.
+                                        P
+       2. Given a polynomial f , if f = j cj pj is the decomposition of f into monomials then we
+          define the index degree of f on [1, n] \ I to be indexdeg[1,n]\I (f ) =
+          maxj {indexdeg[1,n]\I (pj )}
+
+       2.3    SOS and pseudo-expectation values
+       We now define SOS and pseudo-expectation values, which are used to prove SOS lower
+       bounds. One way to describe SOS is through SOS/Positivstellensatz proofs, which are
+       defined as follows:
+
+       I Definition 12. Given a system of polynomial equations {si = 0} over R, an index degree
+       d SOS/Positivstellensatz proof of infeasibility is an equality of the form
+                X          X
+          −1 =     fi si +    gj2
+                  i          j
+
+       where
+       1. ∀i, indexdeg(fi ) + indexdeg(si ) ≤ d
+       2. ∀j, indexdeg(gj ) ≤ d2
+       I Remark. This is a proof of infeasibility because the terms fi si should all be 0 by the
+       problem equations and the terms gj2 must all be non-negative, so they can’t possibly sum to
+       −1 if all of the problem equations are satisfied.
+
+       I Definition 13. Index degree d SOS gives the following feasibility test for whether a
+       system of polynomial equations over R is feasible or not. If there is an index degree d
+       Positivstellensatz proof of infeasibiblity then index degree d SOS says NO. Otherwise, index
+       degree d SOS says YES.
+       I Remark. Index degree d SOS may give false positives by failing to say NO on systems of
+       equations which are infeasible but will never give a false negative.
+       In this paper, we show SOS lower bounds for the infeasible systems of equations described
+       in subsection 2.1 by showing that for small d there is no index degree d Positivstellensatz
+       proof of infeasibility for our system of equations. This can be done with index degree d
+       pseudo-expectation values, which are defined as follows:
+
+       I Definition 14. Given a system of polynomial equations {si = 0} over R, index degree d
+       pseudo-expectation values are a linear mapping Ẽ from polynomials of index degree ≤ d to
+       R which satisfies the following conditions:
+       1. Ẽ[1] = 1
+       2. ∀i, f, Ẽ[f si ] = 0 whenever indexdeg(f ) + indexdeg(si ) ≤ d
+       3. ∀g, Ẽ[g 2 ] ≥ 0 whenever indexdeg(g) ≤ d2
+A. Potechin                                                                                                    61:7
+
+
+I Proposition 15. If there are index degree d pseudo-expectation values Ẽ for a system
+of polynomial equations s1 = 0, s2 = 0, etc. over R, then there is no index degree d
+Positivstellensatz proof of infeasibility for these equations.
+
+Proof. Assume that we have both index degree d pseudo-expectation values and an index
+degree d Positivstellensatz proof of infeasibility. Applying the pseudo-expectation values to
+the Positivstellensatz proof, we get the following contradiction:
+                   X                X
+   −1 = Ẽ[−1] =       Ẽ[fi si ] +   Ẽ[gj2 ] ≥ 0                                         J
+                       i              j
+
+I Remark. Condition 3 of definition 14 is equivalent to the statement that the moment
+matrix M is PSD (positive semidefinite) where M is indexed by monomials p, q of index
+degree ≤ d2 and has entries Mpq = Ẽ[pq]. Proving SOS lower bounds usually involves proving
+that M  0, which can be quite difficult. In this paper we can instead analyze Ẽ[g 2 ] more
+directly.
+I Remark. The idea behind pseudo-expectation values is that they should mimic actual
+expected values over a distribution of solutions. In particular, as shown by the following
+proposition, if Ẽ comes from a distribution over actual solutions then it automatically gives
+pseudo-expectation values. This fact is crucial for our results.
+
+I Proposition 16. If the equations {si = 0} are feasible over R and Ω is a probability
+distribution over actual solutions then the linear mapping Ẽ[p] = EΩ [p] gives index degree d
+pseudo-expectation values for these equations for all d.
+
+Proof. Observe that:
+1. For any x ∼ Ω, 1 = 1. Thus, Ẽ[1] = EΩ [1] = 1.
+2. For any x ∼ Ω, for all i, f , f (x)si (x) = 0. Thus, for all i, f , Ẽ[f si ] = EΩ [f si ] = 0.
+3. For any x ∼ Ω, for all g, g(x)2 ≥ 0. Thus, for all g, Ẽ[g 2 ] = EΩ [g 2 ] ≥ 0.                     J
+
+2.4     Sequences of distinct indices
+We will need the following definitions about sequences of distinct indices in [1, n].
+
+I Definition 17 (Operations on sequences).
+1. Given a sequence of distinct indices A = (i1 , . . . , im ), we define the set IA to be IA =
+    {i1 , . . . , im }. In other words, IA is just A without the ordering.
+2. Given two sequences of distinct indices A = (i1 , . . . , im1 ) and B = (i01 , . . . , i0m2 ), we say
+    that A ⊆ B if m1 ≤ m2 and ∀j ∈ [1, m1 ], i0j = ij .
+3. Given two sequences of distinct indices A = (i1 , . . . , im1 ) and B = (i01 , . . . , i0m2 ) such that
+    IA ∩ IB = ∅, we define A ∪ B to be the sequence A ∪ B = (i1 , . . . , im1 , i01 , . . . , i0m2 )
+In this paper, we will never consider sequences of indices which are not distinct, so we assume
+without stating it explicitly that all of our sequences contain distinct indices.
+
+ 3      Finding pseudo-expectation values: Stories and a verifier/adversary
+        game for SOS
+In this section, we describe a verifier/adversary game which we use to find pseudo-expectation
+values and deduce SOS lower bounds. We then describe how the adversary can play this
+game using stories and describe the resulting pseudo-expectation values for knapsack, the
+MOD 2 principle, and the triangle problem.
+
+
+
+                                                                                                             ITCS 2019
+61:8   Sum of Squares Lower Bounds from Symmetry and a Good Story
+
+
+           The verifier/adversary game is as follows. The verifier queries sequences of indices {Ai }.
+       For each sequence of indices A = (i1 , . . . , im ) the verifier queries, for each j ∈ [1, m] and
+       every possibility for what happens with the previous indices (i1 , . . . , ij−1 ), the adversary
+       must provide a probability distribution for what happens with the index ij . Taken together,
+       these answers give a probability distribution for all of the possibilities for what happens with
+       the indices in A. From these probability distributions, we can obtain pseudo-expectation
+       values.
+           The verifier wins if he/she detects one of the following flaws in the adversary’s answers
+       1. The adversary gives a probability for some event which is either negative or undefined.
+       2. The adversary’s answers do not result in well-defined pseudo-expectation values because
+           they are inconsistent. More precisely, there exist two sequences of indices A = (i1 , . . . , im )
+           and A0 = (i01 , . . . , i0m ) such that A0 and A are equal as sets (i.e. {i01 , . . . , i0m } is a
+           permutation of {i1 , . . . , im }) and the resulting probability distributions for what happens
+           with the indices {i1 , . . . , im } do not match.
+       3. The adversary’s answers result in pseudo-expectation values such that some problem
+           equation si = 0 is violated i.e. Ẽ[f si ] 6= 0 for some polynomial f .
+       If the verifier is unable to find such a flaw then the adversary wins.
+       I Remark. Roughly speaking, when we say that the adversary specifies what happens with a
+       set of indices I we mean that the adversary assigns values to all variables xe such that the
+       indices of e are contained in I. We make this more precise in Section 5.
+       The adversary often has a strategy for this game based on a story for what happens with the
+       indices. For the problems we are analyzing, the adversary’s stories are as follows:
+        1. Knapsack: We set k out of the n xi to be 1 and set the rest to 0.
+        2. The MOD 2 principle: For each vertex i, the perfect matching contains precisely one of
+           the edges which are incident to i.
+        3. The triangle problem: We have k independent sets of size nk .
+       I Remark. The adversary’s stories are not convicing to us, as we can understand integrality
+       arguments. However, the adversary just has to fool SOS, which is poor at capturing integrality
+       arguments.
+          We now demonstrate how these stories naturally give probability distributions for what
+       happens with the indices and thus give pseudo-expectation values.
+       I Example 18 (Knapsack). For knapsack, if the verifier first queries vertex i, the adversary
+       says that xi = 1 with probability nk and xi = 0 with probability n−k  n . Thus, according to the
+                                                  k                     k
+       adversary the expected value of xi is n so we take Ẽ[xi ] = n
+           If the verifier then queries xj , if we have xi = 1 then the adversary says that xj = 1 with
+                    k−1
+       probability n−1    and xj = 0 with probability n−k n−1 as the adversary wants to set k − 1 of the
+       remaining n − 1 variables to 1. If we have xi = 0 then the adversary instead says that xj = 1
+                            k
+       with probability n−1    and xj = 0 with probability n−k−1n−1 as the adversary wants to set k of
+       the remaining n − 1 variables to 1. Thus, according to the adversary the expected value of
+                k(k−1)                           k(k−1)
+       xi xj is n(n−1)  so we take Ẽ[xi xj ] = n(n−1)  .
+                                                                                         (k)
+           Following similar logic, for all I ⊆ [1, n] such that |I| ≤ d, Ẽ[ i∈I xi ] = |I|
+                                                                             Q
+                                                                                           n
+                                                                                         (|I| )
+
+       I Example 19 (MOD 2 principle). For the MOD 2 principle, if the verifier first queries i, the
+       adversary gives no information because there is nothing distinguishing i from other vertices.
+                                                                                            1
+       If the verifier then queries j, the adversary says that xij = 1 with probability n−1     and
+                                 n−2
+       xij = 0 with probability n−1 because the adversary wants to match 1 out of the remaining
+                                                        1
+       n − 1 vertices with i. Thus, we take Ẽ[xij ] = n−1
+A. Potechin                                                                                                61:9
+
+
+    We now consider Ẽ[xij xkl ] where i, j, k, l are all distinct. xij xkl = 0 unless xij = 1 so
+we can focus on the case when xij = 1, which according to the adversasry happens with
+               1
+probability n−1  . In this case, if the verifier queries k, the adversary gives no additional
+information because there is nothing distinguishing k from other vertices in [1, n] \ (i, j). If
+                                                                                   1
+the verifier then queries l, the adversary says that xkl = 1 with probabililty n−3    and xkl = 0
+                   n−4
+with probabililty n−3 because the adversary wants to match 1 of the n − 3 remaining vertices
+                                          1
+with k. Thus, we take Ẽ[xij xkl ] = (n−1)(n−3)
+    Following similar logic, we obtain that for all E ⊆ {(i, j) : i, j ∈ [1, n], i < j} such that
+|E| ≤ d, Ẽ[ (i,j)∈E xij ] = Q|E| 1
+             Q                                                                   Q
+                                            if E is a partial matching and Ẽ[ (i,j)∈E xij ] = 0
+                                          (n−2j+1)
+                                    j=1
+otherwise.
+I Example 20 (Triangle Problem). For the triangle problem, if the verifier first queries i, the
+adversary gives no information because there is nothing distinguishing i from other vertices.
+If the verifier thenn
+                      queries j, the adversary says that j is in the same independent    set as i
+                    k −1                                                         n− n
+with probability n−1 and is in a different independent set with probability n−1 .   k
+
+
+    If the verifier then queries k, if i, j are in the same independentn set then the adversary
+                                                                       k −2
+says that k is in the same independent set as i, j with probability n−2     and is in a different
+                                            n− n
+independent set with probability n−2k . If i, j are in different independent sets then the
+                                                                                            n
+                                                                                                −1
+adversary says that k is in the same independent set as i with probability n−2
+                                                                           k
+                                                                               , k is in the
+                                                        n
+                                                        k −1
+same independent set as j with probability n−2 , and k is in a different independent set with
+             n−2 n
+probability n−2k . Thus, the adversary gives the following probabilities for what happens
+with i, j, k:
+                                                                             (n       n
+                                                                              k −1)( k −2)
+1. The probability that i, j, k are all in the same independent set is (n−1)(n−2)
+2. The probability     that i, j are in the same independent set and k is in a different independent
+            (n         n
+              k −1)(n− k )
+   set is (n−1)(n−2) . This is also the probability that i, k are in the same independent
+   set and j is in a different independent set and the probability that j, k are in the same
+   independent set and i is in a different independent set.
+                                                                             (n− n        n
+                                                                                  k )(n−2 k )
+3. The probability that i, j, k are all in different independent sets is (n−1)(n−2)
+This gives the following     pseudo-expectation values:
+                n− n
+1. Ẽ[xij ] = n−1k
+                                                     ( n −1)(n− n )   (n− n       n
+                                                                          k )(n−2 k ) (n− n      n
+                                                                                          k )(n− k −1)
+2. Ẽ[xij xik ] = Ẽ[xij xjk ] = Ẽ[xik xjk ] = (n−1)(n−2)
+                                                 k      k
+                                                           +           (n−1)(n−2) =     (n−1)(n−2)
+                        (n− n       n
+                            k )(n−2 k )
+3. Ẽ[xij xik xjk ] =    (n−1)(n−2)
+
+I Remark. For the triangle problem, it is difficult to write down the general expression for Ẽ
+explicitly. Fortunately, as we will show, we can verify the conditions of Definition 14 based
+on the story for Ẽ
+
+ 4     Symmetry and SOS lower bounds
+In this section, we highlight how symmetry can help prove SOS lower bounds even without
+additional assumptions. In particular, we have the following theorem which essentially follows
+from Corollary 2.6 of [30].
+I Theorem 21. If Ẽ is a linear map from polynomials to R which is symmetric with respect
+to permutations of [1, n] then for any polynomial g, we can write
+                     X
+    Ẽ[g 2 ] =                         2
+                                   Ẽ[gIj ]
+             I⊆[1,n],j:|I|≤indexdeg(g)
+
+where for all I, j,
+
+
+
+                                                                                                         ITCS 2019
+61:10   Sum of Squares Lower Bounds from Symmetry and a Good Story
+
+
+         1. gIj is symmetric with respect to permutations of [1, n] \ I.
+         2. indexdeg(gIj ) ≤ indexdeg(g)
+                     P
+         3. ∀i ∈ I, σ∈S[1,n]\(I\{i}) σ(gIj ) = 0
+        Theorem 21 is very useful for proving SOS lower bounds on symmetric problems because
+        it implies that instead of checking that Ẽ[g 2 ] ≥ 0 for all polynomials of index degree ≤ d2 ,
+        it is sufficient to check polynomials which are symmetric under permutations of all but d2
+        indices. However, despite its simplicity, Theorem 21 is quite deep. To prove Theorem 21, we
+        must carefully decompose g and then use symmetry to analyze all of the non-square terms of
+        g 2 and either eliminate them or reduce them to square terms. Fortunately, this has already
+        been done by Corollary 2.6 of [30] using representation theory. We now sketch how Theorem
+        21 follows from Corollary 2.6 of [30].
+
+        Proof sketch of Theorem 21 using Corollary 2.6 of [30].
+        I Definition 22 (Definition 2.1 of [30]). If ⊕λ Vλ is the isotypic decomposition of the vector
+        space of polynomials of degree ≤ d and τλ is a tableau of shape λ, define
+                           Rτλ
+           Wτλ := Vλ
+
+        to be the subspace of the isotypic Vλ fixed by the action of the row group Rτλ (which keeps
+        each row of τλ fixed but may permute the elements within each row of τλ )
+            Corollary 2.6 of [30] (rephrased slightly) says the following:
+        I Corollary 23 (Corollary 2.6 of [30]). Suppose p is a polynomial on the variables {xij : i, j ∈
+        [1, n], i < j} such that p is symmetric under permutations of [1, n] and p can be written as
+        a sum of squares of polynomials of degree ≤ d. For each partition λ ` n, fix a tableau τλ
+        of shape λ and choose a vector space basis {bτ1λ , . . . , bτmλλ } for Wτλ . Then for each partition
+        λ ∈ Λ, there exists an mλ × mλ PSD matrix Qλ such that
+                  X
+            p=        tr(Qλ Y τλ )
+                λ∈Λ
+
+        where Λ := {λ ` n : λ ≥lex (n − 2d, 12d )} and Yijτλ := sym(bτi λ bτj λ )
+        Using Corollary 2.6 of [30], we can prove Theorem 21 as follows. Since Ẽ is symmetric,
+                                                   1
+        Ẽ[g 2 ] = Ẽ[sym(g 2 )] where sym(g 2 ) = n!             2             2
+                                                      P
+                                                       σ∈Sn (σ(g)) . Since sym(g ) is symmetric and a
+        sum of squares, by Corollary 2.6 of [30], there exist PSD matrices Qλ such that
+                       X
+            Ẽ[g 2 ] =    Ẽ[tr(Qλ Y τλ )]
+                      λ∈Λ
+
+        Since Ẽ is symmetric, this implies that
+                                    τ
+                      X
+           Ẽ[g 2 ] =   Ẽ[tr(Qλ Y 0 λ )]
+                      λ∈Λ
+
+                  τ
+        where Y 0 ijλ := bτi λ bτj λ . Now consider each λ ∈ Λ separately and observe that since Qλ  0,
+                                          T
+        we can write Qλ = j q j q j for some vectors {q 1 , . . . , q mλ }. Thus,
+                                  P
+
+                                                                                                        !2
+                                  X        T                X T                  X   X
+           tr(Qλ Y    τλ
+                           ) = tr(  q j q j bτ λ bτ λ T ) =  q j bτλ bτλ T q j =            qij bτi λ
+                                   j                      j                    j     i∈mλ
+
+        which means we can reexpress sym(g 2 ) as a sum of squares, each of which has the form
+         Pmλ            2
+        ( i=1 ci bτi λ ) for some partition λ ` n, tableau τλ of shape λ, and coefficients {ci }
+A. Potechin                                                                                                  61:11
+
+                       Pmλ            2
+    For each square ( i=1   ci bτi λ ) , let I be the set of indices which are not in the top row
+of τλ . To show the first statement of Theorem 21, observe that permuting the indices of
+[1, n] \ I is just permuting the top row of τλ . By definition, the elements of Wτλ are all
+                                            Pmλ
+invariant under such permutations, so i=1         ci bτi λ is invariant under permutations of [1, n] \ I,
+as needed.
+
+I Remark. In the setting of Corollary 2.6 of [30] the variables are {xij : i, j ∈ [1, n], i < j}
+so if g has degree d, g can have index degree 2d which matches the fact that Λ := {λ ` n :
+λ ≥lex (n − 2d, 12d )}. To prove Thorem 21 as stated using Corollary 2.6 of [30], Corollary
+2.6 of [30] must be restated in terms of index degree and the proof adjusted accordingly.
+
+The second statement of Theorem 21 is trivial as all of the bτi λ are in the vector space of
+polynomials of degree ≤ d and thus index degree ≤ 2d.
+   To show the third statement of Theorem 21, we need to prove the following lemma
+
+I Lemma 24. For any τλ , letting I be the set of indices which are not in the top row of τλ ,
+for any i ∈ I and any p ∈ Wτλ ,
+           X
+                        σ(p) = 0
+     σ∈S([1,n]\I)∪{i}
+
+
+Proof sketch. This lemma follows from the following claim:
+
+I Definition 25. Define Ur = span{p : ∃I ⊆ [1, n] : |I| = r, ∀σ ∈ S[1,n]\I , σ(p) = p} and
+define
+
+     Vr = Ur /Ur−1 =span{p : ∃I ⊆ [1, n] : |I| = r, ∀σ ∈ S[1,n]\I , σ(p) = p,
+                                                 X
+                    ∀J ⊆ [1, n] : |J| ≤ r − 1,          σ(p) = 0}
+                                                  σ∈S[1,n]\J
+
+
+I Claim 26. Vr = ⊕λ:The top row of λ has length n−r Vλ
+
+Assuming this claim, for any τλ , letting I be the set of indices which are not in the top row
+                                                                P
+of τλ , for any p ∈ Wτλ ⊆ Vλ and any J such that |J| < |I|, σ∈S[1,n]\J σ(p) = 0}. Taking
+J = I \ {i}, the result follows.
+    We defer the proof of this claim to the full version.                                    J
+
+                                                                                                      J
+
+However, Corollary 2.6 of [30] does not give us an explicit expression for Ẽ[g 2 ], so we can
+ask whether we can obtain an explicit expression for Ẽ[g 2 ]. It turns out that there is such
+an expression but it is quite complicated. For an alternative proof of Theorem 21 which is
+explicit and combinatorial but technical, see the full version of this paper.
+
+
+ 5       Sum of squares lower bounds from symmetry and a good story
+
+In this section, we show how strategies for the verifier/adversary game described in section 3
+with certain properties, which we call good stories, imply SOS lower bounds.
+
+
+
+                                                                                                            ITCS 2019
+61:12   Sum of Squares Lower Bounds from Symmetry and a Good Story
+
+
+        5.1    Stories
+        In this subsection, we rigorously define what we mean by stories. Once the definition is
+        understood, stories are generally recognizable on sight.
+        I Definition 27. Given a subset I of [1, n], we define PI to be the set of all polynomials
+        which only depend on the variables {xe : e ⊆ I}
+        I Definition 28 (Stories). Let P be the problem we are anaylzing and let A = (i1 , . . . , im )
+        be a sequence of indices. We say that a strategy S for adversary is a level n0 story for (P, A),
+        describing what will happen with the remaining indices after we have already queried A, if
+        the following is true:
+        1. n0 ≤ n − |IA |
+        2. S specifies what happened with the indices in A. More precisely, there is a linear map
+           ẼS,A : PIA → R corresponding to S
+        3. For all i ∈ [1, n] \ IA , S gives values {pij } for the probabilities of level n0 − 1 stories Sij
+           for (P, A ∪ (i)).
+                                                  P
+        4. We have that for all i ∈ [1, n] \ IA , j pij = 1 and ∀f ∈ PIA , ∀j, ẼS,A [f ] = ẼSij ,(A∪(i)) [f ]
+        Given a level n0 story S for (P, A), for all sequences B such that A ⊆ B, letting i be the next
+                                                    P
+        element in B after A, we define ẼS,B = j pij ẼSij ,B
+        I Remark. Note that we do not require the values pij to be non-negative in this definition.
+        I Remark. For all of our examples we will have that n0 = n − |IA | but we do not force this
+        to be the case in the definition.
+
+        5.2    Useful story properties part 1
+        We now define several properties our stories may have which are useful for proving SOS lower
+        bounds. In Section 6 we will describe a method for verifying these properties.
+            The first property we want is that our story S gives the same linear map ẼS regardless
+        of the order we query the indices.
+        I Definition 29. We say that a level n0 story S for (P, A) is self-consistent if whenever B, B 0
+        are sequences such that A ⊆ B, A ⊆ B 0 , |IB \ IA | ≤ n0 , |IB \ IA | ≤ n0 ,
+
+           ∀p ∈ PIB ∩IB0 , ẼS,B [p] = ẼS,B 0 [p]
+
+        If S is self-consistent then we define ẼS : {f : indexdeg[1,n]\IA (f ) ≤ n0 } → R to be the linear
+        map such that for all monomials p such that indexdeg[1,n]\IA (p) ≤ n0 , for any sequence B of
+        length at most n0 such that IB ∩ IA = ∅ and B contains all indices in variables of p which
+        are not in IA , ẼS [p] = ẼS,(A∪B) [p]
+        A second property we want is that our story sounds like we are taking the expected values
+        over the uniform distribution of permutations of a single input graph G0 . To make this
+        precise, we note a useful property such expected values have. We then define single-graph
+        mimics to be stories/pseudo-expectation values which also have this property.
+        I Proposition 30. If Ω is the trivial distribution consisting of a single graph G0 then for
+        any polynomials f and g, EΩ [f g] = EΩ [f ]EΩ [g]
+        Proof. EΩ [f g] = f (G0 )g(G0 ) = EΩ [f ]EΩ [g]                                                     J
+
+        I Proposition 31. If Ω is the uniform distribution over all permutations of a single graph
+        G0 then for all symmetric polynomials f and g, EΩ [f g] = EΩ [f ]EΩ [g].
+A. Potechin                                                                                           61:13
+
+
+Proof. For any symmetric polynomial h and any permutation σ, h(σ(G0 )) = h(G0 ) which
+implies that EΩ [h] = h(G0 ). Thus, we again have that EΩ [f g] = f (G0 )g(G0 ) = EΩ [f ]EΩ [g],
+as needed.                                                                                   J
+
+I Remark. The property that E[f g] = E[f ]E[g] for all symmetric polynomials f, g is useful
+because it immediately implies that for all symmetric polynomials g, E[g 2 ] = (E[g])2 ≥ 0.
+We now define single graph mimics.
+
+I Definition 32. Let P be a symmetric problem with equations {si = 0} and let I be a
+subset of [1, n]. We say that Ẽ is a level n0 single graph mimic for P on [1, n] \ I if the
+following conditions hold:
+1. Ẽ : {p : indexdeg[1,n]\I (p) ≤ n0 } → R is a linear map which is symmetric under
+    permutations of [1, n] \ I
+2. For all i and all polynomials f such that indexdeg[1,n]\I (f ) + indexdeg[1,n]\I (si ) ≤ n0 ,
+    Ẽ[f si ] = 0
+3. For all polynomials f, g which are symmetric under permutations of [1, n] \ I such that
+    indexdeg[1,n]\I (f ) + indexdeg[1,n]\I (g) ≤ n0 , Ẽ[f g] = Ẽ[f ]Ẽ[g].
+We say that S is a level n0 single-graph mimic for (P, A) if S is a self-consistent level n0 story
+for (P, A) and ẼS is a level n0 single-graph mimic for P on [1, n] \ IA .
+
+A third property we want is that is that our story assigns non-negative probabilities to its
+substories as long as we don’t query too many indices. If our story and all of its substories
+satisfy these three properties then we call it a good story.
+
+I Definition 33. We say that S is a level (r, n0 ) good story for (P, A) if the following
+conditions hold:
+1. S is a level n0 single graph mimic for (P, A).
+2. If r > 0 then for any i ∈ [1, n] \ IA , the values pij are non-negative and the stories {Sij }
+   are all level (r − 1, n0 − 1) good stories for (P, A ∪ (i)).
+
+5.3    SOS lower bounds from good stories
+We now prove that good stories imply SOS lower bounds.
+
+I Theorem 34. Let P be a symmetric problem with equations {si = 0}. If we have a level
+(r, n0 ) good story for P then index degree d = min {2r, n0 } SOS fails to refute the equations
+for P .
+
+Proof. We need two components to prove this theorem. The first component is the following
+theorem which shows that if we have a good story then we satisfy all of the linear constraints
+on Ẽ and we have that Ẽ[g 2 ] ≥ 0 whenever g is symmetric under permutations of all but a
+few indices.
+
+I Theorem 35. Let P be a symmetric graph problem with constraints {si = 0} (where the
+{si } are polynomials in the input variables). If we have a level (r, n0 ) good story S for P
+then the corresponding linear map ẼS : {f : indexdeg(f ) ≤ n0 } → R satisfies the following
+properties
+ 1. ẼS is symmetric under permutations of [1, n]
+ 2. If I ⊆ [1, n] is a subset of indices of size at most r and g is a polynomial which is
+                                                                                       0
+    symmetric under permutations of [1, n] \ I such that indexdeg[1,n]\I (g) ≤ n −|I|    2 then
+    ẼS [g 2 ] ≥ 0
+ 3. For all i and all f such that indexdeg(f ) + indexdeg(si ) ≤ n0 , ẼS [f si ] = 0.
+
+
+                                                                                                     ITCS 2019
+61:14   Sum of Squares Lower Bounds from Symmetry and a Good Story
+
+
+        Proof. Since S is a single graph mimic and single graph mimics are symmetric with respect
+        to permutations of [1, n], the first statement follows. Similarly, the third statement follows
+        directly from condition 2 of Definition 32
+            For the second statement, by conditions 1 and 2 of Definition 33, we can express ẼS as a
+        probability distribution Ω over level n − |I| single graph mimics Ẽj for P on [1, n] \ I. Since
+                                                                                       2
+        g is symmetric under permutations of [1, n]
+                                 2                 2
+                                                      \ I, for all of the Ẽj , Ẽj [g ] = Ẽj [g]Ẽj [g] ≥ 0.
+        We now have that ẼS [g ] = EEj ∼Ω Ẽj [g ] ≥ 0, as needed.                                         J
+
+        The second component we need is Theorem 21, which shows that it is sufficient to verify that
+        ẼS [g 2 ] ≥ 0 whenever g is symmetric with respect to permutations of all but a few indices.
+        which is exactly what is shown by Theorem 35.
+             With these components in hand, we now prove Theorem 34. We need to check the
+        following:
+        1. Whenever indexdeg(f ) + indexdeg(si ) ≤ d = min {2r, n0 }, ẼS [f si ] = 0.
+                                                        0
+        2. Whenever indexdeg(g) ≤ d2 = min {r, n2 }, ẼS [g 2 ] ≥ 0
+        For the first statement, note that indexdeg(f ) + indexdeg(si ) ≤ n0 , so by Theorem 35,
+        ẼS [f si ] = 0. For the second statement, given a polynomial g of index degree at most d2 , by
+        Theorem 21 we can write
+                                  X
+             ẼS [g 2 ] =                          2
+                                             ẼS [gIj ]
+                      I⊆[1,n],j:|I|≤indexdeg(g)
+
+        where for all I, j,
+                         X
+           ∀i ∈ I,                    σ(gIj ) = 0
+                   σ∈S[1,n]\(I\{i})
+
+        We now use the following lemma to upper bound indexdeg[1,n]\I (gIj ):
+        I Lemma 36. If gIj is symmetric with respect to permutations of [1, n] \ I and
+                    X
+           ∀i ∈ I,            σ(gIj ) = 0
+                   σ∈S[1,n]\(I\{i})
+
+        then all monomials in gIj depend on all of the indices in I
+
+        Proof. Assume that there is an i ∈ I and some monomial p which does not depend on i
+        which has a nonzero coefficient in gIj . By symmetry, for all permutations σ of [1, n] \ I, the
+        coefficient of σ(p) is the same as the coefficient of p. However, these are also the coefficients
+                                                                          P
+        of σ2 (p) for permutations σ2 of [1, n] \ (I \ {i}). Since ∀i ∈ I, σ∈S[1,n]\(I\{i}) σ(gIj ) = 0, all
+        of these coefficients must be 0, which is a contradiction.                                        J
+                                                                                  0           0
+        This lemma implies that for all of the gIj , indexdeg[1,n]\I (gIj ) ≤ n2 − |I| ≤ n −|I|
+                                                                                              2 . Thus, by
+                          2
+        Theorem 35, ẼS [gIj ] ≥ 0. Since this holds for all I, j, ẼS [g 2 ] ≥ 0, as needed.           J
+
+
+         6     Verifying good stories
+        In this section, we describe a method to verify that a story S is a good story. For this
+        method, we make the following assumption.
+        I Definition 37. We assume that the problem equations and S depend on a set of parameters
+        and we take α1 , . . . , αm to be these parameters.
+        I Remark. For knapsack and the triangle problem, we have two parameters n and k. For
+        the MOD 2 principle we only have the parameter n.
+A. Potechin                                                                                                       61:15
+
+
+6.1     Useful story properties part 2
+We now describe two additional properties our stories may have which are useful for verifying
+that they are good stories. Once the definitions are understood, these properties are generally
+recognizable on sight.
+   One property S usually has is that the linear maps ẼS,B assign values to monomials
+which are rational functions of the parameters α1 , . . . , αm .
+
+I Definition 38. We say that a level n0 story S for (P, A) is rational if the following conditions
+hold
+1. For all B such that A ⊆ B and |IB \ IA | ≤ n0 , for all monomials p such that I(p) ⊆ IB ,
+     ẼS,B [p] is a rational function of the parameters α1 , . . . , αm .
+2. The rational functions {ẼS,B [p] : A ⊆ B, |IB \ IA | ≤ n0 , I(p) ⊆ IB } have a common
+     denominator qS (α1 , . . . , αm ) and the degree of the numerator is bounded by a function
+     of n0 and indexdeg(p).
+A second property our stories may have is that there are many settings of the parameters
+α1 , . . . , αm for which S and ẼS actually correspond to probabilities and expected values of
+the uniform distribution over permutations of a single input G0 .
+
+I Definition 39. Let S be a story for (P, A)
+1. We say that S is honest for (α1 , . . . , αm ) if S corresponds to what happens if we take
+   the uniform distribution for all permutations of an actual input graph G0 over [1, n] \ IA
+   and G0 satisfies the equations for P . Note that if this is the case then S is automatically
+   a single graph mimic for (P, A) for the parameter values (α1 , . . . , αm ) and ẼS [p] =
+   Eσ∈S[1,n]\IA [p(σ(G0 ))]
+2. We say that S is z-honest for (α1 , . . . , αm−1 ) if there are at least z values of αm such
+   that S is honest for (α1 , . . . , αm ).
+3. For all j ∈ [1, m − 2], we say that S is z-honest for (α1 , . . . , αj ) if there are at least z
+   values of αj+1 such that S is z-honest for (α1 , . . . , αj+1 ).
+4. We say that S is z-honest if there are at least z values of α1 such that S is z-honest for
+   (α1 ).
+The intution is that it is difficult for SOS to determine whether the parameters take one of
+these values for which we actually have a solution or we are in between these values.
+   The following lemma is very useful
+
+I Lemma 40. Let S be a story which is z-honest. If p(α1 , . . . , αm ) is a polynomial
+such that deg(p) < z and p(α1 , . . . , αm ) = 0 whenever S is honest for (α1 , . . . , αm ) then
+p(α1 , . . . , αm ) = 0
+
+Proof. We prove this lemma by induction. Assume that p(α1 , . . . , αm ) = 0 whenever S is
+z-honest for α1 , . . . , αj .
+    Consider p as a polynomial in the variables αj+1 , . . . , αm . Each monomial has a coefficient
+which is a polynomial c(α1 , . . . , αj ) and we must have that c(α1 , . . . , αj ) = 0 whenever S
+is z-honest for α1 , . . . , αj . We now show that all of these coefficients c(α1 , . . . , αj ) must
+be 0 whenever S is z-honest for α1 , . . . , αj−1 . To see this, consider such a polynomial
+c(α1 , . . . , αj ) and assume that we have α1 , . . . , αj−1 such that S is z-honest for α1 , . . . , αj−1 .
+Considering c as a polynomial in αj , c(αj ) = 0 whenever S is z-honest for α1 , . . . , αj , which
+by definition happens for at least z values of αj . Since deg(c) < z, we must have that
+c(α1 , . . . , αj ) = c(αj ) = 0. Thus, p(α1 , . . . , αm ) = 0 whenever S is z-honest for α1 , . . . , αj−1 ,
+as needed.                                                                                                 J
+
+
+
+                                                                                                                 ITCS 2019
+61:16   Sum of Squares Lower Bounds from Symmetry and a Good Story
+
+
+        6.2     Sufficient conditions for single graph mimics
+        With these definitions, we can now give sufficient conditions for showing that a story S is a
+        single graph mimic.
+        I Lemma 41. Let S be a level n0 story for (P, A). If S and the parameter values α1 , . . . , αm
+        satisfy the following conditions
+         1. S is rational and symmetric with respect to permutations of [1, n] \ IA .
+         2. For all z > 0, S is z-honest.
+         3. Letting qS (α1 , . . . , αm ) be the common denominator for {ẼS,B [p] : A ⊆ B, |IB \ IA | ≤
+            n0 , I(p) ⊆ IB }, qS (α1 , . . . , αm ) 6= 0
+        then for the parameter values α1 , . . . , αm , S is a level n0 single graph mimic for (P, A).
+        Proof. We need to verify the following for the given values of α1 , . . . , αm :
+        1. S is self-consistent.
+        2. For all i and all polynomials f such that indexdeg[1,n]\IA (f ) + indexdeg[1,n]\IA (si ) ≤ n0 ,
+            ẼS [f si ] = 0
+        3. For any polynomials f, g such that f, g are symmetric under permutations of [1, n] \ IA
+            and indexdeg[1,n]\IA (f ) + indexdeg[1,n]\IA (g) ≤ n0 , ẼS [f g] = ẼS [f ]ẼS [g].
+        We first verify that S is self-consistent for the given values of α1 , . . . , αm . Let p be a monomial
+        and let B, B 0 be sequences of indices such that A ⊆ B, A ⊆ B 0 , and I(p) ⊆ IB ∩ IB 0 . Since
+        S is rational, ẼS,B [p] = pq(α
+                                     1 (α1 ,...,αm )
+                                         1 ,...,αm )
+                                                     and ẼS,B 0 [p] = pq(α
+                                                                         2 (α1 ,...,αm )
+                                                                             1 ,...,αm )
+                                                                                         are rational functions of the
+        parameters α1 , . . . , αm . Now note that whenever S is honest for (α1 , . . . , αm ), ẼS,B 0 [p] =
+        ẼS,B [p] which implies that
+
+            p1 (α1 , . . . , αm )qS (α1 , . . . , αm ) = p2 (α1 , . . . , αm )qS (α1 , . . . , αm )
+
+             Since S is z-honest for all z > 0, by Lemma 40 we have that p1 qS = p2 qS as polyno-
+        mials in α1 , . . . , αm . Plugging in our actual values of α1 , . . . , αm , qS (α1 , . . . , αm ) 6= 0 so
+        p1 (α1 , . . . , αm ) = p2 (α1 , . . . , αm ) and thus ẼS,B 0 [p] = ẼS,B [p], as needed.
+             We can use similar ideas to prove the second and third statements but there is a
+        subtle point we must be careful of. A problem equations si may be a polynomial which
+        is symmetric in n \ IA rather than being a fixed polynomial. In this case, ẼS [si ] and
+        ẼS [f si ] will still be rational functions in the parameters α1 , . . . , αm . However, the equality
+                         p   (α ,...,α )
+        ẼS [f si ] = qfSsi(α11,...,αmm) may break down if
+
+           indexdeg[1,n]\IA (f ) + indexdeg[1,n]\IA (si ) > n0
+                                                Pn
+        I Example 42. If f = x1 x2 and si = i=1 xi − k then
+                                          X
+           f si = x21 x2 + x1 x22 + x1 x2          xi − kx1 x2
+                                                i∈[1,n]\{1,2}
+
+        and by symmetry
+
+            ẼS [f si ] = ẼS [x21 x2 ] + ẼS [x1 x22 ] + (n − 2)ẼS [x1 x2 x3 ] − k ẼS [x1 x2 ]
+                                                                                     p    (α ,...,α )
+        Thus, f si generally has index degree 3 and ẼS [f si ] = qfSsi(α11,...,αmm) is a rational function
+        of the parameters α1 , . . . , αm . However, if n0 = n = 2 then we are missing the term
+                                                                                        p  (α ,...,α )
+        x1 x2 i∈[1,n]\{1,2} xi from f si which may break the equality ẼS [f si ] = qfSsi(α11,...,αmm) . Note
+             P
+
+        that this problem will not occur as long as
+
+            indexdeg[1,n]\IA (f ) + indexdeg[1,n]\IA (si ) ≤ n0
+A. Potechin                                                                                                                61:17
+
+
+With this point in mind, for the second statement, note that since S is rational and
+                                                               p si (α1 ,...,αm )
+indexdeg(f ) + indexdeg(si ) ≤ n0 , we can write ẼS [f si ] = fq(α  1 ,...,αm )
+                                                                                  . Now observe
+that Ẽ[f si ] = 0 whenever Ẽ is honest for (α1 , . . . , αm ) and thus pf si (α1 , . . . , αm ) = 0
+whenever S is honest for (α1 , . . . , αm ). Since S is z-honest for all z > 0, by Lemma
+40, pf si (α1 , . . . , αm ) = 0 as a polynomial. Plugging in the given values of α1 , . . . , αm ,
+                                         p si (α1 ,...,αm )
+q(α1 , . . . , αm ) 6= 0 so ẼS [f si ] = fq(α 1 ,...,αm )
+                                                            = 0, as needed.
+   Similarly, for the third statement we want to view f , g, and f g as polynomials which
+depend on n rather than being fixed polynomials. Still, since S is rational and indexdeg(f ) +
+                                                        pf (α1 ,...,αm )             pg (α1 ,...,αm )
+indexdeg(g) ≤ n0 , we can write ẼS [f ] = q(α               1 ,...,αm )
+                                                                         , ẼS [g] = q(α  1 ,...,αm )
+                                                                                                      , and ẼS [f g] =
+pf g (α1 ,...,αm )
+ q(α1 ,...,αm ) . Now observe that ẼS [f g] = ẼS [f ]ẼS [g] whenever S is honest for (α1 , . . . , αm )
+and thus
+
+    pf (α1 , . . . , αm )pg (α1 , . . . , αm ) − q(α1 , . . . , αm )pf g (α1 , . . . , αm ) = 0
+
+whenever S is honest for (α1 , . . . , αm ). Since S is z-honest for all z, by Lemma 40, pf pg −
+qpf g = 0 as a polynomial. Plugging in the given parameters α1 , . . . , αm , q(α1 , . . . , αm ) 6= 0
+so
+
+                  pf g (α1 , . . . , αm )   pf (α1 , . . . , αm )pg (α1 , . . . , αm )
+    ẼS [f g] =                           =                                            = ẼS [f ]ẼS [g]            J
+                   q(α1 , . . . , αm )               (q(α1 , . . . , αm ))2
+
+
+6.3      Verifying good stories
+We are now ready to give sufficient conditions for a story to be a good story.
+
+I Theorem 43. If S is a story for (P, A) such that
+ 1. S is symmetric with respect to permutations of [1, n] \ IA
+ 2. S is rational
+ 3. For all z > 0, S is z-honest.
+then for a given choice of parameters α1 , . . . , αm , if n0 and r are numbers such that n0 ≤
+n − |IA | and
+ 1. If we consider up to r further indices, the probabilities pij are always non-negative.
+ 2. If we consider up to n0 further indices, we may get negative values for some pij but these
+    values are always well-defined (i.e. the denominator is nonzero).
+then S is a level (n0 , r) good story for (P, A).
+
+Proof. Since we can consider up to n0 further indices and get well-defined values for the pij ,
+S is a level n0 story for (P, A). Now by Lemma 41, S is a level n0 single graph mimic for
+(P, A).
+     We now prove the theorem by induction on r. The base case r = 0 is trivial. If r > 0 then
+for all i ∈ [1, n] \ IA , S gives non-negative values {pij } for the probabilities of level n0 − 1
+stories Sij for (P, A ∪ (i)). Now note that for each of these Sij , the values of subsequent
+pij will always be non-negative if we consider up to r − 1 further indices and will be well-
+defined if we consider up to n0 − 1 further indices. Moreover, Sij is symmetric with respect
+to permutations of [1, n] \ (IA ∪ {i}), rational, and is z-honest because Sij is honest for
+(α1 , . . . , αm ) whenever S is honest for (α1 , . . . , αm ). Thus, by the inductive hypothesis, each
+Sij is a level (r − 1, n0 − 1) good story for (P, A ∪ (i)) so S is a level (r, n0 ) good story for
+(P, A), as needed.                                                                                   J
+
+
+
+                                                                                                                          ITCS 2019
+61:18   Sum of Squares Lower Bounds from Symmetry and a Good Story
+
+
+        6.4    Good stories for knapsack, the MOD 2 principle, and the triangle
+               problem
+        In this subsection, we apply Theorem 43 to verify that our stories for knapsack, the MOD 2
+        principle, and the triangle problem are good stories.
+
+        I Theorem 44.
+        1. Saying that we take k out n elements is a level (bmin {k, n − k}c + 1, n) good story for
+           the knapsack problem.
+        2. Saying that we every vertex is incident with precisely one edge is a level (b n2 c + 1, n) good
+           story for the MOD 2 principle.
+        3. Saying that we have k independent sets of size nk is a level (bmin {k, nk }c + 1, n) good
+           story for the triangle problem.
+
+        Proof. For knapsack and the triangle problem, we take α1 = n and α2 = k. For the MOD 2
+        principle, we just take α1 = n.
+            Our stories are clearly rational and symmetric with respect to permutations of [1, n]. We
+        now check that they are z-honest for all z.
+            For knapsack, note that our story is honest for (n, k) whenever k is an integer between 0
+        and n. Thus, whenever n ≥ z there are at least z values of k such that our story is honest
+        for (n, k), which implies that our story is z-honest for (n) whenever n ≥ z. For all z there
+        are infinitely many valules of n such that n ≥ z so our story is z-honest for all z, as needed.
+            For the MOD 2 principle, note that our story is honest for (n) whenever n is an even
+        integer. There are infinitely many even integers so our story is z-honest for all z, as needed.
+            For the triangle problem, note that ourstory is honest for (n, k) whenever k is an integer
+        and n is divisible by k. Thus, whenever n = a! and a ≥ z then there are at least z values of
+        k such that our description is honest for (n, k), which implies that our story is z-honest for
+        (n) whenever n = a! and a ≥ z. For all z there are infinitely many valules of n such that
+        n = a! where a ≥ z so our story is z-honest for all z, as needed.
+            All that we have to do now is to determine n0 and r.
+            For knapsack, when we consider polynomials of index degree at most n0 , the common
+        denominator will be n(n − 1) . . . (n − n0 + 1) as we are choosing n0 elements one by one
+        from [1, n]. This is well-defined as long as n0 ≤ n so we may take n0 = n. The probabilities
+        will be non-negative up to the (bmin {k, n − k}c + 1)-th index we consider, so we may take
+        r = bmin {k, n − k}c + 1.
+            For the MOD 2 principle, when we consider polynomials of index degree at most n0 ,
+        the common denominator will be n(n − 1) . . . (n − n0 + 1) as we are choosing n0 elements
+        one by one from [1, n]. This is well-defined as long as n0 ≤ n so we may take n0 = n. The
+        probabilities will be non-negative up to the (b n2 c + 1)-th index we consider, so we may take
+        r = b n2 c + 1.
+            For the triangle problem, when we consider polynomials of index degree at most n0 , the
+                                          0                                             0
+        common denominator will be k n n(n − 1) . . . (n − n0 + 1). The additional k n factor appears
+        because there are nk choices for the first element in an independent set of size nk , n−k
+                                                                                               k choices
+        for the second element, etc. Again, this is well-defined as long as n0 ≤ n so we may take
+        n0 = n. The probabilities will be non-negative up to the (bmin {k, nk }c + 1)-th index we
+        consider, so we may take r = bmin {k, nk }c + 1                                               J
+
+        I Corollary 45.
+        1. For all positive integers n and all non-integer k ∈ [0, n], index degree
+           min{2bmin {k, n − k}c + 3, n} SOS fails to refute the knapsack equations.
+A. Potechin                                                                                          61:19
+
+
+2. For all odd n, index degree n SOS fails to refute the equations for the MOD 2 principle.
+                                                 / Z or nk ∈
+3. For all n ≥ 6, and all k ∈ [1, n] such that k ∈         / Z, index degree 2bmin {k, nk }c + 2
+   SOS fails to refute the claim that Goodman’s bound can be achieved for the triangle
+   problem.
+
+
+     References
+ 1    Sanjeev Arora, Boaz Barak, and David Steurer. Subexponential Algorithms for Unique
+      Games and Related Problems. J. ACM, 62(5):42:1–42:25, 2015.
+ 2    Sanjeev Arora, Satish Rao, and Umesh Vazirani. Expander Flows, Geometric Embeddings
+      and Graph Partitioning. J. ACM, 56(2):5:1–5:37, April 2009.
+ 3    Boaz Barak, Siu On Chan, and Pravesh Kothari. Sum of Squares Lower Bounds from
+      Pairwise Independence. In Proceedings of the Forty-seventh Annual ACM Symposium on
+     Theory of Computing, STOC ’15, pages 97–106, 2015.
+ 4    Boaz Barak, Samuel Hopkins, Jonathan Kelner, Pravesh Kothari, Ankur Moitra, and Aaron
+      Potechin. A Nearly Tight Sum-of-Squares Lower Bound for the Planted Clique Problem.
+      In IEEE 57th Annual Symposium on Foundations of Computer Science, FOCS 2016, 9-11
+     October 2016, Hyatt Regency, New Brunswick, New Jersey, USA, pages 428–437, 2016.
+ 5    Boaz Barak, Jonathan A. Kelner, and David Steurer. Rounding Sum-of-squares Relaxations.
+      In Proceedings of the Forty-sixth Annual ACM Symposium on Theory of Computing, STOC
+     ’14, pages 31–40, 2014.
+ 6    Boaz Barak, Jonathan A. Kelner, and David Steurer. Dictionary Learning and Tensor
+      Decomposition via the Sum-of-Squares Method. In Proceedings of the Forty-seventh Annual
+     ACM Symposium on Theory of Computing, STOC ’15, pages 143–151, 2015.
+ 7    Boaz Barak, Pravesh K. Kothari, and David Steurer. Quantum Entanglement, Sum of
+      Squares, and the Log Rank Conjecture. In Proceedings of the 49th Annual ACM SIGACT
+     Symposium on Theory of Computing, STOC 2017, pages 975–988, 2017.
+ 8    Boaz Barak and Ankur Moitra. Noisy Tensor Completion via the Sum-of-Squares Hierarchy.
+      In Proceedings of the 29th Conference on Learning Theory, COLT 2016, New York, USA,
+     June 23-26, 2016, pages 417–445, 2016.
+ 9    Grigoriy Blekherman, João Gouveia, and James Pfeiffer. Sum of Squares on the hypercube.
+     Mathematische Zeitschrift, 284(1-2):41–54, 2016.
+10    Yash Deshpande and Andrea Montanari. Improved Sum-of-Squares Lower Bounds for
+      Hidden Clique and Hidden Submatrix Problems. In COLT, volume 40 of JMLR Workshop
+     and Conference Proceedings, pages 523–562. JMLR.org, 2015.
+11    Karin Gatermann and Pablo Parrilo. Symmetry groups, semidefinite programs, and sums
+      of squares. Journal of Pure and Applied Algebra, 192(1-3):95–128, 2004.
+12    Rong Ge and Tengyu Ma. Decomposing Overcomplete 3rd Order Tensors using Sum-of-
+      Squares Algorithms. In APPROX-RANDOM, volume 40 of LIPIcs, pages 829–849. Schloss
+      Dagstuhl - Leibniz-Zentrum fuer Informatik, 2015.
+13    Michel X. Goemans and David P. Williamson. Improved Approximation Algorithms for
+      Maximum Cut and Satisfiability Problems Using Semidefinite Programming. J. ACM,
+     42(6):1115–1145, November 1995.
+14    A. Goodman. On sets of acquaintances and strangers at any party. The American Math-
+     ematical Monthly, 66(9):778–783, 1959.
+15    Dima Grigoriev. Complexity of Positivstellensatz proofs for the knapsack. Computational
+     Complexity, 10(2):139–154, 2001.
+16    Dima Grigoriev. Linear lower bound on degrees of Positivstellensatz calculus proofs for the
+      parity. Theor. Comput. Sci., 259(1-2):613–622, 2001.
+
+
+
+
+                                                                                                    ITCS 2019
+61:20   Sum of Squares Lower Bounds from Symmetry and a Good Story
+
+
+        17   Samuel B. Hopkins, Pravesh Kothari, Aaron Henry Potechin, Prasad Raghavendra, and
+             Tselil Schramm. On the Integrality Gap of Degree-4 Sum of Squares for Planted Clique.
+             ACM Trans. Algorithms, 14(3):28:1–28:31, June 2018.
+        18   Samuel B. Hopkins, Pravesh K. Kothari, Aaron Potechin, Prasad Raghavendra, Tselil
+             Schramm, and David Steurer. The power of sum-of-squares for detecting hidden struc-
+             tures. CoRR, abs/1710.05017, 2017.
+        19   Samuel B. Hopkins, Tselil Schramm, Jonathan Shi, and David Steurer. Fast spectral al-
+             gorithms from sum-of-squares proofs: tensor decomposition and planted sparse vectors. In
+             STOC, pages 178–191, 2016.
+        20   Pravesh K. Kothari, Ryuhei Mori, Ryan O’Donnell, and David Witmer. Sum of Squares
+             Lower Bounds for Refuting Any CSP. In Proceedings of the 49th Annual ACM SIGACT
+             Symposium on Theory of Computing, STOC 2017, pages 132–145, 2017.
+        21   Adam Kurpisz, Samuli Leppänen, and Monaldo Mastrolilli. Sum-of-Squares Hierarchy
+             Lower Bounds for Symmetric Formulations. In IPCO, volume 9682 of Lecture Notes in
+             Computer Science, pages 362–374. Springer, 2016.
+        22   Jean B. Lasserre. Global Optimization with Polynomials and the Problem of Moments.
+             SIAM J. on Optimization, 11(3):796–817, March 2000.
+        23   Monique Laurent. Lower Bound for the Number of Iterations in Semidefinite Hierarchies
+             for the Cut Polytope. Math. Oper. Res., 28(4):871–883, 2003.
+        24   Troy Lee, Anupam Prakash, Ronald de Wolf, and Henry Yuen. On the Sum-of-squares
+             Degree of Symmetric Quadratic Functions. In Proceedings of the 31st Conference on Com-
+             putational Complexity, CCC ’16, pages 17:1–17:31, 2016.
+        25   Tengyu Ma, Jonathan Shi, and David Steurer. Polynomial-Time Tensor Decompositions
+             with Sum-of-Squares. In FOCS, pages 438–446. IEEE Computer Society, 2016.
+        26   Raghu Meka, Aaron Potechin, and Avi Wigderson. Sum-of-squares Lower Bounds for
+             Planted Clique. In Proceedings of the Forty-seventh Annual ACM Symposium on Theory
+             of Computing, STOC ’15, pages 87–96, 2015.
+        27   Yuri Nesterov. Squared functional systems and optimization problems. High Performance
+             Optimization, pages 405–440, 2000.
+        28   Pablo Parrilo. Structured semidefinite programs and semialgebraic geometry methods in
+             robustness and optimization. PhD thesis, California Institute of Technology, 2000.
+        29   Aaron Potechin and David Steurer. Exact tensor completion with sum-of-squares. In
+             Proceedings of the 30th Conference on Learning Theory, COLT 2017, Amsterdam, The
+             Netherlands, 7-10 July 2017, pages 1619–1673, 2017.
+        30   Annie Raymond, James Saunderson, Mohit Singh, and Rekha R. Thomas. Symmetric sums
+             of squares over k-subset hypercubes. Math. Program., 167(2):315–354, 2018.
+        31   Alexander A. Razborov. Flag algebras. J. Symb. Log., 72(4):1239–1282, 2007.
+        32   Grant Schoenebeck. Linear Level Lasserre Lower Bounds for Certain k-CSPs. In FOCS,
+             pages 593–602. IEEE Computer Society, 2008.
+        33   N. Shor. An approach to obtaining global extremums in polynomial mathematical program-
+             ming problems. Cybernetics and Systems Analysis, 23(5):695–700, 1987.
+        34   Madhur Tulsiani. CSP gaps and reductions in the lasserre hierarchy. In Proceedings of the
+             41st Annual ACM Symposium on Theory of Computing, STOC 2009, Bethesda, MD, USA,
+             May 31 - June 2, 2009, pages 303–312, 2009.
+

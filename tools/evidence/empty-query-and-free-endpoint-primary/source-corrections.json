@@ -1,0 +1,22 @@
+{
+  "corrections": [
+    {
+      "id": "EC-full-leakage-not-only-C",
+      "source_id": "309f75b1a1a61b232f5e",
+      "source_path": "research/workspaces/customer-attraction/R-28e8b1905f3b4a1f934d87d8071ccd67/independent_audit/omission_projection_notes.md",
+      "source_sha256": "dfd149afb0d3c19dafd9b67680d17fd1325bcf781550f0d2048d840ab928e801",
+      "source_line": 45,
+      "before_exact": "私有席位机制在 A⊆B 时使最后泄漏为零。若仅 A∩D⊆B∩D，则泄漏只在实际覆盖池 C 上；但该项使用**离轨终局**分母，不能按实际终局的份额直接支付，也不能跨多棵离轨子树重复使用同一客户信用。",
+      "error": "A∩D⊆B∩D only controls targetO leakage,not all fullutility leakage.",
+      "correct_math": "(A\\B)∩O⊆C; outsideO∪C clients can still contribute. For A\\B⊆C require universeC∪O oranother explicit restriction,which doesnot automatically preserveSPE.",
+      "explicit_original_model_witness": "Validated34client7themeσ:actualC=union(0,3,4),choosecomparisonO=C,Dempty;trueforcedsecondX1 endpoint(0,1,2),laterA=X2;privateX2customerliesinA\\B outsideO∪C withbranchshare1. O herevalidmthemebutnotoptimal;no strongeroptimal-O witnessasserted.",
+      "current_body_path": "archives/customer-attraction/state/资源/实际遗漏净差与同叶泄漏的支付范围--资源.md",
+      "current_body_line": 47,
+      "current_body_sha256": "7d2dc082d894da73bfd1dd42bd3e083d28421525462706adbc5df531ea7483a4",
+      "current_exact_paragraph": "特别须区分集合全集：主稿把“泄漏只在实际覆盖池C”作为遗漏投影直观；**仅由A∩D⊆B∩D，实际全泄漏还可能在(O∪C)外**。精确可无条件推出的是(A\\B)∩O⊆C，或在先显式限定客户全集为C∪O时才有A\\B⊆C。本文保完整式，不无理由丢掉这部分。 这不只是形式可能：在本批已核34客户含空标签完整策略中，实际C来自(0,3,4)，取比较O=C（它是合法三主题并集，但不是最优O），故D空。第二位强制B=X1后真实叶(0,1,2)，后继A=X2；仅属X2的那名客户在A\\B中、在O∪C外，离轨份额1。A∩D⊆B∩D却全泄漏不只落C，直接否定原第45行在“任意比较并集”范围的过强句；不据此额外断言最优O子域也有同一见证。即使全部泄漏已落C，其份额也使用离轨叶c_x(z)，不是实际原叶分母；不同枝重用同一客户须另证总额≤1。",
+      "raw_source_unchanged": true
+    }
+  ],
+  "shared_patch_targets": [],
+  "scope": "newselfcontainedbody correctsprimary wording;no wrongsharedcanonical wording identifiedincomparedscope"
+}

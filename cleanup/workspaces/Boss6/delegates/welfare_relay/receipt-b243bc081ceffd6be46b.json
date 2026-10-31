@@ -1,0 +1,44 @@
+{
+  "id": "b243bc081ceffd6be46b",
+  "source_path": "research/workspaces/customer-attraction/R-1740705e79f14baba6326b951a52152f/representation/cross_branch_welfare_relay_identity.md",
+  "source_commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+  "source_sha256": "9ad5e82e4b600bfae3dbdfac0b54867b0bcff13dd72302c7016b98640b3b5679",
+  "full_file_reviewed": true,
+  "related_material_checked": true,
+  "unique_content_accounted_for": true,
+  "read_note": "通过 clean show 完整实读 3820B 修正版；恢复有限 CAG-MODEL、任意完整纯 SPE、任意历史与强制主题的真实后继量词，逐式重核 R1-v2、根特例、R2、旧玩家有符号返还与 R_h。",
+  "comparison_note": "另实读 bfd05a8f1186e83d3c86 勘误、254bc65952df60c93eeb 独立定义级复核、39d6432f7dbc0270bd8f 全深度账本、f9696dd81c9a59d41582f7 有限审计 JSON、4a0a90aa4d26e578c914 Fraction 审计代码及 9d0174d0fc1435874500 顺序偏离份额账本；与当前治理记录的 CA-CROSS-BRANCH-RELAY-v1/v2 和 Q-CAG-HALF OPEN 状态对照。",
+  "decision_note": "v1 的无旧玩家项福利式应标 FALSE；保留 b243 的 R1-v2 与 R2 为任意节点局部证明，根节点才可删 P。两人三客户例是定义级反例而非 half 反例；全深度账本是支付模板障碍，有限 JSON/代码是有限回归证据，均不构成一般半覆盖证明或反例。",
+  "disposition": "retained",
+  "disposition_recommendation": "integrated",
+  "targets_recommended": [
+    "archives/customer-attraction/state/引理/非根跨枝福利中继恒等式--引理.md",
+    "archives/customer-attraction/state/障碍/跨枝共同付款与调和全深度支付障碍--障碍.md"
+  ],
+  "evidence": {
+    "model": "finite customer set, finite nonempty common catalog, m>=1 unit providers, complete ordered histories, deterministic pure SPE, arbitrary history-dependent tie breaking, empty themes/repeats/zero clients/off-path histories retained",
+    "local_identity": "Delta W = Delta V + Delta P - Gamma <= Delta V + Delta P, Gamma >= 0",
+    "root_special_case": "P=0 at i=1, hence Delta W <= Delta V",
+    "v1_counterexample": {
+      "players": 2,
+      "clients": ["a", "b", "c"],
+      "themes": {"A": ["a", "b"], "T": ["c"]},
+      "history": ["A"],
+      "delta_W": 1,
+      "delta_V": 0,
+      "delta_P": 1,
+      "Gamma": 0,
+      "actual_W": 2,
+      "OPT_2": 3
+    },
+    "finite_audit": {
+      "complete_SPE_sharp_family": {"m_min": 2, "m_max": 6, "all_ordered_histories": 10213, "all_action_comparisons": 60276},
+      "all_optimal_permutations": {"m_min": 2, "m_max": 7, "count": 5912},
+      "variable_m_formula_checks": {"m_min": 2, "m_max": 80},
+      "arbitrary_strategy_algebra": {"instances": 60, "edges": 5678, "zero_client_instances": 6, "empty_theme_in_every_instance": true, "SPE_claim": false}
+    },
+    "local_replay": {"source_id": "4a0a90aa4d26e578c914", "status": "all_exact_checks_passed", "scope": "temporary local replay of clean-show Fraction script; temp files removed; no quantifier expansion"},
+    "status_boundary": "local lemma plus obstruction; Q-CAG-HALF remains OPEN; no external review or novelty certification",
+    "workspace_output": "cleanup/workspaces/Boss6/delegates/welfare_relay/cross_branch_welfare_relay_identity--audit.md"
+  }
+}
