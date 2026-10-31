@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "python_version": "3.12.14",
+  "base_commit": "4c71d3ed82480bc42e649dce0c60e529c4f18752",
+  "status": "passed",
+  "test_count": 95,
+  "elapsed_seconds": 66.518,
+  "test_module_counts": {
+    "test_board": 22,
+    "test_board_entry": 5,
+    "test_checkpoint": 35,
+    "test_collaboration_concurrency": 2,
+    "test_collaboration_safety": 15,
+    "test_work": 16
+  },
+  "source_sha256": {
+    "research/weighted_congestion_frontier/tools/work.py": "7741edf86cf42fb72f89f2bc77191a1a4432b0619972bac3d1c4dfa23a0a7565",
+    "research/weighted_congestion_frontier/tools/board.py": "11dc1a9ca8f3d1dc789cece1ac11fe9a2589323c55f2ea490d4ccba2d3027831",
+    "research/weighted_congestion_frontier/tools/checkpoint.py": "176ea5c89fde2e227740419756c3ef67caf894edafe9c70546fba076468bf0ac",
+    "research/weighted_congestion_frontier/tests/test_board.py": "50d38cf002c554ba54dea4f81c79251d8cd8398bc5dbdd77ce8db412dbbb9a52",
+    "research/weighted_congestion_frontier/tests/test_board_entry.py": "a2495c0ea47989a3e398e2a2a9ef8dd71a1983e55ec5519bb142b68c3b62fce8",
+    "research/weighted_congestion_frontier/tests/test_checkpoint.py": "13be8dc8b6d35e79edb4ab081e812298ae4a613f0274e02834748bd59a2adf0f",
+    "research/weighted_congestion_frontier/tests/test_collaboration_concurrency.py": "b929da15bb2a238fd8f5d4693e58cdf11906b86a006177d3b123281055423e0f",
+    "research/weighted_congestion_frontier/tests/test_collaboration_safety.py": "1700c93abd175c49eefbe28e82bebc1b558530cb40a785df5399276d8c793517",
+    "research/weighted_congestion_frontier/tests/test_work.py": "7ee93e1e4e1297f89b7f27e57482450be3fa7fb66287cb77646c992c9815e89b"
+  },
+  "replay_commands": [
+    "python -m unittest discover -s research/weighted_congestion_frontier/tests -p test_*.py",
+    "python research/build_map.py --check",
+    "python research/build_crosswalk.py --check",
+    "python research/check_assets.py"
+  ],
+  "real_local_git_scenario": {
+    "independent_clones": 10,
+    "concurrent_message_senders": 10,
+    "public_messages": 10,
+    "direct_messages": 10,
+    "concurrent_workspace_checkpoints": 10,
+    "expected_remote_branches": [
+      "main",
+      "wcg/board"
+    ]
+  },
+  "checks": [
+    "public and JSON views exclude DM",
+    "same participants and save for private replies",
+    "empty/invalid recipient fails without public fallback",
+    "idempotent retry and lost reply recovery",
+    "local unread receipts are not mathematical adoption",
+    "workspace identity and resume",
+    "remote visits preserve local index and drafts",
+    "all outgoing commit/blob scope and credential audit",
+    "own workspace default scope",
+    "merge conflicts preserve snapshot",
+    "no new research branches"
+  ],
+  "limitations": [
+    "Isolated real local Git remotes; not a remote GitHub throughput benchmark.",
+    "No hundreds-of-live-Work concurrency certification.",
+    "Same-repository DM routing is not an access-control or encryption boundary.",
+    "Passing engineering tests is not a mathematical status upgrade or a proof of absence of every possible bug."
+  ]
+}
