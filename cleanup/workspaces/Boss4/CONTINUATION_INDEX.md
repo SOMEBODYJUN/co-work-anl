@@ -291,3 +291,7 @@ R3_READY18HE：GU5/GW3/GX5/GY5十八源：银行joint资本/前缀映射/客户�
 R3_READY18HE数学/证据pushed d5e7e068028b512d55903cc560a50022739b975a；18源done另推送 7ab4f09a26a09b15c2d8763683b558b25e033bbb。Boss4累计1937完成，实际未完6；持续接续全仓，不以本批清空收尾。
 
 R3_READY25HJ：25源正文与证据；净遗漏预算、完整笛卡尔补偿与安全扩充、独立利润消元、合法枢轴中继、product取等与必要行非补全；共25主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY25HJ_REMAINING_SCOPE.json。
+
+R3_READY25HJ数学/证据pushed e1748ce814a4fe55c5e20bb5ebd805839ae6c48e；25源done另推送 a6eb09bd84bef4626b17bcd3b84cfc8789fb7bda。Boss4累计1962完成，实际未完31；持续接续全仓，不以本批清空收尾。
+
+R3_READY6HK：6源正文与证据；UM大入口全层合同、OPT前缀BILL与net菜单，并逐项修正7篇既有数学正文；共6主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY6HK_REMAINING_SCOPE.json。

@@ -35,7 +35,7 @@ source_refs:
 
 每个 q_i、b_i、u_c 总量恰为一，所有分数非负（k_c=2 时 1/2−x_i=0）。M_i 上扣除的 q pin 项由同索引 b pin 项补回；环相邻 edge 各贡献 1/2，总和为一。每个真实 C_i 的 b/u 项和为一，dummy C_i 只有 b 的一；每个 R_c 有 k_c 项 1/k_c。由此得到同一资格图上的共同 fractional perfect matching，覆盖全部 jobs、全部 machines，不是逐机另换见证。
 
-整数恢复在同一原有限资格图上运行 Hall/最大流或等价交替 BFS，得到每个 job 恰选一个原有限端、每台非 idle machine 恰一 job。所有处理时间为 a 或 1，且每台 machine 至少有 unit job，所以完整实际 makespan 恰为 1。R_c 只邻该 clause 的真实 q_i，保留真实 q 身份，但不保证 q_i@R_c 与 u_c@C_j 具有同一 index；该 identity mismatch 正是编译失败的原因。
+整数恢复在同一原有限资格图上运行 Hall/最大流或等价交替 BFS，得到每个 job 恰选一个原有限端、每台非 idle machine 恰一 job。所有处理时间为 a 或 1，且每台非 idle machine 恰一件原 job，所以完整实际 makespan 至多 1；非空公式存在一枚各有限端时间均为 1 的 clause job，故峰值也至少 1，恰为 1。R_c 只邻该 clause 的真实 q_i，保留真实 q 身份，但不保证 q_i@R_c 与 u_c@C_j 具有同一 index；该 identity mismatch 正是编译失败的原因。
 
 # 10-job UNSAT 手工见证
 
