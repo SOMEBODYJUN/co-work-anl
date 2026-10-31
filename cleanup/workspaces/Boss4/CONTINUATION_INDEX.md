@@ -190,3 +190,5 @@ R3_READY25BV：Root5森林θ/UTP候选及全部有限报告/重复尾3888必要�
 R3_READY25BV数学/证据pushed 657bd0c110e3dd7ddfd51d9cc5e70e28fe1fa06c；25源done另推送 3afc9e6293320f9c8fd52737281ee2a2da267294。Boss4累计1445完成，实际未完40；持续接续全仓，不以本批清空收尾。
 
 远端树回退恢复：后续Boss3合并删除35已有claim、回退25done及289已发布文件，Root按真实pushed祖先逐路径恢复，另4旧纠错页恢复；公屏seq24已告知。没有新领/重复done，1445完成+55在领；证据见remote-tree-repair。
+
+修复并发裁决：后续ca057将Root BY五源认领给Boss3，保其当前owner不覆盖；本Boss原0adce认领/全文/4原运行和两个新自足对象均保全，改作明确交接贡献，不由Boss4重复done。其他30原认领及25原done照真实祖先恢复。
