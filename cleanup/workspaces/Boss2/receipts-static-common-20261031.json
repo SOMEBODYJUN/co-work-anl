@@ -1,0 +1,33 @@
+[
+  {
+    "id": "6ba99015cb5ee1e1d5fb",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取static_common_attack.py；核对三组(p,n)=(5,3),(6,4),(7,5)、每组20个随机浮点权重、前三目标、逐动作LP与BRIDGE FAIL提前退出逻辑。",
+    "comparison_note": "与R275固定策略锥/地板扫描、分数锥攻击及命名静态共同对象比较；本源使用计数状态递归合并历史，且不读取完整客户JSON或SPE求解器。",
+    "decision_note": "并入静态共同策略锥有限审计；保留无BRIDGE FAIL的观察与序列化缺口，不升级为精确SPE、整数客户或六人half全称结果。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/customer-attraction/state/计算/R275静态共同策略锥攻击与候选重放--计算.md",
+      "archives/customer-attraction/tools/evidence/R275-static-common-20261031/source/static_common_attack.py",
+      "archives/customer-attraction/tools/evidence/R275-static-common-20261031/replay/full_driver_metadata.json"
+    ]
+  },
+  {
+    "id": "7fd962b12560d5e640b7",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取static_common_best.json；核对p=7,n=5、target=[1,1,0,2,1,0,0]、a=0、唯一mask91权重1、slack=0.19999999999999996及2801条policy。Fraction独立检查objective=1/5通过。",
+    "comparison_note": "与驱动源码、依赖cone_floor_attack/floor_scan、完整stdout及serialization_policy_comparison逐字段比较；保存权重重建policy时2797/2801动作不同。",
+    "decision_note": "作为候选浮点固定锥结果和可复现证据保留；明确原始随机权重/child terms未序列化，不能声称Gamma精确恢复、完整SPE或普遍half。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/customer-attraction/state/计算/R275静态共同策略锥攻击与候选重放--计算.md",
+      "archives/customer-attraction/tools/evidence/R275-static-common-20261031/source/static_common_best.json",
+      "archives/customer-attraction/tools/evidence/R275-static-common-20261031/replay/verification.json",
+      "archives/customer-attraction/tools/evidence/R275-static-common-20261031/replay/serialization_policy_comparison.json"
+    ]
+  }
+]
