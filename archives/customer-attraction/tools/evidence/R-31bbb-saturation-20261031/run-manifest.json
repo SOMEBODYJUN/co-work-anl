@@ -1,0 +1,12 @@
+{
+  "batch": "R-31bbb-saturation-20261031",
+  "commands": [
+    "python3 -m py_compile source/actual_ap_projection.py source/exact_projection_witness.py",
+    "python3 source/actual_ap_projection.py 5 --symmetric",
+    "python3 source/actual_ap_projection.py 5",
+    "python3 source/actual_ap_projection.py 5 --symmetric --maxima 2,3,5 4,5 4,5 5",
+    "python3 replay/work/exact_projection_witness.py"
+  ],
+  "scope": "necessary AP/BNS projection only; exact rational obstruction to summing rows; no SPE construction",
+  "validation": "validation.json"
+}

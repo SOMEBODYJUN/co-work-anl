@@ -1,0 +1,11 @@
+{
+  "batch": "R-2fc-global-left-20261031",
+  "validator": "validate_left.py",
+  "validation": "validation.json",
+  "commands": [
+    "python3 -m py_compile source/background_regret_probe.py",
+    "python3 source/background_regret_probe.py --q 6 --r 3 --trials 3 --seed 29393",
+    "python3 replay/audit_collision_free_obstruction.py"
+  ],
+  "scope": "exact fixed five-client audit and finite floating LP probe; no universal claim"
+}
