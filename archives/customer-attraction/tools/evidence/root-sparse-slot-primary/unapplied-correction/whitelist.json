@@ -1,0 +1,24 @@
+{
+  "status": "UNAPPLIED, shared source unchanged",
+  "shared_path": "archives/customer-attraction/state/反例/R-171完整SPE稀疏槽租金障碍--反例.md",
+  "old_sha256": "5b092767e9f52e3e20def90e516859da81ecb8dbc417832b4ea980c13569d6f7",
+  "replacements": [
+    {
+      "before": "因此遵循策略的终局总是 `q/q`，并且所有离轨历史也有明确终局。",
+      "proposed": "因此根及两计数均未满的历史遵循策略后终局为 `q/q`；若离轨历史已有 `a>=q`，终局为 `(a,2q-a)`，`b>=q` 对称。所有离轨历史均有明确终局。"
+    },
+    {
+      "before": "这里福利与最优均为 2，原目标 `2W>=OPT` 取等；",
+      "proposed": "这里福利与最优均为 2，即 `W=OPT`；原目标 `2W>=OPT` 严格成立；"
+    },
+    {
+      "before": "在未满节点，继续任一单例直到两类各达到 `q`，所以每个客户最终被覆盖 `q` 次，任一提供者的收益均为 `1/q`。在已达到 `q` 的节点，策略选另一类；遵从得到 `1/q`，改选已满类得到不高于 `1/(q+1)`，严格更差。未满节点任意平局选择仍通向 `q/q`，两种一次偏离也保持最终各类计数不劣于遵从的计数比较。",
+      "proposed": "在两计数均小于 `q` 的节点，当前任选一类及后继任意平局均使终局为 `q/q`，当前两个行动收益都为 `1/q`。若离轨节点已有 `a>=q`，遵从选 B 并沿同一规则终结于 `(a,2q-a)`，当前收益为 `1/(2q-a)`；偏离 A 后后继仍全选 B，当前收益为 `1/(a+1)`。由 `0<2q-a<=q<a+1`，遵从严格更好；`b>=q` 对称。"
+    }
+  ],
+  "evidence": [
+    "primary a736… §2 exact offpath proof",
+    "comparison c814… §2 oversaturated history",
+    "new-data-check/result.json q3 AAAA witness"
+  ]
+}

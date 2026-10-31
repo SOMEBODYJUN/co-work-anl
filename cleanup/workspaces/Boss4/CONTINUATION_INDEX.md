@@ -198,3 +198,7 @@ R3_READY60CQ：十二实际五源成熟批次BO/BR/BT/BW/BP/BZ/CA/CB/CC/CD/CH/CJ
 R3_READY60CQ数学/证据pushed 462222010a3f6ddb859070d182c6d3e5322bab57；60源done另推送 7d00d8cfe7465a8228122fbc792c13cebe98e07e。Boss4累计1505完成，实际未完24；持续接续全仓，不以本批清空收尾。
 
 R3_READY21CX：19份四条成熟程序/证明线与Root2份独立租金审查；保存精确输入、完整执行身份和有限范围。原60CQ两推送及CM5实际handoff另存，六线继续本地输入完整的下一实际范围。未将被拒公屏发送当共享成功。；共21主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY21CX_REMAINING_SCOPE.json。
+
+R3_READY21CX数学/证据pushed bc79a970215dd2ba42fe0fbfce2f353998bff8f1；21源done另推送 73183d798a52731da23c45200ed5f446d2f39db8。Boss4累计1526完成，实际未完27；持续接续全仓，不以本批清空收尾。
+
+R3_READY27DE：六完整成熟批27主源，Root补静态CCE族全m,K解析与两个旧入口，完整旧页与原代码/矩阵核后精修6页及缺失flat metadata；PI当前主稿与真实一次发现运行更新而保CI初次原运行0。仍25实际执行，六线持续补位。；共27主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY27DE_REMAINING_SCOPE.json。
