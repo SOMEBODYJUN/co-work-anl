@@ -424,3 +424,7 @@ R3_READY11MJ：十一主源完整弱菜单/静态extra-one程序范围与完整�
 R3_READY11MJ数学/证据pushed 2628be24761615e3fff2ff7f6c987092868e874e；11源done另推送 0d73383e4b3d070d1601a3231fb08e6247bc5ad4。Boss4累计2407完成，实际未完21；持续接续全仓，不以本批清空收尾。
 
 R3_READY16MN：十六主源iid精确二次域和weak全树原审计、协调三原程序真实成功的后续主源绑定、真实产品整数门槛/精确M/signed与整除口头勘误；无旧成功重复；共16主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY16MN_REMAINING_SCOPE.json。
+
+R3_READY16MN数学/证据pushed 66e30d8d01523cff20616982655452290de60873；16源done另推送 b91d70e0c69755d14f517f68459c10671aad518f。Boss4累计2423完成，实际未完19；持续接续全仓，不以本批清空收尾。
+
+R3_READY23MR：二十三主源：三配对原点显式单位核与逐叶平方程序；cyclic全SPE分类与父审；成块条件归约/换位审查；fresh与整份safe策略扩展；根四复制条件/真实signal reset和指定Yi价；只校准一处本批认领时态；共23主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY23MR_REMAINING_SCOPE.json。
