@@ -1,0 +1,46 @@
+# 数学与来源自查
+
+- [x] 五source8709B全文，12项实际claim5217...pushed/synced subset5/ownerSHA真。
+- [x] 原sizeSHAblob全本地，无network/show/sharedGit；5MD原entry0。
+- [x] P在actualprefix同σ真forcedroot尾kX，不冻结/合并有序historical分支。
+- [x] d当前强制真实pay，e=u−d=Γ≥0，K保root+额外query非新增SPE玩家。
+- [x] E symmetricdifference signed，J intersection每枝1/q−1/(q+1)池非负。
+- [x] 四会员位先R=Ksym−dA−dT，再代d=u−e得到P。
+- [x] AunionT外在P仍可经u/e出现，代入消后才零，不错误提前置0。
+- [x] A=T E0给diag，empty e=u不删；两empty P左右−2u。
+- [x] 末位k0/E0/零客户/denom≥1/弱平局全保。
+- [x] 固定pair sumP用Σu=W，PW iff E债≤J+两IC，尚未proved。
+- [x] J只固定pair池，不免费多pair相加，不能误判crosspath debt符号。
+- [x] 独立A/T同p平均Ksym=2pTKp，PW→FTA因子2正确。
+- [x] FTA对角surplus可付cross，所以PW强充分非FTA必要。
+- [x] 个体Mfull已false不传FTA/Mpath，IO精确列可行域比较。
+- [x] 当前知情onefuture R=replyA/S=replyT，两lastBR松弛非负。
+- [x] binary E=Σ(R−S)(A−T)w，BRslacks负和正好−E，故E≤0。
+- [x] 最后两个actual E≤0，m1/2 PW由既有PAIR得；早于倒二未付。
+- [x] 新增late连接不倒填1994原reviewscope/未声明blind读序不虚构。
+- [x] 71族m2/k≥3/12type/actualAB/a6k−2/b7k−2/真T→R等canonical全proof读。
+- [x] rowT forcedA两列AB/AA，rowA forcedT两列TR/AT，force最后A不要求其BR。
+- [x] K1(T,A)=b−1/2，K2(T,A)=b，reverseK1=a−k/K2=a/2。
+- [x] 单方向14k−9/2−W=k−1/2>0；reverse8k−3。
+- [x] sym22k−15/2，对2W余4k−1/2，k3正反75/2与21/余23/2。
+- [x] 71pairA∩T0/J0，根E−1/2/根两e0，末位eA4k−1/eT0精确结账。
+- [x] 71W35/OPT38/I2/omitted36/Ooutside33，gross反不代net3/half仍真。
+- [x] 新增表仅已证族解析代入，无新code/SPE/旧run或参数扫。
+- [x] 1994review只P/R和有限sum，未审PW/B无instance搜索。
+- [x] review独立从定义重构未声明未读稿，非自动新blind或外审。
+- [x] tree1367全导航/更强遗漏和单向预算停止，0见证不当positive。
+- [x] 同count/order tokenswap不保同suffix，未有tree乘子或全局invariant。
+- [x] exchange1123两程序仅旧certificate反Bellman/privatefloor，未有general正SPE式。
+- [x] IO netRET身份不同PW预算，己证明恒等式不当共同支付。
+- [x] sourceauthor没共享/Git/work.py是历史记录，不是本agent当前执行。
+- [x] 930状态旧用户指定5已上传证明，发现/旧团队复核/当前清洗三贡献分开。
+- [x] 旧36组件/47872完整coefficient states与6144main不是finiteSPE客户扫描。
+- [x] five局部DEEP3/BG214/BG38/PC25/PC33/MAXROOT2/MAXBG21合36。
+- [x] main53行并未依赖所有可选资产，不制造缺省proof边。
+- [x] 7497必要条件点为relaxation非SPE，13活跃违背仅source原身份不重取点输入。
+- [x] zero背景5不迁移背景5suffix/6，原ONEGAP/K仍按范围未证不由half倒推。
+- [x] 旧不转6专项指令不覆盖当前用户六人焦点；旧sixrole不是后台spawn。
+- [x] 5current/full成熟comparison完整保SHA，局部验器/半覆盖原程序新增0。
+- [x] 5receiptfinalintegrated与externalready/bodypushed/done分开。
+- [x] 下一30382B五MD真local齐，不附带primarydone/未经实际claim不假receipt。
+- [x] 实际canonical/C0逐byte只LF/TAB/CR例外，metadata/link/JSON/manifest全核。

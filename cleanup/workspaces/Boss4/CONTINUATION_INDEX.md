@@ -347,3 +347,7 @@ R3_READY13JC：13源正文证据；一般净缺口与FTA/Mpath、原weak-iid审�
 R3_READY13JC数学/证据pushed f2d89b80a87ed5107c821a51bdbc32139f481142；13源done另推送 6cba6af805806ba948e8f19144ad30f0a8ddf097。Boss4累计2119完成，实际未完19；持续接续全仓，不以本批清空收尾。
 
 R3_READY14JJ：14源正文证据；K5实际槽匹配/空模板范围、首次偏离relay/静态占位、真实Farkas系数与均匀证书修复、阶乘余量量名更正；共14主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY14JJ_REMAINING_SCOPE.json。
+
+R3_READY14JJ数学/证据pushed 9fe710d5ce220c5459400d20753be30a6efe6f06；14源done另推送 19c758015a69d9d8eaf0104c963d148091bfd835。Boss4累计2133完成，实际未完17；持续接续全仓，不以本批清空收尾。
+
+R3_READY12JO：12源正文及真实复跑；Round5各统计量维度、对称querygap恒等式及两BR余量、私有谱/末菜单原CLI各一次PASS和历史缺件范围更新；共12主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY12JO_REMAINING_SCOPE.json。
