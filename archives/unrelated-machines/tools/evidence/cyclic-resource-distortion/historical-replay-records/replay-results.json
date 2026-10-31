@@ -1,0 +1,33 @@
+{
+  "actor": "Boss2",
+  "replay_date": "2026-10-30",
+  "resource_independent_audit": {
+    "command": "python3 cleanup/workspaces/Boss2/strict-resource-read/resource_distortion_independent_audit.py",
+    "exit_code": 0,
+    "status": "all exact finite checks passed",
+    "counts": {"instances": 1301, "original_schedules": 1328275, "santa_allocations": 20798},
+    "approximate_allocations_decoded": {"41/10": 10770, "7": 10770},
+    "worst_observed_ratios": {"41/10": "3/2", "7": "3/2"},
+    "maximum_kappa": "2147483647/100003",
+    "original_optimum_values": ["1", "2", "3/2", "7/6"],
+    "script_sha256": "63673ce192f84e11f8cb948d7e393cc88732aeaa1da49191de3abad66c4fb488"
+  },
+  "strict_batch_audit": {
+    "command": "python3 cleanup/workspaces/Boss2/strict-resource-read/strict_sub2_batch_barrier.py",
+    "exit_code": 0,
+    "stdout": [
+      "PASS k=2,3,7,100; OPT=1 witness; strict-sub-2 batch threshold k+1",
+      "PASS fixed-epsilon support corollary for eps=1/100,1/50,1/20,1/19"
+    ],
+    "available_script_sha256": "2d5729ecbee8d2f0e6002a547e868b88a5b4d28bb484fd279b827793c4b93124",
+    "reported_script_sha256_in_frozen_json": "12a4261cf3d280fbd577a53752081d1ce080b902cca158089cd1a64a6b0bc90f",
+    "identity_match": false
+  },
+  "legacy_resource_flat_menu_replay_for_comparison": {
+    "command": "python3 cleanup/workspaces/Boss2/strict-resource-read/resource_distortion_flat_menu.py",
+    "exit_code": 0,
+    "status": "passed",
+    "cases": 945,
+    "source_sha256": "0331f42d656f20363742de402f2f5de4d60d7c56f923cc9c31ed007eab039b75"
+  }
+}

@@ -1,0 +1,5 @@
+# 17源发布确认恢复
+
+第一次checkpoint经20次remote-divergence后未得远端包含确认，本地snapshot6ad5ec71701a56aabd6f15cb85b0df578ba569e2；工具明确要求重跑同命令，无认证拒绝明细。实际local-only回执独立保留，未提前done、未换凭据。
+
+同scope/命令重跑后，commit e2895b922dc793f21989c27c06f3f5c03718385b，明确pushed_head4696aac5050112653d1d7da1022c103ced5b8f5d。其后next18认领发生代理CONNECT403，17源done尚未提交。不得把正文pushed写成逐源done。
