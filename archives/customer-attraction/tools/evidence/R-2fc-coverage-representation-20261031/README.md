@@ -25,17 +25,17 @@
 
 ## 逐源数学阅读与边界
 
-`audit_coverage_geometry.py` 的对象是固定人数 (m)、有限标签 (p) 上的覆盖行 (k_T)、终局收益行 (F_{q,a})、调和势 (Phi_q)、完整有序历史策略的真实比较行。代码逐项实现并检查：
+`audit_coverage_geometry.py` 的对象是固定人数 m、有限标签 p 上的覆盖行 k_T、终局收益行 F_{q,a}、调和势 Φ_q、完整有序历史策略的真实比较行。代码逐项实现并检查：
 
-1. 覆盖、收益、势三类行的秩均为 (d=sum_{jlemin(m,p)}{p\choose j})，末层比较差为 (d-1)，加根覆盖恢复 (d)。这只是有符号线性空间核验，不能把负系数的 signed span 当成非负 SPE 乘子锥。
-2. 调和势的覆盖展开系数逐项为正，并核验 (F_{r+e_a,a}=Phi_{r+e_a}-Phi_r)。它支持 `CR-1/CR-2` 的有限版本，但不构造一般 (\lambda\ge0) 的支付证书。
-3. p≤7 的暴露泛函检查逐类型验证 ( |C\setminus B|+|C\cap B|(|B|-|C\cap B|)\ge0 )，唯一零列为 (C=B)；m=1、p=1 边界分别保留。`root_independent_audit.py` 的 p≤8 检查同样只是独立有限回归。
-4. 不交单客户主题的指定策略在 m=1..4 的有限节点中是完整纯 SPE 且 (W=OPT=m)。把客户折成全兴趣类型会保留不等式真值但改变真实比较数值并产生重复覆盖标签；这正是“精确保留数值”与“仅保留 SPE 不等式”的合同区分。
-5. 仅末层策略的有限障碍在 m=2,3,4 中末层比较全非负、全树最小比较为 −1、(W=1,OPT=m)，且 `is_SPE=false`；m≥3 的 half 失败属于非 SPE 放松，不是主问题反例。
+1. 覆盖、收益、势三类行的秩均为 d=Σ_{j≤min(m,p)} C(p,j)，末层比较差为 (d-1)，加根覆盖恢复 (d)。这只是有符号线性空间核验，不能把负系数的 signed span 当成非负 SPE 乘子锥。
+2. 调和势的覆盖展开系数逐项为正，并核验 F_{r+e_a,a}=Φ_{r+e_a}−Φ_r。它支持 `CR-1/CR-2` 的有限版本，但不构造一般 λ≥0 的支付证书。
+3. p≤7 的暴露泛函检查逐类型验证 |C∖B|+|C∩B|(|B|−|C∩B|)≥0，唯一零列为 C=B；m=1、p=1 边界分别保留。`root_independent_audit.py` 的 p≤8 检查同样只是独立有限回归。
+4. 不交单客户主题的指定策略在 m=1..4 的有限节点中是完整纯 SPE 且 W=OPT=m。把客户折成全兴趣类型会保留不等式真值但改变真实比较数值并产生重复覆盖标签；这正是“精确保留数值”与“仅保留 SPE 不等式”的合同区分。
+5. 仅末层策略的有限障碍在 m=2,3,4 中末层比较全非负、全树最小比较为 −1、W=1, OPT=m，且 `is_SPE=false`；m≥3 的 half 失败属于非 SPE 放松，不是主问题反例。
 6. 五组有理/整数支持做核消元并清分母，支持自适应至多 d 类的有限实例归约；不提供固定全局非负生成器，也不限制 p 或整数重数。
 
 `audit_positive_moment_locality.py` 的对象是 m=2 的单/双覆盖矩。每个 r 的锚预算在所有非空形式客户列上非负；删任一变量或锚点的最大真子目录由显式有理客户模型实现；同一矩在全目录上使锚预算为负。因而“每个真子目录可实现”不能替代“全目录属于共同客户锥”。假全局矩不是合法 CAG 客户资料，也不是 SPE/half 反例。
 
-相关正文已全文回读：`coverage_moment_geometry.md`、`positive_moment_locality.md`、`aggregate_security/dr_boundary.md`、`global_proof/harmonic_potential_obstruction.md`、`CLAIMS.md`、`FAILED_ROUTES.md`、`RESEARCH_STATE.md` 与已有 `coverage_representation_independent_review.md`；正式对象为覆盖矩表示定理、非负锥/稀疏化定理、精确保留激励数值与末层方向障碍、覆盖矩锚预算障碍和势支付资源。它们共同保留以下缺口：全树真实比较的非负乘子方向、共同客户锥 (K_m) 的全局非负余项、一般六人 half 仍 OPEN。有限秩或局部矩回归均未被升格为全局 half。
+相关正文已全文回读：`coverage_moment_geometry.md`、`positive_moment_locality.md`、`aggregate_security/dr_boundary.md`、`global_proof/harmonic_potential_obstruction.md`、`CLAIMS.md`、`FAILED_ROUTES.md`、`RESEARCH_STATE.md` 与已有 `coverage_representation_independent_review.md`；正式对象为覆盖矩表示定理、非负锥/稀疏化定理、精确保留激励数值与末层方向障碍、覆盖矩锚预算障碍和势支付资源。它们共同保留以下缺口：全树真实比较的非负乘子方向、共同客户锥 K_m 的全局非负余项、一般六人 half 仍 OPEN。有限秩或局部矩回归均未被升格为全局 half。
 
 本批没有新建重复数学对象，也没有把旧图、有限扫描或扩大 DR 模型跨模型挪作 CAG 结论。
