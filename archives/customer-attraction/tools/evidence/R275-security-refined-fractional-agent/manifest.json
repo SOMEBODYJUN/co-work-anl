@@ -1,0 +1,102 @@
+{
+  "scope": "Finite floating LP diagnostics on seven fixed complete-policy certificates; no exact cone certificate and no universal theorem.",
+  "sources": [
+    {
+      "id": "ae68024b54bf92aa993a",
+      "path": "research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/security_global/refined_fractional_scan.py",
+      "sha256": "20beaeef30783777aa8b4445aaffe323b29003294604488eedbcd353af230670",
+      "bytes": 3106,
+      "local_copy": "refined_fractional_scan.py"
+    },
+    {
+      "id": "088e705ec9376c510fcc",
+      "path": "research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/security_global/refined_fractional_scan_results.json",
+      "sha256": "0aa1ae244810ecad26a9d1b32f8bfcbc4b86c87a8b0ad9d9964b4d8692ba44cd",
+      "bytes": 3702,
+      "local_copy": "refined_fractional_scan_results.json"
+    },
+    {
+      "id": "7764b91f1b2348e6e592",
+      "path": "research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/security_global/random_refined_scan.py",
+      "sha256": "a8dffebb09a079aa36443558d25c875443f4c39ee435b171329206d13e4a2039",
+      "bytes": 3112,
+      "local_copy": "random_refined_scan.py",
+      "role": "paired finite random/continuation scan; semantic comparison only"
+    }
+  ],
+  "input_certificates": [
+    {
+      "id": "7e96e4bbfac656c279d7",
+      "name": "portfolio_matching_failure.json",
+      "sha256": "b3cf75ce0764531e3ef751c01802c99cb1b4f5ce4a3f6943df241498e53299ae",
+      "bytes": 481
+    },
+    {
+      "id": "32ca21992fac32edaa5c",
+      "name": "coverage_opportunity_failure.json",
+      "sha256": "f714a87c6448b0ddcc070d325bd81bedd4ca7f4689893e344f77214fc1668256",
+      "bytes": 2481
+    },
+    {
+      "id": "e101d8e91123357aa120",
+      "name": "fractional_actual_load_failure.json",
+      "sha256": "34713413620599b34cecb1a2bb7b0adebc177cea5167ea3d995e30617fc7a0a3",
+      "bytes": 7509
+    },
+    {
+      "id": "b312212275551b29955a",
+      "name": "aggregate_theta_failure.json",
+      "sha256": "cf08edab0813de8eccee8d5466d15b40bd42c980da9b0b68c925f4ae80991010",
+      "bytes": 4339
+    },
+    {
+      "id": "75abf77a187270ca9eeb",
+      "name": "root_tax_failure.json",
+      "sha256": "59fd58d85a3c3b989837467eb3523286d1f5ee529b0f119cd4d263bef6984111",
+      "bytes": 27707
+    },
+    {
+      "id": "a2a52fc40f22e323a3c3",
+      "name": "global_decorrelation_failure.json",
+      "sha256": "ac157fbc42b496a8f106072f4502139b5161523b1c0d89ef4cdee47e5664d869",
+      "bytes": 28435
+    },
+    {
+      "id": "4617d18c9d098ce255c9",
+      "name": "individual_security_failure.json",
+      "sha256": "d5c8fc3abe3acf7b4b61b776a957a13e49dfe276df517ee9ba4a47093a2792ab",
+      "bytes": 4970
+    }
+  ],
+  "replays": [
+    {
+      "mode": "common",
+      "command": "python refined_fractional_scan.py portfolio_matching_failure coverage_opportunity_failure fractional_actual_load_failure aggregate_theta_failure root_tax_failure global_decorrelation_failure individual_security_failure",
+      "exit_code": 0,
+      "stdout": "replay/replay_common.stdout",
+      "result": "replay/refined_fractional_scan_results_common_replay.json",
+      "result_sha256": "fc4a042d97649e0f9fd7e414a24286b79949acd36734f36ca7864d02498b1335"
+    },
+    {
+      "mode": "individual",
+      "command": "python refined_fractional_scan.py portfolio_matching_failure coverage_opportunity_failure fractional_actual_load_failure aggregate_theta_failure root_tax_failure global_decorrelation_failure individual_security_failure --individual",
+      "exit_code": 0,
+      "stdout": "replay/replay_individual.stdout",
+      "result": "replay/refined_fractional_scan_individual_results_replay.json",
+      "result_sha256": "64dd11f532a0097c8485d59317b282b324ab2382ae027ac478217a23fd356893"
+    }
+  ],
+  "comparison": {
+    "script": "replay/compare_frozen.py",
+    "output": "replay/comparison.json",
+    "frozen_matches_individual_after_metadata_strip": true,
+    "frozen_matches_common_replay": false,
+    "interpretation": "Frozen non-individual filename/result body has per-case objective lengths equal to --individual replay; current source adds scope/individual metadata that are absent from the frozen JSON."
+  },
+  "checks": {
+    "py_compile_exit": 0,
+    "py_compile_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source_hashes": "replay/source_hashes.sha256"
+  },
+  "object_id": "customer-attraction/r275-refined-fractional-security-scan"
+}
