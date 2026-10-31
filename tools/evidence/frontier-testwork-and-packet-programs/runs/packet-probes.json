@@ -1,0 +1,123 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "six unsafe archive paths refused",
+      "observed": 6
+    },
+    {
+      "case": "single task extraction and zero/multiple rejection",
+      "observed": {
+        "single_complete_body": "whole task\n",
+        "invalid_cases": 2
+      }
+    },
+    {
+      "case": "relative prose/reference destinations rewritten while inline/fenced code preserved",
+      "observed": {
+        "source_hex": "5b785d282e2e2f70617065722e6d64290a605b636f64655d282e2e2f6b6565702e6d6429600a7e7e7e707974686f6e0a5b7a5d282e2e2f6b656570322e6d64290a7e7e7e0a5b69645d3a203c2e2e2f7265662e6d643e0a",
+        "converted_hex": "5b785d2868747470733a2f2f6769746875622e636f6d2f666978747572652f7265706f2f626c6f622f616161616161616161616161616161616161616161616161616161616161616161616161616161612f72657365617263682f70617065722e6d64290a605b636f64655d282e2e2f6b6565702e6d6429600a7e7e7e707974686f6e0a5b7a5d282e2e2f6b656570322e6d64290a7e7e7e0a5b69645d3a203c68747470733a2f2f6769746875622e636f6d2f666978747572652f7265706f2f626c6f622f616161616161616161616161616161616161616161616161616161616161616161616161616161612f72657365617263682f7265662e6d643e0a",
+        "changed": [
+          {
+            "original": "../paper.md",
+            "repository_path": "research/paper.md"
+          },
+          {
+            "original": "../ref.md",
+            "repository_path": "research/ref.md"
+          }
+        ]
+      }
+    },
+    {
+      "case": "encoded link escape refused",
+      "observed": true
+    },
+    {
+      "case": "existing, dangling-symlink and repository-contained outputs refused",
+      "observed": 3
+    },
+    {
+      "case": "small actual ZIP/extraction/output reread",
+      "observed": {
+        "members": [
+          "MANIFEST.json",
+          "TASK.md",
+          "optional/example.md"
+        ],
+        "payload_sha256": {
+          "TASK.md": "0546491804c7a447679e36a3e324f7fb5e8b3cc6317bfd1412d4e37e59d21f23",
+          "optional/example.md": "778f4a5d3fd9fe840faa44adf257794178907bfbcfa4ded8c2dc92bb70fa9e8c",
+          "MANIFEST.json": "7119af90283b7c3c4f123e1dd905b85b4ea81dc6a30724339ee7336d4cf020d9"
+        },
+        "zip_sha256": "5fa12a9211772f3125d21ba95382b4f7f405bbd7d93cc1c76cf1578ffa088c5c",
+        "scope": "synthetic three-file helper packet, not canonical22"
+      }
+    },
+    {
+      "case": "bad manifest hash rolls back newly created outputs",
+      "observed": true
+    },
+    {
+      "case": "real current frozen-input bytes refuse stale reviewed TASK before any package",
+      "observed": {
+        "returncode": 1,
+        "stderr": "export_pro_packet: PRO_ATTACK differs from its reviewed source mapping hash\n",
+        "fixture_commit": "4c7d551b80419610ff729ac94e230edae4d23e03",
+        "original_source_commits_not_recreated": true,
+        "source_inputs": [
+          {
+            "id": "8981310291bda5d63e07",
+            "path": "research/weighted_congestion_frontier/tools/export_pro_packet.py",
+            "bytes": 16800,
+            "sha256": "b4b3e34252493c411cbaf5b06aa429d7d3c4933b560ba7a0f2f60a93d49af351"
+          },
+          {
+            "id": "1cf29de35f3e8a430186",
+            "path": "research/weighted_congestion_frontier/PRO_BRIEF_SOURCES.json",
+            "bytes": 15727,
+            "sha256": "75e017bcc11e214103a48cd90832c788515e1f6d585048621387f4a0cf08b1fa"
+          },
+          {
+            "id": "4564afcb575533e1c830",
+            "path": "research/review_status.json",
+            "bytes": 320527,
+            "sha256": "3d98af571ab7b2115a22320187651c768eccbe8e75a52735b6d7f3968351b4b8"
+          },
+          {
+            "id": "ff9fc2edcae1cd6fac79",
+            "path": "research/weighted_congestion_frontier/PRO_BRIEF.md",
+            "bytes": 62627,
+            "sha256": "fc5e4b871eed5c2b8c297f3c243a06dfb83d05f25de5e8a9aead17f833bba3d9"
+          },
+          {
+            "id": "9481228f7835e0de76b0",
+            "path": "research/weighted_congestion_frontier/prompts/PRO_ATTACK.md",
+            "bytes": 443,
+            "sha256": "c4ab799d18139ca991bf3c03fe5d0db577a2deb369869a6ed7e8d2109627b1f1"
+          }
+        ],
+        "output_exists": false,
+        "zip_exists": false,
+        "dirty_worktree_not_used": true,
+        "old_task_sha_unavailable": "76b12f434c6990930bbabe8b909ec96c4de7915afab4e38ae8211318846f0e89",
+        "current_task_sha": "c4ab799d18139ca991bf3c03fe5d0db577a2deb369869a6ed7e8d2109627b1f1"
+      }
+    }
+  ],
+  "counted_cases": 8,
+  "source_id": "8981310291bda5d63e07",
+  "source_sha256": "b4b3e34252493c411cbaf5b06aa429d7d3c4933b560ba7a0f2f60a93d49af351",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "scope": "new finite helpers plus true-byte input refusal at newly created fixture commit, not old complete22 ZIP or mathematical verification",
+  "real_remote_or_effective_credentials": false,
+  "environment_guards": {
+    "GIT_ALLOW_PROTOCOL": "file",
+    "GIT_CONFIG_GLOBAL": "/dev/null",
+    "GIT_CONFIG_SYSTEM": "/dev/null",
+    "GIT_CONFIG_NOSYSTEM": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "git_version_same_batch_reused": "git version 2.51.1",
+  "git_version_evidence": "main-work.json: identical system git binary in same batch; no additional suite run"
+}

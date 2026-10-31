@@ -1,0 +1,195 @@
+{
+  "status": "reviewable-minimal-correction-package; not applied",
+  "frozen_sources_and_progress_untouched": true,
+  "entries": [
+    {
+      "id": "long-path-endpoints-and-certificate",
+      "target_repo_path": "archives/unrelated-machines/state/审查/长链联合投影与子线性联盟高围长双源审查--审查.md",
+      "baseline_sha256": "414a11597d05d2242932a93cf189bb776f9d20337efb0eff99af5b73c21a1482",
+      "baseline_bytes": 16271,
+      "before_snapshot": "tools/evidence/um-following-review-primary/errata/long-path-endpoints-and-certificate.before.md",
+      "proposed_snapshot": "tools/evidence/um-following-review-primary/errata/long-path-endpoints-and-certificate.proposed.md",
+      "proposed_sha256": "d933a574a747e24df8b541f8d0346a22538986e34a1faf350c8f776808a5f24d",
+      "unified_patch": "tools/evidence/um-following-review-primary/errata/long-path-endpoints-and-certificate.patch",
+      "exact_replacements": [
+        {
+          "old_start_line": 77,
+          "old_end_line": 77,
+          "original_exact_paragraph": "原族的整数最优值和配置阈值分别为",
+          "replacement_exact_paragraph": "原族的整数最优值和一份可行配置证书的阈值分别记为",
+          "reason_and_domain": "T_k is a supplied feasible certificate bound; neither actual canonical nor review proves T_CONF=T_k."
+        },
+        {
+          "old_start_line": 94,
+          "old_end_line": 94,
+          "original_exact_paragraph": "若第一条任务由 v 承担，同样的单位负载约束迫使路径向左传播并归于 v。因此每条路径都可以收缩为原来的一个任务，并且收缩不会增加原终端机器负载。",
+          "replacement_exact_paragraph": "若第一条任务由 v 承担，直接将该路径收缩为原任务给 v；不要求其余路径任务都向左。路径可以有左前缀、右后缀并使某个内部点空闲，甚至额外给 t 一项；收缩忽略该额外终端负载，旧机器负载仍逐项不增。因此两种首任务位置都能收缩为原任务。",
+          "reason_and_domain": "For a length2 path, first task to v and second task to t is a legal pattern with internal w1 empty; it disproves forced-all-left, while contraction to v remains valid. The C<2 propagation is needed only for first task to w1."
+        },
+        {
+          "old_start_line": 104,
+          "old_end_line": 104,
+          "original_exact_paragraph": "原配置证书中每个终端任务在 v 端出现的质量为 1/k，在 t 端出现的质量为 1-1/k。替换成路径后，首边承担原任务在 v 端的角色，末边承担其在 t 端的角色。每个内部机器只需在其左边任务和右边任务之间抽取：以概率 1/k 选左边，以概率 1-1/k 选右边。",
+          "replacement_exact_paragraph": "原配置证书中每个终端任务在 v 端出现的质量为 1-1/k，在 t 端出现的质量为 1/k。替换成路径后，首边承担原任务在 v 端的角色，末边承担其在 t 端的角色。每个内部机器以概率 1/k 选左边任务、以概率 1-1/k 选右边任务：首边的两端边际相加为 (1-1/k)+1/k=1，中间边亦为1，末边为 (1-1/k)+1/k=1。",
+          "reason_and_domain": "Canonical and primary both state v=1-1/k,t=1/k. Keeping internal left1/k/right1-1/k after reversing v/t loses job coverage for k>=4."
+        },
+        {
+          "old_start_line": 108,
+          "old_end_line": 108,
+          "original_exact_paragraph": "而正文给出的配置证书取到该阈值。",
+          "replacement_exact_paragraph": "这里仅证明给出的配置证书在 T_k 可行，未证明 T_k 是最小配置阈值。",
+          "reason_and_domain": "Separates existence of a certificate at T_k from optimization over all certificates; gap lower bound uses only T_CONF<=T_k."
+        },
+        {
+          "old_start_line": 186,
+          "old_end_line": 186,
+          "original_exact_paragraph": "长链替换保持 OPT=2−1/k 和配置阈值 1+1/k；",
+          "replacement_exact_paragraph": "长链替换保持 OPT=2−1/k，并保留阈值 1+1/k 的配置证书（只知 T_CONF≤1+1/k）；",
+          "reason_and_domain": "Classification must not restate the unproved exact threshold equality."
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "claimed-primary",
+          "id": "3b0c1560ee8abc49e3d0",
+          "path": "tools/evidence/um-following-review-primary/original/3b0c1560ee8abc49e3d0.md",
+          "sha256": "f3cd0cfba881f2a657ebe36dbb554aff36b054f9e2e69996ed84ed5bd395bc23",
+          "accurate_ranges": [
+            [
+              24,
+              36
+            ]
+          ],
+          "content": "review explicitly allows extra terminal load, states correct endpoint marginals and T_CC<=T_k only"
+        },
+        {
+          "kind": "actual-current-support",
+          "id": "7d8533e6d4a2dfeb379d",
+          "path": "tools/evidence/um-following-review-primary/support/7d8533e6d4a2dfeb379d.md",
+          "sha256": "71694578be6a110ad993fd0039c039edfeca2f5c509e1049ca204e4fe42b8aa6",
+          "accurate_ranges": [
+            [
+              67,
+              98
+            ],
+            [
+              114,
+              135
+            ]
+          ],
+          "content": "actual contraction, reverse embedding, exact marginals and certificate-only ratio proof; whole156 actually read"
+        }
+      ],
+      "scope": "suggested correction to mutable cleaned exposition only; no frozen source/progress modification; parent reviews then applies serially",
+      "applied_to_shared_repo": false
+    },
+    {
+      "id": "xos-r-cover-versus-k-cover",
+      "target_repo_path": "archives/unrelated-machines/state/审查/归一化XOS阈值规模独立Exact审查续页--审查.md",
+      "baseline_sha256": "f9f4f9fd829f87b5b28ee0bf9868742287eeb48aafa1956420d30a43de7038a4",
+      "baseline_bytes": 8261,
+      "before_snapshot": "tools/evidence/um-following-review-primary/errata/xos-r-cover-versus-k-cover.before.md",
+      "proposed_snapshot": "tools/evidence/um-following-review-primary/errata/xos-r-cover-versus-k-cover.proposed.md",
+      "proposed_sha256": "7d5708c2f775b88cdcc96a0617c5475cc94e44872052af49a36b286876d9b55b",
+      "unified_patch": "tools/evidence/um-following-review-primary/errata/xos-r-cover-versus-k-cover.patch",
+      "exact_replacements": [
+        {
+          "old_start_line": 61,
+          "old_end_line": 61,
+          "original_exact_paragraph": "反向给定 r-subset covering family，在每 support 上均匀放 1/r 的 clause，即构造满足 unit/tiny 条件的归一化菜单；因此最小菜单数可等价为该 covering-family 问题，但不把 covering oracle 误称为短输入算法。",
+          "replacement_exact_paragraph": "这里 r=d+1 的 covering count 只给必要的弱下界，不能一般作反向等价。反例取 η=1/2、t=4、d=2、r=3：在任意 r-support 上均匀放1/r，该support内两个资源的值为2/3>η，违反tiny条件。反向等价应使用第5节强化的 k=r_*=max{1,ceil(d/η)}；在 k-support 上均匀放1/k时，每个至多d的集合值≤d/k≤η，且每个t-set包含一个family member使其unit值为1。最小菜单数因而等于此 k-subset covering量，而不是一般的 r=d+1 covering量；仍不提供求最小family的多项式oracle。",
+          "reason_and_domain": "r=d+1 only forces support>d, not d/r<=eta. The current v2 uses k=max(1,ceil(d/eta)); only this guarantees the tiny threshold. This corrects the cleaned exposition, not the frozen independent-v1 source."
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "claimed-primary",
+          "id": "f1a0fb3e7c413630cee8",
+          "path": "tools/evidence/um-following-review-primary/original/f1a0fb3e7c413630cee8.md",
+          "sha256": "5432f8f5fd31aac9d753d25979cec31fdf334081fdbc759d1f4d6ae45a84a6e9",
+          "accurate_ranges": [
+            [
+              3,
+              9
+            ]
+          ],
+          "content": "v1 weak history; v2 exactTheta/strongsupport; uniform transform only preserves two thresholds"
+        },
+        {
+          "kind": "actual-current-support",
+          "id": "737121825175bccceb42",
+          "path": "tools/evidence/um-following-review-primary/support/737121825175bccceb42.md",
+          "sha256": "ce1c320ecd4d3833030307e4b4e3f4959ecd187281187c5914e80bddae8d13c5",
+          "accurate_ranges": [
+            [
+              66,
+              100
+            ]
+          ],
+          "content": "sections4-5 use k and prove low<=d/k<=eta; whole109 actually read"
+        }
+      ],
+      "scope": "suggested correction to mutable cleaned exposition only; no frozen source/progress modification; parent reviews then applies serially",
+      "applied_to_shared_repo": false
+    },
+    {
+      "id": "arity-unavailable-palette-meaning",
+      "target_repo_path": "archives/unrelated-machines/state/审查/固定过载固定sink与凸局部最小有限审计--审查.md",
+      "baseline_sha256": "0ff6b4c871ffc1deaf31e1981905d9969b5137e5b3c41aa645f39846ed7d0af6",
+      "baseline_bytes": 6560,
+      "before_snapshot": "tools/evidence/um-following-review-primary/errata/arity-unavailable-palette-meaning.before.md",
+      "proposed_snapshot": "tools/evidence/um-following-review-primary/errata/arity-unavailable-palette-meaning.proposed.md",
+      "proposed_sha256": "9ebc58b9de5bb8c4d746d0015f832d2274a86135b227eea565c11c38e78964cc",
+      "unified_patch": "tools/evidence/um-following-review-primary/errata/arity-unavailable-palette-meaning.patch",
+      "exact_replacements": [
+        {
+          "old_start_line": 25,
+          "old_end_line": 25,
+          "original_exact_paragraph": "完整三机/多矩阵 oracle 字段为：机器数 2、jobs 1/2/3、14,424 个有限矩阵、65,640 个实际 schedules，其中 21,093 个 reliable failures、22,179 个 successful flows；报告将 `unavailable=true` 保留，不能把“完整 oracle 未提供”抹去。",
+          "replacement_exact_paragraph": "两机完整小矩阵 oracle 的字段为：jobs 1/2/3、14,424 个矩阵、65,640 个实际 schedules；三个目标的调用合计21,093个 reliable failures、22,179个 successful flows。`unavailable=true` 表示测试palette包含不可用端None，不表示完整oracle未提供：原代码对[None,0,1/3,1/2,1]的全部两机矩阵只排除某job双None，并用exact_opt穷举各矩阵的所有合法完整分配。每job有24种合法列，所以矩阵数24+24²+24³=14424。一般有理LP后端仍未实现，与此有限oracle的实际枚举是两件事。",
+          "reason_and_domain": "The raw report and actual selected code bind unavailable to None processing-time endpoints, not missing implementation. Exact finite oracle completeness is confined to its listed two-machine small palette/targets; it does not implement general LP or scheduler."
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "existing-frozen-report-read-previous-batch-and-preserved",
+          "id": "2503c0d7bd0be638eeb2",
+          "path": "tools/evidence/um-following-review-primary/support/2503c0d7bd0be638eeb2.json",
+          "sha256": "7708dc8e4206bd043a55148421d7567394b0c76d56cfed2dc400697df597a822",
+          "accurate_ranges": [
+            [
+              105,
+              123
+            ]
+          ],
+          "content": "triple_full_matrix_oracle finitepalette/unavailable/counts; full126 read, no newrun"
+        },
+        {
+          "kind": "actual-selected-code-read-previous-batch-and-preserved",
+          "id": "1baaf1963c7582471b42",
+          "path": "tools/evidence/um-following-review-primary/support/1baaf1963c7582471b42.py",
+          "sha256": "88796d363c8dc33348ed6e156287a1d4daa30398db104c7fe21f20f14e3ab532",
+          "accurate_ranges": [
+            [
+              25,
+              41
+            ],
+            [
+              85,
+              96
+            ],
+            [
+              338,
+              362
+            ]
+          ],
+          "content": "None input, complete product(*domains) exact_opt, explicit None palette/report marker; only1-110/305-367 actually read, no execution"
+        }
+      ],
+      "scope": "suggested correction to mutable cleaned exposition only; no frozen source/progress modification; parent reviews then applies serially",
+      "applied_to_shared_repo": false
+    }
+  ],
+  "archived_program_new_runs_for_errata": 0,
+  "math_counterexamples": "length2 path v/t leaves w1 empty; eta1/2,t4,d2,r3 gives2/3 tiny violation; exact None-palette count24+24^2+24^3"
+}
