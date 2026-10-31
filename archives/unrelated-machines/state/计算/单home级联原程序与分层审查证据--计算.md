@@ -5,7 +5,9 @@ type_tag: 计算
 title: 单home级联原程序与分层审查证据
 status: frozen-success-reused-and-certificates-rechecked
 summary: 保留规范构造器、原审查及原14机14任务8模式成功输出；本轮只独立回算旧证书，不重复运行成功构造器。
+fixture_source_sha256: cfb25856400d6d0ee6b6cea9cb100d8545c97fe2025643f8a62260763fc69573
 source_ids:
+  - 978ef2be866136ae323d
   - ba9c71e2bc6052c4f3c0
   - a6f3780bd6fb78eeece6
 source_refs:
@@ -20,6 +22,8 @@ source_refs:
 # 数学接口与实现身份
 
 数学对象是[单home级联完整查询族](../定理/单home级联的完整查询族与可加费用--定理.md)，不是一般UM求解器。输入同一原矩阵的两份完整strict1调度，初态全部 \(J\) 留唯一正小端home，第二态将非空query集全部送unit。构造输出不交非query支持；给显式 \(S\subseteq Q\) 后输出完整原分配，峰至多 \(1+\delta(S)\)，费用恰为所选query支持费之和。证明适用所有合格输入/子集；本页程序证据只适用一个冻结有理实例的显式请求。
+
+本批 Boss5 重新实读输入夹具 `examples/unrelated_machines/home_cascade_query_patterns.json`（SHA-256 `cfb25856400d6d0ee6b6cea9cb100d8545c97fe2025643f8a62260763fc69573`），其独有内容是 14 机/13 home job/3 query 的严格输入字段、unit 迁移链、无根环、零端和八模式审计参数；它与已有证据包中的同字节副本一致，不构成新运行。
 
 原程序完整16781字节，SHA256为 `c52eb5be01a64e7d13f1e80a7ad1cb5711ed187f0a8ad1000269847d004d59cd`。原review完整3035字节，SHA256为 `3f92aec8afd506dd6ed879311cbb4b48e6482f8e1bd0e4673a62f8b6798bc934`。两份冻结提交各绑定同一字节版本，不计为两个程序或两次实验。原字节连同fixture、run和六份历史证明/审查均保留在[证据包](../../tools/evidence/single-home-cascade-originals/README.md)。
 
