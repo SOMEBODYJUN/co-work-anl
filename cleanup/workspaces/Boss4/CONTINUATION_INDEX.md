@@ -230,3 +230,7 @@ R3_READY24EV：EQ4/EI5/EM5/EF5/EK5共24源：同源链式再查询及字面模�
 R3_READY24EV数学/证据pushed e19cb68758cc9d07ed419d3920a5390991a20bdc；24源done另推送 33de71fef4513847f8e3937445a0a4e2da5fac1a。Boss4累计1702完成，实际未完16；持续接续全仓，不以本批清空收尾。
 
 R3_READY11EY：EO3/ET5与RootEW3：完整菜单JSON/审查字段、signed真实donor修复及exactM安全、半重启H/J双符号与新6单位客户13节点逐枝归纳反例。原/新/复用执行分清，Root新定义检查仅一次；先明确正文checkpoint pushed后11逐源done，其余按真实范围继续。；共11主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY11EY_REMAINING_SCOPE.json。
+
+R3_READY11EY数学/证据pushed 215a4e531c43463cc5a49bf7587b4efce6c96fd4；11源done另推送 076040822e518f8cfc18f57f7a303f0f80d7a540。Boss4累计1713完成，实际未完21；持续接续全仓，不以本批清空收尾。
+
+R3_READY14FE：ER5/EP4/EU5共14源：真实菜单去对角与精确索引分离、合法背景五人候选与条件证书及前缀双边包络、变分水位完整证明/单调失败及原14证书有限域。先明确正文证据checkpoint pushed再逐源done，六线继续接续，全仓未完。；共14主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY14FE_REMAINING_SCOPE.json。
