@@ -1,0 +1,7 @@
+# 实际交付边界
+
+父Root告知新claim遇代理CONNECT403/网络调用取消，停止新认领并准备handoff。本批6326a019af5f30b1a9554972f53243c3d74b76d8已正式pushed/synced认领的3源完整工作已完成，当前仅交付external staging；本代理没有Git写/推送/done，也没有新增网络操作。父Root需按真实本地保存和推送状态记录，先正文实际pushed后才可done，不将本文件当已推凭据。
+
+3源：790a17806fa34be04140 assets；4564afcb575533e1c830 review_status；066c20466ed140e4bd78 WC FILES。11自足资源保全351资产/640审查/501读取行，原件1628475字节全部SHA一致。5字符数组、四人锐性冲突、两640集合差及620图claim覆盖准确保留；全正式C0为零。2060项必要结构检查PASS，不是数学证明或旧suitePASS。
+
+next-candidates仅本地无progress时的候选，不申请/不执行claim。原作者未来程序有完整依赖/哈希合同，未因本地新树缺旧布局去伪造或运行。create_resources.py是本轮external作者脚本历史，复制进evidence后不能不改工作根直接当仓内构建命令；check_resources.py和bind_files.py以自身路径正确定位可独立调用。

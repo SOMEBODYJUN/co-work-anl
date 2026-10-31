@@ -130,3 +130,5 @@ R3_READY17H：17源完整处置：最优归属势/联合取消5、双尺寸三�
 R3_LOCAL17I：真实代理CONNECT403后的本地保全17源：direct/compact5、UM范围审查5、Boss真实最优菜单4、uniform尾3；本批body仅本地，H17body已pushed但未done，所有语义receipt未提交，不把local-only当pushed；共17主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_LOCAL17I_REMAINING_SCOPE.json。
 
 R3_LOCAL5J：真实CONNECT403期间保存cyclic/resource已领5源完整交付；原程序数学运行0，只复用同SHA真实旧run；修正建议不覆盖Boss2共享对象；未远端pushed/未done；共5主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_LOCAL5J_REMAINING_SCOPE.json。
+
+R3_LOCAL8K：真实CONNECT403期间收齐最后已领8源：rankwise5与全字段assets/review/FILES三源；本地完整保真、全语义/数学与程序范围准确，不推定remote pushed/done；共8主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_LOCAL8K_REMAINING_SCOPE.json。
