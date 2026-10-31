@@ -1,0 +1,968 @@
+MATHEMATICS OF OPERATIONS RESEARCH
+Vol. 00, No. 0, Xxxxxx 20xx, pp. xxx–xxx
+                                                                                                     informs     ®
+
+                                                                                    DOI 10.1287/moor.xxxx.xxxx
+ISSN 0364-765X | EISSN 1526-5471 |xx|0000|0xxx
+                                                                                                 c
+                                                                                                 °20xx INFORMS
+
+
+
+
+       Approximation Algorithms for Combinatorial Auctions with
+                      Complement-Free Bidders
+
+                                                 Shahar Dobzinski
+                                 Computer Science Department, Cornell University
+                                          email: shahar@cs.cornell.edu
+
+                                                   Noam Nisan
+             The School of Computer Science and Engineering, The Hebrew University of Jerusalem
+                                          email: noam@cs.huji.ac.il
+
+                                                 Michael Schapira
+  Department of Computer Science, Yale University, CT, USA, and Computer Science Division, University of
+                                    California at Berkeley, CA, USA
+                                    email: michael.schapira@yale.edu
+
+In a combinatorial auction m heterogenous indivisible items are sold to n bidders. This paper considers settings
+in which the valuation functions of the bidders are known to be complement-free (a.k.a. subadditive). We provide
+several approximation algorithms for the social-welfare maximization problem in such settings. Firstly, we present
+a logarithmic upper bound for the case that the √ access to the valuation functions is via demand queries. For the
+weaker value queries model we provide a tight O( m) approximation. Unlike the other algorithms we present, this
+algorithm is also incentive compatible. Finally, we present two approximation algorithms for the more restricted
+class of XOS valuations: A simple deterministic algorithm that provides an approximation ratio of 2 and an
+          e
+optimal e−1  approximation achieved via randomized rounding. We also present optimal lower bounds for both
+the demand oracles model and the value oracles model.
+Key words: Combinatorial Auctions; Truthfulness
+MSC2000 Subject Classification: Primary: 68W25 ; Secondary: 91B26
+OR/MS subject classification: Bidding/auctions
+History: Received: Xxxx xx, xxxx; Revised: Yyyyyy yy, yyyy and Zzzzzz zz, zzzz.
+
+
+   1. Introduction. This paper considers the allocation problem in combinatorial auctions. In a com-
+binatorial auction, we have a set of heterogenous indivisible items that are sold to competing bidders.
+The bidders value bundles of items, rather than only valuing single items individually. Thus, bidders can
+express complex combinatorial preferences over items.
+   Formally, a set M of items, |M |=m, is sold to n bidders. To denote the i’th bidder’s value for each
+bundle of items S ⊆ M , we use a function vi , where vi (S) denotes the value of the bundle S for bidder
+i. The function vi is called the valuation of bidder i. Two common assumptions are that for each bidder
+i, vi is normalized (vi (∅) = 0), and monotone (for each S ⊆ T ⊆ M, vi (S) ≤ vi (T )). The goal is to
+partition the items between the bidders in a way that maximizes the social welfare – the sum of bidders’
+values for the bundles that are allocated
+                                        P to them. That is, we wish to find an allocation (S1 , ..., Sm ),
+Si ∩ Sj = ∅ for i 6= j, that maximizes i vi (Si ).
+   Two aspects make this problem hard to solve. Firstly, the “input” is of exponential size – a naive rep-
+resentation of a valuation will require 2m values, one for each bundle – while we would like our algorithms
+to run in time that is polynomial in m and n (the natural parameters of the problem). Secondly, even
+for valuations that can be succinctly described, the optimization problem is computationally hard. Much
+work has addressed the problem of identifying special cases that can be efficiently solved or approximated,
+as well as understanding the underlying computational limitations – see chapters 10 – 13 of Cramton et
+al. [3].
+
+
+                                                        1
+                                                  Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+2                                                                                                        c
+                                                  Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS
+
+
+   There are two possible approaches to formalizing the computational model. These approaches differ
+in how the “input” is accessed. The first approach calls for fixing some bidding language in which the
+input valuations are encoded. This approach requires algorithms to run in time that is polynomial in the
+input length (under this encoding). This kind of approach makes sense in cases in which a sufficiently
+natural bidding language exists. The second approach treats the valuations as black boxes and assumes
+that each valuation is represented by oracles that can only answer a fixed type of queries. Three types
+of queries are commonly considered:
+
+     (i) Value queries: The query specifies a subset S ⊆ M of items and receives the value vi (S) as the
+         reply. This query is very natural from a computer science point of view, but, in general, is quite
+         weak.
+    (ii) Demand queries: The query specifies a vector p = (p1 , ..., pm ) of “item prices”, and the reply is
+         the set that would be “demanded” by theP queried bidder given these item prices, i.e., a subset S
+         that maximizes the expression vi (S) − j∈S pj . This query is natural from an economic point of
+         view as it corresponds to the revealed preferences of the bidders (i.e., what is directly observable
+         from their behavior). Blumrosen and Nisan [2] and Dobzinski and Schapira [7] showed that
+         demand queries are strictly stronger than value queries (in the sense that value queries can be
+         simulated by a polynomial number of demand queries, but exponential number of value queries
+         might be required to simulate a single demand query).
+    (iii) General queries: In this model we allow the oracles to answer any kind of query (however,
+          each query can only be addressed to a single valuation). This model captures the communication
+          complexity (between the bidders) of the problem, and due to its strength is mostly interesting
+          for proving lower bounds.
+
+   Combinatorial auctions with general valuations are well understood √  from a computational perspective:
+the optimal allocation can be approximated to within a factor of O( m) in polynomial time, but not
+within a factor of m1/2−² , for any constant ² > 0. This is true even for the case of single-minded bidders,
+as shown by Lehmann et al. [13], and Sandholm [20]. The lower bound holds even for the general queries
+model, whereas the upper bound requires demand queries, but value queries do not suffice [7, 2].
+   An important special case of combinatorial auctions is the one in which the valuations are known to
+be complement-free, i.e., all input valuations are known to be subadditive: v(S ∪ T ) ≤ v(S) + v(T ) for
+all S, T 1 . Lehmann et al. [12] exhibit a strict hierarchy of subclasses within this class of valuations:
+OXS ⊂ GS ⊂ SM ⊂ XOS ⊂ CF . The CF and SM classes are easy to define: CF is the class of
+subadditive (complement-free) valuations; SM is the set of submodular valuations, i.e., v(S ∪ T ) + v(S ∩
+T ) ≤ v(S) + v(T ) for all S, T . We will not define the class of GS ((gross) substitute) valuations here, but
+we will note that economists often assume valuations to be in this class as in some sense this corresponds
+to “convex economies”. The OXS and XOS classes are defined syntactically (see a survey by Nisan
+[16]). We will later present the syntactic definition of the XOS class (Section 2).
+   The allocation problem becomes gradually harder as we move upwards within this hierarchy; a strongly
+polynomial time algorithm exists if the input valuations are given in the OXS language; a polynomial
+time algorithm, based on linear programming, exists for the class GS, as shown by Nisan and Segal [19].
+For the SM class no polynomial time algorithm exists – an NP-hardness result for a simple submodular
+bidding language is shown in a paper by Lehmann et al. [12], and an exponential communication lower
+bound was proven by Nisan and Segal [19]. However, Lehmann et al. [12] exhibit a polynomial-time
+2-approximation
+       √          algorithm that uses value queries only. No approximation algorithms (better than
+the O( m)-approximation for general valuations) were previously known for the higher levels in this
+hierarchy.
+
+   1.1 Upper Bounds. The main message relayed in this paper is that for the two higher levels of the
+hierarchy better upper bounds exist:
+
+Theorem 1.1 There exists a polynomial-time algorithm that finds an O( logloglogmm ) approximation for
+valuations in the CF class, using demand queries.
+   1 It is also possible to consider the “dual” class of substitute-free valuations (v(S ∪ T ) ≥ v(S) + v(T ), for disjoint
+
+S, T ⊆ M ). However, it turns out that the lower bound for general valuations, by Nisan [15], also applies to this class.
+Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+                                                       c
+Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS                                      3
+
+
+   This algorithm is based on careful randomized rounding of the linear programming relaxation of the
+problem; a deterministic algorithm is obtained via derandomization.
+  For the more restricted XOS class we obtain improved approximation ratios.
+
+                                              e
+Theorem 1.2 There exists a polynomial-time ( e−1 )-approximation algorithm for valuations given in the
+XOS language.
+
+   We also present a 2-approximation algorithm for this class. Although the approximation guarantee is
+             e
+worse than e−1 , the 2-approximation algorithm has several advantages: it is combinatorial, fast, simple,
+and deterministic. Moreover, it serves as the main building block for constructions of truthful mechanisms
+for combinatorial auctions [4, 6].
+
+   1.2 Lower Bounds. We prove lower bounds for approximation for both CF and XOS. The class
+CF does not have a natural bidding language and so the lower bound is for the oracle model. The lower
+bound for the class XOS is actually two separate lower bounds: an NP-hardness result for the bidding
+language model, and a communication lower bound for the oracle model. No inapproximability result for
+any of these classes was previously known.
+
+Theorem 1.3 Exponential communication is required for approximating the optimal allocation among
+CF valuations to within a factor of 2 − ², for any constant ² > 0.
+
+Theorem 1.4 (1) It is NP-hard to approximate the optimal allocation among valuations given in the
+XOS language to within any constant factor better than e/(e − 1). (2) Exponential communication is
+required for approximating the optimal allocation among XOS valuations to within any constant factor
+better than e/(e − 1).
+
+  The last theorem shows that our algorithm for the class XOS is tight.
+
+   1.3 Handling Selfishness. In many settings in which the combinatorial auction problem arises, it is
+natural to assume that the bidders are selfish. That is, the bidders are interested only in maximizing their
+own utility, and might therefore misreport their preferences if it suits their interests. We are therefore
+interested in truthful algorithms that by introducing payments guarantee that if each bidder is to simply
+report his true value he will maximize his profit. Surprisingly, to date, very few computationally-feasible
+truthful mechanisms for this problem are known that do not apply only to very restricted single-parameter
+domains. We present an approximation algorithm that makes use of value queries only, and ensures
+truthfulness.
+                                                                              √
+Theorem 1.5 There exists a truthful polynomial-time algorithm that finds an O( m)-approximation for
+valuations in the class CF using value queries only.
+
+   This approximation ratio may seem quite bad when contrasted with the fact that for the class of
+submodular valuations constant-approximation algorithms that use only value queries exist (e.g., by
+Lehmann et al. [12]). However, it turns out that this algorithm is optimal in the value oracle model,
+even if all bidders have XOS valuations, and even ignoring truthfulness constraints:
+
+Theorem 1.6 Every approximation algorithm for combinatorial auctions with XOS bidders that uses
+only value queries, requires an exponential number of queries to achieve an approximation ratio better
+       1
+than m 2 −² , for any constant ² > 0.
+
+   1.4 Subsequent Work. Subsequently to this paper, Feige [9] improved the upper bound for com-
+binatorial auctions with complement-free valuations to 2. This upper bound uses demand queries. The
+communication lower bound we present implies that this upper bound is tight.
+  We now discuss subsequent work related to submodular valuations. Khot, Lipton, Markakis, and
+                                                      e
+Mehta [11] showed that no approximation better than e−1  using value queries only is possible, unless
+P = N P . This lower bound was recently strengthened to an unconditional one by Mirrokni et al. [?].
+                                               Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+4                                                                                                     c
+                                               Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS
+
+
+Vondrak [21] has shown that this lower bound is tight by exhibiting a matching upper bound that uses
+value queries only. In the demand queries model Feige and Vondrak [10] obtained an approximation ratio
+                      e
+slightly better than e−1 . They also show that approximating the welfare with demand oracle in this case
+is APX-hard.
+   Another line of research which stemmed in this paper is obtaining truthful mechanisms for combi-
+natorial auctions with complement-free valuations. Dobzinski [4] obtained an approximation ratio of
+O(log m log log m) for subadditive valuations using a randomized mechanism, improving over a previous
+result of [6]. One of the main ingredients in these results is the 2-approximation algorithm for XOS valu-
+ations presented in this paper. In addition, Feige [9], showed how to convert the logloglogmm -approximation
+algorithm of this paper to a truthful one (under a weaker notion  √ of truthfulness). The best determin-
+istic mechanism for complement-free valuations is still the O( m)-mechanism presented in this paper.
+Dobzinski and Nisan [5] proved that one cannot achieve a much better approximation factor using this
+type of algorithms – maximal in range algorithms (see the discussion in Section 5).
+
+   1.5 Open Questions. This paper and subsequent work determined the optimal bounds possible
+for the upper levels of the hierarchy, namely combinatorial auctions with XOS and complement-free
+valuations.
+
+      • The main open question is closing the gap between the known upper and lower bounds for
+        submodular valuations in the demand oracles model. In particular, no communication lower
+        bound is known.
+      • It would also be interesting to achieve these approximation ratios using combinatorial algorithms
+        (most state-of-the-art algorithms are based on randomized rounding of the LP relaxation of the
+        problem).
+      • Another major open question which is still open is to determine how well truthful mechanisms
+        can approximate the welfare in all levels of the hierarchy.
+
+   2. Definition and Representation of XOS. This section discusses the definition and representa-
+tion of XOS valuations. Recall, that as discussed in the introduction the class of XOS valuations strictly
+contains the class of submodular valuations [12].
+   A valuation is called additive (a.k.a. linear) if for all S ⊆ M , v(S) = Σj∈S v({j}). Thus, an additive
+valuation is defined by the values a1 , ..., am it assigns to items 1, ..., m respectively. We describe an
+additive valuations by the following clause:
+
+                                       (x1 : a1 ∨ x2 : a2 ∨ ... ∨ xm : am )
+
+We can now define XOS valuations:
+
+Definition 2.1 A valuation v is said to be XOS if there is a set of additive valuations {w1 , ..., wt }, such
+that v(S) = maxk {wk (S)} for all S ⊆ M . We denote XOS valuations by
+
+            (x1 : w1 ({x1 }) ∨ ... ∨ xm : w1 ({xm })) ⊕ ... ⊕ (x1 : wt ({x1 }) ∨ ... ∨ xm : wt ({xm }))
+
+where each of the clauses connected by the ⊕ sign represents an additive valuation.
+
+   We note that the number of clauses t might be exponentially large. We call a clause of an additive
+valuation w, for which v(S) = maxk {wk (S)}, a maximizing clause for S in v (if there are several such
+clauses we arbitrarily choose one). An XOS oracle is an oracle that given a bundle S returns a maximizing
+clause for S (for a specific valuation v).
+
+   2.1 Efficiently Simulating XOS and Demand Queries. We now show that if the input is given
+in the form of an XOS expression, XOS oracles and demand oracles can be simulated in time that is
+polynomial in the input size. We also prove that if all valuations are submodular then value queries can
+simulate XOS queries in polynomial time. Therefore, if all valuations are submodular, the algorithm
+presented in this section requires demand queries only (recall that a value query can be simulated by a
+polynomial number of demand queries [2]).
+Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+                                                       c
+Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS                                          5
+
+
+Proposition 2.1 Given an XOS valuation as an XOS expression, we can evaluate both XOS queries
+and demand queries in time polynomial in the input size.
+
+   Proof. Given an XOS valuation and a vector of prices we wish to simulate a demand oracle. First,
+let us note that it is easy to simulate a demand oracle for an additive valuation in polynomial time,
+by simply choosing all profitable items. Since the input is given as an XOS formula and each clause
+is an additive valuation, it is enough to simulate a demand oracle for each clause and choose the most
+profitable option. The entire process requires time polynomial in the input size.                   ¤
+   If the input is not given as an XOS expression, then we do not know how to answer XOS queries given
+only a demand oracle. However, for the more restricted class of submodular valuations, even the weaker
+value oracle suffices to answer XOS queries, as the following proposition shows:
+
+Proposition 2.2 An XOS clause for a bundle S of a submodular valuation v can be calculated in poly-
+nomial time using value queries only.
+
+   Proof. Given a bundle S we show how to construct the corresponding XOS clause. Fix some
+arbitrary order of the items in S. Without loss of generality, let S = {1, . . . , |S|}. Let tj be the marginal
+utility of the j’th item given the previous j − 1 items: tj = v({1, . . . , j}) − v({1, . . . , j − 1}). The XOS
+clause is (t1 ∨ . . . ∨ t|S| ).
+   All that we have to prove is that v(S) = Σj∈S tj , and that for every T ⊆ S, v(T ) ≥ Σj∈T ti . For that
+we use an alternative definition of submodular valuations (see [12] for an equivalence proof): a valuation
+v is submodular if for every item j, and bundles W, T , W ⊆ T , j ∈
+                                                                  / T , we have that v(W ∪ {j}) − v(W ) ≥
+v(T ∪ {j}) − v(T ).
+   The first property holds simply by construction. To see that v(T ) ≥ Σj∈T ti , fix T , and let tTj be the
+marginal utility of item j in T , using the same order we used in S (that is, order the items in S, and
+delete items that are not in T , while keeping the relative order of the rest of the items). Recall that
+an alternative definition of submodular valuation says that the marginal utility does not decrease when
+items are deleted, hence v(T ) = Σj∈T tTi ≥ Σj∈T ti
+   Finally, to show that this clause can be constructed using value queries only, observe that we only have
+to calculate the marginal utility of an item, which can be done by two value queries for each item.      ¤
+
+   3. Approximating the Welfare with Demand Oracles. Randomized rounding of an LP-
+relaxation of a problem is a standard technique, and our algorithms use it. However, when one attempts
+randomized rounding on packing problems such as combinatorial auctions the results are not good; A
+randomized choice will very likely yield non-feasible
+                                           √          solutions, unless the probabilities chosen reduce the
+expected quality of solution by a large O( m) factor.
+   Both algorithms we present in this section start with a randomized rounding procedure for obtaining
+a “pre-allocation”. This allocation has a value that is close to the optimum, but unfortunately is not
+feasible. Feasibility issues are handled differently in the complement free and the XOS cases, and indeed
+a much better ratio is obtained for the XOS case.
+  Before describing the randomized rounding procedure, let us recall the standard LP relaxation for
+combinatorial auctions:
+
+        Maximize: Σi,S xi,S vi (S) Subject to:
+           – For each item j: Σi,S|j∈S xi,S ≤ 1
+           – for each bidder i: ΣS xi,S ≤ 1
+           – for each i, S: xi,S ≥ 0
+
+Even though the linear program has exponentially many variables, it may still be solved in polynomial
+time. This is done by solving the dual linear program using the ellipsoid method. Using the ellipsoid
+method requires a “separation” oracle, and this may be directly implemented using the demand oracles
+of the bidders. This was first proven by Nisan and Segal [19], and in more details by Blumrosen and
+Nisan [2].
+                                              Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+6                                                                                                    c
+                                              Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS
+
+
+   The pre-allocation is obtained via randomized rounding as follows: For each bidder i we independently
+choose a set Si by performing the following random experiment: each set S is chosen with probability
+xi,S , and the empty set is chosen with probability 1 − ΣS xi,S .
+   Observe that the randomized rounding solution outputs an integral solution with an expected value
+of OP T ∗ , the optimal fractional solution. However, the solution is not feasible, as an item might be
+allocated to more than one bidder. The two algorithms we present greatly differ in how they solve this
+infeasibility.
+   A word about the oracles needed to implement our algorithms. The algorithm for complement-free
+valuations we present in this section requires access to a demand oracle (for each specific valuation v).
+Both algorithms for XOS valuations we present require in addition access to an XOS oracle.
+
+   3.1 Complement-Free Valuations. Indeed, the pre-allocation produces a non-feasible solution.
+However, these non-feasible solutions are only a logarithmic factor away from feasibility (in the sense
+that with high probability each item is allocated at most a logarithmic number of times). For general
+valuations this fact does not help, but as we will show it suffices for CF valuations (see also [7] for
+another setting, the k-duplicates version of combinatorial auctions, in which this fact leads to good
+approximations).
+   The main observation at the heart of our algorithm is that one may partition this logarithmically-
+non-feasible solution into a logarithmic-size family of feasible solutions. For the case of complement-free
+valuations, the quality of one of these solutions can be bounded from below.
+   The original version of the algorithm claimed a ratio of O(log m). Feige [9] observed that the algorithm
+actually provides an approximation ratio of O( logloglogmm ), and this is the ratio that is presented here. We
+also note thatqFeige [9] presents an example which shows that the approximation ratio of the algorithm
+                   log m
+is at least Ω(   log log m ).
+
+
+     (i) Use randomized rounding to find a “pre-allocation” S1 , ..., Sn of pairs < i, Si > with the following
+         properties, where k = O( logloglogmm ):
+           • Each item j appears at most k times in {Si }i , with j ∈ Si .
+             P              1
+           •   i vi (Si ) ≥ 3 · (Σi,S xi,S vi (S)).
+
+     (ii) For each bidder i, partition Si into a disjoint union Si = Si1 ∪ ... ∪ Sik such that for each
+          1 ≤ i1 < i2 ≤ n and 1 ≤ r ≤ k, it holds that Sir1 ∩ Sir2 = ∅.
+          This is done as follows: for each i = 1, ..., n and each r = 1, ..., k, we let Sir = {j ∈
+          Si |j appears in exactly r − 1 of the sets S1 , ..., Si−1 }.
+                                       P
+    (iii) Find the r that maximizes i vi (Sir ), and for each i allocate Ti = Sir to bidder i.
+    (iv) If there is a bidder i with vi (M ) ≥ Σi vi (Ti ) then allocate i all items (and allocate nothing to the
+         rest of the bidders).
+
+Theorem 3.1 If all input valuations are complement-free then the algorithm produces an allocation that
+is an O(k) = O( logloglogmm )-approximation to the optimal one.
+
+  We now prove the theorem. Towards this end, let us keep track of the “quality” of solution implied
+by the intermediate steps.
+
+     (i) The randomized rounding procedure returns the optimal fractional solution OP T ∗ =
+         Σi,S xi,S vi (S), which is an upper bound to the value of the integral optimal allocation, OP T .
+         The detailed calculations needed to prove that this step indeed ends with a solution that satisfies
+         all the required conditions are given later. At this point we will indicate the types of calculations
+         used and what they yield. From the first inequality of the LP and using standard probability
+         bounds one can show that for every item j, the probabilityPthat it appears in more than k chosen
+         sets is exponentially small in k. The expected value of i vi (Si ) at this stage is only slightly
+         less than Σi,S xi,S vi (S) = OP T ∗ . It followsP
+                                                         that with very high probability none of the required
+         constraints are violated, and thus we have i vi (S) ≥ 13 · OP T ∗
+Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+                                                       c
+Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS                                              7
+
+
+    (ii) The main point here is that indeed for every fixed r, the sets {Sir }i are pairwise disjoint and are
+         thus a valid allocation. This follows directly from the construction, as every duplicate instances
+         of every item j are allocated to sets Sir with sequentially increasing r. Note that we always keep
+         r ≤ k since each item appears in at most k sets in {Si }.
+                                                                                                    S
+   (iii) The crucial use of complement-freeness P       comes here: since for each fixed i, Si = r Sir , the fact
+                                                                  r
+         that
+         P P  vi is complement P P free implies Pthat r vi (S     i ) ≥ vi (Si ). By summing over all i we get that
+                        r                  r                   1        ∗
+            r   i vi (SPi)=      i  r vi (Si ) ≥ Pi vi (Si ) ≥ 3 ·OP T . It is now clear that by choosing the r that
+                                                                 OP T ∗
+         maximizes i vi (Si ) we get that i vi (Si ) ≥ 3k . Thus, the allocation T1 = S1r , ..., Tn = Snr
+                                 r                         r
+                     log(m)
+         is an O( log   log m ) approximation to the optimal allocation (and even to the optimal fractional
+         allocation).
+
+    3.1.1 Details of Stage (i). For each j ∈ M , let Ej denote the random variable that indicates
+whether j was allocated more than k times. Let B be the random variable that indicates whether
+vi (Si ) < 31 OP T ∗ . We will prove that Pr[∨j Ej ∨ B] < 56 .
+  We first prove that Pr[∨j Ej ] < n1 . Fix an item j. Let Zi,j be the random variable that determines
+whether j ∈ Si . Obviously, Zi,j receives values in {0, 1}. Because of the randomized rounding method
+we used, we have that the variables {Zi,j }i are independent. We define Zj = Σi Zi,j (i.e., Zj is the
+number of times item j appears in {Si }). By the linearity of expectation and the first condition of the
+LP formulation we have that E[Zj ] ≤ 1. We now use the following known proposition, (see, e.g., the
+book by Mitzenmacher and Upfal [14]):
+
+
+Lemma 3.1 Let X1 ,...,Xn (for sufficiently large n) be independent Bernoulli trials such that for 1 ≤ i ≤
+m, Pr[Xi = 1] = pi , and Σi pi = 1. Let X = X1 + ... + Xm . Then
+                                                      3 log m     1
+                                           Pr[X >              ]≤ 2
+                                                     log log m   m
+
+and thus we have that
+                                                           log m                        1
+                    Pr[item j appears in more than                  bundles in {Si }] ≤ 2
+                                                        3 log log m                    m
+By applying the union bound we get that the probability that any one of the items appears in more than
+   log m                                         1    1
+3 log log m bundles in {Si } is smaller than m · m2 = m .
+
+   We will now prove that Pr[B] < 34 . W.l.o.g. maxi vi (M ) = 1 (otherwise, we can divide all valuations
+by maxi vi (M )). If OP T ∗ ≤ 3, then giving M to the bidder that maximizes vi (M ), is a feasible allocation
+which provides a good approximation. Therefore, from now on we assume that OP T ∗ > 3. Let A be the
+random variable that gets the value of Σi vi (Si ) after step (i). We will see that A ≥ Σi v3i (S) with high
+probability.
+  We make use of the following corollary from Chebyshev’s inequality:
+
+Lemma 3.2 Let X be the sum of independent random variables, each of which lies in [0, 1], and let
+µ = E[X]. Then, for any α > 0, Pr[|X − µ| ≥ α] ≤ αµ2 .
+
+We can now upper bound the probability that event B occurs.
+                                     OP T ∗                        2OP T ∗      9       3
+                  Pr[B] = Pr[A <            ] ≤ Pr[|A − OP T ∗ | ≥         ]≤         ≤
+                                       3                             3        4OP T ∗   4
+the last inequality is because OP T ∗ > 3. Therefore, using the union bound:
+                                                                           1  3  5
+                           Pr[∨m
+                               t=1 Et ∨ B] ≤ Σj∈M Pr[Ej ] + Pr[B] ≤          + <
+                                                                           n 4   6
+We have shown that with good probability it is possible to create a solution for which all the necessary
+conditions hold.
+                                               Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+8                                                                                                     c
+                                               Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS
+
+
+   3.2 XOS Valuations. The algorithm presented in this section is based on exploiting the structure of
+the syntactically defined XOS class. Recall that the class of XOS valuations strictly contains submodular
+valuations.
+   The algorithm starts by obtaining a pre-allocation as described in the beginning of the section, where
+each bidder gets at most one bundle. The next step is to “replace” the valuation of a bidder with the
+XOS clause that corresponds to the bundle he got in the pre-allocation. Now we find the optimal solution
+using the “new” valuations. Observe that a simple greedy algorithm finds the optimal allocation if all
+bidders have additive valuations.
+   We are left with showing that the value of the generated allocation is not too far from the optimal
+fractional solution. Once again, the syntactic properties of XOS come to our aid: we analyze the
+algorithm by separately setting a lower bound on the contribution of each single item to the total social
+welfare.
+
+     (i) Obtain a “pre-allocation” S1 , ..., Sn using the randomized rounding procedure.
+    (ii) Let (x1 : pi1 ∨ ... ∨ xm : pim ) be the maximizing clause for Si in vi .
+                                                                     0
+    (iii) Allocate the j’th item to bidder i for which pij ≥ pij , for all i0 ∈ N .
+
+Note that Step (i) requires access to a demand oracle, and Step (ii) requires access to an XOS oracle.
+We do not know if an XOS oracle can be simulated using demand queries only, in the case of general
+XOS valuations. However, if a valuation is submodular, a demand oracle (and in fact, a value oracle)
+suffices, as was shown before. Thus, if all valuations are submodular only demand oracles are needed to
+implement the algorithm.
+
+Theorem 3.2 If all input valuations are XOS then the algorithm produces an allocation that is a
+      1
+( 1−(1− 1 n )-approximation to the optimal one.
+         )
+       n
+
+
+
+   Proof. Observe that the allocation produced by the algorithm is indeed a feasible one. Thus, all
+that is left to prove is that it achieves the desired approximation ratio.
+                                                   (i,S)                       (i,S)
+    For every bidder i and bundle S, let (x1 : p1          ∨ ... ∨ xm : pm             ) be the maximizing clause for S in
+vi . It holds that:
+                                                                    (i,S)                        (i,S)
+                      OP T ∗ = Σi,S xi,S vi (S) = Σi,S xi,S (Σj pj          ) = Σj (Σi,S xi,S pj         )
+
+Let Qj be the random variable that equals maxi∈N {pij }, after the randomized rounding step. Let ALG
+be the random variable that receives the value of the total social welfare after assigning each item
+as in the algorithm. Due to the properties of XOS valuations, ALG ≥ Σj Qj . This is because if
+        (i,S)               (i,S)
+(x1 : p1      ∨ ... ∨ xm : pm ) is the maximizing clause of S in vi then, by XOS, for every T ⊆ S
+      (i,S)
+Σj∈T pj      ≤ vi (T ).
+                                                                                                                    (i,S)
+  We will now show that the expectation of Qj is bounded from below by (1 − (1 − n1 )n ) · (Σi,S xi,S pj                    ).
+Thus, by the linearity of expectation:
+                                                    1 n                 (i,S)          1
+             E[ALG] ≥ Σj E[Qj ] ≥ Σj (1 − (1 −        ) ) · (Σi,S xi,S pj ) = (1 − (1 − )n )OP T ∗
+                                                    n                                  n
+
+
+Lemma 3.3 For every item j,
+                                                           1 n                 (i,S)
+                                   E[Qj ] ≥ (1 − (1 −        ) ) · (Σi,S xi,S pj )
+                                                           n
+
+    Proof.    Fix an item j. We will lower bound the expected value of E[Qj ] by considering a different
+                                                                             (i,S)
+                                                              ΣS|j∈S xi,S pj
+way of assigning j. Let Xij = ΣS|j∈S xi,S and Vij =                  Xij
+                                                                                     . That is, Xi is the probability that
+bidder i gets item j in the “pre-allocation”, and Vij is the expected value of j to bidder i, conditioned on
+i receiving j in the “pre-allocation”.
+Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+                                                       c
+Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS                                            9
+
+
+   Order the bidders in the decreasing order of their Vij ’s. Without loss of generality, let us assume this
+order to be 1, ..., n. We assign j to the highest ranked (first) bidder who got item j in the “pre-allocation”.
+Denote by Tj the expected value of j in this allocation. Observe that E[Qj ] ≥ E[Tj ] because E[Qj ] is
+the expected value of item j when j is always assigned to the bidder with the highest (per-item) value
+for j in the “pre allocation” (as in the algorithm). Therefore, to prove the lemma we will bound E[Tj ]
+from below. It is easy to see that
+              E[Tj ] = X1j V1j + (1 − X1j )X2j V2j + ... + (1 − X1j )(1 − X2j ) · ... · (1 − Xn−1
+                                                                                              j
+                                                                                                  )Xnj Vnj
+
+Note that, due to the first condition of the LP, X1j + ... + Xnj ≤ 1. Therefore, we have for every 1 ≤ k ≤ n
+that:
+                                                Σki=1 Xij k           1                         1
+ 1 − (1 − X1j ) · ... · (1 − Xkj ) ≥ 1 − (1 −            ) ≥ (1 − (1 − )k )Σki=1 Xij ≥ (1 − (1 − )n )Σki=1 Xij (1)
+                                                    k                 k                         n
+                                                                                 j
+where the last two inequalities are derived using elementary calculus. Define Vn+1    = 0. Multiplying
+Equation 1 by (Vkj − Vk+1
+                       j
+                          ) for every 1 ≤ k ≤ n, and summing over all k’s shows that:
+                                         1 n                           1                    (i,S)
+                   E[Tj ] ≥ (1 − (1 −      ) )(Σi Vij Xij ) = (1 − (1 − )n )(Σi,S|j∈S xi,S pj )
+                                         n                             n
+                                                                                                                ¤
+                                                                                                                ¤
+
+   3.3 A Combinatorial 2-Approximation Algorithm for XOS Valuations. We now present a
+2-approximation algorithm for combinatorial auctions with XOS bidders. While the approximation guar-
+                         e
+antee is worse than the e−1 guarantee of the previous algorithm, the current algorithm is combinatorial,
+fast, and simple.
+
+     (i) Initialize S1 = ... = Sn = ∅, and p1 , ..., pm = 0.
+    (ii) For each bidder i = 1...n :
+         (a) Let Si be the demand of bidder i at prices p1 , ..., pm .
+         (b) For all i0 < i take away from Si0 any items from Si : Si0 ← Si0 − Si .
+                                          i
+         (c) Let (x1 : q1i ∨, ..., ∨xm : qm ) be the maximizing clause for Si in vi .
+         (d) For all j ∈ Si , update pj = qji .
+
+  Notice that in Step (ii)a we require access to a demand oracle, and in Step (ii)c we require access to
+an XOS oracle.
+
+Theorem 3.3 The algorithm provides a 2 approximation to the optimal allocation.
+
+   Proof. For each T ⊆ M , we denote by pi (T ) the sum of the prices of the items in T at the i’th stage
+of the algorithm. Let ∆i = pi (M ) − pi−1 (M ), i.e., the total difference in prices between stages (i − 1) and
+i (with p0 (M ) = 0). Let A1 , ..., An be the allocation generated by the algorithm. Let O1 , ..., On be the
+optimal allocation. We will prove the Σi vi (Oi ) ≤ 2Σi vi (Ai ). To do so, we prove three simple lemmas:
+
+Lemma 3.4 The social welfare of the allocation generated by the algorithm is at least the sum of items’
+prices at the end of the algorithm (after the n’th stage). That is, pn (M ) ≤ Σi vi (Ai ).
+
+    Proof. Consider a specific bidder i. Let T be the bundle assigned to that bidder by the algorithm
+in stage i. Obviously Ai ⊆ T . Because vi is an XOS valuation, we have that pi (Ai ) ≤ vi (Ai ). However,
+since the items in Ai were not reassigned after the i’th stage, and so their prices were not altered,
+pi (Ai ) = pn (Ai ). We have that pn (Ai ) ≤ vi (Ai ), and so pn (M ) = Σni=1 pn (Ai ) ≤ Σni=1 vi (Ai ). ¤
+
+Lemma 3.5 The prices assigned to the items throughout the execution of the algorithm are non-decreasing.
+
+   Proof. By contradiction. Let S be the set that maximizes the demand of the i’th bidder at the i’th
+stage of the algorithm. Let (x1 : q1 ∨ ... ∨ xm : qm ) be the XOS clause of S in vi . Now, assume there is
+                                              Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+10                                                                                                   c
+                                              Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS
+
+
+an item j ∈ S for which qj < pij . vi is an XOS valuation and so we have that Σt∈(S−{j}) qt ≤ vi (S − {j})
+and Σr∈S qr = vi (S). Hence:
+            vi (S) − Σr∈S pir = Σr∈S qr − Σr∈S pir = (qj − pij ) + (Σt∈(S−{j}) qt − Σt∈(S−{j}) pit ) <
+                        (Σt∈(S−{j}) qt − Σt∈(S−{j}) pit ) < vi (S − {j}) − Σt∈(S−{j}) pit
+and this is a contradiction to the definition of S.                                                             ¤
+
+Lemma 3.6 The social welfare of the optimal allocation is at most twice the sum of items’ prices at the
+end of the algorithm. That is, Σi vi (Oi ) ≤ 2pn (M ).
+
+   Proof. Recall that ∆i represents the “demand” of player i at prices pi−1 . Hence, for each i,
+1 ≤ i ≤ n, ∆i = maxT ⊆M (vi (T ) − pi−1 (T )) (otherwise, i would have chosen a different bundle of items).
+We have:
+                                         vi (Oi ) − pi−1 (Oi ) ≤ ∆i .
+since the prices do not decrease throughout the algorithm, the following inequality holds:
+                                            vi (Oi ) − pn (Oi ) ≤ ∆i .
+by summing up on both sides of the equation we get:
+                                       Σni=1 vi (Oi ) − Σi pn (Oi ) ≤ Σi ∆i
+                                         Σi vi (Oi ) − pn (M ) ≤ pn (M )
+                                              Σi vi (Oi ) ≤ 2pn (M )
+                                                                                                                ¤
+Putting the lemmas together we have that
+                                       Σi vi (Oi ) ≤ 2pn (M ) ≤ 2Σi vi (Ai )
+                                                                                                                ¤
+    The following example shows that the algorithm cannot achieve an approximation ratio better than 2:
+consider a combinatorial auction with two goods, a and b, and two bidders. The first bidder’s valuation
+is v1 ({a}) = v1 ({b}) = v1 ({a ∪ b}) = 1. The valuation of the second bidder is v2 ({a}) = 0, v2 ({b}) =
+v2 ({a ∪ b}) = 1. A welfare of 2 can be achieved by allocating a to the first bidder, and b to the second
+bidder. However, the first bidder might wish to get b at the first stage, and the optimal social welfare
+achieved is only 1. Hence, the approximation ratio achieved by the algorithm is not better than 2.
+
+     4. Lower Bounds
+
+     4.1 A Lower Bound for Complement-Free Valuations.
+
+Theorem 4.1 For every constant ² > 0, any (2−²)-approximation algorithm for a combinatorial auction
+with bidders that have CF valuations, requires an exponential amount of communication.
+
+   Proof. Nisan [15] considers the following combinatorial auction: each bidder i has a set Ti of bundles
+that he is potentially interested in. We also have that all the Ti ’s have the same size, t. A specific instance
+of this combinatorial auction is determined by specifying a set Ii for each bidder i, Ii ⊆ Ti , which denotes
+the bundles our bidder is interested in. The valuation of each bidder i is the following: vi (S) = 1 if there
+exists some R ∈ Ii such that R ⊆ S, and 0 otherwise. Nisan shows that distinguishing between the case
+where there is (1) an allocation that assigns each bidder i a (superset of a) set he is interested in from
+Ii (and so the optimal welfare is n), and between (2) only one bidder is assigned a superset of a bundle
+from Ii he is interested in (and so the optimal welfare is 1), requires t bits of communication, for t that
+                                        1
+is exponential in n and m (for n < m 2 −² ), for any constant ² > 0. This shows in particular that every
+approximation algorithm that provides an approximation ratio better than n for combinatorial auctions
+with general valuations requires exponential communication.
+  Let us now reduce this combinatorial auction to make the valuations complement free. Define new
+complement-free valuations as follows: vi0 (S) = vi (S) + 1, for S 6= ∅. These new valuations are indeed
+Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+                                                       c
+Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS                                        11
+
+
+complement free, since the value of each non-empty bundle is at least 1, and no bundle has a value larger
+than 2.
+   Consider an instance with valuations v1 , . . . , vn . We can see that distinguishing between the following
+cases requires exponential communication: the optimal social welfare is n + 1, and the optimal social
+welfare is 2n (since distinguishing between these cases is equivalent to distinguishing between the corre-
+sponding cases in the auction presented in [15]). Hence, we have proved that for every n ≥ 2 achieving
+ 2n
+n+1 -approximation requires exponential communication, as needed.                                           ¤
+
+  4.2 Lower Bounds for XOS Valuations. We prove two lower bounds: one in the bidding language
+model (an NP-hardness result), and one communication lower bound.
+
+Theorem 4.2 It is NP-hard to approximate the optimal allocation among valuations given in the XOS
+language to within any factor better than e/(e − 1), for n, m → ∞.
+
+   Proof. We will show a polynomial-time reduction from MAX-k-COVER. MAX-k-Cover is defined
+as follows: Given m items, and a collection of subsets of these items, the objective is to maximize the
+number of items which can be covered by k subsets. Feige [8] proved that it is NP-hard to approximate
+                                          e
+this problem within a better factor than e−1 .
+   This problem can be converted into a combinatorial auction with XOS valuations: given an instance
+of MAX-k-COVER, we create an auction with k bidders and m goods. All bidders will have the same
+XOS valuation: a clause for each subset in the MAX-k-COVER problem where the value of every item
+in the clause is 1.
+   Observe that every choice of k subsets in the MAX-k-COVER corresponds to an allocation in the
+combinatorial auction with the same value, by assigning all items in set i to bidder i (and avoid assigning
+one item to more then one bidder). In the other direction, every allocation corresponds to a choice of k
+sets in MAX-k-COVER with at least the social welfare value: choose k subsets, so that subset i contains
+the items in the clause maximizing bidder i’s gain. Hence, we are guaranteed that the number of items
+covered is no less than the social welfare. The theorem follows.                                          ¤
+   Next we prove an unconditional communication lower bound. The proof is based on reduction from
+the approximate-disjointness problem using a probabilistic construction. The reduction relies on a combi-
+natorial structure that guarantees the required gap between the optimal solution and all other solutions.
+We first define this structure, and then prove its existence via the probabilistic method.
+
+Theorem 4.3 Every protocol for approximating combinatorial auctions with XOS bidders to a factor of
+    1
+      1 n + ², for every ² > 0, requires exponential communication. This lower bound also applies for
+1−(1− n )
+randomized settings.
+
+   Proof. We will prove our lower bound by reducing from the approximate disjointness problem. In
+this problem, there are n players, each player i holds a string Ai which specifies a subset of {1, ..., t}. The
+goal is to distinguish between the following two extreme cases:
+
+      • ∩ni=1 Ai 6= ∅
+      • for every i 6= j, Ai ∩ Aj = ∅
+
+   Alon et al. [1] prove that the communication complexity of this problem is Ω( nt4 ). This result also
+holds for randomized protocols with bounded 2-sided error.
+                                                                                                    2m
+   We show a reduction from the approximate-disjointness problem on vectors of size t = e n to the
+problem of finding an optimal solution in combinatorial auctions with XOS bidders. We then prove a
+communication lower bound for distinguishing between the case the optimal value is m and the case it is
+m[1 − (1 − n1 )n ].
+  We will create a set F = {Ps }s=1,...,t , where each Ps is a partition of M into n disjoint subsets
+{Ps1i , ..., Psni }. This set of partitions will have the following property:
+                                                         Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+12                                                                                                              c
+                                                         Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS
+
+
+Definition 4.1 A set of partitions F = {Ps }s=1,...,t is said to have the (n, ²)-covering property if for
+every choice of indices 1 ≤ s1 , s2 , ...sn ≤ t, such that no two are equal, it holds that | ∪ni=1 Psii | ≤
+m[1 − (1 − n1 )n + ²].
+
+Lemma 4.1 For every ² > 0, there exists a set F of partitions with the (n, ²)-covering property of size
+               (1−(1− 1 )n )m²2
+                      n
+|F | = t = e         3n           .
+
+   Proof. We use probabilistic construction to obtain such a set: each partition Ps will be chosen
+independently at random (each element will be placed in exactly one of the Psi with equal probability).
+We will require the following version of the Chernoff bounds:
+
+Lemma 4.2 Let X1 , ..., Xm be independent random variables that take values in {0, 1}, such that for all
+i, Pr[Xi = 1] = p for some p. Then, the following holds, for 0 ≤ ² ≤ 1:
+                                                                                pm²2
+                                                 Pr[Σi Xi > (1 + ²)pm] ≤ e−      3
+
+
+
+
+Fix indices: 1 ≤ s1 , s2 , ..., sn ≤ t, such that no two are equal. For every j ∈ M let Yj be the random
+variable that receives a value of 1 if j ∈ ∪ni=1 Psii and 0 otherwise. Observe that E[Yj ] = 1 − (1 − n1 )n .
+     Using the last claim, we have that for any 0 < ² < 1:
+                                                                                   1 n
+                                           Pr[| ∪ni=1 Psii | > (1 + ²)m[1 − (1 −     ) ]] =
+                                                                                   n
+                                                                      1 n         (1−(1− 1 )n )m²2
+                                                                                         n
+                                      Pr[Σj Yj > (1 + ²)m[1 − (1 −      ) ]] ≤ e−        3
+                                                                      n
+                                                                                                       (1−(1− 1 )n )m²2
+                                                                                                              n
+   Since there are at most tn choices of such indices we have that as long as tn < e                          3           such a
+set of partitions exists.                                                                                                     ¤
+     We are now left with describing the reduction. Assume an instance of the approximate-disjointness
+                                             (1−(1− 1 )n )m²2
+                                                    n
+problem on vectors of size t = e       3n     , in which player i receives the string Ai ⊆ {1, ..., t}. We
+reduce it into a combinatorial auction with n bidders, each with XOS valuation, in the following manner:
+   Let M = {1, ..., m}. Player i will construct the collection B i = {Psi |s ∈ Ai }. Bidder i’s valuation
+will consist of |B i | clauses: ⊗T ∈B i (∨t∈T t = 1). In words, each clause corresponds to a set the player is
+interested in, and this clause gives a value of 1 to an item if it belongs to the wanted set, and 0 otherwise.
+   Observe that if there exists s ∈ ∩Ai , then there is an allocation in which all items are allocated, and
+the value of the bundle each player gets is simply the number of items he gets. Thus, the value of this
+allocation is m. On the other hand, if for every i 6= j, Ai ∩Aj = ∅ then the value of the optimal solution is
+at most (1 + ²)m[1 − (1 − n1 )n ]. The second observation is since the sets have the (n, ²)-covering property,
+so the players get together a value of at most ((1 + ²)m[1 − (1 − n1 )n ])m from the allocated items.
+     Since the communication complexity of the approximate-disjointness problem is Ω( nt4 ), in our case
+           (1−(1− 1 )n )m²2 ln n
+                  n
+it is Ω(e     3n     ). In particular, as long as m1−² > n, and for any constant 0 < ² < 1, the
+communication complexity is exponential. This concludes the proof of the theorem.            ¤
+
+     5. Truthful Approximations using Value Queries.
+
+   5.1 VCG and Maximal in Range Algorithms. Arguably the main positive result of mechanism
+design is the VCG payment scheme. Let us describe this payment scheme when applied to combinatorial
+auctions. First, find the optimal solution (O1 , ..., On ), and allocate accordingly. Then, pay each bidder
+the sum of the utilities of the rest of the bidders. That is, bidder i receives a payment of Σk6=i vk (Ok ). Let
+us examine the total utility of bidder i: vi (Oi ) + Σk6=i vk (Ok ) (the value he gains from the bundle he got
+plus his payment). Hence, the total utility of each bidder is equal to the value of the allocation. Observe
+that the allocation that maximizes the utility of the bidders is the optimal one. Bidding untruthfully
+Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+                                                       c
+Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS                                                  13
+
+
+can only result in changing the allocation to a suboptimal one, hence decreasing the utility of the bidder.
+Thus bidding truthfully is the best action for each bidder2 . See [17] for a more formal discussion.
+   The obvious drawback of using the VCG mechanism is that it requires us to find the optimal solu-
+tion. In many settings finding the optimal solution is not computationally feasible, and this is true in
+particular in the settings considered in this paper. In general, obtaining an approximate solution using
+an approximation algorithm and using the VCG payment scheme (paying each bidder the sum of the
+utilities of the rest of the bidders) does not result in a truthful mechanism. In fact, Nisan and Ronen [18]
+show that an approximation algorithm becomes truthful using the VCG payment scheme if and only if
+the underlying algorithm, is essentially maximal in range.
+   An algorithm is maximal in range if it limits the range of possible allocations to a smaller set, and
+finds the optimal allocation within this restricted range. Incentive compatibility immediately follows
+using the same argumentation as before since we find the optimal allocation in the restricted range. The
+main challenge in the design of these algorithms is therefore to identify a subset of the range in which
+complete optimization is computationally feasible, and then showing that the optimal solution within the
+restricted set of solutions always provides the required approximation ratio.
+
+   5.2 The Algorithm. We present a maximal in range algorithm for combinatorial auctions with
+complement-free bidders.
+                     √     This algorithm makes use of value queries only. The approximation ratio of
+this algorithm is O( m). In contrast, Dobzinski and Schapira [7] and Blumrosen and Nisan [2] showed
+that for general valuations there is a lower bound of O( logmm ) for the value oracles model.
+
+     (i) Query each bidder i for vi (M ), and for vi ({j}), for each item j.
+    (ii) Construct a bipartite graph by defining a vertex aj for each item j, and a vertex bi for each
+         bidder i. Let the set of edges be E = ∪i∈N,j∈M (aj , bi ). Define the cost of each edge (aj , bi ) to
+         be vi ({j}). Compute the maximum weighted matching |P | in the graph.
+   (iii) If the valuation of the bidder i that maximizes vi (M ) is higher than the value of |P |, allocate all
+         items to i. Otherwise, for each edge (aj , bi ) ∈ P allocate the j’th item to the i’th bidder.
+                                                                                   √
+Theorem 5.1 If all the valuations are complement free, the algorithm provides an O( m)-approximation
+to the optimal allocation in polynomial time, and is incentive compatible.
+
+  Proof. Observe that the algorithm’s running time is polynomial in n and m, since maximal weighted
+matching in bipartite graphs can be solved in polynomial time (in m and n).
+   The algorithm is clearly a maximal-in-range algorithm, and thus incentive compatibility is guaranteed
+by the use of the VCG payment scheme. Let us now prove that the algorithm provides the desired
+approximation ratio. Let OP T = √ {T1 , ..., Tk , Q1 , ..., Ql } be the optimal √
+                                                                                allocation in the original auction,
+where for each 1 ≤ i ≤ k, |Ti | < m, and for each 1 ≤ i ≤ l, |Qi | ≥ m. Let |OP T | = Σli=1 vi (Qi ) +
+Σki=1 vi (Ti ).
+                                             l               k                    l             |OP T |
+   The
+    √ first case we consider is when Σi=1 vi (Qi ) ≥ Σi=1 vi (Ti ). Clearly, Σi=1 vi (Qi ) ≥      2     . Since
+l ≤ m (otherwise, more than m items were allocated), for the bidder i that maximizes vi (Oi ) it holds
+that vi (M ) ≥ vi (Qi ) ≥ |OP
+                            √
+                           2 m
+                              T|
+                                 . Thus, by assigning all items to bidder i we get the desired approximation
+ratio.
+    Consider the case in which Σki=1 vi (Ti ) > Σli=1 vi (Qi ). Clearly, Σki=1 vi (Ti ) > |OP2 T | . For each i,
+1 ≤ i ≤ k, let ci = arg maxj∈Ti vi ({j}). Notice, that vi ({ci }) ≥ vi|T(Ti |i ) (this is due to the CF property:
+                                                                          √
+|Ti | · vi ({ci }) ≥ Σj∈Ti vi ({j}) ≥ vi (Ti )). Since for all i’s |Ti | < m, we have that: Σki=1 vi (ci ) > Σi√
+                                                                                                               vi (Ti )
+                                                                                                                 m
+                                                                                                                        ≥
+|OP T |
+  √
+ 2 m
+        . By assigning ci to bidder i we get an allocation in which every bidder gets at most one item with
+a social welfare of Σki=1 vi ({ci }) ≥ |OP
+                                         √
+                                        2 m
+                                           T|
+                                              . The second allocation, therefore, guarantees at least that social
+                                                                                                  √
+welfare. We conclude that the approximation ratio the algorithm guarantees is at least O( m).                         ¤
+   2 To simplify the presentation, we described a payment scheme in which the mechanism pays the bidders, while it is
+
+probably more natural to assume that the bidders pay the auctioneer for receiving items. The standard way to do that is
+to subtract a suitable constant from the payments. See [17] for more details.
+                                                Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+14                                                                                                     c
+                                                Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS
+
+
+   6. A Lower Bound for the Value Oracles Model. The proof of the lower bound takes a concrete
+complexity approach. That is, the input is given as a black box that can only answer a specific type of
+queries. We only measure the number of queries an algorithm must make in order to achieve a certain
+approximation ratio. In particular we ignore any computational work that needs to be done. We stress
+that the lower bound we achieve does not depend on any unproven computational assumption.
+
+                                                                                                          1
+Theorem 6.1 Approximating a combinatorial auction with XOS bidders to a factor of O(m 2 −² ), for
+any constant ² > 0, requires an exponential number of value queries.
+
+   Proof.
+     √       Fix a small constant δ > 0. We shall construct a combinatorial auction with m items and
+k = m bidders. For every S, let aS be the additive valuation that assigns a value of 1 to each item
+j ∈ S, and 0 to each item j ∈  / S. Let ā be the additive valuation that assigns every item j ∈ M a
+value of 1+δ
+          1 −δ . (For every bundle of items T ⊆ [m], aS (T ) and ā(T ) denote the value of T in aS and ā,
+           m2
+respectively.)
+     Let v1 , ..., vk be k identical valuations which are defined as follows:
+
+                                   vi (T ) = max(       max          {aS (T )}, ā(T ))
+                                                    S:|S|≤(1+δ)m2δ
+
+Thus, each vi is a maximum over additive valuations, and thus is an XOS valuation.
+                                                                      √
+   Choose, uniformly at random,
+                             √    a partition of the items into m disjoint bundles of items T1 , . . . , Tk
+such that for each i, |Ti | = m. Define v10 , . . . , vk0 as follows:
+
+                                           vi0 (T ) = max{vi (T ), aTi (T )}
+
+Again, each vi0 is a maximum over additive valuations, and thus is an XOS valuation.
+    We now prove that for every player i, it takes an exponential number of value queries to distinguish
+between the case that i’s valuation is vi and the case that i’s valuation is vi0 . Notice that the optimal
+                                                    1
+welfare if the valuations are v1 . . . , vk is Θ(m 2 +2δ ), while the optimal social-welfare if the valuations are
+v10 . . . , vk0 is m. Hence, the fact that it requires an exponential number of value queries to distinguish
+                                                                                     1
+between the valuation profiles v1 . . . , vk and v10 . . . , vk0 implies that an O(m 2 −2δ )-approximation algorithm
+requires an exponential number of value queries.
+                                                                            1
+  Consider a specific player i. Fix a bundle S of at most m 2 +δ . It holds that vi (S) = max{|S|, (1 +
+δ)m2δ }. vi0 might assign a value higher than vi to S but only if
+
+                                              |S ∩ Ti | > (1 + δ)m2δ
+
+Observe that Ti is selected uniformly at random. Thus, we can use the Chernoff bounds (Claim 4.2), and
+claim that Pr[|S ∩ Ti | > (1 + δ)m2δ ] is exponentially small.
+  Now, consider a bundle S of size greater than m 2 +δ . vi will assign to S the value of (1 + δ) |S|
+                                                           1
+                                                                                                   1    . vi0
+                                                                                                 m 2 −δ
+might assign S a higher value, but only if
+                                                                      |S|
+                                             |S ∩ Ti | > (1 + δ)       1        .
+                                                                   m 2 −δ
+Again, using the fact that Ti is chosen uniformly at random we claim that that Pr[|S ∩ Ti | > (1 + δ) |S|
+                                                                                                       1    ]
+                                                                                                     m 2 −δ
+is exponentially small.
+   We conclude that for every bundle S, only with exponentially small probability does one gather
+sufficient information to distinguish between the case that i’s valuation is vi and the case that it is vi0 .
+Hence, with constant probability it requires an exponential number of value queries to distinguish between
+vi and vi0 . This concludes the proof of the theorem.                                                    ¤
+
+  7. Acknowledgments. We thank Daniel Lehmann for comments on an earlier draft of this paper.
+This research is supported by a grant from the Israeli Science Foundation. The third author is supported
+by Supported by NSF grant 0331548.
+Dobzinski et al.: Approximations Algorithms for CA’s with CF Bidders
+                                                       c
+Mathematics of Operations Research 00(0), pp. xxx–xxx, °20xx INFORMS                                    15
+
+
+   References
+
+ [1] N. Alon, Y. Matias, and M. Szegedy, The space complexity of approximating the frequency moments,
+     58 (1999), no. 1, 137–137.
+ [2] Liad Blumrosen and Noam Nisan, On the computational power of iterative auctions I: demand
+     queries, Discussion paper no. 381, The Center for the Study of Rationality, The Hebrew University.,
+     An extended abstract in EC’05 contained preliminary results.
+ [3] P. Cramton, Y. Shoham, and R. Steinberg (Editors), Combinatorial auctions, MIT Press., 2006.
+ [4] Shahar Dobzinski, Two randomized mechanisms for combinatorial auctions, APPROX-RANDOM,
+     2007, pp. 89–103.
+ [5] Shahar Dobzinski and Noam Nisan, Limitations of vcg-based mechanisms, STOC, 2007, pp. 338–344.
+ [6] Shahar Dobzinski, Noam Nisan, and Michael Schapira, Truthful randomized mechanisms for combi-
+     natorial auctions, STOC, 2006, pp. 644–652.
+ [7] Shahar Dobzinski and Michael Schapira, Optimal upper and lower approximation bounds for k-
+     duplicates combinatorial auctions, Working paper, the Hebrew University.
+ [8] Uriel Feige, A threshold of ln n for approximating set cover, Journal of the ACM 45 (1998), no. 4,
+     634–652.
+ [9]          , On maximizing welfare when utility functions are subadditive, STOC, 2006, pp. 41–50.
+[10] Uriel Feige and Jan Vondrák, Approximation algorithms for allocation problems: Improving the factor
+     of 1 - 1/e, FOCS, 2006, pp. 667–676.
+[11] Subhash Khot, Richard J. Lipton, Evangelos Markakis, and Aranyak Mehta, Inapproximability results
+     for combinatorial auctions with submodular utility functions, WINE’05, 2005.
+[12] Benny Lehmann, Daniel J. Lehmann, and Noam Nisan, Combinatorial auctions with decreasing
+     marginal utilities, ACM Conference on Electronic Commerce, 2001, pp. 18–28.
+[13] Daniel Lehmann, Liadan Ita O’Callaghan, and Yoav Shoham, Truth revelation in approximately
+     efficient combinatorial auctions, JACM 49(5), Sept. 2002, pp. 577–602.
+[14] Michael Mitzenmacher and Eli Upfal, Probability and computing, Cambridge, 2005.
+[15] Noam Nisan, The communication complexity of approximate set packing and covering, ICALP, 2002,
+     pp. 868–875.
+[16]           , In p. cramton and y. shoham and r. steinberg (editors), combinatorial auctions. chapter 1.
+       bidding languages, MIT Press., 2006.
+[17]         , (2007), Introduction to Mechanism Design (for Computer Scientists). In “Algorithmic Game
+       Theory”, N. Nisan, T. Roughgarden, E. Tardos and V. Vazirani, editors.
+[18] Noam Nisan and Amir Ronen, Computationally feasible vcg mechanisms, J. Artif. Intell. Res. (JAIR)
+     29 (2007), 19–47.
+[19] Noam Nisan and Ilya Segal, The communication requirements of efficient allocations and supporting
+     prices, 2006, Journal of Economic Theory.
+[20] Tuomas Sandholm, An algorithm for optimal winner determination in combinatorial auctions, IJCAI,
+     1999, pp. 542–547.
+[21] Jan Vondrák, Optimal approximation for the submodular welfare problem in the value oracle model,
+     STOC, 2008, pp. 67–74.
+
