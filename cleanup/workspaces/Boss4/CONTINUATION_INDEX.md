@@ -170,3 +170,7 @@ R3_READY24AL：根解析复核2及三冻结审计同字节对照5；UP支持端�
 R3_READY24AL数学/证据pushed 7f93f08a6abd853360365e3d3d5c34f6adb8c4e0；24源done另推送 dabbbd06f65e148f4c9bc0edcae3d16dfe8ad8d0。Boss4累计1298完成，实际未完39；持续接续全仓，不以本批清空收尾。
 
 R3_READY25AR：固定G前缀两版原入口与精确行复核5、cycle/leaf/cardinality全数据5、CONFIG/cover/singlecycle五原CLI+1helper5、relay闭式五源及唯一原入口5、quota/backend版本与全部fixture5；Root补W=1完整IC证明跨对象链接；AQ原pushed回执/备份全字节核验和恢复证据分开。继续全仓；共25主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY25AR_REMAINING_SCOPE.json。
+
+R3_READY25AR数学/证据pushed bdc02e35f454b77824558d2b234cae04f4889da0；25源done另推送 ce8ed4a3d73bab01495be9f61b6bfcbd3a916122。Boss4累计1323完成，实际未完37；持续接续全仓，不以本批清空收尾。
+
+R3_READY57BC：57源逐源完整整理：Root4检查点/FTA信用/末位cap全历史族；三批CAG/治理程序与21固定策略/五游戏正GB5+5+5；CAG终层首人5、weakDAG5、relay长稿5；UMdraft/pin5、AQ5、AX5、BA5、AV3、AU5。全部保输入/运行副作用/精确有限与一般范围；Root仅凸化一维例纠错，原源/旧progress不改；六Solver持续全仓接续；共57主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY57BC_REMAINING_SCOPE.json。

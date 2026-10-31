@@ -1,0 +1,5 @@
+# Boss4本批精确交付入口
+
+五主源实际认领capture c59d0557ab194d2f8e0cf6563e29b97427609a1e，status=pushed、actor=Boss4、local_sync=synced；同capture另五credible源属于另一执行线，本包不处置。主源全部原字节与完整读覆盖、七个自足对象、逐源semantic receipt、关系依据及小型精确核验均在精确manifest内。
+
+本工作区不执行Git、claim、done、checkpoint或第三阶段图。Boss按copy-files.json精确拷入，正文实际pushed后再为这五源提交receipt。next-candidates只为当前本地可领观察，后续必须服务器原子认领成功才执行新primary。

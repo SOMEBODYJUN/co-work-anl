@@ -1,0 +1,13 @@
+# AV三主源证据与范围
+
+唯一capture实际pushed/Boss4/synced、5ba6efa08661893ade1dd40516174169777e6770，三ID精确匹配。认领前post-pin-preparation只是相关准备；本批三原件重新clean show核SHA/大小并在确认后重新全文215行/16466B，逐源三条receipt不是留空。支持源不额外done。
+
+三页分别是条件加权部分调度证明、KDM奇偶近满层候选、历史真实NO全调度解码路线资源。partial的primal接口A仍未在本源闭合，不实现通用CONFIG solver；parity按原压缩token矩阵补清根1/q和一X一token，原note不改；route历史授权/状态不作当前指令或进度。
+
+四支持原源462行全读：39行原parity DFS；146行压缩桥；202行bulk v3/v4；75行weighted parallel。六份正式正文全文比较，整数前缀页是前批READY48文件的精确SHA复用，未假称已经拷入共享repo；依赖记录和上批manifest在version-and-scope-checks。root应先完整copy前批声明48文件再copy本批。没有凭链接声称全部被链材料已读。
+
+一次reproduce-and-check.py wrapper在新空目录运行，原39行入口恰作为child执行1次，exit0/stderr空。其six stdout rows是数值/行序复现，源Markdown空格不计逐字匹配。原DFS只算固定小参数的资源ν_t，不生成P；新wrapper另核六even与两odd完整P实际分配证书及partial的有理余量/Taylor界，没有全P调度枚举、一般算法证明或义务A后端。所有code/结果SHA与实际命令齐，结构验证不再次运行数学程序。
+
+程序58a0…本地尚未处置，本批是支持源，未因实读/运行额外done；next候选第一项据此建议之后正式认领。其余next候选也只是本地owner观察，远端claim成功前不写primary。
+
+不改共享Git/claim/done/checkpoint、根树或阶段三图。字段/哈希/链接结构检查不是数学正确性证明；精确拷贝路径只由workspace copy-files.json定义。
