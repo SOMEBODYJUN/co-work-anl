@@ -44,7 +44,7 @@ Sherali–Adams (SA) 的分布判据（文中 Theorem 6）是：若对每个至�
 |T\cap L_2|=\binom{m}{2\rho m}/\binom{\rho m}{\rho m},\quad
 |T\cap L_3|=\binom{m}{\rho m}.
 \]
-图规模 (n=2^{\Theta(m)})，所有需求为 (n^{\Omega(1)})。
+图规模 n = 2^(Theta(m))，所有非汇点需求为 n^(Omega(1))。
 
 **Theorem 1（作者主结果）。** 对充分大 (n)，存在深度 3、规模 \(\Theta(n)\) 的 MMDA 图，所有 (k_u=n^{\Omega(1)})，其 assignment LP 的一轮 SA 仍有至少 (n^{\Omega(1)}) 的 integrality gap。该轮数下界对一般 SA 也成立，且作者指出深度 3 上两轮已知把 gap 降到 polylog，因此在轮数意义上是紧的（此处“已知”来自论文引用，本批没有外部复核）。
 
