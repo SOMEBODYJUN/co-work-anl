@@ -1,0 +1,15 @@
+{
+  "validator": "validate_security.py",
+  "validation": "validation.json",
+  "replays": [
+    "replay/submod_smoke.json",
+    "replay/groups_smoke.json"
+  ],
+  "commands": [
+    "python3 -m py_compile source/support_budget_probe.py",
+    "python3 source/support_budget_probe.py --n 4 --k 6 --trials 1 --iterations 1 --policy submod --w-submodular",
+    "python3 source/support_budget_probe.py --n 3 --k 6 --trials 1 --iterations 1 --policy groups --w-submodular"
+  ],
+  "all_exit_0": true,
+  "scope": "larger support-budget DR class explicitly marked outside CAG"
+}
