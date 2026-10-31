@@ -40,8 +40,8 @@ related_objects:
 |---|---|---|---|
 | `8629950ab119d7e0bef2` | `weighted_menu_initial_degree_two_weighted_menu_backend.py.gz` | `ae6706b743df06202e7b3799013eadb68df77931c244f122125a7d81300ec69d` | 显式 degree-two weighted-menu 后端；精确有理输入、forced-largest 与两匹配着色阈值过程 |
 | `66c02ab103dfc9b7ba29` | `weighted_menu_initial_audit_degree_two_weighted_menu_backend.py.gz` | `c57f8cda7c13432942fea54c60c8584f37cfe2dff76f3f88700ae7023a11329e` | 五个 weighted-menu 夹具、七个原始后端夹具、非法输入拒绝与 1200-agent 非递归探针 |
-| `6db603641caeca5e5460` | `weighted_menu_state_dummy_sc_value_bridge_exact.md` | `1a4de6d19c3f038685e822d471f0d3f388e6fb23bae780aec96e4802147b8a15` | 归一化值桥的完整定义、双向 assignment 转换、复杂度与 gap 责任边界 |
-| `76b7fd4a1ca40900f16c` | `weighted_menu_state_dummy_sc_value_bridge_independent_review.md` | `ae57bf15737c54e6aadf8732869c242622ad75110facc2dbaed5fb8f7549320b` | 未读作者 Proof 的 Exact-first 独立量词与 pigeonhole/边界重构 |
+| `6db603641caeca5e5460` | `weighted_menu_state_dummy_sc_value_bridge_exact.md` | `ae57bf15737c54e6aadf8732869c242622ad75110facc2dbaed5fb8f7549320b` | 归一化值桥的完整定义、双向 assignment 转换、复杂度与 gap 责任边界 |
+| `76b7fd4a1ca40900f16c` | `weighted_menu_state_dummy_sc_value_bridge_independent_review.md` | `575a8d52e90779f8a3bb6c6e2496f1b890ad2383cd273e77012cbaa648d5557a` | 未读作者 Proof 的 Exact-first 独立量词与 pigeonhole/边界重构 |
 | `ef3264a3be9018961b2b` | `weighted_menu_state_dummy_sc_value_bridge_proof.md` | `5decc348be346acd663478d1c13a768d0e7d06c407abacf593fc09018ff34665` | 作者逐步 Proof：值等式、完整原 jobs 回填、`C<2` 逆向、复杂度与 gap 转换 |
 | `f6caeecc72965c8e8dcf` | `weighted_menu_state_dummy_sc_value_bridge_proof_read_after_review.md` | `5decc348be346acd663478d1c13a768d0e7d06c407abacf593fc09018ff34665` | Proof read-after；逐节比较并确认没有删 jobs、分割 dummy、错误 degree 外推或 `C=2` 偷换 |
 
