@@ -1,0 +1,971 @@
+{
+  "joint_bad_heavy_yes": {
+    "scope": "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2",
+    "implementation": "explicit structural backend; no general-UM claim",
+    "K": 2,
+    "chosen_states": [
+      {
+        "group": "g0",
+        "state": "diffuse"
+      },
+      {
+        "group": "g1",
+        "state": "only_heavy"
+      }
+    ],
+    "jobs": [
+      {
+        "job": [
+          "selector",
+          "g0"
+        ],
+        "machine": [
+          "state",
+          "g0",
+          "diffuse"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g0",
+          "heavy",
+          "h"
+        ],
+        "machine": [
+          "state",
+          "g0",
+          "heavy"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g0",
+          "diffuse",
+          "x"
+        ],
+        "machine": [
+          "resource",
+          "x"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g0",
+          "diffuse",
+          "y"
+        ],
+        "machine": [
+          "resource",
+          "y"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "selector",
+          "g1"
+        ],
+        "machine": [
+          "state",
+          "g1",
+          "only_heavy"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g1",
+          "only_heavy",
+          "h"
+        ],
+        "machine": [
+          "resource",
+          "h"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      }
+    ],
+    "makespan": "1",
+    "normalized_makespan": "1",
+    "bonus_jobs_added_then_deleted": 0,
+    "chosen_normalized_mass": [
+      "1",
+      "1"
+    ],
+    "aux_utility": [
+      "1/2",
+      "1"
+    ],
+    "aux_allocation": [
+      {
+        "item_index": 0,
+        "item": [
+          "original",
+          "h"
+        ],
+        "group": "g1"
+      },
+      {
+        "item_index": 1,
+        "item": [
+          "original",
+          "x"
+        ],
+        "group": "g0"
+      },
+      {
+        "item_index": 2,
+        "item": [
+          "original",
+          "y"
+        ],
+        "group": "g0"
+      }
+    ],
+    "backend": {
+      "integer_scale": "4",
+      "successful_T": "2",
+      "rejected_T": "3",
+      "oracle_calls": [
+        {
+          "T": 2,
+          "success": true
+        },
+        {
+          "T": 3,
+          "success": false
+        }
+      ],
+      "upper_failure": {
+        "success": false,
+        "agent": 1,
+        "available": 0,
+        "T": 3,
+        "forced": [
+          {
+            "item": 0,
+            "owner": 0,
+            "available_without": 2
+          }
+        ]
+      },
+      "successful_forces": [
+        {
+          "item": 0,
+          "owner": 1,
+          "available_without": 0
+        }
+      ]
+    }
+  },
+  "near_two_single_state_no": {
+    "scope": "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2",
+    "implementation": "explicit structural backend; no general-UM claim",
+    "K": 1,
+    "chosen_states": [
+      {
+        "group": "g0",
+        "state": "only"
+      },
+      {
+        "group": "g1",
+        "state": "only"
+      }
+    ],
+    "jobs": [
+      {
+        "job": [
+          "selector",
+          "g0"
+        ],
+        "machine": [
+          "state",
+          "g0",
+          "only"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g0",
+          "only",
+          "h"
+        ],
+        "machine": [
+          "resource",
+          "h"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g0",
+          "only",
+          "a"
+        ],
+        "machine": [
+          "resource",
+          "a"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "selector",
+          "g1"
+        ],
+        "machine": [
+          "state",
+          "g1",
+          "only"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g1",
+          "only",
+          "h"
+        ],
+        "machine": [
+          "state",
+          "g1",
+          "only"
+        ],
+        "p": "16/17",
+        "start": "1",
+        "finish": "33/17"
+      },
+      {
+        "job": [
+          "incidence",
+          "g1",
+          "only",
+          "b"
+        ],
+        "machine": [
+          "resource",
+          "b"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      }
+    ],
+    "makespan": "33/17",
+    "normalized_makespan": "33/17",
+    "bonus_jobs_added_then_deleted": 0,
+    "chosen_normalized_mass": [
+      "1",
+      "1/17"
+    ],
+    "aux_utility": [
+      "1",
+      "1/17"
+    ],
+    "aux_allocation": [
+      {
+        "item_index": 0,
+        "item": [
+          "original",
+          "h"
+        ],
+        "group": "g0"
+      },
+      {
+        "item_index": 1,
+        "item": [
+          "original",
+          "a"
+        ],
+        "group": "g0"
+      },
+      {
+        "item_index": 2,
+        "item": [
+          "original",
+          "b"
+        ],
+        "group": "g1"
+      }
+    ],
+    "backend": {
+      "integer_scale": "17",
+      "successful_T": "1",
+      "rejected_T": "2",
+      "oracle_calls": [
+        {
+          "T": 9,
+          "success": false
+        },
+        {
+          "T": 4,
+          "success": false
+        },
+        {
+          "T": 2,
+          "success": false
+        },
+        {
+          "T": 1,
+          "success": true
+        }
+      ],
+      "upper_failure": {
+        "success": false,
+        "agent": 1,
+        "available": 1,
+        "T": 2,
+        "forced": [
+          {
+            "item": 0,
+            "owner": 0,
+            "available_without": 1
+          }
+        ]
+      },
+      "successful_forces": []
+    }
+  },
+  "zero_work_empty_and_duplicate_states": {
+    "scope": "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2",
+    "implementation": "explicit structural backend; no general-UM claim",
+    "K": 3,
+    "chosen_states": [
+      {
+        "group": "g0",
+        "state": "empty"
+      },
+      {
+        "group": "g1",
+        "state": "zero"
+      }
+    ],
+    "jobs": [
+      {
+        "job": [
+          "selector",
+          "g0"
+        ],
+        "machine": [
+          "state",
+          "g0",
+          "empty"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g0",
+          "zero",
+          "zero"
+        ],
+        "machine": [
+          "state",
+          "g0",
+          "zero"
+        ],
+        "p": "0",
+        "start": "0",
+        "finish": "0"
+      },
+      {
+        "job": [
+          "selector",
+          "g1"
+        ],
+        "machine": [
+          "state",
+          "g1",
+          "zero"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g1",
+          "zero",
+          "zero"
+        ],
+        "machine": [
+          "state",
+          "g1",
+          "zero"
+        ],
+        "p": "0",
+        "start": "1",
+        "finish": "1"
+      }
+    ],
+    "makespan": "1",
+    "normalized_makespan": "1",
+    "bonus_jobs_added_then_deleted": 4,
+    "chosen_normalized_mass": [
+      "1",
+      "1"
+    ],
+    "aux_utility": [
+      "1",
+      "1"
+    ],
+    "aux_allocation": [
+      {
+        "item_index": 0,
+        "item": [
+          "bonus",
+          0,
+          0
+        ],
+        "group": "g0"
+      },
+      {
+        "item_index": 1,
+        "item": [
+          "bonus",
+          0,
+          1
+        ],
+        "group": "g0"
+      },
+      {
+        "item_index": 2,
+        "item": [
+          "bonus",
+          0,
+          2
+        ],
+        "group": "g0"
+      },
+      {
+        "item_index": 3,
+        "item": [
+          "bonus",
+          1,
+          0
+        ],
+        "group": "g1"
+      }
+    ],
+    "backend": {
+      "integer_scale": "3",
+      "successful_T": "3",
+      "rejected_T": "4",
+      "oracle_calls": [
+        {
+          "T": 2,
+          "success": true
+        },
+        {
+          "T": 3,
+          "success": true
+        }
+      ],
+      "upper_failure": {
+        "agent": 0,
+        "available": 3,
+        "T": 4,
+        "forced": []
+      },
+      "successful_forces": []
+    }
+  },
+  "rational_unequal_menus_and_bonuses": {
+    "scope": "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2",
+    "implementation": "explicit structural backend; no general-UM claim",
+    "K": 3,
+    "chosen_states": [
+      {
+        "group": "g0",
+        "state": "s0"
+      },
+      {
+        "group": "g1",
+        "state": "s1"
+      }
+    ],
+    "jobs": [
+      {
+        "job": [
+          "selector",
+          "g0"
+        ],
+        "machine": [
+          "state",
+          "g0",
+          "s0"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g0",
+          "s0",
+          "h"
+        ],
+        "machine": [
+          "resource",
+          "h"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g0",
+          "s0",
+          "a"
+        ],
+        "machine": [
+          "resource",
+          "a"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g0",
+          "s1",
+          "x"
+        ],
+        "machine": [
+          "state",
+          "g0",
+          "s1"
+        ],
+        "p": "2/5",
+        "start": "0",
+        "finish": "2/5"
+      },
+      {
+        "job": [
+          "incidence",
+          "g0",
+          "s2",
+          "h"
+        ],
+        "machine": [
+          "state",
+          "g0",
+          "s2"
+        ],
+        "p": "1/11",
+        "start": "0",
+        "finish": "1/11"
+      },
+      {
+        "job": [
+          "selector",
+          "g1"
+        ],
+        "machine": [
+          "state",
+          "g1",
+          "s1"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g1",
+          "s0",
+          "h"
+        ],
+        "machine": [
+          "state",
+          "g1",
+          "s0"
+        ],
+        "p": "2/7",
+        "start": "0",
+        "finish": "2/7"
+      },
+      {
+        "job": [
+          "incidence",
+          "g1",
+          "s0",
+          "b"
+        ],
+        "machine": [
+          "state",
+          "g1",
+          "s0"
+        ],
+        "p": "1/7",
+        "start": "2/7",
+        "finish": "3/7"
+      },
+      {
+        "job": [
+          "incidence",
+          "g1",
+          "s1",
+          "x"
+        ],
+        "machine": [
+          "resource",
+          "x"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      }
+    ],
+    "makespan": "1",
+    "normalized_makespan": "1",
+    "bonus_jobs_added_then_deleted": 5,
+    "chosen_normalized_mass": [
+      "1",
+      "1"
+    ],
+    "aux_utility": [
+      "13/15",
+      "6/7"
+    ],
+    "aux_allocation": [
+      {
+        "item_index": 0,
+        "item": [
+          "original",
+          "h"
+        ],
+        "group": "g0"
+      },
+      {
+        "item_index": 1,
+        "item": [
+          "original",
+          "x"
+        ],
+        "group": "g1"
+      },
+      {
+        "item_index": 2,
+        "item": [
+          "original",
+          "a"
+        ],
+        "group": "g0"
+      },
+      {
+        "item_index": 3,
+        "item": [
+          "original",
+          "b"
+        ],
+        "group": "g1"
+      },
+      {
+        "item_index": 4,
+        "item": [
+          "bonus",
+          0,
+          0
+        ],
+        "group": "g0"
+      },
+      {
+        "item_index": 5,
+        "item": [
+          "bonus",
+          0,
+          1
+        ],
+        "group": "g0"
+      },
+      {
+        "item_index": 6,
+        "item": [
+          "bonus",
+          0,
+          2
+        ],
+        "group": "g0"
+      },
+      {
+        "item_index": 7,
+        "item": [
+          "bonus",
+          1,
+          0
+        ],
+        "group": "g1"
+      },
+      {
+        "item_index": 8,
+        "item": [
+          "bonus",
+          1,
+          1
+        ],
+        "group": "g1"
+      }
+    ],
+    "backend": {
+      "integer_scale": "55440",
+      "successful_T": "47520",
+      "rejected_T": "47521",
+      "oracle_calls": [
+        {
+          "T": 27720,
+          "success": true
+        },
+        {
+          "T": 41580,
+          "success": true
+        },
+        {
+          "T": 48510,
+          "success": false
+        },
+        {
+          "T": 45045,
+          "success": true
+        },
+        {
+          "T": 46777,
+          "success": true
+        },
+        {
+          "T": 47643,
+          "success": false
+        },
+        {
+          "T": 47210,
+          "success": true
+        },
+        {
+          "T": 47426,
+          "success": true
+        },
+        {
+          "T": 47534,
+          "success": false
+        },
+        {
+          "T": 47480,
+          "success": true
+        },
+        {
+          "T": 47507,
+          "success": true
+        },
+        {
+          "T": 47520,
+          "success": true
+        },
+        {
+          "T": 47527,
+          "success": false
+        },
+        {
+          "T": 47523,
+          "success": false
+        },
+        {
+          "T": 47521,
+          "success": false
+        }
+      ],
+      "upper_failure": {
+        "success": false,
+        "agent": 1,
+        "available": 47520,
+        "T": 47521,
+        "forced": [
+          {
+            "item": 1,
+            "owner": 1,
+            "available_without": 45045
+          },
+          {
+            "item": 0,
+            "owner": 0,
+            "available_without": 40208
+          }
+        ]
+      },
+      "successful_forces": [
+        {
+          "item": 1,
+          "owner": 1,
+          "available_without": 45045
+        },
+        {
+          "item": 0,
+          "owner": 0,
+          "available_without": 40208
+        }
+      ]
+    }
+  },
+  "aux_opt_zero_fallback": {
+    "scope": "UM-DEGREE-TWO-BOUNDED-MENU-JOINT-ROUNDING-v2",
+    "implementation": "explicit structural backend; no general-UM claim",
+    "K": 1,
+    "chosen_states": [
+      {
+        "group": "g0",
+        "state": "only"
+      },
+      {
+        "group": "g1",
+        "state": "only"
+      }
+    ],
+    "jobs": [
+      {
+        "job": [
+          "selector",
+          "g0"
+        ],
+        "machine": [
+          "state",
+          "g0",
+          "only"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g0",
+          "only",
+          "h"
+        ],
+        "machine": [
+          "resource",
+          "h"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "selector",
+          "g1"
+        ],
+        "machine": [
+          "state",
+          "g1",
+          "only"
+        ],
+        "p": "1",
+        "start": "0",
+        "finish": "1"
+      },
+      {
+        "job": [
+          "incidence",
+          "g1",
+          "only",
+          "h"
+        ],
+        "machine": [
+          "state",
+          "g1",
+          "only"
+        ],
+        "p": "1",
+        "start": "1",
+        "finish": "2"
+      }
+    ],
+    "makespan": "2",
+    "normalized_makespan": "2",
+    "bonus_jobs_added_then_deleted": 0,
+    "chosen_normalized_mass": [
+      "1",
+      "0"
+    ],
+    "aux_utility": [
+      "1",
+      "0"
+    ],
+    "aux_allocation": [
+      {
+        "item_index": 0,
+        "item": [
+          "original",
+          "h"
+        ],
+        "group": "g0"
+      }
+    ],
+    "backend": {
+      "integer_scale": "1",
+      "successful_T": "0",
+      "rejected_T": "1",
+      "oracle_calls": [
+        {
+          "T": 1,
+          "success": false
+        }
+      ],
+      "upper_failure": {
+        "success": false,
+        "agent": 1,
+        "available": 0,
+        "T": 1,
+        "forced": [
+          {
+            "item": 0,
+            "owner": 0,
+            "available_without": 0
+          }
+        ]
+      },
+      "successful_forces": []
+    }
+  }
+}
