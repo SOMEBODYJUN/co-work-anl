@@ -1,0 +1,1297 @@
+\documentclass[11pt,a4paper]{article}
+\pdfmapfile{cm.map}
+\pdfmapfile{+cmextra.map}
+\pdfmapfile{+symbols.map}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=27mm]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[unicode,pdfencoding=auto,psdextra]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=blue!45!black,urlcolor=blue!45!black,
+  pdftitle={Polynomial-Time Golden-Ratio Equilibria for Two Facilities with Weighted Atomic Clients},
+  pdfsubject={Research manuscript; polynomial-time golden-ratio construction with exact customer continuations}}
+\urlstyle{same}
+\newtheorem{theorem}{Theorem}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{1.2em}
+\allowdisplaybreaks[1]
+\title{Polynomial-Time Golden-Ratio Equilibria for Two Facilities\\with Weighted Atomic Clients}
+\author{Research manuscript}
+\date{September 30, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider a two-stage facility-location game with two facilities sharing a finite set of available locations and finitely many atomic customers of arbitrary positive weights. Customers have arbitrary location eligibility, minimize expected congestion, and may independently randomize over accessible facilities. We prove the existence of pure facility locations and exact customer Nash continuations forming a $\phi$-approximate subgame-perfect equilibrium, where $\phi=(1+\sqrt5)/2$. The proof uses full-game deviation guarantees, a structural theorem for pairs of large customers, and a two-location mixed-equilibrium lemma that allows arbitrarily many common customers. A two-anchor argument then rules out every closed best-response cycle under the assumption that no stable layout exists. For explicitly listed locations and binary rational customer weights, we give a deterministic polynomial-time construction using a fixed menu of exact customer equilibria at each pair. The algorithm uses $O(|S|^2(n+1)^4)$ rational arithmetic operations with polynomial intermediate encoding length, and never minimizes over the entire customer-equilibrium set. Its output consists of rational on-path and unilateral-deviation continuations together with a polynomial default rule.
+\end{abstract}
+
+\section*{Introduction and relation to the original literature}
+Krogmann, Lenzner, Skopalik, Uetz, and Vos~\cite{krogmann2024}
+study two-stage facility location with atomic customers. Facilities first
+choose locations; customers then choose accessible facilities using independent
+mixed strategies. Their Theorem~5 gives instances without a
+$(\phi-\varepsilon)$-approximate SPE, while Observation~4 gives the elementary
+co-location upper bound. Vos's thesis develops the model and the weighted
+two-facility approximation question in Chapter~8~\cite{vos2023}.
+The present theorem concerns two facilities with one common finite catalog,
+including all co-locations, and matches that golden-ratio lower-bound target.
+
+The proof uses a guarded pure-repair operation from
+Vos~\cite[Lemma~29]{vos2023}. Its two-anchor overlap argument is related to
+Vos's Theorem~19, but all inequalities required here are proved explicitly
+for arbitrary closed response cycles. We do not use that theorem as a premise.
+Certificates consisting of an on-path profile and its unilateral neighbors
+already appear in the complexity argument of
+Krogmann et al.~\cite[Theorem~6]{krogmann2024}; their existence alone does not
+provide a polynomial search algorithm.
+
+Our construction minimizes over one explicit polynomial menu of exact customer
+equilibria at every pair, using the same menu for candidate outcomes and
+punishments. It contains guarded pure seeds, equal-reach half splitting,
+two designated mixers, and a reach-based strong-chord witness. The closed-cycle
+argument is valid for these menu minima: every equilibrium it constructs is
+already in the menu. The two steps requiring a genuinely unique customer
+equilibrium establish strict dominance directly. An elementary exchange
+algorithm makes the strong-chord witness polynomial; its proof is included
+in Appendix~\ref{app:polynomial-chord}. No full-equilibrium payoff oracle or
+weight rounding is used. All conclusions concern a suitable continuation
+selection, rather than stability under every selection. This is a research
+draft; the manuscript makes no claim of external peer review.
+
+\hypertarget{model-and-theorem}{%
+\section{Model and theorem}\label{model-and-theorem}}
+
+There is a finite set of customers \(G\), with weights \(w_g>0\), and a finite nonempty set \(S\) of locations available to \textbf{both} facilities. Customer \(g\) can use a specified subset of locations. Write
+
+\[
+C_s=\{g:g\text{ can use location }s\},\qquad R_s=\sum_{g\in C_s}w_g.
+\]
+
+The two facilities first choose locations, possibly the same location. Every customer covered by at least one chosen location then chooses one accessible facility. Customers independently randomize. A customer's expected cost conditional on choosing a facility is its own weight plus the expected weight of the other customers choosing that facility. A facility's payoff is its expected customer weight. Uncovered customers do not contribute to either payoff.
+
+Put
+
+\[
+\phi=\frac{1+\sqrt5}{2},\quad q=\phi^{-1},\quad a=q^2=1-q,
+\quad c=\phi/2.
+\]
+
+\begin{theorem}[Polynomial-time golden-ratio construction]\label{thm:main}
+For $n$ customers with positive binary rational weights and an explicitly
+listed common catalog $S$ of $N\ge1$ locations, there is a deterministic
+polynomial-time algorithm constructing pure facility locations and exact
+independently mixed customer Nash continuations forming a
+$\phi$-approximate subgame-perfect equilibrium.
+A conservative arithmetic bound is $O(N^2(n+1)^4)$, with polynomial
+intermediate bit lengths. The output gives rational on-path probabilities,
+at most $2N-2$ rational unilateral-deviation continuations, and a polynomial
+default pure-equilibrium rule for all other layouts.
+\end{theorem}
+
+The same proof gives existence for arbitrary positive real weights. The bit
+complexity statement uses rational input and explicit incidence lists. It
+constructs one continuation selection, and does not optimize the best possible
+SPE factor or compute a minimum load over every customer Nash equilibrium.
+
+The matching lower bound of Krogmann et al.~\cite[Theorem~5]{krogmann2024}
+already uses an unrestricted two-facility instance, hence a common catalog.
+For completeness, it also applies to the rational-weight input class: fix
+any $\alpha<\phi$ and choose their lower-bound parameter with a strict
+improvement factor above $\alpha$. In that finite instance all distinct-site
+client choices used by their proof have strict reach inequalities. These
+and the finitely many facility-improvement inequalities persist under
+sufficiently small perturbations of the weights. At a co-location at least
+one facility still receives no more than half the location reach, while its
+specified distinct-site deviation retains the strict improvement. Positive
+rational perturbations therefore yield an instance without an
+$\alpha$-approximate SPE. Thus $\phi$ is the optimal universal factor even
+within the shared-catalog rational-weight class.
+
+\hypertarget{exact-criterion-and-the-closed-ring-reduction}{%
+\section{A fixed menu and the closed-cycle reduction}\label{exact-criterion-and-the-closed-ring-reduction}}
+
+\subsection{One common menu at each unordered location pair}\label{sec:menu}
+At a pair let $A,B$ denote exclusive customer loads, let
+$w_1,\ldots,w_k$ be the common customer weights, and let $W=\sum_iw_i$.
+The reaches are $A+W,B+W$. Fix all tie choices by customer index.
+Construct the following menu $F(s,t)$ of exact independently mixed customer
+Nash equilibria. A label reversal uses the reflection of this same menu.
+
+\paragraph{P: guarded pure seeds.}
+Use the two assignments putting all common customers on one side. Also use,
+for every common customer $h$, both assignments putting only $h$ on one side
+and all other common customers on the other. Retain a seed if it is already
+an NE. Otherwise, let its initial loads be $Q<P$, and retain a repaired
+output only if each common customer initially on the lower side has weight
+at least $P-Q$. Move a largest strictly improving customer from the original
+higher side to the original lower side, stopping at the first reversal of
+load order or when no improvement remains. Section~\ref{pure-repair} proves
+that the output is an NE and preserves the initial lower load as a lower
+bound. Unqualified seeds are discarded. The all-common seeds make this
+pure submenu nonempty: either the occupied side is already lower, or the
+other side has no common customer and the guard is vacuous.
+There are at most $2(k+1)$ outputs.
+
+\paragraph{E: equal-reach half splitting.}
+If $A=B$, let each common customer independently use each side with
+probability $1/2$. Each customer is indifferent. In particular this includes
+loads $(R_s/2,R_s/2)$ at every co-location $(s,s)$.
+
+\paragraph{T: two designated mixers.}
+Choose distinct common customers $h,j$. Orient the endpoints so that
+$A\le B$, and put all other common customers on the $B$ side. Set
+$Z=W-w_h-w_j$ and $D=B-A+Z$. If $D\le\min(w_h,w_j)$, give $h,j$
+probabilities $(1+D/w_h)/2,(1+D/w_j)/2$ on the $A$ side.
+The expected load gap is $D$, so the designated customers are indifferent
+and the others prefer the lower expected-load side. This is an exact NE.
+If $A=B$, include both orientations. This family has at most
+$2\binom{k}{2}$ members, including boundary probabilities.
+
+\paragraph{C: the strong-chord witness.}
+Order the reaches as $U\ge V$. Whenever
+\[
+ V>cU,\qquad W<qV,\qquad \max_iw_i\le aU,
+\]
+include one deterministic output of the strong-chord construction of
+Section~\ref{strong-cross-chord-lemma-for-arbitrarily-many-common-customers}
+and Appendices~\ref{app:cross-chord}--\ref{app:polynomial-chord}.
+It gives $L_U\ge qV$ and $L_V\ge qU$ in
+$O((k+1)^4)$ rational arithmetic operations. For $k=0$ the maximum-weight
+condition is vacuous. At equal reaches E itself meets these targets; one
+may use it instead, or include an additional asymmetric output together
+with its reflection. This call depends only on the pair's actual reaches
+and common weights, never on global deviation quotas.
+
+All probabilities are checked against the exact customer Nash inequalities.
+For $p_i$ the probability of using the first facility and
+$\Delta=A-B+\sum_iw_i(2p_i-1)$, these are
+\[
+ p_i=1\Rightarrow\Delta\le w_i,\qquad
+ p_i=0\Rightarrow\Delta\ge-w_i,\qquad
+ 0<p_i<1\Rightarrow\Delta=w_i(2p_i-1).
+\]
+The menu has $O((k+1)^2)$ members, includes a pure member, and is constructed
+before any response edge is selected.
+
+\subsection{Menu minima and a sufficient criterion}
+Define the rational values
+\[
+ u(s,t)=\min_{\sigma\in F(s,t)}L_s(\sigma),\qquad
+ d(t)=\max_{s\in S}u(s,t).
+\]
+A menu witness at $(u,v)$ satisfying
+\[
+ L_u\ge qd(v),\qquad L_v\ge qd(u)                       \tag{2.1}
+\]
+extends to a $\phi$-SPE. Choose a menu-minimizing punishment after each
+actual unilateral deviation. The payoff of its deviator is at most the
+corresponding $d$ value, hence at most $\phi$ times its on-path payoff.
+The two unilateral off-path families are disjoint labeled profiles; fill
+all other layouts by the P all-common default. Thus the continuation rule
+is consistent and exact in every subgame.
+
+Condition (2.1) is sufficient for the unrestricted continuation game; no
+necessity claim is made for equilibria outside the menus. From now on,
+every selected response edge is constrained only on its menu members.
+Whenever the proof constructs an all-common or singleton pure assignment,
+it uses P with the stated guard; equal-reach witnesses use E, same-pair
+mixing uses T, and strong chords use C. These inclusions are checked again
+in Section~\ref{sec:algorithm}. The two later claims of uniqueness among
+\emph{all} customer equilibria are proved from strict dominance.
+
+Choose, with arbitrary tie breaking,
+
+\[
+b(t)\in\arg\max_s u(s,t)
+\]
+
+and let \(T\) be any directed cycle of this map. Suppose no menu witness on a pair of cycle locations satisfies (2.1). All uses of \(d\) below retain the maximum over the \textbf{full} location set \(S\). The cycle maximum \(M=\max_{s\in T}d(s)\) is positive: if \(M=0\), an equal-half co-location equilibrium at any cycle location already satisfies (2.1). Divide all weights and loads by \(M\), so
+
+\[
+\max_{s\in T}d(s)=1.
+\]
+
+\textbf{Scope convention.} Unless explicitly stated otherwise, every location quantified below belongs to \(T\). The value \(d(s)\) continues to maximize over the full set \(S\). In particular, all reach upper bounds and d-value upper bounds below are asserted for cycle locations, not for arbitrary locations outside the cycle. Section 11 is a standalone two-location lemma and states its own hypotheses.
+
+Co-location at \(s\), with all covered customers independently choosing each facility with probability \(1/2\), gives load \(R_s/2\) on each facility. Thus failure of (2.1) implies
+
+\[
+d(s)>cR_s,\qquad R_s<2q\quad(s\in T). \tag{2.2}
+\]
+
+Let \(R=\max_{s\in T}R_s\). Since \(u(b(s),s)\le R_{b(s)}\) and \(b(T)\subseteq T\),
+
+\[
+1\le R<2q. \tag{2.3}
+\]
+
+For every edge \(s\to t=b(s)\), in \textbf{every menu member} write \(P=L_t\), \(Q=L_s\). Then
+
+\[
+P\ge d(s)>cR_s,\qquad Q<qd(t)\le q. \tag{2.4}
+\]
+
+Indeed, the responder already exceeds its stability threshold \(qd(s)\); if the incumbent reached \(qd(t)\), (2.1) would hold.
+
+\hypertarget{pure-repair-leveling-and-a-reach-bound-for-d}{%
+\section{Pure repair and a reach bound for d}\label{pure-repair-leveling-and-a-reach-bound-for-d}}
+
+\hypertarget{pure-repair}{%
+\subsection{Pure repair}\label{pure-repair}}
+
+We use the repair operation of Vos~\cite[Lemma~29]{vos2023}, recording the load bounds needed below.
+
+Suppose a pure assignment has loads \(A<B\), and each common customer currently at the lower-load facility has weight at least \(B-A\). Repeatedly move a largest-weight improving customer from the originally higher-load facility to the originally lower-load facility. Stop if no such customer exists, or at the first reversal of the load order.
+
+An improving move of weight \(w\) satisfies \(w<B'-A'\), and both new loads lie strictly between the old loads. Before the first reversal the gap decreases. The moved weights are nonincreasing: a customer too heavy to improve cannot become improving while the gap decreases. At the first reversal the new gap is less than the last moved weight; all previously moved customers and all customers originally at the lower side are at least this heavy. Hence the resulting profile is a pure equilibrium. The originally lower side finishes at least at \(A\), and strictly below \(B\); the originally higher side finishes strictly above \(A\).
+
+We also use arbitrary finite pure improvement sequences when both loads already exceed a desired common lower bound. Each improvement keeps both loads inside the previous load interval, so this lower bound is preserved.
+
+\hypertarget{a-useful-bound-on-d}{%
+\subsection{A useful bound on d}\label{a-useful-bound-on-d}}
+
+\[
+R_s\ge q\quad\Longrightarrow\quad d(s)\le R_s. \tag{3.1}
+\]
+
+To prove this, suppose \(d(s)>R_s\), and put \(t=b(s)\). Let \(E=w(C_t\setminus C_s)\). If \(E\le R_s\), assign all common customers to \(s\). Either this is an equilibrium or pure repair gives an equilibrium with responder load at most \(R_s\). The seed or its guarded output belongs to P, contradicting \(u(t,s)=d(s)>R_s\). Consequently \(E>R_s\). Every common customer then strictly prefers \(s\): its cost there is at most \(R_s\), whereas choosing \(t\) costs at least \(E+w_g\). Thus all actual customer equilibria coincide; the nonempty menu consists of that equilibrium, with responder load \(E=d(s)\) and incumbent load \(R_s\). Equation (2.4) forces \(d(t)>\phi R_s\), and hence \(R_s<q\). This proves (3.1).
+
+The same argument gives the following return rule: if \(d(s)>R_s\), the edge from \(s\) has a unique customer equilibrium, the incumbent receives \(R_s\), and the next d-value exceeds \(\phi R_s\).
+
+\hypertarget{no-visible-customer-has-weight-at-least-q}{%
+\section{No visible customer has weight at least q}\label{no-visible-customer-has-weight-at-least-q}}
+
+Suppose a customer of weight \(H\ge q\) is visible at a location of \(T\). Whenever its current location is \(s\), (2.4) forces it to remain accessible at \(b(s)\), since otherwise the incumbent load would be at least \(H\ge q\). It therefore covers the entire cycle.
+
+For any edge \(s\to t\), let \(S_{st}\) be the total weight of its common customers other than this customer. If
+
+\[
+R_t\ge R_s-S_{st},
+\]
+
+assign the heavy customer to \(s\) and all other common customers to \(t\). The loads are
+
+\[
+Q=R_s-S_{st}\ge H,\qquad P=R_t-H<H\le Q,
+\]
+
+where \(R_t<2q\le2H\). The heavy customer is stable because \(Q-H\le P\), equivalently \(Q\le R_t\); the other common customers choose the lower-load side and are stable. This pure equilibrium contradicts \(Q<q\) in (2.4). Thus every edge satisfies
+
+\[
+R_t<R_s-S_{st}\le R_s,
+\]
+
+which is impossible on a cycle. Therefore
+
+\[
+w_g<q\quad\text{for every customer visible on }T. \tag{4.1}
+\]
+
+\hypertarget{heavy-pairs-size-avoidance-and-a-chord-lemma}{%
+\section{Heavy pairs: size, avoidance, and a chord lemma}\label{heavy-pairs-size-avoidance-and-a-chord-lemma}}
+
+Call a customer \textbf{large} if \(w_g>\tau=q/2\), and put
+
+\[
+\mathcal H_s=\{g\in C_s:w_g>\tau\}.
+\]
+
+\hypertarget{at-most-two-large-customers-at-a-location}{%
+\subsection{At most two large customers at a location}\label{at-most-two-large-customers-at-a-location}}
+
+In a pure member of the menu of an edge, two large customers belonging to the source cannot both be assigned to the responder. If they were, with source reach \(r\), then \(Q<r-q\). Both transferred common customers have weight at least \(P-Q\), so
+
+\[
+2P\le r+Q<2r-q.
+\]
+
+Together with \(2P>\phi r\), this gives \((2-\phi)r>q\), hence \(r>\phi\), contradicting \(r<2q<\phi\).
+
+If a source covered three large customers, \(Q<q\) would force at least two of them to the responder. An equal-reach edge cannot avoid this argument by being mixed: its equal-half equilibrium has equal loads, each at least \(d(s)>\phi R_s/2>3/4>q\), again contradicting (2.4). A pure member of P exists in the unequal-reach case. Consequently
+
+\[
+|\mathcal H_s|\le2. \tag{5.1}
+\]
+
+\hypertarget{avoidance-of-a-large-pair}{%
+\subsection{Avoidance of a large pair}\label{avoidance-of-a-large-pair}}
+
+If \(s\) contains two large customers and \(t\) contains neither, then
+
+\[
+R_t<qd(s)\le q. \tag{5.2}
+\]
+
+The exclusive weight of \(s\) against \(t\) is \(A>q\). Put all common customers at \(t\). If \(R_t\le A\), this is a pure equilibrium with loads \(A,R_t\). If \(R_t>A\), repair gives both loads at least \(A>q\). Hence \(R_t\ge qd(s)\) would satisfy both thresholds in (2.1).
+
+In particular, all large pairs that occur on \(T\) intersect pairwise.
+
+\hypertarget{chord-retaining-exactly-one-member-of-a-pair}{%
+\subsection{Chord retaining exactly one member of a pair}\label{chord-retaining-exactly-one-member-of-a-pair}}
+
+Suppose \(s\) has large customers \(h,j\), \(t\) contains \(h\) but not \(j\), and \(R_s\le R_t\). Let \(H=w_h,J=w_j\). Assign \(h\) to \(s\) and all other common customers to \(t\). If their other-common total is \(\sigma\), the loads are
+
+\[
+U=R_s-\sigma\ge H+J>q,\qquad V=R_t-H.
+\]
+
+The customer \(h\) is stable since \(U-H\le V\). If \(V\le U\), this is a pure equilibrium. If \(V>U\), then
+
+\[
+V-U\le R_t-2H-J<H,
+\]
+
+because \(R_t<2q<3H+J\). Repair then gives both loads above \(q\), a contradiction. Thus the first case must hold, and absence of stability forces
+
+\[
+d(s)>\phi(R_t-H). \tag{5.3}
+\]
+
+In particular, a pair-source best response cannot have at least the source reach while retaining exactly one member of that pair: the constructed equilibrium has incumbent load above \(q\), while every menu member has responding load at least \(d(s)\).
+
+\hypertarget{capacity-of-a-location-containing-a-large-pair}{%
+\section{Capacity of a location containing a large pair}\label{capacity-of-a-location-containing-a-large-pair}}
+
+If \(\mathcal H_s=\{h,j\}\), then
+
+\[
+R_s<q+\max(H,J). \tag{6.1}
+\]
+
+First let \(r=R_s\ge1\). Equal reaches on its edge are impossible by (2.4). In a pure menu member, if two or more common customers went forward, then \(2P\le r+Q<r+q\), while \(2P>\phi r\); this would imply \(r<1\). Therefore exactly one common customer goes forward. Since the two large customers cannot both remain at the incumbent, the transferred customer is one of them, say of weight \(H\). Then \(r-H=Q<q\), proving (6.1).
+
+Now suppose \(r<1\) but \(r\ge q+\max(H,J)\). Then \(r>3q/2\) and \(P>\phi r/2>3/4\). Exactly one of the two large customers goes forward, say \(H\), and the other \(J\) remains. If the responder also covered \(J\), it would have the same pair. If its reach were at least one, the already proved case would give its reach \(<q+\max(H,J)\le r<1\), impossible. If its reach were below one, its load would be \(<1-J<1-q/2<3/4\), also impossible. Thus \(J\) is inaccessible to the responder.
+
+Reassign only \(H\) forward and all other common customers to the incumbent. Let their total be \(\sigma\); the loads are
+
+\[
+Q_0=r-H\ge q,\qquad P_0=R_{b(s)}-\sigma,
+\]
+
+and
+
+\[
+\sigma\le r-H-J,\qquad P_0\ge d(s)-r+H+J.
+\]
+
+The original equilibrium condition for \(H\) implies \(P_0\le r\), so \(H\) is still stable. If \(P_0\ge Q_0\), the new profile is a pure equilibrium, contradicting (2.4). If \(P_0<Q_0\), then
+
+\[
+Q_0-P_0<(2-\phi/2)r-2H-J<H,
+\]
+
+using \(r<1\) and \(3H+J>2q>2-\phi/2\). Repair produces a responder load strictly below \(Q_0\). But
+
+\[
+Q_0=r-H<\phi r/2<d(s),
+\]
+
+since \(H>q/2>ar/2\). This contradicts the definition of \(d(s)=u(b(s),s)\), proving (6.1).
+
+\hypertarget{no-edge-connects-two-locations-with-the-same-large-pair}{%
+\section{No edge connects two locations with the same large pair}\label{no-edge-connects-two-locations-with-the-same-large-pair}}
+
+Let two locations have the same pair of weights \(H\ge J>q/2\). Write their private weights as \(A\le B\), the total of other common customers as \(W\), and label their reaches \(r_\ell\le r_h\). Thus
+
+\[
+r_\ell=A+H+J+W,\qquad r_h=B+H+J+W.
+\]
+
+Set \(D=B-A+W\). Capacity gives
+
+\[
+0\le D\le B+W=r_h-H-J<q-J<J\le H.
+\]
+
+Assign all common customers other than the large pair to the higher-reach location. Let each large customer of weight \(w\in\{H,J\}\) choose the lower-reach location with probability \((1+D/w)/2\). This is an equilibrium: both large customers are indifferent and all other common customers choose the lower expected-load side. Its loads are
+
+\[
+L_h=r_\ell-W-(H+J)/2,\qquad L_\ell=r_h-(H+J)/2.
+\]
+
+In either possible orientation as source and responder, the responder load is at most
+
+\[
+R_{\rm source}-(H+J)/2<cR_{\rm source}<d({\rm source}).
+\]
+
+Here \(H+J>q>aR_{\rm source}\), because \(R_{\rm source}<2q\) and \(2aq<q\). This contradicts a best-response edge. Hence
+
+\[
+\boxed{\text{No b-edge joins two locations with the same large pair.}} \tag{7.1}
+\]
+
+The same capacity proof also shows the selected source-to-responder pure allocation cannot keep both large customers at the responder; Section 5 already provides the sharper version needed elsewhere.
+
+\hypertarget{the-large-pair-family-is-a-star}{%
+\section{The large-pair family is a star}\label{the-large-pair-family-is-a-star}}
+
+Let \(\mathcal E=\{\mathcal H_s:|\mathcal H_s|=2\}\). Its members pairwise intersect by (5.2). A pairwise-intersecting family of two-element sets either has a common member or contains exactly the three pair types of a triangle. Suppose such a triangle occurs, on customers \(h,j,k\).
+
+Every location of reach at least \(q\) must meet all three pair types, by (5.2). By (5.1) its own large set is therefore one of the triangle pairs. Choose a maximum-reach location \(A\), of reach \(R\ge1\), and suppose it has pair \(\{h,j\}\).
+
+Both \(H\) and \(J\) exceed \(a\). For example, if \(H\le a\), choose another triangle-pair location containing \(h\) but not \(j\). Apply Section 5.3 with \(A\) as the higher-reach endpoint. Its load \(R-H\ge1-a=q\), and the other endpoint's load exceeds \(q\); either the displayed profile or repair is stable, a contradiction.
+
+Every pair location \(s\) has \(d(s)>q\). Otherwise (2.2) gives \(R_s<2a\). It cannot have the same pair as \(A\), whose two weights exceed \(a\). If it has another triangle pair, sharing \(g\) with \(A\), then \(w_g<q\), so
+
+\[
+R-w_g>1-q=a\ge qd(s).
+\]
+
+Section 5.3 again constructs a stable equilibrium, a contradiction.
+
+Thus pair locations form a nonempty b-closed subset: their responders have reach at least their d-value, hence above \(q\), and so must again be pair locations. An edge to a different pair cannot weakly increase reach by Section 5.3. An edge to the same pair is impossible by (7.1). Hence every edge in this finite closed subset strictly decreases reach, a contradiction. The triangle is impossible, proving
+
+\[
+\mathcal E\ne\varnothing\quad\Longrightarrow\quad\bigcap_{E\in\mathcal E}E\ne\varnothing. \tag{8.1}
+\]
+
+\hypertarget{common-h-chords-transport-and-two-anchor-covering}{%
+\section{Common-h chords, transport, and two-anchor covering}\label{common-h-chords-transport-and-two-anchor-covering}}
+
+The rest of the proof repeatedly uses a customer \(h\), of weight \(H\), satisfying
+
+\[
+H>aR,\qquad K:=R-H<q,\qquad H<q. \tag{9.1}
+\]
+
+In particular \(R<3H\).
+
+\hypertarget{an-upward-common-h-chord}{%
+\subsection{An upward common-h chord}\label{an-upward-common-h-chord}}
+
+For locations \(s,t\) containing \(h\) and \(R_s\le R_t\), assign \(h\) to \(s\) and all other common customers to \(t\). Their loads are
+
+\[
+U=R_s-\sigma\ge H,\qquad V=R_t-H.
+\]
+
+The customer \(h\) is stable. If \(V\le U\), the profile is an equilibrium. If \(V>U\), then \(V-U\le R-2H<H\), so repair applies and the final load at \(t\) is at most \(V\). Therefore
+
+\[
+u(t,s)\le R_t-H\le K. \tag{9.2}
+\]
+
+\hypertarget{a-common-h-edge-with-d-above-q-has-unique-transport}{%
+\subsection{A common-h edge with d above q has unique transport}\label{a-common-h-edge-with-d-above-q-has-unique-transport}}
+
+Suppose \(s\to t\), both contain \(h\), and \(d(s)>q\). Equation (9.2) first implies \(R_t<R_s\). Take a pure menu member from P. If \(h\) stayed at the source, responder load would be at most \(R_t-H\le K<q\), impossible. If another common customer accompanied \(h\) forward, their equilibrium conditions would give
+
+\[
+2P\le R_s+Q\le2R_s-H,
+\]
+
+so \(P\le R_s-H/2<cR_s<d(s)\), using \(H>aR\ge aR_s\). Thus \(h\) is the only common customer going forward.
+
+Let \(\sigma\) be the other-common total, and \(\Delta=R_s-R_t>0\). The pure loads are \(Q=R_s-H\), \(P=R_t-\sigma\), with \(\sigma<R-q<H\). If \(\sigma\ge\Delta\), the reverse assignment, placing \(h\) at the source and all other common customers at the responder, would be an exact singleton seed in P with responder load \(R_t-H\le K<q\), impossible. Consequently \(\sigma<\Delta\).
+
+This last inequality makes \(h\) strictly prefer the responder regardless of other choices: its minimum source cost is \(R_s-\sigma>R_t\). Given this choice, every other common customer strictly prefers the source, whose maximum load is \(R_s-H\le K<q\), below the responder's minimum load \(R_t-\sigma\ge d(s)>q\). Thus \textbf{all}, including mixed, customer equilibria coincide. In particular, the finite-menu minimum equals this unique payoff, and
+
+\[
+d(s)=R_t-\sigma,\quad Q=R_s-H,\quad 0\le\sigma<R_s-R_t. \tag{9.3}
+\]
+
+\hypertarget{general-two-anchor-covering-lemma}{%
+\subsection{General two-anchor covering lemma}\label{general-two-anchor-covering-lemma}}
+
+Suppose an edge \(X\to Y\) has the unique transport (9.3). Write
+
+\[
+x=R_X>y=R_Y,\quad \delta=d(X)=y-\sigma,\quad \varepsilon=d(Y),
+\quad B=\phi(y-H).
+\]
+
+Assume
+
+\[
+\delta>B,\quad \varepsilon>B,\quad \delta>\phi H,\quad \varepsilon\le y. \tag{9.4}
+\]
+
+Then there is no h-containing location \(t\) with
+
+\[
+B<R_t\le y,\qquad d(t)\le B. \tag{9.5}
+\]
+
+For each anchor \(i\in\{X,Y\}\), assign \(h\) to \(t\) and the other common customers to \(i\). If their total \(\sigma_{it}\) satisfied \(\sigma_{it}\le R_t-qd(i)\), the initial loads would be
+
+\[
+U_t=R_t-\sigma_{it}\ge qd(i),\qquad V_i=R_i-H\ge y-H=qB\ge qd(t).
+\]
+
+The customer \(h\) is stable since \(R_t\le R_i\). If \(V_i\le U_t\), this is an equilibrium. Otherwise repair applies because \(R<3H\); both final loads are at least \(U_t\), which exceeds both required thresholds because \(d(i)>B\ge d(t)\). Thus no solution forces
+
+\[
+\sigma_{Xt}>R_t-q\delta,\qquad \sigma_{Yt}>R_t-q\varepsilon.
+\]
+
+Their intersection, excluding \(h\), has weight at most \(\sigma\), so
+
+\[
+\sigma_{Xt}+\sigma_{Yt}\le R_t-H+\sigma.
+\]
+
+It follows that
+
+\[
+R_t<L:=q(\delta+\varepsilon)-H+\sigma.
+\]
+
+But
+
+\[
+B-L=\delta-q\varepsilon+q\sigma-qH
+\ge a\delta-qH>0,
+\]
+
+where only \(\varepsilon\le y=\delta+\sigma\) is used. Hence \(R_t<B\), contradicting (9.5). No assumption \(\varepsilon\le\delta\) is needed.
+
+\hypertarget{abstract-center-theorem-and-nondegenerate-stars}{%
+\section{Abstract center theorem and nondegenerate stars}\label{abstract-center-theorem-and-nondegenerate-stars}}
+
+\hypertarget{abstract-center-theorem}{%
+\subsection{Abstract center theorem}\label{abstract-center-theorem}}
+
+Under (9.1), suppose every location without \(h\) has reach at most \(\phi H\). Then the no-solution closed cycle is impossible.
+
+First, every h-containing location has \(d(s)>H\). Suppose instead \(u\) contains \(h\) and \(d(u)\le H\). Then \(R_u<2qH<\phi H\). For any \(t\) with \(R_t>\phi H\), the assumption makes \(t\) an h-location. If \(d(t)\le\phi H\), put \(h\) at \(u\) and other common customers at \(t\). The loads satisfy \(U\ge H\ge qd(t)\) and \(V=R_t-H>qH\ge qd(u)\). The common-h chord construction, with repair if necessary, gives stability. Thus all locations of reach above \(\phi H\) have d-value above \(\phi H\). This set is nonempty since \(R\ge1>\phi H\), and it is b-closed. It consists entirely of h-locations. On it (9.2) forbids every nondecreasing-reach edge, since \(K<q<\phi H\), a contradiction.
+
+If \(u\to v\) leaves \(h\), (2.4) gives
+
+\[
+d(v)>\phi H\ge R_v.
+\]
+
+The return rule of Section~\ref{a-useful-bound-on-d} makes the next edge's equilibrium unique. Its target \(w\) has reach at least \(d(v)>\phi H\), hence contains \(h\), and
+
+\[
+d(w)>\phi R_v\ge\phi d(u)>\phi H. \tag{10.1}
+\]
+
+Choose an h-location \(X\) maximizing d among h-locations, and put \(\delta=d(X)\). We have \(\delta>cR\), since the maximum-reach location contains \(h\), and \(\delta>\phi H\): if there is an exit, use (10.1); otherwise all locations contain \(h\), so \(\delta=1>\phi H\). The responder \(Y=b(X)\) contains \(h\); otherwise (10.1) would produce an h-location with d exceeding \(\phi\delta>\delta\).
+
+Since \(\delta>\phi H>q\), Section 9.2 applies. Use its notation \(x,y,\sigma,\varepsilon\). Set \(B=\phi(y-H)\). Then \(\varepsilon>\phi(x-H)>B\). Since \(\varepsilon\le\delta\), we also have \(x<H+q\delta\) and hence \(B<\delta\). Moreover \(B>K\): if \(H\le R/2\), use \(y\ge\delta>cR\); if \(H\ge R/2\), use \(y\ge\delta>\phi H\), which gives \(B>H\ge K\). The covering lemma applies because \(y>q\) and hence \(\varepsilon\le y\).
+
+Starting at \(Y\), as long as the path remains among h-locations with d above \(B\), (9.2) forces strictly decreasing reach. A first h-location with d at most \(B\) would still have reach above \(B\) and at most \(y\), contradicting Section 9.3. The path must therefore leave \(h\). At that exit its source has d above \(B\); (10.1) gives a returning h-location with d above \(\phi B\). But
+
+\[
+\phi B-\delta
+=\phi(\delta-\phi H)+\phi^2\sigma>0,
+\]
+
+contradicting the choice of \(\delta\). This proves the abstract center theorem.
+
+\hypertarget{nondegenerate-stars-satisfy-its-assumptions}{%
+\subsection{Nondegenerate stars satisfy its assumptions}\label{nondegenerate-stars-satisfy-its-assumptions}}
+
+Suppose \(\mathcal E\) contains at least two distinct pairs, with unique common customer \(h\). Every location of reach at least \(q\) contains \(h\): otherwise it must meet two different pairs by covering their two leaves, producing the triangle already excluded in Section 8. Thus every no-h reach is below \(q\).
+
+Apply the maximum-reach first-edge argument of Section 12.1 below (that argument itself does not assume an empty or single-pair family). It gives a unique forward customer \(g\) on \(A\to b(A)\), of weight exceeding \(R-q\), and other-common weight
+
+\[
+\sigma<R-cR=aR/2<aq=q^3<q/2.
+\]
+
+Both endpoints have reach above \(q\), so both contain the star center \(h\). If \(g\ne h\), the weight of \(h\), which exceeds \(q/2\), would be included in \(\sigma\), impossible. Thus \(g=h\), and \(H>R-q\ge aR\), while \(H<q\) by Section 4. In particular \(\phi H>q\). All no-h reaches are below \(q<\phi H\), and the abstract center theorem rules out this case for arbitrary cycle length.
+
+\hypertarget{strong-cross-chord-lemma-for-arbitrarily-many-common-customers}{%
+\section{Strong cross-chord lemma for arbitrarily many common customers}\label{strong-cross-chord-lemma-for-arbitrarily-many-common-customers}}
+
+The complete proof appears in Appendix A, including the exact mixed-equilibrium coordinates, maximum-square section construction, all positive and negative gap cases, and the finite pure repairs. The statement used below is:
+
+\textbf{Strong cross-chord lemma.} Consider two locations with reaches \(U\ge V>cU\). Let \(C\) be the total common-customer weight. If
+
+\[
+C<qV,\qquad \max_{g\text{ common}}w_g\le aU,
+\]
+
+then there is an independently mixed customer Nash equilibrium with
+
+\[
+L_U\ge qV,\qquad L_V\ge qU. \tag{11.1}
+\]
+
+There is no restriction on the number of common customers. The proof must allow three or more customers to mix; reducing to pure or two-mixer equilibria is invalid.
+
+Appendix A also establishes the sharper exact characterization, not required for the final theorem: under \(U\ge V>cU\) and \(C<qV\), let \(x\) be the largest common weight. An equilibrium satisfying (11.1) exists if and only if
+
+\[
+x\le U-qV\quad\text{or}\quad C-x\ge U-V.
+\]
+
+When both inequalities fail, the customer game has a unique equilibrium: the largest common customer strictly chooses the lower-reach location and every other common customer strictly chooses the higher-reach location. Its loads are \(U-x,V-(C-x)\), and it fails the first target.
+
+\hypertarget{the-first-edge-and-selection-of-a-single-large-customer-anchor}{%
+\section{The first edge and selection of a single-large-customer anchor}\label{the-first-edge-and-selection-of-a-single-large-customer-anchor}}
+
+Section 12.1 is a general first-edge lemma, valid for every large-pair family; its forward use in Section 10.2 has no dependency on the conclusions of that section. From Section 12.2 onward, only \(\mathcal E=\varnothing\) or \(\mathcal E=\{\{h,j\}\}\) remains after Section 10. In this section ``h-only'' means that \(h\) is the location's only \textbf{large} customer; it may have any number of small customers.
+
+\hypertarget{the-maximum-reach-first-edge}{%
+\subsection{The maximum-reach first edge}\label{the-maximum-reach-first-edge}}
+
+Choose \(A_0\) of reach \(R\), and put \(A_1=b(A_0)\). Equation (2.4) gives responder load \(P\ge d(A_0)>cR\) and incumbent load \(Q<q\). An equal-reach responder is impossible because the equal-half equilibrium has \(P=Q\). Thus \(R_1<R\), and take a pure menu member from P.
+
+There must be at least one common customer assigned forward, since otherwise \(Q=R\ge1\). If at least two went forward, their equilibrium conditions would give
+
+\[
+2P\le R+Q<R+q,
+\]
+
+which, with \(2P>\phi R\), would imply \(R<1\). Therefore exactly one customer \(h\) goes forward. Its weight is
+
+\[
+H=R-Q>R-q\ge aR>q/2. \tag{12.1}
+\]
+
+Section 4 gives \(H<q\), so (9.1) holds. If \(\sigma_0\) is the other-common weight, then \(P=R_1-\sigma_0>q\), so \(\sigma_0<R-q<H\). As in Section 9.2, \(\sigma_0\ge R-R_1\) would make the reverse pure assignment an exact singleton seed in P with responder load \(R_1-H<K<q\). Therefore \(\sigma_0<R-R_1\), all actual equilibria coincide by strict dominance, so the menu minimum is their common payoff and
+
+\[
+d(A_0)=R_1-\sigma_0,\qquad d(A_1)>\phi(R-H)=\phi K. \tag{12.2}
+\]
+
+If there is a unique large pair, \(h\) belongs to it. Indeed, a maximum-reach location must meet that pair by (5.2); the presence of a different large customer would create another pair.
+
+\hypertarget{a-high-h-only-anchor-always-exists}{%
+\subsection{A high h-only anchor always exists}\label{a-high-h-only-anchor-always-exists}}
+
+If \(A_0\) is h-only, use it. Otherwise it has the unique pair, so \(A_1\) is h-only by (7.1), since it contains \(h\). In either case an h-only location \(Z\) has reach
+
+\[
+R_Z>cR. \tag{12.3}
+\]
+
+\hypertarget{the-case-h-at-least-r2}{%
+\subsection{The case H at least R/2}\label{the-case-h-at-least-r2}}
+
+Suppose \(H\ge R/2\). Use the h-only anchor \(Z\) above, with reach \(z\). If any no-h location \(t\) had reach \(r_t>\phi H\), then
+
+\[
+r_t>cz,\qquad z>cR\ge cr_t.
+\]
+
+Its common weight with \(Z\) satisfies
+
+\[
+C\le z-H\le H<qr_t,\qquad C\le z/2<qz.
+\]
+
+Every common customer is small, with weight at most \(q/2<a z\), because \(z>cR\ge c\) and \(ac=q/2\). Both reaches exceed \(c^2R>q\). Apply Section 11 and then (3.1): the resulting loads meet \(qd(t)\) and \(qd(Z)\), giving stability.
+
+Thus every no-h reach is at most \(\phi H\), and the abstract center theorem gives a contradiction. This rules out \(H\ge R/2\).
+
+\hypertarget{selecting-consecutive-anchors-when-h-is-below-r2}{%
+\subsection{Selecting consecutive anchors when H is below R/2}\label{selecting-consecutive-anchors-when-h-is-below-r2}}
+
+Henceforth \(H<R/2\). By (12.2),
+
+\[
+d(A_1)>\phi K>cR. \tag{12.4}
+\]
+
+If \(A_1\) is h-only, select \(X=A_0,Y=A_1\).
+
+The only other possibility is that \(A_0\) is h-only and \(A_1\) has the unique pair. Let \(A_2=b(A_1)\). If \(A_2\) lacked \(h\), then
+
+\[
+R_2\ge d(A_1)>\phi K>cR.
+\]
+
+The common weight between \(A_0\) and \(A_2\) is at most \(K<qR_2\), and all these common customers are small because \(A_0\) is h-only. Their weights are at most \(q/2<aR\). The strong cross-chord lemma gives stability, using (3.1) at both endpoints, a contradiction. Therefore \(A_2\) contains \(h\). Equation (7.1) makes it h-only. Since \(d(A_1)>q\), Section 9.2 gives unique h-transport along \(A_1\to A_2\). Select \(X=A_1,Y=A_2\).
+
+In either selection, write
+
+\[
+x=R_X>y=R_Y>cR,\quad \delta=d(X)=y-\sigma>cR>\phi H,
+\quad \varepsilon=d(Y).
+\]
+
+The selected edge has unique h-transport, \(0\le\sigma<x-y\), and \(Y\) is h-only. Furthermore
+
+\[
+y>\phi K. \tag{12.5}
+\]
+
+For \(Y=A_1\), this follows from \(d(A_1)>\phi K\) and \(d(A_1)\le R_1\). For \(Y=A_2\), it follows from \(R_2\ge d(A_1)>\phi K\). The use of (3.1) in the first case is valid because \(R_1>cR>q\).
+
+\hypertarget{final-two-anchor-closure-for-the-empty-and-single-pair-cases}{%
+\section{Final two-anchor closure for the empty and single-pair cases}\label{final-two-anchor-closure-for-the-empty-and-single-pair-cases}}
+
+Use \(X,Y,x,y,\delta,\varepsilon,\sigma\) from Section 12.4, and set
+
+\[
+B=\phi(y-H).
+\]
+
+The edge inequality gives \(\varepsilon>\phi(x-H)>B\). Also \(\varepsilon\le y\) by (3.1), so \(x<H+qy\). Therefore
+
+\[
+\delta=y-\sigma>2y-x>(2-q)y-H>B,
+\]
+
+where the last difference is \(q(H-ay)>0\). Finally, (12.5) gives
+
+\[
+B-K>\phi(R-2H)>0. \tag{13.1}
+\]
+
+Thus all assumptions (9.4) of the two-anchor covering lemma hold.
+
+If \(H\ge y/2\), any no-h location of reach above \(\phi H\) forms a stable strong cross-chord with the h-only anchor \(Y\), exactly as in Section 12.3: both reach ratios exceed \(c\), common weight is below \(q\) times either reach, and common weights are at most \(q/2<a y\). Hence all no-h reaches are at most \(\phi H\), and the abstract center theorem is a contradiction.
+
+It remains that \(H<y/2\). Now
+
+\[
+B>cy>c^2R>q. \tag{13.2}
+\]
+
+Any no-h location \(t\) with reach \(r_t>B\) forms a stable strong cross-chord with \(Y\). Indeed,
+
+\[
+r_t>cy,\qquad y>cR\ge cr_t,
+\]
+
+and, since \(H>aR\ge ay\),
+
+\[
+C(Y,t)\le y-H<qy,\qquad C(Y,t)\le y-H<qr_t.
+\]
+
+All common customers are small, with weight at most \(q/2<a y\). Both reaches exceed \(q\), so (3.1) upgrades the cross-chord reach thresholds to the exact global d-thresholds. Thus no solution forces
+
+\[
+h\notin C_t\quad\Longrightarrow\quad R_t\le B. \tag{13.3}
+\]
+
+Start at \(Y\), which has \(d(Y)>B\), and follow \(b\). As long as a source has d above \(B\), its responder has reach at least that d-value and hence above \(B\). By (13.3) it contains \(h\). An h-to-h edge with d above \(B>K\) strictly decreases reach by (9.2).
+
+If the path never encountered a d-value at most \(B\), this would give strict reach descent around a finite closed cycle. Otherwise let \(t\) be the first such location. Its reach is above \(B\), because the preceding source has d above \(B\), and is at most \(y\), by the preceding strict decreases. It contains \(h\), and \(d(t)\le B\). This contradicts the two-anchor covering lemma, Section 9.3.
+
+The empty-pair and single-pair cases are impossible. The nondegenerate-star case was ruled out in Section 10, and Section 8 excludes all other pair families. Thus the no-solution assumption is false. The sufficient menu criterion in Section 2 supplies the desired \(\phi\)-approximate subgame-perfect equilibrium.
+
+\hypertarget{scope-and-limitations}{%
+\section{Polynomial algorithm and scope}\label{sec:algorithm}}
+
+\subsection{Construction and correctness}
+Build F for every unordered pair, reflect it under label reversal, and store
+one minimizing member for each oriented payoff $u(s,t)$. Compute all $d(t)$,
+select any maximizing response $b(t)$, and find a directed cycle $T$.
+Scan the menus for $(s,t)\in S^2$ for a witness of (2.1), choosing the
+smallest certified factor among them. Sections~2--13 show that the
+subscan on $T^2$ already succeeds: their entire contradiction uses cycle
+locations and full-catalog $d$ values. The maximum reach and normalization
+need only hold on $T$; deviations outside $T$ are included in the already
+computed $d$ values. The full scan does not alter the asymptotic bound and
+can return a smaller instance-specific factor; it does not compute the
+best factor achievable by continuations outside the fixed menus.
+
+Output that witness and its menu-minimizing unilateral-deviation
+continuations. There are at most $2N-2$ actual deviation profiles.
+Represent all other continuations by the all-common guarded P routine.
+Every subgame receives an exact independent customer NE, and Section~2
+proves all facility deviation inequalities. This proves the constructive
+part of Theorem~\ref{thm:main}.
+
+\subsection{Why no full-equilibrium minimum is used}
+The preceding proof is directly stated for the menu values $u,d$.
+The following dependency check also isolates the places where an
+unrestricted minimum might otherwise have entered.
+
+The reach/return rule in Section~\ref{a-useful-bound-on-d} uses an
+all-common P seed. If responder-exclusive weight is at most source reach,
+its guarded output contradicts $u>R_s$. In the remaining case each common
+customer strictly prefers the source for every profile of the others;
+the actual customer NE is unique and hence the menu minimum is its payoff.
+
+Sections~4--6 use arbitrary pure P members and all-common or singleton
+P seeds. In the repaired singleton branches the unique lower-side common
+customer has weight greater than the initial gap; this is precisely the
+P guard. Section~7 uses T. The triangle argument in Section~8 only reuses
+these witnesses. No pure payoff-maximizing ``leveling'' equilibrium is
+computed or invoked.
+
+Sections~9.1 and~9.3 and the abstract center theorem use singleton-h P
+seeds. Their repair guard is $V-U\le R-2H<H$; the fixed first-reversal
+repair preserves all claimed lower bounds. In Sections~9.2 and~12.1,
+a pure P member forces one customer $h$ forward. If the other-common mass
+$\sigma$ were at least the reach drop, the reverse singleton seed would
+be an exact P member contradicting the response edge. Hence
+$R_s-\sigma>R_t$, so $h$ strictly chooses the responder regardless of
+others. Every other common customer then strictly prefers the source:
+its source cost is at most $R_s-H<q$, while its responder cost exceeds
+$R_t-\sigma>q$. This establishes uniqueness in the actual customer game,
+and therefore the equality $d(s)=R_t-\sigma$ for the finite menu too.
+
+Finally, every strong-chord invocation in Sections~12--13 proves exactly
+$U\ge V>cU$, common mass below $qV$, and maximum common weight at most
+$aU$ for that same pair. The fixed C output already meets the required
+reach-based quotas; (3.1) converts them to the menu $d$ quotas. It is not
+necessary to search for a new equilibrium after learning $d$.
+Thus all response-edge inequalities apply only to menu members, every
+contradicting witness is a menu member, and true uniqueness is separately
+justified when needed.
+
+\subsection{Arithmetic and bit complexity}
+At a pair with $k$ common customers P has at most $2(k+1)$ outputs and
+costs $O((k+1)^3)$ rational operations: each guarded repair moves at most
+$k$ customers and a direct scan per move costs $O(k+1)$.
+T has $O((k+1)^2)$ outputs and costs $O((k+1)^3)$ including direct Nash
+verification. E is linear. Appendix~\ref{app:polynomial-chord} proves an
+$O((k+1)^4)$ bound for C. Therefore all menus, minima, maxima, cycle
+selection and scanning require $O(N^2(n+1)^4)$ rational operations.
+Explicitly storing every probability vector uses
+$O(N^2(n+1)^3)$ rational entries, still polynomial.
+
+Every pure load is a sum of input weights. Every exchange coordinate in
+Appendix~\ref{app:polynomial-chord} is an input endpoint or a signed sum
+of input weights and the slice target. The later mixer gaps divide such
+sums by an integer at most $n$, and probabilities additionally divide by
+an input weight. Thus all intermediate rational encodings have length
+polynomial in the total binary input length. Comparisons with $q$ are
+exact: for rational $z\ge0$, the sign of $z-q$ is the sign of
+$z^2+z-1$, and $z<0$ is immediate. Using $q^2=1-q$ reduces all other
+irrational thresholds to this form. Zero-payoff cases are handled by
+cross-multiplication, without division by zero. This proves polynomial
+bit complexity.
+
+The output is independently checkable using the individual Nash inequalities
+in Section~\ref{sec:menu} and the actual deviation inequalities. The
+verifier need not reconstruct the menus, prove their completeness, or
+compute minimum payoffs. The short certificate and the polynomial search
+proof are separate parts of the result.
+
+\subsection{Scope}
+The common location set and legal co-locations are essential hypotheses of
+this theorem. No bound on the number of locations, the length of a response
+cycle, or the number of mixed customers is imposed. The strong-chord
+constructor can use more than two genuine mixers; distinct customers are
+never aggregated into a divisible mass. The algorithm constructs one
+$\phi$-SPE and does not optimize its factor, solve general customer quota
+feasibility, or minimize over every mixed customer equilibrium.
+The proof is independent of earlier computer-assisted four-location work.
+
+\begin{thebibliography}{9}
+\bibitem{krogmann2024}
+Simon Krogmann, Pascal Lenzner, Alexander Skopalik, Marc Uetz, and Marnix C. Vos.
+\newblock Equilibria in Two-Stage Facility Location with Atomic Clients.
+\newblock In \emph{Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)}, pages 2842--2850, 2024.
+\newblock \url{https://www.ijcai.org/proceedings/2024/0315.pdf}.
+\newblock Full version: \url{https://arxiv.org/abs/2403.03114v2}.
+
+\bibitem{vos2023}
+Marnix C. Vos.
+\newblock \emph{Equilibria in the Two-Stage Facility Location Game With Unsplittable Clients}.
+\newblock Master's thesis, Applied Mathematics, University of Twente, July 21, 2023.
+\newblock Chapter 2 (model); Chapter 8, especially Section 8.3 (approximate equilibria).
+\newblock \url{https://essay.utwente.nl/96484/1/Vos_MA_EEMCS.pdf}.
+\bibitem{evendar2007}
+Eyal Even-Dar, Alexander Kesselman, and Yishay Mansour.
+\newblock Convergence Time to Nash Equilibrium in Load Balancing.
+\newblock \emph{ACM Transactions on Algorithms}, 3(3), article 32, 2007.
+\newblock \url{https://doi.org/10.1145/1273340.1273348}.
+\end{thebibliography}
+
+\clearpage
+\appendix
+\section{The cross-chord lemma for arbitrarily many common customers}
+\label{app:cross-chord}
+\subsection*{Statement and normalization}
+
+Let \(q=(\sqrt5-1)/2\), \(a=q^2=1-q\). Consider two locations with reaches \(R\ge r>\phi R/2\). Their common clients have arbitrary finite positive weights \(w_i\), total \(C\), satisfying
+
+\[
+C<qr,\qquad \max_i w_i\le aR.
+\]
+
+Each common client chooses a location independently and minimizes expected total weight at its chosen location, including itself. Exclusive clients are forced. Then a possibly mixed Nash equilibrium exists with
+
+\[
+L_A\ge qr,\qquad L_B\ge qR.
+\]
+
+Here \(A\) is the location with reach \(R\). All probabilities constructed below are individual, independent probabilities; no grouping or correlation of clients is used.
+
+Normalize \(R=1\), write \(r=1-\delta\), so \(0\le\delta<a/2\). Let \(V=2-\delta-C\) be the union weight, and put
+
+\[
+U=V-2q=2a-C-\delta,
+\qquad Z=V-2qr=2a-C+q^3\delta.
+\]
+
+The target interval for the expected load difference \(\Delta=L_A-L_B\) is \([-Z,U]\).
+
+Useful consequences are
+
+\[
+U>q^4-a\delta>q^4/2>0,\quad Z\ge U,\quad Z>3\delta/2,\quad V/2>q.
+\]
+
+For the third inequality, \(Z>q^4+(q+q^3)\delta\), whose difference from \(3\delta/2\) is positive throughout \([0,a/2]\); at the upper endpoint the difference is \(aq^3/4>0\). For the fourth, \(V>1+ar>1+q/2>2q\).
+
+\hypertarget{equilibrium-coordinates-and-three-mixers}{%
+\subsection{Equilibrium coordinates and three mixers}\label{equilibrium-coordinates-and-three-mixers}}
+
+Give common client \(i\) coordinate \(c_i=w_i(2p_i(A)-1)\). Its equilibrium conditions are
+
+\[
+\begin{array}{ll}
+c_i=w_i&\Longrightarrow\Delta\le w_i,\\
+c_i=-w_i&\Longrightarrow\Delta\ge-w_i,\\
+|c_i|<w_i&\Longrightarrow c_i=\Delta.
+\end{array}
+\]
+
+The load identity is \(\Delta=\delta+\sum_i c_i\). If there are \(k\ge2\) mixed clients and pure masses \(P_A,P_B\), this gives
+
+\[
+(k-1)\Delta=-\delta-P_A+P_B.
+\]
+
+Every equilibrium with at least three mixed clients already meets both targets. In the constructions below, a designated mixing probability may equal an endpoint; the same coordinate formulas remain valid by continuity, and such a client may be treated as a designated mixer for the mass inequalities. For \(\Delta=d\ge0\), all mixed weights are at least \(d\), and
+
+\[
+C\ge \delta+(2k-1)d+2P_A\ge\delta+5d.
+\]
+
+Hence \(d\le(C-\delta)/5<U\). Indeed,
+
+\[
+6C+4\delta<6q+(4-6q)\delta<5-2q<10a,
+\]
+
+where the last strict inequality is \(q<5/8\). For \(\Delta=-e\le0\), similarly
+
+\[
+C\ge(2k-1)e-\delta+2P_B\ge5e-\delta,
+\]
+
+so \(e\le(C+\delta)/5<Z\). To verify this last inequality,
+
+\[
+6C+(1-5q^3)\delta<6q+(6-16q)\delta\le6q<10a.
+\]
+
+These numerical mass implications apply even when the equilibrium in question has only two mixers: whenever \(C\ge\delta+5d\) or \(C\ge5e-\delta\), the same conclusion follows.
+
+\hypertarget{largest-client-and-the-maximum-square-construction}{%
+\subsection{Largest client and the maximum-square construction}\label{largest-client-and-the-maximum-square-construction}}
+
+There is nothing to prove if \(C=0\). Otherwise let \(x\) be a largest common weight and let \(S=C-x\).
+
+If \(\delta>S\), hold \(x\) at \(B\) and choose a pure Nash equilibrium of the remaining clients. Such an equilibrium exists by the usual finite improvement potential. Client \(x\) also has no improvement because
+
+\[
+L_B-L_A\le x+S-\delta<x.
+\]
+
+Moreover \(L_B\ge r-S>r-\delta=2r-1>q\). If \(L_A<qr\), then \(L_B-L_A>Z>S\), so every remaining shared client must be at \(A\); this gives \(L_A=1-x\ge1-a=q\ge qr\), a contradiction. This settles \(\delta>S\).
+
+Now assume \(\delta\le S\). On the nonempty compact polytope
+
+\[
+\mathcal P=\{(c_i)_{i\ne x}: -w_i\le c_i\le w_i,\ \sum_{i\ne x}c_i=-\delta\},
+\]
+
+use the polynomial exchange algorithm of Appendix~\ref{app:polynomial-chord} to obtain a vertex at which no feasible two-coordinate endpoint move increases \(\sum_{i\ne x}c_i^2\). A vertex has at most one coordinate strictly between its bounds. If all coordinates are endpoints, assign \(x\) probability \(1/2\); this gives \(\Delta=0\) and is an equilibrium.
+
+Otherwise let the unique interior coordinate have weight \(z\le x\) and value \(d\). Assign \(x\) coordinate \(d\), so \(x\) and \(z\) both mix independently with probability \((1+d/w)/2\). The load identity gives \(\Delta=d\). For a pure \(A\) client of weight \(v\), decreasing its coordinate and increasing the pivot is locally feasible, and pairwise endpoint maximality gives \(d\le v\). For a pure \(B\) client, the opposite perturbation gives \(d\ge-v\). Thus this is a Nash equilibrium.
+
+The same two-coordinate endpoint comparisons give stronger exchange conditions. If \(d>0\), every pure \(A\) client has weight at least \(z\); every pure \(B\) client of weight below \(z\) has weight at most \(d\).
+
+For the first assertion, consider a pure \(A\) client of weight \(v\). If \(2v\ge z-d\), move the pivot to \(z\) and its coordinate from \(v\) to \(v-(z-d)\). The change in the squared objective is
+
+\[
+2(z-d)(z-v),
+\]
+
+so \(v\ge z\). If \(2v<z-d\), flip its coordinate to \(-v\) and increase the pivot to \(d+2v\). The gain \(4v(d+v)>0\) is impossible.
+
+For a pure \(B\) client of weight \(v<z\), if \(2v\ge z+d\), moving the pivot to \(-z\) and its coordinate to \(-v+(z+d)\) gives positive gain \(2(z+d)(z-v)\), impossible. Otherwise flipping it to \(+v\) and moving the pivot to \(d-2v\) has gain \(4v(v-d)\), forcing \(v\le d\).
+
+For negative gap \(-e\), the symmetric statements hold: every pure \(B\) client has weight at least \(z\); pure \(A\) clients below \(z\) have weight at most \(e\).
+
+\hypertarget{a-bad-positive-gap-cannot-persist}{%
+\subsection{A bad positive gap cannot persist}\label{a-bad-positive-gap-cannot-persist}}
+
+Suppose the constructed equilibrium has gap \(d>U\). If a pure \(A\) client exists, its weight is at least \(z\ge d\). With pure masses \(P_A,P_B\), the two-mixer balance gives \(P_B=\delta+P_A+d\), and hence
+
+\[
+C=x+z+2P_A+\delta+d\ge\delta+5d.
+\]
+
+Appendix A.1 rules this out. Therefore all other clients are pure \(B\), with total weight \(\delta+d\).
+
+Call such a client large if its weight is at least \(z\); every other one has weight at most \(d\). If some latter client has weight \(v\in[d/3,d]\), mix it with \(x,z\). The new gap is \((d-v)/2\), which is within all three weights, and every remaining client stays pure \(B\). This is a three-mixer equilibrium and meets the targets. We can therefore assume every nonlarge client has weight below \(d/3\).
+
+There must be a large client. Otherwise order the small weights decreasingly and take the prefix just before its running sum first reaches \(d\). Let its sum be \(T<d\), and let \(v\) be the next weight. Then \(d-T\le v\), and every weight in the prefix is at least \(v\). Mix this prefix together with \(x,z\), keeping all others at \(B\). If the prefix contains \(m\) clients, the new gap is \((d-T)/(m+1)\), feasible for every mixer. Since each small weight is below \(d/3\), the prefix is nonempty; the resulting equilibrium has at least three mixers and meets the targets.
+
+We next show \(d\le\delta\). If at least two large clients exist, \(\delta+d\ge2z\ge2d\). If exactly one exists, call its weight \(y\ge z\) and let the small total be \(T=\delta+d-y\). If \(\delta+T\le2z\), mix \(x,y,z\) and place every small client at \(A\); the gap is \(-(\delta+T)/2\), feasible for all three mixers, and gives the targets. Otherwise
+
+\[
+2\delta+d\ge\delta+T+z>3z\ge3d,
+\]
+
+which gives \(\delta>d\).
+
+Change to the pure profile with \(x\) at \(A\) and all other common clients at \(B\). Since \(C=x+z+\delta+d\), its loads are
+
+\[
+L_A=r-z-d,\qquad L_B=r-x.
+\]
+
+In fact \(L_B\ge q\). Otherwise \(x+\delta>a\), and hence \(C>a+2d\). Together with \(C<qr\) this gives
+
+\[
+d<\frac{q^3-q\delta}{2}.
+\]
+
+But \(d>U>q^4-a\delta\); combining these inequalities forces \(\delta>a\), contrary to \(\delta<a/2\). Also, since \(x\ge z\) and \(\delta\ge d\),
+
+\[
+2(z+d)\le C<qr,
+\qquad L_A>(1-q/2)r>qr.
+\]
+
+Repair this pure profile by successive strict improvements. If its initial gap \(G=x-z-d\) is nonnegative, both loads are at least \(q\), and every improvement leaves both new loads strictly between the previous two loads, so both quotas remain satisfied.
+
+If \(G<0\), its magnitude is at most \(d\). The clients \(x,z\) and all large clients have weights at least \(d\), and cannot improve; only the small clients, each below \(d/3\), can move. Before the first sign reversal \(L_A\) increases and \(L_B\ge V/2>q\). At the first reversal the positive gap is smaller than the moved weight, hence below
+
+\[
+d/3\le\delta/3<a/6<q^4/2<U.
+\]
+
+At this point both loads exceed \(q\), and remain so during all later improvements. The finite potential ensures termination at a pure Nash equilibrium meeting the targets.
+
+\hypertarget{a-bad-negative-gap-cannot-persist}{%
+\subsection{A bad negative gap cannot persist}\label{a-bad-negative-gap-cannot-persist}}
+
+Suppose instead the constructed equilibrium has gap \(-e<-Z\). Every pure \(B\) client has weight at least \(z\ge e\). If any exists, the two-mixer balance \(P_A-P_B=e-\delta\) gives
+
+\[
+C=x+z+2P_B+e-\delta\ge5e-\delta,
+\]
+
+which Appendix A.1 rules out. Thus all remaining clients are at \(A\), with total \(T=e-\delta\le e\). If some has weight \(v\ge e/3\), mix it with \(x,z\), giving gap \(-(e-v)/2\). This is a valid designated-three-client equilibrium and meets the targets. We may therefore assume every remaining weight is below \(e/3\).
+
+Since \(C=x+z+e-\delta\ge2z+e-\delta\) and \(e>Z\),
+
+\[
+2z<C-Z+\delta=2C-2a+2a\delta<2q^3r.
+\]
+
+Consequently \(e\le z<q^3r\). Moreover
+
+\[
+U>q^4-a\delta>q^3r/3>e/3.
+\]
+
+For the middle inequality, multiply by three and use
+
+\[
+3q^4-q^3-(3a-q^3)\delta>
+3q^4-q^3-(3a-q^3)a/2=(5-8q)/2>0.
+\]
+
+Change to the pure profile with \(x\) at \(B\), and every other common client at \(A\). Its loads are
+
+\[
+L_A=1-x\ge1-a=q,\qquad L_B=1-z-e.
+\]
+
+If \(L_B\ge q\), successive pure improvements preserve both lower bounds. Otherwise the gap \(G=z+e-x\) is positive and satisfies
+
+\[
+U<G\le e.
+\]
+
+Clients \(x,z\), having weights at least \(e\), cannot improve. Only the remaining tiny clients can move. While the gap is positive, \(L_A\ge V/2>q\), and \(L_B\) increases. At the first negative sign reversal the new absolute gap is below the weight moved, hence below \(e/3<U\le Z\); both loads then exceed \(q\), and all later improvements are safe.
+
+If the process terminates without reaching \(L_B\ge q\), its positive gap is still larger than \(U>e/3\). No tiny client can remain at \(A\), because every one would have a strict improvement. Thus all tiny clients must be at \(B\), and \(L_B=r-z\). But
+
+\[
+\delta+z<q^3+(1-q^3)\delta
+=q^3+2a\delta<q^3+a^2=a,
+\]
+
+so \(L_B=r-z>q\), a contradiction. The final equilibrium therefore meets both targets.
+
+This proves the lemma for arbitrary finite numbers of shared clients.
+
+\hypertarget{exact-strengthening-without-a-maximum-weight-assumption}{%
+\subsection{Exact strengthening without a maximum-weight assumption}\label{exact-strengthening-without-a-maximum-weight-assumption}}
+
+The argument gives the following stronger characterization. Retain only \(r>\phi/2\) and \(C<qr\), and let \(x\) be a largest common weight. A target equilibrium exists if and only if
+
+\[
+C-x\ge1-r\quad\hbox{or}\quad x\le1-qr.
+\]
+
+For \(C=0\), existence is immediate. Otherwise the outer argument in Appendix A.2 needs only \(x\le1-qr\), because its contradiction is \(L_A=1-x\ge qr\). When the maximum-square polytope is nonempty, the weight bound is unnecessary. Appendices A.1 and A.3 never use it. In Appendix A.4 a bad negative gap itself implies \(x<1-qr\): if \(x\ge1-qr\), then
+
+\[
+C=x+z+e-\delta\ge ar+2e,
+\]
+
+so \(e<q^3r/2\le q^3/2<q^4<Z\), a contradiction. Thus the modified pure profile still has \(L_A=1-x>qr\). If its gap is nonpositive, that profile is already a pure equilibrium: the only common client at the high-load location \(B\) is \(x\), and its load advantage from moving is smaller than \(x\), since \(L_B-L_A=x-z-e<x\). If the gap is positive and \(L_B\ge q\), both loads exceed \(q\), so repair is safe. If \(L_B<q\), the repair from Appendix A.4 applies unchanged.
+
+Conversely, suppose \(S=C-x<\delta\) and \(x>1-qr\). Client \(x\) strictly prefers \(B\) for every profile of the other clients: its smallest possible cost at \(A\) is \(1-S>r\), while its largest possible cost at \(B\) is \(r\). Once \(x\) is at \(B\), every other shared client strictly prefers \(A\): its cost at \(A\) is at most \(1-x<qr\le q\), while its cost at \(B\) is greater than \(r-S>2r-1>q\). Therefore the unique equilibrium is pure, with
+
+\[
+(L_A,L_B)=(1-x,r-S),
+\]
+
+and it fails the first target. This proves the exact characterization. In unnormalized units, its two conditions are \(C-x\ge R-r\) or \(x\le R-qr\).
+
+This refinement is not needed for the preceding \(x\le aR\) theorem.
+
+\subsection*{Pure-repair fact used above}
+
+If a shared client of weight \(w\) strictly improves by leaving a facility of load \(H\) for one of load \(L<H\), then \(w<H-L\). The new loads \(H-w,L+w\) both lie strictly between \(L,H\). The absolute load gap strictly decreases; if its sign reverses, the new absolute gap is less than \(w\). The potential \(L_A^2+L_B^2\) strictly decreases, so any sequence of strict pure improvements terminates in this finite game. All constructions and repairs above therefore use ordinary independent mixed equilibria or pure equilibria.
+
+\clearpage
+\section{A polynomial constructor for the strong chord}
+\label{app:polynomial-chord}
+
+This appendix supplies the algorithmic step used in menu C. The objective
+is to obtain the exchange inequalities used in Appendix~A.2. Computing a
+global maximum of a convex quadratic function is unnecessary.
+
+\subsection{An exchange algorithm on a box slice}
+Let $v_1,\ldots,v_m>0$, let $|t|\le\sum_i v_i$, and define
+\[
+ P=\{z\in\mathbb R^m:-v_i\le z_i\le v_i,\ \sum_i z_i=t\},
+ \qquad F(z)=\sum_i z_i^2.
+\]
+A vertex has at most one coordinate strictly between its two bounds. To
+obtain an initial vertex, begin at $z_i=-v_i$ and increase coordinates in
+index order until their total increase is $t+\sum_i v_i$. All but possibly
+one coordinate end at a bound. If all coordinates are at bounds, stop.
+Otherwise let $j$ be the unique interior coordinate, write $v_j=z$ and
+$z_j=d$, and call $j$ the pivot.
+
+For each $i\ne j$ write $z_i=sv$, where $s\in\{-1,1\}$ and $v=v_i$.
+Holding the sum $b=d+sv$ fixed, the feasible pair segment is
+\[
+ z_j=u,\qquad z_i=b-u,\qquad
+ u\in[\max(-z,b-v),\ \min(z,b+v)].
+\]
+The current $d$ is one endpoint. Inspect the other endpoint. If it strictly
+increases the two squares, move there and restart the scan in index order.
+If no pair endpoint strictly improves, return the current vertex. At each
+move at least one of the two changed coordinates is at a bound; all other
+coordinates were already at bounds. Thus feasibility and the vertex
+invariant are preserved.
+
+\begin{theorem}[Box-slice exchange bound]\label{thm:exchange}
+This algorithm terminates after $O((m+1)^3)$ moves and
+$O((m+1)^4)$ rational arithmetic operations. Its output is a vertex at
+which no two-coordinate endpoint move increases $F$.
+\end{theorem}
+\begin{proof}
+If a nonterminal move changes the pivot from weight $z$ to weight $v$,
+the old pivot reaches the bound $sz$. The gain is
+\[
+ 2(z-sd)(z-v).
+\]
+Since $|d|<z$, a strict gain implies $v<z$. Every pivot change strictly
+decreases its weight, so there are at most $m-1$ changes.
+
+If the pivot does not change, coordinate $i$ flips from $sv$ to $-sv$,
+$d'=d+2sv$, and $|d'|>|d|$. Fix a maximal phase with one pivot.
+When such a flip reverses the nonzero sign of $d$, it requires $v>|d|$
+and leaves $|d'|=2v-|d|>v$. The weights of successive sign-reversing
+flips therefore strictly increase. There are at most $m-1$ reversals in
+one phase. Between reversals every nonpivot coordinate flips at most
+once: a nonreversing improving flip must have $s$ aligned with the sign
+of $d$, and afterwards that coordinate is opposed to that sign. A first
+flip from $d=0$ merely establishes a sign; a strict gain never returns
+to zero. Thus each phase contains $O((m+1)^2)$ flips.
+There are at most $m$ phases and at most one final all-bound move.
+Scanning at most $m-1$ pairs for each move proves the claimed operation
+bound. The estimate is independent of weight magnitudes and separations.
+\end{proof}
+
+\subsection{The exact inequalities supplied by the output}
+Suppose the returned vertex still has pivot weight $z$ and value $d$.
+On each pair segment, $F$ is convex. Since the opposite endpoint has no
+larger value, no interior point has larger value either. Its directional
+derivative at the current endpoint therefore gives
+\[
+ z_i=+v\Rightarrow d\le v,\qquad
+ z_i=-v\Rightarrow d\ge-v.                         \tag{B.1}
+\]
+For $d>0$ the endpoint comparisons also imply
+\[
+ z_i=+v\Rightarrow v\ge z,\qquad
+ z_i=-v,\ v<z\Rightarrow v\le d.                  \tag{B.2}
+\]
+Indeed, for a positive coordinate, if $2v\ge z-d$, moving the pivot to
+$z$ has gain $2(z-d)(z-v)$; otherwise flipping the coordinate has gain
+$4v(d+v)>0$. Either alternative excludes $v<z$. For a negative coordinate
+with $v<z$, if $2v\ge z+d$, moving the pivot to $-z$ has the forbidden
+positive gain $2(z+d)(z-v)$. Otherwise its full flip has gain
+$4v(v-d)$, forcing $v\le d$. For $d<0$ the signs reverse: pure negative
+coordinates have weight at least $z$, and pure positive coordinates
+below $z$ have weight at most $-d$.
+
+These are exactly the local derivative and four endpoint comparisons in
+Appendix~A.2. That appendix proves the initial customer equilibrium using
+(B.1). Its positive-gap branch uses the two statements of (B.2); its
+negative-gap branch uses their sign reversal. The later mass inequalities,
+explicit mixer choices and pure repairs never compare quadratic objectives
+again. Thus every remaining argument in Appendix~A is valid for this
+polynomially obtained vertex.
+
+The output need not maximize $F$ globally. For weights $(14,13,19)$ and
+target $-10$, the vertex $(14,-5,-19)$ has no improving pair endpoint,
+but its value $582$ is below the value $654$ at $(-14,-13,17)$.
+This distinction is why only the required exchange inequalities are claimed.
+
+\subsection{Completing and timing the strong-chord construction}
+Normalize the larger reach to one, put $\delta=1-r$, choose a largest
+common weight $x$, and write $S$ for all other common weight. If
+$S\ge\delta$, apply Theorem~\ref{thm:exchange} to the other coordinates
+with target $-\delta$. If its output is all-bound, give $x$ coordinate
+zero. Otherwise give $x$ the pivot coordinate $d$. The coordinate of
+customer $i$ is $c_i=w_i(2p_i(A)-1)$, and the gap identity is
+$\Delta=\delta+\sum_i c_i$. Therefore the resulting initial profile is
+exactly the equilibrium of Appendix~A.2, with one or two designated
+mixers. If it meets the two quotas, return it.
+
+If a quota fails, follow the finite case choices in Appendices~A.3--A.4:
+select the prescribed third mixer, a decreasing-weight prefix of mixers,
+or the stated pure seed. Each selection is a scan or a sort. In a pure
+branch, use a largest-weight strictly improving customer at each step.
+The quota-preservation arguments in Appendix~A apply to this choice.
+If $S<\delta$, fix $x$ at the lower-reach location and perform the same
+largest-improvement rule on the other customers, as in Appendix~A.2.
+The fixed customer's stability is proved there and is preserved throughout.
+
+For completeness, this pure improvement rule moves at most $k$ customers
+in a two-facility game with $k$ movable common customers, even with private
+base loads. An improving weight $w$ changes absolute gap $g$ to
+$|g-2w|<g$. Before a sign reversal, candidates on the higher side can only
+disappear, so chosen weights are nonincreasing. At a reversal the new gap
+is below the last moved weight; every earlier moved customer is therefore
+permanently stable, as all future gaps are smaller. Any newly movable
+customer has weight below the new gap, hence below the preceding chosen
+weight. Inductively no customer moves twice. A direct scan for each move
+costs $O((k+1)^2)$ rational operations. Fixed customers are simply absorbed
+into the private base loads in this argument.
+
+The exchange algorithm consequently dominates the running time:
+$O((k+1)^4)$ rational operations per strong chord. Every exchange coordinate
+is an endpoint or the slice target minus a signed sum of input weights.
+Subsequent mixed gaps divide signed sums by integers at most $k$, and
+probabilities divide by the corresponding input weight. The encoding
+lengths remain polynomial. The exact golden-ratio comparisons described
+in Section~\ref{sec:algorithm} avoid numerical tolerances.
+
+The elementary two-facility improvement analysis above is also consistent
+with the maximum-weight improvement rule studied for load balancing by
+Even-Dar, Kesselman, and Mansour~\cite{evendar2007}. The box-slice exchange
+bound is supplied in full here; no efficient global convex-maximization
+claim is used.
+
+\end{document}
