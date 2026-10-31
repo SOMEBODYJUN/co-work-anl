@@ -1,0 +1,191 @@
+[
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_direct_send_and_async_reply_without_registration",
+    "start_line": 113,
+    "end_line": 126,
+    "actual_assertion_scope": "无注册异步发送/回复，四事件与thread/limit筛选；回复链接保持父身份。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_same_topic_concurrent_independent_clones_both_succeed",
+    "start_line": 128,
+    "end_line": 135,
+    "actual_assertion_scope": "两个独立clone同步首次push，同题两不同ID都成功且seq为1/2。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_same_message_race_and_cross_clone_replay_are_idempotent",
+    "start_line": 137,
+    "end_line": 147,
+    "actual_assertion_scope": "同intent并发和跨clone重放只一事件；同ID改正文Conflict。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_lost_success_response_recovers_without_duplicate",
+    "start_line": 149,
+    "end_line": 166,
+    "actual_assertion_scope": "实际本地push后注入丢响应，恢复同ID、无重复、清pending。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_failed_network_keeps_local_intent_and_retry_cli",
+    "start_line": 168,
+    "end_line": 180,
+    "actual_assertion_scope": "load注入Offline保原intent/ID；其他消息独立；CLI retry及重放相同。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_local_discard_changes_no_remote_message",
+    "start_line": 182,
+    "end_line": 190,
+    "actual_assertion_scope": "失败pending可本地discard，不改变远端事件。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_remote_receipt_recovers_after_asset_branch_disappears",
+    "start_line": 192,
+    "end_line": 211,
+    "actual_assertion_scope": "真实本地push后丢响应，再删work资产分支；同ID远端回执仍恢复一条。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_frozen_asset_hash_commit_path_and_regular_file",
+    "start_line": 213,
+    "end_line": 221,
+    "actual_assertion_scope": "真实asset核可达/hash；错hash/提交、越界/目录/符号链接/非法类型/path点拒绝。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_asset_network_failure_does_not_block_other_messages",
+    "start_line": 223,
+    "end_line": 231,
+    "actual_assertion_scope": "asset检查注入Offline，只阻该intent，其余消息和后续恢复可行。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_dirty_checkout_fetch_head_and_staged_index_are_preserved",
+    "start_line": 233,
+    "end_line": 248,
+    "actual_assertion_scope": "dirty文件、staged index、HEAD/FETCH_HEAD字节保持，含注入Git路由变量。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_cli_text_file_stable_id_and_json_export",
+    "start_line": 250,
+    "end_line": 261,
+    "actual_assertion_scope": "两行Unicode文本精确保留、固定ID幂等/JSON导出；互斥text参数及负limit拒绝。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_invalid_fields_and_secret_fail_before_network_or_disk",
+    "start_line": 263,
+    "end_line": 277,
+    "actual_assertion_scope": "坏actor/text/thread/reply形状/secret样式/asset/kind/字段在load或pending前失败，retries0/bool/51拒绝。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_unknown_reply_is_rejected_without_retry",
+    "start_line": 279,
+    "end_line": 283,
+    "actual_assertion_scope": "合法形状但未知父ID拒绝、不重试、无事件。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_outbox_disappearing_during_confirmation_is_normal",
+    "start_line": 285,
+    "end_line": 304,
+    "actual_assertion_scope": "已发表同intent的pending读瞬间消失，恢复依然幂等。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_migration_deletes_inspected_noncurrent_files_by_fast_forward",
+    "start_line": 306,
+    "end_line": 316,
+    "actual_assertion_scope": "schema1含不可解析旧记录需显式迁移；后继commit父为旧head、旧文件删除、schema3空。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_migration_fences_new_noncurrent_changes",
+    "start_line": 318,
+    "end_line": 327,
+    "actual_assertion_scope": "检查后旧schema又变，旧expected_head触发Conflict，不覆盖新head。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_migration_retains_current_messages_and_is_idempotent",
+    "start_line": 329,
+    "end_line": 336,
+    "actual_assertion_scope": "已current时即使expected为较旧head，也保已有消息并already-current，含CLI。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_migration_lost_response_confirms_remote",
+    "start_line": 338,
+    "end_line": 350,
+    "actual_assertion_scope": "迁移本地实际push后丢响应，再读确认schema3空。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_concurrent_migration_and_new_chat_message_are_preserved",
+    "start_line": 352,
+    "end_line": 374,
+    "actual_assertion_scope": "并发另一迁移并立即加消息，原迁移无force且读回保消息。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_metadata_requires_integer_current_schema",
+    "start_line": 376,
+    "end_line": 380,
+    "actual_assertion_scope": "schema精确int；float/bool/额外字段/list/None拒绝。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_initialize_current_board_does_not_clear_messages",
+    "start_line": 382,
+    "end_line": 385,
+    "actual_assertion_scope": "已有schema3初始化返回already initialized且原消息保留。"
+  },
+  {
+    "source_id": "207fa0dc8920b57c0653",
+    "test": "test_transition_failure_preserves_input_and_case_sensitive_symbols",
+    "start_line": 387,
+    "end_line": 397,
+    "actual_assertion_scope": "坏seq/schema/time及bool不改原state；W ≠ w大小写原样保留，不是数学证明。"
+  },
+  {
+    "source_id": "35511e58709fa3bd7815",
+    "test": "test_explicit_then_remembered_file_and_dirty_work",
+    "start_line": 45,
+    "end_line": 66,
+    "actual_assertion_scope": "合成外部token文件含空格，记路径后复用；不泄漏内容/写入config，dirty文件和HEAD保留；手动ASKPASS只回合成字符串。"
+  },
+  {
+    "source_id": "35511e58709fa3bd7815",
+    "test": "test_repo_argument_from_outside_and_native_auth",
+    "start_line": 68,
+    "end_line": 72,
+    "actual_assertion_scope": "从repo外显式--repo可用；无token选项时不写wcg.tokenFile。本地文件远端不要求真实认证。"
+  },
+  {
+    "source_id": "35511e58709fa3bd7815",
+    "test": "test_inside_missing_or_invalid_credentials_fail_before_send",
+    "start_line": 74,
+    "end_line": 85,
+    "actual_assertion_scope": "仓库内文件、缺文件或不匹配字符串返回2，未发送/未记路径。"
+  },
+  {
+    "source_id": "35511e58709fa3bd7815",
+    "test": "test_stale_remembered_file_is_an_explicit_failure",
+    "start_line": 87,
+    "end_line": 92,
+    "actual_assertion_scope": "已记路径被删，view明确失败，不静默换凭据。"
+  },
+  {
+    "source_id": "35511e58709fa3bd7815",
+    "test": "test_help_and_board_error_exit_codes_are_preserved",
+    "start_line": 94,
+    "end_line": 100,
+    "actual_assertion_scope": "仓库外help为0且含say；空正文发送为2且无事件。"
+  }
+]

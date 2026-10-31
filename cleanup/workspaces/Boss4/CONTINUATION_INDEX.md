@@ -146,3 +146,7 @@ R3_READY24Q：24源：平稳根重置4、保护环全任务及真实空式修订
 R3_READY24Q数学/证据pushed 0bd1ef6d16fa8e1c70cdfce1753b7745fed4c442；24源done另推送 15bb2fb613b20a3e09ba77dc40e09c10debdeeeb。Boss4累计1150完成，实际未完47；持续接续全仓，不以本批清空收尾。
 
 R3_READY67Y：67源完整实质清洗：命名钱包/固定鞍点/保护根/CLAIMS与协议/全配对及row审计/中继priority/插入删除/治理历史/异权文字池/配置组合审查/角色别名/incoming双版/紧凑矩阵/平稳弱封顶；并纠正旧GB符号及引用，保旧源与全部运行范围。仍持续六线；共67主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY67Y_REMAINING_SCOPE.json。
+
+R3_READY67Y数学/证据pushed 00d7b719be971fc956d35addad78a391694896d4；67源done另推送 78e380031530e0e39da36b463ad49396883923c9。Boss4累计1217完成，实际未完37；持续接续全仓，不以本批清空收尾。
+
+R3_READY14Z：背景删除定义级原入口/65例精确同字节与终局税搜索边界4；board双版全状态机/54原测试+18新例5；dual/XOS/arity/SA/sink完整版本审查5。持续六条完整清洗线，未终止；共14主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY14Z_REMAINING_SCOPE.json。
