@@ -1,0 +1,72 @@
+{
+  "scope": "3 synthetic CSS fixtures using two exact retained WOFF2 payloads; historical regex mechanism and bounded replacement proposal; no full builder, KaTeX, PDF, browser, or math test",
+  "results": [
+    {
+      "name": "src-last-without-semicolon",
+      "input": "@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(fonts/a.woff2) format(\"woff2\")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(fonts/b.woff2) format(\"woff2\")}.katex{font:normal 1.21em KaTeX_Main,serif;line-height:1.2;text-indent:0;text-rendering:auto}",
+      "historical": {
+        "face_count": 1,
+        "families": [
+          "KaTeX_AMS"
+        ],
+        "base_font_rule": false,
+        "stylesheet": "@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(EMBEDDED_WOFF2_BYTES_37459) format(\"woff2\");font-style:normal;font-weight:700;src:url(EMBEDDED_WOFF2_BYTES_9239) format(\"woff2\");line-height:1.2;text-indent:0;text-rendering:auto}"
+      },
+      "bounded_proposal": {
+        "face_count": 2,
+        "families": [
+          "KaTeX_AMS",
+          "KaTeX_Caligraphic"
+        ],
+        "base_font_rule": true,
+        "stylesheet": "@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(EMBEDDED_WOFF2_BYTES_37459) format(\"woff2\");}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(EMBEDDED_WOFF2_BYTES_9239) format(\"woff2\");}.katex{font:normal 1.21em KaTeX_Main,serif;line-height:1.2;text-indent:0;text-rendering:auto}"
+      }
+    },
+    {
+      "name": "src-last-with-semicolon",
+      "input": "@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(fonts/a.woff2) format(\"woff2\");}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(fonts/b.woff2) format(\"woff2\");}.katex{font:normal 1.21em KaTeX_Main,serif;line-height:1.2}",
+      "historical": {
+        "face_count": 2,
+        "families": [
+          "KaTeX_AMS",
+          "KaTeX_Caligraphic"
+        ],
+        "base_font_rule": true,
+        "stylesheet": "@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(EMBEDDED_WOFF2_BYTES_37459) format(\"woff2\");}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(EMBEDDED_WOFF2_BYTES_9239) format(\"woff2\");}.katex{font:normal 1.21em KaTeX_Main,serif;line-height:1.2}"
+      },
+      "bounded_proposal": {
+        "face_count": 2,
+        "families": [
+          "KaTeX_AMS",
+          "KaTeX_Caligraphic"
+        ],
+        "base_font_rule": true,
+        "stylesheet": "@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(EMBEDDED_WOFF2_BYTES_37459) format(\"woff2\");}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(EMBEDDED_WOFF2_BYTES_9239) format(\"woff2\");}.katex{font:normal 1.21em KaTeX_Main,serif;line-height:1.2}"
+      }
+    },
+    {
+      "name": "src-before-other-descriptor",
+      "input": "@font-face{font-family:KaTeX_AMS;src:url(fonts/a.woff2) format(\"woff2\");font-style:normal;font-weight:400}@font-face{font-family:KaTeX_Caligraphic;src:url(fonts/b.woff2) format(\"woff2\");font-style:normal;font-weight:700}.katex{font:normal 1.21em KaTeX_Main,serif;line-height:1.2}",
+      "historical": {
+        "face_count": 2,
+        "families": [
+          "KaTeX_AMS",
+          "KaTeX_Caligraphic"
+        ],
+        "base_font_rule": true,
+        "stylesheet": "@font-face{font-family:KaTeX_AMS;src:url(EMBEDDED_WOFF2_BYTES_37459) format(\"woff2\");font-style:normal;font-weight:400}@font-face{font-family:KaTeX_Caligraphic;src:url(EMBEDDED_WOFF2_BYTES_9239) format(\"woff2\");font-style:normal;font-weight:700}.katex{font:normal 1.21em KaTeX_Main,serif;line-height:1.2}"
+      },
+      "bounded_proposal": {
+        "face_count": 2,
+        "families": [
+          "KaTeX_AMS",
+          "KaTeX_Caligraphic"
+        ],
+        "base_font_rule": true,
+        "stylesheet": "@font-face{font-family:KaTeX_AMS;src:url(EMBEDDED_WOFF2_BYTES_37459) format(\"woff2\");font-style:normal;font-weight:400}@font-face{font-family:KaTeX_Caligraphic;src:url(EMBEDDED_WOFF2_BYTES_9239) format(\"woff2\");font-style:normal;font-weight:700}.katex{font:normal 1.21em KaTeX_Main,serif;line-height:1.2}"
+      }
+    }
+  ],
+  "proposal_applied_to_frozen_source": false,
+  "proposal_full_distribution_validated": false
+}

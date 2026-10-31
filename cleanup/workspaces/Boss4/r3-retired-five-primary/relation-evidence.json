@@ -1,0 +1,97 @@
+{
+  "stage": "phase-two reasoned relation evidence; no graph mutation",
+  "relations": [
+    {
+      "kind": "generalizes",
+      "participants": [
+        "C01-v2.1 sufficient direction",
+        "C01-v3.1"
+      ],
+      "common_conditions": "nonnegative packing A, at most two nonzero column rays, all nonnegative b,w; same activation value",
+      "reason": "complementary splitting of original duals preserves b-cost sum in any d; no high-dimensional necessary direction",
+      "evidence": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+      "gap": "fixed-b classification and assignment consequence not supplied"
+    },
+    {
+      "kind": "refutes-method",
+      "participants": [
+        "five-vertex EF instance",
+        "internal unit-bundle equal splitting"
+      ],
+      "common_conditions": "endpoint additive multigraph; single heavy edge 87 and three bundles of 100",
+      "reason": "equal splitting forces a≤75 and a≥87; full instance has explicit EF",
+      "evidence": "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md",
+      "gap": "does not refute multigraph FPT"
+    },
+    {
+      "kind": "derives",
+      "participants": [
+        "fixed residual EF inequalities",
+        "unit-support forest",
+        "upper threshold recurrence"
+      ],
+      "common_conditions": "integer nonnegative s,h,m, all residual unit bundles complete, forest of variable pairs",
+      "reason": "taking all child maxima simultaneously dominates parent comparisons, giving necessary and sufficient upward interval",
+      "evidence": "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md",
+      "gap": "general cyclic residual not solved"
+    },
+    {
+      "kind": "derives",
+      "participants": [
+        "simple endpoint graph",
+        "heavy three-state branch",
+        "anchored completion/unanchored tree argument",
+        "quota flow"
+      ],
+      "common_conditions": "simple loopless, integer nonnegative endpoint values, nonnegative deletion costs",
+      "reason": "all nonmandatory unit edges can be kept, remaining quotas characterize branch feasibility, min over branches gives optimum",
+      "evidence": "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md",
+      "gap": "parallel visibility destroys completion bound"
+    },
+    {
+      "kind": "derives",
+      "participants": [
+        "active polyhedral superdifferential",
+        "shared-maximizer condition",
+        "active-cell rational LP enumeration"
+      ],
+      "common_conditions": "explicit nonnegative rational min-of-linear utility, all D/equal-budget clones/external environments/every NE",
+      "reason": "individual supergradients suffice separately; merged row needs common one; average cell witnesses eliminate support enumeration",
+      "evidence": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+      "gap": "general utilities and tight complexity not supplied"
+    },
+    {
+      "kind": "equivalence",
+      "participants": [
+        "common-shape separable concave utility NE",
+        "log-marginal concave-program maximizers"
+      ],
+      "common_conditions": "all v>0; common C² f with f′>0,f″<0; positive budgets on product simplex",
+      "reason": "strictly increasing log preserves each row marginal argmax; common G makes joint KKT globally sufficient; strict aggregate concavity gives unique total",
+      "evidence": "archives/budget-games/state/等价/共同形状可分凹偏好的对数边际规划--等价.md",
+      "gap": "no exact numerical/bit-polynomial algorithm without f representation"
+    },
+    {
+      "kind": "conditional-application",
+      "participants": [
+        "GA-03-L1",
+        "GA-03-L2",
+        "GA-03-L3",
+        "profile extraction/type count/global enumeration"
+      ],
+      "common_conditions": "same valid global labels, long all-expensive critical and ≤K, short≤2, disjoint pools and hard capacity witnesses",
+      "reason": "modules recover a successful round only if it actually contains every imported profile and count witness; final error algebra is 16ζ",
+      "evidence": [
+        "archives/bottleneck-knapsack/state/引理/联合类型交换与允许弃置的背包恢复--引理.md",
+        "archives/bottleneck-knapsack/state/候选/双容量瓶颈背包的profile标签与完整枚举--候选.md"
+      ],
+      "gap": "mother profile import, zero-scale labels, bounded type count/global coverage and full implementation remain candidate obligations"
+    }
+  ],
+  "excluded_cross_model_inferences": [
+    "LP submodularity does not itself give BMKP algorithm",
+    "smooth separable planning is not min-of-linear cloning or Fisher transfer",
+    "forest residual algorithm is not general multigraph FPT",
+    "conditional BMKP module assembly is not a certified total algorithm"
+  ]
+}

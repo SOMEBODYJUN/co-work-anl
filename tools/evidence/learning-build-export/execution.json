@@ -1,0 +1,146 @@
+{
+  "scope": "source cleanup and new limited export structure/font mechanism inspection; no mathematical suite or historical renderer replay",
+  "frozen_sources": [
+    {
+      "id": "46a456ea826f0d4a89cd",
+      "path": "learning/build_reading.mjs",
+      "sha256": "04310e5f9acff738ac00d412bd500dbccf21026a01b593a73d5d316c880d5238",
+      "size": 12344,
+      "blob": "f6cdb6ce607b0dbc9613bce8471a435e5a09409f"
+    },
+    {
+      "id": "f2cf9d77380127160c13",
+      "path": "learning/render_reading.py",
+      "sha256": "8534aaa2392b3604793b807d8560cef9609b4b15150de842fd87e0bb8cbfecaa",
+      "size": 5462,
+      "blob": "23552bfa864ccf53163b90421d46ef0843d81ae1"
+    },
+    {
+      "id": "b2999e99fc885315cfd0",
+      "path": "learning/manifest.json",
+      "sha256": "0d775a3d0d22823d2962d95adfebdaf2589e6b20d8601759ef65899080e41e72",
+      "size": 12962,
+      "blob": "60e2498336aaf87a6f31be800f10988e67b19458"
+    },
+    {
+      "id": "685f7d91caba52dfe1b6",
+      "path": "learning/export/学习和演讲-学习定稿.html.audit.json",
+      "sha256": "60fe6db5ebc7d32cf479ebab63540f9b904d765d3ade93c27fbe70a1c789dffa",
+      "size": 6837,
+      "blob": "30cd056fc403a4cee80a62e8cfdde2ee7a636f70"
+    },
+    {
+      "id": "18523bd020b3c5ce17d8",
+      "path": "learning/export/学习和演讲-学习定稿.html",
+      "sha256": "1077ce9ee86601a3f31f5c7893a57563793e9ecc73e116d2593a90c90a1286aa",
+      "size": 13947168,
+      "blob": "8fa80bfe65b13594f119fc1f5a07cc8838340ddc"
+    }
+  ],
+  "new_runs": [
+    {
+      "command": "node tools/evidence/learning-build-export/render_structure.mjs",
+      "status": "success",
+      "meaning": "33 frozen Markdown inputs rendered as marked syntax and normalized TeX tokens only; no KaTeX"
+    },
+    {
+      "command": "python3 tools/evidence/learning-build-export/inspect_export.py",
+      "attempts": [
+        {
+          "status": "failed",
+          "reason": "initial audit incorrectly expected 20 font-face rules; actual CSS has only one rule with20 src descriptors"
+        },
+        {
+          "status": "failed",
+          "reason": "after allowing whitespace, actual single merged font-face persisted; source defect identified rather than suppressed"
+        },
+        {
+          "status": "success",
+          "checks": 10051,
+          "meaning": "all source/semantic preservation checks plus explicit detection of malformed font-face; not a font-quality PASS"
+        }
+      ]
+    },
+    {
+      "command": "fc-scan --format family/style/fontversion assets/font-00..19.woff2",
+      "status": "success",
+      "meaning": "all20 byte payloads identify internal font families/styles; not actual browser display"
+    },
+    {
+      "command": "python3 tools/evidence/learning-build-export/font_face_audit.py",
+      "status": "success",
+      "meaning": "complete actual rule descriptor parser,1family20style20weight20src plus3displaced base declarations"
+    },
+    {
+      "command": "node tools/evidence/learning-build-export/font_rewrite_fixture.mjs",
+      "status": "success",
+      "synthetic_fixture_count": 3,
+      "meaning": "actual historical regex collapses missing-semicolon fixture; bounded proposal passes three fixtures; no frozen edit or full distro rebuild"
+    }
+  ],
+  "not_run": [
+    "historical build_reading.mjs",
+    "historical render_reading.py",
+    "historical check_reading.py",
+    "KaTeX full rerender",
+    "WeasyPrint PDF build",
+    "browser interaction/layout",
+    "all previous successful mathematical suites or witness recomputations"
+  ],
+  "dependency_inspection": {
+    "node": {
+      "node": "v24.22.1",
+      "marked": {
+        "resolved": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/marked/lib/marked.esm.js",
+        "version": "17.0.5"
+      },
+      "katex": {
+        "available": false,
+        "error": "MODULE_NOT_FOUND"
+      },
+      "playwright": {
+        "resolved": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+        "version": "1.62.1"
+      },
+      "chromium": {
+        "path": "/root/.cache/ms-playwright/chromium-1234/chrome-linux64/chrome",
+        "exists": false
+      }
+    },
+    "default_python": {
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "modules": {
+        "weasyprint": false,
+        "lxml": true,
+        "fontTools": true,
+        "brotli": false,
+        "PIL": true,
+        "fitz": true
+      }
+    },
+    "primary_python": {
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "modules": {
+        "weasyprint": false,
+        "lxml": true,
+        "fontTools": true,
+        "brotli": false,
+        "PIL": true,
+        "fitz": true
+      }
+    },
+    "cjk_match": "DejaVuSans.ttf: \"DejaVu Sans\" \"Book\""
+  },
+  "dependency_install_attempted": false,
+  "actual_rendering_status": "not performed; missing WeasyPrint, KaTeX distribution JS/CSS/TTF and CJK font, missing Chromium executable",
+  "font_finding_status": "actual final HTML malformed font-face confirmed statically, actual pixels not tested",
+  "new_proposal_applied_to_frozen_source": false,
+  "old_runs_reused_without_replay": "prior exact-nonlinear narrow runs and 20261010 historic report kept at their recorded scope; same-SHA prior full reads reused explicitly",
+  "delivery_self_check": {
+    "status": "success after classifying2 TeX regex false positives",
+    "checks": 34,
+    "all_pass": true,
+    "not_a_math_or_visual_certificate": true
+  }
+}
