@@ -255,3 +255,7 @@ R3_READY32FW：32源完整实读比较：FN4/FP5/FS5/FT3/FL5/FR5/FK5。真客户
 R3_READY32FW数学/证据pushed 1a48a3bee99cec3d7577c808621e9e5d590b33fe；32源done另推送 c4c0ec2a0a2b535969483313a88fb4530fe2bceb。Boss4累计1809完成，实际未完0；持续接续全仓，不以本批清空收尾。
 
 R3_READY20GD：FO3/FU4/FV5/FX3/FY5共20来源：三势/正矩原稿证据层次、两覆盖凸合源代数纠错、指定菜单真实退出保险、27客户离轨回复版本、真实尾切流/驻留与状态floors；Root修旧theta驻留差值证明并保稳定ID。正文证据明确pushed后逐源done，继续全仓。；共20主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY20GD_REMAINING_SCOPE.json。
+
+R3_READY20GD数学/证据pushed 8a18842b5e261895a629fb391a596986b93bde64；20源done另推送 8379346243b26638c29d0ebe5f51b01ef3d599da。Boss4累计1829完成，实际未完11；持续接续全仓，不以本批清空收尾。
+
+R3_READY9GH：GC4/GA5九源：无拥挤五客户/任意k真SPE族、t>2多围堵目标所有排列的末位失败；遗漏客户删除全参数126终局/211仿射线/129代表完整证书与同步重入一般归约。原/新/未读证据分层，Root完整读一般证明和全部边界；明确checkpoint pushed再9来源done，立即继续全仓。；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY9GH_REMAINING_SCOPE.json。
