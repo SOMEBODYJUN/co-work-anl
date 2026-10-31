@@ -1,0 +1,60 @@
+{
+  "batch": "R2f6-branch-budget-floor-20261031",
+  "scope": "finite branch-budget LP proposals and independent background plateau replay",
+  "sources": [
+    {
+      "id": "4d79ef69babc38ee7904",
+      "path": "research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/branch_budget/check_individual_coverage_floor.py",
+      "bytes": 4725,
+      "sha256": "9888c1b7f22e349680fac7274da3976560861029f05fb9c7114831fe55956ded",
+      "disposition": "integrated"
+    },
+    {
+      "id": "37291033d6f0510c37ee",
+      "path": "research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/branch_budget/individual_coverage_floor_test.json",
+      "bytes": 1217,
+      "sha256": "d9eb4520ec98feb3b14e86f20175107950f1c8c3d553472110504ca92b4a6336",
+      "disposition": "integrated"
+    },
+    {
+      "id": "80df6b7525e1720cf730",
+      "path": "research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/potential/audit_background_plateau.py",
+      "bytes": 5086,
+      "sha256": "5e5fce759be6f0cb34e1fdc21b02f78621074060374041bbcb51d98ffe83bcf5",
+      "disposition": "integrated"
+    },
+    {
+      "id": "3283e346a685497dd57a",
+      "path": "research/workspaces/customer-attraction/R-2f6cae284faf43fea7a09c0a4fe7c679/potential/background_plateau_independent_audit.json",
+      "bytes": 133813,
+      "sha256": "241b437bbae28f8a6c1f7be31f4acbae70d1c74ad31f5622845bc0ee5461bb33",
+      "disposition": "integrated"
+    }
+  ],
+  "replay": {
+    "coverage_floor": {
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "source_json_byte_identical": true,
+      "rows": 5
+    },
+    "background_plateau": {
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "source_json_byte_identical": true,
+      "B_values": [
+        3,
+        4,
+        10
+      ],
+      "histories_each": 1464,
+      "comparisons_each": 16104
+    },
+    "verifier": "replay/verification.stdout.txt"
+  },
+  "limitations": [
+    "coverage floor is floating LP proposal output; tiny negative values are numerical zero and no rational negative certificate was generated",
+    "plateau audit runs B=3,4,10 only and relies on companion all-B proof for general B",
+    "background may be an off-path legal prefix; no six-provider half conclusion"
+  ]
+}
