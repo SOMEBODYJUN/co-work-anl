@@ -38,3 +38,7 @@
 ## 恢复动作
 
 待六个缺失 blob 可访问后，先逐源再次运行 clean show 并按库存 SHA/大小核对；随后运行原 family、truncated 和 ratio 脚本，保存 stdin/stdout/stderr、依赖版本和 JSON 对比，再更新对应 receipt 的 `full_file_reviewed` 与 disposition。当前本包可供数学接续阅读，但六源 raw 缺口使整批暂不称 source-level checkpoint-ready。
+
+同时保留 `related/collision_free_family_scope_resource.md`、`related/promoted_punishment_terminal_obstruction.md` 和 `related/actual_prefix_global_budget_counterexample.md`，分别用于全仓资源范围、直接 t>2 推广失败和后续 52 客户 GLOBAL 反例的交叉核对。它们不是本批八源的替代原件，但用于防止把局部首步、实际占用、GLOBAL 和根 half 量词混写。
+
+`metadata/replay-manifest.json` records commands, exit codes, output paths, byte-equality checks and Python/NumPy/SciPy versions for every replay.
