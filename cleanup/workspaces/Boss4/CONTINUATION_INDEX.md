@@ -101,3 +101,7 @@ R3_READY4A：Boss全文实读条件需求/Doob单查询预算/凸化候选与共
 R3_READY4A数学/证据pushed b3fece76adb8f4dd148d5af94f6dd087290912b9；4源done另推送 18c4db1cfb1d8133d84ccb3d5fab074aa874a24b。Boss4累计897完成，实际未完40；持续接续全仓，不以本批清空收尾。
 
 R3_READY9B：可信BUBBLE正规范真IC见证/完整迭代链与正损失静态账4源；一般异权查询返回P星/P零完整双构造及精确审查先验5源，均保原source/同域及未证外接义务；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY9B_REMAINING_SCOPE.json。
+
+R3_READY9B数学/证据pushed 9d4e0ad4605ce126bf4a3aa2f816881683ca5268；9源done另推送 4de83a6d44e7bc63d8323e27eced5f813428cc0c。Boss4累计906完成，实际未完36；持续接续全仓，不以本批清空收尾。
+
+R3_READY6C：Boss direct原共享菜单KKT/实际负载银行、T-IC及有限hinge两源；uniform presence/端口审查及双reset原入口四源完整处理，两个原程序各一次精确复现，有限与一般阈值分开；共6主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY6C_REMAINING_SCOPE.json。
