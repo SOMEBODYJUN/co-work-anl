@@ -1,0 +1,623 @@
+{
+  "schema_version": 1,
+  "arithmetic": "fractions.Fraction and integer exhaustive loads; exact; no tolerances",
+  "python_version": "3.12.14",
+  "base_commit": "176ecd8b1051009aee19b8433e1b961ce66ae72b",
+  "account": "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md",
+  "sha256": {
+    "research/current/unrelated_machines/bundle_coupling_subdivision_barrier.md": "f923212d74e42ac3b32c09d73e15382dd656e90e10b39ea22bc4fa29559cd894",
+    "tests/audits/unrelated_machines/pair_coupling_subdivision.py": "6d488c8edc2b2c597a24f063468ff1714ef55c052ab529d2ce60df5dd9e64148",
+    "tests/audits/unrelated_machines/cardinality_closure.py": "ce176ca14d24e9f9b3ebda3eddba65dbbb851a23811729b1a6c9e7d9f9f7ee37",
+    "tests/audits/unrelated_machines/independent_pair_coupling.py": "801e016e773f5abfd4d33f511a2f0d6e1d97d3889edcf177033fafab39ed3945"
+  },
+  "commands": [
+    "python3 tests/audits/unrelated_machines/pair_coupling_subdivision.py",
+    "python3 tests/audits/unrelated_machines/cardinality_closure.py",
+    "python3 tests/audits/unrelated_machines/independent_pair_coupling.py",
+    "python3 tests/audits/unrelated_machines/rounding_and_gap.py"
+  ],
+  "reports": {
+    "pair_coupling_first.json": {
+      "schema_version": 1,
+      "python_version": "3.12.14",
+      "arithmetic": "exact fractions.Fraction; deterministic; no seed",
+      "command": "python3 tests/audits/unrelated_machines/pair_coupling_subdivision.py",
+      "source_sha256": "6d488c8edc2b2c597a24f063468ff1714ef55c052ab529d2ce60df5dd9e64148",
+      "baseline_sha256": "5ba0dc52ddbb90ffece75e5accd2e801957c1172e337b9bdf033e22a64cbd75a",
+      "subdivision": [
+        {
+          "k": 2,
+          "old_m": 4,
+          "old_n": 5,
+          "new_m": 9,
+          "new_n": 10,
+          "target": "3/2",
+          "proved_optimum": "3/2",
+          "certified_ratio": "1",
+          "all_pair_couplings": 36,
+          "positive_joint_entries": 180,
+          "configuration_certificate": "exactly verified",
+          "original_assignments": 32,
+          "expanded_assignments": 1024,
+          "expanded_below_two_compressed": 24,
+          "exhaustive_optimum": "3/2"
+        },
+        {
+          "k": 3,
+          "old_m": 4,
+          "old_n": 7,
+          "new_m": 11,
+          "new_n": 14,
+          "target": "4/3",
+          "proved_optimum": "5/3",
+          "certified_ratio": "5/4",
+          "all_pair_couplings": 55,
+          "positive_joint_entries": 303,
+          "configuration_certificate": "exactly verified",
+          "original_assignments": 128,
+          "expanded_assignments": 16384,
+          "expanded_below_two_compressed": 51,
+          "exhaustive_optimum": "5/3"
+        },
+        {
+          "k": 4,
+          "old_m": 74,
+          "old_n": 169,
+          "new_m": 243,
+          "new_n": 338,
+          "target": "5/4",
+          "proved_optimum": "7/4",
+          "certified_ratio": "7/5",
+          "all_pair_couplings": 29403,
+          "positive_joint_entries": 231151,
+          "configuration_certificate": "exactly verified"
+        }
+      ],
+      "moment_residuals": [
+        {
+          "k": 3,
+          "pair_obstructions_checked": 6,
+          "per_pair_residual": "1/6"
+        },
+        {
+          "k": 4,
+          "pair_obstructions_checked": 192,
+          "per_pair_residual": "1/6"
+        }
+      ],
+      "boundary_fixtures": 3,
+      "limitations": [
+        "Expanded VW families only k=2,3,4; no k>4 graph materialization",
+        "Integer exhaustive checks only k=2,3; general proof is separate",
+        "No generic configuration solver, SA solver or approximation breakthrough",
+        "Novelty and external peer review not certified"
+      ]
+    },
+    "cardinality_final.json": {
+      "purpose": "soundness/finite target-monotonicity/cardinality closure vs VW and subdivided VW",
+      "arithmetic": "fractions.Fraction; exact; no floating arithmetic; no randomness",
+      "python": "3.12.14",
+      "source_sha256": "ce176ca14d24e9f9b3ebda3eddba65dbbb851a23811729b1a6c9e7d9f9f7ee37",
+      "exhaustive": {
+        "matrices": 7689,
+        "matrix_targets": 53823,
+        "feasible_schedules_checked": 115799,
+        "accepted_infeasible": 0,
+        "deletions": 7232,
+        "monotonic_target_checks": 53823
+      },
+      "boundaries": [
+        {
+          "name": "empty_binary_m",
+          "lower_bound": "0",
+          "known_opt": "0"
+        },
+        {
+          "name": "zero",
+          "lower_bound": "0",
+          "known_opt": "0"
+        },
+        {
+          "name": "single_eligible",
+          "lower_bound": "43/77",
+          "known_opt": "43/77"
+        },
+        {
+          "name": "large_denominator",
+          "lower_bound": "100033333333333333333333333333333333333333333333502/3333333333333333333333333333333333333333333335105033333333333333333333333333333333333333333336001",
+          "known_opt": "100033333333333333333333333333333333333333333333502/3333333333333333333333333333333333333333333335105033333333333333333333333333333333333333333336001"
+        }
+      ],
+      "two_tree_family": [
+        {
+          "k": 2,
+          "subdivided": false,
+          "m": 4,
+          "n": 5,
+          "h": 1,
+          "target": "1",
+          "known_opt": "3/2",
+          "accepted": false,
+          "rounds": 1,
+          "deletions": 2,
+          "independent_opt": "3/2"
+        },
+        {
+          "k": 2,
+          "subdivided": false,
+          "m": 4,
+          "n": 5,
+          "h": 1,
+          "target": "29/20",
+          "known_opt": "3/2",
+          "accepted": false,
+          "rounds": 1,
+          "deletions": 2,
+          "independent_opt": "3/2"
+        },
+        {
+          "k": 2,
+          "subdivided": false,
+          "m": 4,
+          "n": 5,
+          "h": 1,
+          "target": "3/2",
+          "known_opt": "3/2",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0,
+          "independent_opt": "3/2",
+          "binary_search_lower_bound": "3/2"
+        },
+        {
+          "k": 2,
+          "subdivided": true,
+          "m": 9,
+          "n": 10,
+          "h": 1,
+          "target": "1",
+          "known_opt": "3/2",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0,
+          "independent_opt": "3/2"
+        },
+        {
+          "k": 2,
+          "subdivided": true,
+          "m": 9,
+          "n": 10,
+          "h": 1,
+          "target": "29/20",
+          "known_opt": "3/2",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0,
+          "independent_opt": "3/2"
+        },
+        {
+          "k": 2,
+          "subdivided": true,
+          "m": 9,
+          "n": 10,
+          "h": 1,
+          "target": "3/2",
+          "known_opt": "3/2",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0,
+          "independent_opt": "3/2",
+          "binary_search_lower_bound": "1"
+        },
+        {
+          "k": 3,
+          "subdivided": false,
+          "m": 4,
+          "n": 7,
+          "h": 1,
+          "target": "1",
+          "known_opt": "5/3",
+          "accepted": false,
+          "rounds": 1,
+          "deletions": 2,
+          "independent_opt": "5/3"
+        },
+        {
+          "k": 3,
+          "subdivided": false,
+          "m": 4,
+          "n": 7,
+          "h": 1,
+          "target": "4/3",
+          "known_opt": "5/3",
+          "accepted": false,
+          "rounds": 1,
+          "deletions": 2,
+          "independent_opt": "5/3"
+        },
+        {
+          "k": 3,
+          "subdivided": false,
+          "m": 4,
+          "n": 7,
+          "h": 1,
+          "target": "49/30",
+          "known_opt": "5/3",
+          "accepted": false,
+          "rounds": 1,
+          "deletions": 2,
+          "independent_opt": "5/3"
+        },
+        {
+          "k": 3,
+          "subdivided": false,
+          "m": 4,
+          "n": 7,
+          "h": 1,
+          "target": "5/3",
+          "known_opt": "5/3",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0,
+          "independent_opt": "5/3",
+          "binary_search_lower_bound": "5/3"
+        },
+        {
+          "k": 3,
+          "subdivided": true,
+          "m": 11,
+          "n": 14,
+          "h": 1,
+          "target": "1",
+          "known_opt": "5/3",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0,
+          "independent_opt": "5/3"
+        },
+        {
+          "k": 3,
+          "subdivided": true,
+          "m": 11,
+          "n": 14,
+          "h": 1,
+          "target": "4/3",
+          "known_opt": "5/3",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0,
+          "independent_opt": "5/3"
+        },
+        {
+          "k": 3,
+          "subdivided": true,
+          "m": 11,
+          "n": 14,
+          "h": 1,
+          "target": "49/30",
+          "known_opt": "5/3",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0,
+          "independent_opt": "5/3"
+        },
+        {
+          "k": 3,
+          "subdivided": true,
+          "m": 11,
+          "n": 14,
+          "h": 1,
+          "target": "5/3",
+          "known_opt": "5/3",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0,
+          "independent_opt": "5/3",
+          "binary_search_lower_bound": "1"
+        },
+        {
+          "k": 4,
+          "subdivided": false,
+          "m": 74,
+          "n": 169,
+          "h": 3,
+          "target": "1",
+          "known_opt": "7/4",
+          "accepted": false,
+          "rounds": 2,
+          "deletions": 42
+        },
+        {
+          "k": 4,
+          "subdivided": false,
+          "m": 74,
+          "n": 169,
+          "h": 3,
+          "target": "5/4",
+          "known_opt": "7/4",
+          "accepted": false,
+          "rounds": 2,
+          "deletions": 42
+        },
+        {
+          "k": 4,
+          "subdivided": false,
+          "m": 74,
+          "n": 169,
+          "h": 3,
+          "target": "69/40",
+          "known_opt": "7/4",
+          "accepted": false,
+          "rounds": 2,
+          "deletions": 42
+        },
+        {
+          "k": 4,
+          "subdivided": false,
+          "m": 74,
+          "n": 169,
+          "h": 3,
+          "target": "7/4",
+          "known_opt": "7/4",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0,
+          "binary_search_lower_bound": "7/4"
+        },
+        {
+          "k": 4,
+          "subdivided": true,
+          "m": 243,
+          "n": 338,
+          "h": 3,
+          "target": "1",
+          "known_opt": "7/4",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0
+        },
+        {
+          "k": 4,
+          "subdivided": true,
+          "m": 243,
+          "n": 338,
+          "h": 3,
+          "target": "5/4",
+          "known_opt": "7/4",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0
+        },
+        {
+          "k": 4,
+          "subdivided": true,
+          "m": 243,
+          "n": 338,
+          "h": 3,
+          "target": "69/40",
+          "known_opt": "7/4",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0
+        },
+        {
+          "k": 4,
+          "subdivided": true,
+          "m": 243,
+          "n": 338,
+          "h": 3,
+          "target": "7/4",
+          "known_opt": "7/4",
+          "accepted": true,
+          "rounds": 0,
+          "deletions": 0,
+          "binary_search_lower_bound": "1"
+        }
+      ],
+      "limitations": "finite tests are not the general soundness/complexity proofs; filter is not an approximation algorithm; k=4 OPT uses the explicit mathematical family proof rather than exhaustive enumeration"
+    },
+    "independent_final.json": {
+      "status": "passed",
+      "arithmetic": "fractions.Fraction",
+      "subdivision_instances_exhaustively_solved": 260,
+      "equality_instances_H_le_OPT_le_2H": 113,
+      "pair_coupling_cases": 5,
+      "local_moment_cut": [
+        {
+          "k": 4,
+          "integer_threshold": "7/4",
+          "old_T": "5/4",
+          "old_aggregate_residual": "1",
+          "breakpoints_and_interiors_checked": 14
+        },
+        {
+          "k": 5,
+          "integer_threshold": "9/5",
+          "old_T": "6/5",
+          "old_aggregate_residual": "3/2",
+          "breakpoints_and_interiors_checked": 18
+        },
+        {
+          "k": 6,
+          "integer_threshold": "11/6",
+          "old_T": "7/6",
+          "old_aggregate_residual": "2",
+          "breakpoints_and_interiors_checked": 22
+        },
+        {
+          "k": 7,
+          "integer_threshold": "13/7",
+          "old_T": "8/7",
+          "old_aggregate_residual": "5/2",
+          "breakpoints_and_interiors_checked": 26
+        },
+        {
+          "k": 8,
+          "integer_threshold": "15/8",
+          "old_T": "9/8",
+          "old_aggregate_residual": "3",
+          "breakpoints_and_interiors_checked": 30
+        },
+        {
+          "k": 9,
+          "integer_threshold": "17/9",
+          "old_T": "10/9",
+          "old_aggregate_residual": "7/2",
+          "breakpoints_and_interiors_checked": 34
+        },
+        {
+          "k": 10,
+          "integer_threshold": "19/10",
+          "old_T": "11/10",
+          "old_aggregate_residual": "4",
+          "breakpoints_and_interiors_checked": 38
+        },
+        {
+          "k": 11,
+          "integer_threshold": "21/11",
+          "old_T": "12/11",
+          "old_aggregate_residual": "9/2",
+          "breakpoints_and_interiors_checked": 42
+        },
+        {
+          "k": 12,
+          "integer_threshold": "23/12",
+          "old_T": "13/12",
+          "old_aggregate_residual": "5",
+          "breakpoints_and_interiors_checked": 46
+        }
+      ]
+    },
+    "baseline_reproduced.json": {
+      "schema_version": 1,
+      "python_version": "3.12.14",
+      "seed": 20261016,
+      "arithmetic": "fractions.Fraction, exact; no floating point solver",
+      "source_sha256": "5ba0dc52ddbb90ffece75e5accd2e801957c1172e337b9bdf033e22a64cbd75a",
+      "matrix_cases": 3375,
+      "oracle_assignments": 13824,
+      "rational_cases": 150,
+      "invalid_cases": 6,
+      "toy": {
+        "optimum": "3",
+        "bad_assignment_makespan": "5",
+        "ratio": "5/3",
+        "enumerated_assignments": 2187,
+        "attribution": "Only the OPT and bad schedule checked; no claim this is a reproduced textbook matching"
+      },
+      "expanded_gap_cases": [
+        {
+          "k": 2,
+          "height": 1,
+          "root_alpha": "1",
+          "optimum": "3/2",
+          "certified_lp_upper": "3/2",
+          "gap_lower_bound": "1",
+          "dp_units": {
+            "0": 2,
+            "1": 3
+          },
+          "machines": 4,
+          "jobs": 5,
+          "configuration_certificate_checked": true,
+          "enumerated_assignments": 32,
+          "independent_optimum": "3/2"
+        },
+        {
+          "k": 3,
+          "height": 1,
+          "root_alpha": "1/2",
+          "optimum": "5/3",
+          "certified_lp_upper": "4/3",
+          "gap_lower_bound": "5/4",
+          "dp_units": {
+            "0": 3,
+            "1": 5
+          },
+          "machines": 4,
+          "jobs": 7,
+          "configuration_certificate_checked": true,
+          "enumerated_assignments": 128,
+          "independent_optimum": "5/3"
+        },
+        {
+          "k": 4,
+          "height": 3,
+          "root_alpha": "16/27",
+          "optimum": "7/4",
+          "certified_lp_upper": "5/4",
+          "gap_lower_bound": "7/5",
+          "dp_units": {
+            "0": 4,
+            "1": 7
+          },
+          "machines": 74,
+          "jobs": 169,
+          "configuration_certificate_checked": true
+        }
+      ],
+      "compressed_gap_cases": [
+        {
+          "k": 5,
+          "height": 5,
+          "root_alpha": "625/1024",
+          "optimum": "9/5",
+          "certified_lp_upper": "6/5",
+          "gap_lower_bound": "3/2",
+          "dp_units": {
+            "0": 5,
+            "1": 9
+          }
+        },
+        {
+          "k": 8,
+          "height": 11,
+          "root_alpha": "1073741824/1977326743",
+          "optimum": "15/8",
+          "certified_lp_upper": "9/8",
+          "gap_lower_bound": "5/3",
+          "dp_units": {
+            "0": 8,
+            "1": 15
+          }
+        },
+        {
+          "k": 16,
+          "height": 33,
+          "root_alpha": "340282366920938463463374607431768211456/647159824910983792506158351898193359375",
+          "optimum": "31/16",
+          "certified_lp_upper": "17/16",
+          "gap_lower_bound": "31/17",
+          "dp_units": {
+            "0": 16,
+            "1": 31
+          }
+        },
+        {
+          "k": 32,
+          "height": 88,
+          "root_alpha": "88725430211866075506509253892578678509965986412026130405455346579667881849780019937279180995332466499116518750764914298527173050368/173711694783329886747340700142280526219070382414659579890474457813633946118366825776800447238433639642831064082112331815096634819841",
+          "optimum": "63/32",
+          "certified_lp_upper": "33/32",
+          "gap_lower_bound": "21/11",
+          "dp_units": {
+            "0": 32,
+            "1": 63
+          }
+        }
+      ],
+      "limitations": [
+        "Finite checks are not a universal proof or novelty certificate",
+        "No generic LP solver implemented; rounding receives a feasible x",
+        "Compressed DP applies only to the explicit symmetric VW tree family",
+        "Large k full graphs not materialized; no claim of a generic efficient exact solver"
+      ]
+    }
+  },
+  "limitations": [
+    "Not a proof by finite computation; all universal statements have separate mathematical proofs.",
+    "No LP solver, no generic configuration oracle, no new approximation ratio.",
+    "Novelty, external peer review and publication value not certified.",
+    "Normative subdivision exhaustive audit is H=1; generic-H boundary checks are in the independent audit."
+  ]
+}

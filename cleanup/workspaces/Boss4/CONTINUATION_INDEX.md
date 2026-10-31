@@ -166,3 +166,7 @@ R3_READY15AI：裸Cartesian/双rail/collision五原程序完整合同；test_wor
 R3_READY15AI数学/证据pushed 73b1a60f47beb16186a3a8fe3ce703ad82ff706d；15源done另推送 0405f56e6f9f5dc6f4cdd0a907c979e1d7274f54。Boss4累计1274完成，实际未完49；持续接续全仓，不以本批清空收尾。
 
 R3_READY24AL：根解析复核2及三冻结审计同字节对照5；UP支持端点/三动作表334LP/自由root弱查询5；UM长链/norm1/rawK2/值桥规模审查5；真实exchange与插入标量两入口及作者长稿5；根生命周期/协作测试版本4。Root三旧数学纠错已实际pushed，确认记录接续；六线持续全仓；共24主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY24AL_REMAINING_SCOPE.json。
+
+R3_READY24AL数学/证据pushed 7f93f08a6abd853360365e3d3d5c34f6adb8c4e0；24源done另推送 dabbbd06f65e148f4c9bc0edcae3d16dfe8ad8d0。Boss4累计1298完成，实际未完39；持续接续全仓，不以本批清空收尾。
+
+R3_READY25AR：固定G前缀两版原入口与精确行复核5、cycle/leaf/cardinality全数据5、CONFIG/cover/singlecycle五原CLI+1helper5、relay闭式五源及唯一原入口5、quota/backend版本与全部fixture5；Root补W=1完整IC证明跨对象链接；AQ原pushed回执/备份全字节核验和恢复证据分开。继续全仓；共25主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY25AR_REMAINING_SCOPE.json。

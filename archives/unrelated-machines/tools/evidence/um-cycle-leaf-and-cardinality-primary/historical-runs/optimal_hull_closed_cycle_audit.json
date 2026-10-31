@@ -1,0 +1,340 @@
+{
+  "arithmetic": "exact integer/Fraction; no floating tolerance",
+  "python": "3.12.14",
+  "run_from": "repository root",
+  "limitation": "Finite checks verify the listed construction, task assignments, matching and path oracles; general results come from the manuscript proof. No general approximation or hardness follows.",
+  "claims": [
+    "UM-OPT-HULL-CLOSED-CYCLE-WEAK-LOCAL-GAP-v1",
+    "UM-CLOSED-CYCLE-SINGLE-JOB-ESCAPE-THRESHOLD-v1"
+  ],
+  "commands": [
+    "python3 tests/audits/unrelated_machines/optimal_hull_closed_cycle_gap.py",
+    "python3 tests/audits/unrelated_machines/optimal_hull_closed_cycle_independent.py",
+    "python3 tests/audits/unrelated_machines/optimal_hull_closed_cycle_reviewer.py",
+    "python3 tests/audits/unrelated_machines/closed_cycle_escape_independent.py"
+  ],
+  "normative": {
+    "python": "3.12.14",
+    "arithmetic": "fractions.Fraction",
+    "scope": "All labelled legal two-choice assignments; independent within-assignment slot augmenting matching; finite evidence only",
+    "runs": [
+      {
+        "k": 3,
+        "d": 1,
+        "m": 7,
+        "n": 10,
+        "legal_assignments": 1024,
+        "opt": "1",
+        "bad_makespan": "7/6",
+        "weak_feasible_nontrivial_assignments": 42,
+        "min_changed_jobs": 2,
+        "min_participating_machines": 2,
+        "slot_supported_schedules": 6,
+        "minimum_slot_cost": "11/2",
+        "minimum_slot_assignment_count": 1,
+        "first_tiny_activation_cost": "5/36",
+        "other_tiny_activation_cost": "2/9",
+        "macro_activation_cost": "4/9",
+        "tail0_root_interval": [
+          "11/3",
+          "4"
+        ],
+        "single_job_escape": {
+          "steps_to_optimum": 4,
+          "minimum_first_move_peak": "23/18",
+          "path_peak": "23/18",
+          "excess_over_bad": "1/9"
+        },
+        "literal_slot_enumeration": {
+          "literal_slot_matchings": 6,
+          "literal_minimum_slot_matchings": 1,
+          "literal_minimum_cost": "11/2",
+          "literal_minimum_machine_assignments": 1
+        }
+      },
+      {
+        "k": 3,
+        "d": 2,
+        "m": 11,
+        "n": 14,
+        "legal_assignments": 16384,
+        "opt": "1",
+        "bad_makespan": "7/6",
+        "weak_feasible_nontrivial_assignments": 84,
+        "min_changed_jobs": 3,
+        "min_participating_machines": 3,
+        "slot_supported_schedules": 6,
+        "minimum_slot_cost": "17/2",
+        "minimum_slot_assignment_count": 1,
+        "first_tiny_activation_cost": "17/36",
+        "other_tiny_activation_cost": "5/9",
+        "macro_activation_cost": "7/9",
+        "tail0_root_interval": [
+          "11/3",
+          "4"
+        ],
+        "single_job_escape": {
+          "steps_to_optimum": 6,
+          "minimum_first_move_peak": "23/18",
+          "path_peak": "23/18",
+          "excess_over_bad": "1/9"
+        },
+        "literal_slot_enumeration": {
+          "literal_slot_matchings": 6,
+          "literal_minimum_slot_matchings": 1,
+          "literal_minimum_cost": "17/2",
+          "literal_minimum_machine_assignments": 1
+        }
+      },
+      {
+        "k": 4,
+        "d": 1,
+        "m": 9,
+        "n": 13,
+        "legal_assignments": 8192,
+        "opt": "1",
+        "bad_makespan": "43/32",
+        "weak_feasible_nontrivial_assignments": 195,
+        "min_changed_jobs": 2,
+        "min_participating_machines": 2,
+        "slot_supported_schedules": 8,
+        "minimum_slot_cost": "243/32",
+        "minimum_slot_assignment_count": 1,
+        "first_tiny_activation_cost": "5/64",
+        "other_tiny_activation_cost": "1/8",
+        "macro_activation_cost": "5/16",
+        "tail0_root_interval": [
+          "19/4",
+          "5"
+        ],
+        "single_job_escape": {
+          "steps_to_optimum": 6,
+          "minimum_first_move_peak": "45/32",
+          "path_peak": "45/32",
+          "excess_over_bad": "1/16"
+        },
+        "literal_slot_enumeration": {
+          "literal_slot_matchings": 8,
+          "literal_minimum_slot_matchings": 1,
+          "literal_minimum_cost": "243/32",
+          "literal_minimum_machine_assignments": 1
+        }
+      }
+    ]
+  },
+  "independent_integer_owner_enumeration": {
+    "arithmetic": "exact integer scaled times and Fraction x",
+    "results": [
+      {
+        "k": 3,
+        "d": 1,
+        "m": 7,
+        "n": 10,
+        "assignments": 1024,
+        "at_most_bad_distinct": 42,
+        "slot_assignments": 6,
+        "optimum": "1",
+        "bad": "7/6",
+        "minimum_changed_jobs": 2,
+        "minimum_touched_machines": 2,
+        "unique_minimum_cost_assignment": true
+      },
+      {
+        "k": 3,
+        "d": 2,
+        "m": 11,
+        "n": 14,
+        "assignments": 16384,
+        "at_most_bad_distinct": 84,
+        "slot_assignments": 6,
+        "optimum": "1",
+        "bad": "7/6",
+        "minimum_changed_jobs": 3,
+        "minimum_touched_machines": 3,
+        "unique_minimum_cost_assignment": true
+      },
+      {
+        "k": 4,
+        "d": 1,
+        "m": 9,
+        "n": 13,
+        "assignments": 8192,
+        "at_most_bad_distinct": 195,
+        "slot_assignments": 8,
+        "optimum": "1",
+        "bad": "43/32",
+        "minimum_changed_jobs": 2,
+        "minimum_touched_machines": 2,
+        "unique_minimum_cost_assignment": true
+      },
+      {
+        "k": 4,
+        "d": 2,
+        "m": 14,
+        "n": 18,
+        "assignments": 262144,
+        "at_most_bad_distinct": 466,
+        "slot_assignments": 8,
+        "optimum": "1",
+        "bad": "43/32",
+        "minimum_changed_jobs": 3,
+        "minimum_touched_machines": 3,
+        "unique_minimum_cost_assignment": true
+      },
+      {
+        "k": 5,
+        "d": 1,
+        "m": 11,
+        "n": 16,
+        "assignments": 65536,
+        "at_most_bad_distinct": 883,
+        "slot_assignments": 10,
+        "optimum": "1",
+        "bad": "73/50",
+        "minimum_changed_jobs": 2,
+        "minimum_touched_machines": 2,
+        "unique_minimum_cost_assignment": true
+      }
+    ],
+    "tie_checks": [
+      {
+        "k": 3,
+        "d": 1,
+        "all_equal_size_root_tie_orders": 12,
+        "scope": "all complete-cycle states in each tie graph; full arbitrary states audited separately"
+      },
+      {
+        "k": 4,
+        "d": 1,
+        "all_equal_size_root_tie_orders": 144,
+        "scope": "all complete-cycle states in each tie graph; full arbitrary states audited separately"
+      }
+    ]
+  },
+  "independent_subset_DP": {
+    "exhaustive_cases": [
+      {
+        "k": 3,
+        "d": 1,
+        "n": 10,
+        "m": 7,
+        "schedules": 1024,
+        "OPT": "1",
+        "B": "7/6",
+        "min_jobs": 2,
+        "min_machines": 2,
+        "other_B_feasible": 42,
+        "mincost": "11/2",
+        "mincost_machine_assignments": 1,
+        "slotcount": 10,
+        "matching_DP_states": 98
+      },
+      {
+        "k": 3,
+        "d": 2,
+        "n": 14,
+        "m": 11,
+        "schedules": 16384,
+        "OPT": "1",
+        "B": "7/6",
+        "min_jobs": 3,
+        "min_machines": 3,
+        "other_B_feasible": 84,
+        "mincost": "17/2",
+        "mincost_machine_assignments": 1,
+        "slotcount": 14,
+        "matching_DP_states": 269
+      },
+      {
+        "k": 4,
+        "d": 1,
+        "n": 13,
+        "m": 9,
+        "schedules": 8192,
+        "OPT": "1",
+        "B": "43/32",
+        "min_jobs": 2,
+        "min_machines": 2,
+        "other_B_feasible": 195,
+        "mincost": "243/32",
+        "mincost_machine_assignments": 1,
+        "slotcount": 13,
+        "matching_DP_states": 171
+      },
+      {
+        "k": 5,
+        "d": 1,
+        "n": 16,
+        "m": 11,
+        "schedules": 65536,
+        "OPT": "1",
+        "B": "73/50",
+        "min_jobs": 2,
+        "min_machines": 2,
+        "other_B_feasible": 883,
+        "mincost": "483/50",
+        "mincost_machine_assignments": 1,
+        "slotcount": 16,
+        "matching_DP_states": 271
+      }
+    ],
+    "total_schedules": 91136,
+    "all_tie_orders": [
+      {
+        "k": 3,
+        "d": 1,
+        "all_root_tie_orders": 12
+      },
+      {
+        "k": 4,
+        "d": 1,
+        "all_root_tie_orders": 144
+      }
+    ]
+  },
+  "independent_minimax_path": [
+    {
+      "k": 3,
+      "d": 1,
+      "n": 10,
+      "all_states": 1024,
+      "settled_minimax_states": 8,
+      "B": "7/6",
+      "escape_minimum_peak": "23/18",
+      "peak_increase": "1/9",
+      "explicit_steps": 4
+    },
+    {
+      "k": 3,
+      "d": 2,
+      "n": 14,
+      "all_states": 16384,
+      "settled_minimax_states": 12,
+      "B": "7/6",
+      "escape_minimum_peak": "23/18",
+      "peak_increase": "1/9",
+      "explicit_steps": 6
+    },
+    {
+      "k": 4,
+      "d": 1,
+      "n": 13,
+      "all_states": 8192,
+      "settled_minimax_states": 37,
+      "B": "43/32",
+      "escape_minimum_peak": "45/32",
+      "peak_increase": "1/16",
+      "explicit_steps": 6
+    }
+  ],
+  "sha256": {
+    "tests/audits/unrelated_machines/optimal_hull_closed_cycle_gap.py": "325094ac60f993ac38e5a408891e51a01a104de44000ea8e4f49aeaba7df858b",
+    "tests/audits/unrelated_machines/optimal_hull_closed_cycle_independent.py": "ac42e3dce6b3acf0fa6512de939b186e17ea0e1b2e01808f2e9c09cbe761eeaa",
+    "tests/audits/unrelated_machines/optimal_hull_closed_cycle_reviewer.py": "aa6ad02c4c40ff976b7978332137793a4ca69906924e5160fc0f14521bb76021",
+    "tests/audits/unrelated_machines/closed_cycle_escape_independent.py": "cf25765fb15827e3600c5715a3dd4b3f9b8983d175b666eebd44168a7b809c46",
+    "research/current/unrelated_machines/cyclic_batch_repair_and_fork_obstruction.md": "ba5d9763aca26d9b8fee7b49f353c3588291fbd94d89f111e77a23808fe41fc5",
+    "research/reviews/unrelated_machines/optimal_hull_closed_cycle_review.md": "6b836d16a7650b5f99cb412e6622ebe9fab9b7ef2ebc320ea0bf647168ea5499",
+    "examples/unrelated_machines/optimal_hull_closed_cycle_k3d1.json": "d531ad742ed8b37b4ddd98da8ef187b10d80ddbdd164f5209c3747d1f73cab0a",
+    "evidence/certificates/unrelated_machines/optimal_hull_closed_cycle_k3d1.json": "767b3419d1b9bc6aad4f75eff9c9a6eb5ad3148a40327c0d8abe6bed95e42c74"
+  }
+}

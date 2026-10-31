@@ -1,0 +1,21 @@
+--- initial-backend.py
++++ current-frozen-backend.py
+@@ -1,4 +1,4 @@
+-"""Explicit degree-two weighted-menu UM backend (scratch implementation).
++"""Explicit degree-two weighted-menu UM backend (structured audit implementation).
+ 
+ Input: nonempty ``groups`` and explicit ``resources``; each group has nonempty
+ indexed ``states``, each state has ``incidences`` [{resource, p}].  IDs are unique
+@@ -16,6 +16,12 @@
+ import argparse
+ import json
+ import re
++import sys
++
++# Explicit rational encodings may exceed CPython's decimal digit default.
++# The algorithm works in encoding length and never expands a numeric count.
++if hasattr(sys, "set_int_max_str_digits"):
++    sys.set_int_max_str_digits(0)
+ 
+ 
+ def rat(x):
