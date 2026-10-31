@@ -24,6 +24,7 @@
 | [随机激活背包的方法边界](contention-resolution/README.md) | 固定边际反例不扩大为全局CRS反例。 |
 | [局部势博弈的扰动精度](local-potential-games/README.md) | 几何必要精度与求任意NE的计算复杂性分开。 |
 | [下闭局部族的配置利润指派](configuration-assignment/README.md) | 预算启用、给定支持舍入及等成本自然LP的整数截断缺口分别保留合同。 |
+| [二部完美匹配面的仿射最近点](matching-faces/README.md) | 三例精确投影与同维负坐标反例；不误作拟阵基模型的包含。 |
 
 有限双权势及非对称拟阵精炼目标仍接入既有加权拥塞档。完整来源与本批实际全文/选区范围见[退役Claim证据](../tools/evidence/retired-topic-claims/README.md)；额外旁读来源没有因此自动done。
 

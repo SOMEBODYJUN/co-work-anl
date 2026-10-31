@@ -118,3 +118,7 @@ R3_READY38E：Boss两路径LP/三NPZ与完整终局筛选5；四任务共享outs
 R3_READY38E数学/证据pushed f469d5f18be741c26afd20cc79bff2003f84a45f；38源done另推送 4b0e070420b59d2ab8c484b107691b06520ab10f。Boss4累计975完成，实际未完40；持续接续全仓，不以本批清空收尾。
 
 R3_READY54F：54份已完整成稿来源动态收束：含root单根108行有理障碍2、全部主程序/二进制与精确finite/完整证明/真实review scope，新增下闭配置模型及预算LP截断反例；旧工具/账本状态与当前数学区分，旧Boss2文字建议不越权覆盖；仍持续全仓接续；共54主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY54F_REMAINING_SCOPE.json。
+
+R3_READY54F数学/证据pushed 22c82b517c4a791331667086d99932bc84c8d2fa；54源done另推送 1d00cb68904d73f2b0a1760b294280e45d75eb0c。Boss4累计1029完成，实际未完59；持续接续全仓，不以本批清空收尾。
+
+R3_READY32G：32源完整数学/历史处置：C半权精确间隔5、一般v4双构造5、owner-hybrid5、独立三报告3、来源迁移全文4、终审精确scope5、tail完整两尺寸原证5；先C再终审、独有证明与版本时态/未应用他人建议保真，新增matching-faces入口；共32主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY32G_REMAINING_SCOPE.json。
