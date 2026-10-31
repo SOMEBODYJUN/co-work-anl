@@ -1,0 +1,1392 @@
+                                                A constant factor approximation for Nash social welfare with
+                                                                   subadditive valuations
+                                                          Shahar Dobzinski∗, Wenzheng Li†, Aviad Rubinstein‡, Jan Vondrák§
+
+                                                                                    September 12, 2023
+arXiv:2309.04656v1 [cs.GT] 9 Sep 2023
+
+
+
+
+                                                                                           Abstract
+                                                    We present a constant-factor approximation algorithm for the Nash social welfare maxi-
+                                                 mization problem with subadditive valuations accessible via demand queries. More generally,
+                                                 we propose a template for NSW optimization by solving a configuration-type LP and using a
+                                                 rounding procedure for (utilitarian) social welfare as a blackbox, which could be applicable to
+                                                 other variants of the problem.
+
+
+                                        1       Introduction
+                                        We consider the problem of allocating a set I of m indivisible items to a set A of n agents, where
+                                        each agent i ∈ A has a valuation function vi : 2I → R≥0 . The Nash social welfare (NSW) problem
+                                        is to ﬁnd an allocation S = (Si )i∈A that maximizes the geometric mean of the agents’ valuations,
+                                                                                                           !1/|A|
+                                                                                              Y
+                                                                                NSW(S) =            vi (Si )        .
+                                                                                              i∈A
+
+                                        For α ≥ 1, an α-approximate solution to the NSW problem is an allocation S with NSW(S) ≥
+                                        OPT/α, where OPT denotes the optimum value of the NSW-maximization problem.
+                                             Allocating resources to agents in a fair and eﬃcient manner is a fundamental problem in
+                                        computer science, economics, and social choice theory, with substantial prior work [Bar05, BT96,
+                                        BCE+ 16,Mou04,RW98,Rot16,You95].
+                                                                       P         A common measure of eﬃciency is utilitarian social welfare,
+                                        i.e., the sum of the utilities i∈A vi (Si ) for an allocation (Si )i∈A . This objective does not take
+                                        fairness into account, as all items could be allocated to one agent whose valuation function dom-
+                                        inates the others. In order to incorporate fairness, various notions have been considered, ranging
+                                        from envy-freeness, proportional fairness to various modiﬁcations of the objective function. At the
+                                        end of the spectrum opposite to utilitarian social welfare, one can consider the max-min objective,
+                                        mini∈A vi (Si ), also known as the Santa Claus problem [BS06]. This objective is somewhat extreme
+                                        in considering only the happiness of the least happy agent.
+                                             Nash social welfare provides a balanced tradeoﬀ between the requirements of fairness and eﬃ-
+                                        ciency. It has been introduced independently in several contexts: as a discrete variant of the Nash
+                                            ∗
+                                              Weizmann Institute of Science
+                                            †
+                                              Stanford University
+                                            ‡
+                                              Stanford University
+                                            §
+                                              Stanford University
+bargaining game [KN79, Nas50]; as a notion of competitive equilibrium with equal incomes in eco-
+nomics [Var74]; and also as a proportional fairness notion in networking [Kel97]. Nash social welfare
+has several desirable features, for example invariance under scaling of the valuation functions vi by
+independent factors λi , i.e., each agent can express their preference in a “diﬀerent currency” without
+changing the optimization problem (see [Mou04] for additional characteristics).
+
+1.1   Preliminaries
+The diﬃculty of optimizing Nash social welfare depends naturally on the class of valuation functions
+that we want to deal with, and how they are accessible. Various classes of valuations have been
+considered in the literature. For the sake of this paper, let us introduce three basic classes of
+valuations, and two oracle models.
+
+Classes of valuation functions A set function v : 2I → R is monotone if v(S) ≤ v(T ) whenever
+S ⊆ T . A monotone set function with v(∅) = 0 is also
+                                                 P called a valuation function or simply valuation.
+   A valuation v : 2I → R is additive if v(S) = j∈S wj for nonnegative weights wj .
+   A valuation v : 2I → R is submodular if v(S) + v(T ) ≥ v(S ∩ T ) + v(S ∪ T ) ∀S,P  T ⊆ I.
+                     I
+   A valuation v : 2 → R is fractionally subadditive (or XOS) if v(S) = maxi∈I j∈S wij for
+nonnegative weights wij .
+   A valuation v : 2I → R is subadditive if v(S) + v(T ) ≥ v(S ∪ T ) ∀S, T ⊆ I.
+   We remark that these classes form a chain of inclusions: additive valuations are submodular,
+submodular valuations are XOS, and XOS valuations are subadditive.
+
+Oracle access. Note that additive valuations can be presented explicitly on the input. However,
+for more general classes of valuations, we need to resort to oracle access, since presenting a valuation
+explicitly would take an exponential amount of space. Three types of oracles to access valuation
+functions have been commonly considered in the literature.
+
+   • Value oracle: Given a set S ⊆ I, return the value v(S).
+                                                                                      P
+   • Demand oracle: Given prices (pj : j ∈ I), return a set S maximizing v(S) −           j∈S pj .
+
+   • XOS oracle (for an XOS valuation v): Given a set S, return an additive function a from the
+     XOS representation of v such that v(S) = a(S).
+
+1.2   Prior work
+The Nash social welfare problem is NP-hard already in the case of two agents with identical additive
+valuations, by a reduction from the Subset-Sum problem. For multiple agents, it is NP-hard to
+approximate within a factor better than 0.936 for additive valuations [GHM17], and better than
+1 − 1/e ≃ 0.632 for submodular valuations [GKK20].
+    The ﬁrst constant-factor approximation algorithm for additive valuations, with the factor of
+1/(2e1/e ) ≈ 0.346, was given by Cole and Gkatzelis [CG15] using a continuous relaxation based on a
+particular market equilibrium concept. Later, [CDG+ 17] improved the analysis of this algorithm to
+achieve the factor of 1/2. Anari, Oveis Gharan, Saberi, and Singh [AGSS17] used a convex relaxation
+that relies on properties of real stable polynomials, to give an elegant analysis of an algorithm that
+gives a factor of 1/e. The current best factor is 1/e1/e − ǫ ≃ 0.692 by Barman, Krishnamurthy, and
+Vaish [BKV18]; the algorithm uses a diﬀerent market equilibrium based approach. Note also that
+this factor is above 1 − 1/e, hence separating the additive and submodular settings.
+
+
+                                                   2
+    Constant-factor approximations have been extended to some classes beyond additive functions:
+capped-additive [GHM18], separable piecewise-linear concave (SPLC) [AMGV18], and their com-
+mon generalization, capped-SPLC [CCG+ 18] valuations; the approximation factor for capped-SPLC
+valuations matches the 1/e1/e − ε factor for additive valuations. All these valuations are special
+classes of submodular ones. Subsequently, Li and Vondrák [LV21b] designed an algorithm that
+                                                       2
+estimates the optimal value within a factor of (e−1)e3
+                                                         ≃ 0.147 for a broad class of submodular val-
+uations, such as coverage and summations of matroid rank functions, by extending the techniques
+of [AGSS17] using real stable polynomials. However, this algorithm only estimates the optimum
+value but does not ﬁnd a corresponding allocation in polynomial time.
+    An important concenptual advance was presented in [GHV20], where a relaxation combining
+ideas from matching theory and convex optimization was shown to give a constant factor for the class
+of “Rado valuations” (containing weighted matroid rank functions and some related valuations). A
+crucial property of this approach is that it is quite modular and ended up leadin to multiple further
+advances. In [LV21a], this approach was extended to provide a constant factor approximation
+algorithm for general submodular valuations, by replacing the concave extension of a valuation by
+the multilinear extension. The initial factor was rather small (1/380). Recently, a much simpler
+algorithm combining matching and local search was presented to give a (1/4 − ǫ)-approximation for
+submodular valuations [GHL+ 23].
+    For the more general classes of XOS and subadditive valuations [BBKS20, CGM21, GKK20],
+however, only polynomial approximation factors were known until now, and this is the best one
+can hope for in the value oracle model [BBKS20], for the same reasons that this is a barrier for the
+utilitarian social welfare problem [DNS10]. The best known approximation factors up to now have
+been O(1/n) for subadditive valuations, and O(1/n53/54 ) for XOS valuations if we are given access
+to both demand and XOS oracles [BKKN21]. Constant factors for XOS valuations seemed quite
+out of reach prior to this work, and obtaining any sublinear factor for subadditive valuations was
+stated as an open problem in [BKKN21].
+
+1.3   Our results and techniques
+Our main result is the following.
+
+Theorem. (informal) There is an algorithm, with polynomial time and demand queries to agents’
+valuations, that provides a constant factor approximation for the Nash Social Welfare with subaddi-
+tive valuations.
+    As a special case, this also gives a constant-factor approximation for XOS valuations accessible
+via demand queries. (The algorithm for XOS valuations is somewhat simpler, as we discuss later
+in this section.) This completes the picture in the sense that now we have a constant factor ap-
+proximation for Nash social welfare in the main settings where one is known for utilitarian social
+welfare: for submodular valuations with value queries, and for subadditive valuations with demand
+queries. (It is known that a stronger oracle than a value oracle is required for XOS and subadditive
+valuations, even for utilitarian social welfare.)
+    The basis of our approach is the matching+relaxation paradigm which gave a constant-factor ap-
+proximation for submodular valuations [GHV20, LV21a]. Considering that the only constant-factor
+approximation for social welfare with subadditive valuations [Fei08] is based on the "Conﬁguration
+LP", which can be solved using demand queries, it is a natural idea to use a relaxation similar to
+the Conﬁguration LP. A natural variant for Nash social welfare is the Eisenberg-Gale relaxation,
+using the logarithm of the concave extension of each agent’s valuation. We apply this relaxation on
+top of an initial matching, as in [GHV20].
+
+                                                 3
+     The main obstacle with this approach is that natural rounding procedures for the Conﬁguration
+LP do not satisfy any concentration properties. At a high level, without concentration some agents
+have higher value but some have lower value - leading to poor Nash social welfare even if we can
+maintain the expected utilitarian social welfare. More speciﬁcally, the ﬁrst challenge is that, given
+a fractional solution xi,S , we would ideally like to round it to an integral allocation by allocating set
+S to agent i with probability xi,S . Even though this ideal rounding preserves each agent’s expected
+value, the variance can be arbitrary, depending on the fractional solution xi,S . Our ﬁrst technical
+contribution is a procedure (see Lemma 3) for ﬁnding a new feasible solution to the Conﬁguration
+LP that, for each agent, has only high value subsets in its support (with the exception of agents
+who get most of their value from a single item — this case is handled separately with the matching
+procedure). This procedure is rather simple in hindsight. At a high level, we can think of the
+fractional solution as a distribution of allocations for each agent. We want to discard the part of
+the distribution that corresponds to low value subsets; but this leaves uncovered probability mass.
+We re-cover this remaining mass by splitting high value subsets to “stretch” over more probability
+mass, while allocating each item with to agent i with the same total probability.
+     The next obstacle in rounding the Conﬁguration LP is resolving “contentions”: aka under the
+ideal rounding procedure described above, we may be trying to allocate the same item to multiple
+agents (even though in expectation it is only allocated to one agent). For XOS valuations, a simple
+independent randomized contention resolution scheme guarantees a constant factor approximation
+and also enjoys good concentration. However the situation is more complicated for subadditive
+valuations. The only known constant-factor approximation for social welfare with subadditive val-
+uations is a rather intricate rounding procedure of Feige [Fei08], which does not seem to satisfy any
+useful concentration properties. In any rounded solution, there might be agents who receive very
+low value, which hurts Nash social welfare, and hence we cannot use it directly.
+     Our solution is an iterated rounding procedure, where in each stage a certain fraction of agents is
+“satisﬁed” in the sense that they receive value comparable to their fractional value. We allocate the
+respective items to them, subject to random ﬁltering which ensures that enough items are still left
+for the remaining agents. Then we recurse on the remaining agents and remaining items. Still, some
+agents may receive a relatively small value, but we guarantee that the fraction of agents who receive
+low values is proportionally small, which means that the Nash social welfare overall is guaranteed
+to be good. As an example: if OP T = (V1 · · · Vn )1/n , it suﬃces to solve for an allocation where n2
+agents receive value at least 21 Vi , n4 agents receive value at least 41 Vi , n8 agents receive value at least
+1
+8 Vi , and so on. Then the approximation factor in terms of Nash Social Welfare turns out to be
+
+                                  (1/2)1/2 (1/4)1/4 (1/8)1/8 (1/16)1/16 · · ·
+
+and this inﬁnite product converges to 1/4 (we leave this as an exercise for the reader).
+    In order to guarantee the success of this rounding procedure, we need a concentration inequality
+(as in previous works). Concentration properties of subadditive functions are somewhat weaker
+and more diﬃcult to prove that for submodular or XOS functions. Here we appeal to a powerful
+subadditive concentration inequality presented by Schechtman [Sch03], which is based on the “q-
+point control inequality” of Talagrand [Tal89, Tal95].
+
+Reducing Nash Welfare to Rounding of Configuration LP
+Technically, we prove a reduction theorem (Theorem 1) which shows that to achieve a constant
+factor approximation for Nash social welfare, is it suﬃcient to implement eﬃcient subroutines for
+two subproblems: (1) ﬁnding a solution of the Conﬁguration LP satisfying a certain additional
+property (which happens to be satisﬁed for example by an optimal solution of the Eisenberg-Gale
+
+                                                       4
+relaxation [GHV20], or the continuous greedy algorithm for the log-multilinear relaxation [LV21a]),
+and (2) rounding a fractional solution of the Conﬁguration LP while losing only a constant factor
+with respect to utilitarian social welfare. The latter problem is relatively easy for XOS valuations,
+but non-trivial for subadditive valuations. Fortunately, a factor 1/2 rounding procedure is known
+due to Feige’s work on welfare maximization with subadditive bidders [Fei08], which we use here as
+a blackbox.
+    We remark that the constant factors lost in various stages of our proof are rather large and lead
+to a ﬁnal approximation factor of ∼ 1/375, 000 for the Nash social welfare problem with subadditive
+valuations. One may hope that as in the case of submodular valuations, an initially large constant
+factor can be eventually improved to a “practical one”.
+
+Paper organization. In Section 2, we present the main technical result, which is a reduction of
+Nash social welfare to a certain relaxation solver and a rounding procedure for the Conﬁguration
+LP. In Section 3, we show how this implies a constant factor approximation algorithm for Nash
+social welfare with subadditive valuations.
+    We defer some components of the algorithm which are similar to earlier work to the appendices:
+Solving the relaxation and proving the required guarantees (Appendix A), the rematching lemmas
+(Appendix B), and concentration of subadditive functions (Appendix C).
+
+
+2    Optimizing NSW via relaxation and rounding for social welfare
+Here we describe our general approach which allows us to derive algorithms for NSW optimization
+in several settings. At a high-level, we reduce the NSW optimization to ﬁnding a certain solution
+for the "Conﬁguration LP" (for social welfare optimization), and having a rounding procedure for
+the Conﬁguration LP, again with respect to social welfare.
+    Let us deﬁne the Conﬁguration LP:
+
+                           XX
+                    max              vi (S)xi,S                                  (Conﬁguration LP)
+                           i∈A S⊆I
+                              X      X
+                                             xi,S ≤ 1              ∀j ∈ I
+                              i∈A S⊆I:j∈S
+                              X
+                                    xi,S = 1                       ∀i ∈ A
+                              S⊆I
+
+                             xi,S ≥ 0                              ∀i ∈ A, S ⊆ I
+
+
+    Equivalently, this can be written as
+                              X
+                       max       vi+ (xi )
+                               i∈A
+                                 X
+                                       xij ≤ 1                   ∀j ∈ I
+                                 i∈A
+                                 xij ≥ 0                         ∀i ∈ A, j ∈ I
+
+
+
+
+                                                        5
+   where as before,
+                                         X
+                      vi+ (xi ) = max          vi (S)xi,S :                                           (Concave Extension)
+                                         S⊂I
+                                      X
+                                             xi,S ≤ xij                                      ∀j ∈ I
+                                   S⊂I:j∈S
+                                     X
+                                           xi,S = 1
+                                     S⊂I
+                                     xi,S ≥ 0                                                ∀S ⊂ I
+
+    The following is our main reduction theorem, which provides an algorithm for Nash social
+welfare, given two procedure that we call the Relaxation Solver and Rounding Procedure.
+Note that assumption on the Relaxation Solver is somewhat unusual: It is not that (xi,S ) is an
+optimal or near-optimal solution of (Conﬁguration LP), but a diﬀerent       condition that the optimum
+social welfare with valuations by wi (S) = vi (S)/Vi = vi (S)/ S ′ vi (S ′ )xi,S ′ is upper-bounded by
+                                                                  P
+c|A|. (The social welfare of xi,S itself with valuations wi is exactly |A|, so as a consequence (xi,S ) is
+c-approximate optimum with respect to the valuations wi .) This condition is required primarily for
+the later “rematching” step (Lemma 8). Fortunately, this condition is satisﬁed by natural approaches
+to solve the “Gale-Eisenberg” relaxation, which replaces the continuous valuation extensions by their
+logarithms. We discuss this further in Section 3.
+
+Theorem 1. Suppose that for a certain class of instances of Nash social welfare, with subadditive
+valuations, we have the following procedures available, with parameters c, d ≥ 1:
+
+   • Relaxation Solver: Given valuations (vi : i ∈ A) on a set of items I, we can find a feasible
+     solution (xi,S ) of (Configuration LP) such that the social welfare optimum with valuations
+
+                                                 1                          X
+                                      wi (S) =      vi (S),        Vi =             vi (S)xi,S
+                                                 Vi
+                                                                            S⊆I
+
+      is at most c|A|.
+
+   • Rounding Procedure: Given a feasible solution (xi,S ) of (Configuration LP), we can find
+     an allocation (S1 , . . . , Sn ) where each Si is a subset of some set Si′ such that xi,Si′ > 0 and
+                                         X                  X 1                     1
+                                               wi (Si ) =              vi (Si ) ≥     |A|.
+                                                                  Vi                d
+                                         i∈A                i∈A
+                         P
+      (As above, Vi =        S⊆I vi (S)xi,S .)
+
+    Then there is an algorithm which provides an O(cd2 )-approximation in Nash social welfare for
+the same class of instances, using 1 call to the Relaxation Solver and a logarithmic number of calls to
+the Rounding Procedure. The running time is polynomial in |A|, |I| and the support of the fractional
+solution (xi,S ).
+
+   In the following, we prove this theorem by presenting an algorithm with several phases. These
+phases are similar to recent matching-based algorithms for Nash social welfare [GHV20, GHV21,
+LV21a,GHL+ 23] with the exception of two phases which are new (phases 3,4 below). The high-level
+outline is as follows.
+
+
+                                                            6
+NSW Algorithm Template.
+                                                          Q
+   1. We ﬁnd an initial matching τ : A → I, maximizing i∈A vi ({τ (i)}). Let H = τ [A] denote
+      the matching items and I ′ = I \ H the remaining items. Let also A′ = {i ∈ A : vi (I ′ ) > 0}.
+
+          P the Relaxation Solver to obtain a fractional solution (xi,S )i∈A ,S⊆I and values
+   2. We apply                                                                     ′    ′
+
+      Vi = S⊆I ′ vi (S)xi,S . We can view these values as “targets” for diﬀerent agents to achieve.
+
+   3. Let νi = maxi∈I ′ vi (j) and A′′ = {i ∈ A′ : Vi ≥ 6νi }. We preprocess the fractional solution
+      (xi,S ) for i ∈ A′′ , removing sets of low value and partitioning sets of high value, so that for
+      every set in the support of the new fractional solution x′i,S for agent i, we have vi (S) = Θ(Vi ).
+
+   4. We apply the Rounding Procedure to x′i,S to ﬁnd an allocation (Si ∈ A′′ ) satisfying
+
+                                          X 1                               
+                                                                        1
+                                                     vi (Si ) = Ω         |A| .
+                                                Vi                      d
+                                          i∈A
+
+      Since each Si has value at most Vi (due to our preprocessing), it must be the case that a
+      Θ( d1 )-fraction of agents receive value at least Θ( d1 Vi ). We allocate a random Θ( d1 )-fraction of
+      items to this Θ( d1 )-fraction of agents (each item from their respective sets independently with
+      probability Θ( 1d )); call the resulting set Ti for agent i. We repeat this phase for the remaining
+      items and agents, until there are no agents left. For agents i ∈ A \ A′′ , we deﬁne Ti = ∅.
+
+      Q recompute the initial matching to obtain a new matching σ : A → H, which maximizes
+   5. We
+       i∈A vi (Ti + σ(i)). We allocate Ti + σ(i) to agent i.
+
+   Now we proceed to analyze the phases of this algorithm more rigorously.
+
+2.1   Initial Matching
+                                                                                  Q
+There is nothing new in this phase. We can ﬁnd a matching τ : A → I maximizing i∈A vi (τ (i))
+by solving a max-weight matching problem with edges (i, j) where vi (j) > 0, and weights wij =
+log vi (j).
+     We denote by H = τ [A] the matched items, by I ′ = I \ H the remaining items, and by
+A = {i ∈ A : vi (I ′ ) > 0} the agents who get positive value from I ′ .
+   ′
+
+     A property we need in the following is the following.
+
+Lemma 2. If τ : A → I is a matching maximizing i∈A vi (τ (i)) then for any j ∈ I ′ = I \ τ [A],
+                                                       Q
+vi (j) ≤ vi (τ (i)).
+
+Proof. If there is j ∈ I ′ , vi (j) > vi (τ (i)), then we can swap τ (i) for j in the matching and increase
+its value.
+
+    For subadditive valuations, we also get vi (S + j) − vi (S) ≤ vi (τ (i)) for any S ⊂ I ′ , j ∈ I ′ \ S
+(since vi (S + j) ≤ vi (S) + vi (j)).
+
+2.2   Relaxation Solver
+Here we assume that the Relaxation Solver is available as a black-box. We return to its imple-
+mentations in speciﬁc settings in Section 3.
+
+
+
+                                                        7
+    We apply the Relaxation Solver to the residual instance on items I ′ = I \ H and agents A′
+who have nonzero value for some items in I ′ . The important property of the obtained solution
+(xi,S ) is that after scaling the valuations as follows,
+                                          1                 X
+                                 wi (S) = vi (S),      Vi =    vi (S)xi,S
+                                          Vi                 ′      S⊆I
+
+the social welfare optimum for w1 , . . . , wn is at most c|A′ |. In other words, for any feasible allocation
+(T1∗ , . . . , Tn∗ ) of I ′ , we have
+                                             X vi (T ∗ )
+                                                         i
+                                                           ≤ c|A′ |.
+                                                     V i
+                                               i∈A
+                                                 ′
+
+
+
+2.3    Set Splitting
+Here we describe Phase 3, preprocessing of the fractional solution. We will work only with agents
+who get signiﬁcant value from the fractional solution: Let νi = maxj∈I ′ vi (j) and
+                                           A′′ := {i ∈ A′ : Vi ≥ 6νi }.
+We prove the following.
+Lemma 3. Assume that the valuations v1 , . . . , vn are subadditive. Given a feasiblePsolution (xi,S )
+of (Configuration LP) for an instance with agents A′′ and items I ′ , where Vi = S⊆I ′ vi (S)xi,S
+and νi = maxj∈I ′ vi (j), we can find (in running time and a number of value queries polynomial in
+the number of nonzero coefficients xi,S ) a modified solution (x′i,S ) such that
+   • For every S such that x′i,S > 0, 31 Vi − νi ≤ vi (S) ≤ Vi .
+   • For every i ∈ A′′ , S⊆I x′i,S = 1.
+                        P
+
+   • For every j ∈ I ′ , i,S∋j x′i,S ≤ 1.
+                        P
+
+Proof. We apply the following procedure to the fractional solution x = (xi,S ).
+
+SetSplitting(x).
+  1. Let Vi = S⊆I ′ vi (S)xi,S , νi = maxj∈I ′ vi (j), and Fi = {S ⊆ I ′ : vi (S) ≥ 31 Vi }.
+             P
+
+   2. Set x′i,S = 0 and ki,S = 0 for S ∈
+                                       / Fi ; i.e., discard sets whose value is too low.
+
+   3. For every S ∈ Fi , let ki,S = ⌊ 3vVi (S)
+                                           i
+                                               ⌋. Split S into sets S1 , · · · , Ski,S such that ∀ℓ = 1, . . . , ki,S ,
+                                                        1
+                                              vi (Sℓ ) ≥ Vi − νi .
+                                                        3
+      Note that this is possible since by subadditivity, the average value of a subset in any partition
+      of S into ki,S subsets is at least vi (S)/ki,S ≥ 31 Vi , and indivisibility of items can cause the
+      value to drop by at most νi .
+   4. For each set Sℓ produced above, remove some items if necessary to ensure that its value is at
+      most Vi . Call the resulting set Sℓ′ . Note that since removing an item can decrease the value
+      by at most νi , we start from value ≥ 31 Vi − νi , and we only remove items as long as the value
+      is more than Vi , we can conclude that
+                                                                   1
+                                                Vi ≥ vi (Sℓ′ ) ≥     Vi − νi .
+                                                                   3
+
+                                                          8
+                                                    ′     Px̃i,T .
+                    P
+   5. Set x̃i,T =       S∈Fi ,∃ℓ:Sℓ′ =T xi,S , and xi,T =   S x̃i,S
+
+
+   6. Return x′ .
+
+    Let us now prove                            ′
+                  P the′ desired properties of x ′′. By construction (step 5), the solution is normalized
+in the sense that T xi,T = 1 for every i ∈ A . Also, as we argued above, Vi ≥ vi (T ) ≥ 31 Vi − νi
+for every set T participating in the support of x′ . It remains to prove that the coeﬃcients x′i,T add
+up to at most 1 on each item.
+    Let us ﬁrst consider x̃i,T : Since each contribution to x̃i,T for j ∈ T is inherited from some
+coeﬃcient xi,S where j ∈ S, each coeﬃcient xi,S contributes at P       most once in this way, and the
+coeﬃcients xi,S for S ∋ j add up to at most 1, it is clear that i,T ∋j x̃i,T ≤ 1. P       Finally, x′i,T is
+obtained by normalizing x̃i,T ; so we need to be concerned about the summation S x̃i,S , which
+could be possibly less than 1.
+    We have:            X                     X                       1      2
+                            vi (S)xi,S = Vi −        vi (S)xi,S ≥ Vi − Vi = Vi .
+                                                                      3      3
+                           S∈Fi                      S ∈F
+                                                       / i
+
+           Peach coeﬃcient xi,S for S ∈ Fi contributes ki,S coeﬃcients of the same value to the
+Observe that
+summation S x̃i,S , and the union of the respective sets is S. So we have
+             X            X              X  3vi (S)           3 X vi (S)xi,S
+                  x̃i,S =    ki,S xi,S =               · xi,S ≥                ≥1
+                                                Vi              2         Vi
+               S⊆I
+                ′               S∈Fi              S∈Fi                 S∈Fi
+
+considering that 3vi (S)/Vi ≥ 1 for S ∈ Fi , so the ﬂoor operation can decrease the ratio by at most
+                                                                                   x̃
+a factor of 2. Also, we have S∈Fi vi (S)xi,S ≥ 23 Vi from above. Hence x′i,T = P i,T
+                             P
+                                                                                            ≤ x̃i,T and
+                                                                                    S x̃i,S
+                 ′
+the coeﬃcients xi,S for S ∋ j add up to at most 1.
+
+2.4   Iterated Rounding
+Finally, we need to round the fractional solution (x′i,S ) obtained in the previous phase. As a
+subroutine, we use the assumed Rounding Procedure for (additive) social welfare.
+   Given a fractional solution x′ = (x′i,S ) obtained in the previous phase, we call the procedure
+                                                    1
+NSW-ROUND(x′ , A′′ , I ′ , δ) with a parameter δ = 7d , where d is a approximation factor guaranteed
+by the Rounding Procedure.
+
+Algorithm 1 Iterated Rounding
+ 1: procedure NSW-Round(x′ , A0 , I0 , δ):
+       Let Vi′ ← S⊆I ′ vi (S)x′i,S
+                  P
+ 2:
+ 3:    For each item j ∈ I0 independently, let rj ← t with probability δ(1 − δ)t−1 for t ≥ 1.
+ 4:    Let Rt ← {j ∈ I0 : rj = t} for all t ≥ 1
+ 5:    Let t ← 1
+ 6:    while At 6= ∅ do
+ 7:       (Si : i ∈ At ) ← RoundingProcedure(x′ , At )
+ 8:       At+1 ← {i ∈ At : vi (Si ) < δVi′ }
+ 9:       For each agent i ∈ At \ At+1 , allocate Ti ← Si ∩ Rt .
+10:    end while
+11:    Return (Ti : i ∈ A0 )
+12: end procedure
+
+
+
+                                                             9
+    As we mentioned above, the intuition behind this rounding procedure is that it gives good value
+to a large fraction of agents, and exponentially small values to an exponentially decaying number
+of agents, so overall its Nash social welfare is good. We prove this in a sequence of lemmas.
+                                                                                         1
+Lemma 4. Under our assumption on the Rounding Procedure, and setting δ = 7d                , in each
+round there is at least a δ-fraction of agents (rounded up to the nearest integer) who receive value
+at least δVi′ .
+
+Proof. Note that Vi′ ≥ 16 Vi , since every set in the support of x′i,S has value at least 13 Vi −νi ≥ 16 Vi . We
+assume that under valuations wi (S) = V1′ vi (S), the Rounding Procedure returns an allocation
+                                              i
+(Si : i ∈ At ) such that i∈At wi (Si ) ≥ d1 |At |. Also, the fractional solution x′ has been processed so
+                         P
+that no set in its support for agent i has value more than Vi ≤ 6Vi′ , and the rounding only allocates
+subsets of sets in the support of x′ . Hence, we have wi (Si ) = V1′ vi (Si ) ≤ 6 for every agent i. Consider
+                                                                    i
+the agents who receive value wi (Si ) ≥P    δ; if the number of such agents is less than δ|At |, then the
+total value collected by the agents is i∈At wi (S) < 6 · δ|At | + δ · (1 − δ)|At | < 7δ|At | = 1d |At |,
+which is a contradiction.
+
+Lemma 5. If |A0 | = a and the agents are ordered by the round in which they received items (and
+arbitrarily within each round), then the i-th agent receives each element of her set Si independently
+with probability at least δ(1 − i−1
+                                 a ).
+
+Proof. Consider the i-th agent, and suppose that i ∈ At \ At+1 , i.e. the agent gets items in round
+t. We claim that a(1 − δ)t−1 ≥ n − i + 1: In each round, we allocate items to at least a δ-fraction
+of agents, so the set of agents At−1 remaining after t − 1 rounds has size at most a(1 − δ)t−1 . This
+set must include agent i, otherwise she would have been satisﬁed earlier. Therefore, a − i + 1 ≤
+a(1 − δ)t−1 .
+    The items allocated to agent i in round t are Si ∩ Rt , where Rt contains each element indepen-
+dently with probability δ(1 − δ)t−1 . By the argument above, δ(1 − δ)t−1 ≥ δ · a−i+1
+                                                                                  a .
+
+Lemma 6. If Ti is the set allocated to the i-th agent in the ordering defined above (and we assume
+w.l.o.g. that the index of this agent is also i), and maxj∈I ′ vi (j) ≤ νi then
+                                                     
+                                             Vi                   60
+                                 E log                  ≤ log 2          .
+                                        vi (Ti ) + νi        δ (1 − i−1
+                                                                     n )
+
+Proof. By deﬁnition, the set Si tentatively chosen for the i-th agent in the round where i ∈ At \At+1
+satisﬁes                                                          
+                                                  ′      1
+                                    vi (Si ) ≥ δVi ≥ δ     Vi − νi
+                                                         3
+(see Lemma 3). By Lemma 5, the i-th agent receives a set Ti = Si ∩ Rt which contains each element
+of Si independently with probability at least δ(1 − i−1     n ).
+                                          Vi
+     Consider now the expression log f (T   i)
+                                               , where f (Ti ) = vi (Ti ) + νi . This is a random quantity due
+to the randomness in Rt (the set Si is ﬁxed here). We use concentration of subadditive functions
+(Theorem 20) to argue that this expression is not too large in expectation. We have f (Si ) =
+vi (Si ) + νi ≥ 31 δVi . By the expectation property of subadditive functions (Lemma 16), we have
+
+                                                         i−1 1       1        i−1
+                  E[f (Ti )] = E[f (Si ∩ Rt )] ≥ δ(1 −      ) · δVi = δ2 (1 −     )Vi .
+                                                          n    3     3         n
+Let us denote the last expression µi := 13 δ2 (1 − i−1
+                                                    n )Vi ≤ E[f (Ti )].
+
+
+                                                      10
+    Now, we apply the lower-tail inequality, Theorem 20, with q = 2. Observe that we can assume
+      1
+νi < 20 µi . Otherwise,
+                                        Vi    20Vi           60
+                                            ≤        = 2
+                                        νi      µi      δ (1 − i−1
+                                                                 n )
+and so the desired bound holds.
+                                     µi        µi                       µi
+    Let us set q = 2 and k + 1 = ⌊ 10ν  i
+                                          ⌋ ≥ 15ν i
+                                                    (considering that 10ν  i
+                                                                             ≥ 2) in Theorem 20. We get
+                                                                            
+                          h          µi i                   E[f (Ti )] µi
+                        Pr f (Ti ) <        ≤ Pr f (Ti ) ≤            −
+                                     30                         15      30
+                                                                                  
+                                                            E[f (Ti )] (k + 1)νi
+                                            ≤ Pr f (Ti ) ≤            −
+                                                            5(q + 1)        q+1
+                                               1/2
+                                                2               2
+                                            ≤            ≤ µ /(30ν ) .
+                                                2k         2 i      i
+
+                                                      Vi                                                 1
+Our goal is to bound the expectation E[log f (T         i)
+                                                           ]. We distinguish two cases: When f (Ti ) < 30  µi ,
+                                                                                                       1
+we use the bound f (Ti ) ≥ νi , which always holds. Otherwise, we use the bound f (Ti ) ≥ 30 µi . From
+here,                    
+                    Vi              h          µi i         Vi           h           µi i       30Vi
+           E log            ≤ Pr f (Ti ) <          · log       + 1 − Pr f (Ti ) <          · log
+                  f (Ti )                     30            νi                        30           µi
+                                        h           µi  i         µi         30Vi
+                                  = Pr f (Ti ) <           · log      + log
+                                                    30           30νi          µi
+                                              2              µi         30Vi
+                                       ≤ µ /(30ν ) log           + log       .
+                                          2 i     i        30νi          µi
+One can verify that the function 22x log x is upper-bounded by log 2 for all x > 0.1 Hence,
+                                   
+                              Vi                      30Vi           60Vi              60
+                  E log               ≤ log 2 + log           < log       = log 2              .
+                            f (Ti )                    µi             µi          δ (1 − i−1
+                                                                                          n )
+
+
+
+Lemma 7. If Ti is the set allocated to the i-th agent in the ordering defined above (and we assume
+w.l.o.g. that the index of this agent is also i), and maxj∈I ′ vi (j) ≤ νi then
+                                                               
+                                  1 X                  Vi              165
+                                   ′′
+                                            E log                 ≤ log 2 .
+                                |A |              vi (Ti ) + νi         δ
+                                         i∈A
+                                         ′′
+
+
+Proof. Let us denote a = |A′′ |. From Lemma 6, we have
+         a                              a                                     a              !
+     1X                Vi              1X               60               60 1 X             i−1
+            E log                  ≤          log 2              = log 2 −         log 1 −
+     a
+        i=1
+                  vi (Ti ) + νi        a
+                                         i=1
+                                                   δ (1 − i−1
+                                                            n )
+                                                                         δ   a
+                                                                               i=1
+                                                                                             a
+
+Here, we have ai=1 log(1 − i−1
+                                            Qa a−i+1
+                                                           = log aa!a ≥ −a by a standard estimate for the
+                P
+                                  a ) = log    i=1    a
+factorial. So we can conclude
+                                a                     
+                            1X                 Vi               60          165
+                                   E log                 ≤ log 2 + 1 < log 2 .
+                            a            vi (Ti ) + νi          δ            δ
+                                i=1
+
+
+
+   This concludes the analysis of the iterated rounding phase, which allocates the set Ti to each
+agent i ∈ A′′ . For agents i ∈ A \ A′′ , we set Ti = ∅.
+  1
+      We are using natural logarithms everywhere.
+
+
+                                                      11
+2.5    Rematching and finishing the analysis
+The last step in the algorithm is to replace the initial matching τ : A → H with a new matching
+σ : A → H which is optimal on top of the allocation (Ti : i ∈ A). To analyze this step, we need
+two lemmas from previous work, whose proofs can be modiﬁed easily to yield the following. (We
+provide full proofs in the appendix.)
+                                                                                  Q
+Lemma 8 (matching extension). Let τ : A → I be the matching maximizing a∈A vi (τ (a)),
+H = τ (A), and I ′ = I \ H. Let (Vi : i ∈ A) be values such that Vi > 0 for i ∈ A′ , Vi = 0 for
+i ∈ A \ A′ and
+                                         X vi (T ∗ )
+                                                  i
+                                                     ≤ c|A′ |
+                                               Vi
+                                            ′   i∈A
+for every allocation (T1 , . . . , Tn ) of the items in I ′ . Then there is a matching π : A → H such that
+                       ∗            ∗
+
+                                                              1 Y                    OP T
+                                                                  (vi (Si∗ ))1/|A| =
+                            Y
+                                  (Vi + vi (π(i)))1/|A| ≥
+                                                             c+1                     c+1
+                            i∈A                                        i∈A
+
+where (S1∗ , . . . , Sn∗ ) is an allocation of I optimizing Nash social welfare.
+                                                                          Q
+Lemma 9 (rematching). Let τ : A → I be the matching maximizing a∈A vi (τ (a)), H = τ (A),
+I ′ = I \ H, π : A → H another arbitrary matching, and νi = maxj∈I ′ vi (j). Let (Wi : i ∈ A) be
+nonnegative values. Then there is a matching ρ : A → H such that
+
+                                                    (max{Wi , vi (π(i)), νi })1/|A| .
+                  Y                               Y
+                     (max{Wi , vi (ρ(i))})1/|A| ≥
+                      i∈A                                        i∈A
+                                                             P
+    We apply Lemma 8 with the values Vi = S⊆I ′ vi (S)xi,S , where (xi,S ) is the fractional solution
+returned by Relaxation Solver. Due to our assumptions, the condition of Lemma 8 is satisﬁed
+and hence there is a matching π : A → H as described in Lemma 8:
+                                 Y                          OP T
+                                    (Vi + vi (π(i)})1/|A| ≥      .
+                                                            c+1
+                                             i∈A
+
+From Lemma 7, we can ﬁnd with constant probability an assignment (Ti : i ∈ A′′ ) such that
+                                            !1/|A′′ |
+                          Y         Vi                 200
+                                                      < 2 < 10000 d2 .
+                                v(Ti ) + νi             δ
+                             ′′        i∈A
+                   1
+(Recall that δ = 7d  , where d > 1 is the parameter guaranteed by the Rounding Procedure.)
+   Moreover, we know that v(Ti ) ≤ Vi and Vi ≥ 6νi , hence v(Ti ) + νi ≤ 2Vi for i ∈ A′′ . For agents
+in A \ A′′ , we have Ti = ∅ and Vi ≤ 6νi . From here, we have
+            Y         Vi + vi (π(i))                   Y       2Vi + vi (π(i))               Y      6νi + vi (π(i))
+                                                   ≤
+                  v(Ti ) + νi + vi (π(i))                   v(Ti ) + νi + vi (π(i))                  νi + vi (π(i))
+            i∈A                                        i∈A
+                                                         ′′                               i∈A\A  ′′
+
+                                                       Y       2Vi            Y
+                                                   ≤                                   6 ≤ (20000 d2 )|A| .
+                                                            v(Ti ) + νi
+                                                       i∈A
+                                                         ′′                  i∈A\A′′
+
+Finally, we use the rematching Lemma 9, with values vi (Ti ): there exists a matching ρ : A → H
+such that
+ Y                                   Y                                        1Y
+   (max{vi (Ti ), vi (ρ(i))})1/|A| ≥   (max{vi (Ti ), vi (π(i)), νi })1/|A| ≥    (Vi + νi + vi (π(i)))1/|A|
+                                                                              3
+i∈A                                          i∈A                                                 i∈A
+
+
+                                                                 12
+                              1     Y                                OP T
+                        ≥         2
+                                        (Vi + vi (π(i)))1/|A| ≥                  .
+                          20000 d                               20000(c + 1)d2
+                                    i∈A
+                                                                            Q
+Recall that at the end, we ﬁnd a matching σ : A → H maximizing i∈A vi (Ti + σ(i)). There-
+fore, theQ
+         NSW value of our solution Q is at least as much as the       one provided by the matching ρ,
+                           1/|A|                                  1/|A|         1
+which is i∈A (vi (Ti +ρ(i))      ≥ i∈A (max{vi (Ti ), vi (ρ(i))})       ≥ 20000(c+1)d2 OP T . This proves
+
+Theorem 1.
+
+
+3    Nash social welfare with subadditive valuations
+Here we explain how to use the general framework described in Section 2 to obtain a constant-factor
+approximation for subadditive valuations, accessible by demand queries.
+
+Theorem 10. There is a constant-factor approximation algorithm for the Nash social welfare prob-
+lem with subadditive valuations, using polynomial running time and a polynomial number of queries
+to a demand oracle for each agent’s valuation.
+
+   Aside from our general reduction and the ability to solve the Eisenberg-Gale relaxation with
+demand queries, the main component that we need here is an implementation of a Rounding
+Procedure for subadditive valuations, as described in Theorem 1. To our knowledge, there is
+only one such procedure known, which is rather intricate and forms the basis of Feige’s ingenious
+1/2-approximation algorithm for maximizing social welfare with subadditive valuations [Fei09]. We
+use it here as a black-box, which can be described as follows.
+
+Theorem 11. For any ǫ > 0, there is a polynomial-time algorithm, which given a fractional so-
+lution (xi,S ) of (Configuration LP) for an instance with subadditive valuations, produces a random
+allocation (Ri : i ∈ A) such that for every agent, Ri ⊆ Si for some Si , xi,Si > 0, and
+                                              
+                                          1                     X
+                          E[vi (Ri )] ≥     − ǫ Vi , where Vi =   vi (S)xi,S .
+                                          2
+                                                                  S⊆I
+
+    For the proof, we refer the reader to Section 3.2.2 of [Fei09], Theorem 3.9 and the summary of
+its proof which shows that every player receives expected value at least ( 21 − ǫ)Vi .
+    Now we are ready to prove Theorem 10.
+
+Proof. Considering Theorem 1, we want to show how to implement the Relaxation Solver and
+Rounding Procedure for subadditive valuations.
+   The Relaxation Solver can be obtained applying standard convex optimization techniques to
+the (Eisenberg-Gale Relaxation) relaxation. As we discuss in more detail in Appendix A, we can
+compute the values and supergradients of the objective function using demand queries, and obtain
+an optimal solution satisfying the assumption of Lemma 15 (with fi = vi+ , α = 1), and hence
+
+                                          X v + (x∗ )
+                                                i   i
+                                                         ≤ 2|A|
+                                             v + (xi )
+                                          i∈A i
+
+for every feasible solution x∗ . Another way to interpret this condition is that for Vi = vi+ (xi ) and
+modiﬁed valuations deﬁned as wi (S) = V1i vi (S), there is no feasible solution x∗ achieving value
+P       + ∗
+   i∈A wi (xi ) > 2|A|. In particular, the social welfare optimum with the valuations (wi : i ∈ A) is
+at most 2|A|. Hence, we satisfy the Relaxation Solver assumptions with c = 2.
+
+
+                                                    13
+    Next, we implement the Rounding Procedure: Given a fractional solution (xi,S ), Theorem 11
+gives a procedure   which returns a random allocation (Ri : i ∈ A) such that E[vi (Ri )] ≥ ( 12 − ǫ)Vi =
+( 2 − ǫ) S xi,S vi (S). This means that for the modiﬁed valuations, wi (S) = V1i vi (S), we have
+  1     P
+
+E[wi (Ri )] ≥ 12 − ǫ, and i∈A wi (Ri ) ≥ ( 12 − ǫ)|A|. Hence, we satisfy the Rounding Procedure
+                          P
+                          2
+assumptions with d = 1−2ǫ    .
+                                                           2
+    Finally, we apply Theorem 1 with c = 2 and d = 1−2ǫ       . We obtain a constant-factor approx-
+imation algorithm for the Nash social welfare problem with subadditive valuations accessible via
+demand queries. (The constant factor ends up being 20000(c + 1)d2 = 375000 for ǫ = 0.1.)
+
+
+References
+[AGSS17]    Nima Anari, Shayan Oveis Gharan, Amin Saberi, and Mohit Singh. Nash social welfare,
+            matrix permanent, and stable polynomials. In Proceedings of the 8th Innovations in
+            Theoretical Computer Science Conference (ITCS), 2017.
+
+[AMGV18] Nima Anari, Tung Mai, Shayan Oveis Gharan, and Vijay V Vazirani. Nash social welfare
+         for indivisible items under separable, piecewise-linear concave utilities. In Proceedings of
+         the 29th annual ACM-SIAM Symposium on Discrete Algorithms (SODA), pages 2274–
+         2290. SIAM, 2018.
+
+[Bar05]     Julius B Barbanel. The geometry of efficient fair division. Cambridge University Press,
+            2005.
+
+[BBKS20]    Siddharth Barman, Umang Bhaskar, Anand Krishna, and Ranjani G. Sundaram. Tight
+            approximation algorithms for p-mean welfare under subadditive valuations. In 28th
+            Annual European Symposium on Algorithms, ESA 2020, volume 173, pages 11:1–11:17,
+            2020.
+
+[BCE+ 16]   Felix Brandt, Vincent Conitzer, Ulle Endriss, Jérôme Lang, and Ariel D. Procaccia,
+            editors. Handbook of Computational Social Choice. Cambridge University Press, 2016.
+
+[BKKN21] Siddharth Barman, Anand Krishna, Pooja Kulkarni, and Shivika Narang. Sublin-
+         ear approximation algorithm for nash social welfare with XOS valuations. CoRR,
+         abs/2110.00767, 2021.
+
+[BKV18]     Siddharth Barman, Sanath Kumar Krishnamurthy, and Rohit Vaish. Finding fair and
+            eﬃcient allocations. In Proceedings of the 2018 ACM Conference on Economics and
+            Computation, pages 557–574, 2018.
+
+[BS06]      Nikhil Bansal and Maxim Sviridenko. The Santa Claus problem. In Proceedings of the
+            38th ACM Symposium on Theory of Computing (STOC), pages 31–40, 2006.
+
+[BT96]      Steven J Brams and Alan D Taylor. Fair Division: From cake-cutting to dispute reso-
+            lution. Cambridge University Press, 1996.
+
+[CCG+ 18] Bhaskar Ray Chaudhury, Yun Kuen Cheung, Jugal Garg, Naveen Garg, Martin Hoe-
+          fer, and Kurt Mehlhorn. On fair division for indivisible items. In Proceedings of the
+          38th IARCS annual Conference on Foundations of Software Technology and Theoretical
+          Computer Science (FSTTCS), pages 25:1–17. Springer, 2018.
+
+
+
+                                                  14
+[CDG+ 17] Richard Cole, Nikhil Devanur, Vasilis Gkatzelis, Kamal Jain, Tung Mai, Vijay V Vazi-
+          rani, and Sadra Yazdanbod. Convex program duality, Fisher markets, and Nash social
+          welfare. In Proceedings of the 2017 ACM Conference on Economics and Computation
+          (EC), pages 459–460. ACM, 2017.
+
+[CG15]     Richard Cole and Vasilis Gkatzelis. Approximating the Nash social welfare with in-
+           divisible items. In Proceedings of the 47th ACM Symposium on Theory of Computing
+           (STOC), pages 371–380. ACM, 2015.
+
+[CGM21]    Bhaskar Ray Chaudhury, Jugal Garg, and Ruta Mehta. Fair and eﬃcient allocations
+           under subadditive valuations. In Proceedings of the AAAI Conference on Artificial
+           Intelligence, pages 5269–5276, 2021.
+
+[DHHW23] Daniel Dadush, Christopher Hojny, Sophie Huiberts, and Stefan Weltge. A simple
+         method for convex optimization in the oracle model. Mathematical Programmming,
+         2023.
+
+[DNS10]    Shahar Dobzinski, Noam Nisan, and Michael Schapira. Approximation algorithms for
+           combinatorial auctions with complement-free bidders. Math. Oper. Res., 35(1):1–13,
+           2010.
+
+[Fei08]    Uriel Feige. On allocations that maximize fairness. In SODA, volume 8, pages 287–293.
+           Citeseer, 2008.
+
+[Fei09]    Uriel Feige. On maximizing welfare when utility functions are subadditive. SIAM J.
+           Comput., 39(1):122–142, 2009.
+
+[GHL+ 23] Jugal Garg, Edin Husic, Wenzheng Li, László A. Végh, and Jan Vondrák. Approxi-
+          mating nash social welfare by matching and local search. In Barna Saha and Rocco A.
+          Servedio, editors, Proceedings of the 55th Annual ACM Symposium on Theory of Com-
+          puting, STOC 2023, Orlando, FL, USA, June 20-23, 2023, pages 1298–1310. ACM,
+          2023.
+
+[GHM17]    Jugal Garg, Martin Hoefer, and Kurt Mehlhorn. Satiation in Fisher markets and ap-
+           proximation of Nash social welfare. arXiv preprint arXiv:1707.04428, 2017.
+
+[GHM18]    Jugal Garg, Martin Hoefer, and Kurt Mehlhorn. Approximating the Nash social wel-
+           fare with budget-additive valuations. In Proceedings of the 29th annual ACM-SIAM
+           Symposium on Discrete Algorithms (SODA), pages 2326–2340. SIAM, 2018.
+
+[GHV20]    Jugal Garg, Edin Husić, and László A. Végh. Approximating Nash social welfare under
+           Rado valuations. arXiv preprint arXiv:2009.14793, 2020.
+
+[GHV21]    Jugal Garg, Edin Husić, and László Végh. Approximating nash social welfare under rado
+           valuations. In Proceedings of the 53rd Annual ACM SIGACT Symposium on Theory of
+           Computing, pages 1412–1425, 2021.
+
+[GKK20]    Jugal Garg, Pooja Kulkarni, and Rucha Kulkarni. Approximating Nash social welfare
+           under submodular valuations through (un)matchings. In Proceedings of the ACM-SIAM
+           Symposium on Discrete Algorithms, SODA, pages 2673–2687, 2020.
+
+[Kel97]    Frank Kelly. Charging and rate control for elastic traﬃc. European transactions on
+           Telecommunications, 8(1):33–37, 1997.
+
+                                              15
+[KN79]      Mamoru Kaneko and Kenjiro Nakamura. The Nash social welfare function. Economet-
+            rica: Journal of the Econometric Society, pages 423–435, 1979.
+
+[LV21a]     Wenzheng Li and Jan Vondrák. A constant-factor approximation algorithm for nash
+            social welfare with submodular valuations. In 2021 IEEE 62nd Annual Symposium on
+            Foundations of Computer Science (FOCS), pages 25–36. IEEE, 2021.
+
+[LV21b]     Wenzheng Li and Jan Vondrák. Estimating the nash social welfare for coverage and
+            other submodular valuations. In Proceedings of the Thirty-First Annual ACM-SIAM
+            Symposium on Discrete Algorithms (SODA), pages 1119–1130. SIAM, 2021.
+
+[Mou04]     Hervé Moulin. Fair division and collective welfare. MIT press, 2004.
+
+[Nas50]     John F Nash. The bargaining problem. Econometrica: Journal of the econometric
+            society, pages 155–162, 1950.
+
+[Rot16]     Jörg Rothe, editor. Economics and Computation, An Introduction to Algorithmic Game
+            Theory, Computational Social Choice, and Fair Division. Springer, 2016.
+
+[RW98]      Jack Robertson and William Webb. Cake-cutting algorithms: Be fair if you can. CRC
+            Press, 1998.
+
+[Sch03]     Gideon Schechtman. Concentration, results and applications. Handbook of the Geometry
+            of Banach Spaces, (2):1603–1634, 2003.
+
+[Tal89]     Michel Talagrand. Isoperimetry and integrability of the sum of independent banach
+            space valued random variables. Annals of Probability, 17:1546–1570, 1989.
+
+[Tal95]     Michel Talagrand. Concentration of measure and isoperimetric inequalities in product
+            spaces. Inst. Hautes Etudes Sci.Publ. Math., 81:73–205, 1995.
+
+[Var74]     Hal R Varian. Equity, envy, and eﬃciency. Journal of Economic Theory, 9(1):63–91,
+            1974.
+
+[You95]     H Peyton Young. Equity: in theory and practice. Princeton University Press, 1995.
+
+
+A     The Eisenberg-Gale Relaxation
+We consider the following relaxation of the Nash Social Welfare problem similar to the relaxations
+in [GHV21, LV21a]. We remark that the application of (Eisenberg-Gale Relaxation) in the Nash
+Social Welfare algorithm excludes the items allocated in the initial matching; indeed we ignore those
+items for the analysis in this section.
+
+                             X
+                      max          log fi (xi )                           (Eisenberg-Gale Relaxation)
+                             i∈A
+                               X
+                                      xij ≤ 1                    ∀j ∈ I
+                               i∈A
+                               xij ≥ 0                           ∀i ∈ A, j ∈ I
+
+
+
+
+                                                  16
+where fi is a suitable relaxation of the valuation function vi for each i. In particular, we will use
+the concave extension, fi = vi+ :
+                                      X
+                     vi+ (xi ) := max    vi (S)xi,S :                          (Concave Extension)
+                                       S⊆I
+                                   X
+                                            xi,S ≤ xij                          ∀j ∈ I
+                                 S⊆I:j∈S
+                                   X
+                                         xi,S = 1
+                                   S⊆I
+
+                                   xi,S ≥ 0                                     ∀S ⊆ I
+
+Note that (Concave Extension) is a linear program. The dual LP to (Concave Extension) is
+                                        X
+                    vi+ (xi ) = min q +   pj xij :                                  (Dual LP)
+                                             j∈I
+                                      X
+                                 q+         pj ≥ vi (S)                         ∀S ⊆ I
+                                      j∈S
+
+                                 pj ≥ 0                                         ∀j ∈ I.
+
+From here, we can see that vi+ (xi ) is a minimum over a collection of linear functions, and hence a
+concave function.
+
+A.1    Solving the Eisenber-Gale Relaxation
+Here we show how to solve the (Eisenberg-Gale Relaxation) using demand queries.
+Lemma 12. Given demand oracles for v1 , · · · , vn , an optimal solution x∗ for (Eisenberg-Gale Relaxation)
+can be found within a polynomially small error in polynomial time. Moreover, the support of x∗ has
+size polynomial in n.
+    Since vi+ (xi ) is a nonnegative concave function, log vi+ (xi ) is a concave function as well (wherever
+vi (xi ) > 0). If we implement the evaluation and supergradientPoracles for log vi+ (xi ), then we
+ +
+
+can use standard techniques (see, e.g., [DHHW23]) to maximize i∈A log vi+ (xi ) over the convex
+polytope                                                      X
+                                 P = {x ∈ RI×A
+                                           +   : ∀j ∈ I,            xij ≤ 1}.
+                                                              i∈A
+
+    The function vi+ (xi ) can be evaluated with polynomially many demand queries; this is well-
+known [Fei08] and holds because the demand oracle happens to be the separation oracle for (Dual LP).
+Hence we can also evaluate log vi+ (xi ). We focus here on the implementation of a supergradient
+oracle.
+    A supergradient of log vi+ at a point z is any linear function Li (y) such that Li (z) = log vi+ (z)
+and Li (y) ≥ log vi+ (y) everywhere. Given z, as a ﬁrst step, we ﬁnd a supergradient of vi+ itself:
+ThisP can be done by solving the dual LP and ﬁnding α and (pj : j ∈ I) such that vi+ (z) =
+α + j∈I pj zj = α + p · z. Since vi+ (y) for every y is the minimum over such linear functions, we
+also have vi+ (y) ≤ α + p · y for all y. Hence α + p · y is the desired supergradient at z.
+    Next, we compute the gradient of log(α + p · y) with respect to y:
+                                                    ∇(α + p · y)     p
+                             ∇ log(α + p · y) =                  =       .
+                                                     α+p·y         α+p·y
+
+                                                         17
+We claim that the linear approximation of log(α + p · y) obtained by evaluating this gradient at z,
+                                                                                                p
+      Li (y) = log(α + p · z) + (y − z) · ∇(log(α + p · y))|z = (α + p · z) + (y − z) ·
+                                                                                              α+p·z
+
+is a valid supergradient for log vi+ (y) at z. Indeed, we have log vi+ (z) = log(α + p · z) = Li (z), and
+for all y,
+
+          log vi+ (y) ≤ log(α + p · y) ≤ (α + p · z) + (y − z) · ∇(log(α + p · y))|z = Li (y).
+
+where the second inequality follows from the concavity of log(α + p · y).
+    Hence, (Eisenberg-Gale Relaxation) can be solved in polynomial time, within a polynomially
+small error, using standard  convex optimization   techniques [DHHW23]. In particular, we can ﬁnd
+a point x such that i∈A log vi (xi ) ≤ i∈A log vi+ (xi ) + ǫ for every feasible solution x∗ .
+                                 + ∗
+                      P                  P
+    Finally, let’s explain why the solution can be assumed to have polynomially bounded support.
+Given a fractional solution xij (which has obviously polynomially bounded support), for each agent i,
+using demand queries we also obtain a solution of (Dual LP) certifying the value of vi+ (xi ). By com-
+plementary slackness, there is a matching primal solution of (Eisenberg-Gale Relaxation) which has
+nonzero variables corresponding to the tight constraints in (Dual LP) that deﬁne the dual solution.
+Since the dimension of (Dual LP) is polynomial, the number of such tight constraints is also poly-
+nomial. Hence we can assume that the number of nonzero variables in (Eisenberg-Gale Relaxation)
+is polynomial.
+
+A.2    Properties of the optimal solution
+Consider now the (Eisenberg-Gale Relaxation) in a general form, with objective functions fi (which
+could be equal to vi+ or perhaps some other extension of vi ).
+
+                              X
+                       max          log fi (xi )                                  (Eisenberg-Gale Relaxation)
+                              i∈A
+                                 X
+                                       xij ≤ 1                           ∀j ∈ I
+                                 i∈A
+                                xij ≥ 0                                  ∀i ∈ A, j ∈ I
+
+
+    Suppose that x is an optimal solution of this relaxation. We will need the following prop-
+erty, which is also stated in [GHV20] in the context of general concave valuations (Lemma 4.1
+in [GHV20]). Our proof here is much simpler. First, we consider the case of diﬀerentiable concave
+fi which makes the proof cleaner. (Recall however that vi+ is not diﬀerentiable everywhere.)
+
+Lemma 13. For an optimal solution x of (Eisenberg-Gale Relaxation) with differentiable nonneg-
+ative monotone concave functions fi , and any other feasible solution x∗ , we have
+                                              X fi (x∗ )
+                                                         i
+                                                               ≤ |A|.
+                                                    fi (xi )
+                                              i∈A
+
+Proof. Since fi (x) is a concave function, we have
+
+                                fi (x∗i ) ≤ fi (xi ) + (x∗i − xi ) · ∇fi (xi ).
+
+                                                        18
+From here, we get
+     X fi (x∗ )           X fi (xi ) + (x∗ − xi ) · ∇fi (xi )                           X
+                i
+                      ≤                         i
+                                                                           = |A| +       (x∗i − xi ) · ∇(log fi (xi )) ≤ |A|
+           fi (xi )                            fi (xi )
+     i∈A                  i∈A                                                           i∈A
+
+using the fact that x∗ is feasible and x is an optimum for the objective function
+                                                                                                                      P
+                                                                                                                          i∈A log fi (xi ).
+
+   To deal with a more general situation where fi is not necessarily diﬀerentiable, and we don’t
+ﬁnd an exact optimum, we prove a robust version of this lemma.
+Lemma 14. Let fi : [0, 1]I → R for each i ∈ A be nonnegative, monotone and concave. For ǫ > 0,
+let x be an ǫ4 -approximate solution of (Eisenberg-Gale Relaxation), in the sense that for every other
+feasible solution x′ ,            X                 X
+                                     log fi (x′ ) ≤  (log fi (x) + ǫ4 ).                           (1)
+                                               i∈A                       i∈A
+
+And suppose further that that yij ≥ ǫ for all i, j, Then for every feasible solution x∗ , we have
+                                                      X fi (x∗ )
+                                                                 i
+                                                                         ≤ (1 + 2ǫ)|A|.
+                                                            fi (xi )
+                                                      i∈A
+                                                                                              P
+    Note that we must necessarily have ǫ ≤ 1/|A|, because 1 ≥                                     i∈A xij ≥ ǫ|A|.
+
+Proof. Let x satisfy the assumptions of the lemma. For any feasible x∗ and T ≥ 1, using the
+concavity of fi , we can write
+                                                                                1 ∗
+                                   fi (x∗i ) − fi (xi ) ≤ T (fi (xi +            (x − xi )) − fi (xi )).
+                                                                                T i
+From here,
+                             X fi (x∗ ) − fi (xi )               X fi (xi + 1 (x∗i − xi )) − fi (xi )
+                                           i                                        T
+                                                            ≤T                                                    .
+                                           fi (xi )                                      fi (xi )
+                             i∈A                                 i∈A
+
+Note that since yij ≥ ǫ, we have xi + T1 (x∗i − xi ) ≤ xi + T1 1 ≤ (1 + T1ǫ )xi . Also, fi (0) ≥ 0, so
+by monotonicity and concavity, fi (xi + T1 (x∗i − xi )) ≤ fi ((1 + T1ǫ )xi ) ≤ (1 + T1ǫ )fi (xi ). Similarly,
+                                                                                                             f (x + 1 (x∗ −x ))−fi (xi )
+fi (xi + T1 (x∗i − xi )) ≥ fi (xi − T1 1) ≥ (1 − T1ǫ )fi (xi ). Hence the ratio ri = i i T fii(xi )i                                       is at
+most δ = T1ǫ in absolute value, and we can use the following elementary approximation:
+
+                                                      ri − δ2 ≤ log(1 + ri ) ≤ ri .
+
+Plugging into the inequality above, we obtain
+  X fi (x∗ ) − fi (xi )              X                X                      |A|      X     fi (xi + T1 (x∗i − xi ))
+            i
+                             ≤T            ri ≤ T      (δ2 + log(1 + ri )) =      + T   log                          .
+            fi (xi )                                                         T ǫ2                   fi (xi )
+  i∈A                                i∈A              i∈A                                              i∈A
+
+Applying the assumption of the lemma to the feasible solution x′ = xi + T1 (x∗i − xi ), we have
+          fi (xi + T1 (x∗i −xi ))
+                                  ≤ ǫ4 |A|, which gives
+P
+  i∈A log         fi (xi )
+
+                          X fi (x∗ )                   X fi (x∗ ) − fi (xi )                        |A|
+                                      i
+                                           = |A| +                   i
+                                                                                     ≤ |A| +             + T ǫ4 |A|.
+                                fi (xi )                             fi (xi )                       T ǫ2
+                          i∈A                          i∈A
+
+We set T to equate the last two terms: T = 1/ǫ3 , which gives the statement of the lemma.
+
+                                                                         19
+Corollary 15. Given a value oracle and a supergradient oracle for each fi , for any constant α > 0,
+we can find a solution x of (Eisenberg-Gale Relaxation) in polynomial time such that for any feasible
+solution x∗ ,
+                                      X fi (x∗ )
+                                               i
+                                                   ≤ (1 + α)|A|.
+                                          fi (xi )
+                                      i∈A
+
+Proof. For ǫ > 0 (to be chosen at the end), we run a convex optimization algorithm on (Eisenberg-Gale Relaxation)
+with the additional constraint that xij ≥ ǫ, to obtain a solution x such that for any feasible x′ sat-
+isfying the same constraint, we have
+                                 X                  X
+                                     log fi (xi ) ≥   log fi (x′ ) − ǫ4 n.
+                                i∈A                    i∈A
+
+By Lemma 14, this solution also satisﬁes
+                                     X fi (x′ )
+                                                  i
+                                                       ≤ (1 + 2ǫ)n.
+                                            fi (xi )
+                                      i∈A
+
+Finally, note that every feasible solution x∗ of (Eisenberg-Gale Relaxation) can be modiﬁed to
+obtain a feasible solution x′ = (1 − ǫn)x∗ + ǫn · n1 1 which satisﬁes the constraint x′ij ≥ ǫ, and we
+have fi (x′i ) ≥ (1 − ǫn)fi (x∗i ) for every i ∈ A. Therefore, our solution also satisﬁes
+                                      X fi (x∗ )             (1 + 2ǫ)n
+                                                 i
+                                                       ≤               .
+                                            fi (xi )           1 − ǫn
+                                      i∈A
+            α
+For ǫ = 2+(1+α)n , we obtain the desired statement.
+
+
+B       Rematching lemmas
+Here we prove the rematching lemmas from Section 2.2. These are essentially identical to lemmas
+in previous work on Nash social welfare, only reformulated in a way convenient for our presentation.
+We give self-contained proofs here for completeness.
+
+Proof of Lemma 8. Suppose that Si∗ = Hi∗ ∪ Ti∗ where Hi∗ ⊆ H and Ti∗ ⊆ I ′ . We deﬁne a matching
+π as follows: For each nonempty Hi∗ , let π(i) be the item of maximum value (as a singleton) in Hi∗ .
+For Hi∗ = ∅, let π(i) be an arbitrary item in H not selected as π(i′ ) for some other agent. (Since
+|H| = |A|, we can always ﬁnd such items.) Recall that A′ are the agents who get positive value
+from I ′ ; in particular, we can assume Ti∗ = ∅ for i ∈  / A′ . Then we have, using monotonicity and
+subadditivity
+             Y        vi (Si∗ )        Y vi (T ∗ ) + vi (H ∗ )
+                                                i           i
+                                                                  Y vi (T ∗ ) + |H ∗ |vi (π(i)))
+                                                                            i      i
+                                     ≤                          ≤
+                 max{Vi , vi (π(i))}        max{Vi , vi (π(i))}          max{Vi , vi (π(i))}
+             i∈A                       i∈A                        i∈A
+                                        Y  vi (T ∗ )           Y
+                                     ≤              i
+                                                      + |Hi∗ |         |Hi∗ |.
+                                                V i
+                                      i∈A ′                          ′i∈A\A
+
+Here we use the AMGM inequality:
+                                   1/|A|                                           
+  Y  vi (T ∗ )          Y
+                                              1    X  vi (T ∗ )           X
+            i
+                + |Hi∗ |      |Hi∗ |      ≤                 i
+                                                                 + |Hi∗ | +     |Hi∗ | ≤ c + 1
+         V i                                 |A|          V i
+  i∈A′                  i∈A\A
+                            ′                       ′      i∈A                ′       i∈A\A
+                                                                                 ∗
+                                                                       P
+where the last inequality is by assumption and the fact that               i∈A |Hi | ≤ |H| = |A|.
+
+
+                                                       20
+Proof of Lemma 9. Let Ã = {i ∈ A : Wi < max{v(π(i)), νi }. We deﬁne a directed bipartite graph
+B between Ã and H, with two types of edges: Eτ = {(τ (i), i) : i ∈ Ã} and Eπ = {(i, π(i) : i ∈ Ã}.
+We also deﬁne:
+
+   • Aν = {i ∈ Ã : νi > vi (π(i))},
+
+   • Aτ = Aν ∪ {i ∈ Ã : ∃ directed path in B from i to Aν },
+
+   • Aπ = Ã \ Aτ .
+
+   We deﬁne a matching ρ as follows;
+
+   • For i ∈ Aτ , ρ(i) := τ (i),
+
+   • For i ∈ Aπ , ρ(i) := π(i).
+
+   • For i ∈
+           / Ã, we deﬁne ρ(i) arbitrarily, to make ρ a matching.
+
+    First, observe that this is indeed a matching: If it was the case that τ (i) = π(i′ ) = j for some
+i ∈ Aτ , i′ ∈ Aπ , then we would have edges (i′ , j) and (j, i) in the graph, and since there is a directed
+path from i to Aν (i ∈ Aτ ), there would also be a directed path from i′ to Aν , contradicting the
+fact that i′ ∈ Aπ . Hence, ρ is a matching.
+    Also, it’s easy to see that for every
+    Next, we analyze the value guarantee for ρ:
+           Y                         Y       Y                  Y        Y             Y
+              max{Wi , vi (ρ(i))} ≥       Wi      vi (ρ(i)) =        Wi     vi (τ (i))   vi (π(i)).
+         i∈A                         i∈A\Ã    i∈Ã              i∈A\Ã   i∈Aτ     i∈Aπ
+
+                Q                  Q          Q
+We claim that i∈Aτ vi (τ (i)) ≥ i∈Aν νi i∈Aτ \Aν vi (π(i)). Observe that the vertices of Aτ can be
+covered disjointly by directed paths that terminate in Aν (from each vertex of Aτ , there is such a
+path and it is also unique, because the in-degrees / out-degrees in the graph are at most 1). Let
+P denote the Aτ -vertices
+                      Q     on some directedQ path like this, and let s be its last vertex (in Aν ). If
+it was the case that i∈P vi (τ (i)) < νs i∈P \{s} vi (π(i)), then we could modify the matching τ by
+swapping its edges on P for the π-edges from P \ {s}, and ﬁnally an element of value νi for s (since
+this item is outside of H and hence available). This would increase the value of the matching τ ,
+which was chosen Q to be optimal, so this
+                                        Q cannot happen.
+    It follows that i∈P vi (τ (i)) ≥ νs i∈P \{s} vi (π(i)) for every maximal directed path terminating
+in Aν , and since these paths cover Aτ disjointly, by combining all these inequalities we obtain
+                                  Y               Y        Y
+                                     vi (τ (i)) ≥     νi         vi (π(i)).
+                                   i∈Aτ               i∈Aν   i∈Aτ \Aν
+
+Substituting this into the inequality above,
+         Y                          Y       Y    Y             Y
+             max{Wi , vi (ρ(i))} ≥       Vi   νi   vi (π(i)) =   max{Wi , νi , vi (π(i))}.
+          i∈A                         i∈A\Ã   i∈Aν      i∈Aτ             i∈A
+
+
+
+
+                                                        21
+C    Concentration of subadditive functions
+Let us start with a simple lower bound on the expected value of a random set with independently
+sampled elements.
+
+Lemma 16. If f : 2M → R+ is a monotone subadditive function and R is a random subset of S
+where each element appears independently with probability 1/k, k ≥ 1 integer, then
+                                                      1
+                                         E[f (R)] ≥     f (S).
+                                                      k
+Proof. Consider a random coloring of S, where every element j ∈ S receives independently a random
+color c(j) ∈ [k]. Deﬁning Sℓ = {j ∈ S : c(j) = ℓ}, we see that each set Sℓ has the same distribution
+as the set R in the Lemma. Therefore,
+                                                                 " k        #
+                                                                  1X          1
+                  E[f (R)] = E[f (S1 )] = . . . = E[f (Sk )] = E     f (Sℓ ) ≥ f (S)
+                                                                  k           k
+                                                                 ℓ=1
+
+by subadditivity.
+
+   This property is similar to the properties of submodular or self-bounding functions, which satisfy
+very convenient concentration bounds (similar to additive functions). Unfortunately, the same
+bounds are not true for subadditive functions; however, some concentration results can be recovered
+with a loss of certain constant factors.
+   Here we state a powerful concentration result presented by Schechtman [Sch03], based on the “q-
+point control” concentration inequality by Talagrand [Tal89, Tal95]. We state it here in a simpliﬁed
+form suitable for our purposes.
+
+Theorem 17. Let f : 2M → R+ be a monotone subadditive function, where f ({i}) ≤ 1 for every
+i ∈ M . Then for any real a > 0 and integers k, q ≥ 1, and a random set R from a product
+distribution,
+                                                                  1
+                      Pr[f (R) ≥ (q + 1)a + k] (Pr[f (R) ≤ a])q ≤ k .
+                                                                 q
+    This statement  can be obtained from Corollary 12 in [Sch03] by extending the deﬁnition of f
+to Ω = I⊂M 2 simply by saying fI (S) = f (S) for all S ⊆ I. Also, we identify 2I with {0, 1}I
+     ∗            I
+         S
+in a natural way. Assuming f ({i}) ≤ 1 means that 0 ≤ f (S + i) − f (S) ≤ 1 for any set S, by
+monotonicity and subadditivity. Therefore, f is 1-Lipschitz with respect to the Hamming distance,
+as required in [Sch03]. The statement holds for any product distribution, i.e. a random set R where
+elements appear independently.
+    Note that Theorem 17 refers to tails on both sides and hence is more convenient to use with
+the median of f than the expectation. The next lemma shows that this is not a big issue, since the
+theorem also implies that the median and expectation must be within a constant factor.
+
+Definition 18. We deﬁne the median of a random variable Z as any number med(Z) = m such
+that
+                          Pr[Z ≤ m] ≥ 1/2, Pr[Z ≥ m] ≥ 1/2.
+
+   For any nonnegative variable, obviously E[Z] ≥ 21 med(Z). For subadditive functions of indepen-
+dent random variables, we also get a bound in the opposite direction.
+
+
+
+                                                 22
+Lemma 19. Let f : 2M → R+ be a monotone subadditive function, where f ({i}) ≤ 1 for every
+i ∈ M . Then for a random set R from a product distribution,
+
+                                         E[f (R)] ≤ 5(med(f (R)) + 1).
+
+Proof. Let a = med(f (R)) be the median. We apply Theorem 17 with k = q + 1, q ≥ 3:
+                                                              q
+                                                        2q    2
+                          Pr[f (R) ≥ (q + 1)(a + 1)] ≤ q+1 ≤      .
+                                                      q       3
+
+We can bound the expectation as follows:
+                                ∞                                                       ∞  q
+                                X                                                       X  2
+E[f (R)] ≤ 4(a + 1) + (a + 1)         Pr[f (R) > (q + 1)(a + 1)] ≤ 4(a + 1) + (a + 1)             < 5(a + 1).
+                                q=3                                                     q=3
+                                                                                              3
+
+
+
+   Hence, we obtain the following as a corollary of Theorem 17 and Lemma 19. For convenience,
+we also introduce a parameter ν > 0 as an upper bound on singleton values.
+
+Theorem 20. Let f : 2M → R+ be a monotone subadditive function, where f ({i}) ≤ ν, ν > 0,
+for every i ∈ M . Then for any integers k, q ≥ 1, and a random set R where elements appear
+independently,
+                                                       1/q
+                                   E[f (R)] (k + 1)ν        2
+                       Pr f (R) ≤            −          ≤         .
+                                   5(q + 1)     q+1         qk
+Proof. Assume ﬁrst g is a function satisfying the assumptions with ν = 1. We use Theorem 17 with
+parameter a = (med(g) − k)/(q + 1). Note that Pr[g(R) ≥ (q + 1)a + k] = Pr[g(R) ≥ med(g)] = 1/2.
+Hence, Theorem 17 gives
+                                     1                     1
+                                       · (Pr[g(R) ≤ a])q ≤ k .
+                                     2                     q
+From Lemma 19, we have a = (med(g) − k)/(q + 1) ≥ ( 51 E[g(R)] − 1 − k)/(q + 1) which implies the
+statement for ν = 1:                                    1/q
+                                    E[g(R)]    k+1           2
+                        Pr g(R) ≤           −            ≤          .
+                                    5(q + 1) q + 1           qk
+For a function f satisfying the assumptions for ν > 0, we apply this inequality to the function
+g(R) = ν1 f (R), to obtain the statement of the lemma.
+
+
+
+
+                                                      23
+
