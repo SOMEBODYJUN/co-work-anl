@@ -1,0 +1,272 @@
+[
+  {
+    "name": "test_save_and_descriptor_hash_replay",
+    "start_line": 74,
+    "end_line": 83,
+    "assertion_scope": "保存并重放descriptor的真实普通blob SHA/远端提交。"
+  },
+  {
+    "name": "test_repeat_has_no_empty_commit",
+    "start_line": 85,
+    "end_line": 90,
+    "assertion_scope": "重复保存无空commit。"
+  },
+  {
+    "name": "test_scope_preserves_unrelated_dirty_file",
+    "start_line": 92,
+    "end_line": 98,
+    "assertion_scope": "scope外未暂存脏文件保留且不入提交。"
+  },
+  {
+    "name": "test_unrelated_staged_file_is_not_committed",
+    "start_line": 100,
+    "end_line": 107,
+    "assertion_scope": "scope外已暂存文件阻止本次commit且index保留。"
+  },
+  {
+    "name": "test_explicit_paths_include_root_file_and_spaces",
+    "start_line": 109,
+    "end_line": 114,
+    "assertion_scope": "显式paths包括根文件/含空格中文路径。"
+  },
+  {
+    "name": "test_deleted_file_committed_without_blob_descriptor",
+    "start_line": 116,
+    "end_line": 120,
+    "assertion_scope": "删除被提交但无blob descriptor。"
+  },
+  {
+    "name": "test_network_failure_retry_saves_once",
+    "start_line": 122,
+    "end_line": 136,
+    "assertion_scope": "fetch/push注入离线保本地snapshot，同命令重试只保存一次。"
+  },
+  {
+    "name": "test_lost_push_response_is_confirmed",
+    "start_line": 138,
+    "end_line": 147,
+    "assertion_scope": "真实本地push后注入丢响应仍可fetch确认。"
+  },
+  {
+    "name": "test_remote_disjoint_changes_merge_automatically",
+    "start_line": 149,
+    "end_line": 156,
+    "assertion_scope": "远端不交变更自动merge并保双方。"
+  },
+  {
+    "name": "test_remote_real_conflict_aborts_preserves_local_snapshot",
+    "start_line": 158,
+    "end_line": 165,
+    "assertion_scope": "同文件真冲突abort保本地snapshot/正文。"
+  },
+  {
+    "name": "test_dirty_other_work_blocks_divergence_without_loss",
+    "start_line": 167,
+    "end_line": 175,
+    "assertion_scope": "其他tracked工作脏时分叉停止且内容不丢。"
+  },
+  {
+    "name": "test_live_writer_lock_blocks_second_checkpoint",
+    "start_line": 177,
+    "end_line": 183,
+    "assertion_scope": "同common-dir活跃writer锁拒绝第二写者。"
+  },
+  {
+    "name": "test_detached_head_and_board_branch_rejected",
+    "start_line": 185,
+    "end_line": 191,
+    "assertion_scope": "detached及公屏分支拒绝。"
+  },
+  {
+    "name": "test_paths_and_credentials_rejected_before_commit",
+    "start_line": 193,
+    "end_line": 204,
+    "assertion_scope": "凭据样式正文/commit message、越界/缺路径在提交前拒绝。"
+  },
+  {
+    "name": "test_staged_secret_reverted_to_head_does_not_leak",
+    "start_line": 206,
+    "end_line": 212,
+    "assertion_scope": "暂存合成secret又把工作树改回HEAD，scope add覆盖旧index而不泄漏。"
+  },
+  {
+    "name": "test_external_auth_remembers_path_only",
+    "start_line": 214,
+    "end_line": 221,
+    "assertion_scope": "外部合成token只记路径、不进config或JSON回执内容。"
+  },
+  {
+    "name": "test_inherited_git_routing_cannot_touch_another_index",
+    "start_line": 223,
+    "end_line": 229,
+    "assertion_scope": "继承Git路由不能写诱饵index。"
+  },
+  {
+    "name": "test_remote_moves_between_local_commit_and_push",
+    "start_line": 231,
+    "end_line": 245,
+    "assertion_scope": "本地commit与push间peer移动仍能merge两方。"
+  },
+  {
+    "name": "test_missing_identity_works_for_commit_and_auto_merge",
+    "start_line": 247,
+    "end_line": 254,
+    "assertion_scope": "缺Git署名时临时署名支持commit与merge。"
+  },
+  {
+    "name": "test_complete_launcher_runs_outside_checkout",
+    "start_line": 256,
+    "end_line": 262,
+    "assertion_scope": "checkpoint.sh可从clone外按--repo执行完整CLI。"
+  },
+  {
+    "name": "test_invalid_or_in_repo_token_file_refused",
+    "start_line": 264,
+    "end_line": 272,
+    "assertion_scope": "无效/仓库内token文件拒绝。"
+  },
+  {
+    "name": "test_conflicting_push_destination_refused",
+    "start_line": 274,
+    "end_line": 279,
+    "assertion_scope": "origin fetch/push目的地不同则提交前拒绝。"
+  },
+  {
+    "name": "test_preexisting_out_of_scope_commit_cannot_hitchhike_on_checkpoint",
+    "start_line": 281,
+    "end_line": 291,
+    "assertion_scope": "此前scope外commit不能搭本次scope push便车。"
+  },
+  {
+    "name": "test_explicit_backlog_scope_has_complete_receipt_and_descriptors",
+    "start_line": 293,
+    "end_line": 309,
+    "assertion_scope": "显式覆盖backlog范围时receipt/outgoing/descriptors含全部相关提交/文件。"
+  },
+  {
+    "name": "test_historical_secret_overwritten_by_safe_text_is_not_pushed",
+    "start_line": 311,
+    "end_line": 319,
+    "assertion_scope": "历史secret被安全文字覆盖仍阻止push。"
+  },
+  {
+    "name": "test_historical_secret_deleted_before_checkpoint_is_not_pushed",
+    "start_line": 321,
+    "end_line": 331,
+    "assertion_scope": "历史secret后来删除仍阻止push。"
+  },
+  {
+    "name": "test_historical_credential_filename_and_commit_metadata_are_rejected",
+    "start_line": 333,
+    "end_line": 350,
+    "assertion_scope": "历史凭据文件名和原始commit元数据即使后来删除仍拒绝。"
+  },
+  {
+    "name": "test_historical_symlink_removed_before_checkpoint_is_rejected",
+    "start_line": 352,
+    "end_line": 362,
+    "assertion_scope": "历史symlink后来删除仍拒绝。"
+  },
+  {
+    "name": "test_peer_changes_outside_scope_do_not_block_disjoint_merge",
+    "start_line": 364,
+    "end_line": 377,
+    "assertion_scope": "已公开peer的scope外不交变更不阻止merge，不误记本方outgoing。"
+  },
+  {
+    "name": "test_historical_secret_in_merge_resolution_is_not_pushed",
+    "start_line": 379,
+    "end_line": 401,
+    "assertion_scope": "合并resolution历史secret拒绝，原left祖先保留。"
+  },
+  {
+    "name": "test_default_scope_includes_own_workspace_and_leaves_peer_draft",
+    "start_line": 403,
+    "end_line": 416,
+    "assertion_scope": "默认scope只含本人workspace，不取peer草稿。"
+  },
+  {
+    "name": "test_unrelated_archive_defaults_select_its_topic_and_common_registers_only",
+    "start_line": 418,
+    "end_line": 460,
+    "assertion_scope": "UM存档取本主题/公共登记表/本人workspace，排除旧WC及相似前缀。"
+  },
+  {
+    "name": "test_unbound_checkpoint_uses_current_topic_and_only_own_current_workspace",
+    "start_line": 462,
+    "end_line": 482,
+    "assertion_scope": "无绑定时默认当前CAG与本人当前workspace，排除旧WC/shared/peer。"
+  },
+  {
+    "name": "test_cag_scope_includes_flat_audits_deleted_audits_and_paper_assets_only",
+    "start_line": 484,
+    "end_line": 519,
+    "assertion_scope": "CAG平铺audits/已跟踪删除audits/paper资产正确入scope，排除相似目录和peer。"
+  },
+  {
+    "name": "test_unbound_checkpoint_with_only_legacy_paths_requires_explicit_scope",
+    "start_line": 521,
+    "end_line": 528,
+    "assertion_scope": "无绑定但仅有旧scope时不回退WC，要求显式范围。"
+  },
+  {
+    "name": "test_unrelated_archive_precommitted_old_topic_cannot_hitchhike",
+    "start_line": 530,
+    "end_line": 541,
+    "assertion_scope": "UM绑定下预提交旧WC不能搭便车。"
+  },
+  {
+    "name": "test_unknown_archive_defaults_include_only_common_registers_and_own_workspace",
+    "start_line": 543,
+    "end_line": 559,
+    "assertion_scope": "未知存档只公共登记表和本人workspace，不猜未注册数学目录。"
+  },
+  {
+    "name": "test_archive_with_no_effective_default_paths_requires_explicit_scope",
+    "start_line": 561,
+    "end_line": 569,
+    "assertion_scope": "未知存档无有效默认项拒绝；显式paths可保存。"
+  },
+  {
+    "name": "test_explicit_shared_archive_preserves_legacy_topic_defaults",
+    "start_line": 571,
+    "end_line": 576,
+    "assertion_scope": "显式shared保旧主题默认值。"
+  },
+  {
+    "name": "test_deleted_unrelated_archive_asset_remains_in_default_scope",
+    "start_line": 578,
+    "end_line": 589,
+    "assertion_scope": "已跟踪删除UM资产仍保在默认scope。"
+  },
+  {
+    "name": "test_default_workspace_save_and_explicit_scope_for_peer",
+    "start_line": 591,
+    "end_line": 603,
+    "assertion_scope": "默认本人workspace与显式处理peer范围的区别。"
+  },
+  {
+    "name": "test_precommitted_peer_workspace_is_not_in_default_scope",
+    "start_line": 605,
+    "end_line": 615,
+    "assertion_scope": "预提交peer workspace不在默认scope，阻止push。"
+  },
+  {
+    "name": "test_workspace_ids_cannot_escape_default_scope",
+    "start_line": 617,
+    "end_line": 621,
+    "assertion_scope": "actor含../不能逃默认目录。"
+  },
+  {
+    "name": "test_invalid_archive_without_actor_is_rejected",
+    "start_line": 623,
+    "end_line": 628,
+    "assertion_scope": "无actor时坏save也被拒绝。"
+  },
+  {
+    "name": "test_unavailable_remote_baseline_never_pushes_unexamined_history",
+    "start_line": 630,
+    "end_line": 645,
+    "assertion_scope": "fresh remote baseline不可得时不尝试push，保本地commit。"
+  }
+]

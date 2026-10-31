@@ -1,0 +1,67 @@
+{
+  "new_original_program_runs": 0,
+  "reason": "Both executable primaries have adequate exact-SHA historical runs and complete finite outputs. Reviews already record their actual old executions; no duplicate run is needed to account for current-source semantic content. Current verification only parses source AST and validates frozen data.",
+  "bindings": [
+    {
+      "primary_id": "698bdcab0669d55a1efa",
+      "sha256": "f2a47ff47c9b03e5eaa2f5e747aa97908ebf35f031677251dbf8257cf489732f",
+      "historical_record": "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/historical-runs/minimal_star_capacity_audit.json",
+      "payload": "reports.capacity_pair_reproduced.json",
+      "historical_command": "python3 tests/audits/unrelated_machines/capacity_one_star_pair.py",
+      "python": "3.12.14",
+      "base_commit": "974813e88ff9f80cdda9a1f817be990ce1d90816",
+      "historical_exit_code": null,
+      "new_stdout": false,
+      "imports": [
+        "collections.defaultdict",
+        "fractions.Fraction",
+        "itertools.combinations",
+        "json",
+        "platform"
+      ],
+      "external_input_files": []
+    },
+    {
+      "primary_id": "3366609734cf33d87e19",
+      "sha256": "c07f31788f7aad244a781468a439e1cbcb565f839a8e5695bb9fa9d73ce0c763",
+      "historical_record": "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/historical-runs/joint_slot_prefix_audit.json",
+      "payload": "actual_joint_rounding_certificate",
+      "historical_command": "python3 tests/audits/unrelated_machines/half_unit_joint_slot.py > <scratch-new.json>",
+      "python": "3.12.14",
+      "base_commit": "f68299b86b1e12a2b62ce852fa4ce2f27e6e67d2",
+      "historical_exit_code": null,
+      "new_stdout": false,
+      "imports": [
+        "fractions.Fraction",
+        "itertools.combinations",
+        "json"
+      ],
+      "external_input_files": []
+    }
+  ],
+  "review_program_bindings": {
+    "c76da606d8c2e7e8fe35": {
+      "historical_record": "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/historical-runs/compact_config_probe_audit.json",
+      "actual_personal_execution": "compact_config_probe_independent.py; primary hash only, no personal line-read of primary implementation",
+      "manual_common_base_scalar_check": "Historical review narrative only; not an archived canonical command/stdout and not an explicit current scalar-main assertion."
+    },
+    "1f64a487c666cbeb751d": {
+      "historical_records": [
+        "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/historical-runs/row_count_escape_audit.json",
+        "archives/unrelated-machines/tools/evidence/capacity-half-slot-and-row-reviews/historical-runs/multirow_count_extension_audit.json"
+      ],
+      "actual_commands": [
+        "row_count_probe.py",
+        "compact_count_escape.py",
+        "independent_row_count_escape.py",
+        "multirow_count_extension.py"
+      ],
+      "main_and_transitive_dependencies": "All named originals retained under dependencies; full code was read in preceding primary batch; current SHA rechecked. compact main imports old pair/row probe; multirow uses independent build_family only; config primary imports compact build only; independent counterparts use standard library only."
+    }
+  },
+  "nonclaims": [
+    "No new execution, process timing, numeric exit code or freshly generated primary stdout.",
+    "Aggregated JSON contains unrelated audits; keeping their bytes does not treat those sources as primary done.",
+    "Verifier fixture checks do not execute has_schedule or capacity.audit."
+  ]
+}
