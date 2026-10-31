@@ -1,0 +1,69 @@
+# 全源数学、版本与证据逐项自查
+
+- [x] 五MD18846B原bytes/sizeSHAblob与全文primary主读，非上轮context摘要。
+- [x] 实际LK20原claim pushed/synced3206da…，只本5子集owner/sourceSHA核，capture未投影。
+- [x] 4036attempts全部六节、8360main全部八节、README/CLAIMS/EVIDENCE全读。
+- [x] 有限单位客户共同目录/全部有序纯SPE，空重复零客户任意平局保。
+- [x] K强化只零初始背景root整行，不迁移任意背景或actual中间位。
+- [x] K是最大裸单主题非OPT/尾组利润，R1是m真实query总和非均值。
+- [x] 每actual角色可max主题保证K/m，Σu=W≥K，故K强化强于rootROW。
+- [x] 标准all-big大ms/小m−1块s、不交、全历史恒选big，big≥s/小偏离≤s证明完整。
+- [x] all-big实际W=K=ms，OPT=(2m−1)s，根任题s，R=K正取等。
+- [x] m1式平凡，零客户K0也成立。
+- [x] m2真B(T)末位BR、U对称交项iid平均，R≥固定B的crossquery平均。
+- [x] 固定B两query和≥|O|−|O∩B|/2≥|O|−K/2，重复比较槽亦保。
+- [x] 故全输入m2成立，不能免费把多后继整段当一玩家推广。
+- [x] 既有bank m≥3真实全SPE旧同SHA e66e/11233全文读复用，0控制器重跑。
+- [x] bank每题3客户K3、原根经济m−1分享/银行2分享给d=m/(m−1)所有根。
+- [x] bank R1=m²/(m−1)、W2m、OPT3m−2，无虚构菜单可实现性。
+- [x] K右侧3m−5+3/m，差[2m(m−2)²−3]/[m(m−1)]m≥3正。
+- [x] m3/m4/m5/m6差1/2,29/12,87/20,63/10，解析代入非新参数扫描。
+- [x] K强化m1/m2真、每m≥3假确域，不称首次发现或新族。
+- [x] rootROW/MG裕量3+1/(m−1)>0、half余量m+2，助手反例非SUMROW/MG/half。
+- [x] 净差D=missed−outside，旧71 W35/OPT38/missed36/outside33只反gross加强。
+- [x] 主工作稿C_i=L_i+forced incidence保真实σ后继，d≤u是原IC。
+- [x] K±均匀位置分数槽域，γ+≤γ−同q耦合不自动支付full γ+。
+- [x] strong mγ−/weak(m−1/2)γ−/full mγ+三个系数合同分开。
+- [x] 静态fraction域直接OPT≤(m+r)F，不把整数v和自由fractionδ相等。
+- [x] 当前source已撤回首稿γ+≤free Mpath，未造未给的首稿before-SHA。
+- [x] γ+≤Munif、Mpath≤Munif不可合成；自由位置与均匀Minkowski不同。
+- [x] 纯query T各i forceT，extraquery k_T(C_iT)≤d_iT≤u_i及Jensen逐T安全。
+- [x] 每T可选不同L_T不能变一个混合p共同背景；forcing/query需独立。
+- [x] PF对每p q_i=p、fullpool自由q、Mpath自由位置三个不同选择量词。
+- [x] MP真M_i argmin孩子跨位置不自动拼成一SPE，不用等价价表示当付款。
+- [x] 末BRnormalize保持M但含W价格需末位αd_m，参现自足KP证明。
+- [x] MG净差与已否OPT/(2m)标准/extra个人安全门槛不混。
+- [x] SUMROW对固定/选定最优tuple给充分义务，不把存在元组升所有。
+- [x] 六R6稳定ID完整列域/式/原内部证明/未付款，不因共享登记改身份。
+- [x] JOINT a=κu−q、gain=−κΓ+qobey−qdev、actual行质量≤1一份Q只remaining利润。
+- [x] LOSS ell=(n/r)q重标度非另一钱包，ψ全t/harmonic范围固定B/r/n。
+- [x] 整势FLOW可共付，当前分享差多角色删槽RESET，边正部不受同范围。
+- [x] NESTING D/SG/COC/ROLE只是终局耦合，不物理n人可信树或独立各阶池。
+- [x] r5/n3个人ell≤2Ub/5与全树势≤9|B|/20不同量，不能相加。
+- [x] n1只最大主题基线、n2线性拥挤辅助仅近似，不原SPE。
+- [x] 31floor合同含未BRreset末位、11>28/3，直接signed同样失败。
+- [x] 先末位改1和3但根9<12，未否先reset不同合同、不冒全SPE。
+- [x] 旧KC真实2调用首自写断言失败后修正成功，不源父方PASS当本轮run。
+- [x] TERMINAL真实DC/Tax付末两J≤u，early m−2与共同Jensen未付。
+- [x] SCREEN全M非负必要净遗漏式，不统一价/不严格seed存在。
+- [x] 客户限制一份E钱包不使限制计划SPE，社会cover流不当前shareflow。
+- [x] KU两客户X_B−1/A_B2只排任意q宽加强，不最优排列或B=C\O/half。
+- [x] 两counter MD1421/9145全文context、不额外done，控制器局部分析不全Cartesian界。
+- [x] counter源R_i/q_i/A_i/D_i/P_i局部符号与随机q/priceM分清。
+- [x] 遗漏源q_i+P_i=|R_i|给OPT−2W=ΣP−Σ(A+D)−E，恒等式不是新上界。
+- [x] α_i>0时Cauchy真实incidence I_i下界正确、分母q+D正；α0跳0/0。
+- [x] 实际末位给α_i≤u_m/I_i≤(m−i)u_m；合成条件被direct α_i/(m−i+1)支配。
+- [x] 保真实I_i可检候选描述，但没有共同付款，原降级不回升新强化。
+- [x] root EVID自报16388/1140/660/180/180，范围r1…9/all n/b0…3，单客户核非SPE扫描。
+- [x] 组合统计仅相容性解释，不伪未得code实测循环或额外零端点PASS。
+- [x] fresh1020/288/960不同实现/未给域不猜，不两统计相加一个run。
+- [x] 31原340IC/完整BI/第二策略分维；源码本批不含不会冒复演第二策略。
+- [x] 新EVID旧父方exact terminal6证书，和probe6浮点输入是两份不同资料。
+- [x] signed/PF/SHARED有限浮点/未给dual不一般证明/锥严格下界。
+- [x] 旧AST/JSON/links/diff及DQ正则误判是原检查历史，不当前数学执行。
+- [x] 原quick联网只旧Deng/Brethouwer定位且非穷尽，无本轮联网或文献新颖认证。
+- [x] 旧六席/父方协作身份不当前spawn/后台任务；个人备份不推当前published。
+- [x] 原m5此路线未成与当前上传HALF5别证分开，不由five解PF/MG/SUMROW。
+- [x] 本批原entry/source函数/canonical/LP/scan/辅助entry0，无新blind或外审。
+- [x] 10现正式全文sameSHA比较、2context无额外done，关系仅阶段二解释非机械旧图。
+- [x] 原件/源证据/完整回执/67数学自查及实际字节C0，不以字段过关代数学判断。
