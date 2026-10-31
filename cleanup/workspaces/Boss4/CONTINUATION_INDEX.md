@@ -307,3 +307,7 @@ R3_READY15HO：15源正文证据；全深度调和账本一般证明、ASR来源
 R3_READY15HO数学/证据pushed 34967eda9e583a26143826d9107692df2f0b0a27；15源done另推送 d221e6590641e47a6315896acba0cb7d9fecd308。Boss4累计1993完成，实际未完30；持续接续全仓，不以本批清空收尾。
 
 R3_READY15HS：15源正文证据；最大主题纯终局容量、三主题根菜单真SPE反族、符号菜单图、共同匹配层式与前沿净预算；共15主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY15HS_REMAINING_SCOPE.json。
+
+R3_READY15HS数学/证据pushed ea0ef45b1696f2d50903d0113ebab32f0f645f8a；15源done另推送 5ff17eb3f97b97840784a6c73e44299ed4eb2743。Boss4累计2008完成，实际未完25；持续接续全仓，不以本批清空收尾。
+
+R3_READY10HZ：10源正文与原入口证据；根审计与受限图枚举、保险构造精确域、product可信菜单与同质对角全人数边界；共10主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY10HZ_REMAINING_SCOPE.json。
