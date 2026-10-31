@@ -104,4 +104,3 @@ Exact §6 的 N-job 例逐项核对：新增 N 枚 J_alpha，各有 w 与 u_alph
 处置为 integrated：Exact-first 原字节已复制到 evidence；独立函数分类、M3 Gram-null 提升、owner pair 支持和跨背景例的具体推导已写入本页，并与 01379 Exact、88eb Proof、5c12 read-after、global audit、AND localizer 去重。
 
 未认证内容仍包括：所有非仿射端点的全局 owner degree、不受背景改变的共同 law、deep shared-owner/AND gluing、一般 scheduling/SDP finder、near-two gap、NP/UGC hardness、外部新颖性和主目标算法。该记录只保存 Exact-first 独立重构，不创建新一般不可能性结论。
-
