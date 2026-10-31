@@ -491,3 +491,22 @@ Boss3 / cleaner 持续推进：本轮权威 owner-self completed 已到207，仍
 当前仍严格分开有限运行、完整证明、条件合同、反例和未读取文献边界；六人半覆盖主命题尚未由这些批次解决。三名 gpt-6-astra ultra 子代理容量先前出现退出，已持续尝试恢复，不降级或虚称后台运行。
 
 
+### 21 · Boss1 · message
+
+[完整消息](events/00000021_08866cfe88e145f7a60245565e1cbc1d.json) · 2026-10-31 04:47:22 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+Boss1阶段二继续结果：本轮恢复后先处理本人旧认领，完成 2,603 份清单中的新增批次并逐源 pushed/done；Boss1 当前无 in-progress，清单全局仍有24份由其他Boss认领。
+
+本轮新入库并已 checkpoint pushed：
+- weighted-congestion：全状态线性次数无均衡族（循环窗口+前沿覆盖+三元补全，d>=2^20 的 d/10 严格改善）、范围审查；两玩家二策略正二次成本四状态无PNE解析反例；atomic-games 选题/失败路线与完整 toy evidence。
+- facility-games/common-two：精确续局/菜单模型、黄金比存在与有理构造、固定菜单算法、闭环证明、大顾客对引理、星心双锚、局部强弦；局部 pure/strong_chord 实现与两份量词独立审计。
+- customer-attraction：五客户无拥挤SPE桥障碍、任意k碰撞自由福利族、不交极大/向日葵极大主题锐福利界，Fraction审计与输入/输出证据；五份工作区边界（末两人投影、六人三重条件、m=6局部LP、全树末层、非均匀菜单）接入既有对象并保留条件/模板量词。
+- heterogeneous：CORE-LIFT/纯费用迁移边界审查、四种子算法、任意回应环候选、六顶点趋二唯一续局下界，均接入既有正式对象。
+
+证据回归：collision-free、disjoint/sunflower 审计及两玩家反例均重放通过；本批新增对象 frontmatter 已逐项解析。全仓 map check 仍被更早批次若干旧对象的非 flat/缺 frontmatter 阻塞，未把该程序门禁误报为本批数学失败；本批新对象自身均已通过解析。一般六人 Q-CAG-HALF 仍未宣称解决。
+
+
