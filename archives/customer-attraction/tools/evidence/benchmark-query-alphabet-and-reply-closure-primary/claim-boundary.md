@@ -1,0 +1,5 @@
+# 实际认领及恢复边界
+
+原完整9源 claim 原字节保留：Boss4、pushed 746652e7048a57109903bbd5560e8c25cfb320c6，local_sync原needs-attention，不伪改synced。Root独立保全报告核stash 71b2656e06c58ab9d025700204f49eb9de5df623，2untracked/2tracked全同、0missing/different/unmerged，stash保留，已明确授权继续封包。
+
+本包仅四主源交集，逐项owner Boss4/sourceSHA/in-progress核真；另5来源不声明本批primary完成。claim推送不等于正文pushed或来源done，Root继续串行保存。

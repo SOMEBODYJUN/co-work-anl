@@ -311,3 +311,7 @@ R3_READY15HS：15源正文证据；最大主题纯终局容量、三主题根菜
 R3_READY15HS数学/证据pushed ea0ef45b1696f2d50903d0113ebab32f0f645f8a；15源done另推送 5ff17eb3f97b97840784a6c73e44299ed4eb2743。Boss4累计2008完成，实际未完25；持续接续全仓，不以本批清空收尾。
 
 R3_READY10HZ：10源正文与原入口证据；根审计与受限图枚举、保险构造精确域、product可信菜单与同质对角全人数边界；共10主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY10HZ_REMAINING_SCOPE.json。
+
+R3_READY10HZ数学/证据pushed 5645f8c1bb50f03ce124d738f0036d250d14f5a6；10源done另推送 759e798f59cebdd4a0cc97ddbba6a6d852e7f8a2。Boss4累计2018完成，实际未完24；持续接续全仓，不以本批清空收尾。
+
+R3_READY11IA：11源正文证据；R373入口量词接续、UM共同选择/仙人掌边界、查询字母表与回复闭包，并修两页配置阈值及根任务模型；共11主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY11IA_REMAINING_SCOPE.json。
