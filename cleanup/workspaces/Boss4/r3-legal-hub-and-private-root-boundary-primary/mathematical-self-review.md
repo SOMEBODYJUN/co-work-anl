@@ -1,0 +1,81 @@
+# 数学、量词与有限执行自查
+
+- [x] 五source23399B全文原字节/size/blob/SHA保，不用先前旁读抵primary。
+- [x] 原5id claim pushed87e9a6...synced，各ownerBoss4/inprogress/sourceSHA核。
+- [x] 源码79f...exactSHA无旧成功后才原hub唯一1run。
+- [x] hub标准库/guard/无外部input，output已存在拒绝并exclusive新写。
+- [x] 只3literal unit客户，不误作weighted提供者或一般SPE枚举。
+- [x] 主题8含空，背景{0,1}3，root8/future长度1到3共584列。
+- [x] 枢轴code仅future[-1]，不算每个future玩家都核。
+- [x] 37376=8*8*(8+64+512)，8791/945条件子集。
+- [x] gain≥0中T外客户k≥1，未覆盖零分母不被求值。
+- [x] run359冻全字节同，stdout360多LF，stderr0。
+- [x] 被动module/main1，无额外source函数，0 SPE/BI/optimizer调用。
+- [x] 局部代数不证明保护分支存在、不构造SPE反例。
+- [x] E受限联合边目录不能补成Cartesian，主银行客户不交。
+- [x] 合法真实当前IC与bank robust g下界合B1，缺边不用。
+- [x] V(a,b)随联合偏离/真实后继变，不能冻结actual后继。
+- [x] 合法匹配π才逐行B2，不能swap不同bank的真实主值。
+- [x] 零actualcapacity不等bank其他动作无可花insurance。
+- [x] 旧shared ma+1/x/y/m−1Q族全原文相关读，非新构造/primarydone。
+- [x] shared常值A判据m|ToutsideA|≤|AoutsideT|覆盖全部h证明。
+- [x] shared actual g_i(A)=u_iBank，capacity0，改Qanchor主a银行1/m。
+- [x] main deviation sum ma=Wbank−1合法且actual W=ma+1/OPT<2W。
+- [x] 规则环/带k=m3/4/5三重数组合18例仅历史阴性17over12。
+- [x] 2920probe/18240report未执行，不借作hubrun或新done。
+- [x] hub任意fixed非负b/G/T真实同叶分母单位玩家相同。
+- [x] immediate占优+G所有future交叠被T覆盖两条件承重。
+- [x] E=GminusT无人future覆盖，F=TminusG自身正覆盖。
+- [x] intersectionI同叶root/pivot份额相消，非跨叶不当抵销。
+- [x] greedyG只保第一条件，不自动第二。
+- [x] 旧laminar用极大容器，本新T真实主题条件不宣互含/无条件推广。
+- [x] theta纯背景minH maxT与hidden mixed v不同。
+- [x] 真末位BR≥theta_m，static theta≥OPT/(2m−1)纯量词正确。
+- [x] 仅actual每节点都有真末位保护证书才u_i≥theta_m，非所有SPE存在。
+- [x] 任意较早T需要被选离轨节点也闭合中继，不能只查actual。
+- [x] 中继玩家位置strict增有限终止，不能把prefix重置回globalactual。
+- [x] 一致tailP+greedy自动护末位，但unique实际greedy可能没有offpath。
+- [x] 损失恒等式Δ0−loss+gain全signed项保，gain≥0不造新信用。
+- [x] 一般跨真实子树同客户loss可重复，当前无actualW总支付。
+- [x] root-only tau只正深度SPE，root不最佳不冒称whole SPE。
+- [x] Delta=max dB−u≥0因含currentA，actualC固定定义Q。
+- [x] 极大全局private相对全catalog，不是actual独占客户。
+- [x] 同一合法动作至多触一nonempty Q，q触次数非路由。
+- [x] 正深度i≥2席位u_i≥lambda_(m−i+1)仍真，不用根IC。
+- [x] 根强制整Bj残余席位给maxd≥lambda_m，Delta只付一次。
+- [x] 无触块根私有负载分母≤q+1，rest v/m，触块后继subsetBj保护。
+- [x] 最优扩成至多m极大并集仍O，sumv≥I不用假定v互斥。
+- [x] W+Delta≥D+I/m，再I≤W得OPT≤(2−1/m)W+Delta。
+- [x] 编译OPT−2W−3Delta≤−W/m−2Delta不扩一般共享遗漏。
+- [x] q≤m−1非emptyprivate块末q位置sumtopq≥D，免root。
+- [x] q0直接O⊆C，无空谱除0。
+- [x] 53mask14及127core，所有非负整数重数需正深度tau仍SPE。
+- [x] 零重数可能主题重复，保原去重合法定义限制，不默认所有basis可行。
+- [x] 全部7真root路径由fixedpacket保持，不选另一平局σ。
+- [x] 类型表只漏mask4 X2和mask32 Y2，正重数才有private块。
+- [x] opt支持0/2/5/6覆盖全部15类型，所以任意允许重数OPT=N。
+- [x] 53 q≤2<4，D≤u3+u4，OPT≤2W−u1−u2无需Delta。
+- [x] 共同core每单位四人各1/4不改Delta，编译margin减1。
+- [x] 原点W51/51/52/51/51/52/51、maxroot19与6*29over3。
+- [x] 原点Delta前6=28over3/P0，margins−77/−79/−49核。
+- [x] 6714context真2文件37315/4and7写死/不读security，topreads guard/exclusive。
+- [x] 6714/4803全相关读不执行/不附带done，冻2793/210/105非当前原run。
+- [x] 本批仅data identity/type105不做SPE/OPT扫描/LPcone。
+- [x] 三倍repair参考完整Cartesian真模式，3Delta是缺陷稀释非客户数。
+- [x] mu=maxB minchildU是最小currentSPE值，有限孩子min可取。
+- [x] givenleaf iff currentU≥mu，others选最低值即可拼合完整SPE。
+- [x] E祖先joint先加B坐标筛选再projection，当前标签不能提前丢。
+- [x] 纯终局集合与convexhull不混，同计数历史σ不绑定。
+- [x] 每层+tag最后回BI，未有固定维预算压缩。
+- [x] vertical纯BR两点当前M同祖先M/2M异，finiteC失败不排绝对未来收入。
+- [x] 绝对contactrefund是同叶futureA利润乘1/(b+1)，旧删除守恒非新信用。
+- [x] 多branchcontact不能每次领actualW一份，工具结合未自动付款。
+- [x] README四同行作用准确保为历史导航，不继承未读证明/新颖性。
+- [x] 旧348/791等matrixnegative仅叙述，当前0run无输入闭包不造证据。
+- [x] 历史791运行可能与当前缺输入不同，不凭此否认旧史或补旧input。
+- [x] README两个review追加各不同入口，当前不重跑水位/VAR/旧程序。
+- [x] 当前Mfull普遍已银行m≥4否，旧OPEN为历史；EI/DB不按缩写盲改判。
+- [x] 五人half另证，六人未被局部hub/private/BI候选闭。
+- [x] source停调扩样是研究停界非本轮清洗停工，内审不外审/新颖性。
+- [x] 5final receipts integrated，外部ready/bodypush/done独立。
+- [x] 所有实际canonical/evidence C0逐字节扫，仅LF/TAB/CR例外，原frozen不改。

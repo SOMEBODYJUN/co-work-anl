@@ -287,3 +287,7 @@ R3_READY10GZ：GT中2477单源/GS4/GV5十源：UM三维/全层匹配需求与近
 R3_READY10GZ数学/证据pushed 50b4cd81ada9c439a7ace88af8911738188fb998；10源done另推送 ff40e003c09886c872568e0cdddf29f6c457f176。Boss4累计1919完成，实际未完19；持续接续全仓，不以本批清空收尾。
 
 R3_READY18HE：GU5/GW3/GX5/GY5十八源：银行joint资本/前缀映射/客户吸收整行包络、同客户reset库存与wholeIC退款、共同iid混合Jensen及53/100显式证书、五利润信用主稿精确来源绑定。Root全文读6149原证明/1250README/639JSON及两提案，逐式恢复28控制损伤与遗失TeX并补原HALF未付式，保stableID/原始来源/旧done；0修复数学run。正文证据checkpoint pushed后逐源done，继续全仓。；共18主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY18HE_REMAINING_SCOPE.json。
+
+R3_READY18HE数学/证据pushed d5e7e068028b512d55903cc560a50022739b975a；18源done另推送 7ab4f09a26a09b15c2d8763683b558b25e033bbb。Boss4累计1937完成，实际未完6；持续接续全仓，不以本批清空收尾。
+
+R3_READY25HJ：25源正文与证据；净遗漏预算、完整笛卡尔补偿与安全扩充、独立利润消元、合法枢轴中继、product取等与必要行非补全；共25主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY25HJ_REMAINING_SCOPE.json。
