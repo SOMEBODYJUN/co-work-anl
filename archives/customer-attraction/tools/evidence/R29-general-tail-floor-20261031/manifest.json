@@ -1,0 +1,46 @@
+{
+  "batch": "R29-general-tail-floor-20261031",
+  "scope": "independent replay of four potential_attack sources",
+  "sources": [
+    {
+      "id": "236119a64f2b157f723b",
+      "path": "research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/general_proof/potential_attack/audit_tail_pne_bridge.json",
+      "sha256": "4a208a4cd9aa0856e4c894cab1050aeecd077497b8215d77c56c2907b6da1631",
+      "bytes": 2051,
+      "source_commits": ["68fad804ec5946cb296f77dc5b336308a66abf12", "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c"]
+    },
+    {
+      "id": "de55dd3e248ed5f3d5cb",
+      "path": "research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/general_proof/potential_attack/audit_tail_pne_bridge.py",
+      "sha256": "b1b104006d53ab0a73b05ed52144f52703a663b30fd4b7a5b54118c8a9725f92",
+      "bytes": 3027,
+      "source_commits": ["68fad804ec5946cb296f77dc5b336308a66abf12", "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c"]
+    },
+    {
+      "id": "4f9af5314afa8ff2e005",
+      "path": "research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/general_proof/potential_attack/probe_direct_floor.py",
+      "sha256": "d1cce9460be05890190b5d63c99fa7cda3e61f31512b3bb0886bf280ccf78879",
+      "bytes": 2809,
+      "source_commits": ["68fad804ec5946cb296f77dc5b336308a66abf12", "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c"]
+    },
+    {
+      "id": "f452da595a7ff80736af",
+      "path": "research/workspaces/customer-attraction/R-29b83efed6b045678e3b7ee11dffb7b3/general_proof/potential_attack/probe_observer_pne.py",
+      "sha256": "63ff62374859673d131ebf488d6d6202959283b9c7d90de468008217d84a1f1f",
+      "bytes": 1437,
+      "source_commits": ["68fad804ec5946cb296f77dc5b336308a66abf12", "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c"]
+    }
+  ],
+  "replay": {
+    "audit_tail_pne_bridge": {"source_json_byte_identical": true, "exit_code": 0, "stderr_bytes": 0},
+    "probe_direct_floor": {"exit_code": 0, "stderr_bytes": 0, "rows": 2},
+    "probe_observer_pne": {"exit_code": 0, "stderr_bytes": 0, "iteration": 125, "root": 1, "tail_spe": [0, 1]},
+    "independent_checker": "replay/verification.stdout.json"
+  },
+  "limitations": [
+    "fixed-background two-tail subgame only",
+    "two hard-coded continuation maps for direct-floor probe",
+    "random finite search does not establish generality",
+    "no full-root SPE, integer recovery, or six-provider half conclusion"
+  ]
+}
