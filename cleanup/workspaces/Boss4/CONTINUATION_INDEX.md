@@ -126,3 +126,5 @@ R3_READY32G：32源完整数学/历史处置：C半权精确间隔5、一般v4�
 R3_READY32G数学/证据pushed 52e20891433fe2bfd458d325e806d47f7f3fbe72；32源done另推送 a615405d47613e2deae4a286a6c8d63111799b9f。Boss4累计1061完成，实际未完32；持续接续全仓，不以本批清空收尾。
 
 R3_READY17H：17源完整处置：最优归属势/联合取消5、双尺寸三个原入口有限审计5、逐机uniform五稿完整平行元证明5、2099项语义目录两原件2；保精确模型/实现/旧字段隐藏缺口，原件保真，不把目录检查当所链全部数学已验证；共17主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY17H_REMAINING_SCOPE.json。
+
+R3_LOCAL17I：真实代理CONNECT403后的本地保全17源：direct/compact5、UM范围审查5、Boss真实最优菜单4、uniform尾3；本批body仅本地，H17body已pushed但未done，所有语义receipt未提交，不把local-only当pushed；共17主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_LOCAL17I_REMAINING_SCOPE.json。
