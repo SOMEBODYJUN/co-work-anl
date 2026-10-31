@@ -263,3 +263,7 @@ R3_READY9GH：GC4/GA5九源：无拥挤五客户/任意k真SPE族、t>2多围堵
 R3_READY9GH数学/证据pushed c42e7e0a4ea5917f6d9b7ee0112e5de3dfaa4013；9源done另推送 fb765665dd692effe670156dd9762619b6e46339。Boss4累计1838完成，实际未完24；持续接续全仓，不以本批清空收尾。
 
 R3_READY11GK：FZ5/GB1/GD5共11源：跨真实根孩子递归删除势、两query四路径原入口一次及791真实缺输入；完整背景pair浮点探针合同；singleton全局势最大可实现完整SPE、银行另一证明和跨人数CCE精确候选。准确区分新原run/仅标量核对/0run程序资源，不伪造缺输入，先正文证据checkpoint pushed再11逐源done，继续全仓。；共11主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY11GK_REMAINING_SCOPE.json。
+
+R3_READY11GK数学/证据pushed e61b09e317a21fffed0417a2ac64f32262a4abde；11源done另推送 87d7cf2fc0180c502c09871b908295903957d6a2。Boss4累计1849完成，实际未完27；持续接续全仓，不以本批清空收尾。
+
+R3_READY9GM：GH4/GG5九源：one-excess换手/新角色POOL与银行重入全q增长非SPE边界，原独审SHA不同不冒字节覆盖；五分支入口及log价格KKT、旧逐人floor与当前银行真反例的精确阈值。新原数学程序0，旧成功不重复；先明确checkpoint pushed再9逐源done，继续全仓。；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY9GM_REMAINING_SCOPE.json。
