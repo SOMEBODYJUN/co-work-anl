@@ -234,3 +234,7 @@ R3_READY11EY：EO3/ET5与RootEW3：完整菜单JSON/审查字段、signed真实d
 R3_READY11EY数学/证据pushed 215a4e531c43463cc5a49bf7587b4efce6c96fd4；11源done另推送 076040822e518f8cfc18f57f7a303f0f80d7a540。Boss4累计1713完成，实际未完21；持续接续全仓，不以本批清空收尾。
 
 R3_READY14FE：ER5/EP4/EU5共14源：真实菜单去对角与精确索引分离、合法背景五人候选与条件证书及前缀双边包络、变分水位完整证明/单调失败及原14证书有限域。先明确正文证据checkpoint pushed再逐源done，六线继续接续，全仓未完。；共14主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY14FE_REMAINING_SCOPE.json。
+
+R3_READY14FE数学/证据pushed d89074e250b3aeb77ee14b576e8ca4483bd03162；14源done另推送 35e87cc5890837a90652a4e5c0f4b9270bc23869。Boss4累计1727完成，实际未完21；持续接续全仓，不以本批清空收尾。
+
+R3_READY8FH：ES4与RootFA4共8源：真实action阈值/背景union精准量词、合法背景平台全B子SPE与固定owner误差推论、最优补全账本/非SPE十环域。Root5related完整实读但不替其done，原数学CLI0；先明确正文证据checkpoint pushed再8源done，继续全仓。；共8主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY8FH_REMAINING_SCOPE.json。
