@@ -134,3 +134,7 @@ R3_LOCAL5J：真实CONNECT403期间保存cyclic/resource已领5源完整交付�
 R3_LOCAL8K：真实CONNECT403期间收齐最后已领8源：rankwise5与全字段assets/review/FILES三源；本地完整保真、全语义/数学与程序范围准确，不推定remote pushed/done；共8主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_LOCAL8K_REMAINING_SCOPE.json。
 
 R3_READY47M：真实网络恢复后发布47源全部完整正文/依赖/历史处置，复用已完成实读并保新增30local原件；此前65实际handoff与丢失18回执纠正一并保存，继续六线；本次明确pushed后再逐源done，不把旧local保存或handoff作done；共47主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY47M_REMAINING_SCOPE.json。
+
+R3_READY47M数学/证据pushed 7399453deeef450540c64501bc429c457d56e93d；47源done另推送 5ae3a861a5fa3c350ad8f7d5749f66c403fc2485。Boss4累计1108完成，实际未完33；持续接续全仓，不以本批清空收尾。
+
+R3_READY18N：18源：静态指派发现/简化完整合同与两代精确回放3、五独立审计完整实现与历史run5、一般相邻钱包固定倍数反族5、bounded/bundle/cactus五历史数学审查5；保存全部原域/版本/有限证据/位复杂度，纠正混同但不覆盖旧共享页，先body明确pushed后逐源done；共18主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY18N_REMAINING_SCOPE.json。
