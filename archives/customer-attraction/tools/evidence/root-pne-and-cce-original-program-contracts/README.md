@@ -1,0 +1,3 @@
+# 三人PNE与静态CCE原程序五来源
+
+五源32845B全文，四缺blob由normal show正常取得、历史missing保。原PNE独审和静态CCE辅助各一次成功exit0/stderr0；21441B完整PNE报告逐字节同原，27静态域及24点CCE配对证书原代码通过。0随机搜索/LP/旧规范入口重跑；区分固定σ存在与min_SPE、摘要与完整output、计算后排他写出及未校验输入声明metadata。源与完整source-root/依赖/两真实运行全部保，不作为六人half。
