@@ -12,6 +12,8 @@ source_refs:
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/raw_sh3_inclusion_entry_cut_binomial_audit.json"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/raw_sh3_inclusion_entry_cut_root_replay_scope.json"
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/raw_sh3_inclusion_entry_cut_root_replay_scope.json"
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:history/source/notes/unrelated_machines/sol_raw_sh3_inclusion_entry_cut_binomial_audit_v1.py"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:history/source/notes/unrelated_machines/sol_raw_sh3_inclusion_entry_cut_binomial_audit_v1.py"
 ---
 
 # SH3 包含切口二项式有限审计
@@ -68,3 +70,9 @@ replay-scope 记录对 `history/source/literature/unrelated_machines/bamas_2025_
 本审计应与已有 unrelated-machines 的 CONFIG、C2/PSD、稀释和行度审查分开。它们共享“有限 exact 输出不能替代全局耦合”的证据纪律，但变量、矩阵和目标不同；不能把本对象的 `strict_reverse_cut`、(11/6) 或 q/m 计数直接拼到其他对象的近似比。它也与当前六人 SPE 目标保持独立：本对象没有客户、主题目录、终局均分或完整历史量词。
 
 若后续要推进，应先给出：二项式案例到统一机器/作业实例的生成和解码、严格切口条件的明确全称量词、完整配置/路径耦合证书，以及超出小矩阵的真实可行性或最优性证明。在这些缺口关闭前，继续标记为有限审计和条件边界；不要称为一般反例、一般算法或复杂度定理。
+
+## Boss6 source replay and version accounting
+
+本轮新增完整读取 `sol_raw_sh3_inclusion_entry_cut_binomial_audit_v1.py`（clean ID `0100c3dab772bd7bb80c`，6569 字节，SHA-256 `a6bd7ba669aa21108a8495e4cc02b0eaa969b20a76d542875f13b85378bf065b`）。源程序固定生成 120 个二项式参数案例（q=4,8,16,32,64；m=100q,104q；四组尺度和四个 delta），逐例以 Fraction/整数检查四个边界并计算 `strict_reverse_cut`；另单独构造 q=2,m=6 的 45 机、106 原作业、750 有限端完整小矩阵，验证 690 个 CONFIG1 支持项、全部覆盖/端点边际和峰值 11/6。
+
+为避免写入源程序固定的旧绝对输出路径，本轮在内存重定向 `OUT` 后运行一次，输出保存为 `0100c3-replay.json`（145910 字节，SHA-256 `116d696240e103c3c3203612eb03fae40e407530188e7a7ea559cf3be80d53b8`）；结果仍为 120 案例、85 个 `strict_reverse_cut=true`、小矩阵峰值 11/6。该运行没有物化 m≥100q 的巨大矩阵，也没有运行 SDP、所有完整指派或 source decoder，因此只作为有限审计增量，不能把 85/120 或 q=64 测试字段外推成一般切口定理、近二算法、hardness 或 UM-TARGET-v1 结论。原程序和 JSON 原件及 manifest 保存在 `archives/unrelated-machines/tools/evidence/raw-sh3-inclusion-cut-binomial-audit-20261031/`。
