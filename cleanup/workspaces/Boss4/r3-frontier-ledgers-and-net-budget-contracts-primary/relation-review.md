@@ -1,0 +1,5 @@
+# 关系审查
+
+净harmonic/query同既有支持候选有来源与静态proof联系，但精确tuple/support量词不同，不能强行标等价。Q⇒F⇒half是条件蕴含；MATCH原py缺时只明示actualprefix的补全示例，不造原算法实现/通过边。71原族说明unsigned桥假但net仍通过，不能造net反驳边。
+
+maximal/population/strictcompression/safe/coupled所有主证明去重，五ledger保statement/review/version导航角色。DIRECT后来false纠正源旧OPEN，不转授half。旧HH2执行按实有首败后成保存，当前0入口。已有最优prefix BILL-UP负例因查询源不同与本接口仅作scope区分。共享图未改。

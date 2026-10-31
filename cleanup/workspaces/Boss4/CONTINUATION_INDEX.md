@@ -303,3 +303,7 @@ R3_READY10HN：10源正文证据；all-k极大归属、人口版本与严格有�
 R3_READY10HN数学/证据pushed 1246f72408918e1322b45b4ad88334d87e26af92；10源done另推送 7b0e732187bdf238a2376b6c26308b3fa84e24aa。Boss4累计1978完成，实际未完30；持续接续全仓，不以本批清空收尾。
 
 R3_READY15HO：15源正文证据；全深度调和账本一般证明、ASR来源纠错、UM分层入口、条件metaNE及固定汇点occupation基多面体修正；共15主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY15HO_REMAINING_SCOPE.json。
+
+R3_READY15HO数学/证据pushed 34967eda9e583a26143826d9107692df2f0b0a27；15源done另推送 d221e6590641e47a6315896acba0cb7d9fecd308。Boss4累计1993完成，实际未完30；持续接续全仓，不以本批清空收尾。
+
+R3_READY15HS：15源正文证据；最大主题纯终局容量、三主题根菜单真SPE反族、符号菜单图、共同匹配层式与前沿净预算；共15主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY15HS_REMAINING_SCOPE.json。
