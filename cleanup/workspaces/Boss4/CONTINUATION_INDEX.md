@@ -267,3 +267,7 @@ R3_READY11GK：FZ5/GB1/GD5共11源：跨真实根孩子递归删除势、两quer
 R3_READY11GK数学/证据pushed e61b09e317a21fffed0417a2ac64f32262a4abde；11源done另推送 87d7cf2fc0180c502c09871b908295903957d6a2。Boss4累计1849完成，实际未完27；持续接续全仓，不以本批清空收尾。
 
 R3_READY9GM：GH4/GG5九源：one-excess换手/新角色POOL与银行重入全q增长非SPE边界，原独审SHA不同不冒字节覆盖；五分支入口及log价格KKT、旧逐人floor与当前银行真反例的精确阈值。新原数学程序0，旧成功不重复；先明确checkpoint pushed再9逐源done，继续全仓。；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY9GM_REMAINING_SCOPE.json。
+
+R3_READY9GM数学/证据pushed be307b051dbfaa0ca2bcae9322b43c36e8ff85d8；9源done另推送 5b9e4bf112a5e27a7bdc4ae2544398f0cf2d905f。Boss4累计1858完成，实际未完28；持续接续全仓，不以本批清空收尾。
+
+R3_READY18GQ：GJ5/GF5/GE3/GK5共18源：循环根扩张/精确末位支持/两奖励补全；Root纠正旧963候选三正式页根IC遗漏和hardcoded verified误标，保stableID/旧原源done，新增一次定义核验五根负行。等号模式闭包/联合截断严格非SPE；三入口精确版本与Beta-clone固定策略lift/collision债务。正文证据checkpoint pushed后18逐源done，继续全仓。；共18主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY18GQ_REMAINING_SCOPE.json。
