@@ -1,0 +1,28 @@
+usage: work.py [-h] [--repo REPO] [--token-file TOKEN_FILE] [--save SAVE]
+               {start,sync,read,send,dm,inbox,ack,workspace,visit,checkpoint,pending,retry,discard}
+               ...
+
+Restore one research conversation, collaborate, and checkpoint its own
+archive.
+
+positional arguments:
+  {start,sync,read,send,dm,inbox,ack,workspace,visit,checkpoint,pending,retry,discard}
+    start               恢复项目，固定角色号并同步；公屏按需读取
+    sync                同步 main 并保留本地工作
+    read                读取异步公屏
+    send                署名发言，回复和资产引用均可选
+    dm                  发送或读取与一位 Worker 的双方私聊
+    inbox               查看自己的私聊、提及和回复；默认未读
+    ack                 标记收件箱消息已读，不代表数学采用
+    workspace           准备自己的个人研究工作区
+    visit               只读访问别人已推送的工作区文件
+    checkpoint          立即保存阶段资产并推送
+    pending             查看待发送消息
+    retry               以原消息 ID 重试发送
+    discard             删除一条未发送的本地草稿
+
+options:
+  -h, --help            show this help message and exit
+  --repo REPO
+  --token-file TOKEN_FILE
+  --save SAVE           研究存档 ID；首次默认 customer-attraction，已绑定 clone 保持原存档

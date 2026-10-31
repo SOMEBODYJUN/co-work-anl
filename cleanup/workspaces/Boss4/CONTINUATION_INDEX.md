@@ -158,3 +158,7 @@ R3_READY23AD：容量一与半单位槽/row及CONFIG原审查4，根平稳独立
 R3_READY23AD数学/证据pushed bccbad739a52b181b468a56a2a8a0412a309d14e；23源done另推送 b8874d7eea0ce788cb41085e04a534291586bae6。Boss4累计1254完成，实际未完35；持续接续全仓，不以本批清空收尾。
 
 R3_READY5AE：Boss实读R105 parent两解析原稿与三标准库原程序；三个新空目录各一次真实运行，1953客户静态指派桥失败、ASD/VR六有向对、18客户零regret必损修复，普遍预算与有限证据分开。继续全仓，不以一批收尾；共5主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY5AE_REMAINING_SCOPE.json。
+
+R3_READY5AE数学/证据pushed d3a4ac57a431411aeddb12e180bddb0c34e1d269；5源done另推送 8244be84dde1e581e43e99775056819a9542aa49。Boss4累计1259完成，实际未完49；持续接续全仓，不以本批清空收尾。
+
+R3_READY15AI：裸Cartesian/双rail/collision五原程序完整合同；test_work与导出器全代码及真实隔离范围五源；CONFIG/levels/prefix修复/unit原CLI五源；另Root定向修正三页七数学错和旧YAML结束符，原源/旧进度不改。仍持续六线全仓清洗；共15主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY15AI_REMAINING_SCOPE.json。

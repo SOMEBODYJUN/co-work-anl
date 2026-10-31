@@ -21,6 +21,8 @@ source_size: 8463
 evidence_paths:
   - "archives/unrelated-machines/tools/evidence/normalized-xos-threshold-independent-review/original/normalized_xos_menu_threshold_size_exact_v1_independent_review.md"
 
+---
+
 # 1. 来源身份和审查边界
 
 `normalized_xos_menu_threshold_size_exact_v1_independent_review.md` 是
@@ -58,7 +60,7 @@ evidence_paths:
 
 `K >= binom(2t,t) / binom(2t-r,t-r)`.
 
-该比值只是下界，不声称每组参数均达到；重复 supports、overlap、重复 indexed clauses 和全零 clause 都不能改善覆盖上界。反向给定 r-subset covering family，在每 support 上均匀放 1/r 的 clause，即构造满足 unit/tiny 条件的归一化菜单；因此最小菜单数可等价为该 covering-family 问题，但不把 covering oracle 误称为短输入算法。
+该比值只是下界，不声称每组参数均达到；重复 supports、overlap、重复 indexed clauses 和全零 clause 都不能改善覆盖上界。这里 r=d+1 的 covering count 只给必要的弱下界，不能一般作反向等价。反例取 η=1/2、t=4、d=2、r=3：在任意 r-support 上均匀放1/r，该support内两个资源的值为2/3>η，违反tiny条件。反向等价应使用第5节强化的 k=r_*=max{1,ceil(d/η)}；在 k-support 上均匀放1/k时，每个至多d的集合值≤d/k≤η，且每个t-set包含一个family member使其unit值为1。最小菜单数因而等于此 k-subset covering量，而不是一般的 r=d+1 covering量；仍不提供求最小family的多项式oracle。
 
 ### 指数因子
 

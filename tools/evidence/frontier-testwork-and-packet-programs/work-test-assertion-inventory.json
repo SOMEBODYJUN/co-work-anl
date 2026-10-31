@@ -1,0 +1,422 @@
+[
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_start_limits_recent_context_without_deleting_board_history",
+    "start_line": 43,
+    "end_line": 68,
+    "actual_assertion_scope": "start默认0不自动带公屏历史，显式3/1/0按需投影，完整read仍有4消息。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_negative_start_context_limit_fails_before_recovery",
+    "start_line": 70,
+    "end_line": 73,
+    "actual_assertion_scope": "负board-limit在恢复目录前拒绝。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_automatic_actor_is_stable_and_creates_no_work_branch",
+    "start_line": 75,
+    "end_line": 90,
+    "actual_assertion_scope": "合成对话自动R-UUID稳定，不产生旧wcg/work分支；这不是当前Boss身份规则。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_legacy_branch_migration_preserves_commit_index_and_dirty_files",
+    "start_line": 92,
+    "end_line": 116,
+    "actual_assertion_scope": "旧wcg/work提交祖先、index、未暂存/未跟踪内容、peer和本地recovery ref在迁移main时保留。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_start_recovers_missing_repo_remembers_role_and_external_path",
+    "start_line": 174,
+    "end_line": 189,
+    "actual_assertion_scope": "缺repo恢复、001身份/外部文件路径记忆、重复相同身份、拒绝换002，敏感合成串不入config/输出。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_existing_dirty_clone_is_preserved_when_starting",
+    "start_line": 191,
+    "end_line": 203,
+    "actual_assertion_scope": "已有clone的staged/unstaged/untracked bytes在start保留。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_missing_invalid_and_in_repo_credentials_fail_early",
+    "start_line": 205,
+    "end_line": 223,
+    "actual_assertion_scope": "缺/坏/多个匹配/仓库内/过期凭据文件早失败，不替换原路径或改发。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_sync_preserves_staged_unstaged_and_untracked_work",
+    "start_line": 225,
+    "end_line": 245,
+    "actual_assertion_scope": "sync保分层dirty/untracked内容并取peer，不留自己的临时stash。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_committed_conflict_aborts_merge_and_restores_dirty_work",
+    "start_line": 247,
+    "end_line": 267,
+    "actual_assertion_scope": "提交冲突abort且HEAD/dirty/index/untracked保留，无MERGE_HEAD残留。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_uncommitted_conflict_keeps_complete_backup_and_local_bytes",
+    "start_line": 269,
+    "end_line": 286,
+    "actual_assertion_scope": "恢复未提交内容冲突时保完整stash和双方内容，重试明确因unmerged停止。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_sync_preserves_preexisting_stash",
+    "start_line": 288,
+    "end_line": 301,
+    "actual_assertion_scope": "用户原stash不被本次sync清掉。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_read_and_multiple_senders_share_topic_without_registration",
+    "start_line": 303,
+    "end_line": 321,
+    "actual_assertion_scope": "两个clone同题无注册发送，actor/事件顺序明确、无members/ideas。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_checkpoint_pushes_and_result_asset_can_be_sent_with_saved_configuration",
+    "start_line": 323,
+    "end_line": 345,
+    "actual_assertion_scope": "checkpoint实际文件SHA/远端commit、result引用及重放保存，文本“证书”不证明数学。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_new_archive_checkpoint_uses_saved_topic_scope",
+    "start_line": 347,
+    "end_line": 373,
+    "actual_assertion_scope": "新CAG存档默认范围取本题/本人workspace，旧WC/peer草稿留本地。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_existing_legacy_binding_is_not_changed_and_explicit_shared_keeps_legacy_scope",
+    "start_line": 375,
+    "end_line": 399,
+    "actual_assertion_scope": "既有shared绑定不改，保持旧scope；拒绝强改CAG。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_unknown_archive_does_not_inherit_a_registered_topic_entry",
+    "start_line": 401,
+    "end_line": 409,
+    "actual_assertion_scope": "未知save不自动继承已注册题目入口。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_uploaded_standalone_restores_missing_clone_with_current_topic_defaults",
+    "start_line": 411,
+    "end_line": 427,
+    "actual_assertion_scope": "上传非可执行root恢复空clone并建当前workspace；legacy显式--branch main，main版无该额外参数。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_bootstrap_checkpoint_default_and_known_research_entries_cannot_drift",
+    "start_line": 429,
+    "end_line": 453,
+    "actual_assertion_scope": "根/checkpoint默认save及RESEARCH_ENTRIES常量一致，所列路径只检查is_file，不验证文档数学。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_all_three_roles_are_bound_and_return_their_exact_prompt",
+    "start_line": 455,
+    "end_line": 470,
+    "actual_assertion_scope": "boss/cleaner/editor按各自clone稳定绑定/精确prompt路径，拒绝角色切换。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_old_um_binding_retains_topic_scope_and_entry",
+    "start_line": 472,
+    "end_line": 494,
+    "actual_assertion_scope": "UM绑定保持UM入口和scope，CAG草稿留本地，拒绝换save。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_legacy_work_path_forwards_to_the_single_root_implementation",
+    "start_line": 496,
+    "end_line": 502,
+    "actual_assertion_scope": "旧tools/work.py实际转交根实现可读取同fixture公屏。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_missing_repo_and_nonempty_destination_report_actionable_errors",
+    "start_line": 504,
+    "end_line": 513,
+    "actual_assertion_scope": "缺repo/非空目标给明确错误并保keep文件。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_sync_and_checkpoint_share_writer_lock",
+    "start_line": 515,
+    "end_line": 521,
+    "actual_assertion_scope": "sync/checkpoint共用同clone writer锁。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_inherited_git_routing_does_not_touch_external_index",
+    "start_line": 523,
+    "end_line": 530,
+    "actual_assertion_scope": "继承Git路由不改外部诱饵index。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_uploaded_nonexecutable_program_works_as_git_askpass",
+    "start_line": 532,
+    "end_line": 552,
+    "actual_assertion_scope": "上传带空格且不可执行root通过临时可执行ASKPASS回合成字符串；Git credential fill不作网络认证。"
+  },
+  {
+    "source_id": "0267e9382e7d95b35a5e",
+    "name": "test_pending_retry_discard_and_replay_keep_original_message_id",
+    "start_line": 554,
+    "end_line": 576,
+    "actual_assertion_scope": "pending/retry/discard保持原ID，未知父回帖留pending，重试仍拒绝，discard不删已有远端消息。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_new_conversation_defaults_to_shared_long_lived_branch_and_cleanup",
+    "start_line": 43,
+    "end_line": 65,
+    "actual_assertion_scope": "新项目默认长期cleanup分支/专用board/repository-cleanup/cleaner；另研究save可共用分支/board，不额外建远端ref。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_same_downloaded_bootstrap_hands_off_to_updated_github_program",
+    "start_line": 67,
+    "end_line": 90,
+    "actual_assertion_scope": "同一下载bootstrap在本地假Git远端两次更新根程序后各handoff到first/updated，上传文件字节不变、actor稳定。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_cleanup_branch_clones_checkpoints_and_peer_sync_leave_main_unchanged",
+    "start_line": 106,
+    "end_line": 147,
+    "actual_assertion_scope": "绑定cleanup两个clone的保存/asset/peer同步留main不动，main另前进也不混入cleanup。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_new_board_is_independent_and_init_does_not_erase_either_board",
+    "start_line": 149,
+    "end_line": 161,
+    "actual_assertion_scope": "新旧board分离，各init不清消息。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_bound_clone_refuses_branch_or_board_rebinding_and_retains_bytes",
+    "start_line": 163,
+    "end_line": 176,
+    "actual_assertion_scope": "拒绝重绑文件/board路线，错分支sync/checkpoint/workspace失败且未完成字节保留。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_first_publication_requires_explicit_create_and_stays_off_main",
+    "start_line": 178,
+    "end_line": 194,
+    "actual_assertion_scope": "首次发布必须显式create，未授权时无新ref，授权后实际branch描述符且main不动。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_first_publication_audits_all_unpublished_commits",
+    "start_line": 196,
+    "end_line": 208,
+    "actual_assertion_scope": "首次发布同样审计所有未发布祖先，scope外旧commit不能搭便车。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_visit_uses_bound_branch_and_can_explicitly_read_main",
+    "start_line": 210,
+    "end_line": 231,
+    "actual_assertion_scope": "visit默认绑定文件分支，可显式只读main同号workspace，不切换clone当前分支。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_start_limits_recent_context_without_deleting_board_history",
+    "start_line": 233,
+    "end_line": 258,
+    "actual_assertion_scope": "start默认0不自动带公屏历史，显式3/1/0按需投影，完整read仍有4消息。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_negative_start_context_limit_fails_before_recovery",
+    "start_line": 260,
+    "end_line": 263,
+    "actual_assertion_scope": "负board-limit在恢复目录前拒绝。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_automatic_actor_is_stable_and_creates_no_work_branch",
+    "start_line": 265,
+    "end_line": 280,
+    "actual_assertion_scope": "合成对话自动R-UUID稳定，不产生旧wcg/work分支；这不是当前Boss身份规则。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_legacy_branch_migration_preserves_commit_index_and_dirty_files",
+    "start_line": 282,
+    "end_line": 306,
+    "actual_assertion_scope": "旧wcg/work提交祖先、index、未暂存/未跟踪内容、peer和本地recovery ref在迁移main时保留。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_start_recovers_missing_repo_remembers_role_and_external_path",
+    "start_line": 371,
+    "end_line": 386,
+    "actual_assertion_scope": "缺repo恢复、001身份/外部文件路径记忆、重复相同身份、拒绝换002，敏感合成串不入config/输出。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_existing_dirty_clone_is_preserved_when_starting",
+    "start_line": 388,
+    "end_line": 400,
+    "actual_assertion_scope": "已有clone的staged/unstaged/untracked bytes在start保留。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_missing_invalid_and_in_repo_credentials_fail_early",
+    "start_line": 402,
+    "end_line": 420,
+    "actual_assertion_scope": "缺/坏/多个匹配/仓库内/过期凭据文件早失败，不替换原路径或改发。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_sync_preserves_staged_unstaged_and_untracked_work",
+    "start_line": 422,
+    "end_line": 442,
+    "actual_assertion_scope": "sync保分层dirty/untracked内容并取peer，不留自己的临时stash。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_committed_conflict_aborts_merge_and_restores_dirty_work",
+    "start_line": 444,
+    "end_line": 464,
+    "actual_assertion_scope": "提交冲突abort且HEAD/dirty/index/untracked保留，无MERGE_HEAD残留。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_uncommitted_conflict_keeps_complete_backup_and_local_bytes",
+    "start_line": 466,
+    "end_line": 483,
+    "actual_assertion_scope": "恢复未提交内容冲突时保完整stash和双方内容，重试明确因unmerged停止。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_sync_preserves_preexisting_stash",
+    "start_line": 485,
+    "end_line": 498,
+    "actual_assertion_scope": "用户原stash不被本次sync清掉。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_read_and_multiple_senders_share_topic_without_registration",
+    "start_line": 500,
+    "end_line": 518,
+    "actual_assertion_scope": "两个clone同题无注册发送，actor/事件顺序明确、无members/ideas。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_checkpoint_pushes_and_result_asset_can_be_sent_with_saved_configuration",
+    "start_line": 520,
+    "end_line": 542,
+    "actual_assertion_scope": "checkpoint实际文件SHA/远端commit、result引用及重放保存，文本“证书”不证明数学。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_new_archive_checkpoint_uses_saved_topic_scope",
+    "start_line": 544,
+    "end_line": 570,
+    "actual_assertion_scope": "新CAG存档默认范围取本题/本人workspace，旧WC/peer草稿留本地。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_existing_legacy_binding_is_not_changed_and_explicit_shared_keeps_legacy_scope",
+    "start_line": 572,
+    "end_line": 596,
+    "actual_assertion_scope": "既有shared绑定不改，保持旧scope；拒绝强改CAG。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_unknown_archive_does_not_inherit_a_registered_topic_entry",
+    "start_line": 598,
+    "end_line": 606,
+    "actual_assertion_scope": "未知save不自动继承已注册题目入口。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_uploaded_standalone_restores_missing_clone_with_current_topic_defaults",
+    "start_line": 608,
+    "end_line": 624,
+    "actual_assertion_scope": "上传非可执行root恢复空clone并建当前workspace；legacy显式--branch main，main版无该额外参数。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_bootstrap_checkpoint_default_and_known_research_entries_cannot_drift",
+    "start_line": 626,
+    "end_line": 650,
+    "actual_assertion_scope": "根/checkpoint默认save及RESEARCH_ENTRIES常量一致，所列路径只检查is_file，不验证文档数学。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_all_three_roles_are_bound_and_return_their_exact_prompt",
+    "start_line": 652,
+    "end_line": 667,
+    "actual_assertion_scope": "boss/cleaner/editor按各自clone稳定绑定/精确prompt路径，拒绝角色切换。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_old_um_binding_retains_topic_scope_and_entry",
+    "start_line": 669,
+    "end_line": 691,
+    "actual_assertion_scope": "UM绑定保持UM入口和scope，CAG草稿留本地，拒绝换save。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_legacy_work_path_forwards_to_the_single_root_implementation",
+    "start_line": 693,
+    "end_line": 699,
+    "actual_assertion_scope": "旧tools/work.py实际转交根实现可读取同fixture公屏。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_missing_repo_and_nonempty_destination_report_actionable_errors",
+    "start_line": 701,
+    "end_line": 710,
+    "actual_assertion_scope": "缺repo/非空目标给明确错误并保keep文件。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_sync_and_checkpoint_share_writer_lock",
+    "start_line": 712,
+    "end_line": 718,
+    "actual_assertion_scope": "sync/checkpoint共用同clone writer锁。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_inherited_git_routing_does_not_touch_external_index",
+    "start_line": 720,
+    "end_line": 727,
+    "actual_assertion_scope": "继承Git路由不改外部诱饵index。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_uploaded_nonexecutable_program_works_as_git_askpass",
+    "start_line": 729,
+    "end_line": 749,
+    "actual_assertion_scope": "上传带空格且不可执行root通过临时可执行ASKPASS回合成字符串；Git credential fill不作网络认证。"
+  },
+  {
+    "source_id": "de53a0261145104205aa",
+    "name": "test_pending_retry_discard_and_replay_keep_original_message_id",
+    "start_line": 751,
+    "end_line": 773,
+    "actual_assertion_scope": "pending/retry/discard保持原ID，未知父回帖留pending，重试仍拒绝，discard不删已有远端消息。"
+  }
+]
