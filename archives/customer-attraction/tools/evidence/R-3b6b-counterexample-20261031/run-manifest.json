@@ -1,0 +1,19 @@
+{
+  "batch": "R-3b6b-counterexample-20261031",
+  "commands": [
+    "anchor_lift_audit.py --max-players 7",
+    "independent verify_certified.py",
+    "certify_candidate.py last_share_m5k7.json",
+    "fork_family_search.py default grid",
+    "cone_search.py --topics 7 --players 5 --starts 2 --steps 2 --seed 41236",
+    "python3 -m py_compile source/*.py replay/*.py"
+  ],
+  "replays": [
+    "anchor_lift_audit.json",
+    "verify_certified.stdout",
+    "last_share_certify.json",
+    "fork_family_search.json",
+    "cone_search_smoke.json"
+  ],
+  "all_checked": true
+}
