@@ -52,9 +52,9 @@ JSON 状态写明“known counterexample reproduced”，并限制为 finite exa
 
 ## 3. 拟阵交换直径穷举
 
-来源 ID `4a4127c9a96303599be0`，大小 4,465 字节，SHA-256 `5a2549b3607a18588ad55940fa2e7d920f827f409c542e2f3d5ed84fe3a99c33`。JSON 明示 integer bitsets、无浮点、穷举，`max_n=5`。总计：498 个 labelled matroids、28,424 个 profiles、18,833 个 distinct exchange graphs、242,976 个 reachable basis pairs，全部 finite cases passed。
+来源 ID `4a4127c9a96303599be0`，大小 4,465 字节，SHA-256 `5a2549b3607a18588ad55940fa2e7d920f827f409c542e2f3d5ed84fe3a99c33`。JSON 明示 integer bitsets、无浮点、穷举，`max_n=5`。总计：498 个带标号抽象拟阵、28,424 个非空基支持、18,833 个按每个拟阵分别去重的交换有向图、242,976 个可达的不同地面元素有序对，全部 finite cases passed。图的顶点是地面元素，计数不指基对；支持重复产生同一图时只检查一次，不同拟阵产生同一图时仍分别计数。源码机制、独立交叉核验与复现见[五元以内拟阵公共基交换距离核验](../../../matroid-structures/state/计算/五元以内拟阵公共基交换距离核验--计算.md)。
 
-strata 给出 n≤5、各 rank 的 matroid/profile/graph/pair 数。最长 witness 按 girth 分四类：
+strata 给出 `n≤5`、各 rank 的 matroid/profile/graph/pair 数。`longest_witnesses` 的键为 `δ=rank−girth`，按这个差值分四类；每类保留一个达到该类有限最大距离的见证，未列全部达到者：
 
 - 标记 `-1`：n=4、rank=2、girth=3，距离 2，bound 2；
 - 标记 `0`：n=4、rank=2、girth=2，距离 2，bound 3；
