@@ -1,0 +1,70 @@
+# 数学与运行域自查
+
+- [x] 5primary30382B完整读，10项真实claim1a854...pushed/synced本5ownerSHA核。
+- [x] sizeSHAblob全本地/raw字节保，无sourceentry/network/show/sharedGit。
+- [x] 构造q≥2/mq+1/2q不同maxima，b≥1/a0..b整数全unitclients。
+- [x] a0无同组边仍全部主题distinctmax，Nq²b+q(q−1)a/Sqb+(q−1)a。
+- [x] 只声称存在构造完整σ actualWOPT，不声称该输入全部SPE最优。
+- [x] 无重复规则root/secondopposite/moregroup/lastgroup tie/unfilled主题全部指定。
+- [x] 首二1–1须延第二group，原arbitraryfixedtie会改rootmenu，原码已recent正确。
+- [x] 重复前缀永久BI且重复不消失，不回切/子树无冲突。
+- [x] 当前重复旧主题每客户至少2故profit≤S/2，不依赖出口具体SPE。
+- [x] F(s)精确收益/相邻差(b−a)/2≥0，L/H/L−S2 all formulas核。
+- [x] A=q/B0末位、B0/A≥2、B≥1三差距cases、A=B+1 q2B+1边界保。
+- [x] 第二人同组/异组都H、repeat≤S2，所有forcedrootd=L根IC。
+- [x] theta为先pure qstatic后maxquery，不等blindqueryminimaxv。
+- [x] unusedrootexists2qvsq，integer1/(1+n)≥1−n2必要，不放fractional次数。
+- [x] θlowerL+(b−a)t2≥L，oppositegroupq distinctstatic上界根L已用值≤L。
+- [x] R跨组1/q/no self双随机不可约/uniqueuniform周期2不影响stationary唯一。
+- [x] flux L−H=−(q−1)(b−a)/2，strict b>a/a=b0。
+- [x] crossδmean−(q−1)/(2q²)与sameδmean1/(2q)，I=K0贡献0不0/0。
+- [x] q2a0b1四unit真实K22实现oldr3scalar每客−1/8，总−1/2，不倒填oldSPE认证。
+- [x] 总N与actualW，任m≤q+1selected标签至多q+1，未选q−1 pair至少a，OPT上界达。
+- [x] actual反组all选omission=a choose(q−1,2)，另opt换组D=G同值net0。
+- [x] a>0/q≥3才strict真实shared遗漏，q2或a0D0保。
+- [x] m6 q5a1b2解析N70/WOPT64/rootθ9/5tail11/flux−2/DG6非原finite run。
+- [x] H结构|I|1,k−1,k与本2/k2q≥4范围不同不互反。
+- [x] 原极端minbad另需u<θ且tail≥θ，本族root恰θ不能反更强严格budget。
+- [x] generalΓ任意incidence/legalb/同σrooti tailKi，F−d分子K−cp不反。
+- [x] θ≤maxF≤u+maxΓ；u<θ⇒每个qstaticp某Γ≥δ>0，非仅existsbadp。
+- [x] positivepartEplus只上界Γ不代signed跨客户credit，不是JAqueryE。
+- [x] h_x=max_{root i containingx}Ki，不对不含x根取max。
+- [x] integerp slots≤q c_p≥h，补齐只降pay/Internalquerymaximal支配θ≤u。
+- [x] COV任意关联/非uniform/internaltheme/bg，不需tail高于root。
+- [x] q0无tailh0空p/zeroempty直接，原constructq2min域另分。
+- [x] degree2 block private/edge均取客户内max需求不平均，VC恰COV写法。
+- [x] strictbad必covercost>q只是必要，不倒推root<θ。
+- [x] minimalr theta反例用legalprefixθ嵌入与shorterhypothesis才tail≥θ。
+- [x] 由sameleafcontainedA收益≤root推出无自归属/privateK0，不当generalCOV假设。
+- [x] oppositegroup 1-1排除段需degree≤2，不把一般COV域偷给此结构。
+- [x] 该shape真实tail可internal subsets，不要求全max；private/same需求0/cross≤1。
+- [x] static取一整组qslot排strictu<θ，任大非uniform整数edge/private/bg条件成立。
+- [x] 不承诺扰动原σ仍SPE或maxima标签保持；givenactualshape才代数排除。
+- [x] 完整oppositetail D/private+same组s差，staticX查询X D−s/Y D，mirror minmax正确。
+- [x] internalactualtail Ki≤fullcontainer counts故di≥Di，u≥maxD。
+- [x] uniqueDmax gapγ从SLACK直接min(γ,s)，零bg无private s2w3特化。
+- [x] 原对称族两组均最大D/slack可0，与rootθ/flux负相容。
+- [x] K5tenunit/r3q2完整root0/secondi+1/speciallasti−1+otherprefixfresh定义覆盖31nodes。
+- [x] K5distinct末fresh3/repeat11over6；repeatpast末fresh10over3/repeat4over3，所有IC成立。
+- [x] K5secondfresh3/repeat11over6/allroot3，actualWOPT9不half反。
+- [x] rooti taili±1使h demandC5，integer mincost3>q2；repeat slots不改善。
+- [x] K5θ3=min(distinctstaticmax3,repeatstatic10over3)=3=u。
+- [x] Γdistinctp unused0/used−7over6 vsrepeatp unused1over3/used−5over3，只analytic不原run。
+- [x] cost>q不使每pΓ总正，distinctp正负客户相消故strict条件不满足。
+- [x] pureC5fiveclients同cycle菜单root1/tails1.5/theta1.5，却lastfresh2，非SPE不同K5。
+- [x] 一般degree2三条件Γforallp/covercost>q/真tailIC未证互斥也没合法u<θ。
+- [x] 负flux独审先读正文推导后看作者code，不claim未读proof blind。
+- [x] root静态审查已读主稿按定义重构，也不是statementfirstblind。
+- [x] 作者fulltree10181/79726/有序θ，独审nonrepeat4667/19228/multisetθ，不相加。
+- [x] 7paramsq2两组/q3三组/q4两组，maxm5，不覆盖m6程序。
+- [x] 闭式count表21/84,259/1554,4681/37448 vs17/40,157/516,2081/8800仅统计身份。
+- [x] indep重复偏离靠S2解析+BI，不复制作者重复子树，逻辑完整但统计维度不同。
+- [x] 静态作者audit非uniform6theme bg011只menu代数不SPE；K5另31/155。
+- [x] rootindependentK5自报直接unit实现，未取codefull闭包不冒本批新IC。
+- [x] 所有5MD原entry0/sourcefunc0/solver0/newscan0，旧auditstats按来源。
+- [x] 2context原12925H/1578middle sourceBoss3已done不变，仅related不新增done。
+- [x] 3currentformal全文比较，theta vs v和背景嵌入范围保。
+- [x] README全部asset与停止随机扩样保，不把旧流程/停界变本次停止。
+- [x] 5finalintegrated与externalready/bodypushed/done各自分开。
+- [x] 下一15944B真local5仅候选，实际claim后另primary，不由旁读done。
+- [x] actualbytes C0只LF/TAB/CR例外，metadata/links/strictJSON/copy全核。

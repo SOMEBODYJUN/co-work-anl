@@ -1,0 +1,7 @@
+# 真实二元负flux与静态拥挤支配：五完整主源
+
+original/5MD30382B全读，原10项claim actualpushed/synced1a854689eecb8a10e0c2bbdd45857979d73b21b8仅取本5，owner/sourceSHA/size/blob核。context/12925旧极端归属与1578中间菜单全文，已Boss3done不变；comparison/3当前完整正式页，θpure与minimaxv区别及strictminbad范围保。
+
+三对象分别全参数全history构造、arbitraryincidence signedΓ/整数COV及degree2条件稳健排除、原两审/README先验与finite维度。作者10181/79726、独审nonrepeat4667/19228不合并；m6表解析不是原audit。K5真全SPE cost>q却uθ，纯C5同形非SPE；Gamma表仅解析同旧input。所有原entry/source/solver/LP/新scan0，finite原报未冒新运行。
+
+rootθ/actualWOPT不是half或strictθ反例；非uniform真实menu形态给排除不保证扰动原策略SPE。5finalintegrated semantic与externalready/bodypushed/done分开，actualbytesC0/links/JSON/manifest自查不替一般证明。下一15944B真local候选不附done。
