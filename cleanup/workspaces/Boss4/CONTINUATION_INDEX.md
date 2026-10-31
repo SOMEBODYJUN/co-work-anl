@@ -238,3 +238,7 @@ R3_READY14FE：ER5/EP4/EU5共14源：真实菜单去对角与精确索引分离�
 R3_READY14FE数学/证据pushed d89074e250b3aeb77ee14b576e8ca4483bd03162；14源done另推送 35e87cc5890837a90652a4e5c0f4b9270bc23869。Boss4累计1727完成，实际未完21；持续接续全仓，不以本批清空收尾。
 
 R3_READY8FH：ES4与RootFA4共8源：真实action阈值/背景union精准量词、合法背景平台全B子SPE与固定owner误差推论、最优补全账本/非SPE十环域。Root5related完整实读但不替其done，原数学CLI0；先明确正文证据checkpoint pushed再8源done，继续全仓。；共8主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY8FH_REMAINING_SCOPE.json。
+
+R3_READY8FH数学/证据pushed 5b315506ce2c0c5520f084ac7e4cee7ed7267f63；8源done另推送 3b3112e40258f31982f390444c63aeb384795183。Boss4累计1735完成，实际未完23；持续接续全仓，不以本批清空收尾。
+
+R3_READY18FM：FG5/EZ5/EX3/FD5共18源：已全文原平台/owner/十环原稿正式语义处置且复用明确已推原字节；exactM/SC版本检查、weak pushforward新旧真值及VAR独审/原有限实现/达等域纠正。先明确正文证据checkpoint pushed再18逐源done；各原/新/复用运行准确分开，持续全仓。；共18主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY18FM_REMAINING_SCOPE.json。
