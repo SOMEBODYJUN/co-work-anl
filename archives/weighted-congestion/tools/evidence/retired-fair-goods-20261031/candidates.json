@@ -1,0 +1,637 @@
+{
+  "line": "fair_goods",
+  "date": "2026-10-20",
+  "guidance_read_completely": true,
+  "research_status": "topic selection; no universal new theorem",
+  "top_two": [
+    "FG01",
+    "FG02"
+  ],
+  "candidates": [
+    {
+      "id": "FG01",
+      "title_zh": "四人laminar EF1的8/12物品key matroid",
+      "status": "OPEN_DEEP",
+      "rank": 1,
+      "precise_scope": {
+        "agents": 4,
+        "valuations": "arbitrary nonnegative additive",
+        "constraints": "common 4-colorable laminar matroid",
+        "target": "complete feasible EF1",
+        "strong_local_target": "EF1 plus vi(Ai)>=vi(Aj) for all i<j, for each prescribed order",
+        "K8": "categories (3,3,2), per-category cap1, total cap2",
+        "K12": "four categories of size3, cap1 each, total cap3"
+      },
+      "parent_papers": [
+        {
+          "authors": [
+            "Benjamin Cookson",
+            "Nisarg Shah"
+          ],
+          "year": 2026,
+          "title": "Constrained Fair Allocations via Partition Matroid Reductions",
+          "url": "https://arxiv.org/html/2608.31121v1",
+          "location": "§3.4 Lemma 8; Appendix B Definitions 13/14, Lemmas 11/12; §5 four agents",
+          "web_refs": [
+            "turn16view0",
+            "turn19view1",
+            "turn25view1",
+            "turn47view0",
+            "turn47view1"
+          ],
+          "venue": "arXiv preprint; author publications page lists EAAMO26 related title"
+        }
+      ],
+      "paper_type": [
+        "structural reduction",
+        "finite bottleneck classification"
+      ],
+      "core_mechanism": "Feasibility-preserving simplification into uniform/key components; append EF1 allocations with reverse envy orders.",
+      "paper_facts": [
+        "Three-agent laminar solved.",
+        "Four-agent full theorem reduces to the two ordered-EF1 key instances.",
+        "Top-i-goods separation fails already on K8 (Lemma12).",
+        "Authors report unsuccessful computer-assisted attempts."
+      ],
+      "our_idea": "Cover valuation comparison cells by a small partition menu; encode a universal local failure as finite Boolean linear-real satisfiability, then extract exchange lemmas.",
+      "value_criterion": "Resolve both keys to advance the original public four-agent laminar problem; K8 alone needs a reusable structural theorem or a route-obstruction certificate.",
+      "first_proof_obligation": "Prove or refute K8 ordered-EF1 for all nonnegative real valuations including zeros/ties; ordinary EF1 does not suffice.",
+      "toy_model_and_test": {
+        "files": [
+          "toy_checks.py",
+          "toy_results.json"
+        ],
+        "seed": 20261020,
+        "K8": {
+          "allocations": 864,
+          "unlabelled_partitions": 36,
+          "profiles": 5000,
+          "counterexamples": 0,
+          "min_witnesses": 6
+        },
+        "K12": {
+          "allocations": 31104,
+          "unlabelled_partitions": 1296,
+          "profiles": 500,
+          "counterexamples": 0,
+          "min_witnesses": 256
+        },
+        "lemma12_reproduction": {
+          "top_separation_feasible_allocations": 0
+        },
+        "evidence_level": "sampled profiles, exact integer allocation enumeration"
+      },
+      "dangerous_obstacle": "Finite goods do not make the continuous valuation universal quantifier easy; stronger ordered condition might fail; K12 cell explosion.",
+      "freshness_check": {
+        "as_of": "2026-10-20",
+        "latest_parent": "2026-08-31 v1",
+        "search_result": "No indexed four-agent solution found; not novelty certification."
+      }
+    },
+    {
+      "id": "FG02",
+      "title_zh": "等值副本goods的SD-EF1：先三人",
+      "status": "OPEN_DEEP",
+      "rank": 2,
+      "precise_scope": {
+        "agents": "first n=3, then arbitrary n",
+        "types": "t arbitrary",
+        "copies": "1<=cg<=n, same value within each type for each observer",
+        "constraints": "complete, at most one copy of a type per agent",
+        "target": "for every observer i, recipient j and vi-ranking prefix P: |Ai intersect P|>=|Aj intersect P|-1"
+      },
+      "parent_papers": [
+        {
+          "authors": [
+            "Benjamin Cookson",
+            "Soroush Ebadian",
+            "Nisarg Shah"
+          ],
+          "year": 2025,
+          "title": "Constrained Fair and Efficient Allocations",
+          "url": "https://www.cs.toronto.edu/~nisarg/papers/constrained-fair-efficient.pdf",
+          "location": "§2.1; §3.3.1 Theorem 5; §3.3.2 Theorem 6 and following Open Question",
+          "web_refs": [
+            "turn28view0",
+            "turn35view3",
+            "turn108view0"
+          ],
+          "venue": "AAAI 2025"
+        }
+      ],
+      "paper_type": [
+        "tool migration",
+        "boundary classification"
+      ],
+      "core_mechanism": "Constrained additive values induce weighted matroid-rank functions; general partition SD-EF1 obstruction does not preserve equal-copy values.",
+      "paper_facts": [
+        "General partition matroid SD-EF1 impossible (Theorem6).",
+        "Goods-with-copies SD-EF1 stated as explicit open question.",
+        "MNW 1/2-EF1 guarantee is tight and cannot directly solve exact target."
+      ],
+      "our_idea": "Treat xig as a column-sum-constrained binary matrix. For n3, encode c1 as a positive chosen color and c2 as a negative omitted color; repair earliest bad prefixes via alternating exchanges.",
+      "value_criterion": "Use equal-copy structure to cross the negative partition-matroid boundary; n3 arbitrary-type theorem or structural counterexample is meaningful.",
+      "first_proof_obligation": "A three-person mixed multiplicity prefix-repair lemma with a terminating potential; error<=2 from independent rounding is insufficient.",
+      "toy_model_and_test": {
+        "files": [
+          "toy_checks.py",
+          "toy_results.json",
+          "copies_exhaustive.py",
+          "copies_exhaustive_results.json"
+        ],
+        "exhaustive": {
+          "agents": 3,
+          "nonuniversal_types": 4,
+          "multiplicities": [
+            1,
+            2
+          ],
+          "profiles_up_to_type_relabelling": 9216,
+          "allocations_per_profile": 81,
+          "counterexamples": 0,
+          "min_witnesses": 9
+        },
+        "random": {
+          "seed": 20261021,
+          "n3_profiles": 5000,
+          "n4_profiles": 2000,
+          "counterexamples": 0
+        },
+        "evidence_level": "finite exhaustive domain plus sampled larger profiles; no universal proof"
+      },
+      "dangerous_obstacle": "Prefix matrix is not evidently totally unimodular; local repairs may cycle through different agents rankings; do not add PO.",
+      "freshness_check": {
+        "as_of": "2026-10-20",
+        "search_queries": [
+          "SD-EF1 goods with copies 2026",
+          "stochastic EF1 copies allocation",
+          "full parent title 2026"
+        ],
+        "search_result": "No indexed follow-up solution found; not novelty certification."
+      }
+    },
+    {
+      "id": "FG03",
+      "title_zh": "两类别的EF1与fPO同步：三人六物品",
+      "status": "OPEN_RESERVE",
+      "rank": 3,
+      "precise_scope": {
+        "agents": 3,
+        "goods": 6,
+        "valuations": "arbitrary nonnegative additive",
+        "constraints": "two categories of size3; common cap1 per category; complete",
+        "target": "EF1 and fractional Pareto optimality within the common constrained fractional polytope"
+      },
+      "parent_papers": [
+        {
+          "authors": [
+            "Benjamin Cookson",
+            "Nisarg Shah",
+            "Paritosh Verma"
+          ],
+          "year": 2026,
+          "title": "Fair and Efficient Balanced Allocations for Additive Valuations",
+          "url": "https://arxiv.org/html/2608.06325v1",
+          "location": "Theorems 1/2; §5; §7 Open Questions 2 and 6",
+          "web_refs": [
+            "turn77view0",
+            "turn81view0",
+            "turn89view0"
+          ],
+          "venue": "arXiv preprint, submitted 2026-08-06"
+        }
+      ],
+      "paper_type": [
+        "viewpoint",
+        "combined topological and primal-dual tools"
+      ],
+      "core_mechanism": "Positive weighted-welfare faces certify fPO; KKM and prefix-price interlacing consolidate fairness witnesses.",
+      "paper_facts": [
+        "Balanced/uniform EF1+fPO existence solved.",
+        "General categories only EF1^cat+fPO proved.",
+        "§7 OpenQ2 asks exact EF1+fPO under partition/general matroids."
+      ],
+      "our_idea": "Synchronize categorywise alternating cycles so aggregate envy needs only one deletion rather than one deletion per category.",
+      "value_criterion": "Advance the exact public question at the smallest true cross-category setting; mere EF1^cat duplicates Theorem2.",
+      "first_proof_obligation": "Prove a common supported face admits interlaced price profiles with only one aggregate deletion, or exhibit a rational counterexample.",
+      "toy_model_and_test": {
+        "planned": "Enumerate all 36 complete allocations and rational positive-weight support cones; not run this round."
+      },
+      "dangerous_obstacle": "Different categories can require incompatible witnesses or deletion goods.",
+      "freshness_check": {
+        "as_of": "2026-10-20",
+        "latest_parent": "2026-08-06 v1",
+        "search_result": "Exact partition target remains open in latest checked primary paper."
+      }
+    },
+    {
+      "id": "FG04",
+      "title_zh": "两任意类别上界的多项式2/3-MMS",
+      "status": "OPEN_RESERVE",
+      "rank": 4,
+      "precise_scope": {
+        "agents": "all n",
+        "valuations": "nonnegative additive",
+        "constraints": "two disjoint categories with common caps, complete feasible allocation",
+        "benchmark": "MMS over complete feasible partitions",
+        "target": "polynomial-time 2/3-MMS"
+      },
+      "parent_papers": [
+        {
+          "authors": [
+            "Halvard Hummel",
+            "Magnus Lie Hetland"
+          ],
+          "year": 2026,
+          "title": "Maximin shares under cardinality constraints",
+          "url": "https://link.springer.com/article/10.1007/s10458-026-09731-1",
+          "location": "§8 Discussion, high-valued items and residual feasibility",
+          "web_refs": [
+            "turn33view1",
+            "turn55view1"
+          ],
+          "venue": "JAAMAS40 article9"
+        },
+        {
+          "authors": [
+            "Hirota Kinoshita",
+            "Ayumi Igarashi"
+          ],
+          "year": 2026,
+          "title": "Maximin Shares with Lower Quotas",
+          "url": "https://arxiv.org/html/2602.08966v1",
+          "location": "Abstract; main theorems; computational appendix",
+          "web_refs": [
+            "turn77view1",
+            "turn81view1"
+          ],
+          "venue": "arXiv preprint"
+        }
+      ],
+      "paper_type": [
+        "constraint-adapted algorithmic tools"
+      ],
+      "core_mechanism": "Categorywise ordering and feasibility-aware reductions combined with bag filling.",
+      "paper_facts": [
+        "Single category lower/upper quotas admits 2n/(3n-1)-MMS polynomially.",
+        "Multiple categories have n/(2n-1)-MMS polynomially.",
+        "Generalized valid reductions must preserve residual feasibility and every remaining MMS."
+      ],
+      "our_idea": "Compress high-valued overlap for exactly two categories via bipartite matching and then fill low-value residual bags.",
+      "value_criterion": "Improve the asymptotic multicategory bound using the first nontrivial number of categories.",
+      "first_proof_obligation": "A high-good matching reduction that simultaneously preserves each residual MMS and all category capacity constraints.",
+      "toy_model_and_test": {
+        "planned": "n3, two categories of 4-6 goods each, enumerate MMS partitions and falsify proposed reductions; not run."
+      },
+      "dangerous_obstacle": "Two categories still permit arbitrary inter-agent overlap; single-category 2/3 or few-agent existence results are already known.",
+      "freshness_check": {
+        "as_of": "2026-10-20",
+        "search_result": "Checked 2026 quota extension; no identical two-category 2/3 result located."
+      }
+    },
+    {
+      "id": "FG05",
+      "title_zh": "m=n+2时EFX分配的极小计数",
+      "status": "OPEN_RESERVE",
+      "rank": 5,
+      "precise_scope": {
+        "agents": "all n, first n5",
+        "goods": "m=n+2, first m7",
+        "valuations": "nonnegative additive",
+        "fairness": "all-good EFX0",
+        "target": "tight minimum number of labelled EFX allocations"
+      },
+      "parent_papers": [
+        {
+          "authors": [
+            "Tzeh Yuan Neoh",
+            "Nicholas Teh"
+          ],
+          "year": 2025,
+          "title": "Understanding EFX Allocations: Counting and Variants",
+          "url": "https://arxiv.org/pdf/2504.03951",
+          "location": "§3; §6; Appendix D.1",
+          "web_refs": [
+            "turn35view1",
+            "turn55view2",
+            "turn56view4"
+          ],
+          "venue": "AAAI2025"
+        }
+      ],
+      "paper_type": [
+        "counting viewpoint",
+        "finite extremal classification"
+      ],
+      "core_mechanism": "Enumerate possible small-bundle allocation shapes; count fairness witnesses.",
+      "paper_facts": [
+        "For m=n+2, lower n and upper n^2 established.",
+        "Examples attain n for n<=4.",
+        "Authors report observed minimum14 at n5; general Conjecture6.1 is much broader."
+      ],
+      "our_idea": "Translate few-double-bundle EFX comparisons into linear regions and search for extremal constructions, first determine whether n5m7 can attain5.",
+      "value_criterion": "Needs a general construction or extremal structural theorem; reducing empirical14 to13 is likely insufficient.",
+      "first_proof_obligation": "Reconstruct exact EFX0 counting formula and AppendixD.1 examples including zero/tie conventions.",
+      "toy_model_and_test": {
+        "planned": "Reproduce n3/n4 integer instances, then certificate-based n5 search; not run this round."
+      },
+      "dangerous_obstacle": "General at-least-n conjecture entails general EFX existence; restrict m=n+2 throughout.",
+      "freshness_check": {
+        "as_of": "2026-10-20",
+        "search_result": "No indexed counting follow-up located."
+      }
+    },
+    {
+      "id": "FG06",
+      "title_zh": "简单图强EFX可定向完整分类",
+      "status": "REJECT_SOLVED",
+      "rank": null,
+      "precise_scope": {
+        "input": "simple connected graph; every endpoint valuation assignment",
+        "target": "characterize universal EFX orientability"
+      },
+      "parent_papers": [
+        {
+          "authors": [
+            "Jinghan A Zeng",
+            "Ruta Mehta"
+          ],
+          "year": 2025,
+          "title": "On the structure of EFX orientations on graphs",
+          "url": "https://arxiv.org/abs/2404.13527",
+          "location": "Main characterization question and chromatic-number bounds",
+          "web_refs": [
+            "turn12academia16",
+            "turn25view0"
+          ],
+          "venue": "AAMAS2025"
+        },
+        {
+          "authors": [
+            "Jinghan A Zeng"
+          ],
+          "year": 2026,
+          "title": "A Polynomial Time Characterization For Strongly EFX Orientable Graphs",
+          "url": "https://arxiv.org/abs/2609.36498",
+          "location": "Abstract/main theorem, v2 October1",
+          "web_refs": [
+            "turn66search0"
+          ],
+          "venue": null
+        }
+      ],
+      "paper_type": [
+        "classification"
+      ],
+      "core_mechanism": "Block decomposition plus local graph obstructions.",
+      "paper_facts": [
+        "2026 complete polynomial-time characterization subsumes the old chi3 boundary."
+      ],
+      "our_idea": "Original classification idea rejected; any multigraph extension needs a new quantified model and immediate parallel-edge obstruction check.",
+      "value_criterion": "No new result from rediscovering solved classification.",
+      "first_proof_obligation": "No active proof obligation for old question.",
+      "toy_model_and_test": {
+        "planned": "No new toy search needed for solved target."
+      },
+      "dangerous_obstacle": "Latest September/October result makes old open question stale.",
+      "freshness_check": {
+        "as_of": "2026-10-20",
+        "solved_by": "arXiv2609.36498v2"
+      }
+    },
+    {
+      "id": "FG07",
+      "title_zh": "多重图cancelable估值完整EFX",
+      "status": "REJECT_SOLVED",
+      "rank": null,
+      "precise_scope": {
+        "input": "arbitrary multigraph; items valued only at their endpoints; cancelable valuations",
+        "target": "complete EFX polynomial-time"
+      },
+      "parent_papers": [
+        {
+          "authors": [
+            "Mahyar Afshinmehr",
+            "Arash Ashuri",
+            "Pouria Mahmoudkhan",
+            "Kurt Mehlhorn",
+            "Amir Mohammad Shahrezaei"
+          ],
+          "year": 2026,
+          "title": "EFX Allocations Exist on Multi-Graphs",
+          "url": "https://arxiv.org/html/2606.18665v1",
+          "location": "Abstract; §1.2; main theorem",
+          "web_refs": [
+            "turn68view0",
+            "turn123view0"
+          ],
+          "venue": null
+        }
+      ],
+      "paper_type": [
+        "problem breakthrough",
+        "combined bundle and envy-graph tools"
+      ],
+      "core_mechanism": "Unit bundles, envy-path rerouting, structural dumping completion.",
+      "paper_facts": [
+        "Exact EFX polynomial-time for arbitrary multigraphs under cancelable valuations, including additive."
+      ],
+      "our_idea": "Old additive triangle-containing graph extension rejected; monotone extension would require a new support-domain statement.",
+      "value_criterion": "Tool transfer only; no novelty in solved additive/cancelable target.",
+      "first_proof_obligation": "None for solved target; a proposed larger class first needs obstruction tests.",
+      "toy_model_and_test": {
+        "planned": "No old-target toy search."
+      },
+      "dangerous_obstacle": "General monotone/submodular EFX now has counterexamples; naive valuation-class expansion is unsafe.",
+      "freshness_check": {
+        "as_of": "2026-10-20",
+        "solved_by": "arXiv2606.18665, June17"
+      }
+    },
+    {
+      "id": "FG08",
+      "title_zh": "相同additive估值的一般matroid EF1",
+      "status": "REJECT_SOLVED",
+      "rank": null,
+      "precise_scope": {
+        "input": "any common matroid admitting a complete feasible allocation; identical nonnegative additive valuations",
+        "target": "complete feasible EF1"
+      },
+      "parent_papers": [
+        {
+          "authors": [
+            "Kristof Berczi",
+            "Siyue Liu",
+            "Victor Reis",
+            "Jakub Tarnawski"
+          ],
+          "year": 2026,
+          "title": "Weighted Equitability and Matroid-Constrained Discrepancy",
+          "url": "https://arxiv.org/html/2608.13983v1",
+          "location": "Theorem1; §4.2; introduction EF1 application",
+          "web_refs": [
+            "turn16view2",
+            "turn19view2"
+          ],
+          "venue": null
+        }
+      ],
+      "paper_type": [
+        "tool breakthrough"
+      ],
+      "core_mechanism": "Localized exchange, LP duality, weight truncation continuation, decreasing convex potential.",
+      "paper_facts": [
+        "General identical-additive matroid EF1 resolved with a strongly polynomial algorithm."
+      ],
+      "our_idea": "Do not enlarge tri-valued identical-valuation theorem: already solved. Transfer prefix/discrepancy tools to assignment team.",
+      "value_criterion": "Value only in a genuinely new heterogeneous or prefix-constrained setting.",
+      "first_proof_obligation": "None for old target.",
+      "toy_model_and_test": {
+        "planned": "No repeated small identical-valuation tests."
+      },
+      "dangerous_obstacle": "Confusing older tri-valued theorem with newest weighted result creates false novelty.",
+      "freshness_check": {
+        "as_of": "2026-10-20",
+        "solved_by": "arXiv2608.13983, August14"
+      }
+    },
+    {
+      "id": "FG09",
+      "title_zh": "balanced EF1+fPO的估值类型扩充",
+      "status": "REJECT_SOLVED",
+      "rank": null,
+      "precise_scope": {
+        "input": "arbitrary nonnegative additive goods; bundle sizes differ by<=1",
+        "target": "balanced EF1+constrained fPO existence"
+      },
+      "parent_papers": [
+        {
+          "authors": [
+            "Yasushi Kawase",
+            "Ryoga Mahara"
+          ],
+          "year": 2026,
+          "title": "Fair and Efficient Balanced Allocation for Indivisible Goods",
+          "url": "https://arxiv.org/html/2603.05956v1",
+          "location": "§6 future directions beyond two types",
+          "web_refs": [
+            "turn55view0",
+            "turn56view2"
+          ],
+          "venue": "AAAI2026"
+        },
+        {
+          "authors": [
+            "Benjamin Cookson",
+            "Nisarg Shah",
+            "Paritosh Verma"
+          ],
+          "year": 2026,
+          "title": "Fair and Efficient Balanced Allocations for Additive Valuations",
+          "url": "https://arxiv.org/html/2608.06325v1",
+          "location": "Theorems 1/2; §5; §7 Open Questions 2 and 6",
+          "web_refs": [
+            "turn77view0",
+            "turn81view0",
+            "turn89view0"
+          ],
+          "venue": "arXiv preprint, submitted 2026-08-06"
+        }
+      ],
+      "paper_type": [
+        "classification then tool breakthrough"
+      ],
+      "core_mechanism": "Weighted matching/duality extended by KKM and price interlacing.",
+      "paper_facts": [
+        "August2026 theorem already covers all additive valuations, beyond bivalued/two types."
+      ],
+      "our_idea": "Reject existence extension; separate algorithmic candidate would target arbitrary-n pseudopolynomial computation (OpenQ6).",
+      "value_criterion": "Algorithmic progress must exceed fixed-n naive DP.",
+      "first_proof_obligation": "For any new algorithm target, constructively locate the required price-interlacing supported face.",
+      "toy_model_and_test": {
+        "planned": "No duplicate existence toy tests."
+      },
+      "dangerous_obstacle": "Existence and algorithmic computability are different questions.",
+      "freshness_check": {
+        "as_of": "2026-10-20",
+        "solved_by": "arXiv2608.06325, August6"
+      }
+    },
+    {
+      "id": "FG10",
+      "title_zh": "simultaneous MMS/EF1单纯提速",
+      "status": "REJECT_REFRAME",
+      "rank": null,
+      "precise_scope": {
+        "input": "unconstrained nonnegative additive goods",
+        "old_target": "speed up simultaneous share/envy fairness in broad terms"
+      },
+      "parent_papers": [
+        {
+          "authors": [
+            "Hannaneh Akrami",
+            "Nidhi Rathi"
+          ],
+          "year": 2025,
+          "title": "Achieving Maximin Share and EFX/EF1 Guarantees Simultaneously",
+          "url": "https://arxiv.org/html/2409.01963v2",
+          "location": "Main results",
+          "web_refs": [
+            "turn33view3"
+          ],
+          "venue": "AAAI2025"
+        },
+        {
+          "authors": [
+            "Hannaneh Akrami",
+            "Arash Ashuri",
+            "Kurt Mehlhorn"
+          ],
+          "year": 2026,
+          "title": "Polynomial Algorithms for Simultaneous Share-Based and Envy-Based Guarantees",
+          "url": "https://arxiv.org/abs/2610.15437",
+          "location": "Abstract/main results",
+          "web_refs": [
+            "turn68view1"
+          ],
+          "venue": null
+        }
+      ],
+      "paper_type": [
+        "tool combination"
+      ],
+      "core_mechanism": "Share thresholds, envy-based allocations, threshold computation barriers.",
+      "paper_facts": [
+        "October11 algorithm is polynomial for exact EFL+(1-epsilon)-MXS+2n/(3n-1)-APS.",
+        "Exact MXS has pseudopolynomial algorithm; independently computing relevant thresholds is weakly NP-hard."
+      ],
+      "our_idea": "Reject vague speedup; any renewed candidate must fix exact RMMS, dependence on n, or a new constrained domain.",
+      "value_criterion": "A renamed or weaker guarantee is not progress.",
+      "first_proof_obligation": "First specify a result not subsumed by October11 theorem.",
+      "toy_model_and_test": {
+        "planned": "No old-target toy search."
+      },
+      "dangerous_obstacle": "Only nine days old at cutoff; easy to miss and re-propose solved performance.",
+      "freshness_check": {
+        "as_of": "2026-10-20",
+        "superseding_result": "arXiv2610.15437, October11"
+      }
+    }
+  ],
+  "artifacts": [
+    "REPORT.md",
+    "toy_checks.py",
+    "toy_results.json",
+    "copies_exhaustive.py",
+    "copies_exhaustive_results.json",
+    "verify_frozen.py",
+    "independent_scalar_verification.json"
+  ],
+  "limitations": [
+    "No novelty certification",
+    "Primary-paper checks are current to stated cutoff",
+    "Sampled arithmetic checks are not general proofs",
+    "No commitments to solve in20days"
+  ],
+  "independent_scalar_verification": "Five frozen minimum-witness instances re-enumerated with pure-Python scalar implementation; counts all match."
+}
