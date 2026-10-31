@@ -15,7 +15,7 @@
 
 ## 读取与运行记录
 
-- `clean-show/`：六个 `clean show` 导出原件，文件名保留源 ID；每个文件均与冻结 inventory 的大小和 SHA-256 相同。
+- `clean-show/`：六个 `clean show` 导出原件，文件名保留源 ID；每个文件均与冻结 inventory 的大小和 SHA-256 相同。`*.show.stdout.txt`、`*.show.stderr.txt` 和 `show-execution.json` 保留了 clean-show 自身的 stdout/stderr、退出码与摘要字节。
 - `replay/execution.json`：三份工作区脚本的命令、隔离 cwd、退出码、stdout/stderr 字节数与 SHA-256，以及生成报告对冻结 JSON 的逐字节比较。
 - `replay/237a9c14a68cbe08a526/`：几何脚本。Python 3.12.14、标准库 `Fraction`，退出 0，stdout 340 B，stderr 0 B；22 空间组、56 份固定种子完整形式策略、p≤7 的 21343 个暴露类型对、稀疏支持 `[4,15,15,24,7]`；生成 13248 B 报告与 `10b27e972bf58a53c84e` 逐字节相同。
 - `replay/3bcc00f6fc8a8ac6756c/`：正矩脚本。退出 0，stdout 287 B，stderr 0 B；r=1..6、21834 个非空形式类型、502 个局部单/双矩；生成 3779 B 报告与 `ae25ad82555f3e1b6d27` 逐字节相同。
