@@ -12,3 +12,5 @@
 ## Disposition
 
 全部 20 个源都已全文读取并有稳定去向。正文保留 exact finite checks、conditional certificate checks、finite negative experiments、generic representation obstruction 和 dependency gaps 的不同状态；未把任何一项标成一般 half proof 或新的客户吸引反例。旧34客户 cycle/empty results 与已存旧页存在重复，但本批独有的是独立 definition-level audit 和把三类障碍放在同一来源边界下的比较；因此保留原始脚本/JSON 与本页交叉引用。
+
+- `09c6b13546cc5f1bca9f` workspace.json：只提供 schema/save/actor/instance 路由元数据；补入正文第7节，保留为资料而非数学证据。

@@ -82,3 +82,7 @@ D_q=63/2,\qquad H_{\varnothing,q}=65/2,\qquad G_q=41/2.
 正文只归档可精确核验的有限结论、失败机制和依赖缺口；目标“每份完整历史纯 SPE 至少覆盖六主题最大覆盖人数的一半”仍未解决。
 
 证据、来源清单及四个实际运行输出见 [R-28 evidence](../../tools/evidence/R28-certificate-dynamic-20261031/README.md)。
+
+## 7. R-28e 工作区元数据补充
+
+`workspace.json` 只记录清洗工作区的路由元数据：`schema=1`、`save=customer-attraction`、源工作区 actor 为 `R-28e8b1905f3b4a1f934d87d8071ccd67`，instance 为 `3d5e3bb74e4d480287b9b6524a626021`。它没有数学对象、假设、证明或实验输出，因此作为资料/路由元数据归档，不改变本页的数学结论。
