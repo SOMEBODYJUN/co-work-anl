@@ -1,0 +1,101 @@
+# 数学与来源自查
+
+- [x] 5primary26914B全文，所有Claims/失败条目不被抽几行导航替代。
+- [x] 原17项capture19b6528...pushed/synced Boss4，本5subset/owner/in-progress/sourceSHA核。
+- [x] 所有size/SHA256/Gitblob本地原字节核，无network/show/sharedGit。
+- [x] 五源均MD，原CLI/原codeimport/规范solver/全SPE/旧审计重演均0。
+- [x] 全根菜单R(B)只真实完整suffix，有限树非空/极小达到。
+- [x] l_B=minobserver根收益，M=max_B l_B不是static安全/任意终局极小。
+- [x] 任意根SPE actualu≥每根l_B故≥M；取达max的B*最低叶+其它根最低叶使M实现。
+- [x] 指定H可补完整rootSPE iff h≥M，实际H不任意静态叶。
+- [x] 有效e=h−M，全保险根floor而非同一A的range。
+- [x] 同A l_A≤M使e≤h−l_A，另一个根高floor不能忽略。
+- [x] 低SPE若不达真正全根M，只给较小差，不识别最大有效幅度。
+- [x] oldτ每正深度SPE、真实d_B/Δ含不偏离，非只onpath。
+- [x] 指定jointrootH其它jointroot各l_B，mode只root选，后续真独立suffix。
+- [x] 成对偏离收益增量两非正相加，完整Cartesian承重。
+- [x] actualu+h，其它≤u+Δ+M，Δ≤e给根IC。
+- [x] 最大oldB*搭达到M保险根真实存在，固定旧τ/H合同不能支付Δ>e。
+- [x] C/actualW/OPT相加准确，Gnew=Gold−D但D<3e不独自给half反例。
+- [x] 一般D≥3(h−M)强候选未证明，不等R4 Gold≤3Δ。
+- [x] ind suffix菜单按坐标真complete SPE受限，l_ind(T)=Σl_l(T_l)。
+- [x] 完整Cartesian/有限argmin给M_ind=ΣM_l，e_ind=h−M_ind。
+- [x] ind H每coord也genuine，正e_l用同根h_l−l_A≥e_l及sharp；负e_l用baseline。
+- [x] D≥3Σe_l=3e_ind允许正负支付，不要求e_l同向。
+- [x] unrestricted允许coupled suffix，菜单更大M_unres≤M_ind，e_unres≥e_ind。
+- [x] D≥3e_ind不推出D≥3e_unres，不能偷用独立sharp排coupled。
+- [x] 当前三人真实G1=161/6/G2=271/6<2G1=161/3，根M直接可加已有反例。
+- [x] 该product W134/OPT144不反half/强聚合；72客户与五客户双副本不可混。
+- [x] 恰两尾末BR/倒二门槛可加，不让更早observer L或全rootM可加。
+- [x] 全m同前缀产品凸化只M上界+C余数，同质对角停界仅指定actual/同质输入。
+- [x] m2根A大小a，两真末BR B/C同末位收益t，b/c为各A交数。
+- [x] m2 h=a−b/2、low=a−c/2、δ=(c−b)/2，正差c>b。
+- [x] 任意主题T末BR约束|T|−|T∩A|/2≤t。
+- [x] 任意X/Y union≤2t+|A∩(X△Y)|/2≤2t+a/2，真实OPT也服从。
+- [x] 高W=a+t−b/2给D≥3a/2−b=3δ+3(a−c)/2+b/2≥3δ。
+- [x] m2 e≤h−l_A取同A最低BR，D≥3e；a0无正e。
+- [x] 两人结果原归root，当前知情重构不冒first/blind/程序认证。
+- [x] E3仅需根后真实IC，root自己无需BR。
+- [x] i≥2当前A客户prior b≥1，actual terminalc≥b，remainingr包括当前。
+- [x] 当前真偏A后任意future最终负载≤b+r≤(r+1)b≤(r+1)c。
+- [x] 对A求和ui≥h/(m−i+2)，root加后继和W≥hH_m。
+- [x] 空A/h0非负处理，不用分母0；末位≥h/2。
+- [x] hH_m actual保底不控制OPT，不同于比较前缀费用m(H_m−1)。
+- [x] 高root独享支付资源至少h/2，低分支要可信先加载该资源不是任选SPE自动完成。
+- [x] 至少两个交互后继/极大真交叠/根后耦合是尝试缺口，不是全方法不可能。
+- [x] m3p3/81suffix/6561cones/7类型 finite源报，OPT3=C仅该p3域。
+- [x] root四旧tail策略3Δ判别导航不重做，不把有限无突破推广一般保险。
+- [x] 1679仅陈述完整m≥2/oldpositiveallSPE/Δ/s有理≥Δ且>0。
+- [x] m块X2s/Y(m−1)s/Zs与旧客户不交，old×insurance全目录，m2无Z。
+- [x] 全旧新客户共同清分母，记账未缩放/实际L倍分清。
+- [x] statement保旧actual/根u+2s/W加m+1s/OPT加2m−1s/G减3s/其它保险根≤s。
+- [x] sΔ触发Gold>3Δ未有旧计划，Δ0本已fullSPE不加零保险。
+- [x] statement原候选身份保，后作者proof/独审已完成不能统一标未审。
+- [x] compiler优先5入口每项独有用途保，totalC与halfD不同。
+- [x] padded作者m2..5/11744nodes/116068joint/slack0/seedΔ1是source自报原0。
+- [x] spread340/1499roots/323positive/51403countstates与blind120552/22620非同run。
+- [x] 3theme rangeC/4与dilutionmax0两个不同目标/文件，81/6561域不外推。
+- [x] 四旧证书1808回放source历史，真实2p而非只加2总主题。
+- [x] CLAIMS headline已上传fiveproof，原源发现/本团队复核/本清洗三贡献分开。
+- [x] 当前five theorem全53正整数/10^22/6144完整系数域非固定客户实例扫描。
+- [x] five严格恰5/zero root/所有SPE，不延到6；一般历史OPEN不撤销5。
+- [x] Claims PREFIX C固定实际覆盖set，不混保险客户数C。
+- [x] Q_j实际遗漏globalprivate、b真实prefix/r，G/F Λ/λ完整定义与强于旧谱范围保。
+- [x] F合法r−1竞争主题中≤k−1触Q，G代分母保底，均第r大带重数。
+- [x] prefix u≥Λ≥λ/W≥ΣΛ≥Σλ，Q全空F=G；未证支付OPT/2或OPT−W。
+- [x] prefix审查先见G后F/root定义/menu展开seed读序保，下一5不提前done。
+- [x] R4 fixedm half iff所有root-only Gold≤3Δ，等价不证明任边。
+- [x] sharp Kalltheme/3δ/baseline/signcoords与后内审具体状态保。
+- [x] degree2 q≥2/mq+1/2q主题/a,b参数/根θ和tailH/负flux/WOPT全部公式保。
+- [x] degree2 a>0 q≥3 shared遗漏a choose(q−1,2)与1–1平局修正保。
+- [x] staticcrowd h=maxrealK逐客户q槽支配仅充分，K5 demandC5成本3>2反普遍存在。
+- [x] population even t≥4/d≥1/0<ε<t2/L，原m全部SPE最优/每较少s全部外覆范围保。
+- [x] strict-tail指定p*存在/所有SPE和每forceda/m−1尾列gap m/[4(m+1)]/OPT3m²。
+- [x] 少根尾列本例不否Mfull，后bank另否Mfull，逻辑不反向改旧发现。
+- [x] B2/ancestor cap conditionalBI/round3STATIC2/round4selfconsistency等未付义务保。
+- [x] round6真势公式不是失败，round7全参数pureexit/signed改善不等一般half。
+- [x] FAILED所有历史段与编号1..8/round6/7完整逐项覆盖。
+- [x] five10客户C2 W≥3u5已false/DD通用lift末位可偏D，不当half反例。
+- [x] 2.260825机制旧Rcdround13，新exactpoint非新机制；actualunionwallet原IC已含。
+- [x] maxhinge只分旧强joint点未pay2W，five闭合归原53行上传。
+- [x] bank δ_m/δ_m+1根u阈值m3/m4、OPT2m助手m5，truezero-root非PB。
+- [x] P池所有k m=k+3/WOPT5k+23/um12/L6/两税差k−11及精确二次式，k22strict。
+- [x] P池真实full控制器而非prefix拼接，v/δ≤5不反根聚合或half。
+- [x] 34客户最坏SPE全末位高平均只反免费规范化，不推一般无规范形。
+- [x] 635allp失败坏p未自洽/16纯selfconsistent失败但allmixed支付/35交集空/817坏p非opt分开。
+- [x] PB真实合法背景覆盖all客户，不当zero根或actualprefix反例。
+- [x] sharedprefixcap拼合真，势插入可能增全部pastprofit/W，ADM未闭不是方法不可能。
+- [x] 固定ν扣ell破流守恒/换核不继承cap，STATIC2三cone无精对偶保OPEN。
+- [x] 四theme swap μB≤β与fixedmultiple失败/FOMA同量词旧桥已否，不扩弱菜单等。
+- [x] Markov合法5主题3人full22428<Markov22429，aux6topic只terminalset分离不混。
+- [x] 计数缓存可选终局set不等统一count动作，真净化失败不废exactBI。
+- [x] 祖先旁枝承诺outside5/6→4/3误删SPE，固定finitecap不无偿继承子树。
+- [x] 跨人数union删除全m加强只排无信用归纳，未认旧机制首次。
+- [x] 31客户删首floor11>28/3仅含未BRreset末位；先BRreset未被否。
+- [x] Cauchy ai≤um被原denominator界支配，erase势真仍缺realchild转换/reset付款。
+- [x] winnercoeff不保conditionalIC非负/rowmass1非整envelope，不反未实例化source。
+- [x] old13已否actualmM+K，H(1)单A负不代max，价格seed全正不prove普遍。
+- [x] 14actual related正式/冻结成熟页全文比较保SHA，未重读的Claims依赖只归源不冒认证。
+- [x] 5receipt最终integrated与externalready/pushed/done各自分开。
+- [x] 下一IG5真local30175B，无额外primarydone/原run；Root实际claim另核。
+- [x] 所有actualbytes逐C0仅LF/TAB/CR例外，metadata/links/JSON/whitelist完整。

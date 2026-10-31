@@ -323,3 +323,7 @@ R3_READY13IE：13源正文证据；任意比较槽根包络与DIRECT纠错、完
 R3_READY13IE数学/证据pushed 4bd19e5108814b90f9e67d482464c5dd389ad3ee；13源done另推送 7253d165bfb3ec75c27d62fe1b488a923e76c609。Boss4累计2042完成，实际未完23；持续接续全仓，不以本批清空收尾。
 
 R3_READY8IJ：8源正文证据；scalar金融与free-source协方差、原局部独审与终局计数净化前沿，并纠正52客户实例的一处误数；共8主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY8IJ_REMAINING_SCOPE.json。
+
+R3_READY8IJ数学/证据pushed c49abf6db71b3681c1e90b13308e9f571b0be365；8源done另推送 8d5d2b749c56ec3414796bf0dd55827c66b6aea8。Boss4累计2050完成，实际未完27；持续接续全仓，不以本批清空收尾。
+
+R3_READY15IM：15源正文证据；EI与BGNEW历史纠错、私有共享同利润谱、保险effective域、UM前沿及两处参数单位勘误；共15主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY15IM_REMAINING_SCOPE.json。
