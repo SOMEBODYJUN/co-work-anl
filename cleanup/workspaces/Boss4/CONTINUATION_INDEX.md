@@ -367,3 +367,7 @@ R3_READY13KB：13源正文证据；可信度二负流/静态crowding范围、四
 R3_READY13KB数学/证据pushed 074212bdd4b8628cf6dce29a3c19b47d578d4e18；13源done另推送 229c661f12ba66a68b6355c6e5b857e5989c54ea。Boss4累计2185完成，实际未完20；持续接续全仓，不以本批清空收尾。
 
 R3_READY17KE：17源完整数学正文证据；近包含保护菜单及4原main真实回放、高背景与RT尾、无约束祖先重置、Beta与rawfloor候选边界；共17主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY17KE_REMAINING_SCOPE.json。
+
+R3_READY17KE数学/证据pushed ae521d90b0f592e096e5e6b906477c8b2730b0d4；17源done另推送 465231267a8d7aa5f596efa3add15c0799bd5892。Boss4累计2202完成，实际未完15；持续接续全仓，不以本批清空收尾。
+
+R3_READY15KL：15源数学正文证据；尾端诊断合同/119字段核验，五UM程序+actual机器计数纠正，五bank/θ程序原输入读取；4页5处勘误及原PAY三个入口复现补充；共15主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY15KL_REMAINING_SCOPE.json。

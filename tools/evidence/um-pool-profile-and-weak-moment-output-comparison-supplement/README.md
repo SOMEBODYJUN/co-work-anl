@@ -1,0 +1,11 @@
+# JV原冻结输出的后到比较补充
+
+主JV64封包冻结后，Root以正常show取得两旧报告41734B，本补充完整解析/阅读全部字段。旧local缺件记录在当时时点真实；新取得不回写旧包，不为两比较报告新增receipt/done，不重跑任何原入口。原字节及SHA见actual-source-manifest-original.json。
+
+弱H2报告的generic_multislice与mixed_H2两个完整payload，与JV新默认原输出逐键逐值精确相等，代码SHA同402955…；两行列程序的两个root_actual_runs完整payload分别精确等于JV两新输出，代码SHA各同7739be…/394c9a…。旧JSON有包装metadata和另一个程序/额外字段，故不是stdout逐字节同一。
+
+弱H2额外字段完整保留：命令、Python3.12.14、精确算术、claim/scope、proof路径/SHA、passed及k3/5/10/100四公式行。四行按Fraction另作代入核对，不冒代码默认入口额外跑了它们。关键版本差别：旧proof_at_run是79d40fbb52c8b80e65b52078ef7defef3cf464861e936b29ff27d60db76993bb；本次canonical为2e6aa07e…，不同。仅能认同程序/有限输出版本，不能把后来的强H2校准倒填成旧run已认证，也未新增全文读取旧proof快照。mixed_global_M2_numerically_checked仍false。
+
+行列报告的5个source_hashes、被攻击旧commit0e02…及21b0…原式(3)scope、root_actual_tree_check（26顶点25边5/8及三个布尔字段）、两个exit0和limits均保留解释。两个程序SHA由本次原码核；其余source/example哈希仅为历史报告字段，不扩大链接实读或新数据复现。根树检查是历史原报告，不冒一次新运行。有限结果仍不替代count/cyclic普遍证明，撤回附属整束锐性而保留多数地板。
+
+完整机器可读比较在comparison-result.json；本补充仅证据，无新增数学对象/成功source处置/原入口run。冻结主包的三数学勘误不因这些同payload而撤回或升级，原H2单位行及长链图计数推导各自独立。
