@@ -391,3 +391,8 @@ R3_READY5KW：五源完整正文；Hamming标签删行、全共享遗漏常值�
 R3_READY5KW数学/证据pushed d3c23ee2fb4f5824d3049a91a1193f13fb8f3a6c；5源done另推送 7ae05b806be67ed899ea07c38c5af5f68e21a10d。Boss4累计2258完成，实际未完19；持续接续全仓，不以本批清空收尾。
 
 R3_READY11LA：十一源正文；固定枢轴正性/跨背景梯度及真实OLD输入双Fraction审计，dense3840与private扩展错误/现9-2接续，原count和独立Fraction范围明确；共11主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY11LA_REMAINING_SCOPE.json。
+
+R3_READY11LA数学/证据pushed 340e2e41e29503a80bd401b2257b2f0144de77ed；11源done另推送 b0ca49043a169a0677875115ea0755cb780609a3。Boss4累计2269完成，实际未完21；持续接续全仓，不以本批清空收尾。
+
+
+R3_READY21LD：十七源正文；五UM程序/精确导出与两旧页任务单位澄清、四bank输出原证据精确归位、五路由原有理分离和固定目标纠错、闭包与共同客户删除义务；另四源私有遗漏比率/成对额外槽势/覆盖参数比较，0旧扫描重跑；共21主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY21LD_REMAINING_SCOPE.json。

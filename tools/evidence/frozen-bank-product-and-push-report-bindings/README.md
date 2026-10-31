@@ -1,0 +1,9 @@
+# 四冻结报告的完整语义去重
+
+四primary87477B全部真实完整JSON阅读已在JZ完成：26marked记录、作者75全部343联合策略条目、父方sourceSHA全部字段、probe四LP与全部weights。新actualclaim/currentowner/sourceSHA后才正式逐源receipt，不因已copy、数量或仅wholeSHA判数学完成。
+
+它们与当前已发布JZ原asset逐字节相同，两个正式程序资源与JZ完整读交付版本同SHA；完整数学/软件范围及所有输出用途已有明确目标，4duplicate/0新formal。新manifest逐源给exactpublishedasset路径、SHA和normalshowcapture，源字节独立另保便于审阅。
+
+父方旧报告内部sourceSHA6870...强绑原程序，但没有独立argv/退出码/时长/stdout捕获就不声称有；其他三输出无sourceSHA，co-version字节绑定不是旧run日志。所有passed/floatnegative仅其原有限范围，非全m/完整锥/一般half/外审认证。0新原import/CLI/LP/BI/SPE或旧成功复跑，不额外done代码或16已属其他人的theta输入。
+
+Root先推证据/已有目标确认后done；0sharedGit/网络/账号公屏/mapper，不造重复数学对象。
