@@ -299,3 +299,7 @@ R3_READY6HK：6源正文与证据；UM大入口全层合同、OPT前缀BILL与ne
 R3_READY6HK数学/证据pushed 6f7cdf441ada04e69679d00233d06d36001a9762；6源done另推送 6d9375e864436803c7a73e50170ddd679a203ed7。Boss4累计1968完成，实际未完30；持续接续全仓，不以本批清空收尾。
 
 R3_READY10HN：10源正文证据；all-k极大归属、人口版本与严格有序压缩、可信修复和任意旧背景末位两比较合同；共10主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY10HN_REMAINING_SCOPE.json。
+
+R3_READY10HN数学/证据pushed 1246f72408918e1322b45b4ad88334d87e26af92；10源done另推送 7b0e732187bdf238a2376b6c26308b3fa84e24aa。Boss4累计1978完成，实际未完30；持续接续全仓，不以本批清空收尾。
+
+R3_READY15HO：15源正文证据；全深度调和账本一般证明、ASR来源纠错、UM分层入口、条件metaNE及固定汇点occupation基多面体修正；共15主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY15HO_REMAINING_SCOPE.json。
