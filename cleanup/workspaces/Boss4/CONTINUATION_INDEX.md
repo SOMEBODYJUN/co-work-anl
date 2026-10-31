@@ -363,3 +363,7 @@ R3_READY5JX：5源正文证据；完整末列与储备/三角回撤/真实重启
 R3_READY5JX数学/证据pushed ced9f23885dd09afbff88d6c81a2eaf453dc6ee9；5源done另推送 60d1b47d08107a1791f17862cbcc01b595be4b9b。Boss4累计2172完成，实际未完28；持续接续全仓，不以本批清空收尾。
 
 R3_READY13KB：13源正文证据；可信度二负流/静态crowding范围、四入口实现身份、正则连续价格及单占对称块解析证明；共13主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY13KB_REMAINING_SCOPE.json。
+
+R3_READY13KB数学/证据pushed 074212bdd4b8628cf6dce29a3c19b47d578d4e18；13源done另推送 229c661f12ba66a68b6355c6e5b857e5989c54ea。Boss4累计2185完成，实际未完20；持续接续全仓，不以本批清空收尾。
+
+R3_READY17KE：17源完整数学正文证据；近包含保护菜单及4原main真实回放、高背景与RT尾、无约束祖先重置、Beta与rawfloor候选边界；共17主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY17KE_REMAINING_SCOPE.json。

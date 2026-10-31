@@ -1,0 +1,1 @@
+JY五源正式完整整合可供Root串行复制。原capture真实pushed/synced，5子集owner/SHA已核；完整capture未投影。5最终semantic receipts均integrated，当前仍external stage only，不是body-pushed/done；先正文证据push再done由Root办理。原程序/source函数/canonical/LP/scan均0。
