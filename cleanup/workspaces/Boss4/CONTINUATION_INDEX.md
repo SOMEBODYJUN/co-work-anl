@@ -359,3 +359,7 @@ R3_READY22JW：22源数学正文及精确证据；任意背景割锥与DP、PAY�
 R3_READY22JW数学/证据pushed 292030a93288b3f7ec83535e555ad591c64672b0；22源done另推送 afc2182bf465c57364ec90fc3109126da9e9edbb。Boss4累计2167完成，实际未完10；持续接续全仓，不以本批清空收尾。
 
 R3_READY5JX：5源正文证据；完整末列与储备/三角回撤/真实重启及共同交集gamma严格抵消修正；共5主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY5JX_REMAINING_SCOPE.json。
+
+R3_READY5JX数学/证据pushed ced9f23885dd09afbff88d6c81a2eaf453dc6ee9；5源done另推送 60d1b47d08107a1791f17862cbcc01b595be4b9b。Boss4累计2172完成，实际未完28；持续接续全仓，不以本批清空收尾。
+
+R3_READY13KB：13源正文证据；可信度二负流/静态crowding范围、四入口实现身份、正则连续价格及单占对称块解析证明；共13主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY13KB_REMAINING_SCOPE.json。

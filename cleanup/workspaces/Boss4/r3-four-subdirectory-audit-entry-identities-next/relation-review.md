@@ -1,0 +1,7 @@
+# 阶段二关系
+
+credible作者75产品代码/输出与parent另实现必须各source身份保留；同名/同数值不证同SHA或同一次运行。程序角色来自实际README全文，完整源码与真依赖没有读就不冒认证。
+
+direct、menu、optimal数学全部已有精确自足目标，逐段duplicate而非依文件数/标签判断。最小收益行使用global最优m元组及同原σ的真实强制行，非剩余r元组或全客户B(v)价格；JH已给完整条件推导，候选未证。Cauchy枝覆盖是上界，tail储备仅付末两位，早期不同真尾reset仍待共同付款。
+
+源旧五人方法未过与现五人已证不冲突，银行否逐人theta不反聚合，Mfull被否不自动反rootMpath。原盲重构、application有限合同与本次知情清洗分别保，不新增外审/新颖性；0额外done JH五主或引用py/JSON/next，0phase3图导入或强造连通。
