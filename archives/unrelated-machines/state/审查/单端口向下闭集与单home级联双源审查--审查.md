@@ -8,10 +8,13 @@ truth_status: "two self-contained restricted-interface statements retained; no g
 review_level: "full-json-read-current-proof-code-and-sharp-boundary-comparison"
 scope: "one-internal-endpoint signed-port projection and single-home cascade query separation"
 source_refs:
+  - "source:68fad804ec5946cb296f77dc5b336308a66abf12:examples/unrelated_machines/signed_one_job_port_sharp_profiles.json"
+  - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:examples/unrelated_machines/signed_one_job_port_sharp_profiles.json"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/signed_one_job_port_downset_audit.json"
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/signed_one_job_port_downset_audit.json"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:evidence/runs/unrelated_machines/single_home_cascade_query_patterns_v2.json"
   - "source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:evidence/runs/unrelated_machines/single_home_cascade_query_patterns_v2.json"
+signed_input_fixture_sha256: "850f6d8451d56918c34de05a21a92d37d90dc197d63bbd63d2ba76089048bbe0"
 ---
 
 # 读取范围和对象边界
