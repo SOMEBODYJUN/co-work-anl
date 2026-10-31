@@ -99,3 +99,7 @@ Lemma 22 把一般两值 resource-matroid 实例约化到一个无穷值 matroid
 - 与不相关机器与两个调度松弛定义：提供 makespan 与 assignment-LP 的术语背景；不替换该定义。
 
 若需复核证明细节，应重新导出同一 SHA 的 PDF，不能依赖本地临时文本。
+
+## 文献内应用线索
+
+论文把资源拟阵模型用于三类例子：服务中心把客户可接受的服务集合表示为 transversal matroid；会议程序委员会把论文分配给委员并以 job-matroid Makespan 平衡工作量；网络带宽例把每个 job 分给一组机器构成 job-dependent graphic matroid，从而表达边带宽上的无环约束。它们是模型动机和复用线索，不是本仓库已证明的实例归约；后续引用时应保留各自 matroid 类型和“每项资源/作业选择一个 basis”的前提。
