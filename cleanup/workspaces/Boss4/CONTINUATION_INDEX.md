@@ -202,3 +202,7 @@ R3_READY21CX：19份四条成熟程序/证明线与Root2份独立租金审查；
 R3_READY21CX数学/证据pushed bc79a970215dd2ba42fe0fbfce2f353998bff8f1；21源done另推送 73183d798a52731da23c45200ed5f446d2f39db8。Boss4累计1526完成，实际未完27；持续接续全仓，不以本批清空收尾。
 
 R3_READY27DE：六完整成熟批27主源，Root补静态CCE族全m,K解析与两个旧入口，完整旧页与原代码/矩阵核后精修6页及缺失flat metadata；PI当前主稿与真实一次发现运行更新而保CI初次原运行0。仍25实际执行，六线持续补位。；共27主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY27DE_REMAINING_SCOPE.json。
+
+R3_READY27DE数学/证据pushed 3c50bb6277379b0ac2abdc1f7bb6b3e895d76de9；27源done另推送 cc50148d8000614fab3bc984b8deacac1485e69b。Boss4累计1553完成，实际未完25；持续接续全仓，不以本批清空收尾。
+
+R3_READY23DK：12成熟CS/CZ/DA与DB4/DC5、RootDH2；Root从30单位客户定义重构一次完整6人SPE，全5440新DAG/21933IC并保历史原DAG缺失；另general四收益proof与refined后续状态分开。剩余12已领继续实质清洗，DJ/R23/下一tax只预读等待实际claim，不假报认领。；共23主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY23DK_REMAINING_SCOPE.json。
