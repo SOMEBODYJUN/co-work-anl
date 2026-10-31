@@ -1,0 +1,64 @@
+# 数学与来源自查
+
+- [x] 5primary30175B全部主读，原5项claim3037285...pushed/synced/owner/SHA全真。
+- [x] 五原MD/sizeSHAblob字节齐，无show/network/sharedGit/原entry。
+- [x] m≥1有限单位客户有限非空共同目录/全部有序pureSPE，空重复零平局保。
+- [x] actualC固定叶，极大覆盖去重不合并标签或有序历史。
+- [x] Q=Pglobalprivate minus actualC一次定义后所有离轨不改。
+- [x] 触Q动作必⊆唯一B_j，每步至多触一个非空Q。
+- [x] F固定actualprefix真实b/r，竞争完整r−1元组触Q数≤k−1，非SPEmin。
+- [x] 任actual主题避全Q可重复保证F域非空，r1空元组。
+- [x] G Q/k+其余1/(b+r)包括shared遗漏1/r与covered真实价格，F≥G。
+- [x] 同子树b/r/F固定，q只新增触及，R每step至多降1。
+- [x] 有后继触Q则当前完整Bj同叶包含支配，后继是真离轨而非冻结。
+- [x] 无后来触Q时竞争元组含新增过去及future，共r−1/触q_j，k=q_j+1合法。
+- [x] 当前SPE转actual收益，actual行动后再归纳所以全部后继付款。
+- [x] 每actualprefix q0取第r大Λ/λ带重数，positive用r席/zero用非负。
+- [x] 每玩家一项u_i付款，W≥ΣΛ≥Σλ，不分别私/shared再各花W。
+- [x] 固定起点阈值所有后代都有，actual位置重置不等归纳内部更新参数。
+- [x] b+r≤m给G≥旧actual遗漏固定分母f，删k>r不降旧第r大。
+- [x] 同主题r席≥G_j(r)=直接分母主题值，max取全目录由极大包含。
+- [x] 124strict例G新和127/2旧max和184/3差13/6，不能混Λ/Θ。
+- [x] Q全空时F/G全k常值，repeatBj r−1同时达最大分母故精确退direct。
+- [x] r1 F=G逐主题末BR值，u_m=Λ_m=λ_m，emptyzero不除效率比。
+- [x] 独审先G盲构/全private扩展后读F，F核对非盲。
+- [x] G独审Q可任意遗漏private子集，proof n归属数与作者q触数不同。
+- [x] 独审有后来A⊆Bj则支配，否则无later触Q，n_j为private负载上界。
+- [x] 全private f扩展起点任意合法包括离轨/已covered，贡献Σ1/(b+k)+offset。
+- [x] 将coveredprivate从offset移入不减，但不能把两预算分别加。
+- [x] 全无globalprivate时f也退direct，未解决shared遗漏。
+- [x] E任意合法起点b/r/α固定，代表α(Bj)=j。
+- [x] E按α归属j竞争动作数约束完整利润，非触Q数/非contain数。
+- [x] E空域∞，q≥2重复othermax全finite；q1前r−1∞/第rfinite，Θ始终有限。
+- [x] r1无∞席；finitez残席证明不把∞当实际利润。
+- [x] E每step只有一个n_j增，选可用j两branch真实后继，索引n+1≤L≤r。
+- [x] E起点/全部后代同Θ，每actualprefix可另选α_i只由对应u_i付款。
+- [x] E可行域⊆F因触Q必归j，故min E≥F≥G，orderstatΘ≥Λ≥λ。
+- [x] E也支配全private f，因为globalprivate的竞争负载≤α_j count≤k−1。
+- [x] Q空F/G约束消失但E归属约束不消，不自动断E退direct。
+- [x] 原J2容器p_I高估actual负载，E真实b却静态共同最坏，不一般互支。
+- [x] true真实history J2保首同归属未来动态状态，残席R归纳可复现E证书。
+- [x] 全部目录主题maximal时真实版本=容器旧J2，故旧all-k障碍适用E。
+- [x] all-k m/k条件/N=(m+1)k/OPTmk/J2(k+1)/r末k与budget(k+1)H_m−1全域保。
+- [x] m5k6 budget899/60<15，k=m−1时OPT/budget无界非finite样本结论。
+- [x] nearcopy最坏静态元组末位可fresh得k严格优，非真实SPE；真所有SPE WOPTmk。
+- [x] J2原8402源Boss2已done context只读不重领/原audit0。
+- [x] F/G/E合法地板与Σ谱≥half未证总量分开，不混强化。
+- [x] gross |OminusC|≤W与m minui≥gross已旧71唯一最优反，net OPT−W需CminusO抵消。
+- [x] num独审只作者(5)-(7)+strict1486，不作者check/规范solverimports是历史自报。
+- [x] input无动作表，自行集合值BI补31动作后重放；不声称审不存在作者表。
+- [x] 124不同unit而非weightedplayers，11type/5themes/3roles源data全读。
+- [x] actual0,4,2/u37,30,28/W95/OPT100示例0,1,2。
+- [x] private15,14,14,15,9，omitted0,14,0,15,0，离轨不重定。
+- [x] 31hist×5=155包含self，124real偏离=121strict+3ties，含self34ties/slack0。
+- [x] 第二位置10G席完整排序，rank2 41/2/old55/3/direct109/6。
+- [x] numreview明确不算F/Λ，不审allm/random1200输出，E不是它对象。
+- [x] 解析review明确不独立复算finite，二审不能合称F/G/E全部num认证。
+- [x] source作者F/G31history124偏离与规范random1200/2288路径只是历史自报。
+- [x] current6583审计与source6306不同SHA，input同SHA不能当exactsource成功。
+- [x] 已有规范124SPE/G充分不重演，不倒称1486input自带31动作。
+- [x] 仅当前原MDentry0/sourcefunc0/solver0/新F-E静态枚举0，新blind/外审0。
+- [x] 5formal比较页及2context全读，context不额外done。
+- [x] 下一IO真local5齐21398B，metadata初始快照不代Root实际claim/不预receipt。
+- [x] 5receipt finalintegrated与externalready/bodypushed/done各自单列。
+- [x] actualcanonical全bytes C0只LF/TAB/CR例外，strictJSON/metadata/links/copy全核。

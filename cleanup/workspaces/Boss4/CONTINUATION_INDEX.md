@@ -331,3 +331,7 @@ R3_READY15IM：15源正文证据；EI与BGNEW历史纠错、私有共享同利�
 R3_READY15IM数学/证据pushed 7559d0185d5b8cd929e9b3c9fadf4e33780aedc0；15源done另推送 0e280a8d4a00983fbdb410ac9a95fc27d01a6dbd。Boss4累计2065完成，实际未完26；持续接续全仓，不以本批清空收尾。
 
 R3_READY7IR：7源正文证据；根Claims和owner薄化精确合同、H4真实费用边界、SSR静态后悔与原始对偶证书；共7主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY7IR_REMAINING_SCOPE.json。
+
+R3_READY7IR数学/证据pushed aa9c9141e9ebd8b2367ab8d4cecc470198ac67d1；7源done另推送 77ce19ae0c5bed1ba79a184eb7cbcaec781fc0f3。Boss4累计2072完成，实际未完29；持续接续全仓，不以本批清空收尾。
+
+R3_READY14IU：14源正文证据；24客户势最大列精确核验、真实前缀完整利润席位及静态最坏占位与全SPE零遗憾边界；共14主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY14IU_REMAINING_SCOPE.json。
