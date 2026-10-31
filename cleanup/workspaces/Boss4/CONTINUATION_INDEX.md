@@ -206,3 +206,7 @@ R3_READY27DE：六完整成熟批27主源，Root补静态CCE族全m,K解析与�
 R3_READY27DE数学/证据pushed 3c50bb6277379b0ac2abdc1f7bb6b3e895d76de9；27源done另推送 cc50148d8000614fab3bc984b8deacac1485e69b。Boss4累计1553完成，实际未完25；持续接续全仓，不以本批清空收尾。
 
 R3_READY23DK：12成熟CS/CZ/DA与DB4/DC5、RootDH2；Root从30单位客户定义重构一次完整6人SPE，全5440新DAG/21933IC并保历史原DAG缺失；另general四收益proof与refined后续状态分开。剩余12已领继续实质清洗，DJ/R23/下一tax只预读等待实际claim，不假报认领。；共23主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY23DK_REMAINING_SCOPE.json。
+
+R3_READY23DK数学/证据pushed 838d4e94c9bb0b92639d3c9efb95205730076d9c；23源done另推送 f8f962412e751ed87f3a9f2f752233a06ab53fe7。Boss4累计1576完成，实际未完12；持续接续全仓，不以本批清空收尾。
+
+R3_READY13DR：DD4/DI4/DG4与Root独立padding成稿DO1；后者此前已完整related读并推送同对象proof，此次同SHA主源duplicate，0重跑。13完整语义处置先body/deps checkpoint再done。当前另20源四组已正式pushed，六线继续动态接续。；共13主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY13DR_REMAINING_SCOPE.json。
