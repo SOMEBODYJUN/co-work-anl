@@ -88,3 +88,5 @@ READY4G数学pusheda08be499e2e8070c3ff1cb1428f0ecf3bc3b1c8b（30文件），4源
 R2_READY9A：全局dummy六源完整证明/修正/认证链，与Boss净cap相邻前缀换位主稿及原程序/报告三源；原QA一次全字节同冻结，不升级共同付款；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R2_READY9A_REMAINING_SCOPE.json。
 
 R2_READY28B：学习主文5/查询最终审查4/设施入口5/原子马尔可夫两版审计4/可信cap与固定点5/仿射短审查5；完整数学和真实复现独立边界保留，所有候选/共同付款缺口未升级；共28主源，先明确正文/证据checkpoint再逐源done；其余认领见R2_READY28B_REMAINING_SCOPE.json。
+
+R2_READY33C：33源完整数学/历史/读取工具与原审计；含Boss共同付款总稿、RANGE原文导入、v3快照复原和独立broadcast正fresh有限证据；保所有域/先验/尚未付款接口；共33主源，先明确正文/证据checkpoint再逐源done；其余认领见R2_READY33C_REMAINING_SCOPE.json。

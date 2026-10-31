@@ -1,0 +1,20 @@
+--- independent/broadcast_author_snapshot.md (16375B)
++++ credible/all_fresh_submarkov_elimination.md (16669B)
+@@ -231,7 +231,7 @@
+ 
+ 若一个 future 正边到达角色 l>i，下一个规定叶为 A=finish(actual_<i,a)，其新的过去差异区间是 [i,l)。因此沿同一非终端谱系，过去 coupon 区间按时间接续，互不重叠；若 A=Z，后继直接是无正边的 actual context。
+ 
+-这项域关系不依赖利润大小，也未给 coupon cap1：不同 source、不同谱系的区间仍可能覆盖同一实际角色，而且 beta 的归一化分母随叶改变。不能将“单谱系每角色只出现一次”升级为“全部谱系每角色总系数≤1”。它只排除了同一谱系对更早实际 prefix 的反复收费，供共同容量选择时使用。
++这项域关系不依赖利润大小，也未给 coupon cap1：不同 source、不同谱系的区间仍可能覆盖同一实际角色，而且 beta 的归一化分母随叶改变。这里“单谱系每角色只出现一次”**仅指 past 出口差异区间**：当前节点的 whole beta_t u_i 已可在角色 i 收费，而下一代 past 区间 [i,l) 仍可包含 i。不能推成所有实际费用在单谱系每角色只付一次，更不能推成全部谱系每角色总系数≤1。它只限制同一谱系 past 出口差异区间的重叠。
+ 
+ ## 8. 一般主线仍缺的关系
+ 
+@@ -248,7 +248,7 @@
+ 
+ ## 9. 可选备注：保留一部分真实 off-history slack
+ 
+-基础核没有使用 ell≥0，不能称为真实 off-history IC 的共同付款。可固定 κ∈[0,1)，仅取 chi_t≤min{ell_t,κ(v_t−P_t)} 并将归一化数换为 nu_t=v_t−chi_t。因 nu−P≥(1−κ)(v−P)>0，仍得严格 sub-Markov DAG；C-LEDGER 中对应多留一项 −chi_t。
++基础核没有使用 ell≥0，不能称为真实 off-history IC 的共同付款。可固定 κ∈[0,1)，仅取 chi_t≤min{ell_t,κ(v_t−P_t)} 并将归一化数换为 nu_t=v_t−chi_t。因 nu−P≥(1−κ)(v−P)>0，仍得严格 sub-Markov DAG；C-LEDGER 中对应多留一项 −chi_t。分母缩小后，原 SUBSET/PRICE 的数值常数不能原样继承，本备注仅断言严格 sub-Markov 与 signed ledger。
+ 
+ 这只是合法可选记账：chi>0 也会增加 beta，故未证净费用改善。不优化 κ、不将新归一化当成已支付容量；当前承重点仍是第5节 actual C 出口只付一次。
+ 
