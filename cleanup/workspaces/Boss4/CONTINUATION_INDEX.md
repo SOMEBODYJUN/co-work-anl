@@ -86,3 +86,5 @@ READY4G：最后四已认领鲜广播数学源、局部价格审查、原程序�
 READY4G数学pusheda08be499e2e8070c3ff1cb1428f0ecf3bc3b1c8b（30文件），4源done另推送0fc173b211be9848fb3b4e5093e4a0304cd2898a且synced。全本轮93源均先pushed后done，累计811完成、owner-self未完[]。实际handoff --all返回No eligible source files，无可释放认领，不称handoff另推送；六worker均完成、无后台继续。容量边界收尾及全仓剩余/疑点见CAPACITY_HANDOFF_20261030.md和END_HANDOFF_RESULT.json；旧next/active字段为历史快照。
 
 R2_READY9A：全局dummy六源完整证明/修正/认证链，与Boss净cap相邻前缀换位主稿及原程序/报告三源；原QA一次全字节同冻结，不升级共同付款；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R2_READY9A_REMAINING_SCOPE.json。
+
+R2_READY28B：学习主文5/查询最终审查4/设施入口5/原子马尔可夫两版审计4/可信cap与固定点5/仿射短审查5；完整数学和真实复现独立边界保留，所有候选/共同付款缺口未升级；共28主源，先明确正文/证据checkpoint再逐源done；其余认领见R2_READY28B_REMAINING_SCOPE.json。
