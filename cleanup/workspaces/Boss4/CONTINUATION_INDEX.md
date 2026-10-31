@@ -351,3 +351,7 @@ R3_READY14JJ：14源正文证据；K5实际槽匹配/空模板范围、首次偏
 R3_READY14JJ数学/证据pushed 9fe710d5ce220c5459400d20753be30a6efe6f06；14源done另推送 19c758015a69d9d8eaf0104c963d148091bfd835。Boss4累计2133完成，实际未完17；持续接续全仓，不以本批清空收尾。
 
 R3_READY12JO：12源正文及真实复跑；Round5各统计量维度、对称querygap恒等式及两BR余量、私有谱/末菜单原CLI各一次PASS和历史缺件范围更新；共12主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY12JO_REMAINING_SCOPE.json。
+
+R3_READY12JO数学/证据pushed ead27453f4e2bb68f4e90f4515ba0394fca6cad1；12源done另推送 ba2a7f1e8dcdf98c1a8f1b44d836bd55e85b0340。Boss4累计2145完成，实际未完22；持续接续全仓，不以本批清空收尾。
+
+R3_READY22JW：22源数学正文及精确证据；任意背景割锥与DP、PAY路径切断、incidence字面条件纠错、来源回撤入口及九人双原实现全字段复核；共22主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY22JW_REMAINING_SCOPE.json。
