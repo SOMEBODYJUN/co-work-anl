@@ -95,3 +95,5 @@ R2_READY12D：最后12来源：可信换位/reset三、累计路径纠正五、�
 
 
 R2最终确认：四批9+28+33+12共82来源均已先正文/证据pushed、后逐源done另行pushed。最后12数学头e881a14afec266dde73acb6c9cae11bd1a1d94f1，done头3976c58720fe92ac7f5c33a3089ddcdae3a631ca。Boss4累计893完成（840 integrated/46 retained/7 duplicate），owner-self未完[]，无仅本地正式数学。实际handoff --all返回No eligible source files，无可释放来源，不声称handoff另推送。六指定worker均完成、无后台。最后12初次Git超时/exec连接中断及零字节遗留index锁已按独占writer锁恢复，初始本地513240b4历史及全部正文依赖均已正常发布；精确审计和最终回执见R2_HANDOFF.md、R2_END_HANDOFF_RESULT.json及R2_READY12D_*_RECEIPT.json。全仓第二阶段仍未完成，本轮未解决六人half。旧active/next/上一轮边界字段为历史快照。
+
+R3_READY4A：Boss全文实读条件需求/Doob单查询预算/凸化候选与共同优先请求四源；保固定fiber证明、同域V-PAY及三接口缺口，不升级六人half；共4主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_READY4A_REMAINING_SCOPE.json。
