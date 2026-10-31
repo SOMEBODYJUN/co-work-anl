@@ -4,18 +4,24 @@
   "assigned_source_ids": {
     "a0b06b0a268963c3f318": "certificate.json",
     "c6688be8f0cdb447f2d8": "threshold_certificate.json",
-    "9b1e0ec175c74ebb0a67": "verify.py"
+    "9b1e0ec175c74ebb0a67": "verify.py",
+    "9c5c1e425c47d33bab0d": "omitted_deletion/reduced.json",
+    "3fa502d28446594b1a24": "omitted_deletion/verification.json",
+    "ca20e53190275fbd0db4": "omitted_deletion/reduced_input.json"
   },
   "source_sha256": {
     "a0b06b0a268963c3f318": "4270fc3848069fcf889d1e1adb14e5814560f5f6b4c2de4e68b4aed3b6518d86",
     "c6688be8f0cdb447f2d8": "04dd566cfa5fe9779698949bf1424fa18107ec3d8e31f13fca8557b5f902e927",
-    "9b1e0ec175c74ebb0a67": "86e785d0bfc5f314ffbcff0f06d20959c18d62ec7de9115c84d287b82d16071e"
+    "9b1e0ec175c74ebb0a67": "86e785d0bfc5f314ffbcff0f06d20959c18d62ec7de9115c84d287b82d16071e",
+    "9c5c1e425c47d33bab0d": "6323f6d761c537aaeee50b17a6ae3ffa8f53d36b2c7879de40856fedd4162fe5",
+    "3fa502d28446594b1a24": "7fd369feb4cd304f30f7597e59f10fa372732caeb6d2e238f897205d0a72e0ff",
+    "ca20e53190275fbd0db4": "583568932014d54cce0c318840134c9d5399dad5562e820ae917044ff620089a"
   },
-  "reconstruction_note": "reduced.json is reconstructed from the already archived literal-inputs.json masks and the read source statement; its bytes are not claimed identical to the missing original reduced.json.",
+  "reconstruction_note": "The originally assigned reduced.json is now preserved byte-for-byte. reduced_input.json and verification.json are also preserved; the verifier replay uses the original reduced.json.",
   "replay": {
     "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=../../exact-spe python verify.py",
     "status": "exit 0; stderr empty; exact_parametric_family_verified; 211 affine lines; 129 representatives",
-    "certificate_identity": "generated t=1 certificate byte-identical to source certificate_t1.json; generated t=3/4 threshold certificate byte-identical to source threshold_certificate.json",
+    "certificate_identity": "generated t=1 certificate byte-identical to source certificate_t1.json; generated t=3/4 threshold certificate byte-identical to source threshold_certificate.json; replay uses source reduced.json.",
     "universal_claim": false
   },
   "files": [
@@ -51,8 +57,13 @@
     },
     {
       "path": "source/reduced.json",
-      "bytes": 1450,
-      "sha256": "5397041c60a456255ad89fc5f0b4864665ebd17807ea4bf4a88c5ef42fd85d6e"
+      "bytes": 1469,
+      "sha256": "6323f6d761c537aaeee50b17a6ae3ffa8f53d36b2c7879de40856fedd4162fe5"
+    },
+    {
+      "path": "source/reduced_input.json",
+      "bytes": 1588,
+      "sha256": "583568932014d54cce0c318840134c9d5399dad5562e820ae917044ff620089a"
     },
     {
       "path": "source/threshold_certificate.json",
@@ -61,6 +72,11 @@
     },
     {
       "path": "source/verification.json",
+      "bytes": 34496,
+      "sha256": "7fd369feb4cd304f30f7597e59f10fa372732caeb6d2e238f897205d0a72e0ff"
+    },
+    {
+      "path": "source/verification.original.json",
       "bytes": 34496,
       "sha256": "7fd369feb4cd304f30f7597e59f10fa372732caeb6d2e238f897205d0a72e0ff"
     },
