@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResearchResult",
+  "type": "object",
+  "required": ["result_id", "packet_id", "agent_id", "mode", "status", "route", "next_actions"],
+  "properties": {
+    "result_id": {"type": "string", "minLength": 1},
+    "packet_id": {"type": "string", "minLength": 1},
+    "agent_id": {"type": "string", "minLength": 1},
+    "mode": {"enum": ["boundary", "blind", "full", "temporary-verifier", "temporary-adversary"]},
+    "status": {"enum": ["lead", "candidate", "conditional", "supported", "refuted", "blocked", "retracted"]},
+    "route": {"type": "string"},
+    "hypothesis": {"type": "string"},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "object_refs": {"type": "array", "items": {"type": "string"}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "failure_boundary": {"type": "string"},
+    "next_actions": {"type": "array", "items": {"type": "string"}},
+    "request_one_shot_review": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}
