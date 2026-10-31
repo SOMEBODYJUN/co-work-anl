@@ -1,0 +1,156 @@
+{
+  "stage": "2 relation evidence for later human-reviewed stage3; no graph mutation",
+  "relations": [
+    {
+      "kind": "proof-dependency",
+      "participants": [
+        {
+          "path": "archives/budget-games/state/定理/分段线性凹偏好的共享超梯度合并判别--定理.md",
+          "role": "best-response KKT and common-supergradient criterion"
+        },
+        {
+          "path": "archives/budget-games/state/证明/合并不变性的短失败证书与有理位长--证明.md",
+          "role": "short rational failure certificate"
+        }
+      ],
+      "common_premises": "explicit nonnegative rational min-of-linear matrix, total budget one, universal equal-budget clone/each-NE language",
+      "why": "Common-support LP infeasibility admits normalized Farkas witness; active margin LP and rational-polyhedral BFS bounds turn any failure into a short certificate.",
+      "evidence": "b8e4f0a173b0ce389010 sections2-4, current proof1-4; 7b3821d21e95b931329b common-supergradient theorem",
+      "gap": "coNP membership only; no hardness, no general polynomial recognition or general utility classification"
+    },
+    {
+      "kind": "version-specific-refutation",
+      "participants": [
+        {
+          "path": "archives/budget-games/state/证明/合并不变性的短失败证书与有理位长--证明.md",
+          "role": "exact three-project equal-budget failure and Farkas toy"
+        },
+        {
+          "path": "archives/budget-games/state/审查/克隆旧版反例与坐标最优理论的覆盖边界--审查.md",
+          "role": "precise old-v1 versus amended-v3 target"
+        }
+      ],
+      "common_premises": "two target clones each1/4, outsider1/2 may be split into equal-budget clones; min of two nonnegative rows",
+      "why": "Each clone individually has active branch upper bound5/4; merged half-budget may put all money at3 and attain3/2. Small L1 move is not single-clone executability.",
+      "evidence": "b2a27f70495d223ea9f6 lines5-21; certificate toy",
+      "gap": "does not refute v3 narrowed classes or infer author awareness"
+    },
+    {
+      "kind": "equivalence-with-recovery",
+      "participants": [
+        {
+          "path": "archives/budget-games/state/等价/Leontief贡献矩阵与线性Fisher支出的精确对应--等价.md",
+          "role": "critical-support and same-matrix spending equivalence"
+        },
+        {
+          "path": "archives/budget-games/state/证明/Leontief对数规划的有理坐标恢复接口--证明.md",
+          "role": "KKT/log program and exact coordinate/flow backup"
+        }
+      ],
+      "common_premises": "finite positive-budget nonempty-row/column rational public Leontief after preprocessing",
+      "why": "KKT creates spending X=lambda*delta; support is critical iff public NE. Both routes return actual contribution rows, not just aggregate.",
+      "evidence": "a004f37490011f4a9dba sections2-5; current proofs",
+      "gap": "external exact Fisher solver and standard polybit weak convex optimization backend are imported separately, neither implemented here"
+    },
+    {
+      "kind": "historical-literature-coverage",
+      "participants": [
+        {
+          "path": "archives/budget-games/state/文献/Leontief精确接口的Fisher覆盖与凸优化来源--文献.md",
+          "role": "versioned Brandt/Tao-Zheng/Orlin chain and actual readscope"
+        },
+        {
+          "path": "archives/budget-games/state/等价/Leontief贡献矩阵与线性Fisher支出的精确对应--等价.md",
+          "role": "self-contained special-case reconstruction"
+        }
+      ],
+      "common_premises": "same v and arbitrary positive rational budgets, private LINEAR Fisher; denominator clearing and spending restoration",
+      "why": "Historical known NE/Lindahl bridge plus public-private duality plus exact Fisher algorithm covers NA02 target; independent reconstruction is not novelty.",
+      "evidence": "a004f37490011f4a9dba lines112-242",
+      "gap": "not a new external/current-version audit, and not proof that all other weighted utility classes are covered"
+    },
+    {
+      "kind": "template-scope-change",
+      "participants": [
+        {
+          "path": "archives/weighted-congestion/state/资料/有限双权近似势与非对称精炼目标的不同合同--资料.md",
+          "role": "v1 fixed real-weight scaling at most two of each type"
+        },
+        {
+          "path": "archives/weighted-congestion/state/定理/双权二次延迟的共同类型缩放近似势--定理.md",
+          "role": "v2 arbitrary finite population and common free-type scaling"
+        }
+      ],
+      "common_premises": "weights1or2, nonnegative quadratic polynomial delays, finite arbitrary subset strategies",
+      "why": "Allowing lambda2 different from true weight2 changes admissible marginal template; all monomials share it. Thus37/33 v1 template lower bound does not constrain64/59 construction.",
+      "evidence": "10d425212557a0b98a7f sections1-3; old ledgerv1/v2",
+      "gap": "root alpha only optimal in fixed mixture family; no global best potential or PNE threshold"
+    },
+    {
+      "kind": "scope-comparison-only",
+      "participants": [
+        {
+          "path": "archives/resource-activation/state/证明/启用值的两价格分裂与二维三射线禁形--证明.md",
+          "role": "all-capacity 2D iff and all-dimensional sufficiency"
+        },
+        {
+          "path": "archives/fair-allocation/state/算法/端点图公平残差的森林阈值与最小删除--算法.md",
+          "role": "forest DP and simple graph charity"
+        },
+        {
+          "path": "archives/contention-resolution/state/资料/两尺寸固定激活的类内统一权重障碍--资料.md",
+          "role": "fixed activation method counterexample"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "role": "historical independent internal review carrier"
+        }
+      ],
+      "common_premises": "No single mathematical common model; only same historical review document, each row retains own assumptions",
+      "why": "Review reconstructs each proof and records model boundaries; it is a source/review relationship, not a joint theorem or implication between unrelated objects.",
+      "evidence": "3285f3b967aab0dcc1a1 sections1,2,5 and actual complete proof comparisons",
+      "gap": "No cross-model transfer is asserted; general multigraph, fixed-capacity classification and global x-changing CRS remain distinct"
+    },
+    {
+      "kind": "supporting-source-reconstruction",
+      "participants": [
+        {
+          "path": "tools/evidence/cloning-leontief-potential/related/history/retired_topic_selection/multi_lane/research/topic_selection/notes/configuration_reduction_boundary.md",
+          "role": "full read frozen supporting source, not a primary receipt"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "role": "section5 self-contained given-support baseline"
+        }
+      ],
+      "common_premises": "explicit sparse configurations, downclosed local families, nonnegative profits, 0<=cost<=B, bin/item marginal and opening budget feasible x",
+      "why": "Layer-cake initial value plus two cost/bin-preserving endpoint moves leave at most one fraction; compare integer set and affordable singleton then deduplicate gives(1-1/e)L/2.",
+      "evidence": "6d3758c99a298bd754b6 second-round baseline, newly obtained whole source; root review lines41-46",
+      "gap": "does not complete supporting source pricing/gradient/literature obligations, solve exponential LP, or give a free LP-gap comparison"
+    },
+    {
+      "kind": "review-evidence-not-truth-upgrade",
+      "participants": [
+        {
+          "path": "archives/weighted-congestion/state/定理/双权二次延迟的共同类型缩放近似势--定理.md",
+          "role": "all-integer analytic proof"
+        },
+        {
+          "path": "archives/customer-attraction/state/审查/退役选题跨模型复核的独立性与承重前提--审查.md",
+          "role": "historical root reconstruction and finite check report"
+        }
+      ],
+      "common_premises": "exact same stated restricted quadratic game class and common per-type scaling",
+      "why": "Root review checks common-resource cancellation and shared scaling;61206 Fraction tests are finite evidence distinct from analytic universal inequalities.",
+      "evidence": "3285f3b967aab0dcc1a1 section4;10d425212557a0b98a7f section2",
+      "gap": "no external peer review, full novelty audit, polynomial trajectory bound or all-potential optimality"
+    }
+  ],
+  "no_implied_edges": [
+    "CAG historical carrier does not contain other mathematical models.",
+    "Cloning recognition does not derive a new Fisher algorithm.",
+    "Fixed-x CRS obstruction does not refute varying-x global conjecture.",
+    "Known algorithm transfer and internal review do not establish novelty.",
+    "Unweighted asymmetric perfect-equilibrium target remains separate from two-weight approximate potential."
+  ]
+}
