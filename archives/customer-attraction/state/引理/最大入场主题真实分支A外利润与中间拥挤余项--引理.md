@@ -4,6 +4,10 @@ kind: lemma
 type_tag: 引理
 status: exact-algebra-identity; relay-and-half-open
 truth_status: proved-identity-with-signed-term; no-general-half
+source_identity:
+  inventory_blob: "0bf4d1293f48f24b4a01b5232be6ad9485ad12e2"
+  source_sha256: "659f2a896aa35db59d281197e3fbd6348c161111cc9f08d3850bc35538249067"
+  source_size_bytes: 4053
 source_refs:
   - clean:a7509141c0932c4f1b62:research/workspaces/customer-attraction/R-12bf6a96d24c48eca828620d6642e203/dynamic_credit/query_branch_capacity.md
 ---

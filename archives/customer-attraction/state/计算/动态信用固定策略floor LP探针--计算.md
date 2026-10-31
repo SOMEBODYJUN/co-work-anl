@@ -4,6 +4,10 @@ kind: computation
 type_tag: 计算
 status: finite-fixed-policy-probe-integrated
 truth_status: finite-floating-diagnostic; no-universal-floor-result
+source_identity:
+  inventory_blob: "9dcbfb94ab6dd0cdadcb5bbed3ed0467211344c8"
+  source_sha256: "9f8b0ecd1c1054ebd0998f1a8278ce7f2faf2b84c7d0a339b8be2d4bade90d30"
+  source_size_bytes: 1457
 source_refs:
   - clean:ed4a82e6bbff2de36018:research/workspaces/customer-attraction/R-12bf6a96d24c48eca828620d6642e203/dynamic_credit/probe_floor.py
 ---
