@@ -1,0 +1,3 @@
+# 别名关系范围
+
+本批是一份文档来源/兼容迁移资料，无数学定理。EXTRACTOR440B与前批CLEANER精确重复；MODELS代表443B共同正文，其余三件duplicate。原路径角色语义、旧长版及已done来源各自保留，不能把全部旧TEAM当duplicate。未进入mapper或造数学边；旧命令没有获得本轮执行授权。

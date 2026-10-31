@@ -1,0 +1,19 @@
+# claim前相关context
+
+五项已由root安排原子claim，worker不预读两报告/原程序，不把6949B作者和README前批旁读当正式完成。
+
+- 前批自然incoming引理保存OFFIC/FRESH、逐recipient方向、同A多父、diagonal阈值修正。下一批作者主源须按primary重新完整读，所有独有论证/有限报告合同再核。
+- SOURCE-NET已有同时局部取消和同一eta预付；实际待证是incoming剩余预算，不应把源已付再领一份u。
+- 后期密度程序portfolio只有一正incoming/COV，root/security是空和；该原run和当前incoming脚本不是同一SHA或测试合同，不能复用其passed为本批复现。
+- 后期full-profit parent广播6证书fresh边均0；独立22客户真实非零fresh使用非最优比较源。当前待读程序若只两旧fixture，不据大树计数补非零tracked传播。
+- 全仓按incoming原脚本/报告名和本批主源ID未见现成成功run；正式完整源码/真实依赖读取后再查精确SHA，必要在新根仅一次。
+
+已读正式对象的字节指纹见related-current.json；前批尚在保存时两对象取其已完成external stage，所有关系不写共享map。
+
+## pushed确认后完整primary读取
+
+2c9523cd6d3412e71de5ac705007b0c57e5d8f66真pushed/synced后五主源重新全文读核，不以前批6949B/README旁读抵done。当前6068B源码有main guard，仅四JSON真实输入；初版/v2只新增local算术节。一个新镜像根原字节入口一次成功，新1147B与v2逐字节等，初版未伪造旧源码复跑。
+
+真正scope进一步从完整输入读出：41为带父标签枚举记录，71fresh都在末位，无正recipient；outside结构为空。后期密度portfolio有正incoming/COV却不是本脚本正resetrecipient；9状态DAG正nonowner同样不替真实游戏半系数。
+
+6098Bprojection全文旁读并保bytes，README三接口核到随机A/B与均值Gamma不同、正费减κ前件未证，以及后加fixed λ未被旧mixed回执审过；该旁读source不额外done。
