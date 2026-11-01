@@ -543,3 +543,7 @@ R3_RESUME3SM：双四主题块两大报告全部41整数/10锥保存记录及全
 R3_RESUME3SM数学/证据pushed b8f713addfd78d9bde343bc8bb58e936ddb044b1；3源done另推送 6afc7d98b4aaa7a4600fba94b732884592680894。Boss4累计2933完成，实际未完25；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME25TA：Root516点3原/共享原公式精确原始点check一次，64质量/516非负/50零；R2有限探针4完整生成关系和充分锥；首对攻击8/浮点dual，调和利润系数3全r弱SPE和全部点态松弛，末层AMOUNT cap2/锐族2与原筛查，RAW坐标双预算5及增强guard分界。当前只有Root新有理check1，全部原探索/LP/旧成功重扫0，数学与原证据身份分层；共25主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME25TA_REMAINING_SCOPE.json。
+
+R3_RESUME25TA数学/证据pushed e060added2c82c0cde21db6954241028fb0be1dd；25源done另推送 43a76484348e2233e52989bd3f39436724843309。Boss4累计2958完成，实际未完22；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME3TF：调和母稿全一般符号式/所有eta极小点与弱等号、显式R/Z债及r1/r2分界，5701原参数1728/任意单客户2500/三尾值准确域及769全字段；旧243955B input全部4095权/1885策略实读，同SHA22620成功仅复用，0原入口/旧成功重演；共3主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME3TF_REMAINING_SCOPE.json。
