@@ -1,8 +1,39 @@
 {
-  "owner": "Boss1",
-  "disposition": "in-progress",
   "id": "0d96e50335c33022effb",
   "source_sha256": "c7390c9a74878e92cd3dd7e41589310761118c5a4823e035f2b745e54a5d8842",
-  "request_id": "63cbf3c5f5654362afb55777a611b3d4",
-  "updated": 1793532861
+  "source_blob": "94521d789726e418be817c953562eac3c716ecd6",
+  "source_path": "research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/construction/two_player_collision_free.py",
+  "source_commits": [
+    "68fad804ec5946cb296f77dc5b336308a66abf12",
+    "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c"
+  ],
+  "disposition": "retained",
+  "full_file_reviewed": true,
+  "related_material_checked": true,
+  "unique_content_accounted_for": true,
+  "read_note": "完整读取1783字节脚本；核对四位客户掩码、删除同时含C,D的实际碰撞类型、64个回复映射、6个比较对、384次LP、根/末位约束、Fraction候选核验和5/4输出。精确候选为回复(B,A,D,A)、实际(C,D)、比较(A,D)、掩码权重1/4,1/2,1/4,1/4，缩放为五名单位客户。",
+  "comparison_note": "与同工作区two_player_collision_free_bound.py/json的六主题有理对偶残差、two_player_overlap_refinement.md及background_two_player_refinement.md的完整SPE解析界比较；并与R-2fc的五客户collision-free occupancy obstruction及Fraction全历史审计比较。源脚本独有的是四主题384个策略/比较对的有限LP发现轨迹；五客户数学证人和5/4结果已有其他完整核验/解析正文。",
+  "decision_note": "建议保留为计算/证据资源，不升级为定理。脚本只给四主题有限实验和一个Fraction直接核验的候选，浮点LP及分母限制不能证明LP全局最优，也不覆盖任意目录或多人量词；普遍两人无碰撞5/4上界应引用六主题逐客户对偶或已保留的末两人解析定理。若正文只保留解析对象，可按重复证人并入R-2fc障碍证据，但保留本源哈希与有限枚举范围。",
+  "targets": [
+    "cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/two_player_collision_free--计算.md",
+    "cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/two_player_collision_free_best.json",
+    "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+    "archives/customer-attraction/tools/evidence/collision-free-family-and-terminal-obstruction-primary/original/research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/global_proof/collision_free_occupancy_obstruction.md"
+  ],
+  "validation": {
+    "source_run": "python3 cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/source.txt",
+    "source_run_result": "LPs 384; best 1.25; outputs 6/5 and 5/4 candidates",
+    "bound_run": "python3 cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/two_player_collision_free_bound.py",
+    "bound_result": "exact Fraction reconstruction of beta=5/4; minimum residual 0 over 63 masks",
+    "overlap_audit_run": "python3 cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/audit_two_player_overlap.py",
+    "overlap_audit_result": "64 binary membership cases; endpoint W=4,I=0,OPT=5 and W=2,I=2,OPT=3; Cartesian product checked",
+    "background_audit_run": "python3 cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/audit_background_two_player.py",
+    "background_audit_result": "576 exact symbolic/binary checks; minimum psi=0"
+  },
+  "delivery_status": "draft-awaiting-parent-checkpoint",
+  "record_submitted": false,
+  "remote_saved": false,
+  "owner": "Boss1",
+  "request_id": "d17fd1747ad24273ba95a6489a0e4251",
+  "updated": 1793534623
 }
