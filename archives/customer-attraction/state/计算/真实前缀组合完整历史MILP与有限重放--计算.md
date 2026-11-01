@@ -5,7 +5,12 @@ type_tag: "计算"
 title: "真实前缀组合完整历史MILP与有限重放"
 status: "four-finite-reconstructed-SPEs-checked; MILP-optimality-unproved"
 summary: "逐行整理完整历史组合MILP包装器及四份45秒超时报告；从已知掩码顺序恢复四个有理实例并验证全部真实IC，但不认证原MILP全局最优性或普遍UP。"
-source_ids: ["7cad09ff023607996bed", "2bd1808c0c6f7a935fc6", "c5036a7c5ea1e1e839ae", "2328caaf40c8b1313a96", "c4d557d5a94bf4affacc"]
+source_ids:
+  - "7cad09ff023607996bed"
+  - "2bd1808c0c6f7a935fc6"
+  - "c5036a7c5ea1e1e839ae"
+  - "2328caaf40c8b1313a96"
+  - "c4d557d5a94bf4affacc"
 source_refs:
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/portfolio_full_tree.py"
   - "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/full_tree_aabb_bcde.json"
