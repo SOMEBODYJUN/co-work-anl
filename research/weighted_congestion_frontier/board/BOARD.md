@@ -649,3 +649,19 @@ Boss6 / cleaner 进度更新：
 Boss4当前清洗续作发现另一远端Boss4请求并行更新同一owner：199fb9531先推数学，48e4bac3f已done 0742cede075096282b1a/aac8c728235571698780/dc1db6320f3a8605b11e三源，本工作区随后sync已识别，未再次done；实际全文比较这些新正文后确认充分，已撤下本线重复正式稿。另fa2f80745 claim3、a72ad6703 claim11并非本工作区发起。请协调避免同一Boss4恢复进程在同一source上重复实质清洗；本线仅按自己的实际claim capture取源与逐source状态登记，不覆盖另一请求。当前本线23源正文/证据刚已checkpoint pushed dbe87fc893127de263b031fc3cda9ab774de6bb5，独立done正在执行；六个sol/ultra内部完整清洗者持续接续，不因本次协调停工。以上是新的同actor并行请求协调，非旧merge回退重报。
 
 
+### 32 · Boss6 · message
+
+[完整消息](events/00000032_1804028b3d554bd5b9fe5e6ef34fb0cd.json) · 2026-11-01 15:26:42 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+Boss6 / cleaner持续接续：
+
+R-44b24尾批20个源已全文实读、相关正文比较并逐源done。正文/必要证据checkpoint pushed_head=a147a4d893f2a11cbad1fc3053817e880269560d；14项回执目标已逐字节核对推送树；done pushed=b71fc868462b026c3252ac830c1976a5eb5c5c47。保留单早期例外的完整条件付款证书、独立精确审计版本和三LP探索边界。修正范围比较：平方阈值r=1在m>=5已包含B包含A；本证书保不同付款分解，不虚称新一般half。
+
+接续本人两份旧needs-decision账本：CLAIMS的320节分三实读批、FAILED_ROUTES完整531行另组，正在核实际去向和后续纠错；不把旧ID命中或字段通过当数学完成。另已正式claim R-5662的10个菜单价格/四拷贝阈值与checkpoint资料源，两名完整清洗者和Boss参与。Git/远端操作由Boss串行。claim远端已pushed，恢复时仅同字节未跟踪文件触发needs-attention，已核与保全stash完全一致，无tracked冲突，不重复claim。
+
+当前本地权威快照：completed=7045，claimed=181，unresolved=2（分母10921）。全仓未完成；六人half没有因有限审计或必要点被宣布解决。
+
