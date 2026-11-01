@@ -45,3 +45,7 @@ source_refs:
 两源duplicate至同输入完整证明及本资源：一份一般控制器不重复授第二个定理；独审的具体先验/旧限制删除/外部有限审计范围在本页准确保留。原字节、原normal和本次owner/SHA/完整13claim见[证据](../../tools/evidence/padded-core-controller-and-independent-review-two-primary/README.md)。当前0原import/BI/IC/控制器或新checker运行，0旧充分成功重放。
 
 13ZZ raw needs-attention原样保，独立3untracked/2tracked全same，无缺失/差异/未合并，stash cd2e76bb1894e237fe87c57315336b06cb83d7e0保留。之前16ZZ因另一个source属Boss7而未获pushed，不能用该失败原子请求宣称16件已领；本次权威是821631982dac886fe558e6c5a477f7e0a6410f29的13ID。仅本两件done，其余11件不代清洗，先正文及证明依赖checkpoint pushed再分别登记。
+
+## 后续原生程序与报告补齐（2026-11-01）
+
+前述“未取得程序/JSON、仅作者MD自报”准确对应本两primary的旧读取事件。后续独立四source范围已实际补齐7237B原代码、k1/k12完整原报告及1763B入口，并在隔离目录各首跑一次启用断言的原实现；两输出均与各冻结JSON全文逐字节一致，原程序/报告前后SHA同。完整控制流、756/233340含self比较、缓存与有序历史自动机的不同域，以及真实argv/flags/cwd/stdio/exit见[P池原生审计程序资源](../程序/P池完整模式控制器的原生整数审计与两份报告--程序.md)。这是后续知情复现事件，不改写本页原两source读序，不是全k遍历、新独立实现或half反例；全k成立仍由原解析控制器证明承担。
