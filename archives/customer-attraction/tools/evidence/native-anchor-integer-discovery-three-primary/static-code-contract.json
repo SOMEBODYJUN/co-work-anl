@@ -1,0 +1,61 @@
+{
+  "source_lines_fully_read": true,
+  "compiled_or_CPP_AST_checked": false,
+  "T": 7,
+  "M": 5,
+  "L": 60,
+  "K": 128,
+  "nonempty_masks": 127,
+  "states": 792,
+  "terminal_count_vectors": 462,
+  "ordered_decision_histories_not_materialized": 2801,
+  "exact_recursion": "R(k)=union_a {q in R(k+e_a):U_a(q)>=max_b min_(z in R(k+e_b))U_b(z)}",
+  "weak_ties_retained": true,
+  "caches": "all attainable outcome sets by counts, not a shared Markov selector",
+  "arithmetic": "60 is divisible by denominators1..5; welfare integral; util[t][a]=60 times payoff for occupied a",
+  "bounded_main": {
+    "per_type": [
+      0,
+      200
+    ],
+    "nonempty_types": 127,
+    "N_max": 25400,
+    "int_width_assumption": "at least32 bits",
+    "long_long_width_assumption": "at least64 bits",
+    "single_utility_term_max": 12000,
+    "per_topic_utility_sum_max": 768000,
+    "welfare_max": 25400,
+    "comparison_product_max": 645160000
+  },
+  "evaluate_contract": {
+    "stdin_ints": 127,
+    "input_validation": false,
+    "nonnegative_complete_input_sufficient_domain_on_int32_and_LL64": "60N<=2147483647, so N<=35791394 and N^2 fits long long",
+    "negative_or_oversized_input_not_certified": true,
+    "outputs": "OPT minimum root outcome count and every attainable terminal count vector; no full policy"
+  },
+  "main_defaults": {
+    "rounds": 200000,
+    "seed": 1,
+    "path": "best.json"
+  },
+  "RNG": "mt19937",
+  "restarts": "every3000 or stay>1000; two stages disjoint5+four1 (second adds five0..2 noises), every third 12 random increments1..15",
+  "proposal": "usually1 coordinate, probability1/10 branch2..9; delta +/-1 or +/-1..10; clip0..200",
+  "acceptance": "strict ratio improvement or equal ratio with probability1/4",
+  "save": "strict best improvement, all nonzero integer types, one worst terminal; no full action tree; ofstream not checked",
+  "zero_ratio_boundary": "0/0 treated equal in cross-product walk; never a positive best improvement",
+  "stop": "round budget only, no ratio>2 exit and no exhaustive finite-box sweep",
+  "original_packet_missing": [
+    "seed",
+    "rounds",
+    "compiler",
+    "source hash",
+    "argv",
+    "exit status",
+    "run duration",
+    "full policy",
+    "final completion marker"
+  ],
+  "new_current_compile_main_evaluate_RNG_solver_payoff_IC_runs": 0
+}
