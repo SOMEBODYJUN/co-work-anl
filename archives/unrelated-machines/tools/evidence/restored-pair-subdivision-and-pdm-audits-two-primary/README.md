@@ -1,0 +1,7 @@
+# 两份恢复的原审计
+
+两source原字节保在source-root原路径。pair_coupling_subdivision.py需旁侧rounding_and_gap.py，12108B实际依赖已完整保存且SHA匹配旧汇总；pdm_escape_counterexample.py只用标准库。两者都有main guard，无参数解析，--help仍运行main。
+
+本次原main/import/枚举/solver均0。禁用lazy fetch及Git网络协议的normal source show成功，是比旧被拒绝远端show更安全的本地恢复；旧handoff与原source/progress历史不改。两report为已完成source的必要比较依赖，不新增done。
+
+18097B bundle汇总全部字段读过，当前primary只负责pair程序；cardinality/independent/baseline其它报告不挪成本程序执行。1362B pDM JSON不是源码原样stdout，code SHA一致但output格式有结构化加工。现有pDM数学页的缺失报告链接仅补同字节资产，不改他人正文。

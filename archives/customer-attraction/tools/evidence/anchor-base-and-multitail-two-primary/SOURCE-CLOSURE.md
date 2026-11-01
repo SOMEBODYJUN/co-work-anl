@@ -1,0 +1,7 @@
+# 两源没有相互运行依赖
+
+1300B只导入规范Instance/CustomerType/ExactSPESolver；包init还需certificate，因此四py原路径齐。parents5指original根。没有anchor_synthesis/base/其它JSON输入或外部优化器；实际一行stdout不写文件。旧sameSHA规范4整源whole reading复用、model/exact当前还读定义，不额外done/假新normal。
+
+5102JSON本身含完整instance/certificate/review，可作为定义级全树核验输入；本probe不消费它。旧relatednormal与本次13XV primarynormal都保，字节全同。这里以明确块收益和全部层表证明同一旧43σ，不调用原规范verify/215/258或猜review创建日志。
+
+输入无可选参数/默认值；六int非法域由转换/模型校验部分拒绝，无前端总验证合同。当前无实际probe命令/参数/输出，不重放solver填stats/timing，也不将同目录其它best当它产物。数学域边界r0/k0、零类型、重复及弱等号均正文说明，阶段三不建图。

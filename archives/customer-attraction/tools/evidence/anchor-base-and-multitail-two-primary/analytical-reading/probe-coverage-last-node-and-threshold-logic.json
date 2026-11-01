@@ -1,0 +1,33 @@
+{
+  "manual_math_no_solver_execution": true,
+  "intended_domain": "k>=1,r>=0 and nonnegative integer x,a,b,d",
+  "players": "k+r",
+  "topic_count": "3k+1",
+  "customer_total": "k(x+a)+b+d",
+  "target": "each C_i once plus r copies of the single D",
+  "r_ge1": {
+    "W_target": "kx+b+d",
+    "OPT": "k(x+a)+b+d",
+    "OPT_witness": "all A_i plus D then pad repeats"
+  },
+  "r_eq0": {
+    "W_target": "kx",
+    "OPT": "max{k(x+a), kx+(k-1)a+b, (k-1)(x+a)+b+d}",
+    "proof": "static C subset A; repeated B adds no P, so allA/oneB/oneD are exhaustive max candidates"
+  },
+  "k0_boundary": "only D; r>=1 W=OPT=b+d, r0 zero-player empty strategy",
+  "last_D_of_displayed_path": {
+    "chosen": "(b+d)/r",
+    "alternative_Ai": "x/2+a",
+    "alternative_Bi": "x/2+b/r",
+    "alternative_Ci": "x/2",
+    "exact_last_node_conditions": [
+      "b+d>=r(x/2+a)",
+      "d>=r*x/2"
+    ],
+    "not_full_strategy_sufficient": true
+  },
+  "positive_a_extra": "any target-realizing path must end D since a last C_i can increase x to x+a by A_i; hence the two last-node conditions are then necessary for target-count attainability",
+  "negative_membership_diagnostic": "if every displayed-path target payoff >= true threshold, reverse induction keeps target in each child and then root; target notin root therefore yields at least one strict payoff<threshold",
+  "count_vs_order": "positive membership only count existence; displayed order not separately constructed or verified"
+}
