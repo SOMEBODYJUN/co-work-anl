@@ -1,0 +1,3 @@
+# 固定离轨次数原审计与历史来源定位
+
+三primary26319B全文；两固定秩code/report与另R-4243元数据分别定位不混。原stdlib默认main隔离恰一次，exit0/0.2842509059992153秒/stderr0/19674B stdout与冻结全字节同，原前后SHA全同；无外部输入或自写文件。新计算自足COUNT公式、五例核验域/八大摘要、210000含重复格和m4k4全部585节点SPE端点，原统一NOT_SPE标签不逐例继承。一般固定k坏族仍是形式策略，未反half；旧定义checker成功不重演，metadata不adopt旧UUID。
