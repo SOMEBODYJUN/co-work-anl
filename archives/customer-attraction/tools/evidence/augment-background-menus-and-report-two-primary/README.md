@@ -1,0 +1,7 @@
+# 二十一菜单交叉和：完整源与报告
+
+两primary129594B：4989code已充分全读/同normal复用，124605新report全14字段、64exact/64float/42marginal及3087名全部读完。147组可逆视图逐组显示所有R，并严格roundtrip原3087列表；这是metadata静态读取，不是LP运行。
+
+source-root还保必要系数2共24130B、旧native2共94602B，六原件总248326B，全部inventory size/SHA/blob相同，无新relatedshow或额外done。运行布局保原ROOTparents5；没有独立数学执行事件，未调用原solver/import/exec。
+
+full17YR所有17ID和原needs-attention保留；独立1untracked/0tracked全same无missing/different/unmerged保stash证明分存。源码单纯复用priornormal不会假报新normal。当前primary2数学/done均pendingRoot，既有explicit/fixed数学已发表仅作依赖，fixed2done按本次收到时尚未完成。

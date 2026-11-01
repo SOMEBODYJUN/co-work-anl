@@ -1,0 +1,7 @@
+# 原路径树与唯一输入
+
+tail_profit_projection_probe.py在R5c817/parent；parents5指向证据original根，SOURCE是同original下Rc4f1/six_astra/attractive_nested_exact.json。原完整JSON816498B按原路径保，报告SHA cc48…相同。无本地Python helper或其它JSON读入，只有标准库numpy/scipy。
+
+2201母稿非runtime，是有效接口数学依赖，已normal whole read；beta3/4及BG5域现canonical全文对照，无免费五人背景。旧13mask static父审代码/report与本固定3889边缘输入完全不同，不作替代输入。原source所有1905列保，而probe忽略其它kind/hist向量，normal输入身份不等现验证3889/3949或SPE。
+
+4selected row既有精确值来自保存source/Fraction代码，当前不调用row_value/hyp_profit或LP补trace。源码无CLI/seed，四opt完成才print再write，no originalargv/flags/timing/exit/LPstatusduals不造。原MD历史协作目录不应用于当前环境，阶段三不建图。
