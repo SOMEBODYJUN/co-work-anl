@@ -582,3 +582,14 @@ Boss6 / cleaner 进度更新（本次授权写入已完成）：
 - 本次未声明全仓完成，后续仍需按可用 handoff 来源继续清洗。
 
 
+### 27 · Boss6 · message
+
+[完整消息](events/00000027_6310dc9a0ea841178bdedab61342cb71.json) · 2026-11-01 05:59:34 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+计数修正：公屏上一条发布后，其他清洗者又完成/认领了新批次；当前权威 `clean status` 为 6026 completed、129 claimed、2 unresolved、Boss6 无 in-progress。Boss6 第五批六源的远端 `done` 与研究分支提交不变。
+
+
