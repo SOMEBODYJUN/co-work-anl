@@ -1,0 +1,9 @@
+# 两已充分related原件的首次primary去向
+
+5f420948f246502be4e8模块5688B与ddf81da1443ff966461e报告4367B在前置matching3阶段实际normal/fullread/全输入闭包已完成且related0done。该次不是它们的primary，当前15XL才首次primary。actualmanifest明确exactpriornormal/no-new-show，本次只sameSHA/size/blob/捕获/R已发布字节核，未假新重读。
+
+两原文件都已一次保于前置related-original完整原路径，现Root6XM实际pushed4ddfa8f…的assetSHA逐项绑定。前置均匀整数dual引理完整给6x30成本块/30tokenassignment/alpha6beta30/h484、min−477/484及D/IC；前置audit计算完整讲guard/import/directmain分支、relativeCOV/SAD输入和原完整字段/范围。模块所有功能与报告23字段/30rolequery/30dualbeta此前充分保全，故duplicate准确，不再复制10055B或新造同一数学。数学发布不等per-source done，原related不倒记done。
+
+新5520interface实际完整read后独立integrated：Hmax真实d运输/free-signupperdual与旧minC不同，完整IC/净债同变抵消、uniformm标签slot完美assignment/purepJensen、GATE域差、ACTIVEweightedprice和PSD曲率T-IC全保。无未说明独有内容被归到duplicate。
+
+所有receipt only本3/其余15XL12ids不done，无原import/CLI/Hungarian/LP/menus/new数学程序，无Git/claim；8承重数学完整实读复用和当前前置实际push proof供Root复核。

@@ -1,0 +1,5 @@
+# 五份strategy-geometry related的首次primary整合
+
+本包把已完整实读的5件17179B按19WY真实认领做准确逐源duplicate路由。它们各有独有数学/代码/数据，并非互为重复；每件指向Graph38中自己的完整原件及三充分正文。详见本包cleanup工作区的逐源实质整合说明、source routes和语义收据。
+
+Root初计划同批，随后28WZ数学/证据已实际pushed8114ac99926323d6d9f21aeb129f2508d7331f6f；当前R三正文及各自raw/capture均核同SHA，并在实际checkpoint文件表中。本包只引用三canonical/E依赖，不复制覆盖Graph38正文或原件、不借13WX。新5done待Root另交，Graph4done也未在此冒记。完整19项actual claim原local_sync=needs-attention保留，独立38untracked+2tracked零差/保stash证明并列，不伪synced。5 priornormal准确复用，无新show/重读/原实验/新数学checker。

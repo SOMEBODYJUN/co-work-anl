@@ -1,0 +1,7 @@
+# 静态PNE福利桥的精确有限搜索两源
+
+3547代码+167报告全部actualnormal/fullread，完整原字节按primary-original原路径保存，2normal/full22XT claim/独立3+2保全证明另保。程序只测试min完整SPE福利≥min全部静态PNE福利，非half；固定输入判别精确、有限随机阴性不推全称。原报告seed606/600/checked603/null的全部6字段和优化模式边界完整入正文。
+
+三边界0/0/1解析，旧12严格counterexample已在生成支持内并使候选假；当前不重复旧成功或重新执行有限600。source命中最差树verify方法仍保而assert内3boundaryassess在-O跳过，603不冒边界run证据。
+
+依赖规范4文件25475已充分完整读/currentsameSHA，只引用不盲import/重复复制；无外部数据输入。raw22XTneedsattention与独立3untracked2trackedsame/stashkept分别存，不假synced。0原/新数学运行或外部网络/Git/R写，待Root正式checkpoint后done。

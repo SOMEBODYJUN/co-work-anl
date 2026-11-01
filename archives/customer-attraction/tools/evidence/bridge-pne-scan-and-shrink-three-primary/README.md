@@ -1,0 +1,7 @@
+# PNE与残余双桥扫描及约简三源
+
+本3实际normal共13390B：2新码全文读，10024B本ID新取得捕获而内容精确复用旧be06充分全文数学，不伪旧show。本目录保三原件原路径、3normal、完整16XR claim和独立2+2零差恢复证明。
+
+一自足程序正文完整解释全SPE/静态PNE/残余静态mquery、frozenset逐c早返导致PNE类别遮蔽、greedy可改整策略与不合并行的局部停止、相对导入/文件路径合同。当前50载体有16/9重数，而scan main每行≤8且shrink不合并，不能认证当前代码生成链；这是来源状态，不抹去已有数学。
+
+规范4文件25475B旧充分实读/currentsameSHA只依赖引用；两新code未import/main/check/solver/verify/新checker。rawneedsattention保，独立2untracked2trackedallSame/stashkept另保，不假synced。待Root新正文/E先checkpoint再done。

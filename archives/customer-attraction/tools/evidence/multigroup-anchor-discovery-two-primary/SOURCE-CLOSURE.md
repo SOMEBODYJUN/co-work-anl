@@ -1,0 +1,7 @@
+# 唯一项目helper和规范包
+
+原tree同R5c4 credible目录放multigroup_cone.py与1936B anchor_synthesis.py；starimport只载定义/常量/规范类，synthesis main有保护，不读anchor_best.json且此程序也不读其它游戏JSON。先前single代码/两个best不是本runtime输入，不为闭包多造数据。
+
+synthesis parents5指向original根，canonical init/model/exact/certificate四原py按原路径齐，旧whole reading同SHA，包init三localimport闭合。科学包版本/旧argv/退出/全部iteration/residual未给不造。程序会在ROOT覆写anchor_kgroup_cone_best，未在冻结树执行，未来复验须隔离实际事件。
+
+原report的1111动作全读/全部key标签结构检查和根孩子dict解码不调用terminal/coeff/Exactsolver/Gamma。fixedσ上界与084末位literal反例纸上给，不执行收益或IC程序；den50投影未完整验证。runtime related不额外done，single数学页发布依赖另列expectedSHA，不冒canonical或pushed。
