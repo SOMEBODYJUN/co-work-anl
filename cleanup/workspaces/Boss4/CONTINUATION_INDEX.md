@@ -575,3 +575,15 @@ R3_RESUME21VE：Root背景租金/根保险3含全历史actual-prefix等号及架
 R3_RESUME21VE数学/证据pushed bca541c8b842aed492e71a5b9ddb5fc2814abfd6；21源done另推送 af39f17d740cca6c790b52350fd16ae0fa73f4c8。Boss4累计3126完成，实际未完73；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME39VW：十个独立实读范围共39主源：三组合模板四/逐人仿射地板四/父CLIP六证书四/末位菜单五/最优索引分配五/均匀组合三/同题删位SA四/背景新增覆盖四/只修次位及离轨CLIP三/独立静态CCE三；Root将既有十三人完整SPE对全人数SA的45/13严格反例接回两旧账，历史原字节与阅读时态均保留，未推为六人反例。所有本批原入口/新数学程序0，完整报告与浮点提案、有理可行性、旧成功认证分层；先明确checkpoint pushed再done；共39主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME39VW_REMAINING_SCOPE.json。
+
+R3_RESUME39VW数学/证据pushed 609a28e6932ad916a33cc229580afc60e36ef0d1；39源done另推送 76b057430a0bc3d594515f99ec0d67df5d83584e。Boss4累计3165完成，实际未完70；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME9VY：Root两固定完整策略真安全聚合重权2：两份全输入302动作、质量归一/全历史锥/真n−1槽/正门合法性与两float有限阴性完整；R5a主总账与DEEP金额5原量词/当前已反接口/乘积弱界；只修次位作者与未调用审计2，保fixed-m合同逻辑与真实fallback、原py EOF不冒成功审计。0原入口/新数学程序，历史范围精确保留，逐源done在明确正文依赖pushed后另推；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME9VY_REMAINING_SCOPE.json。
+
+R3_RESUME9VY数学/证据pushed 71af216d70373749bec65b2ce0350e72ccd8d1ef；9源done另推送 ce4d544a12f6594b9586acac61d941f38d5187fb。Boss4累计3174完成，实际未完66；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME3WB：两尾公共锚点复制障碍3：全部k≥2完整动作类证明每份真实两尾SPE避old t、偏离者7>6，单组29客户43动作必要输入及258/self区别全保；旧k2..8计数是有序尾结果非策略数，未反其他SPE/half；0原入口/旧成功重跑/新数学程序；共3主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME3WB_REMAINING_SCOPE.json。
+
+R3_RESUME3WB数学/证据pushed 7529d06cd5fb701f62add738937e2e1bc7380457；3源done另推送 0c6ca78ee37b505e4d3b0a934bec10421a54f941。Boss4累计3183完成，实际未完67；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME26WF：Root四背景根源/因果多删位/抽象链精确极值；prefix四H余量/M共享引理；round6两全图cap/角色pooling入口；父金额三完整16case50列46row及首次存储字段算术核；静态SA五原笔记/独审全人数及∀最优平均失败、存在版未否；三锚四全65列/浮点报告；round7两共同钱包/强FOMA状态；gain两含全交集矩/遗漏分数覆盖及输送LP。共26源，只有新存储字段audit1，原成功/旧阴性/LP/SPE重跑0；历史同名/旧OPEN与当前量词按实读分清，先math checkpoint pushed后done；共26主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME26WF_REMAINING_SCOPE.json。
