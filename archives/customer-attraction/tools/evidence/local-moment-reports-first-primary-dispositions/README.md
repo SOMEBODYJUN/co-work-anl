@@ -1,0 +1,5 @@
+# 七份局部矩报告的首次primary准确处置
+
+七原97802B此前已在14WM完整实读，404矩与5223完整有序节点及全部原float逐份保存。20WS已实际发表三篇自足数学/程序和每件完整原raw，本步只补新22WT主认领后的七条准确duplicate收据及版本路由。不是把七个原报告互称同一文件；每项链接自己已发表的同SHA完整raw及共同充分正文。
+
+现R三个数学目标逐字同前冻结版本，当前SHA明确钉在current-R-mathematical-dependencies.json。specific-original-to-existing-target-routes.json保每件独有参数/根/查询/空或别名/全矩与策略去向。两个原manifest中复用真实normalshow，明确no-new-show；22WT完整22项pushed/synced回执原样保留。没有新show/新数学阅读扫描/新运行/同数学改写。新七done由Root后续串行进行，未冒称完成。
