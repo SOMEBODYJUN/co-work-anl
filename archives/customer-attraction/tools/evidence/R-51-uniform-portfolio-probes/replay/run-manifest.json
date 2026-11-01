@@ -1,0 +1,38 @@
+{
+  "source_id": "309f20a241511455554b",
+  "source_commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+  "source_path": "research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/portfolio_probe.py",
+  "source_sha256": "435412dd47b8cb76ba1b7d2de22b8981d4722d04bfd11f26491c36ece9ef3e32",
+  "dependency": "customer_attraction from the same frozen commit",
+  "runs": [
+    {
+      "command": "python3 replay/portfolio_probe.py --players 3 --topics 5 --samples 300 --seed 734170",
+      "output": "replay/run300.stdout",
+      "output_sha256": "8a7e5154db661bd47f8478836f72749a41461a53c6f69b49075d8d09d2e714f4",
+      "samples": 300,
+      "negative_count": 0,
+      "minimum_slack": "16",
+      "minimum_sample": 23,
+      "minimum_path": [1, 1, 1],
+      "minimum_portfolio": [1, 3, 4],
+      "minimum_W": 23,
+      "minimum_query": "60",
+      "minimum_OPT": 30
+    },
+    {
+      "command": "python3 replay/portfolio_probe.py --input replay/smoke_input.json --output replay/smoke_negative.json",
+      "output": "replay/smoke.stdout",
+      "negative_file_created": false,
+      "slack": "3/2"
+    },
+    {
+      "command": "python3 replay/portfolio_probe.py --input replay/big_family.json",
+      "output": "replay/big_family.stdout",
+      "negative_file_created": false,
+      "slack": "0"
+    }
+  ],
+  "decision": "integrated-finite-evidence",
+  "general_theorem": false,
+  "half_coverage_counterexample": false
+}
