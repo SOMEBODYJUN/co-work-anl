@@ -10,6 +10,12 @@ source_refs:
   - source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-373daba10913464c93771a808d88fce3/root_menu/probe_root_cap.py
   - source:dcaf29192d465aadf5944bc807687e6170d71aae:blob
   - source:fbcfaa77701ea290c43cd30609e489740e9ad940bc39edddfe6bf1501d76feb1:sha256
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-373daba10913464c93771a808d88fce3/root_menu/root_cap_group_factor2.5.json
+  - source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-373daba10913464c93771a808d88fce3/root_menu/root_cap_group_factor2.5.json
+  - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-373daba10913464c93771a808d88fce3/root_menu/root_cap_group_factor3.json
+  - source:aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c:research/workspaces/customer-attraction/R-373daba10913464c93771a808d88fce3/root_menu/root_cap_group_factor3.json
+  - source:25261bdccbe1c27d137b:sha256:fa95ba29e2130fa52f1d9fb138064f5c97f90b0d86427555a5456ee762567968
+  - source:3b4b9db523e90c02ffef:sha256:89d34bf1f96e51bd7ee571e831a617b59de7128001c7c8e4c39ea0b840cb8028
 ---
 
 # 对象与范围
@@ -41,10 +47,17 @@ source_refs:
 
 两份冻结 JSON SHA-256 分别为 `fa95ba29e2130fa52f1d9fb138064f5c97f90b0d86427555a5456ee762567968` 和 `89d34bf1f96e51bd7ee571e831a617b59de7128001c7c8e4c39ea0b840cb8028`；它们应由各自源记录另行处置，不因本程序被默认为已完成。
 
+本批已将两份相邻因子输出接入
+`archives/customer-attraction/tools/evidence/root-menu-cap-floating-discovery-Boss7/`，并以
+`verify_root_caps.py` 做结构与算术核验。`factor=2.5` 的最佳值有理近似为
+`W=23/36, cap=97/432, gap=-67/864`；`factor=3` 的最佳值有理近似为
+`W=7/8, cap=5/16, gap=1/16`。核验只检查冻结 JSON 的 SHA、字段、归一化、非负性、trace 长度和 gap 恒等式，
+不证明 LP 全局最优，也不把正 gap 升级为完整 SPE 反例或一般 factor 界。
+
 # 与现有正文的关系
 
 现有 `archives/customer-attraction/state/资源/根真实菜单与背景化安全探索的版本范围--资源.md` 已把该类 `probe_root_cap.py` 识别为发现器，并明确有限探针没有普遍证书；`archives/customer-attraction/state/资源/任意菜单图入口的有限核验与强遗漏桥版本--资源.md` 也把 R-373d 历史材料与后来的解析对象分开。现有 `archives/customer-attraction/state/资源/根真实菜单与背景化安全探索的版本范围--资源.md` 中的 `root_menu_mixture_family` 解析族是任意 `m≥2` 的完整 SPE 构造；本程序只在 `m=3,k=6` 的一棵策略上做浮点发现，不能替代该解析证明，也不能把候选数值迁移到六人 Q-CAG-HALF。
 
 # 建议处置
 
-建议 `integrated`：将源码、重放 stdout、参数和 SHA 作为 `archives/customer-attraction/tools/evidence/root-menu-cap-floating-discovery/` 的程序与有限证据，并在资源对象中保留“发现器而非证明”的边界。正式正文只记录上述有限计算和可复现方法，不写成反例、SPE 结论或普遍 `factor` 界。相邻两个 JSON 仍分别保留 `unread`/待其 owner 处置。若当前证据目录已有同一源码的逐字节副本，可改为 `retained`，理由必须明确“数学含义已由现有根菜单资源对象完整吸收，源码副本仅作历史复现依赖”。
+建议 `integrated`：将源码、重放 stdout、参数和 SHA 作为 `archives/customer-attraction/tools/evidence/root-menu-cap-floating-discovery-Boss7/` 的程序与有限证据，并在资源对象中保留“发现器而非证明”的边界。正式正文只记录上述有限计算和可复现方法，不写成反例、SPE 结论或普遍 `factor` 界。两份 JSON 虽来自同一发现器，因 factor、trace 和冻结字节不同，分别保留其独有的有限输出记录。
