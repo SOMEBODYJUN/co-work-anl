@@ -1,0 +1,9 @@
+# 原路径闭包与binary缺口
+
+保原audit_search.py与search_best/restart_best、exact_integer_search.cpp同credible目录；canonical __init__/model/exact/certificate在仓根customer_attraction，parents5正指根。规范包只导出/导入这四文件，原packet实例所有字段与两cert实例精确相同，search元数据不影响Instance。
+
+审计实际调用无.cpp后缀binary。当前inventory查该精确路径无条目；只有3976Bcpp，有原eval接口却无旧binary、编译recipe/log、binary/source SHA绑定。不能由源头名字/原报告integer_scale60常数字段授binary身份，也不为补原日志编译重放。科学runtime仅Python标准库+外部C++binary，无SciPy/NumPy需求；Python启动flags/版本/旧argv未给。
+
+源码级依赖/固定两输入及两完整策略保全；原execution级闭包缺口单列。随机20生成配方及报告summary保而原客户数组/全部根set无，未解码RNG重造输入。先前7related whole-read同SHA/3旧normal捕获可核，不假称本批新show/primary done。
+
+读取全5602动作、完整key域和根truechild字典walk未求任何收益矩阵；根IC表和次份常C证明纸面给，未调用原terminal/payoff/verify/solver。所有JSON/type/meta/动作payload原样保，阶段三图另做。
