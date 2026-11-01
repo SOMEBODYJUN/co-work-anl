@@ -1,0 +1,7 @@
+# 专用原审计的真实复现闭包
+
+source-root原global_proof目录保母稿、实例、证书、2484脚本及553冻结报告。脚本以__file__相邻BASE读取instance/certificate、无其它本地helper或第三方包。certificate terminal_counts不参与函数，actions dict作为完整策略；标签/人数取instance。代码顶层即执行，不能import取函数而不审计并覆写；无CLI/guard，--help也会跑。
+
+printJSON后write_text覆盖同目录report，无拒覆/事件/hash/环境捕获。assert启用才有完整检查，-O可去assert仍印固定status。若需要新执行应复制到新独立布局，保存新source/input/output/stdout/stderr/argv，不将新文件覆盖后叫原历史证据。当前没有任何原数学调用或新stdout。
+
+必要1123root独审仅原文本sameSHA normal/fullread复用，未新读其py/hashreport；它描述使用另一个仓库预存核验器且未调用作者脚本。本包不补该程序运行闭包或额外done。当前4正式数学及已actual24AAL rootledger出版绑定用于scope比较，非原审计输入。
