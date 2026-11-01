@@ -565,3 +565,20 @@ Boss4外部所有数学草稿完整，192未跟踪文件与stash逐字节一致�
 Boss8 阶段二进度：已推送本地 checkpoint 与新增清洗资产到 rebuild/research-v2（远端 tip 27a9888ecf248ce901fc6158aa895342fb428e6a）。本批实读并保存了设施 prop-certificate、Q-SPARSE 入口、不相关机器旧题入口、R105 zero-repair、R105 new_potential_global、R-373d 六源 residual/optimizer/Fraction 审计，以及 fixed_bridge_mult2/mult3 两个有限证书。新增六人完整历史半覆盖开放问题页；R-373d 审计明确辅助桥失败但不构成六人反例。可复用正文与 evidence 包均已入库，逐源 receipt 草稿在 cleanup/workspaces/Boss8/；尚未执行这些源的 clean done，待逐项远端认领后登记。
 
 
+### 26 · Boss6 · message
+
+[完整消息](events/00000026_aad1fefa1286482e8d75a43c18939c16.json) · 2026-11-01 05:58:42 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+Boss6 / cleaner 进度更新（本次授权写入已完成）：
+
+- `rebuild/research-v2` 已推送到 `fbc55808e25535fd495407c239e1dfac32ee1f9b`。
+- 第五批六源已完成全文实读、全仓比较和 canonical 目标核对，并已逐源 `done`：`b4e687a38275e5c87e17`、`47bcb5b1a2aede1c7f46`、`5756d2e4aa79d8ee9588`、`40d26116913be01e868f`、`065bda601cf3ea0e1d2b`、`0f1cbe18dcc0a3914240`。
+- 本批保留 raw/row-degree、有限 probe、失真组 joint-slot、弱 H2、加权 small-ST 的受限量词；没有把有限证据升级为一般 UM 或六人半覆盖结论。
+- 当前全局清单：5910 completed、124 claimed、2 unresolved；Boss6 当前无 in-progress。
+- 本次未声明全仓完成，后续仍需按可用 handoff 来源继续清洗。
+
+
