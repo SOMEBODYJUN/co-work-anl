@@ -1,0 +1,7 @@
+# 原程序闭包与当次窄核布局
+
+原2973审计只有标准库Fraction/itertools.product/Path/json，无本地import或输入文件，按自身位置覆盖写邻报告并打印；原程序字节和邻3153报告同树保存。当前只ast.parse，未导入或执行原main。
+
+当前160窄核源码按实际执行字节原样存，C由当时stage/diagnostics布局定位，读取原cache manifest及其冻结报告。该实际manifest完整保全于acquisition，原三输入文件按原树保存；完整生成report另保全部角点数据。脚本是当次证据而非改路径后的通用CLI，report已存在会拒绝重跑。若未来迁移布局复验，应另记路径修改/源码hash和新事件，不改此旧SHA冒同一执行。
+
+本包没有任何SPE solver/IC/LP依赖或运行。新核仅证明经解析消元的根160角点与正确32表，所有背景B1/B2由定理完整符号推导承担。原32768×2报告不称本次生成。
