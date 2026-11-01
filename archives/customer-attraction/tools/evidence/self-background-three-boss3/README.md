@@ -1,0 +1,15 @@
+# self-background三主源：现signed代码与两个历史报告
+
+三主源原字节在original，双冻结元数据在source-manifest。原py SHA为9b1a5cfa...，实际计算与写出signed对象；unsigned375B报告缺旧实现，未重造或重跑该实现。
+
+runtime-inputs保存本次成功事件的五canonical代码与21个真Instance原字节，runtime-dependency-manifest绑定它们及当前另一个包装式JSON；后者原字节在excluded-current-example。manifest中existing_path是当次从持久仓内证据读取的位置，不要求该旧绝对路径在重建机器存在；本包runtime-inputs已保存成功所需全部26件。源码单独来自original。相关README与signed数学独审在related。
+
+## 两个真实事件
+
+first-full22-failed保存第一次原入口：实际全部22个例子仍在runtime，22锥/1110LP后因prefix_coupled_seats_strict.json顶层缺topics而exit1，没有最终JSON。run_first_failed_attempt.py是当次runner原字节；它曾把目标21写进记录。execution-record已经根据实际stderr与文件身份明确纠正为21真Instance加1包装文件，不能从runner旧声明推断成功。失败stdout/stderr不删不改。
+
+run_verified_cohort.py是解决该具体失败的第二入口runner。它要求新鲜self_background_explicit21_runtime，把包内21个真Instance和5代码逐SHA复制，立即断言文件数与schema，再以原未改py子进程运行。replay保存真实原输出/标准流/环境和启动前实际26文件清单。若重放，另选新鲜runtime路径或先保全旧事件；不会自动覆盖旧目录。
+
+成功事件34锥/1654LP，除elapsed外与原signed报告全等。实际全批两入口、2764LP（1110+1654）；均未得到或宣称任何精确阴性对偶。Python断言开启，正例认证分支未触发。input-preflight完整解释22文件集合、21真Instance、17个通过k≤6/m≤4过滤的输入和一个明确schema排除。
+
+report-and-cohort-comparison保每输入增量和两历史报告全字段；正式对象在state/程序/终局自背景的有符号有限策略锥探针与双报告边界--程序.md。有限阴性与当前成功兼容性不等于历史同一事件、harmonic认证、普遍候选证明或half反例。

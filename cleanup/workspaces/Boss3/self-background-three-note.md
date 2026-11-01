@@ -1,0 +1,7 @@
+# Boss3 self-background三源交付说明
+
+三原件均全字节/全字段主处置，当前源码实算signed self而旧unsigned375B报告缺对应历史实现。新正式页自足解释系数、全部有序历史策略锥、比较计数枚举和只在正例启动的有理认证，不重授既有signed层级。
+
+现完整22例包含一个非顶层Instance包装文件，原入口确实在此exit1。完整失败日志保留；第二事件在复制/核SHA/断言21个真Instance后启动同一原代码，34锥1654LP成功，除elapsed外与原signed报告全等。全批实际两次入口2764LP，不声称只跑过1654。没有新unsigned入口、精确阴性对偶或全策略枚举。
+
+运行/草稿全在clone外：self_background_stage、self_background_runtime（失败）、self_background_explicit21_runtime（成功）。完成时再申请短copy窗口，Git/done由父方串行。
