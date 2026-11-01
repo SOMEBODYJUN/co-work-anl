@@ -1,0 +1,7 @@
+# 真实恢复的Hamming两原件
+
+2primary13923B代码和JSON现已完整实读，1自足程序对象。原第一次localmissing原字节保；父级正常show两capture真实取得，size/SHA256/blob核。读源capture不是数学执行日志，原JSON未给sourceSHA/argv/version也不发明。
+
+全部八case/七尾条目/七负节点完整去向。protected有序球、实际路径和freshB尾计数有重叠不混加；大尾仅deterministic_sample_only，不由fixedseed变穷举。status通过包含预期negative，非全SPE通过。
+
+0原CLI/import/数学重跑/扩阴性扫描/共享Git/网络账号。已有KQ数学精确复用，保当时未读代码历史。完整原claim+本2owner后才receipt，Root先推正文证据再done。

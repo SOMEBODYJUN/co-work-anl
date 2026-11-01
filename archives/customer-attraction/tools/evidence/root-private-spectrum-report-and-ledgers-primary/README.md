@@ -1,0 +1,3 @@
+# 私有谱原报告与两账本
+
+Boss4全文三主6487B：两MD按已完整对象duplicate，原1466B JSON按完整scope integrated。原报告先前related全读不等于done；本次无原CLI/新mathrun，代码及四探针材料local缺。全有序策略与计数状态区分，五current正式页全读同SHA复用。原17claim保完整，本3owner核。正文checkpoint后再逐源done。

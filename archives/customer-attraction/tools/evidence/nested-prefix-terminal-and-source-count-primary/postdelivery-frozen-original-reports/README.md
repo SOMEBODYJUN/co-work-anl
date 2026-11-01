@@ -1,0 +1,3 @@
+# 交付后实际取得的原冻结报告
+
+OV76保原初local缺记录和当时生成报告与inventory SHA完全相同的已证身份。后来Root normal show实际取得3原报告5271B，子代理按同SHA全文读取/全JSON字段及18pivot行与生成全部逐字节同，0重跑；原stage76不改。本附录保raw originals/captures/manifest和独立比较。3报告仅related不extra done，不倒填成原程序输入或旧运行事件。

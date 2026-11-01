@@ -8,9 +8,12 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import sys
 from pathlib import Path
 
 import numpy as np
+
+sys.dont_write_bytecode = True
 
 
 ROOT = Path(__file__).resolve().parents[1]

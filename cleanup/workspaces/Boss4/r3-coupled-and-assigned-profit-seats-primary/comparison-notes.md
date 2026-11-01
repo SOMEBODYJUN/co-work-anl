@@ -1,0 +1,5 @@
+# 全仓实质比较
+
+旧actual遗漏private谱与rootΔ私有尾q页全文比较，不把新fullSPE地板直接套rootbad计划。旧J2原8402和现障碍全文，对比真实b/容器pI/动态首同route，保E非全域互支及allmaximal阻碍。current124两个完整资源页与1486原input全文，保无strategy→独立build及6583不同6306 sourceSHA。
+
+本批F/G两个一般谱/全private任意prefix扩展/E赋值容量都分别证明，不将层级≥当half总量。源两review读序严格Gblind/F知情、有限Gonly，不倒填F数值或E审查。全共享Q空F/G退direct但E约束仍在；universal proof解析，有限1200/2288等不是新run或一般证书。

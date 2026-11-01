@@ -1,0 +1,83 @@
+# 数学、输入与执行逐项自查
+
+- [x] 5主源40285B全读，root code/report真context同SHA复用不抵原entry或done。
+- [x] 真实30id pushed f2c7ed...synced，仅取本5实际交集/owner/sourceSHA。
+- [x] 两个exact源码SHA均无旧成功，true闭包齐才各原入口1。
+- [x] 两replay新空目录，原source与deps字节不改，绝对路径迁移明示。
+- [x] root6714标准库顶层读2data37315B，guard只控main，exclusive输出。
+- [x] root消费customers/topics/multiplicity/actions history/action，7/4/14写死非通用schema verifier。
+- [x] root不读security JSON，不导入规范solver或作者旧程序。
+- [x] 400策略键域确认，但只399非空节点2793 IC含self。
+- [x] root未核空根最佳，不能将所有7指定根称完整SPE。
+- [x] 原单位53/14类型/root真路径同输入，新4803冻全字节相同。
+- [x] root finish2800不含空根，payoff3227=规定399+分支2793+7+28。
+- [x] root coverage218=210multisets+1support+7root，不假新优化器。
+- [x] root mask12/105type覆盖包括core1type，不把typebasis当可行SPE方向。
+- [x] 7root d六29over3及P19，前6Delta28over3/P0。
+- [x] 7row W51/51/52/51/51/52/51和margins−77/−77/−79/−77/−77/−79/−49。
+- [x] point预算前两86over3，末两67over3或70over3，对D2或1。
+- [x] 泛重数结论需fixed positive-depth tau仍合法SPE，zero重数去重条件保。
+- [x] private mask4/32范围/末q谱是解析承重，onepoint不变generalbudget。
+- [x] 共同core四人各1over4不变Delta、W/OPT各1、margin减1。
+- [x] graph2920 ROOTparents6/sys.path必须落新source-root，不能偷用当前package。
+- [x] graph imports4source691/8640/9943/6201共25475，全字节/全文核。
+- [x] graph datafile0，18个实例内部构造；包源码仍真实dependency不能省。
+- [x] __init__导certificate类定义不等调用verification。
+- [x] 只canonical outcomes/stats，certificate/worst_certificate/ordered_outcomes/verify_certificate均0。
+- [x] model压缩multiplicity为不同单位克隆，provider仍unit。
+- [x] exact countsets缓存不限制Markov；每有序孩子可以独立选续局。
+- [x] R terminal singleton；M=maxaminchild当前、union按当前>=M筛选，pure集合真量词。
+- [x] 根输出cardcountset非有序路径/完整σ数量，无full certificate输出。
+- [x] cycle2k边顺序i then i/i+1，band3k−2按lex abs≤1，未补Cartesian。
+- [x] m=k3/4/5×2图×3weight18，非random/策略锥/一般k扫描。
+- [x] weightuniform/bank4/staircase精确定义，2k资源类是unitclients。
+- [x] k对角边覆盖全部2k资源，OPT=sumweights仅此输入coverageidentity。
+- [x] graph optimal_welfare实际支持0..m枚举，非root210multiset路径。
+- [x] worst min(W,q)字典序保证数学vector不随set order变化。
+- [x] 18math结果最大17over12仅cycle4staircase，不能推图类/generalhalf。
+- [x] 18完整worstvectors+counts/stat/retained均保，oldtiming原封。
+- [x] countstates6组84/495/3003/120/1001/8568=C(q+m,m)。
+- [x] 18合39813状态/28125终端，不冒SPE或IC数。
+- [x] 18根cardcountset合307=原keylambda307，source._solve136668含cachehits。
+- [x] new graph18240仅18elapsed字段差，math/顺序全同，不称byteequal。
+- [x] 实际timing/profile开销保，非性能基准，stdout7212/stderr0。
+- [x] root stdout772/stderr0、graph/root Python3.12.14 optimize0断言开启。
+- [x] 两input/root各parse+hash读，graph包import原路径核，无额外original call。
+- [x] padded保险主稿7608全文，m≥2 oldtau positive-depth allSPE而root可bad。
+- [x] Delta=maxd−u≥0含currentA，d用各原τ真实后继。
+- [x] s>0且s≥Delta，有理须全部旧新客户共同L复制回unit。
+- [x] sDelta时L=lcm1..m可清Δ，公式未缩放记账/实际L倍分清。
+- [x] m个保险主题X2s/Y(m−1)s/(m−2)Zs，全旧×保险Cartesian最多mp。
+- [x] H全rootX子树Y，任意重复X/Z前缀a+c使Y收益≥s/X≤s/Z≤s。
+- [x] LX二位X，其后全Y包括二位改Y/Z，保险rootprofit s。
+- [x] LY首非Y=X后全Y、首非Y=Z永久BI退出，不能无X大量Z仍强制X。
+- [x] LY纯Y当前X独享2s，改Y未来/末位分别s或(m−1)s/m<s。
+- [x] LZ任意complete BI，root自身块s保证≤s，不伪常值suffix。
+- [x] m2无Z，H/LX/LY边界仍真；punitiveXX覆2s非compliantXY的3s。
+- [x] joint根后一次固定mode，未来old动作不改变保险mode/反之。
+- [x] 任意joint正深度偏离收益差两nonpositive和，fullCartesian承重。
+- [x] actual rootu+2s，其他dB+insurance≤u+Delta+s≤u+2s。
+- [x] oldactualpath不变，Wins(m+1)s，保险OPT与总C(2m−1)s。
+- [x] 旧最优m元组与保险m块按位置配对合法，OPT相加不用冻结后继。
+- [x] half deficit只减3s，非客户成本也降3s。
+- [x] Delta0旧τ已完整SPE不把s0塞正s保险构造。
+- [x] fixedm half⇒R4用sDelta加L；R4⇒half取Delta0，保全部模型量词。
+- [x] G>3Delta只compiler strict触发，未展示真正badoldplan。
+- [x] old二主题δhalf(m+1)s vsnew3s改善(m−2)s，但C增同(m−2)s。
+- [x] spread总C≥(m+1)Delta不等half dilution下界，本padded完全相容。
+- [x] 第一份7442blind先rootstatement再独立proof/audit，后读作者正文，不无先验发现。
+- [x] 第一份blind明确不审sunflower dilution锐性，历史先验不被后读改写。
+- [x] 后续7242/1827/7382原文完整context，仅相关不primarydone。
+- [x] sharp K为全部合法主题交集，不只maximal intersection；内部root仍含K。
+- [x] sharp fixed sameA两genuine suffix，root本身不需BR，δ>0且cost高分支W。
+- [x] 动态删除不直接扩张fixedroot，保a/w−a非均匀背景资源函数。
+- [x] sharp k≥2用O≤W+(m−ell)μ/W≥(m−1)μ+a/k；k1保BminusA遗漏。
+- [x] sharp2WH−OPT≥|K|+3δ只精确disjoint残余maxima类，非一般overlap。
+- [x] baseline任何suffix成本≥|K|允许δl≤0，多independent坐标signed总差仍≥3Delta。
+- [x] 根以下每坐标genuine independent suffix承重，不扩继续coupling/sharedclients。
+- [x] 架构3锐不证明R4的3对任意oldtau最好；两种优化对象分清。
+- [x] 作者/盲insurance120552/22620和sharp34/750/90只历史finite审计，本批codeentry0。
+- [x] 4旧formal/成熟对象比较保原SHA，组件复用不认新发现。
+- [x] 5receipt integrated finalsemantic与externalready/bodypush/done分开。
+- [x] HQ下一5本地齐34889B不因context全读预done，owner需Root实际claim。
+- [x] actual canonical与所有证据C0逐byte，只有LF/TAB/CR例外，冻结原件不改。

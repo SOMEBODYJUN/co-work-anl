@@ -1,0 +1,13 @@
+# 逐源完整阅读、去重与证据范围
+
+120210七节全部：I-INV显式补余J、同次两钱包、直接付款可到过去但不调用过去IC、不属原SAFE图；R入口freshν从头递推、Y退款、无X债但换回fullv必须恢复、MATCH行列及其它行随h改变、旧INIT+CLIP最大current去重。共同fresh R余量未证；本稿不把分模型流拼成统一已付结论。
+
+7498与21405各完整作者/独审，合成一个自足反例。保真实全root列/occupancyP与额外queryK含root、stationary唯一性和cap失败、freeQ与独立行对偶匹配、非stationary、metaNE、fractional七竞争槽与整数八竞争槽、各rootfollowers的最小leader适用边界、FQ/AMP全部有符号原账及后来generalMfull反例。原独审先独立推导固定例、之后读作者FQ/AMP的历史次序不改。
+
+149c原m总人数v_m(0)向所有正深度规定角色的强floor，数学主例/静态鞍点精确落现两对象。新资源保原文件命名、mask表、实际路径与全部福利数、400/2800原报告对照现399+7root责任，未读43258B旧certificate就不说同现35766Bσ字节。只复用已做充分原证据，无新发现器或旧审计run。
+
+47b0完整定义、HM证明、GAP与条件阈值、小人数来源限制、LOAD强化及全部边界；根外生背景0必要，主引理任意完整policy即可、SPE只给M≤W。source所链audit未读未跑，本解析任意m证明不靠扫描。
+
+12现正文全篇同SHA比较及1旧ledger完整相关段见证据manifest；无疑点已完善证明只按实际同SHA复用，不替它们新增done。related代码8190B149行/全部DAG字段/新报告7721B全读及一次原入口；没有把旁读程序、input、report变成第六主源。
+
+新正文明确后来银行族已反generalMfull≤u，八人固定例freeQ仍安全。五人half其它定理成立不会替任何本页未证共同钱包；恰六人及一般助手仍须各自证明。未产生需要替换共享旧页的已核新勘误包；不改Root/他人页。

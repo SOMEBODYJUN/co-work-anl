@@ -1,0 +1,47 @@
+---
+id: CA-R0F997-COUNT-POLICY-PURIFICATION-20261030
+kind: problem
+type_tag: 问题
+title: 完整历史纯SPE的计数策略净化候选
+status: refuted-in-original-CAG-model; historical-finite-tests-retained
+summary: 三人五主题24831单位客户精确排除目标023的全部计数统一实现，同时严格分离最差福利；旧16000随机及499 tie-face阴性保持原历史范围。
+source_refs:
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-18e993ca519949aba29e030d3d7b15b3/strategy_duality/markov_obstruction_audit.py
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-18e993ca519949aba29e030d3d7b15b3/strategy_duality/markov_obstruction_report.json
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-3d6f7a072d5e489eb5a0bdc4d32bb769/true_spe_search/outcome_witness_dag.md
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-3d6f7a072d5e489eb5a0bdc4d32bb769/true_spe_search/audit_outcome_dag.py
+---
+
+# 完整历史纯 SPE 的计数策略净化候选
+
+- 稳定 ID：CA-R0F997-COUNT-POLICY-PURIFICATION-20261030
+- 类型：问题/有限实验
+- 状态：普遍终局净化及最差福利相同两个候选均已被三人五主题原模型反例否定；有限阴性仍只作历史实验，不是half反例
+
+## 候选
+
+原候选问：在同一合法 CAG 实例中，任意完整历史纯 SPE 可实现的终局计数集合，是否等于某些计数状态统一选主题的纯 SPE 终局集合？较弱版本只要求两者的最差福利相同。这两个普遍候选现均被下述严格原模型反例否定。该归约若成立，只能把完整有序树压到计数 DAG；还需另外证明计数策略的半覆盖，不能自动推出 Q-CAG-HALF。
+
+完整树的不同孩子互不相交，允许同一计数状态在不同历史使用不同续局；计数 DAG 要求这些选择同时一致。正确的数学对象是：固定根终局的完整策略 SPE 锥，是否包含在同根终局的计数策略 SPE 锥之并。这是非凸锥覆盖问题，不能以线性 span 或一个计数终局证书替代。
+
+## 有限实验
+
+匿名精确枚举在 \((p,m)=(3,3),(4,3),(3,4)\) 各 2,000 例、\((5,3),(4,4)\) 各 5,000 例，共 16,000 个整数输入；非空客户类型重数独立取 \(0,\ldots,6\)，seed=28691031。全部未发现完整终局集合与计数策略集合的差异。tie-face 精确实验完成 499 例，另 1 例达到枚举 cap，不能当阴性证据。另一个 320-case CAG 微扰审计只验证一个固定净化方向。
+
+这些有限阴性没有证明原候选。后续已实核的CAG原模型严格分离在三人五主题、24831单位客户上给出完整终局集合7个、计数策略终局集合6个；目标023只由完整历史SPE实现，完整最差福利22428小于计数策略最差22429。它不只是给出一份有非Markov动作的策略，而是穷尽648种末层统一映射及130776种第二层选择排除另一计数实现。详见[完整历史与计数统一策略的严格分离](../反例/完整历史与计数统一策略的严格分离--反例.md)。原报告和独立标准库审计均已全字节复现；该例OPT22431，仍满足half。
+
+## 固定私有微扰的失败观察
+
+对一个 \(m=p=4\) 的具体 CAG 输入，原完整 SPE 终局有
+\[
+(1,2,0,1),(2,0,1,1),(2,1,0,1),(2,1,1,0),
+\]
+其中目标 \(q^*=(2,1,1,0)\) 是覆盖 13 的唯一最差终局。把重数放大后给 \(A,B,C\) 加入 \(2,1,1\) 个私有客户，固定 \(\varepsilon=1/100000\) 的该净化方向使唯一完整 SPE 终局变成 \((2,1,0,1)\)，原客户覆盖反而为 14。审计覆盖 85 个完整历史、255 个偏离比较。
+
+这只否定该具体私有微扰方向；没有证明任意小扰动都失败，也没有证明 NEQ-COUNT 候选为假，更不是 Q-CAG-HALF 反例。
+
+## 其余诊断
+
+anonymous_extremal_probe 只枚举每个计数状态统一动作，输出点再以 Fraction 与完整计数策略重算；anonymous_probe_p3m3、p3m4、p4m3、p4m4、p5m3 和 tie_face_p4m3 只作有限证据。abandoned_confluence 与 purification audit 记录了候选的精确义务和一个一般拥挤博弈障碍，不能提升为 CAG 结论。
+
+全模型的非凸锥覆盖/最差福利净化归约现已被该精确CAG反例排除，不能继续作为一般half的待证通用步骤。可研究另有明确假设的受限净化，或使用保留目标终局状态的[终局见证DAG](../等价/终局见证DAG的完整历史可实现性--等价.md)，后者不要求同计数历史统一动作。上述有限实验、特定微扰失败和历史诊断仍保原范围；它们不被改写为当时已知道此反例。

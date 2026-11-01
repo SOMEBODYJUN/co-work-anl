@@ -1,0 +1,7 @@
+# 外部交付边界
+
+Boss4本5真实claim按完整capture/实际子集ownerSHA核；原guard均无main，顶层各新空迁移entry1。没有共享Git/claim/done/show/网络。最终semantic disposition integrated；外部ready/bodypush/done状态严格分开，发布交Root。
+
+5155新5403与旧冻结只source_sha字段差（旧1d150引用无原字节，当前f0a14339真输入）；919新526整冻字节同。两个真实输入合同分别1个MD/0文件，不能交换。旧其它原审计均未重跑；被动观察不新增source函数。
+
+原23id回执pushed7891451cbd07d36981ec193061e5107a20dbddd8的local_sync保持needs-attention；Root独立aad9b stash2tracked/2untracked全同、0missing/different/unmerged报告原样保。最初只接受synced的等待门检查中止于授权前，0原entry/0源函数，脚本与stop记录保；随后按已恢复原回执/本5ownerSHA重新核授权，才各1成功原run。门失败不算原程序失败或多run。

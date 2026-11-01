@@ -1,0 +1,5 @@
+# 数学关系核验
+
+benchmark给缺合法回复查询的非SPE反点，closure从J回填R刚好揭穿它；这是反驳限定字母表与精确归约的承重联系，不造“closure充分解决half”边。certificate提升只指已有λ/ρ，all-history闭包可能全目录，人数不控大小。
+
+HH strict allL允许全换策略仍不能保order，与fixedsigma循环closure不同；标签商/guard安全添题也各有不同操作。原pure row松弛点非SPE同scope，不转授六人反例。security原作者级推论/有限float和原base审查层级分开；真实bank后反DIRECT/FM与旧复制scheduler条件任务分开。全部边解释条件，shared map未动。

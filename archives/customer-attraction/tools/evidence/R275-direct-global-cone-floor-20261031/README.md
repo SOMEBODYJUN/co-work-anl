@@ -10,7 +10,7 @@ their SHA-256 values match `cleanup/inventory.jsonl`.
 Run from the repository root:
 
 ```sh
-python archives/customer-attraction/tools/evidence/R275-direct-global-cone-floor-20261031/replay/verify_records.py
+PYTHONDONTWRITEBYTECODE=1 python archives/customer-attraction/tools/evidence/R275-direct-global-cone-floor-20261031/replay/verify_records.py
 ```
 
 The checker reconstructs the finite continuation recursion from

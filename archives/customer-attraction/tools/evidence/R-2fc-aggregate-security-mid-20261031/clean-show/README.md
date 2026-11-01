@@ -1,0 +1,3 @@
+# clean show attempt
+
+`python co-work-anl/tools/cleanup.py show <id> --out ...` was attempted for all eight IDs. Each exited 1 with empty stdout and no output file because the promisor fetch could not reach the configured browser proxy (`Failed to connect to browser-proxy port 8889`; subsequent `could not fetch <blob> from promisor remote`). The eight `*.stdout` and `*.stderr` files preserve the actual results. The frozen source bodies were then read one by one at their GitHub raw URLs in the browser; the extracted fields and read method are recorded in `../sources-summary.json` and `../raw-read-log.md`.

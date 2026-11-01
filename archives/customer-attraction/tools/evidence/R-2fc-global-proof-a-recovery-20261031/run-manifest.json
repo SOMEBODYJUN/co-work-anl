@@ -1,0 +1,19 @@
+{
+  "validator": "run/validate_recovery.py",
+  "validation": "run/validation.json",
+  "py_compile": "source/*.py",
+  "replays": {
+    "family": "replay/family",
+    "obstruction": "replay/obstruction",
+    "truncated": "replay/truncated",
+    "ratio": "replay/ratio"
+  },
+  "commands": [
+    "python3 -m py_compile source/*.py",
+    "python3 replay/family/audit_collision_free_family.py",
+    "python3 replay/obstruction/audit_collision_free_obstruction.py",
+    "python3 replay/truncated/audit_truncated_potential.py",
+    "python3 replay/ratio/collision_free_ratio_probe.py --trials 3 --seed 29393"
+  ],
+  "all_exit_0": true
+}

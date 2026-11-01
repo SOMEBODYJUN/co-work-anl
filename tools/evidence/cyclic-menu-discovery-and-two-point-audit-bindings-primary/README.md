@@ -1,0 +1,7 @@
+# 作者两点audit与旋转浮点发现
+
+4primary19848B全部完整语义读，2duplicate精确去现LQ程序+字节相同原asset，2integrated到1新程序对象。浮点LP缺早期IC，正例靠后续Fraction/解析精确识别但始终非SPE。
+
+7r3查36尾，8r3第22尾正例提前停；计划7r4未进入。原19/35轨道全mask/全向量已读保，实数w不是整数单位输入，浮点rational识别不当新exactcert。0原import/LP/CLI/旧成功重跑，wholeSHA不是原运行日志。
+
+原完整多组claim/currentowner/sourceSHA后才receipt，rawsync原值与需要的独立恢复proof另保；Root先实际push正文证据再done。本代理0sharedGit/网络账号/mapper。

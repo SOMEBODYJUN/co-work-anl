@@ -1,0 +1,212 @@
+{
+  "all_five_outputs_parsed_in_full": true,
+  "normative_pool_counts": [
+    {
+      "s": 1,
+      "selected_sets_exhausted": 3,
+      "matching_calls": 3
+    },
+    {
+      "s": 2,
+      "selected_sets_exhausted": 15,
+      "matching_calls": 30
+    },
+    {
+      "s": 3,
+      "selected_sets_exhausted": 63,
+      "matching_calls": 182
+    },
+    {
+      "s": 4,
+      "selected_sets_exhausted": 255,
+      "matching_calls": 935
+    },
+    {
+      "s": 5,
+      "selected_sets_exhausted": 1023,
+      "matching_calls": 4528
+    },
+    {
+      "s": 6,
+      "selected_sets_exhausted": 4095,
+      "matching_calls": 21287
+    }
+  ],
+  "weak_H2_fixture": {
+    "generic_multislice": [
+      {
+        "n": 4,
+        "m": 3,
+        "M2_dimension": 67,
+        "M2_rank": 16,
+        "one_hot_tests_degree_le_3": 700,
+        "row_identity_tests_degree_le_3": 525
+      },
+      {
+        "n": 5,
+        "m": 3,
+        "M2_dimension": 106,
+        "M2_rank": 30,
+        "one_hot_tests_degree_le_3": 1880,
+        "row_identity_tests_degree_le_3": 1128
+      }
+    ],
+    "mixed_H2": {
+      "k": 2,
+      "b": 2,
+      "T": "4/3",
+      "jobs": 10,
+      "machines": 9,
+      "edges": 32,
+      "M1_rank": 18,
+      "one_hot_tests_degree_le_2": 4910,
+      "all_global_load_localizers_dimension": 33,
+      "localizer_PSD_ranks": [
+        {
+          "machine": "('V', 0)",
+          "rank": 18
+        },
+        {
+          "machine": "('V', 1)",
+          "rank": 18
+        },
+        {
+          "machine": "('G', 0)",
+          "rank": 18
+        },
+        {
+          "machine": "('R', 0, 0)",
+          "rank": 11
+        },
+        {
+          "machine": "('R', 0, 1)",
+          "rank": 11
+        },
+        {
+          "machine": "('R', 0, 2)",
+          "rank": 11
+        },
+        {
+          "machine": "('R', 1, 0)",
+          "rank": 11
+        },
+        {
+          "machine": "('R', 1, 1)",
+          "rank": 11
+        },
+        {
+          "machine": "('R', 1, 2)",
+          "rank": 11
+        }
+      ],
+      "all_shared_CONFIG_edge_marginals_checked": 32,
+      "positive_same_resource_pair": "1/54",
+      "negative_same_resource_triple": "-1/162",
+      "mixed_global_M2_numerically_checked": false,
+      "mixed_global_M2_proof": "tensor products of PSD components, then nonnegative average"
+    }
+  },
+  "independent_pool": {
+    "status": "passed",
+    "resource_assignments_bruteforced_s_1_2_3": 19767,
+    "all_selected_subsets_quota_flow_checks_s_1_through_4": 1578,
+    "cyclic_all_k_constructions_s_1_through_100": 10100,
+    "optimized_actual_tree_checks": 499,
+    "s_K_4": {
+      "value": "5/8",
+      "selected_variables": 5,
+      "quota": 3,
+      "actual_allocations": {
+        "4": [
+          0,
+          4,
+          8
+        ],
+        "0": [
+          1,
+          2,
+          3
+        ],
+        "1": [
+          5,
+          6,
+          7
+        ],
+        "2": [
+          9,
+          10,
+          11
+        ],
+        "3": [
+          12,
+          13,
+          14
+        ]
+      }
+    },
+    "precision": "exact integers/Fraction",
+    "scope": "statement-first independent proof/probe, not canonical status"
+  },
+  "star_profiles": {
+    "python_version": "3.12.14",
+    "arithmetic": "fractions.Fraction, exact; deterministic",
+    "source_sha256": "0f0fbc2dc8f3a1f302b3347f5a68076529419cfeae62cef6cf716f9324e19cc1",
+    "source_of_mathematical_obstruction": "boss4 public message 5f557aa15a544f7aa7d02e24549b6ca1",
+    "profiles": [
+      {
+        "q": 2,
+        "feasible_A_profiles": 3,
+        "infeasible_B_profiles": 4,
+        "all_pruned_assignments_checked": 19
+      },
+      {
+        "q": 3,
+        "feasible_A_profiles": 4,
+        "infeasible_B_profiles": 11,
+        "all_pruned_assignments_checked": 65
+      },
+      {
+        "q": 4,
+        "feasible_A_profiles": 5,
+        "infeasible_B_profiles": 26,
+        "all_pruned_assignments_checked": 211
+      },
+      {
+        "q": 5,
+        "feasible_A_profiles": 6,
+        "infeasible_B_profiles": 57,
+        "all_pruned_assignments_checked": 665
+      },
+      {
+        "q": 6,
+        "feasible_A_profiles": 7,
+        "infeasible_B_profiles": 120,
+        "all_pruned_assignments_checked": 2059
+      },
+      {
+        "q": 7,
+        "feasible_A_profiles": 8,
+        "infeasible_B_profiles": 247,
+        "all_pruned_assignments_checked": 6305
+      },
+      {
+        "q": 8,
+        "feasible_A_profiles": 9,
+        "infeasible_B_profiles": 502,
+        "all_pruned_assignments_checked": 19171
+      }
+    ],
+    "specific_envelope_counterexamples": 2,
+    "limits": "Finite original-star profiles only; arbitrary replacement matrices are excluded by the separate universal proof, not enumerated here."
+  },
+  "sublinear": {
+    "status": "ok",
+    "parameter_checks": 20,
+    "ratio_identity": "(2k-1)/(k+1)=2-3/(k+1)",
+    "scope": "machine-count sublinear r(M), finite examples only"
+  },
+  "no_historical_frozen_JSON_byte_equality_claim": true,
+  "original_source_not_modified": true,
+  "additional_original_entry_runs": 0,
+  "later_independent_graph_selfcheck": "selfchecks/long-path-actual-count.py (one new explicit graph, not original program rerun)"
+}

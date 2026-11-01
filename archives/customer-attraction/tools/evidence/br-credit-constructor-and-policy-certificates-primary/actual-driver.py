@@ -1,0 +1,24 @@
+from pathlib import Path
+import json,hashlib,shutil,subprocess,sys,os,time,datetime
+ROOT=Path('/workspace/scratch/37f0f9248cfc');C=ROOT/'boss4-next-cache';REPO=ROOT/'boss4-research';S=C/'r3-br-credit-constructor-and-policy-certificates-primary';E=S/'archives/customer-attraction/tools/evidence/br-credit-constructor-and-policy-certificates-primary';IDS=['4507240c02111aa1370e','c388d1ee1cf9aeeb96fc','fe415b54d0e09b2d0c48']
+cp=Path(sys.argv[1]);claim=json.loads(cp.read_text());assert claim['status']=='pushed' and claim['actor']=='Boss4' and set(IDS)<=set(claim['ids']);sync=claim['local_sync']['status']
+if sync=='needs-attention':
+ proof=json.loads(Path(sys.argv[2]).read_text());assert proof['stash_kept'] and not proof['missing'] and not proof['different'] and not proof['unmerged'] and all(z['same'] for z in proof['tracked'])
+else:assert sync=='synced'
+m=json.loads((E/'source-manifest.json').read_text());byid={x['id']:x for x in m['rows']}
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def js(p,x):p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
+for x in m['rows']:
+ d=json.loads((REPO/'cleanup/progress'/(x['id']+'.json')).read_text());assert d['owner']=='Boss4' and d['disposition']=='in-progress' and d['source_sha256']==x['sha256'];assert sha(S/x['preserved_at'])==x['sha256']
+x=byid[IDS[0]];results=[]
+for n,ident,outname in [(5,IDS[1],'merge_br_credit_certificate.json'),(8,IDS[2],'merge_br_credit_m8_certificate.json')]:
+ R=E/'runs'/('constructor-m'+str(n));assert not R.exists(),'already attempted; retain first event and do not repeat';T=R/'source-root';T.mkdir(parents=True);p=T/x['path'];p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(S/x['preserved_at'],p);assert sha(p)==x['sha256'];argv=[sys.executable,x['path'],'--m',str(n)];started=datetime.datetime.now(datetime.timezone.utc).isoformat();tick=time.monotonic();env=dict(os.environ,PYTHONOPTIMIZE='0',PYTHONDONTWRITEBYTECODE='1',PYTHONHASHSEED='0');js(R/'planned-entry.json',dict(argv=argv,code_sha256=x['sha256'],embedded_only_input=True,no_frozen_output_seeded=True,claim_remote_tip=claim['remote_tip']))
+ try:
+  proc=subprocess.run(argv,cwd=T,env=env,capture_output=True,timeout=60);rc=proc.returncode;stdout=proc.stdout;stderr=proc.stderr;timeout=False
+ except subprocess.TimeoutExpired as exc:
+  rc=124;stdout=exc.stdout or b'';stderr=(exc.stderr or b'')+b'\nOriginal constructor timeout after 60 seconds.\n';timeout=True
+ elapsed=time.monotonic()-tick;(R/'stdout.txt').write_bytes(stdout);(R/'stderr.txt').write_bytes(stderr);event=dict(source_id=x['id'],source_sha256=x['sha256'],argv=argv,cwd=str(T),started_utc=started,ended_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),wall_seconds=elapsed,exit_code=rc,timeout=timeout,stdout_sha256=sha(R/'stdout.txt'),stderr_sha256=sha(R/'stderr.txt'),source_inputs_unchanged=sha(p)==x['sha256'],new_empty_directory=True,stdlib_only=True,embedded_input_only=True,original_frozen_output_seeded=False,assertions_enabled_by_PYTHONOPTIMIZE_0=True,claim_remote_tip=claim['remote_tip'],claim_original_local_sync=sync,driver_sha256=sha(Path(__file__)));js(R/'event.json',event);assert rc==0,stderr.decode()
+ native=p.with_name(outname);assert native.exists();shutil.copyfile(native,R/'generated-certificate.json');old=S/byid[ident]['preserved_at'];newdata=json.loads(native.read_bytes());olddata=json.loads(old.read_bytes());printed=json.loads(stdout);summary={k:v for k,v in newdata.items() if k!='policy'};assert printed==summary and 'policy' not in printed
+ oldrows={tuple(z['counts']):z['action'] for z in olddata['policy']};newrows={tuple(z['counts']):z['action'] for z in newdata['policy']};diff=[dict(counts=list(c),old=oldrows.get(c),new=newrows.get(c)) for c in sorted(set(oldrows)|set(newrows)) if oldrows.get(c)!=newrows.get(c)];same=native.read_bytes()==old.read_bytes();cmp=dict(frozen_source_id=ident,frozen_sha256=sha(old),generated_sha256=sha(native),generated_bytes=native.stat().st_size,generated_file_byte_identical=same,all_JSON_fields_equal=newdata==olddata,stdout_is_policy_omitted_summary=True,stdout_bytes=len(stdout),stdout_equals_full_certificate=False,summary_fields_equal_saved_JSON_without_policy=printed==summary,policy_rows=len(newrows),policy_row_differences=diff,no_old_frozen_output_was_input=True);js(R/'frozen-comparison.json',cmp);assert same,'Fresh generator output differs frozen certificate; preserve this event and inspect before any further call'
+ results.append(dict(mode=['--m',str(n)],exit_code=rc,wall_seconds=elapsed,generated_bytes=native.stat().st_size,stdout_bytes=len(stdout),full_certificate_byte_identical=True,policy_rows=len(newrows)))
+js(E/'native-constructor-execution-summary.json',dict(original_constructor_entries=2,each_mode_once=True,modes=[['--m','5'],['--m','8']],results=results,new_implementation_entries=0,NI_independent_audit_repeated=False,extra_primary_done=0));print(json.dumps(results,ensure_ascii=False))

@@ -1,0 +1,69 @@
+---
+id: tail-price-certificates-cannot-replace-complete-continuation-incentives
+kind: obstruction
+type_tag: 障碍
+title: 尾部价格证书不能替代完整续局激励
+status: proved-static-compression-counterexamples; not-SPE-half-counterexamples
+summary: "全二元十客户menu根IC/尾价格good甚至强化端点均不足替完整尾IC；rook高尾floor也不能给静态保护，修正偏离3/2而非2。保静态边际gap小例与当前F/G/E真正SPE域区别。"
+source_refs: ["source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/fresh/README.md", "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/exchange/exchange_notes.md", "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/induction/README.md", "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-d3981c0168644971803a9c3380ed687c/continuation_general/README.md"]
+---
+
+# 尾部价格证书不能替代完整续局激励
+
+fresh6649B、exchange4784B与两导航全部实读并在真实认领后核SHA，形成自足障碍正文；原未认领草稿边界按原字节保，不将当前claim误记为正文推送或done。这里反驳明确的**静态压缩接口**，不用它们冒原完整SPE/half反例，也不把失败扩成一切价格或归纳不可能。
+
+## 连静态边际gap最大加入利润也不足
+
+曾试正背景归纳\(OPT_r(0)\le2V_{active}+B_{background}\)，以当前u≥OPT_r−OPT_(r−1)补递推；源称正背景逐人gap-floor已失败，不能当前提。一个更弱、无须SPE的静态替代也假：两不交四客户主题T1,T2，另B各取Ti两客户。OPT_2=8、OPT_1=4；固定一个竞争主题B后，查询T1或T2各赚2共享×1/2+2独享=3，查询B赚4/2=2，故最大加入利润3<差额4。
+
+两人真实顺序根可选T1/2后对方完整另一主题，根得4，所以此静态例不是动态候选或half反例。一次LP只是旧发现工具，实际数学反证由上面八个不同单位客户定义成立，不需要新扫描。
+
+## 十客户全二元目录的整菜单反例
+
+十个不同单位客户，目录S是全部两客户子集（45个不同非空主题），m3。对每个根A={a,b}，选择不同c,d且均不在A；该根后仅指定尾菜单\({a,c},{b,d}\)。所有根的完整静态叶中a,b各负载2、c,d各1，因此
+
+\[
+R_A=1,\quad u_2=u_3=3/2,\quad W_A=4.
+\]
+
+根的所有菜单收益同1，指定任一根A0均满足对这份菜单的根IC。此处没有假设尾节点IC，也没有给一张完整策略。
+
+定义辅助连续覆盖价格（v≥0）
+
+\[
+B(v)=\sup_{w_T\ge0}\left[\sum_x\min\left(1,\sum_{T\ni x}w_T\right)-v\sum_Tw_T\right].
+\]
+
+令z=Σw_T，全部二元主题使覆盖信用≤min(10,2z)，所以目标≤max_(z≥0)[min(10,2z)−vz]。一个完美匹配的五个主题各权1达到z5/信用10，零权也合法，故
+
+\[
+B(v)=10(1-v/2)_+\quad(v\ge0).
+\]
+
+这些w是辅助静态连续质量，不改变原客户/玩家单位性。于是在每个根菜单叶，尾均满足B(3/2)=5/2≤W_A4；但根B(1)=5>4。因此“每列尾价格good +菜单根最佳 ⇒根价格good”的压缩归纳为假。
+
+连既有m3末两端点κ_3=1的强化也被同例覆盖：尾精确有B(3/2)=W_A−3/2=5/2，仍不能删真实尾IC。
+
+为什么非SPE：前缀A,{a,c}只覆a,b,c三客，末位规定{b,d}得3/2，却可选两名全新客户得2。因此原half与旧(D)没被反：OPT_3=6，W4，净gap2≤3R_A3，half6≤8。反例只针对把完整尾树压成若干价格证书的充分静态组合命题。
+
+## rook高尾floor也不能给根保护
+
+q行客户R_1,…,R_q和q列客户C_1,…,C_q，共2q单位客户；主题(i,j)={R_i,C_j}，m=2q−1。根任选(i,j)后，尾取所有其它同行(i,k)、k≠j及同列(a,j)、a≠i，共2q−2主题。终局根两客各负载q，所有尾各有一个共有核心和一名独占叶，因此根2/q、尾各1+1/q。OPT_m=2q；q≥4时
+
+\[
+2/q<q/(2q-1)=OPT_m/(2m)=t,
+\]
+
+而尾利润全部≥t。故“存在一个主题A能抵御任意所有尾利润≥t的静态元组、根仍≥t”的保护候选失败；每个根都有这种尾压低它。
+
+这组尾也非PNE/非SPE。一个尾(i,k)删自身后其叶列k无人覆盖，换到(a,k)、a≠i，保留该叶得1，行a原仍被(a,j)覆盖而共享得1/2，合3/2>1+1/q。对称的同列尾也一样，末位必有严格偏离。早期沟通称“未覆盖行列可得2”错误，已由原稿修正；正确偏离是**保自己的独占叶、换核心**得3/2。fresh分支曾遗漏这项并误说尾PNE，已撤回；这只修其私人核对，不撤静态保护反证。
+
+## 与真正席位谱及一般目标的关系
+
+两例都保某种尾收益/价格、甚至菜单根IC，却缺真正完整后继SPE。这与[真实前缀F/G](../定理/真实前缀完整利润席位的一份福利预算--定理.md)的归纳本质不同：F的竞争元组本来只静态min，但必须在原σ每个真实后继用SPE归纳才将它变当前规定行动地板。[归属E](../定理/归属容量完整利润谱与动态地板边界--定理.md)同样保全部合法有序子树，不能由这类静态尾good反驳其合法性，也不能让其未证总量付款免费成立。
+
+本轮总导航登记CA-PREFIX-COUPLED-SEAT-BUDGET-v1：解析先G重构后F核，数值只G严格例，E不自动超过真实版本旧J2；这些已完整整理，不因当前三个导航文件重复登记完成。总导航另称root已重跑标准位置脚本通过，此为源历史记录，不是本次原run。原six研究分支已交接、非后台持续运行；本清洗不新开其代理，也不把旧模型启动记录当当前实际动作。
+
+总导航明确真正净缺口记I=C∩O、G=C\O、R=O\C，要|R|≤|I|+2|G|，与OPT≤2W等价。gross遗漏界旧71客户反已停止。一般归纳导航说安全值/extra-one/调和势未新增承重关系，有限阴性不作推进；不能从新谱或这些静态失败推原目标真假。下一步需全部真实离轨IC和同一份实际信用的跨树支付。
+
+本页只有解析与原MD/context字节检查，原程序0/规范SPE0/新LP0/新参数扫描0。源gap五锥、price/tax定向脚本与菜单九证书/两组三人93query均按历史自报；没有旧程序输入闭包就不冒新成功。当前五人另证成立，六人未由本材料解决。原件及授权边界保在[证据目录](../../tools/evidence/general-net-exchange-and-full-menu-primary/README.md)。
