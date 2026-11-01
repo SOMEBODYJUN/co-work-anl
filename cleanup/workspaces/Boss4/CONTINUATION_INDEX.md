@@ -571,3 +571,11 @@ R3_RESUME26UV：覆盖交换4主稿及3原related首次primary准确duplicate同
 R3_RESUME26UV数学/证据pushed c55a4242118fe894e0a3480ebd7afdff611b69e6；26源done另推送 9c725196f2924b33462590cb58df9d4f0817e14c。Boss4累计3105完成，实际未完68；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME21VE：Root背景租金/根保险3含全历史actual-prefix等号及架构强安全成本/MARG，paircone大报告2全71/11273动作无损实读，weak另一付款证书2与正确17/12，逐人/星地板4完整21记录和Fatal退出域，firstowner全O最大CLIP强候选4明确past不借假IC，direct最终遗漏路径/固定Γ锥4及当前G/R已否，shared自由fresh INIT/固定HIT核/BANK2。全部原入口/LP/BI/IC/随机/新数学checker0，解析组件/开放接口/有限float分层；共21主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME21VE_REMAINING_SCOPE.json。
+
+R3_RESUME21VE数学/证据pushed bca541c8b842aed492e71a5b9ddb5fc2814abfd6；21源done另推送 af39f17d740cca6c790b52350fd16ae0fa73f4c8。Boss4累计3126完成，实际未完73；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME39VW：十个独立实读范围共39主源：三组合模板四/逐人仿射地板四/父CLIP六证书四/末位菜单五/最优索引分配五/均匀组合三/同题删位SA四/背景新增覆盖四/只修次位及离轨CLIP三/独立静态CCE三；Root将既有十三人完整SPE对全人数SA的45/13严格反例接回两旧账，历史原字节与阅读时态均保留，未推为六人反例。所有本批原入口/新数学程序0，完整报告与浮点提案、有理可行性、旧成功认证分层；先明确checkpoint pushed再done；共39主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME39VW_REMAINING_SCOPE.json。
+
+R3_RESUME39VW数学/证据pushed 609a28e6932ad916a33cc229580afc60e36ef0d1；39源done另推送 76b057430a0bc3d594515f99ec0d67df5d83584e。Boss4累计3165完成，实际未完70；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME9VY：Root两固定完整策略真安全聚合重权2：两份全输入302动作、质量归一/全历史锥/真n−1槽/正门合法性与两float有限阴性完整；R5a主总账与DEEP金额5原量词/当前已反接口/乘积弱界；只修次位作者与未调用审计2，保fixed-m合同逻辑与真实fallback、原py EOF不冒成功审计。0原入口/新数学程序，历史范围精确保留，逐源done在明确正文依赖pushed后另推；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME9VY_REMAINING_SCOPE.json。
