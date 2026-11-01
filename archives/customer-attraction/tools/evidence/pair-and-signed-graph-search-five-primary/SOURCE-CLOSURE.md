@@ -1,0 +1,5 @@
+# 原入口与新窄核的依赖边界
+
+source-root原tree_coupling目录保两.py和三.json。pair入口同目录import signed的compositions/real_strategy，无其他本地文件读取；signed无本地helper或文件输入。原两个main有guard，当前均未import或运行。外部NumPy/SciPy/HiGHS未捕获原版本；不为取版本启动数学入口。原CLI可--help只argparse退出，正式main会覆盖固定BASE输出，输出JSON无原运行log/argv/源码hash绑定。
+
+新标准库check_three_reported_root_and_target_once.py只读actualmanifest及三原JSON；完整键形状属于结构gate，数学只走n个root动作与两个cover求和，不求任何最佳响应/Γ/κ/LP。结果已实际一次保存，不由package builder触发；拒覆已有result。复核应另指定新out，不将新执行冒本次原事件。当前脚本原manifest local_path按本次C路径，source-root等价文件可另建manifest；实际argv/全输入指纹留在原event，不伪成原程序认证。

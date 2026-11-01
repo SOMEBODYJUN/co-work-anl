@@ -1,0 +1,5 @@
+# 末菜单全列精确税与regular自由分数证书
+
+五primary15852B、七必要related53134B全部正常取得并全文读。三自足对象保全部k完整SPE拼合、全部Q匹配证书、原23核静态检查与全11字段、正则共享层的精确fractionalδ及未实现损失门槛。
+无任何原import/LP/BI/IC/静态核或新数学checker运行。作者k12模式审计和原k22标量检查只归原证据，不能替全k解析证明。regularδ不等于普通整数竞争v。
+source-root保原布局与原字节；所有related只related不额外done。10ZW rawsync=synced，完整10ID回执保，但本包只5primary。

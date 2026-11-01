@@ -1,0 +1,13 @@
+# 五源完整自查
+
+18921B五primary新normal全字节/全文，5retained。两个数学引理完整模型/证明/边界+一自足资源code全部/JSON每字段与数据，不以旧9101提及当原4994/3648已读。13ZZ真实pushed/full13ids/rawneedsatt+3u2tracked same/零缺差冲突/stashcd2e保，无25ZO恢复/无未pushed16ZZ替代权威。五size/SHA/blob/capsstderr0齐，旧freeze/sharedR不改，0Git/start/claim/done/凭据外发/原import-main-function/payoff/IC/query/LP/solver/RNG/newchecker。
+
+One-real k>=2,n>=1,q>0/m=k+n/regular可选ellreal+firstk−ell dummy，所有合法主题real≤kq且dummy同k−1池作OPT上界必要目录合同。actualkcopyF每人q，nnewreal+alldummy W=q[r+(k−1)H]；realuniverse≥r+1供末位换dummy fresh/≥2k供lastcopy kfresh。LASTΔ=q−Hq/n≤0⇒H≥n；forcinglastcopy后nfollowers每段至多one real是另设真实branch合同非SPE自动/冻结。sumcload≤k+n/positive Jensen current≥qk²/(k+n) IC⇒n≥k(k−1)，2W−OPT≥q[(2−k)r+(k−1)H]≥q[n−k(k−2)]≥qk。k1无dummy不套H，用W=OPT=rq；n0k>=2lastcopyfresh获利排指定path；q0finiteH全空非严格。Cartesian只同k,n/同完整偏离且逐段合同成立可联合Σq，不免费各段独立IC或后继可分。multi-real使hitpremise消失非已可信，宇宙饱和/入场主题及fresh U未付，不泛所有SPE。
+
+Outside-support anycompleteσ实际i强制T沿sameσ，d≤ui。每后继intersectionI_j subset queryT同叶份额⇒0≤I≤d，E=u_j−I≥[ell_j−d]+≥[ell_j−ui]+。ell必须真branchhistory保证，coarse maxQΣ1/(b+r_remaining) validcurrentlegaldeviation/future最多每客一份；不偷用已假DIRECT/PREFIX。ΣfollowersE_x≤每个outsideT客户一份，同叶共池可联合，past有份额则exactE比count小。末位fresh omittedU去掉trueprefix P给maxQ|Q∩(U\P)|guarantee；i=m/m1/zero/empty sums无需除W。不同T池可重复原遗漏/entryS_m切换history，labelcycles不识别orderedhistories，不免费归actualW。
+
+4994实际onlyinput gzip372216B SHA bad2…同canonical原byte复用/oldnativecert PASS 27243/18675/112050/19164ties/min0已足，不重复。当前仅header/instance/root/schema，明示非全27k新语义首读，不把gzipJSONparse冒全策略审查。fulloriginalpathcopy ROOTparents6正确crossworkspaceinput，oldnativefullreport完整读保、现sourcebound。Nodes按depth逆term所选child最终counts，unitLcm payoff缓存(a,tcounts)不使policyMarkov；IC每nodeallactions含self正gcdprimitive/set/lexsort为10817等价cone，不反sign，minprimitive值尺度非rawprofit。旧multiplicity不用于LP，仅8interesttypes；当前candidate恰(2,2,1,1,1,3,1,25)/36，非新实例。
+
+actual13nodes强制a-childterm后只减当前1_a∈S，load6×8是13位置竞争和，gcoef13/(13+total)，非probq/多除12。challenges(3,5,5,5,5,2)和6069模式不同；8weights+εfree（允许negative）9var、10817IC+6∆≥ε、sumw1，LPmaxε。oldnegativefloat−.0068686868686868695+candidate0IC/four−17/2475/everygaps全保，no positive；有mincandidate>=0检查，不能套旧flag遗漏警告；sum1另字段不是flag但齐次可缩。不能由指定P失败认四pointselfconsistent/所有challengers无解或一般pureSC存在。8dualrecords六IC两challenge/rowids/每8coef和floatmarginals/equalitydual全部显示，无exactrationalizeddual/Farkas certificate，0新补checker。
+
+3648全base/success/candidate/gaps/dual/report fields无损，代码guardmain、stdlib+NumPy/SciPy、唯一packetinput、HERE覆写3648+print；failurebasicmetadata缺成功字段不无解证明；无CLI/newpath/frozenprotect或currentargv/exit/stdout/duration/env/hash事件。oldW33/OPT36/SA/refinedtax证明仅sameinputknowncert，不移到4994目标。全仓PB背景/在轨阻碍/无背景充分IC/隔离逃逸/净遗漏/SC及SA同源分域，five另证不变six未付；phase2具体关系非phase3全图。Root serialwhitelist mathpush→5done。
