@@ -1,0 +1,5 @@
+# 补目录贪心的两步原失败
+
+两primary29811B全部源码与六字段/两步/六利润/120×19兴趣位和120mass完整实读，唯一private4346输入完整同SHA保，原同目录布局闭合。完整5XF pushed/synced实际claim与两个normal捕获/owner/SHA齐，不额外done已处置输入。
+
+数学正文逐式推导指定末位BR/压倒二利润/六actual安全下界必要行和最小actual末位报价LP，分裂clip/微量丢弃与无全六IC的边界；新Z自身成为更强偏离，第二LP失败只这条贪心路线，不授不可补定理。完整原JSON与可逆120行数据view保，view只重排JSON且roundtrip同值，不是收益/IC/LPchecker。原main/import/数学运行0；新阳性仍需有理单位客户和全有序历史SPE精确验收，冻结阴性不机械重跑。
