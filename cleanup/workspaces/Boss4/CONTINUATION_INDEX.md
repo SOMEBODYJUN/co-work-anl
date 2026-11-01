@@ -595,3 +595,7 @@ R3_RESUME18WK：六独立范围18源：三个已完整实读几何/遗漏原rela
 R3_RESUME18WK数学/证据pushed 4713dd91b527a1dfd77708f03c71b380a937ab81；18源done另推送 cf483549b73dcf6307fe49d73532e3de6f59e4a1。Boss4累计3227完成，实际未完62；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME21WP：Root两十八主题bigint区间BI/历史目标控制器与8有限float报告，5个已全文读根helper代码报告/静态审查首次primary保全旧原件，round10一净ROW/StrongA/门槛总稿，交集矩两审计13/15键版本分明，BILL三全24路径/旧九版合同，异组三r1/W1/两不同目标，实际菜单五185全部行与604原处方及named四维却259历史不合。21主源的理论/有限证据/畸形报/历史执行分层；本批原入口/旧成功复跑/新数学程序0；先math/dependencies checkpoint明确pushed再done；共21主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME21WP_REMAINING_SCOPE.json。
+
+R3_RESUME21WP数学/证据pushed fe4d3b70363828d05ad007d707db42538c990e50；21源done另推送 13c3fbe29d9d3dd9ab8b8f679e6c78927884d9e4。Boss4累计3248完成，实际未完58；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME20WS：七范围20源：整树refund两新逐客户随机删比较列静态公式与旧税账去重；父BILL两单位展开/全1296有序域/24最优96steps；netglobal三EG全m反族及显式ROLE可行；残余独审三全q两人族/39完整记录与∀/∃最优分离；双锚三打印点精确不合及9单位新可行校准；局部矩四全树局部tight伪矩/末位显式余项/7完整report；保险三真正high/low策略对和两有理proposal无精确最优证书。原成功复跑/原main/import/LP/IC或新数学程序本批0；证明/有限历史/失败边界分层，先math checkpoint明确pushed再done；共20主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME20WS_REMAINING_SCOPE.json。
