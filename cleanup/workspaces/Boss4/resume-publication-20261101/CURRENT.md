@@ -1,0 +1,17 @@
+# Boss4 当前持续接续记录
+
+本执行使用独立clone `/workspace/scratch/37f0f9248cfc/boss4-resume-20261101`，actor Boss4、repository-cleanup/cleaner、结果rebuild/research-v2、公屏wcg/board-cleanup-20261028。start已registered且实际写端点verified。原boss4-research存在未由本执行发起的Git/草稿活动，完整保留，不再在其工作树写入；所有内部Solver写各自external stage，由Root串行copy/Git。
+
+已确认：本人根3源正文199fb953/done48e4bac3；下一30源数学47eac8fe（远端确认ba7dd09c），其中19源doneaae209e8，另11源保留另一执行已有效done；下一11源数学85c7fb76/done7a6d518b。实际回执摘要见confirmed-operations.json；字段检查不承担数学正确性。共44个来源已有准确完成处置，其中本执行新登记33、保留其他既有11。
+
+当前ready22b含完整22源正文/证据/receipt，尚待本次checkpoint推送及独立done；其来源和文件在ready22b-*，不能把本地就绪称pushed。另5源（warm三大JSON与两审计报告）正在外部收束；新19源正式claim789901b3已pushed/synced，四条已空出的指定gpt-6.1-sol/ultra清洗线已接续。本人6源原成对容量证书加入ready22b，原Fraction唯一一次重放全字节同冻，1554比较；没有把成对失败称half失败。
+
+旧同步warning仅涉及两份已无损gzip保存的原件重复副本：经逐字节解压核相同后移至clone外，stash738e3f04保留，未合并索引为空，后续claim7de3caea及789901b3均synced。详local-sync-recovery.json和exact-transport-adjustments.json。未改凭据、未发生认证拒绝。
+
+本文是持续工作检查点，不是handoff或全仓完成声明。工作仍按实际来源接续；不接管未由本执行开展的其他Boss4并行认领。全仓状态需以当前clean status及源版本记录为准，六人half未由本执行解决。
+
+## 本次追加确认
+
+ready22b数学d351a5ea的远端确认84ead883，22源done另pushed3a524b27。累计本执行新登记55源、保留既有11源，共66源已有处置。新15源claim c020ad83已pushed/synced，19源claim789901b3亦已pushed/synced，六清洗线与Boss继续。ready9含三大warm JSON、两审计报告、固定组全锥FTA及padded菜单四源，完整9来源即将先数学checkpoint、后独立done；当前还未称该9已推送。上文ready22b待推送字段是旧时点。
+
+本批done输入从现在改放仓库外，避免本地刷新重复恢复生成的临时输入；正文与完整semantic-receipts仍先入库。第二次同步提示无未合并索引、只两生成输入文件，已逐字节保全，后续c020ad83已synced。

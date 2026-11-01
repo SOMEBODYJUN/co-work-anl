@@ -1,0 +1,7 @@
+# 源码闭包及历史报告范围
+
+原audit只有itertools.product/Path/json标准库，无项目import、作者helper、LP、输入文件或命令参数。main guard下从15个Boolean会员位产生全部整数系数，覆盖写同目录three_transfer_independent_audit.json并打印完整JSON。原两文件按同源目录原样保存，AST只解析不执行。
+
+POLY精确表达Cp/(p+h)，零numerator先分支；客户背景可各自不同。符号非负性说明与完整真实末位slack合法性均在正文，不把32768位型说成32768个SPE。源码仅strong profit一遍；弱discounted-union由解析支配，不能添加一个父程序未运行的benchmark。
+
+历史报告不附argv/exit/time/代码hash，保原status但不伪造原运行回执。本次32字段规范化只读已有三报告；复制上一批160报告保其原字节/原SHA，绝不把复制变成重新执行或新math成功。
