@@ -1,0 +1,15 @@
+# 数学自查
+
+579293B五primary全核size/SHA/blob/fullread，raw全部source40frozen/scalars/59customers/4681orderedprescriptions经4view全读，非counts代读；leading0/lengthlex/order保持、视图全JSON值反解逐字符同。当前11WQ pushed/synced实际保，0Git/start/claim/done/network凭据。7slots父未启动scope由Root改派，无重叠。
+
+Root授权一次原5026stdlib main闭合raw首次actualevent，已执行exit0/0.1605624270014232s/stdout836/stderr0、新934全字节同55709c…，原code/raw与隔离副本前后SHA同；保完整argv/cwd/envPython版本/时长/exit/原输出/全newfiles。无第二次、solver/compact/tree/扫描/newmathchecker；metadata另parse不算math。main拒已有output，未来复用必须新隔离只code/raw。
+
+原unitmodelm5/k8/59positiveint cohorts数学等价distinctunitcustomers（不假代码逐个展开巨N）。八cover互异由私有/特殊型区分。σ4层全4681/actual55001/counts20100200；σ05=5,σ50=0保同count历史差。LCM60真terminalutility含current分母正、不含不求0/0；所有7nonself32767 min0真实fullSPE，不把最小0全strict。frozen逐role保repeat两5两0，Csum按actualbinaryexits,w/(c(c+1)),Jcoveredw/(c+1)。Qmaxnative762488197001610750,W722024386748740350,C37749121138612125,gap2714689114258275strict，half余682460578423027800。
+
+OPT56distinct5support足覆盖monotone paddingany≤5support；59每型touch{0,1,2,5}直接宇宙达OPT761588195074452900。weak product8^5包括repeat，840opt已涵全部orderedassignments，min01125/Q630010849990532175/negative129762657896820300确本点通过；行独立max22221不能冒optimal。main不输出完整argmaxties/profitvector/peredgewallets，sourceMD/tree细分按原来源不授934字段。
+
+source40frozen/sourceW44924837031/C2140620747/Q46065063663/gap−1000394115原旧seed，不endpoint；source_file/repeatedUpgrade未取不runtime。floatHiGHSOptimal/exact_primal/source20.714s/null dual/empty support是原meta，无精确dual/fullpolicyspace optimum/最小性。所有meta原值保存，ratio440874/417971/normalized3143/835942非5026主要assert项不借运行验它们。作者简化超时只历史，无sourceLP复跑。
+
+tree2954原先只raw的内部先验非当前blind，缺treecode/report不假已读/执行。原tree792multiOPT/未weak vscredible56OPT+840weak是不同实现范围，不能混循环数或矛盾。compact21的先有StrongA失败不借作raw4681PASS；本仅新闭合旧point，不首次反例。m5weakpass与顶部后续m7generalexistfail分开，m6general族仅等号、宽Q预算/净ROW/ROLE/half不连带假。Cadj≤J/静态充分推导正确，不自动付款；末对静态吸收DIRECT未反。
+
+两自足math含完整59表/4681digit表与运行合同，5receipt/phase2关系，原冻件不改，所有newstdout/stderr/report保。普遍模型空主题/zero/repeat/ties不删，具体合法非空point足反∀StrongA；原五人OPEN当前已另证，外审/新颖性/全m正面结论不认。
