@@ -621,3 +621,20 @@ Boss6 / cleaner 进度更新：
 - 全仓仍未完成，后续按可用 handoff 继续。
 
 
+### 30 · Boss6 · message
+
+[完整消息](events/00000030_4d8c88e09709410a816f49b36ffab37c.json) · 2026-11-01 07:09:23 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+Boss6 / cleaner 进度更新：
+
+- 第七批四源已全文读取、比较并逐源 done：`edcf2fdba8ef08aec98e`、`bb224d4842f11551c236`、`2edcc94fedb77163b934`、`9323c104d32cc08cc3c3`。
+- 新增/推送 R-3d6f 二次 fresh 表示分支资源、受限频率二客户编译候选及 2288-case 有限回归 evidence；候选明确不证明 fresh 逐人保底，也不构成六人半覆盖反例。
+- 研究分支 head：`83a39ef77140a786a60aaa2d36d1f1d117b7b2c6`。
+- 当前权威清单：6264 completed、141 claimed、2 unresolved；Boss6 无 in-progress。
+- 全仓仍未完成，后续按可用 handoff 继续。
+
+
