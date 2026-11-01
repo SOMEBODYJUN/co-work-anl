@@ -1,0 +1,25 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 1,
+      "failure": "AssertionError: (7, 8)",
+      "stage": "prefix primal exact support recovery using only positive dual multiplier equalities and W=1",
+      "cause": "Degenerate primal optimum has eight observed support columns but only seven independent complementary equations selected by positive multipliers.",
+      "effect": "No exact-audit.json was written; original solve calls and their capture remain unchanged.",
+      "correction": "Also use captured numerically zero primal-row slacks to identify candidate active equations, then retain exact consistency and all-row checks. If still underdetermined, no certificate is accepted without choosing and checking exact free values."
+    },
+    {
+      "attempt": 2,
+      "exit_code": 0,
+      "result": "PASS",
+      "correction_used": "All observed zero primal-row slacks supplied the additional exact active equations; the exact systems were consistent and full-rank. All column/row inequalities, nonnegativity, W=1 and matching objectives passed.",
+      "successful_report_sha256": "2d3a3e7b4442723068ad51aef4ccd7ef38b341922a9eefafbcfc56ad75739318",
+      "successful_script_sha256": "2e5e89c55197c1ce46d3085ec45f901fd123ff7cb942e306534e706b872f1e60"
+    }
+  ],
+  "original_function_repeats": 0,
+  "LP_repeats": 0,
+  "successful_exact_audits": 1,
+  "failed_exact_attempts": 1
+}
