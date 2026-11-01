@@ -703,3 +703,7 @@ R3_RESUME13YV：13个实际已认领来源，逐件全读与全仓数学比较�
 R3_RESUME13YV数学/证据pushed 4db89e64ac25e1943a6a5b4e5f99b0d43b578270；13源done另推送 c75b153180a90cd78cb158fcd23217d7c8c63f2f。Boss4累计3591完成，实际未完61；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME5YX：Root完整实读8853B双复制程序与8454B完整31x5原报告、4正式数学，首次primary自足程序对象分清作者21字段覆文件/8stdout与独审20字段仅stdout、guard与常量/实际计数、半差1与两倍差2、三人35非六人/PCAP/half反例；另3源25822B系数准确首primary归已有自足资源，1692新验证器仅旧527行精确点，不混1067/3524/3935且无新历史成功回执。无旧原LP/BI/IC/checker重复运行，逐源实际正文证据先pushed再done；持续全仓。；共5主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME5YX_REMAINING_SCOPE.json。
+
+R3_RESUME5YX数学/证据pushed e0bc63900b7eb26d31ab24a8e0b0b3a034bef66a；5源done另推送 b13de4ff46185b4b541800f3bc0696b4ef52533c。Boss4累计3596完成，实际未完60；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME2YZ：已成熟两源3835B的fixed完整43节点策略/固定p2=p5=1/2客户重数锥发现合同：全部258IC、浮点63类型LP与primitive整数Fraction后核分层，732B全部10字段/21重数/尺度、无guard import即LP、失败覆4字段及不生成raw完整保留；必要4339证书单份精确复用，无新主源done。0原math运行/扫描/旧成功重放；先正文/依赖明确pushed，再两源done，随后持续全仓。；共2主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME2YZ_REMAINING_SCOPE.json。
