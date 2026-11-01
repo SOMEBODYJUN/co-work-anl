@@ -125,6 +125,6 @@ k1的−10不反弱LAST；k12的1严格反原actual-root-prefix弱LAST助手。�
 
 # 1763B入口及来源处置
 
-入口2026-10-24保一般Q-CAG-HALF OPEN、无真正目标反例/一般half界/普遍预防定理的旧状态；它明确弱LAST助手失败和W=OPT，不把其一般OPEN覆盖现另证的五人half。其第二项heterogeneous_product_attack_corollary引用已存在的异质前缀修复和真实child产品转移，仅给强化充分攻击条件且缺合法正gap种子；FREE-ROOT本身是旧更强开放义务，未假定已存在。R3bc路径与当时未在R5a找到定理的叙述是原导航/归属时态，不是当前去改他人文件或重绑身份的指令。相邻异质推论在独立来源范围继续全文处置，本4不代其done或预授新数学。
+入口2026-10-24保一般Q-CAG-HALF OPEN、无真正目标反例/一般half界/普遍预防定理的旧状态；它明确弱LAST助手失败和W=OPT，不把其一般OPEN覆盖现另证的五人half。其第二项heterogeneous_product_attack_corollary引用已存在的异质前缀修复和真实child产品转移，仅给强化充分攻击条件且缺合法正gap种子；FREE-ROOT本身是旧更强开放义务，未假定已存在。R3bc路径与当时未在R5a找到定理的叙述是原导航/归属时态，不是当前去改他人文件或重绑身份的指令。相邻9993B异质产品推论已在独立来源范围全文处置，见[异质精确成本的有限充分条件](../推论/异质修复成本下的真实子局产品反例充分条件--推论.md)：完整保真孩子凸化/全query余数/零缺陷及五人后续状态；本4仍不代该单独source的done，不把条件编译说成已给目标反例。
 
 四source分别保程序实现合同、两原报告实际运行身份/完整字段及入口独有边界；不因解析all-k证明已经完成而丢两原报告，也不将复现成功计成新一般定理。12AAM raw needs-attention原样，与独立3untracked/2tracked全same、零缺差冲突和stash e517a37b400f6db87e6efaa49aedeb39eef74c28保留并列；只本4逐源done，其余实际12claim不代处置。先正文与所有原件/真实事件依赖checkpoint明确pushed，再登记source完成。

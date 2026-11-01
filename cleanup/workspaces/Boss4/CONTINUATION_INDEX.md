@@ -759,3 +759,7 @@ R3_RESUME18AAO：18源实质：Root原生P控制器7237B与k1/k12两JSON首读�
 R3_RESUME18AAO数学/证据pushed 155ebff068be0f5662a6aa5673ddd94bde623775；18源done另推送 f545a25201873aaa5a4dcea419f81fa0461d3b6d。Boss4累计3828完成，实际未完70；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME12AAQ：12源完整实质：exclusive5全16客户/85有序动作/原340含self比较及255非self区别，局部独占税-9/20、全局M1+106/15与alpha税桥分域，原顶层程序/报告真实15字段保；ADM3完整作者定义/独审先验与全D标签表示及任意m槽Q静态OPT<=2mM_ADM充分性、强制repeat cap，仍未付M_ADM<=W/m；weakstationary4新25客户四人完整156策略与五根真叶/5x5K唯一平稳pi/23/4 vs40/7严格差1/28/161/160，原6192独审必要首跑1次全文2198输出同字节，0probe/LP与旧13/22重跑。旧充分源码读域与未消费大packet字段界均准确，先math pushed再12逐源done，继续全仓。；共12主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME12AAQ_REMAINING_SCOPE.json。
+
+R3_RESUME12AAQ数学/证据pushed a80ff63df63689355b0c9f495da275ec6b295754；12源done另推送 bc98fb3f74b38eb4207a1288b475f769d41a4f4e。Boss4累计3840完成，实际未完65；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME17AAS：17源实质：Root异质精确F成本与真child同产品全query余数的完整有限反例充分条件，自足块实现/有理缩放/零δ/角色signed顺序/未给种子，五人逆预算按现half作为推论；fixed-saddle6双KKT与真实child上界三原探针/全兴趣零点有限域、paired270含12KKT非纯SPEmin；stationary5六全原13键/418KP格与八人既有充分独审精确reuse、3124新完整动作及条件最小leader失败引理，0旧DAG重跑；Rd64entry/routing5真实E门槛、全路径候选已由m5k6全k族否定而非half坏例，产品未附正文的候选只保真实导航。0本17数学程序新跑，均有完整主读/相关比较/唯一去向。先math明确pushed再17逐源done，持续全仓。；共17主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME17AAS_REMAINING_SCOPE.json。

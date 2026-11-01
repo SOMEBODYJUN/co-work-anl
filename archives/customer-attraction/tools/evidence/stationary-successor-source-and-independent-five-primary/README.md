@@ -1,0 +1,7 @@
+# 平稳后继来源与独审五源
+
+5actual32612全normal/fullread；3951条件MD新引理，2765/9985原作者合同和完整六行13键/418KP格保于程序；8190/7721首次primary duplicate既有八人stationary封顶反例，39字段/8branches/128KP格完整路由。3retained2duplicate，2自足正文/10解释关系/stateupdates[]，五正式全文数学比较。
+
+16related1848847完整闭包，五model/五cert/348packet/rawDAG及4runtime。当前四可逆阅读view全3124行动及非动作字段，原DFS行次序保，另2x43旧同SHA全读精确复用。DAG身份/头部读，完整节点正确性复用旧充分原独审，不重复13872节点/59496比较；旧execution/stdout/stderr原样保，与actual8190/7721字节一致。
+
+0原入口/import/verify/IC/SPE/LP/矩阵点积/新科学程序；交付自查仅字节/字段与阅读view roundtrip。原作者六次LP旧日志未供不逆造，不以primal授最优，八人反例不授满足PM的最小leader失败。17AAN full17 claim actualpushedf16d20f6e674d6da43bee1ebd6c55012b5265eda/rawneedsatt独立3u2t同/零缺差冲突/stashed58a908bece13b42bd5e331d62dde56d85d9f30 kept原样；Root串行发布done，不改共享R/Git/旧freeze。
