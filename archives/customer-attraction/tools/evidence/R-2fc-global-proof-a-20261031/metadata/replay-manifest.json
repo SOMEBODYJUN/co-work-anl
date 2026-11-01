@@ -1,0 +1,45 @@
+{
+  "background_runs": [
+    {
+      "cmd": "python3 source/background_regret_probe.py --q 6 --r 3 --trials 100 --seed 29393",
+      "exit_code": 0,
+      "stdout": "replay/background_regret/bg_probe_q6r3_100.stdout",
+      "stderr": "replay/background_regret/bg_probe_q6r3_100.stderr",
+      "candidate_file": "not generated"
+    },
+    {
+      "cmd": "python3 source/background_regret_probe.py --q 6 --r 3 --trials 20 --seed 29393",
+      "exit_code": 0,
+      "stdout": "replay/background_regret/bg_probe_q6r3_20.stdout",
+      "stderr": "replay/background_regret/bg_probe_q6r3_20.stderr",
+      "candidate_file": "not generated"
+    }
+  ],
+  "obstruction_runs": [
+    {
+      "cmd": "python3 related/audit_collision_free_occupancy_independent.py --output replay/obstruction/result.json",
+      "exit_code": 0,
+      "stdout": "replay/obstruction/stdout.txt",
+      "stderr": "replay/obstruction/stderr.txt",
+      "byte_equal_to_frozen_json": true
+    },
+    {
+      "cmd": "python3 replay/obstruction/independent_verify.py",
+      "exit_code": 0,
+      "stdout": "replay/obstruction/independent_verify.json"
+    }
+  ],
+  "family_related_run": {
+    "cmd": "python3 related/audit_collision_free_family_independent.py --output replay/family_related/result.json",
+    "exit_code": 0,
+    "stdout": "replay/family_related/stdout.txt",
+    "stderr": "replay/family_related/stderr.txt",
+    "byte_equal_to_related_json": true,
+    "source_sha_differs_from_frozen": true
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  }
+}

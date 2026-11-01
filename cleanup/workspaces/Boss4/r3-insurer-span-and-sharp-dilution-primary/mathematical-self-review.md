@@ -1,0 +1,91 @@
+# 数学与来源逐项自查
+
+- [x] 5primary34889B逐源全文复核，HI真正同SHAcontext全读不提前当primarydone。
+- [x] 原10项真实capture3c00fa...pushed/synced/Boss4，严格只本5子集，未投影伪改回执。
+- [x] 五actual当前owner/in-progress及inventory/sourceSHA/size/blob原字节逐项一致。
+- [x] 五源全Markdown，无原程序入口；selfcheck不导入任何源/规范求解器。
+- [x] 有限单位客户、有限非空共同目录、m≥2单位角色、有序历史全pureSPE。
+- [x] 目录空主题/同覆盖标签/任意内部交叠子主题/离轨平局全部保留。
+- [x] K=所有合法主题交集而非仅极大主题交集，原根A也含K。
+- [x] 全部主题K之外的不同非空极大覆盖按集合识别并两两不交。
+- [x] 同覆盖标签不合并历史/后继策略；仅覆盖计数工具共用资源语义。
+- [x] 总C只目录并集内客户，不可覆盖客户不给跨度/成本贡献。
+- [x] V(A)固定同一个合法根后所有complete suffix结果，不要求A根BR。
+- [x] 不同后继不必来自同一完整根SPE，不能套根IC到固定首人。
+- [x] K每人恒K/m，δ不变/福利和OPT各加K；全残余空直接零跨度。
+- [x] singleton函数非负非增，阈值L>0/d_j固定n而非当前r。
+- [x] 前缀余席R≥r，任意行动至多降1，实际和偏离后继都保归纳。
+- [x] 有席偏离无人随后同resource则自身收益保L，否则同终局与后来者共享f_j。
+- [x] SPE末次静态不稳定者i取L=f_b(q_b+1)>u_i≥0。
+- [x] 所有后来者静态稳定故≥L，选a者同收益<L因此后继a数0。
+- [x] 目标b至少t_b+1席，其余后来资源各t_j席，总1+Σt_j，阈值反证完整。
+- [x] 只证明SPE终局PNE，不逆称每个PNE可支持完整SPE。
+- [x] 严格降低单资源g_b<f_b，任意两个不同game PNE都满足q_b新≤旧。
+- [x] 若新b人数增加，人数守恒取d少用；双PNE及非增链与strict矛盾。
+- [x] 同一game正f_b严格递减，q_b差≥2的双PNE链矛盾，交换给双向。
+- [x] 不对零资源或一般平坦曲线强称人数差≤1，实际非空花瓣严格正。
+- [x] 动态删除对任意前缀/剩余人数r归纳，r1当前扩张正增。
+- [x] 两枝真实后继全选maxima后，限制为complete singleton SPE而非改后继。
+- [x] p_x逐客户背景保非均匀，f_b=Σ1/(p_x+1_T+t)，g_b=Σ1/(p_x+1+t)。
+- [x] Tproper保证g<f，q_b新≤旧，当前T旧份额不减且新增客户严格正。
+- [x] 严格子主题可动态删除，但已经固定的内部根不能被直接扩张。
+- [x] 根空或A=K恒收益，δ正不可能；单花瓣/全空边界分别处理。
+- [x] 内部根A残余大小a、花瓣w，真实f_B=a/(t+1)+(w−a)/t，保w−a。
+- [x] 任意两后继PNE同背景，B占用差≤1，所以V至多两值。
+- [x] 高分支k−1/低k，1≤k≤m−1，δ=a/[k(k+1)]且highroota/k。
+- [x] 高分支其它花瓣共m−k用户，每人可静态改B得至少a/(k+1)。
+- [x] q_j u_j=w_j互不交求和C≥a+(m−k)a/(k+1)=(m+1)a/(k+1)。
+- [x] δ≤C/[k(m+1)]≤C/(m+1)，core只增C不改差。
+- [x] 两主题X2s/Y(m−1)s每m完整全hist高/低δs且C=(m+1)s达到。
+- [x] 高H rootX后全部Y、low第二X后Y、rootY尚无X则X否则Y，全部离轨比较。
+- [x] rootY末位改Y为(m−1)s/m，punitive第二X/Y同s，完整BI出口合法。
+- [x] 旧τ每非根historySPE，Δ用原真实根偏离且包含不偏离。
+- [x] 修根保持同一保险根比较原最大B*，δ≥Δ而非不同根收益差。
+- [x] 任意独立坐标各span≤C_l/(m+1)，异号总差≤Σspan，得总C≥(m+1)Δ。
+- [x] 坐标Cartesian联合maxima可交叠，总C下界来自给定独立分解。
+- [x] sharp成本是高分支D=2W_H−同实例真实OPT_m，不是C。
+- [x] sharp根自不需BR，H/L均同合法A后的genuine完整suffix。
+- [x] 后继最低花瓣收益μ>0由任意正花瓣静态偏离保证。
+- [x] 未后继使用且非B花瓣大小≤μ，不能把未用B也无条件≤μ。
+- [x] k≥2时后继用B，W完整覆盖所有已用花瓣，ℓ≤m−1。
+- [x] 每used普通w_j≥μ，B恒等w=(k−1)f_B(k−1)+a/k≥μ。
+- [x] used花瓣≥unused可先入最优m支持，O≤W+(m−ℓ)μ。
+- [x] 同H收益预算W≥(m−1)μ+a/k，得D≥a/k+(ℓ−1)μ≥(k+1)δ≥3δ。
+- [x] k1高分支B未被后继用，BminusA未覆，W=a+P不能替w+P。
+- [x] k1后继用r普通瓣1≤r≤m−1，μ≥w−a/2且P≥(m−1)μ。
+- [x] k1 O≤P+max(w,μ)+(m−r−1)μ同时容选B/不选B，系数非负。
+- [x] k1 D≥2a+rμ−max(w,μ)，w≥μ得≥3a/2，w≤μ得≥2a。
+- [x] δ=a/2使k1≥3δ，m2只有k1而非遗漏m2锐性。
+- [x] 加回allthemeK，D增加K而δ不变，S1完整。
+- [x] maximal-only K可被内部root漏掉，域例只说明不能扣常数不宣称S1反例。
+- [x] S9无正差时k=当前后继B人数+1可等m，无需另一低分支存在。
+- [x] S9根a>0沿两段给正bound，根残余空按m−1无背景PNE给D≥(ℓ−1)μ。
+- [x] 全残余空D0加核心K，单花瓣无正跨度且baseline仍成立。
+- [x] 多坐标δ_l正用S1，非正用S9，故无需变化同向。
+- [x] D总=ΣD_l≥3Σpositiveδ_l≥3Σallδ_l，也可保ΣK_l。
+- [x] 完整Cartesian与不交clients才OPT最优m元组可按位置配对、利润准确相加。
+- [x] 模式只在jointroot选择，根以下每branch各坐标complete suffix独立执行承重。
+- [x] 取旧B*保持同保险联合根迫使Σδ_l≥Δ，得稀释≥3Δ。
+- [x] root后继续耦合/sharedclients/generaloverlap均未被下界排除。
+- [x] paddedm块X2s/Y(m−1)s/Zs高2s低s，W(m+1)s/O(2m−1)s/D3s。
+- [x] 每m≥2等式sharp，m2无Z且punitiveXX只W2s不是compliantXY3s。
+- [x] m>2新增未actual覆Z使C/OPT都增(m−2)s，actualW不变，D降同量。
+- [x] 客户成本C≥(m+1)Δ与sharpD≥3Δ对象不同，不互相反驳。
+- [x] 原blind独立先获rootstatement而未作者proof，完成后才读作者文件。
+- [x] blind稀疏H/LX/LY指定路径+精确前缀BI出口，与作者rootX全historyY不同。
+- [x] LY首Z永久退出，不能无X且多Z历史仍强制X。
+- [x] 旧σ全部非根一步偏离，而不只onpath；joint成对偏离逐项两nonpositive和。
+- [x] actualrootu+2s vs根所有其它dB+s≤u+Δ+s，根保险叶也检查。
+- [x] 非整数Δ先旧客户共同L复制再保险s=LΔ，Gnew=L(Gold−3Δ)。
+- [x] L=lcm1..m清旧unit收益分母；Δ0旧策略已fullSPE，不用s0。
+- [x] originalhalf R4与fresh缺陷RF?是不同等价命题，即便同编译减3s。
+- [x] sharp架构3锐不证明任意oldtau的R4最优3，未造Gold>3Δ。
+- [x] firstblind末句明确不审sharp，后审才核K/两k段，不倒改历史先验。
+- [x] laterreview并未自称与first相同未读proof盲身份，不替它编造该身份。
+- [x] 1827仅候选statement留原状态，7242证明+7382审查在formal数学区准确成立。
+- [x] 120552/22620与34/750/90全部是原文有限历史自报，本批原entry0。
+- [x] 3theme m3p3/81/6561只有限cone源码未取齐，不能扩大一般交叠C/4。
+- [x] 安全helper五auditblob均missing，0取出无网络fallback，保真实边界非停全仓。
+- [x] 下一HY5纯本地真齐26914B，初次核local无progress；后快照如实保实际登记，另primary不提前done。
+- [x] 5receipt最终integrated与externalready/bodypush/done各自单列，不把本地存在当已发布。
+- [x] 所有actualcanonical bytes与证据逐字节查非LF/TAB/CR C0，不用splitlines漏0x0c。

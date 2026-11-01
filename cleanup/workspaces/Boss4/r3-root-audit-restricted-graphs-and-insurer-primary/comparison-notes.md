@@ -1,0 +1,7 @@
+# 全仓与后续锐性比较
+
+GZ root/hub两个成熟对象与当前fresh3repair/旧two-themecost四完整页保SHA快照。6714/4803此前context全读只按同SHA复用，本次实际primary/原entry1才正式处置。2920调用canonical完整纯终局countsets，四包全closure读、actualimportpath核，未用untracked shim或复建solver。
+
+padded7608全文与1679statement/7442blind/10996spread比较；后续7242sharp/1827statement/7382review也完整context保，未当primarydone。旧blind确排sharp，但后续精确class已核，K必须all合法主题交集，任意内部root保w−a，root以下coordinate suffix独立可delta异号。C下界与half稀释下界均真但对象不同，R4 generaloldtau最优常数不由sharp证明。
+
+实际两raworiginal各1，root4803全冻byteequal；graph18240只18timing JSON字段差，全部数学相等，实际times/profile保非性能benchmark。保险/盲/锐性原codeentries0，源自叙finite审查不冒本批新run或外审新颖性。

@@ -1,0 +1,7 @@
+# JZ交付
+
+5primary25341B/656行完整实读；16真实theta输入1713264B（客户JSON13841B全型、14352策略条目无损335子树全读）及4原输出87477B全部语义实读。5integrated、3自足程序对象；0新数学程序/原CLI/import/LP/BI/随机/θ/SPE或旧成功复跑。输入表示reader1次只是无损阅读/结构roundtrip，非数学SPE认证。
+
+原12ids claim103b2fe803e873a28b0f7b08fd6a8c2b0a444fd4实际pushed/synced保原字节，本5owner/sourceSHA核。Rootnormalshow5源码+4输出独立新capture与初次5code missing/另20依赖16齐4outputs missing并存不改旧历史。父方75原报告sourceSHA强绑当前code/Python，仍无独立命令/退出码/时长capture，不捏造日志；其他co-version输出无执行SHA不强绑。
+
+原26累计子树统计、作者75逐单位/父方块Fraction、theta只actualpath和extra枚举、probe一次主体4LP无对偶皆准确保。下一3源共15061B已有全文预读但未primary，无预claim/receipt。Root先推正文依赖再done，0sharedGit/账号公屏/mapper，16input+4output不额外done。

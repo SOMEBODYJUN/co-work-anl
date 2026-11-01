@@ -1,0 +1,58 @@
+# 数学与真实授权转换自查
+
+- [x] 五源21398B完整读/sizeSHAblob真核；旧未claimed边界原字节保，当前15项真实claim取5ownerSHA后写最终receipt。
+- [x] Root报14IU自动审查拦截仅localcommit，no mathpushed/done/no IOclaim，不重试替路线。
+- [x] 当前仅独立external成熟包，claimpushed不当bodypushed/done，no sharedGit/network/原entry。
+- [x] D真根均值，Cplus完整根+尾+过去的额外query，A/T同p独立。
+- [x] 源码fresh的C对应旧Cplus，不混删当前槽Cminus。
+- [x] binarya差(p−a)/(g+c)−ap/((g+c)(g+c+1))逐客户正确。
+- [x] 1/(g+c)尾动作望远镜初始E(p−a)/g0，得到Ttail signed−H。
+- [x] SPE实际松弛e=u−D≥0必须保，Cplus−u=Ttail−H−e。
+- [x] global z_i(A)恰m槽含actual过去/forcedA/真实尾，非m+1真实SPE。
+- [x] W−ΣCplus=Σe+Σκ+ΣH，旧删槽失败不自动反加槽FTA。
+- [x] 381原doc表D141/10/C16879over400/others5349over400，sum−657over400仅源自报。
+- [x] 381旧类型/完整actions闭包未取得，不冒258IC新复现，不混34客户。
+- [x] 源381W−ΣCplus正，不以无slackΣ(D−Cplus)负反FTA/Mpath/Mfull/half。
+- [x] FTA全p跨位置平方型，单rootMfull已银行否不传它。
+- [x] 全路径Mpath明确定义为全部actual位置完整m列的自由混合，共同capW/m。
+- [x] FTA每p平均i/A给纯(i,A)存在再finite minimax才得共同Q，不冻结p。
+- [x] 只安全最优p*FTA足W≥mv但不直接allqueriesMpathcap，分别保量词。
+- [x] 任何pooled列合法m静态背景，Mpath≥v_m+1。
+- [x] 静态OPT≤2mv_m+1用meanL/d客户不等式+Jensen方向，allBigm+1/单例匹配2msharp。
+- [x] FTA copositive A=W11−symM不是PSD，对角Maa≤W。
+- [x] pair cross≤2W充分非必要，两点sqrt条件不推全部多点。
+- [x] 九证书/两组三人93query63type/pairwise0均原有限阴性非普遍证。
+- [x] Mfull原OPEN按currentbankfalse更新，精确Mpath此组未判不偷用旧名。
+- [x] duplicate商按每商有序history递归lift且规定class取actualalias，非固定全局代表直接投影。
+- [x] 商自由menu各class选一oldalias列，actual/W保，删列Mfull/Mpath不降。
+- [x] 商列subset单调不自动给同p二次FTA坏见证保留。
+- [x] hAB/hBA不同history；额外querym+1槽vs真插两动作future变r−2都需reset。
+- [x] SWAP精确lost-new，整链初O末C净OPT−W，gross遗漏不够。
+- [x] tax现成hA剩3/池BCD loss10,11,10/current9只反单步。
+- [x] 随机的是m比较索引，重复标签照槽计，p_i=choose(i,d)/choose(m,d)。
+- [x] L_i=ΣOminusCi p_i−|CiMinusO|，L0=0/Lm=|O|−W，可负。
+- [x] L增量保新actual覆盖O内p_i−1退款和O外整1信用，无新SPE假设。
+- [x] L_i≤P_i累计未证/终点即原净差，不把representation当正向界。
+- [x] D旧R324每i m ui≥OPT−W，等OPT≤W+m min，充分强于half未必要。
+- [x] 五固定fullcone LP无正点无一般exactdual，不认新候选/不继续扫。
+- [x] 背景最大activeprofit F_r(b)非零背景不等OPT_r0，零分子0。
+- [x] 15star源2u6<15−7=8，停直接递推。
+- [x] 61taxsource F3A36/F22A21/u9/ΔH25over6，右79over6/slack−11over6。
+- [x] 定向程序只旧叶算术不是重新原SPE控制器，本批原0。
+- [x] 8客T1/T2各4/B各取2，OPT2−OPT1=4/静态maxjoin3，但真顺序root4。
+- [x] 10unit全2subset45theme m3，各rootA尾ac/bd，root1/tails1.5/W4。
+- [x] aux B(v)用fractionalcoverage价格 v≥0，不换原unit模型。
+- [x] coverage≤min10,2z/perfectmatchingz5+zero达B10(1−v2)+。
+- [x] 尾B1.5=2.5≤4且强化等W−1.5，根B1=5>4反静态pricegood归纳。
+- [x] 10menu最后fresh二客得2>1.5，非SPE；OPT3=6/W4/Dgap2≤3root1。
+- [x] rook2qclients/q²themes/m2q−1/任root星尾root2/q tail1+1/q，q4以上root<t。
+- [x] rook ownleaf删除后无cover，换core行仍共享给1.5不是2，源误判撤回保。
+- [x] 这些只反静态高尾floor/price压缩，不反truefullSPE或half。
+- [x] IG F/G/E真正每离轨SPE归纳与staticmin相接，不被静态counter反其合法。
+- [x] 总导航six旧分支已交接非后台，本清洗不spawn/不认新机制。
+- [x] 净目标R≤I+2G保持actualO外价值，Q空谱不制造shared信用。
+- [x] 本批source/solver/LP/新scan/旧audit全部0，手工一般解析不冒新blind/外审。
+- [x] 同源上下文5308/4628仅context，不额外done；7related全文快照保。
+- [x] 旧5读源notes not_a_semantic_receipt原字节保；实际claim后另核ownerSHA再写5final integrated receipts。
+- [x] 下一真local5齐8709B，仅可读范围不绕审核requestclaim。
+- [x] 所有actualbytes C0只LF/TAB/CR例外，metadata/links/JSON/manifest全自查。

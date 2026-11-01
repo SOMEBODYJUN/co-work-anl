@@ -1,0 +1,7 @@
+# priority两原实现四源原件与真实重放
+
+4source12301B全文/1自足计算对象/4final integrated，8canonical全文比较；原完整actualclaim与owner/sourceSHA另保，normal4取得和初localmissing历史原样。两原程序无mainguard/stdlib/literalfixture闭包，未import先隐性运行；同SHA旧成功检索无充分actualjournal后，每原文件私有新目录原字节恰1次，合2entry，原冻report不覆写。
+
+两次return0/stderr0，stdout/新JSON1297和2546B分别字节/语义同各冻，sourceSHA/实际命令cwd/环境/elapsed/journal/runner齐。每实现同17IC/12profiles21winner坐标，不作34新域；父与nonblind独立实现字段精度不同。两例Rempty、fullwallet与scaledIC区别、[1,1]包络不满足一份ENV条件，非合法missedsourceflow/half反例。
+
+0canonical/新数学/LP/搜索/oldchild/old13entry，audit和verify各4次在真实原entry内，其他函数多次不另instrument。结构checker只核artifact，不执行原py。Rootbodypush与done独立，不由文件在本地推已发。

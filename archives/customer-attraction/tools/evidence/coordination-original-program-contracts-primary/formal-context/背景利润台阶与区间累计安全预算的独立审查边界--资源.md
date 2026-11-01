@@ -1,0 +1,91 @@
+---
+id: customer-attraction/background-profit-step-and-interval-cumulative-security-review-boundaries
+kind: resource
+type_tag: 资源
+title: 背景利润台阶与区间累计安全预算的独立审查边界
+status: 一般F局部台阶与平台解析完整；原五环HI/整数静态一次复核通过，未证一般累计预算
+summary: 完整全A族给固定系数下降与线性前缀债失败而不反整体F；HI与真SPE分开，五环平台负漂移不否累计根预算；旧WP/FF开放状态按后来银行/PB纠正。
+source_refs:
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6cf1f30515fe44eeba28d5390d6940e7/coordination_2026_10_23/background_recurrence_review.md
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6cf1f30515fe44eeba28d5390d6940e7/coordination_2026_10_23/interval_total_review.md
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-6cf1f30515fe44eeba28d5390d6940e7/coordination_2026_10_23/safe_value_review.md
+---
+
+# 背景利润台阶与区间累计安全预算的独立审查边界
+
+5674B背景、6109B区间、6731B安全值三主稿全文核原字节；5主源整体清单见[原件](../../tools/evidence/background-interval-and-br-credit-review-primary/source-manifest.json)。另2篇真实BR信用核稿自足另页，不能把所有“债”合为同一量。原日期2026-10-23、快照f6c744…及Boss2个人内部核验先验保；NI5实际18项claim 2f0076d2204809f3cf7f1d5a0591c9ecea716940 pushed/synced、本5 owner/in-progress/sourceSHA已核，原回执全文保；必要8原件闭包已齐并全读，原独审两模式及五环各一次真实通过；semantic receipts已核实际claim与全部证据闭包后写入，不把原报告PASS冒本次范围。
+
+## 全背景最优利润不是总覆盖
+
+给任意合法完整有序过去h、客户负载b、剩r人，定义
+\[
+ R_b(d)=\sum_{x:d_x>0}\frac{d_x}{b_x+d_x},\qquad
+ F_r(b)=\max_{T_1,\ldots,T_r}R_b(d),\quad F_0=0.
+\]
+实际r人最终利润和P恰是其真实终局的R_b。全背景候选2P≥F_r(b)在b0才回根half；非零背景不可偷换成含过去玩家的总覆盖。F只依计数，指定σ却可对同计数不同有序历史用不同完整孩子，不允许压成单一selector。
+
+5674B一般障碍已由[现有局部系数障碍](../障碍/最优剩余利润的局部系数与共享负载信用--障碍.md)吸收，以下保其原完整独立证明和线性债用法，不授新定理。任意m≥2，大题A含m客户，另m−1个不交单例，全部有序历史都规定以后A。若过去有a次A、余r人，遵从m/(a+r)≥1，改单例≤1且后来仍A，所以全历史纯SPE。actual每人1，W=m、OPT=2m−1。
+
+根A后尾比k次A和m−1−k个不同单例；更多同单例不增利润，故遍历全部比较组合得到
+\[
+ F_{m-1}(1_A)=\max_{0\le k\le m-1}[mk/(k+1)+m-1-k]
+ =2m-\min_{1\le j\le m}(j+m/j).
+\]
+根下降h_m−1≥2√m−1而u1，故不存在固定有限α对所有真根步F_r≤αu+F_(r−1)成立。更一般真actual A^t，1≤t<m，尾比较给
+\[
+ F_{m-t}(t1_A)=2m-\min_{t\le j\le m}(j+mt/j).
+\]
+m4k、t=k，j2k达AM-GM最小4k，累计2t+Ftail−OPT=1−m/2线性负，连固定常数前缀欠债也不够。真实尾P=m−t、surplus2P−Ftail=m/2，恰补这笔负债，终局half余1；因此未反整体2P≥F，只说明“尾surplus非负”丢掉承重结构。叶客户背景仍0，不能因为实际A高负载就用要求全部比较客户高背景的静态强化。
+
+原5674说新Boss3 recursive_invariant目录在当时快照不可见、旧Boss3共同价格资料不能替代新正文；不把这段旧可读范围变成今日缺件或已经审过后来公式，也不执行原定向沟通建议。
+
+## HI放松的准确总预算对象
+
+给主题计数b，终局H_I(b)={b}；非终局先算全部孩子，令
+\[
+ L_I(b)=\max_a\min_{z\in H_I(b+e_a)}U_a(z),\quad
+ E_I(b)=\{a:\max_{z\in H_I(b+e_a)}U_a(z)\ge L_I(b)\},
+\quad H_I(b)=\bigcup_{a\in E_I(b)}H_I(b+e_a).
+\]
+孩子非空、取到max-min的行动必eligible。按剩余人数、所有有序历史同时归纳：原完整SPE每个真偏离孩子终局属于孩子HI，真实当前收益≥每孩子min的max=LI，actual所用孩子于是eligible，故真终局属于父HI。它可按计数存集合**超集**，没假设真σ匿名。总G_I=0在终局、G_I(b)=LI(b)+min_(a∈EI)G_I(child)，所以真剩余利润≥GI、空根W≥GI。一个高终局使行动eligible后却保留该孩子所有低终局，是它区别真BI逐终局筛选的放松。
+
+精确min/max压缩为V_j=min_HI U_j、Z_j=max_HI U_j；LI=max_aV_a(child)，EI由Z_a≥LI，父V/Z在eligible孩子逐坐标min/max即可，不需各坐标极值共同实现。这个合法算法并不等于恢复纯SPE集合；GI≥OPT/2是另外累计充分义务。
+
+## 整数静态平台给局部负漂移，但未付款的目标允许负债
+
+五环5客户C_i喜欢主题i,i+1、5合法主题、原人数6。v_(r+1)(b)=max_p min_(整数主题槽z,|z|=r)E_p Σ_(x∈query)1/(1+b_x+c_x(z))，竞争背景独立于实际抽到查询；它不是原树新BR玩家。
+
+根6槽总客户负载12。均匀查询收益(2/5)Σ_i1/(1+c_i)，离散凸性在3个负载2、2个负载3取最小，给3/5。背景主题计数(1,1,1,1,2)的5循环平移均匀混合使每query恰3/5，故v7(0)=3/5。任意固定首题A后，合法背景e_A+5槽是根6槽子集，孩子值≥3/5；每个上述背景坐标≥1，可扣e_A，仍给孩子匹配上界。因此所有A有v6(e_A)=3/5。
+
+本次原3025入口实际核HI的LI(0)=1/2、GI=23/6及整数静态平台。相关57e1/772a原文另报告真SPE根最低2/3、全部W=OPT6=5、20真终局；3025不计算真SPE全集，本次不将那些原文报告算作它的BI运行范围，也不借此替五环原20终局程序办done。静态平台与被反局部DI只需已真复核的HI/整数值，未依赖额外真SPE数值。 置P_r(b)=r v_(r+1)(b)、P0=0，DI=LI+P_(r−1)(child)−P_r(b)，沿每条允许完整路径望远镜
+\[
+ \sum L_I=P_m(0)+\sum D_I,\qquad
+ G_I(0)=P_m(0)+\min_p\sum_{e\in p}D_I(e).
+\]
+五环根DI=1/2+5(3/5)−6(3/5)=−1/10，否每步非负的充分机制；但总GI−P_m=23/6−18/5=7/30，half只需总DI≥5/2−18/5=−11/10。既不需每步非负，也不需总和非负；望远镜本身还没用新跨层激励，不能叫新增支付。
+
+祖先价格更弱且合法：B_I(λ)=min_allowedpaths[W(q)+Σ_edges λ_e(LI−U_a(q))]，所有U来自同一个终局q、λ≥0。真SPE路径每括号≤0，故W≥BI；λ0给minHIW、λ1借ΣU=W给GI。原始路径混合需每边期望1_edge(Ua−LI)≥0，有限有理LP强对偶；带终局标签q的商品DAG与它等价，未标q边流会丢真实Ua(q)。29客户4人原例57路径的4个价格12/5、24/5能付29>80/3和25，仅此有限严格改善，不是普遍half证书。若该价格桥后来失败，也不自动给真实SPE反例。
+
+## singleton跨质量不比较与旧动态真值纠正
+
+n个不交单例、r,n≥1。free质量r−1的t_r=n/(n+r−1)：均匀query由凸性给下界，均匀分数背景达上界。整数r槽写r=an+s、0≤s<n，均匀query/离散凸平衡及平衡背景随机排列给
+\[
+ v_{r+1}=\frac1n\left[\frac{n-s}{a+1}+\frac{s}{a+2}\right].
+\]
+r3/n3为t3/5、v1/2，r3/n7为t7/9、v11/14，差分别−1/10、+1/126，无跨质量统一大小。同质量t_(r+1)≤v_(r+1)仍真。五环free质量6的t7=10/17也与integer6槽v7=3/5分开，不因都称extra-one就替换。
+
+对原真首行动B的完整r槽Z(B)，iid A,B∼p给强制平均D(p)、独立额外query C(p)。原3人34客户例只否D≥C（29/30<41/40），当时6109/6731把全p u≥C、只安全最优p*和自由静态Q/真u≥v分别列OPEN。准确的是**该34例没有否它们**；当前后来零根银行/PB已另否全p弱式及自由Q/trueextra的普遍版本，见[银行完整列](../反例/银行完整根列的两查询最小分离--反例.md)及[合法背景额外槽](../反例/任意合法背景的前两人额外槽安全值--反例.md)。不能把旧OPEN当现状，也不能说由五环负DI反了真extra。
+
+free质量r−1的FF-LEADER也不同：现[自由门槛定义](../定义/自由分数背景安全门槛--定义.md)已按银行m≥3否，m3 u1=3/2<t3=8/5；更弱extra门槛从m≥4失败。若某个真子SPE已有u<v_(r+1)，任意安全最优p*对每个合法r槽静态分布Q都保证独立query期望≥v_(r+1)>u。特别取Q=Law(Z(B)), B∼p*，便有C(p*)>u；所以后来银行/合法背景安全值反例也否定原“仅安全最优p*”的普遍充分桥，不只否全p强量词。这里用的是该真u<v证据，不是由34强式反例或五环LI低值推得。
+
+确切已读证据取[笛卡尔银行完整反族](../反例/笛卡尔银行目录的逐人分数门槛反族--反例.md)，稳定id `customer-attraction/cartesian-bank-individual-fractional-floor-counterfamily` 的**m=4**：4经济单位客户、3个各含2单位客户的银行块，共10客户；12个主题T_ab={e_a}∪B_b。完整BASE/PUNISH/EXIT策略实际(00,01,02,10)，根u=4/3、W8/OPT4=10。此时r=4，整数v_(r+1)=v5使用**4个**竞争槽、另有独立查询；不是m3七客户的3竞争者iid值。精确free均值值t5=19/14（竞争质量4），任何4整数槽混合Q由倒数Jensen给其最大query≥t5，故v5≥19/14>4/3，间隙至少1/42；不声称v5与t5相等。
+
+静态安全最优p*对每个纯4槽z都有E_(A∼p*)K(A,z)≥v5。强制根B后原同σ真完成Z(B)仍包含B和3后继，恰4合法槽；取B∼p*，A∼p*为**独立的另一次抽样**，所以Q=Law(Z(B))合法且不观察A。逐B平均得C(p*)≥v5≥19/14>u。这给特殊p*桥失败，不需求出p*/新LP或运行m4原证书。相反m3七客户根3/2而v4≤4/3，只反iid/standard-free不能当此整数extra证据。
+
+**被反的准确量词是逐节点接口**：对每个合法有序节点h、原同一完整σ及其静态安全最优p_h*，要求C_h(p_h*)≤u_h。上面m4空根一处h已否其普遍性。单节点C_h>u_h不能自动否定LW的全actual路径聚合Σ_iG_i(p)≤Σ_iD_i(p)，更不能自动否定弱Σ_iG_i(p)≤W；其它位置可抵扣，且根p_h*与沿路径逐节点各自最优查询不必是同一个p。这里只使用该根的B生成真4槽Z_h(B)，A另独立query；没有声称沿actual每节点都出现同方向缺口。
+
+旧34客户**单根**空题扰动p(X2)=1/10给D_root=29/30、C_root=41/40而u_root=29/3，只反D_root≥C_root，未反C_root≤u_root或p*逐节点桥。LW后来同34客户**全路径**扰动e1/24给ΣD=21/16、ΣG=4/3，故反ΣG≤ΣD；但W32，未反ΣG≤W，也未反安全最优p*桥。这两条旧局部范围都保，当前m4真整数安全值是另族的后续逐节点纠正，m3七客户则是IID证据，三者不混、不回填旧run。条件蕴含“真安全值逐行支付则half”仍代数正确，不等于其前提普遍真。
+
+本页一般F族/平台/singleton/望远镜有完整解析证明；finite HI/价格实例和原审查的可见/运行陈述各按真来源记录。0新颖性/外审/一般half认证，不执行原建议发送消息或转发指令。
+
+本次完整源输入、全部policy行和原三入口的实际证据见[精确复核](../计算/多源BR信用与五环整数平台的原入口精确复核--计算.md)；609原生成文件byteidentical，479stdout仅字段同。

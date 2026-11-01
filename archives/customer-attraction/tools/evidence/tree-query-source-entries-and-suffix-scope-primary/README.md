@@ -1,0 +1,9 @@
+# tree作者与三个入口五源证据
+
+5MD14925B全部primary全文，2作者逐节duplicate到已发表完整HESS/被动税引理，3branch入口integrated于3自足正文。raw21claim/五ownerSHA原样，duplicate8units原/目标SHA映射，不以旧旁读代done。7context20560B所有MD/py/JSON全文、13canonical全文比较。
+
+latestNET9role coverer结构13/12给手算/守恒/DP有限域，非完整SPE/half；ownercausal necessarysuffix仅旧fullSAFE/合法CLIP，fixedcommonk∀24perms未覆盖∀perm∃k或其它并列optimal多重集。原float三negative无exactdual/rat归一检查，historicalno-separator非全锥上界。原py只读/解析，0newentry。
+
+旧52 code23fa/input9e7c/oldactualjournalexit0/output6488明确同SHA充分成功只复用，0重演；uniqueoptimal/24Q由现完整解析承担。历史peerroot另一wrapper/JSON localmissing原样保，不冒当前worker运行。
+
+数学自查/14关系/结构检查/5finalreceipts/白名单在workspaces。当前Root另行bodypush/done，source作者旧git/workpy声明非本次发布。下一实际5latestNET/cut14852B本地全齐已预读，0预认领。

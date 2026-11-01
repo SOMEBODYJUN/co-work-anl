@@ -1,0 +1,7 @@
+# query-cover、tree税与density独审五源证据
+
+5MD27525B全文主读/3自足正文/5final integrated。原实际claim完整ids原样，owner/SHA和五子集独立核；Root发布与done另计。source-only三份作者prose及三版JSON保原字节，报告完整parse只核身份/finite关键字段，不冒重审所有perclient断言或本worker成功run。13当前canonical全文比较，数学自查/15关系及精确白名单在workspaces。
+
+COVER范数/dual、sameaction压缩及RECT完整接口；uniformreset旧capture核不新discover，未取消全R一钱包已被旧71例否与全O2−d/u/net不同。HESS同π/真Cab/staticCb、JOINT带未付Δ；被动q ROBUST/POOL/Ξ同叶税非crossleaf钱包，末位仅加权Cov总和符号。density独审收到精确陈述后author前重构、后对稿及追加I-cashout重算J/commonfamily，非无提示blind。
+
+三版JSON实现SHA、固定52/348和边界域不同于新原执行：v2/v3 52只激活7/9单位interlayer、各仅1contextedge，4merger指标全0；一般密度解析允许合流但有限实现没覆盖，单context IC非role总钱。所有original/sourcefunction/independent/solver/LP/scan entry0，本批MD不重跑熟悉旧QA。

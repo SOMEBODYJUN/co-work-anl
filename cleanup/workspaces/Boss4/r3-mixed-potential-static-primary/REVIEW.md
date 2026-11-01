@@ -1,0 +1,9 @@
+# OF2自查
+
+主两MD6196B、related1code2JSON22092B全读/源sizeSHA256blob核，原完整26capture pushed/synced原字节不裁，本2owner/SHA核，另外24不处理。主source_ids两与程序资源related3各自保origin，cleanup primary只本2；只2retained receipt。
+
+447列/超几何重复同会员、1292P0未证/42真safe/29真强PAIR身份全、自复制税与3prefix929开放Pi全、1363/2292行及37全部exact支持；W1不是mass1，全部e1故O覆盖全宇宙和单位恢复，actual路径未被完整SPE审计而不冒已否。Cpair同C0、BM只否更强桥、18标签100947及NY439/18564不是本输入。
+
+原code main guard确认，verify在LP之前退出且不写文件；从recordflags/精确support重建3600整数行，忽略floatC/maxO/active及savedcheckmin作为证明，当前输出另核字段一致。两个不同冻结点各一次原CLI共2actual进程exit0/stderr0，1wrapper只捕获不算第三数学体/独立checker，原源+2input全SHA不变；0LP/0实例生成/0SPE枚举/0新盲，不重跑其它旧packet。
+
+2helper5cat：2MD成功3related初缺，Root后正常3show全部实读；原父审旧两次/current两次与初缺→后实得→后运行三层时间不倒填。10formal全文/14关系/2自足对象/原件/运行日志/精确白名单；结构checker不运行数学或把字段一致当独立数学证明，Root串行Git与bodypushed后done。

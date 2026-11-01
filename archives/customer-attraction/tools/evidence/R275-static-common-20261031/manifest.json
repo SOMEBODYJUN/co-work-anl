@@ -1,0 +1,75 @@
+{
+  "evidence_id": "customer-attraction/r275-static-common-20261031",
+  "source_commit": "68fad804ec5946cb296f77dc5b336308a66abf12",
+  "assigned_source_refs": [
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/direct_global/static_common_attack.py",
+    "source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/direct_global/static_common_best.json"
+  ],
+  "files": {
+    "README.md": {
+      "sha256": "8d97ace9208c90d24999fff48276d061bc56d19f13e5d02561495b03b329f039",
+      "role": "evidence usage and scope note"
+    },
+    "source/static_common_attack.py": {
+      "source_id": "6ba99015cb5ee1e1d5fb",
+      "blob": "0dffdd89e0715647e18c4bdb53953650845c1e8e",
+      "sha256": "d707d5d70afac70e96420f6a58c542bd285c6afed6ab84e14a2f06846247b9fd",
+      "bytes": 1354,
+      "role": "assigned deterministic finite floating LP driver"
+    },
+    "source/static_common_best.json": {
+      "source_id": "7fd962b12560d5e640b7",
+      "blob": "fdf8e0f740356e97a6d9897770ddef67e85b04dd",
+      "sha256": "b7d4fb878fd95ea812cef1ffdd16bb11245ba87eeabb7af0307262868c222914",
+      "bytes": 80604,
+      "role": "assigned saved floating-point candidate"
+    },
+    "source/cone_floor_attack.py": {
+      "source_id": "dbf018232df702a3cfaf",
+      "blob": "354e92b503ce50257666c952322e26ee3dad696f",
+      "sha256": "af4f1f7f4e65a9c27d6b433e24dd1e3ff2cd7819cfd09dc140a580833d85ddb0",
+      "bytes": 2986,
+      "role": "runtime dependency imported by assigned driver"
+    },
+    "source/floor_scan.py": {
+      "source_id": "90578ba48285bc04f0c3",
+      "blob": "42ccd8f925cbf751ea271705caef992274db085a",
+      "sha256": "ba406363e5a12959096613530441ae171df58ca9cd18a182cfc49d5dd1dbc66d",
+      "bytes": 1817,
+      "role": "runtime dependency imported through cone_floor_attack.py"
+    },
+    "replay/verify_static_common.py": {
+      "sha256": "e778e91326d2547d19c159d483d5057c3a6ae01c707824d5bc1f605a1909ddd2",
+      "role": "independent structure and exact one-support objective checker"
+    },
+    "replay/full_driver.stdout.txt": {
+      "sha256": "6f6a63abfadf2b6b28769fa9270879f3e6ee8f347b94123db18869c34aa78d78",
+      "role": "fresh deterministic driver stdout"
+    },
+    "replay/full_driver.stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "fresh deterministic driver stderr (empty)"
+    },
+    "replay/full_driver_metadata.json": {
+      "sha256": "4051b30240aa08e2958d3d43fdfb4bde2293253a9d68cc6c29f1240dcbcb72c8",
+      "role": "driver command, environment and byte-identity metadata"
+    },
+    "replay/verification.json": {
+      "sha256": "588484b12792ea74d77d8e6d0bf15c4bb75011a6d625cdd05a4cbae36ce01d2f",
+      "role": "checker output"
+    },
+    "replay/serialization_policy_comparison.json": {
+      "sha256": "5ddc8aef010ae7ea898865e23a0b33bf55db0d32fc88ab425d4a16818f2f4655",
+      "role": "diagnostic comparison showing candidate weights do not reproduce stored action table"
+    }
+  },
+  "replay": {
+    "checker_command": "PYTHONDONTWRITEBYTECODE=1 python archives/customer-attraction/tools/evidence/R275-static-common-20261031/replay/verify_static_common.py",
+    "checker_status": "PASS",
+    "full_driver_command": "cd archives/customer-attraction/tools/evidence/R275-static-common-20261031/source && PYTHONDONTWRITEBYTECODE=1 python static_common_attack.py",
+    "full_driver_status": "exit 0; stderr empty; stdout has three improvements and DONE 0.19999999999999996; saved JSON byte-identical",
+    "universal_claim": false,
+    "exact_rational_spe_certificate": false,
+    "serialization_limit": "JSON stores chosen action per history only; original random pre-LP weights and child terminal terms used to form Gamma are absent"
+  }
+}

@@ -1,0 +1,7 @@
+# KJ两主源实质自查
+
+完整14项pushed/synced原capture不裁，核2subset/owner/SHA后2receipt。两MD3521B/已done比较4974B全读；4974旧done不重复。根实际支撑forallactual位置/forall最优查询同σ真后继不触遗漏，a+b/m、owner和B定量界与allbig全history锐性完整；会员删除降低负载提高偏离收益，标签商不救旧表或全query菜单。
+
+初本地blob缺JSON之manifest保，后来Root正常show取得53404B精确字节，全文16hist/16groups/29RZ/21promotion及scope/rows/W/K/minslack都读。原snippet在独立runbox恰1次exit0，core断言16/d1/mass1/11索引/d0mass0通过；同一进程额外字段汇总报29/21与非负，非第二次run。不重算1269必要行、原LP、全SPE或新game/policy，不把JSONfullread升数学全审。Nplus⊆O通用集合论只封纯基数交换在此支持的切点企图，不判全系统或真实策略实现。
+
+2safehelper/4catfile尝试3成功1缺失保持原历史；Root later normalshow另列，本线network/show/lazyfetch0。5formal/6关系/1自足对象，source_refs含2primary+已donecomparison+exactrelatedJSON；JSON不额外claimdone。程序scope为一次原snippet入口+同进程汇总，checker字节/记录结构不数学oracle、不重跑成功片段。旧source/done/sharedGit/阶段三图不改。

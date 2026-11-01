@@ -1,6 +1,6 @@
 # 两人共同查询、六人原审查与中央优化删除证据
 
-实际EH认领为四源，Boss4、pushed/synced、tip `dcb3ed8215b54897407083772daecb22a37bd235`；[完整原回执](claim-receipt.json)和[逐源指纹/owner](primary-inventory.json)均保全。17439B主原件以本地冻结缓存重新核size、SHA256及Git blob SHA1后复制，没有网络、show、共享Git写入或额外claim/done。此包为本地成熟正文，待Root串行保存，不称已推送。
+原EH认领为四源（Boss4，pushed/synced，tip `dcb3ed8215b54897407083772daecb22a37bd235`）；本轮Boss2后续补齐中央删除的两个源版本。原回执见[完整原回执](claim-receipt.json)，六源指纹与owner见[逐源指纹/owner](primary-inventory.json)。原四源17439B主原件沿用本地冻结缓存的size、SHA256及Git blob SHA1核验；本轮Boss2两源按提交页逐字读取后再以同样指纹核验并回放，没有共享Git写入或额外claim/done。此包为本地成熟正文，待Root串行保存，不称已推送。
 
 | ID | 原文件 | 字节 | SHA-256 |
 |---|---|---:|---|
@@ -8,6 +8,8 @@
 | 61534f23b5e3d32cbef6 | [六人原独立审查](original/research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/security_global/padded_residual_m6_review.md) | 3854 | db3a4a5d8685fd8ca6ff3e50c85e5cf426a0a733ea0546b8a3c8b078eaccc3f7 |
 | 171d1eb9926a6dce681d | [两人共同查询](original/research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/security_global/pair_common_query.md) | 3109 | 5ab4cd385b4c9c8d072af7ca0a1a29ee4d3ed674b483c58503c055d80b422e3a |
 | 4e1e8aeab1f13c634eca | [中央优化删除](original/research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/security_global/round2/optimizer_deletion_budget.md) | 7193 | 0653ae40ac35305056638487819ab9e0107ddac47be37965af8575669ee0acee |
+| b57df3a37d82385ba5e2 | [中央优化删除有限报告](original/research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/security_global/round2/optimizer_deletion_verified.json) | 4293 | 242c542839c592299c18acd2a464223db745a37dbccf022e296ca0044430e03d |
+| 674a03d6311245c716e4 | [中央优化删除验证器](original/research/workspaces/customer-attraction/R-27557809587746c59216a46867c9eb07/security_global/round2/verify_optimizer_deletion.py) | 2891 | 3ca6a5b10bc2a1c33bcc47db589d5574503010f2c5f06035c101fd12338060db |
 
 ## 三篇自足数学正文
 
@@ -17,9 +19,9 @@
 
 十篇正式比较全文的快照及原路径/SHA见[context inventory](formal-context/inventory.json)，包括现有CQ-min反例/私块收益下界/Root资源、13人分数桥反例、共同删除势与同叶返还/删除缺陷。快照保持旧链接字节，按其原正式路径解释，不覆盖共享页或另done比较源。
 
-## 缺失原程序与历史证据边界
+## 原认领的缺失原件与历史证据边界
 
-[主本地缓存清单](primary-local-export-manifest.json)记录587B pair audit、2891B中央验证器、4293B中央报告缺失；[另核padded原件](padded-original-availability.json)记录旧DAG/生成器/5740B审计/1433B报告四项缺失。均未网络fallback或占primary。原入口、原LP/MIP和原DAG运行次数0，未以空目录或异schema输入报告原证书PASS。
+[主本地缓存清单](primary-local-export-manifest.json)仍记录587B pair audit缺失；中央验证器与报告已由Boss2在本轮按源提交 `68fad804ec5946cb296f77dc5b336308a66abf12` 读取、逐字节哈希核对并放入本包。中央验证器的一次回放见 [`replay/`](replay/)，不是原作者运行日志。另核[padded原件](padded-original-availability.json)记录旧DAG/生成器/5740B审计/1433B报告四项缺失。均未以空目录或异schema输入报告原证书PASS。
 
 原六人review的旧目标SHA555d309…、5440/2437/3003节点、21933比较及14160严格/7773平局只保原有限声明。Root此前已从明文单位输入另写[完整新反例](../../../state/反例/六人共同静态查询最小收益桥的三十客户反例--反例.md)和新DAG；本包复制其[源码/结果/清单指针](reused-root-reconstruction/inventory.json)，核新DAG SHA9c7c751e…，**不重复运行、不把新构造冒原文件重现**。该源清单写实际stdout曾观察但未另存raw；这里不补造event/stdout，不回填旧strict/tie给新result。490137B新DAG已有稳定正式路径，不重复复制。
 
@@ -42,3 +44,7 @@
 所有完整客户规格/逐行数值/锐族全部响应枚举保存在[208080B结果](new-static-check/result.json)，实际[stdout](new-static-check/stdout.txt)、[stderr](new-static-check/stderr.txt)、[event](new-static-check/event.json)绑定程序SHA和唯一一次执行。普遍结论由正文证明；原main0、LP/MIP0、新SPE核验0。完整执行层级见[boundaries](execution-boundaries.json)。
 
 本次没有新盲审、外审、新颖性或一般half认证。候选/有限实验/解析证明/辅助桥反例分别保留；已done原反例和Root新证书只是比较复用，不重复领/done。
+
+## Boss2中央删除回放边界
+
+`verify_optimizer_deletion.py` 只用Python标准库 `Fraction` 和有限的重数枚举；它不导入规范CAG求解器，不调用LP/MILP，也不展开SPE树。一次本地运行返回码0、stderr为空，输出报告哈希与源报告同为 `242c542839c592299c18acd2a464223db745a37dbccf022e296ca0044430e03d`。小锐例为 `k=2,a=12,t=5,g=3` 的15个响应多重集；一般族回归仅跑 `k=1..5`（响应数3、15、84、495、3003），另核四客户包络的非次模缺口 `1/6`。完整stdout、stderr、事件和清单见 [`replay/`](replay/)。这些是有限精确检查，不能替代 `optimizer_deletion_budget.md` 中依赖解析比较的全k族证明，也不证明真实SPE、exact量词、SPE后缀或Q-CAG-HALF。

@@ -1,0 +1,45 @@
+{
+  "status": "frozen-proposal-v1;not-shared-applied;IL-primary-claim-pending",
+  "entries": [
+    {
+      "target": "archives/unrelated-machines/state/审查/完美完备全种子拒绝证书最终读后与复杂度边界审查--审查.md",
+      "before_sha256": "c8deb53e20014279fbe521e7ef46762c4bcd4fdf30f9ff8a63d4dca114cd69cf",
+      "proposed_sha256": "2b5fe4a4dd1be6ddbd185d0c85e1333022eb9a71c035d374a5e03197a7798b8d",
+      "replacement_count": 1,
+      "replacements": [
+        {
+          "exact_before": "若 R 输出 FAIL 立即接受（因为 FAIL=YES）；",
+          "exact_after": "若 R 输出 FAIL 立即拒绝该证书（因为复合判别器把 FAIL 按 YES 处理）；"
+        }
+      ],
+      "before_snapshot": "08-before.md",
+      "proposed_snapshot": "08-proposed.md",
+      "patch": "08-replace.patch",
+      "evidence": "原c8b4全文7499B：UNSAT verifier rejects FAIL；原782a最终后缀5377B：FAIL拒绝证书。SAT输入可所有seed都返回FAIL，此时复合器都YES，错误证书接受FAIL会伪证UNSAT。",
+      "shared_applied": false
+    },
+    {
+      "target": "archives/unrelated-machines/state/审查/弱H2强行矩与加权扇出边界双源审查--审查.md",
+      "before_sha256": "c6944c4dc455d95d1cd37d5a7ecf8cc3ad8183b0f297e7db496c50c4af2a1519",
+      "proposed_sha256": "743818f48dbf6ab5d3e479e2d7997b956fead977b8d264100c5de35262fb9de9",
+      "replacement_count": 2,
+      "replacements": [
+        {
+          "exact_before": "通用 `m,N=(4,3),(5,3)`",
+          "exact_after": "通用 `(N,m)=(4,3),(5,3)`"
+        },
+        {
+          "exact_before": "有限端 CONFIG 边际和负同机 pair/负三阶",
+          "exact_after": "有限端 CONFIG 边际和正同机 pair/负三阶"
+        }
+      ],
+      "before_snapshot": "04-before.md",
+      "proposed_snapshot": "04-proposed.md",
+      "patch": "04-replace.patch",
+      "evidence": "原6a55全文23401B§6.1明确(N,m)=(4,3),(5,3)，M2维67/106；m3,N4/5满足N≥m+1。fixture k2,b2,r3,N4,t4/3，同R pair=(1/k)t(t−1)/(N)2=1/54>0，triple=−1/162<0，与同源singletonCONFIG零pair不一致才是机制。",
+      "shared_applied": false
+    }
+  ],
+  "no_new_program_runs": true,
+  "primary_dispositions": []
+}

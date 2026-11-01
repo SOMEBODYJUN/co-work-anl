@@ -1,0 +1,13 @@
+{
+  "batch": "R-373d-credible2-20261031",
+  "replays": [
+    {"command": "python3 materialize_indexed.py --seed 37381021 --scale 1000000", "output": "replay/materialized_seed37381021_scale1000000.json", "scope": "fresh p=15,m=5 rounded unit-customer instance and complete outcome recursion"},
+    {"command": "python3 replay/verify_candidates.py", "output": "replay/candidates_verify.stdout", "scope": "independent Fraction verifier for three frozen credible scan strategy trees"}
+  ],
+  "source_scan_status": "The strong/strong_all/weak scan scripts are retained with their frozen best records; their original search records are finite floating/cone candidates. The exact strategy trees in those records were independently verified.",
+  "limitations": [
+    "The scan scripts use floating LPs and credible fixed cones; a best record is not a global search optimum.",
+    "The materialized p=15,m=5 instance is a fresh rounded finite game; its ABCDE path is explicitly not a SPE outcome.",
+    "No result here proves the current six-player, six-provider half-coverage theorem."
+  ]
+}

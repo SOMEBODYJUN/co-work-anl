@@ -1,6 +1,7 @@
 ---
 id: unrelated-machines/two-state-quota-hall-cut-and-orientation-review
 kind: review
+type_tag: 审查
 title: 两状态配额Hall切与方向义务双源审查
 status: complete-source-read-integrated
 scope: "fixed two-rail quota payment Hall cuts and exact orientation equivalence; no general source decoder"
@@ -77,7 +78,7 @@ inventory_sha256:
 \[
 b^*=\max_{1\le k\le2s}\min\left\{\frac{k}{2s},\frac1K\min\left(s,\left\lfloor\frac{s^2}{k}\right\rfloor\right)\right\}.
 \]
-当 (K/s) 与 (s) 同阶时该值仍是正常数；要压低它，必须让配额相对资源高度稀释。这不是源一致性 gap 的自动证明。
+当 (K) 与 (s) 同阶时该值有正常数下界；要压低它，必须让配额相对资源高度稀释。这不是源一致性 gap 的自动证明。
 
 若要用两状态接口给出固定 (\varepsilon>0) 的反面，至少需证明：YES 有 (S=X) 的一致 rail assignment 和完整支付；NO 对所有允许的 (\delta>\varepsilon/2)，orientation 只能选少于 (\varepsilon q_r) 的变量，或某个选中标签支付不足；并且任意 (b\ge\varepsilon/2) 的根树都能反解源问题。简单复制共享资源只改变 Hall 数值，不会阻止部分支付、删变量或多数状态逃逸。
 

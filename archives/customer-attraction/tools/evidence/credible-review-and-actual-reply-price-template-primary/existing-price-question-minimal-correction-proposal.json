@@ -1,0 +1,23 @@
+{
+  "kind": "minimal-existing-canonical-correction-proposal",
+  "applied": false,
+  "path": "archives/customer-attraction/state/问题/逐人覆盖缺口价格桥--问题.md",
+  "old_sha256": "a23a4625da06624fd576c50dda5a67373fa2b51a9dcecaff2f483027b2d1e3f4",
+  "changes": [
+    {
+      "old": "取 \\(m\\) 个最优主题的整数权重 \\(z_T\\in\\{0,1\\}\\)，则 \\(\\tau=m\\)、\\(C(z)=\\operatorname{OPT}_m\\)，从而",
+      "new": "取达到 \\(\\operatorname{OPT}_m\\) 的 \\(m\\) 个带索引比较主题（允许重复），令 \\(z_T\\) 为标签 \\(T\\) 的出现次数，则 \\(z_T\\in\\mathbb Z_{\\ge0}\\)、\\(\\tau=m\\)、\\(C(z)=\\operatorname{OPT}_m\\)，从而",
+      "line": 41,
+      "reason": "m may exceed distinct catalog labels and repeated themes remain legal; use occurrence counts. This is a sufficient price bridge, not a need for distinct optimal themes."
+    },
+    {
+      "old": "而价格总和正好是根前缀客户的实际覆盖价值，故末位候选桥可直接建立。",
+      "new": "而价格总和为 \\(\\sum_x b_x/(b_x+1)\\)，逐客户不超过过去玩家在实际终局的总收益 \\(W-u_m\\)，故末位候选桥可直接建立。",
+      "line": 63,
+      "reason": "sum b/(b+1) is fractional past-load tax, not number of prefix-covered customers; one customer b1 already gives1/2 versus1. Correct comparison withW−u_m is in existing mass-deletion duality lemma."
+    }
+  ],
+  "supporting_existing_lemma": "archives/customer-attraction/state/引理/截断覆盖价格的删除质量对偶--引理.md#末位的显式删除证书及较早位置缺口",
+  "worker_shared_file_edits": false,
+  "old_primary_done_not_reopened": true
+}

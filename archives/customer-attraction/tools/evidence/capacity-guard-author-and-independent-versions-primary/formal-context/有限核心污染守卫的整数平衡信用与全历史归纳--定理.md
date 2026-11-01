@@ -1,0 +1,63 @@
+---
+id: customer-attraction/bounded-core-pollution-guard-integer-balanced-credit-full-history-induction
+kind: theorem
+type_tag: 定理
+title: 有限核心污染守卫的整数平衡信用与全历史归纳
+status: 单位客户整数信用及任意合法历史守卫条件解析成立；跨分支污染共同付款未证
+summary: 同终局q个守卫玩家和outside负载整数平衡给B_int强于Cauchy；用未满主题真实偏离闭合全任意历史λ保底，不要求outside小或排outside。
+source_refs:
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-ab183d14fb74403091d09db766b05f73/recursion2/bounded_core_guard_review.md
+---
+
+# 有限核心污染守卫的整数平衡信用与全历史归纳
+
+4944B原recursion2审查全部实读，必要6303B作者共同版本全文比较。PE5实际完整16项claim f00e95c74bf1d21bc6df322ec7cb6f597accfabc pushed/synced，本5subset/owner/sourceSHA已核；不预称正文已推/done。原审查明确读作者第1—3节，未读/执行其audit；是读后独立定义级攻击，并提出整数强化，不倒填盲审/外审。原作者共同版后来§2.1已吸收本强化，两来源同数学不双计新定理。
+
+## 适用全部合法历史的条件
+
+原单位客户、单位m≥1、非空有限共同目录及任意完整有序历史纯SPE。非空G⊆S，每T正整数cap k_T、Σ_Gk_T≥m。C_T⊆T仅被G中的T覆盖，a_T=|C_T|，不同C_T不交，但允许任意outside覆盖；
+\[
+ β_T=\max_{U\in S\setminus G}|U\cap C_T|\in[0,a_T],\quad κ_T=\min(k_T,m),
+\]
+无outside时β0。a>0时D=(m−κ)β、j=floor(D/a)、s=D−aj，定义
+\[
+ B_{int}(a,β,κ,m)=\frac{a-s}{κ+j}+\frac{s}{κ+j+1}.
+\]
+a0时β0且B_int定义0。若每T均有
+\[
+ B_{int}(a_T,β_T,κ_T,m)+(|T|-a_T)/m≥λ>0,
+ \qquad |T|<(k_T+1)λ,\tag{1}
+\]
+则每一合法非终局有序历史（包括此前outside/其它guard超cap）上当前规定者最终利润≥λ，且不选已经出现至少k_T次的guard T。outside可任意大/多且实际可选。根W≥mλ；若另OPT≤2mλ则half，例如全目录每题≤2λ足该附加条件。不是说每实例有(1)证书。
+
+## 同一终局的精确整数平衡核心信用
+
+当前选T，假定终局q个T玩家，1≤q≤κ。核心客户outside覆盖整数d_x≥0，每名outside最多污染β核心客户，outside人数≤m−q，故Σd≤(m−q)β，且d_x≤m−q。当前从核心得z=Σ_C1/(q+d_x)。
+
+固定q，增加总污染只会降z。若两个d相差≥2，把大者减1、小者加1，凸倒数和不增。因此放宽到总污染恰(m−q)β的最小倒数在整数分母相差≤1，分母总和
+\[
+ N(q)=qa+(m-q)β.
+\]
+0≤β≤a使N(q)随q不减。记a个正整数分母总和N≥a的平衡倒数和E_a(N)，当N增1，f=floor(N/a)≥1，有
+\[
+ E_a(N+1)-E_a(N)=-1/[f(f+1)]<0.
+\]
+所以z≥E_a(N(q))≥E_a(N(κ))=B_int。平均outside负载≤m−q，平衡不违反每客户d≤m−q。这个证明全整数参数，不是有限网格。
+
+在只保q/a/每outside至多β的局部信息时，平衡下界可达到：让m−q个outside依次在a客户的循环序列各取连续β个，每row无重复因β≤a，列负载差≤1。此局部同终局锐性不保证这些目录/终局共同组成SPE，更不证明(1)是最强全球证书。
+
+Cauchy给较弱z≥a²/[κa+(m−κ)β]，B_int≥它；若a>0且D不被a整除，分母不全相等使严格。a2/m2/κ1/β1例，整数信用3/2而Cauchy4/3，阈λ7/5前者过而后者不过，只是同证书强化。β0时B_int=a/κ；β=a时所有分母m得a/m；a0按0无需除零。
+
+## 全部有序历史双重逆向不变量
+
+对剩余深度同时证明利润≥λ及拒绝满guard。在任意长度t<m历史，若每guard都至少k_T次，则t≥Σcap≥m矛盾，故有未满Q。当前若真改Q，其计数≤k_Q；更深所有有序节点归纳都拒满Q，故该真实终局Q人数q≤κ_Q。注意前缀可含outside或其它超cap题，未满Q及q界依旧成立。
+
+其核心只被Q玩家和outside命中，以上整数界给当前核心利润≥B_int，其余Q每客户分母≤m，故真偏离≥λ。选择已满T则无论后续如何，当前收益≤|T|/(k_T+1)<λ，SPE最优性同时排满T并迫规定收益≥λ。末位就是无后继同一基例，归纳覆盖所有有序offpath和任意ties；没有冻结偏离后续或识别同计数策略。
+
+与[严格outside原充分条件](../反例/外部主题等号边界的全历史收益保底反族--反例.md)不同，这里不排outside，使用β控制其污染并量化所有合法历史；不能把两者的历史域互换。m1/大cap k>m/空题/β0均已含，零全客户无法满足正λ条件，只是条件不适用而非反例。
+
+## 同终局租金与未完成的跨分支支付
+
+令R_T=Σ_C d_x/(q+d_x)，是outside玩家从该核心的真实总利润，逐客户有qz_T+R_T=a_T；若q≤k_T，则k_Tz_T+R_T≥a_T。不同核心不交，所以**同一终局**Σ_TR_T≤outside总利润。这是份额转移，不是新增福利。
+
+各父节点偏离T可产生不同整条真实子局，其R_T不能相加后记到actual outside收入；逐核最坏β还可能丢掉联合污染稀疏性。整数平衡并未支付这个跨枝共同预算。m2/两个8人guard加8公共E、outside E∪{a,b}大小10、β各1、λ7例，Cauchy64/9>7且guard8<14/全题≤14，outside根利润19/2、末guard15/2，WOPT17，显示outside可实际选而结论不依排它。它不越过一般两人half或给新全人数无条件结果。

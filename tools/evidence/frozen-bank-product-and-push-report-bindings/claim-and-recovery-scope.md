@@ -1,0 +1,5 @@
+# 实际认领与独立恢复
+
+原13项receipt实际pushed 3a1edbfdaf4df9e254220eabb8d20ada807d9f32，local_sync原needs-attention保留；不把Root另完成的恢复证据改写进原回执。独立proof保存stash 72824913def56d337f775292401f1b9d261c067f，2tracked/2untracked全同，0missing/different/unmerged且stash保留。本4实际owner/sourceSHA逐项核。
+
+完整JSON含义在JZ实际已读，此次完整语义逐项对应既有程序资源；既有asset全字节相同只是额外版本绑定，不能单凭该hash代替阅读。0新数学运行/外部操作。

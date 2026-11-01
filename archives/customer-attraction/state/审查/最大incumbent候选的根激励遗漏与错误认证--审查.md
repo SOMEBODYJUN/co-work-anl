@@ -6,6 +6,7 @@ title: 最大incumbent候选的根激励遗漏与错误认证
 status: 旧候选非SPE；Root新定义核验明确五个根严格偏离；旧冻结字节保留
 source_refs:
 - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/credible_search/README.md
+- source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/credible_search/audit_old_largest_incumbent.py
 ---
 
 # 最大incumbent候选的根激励遗漏与错误认证
@@ -58,5 +59,7 @@ JSON确实保存43有序节点完整动作表，但**完整定义一份形式策
 Root自写标准库Fraction入口，仅读上述同SHA原JSON，展开963不同单位客户和全部43策略键。一次运行核258含自身/215非自身真实比较，且枚举216终局覆盖；完整有理输出76161B，发现上述恰五根偏离，最大覆盖963、最优无序支持123/135。exit0、stderr空，0.293秒；[源码/完整输出/执行SHA](../../tools/evidence/cyclic-extension-terminal-support-and-root-audit-primary/new-root-definition-check/)保原捕获。不导入作者或规范validator、SPE solver、LP/MILP，不重跑原审计或过去成功有限搜索。
 
 它是针对新发现实质矛盾的必要定义重构，不为了增加运行次数重复扫描妥善已处置来源。原可信搜索稿称audit_old_largest_incumbent及JSON已完成215非自身审计，是原历史内部声明；本次独立代码和它身份分开，无外审/新颖性认证。
+
+本十源清洗再以 `run/old_largest_incumbent_recheck.py` 运行同一单位客户/Fraction 逻辑：exit=0、stderr 为空，重得五个且仅五个根盈利偏离，输入 SHA 与冻结值一致。该运行只复核已有归档 JSON，不把 `verified:true` 恢复为 SPE 认证。
 
 三篇旧正式页的当前更正保原稳定ID/路径、原历史运行及冻结证据，只撤回错误SPE/桥认证并指向本审查；Root留完整before/proposed/after及精确SHA，不改旧progress ownership/disposition。可接续任务是用根行完整的固定策略锥或真实可实现菜单，不能让`verified:true`跨越缺失假设。

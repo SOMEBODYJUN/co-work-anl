@@ -1,0 +1,5 @@
+# 关系审查
+
+BNS原review给独立先验和MC局部改进，数学已DQ吸收；benchmark审查修self/m1已HU吸收，审查primary去向不再授theorem。两者共同只必要条件/模板域，不造half支付边。
+
+计数终局候选的general反驳不同于给一个非Markovtable：原10000p4阴性与后来p5精确7/6例保域，正确countcache所有终局不强制policy一致。README静态匹配另用冻结比较，旧52done不再处理/执行。每边说明真实scope和source，未改shared图。另有旧review22->52单处unapplied文字proposal，附oldSHA/source证据不覆盖原页。
