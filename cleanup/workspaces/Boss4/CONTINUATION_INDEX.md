@@ -519,3 +519,7 @@ R3_RESUME20RA：最小势增量合法前缀/自由重查及κ负2入口、named4
 R3_RESUME20RA数学/证据pushed 7ddcb6201edf36e503b61ddaeb5db9d8ebee7ef4；20源done另推送 d297f6bbca277c1de5aee4a2b2ffdd23b95600f2。Boss4累计2839完成，实际未完19；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME14RE：Root菜单时机6完整原程序/报告/42同SHA原布局依赖与全称量词，NET5三个固定全树阳性和86原始两价分层、security3分数上图/Fenchel完整数学方向与Search闭包；本14源原/新数学程序均0，不借历史数值冒精确普遍预算。；共14主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME14RE_REMAINING_SCOPE.json。
+
+R3_RESUME14RE数学/证据pushed 9b64a406e4d77e2e6ea5e0df3846d2ece13d1087；14源done另推送 269fb81ecfdcce7b9a9e5056070226f3dd259bda。Boss4累计2853完成，实际未完25；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME25RM：Root fixed-rank原main完整19674B复现与全树端点；动作升级/协方差5、自由未来控制5、共享t/R2根账本3准确补p_a>0及PB当前不可达、astra4九项/15360原CLI一次、辅助Shapley3、漂移2四纯点全q匹配证D0。两原CLI各一次，漂移有限Fraction重构单列，无旧探索重跑。；共25主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME25RM_REMAINING_SCOPE.json。
