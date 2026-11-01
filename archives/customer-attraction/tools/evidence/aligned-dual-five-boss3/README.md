@@ -1,0 +1,9 @@
+# 原64列有理对偶五源
+
+original含5原件，source-manifest保准确ID/双冻结path/blob/SHA；related保存同SHA canonical/四rows/64原子输入及原README，related-manifest绑定全部7件。reopt JSON已在上一批作关联输入，本次同SHA复用而主处置，不重跑LP或1047列。
+
+run_original_recovery_once.py已执行一次：python -I -B -c的bootstrap只添加确切冻结next_credible sibling目录再runpy原recover顶层。该程序无main guard，不能再import造第二次执行；reopt.py也无guard且会求LP，本次从未导入。replay的396B真实stdout仅摘要，完整7348B输出文件与冻JSON逐字节同；event记录0.850秒/exit0/stderr空/argv/bootstrap/源码SHA。未对原exact_negative文件做覆盖或声称原recover会生成它。
+
+compare_parameters_and_one_negative.py是一次额外有限算术：逐37参数比较新exact与前批binary float；全部不同但活动名字同。原recover已验64列，本checker只重算域外1列2196原Fraction系数，并核原810B负分数/float及与前批同列binary残差的差。1列不等于重扫1047；参数不同的结论不允许迁移旧全列结果。参数/活动系数和原证据SHA保在parameter-and-one-column-comparison.json。
+
+当前全部旧64残差37零27正、λ36正；这是受限上界，不是自动精确LP最优（无精确原始点）、全型证书或SPE。stage内源数据完整，runtime原布局在外部；需另选隔离副本才重放覆写型原recover。没有Git/网络/新claim或新发现扫描。

@@ -1,0 +1,89 @@
+{
+  "marginal_curve_probe.py": {
+    "imports": [
+      "argparse",
+      "json",
+      "math",
+      "random",
+      "time",
+      "functools.lru_cache",
+      "itertools.combinations",
+      "pathlib.Path"
+    ],
+    "third_party": [],
+    "project_local_helpers": [],
+    "input_files": [],
+    "main_guard": true,
+    "CLI_defaults": {
+      "seed": 1,
+      "games": 100,
+      "topics": 6,
+      "players": 3,
+      "out": "marginal_curve_probe.json"
+    },
+    "output": "Path(__file__).with_name(args.out); writes JSON only on completion; overwrites same-name adjacent file; basename expected",
+    "random_generator": "random.Random(args.seed)",
+    "current_residual_loop": [
+      true
+    ],
+    "original_import_main_probe_RNG_BI_calls_this_batch": 0
+  },
+  "quadratic_probe.py": {
+    "imports": [
+      "argparse",
+      "json",
+      "random",
+      "time",
+      "functools.lru_cache",
+      "pathlib.Path",
+      "numpy",
+      "scipy.optimize.linprog"
+    ],
+    "third_party": [
+      "NumPy",
+      "SciPy (HiGHS method for LP)"
+    ],
+    "project_local_helpers": [],
+    "input_files": [],
+    "main_guard": true,
+    "CLI_defaults": {
+      "games": 1000,
+      "topics": 5,
+      "players": 3,
+      "seed": 19,
+      "out": "quadratic_probe.json"
+    },
+    "output": "Path(__file__).with_name(arg.out); writes JSON only on completion; overwrites same-name adjacent file; no parent mkdir",
+    "random_generator": "random.Random(arg.seed)",
+    "LP_scope": "float static-security primal; res.success asserted only; no exact rational primal/dual certification",
+    "original_import_main_evaluate_RNG_BI_LP_calls_this_batch": 0
+  },
+  "new_check_saved_fields.py": {
+    "imports": [
+      "ast",
+      "collections",
+      "hashlib",
+      "itertools",
+      "json",
+      "math",
+      "fractions.Fraction",
+      "pathlib.Path"
+    ],
+    "third_party": [],
+    "input_data_files": [
+      "original/probe_k6_m3.json",
+      "original/probe_k7_m4.json",
+      "original/quadratic_k6_m3.json"
+    ],
+    "read_source_for_AST": [
+      "original/marginal_curve_probe.py"
+    ],
+    "original_module_imports": [],
+    "output": "saved-field-review.json plus stdout summary",
+    "executions_this_batch": 1,
+    "event": "review-event.json",
+    "no_generic_full_policy_verifier": true,
+    "analytic_complete_SPE_proof_for_one_quadratic_point_in_formal_text": true
+  },
+  "parameter_domain": "Mathematical interpretation requires positive k,m, legal nonnegative integer client weights / symmetric valid quadratic arrays. Original CLIs do not fully validate arbitrary external values. No additional input package is required."
+}
