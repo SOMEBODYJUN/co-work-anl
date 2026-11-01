@@ -1,0 +1,7 @@
+# 联合终局细化与合法整数物化
+
+四primary488429B全文/全427列与质量/全192新行slack、33末位完整报告保。两个自足正文分别保存有限708必要系统点与65主题真实目录的33末位骨架。原LP/import/本次708重验0；独立原物化标准库顶层经runpy包装恰一次exit0，新报告与冻结原件逐字节同。current-run-001保真实wrapper/driver/事件/stdout/stderr及完整原路径tree，原内存1180类型导出无第二次数学调用。事件argv为当时绝对路径，不改写成可移植运行记录。
+
+source-root是原两程序及本地动态依赖/输入闭包。若需另行复现实物化，可在新副本执行source-root/research/workspaces/customer-attraction/R-ffea274483aa4105a317300038fe04ce/credible_counterexample/audit_joint_terminal_materialization.py，将覆写其相邻JSON；不是本次已发生的第二次run。joint_terminal_lp.py则顶层启动NumPy/SciPy求解并覆盖报告，外部版本未冻结，本批未运行。canonical init仅ROOT存在标记，不导入。
+
+完整427阅读视图可逆恢复AE八进制/second十六进制/三L低位索引；原JSON永保。44正列不是44父原子。无有理dual/精确最优/全原子定价/早期IC或完整SPE。五人half既有定理与这份局部末位骨架相容，六人问题未因此解决。

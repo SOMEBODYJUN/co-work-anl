@@ -547,3 +547,7 @@ R3_RESUME25TA：Root516点3原/共享原公式精确原始点check一次，64质
 R3_RESUME25TA数学/证据pushed e060added2c82c0cde21db6954241028fb0be1dd；25源done另推送 43a76484348e2233e52989bd3f39436724843309。Boss4累计2958完成，实际未完22；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME3TF：调和母稿全一般符号式/所有eta极小点与弱等号、显式R/Z债及r1/r2分界，5701原参数1728/任意单客户2500/三尾值准确域及769全字段；旧243955B input全部4095权/1885策略实读，同SHA22620成功仅复用，0原入口/旧成功重演；共3主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME3TF_REMAINING_SCOPE.json。
+
+R3_RESUME3TF数学/证据pushed f447a44755aa27b972b34c014057aea0c28ab32a；3源done另推送 c1ad74d8d139c09c934f50ba01e57075716e253e。Boss4累计2961完成，实际未完23；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME23TN：Root427共同索引四原件与独立65目录/33末位原物化一次；星核全n匹配静态值与双三块全报告解析，ROW/COLUMN反向与原共同运输/双预算审，400动作cap1锐族和先验，固定菜单MILP两提案完整43节点解析，首对iid/静态值与牺牲前缀合法嵌入。当前仅Root原物化1，其余入口/LP/旧扫描重放0，严格区分全n证明/有限点/历史报告/开放付款；共23主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME23TN_REMAINING_SCOPE.json。
