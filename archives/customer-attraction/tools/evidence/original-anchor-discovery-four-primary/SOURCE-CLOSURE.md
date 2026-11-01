@@ -1,0 +1,7 @@
+# 原代码同目录及必要规范包
+
+anchor_cone starimport同目录anchor_synthesis，后者parents5加original根并from customer_attraction import三类；package init又导入certificate，规范4py原路径齐/旧全读同SHA。两个primary py/anchor_best启动数据/两个原best同R5c4 credible目录保存，无缺helper或未知游戏。
+
+cone ROOT来自synthesis脚本目录，读anchor_best.json后it0覆盖initial weights，仅为真实启动文件依赖；不把该13客户点叫首个LP seed。两个程序都在自身ROOT覆写best，future复验需另隔离事件，当前不import/执行冻结原tree。科学包版本/原命令/退出/500或20000完成日志未给不补。
+
+7ddc5102只是精确参数与六动作差比较、原normal回执复用不假新show、不额外done；当前σ的有理可行性由新纸上完整43节点表证明，不借旧fixture review当当前程序认证。没有写/运行新数学检查器或LP。
