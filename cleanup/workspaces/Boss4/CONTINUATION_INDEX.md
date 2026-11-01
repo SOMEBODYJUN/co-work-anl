@@ -511,3 +511,7 @@ R3_RESUME22QS：根价格5精确DAG与325客户全历史唯一解析；NET/ALL/R
 R3_RESUME22QS数学/证据pushed b133d2baf377a37eac1c7b0cb456993ff09d8e21；22源done另推送 2fa5291a27ade4f1b9e884b60d2386a9e3840cf6。Boss4累计2809完成，实际未完25；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME10QX：Root三原探针完整恢复；精确整数BI与浮点在轨LP/两重SPE量词分清，原净吸收引理只补恢复链接不改公式；disjoint/floor4与maxsat/真尾floor-only/208审计3的原source准确去重，7目标数学已先22QS pushed，0新运行。；共10主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME10QX_REMAINING_SCOPE.json。
+
+R3_RESUME10QX数学/证据pushed dca9dc0fab0d2a851a5f606d1fc538fddec1dc5e；10源done另推送 f557d5af6950d7af36c72e120d44761ce401a06b。Boss4累计2819完成，实际未完29；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME20RA：最小势增量合法前缀/自由重查及κ负2入口、named4 LAST同query退款和初值不双计/类型lift、slice4完整条件平方/二次整数行、direct5非空类型parity补全/净差信用，static5原CLI恰一次两完整输出字节同；其余数学程序0。；共20主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME20RA_REMAINING_SCOPE.json。
