@@ -1,5 +1,7 @@
 # 合法背景首两人探针：原件与两次新证据
 
+模型边界补注：本包按程序标签接口保留同覆盖异标签。严格集合目录下，覆盖互异者直接适用；别名点若合并，须另证完整有序策略、背景与真实后继下降，本文不默认。原标签、原件、数值、策略账本和所有旧运行事件均保留；本次只改说明与静态指纹，未新增数学运行。
+
 正文：[合法背景首两人安全比的有限探针与三个取等点](../../../state/程序/合法背景首两人安全比的有限探针与三个取等点--程序.md)。四primary合5639B，均全文实读；[source-manifest.json](source-manifest.json)保两冻结提交、SHA、原字节和实际旧模块依赖。
 
 - [original/background_pair_probe.py](original/background_pair_probe.py)：3943B原探针，动态导入4073B旧BackgroundSolver。旧模块只复用[已有同SHA原件](../coverage-step-background/research/workspaces/customer-attraction/R-7e9f44beea424d469713364afe7dd180/background_induction/search_background.py)，不另done或运行其随机main。
