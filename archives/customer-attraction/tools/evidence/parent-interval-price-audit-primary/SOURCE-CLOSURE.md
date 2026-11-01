@@ -1,0 +1,7 @@
+# 无本地数据/项目依赖的原程序
+
+3896只Fraction/lru_cache/Path/json标准库；客户类型、四价格、primal路径均字面固定。旧candidate/verify/report及四规范solver模块仅比较，不是本main runtime依赖，故不复制成伪输入链或额外done。
+
+原code/report按相邻源路径保全，main guard无参数，全部assert后覆盖邻interval_price_independent_audit.json并print完整pretty JSON。当前不import/main，不在原档运行，不补旧argv/time/exit/hash或逐path log。原report与源码合同完整可审阅不等当前新生成。
+
+exact_floors只存未用于指定primal的逐有序true阈值，报告primal_path是价格原始点。历史independent仅另写定义实现，缺未见作者时序，不制造blind或新发现。

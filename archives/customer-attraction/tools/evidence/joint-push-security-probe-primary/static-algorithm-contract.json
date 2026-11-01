@@ -1,0 +1,38 @@
+{
+  "scope": "whole-source mathematical reading only; AST and JSON metadata checks, no execution of original methods",
+  "objective": "same query p against p-average full r-slot terminal load minus actual root payoff",
+  "normalization": "c dot w=1 actual root payoff, not W or total active mass",
+  "fixed_p_LP": "max(f-c)w subject to rounded full ordered-history G w>=0,w>=0,cw=1",
+  "helper": "game_policy only; all true children; count outcome caching expanded full ordered actions; G rounded13 and unique",
+  "SLSQP": "local max with analytic gradient; success/residual not checked",
+  "nonlinear_global_or_exact_dual_not_supplied": true,
+  "positive_gap_threshold": 1e-07,
+  "best_update_threshold": 1e-09,
+  "LP_failure": "break current start step loop; unreported failure; subsequent starts/games continue",
+  "candidate_path_field_is_terminal_counts_not_ordered_path": true,
+  "helper_root_secondary_sort_is_random_not_root_welfare": true,
+  "negative_report_only_at_normal_outer_completion": true,
+  "old_candidate_not_deleted": true,
+  "defaults": {
+    "games": 200,
+    "starts": 8,
+    "rounds": 8,
+    "seed": 977310
+  },
+  "report": {
+    "games": 150,
+    "starts": 6,
+    "rounds": 6,
+    "seed": 977310
+  },
+  "runtime_dependencies": {
+    "project_helper_count": 1,
+    "scientific_packages": [
+      "numpy",
+      "scipy"
+    ],
+    "no_version_lock": true
+  },
+  "analytical_sufficiency": "all-p F<=u implies free extra t<=u by linear-p convex-q minimax; one F>u only defeats specific construction",
+  "new_original_main_import_SPE_payoff_Gamma_RNG_SLSQP_LP_runs": 0
+}

@@ -1,0 +1,56 @@
+{
+  "id": "23c59afb9f2a6498f7c7",
+  "full_file_reviewed": true,
+  "related_material_checked": true,
+  "unique_content_accounted_for": true,
+  "read_note": "完整读取1945B bound.py与1324B bound.json；重建47个碰撞自由binary兴趣mask、16条必要IC/true-reply松弛行、5/4原始点与对偶乘子，确认输出由源码with_suffix写出且源+JSON配对。",
+  "comparison_note": "实读并重跑同目录two_player_collision_free.py、audit_two_player_overlap.py/json、audit_background_two_player.py/json及overlap/background refinement；并查读全仓collision-free occupancy五客户端点、k>=1三半族、R-486三人MILP有限端点与独立Fraction审计。确认本源是固定六坐标部分IC的精确LP证书，非一般SPE/half定理。",
+  "decision_note": "建议integrated-supporting-evidence：将源码+JSON保留为现有两人碰撞自由5/4解析定理的计算支撑，正文写清固定模板、碰撞自由mask、必要松弛与Fraction重核；不登记为Q-CAG-HALF反例、一般人数上界或全策略穷举证书。",
+  "disposition": "integrated",
+  "targets": [
+    "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md"
+  ],
+  "artifacts": [
+    "source.py",
+    "source.json",
+    "two_player_collision_free.py",
+    "two_player_collision_free_best.json",
+    "audit_two_player_overlap.py",
+    "audit_two_player_overlap.json",
+    "audit_background_two_player.py",
+    "audit_background_two_player.json",
+    "collision_free_family_audit.json",
+    "collision_free_obstruction_audit.json",
+    "review.md"
+  ],
+  "tests": [
+    {
+      "command": "python source.py",
+      "result": "HiGHS Status 7; exact Fraction dual/primal assertions pass; ratio 5/4"
+    },
+    {
+      "command": "python two_player_collision_free.py",
+      "result": "384 LPs; best 5/4; exact candidate check pass"
+    },
+    {
+      "command": "python audit_two_player_overlap.py",
+      "result": "64 binary identity cases; residual min 0; endpoint/cartesian assertions pass"
+    },
+    {
+      "command": "python audit_background_two_player.py",
+      "result": "576 exact cases; minimum psi 0"
+    },
+    {
+      "command": "python audit_collision_free_obstruction.py",
+      "result": "20 full-history comparisons; W4 OPT5; all assertions pass"
+    },
+    {
+      "command": "python audit_collision_free_family.py",
+      "result": "k=1,2,3 all comparisons pass; ratios 5/4,4/3,11/8"
+    }
+  ],
+  "owner": "Boss1",
+  "source_sha256": "867f6f89eb97ab84a4098ed3fb5bd8113e3b3710a2dda2fabf7f037799e79ad3",
+  "request_id": "d17fd1747ad24273ba95a6489a0e4251",
+  "updated": 1793534623
+}

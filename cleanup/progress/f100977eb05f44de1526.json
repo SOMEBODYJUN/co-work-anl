@@ -1,0 +1,157 @@
+{
+  "id": "f100977eb05f44de1526",
+  "owner": "Boss1",
+  "source_path": "research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/cone_probe.py",
+  "source_blob": "ad314a7cb5a9799f64e2b4988ab3bb42a2af5bfb",
+  "source_size": 4226,
+  "source_sha256": "1b5a5cbc68153f6660b34c4fb5d9f6d291b1c680f780fa819679424141caf73a",
+  "full_file_reviewed": true,
+  "related_material_checked": true,
+  "unique_content_accounted_for": true,
+  "read_note": "逐行读取96行冻结程序；核对随机客户生成、完整有序历史SPE证书、gamma锥行、根福利归一化、v分支效用、互异主题support LP、负slack输出字段与异常路径。",
+  "comparison_note": "与R-51 global/README、cone/README、五个full_tree_*数值MILP输出、CA-STRATEGY-CONE及CA-SECURITY-CONE-DUAL比较：gamma确实实现固定完整策略的真实SPE激励锥，但程序只取随机样本/每终局单证书/前三低福利终局/互异support，且全程浮点，没有有理可行性或对偶证书；不覆盖安全值β/Q接口。",
+  "execution": {
+    "environment": "isolated probe_env with frozen model.py/exact.py/certificate.py dependencies; PYTHONPATH=probe_env",
+    "runs": [
+      {
+        "args": "--players 3 --topics 5 --samples 1 --seed 90230",
+        "exit_status": 0,
+        "min_slack": 0.0,
+        "stdout": [
+          {
+            "sample": 0,
+            "slack": 0.75,
+            "actual": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "portfolio": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "sample": 0,
+            "slack": 0.0,
+            "actual": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "portfolio": [
+              0,
+              1,
+              4
+            ]
+          }
+        ],
+        "negative_output_written": false
+      },
+      {
+        "args": "--players 3 --topics 5 --samples 100 --seed 90230 --output probe_negative.json",
+        "exit_status": 0,
+        "min_slack": 0.0,
+        "negative_output_written": false
+      }
+    ],
+    "certificate_replay": {
+      "customer_types": 24,
+      "customer_count": 86,
+      "outcome_count": 1,
+      "target": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "valid": true,
+      "checked_histories": 31,
+      "checked_deviations": 124,
+      "violations": 0
+    },
+    "boundary_failures": [
+      {
+        "args": "--players 0 --topics 0 --samples 1",
+        "exit_status": 1,
+        "error": "TypeError: object of type 'numpy.float64' has no len() at arrays line 39"
+      },
+      {
+        "args": "--players 1 --topics 0 --samples 1",
+        "exit_status": 1,
+        "error": "ValueError: positive-player games need at least one legal topic from Instance"
+      },
+      {
+        "args": "--players -1 --topics 2 --samples 1",
+        "exit_status": 1,
+        "error": "ValueError: players must be an integer at least 0 from Instance"
+      }
+    ]
+  },
+  "exact_fields": {
+    "source_cli": [
+      "players",
+      "topics",
+      "samples",
+      "seed",
+      "output"
+    ],
+    "negative_output_schema": [
+      "m",
+      "k",
+      "portfolio",
+      "float_slack",
+      "weights",
+      "certificate"
+    ],
+    "certificate_fields": [
+      "terminal_counts",
+      "actions"
+    ],
+    "action_fields": [
+      "history",
+      "action"
+    ],
+    "lp_constraints": [
+      "A_ub=-gamma",
+      "b_ub=zeros(len(gamma))",
+      "A_eq=[c]",
+      "b_eq=[1]",
+      "bounds=(0,None)",
+      "method=highs"
+    ],
+    "support_scope": "combinations(range(topics), min(players, topics)); distinct topics only"
+  },
+  "failure_mechanisms": [
+    "HiGHS infeasibility is raised as generic RuntimeError; an all-zero customer instance gives c·weights=1 infeasible and has no dedicated diagnostic.",
+    "Negative candidates are only Fraction(limit_denominator(1000000)) approximations; no exact gamma feasibility, integer scaling, SPE replay, or dual certificate is checked.",
+    "Numerical slack near zero is subject to floating tolerances; no timeout/complexity bound and complete-tree enumeration grows exponentially.",
+    "Nonexistent output parent raises FileNotFoundError only after a negative slack is found; NumPy/SciPy imports and five-level ROOT layout are prerequisites."
+  ],
+  "disposition": "integrated",
+  "decision_note": "保留为customer-attraction固定完整策略客户锥/UP目标的有限浮点探针和复现记录；严格标注探针，不能升级为半覆盖定理、反例、全策略锥上界、SPE有理证书或安全值支付定理。",
+  "targets": [
+    "archives/customer-attraction/state/计算/固定完整策略UP锥有限探针--计算.md",
+    "archives/customer-attraction/tools/evidence/fixed-strategy-up-cone-probe/original/cone_probe.py",
+    "archives/customer-attraction/tools/evidence/fixed-strategy-up-cone-probe/replay/run_m3k5_s1.stdout",
+    "archives/customer-attraction/tools/evidence/fixed-strategy-up-cone-probe/replay/run_m3k5_s100.stdout",
+    "archives/customer-attraction/tools/evidence/fixed-strategy-up-cone-probe/PROVENANCE.json"
+  ],
+  "artifacts": {
+    "source.py": "1b5a5cbc68153f6660b34c4fb5d9f6d291b1c680f780fa819679424141caf73a",
+    "independent_review.md": "a42e4d2898584f9a7dae43371d8b7428e915848790b233c07e43b3d550b3c96e",
+    "source.json": "66c99308b4d4810cd6dae337a47d7e3a303b2a5d6837335e27a55f4c5a334008",
+    "run_m3k5_s1.stdout": "422ef59d1dcd9a031a76e4a9a20afe038db43117158837d136c63e0de049e311",
+    "run_m3k5_s100.stdout": "422ef59d1dcd9a031a76e4a9a20afe038db43117158837d136c63e0de049e311",
+    "boundary_cases.txt": "ca1e769f2a3cc9f95fec42694b083006179975a43105899063cc1556471ef38f"
+  },
+  "source_id": "f100977eb05f44de1526",
+  "request_id": "d17fd1747ad24273ba95a6489a0e4251",
+  "updated": 1793534623
+}

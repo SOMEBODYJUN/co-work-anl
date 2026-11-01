@@ -1,0 +1,289 @@
+[
+  {
+    "id": "0d96e50335c33022effb",
+    "source_sha256": "c7390c9a74878e92cd3dd7e41589310761118c5a4823e035f2b745e54a5d8842",
+    "source_blob": "94521d789726e418be817c953562eac3c716ecd6",
+    "source_path": "research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/construction/two_player_collision_free.py",
+    "source_commits": [
+      "68fad804ec5946cb296f77dc5b336308a66abf12",
+      "aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c"
+    ],
+    "disposition": "retained",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取1783字节脚本；核对四位客户掩码、删除同时含C,D的实际碰撞类型、64个回复映射、6个比较对、384次LP、根/末位约束、Fraction候选核验和5/4输出。精确候选为回复(B,A,D,A)、实际(C,D)、比较(A,D)、掩码权重1/4,1/2,1/4,1/4，缩放为五名单位客户。",
+    "comparison_note": "与同工作区two_player_collision_free_bound.py/json的六主题有理对偶残差、two_player_overlap_refinement.md及background_two_player_refinement.md的完整SPE解析界比较；并与R-2fc的五客户collision-free occupancy obstruction及Fraction全历史审计比较。源脚本独有的是四主题384个策略/比较对的有限LP发现轨迹；五客户数学证人和5/4结果已有其他完整核验/解析正文。",
+    "decision_note": "建议保留为计算/证据资源，不升级为定理。脚本只给四主题有限实验和一个Fraction直接核验的候选，浮点LP及分母限制不能证明LP全局最优，也不覆盖任意目录或多人量词；普遍两人无碰撞5/4上界应引用六主题逐客户对偶或已保留的末两人解析定理。若正文只保留解析对象，可按重复证人并入R-2fc障碍证据，但保留本源哈希与有限枚举范围。",
+    "targets": [
+      "cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/two_player_collision_free--计算.md",
+      "cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/two_player_collision_free_best.json",
+      "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+      "archives/customer-attraction/tools/evidence/collision-free-family-and-terminal-obstruction-primary/original/research/workspaces/customer-attraction/R-2fc8878b4bdd4328bbc1bcf1df8ca831/global_proof/collision_free_occupancy_obstruction.md"
+    ],
+    "validation": {
+      "source_run": "python3 cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/source.txt",
+      "source_run_result": "LPs 384; best 1.25; outputs 6/5 and 5/4 candidates",
+      "bound_run": "python3 cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/two_player_collision_free_bound.py",
+      "bound_result": "exact Fraction reconstruction of beta=5/4; minimum residual 0 over 63 masks",
+      "overlap_audit_run": "python3 cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/audit_two_player_overlap.py",
+      "overlap_audit_result": "64 binary membership cases; endpoint W=4,I=0,OPT=5 and W=2,I=2,OPT=3; Cartesian product checked",
+      "background_audit_run": "python3 cleanup/workspaces/Boss1/active_batch/0d96e50335c33022effb/audit_background_two_player.py",
+      "background_audit_result": "576 exact symbolic/binary checks; minimum psi=0"
+    },
+    "delivery_status": "draft-awaiting-parent-checkpoint",
+    "record_submitted": false,
+    "remote_saved": false,
+    "owner": "Boss1"
+  },
+  {
+    "id": "d9e2deb241f3440413f7",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取343字节冻结JSON；保留topics A/B/C/D、replies [1,0,3,0]、actual [2,3]、comparison [0,3]、ratio 5/4、掩码1/7/8/10及质量1/4、1/2、1/4、1/4。逐字节核对68fad804ec5946cb296f77dc5b336308a66abf12与aefc58eac3fc6eb5d7a47d087dd2c62b5aa9974c，同sha256 8470454396d1ae7e138a08c7b01451c648bcc58c7ea7230693f9af91d329958e。",
+    "comparison_note": "全文读取并比较同目录生成器two_player_collision_free.py（384个LP，浮点发现后Fraction重建）、必要回复bound程序/JSON、LP-free overlap/background审计及父审overlap_sensitive_suffix审计；读取two_player_overlap_refinement.md、background_two_player_refinement.md、R-51 README/global/induction边界与独立背景非单调探针，并与归档定理‘末两人新生重叠的顺序利润税界’比较。确认JSON四主题质量缩放4后即既有五客户无碰撞5/4端点；其他文件给解析上界/背景边界或有限审计，不是多人定理。",
+    "decision_note": "将该记录归类为有限exact SPE端点证据（LP候选的有理化结果），不是一般可证明命题：独立Fraction复算全部16个末位与4个根行非负，W=1、比较覆盖=5/4；乘4得到单位客户实例W=4、OPT=5。保留原掩码、回复表、缩放与384 LP边界，说明它不反驳Q-CAG-HALF、不能外推m≥3或任意背景。独有数据由本批清洗稿和既有末两人税界定理端点记录承载。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+      "cleanup/workspaces/Boss1/active_batch/d9e2deb241f3440413f7/review.md"
+    ]
+  },
+  {
+    "id": "a8d42614cbe6ed3610f9",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取冻结 bound.json 与 bound.py；重建 47 个碰撞自由会员 mask、16 条必要真实回复 IC 松弛行、5/4 原始点与六个 Fraction 对偶乘子，逐 mask 残差最小为 0。",
+    "comparison_note": "与 two_player_collision_free.py/best.json、overlap/background 审计、末两人税界定理、五客户无拥挤障碍和无拥挤 3/2 族比较；确认本源只覆盖零背景两人末端的固定松弛，不是一般 SPE 或六人结论。",
+    "decision_note": "集成为现有末两人新生重叠顺序利润税界的 supporting computation；保留 5/4 精确对偶/原始证书与五客户 sharp endpoint，不升级为一般人数或 Q-CAG-HALF 定理。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md",
+      "archives/customer-attraction/tools/evidence/R-51-two-player-collision-free/PROVENANCE.json"
+    ]
+  },
+  {
+    "id": "23c59afb9f2a6498f7c7",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取1945B bound.py与1324B bound.json；重建47个碰撞自由binary兴趣mask、16条必要IC/true-reply松弛行、5/4原始点与对偶乘子，确认输出由源码with_suffix写出且源+JSON配对。",
+    "comparison_note": "实读并重跑同目录two_player_collision_free.py、audit_two_player_overlap.py/json、audit_background_two_player.py/json及overlap/background refinement；并查读全仓collision-free occupancy五客户端点、k>=1三半族、R-486三人MILP有限端点与独立Fraction审计。确认本源是固定六坐标部分IC的精确LP证书，非一般SPE/half定理。",
+    "decision_note": "建议integrated-supporting-evidence：将源码+JSON保留为现有两人碰撞自由5/4解析定理的计算支撑，正文写清固定模板、碰撞自由mask、必要松弛与Fraction重核；不登记为Q-CAG-HALF反例、一般人数上界或全策略穷举证书。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/customer-attraction/state/定理/末两人新生重叠的顺序利润税界--定理.md"
+    ],
+    "artifacts": [
+      "source.py",
+      "source.json",
+      "two_player_collision_free.py",
+      "two_player_collision_free_best.json",
+      "audit_two_player_overlap.py",
+      "audit_two_player_overlap.json",
+      "audit_background_two_player.py",
+      "audit_background_two_player.json",
+      "collision_free_family_audit.json",
+      "collision_free_obstruction_audit.json",
+      "review.md"
+    ],
+    "tests": [
+      {
+        "command": "python source.py",
+        "result": "HiGHS Status 7; exact Fraction dual/primal assertions pass; ratio 5/4"
+      },
+      {
+        "command": "python two_player_collision_free.py",
+        "result": "384 LPs; best 5/4; exact candidate check pass"
+      },
+      {
+        "command": "python audit_two_player_overlap.py",
+        "result": "64 binary identity cases; residual min 0; endpoint/cartesian assertions pass"
+      },
+      {
+        "command": "python audit_background_two_player.py",
+        "result": "576 exact cases; minimum psi 0"
+      },
+      {
+        "command": "python audit_collision_free_obstruction.py",
+        "result": "20 full-history comparisons; W4 OPT5; all assertions pass"
+      },
+      {
+        "command": "python audit_collision_free_family.py",
+        "result": "k=1,2,3 all comparisons pass; ratios 5/4,4/3,11/8"
+      }
+    ]
+  },
+  {
+    "id": "f100977eb05f44de1526",
+    "owner": "Boss1",
+    "source_path": "research/workspaces/customer-attraction/R-51ca8c2b36184c41818099bc490374ca/global/cone_probe.py",
+    "source_blob": "ad314a7cb5a9799f64e2b4988ab3bb42a2af5bfb",
+    "source_size": 4226,
+    "source_sha256": "1b5a5cbc68153f6660b34c4fb5d9f6d291b1c680f780fa819679424141caf73a",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "逐行读取96行冻结程序；核对随机客户生成、完整有序历史SPE证书、gamma锥行、根福利归一化、v分支效用、互异主题support LP、负slack输出字段与异常路径。",
+    "comparison_note": "与R-51 global/README、cone/README、五个full_tree_*数值MILP输出、CA-STRATEGY-CONE及CA-SECURITY-CONE-DUAL比较：gamma确实实现固定完整策略的真实SPE激励锥，但程序只取随机样本/每终局单证书/前三低福利终局/互异support，且全程浮点，没有有理可行性或对偶证书；不覆盖安全值β/Q接口。",
+    "execution": {
+      "environment": "isolated probe_env with frozen model.py/exact.py/certificate.py dependencies; PYTHONPATH=probe_env",
+      "runs": [
+        {
+          "args": "--players 3 --topics 5 --samples 1 --seed 90230",
+          "exit_status": 0,
+          "min_slack": 0.0,
+          "stdout": [
+            {
+              "sample": 0,
+              "slack": 0.75,
+              "actual": [
+                0,
+                1,
+                1,
+                1,
+                0
+              ],
+              "portfolio": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "sample": 0,
+              "slack": 0.0,
+              "actual": [
+                0,
+                1,
+                1,
+                1,
+                0
+              ],
+              "portfolio": [
+                0,
+                1,
+                4
+              ]
+            }
+          ],
+          "negative_output_written": false
+        },
+        {
+          "args": "--players 3 --topics 5 --samples 100 --seed 90230 --output probe_negative.json",
+          "exit_status": 0,
+          "min_slack": 0.0,
+          "negative_output_written": false
+        }
+      ],
+      "certificate_replay": {
+        "customer_types": 24,
+        "customer_count": 86,
+        "outcome_count": 1,
+        "target": [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "valid": true,
+        "checked_histories": 31,
+        "checked_deviations": 124,
+        "violations": 0
+      },
+      "boundary_failures": [
+        {
+          "args": "--players 0 --topics 0 --samples 1",
+          "exit_status": 1,
+          "error": "TypeError: object of type 'numpy.float64' has no len() at arrays line 39"
+        },
+        {
+          "args": "--players 1 --topics 0 --samples 1",
+          "exit_status": 1,
+          "error": "ValueError: positive-player games need at least one legal topic from Instance"
+        },
+        {
+          "args": "--players -1 --topics 2 --samples 1",
+          "exit_status": 1,
+          "error": "ValueError: players must be an integer at least 0 from Instance"
+        }
+      ]
+    },
+    "exact_fields": {
+      "source_cli": [
+        "players",
+        "topics",
+        "samples",
+        "seed",
+        "output"
+      ],
+      "negative_output_schema": [
+        "m",
+        "k",
+        "portfolio",
+        "float_slack",
+        "weights",
+        "certificate"
+      ],
+      "certificate_fields": [
+        "terminal_counts",
+        "actions"
+      ],
+      "action_fields": [
+        "history",
+        "action"
+      ],
+      "lp_constraints": [
+        "A_ub=-gamma",
+        "b_ub=zeros(len(gamma))",
+        "A_eq=[c]",
+        "b_eq=[1]",
+        "bounds=(0,None)",
+        "method=highs"
+      ],
+      "support_scope": "combinations(range(topics), min(players, topics)); distinct topics only"
+    },
+    "failure_mechanisms": [
+      "HiGHS infeasibility is raised as generic RuntimeError; an all-zero customer instance gives c·weights=1 infeasible and has no dedicated diagnostic.",
+      "Negative candidates are only Fraction(limit_denominator(1000000)) approximations; no exact gamma feasibility, integer scaling, SPE replay, or dual certificate is checked.",
+      "Numerical slack near zero is subject to floating tolerances; no timeout/complexity bound and complete-tree enumeration grows exponentially.",
+      "Nonexistent output parent raises FileNotFoundError only after a negative slack is found; NumPy/SciPy imports and five-level ROOT layout are prerequisites."
+    ],
+    "disposition": "integrated",
+    "decision_note": "保留为customer-attraction固定完整策略客户锥/UP目标的有限浮点探针和复现记录；严格标注探针，不能升级为半覆盖定理、反例、全策略锥上界、SPE有理证书或安全值支付定理。",
+    "targets": [
+      "archives/customer-attraction/state/计算/固定完整策略UP锥有限探针--计算.md",
+      "archives/customer-attraction/tools/evidence/fixed-strategy-up-cone-probe/original/cone_probe.py",
+      "archives/customer-attraction/tools/evidence/fixed-strategy-up-cone-probe/replay/run_m3k5_s1.stdout",
+      "archives/customer-attraction/tools/evidence/fixed-strategy-up-cone-probe/replay/run_m3k5_s100.stdout",
+      "archives/customer-attraction/tools/evidence/fixed-strategy-up-cone-probe/PROVENANCE.json"
+    ],
+    "artifacts": {
+      "source.py": "1b5a5cbc68153f6660b34c4fb5d9f6d291b1c680f780fa819679424141caf73a",
+      "independent_review.md": "a42e4d2898584f9a7dae43371d8b7428e915848790b233c07e43b3d550b3c96e",
+      "source.json": "66c99308b4d4810cd6dae337a47d7e3a303b2a5d6837335e27a55f4c5a334008",
+      "run_m3k5_s1.stdout": "422ef59d1dcd9a031a76e4a9a20afe038db43117158837d136c63e0de049e311",
+      "run_m3k5_s100.stdout": "422ef59d1dcd9a031a76e4a9a20afe038db43117158837d136c63e0de049e311",
+      "boundary_cases.txt": "ca1e769f2a3cc9f95fec42694b083006179975a43105899063cc1556471ef38f"
+    },
+    "source_id": "f100977eb05f44de1526"
+  },
+  {
+    "id": "0acc403d891ee53b1211",
+    "full_file_reviewed": true,
+    "related_material_checked": true,
+    "unique_content_accounted_for": true,
+    "read_note": "完整读取冻结 2407 字节 full_tree_aaa_bcd.json；核对 path=0,0,0、topics=4、portfolio=1,2,3、21 个有序历史节点、types、root_utilities、HiGHS 状态与浮点目标。",
+    "comparison_note": "与完整历史终局递推/规范求解器、三人碰撞自由族的明确客户归纳、R-486 六单例完整 Fraction 端点及既有 MILP 候选对象比较；确认本源没有客户输入、生成脚本或有理 SPE 证书，不能并入这些精确对象。",
+    "decision_note": "集成为 R-51 四主题完整历史 MILP 候选计算页和原始 JSON 证据；保留 numerical complete-history MILP proposal only、浮点零附近目标与 21 节点动作表，不升级为 SPE 定理、反例或六人半覆盖结论。",
+    "disposition": "integrated",
+    "targets": [
+      "archives/customer-attraction/state/计算/R-51四主题完整历史MILP候选--计算.md",
+      "archives/customer-attraction/tools/evidence/R-51-complete-history-milp-candidates/original/full_tree_aaa_bcd.json",
+      "archives/customer-attraction/tools/evidence/R-51-complete-history-milp-candidates/PROVENANCE.json"
+    ]
+  }
+]

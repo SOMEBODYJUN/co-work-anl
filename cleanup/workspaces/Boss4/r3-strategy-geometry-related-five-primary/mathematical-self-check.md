@@ -1,0 +1,9 @@
+# 首次primary整合自查
+
+五独有源分别保存：7201任意深度menu锥及正4p2例；4705纯标准库30行/225对/锥证明执行合同；1440匿名候选/间接canonical依赖；1558完整十表及012见证/所有计数实现排除/非CAG；2275末端映射枚举、cap/未知skip及真实CAG后继。既有三正文完整承重，无需改写/新运行。
+
+Root19WY实际claim19ids/pushed和当前5owner/SHA核实；rawneeds-attention与独立38+2同字节/无missingdiffunmerged/stash保留并列。先草拟再认领的时序未冒成预claim，五源fullread本就来自正常related原件。
+
+本包只引用当前R三数学正文/E原件，逐字同冻结Graph38，不覆盖旧包。13WX不含本线且未借其提交；本数学现由28WZ实际pushed8114ac99926323d6d9f21aeb129f2508d7331f6f且全部目标在实际文件表。语义duplicate针对每件自己的完整原件和充分正文，不说五源相同，新5done仍待Root另交。
+
+无新show/数学重读扫描/任何原运行/新checker/新formal数学对象；当前只完善逐源整合说明、认领保全、关系与收据。Root独占共享R/Git/claim/done。

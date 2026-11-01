@@ -1,0 +1,1 @@
+Runtime layout marker only. The original caller locates an ancestor containing AGENTS.md and a customer_attraction directory. Both actual loaded libraries are standard-library-only and do not import this directory. This README is a new non-source marker, not a model implementation. No original code is changed or executed.

@@ -1,0 +1,5 @@
+# 多项式真实源两规范程序与稳定正文校准
+
+两primary15175B完整实读，完整原稿14380/独审16295及嵌入程序、3378账本与2143结果全文读；大86113仅必要版本/源SHA/参数/run域字段，原较早全文处置不重做。原路径按稳定ID/SHA恢复，发布rename的audit/primary不误作不同frozen版本或自哈希。全部原字节、正常获取、9XJ pushed原needs-attention与独立2untracked2tracked零差/stash保全齐，源文件/done不改。
+
+新程序正文和两guarded稳定页after快照完整给q机器/q+1任务单B anchor、真实源g映射、全Vr未来测试的2r+1义务、两个规范main及第三审查scratch不同有限参数、输出和导出排他写合同。Root须先核现R beforeSHA再串行应用两个after；copylist不覆盖existing canonical，完整before/after已另保。0当前原数学/导入/导出/新数学checker，不复跑旧成功，不授一般调度新算法、hardness或sixSPE结论。

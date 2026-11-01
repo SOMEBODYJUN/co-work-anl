@@ -1,0 +1,53 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "commands": [
+    {
+      "label": "cli",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/c0ab78c47566/boss7-cleaner/archives/customer-attraction/tools/evidence/R51-background-probe/original/probe_background.py"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "cf8eb09049654a006ff0bff5f21c005b7d2eff58f1d97267e721fdcbc7854aa0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "minimize",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-c",
+        "import json,probe_background;print(json.dumps(probe_background.minimize(),indent=2))"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "d39c34ac24c04ffb5bc321b4d41b6915bc9703e3cb72c3776a293f7e6c7c439e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "saved-check",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-c",
+        "import json,probe_background as p;from customer_attraction import Instance;z=json.load(open('/workspace/scratch/c0ab78c47566/boss7-cleaner/archives/customer-attraction/tools/evidence/R51-background-probe/original/background_nonmonotone.json'));I=Instance.from_dict(z['instance']);rows=[(sum(1<<a for a in t.topics),t.multiplicity) for t in I.customers];ok,I,v,J,w=p.check(rows,tuple(z['base']),z['add'],z['r']);print(json.dumps({'ok':ok,'original':[str(v[0]),v[1]],'added':[str(w[0]),w[1]],'I_players':I.players,'J_players':J.players},indent=2))"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "9ddb505d4a174ff98b1df37bee4df2a660f1586fbd5fd35290837fa2571778da",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "minimize_JSON_fields_equal_frozen": true,
+  "minimize_stdout_equal_frozen_bytes": true,
+  "minimize_stdout_without_one_final_LF_equal_frozen_bytes": false,
+  "default_run_seed": 99,
+  "default_run_trial": 8,
+  "default_run_fields": [
+    "add",
+    "added",
+    "base",
+    "instance",
+    "original",
+    "r",
+    "seed",
+    "trial"
+  ],
+  "historical_invocation": "not recorded; current reproduction does not prove historical invocation"
+}
