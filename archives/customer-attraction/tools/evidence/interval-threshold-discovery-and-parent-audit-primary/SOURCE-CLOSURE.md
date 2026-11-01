@@ -1,0 +1,7 @@
+# 运行导入闭包；当前不运行
+
+probe的OUT为原security目录，BG为同workspace/background，OUT.parents[4]为原源码根。该布局下可解析interval_ceiling_dp和customer_attraction规范包；__init__除model外还导入exact/certificate，因此四包文件全部保留。interval的regression内myopic/copy imports不属于本probe调用域，未为它扩装或重跑既有552 regression。
+
+依赖只为标准库和NumPy；规范包/interval不用数值优化器。父audit本身只标准库，无本地import。原main guard都保留，当前ast.parse不执行任何模块。NumPy/Python及环境版本未冻结；候选不记seed/argv/hash，父报告不记运行stdout或时长，不因完整源码树就承诺重现原字节。
+
+若未来确有新数学疑点需要targeted验证，另记实际命令/代码指纹/环境/完整stdout及准确量词；本包没有这样的新事件，禁止把存放原件或解析归纳称当前PASS。

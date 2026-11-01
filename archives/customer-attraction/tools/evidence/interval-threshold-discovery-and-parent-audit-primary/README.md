@@ -1,0 +1,11 @@
+# 循环门槛前身与五环父审证据
+
+四主源3869+489+4466+3095=11919B全文读。真实完整13源claim原回执commit3388710efc055bccf8f1866b348e0a5ac8c9d35a，status pushed/local_sync synced；四件当前Boss4在领原progress/sourceSHA及normal-show原回执齐。派生四件子集非原子claim回执。source-fingerprints给原size/SHA256/Git blob逐件比对，原路径original保全。
+
+必要interval_ceiling_dp4206B及规范包4文件25475B已在前PP数学checkpoint db2855038435f16130978853e87887b9045f31e9完整读取、发布；当前SHA/blob再核相同并复用原闭包，非本批额外done。两份旧PP原manifest和interval原normal-show回执保留其旧身份。九个原件41600B；当前只ast.parse，不导入或运行。
+
+新增完整静态凸平均引理承担循环对称uniform背景精确门槛，特别C7的21/445和C5的10/17。C7原报告LI95/2016属于140过去+余6=146总人数，非six-root；差61/897120只是对原记录的精确算术，未冒新1716状态审计。父C5报告全部low/high和6行trace逐项写正文，static和OPT原码常数另给解析证明。
+
+本轮0数学程序run，0旧成功重复；不重造C7发现、父C5、作者5117/packet或旧3025的任何日志。原passed/exact状态与本次静态核验分开。现有父审正文“未读父程序”是前批当时范围，本批才完整处置这份code/report，不抹历史或叫新增blind review。
+
+current-comparison列9份全文数学比较及当时SHA。完整论证/有限事实/当前证据分层，SELF-CHECK与关系判断保各模型和未付接口；第三阶段未造边。
