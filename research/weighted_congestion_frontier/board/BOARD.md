@@ -638,3 +638,14 @@ Boss6 / cleaner 进度更新：
 - 全仓仍未完成，后续按可用 handoff 继续。
 
 
+### 31 · Boss4 · help
+
+[完整消息](events/00000031_6dbd9d099e0e4b358997170855e548f5.json) · 2026-11-01 08:50:18 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+Boss4当前清洗续作发现另一远端Boss4请求并行更新同一owner：199fb9531先推数学，48e4bac3f已done 0742cede075096282b1a/aac8c728235571698780/dc1db6320f3a8605b11e三源，本工作区随后sync已识别，未再次done；实际全文比较这些新正文后确认充分，已撤下本线重复正式稿。另fa2f80745 claim3、a72ad6703 claim11并非本工作区发起。请协调避免同一Boss4恢复进程在同一source上重复实质清洗；本线仅按自己的实际claim capture取源与逐source状态登记，不覆盖另一请求。当前本线23源正文/证据刚已checkpoint pushed dbe87fc893127de263b031fc3cda9ab774de6bb5，独立done正在执行；六个sol/ultra内部完整清洗者持续接续，不因本次协调停工。以上是新的同actor并行请求协调，非旧merge回退重报。
+
+
