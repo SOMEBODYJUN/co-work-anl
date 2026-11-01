@@ -1,0 +1,263 @@
+{
+  "status": "PASS-static-source-and-stored-evidence-reconciliation",
+  "source_id": "27c3f7501ae211076aa5",
+  "scope": "AST and immutable-byte binding; algebraic totals from existing diagnostic records; no original implementation execution",
+  "new_original_main_invocations": 0,
+  "new_original_function_invocations": 0,
+  "new_explain_counts_invocations": 0,
+  "new_independent_full_test_implementation": false,
+  "shared_inputs": [
+    {
+      "path": "archives/customer-attraction/tools/evidence/action-quotient-parent-replay/related/test_duplicate_action_quotient.py",
+      "bytes": 4370,
+      "sha256": "0bca5b6f8f04c1ac0e5e8c26a04c03c80a99239c1a3af09d44ff033aabe36ad6"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/action-quotient-parent-replay/related/duplicate_action_quotient.py",
+      "bytes": 2506,
+      "sha256": "7e43a0270ea0b6d89abf99be3fa066b45145b0dbe5cd72dd813c036c6ebfad0f"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/action-quotient-parent-replay/related/duplicate_action_quotient_test_report.json",
+      "bytes": 339,
+      "sha256": "e9290b6074fb49286de774237f2ead2d4130adfe3bb784f587c572f87700b407"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/action-quotient-parent-replay/original/action_quotient_replay.json",
+      "bytes": 636,
+      "sha256": "55f8b8ff482456604a8b32c650c62309d892197290e2da58070d370b36cd96b2"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/action-quotient-parent-replay/replay/execution-event.json",
+      "bytes": 1094,
+      "sha256": "30ffce6fae3c5db031207ad252b3e1afef2574ad1dcbd3d7e4b331db20f25cd9"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/action-quotient-parent-replay/replay/author-stdout.json",
+      "bytes": 339,
+      "sha256": "e9290b6074fb49286de774237f2ead2d4130adfe3bb784f587c572f87700b407"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/action-quotient-parent-replay/replay/author-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/action-quotient-parent-replay/replay/count-semantics.json",
+      "bytes": 30083,
+      "sha256": "1cd43d61563d15e31d1b266feff708fc2abd403a85e3f42153a0d7a30fb05b6a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/action-quotient-parent-replay/replay_author_tests.py",
+      "bytes": 3582,
+      "sha256": "d5e83fe10c7d750bbbef8eddcae2f9e687589526c0987a3a6b190e5c996ff07a"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/action-quotient-parent-replay/explain_counts.py",
+      "bytes": 5608,
+      "sha256": "b1725bd249615e5c9fb35f35459ab9f22ef4a73eb78a6f09464dc0c5e2425702"
+    },
+    {
+      "path": "archives/customer-attraction/tools/evidence/action-quotient-parent-replay/manifest.json",
+      "bytes": 10456,
+      "sha256": "c61f092da82d6426ad3c61fa9e6a2cc740ab49ad7c789a53a99f54da7506a348"
+    }
+  ],
+  "imports": [
+    "import json, random",
+    "from fractions import Fraction as F",
+    "from itertools import product, combinations",
+    "from duplicate_action_quotient import cover_classes, quotient_policy, quotient_weights, project_history"
+  ],
+  "functions": [
+    {
+      "name": "histories",
+      "line": 7,
+      "end_line": 8,
+      "arguments": [
+        "k",
+        "m"
+      ]
+    },
+    {
+      "name": "continuation",
+      "line": 10,
+      "end_line": 12,
+      "arguments": [
+        "policy",
+        "h",
+        "m"
+      ]
+    },
+    {
+      "name": "pay",
+      "line": 14,
+      "end_line": 21,
+      "arguments": [
+        "profile",
+        "weights"
+      ]
+    },
+    {
+      "name": "is_spe",
+      "line": 23,
+      "end_line": 30,
+      "arguments": [
+        "policy",
+        "weights",
+        "k",
+        "m"
+      ]
+    },
+    {
+      "name": "opt",
+      "line": 32,
+      "end_line": 38,
+      "arguments": [
+        "weights",
+        "k",
+        "m"
+      ]
+    },
+    {
+      "name": "audit",
+      "line": 40,
+      "end_line": 51,
+      "arguments": [
+        "policy",
+        "weights",
+        "k",
+        "m"
+      ]
+    },
+    {
+      "name": "backward_policy",
+      "line": 53,
+      "end_line": 60,
+      "arguments": [
+        "weights",
+        "k",
+        "m",
+        "rng"
+      ]
+    },
+    {
+      "name": "main",
+      "line": 62,
+      "end_line": 95,
+      "arguments": []
+    }
+  ],
+  "assertions": [
+    {
+      "line": 44,
+      "test": "valid"
+    },
+    {
+      "line": 45,
+      "test": "cover_classes(qweights, qk)[0] == tuple(range(qk))"
+    },
+    {
+      "line": 47,
+      "test": "project_history(h, projection) == H"
+    },
+    {
+      "line": 48,
+      "test": "continuation(quotient, H, m) == project_history(continuation(policy, h, m), projection)"
+    },
+    {
+      "line": 49,
+      "test": "pay(continuation(policy, (), m), weights) == pay(continuation(quotient, (), m), qweights)"
+    },
+    {
+      "line": 50,
+      "test": "opt(weights, k, m) == opt(qweights, qk, m)"
+    },
+    {
+      "line": 80,
+      "test": "valid"
+    },
+    {
+      "line": 87,
+      "test": "valid"
+    }
+  ],
+  "main_guard": "if __name__ == '__main__':\n    main()",
+  "fixed_input_contract": {
+    "exhaustive": {
+      "topics": 3,
+      "players": 2,
+      "weights": "3:a,4:b,7:c; a,b,c in range(4)",
+      "original_history_lengths": [
+        0,
+        1
+      ],
+      "all_full_policies_per_game": 81
+    },
+    "seeded": {
+      "topics": 4,
+      "players": 3,
+      "seed": 566240,
+      "games": 200,
+      "membership_masks_in_order": [
+        3,
+        4,
+        7,
+        8,
+        11,
+        12,
+        15
+      ],
+      "multiplicities": "rng.randrange(6)",
+      "random_consumption": "weights and all-node BI tie choices share the same RNG"
+    },
+    "six": {
+      "topics": 7,
+      "players": 6,
+      "weights": {
+        "1": 6,
+        "2": 1,
+        "4": 1,
+        "8": 1,
+        "16": 1,
+        "96": 1
+      },
+      "prescribed_action_every_history": 0,
+      "unit_customers": 11
+    }
+  },
+  "existing_execution_receipt_validated": true,
+  "stored_diagnostic_records_parsed": {
+    "two_private_mass_pairs": 16,
+    "seeded_cases": 200
+  },
+  "label_signal_cases": 43,
+  "coverage_signal_cases": 16,
+  "label_only_signal_cases": 27,
+  "compiled_IC_components": {
+    "two_player_compiled_IC": 3840,
+    "three_player_compiled_IC": 7800,
+    "six_player_compiled_IC": 55986
+  },
+  "compiled_IC_sum": 67626,
+  "author_report_fields": {
+    "exhaustive_games": 64,
+    "exhaustive_full_policies": 5184,
+    "exhaustive_full_SPE": 856,
+    "random_three_player_games": 200,
+    "duplicate_signal_dependent_cases": 43,
+    "six_player_original_IC_comparisons": 137256,
+    "six_player_quotient_IC_comparisons": 55986,
+    "compiled_exact_IC_comparisons": 67626,
+    "all_checks_passed": true
+  },
+  "coverage_limits": [
+    "audit does not itself check source SPE; main supplies screening/assertions",
+    "only dictionary policies; callable route and reverse construction are not tested",
+    "assertions check every returned lift entry, but not an independent exact lift key-set assertion",
+    "all original fixtures have duplicate labels; no identity-projection case",
+    "only positive player counts 2,3,6; no malformed-input or negative-weight suite",
+    "200 seeded BI outputs are not all possible three-player SPE or all tie choices",
+    "existing full replay is the same author test, not a new independent implementation"
+  ]
+}
