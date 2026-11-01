@@ -563,3 +563,7 @@ R3_RESUME19UD：L可信最低续局DP与19真输入2，弱iid原作者代表历�
 R3_RESUME19UD数学/证据pushed 22e16d11b708f03f0359eb08ff820672eba57337；19源done另推送 3bc7f664be17b435477d3345cd84b27139a34ce6。Boss4累计3042完成，实际未完53；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME6UK：Root完整续局计数cone与p7m5报告2，理想全历史BI/固定续局锥合同和11客户保存点精确9/5解析去重；tail两预算菜单4保同σactual量词、PB已反⇒每个安全最优p付款加强均失败，H2全部43策略/56静态解析及13人固定packet接口。当前原入口/solver/LP/IC/新数学checker0，历史证据与新解析分别保；共6主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME6UK_REMAINING_SCOPE.json。
+
+R3_RESUME6UK数学/证据pushed ed352b756268a1a6567441924cb3afc8e85f1b27；6源done另推送 56097d51a32f94456951c57535839518333da394。Boss4累计3070完成，实际未完62；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME26UV：覆盖交换4主稿及3原related首次primary准确duplicate同批，两近饱和合同/31节点62客户仿射桥反例；父方三转移3确认旧code已有正确65与32表缩放；两人iid和合法前缀首对两个探针4全原有限域；static-cover/NET/EXCLUSIVE/八客户静态匹配5；U-RESET/整行Refund与600输入4、当前m2反族否全遗漏强候选及G/R；ROLE-HIT定义DAG原audit3全9输入与有限域。原入口/LP/BI/IC/随机/新数学checker均0，具体可复用数学与历史有限证据/未付一般义务分层；共26主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME26UV_REMAINING_SCOPE.json。
