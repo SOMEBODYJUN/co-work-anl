@@ -1,0 +1,9 @@
+# 实际数学关系与比较
+
+原实际节点共同菜单定义→3462menu_geometry是同一真偏离/删当前位置/计数合并接口；5027全有序Γ→normal零基方向约束。fresh全型对称引理→uniform完整SPE/零fresh正repeat行及actual W；core/query分开→所有actual菜单为distinctcore且query不在背景，baseline恰W/n。
+
+精确fullzeroIC与严格allmenu方向→有限uniform偏置/有理清分母是真单位原σ的条件编译；源码未执行其精确部分。fresh-only仅必要节点/只沿prescribed needed续路，未闭合全部fresh偏离子树，不能直接声称同原σ编译。161含self/重复行与normal去重105…136行数不具强弱比较意义。
+
+两300报告→有限同3/4/6参数的浮点近零数据；全600行完整保，不以范围替代原记录。无正payload/无完整policy、weights、p或background，不给精确无方向结论，五个ulp尾差分别列原值。文件名不补保存缺失flag/argv/版本。
+
+共同菜单桥仍是更强充分目标；纯查询界与混合query不同，half已成小人数不反推菜单桥。另一有限字典有符号预算LP不是此x方向变量，不按signed词名迁移结论。源关系不造一般half或完整最优认证边。

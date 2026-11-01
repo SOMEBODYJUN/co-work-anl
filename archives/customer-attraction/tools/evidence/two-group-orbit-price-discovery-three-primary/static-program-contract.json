@@ -1,0 +1,32 @@
+{
+  "source6102_whole_read": true,
+  "model": "n players,two groups eachK topics, K=group_topics or n",
+  "sufficient_intended_domain": "n>=2,K>=n",
+  "orbit_variables": "0<=a<=b<=K,a+b>0, total orbit mass x, sumx1",
+  "orbit_mask_weights": "a<b: x/(2*C(K,a)*C(K,b)) per mask in either orientation; a=b:x/C(K,a)^2",
+  "pay": "integer subset-load DP/conditional current-label inclusion and Fraction1/load, then average two orientations",
+  "coverage": "1-product avoid probabilities, depends used distinct labels",
+  "policy": "root arbitrary; second opposite root fresh; all later fresh in actual second-player group, including after deviations",
+  "IC_rows": "all d2..n-1 repeated count partitions in designated nonempty X and Y; repeated labels by distinct load plus fresh other group; 2 second-player rows; root automatic by full symmetry",
+  "same_count_history_may_have_different_second_player_group": true,
+  "exact_row_sufficiency_not_literal_float_SPE_certification": true,
+  "matrix": "Fraction differences cast float directly, no dedup/no round13",
+  "constraints": "A_ub x<=0,x>=0,sum totalmass=1; not W1 or u1",
+  "targets": {
+    "weak": "all j0..n: comparison coverage-W-n*u1",
+    "uniform_price": "all h1..2K: sumorbit x min1,(a+b)/h -W-(2K/h)*u1"
+  },
+  "test_count": "n+1+2K",
+  "LP": "scipy linprog HiGHS, default solver parameters, no time_limit",
+  "failure": "silently skip failed tests; all fail max(empty) error; main output only prefixes already completed",
+  "support_print_threshold": 1e-08,
+  "full_res_x_used_for_value": true,
+  "CLI": "required --players list and --output; --group-multiplier default1; 0 falls backK=n",
+  "project_runtime_helpers": [],
+  "external_packages": [
+    "numpy",
+    "scipy.optimize.linprog"
+  ],
+  "no_original_runtime_environment_or_status_duals_residuals_argv_exit_binding": true,
+  "current_main_import_DP_payoff_rows_IC_or_LP_runs": 0
+}
