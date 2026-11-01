@@ -1,0 +1,5 @@
+# 完整控制器与原内部审查首次primary
+
+两原21391B已在前一scope作necessary正常/fullread，正式13ZZ认领后同SHA精确reuse，不再show/run。主证明已自足路由Root末菜单反族，须Root先或同批pushed才本两done。
+本资源完整保core0简化/全部k与有序模式、k12外部审计自报的状态/比较范围、未取得其程序报告的边界和独审读序；原字节与正常捕获完整保。
+0新数学程序/旧审计重放，rawneedsattention及独立零差证明/保stash并列，不改synced。

@@ -1,0 +1,94 @@
+{
+  "general": {
+    "variables": [
+      "r",
+      "s",
+      "t"
+    ],
+    "D": "r+s+2t",
+    "q": [
+      "r",
+      "s",
+      "t"
+    ],
+    "qprime": [
+      "s",
+      "r",
+      "t"
+    ],
+    "qzero": [
+      "0",
+      "r+s",
+      "t"
+    ],
+    "left_minus_right_terms": [
+      [
+        "r*s*D",
+        "q",
+        "a"
+      ],
+      [
+        "r*(r-s)*D",
+        "qprime",
+        "b"
+      ],
+      [
+        "s*t*(s+t)",
+        "q",
+        "c"
+      ],
+      [
+        "-s^2*D",
+        "qprime",
+        "a"
+      ],
+      [
+        "-(r-s)*(r+s)*D",
+        "qzero",
+        "b"
+      ],
+      [
+        "-t*(s^2+(2*s-r)*t)",
+        "qprime",
+        "c"
+      ],
+      [
+        "-(r-s)*t^2",
+        "qzero",
+        "c"
+      ]
+    ]
+  },
+  "clean": {
+    "substitution": "r=2s,t=k then divide by positive s",
+    "D": "3s+2k",
+    "left_minus_right_coefficients": [
+      "2sD",
+      "2sD",
+      "k(k+s)",
+      "-sD",
+      "-3sD",
+      "-ks",
+      "-k^2"
+    ]
+  },
+  "polynomial": {
+    "representation": "tuple exponents -> Fraction; zero is empty dict",
+    "addition": "merge exponents and remove zeros",
+    "multiplication": "add exponent tuples, convolve exact coefficients, remove zeros",
+    "per_nonempty_member_pattern": "N=sum_i c_i product_(j!=i) d_j; assert every expanded coefficient zero",
+    "denominator_nonzero_assert": "dictionary nonzero, domain positivity is proved from occupied paying label",
+    "empty_pattern": "all payoffs zero",
+    "distinct_factors_not_counted": true
+  },
+  "main_guard": true,
+  "CLI": false,
+  "help_flag_not_handled": true,
+  "file_reads": [],
+  "file_writes": [],
+  "stdout": "one indent2 JSON after both families pass with assertions enabled",
+  "assertions_removed_by_python_O": true,
+  "local_dependencies": [],
+  "external_dependencies": "Python standard library fractions,json only",
+  "original_import_main_verify_general_polynomial_IC_LP_runs": 0
+}
