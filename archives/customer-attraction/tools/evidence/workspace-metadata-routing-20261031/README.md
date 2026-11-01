@@ -11,3 +11,5 @@
 R-275 对照已保存的工作区 README 和 R275 的直接全局、树耦合、共同查询及安全证据；README 给出研究存档、历史发布身份和一般 Q-CAG-HALF 仍开放的导航，数学内容在各正式对象中。R-29 对照固定背景尾局、直接门槛资源和既有 R29 正式对象；README 的身份与目录信息不增加尾桥或 floor 结论。R-2d91 对照首次饱和版本路由、自然捕获资源、stationary 反例及安全证据；README/metadata 只承担工作区身份和恢复路由。
 
 三源没有新的数学对象。证据副本只用于稳定 provenance；不得把 actor/instance 字段误读成数学作者、模型参数或证明结果。
+
+本批追加 R-3a870 workspace.json（clean `0284957cd5721ca73094`，150B，SHA `1ed5cc722049e8e6108c5b5f81c63c649abe7089ee8703b51c0a39604a5b714b`）。它同样只有 schema/save/actor/instance 元数据；R-3a870 的 orderstat/ASR 数学资产须由独立源读取，不能由该 JSON 代替。
