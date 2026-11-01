@@ -1,0 +1,135 @@
+{
+  "status": "PASS_STATIC_REPORT_AND_SOURCE_CONTRACT",
+  "inputs": [
+    {
+      "path": "/workspace/scratch/c0ab78c47566/boss7-cleaner/archives/customer-attraction/tools/evidence/fresh-arbitrary-reply-probe-data/original/fresh_arbitrary_probe.json",
+      "bytes": 130,
+      "sha256": "e444f6a49b0e20becece58c11b96437fb5f190e008d3f4d2b67aacd90d7bd02a"
+    },
+    {
+      "path": "/workspace/scratch/c0ab78c47566/round14-oracle-preparation/probe_fresh_arbitrary_reply.py",
+      "bytes": 2412,
+      "sha256": "efdfe17ac4a1751fc784c2c833e59d6fb5443935d6fce4c19aca148a5f191a12"
+    }
+  ],
+  "original_fields": {
+    "q": 7,
+    "cases": 12000,
+    "background_repetitions": 1,
+    "feasible": 12000,
+    "best": 0.0,
+    "seconds": 32.25970125198364
+  },
+  "all_six_field_interpretations": [
+    {
+      "field": "q",
+      "saved_value": 7,
+      "meaning": "seven action labels 0..6, not customers or providers"
+    },
+    {
+      "field": "cases",
+      "saved_value": 12000,
+      "meaning": "12000 draws with replacement; distinct maps and historical seed not recorded"
+    },
+    {
+      "field": "background_repetitions",
+      "saved_value": 1,
+      "meaning": "one occurrence of the legal topic H=0; p=I_H, not arbitrary background loads"
+    },
+    {
+      "field": "feasible",
+      "saved_value": 12000,
+      "meaning": "count of res.success; no saved optimizer vectors or exact SPE witnesses"
+    },
+    {
+      "field": "best",
+      "saved_value": 0.0,
+      "meaning": "constant zero initialized once and never updated; terminal negative-threshold sentinel, not a minimum"
+    },
+    {
+      "field": "seconds",
+      "saved_value": 32.25970125198364,
+      "meaning": "historical time.time difference around the loop, after utility construction, before final JSON write"
+    }
+  ],
+  "source_AST": {
+    "run_arguments": [
+      "q",
+      "cases",
+      "seed",
+      "L"
+    ],
+    "terminal_return_fields": {
+      "q": "q",
+      "cases": "cases",
+      "background_repetitions": "L",
+      "feasible": "feasible",
+      "best": "best",
+      "seconds": "time.time() - start"
+    },
+    "best_store_count": 1,
+    "best_initial_value": 0.0,
+    "early_return_test": "res.fun < best - 1e-08",
+    "CLI_defaults": {
+      "--q": 6,
+      "--cases": 10000,
+      "--seed": 71215,
+      "--background": 1
+    },
+    "historical_seed_in_report": false,
+    "defaults_are_historical_seed_evidence": false
+  },
+  "decoded_report_domain": {
+    "q": 7,
+    "L": 1,
+    "mask_interval_inclusive": [
+      1,
+      127
+    ],
+    "mask_bit_definition": "I_a(m)=(m>>a)&1",
+    "customer_types": 127,
+    "H": 0,
+    "actual_A": 1,
+    "actual_B": 2,
+    "compare_T": 3,
+    "compare_S": 4,
+    "role_labels_are_distinct": true,
+    "coverages_need_not_be_distinct": true,
+    "variables": "nonnegative real normalized customer masses, sum w=1",
+    "last_IC_rows": 42,
+    "first_IC_rows": 6,
+    "total_IC_rows": 48,
+    "utility_entries_per_map": 6223,
+    "IC_coefficients_per_map": 6096,
+    "objective_coefficients": 127,
+    "reply_maps_with_fixed_rA_B": 117649,
+    "draws_with_replacement": 12000,
+    "distinct_sample_count": null,
+    "historical_seed": null,
+    "objective": "U(A,B)+U(B,A)+fresh_coverage(A union B)-fresh_coverage(T union S)"
+  },
+  "analytic_common_feasible_point": {
+    "mask": 127,
+    "mass": "1",
+    "all_other_masses": "0",
+    "all_IC_values": "0",
+    "per_player_profit": "1/3",
+    "objective": "2/3",
+    "reason": "all topics cover the same old customer, so all action and continuation payoffs coincide; independent of sampled reply map"
+  },
+  "interpretation_limits": [
+    "no historical graph list or per-LP objective values",
+    "best is not an optimum",
+    "no full-root reachability certificate",
+    "single legal background topic only",
+    "fixed distinct role labels, not every coincidence pattern",
+    "no current rerun of historical LP search"
+  ],
+  "current_original_function_calls": 0,
+  "current_original_main_calls": 0,
+  "current_original_AST_arithmetic_executions": 0,
+  "current_LP_calls": 0,
+  "current_random_draws": 0,
+  "shared_synthetic_audit": "one q7/L1/seed0 graph, owned by companion program; not run by this inspector",
+  "legal_H_nonnegativity": "reused exact four-multiplier certificate and nonnegative safety differences, not inferred from historical finite sampling"
+}
