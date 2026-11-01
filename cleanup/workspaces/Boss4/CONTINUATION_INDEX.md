@@ -535,3 +535,7 @@ R3_RESUME10SA：Root跨族原独审2恢复64原子119相容赋值/两负行原�
 R3_RESUME10SA数学/证据pushed cc30ac22f50c6d02b0620269aad5cec3544b5e37；10源done另推送 77fba3eeddfb956d5015e3209f1e6f8d56bba1b2。Boss4累计2913完成，实际未完28；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME17SH：Root三族46包络/23FULL五原件全字段和447 FULL缺证据纠正；R2图比较/MOVE条件及C5非SPE保护4、循环额外门槛/146人前身与五环父审4、弱指派锥/调和重构/可变归属入口4。全17源新原程序及数学checker0，自足证明与历史输出/先前独审不同身份，先数学后done；共17主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME17SH_REMAINING_SCOPE.json。
+
+R3_RESUME17SH数学/证据pushed 466fb85369ad97e6f142f42937cbf8c59e19fd40；17源done另推送 75ce38c58546d4221286e188c97f6f6474a05c96。Boss4累计2930完成，实际未完25；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME3SM：双四主题块两大报告全部41整数/10锥保存记录及全向量实读，40不同输入/11轨道330背景当前静态有理checker恰一次，旧SPE最小/G/LP最优不转移；归一稠密点v63/320 gap1/64为正，cone3786准确首次primary duplicate，无原探索重跑；共3主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME3SM_REMAINING_SCOPE.json。
