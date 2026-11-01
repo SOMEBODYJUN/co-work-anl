@@ -1,0 +1,7 @@
+# 首次primary路由自查
+
+4原件35973B为此前充分全读necessaryrelated：P代码3645/报告9700完整64exact64float45dual，投影代码1964/报告20664完整5prefix50children和全部10维minimizers。当前只metadata哈希/owner/gate核，不原源码重扫/报告数值重核；旧normal/no-new-show准确复用。所有sourcecache及existingformalraw均inventory size/SHA/blob相同。
+
+当前R既有resource的527与projection段逐式比较，P=RIG无新一般行、527质量重优化/有限exactprimal非exactdualopt，5prefix精确有限失败非全目录不补全，后者仍靠固定旧点根饱和；count-outcome DP非统一count-Markov策略。所有独有记录已在原字节/全reading-index完整保，currentR目标hash与8YIactualpushed a120...绑定，无新数学正文或原件覆盖。
+
+full9YY保9IDstatuspushed和原needsattention，独立3u+2tracked均same/no missing different unmerged/stashf32474a4...kept分存；4currentownerBoss4在领SHA核。4duplicate逐一对应数学段和各自rawsource。当前本批primaryreceiptcheckpoint/done待Root，0新normal/LP/DP/audit/import/exec/新mathchecker，冻结后只由Root串行发布。
