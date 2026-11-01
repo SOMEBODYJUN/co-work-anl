@@ -3,8 +3,8 @@ id: customer-attraction/r4ffa-background-contract-root-ledger-and-historical-bou
 kind: resource
 type_tag: 资源
 title: 背景半利润合同与R4ffa根账本的真实边界
-status: four-originals-fully-read;conditional-contracts-and-abstract-components-preserved
-truth_status: background-candidate-not-proved;causal-erasure-and-abstract-visit-components-proved
+status: four-originals-fully-read;historical-background-candidate-updated-by-later-counterexample;conditional-components-preserved
+truth_status: nonempty-background-candidate-refuted;root-half-not-refuted;causal-erasure-and-abstract-visit-components-proved
 source_refs:
   - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-4ffa8b85fa8847e09e45dcafc8e1326f/GENERAL_PROOF_WORKING.md
   - source:68fad804ec5946cb296f77dc5b336308a66abf12:research/workspaces/customer-attraction/R-4ffa8b85fa8847e09e45dcafc8e1326f/README.md
@@ -22,7 +22,9 @@ source_refs:
 \[
 C^*(h,r)=\max_{T_1,\ldots,T_r}|U\cup T_1\cup\cdots\cup T_r|.
 \]
-原BG-HALF-v1候选是对全部这些对象 \(C^*\le W+V\)。h不要求根SPE实际到达；V含向旧客户收取的租金，不能以新增覆盖代替。空历史V=W给root half，反向从root half推所有背景合同未证。等价的新增覆盖形式 \(O_{new}\le W_{new}+V\) 已由[背景信用资源](背景覆盖信用的旧租金攻击与等号压力--资源.md)完整承接；不新建同一候选或把旧租金攻击失败当合同反例。
+原BG-HALF-v1候选是对全部这些对象 \(C^*\le W+V\)。h不要求根SPE实际到达；V含向旧客户收取的租金，不能以新增覆盖代替。空历史V=W给root half，反向从root half推所有背景合同未证。等价的新增覆盖形式 \(O_{new}\le W_{new}+V\) 已由[背景信用资源](背景覆盖信用的旧租金攻击与等号压力--资源.md)完整承接。
+
+这里的“候选”只是这四份2026-10-23/24原稿的历史状态，现已被后续[实际前缀反例](../反例/实际前缀的剩余利润与新增覆盖--反例.md)否定。该四人、六标签、52客户完整根SPE在实际前缀 \(h=(A,B)\) 后有 \(|U|=W=34\)、剩余玩家利润 \(V=17\)，而两比较主题 \(T,Q\) 可把背景并集补到 \(C^*=52\)，故 \(52>34+17\)。反例发生在合法且实际到达的非空前缀；根仍有 \(W=34,\operatorname{OPT}_4=52<2W\)，所以它不反驳空背景half，也不解决六人根问题。两种背景覆盖量及这项后续状态另见[背景总份额接口](../资料/背景总份额归纳的两种覆盖量与失效接口--资料.md)。
 
 r0只是递推终端C*=W=|U|、V0。r1时对最优残余主题T，漏掉实际完整覆盖的客户均无旧负载也无actual活跃覆盖；改T可独得这些客户，真实BR给其数≤当前u=V，故C*−W≤V。这一端点不需有限审计。
 
@@ -30,7 +32,7 @@ r0只是递推终端C*=W=|U|、V0。r1时对最优残余主题T，漏掉实际�
 \[
 \boxed{s_i=s_{i+1}+u_i-\delta_i,\quad s_{r+1}=0.}\tag{1}
 \]
-候选要求整段Σ(u_i−δ_i)≥0。逐步δ_i≤u_i是更强、已有机会损失反例否定的式，不能恢复它。孩子归纳s_(i+1)≥0仍需支付当前δ_i−u_i；其他强制枝的松弛不是当前规定叶的免费钱包。这里的δ是历史比较覆盖值边际，不是固定最终遗漏集U=N\actual union的f_U边际，两者不能互换。
+历史候选要求整段Σ(u_i−δ_i)≥0；上述52客户例说明这笔总账也可为负。逐步δ_i≤u_i是更强、已有机会损失反例否定的式，不能恢复它。孩子归纳s_(i+1)≥0仍需支付当前δ_i−u_i；其他强制枝的松弛不是当前规定叶的免费钱包。这里的δ是历史比较覆盖值边际，不是固定最终遗漏集U=N\actual union的f_U边际，两者不能互换。
 
 ## 可信阈值和次序不能免费规范化
 
@@ -68,4 +70,4 @@ workspace.json原字段完整为schema1、save customer-attraction、actor R-4ff
 
 根README保曾一次公屏发送被自动审批拒绝、未换通道绕过，故当时未送达；不冒称本轮又被拒或把此段变成当前发布授权限制。原main保存分支、个人研究停止、无后台承诺均是原历史。当前用户已授权持续第二阶段清洗和推送；原“停止阴性扩样/停止相同研究任务”不取消整个仓库实读整理。当前pushed与done仍须分开由真实工具回执确认。
 
-四源保候选、精确组件、失败机制和研究阶段，不把工具边界升为数学不可能。可接续的仍是BG真实孩子松弛、删后G重置和incoming共同whole-IC付款；本批完成不表示这些开放问题已解，也不表示所有仓库已经清完。
+四源保历史候选、精确组件、失败机制和研究阶段，并以后续真反例更新候选状态，不把工具边界升为别的数学不可能。可接续的是根half专属付款、利用裸比较量中 \(|U\setminus O|\) 补偿的更弱背景接口、删后G重置和incoming共同whole-IC付款；不能继续把已否定的全背景加强式当归纳不变量。本批完成不表示这些开放问题已解，也不表示所有仓库已经清完。
