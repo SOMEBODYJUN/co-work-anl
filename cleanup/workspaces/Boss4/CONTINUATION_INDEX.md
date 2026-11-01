@@ -523,3 +523,7 @@ R3_RESUME14RE：Root菜单时机6完整原程序/报告/42同SHA原布局依赖�
 R3_RESUME14RE数学/证据pushed 9b64a406e4d77e2e6ea5e0df3846d2ece13d1087；14源done另推送 269fb81ecfdcce7b9a9e5056070226f3dd259bda。Boss4累计2853完成，实际未完25；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME25RM：Root fixed-rank原main完整19674B复现与全树端点；动作升级/协方差5、自由未来控制5、共享t/R2根账本3准确补p_a>0及PB当前不可达、astra4九项/15360原CLI一次、辅助Shapley3、漂移2四纯点全q匹配证D0。两原CLI各一次，漂移有限Fraction重构单列，无旧探索重跑。；共25主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME25RM_REMAINING_SCOPE.json。
+
+R3_RESUME25RM数学/证据pushed 4c12b58e31f02bf45a593b395577600a9e28bf02；25源done另推送 392b4825e9d58a7d5378bf67f267a3a0f9b1533f。Boss4累计2878完成，实际未完25；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME25RW：一重离轨2原码全表闭包/逐历史同k1与0新run；背景合同5、最小坏点及PB双标量6、第三共源谐和独审2、整数安全/传递输入程序3、cell程序与两浮点报告3及完整全前缀锐例；C7四源400动作2800真IC原main一次报告全字节同，另解析t14/13，守三静态门槛及原half区别；根旧账本保原时态后追加证据恢复；共25主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME25RW_REMAINING_SCOPE.json。
