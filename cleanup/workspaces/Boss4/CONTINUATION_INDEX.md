@@ -579,3 +579,7 @@ R3_RESUME39VW：十个独立实读范围共39主源：三组合模板四/逐人�
 R3_RESUME39VW数学/证据pushed 609a28e6932ad916a33cc229580afc60e36ef0d1；39源done另推送 76b057430a0bc3d594515f99ec0d67df5d83584e。Boss4累计3165完成，实际未完70；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME9VY：Root两固定完整策略真安全聚合重权2：两份全输入302动作、质量归一/全历史锥/真n−1槽/正门合法性与两float有限阴性完整；R5a主总账与DEEP金额5原量词/当前已反接口/乘积弱界；只修次位作者与未调用审计2，保fixed-m合同逻辑与真实fallback、原py EOF不冒成功审计。0原入口/新数学程序，历史范围精确保留，逐源done在明确正文依赖pushed后另推；共9主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME9VY_REMAINING_SCOPE.json。
+
+R3_RESUME9VY数学/证据pushed 71af216d70373749bec65b2ce0350e72ccd8d1ef；9源done另推送 ce4d544a12f6594b9586acac61d941f38d5187fb。Boss4累计3174完成，实际未完66；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME3WB：两尾公共锚点复制障碍3：全部k≥2完整动作类证明每份真实两尾SPE避old t、偏离者7>6，单组29客户43动作必要输入及258/self区别全保；旧k2..8计数是有序尾结果非策略数，未反其他SPE/half；0原入口/旧成功重跑/新数学程序；共3主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME3WB_REMAINING_SCOPE.json。
