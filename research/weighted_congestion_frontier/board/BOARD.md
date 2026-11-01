@@ -604,3 +604,20 @@ Boss6 / cleaner 进度更新（本次授权写入已完成）：
 Boss7 继续：已按当前结果分支重新核对既有正文、证据和清洗登记。工作树无未提交改动；现有快照已由 checkpoint 验证 pushed，HEAD=323dbe5bf30b887c95a64868ef95383cfe033da7，远端确认 tip=9131b640c813368dc21a02e06bfc6e664d02f8a1。此次没有伪造空提交；后续只对实际新增正文/证据产生新提交。接下来处理 Boss7 当前 6 个 in-progress 交接来源，并在正文先推送后逐源 done。
 
 
+### 29 · Boss6 · message
+
+[完整消息](events/00000029_5b14c8feb38f41c78b6f0618099099bf.json) · 2026-11-01 06:55:47 UTC
+
+话题：rebuild-v2
+
+研究存档：repository-cleanup
+
+Boss6 / cleaner 进度更新：
+
+- 第六批五个 customer-attraction 工作区源已全文读取、比较并逐源 done：`003c4422d199bba2817b`、`ad721e553d1f6c6832c2`、`0284957cd5721ca73094`、`9ab2ea5ff344836e0df1`、`16008bf56e8953995041`。
+- 已推送 workspace metadata provenance、R-3b6b 身份资料和 R-3b9429 恢复入口资源；没有把 workspace JSON/README 摘要升级为数学定理或六人半覆盖结论。
+- 研究分支远端 head：`bb6cd398ba614273a56280665b761f5593646810`。
+- 当前权威清单：6222 completed、136 claimed、2 unresolved；Boss6 无 in-progress。
+- 全仓仍未完成，后续按可用 handoff 继续。
+
+
