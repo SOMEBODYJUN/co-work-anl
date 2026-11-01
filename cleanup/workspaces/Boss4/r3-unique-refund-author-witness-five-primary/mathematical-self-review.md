@@ -1,0 +1,17 @@
+# 作者退款五源自查
+
+22022B五primary；新3316/1750全读，后三5149/6607/5200精确复用priornormal/同SHA完整阅读，首次primary非新show/此前done。2retained实现报告+3duplicate既成完整数学，原字节5copy/正常captures/12YPclaim保齐，旧latest3和ledger3冻包不动。0main/importpayoff/IC/BI/LP/RNG/newchecker/外发/Git/sharedR/start/claim/done。
+
+literal179customers是编号不同unit，raw15types×counts非加权；topicsetdistinct7只是此例不施当前允许重复标签模型。namesABTQRSP，secondRRRRPPA/third七字面串/rootP解出全部57orderedhist与raw5149相同；AST只解常量并转换letter-mask/history索引，是数据表示比较非重算均分。14type71×2+A3+P34来源与12type二人等价不外推3，现等价页tripleBRS2vs6/uB41/3vs15全保。
+
+pay先每unit对3provider计load，再当前topic每unit取Fraction1/load，重复action仍3provider独立，分母正。finish真实字面后继，不冻结actual。57hist×7含self399/342nonself，allweakgaps合法ties，第三49规定收益只有IC全循环通过后称max；second_best_values其实第二人规定/最大值不次高，root7forcedprofit与last7×7全读精确17组老report原数据对应，无另收益函数或新差计算。
+
+84unordered triples允许repetition，uniqueATQ111、PABactualu34,35,38/W107/halfmargin103。D72/E68/e34,0,34/f0,36,72,72/g0,36,36，penult36>35+0差1；强∀optimal与弱∃sameoptimalRF均被uniqueO否，但m3不裁六人，half未反。H1/SHARED留67属既成解析引理，本作者程序不算H/δ/Γ/投影，不拿1750授普遍PROJ或SHARED真假。
+
+3316noexternalinput/sourcefile读取，完全不打开5149；onlystdlib和literal数据，noROOT/AGENTS/work.py/noCLI/guard。全mathassert完后write_text覆siblingunique_refund_audit.json，无x/nooldreportreadcompare/nomkdir/codeSHA/nativeevent；filejson.dumps不加LF，stdoutprint相同text加LF。不存在raw前后SHA断言因为没读raw，不能借另一8214Sourceunchanged替作者作事件。
+
+1750所有21key及7sizes/7second/7root/49last全保，既无399rows/84rows/114projection，也无代码/输入哈希或nativeargvexitstdio版本。原作者自审独立于BI算法，不是另人blind。6607说另路root重构后本人字面审；本scope不取未消费的independent/parent代码报告，不将其身份补成1750。另一8214读rawJSON且reviewer见作者稿，准确知情独立实现。其180550 priorfullyread/已出版全报告按SHA复用不重扫/大copy；数据相关17组对象相同不称运行复现。
+
+6607/5200已全部数学落两正式页，原主目标开放是历史，全5half另证。客户投影任意O的PROJΓ与负e扰动、同actualE只一份，最优m并集才fD(m)=L/HS/RF→SHARED→half；逆向无真实SHAREDfalseSPE冒授。PTQ110/E69旧末句另锥未保存，不取probe/臆造scanner/新run。缺AMOUNT初始化/共同覆盖接入不被作者1750补上。
+
+12YPpushed9d787…rawsynced/preserved_worktrue真实保，不照抄旧needsatt/1untracked证明。只有新资源路径Root串行checkpoint后5receipt done，phase2关系解释非phase3全图。

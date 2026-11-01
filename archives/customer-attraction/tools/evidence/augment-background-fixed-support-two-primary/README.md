@@ -1,0 +1,7 @@
+# 十题背景对固定支撑LP：原证据入口
+
+两primary37548B全读，64exact+64float/630新行名/47floatmarginal/全14字段均逐项保全。source-root还含同SHA充分旧读系数code+JSON24130B与已发表indexed原输入/审计94602B，总156280B。0原LP/审计/新数学checker，0本批related新show。
+
+主要正文是十题有序背景对程序合同。背景45证书与四行真实末位推导准确依赖已实际pushed的explicit2资源；当前R hash记录在dependency bindings，未复制旧正文覆盖Root版本。原source-root布局保持ROOTparents5及两个根输入位置，未保证依赖版本或策略存在。
+
+full6YO原claim六ID全部保留pushed8bef0c7380a0a24f3e50275f6a3b2b33094e3a99，rawneeds-attention；独立1untracked/0tracked同字节无missing/different/unmerged及保stash证明分存。当前本两源math/done pendingRoot，不能借前explicit2的已发表状态。前explicit2done原needs-attention也原样保留，不借本6YO证明宣称已synced。
