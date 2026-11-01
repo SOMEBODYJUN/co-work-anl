@@ -567,3 +567,7 @@ R3_RESUME6UK：Root完整续局计数cone与p7m5报告2，理想全历史BI/固�
 R3_RESUME6UK数学/证据pushed ed352b756268a1a6567441924cb3afc8e85f1b27；6源done另推送 56097d51a32f94456951c57535839518333da394。Boss4累计3070完成，实际未完62；持续接续全仓，不以本批清空收尾。
 
 R3_RESUME26UV：覆盖交换4主稿及3原related首次primary准确duplicate同批，两近饱和合同/31节点62客户仿射桥反例；父方三转移3确认旧code已有正确65与32表缩放；两人iid和合法前缀首对两个探针4全原有限域；static-cover/NET/EXCLUSIVE/八客户静态匹配5；U-RESET/整行Refund与600输入4、当前m2反族否全遗漏强候选及G/R；ROLE-HIT定义DAG原audit3全9输入与有限域。原入口/LP/BI/IC/随机/新数学checker均0，具体可复用数学与历史有限证据/未付一般义务分层；共26主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME26UV_REMAINING_SCOPE.json。
+
+R3_RESUME26UV数学/证据pushed c55a4242118fe894e0a3480ebd7afdff611b69e6；26源done另推送 9c725196f2924b33462590cb58df9d4f0817e14c。Boss4累计3105完成，实际未完68；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME21VE：Root背景租金/根保险3含全历史actual-prefix等号及架构强安全成本/MARG，paircone大报告2全71/11273动作无损实读，weak另一付款证书2与正确17/12，逐人/星地板4完整21记录和Fatal退出域，firstowner全O最大CLIP强候选4明确past不借假IC，direct最终遗漏路径/固定Γ锥4及当前G/R已否，shared自由fresh INIT/固定HIT核/BANK2。全部原入口/LP/BI/IC/随机/新数学checker0，解析组件/开放接口/有限float分层；共21主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME21VE_REMAINING_SCOPE.json。
