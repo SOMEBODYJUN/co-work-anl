@@ -559,3 +559,7 @@ R3_RESUME22TW：Root同目录倒二三个严格偏离两原件/一次201定义�
 R3_RESUME22TW全部22数学pushed 3d6f214b4946e0c022303259258c76acd4d612d0；其中16在并行remote Boss4已done，本线不覆盖；余6单独done-pushed 387d487c18ae9f956532485e7c50e542bc495652。实际Boss4累计3023、未完72，不是全仓完成；下一22新领scope实际继续。
 
 R3_RESUME19UD：L可信最低续局DP与19真输入2，弱iid原作者代表历史及有理夹逼2，完整根H交叉系数/两指定PB枝/六固定σ审计5，实际路径安全最优p固定鞍点预算4，源池随机核与读后审3，三人真实转移修复定理/原码报3。唯一当前数学新核为具体漏d/k的160压缩角点，原全32768×2/LP/IC/旧阴性重放0；真实先验/完整证明/原有限输出/开放一般桥各自保存；共19主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME19UD_REMAINING_SCOPE.json。
+
+R3_RESUME19UD数学/证据pushed 22e16d11b708f03f0359eb08ff820672eba57337；19源done另推送 3bc7f664be17b435477d3345cd84b27139a34ce6。Boss4累计3042完成，实际未完53；持续接续全仓，不以本批清空收尾。
+
+R3_RESUME6UK：Root完整续局计数cone与p7m5报告2，理想全历史BI/固定续局锥合同和11客户保存点精确9/5解析去重；tail两预算菜单4保同σactual量词、PB已反⇒每个安全最优p付款加强均失败，H2全部43策略/56静态解析及13人固定packet接口。当前原入口/solver/LP/IC/新数学checker0，历史证据与新解析分别保；共6主源，先明确正文/证据checkpoint再逐源done；其余认领见R3_RESUME6UK_REMAINING_SCOPE.json。
