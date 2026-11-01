@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-01",
+  "name": "sparse_bad_long_cycles",
+  "python_version": "3.12.14",
+  "base_commit": "b08c9e16e7c3214af6525e718cf56c024e34319d",
+  "source_sha256": {
+    "tests/audits/sparse_bad_long_cycles.py": "0b24ac914cec4d02afd290665dd6f469140eacb66ad2fe553388f6619b1a0e62"
+  },
+  "input": "examples/heterogeneous/sparse/bad_long_n3.json",
+  "input_sha256": "07625a65ad6bfde987f48a9d9084ce7c5d2757b965f28fe1478e850593bee801",
+  "replay_commands": [
+    "python3 tests/audits/sparse_bad_long_cycles.py > evidence/runs/2026-10-01/sparse_bad_long_cycles.json",
+    "python3 tests/audits/sparse_bad_long_cycles.py --instance 3"
+  ],
+  "observed": {
+    "seed": "none, closed-form rational weights",
+    "r": "7/4",
+    "sizes": [
+      1,
+      2,
+      3,
+      10,
+      30,
+      100
+    ],
+    "results": [
+      {
+        "n": 1,
+        "clients": 6,
+        "layouts": 4,
+        "best_factor": "237/133",
+        "cycle_length": 4,
+        "cycle": [
+          3,
+          0,
+          2,
+          1
+        ],
+        "minimum_reach": "79/100",
+        "maximum_reach": "9/5"
+      },
+      {
+        "n": 2,
+        "clients": 8,
+        "layouts": 9,
+        "best_factor": "395/223",
+        "cycle_length": 6,
+        "cycle": [
+          5,
+          1,
+          4,
+          0,
+          3,
+          2
+        ],
+        "minimum_reach": "79/100",
+        "maximum_reach": "9/5"
+      },
+      {
+        "n": 3,
+        "clients": 10,
+        "layouts": 16,
+        "best_factor": "553/313",
+        "cycle_length": 8,
+        "cycle": [
+          7,
+          2,
+          6,
+          1,
+          5,
+          0,
+          4,
+          3
+        ],
+        "minimum_reach": "79/100",
+        "maximum_reach": "9/5"
+      },
+      {
+        "n": 10,
+        "clients": 24,
+        "layouts": 121,
+        "best_factor": "1659/943",
+        "cycle_length": 22,
+        "cycle": null,
+        "minimum_reach": "79/100",
+        "maximum_reach": "9/5"
+      },
+      {
+        "n": 30,
+        "clients": 64,
+        "layouts": 961,
+        "best_factor": "4819/2743",
+        "cycle_length": 62,
+        "cycle": null,
+        "minimum_reach": "79/100",
+        "maximum_reach": "9/5"
+      },
+      {
+        "n": 100,
+        "clients": 204,
+        "layouts": 10201,
+        "best_factor": "15879/9043",
+        "cycle_length": 202,
+        "cycle": null,
+        "minimum_reach": "79/100",
+        "maximum_reach": "9/5"
+      }
+    ]
+  },
+  "limitations": "Finite exact checks support arithmetic only; the universal n and all-r<rho statements depend on the symbolic inequalities and rational-density proof."
+}
